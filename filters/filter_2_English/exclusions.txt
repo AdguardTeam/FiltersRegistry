@@ -1,0 +1,160 @@
+! Exluding rules that looks like JS/CSS injections and $replace rules:
+#%#
+#@%#
+replace=
+! Exluding unsupported ABP rules
+#?#
+[-abp-properties
+! Exluding uBlock script rules
+##script:contains
+##script:inject
+! Excluding redirect instructions
+Redirect:
+redirect:
+!
+! Fixing $popup rules from EasyList
+! https://github.com/AdguardTeam/AdguardForWindows/issues/1566
+$popup,~third-party
+!
+|http://*
+|http:$
+|https:$
+/pb-ads/*
+://ads.$popup
+!
+adguard
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/8172
+@@||investopedia.com^$elemhide
+! https://github.com/AdguardTeam/AdguardFilters/issues/7377
+! https://forums.lanik.us/viewtopic.php?f=62&t=33696&p=127236#p127236
+kbb.com###New-spotlights
+@@||kbb.com^*/ads.js
+@@||kbb.com^$generichide
+@@||kbb.com/js/advert.js
+! https://forum.adguard.com/index.php?threads/26006/
+@@||mirrorcreator.com^$script,~third-party,xmlhttprequest
+! https://forum.adguard.com/index.php?threads/16312/
+@@||zedo.com/asw/$script,domain=intoday.in
+@@||zedo.com/client/xp1/fmos.js$domain=intoday.in
+@@||zedo.com/jsc/d2/fo.js$domain=intoday.in
+@@||intoday.in^$generichide
+! lifewire.com - removed unnecessary exclusion
+! https://forum.adguard.com/index.php?threads/23116/
+@@||lifewire.com^$generichide
+! e.mail.ru - preventing adblock detection
+mail.ru##.slot_left
+! https://forum.adguard.com/index.php?threads/22268/
+@@/^((?!.*\.(amazonaws|cloudfront|mobicow|puhtml)\W?).)*$/$script,domain=uploadocean.com
+! https://forum.adguard.com/index.php?threads/19238/
+@@||timesofindia.indiatimes.com^$image,~third-party
+! https://github.com/AdguardTeam/AdguardForWindows/issues/1566
+$popup,~third-party
+! https://forum.adguard.com/index.php?threads/18740/
+||thevideo.me^$popup,domain=thevideo.me|vidup.me
+! https://github.com/AdguardTeam/AdguardFilters/issues/3044
+! unnecessary exclusion
+@@||psarips.com^$script
+! ozon.ru is broken by content blocker
+||ozon.ru^$third-party
+! https://forum.adguard.com/index.php?threads/10523/
+.com/ad.$domain=~ad-tuning.de
+! https://forum.adguard.com/index.php?threads/11197/
+||xhamster.com^$subdocument,~third-party
+! Broken mobile app
+! https://github.com/AdguardTeam/AdguardForAndroid/issues/587
+/ad/logo/*
+! https://forum.adguard.com/index.php?threads/11577/
+@@||play-old-pc-games.com^$generichide 
+! adf.ly - unnecessary exclusion
+@@||adf.ly^$generichide
+! rojadirecta.me - unnecessary exclusion
+@@||rojadirecta.me^$elemhide
+! For desktop Adguard, issue with popups. Replaced by ||am15.net^$script,image,media,third-party
+||am15.net^$third-party
+! http://forum.adguard.com/showthread.php?9855
+||anyporn.com^$image,subdocument
+! http://forum.adguard.com/showthread.php?9766
+biggestplayer.me##.adblock1
+! http://forum.adguard.com/showthread.php?9768
+@@||mamahd.com^$elemhide
+! http://forum.adguard.com/showthread.php?9609
+@@||trackitonline.ru^$elemhide
+! https://github.com/AdguardTeam/ExperimentalFilter/issues/1699
+@@||getdebrid.com^$elemhide
+! https://github.com/AdguardTeam/AdguardForWindows/issues/910
+! https://github.com/AdguardTeam/ExperimentalFilter/issues/1645
+||lockerdome.com^$third-party
+! https://github.com/AdguardTeam/ExperimentalFilter/issues/1436
+@@||www.google.*/search?$subdocument,~third-party
+! http://forum.adguard.com/showthread.php?9288
+@@||armorgames.com^$elemhide
+! https://github.com/AdguardTeam/ExperimentalFilter/issues/1589
+@@||appdn.net^$elemhide
+! https://github.com/AdguardTeam/ExperimentalFilter/issues/1584
+@@||www.vg.no^$elemhide
+! http://forum.adguard.com/showthread.php?8542
+@@||spiegel.de^$genericblock,generichide
+! http://forum.adguard.com/showthread.php?8092
+@@||uploadex.com^$elemhide
+! lenta.ru - endless loading
+@@||rl0.ru^*/adfox.custom.min.js$domain=lenta.ru
+! From EasyList. Replace on ||bubblesmedia.ru^$third-party,popup
+||bubblesmedia.ru^$third-party
+!
+! http://forum.adguard.com/showthread.php?7756
+! Prevent blocking ads
+@@||dlh.net^$script,domain=dlh.net
+!
+||tvzavr.ru^$third-party
+! http://forum.adguard.com/showthread.php?6808
+||hwcdn.net^$third-party
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/2508
+intoday.in#@#.ad_banner
+! http://forum.adguard.com/showthread.php?6825
+@@||washingtonpost.com^$elemhide
+!
+@@||onlinemoviewatchs.com^$elemhide
+@@||oploverz.net^$elemhide
+!
+@@||vk.com/ads$elemhide
+! Fixing exclusions for adfox.ru
+@@||adfox.ru^$~third-party
+! This rule interrupt $popup For example onclickads.net/afu.php?zoneid=
+.php?zoneid=
+!
+||thepiratebay.sx^
+myiplayer.eu
+||exoclick.com^$third-party
+@@||tradedoubler.com/anet
+@@||amazonaws.com/banners/
+! Fixing kissanime (we don't need these rules from EasyList)
+kissanime.com
+! Fixing EasyList
+\.(net|co|com|me|info|org)\/\d+\?.*\=.*\http%
+! Fixing Ligatus double-rules: http://forum.adguard.com/showthread.php?3597-ligatus-not-blocked&p=39085#post39085
+! We'll use our own rule instead of their: ||ligatus.com^$popup,third-party
+||ligatus.com
+! Fixing wrong regexp rule
+$xmlhttprequest,$domain=pornhub.com
+! Fixing detection of blocking on RuTube.ru https://github.com/AdguardTeam/ExperimentalFilter/issues/474
+/adsrv.
+! Fixing redtube.com on android
+||redtube.com^$subdocument,~third-party
+! http://forum.ru-board.com/topic.cgi?forum=5&topic=31105&start=2200#8
+||usenet.nl^$popup
+! Fixing adwolf.ru. Replaced to /adwolf.$domain=~adwolf.ru
+/adwolf.
+! http://forum.adguard.com/showthread.php?6180 (#14)
+||click.aliexpress.com^$popup,third-party
+! pornhub etc - broken player
+|http://$image,script,third-party,domain=pornhub.com|redtube.com|tube8.com|tube8.es|tube8.fr|youporn.com|youporngay.com
+@@||pornhub.phncdn.com^$image,script,object-subrequest,domain=pornhub.com|redtube.com|tube8.com|tube8.es|tube8.fr|youporn.com|youporngay.com
+! http://forum.adguard.com/showthread.php?7756
+! dlh.net - prevent blocking ads on dlh.net
+@@||dlh.net^$script,domain=dlh.net
+! Example of a broken website: http://tv.naver.com/v/1691094
+||smartmediarep.com^$third-party
+! Excluding ##.adsbox as it is used too often by adblock detectors
+/^##.adsbox$/
