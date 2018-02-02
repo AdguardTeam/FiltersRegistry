@@ -32,6 +32,8 @@
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||cpm.wargaming.net^$third-party
 !
+||rnuhavi.ru^$third-party
+||khudagi.info^$third-party
 ||hushodo.com^$third-party
 ||haa66855mo.club^$popup
 ||lylxuot.pltqbcgsq.biz^$third-party
@@ -3555,6 +3557,7 @@ http://v.*.com/x?$third-party
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
+://*.purum-pup-pum.ru^
 ://*.drampic.info^
 ||host.pornolenta.cc^
 ||jet.zbp.ru^
@@ -4107,6 +4110,14 @@ kakprosto.ru$$script[tag-content="yaVideoInit"][max-length="3000"]
 sdamgia.ru,baby.ru,vz.ru,otzovik.com,dni.ru,kakprosto.ru$$script[wildcard="*AdvManager.render*createElement*s.src*"][max-length="3500"]
 !+ NOT_PLATFORM(windows,mac,android)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=otzovik.com
+!+ NOT_PLATFORM(windows,mac,android)
+@@||kakprosto.ru^$generichide
+!+ NOT_PLATFORM(windows,mac,android)
+@@||an.yandex.ru/system/context.js$domain=kakprosto.ru
+!
+!
+@@||kakprosto.ru^$generichide
+@@||an.yandex.ru/system/context.js$domain=kakprosto.ru
 ! https://forum.adguard.com/index.php?threads/26507/
 @@||num-link.ru/js/fuckadblock.js
 ! https://forum.adguard.com/index.php?threads/25876/
@@ -4554,6 +4565,7 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$styl
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$script[tag-content="html /deep/ style"][max-length="400"]
 !
 ! Yandex search
+@@//yandex.*/yandsearch?clid=$generichide
 @@//yandex.*/search/$generichide
 !
 ! Yandex.News
@@ -5499,6 +5511,8 @@ s4galaxy.ru,3dnews.ru,lenovo-smart.ru#%#Object.defineProperty(window, 'SocialMar
 ! Block web-sockets in old versions of Chrome (older then 47)
 nnm-club.tv,rustorka.com,pise4ka.net,nnm-club.me,nnm-club.ws,nnmclub.to,onlainfilm.ucoz.ua,rutor.is,baskino.club,rutor.info,nnm.me,korzik.net,seasonvar.ru,rsload.net,nnm-club.me,nnmclub.to,rustorka.com,auto.mail.ru,horo.mail.ru,realty.mail.ru,health.mail.ru,afisha.mail.ru,cloud.mail.ru,otvet.mail.ru,pogoda.mail.ru,sport.mail.ru,tv.mail.ru,torg.mail.ru,cars.mail.ru,hi-tech.mail.ru,free-torrent.org,free-torrents.org,ukrinform.ru,radikal.ru,trackeroc.ru,trackerock.ru#%#window.WebSocket = undefined;
 !
+! marketgid.com V3
+0day.kiev.ua,freerutor.me#%#AG_abortInlineScript(/./, 'MarketGidJSON');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10512
 kinosklad.net#%#AG_abortInlineScript(/./, '_0x446a');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10166
@@ -5771,6 +5785,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !-----------------------
 !------- CSS -----------
 !-----------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/10723
+freerutor.me#$#div[id^="M"][id*="Composite"] { position: absolute!important; left: -3000px!important; }
 ! howtogame.ru - удаление брендированного фона, отступа сверху
 howtogame.ru#$#body { background: #000000!important; padding-top: 0!important; }
 ! online-mmo.ru - удаление отступа сверху
@@ -7962,6 +7978,11 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+forum.ixbt.com##.b_footer_wrap
+forum.ixbt.com##.vertb
+forum.ixbt.com##td[align="center"] > div.horb
+forum.ixbt.com##.b_ftr
+bestfree.ru###adblock_square
 howtogame.ru##.branding-link-wrapper
 animaunt.ru##.rkl-box
 ok.ru,okminigames.mail.ru##span.js-href > div[class]:nth-child(-2n+2)
@@ -7972,9 +7993,9 @@ market.csgo.com##div[class^="banners-"]
 dzvin.news##div[style="width:765px; height:86px;"]
 football-ukraine.com###kinoafishaslider
 ||p-p.com.ua/-/img/banner-bg.jpg
-otzovik.com##.head_at2_no_a
-otzovik.com##.summary_right2
-otzovik.com##div[style="float: left; margin-top: 5px; max-width: 629px;"]
+otzovik.com##.head_at3_no_a
+otzovik.com##.summary_right3
+otzovik.com##div[style="float: left; margin-top: 5px; max-width: 628px;"]
 uniondht.org###oldest_newws > table[width="100%"] > tbody > tr > td:empty+td
 ||zk.fm/b/
 zk.fm##.adv-list-top
@@ -8718,8 +8739,6 @@ kinokrad.co##a[href^="https://goo.gl/"] > img
 wikimovies.ru##div[id^="b_bn_"]
 kinogb.me##div[id^="bn_"]
 ||kinogb.me/pay/
-kakprosto.ru##div[id$="-yandex-block"]
-kakprosto.ru##.content__author+div > div[id][class*=" "] > div[class][id] > div[class*=" "]
 kakprosto.ru##div[itemprop="articleBody"] > div.article-text~div[class*=" "]
 online.animedia.tv##.promo__video__link__adv
 ||trashbox.ru/*.php?t=*&id=$popup
@@ -9050,7 +9069,6 @@ trashbox.mobi##.div_landing_rec
 vashdosug.ru##.branding-container
 ||st*.soccer365.ru/a/$image
 soccer365.ru##body > div[class] > div[onclick^="window.open"]
-kakprosto.ru###buttom_banner
 zagonka.ru##div[id^="_"][style*="z-index:"]
 ||zagonka.ru/rek/
 zagonka.ru##.box > div[class^="market"]
@@ -9162,7 +9180,6 @@ yo-soft.net##div[align="center"] > a[rel="nofollow"] > img
 avito.ru##.avito-ads-container
 vpk.name###side > noindex
 gazeta.ru##.js-adv-forever
-kakprosto.ru###expandable-fixed-buttom
 radikal.ru##.base-page_left-side > div[style^="width: 320px; height:"]
 ren.tv##div[id^="dfp-"]
 zr.ru##div[id^="unit_"]
@@ -9736,7 +9753,6 @@ allfight.ru###sideRight noindex > a[rel="nofollow"] > img
 ||apa.az/iframe/*frame*.html
 apa.az##.lazyLoadAd_places
 ://*.pr-cy.ru/place/get/
-kakprosto.ru##.nu_yd_bot
 mymedicalportal.net##noindex
 mymedicalportal.net##p[align="center"] > a[rel="nofollow"] > img
 kinopoisk.ru##body > [style^="position: absolute"][style*="background-image"]:not([id]):not([class])
@@ -11406,9 +11422,6 @@ kafa-info.com.ua##.cam-run-line-holder
 kafa-info.com.ua##iframe[class^="banner-"]
 kakbik.ru##body > div#slidebox_container
 kakbik.ru##iframe[src^="http://likemagazine.ru/"]
-kakprosto.ru###winvideo-wrapper
-kakprosto.ru###yap-yandex_before_content-posterHorizontal
-kakprosto.ru##.ya-dir
 kakprosto.ru##div[class*="yandex_ad"]
 kaluga24.tv##.k24-adcont
 kaluganews.com##div[style$=";width:240px;height:400px"]
@@ -14795,6 +14808,7 @@ pornolab.lib,new-team.org,pornolab.biz,pornolab.cc,pornolab.net##table.attach.bo
 !
 !
 ! START: rustorka.com
+||rustorka.com/1xb.gif
 ://*.rumedia.ws^$empty,domain=~rumedia.ws
 rustorka.lib,rustorka.com###logo a[href*="gearbest.com/"]
 rustorka.com##div[align="center"] > a > img
@@ -15255,8 +15269,8 @@ bender/_bender*.js$script,replace=/this\.removeShadowBlockers\(\);/true; return;
 !
 !
 !### Temporary ###
-! временно исключаем, чтоб не ломалась авторизация
-@@||auth.wi-fi.ru^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/10749
+@@||consultant.ru^$extension
 ! https://forum.adguard.com/index.php?threads/27072/
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/2016
 @@||lifecell.ua^$stealth
