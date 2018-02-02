@@ -1,0 +1,28 @@
+language: bash
+
+node_js:
+    - "9.5"
+
+install:
+    - npm install
+
+script:
+    - node index.js
+
+deploy:
+    - provider: pages
+      skip-cleanup: true
+      local-dir: platforms
+      github-token: $GITHUB_TOKEN
+      keep-history: true
+      verbose: true
+      on:
+        branch: release
+    - provider: pages
+      target-branch: master
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN
+      keep-history: true
+      verbose: true
+      on:
+        branch: release
