@@ -1,4 +1,4 @@
-# AG Filters
+# AG Filters [![Build Status](https://travis-ci.org/AdguardTeam/FiltersRegistry.svg?branch=master)](https://travis-ci.org/AdguardTeam/FiltersRegistry)
 
 ## What is AdGuard?
 
