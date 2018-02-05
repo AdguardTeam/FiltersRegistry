@@ -23,6 +23,13 @@
 !
 !######### Annoying elements (not ads)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/10922
+today.com##.article-newsletter
+today.com##.newsletter-l-wrapper
+! disables need for registration after 2 views of an article
+ibc.org#%#document.cookie = "AnonUserCookie = " + Math.random() + ";path=/";
+! https://github.com/AdguardTeam/AdguardFilters/issues/10911
+100percentfedup.com###enhancedtextwidget-6
 ! mail.ru - bla-bla-car banner on the main page
 mail.ru##.grid-down__lcol > div.well.notify
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8975
@@ -529,6 +536,8 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.def
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.promo-popup_js_inited
 ! Default search engine and start page
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.distr-popup_js_inited
+! YB
+yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.popup2_direction_bottom-right
 ! YB, debts, mobile yandex in footer (desktop)
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##div[class$="distro_shown_yes"]
 ! YB, debts, mobile yandex in footer (mobile)
@@ -1106,6 +1115,17 @@ rulu.co#%#!function(b,a){AG_defineProperty('CloudflareApps.installs',{get:functi
 /wp-content/plugins/kill-adblock/*
 ##.kill-adblock-container
 !
+watchonline.to##.alert-info
+spankwire.com###abMessage
+@@||suchmaschine.com/scripts/ads.js
+@@||voyeurhit.com/js/advertising.js
+9anime.is##.abmsg
+||mudwars.io/assets/interface/bannerSquareBg.png
+slain.io##.ablocked
+@@||glap.io/advertising.js
+starve.io###trevda
+@@||brutal.io/lib/advertisement.js
+@@||wings.io/lib/advertisement.js
 encyclopediadramatica.rs###localNotice > .center + center + p + center
 @@||quoka.de/assets/js/adframe.js
 @@||static.tvmaze.com/css/ads.css
@@ -1132,6 +1152,7 @@ pornvibe.org##body > .special-message-wrapper
 !+ PLATFORM(ios, ext_android_cb)
 @@||blackdesertbase.ru^$generichide
 !
+@@||52av.tv/source/plugin/unadblock/*ads*.js
 @@||wormixtest.ru/assets/scripts/ads.js
 anivisual.net#@#.adsbygoogle
 multifilemirror.com##.jbanner
@@ -1455,7 +1476,6 @@ lolking.net##.ad-block-messaging
 @@||static.gelbeseiten.de/*/js/components/ads.js
 ||good-surf.ru//script/script.js
 ||turbolab.it/js/economics.js
-spankwire.com###abMessage
 ||forum.mobzon.ru/adbp
 forum.mobzon.ru###wrap > .forabg
 ||mur.tv/wp-content/uploads/*/*.js
@@ -3407,6 +3427,8 @@ chimica-online.it###cookieChoiceInfo
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 strunz.com###v-cookielaw
 !
+wallpapermania.eu##.uk-alert
+magesy.be##cloudflare-app[app="cookiless"]
 player.pl##.cookie-notice
 atresplayer.com##.capa_cookies
 elespanol.com###pCookieModal
@@ -4781,6 +4803,8 @@ gir.im##.smartbanner
 !+ NOT_PLATFORM(ios, ext_android_cb)
 shazam.com##.shz-frame-apps-banner
 !
+liveexpert.ru##.android-app
+m.liveexpert.ru##.app-info
 makeuseof.com##.playstore
 makeuseof.com##.itunes
 autoshow.com.tr##.sidebar > #text-44
@@ -5143,6 +5167,19 @@ edeka.de#@##smartbanner.android
 !
 ! Specific sites
 !
+pravmir.ru##.hh-donation-popup-fancybox-window
+pravmir.ru##.fancybox-overlay
+gearbest.com###email_subscribe
+gearbest.com###email_subscribe + #mask
+ports.com.ua###facebook-modal
+ports.com.ua##.modal-backdrop
+nikolaev24.com.ua,odessa.net.ua,kr24.com.ua###colorbox
+100percentfedup.com##div[class^="modaal-"]
+radiosvoboda.org##.slide-in-wg
+gazeta.zp.ua##div#colorbox[style*="width: 987px; height: 120px; top: 230px;"]
+batshort.com##div[class^="modal"]
+webcheats.com.br###bg_trasp
+mediasat.info##.dialog-social
 elise.com.ua###fanback
 avsarsinema.com.tr###kutu
 nediyor.com##.td-more-articles-box
@@ -5944,7 +5981,7 @@ livelib.ru,lenta.ru,rambler.ru,sports.ru#%#(function() { if (typeof Notification
 ||cdn.jeapie.com^$third-party
 ||cdn.letreach.com^$third-party
 ||cdn.onesignal.com^$third-party
-||cdn.sendpulse.com^$third-party
+||sendpulse.com^$third-party
 ||panaur.com^$third-party
 ||push.connect.digital^$third-party
 ||push.esputnik.com^$third-party
@@ -5962,6 +5999,11 @@ livelib.ru,lenta.ru,rambler.ru,sports.ru#%#(function() { if (typeof Notification
 sports.ru#%#(function() { try { if ("undefined" != typeof localStorage) { var a = { date: (new Date).toString(), time: (new Date).getTime(), data: 2 }; localStorage.setItem("sports:view:notifications-subscribe-popup:closed:count", JSON.stringify(a)) } } catch (ex) {} })();
 sports.ru#%#(function() { try { if ("undefined" != typeof localStorage) { var a = { date: (new Date).toString(), time: (new Date).getTime(), data: true }; localStorage.setItem("sports:view:notifications-subscribe-popup:view", JSON.stringify(a)) } } catch (ex) {} })();
 !
+arabam.com##.reminder-bar
+business-standard.com##body > .bg#bg
+magesy.be###onesignal-popover-container
+oligarh.media##.push-container
+oligarh.media##.push-overlay
 ||capital.com.tr/bundles/onesignal^
 bloomberght.com##.pushNotWrap
 weather.com##.styles-WdPwMspF__pushBanner__1e3SD
@@ -6072,6 +6114,7 @@ zr.ru#%#document.cookie = "zrPushSubsPopUp=1";
 !
 !######### Remains of ads
 !
+slain.io##.slain-adslot
 t-online.de##.Tvideosearch ~ #Tcontbox > #Tcontboxi > div[class]:not([id]):not([onfocus]):not(.Tinfinitlayer)
 t-online.de##div[data-dy-embedded-object]
 vivud.com##.closeContainer
@@ -6275,7 +6318,6 @@ gamegpu.com###tm-top-a
 webrazzi.com###topheadMaindiv
 willhaben.at###tower
 kayzen.az##.CustomBlock.Blocksmaster
-max-deportv.info##.Estilo11
 winfuture-forum.de##.ExtraPostBlock > div[class$="post_block hentry clear"]
 softportal.com##.TblTopBanCLR td[style="padding:8px 0;"][align="center"]
 t-online.de##.Tmcc1.Tmcc1a.Tmccm
@@ -6380,7 +6422,7 @@ direkizlehd.tv##div[id^="text-"][class="sidebar-content clearfix widget_text"]
 mimikama.at##div[itemprop$="articleBody"] > div
 mimikama.at##div[itemprop$="articleBody"] > hr
 rivx8.me.la##div[itemprop*="articleBody"] > span
-zonasports.be##div[style$="position:relative"] > center > table
+zonasports.ch,zonasports.be##div[style$="position:relative"] > center > table
 zonasports.be##div[style$="position:relative"] > table > tbody > tr > td
 deutschland-in-zahlen.de##div[style*="font-size:10px;margin-top:1px"]
 thefreedictionary.com##div[style="border:1px solid #e8e8e9;font-weight:600"]
@@ -6928,8 +6970,8 @@ te-en.com##splashvip
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10435
 nowymarketing.pl#$#.article-articleBody > .blured[style="filter: blur(3px);"] { filter: none!important; }
 nowymarketing.pl#$#.article-articleBody > .accessInfoBox.group { display: none!important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/10073
-gutefrage.net##gf-loading-indicator
+! https://github.com/AdguardTeam/AdguardFilters/issues/10073 https://github.com/AdguardTeam/AdguardFilters/issues/10466 https://github.com/AdguardTeam/AdguardFilters/issues/10923
+gesundheitsfrage.net,gutefrage.net,finanzfrage.net##gf-loading-indicator
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10021
 dwatchseries.to##.sp-leader
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9338
@@ -6968,10 +7010,12 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 !######### JS tweaks ##########
 !##############################
+! https://github.com/AdguardTeam/AdguardFilters/issues/10891
+comando-filmes.org#%#AG_defineProperty('onselectstart', {value:true}, document); AG_defineProperty('oncontextmenu', {value:true}, document); AG_defineProperty('onmousedown', {value:true}, document); AG_defineProperty('onclick', {value:true}, document);
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10296
 cryptovertise.tk#%#AG_onLoad(function() { $(".claim-button").prop("disabled", false).text("Get reward!").val("Get reward!"); disableButtonTimer(); });
-! https://github.com/AdguardTeam/AdguardFilters/issues/10073
-gutefrage.net#%#AG_onLoad(function() { setTimeout(function() {var dc = document.querySelectorAll('gf-deferred-content.u-invisible');     for (var i = 0; i < dc.length; i ++) {       dc[i].setAttribute('class', dc[i].getAttribute('class').replace('u-invisible', ''));} }, 300); });
+! https://github.com/AdguardTeam/AdguardFilters/issues/10073 https://github.com/AdguardTeam/AdguardFilters/issues/10466 https://github.com/AdguardTeam/AdguardFilters/issues/10923
+gesundheitsfrage.net,finanzfrage.net,gutefrage.net#%#AG_onLoad(function() { setTimeout(function() {var dc = document.querySelectorAll('gf-deferred-content.u-invisible');     for (var i = 0; i < dc.length; i ++) {       dc[i].setAttribute('class', dc[i].getAttribute('class').replace('u-invisible', ''));} }, 300); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8806
 webspor34.org#%#AG_onLoad(function() {setTimeout(function(){var el = document.getElementsByTagName("body")[0]; el.removeAttribute("oncontextmenu"); el.removeAttribute("onselectstart"); el.removeAttribute("ondragstart");}, 300);});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8564
