@@ -14,15 +14,9 @@ deploy:
       skip-cleanup: true
       local-dir: platforms
       github-token: $GITHUB_TOKEN
-      keep-history: true
       verbose: true
       on:
-        branch: release
-    - provider: pages
-      target-branch: master
-      skip-cleanup: true
-      github-token: $GITHUB_TOKEN
-      keep-history: true
-      verbose: true
-      on:
-        branch: release
+        branch: master
+
+after_deploy:
+    - /bin/bash push.sh
