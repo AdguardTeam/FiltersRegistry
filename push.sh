@@ -16,9 +16,6 @@ upload_files() {
   git push github HEAD:master
 }
 
-if [ ${TRAVIS_BRANCH} == "master" ] && [ ${TRAVIS_EVENT_TYPE} != "pull_request" ]
-then
-  setup_git
-  commit_files
-  upload_files
-fi
+setup_git
+commit_files
+upload_files

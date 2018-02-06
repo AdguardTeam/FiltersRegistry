@@ -9,14 +9,15 @@ install:
 script:
     - node index.js
 
-after_success:
-    - /bin/bash push.sh
-
 deploy:
     - provider: pages
       skip-cleanup: true
       local-dir: platforms
       github-token: $GITHUB_TOKEN
       verbose: true
+      on:
+        branch: master
+    - provider: script
+      script: push.sh
       on:
         branch: master
