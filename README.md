@@ -1,98 +1,108 @@
-# AG Filters [![Build Status](https://travis-ci.org/AdguardTeam/FiltersRegistry.svg?branch=master)](https://travis-ci.org/AdguardTeam/FiltersRegistry)
+# AG Filters Registry [![Build Status](https://travis-ci.org/AdguardTeam/FiltersRegistry.svg?branch=master)](https://travis-ci.org/AdguardTeam/FiltersRegistry)
 
-## What is AdGuard?
+This repository contains the known filters subscriptions available to AdGuard users. We re-host these filters on `filters.adtidy.org`. Also, these filters can be slightly modified in order to achieve better compatibility with AdGuard.
 
-Filters source repository
+## Filters metadata
 
-For each filter entity we have a directory in `/filters`.
-In that directory we have: 
-- template.txt
+- `template.txt`
 
-Template file is a main source for filter correctors. 
+    Template file is used by the filters compiler to prepare the final filter version.
  
-- exclude.txt
+- `exclude.txt`
 
-Exclusions that will be applied by default, the file could be removed if it's no needed. 
+    A list of regular expressions. Rules that match these exclusions will not be included in the resulting filter.
 
-- metadata.json
+- `metadata.json`
 
-Filter metadata, look metadata block
+    Filter metadata. Includes name, description, etc.
 
-- revision.json
+    * `filterId` - unique filter identifier (integer);
+    * `name` - filter name. Can be localized (we'll cover it later);
+    * `description` - filter description;
+    * `timeAdded` - time when this filter was added to the registry. Milliseconds since January 1, 1970. You can exec `new Date().getTime()` in the browser console to get the current time;
+    * `homepage` - filter website/homepage;
+    * `expires` - filter's default expiration period;
+    * `displayNumber` - this number is used when AdGuard sorts available filters (GUI);
+    * `groupId` - group identifier (see groups description below);
+    * `subscriptionUrl` - default filter subscription URL
+    * `tags` - a list of tags (see tags description below)
 
-Filter version metadata, automatically filled and overwritten each build.
+    Metadata example:
+    ```javascript
+    {
+      "filterId": 2,
+      "name": "English Filter",
+      "description": "EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.",
+      "timeAdded": 1404115015843,
+      "homepage": "https://kb.adguard.com/en/general/adguard-ad-filters#english",
+      "expires": "1 day",
+      "displayNumber": 1,
+      "groupId": 1,
+      "subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
+      "tags": [
+        "purpose:ads",
+      "reference:101",
+      "recommended",
+      "reference:2"
+      ]
+    }
+    ```
 
-- filter.txt
+- `revision.json`
 
-Result compiled filter 
+  Filter version metadata, automatically filled and overwritten on each build.
 
-- diff.txt
+- `filter.txt`
 
-Build log containing excluded rules with explaining comments 
+  Resulting compiled filter.
+
+- `diff.txt`
+
+  Build log that contains excluded and converted rules with an explanation.
 
 ### domains-blacklist.txt
 
 Text file containing list of domains to be removed from url-blocking domain modified rules.
 
-### Metadata files
+### Tags
 
-- metadata.json
+- `/tags`
 
-Example of English filter:
-```
-   {
-     "filterId": 2,
-     "name": "English Filter",
-     "description": "EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.",
-     "timeAdded": 1404115015843,
-     "homepage": "https://kb.adguard.com/en/general/adguard-ad-filters#english",
-     "expires": "1 day",
-     "displayNumber": 1,
-     "groupId": 1,
-     "subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
-     "tags": [
-       "purpose:ads",
-   	   "reference:101",
-   	   "recommended",
-   	   "reference:2"
-     ]
-   }
-```
+Json tags metadata;
+
+### Groups
+
+- `/groups`
+
+Filters groups metadata;
+
+### Filters localization
 
 - /locales
 
 Contains directories for each locale with `filters.json`, `groups.json`, `tags.json` that should be edited by filter-writers.
 
-- /tags
-
-Json tags metadata
-
 ## How to build
 
-### Install
-
 ```
-  npm install
+npm install
 ```
-
-### Building
 
 Run the following command:
 ```
   node index.js
 ```
 
+## Oneskyapp integration
 
-### Oneskyapp integration
-
-It's important to import strings from onesky before exporting, cause some changes can be lost otherwise.
+It's important to import strings from onesky before exporting as some changes can be lost otherwise.
 
 To import strings from oneskyapp, run the following in /oneskyapp scripts directory:
 ```
-    ./download.sh $apikey $secretkey $projectid
+./download.sh $apikey $secretkey $projectid
 ```
 
 To export strings to oneskyapp, run the following in /oneskyapp scripts directory:
 ```
-    ./upload.sh $apikey $secretkey $projectid
+./upload.sh $apikey $secretkey $projectid
 ```
