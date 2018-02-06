@@ -9,6 +9,9 @@ install:
 script:
     - node index.js
 
+after_success:
+    - /bin/bash push.sh
+
 deploy:
     - provider: pages
       skip-cleanup: true
@@ -18,13 +21,3 @@ deploy:
       verbose: true
       on:
         branch: master
-      if: env(TRAVIS_COMMIT_MESSAGE) !=~ ^Deploy
-    - provider: pages
-      target-branch: master
-      skip-cleanup: true
-      github-token: $GITHUB_TOKEN
-      keep-history: true
-      verbose: true
-      on:
-        branch: master
-      if: env(TRAVIS_COMMIT_MESSAGE) !=~ ^Deploy
