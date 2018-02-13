@@ -37,6 +37,7 @@
 ||servicer.mgid.com^$empty,third-party,important
 ||jsc.marketgid.com/*.js?t=$empty,important,~websocket
 !
+||noqukjy.com^$third-party
 ||ssl2anyone3.com^$third-party
 ||kaidop.com^
 ||gamzetov.com^
@@ -6274,8 +6275,13 @@ goalim4you.site###f765
 !------------------------------ Italian ------------------------------
 !---------------------------------------------------------------------
 !
-||altadefinizione.live/templates/Dark/img/reg.png
-altadefinizione.live###mirrors > li > a[href="#"][class="playerlink"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/11410
+guardarefilm.live##a[href^="/4k/"]
+guardarefilm.live##a[href^="http://play4k.co/"]
+guardarefilm.live##[data-link^="https://vod.play4k.co/"]
+guardarefilm.live#%#AG_onLoad(function() { setTimeout(function() { var el2=document.querySelector('.list-play li:nth-child(2) > .ml'); if(el2) { el2.click(); } }, 500); });
+!+ PLATFORM(windows, mac, android)
+guardarefilm.live#%#AG_onLoad(function() { var el=document.querySelector('.hd-cat-player-inner'); var ce=document.createElement('iframe'); if(el) { el.appendChild(ce); } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11263
 altadefinizione.bid##a[href^="http://altadefinizione.bid"][href*="wth.php"]
 speedvideo.net###playerstart
@@ -6404,6 +6410,10 @@ dbplanet.net###some_ad_block_key_popup
 @@||calciomercato.com/promodisplay
 calciomercato.com$$script[tag-content="new FuckAdBlock"][max-length="30000"]
 !
+||altadefinizione.live/templates/Dark/img/reg.png
+altadefinizione.live###mirrors > li > a[href="#"][class="playerlink"]
+filmsenzalimiti.black##.ads
+filmsenzalimiti.black##a[href^="http://filmsenzalimiti.black/fdh/wth.php"]
 filmstreaminghd.biz##a[href="http://www.filmstreaminghd.biz/player/check.html"]
 filmstreaminghd.biz##.wp-content[itemprop="description"] > div[style="float:none;margin:10px 0 10px 0;text-align:center;"]
 ||filmstreaminghd.biz/player/play.php
@@ -6602,6 +6612,8 @@ p30day.com##.txtAdv
 !---------------------------------------------------------------------
 !------------------------------ Polish -------------------------------
 !---------------------------------------------------------------------
+! weszlo.com - popup
+weszlo.com#%#AG_abortInlineScript(/window\.open\(getUrl,/, 'jQuery');
 ! pcworld.pl - ads
 pcworld.pl#%#window.uabpdl = window.uabInject = true;
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11383
@@ -7264,7 +7276,7 @@ powvideo.xyz,powvideo.net#%#Object.defineProperty(window,"puOverlay",{get:functi
 seehd.ws,watchonlinemovies.com.pk,vidto.me,kat.how,watchers.to#%#(function(){var b=document.addEventListener;document.addEventListener=function(){-1==arguments[1].toString().indexOf("inXP(e.target")&&b.apply(document,arguments)};var c=window.setInterval;window.setInterval=function(){if(-1==arguments[0].toString().indexOf("pSC(ppu_main,"))return c.apply(window,arguments)};Object.defineProperty(window,"onbeforeunload",{set:function(a){return-1==a.toString().indexOf("location.href=options.url")?a:null}})})();
 mp3red.me,pornfapr.com,freepornhq.xxx,piratebays.co.uk,pirateproxy.wf,pirateproxy.yt,pirateproxy.click,gameofbay.org,fastpiratebay.co.uk,kickass.unlockproj.party,nowwatchtvlive.cc,kickass.com.se,djmaza.life,hdsector.com#%#(function(){var b=document.addEventListener;document.addEventListener=function(){-1==arguments[1].toString().indexOf("inXP(e.target")&&b.apply(document,arguments)};var c=window.setInterval;window.setInterval=function(){if(-1==arguments[0].toString().indexOf("pSC(ppu_main,"))return c.apply(window,arguments)};Object.defineProperty(window,"onbeforeunload",{set:function(a){return-1==a.toString().indexOf("location.href=options.url")?a:null}})})();
 animeflv.net,srkcast.com,vidtodo.me,vidfile.net,vidlox.tv,m4ufree.com#%#!function(b,c){function a(a,b){return typeof a!=='function'?!0:a.toString().indexOf(b)===-1}b=document.addEventListener,document.addEventListener=function(){a(arguments[1],'inXP(e.target')&&b.apply(document,arguments)},c=window.setInterval,window.setInterval=function(){return a(arguments[0],'pSC(ppu_main,')?c.apply(window,arguments):void 0},AG_defineProperty('onbeforeunload',{beforeSet:function(b){return a(b,'location.href=options.url')?b:null}})}();
-rarbgmirror.org,avgle.com,piratbaypirate.link,seehd.pl,estream.to,1337x.to,vidzi.tv#%#!function(b,c){function a(a,b){return typeof a!=='function'?!0:a.toString().indexOf(b)===-1}b=document.addEventListener,document.addEventListener=function(){a(arguments[1],'inXP(e.target')&&b.apply(document,arguments)},c=window.setInterval,window.setInterval=function(){return a(arguments[0],'cookies.ppu_main')?c.apply(window,arguments):void 0},AG_defineProperty('onbeforeunload',{beforeSet:function(b){return a(b,'location.href=options.url')?b:null}})}();
+altadefinizione01.tv,rarbgmirror.org,avgle.com,piratbaypirate.link,seehd.pl,estream.to,1337x.to,vidzi.tv#%#!function(b,c){function a(a,b){return typeof a!=='function'?!0:a.toString().indexOf(b)===-1}b=document.addEventListener,document.addEventListener=function(){a(arguments[1],'inXP(e.target')&&b.apply(document,arguments)},c=window.setInterval,window.setInterval=function(){return a(arguments[0],'cookies.ppu_main')?c.apply(window,arguments):void 0},AG_defineProperty('onbeforeunload',{beforeSet:function(b){return a(b,'location.href=options.url')?b:null}})}();
 !
 ! jsPopunder
 evdekimseyok71.com,fu3k7.com,imgrock.info,dir50.net,thevideo.me,voodaith7e.com,imgrock.net,imgoutlet.com,spashopaz.com,doyki.com,vidup.me,imgoutlet.com#%#Object.defineProperty(window, 'jsPopunder', { get: function() { return function() {}; } });
@@ -8728,6 +8740,8 @@ piratbaypirate.link,animeshow.tv,vidzi.tv##body > div[id][style*="position: fixe
 ! German
 ||videorolls.row.aiv-cdn.net/*_video_*p_*kbps_audio
 !
+megadrive.co##.elite_vp_popup
+||megadrive.co/images/ban/
 rarbg2018.org###trlxup
 royalroadl.com##.portlet.text-center[style$="padding-top: 5px !important;"]
 sleazyneasy.com##.im_block
@@ -8746,7 +8760,6 @@ multiup.org##.well.success.text-center
 unknowncheats.me###hmmk
 ncaa.com##.ncaa-top-ad-wrapper
 quora.com##.NewGridQuestionPage .linked_content
-quora.com##.HyperLinkBundle .HyperLinkFeedStory
 ||dyncdn.me/static/20/js/expla*.js$domain=rarbgmirror.org
 ||rarbg.bypassed.org/cdn/static/20/js/expla81.js
 /:\/\/rarbg.bypassed.org\/cdn\/static\/20\/js\/[a-z0-9]{20,}.js/$domain=rarbg.bypassed.org
@@ -49873,6 +49886,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||bvobtmbziccr.com^$third-party
 ||bvqfuryhas.bid^$third-party
 ||bvreosoejjt.bid^$third-party
+||bvrkzhtxlgono.com^$third-party
 ||bvyoekxfjwpa.com^$third-party
 ||bvzhalhubwkbg.bid^$third-party
 ||bvzjhnqrypiv.com^$third-party
@@ -50066,6 +50080,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||ctvsgkoe.bid^$third-party
 ||ctzvtevpcssx.com^$third-party
 ||cuabgfjnib.bid^$third-party
+||cuchpagh.com^$third-party
 ||cuguwxkasghy.com^$third-party
 ||cuvbcwgenwytrk.bid^$third-party
 ||cuxsmovh.bid^$third-party
@@ -53439,6 +53454,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||xtuenvlsoenwn.bid^$third-party
 ||xtzslqieeh.bid^$third-party
 ||xudrwfesrzl.bid^$third-party
+||xugnzawkrkvu.com^$third-party
 ||xuhktijdskah.com^$third-party
 ||xuiiiqpsw.bid^$third-party
 ||xukdsjqzkqegzv.bid^$third-party
@@ -53570,6 +53586,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||ykaonbmjjmyi.com^$third-party
 ||ykbcogkoiqdw.com^$third-party
 ||ykdiojhuy.bid^$third-party
+||ykdmtvowoinv.com^$third-party
 ||ykmcpykr.bid^$third-party
 ||ykqpbuqpfjsh.com^$third-party
 ||yktkodofnikf.com^$third-party
