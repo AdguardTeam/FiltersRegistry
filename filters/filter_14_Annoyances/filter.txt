@@ -23,6 +23,8 @@
 !
 !######### Annoying elements (not ads)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/11496
+dnepr.info##.btn-ads-fix
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11245
 urlaubstracker.de###wysija-2
 urlaubstracker.de##.optin-monster-saas-overlay
@@ -631,6 +633,7 @@ translate.yandex.by,translate.yandex.com,ceviri.yandex.com.tr,translate.yandex.f
 !***
 !* Subscriptions/newsletters (not popups)
 !*
+primamedia.ru##.news_subscribe_form
 iphones.ru##.social-subscription
 ua-football.com##.newsEMS
 oggito.com##.sidebar-content-fixed-scroll > .widget_mc4wp_form_widget
@@ -1128,6 +1131,8 @@ rulu.co#%#!function(b,a){AG_defineProperty('CloudflareApps.installs',{get:functi
 /wp-content/plugins/kill-adblock/*
 ##.kill-adblock-container
 !
+savevideo.me#%#AG_abortInlineScript(/Please disable "ad blocker"/, '$');
+@@||primamedia.ru/media/js/reklama.js
 ||anivisual.net/mim71xypt82.js
 @@||salon.com/js/ad-server.js
 xn--80aikhbrhr.net##.warning-adblock-box
@@ -1727,6 +1732,12 @@ wotspeak.ru##.adb
 ||rusnext.ru/advar.js
 ||rusopen.com/img/default/noblock.png
 ||static.cdnslate.com/etc/designs/slate/js/plus-upsell-adblock.js
+!+ PLATFORM(ext_ff, ext_opera)
+savevideo.me#$#.max_bl > tbody > tr > .max_bl_right > [class][style^="width:95%;"] { position: absolute!important; left: -3000px!important; }
+!+ PLATFORM(ext_ff, ext_opera,)
+savevideo.me#$#.max_bl > tbody > tr > .max_bl_right > [class][style^="width: 95%;"] { position: absolute!important; left: -3000px!important; }
+!+ PLATFORM(ext_ff, ext_opera)
+savevideo.me#$#[id^="ads_notice_"] { position: absolute!important; left: -3000px!important; }
 !+ PLATFORM(ios, ext_android_cb)
 @@||yorkshirepost.co.uk^$generichide
 ! https://forum.adguard.com/index.php?threads/apkmirror-com-ag-browser-extension.24166/
@@ -5168,6 +5179,7 @@ edeka.de#@##smartbanner.android
 !
 ! Generic rules
 !
+||gazsop.ru^$third-party
 ||wat.chatwat.xyz^$third-party
 ||chat.whatsappx.xyz^$third-party
 ||extstatadv.ru^$third-party
@@ -5209,6 +5221,8 @@ edeka.de#@##smartbanner.android
 !
 ! Specific sites
 !
+primamedia.ru###social_modalblock
+primamedia.ru###social_modalshadow
 maksimumkitap.com###osx-overlay
 maksimumkitap.com###osx-container
 etver.ru###pop
