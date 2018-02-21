@@ -35,7 +35,7 @@
 ||greencuttlefish.com^$third-party,~xmlhttprequest
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||cpm.wargaming.net^$third-party
-!+ NOT_PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android)
 ||rgy1wk.ru^$third-party
 !
 ||cdn.actiflex.org^$third-party
@@ -3739,6 +3739,8 @@ all-episodes.tv,vesti.ru,livelib.ru,kanobu.ru,num-link.ru,matchtv.ru,vse.fm,seet
 ensage-forum.ru,spec-komp.com#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
 ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/10816
+@@||mail.rambler.su/*/js/ads/ads.adblockdetect.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11465
 @@||showjet.ru/js/ads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10823
@@ -5589,7 +5591,7 @@ informpskov.ru,onedivision.ru,nakanune.tv,rusvesna.su,deita.ru,biysk24.ru,baskin
 autonews.ru,cnews.ru,odnako.org,kasparov.ru,wonderzine.com,rbc.ru,soccer.ru,aftershock.su,kp.ru,rbcdaily.ru,sobesednik.ru#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="ml_"]'); });
 avtovzglyad.ru,sports.ru,vesti.ru,colta.ru,kp.ru#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="AdFox_iframe_"]'); });
 kinoprofi.net,rutracker.org,new-rutor.org,myzuka.org#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="_ads_"]'); });
-rg.ru,meduza.io#%#AG_onLoad(function() { setTimeout(function() { AG_removeElementBySelector('iframe[id^="AdFox_iframe_"]'); },1000); });
+mail.rambler.ru,rg.ru,meduza.io#%#AG_onLoad(function() { setTimeout(function() { AG_removeElementBySelector('iframe[id^="AdFox_iframe_"]'); },1000); });
 iomedia.ru,tbs-play.com#%#AG_onLoad(function() { AG_removeElementBySelector('ins[id^="aswift_"]'); });
 kttc.ru#%#AG_onLoad(function() { setTimeout(function() { AG_removeElementBySelector('ins[id^="aswift_"]'); }, 6000); });
 ~mos.ru#@%#AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
@@ -5879,6 +5881,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !-----------------------
 !------- CSS -----------
 !-----------------------
+! tribuna.com - удаление отступа сверху
+tribuna.com#$##branding-layout { margin-top: auto!important; }
 ! pluggedin.ru - удаление отступа сверху
 pluggedin.ru#$#.open-main-container { margin-top: 80px!important; }
 pluggedin.ru#$#.banner-advertise { margin-top: 0!important; }
@@ -8061,6 +8065,7 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+mail.rambler.ru##.virtualLettersTableWrap
 ||rgazeta.com/images/design/banners/
 rgazeta.com##.top-slider
 uchim.org###rec
