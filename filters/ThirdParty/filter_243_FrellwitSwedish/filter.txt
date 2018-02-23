@@ -58,6 +58,7 @@
 ||gigya.com^$third-party
 ||glimr.io^$third-party
 ||googlnalytics.com^$third-party
+||happygreen.se^$third-party
 ||hapyak.com^$third-party
 ||heybot.com^$third-party
 ||hmads.se^$third-party
@@ -228,6 +229,12 @@
 /plugins/ab_stats_params/*$domain=lajkat.se
 /plugins/icegram/*$domain=dagensanalys.se
 /plugins/blog-analytics/*$domain=dagensanalys.se
+! JWplayer analytics/ad scripts
+||ssl.p.jwpcdn.com/player/v/*/jwpsrv.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se
+||ssl.p.jwpcdn.com/player/v/*/vast.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se
+||ssl.p.jwpcdn.com/player/plugins/freewheel/v/*/freewheel.js$script,important,domain=eurosport.se
+||ssl.p.jwpcdn.com/player/v/*/gapro.js$script,important,domain=gamereactor.se
+||ssl.p.jwpcdn.com/player/v/*/sharing.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se
 ! HTML filters (Firefox 57+ only)
 ! IDG
 ||cmatch.idg.se^$script
@@ -272,7 +279,6 @@ aftonbladet.se##article:has(a[data-sponsored="true"])
 aftonbladet.se##a[data-test-id="inline-teaser"]:if(div[class]:has-text(ANNONS))
 aftonbladet.se##.abThemeBgTeaser:has(a[href*="kampanjer.aftonbladet.se"])
 aftonbladet.se##.abBtnShare
-||ssl.p.jwpcdn.com/player/v/*/jwpsrv.js$script,important,domain=aftonbladet.se
 /sptAutoTracker.min.js^$domain=aftonbladet.se
 /ab-uri-min.js&ab-xiti/ab-xiti-min.js^$domain=aftonbladet.se
 ||aftonbladet.se/tv/temp.mp4$media
@@ -334,6 +340,7 @@ dn.se##body > iframe[style^="display"]
 ||cfcdn.screen9.com/players/*/libs/streamsense.min.js$script,important,domain=dn.se
 ||trackjs.com^$third-party,domain=dn.se
 ||di.se/ditv/Content/Scripts/burt/burt-main.js$script
+||di.se/part/ads/$xmlhttprequest
 di.se##article.di_teaser--native
 di.se##section[data-ad-settings]
 di.se##aside.di_share-buttons
@@ -360,6 +367,7 @@ expressen.se##.slot:has(a[href*="rabattkoder.expressen.se"])
 /closest-native*/*$xmlhttprequest,domain=expressen.se
 /_livetvpreview/*$domain=expressen.se
 /rantekartan/*$subdocument,domain=expressen.se
+||assets.expressen.se/bundles/mittkok-post-*.js$script
 sydsvenskan.se,hd.se##div[data-category="native-teaser"]
 /native?noBurtProfiles=1$xmlhttprequest,domain=hd.se|sydsvenskan.se
 /ads-*.js$script,domain=hd.se|sydsvenskan.se|8till5.se
@@ -390,10 +398,11 @@ resume.se##.teaser-sponsored
 ||qbrick.com^$third-party,domain=resume.se
 vafinans.se##.box:if(.newsLeadWords:has-text(Sponsrat innehåll))
 vafinans.se##.brandStoryGreyBackground2
-/bmbBurt.js^$script,domain=skonahem.com|101ideer.se|tara.se|styleby.nu|topphalsa.se|veckorevyn.com|lantliv.com|amelia.se
-/bmbFusionUtils.js^$script,domain=skonahem.com|101ideer.se|tara.se|styleby.nu|topphalsa.se|veckorevyn.com|lantliv.com|amelia.se
-/bmbDfpUtils.js^$script,domain=skonahem.com|101ideer.se|tara.se|styleby.nu|topphalsa.se|veckorevyn.com|lantliv.com|amelia.se
-/bmb-related-teasers$xmlhttprequest,domain=skonahem.com|101ideer.se|tara.se|styleby.nu|topphalsa.se|veckorevyn.com|lantliv.com|amelia.se
+/bmbBurt.js^$script,domain=skonahem.com|101ideer.se|tara.se|styleby.nu|topphalsa.se|veckorevyn.com|lantliv.com|amelia.se|alltomtradgard.se
+/bmbFusionUtils.js^$script,domain=skonahem.com|101ideer.se|tara.se|styleby.nu|topphalsa.se|veckorevyn.com|lantliv.com|amelia.se|alltomtradgard.se
+/bmbDfpUtils.js^$script,domain=skonahem.com|101ideer.se|tara.se|styleby.nu|topphalsa.se|veckorevyn.com|lantliv.com|amelia.se|alltomtradgard.se
+/bmb-related-teasers$xmlhttprequest,domain=skonahem.com|101ideer.se|tara.se|styleby.nu|topphalsa.se|veckorevyn.com|lantliv.com|amelia.se|alltomtradgard.se
+skonahem.com,101ideer.se,tara.se,styleby.nu,topphalsa.se,veckorevyn.com,lantliv.com,amelia.se,alltomtradgard.se##a.teaser[href*="/annonssamarbete/"]
 alltomtradgard.se##.teaser-native
 privataaffarer.se##.teaser:has(img[src*="/native/"])
 privataaffarer.se##a[href*="/bit.ly/"]
@@ -1001,8 +1010,6 @@ rumhemma.se###top
 ||conviva.com^$script,xmlhttprequest,domain=eurosport.se
 eurosport.se###notification__cookie
 eurosport.se##.eso_video__share
-||ssl.p.jwpcdn.com/player/v/*/jwpsrv.js$script,important,domain=eurosport.se
-||ssl.p.jwpcdn.com/player/plugins/freewheel/v/*/freewheel.js$script,important,domain=eurosport.se
 ||du4rq1xqh3i1k.cloudfront.net/d$xmlhttprequest,domain=eurosport.se
 pconline.se##:xpath(//div[@class="sponsorruta"]/parent::div)
 /resolute-child/js/script.js$script,domain=burlovsnyheter.se
