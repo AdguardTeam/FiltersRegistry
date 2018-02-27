@@ -4179,6 +4179,7 @@ ohotniki.ru#%#document.cookie = "muid_ready=true";
 !+ NOT_PLATFORM(windows,mac,android)
 mk.ru#%#document.cookie = "mknews_ready=true";
 !
+razlozhi.ru#%#Object.defineProperty(window, 'common', { get: function() {return; } });
 liveinternet.ru#%#Object.defineProperty(window, 'yabcb', { get: function() { return {}; }, set: function() {} });
 ||vz.ru/vengine.js$replace=/VZ.initAn\(\);/,important
 !+ NOT_PLATFORM(windows,mac,android)
@@ -4191,7 +4192,7 @@ mk.ru,ohotniki.ru$$script[tag-content=".AdvManager.render"][max-length="8000"]
 drive2.ru$$script[tag-content="static-mon.yandex.net/static/main.js"][max-length="1100"]
 ohotniki.ru,kakprosto.ru,drive2.ru$$script[tag-content="window.Ya.adfoxCode"][max-length="1800"]
 drive2.ru,drive2.com#%#AG_abortInlineScript(/window.Ya.adfoxCode.create/, 'Ya');
-e1.ru,vz.ru,baby.ru,avtovzglyad.ru,razlozhi.ru,drive2.ru#%#(function() { var ce = document.createElement; Document.prototype.createElement = function(tag) { if (tag === 'YATAG') { throw null; } return ce.call(this, tag); }})();
+e1.ru,vz.ru,baby.ru,avtovzglyad.ru,drive2.ru#%#(function() { var ce = document.createElement; Document.prototype.createElement = function(tag) { if (tag === 'YATAG') { throw null; } return ce.call(this, tag); }})();
 fb.ru,minigames.mail.ru,fishki.net#%#var empty = { get: function() { return []; }, set: function() {} }; Object.defineProperties(window, { yandex_context_callbacks: empty, yandexContextAsyncCallbacks: empty, yandexContextSyncCallbacks: empty });
 vz.ru,avtovzglyad.ru$$script[tag-content="window.Ya.adfoxCode.create"][max-length="1000"]
 kakprosto.ru$$script[tag-content="yaVideoInit"][max-length="3000"]
@@ -4233,6 +4234,8 @@ vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!importa
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2973
 @@||capricornus.cc/*/iframe$elemhide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3087
+@@||rotor.overclockers.ru/www/delivery/asyncjs.php^$domain=overclockers.ru
+||overclockers.ru^$replace=/\\$\("body"\).html\(.+?("\);)/,important
 overclockers.ru#$#.top-an { position: absolute!important; left: -3000px!important; }
 @@||loader.adrelayer.com/load.js$domain=overclockers.ru
 @@||adservice.google.ru/adsid/integrator.js$domain=overclockers.ru
@@ -4796,6 +4799,7 @@ pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contai
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
 gamer-info.com#$#body > div[class]:matches-css(padding: 240px) { padding: 24px 0 50px 0!important; }
 !
+domenolog.ru##.col-md-12 > div.col-md-7 > div[class="panel panel-default"]:has(> div[id^="yandex_rtb"])
 rp5.by,rp5.kz,rp5.ru,rp5.ua###content-data > div[id]:has(> div[id][class] > a:contains(Ρазмеcтить οбъявление))
 torrent-games.net###right > div[class="r_block3"]:has(> div:contains(Реклама))
 xatab-repack.net##.colum_right > div.block:has(> div.b_in > div[align="center"] > a[href^="http://ctaddlinkcnds.net/"])
@@ -5900,6 +5904,9 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !-----------------------
 !------- CSS -----------
 !-----------------------
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/11772
+oper.ru#$##wrapper { background: none!important; }
 ! kg-portal.ru - удаление брендированного фона
 kg-portal.ru#$#body { background: #bdbdbd!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12051
@@ -7804,7 +7811,6 @@ http://*.ru/leftunit.pl?
 /images/rek/*
 /images_jtads/*
 /img/b468_60
-/img/banner/*$domain=~digis.ru|~mtsbank.ru|~altel.kz|~zedge.net
 /img/bn/*
 /img/partnerka/*
 /img/recl/*
@@ -8093,6 +8099,14 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+domenolog.ru##.hidden-print[style]
+domenolog.ru##div[style="width:300px; height:600px;"]
+domenolog.ru###back-top
+razlozhi.ru##div[style="width:1000px;height:120px;"]
+oper.ru###bglink
+oper.ru##a[href="/follow/brutal"]
+news.bcm.ru##.bcm_ad
+news.bcm.ru##object[width="200"][height="240"]
 spravkus.com##div[id*="_R-A-"]
 cwer.su,cwer.me,cwer.ru,cwer.ws##.like_hide
 kg-portal.ru##a.paralink
@@ -14942,6 +14956,12 @@ gismeteo.ua##div[id="weather-rbkua"]
 !
 !
 !--- Hints ------
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/11749
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+alleng.ru###adv_kod_frame
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+alleng.ru##img[width="599"][height="99"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10907
 !+ NOT_PLATFORM(windows, mac, android)
 math-ege.sdamgia.ru##.content > div[class] > div[style="margin:auto"] > ins.adsbygoogle~div
@@ -15936,8 +15956,6 @@ newnavitel.blogspot.ru,newnavitel.blogspot.com#@##AdSense1
 @@||transfers.privatbank.ua^$document
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1528
 @@||out.pladform.ru/player$domain=fishki.net
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/1525
-@@||fas.gov.ru/sites/all/themes/fasregion/img/banner/
 ! aipa.ru - broken navigation to next page
 @@||aipa.ru/modules/blocklayered/blocklayered-ajax.php$document
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1498
@@ -16068,8 +16086,6 @@ survarium.com#@#.top-banner
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/740
 ! tranceinmotion.ru - links are broken by Adguard injections
 @@||tranceinmotion.ru/*?_=$elemhide,jsinject
-! http://forum.adguard.com/showthread.php?6777
-@@||tehn.ru/img/banner/
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/213
 @@||yandex.ru/wy/rss.xml$document
 @@||yandex.ru/wy/urss.xml$document
