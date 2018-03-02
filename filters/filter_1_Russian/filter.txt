@@ -42,6 +42,9 @@
 !+ PLATFORM(windows, mac, android)
 ||vt4dlx.ru^$third-party
 !
+||mp-b.info^$third-party
+||dfehnb.xyz^$third-party
+||gettraff.com^$third-party
 ||ibifa.biz^$third-party
 ||jwmyba.biz^$third-party
 ||ceespc.biz^$third-party
@@ -4177,7 +4180,7 @@ minigames.mail.ru##.container > div[class]:not([id]) > div[style]:not(:first-chi
 !
 ! Yandex ads replacement
 ! TEMPORARY: https://github.com/AdguardTeam/AdguardFilters/issues/12362 (false integration mode)
-e1.ru,vz.ru,mk.ru,drive2.ru,ege.sdamgia.ru#%#(function(){var a=Object.getOwnPropertyDescriptor(Document.prototype,"cookie")||Object.getOwnPropertyDescriptor(HTMLDocument.prototype,"cookie");a&&a.configurable&&Object.defineProperty(document,"cookie",{get:function(){return a.get.call(document)},set:function(c){var b=Error().stack;b&&-1!==b.indexOf("setCookieWithConfig")||a.set.call(document,c)}})})();
+syl.ru,liveinternet.ru,e1.ru,vz.ru,mk.ru,drive2.ru,ege.sdamgia.ru#%#(function(){var a=Object.getOwnPropertyDescriptor(Document.prototype,"cookie")||Object.getOwnPropertyDescriptor(HTMLDocument.prototype,"cookie");a&&a.configurable&&Object.defineProperty(document,"cookie",{get:function(){return a.get.call(document)},set:function(c){var b=Error().stack;b&&-1!==b.indexOf("setCookieWithConfig")||a.set.call(document,c)}})})();
 !
 !+ NOT_PLATFORM(windows,mac,android)
 spravkus.com#%#AG_abortInlineScript(/./, 'detectAdblock');
@@ -4748,6 +4751,8 @@ comss.ru#$#html:has(body) iframe[src^="https://disqus.com/"] { height: 1085px!im
 baskino.me#$#html > body.branding:has(> div) { padding-top: 0px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8624
 narutoplanet.ru##.blog-featured > div.items-leading:has(div[style="text-align: center;"] > a[rel="nofollow"])
+! https://github.com/AdguardTeam/AdguardFilters/issues/12450
+narutoplanet.ru##.art-layout-cell > div.art-block:has(> div.art-blockheader > div.t:contains(Рекомендуем))
 !
 pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net##.post_body table[class="bordered"][-ext-has='div.vk_price']
 !
@@ -4811,7 +4816,7 @@ pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contai
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11445
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
-gamer-info.com#$#body > div[class]:matches-css(padding: 240px) { padding: 24px 0 50px 0!important; }
+gamer-info.com#$#body > div[class]:matches-css(padding: 239px) { padding: 24px 0 50px 0!important; }
 !
 domenolog.ru##.col-md-12 > div.col-md-7 > div[class="panel panel-default"]:has(> div[id^="yandex_rtb"])
 rp5.by,rp5.kz,rp5.ru,rp5.ua###content-data > div[id]:has(> div[id][class] > a:contains(Ρазмеcтить οбъявление))
@@ -5642,6 +5647,8 @@ s4galaxy.ru,3dnews.ru,lenovo-smart.ru#%#Object.defineProperty(window, 'SocialMar
 ! Block web-sockets in old versions of Chrome (older then 47)
 nnm-club.tv,rustorka.com,pise4ka.net,nnm-club.me,nnm-club.ws,nnmclub.to,onlainfilm.ucoz.ua,rutor.is,baskino.club,rutor.info,nnm.me,korzik.net,seasonvar.ru,rsload.net,nnm-club.me,nnmclub.to,rustorka.com,auto.mail.ru,horo.mail.ru,realty.mail.ru,health.mail.ru,afisha.mail.ru,cloud.mail.ru,otvet.mail.ru,pogoda.mail.ru,sport.mail.ru,tv.mail.ru,torg.mail.ru,cars.mail.ru,hi-tech.mail.ru,free-torrent.org,free-torrents.org,ukrinform.ru,radikal.ru,trackeroc.ru,trackerock.ru#%#window.WebSocket = undefined;
 !
+! tehnot.com - удаление кликабельности фона
+tehnot.com#%#AG_onLoad(function() { jQuery(function() { jQuery('body').unbind('click'); }); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12406
 gecid.com#%#Object.defineProperty(window, 'hraa', { get: function() { return function(){}; } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11775
@@ -5923,6 +5930,10 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! tehnot.com - удаление брендированного фона
+tehnot.com#$#body { background-color: #e8e8e8!important; background-image: none!important; cursor: auto!important; }
+! gamer-info.com - удаление брендированного фона
+gamer-info.com#$#body > div[class$="acc"] > a[class$="top"][href^="/"] { background: #03384f!important; background-color: #03384f!important; pointer-events: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12406
 gecid.com#$#body { background-color: #fff!important; cursor: default!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12293
@@ -6022,9 +6033,6 @@ kinohome.org#$#body { margin-top: auto!important; }
 nnm-club.lib,nnm-club.tv,nnm-club.name,nnm-club.me,nnmclub.to#$#body > div.wrap { top: 0!important; }
 ! russian-porn.online - удаление брендированного фона, отступа сверху
 russian-porn.online#$#body { background-image: none !important; padding-top: 0px!important; }
-! https://forum.adguard.com/index.php?threads/26652/
-gamer-info.com#$#body > menu+div > a { background: #03384f!important; pointer-events: none!important;}
-gamer-info.com#$#body > menu+div { padding: 50px 0 250px 0!important; }
 ! https://forum.adguard.com/index.php?threads/26630/
 kinosezon.tv#$##subheader { padding: 0 0 0 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7376
@@ -7069,6 +7077,7 @@ zerx.ru$$script[tag-content="document.write('<style>.modul-search"]
 .space/show/?id=*&r=
 .pro/up/?id=*&r=
 !
+/cdn-cgi/pe/bag2?r[]=*interfax.info
 /cdn-cgi/pe/bag2?r[]=*kutabi.info
 /cdn-cgi/pe/bag2?r[]=*umekana.ru
 /cdn-cgi/pe/bag2?r[]=*interfax.pw
@@ -8123,6 +8132,18 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+||gomel.today/modules/media/files/unnamed.jpg
+||tehnot.com/wp-content/uploads/2018/02/stlsv30.png
+animevost.org##div[style="width:240px;height:400px"]
+animevost.org##div[style^="height:125px; border: 1px solid #ffa20f;"]
+||s.gamer-info.com/manual/dgc/warthunder-
+gamer-info.com##div[style="height:410px;overflow:hidden;"]
+gamer-info.com###all-page-content > div[style^="margin:10px"][class*=" "]
+||syl.ru/static/azscript.js
+||syl.ru/misc/temp/videonow.html
+cppstudio.com##img[alt="lorem"]
+porno-sex.online##a[rel="nofollow"] > img
+porno-sex.online##.blockpopup
 ||svekrovi.net/wp-admin/admin-ajax.php
 svekrovi.net###gesuqty
 izvestia.nikolaev.ua##table[align="center"][style^="width: 100%; height:"]
@@ -11225,7 +11246,7 @@ drom.ru##.b-media-cont_theme_adverts
 dropmefiles.com##.google_bnr
 dsvload.net##.txtinblock
 relizua.com##a[href^="http://goo.gl/"] > img
-dumskaya.net,gamer-info.com,hackersoft.ru,mmovote.ru,molnet.ru##.ad
+dumskaya.net,hackersoft.ru,mmovote.ru,molnet.ru##.ad
 dvizhok.su##.topFullSizePromo
 dwg.ru###banbottom
 dwg.ru##a[href^="/book/"]
@@ -11508,7 +11529,6 @@ gameguru.ru##.RELINK-GAMEGURU-VERTICAL
 gameguru.ru##body > a[id^="ar_"][style]
 gameinonline.com##a[href="/go/prime_play.html"]
 gamemag.ru##a[href^="http://ads.adfox.ru"]
-gamer-info.com##.it-ad
 gamer.ru##div[class*="alarmalarm-banner-"]
 pornolab.lib,gamer.ru,pornolab.biz,pornolab.net,sport-tv.by##div[style*="width: 240px; height: 400px;"]
 gameround.ru###global_back_link
@@ -15489,7 +15509,7 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua##.super-banner
 ! The content replacement rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11445
-||gamer-info.com^$replace=/\{padding:240px/\{padding:24px/
+||gamer-info.com^$replace=/\{padding:239px/\{padding:24px/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10631
 ||torrentstream.*/get?_v=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10426
