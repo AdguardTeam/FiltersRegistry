@@ -1434,9 +1434,12 @@ cmacapps.com##cloudflare-app[app-id="no-adblock"]
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ed-protect.org
 !+ NOT_PLATFORM(windows, mac, android)
 @@||rules.noadblock.org/*/main.js$domain=rulu.co|rockfile.co
-! e0mn.com detection
+! e0mn.com detection (script is generating a lot of different bait classes)
 accuweather.com#%#AG_abortInlineScript(/p.d.e0mn.com/, 'Date');
 @@||p.d.e0mn.com/*%7C^$domain=accuweather.com
+||static.thestudentroom.co.uk/*/structure/js/google-funding-choices.min.js
+! @@||thestudentroom.co.uk^$generichide
+! @@||emn0.com/*/*ad$domain=thestudentroom.co.uk
 !
 ! https://forum.adguard.com/index.php?threads/4553t5pugtt1qslvsnmpc0tpfz5fo-xyz.15792/
 4553t5pugtt1qslvsnmpc0tpfz5fo.xyz#%#var _x;Object.defineProperty(window,"x",{get:function(){return _x},set:function(a){var b=a.toString();0==b.indexOf("eval(function(p,a,c,k,e,d")&&/adblock/i.test(b)||(_x=a)}});
@@ -1502,7 +1505,8 @@ j.gs#@##bottom
 @@||j.gs/1market.php
 !*
 !*****
-!
+! https://github.com/AdguardTeam/AdguardFilters/issues/12756
+ma-x.org##.k2cd89-hide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12657
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
 @@||getmyfile.ga^$generichide
@@ -7336,6 +7340,8 @@ nosteam.ro#%#window.open = function() {};
 !---------------------------------------------------------------------
 !------------------------------ Swedish ------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/12664
+sydsvenskan.se##.burt-native-unit.teaser
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12471
 @@||v.fwmrm.net/ad/g/1$domain=dplay.se
 ||v.fwmrm.net/ad/g/1?$replace=/(tv\.freewheel\.SDK\._instanceQueue\['Context_[\s\S]*?'\][\s\S]*?\.requestComplete\(\{)[\s\S]*\}\);/\$1\}\);/,domain=dplay.se,important
@@ -9301,6 +9307,12 @@ eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv##body > div[id][styl
 ! vast preroll ads
 /vast.js$domain=1movies.to
 !
+theoutline.com##div[data-campaign]
+||porndoe.com/misc^
+porndoe.com##.with-acontainer
+porndoe.com##div[class*="a-container"]
+||sex01.org/gu^
+voyeurhit.com###under-pl-ad
 photagram.net##.ads
 drive2.ru##a[data-target^="auto.ru"]
 drive2.ru##div[class*=" "][id][lang="ru"]
@@ -9553,7 +9565,7 @@ freeappstorepc.com##center > a[rel="nofollow"] > img
 wwltv.com##div[data-module="ad"]
 wwltv.com##div[data-module="taboola"]
 fetishpapa.com###js-ads-modal
-fetishpapa.com##.video-extra-overlay
+ashemaletube.com,pornoxo.com,boyfriendtv.com,fetishpapa.com##.video-extra-overlay
 fetishpapa.com##.ads-block-rightside
 ||fetishpapa.com/banner-iframe/
 ||linkrex.net/links/popad$popup
@@ -9651,7 +9663,6 @@ free-power-point-templates.com##.entry__inforial
 free-power-point-templates.com##div[class^="entry__inforial-"]
 free-power-point-templates.com##.aff-unit
 17track.net##.gad-container
-boyfriendtv.com##.video-extra-overlay
 theyoump3.com###bottom-ad-download-page
 freefrontend.com##.ads
 bludv.com##a[href^="https://goo.gl"]
@@ -55633,6 +55644,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||ablogica.com^$popup,third-party
 ||absoluteclickscom.com^$popup,third-party
 ||accede.site^$popup,third-party
+||accouncila.com^$popup
 ||ad-apac.doubleclick.net^$popup,third-party
 ||ad-emea.doubleclick.net^$popup,third-party
 ||ad-feeds.com^$popup,third-party
@@ -66885,6 +66897,7 @@ $websocket,domain=24video.cc|24video.in|24video.me|24video.sex|24video.xxx|pornh
 ||xvideos-free.com/d/$popup
 ||ymages.org/prepop.php$popup
 /\:\/\/([0-9]{1,3}\.){3}[0-9]{1,3}/$popup,domain=bitporno.com|vidz7.com
+wyciwyg:$popup,domain=yourporn.sexy
 search.safefinder.com,search.snapdo.com###ABottomD
 aol.com###AOLP_partnerSearch
 search.safefinder.com,search.snap.do,search.snapdo.com###ATopD
