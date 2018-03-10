@@ -23,29 +23,6 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
-!+ PLATFORM(windows, mac, android)
-||ok9ydq.ru^$third-party
-!+ PLATFORM(windows, mac, android)
-||csp-oz66pp.ru^$third-party
-!+ PLATFORM(windows, mac, android)
-||d38dub.ru^$third-party
-!+ PLATFORM(windows, mac, android)
-||dsn-fishki.ru^$third-party
-!+ PLATFORM(windows, mac, android)
-||v6t39t.ru^$third-party
-!+ PLATFORM(windows, mac, android)
-||rcdn.pro^$third-party,xmlhttprequest
-!+ PLATFORM(windows, mac, android)
-||greencuttlefish.com^$third-party
-!+ NOT_PLATFORM(windows, mac, android)
-||greencuttlefish.com^$third-party,~xmlhttprequest
-!+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
-||cpm.wargaming.net^$third-party
-!+ PLATFORM(windows, mac, android)
-||rgy1wk.ru^$third-party
-!+ PLATFORM(windows, mac, android)
-||vt4dlx.ru^$third-party
-!
 ||vadideo.com^$third-party
 ||aymcsx.ru^
 ||aurabom.ru^$third-party
@@ -3627,20 +3604,29 @@ thr.ru##.top_branding
 ||ztmol.club^$third-party
 ||zxrtn.com^$third-party
 ||zycvyudt.com^$third-party
-! VisitWeb ads
-! Example: http://svetmonet.ru/2098.html
-.space/xx?*&bid=$script,third-party
-http://*.*.pw/v/$third-party
-http://*.*.space/v/$third-party
-http://*.*.space/v?$third-party
-http://*.*.space/vv$third-party
-http://*.*.space/x?$third-party
-http://*.space/*&bid=$third-party
-http://v.*.com/*&bid=$third-party
-http://v.*.com/v/$third-party
-http://v.*.com/v?$third-party
-http://v.*.com/vv?$third-party
-http://v.*.com/x?$third-party
+!! Ads reinjection (For apps only)
+!+ PLATFORM(windows, mac, android)
+||ok9ydq.ru^$third-party
+!+ PLATFORM(windows, mac, android)
+||csp-oz66pp.ru^$third-party
+!+ PLATFORM(windows, mac, android)
+||d38dub.ru^$third-party
+!+ PLATFORM(windows, mac, android)
+||dsn-fishki.ru^$third-party
+!+ PLATFORM(windows, mac, android)
+||v6t39t.ru^$third-party
+!+ PLATFORM(windows, mac, android)
+||rcdn.pro^$third-party,xmlhttprequest
+!+ PLATFORM(windows, mac, android)
+||greencuttlefish.com^$third-party
+!+ NOT_PLATFORM(windows, mac, android)
+||greencuttlefish.com^$third-party,~xmlhttprequest
+!+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
+||cpm.wargaming.net^$third-party
+!+ PLATFORM(windows, mac, android)
+||rgy1wk.ru^$third-party
+!+ PLATFORM(windows, mac, android)
+||vt4dlx.ru^$third-party
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
@@ -4774,6 +4760,9 @@ narutoplanet.ru##.blog-featured > div.items-leading:has(div[style="text-align: c
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12450
 narutoplanet.ru##.art-layout-cell > div.art-block:has(> div.art-blockheader > div.t:contains(Рекомендуем))
 !
+!
+! dota2.ru - удаление отступа сверху
+dota2.ru#$#html:has(> body) > body > div[id] { background: #0B0B0D!important;padding: 0px 0 0 !important; }
 ! ixbt.com - удаление отступа сверху
 ixbt.com#$#html:has(> body) > body > div.b-content { margin-top: 0!important; }
 ! seasonvar.re - удаление отступа сверху
@@ -4844,6 +4833,7 @@ pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contai
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
 gamer-info.com#$#body > div[class]:matches-css(padding: 239px) { padding: 24px 0 50px 0!important; }
 !
+dota2.ru##.main-b-right-c-right > div[class]:has(> div > div[id^="yandex_rtb_"])
 domenolog.ru##.col-md-12 > div.col-md-7 > div[class="panel panel-default"]:has(> div[id^="yandex_rtb"])
 rp5.by,rp5.kz,rp5.ru,rp5.ua###content-data > div[id]:has(> div[id][class] > a:contains(Ρазмеcтить οбъявление))
 torrent-games.net###right > div[class="r_block3"]:has(> div:contains(Реклама))
@@ -6144,8 +6134,6 @@ espreso.tv#$##adriver_banner_content_wrap { width: 100%!important; }
 my-hit.fm#$#.content[-ext-has="> div"] { margin-top: 107px!important; }
 ! kino-teatr.ua - удаление брендированного фона
 kino-teatr.ua#$#body { background: none!important; }
-! dota2.ru - удаление отступа сверху
-dota2.ru#$#body > div[class]:first-child { background: #0B0B0D!important;padding: 0px 0 0 !important; }
 ! altapress.ru - удаление отступа сверху
 altapress.ru#$#.banner-top { height: 0px!important; }
 altapress.ru#$#.main-menu { top: 0px!important; }
@@ -7180,6 +7168,20 @@ rtl.*/init.js?$third-party
 ://v.*.info/v/$script
 ://*.*.biz/xa/$script
 ://*.*.info/v/$script
+! VisitWeb ads
+! Example: http://svetmonet.ru/2098.html
+.space/xx?*&bid=$script,third-party
+http://*.*.pw/v/$third-party
+http://*.*.space/v/$third-party
+http://*.*.space/v?$third-party
+http://*.*.space/vv$third-party
+http://*.*.space/x?$third-party
+http://*.space/*&bid=$third-party
+http://v.*.com/*&bid=$third-party
+http://v.*.com/v/$third-party
+http://v.*.com/v?$third-party
+http://v.*.com/vv?$third-party
+http://v.*.com/x?$third-party
 ! Example: http://www.traht.org/
 /static/bc.js?
 ! megatrack.info
@@ -8163,6 +8165,7 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+pcgramota.ru###text-4
 shazoo.ru##.brandingC
 shazoo.ru##.brandingClearfixC
 comnews.ru##.view-hp-upper-banners
