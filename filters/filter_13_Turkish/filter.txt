@@ -21,6 +21,7 @@
 !-------------- Advertising networks ---------------------------------------!
 !---------------------------------------------------------------------------!
 !
+||adsupp.network^$third-party
 ||an.yandex.ru^
 ||whatsappsohbetim.net^$third-party
 ||permato.com^$third-party
@@ -447,6 +448,26 @@ fox.com.tr###lbads
 kizlarsoruyor.com#%#window.canRunAds=!0;
 ! http://forum.adguard.com/showthread.php?7237
 @@||www.tahminkolik.com/advertisement.js
+!
+!
+! START: Yandex
+!
+! Yandex.Mail
+||mail.yandex.*/*/*-*-*-*-$replace=/Ya\[([0-9]{10\,15})\]\([\s\S]*\)\$/,script,important,domain=mail.yandex.com.tr
+!+ NOT_PLATFORM(windows, mac, android)
+@@||mail.yandex.$generichide
+!+ NOT_PLATFORM(windows, mac, android)
+@@||an.yandex.ru/system/context.js$domain=mail.yandex.com.tr
+!+ NOT_PLATFORM(windows, mac, android)
+@@||an.yandex.ru/partner-code-bundles/*.js$domain=mail.yandex.com.tr
+!+ NOT_PLATFORM(windows, mac, android)
+@@||an.yandex.ru/mapuid/tnscounter/?redir-setuniq=1&from=yan_oo-rtb-direct$domain=mail.yandex.com.tr
+!+ NOT_PLATFORM(windows, mac, android)
+@@||an.yandex.ru/mapuid/tnscounter/?from=yan_oo-rtb-direct$domain=mail.yandex.com.tr
+!
+! END: Yandex
+!
+!
 !---------------------------------------------------------------------------!
 !-------------- Extended CSS rules -----------------------------------------!
 !---------------------------------------------------------------------------!
@@ -3868,7 +3889,6 @@ iddaaliyiz.com##.navbar-default.navbar-fixed-bottom
 medyafaresi.com##.news > div.dtl > div.fea
 memuruz.net##.news-ads
 ulke.com.tr##.newsDetailsAdvertisingBanner
-mail.yandex.com.tr##.ns-view-banner
 karnaval.com##.one_bottom_bar
 turkrus.com##.orta_reklamlar
 sportbosstv.com##.ortalama > .sag
@@ -4817,6 +4837,16 @@ guncelgazete.com##td[width="215"][valign="top"] > table[width="200"][border="0"]
 ||zapkolik.vod.cubecdn.net/*.mp4^$domain=diziay.com|hdfilmakinasi.com
 ||zaytung.com/banner
 ||zaytung.com/images/alternatif_okullar.gif
+!
+!
+! START: Yandex
+!
+! Yandex.Mail
+mail.yandex.com.tr##.mail-DirectLine
+!
+! END: Yandex
+!
+!
 !---------------------------------------------------------------------------!
 !------ White list. Fixing filtration errors (false-positive)---------------!
 !---------------------------------------------------------------------------!
