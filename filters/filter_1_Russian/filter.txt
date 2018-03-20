@@ -4787,6 +4787,8 @@ narutoplanet.ru##.blog-featured > div.items-leading:has(div[style="text-align: c
 narutoplanet.ru##.art-layout-cell > div.art-block:has(> div.art-blockheader > div:contains(Рeкомендуем))
 !
 !
+! kinorezka.com - удаление отступа сверху
+kinorezka.com#$#html:has(> body) > body { margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13272
 fastpic.ru#$#html[-ext-has="> body"] { background: none!important; cursor: default!important; background: #ffffff!important; }
 ! fclmnews.ru - удаление отступа сверху
@@ -4864,7 +4866,7 @@ pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contai
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11445
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
-gamer-info.com#$#body > div[class]:matches-css(padding: 135px) { padding: 24px 0 50px 0!important; padding-bottom: 50px!important; }
+gamer-info.com#$#body > div[class]:matches-css(padding: 134px) { padding: 24px 0 50px 0!important; padding-bottom: 50px!important; }
 !
 gazeta.ru##.main_article .sausage:has(> div.sausage-header:contains(Новости партнеров))
 dota2.ru##.main-b-right-c-right > div[class]:has(> div > div[id^="yandex_rtb_"])
@@ -8208,6 +8210,17 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+bigserials.to##.sticky[style="height: auto; overflow: auto;"]
+://cdn.*.ru/cgi-bin/req.cgi?url=$domain=bigserials.to
+||cdn.net.ru/config.js
+||bigserials.to/uploads/static/center.js
+||bigserials.to/uploads/static/right.js
+||bigserials.to/uploads/static/left.js
+kinorezka.com##.brand
+||youtube.com^$domain=kinorezka.com
+lotzon.co##div[id^="banner-"]
+||kanobu.ru/api/*/|$~other
+kanobu.ru##div[style="width:240px;height:400px;"]
 baby.ru##.js-promo-fixed
 baby.ru##.grouped-banners
 gismeteo.ru##div[class^="media_frame"]
@@ -8414,7 +8427,7 @@ kg-portal.ru##a.paralink
 rbkgames.com##.modal.js-event-offer
 rbkgames.com##.modal-backdrop
 ||s.gamer-info.com/*.html?v=
-gamer-info.com##body > div[class][style] > a
+gamer-info.com##body > div[class] > * > a
 gamer-info.com##div[style*="width:728px;height:120px;"]
 gamer-info.com##body > div[class] > a[class]
 oilreview.kiev.ua###second_banner
@@ -15673,7 +15686,7 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.page-root > di
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12065
 ||mathb-ege.sdamgia.ru/*/*/*/$replace=/Ya\[([0-9]{10\,15})\]\([\s\S]*\)\$/,important,script,domain=mathb-ege.sdamgia.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11445
-||gamer-info.com^$replace=/\{padding:135px|padding-bottom:350px;/\{padding:24px/
+||gamer-info.com^$replace=/\{padding:13\dpx|padding-bottom:3\d\dpx;/\{padding:24px/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10631
 ||torrentstream.*/get?_v=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10426
