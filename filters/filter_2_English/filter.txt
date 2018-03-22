@@ -39,6 +39,7 @@
 !+ NOT_PLATFORM(windows, mac, android)
 ||rcdn.pro^$third-party,badfilter
 !
+||run-syndicate.com^$third-party
 ||modulepush.com^$third-party
 ||pipeschannels.com^$third-party
 ||adsrv4k.com^
@@ -1495,6 +1496,8 @@ j.gs#@##bottom
 !*
 !*****
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/13628
+@@||leechall.download^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13434
 @@||haaretz.com/dclk/dfp/test/show_all_dfp_ads.js
 haaretz.com#%#Object.defineProperty(window, 'AdBlockUtil', { get: function() { return; } });
@@ -5672,6 +5675,10 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 !---------------------------------------------------------------------
 !------------------------------ Chinese ------------------------------
 !---------------------------------------------------------------------
+pcstore.com.tw##div[class^="ad388zone"]
+pcstore.com.tw##.bestshop_ad
+pcstore.com.tw###id_index_ad_bimg
+zhongziso.com##a[style="display:block;width:100%;height:100%"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13323
 ||0302.pghwwjd.com/777dvd/98.js
 ||0302.pghwwjd.com/777dvd/gg.html
@@ -7641,6 +7648,13 @@ topsinhalamp3.com###sitbl > tbody > tr[-ext-has='a[href^="https://ylx-4.com"]']
 !---------------------------------------------------------------------
 !------------------------------ Taiwan -------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/13447
+cool3c.com##.col-xs-12 > [class="board board-page board-Cool3c_SuperBoard board-new clearfix"][data-board="Cool3c_SuperBoard"]
+cool3c.com##.col-xs-12 > [class="board board-article board-cool3c_superboard_article3 board-new clearfix"][data-board="cool3c_superboard_article3"]
+cool3c.com##.post-list > [class="board board-post board-cool3c_superboard_2 board-new clearfix"][data-board="cool3c_superboard_2"]
+cool3c.com##.post-list > [class="board board-post board-cool3c-super-board-home-1 board-new clearfix"][data-board="cool3c-super-board-home-1"]
+cool3c.com##.sticky-inner > [class="board board-side board-cool3c-home_300x250_2 board-new clearfix"][data-board="cool3c-home_300x250_2"]
+cool3c.com##.sticky-inner > [class="board board-side board-cool3c-homepage-TR300X250 board-new clearfix"][data-board="cool3c-homepage-TR300X250"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13298
 books.com.tw##.header_box_pop > [class^="flash_banner"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13235
@@ -9612,6 +9626,9 @@ eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv##body > div[id][styl
 ||servicer.mgid.com^$empty,third-party,important
 ||jsc.marketgid.com/*.js?t=$empty,important,~websocket
 !
+tw.yahoo.com###util-travelads
+h2mp3.com##.ads
+||h2mp3.com/d/as.php
 ||mirrorcreator.com/images/down_a.png
 mirrorcreator.com##center > a[href^="//www.mirrorcreator.com/fdown.php?"] > img
 mashable.com##.stories-strip > #stories-ad
@@ -10397,7 +10414,7 @@ movierulzfree.com##.ad_watch_now
 santabanta.com###right_336x280_ad
 m4ufree.co##a > img[title*="Free Download"]
 ||m4ufree.co/images/dl.png
-hollymoviehd.com,freeomovie.info,gomoviec.com,streamup.pro,bluemovies.co##.mvic-btn > a.btn-successful[target="_blank"]
+novamovie.net,hollymoviehd.com,freeomovie.info,gomoviec.com,streamup.pro,bluemovies.co##.mvic-btn > a.btn-successful[target="_blank"]
 ||watchputlocker.site/img/watch
 onlinewatchfree.cc,watchonlinemovie.rocks,watch24free.net,watchputlocker.site##.watch_now
 ||123movieson.com/img/*banner
@@ -15188,6 +15205,8 @@ protopage.com#%#(function(){var pageParams={};Object.defineProperty(window,"page
 !
 ! Exclusions for BlockAdBlock JS rule
 hyperdebrid.net#@%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
+! https://github.com/AdguardTeam/AdguardFilters/issues/13454
+@@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=mlive.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13375
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=sbs.com.au
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13476
