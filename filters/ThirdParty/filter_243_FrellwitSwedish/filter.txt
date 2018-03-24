@@ -26,6 +26,7 @@
 ||ascontentcloud.com^$third-party
 ||atemda.com^$third-party
 ||audience.systems^$third-party
+||bellmetric.net^$third-party
 ||bettersales.se^$subdocument,third-party
 ||blocket.se^$third-party
 ||boende.se^$third-party
@@ -99,6 +100,7 @@
 ||sprinklecontent.com^$third-party
 ||strossle.it^$third-party
 ||suntcontent.se^$third-party
+||telemetric.dk^$third-party
 ||tidningsnatet.se^$third-party
 ||tipser.com^$third-party
 ||tns-sifo.se^$third-party
@@ -149,15 +151,14 @@
 /sifo_msr.js^$script
 /sifo_analytics.js^$script
 /js/sifo.js^$script
-||youplay.se/*&action=client_side_impression&
-||youplay.se/*&action=adblock&
-||youplay.se/*&action=ad_requested&
+||youplay.se/track?
+||youplay.se/*&action=client_side_impression
+||youplay.se/*&action=adblock
+||youplay.se/*&action=ad_requested
 /monetization/ads-module/*
 /monetization/pixel-sdk/*
-||oas.*.se/om/1.js^$script
-||videoplaza.com/proxy/tracker?
-||videoplaza.tv/proxy/tracker?
-||youplay.se/track?
+||oas.*.se/om/$script
+||videoplaza.*/proxy/tracker?
 ||jifo.co/i/analytics/ga.js$script
 ||nordiskemedier.dk/banner/
 /blogs/log_pageview/*$script
@@ -179,7 +180,7 @@
 /emediate-responsive-wp-plugin/*
 /seenthis-hub/assets/js/hub-time-spent.js^$script
 ||episerver.net/*/epi-util/find.js$script
-||diu127fbe6pn6.cloudfront.net/*/master/analytics/ga-universal.html^$subdocument
+||diu127fbe6pn6.cloudfront.net^*/ga-universal.html$subdocument
 ||sdk.pulse.schibsted.com$script
 ||d11rmv9we9fli4.cloudfront.net/js/gigya/gigya.js^$script
 ||cdn.livechatinc.com/tracking.js$script
@@ -198,6 +199,7 @@
 ||susnet.se/susnetstat.js$script
 ||t.raptorsmartadvisor.com^$image
 ||bmbstatic.blob.core.windows.net^$script
+||widget.matklubben.nu/tracker$image
 ! Scams and malicious content
 .info/svt-se-nyheter/$document
 .info/dagens-nyheter/$document
@@ -770,6 +772,7 @@ autonytt.se##.start-leaderboard
 autonytt.se##.leaderboard
 autonytt.se##.feed_ad
 autonytt.se##a:if(.label:has-text(Sponsrad))
+autonytt.se##.article_widget_preview:if(h2 > a:has-text(Artikel i samarbete med))
 /cookie-consent-*.js$domain=motormagasinet.se|skyddosakerhet.se|food-supply.se
 /trckr/*$xmlhttprequest,domain=motormagasinet.se|food-supply.se|skyddosakerhet.se
 motormagasinet.se,food-supply.se,skyddosakerhet.se###junglebogen
@@ -800,6 +803,8 @@ vf.se##a[href="#bio"]
 ng.se##.sponsored-article-blurb-wrap
 ng.se##.panel-pane:if(.pane-title:has-text(SAMARBETEN))
 @@||ng.se^$generichide
+/users/*/*casino*$image,domain=ng.se
+/users/*/*minibanner*$image,domain=ng.se
 /nodecounter/*?token$image,domain=ng.se
 ||breakit.se/library/js/app.*AdManager.js$script
 ||breakit.solidtango.com^$subdocument
@@ -809,6 +814,7 @@ breakit.se##.monstermodule
 breakit.se##.sponsored
 breakit.se##div[class*="sponsored"]
 breakit.se##article.puff:has(.advert)
+breakit.se##.videoAd
 metro.se##div[class*="o-advert"]
 metro.se##.o-preview--ad
 metro.se##.o-preview--collab
@@ -887,19 +893,20 @@ hbl.fi,vastranyland.fi,ostnyland.fi##.type-advertorial
 ||vasabladet.fi/Scripts/karkimedia_init.js$script
 ||access.vasabladet.fi/6-pack/$subdocument
 /*annons*.png$domain=nvp.se
-/banners/*$domain=nvp.se|uppsalanyheter.se|muss.se
+/banners/*$domain=nvp.se|uppsalanyheter.se|muss.se|flashback.se
 nvp.se##[id*="Banner_PageList"]
 /caption_banner.gif$domain=nvp.se
 tasteline.com##li.article:if(.category:has-text(Samarbete))
 tasteline.com##.popup-overlay
 tasteline.com#$#.popup { overflow: auto !important; }
+/popup/follow-us-fb.$xmlhttprequest,domain=tasteline.com
 infoo.se##.content_wide_ads
 infoo.se##.line.orange
 pcgamer.se##div.wpb_text_column.wpb_content_element:if(h3:has-text(Sponsrade))
 kit.se##.isNative
 kit.se##.box--newsletter
 ||brain.kit.se^$xmlhttprequest
-||branschkoll.se/wp-content/uploads/wpbm-banners/$image
+||branschkoll.se^*/wpbm-banners/$image
 ||branschkoll.se/pagespeed_static/js_defer.*.js$script
 branschkoll.se##.advert-widget
 branschkoll.se##.ads
@@ -968,7 +975,6 @@ flashback.org###bottom-banner-container
 flashback.org###right-banner-container
 flashback.org##.post-banner-container
 flashback.se###top-banner
-||flashback.se/img/banners/
 mmanytt.se##.bannerTop
 mmanytt.se##.bannerHigh
 mmanytt.se##.bannerWide
