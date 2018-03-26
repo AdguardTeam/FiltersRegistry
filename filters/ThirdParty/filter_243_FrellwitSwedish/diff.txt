@@ -10,8 +10,12 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##sc
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##script:inject(abort-current-inline-script.js, adblockcookieExpire)
 ! bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##script:inject(abort-on-property-read.js, siteScripts.initAds) is excluded by: ##script:inject
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##script:inject(abort-on-property-read.js, siteScripts.initAds)
-! aftonbladet.se##script:inject(abort-current-inline-script.js, preLoadAds) is excluded by: ##script:inject
-aftonbladet.se##script:inject(abort-current-inline-script.js, preLoadAds)
+! aftonbladet.se##script:inject(abort-current-inline-script.js, preLoadAds, loadAd) is excluded by: ##script:inject
+aftonbladet.se##script:inject(abort-current-inline-script.js, preLoadAds, loadAd)
+! aftonbladet.se##script:inject(abort-current-inline-script.js, preLoadAds, setup) is excluded by: ##script:inject
+aftonbladet.se##script:inject(abort-current-inline-script.js, preLoadAds, setup)
+! aftonbladet.se##script:inject(setTimeout-defuser.js, (), 1000) is excluded by: ##script:inject
+aftonbladet.se##script:inject(setTimeout-defuser.js, (), 1000)
 ! klart.se##script:inject(abort-on-property-read.js, blockAdBlock) is excluded by: ##script:inject
 klart.se##script:inject(abort-on-property-read.js, blockAdBlock)
 ! dn.se##script:inject(setTimeout-defuser.js, bait) is excluded by: ##script:inject
@@ -20,6 +24,10 @@ dn.se##script:inject(setTimeout-defuser.js, bait)
 dn.se##script:inject(setTimeout-defuser.js, BlockAdBlock)
 ! dn.se##script:inject(abort-on-property-write.js, BlockAdBlock) is excluded by: ##script:inject
 dn.se##script:inject(abort-on-property-write.js, BlockAdBlock)
+! di.se##script:inject(nano-setInterval-booster.js) is excluded by: ##script:inject
+di.se##script:inject(nano-setInterval-booster.js)
+! di.se##script:inject(abort-current-inline-script.js, checkAdBlockEnabled) is excluded by: ##script:inject
+di.se##script:inject(abort-current-inline-script.js, checkAdBlockEnabled)
 ! mittkok.expressen.se##script:inject(abort-current-inline-script.js, adblock) is excluded by: ##script:inject
 mittkok.expressen.se##script:inject(abort-current-inline-script.js, adblock)
 ! mittkok.expressen.se##script:inject(abort-current-inline-script.js, burtSegments) is excluded by: ##script:inject
@@ -175,6 +183,8 @@ familjeliv.se##:xpath(//span[text()[contains(., 'Sponsrat')]]/ancestor::div[cont
 ! Invalid selector:
 akaskidor.se,svenskgolf.se,tidningenhalsa.se##:xpath(//div[text()[contains(., 'ANNONS')]]/ancestor::div[contains(concat(' ', @class, ' '), ' row--native ')]/parent::div)
 ! Invalid selector:
+fotbolldirekt.se,hockeysverige.se##a[href="https://www.svenskafans.com/betting/]
+! Invalid selector:
 vk.se,folkbladet.nu##:xpath(//div[text()[contains(., 'Annons')]]/parent::div)
 ! Invalid selector:
 thelocal.se##:xpath(//h2[text()[contains(., 'From our sponsors')]]/parent::div)
@@ -184,8 +194,6 @@ thelocal.se##:xpath(//h2[text()[contains(., 'From our sponsors')]]/parent::div)
 /adsLoader.*.js$script,first-party,domain=booli.se
 ! Invalid rule options:
 /telemetry/measure$xmlhttprequest,first-party,domain=momondo.se
-! Invalid rule options:
-/ub-ads/*$script,first-party,domain=isabellalowengrip.se|thereselindgren.se
 ! Invalid rule options:
 /antiblock.$script,stylesheet,first-party,domain=vmj.se|viseniorer.se|danskaspraket.se|digitalavykort.se
 ! Invalid rule options:
