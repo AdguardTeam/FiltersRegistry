@@ -206,6 +206,7 @@
 ||amazonaws.com/metapic-cdn/*/metapic.$script,stylesheet
 /ub-ads/providers/*$script
 /libs/cookieconsent2/*
+||gnuheter.com/creeper/image$image
 ! Scams and malicious content
 .info/svt-se-nyheter/$document
 .info/dagens-nyheter/$document
@@ -291,7 +292,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.s
 svd.se##.Ad
 svd.se##.AdWrapper
 svd.se##.Container--ad
-svd.se##.FlexEmbed
 svd.se##div[data-controller="newslettersubscription"]
 svd.se##.Teaser-adLabel
 svd.se##.Teaser--fullAdLabel
@@ -302,33 +302,29 @@ svd.se##.ContentLayout-extraColumnAd
 aftonbladet.se##.abTheme-ad
 aftonbladet.se##.abTheme-adSportbladet
 aftonbladet.se##.abTheme-infeedad
+aftonbladet.se###MegaAd
 aftonbladet.se##article:has(a[data-sponsored="true"])
 aftonbladet.se##a[data-test-id="inline-teaser"]:if(div[class]:has-text(ANNONS))
 aftonbladet.se##.abThemeBgTeaser:has(a[href*="kampanjer.aftonbladet.se"])
+aftonbladet.se##[id^="innerabAdArea"]
+aftonbladet.se##[id^="abAdArea"]
+aftonbladet.se,lajkat.se##.ab-responsive-ads-wrapper
+aftonbladet.se##.social-shares
 aftonbladet.se##.abBtnShare
 aftonbladet.se##.share-icons
 ||herokuapp.com^$third-party,domain=aftonbladet.se
 /rabattkod/*$image,domain=aftonbladet.se
-aftonbladet.se###MegaAd
 aftonbladet.se#$#html,body { overflow: auto !important; }
 /hyper-assets/*$script,domain=aftonbladet.se
 @@/hyper-assets/app.$script,domain=aftonbladet.se
 @@/hyper-assets/preload.$script,domain=aftonbladet.se
 @@||aftonbladet.se^$generichide
-aftonbladet.se##[id^="innerabAdArea-"]
-aftonbladet.se##.abAdArea
-aftonbladet.se##[id^="abAdArea"]
-aftonbladet.se##.ab-responsive-ads-wrapper
-aftonbladet.se##.social-shares
-! aftonbladet.se#$#* { filter: none !important; -webkit-filter: none !important; }
-! aftonbladet.se##:xpath(//h1[text()[contains(., 'Tack för att du läser Aftonbladet!')]]/parent::div[contains(concat(' ', @class, ' '), ' abThemeSolidPage ')])
 ||smartplugin.youbora.com/*/sp.min.js$script,domain=aftonbladet.se|svd.se
 /pulse-sdk-html*.min.js$script,domain=aftonbladet.se|svd.se
 omni.se##article.article--sponsored
-/ads?stage=$xmlhttprequest,domain=omni.se
+||omni-ads.omni.news^
 tv.nu##a[href*="adform.net"]
 ||logger.tv.nu^$script
-lajkat.se##.ab-responsive-ads-wrapper
 lajkat.se##.abLajkatPromotedContent
 /js/adxads.js$domain=lajkat.se
 /bundles/production/*/pbads/*$script,domain=playbuzz.com|lajkat.se
@@ -349,7 +345,7 @@ klart.se##.ad-wrapper
 klart.se##.cookie-disclaimer
 klart.se##.sponsor-message
 klart.se##a.content-link:has(.content-box-ad)
-||klart.se/assets/blockadblock-*.js$script
+||klart.se/assets/blockadblock$script
 ! BONNIER
 dn.se##.js-ad-sidebar
 dn.se##.nativeads-page
@@ -365,9 +361,9 @@ dn.se##body > iframe[style^="display"]
 /personalized/*$xmlhttprequest,domain=dn.se
 ||auth.dn.se/check-paywall$script
 /advertisement*.js$script,important,domain=dn.se
-||cfcdn.screen9.com/players/*/libs/streamsense.min.js$script,important,domain=dn.se
+||cfcdn.screen9.com^*/streamsense.min.js$script,important,domain=dn.se
 ||trackjs.com^$third-party,domain=dn.se
-||di.se/ditv/Content/Scripts/burt/burt-main.js$script
+||di.se^*/burt-main.js$script
 ||di.se/part/ads/$xmlhttprequest
 /Scripts/burt/*$script,domain=di.se
 ||personalized.di.se^$xmlhttprequest
@@ -680,14 +676,13 @@ viafree.se,viafree.no,viafree.dk,viafree.fi##.ad-click-through
 ! EVERYSPORT
 /js/lazyad-loader.min.js^$script,domain=tvmatchen.nu
 tvmatchen.nu###before-matches
-tvmatchen.nu###panorama
+svartgul.se,tvmatchen.nu###panorama
 tvmatchen.nu###clickable-bg
 tvmatchen.nu###triangel_ad
 tvmatchen.nu#$#.custom-background { background-image: none !important; }
 /js/smart-app-banner.$script,domain=svenskafans.com
 /js/sticky*.$script,domain=svenskafans.com
 /js/partners.js$script,domain=sporttv.nu
-svartgul.se###panorama
 svartgul.se##a[href*=".adsrv.eacdn.com"]
 fotbolldirekt.se,hockeysverige.se##.nyheter-featured:if(.datum:has-text(Sponsrat))
 fotbolldirekt.se,hockeysverige.se##.justnu_category:if(.datum:has-text(Sponsrat))
@@ -861,7 +856,6 @@ existenz.se,funfunfun.se##a[href*="bannerid"]
 existenz.se##p:has(a[href^="http://ads."])
 ||existenz.se^$object,object-subrequest
 ||existenz.se/img/prq.gif
-||gnuheter.com/creeper/image$image
 missatsamtal.se##.comment:has(.nosnaj)
 missatsamtal.se##.nosnaj:has(#top-nosnaj)
 missatsamtal.se##.nosnaj:has(#bottom-nosnaj)
@@ -873,9 +867,9 @@ norran.se##.js-cookie-information-bar
 norran.se##.banner
 norran.se##.adtech-ad
 norran.se##.ad
+norran.se##.ad-wrapper
 norran.se###cookie-info
 norran.se##.social-share__button
-||norran.se/pwk.php$script
 kimura.se##.ad
 kimura.se##.sidebar-section:has(.sidebar_ad)
 kimura.se##a[href*="unibet.com"]
@@ -921,6 +915,7 @@ tasteline.com#$#.popup { overflow: auto !important; }
 infoo.se##.content_wide_ads
 infoo.se##.line.orange
 pcgamer.se##div.wpb_text_column.wpb_content_element:if(h3:has-text(Sponsrade))
+pcgamer.se##a[href^="https://www.casino"]
 kit.se##.isNative
 kit.se##.box--newsletter
 ||brain.kit.se^$xmlhttprequest
