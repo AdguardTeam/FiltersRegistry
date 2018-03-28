@@ -1672,17 +1672,15 @@ streamapi.xyz#%#AG_onLoad(function() { if(typeof adBlockNotDetected !== "undefin
 itprotoday.com#$##body-wrapper { opacity: 1!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12352
 @@||pekalongan-cits.blogspot.co.id^$generichide
-! https://github.com/AdguardTeam/AdguardFilters/issues/12383
-@@||coinminer.mobi/assets/js/ads.js$domain=cpucap.com
-cpucap.com#%#window.ADSController = true;
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12382
 freeopenvpn.org#@#.adsbygoogle
 freeopenvpn.org#$#.adsbygoogle { position: absolute!important; left: -3000px!important; }
 @@||freeopenvpn.org/adsense.js
 freeopenvpn.org#%#window.adBlock = false;
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12386
-!+ PLATFORM(ios, ext_android_cb)
 @@||fileflares.com^$generichide
+@@||fileflares.com/ads.js
+fileflares.com#$#.adsbygoogle { height: 0px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12290
 moonbit.co.in#$##advert-space > iframe { height: 31px!important; }
 !+ PLATFORM(windows, mac, android)
@@ -5721,6 +5719,8 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 !---------------------------------------------------------------------
 !------------------------------ Chinese ------------------------------
 !---------------------------------------------------------------------
+99kubo.tv##.main > div[class="datal clear"]
+99kubo.tv##div[style^="width:300px;height:250px;"]
 feng.com##.dd305
 worldjournal.com##.banner-zone
 sina.cn#$#[data-href*="://sax"] { position: absolute!important; left: -3000px!important; }
@@ -5730,6 +5730,8 @@ pcstore.com.tw##div[class^="ad388zone"]
 pcstore.com.tw##.bestshop_ad
 pcstore.com.tw###id_index_ad_bimg
 zhongziso.com##a[style="display:block;width:100%;height:100%"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/13976
+@@||yesiget.i234.me^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13323
 ||0302.pghwwjd.com/777dvd/98.js
 ||0302.pghwwjd.com/777dvd/gg.html
@@ -8161,6 +8163,8 @@ youporngay.com#%#Object.defineProperty(window, 'loadPUscript', { get: function()
 ! END: Popular clickunders
 !**********************************
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/12386
+fileflares.com#%#(function() { window.open_ = window.open; var w_open = window.open, regex = /hicpm10.com/; window.open = function(a, b) { if (typeof a !== 'string' || !regex.test(a)) { w_open(a, b); } }; })();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13562
 putlockers.fm#%#AG_abortInlineScript(/jsc\.mgid\.com/, 'document.createElement');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13818
@@ -15082,9 +15086,6 @@ losslessbests.com##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10387
 !+ NOT_OPTIMIZED
 androidcentral.com##p > a[rel="nofollow"] > img
-! https://github.com/AdguardTeam/AdguardFilters/issues/12386
-!+ PLATFORM(ios, ext_android_cb)
-fileflares.com##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12324
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
 dz4soft.blogspot.com,dz4soft.blogspot.de##.adsbygoogle
@@ -17646,6 +17647,10 @@ iview.abc.net.au/programs$replace=/("type"\:"preroll")[\s\S]*("type")/"type"/
 ||93.189.62.10:45754/proxy
 /bidmatching.js$domain=openload.co|oload.stream|oload.tv|streamango.com
 ://*.bid^$third-party,domain=thevideo.ch
+! don't add `^` to these rules
+||freecontent.bid
+||freecontent.racing
+||freecontent.stream
 !
 ! first-party miners
 !
