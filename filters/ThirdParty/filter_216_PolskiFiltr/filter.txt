@@ -9,7 +9,7 @@
 ! Wsparcie: https://patronite.pl/polskiefiltry
 ! Last modified: 2 April 2018
 ! Expires: 1 day
-! OriginalVersion: 2018040203
+! OriginalVersion: 2018040207
 ! Support:
 !   Email >> errors@certyficate.it
 !   Discord >> http://ds.certyficate.it
@@ -17,7 +17,7 @@
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2018 Certyficate IT
 ! Najnowsza wersja zawsze na: https://www.certyficate.it/adblock
-! v.2018040203 aktualizacja: pon, 2 kwietnia 2018, 17:35:00
+! v.2018040207 aktualizacja: pon, 2 kwietnia 2018, 22:55:00
 !
 !
 !-----------------------Integration list with uBlock-----------------------!
@@ -364,8 +364,9 @@ anyfiles.pl###AllVideosLoadDiv > .media-list > .media > .thumbnail:not([title])
 anyfiles.pl##[class^="bp-wrapp"]
 anyfiles.pl##[id^="adsbox_"]
 anyfiles.pl###SearchVideosLoadDiv > .media-list > .media > .thumbnail:not([title])
-a-o.ninja###t_384218 > .panelHolder
-a-o.ninja##.region-content.region > p
+a-o.ninja##.region-content.region > center
+a-o.ninja##.content > center
+a-o.ninja##.textwidget > center
 apynews.pl##.featured-advert
 astratex.pl##[class^="bFix"]
 astropolis.pl##.jesion_image_topic_top
@@ -1446,6 +1447,8 @@ mojaolesnica.pl##DIV[style*="width: 966px; margin-top: 12px; margin-bottom: 15px
 mojapogoda.com###lower_header_right_area
 mojapogoda.com###upper_header
 mojeauto.pl###ma-top-layer
+moje-gniezno.pl##.headUnderMain.center.mobHide + .center
+moje-gniezno.pl##DIV[style^="position:relative;margin:0 auto;display:inline-block;width:"]
 mojlask.pl###text-2 > .textwidget
 mojlask.pl##[id*="ad_widget"]
 money.pl##A[href*="://direct.money.pl/o/salechannel.php"]
@@ -3161,6 +3164,7 @@ spottedlublin.pl#@#.share-container
 wpworld.pl,windowsowo.pl#@##adBanner
 !
 !14#---------------------------------Anti Adblock Rules element hide----------------------------------!
+##.scrolled.infoBlock
 12zawodnik.pl##.ads-checker-msg
 24opole.pl#@#.ad
 24gliwice.pl,wyborkierowcow.pl#@##adsense
@@ -3233,6 +3237,7 @@ minecraftpolska.net,pracawgdansku.com.pl#@#[id*="reklama"]
 minecraftpolska.net,pracawgdansku.com.pl#@##reklama
 mmorpg.org.pl,parezja.pl##.adsbygoogle
 nadajemy.pl###abp_info
+ocen-piwo.pl###osiemnascielat > div > h2:nth-of-type(2)
 przegladsportowy.pl,onet.pl,vod.pl,businessinsider.com.pl,komputerswiat.pl,plejada.pl,komorkomania.pl,noizz.pl,auto-swiat.pl#@#.trizer-bnr
 parezja.pl,demotywatory.pl###adblock_info
 pikio.pl##.adBlockDetectModal, .swal2-fade
@@ -3249,7 +3254,6 @@ przewodnikduchowy.pl##.col-md-8 > div:nth-of-type(2)
 pssite.com,ps3forum.pl###abl
 purepc.pl#@#[class*="reklama"]
 pzkosz.pl##.aside-ad-block
-##.scrolled.infoBlock
 senda.pl#@#.advert_box
 stylunio.pl##.blocked-info
 sucharry.pl###adb
@@ -3369,6 +3373,7 @@ zw.pl###abpnotzw
 @@||video.gazeta.pl/cdn/ads/ad/banner/_adsense_/_adserver/_adview_.ad.json$xmlhttprequest,domain=video.gazeta.pl
 @@||vod.pl^$generichide
 @@||webshark.pl/adserver/*advertise_check=1$script,domain=vider.info
+@@||wp.pl/do/*/dotn$image,domain=pilot.wp.pl
 @@||wpimg.pl/*/wpjslib-prebid.js$script
 @@||wtkplay.pl/javascript/ads.js$script
 @@||www.advert.com/advert$domain=moviesroom.pl
@@ -3613,7 +3618,7 @@ wp.tv##.y9xe8qn
 ||i.wp.pl/*/stg/wpjslib-nojq.js$script,domain=www.dobreprogramy.pl
 ||wpkoszyk.wp.pl/api/koszyk$xmlhttprequest
 ||xml.enovatis.pl/mrdsl/json.php$xmlhttprequest,domain=turystyka.wp.pl
-||v.wpimg.pl/$image,domain=money.pl
+||v.wpimg.pl/$image,domain=money.pl|open.fm
 !
 !33#--------------------------WP element hide------------!
 pilot.wp.pl##SCRIPT + DIV.row
@@ -3662,6 +3667,7 @@ www.wp.pl##DIV[class] > A[class][href*=".wp.pl/"] > DIV > [class][src^="https://
 !www.wp.pl###section_topnews > div:nth-of-type(1)
 www.wp.pl##.sc-kjoXOD
 www.wp.pl###newsfeed-player-column[class^="_3"] > DIV[class^="sc-"]
+www.wp.pl##SECTION#section_topnews > DIV[data-reactid="80"] > DIV[class] + DIV[class]
 !
 ! niepotrzebne ?
 www.wp.pl##[data-st-area="Stream"] > div > :nth-child(2) > :nth-child(2)
@@ -3735,7 +3741,6 @@ www.money.pl##DIV[style$=" z-index: auto;"] > DIV[class]
 www.money.pl##P + DIV[style$="padding:10px 0"]
 www.money.pl##SCRIPT[src^="//money"] + DIV[class][style="text-align:center;"]
 www.money.pl##div:nth-of-type(1) > .news > .news__items > .item:nth-of-type(1)
-!www.money.pl##DIV[class][style="display: block;"]
 money.pl##div[class]:if(>div[class]:first-child:has-text(REKLAMA):if-not(>*))
 !
 !36#--------------------------Easylist Bugs -----------!
