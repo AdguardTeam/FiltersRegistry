@@ -24,6 +24,8 @@
 !######### Annoying elements (not ads)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/14248
+||medicalnewstoday.com/structure/framework/main/article/mobile_newsletter_modal.php
 ! Annoying links inside the articles
 syl.ru##.intext
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13322
@@ -1968,7 +1970,6 @@ hardware.info#%#AG_onLoad(function() { $("#brTopContainer").remove(); } );
 hardware.info#$##brTopContainer { height: 0px!important; min-height: 0px!important; }
 !
 pornreactor.cc,joyreactor.cc,reactor.cc$$script[tag-content="typeof jr_js_loaded"][max-length="700"]
-pornreactor.cc,joyreactor.cc,reactor.cc$$script[tag-content="no_ab_domain="][max-length="1100"]
 pornreactor.cc,joyreactor.cc,reactor.cc#%#Object.defineProperty(document, 'write', { get: function() { return {}; } });
 !
 ! https://forum.adguard.com/index.php?threads/12129/
@@ -4911,39 +4912,6 @@ unutulmazfilmler.co##.widget-wrapper[-ext-has='.fb-like-box']
 sydneyweekender.com.au##div[class="four columns bgcolour"][-ext-contains="Facebook"]
 online-life.cc##div[style="height:10px;"] ~ div.block_title[-ext-contains="НАША ГРУППА"]
 !----------------------------------!
-!
-!---------- Anti-adblock ----------!
-joyreactor.cc,reactor.cc###pageinner > div[id][class][style][-ext-has='div > div[style="font-size:16px"]:contains(отключить его)']
-!----------------------------------!
-!
-!---------- Self promotion --------!
-! https://forum.adguard.com/index.php?threads/21769/
-soundcloud.com##.stream__list > div > ul.lazyLoadingList__list > li.soundList__item[-ext-has='> div.activity > div.streamContext[role="group"] > div.soundContext  > span[class*="sc-promoted-icon-"]']
-!
-xtremetop100.com###middleb a[href="#"][rel="nofollow"][-ext-contains="banner place is for sale"]
-pleer.ru##.mainBlock.pie[-ext-has=".banners_close"]
-pcgames.de##.textContainer > p[-ext-has='a[title$="Online-Abo"]']
-!----------------------------------!
-!
-!---------- Popups ----------------!
-buzzhand.com#$#.mash-lightbox[-ext-has="div"] { display: none!important; }
-buzzhand.com#$#body[-ext-has="div"] { overflow: visible!important; }
-!----------------------------------!
-!
-!---------- Push notifications ----!
-mail.ru##.tooltip div.tooltip__box[-ext-has="div"]
-!----------------------------------!
-!
-!---------- Widgets ---------------!
-! https://github.com/AdguardTeam/AdguardFilters/issues/7035
-auto-motor-und-sport.de##.b1 > .q141[-ext-has=">span.v-A_-headline:contains(Whatsapp)"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/5367
-aachener-zeitung.de###content > section > .tab-nav[-ext-has='ul > li > a:contains(Whatsapp)']
-! https://github.com/AdguardTeam/AdguardFilters/issues/5328
-pz-news.de##.nfy-content+aside.nfy-service > aside > section.nfy-sebox-multibox.nfy-merge-marked[-ext-has=">article > h3 > span:contains(Tages per WhatsApp)"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/5171
-morgenpost.de##.article--type-news > aside.article__aside[-ext-has="> div.sidebar__column > div.cross-heading > h3:contains(News per WhatsApp)"]
-!----------------------------------!
 !#######################################################
 !######### Low-attendance sites ########################
 !######### less then 30k visits/month ##################
@@ -5529,6 +5497,8 @@ edeka.de#@##smartbanner.android
 ! Specific sites
 !
 two-movies.net##div[aria-describedby="subscribeModal"]
+buzzhand.com#$#.mash-lightbox[-ext-has="div"] { display: none!important; }
+buzzhand.com#$#body[-ext-has="div"] { overflow: visible!important; }
 two-movies.net##.ui-widget-overlay
 choiz.me##.socialblock
 choiz.me###overlay
@@ -6454,6 +6424,7 @@ livelib.ru,lenta.ru,rambler.ru,sports.ru#%#(function() { if (typeof Notification
 sports.ru#%#(function() { try { if ("undefined" != typeof localStorage) { var a = { date: (new Date).toString(), time: (new Date).getTime(), data: 2 }; localStorage.setItem("sports:view:notifications-subscribe-popup:closed:count", JSON.stringify(a)) } } catch (ex) {} })();
 sports.ru#%#(function() { try { if ("undefined" != typeof localStorage) { var a = { date: (new Date).toString(), time: (new Date).getTime(), data: true }; localStorage.setItem("sports:view:notifications-subscribe-popup:view", JSON.stringify(a)) } } catch (ex) {} })();
 !
+mail.ru##.tooltip div.tooltip__box[-ext-has="div"]
 elmir.ua###subscribe-prompt
 ukraynahayat.com##.alerttt
 appleinsider.ru###pushbanner
@@ -7340,6 +7311,12 @@ tennistemple.com##.right > div.box_nd > div[id="300x250"]
 ! https://forum.adguard.com/index.php?threads/23073/
 themeforest.net##body > .preview__header
 !
+! https://forum.adguard.com/index.php?threads/21769/
+soundcloud.com##.stream__list > div > ul.lazyLoadingList__list > li.soundList__item[-ext-has='> div.activity > div.streamContext[role="group"] > div.soundContext  > span[class*="sc-promoted-icon-"]']
+!
+xtremetop100.com###middleb a[href="#"][rel="nofollow"][-ext-contains="banner place is for sale"]
+pleer.ru##.mainBlock.pie[-ext-has=".banners_close"]
+pcgames.de##.textContainer > p[-ext-has='a[title$="Online-Abo"]']
 girlfriends.xxx##.catfish-banner
 ||illicium.wmtransfer.com^
 coolutils.com###bottomBanner
@@ -7673,6 +7650,14 @@ mhealth.ru##.incut_readmore
 ||cvmarket.lv/infoblocks/$third-party
 ||widgets.digitalmediacommunications.com^$third-party
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/7035
+auto-motor-und-sport.de##.b1 > .q141[-ext-has=">span.v-A_-headline:contains(Whatsapp)"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/5367
+aachener-zeitung.de###content > section > .tab-nav[-ext-has='ul > li > a:contains(Whatsapp)']
+! https://github.com/AdguardTeam/AdguardFilters/issues/5328
+pz-news.de##.nfy-content+aside.nfy-service > aside > section.nfy-sebox-multibox.nfy-merge-marked[-ext-has=">article > h3 > span:contains(Tages per WhatsApp)"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/5171
+morgenpost.de##.article--type-news > aside.article__aside[-ext-has="> div.sidebar__column > div.cross-heading > h3:contains(News per WhatsApp)"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14136
 ||carambo.la^$third-party
 majorgeeks.com##div[style="height:340px;margin:0;padding:0;overflow:auto;"]

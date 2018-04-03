@@ -272,9 +272,17 @@
 !--- Fuck fuckAdBlock JS---
 hesaplama.net,unikampus.net,saglamindir.net,globalklavye.com#%#(function() { var noopfn = function() {;}; var Fab = function() {}; Fab.prototype.check = noopfn; Fab.prototype.clearEvent = noopfn;  Fab.prototype.emitEvent = noopfn; Fab.prototype.on = function(a, b) { if ( !a ) { b(); } return this; }; Fab.prototype.onDetected = function() {  return this; }; Fab.prototype.onNotDetected = function(a) { a(); return this; }; Fab.prototype.setOption = noopfn; var fab = new Fab(),  getSetFab = { get: function() { return Fab; }, set: function() {} }, getsetfab = { get: function() { return fab; }, set: function() {} }; if ( window.hasOwnProperty('FuckAdBlock') ) { window.FuckAdBlock = Fab; } else { Object.defineProperty(window, 'FuckAdBlock', getSetFab); } if ( window.hasOwnProperty('BlockAdBlock') ) { window.BlockAdBlock = Fab; } else {Object.defineProperty(window, 'BlockAdBlock', getSetFab); } if ( window.hasOwnProperty('SniffAdBlock') ) { window.SniffAdBlock = Fab; } else { Object.defineProperty(window, 'SniffAdBlock', getSetFab); } if ( window.hasOwnProperty('fuckAdBlock') ) { window.fuckAdBlock = fab; } else { Object.defineProperty(window, 'fuckAdBlock', getsetfab); } if ( window.hasOwnProperty('blockAdBlock') ) { window.blockAdBlock = fab; } else { Object.defineProperty(window, 'blockAdBlock', getsetfab); } if ( window.hasOwnProperty('sniffAdBlock') ) { window.sniffAdBlock = fab; } else { Object.defineProperty(window, 'sniffAdBlock', getsetfab); } })();
 !--- Fuck fuckAdBlock CSS---
-hesaplama.net,unikampus.net,saglamindir.net,globalklavye.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links {display:block!important;}
+guzelresimler.info,hesaplama.net,unikampus.net,saglamindir.net,globalklavye.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links {display:block!important;}
 !--------------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/13933
+driverdestek.com#%#AG_abortInlineScript(/google_ad_client/, 'document.addEventListener');
+!+ NOT_PLATFORM(windows, mac, android)
+@@||driverdestek.com^$generichide
+! https://github.com/AdguardTeam/AdguardFilters/issues/13775
+@@||cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js$domain=guzelresimler.info
+!+ PLATFORM(ios, ext_android_cb)
+@@||guzelresimler.info^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13491
 ||dogalvadi.com/modules/mod_ablockdetector/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13080
@@ -1545,6 +1553,9 @@ dunya.com$$li[class="swiper-slide"][tag-content="href=""http://ad.bilgin.pro"][m
 !
 !+ PLATFORM(ios, ext_android_cb)
 computerworld.com.tr##a[href="http://www.ifsworld.com/tr/"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/13933
+!+ NOT_PLATFORM(windows, mac, android)
+driverdestek.com##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5969
 !+ PLATFORM(windows, mac, android, ext_chromium)
 filmionlineizle.net##.fancybox-wrap
@@ -1601,6 +1612,9 @@ uicmail.com,185.85.75.229,elrabeh.com,r0j.org,terapisex.com,sinirsizsikisler.com
 toonssexfree.com,jvi8.com,pornofilmlistesi.com,porneda.com,gsicb.com,sexgw.com,konnova.com,tvocs.com,konuluporno.xn--6frz82g,tiw8.com,izporno.com##a[href^="tel:"] > img
 idstamper.com##.porno-izle > p[style*="background-color:"][style*="color:"]
 !
+ensonhaber.com##.cright > .mdl > a[href^="https://www.nefisyemek.com/"] > img
+haberler.com##.haberler-grids > .haberler-item#widgetet
+haberler.com##.haberler-grids > .haberler-item#milliyet_widget_div
 doktorsitesi.com###div_300_250_top
 canliperiscopeizle.com##.container.stream-layout div[style="display: flex"] a[target="_blank"] > img
 hizliadam.com###sidebar-alt > #text-36
