@@ -132,7 +132,6 @@
 /sifo_msr.js^$script
 /sifo_analytics.js^$script
 /js/sifo.js^$script
-||youplay.se/track?
 ||youplay.se/*&action=client_side_impression
 ||youplay.se/*&action=adblock
 ||youplay.se/*&action=ad_requested
@@ -208,14 +207,21 @@
 ##.nyhet_wrapper_annons
 ##.adtoma_container
 ##.eu_coookie_toolbar
+##img[alt="Spela på Betsson"]
 ! Site specific whitelists
 @@/js/advert.$script,domain=nwt.se|sla.se|mariestadstidningen.se
 @@/js/ads.js^$xmlhttprequest,domain=news55.se
 ! Common site specific blocking
+.*/*annons*.$image,domain=kurera.se|rumhemma.se|nvp.se
+.*/*banner*.$image,domain=etc.se|markbladet.se|tkj.se|kurera.se|guldkanalen.se|dansbandskanalen.se|rumhemma.se|rockkocken.se|vaken.se
+.*/*280x240*.$image,domain=rumhemma.se
+/banner*/*$image,domain=internetmedicin.se|dagenstv.com|etn.se|vinochmatguiden.se|lfc.nu|golfbladet.se|nvp.se|uppsalanyheter.se|muss.se|flashback.se|storvretaibk.se|metalcentral.net
+/banner*/*$subdocument,domain=sporttv.nu
 /mdt.min.js$script,domain=aftonbladet.se|dn.se|svtplay.se|expressen.se
 /glimr.min.js^$script,domain=dn.se|di.se|lajkat.se|politism.se|blocket.se|viivilla.se|aftonbladet.se
 ||herokuapp.com^$third-party,domain=aftonbladet.se
 ||youbora.com^$third-party,domain=aftonbladet.se|svd.se
+||apprl.com/embed/productwidget$subdocument,domain=metromode.se|majaelisabeth.com
 ! Facebook junk
 /facebook_sdk.js$script,domain=radioplay.se|njus.me
 /js/facebook_pixel.js$script,domain=lajkat.se
@@ -239,6 +245,7 @@
 /plugins/uk-cookie-consent/*$script,stylesheet
 /plugins/better-adsmanager/*$script,stylesheet
 /plugins/sticky-facebook-banner/*$script,domain=sportbibeln.se
+/plugins/sticky-facebook-banner/*$script,domain=newsner.com
 ! JWplayer analytics/ad scripts
 ||ssl.p.jwpcdn.com^*/jwpsrv.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se|svd.se|muscles.se
 ||ssl.p.jwpcdn.com^*/vast.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se
@@ -471,6 +478,11 @@ nwt.se,sla.se,mariestadstidningen.se##a[href*=".se/annons/"]
 |http://kampanj.$domain=nwt.se|sla.se|mariestadstidningen.se
 skd.se,laholmstidning.se,nsk.se##div.skd-crsl-wrap:matches-css-before(content: Annons)
 /sponsrat-frequency.js^$script,domain=skd.se|laholmstidning.se|nsk.se
+vf.se##.ajax-ad-info
+vf.se##.text-ad-info
+vf.se##.article__top-ad
+vf.se##.cookie__info
+vf.se##a[href="#bio"]
 ! MITTMEDIA
 allehanda.se,arbetarbladet.se,bblat.se,avestatidning.com,dalademokraten.se,dt.se,fagersta-posten.se,gd.se,ltz.se,lt.se,na.se,norrteljetidning.se,nynashamnsposten.se,salaallehanda.com,st.nu,tidningenharjedalen.se,vlt.se,op.se##div.client-dialogue-plus
 /strossle-start-page-ad$xmlhttprequest,domain=allehanda.se|arbetarbladet.se|bblat.se|avestatidning.com|dalademokraten.se|fagersta-posten.se|gd.se|ltz.se|lt.se|na.se|norrteljetidning.se|nynashamnsposten.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se|op.se
@@ -505,7 +517,6 @@ nyteknik.se,dagensmedia.se,affarsvarlden.se,lag-avtal.se,arbetarskydd.se##.spons
 nyteknik.se###tws1
 ! NYHETER24GRUPPEN
 ||nyheter24.se^$csp=script-src 'self' 'unsafe-inline' 'unsafe-eval' youplay.se *.youplay.se *.nyheter24.se *.youtube.com *.twitter.com *.facebook.net *.facebook.com kwiss.me *.kwiss.me
-||stat.nyheter24.se
 /splash_iframe.html^$domain=nyheter24.se|fragbite.se|kwiss.me|tyda.se|synonymer.cc|filmtipset.se
 /splash_iframe_modette.html^$domain=nyheter24.se
 /splashy.html^$domain=hamsterpaj.net
@@ -647,7 +658,8 @@ viasatsport.se##div.libellus.is-visible
 @@||i-viaplay-com.akamaized.net/*_textad_$image,domain=viasatsport.se
 ||fwmrm.net^$image,important,domain=viasatsport.se|viafree.se
 @@||fwmrm.net/ad/$xmlhttprequest,domain=viasatsport.se|viafree.se
-@@||fwmrm.net/*MTG$script,domain=viasatsport.se|viafree.se
+@@||fwmrm.net/*MTG*HTML5$script,domain=viasatsport.se|viafree.se
+||fwmrm.net^*/linktag2.js$script,important,domain=viafree.se
 ||freewheel-mtgx-tv.akamaized.net^$media,image,domain=viasatsport.se|viafree.se
 viafree.se##.pause-ad
 viafree.se##.ad-click-through
@@ -684,11 +696,6 @@ gynning.net##[id^="post-"]:if(h3:has-text(I SAMARBETE MED))
 thereselindgren.se,gynning.net,ellinorlofgren.se,majaelisabeth.com,annsoderlund.com,sannafischer.se,teresagrundin.se,sannalundell.se,frureinhold.se,fridaselkirkblogg.se,akerstromsblog.com,emmagreen.se,pennyparnevik.com,hormonerhemorrojder.se,fokis.se,pingishadenius.com,fredagskocken.se,magnusnorman.com##[id^="post-"]:has(.sponsored-notification)
 majaelisabeth.com##.apprl-title
 ! ÖVRIGT
-.*/*annons*.$image,domain=kurera.se|rumhemma.se|nvp.se
-.*/*banner*.$image,domain=etc.se|markbladet.se|tkj.se|kurera.se|guldkanalen.se|dansbandskanalen.se|rumhemma.se|rockkocken.se
-.*/*280x240*.$image,domain=rumhemma.se
-/banner*/*$image,domain=internetmedicin.se|dagenstv.com|etn.se|vinochmatguiden.se|lfc.nu|golfbladet.se|nvp.se|uppsalanyheter.se|muss.se|flashback.se|storvretaibk.se
-/banner*/*$subdocument,domain=sporttv.nu
 ||pji.nu^$third-party,domain=nordichardware.se
 nordichardware.se##div.td_block_text_with_title:if(h4 > span:has-text(Från Surfa))
 nordichardware.se##.wpb_text_column:has(.surfamodul-blocktitle)
@@ -785,11 +792,6 @@ mobil.se##.ad
 mobil.se##.section-jobb-section-advertorials
 /lunchguiden*.png$domain=vk.se|folkbladet.nu
 vk.se,folkbladet.nu##.ad
-vf.se##.ajax-ad-info
-vf.se##.text-ad-info
-vf.se##.article__top-ad
-vf.se##.cookie__info
-vf.se##a[href="#bio"]
 24kalmar.se,24nybro.se,24emmaboda.se,24halmstad.se,24helsingborg.se,24blekinge.se,24malmo.se,24kristianstad.se,24trelleborg.se,24ystad.se,24uppsala.se##.article-partner-promotion
 24kalmar.se,24nybro.se,24emmaboda.se,24halmstad.se,24helsingborg.se,24blekinge.se,24malmo.se,24kristianstad.se,24trelleborg.se,24ystad.se,24uppsala.se##.mailform-overlay
 24kalmar.se,24nybro.se,24emmaboda.se,24halmstad.se,24helsingborg.se,24blekinge.se,24malmo.se,24kristianstad.se,24trelleborg.se,24ystad.se,24uppsala.se##.ads
@@ -869,7 +871,6 @@ dagensps.se##.mosaiq-poster
 ||fusion.dagensps.se^$script,image
 ||petrk.com^$third-party,image,domain=dagensps.se
 atl.nu,land.se,landlantbruk.se##[class*="--native"]
-/banner-$image,domain=vaken.se
 vaken.se##.banner
 thelocal.se##.ad-container
 thelocal.se##div[class*="section"]:if(div[class$="-label"]:has-text(Sponsored))
@@ -922,8 +923,7 @@ magasinetparagraf.se###large_banner
 sokmotorkonsult.se##.feature:has(a[href*="/sponsrade-lankar"])
 ||milansverige.se^$csp=script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.tvmatchen.nu *.wp.com
 /deadblocker-front.$script,stylesheet,domain=milansverige.se
-milansverige.se##.widget_text:has(a[href^="https://ads."])
-milansverige.se##.widget_text:has(a[href^="http://ads."])
+milansverige.se##.widget_text:has(a[href*="://ads."])
 @@||kurslitteratur.se^$generichide
 chef.se##.Blurb--native
 chef.se##.Ad
@@ -986,9 +986,9 @@ viivilla.se##.teaserblockdata:has(.teaser-sponsored-text)
 viivilla.se##.sp-article:has(.commercial-label)
 viivilla.se##div.row.item:has(.overlay-sponsor)
 viivilla.se###product-area
-/fusionadloader.min.js^$script,domain=viivilla.se
-/iframeadvloader.min.js^$script,domain=viivilla.se
-/adv_utils.min.js^$script,domain=viivilla.se
+/fusionadloader.$script,domain=viivilla.se
+/iframeadvloader.$script,domain=viivilla.se
+/adv_utils.$script,domain=viivilla.se
 ||allabolag.se/Assets/wallpaper/ad.html
 allabolag.se##article:has(.advert__mark)
 /sf_tracking.js^$script,domain=stayfriends.se
@@ -1004,7 +1004,6 @@ byggahus.se##.messagePartner
 metromode.se##.slick-item:has(.c-article__ad.advert)
 metromode.se##.js-blox-article:has(.c-article__ad.advert)
 metromode.se##.b-topshop
-||apprl.com/embed/productwidget/$subdocument,domain=metromode.se|majaelisabeth.com
 bike.se,klassiker.nu,vibilagare.se,husbilhusvagn.se,mopedgaraget.se,spelo.se##.banner
 foretagande.se##div.latestItemBody:has(a[href^="/artiklar-i-samarbete/"])
 medievarlden.se##.post-teaser--friend
@@ -1049,7 +1048,6 @@ njus.me##.article-list-item--sponsored
 byggnadsarbetaren.se##.ad
 @@||popmuzik.se^$generichide
 popmuzik.se##div[id^="bsa-block-"]
-||metalcentral.net/images/banners/$image
 nickelodeon.se##.ad-container
 ||btg.mtvnservices.com/aria/bentojs.js^$script,domain=nickelodeon.se
 ||btg.mtvnservices.com/aria/coda.html^$script,domain=nickelodeon.se

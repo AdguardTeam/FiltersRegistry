@@ -23,6 +23,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||it.tagslimit.com^$third-party
 ||ccbaehjabejaegdeebe.ru^$third-party
 ||d9c47b2e6aec5c8dbdab.date^$third-party
 ||win-window.win^$third-party
@@ -3803,6 +3804,21 @@ eurosport.ru,lifehacker.ru,examenpdd.com,all-episodes.tv,vesti.ru,livelib.ru,kan
 ensage-forum.ru,spec-komp.com#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
 ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
 !
+! Ads reinjection (XHR scripts)
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+@@||hdreactor.club^$jsinject,generichide
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+@@||neolove.ru^$generichide
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+@@||kg-portal.ru^$generichide
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+@@||hdpicture.ru^$generichide
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+@@||e-news.su^$generichide
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+@@||itog.info^$generichide
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+@@||hdreactor.club^$generichide
 ! reactor
 @@||reactor.cc^$generichide
 @@||pornreactor.cc^$generichide
@@ -8296,6 +8312,8 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+comedyportal.net###sidebar > div[align="center"]
+||fishki.net/informer$xmlhttprequest
 slivup.biz##.code11
 ||overclockers.ru/static/js/app-pip.js
 ||overclockers.ru/webservice/getPipPlace?pipId=
@@ -15822,6 +15840,8 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 !
 ! The content replacement rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/13038
+||fb.ru/*/*/*/*/*/$replace=/Ya\[([0-9]{10\,15})\]\([\s\S]*\)\$//,script,domain=fb.ru,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13644
 ||forexpf.ru/*/*/*/$replace=/Ya\[([0-9]{10\,15})\]\([\s\S]*\)\$/,important,script,domain=forexpf.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12971
@@ -15979,6 +15999,8 @@ ut-1.alexbranding.com,unitheme.net#@#[class^="adv-"]
 @@||vetton.ru^$jsinject,elemhide
 !#################
 !
+! fishki.net - исключаем обычные новости
+@@||fishki.net/informer*hot^$domain=fishki.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13701
 @@||out.pladform.ru/player?pl=$domain=seasonvar.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12714
