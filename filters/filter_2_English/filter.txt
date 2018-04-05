@@ -39,6 +39,9 @@
 !+ NOT_PLATFORM(windows, mac, android)
 ||rcdn.pro^$third-party,badfilter
 !
+||averoconnector.com^$third-party
+||uncyane.com^$third-party
+||bidrev.net^$third-party
 ||2pxg8bcf.top^$third-party
 ||preonesetro.com^$third-party
 ||omoukkkj.stream^$third-party
@@ -4667,6 +4670,9 @@ wolframclient.net#@#.adsbygoogle
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/14072
+add0n.com##.content tbody > tr:first-child:contains(Advertisement)
+add0n.com##.content tbody > tr:first-child:contains(Advertisement) + tr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14317
 seriouseats.com##.sidebar > div[id^="sidebar-bng-"][-ext-has='.ad-wrapper']
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13834
@@ -7411,6 +7417,8 @@ joujizz.com##.video-top-wrap > .sb
 !---------------------------------------------------------------------
 !------------------------------ Polish -------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/14334
+@@||tools.services.tvn.pl/_ads/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14264
 dobreprogramy.pl#%#AG_defineProperty('WP.gaf.loadAndRunBunch', { get: function() { return function() {}; }, set: function() {} });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14009
@@ -8221,7 +8229,7 @@ zi-m.com,downsub.com,xrivonet.info,linkrex.net,youtubemultidownloader.com,123mov
 xxxstreams.me,watchfreexxx.net,playpornfree.org,pandamovie.co,losporn.net,namethatpornstar.com,demogame.org,bayimg.com,playpornfree.net,mangoporn.net,torrage.com,youwatchporn.com,watchfreexxx.net,verpeliculasbuenas.com,pornfree.me,4porno.com.br,movieporn.me,bayfiles.net,speedporn.net,videoporno.com,goldboard.org,configspc.com,peliculasactuales.com,gimblethorn.comunidades.net,cinemabrasileiro.comunidades.net,pornmix.org,3dlolicon.com#%#Object.defineProperty(window, 'jsUnda', { get: function() { return; } });
 !
 ! For scripts, which uses base64
-bro.adca.st,jpost.com,convert-me.com,keezmovies.com#%#window.atob = function() { };
+force-download.es,bro.adca.st,jpost.com,convert-me.com,keezmovies.com#%#window.atob = function() { };
 !
 ! phantomPopunder
 shooshtime.com,streaming-porn.org,drtuber.com,planetsuzy.org#%#Object.defineProperty(window, 'phantomPopunder', { get: function() { return {}; } });
@@ -8283,6 +8291,8 @@ youporngay.com#%#Object.defineProperty(window, 'loadPUscript', { get: function()
 ! END: Popular clickunders
 !**********************************
 !
+! backin.net popunder
+backin.net#%#(function() { window.open_ = window.open; var w_open = window.open, regex = /hitcpm.com/; window.open = function(a, b) { if (typeof a !== 'string' || !regex.test(a)) { w_open(a, b); } }; })();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14306
 cpmlink.net#%#AG_abortInlineScript(/popstate\.net/, 'history.pushState');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13827
@@ -9830,6 +9840,7 @@ eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv##body > div[id][styl
 ||servicer.mgid.com^$empty,third-party,important
 ||jsc.marketgid.com/*.js?t=$empty,important,~websocket
 !
+gogoanime.to##a[href*="/go?"] > img
 seriouseats.com##.entry-body > .product-widget
 ||hutimg.com/hutf.js
 ||plumperporn.xxx/css/ubr.js
@@ -15265,7 +15276,7 @@ lxax.com###parrot
 ||zorwrite.com/*/Tag.a1b$domain=itechpost.com
 ! Popads
 ://*.bid^$script,third-party,domain=streamjav.net|cndfandres64.blogspot.de|cndfandres64.blogspot.com|cndfandres64.blogspot.com.au|tellnews.club|xxxmax.net|watchfreexxx.net|speedporn.net|filmlinks4u.is|needgayporn.com|gaypornmasters.com|uploadbank.com|clicknupload.org|ouo.press|cryptosmo.com|datoporn.co|alantv.com|xclusivejams2.com|123movies.kim|123gomovies.info|watchonlinemovie.in|dir50.com|kat.how|openload.co|thepiratebay.org|vshare.eu|psarips.com|123videos.tv|ouo.io|hentaiz.net|apkmirrorfull.com
-/^https?:\/\/www\.[a-z]{8,14}\.(bid|club|co|com|me|pro|info)\/[a-z]{1,12}\.js$/$script,third-party,domain=seelive.me|realtimetv.me|xxxstreams.me|animeforce.org|baixarsoftware.com|vipbox.fi|linx.cloud|emp3c.co|streamporn.me|2ddl.io|pandamoviehd.me|speedporn.net|youwatchporn.com|chaturbacumgirls.net|oke.io|vipbox.st|2ddl.unblocked.vc|gaypornwave.com|batshort.com
+/^https?:\/\/www\.[a-z]{8,14}\.(bid|club|co|com|me|pro|info)\/[a-z]{1,12}\.js$/$script,third-party,domain=300mbfilms.co|seelive.me|realtimetv.me|xxxstreams.me|animeforce.org|baixarsoftware.com|vipbox.fi|linx.cloud|emp3c.co|streamporn.me|2ddl.io|pandamoviehd.me|speedporn.net|youwatchporn.com|chaturbacumgirls.net|oke.io|vipbox.st|2ddl.unblocked.vc|gaypornwave.com|batshort.com
 /^http?:\/\/[a-z]{8,14}\.(bid|club|co|com|me|pro|info)\/[a-z]{1,12}\.(aspx|php|html|htm)\?r=[0-9]{1}[\s\S]*v=/$script,third-party,domain=realtimetv.me|seelive.me
 !
 !
@@ -17863,6 +17874,8 @@ iview.abc.net.au/programs$replace=/("type"\:"preroll")[\s\S]*("type")/"type"/
 !
 ! first-party miners
 !
+||m4.cdn-jquery.host/pocex.js
+||m4.cdn-jquery.host/lib/hyppo.wasm
 ||cdn.akubebas.com/js/ch.js
 macizlee.net,fiisports4.com,justintvizletir.tv#%#Object.defineProperty(window, 'WebAssembly', { get: function() { return; } });
 ||wilf.cn/wp-content/plugins/simple-monero-miner-coin-hive^
@@ -54347,6 +54360,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||lqaqfklrgnr.bid^$third-party
 ||lqdrlzunrgma.bid^$third-party
 ||lqfbxvmq.bid^$third-party
+||lqfolelqvc.com^$third-party
 ||lqhnrsfkgcfe.com^$third-party
 ||lqipfyknwlo.com^$third-party
 ||lqiublivx.bid^$third-party
@@ -57030,6 +57044,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||xmbyoyvs.bid^$third-party
 ||xmmnwyxkfcavuqhsoxfrjplodnhzaafbpsojnqjeoofyqallmf.com^$third-party
 ||xmoyoxsx.com^$third-party
+||xmsgobwy.com^$third-party
 ||xmwqbnrbvghq.bid^$third-party
 ||xnmphtmerao.bid^$third-party
 ||xnuuzwthzaol.com^$third-party
