@@ -3806,6 +3806,8 @@ eurosport.ru,lifehacker.ru,examenpdd.com,all-episodes.tv,vesti.ru,livelib.ru,kan
 ensage-forum.ru,spec-komp.com#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
 ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/14314
+@@||letyshops.com/advert.js
 ! Ads reinjection (XHR scripts)
 !+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
 @@||svpressa.ru^$generichide
@@ -4340,11 +4342,12 @@ vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!importa
 @@||capricornus.cc/*/iframe$elemhide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3087
 /overclockers\.ru\/.+\/(?!getPipPlace\?)|forums\.overclockers\.ru\/.+|overclockers\.ru\/?/$/$replace=/\\$\("body"\).html\(.+?("\);)/,~script,~stylesheet,important
+!+ NOT_OPTIMIZED
 overclockers.ru#$#.top-an { position: absolute!important; left: -3000px!important; }
 @@||loader.adrelayer.com/load.js$domain=overclockers.ru
 @@||adservice.google.ru/adsid/integrator.js$domain=overclockers.ru
 ||rotor.overclockers.ru/www/delivery/asyncjs.php$empty,important
-!+ PLATFORM(ios, ext_safari, ext_android_cb, ext_ublock)
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari, ext_android_cb, ext_ublock)
 @@||rotor.overclockers.ru/www/delivery/asyncjs.php
 !overclockers.ru#%#document.addEventListener('DOMContentLoaded', function(){ window.$.fn.htmlreadonly = window.$.fn.html; window.$.fn.html = function(){ return this.htmlreadonly(); }; });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3011
@@ -5028,23 +5031,19 @@ pr-cy.ru##.main-content > div.row.hidden-xs.hidden-sm > div.col-sm-3[-ext-has='d
 pr-cy.ru##.row > div.col-sm-4 > div.index-talk[-ext-has='> h3.index-talk__title a[href="/advertising/"]']
 ! 4pda.ru
 ! фон на главной
-4pda.ru#$#html:has(> body[itemscope]) > body[itemscope] > div[id]:first-child > div[class]:first-child > div[class]:first-child > content { background: #e6e7e9!important; }
-4pda.ru#$#html:has(> body[itemscope]) > body[itemscope] > div[id]:first-child > div[class]:first-child > div[class]:first-child > section { background: #e6e7e9!important; }
-! баннеры сбоку и сверху
-! 4pda.ru##body[itemscope] > div[id]:first-child > div[class]:first-child > div[class]:first-child > div > div[class]:has(> section[notempty]) + div[class*=" "]
-! 4pda.ru##body[itemscope] > div[id]:first-child > div[class]:first-child > div[class]:first-child > div > div[class]:empty+div[class*=" "]:has(> section > article+aside:has(> *:empty))
-! под меню(можно искать по `баннерный блок`)
-4pda.ru##html:has(> body[itemscope]) > body[itemscope] > div[id]:first-child > div[class]:first-child > div[class]:first-child > * > div:empty+div:not(:empty):has( > section > aside > div:contains(баннерный блок))
-! баннеры на главной в правом столбце
 !+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
-! 4pda.ru##body[itemscope] aside[id] > div[class][-ext-has='iframe[style*="width:240px;height:400px;"]']
+4pda.ru#$#html:has(div[itemscope]) > body > div[id]> div[class] > div[class]:first-child > [id][-ext-has="> div"] { background: #e6e7e9!important; }
+! баннеры справа
 !+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
-! 4pda.ru#$#body[itemscope] aside[id] > div[class][-ext-has='a[rel="nofollow"]>img'] { position: absolute!important; left: -3000px!important; }
+4pda.ru##html:has(div[itemscope]) aside[id] > div[class]:has(> iframe[style*="width:240px;height:400px;"])
 !+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
-4pda.ru##body[itemscope] aside[id] > div[class][-ext-has='> h2:contains(AppPromo)']
-! Баннер на главной сверху
-!+ NOT_OPTIMIZED PLATFORM(android)
-! 4pda.ru#$#body[itemscope] > div[id]> div[class] > div[class]:first-child > div[-ext-has="> div"] { background: #e6e7e9!important; }
+4pda.ru##html:has(div[itemscope]) aside[id] > div[class]:has(> a[attach_id][rel="nofollow"] > img[height="400"])
+!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
+4pda.ru##html:has(div[itemscope]) aside[id] > div[class]:has(> h2:contains(AppPromo))
+! штступ под меню
+!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
+4pda.ru##html:has(div[itemscope]) > body > [id] > [class] > [class] > [id] > [class] div.visual:has(> a:matches-css(height: 150px))
+!+ NOT_OPTIMIZED NOT_PLATFORM(windows, mac, android)
 !
 ! baskino.club - удаление отступа сверху
 baskino.club#$#body.branding.active-native-holder[-ext-has="div"] { padding-top: 0px!important; }
@@ -5742,14 +5741,6 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua##html:has(> body) > body > d
 !------- JS ------------
 !-----------------------
 !
-!### TEMPORARY ###
-! Отключаем MutationObserver для предотвращения удаления стилей (не актуально)
-! https://github.com/AdguardTeam/AdguardFilters/issues/3840
-! news.mail.ru,hi-tech.mail.ru#%#window.MutationObserver = function() { this.observe = function() {}; this.disconnect = function() {}; };
-4pda.ru#%#if (typeof MutationObserver !== 'undefined') { MutationObserver.prototype.observe = function() {}; MutationObserver.prototype.observe.toString = function() { return "function observe() { [native code] }"; } };
-!fs.to#%#window.MutationObserver = function() { this.observe = function() {}; this.disconnect = function() {}; };
-!#################
-!
 !--- [START] Fixing AdFox constant page load ---
 ! Удаление iframe от баннера, иначе страница вечно грузится
 argumenti.ru#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="_adm_"]'); });
@@ -5898,11 +5889,6 @@ hronika.info#%#Object.defineProperty(window, 'NMimgIdPath', { get: function() { 
 politeka.net#%#window.atob = function() {};
 ! https://forum.adguard.com/index.php?threads/16833/
 game-fresh.com#%#document.cookie = "clickunder=1";
-! 4pda.ru - remove padding at the top
-4pda.ru#%#AG_onLoad(function() { $('img[src*=".gif"][width="1"][height="1"]').closest('article[class="post"]').remove(); });
-! https://forum.adguard.com/index.php?threads/16639/
-4pda.ru#%#AG_onLoad(function() { AG_removeElementBySelector('body > div[id^="r"] > div[class^="r"] > div[class^="r"] > div[class^="r"] > a[rel="nofollow"]'); });
-4pda.ru#%#AG_onLoad(function() { AG_removeElementBySelector('body > div[id^="r"] > div[class^="r"] > div[class^="r"] > div[class^="r"] > iframe[src^="http://s.4pda.to/"]'); });
 ! kinozal.me,kinozal.tv - break WS loader script
 kinozal.me,kinozal.tv,share-serials.net,zserials.tv#%#window.Worker = function() { this.postMessage = function() {} };
 ! kinopoisk.ru - удаление фонового изображения
@@ -6056,6 +6042,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! my-hit.org - удаление отступа сверху
+my-hit.org#$#.navbar-default { margin-bottom: 20px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13998
 pikabu.ru#$#.header__main { background-color: #8ac858!important; }
 pikabu.ru#$##branding_ad_footer { position: absolute!important; left: -3000px!important; }
@@ -6544,6 +6532,7 @@ anitokyo.tv#$#body { background: #e4f1f6!important; }
 anitokyo.tv#$#body > div#wrapper > header { margin: 0px 0 0 0!important; }
 ! overclockers.ru
 forums.overclockers.ru#$##hcol_banner { width: 130px!important; position: absolute!important; left: -3000px!important;}
+!+ NOT_OPTIMIZED
 forums.overclockers.ru#$#.needblock { position: absolute!important; left: -3000px!important; }
 ! https://forum.adguard.com/index.php?threads/13839/
 wi-fi.ru#$#body.noScroll { overflow: visible!important; position: relative!important; }
@@ -6988,12 +6977,8 @@ anidub-online.ru$$script[tag-content="+bname+brrand"][max-length="1200"]
 4pda.ru$$style[tag-content="background-image:url(//s.4pda.to/"][max-length="170"]
 ! 4pda.ru - removing top padding on the main page
 4pda.ru$$img[id="r"][src="data:image/gif;"][parent-elements="section"][parent-search-level="6"]
-4pda.ru$$img[src=".gif"][width="1"][height="1"][parent-elements="section"][parent-search-level="5"]
 ! 4pda.ru - removing ads in sidebar
 4pda.ru$$div[style="position: absolute; left: 0px; top: 0px; visibility: hidden;"][parent-elements="div"]
-4pda.ru$$iframe[src="http://s.4pda.to/"][style="width:240px;height:400px;"][parent-elements="div"]
-4pda.ru$$img[src="http://s.4pda.to/"][height="400"][alt=""][title=""][border="0"][parent-elements="div"]
-4pda.ru$$img[src="http://s.4pda.to/"][height="300"][alt=""][title=""][border="0"][parent-elements="div"]
 4pda.ru$$h2[tag-content="AppPromo"][parent-elements="div"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2573
 megatrack.info$$script[tag-content="teasernet_blockid"][max-length="120"]
@@ -8316,6 +8301,9 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+4pda.ru##.slider-nav > ul > li > a[data-dotrack][href*="honor"]
+trinixy.ru##.header-01
+forums.overclockers.ru##div[style^="text-align:center;"] > div[id^="yandex_ad_"]
 otzovik.com##div[id][class][lang="ru"] > div[class*=" "]
 otzovik.com##.product-header~div[class*="bottom"]
 otzovik.com###panel-right > div[id] > div[id][class*=" "]
@@ -8983,7 +8971,6 @@ rozetked.me##.right__images
 maanimo.com##div[id^="wrap-gpt-"]
 maanimo.com##center > a[href^="https://goo.gl/"] > img
 ||gotennis.ru/uploads/banners/
-4pda.ru##.slider-nav > ul > li[class] a[title="HONOR"]
 ||xatab-repack.net/images/600kh200.gif
 citysmile.org##center > a[rel="nofollow"] > img
 gametech.ru##.div_adv_min
@@ -15934,10 +15921,8 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 ! https://forum.adguard.com/index.php?threads/14794/
 ||ok.ru/videoembed/$replace=/promoMetadata/pormoMetadata/,important
 ||ok.ru/videoembed/$replace=/promoMetadata/pormoMetadata/
-! https://forum.adguard.com/index.php?threads/9567/
-!||s.4pda.to/*.css$domain=4pda.ru,replace=/@charset\s"windows-1251";body\{background:\s#.+?!important\}.+/,important
-!||s.4pda.to/*.css$replace=/background:\s*[#\(\)\,\w]+\s+url\(\s*(http:)?\/\/s\.4pda\.to\/\w+\.jpg[\?\/\.\*\|:\w]*\s*\)/background: #e6e7e9/
-!||s.4pda.to/*.css$replace=/background:\s*[#\(\)\,\w]+\s+url\(\s*(http:)?\/\/s\.4pda\.to\/\w+\.jpg[\?\/\.\*\|:\w]*\s*\)/background: #e6e7e9/,important
+! https://github.com/AdguardTeam/AdguardFilters/issues/14292
+||s.4pda.to/*.css$replace=/background:#b51754 url\("\/\/s.4pda.to\/[A-Za-z0-9]+.jpg"\)/background: #e6e7e9/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/615
 ||api.tree.tv/getreklama?$replace=/\[([\s\S])+]/[],important
 ||api.tree.tv/getreklama?$replace=/\[([\s\S])+]/[]
