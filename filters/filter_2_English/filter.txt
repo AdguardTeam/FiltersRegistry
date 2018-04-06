@@ -39,6 +39,7 @@
 !+ NOT_PLATFORM(windows, mac, android)
 ||rcdn.pro^$third-party,badfilter
 !
+||udriveme2.com^$third-party
 ||alxzes.com^$third-party
 ||gleaminist.info^$popup
 ||averoconnector.com^$third-party
@@ -1707,7 +1708,12 @@ majesy.com,magesy.eu,beelink.in#%#AG_defineProperty('jQuery.adblock', {value: fa
 minecraft-forum.net#%#window.ab = false;
 @@||minecraft-forum.net/v/adblock-detection-master/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12736
-thefreedictionary.com#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/ad-free subscription/.test(a.toString()))return b(a,c)};})();
+freethesaurus.com,thefreedictionary.com#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/ad-free subscription/.test(a.toString()))return b(a,c)};})();
+freethesaurus.com#%#window.adsbygoogle = { loaded: !0 };
+freethesaurus.com#@#.afs_ads
+freethesaurus.com#@#.TopBannerAd
+!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=freethesaurus.com
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
 ||thefreedictionary.com/_/tr.ashx?
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12529
@@ -4687,7 +4693,7 @@ wolframclient.net#@#.adsbygoogle
 ! Extended CSS rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14342
-thefreedictionary.com###sidebar > .widget:not([id]):has(>.holder > a[href])
+freethesaurus.com,thefreedictionary.com###sidebar > .widget:not([id]):has(>.holder > a[href])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14072
 add0n.com##.content tbody > tr:first-child:contains(Advertisement)
 add0n.com##.content tbody > tr:first-child:contains(Advertisement) + tr
@@ -7478,6 +7484,8 @@ joujizz.com##.video-top-wrap > .sb
 !---------------------------------------------------------------------
 !------------------------------ Polish -------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/14435
+allegro.pl##div[data-box-name*="carousel_ads"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14334
 @@||tools.services.tvn.pl/_ads/advert.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14264
@@ -9303,7 +9311,7 @@ gumtree.com.au#$#.header { margin-top: 0px!important; }
 ! https://forum.adguard.com/index.php?threads/resolved-primewire-ag.18353/
 primewire.ag#$#a[href^="/gohere.php?link="][style="display:inline !important;"] { position: absolute!important; left: -3000px!important; }
 ! https://forum.adguard.com/index.php?threads/http-thefreedictionary-com.25069/
-thefreedictionary.com#$#.content-holder > div[class]:empty { position: absolute!important; left: -3000px!important; }
+freethesaurus.com,thefreedictionary.com#$#.content-holder > div[class]:empty { position: absolute!important; left: -3000px!important; }
 thefreedictionary.com#$#.content-holder > div[class][style^="height:"]  { position: absolute!important; left: -3000px!important; }
 ! https://forum.adguard.com/index.php?threads/24987/
 javboss.com#$##preroll { display: none!important; }
@@ -9843,7 +9851,7 @@ google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,
 /frntldr.js$domain=gotgayporn.com
 !
 ! system.popunder
-eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv##body > div[id][style*="position: fixed"][style*="z-index"][style*="height:"][style*="height:"]:not(#container)
+vizer.tv,eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv##body > div[id][style*="position: fixed"][style*="z-index"][style*="height:"][style*="height:"]:not(#container)
 !
 ! For ad scripts, which are using onerror event
 ||octoclick.net/b/code/*.js$empty
@@ -9906,6 +9914,9 @@ eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv##body > div[id][styl
 !
 ||toots-a.akamaihd.net/priority/*Sponsor
 ||toots-a.akamaihd.net/priority/pushdown/SuzukiSwiftSR*/embed.js
+tube8.com##.gridBanner
+||worldsex.com/assets/js/thnb.js
+worldsex.com##.currently-blokje-block
 ||faselhd.com/promo_imgs/
 trannytube.tv##.b-secondary-column__banners
 youtrannytube.com##.banner-td
@@ -12104,9 +12115,9 @@ apkpure.com##.ad-right-600
 ramedium.com###admania_primarysidebar > #search-2 + #text-2 > .textwidget > p
 tmearn.com##.banner-inner
 thefreedictionary.com###Content_CA_AD_0_BC
-thefreedictionary.com###sidebar > a#trans_link + [id]
+freethesaurus.com,thefreedictionary.com###sidebar > a#trans_link + [id]
 thefreedictionary.com###sidebar > .widget + [class$="sticky"][style^="height:"]
-thefreedictionary.com###sidebar > .widget + [class$="sticky"]:empty
+freethesaurus.com,thefreedictionary.com###sidebar > .widget + [class$="sticky"]:empty
 downace.com##div[id*="ScriptRootC"]
 downace.com##div[class="uk-text-center"] > a[rel="nofollow"] > img
 a2zcrack.com##a[href*="https://goo.gl/"]
@@ -42094,7 +42105,6 @@ _popunder+$popup
 ##.oasads
 ##.ob_ads_header
 ##.ob_container .item-container-obpd
-##.ob_container a[data-redirect^="http://paid.outbrain.com/network/redir?"]
 ##.ob_dual_right > .ob_ads_header ~ .odb_div
 ##.ob_nm_paid
 ##.oba_message
@@ -44622,6 +44632,8 @@ _popunder+$popup
 ##a[data-oburl^="http://paid.outbrain.com/network/redir?"]
 ##a[data-oburl^="https://paid.outbrain.com/network/redir?"]
 ##a[data-redirect^="http://click.plista.com/pets"]
+##a[data-redirect^="http://paid.outbrain.com/network/redir?"]
+##a[data-redirect^="https://paid.outbrain.com/network/redir?"]
 ##a[data-redirect^="this.href='http://paid.outbrain.com/network/redir?"]
 ##a[data-url^="http://paid.outbrain.com/network/redir?"]
 ##a[data-url^="http://paid.outbrain.com/network/redir?"] + .author
@@ -52766,6 +52778,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||easnviytengk.com^$third-party
 ||easygatepr.bid^$third-party
 ||ebfjbrlcvjlv.com^$third-party
+||ebmoorfskily.com^$third-party
 ||ebnfsjxs.bid^$third-party
 ||ebrvuzqkq.bid^$third-party
 ||ebspiewapcta.com^$third-party
@@ -55590,6 +55603,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||qitumxisyt.com^$third-party
 ||qiurgfxexsmp.com^$third-party
 ||qixlpaaeaspr.com^$third-party
+||qiypdctaqiv.com^$third-party
 ||qiytksjydjmt.bid^$third-party
 ||qjaunokfxqi.bid^$third-party
 ||qjawhmlgsosg.bid^$third-party
@@ -60984,6 +60998,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||hotelsbycity.com^*/bannermtg.php?$third-party
 ||hotelscombined.com/SearchBox/$third-party
 ||hoteltravel.com/partner/$third-party
+||hotlink.cc/promo/$third-party
 ||hotlinking.dosmil.imap.cc^$third-party
 ||hqfootyad4.blogspot.com^$third-party
 ||hstpnetwork.com/ads/
@@ -62448,6 +62463,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||ptcdn.mbicash.nl^$third-party
 ||punterlink.co.uk/images/storage/siteban$third-party
 ||pussycash.com/content/banners/$third-party
+||pussysaga.com/gb/$third-party
 ||putana.cz/banners/
 ||rabbitporno.com/friends/
 ||rabbitporno.com/iframes/$third-party
@@ -70062,6 +70078,7 @@ stopthedrugwar.org###below-masthead
 rantsports.com###below-post
 viralthread.com###belowShare728x90
 radaronline.com###below_header
+tomsguide.com###below_the_article
 tgdaily.com###bestcovery_container
 dailygalaxy.com###beta-inner
 nigeriafootball.com###bettingCompetition
@@ -70358,6 +70375,7 @@ discovermagazine.com###cachee
 nickutopia.com###cad300
 zynga.com###cafe_snapi_zbar
 popsugar.com###calendar_widget
+tomsguide.com###calypso_below_article
 youthincmag.com###campaign-1
 preloved.co.uk###campaign-header
 care2.com###care2_footer_ads
@@ -71202,6 +71220,7 @@ livescience.com###in-article-1
 computerworlduk.com###inArticleRelatedArticles
 computerworlduk.com###inArticleSiteLinks
 audioz.eu###inSidebar > #src_ref
+tomsguide.com###in_article
 rawstory.com###in_article_slot_1
 rawstory.com###in_article_slot_2
 soccer24.co.zw###in_house_banner
