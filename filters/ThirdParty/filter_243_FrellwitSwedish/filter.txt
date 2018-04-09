@@ -25,6 +25,7 @@
 ||bellmetric.net^$third-party
 ||bettersales.se^$subdocument,third-party
 ||blocket.se^$third-party
+||bloglovin.com/widget/$third-party
 ||boende.se^$third-party
 ||boka.holiday^$third-party
 ||bonad.io^$third-party
@@ -195,6 +196,9 @@
 ||btikon.se/analytics.$xmlhttprequest
 ||btikon.se/btstats.$script
 ||static.influencersofsweden.se/js/inos.$script
+/ad/getNouw.$script
+||nouw.com/campaignpost/reg/$image
+||nouw.com/api/campaignpost$xmlhttprequest
 ! Scams and malicious content
 .info/svt-se-nyheter/$document
 .info/dagens-nyheter/$document
@@ -215,6 +219,8 @@
 ##.adtoma_container
 ##.eu_coookie_toolbar
 ##img[alt="Spela på Betsson"]
+##.swp-ad-strossle
+##.sw-popular__article--ad
 ! Site specific whitelists
 @@/js/advert.$script,domain=nwt.se|sla.se|mariestadstidningen.se
 @@/js/ads.js^$xmlhttprequest,domain=news55.se
@@ -239,7 +245,7 @@
 ||tm.tradetracker.net/tag?$script,important,domain=moviezine.se|agneswinqvist.se
 ! Unwanted Wordpress plugins
 /plugins/ad-inserter-pro/*$script,stylesheet,domain=rocknytt.net
-/plugins/bsa-pro-scripteo/*$script,stylesheet,domain=samnytt.se|popmuzik.se|magasinetparagraf.se
+/plugins/bsa-pro-scripteo/*$script,stylesheet
 /plugins/wp-banner-manager/*$script,stylesheet,domain=branschkoll.se
 /plugins/se-wordpress-native-article/*$script,stylesheet,domain=baaam.se|elle.se|elledecoration.se|ellematovin.se|femina.se|cafe.se|svenskdam.se|allas.se|allers.se|antikochauktion.se|aretrunt.se|allakorsord.se|chic.se|dromhemochtradgard.se|frida.se|hant.se|hemmets.se|mabra.com|matmagasinet.se|residencemagazine.se
 /plugins/se-wordpress-cookie-notice/*$script,stylesheet,domain=baaam.se|elle.se|elledecoration.se|ellematovin.se|femina.se|cafe.se|svenskdam.se|allas.se|allers.se|antikochauktion.se|aretrunt.se|allakorsord.se|chic.se|dromhemochtradgard.se|frida.se|hant.se|hemmets.se|mabra.com|matmagasinet.se|residencemagazine.se
@@ -255,6 +261,9 @@
 /plugins/sticky-facebook-banner/*$script,domain=sportbibeln.se
 /plugins/sticky-facebook-banner/*$script,domain=newsner.com
 /plugins/hustle/*$script,domain=yogaworld.se
+/plugins/adsanity/*$script,stylesheet
+/plugins/content-hub-wp-plugin/assets/js/hub-time-spent.$script
+/plugins/sw_ad_inserter/*$script
 ! JWplayer analytics/ad scripts
 ||ssl.p.jwpcdn.com^*/jwpsrv.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se|svd.se|muscles.se
 ||ssl.p.jwpcdn.com^*/vast.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se
@@ -814,6 +823,7 @@ ng.se##.panel-pane:if(.pane-title:has-text(SAMARBETEN))
 /nodecounter/*?token$image,domain=ng.se
 ||breakit.se/library/js/app.*AdManager.js$script
 ||breakit.solidtango.com^$subdocument
+||breakit.se/api/insight/event$xmlhttprequest
 breakit.se##.spnsr-widget
 breakit.se##.supportersSlideContainer
 breakit.se##.monstermodule
@@ -1132,3 +1142,6 @@ gotlandswebben.se##.header-ads-wrapper
 @@||saraabrahamsson.se^$generichide
 kamerabild.se##.partner
 firstfoto.se,alltommtb.se,cyclingplus.se,halsafitness.se,fitnessformen.se,macguiden.net##.this-is-an-ad
+@@||fannystaaf.se^$generichide
+||fannystaaf.se/about:blank$subdocument
+andreahedenstedt.se##article.post:has(.sw-sf-sponsor)
