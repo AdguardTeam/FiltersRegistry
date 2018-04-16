@@ -209,6 +209,7 @@
 /bmb-related-teasers$xmlhttprequest
 ||es.loppi.se/api/imp$xmlhttprequest
 ||kayak.xno.se^$script
+||service.survio.se^*/registerhit?$image
 ! Scams and malicious content
 .info/svt-se-nyheter/$document
 .info/dagens-nyheter/$document
@@ -249,6 +250,7 @@
 ||herokuapp.com^$third-party,domain=aftonbladet.se
 ||youbora.com^$third-party,domain=aftonbladet.se|svd.se
 ||apprl.com/embed/$subdocument,domain=metromode.se|majaelisabeth.com|trendenser.se
+||pji.nu^$third-party,domain=nordichardware.se|minhembio.com|idg.se
 ! Facebook junk
 /facebook_sdk.js$script,domain=radioplay.se|njus.me
 /js/facebook_pixel.js$script,domain=lajkat.se
@@ -321,6 +323,7 @@ svd.se##.Teaser-adLabel
 svd.se##.Teaser--fullAdLabel
 svd.se###AdSplashOverlayWindow
 svd.se##.ContentLayout-extraColumnAd
+!svd.se#@#script:inject(abort-on-property-write.js, SvD)
 /infopeek.min.js$domain=svd.se
 /pulse_flash_ad*.swf$object,domain=svd.se
 aftonbladet.se##.abTheme-ad
@@ -339,6 +342,7 @@ aftonbladet.se##.share-icons
 /rabattkod/*$image,domain=aftonbladet.se
 aftonbladet.se#$#html,body { overflow: auto !important; }
 @@||aftonbladet.se^$generichide
+@@||ad*.vg.no/check.js$script,domain=bloggar.aftonbladet.se
 /pulse-sdk-html*.min.js$script,domain=aftonbladet.se|svd.se
 omni.se##article.article--sponsored
 ||omni-ads.omni.news^
@@ -733,7 +737,6 @@ gynning.net##[id^="post-"]:if(h3:has-text(I SAMARBETE MED))
 thereselindgren.se,gynning.net,ellinorlofgren.se,majaelisabeth.com,annsoderlund.com,sannafischer.se,teresagrundin.se,sannalundell.se,frureinhold.se,fridaselkirkblogg.se,akerstromsblog.com,emmagreen.se,pennyparnevik.com,hormonerhemorrojder.se,fokis.se,pingishadenius.com,fredagskocken.se,magnusnorman.com##[id^="post-"]:has(.sponsored-notification)
 majaelisabeth.com##.apprl-title
 ! ÖVRIGT
-||pji.nu^$third-party,domain=nordichardware.se|minhembio.com
 nordichardware.se##div.td_block_text_with_title:if(h4 > span:has-text(Från Surfa))
 nordichardware.se##.wpb_text_column:has(.surfamodul-blocktitle)
 nordichardware.se##.td_block_wrap:if(span:has-text(/^Sponsrat/))
