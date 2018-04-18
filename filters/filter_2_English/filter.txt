@@ -4847,8 +4847,6 @@ wolframclient.net#@#.adsbygoogle
 !
 ! Extended CSS rules
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/12538
-facebook.com##div[id^="substream_"] div[id^="hyperfeed_story_id_"][-ext-has="div.a_gj-ys9gnc"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14783
 mirrorace.com##.uk-grid .uk-grid .uk-grid > .uk-row-first[-ext-has='a[href^="https://9xmovie.co/downloadm"]']
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14046
@@ -5047,7 +5045,7 @@ time.com##div[class="row vZMmMa_9"] > div[class="column small-12"] > div.row[-ex
 dailytelegraph.com.au##.widget-area-main-content > div.widget_newscorpau_capi_sync_collection > div.tgs-mosaicv2-rootwidget div.tgc-mosaicv2-slim-m_flex_child[-ext-has='> article.tge-cardv2 > a.tge-cardv2_wrapper[href="#"]']
 ! facebook.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8124
-facebook.com##div[id^="substream_"] > div > div[id] div[id^="hyperfeed_story_id_"]:has(div._5pcp._5lel > span > div > div > a[href="#"])
+facebook.com##div[id^="substream_"] > div > div[id] div[id^="hyperfeed_story_id_"]:has(div._5pcp._5lel > span > div > a[href="#"])
 ! https://forum.adguard.com/index.php?threads/facebook-com.21192/
 facebook.com##div[id^="substream_"] div[id^="hyperfeed_story_id_"][-ext-has='._5paw > a._3e_2[href^="https://l.facebook.com"]']
 ! https://forum.adguard.com/index.php?threads/movieonline-io-fake-button.24728/
@@ -7785,9 +7783,8 @@ weszlo.com#%#AG_abortInlineScript(/window\.open\(getUrl,/, 'jQuery');
 ! pcworld.pl - ads
 pcworld.pl#%#window.uabpdl = window.uabInject = true;
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11383
-@@||optyczne.pl/adsense.js
 a-o.ninja#%#Object.defineProperty(window, 'openload', { value: true });
-a-o.ninja#%#Object.defineProperties(window, { megaupload1: { value: true }, megaupload7: { value: true }, trap_active: { value: false }, sas: { value: [] } });
+a-o.ninja#%#Object.defineProperties(window, { megaupload1: { value: true }, megaupload7: { value: true }, adblockJsFile: { value: true }, sas: { value: [] } });
 ! freedisc.pl - antiadblock
 freedisc.pl#%#window.ads_unblocked = true;
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11032
@@ -9505,8 +9502,6 @@ buffstream.com#$#body.modal-open { overflow: visible!important; }
 vpnmentor.com#$##bio_ep { display: none!important; }
 vpnmentor.com#$##bio_ep_bg { display: none!important; }
 vpnmentor.com#$#body { overflow: visible!important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/8484
-msn.com#$#body > div.head { transform: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8406
 dailyfreebits.com#$#a[href^="//mellowads.com/"] { visibility: hidden!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8455
@@ -10717,8 +10712,9 @@ av8x.com,pornqd.net###preroll
 homewhores.net##.media_spot
 /homewhores.net\/[a-z]{1,2}[1-9]{1,4}[a-z]{1,2}[1-9]{1,4}[\s\S]*.js/$domain=homewhores.net
 homewhores.net##body > .top[style="text-align:center;font-size:16px;"]
-touch.facebook.com##.storyStream > article[data-store*="is_sponsored"][data-xt*="is_sponsored"]
-touch.facebook.com###MNewsFeed article[data-ft*="\"ei\":\""]
+! touch.facebook.com##.storyStream > article[data-store*="is_sponsored"][data-xt*="is_sponsored"]
+! touch.facebook.com###MNewsFeed article[data-ft*="\"ei\":\""]
+touch.facebook.com##article[data-sigil*="AdStory"]
 ||ikhedmah.com/images/ref-banners/
 ||evtubescms.phncdn.com/videos/*/mp4_480.mp4$important
 smutv.com##.spots
@@ -16245,6 +16241,16 @@ olx.com.om#@#.adLink
 @@||hitomi.la/limitlists.js
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_safari)
 @@||hitomi.la/moment-with-locales.js
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari)
+@@||hitomi.la/common.js
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari)
+@@||hitomi.la/jquery-ui/jquery-ui.min.js
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari)
+@@||hitomi.la/jszip.min.js
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari)
+@@||hitomi.la/FileSaver.min.js
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari)
+@@||hitomi.la/date.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8760
 @@||mhd.gittigidiyor.com/servlet/view/dynamic/javascript
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8951
@@ -18268,10 +18274,12 @@ iview.abc.net.au/programs$replace=/("type"\:"preroll")[\s\S]*("type")/"type"/
 !
 ! Another miners
 ! sample url for one of the miners: silimbompom.com/142711235a1c137.2.n.2.1.js
-!                                http://dzizsih.ru/0492012435a3a223.2.n.2.1.js
-!                           http://nddmcconmqsy.ru/7492512165a41313.3.n.2.1.l60.js
+!                                   http://dzizsih.ru/0492012435a3a223.2.n.2.1.js
+!                                   http://nddmcconmqsy.ru/7492512165a41313.3.n.2.1.l60.js
+!                                   http://jwduahujge.ru/0741703015aacf2.3.1.1.1.l80.js
 .n.2.1.js^$third-party
 .n.2.1.l60.js^$third-party
+.1.1.1.l80.js^$third-party
 !
 !
 ||aster18cdn.nl^$third-party
@@ -67724,12 +67732,15 @@ $script,domain=imx.to
 @@||google.com/recaptcha/$domain=hltv.org
 @@||hltv.gainskins.com^$domain=hltv.org
 @@||hltv.org/gallery/$xmlhttprequest,domain=hltv.org
+@@||hltv.org/live/$xmlhttprequest,domain=hltv.org
 @@||hltv.org/login$xmlhttprequest,domain=hltv.org
 @@||hltv.org/profile/$xmlhttprequest,domain=hltv.org
+@@||hltv.org/search?$xmlhttprequest,domain=hltv.org
 @@||hltv.org/usernamesearch?$xmlhttprequest,domain=hltv.org
 @@||notification-secure.hltv.org^$xmlhttprequest,domain=hltv.org
+@@||platform.twitter.com^$script,domain=hltv.org
 @@||scorebot-secure.hltv.org/socket.io/?$xmlhttprequest,domain=hltv.org
-|http*://$image,script,subdocument,third-party,domain=hltv.org
+|http*://$script,third-party,domain=hltv.org
 |http*://$xmlhttprequest,domain=hltv.org
 $image,third-party,xmlhttprequest,domain=rd.com
 ||kickass2.ch^$script,subdocument
