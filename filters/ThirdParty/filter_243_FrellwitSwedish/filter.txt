@@ -69,6 +69,7 @@
 ||leadenhancer.com^$third-party
 ||leiki.com^$third-party
 ||lokus.se^$third-party,~image,domain=~familj.se
+||mailerlite.com^$third-party
 ||mediekompaniet.com^$third-party
 ||mraffiliate.com^$third-party
 ||mtpc.se^$third-party
@@ -215,6 +216,10 @@
 ||kayak.xno.se^$script
 ||service.survio.se^*/registerhit?$image
 ||s3.amazonaws.com/cc.silktide.com/cookieconsent.$script
+||widget.mytaste.*/blogcounter$script,image
+||mytaste.org/js/parseForAds.js$xmlhttprequest
+/widget.hittarecept.se/blogcounter$script,image
+/js/iepngfix_tilebg.$script
 ! Scams and malicious content
 .info/svt-se-nyheter/$document
 .info/dagens-nyheter/$document
@@ -240,9 +245,12 @@
 ##img[alt="Spela på Betsson"]
 ##.swp-ad-strossle
 ##.sw-popular__article--ad
+###cookie_approve_banner
 ! Site specific whitelists
 @@/js/advert.$script,domain=nwt.se|sla.se|mariestadstidningen.se
 @@/js/ads.js^$xmlhttprequest,domain=news55.se
+@@||freeride.nu/js/ads.js^$script,domain=happyride.se|freeride.se
+@@||assets-cdn.mytaste.org/js/ads.js$script
 ! Common site specific blocking
 .*/*annons*.$image,domain=kurera.se|rumhemma.se|nvp.se|guldkanalen.se
 .*/*banner*.$image,domain=etc.se|markbladet.se|tkj.se|kurera.se|guldkanalen.se|dansbandskanalen.se|rumhemma.se|rockkocken.se|vaken.se|skrattnet.se
@@ -250,7 +258,7 @@
 .*/*280x240*.$image,domain=rumhemma.se
 /banner*/*$image,domain=internetmedicin.se|dagenstv.com|etn.se|vinochmatguiden.se|lfc.nu|golfbladet.se|nvp.se|uppsalanyheter.se|muss.se|flashback.se|storvretaibk.se|metalcentral.net|ja.se|skogsaktuellt.se|entreprenadaktuellt.se|e.se|maskinstationerna.se|agriprim.se
 /banner*/*$subdocument,domain=sporttv.nu
-/panorama.js$script,domain=ladydahmer.nu|bloggkommentatorerna.se|nickesfilmblogg.se|themoviefreak.se
+/panorama.js$script,domain=ladydahmer.nu|bloggkommentatorerna.se|nickesfilmblogg.se|themoviefreak.se|blogg.se
 /banners.js$script,domain=magasinetparagraf.se|entreprenor.se
 /mdt.min.js$script,domain=aftonbladet.se|dn.se|svtplay.se|expressen.se
 /glimr.min.js^$script,domain=dn.se|di.se|lajkat.se|politism.se|blocket.se|viivilla.se|aftonbladet.se
@@ -296,6 +304,7 @@
 /plugins/se-wordpress-cookie-notice/*
 /plugins/easy-eu-cookie-law/*
 /plugins/wysija-newsletters/*
+/plugins/statebuilt-facebook-page-like-popup/*
 ! JWplayer analytics/ad scripts
 ||ssl.p.jwpcdn.com^*/jwpsrv.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se|svd.se|muscles.se
 ||ssl.p.jwpcdn.com^*/vast.js$script,important,domain=eurosport.se|aftonbladet.se|gamereactor.se
@@ -1067,7 +1076,6 @@ matklubben.se##.notification.cookies
 @@||fiskejournalen.se^$generichide
 fiskejournalen.se##.blogindex-layout-large-post:has(.native-wrapper)
 /_banners/*$image,domain=kolozzeum.com
-@@||freeride.nu/js/ads.js^$script,domain=happyride.se|freeride.se
 happyride.se###a-panorama
 happyride.se###a-sidebar1
 vmj.se,danskaspraket.se,digitalavykort.se##.topdiv
@@ -1075,10 +1083,7 @@ viseniorer.se##.topheaderinfo
 ||fuska.se/media/js/td.js$script
 ||fuska.se/cdn-cgi/pe/bag2^$xmlhttprequest
 voodoofilm.org##.content-news:has(span[id*="Sponsored"])
-@@||assets-cdn.mytaste.org/js/ads.js$script
 mytaste.se##div[id*="panorama_"]
-||widget.mytaste.org/blogcounter.js^$script
-||mytaste.org/js/parseForAds.js$xmlhttprequest
 @@||newsner.com^$generichide
 newsner.com,humorbibeln.se###wsfb-container
 newsner.com,humorbibeln.se###share-buttons
@@ -1137,6 +1142,7 @@ opulens.se##.social-btn
 opulens.se##.google-plus
 opulens.se##.side-box.opule-widget
 landleyskok.se##.banner-leaderboard
+landleyskok.se##.category-sponsrat-inlagg
 professionalsecrets.se##div[data-campaign="newsletter"]
 /a?callback=pfMod.saveAdSettings$script,domain=zeinaskitchen.se
 kissies.se##article[id^="post-"]:has(img[class*="wp-image"][height="62"])
