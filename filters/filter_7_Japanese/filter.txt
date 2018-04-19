@@ -196,12 +196,13 @@
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14263
 avgirl.online#@#.google-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7918
-@@||avgle.com^$generichide,genericblock
-@@||ads.exosrv.com/ads.js$domain=avgle.com
-@@||adserver.juicyads.com/js/jads.js^$domain=avgle.com
-@@||dtscout.com^$domain=avgle.com
-@@||histats.com^$domain=avgle.com
 avgle.com#@#a[href*="/redirect"]
+avgle.com#@#iframe[width="300"][height="250"]
+@@||avgle.com/avideos.php
+@@||ads.exosrv.com/ads.js$domain=avgle.com
+avgle.com#@#a[href^="http://www.poweredbyliquidfire.mobi/"]
+@@||avgle.com/avideos.js
+@@||avgle.com/images.php
 !+ PLATFORM(windows, mac, android)
 ||isafe.pro/img/b_a.gif?$empty,important,domain=avgle.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9125
@@ -369,7 +370,6 @@ ogeji.hatenablog.com#$#.sleeping-ads {position: absolute!important; left: -3000p
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7918
 avgle.com#$#img[src^="https://isafe.pro"] { height: 35px!important; width: 100%!important; }
 avgle.com#$#iframe[src*="exosrv"] { height: 200px!important; }
-avgle.com#$#iframe[src*="juicyads"] { height: 10px!important; }
 !
 !-------------------
 !-------HTML--------
@@ -454,6 +454,12 @@ _ds_adtag_
 !
 ! Section contains rules for specific websites
 !
+||avgle.com/templates/frontend/p2p.js
+||static.avgle.com/media/av^
+avgle.com###player_3x2_container
+avgle.com###aoverlay
+avgle.com###ps32-container > center
+avgle.com###wrapper > div[style*="overflow"]:not([class]):not([id])
 bookbang.jp###footer_ban
 evidus.com##.module__adheadion
 nicovideo.jp##.realdabista_banner
@@ -486,9 +492,6 @@ javegg.com##.sidebar > .widget_text.sidebar-wrapper
 jadult.net##a[href^="https://goo.gl"]
 jadult.net##a[href^="http://www.adxpansion"]
 jadult.net##.icon_fb
-||avgle.com/images.php$domain=avgle.com
-||juicyads.com^$domain=avgle.com
-avgle.com##a[href^="http://pussl48.com"]
 repeat-drama.info##.ad
 mukulog.com##.theContentWrap-ccc > .head-cons2-pc
 mukulog.com##div[id^="side_ad"]
@@ -499,13 +502,6 @@ youflix.is###detail_side > div[style*="width:630px; margin:10px auto; overflow: 
 youflix.is##.movie-in-ad
 youflix.is##.over_videoAd
 youflix.is##.content_vlist .content_vlist[style^="height:305px; overflow:hidden;"]
-||dtsedge.com^$domain=avgle.com
-||adserver.juicyads.com/adshow.php^$domain=avgle.com
-||adx1.com^$domain=avgle.com
-||avgle.com/*/av^$domain=avgle.com
-avgle.com###player_3x2_container
-avgle.com###aoverlay
-avgle.com###ps32-container > center > div[style="width: 300px; height: 250px;"]
 ||image.getchu.com/afbanner/
 designnewsjapan.com###AD_BB
 chunichi.co.jp,tokyo-np.co.jp###Banner-area
