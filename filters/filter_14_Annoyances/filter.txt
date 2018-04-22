@@ -4718,6 +4718,9 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! wykop.pl - incorrect blocking on iOS
+!+ PLATFORM(ios, ext_android_cb)
+wykop.pl#@#div[class$="cookie"]
 ! bestcena.pl - incorrect blocking
 @@||bestcena.pl/includes/templates/*/jscript/*jquery.cookiebar.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14879
@@ -5565,6 +5568,8 @@ edeka.de#@##smartbanner.android
 !
 ! Generic rules
 !
+||salesmanago.pl/static/sm.js
+||salesmanago.pl/*/popups.js
 ||lazabu.ru^$third-party
 ||wasbetenhep.ru^$third-party
 ||gazsop.ru^$third-party
@@ -6537,6 +6542,7 @@ wallstreet-online.de,dni.ru,polit.info#%#if (window.PushManager) { window.PushMa
 livelib.ru,lenta.ru,rambler.ru,sports.ru#%#(function() { if (typeof Notification == 'undefined') { return; } Object.defineProperty(Notification, "permission", { get: function() { return "denied"; } }); })();
 !
 ! Third-party push-notifications
+||d3bo67muzbfgtl.cloudfront.net/edrone_2_0.js
 ||emarketingsuite.net^$third-party
 ||push.maribacaberita.com^
 ||iopushtech.com^$third-party
