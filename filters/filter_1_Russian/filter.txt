@@ -3903,7 +3903,14 @@ boylike.me#@##banner_ad
 !+ NOT_PLATFORM(windows, mac, android)
 @@||baby.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13127
+dni.ru$$script[tag-content="var sc = document.createElement"][max-length="400"]
+||dni.ru/*/*/*/*/*/$replace=/{"settings":.+/null;/,script,domain=dni.ru,important
+!+ NOT_PLATFORM(windows, mac, android)
 @@||dni.ru^$generichide
+!+ NOT_PLATFORM(windows, mac, android)
+@@||an.yandex.ru/system/context.js$domain=dni.ru
+!+ NOT_PLATFORM(windows, mac, android)
+@@||yastatic.net/pcode/adfox/loader.js$domain=dni.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12158
 @@||suj.li/assets/xnew/js/fuckadblock.js
 @@||suj.li^$generichide
@@ -4363,8 +4370,7 @@ vz.ru$$script[tag-content="document.write('<iframe src"][max-length="1500"]
 it-tehnik.ru,tsargrad.tv,mk.ru,ohotniki.ru$$script[tag-content=".AdvManager.render"][max-length="8000"]
 drive2.ru$$script[tag-content="static-mon.yandex.net/static/main.js"][max-length="1100"]
 ohotniki.ru,kakprosto.ru,drive2.ru$$script[tag-content="window.Ya.adfoxCode"][max-length="1800"]
-drive2.ru,drive2.com#%#AG_abortInlineScript(/window.Ya.adfoxCode.create/, 'Ya');
-e1.ru,vz.ru,avtovzglyad.ru,drive2.ru#%#(function() { var ce = document.createElement; Document.prototype.createElement = function(tag) { if (tag === 'YATAG') { throw null; } return ce.call(this, tag); }})();
+e1.ru,vz.ru,avtovzglyad.ru#%#(function() { var ce = document.createElement; Document.prototype.createElement = function(tag) { if (tag === 'YATAG') { throw null; } return ce.call(this, tag); }})();
 minigames.mail.ru,fishki.net#%#var empty = { get: function() { return []; }, set: function() {} }; Object.defineProperties(window, { yandex_context_callbacks: empty, yandexContextAsyncCallbacks: empty, yandexContextSyncCallbacks: empty });
 vz.ru,avtovzglyad.ru$$script[tag-content="window.Ya.adfoxCode.create"][max-length="1000"]
 kakprosto.ru$$script[tag-content="yaVideoInit"][max-length="3000"]
@@ -5006,15 +5012,11 @@ forum.cxem.net##form > article[id^="elComment_"][-ext-has='strong[itemprop="name
 ! https://forum.adguard.com/index.php?threads/15617/
 popmech.ru##div[class="content-aside-box"] > div.grid-cell.grid-cell__1[-ext-has=">div[data-banner-type]"]
 !
-drive2.ru##.l-page-main > div.c-block:has(> div.c-header:contains(Реклама))
-drive2.ru##.l-page-main > div.c-block--content:has(> div > div.c-com-dv-label > a[href="/business/"])
-drive2.ru##.l-page-main > div.js-entity:has(> div.c-block-card > div.c-block-card__body > div.js-entity-body > div.c-post-preview > div.o-group > span > a[href="/business/"])
-drive2.ru##.l-main.js-main div.c-block:has(> div.c-header:contains(Реклама))
-drive2.ru,drive2.com##div[data-adkind="relap"] > div.o-grid > div.o-grid__item[-ext-has='> div.c-rel-label > a[href="https://www.drive.ru/ad#teasers"]']
-drive2.ru##.l-page-main > div[class=""]:has(> div.c-block > div.c-header:contains(Реклама))
-drive2.ru###l-content > div.l-main.js-main > div.g-column-wide > div.c-block--base[-ext-has="a[href='/promo-details/']"]
-drive2.ru,drive2.com##.js-recommendations div.o-grid__item[-ext-has="div.js-teaser"]
+drive2.ru#$#.g-column-wide > div.c-block[-ext-has=".c-header:contains(Реклама)"] { position: absolute!important; left: -3000px!important; }
+drive2.ru#$#.c-block__fake-gap > div.c-block[-ext-has=".c-header:contains(Реклама)"] { position: absolute!important; left: -3000px!important; }
+drive2.ru##html:has(> body) > body > div.l-body > div.l-dv > div.l-dv__i
 drive2.ru##div[data-role^="recommendations"] .o-grid__item:has(div.c-post-card > div.c-post-card__body > div.c-post-card__caption > div.c-rel-label > a:contains(Реклама))
+drive2.com##.c-block[-ext-has=">h3:contains(Ads)"]
 !
 cyberforum.ru##.page > div[style][align="left"] > table[align="center"][-ext-has='> tbody > tr > td > div > div[id^="yandex_rtb_"]']
 !
@@ -5107,7 +5109,6 @@ riperam.org##td[valign="top"] > div.forabg[-ext-has='a[href^="http://epngo.bz/"]
 riperam.org##td[valign="top"] > div.forabg[-ext-has='a[href^="http://alipromo.com/cashback/"]']
 newstudio.tv###sideLeft > div[class="accordion-group"][-ext-has="h5:contains(seedbox.org.ua)"]
 fayloobmennik.net##.block_share_o div.block[-ext-has='div[align="center"] > h3:contains(Реклама)']
-drive2.com##.c-block[-ext-has=">h3:contains(Ads)"]
 news.vse42.ru##.footer div.col-md-3.col-sm-6[-ext-has="h3:contains(Реклама)"]
 journal-plaza.net##.leftside div.block.bnavi[-ext-has="h3.dtitle:contains(Реклама)"]
 anti-free.ru##.page > div[style] > fieldset[-ext-has='legend + div[align="center"] > a > img']
@@ -6155,6 +6156,9 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/14053
+drive2.ru#$#div[id^="adfox_"] { height: 100px!important; }
+drive2.ru#$#.c-block > div[class^="c-dv-"] { position: absolute!important; left: -3000px!important; }
 ! obozrevatel.com - удаление отступа сверху
 obozrevatel.com#$#header.header { margin-top: 0!important; }
 ! hdtennis.ru - удаление отступа сверху
@@ -8433,6 +8437,7 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+doklad.ru##div[id^="ad_"]
 ||a.audioboo.ru/js/*.js?r=
 forum.antichat.ru##.mainContent > div[class="section funbox"]
 animacity.ru##.b-block-xad
@@ -8687,8 +8692,6 @@ gameinside.ua##div[class^="ad-"]
 key.vst.in.ua###custom_html-3
 key.vst.in.ua##noindex > center > a[target="_blank"]
 key.vst.in.ua##body > center > a[target="_blank"]
-drive2.ru##a[data-target^="auto.ru"]
-drive2.ru##div[class*=" "][id][lang="ru"]
 ||latinpro.info/*.php?q=$script
 tsargrad.tv##div[id^="smi_teaser_"]
 tsargrad.tv##.news-list > h1.section-news__title
@@ -9518,7 +9521,6 @@ ura.news##div[ng-bind-html="item.right_banner"]
 ura.news##.partner
 ura.news###top_banner_A
 sport365.ws##.bg_banner
-drive2.ru##.cpc-card
 015.by,023.by,0312.ua,032.ua,0332.ua,0342.ua,0352.ua,0362.ua,0372.ua,0382.ua,0412.ua,04141.com.ua,0432.ua,04563.com.ua,04596.com.ua,04597.com.ua,04598.com.ua,0462.ua,0472.ua,048.ua,04868.com.ua,0512.com.ua,05136.com.ua,05161.com.ua,0522.ua,0532.ua,05366.com.ua,0542.ua,05447.com.ua,0552.ua,056.ua,0564.ua,0566.com.ua,0569.com.ua,057.ua,061.ua,06153.com.ua,0619.com.ua,0623.com.ua,06236.com.ua,06237.com.ua,06239.com.ua,06242.ua,06252.com.ua,06267.com.ua,06272.com.ua,06274.com.ua,06277.com.ua,0629.com.ua,0642.ua,06452.com.ua,1rnd.ru,3652.ru,3654.ru,3849.com.ua,44.ua,4594.com.ua,5692.com.ua,62.ua,6262.com.ua,6264.com.ua,65.media,7232.kz,8422city.ru,8692.ru,anapa.life,angarsk38.ru,ar.comoros24.com,bazhopol.ru,city01.am,city41.ru,citydomodedovo.ru,comoros24.com,go01.ru,go11.kz,go212.by,go216.by,go26.ru,go31.ru,go61.ru,godublin.info,golondon.info,goriga.info,gorod3466.ru,gorodarmavir.ru,gorodpushkin.ru,goshymkent.kz,inaktau.kz,inalmaty.kz,inastana.kz,inatyrau.kz,infolyubertsy.ru,inform69.ru,vilniuje.info,yocity12.ru##.banner
 /section/banners/upload/*$domain=015.by|023.by|0312.ua|032.ua|0332.ua|0342.ua|0352.ua|0362.ua|0372.ua|0382.ua|0412.ua|04141.com.ua|0432.ua|04563.com.ua|04596.com.ua|04597.com.ua|04598.com.ua|0462.ua|0472.ua|048.ua|04868.com.ua|0512.com.ua|05136.com.ua|05161.com.ua|0522.ua|0532.ua|05366.com.ua|0542.ua|05447.com.ua|0552.ua|056.ua|0564.ua|0566.com.ua|0569.com.ua|057.ua|061.ua|06153.com.ua|0619.com.ua|0623.com.ua|06236.com.ua|06237.com.ua|06239.com.ua|06242.ua|06252.com.ua|06267.com.ua|06272.com.ua|06274.com.ua|06277.com.ua|0629.com.ua|0642.ua|06452.com.ua|1rnd.ru|3652.ru|3654.ru|3849.com.ua|44.ua|4594.com.ua|5692.com.ua|62.ua|6262.com.ua|6264.com.ua|65.media|7232.kz|8422city.ru|8692.ru|anapa.life|angarsk38.ru|ar.comoros24.com|bazhopol.ru|city01.am|city41.ru|citydomodedovo.ru|comoros24.com|go01.ru|go11.kz|go212.by|go216.by|go26.ru|go31.ru|go61.ru|godublin.info|golondon.info|goriga.info|gorod3466.ru|gorodarmavir.ru|gorodpushkin.ru|goshymkent.kz|inaktau.kz|inalmaty.kz|inastana.kz|inatyrau.kz|infolyubertsy.ru|inform69.ru|vilniuje.info|yocity12.ru
 progoroduhta.ru##div[class^="Banner-"]
@@ -10034,7 +10036,6 @@ fainaidea.com##body > div.backstretch
 animaunt.ru##img[src="https://dummyimage.com/300x390/"]
 animaunt.ru##img[ng-src^="/assets/images/banners/"]
 gametech.ru##.banner
-drive2.ru##div#cseds > div[class=""]
 allhit.org##div[align="center"][style="margin-top: 20px;margin-left:20px;overflow:hidden;width:596px;height:310px;"]
 tvfru.org##a[href^="https://goo.gl/"] > img
 tvfru.org##div[id^="b_bn_"]
@@ -10076,7 +10077,6 @@ tass.ru##.b-other-news__title
 cyberforum.ru##tbody[id^="threadbits_forum_"] > tr:not([id^="vbpostrow_"])
 kinozz.club##.nakladka
 vfl.ru##a[href^="/r.php?id="]
-drive2.ru##div.l-main-column.g-column-mid > div[class=""]
 ||abireg.ru/ifiles/br/
 ||abireg.ru/swfimages/
 online-life.club##div[style="text-align: center;position: relative"] > span.cross_spec
@@ -10146,7 +10146,6 @@ realty.interfax.ru##.wide-banner
 versia.ru##.content > div.bannerholder
 eva.ru##.banner
 eva.ru##.yandex-adaptive
-drive2.ru##.l-main-column > div.c-pager~div[class=""]
 ||gigporn.org/contents/other/player/
 sport.ua##.b_position[id^="b_sport_"]
 ||darkside.ru/banners/
@@ -10217,7 +10216,6 @@ ipleer.fm###headerTopBanner
 kp.ru##.loadSection > div.boxFrame.w100
 ||syl.ru/misc/js/global/ab-detect.js
 ||syl.ru/article/matching_url|
-drive2.ru##.js-teaser
 weekend.rambler.ru##.b-reklama-superfooter
 snow-motion.ru##.banner
 snow-motion.ru##.reclame-top
@@ -11783,7 +11781,6 @@ dreamprogs.net##td[class^="ablo"] a[href^="http://bit.ly/"] > img
 dresk.ru##.footer_push > a[target="_blank"][rel="nofollow"]
 drimmi.com###applist
 drive.ru##.side-dv
-drive2.com##.c-block__fake-gap
 drive2.com##div[class=""] > .c-block
 drom.ru##.amayamaTire
 drom.ru##.b-media-cont_theme_adverts
@@ -16003,6 +16000,8 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12971
 ://goodgame.ru^|$replace=/"duration": \d\d/"duration": 0/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12262
+@@||drive2.ru^$generichide
+@@||an.yandex.ru/system/context.js$domain=drive2.ru
 ||drive2.ru/*/*/*/*/*/$replace=/{"settings":.+/null;/,script,domain=drive2.ru,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12803
 ||gorodrabot.ru/*/*/*/*/*/$replace=/Ya\s?\[([0-9]{10\,15})\]\([\s\S]*\)\$//,script,domain=gorodrabot.ru,important
