@@ -3678,6 +3678,7 @@ http://wq3.ru^$third-party
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
+||rekl.seasonvar.ru^
 ||js.rutor.net.pl^
 ://*.kuponykz.ru^$third-party
 ||s.avforums.ru^
@@ -5512,7 +5513,7 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua##html:has(> body) > body > d
 ##.MPU
 ##.SponsorCFrame
 ##.ad-block-240x400
-~bukkit.org##.ad-box
+##.ad-box
 ~assetbar.com##.ad-button
 ~arbetsformedlingen.se##.ad-container
 ##.ad-sputnik-wrapper
@@ -6159,6 +6160,10 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/12526
+torrentom.com#$#iframe[src^="blob:"] { position: absolute!important; left: -3000px!important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/15206
+ruclip.com,ru-clip.com#$##morev { position: absolute!important; left: -3000px!important; }
 ! zab.ru - удаление брендированного фона, отступа сверху
 zab.ru#$#body { background: #E6E6E6!important; margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14053
@@ -8445,9 +8450,11 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+||hibiny.com/advv_rek/
+hibiny.com##body > table[width="100%"][height="100%"] > tbody > tr[height="100"][style]
 doklad.ru##div[id^="ad_"]
 ||a.audioboo.ru/js/*.js?r=
-forum.antichat.ru##.mainContent > div[class="section funbox"]
+forum.antichat.ru##div[class*="Content"] > div[class="section funbox"]
 animacity.ru##.b-block-xad
 moymotor.ru##.h_reklama
 /z.php?id=*&r=$domain=kino-2018.club
@@ -8492,8 +8499,6 @@ liveinternet.ru##.j-li_sidebar-banner > *
 ||lomtor.com/sys/js/$third-party
 ||rustorrents.net/*.php?img
 ||stop-list.ru/sites/all/themes/stoplist/friends/
-tverigrad.ru##div[data-tdzcse] > div[class^="client_section"]
-tverigrad.ru##.tdzcse > div[class^="client_section"]
 newsyou.info##div[id^="gnezdo_ru"]
 newsyou.info##div[id^="bn_"]
 animedub.ru##a[href^="https://ad.admitad.com/"]
@@ -8571,7 +8576,7 @@ tvernews.ru##.banner
 ||tvernews.ru/banners/
 mhealth.ru##div[id^="unit_"]
 kg-portal.ru##.ten_side_banner_left
-ru-clip.com###morev
+ruclip.com,ru-clip.com###morev
 ||pluggedin.ru/bundles/app/images/banner-advertisement-top.jpg
 shazoo.ru##.mainContainer > div[class] > div[class][style^="background-image:"]
 shazoo.ru##.mainContainer > div[class] > div[class][style^="background-image:"]+div[class]:empty
@@ -9172,7 +9177,6 @@ seasonvar.ru##.content-wrap > div[style^="width"]
 osvita.ua##.artbanner
 osvita.ua##div[class="block w300 wrapbanner"]
 ||videomatches.ru/vm15/animacija
-ruclip.com###morev
 kriza.com.ua##center > a[rel="nofollow"] > img
 ||gigantporno.com/wk.php
 ||molva33.ru/wp-content/uploads/*^320h480^
@@ -10626,11 +10630,8 @@ batona.net##a[href^="https://goo.gl/"] > img
 hi-tech.ua##.sam-pro-ad
 hi-tech.ua##body > noindex > a
 нововятск.рф##.adw-top-block
-tverigrad.ru##div > a[href][target]:not([title^="Твериград"]):not([title^="Лента новостей"]):not([data-info="mail"]):not([title="Мобильное приложение"]) > img[alt]
 tverigrad.ru##img[alt=""][width="200"][height="300"]
 tverigrad.ru##img[alt="200-300"]
-tverigrad.ru##a[href^="http://www.gold-time-tver.ru/"]
-||tverigrad.ru/wp-content/uploads/*/oknagrad-*.gif
 filmtor.net##div[align="center"] > a[rel="nofollow"] > img
 kinotochka.club###buttontiz
 filmix.info,filmix.me##div[id^="bn_"]
@@ -17366,3 +17367,4 @@ pososushka.ru#@##reklama
 @@||jim*.mail.ru/communicate.html$document
 @@||chaosroad.com^$document
 @@||static.censor.net.ua/js/main.*.js
+88files.net,bukkit.org#@#.ad-box
