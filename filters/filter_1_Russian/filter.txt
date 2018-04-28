@@ -23,6 +23,8 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||tle.ru^$third-party
+||bearsandfish.com^$third-party
 ||pelicansource.com^$third-party
 ||adsgid.com^$third-party
 ||adfill.me^$popup
@@ -3838,6 +3840,9 @@ animedub.ru,eurosport.ru,lifehacker.ru,examenpdd.com,all-episodes.tv,vesti.ru,li
 ensage-forum.ru,spec-komp.com#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
 ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
 !
+! https://forum.adguard.com/index.php?threads/28617/
+! Ads reinjection
+@@||fishki.net/js/adv.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14812
 @@||freepiks.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14492
@@ -4408,6 +4413,8 @@ sdamgia.ru,vz.ru,otzovik.com,dni.ru,kakprosto.ru$$script[wildcard="*AdvManager.r
 !+ NOT_PLATFORM(windows,mac,android)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=otzovik.com
 !+ NOT_PLATFORM(windows,mac,android)
+@@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl.js$domain=otzovik.com
+!+ NOT_PLATFORM(windows,mac,android)
 @@||kakprosto.ru^$generichide
 !+ NOT_PLATFORM(windows,mac,android)
 @@||an.yandex.ru/system/context.js$domain=kakprosto.ru
@@ -4975,6 +4982,9 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ||music.yandex.ru/api/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important,~stylesheet,domain=music.yandex.ru|music.yandex.ua|music.yandex.by|music.yandex.kz
 ||radio.yandex.ru/api/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important,~stylesheet,domain=radio.yandex.by|radio.yandex.kz|radio.yandex.ru|radio.yandex.ua
 ||awaps.yandex.ru/*.xml$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,domain=radio.yandex.by|radio.yandex.kz|radio.yandex.ru|radio.yandex.ua|music.yandex.ru|music.yandex.ua|music.yandex.by|music.yandex.kz,important,~stylesheet
+!
+! Yandex.Zen
+@@||zen.yandex.$generichide
 !
 ! END: Yandex
 !
@@ -7610,7 +7620,6 @@ http://*.ru/leftunit.pl?
 .getclicky.com/js
 .getresponse.com/modpopupwizard/
 .giantrealm.com/gr.
-.googleadservices.*.js
 .gorillanation.com/js/
 .gostats.*.js
 .greenmama.ru/cs_links_js.
@@ -7803,49 +7812,11 @@ http://*.ru/leftunit.pl?
 .soufun.com/stats/
 .sourtimes.org/adcss/
 .spb.ru/*/?sid=
-.sprint.com/*/analytics/
-.stat.ku6.
-.stats.wordpress.*.js
-.statuncore.com/count.
-.superpages.com/tag.js
-.surfaid.ihost.
-.swisstools.*?
-.t-online.de/*/cp/
-.tagstory.com/infoboard/
 .tbn.ru/$third-party
-.tenpay.com/js/
-.tf1.fr/img/log/
-.themarker.com/dclk/
-.tianya.cn/*/stat_*.js
-.tianya.cn/display?f=
-.tianyaui.com/*/stat_*.js
-.tianyaui.com/*/wizard.js
-.tle.ru/$third-party
-.tom.com/v2008.
-.top99.ro/cod/
-.topix.com/t6track/
-.topsiteuri.ro/script.
-.trackword.net/show.
-.tremormedia.*.gif?
-.trialpay.com/js/offer_tp/
-.ucoz.ru/rtr/
-.undertone.com/js/
-.utilis.ro/vote-script.
 .vba.ru/$third-party
-.vdoing.com/u/
-.visiblemeasures.com/log?
 .voffka.com/js/
-.vuze.com/trk/
-.web.de/ivw/
-.webhop.info/?
-.webiqonline.*?
-.wibiya.com/loaders/
-.woopra-ns.com/visit/
-//2x2.kz^
-//hmn.ru^$third-party
 //m2k.ru^
 //r*.izvestia.ru/*
-//r*.wmlink.*/*
 !**
 !**
 !****** TODO: end
