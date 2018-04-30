@@ -97,6 +97,7 @@
 ||platform.linkedin.com^$third-party
 ||prisjakt.nu^$third-party
 ||proxyas.com^$third-party
+||pushcrew.com^$third-party
 ||reco.se^$third-party
 ||reseguiden.se^$third-party
 ||royapp.com^$third-party
@@ -161,6 +162,7 @@
 /citygate/payingcompanies$xmlhttprequest
 /emediate-responsive-wp-plugin/*
 /entryclick;_
+/eu_cookie_alert/*$script,stylesheet
 /iab/iab.js$script
 /js/fullpageads.js$script
 /js/iepngfix_tilebg.$script
@@ -186,6 +188,7 @@
 ||adviral.s3.amazonaws.com/sponsored/
 ||amazonaws.com/adn-tag/$script
 ||amazonaws.com/metapic-cdn/*/metapic.$script,stylesheet
+||apis.google.com/js/plusone.js$third-party
 ||back.famebloggers.com/bloggerfy/tracker$script,subdocument
 ||bcm.interactives.dk/script/$script
 ||biowebb-data.*.amazonaws
@@ -263,11 +266,18 @@
 ! https://www.aftonbladet.se/nyheter/a/vm1BOw/anders-46-lurades-av-falsk-trafiksajt--nu-stams-foretagaren
 ||trafikenheten.se^$document
 ! Generic Element Hiding Rules
+###accept-cookies-div
 ###cookie_approve_banner
 ###cookie-message
+##.cookie-message
+##.cookie-notice
+###cookie-notice
 ##.cookie-disclaimer
+###cookie-policy
+###cookieChoiceInfo
 ##.adtoma_container
 ##.eu_coookie_toolbar
+##.pea_cook_wrapper
 ##.nyhet_wrapper_annons
 ##.sw-cookie-consent-wrapper
 ##.sw-popular__article--ad
@@ -277,7 +287,6 @@
 ##img[alt="Leovegas"]
 ##img[alt="Spela på Betsson"]
 ! Site specific whitelists
-@@/js/ads.js^$xmlhttprequest,domain=news55.se
 @@/js/advert.$script,domain=mariestadstidningen.se|nwt.se|sla.se
 @@||assets-cdn.mytaste.org/js/ads.js$script
 @@||freeride.nu/js/ads.js^$script,domain=freeride.se|happyride.se
@@ -286,7 +295,7 @@ avanza.se#@#a[title="LeoVegas"]
 @@||opinionstage.com^$domain=99.se|fz.se|sweclockers.com
 ! Common site specific blocking
 .*/*280x240*.$image,domain=rumhemma.se
-.*/*annons*.$image,domain=guldkanalen.se|kurera.se|nvp.se|rumhemma.se
+.*/*annons*.$image,domain=guldkanalen.se|kurera.se|nvp.se|rumhemma.se|tekniksmart.se
 .*/*banner*.$image,domain=dansbandskanalen.se|etc.se|evertiq.se|guldkanalen.se|kurera.se|markbladet.se|rockkocken.se|rumhemma.se|skrattnet.se|tkj.se|vaken.se
 .*/*banner*.$script,domain=dagenshandel.se|entreprenor.se|food-supply.se|magasinetparagraf.se|motormagasinet.se|skyddosakerhet.se
 /analytics/*$domain=tkj.se
@@ -309,8 +318,8 @@ avanza.se#@#a[title="LeoVegas"]
 /facebook_sdk.js$script,domain=njus.me|radioplay.se
 /js/facebook_pixel.js$script,domain=lajkat.se
 ||connect.facebook.net^*/fbds.js$third-party,domain=~facebook.com|~fb.com
-||facebook.com/tr?*&noscript=1$image,domain=~facebook.com|~fb.com
-||facebook.com/tr?*=PixelInitialized$image,domain=~facebook.com|~fb.com
+||facebook.com/tr?$image,domain=~facebook.com|~fb.com
+||facebook.com/plugins/like.php$third-party,domain=~facebook.com|~fb.com
 ! Override EasyPrivacy and EasyList whitelists
 ||tm.tradetracker.net/tag?$important,script,domain=agneswinqvist.se|enkelteknik.se|moviezine.se
 ! Unwanted Wordpress plugins
@@ -327,6 +336,7 @@ avanza.se#@#a[title="LeoVegas"]
 /plugins/cookie-law-info/js/cookielawinfo.js^$script
 /plugins/cookie-notice/*$script,stylesheet
 /plugins/easy-eu-cookie-law/*
+/plugins/eu-cookie-law/*$script,stylesheet
 /plugins/hustle/*$script,domain=yogaworld.se
 /plugins/icegram/*$domain=dagensanalys.se
 /plugins/likebtn-like-button/*$script
@@ -800,6 +810,7 @@ affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nickelodeon.se,nyte
 klart.se,norran.se##.ad-wrapper
 brollopstorget.se,familjeliv.se##.ad_right
 24blekinge.se,24emmaboda.se,24halmstad.se,24helsingborg.se,24kalmar.se,24kristianstad.se,24malmo.se,24nybro.se,24trelleborg.se,24uppsala.se,24ystad.se,babyhjalp.se,branschkoll.se,fotosidan.se,moviezine.se##.ads
+24blekinge.se,24emmaboda.se,24halmstad.se,24helsingborg.se,24kalmar.se,24kristianstad.se,24malmo.se,24nybro.se,24trelleborg.se,24uppsala.se,24ystad.se###cookie-bar
 mestmotor.se,nyheter24.se##.advertisement
 agriprim.se,bike.se,e.se,entreprenadaktuellt.se,husbilhusvagn.se,ja.se,klassiker.nu,maskinstationerna.se,mopedgaraget.se,norran.se,nyckelspel.se,skogsaktuellt.se,spelo.se,sweclockers.com,vaken.se,vibilagare.se##.banner
 etn.se,uppsalanyheter.se##.banneritem
@@ -853,7 +864,7 @@ hitta.se##.partner-box
 /entag.js$script,domain=eniro.se|proff.se|proff.no|proff.dk
 /cx-emediate-userprofile-se.*.js$script,domain=eniro.se
 ||eniro.se/img/sik.gif$image
-fotosidan.se##a[href^="http://ads."]
+fotosidan.se##a[href^="https://ads."]
 ||obj.fotosidan.se/obj/pa/$image
 dagensanalys.se##article.listitem:has(.label_sponsored)
 dagensanalys.se##article.listitem:has(a[href$="/sponsrad/"])
@@ -991,6 +1002,7 @@ pcgamer.se##div.wpb_text_column.wpb_content_element:if(h3:has-text(Sponsrade))
 pcgamer.se##a[href^="https://www.casino"]
 kit.se##.isNative
 kit.se##.box--newsletter
+kit.se##.post-share
 ||brain.kit.se^$xmlhttprequest
 ||branschkoll.se^*/wpbm-banners/$image
 ||branschkoll.se/pagespeed_static/js_defer.*.js$script
@@ -1146,7 +1158,6 @@ eurosport.se##.eso_video__share
 ||du4rq1xqh3i1k.cloudfront.net/d$xmlhttprequest,domain=eurosport.se
 pconline.se##:xpath(//div[@class="sponsorruta"]/parent::div)
 pconline.se##h3.glasspinnesvart
-/resolute-child/js/script.js$script,domain=burlovsnyheter.se
 ||gettyimages.se/gallery-app/assets/shared/tracking-*.js$script
 @@||opulens.se^$generichide
 opulens.se##.s-social
@@ -1192,6 +1203,7 @@ egoinas.se##article.uk-article:has(.sw-sf-sponsor)
 radionytt.se###toppannons
 /modules/mod_ijoomla_adagency_zone/*$script,domain=villavarmt.se
 emocore.se###sticky-panorama
+emocore.se##.m_t.box:if(h2:has-text(Rekommenderade länkar))
 jaktsidan.se##[data-role="sidebarAd"]
 ||edgeflyfishing.com^$image,domain=jaktsidan.se
 mp.se###cookies
@@ -1215,3 +1227,4 @@ sportpanelen.se###tie-block_1832
 ||hingsten.se^*/*_ad_$image
 faktiskt.se##.widget_wonderfoursocialmediawidget
 hugorosas.se##.tag-sponsored_post
+tekniksmart.se##.adcontainer
