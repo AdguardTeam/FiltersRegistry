@@ -274,12 +274,18 @@
 !-------------- Anti-adblock rules -----------------------------------------!
 !---------------------------------------------------------------------------!
 !
+!--- BlockAdBlock ---
+wanaliz.com#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
+!
 !--- Fuck fuckAdBlock JS---
 hesaplama.net,unikampus.net,saglamindir.net,globalklavye.com#%#(function() { var noopfn = function() {;}; var Fab = function() {}; Fab.prototype.check = noopfn; Fab.prototype.clearEvent = noopfn;  Fab.prototype.emitEvent = noopfn; Fab.prototype.on = function(a, b) { if ( !a ) { b(); } return this; }; Fab.prototype.onDetected = function() {  return this; }; Fab.prototype.onNotDetected = function(a) { a(); return this; }; Fab.prototype.setOption = noopfn; var fab = new Fab(),  getSetFab = { get: function() { return Fab; }, set: function() {} }, getsetfab = { get: function() { return fab; }, set: function() {} }; if ( window.hasOwnProperty('FuckAdBlock') ) { window.FuckAdBlock = Fab; } else { Object.defineProperty(window, 'FuckAdBlock', getSetFab); } if ( window.hasOwnProperty('BlockAdBlock') ) { window.BlockAdBlock = Fab; } else {Object.defineProperty(window, 'BlockAdBlock', getSetFab); } if ( window.hasOwnProperty('SniffAdBlock') ) { window.SniffAdBlock = Fab; } else { Object.defineProperty(window, 'SniffAdBlock', getSetFab); } if ( window.hasOwnProperty('fuckAdBlock') ) { window.fuckAdBlock = fab; } else { Object.defineProperty(window, 'fuckAdBlock', getsetfab); } if ( window.hasOwnProperty('blockAdBlock') ) { window.blockAdBlock = fab; } else { Object.defineProperty(window, 'blockAdBlock', getsetfab); } if ( window.hasOwnProperty('sniffAdBlock') ) { window.sniffAdBlock = fab; } else { Object.defineProperty(window, 'sniffAdBlock', getsetfab); } })();
 !--- Fuck fuckAdBlock CSS---
 androidmakale.com,guzelresimler.info,hesaplama.net,unikampus.net,saglamindir.net,globalklavye.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links {display:block!important;}
 !--------------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/15397
+!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
+@@||wanaliz.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15570
 simulasyonturk.com#@##adsense
 simulasyonturk.com#@#.an-sponsored
@@ -1673,6 +1679,7 @@ wmporn.com###vplayer > div[style*="background"]
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+yeniakit.com.tr###advancenative
 muzikmp3indir.com###adsupp-div
 dizired.com###kp-btn
 dizired.com##div[id^="splash_"]
@@ -1787,7 +1794,7 @@ indirmedenfilmizle1.com,altyazilifilmizle.org###splash
 filmkorku.org##.acikk > .ust[style="display: none !important;"] + .alt
 ||filmkorku.org/wp-content/uploads/*0x*0$image
 ||odeontv.tv/assets/uploads/banners/
-ahaber.com.tr##.ligatusAdvert
+otohaber.com.tr,ahaber.com.tr##.ligatusAdvert
 2taraftarium24.com##.black-bg
 2taraftarium24.com###m-popup
 ||vdcasinotv*.com/assets/uploads/banners^
@@ -4333,7 +4340,7 @@ torrent-kutusu.blogspot.com##.widget.HTML#HTML1 a:not([href="http://torrent-kutu
 nasilkolay.com##.widget.add
 karabuknethaber.com##.wrap950ureklam
 minikago.com.tr##.x300
-minikago.com.tr##.x300250
+minikacocuk.com.tr,minikago.com.tr##.x300250
 gercektaraf.com,vatandanhaber.com##.x_advert
 gazetespor.com.tr##.yanReklamlar
 gecce.com##.yataybannerTop
