@@ -23,6 +23,10 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||okserial.club^$third-party
+||slhnj.com^$third-party
+||kont-news.com^$third-party
+||hpcyk.com^$third-party
 ||allzdorovy.ru^$third-party
 ||3647.tech^$third-party
 ||video.flashiest-vacation.win^$third-party
@@ -4978,7 +4982,9 @@ news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news
 ! Yandex.Maps
 !+ NOT_PLATFORM(windows, mac, android)
 @@||yandex.*/maps/$generichide
+!+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/resource/context_static_r_*.js$domain=yandex.by|yandex.com|yandex.com.tr|yandex.fr|yandex.kz|yandex.ru|yandex.ua
+!+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/system/context.js$domain=yandex.by|yandex.com|yandex.com.tr|yandex.fr|yandex.kz|yandex.ru|yandex.ua
 ! for the case of using RU AdList
 !+ NOT_PLATFORM(ext_ff)
@@ -5012,13 +5018,16 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ! Yandex.Afisha
 ||afisha.yandex.*/*/*-*-*-*-$replace=/Ya\s?\[([0-9]{10\,15})\]\([\s\S]*\)\$//,script,important,domain=afisha.yandex.by|afisha.yandex.kz|afisha.yandex.ru|afisha.yandex.ua
 !+ NOT_PLATFORM(windows, mac, android)
-@@||afisha.yandex.*^$generichide
+@@||afisha.yandex.$generichide
 !+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/system/context.js$domain=afisha.yandex.ua
 ! Yandex Radio and Music ads
 ||music.yandex.ru/api/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important,~stylesheet,domain=music.yandex.ru|music.yandex.ua|music.yandex.by|music.yandex.kz
 ||radio.yandex.ru/api/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important,~stylesheet,domain=radio.yandex.by|radio.yandex.kz|radio.yandex.ru|radio.yandex.ua
 ||awaps.yandex.ru/*.xml$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,domain=radio.yandex.by|radio.yandex.kz|radio.yandex.ru|radio.yandex.ua|music.yandex.ru|music.yandex.ua|music.yandex.by|music.yandex.kz,important,~stylesheet
+! Yandex.Realty
+!+ NOT_PLATFORM(windows, mac, android)
+@@||realty.yandex.$generichide
 !
 ! Yandex.Zen
 @@||zen.yandex.$generichide
@@ -6220,6 +6229,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/13634
+mpp3.me#$#.page { margin-top: 100px!important; }
 ! video-nvidia.com - удаление брендированного фона, отступа сверху
 video-nvidia.com#$#.main-container { margin-top: 0!important; }
 video-nvidia.com#$#body { background: #3e434c!important; }
@@ -8477,6 +8488,8 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+mpp3.me##.branding
+f1news.ru##.banner
 facenews.ua##.bind_ads
 facenews.ua##.bnblock
 filmitorrentom.org##a[oncontextmenu="return false;"][rel="nofollow"] > img
@@ -11273,9 +11286,6 @@ bobfilm.tv##.h-banner-link
 bobfilm.tv##.h-banner-img
 ||rbkgames.com/js/compiled/standalone/partner/placement/main.js$domain=tvfru.net
 tvfru.net###advm_preload
-stolica-s.su##.ban-top
-stolica-s.su###market-top
-stolica-s.su##.market-bottom
 ||sinst.fwdcdn.com/_uploaded_files/ads/
 sinoptik.ua##.rightAdvBox
 vesti.ru##.adv-list
@@ -15597,6 +15607,12 @@ gismeteo.ua##div[id="weather-rbkua"]
 !
 !--- Hints ------
 !
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari, ext_android_cb)
+stolica-s.su##.ban-top
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari, ext_android_cb)
+stolica-s.su###market-top
+!+ NOT_OPTIMIZED PLATFORM(ios, ext_safari, ext_android_cb)
+stolica-s.su##.market-bottom
 !+ NOT_OPTIMIZED PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 kino-hd1080.ru##iframe[src*="kingoablc.com"]
 !+ NOT_OPTIMIZED PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
