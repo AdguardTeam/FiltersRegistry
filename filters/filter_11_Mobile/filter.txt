@@ -1014,6 +1014,9 @@ westseattleblog.com#@#.header-ad
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/16143
+m.auto.ru##.content > div.index.i-bem > div.section:has(> div > a[href^="https://an.yandex.ru/"])
+m.auto.ru##.content > div.card > div[class*="_type_card"]:not([data-bem]):has(> div > div[class$="__badge"]:contains(/^Реклама/))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15953
 www-chip-de.cdn.ampproject.org##.amp-article > div:not([class]):not([id]) > .amp-article-chapter[-ext-has='.cart']
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13649
@@ -1465,11 +1468,6 @@ deviantart.com#@#.mobile-ad
 !
 ! Section contains rules for specific websites
 !
-!
-m.auto.ru##.card.i-bem > div[class^="_"] > div[class^="_"]
-m.auto.ru##.index.i-bem > div[class]:not([data-bem])
-m.auto.ru##.listing__page > div[class^="_"]:not([class$="listing__item_view_old"])
-!
 ! https://forum.adguard.com/index.php?threads/10464/
 ||images-*.ssl-images-amazon.com/images/*/ape/sf/MAsf-*_.js
 !
@@ -1492,6 +1490,8 @@ anwap.club,anwap.film,anwap.mobi##body > div[class] > a > img[class]
 !+ PLATFORM(ios, ext_android_cb)
 anwap.club,anwap.film,anwap.mobi##body > div[class] > a > strong
 !
+m.auto.ru##.commercial-listing > div.commercial-listing-item-wrapper > div[id]:not([class*="Listing"]):not([class*="item"])
+m.auto.ru##div[data-bem*="\"ad\":true"]
 m.mynet.com##.adv
 m.mynet.com##amp-embed[type="taboola"]
 yahoo.com##.stream-items > li.stream-item[data-wf-image-beacons]
@@ -1578,7 +1578,6 @@ merlininkazani.com##div[class^="adver-mobile-"]
 mediafire.com##.m-ad
 comnews.ru###mv-bottom-banner
 comnews.ru###mv-fullscreen
-m.auto.ru##div[class$="_place_direct"]
 vgtimes.ru##a[href^="http://ads.adfox.ru"]
 topwar.ru##.banner_yandex
 m.rambler.ru##.image-banner-place
