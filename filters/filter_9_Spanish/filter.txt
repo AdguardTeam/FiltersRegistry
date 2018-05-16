@@ -24,6 +24,7 @@
 !
 ! Section contains list of advertising networks
 !
+||hitopadxdo.xyz^$popup
 ||adw.sapo.pt^
 ||dozcpc.com^$third-party
 ||midan.io^$third-party
@@ -194,6 +195,8 @@ nuevos-mu.ucoz.com,generacionretro.net,goaldirecto.blogspot.com,goaldirecto.blog
 parasitipedia.net#%#(function(b){Object.defineProperty(Element.prototype,"innerHTML",{get:function(){return b.get.call(this)},set:function(a){/^(?:<([abisuq]) id="[^"]*"><\/\1>)*$/.test(a)||b.set.call(this,a)},enumerable:!0,configurable:!0})})(Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML"));
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/16185
+@@||assistir-tv.online/stream/advertisement.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15964
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@||mixmods.com.br^$generichide
@@ -267,15 +270,18 @@ solowarez.org#@##banner_ad
 torrentsgamez.com#@##banner_ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14707
 @@||sakuraanimes.com/ANAD/advertisement.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/16144
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14353
-mangahostbr.com#%#AG_abortInlineScript(/ads728x90/, 'jQuery');
-mangahostbr.com$$script[tag-content="BLOQUEADOR"][max-length="15000"]
+mangahostbr.net,mangahostbr.com#%#AG_abortInlineScript(/ads728x90/, 'jQuery');
+mangahostbr.net,mangahostbr.com$$script[tag-content="BLOQUEADOR"][max-length="15000"]
+!+ PLATFORM(ext_opera, ios, ext_android_cb, ext_ublock)
+@@||mangahostbr.net^$generichide
 !+ PLATFORM(ext_opera, ios, ext_android_cb, ext_ublock)
 @@||mangahostbr.com^$generichide
 !+ PLATFORM(ext_opera, ios, ext_android_cb, ext_ublock)
-@@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl.js$domain=mangahostbr.com
+@@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl.js$domain=mangahostbr.com|mangahostbr.net
 !+ PLATFORM(ext_opera, ios, ext_android_cb, ext_ublock)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mangahostbr.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mangahostbr.com|mangahostbr.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14234
 shares.enetres.net#%#window.N3CanRunAds = true;
 @@||shares.enetres.net/ads.js.php?*&show_ad_&video_ads_&smart_ad_$domain=shares.enetres.net
@@ -959,6 +965,12 @@ http://adw.
 !-------------------- Specific rules --------------------!
 !--------------------------------------------------------!
 !
+tumejortorrent.com##.pub160x600
+tumejortorrent.com##.box-publi-left
+tumejortorrent.com##div[style="float:left;width:100%;height:275px;"]
+tumejortorrent.com##li[style="width:100%;height:98px;"]
+tumejortorrent.com##.pub300x250
+tumejortorrent.com##.sidebar > div[class="widget mod-pubb"]
 megapastes.com##div[align="center"] > div > [style="position:relative; width:280px; height:95px; border:none !important; background:none; margin:auto; clear:both;"]
 d0stream.com##.video-js > .vjs-menu ~ .iframe
 peliculas-mp4.com##.post > div[align="center"] > div
@@ -989,7 +1001,7 @@ economia3.com##.banner_eco3
 economia3.com##.cont_publicidad
 ||economia3.com/wp-content/uploads/*/*banner*.
 ||economia3.com/wp-content/uploads/*/*970x90.gif
-mangahostbr.com##.ads > *
+mangahostbr.net,mangahostbr.com##.ads > *
 cdn.chatytvgratis.net###interContainer
 cdn.chatytvgratis.net###interVeil
 animeskai.com##body > div[id][style*="position: fixed"][style*="z-index"][style*="height:"][style*="height:"]:not(#container)
