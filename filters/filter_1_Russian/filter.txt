@@ -3870,6 +3870,10 @@ ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTime
 !--- antiblock.org ---
 helpsetup.ru#%#(function(b){Object.defineProperty(Element.prototype,"innerHTML",{get:function(){return b.get.call(this)},set:function(a){/^(?:<([abisuq]) id="[^"]*"><\/\1>)*$/.test(a)||b.set.call(this,a)},enumerable:!0,configurable:!0})})(Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML"));
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/16234
+||videopotok.pro/kod.php^$empty,domain=allnetcorp.com,important
+!+ NOT_PLATFORM(windows, mac, android)
+@@||videopotok.pro/kod.php$domain=allnetcorp.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16133
 gaming.co.ua##body > div[id][class][style*="z-index: 9999"]
 gaming.co.ua##body > div[id][class][style*="z-index: 9999"] + div[class][style*="z-index: 9999"]
@@ -5061,10 +5065,8 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11174
 !+ NOT_PLATFORM(ext_safari, ext_chromium, ext_edge)
 baskino.me#$#html > body.branding:has(> div) { padding-top: 0px!important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/8624
-narutoplanet.ru##.blog-featured > div.items-leading:has(div[style="text-align: center;"] > a[rel="nofollow"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12450
-narutoplanet.ru##.art-layout-cell > div.art-block:has(> div.art-blockheader > div:contains(Рeкомeндуeм))
+narutoplanet.ru##.art-layout-cell > div.art-block:has(> div.art-blockheader > div:contains(eкомeндуeм))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14944
 ruseller.com###sideRight > .box:has(p[style^="text-align: center;"])
 ruseller.com###sideRight > .box:has(> .red)
@@ -5145,6 +5147,7 @@ strip2.me##div[class] > div[id]:has( > a > div.ico)
 pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div.story__main > script:contains(push(function()))
 pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contains(/ads|реклама/|рекламный\sпост|ртнeрcкий\sпост/))
 !
+gamer-info.com##body > div[id]:has(> a#timer)
 ovgorskiy.ru##body > div[align="center"] > table[width="1260"] td > div[class="zsnazzy"]:has(> div.xboxcontent > [align="center"]:contains(реклам))
 rg-mechanics.org##.shortstory:has(> div.tags > a[href^="https://ad.admitad.com/"])
 rp5.by,rp5.kz,rp5.ru,rp5.ua###content > div:first-child+div > div:first-child:has(> div:empty) + div:not([class]):not([id="FheaderContent"]):not([id^="extreme"])
@@ -5965,6 +5968,8 @@ s4galaxy.ru,3dnews.ru,lenovo-smart.ru#%#Object.defineProperty(window, 'SocialMar
 ! Block web-sockets in old versions of Chrome (older then 47)
 nnm-club.tv,rustorka.com,pise4ka.net,nnm-club.me,nnm-club.ws,nnmclub.to,onlainfilm.ucoz.ua,rutor.is,baskino.club,rutor.info,nnm.me,korzik.net,seasonvar.ru,rsload.net,nnm-club.me,nnmclub.to,rustorka.com,auto.mail.ru,horo.mail.ru,realty.mail.ru,health.mail.ru,afisha.mail.ru,cloud.mail.ru,otvet.mail.ru,pogoda.mail.ru,sport.mail.ru,tv.mail.ru,torg.mail.ru,cars.mail.ru,hi-tech.mail.ru,free-torrent.org,free-torrents.org,ukrinform.ru,radikal.ru,trackeroc.ru,trackerock.ru#%#window.WebSocket = undefined;
 !
+! gamer-info.com - video ad
+gamer-info.com#%#Object.defineProperty(window, 'vFABLpWeReallyNeedToSpotDoingThis', { value: false });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14922
 milf-hd.org#%#Object.defineProperty(document, 'write', { get: function() { return {}; } });
 ! htapop
@@ -6249,6 +6254,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/16234
+allnetcorp.com#$##adv_kod_frame { position: absolute!important; left: -3000px!important; }
 ! torrent-film.co - удаление отступа сверху
 torrent-film.co#$#.dhblok { margin: 0 auto 0 auto!important; }
 ! prophotos.ru - удаление отступа сверху
@@ -8517,6 +8524,9 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+gamer-info.com##div[style*="height:120px;width:728px;"]
+gamer-info.com##body > menu+div:not([id]):not([class]) > div:not([id]):not([class]) > div[class] > a
+||vidikua.legfilm.ru^$third-party
 od-news.com##img[width="300"][height="250"]
 d3.ru##.b-sidebar-ad
 audioknigi-online.com##.marked[style="height:270px"]
@@ -8598,7 +8608,7 @@ tsargrad.tv##.news__partners
 ||f1comp.ru/wp-content/uploads/*/banner-
 gamer-info.com##.hltdst
 newsone.ua##div[data-action="banners"]
-narutoplanet.ru##a[href^="https://www.vsemayki.ru/"]
+narutoplanet.ru##a[href^="https://goo.gl/"] > img
 scarabey.org##div[class^="ad-block-"]
 virtualbrest.by##div[style="position:relative; height:60px; width:936px;"]
 virtualbrest.by##li[style*="height: 90px;"][style*="height: 90px;"]
