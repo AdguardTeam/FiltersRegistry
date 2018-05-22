@@ -3875,9 +3875,6 @@ ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTime
 !--- antiblock.org ---
 helpsetup.ru#%#(function(b){Object.defineProperty(Element.prototype,"innerHTML",{get:function(){return b.get.call(this)},set:function(a){/^(?:<([abisuq]) id="[^"]*"><\/\1>)*$/.test(a)||b.set.call(this,a)},enumerable:!0,configurable:!0})})(Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML"));
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/15443
-@@||gismeteo.ru^$generichide
-@@||an.yandex.ru/system/context.js$domain=gismeteo.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16234
 ||videopotok.pro/kod.php^$empty,domain=allnetcorp.com,important
 !+ NOT_PLATFORM(windows, mac, android)
@@ -4232,9 +4229,11 @@ game-torrent.info,free-torrent.org,free-torrents.org#%#Object.defineProperty(win
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11719
 @@||vse.fm/adblockDetector.js
 ! gismeteo.ru - ads replacement script(Fab)
+@@||gismeteo.ru^$generichide
 @@||gismeteo.by^$generichide
+@@||an.yandex.ru/system/context.js$domain=gismeteo.ru|gismeteo.by
 @@||an.yandex.ru/mapuid/*$domain=gismeteo.ru|gismeteo.by
-@@||yastatic.net/pcode/adfox/loader.js$domain=www.gismeteo.ru|gismeteo.by
+@@||yastatic.net/pcode/adfox/loader.js$domain=gismeteo.ru|gismeteo.by
 @@||ssp.adriver.ru/cgi-bin^$domain=www.gismeteo.ru|gismeteo.by
 ! https://forum.adguard.com/index.php?threads/21075/
 @@||ph4.ru$generichide
@@ -6270,8 +6269,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
-! vc.ru - ad
-vc.ru#$#body > div.stratumTele2 { height: 0!important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/16690
+tjournal.ru,vc.ru#$#body > div.stratumTele2 { height: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16579
 onlinetambov.ru#$#body { overflow: visible!important; }
 onlinetambov.ru#$#.fancybox-container { display: none!important; }
@@ -8548,6 +8547,7 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+bigsexshok.ru##.itemb
 24smi.org##.celebrity-article-ad
 ||24smi.org/adwiles/
 howdyho.net##.interesting_block_links > a:not([href^="https://ad.admitad.com/"])
@@ -8865,7 +8865,6 @@ lotzon.co##div[id^="banner-"]
 kanobu.ru##div[style="width:240px;height:400px;"]
 baby.ru##.js-promo-fixed
 baby.ru##.grouped-banners
-gismeteo.ru##div[class^="media_frame"]
 ||p-p.com.ua/-/img/bg-*.jpg
 tvzavr.ru##.branding
 tvzavr.ru##.tvz-banner_wrap
@@ -15690,6 +15689,9 @@ gismeteo.ru##.flexbox > div.right_col_1 > div.wrap_small.__frame > div:not([clas
 gismeteo.ru##.flexbox > div.right_col_2
 gismeteo.ru##.media_with_map > div.media_left
 ! gismeteo (old)
+gismeteo.ru##div#weather-right[id="weather-right"]
+gismeteo.ru###weather-gis-news-alter
+gismeteo.ru##div[class^="media_frame"]
 gismeteo.ru##.wrap > div#weather-lb.rframe
 gismeteo.ru##.wrap > div#weather-left.rframe
 gismeteo.ru##.cright > div#weather-right.rframe
