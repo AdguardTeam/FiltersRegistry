@@ -1,11 +1,11 @@
 !
-! Checksum: huEnMYsKbGMhXHag2rmUjQ
+! Checksum: GGF1/Na3o0+wWvmRa9Ad0g
 ! Homepage: https://github.com/k2jp/abp-japanese-filters/
 ! Title: ABP Japanese filters (ONLY FOR Japanese and experienced users: READ Support Policy)
 ! Expires: 6 hours
-! OriginalVersion: 201804122207
+! OriginalVersion: 201805031810
 !
-! Last modified: 2018-04-12 22:07 JST(UTC+0900)
+! Last modified: 2018-05-03 18:10 JST(UTC+0900)
 ! Change log: https://github.com/k2jp/abp-japanese-filters/wiki/FilterChangeLog
 ! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
 ! Content license: Creative Commons BY-NC-SA 4.0 http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -416,6 +416,7 @@
 &impid=$document
 |http:*?*&ip=$third-party
 |https:*?*&ip=$third-party
+&key=*&scrWidth=*&scrHeight=*&tz=$document
 |http:*?*&lp=*id=$popup
 |https:*?*&lp=*id=$popup
 &lp_domain=$popup
@@ -2627,6 +2628,7 @@
 /news_top_point_pr.
 ! False Positive at zenback.itmedia.co.jp reported by A&G via blog 2011-01-30
 ! /newzia/*
+/nicoad/*$domain=~nicoad.nicovideo.jp|nicovideo.jp
 /njoks_$script
 /null/null/*/Redirect.
 /null/null/*/Redirect.$popup
@@ -3055,6 +3057,7 @@
 ?clk=*&rfr=$popup
 ?dist_id=*&channel=$popup
 ?dist_id=*&channel=$third-party
+?enqId=*&monitorId=$popup
 ! Commented out duplicated filters [https://github.com/k2jp/abp-japanese-filters/issues/9 reported] by [https://github.com/SMed79 SMed79], Jun 20, 2015
 ! ?file=ads&
 ?id_promo=
@@ -9974,7 +9977,7 @@ _yahooads_
 ! Commented out to avoid closing connection 2011-10-23
 ! ||ow.live.nicovideo.jp^$domain=nicovideo.jp
 ||urc.live.nicovideo.jp^$domain=nicovideo.jp
-||nicoad.nicovideo.jp^$domain=nicovideo.jp
+||nicoad.nicovideo.jp^$domain=~nicoad.nicovideo.jp|nicovideo.jp
 ||uad-api.nicovideo.jp^$domain=nicovideo.jp
 ||api.uad.nicovideo.jp^$domain=~uad.nicovideo.jp
 ||nielsen.com^$third-party
@@ -12310,13 +12313,13 @@ _yahooads_
 !
 ! ---------- Domains optionally with path END ----------
 
-! Checksum: dVqVcUkeCSVEfMohDQcnHw
+! Checksum: qvJTS5qnDeG2t/hfE6ZGTQ
 ! Homepage: https://github.com/k2jp/abp-japanese-filters/
 ! Title: ABP Japanese Element-hiding filters (ONLY FOR Japanese and experienced users: READ Support Policy)
 ! Expires: 6 hours
-! OriginalVersion: 201804111805
+! OriginalVersion: 201805021909
 !
-! Last modified: 2018-04-11 18:05 JST(UTC+0900)
+! Last modified: 2018-05-02 19:09 JST(UTC+0900)
 ! Change log: https://github.com/k2jp/abp-japanese-filters/wiki/FilterChangeLog
 ! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
 ! Content license: Creative Commons BY-NC-SA 4.0 http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -14409,6 +14412,7 @@ twitter.com##.promoted-account
 twitter.com##.promptbird
 twitter.com##.promoted-trend
 twitter.com##.promoted-tweet
+twitter.com##.stream-items > .has-recap
 twitter.com##.stream-items > .stream-user-gallery.separation-module
 twitter.com##.stream-items > .WtfLargeCarouselStreamItem
 twitter.com##.stream-items > [data-suggestion-json*="ActivityTweet"]
