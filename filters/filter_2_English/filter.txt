@@ -7193,6 +7193,10 @@ cez.cz#$#body { background: #333!important; }
 !---------------------------------------------------------------------
 !------------------------------ Danish -------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/16652
+@@||v.fwmrm.net/ad/g/1?$domain=dplay.dk
+||dniadops-a.akamaihd.net/*.mp4$domain=dplay.dk,empty,important
+||v.fwmrm.net/ad/g/1?$replace=/(tv\.freewheel\.SDK\._instanceQueue\['Context_[\s\S]*?'\][\s\S]*?\.requestComplete\(\{)[\s\S]*\}\);/\$1\}\);/,domain=dplay.dk,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16229
 !+ PLATFORM(ios, ext_android_cb)
 @@||sol.dk^$generichide
@@ -7201,7 +7205,10 @@ viafree.dk##.pause-ad
 @@||v.fwmrm.net/ad/g/1$domain=viafree.dk
 @@||v.fwmrm.net/ad/l/1$domain=viafree.dk
 @@||mssl.fwmrm.net/p/MTG_Brightcove_HTML5/AdManager.js$domain=viafree.dk
+!+ PLATFORM(windows, mac, android)
 ||freewheel-mtgx-tv.akamaized.net/*.mp4$domain=viafree.dk,empty,important
+!+ NOT_PLATFORM(windows, mac, android)
+@@||freewheel-mtgx-tv.akamaized.net/m/*.mp4$domain=viafree.dk
 ||v.fwmrm.net/ad/g/1?$replace=/(tv\.freewheel\.SDK\._instanceQueue\['Context_[\s\S]*?'\][\s\S]*?\.requestComplete\(\{)[\s\S]*\}\);/\$1\}\);/,domain=viafree.dk,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15287
 !+ NOT_OPTIMIZED
@@ -13302,6 +13309,7 @@ radiotimes.com##.ad-banner-container
 radiotimes.com##div[data-element_type="wp-widget-section_full_width_advert.default"]
 festyy.com##.advert
 festyy.com###ctfshb
+||vidmoly.me/machinex.php
 ||vidmoly.me/check.php
 ||vidmoly.me/checks.php
 ashemaletv.com###playerOverlay
