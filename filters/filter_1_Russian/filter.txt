@@ -23,6 +23,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||streamingcastle.me^$third-party
 ||bnstero.com^$third-party
 ||bf41f552ceb9a150ee17.date^$third-party
 ||vast.reyden-x.com^$third-party
@@ -1621,7 +1622,6 @@ http://wq3.ru^$third-party
 ||fytboti.ru^$third-party
 ||fzwoa.com^$third-party
 ||g-tv.ru/ivi.php?host=$third-party
-||g.doubleclick.net^$third-party
 ||g2a.com/promo/widget/$third-party
 ||gagacon.com^$third-party
 ||gagnifie.com^$third-party
@@ -3876,6 +3876,8 @@ ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTime
 !--- antiblock.org ---
 helpsetup.ru#%#(function(b){Object.defineProperty(Element.prototype,"innerHTML",{get:function(){return b.get.call(this)},set:function(a){/^(?:<([abisuq]) id="[^"]*"><\/\1>)*$/.test(a)||b.set.call(this,a)},enumerable:!0,configurable:!0})})(Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML"));
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/14798
+@@||n1307adserv.xyz/vast.xml?key=*&vastv=
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16234
 ||videopotok.pro/kod.php^$empty,domain=allnetcorp.com,important
 !+ NOT_PLATFORM(windows, mac, android)
@@ -3972,12 +3974,15 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 @@||my-news-portal.ru^$generichide
 !
 ! Ads replacement (piguiqproxy.com etc.)
-! New $$ rule
+! New $$ rules
 kurs.com.ua$$script[wildcard="*!function(){function*f.length;u++*,Bn=*"][max-length="10000"]
+pravda.com.ua$$script[tag-content="z=stop.bind"][max-length="10000"]
+kino-hd1080.ru$$script[wildcard="*var _0x*['length']*));}());*"][max-length="25000"]
 !
 zemlyaki.name,sonnikonline.club$$script[tag-content=".com/rotator-v2/"][max-length="800"]
 !+ NOT_OPTIMIZED PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@://block.pigiuqproxy.com/rotator-v2/*.js$script,domain=zemlyaki.name|sonnikonline.club
+pravda.com.ua#%#AG_abortInlineScript(/stop.bind/, 'z');
 !+ NOT_PLATFORM(windows, mac, android)
 zemlyaki.name,sonnikonline.club#%#AG_abortInlineScript(/\/rotator/, 'document.addEventListener');
 !+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock, ext_ff)
@@ -5072,6 +5077,10 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/16796
+kino-hd1080.ru##body > div[id^="br_"]:has(> div)
+! kinovo.org - удаление отступа сверху
+kinovo.org#$#body > div.bLayout:has(> div) { margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16231
 anwap.club,anwap.film,anwap.mobi##body > div[class]:has(> a > strong)
 anwap.club,anwap.film,anwap.mobi##.zag > div.my_razdel:has(> a > div > img)
@@ -6279,6 +6288,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/16796
+kino-hd1080.ru#$#body { padding: 0 0 0!important; }
 ! kino-hd720.net - удаление отступа сверху
 kino-hd720.net#$#body { margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16690
@@ -8563,6 +8574,9 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+||rustorka.com/1xb.gif
+rustorka.lib,rustorka.com###logo a[href*="gearbest.com/"]
+rustorka.com##div[align="center"] > a > img
 softportal.com##.mfp-bg
 isroe.co.il###text-39
 /img/banner_$domain=severpost.ru
@@ -8631,7 +8645,6 @@ torrent-film.co##.dnewrr
 vshkole.com##.bigl-adv-box
 vshkole.com##.video-banner-desktop
 obozrevatel.com##iframe[id^="google"]
-||grif-fan.ru/bitrix/cache/js/s1/lalapaluza/
 ||topgir.com.ua/img/branding/
 zercalorutor.org##a[rel="nofollow"] > img
 rutorentik.org##a[href^="/go2.php?"] > img
@@ -15891,16 +15904,6 @@ pornolab.lib,new-team.org,pornolab.biz,pornolab.cc,pornolab.net##table.attach.bo
 !
 ! Shareman app
 ||page.shareman.tv/rostk/
-!
-!
-! START: rustorka.com
-||rustorka.com/1xb.gif
-://*.rumedia.ws^$empty,domain=~rumedia.ws
-rustorka.lib,rustorka.com###logo a[href*="gearbest.com/"]
-rustorka.com##div[align="center"] > a > img
-@@||rustorka.*/forum/shoutbox_view.php
-/(rustorka.com\/forum\/(?!login)(?!index)(?!tracker)(?!shoutbox)(?!viewtopic)(?!viewforum)(?!privmsg)(?!search)(?!thanks)(?!posting)(?!profile)).*php/$popup,domain=rustorka.com
-! END: rustorka.com
 !
 !
 ! START: mail.ru
