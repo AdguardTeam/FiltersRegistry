@@ -1,7 +1,7 @@
 !
-! OriginalVersion: 201805251612
+! OriginalVersion: 201805260300
 ! Title: Fanboy's Annoyance List
-! Last modified: 25 May 2018 16:12 UTC
+! Last modified: 26 May 2018 03:00 UTC
 ! Expires: 4 days (update frequency)
 ! License: http://creativecommons.org/licenses/by/3.0/
 ! Please report any unblocked content or problems by email or in our forums
@@ -62,6 +62,7 @@
 /btn-rss.
 /btn_back2top.
 /btn_back2top_
+/btn_pagetop.
 /btnGigpark.
 /btnMobile.
 /btnRSS.
@@ -1091,6 +1092,7 @@ _site_cookie_
 /bz_share/*
 /color-facebook-
 /color-twitter-
+/common/sns/*
 /commonSprites/social/*
 /components/share/*
 /connect-facebook-
@@ -11937,11 +11939,11 @@ _youtube_social_
 ##.popup--cookie
 ##.popup-alert-notice
 ##.popup-aviso-cookies
-##.popup-cookie
 ##.popup-cookie-banner
 ##.popup-cookie-notice-wrap
 ##.popup-cookie-policy
 ##.popup-cookie-show
+##.popup-cookie:not(body)
 ##.popup-cookies
 ##.popup-message
 ##.popup-overlay-cookies
@@ -12228,6 +12230,7 @@ _youtube_social_
 ##.viacomcookiebar
 ##.viacomcookiebar-extended
 ##.viia-cookie
+##.vk-cookie-notification
 ##.vk_cookie_compliance
 ##.vmapi-infocookies-wrapper
 ##.vmn_banner-wrapper
@@ -12424,6 +12427,7 @@ _youtube_social_
 ! Scroll to top
 ###BackToTop
 ###Imgback2top
+###PAGE_TOP_LINK
 ###ScrollToTopContainer
 ###WidgetScrollToTop
 ###arrow_to_site_top
@@ -14740,6 +14744,7 @@ _youtube_social_
 ###socialWidgets
 ###socialWidgetsWrap
 ###socialWire
+###socialWrap
 ###socialWrapper
 ###socialWrapper2
 ###socialYouTube
@@ -14851,6 +14856,8 @@ _youtube_social_
 ###socialbar-mobile
 ###socialbarwrapper
 ###socialblock
+###socialbookmark
+###socialbookmark-con
 ###socialbookmarks
 ###socialbox
 ###socialbox-container
@@ -15301,6 +15308,7 @@ _youtube_social_
 ##.PinterestButtonContainer
 ##.PinterestICN
 ##.PlusFollowers
+##.PostFooter__shareButtons
 ##.PostPicture__pinterest-button
 ##.PostSocial
 ##.PremiumObitShare
@@ -15318,6 +15326,8 @@ _youtube_social_
 ##.ShareBtnHold
 ##.ShareButton
 ##.ShareButton-shareContainer
+##.ShareButtons
+##.ShareButtons__link
 ##.ShareIt
 ##.ShareLinks
 ##.ShareLinksContainer
@@ -15572,6 +15582,8 @@ _youtube_social_
 ##.altshare
 ##.amc-social
 ##.amp-facebook
+##.amp-o-share-tools
+##.amp-o-social-bar
 ##.amp-wp-social
 ##.ampforwp-social-icons
 ##.ampz-icon-facebook
@@ -18767,6 +18779,7 @@ _youtube_social_
 ##.mc-share-toggle
 ##.mc-social-icons
 ##.md-list-share
+##.md-mainArticle__share
 ##.md-social-toolbar-circle
 ##.mdSocialButton
 ##.mdl_followUs
@@ -22725,6 +22738,7 @@ _youtube_social_
 ##.wx-social-share-story-twitter
 ##.wx-social-share-story-wrapper
 ##.wz-footer-sidebar__social
+##.x-entry-share
 ##.x-facebook
 ##.x-item-share-wrapper
 ##.x-social-facebook
@@ -22877,6 +22891,7 @@ _youtube_social_
 ##a[href^="http://linkedin.com/shareArticle?"]
 ##a[href^="http://me2day.net/posts/new?new_post[body]="]
 ##a[href^="http://meneame.net/submit.php?"]
+##a[href^="http://mixi.jp/share.pl?"]
 ##a[href^="http://pinterest.com/pin/create/bookmarklet/"]
 ##a[href^="http://pinterest.com/pin/create/button/"]
 ##a[href^="http://pinterest.com/pin/create/link/"]
@@ -22926,6 +22941,7 @@ _youtube_social_
 ##a[href^="https://bufferapp.com/add?url="]
 ##a[href^="https://facebook.com/share.php?u="]
 ##a[href^="https://facebook.com/sharer.php?"]
+##a[href^="https://lineit.line.me/share/"]
 ##a[href^="https://pinterest.com/pin/create/"]
 ##a[href^="https://plus.google.com/share"]
 ##a[href^="https://plus.google.com/share?"]
@@ -30325,17 +30341,25 @@ supersoluce.com##div[style^="position: fixed; width: 100%;"]
 ! ---------- Japanese Site Specific Rules ----------
 !
 yahoo.co.jp###RSAB
+tv-tokyo.co.jp###bangumi_page_top
 tabelog.com###page-up
-girlsheaven-job.net,gnavi.co.jp,harpersbazaar.jp###pageTop
-nhk.or.jp###pagetop
+girlsheaven-job.net,gnavi.co.jp,harpersbazaar.jp,news24.jp###pageTop
+radionikkei.jp###page_top
+nhk.or.jp,webtsc.com###pagetop
 yahoo.co.jp###pg_top
-mobilenews.jp##.pagetop
+j-wave.co.jp###totop
+webtsc.com##.footer-totop
+allnightnippon.com##.footer_pagetop
+ntv.co.jp##.ntv-pageTop
+mobilenews.jp,nikkei-cnbc.co.jp,tv-asahi.co.jp##.pagetop
 hotpepper.jp##.scrollWrap
 okjapan.jp##.scroller
 harpersbazaar.jp##.subModuleMailMagazine
 ||girlsheaven-job.net^*/pagetop.js
+||j-wave.co.jp^*/pagetop.
 ||okjapan.jp^*/btn_top.
 ||okjapan.jp^*_gotop_
+||radionikkei.jp^*/pagetop.
 !
 ! ---------- Spanish/Portuguese Site Specific Hiding Rules ----------
 !
@@ -30662,14 +30686,27 @@ vapee.com##a[href^="http://t.qq.com/"]
 !
 ! ---------- Japanese Specific Media Elements ----------
 !
+||plugins.mixi.jp/favorite.pl?$third-party
 !
 ! ---------- Japanese Site Specific Hiding Rules ----------
 !
 srad.jp###article-bottom
+tv-aichi.co.jp###box-officialsns
+news24.jp###rss
+ntv.co.jp###sns
+1242.com##.conts_Facebook
+1242.com##.conts_Twitter
+bayfm.co.jp##.facebook
+webtsc.com##.footer-sns
+allnightnippon.com##.header_sns
+allnightnippon.com##.index_sns
 zaikei.co.jp##.ninja_onebutton
+nikkei-cnbc.co.jp##.officialAccount
+fnn-news.com##.share
 coffee-break.me##.sns
 mobilenews.jp##.social
 srad.jp##.synd
+nikkei-cnbc.co.jp##.twitter
 !
 ! ---------- Non-English Generic Hiding Rules ----------
 !
@@ -31263,7 +31300,7 @@ airbnb.cat,airbnb.com,airbnb.de#@#.fb-button
 kizlarsoruyor.com#@#.fb-content
 firebase.google.com#@#.fb-dialog
 itweb.co.za#@#.fb-icon
-facebook.com,fb.com#@#.fb-like
+e-biznes.pl,facebook.com,fb.com#@#.fb-like
 facebook.com#@#.fb-likebox
 facebook.com,fb.com#@#.fb-link
 majkrafci.pl#@#.fb-page
@@ -31517,7 +31554,7 @@ twitter.com#@#.tweetbox
 abroadunderhood.ru,socket.io,twitter.com#@#.tweets
 bitbucket.org,geekli.st,plug.dj,twitter.com#@#.twitter-button
 flightradar24.com#@#.twitter-feed
-bme.jhu.edu#@#.twitter-follow-button
+bme.jhu.edu,e-biznes.pl#@#.twitter-follow-button
 twitter.com#@#.twitter-hashtag
 youtube.com#@#.twitter-icon
 nypost.com#@#.twitter-image
@@ -31864,6 +31901,7 @@ fark.com,github.com,github.io,marketplace.firefox.com,vvhp.net,wikipedia.org#@#i
 @@||droid-life.com/wp-content/uploads/*-twitter.$image,domain=droid-life.com
 @@||dropbox.com/sm/share_link/$xmlhttprequest
 @@||duckduckgo.com/assets/icons/favicons/youtube.png
+@@||e-biznes.pl^*/sociallocker-next-premium/
 @@||eceplayground.com^*/plugins/sociable/
 @@||edgesuite.net^*/sharrre.min.js$domain=jules.com
 @@||eff.org/sites/$image
@@ -31876,11 +31914,10 @@ fark.com,github.com,github.io,marketplace.firefox.com,vvhp.net,wikipedia.org#@#i
 @@||explainxkcd.com/wiki/images/$image,domain=explainxkcd.com
 @@||eyeo.com/dist/img/svg/$domain=help.eyeo.com
 @@||facebook.com/plugins/facepile.php?$domain=gu-facebook.appspot.com
-@@||facebook.com/plugins/like.php?$domain=archivedbook.com|gmx.net|gu-facebook.appspot.com|home.1und1.de|porn99.net|web.de
 @@||facebook.com/plugins/likebox.php?$domain=colbertnation.com|rafflecopter.com|thedailyshow.com
 @@||facebook.com/plugins/recommendations.php?$subdocument,domain=techcrunch.com
 @@||facebook.com/share/share_now_menu/$xmlhttprequest,domain=facebook.com
-@@||facebook.com/widgets/like.php?$domain=farmville.com|likearea.com
+@@||facebook.com^*/like.php?$domain=archivedbook.com|e-biznes.pl|farmville.com|gmx.net|gu-facebook.appspot.com|home.1und1.de|likearea.com|porn99.net|web.de
 @@||facebook.com^*/plugins/page.php?$domain=majkrafci.pl
 @@||fark.net/images/*/links/
 @@||fbcdn.net/connect.php/js/FB.Share$domain=jamendo.com
@@ -32066,9 +32103,10 @@ fark.com,github.com,github.io,marketplace.firefox.com,vvhp.net,wikipedia.org#@#i
 @@||pioneerelectronics.com/piocda/templates/*.svg
 @@||platform.linkedin.com/in.js$domain=businessinsider.com
 @@||platform.twitter.com/anywhere.js?$domain=ge.tt|mtv.com|pennsundayschool.com|projects.wsj.com|soychile.cl
+@@||platform.twitter.com/js/button.$script,domain=e-biznes.pl
 @@||platform.twitter.com/widgets.js$domain=agame.com|cbsnews.com|complex.com|egotastic.com|guardian.co.uk|guildwars2.com|livestream.com|mandatory.com|pawnation.com|pennsundayschool.com|reviews.cnet.com|simcity.com|soychile.cl|spielen.com|thedailyshow.com|wikia.com|wwe.com
 @@||platform.twitter.com/widgets/$domain=theguardian.com
-@@||platform.twitter.com/widgets/follow_button.html?$subdocument,domain=rafflecopter.com
+@@||platform.twitter.com/widgets/follow_button.$subdocument,domain=e-biznes.pl|rafflecopter.com
 @@||platform.twitter.com/widgets/tweet_button.html?$subdocument,domain=rafflecopter.com
 @@||platform.twitter.com/widgets/widget_iframe.$subdocument
 @@||platform.twitter.com^$domain=klout.com|twimg.com|twitpic.com
@@ -32291,4 +32329,4 @@ fark.com,github.com,github.io,marketplace.firefox.com,vvhp.net,wikipedia.org#@#i
 @@||material.cmiscm.com/images/share.png
 @@||privacypal.co/assets/img/fb.jpg
 @@||volkswagen-electrique.fr/img/share/share.jpg
-! Checksum: Z79jpXNk21bFPSiERT/OKQ
+! Checksum: 8A5PwaG1+hqHd6uHDXEhEg
