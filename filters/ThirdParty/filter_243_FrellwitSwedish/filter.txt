@@ -762,7 +762,7 @@ fragbite.se##.zooKeeper
 ||stats.blogg.se^
 /BlogPortal/js/stats/blogstat.$script
 ||bloggportalen.se/BlogPortal/view/Statistics$image
-!#if !env_mobile
+!#if env_mobile
 nyheter24.se##li.has-image:has(a[href^="/shopping/"])
 kwiss.me##.qz-main-slider-item-initial2:has(.qz-quiz-sponsored)
 !#endif
@@ -788,7 +788,7 @@ gamereactor.se###facebooknotification
 ||gamereactor.se/lay/js/adblock_desktop.js^$script,important
 ||gamereactor.se/lay/js/banners_config.js^$script,important
 ||gamereactor.se/media/eventad/$image
-!#if !env_mobile
+!#if env_mobile
 /adblock_mobile.$script,important,domain=gamereactor.se
 !#endif
 ! LIFE OF SVEA
@@ -1287,7 +1287,6 @@ newsner.com,humorbibeln.se###wsfb-container
 newsner.com,humorbibeln.se###share-buttons
 @@||humorbibeln.se^$generichide
 njus.me##.article-list-item--sponsored
-!/commercialAds/*$domain=njus.me
 ||njus.me/files/analytics.js$script
 ||stats.zotabox.com^$xmlhttprequest,domain=rapport24.com
 ||cdn2.editmysite.com^*/snowday*.$script,domain=rapport24.com
@@ -1422,15 +1421,18 @@ muscles.se##.newsletter-signup--popup
 ||muscles.se^*/news-icon.$image
 loppi.se##.page__ad
 loppi.se##.entry__teaser--promotion
+/js/gdpr-public.$script,domain=loppi.se
 festivalrykten.se##.loading
 festivalrykten.se##.sam-mobile
 festivalrykten.se###sam-takeover
 festivalrykten.se#$#body { padding-top: 0 !important; }
-festivalrykten.se##.featured:if(a:has-text(Den här artikeln är ett annonssamarbete))
+festivalrykten.se##.featured:if(a:has-text(annonssamarbete))
 ||webdesignskolan.se/wds_nyhetsbrev_popup
 minhembio.com##.adbox
 minhembio.com##div[style="height: 120px;"]:has(.top-ad)
 bilsport.se##.spons-article
+bilsport.se##[id^="bst-pano"]
+bilsport.se###bst-bot
 megafonen.nu###banner-top
 megafonen.nu###side-wrapper
 megafonen.nu##.box:if(h5 > span.title:has-text(Sponsrade inlägg))
@@ -1440,6 +1442,6 @@ fastighetsnytt.se##.promobox
 kissies.se##.post:if(strong:has-text(i samarbete med))
 @@||boffo.se^$generichide
 linnherbertsson.se##.post:if(strong:has-text(Betalt samarbete med))
-||cornucopia.cornubot.se/js/cookiechoices.$script
+||cornucopia.cornubot.se/js/cookie*.$script
 svegot.se##[itemtype="https://schema.org/WPAdBlock"]
 finansliv.se##.newsletter
