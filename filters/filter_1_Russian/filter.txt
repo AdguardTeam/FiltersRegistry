@@ -4992,6 +4992,9 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$scri
 @@//yandex.*/yandsearch?clid=$generichide
 @@//yandex.*/search/$generichide
 !
+! For all Yandex portals
+!+ NOT_PLATFORM(windows, mac, android)
+@@||an.yandex.ru/partner-code-bundles/*.js$domain=yandex.by|yandex.com|yandex.fr|yandex.kz|yandex.ru|yandex.ua
 ! Yandex.News
 ! for the case of using RU AdList
 ||news.yandex.*/*/*-*-*-*-$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
@@ -5001,8 +5004,6 @@ news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news
 @@||news.yandex.$generichide
 !+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/system/context.js$domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||an.yandex.ru/partner-code-bundles/*.js$domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
 !+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/mapuid/tnscounter/?redir-setuniq=1&from=yan_oo-rtb-direct$domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5036,8 +5037,6 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#@$#.c
 @@||awaps.yandex.ru/favicon.ico$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/system/context.js$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
-!+ NOT_PLATFORM(windows, mac, android)
-@@||an.yandex.ru/partner-code-bundles/*.js$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/mapuid/tnscounter/?redir-setuniq=1&from=yan_oo-rtb-direct$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5093,7 +5092,7 @@ mindmix.ru##.leftbanner > tbody > tr.leftmenuless:has(> td > div.ad_sign)
 !+ NOT_PLATFORM(ext_safari, ext_chromium, ext_edge)
 baskino.me#$#html > body.branding:has(> div) { padding-top: 0px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12450
-narutoplanet.ru##.art-layout-cell > div.art-block:has(> div.art-blockheader > div:contains(eкомeндуeм))
+narutoplanet.ru##.art-layout-cell > div.art-block:has(> div.art-blockheader > div:contains(/[РP][еe][кk][оo][м][еe]/))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14944
 ruseller.com###sideRight > .box:has(p[style^="text-align: center;"])
 ruseller.com###sideRight > .box:has(> .red)
@@ -8642,7 +8641,7 @@ profithunters.ru###logoBlock > div.pageWidth > div.pageContent > div+a[target="_
 /code/*.php?*&adv_$domain=hdreactor.club|hdreactor.red|hdreactor.su|freehd.com.ua|hdpicture.ru|hdreactor.club
 filetor.org##div[align="center"] > a[rel="nofollow"] > img
 filmitorrent.org##center > a[target="_blank"] > img
-narutoplanet.ru##.art-content > div:first-child div[style="text-align: center;"] a > img
+narutoplanet.ru##.art-content > div:first-child div[style="text-align: center;"]
 gig-torrent.com##center > a[href^="/go"] > img
 carambatv.ru##.billboard--adv_footer
 nim.ru##a.branding
