@@ -2564,7 +2564,6 @@ http://wq3.ru^$third-party
 ||piroji.com^$third-party
 ||pixxxocl.ml^$third-party
 ||placeoff.ru^$third-party
-||pladform.ru^$third-party
 ||planetapozitiva.ru^$third-party
 ||platinumcode.net$third-party
 ||play.zzima.com/*?ref=$third-party
@@ -3729,6 +3728,7 @@ http://wq3.ru^$third-party
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
+||partner.pladform.ru^
 ||ad.iplayer.org^
 ||ukrsvit.ukrmir.info^
 ||o.60sk.ru^$third-party
@@ -4096,7 +4096,7 @@ biblprog.org.ua#$#.adsbygoogle { height: 1px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10823
 @@||rambler.ru/showads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11150
-||auto.ru/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,important,script,domain=auto.ru
+||auto.ru/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,important,script,domain=auto.ru
 !+ NOT_PLATFORM(windows,mac,android)
 @@||an.yandex.ru/system/context.js$domain=auto.ru
 !+ NOT_PLATFORM(windows,mac,android)
@@ -5035,6 +5035,7 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$scri
 ! Yandex search
 @@//yandex.*/yandsearch?clid=$generichide
 @@//yandex.*/search/$generichide
+@@//www.yandex.*/search/$generichide
 !
 ! For all Yandex portals
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5043,7 +5044,7 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$scri
 @@||yastatic.net/pcode/adfox/header-bidding.js$domain=yandex.by|yandex.com|yandex.fr|yandex.kz|yandex.ru|yandex.ua
 ! Yandex.News
 ! for the case of using RU AdList
-||news.yandex.*/*/*-*-*-*-$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
+||news.yandex.*/*/*-*-*-*-$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
 news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news.yandex.ua$$div[aria-label="Реклама"][class="profit"][max-length="18000"]
 ! for extensions
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5058,7 +5059,7 @@ news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news
 @@||an.yandex.ru/meta/*?redir-setuniq=1&target-ref=$domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
 !
 ! Yandex.Weather
-||yandex.*/pogoda/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,important,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua
+||yandex.*/pogoda/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,important,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua
 !+ NOT_PLATFORM(windows, mac, android)
 @@||yandex.*/pogoda/$generichide
 !
@@ -5074,7 +5075,7 @@ news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news
 ://yandex.*/maps/$replace=/\,"adverts":\[.+?]}/\,"adverts":\[]\}/,important
 !
 ! Yandex.Mail
-||mail.yandex.*/*/*-*-*-*-$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,important,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
+||mail.yandex.*/*/*-*-*-*-$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,important,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !+ NOT_PLATFORM(windows, mac, android)
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#@$#.container__banner  { position: absolute!important; left: -3000px!important; }
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5091,7 +5092,7 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#@$#.c
 @@||an.yandex.ru/meta/*?redir-setuniq=1&target-ref=$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !
 ! Yandex.TV
-||tv.yandex.*/*/*-*-*-*-$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,important,domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
+||tv.yandex.*/*/*-*-*-*-$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,important,domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
 tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblockDetected"][max-length="5000"]
 !+ NOT_PLATFORM(windows, mac, android)
 @@||tv.yandex.$generichide
@@ -5099,7 +5100,7 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 @@||an.yandex.ru^$domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
 !
 ! Yandex.Afisha
-||afisha.yandex.*/*/*-*-*-*-$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,important,domain=afisha.yandex.by|afisha.yandex.kz|afisha.yandex.ru|afisha.yandex.ua
+||afisha.yandex.*/*/*-*-*-*-$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,important,domain=afisha.yandex.by|afisha.yandex.kz|afisha.yandex.ru|afisha.yandex.ua
 !+ NOT_PLATFORM(windows, mac, android)
 @@||afisha.yandex.$generichide
 !+ NOT_PLATFORM(windows, mac, android)
@@ -6342,6 +6343,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://forum.adguard.com/index.php?threads/28791/
+qmusic.me#$#.wrapper { margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16796
 kino-hd1080.ru#$#body { padding: 0 0 0!important; }
 ! kino-hd720.net - удаление отступа сверху
@@ -7227,8 +7230,11 @@ animemovie.ru#$#.dem>header{background: none!important;}
 ! Ad under the search string
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.widgets div.container__banner { position: absolute!important; left: -3000px!important; }
 ! Yandex search
+yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$script[tag-content=".serp-adv-item,"][min-length="4000"][max-length="6000"]
 ! exclude for Yandex.TV(anti-adblock)
-~tv.yandex.by,~tv.yandex.kz,~tv.yandex.ru,~tv.yandex.ua,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.serp-adv-item { position: absolute!important; left: -3000px!important; }
+~tv.yandex.by,~tv.yandex.kz,~tv.yandex.ru,~tv.yandex.ua,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.serp-adv-item > div > * > * { visibility: hidden!important; }
+! exclude for Yandex.TV(anti-adblock)
+! ~tv.yandex.by,~tv.yandex.kz,~tv.yandex.ru,~tv.yandex.ua,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.serp-adv-item { position: absolute!important; left: -3000px!important; }
 ! Yandex.Maps
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.scroll__container > div.scroll__content > div > div[style*="!important"] { height: 0px!important; transform: scale(0)!important; margin-top: 0px!important; margin-bottom: 0px!important; }
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.scroll__container > div.scroll__content > div > div > div[style*="!important"] { height: 0px!important; transform: scale(0)!important; margin-top: 0px!important; margin-bottom: 0px!important; }
@@ -8629,6 +8635,12 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+||pladform.ru^$domain=24molnia.com|cybergame.tv|filmstart.ru|filmzguru.ru|kinogorod.net|kinokrad.co|kinosib.tv|mobportal.net|molodejj.tv|novostionline.net|smotri.com
+||out.pladform.ru/getVast?*adformat=
+||trafic-media.ru/mghtml/
+qmusic.me##.branding
+||betadvise.ru/upload/*-160h600-
+||kingoablc.com/*.php
 auto.ru##.card__header-right > div.card__price+div.card__ins-button-wrapper
 auto.ru##.card__content-left > div.card__block~div:not([sale-iframe]):not([data-bem])
 woman365.ru##.woman-adlabel
@@ -16350,30 +16362,30 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16720
 ||gismeteo.*/*/*/*/$replace=/Ya\s?\[([0-9]{1\,15})\]\([\s\S]*\)\$//,script,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15125
-||businessman.ru/*/*/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,domain=businessman.ru,important
+||businessman.ru/*/*/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,domain=businessman.ru,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13038
 ||fb.ru/*/*/*/$replace=/Ya\s?\[([0-9]{1\,15})\]\([\s\S]*\)\$//,script,domain=fb.ru,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16299
 ||syl.ru/*/*/*/$replace=/Ya\s?\[([0-9]{1\,15})\]\([\s\S]*\)\$//,script,domain=syl.ru,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13644
-||forexpf.ru/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,important,script,domain=forexpf.ru
+||forexpf.ru/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,important,script,domain=forexpf.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12971
 ://goodgame.ru^|$replace=/"duration": \d\d/"duration": 0/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12803
-||gorodrabot.ru/*/*/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,domain=gorodrabot.ru,important
+||gorodrabot.ru/*/*/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,domain=gorodrabot.ru,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10802
-||otzovik.com/*/*/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,domain=otzovik.com,important
+||otzovik.com/*/*/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,domain=otzovik.com,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12065
-||mathb-ege.sdamgia.ru/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,important,script,domain=mathb-ege.sdamgia.ru
+||mathb-ege.sdamgia.ru/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,important,script,domain=mathb-ege.sdamgia.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10631
 ! It breaks embed players. But standalone player works.
 ! ||torrentstream.*/get?_v=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10426
-||24smi.org/*/*/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,script,domain=24smi.org,important
+||24smi.org/*/*/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,script,domain=24smi.org,important
 ! hi-tech.mail.ru
 ||hi-tech.mail.ru/*/js/cmpld/web/common.js$replace=/^mimic_.+//,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8860
-||e1.ru/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,important,script,~stylesheet,domain=e1.ru
+||e1.ru/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,important,script,~stylesheet,domain=e1.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8588
 ||maximonline.ru/tube/controllers/select.php?_=$replace=/"fileUrl":\[.+?]\,//
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8396
@@ -16392,7 +16404,7 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 ! https://forum.adguard.com/index.php?threads/18491/
 ||s.mimovi.ru/*/b|$replace=/maxTime:\s\d+\,/maxTime: 500\,/,important
 ! https://forum.adguard.com/index.php?threads/14311/
-||kakprosto.ru/*/*/*/$replace=/^Ya(\s)*\[([0-9]{10\,15})\][\s\S]*'\)//,important,script,~stylesheet,domain=kakprosto.ru
+||kakprosto.ru/*/*/*/$replace=/^(\s)*Ya\[\d+\][\s\S]*'\)//,important,script,~stylesheet,domain=kakprosto.ru
 ! https://forum.adguard.com/index.php?threads/24255/
 ||upornoflv.tv^$replace=/"advertising":\{.*?\}/,important,~script,~stylesheet,~xmlhttprequest
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5988
@@ -16519,8 +16531,6 @@ hellomagazine.com#@##top-banner
 @@||am15.net/?svq=$domain=fishki.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16163
 escland.proboards.com#@##banner-container
-! https://github.com/AdguardTeam/AdguardFilters/issues/15663
-@@||out.pladform.ru/player?pl=$domain=borodachtv.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15089
 @@||digiseller.ru^$script,domain=megaoblako.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15140
@@ -16531,8 +16541,6 @@ escland.proboards.com#@##banner-container
 @@||vipthz.com/imc_attachad-ad.html
 ! fishki.net - исключаем обычные новости
 @@||fishki.net/informer*hot^$domain=fishki.net
-! https://github.com/AdguardTeam/AdguardFilters/issues/13701
-@@||out.pladform.ru/player?pl=$domain=seasonvar.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12714
 @@||ole.bris.ac.uk/branding/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12597
@@ -16640,8 +16648,6 @@ dtkrostov.ru#@#.top_banner
 ! https://forum.adguard.com/index.php?threads/20563/
 @@||ergs4.com/handlebars.js$domain=porn-1080.com
 @@||ergs4.com/static/player.js?pl=$domain=porn-1080.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/4941
-@@||out.pladform.ru/player$domain=bazr.ru
 ! https://forum.adguard.com/index.php?threads/21365/
 @@||kjaay.com^$domain=dizimania.ru,script
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4882
@@ -16682,8 +16688,6 @@ realist.online#@#.banner-top
 ! https://forum.adguard.com/index.php?threads/19553/
 @@||trafmag.com/etarg-code.js$domain=smotri.com,important
 @@||et-code.ru/bens/vinos.js$domain=smotri.com,important
-! https://forum.adguard.com/index.php?threads/18568/
-@@||out.pladform.ru/player$domain=kinopictures.net
 ! mymagic.ru - при вырезании iframe кнопки Like, страница ломается
 @@||mymagic.ru^$content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4280
@@ -16870,13 +16874,6 @@ warez-new.info#@#.reklama
 okko.ua#@#.content-banner
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1932
 @@||rs.mail.ru/crossdomain.xml
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/1934
-@@||cdn-any.pladform.ru/video/$domain=kinopoisk.ru
-@@||out.pladform.ru/getVideo$domain=kinopoisk.ru
-@@||out.pladform.ru/getPlaylist$domain=kinopoisk.ru
-@@||static.pladform.ru/yandex_wrapper.swf$domain=kinopoisk.ru
-@@||cdn.pladform.ru/img/covers/*$domain=kinopoisk.ru
-@@||static.pladform.ru/controller_simpe.swf$domain=kinopoisk.ru
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1914
 @@||online.citi.com/GFC/branding/
 ! http://forum.adguard.com/showthread.php?10218
@@ -16912,8 +16909,6 @@ newnavitel.blogspot.ru,newnavitel.blogspot.com#@##AdSense1
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1151
 ! privat24.ua - payout is broken by Adguard injections
 @@||transfers.privatbank.ua^$document
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/1528
-@@||out.pladform.ru/player$domain=fishki.net
 ! aipa.ru - broken navigation to next page
 @@||aipa.ru/modules/blocklayered/blocklayered-ajax.php$document
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1498
@@ -16978,18 +16973,12 @@ rabota.mail.ru#@#.banner-place
 b-nn.ru#@#.ad_image
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1048
 @@||my.velcom.by^$document
-! http://forum.adguard.com/showthread.php?7955
-@@||out.pladform.ru/getPlaylist$domain=yomi.ru
-@@||out.pladform.ru/getVideo$domain=yomi.ru
-@@||out.pladform.ru/player$domain=yomi.ru
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1042
 @@/advert$domain=moe-online.ru
 ! http://forum.adguard.com/showthread.php?7901
 @@||reklama.marat.ua^$domain=reklama.marat.ua
 ! videoprobki.ua - unblock their app's banner
 @@||videoprobki.ua/sites/default/files/banners/googleplay.png
-! http://forum.adguard.com/showthread.php?7754
-@@||out.pladform.ru/player$domain=afisha.mail.ru
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/952
 @@||footballhd.ru/engine/ajax/$document
 ! http://forum.adguard.com/showthread.php?7709
@@ -17025,8 +17014,6 @@ survarium.com#@#.top-banner
 @@/img/slide-*-advert.svg$domain=browser.sputnik.ru
 ! adman.com - исправление вёрстки
 @@||adman.com^$domain=adman.com
-! vk.com - fixing video player
-@@||out.pladform.ru^$domain=vk.com
 ! https://forum.adguard.com/index.php?threads/15329/
 @@||stb.ua/wp-content/themes/STB_New/includes/js/ads.js
 @@||player.stb.ua/assets/*/advert.js
@@ -17102,11 +17089,6 @@ forum.na-svyazi.ru#@##HeroAd
 @@||s.adverigo.com/production/main.js
 ! http://forum.adguard.com/showthread.php?6070
 lenta.ru#@#iframe[width="600"][height="90"]
-! http://forum.adguard.com/showthread.php?6055
-@@||cdn.pladform.ru/img/$domain=radikal.ru
-@@||out.pladform.ru/player$domain=radikal.ru
-! https://qcrm.cc/#/customer/1059882
-@@||pladform.ru^$domain=ok.ru
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/657
 @@||webadvert.ru^$~third-party
 ! http://forum.adguard.com/showthread.php?5947
@@ -17263,8 +17245,6 @@ narutoplanet.ru#@#.top-banner
 all-episodes.com#@##ad3
 ! http://forum.adguard.com/showthread.php?4676
 muz.ru#@##right_ad
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/386
-@@||pladform.ru^$domain=mycdn.me
 ! http://forum.adguard.com/showthread.php?4575
 @@/advertise/*$domain=101.ru
 ! http://forum.adguard.com/showthread.php?4573
@@ -17581,7 +17561,6 @@ zastava.net.ua#@#.banners
 @@smiimg.dt00.net/smi
 ! molodejj.tv для остальных браузеров (которые can into referer)
 @@/crossdomain.xml$domain=molodejj.tv
-@@||pladform.ru^$domain=molodejj.tv
 @@||google-analytics.com^$domain=molodejj.tv
 ! Без этих исключений не грузятся некоторые видео
 @@||adriver.ru/crossdomain.xml
@@ -17682,9 +17661,6 @@ zastava.net.ua#@#.banners
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=artificialvision.com|gpxplus.net|metamodal.com|myspace.com|omegadrivers.net|seeingwithsound.com|warp2search.net
 @@||partner.paystream.ru$document
 @@||partners.drweb.com^
-@@||pladform.ru/pladformAdvertModule.swf$domain=coub.com|vk.com
-@@||pladform.ru/player*.swf
-@@||pladform.ru/skin_*.swf
 @@||planeta-online.tv/css/ads.css
 @@||po.ua/media/
 @@||ragforum.ru$jsinject
