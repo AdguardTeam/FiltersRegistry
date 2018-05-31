@@ -3901,6 +3901,12 @@ ws*://video.docfilms.info^
 @@||c.bigmir.net/?$image,domain=vgorode.ua
 !+ NOT_PLATFORM(windows, mac, android)
 @@||counter.yadro.ru/logo$image,domain=vgorode.ua
+!+ NOT_PLATFORM(windows, mac, android)
+@@||trafmag.com/sitecode-*.js$domain=ex-fs.net
+!+ NOT_PLATFORM(windows, mac, android)
+@@||trafmag.com^$image,domain=ex-fs.net
+!+ NOT_PLATFORM(windows, mac, android)
+ex-fs.net#$#div[id^="trafmag_"] { position: absolute!important; left: -3000px!important; }
 ! #################
 !
 !--- fuckAdBlock ---
@@ -4018,15 +4024,15 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 ||zmctrack.net/z^$replace=/.+//
 ||c.klcheck.com^$replace=/.+//
 ! New $$ rules
-sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,fastpic.ru,kurs.com.ua$$script[wildcard="*!function(){function*f.length;u++*,Bn=*"][max-length="10000"]
-epravda.com.ua,pravda.com.ua$$script[tag-content="z=stop.bind"][max-length="10000"]
+censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,fastpic.ru,kurs.com.ua$$script[wildcard="*!function(){function*f.length;u++*,Bn=*"][max-length="10000"]
+tapochek.net,epravda.com.ua,pravda.com.ua$$script[tag-content="z=stop.bind"][max-length="10000"]
 tushkan-tv.net,kino-hd1080.ru$$script[wildcard="*var _0x*['length']*));}());*"][max-length="25000"]
 zemlyaki.name,sonnikonline.club$$script[tag-content=".com/rotator-v2/"][max-length="800"]
 !+ NOT_OPTIMIZED PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@://block.pigiuqproxy.com/rotator-v2/*.js$script,domain=zemlyaki.name|sonnikonline.club
 !+ NOT_PLATFORM(windows, mac, android)
 tushkan-tv.net#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('_0x') == 0) { window[key] = function() { }; } }; });
-epravda.com.ua,pravda.com.ua#%#AG_abortInlineScript(/stop.bind/, 'z');
+tapochek.net,epravda.com.ua,pravda.com.ua#%#AG_abortInlineScript(/stop.bind/, 'z');
 !+ NOT_PLATFORM(windows, mac, android)
 zemlyaki.name,sonnikonline.club#%#AG_abortInlineScript(/\/rotator/, 'document.addEventListener');
 !+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock, ext_ff)
@@ -5227,6 +5233,10 @@ softportal.com#$#.mfp-wrap:has(> div) { display: none!important; }
 !
 gamer-info.com##body > div[id="blablabla"] > div > a:matches-css(background-color: rgb(3, 56, 79))
 gamer-info.com##body > div[id]:has(> a#timer)
+!
+gismeteo.ru##div:has(> div > div[data-type="rbc"])
+gismeteo.ru##div:has(> div > div > div[id*="_R-A-"])
+gismeteo.ru##div:has(> div > div[data-type="default"] > div > a[href*="type=news_type&id="])
 !
 the-village.com.ua##.main-row > div.row-cont > div.posts-layout > div[class="post-block posts-sidebar"]:has(> aside > div.banner)
 yaplakal.com#$#body:has(> div) { background-color: #ddd!important; }
@@ -11551,7 +11561,6 @@ tvfru.net###advm_preload
 ||sinst.fwdcdn.com/_uploaded_files/ads/
 sinoptik.ua##.rightAdvBox
 vesti.ru##.adv-list
-unn.com.ua##div[id^="trafmag_"]
 unn.com.ua##a[id^="snf"]
 ||bibliotekar.ru/banner
 ||bibliotekar.ru/rotator
@@ -11720,7 +11729,6 @@ abv-soft.ru,inoe.name##.plate_blue
 academ.info###jilfond
 acer-a500.ru##.advs
 acer-a500.ru##div[id^="b_tz"]
-acer-a500.ru##div[id^="trafmag_"]
 aces.gg##.banaces-news
 ad-file.com##a[onclick^="goad"]
 adme.ru##.adx-300x250-container
@@ -15834,6 +15842,8 @@ zserials.tv##noindex a[rel="nofollow"] > img
 !
 ! GisMeteo
 ! gismeteo.ru(new design)
+beta.gismeteo.ru##.media_top_frame
+gismeteo.ru##div[data-type="rbc"]
 gismeteo.by##.xby400
 tourism.gismeteo.ru##h1+div[class="box"]:empty
 gismeteo.ru##.items.vesti
@@ -15868,7 +15878,7 @@ gismeteo.ua##div[id="weather-rbkua"]
 !--- Hints ------
 !
 !+ PLATFORM(ios, ext_android_cb)
-vc.ru##.stratumTele2
+tjournal.ru,vc.ru##.stratumTele2
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_safari, ext_android_cb)
 stolica-s.su##.ban-top
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_safari, ext_android_cb)
