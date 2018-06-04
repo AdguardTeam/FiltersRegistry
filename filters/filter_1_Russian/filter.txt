@@ -3989,8 +3989,8 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 ! Ads replacement (piguiqproxy.com etc.)
 -*.zmctrack.net^$replace=/.+//
 ! New $$ rules
-allboxing.ru,censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,fastpic.ru,kurs.com.ua$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
-! the rule for desktop apps
+isport.ua,allboxing.ru,censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,fastpic.ru,kurs.com.ua$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
+! the rule for desktop apps(specific rule is abobe)
 !$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
 allboxing.ru,censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,fastpic.ru,kurs.com.ua$$script[wildcard="*!function () { function*f.length; u++*, Bn =*"][max-length="10000"]
 tapochek.net,epravda.com.ua,pravda.com.ua$$script[tag-content="z=stop.bind"][max-length="10000"]
@@ -5119,7 +5119,7 @@ allboxing.ru##div[id^="n4p_"]
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
 ||buzzoola.com^$domain=allboxing.ru
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
-||googletagmanager.com^$domain=allboxing.ru|korrespondent.net|vgorode.ua
+||googletagmanager.com^$domain=allboxing.ru|korrespondent.net|vgorode.ua|isport.ua|paprikolu.net
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
 ||an.yandex.ru/system/context.js$script,domain=allboxing.ru|radikal.ru
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
@@ -5138,9 +5138,9 @@ allboxing.ru##.h-banners
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
 ||google-analytics.com^$domain=korrespondent.net
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
-||holder.com.ua^$domain=korrespondent.net
+||holder.com.ua^$domain=korrespondent.net|isport.ua
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
-||lentainform.com^$domain=korrespondent.net
+||lentainform.com^$domain=korrespondent.net|isport.ua
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
 ||marketgid.com^$domain=korrespondent.net|hvylya.net|ex-fs.net
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
@@ -5274,6 +5274,18 @@ ex-fs.net#$#div[id^="trafmag_"] { position: absolute!important; left: -3000px!im
 @@||ad.adriver.ru/cgi-bin/erle.cgi$domain=txapela.ru
 !
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
+@@||isport.ua^$genericblock
+!+ NOT_PLATFORM(windows, mac, android,ext_ff)
+||gaua.hit.gemius.pl/*/rexdot.js$domain=isport.ua
+!
+!+ NOT_PLATFORM(windows, mac, android,ext_ff)
+@@||paprikolu.net^$genericblock
+!+ NOT_PLATFORM(windows, mac, android,ext_ff)
+||buawdshes.ru^$domain=paprikolu.net
+!+ NOT_PLATFORM(windows, mac, android,ext_ff)
+||paprikolu.net/bens/vinos.js$domain=paprikolu.net
+!
+!+ NOT_PLATFORM(windows, mac, android,ext_ff)
 @@||loadercdn.com^$script
 ! #################
 !-------------------------------------------------------------------------------!
@@ -5348,6 +5360,8 @@ forum.cxem.net##form > article[id^="elComment_"][-ext-has='strong[itemprop="name
 ! https://forum.adguard.com/index.php?threads/15617/
 popmech.ru##div[class="content-aside-box"] > div.grid-cell.grid-cell__1[-ext-has=">div[data-banner-type]"]
 !
+drive2.ru##div.c-block[-ext-has="span > a.c-link--light-gray:contains(Продвигаемая запись)"]
+drive2.ru##div.c-block[-ext-has="div.c-com-dv-label > a.c-link--light-gray:contains(Реклама)"]
 drive2.ru#$#.g-column-wide > div.c-block[-ext-has=".c-header:contains(Реклама)"] { position: absolute!important; left: -3000px!important; }
 drive2.ru#$#.c-block__fake-gap > div.c-block[-ext-has=".c-header:contains(Реклама)"] { position: absolute!important; left: -3000px!important; }
 drive2.ru##html:has(> body) > body > div.l-body > div.l-dv > div.l-dv__i
@@ -7394,7 +7408,8 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.wi
 ! Yandex search
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$script[tag-content=".serp-adv-item,"][min-length="4000"][max-length="6000"]
 ! exclude for Yandex.TV(anti-adblock)
-~tv.yandex.by,~tv.yandex.kz,~tv.yandex.ru,~tv.yandex.ua,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.serp-adv-item > div > * > * { visibility: hidden!important; }
+~tv.yandex.by,~tv.yandex.kz,~tv.yandex.ru,~tv.yandex.ua,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.serp-list > li.serp-adv-item > * > * > * { position: absolute!important; left: -3000px!important; }
+!~tv.yandex.by,~tv.yandex.kz,~tv.yandex.ru,~tv.yandex.ua,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.serp-adv-item > div > * > * { visibility: hidden!important; }
 ! exclude for Yandex.TV(anti-adblock)
 ! ~tv.yandex.by,~tv.yandex.kz,~tv.yandex.ru,~tv.yandex.ua,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.serp-adv-item { position: absolute!important; left: -3000px!important; }
 ! Yandex.Maps
@@ -7686,6 +7701,7 @@ zerx.ru$$script[tag-content="document.write('<style>.modul-search"]
 /sm?saitDomain=*&referrer=
 /admin-ajax.php?action=bbq_default_code_url&rnd=
 ! kodik.cc
+/vastad/*/manifest.xml
 /vast-ad/*/manifest.xml
 /vast-adv/*/manifest.xml
 ! RealBig
@@ -7695,6 +7711,7 @@ zerx.ru$$script[tag-content="document.write('<style>.modul-search"]
 ! tnAdditionalParams
 /cu3.php?block_data$script,third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12914
+/6script.js?*=
 /1script.js?*=
 /6core.js?*=
 /6code.js?*=
@@ -8836,6 +8853,7 @@ bits.media##.leftColumn > div.footer~p[style="padding: 5px 0 5px 0; color: #b0b0
 coinspot.io##.left-menu-ad
 auto.ru##.fotorama__wrap > div.fotorama__nav-wrap > div.fotorama__nav > div[style="display: block;"]:not([class*="foto"])
 drive2.ru##a[data-target^="auto.ru"]
+drive2.ru##div.c-block[data-target^="auto.ru"]
 portaltele.com.ua##.top-ads-links
 talks.by##div[style="height: 90px; width: 100%;"]
 porn0sex.me##iframe[src^="/spot/"]
@@ -16684,6 +16702,8 @@ ut-1.alexbranding.com,unitheme.net#@#[class^="adv-"]
 !#################
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/17513
+booking-feodosia.com#@#.node-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17169
 @@||tattoonsk.ru/assets/cache_image/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16949
