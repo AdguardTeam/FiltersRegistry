@@ -3996,7 +3996,7 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 ! Ads replacement (piguiqproxy.com etc.)
 -*.zmctrack.net^$replace=/.+//
 ! New $$ rules
-i.ua,kino-fs.ucoz.net,liga.net,strana.ua,kino-hd1080.ru,kinocoin.online,isport.ua,allboxing.ru,censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,fastpic.ru,kurs.com.ua$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
+kp.ua,112.ua,i.ua,kino-fs.ucoz.net,liga.net,strana.ua,kino-hd1080.ru,kinocoin.online,isport.ua,allboxing.ru,censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,fastpic.ru,kurs.com.ua$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
 ! the rule for desktop apps(specific rule is abobe)
 $$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
 allboxing.ru,censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,fastpic.ru,kurs.com.ua$$script[wildcard="*!function () { function*f.length; u++*, Bn =*"][max-length="10000"]
@@ -5423,6 +5423,39 @@ newsyou.info##.singblock
 !+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
 ||pagead2.googlesyndication.com^$domain=i.ua,empty
 !
+@@||112.ua^$genericblock
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||pagead2.googlesyndication.com^$domain=112.ua,empty
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||google-analytics.com^$domain=112.ua
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||heatmap.it^$domain=112.ua
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||bigmir.net^$domain=112.ua
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||traffim.com^$domain=112.ua
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||lentainform.com^$domain=112.ua,empty
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||redtram.com^$domain=112.ua,empty
+!
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+@@||kp.ua^$genericblock
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||holder.com.ua^$domain=kp.ua,empty
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||googletagmanager.com^$domain=kp.ua,empty
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||bigmir.net^$domain=kp.ua
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||cdn.onthe.io^$domain=kp.ua,empty
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||google-analytics.com^$domain=kp.ua
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||mmi.bemobile.ua^$domain=kp.ua,empty
+!+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock)
+||gemius.pl^$domain=kp.ua,empty
+!
 !
 !+ NOT_PLATFORM(windows, mac, android,ext_ff)
 @@||loadercdn.com^$script
@@ -5433,6 +5466,9 @@ newsyou.info##.singblock
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/17574
+nasimke.ru##div[class^="_well"]:has(> div > img[src*="/rekl/"])
+nasimke.ru##div[class^="_well"]:has(> div > div > img[src*="/rekl/"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16796
 kino-hd1080.ru##body > div[id^="br_"]:has(> div)
 ! kinovo.org - удаление отступа сверху
@@ -8955,6 +8991,11 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+.ru./*.js|$domain=nasimke.ru
+||st.fotocdn.net/app/play/top_banners/
+forum.fonarevka.ru##.navbar_banners
+forum.fonarevka.ru##a[rel="nofollow"] > img[style="max-width:405px;width:100%;"]
+forum.fonarevka.ru##.footer_banners
 ||ahcdn.com/key=*/state=*/referer=/reftag=*.*.mp4$domain=apornoflv.tv,mp4
 playzona.org##.rkl-box
 smotret-anime.ru##iframe[id^="aft-pv"]
@@ -9051,8 +9092,9 @@ m.ua##div.bottom-banner
 nadavi.ru##iframe[name^="banner_"]
 /gb.php?idb_=$domain=e-katalog.ru|ek.ua|nadavi.ru|m.ua
 bigsexshok.ru##.itemb
-24smi.org##.celebrity-article-ad
-||24smi.org/adwiles/
+24smi.org##.scroll-daily-news
+24smi.org##.celebrity-ad-article
+||24smi.org/adwiles
 howdyho.net##.interesting_block_links > a:not([href^="https://ad.admitad.com/"])
 ||ad.admitad.com^$popup,domain=howdyho.net
 ||flibustas.space/*.php|
