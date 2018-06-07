@@ -24,6 +24,8 @@
 !######### Annoying elements (not ads)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/17584
+jamf.com###learn-more-banner-container > #learn-more-banner
 ! tvnow.de - pause button maximizing
 tvnow.de##.now-player-infobox
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16986
@@ -2221,6 +2223,7 @@ howwindows.ru#%#window.canRunAds = true;
 !+ NOT_OPTIMIZED
 ##.cookie-banner:not(body):not(html)
 !
+##.cc-window[aria-label="cookieconsent"]
 ###_evidon_banner
 ##amp-consent
 ##.as-oil
@@ -2744,6 +2747,7 @@ howwindows.ru#%#window.canRunAds = true;
 ###cookiesBox
 ###cookiesContainer
 ###cookiesDiv
+###CookiesDiv
 ###cookiesInfo
 ###cookiesInfoBox
 ###cookiesInitialDialog
@@ -3887,6 +3891,10 @@ chimica-online.it###cookieChoiceInfo
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 strunz.com###v-cookielaw
 !
+finder.com##.cookie-footer-bar
+appletoolbox.com###ez-cookie-dialog-wrapper
+itprotoday.com##.gdpr-popup-border
+jamf.com##.jamf-cc-revoke.cc-bottom
 iphoneitalia.com###iubenda-cs-banner
 uploadcloud.pro##.cookieinfo
 wunderground.com##.privacy-policy-toast
@@ -5006,6 +5014,8 @@ aliexpress.com###j-site-notice-header[-ext-has='>.site-notice-container:contains
 !
 ! JS rules
 !
+myprivacy.persgroep.net#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByClassName("fjs-set-consent")[0].click(); }, 300); });
+7sur7.be#%#document.cookie = "pws=functional|social_media";
 fortune.com#%#AG_onLoad(function() { setTimeout(function() { if(document.getElementsByClassName("gdpr-legal-copy")[0].isvisible = true) { document.getElementsByClassName("btn")[0].click();}; }, 2000); });
 derstandard.at#%#AG_onLoad(function() { setTimeout(function() { if(document.getElementsByClassName("privacywall-overlay")[0].isvisible = true) { document.cookie = "DSGVO_ZUSAGE_V1=true; path=/"; location.reload(); }; }, 300); });
 cookies.rtlnieuws.nl#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('form[action="https://cookieservice.rtl.nl/consent"] > .accept-button'); if (el) el.click(); }, 300); });
