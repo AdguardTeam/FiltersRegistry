@@ -3280,7 +3280,7 @@ howwindows.ru#%#window.canRunAds = true;
 ##.cookieInfo:not(body):not(html)
 ##.cookieInformation
 ##.cookieInside
-##.cookieLaw
+##.cookieLaw:not(body):not(html)
 ##.cookieLegal
 ##.cookieLegalComp
 ##.cookieLegal_comp
@@ -3344,7 +3344,7 @@ howwindows.ru#%#window.canRunAds = true;
 ##.cookiedisclaimer
 ##.cookiediv
 ##.cookieinfobannerWrapper
-##.cookielaw
+##.cookielaw:not(body):not(html)
 ##.cookielaw-container
 ##.cookieleiste
 ##.cookiemonster
@@ -3894,6 +3894,15 @@ chimica-online.it###cookieChoiceInfo
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 strunz.com###v-cookielaw
 !
+starwindsoftware.com###privacyPopup
+healthline.com#$#.css-3bri2n { overflow:visible!important; position: static!important; }
+healthline.com#$##GDPR-modal { display:none!important; }
+veeam.com##.header-component__messages-overlay
+veeam.com##.cookie-messaging
+independent.co.uk###cookie-warning-gdpr
+postimees.ee##.notification--cookie
+g2a.com#$#.noscroll { overflow:visible!important; position:static!important; }
+g2a.com#$#.ReactModalPortal { display:none!important; }
 tim.it###gld_cookie_flag
 4gr.it###taxcodeandprivacy-cookienotice-container
 dailymotion.com##div[class^="Header__gdpr"]
@@ -5039,6 +5048,8 @@ aliexpress.com###j-site-notice-header[-ext-has='>.site-notice-container:contains
 !
 ! JS rules
 !
+trustarc.com#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByClassName("call")[0].click(); }, 2000); });
+transip.nl#%#AG_onLoad(function() { setTimeout(function() { if(document.getElementById("consent").isvisible = true) { document.cookie = "cookie-consent-dismissed=1"; location.reload(); }; }, 300); });
 myprivacy.persgroep.net#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByClassName("fjs-set-consent")[0].click(); }, 300); });
 7sur7.be#%#document.cookie = "pws=functional|social_media";
 fortune.com#%#AG_onLoad(function() { setTimeout(function() { if(document.getElementsByClassName("gdpr-legal-copy")[0].isvisible = true) { document.getElementsByClassName("btn")[0].click();}; }, 2000); });
@@ -5096,6 +5107,8 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/17708
+@@||transip.nl/services/cookie-consent/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17736
 @@||andreagaleazzi.com/wp-content/plugins/ag-cookie/js/eu-cookie-law.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17705

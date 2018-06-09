@@ -252,6 +252,8 @@
 ||herokuapp.com/visit?$image
 ||inevserver.com/~tournreport/$image
 ||jifo.co/i/analytics/ga.js$script
+||jssdk.privacy.schibsted.com/pulse.$script
+||jssdk.privacy.schibsted.com/privacy-notifier.$script
 ||kayak.xno.se^$script
 ||kuriren.eu/app/$subdocument
 ||lemonwhale.com*/adevent/$xmlhttprequest
@@ -374,7 +376,7 @@ avanza.se#@#a[title="LeoVegas"]
 /analytics/*$domain=tkj.se
 /banner*/*$image,subdocument,domain=agriprim.se|byggnadsarbetaren.se|dagenstv.com|e.se|entreprenadaktuellt.se|etn.se|flashback.se|golfbladet.se|internetmedicin.se|ja.se|lfc.nu|maskinstationerna.se|metalcentral.net|muss.se|nvp.se|skogsaktuellt.se|sporttv.nu|storvretaibk.se|uppsalanyheter.se|vinochmatguiden.se|free.se|spelsnack.se
 /campaign*/*$script,xmlhttprequest,domain=alltforforaldrar.se|kokaihop.se|mammasidan.se|minbebis.com|njus.me|nyheter24.se
-/glimr-sdk.$script,domain=tv.nu
+/_glimr*.$script,domain=tv.nu
 /glimr.min.js^$script,domain=affarsliv.com|affarslivgotland.se|aftonbladet.se|blocket.se|corren.se|di.se|dn.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|politism.se|pt.se|unt.se|uppsala.com|uppsalatidningen.se|viivilla.se|vt.se
 /google_tag/*$domain=moderaterna.se
 /js/gpt.js$script,domain=24kalmar.se|24nybro.se|24emmaboda.se|24halmstad.se|24helsingborg.se|24blekinge.se|24malmo.se|24kristianstad.se|24trelleborg.se|24ystad.se|24uppsala.se
@@ -518,6 +520,7 @@ omni.se##article.article--sponsored
 ||omni-ads.omni.news^
 tv.nu##a[href*="adform.net"]
 tv.nu##.ad-mega--container
+tv.nu##._1A_r6:has-text(Vi använder oss av Cookies)
 ||logger.tv.nu^$script
 /campaigns.js$script,domain=blocket.se
 /utag*.js$script,domain=blocket.se
@@ -529,6 +532,7 @@ tv.nu##.ad-mega--container
 blocket.se###index_panorama
 blocket.se###li_panorama
 blocket.se###vi_panorama
+blocket.se##[id^="ufti"]
 ||mobil.blocket.se/ufti$subdocument
 politism.se##[id^="ab-appnexus"]
 politism.se##[id^="native_ad"]
@@ -539,7 +543,11 @@ politism.se###panorama-annons
 klart.se##.cookie-disclaimer
 klart.se##.sponsor-message
 klart.se##a.content-link:has(.content-box-ad)
+klart.se###overlay
+klart.se##.gdpr-onboarding-container
 ||klart.se/assets/blockadblock$script
+||user-permissions.api.schibsted.media/privacy/$domain=klart.se
+||cis.schibsted.com/api/*/identify$domain=klart.se
 ! BONNIER
 dn.se##.js-ad-sidebar
 dn.se##.nativeads-page
@@ -1071,6 +1079,7 @@ mobil.se##li.section-partner
 mobil.se##.title-image-list:if(.pane-title:has-text(Sponsrad artikel))
 mobil.se#$#body { overlay: auto !important; }
 mobil.se##.section-jobb-section-advertorials
+mobil.se###gdpr
 ||mobil.se/facebook/$xmlhttprequest
 /lunchguiden*.$image,domain=vk.se|folkbladet.nu
 ||terms.vkmedia.se/agreements/$xmlhttprequest
@@ -1372,6 +1381,7 @@ arbetaren.se##.adverter
 underbaraclaras.se##.ad_parent
 underbaraclaras.se##article.post:if(.entry-summary > p:has-text(Annonssamarbete))
 underbaraclaras.se##article.post:if(.entry-summary > p:has-text(• annonssamarbete))
+underbaraclaras.se##article.post:if(.entry-summary > p:has-text(innehåller reklam för))
 ica.se##.hse-recipe-list__wrapper:has(a[data-tracking*="LEVERANTÖRSSAMARBETE"])
 ica.se##.recipe-ad
 listor.se##.belowad
@@ -1414,6 +1424,8 @@ skogsforum.se##.col-right
 skogsforum.se##a[href^="https://goo.gl/"]
 /integrated_ads/*$script,domain=garaget.org
 garaget.org###gorgad-horizontal-top
+garaget.org##.title-bg:has-text(Sponsrade tjänster)
+garaget.org##.small.discrete:has-text(Annons:)
 ||remus.garaget.org^$image
 ||noterat.nu/wp-content/uploads/*.js?ver$script
 @@||hightechguiden.se^$generichide
