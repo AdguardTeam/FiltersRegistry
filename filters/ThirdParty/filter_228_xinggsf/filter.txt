@@ -1,6 +1,6 @@
 !
 ! title: 乘风 广告过滤规则
-! OriginalVersion: 201804151
+! OriginalVersion: 201805181
 ! Expires: 2 days
 ! Homepage: http://bbs.kafan.cn/thread-1866845-1-1.html
 @@*$stylesheet
@@ -10,7 +10,7 @@
 |http://js$xmlhttprequest,third-party
 ! 屏蔽第三方资源
 *$third-party,~image,domain=m.snwx8.com|m.xinguli.com|520xs.la|dhzw.org|m.muyuge.com|88dushu.com|92to.com|xunzai.com|xsbashi.com|xs84.la
-*$third-party,domain=hjwzw.com|xxbiquge.com|btbiti.com|btfuli.me|cnbtspread.net|cnbtkitty.com
+*$third-party,domain=hjwzw.com|xxbiquge.com|btbiti.org|btfuli.me|cnbtspread.xyz|cnbtkitty.org
 *$third-party,subdocument,domain=tieba.baidu.com
 ! NoScript，可加上自己要过滤的域名
 *$script,domain=eywedu.org|365essay.com|baishuku.la
@@ -43,7 +43,9 @@ fanyi.baidu.com##div.banner-wrap.inner
 v.baidu.com##div[videoadv],a[href^="http://g.youxi.v.baidu."]
 ||app.video.baidu.com/adver?
 ||v.baidu.com/staticapi/videoAd.json?
-wenku.baidu.com##div.mod.lastcell-dialog
+||wenku.baidu.com/xpage/$xmlhttprequest
+||eduad.baidu.com/
+||as2.wenku.baidu.com/$subdocument
 www.baidu.com###content_left>div:not(.c-container),#content_right>table td>:not(#con-ar)
 www.baidu.com##div.c-container:has(a[data-landurl])
 zhidao.baidu.com###left-promotion,#ui-tooltip-0,div.cms-slide.cms-slide-optimus,div.wgt-bottom-ask,div.cms-slide.cms-slide-lazy
@@ -53,7 +55,7 @@ play.baidu.com###m-client-product,#right-ads,div.rightAd-skin,.top-banner-ad-wra
 ||hiphotos.baidu.com/ting/pic/item/
 ||music.baidu.com/data/69xiu/
 !--贴吧---
-tieba.baidu.com###guide_fc,#global_notice_wrap,.content_top,div.card_head,.forum_header>div:first-child,.app_forum_top_nav,#encourage_entry,[id^=pagelet_encourage-appforum],.iframe_wrapper.clearfix,.d_sign_split~*,#thread_list>li:not([class*=thread_]),#j_p_postlist>div:not([data-field]):not(#j_p_postlist),#j_p_postlist>div[data-isautoreply],#game_live_list,#com_u9_head,.play_list_panel.j_play_list_panel,div.search_main_wrap~*,#aside_ad,a.j_click_stats.img_wrap,div.firework-wrap
+tieba.baidu.com###guide_fc,#global_notice_wrap,.content_top,.forum_header>div:first-child,.app_forum_top_nav,#encourage_entry,[id^=pagelet_encourage-appforum],.iframe_wrapper.clearfix,.d_sign_split~*,#thread_list>li:not([class*=thread_]),#j_p_postlist>div:not([data-field]):not(#j_p_postlist),#j_p_postlist>div[data-isautoreply],#game_live_list,#com_u9_head,.play_list_panel.j_play_list_panel,div.search_main_wrap~*,#aside_ad,a.j_click_stats.img_wrap,div.firework-wrap
 tieba.baidu.com###j_p_postlist>div.l_post_bright:has(a.j_click_stats.img_wrap)
 @@||tb1.bdstatic.com/??/tb/_/*/ad_$script
 @@||tb1.bdstatic.com/??/tb/_/forum_info_$script
@@ -200,6 +202,8 @@ tieba.baidu.com###j_p_postlist>div.l_post_bright:has(a.j_click_stats.img_wrap)
 ||imeijiajia.com
 ||img80.net/
 ||irs01.
+||cee1.iteye.com/
+||cee2.iteye.com/
 ||x.jd.com/
 ||jfqkj.com/
 ||jiaheyonggu.com/
@@ -444,12 +448,13 @@ xiazaiba.com##div.test-90,div.test-300,div.dl-item:first-child
 ||www.xiazaiba.com/data/xzb_haha.js
 ||www-static.xunzai.com/static/wwwimg/$image
 ||xz7.com/js/
-yxdown.com##div.gg,div[id$=_ads]
+yxdown.com##div.gg,div[id$=_ads],#dl_right,#dl_left
 ||yxdown.com/open/$script
 @@||gg.yxdown.com/count/countzt.js
 ||afpmm.alicdn.com/g/
 ||static.yxdown.com/images/link$image
 ||static.yxdown.com/images/adbox$image
+||static.yxdown.com/cjimages/$image
 ||tt.yxdown.com/$image,object
 ||www.zolsky.com/killsoftware/sdsoft/page2/newad/$script
 ||www.zolsky.com/hotsoft/$subdocument,script
@@ -679,6 +684,8 @@ u17.com##[id^=u17-advert-fix-ad],div.ad_wrap
 |http://tj.u17t.com/$script
 www.v2ex.com##.sidebar_units,.sidebar_compliance
 ||v2ex.assets.uxengine.net/assets/sidebar/$image
+||img.cmm.xmfish.com/pages/uploads/20$image
+bbs.xmfish.com##div[id^=adm_show_]
 ||www.you85.com/ling/$script
 ||zchot.com/images/jiaoyou
 www.zhihu.com##.Banner.Card
@@ -753,6 +760,7 @@ tv.sohu.com##.x-dl-shake.x-download-panel, #playerBar > div.area ~a
 ||afpssp.alimama.com/$domain=1905.com
 |http://www.1905.com/coll/ad$subdocument
 www.mgtv.com##.on.footAd
+@@||player.mgtv.com/mgtv_*/ad.swf
 ||click.hunantv.com/
 ||da.hunantv.com/
 ||da.mgtv.com/

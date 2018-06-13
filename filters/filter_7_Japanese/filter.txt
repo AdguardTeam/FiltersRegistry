@@ -197,14 +197,21 @@
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14263
 avgirl.online#@#.google-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7918
+!+ PLATFORM(ios, android, ext_android_cb)
+@@||static.avgle.com/media/av^
+avgle.com#@#img[src*=".php"]
 avgle.com#@#a[href*="/redirect"]
 avgle.com#@#iframe[width="300"][height="250"]
+avgle.com#@#iframe[width="728"][height="90"]
 avgle.com#@#a[href^="http://www.poweredbyliquidfire.mobi/"]
 @@||avgle.com/avideos.php
 @@||avgle.com/avideos.js
 @@||avgle.com/images.php
+@@||pussl48.com^$domain=avgle.com
 @@||ads.exosrv.com/ads.js$domain=avgle.com
 @@||syndication.exosrv.com/ads-iframe-display.php^$domain=avgle.com
+@@||adserver.juicyads.com/js/jads.js$domain=avgle.com
+@@||isafe.pro/img/b_a.gif^$domain=avgle.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9125
 socom.yokohama#@#.an-advert-banner
 socom.yokohama#@##adsense
@@ -359,7 +366,9 @@ repeat-drama.info##.side_inner > .box:contains(スポンサーリンク)
 !-------JS----------
 !-------------------
 !
-!
+! https://github.com/AdguardTeam/AdguardFilters/issues/11687
+! avgle.com#%#window.open = function() {};
+avgle.com#%#AG_onLoad(function() { setTimeout(function() { $("#player_3x2_close > *").click(); }, 300); });
 !
 !-------------------
 !-------CSS---------
@@ -454,13 +463,19 @@ _ds_adtag_
 !
 ! Section contains rules for specific websites
 !
+mukulog.com###mybox > .ad
+dengekionline.com##.banner
+dengekionline.com###rectangleBanner
+$popup,domain=avgle.com,third-party
+itmedia.co.jp##iframe[id^="cxWidget_"]
+tvbok.com##a[href^="https://rpx.a8.net"]
+tvbok.com###left_fix_out #left_box3
+tvbok.com###right_2nd > .right_box2
 dlbooks.to##div[id^="ad_"]
 avgle.com##.container > div[style*="overflow: hidden"]
 ||avgle.com/images/av/*.mp4
 ||avgle.com/templates/frontend/videojs-aortsyxr.js
-avgle.com###player_3x2_container
-avgle.com###aoverlay
-avgle.com###wrapper > div[style*="overflow"]:not([class]):not([id])
+avgle.com##body > div[style*="z-index"]:not([id]):not([class])
 ||avgle.com/templates/frontend/p2p.js
 ||static.avgle.com/media/av^
 bookbang.jp###footer_ban
@@ -847,3 +862,6 @@ publicdomainq.net#@#.adsbygoogle
 @@||rcm-jp.amazon.co.jp^$domain=toscana.sakura.ne.jp
 @@||res.nimg.jp/js/ads.js?$domain=nicovideo.jp
 @@||yimg.jp/bdv/yahoo/javascript/gyao/clover.js$domain=gyao.yahoo.co.jp
+! disabling rules from EasyList China for Extensions
+@@||avgle.com^$elemhide,badfilter
+@@|http*://$domain=avgle.com,badfilter
