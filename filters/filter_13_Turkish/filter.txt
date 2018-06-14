@@ -516,7 +516,7 @@ kizlarsoruyor.com#%#window.canRunAds=!0;
 ! START: Yandex
 !
 ! Yandex.Mail
-||mail.yandex.*/*/*-*-*-*-$replace=/^(\s)*Ya(\s)*.{0\,7}\[\d+\][\s\S]*'\)//,script,important,domain=mail.yandex.com.tr
+||mail.yandex.*/*/*-*-*-*-$replace=/^([\s\S]{0\,7})Ya(\s)*.{0\,7}\[\d+\][\s\S]*'\)//,script,important,domain=mail.yandex.com.tr
 !+ NOT_PLATFORM(windows, mac, android)
 @@||mail.yandex.$generichide
 !+ NOT_PLATFORM(windows, mac, android)
@@ -1018,6 +1018,10 @@ mackolik.com,sahadan.com#%#setTimeout ("HideFloatAdBanner()", 1000);
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/18097
+kocaelikoz.com#$##modal-ads { display:none!important; }
+kocaelikoz.com#$#.modal-backdrop { display:none!important; }
+kocaelikoz.com#$#.modal-open { overflow:visible!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17801
 dizired.com#$#.swal2-shown { overflow:visible!important; }
 dizired.com#$#.swal2-container { display:none!important; }
@@ -1704,6 +1708,7 @@ wmporn.com###vplayer > div[style*="background"]
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+kocaelikoz.com/images/banner^
 haberturk.com##.ads-300x600
 cevap.tv##.marketing
 tayvan-drama.com##.Container33 > .TexAlCenter
