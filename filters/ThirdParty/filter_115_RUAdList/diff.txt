@@ -36,8 +36,8 @@ anwap.club,anwap.film#?#.my_razdel:-abp-has(img[src*="/big/"])
 anwap.club,anwap.film#?#body > div[class]:-abp-has(a[href] + script)
 ! auto.ru#?#div[class]:-abp-has(> div > iframe:not([src])) is excluded by: #?#
 auto.ru#?#div[class]:-abp-has(> div > iframe:not([src]))
-! auto.ru#?#div[class]:-abp-has(> div:not([class*="image-gallery"]) > div > div > div > a[href][target]:has-text(Яндекс.Директ)) is excluded by: #?#
-auto.ru#?#div[class]:-abp-has(> div:not([class*="image-gallery"]) > div > div > div > a[href][target]:has-text(Яндекс.Директ))
+! auto.ru#?#div[class]:-abp-has(> div:not([class*="image-gallery"]) > div > div > div > a[href][target]:-abp-contains(Яндекс.Директ)) is excluded by: #?#
+auto.ru#?#div[class]:-abp-has(> div:not([class*="image-gallery"]) > div > div > div > a[href][target]:-abp-contains(Яндекс.Директ))
 ! auto.ru#?#div[class]:-abp-has(> div[class] + script[src]) is excluded by: #?#
 auto.ru#?#div[class]:-abp-has(> div[class] + script[src])
 ! baby.ru#?#div[class^="header"] ~ div:-abp-has(> div > div > iframe[id^="AdFox"]) is excluded by: #?#
@@ -96,6 +96,10 @@ ekabu.ru#?#.content-block:-abp-has(font:-abp-contains(Новости партн�
 euro-football.ru#?#.block__title:-abp-contains(Новости Партнёров)
 ! fainaidea.com#?#.widget:-abp-has(.block-title > span:-abp-contains(Новости партнера)) is excluded by: #?#
 fainaidea.com#?#.widget:-abp-has(.block-title > span:-abp-contains(Новости партнера))
+! fb.ru,syl.ru#?#*:-abp-has(> * > * > a[target]:-abp-contains(Яндекс.Директ)) is excluded by: #?#
+fb.ru,syl.ru#?#*:-abp-has(> * > * > a[target]:-abp-contains(Яндекс.Директ))
+! fb.ru,syl.ru#?#div:-abp-has(> div > script:-abp-contains(/advmanager/i)) is excluded by: #?#
+fb.ru,syl.ru#?#div:-abp-has(> div > script:-abp-contains(/advmanager/i))
 ! filmix.co,filmix.cool,filmix.fun,filmix.info#?#*:-abp-has(> .remove-sda-wrap) is excluded by: #?#
 filmix.co,filmix.cool,filmix.fun,filmix.info#?#*:-abp-has(> .remove-sda-wrap)
 ! fishki.net#?#.content__sub-heading:-abp-contains(Новости партнёров) is excluded by: #?#
@@ -320,10 +324,10 @@ zr.ru#?#.rotate-block:-abp-has(.b_banner)
 ||tapochek.net^$subdocument
 ! gismeteo.ru#?#div:-abp-has(> #flix-state) is excluded by: #?#
 gismeteo.ru#?#div:-abp-has(> #flix-state)
-! gismeteo.ru#?#div:-abp-has(> script:-abp-contains(/advmanager|mg.media.data/i)) is excluded by: #?#
-gismeteo.ru#?#div:-abp-has(> script:-abp-contains(/advmanager|mg.media.data/i))
 ! www.gismeteo.by#?#div[class]:-abp-has(> div > [id^="media-right-bottom"]) is excluded by: #?#
 www.gismeteo.by#?#div[class]:-abp-has(> div > [id^="media-right-bottom"])
+! www.gismeteo.by,www.gismeteo.ru#?#body[class*=" "] div:-abp-has(> div > script:-abp-contains(/advmanager|mg.media.data/i)) is excluded by: #?#
+www.gismeteo.by,www.gismeteo.ru#?#body[class*=" "] div:-abp-has(> div > script:-abp-contains(/advmanager|mg.media.data/i))
 ! www.gismeteo.by,www.gismeteo.ru#?#div:-abp-has(> div > div[id*="_R-"]) is excluded by: #?#
 www.gismeteo.by,www.gismeteo.ru#?#div:-abp-has(> div > div[id*="_R-"])
 ! www.gismeteo.by,www.gismeteo.ru#?#div[class]:-abp-has(> div > [data-type] a[target]) is excluded by: #?#
