@@ -1715,6 +1715,8 @@ j.gs#@##bottom
 !*****
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/17927
+||bitcolife.ru/*/assets/js/misc.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18145
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@||subfb.us^$generichide
@@ -2874,10 +2876,11 @@ mellow.link#%#AG_onLoad(function() { var el=document.querySelector('[class^="fle
 @@/fuckadblock.min.js$domain=soft4win.com
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@||soft4win.com^$generichide
+! https://github.com/AdguardTeam/AdguardFilters/issues/18187
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10542
 ! Ads reinjection
 nme.com#%#AG_abortInlineScript(/Infinity/, 'Math.floor');
-nme.com$$script[tag-content="Object.defineProperties?Object.defineProperty:function"][max-length="110000"]
+trustedreviews.com,nme.com$$script[tag-content="Object.defineProperties?Object.defineProperty:function"][max-length="110000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10492
 !+ PLATFORM(ios, ext_android_cb)
 aeonsource.org##.blocker-overlay
@@ -7758,7 +7761,7 @@ mobilarena.hu###right > div[class*=" "] > [style^="width: calc("][style*="height
 mobilarena.hu##div[itemprop="articleBody"] > [class]:has(> [style^="width: calc("][style*="height: calc("])
 mobilarena.hu###right > div[class*=" "]:has(> [style^="width: calc("][style*="height: calc("][onclick*="/kapcsolodas.php?"])
 !
-vaol.hu,feol.hu,duol.hu,szoljon.hu,teol.hu,heol.hu,sonline.hu###eads-super-banner
+veol.hu,vaol.hu,feol.hu,duol.hu,szoljon.hu,teol.hu,heol.hu,sonline.hu###eads-super-banner
 mindmegette.hu##.ad.inter
 mindmegette.hu##.laku-3articles-slider-box
 noizz.hu###ad-cikk2
@@ -8929,6 +8932,9 @@ electro-torrent.pl#%#Object.defineProperty(window, 'bidrev', { get: function() {
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11565
 gry.pl###overlay:has(>.adblock)
 ! tvp.pl - antiadblock
+||adx.adform.net/adx/$replace=/(<VAST[\s\S]*?>)[\s\S]*?(<Extensions>[\s\S]*<\/Extensions>)[\s\S]*<\/VAST>|(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1\$2\$3<\/VAST>/,xmlhttprequest,domain=tvp.pl,important
+||secure.adnxs.com/ptv?id=*&cb=*&pubclick=$replace=/(<VAST[\s\S]*?>)[\s\S]*?(<Extensions>[\s\S]*<\/Extensions>)[\s\S]*<\/VAST>|(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1\$2\$3<\/VAST>/,xmlhttprequest,domain=tvp.pl,important
+||myao.adocean.pl/*ad.*?$replace=/(<VAST[\s\S]*?>)[\s\S]*?(<Extensions>[\s\S]*<\/Extensions>)[\s\S]*<\/VAST>|(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1\$2\$3<\/VAST>/,xmlhttprequest,domain=tvp.pl,important
 ||adocean.pl/*ad.xml$replace=/(<VAST[\s\S]*?>)[\s\S]*?(<Extensions>[\s\S]*<\/Extensions>)[\s\S]*<\/VAST>|(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1\$2\$3<\/VAST>/,domain=tvp.pl,important
 ! weszlo.com - popup
 weszlo.com#%#AG_abortInlineScript(/window\.open\(getUrl,/, 'jQuery');
@@ -10064,7 +10070,7 @@ xtapes.to#%#AG_abortInlineScript(/pop_init/, 'jQuery');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12982
 flashx.ws#%#AG_onLoad(function() { setTimeout(function() {document.getElementById("btn_download").removeAttribute("onclick"); }, 300); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12778
-animeflv.net,animeplus.tv,goodanime.co,animewow.org,animenova.org,animeland.tv,animetoon.org,9anime.is,gogoanime.se,gogoanime.to,gogoanime.in,mangapanda.com,memecenter.com,mangareader.net#%#Object.defineProperty(window, 'bebiMsgCenter', { get: function() { throw null; }, set: function() { throw null; } });
+animeflv.net,animeplus.tv,goodanime.co,animewow.org,animenova.org,animeland.tv,animetoon.org,9anime.is,gogoanime.se,gogoanime.to,gogoanime.in,mangapanda.com,memecenter.com,mangareader.net#%#Object.defineProperty(window, 'bbHideDiv', { get: function() { throw null; }, set: function() { throw null; } });
 animewow.org,animenova.org,gogoanime.to#%#AG_onLoad(function() { window.showAd = function() {}; });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12794
 imagefap.com#%#Object.defineProperty(window, 'Buu', { get: function() { return; } });
@@ -11621,6 +11627,7 @@ proxytpb.pw,vizer.tv,eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv
 ||servicer.mgid.com^$empty,third-party,important
 ||jsc.marketgid.com/*.js?t=$empty,important,~websocket
 !
+bitcolife.ru###middle-adspace
 ||static.nitropay.com/nads^
 sorcerers.net##td.right_nav > .nocontent ~ .nocontent ~ table.right_nav
 sorcerers.net##a[href^="http://www.sorcerers.net/Supporters/index.php"]
@@ -19539,13 +19546,16 @@ destructoid.com#@#[style*="background-image:"]
 @@||9anime.is/assets/min/frontend/all.js
 @@||9anime.is/assets/favicons/favicon$image
 @@||9anime.is/assets/player/jwplayer-*/jwplayer.js
+!+ NOT_OPTIMIZED
+@@||9anime.is/ajax/film/
+!+ NOT_OPTIMIZED
+@@||9anime.is/user/ajax/menu-bar^
+!+ NOT_OPTIMIZED
+@@||9anime.is/ajax/episode^
 !
 @@||streamhunter.top^$popup
 @@||pornhublive.com/bio.php?$popup,domain=pornhub.com
 @@||fonts.googleapis.com/css$third-party
-@@||9anime.is/ajax/film/
-@@||9anime.is/user/ajax/menu-bar^
-@@||9anime.is/ajax/episode^
 |http*://$script,third-party,domain=stream2watch.org,badfilter
 @@||streamiptvonline.com/streams^$popup
 @@||cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls^
@@ -58563,6 +58573,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||odplbueosuzw.com^$third-party
 ||odsljzffiixm.com^$third-party
 ||odtcspsrhbko.com^$third-party
+||odwymewlu.com^$third-party
 ||odyoudvaar.bid^$third-party
 ||oehjxqhiasrk.com^$third-party
 ||oeoogwkwm.bid^$third-party
@@ -60356,6 +60367,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||vimhuspifwyy.com^$third-party
 ||vimlsrcfgjyr.bid^$third-party
 ||viqfxgmgacxv.com^$third-party
+||viqmadjqndqkm.com^$third-party
 ||vivcdctagoij.com^$third-party
 ||vivetivcuggz.com^$third-party
 ||viysseop.bid^$third-party
