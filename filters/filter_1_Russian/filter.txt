@@ -5541,6 +5541,9 @@ newsyou.info##.singblock
 !
 ! Extended CSS rules
 !
+!
+razlozhi.ru##body > div > div div:has(> [id*="R-A-"])
+razlozhi.ru##body > div > div div:has(> [data-id*="R-A-"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17997
 a-age.ru#$#body > div.bg:has(> div) { padding-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17574
@@ -5645,9 +5648,6 @@ strip2.me##div[class] > div[id]:has( > a > div.ico)
 pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(a[href="/information/ad?from=ad_unit"])
 pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div.story__main script:contains(push(function()))
 pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contains(/ads|реклама/|рекламный\sпост|ртнeрcкий\sпост/))
-!
-softportal.com#$#html:has(> body) { overflow: visible!important; }
-softportal.com#$#.mfp-wrap:has(> div) { display: none!important; }
 !
 gamer-info.com##body > div[id="blablabla"] > div > a:matches-css(background-color: rgb(3, 56, 79))
 gamer-info.com##body > div[id]:has(> a#timer)
@@ -9086,6 +9086,14 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+gorodpavlodar.kz##div[style=" float: none;"] > div.keep_block
+||nvworld.ru/js/gad-*.js
+||nvworld.ru/js/ta-*.js
+||nvworld.ru/js/rb-*.js
+softportal.com##div[style*="float:left;"][style*="position:relative;"] > div > a[rel="nofollow"]
+||softportal.com/img/adg_rnb.png
+avito.ru##.avito-ads-serp-wrapper
+avito.ru##.main-page-promo
 nickelodeon.ru##.top-featured-mpu
 nickelodeon.ru##.inline-banner-wrp
 viks.tv###reclamanemoya
@@ -9387,9 +9395,6 @@ briefly.ru###in_article
 ||realisti.ru/upload/UserFiles/Bigbann
 ||realisti.ru/upload/UserFiles/futban
 ||realisti.ru/upload/UserFiles/winban
-razlozhi.ru##div[style^="height:120"]
-razlozhi.ru##._3m_5 > span._3q_0~span
-tjournal.ru##.stratum_tinkoff
 ||youtube.com/embed/_eM0tWVynnQ?autoplay=$domain=tjournal.ru
 ||liverutor.org/psy.js
 sibnet.ru##.header__topline
@@ -9562,7 +9567,6 @@ phdru.com##.table[border="0"][style="background-color: #d3dbeb;"]
 ||progorod76.ru/userfiles/b/
 progorod76.ru##div[class^="Banner-"]
 gaming-torrent.net##.kino-text > a[target="_blank"] > img
-softportal.com##td[style="padding:15px 25px 0;"] td[style*="padding-right:"][valign="top"]:first-child
 ||sport.ua/*.php?s=$script
 gazeta.ru##.partner_gazeta_fishki
 gazeta.ru##.e483c321ecde927b3e6c162ff507152
@@ -16869,6 +16873,8 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 !
 ! The content replacement rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/18257
+||razlozhi.ru/*-*-*-*-$replace=/(^(\s)*Ya(\s)*.{0\,7}\[[0-9]+][\s\S]*'\))|(var data = \{"settings":[\s\S]+if\s\(window.loadAdFoxBundle\)[\s\S]+document.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|(^(\{(\s)*"common":\{"stationaryConnection":)[\s\S]+"commonRtbVisibility"[\s\S]+)|(^\{"rtb":(\s)*\{(\s)*"html":.*)//,script,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18206
 ||businessman.ru/*/*/*/$replace=/(^(\s)*Ya(\s)*.{0\,7}\[[0-9]+][\s\S]*'\))|(var data = \{"settings":[\s\S]+if\s\(window.loadAdFoxBundle\)[\s\S]+document.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|(^(\{(\s)*"common":\{"stationaryConnection":)[\s\S]+"commonRtbVisibility"[\s\S]+)|(^\{"rtb":(\s)*\{(\s)*"html":.*)//,script,domain=businessman.ru,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15537
