@@ -23,6 +23,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||very.big-sword.ga^$third-party
 ||rock.cheerfulhunter.com^$third-party
 ||ijnocom.ru^$third-party
 ||bdros.com^$third-party
@@ -4915,8 +4916,6 @@ tree.tv#@##adverts
 @@||cdn.admixer.net/scriptlib/*$domain=tree.tv
 @@||ssp.c8.net.ua/getcode.php$domain=tree.tv
 @@||tree.tv/imgs/reklama.png
-! dugtor.ru - anti-adblock message
-dugtor.ru#%#setTimeout(function() { window.StartAntiAdBlock = function() {} }, 1500);
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/687
 3dnews.ru#%#window.__AT_detected = true;
 3dnews.ru#$##earAds { width: 651px!important;}
@@ -5656,6 +5655,7 @@ gismeteo.ru##div:has(> div > div[data-type="rbc"])
 gismeteo.ru##div:has(> div > div > div[id*="_R-A-"])
 gismeteo.ru##div:has(> div > div[data-type="default"] > div > a[href*="type=news_type&id="])
 !
+dugtor.ru#$#body:has(> div) { padding-top: 0!important; }
 lostfilmhd.ru###sidebar > div.block:has(> div.blockcontent > div[id^="bn_"])
 mow-portal.ru##center > div[class^="download-block"]:has(> a[href^="http://myuniversalnk.com/"])
 ng-android.ru##.article-right > div[class="right-items-title"]:contains(Реклама)
@@ -5680,7 +5680,6 @@ gamebet.news#$#body[-ext-has="div"] { padding-top: 0px!important; }
 5-tv.ru##.pageContent > div.container:has(> h3:contains(Новости СМИ))
 youhack.ru##.publicTabs > li:has(a[href="/posts/851147/"]) ~ li
 kushvsporte.ru##.sidebar-block > div.moduletable:has(> div.sideBlock > div.panel > h4:contains(Рекомендуемые БК))
-dugtor.ru##body:has(> div) > div > a[href^="http://goo.gl/"]
 xatab-repack.net#$#html:has(> body) { background: #000000!important; }
 epidemz.co###left > div.left_block_mini:has(> div#ajax > div.hockey)
 ip2geolocation.com##.main_blocks.fbl .block.pad:has(> table[width="100%"] > tbody > tr > td.bl_tit > strong > h3:contains(Реклама))
@@ -7025,9 +7024,10 @@ cloud.mail.ru#$##public > div.w-public__content.w-public__content_shove > div.b-
 ! rus.porn - удаление отступа сверху
 rus.porn#$#body { top: 0px!important; }
 ! dugtor.ru - удаление брендированного фона, отступа сверху
+!+ NOT_PLATFORM(windows, mac, android)
 dugtor.ru#$#body { background: #F5F5F5 url(http://dugtor.ru/templates/primary/images/xv.png)!important; }
-dugtor.ru#$#body > div#page { margin-top: 0!important; }
-dugtor.ru#$#body > div#page > div#wrap { margin-top: 0!important; }
+!+ NOT_PLATFORM(windows, mac, android)
+dugtor.ru#$#body:has(> div) { padding-top: 0!important; }
 ! kinoafisha.info - удаление брендированного фона, отступа сверху
 kinoafisha.info#$#.main_frame { background: none!important; }
 kinoafisha.info#$#.illumination { height: 0px!important; }
@@ -7698,7 +7698,7 @@ yandex.by,yandex.kz,yandex.ru,yandex.ua#$#.weather-maps__ad { position: absolute
 !-----------------------
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14951
-smotret-anime.ru$$script[tag-content="var el = document.getElementById"][max-length="30000"][max-length="36500"]
+smotret-anime.ru$$script[tag-content="var el = document.getElementById"][max-length="30000"][max-length="60000"]
 ! kg-portal.ru - удаление отступа сверху
 kg-portal.ru$$style[tag-content="height:"][max-length="800"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17771
@@ -9092,6 +9092,12 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+||vgtrk.seasonvar.ru/index.html
+dugtor.ru##.adv
+dugtor.ru##div[style="text-align: center;"] > a[target="_blank"]
+dugtor.ru##noindex > div[style^="background-color:"]
+||russian.rt.com/static/blocks/24smi/
+hibinform.ru##.add
 ||macdigger.ru/wp-content/uploads/acid/js/600x300.js
 ||macdigger.ru/wp-content/uploads/acid/js/brand.js
 mirtankov.net##.bannergroup
@@ -10040,7 +10046,6 @@ thequestion.ru##.annonser__container
 kladoffka.com##div[style$="center;"] > a[target="_blank"] > img
 ||socseti4you.ru/wp-content/uploads/banners/
 kino-hd1080.ru##.player-holder > span[style="text-align: center;width: 100%;display: inline-block;"]
-dugtor.ru##div[class="blog_fullstory"] > div[style="text-align: center;"] > a
 rutracker-2017.org##center > a[rel="nofollow"] > img
 film-4-you.com##center > a[target="_blank"] > img
 ||kino-filmi.net/templates/kino-filmi/js/epn2.js
@@ -10283,8 +10288,6 @@ diakov.net##a[href="https://diakov.net/amigo.html"]
 europaplus.ru##div[id^="AdwolfBanner240x110_"]
 etopochki.ru##.content_rb
 ||manytorrents.org/templates/manytorrents/img/
-dugtor.ru###center-block > div[class="title greener"][style="text-align: center;"]+div[style^="background-color:"]
-dugtor.ru###center-block > div[class="title greener"][style="text-align: center;"]
 agropolit.com##.branding
 obozrevatel.com##div[class^="banner-"]
 ||obozrevatel.com/assets/banners/
@@ -10495,7 +10498,6 @@ yourlifestyle.ru###ja-col2
 tut.by##.b-partners
 ://*.tut.by/css/ext/*~*~*~*~*.css
 tut.by##div.impl-vscroll-container[style="max-height: 1200px;"]
-||goo.gl^$domain=dugtor.ru
 erosmotr.ru###branding_link
 drive2.ru,drive2.com##div[style^="min-height: calc"]
 miped.ru##.header_c_r > center > a[rel="nofollow"] > img
