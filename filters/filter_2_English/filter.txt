@@ -41,6 +41,7 @@
 !+ NOT_PLATFORM(windows, mac, android)
 ||rcdn.pro^$third-party,badfilter
 !
+||69content.com^$third-party
 ||5iclx7wa4q.com^
 ||reportions.club^
 ||greerlies.pro^$third-party
@@ -8372,6 +8373,10 @@ hdblog.it#@#.item_compra
 hdblog.it#@#.box_flame
 hdblog.it#@#.box_grampa_shadow
 ! End Temporary
+! https://github.com/AdguardTeam/AdguardFilters/issues/17006
+@@||googletagservices.com/dcm/dcmads.js$domain=italiamac.it
+@@||adspremium.it/adserver/www/delivery/lg.php?$domain=italiamac.it
+@@||adspremium.it/adserver/www/delivery/ajs.php?zoneid=$domain=italiamac.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18377
 ||macitynet.it/wp-content/uploads/*/gearbest
 macitynet.it#$#body { background:none!important; }
@@ -8454,7 +8459,7 @@ hdblog.it###banner4_300600
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14602
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14739
 hdblog.it##.content > .box_highlight_footer[style*="margin-top"]
-hdmotori.it##.content > .box_highlight_hot[style*="margin-top"]
+hdmotori.it##.box_highlight_hot
 hdmotori.it,hdblog.it###banner2_980
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=hdblog.it
 hdblog.it##.compras_items > .item_prod
@@ -10077,6 +10082,8 @@ youporngay.com#%#Object.defineProperty(window, 'loadPUscript', { get: function()
 ! END: Popular clickunders
 !**********************************
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/18543
+embedy.me#%#window.open = function() {};
 ! sloomp.space - popup
 sloomp.space#%#Object.defineProperty(window, 'pup', { value: 3 });
 sloomp.space#%#var d=document.addEventListener;document.addEventListener=function(a,b,c){("mousedown"!=a&&"click"!=a||-1==b.toString().indexOf("popundrInit"))&&d(a,b,c)}.bind(document);
@@ -11764,6 +11771,13 @@ proxytpb.pw,vizer.tv,eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv
 ||servicer.mgid.com^$empty,third-party,important
 ||jsc.marketgid.com/*.js?t=$empty,important,~websocket
 !
+||namethatporn.com/assets/dev_popscript.js^
+extremetube.com##.new-friendly-ads-wrapper
+extremetube.com##div[data-class="vjs-inplayer-overlay"]
+extremetube.com##.tj-add-text
+extremetube.com##.video-wrapper > #video-page-comment-wrappers ~ div[id][style*="height:"][style*="width:"][style*="overflow"]
+overlog.gg##.vm-placement
+embedy.me##.center-block > #xel1
 efukt.com##.header_menu_items > li.menu_item > a[target="_blank"]
 efukt.com##.hardlinks.font700
 efukt.com##.plugs-nice-try-adblockers
@@ -19741,10 +19755,11 @@ coed.com,collectivelyconscious.net,colourlovers.com,connectedly.com,convert-me.c
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18185
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18369
 /^https?:\/\/([0-9a-z\-]+\.)?(9anime|animeland|animenova|animeplus|animetoon|animewow|gamestorrent|goodanime|gogoanime|igg-games|kimcartoon|mangapanda|mangareader|memecenter|readcomiconline|toonget|toonova|watchcartoononline)\.[a-z]{2,4}\/(?!([Ss]cripts|[Uu]ploads|[Ii]mages|assets|combined|content|cover|img|static|thumbs|wp-content|wp-includes))(.*)/$image,other,script,~third-party,xmlhttprequest,badfilter
+/^https?:\/\/([0-9a-z\-]+\.)?(9anime|animeland|animenova|animeplus|animetoon|animewow|gamestorrent|goodanime|gogoanime|igg-games|kimcartoon|memecenter|readcomiconline|toonget|toonova|watchcartoononline)\.[a-z]{2,4}\/(?!([Ss]cripts|[Uu]ploads|[Ii]mages|assets|combined|content|cover|img|static|thumbs|wp-content|wp-includes))(.*)/$image,other,script,~third-party,xmlhttprequest,badfilter
 @@||i*.mangapanda.com^$image
 @@||gogoanime.se/fonts^
 @@||gogoanime.se//load-list-episode^
-@@||gogoanime.se//page-recent-release-ongoing.html
+@@||gogoanime.*//page-recent-release*.html
 @@||gogoanime.se/img^
 @@||gogoanime.tv/cover^
 @@||9anime.is/assets/movie/frontend/images^
