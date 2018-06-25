@@ -91,6 +91,7 @@
 ||plugin.mobopay.baidu.com^
 ||mo.freeindoapp.com^
 !
+||tnkfactory.com^$third-party
 ||iqzone.com^$third-party
 ||postitial.com^$third-party
 ||pssvc.iqzone.com^
@@ -604,6 +605,7 @@
 ||infolinks.com^
 ||inmobi.com^
 ||inmobi.net^
+||inmobi.cn^
 ||inmobicdn.net^
 ||inmobisdk-a.akamaihd.net^
 ||inner-active.com^
@@ -944,6 +946,9 @@
 ! https://github.com/AdguardTeam/AdguardForiOS/issues/255
 @@||m.beautypageants.in^$elemhide
 !---
+! nrz.de
+!+ PLATFORM(ios, ext_android_cb)
+@@||nrz.de^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17629
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=thebrickfan.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16544
@@ -1159,8 +1164,12 @@ sasisa.ru#%#AG_onLoad(function() { window.Umobi = function() {}; });
 !-------CSS---------
 !-------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/18018
+tuttoandroid.net#$#.new_navbar_mobile { margin-top:0px!important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/17440
+realthaisluts.com#$#.mobile-ads-zone { position: absolute!important; left: -3000px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17790
-farmacoecura.it#$#.flex-home { margin-top:40px!important; }
+farmacoecura.it#$##content { margin-top:40px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17025
 hdmotori.it,hdblog.it#$#.banner_list_container { height:1px!important; margin:0!important; padding:0px!important;}
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12867
@@ -1261,11 +1270,19 @@ nasimke.ru$$script[tag-content="function show_ads"][max-length="6000"]
 !
 !##### TEMPORARY #####
 !
+! https://github.com/AdguardTeam/AdguardForAndroid/issues/1916
+! https://github.com/AdguardTeam/AdguardFilters/issues/17808
+@@||xda-cdn.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3707
 @@||tf-robots.nl^$elemhide,jsinject,content
 !
 !#####################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/17500
+@@||motherless.com/scripts/mobile^
+@@||maxcdn.bootstrapcdn.com/font-awesome^
+! https://github.com/AdguardTeam/AdguardFilters/issues/17832
+vip.de#@#.centered-ad
 ! https://forum.adguard.com/index.php?threads/28222/
 @@||t.appsflyer.com^$app=com.badoo.mobile|com.badoo.mobile.premium|com.bumble.app
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17503
@@ -1513,6 +1530,9 @@ deviantart.com#@#.mobile-ad
 m.youtube.com##a[href^="/watch?v="][onclick^="return koya.onEvent(arguments[0]||window.event,'"]:not([role]):not([class]):not([id])
 !+ NOT_OPTIMIZED
 m.youtube.com##a[href^="/watch?v="][onclick^="return koya.onEvent(arguments[0]||window.event,'"]:not([role]):not([class]):not([id]) + div
+! https://github.com/AdguardTeam/AdguardFilters/issues/17845
+!+ NOT_OPTIMIZED
+||baidu.com/po/api/configure/show.jsonp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16295
 !+ NOT_OPTIMIZED
 zhihu.com##.RelatedReadings-adItem
@@ -1535,6 +1555,43 @@ anwap.club,anwap.film,anwap.mobi##body > div[class] > a > img[class]
 !+ PLATFORM(ios, ext_android_cb)
 anwap.club,anwap.film,anwap.mobi##body > div[class] > a > strong
 !
+redtube.com###content_container > div[class]:not(.show_page_modals):not([id]):not([style])
+youtube.com##ytm-promoted-video-renderer
+9to5mac.com,electrek.co##.post-content > .inlinead ~ div[class^="n"][class*=" n"]:not([id]):not([style])
+m.facebook.com,touch.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+m.voyeurhit.com##.container > .section--normal[style*="margin-top: -15px"]
+xbabe.com###fltd
+m.vikiporn.com##.top-spot
+m.vikiporn.com##.under_player_adv
+m.vikiporn.com##.bottom-spot
+x.facebook.com,mobile.facebook.com##article[data-store*="is_sponsored.1"]
+m.allboxing.ru##.arcticmodal-container
+m.delmagyar.hu##.closable-ad
+m.delmagyar.hu###block___frappe_mobil
+||m.alphaporno.com/adman_ai/
+m.alphaporno.com##.banner
+m.alphaporno.com###suggested
+m.pornerbros.com##.adv
+||mobile.donanimhaber.com/ads^
+mobile.donanimhaber.com###comment-container > #news-container[style*="width:"][style*="position"][style*="height:"]
+mobile.donanimhaber.com##.yazilim-sponsor
+www-inside--handy-de.cdn.ampproject.org###i-amphtml-wrapper div.content_ins
+wsj.com##div[class^="WSJTheme__adWrapper_"][style="min-width: 300px; min-height: 250px;"]
+gametech.ru##.mobile-pic
+m.yourlust.com##.divExoCustomLayer
+m.yourlust.com##.banner
+amp.slate.com##.ad
+mobilescout.com##.banner_news_top_box
+mobilescout.com##.banner_list_container
+heise.de##a-paternoster
+mobile.ghanaweb.com##.imk320by50_container
+mobile.ghanaweb.com##.imk300by250_container
+nontongo.club##center > a[href][rel="nofollow"][target="_blank"] > img
+amp.n-tv.de##amp-fx-flying-carpet[data-block-on-consent]
+m.suedkurier.de##.shadowContainer > div[style="width:100%;height:370px"]
+mobile.lemonde.fr##.cm-ad-position
+dn.pt##.t-columns-sys-col-2 > div[class^="t-columns-sys-col-box-"]
+vip.de##.rtli-master-morecontent__items > .centered-ad
 farmacoecura.it##.miniheadermobile
 thebrickfan.com###content > center
 /widgets/exo$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
@@ -2208,7 +2265,13 @@ m.news.yandex.by,m.news.yandex.com,m.news.yandex.fr,m.news.yandex.kz,m.news.yand
 ! Fixing Google Play Services 11.7.* misbehavior (tries to open that file in browser when it's blocked)
 ||googleads.g.doubleclick.net/mads/static/mad/sdk/native/*.html$replace=/[\s\S]*/<!DOCTYPE html><html><head><script>var efs = false;<\/script><\/head><body><\/body><\/html>/,important
 !
+! Google ads (be careful)
+||googleads.g.doubleclick.net^$app=world.cup|com.ludo.king
 ! Blocking of Facebook ads
+||graph.facebook.com^$app=idm.internet.download.manager
+||graph.facebook.com^$app=com.erudite.ecdict
+||graph.facebook.com^$app=women.workout.female.fitness
+||graph.facebook.com^$app=pedometer.steptracker.calorieburner.stepcounter
 ||graph.facebook.com^$app=com.outfit7.talkingtomgoldrun
 ||graph.facebook.com^$app=com.worldboardgames.seabattleworld
 ||graph.facebook.com^$app=net.zedge.android
@@ -2300,6 +2363,26 @@ m.news.yandex.by,m.news.yandex.com,m.news.yandex.fr,m.news.yandex.kz,m.news.yand
 ||graph.facebook.com^$app=com.quoord.tapatalkpro.activity
 ||graph.facebook.com^$app=com.teeonsoft.ztorrent
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/17993
+@@||stats.g.doubleclick.net$app=ro.rcsrds.mydigi
+@@||google-analytics.com$app=ro.rcsrds.mydigi
+! https://github.com/AdguardTeam/AdguardFilters/issues/18445
+||storage.yogavpn.com/exchange^$app=co.vpnmelon.free.unblock.unlimited.turbo.proxy
+! https://github.com/AdguardTeam/AdguardFilters/issues/18472
+||promotion.polarisoffice.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/18514
+||newad.ifeng.com^
+||ifengad.*.ifeng.com^
+! https://github.com/AdguardTeam/AdguardFilters/issues/17456
+||v.ssacdn.com^$app=com.appgame7.jigsaw.free
+||cx.ssacdn.com/image/fetch/*supersonicads
+||img.go2s.co/res^$app=.com.appgame7.jigsaw.free
+! https://github.com/AdguardTeam/AdguardFilters/issues/15477
+||mb-cdn.stocard.de/offer_headers/$app=de.stocard.stocard
+! https://github.com/AdguardTeam/AdguardFilters/issues/17160
+||json.dcinside.com/json0/app_ad_setting.php
+! https://github.com/AdguardTeam/AdguardFilters/issues/15143
+||p.jwpcdn.com/*/vast.js$app=nl.sanomamedia.android.nu,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15744
 @@||imasdk.googleapis.com$app=com.digiturk.ligtv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16458
@@ -2497,8 +2580,6 @@ m.news.yandex.by,m.news.yandex.com,m.news.yandex.fr,m.news.yandex.kz,m.news.yand
 ||vads-api.daumkakao.com/xylophone/adrequest/json
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/2026
 ||spoofgames.com/prod/*.txt
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/2022
-||gdeposylka.ru/js/primatic.js?_=
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1806
 ! Jewels Maze 2
 ||m.ezjoygame.com/update_android.json?os=
@@ -2562,12 +2643,24 @@ _*sec.mp4$mp4,domain=ivi.ru
 ||app.adjust.com^
 !
 ! For apps
+||logconfig.polarisoffice.com
+||analysis.polarisoffice.com
+||stream.shuzilm.cn/report
+||daa.shuzilm.cn/report
+||fraudmetrix.cn^
+||plbslog.umeng.com^
+||analysys.cn^
+||logs.supersonic.com^
 ||graph.facebook.com/*/activities?access_token=&event=
 ||graph.facebook.com/*?fields=supports_implicit_sdk_logging
 !
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 ||adj.st^
 !
+||ue.flipboard.com^
+||helpshift.com/api/lib/2/events/
+||mobileapptracking.com^
+||mobile.bigfishgames.com/telemetry/
 ||startup.mobile.yandex.net^
 ||ilyonanalytics.herokuapp.com^
 ||register.appsflyer.com^
