@@ -23,6 +23,8 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||rl7944.ru^$third-party
+||padla.xyz^$third-party
 ||pnewspages.com^$third-party
 ||aixcdn.com^$third-party
 ||kedwithert.ru^$third-party
@@ -3915,6 +3917,8 @@ ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTime
 ferr-um.ucoz.ru,stalker-mods.clan.su,helpsetup.ru#%#(function(b){Object.defineProperty(Element.prototype,"innerHTML",{get:function(){return b.get.call(this)},set:function(a){/^(?:<([abisuq]) id="[^"]*"><\/\1>)*$/.test(a)||b.set.call(this,a)},enumerable:!0,configurable:!0})})(Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML"));
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/18956
+@@||rem-tech.at.ua/pagead2.ads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18564
 @@||static.doubleclick.net/instream/ad_status.js$domain=center-yf.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18554
@@ -4087,9 +4091,10 @@ dni.ru$$script[tag-content="var sc = document.createElement"][max-length="400"]
 !+ NOT_PLATFORM(windows, mac, android)
 @@||yastatic.net/pcode/adfox/loader.js$domain=dni.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12262
+!+ NOT_PLATFORM(windows, mac, android)
 @@||drive2.ru^$generichide
 @@||an.yandex.ru/system/context.js$domain=drive2.ru
-||drive2.ru/*/*/*/*/*/$replace=/{"settings":.+/null;/,script,domain=drive2.ru,important
+||drive2.*/*/*/*/*/*/$replace=/(^(.)*Ya(\s)*.{0\,7}\[[0-9]+][\s\S]*'\))|(var data = \{"settings":[\s\S]+if\s\(window.loadAdFoxBundle\)[\s\S]+document.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|(^(\{(\s)*"common":\{"stationaryConnection":)[\s\S]+"commonRtbVisibility"[\s\S]+)|(^\{"rtb":(\s)*\{(\s)*"html":.*)//,script,domain=drive2.ru|drive2.com,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12158
 @@||suj.li/assets/xnew/js/fuckadblock.js
 @@||suj.li^$generichide
@@ -6660,6 +6665,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! kinosklad.com - удаление брендированного фона
+kinosklad.com#$#body { background: none!important; }
 ! filmfullhd.net - удаление брендированного фона, отступа сверху
 filmfullhd.net#$#body { margin-top: 0!important; background: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18312
@@ -8992,6 +8999,10 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+remont-aud.net##a[href^="https://yabrowser.su/"]
+nn.ru##.head-banners-cont
+kinosklad.com##.brending
+kinosklad.com##.margin_top_site
 avito.ru##div[class*="avito-ads-container"]
 ||deltomix.ru/*bn/
 ||vgtimes.ru/styles/spec/
@@ -9152,7 +9163,6 @@ bits.media##.leftColumn > div.footer~p[style="padding: 5px 0 5px 0; color: #b0b0
 coinspot.io##.left-menu-ad
 auto.ru##.fotorama__wrap > div.fotorama__nav-wrap > div.fotorama__nav > div[style="display: block;"]:not([class*="foto"])
 drive2.ru##a[data-target^="auto.ru"]
-drive2.ru##div.c-block[data-target^="auto.ru"]
 portaltele.com.ua##.top-ads-links
 talks.by##div[style="height: 90px; width: 100%;"]
 porn0sex.me##iframe[src^="/spot/"]
@@ -10435,7 +10445,6 @@ tut.by##.b-partners
 ://*.tut.by/css/ext/*~*~*~*~*.css
 tut.by##div.impl-vscroll-container[style="max-height: 1200px;"]
 erosmotr.ru###branding_link
-drive2.ru,drive2.com##div[style^="min-height: calc"]
 miped.ru##.header_c_r > center > a[rel="nofollow"] > img
 ||1ul.ru/upload/resize_image/banner/
 1ul.ru##.main-banner
