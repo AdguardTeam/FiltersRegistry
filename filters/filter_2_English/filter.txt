@@ -9739,6 +9739,8 @@ brandbuffet.in.th#@#.category-advertorial
 !---------------------------------------------------------------------
 !------------------------------ Vietnam ------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/19036
+||cdn.rawgit.com/BinLate/*/arlinablock.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18843
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@||gamemod.mobi^$generichide
@@ -11882,6 +11884,21 @@ proxytpb.pw,vizer.tv,eztv.unblocked.sh,piratbaypirate.link,animeshow.tv,vidzi.tv
 ||servicer.mgid.com^$empty,third-party,important
 ||jsc.marketgid.com/*.js?t=$empty,important,~websocket
 !
+! 9anime.is right side ads
+/(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/(?!(assets|Content|cover|images|img|js|player|scripts|thumbs|Uploads|wp-content)\/)[-_a-zA-Z0-9]{4,}\/[-_a-zA-Z0-9]{2,}\/[-_a-zA-Z0-9]{2,}\/[-_a-zA-Z0-9]{1,}/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
+/(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/[-_a-zA-Z0-9]{3,}\/[-_a-zA-Z0-9]{20,}.(gif|jpg|png)/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
+mangapanda.com,memecenter.com,mangareader.net,animeland.tv,animetoon.org,animenova.org,animewow.org,goodanime.co,animeplus.tv,animeflv.net,toonova.net,gogoanime.to,gogoanime.se,gogoanime.in,9anime.is,kiss-anime.me,kimcartoon.me,readcomiconline.to##div[style*="visibility:hidden;"] > div[style*="z-index"] > a[href][rel*="nofollow"][rel*="noindex"]
+kiss-anime.me,kimcartoon.me##div > div[id][style*="overflow: hidden"][style*="width: 300px;"][style*="height: 250px"][style*="flex"]
+! no referrer anymore for ad request
+||kimcartoon.me/Scripts^$image
+! old versions
+/(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/(?!(assets|scripts|player)\/)[a-zA-Z0-9]{4,}[\s\S]*.js/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
+/(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/(?!(assets|scripts|player)\/)[a-zA-Z0-9]{4,}[\s\S]a*\/[a-zA-Z0-9]{4,}[\s\S]*.js/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
+!
+demonoid.pw###rbid
+||taboola.com^$domain=livemint.com
+androidpit.it,androidpit.de,androidpit.com,androidpit.com.br##.gptSlot
+androidpit.it,androidpit.de,androidpit.com,androidpit.com.br##.bannerSidebar
 msn.com##.adprocess
 vg247.com##.sidebar-mpu-container > .small-title
 ||static.mytuner.mobi/media/banners/
@@ -12253,16 +12270,6 @@ pacogames.com###ga_sp_banner
 pacogames.com###ga_sp_preloader
 chyoa.com##.chyoa-adzone
 /^https?:\/\/chyoa\.com\/[a-zA-Z\d]{1,15}\/[a-zA-Z\d]{1,15}\.js$/$domain=chyoa.com
-! new version
-/(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/(?!(assets|Content|cover|images|img|js|player|scripts|thumbs|Uploads|wp-content)\/)[-_a-zA-Z0-9]{4,}\/[-_a-zA-Z0-9]{2,}\/[-_a-zA-Z0-9]{2,}\/[-_a-zA-Z0-9]{1,}/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
-/(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/[-_a-zA-Z0-9]{3,}\/[-_a-zA-Z0-9]{20,}.(gif|jpg|png)/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
-mangapanda.com,memecenter.com,mangareader.net,animeland.tv,animetoon.org,animenova.org,animewow.org,goodanime.co,animeplus.tv,animeflv.net,toonova.net,gogoanime.to,gogoanime.se,gogoanime.in,9anime.is,kiss-anime.me,kimcartoon.me,readcomiconline.to##div[style*="visibility:hidden;"] > div[style*="z-index"] > a[href][rel*="nofollow"][rel*="noindex"]
-kiss-anime.me,kimcartoon.me##div > div[id][style*="overflow: hidden"][style*="width: 300px;"][style*="height: 250px"][style*="flex"]
-! no referrer anymore for ad request
-||kimcartoon.me/Scripts^$image
-! old versions
-/(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/(?!(assets|scripts|player)\/)[a-zA-Z0-9]{4,}[\s\S]*.js/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
-/(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/(?!(assets|scripts|player)\/)[a-zA-Z0-9]{4,}[\s\S]a*\/[a-zA-Z0-9]{4,}[\s\S]*.js/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
 kodi-tutorials.uk##.entry-content > .code-block
 kodi-tutorials.uk###custom_html-2
 kodi-tutorials.uk##.ezo_ad
@@ -18231,6 +18238,12 @@ msn.com#@#[src*="data:"]
 ! END: Temporary
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/18995
+@@||demonoid.pw/js/jq4.js
+@@||demonoid.pw/cached/dropdown7.js^
+! https://github.com/AdguardTeam/AdguardFilters/issues/19037
+@@||otakustream.me/site/api/check_file.php
+@@||otakustream.tv/player.php^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18883
 diet-weight-lose.com#@#.ad-position
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18197
@@ -19939,6 +19952,10 @@ m.facebook.com,touch.facebook.com#@##m_newsfeed_stream article[data-ft*="\"ei\":
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18369
 /^https?:\/\/([0-9a-z\-]+\.)?(9anime|animeland|animenova|animeplus|animetoon|animewow|gamestorrent|goodanime|gogoanime|igg-games|kimcartoon|mangapanda|mangareader|memecenter|readcomiconline|toonget|toonova|watchcartoononline)\.[a-z]{2,4}\/(?!([Ss]cripts|[Uu]ploads|[Ii]mages|assets|combined|content|cover|img|static|thumbs|wp-content|wp-includes))(.*)/$image,other,script,~third-party,xmlhttprequest,badfilter
 /^https?:\/\/([0-9a-z\-]+\.)?(9anime|animeland|animenova|animeplus|animetoon|animewow|gamestorrent|goodanime|gogoanime|igg-games|kimcartoon|memecenter|readcomiconline|toonget|toonova|watchcartoononline)\.[a-z]{2,4}\/(?!([Ss]cripts|[Uu]ploads|[Ii]mages|assets|combined|content|cover|img|static|thumbs|wp-content|wp-includes))(.*)/$image,other,script,~third-party,xmlhttprequest,badfilter
+@@||gogoanime.in/statics/js^
+@@||animeflv.net/redirector.php^
+@@||gogoanime.se/statics/js^
+@@||gogoanime.in/fonts^
 @@||readcomiconline.to$popup
 @@||mangadex.*/images^
 @@||9anime.is/assets^
@@ -22948,6 +22965,7 @@ estream.nu#%#Object.defineProperty(window, 'WebAssembly', { get: function() { re
 /adixs.
 /adj.php?
 /adjk.
+/adjoin.
 /adjs.
 /adjs/*
 /adjs?
@@ -24973,6 +24991,7 @@ estream.nu#%#Object.defineProperty(window, 'WebAssembly', { get: function() { re
 /cgi-exe/ad.
 /cgi/ad_
 /channelblockads.
+/chaturbatebest.js
 /checkm8footer_
 /checkm8header_
 /china-ad.
@@ -28595,6 +28614,7 @@ takeover_banner_
 /fro_lo.js$script
 /frontend_loader.js$script
 /frontend_loador.js$script
+/iamback.php$script
 /lib/?img=$image
 /scripts/sweet/*$script
 _nb_sys.$script,~third-party
@@ -32671,6 +32691,7 @@ _popunder+$popup
 ###adv_halfpage
 ###adv_halfpage_title
 ###adv_holder
+###adv_id
 ###adv_leaderboard
 ###adv_mpu1
 ###adv_mpu2
@@ -39650,6 +39671,7 @@ _popunder+$popup
 ##.ad_buttom_banner
 ##.ad_buttons_300
 ##.ad_buttons_320
+##.ad_c
 ##.ad_callout
 ##.ad_caption
 ##.ad_center
@@ -41404,8 +41426,10 @@ _popunder+$popup
 ##.adv_sidebar
 ##.adv_sidebar_300x250
 ##.adv_standard_d
+##.adv_td
 ##.adv_title
 ##.adv_top
+##.adv_tr
 ##.adv_txt
 ##.adv_under_menu
 ##.adv_underpost
@@ -48126,6 +48150,7 @@ _popunder+$popup
 ##a[href="http://track.freemmo2017.com/"]
 ##a[href^=" http://ads.ad-center.com/"]
 ##a[href^=" http://n47adshostnet.com/"]
+##a[href^=" http://www.sex.com/"][href*="&utm_"]
 ##a[href^="//00ae8b5a9c1d597.com/"]
 ##a[href^="//40ceexln7929.com/"]
 ##a[href^="//5e1fcb75b6d662d.com/"]
@@ -48139,6 +48164,7 @@ _popunder+$popup
 ##a[href^="//go.vedohd.org/"]
 ##a[href^="//jsmptjmp.com/"]
 ##a[href^="//medleyads.com/spot/"]
+##a[href^="//nlkdom.com/"]
 ##a[href^="//porngames.adult/?SID="]
 ##a[href^="//srv.buysellads.com/"]
 ##a[href^="//t.MtagMonetizationA.com/"]
@@ -48473,6 +48499,7 @@ _popunder+$popup
 ##a[href^="https://betway.com/"][href*="&a="]
 ##a[href^="https://bs.serving-sys.com"]
 ##a[href^="https://chaturbate.com/affiliates/"]
+##a[href^="https://chaturbate.com/in/?track="]
 ##a[href^="https://click.plista.com/pets"]
 ##a[href^="https://dcs.adgear.com/clicks/"]
 ##a[href^="https://dediseedbox.com/clients/aff.php?"]
@@ -48482,11 +48509,13 @@ _popunder+$popup
 ##a[href^="https://fileboom.me/pr/"]
 ##a[href^="https://go.ad2up.com/"]
 ##a[href^="https://go.onclasrv.com/"]
+##a[href^="https://go.stripchat.com/"][href*="&campaignId="]
 ##a[href^="https://intrev.co/"]
 ##a[href^="https://keep2share.cc/pr/"]
 ##a[href^="https://members.linkifier.com/public/affiliateLanding?refCode="]
 ##a[href^="https://mk-ads.com/"]
 ##a[href^="https://paid.outbrain.com/network/redir?"]
+##a[href^="https://porndeals.com/?track="]
 ##a[href^="https://pubads.g.doubleclick.net/"]
 ##a[href^="https://redirect.ero-advertising.com/"]
 ##a[href^="https://secure.adnxs.com/clktrb?"]
@@ -48495,6 +48524,7 @@ _popunder+$popup
 ##a[href^="https://syndication.exoclick.com/splash.php?"]
 ##a[href^="https://t.mobtya.com/"]
 ##a[href^="https://torguard.net/aff.php"]
+##a[href^="https://track.clickmoi.xyz/"]
 ##a[href^="https://tracking.truthfinder.com/?a="]
 ##a[href^="https://trackjs.com/?utm_source"]
 ##a[href^="https://trklvs.com/"]
@@ -48503,6 +48533,7 @@ _popunder+$popup
 ##a[href^="https://windscribe.com/promo/"]
 ##a[href^="https://www.adskeeper.co.uk/"]
 ##a[href^="https://www.bebi.com"]
+##a[href^="https://www.camsoda.com/enter.php?id="]
 ##a[href^="https://www.camyou.com/?cam="][href*="&track="]
 ##a[href^="https://www.dsct1.com/"]
 ##a[href^="https://www.financeads.net/tc.php?"]
@@ -56916,6 +56947,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||frlvfzybstsa.com^$third-party
 ||frlzxwxictmg.com^$third-party
 ||frmavvtkhi.bid^$third-party
+||frmwbxzynkrswj.com^$third-party
 ||frmxnnjejpzbr.com^$third-party
 ||frtkblgbqc.bid^$third-party
 ||frxgmxkg.bid^$third-party
@@ -59484,6 +59516,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||pkqbgjuinhgpizxifssrtqsyxnzjxwozacnxsrxnvkrokysnhb.com^$third-party
 ||pktgargbhjmo.com^$third-party
 ||pkucwwgcnuxzo.bid^$third-party
+||pkzfmxjlkcxkub.com^$third-party
 ||plcsedkinoul.com^$third-party
 ||plgalhmhkhzy.com^$third-party
 ||plgdhrvzsvxp.com^$third-party
@@ -63757,6 +63790,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||aufderhar.net^$third-party
 ||augrenso.com^$third-party
 ||awentw.com^$third-party
+||awept.com^$third-party
 ||awmcenter.eu^$third-party
 ||awmpartners.com^$third-party
 ||ax47mp-xp-21.com^$third-party
@@ -63845,6 +63879,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||creoads.com^$third-party
 ||crocoads.com^$third-party
 ||cross-system.com^$third-party
+||crptentry.com^$third-party
 ||crtracklink.com^$third-party
 ||ctyzd.com^$third-party
 ||cwgads.com^$third-party
@@ -63886,6 +63921,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||discreetlocalgirls.com^$third-party
 ||divascam.com^$third-party
 ||divertura.com^$third-party
+||dlski.space^$third-party
 ||dofolo.ru^$third-party
 ||dosugcz.biz^$third-party
 ||double-check.com^$third-party
@@ -63905,7 +63941,9 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||eltepo.ru^$third-party
 ||emediawebs.com^$third-party
 ||enoratraffic.com^$third-party
+||eqfgc.com^$third-party
 ||eragi.ru^$third-party
+||ergs4.com^$third-party
 ||eroadvertising.com^$third-party
 ||erosadv.com^$third-party
 ||erotikdating.com^$third-party
@@ -63991,6 +64029,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||gunzblazingpromo.com^$third-party
 ||gzbop.com^$third-party
 ||haeg1ei.bid^$third-party
+||halileo.com^$third-party
 ||hdat.xyz^$third-party
 ||helltraffic.com^$third-party
 ||hentaibiz.com^$third-party
@@ -64099,6 +64138,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||loveadverts.com^$third-party
 ||lovecam.com.br^$third-party
 ||lovercash.com^$third-party
+||lpwre.top^$third-party
 ||lsawards.com^$third-party
 ||lucidcommerce.com^$third-party
 ||lugiy.ru^$third-party
@@ -64153,6 +64193,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||mopilod.com^$third-party
 ||morehitserver.com^$third-party
 ||move2.co^$third-party
+||mp-https.info^$third-party
 ||mp3vicio.com^$third-party
 ||mpay69.pw^$third-party
 ||mpmcash.com^$third-party
@@ -64191,6 +64232,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||oconner.biz^$third-party
 ||octopuspop.com^$third-party
 ||oddads.net^$third-party
+||odnobi.ru^$third-party
 ||odzb5nkp.com^$third-party
 ||ofapes.com^$third-party
 ||okeo.ru^$third-party
@@ -64203,6 +64245,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||otaserve.net^$third-party
 ||otherprofit.com^$third-party
 ||outster.com^$third-party
+||ovbnb.com^$third-party
 ||owlopadjet.info^$third-party
 ||owpawuk.ru^$third-party
 ||oxcluster.com^$third-party
@@ -64646,6 +64689,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||needlive.com^$popup
 ||nextlandingads.com^$popup
 ||njmaq.com^$popup,third-party
+||ophistler.pro^$popup
 ||pinkberrytube.com^$popup
 ||playgirl.com^$popup
 ||plinx.net^$popup,third-party
@@ -73278,6 +73322,7 @@ wyciwyg:$popup,domain=jkanime.net|vodlock.co
 ||definebabe.com/db/images/leftnav/webcams2.png
 ||definebabe.com/db/js/pcme.js
 ||definebabe.com/sponsor/
+||definebabe.com/sponsor_
 ||definefetish.com/df/js/dpcm.js
 ||deliciousbabes.org/banner/
 ||deliciousbabes.org/media/banners/
@@ -73323,6 +73368,7 @@ wyciwyg:$popup,domain=jkanime.net|vodlock.co
 ||exhentai.net/img/aaf1.gif
 ||exit.macandbumble.com^
 ||extreme-board.com/bannrs/
+||extremetube.com/cdn_files/es6/dist/exbl.min.js?
 ||extremetube.com/player_related?
 ||fantasti.cc/_special/
 ||fantasti.cc/fabl.
@@ -73395,6 +73441,7 @@ wyciwyg:$popup,domain=jkanime.net|vodlock.co
 ||gotgayporn.com/Watermarks/
 ||grannysexforum.com/filter.php
 ||gspcdn.com^*/banners/
+||h2porn.com/*.js#spot=
 ||h2porn.com/ab/
 ||h2porn.com/contents/content_sources/
 ||h2porn.com/js/etu_r.js
@@ -73755,6 +73802,7 @@ wyciwyg:$popup,domain=jkanime.net|vodlock.co
 ||pornhub.phncdn.com/images/campaign-backgrounds/
 ||pornhub.phncdn.com/misc/xml/preroll.xml
 ||pornizer.com/_Themes/javascript/cts.js?
+||pornleech.is/pornleech_
 ||pornmade.com/images/404vz.gif
 ||pornmade.com/images/az.gif
 ||pornmade.com/images/cb
@@ -73874,6 +73922,7 @@ wyciwyg:$popup,domain=jkanime.net|vodlock.co
 ||sex-techniques-and-positions.com/123ima/
 ||sex-techniques-and-positions.com/banners
 ||sex.com/images/*/banner_
+||sex01.org/*.php?
 ||sex3.com/if/
 ||sex3dtoons.com/im/
 ||sexilation.com/wp-content/uploads/2013/01/Untitled-1.jpg
@@ -73953,6 +74002,8 @@ wyciwyg:$popup,domain=jkanime.net|vodlock.co
 ||the-feeding-tube.com^*/Topbanner.php
 ||theboys.be/nvrbl/
 ||thedoujin.com^$domain=gelbooru.com
+||thefappening.wiki^*/promo-
+||thefappening.wiki^*/promo/
 ||thefappeningblog.com/icloud9.html
 ||thefappeningblog.com/sproject/
 ||thehun.net^*/banners/
@@ -74068,6 +74119,7 @@ wyciwyg:$popup,domain=jkanime.net|vodlock.co
 ||xogogo.com/images/latestpt.gif
 ||xozilla.com/agent.php?spot=
 ||xozilla.com/player/html.php?aid=
+||xpics.me/everyone.
 ||xtravids.com/pop.php
 ||xvideohost.com/hor_banner.php
 ||xvideos-free.com/d/
@@ -85013,7 +85065,7 @@ celebspank.com##.ad1
 pornhub.com,xtube.com##.adContainer
 cumsearcher.com##.adb
 cumsearcher.com##.adb-right
-pornoxo.com##.adblock
+ceporn.net,pornoxo.com##.adblock
 xxxkingtube.com##.adbox
 xxxfuel.com##.adcontainer
 katestube.com##.add
@@ -85104,6 +85156,7 @@ fux.com##.bottom-baner
 xbabe.com,yumymilf.com##.bottom-banner
 pornoeggs.com##.bottom-banner-templ
 playvid.com##.bottom-banners
+h2porn.com##.bottom-cubes
 pornxs.com##.bottom-sidebar
 pornfun.com##.bottom-spots
 youtubelike.com##.bottom-thumbs
@@ -85159,8 +85212,10 @@ efukt.com##.efukt-widget-slider
 youporn.com##.eight-column > div[class]
 goldporntube.com##.embadv
 grandpaporntube.net##.embed_banners
+pornhub.com##.enesuch
 viptube.com##.envelope + div[class]
 grandpaporntube.net##.exo
+porn.com##.f-zne2
 porn.com##.f-zon
 imagepost.com##.favsites
 hardsextube.com##.featured-wrap
@@ -85178,8 +85233,10 @@ gotporn.com##.footer-image-contents-bl
 4tube.com##.footer-la-vane
 youjizz.com##.footer-prs
 babesandstars.com##.footer_banners
+xpics.me##.frequently
 mrskin.com##.friends-runner
 sunporno.com##.frms-block
+xpics.me##.future
 sammobile.com##.gad
 youx.xxx##.gallery-link
 youtubelike.com##.gallery-thumbs
@@ -85242,6 +85299,7 @@ proporn.com##.livecams
 drtuber.com##.livecams_main
 ns4w.org##.livejasmine
 madthumbs.com##.logo
+pornhub.com##.lonesomemuch
 tube8.com##.main-video-wrapper > .float-right
 sexdepartementet.com##.marketingcell
 avn.com##.mfc
@@ -85249,6 +85307,7 @@ lic.me##.miniplayer
 upornia.com##.mjs-closeandplay
 hotmovs.com,upornia.com##.mjs-closeplay
 hanksgalleries.com##.mob_vids
+xpics.me##.native
 pornhub.com,tube8.com##.nonesuch
 upornia.com##.ntv-banners-container
 redtube.com##.ntva
@@ -85260,7 +85319,7 @@ vporn.com##.overheaderbanner
 pornomovies.com##.overlay-ggf
 tnaflix.com##.pInterstitial
 redtube.com##.pageVideos > div > [class][style*="z-index:"]
-tube8.com##.partner-link
+definebabe.com,tube8.com##.partner-link
 bravotube.net##.paysite
 ah-me.com##.paysite-link
 hdzog.com##.pl_showtime1_wr2
@@ -85283,7 +85342,9 @@ pornhub.com##.pre-footer
 pron.tv##.premiummessages
 txxx.com##.preroll
 adultdvdtalk.com##.productinfo
-pornfun.com##.promo
+pornfun.com,xnostars.com##.promo
+thefappening.wiki##.promo-1
+thefappening.wiki##.promo-2
 porntubevidz.com##.promo-block
 nakedtube.com,pornmaki.com##.promotionbox
 nuvid.com,nuvidselect.com##.puFloatLine
@@ -85376,6 +85437,7 @@ sexyandshocking.com##.sub-holder
 peepinghunter.com,simply-hentai.com##.superbanner
 porndaddy.us##.svd
 porn.com##.t-zne
+porn.com##.t-zne2
 dickbig.net##.t_14
 intporn.com##.tagcloudlink.level4
 amateuralbum.net##.tb3
@@ -85467,20 +85529,20 @@ extremetube.com,pornhub.com,redtube.com,tube8.com,tube8.es,tube8.fr,xtube.com,xv
 extremetube.com,pornhub.com,redtube.com,tube8.com,tube8.es,tube8.fr,xtube.com,xvideos.com,youjizz.com,youporn.com,youporngay.com##[style*="height: 330px;"]
 sexyclips.org##[style="text-align: center; width: 1000px; height: 250px;"]
 exgirlfriendmarket.com##[width="728"][height="150"]
-asspoint.com,babepedia.com,babesource.com,dbnaked.com,gaytube.com,gfycatporn.com,girlsnaked.net,mansurfer.com,newpornstarblogs.com,pornoxo.com,pornpicture.org,pornstarchive.com,redtube.com,rogreviews.com,sexyandfunny.com,shemaletubevideos.com,starcelebs.com,the-new-lagoon.com,tube8.com,vporn.com,xxxhdd.com,youjizz.com,youporn.com,yourdailypornstars.com##a[href*=".com/track/"]
+asspoint.com,babepedia.com,babesource.com,dbnaked.com,definebabe.com,gaytube.com,gfycatporn.com,girlsnaked.net,mansurfer.com,newpornstarblogs.com,pichunter.com,pornoxo.com,pornpicture.org,pornstarchive.com,redtube.com,rogreviews.com,sexyandfunny.com,shemaletubevideos.com,starcelebs.com,the-new-lagoon.com,theanalist.info,tube8.com,vporn.com,xxxhdd.com,youjizz.com,youporn.com,yourdailypornstars.com##a[href*=".com/track/"]
 pornhub.com##a[href*=".download/"]
 redtube.com##a[href*=".hop.clickbank.net"]
 boysfood.com##a[href*=".php"]
 keezmovies.com##a[href*="/affiliates/idevaffiliate.php?"]
 nude.hu##a[href*="/click/"]
 gaytube.com,redtube.com,shemaletubevideos.com,therealpornwikileaks.com,xhamster.com##a[href*="/go.php?"]
-monstercockz.com,xxxhdd.com##a[href*="/go/"]
+monstercockz.com,theanalist.info,xxxhdd.com##a[href*="/go/"]
 sexyandfunny.com,yourdailypornstars.com##a[href*="/out.php?"]
 badjojo.com##a[href*="/out.php?siteid=13&id=0&url=http%3A%2F%2Fsyndication.traffichaus.com"]
 mansurfer.com##a[href*="/out/"]
 avgle.com##a[href*="/redirect"]
 celebrity-slips.com##a[href*="?_atc="]
-gotporn.com,katestube.com,pron.tv,spankbang.com##a[href*="?ats="]
+gotporn.com,katestube.com,pron.tv,spankbang.com,xnostars.com##a[href*="?ats="]
 redtube.com,thumbzilla.com##a[href*="?coupon="]
 redtube.com##a[href*="?link_id="][href*="&tracker_id="]
 pornhub.com##a[href*="abbp"]
@@ -85577,7 +85639,6 @@ thefappeningblog.com##a[href^="https://porndabster.com/?utm_"]
 spankbang.com##a[href^="https://porngames.adult/"]
 rule34.xxx##a[href^="https://rule34.xxx/c.html"]
 fantasti.cc##a[href^="https://syndication.traffichaus.com/"]
-camwhores.tv##a[href^="https://www.camsoda.com/enter.php?id="]
 celebrity-slips.com##a[href^="https://www.celebrity-slips.com/rd/"]
 gotporn.com##a[href^="https://www.gotporn.com/click.php?id="]
 avn.com,penthouse.com##a[href^="https://www.myfreecams.com/"][href*="&track="]
@@ -85587,6 +85648,7 @@ tube8.com,tube8.es,tube8.fr##a[onclick^="loadAdFromHeaderTab('http://ads.generic
 xxxstreams.eu##a[style]
 hentai-foundry.com##a[target="_new"] > img[src]
 picfoco.com##a[title="Sponsor link"]
+pornhub.com##ads
 mofosex.com##article[style="position: relative; overflow: hidden; width: 299px; height: 249px; margin:0 auto;"]
 pornhub.com##aside > [style="display: block;"] > table
 pornhub.com##aside > span:first-child
@@ -85606,6 +85668,7 @@ voyeurhit.com##div[id^="div-ad-"]
 hentaistream.com##div[id^="hs_ad"]
 tube8.com##div[id^="tj-zone"]
 xtravids.com##div[style="background-color:#DDD; padding:5px;"]
+ceporn.net##div[style="border:4px solid;width:300px;height:250px;background:#7e7e7e;"]
 redtube.com##div[style="display: block !important;"]
 javlibrary.com##div[style="display:block; position:relative; width:730px; height:92px; overflow:hidden; margin: 10px auto 0px auto;"]
 xhamster.com##div[style="font-size: 10px; margin-top: 5px;"]
