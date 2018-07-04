@@ -373,7 +373,6 @@
 @@/js/advert.$script,domain=mariestadstidningen.se|nwt.se|sla.se
 @@||assets-cdn.mytaste.org/js/ads.js$script
 @@||freeride.nu/js/ads.js^$script,domain=freeride.se|happyride.se
-@@||kxcdn.com/wp-content/plugins/better-adsmanager/js/advertising.$script,domain=tekniksmart.se
 ! Unbreak
 avanza.se#@#a[title="LeoVegas"]
 @@||opinionstage.com^$domain=99.se|fz.se|sweclockers.com
@@ -395,9 +394,10 @@ avanza.se#@#a[title="LeoVegas"]
 /lazyad-loader.$script,domain=kimura.se|tvmatchen.nu
 /LoadSlotLocator.$script,domain=bohuslaningen.se|falkopingstidning.se|gp.se|hallandsposten.se|hn.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|stromstadstidning.se|tranastidning.se|ttela.se|vastgotabladet.se|vetlandaposten.se|vn.se
 /newsletter/*$domain=zalando.se
-/panorama.js$script,domain=blogg.se|bloggkommentatorerna.se|ladydahmer.nu|nickesfilmblogg.se|themoviefreak.se|webblogg.se
+/panorama.js$script,domain=blogg.se|bloggkommentatorerna.se|ladydahmer.nu|nickesfilmblogg.se|themoviefreak.se|webblogg.se|svenskayoutubers.se
 /SitesterSurvey*.$script,domain=wwf.se
 /statistics.php$xmlhttprequest,domain=alltforforaldrar.se|fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|mammasidan.se|market.se|minbebis.com|sesam.nu|stockholmsfria.se|industrinyheter.se|dagensnaringsliv.se
+/xtcore.$script,domain=kiaindex.se
 ||apprl.com/embed/$subdocument,domain=majaelisabeth.com|metromode.se|trendenser.se|forni.se|petratungarden.se
 ||herokuapp.com^$third-party,domain=aftonbladet.se
 ||pji.nu^$third-party,domain=idg.se|minhembio.com|nordichardware.se|99.se|fz.se|sweclockers.com|mobil.se|viivilla.se|feber.se|kamerabild.se
@@ -446,6 +446,7 @@ avanza.se#@#a[title="LeoVegas"]
 /plugins/mailpoet/*$script,domain=opulens.se
 /plugins/metro-affiliate/*$script,domain=metromode.se
 /plugins/mitti-cookie-disclaimer/*$script,domain=mitti.se|alltomstockholm.se
+/plugins/monarch/*$domain=undertian.com
 /plugins/newsner-lead-tracking/*$script
 /plugins/pause-adblocker/*$script,stylesheet,image,domain=hightechguiden.se
 /plugins/pixelyoursite-pro/*
@@ -552,7 +553,7 @@ omni.se##article.article--sponsored
 ||omni-ads.omni.news^
 tv.nu##a[href*="adform.net"]
 tv.nu##.ad-mega--container
-tv.nu##._1A_r6:has-text(Vi använder oss av Cookies)
+tv.nu##div[class^="_"]:has(a[href^="/min-sida/guide/personuppgifter"])
 ||logger.tv.nu^$script
 /campaigns.js$script,domain=blocket.se
 /utag*.js$script,domain=blocket.se
@@ -1542,7 +1543,8 @@ megafonen.nu##.box:if(h5 > span.title:has-text(Annons))
 fastighetsnytt.se##.promobox
 kissies.se##.post:if(strong:has-text(i samarbete med))
 @@||boffo.se^$generichide
-linnherbertsson.se##.post:if(strong:has-text(Betalt samarbete med))
+linnherbertsson.se##.content:has(.sponsored-container)
+linnherbertsson.se##[id^="content-ad"]
 ||cornucopia.cornubot.se/js/cookie*.$script
 svegot.se##[itemtype="https://schema.org/WPAdBlock"]
 ||evidon.com^$third-party,domain=spela.se
@@ -1565,3 +1567,5 @@ piraja.se###parallax
 bloggbevakning.se###ad
 ||aff.bstatic.com^$domain=travelgrip.se
 deliquate.se##.ajax_loader
+svenskayoutubers.se#$#body.with-panorama { padding-top: 0 !important; }
+iabsverige.se###load
