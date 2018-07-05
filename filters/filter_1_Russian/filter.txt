@@ -4057,7 +4057,7 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13870
 @@||my-news-portal.ru^$generichide
 !
-! Ads replacement (piguiqproxy.com etc.)
+! START: Ads replacement (piguiqproxy.com etc.)
 -*.zmctrack.net^$replace=/.+//
 ! New $$ rules
 dynamo.kiev.ua,etextlib.ru,okino.ua,football24.ua,lostfilm-online.org,gorod.dp.ua,telegraf.in.ua,112.ua,forumodua.com,24tv.ua,ria-m.tv,kinopad.club,vsetv.com,obozrevatel.com,bigmir.net,gagadget.com,kp.ua,112.ua,i.ua,kino-fs.ucoz.net,liga.net,strana.ua,kino-hd1080.ru,kinocoin.online,isport.ua,allboxing.ru,censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,kurs.com.ua$$script[wildcard="*!function(){function*n=Zu+t();Ut[n]=Wt*,Bn=*"][max-length="10000"]
@@ -4069,7 +4069,7 @@ fastpic.ru,kaztorka.org$$script[wildcard="*!function(f,u,n,t,o,r,i)*,mt=Zu*"][ma
 $$script[wildcard="*!function(f,u,n,t,o,r,i)*,mt=Zu*"][max-length="10000"]
 !
 allboxing.ru,censor.net.ua,ex-fs.net,sinoptik.ua,hdreactor.club,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,kurs.com.ua$$script[wildcard="*!function () { function*f.length; u++*, Bn =*"][max-length="10000"]
-tapochek.net,epravda.com.ua,pravda.com.ua$$script[tag-content="z=stop.bind"][max-length="10000"]
+tapochek.net$$script[tag-content="z=stop.bind"][max-length="10000"]
 tushkan-tv.net,kino-hd1080.ru$$script[wildcard="*var _0x*['length']*));}());*"][max-length="25000"]
 zemlyaki.name,sonnikonline.club$$script[tag-content=".com/rotator-v2/"][max-length="800"]
 kinocoin.online$$script[wildcard="*var _0x*.constructor*function _0x*"][max-length="23000"]
@@ -4082,7 +4082,7 @@ gagadget.com,dynamo.kiev.ua,fastpic.ru,liga.net,etextlib.ru,okino.ua,kurs.com.ua
 mirknig.su,112.ua,kinopad.club,vsetv.com,torrent-games.net,kp.ua,i.ua,newsyou.info,kino-fs.ucoz.net,censor.net.ua,ex-fs.net,sinoptik.com.ru,vgorode.ua,radikal.ru,hvylya.net,korrespondent.net#%#AG_abortInlineScript(/\/\*[0-9a-f]{40}\*\//, 'String.fromCharCode');
 !+ NOT_PLATFORM(windows, mac, android)
 tushkan-tv.net#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('_0x') == 0) { window[key] = function() { }; } }; });
-tapochek.net,epravda.com.ua,pravda.com.ua#%#AG_abortInlineScript(/stop.bind/, 'z');
+tapochek.net#%#AG_abortInlineScript(/stop.bind/, 'z');
 !+ NOT_PLATFORM(windows, mac, android)
 zemlyaki.name,sonnikonline.club#%#AG_abortInlineScript(/\/rotator/, 'document.addEventListener');
 !+ NOT_PLATFORM(windows, mac, android)
@@ -4090,14 +4090,18 @@ farap.ru,darkside.ru,sovsport.ru,txapela.ru#%#AG_abortInlineScript(/load\(\[e\(a
 !+ NOT_PLATFORM(windows, mac, android)
 aftershock.news,it-tehnik.ru,modernfirearms.net,izhevsk.ru#%#AG_abortInlineScript(/^new \(function\(\)/, 'String.fromCharCode');
 aftershock.news,it-tehnik.ru,modernfirearms.net,farap.ru,izhevsk.ru,darkside.ru,sovsport.ru,txapela.ru$$script[tag-content="load([e(atob(host)"][max-length="3500"]
+!
 ! <script src="data:text/javascript;base64
-pravda.com.ua,newsyou.info,sinoptik.com.ru,sinoptik.ua#%#AG_abortInlineScript(/window/, 'atob');
+pravda.com.ua,epravda.com.ua,newsyou.info,sinoptik.com.ru,sinoptik.ua$$script[src="data:text/javascript;base64"]
+!+ NOT_PLATFORM(windows, mac, android)
+pravda.com.ua,epravda.com.ua,newsyou.info,sinoptik.com.ru,sinoptik.ua#%#AG_abortInlineScript(/window/, 'atob');
 ! <script>var _0x
-kinocoin.online#%#AG_abortInlineScript(/var/, 'String.fromCharCode');
+the-cinema.club,kinocoin.online#%#AG_abortInlineScript(/var/, 'String.fromCharCode');
 !+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock, ext_ff)
 @@||hdreactor.club^$generichide
 !+ NOT_PLATFORM(windows, mac, android)
 $csp=script-src http: https:,domain=tsargrad.tv
+! END: Ads replacement (piguiqproxy.com etc.)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13764
 ||blackdesert-info.ru/wp-content/uploads/*/*.js
@@ -4633,7 +4637,7 @@ vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!importa
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18984
 /overclockers\.ru\/.+\/(?!getPipPlace\?)|forums\.overclockers\.ru\/.+|overclockers\.ru\/?/$/$replace=/\\$\("body"\).html\(.+\);|\$\("body"\).html\(kot\d\);//,~script,~stylesheet,important
 !+ NOT_PLATFORM(windows, mac, android)
-overclockers.ru#%#AG_onLoad(function() { window.chkA = function() {}; });
+overclockers.ru#%#AG_onLoad(function() { window.chkA = function() {}; window.chkB = function() {}; });
 !+ NOT_OPTIMIZED PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@||rotor.overclockers.ru/www/delivery/asyncspc.php
 !+ NOT_OPTIMIZED
@@ -5485,7 +5489,8 @@ my.mail.ru##div.b-history-event.ui-simple-block[-ext-has=".b-history-event__body
 ! START: Yandex
 !
 ! Yandex search https://github.com/AdguardTeam/AdguardFilters/issues/11569#issuecomment-368851111
-yandex.by,yandex.com,yandex.kz,yandex.ru,yandex.ua##body[data-bem*="/search/"] .content__right > div.serp-list_right_yes:has(> div.serp-item > div.composite > div.organic div.label_color_yellow:contains(Реклама))
+yandex.by,yandex.com,yandex.kz,yandex.ru,yandex.ua##html > body[data-bem*="/search/"] .content__right > div.serp-list_right_yes:has(> div.serp-item > div.composite > div.organic div.label_color_yellow:contains(Реклама))
+yandex.by,yandex.com,yandex.kz,yandex.ru,yandex.ua##html > body[data-bem*="/search/"] > div.main > div.main__center > div.main__content  div .serp-list > li.serp-item:has(> div.organic > div.organic__subtitle > div.label_color_yellow)
 ! Yandex.TV
 tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua##html:has(> body) > body > div.mount > div.container  .adv-manager > *
 ! Yandex.Maps - routes
@@ -8780,6 +8785,7 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+bodyhard.ru##body noindex > nofollow a > img
 ||u-tv.ru/vast/*.xml
 onyxgame.com###brand
 pikabu.ru##.feed_ad_wrapper
