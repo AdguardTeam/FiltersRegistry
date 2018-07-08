@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-07-08 06:03:37 CEST
+! Last modified: 2018-07-08 12:40:32 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -155,10 +155,7 @@ missatsamtal.se##.nosnaj:has(#bottom-nosnaj)
 missatsamtal.se##.nosnaj:has(#top-nosnaj)
 mittkok.expressen.se##.tile-item:has(span.native)
 mmanytt.se##.img-featured-posts-image:has(a[href$="/annons/"])
-mobil.se##.teaser:has(.Partner)
-mobil.se##.title-image-list:if(.pane-title:has-text(Sponsrad artikel))
-mobil.se#$#body { overlay: auto !important; }
-mobil.se##li.teaser:has(.Advertorials)
+mobil.se##.aside-puff > li:has-text(SPONSRAD)
 modette.se##.lazyload_bar.show:if(span:has-text(Sponsrat))
 moviezine.se##.inner_article:if(.badge:has-text(Sponsrat))
 moviezine.se##.inner_article:if(.badge:has-text(SPONSRAT))
@@ -445,7 +442,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /logger/logger?
 /lunchguiden*.$image,domain=folkbladet.nu|vk.se
 /mitti-ad-block-blocker/scripts.$script,domain=alltomstockholm.se|mitti.se
-/mobil_takeover/js/script.js$domain=mobil.se
 /mod.js$xmlhttprequest,domain=internetmedicin.se
 /modules/mod_ijoomla_adagency_zone/*$script,domain=villavarmt.se
 /monetization/ads-module/*
@@ -512,6 +508,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /plugins/thirstyaffiliates/*$script
 /plugins/uk-cookie-consent/*$script,stylesheet
 /plugins/wf-cookie-consent/*$script,stylesheet
+/plugins/wp-auto-affiliate-links/*$script,stylesheet
 /plugins/wp-banner-manager/*$script,stylesheet,domain=branschkoll.se
 /plugins/wp-embed-facebook/*$script,stylesheet,domain=faktiskt.se
 /plugins/wppas/*$script,stylesheet,domain=elbilsnytt.se
@@ -585,8 +582,8 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 24blekinge.se,24emmaboda.se,24falkenberg.se,24halmstad.se,24helsingborg.se,24kalmar.se,24kristianstad.se,24malmo.se,24nybro.se,24trelleborg.se,24uppsala.se,24ystad.se##article.native
 24blekinge.se,24emmaboda.se,24falkenberg.se,24halmstad.se,24helsingborg.se,24kalmar.se,24kristianstad.se,24malmo.se,24nybro.se,24trelleborg.se,24uppsala.se,24ystad.se,affarsliv.com,affarslivgotland.se,babyhjalp.se,branschkoll.se,corren.se,eposten.se,folkbladet.se,fotosidan.se,globalportalen.org,helagotland.se,klackspark.com,kuriren.nu,moviezine.se,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,vt.se##.ads
 7ha.se,barometern.se,blt.se,bt.se,kristianstadsbladet.se,olandsbladet.se,ostrasmaland.se,smp.se,sydostran.se,trelleborgsallehanda.se,ut.se,ystadsallehanda.se##div[id*="marknadsguiden"]
-8till5.se##.gdpr
 8till5.se##.newsletter-form
+8till5.se,hd.se,sydsvenskan.se,vimedbarn.se##.gdpr
 99.se##[id^="bbPrisjakt"]
 99.se,bohuslaningen.se,byggnadsarbetaren.se,cissiochfreddan.se,claudiagalliconcha.se,di.se,dn.se,ekuriren.se,folkbladet.nu,gp.se,hallandsposten.se,hn.se,kimura.se,kkuriren.se,loppi.se,mariestadstidningen.se,markbladet.se,medievarlden.se,mestmotor.se,mobil.se,norran.se,nwt.se,paulas.me,skaraborgsbygden.se,skillingaryd.nu,sla.se,sn.se,sportbloggare.com,stromstadstidning.se,swedroid.se,ttela.se,vardagspuls.se,vimedbarn.se,vk.se##.ad
 ?bannerid=$image,domain=existenz.se
@@ -758,7 +755,7 @@ breakit.se##.spnsr-widget
 breakit.se##.supportersSlideContainer
 breakit.se##.videoAd
 breakit.se##div[class*="sponsored"]
-breakit.se,runnersworld.se,utsidan.se##.sponsored
+breakit.se,hockeymagasinet.com,runnersworld.se,utsidan.se##.sponsored
 brollopstorget.se,familjeliv.se##.ad_right
 businessclass.se###bcpop
 businessclass.se##.reveal-modal-bg
@@ -781,6 +778,7 @@ dagensnaringsliv.se,industrinyheter.se###dfptag-superpanorama
 dagensnaringsliv.se,industrinyheter.se##.insider-ads
 dagensnaringsliv.se,industrinyheter.se##[id^="mainadvertorial"]
 dagensopinion.se##a[href^="/annons-"]
+dagensps.se##.category-ps-partner
 dagensps.se##.xtss-above-post
 dagenssamhalle.se##.node-native
 dagenssamhalle.se##.notice
@@ -949,7 +947,6 @@ hbl.fi,ostnyland.fi,vastranyland.fi##.type-advertorial
 hbl.fi,ostnyland.fi,vastranyland.fi##gdpr-notice
 hbl.fi,ostnyland.fi,vastranyland.fi##rekrybanner
 hd.se,sydsvenskan.se##div[data-category="native-teaser"]
-hd.se,sydsvenskan.se,vimedbarn.se##.gdpr
 hemtrevligt.se##.partner-article
 hemtrevligt.se##.partner-navbar
 hemtrevligt.se,livetombord.se,mestmotor.se##.navbar-native
@@ -957,7 +954,6 @@ hemtrevligt.se,livetombord.se,mestmotor.se##.row--native
 hippson.se##.sponsorpuff
 hitta.se##.curious-location-promo__container
 hitta.se##.partner-box
-hockeymagasinet.com##.sponsored
 hockeymagasinet.com##app-gdpr-alert
 hugorosas.se##.tag-sponsored_post
 hugorosas.se##article.category-samarbete
@@ -1062,10 +1058,8 @@ mmanytt.se##.bannerWide
 mmanytt.se##.front-banner
 mmanytt.se##[class*="sponsrat-inlagg"]
 mmanytt.se##a[href*="://kampanjer."]
-mobil.se##.section-advertorials
-mobil.se##.section-jobb-section-advertorials
-mobil.se##div.takeover
-mobil.se##li.section-partner
+mobil.se##[data-domid^="sprjr"]
+mobil.se##li.partner
 modette.se##article.article-true-native
 motormagasinet.se##[id^="dfp-a1p"]
 moviezine.se##[name="article-advertisment"]
@@ -1236,6 +1230,7 @@ viseniorer.se##.topheaderinfo
 ||ana.tunnl.com^
 ||analytics.ci-360.se^$script,xmlhttprequest,domain=fokus.se
 ||anki.com^$third-party
+||annonsportalen.norran.se^$subdocument
 ||api.hitta.se/statistics$xmlhttprequest
 ||api.torgen.se/torgen/banner.stat$xmlhttprequest
 ||apis.google.com/js/plusone.js$third-party
@@ -1503,6 +1498,7 @@ viseniorer.se##.topheaderinfo
 ||sociuslive.com^$third-party
 ||sprinklecontent.com^$third-party
 ||sprinkletxt.com^$third-party
+||stajlplejs.com/annons.asp$subdocument
 ||stat-api.tv4play.se$image
 ||stat.modette.se^
 ||static.influencersofsweden.se/js/inos.$script
@@ -1546,7 +1542,7 @@ viseniorer.se##.topheaderinfo
 ||vasabladet.fi/Scripts/karkimedia_init.js$script
 ||video-static.tunnl.com/js/blocker.min.js$script
 ||videoplaza.*/proxy/tracker?
-||vk.com^$third-party,domain=samnytt.se
+||vk.com^$third-party
 ||webbannons.ntm.eu^$subdocument
 ||webbcensus.com^$third-party
 ||webdesignskolan.se/wds_nyhetsbrev_popup
