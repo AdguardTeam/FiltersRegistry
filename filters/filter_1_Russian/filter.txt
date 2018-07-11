@@ -23,6 +23,8 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||tnevota.ru^$third-party
+||proofly.date^$third-party
 ||89eb01f7f8503aef.com^$third-party
 ||trafgid.com^$third-party
 ||advadnetwork.me^$third-party
@@ -4107,8 +4109,6 @@ tabfilm.ru,the-cinema.club,kinocoin.online#%#AG_abortInlineScript(/var/, 'String
 @@||hdreactor.club^$generichide
 !+ NOT_PLATFORM(windows, mac, android)
 $csp=script-src http: https:,domain=tsargrad.tv
-! fastpic.ru
-@@||trafgid.com/js/*.js?time=$domain=fastpic.ru
 !+ NOT_PLATFORM(windows, mac, android)
 @@||loadercdn.com^
 ! END: Ads replacement (piguiqproxy.com etc.)
@@ -5234,6 +5234,29 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 !
 ! END: Yandex
 !
+!
+!
+! START: Ads replacement (piguiqproxy.com etc.)
+!
+!+ NOT_PLATFORM(windows, mac, android)
+@@|http$image,third-party,domain=fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua
+!+ NOT_PLATFORM(windows, mac, android)
+@@.js|$third-party,domain=fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua
+!
+!+ NOT_PLATFORM(windows, mac, android)
+/(adbetnet\.advertserve.com|trafgid\.com)/$domain=fastpic.ru,empty,important
+!+ NOT_PLATFORM(windows, mac, android)
+/(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=fastpic.ru,important
+!+ NOT_PLATFORM(windows, mac, android)
+/(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=kurs.com.ua|kurs.com.ru,important
+!
+!+ NOT_PLATFORM(windows, mac, android)
+@@||adservice.google.com.ua/adsid/integrator.js$domain=sinoptik.ua
+!+ NOT_PLATFORM(windows, mac, android)
+@@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=sinoptik.ua
+!+ NOT_PLATFORM(windows, mac, android)
+@@||trafmag.com/banners/*/main.js$domain=sinoptik.ua
+! END: Ads replacement (piguiqproxy.com etc.)
 !-------------------------------------------------------------------------------!
 !------------------ Extended CSS rules -----------------------------------------!
 !-------------------------------------------------------------------------------!
@@ -5319,7 +5342,7 @@ drive2.ru##div.c-block[-ext-has="span > a.c-link--light-gray:contains(Продв
 drive2.ru##div.c-block[-ext-has="div.c-com-dv-label > a.c-link--light-gray:contains(Реклама)"]
 drive2.ru#$#.g-column-wide > div.c-block[-ext-has=".c-header:contains(Реклама)"] { position: absolute!important; left: -3000px!important; }
 drive2.ru#$#.c-block__fake-gap > div.c-block[-ext-has=".c-header:contains(Реклама)"] { position: absolute!important; left: -3000px!important; }
-drive2.ru##html:has(> body) > body > div.l-body > div.l-dv > div.l-dv__i
+drive2.ru#$#html > body > div.l-body > div.l-dv > div.l-dv__i:has(> div[id^="adfox_"]) { position: absolute!important; left: -3000px!important; }
 drive2.ru##div[data-role^="recommendations"] .o-grid__item:has(div.c-post-card > div.c-post-card__body > div.c-post-card__caption > div.c-rel-label > a:contains(Реклама))
 drive2.com##.c-block[-ext-has=">h3:contains(Ads)"]
 !
@@ -5344,6 +5367,7 @@ spaces.ru##body.pc div[class]:has(> a[href="#"] > div)
 spaces.ru##body.pc div[class]:has(> div[id] > a > div.ico)
 strip2.me##div[class] > div[id]:has( > a > div.ico)
 !
+pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div > div.story__pin)
 pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(a[href="/information/ad?from=ad_unit"])
 pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contains(/ads|реклама/|рекламный\sпост|ртнeрcкий\sпост/))
 !
@@ -6476,6 +6500,9 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/19484
+peka2.tv#$#.body--branding:before { background: none!important; }
+peka2.tv#$#.body--branding .content { margin-top: 0!important; }
 ! https://forum.adguard.com/index.php?threads/29062/
 meteo.ua#$##body_bg { background: none!important; }
 meteo.ua#$#body { background: none!important; }
@@ -6543,7 +6570,6 @@ ruclip.com,ru-clip.com#$##morev { position: absolute!important; left: -3000px!im
 zab.ru#$#body { background: #E6E6E6!important; margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14053
 drive2.ru#$#div[id^="adfox_"] { height: 100px!important; }
-drive2.ru#$#.c-block > div[class^="c-dv-"] { position: absolute!important; left: -3000px!important; }
 ! obozrevatel.com - удаление отступа сверху
 obozrevatel.com#$#header.header { margin-top: 0!important; }
 ! hdtennis.ru - удаление отступа сверху
@@ -8813,6 +8839,13 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+sibnet.ru##.b-avtobest
+||скачатьофис.рф/myoffice.php?q=
+drive2.ru##div[data-target="auto.ru_sum_widget;auto.ru_post_widget"]
+animaunt.ru##.full > div.sect > center > a > img
+poddavleniem.ru###inlinetextblock
+poddavleniem.ru###teaser_table
+poddavleniem.ru###text-9
 meteo.ua###body_bg > a
 sobakada.ru##.sidebanner-wrapper
 goha.ru##div[onclick^="truemedia_callback"]
@@ -8883,8 +8916,6 @@ e1.ru##.e1-main-left-column__wrap > div.main-news-block+div[class*="_"]
 unit-car.com##div[class^="g-content-"]
 unit-car.com###topunews
 gorod.dp.ua##div[id^="WMG-"]
-animaunt.ru##a[style="text-align:center"] > img
-animaunt.ru##body > div[style="width: 300px; height: 250px;"]
 telegraf.in.ua##body > noindex
 filmfullhd.net##body > a[rel="nofollow"]
 filmfullhd.net##.warning-rekl
@@ -9775,7 +9806,6 @@ gorodpavlodar.kz##div[style^="height: 270px;  padding: 1px; width: 240px;"]
 forum.ixbt.com##.vertb
 bestfree.ru###adblock_square
 howtogame.ru##.branding-link-wrapper
-animaunt.ru##.rkl-box
 ok.ru,okminigames.mail.ru##span.js-href > div[class]:nth-child(-2n+2)
 cardiologiya.com##.rtiz
 cardiologiya.com##.offblo
@@ -10757,8 +10787,6 @@ anistar.me##.newclasswqasdvsdv
 cyber.sport.ua##.partners
 popmech.ru##.banner_fw
 fainaidea.com##body > div.backstretch
-animaunt.ru##img[src="https://dummyimage.com/300x390/"]
-animaunt.ru##img[ng-src^="/assets/images/banners/"]
 gametech.ru##.banner
 allhit.org##div[align="center"][style="margin-top: 20px;margin-left:20px;overflow:hidden;width:596px;height:310px;"]
 tvfru.org##a[href^="https://goo.gl/"] > img
@@ -16685,6 +16713,8 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 !
 ! The content replacement rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/19484
+||peka2.tv/build/app.*.bundle.js$replace=/\{enabled:!0/{enabled:!1/
 ! cdnapponline.com player
 /video/*/iframe?nocontrols=*&ref=$replace=/(adv:\s{"(vast|adb_vast)":{"urls":)(\[".+?"\])/\$1(\[""\])/,domain=hdrezka.ag|hdrezka.club|hdrezka.me|hdrezka.co|hdrezka.pro
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18260
@@ -16967,8 +16997,6 @@ windscribe.com#@#.affiliate
 @@||ulogin.ru/js/ulogin.js$domain=seasonvar.ru
 ! https://forum.adguard.com/index.php?threads/23388/
 eplus.kiev.ua#@#.banner-square
-! sinoptik.ua - exclusions for `*.js|$domain=sinoptik.ua`
-@@||sinst.fwdcdn.com^$domain=sinoptik.ua
 @@||maps.googleapis.com^$domain=sinoptik.ua
 @@||maps.google.com/maps-api-$domain=sinoptik.ua
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5534
