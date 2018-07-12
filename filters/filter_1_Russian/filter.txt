@@ -3940,6 +3940,8 @@ ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTime
 ferr-um.ucoz.ru,stalker-mods.clan.su,helpsetup.ru#%#(function(b){Object.defineProperty(Element.prototype,"innerHTML",{get:function(){return b.get.call(this)},set:function(a){/^(?:<([abisuq]) id="[^"]*"><\/\1>)*$/.test(a)||b.set.call(this,a)},enumerable:!0,configurable:!0})})(Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML"));
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/19531
+@@||winksweb.net^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19227
 ||animevost.org/templates/AnimeVostNext5/js/def-adblock$empty
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19200
@@ -4379,7 +4381,7 @@ game-torrent.info,free-torrent.org,free-torrents.org#%#Object.defineProperty(win
 !+ NOT_PLATFORM(ext_ff)
 rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru$$script[tag-content="AntiAdBlock"][min-length="5000"][max-length="350000"]
 !+ NOT_PLATFORM(windows, mac, android)
-rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#AG_abortInlineScript(/!function/, 'String.fromCharCode');
+rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#AG_abortInlineScript(/!function\(x\,n\,e\)/, 'String.fromCharCode');
 rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('3429e544b760d2419a190fba11be3a9a', '0'); }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16182
@@ -5243,9 +5245,9 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ! START: Ads replacement (piguiqproxy.com etc.)
 !
 !+ NOT_PLATFORM(windows, mac, android)
-@@|http$image,third-party,domain=fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua
+@@|http$image,third-party,domain=fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua
 !+ NOT_PLATFORM(windows, mac, android)
-@@.js|$third-party,domain=fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua
+@@.js|$third-party,domain=fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua
 !
 !+ NOT_PLATFORM(windows, mac, android)
 /(adbetnet\.advertserve.com|trafgid\.com)/$domain=fastpic.ru,empty,important
@@ -5255,7 +5257,7 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 /(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=kurs.com.ua|kurs.com.ru,important
 !
 !+ NOT_PLATFORM(windows, mac, android)
-@@||adservice.google.com.ua/adsid/integrator.js$domain=sinoptik.ua
+@@||adservice.google.com*/adsid/integrator.js$domain=pravda.com.ua|epravda.com.ua|sinoptik.ua
 !+ NOT_PLATFORM(windows, mac, android)
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=sinoptik.ua
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5368,9 +5370,8 @@ rusvesna.su##.region-sidebar-right > div.block-block[-ext-has='script[class="__l
 www.rambler.ru##section[itemprop="mainContentOfPage"] > div[class] > div[class^="_"][class*=" "] > div:has(> div[id^="adfox-"])
 www.rambler.ru##header+div[class] > div[class^="_"] > div[class^="_"]:has(> div > div[id^="adfox-"])
 !
-! spaces.ru - PC
-spaces.ru##body.pc div[class]:has(> a[href="#"] > div)
-spaces.ru##body.pc div[class]:has(> div[id] > a > div.ico)
+! spaces.ru/spcs.me - PC
+spcs.me##body.pc div[class]:has(> div[id] > a > div.ico)
 strip2.me##div[class] > div[id]:has( > a > div.ico)
 !
 pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div > div.story__pin)
@@ -6237,7 +6238,7 @@ idwl.cn#%#AG_abortInlineScript(/C.removeAttribute\("id"\)/, 'String');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14335
 sberometer.ru#%#AG_abortInlineScript(/place_rvn/, 'document.addEventListener');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13010
-spaces.ru#%#Object.defineProperty(window, 'mobiads_loader', { get: function() { return function(){}; } });
+spcs.me#%#Object.defineProperty(window, 'mobiads_loader', { get: function() { return function(){}; } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13272
 fastpic.ru#%#AG_onLoad(function() { $(function() { jQuery('body').unbind('click').removeAttr("body").css("cursor","default"); }); });
 fastpic.ru#%#AG_onLoad(function() { $(function() { jQuery('html').unbind('click'); }); });
@@ -8843,6 +8844,11 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+auto.ru##.ListingItemPromoParts-module__container
+auto.ru##.PageListingCars-module__topScrollBoundary > :not(div):not(a)
+auto.ru##.PageListingCars-module__container > :not(div):not(a) > :not(div):not(a)
+auto.ru##.ListingItem-module__adv
+auto.ru##.LayoutSidebar__sidebarStickyContent > :not(div):not(a) > :not(div):not(a)
 sinoptik.ua###left-slot1
 ||ру-порно.com/teasernet/
 sibnet.ru##.b-avtobest
@@ -11212,7 +11218,6 @@ vectornews.net##center > a[rel="nofollow"] > img
 ||freetorrmd.org/orbitum/
 freetorrmd.org##.orbfon
 freetorrmd.org##.linkbckgr
-||mtdata*.js$domain=spaces.ru
 |ws*://*.trialeset.org:8041
 /vinos2.js$domain=trialeset.org
 ://*.trialeset.org/js/*.js?r=
