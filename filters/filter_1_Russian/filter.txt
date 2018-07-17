@@ -4117,6 +4117,7 @@ primamedia.ru,sobakada.ru,aftershock.news,it-tehnik.ru,modernfirearms.net,farap.
 ! <script src="data:text/javascript;base64
 !+ NOT_PLATFORM(windows, mac, android)
 pravda.com.ua,epravda.com.ua,newsyou.info,sinoptik.com.ru,sinoptik.ua#%#AG_abortInlineScript(/window/, 'atob');
+||hronika.info^$replace=/(data:text\/javascript;base64.+?)==/\$1/,~script,~stylesheet,important
 ! <script>var _0x
 tabfilm.ru,the-cinema.club,kinocoin.online#%#AG_abortInlineScript(/var/, 'String.fromCharCode');
 !+ PLATFORM(ios, ext_android_cb, ext_opera, ext_ublock, ext_ff)
@@ -5266,9 +5267,9 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ! START: Ads replacement (piguiqproxy.com etc.)
 !
 !+ NOT_PLATFORM(windows, mac, android)
-@@|http$image,third-party,domain=fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
+@@|http$image,third-party,domain=hronika.info|fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
 !+ NOT_PLATFORM(windows, mac, android)
-@@.js|$third-party,domain=fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
+@@.js|$third-party,domain=hronika.info|fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
 !
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium)
 @@|http$image,third-party,domain=kinoafisha.ua
@@ -5287,13 +5288,11 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 !+ NOT_PLATFORM(windows, mac, android)
 @@||js-ru.redtram.com/n4p/*/ticker_*.js$domain=24tv.ua
 !+ NOT_PLATFORM(windows, mac, android)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=24tv.ua
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=24tv.ua|hronika.info
 !+ NOT_PLATFORM(windows, mac, android)
 @@||orbit.lun.ua/js/*.js$domain=24tv.ua
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
-@@||adservice.google.com*/adsid/integrator.js$domain=kinoafisha.ua
 !+ NOT_PLATFORM(windows, mac, android)
-@@||adservice.google.*/adsid/integrator.js$domain=pravda.com.ua|epravda.com.ua|sinoptik.ua|obozrevatel.com|24tv.ua|inforesist.org
+@@||adservice.google.*/adsid/integrator.js$domain=hronika.info|kinoafisha.ua|pravda.com.ua|epravda.com.ua|sinoptik.ua|obozrevatel.com|24tv.ua|inforesist.org
 !+ NOT_PLATFORM(windows, mac, android)
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=sinoptik.ua
 !+ NOT_PLATFORM(windows, mac, android)
@@ -6391,7 +6390,7 @@ rsload.net#%#AG_onLoad(function() { setTimeout(function() { var e = document.que
 ! novostimira ads (WS)
 realist.online#%#window.WebSocket = function() {};
 comments.ua#%#AG_onLoad(function() { window.getWss = function() {}; });
-dialog.ua,depo.ua,zp.today,hronika.info#%#window.atob = function() { };
+dialog.ua,depo.ua,zp.today#%#window.atob = function() { };
 asn.in.ua#%#window.atob = function() { };
 ! https://forum.adguard.com/index.php?threads/17052/
 img-pica.ru#%#Object.defineProperty(window, 'is_clck', { get: function() { return true; } });
@@ -16691,6 +16690,9 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 !
 ! The content replacement rules
 !
+! hdvb.cc player
+||hdvb.cc/*/iframe|$replace=/"ads"/"aaads"/,important
+||hdvb.cc/player/js/main.js$replace=/activeAds = true/activeAds = false/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19484
 ||peka2.tv/build/app.*.bundle.js$replace=/\{enabled:!0/{enabled:!1/
 ! cdnapponline.com player
