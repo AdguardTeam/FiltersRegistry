@@ -185,7 +185,22 @@
 !-------------------------------------------------------------------!
 !
 ! This file contains all filters other than English, Social, Spyware and Russian.
+! Also filters by platforms https://github.com/AdguardTeam/AdguardBrowserExtension/issues/917
+!#if adguard_app_windows
+||windows.filter^$third-party
+||windows.test.filter^$third-party
+!#endif
+!#if (adguard_app_android && adguard_app_ios)
+||android.test.filter^$third-party
 !
+! Mobile advertising networks known rotator domains
+! Used to show ads in mobile apps and websites
+!
+!#endif
+! Filters for adguard without safari
+!#if (adguard && !adguard_ext_safari)
+||chrome.test.filter.com^$third-party
+!#endif
 !-------------------------------------------------------------------!
 !------- Experimental rules for Mobile ads filter-------------------!
 !-------------------------------------------------------------------!
@@ -227,6 +242,7 @@ mobiflip.de##div[data-widget="plista_widget_belowArticle"] ~ h4.post-header
 ! https://forum.adguard.com/index.php?threads/20885/
 real-vin.com##div.sm-widget
 ! https://forum.adguard.com/index.php?threads/19852/
+fullfilmihdizlesene.com###sidebar > .sidebarborder:not(:nth-child(3))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4322
 wowhead.com###page-content > div[class="main"] > div[class="blocks"]
 wowhead.com##div[class="wrapper"] > div[class="blocks"]
