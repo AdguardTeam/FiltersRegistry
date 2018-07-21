@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-07-20 09:01:16 CEST
+! Last modified: 2018-07-21 07:15:15 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -224,6 +224,8 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ! This file is a part of Frellwits-Swedish-Filter.txt and contains filters specifically for uBO/Nano Adblocker
 ! There's no need to subscribe to this file
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
+!#if env_firefox
+!#endif
 !#if env_firefox
 !#endif
 ###accept-cookies-div
@@ -1123,6 +1125,9 @@ norran.se##.social-share__button
 norrbottensaffarer.se###naaddbox
 nvp.se##[id*="Banner_PageList"]
 nyadagbladet.se###adpadding
+nyafilmerhd.*,dreamfilmhd.*##a[data-hover="LADDA NED"]
+nyafilmerhd.*,dreamfilmhd.*##a[href$=".html"][target="_blank"]
+nyafilmerhd.*,dreamfilmhd.*##a[style*="height"][rel*="nofollow"]
 nyteknik.se###tws1
 nyteknik.se##.blurb-sponsored
 omni.se##article.article--sponsored
@@ -1365,6 +1370,7 @@ webbjobb.io##.cookie
 ||digital-personalized.di.se^$xmlhttprequest
 ||digital.di.se/api/sponsor/$xmlhttprequest
 ||diu127fbe6pn6.cloudfront.net^*/ga-universal.html$subdocument
+||dreamfilmhd.*$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com *.gstatic.com
 ||dspk.kindredplc.com/renderImage.aspx^$image
 ||du4rq1xqh3i1k.cloudfront.net/d$xmlhttprequest,domain=eurosport.se
 ||dynamic.fragbite.se/gfx/campaign/$image
@@ -1488,6 +1494,7 @@ webbjobb.io##.cookie
 ||nouw.com/api/campaignpost$xmlhttprequest
 ||nouw.com/campaignpost/reg/$image
 ||ntm.eu/om/img/cx/Matchad$subdocument,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|vt.se
+||nyafilmerhd.*$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com *.gstatic.com
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
 ||omni-ads.omni.news^
