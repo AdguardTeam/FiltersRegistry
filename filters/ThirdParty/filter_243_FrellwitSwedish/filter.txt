@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-07-23 08:19:45 CEST
+! Last modified: 2018-07-23 11:56:10 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -285,6 +285,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ##img[alt="Spela på Betsson"]
 &type=load_offers^$xmlhttprequest,domain=illvet.se|pctidningen.se
 *$csp=worker-src 'none',domain=minfil.com|minfil.org
+*$object,object-subrequest,domain=internetlankar.se
 .*/*280x240*.$image,domain=rumhemma.se
 .*/*annons*.$image,domain=guldkanalen.se|kurera.se|lesscarbs.se|megafonen.nu|newsvoice.se|nvp.se|rumhemma.se|tekniksmart.se
 .*/*banner*.$image,domain=bettips.se|dansbandskanalen.se|etc.se|evertiq.se|guldkanalen.se|kurera.se|lakartidningen.se|markbladet.se|marsta.nu|newsvoice.se|rockkocken.se|rumhemma.se|skrattnet.se|sportbloggare.com|sportpanelen.se|tkj.se|vaken.se
@@ -336,6 +337,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /analytics/*$domain=tkj.se
 /annons-med-pil*.png$image,domain=filmtipset.se
 /annons.aspx?
+/annons/*$subdocument,domain=internetlankar.se
 /annons_hor.
 /annons_ver.
 /annonslinje_
@@ -347,7 +349,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /assets/leeads_takeover/*$script,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se
 /assets/triggerbee/*$script,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se
 /at-internet-desktop.js$script,domain=klart.se
-/banner*/*$image,subdocument,domain=agriprim.se|bukefalos.se|byggnadsarbetaren.se|dagenstv.com|e.se|entreprenadaktuellt.se|etn.se|flashback.se|free.se|golfbladet.se|internetmedicin.se|ja.se|lakartidningen.se|lfc.nu|maskinstationerna.se|metalcentral.net|muss.se|nvp.se|skogsaktuellt.se|spelsnack.se|sporttv.nu|storvretaibk.se|uppsalanyheter.se|vinochmatguiden.se|vm-fotboll.se
+/banner*/*$image,subdocument,domain=agriprim.se|bukefalos.se|byggnadsarbetaren.se|dagenstv.com|e.se|entreprenadaktuellt.se|etn.se|flashback.se|free.se|golfbladet.se|internetmedicin.se|ja.se|lakartidningen.se|lfc.nu|maskinstationerna.se|metalcentral.net|muss.se|nvp.se|skogsaktuellt.se|spelsnack.se|sporttv.nu|storvretaibk.se|turistmal.se|uppsalanyheter.se|vinochmatguiden.se|vm-fotboll.se|webfinanser.com
 /banner-rotate.php$subdocument,domain=fastighetsnytt.se
 /banner/ads/*$image,domain=bildelsbasen.se
 /bannersidor/*
@@ -1085,6 +1087,7 @@ metro.se##div[class*="o-advert"]
 metromode.se##.b-topshop
 minhembio.com##.adbox
 minsolresa.se,resatillsolen.se##aside#text-5
+mintur.se##[id^="banner"]
 mittkok.expressen.se###modal-newsletter-popup
 mittkok.expressen.se##.newsletter__slide
 mittkok.expressen.se##.widget-social-media
@@ -1264,6 +1267,8 @@ webbjobb.io##.cookie
 ||advrl.com^$third-party
 ||adwayplus.se^$third-party
 ||aff.bstatic.com^$domain=travelgrip.se
+||aff.bstatic.com^$script,domain=~booking.com
+||affiliator.com^$third-party
 ||akamai.net/swordfishinc.download.akamai.com$script,domain=arla.se|chef.se
 ||akamai.net^$script,domain=eniro.se
 ||akamaihd.net^$media,domain=dplay.se
@@ -1579,6 +1584,7 @@ webbjobb.io##.cookie
 ||travtjansten.se^$third-party
 ||trn.ninja^$third-party
 ||trugaze.io^$third-party
+||turistmal.se/js/popup-controller.js$script
 ||tvdags.se/json/stats$xmlhttprequest
 ||twingly.com^$third-party
 ||twittercounter.com^$third-party
