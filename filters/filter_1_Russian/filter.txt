@@ -4071,6 +4071,10 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 @@||an.yandex.ru/system/context.js$domain=fb.ru|syl.ru
 !+ NOT_PLATFORM(windows, mac, android)
 @@||yastatic.net/pcode/adfox/loader.js$domain=fb.ru|syl.ru
+@@||an.yandex.ru/resource/context_static_r_*.js$domain=fb.ru|syl.ru
+!+ NOT_PLATFORM(windows, mac, android)
+@@||syl.ru/misc/js/global/ads.js
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14351
 @@||portablik.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19107
@@ -4180,7 +4184,10 @@ dni.ru$$script[tag-content="var sc = document.createElement"][max-length="400"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12262
 !+ NOT_PLATFORM(windows, mac, android)
 @@||drive2.ru^$generichide
+!+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/system/context.js$domain=drive2.ru
+!+ NOT_PLATFORM(windows, mac, android)
+@@||an.yandex.ru/resource/context_static_r_*.js$domain=drive2.ru
 ||drive2.*/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)//,script,other,important,domain=drive2.ru|drive2.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12158
 @@||suj.li/assets/xnew/js/fuckadblock.js
@@ -6681,9 +6688,6 @@ my-hit.org#$#.navbar-default { margin-bottom: 20px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13998
 pikabu.ru#$##branding_ad_comment { position: absolute!important; left: -3000px!important; }
 pikabu.ru#$##branding_ad_footer { position: absolute!important; left: -3000px!important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/13531
-syl.ru#$#section.content > article > :not(p):not(h2):not(ul):not(div):not(ol):not(h1):not(br):not(aside):not(section) { position: absolute!important; left: -3000px!important; transform: scale(0)!important; }
-syl.ru#$#.page > div.main > :not(p):not(h2):not(ul):not(div):not(ol):not(h1):not(br):not(aside):not(section) { position: absolute!important; left: -3000px!important; transform: scale(0)!important; }
 ! newsone.ua - удаление брендированного фона
 newsone.ua#$#body { background: #ddd!important; }
 ! tvzavr.ru - удаление отступа сверху
@@ -7505,7 +7509,8 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#$#.ro
 ! Banner at the bottom
 music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua#$#.bar__driver-container { position: absolute!important; left: -3000px!important; }
 ! Yandex.Weather
-yandex.by,yandex.kz,yandex.ru,yandex.ua#$#.weather-maps__ad { position: absolute!important; left: -3000px!important; }
+! yandex.by,yandex.kz,yandex.ru,yandex.ua
+!
 ! Yandex.News
 news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news.yandex.ua#$#.page-content div[class^="proffit"][aria-label="Реклама"] { height: 0px!important; transform: scale(0)!important; }
 !
@@ -16670,7 +16675,8 @@ boevikcdn.ru,1kinobig.ru,bighd.net,filmonline.online,kinogo-hq.ru,tvseason.net,c
 ! Ad under the search string
 !yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.container__banner iframe
 ! Ad in Zen block
-yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.zen-lib__container div[class$="-card-banner"]
+yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.zen-lib__container div.direkt
+yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.zen-lib__container div[class*="direkt"]
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##a[href^="https://yabs.yandex.ru/"]
 ! Yandex search - empty request
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##.content__right .serp-adv-item
@@ -16702,7 +16708,8 @@ avia.yandex.by,avia.yandex.kz,avia.yandex.ru,avia.yandex.ua,bilet.yandex.com.tr,
 tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua##.main-controller__adv-bottom
 tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua##.super-banner
 ! Yandex.Zen
-zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua##.direkt
+! zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua
+!
 ! Yandex.Music
 ! Banner at the top
 music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.page-root > div.d-overhead
