@@ -5945,6 +5945,8 @@ wolframclient.net#@#.adsbygoogle
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/20292
+mustangforums.com###right-rail > div[style^="text-align: center;"][-ext-has='center']
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18927
 reddit.com##.ii4q9d-0.fePAzF > div[class][-ext-has='div[data-slot*="/desktop/"]']
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20064
@@ -7805,6 +7807,8 @@ mob.hr##.side_banner
 !---------------------------------------------------------------------
 !------------------------------ Czech and Slovakian ------------------
 !---------------------------------------------------------------------
+! stredoevrogan.cz - left-over at top in article
+stredoevropan.cz##.td-header-sp-recs
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20065
 !#if (adguard_app_ios && adguard_ext_android_cb)
 @@||autoroad.cz^$generichide
@@ -9536,8 +9540,14 @@ joujizz.com##.video-top-wrap > .sb
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/2273
 @@||wnioski.mpips.gov.pl^$extension,elemhide,jsinject
 ! End
-! skript.pl - antiadblock
+! https://github.com/AdguardTeam/AdguardFilters/issues/20305
 skript.pl#%#AG_abortInlineScript(/adblocka/, 'document.addEventListener');
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium && !adguard_ext_safari`)
+skript.pl#$#.adsbygoogle { height:10px!important; }
+skript.pl#@#.adsbygoogle
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=skript.pl
+@@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl.js$domain=skript.pl
+!#endif
 ! ipon.pl - antiadblock
 ipon.pl#$#.app_adv_baner { height: 1px!important; }
 ipon.pl#$#.appAdvContainer { height: 1px!important; }
@@ -57682,6 +57692,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||dfgwnkricjcko.bid^$third-party
 ||dfllzlsztzqwz.bid^$third-party
 ||dfnnhwiyxjajhq.com^$third-party
+||dfrcdywe.com^$third-party
 ||dfrekewe.com^$third-party
 ||dfujqyjifvoe.com^$third-party
 ||dfxemnxrsal.bid^$third-party
@@ -63443,6 +63454,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||xwwkuacmqblu.com^$third-party
 ||xwwsojvluzsb.com^$third-party
 ||xwwvcsquuhbd.com^$third-party
+||xwzhazcuyf.com^$third-party
 ||xxamqnqeygbk.com^$third-party
 ||xxehantfkywk.com^$third-party
 ||xxelvfyvgcjo.bid^$third-party
