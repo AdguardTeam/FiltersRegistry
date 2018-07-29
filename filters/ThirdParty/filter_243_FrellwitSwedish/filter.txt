@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-07-28 18:47:17 CEST
+! Last modified: 2018-07-29 07:14:26 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -282,6 +282,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ##.swp-ad-strossle
 ##.viacomcookiebar
 ##.widget_eu_cookie_law_widget
+##[id^="adace_ads"]
 ##a[href$=".se/go/betsafe"]
 ##a[title="LeoVegas"]
 ##img[alt="Leovegas"]
@@ -475,6 +476,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /piraja-banners/*$domain=piraja.se
 /pis.gif$image,domain=idg.se
 /plugins/ab_appnexus_ads/*$script
+/plugins/ad-ace/*$script,stylesheet
 /plugins/ad-blocking-advisor/*$image,script,stylesheet,domain=deliquate.se|juliusguldbog.se|naturvetenskap.org|smartleasing.se
 /plugins/ad-inserter-pro/*$script,stylesheet,domain=rocknytt.net
 /plugins/add-to-any/*$script,stylesheet
@@ -534,6 +536,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /plugins/wp-auto-affiliate-links/*$script,stylesheet
 /plugins/wp-banner-manager/*$script,stylesheet,domain=branschkoll.se
 /plugins/wp-embed-facebook/*$script,stylesheet,domain=faktiskt.se
+/plugins/wp-gdpr-compliance/*$script
 /plugins/wppas/*$script,stylesheet,domain=elbilsnytt.se
 /plugins/wysija-newsletters/*
 /plugins/x-email-mailchimp/*$script
@@ -617,6 +620,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ?bannerid=$image,domain=existenz.se
 @@/*_adframe.js$script,~third-party,domain=fssweden.se
 @@/ad.php^$script,~third-party,domain=99.se|skogstok.se|temperatur.nu
+@@/adblock-detector/advertisement.js$script,~third-party,domain=newzblab.com
 @@/adframe.js$script,~third-party,domain=diskant.se|diskantforum.se
 @@/ads.js^$script,~third-party,domain=betting.se|koket.se|weekend.di.se
 @@/ads/ads-*.js$script,~third-party,domain=gettyimages.se
@@ -1119,6 +1123,7 @@ mytaste.se##div[id*="panorama_"]
 news55.se##.footer_popup
 news55.se##.news-feed-article[data-n55-theme="n55-theme--native-articles"]
 newsvoice.se##a[href*="irradia.se"]
+newzblab.com##.g1-advertisement
 ng.se##.js--llad
 ng.se##[class*="sponsored-article"]
 nhlbettingblog.se##.karusellWrapper
@@ -1381,6 +1386,8 @@ webbjobb.io##.cookie
 ||digital.di.se/api/sponsor/$xmlhttprequest
 ||diu127fbe6pn6.cloudfront.net^*/ga-universal.html$subdocument
 ||dreamfilmhd.*$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com *.gstatic.com
+||drift.com^$third-party
+||driftt.com^$third-party
 ||dspk.kindredplc.com/renderImage.aspx^$image
 ||du4rq1xqh3i1k.cloudfront.net/d$xmlhttprequest,domain=eurosport.se
 ||dynamic.fragbite.se/gfx/campaign/$image
