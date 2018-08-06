@@ -532,8 +532,6 @@ lostfilmonline.ru##a[href^="/browse.php?cat="][alt][title] > div[style]
 ||kiwi6.com^$domain=zuketapaajabhisa.blogspot.com|zuketapaajabhisa.blogspot.com.tr|zuketapaajabhisa.blogspot.ru
 ||whoaremyfriends.net^$domain=zuketapaajabhisa.blogspot.com|zuketapaajabhisa.blogspot.com.tr|zuketapaajabhisa.blogspot.ru
 !
-! radikal - сторонние iframe с собачьей тематикой
-f-picture.net,radical-foto.ru,radikal.cc,radikal.ru#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[src^="http://"]'); });
 ! http://forum.adguard.com/showthread.php?6449
 absurdopedia.net###p-friends
 ! http://forum.adguard.com/showthread.php?6417
@@ -1492,8 +1490,9 @@ pixlr.com#@#.adBanner
 @@||laptopmedia.com/ads.js|
 kinopoisk.ru##.adblock-detector-partial-component
 pln-pskov.ru###check_ad_block
+@@||hindistopin.com/wp-content/plugins/wp-quads-pro/assets/js/ads.js
 @@||hindinewstop.com/wp-content/plugins/wp-quads-pro/assets/js/ads.js
-hindinewstop.com#%#Object.defineProperty(window, 'wpquads_adblocker_check', { value: true });
+hindistopin.com,hindinewstop.com#%#Object.defineProperty(window, 'wpquads_adblocker_check', { value: true });
 hw4.ru##noindex > center > div[style="width: 680px; height: 280px;"]
 @@||freiepresse.de/js/werbung/advertisement.js
 mirror.co.uk#$#div[id^="div-gpt-ad-"] { position: absolute!important; left: -3000px!important; }
@@ -4092,6 +4091,7 @@ chimica-online.it###cookieChoiceInfo
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 strunz.com###v-cookielaw
 !
+popsugar.com,popsugar.com.au,popsugar.co.uk##.evidon-consent-button
 frankenpost.de###cookiehinweis-wrapper
 tv2.dk##.CookieWarning_container__Pjx-P
 nike.com#$#.modal-show { overflow: visible!important; }
@@ -4396,7 +4396,7 @@ lifewire.com##.cookie-notification-banner
 krone.at#$##krn-privacy-center { display:none!important; }
 krone.at#$#.modal-backdrop { display:none!important; }
 krone.at#$#.modal-open { overflow:visible!important; }
-rockstargames.com###gdpr-banner
+ebay.be,ebay.co.uk,ebay.com,ebay.de,ebay.it,rockstargames.com###gdpr-banner
 wtatennis.com##.wta-cookies-policy
 yenisafak.com##.policy.active
 netcarshow.com##body > #cNag
@@ -5486,6 +5486,8 @@ aliexpress.com###j-site-notice-header[-ext-has='>.site-notice-container:contains
 !
 ! JS rules
 !
+gry.pl#%#document.cookie = "euconsent=BOR-LGFOR-LHnABABAPLBE_AAACDWABgACEGoA; path=/;";
+popsugar.com,popsugar.com.au,popsugar.co.uk#%#AG_onLoad(function() { setTimeout(function() { if(window.location.href.indexOf("gdpr-consent?destination")){document.getElementsByClassName('evidon-banner-acceptbutton')[0].click();} }, 300); });
 sourceforge.net#%#AG_onLoad(function() { setTimeout(function() { window.__cmpui("setAndSaveAllConsent", !1); }, 3000); });
 gva.be#%#document.cookie = "C_05 = {%22C%22:%221.0%22%2C%22ID%22:%229dee0a48-e1b7-475f-9456-da27157e009e%22%2C%22P%22:%22' + location.href + '%22%2C%22T%22:%222018-08-04T17:54:39.929Z%22%2C%22V%22:%22Y%22%2C%22F%22:1}; path=/; domain=.gva.be"
 wikia.com#%#document.cookie = "tracking-opt-in-status=rejected";
@@ -5562,6 +5564,11 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! gry.pl - some games don't work until cookie notice is accepted
+gry.pl#@#div[class^="app_gdpr"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/20596
+!+ NOT_OPTIMIZED PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
+popsugar.com,popsugar.com.au,popsugar.co.uk#@##_evidon_banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19999
 @@||bbci.co.uk/orbit-webmodules/*/cookie-banner/cookie-prompt/cookie-library.min.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19928
@@ -9044,7 +9051,7 @@ catekno.com#$#img { -webkit-touch-callout:default!important;-webkit-user-select:
 !--- JS ----
 lalawin.com#%#AG_onLoad(function() { document.oncontextmenu = document.ondragstart = document.onselectstart = function() { return true; }; });
 dragonball-tube.com,onepiece-tube.com,fairytail-tube.org#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByTagName("Body")[0].removeAttribute("oncontextmenu"); document.getElementsByTagName("Body")[0].removeAttribute("onselectstart"); document.getElementsByTagName("Body")[0].removeAttribute("ondragstart"); }, 300); });
-hindinewstop.com#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByTagName("Body")[0].removeAttribute("oncontextmenu"); document.getElementsByTagName("Body")[0].removeAttribute("onkeydown"); }, 300); });
+hindistopin.com,hindinewstop.com#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByTagName("Body")[0].removeAttribute("oncontextmenu"); document.getElementsByTagName("Body")[0].removeAttribute("onkeydown"); }, 300); });
 gagetmatome.com#%#AG_onLoad(function() { document.oncontextmenu = document.ondragstart = document.onselectstart = function() { return true; }; });
 linkerpt.com#%#AG_abortInlineScript(/fp_mouse_right_click_restriction/, 'jQuery');
 linkerpt.com#%#Object.defineProperties(window,{sccopytext:{value:function(){}},add_message_to_copied_text:{value:function(){}}});Object.defineProperties(document,{onkeydown:{value:function(){}},onkeypress:{value:function(){}}});
