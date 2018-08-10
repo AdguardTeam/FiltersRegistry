@@ -5403,7 +5403,6 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ||zen.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)//,script,other,important,domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
 !
 ! Kinopoisk
-||kinopoisk.ru/*/*/*/*/*/*/$script,replace=/var\sh="kdetect"\,m=\d*\,v=function\(e\){/var h="kdetect"\,m=10800\,v=function(e){return;/
 !+ NOT_PLATFORM(windows,mac,android)
 @@||kinopoisk.ru^$generichide
 !+ NOT_PLATFORM(windows,mac,android)
@@ -7685,9 +7684,6 @@ unionpeer.com$$script[tag-content="data:application/pdf;base64"][max-length="250
 moonwalk.co$$script[tag-content="window.location = rurl;"][max-length="600"]
 ! https://forum.adguard.com/index.php?threads/11233/
 afisha.mail.ru$$script[tag-content="mimic:{setup:"][max-length="6500"]
-! kinopoisk.ru - ads
-!+ NOT_PLATFORM(ext_ff)
-kinopoisk.ru$$style[id="branding-style"]
 ! apostrophe.ua - удаление отступа сверху
 apostrophe.ua$$style[tag-content="#branding{display:"][max-length="200"]
 ! baskino.co - удаление отступа сверху
@@ -10791,7 +10787,6 @@ kv.by###node-banners
 kv.by###page > div.region-secondary-content
 ||it-tehnik.ru/wp-content/uploads/ya732
 it-tehnik.ru##div[id^="yandex_rtb_"]
-||storage.mds.yandex.net/get-bstor/$domain=kinopoisk.ru
 ||myzuka.me/do/
 trackgo.ru##a[href="/?page=cashback"]
 kinoafisha.info##.adv
@@ -11895,7 +11890,6 @@ znak.com##figure
 aqa.ru##div[id^="div-gpt-ad"][style^="width:768px;"]
 nowa.cc###posts > center > table[align="center"][width="100%"][style^="width: 100%; border-spacing: 2px"]
 4pna.com##body > noindex > center
-||kinopoisk.ru/storage.mds.yandex.net/get-bstor/
 kingporno.tv##.side-rkl
 sosista.live###video_right_ads
 tvzvezda.ru##div[style="width:240px; height:401px;"]
@@ -18093,21 +18087,15 @@ zastava.net.ua#@#.banners
 @@||cache.zr.ru^$domain=zr.ru
 @@||dxport.ru/none-reklama
 @@||www.s7.ru$document
-! игры odnoklassniki
+!
 @@.ngs.ru/advert/
 @@||billing.ngs.ru
-@@||kaspersky.122.2o7.net^
 @@||mozilla.org/update$document
-@@||platform.taranplus.net/iframe/$document
 !
 ! sputnik mail.ru ddos problem
-@@||atbmarket.com$document
 @@||images.wildberries.ru/banners/
 @@||market-click2.yandex.ru/redir/$urlblock
-@@||mycomet.mail.ru^$document
 @@||webmaster.yandex.ru^$document,domain=yandex.ru|yandex.ua
-! Добавлено ради работоспособности http://my.mail.ru/apps/466478?ref=cat
-@@||rs.mail.ru/vp/adman2.swf
 ! allsoft.ru, исправляем скрипты
 @@/advert/*$domain=autotrader.co.uk
 @@||allsoft.ru/engine/
