@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-08-13 20:51:18 CEST
+! Last modified: 2018-08-14 21:08:41 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -46,6 +46,7 @@ affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.secti
 affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##article[class^="teaser"]:if(.title:has-text(/sponsrat innehåll/i))
 aftonbladet.se##.abThemeBgTeaser:has(a[href*="kampanjer.aftonbladet.se"])
 aftonbladet.se##a[data-test-id="inline-teaser"]:if(div[class]:has-text(/annons/i))
+aftonbladet.se##a[href*=".se/kampanj?"]:has-text(/erbjudande/i)
 aftonbladet.se##article:has(a[data-sponsored="true"])
 aftonbladet.se#$#html,body { overflow: auto !important; }
 akaskidor.se,body.se,svenskgolf.se#$#body { background-image: none !important; }
@@ -71,6 +72,7 @@ blankspot.se#$#div.red-section.action-banner-2.sticky { position: initial !impor
 bloggkommentatorerna.se,ladydahmer.nu,nickesfilmblogg.se,svenskayoutubers.se,themoviefreak.se#$#body.with-panorama { padding-top: 0 !important; }
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#.article__gallery__container { display: flex !important; justify-content: center !important; }
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##div.news-package:if(span:has-text(/^Lokala annonser/))
+breakit.se##.brkt-article-slidein:has(.brkt-sponsored)
 buzzter.se#$##outer-wrap { overflow: auto !important; }
 buzzter.se#$#body.trend-lock #outer-wrap { position: inherit !important; }
 cyclingplus.se##article:if(.single-subtitle:has-text(/annonssamarbete/i))
@@ -799,10 +801,13 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.r
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.seekly
 bonjourvintage.se##.category-om-samarbeten
 branschkoll.se##.advert-widget
+breakit.se###mount-newsletter-signup-widget-mobile
+breakit.se##.puff-sponsored-by
 breakit.se##.spnsr-widget
+breakit.se##.sponsored
 breakit.se##.supportersSlideContainer
 breakit.se##.videoAd
-breakit.se##div[class*="sponsored"]
+breakit.se##div[data-sponsored="1"]
 brollopstorget.se,familjeliv.se##.ad_right
 bukefalos.se##.u-bottomFixer
 businessclass.se###bcpop
@@ -989,6 +994,7 @@ gamereactor.se##a[href*="/adclick.php"]
 gamereactor.se##div[class^="ad300"]
 gamereactor.se##div[style*="width:300px;height:600px;"]
 garaget.org###gorgad-horizontal-top
+garaget.org##.gorgad-side
 globalportalen.org##.follow-us-section
 goteborgdirekt.se,stockholmdirekt.se##.gdpr-warning
 gotlandswebben.se##.header-ads-wrapper
