@@ -4776,9 +4776,7 @@ vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!importa
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18984
 /overclockers\.ru\/.+\/(?!getPipPlace\?)|forums\.overclockers\.ru\/.+|overclockers\.ru\/?/$/$replace=/\\$\("body"\).html\(.+\);|\$\("body"\).html\(kot\d\);|(var [A-Za-z0-9]*_*0x[A-Za-z0-9]*=\[\')|(var a)=//,~script,~stylesheet,important
 !+ NOT_PLATFORM(windows, mac, android)
-overclockers.ru#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('a_0x') == 0) { window[key] = []; } }; });
-!+ NOT_PLATFORM(windows, mac, android)
-overclockers.ru#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('_0x') == 0) { window[key] = []; } }; });
+overclockers.ru#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('c_0x') == 0) { window[key] = []; } }; });
 !+ NOT_PLATFORM(windows, mac, android)
 overclockers.ru#%#AG_onLoad(function() { window.chkA = function() {}; window.chkB = function() {}; });
 !+ NOT_PLATFORM(windows, mac, android)
@@ -4806,7 +4804,10 @@ overclockers.ru#%#AG_onLoad(function() { window.chkA = function() {}; window.chk
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_ublock)
 @@||overclockers.ru/static/js/app-pip.js$domain=overclockers.ru
 @@||overclockers.ru/webservice/getPipPlace$domain=overclockers.ru
-overclockers.ru#$#.material-inline-an { transform: scale(0)!important; }
+!+ NOT_PLATFORM(windows, mac, android)
+overclockers.ru#$#.material-inline-an { height: 30px!important; background-color: transparent!important; }
+!+ NOT_PLATFORM(windows, mac, android)
+overclockers.ru#$#.material-inline-an > div { transform: scale(0)!important; }
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_ublock)
 @@||rotor.overclockers.ru/www/delivery/asyncspc.php|
 !+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_ublock)
@@ -6756,7 +6757,7 @@ iwantgames.ru#$#.content { padding-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17432
 allbesta.org#$#noindex[style="display: block!important;"] { position: absolute!important; left: -3000px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17729
-fb.ru,syl.ru#$#.adsbygoogle { position: absolute!important; left: -3000px!important; }
+fb.ru,syl.ru#$#.adsbygoogle { transform: scale(0)!important; height: 0px!important; }
 ! kinorezka.net - удаление отступа сверху
 kinorezka.net#$#.container { padding-top: 0!important; }
 ! playzona.org - удаление отступа сверху
@@ -8055,6 +8056,7 @@ rtl.*/init.js?$third-party
 ://v.*.info/v/$script
 ://*.*.biz/xa/$script
 ://*.*.info/v/$script
+://*.*.biz/xj/$script
 ! VisitWeb ads
 ! Example: http://svetmonet.ru/2098.html
 .space/xx?*&bid=$script,third-party
@@ -16289,7 +16291,7 @@ zserials.tv##noindex a[rel="nofollow"] > img
 киношка.com.ua##td[align="right"][style="white-space: nowrap;"]
 ! visitweb
 ||abv-soft.ru/block_script*.php
-||avforums.ru/block_script.php
+/block_script.php$domain=avforums.ru
 ||uploadimagex.com/block_script_vm.php
 ||klubnichka-hd.org/block_script.php
 !
@@ -16350,6 +16352,7 @@ gismeteo.ru##.cont > div.cont-r
 gismeteo.ru##.flexbox > div.right_col_1 > div.wrap_small.__frame > div:not([class^="weather_now"])
 gismeteo.ru##.flexbox > div.right_col_2
 gismeteo.ru##.media_with_map > div.media_left
+gismeteo.by##.media_middle
 ! gismeteo (old)
 gismeteo.ua##.wrap > div#w-hor
 gismeteo.ru##div#weather-right[id="weather-right"]
