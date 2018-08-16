@@ -5248,6 +5248,7 @@ satsis.ru##.adb
 !
 !
 ! START: Yandex
+! another domains: auto.ru, drive2.ru, fb.ru, syl.ru, avito.ru
 !
 ! For all Yandex domains(Safari only)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12213#issuecomment-372037152
@@ -5422,6 +5423,40 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 @@||an.yandex.ru/jserr/1$domain=kinopoisk.ru
 !+ NOT_PLATFORM(windows,mac,android)
 @@||an.yandex.ru/mapuid/yandex/|$domain=kinopoisk.ru
+!
+! avito.ru
+! https://github.com/AdguardTeam/AdguardFilters/issues/18260
+||avito.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)//,script,other,important
+!+ NOT_PLATFORM(windows,mac,android)
+@@||yastatic.net/pcode/adfox/loader.js$domain=avito.ru
+!+ NOT_PLATFORM(windows,mac,android)
+@@||an.yandex.ru/system/context.js$domain=avito.ru
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.text-ad
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.sponsoredlinks
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.sideads
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.reklama
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.pub_728x90
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.pub_300x250m
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.pagead
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.bannerad
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.b-banner
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.b-adv
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@##yandex_ad
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#.adbanner
+!+ NOT_PLATFORM(windows,mac,android)
+avito.ru#@#div[id^="yandex_ad"]
 !
 ! END: Yandex
 !
@@ -6726,6 +6761,8 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua,~afis
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/20285
+picpic.online#$##pai_thumbz_left_side { visibility: hidden; }
 ! kinotop.pw - удаление отступа сверху
 kinotop.pw#$#.wrap { margin-top: 0!important; }
 ! hdvb player
@@ -9035,6 +9072,8 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+picpic.online###pai_thumbz_right_side
+zi.dn.ua##.header-banner
 irk.ru##.b-branding-bottom
 ||animaunt.ru/templates/new_animaunt/images/rekbrend/
 vellisa.ru###yd2
@@ -12200,7 +12239,7 @@ regnews.info##.textwidget > p[style="text-align: center;"] > a > img
 /static/img/bug/rnd_$domain=maxi-karta.ru|maxikarta.ru|mxkr.ru
 /static/img/prt/alli/ban_$domain=maxi-karta.ru|maxikarta.ru|mxkr.ru
 /tds/lib/script/cook.js.php?mycookies=1
-/upload/rk/*$domain=bits.media|wotafaq.com|nta-nn.ru|radugaskidok.ru|vladtv.ru|podrobno.uz|xsport.ua|mos.news|tvcom-tv.ru|gorod48.ru|gazeta-n1.ru|shoes-report.ru|sportfm.ru|newkaliningrad.ru|openbusiness.ru|citrus.ua|ktostroit.ru|ural56.ru|dairynews.com.ua|devyatka.ru|freekaliningrad.ru|hi-fi.ru|innov.ru|k1news.ru|meteo-tv.ru|newsroom24.ru|personalaudio.ru|portamur.ru|rigma.info|securitylab.ru|ya62.ru|zebra-tv.ru
+/upload/rk/*$domain=zi.dn.ua|bits.media|wotafaq.com|nta-nn.ru|radugaskidok.ru|vladtv.ru|podrobno.uz|xsport.ua|mos.news|tvcom-tv.ru|gorod48.ru|gazeta-n1.ru|shoes-report.ru|sportfm.ru|newkaliningrad.ru|openbusiness.ru|citrus.ua|ktostroit.ru|ural56.ru|dairynews.com.ua|devyatka.ru|freekaliningrad.ru|hi-fi.ru|innov.ru|k1news.ru|meteo-tv.ru|newsroom24.ru|personalaudio.ru|portamur.ru|rigma.info|securitylab.ru|ya62.ru|zebra-tv.ru
 015.by,032.ua,0332.ua,0342.ua,0352.ua,0362.ua,0372.ua,0412.ua,0432.ua,04565.com.ua,04578.in.ua,0462.ua,0472.ua,048.ua,04868.com.ua,0512.com.ua,0522.ua,0532.ua,05366.com.ua,0542.ua,0552.ua,056.ua,0564.ua,057.ua,061.ua,06153.com.ua,06239.com.ua,06252.com.ua,06254.in.ua,06255.com.ua,06274.com.ua,0629.com.ua,0642.ua,06432.in.ua,06434.com.ua,3462city.ru,44.ua,5692.com.ua,62.ua,6264.com.ua,8352city.ru,8422city.ru,86155city.ru,8634city.ru,city3012.ru,go31.ru,go862.ru,goroddomodedovo.ru,gorodpushkin.ru,labaved.ru,prokolpino.ru##div[class*="banner_box"]
 04849.com.ua,0566.com.ua,3652.ru,3654.ru,62.ua,mynizhyn.com##.banner_box
 062.ru##a[style*="width: 100;    height: 100"]
@@ -16835,8 +16874,6 @@ music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua##.bar__driver-co
 ||peka2.tv/build/app.*.bundle.js$replace=/\{enabled:!0/{enabled:!1/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20034
 ||infoniac.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)//,script,other,important
-! https://github.com/AdguardTeam/AdguardFilters/issues/18260
-||avito.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)//,script,other,important
 ! https://forum.adguard.com/index.php?threads/28997/
 ||n1307adserv.xyz/vast.xml?key=*&vastv=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18606
