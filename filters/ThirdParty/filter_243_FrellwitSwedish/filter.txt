@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-08-16 12:15:35 CEST
+! Last modified: 2018-08-20 06:34:23 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -87,6 +87,7 @@ di.se##.article-teaser__text-inline:has(a[href^="/brandstudio/"])
 dreamfilm.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
 egoinas.se##article.uk-article:has(.sw-sf-sponsor)
 emocore.se##.m_t.box:if(h2:has-text(Rekommenderade länkar))
+evertiq.se#$#body,#bgWrapp { background-image: none !important; cursor: initial !important; }
 existenz.se##p:has(a[href^="http://ads."])
 expressen.se##.section-widget:has(a[href^="https://rabattkoder."])
 expressen.se##.teaser:has(a[href^="https://rabattkoder."])
@@ -419,6 +420,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /gdpr/*$domain=rapport24.com|vimedbarn.se
 /gilla-mb_plugg.png$domain=markbladet.se
 /glimr.min.js^$script,domain=affarsliv.com|affarslivgotland.se|aftonbladet.se|blocket.se|corren.se|di.se|dn.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|politism.se|pt.se|unt.se|uppsala.com|uppsalatidningen.se|viivilla.se|vt.se
+/google-tracking/*$script,domain=popmuzik.se
 /google_tag.script.js^$script,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
 /gplus.php^$script,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
 /hapyak.js$script,domain=viktvaktarna.se
@@ -570,6 +572,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /se-wordpress-google-analytics/src/js/wp-tagmanager.js$script,domain=allakorsord.se|allas.se|allers.se|antikochauktion.se|aretrunt.se|baaam.se|cafe.se|dromhemochtradgard.se|elle.se|elledecoration.se|ellematovin.se|femina.se|frida.se|hant.se|hemmets.se|mabra.com|matmagasinet.se|residencemagazine.se|svenskdam.se
 /seenthis-hub/assets/js/hub-time-spent.js^$script
 /selections/native$xmlhttprequest,domain=svd.se
+/service-worker.js$script,domain=folkbladet.nu|vk.se
 /sf_tracking.js^$script,domain=stayfriends.se
 /sh404sefsocial/*$script
 /sifo_analytics.js^$script
@@ -959,6 +962,7 @@ fokus.se##.panorama-ads-top
 fokus.se##.social-sharing
 fokus.se##[class^="right-ads"]
 fokus.se##img[onload*="banner"]
+folkbladet.nu,vk.se##div[data-track-id="strossle"]
 food-supply.se,motormagasinet.se##.rotating-junglebogen
 food-supply.se,motormagasinet.se,skyddosakerhet.se###junglebogen
 forni.se##.sw-tag-sponsored_post
@@ -1448,6 +1452,7 @@ webbjobb.io##.cookie
 ||fast.fonts.net/t/1.css$stylesheet
 ||feeds.feedburner.com^$image
 ||finkammat.se^$third-party
+||folkbladet.nu^$csp=worker-src 'none'
 ||food-supply.se/bnrscr^$subdocument
 ||franecki.net^$third-party
 ||freewheel-mtgx-tv.akamaized.net^$image,media,domain=viafree.se
@@ -1660,6 +1665,7 @@ webbjobb.io##.cookie
 ||video-static.tunnl.com/js/blocker.min.js$script
 ||videoplaza.*/proxy/tracker?
 ||vk.com^$third-party
+||vk.se^$csp=worker-src 'none'
 ||webbannons.ntm.eu^$subdocument
 ||webbcensus.com^$third-party
 ||webbjobb.io^*/abb-$script
