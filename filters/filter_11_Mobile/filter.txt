@@ -93,6 +93,8 @@
 ||plugin.mobopay.baidu.com^
 ||mo.freeindoapp.com^
 !
+||adsapi.manhuaren.com^
+||euadsapi.manhuaren.com^
 ||cdn1.ettoday.net^
 ||msg.ettoday.net^
 ||d1zkodo2u3p4pe.cloudfront.net^
@@ -2511,6 +2513,8 @@ m.news.yandex.by,m.news.yandex.com,m.news.yandex.fr,m.news.yandex.kz,m.news.yand
 @@||appmetrica.yandex.net$app=ru.yandex.weatherplugin
 @@||an.yandex.ru$app=ru.yandex.weatherplugin
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/21078
+||app.adjust.com^$empty,app=com.ilike.cartoon,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20486
 ||go2s.co/res/$image
 ||go2s.co/*?t=
@@ -3142,6 +3146,13 @@ _*sec.mp4$mp4,domain=ivi.ru
 !
 ! The content replacement rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/21078
+||mangaapi.manhuaren.com/*/public/getGlobalConfig^$replace=/"(splashAdConfig|adConfig)"/"__\$1"/
+||mangaapi.manhuaren.com/*/public/getBaseurl^$replace=/"adsBaseurl"/"__adsBaseurl"/
+||mangaapi.manhuaren.com/*/public/getHome^$replace=/"bannerAd"/"__bannerAd"/
+||mangaapi.manhuaren.com/*/manga/getRank^$replace=/"(topAd|comicListAd)"/"__\$1"/
+||mangaapi.manhuaren.com/*/manga/getComment^$replace=/"commentAd"/"__commentAd"/
+||mangaapi.manhuaren.com/*/manga/getHotComment^$replace=/"hotCommentAd"/"__hotCommentAd"/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10315
 ||ads.adfox.ru/*/getCode?p1=$domain=auth.wi-fi.ru,replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://forum.adguard.com/index.php?threads/23599/
