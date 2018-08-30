@@ -23,6 +23,9 @@
 !
 !######### Annoying elements (not ads)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/20884
+nownews.com#$#body[style^="overflow: hidden;"] { overflow: visible!important; padding-right: 0px!important; }
+nownews.com#$#div > div[data-reactroot][role="dialog"][aria-labelledby="modal-label"][style^="position: fixed; z-index:"] { display: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21565
 ||cdn-*.playwire.com/*/embed.js$domain=gamezone.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20681
@@ -1516,6 +1519,7 @@ androidworld.it#%#AG_abortInlineScript(/enm.com/, 'navigator');
 !+ NOT_PLATFORM (windows, mac, android)
 @@||androidworld.it^$generichide
 !
+sovetromantica.com##.a-top
 @@||sweetpornlinks.com/cb-builder/theme/robo-black/assets/js/adframe.js
 @@||bt.dk/build/advertisement.e39e7e4b.js
 @@||video.komarovskiy.net^$generichide
@@ -4171,6 +4175,11 @@ chimica-online.it###cookieChoiceInfo
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 strunz.com###v-cookielaw
 !
+maskinbladet.dk##.cookies-top
+vitaminshoppe.com##vshoppe-gdpr-privacy-notice-component
+tommy.com#$#.remodal-is-locked { overflow:visible!important; }
+tommy.com#$#.remodal-overlay { display:none!important; }
+tommy.com#$#.cookie-notice { display:none!important; }
 particuliers.societegenerale.fr#$##n2g_box_cookie_alerte_message { display: none!important; }
 particuliers.societegenerale.fr#$#body[style="background-position: center 42px;"] { background-position: center top!important; }
 reddit.com###SHORTCUT_FOCUSABLE_DIV > div > div[class][aria-hidden] + div > div[class] > form
@@ -5730,6 +5739,8 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/21488
+tommy.com#@#.cookie-notice:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21688
 @@||consent.cookiebot.com^$domain=bt.dk
 !
@@ -6769,6 +6780,7 @@ edeka.de#@##smartbanner.android
 !
 ! Specific sites
 !
+maskinbladet.dk##.popup-nyhedsbrev-wrapper
 bestvpnrating.com##.popup-overlap
 sportfood40.ru##.informer.flying
 mel.fm##body > div.b-coach-mark

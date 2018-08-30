@@ -8371,6 +8371,9 @@ cez.cz#$#body { background: #333!important; }
 !---------------------------------------------------------------------
 !------------------------------ Danish -------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/21470
+maskinbladet.dk##.openx-iframe-wrapper
+@@||maskinbladet.dk/assets/templates/2016_maskinbladet/images/ads.png
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17005
 politiken.dk##.ad--horseshoe
 politiken.dk##div[class^="ad ad--ctx-"]
@@ -10523,6 +10526,11 @@ topsinhalamp3.com###sitbl > tbody > tr[-ext-has='a[href^="https://ylx-4.com"]']
 !---------------------------------------------------------------------
 !------------------------------ Taiwan -------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/20884
+nownews.com##div[class^="footer_"] > div[class^="adBlocks_"]
+nownews.com##div[class^="leftSide_"] > div[data-reactid] a[data-event-action="page-recommend-ad"]
+nownews.com##div[class^="leftSide_"] > ._popIn_recommend + div[data-reactid]:last-child > h2:contains(NOWnews 推薦)
+nownews.com##div[class^=" margin10_"] > div[data-reactid] > a[class^="clearfix box_"][data-on="click"]:has(> .right > [class^="category_"]:contains(Sponsored))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16506
 !+ NOT_OPTIMIZED
 gamme.com.tw##.ad_down
@@ -10536,6 +10544,7 @@ gamme.com.tw##a[href^="https://www.gamme.com.tw/redirect.php?id="][target="_blan
 520cc.me#@#iframe[width="300"][height="250"]
 520cc.me#$##acornerinner1122 { position: absolute!important; left: -3000px!important; }
 520cc.me#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/myaaqqbpfun12\(\)/.test(a.toString()))return b(a,c)};})();
+! https://github.com/AdguardTeam/AdguardFilters/issues/21669
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21072
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15480
 @@||service.4gtv.tv/4gtv/Data/GetAD.ashx
@@ -10547,6 +10556,8 @@ gamme.com.tw##a[href^="https://www.gamme.com.tw/redirect.php?id="][target="_blan
 ||service.4gtv.tv/4gtv/Data/GetAD.ashx$replace=/(\{"preroll":\[)[\s\S]*\]/\$1]/,domain=4gtv.tv,important
 !+ NOT_PLATFORM(windows, mac, android)
 @@||googleads.g.doubleclick.net/pagead/ads?*&url=http*.4gtv.tv*&output=xml_vast*.4gtv.tv$domain=imasdk.googleapis.com
+!+ PLATFORM(ios, ext_android_cb)
+@@^vast^$domain=4gtv.tv,~script,~image
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13456
 upmedia.mg###divider_ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13447
