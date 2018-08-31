@@ -23,6 +23,11 @@
 !
 !######### Annoying elements (not ads)
 !
+!####TEMPORARY####
+! https://github.com/AdguardTeam/AdguardFilters/issues/21090
+facebook.com##div[id^="substream_"] div[id^="hyperfeed_story_id_"][-ext-has='[id^="feed_subtitle_"] > span[class][role=presentation] + span[class]:matches-css(display: none)']
+!#################
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20884
 nownews.com#$#body[style^="overflow: hidden;"] { overflow: visible!important; padding-right: 0px!important; }
 nownews.com#$#div > div[data-reactroot][role="dialog"][aria-labelledby="modal-label"][style^="position: fixed; z-index:"] { display: none!important; }
@@ -1573,7 +1578,7 @@ pixlr.com#@#.adBanner
 @@||html5.nicogame.jp/misc/ad*.js
 27sysday.ru#@##adsense
 @@||laptopmedia.com/ads.js|
-kinopoisk.ru###partial_component__header div.monsters-vacation-banner-partial-component+div
+kinopoisk.ru###partial_component__header div[class^="monsters-vacation-banners"]+div
 pln-pskov.ru###check_ad_block
 @@||hindistopin.com/wp-content/plugins/wp-quads-pro/assets/js/ads.js
 @@||hindinewstop.com/wp-content/plugins/wp-quads-pro/assets/js/ads.js
@@ -5654,6 +5659,7 @@ aliexpress.com###j-site-notice-header[-ext-has='>.site-notice-container:contains
 !
 ! JS rules
 !
+appletips.nl#%#AG_onLoad(function() { setTimeout(function() { if(window.location.href.indexOf("cookiewall") != -1) { document.getElementById("agree_with_cookie_terms").click(); } }, 1000); });
 cubbiescrib.com#%#AG_onLoad(function() { setTimeout(function() { if(document.getElementById("gdpr-consent-form-wrapper").isvisible = true) { document.cookie = "euConsent=true"; location.reload(); }; }, 1000); });
 si.com#%#AG_onLoad(function() { setTimeout(function() { if(document.getElementsByClassName("gdpr")[0].isvisible = true) { document.cookie = "euConsent=true"; location.reload(); }; }, 1000); });
 bt.dk#%#document.cookie = "CookieConsent=1";
@@ -6284,6 +6290,7 @@ gir.im##.smartbanner
 !+ NOT_PLATFORM(ios, ext_android_cb)
 shazam.com##.shz-frame-apps-banner
 !
+appletips.nl##.atapp
 m.kfc.ru##.app-download-wrapper
 msn.com###smartbanner
 instamp3.zone##.footer_apk
@@ -6781,6 +6788,8 @@ edeka.de#@##smartbanner.android
 !
 ! Specific sites
 !
+vichy.com.tr###popinVichy2016
+vichy.com.tr###exposeMask
 kino-coin.online###blockpopup
 maskinbladet.dk##.popup-nyhedsbrev-wrapper
 bestvpnrating.com##.popup-overlap
