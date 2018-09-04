@@ -41,6 +41,7 @@
 !+ NOT_PLATFORM(windows, mac, android)
 ||rcdn.pro^$third-party,badfilter
 !
+||o12zs3u2n.com^$third-party
 ||nyacampwk.com^$third-party
 ||whs82908.com^$third-party
 ||mse2v5oglm.com^$third-party
@@ -9657,6 +9658,11 @@ dap-news.com##.ads
 !---------------------------------------------------------------------
 !------------------------------ Korean -------------------------------
 !---------------------------------------------------------------------
+! https://github.com/AdguardTeam/AdguardFilters/issues/21905
+torrentmap.com###hd_wrapper > div[style="float:right; width:450px; margin-top:10px;"]:not([class]):not([id])
+torrentmap.com###container_wr > #container > div[style="margin-bottom:20px; border:1px #ccc solid; background:#fff; padding:6px;"]:not([class]):not([id])
+torrentmap.com###container_wr > div[style="float:right; width:305px; height:60px; margin:0 0 10px 0; border:1px #ddd solid; background:#fff; line-height:60px; text-align:center; color:#ccc;"]:not([class]):not([id])
+||torrentmap.com/banner/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21316
 @@||ad.smartmediarep.com/crossdomain.xml$domain=sbscnbc.sbs.co.kr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21233
@@ -11289,6 +11295,8 @@ youporngay.com#%#Object.defineProperty(window, 'loadPUscript', { get: function()
 ! END: Popular clickunders
 !**********************************
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/21972
+adsrt.com#%#window.open = function() {};
 ! https://forum.adguard.com/index.php?threads/userscloud-not-fixed.29344/
 userscloud.com#%#Object.defineProperty(window, 'SubmitDownload1', { get: function() { return true; } });
 ! fembed.com - popup
@@ -13142,6 +13150,10 @@ kiss-anime.me,kimcartoon.me##div > div[id][style*="overflow: hidden"][style*="wi
 ! /(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/(?!(assets|scripts|player)\/)[a-zA-Z0-9]{4,}[\s\S]*.js/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
 ! /(readcomiconline|kimcartoon|kiss-anime|9anime|gogoanime|toonova|animeflv|animeplus|goodanime|animewow|animenova|animeland|animetoon|mangapanda|memecenter|mangareader)\.[a-z]{2,4}\/(?!(assets|scripts|player)\/)[a-zA-Z0-9]{4,}[\s\S]a*\/[a-zA-Z0-9]{4,}[\s\S]*.js/$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.se|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
 !
+adsrt.com##div[id^="M"][id*="Preload"]
+adsrt.com##.SC_TBlock
+adsrt.com###frme1
+||powvideo.net/bun/$important
 amazon.co.uk,amazon.de###ape_Detail_ad-endcap-1_Glance_placement
 ||creative.speednetwork*.com/speednetwork*/tags/x*/x*.js?ap=
 xhamster.com##.no-popunder.wid-spot-container
@@ -14008,7 +14020,6 @@ porngem.com##.a-d-v
 porngem.com##.bottom-b-s
 porngem.com##.grid  > .featured-b
 ||porngem.com/player/html.php?aid=*_html&video_id=*&*&referer
-adsrt.com##div[id*="ScriptRoot"]
 search.yahoo.com##.grad
 pornfay.com##.fp-player > div:not(.fp-ui)
 ||pornfay.com/player/float.php^
@@ -19956,6 +19967,9 @@ copypastecharacter.com#$##contents { visibility: visible!important; }
 ! END: Temporary
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/21983
+! InstartLogic CSS broken
+metacritic.com#@#iframe[width="300"][height="250"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21950
 1001tracklists.com#@#[id][width]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21820
@@ -20243,6 +20257,12 @@ protopage.com#%#(function(){var pageParams={};Object.defineProperty(window,"page
 ! END: Temporary
 !#########################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/21864
+ekstrabladet.dk#@##adtechWallpaper
+! https://github.com/AdguardTeam/AdguardFilters/issues/21977
+@@||powvideo.net/$~third-party,popup
+@@||powvideo.net/new/css/fonts/font/custom-icons.$font
+@@||powvideo.net/player*/jw-$~third-party,xmlhttprequest
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21807
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=hackedarcadegames.com
 ! animeland.me - fixing download button
@@ -22228,6 +22248,8 @@ implbits.com#@#.banner_container
 @@||adidas.pl/*&gclid=$stealth
 !#########################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/21868
+@@||baidupcs.com/file/$stealth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21712 [Stealth Mode - Referrer]
 @@||crowdcompute-pa.clients*.google.com^$stealth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21004 [Stealth Mode - Referrer]
@@ -22804,6 +22826,7 @@ iview.abc.net.au/programs$replace=/("type"\:"preroll")[\s\S]*("type")/"type"/
 .3.n.2.2.l30.js
 !
 !
+||ultra-cdn.pl/stat.js
 ||005.0x1f4b0.com^
 ||play*.videos.vidto.me^
 ||nextbdom.ru^
@@ -58079,6 +58102,7 @@ coingamez.com,mangaumaru.com,milfzr.com,pencurimovie.cc#@#div[id^="div-gpt-ad"]
 ||lusfrsxgxopm.com^$third-party
 ||lvcrcimfmfx.com^$third-party
 ||lxymfyptdrast.com^$third-party
+||maidlytsnrn.com^$third-party
 ||mcaybfrnrqpmv.com^$third-party
 ||mdulmrphzsnvw.com^$third-party
 ||mgxjvidt.com^$third-party
