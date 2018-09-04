@@ -5669,9 +5669,6 @@ pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(a[href="/inf
 pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div.story__main script:contains(push(function()))
 pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contains(/ads|реклама/|рекламный\sпост|ртнeрcкий\sпост/))
 !
-gamer-info.com##body > div[id="blablabla"] > div > a:matches-css(background-color: rgb(3, 56, 79))
-gamer-info.com##body > div[id]:has(> a#timer)
-!
 gismeteo.ru##.__frame:has(> div > div.media_content)
 gismeteo.by##.__frame:has(> div > div.media_content)
 gismeteo.ru##div:has(> div > div[data-type="rbc"])
@@ -6521,7 +6518,7 @@ eworldmedia.info#%#Object.defineProperty(window, 'PopunderShown', { get: functio
 !+ NOT_PLATFORM(windows, mac, android)
 ivi-video.com,kinosafe.net#%#Object.defineProperty(window, 'cur_time', { value: 0});
 ! gamer-info.com - video ad
-gamer-info.com#%#Object.defineProperty(window, 'vFABLpS6GfRs', { value: false });');
+gamer-info.com#%#(function() { var isSet = false; Object.defineProperty(window, 'vPRiNoticedAgain', { get: function() { return isSet ? false : undefined; }, set: function() { isSet = false; } }); })();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14922
 milf-hd.org#%#Object.defineProperty(document, 'write', { get: function() { return {}; } });
 ! htapop
@@ -6803,6 +6800,8 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua,~afis
 !------- CSS -----------
 !-----------------------
 !
+! hochu.ua - удаление брендированного фона
+hochu.ua#$#body { background-image: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20452
 semobile.com.ua#$#.adsbygoogle { height: 0px!important; }
 ! kino-coin.online - удаление отступа сверху
@@ -7739,6 +7738,8 @@ news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news
 !------- HTML ----------
 !-----------------------
 !
+! hochu.ua - удаление брендированного фона
+hochu.ua$$style[tag-content=".brand-"][max-length="900"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14951
 smotret-anime.ru$$script[tag-content="var el = document.getElementById"][max-length="30000"][max-length="60000"]
 ! kg-portal.ru - удаление отступа сверху
@@ -8159,6 +8160,8 @@ rtl.*/init.js?$third-party
 ://*.*.biz/xa/$script
 ://*.*.info/v/$script
 ://*.*.biz/xj/$script
+://*.*.biz/xx?$script
+/flickr/photo?url=$third-party,script
 ! VisitWeb ads
 ! Example: http://svetmonet.ru/2098.html
 .space/xx?*&bid=$script,third-party
@@ -9130,6 +9133,7 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+||xoffx.net/vw.js
 mow-portal.ru##div[id^="_u_ablock_"]
 kinopoisk.ru##.rightTeaser~div > script+div[id][class]
 kinopoisk.ru##.rightTeaser
@@ -9322,8 +9326,6 @@ dohera-porno.net##.mrad
 zismo.biz##.ipsAd123+div[align="center"]
 ||1link.mail.ru/c.php$third-party
 fastpic.ru###bleft
-gamer-info.com##.mejs__ads
-||video.gamer-info.com/*warthunder*.mp4
 4cheat.ru,animedub.ru,apple-iphone.ru,galagram.com,mmoglobus.ru,pluggedin.ru,tivix.co,xboxland.net##a[href^="https://ad.admitad.com/"]
 rating-avto.ru##.masmotors-banner
 rating-avto.ru##div[style$="text-align:center;"] > div[class^="best-prices"]
@@ -9718,7 +9720,6 @@ driveroff.net##table[width="100%"][height="128"][style="line-height:100%;"]
 sport.ua###b_sport_700
 tsargrad.tv##.news__partners
 ||f1comp.ru/wp-content/uploads/*/banner-
-gamer-info.com##.hltdst
 newsone.ua##div[data-action="banners"]
 narutoplanet.ru##a[href^="https://goo.gl/"] > img
 scarabey.org##div[class^="ad-block-"]
@@ -10088,7 +10089,6 @@ cwer.su,cwer.me,cwer.ru,cwer.ws##.like_hide
 kg-portal.ru##a.paralink
 rbkgames.com##.modal.js-event-offer
 rbkgames.com##.modal-backdrop
-gamer-info.com##div[style*="width:728px;height:120px;"]
 oilreview.kiev.ua###second_banner
 oilreview.kiev.ua###rotation_banner
 socportal.info##.content_banner
@@ -10270,7 +10270,6 @@ meteo-tv.ru##.bglink
 meteo-tv.ru###bch2
 jkrasa.ru##.l2
 jkrasa.ru##.rcblo
-gamer-info.com##.mn-news-lst-ad-bl > div[class]
 ||news.agro-center.com.ua/wp-content/uploads/*/background-
 news.agro-center.com.ua##div[class^="rek_"]
 ||alleng.ru/images_new/*/Banner-
@@ -16700,7 +16699,6 @@ afisha.mail.ru##.promo
 !
 auto.mail.ru##.cols__column_sidebar [class*="rb_"]
 auto.mail.ru##.mailru-visibility-check-counter+iframe
-auto.mail.ru##.ban
 auto.mail.ru##.m-promo-popup
 auto.mail.ru##.p-content-banner
 auto.mail.ru##.p-tgb__item
