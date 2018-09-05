@@ -4488,7 +4488,7 @@ gismeteo.by,gismeteo.ru$$div[tag-content="Yandex.RTB"][max-length="3900"]
 ! Ads replacement script
 rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru$$script[tag-content="AntiAdBlock"][min-length="5000"][max-length="350000"]
 !+ NOT_PLATFORM(windows, mac, android)
-rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#AG_abortInlineScript(/!function\(x\,n\,/, 'String.fromCharCode');
+rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#AG_abortInlineScript(/!function\(x\,/, 'String.fromCharCode');
 rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('3429e544b760d2419a190fba11be3a9a', '0'); }
 !
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5385,6 +5385,7 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ||zen.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
 !
 ! Kinopoisk
+www.kinopoisk.ru/*/*/*/*/*-*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !+ NOT_PLATFORM(windows,mac,android)
 @@||kinopoisk.ru^$generichide
 !+ NOT_PLATFORM(windows,mac,android)
@@ -5494,57 +5495,39 @@ avito.ru#@#div[id^="yandex_ad"]
 !
 ! START: Ads replacement (piguiqproxy.com etc.)
 !
-!+ NOT_PLATFORM(windows, mac, android)
-@@|http$image,third-party,domain=okino.ua|football24.ua|gagadget.com|gorod.dp.ua|kinozal.tv|sinoptik.com.ru|liga.net|fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
-!+ NOT_PLATFORM(windows, mac, android)
-@@.js|$third-party,domain=okino.ua|football24.ua|gagadget.com|gorod.dp.ua|newsyou.info|kinozal.tv|sinoptik.com.ru|segodnya.ua|liga.net|fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
+!#if (adguard && !adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+@@|http$image,third-party,domain=tivix.co|okino.ua|football24.ua|gagadget.com|gorod.dp.ua|kinozal.tv|sinoptik.com.ru|liga.net|fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
+@@.js|$third-party,domain=tivix.co|okino.ua|football24.ua|gagadget.com|gorod.dp.ua|newsyou.info|kinozal.tv|sinoptik.com.ru|segodnya.ua|liga.net|fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
+@@.js|$third-party,domain=kinoafisha.ua
+!
+/(adbetnet\.advertserve.com|trafgid\.com)/$domain=fastpic.ru,empty,important
+/(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=fastpic.ru,important
+/(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=kurs.com.ua|kurs.com.ru,important
+!
+@@||adservice.google.*/adsid/integrator.js$domain=okino.ua|football24.ua|gorod.dp.ua|eurointegration.com.ua|gismeteo.ua|newsyou.info|segodnya.ua|liga.net|kinoafisha.ua|pravda.com.ua|epravda.com.ua|sinoptik.com.ru|sinoptik.ua|obozrevatel.com|24tv.ua|inforesist.org
+@@||a4p.adpartner.pro/vunit?id=$domain=football24.ua|sinoptik.ua|24tv.ua
+@@||a4p.adpartner.pro/jsunit?id=$domain=newsyou.info
+@@||gaua.hit.gemius.pl^$domain=gismeteo.ua|segodnya.ua
+@@||cdn.yottos.com/adsbyyottos.js$domain=simpsonsua.com.ua
+@@||rg.yottos.com/bl.js$domain=newsyou.info
+simpsonsua.com.ua#$#.adsbyyottos { height: 1px!important; visibility: hidden!important; }
+@@||cdn.admixer.net/scriptlib/asm2.js$domain=blogs.pravda.com.ua
+@@||cdn.admixer.net/scripts*/loader*.js$domain=eurointegration.com.ua
+@@||js-ru.redtram.com/n4p/*/ticker_*.js$domain=24tv.ua
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=24tv.ua
+@@||orbit.lun.ua/js/*.js$domain=24tv.ua
+@@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=sinoptik.ua
+@@||trafmag.com/banners/*/main.js$domain=sinoptik.ua
+@@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=gismeteo.ua
+@@||ua.traffim.com/load/*.js$domain=gismeteo.ua
+@@||h.holder.com.ua/s?$domain=gorod.dp.ua
+||block.*.com/rotator/*.js$domain=tivix.co,important
+@@||jsc.marketgid.com/t/i/tivix.net.*.js?t=$domain=tivix.co,important
+!#endif
 !
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium)
 @@|http$image,third-party,domain=kinoafisha.ua
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium)
-@@.js|$third-party,domain=kinoafisha.ua
-!
-!+ NOT_PLATFORM(windows, mac, android)
-/(adbetnet\.advertserve.com|trafgid\.com)/$domain=fastpic.ru,empty,important
-!+ NOT_PLATFORM(windows, mac, android)
-/(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=fastpic.ru,important
-!+ NOT_PLATFORM(windows, mac, android)
-/(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=kurs.com.ua|kurs.com.ru,important
-!
-!+ NOT_PLATFORM(windows, mac, android)
-@@||adservice.google.*/adsid/integrator.js$domain=okino.ua|football24.ua|gorod.dp.ua|eurointegration.com.ua|gismeteo.ua|newsyou.info|segodnya.ua|liga.net|kinoafisha.ua|pravda.com.ua|epravda.com.ua|sinoptik.com.ru|sinoptik.ua|obozrevatel.com|24tv.ua|inforesist.org
-!+ NOT_PLATFORM(windows, mac, android)
-@@||a4p.adpartner.pro/vunit?id=$domain=football24.ua|sinoptik.ua|24tv.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||a4p.adpartner.pro/jsunit?id=$domain=newsyou.info
-!+ NOT_PLATFORM(windows, mac, android)
-@@||gaua.hit.gemius.pl^$domain=gismeteo.ua|segodnya.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||cdn.yottos.com/adsbyyottos.js$domain=simpsonsua.com.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||rg.yottos.com/bl.js$domain=newsyou.info
-!+ NOT_PLATFORM(windows, mac, android)
-simpsonsua.com.ua#$#.adsbyyottos { height: 1px!important; visibility: hidden!important; }
-!+ NOT_PLATFORM(windows, mac, android)
-@@||cdn.admixer.net/scriptlib/asm2.js$domain=blogs.pravda.com.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||cdn.admixer.net/scripts*/loader*.js$domain=eurointegration.com.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||js-ru.redtram.com/n4p/*/ticker_*.js$domain=24tv.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=24tv.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||orbit.lun.ua/js/*.js$domain=24tv.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=sinoptik.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||trafmag.com/banners/*/main.js$domain=sinoptik.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=gismeteo.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||ua.traffim.com/load/*.js$domain=gismeteo.ua
-!+ NOT_PLATFORM(windows, mac, android)
-@@||h.holder.com.ua/s?$domain=gorod.dp.ua
 ! END: Ads replacement (piguiqproxy.com etc.)
 
 !-------------------------------------------------------------------------------!
@@ -5682,6 +5665,7 @@ gismeteo.ru##div:has(> div > div[data-type="default"] > div > a[href*="type=news
 gamesisart.ru##table[summary="Колонка: Реклама"] center > table[align="center"]:has(ins.adsbygoogle)
 draug.ru##div[class="clearfix grpelem"] > div.colelem:has(> div[id^="yandex_rtb_"])
 kinopoisk.ru#$#html:not(.app-theme_dark):has(> body.svg-background_yes) { background-color: #d6d6d6 !important; }
+~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$#html:has(> body.svg-background_yes) { background: url(https://st1.kp.yandex.net/images/noBrandBg.jpg) 50% 0 no-repeat!important; }
 dimnovyn.com##.right > section.side_block:contains(/Новости\sпартнеров/)
 3dnews.ru#$#body > div#global-wrapper > div[id="wrapper"][style]:has(> div) { top: 0!important; }
 benzin-price.ru##p > strong:contains(реклама:)
@@ -7651,6 +7635,7 @@ gametech.ru#$#body {margin-top: 0px!important;}
 kinopoisk.ru#$##top { height: 120px!important; }
 ~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$#body { padding: 20px 0 22px 0!important; }
 ~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$#body { background: url(https://st1.kp.yandex.net/images/noBrandBg.jpg) 50% 0 no-repeat!important; }
+~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$#html { background: url(https://st1.kp.yandex.net/images/noBrandBg.jpg) 50% 0 no-repeat!important; }
 kinopoisk.ru#$#div[data-metrika="superbanner_spot"] { display: block!important; }
 kinopoisk.ru#$##show_adv~div > div[style="height: 267px;"] { display: none!important; }
 ! seasonvar.ru - удаление отступа сверху
