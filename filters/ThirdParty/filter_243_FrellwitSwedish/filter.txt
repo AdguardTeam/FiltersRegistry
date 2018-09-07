@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-09-06 08:44:18 CEST
+! Last modified: 2018-09-07 08:26:50 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -144,6 +144,7 @@ kwiss.me##.square-item:has(.qz-quiz-sponsored)
 laholmstidning.se,nsk.se,skd.se##div.skd-crsl-wrap:matches-css-before(content: Annons)
 linnherbertsson.se##.content:has(.sponsored-container)
 listor.se##article:has(a[href*="/annons/"])
+lundagard.se##.widget:has(h3:has-text(Annons:))
 magasin55.se##.td_module_wrap:has(a[href$="/annons/"])
 mariestadstidningen.se,nwt.se,sla.se#$#html { overflow: auto !important; }
 medievarlden.se#$#html,body { overflow: auto !important; }
@@ -310,7 +311,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 *$csp=worker-src 'none',domain=minfil.com
 *$object,object-subrequest,domain=internetlankar.se
 .*/*280x240*.$image,domain=rumhemma.se
-.*/*annons*.$image,domain=guldkanalen.se|kurera.se|lesscarbs.se|megafonen.nu|newsvoice.se|nvp.se|rumhemma.se|tekniksmart.se
+.*/*annons*.$image,domain=guldkanalen.se|kurera.se|lesscarbs.se|lundagard.se|megafonen.nu|newsvoice.se|nvp.se|rumhemma.se|tekniksmart.se
 .*/*banner*.$image,domain=bettips.se|dansbandskanalen.se|etc.se|evertiq.se|guldkanalen.se|kurera.se|lakartidningen.se|markbladet.se|marsta.nu|newsvoice.se|rockkocken.se|rumhemma.se|skrattnet.se|sportbloggare.com|sportpanelen.se|tkj.se|vaken.se
 .*/*banner*.$script,domain=dagenshandel.se|entreprenor.se|food-supply.se|magasinetparagraf.se|motormagasinet.se|skyddosakerhet.se
 .*/*sponsor*.$image,domain=humorbibeln.se|newsner.com|sportbibeln.se
@@ -577,6 +578,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /QX-AD.js^$script,domain=qruiser.com|qx.se
 /rabattkod/*$image,domain=aftonbladet.se
 /rantekartan/*$subdocument,domain=expressen.se
+/revive/revivejs.php$script
 /rpc*/prisjakt$xmlhttprequest,domain=99.se|fz.se|sweclockers.com
 /Scripts/burt/*$script,domain=di.se
 /scripts/pb*.js$script,domain=alicestenlof.com|clarahenry.se|elinskoglund.com|fannystaaf.se|linnahlborg.se|lovisawallin.se|moamattsson.se|nouw.com|saraabrahamsson.se
@@ -703,6 +705,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@||kingmagazine.se^$generichide
 @@||kkuriren.se^$generichide
 @@||klart.se^$generichide
+@@||knulla.se^$generichide
 @@||kurslitteratur.se^$generichide
 @@||land.se^$generichide
 @@||landlantbruk.se^$generichide
@@ -874,6 +877,8 @@ dayviews.com###panorama_ad
 dayviews.com##[class$="-ad"]
 dayviews.com##[class^="content_ad"]
 deliquate.se##.ajax_loader
+deliquate.se##[id^="ads300"]
+deliquate.se##[id^="linkcat-"]
 devote.se##div[style*="width: 980px; height: 244px;"]
 devote.se,familjeliv.se##div[style*="min-height: 244px;"][id][style*="display: inline-block;"]
 di.se##.ad_container
@@ -1107,6 +1112,7 @@ liverattning.se##.promo-slider
 lokaltidningen.se##.annoncer-wrapper
 loppi.se##.entry__teaser--promotion
 loppi.se##.page__ad
+lundagard.se###bdCheckAlso.bdCheckAlsoShow
 magasinetparagraf.se###large_banner
 majaelisabeth.com##.apprl-title
 mariestadstidningen.se,nwt.se,sla.se###cookieChoiceInfo
@@ -1315,6 +1321,7 @@ webbjobb.io##.cookie
 |http://sifomedia.
 |https://kampanj.$domain=mariestadstidningen.se|nwt.se|sla.se
 |https://sifomedia.
+||10bet.com^$third-party
 ||access.vasabladet.fi/6-pack/$subdocument
 ||ad.iplayer.org^$third-party
 ||adaptlogic.com^$third-party
@@ -1429,12 +1436,15 @@ webbjobb.io##.cookie
 ||cxpublic.com^$third-party
 ||d10lumateci472.cloudfront.net/?amuld$script
 ||d11j2g8hmtmh4u.cloudfront.net^$script,domain=alltforforaldrar.se|babyhjalp.se|blimamma.se|kalasdags.se|mammasidan.se|minbebis.com
+||d16fx559zbp759.cloudfront.net/common/lazyload.js$script,domain=svenskafans.com
 ||d1lxhc4jvstzrp.cloudfront.net/scripts/js3caf.js^$script
 ||d24rtvkqjwgutp.cloudfront.net/*yb.js$script
 ||d24rtvkqjwgutp.cloudfront.net/cookie.html
+||d2m8uxg4w7uelx.cloudfront.net/fullpageads.$script
 ||d2wy8f7a9ursnm.cloudfront.net/bugsnag$script,domain=expressen.se
 ||d3nhmqrdssv741.cloudfront.net/jppol-consent$domain=lokaltidningen.se
 ||d9v72urx9pbbc.cloudfront.net/channel.js^$script
+||d9v72urx9pbbc.cloudfront.net/LoadSlotLocator.$script
 ||dagensanalys.se^*/ios6fix.js$script
 ||damoh.tv4play.se^$image
 ||datomik.com^$third-party
@@ -1457,6 +1467,7 @@ webbjobb.io##.cookie
 ||du4rq1xqh3i1k.cloudfront.net/d$xmlhttprequest,domain=eurosport.se
 ||dynamic.fragbite.se/gfx/campaign/$image,domain=~fragleague.com
 ||e-magin.se^$third-party
+||eacdn.com/TrafficOpt/$script
 ||eacla.com^$third-party
 ||edgeflyfishing.com^$image,domain=jaktsidan.se
 ||edynpub.com^$third-party
