@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-09-17 17:08:09 CEST
+! Last modified: 2018-09-18 15:49:03 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -66,7 +66,7 @@ alltomstockholm.se,mitti.se##.teaser-large-container:has(.native-ad-mark)
 alltomstockholm.se,mitti.se##[class*="native_"]:has(.native-ad-mark-image)
 andreahedenstedt.se##article.post:has(.sw-sf-sponsor)
 autonytt.se##.article_widget_preview:if(h2 > a:has-text(/artikel i samarbete/i))
-autonytt.se##a:if(.label:has-text(/sponsrad/i))
+autonytt.se##a:has(.label:has-text(/sponsrad/i))
 battrestadsdel.se###my-mega-menu-widget:has-text(/sponsrade artiklar/i)
 blankspot.se#$#div.red-section.action-banner-2.sticky { position: initial !important; }
 bloggkommentatorerna.se,ladydahmer.nu,nickesfilmblogg.se,svenskayoutubers.se,themoviefreak.se#$#body.with-panorama { padding-top: 0 !important; }
@@ -167,7 +167,9 @@ missatsamtal.se##.nosnaj:has(#top-nosnaj)
 mittkok.expressen.se##.tile-item:has(span.native)
 mmanytt.se##.img-featured-posts-image:has(a[href$="/annons/"])
 mobil.se##.aside-puff > li:has-text(/sponsrad/i)
+mobil.se##.teaser:has(.sponsrat)
 modette.se##.lazyload_bar.show:if(span:has-text(/sponsrat/i))
+moviezine.se##.others:has-text(/sponsrat/i)
 moviezine.se##[class*="inner_"]:if(.badge:has-text(/sponsrat/i))
 mytaste.se#$#body:not(.kcolbda) .site-wrapper[data-state=default], body:not(.kcolbda) .site-wrapper[data-state=panorama] { padding-top: 50px !important; }
 newsvoice.se##.td_module_related_posts:has(a[href$="/sponsrat/"])
@@ -198,9 +200,9 @@ svt.se##li.nyh_contactbox-item:has(div[class*="facebook"])
 svt.se##li.nyh_contactbox-item:has(div[class*="instagram"])
 svt.se##li.nyh_contactbox-item:has(div[class*="twitter"])
 swedroid.se##.aeChart:has(a[href*="prisjakt.nu"])
-swedroid.se##.puff:if(h1:has-text(/sponsrat/i))
-swedroid.se##.puff:if(h1:has-text(Android på Prisjakt))
-swedroid.se##.widget-single:if(h3:has-text(Android på Prisjakt))
+swedroid.se##.puff:has(h1:has-text(/sponsrat/i))
+swedroid.se##.puff:has(h1:has-text(Android på Prisjakt))
+swedroid.se##.widget-single:has(h3:has-text(Android på Prisjakt))
 swedroid.se##h3:has-text(Prisjaktspriser)
 tasteline.com#$#.popup { overflow: auto !important; }
 tasteline.com##li.article:if(.category:has-text(/samarbete/i))
@@ -584,6 +586,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /QX-AD.js^$script,domain=qruiser.com|qx.se
 /rabattkod/*$image,domain=aftonbladet.se
 /rantekartan/*$subdocument,domain=expressen.se
+/realtid_ads/*$domain=realtid.se
 /revive/revivejs.php$script
 /rpc*/prisjakt$xmlhttprequest,domain=99.se|fz.se|sweclockers.com
 /Scripts/burt/*$script,domain=di.se
@@ -806,6 +809,7 @@ autonytt.se##.leaderboard
 autonytt.se##.social_and_search
 autonytt.se##.sponsrad-artikel
 autonytt.se##.start-leaderboard
+autonytt.se##a[href^="https://t.seenthis.se"]
 avanza.se#@#a[title="LeoVegas"]
 battrestadsdel.se###HideBanner
 battrestadsdel.se###sociala-medier-box
@@ -1240,6 +1244,7 @@ ratsit.se##.modal-backdrop.in
 ratsit.se##.search-list-inline-ad
 ratsit.se##[class^="ad-"]
 realtid.se###block-views-takeover-career-block
+realtid.se###sliding-popup
 realtid.se##.block-realtid-ads
 realtid.se##.block-realtid-native
 realtid.se##.takeover-overlay
