@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-09-19 09:04:22 CEST
+! Last modified: 2018-09-19 11:21:35 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -80,6 +80,7 @@ bytbil.com#$#html,body { overflow: auto !important; }
 cyclingplus.se##article:if(.single-subtitle:has-text(/annonssamarbete/i))
 dagensanalys.se##article.listitem:has(.label_sponsored)
 dagensanalys.se##article.listitem:has(a[href$="/sponsrad/"])
+datormagazin.se##.dator-widget:has(h4 > span:has-text(/erbjudanden/i))
 dayviews.com##div.zone.f30:has(img[src*="://sesn."])
 devote.se##.blogPostWrapper:if(em:has-text(/i samarbete med/i))
 devote.se##.blogPostWrapper:if(span:has-text(/sponsrat inlägg/i))
@@ -397,6 +398,8 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /bmbFusionUtils.$script
 /bn-01d-fusion.js$domain=koket.se
 /BrightcoveExperiences.js$script,domain=viktvaktarna.se
+/bundle-bundle_cookiebar_defer.$script,domain=cartoonnetwork.se
+/bundle-bundle_omniture_defer.$script,domain=cartoonnetwork.se
 /campaign*/*$script,xmlhttprequest,domain=alltforforaldrar.se|kokaihop.se|mammasidan.se|minbebis.com|njus.me|nyheter24.se
 /campaigns.js$script,domain=blocket.se
 /caption_banner.gif$domain=nvp.se
@@ -488,6 +491,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /locker.js$script,domain=atl.nu|land.se|landlantbruk.se|landskogsbruk.se
 /logger/logger?
 /lunchguiden*.$image,domain=folkbladet.nu|vk.se
+/metrics/*$domain=cartoonnetwork.se
 /min/1/wp-content/uploads/*$script,domain=popmuzik.se
 /mitti-ad-block-blocker/scripts.$script,domain=alltomstockholm.se|mitti.se
 /mod.js$xmlhttprequest,domain=internetmedicin.se
@@ -886,8 +890,11 @@ dagensvimmerby.se##.panoramaAnnons
 dansbandskanalen.se,guldkanalen.se##.wppaslink
 danskaspraket.se,digitalavykort.se,viseniorer.se,vmj.se##.cc-cookies
 danskaspraket.se,digitalavykort.se,vmj.se##.topdiv
+datormagazin.se##.td-header-sp-recs
+datormagazin.se##.td-more-articles-box
 datormagazin.se##.widget_advads_ad_widget
 datormagazin.se##catapult-cookie-bar
+datormagazin.se##img[width="1068"]
 datormagazin.se,mmanytt.se##.category-annons
 dayviews.com###frontpageRecommended
 dayviews.com###panorama_ad
@@ -1262,6 +1269,8 @@ skanesport.se###check-also-box.show-check-also
 skanesport.se###cookie-notice
 skanesport.se##[id^="skane-slider"]
 skillingaryd.nu###more-banners
+skk.se###cookie-button-banner
+skkplay.solidtango.com###cookie-prompt
 skogsforum.se##.col-right
 skogsforum.se##.masthead
 skogsforum.se##a[href^="https://goo.gl/"]
