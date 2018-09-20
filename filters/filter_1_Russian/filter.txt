@@ -4000,9 +4000,6 @@ ltorzhok.ru,freedomrussia.org,cidian.ru#%#(function() { var sto = window.setTime
 !--- antiblock.org ---
 ferr-um.ucoz.ru,stalker-mods.clan.su,helpsetup.ru#%#(function(b){Object.defineProperty(Element.prototype,"innerHTML",{get:function(){return b.get.call(this)},set:function(a){/^(?:<([abisuq]) id="[^"]*"><\/\1>)*$/.test(a)||b.set.call(this,a)},enumerable:!0,configurable:!0})})(Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML"));
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/22287
-! Yandex ads replacement
-kinopoisk.ru, pikabu.ru#%#Element.prototype.attachShadow = function(){};
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22532
 @@||imgbum.ru^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22449
@@ -4047,6 +4044,7 @@ investgazeta.ua###please2
 @@||wambacdn.net//mamba-app/adv/advert.*.js$domain=mamba.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21791
 @@||happy-hack.ru/adv*.js
+@@||happy-hack.ru/popunder.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19599
 qaru.site#%#AG_abortInlineScript(/fuckAdBlock/, 'document.addEventListener');
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$empty,important,domain=qaru.site
@@ -4260,7 +4258,7 @@ dni.ru$$script[tag-content="var sc = document.createElement"][max-length="400"]
 @@||an.yandex.ru/resource/context_static_r_*.js$domain=drive2.ru
 !+ NOT_PLATFORM(windows, mac, android)
 @@||an.yandex.ru/mapuid/ya/|$domain=drive2.ru
-||drive2.*/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=drive2.ru|drive2.com
+||drive2.*/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=drive2.ru|drive2.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12158
 @@||suj.li/assets/xnew/js/fuckadblock.js
 @@||suj.li^$generichide
@@ -5201,6 +5199,10 @@ satsis.ru##.adb
 ! http://forum.adguard.com/showthread.php?4506
 ||polismed.ru/js/check.js
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/22287
+! Yandex ads replacement
+!+ NOT_PLATFORM(windows, mac, android)
+24smi.org,auto.ru,avito.ru,businessman.ru,drive2.com,drive2.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.ru,gorodrabot.ru,infoniac.ru,kakprosto.ru,kinopoisk.ru,mathb-ege.sdamgia.ru,otzovik.com,pikabu.ru,razlozhi.ru,syl.ru#%#Element.prototype.attachShadow = function(){};
 !
 ! START: Yandex
 ! another domains: auto.ru, drive2.ru, fb.ru, syl.ru, avito.ru, gorodrabot.ru, kinopoisk.ru
@@ -5270,8 +5272,8 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$scri
 !#endif
 ! Yandex.News
 ! for the case of using RU AdList
-://news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
-://m.news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
+://news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
+://m.news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
 news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news.yandex.ua$$div[aria-label="Реклама"][class="profit"][max-length="18000"]
 ! for extensions
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
@@ -5283,7 +5285,7 @@ news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news
 !#endif
 !
 ! Yandex.Weather
-||yandex.*/pogoda/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua
+||yandex.*/pogoda/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua
 !+ NOT_PLATFORM(windows, mac, android)
 @@||yandex.*/pogoda/$generichide
 !
@@ -5305,7 +5307,7 @@ yandex.ru,~afisha.yandex.by,~afisha.yandex.kz,~afisha.yandex.ru,~afisha.yandex.u
 !#endif
 !
 ! Yandex.Mail
-||mail.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
+||mail.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !+ NOT_PLATFORM(windows, mac, android)
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#@$#.container__banner  { position: absolute!important; left: -3000px!important; }
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5314,7 +5316,7 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#@$#.c
 @@||an.yandex.ru/system/context.js$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !
 ! Yandex.TV
-||tv.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
+||tv.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
 tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblockDetected"][max-length="5000"]
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@||awaps.yandex.net^$domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
@@ -5323,7 +5325,7 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 !#endif
 !
 ! Yandex.Afisha
-||afisha.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=afisha.yandex.by|afisha.yandex.kz|afisha.yandex.ru|afisha.yandex.ua
+||afisha.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=afisha.yandex.by|afisha.yandex.kz|afisha.yandex.ru|afisha.yandex.ua
 !+ NOT_PLATFORM(windows, mac, android)
 @@||afisha.yandex.$generichide
 !+ NOT_PLATFORM(windows, mac, android)
@@ -5341,10 +5343,10 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ! Yandex.Zen
 @@||zen.yandex.$generichide
 @@||an.yandex.ru/meta/*?imp-id=1&target-ref=$domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
-||zen.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
+||zen.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
 !
 ! Kinopoisk
-www.kinopoisk.ru/*/*/*/*/*-*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+www.kinopoisk.ru/*/*/*/*/*-*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@||an.yandex.ru/meta/*^target-ref=$domain=kinopoisk.ru
 @@||an.yandex.ru/mapuid/yandex/?redir-setuniq=1$domain=kinopoisk.ru
@@ -5360,7 +5362,7 @@ www.kinopoisk.ru/*/*/*/*/*-*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|
 !
 ! avito.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18260
-||avito.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||avito.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@||yastatic.net/pcode/adfox/loader.js$domain=avito.ru
 @@||an.yandex.ru/system/context.js$domain=avito.ru
@@ -5380,7 +5382,7 @@ avito.ru#@#div[id^="yandex_ad"]
 !#endif
 !
 ! gorodrabot.ru
-||gorodrabot.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||gorodrabot.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@||an.yandex.ru/system/context.js$domain=gorodrabot.ru
 @@||an.yandex.ru/resource/context_static_r_*.js$domain=gorodrabot.ru
@@ -5389,8 +5391,8 @@ avito.ru#@#div[id^="yandex_ad"]
 !#endif
 !
 ! fb.ru, syl.ru
-||fb.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||syl.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||fb.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||syl.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@||an.yandex.ru/meta/*?target-ref=$domain=fb.ru|syl.ru
 @@||an.yandex.ru/meta/*?redir-setuniq=1$domain=fb.ru|syl.ru
@@ -5404,7 +5406,7 @@ avito.ru#@#div[id^="yandex_ad"]
 !#endif
 !
 ! auto.ru
-||auto.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||auto.ru/*/*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@||auto.ru^$generichide
 @@||an.yandex.ru/jserr/*$domain=auto.ru
@@ -5419,7 +5421,7 @@ avito.ru#@#div[id^="yandex_ad"]
 !#endif
 !
 ! kakprosto.ru
-||kakprosto.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||kakprosto.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@||kakprosto.ru^$generichide
 @@||an.yandex.ru/system/context.js$domain=kakprosto.ru
@@ -5455,13 +5457,14 @@ echo.msk.ru##[style*="width: 970px; height: 90px;"]
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@|http$image,third-party,domain=forumodua.com|zn.ua|censor.net.ua|gdz4you.com|tivix.co|okino.ua|football24.ua|gagadget.com|gorod.dp.ua|kinozal.tv|sinoptik.com.ru|liga.net|fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
 @@.js|$third-party,domain=forumodua.com|zn.ua|censor.net.ua|gdz4you.com|tivix.co|okino.ua|football24.ua|gagadget.com|gorod.dp.ua|newsyou.info|kinozal.tv|sinoptik.com.ru|segodnya.ua|liga.net|fastpic.ru|kurs.com.ua|kurs.com.ru|sinoptik.ua|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
-@@.js|$third-party,domain=subject.com.ua|vklasse.online|tv.ua|kinoafisha.ua
+@@.js|$third-party,domain=textreferat.com|subject.com.ua|vklasse.online|tv.ua|kinoafisha.ua
 !
 /(pagead2|pubads_|google-analytics\.com|redtram\.com|adpartner\.pro)/$domain=subject.com.ua,empty,important
 /(adbetnet\.advertserve.com|trafgid\.com)/$domain=fastpic.ru,empty,important
 /(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=fastpic.ru,important
 /(primechoice\.ru|cdn-rtb\.sape\.ru|acint\.net|vogo-vogo\.ru|google-analytics\.com)/$domain=kurs.com.ua|kurs.com.ru,important
 !
+@@||ssp.c8.net.ua/getcode.php$domain=textreferat.com
 @@||cdn.admixer.net/scripts*/loader*.js
 @@||adservice.google.*/adsid/integrator.sync.js$domain=subject.com.ua|vklasse.online|forumodua.com|zn.ua|censor.net.ua|eurointegration.com.ua
 @@||adservice.google.*/adsid/integrator.js$domain=subject.com.ua|vklasse.online|forumodua.com|zn.ua|censor.net.ua|gdz4you.com|okino.ua|football24.ua|gorod.dp.ua|eurointegration.com.ua|gismeteo.ua|newsyou.info|segodnya.ua|liga.net|kinoafisha.ua|pravda.com.ua|epravda.com.ua|sinoptik.com.ru|sinoptik.ua|obozrevatel.com|24tv.ua|inforesist.org
@@ -5610,10 +5613,11 @@ spcs.me##body.pc div:has(> a > div:matches-css(background-image:*spac.me/i/ico.p
 spcs.me##body.touch div:has(> a > div:matches-css(background-image:*spac.me/i/ico.png))
 strip2.me##div[class] > div[id]:has( > a > div.ico)
 !
-pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div > div.story__pin)
-pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(a[href="/information/ad?from=ad_unit"])
-pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div.story__main script:contains(push(function()))
-pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contains(/ads|реклама/|рекламный\sпост|ртнeрcкий\sпост/))
+old.pikabu.ru##.inner_wrap div.story:has(> div > i.story__pin-o)
+old.pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div > div.story__pin)
+old.pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(a[href="/information/ad?from=ad_unit"])
+old.pikabu.ru##.stories-feed > div.stories-feed__container > .story:has(> div.story__main script:contains(push(function()))
+old.pikabu.ru##.inner_wrap div.story:has(div.story__header-additional-wrapper:contains(/ads|реклама/|рекламный\sпост|ртнeрcкий\sпост/))
 !
 gismeteo.ru##.__frame:has(> div > div.media_content)
 gismeteo.by##.__frame:has(> div > div.media_content)
@@ -9095,6 +9099,7 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+||synthira.ru/gtablk/
 parcelsapp.com##.events > .smsale
 post-tracker.ru##a[style*="width:500px; height:80px;"]
 delo-press.ru###banner_scroll
@@ -17007,48 +17012,48 @@ rasp.yandex.by,rasp.yandex.kz,rasp.yandex.ru,rasp.yandex.ua##div[id^="banner-R-"
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19484
 ||peka2.tv/build/app.*.bundle.js$replace=/\{enabled:!0/{enabled:!1/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20034
-||infoniac.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||infoniac.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://forum.adguard.com/index.php?threads/28997/
 ||n1307adserv.xyz/vast.xml?key=*&vastv=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18606
 ||herotowe.org/*/iframe?$replace=/"reserve_vast":{"urls":\[".*?]}\,//
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18772
-||echo.msk.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||echo.msk.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18257
-||razlozhi.ru/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||razlozhi.ru/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18206
-||businessman.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||businessman.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15537
 ||pornovizion.xyz/*.html$replace=/adsPrerollMediaUrl:(\s)*\['\/AJAX\/[a-z0-9]+.mp4'\]\,//
 ! kodik.cc
 .club/get-video|$replace=/("reserve_vast":\[).+?]/\$1""\]/,xmlhttprequest,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17639
-||pikabu.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||pikabu.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16723
 /components/video/ajax/get_movie_code.php$replace=/if\(cur_time == 0\)/if\(cur_time\)/,important
 ! kodik.cc
 ||homeless-thrill.date/get-video$replace=/"vast":".+?"\,"reserve_vast":\[".+?"\,".+?"\]/"vast":""\,"reserve_vast":[""\,""]/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16720
-||gismeteo.*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||gismeteo.*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15125
-||businessman.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||businessman.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13644
-||forexpf.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||forexpf.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12971
 ://goodgame.ru^|$replace=/"duration": \d\d/"duration": 0/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10802
-||otzovik.com/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||otzovik.com/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12065
-||mathb-ege.sdamgia.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||mathb-ege.sdamgia.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10631
 ! It breaks embed players. But standalone player works.
 ! ||torrentstream.*/get?_v=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10426
-||24smi.org/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||24smi.org/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! hi-tech.mail.ru
 ||hi-tech.mail.ru/*/js/cmpld/web/common.js$replace=/^mimic_.+//,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8860
-||e1.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||e1.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8588
 ||maximonline.ru/tube/controllers/select.php?_=$replace=/"fileUrl":\[.+?]\,//
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8396
@@ -17067,7 +17072,7 @@ rasp.yandex.by,rasp.yandex.kz,rasp.yandex.ru,rasp.yandex.ua##div[id^="banner-R-"
 ! https://forum.adguard.com/index.php?threads/18491/
 ||s.mimovi.ru/*/b|$replace=/maxTime:\s\d+\,/maxTime: 500\,/,important
 ! https://forum.adguard.com/index.php?threads/14311/
-||kakprosto.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"html":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||kakprosto.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17564
 pornoflv.tv^$replace=/"advertising":\{.*?\}/,important,~script,~stylesheet,~xmlhttprequest
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5988
