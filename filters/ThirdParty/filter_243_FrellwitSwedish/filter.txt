@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-09-24 12:51:46 CEST
+! Last modified: 2018-09-25 12:17:57 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -29,6 +29,7 @@
 .info/tv4-nyheter/$document
 /_ad.js$important,script,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|uppsala.com|uppsalatidningen.se|vt.se
 /adblock_mobile.$important,script,domain=gamereactor.se
+/assets/js/ads.$important,script,domain=vf.se
 /google-analytics-dashboard$important,script,domain=cyclingplus.se|firstfoto.se|fitnessformen.se|halsafitness.se|hemmahosulrika.se|macguiden.net|ordfrontforlag.se|ulrikadavidsson.se
 /js/ads.$important,script,~third-party,domain=alltomstockholm.se|mitti.se
 /ntm-digital/adn/adn-setup.$important,script
@@ -212,6 +213,7 @@ swedroid.se##h3:has-text(Prisjaktspriser)
 tasteline.com#$#.popup { overflow: auto !important; }
 tasteline.com##li.article:if(.category:has-text(/samarbete/i))
 thelocal.se##div[class*="section"]:if(div[class$="-label"]:has-text(/sponsored/i))
+tkj.se##li > a:has-text(Sponsor:)
 tvdags.se##.article-list__item:has(.sponsor)
 tvmatchen.nu#$#.custom-background { background-image: none !important; }
 underbaraclaras.se##article.post:if(.entry-summary > p:has-text(/annonssamarbete/i))
@@ -382,6 +384,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /apester-javascript-sdk.min.js$script,domain=allakorsord.se|allas.se|allers.se|antikochauktion.se|aretrunt.se|baaam.se|cafe.se|dromhemochtradgard.se|elle.se|elledecoration.se|ellematovin.se|femina.se|frida.se|hant.se|hemmets.se|mabra.com|matmagasinet.se|residencemagazine.se|svenskdam.se
 /appnexus.js$script,domain=blocket.se|minhembio.com
 /article/tv/nyheter/live-start/live-tv-senaste-nyheterna-med-expressen-tv$xmlhttprequest,domain=expressen.se
+/assets/js/front_js/*$script,domain=milansverige.se
 /assets/leeads_takeover/*$script,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se
 /assets/triggerbee/*$script,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se
 /at-internet-desktop.js$script,domain=klart.se
@@ -425,7 +428,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /cookiewarning$xmlhttprequest,domain=nyteknik.se
 /cx-emediate-userprofile-se.*.js$script,domain=eniro.se
 /CXense_Video_Handler/*$subdocument,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|vt.se
-/deadblocker-front.$script,stylesheet,domain=milansverige.se
 /dohi-gdpr/*$domain=cyclingplus.se|firstfoto.se|fitnessformen.se|halsafitness.se|macguiden.net
 /downloads.mailchimp.com/*$script
 /emediate-responsive-wp-plugin/*
@@ -700,6 +702,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@||atl.nu^$generichide
 @@||boffo.se^$generichide
 @@||clarahenry.se^$generichide
+@@||cloudfront.net/js/ads.js$script,domain=vf.se
 @@||cxpublic.com^$image,domain=mariestadstidningen.se|nwt.se|sla.se
 @@||d11j2g8hmtmh4u.cloudfront.net/jquery.$script,domain=alltforforaldrar.se|babyhjalp.se|blimamma.se|kalasdags.se|mammasidan.se|minbebis.com
 @@||datormagazin.se^$generichide
@@ -1322,6 +1325,9 @@ tekniksmart.se##.adcontainer
 testfakta.se###sliding-popup
 thelocal.se##.orange-panel
 tidningensyre.se##.social
+tkj.se###cookie-law-info-bar
+tkj.se##.category-annons
+tkj.se##a[href*="tkj.se/ad/"]
 tradera.com##div[data-component-cookie-notification]
 tradera.com##react-adslot
 tv.nu##.ad-mega--container
@@ -1346,12 +1352,7 @@ va.se##.sponsored-module
 vafinans.se###balken_top
 vardagspuls.se##.block-socialchannels
 vardagspuls.se##.fs-overlay-wrapper
-vf.se##.ajax-ad-info
-vf.se##.article__top-ad
-vf.se##.cookie__info
-vf.se##.readerlist__article-info__social
-vf.se##.text-ad-info
-vf.se##a[href="#bio"]
+vf.se##.ad-container
 viafree.se##.ad-click-through
 viafree.se##.pause-ad
 viivilla.se###product-area
@@ -1614,7 +1615,6 @@ webbjobb.io##.cookie
 ||meltwater.com^$third-party
 ||metapic.se^$third-party
 ||metric-mobil.aftonbladet.se^$image
-||milansverige.se^$csp=script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googleapis.com *.tvmatchen.nu *.wp.com
 ||mindreskatt.se^
 ||minfil.com/sw.js$script
 ||mobil.blocket.se/ufti$subdocument
@@ -1716,7 +1716,6 @@ webbjobb.io##.cookie
 ||stats.zotabox.com^$xmlhttprequest,domain=rapport24.com
 ||stegforhalsa.se^*/ad.js$script
 ||stumbleupon.com/hostedbadge.$script,domain=javligtgott.se
-||suntcontent.se^$third-party
 ||susnet.se/susnetstat.js$script
 ||svd.se^*/native-article$~third-party,xmlhttprequest
 ||svenskanamn.alltforforaldrar.se/js/svenskanamn_ads.$script
