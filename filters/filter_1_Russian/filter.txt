@@ -4650,7 +4650,7 @@ e.mail.ru#@#.b-slot_banner
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17347
 !+ NOT_PLATFORM(windows, mac, android)
-@@||ad.mail.ru/adp/?q%*_SITEID$domain=horo.mail.ru|news.mail.ru|kino.mail.ru|auto.mail.ru
+@@||ad.mail.ru/adp/?q*_SITEID$domain=mail.ru
 !
 ! minigames.mail.ru - ads replacement script
 mail.ru$$script[tag-content="TabWindowVisibilityManager"][max-length="7000"]
@@ -4697,10 +4697,19 @@ vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!importa
 overclockers.ru$$script[tag-content="enable_page_level_ads"][max-length="20000"][max-length="40000"]
 ||forums.overclockers.ru$replace=/(script.onerror = function\(\)\{)/\$1console.log('чииик');return;/,important
 forums.overclockers.ru#%#AG_onLoad(function() { window.chkA = function() {}; window.chkB = function() {}; });
+~forums.overclockers.ru,overclockers.ru#%#window.atob = function() { }
 ||overclockers.ru/static/js/app-pip.js|$empty,important
 forums.overclockers.ru#@##yandex_ad_1
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium)
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium && !adguard_ext_safari)
 @@||overclockers.ru/static/js/app-pip.js$domain=overclockers.ru,important
+@@||rotor.overclockers.ru/www/delivery/asyncjs.php|$domain=overclockers.ru|~forums.overclockers.ru
+overclockers.ru#@#.material-inline-an
+overclockers.ru#@#.material-other-feed
+@@||overclockers.ru/static/js/app-pip.js$domain=overclockers.ru|~forums.overclockers.ru,important
+@@||rotor.overclockers.ru/www/delivery/asyncspc.php|$domain=overclockers.ru|~forums.overclockers.ru
+@@||overclockers.ru/webservice/getPipPlace?pipId=1$domain=overclockers.ru|~forums.overclockers.ru
+@@||rotor.overclockers.ru/www/delivery/asyncspc.php?zones=*feed_the_cat$domain=overclockers.ru|~forums.overclockers.ru
+!#endif
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3011
 @@||vsetv.net/advert.js
@@ -16642,8 +16651,9 @@ wss://e.mail.ru/api/v1/messages/message?ajax_call=
 esports.mail.ru##.rb-video-widget
 esports.mail.ru##a.b-bg[target="_blank"]
 !
-health.mail.ru##.daynews__banner
-health.mail.ru##div[id^="rb_block_"]
+health.mail.ru##.branding-footer__banner
+health.mail.ru##[data-view="SlotView.mimic.direct"]
+health.mail.ru##div[data-module="SlotModel.mimic.240x400"]
 health.mail.ru##div[id^="rb_fs_"]
 health.mail.ru##.branding-p__table
 health.mail.ru##div[data-adq-id^="adqcontainer"]
