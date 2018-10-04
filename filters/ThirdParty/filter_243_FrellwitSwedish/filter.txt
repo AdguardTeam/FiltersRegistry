@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-10-03 08:17:53 CEST
+! Last modified: 2018-10-04 09:02:17 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -213,6 +213,8 @@ swedroid.se##h3:has-text(Prisjaktspriser)
 tasteline.com#$#.popup { overflow: auto !important; }
 tasteline.com##li.article:if(.category:has-text(/samarbete/i))
 thelocal.se##div[class*="section"]:if(div[class$="-label"]:has-text(/sponsored/i))
+tkj.se##[id^="custom_html-"]:has(h4:has-text(Radannonser))
+tkj.se##[id^="text-"]:has(h4:has-text(Ad:))
 tkj.se##li > a:has-text(Sponsor:)
 tvdags.se##.article-list__item:has(.sponsor)
 tvmatchen.nu#$#.custom-background { background-image: none !important; }
@@ -376,6 +378,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /ajax/native$xmlhttprequest,domain=8till5.se
 /ajax_statistics_count/*$xmlhttprequest,domain=dagensnaringsliv.se|industrinyheter.se
 /analytics/*$domain=tkj.se
+/annons-linje.gif$image,domain=tkj.se
 /annons-med-pil*.png$image,domain=filmtipset.se
 /annons.aspx?
 /annons/*$subdocument,domain=internetlankar.se
@@ -1264,6 +1267,7 @@ nyafilmerhd.*##div[style^="margin-top:180px"]
 nyafilmerhd.*##div[style^="margin-top:210px"]
 nyafilmerhd.*,dreamfilmhd.*##a[data-hover="LADDA NED"]
 nyafilmerhd.*,dreamfilmhd.*##a[href$=".html"][target="_blank"]
+nyafilmerhd.*,dreamfilmhd.*##li > a[target="_blank"]
 nyafilmerhd.*,dreamfilmhd.*,swesub.*##a[style*="height"][rel*="nofollow"]
 nyteknik.se###tws1
 nyteknik.se##.blurb-sponsored
@@ -1763,6 +1767,9 @@ yogaworld.se##.headerbar-container
 ||static.zbcdn2.net^$script,domain=rapport24.com
 ||stats.zotabox.com^$xmlhttprequest,domain=rapport24.com
 ||stegforhalsa.se^*/ad.js$script
+||streamtajm.*/webpush.$script
+||streamtajm.*/worker.$script
+||streamtajm.*^$csp=worker-src 'none'
 ||stumbleupon.com/hostedbadge.$script,domain=javligtgott.se
 ||susnet.nu/susnetstat.js$script
 ||susnet.se/susnetstat.js$script
