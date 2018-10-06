@@ -1,8 +1,8 @@
 !
-! Checksum: ry9umWbIXOJcPUKWS4R1lA
-! OriginalVersion: 201810061500
+! Checksum: jnJBhBAGEyIkgqUhAYLIZg
+! OriginalVersion: 201810061800
 ! Title: RU AdList
-! Last modified: 06 Oct 2018 15:00 UTC
+! Last modified: 06 Oct 2018 18:00 UTC
 ! Expires: 2 days (подписка обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -1179,7 +1179,6 @@ $popup,domain=101covet.com|176.114.0.126|176.114.0.132|37.220.36.15|3d-tracker.r
 ~baskino.me###tv_player a[href*="baskino."][target="_blank"]
 ~vk.com###vkMsg
 ###winvideoPlayer
-###yandex_ad
 ###zhlobam_net_informer_console
 ##.MIXADVERT_NET
 ##.SC_TBlock
@@ -14947,7 +14946,7 @@ $websocket,domain=0day.kiev.ua|192.102.7.159|193.106.30.70|193.106.30.84|1kinobi
 /smi24/$domain=inforeactor.ru|nahnews.org|nation-news.ru|newinform.com|polit.info|politexpert.net|riafan.ru|rueconomics.ru|slovodel.com
 /stargate/$domain=hlamer.ru|kadu.ru
 /static/banners/*$domain=gagadget.com|maxpark.com|vse-sto.com.ua
-/u_*.js|$script,~third-party,domain=driveroff.net|samlab.ws
+/u_*.js|$script,~third-party,domain=driveroff.net|politnavigator.net|samlab.ws
 /upload/iblock/750/$domain=border-fan.ru|dad-fan.ru|freehat.cc|grif-fan.ru|lalapaluza.ru|simp-fan.ru|sp-fan.ru
 /upload/iblock/a6b/$domain=border-fan.ru|dad-fan.ru|freehat.cc|grif-fan.ru|lalapaluza.ru|simp-fan.ru|sp-fan.ru
 /upload/rk/$domain=37.ru|arsenaltula.ru|asn24.ru|avtosreda.ru|bel.ru|bits.media|citrus.ua|con-med.ru|cryptolymp.ru|footballreview.ru|gorod48.ru|hi-fi.ru|innov.ru|k1news.ru|marpravda.ru|matchfishing.ru|mediaryazan.ru|mk.tula.ru|mnmag.ru|mos.news|newkaliningrad.ru|newsroom24.ru|nmosktoday.com|ohranatruda.ru|onlinetambov.ru|planetaseminarov.ru|podrobno.uz|portamur.ru|rabochy-put.ru|riavrn.ru|securitylab.ru|seonews.ru|sochi.com|sportfm.ru|telesputnik.ru|tvk6.ru|ural56.ru|vdvsn.ru|velikiynovgorod.ru|vladtv.ru|vt-inform.ru|x-race.info|ya62.ru|zebra-tv.ru|zi.dn.ua
@@ -16816,7 +16815,7 @@ igdz1.ru^$script,domain=igdz.ru
 ||prostatitanet.com/wp-content/plugins/pg-advanced-ads/
 ||prostolinux.ru/wp-content/bn/
 ||prostopleer.com/t.php?
-||prostoporno.sexy/eve
+||prostoporno.sexy^*.php$script
 ||protanki.tv/img/banner_
 ||protdt.ru/wp-content/plugins/pg-advanced-ads/
 ||proxyweb.net/js/dhtmlwindow.js
@@ -17711,6 +17710,7 @@ gismeteo.by,gismeteo.kz,www.gismeteo.ru##[class^="media_"]:not(.media_with_map)
 ! Временные фиксы для hdlight
 @@||$~third-party,xmlhttprequest,domain=37.220.36.15|blackoctopus.cc|cdn.720hd.club|cdn.ex-fs.net|cdn.ivvi.online|cdn.kinogid.me|cdn.kinogo-hq.ru|cdn.kinosky.net|cdn.profilms.top|cdnapponline.com|kino-stream.online|moon.hdkinoteatr.com|moonwalk.cc|moonwalk.center|mov.hiex.ru|online.1kinobig.ru|pandastream.cc|s1.kino-kingdom.com|serpens.nl|staticnlcdn.com|streamguard.cc|streamstorm.online|streamtomars.me|video.palevo.stream|video.showfilm.club
 @@||alforenao.com^$xmlhttprequest
+@@||ampatcape.com^$xmlhttprequest
 @@||streamguard.cc^$xmlhttprequest,domain=streamstorm.online|streamtomars.me
 @@||striedmax.com^$xmlhttprequest
 @@||unmuncong.com^$xmlhttprequest
@@ -18478,7 +18478,10 @@ news.yandex.by,news.yandex.kz,news.yandex.ru,news.yandex.ua##body * * div[class]
 news.yandex.by,news.yandex.kz,news.yandex.ru,news.yandex.ua##body * * div[class][id]:empty
 news.yandex.by,news.yandex.kz,news.yandex.ru,news.yandex.ua##polygon[points]
 ! Яндекс.Погода
-/^https?://yandex\.(by|kz|ru|ua)/pogoda/[^\s]{300,}/$subdocument,~third-party,xmlhttprequest
+/^https?://yandex\.(by|kz|ru|ua)/pogoda/[^\s]{300,}/$subdocument,~third-party
+yandex.by,yandex.kz,yandex.ru,yandex.ua##body[data-bem*="pogoda"] * * div[id] > :not([class]) > :not([class]) > :not(div):not([class]):empty
+yandex.by,yandex.kz,yandex.ru,yandex.ua##body[data-bem*="pogoda"] * * div[id] > :not([class]) > :not(div):not([class]):empty
+yandex.by,yandex.kz,yandex.ru,yandex.ua##body[data-bem*="pogoda"] * * div[id] > :not(div):not([class]):empty
 yandex.by,yandex.kz,yandex.ru,yandex.ua##body[data-bem*="pogoda"] * * div[id]:empty
 yandex.by,yandex.kz,yandex.ru,yandex.ua##body[data-bem*="pogoda"] polygon[points]
 ! Яндекс.Телепрограмма

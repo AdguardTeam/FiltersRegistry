@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-10-05 19:27:04 CEST
+! Last modified: 2018-10-06 18:42:48 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -207,6 +207,7 @@ svt.se##li.nyh_contactbox-item:has(div[class*="facebook"])
 svt.se##li.nyh_contactbox-item:has(div[class*="instagram"])
 svt.se##li.nyh_contactbox-item:has(div[class*="twitter"])
 swedroid.se##.aeChart:has(a[href*="prisjakt.nu"])
+swedroid.se##.article:has(span:has-text(Sponsrat:))
 swedroid.se##.puff:has(h1:has-text(/sponsrat/i))
 swedroid.se##.puff:has(h1:has-text(Android på Prisjakt))
 swedroid.se##.widget-single:has(h3:has-text(Android på Prisjakt))
@@ -640,7 +641,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /sticky*.$script,stylesheet,domain=svenskafans.com
 /sticky-ads.*.js$script,domain=hemnet.se
 /strossle-start-page-ad$xmlhttprequest,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se
-/sw_minfilcom.$script,domain=minfil.com
 /swfobject.js$script,domain=dagenstv.com
 /takeover.gif$image,domain=flamman.se
 /telemetry/measure$~third-party,xmlhttprequest,domain=momondo.se
@@ -1669,7 +1669,8 @@ yogaworld.se##.headerbar-container
 ||metapic.se^$third-party
 ||metric-mobil.aftonbladet.se^$image
 ||mindreskatt.se^
-||minfil.com/sw.js$script
+||minfil.com/sw$script
+||minfil.com^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' *.minfil.com
 ||mobil.blocket.se/ufti$subdocument
 ||mobil.se/facebook/$xmlhttprequest
 ||momondo.se/akam/$script
