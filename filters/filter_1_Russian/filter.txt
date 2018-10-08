@@ -23,6 +23,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||ladyya.ru^$third-party
 ||ya.vteplom.ru^$third-party
 ||youngrul.pro^$third-party
 ||lasttopreg.top^$third-party
@@ -2984,7 +2985,6 @@ http://wq3.ru^$third-party
 ||s1block.com/rotator$third-party
 ||s1venus.biz^$third-party
 ||s1venus.com^$third-party
-||s4block.com^$third-party
 ||sadreno.com^$third-party
 ||saferedd.com^$third-party
 ||saferedirrect.com^$third-party
@@ -3817,6 +3817,8 @@ http://wq3.ru^$third-party
 ! Ads reinjection (For apps only)
 !
 !+ PLATFORM(windows, mac, android)
+||s4block.com^$third-party
+!+ PLATFORM(windows, mac, android)
 ||block.pigiuqproxy.com^$empty
 !+ PLATFORM(windows, mac, android)
 ||zfvklk.ru^$third-party
@@ -4078,9 +4080,9 @@ investgazeta.ua###please2
 @@||happy-hack.ru/adv*.js
 @@||happy-hack.ru/popunder.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19599
-qaru.site#%#AG_abortInlineScript(/fuckAdBlock/, 'document.addEventListener');
+qaru.site#%#AG_abortInlineScript(/script.onerror/, 'document.addEventListener');
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$empty,important,domain=qaru.site
-!+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_ublock)
+@@||cse.google.com/adsense/search/async-ads.js$domain=qaru.site
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=qaru.site
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19774
 @@||kodik.cc/*/adsbygoogle.js
@@ -4210,15 +4212,14 @@ $$script[wildcard="*!function(f,u,n,t,o,r,i)*,mt=Zu*"][max-length="10000"]
 !
 allboxing.ru,sinoptik.ua,korrespondent.net,hvylya.net,newsyou.info,facenews.ua,kurs.com.ua$$script[wildcard="*!function () { function*f.length; u++*, Bn =*"][max-length="10000"]
 tabfilm.ru,tushkan-tv.net,kino-hd1080.ru$$script[wildcard="*var _0x*['length']*));}());*"][max-length="25000"]
-zemlyaki.name,sonnikonline.club$$script[tag-content=".com/rotator-v2/"][max-length="800"]
 tabfilm.ru,tabfilm.online,kinocoin.online$$script[wildcard="*var _0x*.constructor*function _0x*"][max-length="24000"]
 hdrezka.co.ua$$script[wildcard="*var _0x*===undefined){*"][max-length="70000"]
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12917
+opnevmonii.ru,zemlyaki.name,sonnikonline.club$$script[tag-content=".com/rotator-v2/"][max-length="800"]
+opnevmonii.ru,bodytrain.ru,vvinograd.ru,zemlyaki.name,felomena.com#%#AG_abortInlineScript(/onerror/, 'document.addEventListener');
+!+ PLATFORM(windows, mac, android)
 ://block.*.com/rotator-v2/*.js
-!+ NOT_OPTIMIZED PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
-@@://block.pigiuqproxy.com/rotator-v2/*.js$script,domain=bodytrain.ru|zemlyaki.name|sonnikonline.club|felomena.com|vvinograd.ru
-bodytrain.ru,vvinograd.ru,zemlyaki.name,felomena.com#%#AG_abortInlineScript(/onerror/, 'document.addEventListener');
 !
 !+ NOT_PLATFORM(windows, mac, android)
 forumodua.com,meta.ua,dengi.ua,bookfi.net,zaxid.net,real-vin.com,hdreactor.club,kinoafisha.ua,simpsonsua.com.ua,glavcom.ua,filmitorrent.org,tabfilm.ru,etextlib.ru,kurs.com.ua,kurs.com.ru,isport.ua,lostfilm-online.org,strana.ua,telegraf.in.ua,24tv.ua,ria-m.tv,kaztorka.org,segodnya.ua,dengi.ua,allboxing.ru#%#AG_abortInlineScript(/!function\(\)/, 'String.fromCharCode');
@@ -5199,7 +5200,7 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$styl
 ||static-mon.yandex.net/static/main.js?pid=$replace=/[\s\S]+/this.init=function(){}/,domain=24smi.org|auto.ru|avito.ru|avtovzglyad.ru|baby.ru|businessman.ru|dni.ru|drive2.com|drive2.ru|e1.ru|echo.msk.ru|fb.ru|forexpf.ru|gismeteo.kz|gismeteo.md|gismeteo.ua|gismeteo.by|gismeteo.ru|glav.su|gorodrabot.ru|infoniac.ru|it-tehnik.ru|kakprosto.ru|kinopoisk.ru|mathb-ege.sdamgia.ru|mk.ru|nkj.ru|ohotniki.ru|oko-planet.su|otzovik.com|pikabu.ru|rambler.ru|razlozhi.ru|sdamgia.ru|syl.ru|tsargrad.tv|vz.ru
 ! 27.09.18
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#%#(function() { var proxied = window.XMLHttpRequest.prototype.open; window.XMLHttpRequest.prototype.open = function() { if (arguments[1] && arguments[1].indexOf("static-mon.yandex.net/static/main.js") > 0) { this.send = function() {}; return; } return proxied.apply(this, [].slice.call(arguments)); }; })();
-24smi.org,auto.ru,avito.ru,avtovzglyad.ru,baby.ru,businessman.ru,dni.ru,drive2.com,drive2.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.kz,gismeteo.md,gismeteo.ua,gismeteo.by,gismeteo.ru,glav.su,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,pikabu.ru,rambler.ru,razlozhi.ru,sdamgia.ru,syl.ru,tsargrad.tv,vz.ru#%#(function() { var proxied = window.XMLHttpRequest.prototype.open; window.XMLHttpRequest.prototype.open = function() { if (arguments[1] && arguments[1].indexOf("static-mon.yandex.net/static/main.js") > 0) { this.send = function() {}; return; } return proxied.apply(this, [].slice.call(arguments)); }; })();
+quto.ru,24smi.org,auto.ru,avito.ru,avtovzglyad.ru,baby.ru,businessman.ru,dni.ru,drive2.com,drive2.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.kz,gismeteo.md,gismeteo.ua,gismeteo.by,gismeteo.ru,glav.su,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,pikabu.ru,rambler.ru,razlozhi.ru,sdamgia.ru,syl.ru,tsargrad.tv,vz.ru#%#(function() { var proxied = window.XMLHttpRequest.prototype.open; window.XMLHttpRequest.prototype.open = function() { if (arguments[1] && arguments[1].indexOf("static-mon.yandex.net/static/main.js") > 0) { this.send = function() {}; return; } return proxied.apply(this, [].slice.call(arguments)); }; })();
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
 @@||awaps.yandex.net/data/lib/awcalciframe.js$domain=yandex.by|yandex.com|yandex.fr|yandex.kz|yandex.ru|yandex.ua|yastatic.net
 @@||yandex.ru/adriver_$xmlhttprequest,other,domain=yandex.by|yandex.com|yandex.com.tr|yandex.fr|yandex.kz|yandex.ru|yandex.ua
@@ -7614,7 +7615,7 @@ smotret-anime.ru$$script[tag-content="var el = document.getElementById"][max-len
 ! kg-portal.ru - удаление отступа сверху
 kg-portal.ru$$style[tag-content="height:"][max-length="800"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17771
-linza.guru,kino-fox.com,bodytrain.ru,mothersguide.ru,turkseason.com,woman365.ru,kriminal.net.ua,nanogah.com,2019god.net,omj.ru,novosti-n.org,podrobnosti.ua,hronika.info,kinorezka.net,avtozakony.ru,pojrem.ru$$script[tag-content="window.RESOURCE_"][max-length="100"]
+opnevmonii.ru,linza.guru,kino-fox.com,bodytrain.ru,mothersguide.ru,turkseason.com,woman365.ru,kriminal.net.ua,nanogah.com,2019god.net,omj.ru,novosti-n.org,podrobnosti.ua,hronika.info,kinorezka.net,avtozakony.ru,pojrem.ru$$script[tag-content="window.RESOURCE_"][max-length="100"]
 $$script[tag-content="window.RESOURCE_"][max-length="100"]
 ! htapop
 kinozal-tv.appspot.com$$script[tag-content="var __htapop = {};"][max-length="400"]
@@ -9003,6 +9004,7 @@ Ly9hbi55YW5kZXgucnUv
 !
 ||avtovzglyad.ru/*/*/*/*/*/*/*/*/*/*/*/*/*/*/$script
 !
+onlinelife.club##.auth-height
 megamedportal.ru##center > a[target="_blank"] > img
 operabelno.ru##.n-banner-wrapper
 hdmulti.net##.full_r > center > img[width="553"]
@@ -16484,7 +16486,7 @@ gismeteo.ru##.footer-ban
 gismeteo.ru##.header-ban
 gismeteo.ua##div[id="weather-rbkua"]
 ! <script>window.RESOURCE_* = 'ad aomain';</script>
-/\/[A-Za-z0-9-.]+\/[A-Za-z0-9_-]{2,4}.js$/$third-party,domain=linza.guru|kino-fox.com|bodytrain.ru|mothersguide.ru|turkseason.com|woman365.ru|kriminal.net.ua|nanogah.com|2019god.net|omj.ru|sonnikonline.club|podrobnosti.ua|hronika.info|kinorezka.net|avtozakony.ru|pojrem.ru|novosti-n.org
+/\/[A-Za-z0-9-.]+\/[A-Za-z0-9_-]{2,4}.js$/$third-party,domain=opnevmonii.ru|linza.guru|kino-fox.com|bodytrain.ru|mothersguide.ru|turkseason.com|woman365.ru|kriminal.net.ua|nanogah.com|2019god.net|omj.ru|sonnikonline.club|podrobnosti.ua|hronika.info|kinorezka.net|avtozakony.ru|pojrem.ru|novosti-n.org
 !
 !--- Hints ------
 !
