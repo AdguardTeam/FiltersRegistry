@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-10-08 08:49:53 CEST
+! Last modified: 2018-10-09 13:05:46 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -36,7 +36,7 @@
 /plugins/popup-builder-platinum/*$important,domain=mmabetz.se|sportpanelen.se
 /streamsense.$important,script,domain=dn.se
 /sweden/swedish/hjo-tidning.html$document
-/wp-content/plugins/google-analytics-for-wordpress/*$important,script,~third-party,domain=alltsomsker.nu|battrestadsdel.se|carinasphotolifestyle.se|clarakron.com|fjl.se|folkblick.se|foodstories.se|fores.se|karolinesvintage.se|katerinamagasin.se|mmabetz.se|mmanytt.se|nyhetsbyran.org|ralycka.se|sportpanelen.se|starbys.se|tidskriftenrespons.se|undertian.com|vegokak.se
+/wp-content/plugins/google-analytics-for-wordpress/*$important,script,~third-party,domain=alltsomsker.nu|battrestadsdel.se|carinasphotolifestyle.se|clarakron.com|fjl.se|folkblick.se|foodstories.se|fores.se|karolinesvintage.se|katerinamagasin.se|mmabetz.se|mmanytt.se|nyhetsbyran.org|ralycka.se|sportpanelen.se|springlfa.se|starbys.se|tidskriftenrespons.se|undertian.com|vegokak.se|villalivet.se
 /wp-content/plugins/google-analytics-premium/*$important,script,~third-party,domain=ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 101ideer.se,alltommat.se,alltomtradgard.se,amelia.se,lantliv.com,mama.nu,privataaffarer.se,skonahem.com,styleby.nu,tara.se,topphalsa.se,veckorevyn.com##a.teaser:has-text(/annonssamarbete/i)
 99.se##.nitem:has(a[href="/arkiv/kategori/annons"])
@@ -90,6 +90,7 @@ devote.se##.blogPostWrapper:if(span:has-text(/sponsrat inlägg/i))
 devote.se##[class^="col-"]:has(.burt-unit-metadata)
 devote.se##article:if(div[class]:has-text(/samarbete/i))
 di.se##.article-teaser__text-inline:has(a[href^="/brandstudio/"])
+di.se##.carousel-tab:has-text(/annons:/i)
 di.se##.clip-browser__clip:has(a[href*="/annons-"])
 dreamfilm.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
 egoinas.se##article.uk-article:has(.sw-sf-sponsor)
@@ -543,6 +544,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /plugins/add-to-any/*$script,stylesheet
 /plugins/adsanity/*$script,stylesheet
 /plugins/annonstorget/*$script,domain=svenskjakt.se
+/plugins/arscode-ninja-popups/*$domain=springlfa.se
 /plugins/better-adsmanager/*$script,stylesheet
 /plugins/blog-analytics/*$domain=dagensanalys.se
 /plugins/bmb-dfp-plugin/*$script,stylesheet
@@ -560,6 +562,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /plugins/eu-cookie-law/*$script,stylesheet
 /plugins/facebook-conversion-pixel/*
 /plugins/facebook-pagelike-widget/*$script
+/plugins/gdpr/*$domain=villalivet.se
 /plugins/ginger/addon/analytics/*$script
 /plugins/ginger/front/js/cookies-enabler$script,stylesheet
 /plugins/host-analyticsjs-local/*$script
@@ -772,7 +775,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@||pomu.se^$generichide
 @@||popmuzik.se^$generichide
 @@||remus.garaget.org/www/delivery/$script,~third-party,xmlhttprequest
-@@||rocknytt.net^$generichide
 @@||samnytt.se^$generichide
 @@||saraabrahamsson.se^$generichide
 @@||skanesport.se^$generichide
@@ -793,7 +795,7 @@ affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,vt.se##.lunchguide
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,vt.se##img[data-original*="destination.se"]
 affarsstaden.se##.esb-ad
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nickelodeon.se,nyteknik.se##.ad-container
+affarsvarlden.se,arbetarskydd.se,dagensmedia.se,improveme.se,lag-avtal.se,nickelodeon.se,nyteknik.se,vf.se##.ad-container
 affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.ad-panorama
 affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.ad-teaser
 affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.disable-ad-marks
@@ -1318,15 +1320,12 @@ realtid.se##.block-realtid-ads
 realtid.se##.block-realtid-native
 realtid.se##.takeover-overlay
 resume.se##.teaser-sponsored
-rocknytt.net##.advads-widget
-rocknytt.net##[class*="advads_ad_widget"]
-rocknytt.net##aside[id^="advads_ad_widget-"]
-rocknytt.net##div[id^="advads-"]
 samnytt.se##.nc_socialPanel
 samnytt.se##a[data-bid][href*="/linkout/"]
 schoolido.se##.so-cookie__area
 skanesport.se###check-also-box.show-check-also
 skanesport.se###cookie-notice
+skanesport.se##.stream-item
 skanesport.se##[id^="skane-slider"]
 skillingaryd.nu###more-banners
 skk.se###cookie-button-banner
@@ -1336,11 +1335,15 @@ skogsforum.se##.masthead
 skogsforum.se##a[href^="https://goo.gl/"]
 skrattnet.se##.region-sidebar-second
 smartsenior.se##.ss-modal
+sonicmagazine.com##[class^="ad-"]
 sportfiskeforum.se###fj-topad
 sportpanelen.se###text-html-widget-3
 sportpanelen.se###tie-block_1832
 spray.se###side_banners
 spray.se###top_banner
+springlfa.se##.adrotate-loop
+springlfa.se##[class^="snp-pop"]
+springlfa.se##[id^="ad"]
 stayfriends.se###cookieHint
 streamtajm.*##.longbanner
 surfa.se###loader-wrapper
@@ -1405,7 +1408,6 @@ va.se##.sponsored-module
 vafinans.se###balken_top
 vardagspuls.se##.block-socialchannels
 vardagspuls.se##.fs-overlay-wrapper
-vf.se##.ad-container
 viafree.se##.ad-click-through
 viafree.se##.pause-ad
 viivilla.se###product-area
@@ -1623,6 +1625,7 @@ yogaworld.se##.headerbar-container
 ||herokuapp.com/visit?$image
 ||herokuapp.com^$third-party,domain=aftonbladet.se
 ||hingsten.se^*/*_ad_$image
+||hittahem.se^$third-party
 ||hmads.se^$third-party
 ||hockeymagasinet.com/footer/ad$xmlhttprequest
 ||hoomemakleri.se^$third-party
@@ -1709,6 +1712,7 @@ yogaworld.se##.headerbar-container
 ||nordishopping.com^
 ||nordiskemedier.dk/banner/
 ||norranstats.azurewebsites.net^$xmlhttprequest
+||norstatsurveys.com^$third-party
 ||nouw.com/api/campaignpost$xmlhttprequest
 ||nouw.com/campaignpost/reg/$image
 ||ntm.eu/om/img/cx/Matchad$subdocument,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|vt.se
@@ -1792,6 +1796,7 @@ yogaworld.se##.headerbar-container
 ||static.zbcdn2.net^$script,domain=rapport24.com
 ||stats.zotabox.com^$xmlhttprequest,domain=rapport24.com
 ||stegforhalsa.se^*/ad.js$script
+||storymedia.se^$third-party
 ||streamtajm.*/webpush.$script
 ||streamtajm.*/worker.$script
 ||streamtajm.*^$csp=worker-src 'none'
