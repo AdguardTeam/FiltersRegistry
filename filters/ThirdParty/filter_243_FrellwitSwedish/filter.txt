@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-10-13 19:33:10 CEST
+! Last modified: 2018-10-16 10:04:58 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -29,7 +29,7 @@
 .info/tv4-nyheter/$document
 /_ad.js$important,script,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|uppsala.com|uppsalatidningen.se|vt.se
 /adblock_mobile.$important,script,domain=gamereactor.se
-/assets/js/ads.$important,script,domain=hjotidning.se|vf.se
+/assets/js/ads.$important,script,domain=hjotidning.se|mariestadstidningen.se|sla.se|vf.se
 /google-analytics-dashboard$important,script,domain=cyclingplus.se|firstfoto.se|fitnessformen.se|halsafitness.se|hemmahosulrika.se|macguiden.net|ordfrontforlag.se|ulrikadavidsson.se
 /js/ads.$important,script,~third-party,domain=alltomstockholm.se|mitti.se
 /ntm-digital/adn/adn-setup.$important,script
@@ -156,7 +156,6 @@ linnherbertsson.se##.content:has(.sponsored-container)
 listor.se##article:has(a[href*="/annons/"])
 lundagard.se##.widget:has(h3:has-text(Annons:))
 magasin55.se##.td_module_wrap:has(a[href$="/annons/"])
-mariestadstidningen.se,nwt.se,sla.se#$#html { overflow: auto !important; }
 medievarlden.se#$#html,body { overflow: auto !important; }
 megafonen.nu##.box:if(h5 > span.title:has-text(/annons/i))
 megafonen.nu##.box:if(h5 > span.title:has-text(/sponsrade inlägg/i))
@@ -189,6 +188,7 @@ nordichardware.se##.td_block_wrap:if(span:has-text(/sponsrat/i))
 nordichardware.se##.wpb_text_column:has(.surfamodul-blocktitle)
 nordichardware.se##div.td_block_text_with_title:if(h4 > span:has-text(Från Surfa))
 nouw.com##.Container_blogPost:if(em:has-text(/reklamsamarbete/i))
+nwt.se#$#html { overflow: auto !important; }
 nyadagbladet.se##div[class^="wrapper-col"]:has-text(Annons:)
 nyheter24.se##[id^="article"]:has(.native_header)
 nyheter24.se##[id^="article"]:has(em:has-text(/artikeln är i samarbete med/i))
@@ -553,6 +553,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /plugins/add-to-any/*$script,stylesheet
 /plugins/adsanity/*$script,stylesheet
 /plugins/annonstorget/*$script,domain=svenskjakt.se
+/plugins/appbanners/*
 /plugins/arscode-ninja-popups/*$domain=springlfa.se
 /plugins/better-adsmanager/*$script,stylesheet
 /plugins/blog-analytics/*$domain=dagensanalys.se
@@ -717,12 +718,13 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@/adserver.$script,~third-party,domain=fotosidan.se|utsidan.se
 @@/advertisement*.js$script,domain=dn.se
 @@/advertisement.js$script,~third-party,domain=blocket.se|emocore.se|kaninsajten.se|kit.se|saljplatsen.se|spela.se
+@@/assets/adsbygoogle.js$script,~third-party,domain=lonch.se
 @@/granted/consent.json$domain=idg.se
 @@/js/ad.js$~third-party,domain=sweclockers.com
 @@/js/ads.js$~third-party,domain=101ideer.se|affarsliv.com|affarslivgotland.se|alltforforaldrar.se|alltommat.se|alltomtradgard.se|alltsomsker.nu|amelia.se|bike.se|caroftheyear.se|corren.se|damernasvarld.se|deliquate.se|englasshowroom.com|eposten.se|familyliving.se|folkbladet.se|foretagande.se|gardochtorp.se|godsochgardar.se|helagotland.se|hemochantik.se|husbilhusvagn.se|ilikeradio.se|isabellalowengrip.se|johannatoftby.se|klackspark.com|klassiker.nu|kpwebben.se|kritiker.se|kuriren.nu|lantliv.com|ljudochbild.se|madeleineilmrud.se|magdalenagraaf.se|malagaguiden.se|mama.nu|matplatsen.net|mopedgaraget.se|mvt.se|naturvetenskap.org|norrbottensaffarer.se|nsd.se|nt.se|privataaffarer.se|pt.se|rabattpris.se|radio.se|skonahem.com|smartleasing.se|styleby.nu|svenskjakt.se|swedroid.se|tara.se|teknikensvarld.se|tidningenhembakat.se|topphalsa.se|tvmatchen.nu|unt.se|uppsalatidningen.se|veckorevyn.com|vibilagare.se|viforaldrar.se|villavarmt.se|vt.se
 @@/js/ads/advert.min.js$script,~third-party,domain=spelo.se
 @@/js/adsbygoogle.js^$script,~third-party,domain=feber.se|tjock.se
-@@/js/advert.$script,domain=mariestadstidningen.se|nwt.se|sla.se
+@@/js/advert.$script,domain=nwt.se
 @@/js/advert.js$script,~third-party,domain=burlovsnyheter.se
 @@/js/advertisement*.$script,~third-party,domain=brollopstorget.se|dagensmedia.nu|devote.se|expressen.se|familjeliv.se|feber.se|skyddsombud24.se|tjock.se
 @@/js/advertising.$script,~third-party,domain=byggnadsarbetaren.se|elbilsnytt.se|svegot.se|tekniksmart.se|vi-tidningen.se|vilaser.se
@@ -740,8 +742,8 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@||backend.worldoftulo.com^$script,subdocument
 @@||boffo.se^$generichide
 @@||clarahenry.se^$generichide
-@@||cloudfront.net/js/ads.js$script,domain=hjotidning.se|vf.se
-@@||cxpublic.com^$image,domain=mariestadstidningen.se|nwt.se|sla.se
+@@||cloudfront.net/js/ads.js$script,domain=hjotidning.se|mariestadstidningen.se|sla.se|vf.se
+@@||cxpublic.com^$image,domain=nwt.se
 @@||d11j2g8hmtmh4u.cloudfront.net/jquery.$script,domain=alltforforaldrar.se|babyhjalp.se|blimamma.se|kalasdags.se|mammasidan.se|minbebis.com
 @@||datormagazin.se^$generichide
 @@||dn.se^$generichide
@@ -776,7 +778,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@||linnahlborg.se^$generichide
 @@||livetombord.se^$generichide
 @@||lovisawallin.se^$generichide
-@@||mariestadstidningen.se^$generichide
 @@||mestmotor.se^$generichide
 @@||moamattsson.se^$generichide
 @@||morgonbladet.nu^$generichide
@@ -795,7 +796,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@||samnytt.se^$generichide
 @@||saraabrahamsson.se^$generichide
 @@||skanesport.se^$generichide
-@@||sla.se^$generichide
 @@||sn.se^$generichide
 @@||sportbibeln.se^$generichide
 @@||stockblogs.se^$generichide
@@ -812,7 +812,7 @@ affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,vt.se##.lunchguide
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,vt.se##img[data-original*="destination.se"]
 affarsstaden.se##.esb-ad
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,hjotidning.se,improveme.se,lag-avtal.se,nickelodeon.se,nyteknik.se,vf.se##.ad-container
+affarsvarlden.se,arbetarskydd.se,dagensmedia.se,hjotidning.se,improveme.se,lag-avtal.se,mariestadstidningen.se,nickelodeon.se,nyteknik.se,sla.se,vf.se##.ad-container
 affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.ad-panorama
 affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.ad-teaser
 affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.disable-ad-marks
@@ -830,7 +830,7 @@ aftonbladet.se##.share-icons
 aftonbladet.se##.social-shares
 aftonbladet.se##[id*="abAdArea"]
 aftonbladet.se,gamereactor.se,muscles.se,nordichardware.se,nyheteridag.se,svd.se#@#.afs_ads
-agriprim.se,bettips.se,bike.se,caroftheyear.se,e.se,entreprenadaktuellt.se,husbilhusvagn.se,ja.se,klassiker.nu,lovelylife.se,maskinstationerna.se,mopedgaraget.se,norran.se,nyckelspel.se,skogsaktuellt.se,spelo.se,sweclockers.com,vaken.se,vibilagare.se##.banner
+agriprim.se,bettips.se,bike.se,caroftheyear.se,e.se,entreprenadaktuellt.se,husbilhusvagn.se,ja.se,klassiker.nu,lovelylife.se,maskinbladet.se,maskinstationerna.se,mopedgaraget.se,norran.se,nyckelspel.se,skogsaktuellt.se,spelo.se,sweclockers.com,vaken.se,vibilagare.se##.banner
 akaskidor.se,hemtrevligt.se,kingmagazine.se,livetombord.se,mestmotor.se,svenskgolf.se,tidningenhalsa.se,utemagasinet.se,vagabond.se###facebookSlideIn
 akaskidor.se,hemtrevligt.se,kingmagazine.se,livetombord.se,mestmotor.se,svenskgolf.se,tidningenhalsa.se,utemagasinet.se,vagabond.se##.alert-cookies
 akaskidor.se,hemtrevligt.se,kingmagazine.se,livetombord.se,mestmotor.se,svenskgolf.se,tidningenhalsa.se,utemagasinet.se,vagabond.se##.latest-article-native
@@ -1219,13 +1219,6 @@ loppi.se##.page__ad
 lundagard.se###bdCheckAlso.bdCheckAlsoShow
 magasinetparagraf.se###large_banner
 majaelisabeth.com##.apprl-title
-mariestadstidningen.se,nwt.se,sla.se###cookieChoiceInfo
-mariestadstidningen.se,nwt.se,sla.se###lokusjobb_small
-mariestadstidningen.se,nwt.se,sla.se##.mfp-bg
-mariestadstidningen.se,nwt.se,sla.se##.mfp-wrap
-mariestadstidningen.se,nwt.se,sla.se##.top-landscape-ad
-mariestadstidningen.se,nwt.se,sla.se##a[href*=".se/annons/"]
-mariestadstidningen.se,nwt.se,sla.se##a[href="#hotelscombined"]
 markbladet.se###fixed
 markbladet.se###small_yellowbox
 market.se###newsletter-rollup
@@ -1302,6 +1295,13 @@ norran.se##.js-cookie-information-bar
 norran.se##.social-share__button
 norrbottensaffarer.se###naaddbox
 nvp.se##[id*="Banner_PageList"]
+nwt.se###cookieChoiceInfo
+nwt.se###lokusjobb_small
+nwt.se##.mfp-bg
+nwt.se##.mfp-wrap
+nwt.se##.top-landscape-ad
+nwt.se##a[href*=".se/annons/"]
+nwt.se##a[href="#hotelscombined"]
 nyadagbladet.se###adpadding
 nyafilmerhd.*,dreamfilmhd.*,real123movies.*##a[data-hover="LADDA NED"]
 nyafilmerhd.*,dreamfilmhd.*,real123movies.*##a[href$=".html"][target="_blank"]
@@ -1446,7 +1446,7 @@ viseniorer.se##.topheaderinfo
 webbjobb.io##.cookie
 yogaworld.se##.headerbar-container
 |http://sifomedia.
-|https://kampanj.$domain=mariestadstidningen.se|nwt.se|sla.se
+|https://kampanj.$domain=nwt.se
 |https://sifomedia.
 ||10bet.com^$third-party
 ||185.102.215.69/wordpresshttp://bimber-live.localhost$image,domain=mmabetz.se
@@ -1779,7 +1779,7 @@ yogaworld.se##.headerbar-container
 ||rabble-res.cloudinary.com^$image,domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 ||real123movies.*/wp-content/themes/keremiya1/js/license.$script
 ||real123movies.*/wp-content/themes/keremiya1/js/script.js$script
-||real123movies.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com *.gstatic.com
+||real123movies.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com *.gstatic.com *.cloudflare.com
 ||realtime.co^$websocket,domain=pomu.se
 ||reauthenticator.com^$third-party
 ||reco.se^$third-party
