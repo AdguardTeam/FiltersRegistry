@@ -5203,9 +5203,12 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$styl
 ! For all Yandex portals
 !#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
 ||yastatic.net/*.bundles/*.js$replace=/var n=\{\};return/var n={};return;/
+! new style
 ||static-mon.yandex.net/static/main.js?pid=$replace=/result\.push\(String\.fromCharCode\(xored\)\);}return result\.join\(""\);/}return "this.init = function() { \/* Absolutely nothing *\/ }; ";/
+! domains with an old style
+||static-mon.yandex.net/static/main.js?pid=$domain=afisha.yandex.by|afisha.yandex.kz|afisha.yandex.ru|afisha.yandex.ua|24smi.org|auto.ru|avito.ru|avtovzglyad.ru|baby.ru|businessman.ru|dni.ru|drive2.com|drive2.ru|e1.ru|echo.msk.ru|fb.ru|forexpf.ru|gismeteo.kz|gismeteo.md|gismeteo.ua|gismeteo.by|gismeteo.ru|glav.su|gorodrabot.ru|infoniac.ru|it-tehnik.ru|kakprosto.ru|kinopoisk.ru|mathb-ege.sdamgia.ru|mk.ru|nkj.ru|ohotniki.ru|oko-planet.su|otzovik.com|pikabu.ru|rambler.ru|razlozhi.ru|sdamgia.ru|syl.ru|tsargrad.tv|vz.ru,replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/,important
 ! Yandex.Afisha
-||afisha.yandex.ru/static/main.js$replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/
+!||afisha.yandex.ru/static/main.js$replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/
 ! Main page
 ||yastatic.net/www/*.js$replace=/home.getData\("adb.data"\);/home.getData("adb.data");return;/
 ! other sites(+ 24smi.org)
@@ -5243,8 +5246,8 @@ afisha.yandex.by,afisha.yandex.kz,afisha.yandex.ru,afisha.yandex.ua#%#(function(
 !#endif
 ! Yandex.News
 news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news.yandex.ua#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('_0x') == 0) { window[key] = function() { }; } }; });
-://news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
-://m.news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
+!://news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
+!://m.news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=news.yandex.by|news.yandex.com|news.yandex.fr|news.yandex.kz|news.yandex.ru|news.yandex.ua
 news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news.yandex.ua$$div[aria-label="Реклама"][class="profit"][max-length="18000"]
 ! for extensions
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
@@ -5256,7 +5259,7 @@ news.yandex.by,news.yandex.com,news.yandex.fr,news.yandex.kz,news.yandex.ru,news
 !#endif
 !
 ! Yandex.Weather
-||yandex.*/pogoda/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua
+!||yandex.*/pogoda/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
 @@||yandex.*/pogoda/$generichide
 !#endif
@@ -5278,7 +5281,7 @@ yandex.ru,~afisha.yandex.by,~afisha.yandex.kz,~afisha.yandex.ru,~afisha.yandex.u
 !#endif
 !
 ! Yandex.Mail
-||mail.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
+!||mail.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#@$#.container__banner  { position: absolute!important; left: -3000px!important; }
 @@||mail.yandex.$generichide
@@ -5286,7 +5289,7 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#@$#.c
 !#endif
 !
 ! Yandex.TV
-||tv.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
+!||tv.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
 tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblockDetected"][max-length="5000"]
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
 @@||awaps.yandex.net^$domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
@@ -5295,7 +5298,7 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 !#endif
 !
 ! Yandex.Afisha
-||afisha.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=afisha.yandex.by|afisha.yandex.kz|afisha.yandex.ru|afisha.yandex.ua
+!||afisha.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=afisha.yandex.by|afisha.yandex.kz|afisha.yandex.ru|afisha.yandex.ua
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium)
 @@||afisha.yandex.$generichide
 @@||an.yandex.ru/system/context.js$domain=afisha.yandex.ua
@@ -5313,44 +5316,44 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 ! Yandex.Zen
 @@||zen.yandex.$generichide
 @@||an.yandex.ru/meta/*?imp-id=1&target-ref=$domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
-||zen.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
+!||zen.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
 !
 ! Kinopoisk
-www.kinopoisk.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+||static-mon.yandex.net/static/main.js?pid=kinopoisk.ru$replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/,important
 !
 ! avito.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18260
-||avito.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||avito.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !
 ! gorodrabot.ru
-||gorodrabot.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||gorodrabot.ru/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !
 ! fb.ru, syl.ru
-||fb.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||syl.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||fb.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||syl.ru/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !
 ! auto.ru
-||auto.ru/*/*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||auto.ru/*/*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !
 ! kakprosto.ru
-||kakprosto.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||kakprosto.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12262
-||drive2.*/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=drive2.ru|drive2.com
+!||drive2.*/*/*/*/*/*/$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=drive2.ru|drive2.com
 !
 !
-||24smi.org/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||businessman.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||e1.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||echo.msk.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||forexpf.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||gismeteo.*/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||infoniac.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||kakprosto.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||mathb-ege.sdamgia.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||otzovik.com/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||pikabu.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
-||razlozhi.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||24smi.org/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||businessman.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||e1.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||echo.msk.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||forexpf.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||gismeteo.*/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||infoniac.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||kakprosto.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||mathb-ege.sdamgia.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||otzovik.com/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||pikabu.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
+!||razlozhi.ru/*/*/*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important
 !
 ! END: Yandex
 !
@@ -5686,7 +5689,7 @@ news.mail.ru##.p-fixed-panel > div.box.margin_bottom_20[-ext-has="div.p-spring >
 !
 sportmail.ru##.p-fixed-panel > div.box.margin_bottom_20:has(div.p-spring > div.p-spring__preview > a.p-spring__preview-link)
 ! ok.ru - рекламные посты
-ok.ru##div[class="feed h-mod"][data-seen-params*="skipVisible\":"]:has(> div[data-type*="Banner_"])
+ok.ru#$#div[class="feed h-mod"][data-seen-params*="skipVisible\":"]:has(> div[data-type*="Banner_"]) { position: absolute!important; left: -3000px!important; }
 !
 ! END: Mail.Ru
 !
@@ -7321,8 +7324,6 @@ ok.ru#$##hook_Block_ForthColumnTopBanner { position: absolute!important; left: -
 ok.ru#$##hook_Block_StickyBannerContainer { position: absolute!important; left: -3000px!important; }
 ok.ru#$#.dialogWrapperBanner * { height: 0px!important; }
 ok.ru#$#div[id^="hook_Banner"] * { height: 0px!important; }
-! ok.ru - ads in the feed
-ok.ru#$#div[debug-fid*="BANNER"] { position: absolute!important; left: -3000px!important; }
 ! roem.ru - удаление брендированного фона, отступа сверху
 roem.ru#$#body { padding-top: 0px!important; background-image: none!important; }
 ! kino-v-online.tv - удаление отступа сверху
@@ -9068,7 +9069,6 @@ chrdk.ru###desk_hb_top
 ||sexvideotube.tv/bosa/frog.js
 sexvideotube.tv##.qingd_spot-cell
 ||film-adult.net/*/rekl/
-ok.ru##div[class="feed h-mod"][data-seen-params*="skipVisible\":"] > div[data-type*="Banner_"]
 ||bravopornrus.com/*/ssu.*.js
 bravopornrus.com##.wrap > div.box-left
 kokobum.com##td[style="padding:0px 0px 0px 50px;"] > center > p
@@ -13945,7 +13945,6 @@ odnako.org##.advert-main-page
 odnako.org##.promo-top
 ok.ru###bannerLoaderId
 ok.ru##.dialogWrapperBanner
-ok.ru##div[debug-fid*="BANNER"]
 odpublic.net##.banners_body
 ogoa.ru##.rekl_table
 ogoa.ru##div[id^="re_banner"]
