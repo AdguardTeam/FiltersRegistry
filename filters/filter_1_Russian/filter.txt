@@ -23,6 +23,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||dounwil.ru^$third-party
 ||forum.globusevent.ru^$third-party
 ||bgclck.me^$third-party
 ||prnhpe.pro^$third-party
@@ -3863,6 +3864,7 @@ http://wq3.ru^$third-party
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
+||isi-tracking.eventim.com^
 ||js.newrutor.eu.org^
 ||vw.onlinia.net^
 ||partners.a24.biz^$third-party
@@ -5206,9 +5208,10 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua$$styl
 !#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
 ||yastatic.net/*.bundles/*.js$replace=/var n=\{\};return/var n={};return;/
 ! new style
-||static-mon.yandex.net/static/main.js?pid=$replace=/result\.push\(String\.fromCharCode\(xored\)\);}return result\.join\(""\);/}return "this.init = function() { \/* Absolutely nothing *\/ }; ";/
+||static-mon.yandex.net/static/main.js?pid=yandex_news$replace=/result\.push\(String\.fromCharCode\(xored\)\);}return result\.join\(""\);/}return "this.init = function() { \/* Absolutely nothing *\/ }; ";/
 ! old style
-!||static-mon.yandex.net/static/main.js?pid=$replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/
+||static-mon.yandex.net/static/main.js?pid=$replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/
+||static-mon.yandex.net/static/main.js?pid=kinopoisk.ru$replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/,important
 ! domains with an old style
 ||static-mon.yandex.net/static/main.js?pid=$domain=24smi.org|auto.ru|avito.ru|avtovzglyad.ru|baby.ru|businessman.ru|dni.ru|drive2.com|drive2.ru|e1.ru|echo.msk.ru|fb.ru|forexpf.ru|gismeteo.kz|gismeteo.md|gismeteo.ua|gismeteo.by|gismeteo.ru|glav.su|gorodrabot.ru|infoniac.ru|it-tehnik.ru|kakprosto.ru|kinopoisk.ru|liveinternet.ru|mathb-ege.sdamgia.ru|mk.ru|nkj.ru|ohotniki.ru|oko-planet.su|otzovik.com|pikabu.ru|rambler.ru|razlozhi.ru|sdamgia.ru|syl.ru|tsargrad.tv|vz.ru,replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/
 ! Yandex.Afisha
@@ -5323,7 +5326,7 @@ tv.yandex.by,tv.yandex.kz,tv.yandex.ru,tv.yandex.ua$$script[tag-content="adblock
 !||zen.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var data = \{"settings":[\s\S]+if\s\(window\.loadAdFoxBundle\)[\s\S]+document\.write[\s\S]+bannerFunction\(\);[\s\S]+\Z)|(\{"common":\{"commonRtbVisibility":)[\s\S]+|^\{.*"common":[\s\S]+"stationaryConnection":[\s\S]+"commonRtbVisibility"[\s\S]+|(^\{"rtb":\s*\{\s*"[A-Za-z]*":.*)|(^.*"blockId":.*"adFilter".*visibilitySettings.*)//,script,other,important,domain=zen.yandex.by|zen.yandex.com|zen.yandex.fr|zen.yandex.kz|zen.yandex.ru|zen.yandex.ua
 !
 ! Kinopoisk
-||static-mon.yandex.net/static/main.js?pid=kinopoisk.ru$replace=/function r\(e\,t\,n\){f\.u\(n\)\,p.detect/function r(e\,t\,n){return;var __x=/,important
+!
 !
 ! avito.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18260
@@ -6672,11 +6675,15 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/24229
+premier.ua#$#.adsbygoogle { height: 0px!important; }
+!
 ! START: Mail.Ru
 !
 realty.mail.ru#$#.parallax { position: absolute!important; left: -3000px!important; }
 !
 ! END: mail.ru
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23312
 ! с обычным сокрытием зависает
 mel.fm#$#.b-pb-frontpage__240x400-banner { position: absolute!important; left: -3000px!important; }
@@ -8995,6 +9002,18 @@ http://uno.*?t=b&blockids=$third-party
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 Ly9hbi55YW5kZXgucnUv
 !
+uzb-seks.ru##body > noindex
+uzb-seks.ru##div[id^="newsblock"]
+||80.77.168.136/players/vw-vp.php
+||185.74.254.11/video/vws.php
+||fa242957c982754.com^$third-party
+vprognoze.ru##.banner
+||vprognoze.ru/banners/
+torrent-windows.net##a[href*="/redirect?offerid="] > img
+premier.ua##div[style^="width:728px;height:90px;"]
+exler.ru##.banner
+ebanoe.it##.top-xata
+ebanoe.it##aside[id^="custom_html"]
 ||privat-zapisi.biz/click.js
 privat-zapisi.biz###rscs
 videogirls.tv##div[style="background: transparent;"]
@@ -9185,7 +9204,7 @@ ixbt.com##.recommend_item-container
 ||ad.anistar.me/vast2/
 anistar.me##div[style="width:340px;height:250px"]
 ||nvplay.ru//uploads/images/banner/wt*.jpg
-torrent-windows.net,mega-trek.net,gamefox.ws##center > a[href*="/redirect?offerid="] > img
+mega-trek.net,gamefox.ws##center > a[href*="/redirect?offerid="] > img
 dugtor.ru##iframe[style^="width:728px;height:90px"]
 ||sysadmins.ru/ciscosell.gif
 kinoprofi.org##.under-player
@@ -9784,7 +9803,7 @@ torrent-club.net##.story > a[href$=".php"] > img
 psychologos.ru##.ad-banners
 gaku.ru###leftmenu > a[class^="banner_"]:not([href^="http://gaku.ru/"])
 hochu.ua##div[id*="_banner__"]
-cdoctor.ru,agronomam.com,sonnikonline.club,blog-pc.ru,undelete-file.ru,4damki.ru##.flat_pm_outgoing
+cdoctor.ru,agronomam.com,sonnikonline.club,blog-pc.ru,undelete-file.ru,4damki.ru,телемастерская.рф##.flat_pm_outgoing
 andro-news.com###banner2
 ||andro-news.com/images/content/*_banner_
 kinotochka.club##div[id^="tiz_"]
@@ -12973,7 +12992,6 @@ ex-news.net##.item-small
 ex-news.net##.left
 ex-news.net##div[id$="teaser-list"]
 ex-news.net,mgnovenie.net##.right
-exler.ru##.FooterHosting
 expertsport.ru##a.banner_left
 expertsport.ru##div[style^=" width:215px; height: 370px;"]
 f-journal.ru###brand
@@ -17042,6 +17060,8 @@ ut-1.alexbranding.com,unitheme.net#@#[class^="adv-"]
 @@||vetton.ru^$jsinject,elemhide
 !#################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/24203
+@@||inpref.com^$xmlhttprequest,other,third-party,domain=billetlugen.dk|entradas.com|eventim.bg|eventim.co.il|eventim.co.uk|eventim.com.br|eventim.cz|eventim.de|eventim.fr|eventim.hr|eventim.hu|eventim.nl|eventim.no|eventim.pl|eventim.ro|eventim.rs|eventim.se|eventim.si|eventim.sk|lippu.fi|oeticket.com|parter.ru|ticketcorner.ch|ticketone.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23827
 ur8lv.com#@#.advertisement:not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23603
