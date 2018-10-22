@@ -3,7 +3,7 @@ apikey=$1
 secretkey=$2
 projectid=$3
 workDir=../..
-locales=("en" "ru" "ar" "bg" "ca" "zh" "zh_TW" "hr" "da" "nl" "fi" "fr" "de" "he" "hu" "id" "it" "ja" "ko" "no" "fa" "pl" "pt" "pt_BR" "pt_PT" "sr_Latn" "sk" "es_ES" "sv" "tr" "uk" "vi")
+locales=("en" "ru" "ar" "bg" "ca" "zh" "zh_TW" "hr" "da" "nl" "fi" "fr" "de" "he" "hu" "id" "it" "ja" "ko" "no" "fa" "pl" "pt" "pt_BR" "pt_PT" "sr_Latn" "sk" "es_ES" "sv" "tr" "uk" "vi" "be_BY" "sl_SL")
 
 for locale in "${locales[@]}"
 do
@@ -14,6 +14,14 @@ do
     if [ "$locale" = "sr_Latn" ]; then
         echo "Change $locale destination dir to sr"
         destinationLocale=sr
+    fi
+    if [ "$locale" = "be_BY" ]; then
+        echo "Change $locale destination dir to be"
+        destinationLocale=be
+    fi
+    if [ "$locale" = "sl_SL" ]; then
+        echo "Change $locale destination dir to sl"
+        destinationLocale=sl
     fi
 
     echo "Parsing tags.json for $locale locale for tags.json"
