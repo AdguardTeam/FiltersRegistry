@@ -1003,6 +1003,7 @@ wallstreet-online.de##.extract > strong:contains(Anzeige)
 !--------------------------------------!
 ! mimikama.at kaspersky ad
 mimikama.at#%#window.open = function() {};
+mimikama.at#%#Object.defineProperty(window, 'td_ad_background_click_link', { get: function() { return; } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18172
 bs.to#%#AG_abortInlineScript(/null\)\}\};Array\[/, 'document.addEventListener');
 ! saarbruecker-zeitung.de - ad text
@@ -1071,6 +1072,7 @@ ffh.de#$##adContainer { height:1px!important; }
 ! stuttgarter-nachrichten.de - removing ad left-over
 stuttgarter-nachrichten.de#$#.lay-wrapper { padding-right:0px!important; }
 ! mimikama.at kaspersky ad
+mimikama.at#$#body { background-image:none!important; }
 mimikama.at#$#body.td-ad-background-link { cursor: auto!important;}
 ! https://github.com/AdguardTeam/AdguardFilters/issues/20802
 planetradio.de#$##adContainer { position: absolute!important; left: -3000px!important; }
@@ -1208,6 +1210,7 @@ lvz.de##.pdma-adaside
 ||cluster-*.cdnjquery.com^$domain=woxikon.de|notebookcheck.com|dict.cc
 ||*snigelweb-com.videoplayerhub.com^$domain=tellows.de|woxikon.de|notebookcheck.com|dict.cc
 !
+||mimikama.at/wp-content/uploads/*/_promo_
 waz.de##.block-header--banner > a:not([href*="waz.de"])
 ||compact-online.de/wp-content/uploads/*/-anzeige-300x250
 wiwo.de##.c-teasergallery--ressort
