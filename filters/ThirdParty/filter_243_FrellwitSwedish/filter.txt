@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-10-23 08:49:46 CEST
+! Last modified: 2018-10-24 08:16:26 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -41,10 +41,10 @@
 101ideer.se,alltommat.se,alltomtradgard.se,amelia.se,lantliv.com,mama.nu,privataaffarer.se,skonahem.com,styleby.nu,tara.se,topphalsa.se,veckorevyn.com##a.teaser:has-text(/annonssamarbete/i)
 99.se##.nitem:has(a[href="/arkiv/kategori/annons"])
 accentmagasin.se##.widget-container:if(.widget-title:has-text(/annons/i))
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.section-content-block:if(.section-heading:has-text(/comsol/i))
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.section-content-block:if(.section-heading:has-text(/sponsrat/i))
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.section:has(h2.native-right)
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##article[class^="teaser"]:if(.title:has-text(/sponsrat innehåll/i))
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.section-content-block:if(.section-heading:has-text(/comsol/i))
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.section-content-block:if(.section-heading:has-text(/sponsrat/i))
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.section:has(h2.native-right)
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##article[class^="teaser"]:if(.title:has-text(/sponsrat innehåll/i))
 aftonbladet.se##.abThemeBgTeaser:has(a[href*="kampanjer.aftonbladet.se"])
 aftonbladet.se##a[data-test-id="inline-teaser"]:if(div[class]:has-text(/annons/i))
 aftonbladet.se##a[href*=".se/kampanj?"]:has-text(/erbjudande/i)
@@ -353,9 +353,12 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 .se/sponsored/$image
 .se/upload/annons/
 /*?isPaywallBlocked$image,domain=dn.se
+/*adContainer$script,domain=dagensmedia.se
 /*Fokus_360x300px_animate*.gif$image,domain=fokus.se
+/*fullpageAd$script,domain=dagensmedia.se
 /*jquery.blockUI.$script,domain=fssweden.se
 /*log_ad$image,domain=yelp.se
+/*widgets_native$script,domain=dagensmedia.se
 /?agg_url=/shopping/*$xmlhttprequest,domain=nyheter24.se
 /?file=bostadsnurra$subdocument,domain=ekuriren.se|kkuriren.se|sn.se
 /?file=lokus$subdocument
@@ -401,7 +404,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /annons_ver.
 /annonslinje_
 /annonssamarbete/*$xmlhttprequest
-/annonstorget/*$domain=affarsvarlden.se|arbetarskydd.se|dagensmedia.se|lag-avtal.se|nyteknik.se
+/annonstorget/*$domain=affarsvarlden.se|arbetarskydd.se|lag-avtal.se|nyteknik.se
 /antiblock.$script,stylesheet,~third-party,domain=danskaspraket.se|digitalavykort.se|viseniorer.se|vmj.se
 /apester-javascript-sdk.min.js$script,domain=allakorsord.se|allas.se|allers.se|antikochauktion.se|aretrunt.se|baaam.se|cafe.se|dromhemochtradgard.se|elle.se|elledecoration.se|ellematovin.se|femina.se|frida.se|hant.se|hemmets.se|mabra.com|matmagasinet.se|residencemagazine.se|svenskdam.se
 /appnexus.js$script,domain=blocket.se|minhembio.com
@@ -414,6 +417,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /banner-rotate.php$subdocument,domain=fastighetsnytt.se
 /banner/ads/*$image,domain=bildelsbasen.se
 /bannersidor/*
+/bau.js$script,domain=dagensmedia.se
 /blogcounter.js^$script,domain=javligtgott.se
 /blogcounter/image?$image,domain=javligtgott.se
 /BlogPortal/js/stats/blogstat.$script
@@ -452,6 +456,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /core/minify/storage/*$script,domain=manolo.se
 /cx-emediate-userprofile-se.*.js$script,domain=eniro.se
 /CXense_Video_Handler/*$subdocument,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|vt.se
+/dam/personalized/*$domain=dagensmedia.se
 /dohi-gdpr/*$domain=cyclingplus.se|firstfoto.se|fitnessformen.se|halsafitness.se|macguiden.net|yogaworld.se
 /downloads.mailchimp.com/*$script
 /emediate-responsive-wp-plugin/*
@@ -539,6 +544,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /mp_emediate/inc/annons.html
 /multiad_jquery.js$script,domain=husvagnochcamping.se|manolo.se
 /n24.js?$domain=filmtipset.se
+/native.js$script,domain=dagensmedia.se
 /native?noBurtProfiles=1$xmlhttprequest,domain=hd.se|sydsvenskan.se
 /native_teaser_active/*$image,domain=dagenssamhalle.se
 /newsletter/*$domain=zalando.se
@@ -821,12 +827,12 @@ affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,vt.se##img[data-original*="destination.se"]
 affarsstaden.se##.esb-ad
 affarsvarlden.se,arbetarskydd.se,arvikanyheter.se,dagensmedia.se,dalslanningen.se,filipstadstidning.se,fryksdalsbygden.se,hjotidning.se,improveme.se,lag-avtal.se,mariestadstidningen.se,nickelodeon.se,nkp.se,nwt.se,nyteknik.se,provinstidningen.se,saffletidningen.se,sla.se,vf.se##.ad-container
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.ad-panorama
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.ad-teaser
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.disable-ad-marks
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.social-teasers
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##.sponsored-box
-affarsvarlden.se,arbetarskydd.se,dagensmedia.se,lag-avtal.se,nyteknik.se##section.sponsored-articles-inline
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.ad-panorama
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.ad-teaser
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.disable-ad-marks
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.social-teasers
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.sponsored-box
+affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##section.sponsored-articles-inline
 aftonbladet.se###MegaAd
 aftonbladet.se##.ab-responsive-ads-wrapper
 aftonbladet.se##.abAdWrapper
@@ -945,6 +951,13 @@ coop.se##.js-personalInformationNotice.Notice--sticky-bottom.Notice--info.Notice
 cyclingplus.se,firstfoto.se,fitnessformen.se,halsafitness.se,macguiden.net##.this-is-an-ad
 cyclingplus.se,halsafitness.se##.headerbar-container
 cykl.se,jogg.se,skid.se,svettig.se##.panoramaAd
+dagensmedia.se##.cookieBanner
+dagensmedia.se##.nativeCard
+dagensmedia.se##.panoramaWrapper
+dagensmedia.se##div[style="height: 360px;"]
+dagensmedia.se##div[style="height: 500px;"]
+dagensmedia.se##div[style="height:360px"]
+dagensmedia.se##div[style="height:500px"]
 dagensmedicin.se##.widget-carousel--sponsored
 dagensnaringsliv.se,industrinyheter.se,infrastrukturnyheter.se##.block-advertorial
 dagensnaringsliv.se,industrinyheter.se,infrastrukturnyheter.se##.insider-ads
@@ -1812,6 +1825,7 @@ yogaworld.se##.headerbar-container
 ||sdk.pulse.schibsted.com^$script
 ||seekly.se^$third-party
 ||seenthis.se^$third-party
+||sentry.io^$third-party,domain=dagensmedia.se
 ||sentry.nu/banner/
 ||serverbid.com^$third-party
 ||service.survio.se^*/registerhit?$image
