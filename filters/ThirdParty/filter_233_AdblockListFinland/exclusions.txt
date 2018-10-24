@@ -1,0 +1,126 @@
+! Exluding rules that looks like JS/CSS injections and $replace rules:
+#%#
+#@%#
+replace=
+! Exluding unsupported ABP rules
+#?#
+[-abp-properties
+! Exluding uBlock script rules
+##script:contains
+##script:inject
+! Excluding redirect instructions
+Redirect:
+redirect:
+!
+! Fixing $popup rules from EasyList
+! https://github.com/AdguardTeam/AdguardForWindows/issues/1566
+$popup,~third-party
+!
+|http://*
+|http:$
+|https:$
+/pb-ads/*
+://ads.$popup
+!
+/adguard.
+! 
+! https://github.com/AdguardTeam/AdguardFilters/issues/16648
+$rewrite=
+! https://github.com/AdguardTeam/AdguardFilters/issues/8172
+@@||investopedia.com^$elemhide
+! https://github.com/AdguardTeam/AdguardFilters/issues/7371
+@@||idnes.cz$generichide,genericblock
+! https://forum.adguard.com/index.php?threads/26006/
+@@||mirrorcreator.com^$script,~third-party,xmlhttprequest
+! https://forum.adguard.com/index.php?threads/16312/
+@@||zedo.com/asw/$script,domain=intoday.in
+@@||zedo.com/client/xp1/fmos.js$domain=intoday.in
+@@||zedo.com/jsc/d2/fo.js$domain=intoday.in
+@@||intoday.in^$generichide
+! https://forum.adguard.com/index.php?threads/22268/
+@@/^((?!.*\.(amazonaws|cloudfront|mobicow|puhtml)\W?).)*$/$script,domain=uploadocean.com
+! https://forum.adguard.com/index.php?threads/13935/
+! Adblock-Persian list
+sendspace.com#@#*[class$="_ads"]:not(body):not(input)
+!!! Liste FR (iOS issue, )
+! https://github.com/AdguardTeam/AdguardFilters/issues/3103
+/\/[a-z0-9_]+\.[a-z0-9-]+\.[a-z]{2,}\/.*?\w{30,}/$object-subrequest,xmlhttprequest,domain=exclusivomen.com|gentside.com|gentside.com.br|gentside.de|maxisciences.com|ohmirevista.com|ohmymag.com|ohmymag.com.br|ohmymag.de|simplyvoyage.com
+/\/[a-z0-9_]+\.[a-z0-9-]+\.[a-z]{2,}\/.*[a-zA-Z0-9]{40,}/$object-subrequest,domain=wat.tv
+@@/\.palmshapednontransferable\.com/[a-zA-Z0-9]{340,380}$/$xmlhttprequest,domain=exclusivomen.com|gentside.com|gentside.com.br|gentside.de|maxisciences.com|ohmirevista.com|ohmymag.com|ohmymag.com.br|ohmymag.de|simplyvoyage.com
+!
+!!! EasyList
+! https://github.com/AdguardTeam/AdguardFilters/issues/3044
+! unnecessary exclusion
+@@||psarips.com^$script
+! ozon.ru is broken by content blocker
+||ozon.ru^$third-party
+! https://github.com/AdguardTeam/ExperimentalFilter/issues/1436
+@@||www.google.*/search?$subdocument,~third-party
+!
+!!! https://github.com/AdguardTeam/AdguardForWindows/issues/490
+!
+! Anti-Adblock Killer Reek
+! https://github.com/reek/anti-adblock-killer/issues/1446
+player.pl###vod
+! Liste AR
+||piguiqproxy.com^$third-party
+!!! START: ABP Japanese Filter
+^aff.$popup
+_campaign=$popup
+! For OneSkyApp
+||cloudfront.net^$popup
+||akamaihd.net^$popup
+!!! END: ABP Japanese Filter
+!
+!!! Safari doesn't support '{digit}' in regular expressions
+!{6,8}
+!{2,9}
+!{2,5}
+!!!
+! EasyList China blocks banking authorization
+|http://acs.
+! http://forum.adguard.com/showthread.php?6808
+||hwcdn.net^$third-party
+!
+! EasyList Czech and Slovak
+.cz/ads/$~object_subrequest,domain=~hcplzen.cz
+! Fixing RUAdlist
+! censor.net.ua - site is blocked in Safari($subdocument is not supported)
+||censor.net.ua^$subdocument,domain=censor.net.ua
+! https://github.com/AdguardTeam/ExperimentalFilter/issues/1430
+||tapochek.net^$subdocument
+!
+!!! Invalid rules from third-party filters
+!
+! void.gr - reported https://www.void.gr/kargig/blog/greek-adblock-plus-filter/comment-page-1/#comment-489688
+||www.dwrean.net##a[href="http://www.kratisinow.gr"]
+||www.dwrean.net##iframe[src="http://kratisinow.digitup.eu/widget/widget-artists"]
+! filtros (dead)
+||judgeporn.com/video_pop.php?$$image,~image,popup
+! persian (dead)
+||digiato.com##.author-banner FIGCAPTION
+!
+! Bad rules from Juvander's Adblock List
+!
+tehy.fi
+##a[href*="tehy.fi"]
+superliitto.fi
+##a[href*="superliitto.fi"]
+sak.fi
+##a[href*="sak.fi"]
+akt.fi
+##a[href*="akt.fi"]
+selry.fi
+##a[href*="selry.fi"]
+akava.fi
+##a[href*="akava.fi"]
+oaj.fi
+##a[href*="oaj.fi"]
+stthl.fi
+##a[href*="stthl.fi"]
+proliitto.fi
+##a[href*="proliitto.fi"]
+pam.fi
+##a[href*="pam.fi"]
+sahkoliitto.fi
+##a[href*="sahkoliitto.fi"]
