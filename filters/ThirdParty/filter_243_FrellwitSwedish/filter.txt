@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-10-24 15:18:50 CEST
+! Last modified: 2018-10-25 07:41:21 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -120,6 +120,7 @@ fotbolltransfers.com##.smallNewsLink:if(.smallNewsCategory:has-text(/sponsrad/i)
 fragbite.se##.module:if(h4:has-text(/sponsrat/i))
 fragbite.se##.spreadItemCollection:has(.sponsor)
 fragbite.se##.spreadItemCollection:if(.category:has-text(/sponsrat/i))
+friatider.se##.plainbox:has(span:has-text(/annons/i))
 fz.se##.content-widget:if(div.fpnih-meta:has-text(/sponsrat/i))
 gamereactor.se#$##pagebackground { background-image: none !important }
 gamereactor.se##div[style="min-height: 600px; margin-bottom: 20px;"]:has(div[id^="ad_sky"])
@@ -353,12 +354,9 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 .se/sponsored/$image
 .se/upload/annons/
 /*?isPaywallBlocked$image,domain=dn.se
-/*adContainer$script,domain=dagensmedia.se
 /*Fokus_360x300px_animate*.gif$image,domain=fokus.se
-/*fullpageAd$script,domain=dagensmedia.se
 /*jquery.blockUI.$script,domain=fssweden.se
 /*log_ad$image,domain=yelp.se
-/*widgets_native$script,domain=dagensmedia.se
 /?agg_url=/shopping/*$xmlhttprequest,domain=nyheter24.se
 /?file=bostadsnurra$subdocument,domain=ekuriren.se|kkuriren.se|sn.se
 /?file=lokus$subdocument
@@ -544,7 +542,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /mp_emediate/inc/annons.html
 /multiad_jquery.js$script,domain=husvagnochcamping.se|manolo.se
 /n24.js?$domain=filmtipset.se
-/native.js$script,domain=dagensmedia.se
 /native?noBurtProfiles=1$xmlhttprequest,domain=hd.se|sydsvenskan.se
 /native_teaser_active/*$image,domain=dagenssamhalle.se
 /newsletter/*$domain=zalando.se
@@ -820,6 +817,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@||videoplaza.tv^$domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 @@||webbjobb.io^$generichide
 abus.com#@##cookieChoiceInfo
+adContainer$script,domain=dagensmedia.se
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,falkopingstidning.se,folkbladet.se,helagotland.se,jnytt.se,jp.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,svd.se,tranastidning.se,unt.se,vastgotabladet.se,vetlandaposten.se,vn.se,vt.se###smartbanner.android
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,vt.se##.banner-column
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,vt.se##.destination-border-color
@@ -1127,6 +1125,7 @@ fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria
 fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria.se###cboxWrapper
 fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria.se##[class*="annonser"]
 friatider.se##img[src*="336x150"]
+fullpageAd$script,domain=dagensmedia.se
 funbeat.se##.l-adv-interstitial
 funnygames.se###katon-slot
 fuska.se###top1
@@ -1467,6 +1466,7 @@ viivilla.se##.afubar-top
 viivilla.se##.native-ad-md
 viseniorer.se##.topheaderinfo
 webbjobb.io##.cookie
+widgets_native$script,domain=dagensmedia.se
 yogaworld.se##.headerbar-container
 |http://sifomedia.
 |https://kampanj.$domain=nwt.se
@@ -1577,7 +1577,7 @@ yogaworld.se##.headerbar-container
 ||connectio.s3.amazonaws.com/connect-retarget.$script
 ||consensu.org^$third-party
 ||consent.cmp.oath.com^$script,domain=alltomstockholm.se|mitti.se
-||consent.cookiebot.com^$third-party,domain=alingsastidning.se|etc.se|goteborgdirekt.se|itaboutdoor.se|partilletidning.se|selmaspa.se|skeppsbrons.se|stockholmdirekt.se|wesafe.se
+||consent.cookiebot.com^$third-party,domain=alingsastidning.se|etc.se|goteborgdirekt.se|itaboutdoor.se|norran.se|partilletidning.se|selmaspa.se|skeppsbrons.se|stockholmdirekt.se|wesafe.se
 ||conviva.com^$script,xmlhttprequest,domain=eurosport.se
 ||cookie-script.com^$third-party
 ||cookieinformation.com^$third-party
@@ -1615,7 +1615,7 @@ yogaworld.se##.headerbar-container
 ||diu127fbe6pn6.cloudfront.net^*/ga-universal.html$subdocument
 ||dreamfilm.*/HD/780x.$image
 ||dreamfilm.*/HD/player4k.$image
-||dreamfilmhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com *.gstatic.com
+||dreamfilmhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com
 ||drift.com^$third-party
 ||driftt.com^$third-party
 ||dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.$script
@@ -1633,6 +1633,7 @@ yogaworld.se##.headerbar-container
 ||episerver.net/*/epi-util/find.js$script
 ||es.loppi.se/api/imp$xmlhttprequest
 ||es.loppi.se/get$script
+||europe-west1-bonnier-big-data.cloudfunctions.net^$third-party
 ||everydaystories.se^$third-party
 ||evidon.com^$third-party,domain=spela.se
 ||existenz.se/img/prq.gif
@@ -1717,7 +1718,7 @@ yogaworld.se##.headerbar-container
 ||lwadm.com^$third-party
 ||lwcdn.com/vendor/ima.min.js$script
 ||lystra.se^$third-party
-||ma-track.bonnierpublications.se^
+||ma-track.bonnierpublications.se^$third-party
 ||ma.bonnierpublications.se/mtc/event$xmlhttprequest
 ||mailchimp.com^$third-party
 ||mailerlite.com^$third-party
@@ -1768,7 +1769,7 @@ yogaworld.se##.headerbar-container
 ||ntm.eu/om/img/cx/Matchad$subdocument,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|vt.se
 ||nyafilmerhd.*/wp-content/themes/keremiya1/js/license.$script
 ||nyafilmerhd.*/wp-content/themes/keremiya1/js/script.js$script
-||nyafilmerhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com *.gstatic.com
+||nyafilmerhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
 ||omni-ads.omni.news^
@@ -1804,7 +1805,7 @@ yogaworld.se##.headerbar-container
 ||rabble-res.cloudinary.com^$image,domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 ||real123movies.*/wp-content/themes/keremiya1/js/license.$script
 ||real123movies.*/wp-content/themes/keremiya1/js/script.js$script
-||real123movies.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com *.gstatic.com *.cloudflare.com
+||real123movies.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com *.cloudflare.com
 ||realtime.co^$websocket,domain=pomu.se
 ||reauthenticator.com^$third-party
 ||reco.se^$third-party
@@ -1862,7 +1863,7 @@ yogaworld.se##.headerbar-container
 ||svenskanamn.alltforforaldrar.se/js/svenskanamn_ads.$script
 ||svenskanamn.alltforforaldrar.se/js/svenskanamn_param_init.$script
 ||swesub.*/sw.js$script
-||swesub.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' *.tmdb.org ajax.cloudflare.com *.googleapis.com cdnjs.cloudflare.com fonts.gstatic.com openload.co nxload.com data:
+||swesub.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' *.tmdb.org ajax.cloudflare.com *.googleapis.com cdnjs.cloudflare.com fonts.gstatic.com openload.co nxload.com streamango.com data:
 ||swesub.*^$csp=worker-src 'none'
 ||t.raptorsmartadvisor.com^$image
 ||telemetric.dk^$third-party
