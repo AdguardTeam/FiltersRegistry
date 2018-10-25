@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-10-25 15:19:02 CEST
+! Last modified: 2018-10-25 20:55:03 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -92,7 +92,7 @@ devote.se##article:if(div[class]:has-text(/samarbete/i))
 di.se##.article-teaser__text-inline:has(a[href^="/brandstudio/"])
 di.se##.carousel-tab:has-text(/annons:/i)
 di.se##.clip-browser__clip:has(a[href*="/annons-"])
-dreamfilm.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
+dreamfilm.*,swesub.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
 egoinas.se##article.uk-article:has(.sw-sf-sponsor)
 emocore.se##.m_t.box:if(h2:has-text(Rekommenderade länkar))
 ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sponsored-bar)
@@ -1023,8 +1023,12 @@ dn.se,expressen.se###rich-media-ads
 dn.se,expressen.se##[class*="open-in-app"]
 dn.se,klart.se,norran.se##.ad-wrapper
 dplay.se##[class^="notificationArea"]
-dreamfilm.*###ads_player_inside
 dreamfilm.*##.bnr
+dreamfilm.*##.content-kuss
+dreamfilm.*##.embed-container
+dreamfilm.*##a[href$="/go.html"]
+dreamfilm.*,swesub.*###ads_player_inside
+dreamfilmhd.*##a[href="/play/streamhd.html"]
 egoinas.se###tm-top-a
 ekuriren.se,expressen.se,kkuriren.se,sn.se##.teaser--native-ad
 ekuriren.se,kkuriren.se,norran.se,sn.se###cookie-info
@@ -1425,6 +1429,7 @@ swedroid.se##div[id$="_ad"]
 swedroid.se##table[style="width:1190px; height:76px"]
 swesub.*##.alert-bottom
 swesub.*##a.btn[target="_blank"]
+swesub.*##a[href*="/offer?prod"]
 sysidan.se##.adscolumn
 tasteline.com##.popup-overlay
 tekniksmart.se##.adcontainer
@@ -1616,7 +1621,8 @@ yogaworld.se##.headerbar-container
 ||diu127fbe6pn6.cloudfront.net^*/ga-universal.html$subdocument
 ||dreamfilm.*/HD/780x.$image
 ||dreamfilm.*/HD/player4k.$image
-||dreamfilmhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com
+||dreamfilm.*/swedish/stream.php$subdocument
+||dreamfilmhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com openload.co
 ||drift.com^$third-party
 ||driftt.com^$third-party
 ||dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.$script
@@ -1771,7 +1777,7 @@ yogaworld.se##.headerbar-container
 ||ntm.eu/om/img/cx/Matchad$subdocument,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|vt.se
 ||nyafilmerhd.*/wp-content/themes/keremiya1/js/license.$script
 ||nyafilmerhd.*/wp-content/themes/keremiya1/js/script.js$script
-||nyafilmerhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com
+||nyafilmerhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com openload.co
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
 ||omni-ads.omni.news^
@@ -1807,7 +1813,7 @@ yogaworld.se##.headerbar-container
 ||rabble-res.cloudinary.com^$image,domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 ||real123movies.*/wp-content/themes/keremiya1/js/license.$script
 ||real123movies.*/wp-content/themes/keremiya1/js/script.js$script
-||real123movies.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com *.cloudflare.com
+||real123movies.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com *.cloudflare.com openload.co
 ||realtime.co^$websocket,domain=pomu.se
 ||reauthenticator.com^$third-party
 ||reco.se^$third-party
@@ -1821,6 +1827,7 @@ yogaworld.se##.headerbar-container
 ||revrtb.com^$popup,third-party
 ||royapp.com^$third-party
 ||runmewivel.com^
+||runtnc.net^
 ||s.infogram.com/t.js$script,domain=infogram.com
 ||s3.amazonaws.com/cc.silktide.com/cookieconsent.$script
 ||sannsyn.com^$third-party
