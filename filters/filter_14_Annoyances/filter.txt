@@ -23,6 +23,10 @@
 !
 !######### Annoying elements (not ads)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/24339
+cooking.nytimes.com#$#html.nytc---modal-window---noScroll { overflow: visible!important; }
+cooking.nytimes.com#$#body.nytc---modal-window---noScroll { overflow: visible!important; }
+cooking.nytimes.com##.nytc---modal-window---isShown:not(:has(.nytc---largepicturemodal---contentBody > .nytc---x---x.nytc---largepicturemodal---xBtn[role="button"]))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24235
 banana.by###footer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24413
@@ -845,6 +849,7 @@ horo.mail.ru##.js-promo-popup
 !***
 !* Subscriptions/newsletters (not popups)
 !*
+cooking.nytimes.com##.recipe-newsletter-signup
 pazarlamasyon.com##.essb-subscribe-form
 meduza.io##.BriefSubscription-root
 igniel.com###ignielNewsletter > .email__
@@ -4352,6 +4357,8 @@ chimica-online.it###cookieChoiceInfo
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 strunz.com###v-cookielaw
 !
+skin.ru##.popup-cookies
+cooking.nytimes.com##.nytc---cookiebanner---container
 navigaweb.net###cl_modal
 mslworld.egged.co.il##.cookiesStrip
 toornament.com##.cookie-legal
@@ -5988,6 +5995,7 @@ aliexpress.com###j-site-notice-header[-ext-has='>.site-notice-container:contains
 !
 ! JS rules
 !
+fandom.com#%#document.cookie = "tracking-opt-in-status=rejected";
 egged.co.il#%#document.cookie = "hideSlide=true";
 abczdrowie.pl,autokult.pl,dobramama.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,jejswiat.pl,kafeteria.pl,kafeteria.tv,komorkomania.pl,money.pl,nocowanie.pl,o2.pl,open.fm,parenting.pl,pinger.pl,pudelek.pl,pytamy.pl,samosia.pl,snobka.pl,testwiedzy.pl,wp.pl#%#Object.defineProperty(window, 'wpjs_4', { get: function() { return []; } });
 sklep.infor.pl#%#document.cookie = "inforCookieWallCacheVal=15"; document.cookie = "inforCookieWallGlobalVal=15";
@@ -6093,6 +6101,8 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/24523
+@@||vendorlist.consensu.org/vendorlist.json$domain=fandom.com|wikia.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24090
 @@||consent.cookiebot.com^$script,domain=refinery29.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24193
@@ -9977,6 +9987,7 @@ mhealth.ru##.incut_readmore
 !
 ! START: Adviser/online-consultant/feedback widgets
 !
+||widget.manychat.com^$third-party
 .ru/proxy_*.php?init_widget=$script
 ||widget-static.com^$third-party
 ||cloud.lexprofit.$third-party
