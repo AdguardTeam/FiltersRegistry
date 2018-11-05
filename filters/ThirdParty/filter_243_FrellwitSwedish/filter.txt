@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-11-05 12:01:58 CET
+! Last modified: 2018-11-05 16:49:52 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -130,6 +130,7 @@ garaget.org##.small.discrete:has-text(Annons:)
 garaget.org##.title-bg:has-text(Sponsrade tjänster)
 gynning.net##[id^="post-"]:if(h3:has-text(/i samarbete med/i))
 halsafitness.se,yogaworld.se##.post-wrap:has(h3:has-text(/annonssamarbete/i))
+hamsterpaj.net##.zone:has(h3:has-text(/rekommenderade sajter/i))
 hemnet.se##.article-news__link:has(.news-article--sponsored)
 hemnet.se##.featured-news__link:has(.featured-news__ribbon--sponsored)
 hemnet.se##.recent-news__item:if(.recent-news__category:has-text(/sponsrad/i))
@@ -367,7 +368,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /\/*annons*./$image,domain=boktugg.se|guldkanalen.se|kurera.se|lesscarbs.se|lundagard.se|megafonen.nu|newsvoice.se|nvp.se|rumhemma.se|skillingaryd.nu|svf.se|tekniksmart.se
 /\/*banner*./$image,domain=alltomhif.se|bettips.se|boktugg.se|dansbandskanalen.se|etc.se|evertiq.se|guldkanalen.se|it-finans.se|kurera.se|lakartidningen.se|markbladet.se|marsta.nu|newsvoice.se|rockkocken.se|rumhemma.se|skrattnet.se|sportbloggare.com|sportpanelen.se|svf.se|tkj.se|vaken.se
 /\/*banner*./$script,domain=dagenshandel.se|entreprenor.se|food-supply.se|magasinetparagraf.se|motormagasinet.se|skyddosakerhet.se
-/\/*casino*./$image,domain=hypeline.se
+/\/*casino*./$image,domain=dayviews.com|hypeline.se
 /\/*sponsor*./$image,domain=ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 /_ad/*$script,domain=funbeat.se
 /_banners/*$image,domain=kolozzeum.com
@@ -474,6 +475,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /fusion.js$script,domain=tidningenhembakat.se
 /fusionadloader.$script,domain=viivilla.se
 /gdpr/*$domain=rapport24.com|vimedbarn.se
+/gfx/banners/*$domain=hamsterpaj.net
 /gilla-mb_plugg.png$domain=markbladet.se
 /glimr.min.js^$script,domain=affarsliv.com|affarslivgotland.se|aftonbladet.se|blocket.se|corren.se|di.se|dn.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|politism.se|pt.se|unt.se|uppsala.com|uppsalatidningen.se|viivilla.se|vt.se
 /google-tag-manager-datalayer.$script,domain=reseguiden.se
@@ -733,7 +735,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 @@/js/ad.js$~third-party,domain=sweclockers.com
 @@/js/ads.js$~third-party,domain=101ideer.se|affarsliv.com|affarslivgotland.se|alltforforaldrar.se|alltommat.se|alltomtradgard.se|alltsomsker.nu|amelia.se|bike.se|caroftheyear.se|corren.se|damernasvarld.se|deliquate.se|englasshowroom.com|eposten.se|familyliving.se|folkbladet.se|foretagande.se|gardochtorp.se|godsochgardar.se|helagotland.se|hemochantik.se|husbilhusvagn.se|ilikeradio.se|isabellalowengrip.se|johannatoftby.se|klackspark.com|klassiker.nu|kpwebben.se|kritiker.se|kuriren.nu|lantliv.com|ljudochbild.se|madeleineilmrud.se|magdalenagraaf.se|malagaguiden.se|mama.nu|matplatsen.net|mmabetz.se|mopedgaraget.se|mvt.se|naturvetenskap.org|norrbottensaffarer.se|nsd.se|nt.se|privataaffarer.se|pt.se|rabattpris.se|radio.se|skonahem.com|smartleasing.se|styleby.nu|svenskjakt.se|swedroid.se|tara.se|teknikensvarld.se|tidningenhembakat.se|topphalsa.se|tvmatchen.nu|unt.se|uppsalatidningen.se|veckorevyn.com|vibilagare.se|viforaldrar.se|villavarmt.se|vt.se
 @@/js/ads/advert.min.js$script,~third-party,domain=spelo.se
-@@/js/adsbygoogle.js^$script,~third-party,domain=feber.se|tjock.se
+@@/js/adsbygoogle.js^$script,~third-party,domain=feber.se|sv.ucoin.net|tjock.se
 @@/js/advert.$script,domain=nwt.se
 @@/js/advert.js$script,~third-party,domain=burlovsnyheter.se
 @@/js/advertisement*.$script,~third-party,domain=brollopstorget.se|dagensmedia.nu|devote.se|expressen.se|familjeliv.se|feber.se|skyddsombud24.se|tjock.se
@@ -1009,6 +1011,7 @@ di.se##aside.di_share-buttons
 di.se##section[data-ad-settings]
 dn.se##.account-information__tooltip
 dn.se##.bottom-bar--visible
+dn.se##.chosen-for-you
 dn.se##.gdpr-header
 dn.se##.gdpr-header-container
 dn.se##.js-ad-sidebar
@@ -1938,6 +1941,7 @@ yogaworld.se##.headerbar-container
 ||yelp.se/yl*-$script
 ||yieldbird.com^$third-party
 ||youbora.com^$third-party,domain=aftonbladet.se|foxtv.se|svd.se
+||youplay.se$third-party,domain=dayviews.com|emocore.se|hamsterpaj.net|kamrat.com
 ||znaptag-tags-se.s3.amazonaws.com^$script
 ||zotabox.com^$third-party,domain=rapport24.com
 ||zummy.io^$third-party
