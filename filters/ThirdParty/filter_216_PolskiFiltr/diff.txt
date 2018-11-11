@@ -12,8 +12,8 @@ tvn24.pl##script:inject(abort-on-property-write.js, Vublock)
 dobreprogramy.pl##script:inject(set-constant.js, WP.gaf.loadAndRunBunch, noopFunc)
 ! www.dobreprogramy.pl##:xpath(//div[contains(text(), 'REKLAMA')]) is excluded by: :xpath(
 www.dobreprogramy.pl##:xpath(//div[contains(text(), 'REKLAMA')])
-! ~poczta.wp.pl,wp.pl##script:inject(abort-on-property-read.js, WP.inline) is excluded by: ##script:inject
-~poczta.wp.pl,wp.pl##script:inject(abort-on-property-read.js, WP.inline)
+! ~poczta.wp.pl,wp.pl,~pilot.wp.pl##script:inject(abort-on-property-read.js, WP.inline) is excluded by: ##script:inject
+~poczta.wp.pl,wp.pl,~pilot.wp.pl##script:inject(abort-on-property-read.js, WP.inline)
 ! ~www.wp.pl,wp.pl##:xpath(//div[count(*)=3][img[@class][@src]][*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=0]]) is excluded by: :xpath(
 ~www.wp.pl,wp.pl##:xpath(//div[count(*)=3][img[@class][@src]][*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=0]])
 ! www.wp.pl##:xpath(//div[@data-st-area='Zakupy'][count(*)=2][not(header)]) is excluded by: :xpath(
@@ -22,14 +22,14 @@ www.wp.pl##:xpath(//div[@data-st-area='Zakupy'][count(*)=2][not(header)])
 facet.wp.pl,gwiazdy.wp.pl,teleshow.wp.pl##script:inject(abort-on-property-write.js, iaqExt)
 ! wp.pl,echirurgia.pl,money.pl,abczdrowie.pl,komorkomania.pl,fotoblogia.pl##script:inject(set-constant.js, PWA_adbd, 2) is excluded by: ##script:inject
 wp.pl,echirurgia.pl,money.pl,abczdrowie.pl,komorkomania.pl,fotoblogia.pl##script:inject(set-constant.js, PWA_adbd, 2)
-! ~poczta.wp.pl,wp.pl,echirurgia.pl,kardiolo.pl,money.pl,abczdrowie.pl,komorkomania.pl,fotoblogia.pl##script:inject(set-constant.js, WP.gaf.addCreation, noopFunc) is excluded by: ##script:inject
-~poczta.wp.pl,wp.pl,echirurgia.pl,kardiolo.pl,money.pl,abczdrowie.pl,komorkomania.pl,fotoblogia.pl##script:inject(set-constant.js, WP.gaf.addCreation, noopFunc)
+! ~poczta.wp.pl,wp.pl,echirurgia.pl,kardiolo.pl,money.pl,abczdrowie.pl,komorkomania.pl,fotoblogia.pl,~pilot.wp.pl##script:inject(set-constant.js, WP.gaf.addCreation, noopFunc) is excluded by: ##script:inject
+~poczta.wp.pl,wp.pl,echirurgia.pl,kardiolo.pl,money.pl,abczdrowie.pl,komorkomania.pl,fotoblogia.pl,~pilot.wp.pl##script:inject(set-constant.js, WP.gaf.addCreation, noopFunc)
 ! autokult.pl##script:inject(set-constant.js, WP.gaf.loadAndRunBunch, noopFunc) is excluded by: ##script:inject
 autokult.pl##script:inject(set-constant.js, WP.gaf.loadAndRunBunch, noopFunc)
-! ~poczta.wp.pl,wp.pl,pudelek.pl##script:inject(set-constant.js, WP.gaf.setSlotCreation, noopFunc) is excluded by: ##script:inject
-~poczta.wp.pl,wp.pl,pudelek.pl##script:inject(set-constant.js, WP.gaf.setSlotCreation, noopFunc)
-! ~www.wp.pl,wp.pl,money.pl,abczdrowie.pl,parenting.pl,komorkomania.pl,gadzetomania.pl,fotoblogia.pl,domodi.pl,autokult.pl##script:inject(set-constant.js, WP.gdpr.init, noopFunc) is excluded by: ##script:inject
-~www.wp.pl,wp.pl,money.pl,abczdrowie.pl,parenting.pl,komorkomania.pl,gadzetomania.pl,fotoblogia.pl,domodi.pl,autokult.pl##script:inject(set-constant.js, WP.gdpr.init, noopFunc)
+! ~poczta.wp.pl,wp.pl,pudelek.pl,~pilot.wp.pl##script:inject(set-constant.js, WP.gaf.setSlotCreation, noopFunc) is excluded by: ##script:inject
+~poczta.wp.pl,wp.pl,pudelek.pl,~pilot.wp.pl##script:inject(set-constant.js, WP.gaf.setSlotCreation, noopFunc)
+! ~www.wp.pl,wp.pl,money.pl,abczdrowie.pl,parenting.pl,komorkomania.pl,gadzetomania.pl,fotoblogia.pl,domodi.pl,autokult.pl,~pilot.wp.pl##script:inject(set-constant.js, WP.gdpr.init, noopFunc) is excluded by: ##script:inject
+~www.wp.pl,wp.pl,money.pl,abczdrowie.pl,parenting.pl,komorkomania.pl,gadzetomania.pl,fotoblogia.pl,domodi.pl,autokult.pl,~pilot.wp.pl##script:inject(set-constant.js, WP.gdpr.init, noopFunc)
 ! www.wp.pl##script:inject(set-constant.js, WP.mods.welcomeScreen, noopFunc) is excluded by: ##script:inject
 www.wp.pl##script:inject(set-constant.js, WP.mods.welcomeScreen, noopFunc)
 ! ||adv.wp.pl/RM/Box/*.mp4$media,redirect=noopmp3-0.1s is excluded by: ,redirect=
@@ -232,6 +232,8 @@ www.dobreprogramy.pl##body:not(variant-mobile).skin-green .user-login:style(colo
 purepc.pl##a[href^="https://www.purepc.pl/redir.php"]:style(height: 0px !important; position: absolute !important;)
 ! Rule "www.wp.pl##body:style(overflow-y: visible !important;)" converted to: www.wp.pl#$#body { overflow-y: visible !important; }
 www.wp.pl##body:style(overflow-y: visible !important;)
+! Rule "tv.wp.pl##body:style(overflow: auto !important;)" converted to: tv.wp.pl#$#body { overflow: auto !important; }
+tv.wp.pl##body:style(overflow: auto !important;)
 ! Rule "kurnik.pl##.adsbygoogle:style(height: 1px !important; width: 1px !important;)" converted to: kurnik.pl#$#.adsbygoogle { height: 1px !important; width: 1px !important; }
 kurnik.pl##.adsbygoogle:style(height: 1px !important; width: 1px !important;)
 ! Rule "weszlo.com##body > #page:style(margin-top: 137px !important;)" converted to: weszlo.com#$#body > #page { margin-top: 137px !important; }
