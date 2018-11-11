@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-11-09 08:32:05 CET
+! Last modified: 2018-11-11 08:20:30 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -36,7 +36,7 @@
 /plugins/popup-builder-platinum/*$important,domain=mmabetz.se|sportpanelen.se
 /streamsense.$important,script,domain=dn.se
 /sweden/swedish/hjo-tidning.html$document
-/wp-content/plugins/google-analytics-for-wordpress/*$important,script,~third-party,domain=alltsomsker.nu|battrestadsdel.se|boktugg.se|businessarena.nu|carinasphotolifestyle.se|clarakron.com|fjl.se|folkblick.se|foodstories.se|fores.se|hockeystaden.se|karolinesvintage.se|katerinamagasin.se|mmabetz.se|mmanytt.se|nyhetsbyran.org|ralycka.se|sportpanelen.se|springlfa.se|starbys.se|tidskriftenrespons.se|undertian.com|vegokak.se|villalivet.se|wesafe.se
+/wp-content/plugins/google-analytics-for-wordpress/*$important,script,~third-party,domain=alltsomsker.nu|battrestadsdel.se|boktugg.se|businessarena.nu|carinasphotolifestyle.se|clarakron.com|fjl.se|folkblick.se|foodstories.se|fores.se|hockeystaden.se|karolinesvintage.se|katerinamagasin.se|kvartal.se|mmabetz.se|mmanytt.se|nyhetsbyran.org|ralycka.se|sportpanelen.se|springlfa.se|starbys.se|tidskriftenrespons.se|undertian.com|vegokak.se|villalivet.se|wesafe.se
 /wp-content/plugins/google-analytics-premium/*$important,script,~third-party,domain=ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 101ideer.se,alltommat.se,alltomtradgard.se,amelia.se,lantliv.com,mama.nu,privataaffarer.se,skonahem.com,styleby.nu,tara.se,topphalsa.se,veckorevyn.com##a.teaser:has-text(/annonssamarbete/i)
 99.se##.nitem:has(a[href="/arkiv/kategori/annons"])
@@ -264,6 +264,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ||ssl.p.jwpcdn.com^*/sharing.js$important,script,domain=aftonbladet.se|eurosport.se|freeride.se|gamereactor.se|happyride.se
 ||ssl.p.jwpcdn.com^*/vast.js$important,script,domain=aftonbladet.se|eurosport.se|gamereactor.se|svd.se
 ||tm.tradetracker.net/tag?$important,script,domain=agneswinqvist.se|enkelteknik.se|everydayexplorers.org|moviezine.se
+||tracker.$important,domain=jawcloud.co
 ||videoplaza.tv/proxy/tracker/$image,important,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 ||webimages.lokus.se^$image,important,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|vt.se
 ! This file is a part of Frellwits-Swedish-Filter.txt and contains filters specifically for uBO/Nano Adblocker
@@ -1350,8 +1351,8 @@ nyafilmerhd.*,dreamfilmhd.*,real123movies.*,nyafilmer.*##a[data-hover="LADDA NED
 nyafilmerhd.*,dreamfilmhd.*,real123movies.*,nyafilmer.*##a[href$=".html"][target="_blank"]
 nyafilmerhd.*,dreamfilmhd.*,real123movies.*,nyafilmer.*##li > a[target="_blank"]
 nyafilmerhd.*,dreamfilmhd.*,swesub.*,real123movies.*,nyafilmer.*##a[style*="height"][rel*="nofollow"]
-nyafilmerhd.*,real123movies.*,nyafilmer.*##div[style^="margin-top:180px"]
-nyafilmerhd.*,real123movies.*,nyafilmer.*##div[style^="margin-top:210px"]
+nyafilmerhd.*,real123movies.*,nyafilmer.*,dreamfilmhd.*##div[style^="margin-top:180px"]
+nyafilmerhd.*,real123movies.*,nyafilmer.*,dreamfilmhd.*##div[style^="margin-top:210px"]
 nyteknik.se###tws1
 nyteknik.se##.blurb-sponsored
 omni.se##article.article--sponsored
@@ -1643,6 +1644,8 @@ yogaworld.se##.headerbar-container
 ||dreamfilm.*/HD/780x.$image
 ||dreamfilm.*/HD/player4k.$image
 ||dreamfilm.*/swedish/stream.php$subdocument
+||dreamfilmhd.*/wp-content/themes/keremiya1/js/license.$script
+||dreamfilmhd.*/wp-content/themes/keremiya1/js/script.js$script
 ||dreamfilmhd.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.vkpass.com streamango.com *.gstatic.com openload.co
 ||drift.com^$third-party
 ||driftt.com^$third-party
@@ -1713,6 +1716,7 @@ yogaworld.se##.headerbar-container
 ||hpevoices.com^$third-party
 ||hsadspixel.net^$third-party
 ||idg.se/sharecounter?$xmlhttprequest
+||imgix.net^*/analytics.$script
 ||inevserver.com/~tournreport/$image
 ||influact.com^$third-party
 ||insplanet.com^$third-party
