@@ -120,3 +120,7 @@ Run the following command:
 ```
   node index.js
 ```
+Build with white/black lists:
+```
+  node index.js -i=1,2,3 -s=4,5,6
+```
