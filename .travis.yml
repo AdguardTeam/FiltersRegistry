@@ -15,17 +15,3 @@ install:
 
 script:
     - node index.js
-
-deploy:
-    - provider: pages
-      edge:
-        branch: v1.8.47
-      skip-cleanup: true
-      local-dir: platforms
-      github-token: $GITHUB_TOKEN
-      verbose: true
-      on:
-        branch: master
-
-after_deploy:
-    - /bin/bash push.sh
