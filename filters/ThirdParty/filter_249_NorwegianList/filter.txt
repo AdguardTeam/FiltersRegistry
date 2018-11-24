@@ -5,7 +5,7 @@
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites
 ! Expires: 12 hours
 ! This list includes uBO-specific versions of filters, and are meant to be accessed by uBlock Origin, Nano Adblocker and AdGuard whenever they load the main Norwegian list.
-! OriginalVersion: 24November2018v1
+! OriginalVersion: 24November2018v2
 ||gamereactor.*/lay/ad-video-stats.js^$script,important
 ||gamereactor.*/lay/js/manageBanners.js^$script,important
 ||gamereactor.*/lay/js/adblock_desktop.js^$script,important
@@ -13,14 +13,17 @@
 ||akamai.net^$script,domain=eniro.se|eniro.no|eniro.dk
 /entag.js$script,domain=eniro.se|proff.se|proff.no|proff.dknfig.js^$script,important
 dagbladet.no##div[class^="css"]:matches-css-before(content: "Annonse")
-eavisa.com#$#div.kun-desktop { height:255px; overflow: hidden; pointer-events: none !important; cursor: default !important }
+! CSS-based entries
 telenor.no#$##megafooter { padding-top: 0px }
+eavisa.com#$#div.kun-desktop { height:255px; overflow: hidden; pointer-events: none !important; cursor: default !important }
 frettabladid.is#$#.ad-topspacer { height: 45px !important }
 icelandreview.com#$##zone-content { margin-top: 0px }
 journalisten.dk#$#body { padding-top: 16px !important }
 mbl.is#$##allt.container { margin-top: 0px }
 visir.is#$#.padded.limit--tight.limit { padding-top: 15px !important }
 visir.is#$#div.padded--no-bottom.padded--less.padded.limit { padding-top: 5px !important }
+qxl.*#$#.n_ListHeader { margin-top: 5px !important }
+qxl.*#$##listHeader { margin-top: 5px !important }
 ! Wildcard versions of various entries. Because why only block on one national version of a site, when you can nowadays block on all versions of a site without cluttering things up?
 gamereactor.*###ad_video
 gamereactor.*###ad_w300h450
@@ -48,8 +51,6 @@ ticketmaster.*##div[id^="ad-slot-"]
 qxl.*##div[style*="/banana/images/"]
 qxl.*###CoProSection
 qxl.*###eniroVideoBanner
-qxl.*#$#.n_ListHeader { margin-top: 5px !important }
-qxl.*#$##listHeader { margin-top: 5px !important }
 qxl.*###crosslistingLauritzAdsenseBanner
 qxl.*###GoogleAdsensePanorama
 ! Lisens / Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
