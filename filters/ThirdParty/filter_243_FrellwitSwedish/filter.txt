@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-11-27 16:16:13 CET
+! Last modified: 2018-11-28 16:23:02 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -102,6 +102,7 @@ ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sp
 evertiq.se#$#body,#bgWrapp { background-image: none !important; cursor: initial !important; }
 existenz.se##p:has(a[href^="http://ads."])
 expressen.se##.section-widget:has(a[href^="https://rabattkoder."])
+expressen.se##.teaser:has(.vignette--text:has-text(/presenteras av/i))
 expressen.se##.teaser:has(a[href*="lanapengar.expressen.se"])
 expressen.se##.teaser:has(a[href^="https://rabattkoder."])
 expressen.se##.teaser:if(.vignette:has-text(/erbjudande från/i))
@@ -575,6 +576,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 /newsletter/*$domain=zalando.se
 /nodecounter/*?token$image,domain=ng.se
 /none.gif$image,domain=blocket.se
+/nyheter/live-start/live-tv-senaste-nyheterna-i-expressen-tv/*$xmlhttprequest,domain=expressen.se
 /p/tourn/*$domain=dayviews.com
 /pagespeed_static/1.$image,domain=hockeysnack.com
 /panorama.js$script,domain=blogg.se|bloggkommentatorerna.se|itsallabouttaif.se|ladydahmer.nu|modette.se|svenskayoutubers.se|themoviefreak.se|webblogg.se
@@ -1120,6 +1122,7 @@ expressen.se##.terms-dialog
 expressen.se##.widget--collaboration
 expressen.se##.widget-ad-marker
 expressen.se##a[href*="/annons"]
+expressen.se##figure[data-article-data*="/tv/nyheter/live-start/live-tv-senaste-nyheterna-i-expressen-tv/"]
 faktiskt.se##.widget_wonderfoursocialmediawidget
 falkopingstidning.se,filmtipset.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##.social-share
 falkopingstidning.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se###premium-nag-screen
@@ -1347,6 +1350,7 @@ mmanytt.se##[class*="sponsrat-inlagg"]
 mmanytt.se##a[href*="://kampanjer."]
 mobil.blocket.se###top_device
 mobil.blocket.se###top_large_device
+mobil.blocket.se##div[class*="StyledBanner"]
 mobil.se##[data-domid^="sprjr"]
 mobil.se##li.partner
 moderaterna.se##.sliding-popup-bottom
@@ -1807,6 +1811,8 @@ widgets_native$script,domain=dagensmedia.se
 ||minfil.com^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' *.minfil.com
 ||missaffiliate.com^$third-party
 ||mobil.blocket.se/ufti$subdocument
+||mobil.blocket.se^*/ast.js$script
+||mobil.blocket.se^*/gdpr-bundle$script
 ||momondo.se/akam/$script
 ||monkey.tunnl.com/identify^$subdocument
 ||mraffiliate.com^$third-party
