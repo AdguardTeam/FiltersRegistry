@@ -1,16 +1,16 @@
 /* globals require, __dirname, process */
 
-const whitelist = [];
-const blacklist = [];
+let whitelist = [];
+let blacklist = [];
 
 let args = process.argv.slice(2);
 args.forEach(function (val) {
     if (val.startsWith('-i=')) {
-        whitelist.push(val.substr(3).split(','));
+        whitelist = whitelist.concat(val.substr(3).split(',').map(x => Number.parseInt(x)));
     }
 
     if (val.startsWith('-s=')) {
-        blacklist.push(val.substr(3).split(','));
+        blacklist = blacklist.concat(val.substr(3).split(',').map(x => Number.parseInt(x)));
     }
 });
 
