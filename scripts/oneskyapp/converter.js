@@ -56,7 +56,7 @@ const converter = (() => {
      * @param mask
      */
     const importFile = (locale, file, outFile, mask) => {
-        console.log('Importing tags for locale: ' + locale);
+        console.log('Importing file for locale: ' + locale);
 
         const source = readFile(file);
         if (!source) {
@@ -83,14 +83,14 @@ const converter = (() => {
         map.forEach(function (value, key) {
             const o = {};
             for (let p in value) {
-                o[`${mask}${key}.${p}`] = value[p];
+                o[`${mask}${key}.${p}`] = value[p].replace(/\n/g, '');
             }
             result.push(o);
         });
 
         writeFile(outFile, JSON.stringify(result, null, '\t'));
 
-        console.log('Importing tags for locale: ' + locale + ' ok!');
+        console.log('Importing file for locale: ' + locale + ' ok!');
     };
 
     /**
