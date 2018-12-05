@@ -14,4 +14,7 @@ const compiler = require("adguard-filters-compiler");
 
 const platformsPath = path.join(__dirname, platforms);
 
-compiler.validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
+const validationResult = compiler.validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
+if (!validationResult) {
+    throw new Error('Invalid filters json');
+}
