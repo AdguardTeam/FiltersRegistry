@@ -1,0 +1,17 @@
+/* globals require, __dirname, process */
+
+let args = process.argv.slice(2);
+
+let platforms = args[0];
+if (!platforms) {
+    platforms = './platforms';
+}
+
+const FILTERS_REQUIRED_AMOUNT = 80;
+
+const path = require('path');
+const compiler = require("adguard-filters-compiler");
+
+const platformsPath = path.join(__dirname, platforms);
+
+compiler.validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
