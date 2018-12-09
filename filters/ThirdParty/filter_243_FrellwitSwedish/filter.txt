@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-12-08 17:22:02 CET
+! Last modified: 2018-12-09 09:42:19 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -91,9 +91,9 @@ devote.se##.blogPostWrapper:has(em:has-text(/i samarbete med/i))
 devote.se##.blogPostWrapper:has(span:has-text(/sponsrat inlägg/i))
 devote.se##[class^="col-"]:has(.burt-unit-metadata)
 devote.se##article:has(div[class]:has-text(/samarbete/i))
-di.se##.article-teaser__text-inline:has(a[href^="/brandstudio/"])
 di.se##.carousel-tab:has-text(/annons:/i)
 di.se##.clip-browser__clip:has(a[href*="/annons-"])
+dn.se#$#html,body { overflow: auto !important; }
 dreamfilm.*,swesub.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
 egoinas.se##article.uk-article:has(.sw-sf-sponsor)
 emocore.se##.m_t.box:has(h2:has-text(Rekommenderade länkar))
@@ -269,7 +269,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ||imasdk.googleapis.com/js/core$important,subdocument,domain=skanesport.se
 ||mediacreeper.com/image$image,domain=allmogen.org|apg29.nu|b19.se|blogspot.se|cornucopia.cornubot.se|emanuelkarlsten.se|experimentlandet.blogg.se|forenadebolag.se|frihetssmedjan.se|genusdebatten.se|hoforsbloggen.se|horoskop.nu|lindelof.nu|lindqvist.com|nyhetswebben.se|opendata.se|peak-oil.se|petterssonsblogg.se|sempermiles.se|solrosuppropet.se|supermiljobloggen.se|swedishprepper.com|sysadmindagen.se|tjuvlyssnat.se|toklandet.wordpress.com|uvell.se|vaken.se|vargfakta.se|webbjobb.io|xn--blljus-jua.se|zaramis.se
 ||mediacreeper.se/image$image,domain=allmogen.org|apg29.nu|b19.se|blogspot.se|cornucopia.cornubot.se|emanuelkarlsten.se|experimentlandet.blogg.se|forenadebolag.se|frihetssmedjan.se|genusdebatten.se|hoforsbloggen.se|horoskop.nu|lindelof.nu|lindqvist.com|nyhetswebben.se|opendata.se|peak-oil.se|petterssonsblogg.se|sempermiles.se|solrosuppropet.se|supermiljobloggen.se|swedishprepper.com|sysadmindagen.se|tjuvlyssnat.se|toklandet.wordpress.com|uvell.se|vaken.se|vargfakta.se|webbjobb.io|xn--blljus-jua.se|zaramis.se
-||munchkin.marketo.net/munchkin.js$important,script,domain=hangotidningen.fi|hbl.fi|ostnyland.fi|vastranyland.fi
+||munchkin.marketo.net/munchkin.js$important,script,domain=hangotidningen.fi|hbl.fi|ostnyland.fi|vastranyland.fi|yougov.se
 ||openx.gamereactor.dk/multi.php?$important,script
 ||ssl.p.jwpcdn.com^*/freewheel.js$important,script,domain=eurosport.se
 ||ssl.p.jwpcdn.com^*/gapro.js$important,script,domain=freeride.se|gamereactor.se|happyride.se|ilikeradio.se
@@ -382,7 +382,6 @@ ikea.com##.cookie-info__panel--show
 .se/Logger?
 .se/sponsored/$image
 .se/upload/annons/
-/*?isPaywallBlocked$image,domain=dn.se
 /*Fokus_360x300px_animate*.gif$image,domain=fokus.se
 /*jquery.blockUI.$script,domain=fssweden.se
 /*log_ad$image,domain=yelp.se
@@ -1066,29 +1065,17 @@ di.se##.di_start__insider-ad
 di.se##.footer__cookie-info
 di.se##.gdpr-policy-bar.toaster
 di.se##.mc__overlay--show
-di.se##a[href*="facebook.com"][class^="article__toolbar"]
-di.se##a[href*="linkedin.com"][class^="article__toolbar"]
-di.se##a[href*="twitter.com"][class^="article__toolbar"]
 di.se##a[href^="/brandstudio/"]
 di.se##a[href^="/sponsrad/"]
 di.se##article.di_teaser--native
 di.se##article[data-is-native-ad="1"]
 di.se##aside.di_share-buttons
 di.se##section[data-ad-settings]
-dn.se##.account-information__tooltip
 dn.se##.bottom-bar--visible
 dn.se##.chosen-for-you
 dn.se##.gdpr-header
-dn.se##.gdpr-header-container
-dn.se##.js-ad-sidebar
-dn.se##.js-bottom-bar
-dn.se##.nativeads-page
 dn.se##.personal-carousel
-dn.se##.social-media__section
-dn.se##.sponsored-teaser
-dn.se##aside.js-social-toolbar
-dn.se##body > iframe[style^="display"]
-dn.se##div.DNP_theme--reco
+dn.se##.takeover-modal
 dn.se,expressen.se###rich-media-ads
 dn.se,expressen.se##[class*="open-in-app"]
 dn.se,klart.se,norran.se##.ad-wrapper
@@ -1577,6 +1564,7 @@ webradio.dbmedia.se##.marquee
 widgets_native$script,domain=dagensmedia.se
 worldkustom.com###moove_gdpr_cookie_info_bar
 xn--digilr-fua.se##.cookies
+yougov.se##.cookie-confirm
 |http://sifomedia.
 |https://kampanj.$domain=nwt.se
 |https://sifomedia.
@@ -1852,6 +1840,7 @@ xn--digilr-fua.se##.cookies
 ||mailchimp.com^*/popup$script
 ||mailmunch.co^$third-party,domain=affarsstaden.se|villalivet.se
 ||marketingautomation.services^$third-party,domain=wesafe.se
+||marketo.com^$third-party
 ||masture.mobi^
 ||media.jw-it.se/b/$image
 ||mediaglacier.com^$third-party
@@ -2025,7 +2014,7 @@ xn--digilr-fua.se##.cookies
 ||tourn.co^$third-party
 ||tourn.se^$third-party
 ||track.cpa.tpgrn.com^
-||trackjs.com^$third-party,domain=dn.se
+||tracker.yougov.com^$domain=yougov.se
 ||trafikenheten.se^
 ||travtjansten.se^$third-party
 ||trn.ninja^$third-party
@@ -2076,6 +2065,7 @@ xn--digilr-fua.se##.cookies
 ||yelp.se/yl*-$script
 ||yieldbird.com^$third-party
 ||youbora.com^$third-party,domain=aftonbladet.se|foxtv.se|svd.se
+||yougov.se/_partner/request.js$script
 ||youplay.se^$third-party,domain=dayviews.com|emocore.se|familjeliv.se|hamsterpaj.net|kamrat.com
 ||znaptag-tags-se.s3.amazonaws.com^$script
 ||zotabox.com^$third-party,domain=etunawebben.se|rapport24.com
