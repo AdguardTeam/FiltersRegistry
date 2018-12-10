@@ -1,11 +1,11 @@
 !
-! Checksum: 4KjLdMt5buOxy6A3AdHh4A
+! Checksum: FDfVCuXmsZ8/nk9Dmd3Alg
 ! Title: Polskie Filtry Wewnętrzne
 ! Collaborators: KonoromiHimaries, hawkeye116477
 ! Oświadczenie: https://github.com/MajkiIT/polish-ads-filter/blob/master/STATEMENT.md
 ! EULA: Subskrybcja|Użytkowanie listy "Polskie Filtry Wewnętrzne" jest równoznaczna z akceptacją sposobu w jaki działają filtry.
 ! INFO: Aby wyłączyć niepożądaną regułę, należy ją skopiować do zakładki Moje Filtry a następnie między znakami ## wstawić znak @ np. sprawnymarketing.pl#@#.hidden-mobile
-! OriginalVersion: 20181129
+! OriginalVersion: 20181210
 ! Expires: 3 days
 ! Wymagane:
 !   Rozszerzenia >> uBlock Origin, Nano Adblocker lub Adguard
@@ -4216,15 +4216,15 @@ fili.cc##a[href^="/download/file"]
 !@Codename: RSS
 !@Description: Filtry blokujące i ukrywające sekcje RSS na polskich stronach.
 !@Używanie Polskich Filtrów RSS jest jednoznaczne ze świadomością co do ich zawartości (co blokują itp.) a twórcy nie ponoszą odpowiedzialności za niewiedzę użytkownika
-!@Last modified: Tue, 04 Dec 2018, 13:51 UTC+01
-!@Version: 201812041351
+!@Last modified: Sun, 09 Dec 2018, 19:54 UTC+01
+!@Version: 201812091954
 !@Expires: 7 days
 !@Support:
 !@  Discord => http://ds.certyficate.it
 !@  Github => https://github.com/PolishFiltersTeam/PolishRSSFilters/issues
 !@License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 !@Copyright © 2018 Polish Filters Team
-!@Aktualizacja: wto, 04 gru 2018, 13:51 UTC+01
+!@Aktualizacja: nie, 09 gru 2018, 19:54 UTC+01
 !
 !
 !@Specyficzne reguły ukrywające
@@ -4311,6 +4311,7 @@ kochanamama.pl##.pmpIRss, .pmpB > div > div:nth-of-type(1)
 kodeks-drogowy.org###komentarze_nowe_title
 kodi.org.pl##.gk-icon-rss
 kolemsietoczy.pl###menu-sociale > li:nth-child(5)
+korr.pl##a[href^="/?format=feed&type=rss"]
 korsokolbuszowskie.pl##a[href="http://www.korsokolbuszowskie.pl/rss"]
 korsosanockie.pl##a[href="http://www.korsosanockie.pl/rss"]
 korso.pl##a[href="http://www.korso.pl/rss"]
@@ -4832,8 +4833,7 @@ mirrorace.com##.uk-card-body > .uk-text-center.uk-margin-bottom
 tokfm.pl##[class^="app--podcasts_ad"]
 !
 !& event, podstrona, konkurs, sponsorowane
-www.elektroda.pl##.bbd
-www.elektroda.pl##.top-post.the-post-list
+www.elektroda.pl##.bbd, .top-post.the-post-list
 !
 !& player, zachęta do rejestracji
 vev.io##.vjs-info-button
@@ -4861,36 +4861,26 @@ porndig.com#@#.noadblock
 dailymotion.com##.dmp_Player .np_Darken.np_transition
 !
 !& yt, upiększenia
-www.youtube.com#$#.ytp-swatch-background-color.ytp-play-progress { background-color: #3385ff !important; background-image: none !important; }
-www.youtube.com#$#.ytp-swatch-background-color.ytp-scrubber-button { background-color: #3385ff !important; background-image: none !important; }
+www.youtube.com#$#.ytp-swatch-background-color.ytp-play-progress:style(background-color: #3385ff !important; background-image: none !important;), .ytp-swatch-background-color.ytp-scrubber-button { background-color: #3385ff !important; background-image: none !important; }
 www.youtube.com#$##progress { background-color: #3385ff !important; background-image: none !important; }
 !
 !& podstrona, konkurs
 www.dobreprogramy.pl###blogWidgetCta
 !
 !& player, ulepszenie
-www.youtube.com#$#.html5-video-player:not(.ytp-fullscreen) .ytp-progress-bar-container { position: relative!important; top: 32px!important; }
-www.youtube.com#$#.html5-video-player:not(.ytp-fullscreen) .ytp-chrome-controls { position: relative!important; top: -12px!important; }
-www.youtube.com#$#.html5-video-player.ytp-fullscreen .ytp-progress-bar-container { position: relative!important; top: 32px!important; }
-www.youtube.com#$#.html5-video-player.ytp-fullscreen .ytp-chrome-controls { position: relative!important; top: -30px!important; }
+www.youtube.com#$#.html5-video-player:not(.ytp-fullscreen) .ytp-progress-bar-container:style(position: relative!important; top: 32px!important;), .html5-video-player:not(.ytp-fullscreen) .ytp-chrome-controls:style(position: relative!important; top: -12px!important;), .html5-video-player.ytp-fullscreen .ytp-progress-bar-container:style(position: relative!important; top: 32px!important;), .html5-video-player.ytp-fullscreen .ytp-chrome-controls { position: relative!important; top: -30px!important; }
 !
 !& pusta sekcja, ogólne, zewnętrzne
 mserwery.pl##.container > div.panel-default.panel:nth-of-type(1), .container > div.panel-default.panel:nth-of-type(3)
 !
 !& a-o.ninja
-a-o.ninja##.clearfix.block-search.block:nth-of-type(n+3):nth-of-type(-n+4)
-a-o.ninja##.block-search.block:nth-of-type(5)
-a-o.ninja##.col-sm-9 > p:nth-of-type(n+1):nth-of-type(-n+2)
+a-o.ninja##.clearfix.block-search.block:nth-of-type(n+3):nth-of-type(-n+4), .block-search.block:nth-of-type(5), .col-sm-9 > p:nth-of-type(n+1):nth-of-type(-n+2)
 a-o.ninja###above-navbar
-a-o.ninja##.region-content.region > center
 ||a-o.ninja/wp-content/uploads/dark.jpg$image
 ||a-o.ninja/wp-content/uploads/*/A-O_logo.png$image
-a-o.ninja##.container.header-image
-a-o.ninja##.region-content.region > p
-a-o.ninja##p:nth-of-type(n+3):nth-of-type(-n+4)
-a-o.ninja#$#.header { height:calc(100%)!important; }
+a-o.ninja#$#.container.header-image, .region-content.region > p, .header { height:calc(100%)!important;), .leaf:nth-of-type(12 }
 a-o.ninja##[href^="https://e-neko.pl/"]
-a-o.ninja##.leaf:nth-of-type(12)
+a-o.ninja##p:nth-of-type(n+3):nth-of-type(-n+4)
 !
 !& baner, podstrona, polecane
 www.gry.jeja.pl##div.game-box-down:nth-of-type(3)
@@ -4923,8 +4913,7 @@ www.cda.pl##.pb-logo
 !> https://github.com/uBlockOrigin/uAssets/issues/2144
 !
 !& polecane, text, kategoria, pusta sekcja
-wbijam.pl##.pmenu_naglowek_blue:nth-of-type(7)
-wbijam.pl##.pmenu:nth-of-type(6)
+wbijam.pl##.pmenu_naglowek_blue:nth-of-type(7), .pmenu:nth-of-type(6)
 !
 !& autoreklama, text
 wbijam.pl###menu_prawa_fb > center
@@ -4969,8 +4958,7 @@ bitcoinheavy.org##p:nth-of-type(44)
 !
 wojsko.com.pl###AnimacjaPrzenikanieKontener
 !
-!> https://github.com/MajkiIT/polish-ads-filter/issues/5278
-!> https://github.com/MajkiIT/polish-ads-filter/issues/5340
+!> https://github.com/MajkiIT/polish-ads-filter/issues/5278 > 5340
 kk24.pl##.widget_text.widget:nth-of-type(1)
 kk24.pl##.simple_manager_widget.widget:nth-of-type(8)
 !
@@ -5036,10 +5024,7 @@ rms.pl###art_g_p
 www.gry-online.pl##.skl-promo-bar
 !
 www.mmarocks.pl##p > a[href^="http://sklep.mmarocks.pl/"]
-www.mmarocks.pl##.wpb_wrapper > a[href^="http://sklep.mmarocks.pl/"]
-www.mmarocks.pl##.widget_text.widget:nth-of-type(3)
-www.mmarocks.pl##.widget_text.widget:nth-of-type(7)
-www.mmarocks.pl##.widget_custom_html.widget.widget_text:nth-of-type(5)
+www.mmarocks.pl##.wpb_wrapper > a[href^="http://sklep.mmarocks.pl/"], .widget_text.widget:nth-of-type(3), .widget_text.widget:nth-of-type(7), .widget_custom_html.widget.widget_text:nth-of-type(5)
 mmarocks.pl##[class^="widget widget_text"]
 mmarocks.pl##[class^="wpb_text_column wpb_content_element"]
 !
@@ -5057,11 +5042,9 @@ liberte.pl##.shop-liberte
 !
 www.culturva.pl###HTML9
 !
-!> https://github.com/MajkiIT/polish-ads-filter/issues/4545
-!> https://github.com/MajkiIT/polish-ads-filter/issues/4801
+!> https://github.com/MajkiIT/polish-ads-filter/issues/4545 > 4801
 gamedot.pl###content > div.content-columns.width > div.content-columns-right > div:nth-child(7)
-gamedot.pl##.content-columns-right-inner.content-module:nth-of-type(1)
-gamedot.pl##.see-in-store
+gamedot.pl##.content-columns-right-inner.content-module:nth-of-type(1), .see-in-store
 !
 conowego.pl###c40
 !
@@ -5079,9 +5062,7 @@ facetemjestem.pl##.sidebar-sticky
 ratowniczy.net##p:nth-of-type(3)
 !
 !> https://github.com/MajkiIT/polish-ads-filter/issues/4874
-krytykapolityczna.pl##.page-sidebar:nth-of-type(2) > .sticky.widget-area > .textwidget:nth-of-type(1)
-krytykapolityczna.pl##.entry-content > .site-commerc.book-item:nth-of-type(n+1):nth-of-type(-n+2)
-krytykapolityczna.pl##.site-commerc.book-item:nth-of-type(n+3):nth-of-type(-n+5)
+krytykapolityczna.pl##.page-sidebar:nth-of-type(2) > .sticky.widget-area > .textwidget:nth-of-type(1), .entry-content > .site-commerc.book-item:nth-of-type(n+1):nth-of-type(-n+2), .site-commerc.book-item:nth-of-type(n+3):nth-of-type(-n+5)
 !
 24tp.pl##.padd-right-0.padd-left-0.polecamy.col-xs-12
 !
@@ -5099,8 +5080,7 @@ weszlo.com##.shop
 !
 arch.telewizjarepublika.pl###column-right > a[href="http://sklep.telewizjarepublika.pl"]
 !
-www.sfd.pl##.promotion-products.articles-section
-www.sfd.pl##.add-produkt-boksprods
+www.sfd.pl##.promotion-products.articles-section, .add-produkt-boksprods
 !
 libertarianin.org###text-29
 !
@@ -5156,10 +5136,7 @@ brd24.pl###text-13
 !> https://github.com/MajkiIT/polish-ads-filter/issues/4749
 applemobile.pl##.vc_row-fluid.wpb_row.vc_row:nth-of-type(3)
 !
-policja.pl##.box-white:nth-of-type(13)
-policja.pl##.box-white:nth-of-type(24)
-policja.pl##.box-white:nth-of-type(26)
-policja.pl##.box-white:nth-of-type(29)
+policja.pl##.box-white:nth-of-type(13), .box-white:nth-of-type(24), .box-white:nth-of-type(26), .box-white:nth-of-type(29)
 !
 !> https://github.com/MajkiIT/polish-ads-filter/issues/4759
 centrumdruku3d.pl##.row:nth-of-type(2) > .col-sm-12.col-lg-4:nth-of-type(1)
@@ -5173,8 +5150,7 @@ aszdziennik.pl##.double-cols-right
 !
 !& okres testowy, podstrona, promocja
 !> https://github.com/MajkiIT/polish-ads-filter/issues/6079
-www.cda.pl##.video-baner
-www.cda.pl##.btn-premium.btn
+www.cda.pl##.video-baner, .btn-premium.btn
 !
 popodrozy.pl##.layout_seselegant_paralex.generic_layout_container
 !
@@ -5195,8 +5171,7 @@ vidoza.net##[class^="floating_pane floating_pane--position_top floating_pane--te
 !
 rapidvideo.com##a[href^="//"]
 !
-thevideo.io,thevideo.us,thevideo.me,tvad.me##.inplayer_signup_link > span:nth-of-type(2)
-thevideo.io,thevideo.us,thevideo.me,tvad.me##.fa-exclamation-circle.fa-fw.fa
+thevideo.io,thevideo.us,thevideo.me,tvad.me##.inplayer_signup_link > span:nth-of-type(2), .fa-exclamation-circle.fa-fw.fa
 !
 vidlox.tv,vidlox.me##.dwnld
 !
@@ -5249,15 +5224,11 @@ rmf.fm###strip-akcje-konkursy-3
 focus.pl##.text-center > p
 !
 !> https://github.com/MajkiIT/polish-ads-filter/issues/5475
-pultusk24.pl##.row:nth-of-type(5)
-pultusk24.pl##.art-pol-xl
+pultusk24.pl##.row:nth-of-type(5), .art-pol-xl
 !
-ki24.info##.container:nth-of-type(14) > .row:nth-of-type(7)
-ki24.info##.contest-widget.col-md-12
-ki24.info##.col-md-4 > .box-margin
+ki24.info##.container:nth-of-type(14) > .row:nth-of-type(7), .contest-widget.col-md-12, .col-md-4 > .box-margin
 !
-ddwloclawek.pl##.col-md-4 > .box-margin
-ddwloclawek.pl##.container:nth-of-type(12) > .row:nth-of-type(11)
+ddwloclawek.pl##.col-md-4 > .box-margin, .container:nth-of-type(12) > .row:nth-of-type(11)
 !
 !
 !13$----------------------{ zdarzenia }----------------------!
@@ -5274,8 +5245,7 @@ tvn24.pl##.editorialWithPhoto:nth-of-type(2)
 !
 kupdeske.pl##.m-b-lg.col-lg-6
 !
-trybunaczestochowska.pl##.wp-image-14638.size-full.aligncenter
-trybunaczestochowska.pl##.popmake-close.pum-close
+trybunaczestochowska.pl##.wp-image-14638.size-full.aligncenter, .popmake-close.pum-close
 !
 !
 !15$----------------------{ sezonowe }----------------------!
@@ -5344,12 +5314,8 @@ filetracker.pl###gosc
 !
 a-o.ninja##center > font
 !
-pionki24.pl##.siderightcontent:nth-of-type(30)
 pionki24.pl##div:nth-of-type(n+31):nth-of-type(-n+32)
-pionki24.pl##.prawyblok2content
-pionki24.pl##.siderightcontent:nth-of-type(1)
-pionki24.pl##.siderightcontent:nth-of-type(3)
-pionki24.pl##.siderightcontent:nth-of-type(34)
+pionki24.pl##.prawyblok2content, .siderightcontent:nth-of-type(1), .siderightcontent:nth-of-type(3), .siderightcontent:nth-of-type(34), .siderightcontent:nth-of-type(30)
 !
 !
 !22$----------------------{ sponsorzy }----------------------!
@@ -5382,8 +5348,7 @@ a-o.ninja##.last.leaf
 !> https://github.com/MajkiIT/polish-ads-filter/issues/5393
 faktykonopne.pl##.vc_col-sm-6.vc_column_container.wpb_column:nth-of-type(2)
 !
-mragowo24.info##.ads.reklama_wysuwana_bok2
-mragowo24.info##.ads.reklama_wysuwana_bok
+mragowo24.info##.ads.reklama_wysuwana_bok2, .ads.reklama_wysuwana_bok
 !
 patronite.pl##.active.zostan_patronem_menu
 !
@@ -5396,8 +5361,7 @@ tygodniksanocki.pl##.vc_clearfix.wpb_content_element.wpb_images_carousel
 !
 !& baner, podserwis
 !> https://github.com/MajkiIT/polish-ads-filter/issues/4037#issuecomment-366173639
-sportowefakty.wp.pl##.image:nth-of-type(12) > a[href^="https://pilot.wp.pl/oferta/"]
-sportowefakty.wp.pl##.image:nth-of-type(16) > a[href^="https://pilot.wp.pl/oferta/"]
+sportowefakty.wp.pl##.image:nth-of-type(12) > a[href^="https://pilot.wp.pl/oferta/"], .image:nth-of-type(16) > a[href^="https://pilot.wp.pl/oferta/"]
 !
 !& baner, podserwis
 gwiazdy.wp.pl##a[href^="https://pilot.wp.pl/"]:nth-of-type(2)
@@ -5456,14 +5420,12 @@ aszdziennik.pl,innpoland.pl,mamadu.pl##.old-centered.container.footer__box--row
 !
 !30$----------------------{ ankiety - sms premium }----------------------!
 !
-www.supertydzien.pl##.widget.row:nth-of-type(n+8):nth-of-type(-n+9)
-www.supertydzien.pl##.widget.row:nth-of-type(n+2):nth-of-type(-n+3)
+www.supertydzien.pl##.widget.row:nth-of-type(n+8):nth-of-type(-n+9), .widget.row:nth-of-type(n+2):nth-of-type(-n+3)
 !
 !
 !31$----------------------{ fix na zepsute elementy }----------------------!
 !
-olsztyn.wm.pl##.icon-Symbol4-day
-olsztyn.wm.pl##.icon-Symbol9-day
+olsztyn.wm.pl##.icon-Symbol4-day, .icon-Symbol9-day
 !
 !
 !32$----------------------{ puste sekcje }----------------------!
@@ -5488,8 +5450,7 @@ telewizor.eu##a[href="http://telewizor.eu/reklama.html"]
 !
 dowbit.pl###et_ads-3
 !
-droneweb.pl##.td-header-sp-recs
-droneweb.pl##.td-all-devices
+droneweb.pl##.td-header-sp-recs, .td-all-devices
 !
 lukow24.pl##div:nth-of-type(6) > a[href="http://www.reklama.lukow24.pl"] > img[src="/grafika/miejsce_na_reklame.jpg"]
 lukow24.pl##div:nth-of-type(8) > a[href="http://www.reklama.lukow24.pl"] > img[src="/grafika/miejsce_na_reklame.jpg"]
@@ -5501,8 +5462,7 @@ nowiny.rybnik.pl###blok_
 ziemialimanowska.pl###text-3
 !
 !> https://github.com/MajkiIT/polish-ads-filter/issues/5577
-naszemiasto.pl##.columns.small-12.medium-6.large-12.sekcjaWaska:nth-of-type(1)
-naszemiasto.pl##.flatFee
+naszemiasto.pl##.flatFee, .columns.small-12.medium-6.large-12.sekcjaWaska:nth-of-type(1)
 !
 elubaczow.com##.posts > .widgettitle:nth-of-type(3)
 !
@@ -5522,8 +5482,7 @@ www.bankier.pl##iframe[src="https://bankier.polldaddy.com/s/złoty-bankier-zgło
 !
 !& reklama artykułu
 !> https://github.com/MajkiIT/polish-ads-filter/issues/6085
-make-cash.pl##.ipsBox.ipsWidget_vertical.ipsWidget:nth-of-type(3)
-make-cash.pl##.ipsBox.ipsWidget_vertical.ipsWidget:nth-of-type(8)
+make-cash.pl##.ipsBox.ipsWidget_vertical.ipsWidget:nth-of-type(3), .ipsBox.ipsWidget_vertical.ipsWidget:nth-of-type(8)
 !
 !
 !35$----------------------{ ciasteczka - statyczne }----------------------!
@@ -5545,13 +5504,10 @@ www.kosmonautyka.pl##table:nth-of-type(3)
 !36$----------------------{ ulepszenia - przycinanie sekcji }----------------------!
 !
 !& stopka
-natemat.pl#$#.old-centered.container.footer__box--row--nav { padding:10px!important; }
-natemat.pl#$#.old-centered.container.footer__box--row { padding-top:30px!important; }
+natemat.pl#$#.old-centered.container.footer__box--row--nav:style(padding:10px!important;), .old-centered.container.footer__box--row { padding-top:30px!important; }
 !
 !& stopka
-businessinsider.com.pl#$#.footer { height: 180px !important; }
-businessinsider.com.pl#$#.top { margin-top: 30px !important; }
-businessinsider.com.pl#$#.footer .list-pipes:first-of-type { margin-top: 15px !important; }
+businessinsider.com.pl#$#.footer:style(height: 180px !important;), .top:style(margin-top: 30px !important;), .footer .list-pipes:first-of-type { margin-top: 15px !important; }
 !
 !
 !37$----------------------{ zewnętrzne - niefiltrowane }----------------------!
@@ -5607,8 +5563,7 @@ tygodniksanocki.pl##.td-header-sp-recs
 !
 !& baner, podstrona, sekcja
 !> https://github.com/MajkiIT/polish-ads-filter/issues/6544
-radiozw.com.pl##.smietnik.content_big
-radiozw.com.pl##.content_small
+radiozw.com.pl##.smietnik.content_big, .content_small
 radiozw.com.pl###bigbox > img
 radiozw.com.pl###bigbox > A
 radiozw.com.pl###bigbox > H4
