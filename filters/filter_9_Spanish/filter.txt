@@ -26,6 +26,8 @@
 !
 ! https://forum.adguard.com/index.php?threads/ivoox-com-podcasts-issues.29530/
 ! ||addevweb.com^$third-party
+||subdo.torrentrapid.com^
+||subdo.tumejortorrent.com^
 ||sunmedia.tv^$third-party
 ||lzrikate.com^$third-party
 ||redemw.com^$third-party
@@ -1118,8 +1120,11 @@ maisgasolina.com###main [id$="Block"][-ext-has='.adsbygoogle']
 !------- JS rules ---------------------!
 !--------------------------------------!
 ! go.oclasrv.com clickunder
-gnula.se,tugaanimado.net#%#window.zfgloadedpopup = true;
-!
+descargas2020.com,gnula.se,tugaanimado.net#%#window.zfgloadedpopup = true;
+! https://github.com/AdguardTeam/AdguardFilters/issues/25453
+descargas2020.com#%#AG_abortInlineScript(/var pmawid/, 'document.createElement');
+descargas2020.com#%#Object.defineProperty(window, '_cpp', { get: function() { return; } });
+descargas2020.com#%#AG_abortInlineScript(/about:blank/, 'document.addEventListener');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25954
 visioncloud.ga#%#AG_abortInlineScript(/setTimeout\(function[\s\S]*?"\)\.modal\(\);/, '$');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25080
@@ -1330,6 +1335,7 @@ http://adw.
 !-------------------- Specific rules --------------------!
 !--------------------------------------------------------!
 !
+descargas2020.com##.pub728x90
 novanews.com.br##.banners
 mundoeducacao.bol.uol.com.br##.wrapper-banner
 mundoeducacao.bol.uol.com.br###uoltm-float-push
