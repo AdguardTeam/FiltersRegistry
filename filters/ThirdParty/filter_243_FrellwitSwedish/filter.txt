@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2018-12-10 16:43:37 CET
+! Last modified: 2018-12-11 11:26:52 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -101,8 +101,8 @@ ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sp
 evertiq.se#$#body,#bgWrapp { background-image: none !important; cursor: initial !important; }
 existenz.se##p:has(a[href^="http://ads."])
 expressen.se##.section-widget:has(a[href^="https://rabattkoder."])
-expressen.se##.teaser:has(.vignette--text:has-text(/presenteras av/i))
-expressen.se##.teaser:has(.vignette:has-text(/erbjudande från/i))
+expressen.se##.teaser:has(.vignette--text:has-text(/(^presenteras av|^leva&bo i samarbete med)/i))
+expressen.se##.teaser:has(.vignette:has-text(/(^erbjudande från|^annons:)/i))
 expressen.se##.teaser:has(a[href*="lanapengar.expressen.se"])
 expressen.se##.teaser:has(a[href^="https://rabattkoder."])
 expressen.se##a[data-click-track][href*="utm_campaign"]:has(strong:has-text(annons))
@@ -127,6 +127,7 @@ fotbolltransfers.com##.smallNewsLink:has(.smallNewsCategory:has-text(/sponsrad/i
 fragbite.se##.module:has(h4:has-text(/sponsrat/i))
 fragbite.se##.spreadItemCollection:has(.category:has-text(/sponsrat/i))
 fragbite.se##.spreadItemCollection:has(.sponsor)
+freeride.se,happyride.se##.boxtext:has-text(casino)
 friatider.se##.plainbox:has(span:has-text(/annons/i))
 fz.se##.content-widget:has(div.fpnih-meta:has-text(/sponsrat/i))
 gamereactor.se#$##pagebackground { background-image: none !important }
@@ -396,7 +397,7 @@ ikea.com##.cookie-info__panel--show
 /\/*banner*./$image,domain=alltomhif.se|autolife.se|bettips.se|boktugg.se|byggteknikforlaget.se|dansbandskanalen.se|etc.se|evertiq.se|everysport.com|guldkanalen.se|it-finans.se|katerinamagasin.se|kurera.se|lakartidningen.se|ljuskultur.se|lundagard.se|markbladet.se|marsta.nu|newsvoice.se|rockkocken.se|rumhemma.se|skrattnet.se|sportbloggare.com|sportpanelen.se|svf.se|tkj.se|vaken.se
 /\/*banner*./$script,domain=cleannet.se|dagenshandel.se|entreprenad.com|entreprenor.se|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|kemivarldenbiotech.se|lifesciencesweden.se|magasinetparagraf.se|medtechmagazine.se|motormagasinet.se|packnet.se|plastnet.se|processnet.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|verkstaderna.se|woodnet.se
 /\/*casino*./$image,domain=dayviews.com|hypeline.se
-/\/*sponsor*./$image,domain=ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se|swehockey.se
+/\/*sponsor*./$image,domain=ettgottskratt.se|freeride.se|happyride.se|humorbibeln.se|newsner.com|sportbibeln.se|swehockey.se
 /_ad/*$script,domain=funbeat.se
 /_banners/*$image,domain=kolozzeum.com
 /_bm/abd$script,domain=eurosport.se
@@ -804,7 +805,6 @@ ikea.com##.cookie-info__panel--show
 @@||alicestenlof.com^$generichide
 @@||assets-cdn.mytaste.org/js/ads.js$script
 @@||atl.nu^$generichide
-@@||backend.worldoftulo.com^$script,subdocument
 @@||boffo.se^$generichide
 @@||clarahenry.se^$generichide
 @@||cxpublic.com^$image,domain=nwt.se
@@ -873,7 +873,7 @@ ikea.com##.cookie-info__panel--show
 @@||tidningenhalsa.se^$generichide
 @@||utemagasinet.se^$generichide
 @@||vagabond.se^$generichide
-@@||videoplaza.tv^$domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
+@@||videoplaza.tv/proxy/distributor$xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 @@||webbjobb.io^$generichide
 abus.com#@##cookieChoiceInfo
 adContainer$script,domain=dagensmedia.se
@@ -2034,6 +2034,7 @@ yougov.se##.cookie-confirm
 ||trugaze.io^$third-party
 ||turistmal.se/js/popup-controller.js$script
 ||tv4-trailers-prod.herokuapp.com/api/impression$xmlhttprequest
+||tv4-trailers.b17g.net/api/trailers$xmlhttprequest
 ||tvdags.se/json/stats$xmlhttprequest
 ||twingly.com^$third-party
 ||twittercounter.com^$third-party
