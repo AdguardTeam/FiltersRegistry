@@ -23,6 +23,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||cdn.steambets.net^$third-party
 ||bannernetwork.net^$third-party
 ||blckads.me^$third-party
 ||towithdureb.ru^$third-party
@@ -5506,6 +5507,8 @@ simpsonsua.com.ua#$#.adsbyyottos { height: 1px!important; visibility: hidden!imp
 !
 ! Extended CSS rules
 !
+! lordfilm.tv - удаление отступа сверху
+lordfilm.tv#$#.wrap:has(> div) { margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18436
 vesti-ua.net##.last_news_widget:has(> noindex > div#psh_wrp)
 vesti-ua.net##.mid_col > section.mblock:has(> div.related_news_block > ins.adsbygoogle)
@@ -5648,6 +5651,7 @@ gismeteo.ru##div:has(> div > div[data-type="default"] > div > a[href*="type=news
 avito.ru##.catalog > div > div.breadcrumbs~div:has(> div[id][class] > div[class])
 avito.ru##.l-content > div.catalog-counts+div[class*=" "]:has(> div#template_ldr_top)
 !
+cheatground.ru##a[href^="https://ad.admitad.com/"]:has(> img)
 odds.ru##body:has(> a) > .br-branding
 pornov.online##.thumbnails > li:has(.thumbnail > a[href^="/asd/"])
 survarium.pro##body > survarium-stats > sense:has(>ins.adsbygoogle)
@@ -6498,7 +6502,8 @@ s4galaxy.ru,3dnews.ru,lenovo-smart.ru#%#Object.defineProperty(window, 'SocialMar
 !
 ! ExoClick (clickunder or/and ads)
 prostoporno.vip#%#(function(){Object.defineProperty(window, 'ExoLoader', { get: function() { return; } }); var c=document.addEventListener;document.addEventListener=function(a,b,d,e){"getexoloader"!=a&&-1==b.toString().indexOf('loader')&&c(a,b,d,e)}.bind(document);})();
-!
+! https://github.com/AdguardTeam/AdguardFilters/issues/26157
+46tv.ru#%#AG_onLoad(function() { window.a = 0; });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23826
 hd24.watch#%#window.open = function() {};
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23356
@@ -6796,8 +6801,6 @@ morekino.me#$#.wrap { margin-top: 0!important; }
 fast-torrent.zone#$#body { padding: 0px!important; }
 ! filmshd.club - удаление отступа сверху
 filmshd.club#$#.wrap { padding-top: 0!important; }
-! lordfilm.tv - удаление отступа сверху
-lordfilm.tv#$#.wrap { margin-top: 0!important; }
 ! odds.ru - удаление отступа сверху
 odds.ru#$##content { margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24701
@@ -9128,6 +9131,12 @@ http://uno.*?t=b&blockids=$third-party
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 Ly9hbi55YW5kZXgucnUv
 !
+goodfon.ru##div[class^="wallpapers__banner"]
+protanki.tv##iframe[height="90"]
+omskinform.ru##.ny_fixed
+sdamgia.ru##div[style="min-height:90px"]
+sdamgia.ru##div[style="width:160px;overflow:hidden"]
+sdamgia.ru##.content > iframe[name="action_target"]+div[style="margin-top:50px"]
 vokrugsveta.ru##.tgb-box
 vokrugsveta.ru##.article_rek
 dtf.ru##.booster_unit
@@ -9181,7 +9190,7 @@ bigmir.net##div[data-bmm*="_rbanner"]
 ||bm.img.com.ua/*/common/js/holder.js
 getsapp.ru##body > table > tbody > tr > td[width="606"][height="172"]
 kinohab.biz##.col-mov-right > a[rel="nofollow"] > img
-x-torrent.pro##a[href^="https://rib.li/"]
+x-torrent.pro##a[href^="https://goo.gl/"]
 manytorrents.pro##.media_down > a[rel="nofollow"] > img
 ||ru.nrjprice.com/js/api/widget.js
 ||meta.ua/br/
