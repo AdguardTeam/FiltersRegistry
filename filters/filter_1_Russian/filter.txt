@@ -23,6 +23,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||squalid-linen.fun^$third-party
 ||ieuhd.com^$third-party
 ||ed98512111bb19e5.in.net^$third-party
 ||checkbl.ru^$third-party
@@ -4180,7 +4181,10 @@ webcamsdolls.com#@#.ads-iframe
 ||hdvb.*/vast/$xmlhttprequest,other,~font
 !http://hdvb.*/vast/clone?url=*&host=kino-coin.online&*&adblock=true
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/21960
+! https://github.com/AdguardTeam/AdguardFilters/issues/27037
+||webcaster.pro/html5_player/build/wcr_html5_player.min.js$replace=/detectClass:"[A-Z-a-z]+?"/detectClass:"not_ad"/
+video.khl.ru#@#.AdInline
+video.khl.ru#@#.adsbox
 video.khl.ru#@#.adamazon
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21347
 draug.ru#@##banner_ad
@@ -4403,9 +4407,6 @@ vimperor.ru#%#window.abNoticeShowed = true;
 ! gazeta.ru - ads reinjection
 !+ NOT_PLATFORM(windows, mac, android)
 @@||gazeta.ru^$generichide
-! https://github.com/AdguardTeam/AdguardFilters/issues/12858
-video.khl.ru#@#.adsBox
-video.khl.ru#@#.adsbox
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12868
 ||key.vst.in.ua/wp-content/uploads/*/*.js
 ! Авторизация Wi-Fi в московском метро
@@ -9136,6 +9137,11 @@ http://uno.*?t=b&blockids=$third-party
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 Ly9hbi55YW5kZXgucnUv
 !
+mediametrics.ru##.bn
+animedub.ru##.adfww
+animedub.ru##.afgljk
+sochi.camera###cams_top_block
+ren.tv##.altadblock
 kaztorrents.info##.branding_kaztorrents
 ||kaztorrents.info/pic/partners/
 king-torrent.ru,best-torrentor.ru##center > noindex
@@ -9383,7 +9389,7 @@ uzb-seks.ru##div[id^="newsblock"]
 vprognoze.ru##.banner
 ||vprognoze.ru/banners/
 ||kinotorrent1.ru/*_ybr_
-newtorrent.org,zoneofgames.ru,v-torrents.ru,musicfound.net,torrenthd.ru,torrent-windows.net,mega-trek.net,gamefox.ws,rusbitor.ru,v-torrente.ru##a[href*="/redirect?offerid="] > img
+fast-torrent.ru,newtorrent.org,zoneofgames.ru,v-torrents.ru,musicfound.net,torrenthd.ru,torrent-windows.net,mega-trek.net,gamefox.ws,rusbitor.ru,v-torrente.ru##a[href*="/redirect?offerid="] > img
 premier.ua##div[style^="width:728px;height:90px;"]
 exler.ru##.banner
 ebanoe.it##.top-xata
@@ -17137,8 +17143,7 @@ top.mail.ru##.banner_240
 ||kodik.biz/vast/
 kodik*/adv-vast/
 ||kodik.cc/vastadvert/
-/assets/vendor/*.xml?v=3.0*&external_subid=$domain=kodik.cc|kodik.biz|kodik.name
-/assets/vendor/*.xml?v=3.0&external_subid=$domain=kodik.cc|kodik.biz|kodik.name
+/assets/vendor/*.xml?*external_subid=$domain=kodik.cc|kodik.biz|kodik.name
 !
 ! Moonwalk players
 ! new
@@ -17264,11 +17269,11 @@ kinopoisk.ru##.content > div > div > script+div[id][class] > div[id][class]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15537
 ||pornovizion.xyz/*.html$replace=/adsPrerollMediaUrl:(\s)*\['\/AJAX\/[a-z0-9]+.mp4'\]\,//
 ! kodik.cc
+||kodik.cc/get-video$replace=/vast":/vast_":/
 .club/get-video|$replace=/("reserve_vast":\[).+?]/\$1""\]/,xmlhttprequest,important
+||homeless-thrill.date/get-video$replace=/"vast":".+?"\,"reserve_vast":\[".+?"\,".+?"\]/"vast":""\,"reserve_vast":[""\,""]/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16723
 /components/video/ajax/get_movie_code.php$replace=/if\(cur_time == 0\)/if\(cur_time\)/,important
-! kodik.cc
-||homeless-thrill.date/get-video$replace=/"vast":".+?"\,"reserve_vast":\[".+?"\,".+?"\]/"vast":""\,"reserve_vast":[""\,""]/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12971
 ://goodgame.ru^|$replace=/"duration": \d\d/"duration": 0/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25355
