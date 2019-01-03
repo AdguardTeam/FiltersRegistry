@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-01-01 15:10:31 CET
+! Last modified: 2019-01-03 09:30:20 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -191,7 +191,6 @@ metro.se##.m-teaser:has(div[class*="label--ad"])
 metrojobb.se##.headlines__block:has(.ad-header)
 metromode.se##.js-blox-article:has(.c-article__ad.advert)
 metromode.se##.slick-item:has(.c-article__ad.advert)
-milansverige.se##.widget_text:has(a[href*="://ads."])
 minhembio.com##div[style="height: 120px;"]:has(.top-ad)
 missatsamtal.se##.comment:has(.nosnaj)
 mittkok.expressen.se##.tile-item:has(span.native)
@@ -229,7 +228,8 @@ shortcut.se##.employer:has(.sponsored)
 shortcut.se##.item:has(.sponsored)
 sokmotorkonsult.se##.feature:has(a[href*="/sponsrade-lankar"])
 sportpanelen.se##.stream-item-above-post:has(a[href*="/ads."])
-spray.se##.view-generic-editorial-teasers:has(h2:has-text(/samarbete/i))
+spray.se##.article-partial:has-text(/^casino med bankid/i)
+spray.se#$#body { -webkit-user-select: text !important; user-select: text !important; }
 stowr.se##article:has(.sponsored)
 streamtajm.*##div[style^="background-color: #ccc; width: 750px;"]:has(img[src^="/images/reklam"])
 studocu.com#$##page-container { user-select: text !important; }
@@ -421,7 +421,7 @@ di.se##section[data-load-ads="true"]
 /\/*annons*./$image,domain=boktugg.se|dansbandskanalen.se|etc.se|etunawebben.se|fastighetstidningen.se|guldkanalen.se|kurera.se|lesscarbs.se|lundagard.se|megafonen.nu|newsvoice.se|nvp.se|rumhemma.se|sff.nu|skillingaryd.nu|svf.se|tekniksmart.se|xn--vrnamo-bua.nu
 /\/*banner*./$image,domain=alltomhif.se|arkitektur.se|autolife.se|bettips.se|blognyheter.se|boktugg.se|brollopsmagasinet.se|bussmagasinet.se|byggteknikforlaget.se|dansbandskanalen.se|danstidningen.se|etc.se|evertiq.se|everysport.com|farjestadbk.se|fastighetstidningen.se|guldkanalen.se|hamsterpaj.net|it-finans.se|journalisten.se|katerinamagasin.se|kurera.se|lakartidningen.se|lakemedelsvarlden.se|ljuskultur.se|lundagard.se|markbladet.se|marsta.nu|newsvoice.se|ordfrontmagasin.se|pellesoft.se|rockkocken.se|rumhemma.se|sbktavling.se|sff.nu|skrattnet.se|sportbloggare.com|sportpanelen.se|stowr.se|svenskamagasinet.nu|svenskhandboll.se|svf.se|tidningenbalans.se|tkj.se|vaken.se|vi.se
 /\/*banner*./$script,domain=cleannet.se|dagenshandel.se|entreprenad.com|entreprenor.se|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|kemivarldenbiotech.se|lifesciencesweden.se|magasinetparagraf.se|medtechmagazine.se|motormagasinet.se|packnet.se|plastnet.se|processnet.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|verkstaderna.se|woodnet.se
-/\/*casino*./$image,domain=dayviews.com|hockeysverige.se|hypeline.se|newsvoice.se
+/\/*casino*./$image,domain=dayviews.com|hockeysverige.se|hypeline.se|newsvoice.se|spray.se
 /\/*sponsor*./$image,domain=ettgottskratt.se|fotbollskanalen.se|freeride.se|happyride.se|humorbibeln.se|newsner.com|sportbibeln.se|swehockey.se
 /_ad/*$script,domain=funbeat.se
 /_banners/*$image,domain=kolozzeum.com
@@ -466,7 +466,6 @@ di.se##section[data-load-ads="true"]
 /apester-javascript-sdk.min.js$script,domain=allakorsord.se|allas.se|allers.se|antikochauktion.se|aretrunt.se|baaam.se|cafe.se|dromhemochtradgard.se|elle.se|elledecoration.se|ellematovin.se|femina.se|frida.se|hant.se|hemmets.se|mabra.com|matmagasinet.se|residencemagazine.se|svenskdam.se
 /appnexus.$script,domain=blocket.se|bytbil.com|minhembio.com
 /assets.svd.se\/assets\/[0-9]+\-/$script,domain=svd.se
-/assets/js/front_js/*$script,domain=milansverige.se
 /assets/leeads_takeover/*$script,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bandypuls.se|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se
 /assets/triggerbee/*$script,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bandypuls.se|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se
 /at-internet-desktop.js$script,domain=klart.se
@@ -510,6 +509,7 @@ di.se##section[data-load-ads="true"]
 /cinnaroll-fusion.min.js^$script,domain=tidningenhembakat.se
 /citygate/payingcompanies$xmlhttprequest
 /closest-native*/*$xmlhttprequest,domain=expressen.se
+/collector$~third-party,xmlhttprequest,domain=momondo.se
 /com_rstbox/*$domain=grillbloggen.nu
 /commercialAds/*$xmlhttprequest,domain=njus.me
 /content/admbl/*$image,domain=skrattnet.se
@@ -546,6 +546,7 @@ di.se##section[data-load-ads="true"]
 /glimr.min.js^$script,domain=affarsliv.com|affarslivgotland.se|aftonbladet.se|blocket.se|corren.se|di.se|dn.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|politism.se|pt.se|unt.se|uppgang.com|uppsala.com|uppsalatidningen.se|viivilla.se|vimmerbytidning.se|vt.se
 /google-tag-manager-datalayer.$script,domain=reseguiden.se
 /google_tag.script.js^$script,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
+/googleyolo/impression$~third-party,xmlhttprequest,domain=momondo.se
 /gplus.php^$script,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
 /gtm-local.js$script,domain=popmuzik.se|rocknytt.net
 /hapyak.js$script,domain=viktvaktarna.se
@@ -728,7 +729,6 @@ di.se##section[data-load-ads="true"]
 /plugins/wp-embed-facebook/*$script,stylesheet,domain=faktiskt.se
 /plugins/wp-gdpr-compliance/*$script
 /plugins/wp-snow-effect/*
-/plugins/wppas/*$script,stylesheet,domain=elbilsnytt.se|vi.se
 /plugins/wysija-newsletters/*
 /popup/follow-us-fb.$xmlhttprequest,domain=tasteline.com
 /prerolls/*$domain=gamereactor.se
@@ -744,6 +744,7 @@ di.se##section[data-load-ads="true"]
 /realtid_ads/*$domain=realtid.se
 /revive/revivejs.php$script
 /rpc*/prisjakt$xmlhttprequest,domain=99.se|fz.se|sweclockers.com
+/run/analytic$~third-party,xmlhttprequest,domain=momondo.se
 /Scripts/burt/*$script,domain=di.se
 /scripts/pb*.js$script,domain=alicestenlof.com|clarahenry.se|elinskoglund.com|fannystaaf.se|linnahlborg.se|lovisawallin.se|moamattsson.se|nouw.com|saraabrahamsson.se
 /se-wordpress-gdpr/*$domain=allakorsord.se|allas.se|allers.se|antikochauktion.se|aretrunt.se|baaam.se|cafe.se|dromhemochtradgard.se|elle.se|elledecoration.se|ellematovin.se|femina.se|frida.se|hant.se|hemmets.se|mabra.com|matmagasinet.se|residencemagazine.se|svenskdam.se
@@ -761,7 +762,6 @@ di.se##section[data-load-ads="true"]
 /snowplow-*.js$script,domain=hemnet.se
 /splash_iframe$domain=dayviews.com|filmtipset.se|fragbite.se|kwiss.me|synonymer.cc|tyda.se
 /splashy.html^$domain=hamsterpaj.net
-/spons/*$image,domain=swehack.org
 /Sponsor/*$xmlhttprequest,domain=grontvader.se
 /sponsrat-frequency.js^$script,domain=laholmstidning.se|nsk.se|skd.se
 /sport/live-start/live-tv-se-sportexpressen-tv-direkt/*$xmlhttprequest,domain=expressen.se
@@ -772,7 +772,6 @@ di.se##section[data-load-ads="true"]
 /strossle-start-page-ad$xmlhttprequest,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bandypuls.se|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se
 /swfobject.js$script,domain=dagenstv.com
 /takeover.gif$image,domain=flamman.se
-/telemetry/measure$~third-party,xmlhttprequest,domain=momondo.se
 /themes/aurora/cookies/*$image,script,stylesheet,domain=alltforforaldrar.se|mammasidan.se|minbebis.com
 /thumbnail_bettingstugan$image
 /trackers/SessionCam-tag$script
@@ -1463,7 +1462,6 @@ metro.se##.o-preview--ad
 metro.se##.o-preview--collab
 metro.se##div[class*="o-advert"]
 metromode.se##.b-topshop
-milansverige.se##.background-cover
 minfil.com##.ab-wrapper
 minhembio.com##.adbox
 minsolresa.se,resatillsolen.se##aside#text-5
@@ -1547,9 +1545,8 @@ piraja.se###parallax
 politism.se###panorama-annons
 politism.se##[id^="ab-appnexus"]
 politism.se##[id^="native_ad"]
-pomu.se###BannerCentral1
-pomu.se##.Banners-lateral
 pomu.se##.Games-addLateral
+pomu.se##[class^="Banner"]
 posh24.se##.bannerArea
 privataaffarer.se##a[href*="/bit.ly/"]
 professionalsecrets.se##div[data-campaign="newsletter"]
@@ -1595,8 +1592,12 @@ smhi.se##.polopolyNotification
 sportfiskeforum.se###fj-topad
 sportpanelen.se###text-html-widget-3
 sportpanelen.se###tie-block_1832
-spray.se###side_banners
-spray.se###top_banner
+spray.se##.accept-cookies-container
+spray.se##.overlay-controller
+spray.se##.overlay-cover
+spray.se##.overlay-text
+spray.se##[class*="article-casino"]
+spray.se##[class^="ads-"]
 springlfa.se##.adrotate-loop
 springlfa.se##[class^="snp-pop"]
 springlfa.se##[id^="ad"]
@@ -2006,7 +2007,8 @@ yougov.se##.cookie-confirm
 ||mobil.blocket.se/ufti$subdocument
 ||mobil.blocket.se^*/ast.js$script
 ||mobil.blocket.se^*/gdpr-bundle$script
-||momondo.se/akam/$script
+||momondo.se/gtm/$subdocument
+||momondo.se/ugtm/$subdocument
 ||monkey.tunnl.com/identify^$subdocument
 ||mraffiliate.com^$third-party
 ||mtg-api.com^*/comScore*.$script,domain=viafree.se
