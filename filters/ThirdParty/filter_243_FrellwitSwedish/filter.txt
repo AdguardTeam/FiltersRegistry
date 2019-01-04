@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-01-03 17:38:01 CET
+! Last modified: 2019-01-04 09:57:28 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -175,6 +175,7 @@ laholmstidning.se,nsk.se,skd.se##div.skd-crsl-wrap:matches-css-before(content: A
 lesscarbs.se##.bd-block:has(h5:has-text(/annons/i))
 lesscarbs.se##[id^="post"]:has-text(/annonssamarbete med/i)
 linnherbertsson.se##.content:has(.sponsored-container)
+linnherbertsson.se#$#body { overflow-y: auto !important; }
 listor.se##article:has(a[href*="/annons/"])
 ljudochbild.se#$#.background-ad { min-height: 0 !important; }
 ljudochbild.se##.pt-cv-ifield:has(a[href*="articleadvert"])
@@ -249,6 +250,7 @@ swesub.*#$##tab1 { display: initial !important; }
 tasteline.com#$#.popup { overflow: auto !important; }
 tasteline.com##li.article:has(.category:has-text(/samarbete/i))
 teknifik.se##.post:has(.sponsor)
+tekniksmart.se##.copyright-text:has-text(casino)
 tennisportalen.se##.tdc-row.stretch_row_content:has(a[href$="/category/sponsrat/"])
 tennisportalen.se##[class^="td-block-span"]:has(a[href$="/sponsrad/"])
 tennisportalen.se##aside.widget:has(a[href*="betting"])
@@ -430,6 +432,7 @@ di.se##section[data-load-ads="true"]
 /_graphics/annons/*
 /_widget/destination$subdocument,domain=expressen.se
 /a?callback=pfmod.saveadsettings
+/abtf-pwa$domain=sd.se
 /AC_RunActiveContent.js$script,domain=dagenstv.com
 /acilia-main.$script,domain=foxtv.se
 /ad/getNouw.$script
@@ -728,6 +731,7 @@ di.se##section[data-load-ads="true"]
 /plugins/wp-copy-protect-with-color-design/*
 /plugins/wp-embed-facebook/*$script,stylesheet,domain=faktiskt.se
 /plugins/wp-gdpr-compliance/*$script
+/plugins/wp-power-stats/*
 /plugins/wp-snow-effect/*
 /plugins/wysija-newsletters/*
 /popup/follow-us-fb.$xmlhttprequest,domain=tasteline.com
@@ -1030,6 +1034,7 @@ baws.se,it-finans.se##a.gofollow[data-track][target="_blank"]
 bettips.se##.bettips-am
 bettips.se,digitalfotoforalla.se,illvet.se,pctidningen.se##.top-banner
 bilsport.se###bst-bot
+bilsport.se##.ads-and-other
 bilsport.se##.spons-article
 bilsport.se##[id^="bst-pano"]
 bilsport.se,funnygames.se,ordguru.se,ratsit.se##.cc_banner-wrapper
@@ -1229,7 +1234,6 @@ expressen.se##.widget-ad-marker
 expressen.se##a[href*="/annons"]
 expressen.se##figure[data-article-data*="/tv/nyheter/live-start/live-tv-senaste-nyheterna-i-expressen-tv/"]
 expressen.se##figure[data-article-data*="/tv/sport/live-start/live-tv-se-sportexpressen-tv-direkt/"]
-faktiskt.se##.widget_wonderfoursocialmediawidget
 falkopingstidning.se,filmtipset.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##.social-share
 falkopingstidning.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se###premium-nag-screen
 falkopingstidning.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##div[id^="adonnews"]
@@ -1422,6 +1426,8 @@ landleyskok.se##.category-sponsrat-inlagg
 landleyskok.se##.inpostbanner
 lesscarbs.se##.category-annonssamarbete
 liberalerna.se###cc-notice
+linnherbertsson.se###cookies
+linnherbertsson.se##.overlay
 linnherbertsson.se##[id^="content-ad"]
 listor.se##.belowad
 listor.se##.swp_social_panelSide
@@ -1893,7 +1899,7 @@ yougov.se##.cookie-confirm
 ||existenz.se^$object,object-subrequest
 ||exitintel.com^$third-party
 ||facebook.com/plugins/like$third-party,domain=~facebook.com|~fb.com
-||facebook.com/plugins/likebox.$subdocument,domain=resume.se
+||facebook.com/plugins/likebox.$subdocument,domain=fotbolltransfers.com|resume.se
 ||facebook.com/tr/$image,domain=~facebook.com|~fb.com
 ||facebook.com/tr?$image,domain=~facebook.com|~fb.com
 ||fakturino.se^$third-party
