@@ -1,11 +1,11 @@
 !
-! OriginalVersion: 07January2019v1
-! OriginalVersion: 070120191 (for Adblock Plus' issue report system)
+! OriginalVersion: 11January2019v3
+! OriginalVersion: 110120193 (for Adblock Plus' issue report system)
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites
 ! Expires: 12 hours
 ! This list includes uBO-specific versions of filters, and are meant to be accessed by uBlock Origin, Nano Adblocker and AdGuard whenever they load the main Norwegian list.
-! OriginalVersion: 21December2018v1-Extension
+! OriginalVersion: 11January2019v2-Extension
 ! Entries that make use of features that are mostly exclusive to uBO and Nano
 ||gamereactor.*/lay/ad-video-stats.js^$script,important
 ||gamereactor.*/lay/js/manageBanners.js^$script,important
@@ -30,6 +30,7 @@ aftenbladet.no#$#.article-content { padding: 0 0 0 0 }
 lydogbilde.no,lydogbillede.dk#$#.background-ad { min-height: 0px !important }
 dagen.no#$#.paywall-body-description { -webkit-text-fill-color: black !important }
 dn.no#$##googlead-toppbanner { min-height: 0 !important }
+vgtv.no#$#.page-container { margin-top: 0px !important }
 ! Wildcard versions of various entries. Because why only block on one national version of a site, when you can nowadays block on all versions of a site without cluttering things up?
 gamereactor.*###ad_video
 gamereactor.*###ad_w300h450
@@ -155,7 +156,6 @@ dk,no##div.spklw-post-attr:has(div[class*="spklw-sponsored"])
 1881.no##.feature-promo
 @@/images/*youtube.jpg$domain=realityportalen.dk
 @@||5e529.v.fwmrm.net/ad/$script,domain=dplay.no|dplay.dk
-@@||acdn.adnxs.com/ast/ast.js$script,domain=vgtv.no
 @@||api.instagram.com^$domain=www.samiteahter.org
 @@||eurosport.no^$generichide
 @@||fwmrm.net/*MTG$script,domain=viasatsport.se|viasatsport.fi|tv3sport.dk|viasport.no|viafree.se|viafree.no|viafree.dk|viafree.fi
@@ -675,6 +675,8 @@ vg.no##.annonse
 vg.no###advert-0
 vgd.no###prisjaktAd
 vgtv.no###player.pulse-isPauseAdVisible > .jw-overlays
+vgtv.no##.apnx-container
+vgtv.no##.video-branding
 ||static.vg.no/css/admark_top.gif
 ||vglista.no/wp-content/themes/vglista/img/partner/
 e24.no###adPlaceholderFront
@@ -683,6 +685,9 @@ e24.no##.swiper-slide
 e24.no##.bg-xAdrow
 ! ↓ Attempts to resolve how some frontpage articles are hard to open when using EasyPrivacy. ↓
 @@||schibsted.com/autoTracker$domain=www.vg.no
+!#if !ext_ublock
+@@||acdn.adnxs.com/ast/ast.js$script,domain=vgtv.no
+!#endif
 ! 🇳🇴: Regler for hele nettsteder, som er kategorisert for å gjøre det enklere for meg å lage en «hosts»-versjon av denne listen
 ! 🇬🇧: Rules for entire websites, categorised to make it easier for me to make a \"hosts\" version of this list
 ||ad.no.doubleclick.net^
