@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-01-17 17:24:51 CET
+! Last modified: 2019-01-18 15:45:27 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -103,6 +103,7 @@ devote.se##article:has(div[class]:has-text(/samarbete/i))
 di.se##.carousel-tab:has-text(/annons:/i)
 di.se##.clip-browser__clip:has(a[href*="/annons-"])
 digitaliserat.nu##.news-story:has(a:has-text(/^detta är en annons/i))
+dn.se#$#.article__lead:before { background-image: none !important; }
 dn.se#$#body { overflow-y: auto !important; position: initial !important; }
 dreamfilm.*,swesub.*,nordflix.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
 egoinas.se##article.uk-article:has(.sw-sf-sponsor)
@@ -116,6 +117,7 @@ expressen.se##.teaser:has(.vignette:has-text(/(^erbjudande från|^annons:|^happy
 expressen.se##.teaser:has(a[href*="/casino/"])
 expressen.se##.teaser:has(a[href*="lanapengar.expressen.se"])
 expressen.se##.teaser:has(a[href^="https://rabattkoder."])
+expressen.se##.teaser:has(figure[data-article-data*="annons"])
 expressen.se##a[data-click-track][href*="utm_campaign"]:has(strong:has-text(annons))
 expressen.se##div[style*="font-size: 10px;"]:has-text(Annons:)
 falkopingstidning.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##div.slideshow-in.active:has(.ad-wrapper)
@@ -569,6 +571,7 @@ ikea.com##.cookie-info__panel--show
 /ga.js$script,~third-party,domain=driverzone.se
 /ga_cookie_track.js$script
 /gdpr/*$domain=capdesign.se|digikey.se|funnygames.se|megaspel.se|nyckelspel.se|rapport24.com|villalivet.se|vimedbarn.se
+/getlivevideo$domain=di.se
 /gilla-mb_plugg.png$domain=markbladet.se
 /glimr.min.js^$script,domain=affarsliv.com|affarslivgotland.se|aftonbladet.se|blocket.se|corren.se|di.se|dn.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|politism.se|pt.se|unt.se|uppgang.com|uppsala.com|uppsalatidningen.se|viivilla.se|vimmerbytidning.se|vt.se
 /google-tag-manager-datalayer.$script,domain=reseguiden.se
@@ -635,7 +638,6 @@ ikea.com##.cookie-info__panel--show
 /links/*casino*.$image,domain=emocore.se
 /listByType?*adSettings^$xmlhttprequest,domain=kokaihop.se
 /live/radarmagazine.se.js$script
-/livevideo/getlivevideo?autoplay=true&position=outsider$domain=di.se
 /loader.php$subdocument,domain=kingsizemag.se
 /LoadIframePlugin.js^$domain=falkopingstidning.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vn.se
 /LoadSlotLocator.$script,domain=bohuslaningen.se|falkopingstidning.se|gp.se|hallandsposten.se|hn.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|stromstadstidning.se|tranastidning.se|ttela.se|vastgotabladet.se|vetlandaposten.se|vn.se
@@ -820,6 +822,7 @@ ikea.com##.cookie-info__panel--show
 /tracking_footer-active/*$domain=spela.se
 /trafikfonden/*
 /trckr/*$xmlhttprequest,domain=cleannet.se|dagenshandel.se|entreprenad.com|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|kemivarldenbiotech.se|lifesciencesweden.se|medtechmagazine.se|motormagasinet.se|packnet.se|plastnet.se|processnet.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|verkstaderna.se|woodnet.se
+/tv/annons/*$domain=expressen.se
 /twitter_count.php^$xmlhttprequest,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
 /ub-ads/*uba*.$script
 /ub-cookie-notice/*$script,stylesheet
