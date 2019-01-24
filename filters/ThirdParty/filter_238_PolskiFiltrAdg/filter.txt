@@ -1,34 +1,35 @@
 !
 ! Title: Polish Anti Adblock Filters
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku
-! Last modified: 25 December 2018
+! Last modified: 15 January 2018
 ! Expires: 2 days
-! OriginalVersion: 2018122502
+! OriginalVersion: 2019011501
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
-! Copyright (C) 2018
-! v.2018122502 aktualizacja: wt, 25 grudnia 2018, 17:20:00
+! Copyright (C) 2019
+! v.2019011501 aktualizacja: wt, 15 stycznia 2019, 18:45:00
 !
 !
 !-----------------------Integration of supplement lists for uBlock & AdGuard-----------------------!
 !#if ext_ublock
 ! Title: Polish Anti Adblock Filters - supplement for uBlock Origin
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku - uzupełnienie dla uBlock Origin
-! Last modified: 21 December 2018
+! Last modified: 14 January 2019
 ! Expires: 2 days
-! OriginalVersion: 2018122101
+! OriginalVersion: 2019011401
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2018
-! v.2018122101 aktualizacja: ptk, 21 grudnia 2018, 08:35:00
+! v.2019011401 aktualizacja: pon, 14 styczen 2019, 19:50:00
 !
 !
 ! Adblock
 alefunny.pl###myModal, .modal-backdrop
 alefunny.pl#$#.modal-open { overflow: auto !important; padding-right: 0px !important; }
 dziwnekomiksy.pl#$#body>* { filter: blur(0px) !important; }
+scypion.pl#$#.adsbygoogle { position: absolute!important; left: -3000px!important; }
 !
 ! Rules after Adblock
 vod.pl#$#.infoCloud { position: absolute!important; left: -3000px!important; }
@@ -43,6 +44,8 @@ vod.pl#$#.infoCloud { position: absolute!important; left: -3000px!important; }
 ! tvn24.pl
 !
 ! kitsune-subs.anime-odcinki.pl
+!
+! ps3-hack.pl
 !#endif
 !
 !
@@ -131,6 +134,8 @@ medianarodowe.com,pro-prints.pl###overlay
 medme.pl##[class^="banner_banner-"]
 megawrzuta.pl###popup-1
 memorizer.pl##.adblockInfo
+megawypas.com#@##ad
+megawypas.com#@#[id$="reklamy"]
 mfiles.pl###result
 minecraftpolska.net,pracawgdansku.com.pl#@#[id*="reklama"]
 minecraftpolska.net,pracawgdansku.com.pl#@##reklama
@@ -162,8 +167,10 @@ queer.pl##.box-block
 senda.pl#@#.advert_box
 stylunio.pl##.blocked-info
 sucharry.pl###adb
+tapeciarnia.pl,scypion.pl#@#.adsbygoogle
+tapeciarnia.pl#@#[id^="aswift_"]
 terrarium.com.pl#@#.ABD_display_wrapper
-terrarium.com.pl#@##ads
+terrarium.com.pl,ps3-hack.pl#@##ads
 trojmiasto.pl,trojmiasto.tv###block_info_wrap
 twojezaglebie.pl###modal
 twojezaglebie.pl##.modal-box
@@ -173,7 +180,7 @@ webinsider.pl#@#.etad
 vitalia.pl###topbborlayer
 vod.pl#@#.infoCloud
 vod.pl#@#.text-ad
-vorek.pl,gry-planszowe.pl,darmowe-torenty.pl,torrentcity.pl,bitnova.info,waw4free.pl,darmowyskin.pl#@#.adsbox
+vorek.pl,gry-planszowe.pl,darmowe-torenty.pl,torrentcity.pl,bitnova.info,waw4free.pl,darmowyskin.pl,lunaticfiles.com#@#.adsbox
 vorek.pl,shinden.pl#@#.ads
 waw4free.pl#@#.showad
 waw4free.pl#@#.showbox
@@ -239,10 +246,11 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@/ads.reklama.728x90$script,stylesheet,domain=zmianaczasu.info|antonimy.net|odmiana.net|definicja.net|krzyzowka.net|humoris.pl
 @@/advert.js$script,domain=www.poradnikzdrowie.pl|fm.tuba.pl|wymarzonyogrod.pl|planeteplus.pl|mjakmama24.pl
 @@/advertise.js$domain=superfilm.pl
-@@/advertisement*.js$script,domain=meczyki.pl|autocentrum.pl|tokfm.pl|trojmiasto.pl|superfilm.pl|glucholazyonline.com.pl|ps-plus.pl|chamsko.pl
+@@/advertisement*.js$script,domain=meczyki.pl|autocentrum.pl|tokfm.pl|trojmiasto.pl|superfilm.pl|glucholazyonline.com.pl|ps-plus.pl|chamsko.pl|fotka.com
 @@/images/ad$domain=linuxiarze.pl
 @@/js/adblock.js$script,domain=limanowa.in
-@@/js/adverts.js$script,domain=forsal.pl
+@@/js/adverts.js$script,domain=forsal.pl|dziennik.pl
+@@/js/adv.$script,domain=glosregionu.pl|ziemialeszczynska.pl|ziemiagorowska.pl
 @@||adservice.google.pl/adsid/integrator.js$script,domain=tvp.pl
 @@||advert-serv.johnmorris.me/adserver/adlogger_tracker.php$subdocument,domain=www.terrarium.com.pl
 @@||adv.wp.pl/adverts$xmlhttprequest,domain=pilot.wp.pl
@@ -272,14 +280,15 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||ipla.hit.stat24.com/*ad.xml$xmlhttprequest,domain=polsatnews.pl|polsatsport.pl|twojapogoda.pl
 @@||ipla.tv^$generichide
 @@||istotne.pl^$generichide
-@@/js/ads.js$script,domain=solarkurier.pl|satkurier.pl|saskakepa.waw.pl|e-krajna.pl|swiecie24.pl|zyciesokolowa.pl|ciechocinek.biz|napiprojekt.pl|uniejow.net.pl|nizanskie.info|pluznica.info|superchodziez.pl|tygodnik.pl|ekutno.pl|naszbrzesc.pl|bydgoszcz24.pl|terazlipno.pl|gwe24.pl|digi-tv.pl|chelsea24news.pl|wolomin24.info|splendo.pl|egorzow.pl|irembertow.pl|iminsk.pl|ikrakow.info|iskierniewice.pl|ikampinos.pl|e-wyszogrod.pl|ibielsk.pl|wterenie.pl|ciechanowinaczej.pl|wabrzezno-cwa.pl|infosiedlce.pl|rypin-cry.pl|golub-cgd.pl|iotwock.info|szczecinek.com|lipno-cli.pl|imokotow.pl|nolesnica.pl|itvpiaseczno.pl|histmag.org|lowcygier.pl|gorzowianin.com|polotv.pl|video.anyfiles.pl|brotkids.tv|fokus.tv|ithardware.pl|meteoprog.pl|nowa.tv|okazje.co|forsal.pl|gazetaprawna.pl|fxmag.pl|nasztomaszow.pl|dieroten.pl|reklama.pl|gpr24.pl|twojradom.pl|inowroclaw.info.pl|pultusk24.pl|bham.pl|vorek.pl|plonszczak.pl|zdrowowdomu.wp.pl|audiklub.org|video-static.tunnl.com|pcworld.pl|gostynin.info|zambrow.org|millemiglia.wp.pl|radiogol.pl|torrentcity.pl|kb.pl|bitnova.info|rozmerdani.wp.pl|dbamoswojafirme.wp.pl|jakrobicmarketing.pl|wtk.pl|minecraft.org.pl|wtkplay.pl|legia.net|mjakmama24.pl
+@@/js/ads.js$script,domain=solarkurier.pl|satkurier.pl|saskakepa.waw.pl|e-krajna.pl|swiecie24.pl|zyciesokolowa.pl|ciechocinek.biz|napiprojekt.pl|uniejow.net.pl|nizanskie.info|pluznica.info|superchodziez.pl|tygodnik.pl|ekutno.pl|naszbrzesc.pl|bydgoszcz24.pl|terazlipno.pl|gwe24.pl|digi-tv.pl|chelsea24news.pl|wolomin24.info|splendo.pl|egorzow.pl|irembertow.pl|iminsk.pl|ikrakow.info|iskierniewice.pl|ikampinos.pl|e-wyszogrod.pl|ibielsk.pl|wterenie.pl|ciechanowinaczej.pl|wabrzezno-cwa.pl|infosiedlce.pl|rypin-cry.pl|golub-cgd.pl|iotwock.info|szczecinek.com|lipno-cli.pl|imokotow.pl|nolesnica.pl|itvpiaseczno.pl|histmag.org|lowcygier.pl|gorzowianin.com|polotv.pl|video.anyfiles.pl|brotkids.tv|fokus.tv|ithardware.pl|meteoprog.pl|nowa.tv|okazje.co|forsal.pl|gazetaprawna.pl|fxmag.pl|nasztomaszow.pl|dieroten.pl|reklama.pl|gpr24.pl|twojradom.pl|inowroclaw.info.pl|pultusk24.pl|bham.pl|vorek.pl|plonszczak.pl|zdrowowdomu.wp.pl|audiklub.org|video-static.tunnl.com|pcworld.pl|gostynin.info|zambrow.org|millemiglia.wp.pl|radiogol.pl|torrentcity.pl|kb.pl|bitnova.info|rozmerdani.wp.pl|dbamoswojafirme.wp.pl|jakrobicmarketing.pl|wtk.pl|minecraft.org.pl|wtkplay.pl|mjakmama24.pl|jeja.pl
 @@/js/ads.js$xmlhttprequest,domain=minecraft.org.pl
-@@/advertisement.js$domain=vodnews.pl|cyfrowydoradca.pl|pajacyk.pl|psgfc.pl|ifotos.pl
+@@/advertisement.js$domain=vodnews.pl|cyfrowydoradca.pl|pajacyk.pl|psgfc.pl|ifotos.pl|ps3-hack.pl
 @@||js.iplsc.com/inpl.adb/*/empt.js?*&adserv=$domain=interia.pl
 @@||komputerswiat.pl^$generichide
 @@||kubofonista.net/r/ad.htm$script,domain=kubofonista.net
 @@||kwejk.pl^$generichide
 @@||legionisci.com^$generichide
+@@||lib.wtg-ads.com/lib.min.js$script,domain=legia.net
 @@||manjaro.pl/abd/adserver/adlogger_tracker.php
 @@||medonet.pl^$generichide
 @@||mmorpg.org.pl^$generichide
@@ -294,7 +303,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||onet.pl^$generichide
 @@||online-tv.pl/wp-content/plugins/pause-adblocker/inc/pause-front.css
 @@||ovh.webshark.pl/adserver/*/main_script.js?advertise_check=1
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=efizyka.net.pl
 @@||pagead2.googlesyndication.com/pagead/js/r*/show_ads_impl.js$domain=efizyka.net.pl
 @@||pclab.pl^$generichide
@@ -306,6 +315,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||portel.pl/phpadsnew/*adv*.js$script,domain=www.portel.pl
 @@||potplayerclub.pl^$generichide
 @@||przegladsportowy.pl^$generichide
+@@||ps3-hack.pl^$generichide
 @@||purepc.pl^$generichide
 @@||rapidgrab.pl^$generichide
 @@||rek.www.wp.pl/vad.xml$xmlhttprequest
@@ -314,7 +324,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@/Scripts/ads.js$script,domain=www.reklama.pl
 @@/showad_.js$domain=flashx.tv
 @@/showads.js$script,domain=www.eskago.pl|czasdzieci.pl|towideo.pl|biznesradar.pl|krs-online.com.pl
-@@||sjp.pwn.pl/ads.js$script,domain=sjp.pwn.pl
+@@|/ads.js$script,domain=sjp.pwn.pl|lunaticfiles.com
 @@||static-pilot.wp.pl/static/assets/js/ads.js$xmlhttprequest,domain=pilot.wp.pl
 @@||video.gazeta.pl/cdn/ads/ad/banner/_adsense_/_adserver/_adview_.ad.json$xmlhttprequest,domain=video.gazeta.pl
 @@||virpe.com/includes/js/adver.js$script

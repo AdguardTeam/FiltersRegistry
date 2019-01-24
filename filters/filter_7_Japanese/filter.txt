@@ -82,6 +82,7 @@
 ! Eimg.jp
 ||adingo.jp.eimg.jp^
 !
+||ad.adpon.jp^$third-party
 ||sdqoi2d.com^$third-party
 ||v4dwkcv.com^$third-party
 ||appollo-plus.com^$third-party
@@ -318,9 +319,15 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
-! FuckAdBlock CSS
-d-navi004.com,gagetmatome.com,h5games.success-corp.co.jp#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links {display:block!important;}
+!--- Fuck fuckAdBlock JS ---
+wpteq.org#%#(function() { var noopfn = function() {;}; var Fab = function() {}; Fab.prototype.check = noopfn; Fab.prototype.clearEvent = noopfn;  Fab.prototype.emitEvent = noopfn; Fab.prototype.on = function(a, b) { if ( !a ) { b(); } return this; }; Fab.prototype.onDetected = function() {  return this; }; Fab.prototype.onNotDetected = function(a) { a(); return this; }; Fab.prototype.setOption = noopfn; var fab = new Fab(),  getSetFab = { get: function() { return Fab; }, set: function() {} }, getsetfab = { get: function() { return fab; }, set: function() {} }; if ( window.hasOwnProperty('FuckAdBlock') ) { window.FuckAdBlock = Fab; } else { Object.defineProperty(window, 'FuckAdBlock', getSetFab); } if ( window.hasOwnProperty('BlockAdBlock') ) { window.BlockAdBlock = Fab; } else {Object.defineProperty(window, 'BlockAdBlock', getSetFab); } if ( window.hasOwnProperty('SniffAdBlock') ) { window.SniffAdBlock = Fab; } else { Object.defineProperty(window, 'SniffAdBlock', getSetFab); } if ( window.hasOwnProperty('fuckAdBlock') ) { window.fuckAdBlock = fab; } else { Object.defineProperty(window, 'fuckAdBlock', getsetfab); } if ( window.hasOwnProperty('blockAdBlock') ) { window.blockAdBlock = fab; } else { Object.defineProperty(window, 'blockAdBlock', getsetfab); } if ( window.hasOwnProperty('sniffAdBlock') ) { window.sniffAdBlock = fab; } else { Object.defineProperty(window, 'sniffAdBlock', getsetfab); } })();
+!--- Fuck fuckAdBlock CSS ---
+wpteq.org,d-navi004.com,gagetmatome.com,h5games.success-corp.co.jp#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links {display:block!important;}
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/27939
+@@||wpteq.org/wp-content/plugins/wp-adblock-dedect/js/dedect.js
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||wpteq.org^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23781
 ||javusb.com/wp-content/uploads/*/*.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23252
@@ -678,6 +685,23 @@ _ds_adtag_
 !
 ! Section contains rules for specific websites
 !
+||free-video-movie.com/link
+hostlove.com###ad_fix
+hostlove.com###ad_mega
+channel-jk.com###fam_rectp
+channel-jk.com##.rss2-iframe
+channel-jk.com##.blogroll_wrapper
+channel-jk.com##.blogroll_wrapper_kizisita
+||js.blozoo.info/js/rsstool/blogparts.js
+hosyusokuhou.jp##div.abox
+kirari-media.net##div[id][style="height:250px; width:300px;"]
+huyosoku.com###header-feed
+huyosoku.com###pickup-feed
+huyosoku.com###a-pickup-feed
+huyosoku.com###footer-feed.blogroll
+workingnews.blog117.fc2.com###mainBlock > div.free_area
+cherio199.blog120.fc2.com##.free_space_body
+cherio199.blog120.fc2.com##center > table[width="750"][bordercolor="8b0000"][cellpadding="6"]
 mindhack2ch.com##.free-area > aside.rss
 mindhack2ch.com##.ad
 ||mv-mindhack2ch.up.seesaa.net/common/image_feed.js
@@ -1197,7 +1221,6 @@ yahoo.co.jp##ul[class^="sponsor"]
 ||kau.li/ad.js
 ||kau.li/yad.js
 ||kazenoashiato.jp/file/index/FILECD/
-||komachi.yomiuri.co.jp^
 ||land.to/ad/
 ||livedoor.com^*/banner/
 ||livedoor.jp^*/amazon.js
@@ -1271,6 +1294,11 @@ gtoys.blog48.fc2.com###adright
 !
 ! White list. Fixing filtration errors(false-positive)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/24764
+edy.rakuten.co.jp#@#div[id^="div-gpt-ad"]
+@@||ias.rakuten.co.jp/ctrl/$domain=edy.rakuten.co.jp
+@@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=edy.rakuten.co.jp
+@@||securepubads.g.doubleclick.net/gampad/ads?gdfp_req=1$domain=edy.rakuten.co.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24812
 @@||lprs*.fr/assets/js/app/modules/popin.js$domain=leparisien.fr
 !

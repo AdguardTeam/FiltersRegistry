@@ -103,8 +103,13 @@ journal-plaza.net##.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч�
 ! Should be uncommented once v2.10 goes live
 ! ||app-measurement.com^
 !
+||digitru.st^$third-party
+||s-onetag.com^$third-party
+||personaclick.com^$third-party
+||counter*.freecounter.ovh^$third-party
+||noy90o.com^$third-party
+||logsss.com^$third-party
 ||redatastore.ru^$third-party
-||metrics-collector.s-onetag.com^
 ||cinarra.com^$third-party
 ||2iui01.com^$third-party
 ||target.mixi.media^$third-party
@@ -704,7 +709,6 @@ journal-plaza.net##.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч�
 ||caphyon-analytics.com^$third-party
 ||captify.co.uk^$third-party
 ||captivate.ai^$third-party
-||capturly.com^$third-party
 ||cashburners.com^$third-party
 ||cashcount.com^$third-party
 ||castelein.nu^$third-party
@@ -3024,6 +3028,12 @@ journal-plaza.net##.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч�
 ! Admiral domains
 ! These domains are used for tracking purposes according to the data that is being sent there.
 ! More info: https://getadmiral.com/products/measure
+||sicksmash.com^$third-party
+||squeakzinc.com^$third-party
+||penspade.com^$third-party
+||caringzinc.com^$third-party
+||foregoingfowl.com^$third-party
+||spuriousbase.com^$third-party
 ||2znp09oa.com^$third-party
 ||4jnzhl0d0.com^$third-party
 ||6ldu6qa.com^$third-party
@@ -3203,6 +3213,100 @@ journal-plaza.net##.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч�
 ||yourblocksite.com^
 ||taskapi.net^
 !
+! start: Mail Tracking
+! note that we don't use || prefixes because mail tracking pixels are often proxied by mail providers
+! it's problematic that due to how Gmail proxy work, these domains aren't even exposed on the network level
+! fortunately, extensions can see them (Gmail puts the real URL in the location.hash part of the src)
+! MailTrack
+mailtrack.io/trace/$image
+mltrk.io/pixel$image
+! HubSpot (getsidekick.com)
+t.sidekickopen$image
+t.sigopn$image
+t.senal$image
+t.signaux$image
+t.signauxtrois.com$image
+t.hubspotemail.net/e2t/o$image
+t.hsms06.com$image
+! Boomerang (boomeranggmail.com)
+mailstat.us/tr$image
+! Cirrus Inisght
+tracking.cirrusinsight.com$image
+! Customer.io
+customeriomail.com/e/o$image
+track.customer.io/e/o$image
+! Yesware
+t.yesware.com
+! SalesforceIQ
+salesforceiq.com/t.png$image
+! RelateIQ
+app.relateiq.com/t.png$image
+! Streak
+mailfoogae.appspot.com$image
+! LaunchBit
+launchbit.com/taz-pixel$image
+! MailChimp
+list-manage.com/track$image
+/track/open.php?u=$image
+! Postmark
+cmail1.com/t$image
+pstmrk.it/open$image
+! iContact
+click.icptrack.com/icp/$image
+! Infusionsoft
+infusionsoft.com/app/emailOpened$image
+! Intercom
+via.intercom.io/o$image
+intercom-mail-100.com/o$image
+! Mandrill
+mandrillapp.com/track$image
+! RJ Metrics
+go.rjmetrics.com$image
+! Mixpanel
+api.mixpanel.com/track$image
+! Front App
+web.frontapp.com/api$image
+! ToutApp
+go.toutapp.com$image
+! Outreach
+app.outreach.io$image
+outrch.com/api/mailings/opened$image
+! Mixmax
+track.mixmax.com/api$image
+email.mixmax.com/e/o$image
+! SendGrid
+sendgrid.net/wf/open$image
+/wf/open?upn=$image
+! ExactTarget
+exct.net/open.aspx$image
+! Litmus
+emltrk.com$image
+! dotmailer
+trackedlink.net$image
+! Drip
+dripemail2$image
+! Bananatag
+bl-1.com$image
+! TinyLetter
+tinyletterapp.com$image
+! ContactMonkey
+contactmonkey.com/api/v1/tracker$image
+! Polymail
+welovepg.polymail.io$image
+polymail.io/v2/z$image
+! YAMM
+yamm-track.appspot$image
+! GetResponse
+/open.html?x=$image
+! Close.io
+close.io/email_opened$image
+! Return Path
+returnpath.net/pixel.gif$image
+! NetHunt
+nethunt.com/api/v1/track/email/$image
+! JiveOn tracking
+/mpss/o/*$image
+!
 !+ NOT_PLATFORM (windows, mac, android)
 ||artfut.com^$empty,important
 !
@@ -3225,6 +3329,10 @@ journal-plaza.net##.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч�
 ||collection-endpoint-staging.herokuapp.com^
 ! end:
 !
+||stats.aws.rubiconproject.com^
+||a.ria.ru^
+||ipcheck.tmgrup.com.tr^
+||logger.tv.telstra.com.au^
 ||t.arianelab.com^
 ||t.karte.io^
 ||beacon.tws.toyota.jp^
@@ -4814,12 +4922,14 @@ _tracking.php?b=
 ! index.ru alternative way of loading (loads index.ru first, then /tnc.js from the same domain, see roem.ru for example)
 /tnc.js?h=
 !
+||d3jaymjyiads5d.cloudfront.net/tracker.js
+||admin.blog.fc2.com/dctanalyzer.php
+||saccest.com/js/lidyana.js
 ||avtoradio.ru/design/images/site-design/top100.gif
 /:\/\/rkn.gov.ru\/[a-g0-9]{30,}.gif/$domain=rkn.gov.ru
 ||rkn.gov.ru/5a71c95863f38b1dcfcbb763.js
 ||tunein.com/api/*/comscore
 ||cerberus.sqrt-5041.de/somtag/logs^
-||otto.de/tracking-bct^
 ||hagebau.de/tracking^
 ||imwalking.de/servlet/LandmarkServlet?clientId
 ||static1.dmcdn.net/js/cpe/cpeEventTracking.min.js
@@ -4913,7 +5023,8 @@ continentseven.com##.gaoop
 ||araskargo.com.tr/tr/jv_google_analytics.js
 ||cars.com/ajax/activityloggingapi^
 ||ref.dealerinspire.com/visit/*/events^
-||dpm.demdex.net/id$empty,important,domain=bt.com|nhl.com
+||hsbcglobalcmb.sc.omtrdc.net/id?$empty,important,domain=business.hsbc.uk
+||dpm.demdex.net/id$empty,important,domain=bt.com|nhl.com|business.hsbc.uk
 ||pix.spot.im/api/*/pixel
 ||bamgrid.com/telemetry
 ||finn.no/clientstats.html
@@ -5492,7 +5603,6 @@ ixbt.com##.block__recommend
 unilad.co.uk###sidebar > #text-64 > .block-title
 ||suedkurier.de/storage/scr/*_webtrekk.js.js
 ||phoenix.de/php/mediaplayer/conf/tracking_
-||youtube.com/youtubei/*/log_event?
 ||infranken.de/_fWS/json/Statistic
 ||infranken.de/fileadmin/scripts/tracking
 ||stadtbibliothek-rostock.de/weblication/grid5/gui/scripts/wClickLogger.js
@@ -5529,8 +5639,8 @@ computerbild.de##.articleAdditional > .mehrthema
 ||xtraffstat.com/js/ktr.js
 ||zapcdn.space/zapret.js
 ||patreon.com/api/tracking^
-/index/ping^$domain=baymaleti.net|briskgram.net|ad.bdcraft.net|swiftviz.net|ad.sapixmedia.com|activetect.net|brightvar.bid|clearload.bid|restorecosm.bid|bee.anime-loads.org|threadsphere.bid|queuecosm.bid|yoitect.com|skamaker.com|adf.ly|ay.gy|cracksurl.com|tinyium.com|skamason.com|redir2.auto-login-xxx.com|dl.underclassblog.com|special.picons.eu|quainator.com|yoalizer.com|kibuilder.com|kimechanic.com|zo.ee|viahold.com|tinyical.com|mmoity.com|pintient.com|riffhold.com|picocurl.com|bitigee.com|picocurl.com|atomcurve.com|atominik.com|battleate.com|kaitect.com|simizer.com|coginator.com|cogismith.com|twineer.com|yobuilder.com|go.awanpc.me|viwright.com|yabuilder.com|yamechanic.com|kializer.com|yoineer.com
-/callback/*$domain=baymaleti.net|briskgram.net|ad.bdcraft.net|swiftviz.net|ad.sapixmedia.com|activetect.net|brightvar.bid|clearload.bid|restorecosm.bid|bee.anime-loads.org|threadsphere.bid|queuecosm.bid|yoitect.com|skamaker.com|adf.ly|ay.gy|cracksurl.com|tinyium.com|skamason.com|redir2.auto-login-xxx.com|dl.underclassblog.com|special.picons.eu|quainator.com|yoalizer.com|kibuilder.com|kimechanic.com|zo.ee|viahold.com|tinyical.com|mmoity.com|pintient.com|riffhold.com|picocurl.com|bitigee.com|picocurl.com|atomcurve.com|atominik.com|battleate.com|kaitect.com|simizer.com|coginator.com|cogismith.com|twineer.com|yobuilder.com|go.awanpc.me|viwright.com|yabuilder.com|yamechanic.com|kializer.com|yoineer.com
+/index/ping^$domain=thouth.net|cinebo.net|baymaleti.net|briskgram.net|ad.bdcraft.net|swiftviz.net|ad.sapixmedia.com|activetect.net|brightvar.bid|clearload.bid|restorecosm.bid|bee.anime-loads.org|threadsphere.bid|queuecosm.bid|yoitect.com|skamaker.com|adf.ly|ay.gy|cracksurl.com|tinyium.com|skamason.com|redir2.auto-login-xxx.com|dl.underclassblog.com|special.picons.eu|quainator.com|yoalizer.com|kibuilder.com|kimechanic.com|zo.ee|viahold.com|tinyical.com|mmoity.com|pintient.com|riffhold.com|picocurl.com|bitigee.com|picocurl.com|atomcurve.com|atominik.com|battleate.com|kaitect.com|simizer.com|coginator.com|cogismith.com|twineer.com|yobuilder.com|go.awanpc.me|viwright.com|yabuilder.com|yamechanic.com|kializer.com|yoineer.com
+/callback/*$domain=thouth.net|cinebo.net|baymaleti.net|briskgram.net|ad.bdcraft.net|swiftviz.net|ad.sapixmedia.com|activetect.net|brightvar.bid|clearload.bid|restorecosm.bid|bee.anime-loads.org|threadsphere.bid|queuecosm.bid|yoitect.com|skamaker.com|adf.ly|ay.gy|cracksurl.com|tinyium.com|skamason.com|redir2.auto-login-xxx.com|dl.underclassblog.com|special.picons.eu|quainator.com|yoalizer.com|kibuilder.com|kimechanic.com|zo.ee|viahold.com|tinyical.com|mmoity.com|pintient.com|riffhold.com|picocurl.com|bitigee.com|picocurl.com|atomcurve.com|atominik.com|battleate.com|kaitect.com|simizer.com|coginator.com|cogismith.com|twineer.com|yobuilder.com|go.awanpc.me|viwright.com|yabuilder.com|yamechanic.com|kializer.com|yoineer.com
 ||tracking-opi.fonpit.de/tracking/
 ||cdn3.net/pixe/
 ||dig.ultimedia.com^
@@ -5778,7 +5888,7 @@ dreamprogs.net##td[width="88"][height="31"]
 ||apple.com/metrics/
 ||arcpublishing.com^$domain=washingtonpost.com
 ||assets-jpcust.jwpsrv.com/*/ping.js
-||assets.adobedtm.com^$domain=gittigidiyor.com|eonline.com|f1sport.autorevue.cz|geico.com|samsung.com|lnk.to|bmw-motorrad.co.uk|sap.com
+||assets.adobedtm.com^$domain=algida.com.tr|bmw-motorrad.co.uk|cif.com.tr|clearhaircare.com|domestos.com|dove.com|elidor.com.tr|eonline.com|f1sport.autorevue.cz|geico.com|gittigidiyor.com|hellmanns.com.tr|herkessofraya.com|johnsonsbaby.com.tr|lipton.com|lnk.to|lux.com|magnumicecream.com|neutrogena.com.tr|omo.com|rexona.com|samsung.com|sap.com|schwarzkopf.com.tr|signalturkiye.com
 ||at.mklaud.com/at/at_log_*.php
 ||auto-bild.de/*/gaEvents
 ||auto-motor-und-sport.de/js/sophus3/logging.js
@@ -6068,7 +6178,6 @@ dreamprogs.net##td[width="88"][height="31"]
 ||pipe.aria.microsoft.com/Collector/
 ||pivol.com/count.asp?
 ||pixel.redditmedia.com^
-||play.google.com/log?
 ||player-feedback-mds.glomex.com/pf/?clientName=
 ||player.vimeo.com/log
 ||playerserver.walkme.com/Statistics/
@@ -6256,6 +6365,9 @@ dreamprogs.net##td[width="88"][height="31"]
 ||zonastat.com/installer.html?param=
 ||ztat.net/*/adrum.js^
 ||ztat.net/*/webtrekk.min.js^
+||play.google.com/log?$empty
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+||play.google.com/log?
 ! https://github.com/AdguardTeam/AdguardForAndroid/issues/249
 ||do-not-tracker.org^$third-party
 ||eviltracker.net^$third-party
@@ -6304,6 +6416,26 @@ link.gmapp*.net$image
 !-------------- Whitelist ------------------------------------------------------!
 !-------------------------------------------------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/25957
+!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_edge)
+@@||cdn.optimizely.com/public/$script,domain=nytimes.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/27885
+@@||cdn.crowdtwist.com/img/$image,domain=myperks.catchow.com
+@@||resources.crowdtwist.com/fan_club/clients/$domain=myperks.catchow.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/27899
+@@||tags.tiqcdn.com/utag/hsbc/uk-cmb/prod/utag.js$domain=business.hsbc.uk
+! https://github.com/AdguardTeam/AdguardFilters/issues/26975
+@@||googletagmanager.com/gtm.js$domain=programme-tv.net
+! https://github.com/AdguardTeam/AdguardFilters/issues/27586
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+@@||sb.scorecardresearch.com/beacon.js$domain=hurriyet.com.tr
+! https://github.com/AdguardTeam/AdguardFilters/issues/27609
+@@||googletagmanager.com/gtag/js$domain=malwaretips.com
+@@||googletagmanager.com/gtm.js$domain=imgur.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/25373
+@@||googletagmanager.com/gtm.js$domain=fooda.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/27402
+@@||google-analytics.com/cx/api.js$domain=pcloud.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27312
 @@||googletagmanager.com/gtm.js$domain=cinemaximum.com.tr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26787
@@ -7133,6 +7265,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3342
 @@||b.scorecardresearch.com/beacon.js$domain=tmz.com
 !
+@@||google-analytics.com/gtm/js?id=$domain=m.papajohns.ru
 @@||googletagmanager.com/gtm.js$domain=m.papajohns.ru
 @@||google-analytics.com/analytics.js$domain=m.papajohns.ru
 @@||google-analytics.com/plugins/ua/ec.js$domain=m.papajohns.ru
