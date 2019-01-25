@@ -312,7 +312,7 @@ iptvliste.com,roadbike.de,outdoor-magazin.com,elektrobike-online.com,food-tiger.
 ! site declared function adBlockDetected
 gastroguide.de#%#(function() { var noopfn = function() {;}; var Fab = function() {}; Fab.prototype.check = noopfn; Fab.prototype.clearEvent = noopfn;  Fab.prototype.emitEvent = noopfn; Fab.prototype.on = function(a, b) { if ( !a ) { b(); } return this; }; Fab.prototype.onDetected = function() {  return this; }; Fab.prototype.onNotDetected = function(a) { a(); return this; }; Fab.prototype.setOption = noopfn; var fab = new Fab(),  getSetFab = { get: function() { return Fab; }, set: function() {} }, getsetfab = { get: function() { return fab; }, set: function() {} }; if ( window.hasOwnProperty('FuckAdBlock') ) { window.FuckAdBlock = Fab; } else { Object.defineProperty(window, 'FuckAdBlock', getSetFab); } if ( window.hasOwnProperty('BlockAdBlock') ) { window.BlockAdBlock = Fab; } else {Object.defineProperty(window, 'BlockAdBlock', getSetFab); } if ( window.hasOwnProperty('SniffAdBlock') ) { window.SniffAdBlock = Fab; } else { Object.defineProperty(window, 'SniffAdBlock', getSetFab); } if ( window.hasOwnProperty('fuckAdBlock') ) { window.fuckAdBlock = fab; } else { Object.defineProperty(window, 'fuckAdBlock', getsetfab); } if ( window.hasOwnProperty('blockAdBlock') ) { window.blockAdBlock = fab; } else { Object.defineProperty(window, 'blockAdBlock', getsetfab); } if ( window.hasOwnProperty('sniffAdBlock') ) { window.sniffAdBlock = fab; } else { Object.defineProperty(window, 'sniffAdBlock', getsetfab); } Object.defineProperty(window, 'adBlockDetected', getsetfab); })();
 !--- Fuck fuckAdBlock CSS---
-iptvliste.com,gastroguide.de,nrz.de,roadbike.de,outdoor-magazin.com,elektrobike-online.com,food-tiger.de,promobil.de,elderland.de,runnersworld.de,sms-empfangen.com,inside-handy.de#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links {display:block!important;}
+bs.to,iptvliste.com,gastroguide.de,nrz.de,roadbike.de,outdoor-magazin.com,elektrobike-online.com,food-tiger.de,promobil.de,elderland.de,runnersworld.de,sms-empfangen.com,inside-handy.de#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links {display:block!important;}
 !
 !--- BlockAdBlock ---
 promipool.de,david-forum.de,lustich.de,ainodorama.web.id,dslr-forum.de,klartext-ne.de,it-times.de#%#(function() { var sto = window.setTimeout, re = /\.bab_elementid.$/; window.setTimeout = function(a, b) { if ( typeof a !== 'string' || !re.test(a) ) { return sto(a, b); } }.bind(window); var signatures = [ ['blockadblock'], ['babasbm'], [/getItem\('babn'\)/], ['getElementById','String.fromCharCode','ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789','charAt','DOMContentLoaded','AdBlock','addEventListener','doScroll','fromCharCode','<<2|r>>4','sessionStorage','clientWidth','localStorage','Math','random'] ]; var check = function(s) { var tokens, match, j, token, pos; for ( var i = 0; i < signatures.length; i++ ) { tokens = signatures[i]; match = 0; for ( j = 0, pos = 0; j < tokens.length; j++ ) { token = tokens[j]; pos = token instanceof RegExp ? s.search(token) : s.indexOf(token); if ( pos !== -1 ) { match += 1; } } if ( (match / tokens.length) >= 0.8 ) { return true; } } return false; }; var realEval = window.eval; window.eval = function(a) { if ( !check(a) ) { return realEval(a); } var el = document.body; if ( el ) { el.style.removeProperty('visibility'); } el = document.getElementById('babasbmsgx'); if ( el ) { el.parentNode.removeChild(el); } }.bind(window); })();
@@ -397,6 +397,9 @@ urbia.de#@#.plainAd
 !
 !----------------------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/28684
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||bs.to^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28679
 @@||deine-tierwelt.de/static/js/advertisement.js
 ! golem.de - ad reinjection
@@ -1263,8 +1266,9 @@ ddl-warez.to#%#document.cookie = "ddlpop=1"; document.cookie = "ddlpop2=1";
 ! mimikama.at kaspersky ad
 mimikama.at#%#window.open = function() {};
 mimikama.at#%#Object.defineProperty(window, 'td_ad_background_click_link', { get: function() { return; } });
+! https://github.com/AdguardTeam/AdguardFilters/issues/28684
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18172
-bs.to#%#AG_abortInlineScript(/null\)\}\};Array\[/, 'document.addEventListener');
+bs.to#%#AG_abortInlineScript(/null\)\}.*?\};Array\[/, 'document.addEventListener');
 ! saarbruecker-zeitung.de - ad text
 saarbruecker-zeitung.de#%#AG_onLoad(function() { setTimeout(function() { document.querySelector(".content > aside > .module-list").innerHTML = document.querySelector(".content > aside > .module-list").innerHTML.replace("ANZEIGE",""); }, 300); });
 ! pcwelt.de - ad in top slider
@@ -1433,6 +1437,8 @@ freenet.de#$##frnMain { min-height: 0!important; }
 !--------------------------------------!
 !------- Content filtering rules ------!
 !--------------------------------------!
+! https://github.com/AdguardTeam/AdguardFilters/issues/28684
+bs.to$$script[tag-content=",false);if(!Object[_"][min-length="6000"][max-length="10000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2193
 tagesanzeiger.ch$$div[class="teaserEditorialContent"][tag-content="Werbung"]
 tagesanzeiger.ch$$div[class="teaserEditorialContent"][tag-content="Sponsored Content"]
@@ -1489,6 +1495,7 @@ lvz.de##.pdma-adaside
 ||cluster-*.cdnjquery.com^$domain=woxikon.de|notebookcheck.com|dict.cc
 ||*snigelweb-com.videoplayerhub.com^$domain=tellows.de|woxikon.de|notebookcheck.com|dict.cc
 !
+||predictiondisplay.com^$popup,domain=bs.to
 deine-tierwelt.de##.header-leaderboard
 ||saarbruecker-zeitung.de/javascripts/tssjs.js
 finanzen.net##.suggAd
