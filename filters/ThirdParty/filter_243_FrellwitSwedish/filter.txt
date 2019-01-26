@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-01-25 15:09:46 CET
+! Last modified: 2019-01-26 09:14:16 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -262,6 +262,7 @@ swedroid.se##.puff:has(h1:has-text(Android på Prisjakt))
 swedroid.se##.widget-single:has(h3:has-text(Android på Prisjakt))
 swedroid.se##h3:has-text(Prisjaktspriser)
 swesub.*#$##tab1 { display: initial !important; }
+swesub.*##.movieplay:has(iframe[src="/player/video.php"])
 tasteline.com#$#.popup { overflow: auto !important; }
 tasteline.com##li.article:has(.category:has-text(/samarbete/i))
 teknifik.se##.post:has(.sponsor)
@@ -1747,6 +1748,7 @@ swesub.*###overlay-ad
 swesub.*###tab-ad
 swesub.*##a.btn[target="_blank"]
 swesub.*##a[href*="/offer?prod"]
+swesub.*##a[href="/player/registrera.html"]
 swesub.*##a[href="/player/video.php"]
 swesub.*,dreamfilm.*##.alert-bottom
 sysidan.se##.adscolumn
@@ -2285,10 +2287,13 @@ yougov.se##.cookie-confirm
 ||swedroid.se/pjembed.$subdocument
 ||swefilmer.*/masha.$script
 ||swefilmer.*/player/play.$subdocument
+||swefilmer.*/player/se/registrerahd.$image
+||swefilmer.*/player/se/titta4k.$image
 ||swefilmer.*/player/se/tittanuhd.$image
 ||swehockey.se/Ad/$image
+||swesub.*/player/$image,subdocument
 ||swesub.*/player/nice.png$image
-||swesub.*/player/play.$image
+||swesub.*/player/titta4k.png$image
 ||swesub.*/sw.js$script
 ||swesub.*/wp-content/uploads/ad_$image
 ||swesub.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' *.tmdb.org ajax.cloudflare.com *.googleapis.com cdnjs.cloudflare.com fonts.gstatic.com openload.co nxload.com streamango.com data: *.imgur.com
