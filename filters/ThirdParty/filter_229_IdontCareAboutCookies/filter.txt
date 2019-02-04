@@ -1,11 +1,11 @@
 !
-! OriginalVersion: 295
+! OriginalVersion: 296
 ! Title: I don't care about cookies
 ! Expires: 5 days
 ! Licence: https://easylist-downloads.adblockplus.org/COPYING
 ! Homepage: https://www.i-dont-care-about-cookies.eu/
 ! Please support this project: https://www.paypal.me/kiboke/
-! Last modified: 20 Dec 2018 08:58 UTC
+! Last modified: 04 Feb 2019 13:04 UTC
 !
 ! GLOBAL RULES
 !
@@ -122,7 +122,7 @@
 ###cookie-info:not(body):not(html)
 ##.cookie_notice:not(body):not(html)
 ##.cookie_overlay:not(body):not(html)
-###cookie:not(body):not(html):not([href*="cookieclicker"])
+##body > #cookie[style*="display"]
 ###cookie-notifcation-banner:not(body):not(html)
 ###ctl00_privacyCookies_LIPCNB_PrivacyandCookiesNoticePanel:not(body):not(html)
 ###icoCookiesBanner:not(body):not(html)
@@ -238,7 +238,7 @@
 ##._cookies-cookies-bar:not(body):not(html)
 ##.CookieDirectiveHeight:not(body):not(html)
 ###accept-cookie:not(body):not(html)
-###accept-cookies:not(body):not(html)
+###accept-cookies:not(body):not(html):not(button)
 ###mw-cookie-policy:not(body):not(html)
 ###cookieMgn:not(body):not(html)
 ###__ndcc_cookieImpliedConsent:not(body):not(html)
@@ -630,7 +630,7 @@
 ###cnil_alert:not(body):not(html)
 ##.cookie-pop-up-container:not(body):not(html)
 ###cookieDisclaimer:not(body):not(html)
-###cookieconsent:not(body):not(html)
+###cookieconsent:not(body):not(html):not(.btn)
 ###cookie_div:not(body):not(html)
 ###CookieQBanner:not(body):not(html)
 ###cookieWindowContainer:not(body):not(html)
@@ -904,7 +904,7 @@
 ##.cookie-information:not(body):not(html)
 ###cookies-politics:not(body):not(html)
 ##.CookieWarning:not(body):not(html)
-###cookieAccept:not(body):not(html)
+###cookieAccept:not(body):not(html):not(button)
 ##.acceptCookies:not(body):not(html)
 ##.acceptCookiesBox:not(body):not(html)
 ##.cookiesinfo:not(body):not(html)
@@ -2372,7 +2372,7 @@
 ##body > #cookie_a
 ##.cookies-acceptance-panel:not(body):not(html)
 ##.cookies_alert_wrapper:not(body):not(html)
-##.cookie-footer:not(body):not(html)
+##.cookie-footer:not(body):not(html):not(.maincontent)
 ###politykaprywatnosci:not(body):not(html)
 ###as-cookie-cutter:not(body):not(html)
 ###cookie-notify:not(body):not(html)
@@ -3741,7 +3741,7 @@
 ##.notify-cookie:not(body):not(html)
 ###wdg_cookie_bar:not(body):not(html)
 ##.EuCookieBar:not(body):not(html)
-##.cookiehint:not(body):not(html)
+##.cookiehint:not(body):not(html):not(#page-frame)
 ###cookieChoicesID:not(body):not(html)
 ###cookies-agreebar:not(body):not(html)
 ##.nt-footer-cookie-statement:not(body):not(html)
@@ -3982,7 +3982,7 @@
 ###flashCookies:not(body):not(html)
 ##.sc-cookies:not(body):not(html)
 ###MSoftCookieWarn:not(body):not(html)
-##.cookie-accept:not(body):not(html)
+##.cookie-accept:not(body):not(html):not(.btn)
 ##.am-cookie-notice:not(body):not(html)
 ###biscuitFormDiv:not(body):not(html)
 ###okno_rcookie:not(body):not(html)
@@ -4938,7 +4938,7 @@
 ###cookie_jar_container:not(body):not(html)
 ###cookiesInfoBar:not(body):not(html)
 ##.notification-layout[ng-class="cookie-bar"]:not(body):not(html)
-##.modal-cookie:not(body):not(html)
+##.modal-cookie:not(body):not(html):not(.show)
 ###Footer1_cCookiePopUp1_pnlDisclaimerPopup:not(body):not(html)
 ###cookie-bar-module:not(body):not(html)
 ###cookie-privacy-banner:not(body):not(html)
@@ -7341,7 +7341,7 @@
 ##.cooki-container:not(body):not(html)
 ##.tos-Banner-dismissable:not(body):not(html)
 ##.footer-privacy-banner:not(body):not(html)
-###gdprNotice:not(body):not(html)
+###gdprNotice:not(body):not(html):not(.box)
 ###popupgdpr:not(body):not(html)
 ##div[data-gdpr-consent-prompt]
 ##.gdpr_popup_wrap:not(body):not(html)
@@ -8908,7 +8908,7 @@
 ###br-wordpress-cookie-notice:not(body):not(html)
 ##.cpm_container > .cookieModal:not(body):not(html)
 ###consentform_wrapper.popup_wrapper_visible:not(body):not(html)
-##body > .rcc-panel.group:not(body):not(html)
+##.rcc-panel.group:not(body):not(html)
 ###cookie-gdpr:not(body):not(html)
 ###jsalert-cookiesaccept:not(body):not(html)
 ###cmsplus_cookies:not(body):not(html)
@@ -9042,8 +9042,7 @@
 ###cmp-faktor-io-parent:not(body):not(html)
 ###dsgvo-container:not(body):not(html)
 ##body > .ccdiv
-###ng-cc[open] > .ng-cc-overlay
-###ng-cc[open] > .ng-cc-modal
+###ng-cc[open]:not(body):not(html)
 ###eu_compliance.eu-compliance:not(body):not(html)
 ##.cookies__wraper:not(body):not(html)
 ##.m-privacy.m-privacy--blocked:not(body):not(html)
@@ -9128,59 +9127,185 @@
 ##.cookieconsent__wrap:not(body):not(html)
 ##.cookieconsent-backdrop:not(body):not(html)
 ###div_gdpr_footer:not(body):not(html)
+##.sui-CmpBanner:not(body):not(html)
+###wrapper-fluid > .xcb[style*="block"]
+###wrapper-fluid > .xcb[style*="fixed"]
+###popup-cookie-wall:not(body):not(html)
+###popup-cookie-wall ~ .body-mover > #overlay
+##.privacy_policy_pop:not(body):not(html)
+##.gdpr-message-banner:not(body):not(html)
+###policyConsent:not(body):not(html)
+##.cookies-notification-portlet:not(body):not(html)
+###acb-banner.acb-position-top
+###acb-banner.acb-position-bottom
+##.warningMessagePanel.cookies:not(body):not(html)
+##.gdn-wrap.gdn-wrap-desktop
+##.gdn-wrap.gdn-wrap-mobile
+###cookier-banner:not(body):not(html)
+##.footer__cookie-alert--wrapper:not(body):not(html)
+###eu-cookie-sliding-popup:not(body):not(html)
+##.cl_cookie_privacy_layer:not(body):not(html)
+##.wkd-cookie-policy:not(body):not(html)
+###cookieDisclaimerDiv:not(body):not(html)
+##.js-cookies-message:not(body):not(html)
+##.c-cookies-acceptance-msg:not(body):not(html)
+##.js-sticky-cookies:not(body):not(html)
+###acceptCookiesInfo:not(body):not(html)
+###render-cookies-notification:not(body):not(html)
+###pricepirates-cookie-accept:not(body):not(html)
+###cookieBannerDiv:not(body):not(html)
+##.DMC-window[aria-label*="cookieconsent"]:not(body):not(html)
+###cookieSuhlasFooter:not(body):not(html)
+###consentWrapper.consentWrapper:not(body):not(html)
+###cookiedetection[role="alert"]:not(body):not(html)
+###cookiebarModal:not(body):not(html)
+##.chefcookie--bottombar:not(body):not(html)
+##.gdprBoxContainer:not(body):not(html)
+###ksf-gdpr-notice:not(body):not(html)
+##.sticky_cookie:not(body):not(html)
+###gdpr-bottom-banner:not(body):not(html)
+##.or-cookie__banner:not(body):not(html)
+##.block.delta_domain_cookie:not(body):not(html)
+##.banner[data-key*="cookies"]:not(body):not(html)
+##.cookie-bar-message:not(body):not(html)
+##.tar_cookiesBar:not(body):not(html)
+###gdpr-cookie-accept:not(body):not(html)
+###notification-container[data-widget-alias*="gdpr"]:not(body):not(html)
+##body > #cookies.is-active
+###banner_top_cookie:not(body):not(html)
+##.cookie-slider[ng-hide="hideCookieNotification"]:not(body):not(html)
+##.fit-cookieWall-overlay:not(body):not(html)
+###fit-cookieWallId:not(body):not(html)
+##.cookies_confirmation:not(body):not(html)
+##div[data-ui="cookie-notice"]
+##.cc-window:not(body):not(html)[aria-describedby*="consent"]
+###pb_cookie_message:not(body):not(html)
+##.zm-cookies-notification:not(body):not(html)
+###block-gdprcookiesblock:not(body):not(html)
+##.g-consent-manager-banner:not(body):not(html)
+##.o-cookie-bar:not(body):not(html)
+###consent-manager:not(body):not(html)
+###consent-manager-backdrop:not(body):not(html)
+##.js-cookielayer:not(body):not(html)
+###gdpr-cookie-consent:not(body):not(html)
+##body > .cookie[id*="message"]
+###DoWebCookiesConsent:not(body):not(html)
+###headerCookiesBar:not(body):not(html)
+##.cspx-cookies-bar:not(body):not(html)
+###wd-cookie-container:not(body):not(html)
+###cookie-bar-container:not(body):not(html)
+##.cGDPR_Notice_Community:not(body):not(html)
+###cookie_message_website_policy:not(body):not(html)
+###thinkconsent-notice-wrapper:not(body):not(html)
+##.gn-cookies-warning:not(body):not(html)
+##.cookiewetgeving:not(body):not(html)
+##.header-wrapper__cookie:not(body):not(html)
+###cookie-banner-bespoke:not(body):not(html)
+##.info-message--cookie-agreement:not(body):not(html)
+###gdprWarning:not(body):not(html)
+###mainPrivacyDiv.mainPrivacyDiv:not(body):not(html)
+##.ui-dialog[aria-describedby*="gdpr"]
+##.ui-dialog[aria-describedby*="gdpr"] ~ .ui-widget-overlay
+##.message-instance[id*="cookie-warning"]:not(body):not(html)
+###footer #legcooki
+###c-warning-container:not(body):not(html)
+###consent-banner:not(body):not(html)
+##.site-cookie-info:not(body):not(html)
+##.js-site-cookie__info:not(body):not(html)
+###consentContainer.consentContainer:not(body):not(html)
+###sg_cookie_consent_message:not(body):not(html)
+##.consent-panel:not(body):not(html)
+##.alert.gdpr:not(body):not(html)
+###rwdcookiesinfo:not(body):not(html)
+###cookies-personalize:not(body):not(html)
+##.js-cookieinfolayer:not(body):not(html)
+##footer ~ #gdpr
+##.cookie-settings__container:not(body):not(html)
+##.cookie-settings__overlay:not(body):not(html)
+##.ci-privacy-hint:not(body):not(html)
+###rcCookiePopUp:not(body):not(html)
+##.js-panel-cookie:not(body):not(html)
+##.system-notification-content[id*="privacy-policy"]:not(body):not(html)
+##.system-notification-content[id*="cookies-policy"]:not(body):not(html)
+###mcookie.in:not(body):not(html)
+###mcookie.in:not(body):not(html) ~ .modal-backdrop
+##.dsgvo_footer:not(body):not(html)
+##.privacy-policy-cookie:not(body):not(html)
+##.ui-dialog.gdpr-dialog
+##.ui-dialog.gdpr-dialog ~ .ui-widget-overlay
+##.js-cookie-dialog:not(body):not(html)
+##.bruut-cookie:not(body):not(html)
+##div[data-component="PRIVACY_SETTINGS"]
+###ct-uber-gdpr-cookie-popup:not(body):not(html)
+###ms_cookie_ok:not(body):not(html)
+##.o-cookieOk:not(body):not(html)
+##.bau100_cookie-bar:not(body):not(html)
+##.banner-cookie-consent:not(body):not(html)
+###keksdose:not(body):not(html)
+##.notification[ng-if*="cookieHint"]:not(body):not(html)
+###privacyBanner:not(body):not(html)
+##.misc-popup-cookie:not(body):not(html)
+##.footer-sticky__cookie-policy:not(body):not(html)
+##.sjs-eu-cookie:not(body):not(html)
+##.my_cookielayer_overlay:not(body):not(html)
+##.my_cookielayer_overlay + .my_cookielayer:not(body):not(html)
+###CookieInfoBlock:not(body):not(html)
+##.ui-widget.cookie-privacy
+##.ui-widget.cookie-privacy ~ .ui-widget-overlay
+##.user_notice[data-token*="gdpr"]:not(body):not(html)
+###clever-cookielaw.clever-cookielaw:not(body):not(html)
+###cookies-policy-notification:not(body):not(html)
+##.notification[data-notification="coockieConsent"]:not(body):not(html)
+##.cookie-pane--shown:not(body):not(html)
+##.gaoop[data-gaoop_ua]:not(body):not(html)
+###gdpr-region .consent:not(body):not(html)
+###cookie-module.module--cookie:not(body):not(html)
+###cookeControl_UpdatePanelCookie:not(body):not(html)
+##.ember-view > div[data-test-privacy-banner]
+###cookie-conditions.cookie-conditions:not(body):not(html)
+###gdpr-cookie-consent-popup:not(body):not(html)
+##.SiteWideCookie:not(body):not(html)
+###cookies-using-message:not(body):not(html)
+###cookie-policy-dialog:not(body):not(html)
+##body.show-gdpr #GDPRCookie
+###cookieConsentStickyFooter:not(body):not(html)
+###cookies_overlay_shade:not(body):not(html)
+##.cookie-info-text:not(body):not(html)
+##.rgpd-blockage:not(body):not(html)
+##.cookie-fixed-hint:not(body):not(html)
+##.m-stripe--cookie:not(body):not(html)
+###cookieScriptId ~ .fot-fixd
+###message-cookies-bar:not(body):not(html)
+###msg-lv-cookies:not(body):not(html)
+##.cookie_overlay_container:not(body):not(html)
+##.gdpr_msgbox:not(body):not(html)
+##.js-cookies-alert:not(body):not(html)
+##iframe[src*="herowelcomebar.appspot.com"]
+##.tracking-box-wrap[style*="block"]
+###__tealiumGDPRcpPrefs:not(body):not(html)
+##.cookiepopin:not(body):not(html)
+###fbar > .fbar > div[jsl] #cnsh
+###cnsi ~ [jsaction*="dismiss_warmup"] #cnso
+###consent-bump > .widget-consent
+##santa-app ~ santa-notice
+###butterBar-container + #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"]
+###cookies-interface .banner-container
+##.notification-container.cookie:not(body):not(html)
+###EUCookiePolicyNotice:not(body):not(html)
+###cookie-dialog:not(body):not(html) ~ .backdrop
+##.ng-scope[ng-controller="CookieCtrl"]
+###cookie-warning-panel:not(body):not(html)
+##.warning-message.cookie:not(body):not(html)
 !
 ! CUSTOM RULES
 !
-google.com###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
 facebook.com###page > #header-notices
-gmail.com###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
 linkedin.com###global-alert-queue, #artdeco-global-alert-container, .alert, #alert
 yahoo.com###gdpr[style*="padding"], #y-shade, #applet_p_50000174, .tdv2-applet-nagbar, .login-body + .login-footer
 duckduckgo.com##.badge-link.ddg-extension-hide
-bing.com###thp_notf_div, #b_context, .b_hide.bnp_ttc
+bing.com###bnp_ttc_div, #thp_notf_div, #b_context, .b_hide.bnp_ttc
 ask.com###ccbar, #cp-banner
 ted.com##body > div:not([id]):not([class])
-google.co.uk###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.it###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.at###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.es###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ee###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.pl###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.cz###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.dk###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ie###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.fr###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.si###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.hu###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.sk###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.se###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.fi###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.lt###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.gr###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ro###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.bg###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.be###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.hr###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.de###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.pt###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.nl###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.no###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.is###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.lu###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.cl###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.lv###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ch###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ba###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.co.ve###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.com.au###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ae###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.lk###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ru###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.co.th###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.co.in###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ca###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.co.jp###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
-google.ac###epbar, #cnsh, #pushdown, #consent-bump, #taw ._pei, #cnsi ~ [jsaction*="dismiss"], g-dialog, g-bottom-sheet, .gb_bd[aria-label][role="dialog"][style*="#default#userData"], div[style*="userData"][role="dialog"][aria-label*="priva"], #gb[role="banner"] > div:not([class*=" "]) > div[style*="background-color"], santa-notice, #lb > div[jsaction*="dg_close"] > div[class*="overlay"], #lb > div[jsaction*="dg_close"] #cnsw, div[role="dialog"][aria-label*="22"], .widget-consent, #cnso[style*="block"]
 toldosalsina.com###aviso
 barcelona.cat###bcn-ccwr
 barclays.com##.dialogMask
@@ -9273,7 +9398,6 @@ leroymerlin.es###divFlotante
 swiatnauki.pl###menu
 oxfordshire.gov.uk##.occlss-alert--cookiepopup
 mtvmobile.nl###exposeMask, #TMobile_nl_WebPortals_UI_PageComponents_CookieSettingsOverlay_CookieSettingsOverlayController_OverlayRootDiv
-buzger.com###legcooki
 legolas.pl###kuki
 toradex.com##.toast
 mappy.com###IndexView-first-visit
@@ -9292,7 +9416,6 @@ centreceramique.nl###fancybox-wrap, #fancybox-overlay, #fancybox-loading, #fancy
 omegasoft.pl##.ui-dialog
 mpolska24.pl##.infoBox
 smakizycia.pl###info-bar
-europa.eu##.usermsgInfo
 tabletsmagazine.nl##.opt-in
 ebuyclub.com###bandeau-c
 szpital-chrzanow.pl##.warp_top_message
@@ -9376,7 +9499,7 @@ nfs.as###toast-container, .toast-container, #toast, .toast
 danmarklaeser.dk###lbmodal-overlay, #lbmodal
 aso.fr##.confidentialite
 blogs-r.com##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
-huawei.com##.huawei-cookie, .ReadPolicy
+huawei.com##.huawei-app-cookie, .huawei-cookie, .ReadPolicy
 cio-online.com###dialog.bulle_bas
 grandeavenue.fr##.fixedBanner
 motomoto.pl###itlbox
@@ -9450,91 +9573,36 @@ kanpai.fr###f_r_e_e
 motonotes.pl##body > div:not([id]):not([class])
 weber.dk##.flash-info
 seges.dk###vcc_container
-dmax.it##body > div:not([id]):not([class])
-lernia.se##.m006.opened
-tnt.it##.mfp-wrap, .mfp-bg
-melty.fr###toasts
 die-linke.de##.disclaimer
-indicator.nl##.policy, #policy, .cpolicy
-fellow.pl##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
+net.hr##.disclaimer
+dielinke.berlin##.disclaimer
+opera-comique.com##.disclaimer
+valtra.de##.disclaimer
+fellow.pl##body > div:not([id]):not([class])
 salonroman.pl##body > div:not([id]):not([class])
-webd.pl###topbar, #topBar, .topbarBox, .topBarMessage, #__topBar, #top_bar
 pss-archi.eu###miam_div
-lineameteo.it##.cc_banner
 lafi.fr##.nota
 flatme.it###ic
-hotel-bb.com##.ccwrap
-freebees.nl##.cc-overlay
-istockphoto.com##.warning
-sitedeals.nl###cb
-mae.fr##body > .notify
+istockphoto.com##.banner, #banner
 123partyshop.nl##body > div:not([id]):not([class])
-tre.se##.alert-bar
 volkswagen.com###vwd4_m509, .system-notification
-ingdirect.it##.topalertbanner
-visitleevalley.org.uk###howdydo-wrapper
-beppegrillo.it###disclaimer, .disclaimer, .disclaimerContainer, .disclaimer-box, .disclaimer--info, #disclaimerC, #disclaimer-container, #disclaimer-box, .disclaimer-wrapper
-vcast.it##.cc_banner
-euronics.it###note
-enea.it##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
-apec.fr###messageTargetId div[id="/sites/cadres/messages/bloc1/cookie-warning"]
-moneyou.nl##body > iframe[style*="position: fixed"]
-nageurs.com##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
+visitleevalley.org.uk###howdy
+moneyou.nl##body > iframe[style*="fixed"]
+nageurs.com##body > div:not([id]):not([class])
 eweb4.com###clayer, #CLayer
-dilactu.com###legcooki
-snn.eu###fancybox-wrap, #fancybox-overlay, #fancybox-loading, #fancybox-tmp, .fancybox-wrap, .fancybox-overlay
 pusc.it###pixelfabrica-cs-banner
-parashop.com##.newspar
-farmerdating.dk###c-warning-container
-airvpn.org##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
-agroterra.com##.advice.advertencia
-pizzahut.co.uk##.alert, #alert
-panoramicearth.com###cklbox
-doka.com##.header > .hint
-canarylive24.com##.s16iframe
-realtimetv.it##body > div:not([id]):not([class])
-kacperkowalski.pl##body > div:not([id]):not([class])
-farmacieaperte.it###warning-popup
-elektrotop.pl##body > div:not([id]):not([class])
-cyrillus.fr##.stickybar
-dunea.nl###firstTimePopup
-1stchoice.co.uk###scl
-geekvida.it###bottom_container
-allekoszyk.pl###allekoszyk > div[style*="position:fixed"] .ng-scope
-lifescan.be###warning-popup
-unibet.be##.notification, .Notification, .js-notification, .notifications-container, #notifications, #notification_1, #notification, #notification_area, .notifications, .notif-bar, .notificationBox
-foiegrasgourmet.com##.notice, .header-notice, .notice-bar, .notice-inside, .notice-wrapper, .notice-holder, .global-notice, #top-notice, #noticePanel, .top_notice, #bottom_notice, #Notices, .Notices, #notice
+agroterra.com##.alert, #alert
+pizzahut.co.uk##.app > .slideInUp
+allekoszyk.pl###allekoszyk > div[style*="fixed"]
 nutrimuscle.com###messageBox
-bitcomputer.pl###pp
 forumcommunity.net##.note, .jnote
-trustbuddy.dk##.alert-sitewide
-trustbuddy.com##.alert-sitewide
-londontechnologyweek.co.uk##.dhtmlx_modal_box.dhtmlx-confirm
-thalesgroup.com###privacy, .privacy, #mainPrivacyDiv, .privacyTop, #privacy-info, .privacy-top, .privacy-overlay, .privacypolicy, #privacy-notification, #inf_privacy, #privacypolicycontainer
-quelcoeurdelion.com##body > div:not([id]):not([class])
-couponnetwork.fr###alert_change
-elizawashere.nl###optoutbar, .optoutbar
-nwglobalvending.dk###toast-container, .toast-container, #toast, .toast
-forumfree.it##.note
-dialoguj.pl###announcement_1.announcement
-pueblos-espana.org##body > aside
-rockwellcollins.com##body > center
-semlerretail.dk##.notificationbar, .notificationBar, .NotificationBar, .notificationBars, #notificationBar, #notificationBarUp, .notification-bar, .notify-bar
-1001pneus.fr##.topRelativeBanner
-e-legnickie.pl##body > div[style*="left:0px"]
+londontechweek.com##.festival-cookie
+forumfree.it##.jnote
 ondarock.it###bottom-banner
-hirelocal.co.uk###itro_popup, #itro_opaco
-fcarreras.org##.BlockList.NoticesBox
-irma.pl##body > div:not([id]):not([class])
-corbisimages.com###stickyFooter, .sticky-footer
-personnelsolutions.pl##body > div:not([id]):not([class])
-creval.it##body > div:not([id]):not([class])
-petite-frimousse.com##.alert-info, .alert-warning, .alert-box
-phonero.no##.btm_footer
-abruzzo24ore.tv##._CL_main
+fcarreras.org##.NoticesBox
+allobebe.fr##.cookie:not(body):not(html), .cookies:not(body):not(html)
 homecinemamagazine.nl##.opt-in
 bahnhof.se##.top-line-block
-sportowysklep.pl##body > div:not([id]):not([class])
 bes.co.uk###xyz
 lmt.lt###cinfo_container
 southwestcoastpath.com##.roar-body
@@ -9570,7 +9638,6 @@ rijschoolgegevens.nl###vale
 eyeonspain.com###cp
 bnpparibas.fr##.ID_mic_1562344
 thebanker.com###ftwelcomemsgbanner_c
-oekais.com###legcooki
 mol.pl##body > div:not([id]):not([class])
 schneiderelectricparismarathon.com##.confidentialite
 bywajtu.pl###co15ie87a
@@ -9620,7 +9687,6 @@ chromarks.com##.plg_system_eprivacy_modal, #sbox-overlay
 qrzcq.com##body > div:not([id]):not([class])
 game-guide.fr##.alert-dismissible, .alert-dismissable, .alert--dismissable, .pmd-alert-dismissible
 skoda-amager.dk##.notificationbar, .notificationBar, .NotificationBar, .notificationBars, #notificationBar, #notificationBarUp, .notification-bar, .notify-bar
-ufe.org###privm_message_id
 zwitserleven.nl##.top_cookiewall, .top_cookiewall ~ div[style*="position: absolute"]
 maison.com##body > div:not([id]):not([class])
 stoeger.net##.sqs-announcement-bar
@@ -9678,13 +9744,11 @@ phoenixcinema.co.uk###myModal, .modal-backdrop, .reveal-modal-bg
 dzidziusiowo.pl##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
 badumtss.net##body > p[style]
 marcopanichi.com###ckmp_banner
-jiba.nl###optoutbar, .optoutbar
 abdlfactory.com###trumpet_message
 excite.it###message-box
 albal.fr###cTopBg
 jotti.org##.alert-dismissible, .alert-dismissable, .alert--dismissable, .pmd-alert-dismissible
 ikalender.se##body > center > table[style*="F0F0F0"]
-contratti.biz##._CL_main
 megadyskont.pl###topInfo4
 milan7.it##body > div:not([id]):not([class])
 ogradzamy.pl##body > div[id*="cookie"]
@@ -9705,8 +9769,6 @@ acuvue.fr###announcement
 calciobalilla.com###virtualscript_injected
 centrumpiwowarstwa.pl##body > div:not([id]):not([class])
 housingjustice.org.uk##body > div:not([id]):not([class])
-geekvida.pt###bottom_container
-dafmuseum.nl##.page-overlay
 renault.be##.ccbar, .cclist
 janssen.pt###warning-popup
 viapresse.com###alerts
@@ -9961,7 +10023,6 @@ mortoglou.gr##.notice, .header-notice, .notice-bar, .notice-inside, .notice-wrap
 drivepad.fr###wrapper > div[style]:not([id]):not([class])
 6corde.it##.notice, .header-notice, .notice-bar, .notice-inside, .notice-wrapper, .notice-holder, .global-notice, #top-notice, #noticePanel, .top_notice, #bottom_notice, #Notices, .Notices, #notice
 brentfordfc.co.uk##.optional_module.profile_summary
-hola.com###barraFlotante
 creavea.com##.creavea-banner-cookie-consent, .creavea-container-cookie-consent
 horizonentrepreneurs.fr##.alert-dismissible, .alert-dismissable, .alert--dismissable, .pmd-alert-dismissible
 gardinia.pl##body > div[id*="cookie"]
@@ -10065,7 +10126,6 @@ almacen-informatico.com###Informacion
 dailybest.it###G_info
 postandparcel.info##.notice, .header-notice, .notice-bar, .notice-inside, .notice-wrapper, .notice-holder, .global-notice, #top-notice, #noticePanel, .top_notice, #bottom_notice, #Notices, .Notices, #notice
 vienormali.it##.info
-geekvida.es###bottom_container
 metro2033.pl##body > div:not([id]):not([class])
 az-europe.eu##body > div:not([id]):not([class])
 kvalster.se##noindex #y
@@ -10220,7 +10280,6 @@ viva.gr##.cc-wrapper
 chemicalize.org###cxn-cc-wrap
 nlyman.com###toast-container, .toast-container, #toast, .toast
 antalis.co.uk###overlay
-sudtours.nl###optoutbar, .optoutbar
 zaplo.pl##.notification, .Notification, .js-notification, .notifications-container, #notifications, #notification_1, #notification, #notification_area, .notifications, .notif-bar, .notificationBox
 sauramps.com##.cnil-popin
 urban-rivals.com##.alert, #alert
@@ -10260,7 +10319,6 @@ altfi.com##.fixedbottom
 prevac.eu###privacy, .privacy, #mainPrivacyDiv, .privacyTop, #privacy-info, .privacy-top, .privacy-overlay, .privacypolicy, #privacy-notification, #inf_privacy, #privacypolicycontainer
 eurosport.de###container-notifications
 ukmot.com##.csent
-pagellapolitica.it##.alert-dismissible, .alert-dismissable, .alert--dismissable, .pmd-alert-dismissible
 hpmarket.cz##body > div[style*="FFFFB4"]
 beko.com##.sayfaIcDiv > .row300
 lifemobile.co.uk###myModal, .modal-backdrop, .reveal-modal-bg
@@ -10424,7 +10482,6 @@ mercedes-benz-clubs.com###cp-wrap
 kleiderkreisel.at##.notification, .Notification, .js-notification, .notifications-container, #notifications, #notification_1, #notification, #notification_area, .notifications, .notif-bar, .notificationBox
 apartmanija.hr###site_nt
 chordbook.com###cbeu_container
-bezirk-oberbayern.de##.tracking-box-wrap
 maltairport.com###cookthis
 abandomoviez.net##.alert-danger
 fbackup.com###fbackup_accept_cookies
@@ -10512,7 +10569,6 @@ managerzone.com##body > div:not([id]):not([class])[style*="fixed"], body > div:n
 auto.at##table[width="98%"][bgcolor="#666666"]
 mondogdr.com##.elan42-disclaimer-banner
 tecnoempleo.com##.alert-dismissible, .alert-dismissable, .alert--dismissable, .pmd-alert-dismissible
-fosse-biologiche.it##._CL_main
 garbo.ro###ictsuc_block
 sapsalis.gr##.termsnote
 paf.com##.mo-notification-bar-fixed
@@ -10645,7 +10701,6 @@ ako-uctovat.sk###message_wrap
 loewe.tv###tx_dscnotifier
 professioneparquet.it###system-message, #system-messages, #system-message-container
 loterieplus.com##.ck_popin
-gogo.nl###optoutbar, .optoutbar
 fotozine.org###kukijima
 martinerhof.at###cks_overlay
 bmw-hebergement.fr###xpr_banner
@@ -11077,7 +11132,6 @@ breakingitaly.it##.sqs-announcement-bar
 ilblogdellestelle.it###disclaimer, .disclaimer, .disclaimerContainer, .disclaimer-box, .disclaimer--info, #disclaimerC, #disclaimer-container, #disclaimer-box, .disclaimer-wrapper
 mare2000.it###avviso
 serialefilmyonline.pl##.alert-dismissible, .alert-dismissable, .alert--dismissable, .pmd-alert-dismissible
-hondanews.eu###colorbox, #cboxOverlay
 uuid.cz###fuckies_info
 unicreditbank.si###pop-down
 federconsumatoripavia.it##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
@@ -11127,10 +11181,8 @@ oddshot.tv##.notification, .Notification, .js-notification, .notifications-conta
 filedesc.com###cwarn
 vrn.de###vrn-cookie
 mywebook.com##.cui-coks
-trendmicro.co.uk###optoutbar, .optoutbar
 decathlon.hu###container-screen
 rendi.hu##body > div:not([id]):not([class])
-trendmicro.fr###optoutbar, .optoutbar
 overcoming.co.uk###msg_top_bar
 somethingartistic.net###hellobar-slider
 valtifest.nl###cerabox, #cerabox-background
@@ -11210,7 +11262,6 @@ wort-suchen.de##.wsadvads-header-bar
 mrsmithcasino.co.uk##.global-inline-notifications
 robertsspaceindustries.com##.bottom-notif-bar, .l-notification-bar
 surveycircle.com###consent_info
-audi.com##.c_cookie
 amnesty.fr###content > div > div:not([style]):not([id])
 meteored.com.ar###gpdr, #GPDR, #gdpr, #GDPR
 donostiakultura.eus###NLC_textLayer, #NLC_opaqueLayer
@@ -11276,7 +11327,6 @@ procyclingstats.com##body > div:not([id]):not([class])
 lesoriginelles.fr###SITE_ROOT ~ div[data-reactid*="siteAspectsContainer"]
 fatface.com###messages
 casinoeuro.com##.growl-container
-timeout.pt##.xs-fill-gray-dark[data-module="cookie_banner"]
 emtecko.cz###__loadCookie
 abb.com###abb-cookie-banner
 zav-sava.si##.alert-info, .alert-warning, .alert-box
@@ -11656,7 +11706,6 @@ telia.fi###yhteiso-messages, .notification--blue
 sarenza.com##.full-width-bar
 puntocellulare.it###f_cookie
 technet.microsoft.com##.banner, #banner
-mercatoforex.org##._CL_main
 ultrahack.org##.app > hr:first-child + div:not([class]):not([id])
 radio24syv.dk##.r24syv-cookie-notice
 cercolavoro.com##.alert-info, .alert-warning, .alert-box
@@ -11776,7 +11825,7 @@ lidl-flyer.com##.fs-notification
 lidl-strom.de##.cc-wrapper
 animod.de###animod-c
 infojobs.it##.notification-advice
-dailymotion.com##div[class*="CookieGdpr"]
+dailymotion.com##div[class*="CookieGdpr"], div[class*="CookiePopup"]
 gogift.com##.iziToast-wrapper
 autozeeland.nl###cpol
 amicoblu.it##.snap-popup-overlay, .box-snap-popup
@@ -11827,7 +11876,6 @@ wienenergie.at##.wrap-cookie-placeholder, .wrap-cookie
 poundworld.co.uk##.cookie:not(body):not(html), .cookies:not(body):not(html)
 nolotech.jimdo.com##.powr-popup.powrLoaded
 anonse.com###polityka, .polityka
-celle.de##.tracking-box-wrap
 framtiden.com##.sol-cookies
 uhren-miquel.de##.ui-dialog.innoPrivacy
 tysol.pl###cooinfo
@@ -11912,7 +11960,6 @@ etstur.com##.protectionOfData
 helios-gesundheit.de##.notice[data-notice-cookie-id="helios-cookie-notice"]
 dia.es##.cookie:not(body):not(html), .cookies:not(body):not(html)
 libertas.pl##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
-creusot-infos.com###legcooki
 wetterheute.at##.cookie-insert
 parasol.com.pl###black_background, #black_background_panel
 domuswire.com###privacy
@@ -11981,7 +12028,6 @@ filmin.pt##.alert-fixed
 aquaquiz.com###footerSlideContainer
 passmyparcel.com##.banner, #banner
 receptnajidlo.cz###cxcx
-forever21.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
 gruppoeuromobil.com##body > div:not([id]):not([class])[style*="fixed"], body > div:not([id]):not([class])[style*="absolute"]
 brain-magazine.fr###cookies
 meteoconsult.fr###top_head
@@ -12324,7 +12370,6 @@ rbs.co.uk##.cookie:not(body):not(html), .cookies:not(body):not(html)
 loot.g2a.com##.cookies-modal
 webnovel.com##.m-streamer
 reittiopas.fi###messageBar
-ipaddress.com###cc
 zenith.gr###cookies
 creditmutuel.fr###ei_cookie
 kimovil.com###code_cookies
@@ -12436,7 +12481,6 @@ sita.aero###privacyPopupOverlay, .privacyPopup
 sapabuildingsystem.com###header .message
 mx1-360.com##.cookie-legal
 bund-nrw.de###m-global-disclaimer
-zentrum-der-gesundheit.de##.zdg-cookies-policy
 play.google.com###gb > div[style*="background-color"], #gb > div[class^="gb_"]:not([class*=" "]) > div[style*="background-color"]
 facebookafmelden.nl###cookiespanel
 tablademareas.com###cookies
@@ -12595,7 +12639,6 @@ shortpixel.com###shortpixel-cookies
 megustaleer.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
 co-opinsurance.co.uk###noticePanel
 autoampel.de###cookies
-asnbank.nl##.cookiewall-dialog, .ui-widget-overlay
 lysman.no##.infobar
 autoweetjes.com##body > div[id]:not([class])
 monedo.mx##.wr-notification-panel
@@ -12628,7 +12671,6 @@ savio.it###box-overlay
 mobileworldcentre.com##.alert-warning
 kupigume.hr##.ant-notification
 wiener-metropol.at##body > div:not([id]):not([class])
-opera-comique.com##.disclaimer
 fnvzzp.nl###bottom
 vzdusin.cz##.euc
 lacompagnie.com###cnil-layer
@@ -12770,7 +12812,6 @@ animationsource.org###cprv
 catwalker.hu###CWCookie
 jjfoodservice.com##proto-orderpad > div[style*="fixed"]
 jman.tv###ActionBar
-klebetape.de###keksdose
 dragonpass.com.cn##.indexCookies
 pressreader.com###snackbar-container
 denovali.com###growls2
@@ -12829,7 +12870,6 @@ eventbrite.co.uk##.eds-notification-bar
 kurspisania.pl##.cookie:not(body):not(html), .cookies:not(body):not(html)
 angolotesti.it###cookies
 large.nl##.notification-box-bottom
-erkrath.de##.tracking-box-wrap
 active-traveller.com###mixcookies
 member.europe.yamaha.com##.alert, #alert
 graze.com###graze-cookie-message
@@ -12978,7 +13018,6 @@ edx.org##.edx-cookie-banner-wrapper
 johnlewisbroadband.com##.cf__main-block
 1000dokumente.de###bscookie
 aalst.be##.footer-notification
-sklepkoszykarza.pl##body > div:not([id]):not([class])
 dutchcarparts.nl##.cookie:not(body):not(html), .cookies:not(body):not(html)
 vr.fi##.infoMessages
 indiatimes.com##.du_consent, .cookie_stng
@@ -13027,7 +13066,6 @@ lily.fi##body > div:not([id]):not([class])
 dashlane.com##.js-privacy-module
 playstation.com###privacy-header
 weersvoorspelling.nl##body > div:not([id]):not([class])
-net.hr##.disclaimer
 techadvisor.co.uk##body > div[style*="transparent"]
 payback.de##.stripe--fixed-bottom
 openclassrooms.com###showDisclaimer
@@ -13091,11 +13129,11 @@ esug.dk###COOKIE
 bringmeister.de##div[data-cy="cookiePopup"]
 strava.com###stravaCookieBanner
 userstyles.org##.NotificationLine
-grammarly.com##div[class*="gdpr_notification-container"]
+grammarly.com##div[class*="gdpr_notification"]
 dirk.nl##.cookie:not(body):not(html), .cookies:not(body):not(html)
 eltiempo.es###privacy_bar, .curtain_lightbox
 mabanque.bnpparibas##.cookie:not(body):not(html), .cookies:not(body):not(html)
-xvideos.com###x-messages, #x-messages-btn
+xvideos.com###x-messages, #x-messages-btn, #x-x-messages-btn
 techniconnexion.com###fb-root ~ div
 memrise.com###legal-modals, .modal-backdrop
 newegg.com###popup_overlay, .centerPopup
@@ -13181,7 +13219,7 @@ gamigo.com###gamigoCookie
 schmucks-restauration.de###d-notification-bar
 openweathermap.org###stick-footer-panel
 starressa.com###modal-home
-axminster.co.uk##.axmcookie-notice-container
+axminster.co.uk##.axmcookie-notice-container, .axmcookie-notice-conatiner
 dietenlijst.nl###cooMessage, #loading
 rapidssl.com###toolbar
 perforce.com##.EUc
@@ -13191,7 +13229,6 @@ detektor.fm##.stb-container.stb-top-right-container
 quag.com###gpdr, #GPDR, #gdpr, #GDPR
 siropsport.fr##.analytics
 kafelanka.cz##.cookie:not(body):not(html), .cookies:not(body):not(html)
-dasoertliche.de##.sticky_cookie
 easyeda.com##.priv-tips
 bw-online-shop.com##.modal-mask-class.show-modal
 meteored.pe###gpdr, #GPDR, #gdpr, #GDPR
@@ -13263,7 +13300,6 @@ eatingwell.com###privacyNotification
 soliver.eu##.ta_marketing-layer
 wetter.de##.c-wrapper
 onzemondial.com##body > div[id*="cookie"]
-calendly.com###consent-region
 auto10.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
 udemy.com##div[class*="eu-cookie-message--eu-cookie-message"]
 seikowatches.com##.blk-Disclaimer
@@ -13323,7 +13359,6 @@ thewindowsclub.com##body > div[style*="transparent"]
 producthunt.com###app > div > div[class*="container"]:first-child
 cgtrader.com##.notice
 lyricsmode.com##body > div:not([id]):not([class])
-tfa-dostmann.de##.xcb
 yourweather.co.uk###gpdr, #GPDR, #gdpr, #GDPR
 nature.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
 spiegel.de##.spiegelde-cookie-notification
@@ -13729,7 +13764,6 @@ del.org##.cookie:not(body):not(html), .cookies:not(body):not(html)
 spie.de##.cookie:not(body):not(html), .cookies:not(body):not(html)
 allrecipes.com###privacyNotification
 amazeta.com###gpdr, #GPDR, #gdpr, #GDPR
-dielinke.berlin##.disclaimer
 e-tron.audi##.e-tron-cookies-notice
 quake.com##.notification
 18virginsex.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
@@ -13753,9 +13787,7 @@ werum.com##.c-callout
 nmm.nl###cookies
 mariniersmuseum.nl###cookies
 shadycharacters.co.uk###banner-sidebar
-dobreprogramy.pl###form1 ~ div[class]
 get-in-it.de###getIn_cookie_notice
-tapatalk.com##.pp-p
 radioplay.se###root > div > div:not([class]):not([id])
 pxhere.com##.policy-info
 agrizone.net##.cookie:not(body):not(html), .cookies:not(body):not(html)
@@ -13867,7 +13899,6 @@ hotel-spider.com###cookies
 crytek.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
 sondakkamanset.com###cerezsorgula
 the-match-factory.com###infoBar
-vandebron.nl##.popup_overlay
 botify.com##.fixed.pin-l.pin-b.z-10.flex
 computacenter.com##.consent-container
 teletorium.pl##.cookie:not(body):not(html), .cookies:not(body):not(html)
@@ -14005,7 +14036,6 @@ aboutyou.de###app > section > footer ~ div
 aboutyou.pl###app > section > footer ~ div
 aboutyou.be###app > section > footer ~ div
 ostsee-therme.de##.cookie:not(body):not(html), .cookies:not(body):not(html)
-fimfiction.net###dimmers, .drop-down-pop-up-container
 fusion-lifestyle.com###cookies
 cubbit.net###root > div > footer ~ div
 lesara.de##.notification
@@ -14093,7 +14123,6 @@ digi-animalworld.tv###gdpr, #gdpr-modal
 praxisbelp.ch##.cookieBubble
 dmc-watch.com##.promo-bar-container
 tshirt-corner.com##.tc-cnil
-valtra.de##.disclaimer
 modesens.com###tip_container
 max.fr##.notice-cook
 act-store.com###POPUPS_WRAPPER
@@ -14171,7 +14200,6 @@ teldust.com##.cookies-tab
 medicshop.de###cookiemedic
 hpinfomedia.de###dataPrivacy
 gpgroot.nl###ckc_hdr
-diy.com###app-header > div:first-child:not([class*=" "])
 techonthenet.com##.consent, #consent
 tu-dresden.de###privacy-statement
 anacom.pt###cookieDiv
@@ -14193,7 +14221,6 @@ mount10.ch##.ck-bn
 sociall.io##mat-dialog-container
 duplichecker.com###cookies
 crackwatch.com##.Overlay
-freeletics.com##div[class*="src-components-CookieConsent"]
 dinamalar.com##.quickslide
 docfinder.at##.cc-wrapper
 iqoption.com##div[data-test-id="notification-position-container-block"]
@@ -14202,7 +14229,6 @@ flows.be###flows-cookie-compliance-popup
 netflixinbelgie.be##body > div[class^="app"]
 fansbreak.com###cookies
 pipelife.at###coo
-freital.de##.tracking-box-wrap
 track.dhlparcel.co.uk##.cookie:not(body):not(html), .cookies:not(body):not(html)
 ricominciodaquattro.com###cbox-notice
 societegenerale.fr###c-message
@@ -14273,7 +14299,6 @@ liveradio.ie###disclaimer
 letsdeal.no##div[class^="gdpr-panel"]
 letsdeal.se##div[class^="gdpr-panel"]
 transitionnetwork.org###tofino-notification
-mall.hu##.consent-panel
 wotinfo.net###coo
 find.com.tr###KVK_Cerez
 ittrend.hu###suti
@@ -14337,8 +14362,6 @@ pallottinum.pl##body > div:not([id]):not([class])
 borgware.de##.cookie:not(body):not(html), .cookies:not(body):not(html)
 bock-kunststofftechnik.de##div[id^="cookielaw_"]
 niveamen.co.uk###popup, .popup
-mimovrste.com##.consent-panel
-satas.com###acb-banner
 ohtuleht.ee##.ntf-container
 mcsuk.org###a3prompt
 slideshare.net##.lms-notice-wrapper
@@ -14357,7 +14380,6 @@ live365.com##.site > div[class*="root"] > div:not(.action-bar)
 ostrog.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
 egym.com##.egym-prompt
 yougov.co.uk##yg-cookie-confirm
-haan.de##.tracking-box-wrap
 totaljs.com##.ui-cookie2
 riot.im##.mx_MatrixToolbar
 gruene-bundestag.de###info_message
@@ -14405,6 +14427,7 @@ webwinkel.ed.nl##.modal__bg
 webwinkel.pzc.nl##.modal__bg
 webwinkel.bndestem.nl##.modal__bg
 webwinkel.gelderlander.nl##.modal__bg
+webwinkel.destentor.nl##.modal__bg
 poe.de###notice
 ozcouponscode.com##.policy_footer
 backmarket.es##.banner.paper
@@ -14471,7 +14494,6 @@ dreamworksanimation.com##.dwa-embed-cookie-consent-container
 theburgerhouse.com###close-cookies
 euromaxx.nu##.ui-widget, .ui-widget-overlay
 mybiclighter.com###cookies
-bauhaus100.de##.bau100_cookie-bar
 hotel-goeller.de###infobar
 stokokkino.gr###popupform1
 peugeotscooters.pt##.policy-window
@@ -14482,13 +14504,12 @@ lunamum.de##.cookie:not(body):not(html), .cookies:not(body):not(html)
 modr.pl##.region-gdpr
 gazetapraca.pl###overlayJS
 head-fi.org##.Notices
-icelandreview.com##.gaoop
 wago.com###section_cookie
 sightseeing-kontor.de###sk-info
 nationalezorggids.nl##.cookieModal
 nginx.com##div[id*="nx_gdpr_modal"]
-modrykonik.sk###page-wrap .redux-toastr ~ div:not([class]):not([id]) > div:not([class]):not([id])
 mareespeche.com###cookies
+cooking.nytimes.com###alertBannerMount
 vuejsdevelopers.com##.navbar.is-fixed-bottom
 weihnachtsmaerkte-in-deutschland.de###cono
 bergische-energie.de##body > div:not([id]):not([class])
@@ -14554,6 +14575,174 @@ checkyourmath.com##.consent, #consent
 harper-adams.ac.uk###cookies
 devhut.net##.ht-notification-text .su-note
 engelsrufer.de###backcolorcookies
+mcafeestore.com##.cookie_module
+nperf.com##.consent, #consent
+canadacomputers.com##.privacy-modal
+free3dbase.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
+alivecolors.com##.alert, #alert
+goodvibes.com###bottomAlert
+annuaire.laposte.fr###cookies
+imovirtual.com##div[class*="CookiesBar"]
+red-carparts.de###disclaimer
+carlovalentini.it###footer-widget-area
+streamcraft.com##.privacy-wraper
+helemaalshea.nl##.fancybox-overlay
+razer.com##.component-sticky-dialog
+cv-sanitairkorting.nl##.ui-widget, .ui-widget-overlay
+redaccionmedica.com##.iframe_cookies
+helmet.fi##.notification, .notifier_warning
+yourbaroness.com###important-notice
+commsec.com.au##.announcements
+changelly.com##.clly-notification
+breakplan.pl##.cookie_logo
+diamantor.fr##.st_notification_wrap
+hemnet.se##.js-consent-react-root
+herni-svet.cz##.blockUI
+durs.si###trCookie
+higherlowergame.com##.app-store-icons ~ section
+new-life-soundmagazine.com##.ui-widget, .ui-widget-overlay
+educazionesanitaria.com##.privacy_check
+wikihow.fitness###gpdr, #GPDR, #gdpr, #GDPR
+vpnunlimitedapp.com##.badge_privacy
+morningstar.fr##.audienceTypeConfirmPopupContentCss, #dialog-mask
+gaiaonline.com###pg-gdpr
+getgrover.com##.snackbar-enter-done
+siemens.co.uk###c-info, .cm-banner
+waze.com##.wz-cc-container
+medischcontact.nl##.cc-popup
+nos.io##div[class*="gdprBanner"]
+builds.gg##.consent, #consent
+lot.com###cookies
+karlsruhe-basel.de###CKC
+lawine.at##.header-notification
+ipax.at###ipaxCC
+acehighradio.com##.widget-footer section > div:not([class])
+karls-shop.de##.cookie:not(body):not(html), .cookies:not(body):not(html)
+grandswissbangkok.com##.footer-fix-popup
+eyeem.com##.reactRoot > div:not([class])
+bund-marketing.net###m-global-disclaimer
+hyundai.es##.cookie:not(body):not(html), .cookies:not(body):not(html)
+ritzau.dk##.footer__notification
+mtd-reifen.de###d-notification-bar
+ruegenwalder.de###csdialogbd, #csdialogmd
+utlandssvenskar.com###my-welcome-message
+kleientertainment.com###gpdr, #GPDR, #gdpr, #GDPR
+fotosik.pl##.modal-backdrop, #rodo-info
+grand-seiko.com##.blk-Cookie
+designwebkit.com##.cookie_block
+apidura.com###hiddenCookie
+arcolresistors.com###close-me
+outfittery.de###app > div > div:not(.body-container)
+kia-sangl-landsberg.de##.kia-cookie
+conferencemanager.dk##.cookie:not(body):not(html), .cookies:not(body):not(html)
+extreme-d0wn.net###a-cn-wrapper
+worditout.com##body > #g
+thread.com##thread-cookie-notice
+marktguru.de##.bottom-alert
+santander.com.br##alert.row
+mapsofworld.com###dialog
+saurclient.fr###cookies
+nowness.com##.ns-info-bar
+swiftkey.com##.alert-banner
+o2family.cz###o2fCookieConsentDialog
+super.ee##.header__notice
+capitalone.ca###alert-privacy-update
+eutelsat.com###header_higher
+kurzgesagt.org##.cb-wrapper
+cylance.com##.cylance-mod-cookiebanner
+webd.pl###cffc
+hs-kl.de##.alert-info
+lelieuunique.com##.cookie:not(body):not(html), .cookies:not(body):not(html)
+ntbinfo.no##.footer__notification
+leech360.com###cookie-required
+wsis.pt###termosdiv
+cdkeys.com###cookieCDkeys
+tor.com###entry-content__footer-popup
+booking-channel.com###sta-cookies ~ div[class*="tpl-cookies"]
+wortel24.nl##div[data-cookie-law-banner-selector]
+instituteforgovernment.org.uk##.popup-text
+ninkasi.fr##.nq-c-rgpdBar
+stoffe-hemmers.de##.cookie:not(body):not(html), .cookies:not(body):not(html)
+ukmotorists.com##.csent
+thomassabo.com###hintbox
+disclose.tv###ccc-login-signup
+pagellapolitica.it##.alert, #alert
+2fast4buds.com##.popup_secure
+pacman.io###priv_notice
+spartagym.hr##.floatton-btn, .floatton-container
+e-reporter.pl###wpfront-notification-bar-spacer
+epom.com##body > div:not([id]):not([class])
+jazzradio.com###terms-message-region
+ernieball.com###gpdr, #GPDR, #gdpr, #GDPR
+gea-waldviertler.at##.alert, #alert
+campana-schott.com###cookie-copy
+sumup.de##.su-footer ~ div[class*="css"]
+htmlcolorcodes.com###js-alert
+hdg.de###hdg-cookie-accept
+spd-einbeck.de##.spd-cookie
+chinesenewyear.net##.js-alert
+gqitalia.it##.app > div[class^="FadeWrap"]
+modrykonik.sk###page-wrap .redux-toastr ~ div:not([class]):not([id]) > div[class*=" "]
+bustle.com##body > div > header ~ div[class*=" "]
+volkswagen-zubehoer.de##.system-notification
+antenna.gr##.consent, #consent
+rwjf.org##.masthead__message
+jahrmaerkte-in-deutschland.de###cono
+staatsschauspiel-dresden.de##.dataprotection
+sexvideoall.com##.fixed-nav-bar
+marklogic.com###marklogic-eucl-notice
+sklepkoszykarza.pl##body > div:not([id]):not([class])
+naturo.pl###cookie
+lawebdelprogramador.com###cookie
+toothbrushbattery.com##.woocommerce-store-notice
+kraken.com##.kraken-cookie-warning
+srazenazver.cz##.cookie:not(body):not(html), .cookies:not(body):not(html)
+bitdefender.ru##.mtsnb-top
+sudzibas.lv##.cookie:not(body):not(html), .cookies:not(body):not(html)
+vinted.com###stickyFooter, .sticky-footer
+mopolis.de##.consent, #consent
+dineathens.gr##.cookie:not(body):not(html), .cookies:not(body):not(html)
+qantas.com###bottomAlert
+cortefiel.com###general-popup, .euCookiesPolicy
+login.ecorreos.post##.cookie:not(body):not(html), .cookies:not(body):not(html)
+wizbii.com##div[class*="gdpr_banner"]
+moontracks.com###dropinboxv2cover
+answerpoints.co.uk##.cc_modal
+investintech.com###geoPolicy
+tapatalk.com##.navbar-fixed-top #gdpr_b
+apotheke.at###landing_page_popup
+nationalbooktokens.com##div[id*="UpdatePanelCookie"]
+expertoanimal.com##.consent, #consent
+citusdata.com###consentBox
+alfred.com##.privacy-policy.content
+protegerse.com###cook
+ontinet.com###cook
+artwhere.be###acc-bottom
+dafmuseum.nl##.modal-backdrop, .page-overlay
+rpguides.de###pitchblack
+geotrust.com###toolbar
+mindennapkonyv.hu###wrapper > div[style*="fixed"]
+freeletics.com##div[class*="CookieConsent"]
+mywot.com###root > div > div[direction="up"][style*="transform"]
+kbaur-gmbh.com##.alertbanner
+napster.com##footer ~ .info_box
+houseoftracks.com##.overflow-container
+lojasrenner.com.br##.notification
+getcomposting.com###top-notice
+skoleporten.dk###jGrowl
+tuenti.es##.cookie:not(body):not(html), .cookies:not(body):not(html)
+gr8.com##div[data-editable="boxCookieNotification"]
+livescore.com###ls_cpa
+freetorrent.tk###alert_system_notice
+dvere-parkety.sk##.annoyerBarCont
+gebuhrenfrei.com##.cc_wrapper
+kickresume.com##div[class*="CookieConsentBanner"]
+purehelp.no###consent_popup, .modal-backdrop
+mitsubishi.nl###cookies_terms
+l2db.info##.access-cookies
+jeffery-west.co.uk##.cookie:not(body):not(html), .cookies:not(body):not(html)
+evengreener.com###top-notice
+flyingflowers.co.uk##.overlayTxtDiv
 !
 ! SCRIPT BLOCKING
 !
@@ -14948,6 +15137,36 @@ policy.app.cookieinformation.com
 cookiebanner.min.js
 ||consent.truste.com/notice?domain=oracle.com$script
 /js/general/avada-privacy.js
+/cc.js?renew=false&referer=www.rs2.de
+/z7_cookiemanager.js
+/cookie-consent/js/
+||vontobel.com/CH/VontobelCoreResources/Scripts/DisclaimerControl.js$script
+sleeknotestaticcontent.sleeknote.com
+/setPrivacyCookie.min.js
+cookieconsentnotice.js
+/modules/tnzcookie/
+||public.message-business.com/Javascript/mb.privacyManager$script
+/wp-content/plugins/gdpr-cookie-compliance/
+/clientlib-webpack-publish/js/CookiesApp-
+||s.luxupcdnc.com/t/consent_$script
+/wx-cookie-ppp-bootstrap-compact.js
+/js/CookieManager.js
+||cdn.reeltime.no/pm_assets/privacy/$script
+/components/cookie-modal/cookie-modal.js
+/twcdisclaimer.js
+||ftcguardian.com/privacy-update$script
+/rodo-agreement-popup.min.js
+/jqueryCL.min.js
+/trustArcHelper.js
+/cmpCookie.js
+/cookies-window.min.js
+/bundle_CookieLegalNotice.prod.js
+/cookiewall-inline-for-popup.js
+/cookie-bar/cookieconsent.min.js
+/wp-content/plugins/cc-cookie-consent/
+/2018-gdpr.js
+/cookiePolicyV4.js
+/wp-content/plugins/shapepress-dsgvo/
 !
 ! FILTERLIST ONLY
 !
@@ -14971,9 +15190,10 @@ qxl.no#@##cookie-container:not(body):not(html)
 qxl.no#@##cookie-wrapper:not(body):not(html)
 qxl.se#@##cookie-container:not(body):not(html)
 qxl.se#@##cookie-wrapper:not(body):not(html)
-17track.net#@##modal-gdpr:not(body):not(html)
 dr.dk#@##CybotCookiebotDialog:not(body):not(html)
 popsci.com#@##CybotCookiebotDialog:not(body):not(html)
+sportdiver.com#@##CybotCookiebotDialog:not(body):not(html)
+17track.net#@##modal-gdpr:not(body):not(html)
 postnl.nl#@#.cookiebar-container:not(body):not(html)
 postnl.nl#@#.cookiebar-message:not(body):not(html)
 tropicana.fr#@##cookieModal:not(body):not(html):not(.countryCookieModalContainer)
@@ -14994,9 +15214,29 @@ n26.com#@##gdpr-notice:not(body):not(html)
 biotechusa.hu#@##cookie-consent:not(body):not(html)
 boligsiden.dk#@#.cookie__top:not(body):not(html)
 zeist.hu.nl#@#.cookie-block:not(body):not(html)
+bakken.nl#@#.cookie-info:not(body):not(html)
+developer.ing.com#@##cookiesDialog:not(body):not(html)
+doka.com#@#.cookie-modal:not(body):not(html)
+flybe.com#@##cookie-policy-modal:not(body):not(html)
+gamewatcher.com#@#.gdpr-modal:not(body):not(html)
+auchan.hu#@#.cookie-modal:not(body):not(html)
+forever21.com#@##cookiesPopup:not(body):not(html)
+vandebron.nl#@#.cookiebar-container:not(body):not(html)
+dclaw.co.uk#@##dialog-cookies:not(body):not(html)
+thesocialmedwork.com#@#.cookie[role="alertdialog"]:not(body):not(html)
+thesocialmedwork.com#@##notice-cookie-block:not(body):not(html)
+birdpix.nl#@##cookiesettings:not(body):not(html)
+birdpix.nl#@#.cookieContainer:not(body):not(html)
+nederpix.nl#@##cookiesettings:not(body):not(html)
+nederpix.nl#@#.cookieContainer:not(body):not(html)
+hondanews.eu#@##cookiesPolicyBanner:not(body):not(html)
+hondanews.eu#@#.cookieContent:not(body):not(html)
+hondanews.eu#@#.cookieInfo:not(body):not(html)
+pekao.com.pl#@##gdpr-popup:not(body):not(html)
+pekao.com.pl#@#.gdpr-modal:not(body):not(html)
 xmradio.nl#@#.cookie-wall:not(body):not(html)
 xmradio.nl#@#.cookie-content:not(body):not(html):not(#rus-main)
-xmradio.nl#@##accept-cookies:not(body):not(html)
+xmradio.nl#@##accept-cookies:not(body):not(html):not(button)
 asatalent.nl#@##cookiewall:not(body):not(html)
 pharmindex-online.hu#@##cookie_modal:not(body):not(html)
 xm.com#@##cookieModal:not(body):not(html):not(.countryCookieModalContainer)
@@ -15014,6 +15254,10 @@ consent.talpanetwork.com#@#.cookie-box:not(body):not(html)
 theverge.com#@##privacy-consent:not(body):not(html)
 codra.net#@#.cookie-consent:not(body):not(html):not(.paragraph)
 dhbbank.nl#@##cookieModalCenter:not(body):not(html)
+wko.at#@##cookiehint:not(body):not(html)
+fimfiction.net#@#.cookie-consent-popup:not(body):not(html)
+nieuwspoort.nl#@#.cookie-consent:not(body):not(html):not(.paragraph)
+nieuwspoort.nl#@##cookie-consent:not(body):not(html)
 cyberforum.de#@#.cc-banner:not(body):not(html)
 cyberforum.de#@#.cc-window:not(body):not(html)[aria-label*="consent"]
 makelaarsland.nl#@#.m-cookie-notice:not(body):not(html)
@@ -15034,6 +15278,10 @@ tmz.com#@#.truste_overlay:not(body):not(html)
 tmz.com#@#.truste_box_overlay:not(body):not(html)
 timeout.com#@#.cookie_banner:not(body):not(html)
 timeout.com#@#.xs-fixed[data-module="cookie_banner"]:not(body):not(html)
+timeout.fr#@#.cookie_banner:not(body):not(html)
+timeout.fr#@#.xs-fixed[data-module="cookie_banner"]:not(body):not(html)
+timeout.cat#@#.cookie_banner:not(body):not(html)
+timeout.cat#@#.xs-fixed[data-module="cookie_banner"]:not(body):not(html)
 pieseauto.ro#@#.page-cookies:not(body):not(html)
 pieseauto.ro#@#.cookie-wall:not(body):not(html)
 intersport.nl#@##CookiePopup:not(body):not(html)
@@ -15043,3 +15291,42 @@ intersport.dk#@#.cookiewall:not(body):not(html)
 intersport.es#@##CookiePopup:not(body):not(html)
 intersport.es#@#.cookiewall:not(body):not(html)
 intersport.hr#@##gdpr_modal:not(body):not(html)
+voidu.com#@##eu-cookie-bar-notification:not(body):not(html)
+voidu.com#@#.eu-cookie-bar-notification:not(body):not(html)
+puzzels.ad.nl#@#.cookie-modal:not(body):not(html)
+puzzels.ad.nl#@#.cookie-wrapper:not(body):not(html)
+puzzels.ad.nl#@#.cookie-header:not(body):not(html)
+puzzels.bndestem.nl#@#.cookie-modal:not(body):not(html)
+puzzels.bndestem.nl#@#.cookie-header:not(body):not(html)
+puzzels.bndestem.nl#@#.cookie-header:not(body):not(html)
+puzzels.bd.nl#@#.cookie-modal:not(body):not(html)
+puzzels.bd.nl#@#.cookie-header:not(body):not(html)
+puzzels.bd.nl#@#.cookie-header:not(body):not(html)
+puzzels.gelderlander.nl#@#.cookie-modal:not(body):not(html)
+puzzels.gelderlander.nl#@#.cookie-header:not(body):not(html)
+puzzels.gelderlander.nl#@#.cookie-header:not(body):not(html)
+puzzels.destentor.nl#@#.cookie-modal:not(body):not(html)
+puzzels.destentor.nl#@#.cookie-header:not(body):not(html)
+puzzels.destentor.nl#@#.cookie-header:not(body):not(html)
+puzzels.ed.nl#@#.cookie-modal:not(body):not(html)
+puzzels.ed.nl#@#.cookie-header:not(body):not(html)
+puzzels.ed.nl#@#.cookie-header:not(body):not(html)
+puzzels.pzc.nl#@#.cookie-modal:not(body):not(html)
+puzzels.pzc.nl#@#.cookie-header:not(body):not(html)
+puzzels.pzc.nl#@#.cookie-header:not(body):not(html)
+puzzels.tubantia.nl#@#.cookie-modal:not(body):not(html)
+puzzels.tubantia.nl#@#.cookie-header:not(body):not(html)
+puzzels.tubantia.nl#@#.cookie-header:not(body):not(html)
+puzzels.trouw.nl#@#.cookie-modal:not(body):not(html)
+puzzels.trouw.nl#@#.cookie-wrapper:not(body):not(html)
+puzzels.trouw.nl#@#.cookie-container:not(body):not(html)
+puzzels.trouw.nl#@#.cookie-header:not(body):not(html)
+puzzels.parool.nl#@#.cookie-modal:not(body):not(html)
+puzzels.parool.nl#@#.cookie-wrapper:not(body):not(html)
+puzzels.parool.nl#@#.cookie-container:not(body):not(html)
+puzzels.parool.nl#@#.cookie-header:not(body):not(html)
+puzzels.volkskrant.nl#@#.cookie-modal:not(body):not(html)
+puzzels.volkskrant.nl#@#.cookie-wrapper:not(body):not(html)
+puzzels.volkskrant.nl#@#.cookie-container:not(body):not(html)
+puzzels.volkskrant.nl#@#.cookie-header:not(body):not(html)
+nytimes.com#@#.expanded.gdpr:not(body):not(html)
