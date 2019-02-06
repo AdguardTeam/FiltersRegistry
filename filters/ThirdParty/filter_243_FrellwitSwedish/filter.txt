@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-02-05 07:57:42 CET
+! Last modified: 2019-02-06 19:36:39 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -137,6 +137,7 @@ fiskejournalen.se##div[style="background-color:#ededed"]:has(small:has-text(/ann
 flashscore.se###box-over-content-a:has(a[href^="/promobox"][target="_blank"])
 fokis.se##[id^="post-"]:has(strong:has-text(/i samarbete med/i))
 fokus.se#$#[id^="entry-content-post"] { height: 100% !important; }
+folkbladet.nu,vk.se##div:has-text(/^Annons$/)
 foretagande.se##div.latestItemBody:has(a[href^="/artiklar-i-samarbete/"])
 forum.studio.se##li[data-blocktitle="Anpassade Block"]:has(.sms-marking:has-text(Annons:))
 fotbolldirekt.se,hockeysverige.se##.justnu_category:has(.datum:has-text(/sponsrat/i))
@@ -407,6 +408,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 ##.cookies-bar
 ##.cookies-info
 ##.cookies-info-static
+##.dagensps_ad
 ##.eu_coookie_toolbar
 ##.js-cookie-warning
 ##.notification--cookie
@@ -518,7 +520,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /bilder/ads/*
 /bilder/foretag/*$image,domain=falubsbandy.com
 /bitcsys/js/bit.js$script
-/blogcounter.js^$script,domain=javligtgott.se
+/blogcounter.js$script,domain=javligtgott.se
 /blogcounter/image?$image,domain=javligtgott.se
 /BlogPortal/js/stats/blogstat.$script
 /blogs/log_pageview/*$script
@@ -562,21 +564,20 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /cookiewarning$xmlhttprequest,domain=nyteknik.se
 /core/minify/storage/*$script,domain=manolo.se
 /custom/ad/*$domain=thaisnack.se
-/cx-emediate-userprofile-se.*.js$script,domain=eniro.se
+/cx-emediate-userprofile-se.$script
 /CXense_Video_Handler/*$subdocument,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|uppgang.com|vimmerbytidning.se|vt.se
 /dam/personalized/*$domain=dagensmedia.se
 /dfp.css$stylesheet,domain=ljudochbild.se
 /docunet_stats.js$script,domain=byggvarlden.se
-/dohi-gdpr/*$domain=cyclingplus.se|firstfoto.se|fitnessformen.se|halsafitness.se|macguiden.net|yogaworld.se
 /downloads.mailchimp.com/*$domain=branschkoll.se|landleyskok.se|vavawoom.com|villalivet.se
+/ds-tracker.js$domain=dagenssamhalle.se
 /emediate-responsive-wp-plugin/*
-/eniro.pixel.script.js$domain=eniro.se
-/entag.js$script,domain=eniro.se|proff.se
+/entag.$script,domain=eniro.se|proff.se
 /entryclick;_
 /eu-cookie-compliance/*$domain=realtid.se
 /eu_cookie_alert/*$script,stylesheet
-/evqNewsBot.js^$script,domain=evertiq.se
-/evqReadBot.js^$script,domain=evertiq.se
+/evqNewsBot.$script,domain=evertiq.se
+/evqReadBot.$script,domain=evertiq.se
 /exposure$xmlhttprequest,domain=lokalguiden.se
 /facebook/gillkom$xmlhttprequest,domain=kamerabild.se|mobil.se
 /facebook_sdk.js$script,domain=njus.me|radioplay.se
@@ -598,6 +599,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /gtm-local.js$script,domain=popmuzik.se|rocknytt.net
 /hapyak.js$script,domain=viktvaktarna.se
 /headerbidding.js$script,domain=livetombord.se
+/helios/multiad_jquery.$script
 /hjv-google-analytics-startpage$script,domain=1177.se
 /i10c@p1/*$domain=bax-shop.se|digikey.se|justfab.se
 /iab/iab.js$script
@@ -608,7 +610,6 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /img/bettingstugan.$image
 /img/bnr/*$domain=minfil.com
 /img/compricer$image,domain=ekonominyheter.se
-/improve_digital_ads.$script,domain=cyclingplus.se|halsafitness.se|yogaworld.se
 /inc/statistic.aspx?$subdocument,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|uppgang.com|vimmerbytidning.se|vt.se
 /infopeek.min.js$domain=svd.se
 /initAdobeAnalytics$script,domain=svenska.yle.fi
@@ -631,6 +632,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /js/fullpageads.js$script
 /js/gdpr-public.$script,domain=loppi.se
 /js/iepngfix_tilebg.$script
+/js/improve_digital_ads.$script
 /js/marbles/marbles.js$script,~third-party,domain=akaskidor.se|hemtrevligt.se|kingmagazine.se|livetombord.se|mestmotor.se|svenskgolf.se|tidningenhalsa.se|utemagasinet.se|vagabond.se
 /js/mtiFontTrackingCode.$script
 /js/OneSignal.$script,domain=thelocal.se
@@ -643,6 +645,8 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /js/smart-app-banner.$script,domain=svenskafans.com
 /js/smartbanner/*$domain=tvmatchen.nu
 /js/sticky-mobile-ad.js$script,domain=allakorsord.se|allas.se|allers.se|antikochauktion.se|aretrunt.se|baaam.se|dromhemochtradgard.se|elle.se|elledecoration.se|ellematovin.se|femina.se|frida.se|hant.se|hemmets.se|mabra.com|matmagasinet.se|residencemagazine.se|svenskdam.se
+/js/svenskanamn_ads.$script
+/js/svenskanamn_param_init.$script
 /js/topBanner.$script,domain=masterkocken.se
 /js/widget_tracking.js$script,domain=xn--fretagsverksamhet-zzb.se
 /kingrev.php$image,domain=kingsizemag.se
@@ -652,7 +656,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /lib/js/sticky.$script,stylesheet,domain=kenzas.se
 /license.$script,domain=jawcloud.co|nxload.com|openload.co|streamango.com
 /links/*casino*.$image,domain=emocore.se
-/listByType?*adSettings^$xmlhttprequest,domain=kokaihop.se
+/listByType?*adSettings$xmlhttprequest,domain=kokaihop.se
 /live/radarmagazine.se.js$script
 /loader.php$subdocument,domain=kingsizemag.se
 /LoadIframePlugin.js^$domain=falkopingstidning.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vn.se
@@ -670,7 +674,6 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /monetization/ads-module/*
 /monetization/pixel-sdk/*
 /mp_emediate/inc/annons.html
-/multiad_jquery.js$script,domain=husvagnochcamping.se|manolo.se
 /n24.js?$domain=filmtipset.se
 /native.js$script,domain=dagensmedia.se
 /native?noBurtProfiles=1$xmlhttprequest,domain=hd.se|sydsvenskan.se
@@ -716,7 +719,8 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /plugins/cookie_consent/*$script
 /plugins/cresta-social-share-counter-pro/*$script,stylesheet
 /plugins/ct-ultimate-gdpr/*$domain=itrace.se
-/plugins/dohi-sellbranch/js/popup.$script,domain=cyclingplus.se|halsafitness.se|yogaworld.se
+/plugins/dohi-gdpr/*
+/plugins/dohi-sellbranch/js/popup.$script
 /plugins/doubleclick-wp/*
 /plugins/easy-adsense-ads-scripts-manager/*
 /plugins/easy-affiliate-links/*$domain=byggteknikforlaget.se|handbollskanalen.se|killsteal.se
@@ -813,7 +817,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /seenthis-hub/assets/js/hub-time-spent.js$script
 /selections/native$xmlhttprequest,domain=svd.se
 /service-worker.js$script,domain=folkbladet.nu|vk.se
-/sf_tracking.js^$script,domain=stayfriends.se
+/sf_tracking.js$script,domain=stayfriends.se
 /sh404sefsocial/*$script
 /sifo_analytics.js^$script
 /sifo_msr.js^$script
@@ -837,7 +841,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /tabs_hits_counter.php$image
 /takeover.gif$image,domain=flamman.se
 /theme/set_resources$script,domain=maipenrai.se
-/themes/aurora/cookies/*$image,script,stylesheet,domain=alltforforaldrar.se|mammasidan.se|minbebis.com
+/themes/aurora/cookies/*$domain=alltforforaldrar.se|mammasidan.se|minbebis.com
 /thumbnail_bettingstugan$image
 /trackers/SessionCam-tag$script
 /tracking_footer-active/*$domain=spela.se
@@ -894,7 +898,6 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 8till5.se,capdesign.se,hd.se,sydsvenskan.se,vimedbarn.se##.gdpr
 99.se##[id^="bbPrisjakt"]
 ://sifomedia.
-?bannerid=$image,domain=existenz.se
 @@/*_adframe.js$script,~third-party,domain=fssweden.se
 @@/ad.php^$script,~third-party,domain=99.se|skogstok.se|temperatur.nu
 @@/adframe.js$script,~third-party,domain=diskant.se|diskantforum.se
@@ -1351,6 +1354,7 @@ fokus.se##.panorama-ads-top
 fokus.se##.social-sharing
 fokus.se##[class^="right-ads"]
 fokus.se##img[onload*="banner"]
+folkbladet.nu,vk.se##[id^="vk_panorama"]
 folkbladet.nu,vk.se##a[href="https://umealunchguide.se/"]
 folkbladet.nu,vk.se##div[data-track-id="strossle"]
 food-supply.se,motormagasinet.se##.rotating-junglebogen
@@ -1484,6 +1488,7 @@ kamrat.com###kadDiv
 kenzas.se##article[data-text*="In collaboration with"]
 kimura.se###firsttopbanner
 kimura.se##.bg
+kimura.se##.submission-before-everything
 kimura.se##a[href*="/kampanjer."]
 kimura.se##a[href*="unibet.com"]
 kimura.se##a[href*="utm_campaign"]
@@ -1848,7 +1853,6 @@ yougov.se##.cookie-confirm
 ||affiliator.com^$third-party
 ||akademiskahus.se/Content/js/cookieConsent.$script
 ||akamai.net/swordfishinc.download.akamai.com$script,domain=arla.se|chef.se
-||akamai.net^$script,domain=eniro.se
 ||akamaihd.net^$media,domain=dplay.se
 ||allabolag.se^*/ad.html
 ||allatvkanaler.se/js/js*.js$script
@@ -1999,8 +2003,6 @@ yougov.se##.cookie-confirm
 ||edgeflyfishing.com^$image,domain=jaktsidan.se
 ||edynpub.com^$third-party
 ||engage-auth.schibsted.media^$script
-||eniro.com^*/banners.js
-||eniro.se/img/sik.gif$image
 ||episerver.net/*/epi-util/find.js$script
 ||es.loppi.se/api/imp$xmlhttprequest
 ||es.loppi.se/get$script
@@ -2021,6 +2023,7 @@ yougov.se##.cookie-confirm
 ||fapp.pw^$third-party
 ||fast.fonts.com/t/1.css$stylesheet,xmlhttprequest
 ||fast.fonts.net/t/1.css$stylesheet,xmlhttprequest
+||fastout.com/analytics/
 ||fathom.wheresmar.co/tracker.js$script
 ||feeds.feedburner.com^$image
 ||files.cdn.spilcloud.com/pb/$script
@@ -2186,7 +2189,6 @@ yougov.se##.cookie-confirm
 ||petrk.com^$image,third-party,domain=dagensps.se
 ||pheegoab.click^
 ||pingback.issuu.com/ping$xmlhttprequest
-||pixel-profile-cloud.eniro.com/type/pixel^$image
 ||pixel.playbuzz.com^$xmlhttprequest
 ||pji.nu^$third-party,domain=99.se|feber.se|fz.se|idg.se|kamerabild.se|minhembio.com|mobil.se|nordichardware.se|surfa.se|sweclockers.com|viivilla.se
 ||platform.linkedin.com^$third-party
@@ -2283,8 +2285,6 @@ yougov.se##.cookie-confirm
 ||susnet.nu/susnetstat.js$script
 ||susnet.se/susnetstat.js$script
 ||svd.se^*/native-article$~third-party,xmlhttprequest
-||svenskanamn.alltforforaldrar.se/js/svenskanamn_ads.$script
-||svenskanamn.alltforforaldrar.se/js/svenskanamn_param_init.$script
 ||swedroid.se/pjembed.$subdocument
 ||swefilmer.*/masha.$script
 ||swefilmer.*/player/play.$subdocument
