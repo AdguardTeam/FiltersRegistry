@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-02-08 15:58:38 CET
+! Last modified: 2019-02-09 17:14:17 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -149,7 +149,7 @@ fragbite.se##.spreadItemCollection:has(.category:has-text(/sponsrat/i))
 fragbite.se##.spreadItemCollection:has(.sponsor)
 freeride.se,happyride.se##.boxtext:has-text(casino)
 friatider.se##.plainbox:has(span:has-text(/annons/i))
-fz.se##.content-widget:has(div.fpnih-meta:has-text(/sponsrat/i))
+fz.se##.fpn-item:has(.sponsored-content)
 gamereactor.se#$##pagebackground { background-image: none !important }
 gamereactor.se##div[style="min-height: 600px; margin-bottom: 20px;"]:has(div[id^="ad_sky"])
 garaget.org##.small.discrete:has-text(Annons:)
@@ -435,11 +435,13 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 *$csp=worker-src 'none',domain=minfil.com
 *$object,object-subrequest,domain=autolife.se|internetlankar.se
 -banner-$image,domain=litteraturmagazinet.se
+.com/annons.$script,subdocument
 .nu/annons/
 .se/*/nativeadvertising/
 .se/AdPlugins/
 .se/advert$subdocument
 .se/adx.js
+.se/annons.$script,subdocument
 .se/annons/
 .se/banner.stat?
 .se/counter/
@@ -450,8 +452,8 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 .se/Logger?
 .se/sponsored/$image
 .se/upload/annons/
+.se/wdg/tracking
 /*Fokus_360x300px_animate*.gif$image,domain=fokus.se
-/*jquery.blockUI.$script,domain=fssweden.se
 /*log_ad$image,domain=yelp.se
 /280x240/$image,domain=rumhemma.se
 /280x360/$image,domain=kurera.se
@@ -570,6 +572,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /dfp.css$stylesheet,domain=ljudochbild.se
 /docunet_stats.js$script,domain=byggvarlden.se
 /downloads.mailchimp.com/*$domain=branschkoll.se|landleyskok.se|vavawoom.com|villalivet.se
+/downloads.mailchimp.com/js/signup-forms/popup$script
 /ds-tracker.js$domain=dagenssamhalle.se
 /emediate-responsive-wp-plugin/*
 /entag.$script,domain=eniro.se|proff.se
@@ -600,7 +603,6 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /hapyak.js$script,domain=viktvaktarna.se
 /headerbidding.js$script,domain=livetombord.se
 /helios/multiad_jquery.$script
-/hjv-google-analytics-startpage$script,domain=1177.se
 /i10c@p1/*$domain=bax-shop.se|digikey.se|justfab.se
 /iab/iab.js$script
 /idg-dfp-minified/*
@@ -741,6 +743,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /plugins/igomoon-cookie-banner-master/*$script
 /plugins/ilmenite-cookie-consent/*$domain=skolporten.se
 /plugins/jetpack/_inc/build/widgets/eu-cookie-law/*$script
+/plugins/lbg-audio8-html5-radio_ads/*$script,domain=svegot.se
 /plugins/likebtn-like-button/*$script,stylesheet
 /plugins/loppi-cookie-consent/*$script
 /plugins/mailpoet/*$script,domain=opulens.se
@@ -752,7 +755,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /plugins/modal-for-elementor/*$script,domain=miljomagasinet.se
 /plugins/monarch/*$domain=undertian.com
 /plugins/newsner-lead-tracking/*$script
-/plugins/onesignal-free-web-push-notifications/*$domain=ettgottskratt.se|humorbibeln.se|newsner.com|nyadagbladet.se|skolporten.se|sparacash.se|sportbibeln.se
+/plugins/onesignal-free-web-push-notifications/*$domain=ettgottskratt.se|humorbibeln.se|newsner.com|nyadagbladet.se|skolporten.se|sparacash.se|sportbibeln.se|svegot.se
 /plugins/optinpanda-premium/*$domain=villalivet.se
 /plugins/pause-adblocker/*$image,script,stylesheet,domain=hightechguiden.se
 /plugins/pc-google-analytics/*
@@ -844,7 +847,6 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /themes/aurora/cookies/*$domain=alltforforaldrar.se|mammasidan.se|minbebis.com
 /thumbnail_bettingstugan$image
 /trackers/SessionCam-tag$script
-/tracking_footer-active/*$domain=spela.se
 /trafikfonden/*
 /trckr/*$xmlhttprequest,domain=cleannet.se|dagenshandel.se|entreprenad.com|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|kemivarldenbiotech.se|lifesciencesweden.se|medtechmagazine.se|motormagasinet.se|packnet.se|plastnet.se|processnet.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|verkstaderna.se|woodnet.se
 /tv/annons/*$domain=expressen.se
@@ -1005,6 +1007,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 @@||vagabond.se^$generichide
 @@||videoplaza.tv/proxy/distributor$xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 @@||webbjobb.io^$generichide
+_jquery.blockUI.$script,domain=fssweden.se
 abus.com#@##cookieChoiceInfo
 adContainer$script,domain=dagensmedia.se
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,falkopingstidning.se,folkbladet.se,helagotland.se,jnytt.se,jp.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,svd.se,tranastidning.se,unt.se,uppgang.com,vastgotabladet.se,vetlandaposten.se,vimmerbytidning.se,vn.se,vt.se###smartbanner.android
@@ -1732,6 +1735,7 @@ svd.se##.Teaser--fullAdLabel
 svd.se##.Teaser-adLabel
 svd.se##.theme-Native
 svd.se##div[data-controller="newslettersubscription"]
+svegot.se##.et_bloom_popup
 svegot.se##[itemtype="https://schema.org/WPAdBlock"]
 svenskafans.com###cookie-information
 svenskafans.com##.ad_info
@@ -1861,10 +1865,8 @@ yougov.se##.cookie-confirm
 ||alltforforaldrar.se/extra/dp/dp.js
 ||alltforforaldrar.se/sites/all/themes/aurora/js/vendor/bootstrap/modal.js
 ||amazonaws.com/adn-tag/$script
-||amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup$script
 ||amazonaws.com/metapic-cdn/*/metapic.$script,stylesheet
 ||amazonaws.com/spotlife.js$script,domain=spotlife.se
-||ampproject.org^$third-party,domain=piraja.se
 ||amqp-ws-proxy.radioplay.se^$websocket
 ||ana.tunnl.com^
 ||analytics-sdk.yle.fi^$script,domain=svenska.yle.fi
@@ -2266,7 +2268,6 @@ yougov.se##.cookie-confirm
 ||spelo.se/bfb/$subdocument
 ||sprinklecontent.com^$third-party
 ||sprinkletxt.com^$third-party
-||stajlplejs.com/annons.asp$subdocument
 ||stat-api.tv4play.se^$image
 ||stat.modette.se^
 ||static.influencersofsweden.se/js/inos.$script
@@ -2338,6 +2339,7 @@ yougov.se##.cookie-confirm
 ||vcstream.to^*/license$script
 ||vcstream.to^*/script$script
 ||vdsinside.com^$third-party
+||verksamt.se/TSbd/$script
 ||viagogo.se^
 ||video-static.tunnl.com/js/blocker.min.js$script
 ||videoplaza.*/proxy/tracker?
