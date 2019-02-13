@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-02-12 20:07:00 CET
+! Last modified: 2019-02-13 08:42:14 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -32,7 +32,7 @@
 /assets/js/ads.$important,script,domain=arvikanyheter.se|dalslanningen.se|filipstadstidning.se|fryksdalsbygden.se|hjotidning.se|karlskogatidning.se|kt.se|mariestadstidningen.se|nkp.se|nwt.se|provinstidningen.se|saffletidningen.se|sla.se|vf.se
 /google-analytics-dashboard$important,script,domain=cyclingplus.se|firstfoto.se|fitnessformen.se|halsafitness.se|hemmahosulrika.se|it-kanalen.se|macguiden.net|maklarvarlden.se|ordfrontforlag.se|ordfrontmagasin.se|ulrikadavidsson.se
 /google-analytics-for-wordpress$important,script,~third-party,domain=alltsomsker.nu|battrestadsdel.se|boktugg.se|businessarena.nu|bussmagasinet.se|carinasphotolifestyle.se|clarakron.com|datatjej.se|fantasiresor.se|fjl.se|folkblick.se|foodstories.se|fores.se|forummag.fi|gamingaktier.com|gazzine.com|hammarbybandy.se|hockeystaden.se|hujada.nu|justwannahavefun.se|karolinesvintage.se|katerinamagasin.se|kvalitetsmagasinet.se|kvartal.se|magasinetneo.se|manskligsakerhet.se|miljo-utveckling.se|mmabetz.se|mmanytt.se|mobilanyheter.net|nyhetsbyran.org|ralycka.se|sjoaguden.se|sportpanelen.se|springlfa.se|starbys.se|streamasport.com|teknikministeriet.se|telekomidag.se|tidskriftenrespons.se|undertian.com|utebarn.se|vdtidningen.se|vegokak.se|vemdalen.se|veterinarmagazinet.se|villalivet.se|vskbandy.se|wesafe.se|xn--sprkkrnikan-z8a8t.se
-/google-analytics-premium$important,script,~third-party,domain=branschkoll.se|ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
+/google-analytics-premium$important,script,~third-party,domain=branschkoll.se|dagensanalys.se|ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 /js/ads.$important,script,~third-party,domain=alltomstockholm.se|mitti.se
 /ntm-digital/adn/adn-setup.$important,script
 /plugins/popup-builder-platinum/*$important,domain=mmabetz.se|sportpanelen.se
@@ -93,8 +93,6 @@ bytbil.com#$#html,body { overflow: auto !important; }
 cafe.se##.bg-white:has(.egmont-spotlights)
 cyclingplus.se##article:has(.single-subtitle:has-text(/annonssamarbete/i))
 da.se##.external:matches-css-before(content: "ANNONS:")
-dagensanalys.se##article.listitem:has(.label_sponsored)
-dagensanalys.se##article.listitem:has(a[href$="/sponsrad/"])
 datormagazin.se##.dator-widget:has(h4 > span:has-text(/erbjudanden/i))
 dayviews.com##.zone:has(a[href*="casino"])
 dayviews.com##div.zone.f30:has(img[src*="://sesn."])
@@ -711,7 +709,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /plugins/appbanners/*
 /plugins/arscode-ninja-popups/*$domain=springlfa.se
 /plugins/better-adsmanager/*$script,stylesheet
-/plugins/blog-analytics/*$domain=dagensanalys.se
+/plugins/blog-analytics/*
 /plugins/bmb-dfp-plugin/*$script,stylesheet
 /plugins/bsa-pro-scripteo/*$script,stylesheet
 /plugins/chimpy/*
@@ -734,13 +732,13 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /plugins/facebook-conversion-pixel/*
 /plugins/facebook-pagelike-widget/*$script
 /plugins/facebook-popout-likebox/*
-/plugins/gdpr-cookie-compliance/*$domain=worldkustom.com
+/plugins/gdpr-cookie-compliance/*$domain=dagensanalys.se|worldkustom.com
 /plugins/ginger/addon/analytics/*$script
 /plugins/ginger/front/js/cookies-enabler$script,stylesheet
 /plugins/homepage-pop-up/*$domain=skovdeik.se
 /plugins/host-analyticsjs-local/*$script
 /plugins/hustle/*$script,domain=yogaworld.se
-/plugins/icegram$domain=battrenyheter.se|dagensanalys.se|maklarvarlden.se
+/plugins/icegram$domain=battrenyheter.se|maklarvarlden.se
 /plugins/igomoon-cookie-banner-master/*$script
 /plugins/ilmenite-cookie-consent/*
 /plugins/jetpack/_inc/build/widgets/eu-cookie-law/*$script
@@ -756,7 +754,7 @@ forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important;
 /plugins/modal-for-elementor/*$script,domain=miljomagasinet.se
 /plugins/monarch/*$domain=undertian.com
 /plugins/newsner-lead-tracking/*$script
-/plugins/onesignal-free-web-push-notifications/*$domain=ettgottskratt.se|humorbibeln.se|newsner.com|nyadagbladet.se|skolporten.se|sparacash.se|sportbibeln.se|svegot.se
+/plugins/onesignal-free-web-push-notifications/*
 /plugins/optinpanda-premium/*$domain=villalivet.se
 /plugins/pause-adblocker/*$image,script,stylesheet,domain=hightechguiden.se
 /plugins/pc-google-analytics/*
@@ -1200,6 +1198,10 @@ cykl.se,jogg.se,skid.se,svettig.se##.panoramaAd
 cykla.se#@#.advertisment
 da.se##.privacy-info
 dagen.se##.cookie-acceptance
+dagensanalys.se##.category-sponsrat-content
+dagensanalys.se##.sidebar .zeen-widget:last-of-type:not(.widget_nav_menu)
+dagensanalys.se##.tipi-tile.active
+dagensanalys.se##[id^="moove_gdpr"]
 dagensmedia.se##.slot-articlemodule
 dagensmedia.se##.slot-module
 dagensmedia.se##[class^="cookieBanner"]
@@ -1992,7 +1994,6 @@ yougov.se##.cookie-confirm
 ||d9v72urx9pbbc.cloudfront.net/channel.js$script
 ||da.yle.fi/yle/areena$image,domain=svenska.yle.fi
 ||dackpartner-web.s3.amazonaws.com^$third-party
-||dagensanalys.se^*/ios6fix.js$script
 ||damoh.tv4play.se^$image
 ||datomik.com^$third-party
 ||delivery.adten.eu^$third-party
@@ -2033,10 +2034,9 @@ yougov.se##.cookie-confirm
 ||existenz.se/img/prq.gif
 ||existenz.se^$object,object-subrequest
 ||exitintel.com^$third-party
-||facebook.com/plugins/like$subdocument,domain=fotbolltransfers.com|resume.se|tidningenelektrikern.se
 ||facebook.com/plugins/like$third-party,domain=~facebook.com|~fb.com
-||facebook.com/tr/$image,domain=~facebook.com|~fb.com
-||facebook.com/tr?$image,domain=~facebook.com|~fb.com
+||facebook.com/tr/$third-party,domain=~facebook.com|~fb.com
+||facebook.com/tr?$third-party,domain=~facebook.com|~fb.com
 ||fakturino.se^$third-party
 ||fapp.pw^$third-party
 ||fast.fonts.com/t/1.css$stylesheet,xmlhttprequest
