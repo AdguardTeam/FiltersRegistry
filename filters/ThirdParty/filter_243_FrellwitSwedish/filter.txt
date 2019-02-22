@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-02-21 19:58:54 CET
+! Last modified: 2019-02-22 16:44:00 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -70,8 +70,6 @@ battrenyheter.se##.vc_row.vc_row-flex:has(.abnan-single)
 battrestadsdel.se###my-mega-menu-widget:has-text(/sponsrade artiklar/i)
 blankspot.se#$#div.red-section.action-banner-2.sticky { position: initial !important; }
 blogg.se,bloggkommentatorerna.se,hannaofsweden.se,itsallabouttaif.se,ladydahmer.nu,lindablom.se,modette.se,rebeckasfoto.se,svenskayoutubers.se,themoviefreak.se,webblogg.se#$#body.with-panorama { padding-top: 0 !important; }
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out *> .c-user-avatar--initials { display: inherit !important; }
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out *> .js-epaper-trigger { display: inherit !important; }
 breakit.se##.brkt-article-slidein:has(.brkt-sponsored)
 buzzter.se#$##outer-wrap { overflow: auto !important; }
 buzzter.se#$#body.trend-lock #outer-wrap { position: inherit !important; }
@@ -94,7 +92,7 @@ ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sp
 evertiq.se#$#body,#bgWrapp { background-image: none !important; cursor: initial !important; }
 existenz.se##p:has(a[href^="http://ads."])
 expressen.se##.teaser:has(.vignette:has-text(/(^erbjudande från|^annons:|^happy green|^presenteras av|i samarbete med)/i))
-expressen.se##.teaser:has(img[src*="/images/e0/79/e079f91350bc4de8a004abea747ec0b8/"])
+expressen.se##.teaser:has(a[href^="/brandstudio/"])
 expressen.se##div[style*="font-size: 10px;"]:has-text(Annons:)
 falkopingstidning.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##div.slideshow-in.active:has(.ad-wrapper)
 festivalrykten.se##.featured:has(a:has-text(/annonssamarbete/i))
@@ -275,6 +273,14 @@ ikea.com##.cookie-info__panel--show
 forum.studio.se,upphandling24.se,idg.se#$#.idgcp__modal--in .idgcp__layer { background: none !important; }
 forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer--active, .idgcp__layer--active body { overflow: auto !important; }
 forum.studio.se,upphandling24.se,idg.se#$#.idgcp__layer { z-index: 0 !important; }
+!#endif
+!#if !env_mobile
+gp.se##body.logged-out *> .c-user-menu__title
+gp.se##body.logged-out *> .c-user-menu__status
+gp.se##body.logged-out *> .c-user-menu:before
+gp.se##body.logged-out *> .c-user-menu__item:not(.js-epaper-trigger)
+gp.se#$#body.logged-out *> .js-epaper-trigger { display: inherit !important; border:none !important; }
+gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: none !important; box-shadow: none !important; background: none !important; top: 157px !important; }
 !#endif
 !#if !env_firefox
 !#endif
@@ -1257,6 +1263,7 @@ expressen.se##.gdpr-banner
 expressen.se##.pressrelease-teaser
 expressen.se##.qualifio_iframe_wrapper
 expressen.se##.site-header__widgets > .html-widget > a[target="_blank"]
+expressen.se##.teaser > a[href*="happygreen.se"]
 expressen.se##.teaser--native
 expressen.se##.teaser--sponsored
 expressen.se##.terms-dialog
