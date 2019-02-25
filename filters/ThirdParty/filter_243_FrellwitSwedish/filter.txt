@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-02-25 09:36:13 CET
+! Last modified: 2019-02-25 16:09:55 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -62,7 +62,6 @@ atl.nu,land.se,landlantbruk.se,landskogsbruk.se#$#.premium.Lrfsso-lock .ArticleL
 autonytt.se##.article_widget_preview:has(h2 > a:has-text(/artikel i samarbete/i))
 autonytt.se##a:has(.label:has-text(/sponsrad/i))
 avanza.se##.section:has(a:has-text(/^annons/i))
-bandybyn.se##.StartPageBoxNarrow:has(h2:has-text(/^partners/i))
 battrenyheter.se##.home-cat-first:has(a[href$="/sponsrad/"])
 battrenyheter.se##.post-item:has(a[href$="/samarbete/"])
 battrenyheter.se##.post-item:has(a[href$="/sponsrad/"])
@@ -210,6 +209,7 @@ upphandling24.se##.widget:has(.widget-title:has-text(/^annons/i))
 vagabond.se##.most-read-article:has(span:has-text(/partner/i))
 valerieaflalo.com##[id^="post-"]:has(p[style="text-align: center"]:has-text(/i samarbete med/i))
 vi.se##.wpb_row:has(span:has-text(/^annons/i))
+viafree.se#$#.avodp.pause-ad-showing .vjs-progress-control, .avodp.ad-playing .vjs-progress-control { display: initial !important; }
 victoriatornegren.se##article[id^="post-"]:has(.entry-header:has-text(Paid post in collaboration))
 villalivet.se#$#.onp-sl-blur-area { filter: none !important; }
 villalivet.se##[class^="td_module_mx"]:has(a[href*="/sponsrat-innehall"])
@@ -444,6 +444,7 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 /betalannonser/*$domain=filmcafe.se
 /bilder/ads/*
 /bilder/foretag/*$image,domain=falubsbandy.com
+/bilder/partners/*$domain=badminton.nu
 /bimber-live.localhost$image,domain=mmabetz.se
 /bitcsys/js/bit.js$script
 /blogcounter.js$script,domain=javligtgott.se
@@ -798,7 +799,6 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 /wp-content/themes/keremiya1/js/script.js$script
 /wp-content/uploads/*.js?ver$script,domain=mkse.com|mobilanyheter.net|noterat.nu|nyadagbladet.se
 /wp-content/uploads/*/advanced$script,domain=datormagazin.se|rocknytt.net|skanesport.se
-/wp-json/wpstatistics/*$domain=itrace.se|rollspela.se
 /wp-json/wpstatistics/*$xmlhttprequest
 /wpbm-banners/*$image
 /www/images/*$image,domain=elektronikforumet.com
@@ -865,6 +865,7 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 @@||ettgottskratt.se^$generichide
 @@||eurosport.se^$generichide
 @@||fannystaaf.se^$generichide
+@@||feed.meltwater.com^$subdocument
 @@||fiskejournalen.se^$generichide
 @@||fokus.se^$generichide
 @@||freeride.nu/js/ads.js$script,domain=freeride.se|happyride.se
@@ -1025,7 +1026,9 @@ avanza.se##.topAd
 avanza.se#@#a[title="LeoVegas"]
 babyhjalp.se###nativendo-mainfeed
 babyhjalp.se##.sponserdarticle
-bandybyn.se###RightOuterBannerDiv
+badminton.nu,bandybyn.se###RightOuterBannerDiv
+bandybyn.se##.StartPageBoxRow > .boxcontainer:last-child > .StartPageBoxNarrow
+bandybyn.se##.StartPageBoxRow > .boxcontainer:nth-child(2) > .StartPageBoxNarrow
 bandybyn.se,falubsbandy.com###RightDiv
 bandyfeber.com##.widget_sp_image
 bandyplay.se,bettips.se,digitalfotoforalla.se,illvet.se,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,pctidningen.se##.top-banner
