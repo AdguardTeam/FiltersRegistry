@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-02-26 08:07:02 CET
+! Last modified: 2019-02-27 15:18:00 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -273,6 +273,7 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 !#endif
 ###accept-cookies-div
 ###catapult-cookie-bar
+###cookie-alert
 ###cookie-banner
 ###cookie-bar
 ###cookie-consent-banner
@@ -334,6 +335,7 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 ##.eu_coookie_toolbar
 ##.js-cookie-warning
 ##.notification--cookie
+##.ntm-ad
 ##.nyhet_wrapper_annons
 ##.o-grid__ad-column
 ##.outerCookieBar
@@ -353,6 +355,7 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 ##a[title="LeoVegas"]
 ##img[alt="Leovegas"]
 ##img[alt="Spela på Betsson"]
+##img[data-original*="destination.se"]
 ##img[src*="/track.adtraction"]
 &type=load_offers$xmlhttprequest,domain=illvet.se|pctidningen.se
 *$csp=script-src 'none',domain=aftonbladett.se|svtt.se|ssvd.se|exressen.se|eexpressen.se|sskatteverket.se|klartt.se|aatg.se|atgg.se
@@ -741,6 +744,7 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 /service-worker.js$script,domain=folkbladet.nu|vk.se
 /sf_tracking.js$script,domain=stayfriends.se
 /sh404sefsocial/*$script
+/share-buttons$script,domain=allemansbladet.se
 /sifo_analytics.$script
 /sifo_msr.$script
 /siforesponsivemeasure.js$script
@@ -935,8 +939,6 @@ affarsliv.com,affarslivgotland.se,corren.se,eposten.se,falkopingstidning.se,folk
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,uppgang.com,vimmerbytidning.se,vt.se##.banner-column
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,uppgang.com,vimmerbytidning.se,vt.se##.destination-border-color
 affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,uppgang.com,vimmerbytidning.se,vt.se##.lunchguide
-affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,uppgang.com,vimmerbytidning.se,vt.se##.ntm-ad
-affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,unt.se,uppgang.com,vimmerbytidning.se,vt.se##img[data-original*="destination.se"]
 affarsstaden.se##.esb-ad
 affarsstaden.se##.esb-front-news-roll-ad
 affarsstaden.se##.listing-partner
@@ -1989,7 +1991,6 @@ yougov.se##.cookie-confirm
 ||dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.$script
 ||dspk.kindredplc.com/renderImage.aspx^$image
 ||dynamic.fragbite.se/gfx/campaign/$image,domain=~fragleague.com
-||e-magin.se^$third-party
 ||eacdn.com/TrafficOpt/$script
 ||eacla.com^$third-party
 ||easyweb.se/stats/$image
