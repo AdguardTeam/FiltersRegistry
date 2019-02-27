@@ -4912,6 +4912,10 @@ minigames.mail.ru$$script[tag-content="rb_load_slot"][max-length="8500"]
 !
 ! go.mail.ru
 @@||go.mail.ru/static/web/js/adbtest/advertisement.js
+! my.mail.ru
+my.mail.ru#@#div[id^="yandex_ad"]
+!+ NOT_PLATFORM(windows, mac, android)
+@@||ad.mail.ru/adq/*$domain=my.mail.ru
 !
 ! ok.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19112
@@ -6969,6 +6973,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/30200
+rbkgames.com#$#.branding div.main-content { margin-top: 60px!important; }
 ! gdetraffic.com - удаление отступа сверху
 gdetraffic.com#$#.header~div.main.with-top-menu.main-padded { padding-top: 100px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29152
@@ -17392,6 +17398,8 @@ mama.deti.mail.ru##.product-preview
 ||mama.deti.mail.ru/img/body_bg*.
 ||mama.deti.mail.ru/img/product_preview.png
 !
+my.mail.ru##.trg-b-wrap
+my.mail.ru##.rb-banner
 my.mail.ru##.b-photo__banner-bottom
 my.mail.ru##div[class^="b-mimic-adv"]
 !
@@ -17568,6 +17576,8 @@ kinopoisk.ru##.content > div > div > script+div[id][class] > div[id][class]
 !
 ! The content replacement rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/29629
+||my.mail.ru/*?xemail=*&ajax_call=$replace=/.+\"direct\":\{\"ads\"\:.+\$//,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25040
 ://rustorka.*/forum/$~script,replace=/(ads_script.onload = function\(\) {)[\s\S]*var website[\s\S]*?}/\$1}/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27033
@@ -17592,8 +17602,6 @@ kinopoisk.ru##.content > div > div > script+div[id][class] > div[id][class]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26893
 ! it breaks embed players. For custom filter only
 !.torrentstream.*/get?_*=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/
-! https://forum.adguard.com/index.php?threads/29916/
-||ad.mail.ru^$domain=mail.ru,replace=/"html"/"html_"/,important
 ! hi-tech.mail.ru
 ||hi-tech.mail.ru/*/js/cmpld/web/common.js$replace=/^mimic_.+//,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8588
