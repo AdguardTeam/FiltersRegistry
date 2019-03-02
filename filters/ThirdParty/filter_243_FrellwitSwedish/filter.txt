@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-03-01 11:46:32 CET
+! Last modified: 2019-03-02 09:40:01 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -91,6 +91,7 @@ expressen.se##.teaser:has(.vignette:has-text(/(^erbjudande från|^annons|^happy 
 expressen.se##.teaser:has(a[href^="/brandstudio/"])
 expressen.se##div[style*="font-size: 10px;"]:has-text(Annons:)
 falkopingstidning.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##div.slideshow-in.active:has(.ad-wrapper)
+fastighetssverige.se#$#.mainVideoBox { display: inherit !important; }
 festivalrykten.se##.featured:has(a:has-text(/annonssamarbete/i))
 festivalrykten.se#$#body { padding-top: 0 !important; }
 fightermag.se##article:has(a[href*="/sponsra"])
@@ -402,6 +403,7 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 /ad/getNouw.$script
 /adblk.js$script,domain=weekend.di.se
 /addImpression$xmlhttprequest,domain=lajvo.se|skoj.se
+/addtoany/*$domain=fastighetssverige.se
 /adLocker.$script,domain=mestmotor.se
 /admin-ajax.php?action=advanced-ads-tracking-track$xmlhttprequest,domain=datormagazin.se
 /adn_consent_override.$stylesheet,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|uppgang.com|uppsala.com|uppsalatidningen.se|vimmerbytidning.se|vt.se
@@ -622,7 +624,9 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 /permutive-async.js$script
 /personalized/*$xmlhttprequest,domain=dn.se
 /phaser-ads.min.js$script
+/phpbb/ads/*
 /piraja-banners/*$domain=piraja.se
+/play_videos/*$media,domain=fastighetssverige.se
 /plugins/ab_appnexus_ads/*$script
 /plugins/ad-blocking-advisor/*$image,script,stylesheet,domain=amusetidningen.se|deliquate.se|juliusguldbog.se|naturvetenskap.org|rabattpris.se|snowmobile.se
 /plugins/ad-inserter-pro/*$script,stylesheet,domain=rocknytt.net
@@ -757,6 +761,7 @@ gp.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: n
 /splashy.html$domain=hamsterpaj.net
 /sponsor/$image,domain=bandybyn.se|brynas.se|difhockey.se|ettgottskratt.se|farjestadbk.se|fotbollskanalen.se|freeride.se|frillesasbandy.se|frolundaindians.com|happyride.se|humorbibeln.se|hv71.se|ifkgoteborg.se|lhc.eu|luleahockey.se|malmoredhawks.com|moraik.se|newsner.com|orebrohockey.se|roglebk.se|skellefteaaik.se|sportbibeln.se|swehockey.se|timraik.se|vaxjolakers.se|vskbandy.se
 /Sponsor/*$xmlhttprequest,domain=grontvader.se
+/sponsored_articles/*$domain=fastighetssverige.se
 /sponsrat-frequency.js$script,domain=nsk.se|skd.se
 /sport/live-start/live-tv-se-sportexpressen-tv-direkt/*$xmlhttprequest,domain=expressen.se
 /statistics.$script,xmlhttprequest,domain=alltforforaldrar.se|byggnyheter.se|dagensfastigheter.se|dagensnaringsliv.se|energinyheter.se|fria.nu|friatidningen.se|goteborgsfria.se|industrinyheter.se|infrastrukturnyheter.se|inredningsnyheter.se|jarnvagsnyheter.se|landetsfria.se|mammasidan.se|market.se|metallerochgruvor.se|minbebis.com|papperochmassa.se|sesam.nu|solenerginyheter.se|sportochfritidsnyheter.se|stockholmsbyggnyheter.se|stockholmsfria.se|testfakta.se|transportochlogistik.se|vindkraftsnyheter.se
@@ -1015,7 +1020,7 @@ atvmag.se,snowmobile.se##.location-header_before
 atvmag.se,snowmobile.se##.more-stories
 atvmag.se,snowmobile.se,tekniksmart.se##.bs-wrap-gdpr-law
 autolife.se###Banners
-automobil.se,caroftheyear.se,mopedgaraget.se,plastikoperationsforum.se,realtid.se,riksettan.net,testfakta.se,vibilagare.se,viktvaktarna.se###sliding-popup
+automobil.se,bike.se,caroftheyear.se,klassiker.nu,mopedgaraget.se,plastikoperationsforum.se,realtid.se,riksettan.net,testfakta.se,vibilagare.se,viktvaktarna.se###sliding-popup
 autonytt.se##.feed_ad
 autonytt.se##.leaderboard
 autonytt.se##.social_and_search
@@ -1083,6 +1088,7 @@ businessclass.se###bcpop
 businessclass.se##.reveal-modal-bg
 businessclass.se,effektmagasin.se,entreprenor.se,spela.se##.advert
 bussmagasinet.se###Solaris
+bussmagasinet.se###titlebanner
 bussmagasinet.se##a.gofollow[data-track]
 buzzter.se###lock
 byemilia.nu##.category-sponsrade-inlagg
@@ -1128,6 +1134,7 @@ cykla.se#@#.advertisment
 da.se##.external
 da.se##.privacy-info
 dagen.se##.cookie-acceptance
+dagen.se##.video-annons
 dagensanalys.se##.category-sponsrat-content
 dagensanalys.se##.modal-wrap
 dagensanalys.se##.sidebar .zeen-widget:last-of-type:not(.widget_nav_menu)
@@ -1278,8 +1285,11 @@ familjeliv.se##.flm-kampanj
 familjeliv.se##a[href*="/kampanj/"]
 familjesidan.se##.cookies-wrapper
 fastighetsnytt.se##.promobox
+fastighetssverige.se##.bnr_box
 fastighetssverige.se##.partnerTextsSlider
+fastighetssverige.se##.presentationVideoBox
 fastighetssverige.se##a[href*="/banner/"]
+fastighetssverige.se##div[class^="panel"][style^="background-color: lightgoldenrodyellow;"]
 fastighetstidningen.se##div.ic-superpost-list-item-header[style="background-color:#fffed5;"]
 fastighetstidningen.se,skanetrafiken2020.se###cookie-consent-block
 feber.se,tjock.se##.art_ad
@@ -1426,6 +1436,7 @@ ilikeradio.se,pomu.se,wwf.se##.cc-banner
 infoo.se##.content_wide_ads
 infoo.se##.line.orange
 innebandy.se,lokalguiden.se##.banner-container
+intebitter.com##.wpcnt
 ipo.se##.tag-sponsrad
 isabellalowengrip.se##.popup-block
 isabellalowengrip.se,itrace.se,vitalisfoto.se###preloader
