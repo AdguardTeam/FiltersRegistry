@@ -4881,6 +4881,7 @@ dk24.ru#@##ads1
 !* mail.ru - anti-adblock ads
 ! Main page
 @@://mail.ru/$generichide
+://mail.ru^$~script,~stylesheet,~xmlhttprequest,replace=/(\.bgshechka)|(\.branding-footer)|(\.daynews__banner)|(\.daynews__spring)|(\.direct)|(\.goods)|(\.js-banner)|(\.js-pbanner_cntr)|(\.js-popup_gallery)|(\.viewbox__side)|(\.layout__promotoolbar)|(\.left_banner)|(\.p-mimic)|(\.page-bottomad)|(\.page-topad)|(\.pc-mimic)|(\.portal-menu__banner)|(\.rb-container)|(\.rb-video-widget)|(\.rbVideoBanner)|(\.grid__ccol  div\.news-item_tgb)/\.someclass/,important
 !
 ! otvet.mail.ru - anti-adblock ads
 @@||otvet.mail.ru^$generichide
@@ -4889,8 +4890,6 @@ dk24.ru#@##ads1
 ! horo.mail.ru - anti-adblock ads
 @@||horo.mail.ru^$genericblock
 !
-!mail.ru#%#Object.defineProperty(Object.prototype, 'restoreVisibility', { get: function() { return { hpConfig: {} }; }, set: function() {} });
-e.mail.ru#%#Object.defineProperty(Object.prototype, 'honeypot', { get: function() { return { rules: [], detect: false }; }, set: function() {} });
 @@||an.yandex.ru/system/context.js$domain=cloud.mail.ru
 e.mail.ru#@#.b-ad_text
 e.mail.ru#@#.b-slot_banner
@@ -4924,7 +4923,7 @@ my.mail.ru#@#div[id^="yandex_ad"]
 ! ok.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19112
 ok.ru#@#.banner350
-||ok.ru^$replace=/\,\"OK\/banners\/.+?\"//,important
+||ok.ru^$~script,~stylesheet,~xmlhttprequest,~third-party,replace=/\,\"OK\/banners\/.+?\"//,important
 ok.ru$$div[data-config="secretCmd"]
 !+ NOT_PLATFORM(windows,mac,android)
 @@||ad.mail.ru/adq/?callback=$domain=ok.ru,script,other
@@ -16709,6 +16708,7 @@ pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net##table.forums tr[id^="f-"] > 
 ! START: mail.ru
 ! Domains: mail.ru,auto.mail.ru,cloud.mail.ru,e.mail.ru,esports.mail.ru,games.mail.ru,go.mail.ru,health.mail.ru,hi-tech.mail.ru,horo.mail.ru,kino.mail.ru,lady.mail.ru,love.mail.ru,mailblog.mail.ru,minigames.mail.ru,my.mail.ru,news.mail.ru,otvet.mail.ru,pogoda.mail.ru,realty.mail.ru,touch.mail.ru,tv.mail.ru,ok.ru
 ! главная
+!+ PLATFORM(windows, mac, android)
 mail.ru##.grid__ccol > div.news-item_tgb
 mail.ru##body > div.grid_desktop .feed-generic__container > div.grid__container div[class^="Grid__grid__"] > div[style="margin-left: 20px;"] > div > div[class*="_isAdvert_"]
 !
