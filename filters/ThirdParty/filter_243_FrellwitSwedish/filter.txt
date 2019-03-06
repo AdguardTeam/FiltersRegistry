@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-03-05 09:23:06 CET
+! Last modified: 2019-03-06 12:52:43 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -72,6 +72,8 @@ blogg.se,bloggkommentatorerna.se,hannaofsweden.se,itsallabouttaif.se,ladydahmer.
 breakit.se##.brkt-article-slidein:has(.brkt-sponsored)
 buzzter.se#$##outer-wrap { overflow: auto !important; }
 buzzter.se#$#body.trend-lock #outer-wrap { position: inherit !important; }
+byggahus.se#$##col-content { margin-top: 0 !important; }
+byggahus.se#$#.attachmentPreviewActive img { -webkit-filter: none !important; filter: none !important; }
 byggipedia.se#$#* { user-select: text !important; }
 byggvarlden.se##.featured:matches-css-after(content: "Sponsrad")
 bytbil.com#$#html,body { overflow: auto !important; }
@@ -149,7 +151,7 @@ ljudochbild.se#$#.background-ad { min-height: 0 !important; }
 ljudochbild.se##.pt-cv-ifield:has(a[href*="articleadvert"])
 magasin55.se##.td_module_wrap:has(a[href$="/annons/"])
 maklarvarlden.se##article:has(.sponsored-inlist)
-medievarlden.se#$#html,body { overflow: auto !important; }
+medievarlden.se#$#.html--modalbox, .html--modalbox body { overflow: auto !important; }
 merinfo.se##.articles-article-wrapper:has(span:has-text(/sponsrad/i))
 merinfo.se##.snippet-article-wrapper:has(.sponsored)
 mestmotor.se#$##piano { opacity: 1 !important; }
@@ -1530,8 +1532,9 @@ market.se##article[about^="/annons/"]
 marsta.nu##.outsider
 matklubben.se##.notification.cookies
 medievarlden.se##.cookie-widget
+medievarlden.se##.header-friend
+medievarlden.se##.main__sidebar--secondary > div:first-child:not([class])
 medievarlden.se##.newslettermodal
-medievarlden.se##.noda-ad
 medievarlden.se##.post-teaser--friend
 megafonen.nu###banner-top
 megafonen.nu###side-wrapper
@@ -1933,6 +1936,7 @@ yougov.se##.cookie-confirm
 ||bugsnag.com^$third-party,domain=di.se|dn.se|expressen.se|fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 ||bulletproof-analytics.com^$third-party
 ||buzzador.com^$third-party
+||byggahus.se/pixels/$subdocument
 ||byggnadsarbetaren.se^*/ad-byline.png$image
 ||byggvarlden.se/empty.html$subdocument
 ||bytbil.com/bundles/js/eas.$script
