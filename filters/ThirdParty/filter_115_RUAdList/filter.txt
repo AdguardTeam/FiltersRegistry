@@ -1,8 +1,8 @@
 !
-! Checksum: qXT9vguiaN7D0AP1WA3Jjw
-! OriginalVersion: 201903091740
+! Checksum: a+TghWNf34jEhDOMq0983w
+! OriginalVersion: 201903092040
 ! Title: RU AdList + CSS Fixes
-! Last modified: 09 Mar 2019 17:40 UTC
+! Last modified: 09 Mar 2019 20:40 UTC
 ! Expires: 2 days (подписка обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -30,6 +30,8 @@
 ! - Частные правила -----------------------------------------------------------
 $popup,domain=101covet.com|176.114.0.126|176.114.0.132|37.220.36.15|apollocdn.cc|cdn.kinogo-onlaine.net|cdnapponline.com|dterod.com|fullpix.net|hd720hd.com|hdnow.biz|hentai-share.tv|hyevo.net|imgbase.ru|imgcach.ru|kolikbolik.top|live-torrents.ru|moon.hdkinoteatr.com|moonwalk.cc|ofx.xyz|pandastream.cc|pc-torrent.games|picclick.ru|picclock.ru|picforall.ru|porno-tour.net|rugailo.net|rutor.in|serpens.nl|staticdn.nl|staticnlcdn.com|torrent-world.ru|tvepisodeswatch.net|video.kinoogo.ru|yallaneliera.com|zlovemother.com|zserials.me
 .biqle.ru^$popup,domain=biqle.ru
+.nahnews.org^$popup
+.politexpert.net^$popup
 /action.php$popup,domain=rg-mechanics.org|xatab-repack.net
 /getaway/$popup,domain=mail.ru
 /redirect$popup,domain=filmitorrent.xyz|torrent-live.ru
@@ -49,7 +51,6 @@ $popup,domain=101covet.com|176.114.0.126|176.114.0.132|37.220.36.15|apollocdn.cc
 ||getitbit.net/ads/$popup
 ||goo.gl^$popup,domain=aces.gg|gamegpu.com|skachat-igri-besplatno.info|torrents-game.net|vsofte.biz
 ||kinotochka.club/offers^$popup
-||lentainform.com^$popup,domain=nahnews.org|politexpert.net|rueconomics.ru
 ||letitbit-porno.com^$popup,domain=pic2profit.com
 ||loot.bet^$popup,domain=hs-manacost.ru
 ||mama.land^$popup,domain=comments.ua
@@ -15407,6 +15408,9 @@ ensage-forum.ru##div[id^="funbox_zone"]
 ! -----------------------------------------------------------------------------
 ! *** advblock/specific_block.txt ***
 ! CSP filters
+/^https?://[^\s]+\.lentainform\.com/[^\s]{150,}/$csp=script-src
+/^https?://[^\s]+\.nahnews\.org/[^\s]{150,}/$csp=script-src
+/^https?://[^\s]+\.politexpert\.net/[^\s]{150,}/$csp=script-src
 /^https?://allboxing.ru\/(?!forum)/$csp=script-src 'self' * data:
 @@||blogs.pravda.com.ua^$csp=script-src 'self' * blob: data:
 @@||forum.pravda.com.ua^$csp=script-src 'self' * blob: data:
@@ -15450,7 +15454,6 @@ ensage-forum.ru##div[id^="funbox_zone"]
 ||kinosliva.net^$csp=script-src 'self' * blob: data:
 ||knigosite.org^$csp=script-src 'self' * data:
 ||kramola.info^$csp=script-src 'self' * 'unsafe-inline' data:
-||lentainform.com/pnews/$csp=script-src
 ||life-kino.top^$csp=script-src 'self' * blob: data:
 ||lostfilm-online.org^$csp=script-src 'self' * blob: data:
 ||megahead.org^$csp=script-src 'self' * data:
@@ -17414,7 +17417,6 @@ igdz1.ru^$script,domain=igdz.ru
 ||new-kino.net/ReklDC/
 ||new-sebastopol.com/resources/$object
 ||news.mspravka.info/adverting/
-||news.nahnews.org/
 ||news.tj/adfiles?adid=
 ||news.zancor.ru/images/elvira$image
 ||news14.wifiram.ru/awin/
@@ -21984,6 +21986,9 @@ $~third-party,xmlhttprequest,badfilter,domain=amurmedia.ru|eaomedia.ru|irkutskme
 draug.ru##p:has-text(Для скачивания подождите отчет таймера...)
 e.mail.ru#$#body > div[style="position: absolute; visibility: hidden; top: -10000px; left: -10000px;"] > div { display: block !important }
 eksmo.ru##.fancybox-container:has([src*="/smv/popup/"])
+gazeta.ru#$#body > div[id][style^="width: 10px"] > [class] { display: block !important }
+gazeta.ru#$#body > div[id][style^="width: 10px"] { display: block !important }
+gazeta.ru#$#body > img[src] { display: block !important }
 igromania.ru##.outer_inner > .wrapper_outer > div[class]:matches-css(height: 20px)
 mail.ru##body > .zeropixel ~ * .i-clearfix.feed-generic__container
 mail.ru##body > .zeropixel ~ div .well.notify
