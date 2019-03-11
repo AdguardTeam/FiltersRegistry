@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-03-10 06:59:24 CET
+! Last modified: 2019-03-11 19:20:34 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -37,6 +37,7 @@
 /ntm-digital/adn/adn-setup.$important,script
 /streamsense.$important,script,domain=dn.se
 /sweden/swedish/hjo-tidning.html$document
+/viewability.$important,script,domain=gamereactor.se
 /wp-content/plugins/ad-inserter/includes/*$important,domain=byggipedia.se|popmuzik.se
 99.se##.nitem:has(a[href="/arkiv/kategori/annons"])
 accentmagasin.se##.widget-container:has(.widget-title:has-text(/annons/i))
@@ -83,7 +84,7 @@ digitaliserat.nu##.news-story:has(a:has-text(/^detta är en annons/i))
 dn.se#$#.article__lead:before { background-image: none !important; }
 dn.se#$#body { overflow-y: auto !important; position: initial !important; }
 dreamfilm.*#$##content-embed { display: inherit !important; }
-dreamfilm.*,swesub.*,nordflix.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
+dreamfilm.*,nordflix.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
 egoinas.se##article.uk-article:has(.sw-sf-sponsor)
 ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sponsored-bar)
 expressen.se##.teaser:has(.vignette:has-text(/(^erbjudande från|^annons|^happy green|^presenteras av|i samarbete med)/i))
@@ -191,8 +192,6 @@ studocu.com#$##page-container { user-select: text !important; }
 studocu.com#$#.new-viewer-wrapper .p2hv { pointer-events: auto !important; }
 sverigesradio.se#$#.async-hide { opacity: 1 !important; }
 sweclockers.com##.pubItem:has(.sponsoredArticle)
-swesub.*#$##tab1 { display: initial !important; }
-swesub.*##.movieplay:has(iframe[src="/player/video.php"])
 tasteline.com#$#.popup { overflow: auto !important; }
 tasteline.com##li.article:has(.category:has-text(/samarbete/i))
 teknifik.se##.post:has(.sponsor)
@@ -218,6 +217,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ||*.*prize*.life/$document
 ||2mdn.net/instream/html5/ima3.js$important,script,domain=aftonbladet.se
 ||ad.doubleclick.net/ddm/*$image,important,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
+||aftonbladet.se/kampanj/casinoguide$document
 ||biowebb-data.s3.amazonaws.com^*/ad_loader$important,script
 ||cdn.segment.com/analytics.js$important,script,domain=studocu.com
 ||fwmrm.net^$image,important,domain=viafree.se
@@ -583,11 +583,12 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /links/*casino*.$image,domain=emocore.se
 /listByType?*adSettings$xmlhttprequest,domain=kokaihop.se
 /live/radarmagazine.se.js$script
+/loada.$script,domain=alltforforaldrar.se
 /loader.php$subdocument,domain=kingsizemag.se
 /LoadIframePlugin.$domain=falkopingstidning.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vn.se
 /LoadSlotLocator.$script
 /logger/logger?
-/losad.$domain=familjeliv.se
+/losad.$domain=alltforforaldrar.se|familjeliv.se
 /lunchguiden*.$image,domain=folkbladet.nu|vk.se
 /magnific-popup/*$domain=shortcut.se
 /metrics/*$domain=cartoonnetwork.se
@@ -836,7 +837,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@/adserver.$script,~third-party,domain=fotosidan.se|utsidan.se
 @@/advertisement*.js$script,domain=dn.se
 @@/advertisement.js$script,~third-party,domain=blocket.se|emocore.se|kaninsajten.se|kit.se|saljplatsen.se|spela.se
-@@/aff/images/search_button$image,domain=alltforforaldrar.se
+@@/aff/images/*$image,domain=alltforforaldrar.se
 @@/assets/adsbygoogle.js$script,~third-party,domain=lonch.se
 @@/consent.json$domain=forum.studio.se|idg.se|upphandling24.se
 @@/js/ad.js$~third-party,domain=sweclockers.com
@@ -1212,7 +1213,7 @@ dreamfilm.*##.content-kuss
 dreamfilm.*##.embed-container
 dreamfilm.*##.splash-image
 dreamfilm.*##a[href$="/go.html"]
-dreamfilm.*,swesub.*,nordflix.*###ads_player_inside
+dreamfilm.*,nordflix.*###ads_player_inside
 driva-eget.se##.section-n
 egoinas.se###tm-top-a
 ehandel.se###bannerContainer
@@ -1276,6 +1277,7 @@ expressen.se##a[href*="/annons"]
 expressen.se##a[href*="lanapengar.expressen.se"]
 expressen.se##a[href*="rabattkoder.expressen.se"]
 expressen.se##a[href*="spel.expressen.se"]
+expressen.se##a[href^="/premium/erbjudanden/"]
 expressen.se##figure[data-article-data*="/tv/nyheter/live-start/live-tv-senaste-nyheterna-i-expressen-tv/"]
 expressen.se##figure[data-article-data*="/tv/sport/live-start/live-tv-se-sportexpressen-tv-direkt/"]
 falkopingstidning.se,filmtipset.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##.social-share
@@ -1334,6 +1336,7 @@ fotbolldirekt.se,hockeysverige.se##a[href="https://www.svenskafans.com/betting/"
 fotbolldirekt.se,hockeysverige.se##img[alt*="Betting"]
 fotbollskanalen.se,tv4play.se###skin-cover
 fotbolltransfers.com##div[class^="ad"]
+fotosidan.se##.banner-panorama-wmn
 fotosidan.se##a[href^="https://ads."]
 foxtv.se###cookieBar
 fragbite.se##.cookieBar
@@ -1613,10 +1616,10 @@ nyadagbladet.se###adpadding
 nyadagbladet.se##.third-col
 nyafilmer.*##a[data-hover="LADDA NED"]
 nyafilmer.*##a[href$=".html"][target="_blank"]
+nyafilmer.*##a[style*="height"][rel*="nofollow"]
 nyafilmer.*##div[style^="margin-top:180px"]
 nyafilmer.*##div[style^="margin-top:210px"]
 nyafilmer.*##li > a[target="_blank"]
-nyafilmer.*,swesub.*##a[style*="height"][rel*="nofollow"]
 nyhetersto.se##a[href*="/reklam/"]
 nyteknik.se###tws1
 nyteknik.se##.blurb-sponsored
@@ -1754,12 +1757,6 @@ swedroid.se,tidningensyre.se##.social
 swefilmer.*##a[href*="/player/"][target="_blank"]
 swefilmer.*##a[href*="/player/play.php"]
 swefilmer.*##iframe[src="/player/play.php"]
-swesub.*###overlay-ad
-swesub.*###tab-ad
-swesub.*##a.btn[target="_blank"]
-swesub.*##a[href*="/offer?prod"]
-swesub.*##a[href^="/player/"]
-swesub.*,dreamfilm.*##.alert-bottom
 sysidan.se##.adscolumn
 tandlakartidningen.se###panoramaad
 tasteline.com##.popup-overlay
@@ -2314,11 +2311,7 @@ yougov.se##.cookie-confirm
 ||swefilmer.*/player/se/titta4k.$image
 ||swefilmer.*/player/se/tittanuhd.$image
 ||swehockey.se/Ad/$image
-||swesub.*/player/$image,subdocument
-||swesub.*/sw.js$script
-||swesub.*/wp-content/uploads/ad_$image
-||swesub.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' *.tmdb.org ajax.cloudflare.com *.googleapis.com cdnjs.cloudflare.com fonts.gstatic.com openload.co nxload.com streamango.com data: *.imgur.com
-||swesub.*^$csp=worker-src 'none'
+||swesub.n*^$csp=script-src 'none'
 ||t.raptorsmartadvisor.com^$image
 ||telemetric.dk^$third-party
 ||telemetry.bambuser.io^$websocket
