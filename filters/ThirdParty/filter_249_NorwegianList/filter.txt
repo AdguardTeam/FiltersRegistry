@@ -1,20 +1,14 @@
 !
-! OriginalVersion: 10March2019v1
-! OriginalVersion: 100320191 (for Adblock Plus' issue report system)
+! OriginalVersion: 12March2019v1
+! OriginalVersion: 120320191 (for Adblock Plus' issue report system)
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites
 ! Expires: 12 hours
-! This list includes uBO-specific versions of filters, and are meant to be accessed by uBlock Origin, Nano Adblocker and AdGuard whenever they load the main Nordic list.
-! OriginalVersion: 13February2019v2-Extension
-! Entries that make use of features that are mostly exclusive to uBO and Nano
-||gamereactor.*/lay/ad-video-stats.js^$script,important
-||gamereactor.*/lay/js/manageBanners.js^$script,important
-||gamereactor.*/lay/js/adblock_desktop.js^$script,important
-||gamereactor.*/lay/js/banners_co
-||akamai.net^$script,domain=eniro.se|eniro.no|eniro.dk
-/entag.js$script,domain=eniro.se|proff.se|proff.no|proff.dknfig.js^$script,important
-dagbladet.no##div[class^="css"]:matches-css-before(content: "Annonse")
-! CSS-based entries
+! This list includes uBO-specific versions of filters, and are meant to be accessed by Nano Adblocker, uBlock Origin, and AdGuard whenever they load the main Nordic list.
+! OriginalVersion: 12March2019v1-Extension
+! JavaScript features baked into Nano Adblocker and uBlock Origin
+! Style-changing entries
+! I could've theorethically made a Stylish userscript based on this section, but why would I ever want to do that when Nano and uBO support such entries natively?
 telenor.no#$##megafooter { padding-top: 0px }
 eavisa.com#$#div.kun-desktop { height:255px; overflow: hidden; pointer-events: none !important; cursor: default !important }
 frettabladid.is#$#.ad-topspacer { height: 45px !important }
@@ -32,6 +26,8 @@ dagen.no#$#.paywall-body-description { -webkit-text-fill-color: black !important
 dn.no#$##googlead-toppbanner { min-height: 0 !important }
 vgtv.no#$#.page-container { margin-top: 0px !important }
 viafree.no#$#.cookie-bar + nav > #navBar { top: auto !important }
+! Other advanced syntaxes
+dagbladet.no##div[class^="css"]:matches-css-before(content: "Annonse")
 ! Wildcard versions of various entries. Because why only block on one national version of a site, when you can nowadays block on all versions of a site without cluttering things up?
 gamereactor.*###ad_video
 gamereactor.*###ad_w300h450
@@ -63,7 +59,7 @@ qxl.*###crosslistingLauritzAdsenseBanner
 qxl.*###GoogleAdsensePanorama
 expedia.*##.extended-below-wizard-ads
 dk,no##div.spklw-post-attr:has(div[class*="spklw-sponsored"])
-! Entries that make use of non-ABP $-values
+! Entries that make use of non-ABP $-values, incl. $important and $redirect
 ||acdn.adnxs.com/ast/ast.js$script,important,domain=vg.no
 ||fwmrm.net/p/MTG_Live/LinkTag2.js$script,important,domain=viasatsport.se|viasatsport.fi|tv3sport.dk|viasport.no|viafree.se|viafree.no|viafree.dk|viafree.fi
 ||fwmrm.net^$image,important,domain=viasatsport.se|viasatsport.fi|tv3sport.dk|viasport.no|viafree.se|viafree.no|viafree.dk|viafree.fi
@@ -71,6 +67,10 @@ dk,no##div.spklw-post-attr:has(div[class*="spklw-sponsored"])
 @@||tv2.no/*/config/analytics.json$xmlhttprequest,~third-party
 ||ssl.p.jwpcdn.com^*/jwpsrv.js$important,script,domain=vg.no
 ||ssl.p.jwpcdn.com^*/vast.js$important,script,domain=vg.no
+||gamereactor.*/lay/ad-video-stats.js^$script,important
+||gamereactor.*/lay/js/manageBanners.js^$script,important
+||gamereactor.*/lay/js/adblock_desktop.js^$script,important
+/entag.js$script,domain=eniro.se|proff.se|proff.no|proff.dknfig.js^$script,important
 ! Lisens / Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
 ! 🇳🇴: Denne listen dekker nettsteder for Norge, Danmark, Island, Færøyene, Grønland, og samebefolkningen. For mere informasjon, detaljer, hjelpemidler, og andre lister jeg har laget, gå til https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#norsk
 ! 🇩🇰: Denne liste dækker websider for Danmark, Norge, Island, Færøerne, Grønland, og den samiske befolkning. For mere information, detaljer, nyttige værktøjer og andre lister, jeg har lavet, besøg https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md
@@ -600,6 +600,7 @@ utrop.no##.bottom-widead
 ||g2.start.no/img/dominans/
 ||gaysir.no/rek/rekimg/
 ||gulesider.no/bannersys-pics/
+||akamai.net^$script,domain=eniro.se|eniro.no|eniro.dk
 ||helios.*.no
 ||humor911.no/annonseweb/
 ||images.media.xxlsports.com/images/h90/h9d/9339713159198/bg.jpg$image
