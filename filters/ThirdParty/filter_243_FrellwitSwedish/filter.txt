@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-03-14 08:09:23 CET
+! Last modified: 2019-03-14 12:35:12 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -34,6 +34,7 @@
 /google-analytics-for-wordpress$important,script,~third-party,domain=alltsomsker.nu|battrestadsdel.se|boktugg.se|bugburger.se|businessarena.nu|bussmagasinet.se|carinasphotolifestyle.se|clarakron.com|crisp.se|datatjej.se|fantasiresor.se|fjl.se|folkblick.se|foodstories.se|fores.se|forummag.fi|gamingaktier.com|gazzine.com|gronarader.se|hammarbybandy.se|hockeystaden.se|hujada.nu|justwannahavefun.se|karolinesvintage.se|katerinamagasin.se|kvalitetsmagasinet.se|kvartal.se|ladok.se|magasinetneo.se|manskligsakerhet.se|miljo-utveckling.se|mmabetz.se|mmanytt.se|mobilanyheter.net|nyhetsbyran.org|ordkollen.se|publichd.se|pustervik.nu|ralycka.se|restaurangbar.se|schack.se|sjoaguden.se|sportpanelen.se|springlfa.se|starbys.se|streamasport.com|teknikministeriet.se|telekomidag.se|tidskriftenrespons.se|trafiksakerhet.se|undertian.com|utebarn.se|vdtidningen.se|vegokak.se|vemdalen.se|veterinarmagazinet.se|villalivet.se|vskbandy.se|wesafe.se|xn--sprkkrnikan-z8a8t.se|zeinaskitchen.se
 /google-analytics-premium$important,script,~third-party,domain=branschkoll.se|dagensanalys.se|ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 /js/ads.$important,script,~third-party,domain=alltomstockholm.se|mitti.se
+/linktag2.js$important,script,domain=viafree.se
 /ntm-digital/adn/adn-setup.$important,script
 /streamsense.$important,script,domain=dn.se
 /sweden/swedish/hjo-tidning.html$document
@@ -207,6 +208,7 @@ vagabond.se##.most-read-article:has(span:has-text(/partner/i))
 valerieaflalo.com##[id^="post-"]:has(p[style="text-align: center"]:has-text(/i samarbete med/i))
 vi.se##.wpb_row:has(span:has-text(/^annons/i))
 viafree.se#$#.avodp.pause-ad-showing .vjs-progress-control, .avodp.ad-playing .vjs-progress-control { display: initial !important; }
+viafree.se#$#.vjs-age-gating > .vjs-poster:before { content: "Klicka på spelaren för att spela innehållet." !important; color: red !important; font-size: 2em !important; }
 victoriatornegren.se##article[id^="post-"]:has(.entry-header:has-text(Paid post in collaboration))
 villalivet.se#$#.onp-sl-blur-area { filter: none !important; }
 villalivet.se##[class^="td_module_mx"]:has(a[href*="/sponsrat-innehall"])
@@ -221,7 +223,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ||biowebb-data.s3.amazonaws.com^*/ad_loader$important,script
 ||cdn.segment.com/analytics.js$important,script,domain=studocu.com
 ||fwmrm.net^$image,important,domain=viafree.se
-||fwmrm.net^*/linktag2.js$important,script,domain=viafree.se
 ||gamereactor.se/lay/ad-video-stats.$important,script
 ||gamereactor.se/lay/js/adblock_desktop.$important,script
 ||gamereactor.se/lay/js/background.$important,script
@@ -881,9 +882,9 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@||freeride.nu/js/ads.js$script,domain=freeride.se|happyride.se
 @@||funfunfun.se/advertisement.$script,~third-party
 @@||funnygames.se^$generichide
-@@||fwmrm.net/*MTG*HTML5$script,domain=viafree.se
 @@||fwmrm.net/ad/$script,domain=dplay.se|mtv.se
 @@||fwmrm.net/ad/$xmlhttprequest,domain=viafree.se
+@@||fwmrm.net/crossdomain.xml$xmlhttprequest,domain=viafree.se
 @@||games.softgames.com/assets/advertisement.js$script
 @@||games.softgames.com/assets/showads.js$script
 @@||golfbladet.se/_files/Banners/forum.gif$image
@@ -911,7 +912,6 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@||mestmotor.se^$generichide
 @@||moamattsson.se^$generichide
 @@||morgonbladet.nu^$generichide
-@@||mtgx.tv/*/adinfo?$xmlhttprequest,domain=viafree.se
 @@||newsner.com^$generichide
 @@||ng.se^$generichide
 @@||nlt.se^$generichide
@@ -2166,7 +2166,6 @@ yougov.se##.cookie-confirm
 ||momondo.se/ugtm/$subdocument
 ||monkey.tunnl.com/identify$subdocument
 ||mraffiliate.com^$third-party
-||mtg-api.com^*/comScore$script,domain=viafree.se
 ||mtpc.se^$third-party
 ||mtst.io/js/mtst.js$script
 ||muscles.se^*/fb-icon.$image
