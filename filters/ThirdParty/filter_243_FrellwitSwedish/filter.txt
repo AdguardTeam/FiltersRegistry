@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-03-21 07:44:36 CET
+! Last modified: 2019-03-21 20:21:23 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -180,6 +180,7 @@ piraja.se###hero:has(.spons)
 piraja.se##.intro:has(.spons)
 privataaffarer.se##.data-grid-teaser:has(.teaser-label:has-text(/^annons/i))
 ratsit.se#$#body { overflow: auto !important; }
+resume.se##a.teaser-image-overlay:has(.teaser-sponsored-title)
 rocknytt.net#$#.elementor-post__thumbnail { padding-bottom: 0 !important; }
 shortcut.se##.blockquote:has(strong:has-text(/^annons/i))
 shortcut.se##.employer:has(.sponsored)
@@ -464,7 +465,6 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /campaign*/*$script,xmlhttprequest,domain=alltforforaldrar.se|kokaihop.se|mammasidan.se|minbebis.com|njus.me|nyheter24.se
 /campaign-fallback.$script,domain=aftonbladet.se
 /campaigns.js$script,domain=blocket.se
-/caos-analytics/analytics.$script
 /caption_banner.gif$domain=nvp.se
 /casino/$image,domain=dayviews.com|hockeysverige.se|hypeline.se|newsvoice.se|spray.se|svenskhistoria.se
 /cdn-cgi/pe/bag2?*.hotjar.com$xmlhttprequest
@@ -1471,6 +1471,7 @@ jusek.se##.l-advertisement
 jusek.se##.m-adform
 kamerabild.se###storan
 kamerabild.se##.partner
+kamerabild.se##.Partner
 kamerabild.se,mobil.se###gdpr
 kamrat.com###kadDiv
 kenzas.se##article[data-text*="In collaboration with"]
@@ -2088,7 +2089,6 @@ yougov.se##.cookie-confirm
 ||gamesglue.com/js/gameanalytics/GameAnalytics.$script
 ||getsentry.com^$third-party,domain=viafree.se
 ||getsitecontrol.com^$third-party
-||gettyimages.se/gallery-app/assets/shared/tracking-*.js$script
 ||glimr.io^$third-party
 ||gnuheter.com/creeper/image$image
 ||golfbladet.se/_golfplaisir/$subdocument
@@ -2110,6 +2110,8 @@ yougov.se##.cookie-confirm
 ||hittahem.se^$third-party
 ||hmads.se^$third-party
 ||hockeymagasinet.com/footer/ad$xmlhttprequest
+||hockeysnack.com/service-worker.$script
+||hockeysnack.com^$csp=worker-src 'none'
 ||hoomemakleri.se^$third-party
 ||hotwords.es^$third-party
 ||hpevoices.com^$third-party
