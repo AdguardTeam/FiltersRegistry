@@ -4990,6 +4990,8 @@ dk24.ru#@##ads1
 @@||horo.mail.ru^$genericblock
 !
 @@||an.yandex.ru/system/context.js$domain=cloud.mail.ru
+!
+://e.mail.ru/$~script,~stylesheet,~xmlhttprequest,replace=/baits:\s".+?.split/baits: "#not_today".split/,important
 e.mail.ru#@#.b-ad_text
 e.mail.ru#@#.b-slot_banner
 !e.mail.ru#$#.b-layout__col > div > div > div#leftcol-banners div.trg-b-list__item * { opacity: 0.01!important; pointer-events: none!important; height: 2px!important; }
@@ -4997,13 +4999,17 @@ e.mail.ru#@#.b-slot_banner
 e.mail.ru#$#.b-datalist__head__item > div.b-rb { opacity: 0.01!important; pointer-events: none!important; height: 2px!important;}
 !+ PLATFORM(windows, mac, android)
 e.mail.ru#$#.trg-b-banner div :not(.mailru-visibility-check-counter) { opacity: 0.01!important; pointer-events: none!important; height: 2px!important; }
-! ://e.mail.ru^$replace=/\,\s(honeypo.+\s*(=|:)\s*\").+/\, \$1not_today"/,important
 !+ NOT_PLATFORM(windows,mac,android)
 @@||ad.mail.ru/adp/$domain=e.mail.ru
 !+ PLATFORM(ext_opera, ext_ff)
 @@||e.mail.ru^$generichide,jsinject
-!+ NOT_PLATFORM(ext_opera, ext_ff)
+!+ NOT_PLATFORM(windows, mac, android)
 @@||e.mail.ru^$generichide
+!
+! octavius.mail.ru
+||octavius.mail.ru/sota?buildVersion=$replace=/("baits":").*?("\,\s*"css")/\$1#not_today\$2/
+!+ NOT_PLATFORM(windows,mac,android)
+@@||octavius.mail.ru^$generichide
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17347
 @@||ad.mail.ru/adp/?q*_SITEID$domain=mail.ru|sportmail.ru
@@ -6074,6 +6080,8 @@ health.mail.ru##div[class="cols cols_margin cols_percent"] > div.cols__wrapper >
 kino.mail.ru##.cols__wrapper > div.cols__column_sidebar > div.cols__inner > div.js-springs__item:has(> div[class^="box box_block rb_"])
 kino.mail.ru##.sticky-springs > div.js-springs__group > div.js-springs__item:has(> div[class^="box box_block rb_"])
 !
+!+ NOT_PLATFORM(windows,mac,android)
+octavius.mail.ru#$?#.mimic-block { remove: true; }
 ! в играх
 my.mail.ru##.app-wrapper > div[style*="width:"]:has(> div.mm_right_block_media-promo)
 !
@@ -16912,6 +16920,8 @@ e.mail.ru###message-sent__rb-center-container
 e.mail.ru###leftcol-banners
 !#endif
 !
+octavius.mail.ru##.mimic-block
+!
 ! esports.mail.ru
 !
 health.mail.ru##.branding-p
@@ -17214,9 +17224,6 @@ pornoflv.tv^$replace=/"advertising":\{.*?\}/,important,~script,~stylesheet,~xmlh
 ||franecki.net/assets/vendor/*.xml^$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ! https://forum.adguard.com/index.php?threads/22933/
 ||videoframe.online/?$replace=/\{timer:\d\d\, hardTimer\:\d\d\,/\{timer:0\, hardTimer\:0\,/i,important
-! e.mail.ru - ads
-://e.mail.ru/$~script,~stylesheet,~xmlhttprequest,replace=/baits:\s".+?.split/baits: "#not_today".split/,important
-!://e.mail.ru/api/v1$replace=/.+\"direct\":\{\"ads\"\:.+//,important
 ! unionpeer.com - удаление отступа сверху
 ||unionpeer.com/cache/template.css^$replace=/;padding: 200px 0px 0px !important;/;padding: 0px 0px 0px !important;/
 ! https://forum.adguard.com/index.php?threads/20004/
