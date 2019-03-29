@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-03-27 09:08:06 CET
+! Last modified: 2019-03-29 09:20:33 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -163,6 +163,7 @@ mmanytt.se##.img-featured-posts-image:has(a[href$="/annons/"])
 modette.se##.lazyload_bar.show:has(span:has-text(/sponsrat/i))
 moviezine.se##.others:has-text(/sponsrat/i)
 moviezine.se##[class*="inner_"]:has(.badge:has-text(/sponsrat/i))
+mygatemagazine.se##.textwidget:has-text(Annons)
 mytaste.se#$#.recipe-modal[data-state=default] .modal-container.open, .recipe-modal[data-state=panorama] .modal-container.open { padding-top: 0 !important; }
 mytaste.se#$#body.modal-active.modal-open:before, body.modal-active:before { opacity: unset !important; content: unset !important; }
 newsvoice.se##.td_module_wrap:has(a[title*="casino"])
@@ -171,6 +172,7 @@ nordichardware.se##.td_block_wrap:has(span:has-text(/sponsrat/i))
 nouw.com##.Container_blogPost:has(em:has-text(/reklamsamarbete/i))
 nouw.com##.magazine-grid-item:has(.badge:has-text(/annons/i))
 nsk.se,skd.se##div.skd-crsl-wrap:matches-css-before(content: Annons)
+nyheter24.se##[class^="code_plugin"]:has(img[src*="/casino/"])
 nyheter24.se##[id^="article"]:has(.native_header)
 nyheter24.se##[id^="article"]:has(em:has-text(/artikeln är i samarbete med/i))
 onlinepizza.se##li:has(.tag:has-text(Annons))
@@ -178,6 +180,7 @@ piraja.se###featholder:has(.spons)
 piraja.se###hero:has(.spons)
 piraja.se##.intro:has(.spons)
 privataaffarer.se##.data-grid-teaser:has(.teaser-label:has-text(/^annons/i))
+radron.se#$#.content__body.cms-content.restricted { max-height: initial !important; overflow: initial !important; }
 ratsit.se#$#body { overflow: auto !important; }
 resume.se##a.teaser-image-overlay:has(.teaser-sponsored-title)
 rocknytt.net#$#.elementor-post__thumbnail { padding-bottom: 0 !important; }
@@ -222,7 +225,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ||aftonbladet.se/kampanj/casinoguide$document
 ||biowebb-data.s3.amazonaws.com^*/ad_loader$important,script
 ||cdn.segment.com/analytics.js$important,script,domain=studocu.com
-||fwmrm.net^$image,important,domain=viafree.se
 ||gamereactor.se/lay/ad-video-stats.$important,script
 ||gamereactor.se/lay/js/adblock_desktop.$important,script
 ||gamereactor.se/lay/js/background.$important,script
@@ -270,6 +272,9 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se#$#body.logge
 ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: none !important; box-shadow: none !important; background: none !important; top: 187px !important; }
 !#endif
 !#if !env_firefox
+!#endif
+!#if !env_mobile
+/rokophoto-lite/js/SmoothScroll.$script
 !#endif
 ###accept-cookies-div
 ###catapult-cookie-bar
@@ -472,7 +477,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /campaign-fallback.$script,domain=aftonbladet.se
 /campaigns.js$script,domain=blocket.se
 /caption_banner.gif$domain=nvp.se
-/casino/$image,domain=dayviews.com|hockeysverige.se|hypeline.se|newsvoice.se|spray.se|svenskhistoria.se
+/casino/$image,domain=dayviews.com|hockeysverige.se|hypeline.se|newsvoice.se|nyheter24.se|spray.se|svenskhistoria.se
 /cdn-cgi/pe/bag2?*.hotjar.com$xmlhttprequest
 /cdn-cgi/pe/bag2?*adform.net$xmlhttprequest
 /cdn-cgi/pe/bag2?*connect.facebook.net$xmlhttprequest
@@ -598,12 +603,12 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /listByType?*adSettings$xmlhttprequest,domain=kokaihop.se
 /listicles.js$script,domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 /live/radarmagazine.se.js$script
-/loada.$script,domain=alltforforaldrar.se
+/loada.$script,domain=alltforforaldrar.se|mammasidan.se|minbebis.com
 /loader.php$subdocument,domain=kingsizemag.se
 /LoadIframePlugin.$domain=falkopingstidning.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vn.se
 /LoadSlotLocator.$script
 /logger/logger?
-/losad.$domain=alltforforaldrar.se|familjeliv.se
+/losad.$domain=alltforforaldrar.se|familjeliv.se|mammasidan.se|minbebis.com
 /lunchguiden*.$image,domain=folkbladet.nu|vk.se
 /magnific-popup/*$domain=shortcut.se
 /metrics/*$domain=cartoonnetwork.se
@@ -1698,6 +1703,7 @@ privataaffarer.se##a[href*="/bit.ly/"]
 professionalsecrets.se##div[data-campaign="newsletter"]
 radionytt.se###toppannons
 radioplay.se###root > div[data-reactroot] > div:not([class]):not([id])
+radron.se##.c-page-restriction-infobar-content-wrapper
 rapport24.com##.kb-container
 ratsit.se##.campaign-bar
 ratsit.se##.js-cookie-modal
@@ -2108,7 +2114,7 @@ yougov.se##.cookie-confirm
 ||foxpush.com^$third-party
 ||foxpush.net^$third-party
 ||franecki.net^$third-party
-||freewheel-mtgx-tv.akamaized.net^$image,media,domain=viafree.se
+||freewheel-mtgx-tv.akamaized.net^$image,domain=viafree.se
 ||freyanews.com^*/tracker$script
 ||funnelytics.io^$third-party
 ||fusion.dagensps.se^$image,script
