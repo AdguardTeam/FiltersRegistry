@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-03-29 09:20:33 CET
+! Last modified: 2019-03-30 06:43:50 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -171,6 +171,7 @@ nordichardware.se##.td-big-grid-post:has(a[href*="/sponsrat/"])
 nordichardware.se##.td_block_wrap:has(span:has-text(/sponsrat/i))
 nouw.com##.Container_blogPost:has(em:has-text(/reklamsamarbete/i))
 nouw.com##.magazine-grid-item:has(.badge:has-text(/annons/i))
+nsk.se,skd.se#$#body { opacity: 1 !important; }
 nsk.se,skd.se##div.skd-crsl-wrap:matches-css-before(content: Annons)
 nyheter24.se##[class^="code_plugin"]:has(img[src*="/casino/"])
 nyheter24.se##[id^="article"]:has(.native_header)
@@ -251,6 +252,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 !#if env_firefox
 !#endif
 !#if env_mobile
+swedroid.se##div[id$="_ad_mobile"]
 ikea.com##.cookie-info__panel--show
 /sv/local-extensions/header-footer/scripts/adform/*$domain=ikea.com
 /sv/local-extensions/header-footer/scripts/track.$script,domain=ikea.com
@@ -493,6 +495,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /com_rstbox/*$domain=grillbloggen.nu
 /commercialAds/*$xmlhttprequest,domain=njus.me
 /consent.$script,domain=typkanske.se
+/consent.js$script,domain=nsk.se|skd.se
 /content/admbl/*$image,domain=skrattnet.se
 /cookie-consent-*.js$domain=food-supply.se|motormagasinet.se|skyddosakerhet.se
 /cookieconsent.$script,domain=friaordet.org|husbilskompisar.se|kiacarclub.se|modelltag.se|wwf.se
@@ -854,7 +857,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 ://sifomedia.
 @@/*_adframe.js$script,~third-party,domain=fssweden.se
 @@/ad.php$script,~third-party,domain=99.se|skogstok.se|temperatur.nu
-@@/ads.js$script,~third-party,domain=betting.se|koket.se|weekend.di.se
+@@/ads.js$script,~third-party,domain=betting.se|hd.se|koket.se|sydsvenskan.se|weekend.di.se
 @@/ads/ads-*.js$script,~third-party,domain=gettyimages.se
 @@/adsbygoogle.js$script,~third-party,domain=scanaktier.se
 @@/adsense.js$script,~third-party,domain=dayviews.com|fragbite.se|kwiss.me|modette.se|nyheter24.se|synonymer.cc|tyda.se
@@ -1480,7 +1483,7 @@ idg.se##.wide-msg-fb
 idg.se##[class^="newsletterFormContainer"]
 idg.se##[data-selector^=".wrapperAd"]
 idg.se##div[data-cms-ad]
-idg.se,macworld.se##.adContainer
+idg.se,macworld.se,nsk.se,skd.se##.adContainer
 ilikeradio.se,netdoktor.se,pomu.se,wwf.se##.cc-banner
 infoo.se##.content_wide_ads
 infoo.se##.line.orange
