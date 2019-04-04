@@ -2,9 +2,9 @@
 ! Homepage: https://github.com/k2jp/abp-japanese-filters/
 ! Title: ABP Japanese filters (ONLY FOR Japanese and experienced users: READ Support Policy)
 ! Expires: 6 hours
-! OriginalVersion: 201904041441
+! OriginalVersion: 201904041523
 !
-! Last modified: 2019-04-04 14:41 JST(UTC+0900)
+! Last modified: 2019-04-04 15:23 JST(UTC+0900)
 ! Change log: https://github.com/k2jp/abp-japanese-filters/wiki/FilterChangeLog
 ! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
 ! Content license: Creative Commons BY-NC-SA 4.0 http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -11771,6 +11771,14 @@ _yahooads_
 ||yahoo.*/js/no.$script
 ||yahoo.*/js/sq.$script
 ||yahoo.*/mc/md.$subdocument
+||yahoo.co.jp/_td-$domain=yahoo.co.jp
+||yahoo.co.jp/_td.$domain=yahoo.co.jp
+||yahoo.co.jp/_td^$domain=yahoo.co.jp
+||yahoo.co.jp/_td_$domain=yahoo.co.jp
+||yahoo.com/_td-$domain=yahoo.com
+||yahoo.com/_td.$domain=yahoo.com
+||yahoo.com/_td^$domain=yahoo.com
+||yahoo.com/_td_$domain=yahoo.com
 ||amp.yahoo.
 ||analytics.yahoo.$third-party
 ! Commented out duplicated filters [https://github.com/k2jp/abp-japanese-filters/issues/9 reported] by [https://github.com/SMed79 SMed79], Jun 20, 2015
@@ -11848,39 +11856,39 @@ _yahooads_
 ||yieldtraffic.com^
 ||yieldtraffic.com^$popup
 ||yigao.com^$third-party
-||yimg.*/bdv/
+||yimg.*/bdv/$domain=yahoo.co.jp|yahoo.com
 ||yimg.*/images/*/campaign/$domain=yahoo.co.jp|yahoo.com
 ||yimg.*/images/*/point$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/*/pr/
-||yimg.*/images/account/sp/*/reg/ccc/
+||yimg.*/images/*/pr/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/account/sp/*/reg/ccc/$domain=yahoo.co.jp|yahoo.com
 ! Commented out duplicated filters [https://github.com/k2jp/abp-japanese-filters/issues/9 reported] by [https://github.com/SMed79 SMed79], Jun 20, 2015
-! ||yimg.*/images/analytics/
+! ||yimg.*/images/analytics/$domain=yahoo.co.jp|yahoo.com
 ! Moved to the Paranoid subscription to avoid a false positive blocking loading comments on each news at headlines.yahoo.co.jp. I think this is a tight-coupled bug because the filter is correctly blocking beacons or loggings. YAHOO JAPAN is essentially responsible for fixing it, May 16, 2015
-! ||yimg.*/images/ds/
-||yimg.*/images/listing/
-||yimg.*/images/market/
-||yimg.*/images/news/newsSearch/
+! ||yimg.*/images/ds/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/listing/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/market/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/news/newsSearch/$domain=yahoo.co.jp|yahoo.com
 ! Commented out a filter for beacon generator to avoid ReferenceError: YAHOO is not defined @ http://i.yimg.jp/lib/news/ult_1_1-min.js:1 , Jan 17, 2014
 ! Even though this filter is commented out, the beacon server ybx.yahoo.co.jp is still blocked ;-)
-! ||yimg.*/images/rapid/
-||yimg.*/images/settlecomtd/yjbfp/
-||yimg.*/images/ycd/
+! ||yimg.*/images/rapid/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/settlecomtd/yjbfp/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/ycd/$domain=yahoo.co.jp|yahoo.com
 ||yimg.*/images/yjcard/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/js/geov*.$script
-||yimg.*/lib/*/cs_$script
-||yimg.*/lib/*/bc_$script
+||yimg.*/js/geov*.$script,domain=yahoo.co.jp|yahoo.com
+||yimg.*/lib/*/cs_$script,domain=yahoo.co.jp|yahoo.com
+||yimg.*/lib/*/bc_$script,domain=yahoo.co.jp|yahoo.com
 ||yimg.*/lib/*/sda/$script,domain=yahoo.co.jp|yahoo.com
-||yimg.*/lib/3pm/$script
-||yimg.*/lib/bc/$script
-||yimg.com/cv/
-||yimg.com/iv/
-||yimg.com/qb/
-||yimg.com/rq/
-||yimg.jp/cv/
-||yimg.jp/iv/
-||yimg.jp/qb/
-||yimg.jp/rq/
-! ||ads.yimg.
+||yimg.*/lib/3pm/$script,domain=yahoo.co.jp|yahoo.com
+||yimg.*/lib/bc/$script,domain=yahoo.co.jp|yahoo.com
+||yimg.com/cv/$domain=yahoo.com
+||yimg.com/iv/$domain=yahoo.com
+||yimg.com/qb/$domain=yahoo.com
+||yimg.com/rq/$domain=yahoo.com
+||yimg.jp/cv/$domain=yahoo.co.jp
+||yimg.jp/iv/$domain=yahoo.co.jp
+||yimg.jp/qb/$domain=yahoo.co.jp
+||yimg.jp/rq/$domain=yahoo.co.jp
+! ||ads.yimg.$domain=yahoo.co.jp|yahoo.com
 ||yiqiwin.com^$third-party
 ||yldbt.com^
 ||yldmgrimg.net^
