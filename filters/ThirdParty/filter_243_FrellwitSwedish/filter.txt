@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-04-06 07:35:18 CEST
+! Last modified: 2019-04-07 06:33:42 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -65,7 +65,6 @@ blogg.se,bloggkommentatorerna.se,hannaofsweden.se,itsallabouttaif.se,ladydahmer.
 breakit.se##.brkt-article-slidein:has(.brkt-sponsored)
 buzzter.se#$##outer-wrap { overflow: auto !important; }
 buzzter.se#$#body.trend-lock #outer-wrap { position: inherit !important; }
-byggahus.se#$##col-content { margin-top: 0 !important; }
 byggahus.se#$#.attachmentPreviewActive img { -webkit-filter: none !important; filter: none !important; }
 byggipedia.se#$#* { user-select: text !important; }
 byggvarlden.se##.featured:matches-css-after(content: "Sponsrad")
@@ -233,6 +232,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ||tracker.$important,domain=jawcloud.co
 ||videoplaza.tv/proxy/tracker/$image,important,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 ||webimages.lokus.se^$image,important,domain=affarsliv.com|affarslivgotland.se|corren.se|eposten.se|folkbladet.se|helagotland.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|unt.se|uppgang.com|vimmerbytidning.se|vt.se
+||youbora.com^$important,third-party,domain=aftonbladet.se|foxtv.se|svd.se
 ! This file is a part of Frellwits-Swedish-Filter.txt and contains filters specifically for uBO/Nano Adblocker
 ! There's no need to subscribe to this file
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
@@ -597,12 +597,11 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /listByType?*adSettings$xmlhttprequest,domain=kokaihop.se
 /listicles.js$script,domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 /live/radarmagazine.se.js$script
-/loada.$script,domain=alltforforaldrar.se|mammasidan.se|minbebis.com
 /loader.php$subdocument,domain=kingsizemag.se
 /LoadIframePlugin.$domain=falkopingstidning.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vn.se
 /LoadSlotLocator.$script
 /logger/logger?
-/losad.$domain=alltforforaldrar.se|devote.se|familjeliv.se|mammasidan.se|minbebis.com
+/losad/loada.$script
 /lunchguiden*.$image,domain=folkbladet.nu|vk.se
 /magnific-popup/*$domain=shortcut.se
 /metrics/*$domain=cartoonnetwork.se
@@ -860,6 +859,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@/aff/images/*$image,domain=alltforforaldrar.se
 @@/angwp/assets/dev/js/advertising.js$domain=upphandling24.se
 @@/assets/adsbygoogle.js$script,~third-party,domain=lonch.se
+@@/bhtheme/img/ad.png$image,domain=byggahus.se
 @@/consent.json$domain=forum.studio.se|idg.se|upphandling24.se
 @@/js/ad.js$~third-party,domain=sweclockers.com
 @@/js/ads.js$~third-party,domain=affarsliv.com|affarslivgotland.se|alltforforaldrar.se|alltsomsker.nu|amusetidningen.se|automobil.se|bike.se|caroftheyear.se|corren.se|deliquate.se|eposten.se|feber.se|folkbladet.se|foretagande.se|framtid.se|helagotland.se|husbilhusvagn.se|ilikeradio.se|karlekonline.se|klackspark.com|klassiker.nu|kritiker.se|kuriren.nu|ljudochbild.se|malagaguiden.se|mmabetz.se|mopedgaraget.se|mvt.se|naturvetenskap.org|norrbottensaffarer.se|nsd.se|nt.se|pt.se|rabattpris.se|radio.se|riksettan.net|snowmobile.se|svenskjakt.se|swedroid.se|tjock.se|tvmatchen.nu|unt.se|uppgang.com|uppsalatidningen.se|vibilagare.se|vimmerbytidning.se|vt.se
@@ -884,6 +884,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@||atl.nu^$generichide
 @@||boffo.se^$generichide
 @@||bohuslaningen.se^$generichide
+@@||byggahus.se^$generichide
 @@||clarahenry.se^$generichide
 @@||consensu.org^*/config.js$script
 @@||cykla.se/wp-admin/admin-ajax.php?action*&advert_search$xmlhttprequest
@@ -975,7 +976,7 @@ affarsliv.com,affarslivgotland.se,corren.se,eposten.se,folkbladet.se,helagotland
 affarsstaden.se##.esb-ad
 affarsstaden.se##.esb-front-news-roll-ad
 affarsstaden.se##.listing-partner
-affarsvarlden.se,arbetarskydd.se,arvikanyheter.se,dalslanningen.se,filipstadstidning.se,fryksdalsbygden.se,hjotidning.se,improveme.se,karlskogatidning.se,kt.se,kungalvsposten.se,kungsbackaposten.se,lag-avtal.se,lokaltidningensto.se,mariestadstidningen.se,molndalsposten.se,nickelodeon.se,nkp.se,nwt.se,nyteknik.se,provinstidningen.se,saffletidningen.se,sla.se,vf.se##.ad-container
+affarsvarlden.se,arbetarskydd.se,arvikanyheter.se,byggahus.se,dalslanningen.se,filipstadstidning.se,fryksdalsbygden.se,hjotidning.se,improveme.se,karlskogatidning.se,kt.se,kungalvsposten.se,kungsbackaposten.se,lag-avtal.se,lokaltidningensto.se,mariestadstidningen.se,molndalsposten.se,nickelodeon.se,nkp.se,nwt.se,nyteknik.se,provinstidningen.se,saffletidningen.se,sla.se,vf.se##.ad-container
 affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.ad-panorama
 affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.ad-teaser
 affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.ads-only
@@ -1033,6 +1034,7 @@ alltforforaldrar.se,mammasidan.se,minbebis.com##.art-small > a[target="_blank"]
 alltforforaldrar.se,mammasidan.se,minbebis.com##.productheader
 alltforforaldrar.se,mammasidan.se,minbebis.com##.spons-artc
 alltforforaldrar.se,mammasidan.se,minbebis.com##[id*="blogg_panorama"]
+alltforforaldrar.se,mammasidan.se,minbebis.com##a[href^="/native/"]
 alltforforaldrar.se,mammasidan.se,minbebis.com##li.views-row > a[target="_blank"]
 alltforforaldrar.se,mammasidan.se,minbebis.com,sverigesnatur.org,upphandling24.se##.panorama
 alltomhif.se,privatekonomi.org,tonyhatefnejad.se##.preloader
@@ -1131,6 +1133,7 @@ byemilia.nu##.category-sponsrade-inlagg
 byggahus.se###wallpaper-ad-container
 byggahus.se##.block-partner-article
 byggahus.se##.block-revive-ad
+byggahus.se##.cookie-consent
 byggahus.se##.messageAd
 byggahus.se##.messagePartner
 byggahus.se##.threadPanorama
@@ -2005,7 +2008,7 @@ yougov.se##.cookie-confirm
 ||bugsnag.com^$third-party,domain=di.se|dn.se|expressen.se|fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 ||bulletproof-analytics.com^$third-party
 ||buzzador.com^$third-party
-||byggahus.se/pixels/$subdocument
+||byggahus.se/pixels$subdocument
 ||byggnadsarbetaren.se^*/ad-byline.png$image
 ||byggvarlden.se/empty.html$subdocument
 ||bytbil.com/bundles/js/eas.$script
@@ -2054,6 +2057,7 @@ yougov.se##.cookie-confirm
 ||cxpublic.com^$third-party
 ||cykla.se/api/banners$xmlhttprequest
 ||d10lumateci472.cloudfront.net/?amuld$script
+||d11j2g8hmtmh4u.cloudfront.net/losad/$script
 ||d11j2g8hmtmh4u.cloudfront.net^$script,domain=alltforforaldrar.se|babyhjalp.se|blimamma.se|kalasdags.se|mammasidan.se|minbebis.com
 ||d16fx559zbp759.cloudfront.net/common/lazyload.js$script
 ||d16fx559zbp759.cloudfront.net/everysport/main.js$script
@@ -2472,7 +2476,6 @@ yougov.se##.cookie-confirm
 ||yelp.se/sit_rep
 ||yelp.se/yl*-$script
 ||yieldbird.com^$third-party
-||youbora.com^$third-party,domain=aftonbladet.se|foxtv.se|svd.se
 ||yougov.se/_partner/request.js$script
 ||youplay.se^$third-party,domain=dayviews.com|emocore.se|familjeliv.se|hamsterpaj.net|kamrat.com
 ||yoursecurecheckout1.com^
