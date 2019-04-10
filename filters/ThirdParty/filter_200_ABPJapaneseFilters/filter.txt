@@ -2,9 +2,9 @@
 ! Homepage: https://github.com/k2jp/abp-japanese-filters/
 ! Title: ABP Japanese filters (ONLY FOR Japanese and experienced users: READ Support Policy)
 ! Expires: 6 hours
-! OriginalVersion: 201904041523
+! OriginalVersion: 201904101418
 !
-! Last modified: 2019-04-04 15:23 JST(UTC+0900)
+! Last modified: 2019-04-10 14:18 JST(UTC+0900)
 ! Change log: https://github.com/k2jp/abp-japanese-filters/wiki/FilterChangeLog
 ! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
 ! Content license: Creative Commons BY-NC-SA 4.0 http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -53,7 +53,7 @@
 ! A filter -ads^ causes a false positive with a [http://translate.google.com/translate/static/kcpbtI_-aDs/css/desktop_ltr.css css stylesheet] at translate.google.com and translate.google.co.jp, reported by @dullneko, July 18, 2012
 @@||translate.google.*/translate/static/*-aDs/css/*.$stylesheet
 ! False positives with the existing |https:*?ip=$third-party filter at YouTube embedded pages, reported by Issue Report, Aug 17, 2015
-@@||googlevideo.com/videoplayback?ip=
+@@||googlevideo.com/videoplayback?ip=$domain=youtube.com
 ! False positives with the existing |https:*?*&ip=$third-party filter at YouTube and embedded pages, reported by baq via blog comment
 ! Simplified for gaming.youtube.com and limited the domain for better performance, Nov 13, 2015
 @@||googlevideo.com^*?*&ip=$domain=youtube.com
@@ -584,6 +584,10 @@
 -adcombo.
 -adcombo^
 -adcombo_
+-adformat-
+-adformat.
+-adformat^
+-adformat_
 -adframe-
 -adframe-$document
 -adframe.
@@ -1337,6 +1341,10 @@
 .adcombo.
 .adcombo^
 .adcombo_
+.adformat-
+.adformat.
+.adformat^
+.adformat_
 .adframe-
 .adframe-$document
 .adframe.
@@ -3369,6 +3377,10 @@
 ^adfarm9.
 ^adfarm9^
 ^adfarm9_
+^adformat-
+^adformat.
+^adformat^
+^adformat_
 ^adframe-
 ^adframe-$document
 ^adframe.
@@ -5578,6 +5590,10 @@ _adcombo-
 _adcombo.
 _adcombo^
 _adcombo_
+_adformat-
+_adformat.
+_adformat^
+_adformat_
 _adframe-
 _adframe-$document
 _adframe.
@@ -11907,11 +11923,14 @@ _yahooads_
 ||youradslab.com^
 ||yourjavascript.com^$third-party
 ||youtopry.com^
-||youtube.com/get_video?
-||youtube.com/ptracking?
-||youtube.com/set_awesome?
-||s.youtube.com^
-||s2.youtube.com^
+||youtube.com/api/stats/$domain=youtube.com
+||youtube.com/get_midroll_info^$domain=youtube.com
+||youtube.com/get_video?$domain=youtube.com
+||youtube.com/ptracking?$domain=youtube.com
+||youtube.com/set_awesome?$domain=youtube.com
+||youtube.com/youtubei/$domain=youtube.com
+||s.youtube.com^$domain=youtube.com
+||s2.youtube.com^$domain=youtube.com
 ||youwatchtab.com^
 ||youwatchtab.com^$popup
 !False Positives with dammy 1x1 placeholders for css spriting
