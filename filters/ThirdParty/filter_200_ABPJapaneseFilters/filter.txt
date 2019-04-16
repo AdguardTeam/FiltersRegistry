@@ -2,9 +2,9 @@
 ! Homepage: https://github.com/k2jp/abp-japanese-filters/
 ! Title: ABP Japanese filters (ONLY FOR Japanese and experienced users: READ Support Policy)
 ! Expires: 6 hours
-! OriginalVersion: 201903131319
+! OriginalVersion: 201904101909
 !
-! Last modified: 2019-03-13 13:19 JST(UTC+0900)
+! Last modified: 2019-04-10 19:09 JST(UTC+0900)
 ! Change log: https://github.com/k2jp/abp-japanese-filters/wiki/FilterChangeLog
 ! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
 ! Content license: Creative Commons BY-NC-SA 4.0 http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -53,7 +53,7 @@
 ! A filter -ads^ causes a false positive with a [http://translate.google.com/translate/static/kcpbtI_-aDs/css/desktop_ltr.css css stylesheet] at translate.google.com and translate.google.co.jp, reported by @dullneko, July 18, 2012
 @@||translate.google.*/translate/static/*-aDs/css/*.$stylesheet
 ! False positives with the existing |https:*?ip=$third-party filter at YouTube embedded pages, reported by Issue Report, Aug 17, 2015
-@@||googlevideo.com/videoplayback?ip=
+@@||googlevideo.com/videoplayback?ip=$domain=youtube.com
 ! False positives with the existing |https:*?*&ip=$third-party filter at YouTube and embedded pages, reported by baq via blog comment
 ! Simplified for gaming.youtube.com and limited the domain for better performance, Nov 13, 2015
 @@||googlevideo.com^*?*&ip=$domain=youtube.com
@@ -584,6 +584,10 @@
 -adcombo.
 -adcombo^
 -adcombo_
+-adformat-
+-adformat.
+-adformat^
+-adformat_
 -adframe-
 -adframe-$document
 -adframe.
@@ -1337,6 +1341,10 @@
 .adcombo.
 .adcombo^
 .adcombo_
+.adformat-
+.adformat.
+.adformat^
+.adformat_
 .adframe-
 .adframe-$document
 .adframe.
@@ -2912,6 +2920,7 @@
 /yie/ld/*
 /yieldbot.$third-party
 /yim.$object,script,subdocument
+/yql?$domain=yahoo.co.jp|yahoo.com
 /ystat.
 /ywa.$script
 /z.php?id=$document
@@ -3368,6 +3377,10 @@
 ^adfarm9.
 ^adfarm9^
 ^adfarm9_
+^adformat-
+^adformat.
+^adformat^
+^adformat_
 ^adframe-
 ^adframe-$document
 ^adframe.
@@ -4201,6 +4214,10 @@
 ^beacons.
 ^beacons^
 ^beacons_
+^beaconType-
+^beaconType.
+^beaconType^
+^beaconType_
 ^become-$third-party
 ^become.$third-party
 ^become^$third-party
@@ -5573,6 +5590,10 @@ _adcombo-
 _adcombo.
 _adcombo^
 _adcombo_
+_adformat-
+_adformat.
+_adformat^
+_adformat_
 _adframe-
 _adframe-$document
 _adframe.
@@ -7643,6 +7664,7 @@ _yahooads_
 ||blozoo.$third-party
 ||blue-cloud.net^$third-party
 ||bluecava.com^$third-party
+||blueconic.net^
 ||bluekai.com^$third-party
 ||bluelithium.com^
 ||bluetrackmedia.com^$popup
@@ -7768,6 +7790,7 @@ _yahooads_
 ||cbsinteractive.com/plugins/adp/
 ||cdn-image.com^
 ||1524001641.rsc.cdn77.org^
+||cdnads.com^
 ||cdnbd.
 ||cdnbf.net^$third-party
 ||cdneurope.com^
@@ -7809,6 +7832,8 @@ _yahooads_
 ||chercher-un-credit.com^
 ||chercher.org^
 ||chestyry.com^
+||chidsimp.com^
+||chidsimp.com^$document
 ||chie8oo.com^
 ||log.china.cn^
 ||chitika.com^$third-party
@@ -8858,6 +8883,7 @@ _yahooads_
 ||hdstreamerjs.info^
 ||hdvidcodecs.com^
 ||heapanalytics.com^$third-party
+||hearstnp.com^
 ||heatsync.com^$third-party
 ||heavy-r.com^$popup
 ||hebdotop.com^$third-party
@@ -10094,6 +10120,7 @@ _yahooads_
 ||files.nyaa.se^$image,domain=nyaa.se
 ! Commented out a YouTube HTML5 false positive filter, reported as Issue 22. 2011-08-09
 ! ||o-o.preferred.
+||oath.com^$third-party
 ||obnale.ru^
 ||obtenir-de-l-argent.com^
 ||obvdjs.info^
@@ -10388,6 +10415,7 @@ _yahooads_
 ||proligtb.com^
 ||proncar.ru^
 ||proparm.jp^
+||propellerclick.com^
 ||propellerpops.com^
 ||propermediadeals.com^
 ||prpops.com^
@@ -10416,6 +10444,7 @@ _yahooads_
 ||pureadexchange.com^$popup
 ||pus2011.com^
 ||push7.jp^$third-party
+||pushmejs.com^
 ||pussycash.com^$third-party
 ||putags.com^
 ||pwbjgo7q6y.com^
@@ -10653,6 +10682,7 @@ _yahooads_
 ||rtbsystem.com^$third-party
 ||rtbtraf.com^
 ||rtk.io^$third-party
+||rtmark.net^$third-party
 ||rtoaster.jp^
 ||ru4.com^$third-party
 ||rubiconadnet.com^
@@ -11759,12 +11789,21 @@ _yahooads_
 ||yahoo.*/b?
 ||yahoo.*/c?
 ||yahoo.*/gb.gif?
+||yahoo.*/p.gif?$domain=yahoo.co.jp|yahoo.com
 ||yahoo.*/images/rt.
 ||yahoo.*/images/rt_
 ||yahoo.*/js/geov2.$script
 ||yahoo.*/js/no.$script
 ||yahoo.*/js/sq.$script
 ||yahoo.*/mc/md.$subdocument
+||yahoo.co.jp/_td-$domain=yahoo.co.jp
+||yahoo.co.jp/_td.$domain=yahoo.co.jp
+||yahoo.co.jp/_td^$domain=yahoo.co.jp
+||yahoo.co.jp/_td_$domain=yahoo.co.jp
+||yahoo.com/_td-$domain=yahoo.com
+||yahoo.com/_td.$domain=yahoo.com
+||yahoo.com/_td^$domain=yahoo.com
+||yahoo.com/_td_$domain=yahoo.com
 ||amp.yahoo.
 ||analytics.yahoo.$third-party
 ! Commented out duplicated filters [https://github.com/k2jp/abp-japanese-filters/issues/9 reported] by [https://github.com/SMed79 SMed79], Jun 20, 2015
@@ -11804,6 +11843,7 @@ _yahooads_
 ||rdsig.yahoo.$image,object,subdocument
 ||rtb.pclick.secure.yahoo.
 ||tomlin.yahoo.
+||udc.yahoo.$domain=yahoo.co.jp|yahoo.com
 ||ybp.yahoo.
 ||ybx.yahoo.
 ||yeas.yahoo.
@@ -11841,38 +11881,39 @@ _yahooads_
 ||yieldtraffic.com^
 ||yieldtraffic.com^$popup
 ||yigao.com^$third-party
-||yimg.*/bdv/
+||yimg.*/bdv/$domain=yahoo.co.jp|yahoo.com
 ||yimg.*/images/*/campaign/$domain=yahoo.co.jp|yahoo.com
 ||yimg.*/images/*/point$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/*/pr/
-||yimg.*/images/account/sp/*/reg/ccc/
+||yimg.*/images/*/pr/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/account/sp/*/reg/ccc/$domain=yahoo.co.jp|yahoo.com
 ! Commented out duplicated filters [https://github.com/k2jp/abp-japanese-filters/issues/9 reported] by [https://github.com/SMed79 SMed79], Jun 20, 2015
-! ||yimg.*/images/analytics/
+! ||yimg.*/images/analytics/$domain=yahoo.co.jp|yahoo.com
 ! Moved to the Paranoid subscription to avoid a false positive blocking loading comments on each news at headlines.yahoo.co.jp. I think this is a tight-coupled bug because the filter is correctly blocking beacons or loggings. YAHOO JAPAN is essentially responsible for fixing it, May 16, 2015
-! ||yimg.*/images/ds/
-||yimg.*/images/listing/
-||yimg.*/images/market/
-||yimg.*/images/news/newsSearch/
+! ||yimg.*/images/ds/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/listing/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/market/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/news/newsSearch/$domain=yahoo.co.jp|yahoo.com
 ! Commented out a filter for beacon generator to avoid ReferenceError: YAHOO is not defined @ http://i.yimg.jp/lib/news/ult_1_1-min.js:1 , Jan 17, 2014
 ! Even though this filter is commented out, the beacon server ybx.yahoo.co.jp is still blocked ;-)
-! ||yimg.*/images/rapid/
-||yimg.*/images/settlecomtd/yjbfp/
-||yimg.*/images/ycd/
+! ||yimg.*/images/rapid/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/settlecomtd/yjbfp/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/images/ycd/$domain=yahoo.co.jp|yahoo.com
 ||yimg.*/images/yjcard/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/js/geov*.$script
-||yimg.*/lib/*/cs_$script
-||yimg.*/lib/*/bc_$script
-||yimg.*/lib/3pm/$script
-||yimg.*/lib/bc/$script
-||yimg.com/cv/
-||yimg.com/iv/
-||yimg.com/qb/
-||yimg.com/rq/
-||yimg.jp/cv/
-||yimg.jp/iv/
-||yimg.jp/qb/
-||yimg.jp/rq/
-! ||ads.yimg.
+||yimg.*/js/geov*.$script,domain=yahoo.co.jp|yahoo.com
+||yimg.*/lib/*/cs_$script,domain=yahoo.co.jp|yahoo.com
+||yimg.*/lib/*/bc_$script,domain=yahoo.co.jp|yahoo.com
+||yimg.*/lib/*/sda/$script,domain=yahoo.co.jp|yahoo.com
+||yimg.*/lib/3pm/$script,domain=yahoo.co.jp|yahoo.com
+||yimg.*/lib/bc/$script,domain=yahoo.co.jp|yahoo.com
+||yimg.com/cv/$domain=yahoo.com
+||yimg.com/iv/$domain=yahoo.com
+||yimg.com/qb/$domain=yahoo.com
+||yimg.com/rq/$domain=yahoo.com
+||yimg.jp/cv/$domain=yahoo.co.jp
+||yimg.jp/iv/$domain=yahoo.co.jp
+||yimg.jp/qb/$domain=yahoo.co.jp
+||yimg.jp/rq/$domain=yahoo.co.jp
+! ||ads.yimg.$domain=yahoo.co.jp|yahoo.com
 ||yiqiwin.com^$third-party
 ||yldbt.com^
 ||yldmgrimg.net^
@@ -11891,11 +11932,14 @@ _yahooads_
 ||youradslab.com^
 ||yourjavascript.com^$third-party
 ||youtopry.com^
-||youtube.com/get_video?
-||youtube.com/ptracking?
-||youtube.com/set_awesome?
-||s.youtube.com^
-||s2.youtube.com^
+||youtube.com/api/stats/$domain=youtube.com
+||youtube.com/get_midroll_info^$domain=youtube.com
+||youtube.com/get_video?$domain=youtube.com
+||youtube.com/ptracking?$domain=youtube.com
+||youtube.com/set_awesome?$domain=youtube.com
+||youtube.com/youtubei/$domain=youtube.com
+||s.youtube.com^$domain=youtube.com
+||s2.youtube.com^$domain=youtube.com
 ||youwatchtab.com^
 ||youwatchtab.com^$popup
 !False Positives with dammy 1x1 placeholders for css spriting
@@ -13568,7 +13612,6 @@ _yahooads_
 ##[class*="-AD7"]:not(:root):not(body):not(input)
 ##[class*="-AD8"]:not(:root):not(body):not(input)
 ##[class*="-AD9"]:not(:root):not(body):not(input)
-##[class*="-ADS-"]:not(:root):not(body):not(input)
 ##[class*="-ADS_"]:not(:root):not(body):not(input)
 ##[class*="-ADS0"]:not(:root):not(body):not(input)
 ##[class*="-ADS1"]:not(:root):not(body):not(input)
@@ -13591,7 +13634,6 @@ _yahooads_
 ##[class*="-ADV7"]:not(:root):not(body):not(input)
 ##[class*="-ADV8"]:not(:root):not(body):not(input)
 ##[class*="-ADV9"]:not(:root):not(body):not(input)
-##[class*="-ADs-"]:not(:root):not(body):not(input)
 ##[class*="-ADs_"]:not(:root):not(body):not(input)
 ##[class*="-ADs0"]:not(:root):not(body):not(input)
 ##[class*="-ADs1"]:not(:root):not(body):not(input)
@@ -13615,7 +13657,6 @@ _yahooads_
 ##[class*="-ad7"]:not(:root):not(body):not(input)
 ##[class*="-ad8"]:not(:root):not(body):not(input)
 ##[class*="-ad9"]:not(:root):not(body):not(input)
-##[class*="-ads-"]:not(:root):not(body):not(input)
 ##[class*="-ads_"]:not(:root):not(body):not(input)
 ##[class*="-ads0"]:not(:root):not(body):not(input)
 ##[class*="-ads1"]:not(:root):not(body):not(input)

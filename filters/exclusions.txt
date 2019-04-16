@@ -52,6 +52,8 @@ $popup,~third-party
 /adframe.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31239
 ||hdzog.com^$~third-party,xmlhttprequest
+! https://github.com/AdguardTeam/AdguardFilters/issues/31447
+ebay.com#?#li.s-item:-abp-has(.s-item__title-tag)
 ! It breaks websites due to "domain=|"
 |https://$other,script,stylesheet,third-party,xmlhttprequest,domain=|fmovies.is|fmovies.se|fmovies.taxi|fmovies.to|fmovies.today|fmovies.world
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25529
@@ -146,6 +148,10 @@ $popup,domain=0
 !### ABP Japanese Filter ###
 ^aff.$popup
 _campaign=$popup
+! https://github.com/AdguardTeam/AdguardFilters/issues/28868
+##[class*="-ADS-"]:not(:root):not(body):not(input)
+##[class*="-ADs-"]:not(:root):not(body):not(input)
+##[class*="-ads-"]:not(:root):not(body):not(input)
 ! For OneSkyApp
 ||cloudfront.net^$popup
 ||akamaihd.net^$popup
@@ -177,7 +183,13 @@ _campaign=$popup
 !
 !### xinggsf ###
 */market-$script
+! https://github.com/xinggsf/Adblock-Plus-Rule/issues/23
+||acs.$domain=~youku.com|~tudou.com
 !###############
+!
+!### NoCoin Filter List ###
+||github.io^$third-party,xmlhttprequest,domain=~facebook.com|~gametactic.org|~github.com|~github.io|~tumblr.com|~wottactic.com
+!###########################
 !
 !----- TEMPORARY -----
 ! travis failed to build filters - extended CSS issue
