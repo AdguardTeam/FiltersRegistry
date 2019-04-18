@@ -50,6 +50,8 @@ $popup,~third-party
 !### Easylist ###
 ! Excluding /adframe. as it is used often by adblock detectors
 /adframe.
+! https://github.com/AdguardTeam/AdguardFilters/issues/31239
+||hdzog.com^$~third-party,xmlhttprequest
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31447
 ebay.com#?#li.s-item:-abp-has(.s-item__title-tag)
 ! It breaks websites due to "domain=|"
@@ -146,6 +148,10 @@ $popup,domain=0
 !### ABP Japanese Filter ###
 ^aff.$popup
 _campaign=$popup
+! https://github.com/AdguardTeam/AdguardFilters/issues/28868
+##[class*="-ADS-"]:not(:root):not(body):not(input)
+##[class*="-ADs-"]:not(:root):not(body):not(input)
+##[class*="-ads-"]:not(:root):not(body):not(input)
 ! For OneSkyApp
 ||cloudfront.net^$popup
 ||akamaihd.net^$popup
@@ -177,6 +183,8 @@ _campaign=$popup
 !
 !### xinggsf ###
 */market-$script
+! https://github.com/xinggsf/Adblock-Plus-Rule/issues/23
+||acs.$domain=~youku.com|~tudou.com
 !###############
 !
 !### NoCoin Filter List ###
