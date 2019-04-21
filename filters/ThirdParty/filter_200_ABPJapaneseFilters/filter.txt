@@ -2,9 +2,9 @@
 ! Homepage: https://github.com/k2jp/abp-japanese-filters/
 ! Title: ABP Japanese filters (ONLY FOR Japanese and experienced users: READ Support Policy)
 ! Expires: 6 hours
-! OriginalVersion: 201904101909
+! OriginalVersion: 201904220556
 !
-! Last modified: 2019-04-10 19:09 JST(UTC+0900)
+! Last modified: 2019-04-22 05:56 JST(UTC+0900)
 ! Change log: https://github.com/k2jp/abp-japanese-filters/wiki/FilterChangeLog
 ! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
 ! Content license: Creative Commons BY-NC-SA 4.0 http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -27,6 +27,8 @@
 @@/static/coffee/compiled/modules/clean/analytics-vflrGf3Yu.$script,domain=dropbox.com
 ! False positives with theme css by adaptivethemes.com, Jun 11, 2012
 @@_Ad/css/theme/
+! False positives on NHK movie pages, reported via ISSUE REPORT by Adblock Plus, Apr 22, 2019
+@@||analytics.edgekey.net/html5/$domain=nhk.or.jp
 ! False positives with Ameblo skin named "colors_ad" or "ad_viva-cutieblog", reported via Issue Report, Jan 12, 2012, Dec 29, 2011, Apr 11, 2014
 @@||ameba.jp/p_skin/
 ! autoblog(AOL) sucks! It requires some trackings to render correctly, reported twice by Issue Report
@@ -2640,6 +2642,8 @@
 /OneSignalSDK.$script
 ! this cause javascript to stop: /oo/$domain=zai.diamond.jp
 /opt_content.js^$script,third-party
+/optout/get^*&key=*&t=$third-party
+/optout/set^*&key=*&t=$third-party
 ! Commented out the duplicated filter with ?bidid=$document, May 31, 2017
 ! /out?bidid=$document
 /overtureAd.
@@ -7036,6 +7040,7 @@ _yahooads_
 ||adrocketmedia.com^
 ||adroll.com^$third-party
 ||adrotator.$popup
+||adrs.me^
 ||ads2rtb.com^
 ||ads2srv.com^
 ||adsafe.fr^
@@ -7260,6 +7265,7 @@ _yahooads_
 ||ntvimg-a.akamaihd.net^
 ||serviceama-a.akamaihd.net^
 ||razorweb-a.akamaihd.net^
+||media-analytics.akamaized.net^
 ||akibablog.net/lilbox/
 ||akmega.ru^
 ||aknod.com^$third-party
@@ -8546,6 +8552,7 @@ _yahooads_
 ||facdn.com^
 ||facebook.com/ai.php?
 ||facebook.com/plugins/recommendations.
+||an.facebook.com^
 ||facebookofsex.com^$third-party
 ||faciles-rencontres.com^
 ||fairfax.com.au^$third-party
@@ -8591,6 +8598,7 @@ _yahooads_
 ||fedrobi.ru^
 ||feedjit.com^$third-party
 ||feedsweep.com^$third-party
+||feedvertizus.com^
 ||feljack.com^
 ||fetchback.com^$third-party
 ||fetish-sexe.biz^
@@ -8867,6 +8875,7 @@ _yahooads_
 ||hananokai.tv^
 ||adcreative.hangame.co.jp^
 ||hannist.com^
+||hanstrackr.com^$third-party
 ||happymail.co.jp^$third-party
 ||hardsextubepremium.com^$third-party
 ||hareljann.com^
@@ -9101,6 +9110,7 @@ _yahooads_
 ||incmd06.com^
 ||inctivee.com^
 ||indeed.com^$third-party
+||indexww.com^
 ||inditazione.com^
 ||industrybrains.com^$third-party
 ||inedomedia.com^$third-party
@@ -9596,6 +9606,7 @@ _yahooads_
 ||mach10.fr^
 ||macpath.net^
 ||macpath.net^$popup
+||macromill.com^$third-party
 ||macsoft.jp/img/Banner1/
 ||macsoft.jp/img/af/
 ||mag2.com/js/osusume.$script
@@ -9785,6 +9796,7 @@ _yahooads_
 ||mobatory.com^
 ||mobbober.com^
 ||mobbobr.com^
+||mobiclean.xyz^
 ||mobicont.com^
 ||mobicow.com^$third-party
 ||mobidealer.$third-party
@@ -9965,6 +9977,7 @@ _yahooads_
 ||neomion.com^
 ||nepalon.com^
 ||nervora.net^
+||nesmotrinamenya.ru^
 ||net-tool.net^
 ||netaatoz.jp/rss
 ||netaffiliation.$third-party
@@ -10208,6 +10221,7 @@ _yahooads_
 ||optplay.com^$third-party
 ||orange-park.jp^$third-party
 ||orangeads.fr^
+||orca-pass.net^$third-party
 ||oret.jp^$third-party
 ||osa.pl^
 ! ||ads.osdn.jp^
@@ -11103,6 +11117,7 @@ _yahooads_
 ||striete.com^
 ||stringenfolie.com^
 ||sublimeskinz.com^$third-party
+||sugabit.net^
 ||sumapo.org^
 ||sumome.com^$third-party
 ||sumorobo.net^$popup
@@ -11584,6 +11599,7 @@ _yahooads_
 ||voluum*.com^
 ||voluum*.com^$document
 ||voluumtrk.com^
+||votetoda.com^
 ||votre-aide-pret.com^
 ||votre-devis-credit.com^
 ||voyeurparadize.com^
@@ -11930,6 +11946,7 @@ _yahooads_
 ||youradexchange.com^$popup
 ||youradexchange.com^$third-party
 ||youradslab.com^
+||yourfirstcheapshop.com^$third-party
 ||yourjavascript.com^$third-party
 ||youtopry.com^
 ||youtube.com/api/stats/$domain=youtube.com
