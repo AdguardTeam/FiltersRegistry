@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-04-20 05:42:56 CEST
+! Last modified: 2019-04-23 11:12:23 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -242,6 +242,7 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 !#if env_firefox
 !#endif
 !#if env_mobile
+aftonbladet.se##div[data-reactroot] > div > div#MegaAd ~ div[class]:not(#header):not(.abThemeGradientPage)
 swedroid.se##div[id$="_ad_mobile"]
 ikea.com##.cookie-info__panel--show
 /sv/local-extensions/header-footer/scripts/adform/*$domain=ikea.com
@@ -817,7 +818,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /urls/count.json$script,domain=emilysliv.se|gabriellajoss.me|kenzas.se|mybabydolls.se|vimedbarn.se
 /users/*/*casi$image,domain=ng.se
 /users/*/*minibanner$image,domain=ng.se
-/utag*.js$script,domain=blocket.se
+/utag.$script,domain=blocket.se
 /vast/*$domain=streamango.com
 /veckansluncher.gif$domain=alingsastidning.se
 /vendorList.js$script,domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
@@ -1108,6 +1109,7 @@ bioenergitidningen.se##.cookieNotice
 blocket.se###index_panorama
 blocket.se###li_panorama
 blocket.se###vi_panorama
+blocket.se##.tag.panorama
 blocket.se##[id^="ufti"]
 bloggbevakning.se###ad
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se###stampenCookieInformationContainer
@@ -1843,6 +1845,7 @@ swedroid.se##a[href^="//www.prisjakt.nu/produkt"]
 swedroid.se##div[id$="_ad"]
 swedroid.se##table[style="width:1190px; height:76px"]
 swedroid.se,tidningensyre.se##.social
+swefilmer.*##.links_table
 swefilmer.*##a[href*="/player/"][target="_blank"]
 swefilmer.*##a[href*="/player/play.php"]
 swefilmer.*##iframe[src="/player/play.php"]
@@ -2005,7 +2008,6 @@ yougov.se##.cookie-confirm
 ||bitcoin-systems.com^$csp=worker-src 'none'
 ||bjursundfastigheter.se^
 ||blocket.com/boost.html^$subdocument
-||blocket.com/fif.html?
 ||blocket.se/inverted_classifieds.html
 ||blocket.se^$third-party
 ||blogg.se/public/js/metrics.$script
