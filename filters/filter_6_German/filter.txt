@@ -1397,6 +1397,8 @@ wallstreet-online.de##.extract > strong:contains(Anzeige)
 !--------------------------------------!
 !------- JS rules ---------------------!
 !--------------------------------------!
+! https://github.com/AdguardTeam/AdguardFilters/issues/28804
+maniac.de#%#Object.defineProperty(window, 'td_ad_background_click_link', { get: function() { return ""; } });
 ! radio.at, radio.net, radio.de -- blocking PreRoll by faking user agent to Google bot
 radio.at,radio.net,radio.de#%#document.cookie = "google_nomod=547";
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24506
@@ -1463,6 +1465,9 @@ menshealth.de#%#function google_ad_request_done() {};
 !--------------------------------------!
 !------- CSS fixes --------------------!
 !--------------------------------------!
+! https://github.com/AdguardTeam/AdguardFilters/issues/28804
+maniac.de#$#body.td-ad-background-link { background-image: none!important; }
+maniac.de#$#body.td-ad-background-link #td-outer-wrap { cursor: auto!important; }
 ! spieletipps.de - broken top
 spieletipps.de#$#.navbar-fixed-top { top: 0px!important; }
 spieletipps.de#$#.stiOnScrollNavbar { top: 46px!important; }
@@ -1652,6 +1657,10 @@ welt.de##.c-page-container--has-commercials
 ||cluster-*.cdnjquery.com^$domain=woxikon.de|notebookcheck.com|dict.cc
 ||*snigelweb-com.videoplayerhub.com^$domain=tellows.de|woxikon.de|notebookcheck.com|dict.cc
 !
+maniac.de##.ad.exit
+maniac.de##body > .flow-wrapper
+maniac.de##a[data-bid][href^="https://www.maniac.de/linkout/"][target="_blank"]
+||maniac.de/campaigns/$image,media
 stadtkind-stuttgart.de##.taboola-werbung
 stuttgarter-zeitung.de##.mod-weekli
 stuttgarter-zeitung.de###rectangle
