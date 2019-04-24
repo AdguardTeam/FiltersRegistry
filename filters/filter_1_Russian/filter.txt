@@ -4984,6 +4984,9 @@ dk24.ru#@##ads1
 !
 !*****
 !* mail.ru - anti-adblock ads
+||radar.imgsmail.ru/update?p=otvet&t=adblock&
+||radar.imgsmail.ru/update?p=otvet&t=adman_
+||radar.imgsmail.ru/update?p=otvet&t=mimic&
 ! Main page
 @@://mail.ru/$generichide
 ://mail.ru^$~script,~stylesheet,~xmlhttprequest,replace=/(\.bgshechka)|(\.branding-footer)|(\.daynews__banner)|(\.daynews__spring)|(\.direct)|(\.goods)|(\.js-banner)|(\.js-pbanner_cntr)|(\.js-popup_gallery)|(\.viewbox__side)|(\.layout__promotoolbar)|(\.left_banner)|(\.p-mimic)|(\.page-bottomad)|(\.page-topad)|(\.pc-mimic)|(\.portal-menu__banner)|(\.rb-container)|(\.rb-video-widget)|(\.rbVideoBanner)|(\.grid__ccol  div\.news-item_tgb)/\.someclass/,important
@@ -5029,8 +5032,10 @@ e.mail.ru#$#.trg-b-banner div :not(.mailru-visibility-check-counter) { opacity: 
 !+ NOT_PLATFORM(windows, mac, android)
 @@||octavius.mail.ru^$generichide
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/17347
-@@||ad.mail.ru/adp/?q*_SITEID$domain=mail.ru|sportmail.ru
+@@||ad.mail.ru/adp/?q*_SITEID$domain=mail.ru
+!
+sportmail.ru$$script[tag-content="bgshechka"][max-length="10700"]
+sportmail.ru#%#AG_abortInlineScript(/bgshechka/, 'String.fromCharCode');
 !
 ! minigames.mail.ru - ads replacement script
 !
@@ -6144,6 +6149,7 @@ otvet.mail.ru#$?#div[class^="adv-slot-"] { remove: true; }
 tv.mail.ru#$?#div[data-view^="SlotView"][data-adq-id] { remove: true; }
 tv.mail.ru#$?#.js-popup_banner { remove: true; }
 !
+sportmail.ru##.cols > div.cols__wrapper:has(> div.cols__column_news-240x400)
 sportmail.ru##.p-fixed-panel > div.box.margin_bottom_20:has(div.p-spring > div.p-spring__preview > a.p-spring__preview-link)
 ! ok.ru - рекламные посты
 !+ PLATFORM(windows,mac,android)
@@ -17149,6 +17155,8 @@ my.mail.ru##.rb-banner
 my.mail.ru##.trg-b-wrap
 my.mail.ru##div[class^="b-mimic-adv"]
 !
+news.mail.ru##.p-directhack
+news.mail.ru##.rb-video-widget
 news.mail.ru##.daynews__inner > tbody > tr > td.daynews__spring
 news.mail.ru##.rb-slot .mailru-visibility-check-counter + div
 news.mail.ru##.unprinted > .p-directhack
