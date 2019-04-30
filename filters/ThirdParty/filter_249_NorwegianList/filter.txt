@@ -1,14 +1,16 @@
 !
-! OriginalVersion: 30April2019v2
-! OriginalVersion: 300420192 (for Adblock Plus' issue report system)
+! OriginalVersion: 30April2019v3
+! OriginalVersion: 300420193 (for Adblock Plus' issue report system)
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites
 ! Expires: 12 hours
 ! This list includes uBO-specific versions of filters, and are meant to be accessed by Nano Adblocker, uBlock Origin, and AdGuard whenever they load the main Nordic list.
-! OriginalVersion: 20April2019v1-Extension
+! OriginalVersion: 30April2019v1-Extension
+!#if !adguard
 ! JavaScript features baked into Nano Adblocker and uBlock Origin
+!#endif
 ! Style-changing entries
-! I could've theorethically made a Stylish userscript based on this section, but why would I ever want to do that when Nano and uBO support such entries natively?
+! I could've theorethically made a Stylish userscript based on this section, but why would I ever want to do that when Nano, uBO, and AdGuard support such entries natively?
 telenor.no#$##megafooter { padding-top: 0px }
 eavisa.com#$#div.kun-desktop { height:255px; overflow: hidden; pointer-events: none !important; cursor: default !important }
 frettabladid.is#$#.ad-topspacer { height: 45px !important }
@@ -35,6 +37,7 @@ elkjop.no,elgiganten.dk#$##C-value { fill: #ed8631 !important }
 xstra.no#$#.td_single_image_bg[style*="xstra.no/wp-content"][style*="/facebookicon"] { height: 140px !important }
 ! Other advanced syntaxes
 dagbladet.no##div[class^="css"]:matches-css-before(content: "Annonse")
+!#if !adguard
 ! Wildcard versions of various entries. Because why only block on one national version of a site, when you can nowadays block on all versions of a site without cluttering things up?
 gamereactor.*###ad_video
 gamereactor.*###ad_w300h450
@@ -67,6 +70,7 @@ qxl.*###GoogleAdsensePanorama
 expedia.*##.extended-below-wizard-ads
 dk,no##div.spklw-post-attr:has(div[class*="spklw-sponsored"])
 no##.polarisSpid.widget:before
+!#endif
 ! Entries that make use of non-ABP $-values, incl. $important and $redirect
 ||acdn.adnxs.com/ast/ast.js$script,important,domain=vg.no
 ||fwmrm.net/p/MTG_Live/LinkTag2.js$script,important,domain=viasatsport.se|viasatsport.fi|tv3sport.dk|viasport.no|viafree.se|viafree.no|viafree.dk|viafree.fi
@@ -147,7 +151,6 @@ no##.polarisSpid.widget:before
 ##optimus-element[id^="art-bazaarAd-"][version="default"]
 .oasfile
 /ad-video-log.php$domain=gamereactor.se|gamereactor.dk|gamereactor.no|gamereactor.fi|gamereactor.eu|gamereactor.de|gamereactor.it|gamereactor.es|gamereactor.pt|gamereactor.fr|gamereactor.nl
-/Bannere/*$image,domain=tek.no|gamer.no
 /prerolls/*$domain=gamereactor.se|gamereactor.dk|gamereactor.no|gamereactor.fi|gamereactor.eu|gamereactor.de|gamereactor.it|gamereactor.es|gamereactor.pt|gamereactor.fr|gamereactor.nl
 1001spill.no###footer
 1001spill.no##.omega.grid_6
@@ -495,6 +498,7 @@ sporttv.is##div[class^="auglysing-"]
 /annonse/*
 /auglysing/*
 /bilder/erotikk1.jpg$domain=eavisa.com
+/Bannere/*$image,domain=tek.no|gamer.no
 ! Leftover empty spaces that EasyList have left behind (Section under construction)
 amino.dk##.ad624x60
 amino.dk##.ad624-60
@@ -1042,6 +1046,7 @@ expedia.no,expedia.dk##.extended-below-wizard-ads
 dagligvarehandelen.no,avisen.dk,bt.dk,sondagsavisen.dk,lokalavisen.dk,folketidende.dk,realityportalen.dk,fyens.dk,plbold.dk,tv2.no,seoghoer.dk,telepristjek.dk,abcnyheter.no,dagsavisen.no,nettavisen.no,bramat.no,hblad.no,gjoviksblad.no,h-a.no#?#div.spklw-post-attr:-abp-has(div[class*="spklw-sponsored"])
 folkebladet.no,hitra-froya.no,rbnett.no,smp.no##.polarisSpid.widget:before
 !#endif
+!#if !adguard
 ! Entries that are also present in AdGuard English Filter, for those who use ABP and AdBlock, or who haven't felt a need to spend 8 seconds to subscribe to it in uBlock Origin.
 newz.dk##.top-interstitial
 krs247.no#@##adsense
@@ -1049,7 +1054,8 @@ tu.no,digi.no##.poster-placeholder
 vg.no##.ad
 vgtv.no###player.pulse-isPauseAdVisible > .jw-overlays
 fuglelyder.net#@##banner_ad
-!#if !ext_ublock
+!#endif
+!#if (!ext_ublock && !adguard)
 qxl.no###GoogleAdsensePanorama
 viafree.no,viafree.dk##.pause-ad
 google.no,google.dk,google.is##.luhb-div
