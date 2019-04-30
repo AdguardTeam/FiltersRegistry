@@ -4810,7 +4810,7 @@ aqa.ru#@#div[id^="div-gpt-ad"]
 ! free-torrents.org - fixing Adguard Assistant
 game-torrent.info,free-torrent.org,free-torrents.org#%#Object.defineProperty(window, 'antiadblock', { get: function() { return; } });
 ! https://forum.adguard.com/index.php?threads/22323/
-@@/ads.js$domain=hdrezka.pro|hdrezka.ag
+@@/ads.js$domain=hdrezka.pro|rezka.ag
 ! https://forum.adguard.com/index.php?threads/21501/
 @@||porn0sex.net/adb/advertising.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4935
@@ -5440,8 +5440,8 @@ lostfilmonline.tv#%#function setTimeout() {};
 ! #%#(function() { if (window._mw_adb = !0) { console.log(`sdsada`); Object.defineProperty(window, '_mw_adb', { get: function() { return false; } }); } })();
 !+ NOT_PLATFORM (windows, mac, android)
 #%#(function() { try { var isSet = false; Object.defineProperty(window, '_mw_adb', { get: function() { return isSet ? false : undefined; }, set: function() { isSet = true; } }); }catch(ex){} })();
-/video/*/iframe$replace=/"[a-z]*_vast":\{"urls":\[".*?\]\}\,//,domain=hdrezka.ag|hdrezka.club|hdrezka.me|hdrezka.co|hdrezka.pro,important
-/serial/*/iframe$replace=/"[a-z]*_vast":\{"urls":\[".*?\]\}\,//,domain=hdrezka.ag|hdrezka.club|hdrezka.me|hdrezka.co|hdrezka.pro,important
+/video/*/iframe$replace=/"[a-z]*_vast":\{"urls":\[".*?\]\}\,//,domain=rezka.ag|hdrezka.club|hdrezka.me|hdrezka.co|hdrezka.pro,important
+/serial/*/iframe$replace=/"[a-z]*_vast":\{"urls":\[".*?\]\}\,//,domain=rezka.ag|hdrezka.club|hdrezka.me|hdrezka.co|hdrezka.pro,important
 .cc/video/*/iframe?$replace=/"[a-z]*_vast":\{"urls":\[".*?\]\}\,//,important
 .cc/serial/*/iframe?$replace=/"[a-z]*_vast":\{"urls":\[".*?\]\}\,//,important
 .org/video/*/iframe?$replace=/"[a-z]*_vast":\{"urls":\[".*?\]\}\,//,important
@@ -5781,6 +5781,8 @@ simpsonsua.com.ua#$#.adsbyyottos { height: 1px!important; visibility: hidden!imp
 !
 !rp5.by,rp5.kz,rp5.ru,rp5.ua###content > div:first-child + div > div:first-child:has(> div:empty) + div:not([class]):not([id="FheaderContent"]):not([id^="extreme"])
 !
+! rezka.ag - удаление отступа сверху
+rezka.ag#$?#body { padding-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32702
 youla.ru#$?#[style="width: 1139px; height: 192px;"] > div > div[style="width: 369.5px; margin-right: 15px;"]:has(a[href^="http://r.mail.ru/"]) { remove: true; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32296
@@ -6942,7 +6944,7 @@ izzylaif.com#%#(function() { var w_open = window.open, regex = /ad.admitad.co/; 
 meta.ua#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('AD_DOMAIN_URL') == 0) { window[key] = undefined; } }; });
 ! https://forum.adguard.com/index.php?threads/25649/
 !+ NOT_PLATFORM(windows, mac, android)
-tushkan.club,hdrezka.ag#%#(function() { var _eval = window.eval; window.eval = function(a) { if ( a.toString().indexOf('charCodeAt') === -1 ) { _eval(a); return; } }; })();
+tushkan.club,rezka.ag#%#(function() { var _eval = window.eval; window.eval = function(a) { if ( a.toString().indexOf('charCodeAt') === -1 ) { _eval(a); return; } }; })();
 ! moonwalk.cc - clickunder
 moonwalk.cc#%#window.WebSocket = undefined;
 ! wvpbs.net - ads
@@ -6971,8 +6973,6 @@ api.dizimania.ru#%#Object.defineProperty(window, 'flashLayerAdShowed', { get: fu
 fayloobmennik.cloud#%#AG_onLoad(function() { window.redirect = function() {}; });
 ! comments.ua - clicable background
 comments.ua#%#Object.defineProperty(window, 'AddEvents', { get: function() { return; } });
-! hdrezka.pro - удаление отступа сверху
-hdrezka.ag,hdrezka.pro#%#AG_onLoad(function() { document.querySelector('body').style.cssText+=';padding-top: 0!important'; });
 ! https://forum.adguard.com/index.php?threads/22190/
 0day.kiev.ua#%#window._mgq = { push: function() { } };
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4908
@@ -9527,6 +9527,8 @@ ucoz.ru/informer/
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 Ly9hbi55YW5kZXgucnUv
 !
+tut.by##.l-col:has(.entry-addition:contains(Реклама))
+sumypost.com##iframe[width="478"][height="100"]
 nudecelebs.pro###adflow
 nudecelebs.pro##div[class="NC-content_aside num4"] + div[style="position: relative; height: 1366px;"]
 xcelebs.ru##.single_fiolet
@@ -13781,7 +13783,7 @@ film.ru##div[id^="block-block-"][class="block block-block "]
 sobesednik.ru##div[id^="block-sobesednik-advertising"]
 ren.tv##div[id^="block-views-ads-block"]
 safe-inet.com##div[id^="block-views-rotor-block"]
-bigkiev.com.ua,hdfilm-serial.com,ubr.ua,onlinefilm-hd.club,0day.kiev.ua,2baksa.net,720hd.club,abc-people.com,abook.fm,acer-a500.ru,agrimpasa.com,ahs-online.net,allserial.tv,apostrophe.ua,avtovod.org.ua,baskino.co.ua,bigbangtv.ru,bigcinema.to,bigpicture.ru,bo-em.com,bobfilm.club,br-ba.net,chop-online.com,cinemaenergy-hd.ru,comedy-portal.net,compendium.su,coollib.net,cvid.kiev.ua,cwer.me,cwer.ru,cwer.ws,dnevniki-vampira.net,dochronika.ru,dom2.pro,electroandi.ru,emusic.me,ex-fs.com,fanserials.tv,fast-torrent.ru,fasttorrent.ru,filin.tv,film-torrent.ru,filmix.cool,filmix.fun,filmix.info,filmix.me,filmix.vip,filmon.in.ua,firebit.net,fizrukoff.net,freebooks.site,freerutor.org,gidonline-kino.club,glavpost.ua,goodkino.biz,goodkino.net,hd-720.ucoz.ru,hd1080.info,hdfilms.tv,hdkinomax.com,hdnora.ru,hdrezka.ag,hdrezka.co.ua,hdrezka.gift,hdrezka.lol,hdrezka.me,hdrezka.name,hdrezka.run,hdrezka.tv,hdserial.cc,hdserials.tv,history.vn.ua,hlamer.ru,hronika.info,ikinohd.com,informator.news,journal-plaza.net,kadu.ru,kg-portal.ru,kin4ik.online,kino-coin.online,kino-dom.tv,kino-france.net,kino-hd.in,kino-hd1080.ru,kino-hd720.net,kino-na-xati.com,kino-nada.net,kinoboevik.com,kinobos.com,kinobos.net,kinobro.org,kinoclips.net,kinocoin.online,kinoflux.org,kinogb.me,kinogb.net,kinogo-2017-net.ru,kinogo-hq.ru,kinogo-net.me,kinogo.cc,kinogo.club,kinogo.com.ua,kinogo.eu,kinogo1.club,kinogoco.club,kinogoonline.club,kinohome.net,kinoklad.net,kinokrad.club,kinokrad.net,kinorai.net,kinosklad.com,kinosvit.tv,kinotan.ru,kinotop.pw,kinotrek.co,kinotwserial.ru,kinozal.co,klipzona.co,knijky.ru,korp.tv,kriminal.tv,lib.sale,linecinema.org,lostfilm-hd720.ru,lostfilm-online.ru,lostfilmhd.ru,lotzon.co,lotzon.com,maccentre.ru,megaserial.net,megogo-hd.net,mskd-ru.net,musico.ru,my-tfile.org,myzooplanet.ru,natural.edu-lib.net,navkolonas.com,new-team.org,newsyou.info,nowa.cc,onlainfilm.ucoz.ua,onlfilmy.com,online-freebee.net,online-freebee.ru,online-kinopokaz.ru,onlineboevik.com,onlinefilm-hd.com,ostfilm.tv,ostfilmtv.org,pgcity.net,pslan.com,rapidzona.com,real-vin.com,ru-serial.com,rubooks.org,russiapost.su,rustorrents.info,rutorka.net,scibook.net,scribble.su,seasonvar.re,seedoff.cc,serialguru.ru,serialu.tv,serialytut.tv,sezon-hd.ru,show-online.tv,sinoptik.ua,sitandwatch.org,skidows.com,smotri-filmi.net,sovietcinema.net,sovietcinema.ru,subject.com.ua,swordmaster.org,teledidar.tv,tfile-music.org,tfile-video.org,tfile.cc,tfile.co,tfile.me,tfile.pw,the-cinema.net,topcinema.tv,torrent-soft.net,torrentom.com,tracker.hdclub.com.ua,tracktor.tv,tree.tv,trialeset.ru,tuchkatv.ru,turboserial.net,turkcinema.tv,tushkan.club,tv-torrent.me,tv-torrent.org,tvbook.tv,tvcok.ru,tvfru.net,tvgid.ua,tvseason.net,uainfo.org,ukrefs.com.ua,ukrlit.net,uniongang.net,uniongang.tv,vinnitsa.info,vuzlib.su,wow-show.ru,youmult.net,zfilm-hd.club,zhd.life,zserials.cc,медпортал.com##div[id^="bn_"]
+bigkiev.com.ua,hdfilm-serial.com,ubr.ua,onlinefilm-hd.club,0day.kiev.ua,2baksa.net,720hd.club,abc-people.com,abook.fm,acer-a500.ru,agrimpasa.com,ahs-online.net,allserial.tv,apostrophe.ua,avtovod.org.ua,baskino.co.ua,bigbangtv.ru,bigcinema.to,bigpicture.ru,bo-em.com,bobfilm.club,br-ba.net,chop-online.com,cinemaenergy-hd.ru,comedy-portal.net,compendium.su,coollib.net,cvid.kiev.ua,cwer.me,cwer.ru,cwer.ws,dnevniki-vampira.net,dochronika.ru,dom2.pro,electroandi.ru,emusic.me,ex-fs.com,fanserials.tv,fast-torrent.ru,fasttorrent.ru,filin.tv,film-torrent.ru,filmix.cool,filmix.fun,filmix.info,filmix.me,filmix.vip,filmon.in.ua,firebit.net,fizrukoff.net,freebooks.site,freerutor.org,gidonline-kino.club,glavpost.ua,goodkino.biz,goodkino.net,hd-720.ucoz.ru,hd1080.info,hdfilms.tv,hdkinomax.com,hdnora.ru,rezka.ag,hdrezka.co.ua,hdrezka.gift,hdrezka.lol,hdrezka.me,hdrezka.name,hdrezka.run,hdrezka.tv,hdserial.cc,hdserials.tv,history.vn.ua,hlamer.ru,hronika.info,ikinohd.com,informator.news,journal-plaza.net,kadu.ru,kg-portal.ru,kin4ik.online,kino-coin.online,kino-dom.tv,kino-france.net,kino-hd.in,kino-hd1080.ru,kino-hd720.net,kino-na-xati.com,kino-nada.net,kinoboevik.com,kinobos.com,kinobos.net,kinobro.org,kinoclips.net,kinocoin.online,kinoflux.org,kinogb.me,kinogb.net,kinogo-2017-net.ru,kinogo-hq.ru,kinogo-net.me,kinogo.cc,kinogo.club,kinogo.com.ua,kinogo.eu,kinogo1.club,kinogoco.club,kinogoonline.club,kinohome.net,kinoklad.net,kinokrad.club,kinokrad.net,kinorai.net,kinosklad.com,kinosvit.tv,kinotan.ru,kinotop.pw,kinotrek.co,kinotwserial.ru,kinozal.co,klipzona.co,knijky.ru,korp.tv,kriminal.tv,lib.sale,linecinema.org,lostfilm-hd720.ru,lostfilm-online.ru,lostfilmhd.ru,lotzon.co,lotzon.com,maccentre.ru,megaserial.net,megogo-hd.net,mskd-ru.net,musico.ru,my-tfile.org,myzooplanet.ru,natural.edu-lib.net,navkolonas.com,new-team.org,newsyou.info,nowa.cc,onlainfilm.ucoz.ua,onlfilmy.com,online-freebee.net,online-freebee.ru,online-kinopokaz.ru,onlineboevik.com,onlinefilm-hd.com,ostfilm.tv,ostfilmtv.org,pgcity.net,pslan.com,rapidzona.com,real-vin.com,ru-serial.com,rubooks.org,russiapost.su,rustorrents.info,rutorka.net,scibook.net,scribble.su,seasonvar.re,seedoff.cc,serialguru.ru,serialu.tv,serialytut.tv,sezon-hd.ru,show-online.tv,sinoptik.ua,sitandwatch.org,skidows.com,smotri-filmi.net,sovietcinema.net,sovietcinema.ru,subject.com.ua,swordmaster.org,teledidar.tv,tfile-music.org,tfile-video.org,tfile.cc,tfile.co,tfile.me,tfile.pw,the-cinema.net,topcinema.tv,torrent-soft.net,torrentom.com,tracker.hdclub.com.ua,tracktor.tv,tree.tv,trialeset.ru,tuchkatv.ru,turboserial.net,turkcinema.tv,tushkan.club,tv-torrent.me,tv-torrent.org,tvbook.tv,tvcok.ru,tvfru.net,tvgid.ua,tvseason.net,uainfo.org,ukrefs.com.ua,ukrlit.net,uniongang.net,uniongang.tv,vinnitsa.info,vuzlib.su,wow-show.ru,youmult.net,zfilm-hd.club,zhd.life,zserials.cc,медпортал.com##div[id^="bn_"]
 topnews.ru##div[id^="bnr_"]
 dachadecor.ru##div[id^="bons_"]
 hd-720.ucoz.ru,rus.porn##div[id^="brnd"]
