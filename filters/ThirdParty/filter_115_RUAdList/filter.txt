@@ -1,8 +1,8 @@
 !
-! Checksum: FKeiKWz36iNA7LPgRQViAA
-! OriginalVersion: 201905132340
+! Checksum: 8k2vErqoRLTAmiACE9iUzQ
+! OriginalVersion: 201905140240
 ! Title: RU AdList + CSS Fixes
-! Last modified: 13 May 2019 23:40 UTC
+! Last modified: 14 May 2019 02:40 UTC
 ! Expires: 2 days (подписка обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -15759,8 +15759,10 @@ ensage-forum.ru##div[id^="funbox_zone"]
 ||echo.msk.ru^$csp=script-src 'self' * data: blob: 'unsafe-eval'
 ||edabez.ru^$csp=script-src 'self' * 'unsafe-inline' data:
 ||ex.infox.sg^$csp=script-src
-||gismeteo.ua^$csp=connect-src 'self'
-||gismeteo.ua^$csp=script-src 'unsafe-eval' 'unsafe-inline' https:
+||gismeteo.ua/ua/weather-$csp=sandbox allow-same-origin;
+||gismeteo.ua/ua/|$csp=sandbox allow-same-origin;
+||gismeteo.ua/weather-$csp=sandbox allow-same-origin;
+||gismeteo.ua/|$csp=sandbox allow-same-origin;
 ||hdbob.online^$csp=script-src 'self' * 'unsafe-inline' data:
 ||idealmedia.io$csp=script-src
 ||igra-prestoloff.cx^$csp=script-src 'self' * data: blob: 'unsafe-inline'
@@ -19006,6 +19008,7 @@ www.avito.ru#?#div:-abp-has(> [class] > h2:-abp-contains(Pеклама))
 ||taboola.com^$domain=avito.ru
 !
 ! GISMeteo domains
+gismeteo.ua###graph.rframe
 gismeteo.md,gismeteo.ru###rbc
 gismeteo.ua###w-hor
 gismeteo.lt###weather-alfa
@@ -22461,6 +22464,7 @@ $~third-party,xmlhttprequest,badfilter,domain=amurmedia.ru|eaomedia.ru|irkutskme
 @@||trafmag.com/*.js|$script,badfilter,domain=dynamo.kiev.ua|gagadget.com|hvylya.net|ringside24.com|sinoptik.ua
 draug.ru##p:has-text(Для скачивания подождите отчет таймера...)
 eksmo.ru##.fancybox-container:has([src*="/smv/popup/"])
+gismeteo.ua#@##graph.rframe
 hideip.me#$##highlighted { padding: 0 !important; border: 0 !important; margin-bottom: 0 !important }
 hideip.me#$##sidebar-second { position: fixed !important; top: -10000px !important }
 hideip.me#$#.region-footer a[href] { position: fixed !important; top: -10000px !important }
@@ -22490,6 +22494,10 @@ yandex.by,yandex.kz,yandex.ru,yandex.ua##body[class*="b-page_infinity"] .main.wi
 ||car.ru/|$xmlhttprequest,badfilter,domain=car.ru
 ||fermilon.ru^$xmlhttprequest,badfilter,domain=fermilon.ru
 ||fun/assets/vendor*.xml?$third-party,xmlhttprequest
+||gismeteo.ua/ua/weather-$csp=sandbox allow-same-origin;,badfilter
+||gismeteo.ua/ua/|$csp=sandbox allow-same-origin;,badfilter
+||gismeteo.ua/weather-$csp=sandbox allow-same-origin;,badfilter
+||gismeteo.ua/|$csp=sandbox allow-same-origin;,badfilter
 ||globuss24.ru^$xmlhttprequest,badfilter,domain=globuss24.ru
 ||helpsetup.ru/js/ajaxup.js
 ||keenwilling.rambler.ru^$badfilter,domain=~championat.com|~gazeta.ru|~lenta.ru|~rambler.ru
