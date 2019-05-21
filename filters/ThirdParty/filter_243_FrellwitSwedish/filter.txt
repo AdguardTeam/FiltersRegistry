@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-05-20 06:21:30 CEST
+! Last modified: 2019-05-21 06:58:13 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -340,6 +340,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 ##.cookie-policy
 ##.cookie__wrapper
 ##.cookie_consent_bar
+##.cookie_popup_box
 ##.cookiebar
 ##.cookieConsent
 ##.CookieNotice
@@ -409,6 +410,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 .se/logger.$script
 .se/Logger?
 .se/misc/loada.js$script
+.se/native?noBurtProfiles
 .se/sponsored/$image
 .se/upload/annons/
 .se/wdg/tracking
@@ -449,6 +451,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /ajax.php?action=get_policy&site=cookie-information$xmlhttprequest
 /ajax.php?action=get_share_data$xmlhttprequest,domain=falkopingstidning.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vn.se
 /ajax.php?action=get_slideshow_ad_in$xmlhttprequest,domain=falkopingstidning.se|jnytt.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vn.se
+/ajax/docu_stats.jsp$xmlhttprequest
 /ajax_statistics_count/*$xmlhttprequest,domain=byggnyheter.se|dagensfastigheter.se|dagensnaringsliv.se|energinyheter.se|industrinyheter.se|infrastrukturnyheter.se|inredningsnyheter.se|jarnvagsnyheter.se|metallerochgruvor.se|papperochmassa.se|solenerginyheter.se|sportochfritidsnyheter.se|stockholmsbyggnyheter.se|transportochlogistik.se|vindkraftsnyheter.se
 /analytics$script,domain=dn.se
 /analytics$script,xmlhttprequest,domain=njus.me
@@ -554,7 +557,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /getlivevideo$domain=di.se
 /gilla-mb_plugg.png$domain=markbladet.se
 /glasscandle.$script,domain=komponentkoll.se
-/glimr.$script,domain=affarsliv.com|affarslivgotland.se|aftonbladet.se|blocket.se|corren.se|di.se|dn.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|politism.se|pt.se|unt.se|uppgang.com|uppsala.com|uppsalatidningen.se|viivilla.se|vimmerbytidning.se|vt.se
+/glimr.$script,domain=affarsliv.com|affarslivgotland.se|aftonbladet.se|blocket.se|corren.se|di.se|dn.se|ekuriren.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|kkuriren.se|klackspark.com|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|politism.se|pt.se|sn.se|unt.se|uppgang.com|uppsala.com|uppsalatidningen.se|viivilla.se|vimmerbytidning.se|vt.se
 /google-tag-manager-datalayer.$script,domain=reseguiden.se
 /google_tag.script.js$script,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
 /googleyolo/impression$~third-party,xmlhttprequest,domain=momondo.se
@@ -594,6 +597,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /js/cookie-consent.$script
 /js/cookienotice.$script
 /Js/DFP/*$script,domain=camping.se
+/js/docunet_stats.js$script
 /js/external.php$script,domain=hockeysnack.com
 /js/fullpageads.js$script
 /js/gdpr-public.$script,domain=loppi.se
@@ -648,7 +652,6 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /mp_emediate/inc/annons.html
 /n24.js?$domain=filmtipset.se
 /native.js$script,domain=dagensmedia.se
-/native?$xmlhttprequest,domain=hd.se|sydsvenskan.se
 /native_teaser_active/*$image,domain=dagenssamhalle.se
 /new_construction_ads/*$domain=hemnet.se
 /newsletter/*$domain=zalando.se
@@ -775,6 +778,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /postscribe.$script,domain=linnherbertsson.se
 /prerolls/*$domain=gamereactor.se
 /privacy/notification?$xmlhttprequest,domain=aftonbladet.se
+/private-browsing.js$domain=thelocal.se
 /prod/adform$xmlhttprequest
 /pulse-sdk-html5/*$object,object-subrequest,domain=di.se
 /pulse_flash_ad*.swf$object,domain=svd.se
@@ -1178,6 +1182,7 @@ byggahus.se##.messageAd
 byggahus.se##.messagePartner
 byggahus.se##.threadPanorama
 byggahus.se,mobil.se##a[href^="/partner/"]
+byggfaktadocu.se##.pop_box
 byggipedia.se##.ai_widget
 byggipedia.se##.protect_contents-overlay
 byggnadsarbetaren.se##.siteAlerts
