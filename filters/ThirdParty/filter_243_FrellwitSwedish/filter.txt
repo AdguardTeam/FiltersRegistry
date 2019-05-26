@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-05-24 07:17:56 CEST
+! Last modified: 2019-05-26 07:52:42 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -81,6 +81,9 @@ dn.se,~ext.dn.se#$#body { overflow-y: auto !important; position: initial !import
 dreamfilm.*#$##content-embed { display: inherit !important; }
 dreamfilm.*#$#.TPlayer.on:after { height: 0 !important; width: 0 !important; }
 ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sponsored-bar)
+evertiq.se#$##bgWrapp { pointer-events: none !important; }
+evertiq.se#$##content, .sitesTab, .menuBar, #foot { pointer-events: all !important; }
+evertiq.se#$#body { cursor: default !important; }
 expressen.se##.teaser:has(.vignette:has-text(/(^erbjudande från|^annons|^happy green|^presenteras av|i samarbete med)/i))
 expressen.se##.teaser:has(a[href^="/brandstudio/"])
 falkopingstidning.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##div.slideshow-in.active:has(.ad-wrapper)
@@ -544,7 +547,6 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /eu-cookie-law.min.js$script
 /eu_cookie_alert/*$script,stylesheet
 /eu_cookie_compliance/*$script
-/evertiq.se\/bin\/[0-9]+\./$script,domain=evertiq.se
 /exposure$xmlhttprequest,domain=lokalguiden.se
 /facebook/gillkom$xmlhttprequest,domain=kamerabild.se|mobil.se
 /facebook_sdk.js$script,domain=njus.me|radioplay.se
@@ -570,6 +572,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /hapyak.js$script,domain=viktvaktarna.se
 /headerbidding.js$script
 /helios/multiad_jquery.$script
+/history_cookie_notice.$script,domain=historytv.se
 /i10c@p1/*$domain=bax-shop.se|digikey.se|justfab.se|tui.se
 /iab/iab.js$script
 /idg-dfp-minified/*
@@ -1339,6 +1342,7 @@ ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.share-buttons
 ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##a[href*=".adsrv."]
 eurosport.se###notification__cookie
 eurosport.se##.eso_video__share
+evertiq.se###carpet
 evertiq.se##.bnrWrapper
 evertiq.se##.gdprcookie
 evertiq.se##[data-gabnr]
@@ -2283,6 +2287,7 @@ yougov.se##.cookie-confirm
 ||jssdk.privacy.schibsted.com/privacy-notifier.$script
 ||jssdk.privacy.schibsted.com/pulse.$script
 ||jtp.expressen.se/notify/clip-started.$image
+||juicer.io/api/page_views$xmlhttprequest
 ||kaloo.ga^$third-party
 ||kamrat.com/js/cookiescript$script
 ||kartor.eniro.se/d.html$subdocument
