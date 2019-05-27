@@ -1,7 +1,7 @@
 !
 ! Homepage: http://adblock.sk
 ! Title: Easylist Czech and Slovak filter list
-! Last change: 20/05/2019
+! Last change: 27/05/2019
 ! List maintainers: tomasko126, Aslanex, vobruba-martin, Moskoe, Fanboy
 ! GitHub repository: https://github.com/tomasko126/easylistczechandslovak
 ! GitHub contributors: https://github.com/tomasko126/easylistczechandslovak/graphs/contributors
@@ -480,13 +480,6 @@ cesky-jazyk.cz##.heurekaIframeHeader
 cestovani.tiscali.cz###zone-tiscali-cestovani-wide
 cnews.cz##div#td-outer-wrap > div.td-container
 computerworld.cz##.ad-obal
-csfd.cz##div[id$="adwrapper"]
-csfd.cz##.ad-pmg
-csfd.cz##.ct-general.th-5
-csfd.cz##a[href*="/log?type=ads"]
-csfd.cz##a[href*="redirect/ads"]
-ctrlv.cz##div.behind
-ctrlv.cz##div[id^="ad"]
 cztorrent.net###banner_header
 cztorrent.net###banner_skyscraper_right
 cztorrent.net###bnr_header
@@ -497,10 +490,7 @@ denik.cz##div[class^="reklama"]
 diablofans.cz###bottom_fixed_leaderboard
 diit.cz,cdr.cz###pr-prace-blok-view
 diit.cz,cdr.cz##div[class*="openx-async"]
-doktorka.cz###zone-doktorka-box
-doktorka.cz###zone-doktorka-sky
-doktorka.cz##.ad_code_box
-doktorka.cz##.ban1
+diit.cz,cdr.cz##div.block-jobs-link
 dotekomanie.cz##div#highlitesAds
 dpp.cz,playzone.cz,serialzone.cz###top-banner
 e-mostecko.cz###g-top-bannery
@@ -508,6 +498,8 @@ echo24.cz##.relama-caption
 edna.cz##.adsense
 edna.cz##.seriesadvert
 edna.cz##.leaderboard
+edna.cz##.skyscraper
+edna.cz##.banner
 emimino.cz###r-leaderboardhp
 esemes.cz###fancybox-overlay
 esemes.cz###h_part_right
@@ -516,6 +508,8 @@ estav.cz##.topbanner
 euro.cz##.float-ad-wrapper
 evropa2.cz##div.top-padding
 livesport.cz###box-over-content-a
+lupa.cz,root.cz##.design-box--jobs
+lupa.cz,root.cz##.design-advert
 ewrc.cz###invelt
 extra.cz##div.klik--leaderboard
 fdb.cz###blackfooter
@@ -526,6 +520,7 @@ finance.cz##.arr-red
 finance.cz,motoforum.cz###ahead
 firstclass.cz###stOverlay
 firstclass.cz##.promobox
+forum.root.cz##.body_message--ad
 fotoaparat.cz##div._banner
 fotoradce.cz###reklamad-vlevo
 fotoradce.cz###reklamavlevo
@@ -773,9 +768,12 @@ zmeskanyhovor.com##.native-ads
 !
 ! ---------- uBlock Extended filters ---------- !
 !
-csfd.cz#$#.ad-pmg + div { position: unset !important; }
 csfd.cz#$##page-wrapper { border-top-width: 0px !important; }
+csfd.cz##.widget-group-2 li:has(div.ad-pmg)
+csfd.cz##.ct-related:has-text(/^\s+Reklama/)
+doktorka.cz##.block-imageblock:has-text(Reklama)
 dotekomanie.cz##div.box:has-text(/^reklama/i)
+lupa.cz,root.cz##div.article--content:has(div.design-advert)
 search.seznam.cz,clanky.seznam.cz##div.Layout--left > div:has(> div:not([class*="Result"]):not([class*="Hint"]))
 search.seznam.cz,clanky.seznam.cz##div.Layout--left > div:has(div.ZboziCategory)
 uloz.to#$#div.pg-wrapper { padding-top: 0px !important; }
