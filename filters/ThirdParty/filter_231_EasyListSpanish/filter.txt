@@ -1,8 +1,8 @@
 !
-! Checksum: EVM6yMqVdrW6N4KzTHmI5w
-! OriginalVersion: 201906040541
+! Checksum: eCSCKqNit1rmnmDuljt5Mw
+! OriginalVersion: 201906040841
 ! Title: EasyList Spanish
-! Last modified: 04 Jun 2019 05:41 UTC
+! Last modified: 04 Jun 2019 08:41 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://easylist.to/
 ! Licence: https://easylist.to/pages/licence.html
@@ -25,12 +25,13 @@
 /dynamicAds.
 /img/patrocinios/*
 /modules/pinpan/inc_ifra.php?par=
-/multimedia/publicidades/*
 /publi/publi
 /publi_120_
 /publi_300_
 /publi_700_
 /publi_728_
+/publicidades/*
+/publicitario.
 /serve?*&w=160&h=600
 /serve?*&w=300&h=250
 /serve?*&w=468&h=60
@@ -63,6 +64,8 @@ _pubted.
 ###RobaPagina
 ###adGgV160
 ###ad_250x300
+###adsforsearchGrid
+###adsforsearch_content
 ###afsposicion1
 ###afsposicion2
 ###contenedor_pub_superior
@@ -94,6 +97,7 @@ _pubted.
 ###publitop
 ###slider-oferplan
 ###sp-top-ads
+###sponsored-container
 ###texto_publicidad
 ###titulo-publicidad
 ##.Adboost300x250
@@ -116,6 +120,8 @@ _pubted.
 ##.ads_160x600
 ##.ads_960x90
 ##.adsderecha
+##.adsforsearchGrid
+##.adsforsearch_roba
 ##.adsmovie
 ##.advertisingLeft
 ##.advertisingRight
@@ -290,6 +296,7 @@ mejoratuescuela.org#@#.container-ads
 ||niceduckies.com^$third-party
 ||onclicktop.com^$third-party
 ||palmshapednontransferable.com^$third-party
+||secure-cloud.pro^$third-party
 ||shinkme.com^$third-party
 ||solidopinion.com^$third-party
 ||sorteos.cf^$third-party
@@ -343,21 +350,25 @@ broced.co^$popup,third-party
 ! *** Fetched from: https://raw.githubusercontent.com/easylist/easylistspanish/master/easylistspanish_adult/adult_thirdparty_popup.txt ***
 !----------------------Specific advert blocking filters-----------------------!
 ! *** Fetched from: https://raw.githubusercontent.com/easylist/easylistspanish/master/easylistspanish/easylistspanish_specific_block.txt ***
-$csp=worker-src 'none',domain=tomadivx.tv
-$script,third-party,domain=ddmix.net|pepecine.info
+! Webrtc ads
 $webrtc,domain=allpeliculas.com|animeid.tv|booksmedicos.org|dompl3.info|gnula.biz|jkanime.net|mejortorrent.com|mejortorrent.org|mejortorrent1.com|pelispedia.tv|tomadivx.tv
+! Websocket ads
 $websocket,domain=ddmix.net|descargasnsn.com
-/*badge*.png$domain=rpp.pe
+! blob ads
+|blob:$domain=ddmix.net|descargasnsn.com|divxatope.com|divxatope1.com|newpct.com|newpct1.com|torrentlocura.com|torrentrapid.com|tumejortorrent.com
+! CSP ads
+$csp=worker-src 'none',domain=tomadivx.tv
+! RegEx filters
 /^https?:\/\/([a-z0-9]{8,10}\.)?[a-z0-9]{5,14}\.(com|bid|online|top|club)\/([a-z0-9]{2}\/){3}[a-f0-9]{32}\.js$/$script,third-party
 /^https?:\/\/[a-z0-9]+\.cloudfront\.net\/\?[a-z]{5}\=\d{6}$/$script,third-party
+! Third party script
+$script,third-party,domain=abcdefamosas.xyz|animakai.tv|animeflv.net|anitube.cz|anitubebr.com|ddmix.net|descargasnsn.com|divxatope.com|divxatope1.com|divxtotal.com|elitetorrent.net|estoesporno.com|estrenosdtl.com|ftail.tv|gamestorrents.com|jkanime.net|lacajita.xyz|mejorenvo.com|mejortorrent.com|moviesdvdr.com|newpct.com|newpct1.com|novelasenlinea.net|pepecine.info|reyanime.com|seriesblanco.com|seriesflv.net|shippuden.tv|submanga.org|subtorrents.com|todocvcd.com|torrentesx.com|torrentlocura.com|torrentrapid.com|tumejortorrent.com|xtremo.net|xtremostereo.net
+! Third party xmlhttprequest
+$third-party,xmlhttprequest,domain=animeflv.net|descargasnsn.com|divxatope.com|divxatope1.com|divxtotal.com|estoesporno.com|estrenosdtl.com|gamestorrents.com|jkanime.net|moviesdvdr.com|newpct.com|newpct1.com|seriesflv.net|subtorrents.com|todocvcd.com|torrentesx.com|torrentlocura.com|torrentrapid.com|tumejortorrent.com
+! Specific ads
+/*badge*.png$domain=rpp.pe
 /static/BB3HTML/images/*sponsor*.png$domain=diariodecadiz.es|diariodejerez.es|diariodesevilla.es|elalmeria.es|eldiadecordoba.es|europasur.es|granadahoy.com|huelvainformacion.es|malagahoy.es
 /uploads/advertisings/*$domain=tribunaavila.com|tribunaburgos.com|tribunaleon.com|tribunapalencia.com|tribunasalamanca.com|tribunasegovia.com|tribunasoria.com|tribunavalladolid.com|tribunazamora.com
-|blob:$domain=ddmix.net|descargasnsn.com|divxatope.com|divxatope1.com|newpct.com|newpct1.com|torrentlocura.com|torrentrapid.com|tumejortorrent.com
-|http://$script,third-party,domain=abcdefamosas.xyz|animakai.tv|elitetorrent.net|ftail.tv|lacajita.xyz|mejorenvo.com|mejortorrent.com|novelasenlinea.net|reyanime.com|seriesblanco.com|shippuden.tv|submanga.org|xtremo.net|xtremostereo.net
-|http://$script,third-party,xmlhttprequest,domain=animeflv.net|descargasnsn.com|divxatope.com|divxatope1.com|divxtotal.com|estoesporno.com|estrenosdtl.com|gamestorrents.com|jkanime.net|moviesdvdr.com|newpct.com|newpct1.com|seriesflv.net|subtorrents.com|todocvcd.com|torrentesx.com|torrentlocura.com|torrentrapid.com|tumejortorrent.com
-|http://zetaestaticos.com/comun/upload/0/628/628692.jpg
-|https://$script,third-party,domain=abcdefamosas.xyz|animakai.tv|novelasenlinea.net|xtremo.net|xtremostereo.net
-|https://$script,third-party,xmlhttprequest,domain=animeflv.net|descargasnsn.com|jkanime.net
 ||130.211.230.53^$script,domain=animeid.tv
 ||16valvulas.com.ar/wp-content/uploads/*.gif
 ||190.210.182.163/iPlataformamultiempresa/Panelcontenidos/Contenidos/*.gif
@@ -372,6 +383,7 @@ $websocket,domain=ddmix.net|descargasnsn.com
 ||24con.com/files/image/230/230804/5a01a74262820_300_!.jpg
 ||25digital.com.ar/wp-content/uploads/*.gif
 ||35.193.89.147^
+||3djuegos.com/?zona=
 ||4.bp.blogspot.com/-tNi8RVCQRuA/*/s640/Banner%2BVIP.gif
 ||91.116.142.114/iframe
 ||abc.com.py/plantillas/js/banners-mkt.js
@@ -446,6 +458,7 @@ $websocket,domain=ddmix.net|descargasnsn.com
 ||cuponidad.pe^$domain=elpopular.pe|larepublica.pe|libero.pe
 ||cxrbw.aquipelis.net^
 ||d2d8qsxiai9qwj.cloudfront.net^
+||darkstone.es/themes/default/images/banners/
 ||ddmix.net/doggy*js$script
 ||ddmix.net/wp-content/plugins/popup-builder/
 ||defiendase.com/media/file/2014/Publicidades/
@@ -646,6 +659,8 @@ $websocket,domain=ddmix.net|descargasnsn.com
 ||meridiano.com.ve/Picfiles/logo-merbet_96x34.png
 ||meteoconsult.es/publicite/
 ||millionairedream.co^$third-party
+||minube.com/administrator/minipresManager/
+||minube.com/administrator/suggestionBoxManager/
 ||misionescuatro.com/wp-content/uploads/*.gif
 ||mlstatic.com/img/mclics-images-merchAds
 ||mmedia.20m.es/modulos/pastillas/nuevas/pastillas/Home/Gonzoogenerica.png
@@ -777,6 +792,7 @@ $websocket,domain=ddmix.net|descargasnsn.com
 ||tabascohoy.com/img/temp/banner_miguelcanton.png
 ||tabascohoy.com/img/temp/banner_notasgoogle.png
 ||tarjetaroja-tv.info/publicity/
+||telexplorer.com.ar/images/banners/
 ||teliad.es/*/banner/
 ||tiemposur.com.ar/banners/
 ||tiemposur.com.ar/uploads/banners
@@ -813,11 +829,13 @@ $websocket,domain=ddmix.net|descargasnsn.com
 ||whathyx.com/pandi.js
 ||widget.laxarxa.com/ext/embeddable_frames/
 ||widgets.helpmycash.com/ranking-financiero/
+||wowchakra.com/images/banners/
 ||wp.com/autoblog.com.ar/wp-content/uploads/*.gif
 ||wp.com/www.cronicadigital.cl/imagenes/noticias/2017/02/cronica-letrero.jpg
 ||wp.com/www.cronicadigital.cl/imagenes/promocion-cronica.jpg
 ||xtremostereo.net/t3l33/
 ||yucatan.com.mx/wp-content/uploads/*/*/banner
+||zetaestaticos.com/comun/upload/0/628/628692.jpg
 ||zeulo.anime-extremo.com^
 ||zonatorrent.tv/min/$script
 ! Anti-Adblock
@@ -841,6 +859,7 @@ $websocket,domain=ddmix.net|descargasnsn.com
 ||bit.ly^$popup,domain=verpeliculasenlatino.com
 ||t.co^$popup,domain=verpeliculasenlatino.com
 ! *** Fetched from: https://raw.githubusercontent.com/easylist/easylistspanish/master/easylistspanish_adult/adult_specific_block.txt ***
+/^https?:\/\/spalumi\.com\/\w+\.[a-z]{3}/$image,domain=spalumi.com
 |http://$script,third-party,domain=mujeres-desnudas.com
 ||absoluporn.es/code/script/back.php
 ||absoluporn.es/javascript/front.js
@@ -856,7 +875,6 @@ $websocket,domain=ddmix.net|descargasnsn.com
 ||pic-upload.xyz/images/2017/02/18/sKh2MNmQ.png
 ||pic-upload.xyz/images/2017/11/13/bannertzvercomics.jpg
 ||ra.poringa.net^
-||spalumi.com^$image
 ||tangasmix.com/img-ban-ep/
 ||tangasmix.com/inc/adds/
 ||teatroporno.com/ai/
@@ -1754,18 +1772,23 @@ spalumi.com##marquee
 !-----------------------Whitelists to fix broken sites------------------------!
 ! *** Fetched from: https://raw.githubusercontent.com/easylist/easylistspanish/master/easylistspanish/easylistspanish_whitelist.txt ***
 @@-publicidad.$~third-party,domain=regalos-publicidad.es|todo-publicidad.com
-@@||ajax.googleapis.com/ajax/libs/$script,third-party,domain=animeflv.net|ddmix.net|descargasnsn.com|lacajita.xyz|reyanime.com|seriesblanco.com
+@@||ajax.googleapis.com/ajax/libs/$script,third-party,domain=animeflv.net|anitube.cz|ddmix.net|descargasnsn.com|lacajita.xyz|reyanime.com|seriesblanco.com
 @@||aurora-israel.co.il/wp-content/themes/Newspaper/bannersswf/banner_newsletter1.swf
 @@||aurora-israel.co.il/wp-content/themes/Newspaper/bannersswf/clima3_29_11_2016.swf
 @@||aurora-israel.co.il/wp-content/themes/Newspaper/bannersswf/facebook_twitter2.swf
 @@||aurora-israel.co.il/wp-content/themes/Newspaper/bannersswf/notas-*.swf
+@@||bootstrapcdn.com/bootstrap/$script,domain=anitube.cz
+@@||cdn.jsdelivr.net^$script,domain=anitube.cz
+@@||cdn.streamroot.io^$script,domain=anitube.cz
+@@||cloudflare.com/ajax/libs/$script,domain=animakai.tv|animeflv.net|anitube.cz|anitubebr.com|hlat.me
 @@||code.jquery.com^$script,third-party,domain=elitetorrent.net|lacajita.xyz|seriesblanco.com
-@@||connect.facebook.net/es_ES/all.js$script,third-party,domain=divxatope.com|divxatope1.com|ftail.tv|mejorenvo.com|newpct.com|newpct1.com|shippuden.tv|torrentlocura.com|torrentrapid.com|tumejortorrent.com
-@@||connect.facebook.net/es_LA/sdk.js$script,third-party,domain=lacajita.xyz|seriesblanco.com|submanga.org
-@@||content.jwplatform.com^$script,domain=animakai.tv
+@@||connect.facebook.net/*/all.js$script,third-party,domain=animeflv.net|divxatope.com|divxatope1.com|ftail.tv|jkanime.net|lacajita.xyz|mejorenvo.com|newpct.com|newpct1.com|seriesblanco.com|shippuden.tv|submanga.org|torrentlocura.com|torrentrapid.com|tumejortorrent.com
+@@||connect.facebook.net/*/sdk.js$script,third-party,domain=animeflv.net|divxatope.com|divxatope1.com|ftail.tv|jkanime.net|lacajita.xyz|mejorenvo.com|newpct.com|newpct1.com|seriesblanco.com|shippuden.tv|submanga.org|torrentlocura.com|torrentrapid.com|tumejortorrent.com
+@@||content.jwplatform.com^$script,domain=animakai.tv|animeflv.net
 @@||diariosanrafael.com.ar/images/banners/banner_nexo.jpg
 @@||diariosanrafael.com.ar/images/banners/banner_twitter.png
-@@||disqus.com^$script,third-party,domain=ftail.tv|lacajita.xyz|seriesblanco.com|shippuden.tv
+@@||disqus.com^$script,third-party,domain=anitube.cz|ftail.tv|jkanime.net|lacajita.xyz|seriesblanco.com|shippuden.tv
+@@||disquscdn.com^$script,domain=anitube.cz|ftail.tv|jkanime.net|lacajita.xyz|seriesblanco.com|shippuden.tv
 @@||elitegol.com/lanzalayer.php$script,third-party,domain=elitetorrent.net
 @@||expreso.com.mx/images/anuncios/newsletter-anuncio.jpg$image,domain=expreso.com.mx
 @@||grupoet.com/ewn_pie.php$script,third-party,domain=elitetorrent.net
@@ -1796,12 +1819,11 @@ spalumi.com##marquee
 @@||09stream.com/reproductores/adblock.js
 @@||active.cache.el-mundo.net/js/advertisement.js
 @@||adpass.atresmedia.com/*/index/*/ad*.js$xmlhttprequest
-@@||adsterra.com/wp-content/plugins/sitepress-multilingual-cms/res/js/sitepress.js^$script,domain=anitubebr.com
 @@||akamaihd.net/*/defaultview/*/fuckadblock.js$script,third-party,xmlhttprequest,domain=mitele.es
 @@||akamaihd.net/defaultview/adjs.js$script,third-party,xmlhttprequest,domain=mitele.es
 @@||akamaihd.net/dist/assets/nonAdBlock/$script,third-party,xmlhttprequest,domain=mitele.es
 @@||akamaihd.net/letrascom/static/js/ads.*.js$script,third-party,domain=letras.com
-@@||animeflv.net/js/ads.js$script,domain=animeflv.net
+@@||animeflv.net/js/adsbygoogle.js$script,~third-party
 @@||animeflv.ru/assets/animeflv/js/ads.js$script
 @@||animeflv.ru/assets/vast/videojs.ads.min.js$script
 @@||animextre.me/js/fuckadblock.js$script,~third-party
@@ -1815,11 +1837,9 @@ spalumi.com##marquee
 @@||bambergerkennanchitinous.com/.adframesrc.$script,third-party,domain=divxatope.com|divxatope1.com|newpct.com|newpct1.com|torrentlocura.com|torrentrapid.com|tumejortorrent.com
 @@||bemad.es^$generichide
 @@||booksmedicos.org^$generichide
-@@||cdnjs.cloudflare.com/ajax/libs/fuckadblock/*/fuckadblock.$script,domain=anitubebr.com
 @@||ciclismoafondo.es^$generichide
 @@||cinestrenostv.tv^$generichide
 @@||clasicotas.org^$generichide
-@@||cloudflare.com/ajax/libs/fuckadblock/*/fuckadblock.js$script,domain=hlat.me
 @@||cochesrc.com^$generichide
 @@||comunio.es^$generichide
 @@||corporacionwarez.com^$generichide
@@ -1857,6 +1877,7 @@ spalumi.com##marquee
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=shares.enetres.net
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=animeflv.ru
 @@||inmanga.com/Scripts/fuckadblock.js$script,domain=inmanga.com
+@@||jkanime.net/ads.js$script,~third-party
 @@||jovenesweb.com/plugins/ABchecker/src/advertisement.js$script,domain=jovenesweb.com
 @@||kjanime.net/link/advertisement.js$script,domain=kjanime.net
 @@||lacalleochotv.org^$generichide
