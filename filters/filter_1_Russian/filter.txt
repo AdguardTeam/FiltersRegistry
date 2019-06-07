@@ -5726,7 +5726,7 @@ news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var 
 !
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 @@|http$image,third-party,domain=vgorode.ua|meta.ua|vesti-ukr.com|zn.ua|censor.net.ua|gdz4you.com|tivix.co|okino.ua|football24.ua|gorod.dp.ua|kinozal.tv|sinoptik.com.ru|liga.net|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|bigmir.net|inforesist.org
-@@.js|$third-party,domain=vgorode.ua|meta.ua|vesti-ukr.com|zn.ua|censor.net.ua|gdz4you.com|tivix.co|okino.ua|football24.ua|gorod.dp.ua|newsyou.info|kinozal.tv|sinoptik.com.ru|segodnya.ua|liga.net|pravda.com.ua|epravda.com.ua|obozrevatel.com|bigmir.net|inforesist.org
+@@.js|$third-party,domain=vgorode.ua|meta.ua|vesti-ukr.com|zn.ua|censor.net.ua|gdz4you.com|tivix.co|okino.ua|football24.ua|gorod.dp.ua|newsyou.info|kinozal.tv|sinoptik.com.ru|liga.net|pravda.com.ua|epravda.com.ua|obozrevatel.com|bigmir.net|inforesist.org
 @@.js|$third-party,domain=orakul.com|i.ua|myparcels.ru|e1.ru|dynamo.kiev.ua|vsetv.com|compendium.su|textreferat.com|subject.com.ua|vklasse.online|tv.ua
 !
 /(adpartner\.pro|yottos\.com)/$domain=newsua.one,empty,important
@@ -5739,12 +5739,11 @@ news.yandex.*/*/*-*-*-*-$replace=/^.{0\,30}Ya\s*.{0\,7}\[[0-9]+][\s\S]*'\)|(var 
 ||a4p.adpartner.pro/jsunit$domain=orakul.com,empty,important
 ||tizerclik.com/show_teaser/$domain=orakul.com,empty,important
 @@||ssp.c8.net.ua/getcode.php$domain=textreferat.com
-@@||cdn.admixer.net/scripts*/loader*.js
+@@||cdn.admixer.net/scripts*/loader*.js$domain=~segodnya.ua
 @@||adservice.google.*/adsid/integrator.sync.js$domain=orakul.com|i.ua|myparcels.ru|e1.ru|vesti-ukr.com|dynamo.kiev.ua|vsetv.com|compendium.su|subject.com.ua|vklasse.online|zn.ua|censor.net.ua|eurointegration.com.ua
-@@||adservice.google.*/adsid/integrator.js$domain=orakul.com|i.ua|myparcels.ru|e1.ru|vesti-ukr.com|dynamo.kiev.ua|vsetv.com|compendium.su|subject.com.ua|vklasse.online|zn.ua|censor.net.ua|gdz4you.com|okino.ua|football24.ua|gorod.dp.ua|eurointegration.com.ua|newsyou.info|segodnya.ua|liga.net|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|inforesist.org
+@@||adservice.google.*/adsid/integrator.js$domain=orakul.com|i.ua|myparcels.ru|e1.ru|vesti-ukr.com|dynamo.kiev.ua|vsetv.com|compendium.su|subject.com.ua|vklasse.online|zn.ua|censor.net.ua|gdz4you.com|okino.ua|football24.ua|gorod.dp.ua|eurointegration.com.ua|newsyou.info|liga.net|pravda.com.ua|epravda.com.ua|obozrevatel.com|24tv.ua|inforesist.org
 @@||a4p.adpartner.pro/vunit?id=$domain=censor.net.ua|football24.ua|24tv.ua
 @@||a4p.adpartner.pro/jsunit?id=$domain=newsyou.info
-@@||gaua.hit.gemius.pl^$domain=segodnya.ua
 @@||cdn.yottos.com/adsbyyottos.js$domain=simpsonsua.com.ua
 @@||rg.yottos.com/bl.js$domain=newsyou.info
 simpsonsua.com.ua#$#.adsbyyottos { height: 1px!important; visibility: hidden!important; }
@@ -5758,7 +5757,7 @@ simpsonsua.com.ua#$#.adsbyyottos { height: 1px!important; visibility: hidden!imp
 ||block.*.com/rotator/*.js$domain=tivix.co,important
 @@||yastatic.net/pcode/adfox/loader.js$domain=news.ngs.ru
 @@||an.yandex.ru/system/context.js$domain=news.ngs.ru
-@@||adservice.google.*/adsid/integrator
+@@||adservice.google.*/adsid/integrator$domain=~segodnya.ua
 @@||cdn.alfadart.com/js/libs/prebid.js$domain=news.ngs.ru
 @@||telegraf.in.ua/uploads/banners/*
 !#endif
@@ -5948,6 +5947,8 @@ xatab-repack.net#$#html:has(> body) { background: #ffffff!important; }
 2gis.kz##.miniCard:has(a[href^="http://redirect.2gis.com/adv/"])
 2gis.ru,2gis.ua,2gis.kz##div[data-n="wat-minicard"]:has(> div[data-n="wat-ads-text"])
 !
+segodnya.ua##.content > article > div.b-read_also:has(> div.block > a[class="b-news"][rel="nofollow"])
+ipress.ua##div:has(> b:contains(НОВОСТИ ПАРТНЕРОВ))
 relizua.com##.colum_left > .block:has(a[target="_blank"] > img)
 tsn.ua##.c-aside-box:has(> div[id^="div-gpt-ad-"])
 lenta.ru##.b-topic-sidebar div:has(> div:contains(Новости партнеров))
@@ -5982,7 +5983,6 @@ tut.by##.l-col:has(.entry-addition:contains(Реклама))
 galka.if.ua##.main-sidebar.right > .widget:has( > .textwidget)
 ridus.ru##.stickedSlide:has(> .view_banner)
 medialeaks.ru##.material-sidebar > div > div:has(div[id^="adfox"])
-segodnya.ua##.homepage-content > div.block:has(> div.b-ads)
 e-news.su###dle-content > div[class="side-block decor related"]:has(> div.side-b-t:contains(Реклама))
 levashove.ru##aside[id="secondary"] > section.widget_text:has(> h3 > span:contains(Реклама))
 gazeta.ua##.container div.w:has(> div[id^="adpartner-"])
@@ -7195,6 +7195,12 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/34828
+segodnya.ua#$#div[id^="div-gpt-ad"] { visibility: hidden!important; }
+segodnya.ua#$##articleBottomInformer { visibility: hidden!important; max-height: 5px!important; }
+segodnya.ua#$#iframe[id^="google_ads_iframe"] { visibility: hidden!important; max-height: 5px!important; }
+! film.ru - fixing nav string
+film.ru#$#.b-nav-string { margin-top: 50px!important; }
 ! fasttorrent.su - удаление отступа сверху
 fasttorrent.su#$##container { margin: 64px auto 0 auto!important; }
 ! tut.by - удаление брендированного фона
@@ -9585,6 +9591,9 @@ Ly9hbi55YW5kZXgucnUv
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.name|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+segodnya.ua##.article-banner
+segodnya.ua##a[class="b-news"][rel="nofollow"]
+segodnya.ua##div[class^="b-read_also"][class*="partbers-"]
 ||brandings.kanobu.ru^
 kanobu.ru##a[href^="/ainfo/partner/click"][target="_blank"] > img
 pornogig.club###adpl
