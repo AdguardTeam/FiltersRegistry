@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-06-07 20:51:20 CEST
+! Last modified: 2019-06-08 13:23:34 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -113,6 +113,7 @@ gamereactor.se#$##pagebackground { background-image: none !important }
 garaget.org##.small.discrete:has-text(Annons:)
 garaget.org##.title-bg:has-text(Sponsrade tjänster)
 gynning.net##[id^="post-"]:has(h3:has-text(/i samarbete med/i))
+halsafitness.se,yogaworld.se##.post-wrap:has(a[title="PROMOTION"])
 halsafitness.se,yogaworld.se##.post-wrap:has(h3:has-text(/annonssamarbete/i))
 hamnenplay.solidtango.com#$##video-controls-bar { display: initial !important; }
 hamsterpaj.net##.article:has(a:has-text(/casino|spelautomat/i))
@@ -722,6 +723,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /plugins/easy-adsense-ads-scripts-manager/*
 /plugins/easy-affiliate-links/*$domain=byggteknikforlaget.se|handbollskanalen.se|killsteal.se|pconline.se|viralsweden.com
 /plugins/easy-eu-cookie-law/*
+/plugins/easy-side-tab-pro/*$domain=samnytt.se
 /plugins/easy-wp-cookie-popup/*$script,stylesheet
 /plugins/eu-cookie-law/*$script,stylesheet
 /plugins/facebook-conversion-pixel/*
@@ -770,6 +772,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /plugins/so-widgets-bundle/*$domain=lokalsport.nu
 /plugins/social-warfare/*$script,domain=mkse.com
 /plugins/sociallocker-next-premium/*$domain=travprat.se
+/plugins/socialsnap-plus/*$script,domain=samnytt.se
 /plugins/statebuilt-facebook-page-like-popup/*
 /plugins/sticky-facebook-banner/*$script,domain=ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 /plugins/sw_ad_inserter/*$script,stylesheet
@@ -777,7 +780,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /plugins/thirstyaffiliates/*$script
 /plugins/thrive-leads/*
 /plugins/uk-cookie-consent/*$domain=akerioentreprenad.se|datormagazin.se|hoglandsnytt.se|linkopingnews.se|norrkopingnews.se|samnytt.se
-/plugins/Ultimate-Premium-Plugin/*$script,domain=opulens.se
+/plugins/Ultimate-Premium-Plugin/*$script,xmlhttprequest,domain=opulens.se
 /plugins/ultimate-social-media-icons/*$image,script,stylesheet,domain=buzzter.se|grillbaronen.se|intre.se
 /plugins/wf-cookie-consent/*$script,stylesheet
 /plugins/wordpress-popup/*$domain=buzzter.se
@@ -801,7 +804,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /pulse-sdk-html5/*$object,object-subrequest,domain=di.se
 /pulse_flash_ad*.swf$object,domain=svd.se
 /pulsetracking.$script,domain=aftonbladet.se
-/pum/*$script,domain=byggipedia.se|exponera.nu|opulens.se|tkj.se
+/pum/*$script,xmlhttprequest,domain=byggipedia.se|exponera.nu|opulens.se|tkj.se
 /pum/*$stylesheet,domain=it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se
 /PUSHNOTIFICATIONS_CONSENT$xmlhttprequest,domain=njus.me
 /QXA.$script,domain=qruiser.com|qx.se
@@ -931,6 +934,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@/js/advert.$script,~third-party,domain=burlovsnyheter.se
 @@/js/advertisement*.$script,~third-party,domain=dagensmedia.nu|devote.se|expressen.se|familjeliv.se|feber.se|skyddsombud24.se|tjock.se
 @@/js/advertising.$script,~third-party,domain=byggnadsarbetaren.se|cykla.se|elbilsnytt.se|snowmobile.se|svegot.se|tekniksmart.se|vi-tidningen.se|vi.se|vilaser.se
+@@/opulens_banner$image,domain=opulens.se
 @@/scripts/advertisement*.$script,~third-party,domain=expressen.se
 @@/show_ads.js$script,~third-party,domain=happypancake.com
 @@/vbc/jquery$domain=vi.se
@@ -1832,6 +1836,7 @@ runnersworld.se##body > div.d-md-block > a[target="_blank"]
 saljledarskap.se,tjanstebilen.se###cookieAcceptBar
 saljledarskap.se,tjanstebilen.se###myModal
 saljledarskap.se,tjanstebilen.se##a[href*="/?SPA="]
+samnytt.se##.estp-tab-wrapper
 samnytt.se##.nc_socialPanel
 samnytt.se##a[data-bid][href*="/linkout/"]
 schoolido.se##.so-cookie__area
@@ -2404,6 +2409,7 @@ yougov.se##.cookie-confirm
 ||openload.co/assets/js/video-js/vast$script
 ||opinionstage.com/assets/autoengage.$script
 ||optnmnstr.com^$third-party
+||opulens.se^$csp=worker-src 'none'
 ||organicfruitapps.com/analytics$image
 ||oribi.io^$third-party
 ||osterbottenstidning.fi/Scripts/*analytics$script
