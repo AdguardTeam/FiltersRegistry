@@ -5781,9 +5781,7 @@ drive2.ru##div.g-column-mid > div[class]:not([id]):not([data-id]):not([data-type
 cyberforum.ru##.page > div[style][align="left"] > table[align="center"][-ext-has='> tbody > tr > td > div > div[id^="yandex_rtb_"]']
 !
 ! anistar.org - рекламная новость
-anistar.org###dle-content > div.news:has(> div.news_text > div.descripts > a > div[style="text-align:center;"] > span)
-! anistar.org - баннер сверху
-anistar.org##body > div:has( > a[target="blank_"]):matches-css(height: 162px)
+anistar.org,anistar1.org###dle-content > div.news:has(> div.news_text > div.descripts > a > div[style="text-align:center;"] > span)
 !
 ! https://forum.adguard.com/index.php?threads/25822/
 stratege.ru#$#body > #wrapper > div#content[-ext-has="> div"] { padding-top: 100px !important; }
@@ -7106,6 +7104,9 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/35578
+fxstreet.ru.com#$#body { overflow: visible!important; }
+fxstreet.ru.com#$#.fxs_prestitial-window-block { display: none!important; }
 ! amic.ru - удаление отступа сверху
 amic.ru#$#.wrapper.branded2 { padding-top: 0!important; }
 ! bombardir.ru - удаление отступа сверху
@@ -7133,8 +7134,6 @@ hdlava.com#$#body > header { margin-bottom: 30px!important; }
 26-2.ru#$#body.branded { margin-top: 40px!important; }
 ! tut.by - удаление брендированного фона
 tut.by#$#body { background: #e6e6e6!important; }
-! anistar.org - удаление брендированного фона
-anistar.org#$#body { background: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31619
 anidub.com#$#body > div[style*="min-width: 1200px;"]  { background: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32294
@@ -9520,6 +9519,17 @@ Ly9hbi55YW5kZXgucnUv
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+bigbangonline.info##.ads-none
+||staticcontent.fxstreet.com/website/ads_popup/
+anistar.org,anistar1.org##div[id^="brendin"] > div[class]:not([class*="wrapper"]):not([class="footer"]):not([class="a-message"]) > a[target="blank_"]:empty
+/engine/ad/*$domain=anistar.org|anistar1.org
+/anistar_telegram.png$domain=anistar.org|anistar1.org
+_240x400.html$domain=anistar.org|anistar1.org
+/banners*.php$domain=anistar.org|anistar1.org
+||vk.com/js/api/openapi.js$important
+anistar.org,anistar1.org##div[style^="width:240px;height:400px;"]
+anistar.org,anistar1.org##div[style="width:320px;height:345px;"]
+anistar.org,anistar1.org##div[id^="videoroll"]
 super-interes.ru###__promo-sticky-button__
 super-interes.ru##.blog-post__share
 super-interes.ru##.blog-post__video-ad
@@ -9700,12 +9710,6 @@ lektsii.org##td[valign="top"] > center > div.link2
 ||literaguru.ru/wp-content/plugins/distr/js/distr-adv-front.js
 portwine-linux.ru##a[href^="https://goo.gl/"] > img
 ||adultmult.ru/promo/
-anistar.org##body > div > a[target="blank_"]
-||anistar.org/templates/*_240x400_
-anistar.org##div[style^="width:240px;height:400px;"]
-anistar.org##div[id^="vide_ad_oustream"]
-anistar.org##div[style="text-align:center;"] > a[target="blnak_"] > img
-anistar.org##iframe[src^="/banners"]
 ||hevc-club.ucoz.net/.s/src/44db6ebf9c.js
 play.shikimori.org##.spns_advrtr_240x400
 dnepr.news###colona a[target="_blank"] > img
@@ -12387,7 +12391,6 @@ droidmod.ru##.rkl-item
 seksi-new.com##.rklbox
 bigcinema.xyz,kinoshek.net##.rklma
 mctop.su##.rmc-3-top
-anistar.org##.roll-adbanner
 forum.qrz.ru##.rotator
 techsupport.diary.ru##.rotator-zone
 kinoclub.me##.row > div > a[rel="nofollow"] > img
@@ -17567,9 +17570,6 @@ kinopoisk.ru##script:not([src]) + div:not([id="itemList"]) > div[id*="_"][class]
 ||a.radio7.ru/*/getCode?$replace=/(<[A-Z]+AST[\s\S]*?>)[\s\S]*<\/[A-Z]+AST>/<?xml version="1.0"?><nobanner><\/nobanner>/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/8396
 ||a.europaplus.ru/*/getCode?$replace=/(<[A-Z]+AST[\s\S]*?>)[\s\S]*<\/[A-Z]+AST>/<?xml version="1.0"?><nobanner><\/nobanner>/,important
-! https://github.com/AdguardTeam/AdguardFilters/issues/8345
-||anistar.org/uploads/*.php$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/
-||anistar.org/vid*.php?id=$replace=/var\stagAD=\[[\s\S]+?];//,important
 ! https://forum.adguard.com/index.php?threads/25004/
 ||24video.*/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important,~script,~stylesheet,~xmlhttprequest,domain=24video.ws|24video.in|24video.adult|24video.top|24video.sexy|24video.sexy|24video.guru
 ! https://forum.adguard.com/index.php?threads/27027/
