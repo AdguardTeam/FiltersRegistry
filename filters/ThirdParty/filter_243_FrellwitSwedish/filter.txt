@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-07-11 12:31:28 CEST
+! Last modified: 2019-07-12 07:54:40 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -49,6 +49,7 @@ akaskidor.se,body.se,svenskgolf.se#$#body { background-image: none !important; }
 akaskidor.se,svenskgolf.se##.margin-bottom:has(.row--native)
 akerstromsblog.com,annsoderlund.com,ellinorlofgren.se,emmagreen.se,fokis.se,fredagskocken.se,fridaselkirkblogg.se,frureinhold.se,gynning.net,hormonerhemorrojder.se,magnusnorman.com,pennyparnevik.com,pingishadenius.com,sannafischer.se,sannalundell.se,teresagrundin.se##[id^="post-"]:has(.sponsored-notification)
 alexandrabring.se,biancaingrosso.se##article[id^="post-"]:has(em:has-text(/i samarbete med/i))
+alicestenlof.com#$#.noscroll { overflow: initial !important; }
 allabolag.se##article:has(.advert__mark)
 allakorsord.se,allas.se,baaam.se,dromhemochtradgard.se,elle.se,elledecoration.se,ellematovin.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##article[id^="post-"]:has(a[href$="/annons/"])
 alltforforaldrar.se##.unslider-wrap.unslider-carousel>li:has(.preamble-category:has-text(/^annons/i))
@@ -510,7 +511,6 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /banner/$script,domain=cleannet.se|dagenshandel.se|entreprenad.com|entreprenor.se|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|kemivarldenbiotech.se|lifesciencesweden.se|magasinetparagraf.se|medtechmagazine.se|motormagasinet.se|packnet.se|plastnet.se|processnet.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|verkstaderna.se|woodnet.se
 /banners/*casino$image
 /bannersidor/*
-/bau.js$script,domain=dagensmedia.se
 /bc-tracking.js$script,domain=digikey.se
 /betalannonser/*$domain=filmcafe.se
 /bilder/ads/*
@@ -566,6 +566,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /cx-emediate-userprofile-se.$script
 /cx/Matchad$subdocument
 /CXense_Video_Handler/*$subdocument
+/dam/natives$xmlhttprequest,domain=dagensmedia.se
 /dam/personalized/*$domain=dagensmedia.se
 /dfp.css$stylesheet,domain=ljudochbild.se
 /docunet_stats.js$script,domain=byggvarlden.se
@@ -659,12 +660,12 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /js/svenskanamn_param_init.$script
 /js/userneeds.$script
 /js/widget_tracking.js$script,domain=xn--fretagsverksamhet-zzb.se
+/kenzazouiten/lib/js/sticky.$script,stylesheet
 /kingrev.php$image,domain=kingsizemag.se
 /kollos*.js$script,domain=kolozzeum.com
 /lazyad-loader.$script
 /lazyload-ad.$script
 /leeads_takeover$script
-/lib/js/sticky.$script,stylesheet,domain=kenzas.se
 /license.$script,domain=jawcloud.co|nxload.com|openload.co|openload.pw|streamango.com
 /links/*casino*.$image,domain=emocore.se
 /listByType?*adSettings$xmlhttprequest,domain=kokaihop.se
@@ -693,7 +694,6 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /monetization/pixel-sdk/*
 /mp_emediate/inc/annons.html
 /n24.js?$domain=filmtipset.se
-/native.js$script,domain=dagensmedia.se
 /native_teaser_active/*$image,domain=dagenssamhalle.se
 /new_construction_ads/*$domain=hemnet.se
 /newsletter/*$domain=zalando.se
@@ -846,7 +846,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /rpc*/prisjakt$xmlhttprequest,domain=99mac.se|fz.se|sweclockers.com
 /run/analytic$~third-party,xmlhttprequest,domain=momondo.se
 /Scripts/burt/*$script,domain=di.se
-/scripts/pb*.js$script,domain=alicestenlof.com|elinskoglund.com|fannystaaf.se|linnahlborg.se|lovisawallin.se|moamattsson.se|nouw.com|saraabrahamsson.se
+/scripts/pb*.js$script,domain=elinskoglund.com|fannystaaf.se|linnahlborg.se|lovisawallin.se|moamattsson.se|nouw.com|saraabrahamsson.se
 /se-wordpress-agilis-solum/assets/js/ad-collapse.$script
 /se-wordpress-gdpr/*
 /se-wordpress-google-analytics/*
@@ -876,7 +876,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /stats/ewstats.$script
 /stats/sitecatalyst/s_code.jsp$script,domain=aftonbladet.se
 /sticky*.$script,stylesheet,domain=svenskafans.com
-/sticky-ads.*.js$script,domain=hemnet.se
+/sticky-ads.$script
 /strossle-start-page-ad$xmlhttprequest
 /sv_se/metrics/*$script,xmlhttprequest
 /swfobject.js$script,domain=dagenstv.com
@@ -983,7 +983,6 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@||aftonbladet.se/hyper-assets/namegen.$script
 @@||aka-cdn.adtech.de/dt/common/DAC.js$script,domain=bandyplay.se
 @@||akaskidor.se^$generichide
-@@||alicestenlof.com^$generichide
 @@||assets-cdn.mytaste.org/js/ads.js$script
 @@||atl.nu^$generichide
 @@||boffo.se^$generichide
@@ -1069,7 +1068,6 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@||yospace.com/csm/live/*.m3u8$xmlhttprequest,domain=tv4play.se
 _jquery.blockUI.$script,domain=fssweden.se
 abus.com#@##cookieChoiceInfo
-adContainer$script,domain=dagensmedia.se
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,unt.se,uppgang.com,vimmerbytidning.se,vt.se##.banner-column
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,unt.se,uppgang.com,vimmerbytidning.se,vt.se##.destination-border-color
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,unt.se,uppgang.com,vimmerbytidning.se,vt.se##.lunchguide
@@ -1115,8 +1113,8 @@ aletorget.se,alingsastorget.se,almhulttorget.se,alvestatorget.se,amaltorget.se,a
 aletorget.se,alingsastorget.se,almhulttorget.se,alvestatorget.se,amaltorget.se,angelholmtorget.se,arbogatorget.se,arvikatorget.se,askersundtorget.se,avestatorget.se,bastadtorget.se,bengtsforstorget.se,bjuvtorget.se,bodentorget.se,bollebygdtorget.se,bollnastorget.se,borastorget.se,borlangetorget.se,botkyrkatorget.se,bromollatorget.se,eksjotorget.se,enkopingtorget.se,eskilstunatorget.se,eslovtorget.se,fagerstatorget.se,falkenbergtorget.se,falkopingtorget.se,faluntorget.se,filipstadtorget.se,flentorget.se,forshagatorget.se,gallivaretorget.se,gavletorget.se,gislavedstorget.se,goteborgtorget.se,gotenetorget.se,gotlandtorget.se,hagforstorget.se,hallsbergtorget.se,hallstahammartorget.se,halmstadtorget.se,haningetorget.se,harnosandtorget.se,harrydatorget.se,hassleholmtorget.se,hebytorget.se,hedemoratorget.se,helsingborgtorget.se,herrljungatorget.se,hoforstorget.se,hoganastorget.se,hoortorget.se,horbytorget.se,huddingetorget.se,hudiksvalltorget.se,hultsfredtorget.se,hyltetorget.se,jonkopingtorget.se,kalixtorget.se,kalmartorget.se,karlshamntorget.se,karlskogatorget.se,karlskronatorget.se,karlstadtorget.se,katrineholmtorget.se,kavlingetorget.se,kiltorget.se,kirunatorget.se,klippantorget.se,kopingtorget.se,kramforstorget.se,kristianstadtorget.se,kristinehamntorget.se,krokomtorget.se,kumlatorget.se,kungalvtorget.se,kungsbackatorget.se,laholmtorget.se,landskronatorget.se,leksandtorget.se,lidkopingtorget.se,ljungbytorget.se,ljusdaltorget.se,ludvikatorget.se,luleatorget.se,lundtorget.se,lyckseletorget.se,lysekiltorget.se,malmotorget.se,mariestadstorget.se,markarydtorget.se,marktorget.se,moratorget.se,nackatorget.se,nassjotorget.se,norrtaljetorget.se,nybrotorget.se,nykopingtorget.se,nynashamntorget.se,olandtorget.se,olofstromtorget.se,orebrotorget.se,ornskoldsvikstorget.se,orusttorget.se,osbytorget.se,oskarshamntorget.se,ostersundtorget.se,osthammartorget.se,partilletorget.se,piteatorget.se,ronnebytorget.se,saffletorget.se,salatorget.se,sandvikentorget.se,sigtunatorget.se,simrishamntorget.se,sjobotorget.se,skaratorget.se,skellefteatorget.se,skovdetorget.se,skuruptorget.se,soderhamntorget.se,sodertaljetorget.se,sollefteatorget.se,sollentunatorget.se,solnatorget.se,solvesborgtorget.se,staffanstorptorget.se,stenungsundtorget.se,stockholmtorget.se,strangnastorget.se,stromstadtorget.se,sundsvalltorget.se,sunnetorget.se,svenljungatorget.se,tabytorget.se,tanumtorget.se,tidaholmtorget.se,tierptorget.se,timratorget.se,tingsrydtorget.se,tjorntorget.se,tomelillatorget.se,torsbytorget.se,tranastorget.se,tranemotorget.se,trelleborgtorget.se,trollhattantorget.se,trosatorget.se,uddevallatorget.se,ulricehamntorget.se,umeatorget.se,uppsalatorget.se,vallentunatorget.se,vanersborgtorget.se,varatorget.se,varbergtorget.se,varnamotorget.se,vasterastorget.se,vasterviktorget.se,vaxjotorget.se,vellingetorget.se,vetlandatorget.se,vimmerbytorget.se,ystadtorget.se##.collapse.row.jobb.annonslista
 aletorget.se,alingsastorget.se,almhulttorget.se,alvestatorget.se,amaltorget.se,angelholmtorget.se,arbogatorget.se,arvikatorget.se,askersundtorget.se,avestatorget.se,bastadtorget.se,bengtsforstorget.se,bjuvtorget.se,bodentorget.se,bollebygdtorget.se,bollnastorget.se,borastorget.se,borlangetorget.se,botkyrkatorget.se,bromollatorget.se,eksjotorget.se,enkopingtorget.se,eskilstunatorget.se,eslovtorget.se,fagerstatorget.se,falkenbergtorget.se,falkopingtorget.se,faluntorget.se,filipstadtorget.se,flentorget.se,forshagatorget.se,gallivaretorget.se,gavletorget.se,gislavedstorget.se,goteborgtorget.se,gotenetorget.se,gotlandtorget.se,hagforstorget.se,hallsbergtorget.se,hallstahammartorget.se,halmstadtorget.se,haningetorget.se,harnosandtorget.se,harrydatorget.se,hassleholmtorget.se,hebytorget.se,hedemoratorget.se,helsingborgtorget.se,herrljungatorget.se,hoforstorget.se,hoganastorget.se,hoortorget.se,horbytorget.se,huddingetorget.se,hudiksvalltorget.se,hultsfredtorget.se,hyltetorget.se,jonkopingtorget.se,kalixtorget.se,kalmartorget.se,karlshamntorget.se,karlskogatorget.se,karlskronatorget.se,karlstadtorget.se,katrineholmtorget.se,kavlingetorget.se,kiltorget.se,kirunatorget.se,klippantorget.se,kopingtorget.se,kramforstorget.se,kristianstadtorget.se,kristinehamntorget.se,krokomtorget.se,kumlatorget.se,kungalvtorget.se,kungsbackatorget.se,laholmtorget.se,landskronatorget.se,leksandtorget.se,lidkopingtorget.se,ljungbytorget.se,ljusdaltorget.se,ludvikatorget.se,luleatorget.se,lundtorget.se,lyckseletorget.se,lysekiltorget.se,malmotorget.se,mariestadstorget.se,markarydtorget.se,marktorget.se,moratorget.se,nackatorget.se,nassjotorget.se,norrtaljetorget.se,nybrotorget.se,nykopingtorget.se,nynashamntorget.se,olandtorget.se,olofstromtorget.se,orebrotorget.se,ornskoldsvikstorget.se,orusttorget.se,osbytorget.se,oskarshamntorget.se,ostersundtorget.se,osthammartorget.se,partilletorget.se,piteatorget.se,ronnebytorget.se,saffletorget.se,salatorget.se,sandvikentorget.se,sigtunatorget.se,simrishamntorget.se,sjobotorget.se,skaratorget.se,skellefteatorget.se,skovdetorget.se,skuruptorget.se,soderhamntorget.se,sodertaljetorget.se,sollefteatorget.se,sollentunatorget.se,solnatorget.se,solvesborgtorget.se,staffanstorptorget.se,stenungsundtorget.se,stockholmtorget.se,strangnastorget.se,stromstadtorget.se,sundsvalltorget.se,sunnetorget.se,svenljungatorget.se,tabytorget.se,tanumtorget.se,tidaholmtorget.se,tierptorget.se,timratorget.se,tingsrydtorget.se,tjorntorget.se,tomelillatorget.se,torsbytorget.se,tranastorget.se,tranemotorget.se,trelleborgtorget.se,trollhattantorget.se,trosatorget.se,uddevallatorget.se,ulricehamntorget.se,umeatorget.se,uppsalatorget.se,vallentunatorget.se,vanersborgtorget.se,varatorget.se,varbergtorget.se,varnamotorget.se,vasterastorget.se,vasterviktorget.se,vaxjotorget.se,vellingetorget.se,vetlandatorget.se,vimmerbytorget.se,ystadtorget.se##.mittenbanner
 alexandrabring.se##.PW_instagram_widget
-alicestenlof.com,elinskoglund.com,fannystaaf.se,linnahlborg.se,lovisawallin.se,moamattsson.se,nouw.com,saraabrahamsson.se###ConsentBanner
-alicestenlof.com,elinskoglund.com,fannystaaf.se,linnahlborg.se,lovisawallin.se,moamattsson.se,nouw.com,saraabrahamsson.se##[title="Ad space"]
+alicestenlof.com###cookies
+alicestenlof.com,linnherbertsson.se,mestmotor.se,muscles.se##.overlay
 allabolag.se##.topBnrContainer
 allakorsord.se,allas.se,baaam.se,dromhemochtradgard.se,elle.se,elledecoration.se,ellematovin.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##.c-newsletter
 allakorsord.se,allas.se,baaam.se,dromhemochtradgard.se,elle.se,elledecoration.se,ellematovin.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##.native-sponsored-splash
@@ -1391,6 +1389,8 @@ ekonominyheter.se##a[rel="dofollow"][target="_blank"]
 ekonominyheter.se,uwtd.me##a[href*="/track.adtraction."]
 elektronikforumet.com##td > a[href*="bildelar"][target="_blank"]
 elektronikforumet.com,existenz.se,funfunfun.se##a[href*="bannerid"]
+elinskoglund.com,fannystaaf.se,linnahlborg.se,lovisawallin.se,moamattsson.se,nouw.com,saraabrahamsson.se###ConsentBanner
+elinskoglund.com,fannystaaf.se,linnahlborg.se,lovisawallin.se,moamattsson.se,nouw.com,saraabrahamsson.se##[title="Ad space"]
 elle.se###product-wrapper
 emocore.se###main > #home_start_div ~ .m_t.box:nth-last-child(-n+2)
 emocore.se###sticky-panorama
@@ -1536,7 +1536,6 @@ fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria
 fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria.se##[class*="annonser"]
 friatider.se##.rightbox
 friidrott.se###sponsor
-fullpageAd$script,domain=dagensmedia.se
 funbeat.se##.l-adv-interstitial
 funnygames.se###katon-slot
 fuska.se###top1
@@ -1707,7 +1706,6 @@ lesscarbs.se##.category-annonssamarbete
 liberalerna.se###cc-notice
 lidkopingsnytt.nu###annons_head
 linnherbertsson.se##[id^="content-ad"]
-linnherbertsson.se,mestmotor.se,muscles.se##.overlay
 linnherbertsson.se,mp.se###cookies
 listor.se##.belowad
 listor.se##.swp_social_panelSide
@@ -2085,7 +2083,6 @@ vinbanken.se##.top-add
 viseniorer.se##.topheaderinfo
 webbjobb.io##.cookie
 webradio.dbmedia.se##.marquee
-widgets_native$script,domain=dagensmedia.se
 xn--fretagsverksamhet-zzb.se##.article-advertorial
 xn--fretagsverksamhet-zzb.se##.article-sponsored-by
 xn--lnforum-exa.se##.LFRBox
@@ -2416,7 +2413,6 @@ yougov.se##.cookie-confirm
 ||leiki.com^$third-party
 ||lemonwhale.com^*/adevent/$xmlhttprequest
 ||libring.com^$third-party
-||lightwidget.com^$third-party,domain=femme.se
 ||likebtn.com^$third-party
 ||link.theplatform.com^$xmlhttprequest
 ||ljuskompaniet.se^
@@ -2641,7 +2637,6 @@ yougov.se##.cookie-confirm
 ||turistmal.se/js/popup-controller.js$script
 ||tv4-trailers-prod.herokuapp.com/api/impression$xmlhttprequest
 ||tv4-trailers.b17g.net/api/trailers$xmlhttprequest
-||tv4play.se^$third-party,domain=gynning.net
 ||tvdags.se/json/stats$xmlhttprequest
 ||twingly.com^$third-party
 ||twittercounter.com^$third-party
