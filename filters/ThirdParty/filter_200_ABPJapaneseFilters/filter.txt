@@ -2,9 +2,9 @@
 ! Homepage: https://github.com/k2jp/abp-japanese-filters/
 ! Title: ABP Japanese filters (ONLY FOR Japanese and experienced users: READ Support Policy)
 ! Expires: 6 hours
-! OriginalVersion: 201907110307
+! OriginalVersion: 201907122327
 !
-! Last modified: 2019-07-11 03:07 JST(UTC+0900)
+! Last modified: 2019-07-12 23:27 JST(UTC+0900)
 ! Change log: https://github.com/k2jp/abp-japanese-filters/wiki/FilterChangeLog
 ! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
 ! Content license: Creative Commons BY-NC-SA 4.0 http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -284,8 +284,8 @@
 ! False positive with questionnaires, reported via Issue Report, Mar 20, 2012
 @@||blog.with2.net/vote/
 ! False positives with combined scripts
-@@||yahoo.*/combo?*&$script,stylesheet,domain=yahoo.co.jp|yahoo.com
-@@||yahooapis.*/combo?*&$script,stylesheet,domain=yahoo.co.jp|yahoo.com
+@@||yahoo.*/combo?*&$script,stylesheet,domain=tumblr.com|yahoo.co.jp|yahoo.com
+@@||yahooapis.*/combo?*&$script,stylesheet,domain=tumblr.com|yahoo.co.jp|yahoo.com
 ! False positives with HIGHLIGHT.JS scripts, reported by @dullneko via blog comment, Aug 29, 2012
 @@||yandex.st/highlightjs/
 ! False positives with jQuery, reported by 誤ブロック via blog comment, May 26, 2013
@@ -293,7 +293,7 @@
 ! False positives with combined stylesheets or scripts at Yahoo!
 ! Merged and limited the domain, Oct 25 and 26, 2014
 ! Added support for flickr.com acquired by Yahoo!, Jun 09, 2015
-@@.yimg.*/combo?*&$script,stylesheet,domain=flickr.com|yahoo.co.jp|yahoo.com
+@@.yimg.*/combo?*&$script,stylesheet,domain=flickr.com|tumblr.com|yahoo.co.jp|yahoo.com
 ! Layout collapse and some missing images because of the URL including /ad_partner/, Jan 18, 2012
 @@||s.yimg.jp/images/webowner/ad_partner/$domain=webowner.yahoo.co.jp
 ! False positives at analytics pages inside YouTube, reported via Issue Report, Feb 27, 2012
@@ -2932,7 +2932,7 @@
 /yie/ld/*
 /yieldbot.$third-party
 /yim.$object,script,subdocument
-/yql?$domain=yahoo.co.jp|yahoo.com
+/yql?$domain=tumblr.com|yahoo.co.jp|yahoo.com
 /ystat.
 /ywa.$script
 /z.php?id=$document
@@ -11861,7 +11861,7 @@ _yahooads_
 ||yahoo.*/b?
 ||yahoo.*/c?
 ||yahoo.*/gb.gif?
-||yahoo.*/p.gif?$domain=yahoo.co.jp|yahoo.com
+||yahoo.*/p.gif?$domain=tumblr.com|yahoo.co.jp|yahoo.com
 ||yahoo.*/images/rt.
 ||yahoo.*/images/rt_
 ||yahoo.*/js/geov2.$script
@@ -11915,7 +11915,7 @@ _yahooads_
 ||rdsig.yahoo.$image,object,subdocument
 ||rtb.pclick.secure.yahoo.
 ||tomlin.yahoo.
-||udc.yahoo.$domain=yahoo.co.jp|yahoo.com
+||udc.yahoo.$domain=tumblr.com|yahoo.co.jp|yahoo.com
 ||ybp.yahoo.
 ||ybx.yahoo.
 ||yeas.yahoo.
@@ -11953,30 +11953,30 @@ _yahooads_
 ||yieldtraffic.com^
 ||yieldtraffic.com^$popup
 ||yigao.com^$third-party
-||yimg.*/bdv/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/*/campaign/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/*/point$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/*/pr/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/account/sp/*/reg/ccc/$domain=yahoo.co.jp|yahoo.com
+||yimg.*/bdv/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/*/campaign/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/*/point$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/*/pr/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/account/sp/*/reg/ccc/$domain=tumblr.com|yahoo.co.jp|yahoo.com
 ! Commented out duplicated filters [https://github.com/k2jp/abp-japanese-filters/issues/9 reported] by [https://github.com/SMed79 SMed79], Jun 20, 2015
-! ||yimg.*/images/analytics/$domain=yahoo.co.jp|yahoo.com
+! ||yimg.*/images/analytics/$domain=tumblr.com|yahoo.co.jp|yahoo.com
 ! Moved to the Paranoid subscription to avoid a false positive blocking loading comments on each news at headlines.yahoo.co.jp. I think this is a tight-coupled bug because the filter is correctly blocking beacons or loggings. YAHOO JAPAN is essentially responsible for fixing it, May 16, 2015
-! ||yimg.*/images/ds/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/listing/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/market/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/news/newsSearch/$domain=yahoo.co.jp|yahoo.com
+! ||yimg.*/images/ds/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/listing/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/market/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/news/newsSearch/$domain=tumblr.com|yahoo.co.jp|yahoo.com
 ! Commented out a filter for beacon generator to avoid ReferenceError: YAHOO is not defined @ http://i.yimg.jp/lib/news/ult_1_1-min.js:1 , Jan 17, 2014
 ! Even though this filter is commented out, the beacon server ybx.yahoo.co.jp is still blocked ;-)
-! ||yimg.*/images/rapid/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/settlecomtd/yjbfp/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/ycd/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/images/yjcard/$domain=yahoo.co.jp|yahoo.com
-||yimg.*/js/geov*.$script,domain=yahoo.co.jp|yahoo.com
-||yimg.*/lib/*/cs_$script,domain=yahoo.co.jp|yahoo.com
-||yimg.*/lib/*/bc_$script,domain=yahoo.co.jp|yahoo.com
-||yimg.*/lib/*/sda/$script,domain=yahoo.co.jp|yahoo.com
-||yimg.*/lib/3pm/$script,domain=yahoo.co.jp|yahoo.com
-||yimg.*/lib/bc/$script,domain=yahoo.co.jp|yahoo.com
+! ||yimg.*/images/rapid/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/settlecomtd/yjbfp/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/ycd/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/images/yjcard/$domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/js/geov*.$script,domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/lib/*/cs_$script,domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/lib/*/bc_$script,domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/lib/*/sda/$script,domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/lib/3pm/$script,domain=tumblr.com|yahoo.co.jp|yahoo.com
+||yimg.*/lib/bc/$script,domain=tumblr.com|yahoo.co.jp|yahoo.com
 ||yimg.com/cv/$domain=yahoo.com
 ||yimg.com/iv/$domain=yahoo.com
 ||yimg.com/qb/$domain=yahoo.com
@@ -11985,7 +11985,7 @@ _yahooads_
 ||yimg.jp/iv/$domain=yahoo.co.jp
 ||yimg.jp/qb/$domain=yahoo.co.jp
 ||yimg.jp/rq/$domain=yahoo.co.jp
-! ||ads.yimg.$domain=yahoo.co.jp|yahoo.com
+! ||ads.yimg.$domain=tumblr.com|yahoo.co.jp|yahoo.com
 ||yiqiwin.com^$third-party
 ||yldbt.com^
 ||yldmgrimg.net^
@@ -12469,9 +12469,9 @@ _yahooads_
 ! Homepage: https://github.com/k2jp/abp-japanese-filters/
 ! Title: ABP Japanese Element-hiding filters (ONLY FOR Japanese and experienced users: READ Support Policy)
 ! Expires: 6 hours
-! OriginalVersion: 201907072116
+! OriginalVersion: 201907122334
 !
-! Last modified: 2019-07-07 21:16 JST(UTC+0900)
+! Last modified: 2019-07-12 23:34 JST(UTC+0900)
 ! Change log: https://github.com/k2jp/abp-japanese-filters/wiki/FilterChangeLog
 ! Code license: GNU GPL v3: http://www.gnu.org/licenses/gpl.html
 ! Content license: Creative Commons BY-NC-SA 4.0 http://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -13084,6 +13084,7 @@ _yahooads_
 ##a[href*=".afl.rakuten.co.jp/hsc/"]
 ##a[href*="//rd.rakuten.co.jp/c/?"]
 ! ##a[href*="//rd.rakuten.co.jp/s/?"]
+~rapidgator.net##a[href*="//rapidgator.net/article/premium/"]
 ~rikunabi.com##a[href*=".rikunabi.com/"][href*=";vos="]
 ~rikunabi.com##a[href*=".rikunabi.com/"][href*="?vos="]
 ##a[href*="rssad.jp/trendmatch/"]
