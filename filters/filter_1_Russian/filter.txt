@@ -74,6 +74,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||cassns.pro^$third-party
 ||cdn.movieads.ru^$third-party
 ||mirtrailer.ru^$third-party
 ||vak345.com^$third-party
@@ -5652,6 +5653,9 @@ news.yandex.*/*/*-*-*-*-$replace=/(^\{.*"common":.+"stationaryConnection":.+"com
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/33235
+oka.fm##.left > div[data-element-id][data-vp-repeat][class^="r"]:has(> div.brad15)
+oka.fm##.right > div[data-element-id][data-vp-repeat][class^="r"]:has(> div.brad15)
 ! ofxru.net - удаление отступа сверху
 ofxru.net#$?#.main-content { margin-top: 0!important; }
 ! mirknig.su - остатки рекламы
@@ -5659,6 +5663,9 @@ mirknig.su##td[width="100%"] > table[width="100%"][align="center"]:has(> tbody >
 mirknig.su##td[width="240"] > table[width="240"]:has(> tbody > tr > td > div[align="center"] > b.addnews:contains(Реклама))
 ! rezka.ag - удаление отступа сверху
 rezka.ag#$?#body { padding-top: 0!important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/33877
+pg11.ru##.article__main-content > div[class]:has(> div[class]:not(:has(div)))
+pg11.ru##.article__after-footer > div[class]:has(> div[class]:not(:has(div)))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32373
 novosti-n.org#?#div[style*="min-height: 270px"]:has(> div > div > iframe[width="300"][height="260"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32702
@@ -7147,6 +7154,9 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/30672
+magcity74.ru#$#.bmobile { display: none !important; }
+magcity74.ru#$#body { overflow: visible!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30304
 animevost.org#$#div[class^="headbg"] { background: none !important; }
 ! mma-today.net - удаление отступа сверху
@@ -9569,6 +9579,9 @@ Ly9hbi55YW5kZXgucnUv
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+oka.fm##.rek-module
+/www\.oka\.fm\/.+\/(yuzhnyj4.gif|cel.gif|tehnoplyus.jpg|na_chb_foto_250_250.jpg|ugzemli.gif|istorii.gif|advokat.jpg|odejda-shkola.gif|russkij-svet.jpg|dveri.gif|Festival_shlyapok_2.jpg)/$domain=oka.fm
+||oka.fm/news2019/250h400-*.jpg
 ||cdn2-thevladarcompany.netdna-ssl.com/ru/wp-content/uploads/sites/4/2018/10/GN_Takeover.jpg
 pickpoint.ru##.bn-index-ad1
 mangalib.me##.ads
@@ -14166,7 +14179,7 @@ aqa.ru##div[id^="div-gpt-ad"][style^="width:768px;"]
 back-in-ussr.com##div[id^="divTizerGroup"]
 politonline.ru##div[id^="div_sf_"]
 hdserials.tv##div[id^="gkBanner"]
-likar.info,hochu.ua,rusjev.net,agrimpasa.com,cod33.ru,dni24.com,every-holiday.ru,hronika.info,kinobriz.net,likar.info,mundo-latino.ru,nashaplaneta.su,newsmax.com.ua,audioboo.ru,headinsider.net,newsyou.info,ovgorskiy.ru,uchastniki.com##div[id^="gnezdo_ru_"]
+pg11.ru,likar.info,hochu.ua,rusjev.net,agrimpasa.com,cod33.ru,dni24.com,every-holiday.ru,hronika.info,kinobriz.net,likar.info,mundo-latino.ru,nashaplaneta.su,newsmax.com.ua,audioboo.ru,headinsider.net,newsyou.info,ovgorskiy.ru,uchastniki.com##div[id^="gnezdo_ru_"]
 meta.ua##div[id^="ioniashop"]
 azbooki.ru##div[id^="ithemesrotatingimages"]
 footballtransfer.com.ua,ostro.org,pravda.if.ua##div[id^="join_informer"]
