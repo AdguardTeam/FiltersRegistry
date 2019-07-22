@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-07-19 08:32:24 CEST
+! Last modified: 2019-07-22 07:26:07 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -189,6 +189,7 @@ nouw.com##.Container_blogPost:has(em:has-text(/reklamsamarbete/i))
 nouw.com##.magazine-grid-item:has(.badge:has-text(/annons/i))
 nsk.se,skd.se#$#body { opacity: 1 !important; }
 nsk.se,skd.se##div.skd-crsl-wrap:matches-css-before(content: Annons)
+nyheter24.se##.lazyload:has(span:has-text(/^sponsrat$/i))
 nyheter24.se##[id^="article"]:has(.native_header)
 nyheter24.se##[id^="article"]:has(em:has-text(/artikeln är i samarbete med/i))
 onlinepizza.se##li:has(.tag:has-text(Annons))
@@ -463,6 +464,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /_graphics/annons/*
 /_widget/destination$subdocument,domain=expressen.se
 /a?callback=pfmod.saveadsettings
+/ab-xiti-min.$script,domain=aftonbladet.se
 /abtf-pwa$domain=sd.se
 /AC_RunActiveContent.js$script,domain=dagenstv.com
 /acilia-main.$script,domain=foxtv.se
@@ -569,6 +571,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /cx-emediate-userprofile-se.$script
 /cx/Matchad$subdocument
 /CXense_Video_Handler/*$subdocument
+/d-footer.min.$script,domain=aftonbladet.se
 /dam/natives$xmlhttprequest,domain=dagensmedia.se
 /dam/personalized/*$domain=dagensmedia.se
 /dfp.css$stylesheet,domain=ljudochbild.se
@@ -873,6 +876,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /Sponsor/*$xmlhttprequest,domain=grontvader.se
 /sponsored_articles/*$domain=fastighetssverige.se
 /sponsrat-frequency.js$script,domain=nsk.se|skd.se
+/sptAutoTracker.$script,domain=aftonbladet.se
 /static.svd.se\/assets\/[0-9]+\-/$script,domain=svd.se
 /static/js/loada.js$script
 /statistics.$script,xmlhttprequest,domain=alltforforaldrar.se|byggnyheter.se|dagensfastigheter.se|dagensnaringsliv.se|energinyheter.se|fria.nu|friatidningen.se|goteborgsfria.se|industrinyheter.se|infrastrukturnyheter.se|inredningsnyheter.se|jarnvagsnyheter.se|landetsfria.se|mammasidan.se|market.se|metallerochgruvor.se|minbebis.com|papperochmassa.se|plastikoperationsforum.se|sesam.nu|solenerginyheter.se|sportochfritidsnyheter.se|stockholmsbyggnyheter.se|stockholmsfria.se|sxk.se|testfakta.se|transportochlogistik.se|vindkraftsnyheter.se
@@ -971,7 +975,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@/js/ads.js$~third-party,domain=24blekinge.se|24emmaboda.se|24falkenberg.se|24halmstad.se|24helsingborg.se|24kalmar.se|24kristianstad.se|24malmo.se|24nybro.se|24oland.se|24trelleborg.se|24uppsala.se|24varberg.se|24vasteras.se|24ystad.se|affarsliv.com|affarslivgotland.se|alltforforaldrar.se|alltsomsker.nu|amusetidningen.se|automobil.se|bike.se|caroftheyear.se|corren.se|deliquate.se|ekuriren.se|eposten.se|feber.se|folkbladet.se|foretagande.se|framtid.se|helagotland.se|husbilhusvagn.se|ilikeradio.se|karlekonline.se|kkuriren.se|klackspark.com|klassiker.nu|kritiker.se|kuriren.nu|ljudochbild.se|malagaguiden.se|mmabetz.se|mopedgaraget.se|mvt.se|naturvetenskap.org|norrbottensaffarer.se|nsd.se|nt.se|pt.se|rabattpris.se|radio.se|riksettan.net|sn.se|snowmobile.se|svenskjakt.se|swedroid.se|tjock.se|tvmatchen.nu|unt.se|uppgang.com|uppsalatidningen.se|vibilagare.se|vimmerbytidning.se|vt.se
 @@/js/ads/advert.min.js$script,domain=spelo.se
 @@/js/adsbygoogle.js$script,~third-party,domain=feber.se|sv.ucoin.net|tjock.se
-@@/js/advert.$script,~third-party,domain=burlovsnyheter.se
+@@/js/advert.$script,~third-party,domain=aftonbladet.se|burlovsnyheter.se
 @@/js/advertisement*.$script,~third-party,domain=dagensmedia.nu|devote.se|expressen.se|familjeliv.se|feber.se|skyddsombud24.se|tjock.se
 @@/js/advertising.$script,~third-party,domain=byggnadsarbetaren.se|cykla.se|elbilsnytt.se|snowmobile.se|svegot.se|tekniksmart.se|vi-tidningen.se|vi.se|vilaser.se
 @@/opulens_banner$image,domain=opulens.se
@@ -1092,6 +1096,7 @@ affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##a[href*="utm_campaign
 affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##section.sponsored-articles-inline
 aftonbladet.se###MegaAd
 aftonbladet.se##.ab-responsive-ads-wrapper
+aftonbladet.se##.abAdArea
 aftonbladet.se##.abAdWrapper
 aftonbladet.se##.abBtnShare
 aftonbladet.se##.abTheme-ad
