@@ -1,14 +1,12 @@
 #!/bin/bash
-apikey=$1
-secretkey=$2
-projectid=$3
+SERVICE_URL="https://twosky.adtidy.org/api/v1/"
 workDir=../..
 locales=("en" "ru" "ar" "bg" "ca" "zh" "zh_TW" "hr" "da" "nl" "fi" "fr" "de" "he" "hu" "id" "it" "ja" "ko" "no" "fa" "pl" "pt" "pt_BR" "pt_PT" "sr_Latn" "sk" "es_ES" "sv" "tr" "uk" "vi" "be_BY" "sl_SI")
 
 for locale in "${locales[@]}"
 do
     echo "Download tags.json for $locale locale"
-    python download.py -l $locale -p $projectid -o messages.json -f tags.json -a $apikey -s $secretkey
+    curl "${SERVICE_URL}download?format=strings&language=${locale}&filename=tags.json&project=filters-registry" -o messages.json
 
     destinationLocale=$locale
     if [ "$locale" = "sr_Latn" ]; then
@@ -49,7 +47,7 @@ done
 for locale in "${locales[@]}"
 do
     echo "Download groups.json for $locale locale"
-    python download.py -l $locale -p $projectid -o messages.json -f groups.json -a $apikey -s $secretkey
+    curl "${SERVICE_URL}download?format=strings&language=${locale}&filename=groups.json&project=filters-registry" -o messages.json
 
     destinationLocale=$locale
     if [ "$locale" = "sr-Latn" ]; then
@@ -88,7 +86,7 @@ done
 for locale in "${locales[@]}"
 do
     echo "Download filters.json for $locale locale"
-    python download.py -l $locale -p $projectid -o messages.json -f filters.json -a $apikey -s $secretkey
+    curl "${SERVICE_URL}download?format=strings&language=${locale}&filename=filters.json&project=filters-registry" -o messages.json
 
     destinationLocale=$locale
     if [ "$locale" = "sr-Latn" ]; then
