@@ -7912,6 +7912,7 @@ bmwfaq.org##.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 ! JS rules
 !
 polygon.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.getElementsByClassName("m-privacy-consent__button-content"); if(el) { el[0].click(); } }, 1000); });
+myprivacy.dpgmedia.be#%#AG_onLoad(function() { setTimeout(function() { var el = document.getElementsByClassName("form__button-group")[0]; if(el) { el.submit(); }; }, 300); });
 auto.ru#%#AG_onLoad(function() { var el=document.querySelector('div[id="confirm-button"]'); if(el) el.click(); });
 bk.com#%#document.cookie = "cookiePopup=%22true%22; path=/";
 web2.0calc.com#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("cookies")){document.cookie="cookies=yes;path=/",location.reload()}});
@@ -8063,6 +8064,8 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/37402
+@@||consent.cookiebot.com/uc.js$domain=warscrap.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37096
 @@||cdnjs.cloudflare.com/ajax/libs/cookieconsent$domain=hivemc.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35634
@@ -8136,7 +8139,7 @@ mobil.abus.com#@#.cookieconsent
 ! https://forum.adguard.com/index.php?threads/31111/
 @@||quantcast.mgr.consensu.org/cmp.js$domain=apkmirror.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30476
-@@||consent.cookiebot.com/*$domain=popsci.com
+@@||consent.cookiebot.com^$domain=popsci.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30475
 @@||media.larena.it/media/lib/cmp/cmp.bundle.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30190
