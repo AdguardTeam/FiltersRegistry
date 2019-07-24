@@ -1,7 +1,5 @@
 #!/bin/bash
-apikey=$1
-secretkey=$2
-projectid=$3
+SERVICE_URL="https://twosky.adtidy.org/api/v1/"
 workDir=../..
 locales=("en")
 
@@ -14,7 +12,7 @@ do
     node converter.js export messages.json $locale tags.json
 
     echo "Uploading tags.json for $locale locale"
-    python upload.py -l $locale -p $projectid -f tags.json -a $apikey -s $secretkey -r HIERARCHICAL_JSON
+    curl -XPOST "${SERVICE_URL}upload" -F "format=json" -F "language=${locale}" -F "filename=tags.json" -F "project=filters-registry" -F "file=@./tags.json"
 
     rm messages.json
     rm tags.json
@@ -29,7 +27,7 @@ do
     node converter.js export messages.json $locale groups.json
 
     echo "Uploading groups.json for $locale locale"
-    python upload.py -l $locale -p $projectid -f groups.json -a $apikey -s $secretkey -r HIERARCHICAL_JSON
+    curl -XPOST "${SERVICE_URL}upload" -F "format=json" -F "language=${locale}" -F "filename=groups.json" -F "project=filters-registry" -F "file=@./groups.json"
 
     rm messages.json
     rm groups.json
@@ -44,7 +42,7 @@ do
     node converter.js export messages.json $locale filters.json
 
     echo "Uploading filters.json for $locale locale"
-    python upload.py -l $locale -p $projectid -f filters.json -a $apikey -s $secretkey -r HIERARCHICAL_JSON
+    curl -XPOST "${SERVICE_URL}upload" -F "format=json" -F "language=${locale}" -F "filename=filters.json" -F "project=filters-registry" -F "file=@./filters.json"
 
     rm messages.json
     rm filters.json
