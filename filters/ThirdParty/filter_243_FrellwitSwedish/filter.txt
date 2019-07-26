@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-07-23 13:42:31 CEST
+! Last modified: 2019-07-26 08:09:57 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -166,6 +166,8 @@ merinfo.se##.articles-article-wrapper:has(span:has-text(/sponsrad/i))
 merinfo.se##.snippet-article-wrapper:has(.sponsored)
 mestmotor.se#$##piano { opacity: 1 !important; }
 mestmotor.se#$#html,body { overflow: auto !important; }
+metro.se##div[class*="css-"]:matches-css-before(content: "annons")
+metro.se##div[class^="css-"][width^="1,1"]:has-text(/hela denna artikel är en annons/i)
 metrojobb.se##.headlines__block:has(.ad-header)
 metromode.se##.js-blox-article:has(.c-article__ad.advert)
 metromode.se##.slick-item:has(.c-article__ad.advert)
@@ -670,6 +672,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /js/widget_tracking.js$script,domain=xn--fretagsverksamhet-zzb.se
 /kenzazouiten/lib/js/sticky.$script,stylesheet
 /kingrev.php$image,domain=kingsizemag.se
+/kit/qualp.$script,domain=expressen.se
 /kollos*.js$script,domain=kolozzeum.com
 /lazyad-loader.$script
 /lazyload-ad.$script
@@ -908,8 +911,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /uftiLoader.$script,domain=blocket.se
 /uploads/Adblockerpanda$image,domain=nordichardware.se
 /urls/count.json$script,domain=emilysliv.se|gabriellajoss.me|kenzas.se|mybabydolls.se|vimedbarn.se
-/users/*/*casi$image,domain=ng.se
-/users/*/*minibanner$image,domain=ng.se
+/users/2401/*$image,domain=ng.se
 /utag.$script,domain=blocket.se
 /vast/*$domain=streamango.com
 /veckansluncher.gif$domain=alingsastidning.se
@@ -2358,6 +2360,7 @@ yougov.se##.cookie-confirm
 ||freewheel-mtgx-tv.akamaized.net^$media,domain=viafree.se
 ||freyanews.com^*/tracker$script
 ||funnelytics.io^$third-party
+||gamblingsyndication.com^$third-party
 ||gameanalytics.com^$third-party
 ||gamedistribution.com/libs/gd/analytics.$script
 ||gamereactor.se/media/eventad/$image
@@ -2578,6 +2581,7 @@ yougov.se##.cookie-confirm
 ||runtnc.net^
 ||s3.amazonaws.com/cc.silktide.com/cookieconsent.$script
 ||sa.svenskalag.se/*/__tm.gif
+||samnytt.se^$csp=frame-src 'self' *.youtube.com youtube.com *.youtube-nocookie.com youtube-nocookie.com *.vimeo.com disqus.com
 ||sannsyn.com^$third-party
 ||sc-static.net/scevent.$third-party,domain=yelp.se
 ||scandicpartners.se^$third-party
