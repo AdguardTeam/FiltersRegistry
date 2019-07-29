@@ -3979,6 +3979,7 @@ adbetnet.com$third-party
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
+||up.gtorrent.ru^
 ||ad.velomania.ru^
 ||a.kidstaff.net^
 ||d10g3hyu3zeg91.cloudfront.net^$third-party
@@ -5471,6 +5472,7 @@ yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#%#//s
 !
 !+ PLATFORM(windows, mac, android)
 kinopoisk.ru#%#AG_setConstant('only_branding_adv', 'trueFunc');
+kinopoisk.ru#%#//scriptlet("set-constant", "KP.config.adfoxEnabled", "false")
 kinopoisk.ru#%#//scriptlet("set-constant", "only_branding_adv", "trueFunc")
 !
 24smi.org#%#//scriptlet("set-constant", "Object.prototype.AdvManager", "undefined")
@@ -5626,6 +5628,9 @@ news.yandex.*/*/*-*-*-*-$replace=/(^\{.*"common":.+"stationaryConnection":.+"com
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/37569
+gtorrent.ru#$?#body { padding-top: 0 !important; }
+gtorrent.ru#?#.blog_fullstory > div > div[style="text-align: center;"] > a[target="_blank"] > *
 ! you-anime.ru - удаление отступа сверху
 you-anime.ru#$?#body { padding-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36137
@@ -7159,6 +7164,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/37570
+lordsfilms.tv#$#body > div.wrap { margin-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28519
 razlozhi.ru#$#body > div[class][style^="background: url"][style*="rgb"][style*="; width:"][style*="; height:"] { width: 100% !important; }
 razlozhi.ru#$#body[class] { margin-right: 0 !important; }
@@ -9607,6 +9614,9 @@ Ly9hbi55YW5kZXgucnUv
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+gtorrent.ru##.adv
+agrarii-razom.com.ua##.friends-ears
+||ilenta.com/images/static/ls-1140x100-4.gif
 championat.com##.plista-block
 championat.com##.banner
 razlozhi.ru##div[class=" _1_1 _2d"] + span[class=" _1_2 _1_3 _v"]
@@ -9810,7 +9820,6 @@ filmz.ru##.banner3
 artrit-artroz.com##.flat_pm_outgoing.show
 beauty.ua##.partners-news-hrz
 beauty.ua##.sb-partners
-agrarii-razom.com.ua##.patners-ears
 agrarii-razom.com.ua##div[class^="ads-"]
 softolet.ru##.widget_custom_html
 softolet.ru##.widget_media_image
