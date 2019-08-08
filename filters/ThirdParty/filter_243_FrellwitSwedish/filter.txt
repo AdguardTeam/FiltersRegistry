@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-08-07 08:28:41 CEST
+! Last modified: 2019-08-08 08:24:31 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -286,11 +286,8 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 !#if env_mobile
 aftonbladet.se##div[data-reactroot] > div > div#MegaAd ~ div[class]:not(#header):not(.abThemeGradientPage)
 swedroid.se##div[id$="_ad_mobile"]
+swedroid.se##.externalTopMobile
 ikea.com##.cookie-info__panel--show
-/sv/local-extensions/header-footer/scripts/adform/*$domain=ikea.com
-/sv/local-extensions/header-footer/scripts/track.$script,domain=ikea.com
-/sv/local-extensions/header-footer/scripts/hotjar.$script,domain=ikea.com
-/sv/analytics/*$domain=ikea.com
 !#endif
 !#if !env_mobile
 forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__modal--in .idgcp__layer { background: none !important; }
@@ -902,6 +899,10 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /sticky*.$script,stylesheet,domain=svenskafans.com
 /sticky-ads.$script
 /strossle-start-page-ad$xmlhttprequest
+/sv/analytics/*$domain=ikea.com
+/sv/local-extensions/header-footer/scripts/adform/*$domain=ikea.com
+/sv/local-extensions/header-footer/scripts/hotjar.$script,domain=ikea.com
+/sv/local-extensions/header-footer/scripts/track.$script,domain=ikea.com
 /sv_se/metrics/*$script,xmlhttprequest
 /swfobject.js$script,domain=dagenstv.com
 /swordfishinc.download.akamai.com/*$script
@@ -996,6 +997,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@/js/advert.$script,~third-party,domain=aftonbladet.se|burlovsnyheter.se
 @@/js/advertisement*.$script,~third-party,domain=dagensmedia.nu|devote.se|expressen.se|familjeliv.se|feber.se|skyddsombud24.se|tjock.se
 @@/js/advertising.$script,~third-party,domain=byggnadsarbetaren.se|cykla.se|elbilsnytt.se|snowmobile.se|svegot.se|tekniksmart.se|vi-tidningen.se|vi.se|vilaser.se
+@@/optimizelyjs/*$domain=ikea.com
 @@/opulens_banner$image,domain=opulens.se
 @@/scripts/advertisement*.$script,~third-party,domain=expressen.se
 @@/show_ads.js$script,~third-party,domain=happypancake.com
@@ -2352,7 +2354,7 @@ yougov.se##.cookie-confirm
 ||europe-west1-bonnier-big-data.cloudfunctions.net^$third-party
 ||evertiq.se/bximg/$image
 ||everydaystories.se^$third-party
-||evidon.com^$third-party,domain=morningstar.se|spela.se
+||evidon.com^$third-party,domain=downdetector.se|morningstar.se|spela.se
 ||execute-api.eu-west-1.amazonaws.com/*/event$xmlhttprequest,domain=forum.hallon.se
 ||execute-api.eu-west-1.amazonaws.com/live/analytics/$xmlhttprequest
 ||existenz.se/img/prq.gif
@@ -2750,6 +2752,7 @@ yougov.se##.cookie-confirm
 ||yougov.se/_partner/request.js$script
 ||youplay.se^$third-party,domain=dayviews.com|emocore.se|familjeliv.se|hamsterpaj.net|kamrat.com
 ||yoursecurecheckout1.com^
+||ziffstatic.com^$third-party,domain=downdetector.se
 ||znaptag-tags-se.s3.amazonaws.com^$script
 ||zotabox.com^$third-party,domain=etunawebben.se|rapport24.com
 ||zummy.io^$third-party
