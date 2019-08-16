@@ -5078,6 +5078,10 @@ deti.mail.ru,kino.mail.ru,auto.mail.ru,sportmail.ru#%#AG_abortInlineScript(/bgsh
 ||ok.ru/res/js/*.js$replace=/\"OK\/banners/\"OK\/banners__\//
 !+ NOT_PLATFORM(ext_ff)
 ||www.ok.ru/res/js/*.js$replace=/kBlockDetect\"\,/kBlockDetect__\"\,/
+!
+ok.ru#%#AG_setConstant('Object.prototype.getAds', 'undefined');
+!+ PLATFORM(windows, mac, android)
+ok.ru#%#Object.defineProperty(Object.prototype, 'getAds', { get: function() { return; } });
 !*
 !*****
 !
@@ -5552,8 +5556,10 @@ kinopoisk.ru#%#AG_setConstant('only_branding_adv', 'trueFunc');
 !
 24smi.org#%#//scriptlet("set-constant", "Object.prototype.AdvManager", "undefined")
 !
-drive2.ru#%#//scriptlet("set-constant", "Object.prototype.initYaDirect", "undefined")
-drive2.ru#%#//scriptlet("set-constant", "Object.prototype.AdfoxProxyCallbacksManager", "undefined")
+drive2.ru#%#//scriptlet("set-constant", "Object.prototype.adfoxCode", "undefined")
+!+ PLATFORM(windows, mac, android)
+drive2.ru#%#Object.defineProperty(Object.prototype, 'adfoxCode', { get: function() { return; } });
+!
 ! *** these rules break the site ***
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38424#issuecomment-520508199
 !+ PLATFORM(windows, mac)
