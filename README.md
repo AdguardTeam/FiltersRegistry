@@ -94,9 +94,9 @@ Example:
 
 ## Filters localization
 
-Translations are here: https://adguard.oneskyapp.com/collaboration/project?id=119172
+You can translate filters here: https://crowdin.com/project/adguard-applications/en#/miscellaneous
 
-See scripts/oneskyapp/README.md.
+Please learn more about translating our products here: https://kb.adguard.com/en/general/adguard-translations
 
 ## How to build
 
