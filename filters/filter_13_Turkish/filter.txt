@@ -830,6 +830,8 @@ vizyonfilmizle.tv#$#.fancybox-overlay-fixed[-ext-has="> div"] { display: none!im
 vizyonfilmizle.tv#$#.fancybox-lock body[-ext-has="> div"] { overflow: visible!important; }
 vizyonfilmizle.tv#$#html[-ext-has="> body"] { overflow: visible!important; }
 !
+yesilcamtv.eu#?#body > #colorbox:has(#popup-reklam)
+yesilcamtv.eu#?#body > #cboxOverlay:has(+#colorbox:has(#popup-reklam))
 tekpartizlefullhd.org#?##sidebar > .sidebarborder:has(> .sidebar-right > .textwidget > center > a[target="_blank"][rel="nofollow noopener noreferrer"])
 fullhdfilmizleten.org#?##video > div[id]:has(> #vidcikKapat)
 kriptokoin.com#?#.wpb_wrapper > div.widget_text:has(> strong:contains(/Reklam|BlockShow/))
@@ -1218,6 +1220,8 @@ fullhdfilmizlesene.org,ultrahdfilmizle.org#%#AG_onLoad(function() { window.start
 ! END: Clickunders
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/39241
+yesilcamtv.eu#%#document.cookie = "popupgosterim=1; path=/";
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39371
 turkceanimeizle.com#%#AG_abortOnPropertyRead('jsPopunder');
 turkceanimeizle.com#%#AG_onLoad(function(){ function skipAd(){setTimeout(function(){var a=document.querySelector(".ads-skip");a&&a.click()},500)}var observer=new MutationObserver(skip);observer.observe(document,{childList:!0,subtree:!0});function skip(){document.querySelectorAll(".sourceBtn").forEach(function(a){a.addEventListener("click",skipAd,!1)})}; });
@@ -1546,6 +1550,8 @@ sabah.com.tr#$#header.advertControlArea { top: 0!important; }
 !
 ! Unhide the player while ads timeout
 !
+yesilcamtv.eu#$#.tab-embed { display: block!important; }
+yesilcamtv.eu#$#.tab-reklam { display: none!important; }
 tekpartizlefullhd.org#$##film { display: block!important; }
 tekpartizlefullhd.org#$##filmoncereklam { display: none!important; }
 filmdirizle.com#$##videos { display: block!important; }
@@ -2058,6 +2064,11 @@ sineturk.pw,altyazilifilmizle.tv,1080pfilmizle.net,dolufilmizle.com,filmizleve.c
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+||seridizi.com/sag-reklam.html
+onlinehitfilm.com##a[href="https://www.navitech.site/"]
+||onlinehitfilm.com/960x*00.jpg
+indir.pub##center > a[href][rel="nofollow"] > img
+indir.pub##center > a[href]:not([href^="https://indir.pub/"]).red
 turkceanimeizle.com##.add-inner
 tekpartizlefullhd.org##a[href][rel="nofollow"]:not([class]) > img
 ||filmdirizle.com/wp-content/uploads/*/WhatsApp-Video-*.mp4
@@ -2422,7 +2433,7 @@ ultrafilmizle.tv##.bireklam
 ugurfilm.com,diziyo.co,demokratkocaeli.com,fullfilmhdizle2.net###fadeinbox
 fullfilmhdizle2.net##.altreklam1
 canlidizihd7.net###single-sag > #benzerclass
-dizimom.com##.reklam-s-spad
+seridizi.com,dizimom.com##.reklam-s-spad
 ||senetlearaban.com/reklam*.html
 temizmagazin.com##.topReklam
 ||hiltonbettv1.com/assets/uploads/banners/
