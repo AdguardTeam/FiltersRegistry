@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-08-27 20:30:55 CEST
+! Last modified: 2019-08-28 07:26:13 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -120,6 +120,8 @@ fotbolldirekt.se,hockeysverige.se##article:has(p:has-text(/artikeln är en annon
 fotbollskanalen.se##.notice__link:has(.notice__tag_sponsored)
 fotbolltransfers.com##.smallNewsLink:has(.smallNewsCategory:has-text(/sponsrad/i))
 fragbite.se##article:has(.category:has-text(/spons/i))
+fuska.se##.space-top:has-text(Reklam)
+fuska.se##.well_green:has-text(låna)
 fz.se##.fpn-item:has(.sponsored-content)
 gamereactor.se#$##pagebackground { background-image: none !important }
 gamereactor.se##article.rwd_row:has(a[href$="/sponsoredcontent/"])
@@ -617,7 +619,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /ga_cookie_track.js$script
 /GA_EEC/*$script,domain=osterbottenstidning.fi
 /gam-resize.js$script,domain=nsk.se|skd.se
-/gdpr/*$domain=capdesign.se|digikey.se|funnygames.se|megaspel.se|nyckelspel.se|rapport24.com|villalivet.se|vimedbarn.se
+/gdpr/*$domain=capdesign.se|digikey.se|megaspel.se|nyckelspel.se|rapport24.com|villalivet.se|vimedbarn.se
 /get.aspx?AdSlotID$script
 /getlivevideo$domain=di.se
 /gilla-mb_plugg.png$domain=markbladet.se
@@ -1591,8 +1593,10 @@ fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria
 friatider.se##.rightbox
 friidrott.se###sponsor
 funbeat.se##.l-adv-interstitial
-funnygames.se###katon-slot
+funnygames.se##.banner-container
+funnygames.se##.slot
 fuska.se###top1
+fuska.se##.alert-success
 fz.se##.article-facebook
 gaffa.se##.external-branding
 gamereactor.se###ad_mobiletopinsidetext
@@ -1930,7 +1934,6 @@ professionalsecrets.se##div[data-campaign="newsletter"]
 radionytt.se###toppannons
 radioplay.se###root > div[data-reactroot] > div:not([class]):not([id])
 radron.se##.c-page-restriction-infobar-content-wrapper
-rapport24.com##.kb-container
 ratsit.se##.campaign-bar
 ratsit.se##.js-cookie-modal
 ratsit.se##.search-list-inline-ad
@@ -2282,7 +2285,6 @@ yougov.se##.cookie-confirm
 ||cdn.livechatinc.com/tracking.$script
 ||cdn.lr-ingest.io/log$script,domain=ipo.se
 ||cdn.ravenjs.com^$script,domain=viafree.se
-||cdn2.editmysite.com^*/snowday*.$script,domain=rapport24.com
 ||cdnbox.win/inc/ETKe.$script
 ||churnkit.com^$third-party
 ||cintnetworks.com^$third-party
@@ -2494,6 +2496,7 @@ yougov.se##.cookie-confirm
 ||libring.com^$third-party
 ||likebtn.com^$third-party
 ||link.theplatform.com^$xmlhttprequest
+||liveagent.se/scripts/track.$script
 ||ljuskompaniet.se^
 ||logger.tv.nu^$script
 ||lokus.se^$~image,third-party,domain=~familj.se
@@ -2594,7 +2597,6 @@ yougov.se##.cookie-confirm
 ||prisjakt-a.akamaihd.net^$third-party,domain=pcgamer.se
 ||prisjakt-a.akamaized.net^$third-party,domain=99mac.se|feber.se|fz.se|idg.se|kamerabild.se|minhembio.com|mobil.se|nordichardware.se|sweclockers.com|viivilla.se
 ||prisjakt.nu^$third-party
-||promote.weebly.com^$script,subdocument,xmlhttprequest,domain=rapport24.com
 ||proxyas.com^$third-party
 ||ptm.flowplayer.com^*/display$xmlhttprequest
 ||ptm.flowplayer.com^*/ping$xmlhttprequest
@@ -2673,7 +2675,6 @@ yougov.se##.cookie-confirm
 ||static.blogg.se/shared/js/bloggse.js$script
 ||static.influencersofsweden.se/js/inos.$script
 ||static.stp.nwt.se/static-assets$script
-||static.zbcdn2.net^$script,domain=rapport24.com
 ||stats.docu.info^$third-party
 ||stats.easyweb.se^$third-party
 ||stats.proff.no^$script
