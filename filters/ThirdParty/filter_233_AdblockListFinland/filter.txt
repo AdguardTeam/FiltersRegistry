@@ -63,9 +63,6 @@ venelehti.fi##article[class^="grid__item_"]:has(.bg-category_mainos)
 ! Taisto.org - ad containers
 taisto.org###siteNotice:has-text(Mainos / Advertisement:):has(.adsbygoogle)
 taisto.org###mw-data-after-content > div:has-text(Mainos / Advertisement:):has(.adsbygoogle)
-! Viafree - anti-adblock
-||fwmrm.net^*/admanager.js$domain=viafree.fi,important
-||cdn.ravenjs.com^$script,domain=viafree.fi
 !
 ! Please report any issues at:
 ! https://github.com/finnish-easylist-addition/finnish-easylist-addition/issues
@@ -499,6 +496,7 @@ sfnix.net/api/
 ! snstatic.fi/webstatic/*/desktop-all.js
 stream.almamedia.fi/mp/salsabanner
 meta.almamedia.io/v1/text?
+studio55.fi##.ad-container.banner
 suomensanomat.fi##div[class="static-info"]
 suomela.fi##div[class*="simplemodal"]
 suomela.fi##div[class*="banner"]
@@ -581,7 +579,6 @@ vauva.fi###aldente-native01_0
 voice.fi##div[class*="cxense-ad-container"]
 vihreat.fi##DIV[id="block-simpleads-sidebar-ads"][class="block block-simpleads"]
 pls.webtype.com/v.gif
-yle.fi/.*yle-analytics
 ylilauta.org##a[href="/kultatili"]
 ylilauta.org##div[id="right"]>div[class="center"]>a[target="_blank"]
 xracing.fi##DIV[id="inner_commerce_container"]
@@ -614,6 +611,7 @@ irc-galleria.net##div[id^="open_"]
 koneporssi.com,urakointiuutiset.fi,ammattiautot.fi,konekuriiri.fi##.banners
 uusisuomi.fi###block-views-ticker-block-2
 luukku.com##.ad-container
+luukku.com###banneri_yla
 tulikulma.fi##.slideshow
 maaseuduntulevaisuus.fi##.promo--header
 pelaajalehti.com##.views-injected-row
@@ -747,7 +745,6 @@ spring-tns.net$third-party
 ||tradetracker.net^
 ||metrics.api.yle.fi^
 ||chcu.net^
-||analytics-sdk.yle.fi^
 ||nuuh.alma.iltalehti.fi^
 ||revimages.motouutiset.fi^
 ||buttons-for-website.com^
@@ -822,8 +819,6 @@ kaleva.fi##DIV[id="kaleva-cookie-consent"]
 mobiili.fi#@#.header_ad
 @@||adservicemedia.dk/$image,domain=mobiili.fi
 www.rauhanpuolustajat.org#@#div[data-nconvert-cookie]
-! Unbreak radiot.fi
-@@||analytics-sdk.yle.fi/yle-analytics.min.js$script,domain=radiot.fi|tunnus.yle.fi
 ! https://bbs.io-tech.fi/threads/keskustelua-selainten-mainos-ja-yksityisyysestoista.692/page-10#post-3842308
 ! hintaseuranta elementit
 huuto.net##div.grid-element-container-hintaseuranta.grid-element-container
@@ -839,7 +834,8 @@ www.vr.fi##.headerContents > .infoMessages
 ||io-tech.fi/images/*_290x290px.png$image
 ||hinta.fi/*black-friday$image,domain=hinta.fi
 ||urbaanisanakirja.com/static/img/portsaad.png$image
-! Nelonen Media video ads
+! Sanoma Oyj video ads
+||dwk14raokkwxv.cloudfront.net/sanomafi/media/*.mp4$media
 ||nelonenmedia.fi/ads/$media
 ||nelonenmedia-pmd-ads-manual.nm-stream.nelonenmedia.fi/$media
 ||nelonenmedia-pmd-ads-spotgate.nm-stream.nelonenmedia.fi/$media
@@ -847,21 +843,25 @@ www.vr.fi##.headerContents > .infoMessages
 ! unbreak "Suosituimmat" ("most popular") on mtvuutiset.fi
 @@leiki.com/mtv3/widgets/loader/$domain=mtvuutiset.fi
 @@leiki.com/mtv3/mwidget$domain=mtvuutiset.fi
-! Media unbreakers
-@@||fwmrm.net/ad/$script,domain=dplay.fi
-||dniadops-a.akamaihd.net/video-assets/$media,domain=www.dplay.fi
+! General Media unbreakers
 @@||v.fwmrm.net/ad/g/*_Supla_Audio_HTML5_Live$script
 @@||fwmrm.net/ad/*Nelonen_Web_HTML5_Live$script
+! Dplay.fi video ads
+@@||fwmrm.net/ad/$script,domain=dplay.fi
+||dniadops-a.akamaihd.net/video-assets/$media,domain=www.dplay.fi
+||dni-adops-proxy-prod-adopsmediaconverter.mercury.dnitv.com/*.mp4$media,domain=www.dplay.fi
 ! Prevent clicking video ads on MTV Oy
 mtvuutiset.fi,mtv.fi,suomiareena.fi,www.studio55.fi,lumijapyry.fi,www.msn.com##.mtv-player-ad-container
 ||damoh.katsomo.fi/*$image,domain=mtvuutiset.fi|mtv.fi|suomiareena.fi|www.studio55.fi|lumijapyry.fi|www.msn.com
 ||cloudfront.net/creatives/assets/$image,domain=mtvuutiset.fi
+@@||fi-mtv3.videoplaza.tv/proxy/pulse-sdk-html5/*/latest.min.js$script
 ! To make viafree.fi videos to work without ads
+@@||fwmrm.net/ad/*$xmlhttprequest,domain=www.viafree.fi
+@@||fwmrm.net/ad/*$script,domain=www.viafree.fi
+@@||fwmrm.net/ad/*$image,domain=www.viafree.fi
+@@||fwmrm.net/crossdomain.xml$xmlhttprequest,domain=www.viafree.fi
 @@||mssl.fwmrm.net/p/MTG_Brightcove_HTML5/AdManager.js$script,domain=www.viafree.fi
-@@||fwmrm.net/ad/$xmlhttprequest,domain=www.viafree.fi
-@@||playapi.mtgx.tv/$xmlhttprequest,domain=www.viafree.fi
-@@||fwmrm.net/ad/$script,domain=www.viafree.fi
-||freewheel-mtgx-tv.akamaized.net/$media,domain=www.viafree.fi
+||freewheel-mtgx-tv.akamaized.net/m/1/*.mp4$media,domain=www.viafree.fi
 ! block "sponsored articles"/"native ads" on some sites
 ##.spklw-post-attr[data-type="ad"]
 ##a[href^="https://app.readpeak.com/ads"]
@@ -873,8 +873,6 @@ hs.fi#@#.mainos
 ! hs.fi#@#DIV[class^="advert"]
 ! https://www.hs.fi/aihe/mainokset/
 www.hs.fi#@#.mainokset
-! unbreak loading of a subcategory
-@@||analytics-sdk.yle.fi/yle-analytics.min.js$script,domain=areena.yle.fi
 ! unbreak "lue seuraavaksi" (read next) section
 ! broken by Easyprivacy & Fanboy's Annoyance List
 @@||scdn.cxense.com/cx.js$domain=ess.fi|savonsanomat.fi|itahame.fi|ksml.fi
