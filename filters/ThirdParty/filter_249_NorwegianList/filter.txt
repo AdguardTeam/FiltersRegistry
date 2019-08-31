@@ -1,6 +1,6 @@
 !
 [AdGuard ≥6]
-! OriginalVersion: 27August2019v1
+! OriginalVersion: 31August2019v1
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
 ! Expires: 12 hours
@@ -53,9 +53,7 @@
 ##div[data-contenttype="ad"]
 ##optimus-element[id^="art-bazaarAd-"][version="default"]
 .oasfile
-@@/images/*youtube.jpg$domain=realityportalen.dk
 @@||5e529.v.fwmrm.net/ad/$script,domain=dplay.no|dplay.dk
-@@||api.instagram.com^$domain=www.samiteahter.org
 @@||fagbladetjournalen.no/*/300x250_
 @@||seher.no/reise$generichide
 bt.dk##.hidden-md-down.col-xl-12
@@ -245,7 +243,7 @@ lydogbilde.no,lydogbillede.dk#$#.background-ad { min-height: 0px !important }
 dagen.no#$#.paywall-body-description { -webkit-text-fill-color: black !important }
 dn.no#$##googlead-toppbanner { min-height: 0 !important }
 vgtv.no#$#.page-container { margin-top: 0px !important }
-dagbladet.no##div[class^="css"]:matches-css-before(content: "Annonse")
+dagbladet.no#?#div[class^="css"]:matches-css-before(content: "Annonse")
 ||acdn.adnxs.com/ast/ast.js$script,important,domain=vg.no
 @@||tv2.no/*/config/analytics.json$xmlhttprequest,~third-party
 ||ssl.p.jwpcdn.com^*/jwpsrv.js$important,script,domain=vg.no
@@ -317,6 +315,8 @@ trening.no##.cp-slidein-body
 tvkampen.com,tvsporten.dk##a.p-icon.partner
 vartoslo.no#?#.vc_column-inner:-abp-has(.vo-annonse):not(:-abp-has(div[class^="td_module_"])):not(:-abp-has(#sb_instagram))
 xstra.no##.td-fix-index
+jn.fo###the_banners
+byggebolig.no##.maestro-resize
 ##.native-advertisement
 ##.content-adunit
 ##.sponset-innlegg
@@ -355,6 +355,8 @@ xstra.no##.td-fix-index
 ||vikari.is/skjol/frjalsi-lif*.png$image
 ||banner.landbrugsavisen.dk/reklame.aspx$subdocument
 ||gratisxxx.no$image,domain=nakenprat.com
+||vevlysingar.fo$subdocument,third-party
+||boligkanalen-maestro-new.azurewebsites.net$image
 /*-annonse-*$image,domain=resett.no
 -bazaar-$script,domain=nettavisen.no
 /bazaar/*$script,domain=nettavisen.no
@@ -596,14 +598,17 @@ avvir.no###block-block-1 > p:nth-of-type(4)
 nettavisen.no###topover-loader
 nettavisen.no#$#body.no-scroll { overflow: auto !important }
 gamer.no#@#iframe[width="300"][height="250"]
-krom.is#@#.share-container
 pensjonistferie.no#@##adsense
 ! 🇳🇴: Fikser videoavspillerene på nettstedene til norske fotballklubber når man bruker «uBlock Filters - Unbreak»
 ! 🇬🇧: Fixes video players on Norwegian football club sites when using "uBlock Filters - Unbreak"
 @@||play2.qbrick.com/framework/modules/analytics/analytics.min.js$script
-! 🇩🇰: Gør det muligt igen at scrolle når "I Don't Care About Cookies" er benyttet
+! 🇩🇰: Gør det muligt igen at scrolle når «I Don't Care About Cookies» er benyttet
 ! 🇬🇧: Re-enables scrolling when using "I Don't Care About Cookies"
 ||scripts.tv2a.dk/oil/
+! 🇬🇧: Unbreaks significant content breakage when using "Fanboy's Social Blocking List", if I recall correctly
+krom.is#@#.share-container
+@@/images/*youtube.jpg$domain=realityportalen.dk
+@@||api.instagram.com^$domain=www.samiteahter.org
 ! 🇬🇧: A(n incomplete) category for anti-anti-adblocking, in the event that https://forums.lanik.us/viewtopic.php?f=23&t=42273 were to specifically mention such entries as a reason to be denied EasyList affiliation or native ABP inclusion, in which case they'd be moved to the extension file
 @@||bondebladet.screen9.tv^$generichide
 @@*.dk/assets/templates/*/ads.png$image,domain=maskinbladet.dk|agrar-plus.dk|fritidsmarkedet.dk|dagensbyggeri.dk|maskinteknik.dk|gronteknik.dk
