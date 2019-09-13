@@ -5575,8 +5575,7 @@ music.yandex.ru,music.yandex.ua,music.yandex.by,music.yandex.kz#@%#AG_removeCook
 yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#%#//scriptlet("remove-cookie", "/JPIqApiY|BgeeyNoBJuyII|YvUVZgzQ|^adequate\$|^telecommunications\$|RMHqSzrMeR|yw_cmpr_prm|^computer|pcssspb|substantial\$|HgGedof|mcBaGDt/")
 ||yandex.$cookie=/JPIqApiY|yw_cmpr_prm|computer|pcssspb|substantial|HgGedof|mcBaGDt/
 ! `t.initYaVariable = function() {`
-~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#%#Object.defineProperty(Object.prototype, 'initYaDirect', { get: function(){ throw null; }, set: function(){ throw null; }});
-~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#%#//scriptlet("set-constant", "Object.prototype.initYaDirect", "undefined")
+~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#%#//scriptlet("abort-on-property-read", "slamTopBanner")
 !+ PLATFORM(windows, mac, android)
 kinopoisk.ru#%#AG_setConstant('KP.config.adfoxEnabled', 'false');
 !+ PLATFORM(windows, mac, android)
@@ -6244,12 +6243,9 @@ wikianime.ru#$#body[-ext-has="div"] { padding-top: 0!important; }
 yap.ru,yaplakal.com#$#body:has(> div) { background-color: #ddd!important; }
 zagonka.ru#$#body > div.sitebox[-ext-has='div'] { margin-top: 0!important; }
 zaycev.online#$#.content[-ext-has="> div"] { margin-top: 0!important; }
-! kinopoisk.ru - удаление брендированного фона, отступа сверху
-kinopoisk.ru#?#body > div.underheader-superbanner-wrapper
-~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$#body > div[class]:not([class*="shadow"]):not([id*="GOWrapper"]):has(> div.underheader-superbanner) { remove: true; }
-~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$#div:has(> div.wrap_form) { margin-bottom: 0!important; }
-!
-~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$#html:not(.app-theme_dark):has(> body.svg-background_yes) { background: none!important; background-color: #e6e6e6!important; }
+! kinopoisk.ru
+~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$?#body > div[class]:matches-css(min-height: 250px) { remove: true; }
+!~quiz.kinopoisk.ru,~forum.kinopoisk.ru,kinopoisk.ru#$#html:not(.app-theme_dark):has(> body.svg-background_yes) { background: none!important; background-color: #e6e6e6!important; }
 !
 forums.overclockers.ru###pagecontent > table.tablebg:has(> tbody > tr > td.profile_username > b.postauthor:contains(Реклама)):has(> tbody > tr > td.profile:contains(Партнер))
 overclockers.ru#$?#.material-inline-an { remove: true; }
@@ -9884,6 +9880,7 @@ Ly9hbi55YW5kZXgucnUv
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+domdo.ru##div[class="entry clearfix"] > div[class^="code-block code-block-"]
 vesti.ua##body > div[style^="height: 250px; z-index:"]
 sobitie.com.ua##div[class="widget block block-block"] > p > img[style^="height:102px; width:2"]
 auto.ru##.BankCard
