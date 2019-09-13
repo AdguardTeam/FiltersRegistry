@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-09-12 11:14:52 CEST
+! Last modified: 2019-09-13 10:27:03 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -80,6 +80,7 @@ byggipedia.se#$#* { user-select: text !important; }
 bytbil.com#$#html,body { overflow: auto !important; }
 cafe.se##.bg-white:has(.egmont-spotlights)
 cornucopia.cornubot.se##.FeaturedPost:has(a:has-text(/^Reklam/i))
+cornucopia.cornubot.se##.post:has(i:has-text(/reklam/i))
 cornucopia.cornubot.se##h3:has-text(/sponsrade länkar/i) ~ *
 cyclingplus.se##article:has(.single-subtitle:has-text(/annonssamarbete/i))
 dagensanalys.se#$#.modal-active { overflow: auto !important; }
@@ -274,8 +275,6 @@ voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 ||gamereactor.se/lay/js/banners_config.$important,script
 ||gamereactor.se/lay/js/manageBanners.$important,script
 ||imasdk.googleapis.com/js/core$important,subdocument,domain=ekuriren.se|goteborgssport.se|kkuriren.se|skanesport.se|sn.se|stockholmssport.se
-||mediacreeper.com/image$image,domain=allmogen.org|apg29.nu|b19.se|blogspot.se|cornucopia.cornubot.se|emanuelkarlsten.se|experimentlandet.blogg.se|forenadebolag.se|frihetssmedjan.se|genusdebatten.se|hoforsbloggen.se|horoskop.nu|internetsweden.se|kameratrollet.se|lindelof.nu|lindqvist.com|nyhetswebben.se|opendata.se|peak-oil.se|petterssonsblogg.se|sempermiles.se|solrosuppropet.se|supermiljobloggen.se|swedishprepper.com|sysadmindagen.se|tjuvlyssnat.se|toklandet.wordpress.com|uvell.se|vaken.se|vargfakta.se|webbjobb.io|xn--blljus-jua.se|zaramis.se
-||mediacreeper.se/image$image,domain=allmogen.org|apg29.nu|b19.se|blogspot.se|cornucopia.cornubot.se|emanuelkarlsten.se|experimentlandet.blogg.se|forenadebolag.se|frihetssmedjan.se|genusdebatten.se|hoforsbloggen.se|horoskop.nu|internetsweden.se|kameratrollet.se|lindelof.nu|lindqvist.com|nyhetswebben.se|opendata.se|peak-oil.se|petterssonsblogg.se|sempermiles.se|solrosuppropet.se|supermiljobloggen.se|swedishprepper.com|sysadmindagen.se|tjuvlyssnat.se|toklandet.wordpress.com|uvell.se|vaken.se|vargfakta.se|webbjobb.io|xn--blljus-jua.se|zaramis.se
 ||munchkin.marketo.net/munchkin.js$important,script,domain=hangotidningen.fi|hbl.fi|ostnyland.fi|vastranyland.fi|yougov.se
 ||online.swedbank.se.swedd.$document
 ||openx.gamereactor.dk/multi.php?$important,script
@@ -461,6 +460,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 .se/custom/ad/
 .se/fightodds.plugin/fightodds.plugin.$script
 .se/files/annons/$image
+.se/js/cookie-message.$script
 .se/log/?
 .se/logger.$script
 .se/Logger?
@@ -914,7 +914,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 /SitesterSurvey*.$script,domain=wwf.se
 /skyskrapa.$image,domain=it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se
 /smart-app-banner.$script,domain=allsvenskan.se|superettan.se|svenskafans.com
-/snowplow-*.js$script,domain=hemnet.se
+/snowplow$script,domain=casamundo.se|hemnet.se
 /social-buttons$script,domain=dagsattplocka.se
 /splash_iframe$domain=filmtipset.se
 /sponsor/$image,domain=bandybyn.se|brynas.se|difhockey.se|ettgottskratt.se|farjestadbk.se|fotbollskanalen.se|freeride.se|frillesasbandy.se|frolundaindians.com|happyride.se|humorbibeln.se|hv71.se|ifkgoteborg.se|lhc.eu|luleahockey.se|malmoredhawks.com|moraik.se|newsner.com|orebrohockey.se|roglebk.se|skellefteaaik.se|sportbibeln.se|swehockey.se|timraik.se|vaxjolakers.se|vskbandy.se
@@ -2760,6 +2760,7 @@ yougov.se##.cookie-confirm
 ||swehockey.se/Ad/$image
 ||t.raptorsmartadvisor.com^$image
 ||tags.tiqcdn.com^$domain=mallorcaliv.se
+||tc.hometogo.net^$image
 ||telemetric.dk^$third-party
 ||telemetry.bambuser.io^$websocket
 ||terms.vkmedia.se/agreements/$xmlhttprequest
