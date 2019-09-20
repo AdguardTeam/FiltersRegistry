@@ -5576,11 +5576,11 @@ sdamgia.ru$$script[tag-content="adb=1"]
 sdamgia.ru#%#AG_abortOnPropertyRead('Ya.Direct');
 !
 ! START: Yandex
-$cookie=/blcrm|bltsr|^from\$|^los\$/,domain=auto.ru|avito.ru|avtovzglyad.ru|baby.ru|businessman.ru|dni.ru|drive2.com|drive2.ru|e1.ru|echo.msk.ru|fb.ru|forexpf.ru|gismeteo.by|gismeteo.kz|gismeteo.md|gismeteo.ru|gismeteo.ua|glav.su|gorodrabot.ru|infoniac.ru|it-tehnik.ru|kakprosto.ru|kinopoisk.ru|liveinternet.ru|mathb-ege.sdamgia.ru|mk.ru|nkj.ru|ohotniki.ru|oko-planet.su|otzovik.com|pikabu.ru|rambler.ru|razlozhi.ru|sdamgia.ru|syl.ru|vz.ru
+$cookie=/blcrm|bltsr|^from\$|^los\$/,domain=auto.ru|avito.ru|avtovzglyad.ru|baby.ru|businessman.ru|dni.rue1.ru|echo.msk.ru|fb.ru|forexpf.ru|gismeteo.by|gismeteo.kz|gismeteo.md|gismeteo.ru|gismeteo.ua|glav.su|gorodrabot.ru|infoniac.ru|it-tehnik.ru|kakprosto.ru|kinopoisk.ru|liveinternet.ru|mathb-ege.sdamgia.ru|mk.ru|nkj.ru|ohotniki.ru|oko-planet.su|otzovik.com|pikabu.ru|rambler.ru|razlozhi.ru|sdamgia.ru|syl.ru|vz.ru
 $cookie=/blcrm|bltsr|^from\$|^los\$|HgGedof\$|mcBaGDt/,domain=yandex.by|yandex.com|yandex.com.tr|yandex.fr|yandex.kz|yandex.ru|yandex.ua
 $cookie=/BgeeyNoBJuyII|YvUVZgzQ|^adequate\$|^telecommunications\$|RMHqSzrMeR|HgGedof|mcBaGDt/,domain=yandex.by|yandex.com|yandex.com.tr|yandex.fr|yandex.kz|yandex.ru|yandex.ua
 ||kinopoisk.ru^$cookie=/kpunk/
-auto.ru,avito.ru,avtovzglyad.ru,baby.ru,businessman.ru,dni.ru,drive2.com,drive2.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.kz,gismeteo.md,gismeteo.ru,gismeteo.ua,glav.su,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,liveinternet.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,pikabu.ru,rambler.ru,razlozhi.ru,sdamgia.ru,syl.ru,vz.ru#%#AG_removeCookie('/blcrm|bltsr|^from\$|^los\$/');
+auto.ru,avito.ru,avtovzglyad.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.kz,gismeteo.md,gismeteo.ru,gismeteo.ua,glav.su,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,liveinternet.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,pikabu.ru,rambler.ru,razlozhi.ru,sdamgia.ru,syl.ru,vz.ru#%#AG_removeCookie('/blcrm|bltsr|^from\$|^los\$/');
 echo.msk.ru#@%#AG_removeCookie('/blcrm|bltsr|^from\$|^los\$/');
 music.yandex.ru,music.yandex.ua,music.yandex.by,music.yandex.kz#@%#AG_removeCookie('/blcrm|bltsr|^from\$|^los\$/');
 ! zen.yandex.ru - broken resources
@@ -5597,13 +5597,6 @@ kinopoisk.ru#%#AG_setConstant('only_branding_adv', 'trueFunc');
 drive2.ru#%#//scriptlet("set-constant", "Object.prototype._bannerOptions", "undefined")
 !+ PLATFORM(windows, mac, android)
 drive2.ru#%#Object.defineProperty(Object.prototype, '_bannerOptions', { get: function() { return; } });
-!
-! *** these rules break the site ***
-! https://github.com/AdguardTeam/AdguardFilters/issues/38424#issuecomment-520508199
-!+ PLATFORM(windows, mac)
-!drive2.ru#%#AG_setConstant('Object.prototype.AdfoxProxyCallbacksManager', 'undefined');
-!+ PLATFORM(windows, mac)
-!drive2.ru#%#AG_setConstant('Object.prototype.initYaDirect', 'undefined');
 !
 avtovzglyad.ru#%#Object.defineProperty(Object.prototype, 'initYaDirect', { get: function(){ throw null; }, set: function(){ throw null; }});
 avtovzglyad.ru#%#//scriptlet("set-constant", "Object.prototype.initYaDirect", "undefined")
@@ -7367,6 +7360,9 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! newsyou.info - удаление отступа сверху
+newsyou.info#$#body > div.home { padding-top: 0px !important; }
+newsyou.info#$#body { padding-top: 0px !important; }
 ! 1hdlava.com - удаление брендированного фона
 1hdlava.com#$#body > header { margin-bottom: 0px !important; }
 ! prosports.kz - удаление брендированного фона
@@ -9875,6 +9871,10 @@ Ly9hbi55YW5kZXgucnUv
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+||newsyou.info/brand/
+gazeta.uz##.floating_banner
+gazeta.uz##.middleboard
+gazeta.uz##div[style="font-family:Arial,Tahoma;color:#999;font-size:11px;margin:4px 4px"]
 procherk.info##[style*="line-height:1;text-align:"][style*="font-size:8px;"]
 procherk.info##[style*="line-height:1;text-align:"][style*="font-size:8px;"] + a[rel="nofollow"] > img
 vokrug.tv##div[id^="adfox_"] ~ span.label
