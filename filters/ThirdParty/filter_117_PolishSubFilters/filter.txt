@@ -1,12 +1,12 @@
 !
-! Checksum: zNgQfFZ7HVsNNYFnGtwYsg
+! Checksum: 1vb7Exca+CxYj+O+BvNDMA
 ! Title: Polskie Filtry Wewnętrzne
 ! Collaborators: KonoromiHimaries, hawkeye116477
 ! Homepage: https://github.com/KonoromiHimaries/PolishSubFilters#readme
 ! Oświadczenie: https://github.com/MajkiIT/polish-ads-filter/blob/master/STATEMENT.md
 ! EULA: Subskrybcja|Użytkowanie listy "Polskie Filtry Wewnętrzne" jest równoznaczna z akceptacją sposobu w jaki działają filtry.
 ! INFO: Aby wyłączyć niepożądaną regułę, należy ją skopiować do zakładki Moje Filtry a następnie między znakami ## wstawić znak @ np. sprawnymarketing.pl#@#.hidden-mobile
-! OriginalVersion: 20190825
+! OriginalVersion: 20190920
 ! Expires: 3 days
 ! Wymagane:
 !   Rozszerzenia >> uBlock Origin, Nano Adblocker lub Adguard
@@ -634,10 +634,10 @@ www.zadowolenie.pl##.b-adZone_wide:nth-of-type(5)
 !
 ||ymfaac.biz^
 !
-! Checksum: JEZo7QgobhP2MPQN/GwU8w
+! Checksum: N9UNJfU0qoMvdWRVlPu1CA
 ! Title: Polskie Filtry Osadzające Nagłówki
 ! Collaborators: KonoromiHimaries, hawkeye116477, yourduskquibbles
-! OriginalVersion: 20190821
+! OriginalVersion: 20190921
 ! Expires: 3 days
 ! Wymagane:
 !   Rozszerzenia >> uBlock Origin lub Nano Adblocker
@@ -647,6 +647,8 @@ www.zadowolenie.pl##.b-adZone_wide:nth-of-type(5)
 !
 !1$----------------------{ nagłówki }----------------------!
 !
+natemat.pl#$#.navbar-default.navbar { position:static!important }
+rzetelnafirma.pl#$##rzfNavbar { position:absolute!important }
 zakazanaprawda.pl#$##nav-wrapper { position:static!important }
 klubjagiellonski.pl#$##topbar_mobile { position:absolute!important }
 prawy.pl#$##top { position:absolute!important }
@@ -6709,13 +6711,23 @@ poczta.interia.pl#@#[href*=".hit.gemius.pl"]
 !
 !2$----------------------{ ogólne reguły wewnętrzne }----------------------!
 !
+!& wh, kad
+!> https://github.com/PolishFiltersTeam/KAD/issues/961
+||kupujemy.to^$badfilter
+!
+!& zew, non-content
+fili.cc###menu > li:nth-of-type(3)
+!
+!& extension, bug
+###DeepLWidget
+!
 ! rek, autosugestia, promo, powiązane
 dzienniknarodowy.pl##a[href^="https://www.dobrykantor.pl"]:nth-of-type(2)
 !
-! self-promo
+!& self-promo
 www.centrumxp.pl##section.sidebar-news-grid:nth-of-type(1):has-text(REKLAMA)
 !
-! spark, wh
+!& spark, wh
 ||www.interia.pl^$badfilter
 ||gounlimited.to^$badfilter
 !
