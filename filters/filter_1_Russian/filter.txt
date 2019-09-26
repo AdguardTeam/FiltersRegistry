@@ -4283,6 +4283,10 @@ autonews.ru,rbc.ru,sportrbc.ru##.banner__container
 @@||ddnk.advertur.ru/*/loader.js$domain=slomal-telefon.ru
 ! https://forum.adguard.com/index.php?threads/https-od-news-com.34353/
 od-news.com#@##adsense
+! https://github.com/AdguardTeam/AdguardFilters/issues/41211
+anitokyo.tv#$#.adsbox.ads.new-ads.wrap-ads { height: 1px!important; }
+!+ PLATFORM(ext_android_cb, ios)
+anitokyo.tv#@#.wrap-ads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37527
 sebeadmin.ru#%#AG_abortInlineScript('script', 'document.createElement');
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari)
@@ -5608,9 +5612,9 @@ music.yandex.ru,music.yandex.ua,music.yandex.by,music.yandex.kz#@%#AG_removeCook
 kinopoisk.ru#%#AG_setConstant('only_branding_adv', 'trueFunc');
 !
 drive2.ru#%#//scriptlet("set-constant", "Object.prototype._bannerOptions", "undefined")
-kinopoisk.ru,drive2.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.RtbBlockRenderAd')
-kinopoisk.ru,drive2.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.AdvManagerInit')
-kinopoisk.ru,drive2.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.AdvManagerLoaderRender')
+kakprosto.ru,kinopoisk.ru,drive2.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.RtbBlockRenderAd')
+kakprosto.ru,kinopoisk.ru,drive2.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.AdvManagerInit')
+kakprosto.ru,kinopoisk.ru,drive2.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.AdvManagerLoaderRender')
 !+ PLATFORM(windows, mac, android)
 drive2.ru#%#Object.defineProperty(Object.prototype, '_bannerOptions', { get: function() { return; } });
 !
@@ -5990,6 +5994,7 @@ footballhd-news.com#?#div[id="dle-content"] > div.lastnewscat:has(> .adsbygoogle
 !
 softportal.com#?#.relap-default-wrapper div[data-relap-max-column-quantity] > div.js-relap__item:has(> div.js-relap__item-inner > a > div.relap-default__item__label:contains(Реклама))
 overclockers.ru#?#div[itemprop="articleBody"] > h4:contains(реклама)
+vplate.ru#?#.article > div[style]:has(> ins.adsbygoogle)
 kp.ru#?##article-page > div.externalBlock:has(> div[banner])
 nina.nn.by#?#.longRead__text > p:has(> a[target="_blank"] > img)
 htaccess.net.ru#?#noindex > div:has(> div[align="Right"]:contains(Реклам))
@@ -9911,6 +9916,13 @@ Ly9hbi55YW5kZXgucnUv
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+||bookmaker-ratings.*/action/rb_get_partner
+bookmaker-ratings.ru,bookmaker-ratings.com.ua##.odds-widget-container
+bookmaker-ratings.ru,bookmaker-ratings.com.ua##.tooltip-gift
+bookmaker-ratings.ru,bookmaker-ratings.com.ua##div[class*="banners"]
+bookmaker-ratings.ru,bookmaker-ratings.com.ua##.rating-mini
+bookmaker-ratings.ru,bookmaker-ratings.com.ua###bonus-window
+bookmaker-ratings.ru,bookmaker-ratings.com.ua##div[class*="partner"]
 softportal.com##.relap-default__custom-wide-inset-rec
 airwar.ru##body > noindex > table[border="1"][width="779"][bordercolor="#99CCFF"]
 ||ridtube.net/nb/
