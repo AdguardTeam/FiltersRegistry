@@ -1177,6 +1177,8 @@ slate.com,businessinsider.de,fastcompany.com,heise.de,history.com,itprotoday.com
 ! ##.cta-component-full-width
 bournemouthecho.co.uk,eveningtimes.co.uk,greenocktelegraph.co.uk,heraldscotland.com,swindonadvertiser.co.uk,wiltshiretimes.co.uk##.cta-component-full-width
 !
+telegraaf.nl##.Col .Newsletter__body
+||cbn.com.ua/wp-content/uploads/2019/06/20061924.jpg
 m.timesofindia.com##.newsletter_wdgt
 oknamedia.ru##.social-media-and-subscription-buttons
 nn.by##.social-subscriptions
@@ -8177,6 +8179,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+telegraaf.nl#%#AG_onLoad(function() { if(window.location.pathname.indexOf("/cookiewall") > -1) { setTimeout(function() { var el=document.querySelector('button.didomi-button-highlight'); if(el) el.click(); }, 300); } });
 slate.com#%#AG_onLoad(function() { setTimeout(function() { if(location.href.includes("gdpr?redirect")) { var el = document.querySelector('.gdpr-form__consent'); if(el) { el.click(); } } }, 300); });
 tweakers.net#%#AG_onLoad(function() { var el=document.querySelector('button.ctaButton[value="accept"]'); if(el) el.click(); });
 games.softgames.com#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("oil_data")){var a=new MutationObserver(function(){var a=document.querySelector("button.as-oil__btn-optin");a&&a.click()});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},3E4)}});
@@ -8341,6 +8344,8 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/41267
+@@||sdk.privacy-center.org/*.js$domain=telegraaf.nl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41245
 @@||cdn.cookielaw.org/consent/*.js$domain=tagheuer.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40968
@@ -9842,6 +9847,8 @@ sodapdf.com##.be-tooltip
 !
 ! Specific sites
 !
+golos.te.ua##.spu-bg
+golos.te.ua##.spu-box
 m.timesofindia.com##.newsletter_overlay
 instagram.com#?##react-root ~ div[class*=" "][class$="   "][role="presentation"]:has(a[href="/accounts/emailsignup/"])
 realadmin.ru###contactable
@@ -11909,6 +11916,7 @@ macwelt.de,pcwelt.de#%#AG_setConstant('firebase.messaging', 'noopFunc');
 ||push4site.com^$third-party
 ||cleverpush.com^$third-party
 !
+telegraaf.nl##.WebpushOptin
 medyaayvalik.com##.alerttt
 ciasex.com.br##.notification
 ciasex.com.br##.notification-backdrop
@@ -13268,6 +13276,9 @@ te-en.com##splashvip
 !######### CSS tweaks #########
 !##############################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/41288
+wahibirawan.com#$#.eastsafelink > .to { display: block!important; }
+wahibirawan.com#$#.eastsafelink > .wait { display: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39569
 wikitrik.com#$##download { display: block!important; }
 wikitrik.com#$#button#btn[onclick="generate()"] { display: none!important; }
@@ -13360,6 +13371,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !######### JS tweaks ##########
 !##############################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/41288
+wahibirawan.com#%#AG_onLoad(function() { var el = document.forms['eastsafelink_form']; if(el) { el.submit(); } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41279
 thesimarchitect.com#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/'#timer'/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41215
