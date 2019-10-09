@@ -74,6 +74,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||ijacgw.com^$third-party
 ||wmip.ru^$third-party
 ||targetseek.ru^$third-party
 ||7ix.ru^$third-party
@@ -4268,14 +4269,16 @@ vargr.ru,electric-house.ru,trialkeys.ru#@#iframe[width="728"][height="90"]
 vargr.ru,electric-house.ru,trialkeys.ru#@#img[width="728"][height="90"]
 !#endif
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/40885
+||vgtimes.ru^$~script,~stylesheet,~xmlhttprequest,replace=/(var adbl_class\s*=\s*\')[A-Za-z0-9\s]*(\';)/\$1\$2/
+vgtimes.ru#%#//scriptlet("set-constant", "adbl_class", "")
+!+ PLATFORM(ios, ext_android_cb)
+!#safari_cb_affinity(general)
+@@||vgtimes.ru^$generichide
+!#safari_cb_affinity
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40153
 @@||farsihd.info/player/js/adblock.js
 @@||tehranvd.biz/player/js/adblock.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/40885
-vgtimes.ru#%#//scriptlet("set-constant", "brandload", "noopFunc")
-vgtimes.ru#$#html > div.adsbygoogle.adsbox.banner { display: block !important; }
-!+ NOT_PLATFORM(windows, mac, android)
-vgtimes.ru#@#.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40688
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=studme.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40478
@@ -4392,9 +4395,6 @@ bowandtie.ru#$#.adsbygoogle { height: 1px!important; }
 sostav.ru###rek_blocker
 ! soskidkami.ru
 ||soskidkami.ru/s/b3cee0.js
-https://github.com/AdguardTeam/AdguardFilters/issues/37283
-vgtimes.ru#$#.adsbox#adfox_ { display: block!important; }
-vgtimes.ru#%#AG_setConstant('adBlockEnabled', 'false');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36576
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=gnatkovsky.com.ua
 gnatkovsky.com.ua#@#.adsbygoogle
@@ -7603,9 +7603,6 @@ citydog.by#$#.mainWrapper { background: none!important; }
 pornomen.club#$#.mainouter > tbody > tr > td[valign="top"][width="172"] { visibility: hidden!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31397
 game2day.ru#$#body > .container { margin-top: 100px!important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/31394
-vgtimes.ru#$#.adfshift  { display: none!important; }
-vgtimes.ru#$#body { background-image: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31698
 zozhnik.ru#$#body > div#page { margin-top: -300px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31329
@@ -9992,6 +9989,7 @@ Ly9hbi55YW5kZXgucnUv
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+/\/[A-Za-z0-9-.]+\/[A-Za-z0-9_-]+/$script,third-party,domain=crashplane.ru
 sexicelebs.ru###adflow
 sexicelebs.ru##div[style^="text-align:center;"] > a[href*="/track?c="] > img
 t-do.ru##a.btn + div > a:not([href^="tg://"])
@@ -11788,7 +11786,6 @@ tv.planeta.ru##.broadcast-stream-ads
 take-profit.org##.broker-news
 24auto.ru##.brrr_place
 irecommend.ru##.brusok.brusok-processed
-vgtimes.ru##.bspromo
 ebalovo.mobi##.btn[formaction*="ebalovo.mobi/link-dat/"]
 mozhaysksg.ru##.btop
 taker.im##.btop > div#logo > a > img
@@ -17574,7 +17571,6 @@ www.ex.ua/*/index.css
 ||vg-news.ru/files/banners/
 ||vgae.ru/uploads/b/
 ||vgoru.org/images/banners/dd.jpg
-||vgtimes.ru/styles/spec/
 ||vgtrk.seasonvar.ru/index.html
 ||via-midgard.info/top/img.php
 ||via-midgard1.info/uploads/payad/
@@ -18393,7 +18389,6 @@ top.mail.ru##.banner_240
 ||r.mradx.net/*/banner.js
 !
 ! ok.ru
-/:\/\/ok\.ru\/dk\?cmd=(?![a-zA-Z]+)[0-9a-zA-Z]{18}&gwt\.requested=/$xmlhttprequest,other,domain=ok.ru
 ! брендинг страницы авторизации
 ok.ru##.anonym_login_w+div.prl_txt
 ||st.mycdn.me/res/css/prod/login/login_megafon.*.css
