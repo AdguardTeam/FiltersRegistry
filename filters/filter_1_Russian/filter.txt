@@ -74,6 +74,8 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||5vul2bdy.store^$third-party
+||zetrade.net^$third-party
 ||ijacgw.com^$third-party
 ||wmip.ru^$third-party
 ||targetseek.ru^$third-party
@@ -4652,7 +4654,9 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 !
 ppt.ru##div[id^="A"][style="height: 0px; display: block;"]
 !
-sinoptik.ua,pravda.com.ua,epravda.com.ua,ppt.ru,vsetv.com,gagadget.com,censor.net.ua,gismeteo.ua,okino.ua,dengi.ua,etextlib.ru,etextlib.ru,glavcom.ua,kinoafisha.ua,forumodua.com,real-vin.com,hvylya.net,kp.ua,sinoptik.ua#%#//scriptlet("set-constant", "String.prototype.charCodeAt", "falseFunc")
+gismeteo.ua$$script[tag-content="zmctrack"]
+!+ NOT_PLATFORM(windows, mac, android)
+strana.ua,sinoptik.ua,pravda.com.ua,epravda.com.ua,ppt.ru,vsetv.com,gagadget.com,censor.net.ua,gismeteo.ua,okino.ua,dengi.ua,etextlib.ru,etextlib.ru,glavcom.ua,kinoafisha.ua,forumodua.com,real-vin.com,hvylya.net,kp.ua,sinoptik.ua#%#//scriptlet("set-constant", "String.prototype.charCodeAt", "falseFunc")
 ! 26.12.2018
 $$script[wildcard="!function*;try{*proxy*floor*"][min-length="8000"][max-length="10000"]
 ! 12.11.2018
@@ -4682,7 +4686,7 @@ opnevmonii.ru,bodytrain.ru,vvinograd.ru,zemlyaki.name,felomena.com#%#AG_abortInl
 !+ NOT_PLATFORM(windows, mac, android)
 fishki.net#%#//scriptlet('abort-current-inline-script', 'Object.prototype.run')
 !+ NOT_PLATFORM(windows, mac, android)
-zaxid.net,simpsonsua.com.ua,tabfilm.ru,kurs.com.ru,isport.ua,lostfilm-online.org,strana.ua,telegraf.in.ua,24tv.ua,ria-m.tv,kaztorka.org,segodnya.ua,allboxing.ru#%#AG_abortInlineScript(/!function\(\)/, 'String.fromCharCode');
+zaxid.net,simpsonsua.com.ua,tabfilm.ru,kurs.com.ru,isport.ua,lostfilm-online.org,telegraf.in.ua,24tv.ua,ria-m.tv,kaztorka.org,segodnya.ua,allboxing.ru#%#AG_abortInlineScript(/!function\(\)/, 'String.fromCharCode');
 !+ NOT_PLATFORM(windows, mac, android)1
 dengi.ua,kino-hd720.net,kinoskala.net,mirknig.su,112.ua,kinopad.net,vsetv.com,kp.ua,kino-fs.ucoz.net,ex-fs.net,sinoptik.com.ru,hvylya.net#%#AG_abortInlineScript(/\/\*[0-9a-f]{40}\*\//, 'String.fromCharCode');
 !+ NOT_PLATFORM(windows, mac, android)
@@ -7286,8 +7290,6 @@ torseed.net#%#(function(){var c=document.addEventListener;document.addEventListe
 kakprosto.ru#%#AG_onLoad(function() { window.getDirectBlock = function() {}; });
 ! https://forum.adguard.com/index.php?threads/19366/
 porno-go.com#%#Object.defineProperty(window, 'slo', { get: function(){ return false; } });
-! PanamaClient WebRTC circumvention
-strana.ua#%#URL.createObjectURL=function(){return"about:blank"};
 ! https://forum.adguard.com/index.php?threads/19166/
 fayloobmennik.net#%#AG_onLoad(function() { setTimeout(function() { linker(); window.open = function() {}; }, 300); });
 ! gamegpu.com - clickunder
@@ -18421,7 +18423,7 @@ gorodrabot.ru##.vacancy.premium
 /assets/vendor/*.xml?externalsubid=*&v=$domain=kodik.biz|kodik.cc|kodik.info|vio.to
 /assets/vendor/*.xml?*external_subid=$domain=kodik.biz|kodik.cc|kodik.info|vio.to
 /assets/vendor/*.xml?v=$domain=kodik.biz|kodik.cc|kodik.info|vio.to
-/v.php?id=$domain=kodik.biz|kodik.cc|kodik.info|vio.to|kodikdb.com
+.php?id=$script,third-party,xmlhttprequest,domain=kodik.biz|kodik.cc|kodik.info|vio.to|kodikdb.com
 kodik*/adv-vast/
 ||kodik.biz/vast/
 ||kodik.cc/vastadvert/
@@ -18640,9 +18642,7 @@ kinopoisk.ru###top > div[style*="height: 210px; left: 0px; position: absolute; t
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15537
 ||pornovizion.xyz/*.html$replace=/adsPrerollMediaUrl:(\s)*\['\/AJAX\/[a-z0-9]+.mp4'\]\,//
 ! kodik.cc
-||kodik.cc/get-video$replace=/vast":/vast_":/
-.club/get-video|$replace=/("reserve_vast":\[).+?]/\$1""\]/,xmlhttprequest,important
-||homeless-thrill.date/get-video$replace=/"vast":".+?"\,"reserve_vast":\[".+?"\,".+?"\]/"vast":""\,"reserve_vast":[""\,""]/
+||kodik.*/video-links$replace=/vast":/vast_":/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16723
 /components/video/ajax/get_movie_code.php$replace=/if\(cur_time == 0\)/if\(cur_time\)/,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12971
