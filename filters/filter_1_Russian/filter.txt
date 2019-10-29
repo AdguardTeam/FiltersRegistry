@@ -74,6 +74,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||zfsfkp.com^$third-party
 ||meborangot.ru^$third-party
 ||ogeri.ru^$third-party
 ||atavas.ru^$third-party
@@ -7148,20 +7149,18 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.zen-pa
 !
 !--- [START] Fixing AdFox constant page load ---
 ! Удаление iframe от баннера, иначе страница вечно грузится
-!zr.ru,aftershock.su,aif.ru,meteocenter.net,newsland.com,eg.ru,sovsport.md,newsland.com,eg.ru,select.by,sovsport.md,sovsport.ru,playground.ru,kinonews.ru,gismeteo.ua,gismeteo.by,soccer.ru,mobile-review.com,thg.ru,mk.ru,oszone.net,dirty.ru,hotline.ua,topnews.ru,povarenok.ru,readmanga.me,sobesednik.ru#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="ar_"]'); });
-!informpskov.ru,onedivision.ru,nakanune.tv,rusvesna.su,deita.ru,biysk24.ru,baskino.com,gai.ru,topnews.ru,russianfood.com,altapress.ru#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="k_c"]'); });
-!biztorg.ru,cnews.ru,odnako.org,kasparov.ru,wonderzine.com,rbc.ru,soccer.ru,aftershock.su,rbcdaily.ru,sobesednik.ru#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="ml_"]'); });
 avtovzglyad.ru,sports.ru,vesti.ru,colta.ru#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="AdFox_iframe_"]'); });
 kinoprofi.net,rutracker.org,new-rutor.org,myzuka.org#%#AG_onLoad(function() { AG_removeElementBySelector('iframe[id^="_ads_"]'); });
 mail.rambler.ru,rg.ru,meduza.io#%#AG_onLoad(function() { setTimeout(function() { AG_removeElementBySelector('iframe[id^="AdFox_iframe_"]'); },1000); });
 iomedia.ru,tbs-play.com#%#AG_onLoad(function() { AG_removeElementBySelector('ins[id^="aswift_"]'); });
 kttc.ru#%#AG_onLoad(function() { setTimeout(function() { AG_removeElementBySelector('ins[id^="aswift_"]'); }, 6000); });
-!~mos.ru#@%#AG_onLoad(function() { AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
 #%#try { Object.defineProperty(window, 'noAdsAtAll', { get: function() { return true; } }); } catch (ex) {}
 !--- [END] Fixing AdFox constant page load ---
 ! SocialMart banner
 s4galaxy.ru,3dnews.ru,lenovo-smart.ru#%#Object.defineProperty(window, 'SocialMartDocumentHelper', { get: function() { return function SocialMartDocumentHelper(){} } });
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/43054
+newsland.com#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", ".*")
 ! gazeta.ru - remove branditg from the score table in sport section
 gazeta.ru#%#(function() {var observer = new MutationObserver(hide);observer.observe(document, {childList: !0,subtree: !0});function hide() {const elements = document.getElementsByClassName('betting'); [...elements].forEach((element) => { element.className = element.className.replace(/betting/, ""); });}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42271
@@ -17420,7 +17419,7 @@ www.ex.ua/*/index.css
 ||static.kinoafisha.info/static/css/illumination/*/main.css
 ||static.therussiantimes.com/clck/tiz*.
 ||static.videonow.ru/contentroll/vn_browser_container.js$domain=film.ru|life.ru|medialeaks.ru|rusnovosti.ru|sport-express.ru|sports.ru|tvzvezda.ru
-||static.videonow.ru^$domain=7days.ru|cosmo.ru|dni.ru|esquire.ru|film.ru|gamebomb.ru|graziamagazine.ru|igromania.ru|kakprosto.ru|kino-teatr.ru|ntsk.ru|rbc.ru|russian.rt.com|sports.ru
+||static.videonow.ru^$domain=7days.ru|cosmo.ru|dni.ru|esquire.ru|film.ru|gamebomb.ru|graziamagazine.ru|igromania.ru|kakprosto.ru|kino-teatr.ru|ntsk.ru|rbc.ru|russian.rt.com|sports.ru|newsland.com
 ||static.wi-fi.ru/banners/
 ||static.wi-fi.ru/mtt/banners
 ||static.zakon.kz/static_zakon/img/branding_
@@ -17984,7 +17983,7 @@ liveinternet.ru##div[style="margin-top:-5px;margin-bottom:-20px;"]
 hdgo.cc,vio.to###payadvert
 !
 ! 'Lucky' at advertising domain name
-/^http(s?):\/\/([A-Za-z0-9-.]+\/){5,}[A-Za-z0-9_-]+$/$script,third-party,domain=crashplane.ru|ymkababy.ru
+/^http(s?):\/\/([A-Za-z0-9-.]+\/){5,}[A-Za-z0-9_-]+$/$script,third-party,domain=crashplane.ru|ymkababy.ru|newsland.com
 !
 ! visitweb
 .com^|$third-party,domain=uzporno.net
