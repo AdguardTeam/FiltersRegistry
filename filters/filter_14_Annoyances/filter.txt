@@ -199,13 +199,17 @@ gmod.fusion-rp.ru##.uix_welcomeSection
 world-of-facts.com###check-also-box
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34471
 tweakers.net##.relatedItProContent
+! https://github.com/AdguardTeam/AdguardFilters/issues/43507
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37604
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34185
-nextmag.com.tw#$##video_player { display: block!important; visibility: visible!important; }
-nextmag.com.tw#$#.article-content { display: block!important; visibility: visible!important; }
-nextmag.com.tw#$#.ndgPayway { display: none!important; }
-nextmag.com.tw#$#.ndPaywall { display: none!important; }
-nextmag.com.tw#%#AG_setConstant('paywall', 'noopFunc');
+nextmgz.com,nextmag.com.tw#$##video_player { display: block!important; visibility: visible!important; }
+nextmgz.com,nextmag.com.tw#$#.article-content { display: block!important; visibility: visible!important; }
+nextmgz.com,nextmag.com.tw#$#.ndgPayway { display: none!important; }
+nextmgz.com,nextmag.com.tw#$#.ndPaywall { display: none!important; }
+!+ NOT_PLATFORM(windows, mac, android)
+nextmgz.com,nextmag.com.tw#%#//scriptlet("set-constant", "paywall", "noopFunc")
+!+ PLATFORM(windows, mac, android)
+nextmgz.com,nextmag.com.tw#%#AG_setConstant('paywall', 'noopFunc');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33896
 fotomagazin.de###block-fm-page-fm-sticky-footer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31259
@@ -3671,9 +3675,9 @@ it-actual.ru#%#AG_setConstant('window.alert', 'undefined');
 ||static.cdnslate.com/etc/designs/slate/js/plus-upsell-adblock.js
 techsolutiontips.com#%#window.google_jobrunner = function() { };
 !+ NOT_PLATFORM(windows, mac, android)
-abc.es,dumpert.nl,accuweather.com,expressilustrowany.pl#%#//scriptlet("abort-current-inline-script", "atob", "googlefc")
+polskatimes.pl,abc.es,dumpert.nl,accuweather.com,expressilustrowany.pl#%#//scriptlet("abort-current-inline-script", "atob", "googlefc")
 !+ PLATFORM(windows, mac, android)
-abc.es,dumpert.nl,accuweather.com,expressilustrowany.pl#%#AG_abortInlineScript(/googlefc/, 'atob');
+polskatimes.pl,abc.es,dumpert.nl,accuweather.com,expressilustrowany.pl#%#AG_abortInlineScript(/googlefc/, 'atob');
 !+ NOT_PLATFORM(windows, mac, android)
 theprovince.com,bnd.com,showtv.com.tr,haberturk.com,uol.com.br,metropoles.com,brantfordexpositor.ca,canoe.com,thesouthern.com,business.financialpost.com,vancouversun.com,poststar.com,wcfcourier.com,montrealgazette.com,nwitimes.com,elnuevoherald.com,bellinghamherald.com,elpais.com,okdiario.com#%#//scriptlet("abort-on-property-read", "googlefc")
 !+ PLATFORM(windows, mac, android)
