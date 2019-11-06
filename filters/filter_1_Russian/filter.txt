@@ -74,6 +74,10 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||octclck.xyz^$third-party
+||ogclick.com^$third-party
+||1klink.ru^$third-party
+||purpulium.com^$third-party
 ||apucdt.com^$third-party
 ||ortermodown.ru^$third-party
 ||eadgxy.com^$third-party
@@ -4779,9 +4783,6 @@ ogodom.ru,progorod59.ru,car.ru,mainavi.ru,yconsult.ru,zakonprost.ru,sadovodu.com
 !
 $$script[tag-content="cc-support-script"][max-length="8000"]
 theplace.ru,fastpic.ru,teleprogramma.pro,homius.ru,ogodom.ru,progorod59.ru,car.ru,mainavi.ru,e-news.su,yconsult.ru,tsargrad.tv,zakonprost.ru,sadovodu.com,adderall.ru,km.ru,proroofer.ru,aftershock.news,bigbangserial.ru,darkside.ru,farap.ru,gryadki.com.mnogo-krolikov.ru,it-tehnik.ru,lostseries.ru,modernfirearms.net,pravda.ru,primamedia.ru,sobakada.ru,sonnikonline.club,sovsport.ru,y-story.ru,сельхозпортал.рф$$script[tag-content="cc-support-script"][max-length="8000"]
-!
-.ru/*/*/*/$script,xmlhttprequest,other,third-party,domain=maxpark.com|theplace.ru|fastpic.ru|globuss24.ru|prozoro.net.ua|comp-profi.com|nnm-club.tv|nnm-club.lib|nnm-club.me|nnmclub.to|car.ru|sobesednik.ru|allday2.com|teleprogramma.pro|homius.ru|ogodom.ru|progorod59.ru|car.ru|mainavi.ru|e-news.su|yconsult.ru|tsargrad.tv|zakonprost.ru|sadovodu.com|adderall.ru|km.ru|proroofer.ru|luna-segodnja.ru|aftershock.news|bigbangserial.ru|darkside.ru|farap.ru|gryadki.com.mnogo-krolikov.ru|it-tehnik.ru|lostseries.ru|modernfirearms.net|pravda.ru|primamedia.ru|sobakada.ru|sonnikonline.club|sovsport.ru|y-story.ru|7ogorod.ru|fermilon.ru|сельхозпортал.рф
-.ru/*/*/$script,xmlhttprequest,other,third-party,domain=vringe.com
 ! new rule for extensions
 comp-profi.com#%#//scriptlet('abort-current-inline-script', 'SharedWorker', 'cc-support-script')
 !
@@ -7186,6 +7187,11 @@ kttc.ru#%#AG_onLoad(function() { setTimeout(function() { AG_removeElementBySelec
 ! SocialMart banner
 s4galaxy.ru,3dnews.ru,lenovo-smart.ru#%#Object.defineProperty(window, 'SocialMartDocumentHelper', { get: function() { return function SocialMartDocumentHelper(){} } });
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/43382
+!+ NOT_PLATFORM(windows, mac, android)
+moresisek.net#%#//scriptlet("abort-current-inline-script", "document.addEventListener", "/asg_mixed_tabs/")
+!+ PLATFORM(windows, mac, android)
+moresisek.net#%#AG_abortInlineScript(/asg_mixed_tabs/, 'document.addEventListener');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43503
 !+ NOT_PLATFORM(windows, mac, android)
 porevos.ru#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "/substr/")
@@ -14399,7 +14405,7 @@ adult-images.ru##center > div[style="width:1200px;"]:not([class])
 bio-ege.sdamgia.ru##center > div[style="width:160px;overflow:hidden"]
 torrent-windows.net##center > div[style] > img
 forum.0day.kiev.ua##center > div[style^="height: 200px;"]
-best-torrentor.ru,king-torrent.ru##center > noindex
+torrent-kek.ru,best-torrentor.ru,king-torrent.ru##center > noindex
 innal.top,rustorka.club,rustorka.com,rustorka.net,rustorkacom.lib,tapochek.net##center a[target="_blank"] > img
 babestar.ru##center noindex + a[rel="nofollow"]
 citystar.ru/im/b/
@@ -18017,6 +18023,11 @@ liveinternet.ru##div[style="margin-top:-5px;margin-bottom:-20px;"]
 /vast.$domain=hdgo.cc|vio.to
 hdgo.cc,vio.to###payadvert
 !
+! Ads on content farm sites
+/(\.ru|\.com)\/.+\/.+\/.+/$script,xmlhttprequest,other,third-party,domain=maxpark.com|theplace.ru|fastpic.ru|globuss24.ru|prozoro.net.ua|comp-profi.com|nnm-club.tv|nnm-club.lib|nnm-club.me|nnmclub.to|car.ru|sobesednik.ru|allday2.com|teleprogramma.pro|homius.ru|ogodom.ru|progorod59.ru|car.ru|mainavi.ru|e-news.su|yconsult.ru|tsargrad.tv|zakonprost.ru|sadovodu.com|adderall.ru|km.ru|proroofer.ru|luna-segodnja.ru|aftershock.news|bigbangserial.ru|darkside.ru|farap.ru|gryadki.com.mnogo-krolikov.ru|it-tehnik.ru|lostseries.ru|modernfirearms.net|pravda.ru|primamedia.ru|sobakada.ru|sonnikonline.club|sovsport.ru|y-story.ru|7ogorod.ru|fermilon.ru|moidom38.ru|сельхозпортал.рф
+/(\.ru|\.com)\/.+\/.+/$script,xmlhttprequest,other,third-party,domain=vringe.com
+https://rgqxbf.com/mn9l17912/ilvpm003y/oln/786/vqu768kypc01r
+!
 ! 'Lucky' at advertising domain name
 /^http(s?):\/\/([A-Za-z0-9-.]+\/){5,}[A-Za-z0-9_-]+$/$script,third-party,domain=crashplane.ru|ymkababy.ru|newsland.com|prozoro.net.ua
 !
@@ -18028,7 +18039,7 @@ hdgo.cc,vio.to###payadvert
 ||uploadimagex.com/block_script_vm.php
 !
 |http*://$image,third-party,domain=image2you.ru
-|http*://$script,third-party,domain=ruporus.net
+|http*://$script,third-party,domain=ruporus.net|games-tracker.org
 |http*://$script,third-party,xmlhttprequest,domain=imgdawgknuttz.com|sexxxjoys.com|best-ero.net|bioxtubes.com|catcut.net|drochunov.net|eroxxvideos.tv|fast2picture.ru|fastpic.ru|film-adult.com|foto-toto.ru|golovstvo.ru|hdporno.ru|homeporn.tv|hot-matures.com|igra-prestolov.me|images-pic.ru|img-picas.ru|img-pika.ru|imgbun.ru|imgpics.ru|joporn.net|kinofrukt.club|kinostate.net|kinovau.club|lalamus.cc|mangachan.me|mega-pics-money.ru|mjusli.ru|monkeypx.ru|new-rutor.com.pl|nod-key.com|parnuxi.com|pic-money.ru|pic-you.com|pic4art.ru|piccent.ru|picfrees.ru|picpic.online|picpower.ru|pics-money.ru|picusha.net|pikas-img.ru|platimzafoto.ru|polnometrazhnoe-porno.video|porn-1080.com|porno-island.org|porno-kino.online|pornoazbuka.com|pornobee.com|pornokinozal.net|pornolabs.org|pornospere.com|pornotor.org|pornoxz.com|privat-zapisi.biz|pussy-king.net|radikal.ru|radikal.rutests-exam.ru|rus.porn|sex-empire.tv|slontube.mobi|sozrel.cc|sverhestestvennoe.me|torrentinka.com|uraltrack.net|wwxww.ru|yaoichan.me|yyouut.ru|zhahach.com|zz87.xyz|porno-island.games|izvrata.net|kinostate.tv|myuspehlife.ru|mzmuz.ru|mshelxxx.ru.com|love-mother.ru|art-dizayn.com.ua
 |http://$script,third-party,xmlhttprequest,domain=agronomwiki.ru|asn.in.ua|avforums.ru|cinematorrent.net|dieta.ru|dveridoc.ru|free-torrents.eu.org|henchan.me|imgbum.ru|megaoblako.ru|open-sharing.com|plodorod.net|pornoostrov.com|pornoroot.com|rutorka.net|scifi-tv.ru|vashipitomcy.ru|visit-kostroma.ru|y-story.ru
 !--- VisitWeb, TeaserNet and similar ---
