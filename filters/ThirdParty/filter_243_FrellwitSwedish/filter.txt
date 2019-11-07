@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 3 days (update frequency)
-! Last modified: 2019-11-07 05:00:14 CET
+! Last modified: 2019-11-07 07:08:44 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -46,6 +46,7 @@ aftonbladet.se,~editorialtools.aftonbladet.se#$#html,body { overflow: auto !impo
 akaskidor.se,body.se,svenskgolf.se#$#body { background-image: none !important; }
 akaskidor.se,svenskgolf.se##.margin-bottom:has(.row--native)
 akerstromsblog.com,annsoderlund.com,ellinorlofgren.se,emmagreen.se,fokis.se,fredagskocken.se,fridaselkirkblogg.se,frureinhold.se,gynning.net,hormonerhemorrojder.se,magnusnorman.com,pennyparnevik.com,pingishadenius.com,sannafischer.se,sannalundell.se,teresagrundin.se##[id^="post-"]:has(.sponsored-notification)
+aktivtraning.se,iform.se,natgeo.se##li:has(.content-label:has-text(/annons/i))
 alexandrabring.se,biancaingrosso.se##article[id^="post-"]:has(em:has-text(/i samarbete med/i))
 alicestenlof.com#$#.noscroll { overflow: initial !important; }
 alingsastidning.se##.textwidget:has(a[href*="casino"])
@@ -150,7 +151,6 @@ hockeymagasinet.com#$#body.modal-open { overflow-y: scroll !important; }
 hypeline.se##.homecontent:has(.sponsrad_ruta)
 ica.se,sverigesradio.se,urplay.se#$#.async-hide { opacity: 1 !important; }
 idg.se##a[data-click-settings*="Article Outbound Links"]:has(strong:has-text(/annons/i))
-iform.se##li:has(.content-label:has-text(/annons/i))
 interiorbyvanessa.se##.post:has-text(I annonssamarbete med)
 isabellalowengrip.se##.post:has(em:has-text(/^i samarbete med/i))
 justwannahavefun.se##.legible:has(.sub-title:has-text(/sponsrat av/i))
@@ -202,8 +202,6 @@ moviezine.se##[class*="inner_"]:has(.badge:has-text(/sponsrat/i))
 mygatemagazine.se##.textwidget:has-text(Annons)
 mytaste.se#$#.recipe-modal[data-state=default] .modal-container.open, .recipe-modal[data-state=panorama] .modal-container.open { padding-top: 0 !important; }
 mytaste.se#$#body.modal-active.modal-open:before, body.modal-active:before { opacity: unset !important; content: unset !important; }
-natgeo.se##.rotator-custom-nav > li:has(.content-label:has-text(/annons/i))
-natgeo.se##.slides > .rotator-active-slide:has(.content-label:has-text(/annons/i))
 newsvoice.se##.td_module_wrap:has(a[title*="casino"])
 nordichardware.se##.td-big-grid-post:has(a[href*="/sponsrat/"])
 nordichardware.se##.td_block_wrap:has(span:has-text(/sponsrat/i))
@@ -1080,6 +1078,7 @@ ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border
 @@/wp-content/plugins/seagal-plugin-dfp/assets/showAds.js$script,~third-party
 @@/wp-content/plugins/seagal-plugin-dfp/src/showAds.js$script,~third-party
 @@/wp-content/themes/seagal-editorial/assets/js/ads.js$script,~third-party
+@@/wpdcookiejs/*$domain=nordichardware.se
 @@_advert.$domain=e-pages.dk
 @@||100kitchenstories.se^$generichide
 @@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=tv4play.se
@@ -1444,6 +1443,7 @@ dagensmedia.se,resume.se###__next > div[class^="css-"]:last-child
 dagensmedia.se,resume.se##.slot-articlemodule
 dagensmedia.se,resume.se##.slot-module
 dagensmedia.se,resume.se##a[href^="/annons/"]
+dagensmedia.se,resume.se##a[href^="/native/"]
 dagensmedicin.se##.widget-carousel--sponsored
 dagensopinion.se##a[href^="/annons-"]
 dagensps.se##.category-ps-partner
@@ -2719,6 +2719,7 @@ yougov.se##.cookie-confirm
 ||matchesfashion.com^*/ExternalBanners$image,third-party
 ||mcgtrack.herokuapp.com^$third-party
 ||media.jw-it.se/b/$image
+||media.jw-it.se/getip.php
 ||mediaglacier.com^$third-party
 ||mediakraft.se^$third-party
 ||mediekompaniet.com^$third-party
