@@ -8606,6 +8606,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 ! JS rules
 !
 vice.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[class^="sp_choice"]:first-child'); if(el) el.click(); }, 700); });
+flyingmag.com#%#AG_onLoad(function() { setTimeout(function() { if(location.href.includes("gdpr.html?redirect")) { var el = document.querySelector('#CybotCookiebotDialogBodyButtonAccept'); if(el) { el.click(); } } }, 300); });
 popsci.com#%#AG_onLoad(function() { setTimeout(function() { if(location.href.includes("gdpr.html?redirect")) { var el = document.querySelector('#CybotCookiebotDialogBodyButtonAccept'); if(el) { el.click(); } } }, 300); });
 seat.nl#%#(function(){if(-1==document.cookie.indexOf("BCPermissionLevel")){var c=new Date, d=c.getTime(), date = new Date(d + 365 * 60 * 60 * 1000); document.cookie="BCPermissionLevel=PERSONAL; path=/; expires=" + date.toUTCString(), location.reload()}})();
 decopedia.nl#%#AG_onLoad(function() { var el=document.querySelector('form#cookieAcceptForm button[value="accept"]'); if(el) el.click(); });
@@ -8635,7 +8636,7 @@ bk.com#%#document.cookie = "cookiePopup=%22true%22; path=/";
 web2.0calc.com#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("cookies")){document.cookie="cookies=yes;path=/",location.reload()}});
 amarujala.com,www-amarujala-com.cdn.ampproject.org#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('amp-consent > #consentDialog > .consentPopup > button[on="tap:myUserConsent.accept"]'); if(el) el.click(); }, 500); });
 huffingtonpost.fr#%#AG_abortInlineScript(/openPrivacyPage/, 'jQuery');
-consent.yahoo.com#%#AG_onLoad(function() { setTimeout(function() { document.querySelector("button[name='agree']").click(); }, 300); });
+consent.yahoo.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[type="submit"][value="agree"].btn'); var el1 = document.querySelector('input[type="submit"][value="OK"].btn'); if(el) { el.click(); } if(el1) { el1.click(); } }, 300); });
 virustotal.com#%#document.cookie = "euConsent=1";
 wallpaperup.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("wup_consent", "1") } } catch (ex) {} })();
 mediamarkt.se#%#document.cookie = "MC_PRIVACY=marketing;domain=www.mediamarkt.se;path=/";
@@ -13332,6 +13333,11 @@ radio.yandex.by,radio.yandex.kz,radio.yandex.ru,radio.yandex.ua##.page-station__
 @@||yastatic.net/daas/atom.js$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.com|mail.yandex.com.tr
 !-----------------------------------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/43865
+toonily.com##.c-ads
+toonily.com##a[href="https://toonily.com/membership/"] > img
+toonily.com###main-sidebar > .row > #media_image-3
+toonily.com#?#.body-wrap > .c-top-second-sidebar > .container > .row > #text-2:has(a[href="https://toonily.com/membership"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43825
 teamquest.pl##.advHeader
 teamquest.pl##.additionalContentVerticalList > .joborders
@@ -13729,6 +13735,7 @@ experts-exchange.com##.interceptBackgroundBlocker
 experts-exchange.com##.adBanner-comment
 experts-exchange.com##.ctaSolutionStickyWrapper
 !
+gdeposylka.ru##.container > ul.navbar-left > li.hidden-xs > a[href="/top-products"]
 comss.ru#?##main > div.container-fluid:has(> div.container div.item > a[href] > img[style="width:915px;heigth:auto;"])
 alexbruni.ru#?#table > tbody > tr:has(> td > a[href="https://alexbruni.ru/ytup/"])
 mir24.tv##body > div[style*="height: 180px; width: 100%;"]
