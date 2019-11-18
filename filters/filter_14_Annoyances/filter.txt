@@ -74,6 +74,8 @@
 !
 !######### Annoying elements (not ads)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/44268
+anizm.tv##a[href^="https://www.instagram.com/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44131
 thenewyear.xyz##.row > div[class] > p
 thenewyear.xyz##.row > div[class] > h4
@@ -2445,7 +2447,7 @@ skegnessstandard.co.uk#@#.text-ad-links
 ||s3.amazonaws.com/assets.sidearmsports.com/plugins/detector.min.js
 !
 /^https?:\/\/[^\/]+\.[^\/]+\/[a-zA-Z0-9]{32,}$/$script,~third-party,domain=~tkepyc.com|~lvxutzhzm.com|~bgxwfrjty.com|~pch.com|~open.fm|~money.pl|~tribunnews.com|~onet.pl|~przegladsportowy.pl|~ekstraklasa.tv|~medonet.pl|~auto-swiat.pl|~businessinsider.com.pl|~fakt.pl|~forbes.pl|~noizz.pl|~plejada.pl|~vod.pl|~komputerswiat.pl|~wp.pl|~coco.fr|~ign.com|~namemc.com|~roblox.com|~sap.com|~studio-svet.ru|~stumbleupon.com|~trueachievements.com|~tv.yandex.by|~tv.yandex.kz|~tv.yandex.ru|~tv.yandex.ua|~wetteronline.de|~justjared.com|~gfycat.com|~ejuslehq.com|~o2.pl|~pudelek.pl|~ltzwsjgg.bpghhjtmn.com
-/^https?:\/\/[^\/]+\/[a-zA-Z0-9]{32,}$/$script,third-party,domain=~centrum.cz|~tkepyc.com|~pch.com|~open.fm|~money.pl|~tribunnews.com|~onet.pl|~przegladsportowy.pl|~ekstraklasa.tv|~medonet.pl|~auto-swiat.pl|~businessinsider.com.pl|~fakt.pl|~forbes.pl|~noizz.pl|~plejada.pl|~vod.pl|~komputerswiat.pl|~wp.pl|~coco.fr|~ign.com|~namemc.com|~roblox.com|~sap.com|~studio-svet.ru|~stumbleupon.com|~trueachievements.com|~tv.yandex.by|~tv.yandex.kz|~tv.yandex.ru|~tv.yandex.ua|~wetteronline.de|~justjared.com|~mynet.com|~o2.pl|~pudelek.pl|~bolasport.com
+/^https?:\/\/[^\/]+\/[a-zA-Z0-9]{32,}$/$script,third-party,domain=~kompasiana.com|~centrum.cz|~tkepyc.com|~pch.com|~open.fm|~money.pl|~tribunnews.com|~onet.pl|~przegladsportowy.pl|~ekstraklasa.tv|~medonet.pl|~auto-swiat.pl|~businessinsider.com.pl|~fakt.pl|~forbes.pl|~noizz.pl|~plejada.pl|~vod.pl|~komputerswiat.pl|~wp.pl|~coco.fr|~ign.com|~namemc.com|~roblox.com|~sap.com|~studio-svet.ru|~stumbleupon.com|~trueachievements.com|~tv.yandex.by|~tv.yandex.kz|~tv.yandex.ru|~tv.yandex.ua|~wetteronline.de|~justjared.com|~mynet.com|~o2.pl|~pudelek.pl|~bolasport.com
 /^https:\/\/.*?\/v2\/0\/[a-zA-Z0-9_-]{30,}$/$third-party,script,domain=~techworld.com
 ! Kill-Adblock
 /wp-content/plugins/kill-adblock/*
@@ -2522,6 +2524,19 @@ vladan.fr#@#.textAd
 vladan.fr#@#.text_ads
 ||lindenhurstsneads.doyondeville.com^$script,third-party
 ||willseyvillefingerville.polaccafaison.com^$script,third-party
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/44287
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+dailywire.com#@#.pub_300x250
+dailywire.com#@#.pub_300x250m
+dailywire.com#@#.pub_728x90
+dailywire.com#@#.text-ad
+dailywire.com#@#.textAd
+dailywire.com#@#.text_ad
+dailywire.com#@#.text_ads
+dailywire.com#@#.text-ads
+!#endif
+dailywire.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads { display:block!important;}
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42476
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
@@ -4071,8 +4086,6 @@ cc-fan.tv,cn-fan.tv,fox-fan.tv,nf-fan.tv#@#.text_ads
 !#######################################################
 !######### General element hiding rules ################
 !#######################################################
-!+ NOT_OPTIMIZED
-##.cookie-banner:not(body):not(html)
 !
 ##.header-cookies
 ##.ensureCookie
@@ -5104,7 +5117,6 @@ cc-fan.tv,cn-fan.tv,fox-fan.tv,nf-fan.tv#@#.text_ads
 ##.cookie-msg:not(body):not(html)
 ##.cookie-nag
 ##.cookie-note
-~calvinklein.be##.cookie-notice:not(body):not(html)
 ##.cookie-notice-container
 ##.cookie-notice-dialog
 ##.cookie-notice-wrapper
@@ -5113,7 +5125,6 @@ cc-fan.tv,cn-fan.tv,fox-fan.tv,nf-fan.tv#@#.text_ads
 ##.cookie-notify
 ##.cookie-opt-in
 ##.cookie-optin
-##.cookie-overlay
 ##.cookie-panel
 ##.cookie-panel-content
 ##.cookie-panel-overlay
@@ -5477,6 +5488,12 @@ cc-fan.tv,cn-fan.tv,fox-fan.tv,nf-fan.tv#@#.text_ads
 ##.wsa-cookielaw
 ##body > #ckch
 !+ NOT_OPTIMIZED
+##.cookie-overlay
+!+ NOT_OPTIMIZED
+~calvinklein.be##.cookie-notice:not(body):not(html)
+!+ NOT_OPTIMIZED
+##.cookie-banner:not(body):not(html)
+!+ NOT_OPTIMIZED
 ###cookie-law-info-bar
 !#######################################################
 !######### General URL blocking rules ##################
@@ -5806,7 +5823,7 @@ machotube.tv,icegay.tv,gayporno.fm,fitnessbar.ru,skillbox.ru,gaymensextube.com,i
 ! ##.butterBar--privacy
 blog.streamelements.com,uxdesign.cc,blog.discordapp.com,hackernoon.com,medium.com,blog.twitch.tv,blog.bitwarden.com##.butterBar--privacy
 ! ##.page-wrap--cookie-permission
-kjus.com,one.de,yvolve.de,trinkgut.de,shifter.shop,berrybase.de,kalypsomedia.com,obd-2.de,universaledition.com,geschenke-online.de,globus-baumarkt.de,titus.de,titus-shop.com,pflanzen-koelle.de,bijou-brigitte.com,w6-naehmaschinen.de##.page-wrap--cookie-permission
+ski-outdoor-shop.de,kjus.com,one.de,yvolve.de,trinkgut.de,shifter.shop,berrybase.de,kalypsomedia.com,obd-2.de,universaledition.com,geschenke-online.de,globus-baumarkt.de,titus.de,titus-shop.com,pflanzen-koelle.de,bijou-brigitte.com,w6-naehmaschinen.de##.page-wrap--cookie-permission
 ! ##.cookiePolicyNotice
 david-forum.de,vlc-forum.de,community.rabeneltern.org,pubg.world,clashroyaleforum.de,analog-forum.de,forum.gameware.at##.cookiePolicyNotice
 ! ##.sliding-popup-bottom
@@ -5822,7 +5839,7 @@ tripadvisor.be,tripadvisor.ca,tripadvisor.co,tripadvisor.co.id,tripadvisor.co.uk
 ! ###cross-dialog
 dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gratka.pl,gs24.pl,katowice.naszemiasto.pl,kurierlubelski.pl,motofakty.pl,naszemiasto.pl,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,stronakobiet.pl,telemagazyn.pl,to.com.pl,wspolczesna.pl###cross-dialog
 !
-campz.at##.js-cookieHeader
+addnature.co.uk,campz.at##.js-cookieHeader
 antenne.de###uc-privacy-button + div[id^="uc-banner"]
 ableton.com##.test-cookie-notification
 linksnappy.com###euCookieBlock
@@ -7364,7 +7381,7 @@ deepl.com###dl_cookie_footer
 rockpapershotgun.com###ecd_opt_in_banner
 rllmukforum.com,1excelbet365.com,android-zone.ws,board.sonicstadium.org,crafted.pl,excelbet365.com,forum.brcbet.com,forum.kaspersky.com,forum.kvinneguiden.no,forums.malwarebytes.com,gamedev.net,iosgods.com,iphoneyardim.net,land-cruiser.ru,metin2tech.eu,paradise-rpg.pl,polar-chat.de,schiffsmodell.net,turkish-media.com,winclub.pl###elGuestTerms
 epochtimes.de###etd_cookie_alert
-shop.ltbjeans.com,thomas-philipps.de###eu-cookie-bar-notification
+jobbogfritid.no,shop.ltbjeans.com,thomas-philipps.de###eu-cookie-bar-notification
 accuweather.com###eu-cookie-notify-wrap
 humblebundle.com###eu-cookie-warning-banner
 virustotal.com,virustotalcloud.appspot.com###euConsent
@@ -8674,6 +8691,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+la7.it#%#document.cookie = "euconsent=1; path=/;";
 reuters.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.getElementById("_evidon-banner-acceptbutton"); if(el) { el.click(); } }, 300); });
 vice.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[class^="sp_choice"]:first-child'); if(el) el.click(); }, 700); });
 flyingmag.com#%#AG_onLoad(function() { setTimeout(function() { if(location.href.includes("gdpr.html?redirect")) { var el = document.querySelector('#CybotCookiebotDialogBodyButtonAccept'); if(el) { el.click(); } } }, 300); });
@@ -10429,6 +10447,9 @@ sodapdf.com##.be-tooltip
 !
 ! Specific sites
 !
+addnature.co.uk#%#document.cookie = "newsletter_opened=1; path=/";
+boxberry.ru##.sweet-modal-overlay
+kompasiana.com##.konten__menarik
 marketrealist.com###PopupSignupForm_0
 gorky.media##.subs-block
 campz.at#$#.no-overflow { overflow: visible!important; }
@@ -14854,6 +14875,8 @@ welt.de##iframe[src^="https://widget.civey.com"]
 !
 ! Chat widgets
 !
+boxberry.ru##.popup-messenger
+anizm.tv#?#.sidebar > h3.text-center:contains(Chat)
 mega.ru##.chatButton
 ||youpits.com^$domain=60fps.live
 60fps.live###custom_html-3
@@ -14902,7 +14925,7 @@ nhentai.net##footer > p > b
 nhentai.net###chatbanner
 ! chatango.com widget
 pokemon-tube.com,shirainime.com,mangashiro.co,daemon-hentai.com,seirsanduk.us,mangashiro.org,animefrenzy.net,sedsports.com,158.69.54.218,indoxxi.show,strikeout.nu,aniwatcher.com,mylivecricket.info##iframe[src*="chatango.com"]
-||st.chatango.com^$domain=hesgoal.com|sanzisport.com|goanimelist.me|pokemon-tube.com|animeindo.moe|shirainime.com|mangashiro.co|daemon-hentai.com|seirsanduk.us|mangashiro.org|animefrenzy.net|sedsports.com|158.69.54.218|indoxxi.show|cricfree.sc|cricfree.live|wespeakrugby.com|bosscast.net|strikeout.nu|aniwatcher.com|mylivecricket.info
+||st.chatango.com^$domain=anizm.tv|hesgoal.com|sanzisport.com|goanimelist.me|pokemon-tube.com|animeindo.moe|shirainime.com|mangashiro.co|daemon-hentai.com|seirsanduk.us|mangashiro.org|animefrenzy.net|sedsports.com|158.69.54.218|indoxxi.show|cricfree.sc|cricfree.live|wespeakrugby.com|bosscast.net|strikeout.nu|aniwatcher.com|mylivecricket.info
 158.69.54.218,indoxxi.show##.chatango-btn
 !
 ! Exchange rates widgets
