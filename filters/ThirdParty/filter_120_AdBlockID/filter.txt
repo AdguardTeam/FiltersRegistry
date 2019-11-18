@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 19.321.908
+! OriginalVersion: 19.321.1431
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 17 Nov 2019 15:08 UTC
+! Last modified: 17 Nov 2019 23:51 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -1166,8 +1166,10 @@ _996x50.gif
 ##[src*="/iklan/"]
 ##img[data-permalink^="/apps/iklan-"]
 !
+##[href*="//geni.us/bnrbrg"] > img
 ##[href*="//goraps.com/fullpage.php?"] > img
 ##[href*="bit.ly/ads"] > img
+##[href*="klook.com/id/promo/"] > img
 ##[href^="//mellowads.com/networkspace/"]
 ##[href^="https://publishers.propellerads.com/"] > img
 ##[href^="https://safelinku.com/ref/"] > img
@@ -1514,6 +1516,7 @@ _996x50.gif
 ||pvclouds.com^
 ||qd3u5eeuos.com^
 ||raiphupi.com^
+||rajatraffic.com^$third-party
 ||reevaipi.com^$third-party
 ||remotefilez.info^$third-party
 ||remtoaku.net^
@@ -1697,16 +1700,11 @@ _996x50.gif
 ||ubloger.com^$third-party
 ||windowmentaria.com^$third-party
 ! *** abid:src/specific_block.adbl ***
-||blogspot.com/*.gif$image,domain=mangashiro.org
-!
--300x300.$image,domain=rekblogging.com
 -ads-$image,domain=inikpop.com
--banner-$image,domain=tumeskecil.com
--banner.$image,domain=jurnalotaku.com|plaza-bisnis.com|toffeedev.com
--banner/$image,domain=acmobilindonesia.com
+-banner.$image,domain=plaza-bisnis.com
 .gif$image,domain=aftermarketplus.id|agungjakanugraha.com|alladsnetwork.web.id|edukasibitcoin.com|enthus1ast.com|etalasebisnis.com|horassumutnews.com|hotabis.com|kombatch.com|komiku.net|mangashiro.net|neumanga.tv|selebuzz.co.id|smallencode.com
-/*banner*.$image,domain=anangcozz.com|backpackstory.me|desainstudio.com|ilmukita.org|jejamo.com|mariodevan.com|zonabola.id
-/banner-$image,domain=jagokata.com|toffeedev.com
+/*banner*.$image,domain=anangcozz.com|backpackstory.me|desainstudio.com|jejamo.com|mariodevan.com
+/banner-$image,domain=ilmukita.org
 /whatsapp-image-$image,domain=infodigimarket.com|inspirasipagi.id
 ||abenetwork.com^*/banner-
 ||ads-server.hipwee.com^
@@ -1729,8 +1727,10 @@ _996x50.gif
 ||image.wapsite.info/wp-content/uploads/*/ezgif-$image
 ||indotelko.com/images/banner/$image
 ||infobrand.id^*/banner-$image
+||jagokata.com/images/banner-$image
 ||jogjastreamers.com^*/banner/$image
 ||juragancipir.com/wp-content/uploads/*.gif$image
+||jurnalotaku.com^*-banner.$image
 ||keganjilan.com^*/banner-$image
 ||klikpositif.com^*/banner/
 ||kotakgame.com/images/bnr/$image
@@ -1760,7 +1760,7 @@ _996x50.gif
 -banner-$image,domain=stradamotoblog.com
 -banner.$image,domain=balapmotor.net
 /banner-$image,domain=balapmotor.net|bmspeed7.com|thegreenblog.net
-/iklan-$image,domain=balapmotor.net
+/iklan-$image,domain=balapmotor.net|warungbiker.com
 ||mobilwow.co.id/images/banner/$image
 ||modifikasi.com/images/banner/$image
 ||otomotifzone.com/banner/$image
@@ -1907,6 +1907,7 @@ adventuriderz.com,anangcozz.com,iwanbanaran.com,warungasep.net,warungbiker.com##
 stradamotoblog.com##.wpcnt
 indobikermags.com##a[href^="http://indobikermags.com/goto/"] > img
 otomotifzone.com##a[rel="noopener noreferrer"] > img
+anangcozz.com##a[rel="noopener"] > img
 maniakmotor.com,otomotifmax.com##a[target="_blank"] > img
 !
 arenasmartphone.com##.entry-content > div:-abp-contains(Advertisement)
@@ -2180,6 +2181,7 @@ mariodevan.com,motorrio.com##.wpa:-abp-contains(Advertisement)
 /*bola168*.$image
 /*bola228*.$image
 /*bola24co*.$image
+/*bola88*.$image
 /*bolajalan*.$image
 /*bolamas88*.$image
 /*bolatangkas*.$image
@@ -2330,6 +2332,7 @@ mariodevan.com,motorrio.com##.wpa:-abp-contains(Advertisement)
 /*jakartaqq*.$image
 /*jasa-domino*.$image
 /*jasa_qq*.$image
+/*jasacash*.$image
 /*jasagol*.$image
 /*jasaqq*.$image
 /*jatibet*.$image
@@ -2851,6 +2854,7 @@ _penggugur_kandungan_$image
 ||kucingpoker.$popup
 ||lapakqq.$popup
 ||liga88.$popup
+||ligahoki99.$popup
 ||ligapools88.$popup
 ||livehkpools.$popup
 ||lotus-4d.$popup
@@ -3479,6 +3483,7 @@ _penggugur_kandungan_$image
 ##[href*="duitbux."] > img
 ##[href*="duitpd."] > img
 ##[href*="dunia-bisnis."] > img
+##[href*="duniajodoh."] > img
 ##[href*="dunialotto1."] > img
 ##[href*="duniasarana."] > img
 ##[href*="duniaspa."] > img
@@ -3763,6 +3768,7 @@ _penggugur_kandungan_$image
 ##[href*="jasa_qq"] > img
 ##[href*="jasabet."] > img
 ##[href*="jasacash."] > img
+##[href*="jasacash88."] > img
 ##[href*="jasadomino"] > img
 ##[href*="jasagol"] > img
 ##[href*="jasalonte."] > img
@@ -4819,6 +4825,7 @@ _penggugur_kandungan_$image
 ##img[alt*="Luxury777"]
 ##img[alt*="MEJASAKONG"]
 ##img[alt*="Obat Pembesar Penis"]
+##img[alt*="POKERCIP"]
 ##img[alt*="Poker Jingga"]
 ##img[alt*="Poker Online"]
 ##img[alt*="QQ Online"]
@@ -4827,9 +4834,11 @@ _penggugur_kandungan_$image
 ##img[alt*="RajajudiQQ"]
 ##img[alt*="Rajaremi"]
 ##img[alt*="SBOQQ"]
+##img[alt*="SITUS TARUHAN"]
 ##img[alt*="Situs Judi"]
 ##img[alt*="Situs QQ"]
 ##img[alt*="Situs judi"]
+##img[alt*="TARUHAN BOLA"]
 ##img[alt*="TajirQQ"]
 ##img[alt*="Taruhan Bola"]
 ##img[alt*="Togel Online"]
@@ -16540,4 +16549,4 @@ iklanpopuler.com,sebariklanbaris.net#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/41
 @@/gtm.js$script,domain=tokopedia.com
-! Checksum: UhyDMma6yFmccdtOYpUGbA
+! Checksum: Lbxmn7ELB8ddvV3stpFaig
