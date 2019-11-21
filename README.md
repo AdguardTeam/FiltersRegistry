@@ -1,4 +1,4 @@
-# AG Filters Registry [![Build Status](https://travis-ci.org/AdguardTeam/FiltersRegistry.svg?branch=master)](https://travis-ci.org/AdguardTeam/FiltersRegistry)
+# AG Filters Registry [![Build Status](https://travis-ci.com/AdguardTeam/FiltersRegistry.svg?branch=master)](https://travis-ci.com/AdguardTeam/FiltersRegistry)
 
 This repository contains the known filters subscriptions available to AdGuard users. We re-host these filters on `filters.adtidy.org`. Also, these filters can be slightly modified in order to achieve better compatibility with AdGuard.
 
