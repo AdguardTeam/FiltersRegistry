@@ -4346,6 +4346,9 @@ vargr.ru,electric-house.ru,trialkeys.ru#@#iframe[width="728"][height="90"]
 vargr.ru,electric-house.ru,trialkeys.ru#@#img[width="728"][height="90"]
 !#endif
 !
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/42082
+gazeta.ru#%#//scriptlet('abort-on-property-read', 'g_GazetaNoExchange')
 ! prozoro.net.ua - ads reinjection
 prozoro.net.ua#%#//scriptlet('abort-on-property-read', 'adsBlocked')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42410
@@ -4362,7 +4365,6 @@ rutube.ru#@#.text_ads
 rutube.ru#@#.text-ads
 rutube.ru#@#.checker-adblock
 !#endif
-!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44715
 poli-vsp.ru#@##adSense
 poli-vsp.ru#@##adsense
@@ -5816,7 +5818,7 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#%#//scrip
 liveinternet.ru#%#Element.prototype.attachShadow = function(){};
 !
 ! razlozhi.ru
-razlozhi.ru#%#//scriptlet("set-constant", "common1", "undefined")
+razlozhi.ru#%#//scriptlet("set-constant", "common3", "noopFunc")
 !
 ! livejournal.com#
 !+ PLATFORM(windows, mac, android)
@@ -18926,6 +18928,7 @@ weekend.rambler.ru##div[id^="ban_240x400"]
 ! END: rambler.ru
 !
 ! START: gazeta.ru
+gazeta.ru##.banner ~ div[id]:empty
 gazeta.ru##.betting-item
 gazeta.ru##.betting-logo
 gazeta.ru##.betting-bonus
