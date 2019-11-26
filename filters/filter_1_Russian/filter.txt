@@ -4347,8 +4347,6 @@ vargr.ru,electric-house.ru,trialkeys.ru#@#img[width="728"][height="90"]
 !#endif
 !
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/42082
-gazeta.ru#%#//scriptlet('abort-on-property-read', 'g_GazetaNoExchange')
 ! prozoro.net.ua - ads reinjection
 prozoro.net.ua#%#//scriptlet('abort-on-property-read', 'adsBlocked')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42410
@@ -7245,6 +7243,8 @@ porevos.ru#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "
 porevos.ru#%#AG_abortInlineScript(/substr/, 'String.fromCharCode');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43054
 newsland.com#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", ".*")
+! https://github.com/AdguardTeam/AdguardFilters/issues/42082
+gazeta.ru#%#//scriptlet('abort-on-property-read', 'g_GazetaNoExchange')
 ! gazeta.ru - remove branditg from the score table in sport section
 gazeta.ru#%#(function() {var observer = new MutationObserver(hide);observer.observe(document, {childList: !0,subtree: !0});function hide() {const elements = document.getElementsByClassName('betting'); [...elements].forEach((element) => { element.className = element.className.replace(/betting/, ""); });}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42271
