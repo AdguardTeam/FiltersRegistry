@@ -824,6 +824,12 @@ urbia.de,essen-und-trinken.de#@#.playerAd
 !
 !----------------------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/44865
+@@||photovoltaikforum.com/*/adsbygoogle.js
+!+ NOT_PLATFORM(windows, mac, android)
+photovoltaikforum.com#%#//scriptlet("set-constant", "adblockDisabled", "true")
+!+ PLATFORM(windows, mac, android)
+photovoltaikforum.com#%#AG_setConstant('adblockDisabled', 'true');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43738
 ||blog.kwick.de/module/plugins/deblocker^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43165
@@ -1418,6 +1424,8 @@ smarthomearea.de#@##adsense
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/44865
+photovoltaikforum.com#?#ul.wbbThreadPostList  > li:not([class]):has(> .wcfAdLocation)
 ! myheimat.de - ads on main page (Marktplatz)
 myheimat.de#?#.categoryTeaserBox > .documentTeaser:has(> .adDocument)
 myheimat.de#?#.categoryTeaserBox > .documentList > ul > li:has(> .adDocument)
