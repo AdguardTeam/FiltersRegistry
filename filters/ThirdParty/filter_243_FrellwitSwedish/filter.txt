@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2019-11-24 21:26:12 CET
+! Last modified: 2019-11-27 12:01:16 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -84,6 +84,7 @@ bytbil.com#$#html,body { overflow: auto !important; }
 cafe.se##.bg-white:has(.egmont-spotlights)
 clipmyhorse.tv#$#body { user-select: initial !important; -webkit-user-select: initial !important; -moz-user-select: initial !important; }
 cornucopia.cornubot.se##.FeaturedPost:has(a:has-text(/^Reklam/i))
+cornucopia.cornubot.se##.FeaturedPost:has-text(/publicerat i samarbete med/i)
 cornucopia.cornubot.se##.post:has(i:has-text(/reklam/i))
 cornucopia.cornubot.se##h3:has-text(/sponsrade länkar/i) ~ *
 cyclingplus.se##article:has(.single-subtitle:has-text(/annonssamarbete/i))
@@ -104,14 +105,13 @@ ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sp
 evertiq.se#$##bgWrapp { pointer-events: none !important; }
 evertiq.se#$##content, .sitesTab, .menuBar, #foot { pointer-events: all !important; }
 evertiq.se#$#body { cursor: default !important; }
+expressen.se##.teaser:has(.teaser__third-party--bar)
 expressen.se##.teaser:has(.vignette:has-text(/(^erbjudande från|^annons|^happy green|^presenteras av|i samarbete med)/i))
 expressen.se##.teaser:has(a[href^="/brandstudio/"])
 expressen.se##.teaser__hero:has(iframe[src*="/tv/nyheter/live-start/live-tv-senaste-nyheterna"])
 falkopingstidning.se,jnytt.se,jp.se,skaraborgslanstidning.se,skovdenyheter.se,smalandsdagblad.se,smalanningen.se,smt.se,tranastidning.se,vastgotabladet.se,vetlandaposten.se,vn.se##div.slideshow-in.active:has(.ad-wrapper)
 fastighetssverige.se##.featuredArticle:has(.badge-partner-text)
 fastighetssverige.se#$#.mainVideoBox { display: inherit !important; }
-festivalrykten.se##.featured:has(a:has-text(/annonssamarbete/i))
-festivalrykten.se#$#body { padding-top: 0 !important; }
 filmtipset.se##.row.news:has(em:has-text(/sponsrad/i))
 fiskejournalen.se##.blogindex-layout-large-post:has(.native-wrapper)
 flashscore.se###box-over-content-a:has(a[href^="/promobox"][target="_blank"])
@@ -1628,10 +1628,6 @@ fastighetstidningen.se,skanetrafiken2020.se###cookie-consent-block
 feber.se,tjock.se##.art_ad
 feber.se,tjock.se##.art_ad_sign
 feber.se,tjock.se##adline
-festivalrykten.se###sam-takeover
-festivalrykten.se##.loading
-festivalrykten.se##.sam-mobile
-festivalrykten.se,rumhemma.se###top
 fightermag.se##a[href*="/sponsra"]
 filmtipset.se##.row.news > div[style^="border"]:last-of-type
 finansliv.se,vinochmatguiden.se##.newsletter
@@ -1682,6 +1678,7 @@ fotbolltransfers.com##div[class^="ad"]
 fotosidan.se##.banner-panorama-wmn
 fotosidan.se##.banner-partner-zone-top-wrapper
 fotosidan.se##a[href^="https://ads."]
+fotosidan.se,ljudochbild.se##.topbanner
 foxtv.se###cookieBar
 fragbite.se###scraper
 fragbite.se##.cookieBar
@@ -1804,7 +1801,6 @@ hockeynews.se##.top-ad-style
 hockeynews.se##[id^="outsider-"]
 hrbloggen.se,hypeline.se##[class^="ad_"]
 hrnytt.se,ljuskultur.se,omvarlden.se,svenskfotboll.se,xn--digilr-fua.se##.cookies
-hugorosas.se##.tag-sponsored_post
 hugorosas.se##article.category-samarbete
 hujada.nu##.adds-block
 hujada.nu##.hujad-widget
@@ -1908,7 +1904,6 @@ livetombord.se##a[href^="//www.livetombord.se/artiklar/partner/"]
 ljudochbild.se##.adremark
 ljudochbild.se##.coofad
 ljudochbild.se##.popup-overlay
-ljudochbild.se##.topbanner
 lokalfotboll.se###topbar
 lokalfotboll.se##.inside-right-sidebar > .really_simple_image_widget
 lokalnytt.se##.panoramaImageBox
@@ -2109,6 +2104,7 @@ ridsport.se##.svrf__sticky-ad
 rocknytt.net##[data-widget_type*="bnnrwidgets"]
 rumhemma.se###aside > .html-widget
 rumhemma.se###aside > div:last-child
+rumhemma.se###top
 runnersworld.se##.container-footer
 runnersworld.se##.post-card-sponsored
 runnersworld.se##.sponsored-stats
@@ -2150,6 +2146,7 @@ sokmotorkonsult.se##.pb-topbar
 solidtango.com###cookie-prompt
 spanaren.se##.textwidget > a[target="blank"] > img
 spbi.se##.policy-disclaimer
+spela.se##div[class^="app_gdpr"]
 spelo.se##.cookie-box
 spisa.nu###app > div > div > div[class]:not([data-reactid])
 sportbilen.se###text-4
