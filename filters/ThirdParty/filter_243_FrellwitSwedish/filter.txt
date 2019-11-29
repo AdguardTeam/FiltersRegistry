@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2019-11-29 08:47:27 CET
+! Last modified: 2019-11-29 15:15:04 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -12,9 +12,7 @@
 !
 ! Special thanks to ryanbr@github for the rules from Fanboy's Swedish list.
 !
-! This file is a part of Frellwits-Swedish-Filter.txt and contains filters specifically for uBO/Nano Adblocker
-! There's no need to subscribe to this file
-! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
+! --- Browser/extension specific filters
 .*/*/*.php?*=aftonbladet-live-tv$document
 .info/dagens-nyheter/$document
 .info/dn-nyheter/$document
@@ -292,45 +290,37 @@ xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 ||videoplaza.tv/proxy/tracker/$image,important,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 ||webimages.lokus.se^$image,important,domain=affarsliv.com|affarslivgotland.se|corren.se|ekuriren.se|eposten.se|folkbladet.se|helagotland.se|kkuriren.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|sn.se|unt.se|uppgang.com|vimmerbytidning.se|vt.se
 ||youbora.com^$important,third-party,domain=aftonbladet.se|foxtv.se|svd.se
-! This file is a part of Frellwits-Swedish-Filter.txt and contains filters specifically for uBO/Nano Adblocker
-! There's no need to subscribe to this file
-! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 !#if env_firefox
-!#endif
-!#if env_mobile
-aftonbladet.se##div[data-reactroot] > div > div#MegaAd ~ div[class]:not(#header):not(.abThemeGradientPage)
-swedroid.se##div[id$="_ad_mobile"]
-swedroid.se##.externalTopMobile
-ikea.com##.cookie-info__panel--show
-!#endif
-!#if !env_mobile
-forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__modal--in .idgcp__layer { background: none !important; }
-forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__layer--active, .idgcp__layer--active body { overflow: auto !important; }
-forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__layer { z-index: 0 !important; }
-!#endif
-!#if !env_mobile
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu__title
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu__status
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu:before
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu__item:not(.js-epaper-trigger)
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out *> .js-epaper-trigger { display: inherit !important; border:none !important; }
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: none !important; box-shadow: none !important; background: none !important; top: 20px !important; left: 400px !important; }
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out.is-header-sticky *> .c-user-menu { visibility: hidden !important; }
-!#endif
-!#if !env_safari
-/privacy/notification?$xmlhttprequest,domain=aftonbladet.se
 !#endif
 !#if !env_firefox
 !#endif
 !#if env_chromium
 nyheter24.se###accept-cookies-div
 !#endif
-!#if !env_mobile
-/rokophoto-lite/js/SmoothScroll.$script
-/plugins/wp-enqueue/smoothscroll.$script
-/themes/willow/js/smoothscroll.$script
-/jquery.smoothwheel/*$script
+!#if env_mobile
+ikea.com##.cookie-info__panel--show
+swedroid.se##.externalTopMobile
+aftonbladet.se##div[data-reactroot] > div > div#MegaAd ~ div[class]:not(#header):not(.abThemeGradientPage)
+swedroid.se##div[id$="_ad_mobile"]
 !#endif
+!#if !env_mobile
+forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__layer--active, .idgcp__layer--active body { overflow: auto !important; }
+forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__layer { z-index: 0 !important; }
+forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__modal--in .idgcp__layer { background: none !important; }
+/jquery.smoothwheel/*$script
+/plugins/wp-enqueue/smoothscroll.$script
+/rokophoto-lite/js/SmoothScroll.$script
+/themes/willow/js/smoothscroll.$script
+bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu:before
+bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: none !important; box-shadow: none !important; background: none !important; top: 20px !important; left: 400px !important; }
+bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu__item:not(.js-epaper-trigger)
+bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu__status
+bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu__title
+bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out *> .js-epaper-trigger { display: inherit !important; border:none !important; }
+bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out.is-header-sticky *> .c-user-menu { visibility: hidden !important; }
+!#endif
+/privacy/notification?$xmlhttprequest,domain=aftonbladet.se
+! --- End browser/extension specific filters
 ###accept-cookies-div
 ###catapult-cookie-bar
 ###cliSettingsPopup.cli-modal
@@ -565,7 +555,6 @@ nyheter24.se###accept-cookies-div
 /assets/comeon/*$image,domain=fotbolldirekt.se|hockeysverige.se
 /assets/google-universal-analytics$script
 /assets/pb-$script,domain=weheartit.com
-/ast.js$domain=live.aftonbladet.se
 /at-internet-desktop.js$script,domain=klart.se
 /atomic-blocks/*$script,domain=dinlivsstil.nu|foretagsverige.se|forskningsverige.se|grillbibeln.se|hallbarhetsverige.se|kampenmotcancer.se|motorbibeln.se|tillvaxtsverige.se
 /autonytt-theme/js/blogger.$script,domain=autonytt.se
@@ -1203,6 +1192,14 @@ aftonbladet.se##.social-shares
 aftonbladet.se##[id*="abAdArea"]
 aftonbladet.se##a[href^="/brandstudio"]
 aftonbladet.se##body.abTheme-entertainment *> .abAside > div[style^="text"]:last-child
+aftonbladet.se##div[style*="border-color: rgb(0, 103, 181); border-width: 4px 0px 0px;"]
+aftonbladet.se##div[style*="border-color: rgb(0, 103, 181); border-width: 4px 0px 0px;"] + a
+aftonbladet.se##div[style*="border-color: rgb(0, 103, 181); border-width: 4px 0px 0px;"] ~ a[href*="utm_campaign"]
+aftonbladet.se##div[style*="border-color: rgb(0, 103, 181); border-width: 4px 0px 0px;"] ~ a[href^="/rabattkod"]
+aftonbladet.se##div[style*="border-color:#0067b5;border-width:4px 0px 0px 0px;"]
+aftonbladet.se##div[style*="border-color:#0067b5;border-width:4px 0px 0px 0px;"] + a
+aftonbladet.se##div[style*="border-color:#0067b5;border-width:4px 0px 0px 0px;"] ~ a[href*="utm_campaign"]
+aftonbladet.se##div[style*="border-color:#0067b5;border-width:4px 0px 0px 0px;"] ~ a[href^="/rabattkod"]
 aftonbladet.se,embed.futuresportsmedia.com,fasttrack.webstream.dk,freeride.se,happyride.se,ilikeradio.se,laget.se,maharajah.se,moviezine.se,muscles.se,nordichardware.se,nyckelspel.se,nyheteridag.se,streamio.com,svd.se#@#.afs_ads
 agriprim.se,automobil.se,bettips.se,bike.se,boxerville.se,caroftheyear.se,e.se,entreprenadaktuellt.se,fightermag.se,frillesasbandy.se,husbilhusvagn.se,ja.se,klassiker.nu,livsmedel.se,ljuskultur.se,lokalguiden.se,lovelylife.se,maskinbladet.se,maskinstationerna.se,mopedgaraget.se,norran.se,nyckelspel.se,riksettan.net,scanaktier.se,skogsaktuellt.se,spelo.se,sweclockers.com,vaken.se,vibilagare.se##.banner
 aikfotboll.se,expressen.se,katerinamagasin.se,livsmedel.se##.banners
@@ -2322,6 +2319,8 @@ veckorevyn.com##.category-partner-promotion
 veterinarmagazinet.se##.nyhet-ad
 vi.se##.wppas_container
 via.tt.se##.footer__notification
+viafree.se##.ad-click-through
+viafree.se##.pause-ad
 viafree.se##.pause-ad-container
 viivilla.se###product-area
 viivilla.se##.afubar-top
@@ -2794,7 +2793,7 @@ yougov.se##.cookie-confirm
 ||pingback.issuu.com/ping$xmlhttprequest
 ||pipedrive.com^*/statistics/seen$xmlhttprequest
 ||pixel.playbuzz.com^$xmlhttprequest
-||pji.nu^$third-party,domain=99mac.se|feber.se|fz.se|idg.se|kamerabild.se|minhembio.com|mobil.se|nordichardware.se|surfa.se|sweclockers.com|viivilla.se
+||pji.nu^$third-party,domain=99mac.se|amazonaws.com|feber.se|fz.se|idg.se|kamerabild.se|minhembio.com|mobil.se|nordichardware.se|surfa.se|sweclockers.com|viivilla.se
 ||platform.linkedin.com^$third-party
 ||platssajten.se^$third-party
 ||play.etc.se/sw.js$script
