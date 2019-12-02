@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2019-12-01 16:29:57 CET
+! Last modified: 2019-12-02 08:13:28 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -323,6 +323,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookie-banner
 ###cookie-bar
 ###cookie-consent-banner
+###cookie-info
 ###cookie-law-container
 ###cookie-law-info-bar
 ###cookie-line
@@ -342,8 +343,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###eu-cookie-bar
@@ -449,6 +450,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##img[data-original*="destination.se"]
 ##img[src*="/track.adtraction"]
 ##ul.adsmodern
+&log_ad$image,domain=yelp.se
 &type=load_offers$xmlhttprequest,domain=illvet.se|pctidningen.se
 *$csp=script-src 'none',domain=svtt.se|ssvd.se|exressen.se|eexpressen.se|sskatteverket.se|aatg.se|atgg.se|dpaly.se
 *$csp=worker-src 'none',domain=minfil.com
@@ -487,7 +489,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 .se/wdg/tracking
 .se/wp-content/banners/
 /*Fokus_360x300px_animate*.gif$image,domain=fokus.se
-/*log_ad$image,domain=yelp.se
 /250x360/$image,domain=marsta.nu
 /280x240/$image,domain=rumhemma.se
 /280x360/$image,domain=kurera.se
@@ -509,6 +510,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /acilia-main.$script,domain=foxtv.se
 /ad-$subdocument,domain=forum.odla.nu
 /ad/getNouw.$script
+/ad_acknowledgment$xmlhttprequest
 /adblk.js$script,domain=weekend.di.se
 /addImpression$xmlhttprequest,domain=lajvo.se|skoj.se
 /addtoany/*$domain=fastighetssverige.se
@@ -764,6 +766,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /panorama.js$script,domain=blogg.se|bloggkommentatorerna.se|hannaofsweden.se|itsallabouttaif.se|ladydahmer.nu|lindablom.se|modette.se|rebeckasfoto.se|svenskayoutubers.se|themoviefreak.se|webblogg.se|weberskold.se
 /partnerintegration$domain=hitta.se
 /partners/*_ad_icon$image,domain=tvmatchen.nu
+/perimeter$script,domain=yelp.se
 /permutive-async.js$script
 /personalized/*$xmlhttprequest,domain=dn.se
 /phaser-ads.min.js$script
@@ -1809,7 +1812,6 @@ hungrig.nu##.ui-dialog
 hungrig.nu##.ui-widget-overlay
 husbil.se,husvagn.se,karlskrona.com,karlstad.com,noje.se,stockholm.com##.ui-optin-wrapper
 hypeline.se###herobanner
-ica.se##.recipe-ad
 idg.se##.articleBodyText + .lazyloaded > .cms-target
 idg.se##.nextArticleSp
 idg.se##.prisjaktCompare
@@ -1899,9 +1901,7 @@ liberalerna.se###cc-notice
 lidkopingsnytt.nu###annons_head
 linnherbertsson.se##[id^="content-ad"]
 linnherbertsson.se,mp.se###cookies
-listor.se##.belowad
-listor.se##.swp_social_panelSide
-listor.se##.widget_easy_facebook_page_plugin
+listor.se##.top-ads-widget
 livetombord.se##a[href^="//www.livetombord.se/artiklar/partner/"]
 ljudochbild.se##.adremark
 ljudochbild.se##.coofad
@@ -2026,7 +2026,6 @@ norran.se##.adtech-ad
 norran.se##.article__ad--panorama
 norran.se##.js-cookie-information-bar
 norran.se##.social-share__button
-norran.se,yelp.se###cookie-info
 norrbotten.com##.td-ss-main-sidebar > .td-a-rec
 norrbotten.com##a[href*=".com/annons"]
 norrbottensaffarer.se###naaddbox
@@ -2052,12 +2051,7 @@ nyhetersto.se##a[href*="/reklam/"]
 omni.se##.article--sponsored
 omni.se##.resource--sponsored
 onlinepizza.se##.top-banner-container
-opulens.se##.google-plus
-opulens.se##.header-social-icons
 opulens.se##.mailpoet_form
-opulens.se##.s-social
-opulens.se##.side-box.opule-widget
-opulens.se##.social-btn
 opulens.se##a[href$="Opulens_Banner"]
 orebronyheter.com###top-wrapper
 osterbottenstidning.fi,vasabladet.fi##.dialogue-content
@@ -2113,10 +2107,7 @@ runnersworld.se##body > div.d-md-block > a[target="_blank"]
 ruthless.se##.notices
 saljledarskap.se,tjanstebilen.se###myModal
 saljledarskap.se,tjanstebilen.se##a[href*="/?SPA="]
-samnytt.se##.estp-tab-wrapper
-samnytt.se##.nc_socialPanel
 samnytt.se##[id^="samny-"]
-samnytt.se##a[data-bid][href*="/linkout/"]
 schoolido.se##.so-cookie__area
 screen-marknaden.se##.fo-banner
 screen-marknaden.se##.fp-banner
@@ -2384,7 +2375,6 @@ yougov.se##.cookie-confirm
 ||alltforforaldrar.se/extra/dp/dp.js$script
 ||amazonaws.com/adn-tag/$script
 ||amazonaws.com/metapic-cdn/*/metapic.$script,stylesheet
-||amazonaws.com/spotlife.js$script,domain=spotlife.se
 ||amazonaws.com/stage$websocket,domain=clipmyhorse.tv
 ||amqp-ws-proxy.radioplay.se^$websocket
 ||ana.tunnl.com^
@@ -2575,6 +2565,7 @@ yougov.se##.cookie-confirm
 ||fakturino.se^$third-party
 ||fapp.pw^$third-party
 ||fast.fonts.com/t/1.css$stylesheet,xmlhttprequest
+||fast.fonts.net/lt/1.css$stylesheet,xmlhttprequest
 ||fast.fonts.net/t/1.css$stylesheet,xmlhttprequest
 ||fastout.com/analytics/
 ||fasttrack.webstream.dk/statistik$xmlhttprequest
@@ -2844,7 +2835,6 @@ yougov.se##.cookie-confirm
 ||salesiq.zoho.com/widget$domain=seodesign.se
 ||samnytt.se^$csp=frame-src 'self' *.youtube.com youtube.com *.youtube-nocookie.com youtube-nocookie.com *.vimeo.com disqus.com
 ||sannsyn.com^$third-party
-||sc-static.net/scevent.$third-party,domain=yelp.se
 ||scandicpartners.se^$third-party
 ||schibsted.io^*/gdpr-bundle.js$script
 ||script.e-space.se^$third-party
@@ -2979,10 +2969,8 @@ yougov.se##.cookie-confirm
 ||woomio.com^$third-party
 ||yandex.st/share/share.$third-party
 ||yastatic.net/share/$third-party
-||yelp.se/ad_acknowledgment$xmlhttprequest
 ||yelp.se/eu_cookie_notice$subdocument
 ||yelp.se/sit_rep
-||yelp.se/yl*-$script
 ||yieldbird.com^$third-party
 ||yieldwrapper.com^$third-party
 ||yle.fi/initAdobeAnalytics.$script
