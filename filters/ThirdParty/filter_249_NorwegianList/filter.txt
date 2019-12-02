@@ -1,5 +1,5 @@
 !
-! OriginalVersion: 30November2019v1
+! OriginalVersion: 02December2019v2
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
 ! Expires: 12 hours
@@ -297,6 +297,8 @@ amino.dk##.topAd930x180
 arendalstidende.no#?#div[style^=font-size]:-abp-contains(/^Annonse:/)
 avisen.dk##.Ad
 avvir.no##.avvir-block-top.avvir-block-container
+ba.no##.maelstrom-topbanner
+ba.no###cm2-1
 bilnorge.no###artikkel300x250right
 bilnorge.no###nettboard_art1
 bilnorge.no#?#tr:-abp-has(td:-abp-contains(Annonse:))
@@ -578,7 +580,6 @@ vafo.dk##.adform-flexblock
 ! www.op.no
 ##.am-bazaar-ad
 ##.bazaarSpinnerContainer
-##[id^=art-bazaarAdGrid-]
 ##optimus-element[id^=art-bazaarAd-][version=default]
 ! journalisten.dk
 ###jobads-topbanner
@@ -617,6 +618,11 @@ vafo.dk##.adform-flexblock
 ##.vc_empty_space
 ! demokraten.no, avisa-hordaland.no, blv.no, gat.no, lp.no, osogfusa.no, raumnes.no, setesdolen.no, sunnhordland.no, vaksdalposten.no, vtb.no
 ##.banners.post_sticky
+! ba.no
+! https://github.com/DandelionSprout/adfilt/pull/53
+##bazaar-ad
+##[id^=art-bazaarAd]
+||services.api.no/api/bazaar^$third-party
 ! 🇳🇴: ——— Tomme skillebokser ———
 ! 🇩🇰: ——— Tomme adskillerbokser ———
 ! 🇬🇧: ——— Empty divider spaces ———
@@ -673,6 +679,9 @@ krom.is#@#.share-container
 live.nettavisen.no#@#.active > div
 ! https://github.com/ryanbr/fanboy-adblock/issues/1243/
 ||ktg-content.cdn.prismic.io/api/*/documents/*(my.newsletter_popup.uid
+! https://github.com/easylist/easylist/issues/4413
+@@||flowplayer.com/*/ads.min.js$domain=nettavisen.no
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=nettavisen.no
 ! 🇳🇴/🇩🇰: ——— Anti-anti-reklameblokkering ———
 ! 🇬🇧: ——— Anti-anti-adblocking, in the event that https://forums.lanik.us/viewtopic.php?f=23&t=42273 were to specifically mention such entries as a reason to be denied EasyList affiliation or native ABP inclusion ———
 @@*.dk/assets/templates/*/ads.png$image,domain=maskinbladet.dk|agrar-plus.dk|fritidsmarkedet.dk|dagensbyggeri.dk|maskinteknik.dk|gronteknik.dk
