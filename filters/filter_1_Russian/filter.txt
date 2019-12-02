@@ -4353,6 +4353,14 @@ vargr.ru,electric-house.ru,trialkeys.ru#@#iframe[width="728"][height="90"]
 vargr.ru,electric-house.ru,trialkeys.ru#@#img[width="728"][height="90"]
 !#endif
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/45115
+@@||staticmv.mediavitrina.ru/vitrina_assets/*?_=*&ads=adv$domain=staticmv.mediavitrina.ru
+@@||yastatic.net/pcode/adfox/loader.js$domain=ren.tv
+@@||ads.adfox.ru/*/getCode?p1=$domain=staticmv.mediavitrina.ru
+! prevent anti-adblock callback
+||stat-analytics.mediavitrina.ru^
+||videomore.ru^$media,redirect=noopmp4-1s,domain=mediavitrina.ru
+||videomore.ru^$domain=mediavitrina.ru
 !
 ! prozoro.net.ua - ads reinjection
 prozoro.net.ua#%#//scriptlet('abort-on-property-read', 'adsBlocked')
@@ -6140,9 +6148,11 @@ avost.org,animevost.site,animevost.online,animevost.xyz,animevost.net,animevost.
 !
 pb.wtf,piratbit.org,piratbit.pw,piratbit.top#?#table > tbody[id]:has(> tr > td.message > a[target="_blank"])
 !
-catalog.sport-wiki.org#?##sidebar > aside:has(> div > a[href="https://bet-rider.com"])
 ex-press.by#?#.template:has(> div.template-content > div.template-block > div.mega-item > ins.adsbygoogle)
 ex-press.by#?#.template:has(> div.template-content > div.template-block > div.mega-item > div[id^="adfox_"])
+ex-press.by#?#.template:has(> div.template-content > div.template-block > div.mega-item > div[id]:contains(Loading...))
+!
+catalog.sport-wiki.org#?##sidebar > aside:has(> div > a[href="https://bet-rider.com"])
 meat-expert.ru#?#.ipsList_reset > li.ipsWidget:has(> div.banner-block)
 sportmail.ru#?#.p-fixed-panel > .box:has(> .box__block div[data-module="SlotModel"][data-adq-id])
 unn.com.ua#?#.b-page-border > ul[style*="width: 600px"]:has(> li > div[id^="admixer_"])
