@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2019-12-02 08:13:28 CET
+! Last modified: 2019-12-03 07:35:48 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -83,6 +83,7 @@ cornucopia.cornubot.se##.FeaturedPost:has-text(/publicerat i samarbete med/i)
 cornucopia.cornubot.se##.post:has(i:has-text(/reklam/i))
 cornucopia.cornubot.se##h3:has-text(/sponsrade länkar/i) ~ *
 cyclingplus.se##article:has(.single-subtitle:has-text(/annonssamarbete/i))
+cyclingplus.se,halsafitness.se,yogaworld.se##.post-wrap:has(h3:has-text(/samarbete/i))
 dagensanalys.se#$#.modal-active { overflow: auto !important; }
 dagensjuridik.se##.card--muted:has(strong:has-text(/^senaste nytt från våra partners/i))
 di.se##.carousel-tab:has-text(/^annons:/i)
@@ -131,7 +132,6 @@ garaget.org##.small.discrete:has-text(Annons:)
 garaget.org##.title-bg:has-text(Sponsrade tjänster)
 gynning.net##[id^="post-"]:has(h3:has-text(/i samarbete med/i))
 halsafitness.se,yogaworld.se##.post-wrap:has(a[title="PROMOTION"])
-halsafitness.se,yogaworld.se##.post-wrap:has(h3:has-text(/annonssamarbete/i))
 hamnenplay.solidtango.com#$##video-controls-bar { display: initial !important; }
 hamsterpaj.net##.article:has(a:has-text(/casino|spelautomat/i))
 hemnet.se##.article-list-post a:has(span:has-text(Sponsrad))
@@ -431,6 +431,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##.sw-popular__article--ad
 ##.sw-sponsored_post
 ##.swp-ad-strossle
+##.thb_ad_header
 ##.toppannonser
 ##.viacomcookiebar:not(body):not(html)
 ##.we-are-using-cookies:not(body):not(html)
@@ -539,7 +540,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /analytics/gallup/*$script
 /annons-linje.gif$image,domain=tkj.se
 /annons.aspx?
-/annons/$image,domain=barnsemester.se|battrestadsdel.se|boktugg.se|bubb.la|dansbandskanalen.se|etc.se|etunawebben.se|fastighetstidningen.se|guldkanalen.se|kurera.se|lesscarbs.se|lundagard.se|megafonen.nu|natursidan.se|newsvoice.se|nvp.se|opulens.se|polistidningen.se|rumhemma.se|saik.com|sff.nu|siriusbandy.se|skillingaryd.nu|svf.se|tekniksmart.se|vinbanken.se|xn--vrnamo-bua.nu
+/annons/$image,domain=barnsemester.se|battrestadsdel.se|boktugg.se|bubb.la|dansbandskanalen.se|etc.se|etunawebben.se|fastighetstidningen.se|flygtorget.se|guldkanalen.se|kurera.se|lesscarbs.se|lundagard.se|megafonen.nu|natursidan.se|newsvoice.se|nvp.se|opulens.se|polistidningen.se|rumhemma.se|saik.com|sff.nu|siriusbandy.se|skillingaryd.nu|svf.se|tekniksmart.se|vinbanken.se|xn--vrnamo-bua.nu
 /annons/*$subdocument,domain=internetlankar.se
 /annons_hor.
 /annons_ver.
@@ -918,7 +919,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /run/analytic$~third-party,xmlhttprequest,domain=momondo.se
 /s_code.js$domain=dagenstv.com
 /Scripts/burt/*$script,domain=di.se
-/scripts/pb*.js$script,domain=100kitchenstories.se|elinskoglund.com|fannystaaf.se|linnahlborg.se|lovisawallin.se|moamattsson.se|nouw.com|saraabrahamsson.se
+/scripts/pb*.js$script,domain=100kitchenstories.se|benjeey.se|elinskoglund.com|fannystaaf.se|linnahlborg.se|lovisawallin.se|moamattsson.se|nouw.com|saraabrahamsson.se
 /se-wordpress-agilis-solum/assets/js/ad-collapse.$script
 /se-wordpress-gdpr
 /se-wordpress-google-analytics
@@ -1074,6 +1075,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||amazonaws.com/ads/$image,domain=jobb.maxkompetens.se
 @@||assets-cdn.mytaste.org/js/ads.js$script
 @@||atl.nu^$generichide
+@@||benjeey.se^$generichide
 @@||boffo.se^$generichide
 @@||bohuslaningen.se^$generichide
 @@||byggahus.se^$generichide
@@ -1321,6 +1323,8 @@ battrestadsdel.se##.entry-priomaker
 baws.se##.td-post-sharing-top
 baws.se,datormagazin.se,gjuteriet.se,tennisportalen.se,villalivet.se##.td-more-articles-box
 baws.se,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se##a.gofollow[data-track][target="_blank"]
+benjeey.se,elinskoglund.com,fannystaaf.se,linnahlborg.se,lovisawallin.se,moamattsson.se,nouw.com,saraabrahamsson.se###ConsentBanner
+benjeey.se,elinskoglund.com,fannystaaf.se,linnahlborg.se,lovisawallin.se,moamattsson.se,nouw.com,saraabrahamsson.se##[title="Ad space"]
 betting.se##.header-banners
 bettips.se##.bettips-am
 bilsport.se###bst-bot
@@ -1541,8 +1545,6 @@ ekonominyheter.se##a[rel="dofollow"][target="_blank"]
 ekonominyheter.se,paleoskafferiet.se,uwtd.me##a[href*="/track.adtraction."]
 elektronikforumet.com##td > a[href*="bildelar"][target="_blank"]
 elektronikforumet.com,existenz.se,funfunfun.se##a[href*="bannerid"]
-elinskoglund.com,fannystaaf.se,linnahlborg.se,lovisawallin.se,moamattsson.se,nouw.com,saraabrahamsson.se###ConsentBanner
-elinskoglund.com,fannystaaf.se,linnahlborg.se,lovisawallin.se,moamattsson.se,nouw.com,saraabrahamsson.se##[title="Ad space"]
 emocore.se###main > #home_start_div ~ .m_t.box:nth-last-child(-n+2)
 emocore.se###sticky-panorama
 emocore.se,svenskamagic.com###reklam
@@ -1643,6 +1645,7 @@ flashback.org###right-banner-container
 flashback.org###top-banner-row
 flashback.org##.post-banner-container
 flashscore.se###cookie-law
+flygtorget.se###PreHeader
 fn.se,kb.se###cookie
 fokus.se###cookie-box
 fokus.se##.panorama-ads-top
@@ -2146,6 +2149,7 @@ sportbilen.se,vimeddjur.se###heateor_ss_browser_popup_bg
 sportbilen.se,vimeddjur.se###the_champ_sharing_more_providers
 sportbloggare.com##.partners-box
 sportfiskeforum.se###fj-topad
+sporthalsa.se##.header_top
 sportpanelen.se###text-html-widget-3
 sportpanelen.se###tie-block_1832
 sportpanelen.se##.main-content > div.stream-item
@@ -2755,6 +2759,7 @@ yougov.se##.cookie-confirm
 ||nouw.com/campaignpost/reg/$image
 ||nxload.com^$csp=script-src 'self' 'unsafe-inline' 'unsafe-eval' code.jquery.com data: blob:
 ||nya-filmer.*/masha.$script
+||nyafilmer.*/banner$subdocument
 ||nyafilmer.*/branding/$image
 ||nyafilmer.*/sw.js$script
 ||nyafilmer.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.gstatic.com *.tmdb.org
@@ -2762,6 +2767,7 @@ yougov.se##.cookie-confirm
 ||nyckelspel.se/images/adblocker-leaderboard.$image
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
+||onlystream.*^$csp=default-src 'self' 'unsafe-inline' cdn.osimg.co cdnjs.cloudflare.com *.ostreamcdn.com *.osimg.co data:
 ||opinionstage.com/assets/autoengage.$script
 ||optnmnstr.com^$third-party
 ||opulens.se^$csp=worker-src 'none'
