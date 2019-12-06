@@ -14537,6 +14537,11 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !######### JS tweaks ##########
 !##############################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/45486
+!+ NOT_PLATFORM(windows, mac, android)
+katfile.com#%#//scriptlet("adjust-setTimeout", "#freebtn", "", "0.02")
+!+ PLATFORM(windows, mac, android)
+katfile.com#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/#freebtn/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45436
 newsteez.com,spechly.com#%#AG_onLoad(function(){var a=document.querySelector(".wpsafe-bottom > #shrtxyz > form[action*='/?safelink_redirect=']");if(a&&(a=a.action.split("?safelink_redirect="))&&a[1])try{window.location=decodeURIComponent(a[1])}catch(b){}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45347
@@ -14780,7 +14785,7 @@ waktusehat.xyz,viralogic.xyz#%#AG_abortOnPropertyRead('mousedwn');
 waktusehat.xyz,viralogic.xyz#%#AG_abortOnPropertyRead('disableSelection');
 anisubindo.video#%#AG_abortOnPropertyRead('disableSelection');
 anisubindo.video#%#AG_onLoad(function() { document.ondragstart = document.oncontextmenu = function() { return true; }; });
-topflix.tv,sportsio.xyz,blackavelic.com,irisbuddies.ml,poisonous-raspberry-fields.blogspot.com,mangarock.com,redirdx.in,tmofans.com,thememazing.com,baan-series.com,baixarfilmetorrent.net,baixarfilmetorrent.com,mega-infonews1a.club,portaldoinvestidor.club,wikidoplaneta.club#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
+magdyman.com,topflix.tv,sportsio.xyz,blackavelic.com,irisbuddies.ml,poisonous-raspberry-fields.blogspot.com,mangarock.com,redirdx.in,tmofans.com,thememazing.com,baan-series.com,baixarfilmetorrent.net,baixarfilmetorrent.com,mega-infonews1a.club,portaldoinvestidor.club,wikidoplaneta.club#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
 voxc.org#%#AG_onLoad(function() { document.oncontextmenu = function() { return true; }; });
 pisap.tk#%#AG_abortInlineScript(/contextmenu/, '$');
 papahd.live#%#AG_onLoad(function() { document.onkeydown = document.body.oncontextmenu = document.oncontextmenu = function() { return true; }; });
