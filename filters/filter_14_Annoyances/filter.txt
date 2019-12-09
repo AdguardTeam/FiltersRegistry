@@ -5939,6 +5939,7 @@ dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,ec
 ! ##.cookieinfo
 entwicklerheld.de,seirsanduk.us,cezeta.com,getpaidtoshare.money,gsc-game.com,gta-gorevleri.com,hometurkey.com,indiansexvideos.porn,kinonet.pl,mtled-novels.com,pitwalk.de,praxis-jugendarbeit.de,rambox.pro,reversinglabs.com,sacheats.com,shadersmod.com,uploadcloud.pro##.cookieinfo
 !
+happymod.com##.fot-fixd
 freegogpcgames.com##div[id^="cookii-"]
 viennaticketoffice.com##body > div[id][style="float:left"]
 inyourpocket.com###ask_cookie_low
@@ -13148,6 +13149,7 @@ armeniasputnik.am,sputniknewslv.com##.modal-push
 !
 !######### Remains of ads
 !
+unlockapk.com##.StlyeSocial
 uploadrar.com#%#AG_onLoad(function() { document.getElementsByClassName('download2page')[0].innerHTML = document.getElementsByClassName('download2page')[0].innerHTML.replace(/ads[\s]*\d*/g, ''); });
 business-class.su##.remove
 ichip.ru##.code-block
@@ -14541,6 +14543,11 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !######### JS tweaks ##########
 !##############################
 !
+! newsjizz.in - skip timer
+!+ NOT_PLATFORM(windows, mac, android)
+newsjizz.in#%#//scriptlet("adjust-setInterval", "counter", "", "0.02")
+!+ PLATFORM(windows, mac, android)
+newsjizz.in#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/counter/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45486
 !+ NOT_PLATFORM(windows, mac, android)
 katfile.com#%#//scriptlet("adjust-setTimeout", "#freebtn", "", "0.02")
