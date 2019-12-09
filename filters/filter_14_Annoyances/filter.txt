@@ -2615,6 +2615,7 @@ auto.ru#%#//scriptlet('set-constant', 'window.AD2', 'undefined')
 ! gismeteo domains
 gismeteo.ru,gismeteo.by,gismeteo.pl,gismeteo.lt,gismeteo.md,gismeteo.kz#%#//scriptlet('abort-on-property-read', 'Object.prototype.loadAd')
 !
+@@||downsub.com/js/showAds.js
 @@||bcrams.com/common/templates/dfp/
 antutu.pw###ai-adb-message
 antutu.pw###ai-adb-overlay
@@ -6120,7 +6121,7 @@ yubo.live#?#body > script + div > div[class^="_"]:has(> button:contains(I agree)
 wsj.com###cx-notification
 hinta.fi###hv-gdpr
 monster.lu###cookieAcceptance
-blog.mercedes-benz-passion.com,bayreuth-tourismus.de,vereinigte-stadtwerke.de,raaberbahn.at,mt1.at,camperstyle.net###BorlabsCookieBox
+biathlon-online.de,blog.mercedes-benz-passion.com,bayreuth-tourismus.de,vereinigte-stadtwerke.de,raaberbahn.at,mt1.at,camperstyle.net###BorlabsCookieBox
 hl-live.de##.cookieconsent
 udtech.co##.js-cookies_popup
 the-british-shop.de###ws_cookie_layer
@@ -9078,6 +9079,8 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/45630
+@@||pm.sourcepoint.mgr.consensu.org/?privacy_manager_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45473
 @@||oasjs.kataweb.it/cookielex^$domain=video.repubblica.it
 ! gruener-punkt.de - broken scroll
@@ -14651,8 +14654,7 @@ cowner.net,larati.net,rd.consoletarget.com,xterca.net,gloyah.net#%#(function(){v
 linkvertise.com,link-to.net#%#!function(){if(-1<window.location.href.indexOf("dynamic?r=")){var a=location.href.split("?r=");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
 link-to.net#%#AG_onLoad(function(){if(window.location.href.match(/https?:\/\/link-to\.net\/\d+\//)){var a=document.body.textContent.match(/window\.location\.href = \("([\s\S]*?)"\);/);if(a&&a[1])location=a[1];}});
 ! Based on Universal Bypass
-linkvertise.com#%#AG_onLoad(function() { var el = document.querySelector("lv-linkvertise"); if(el) { var xhr=new XMLHttpRequest;xhr.onload=function(){var a=JSON.parse(xhr.responseText);a&&a.data&&a.data.link&&(window.location=a.data.link.target)};xhr.open("GET","https://linkvertise.net/api/v1/redirect/link/static"+location.pathname);xhr.send(); } });
-link-to.net#%#AG_onLoad(function() { var el = document.querySelector("lv-linkvertise"); if(el) { var xhr=new XMLHttpRequest;xhr.onload=function(){var a=JSON.parse(xhr.responseText);a&&a.data&&a.data.link&&(window.location=a.data.link.target)};xhr.open("GET","https://linkvertise.net/api/v1/redirect/link/static"+location.pathname);xhr.send(); } });
+linkvertise.com,link-to.net#%#!function(){ var xhr=new XMLHttpRequest;xhr.onload=function(){var a=JSON.parse(xhr.responseText);a&&a.data&&a.data.link&&(window.location=a.data.link.target)};xhr.open("GET","https://linkvertise.net/api/v1/redirect/link/static"+location.pathname);xhr.send(); }();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32710
 pandora.com.tr#%#AG_onLoad(function() { setTimeout(function() { var link1=document.getElementById("urunDetayKapak"); var link2=document.getElementById("urun-detay"); if(link1 || link2){link1.ondragstart=function(){return!0},link1.oncontextmenu=function(){return!0},link1.onselectstart=function(){return!0},link2.ondragstart=function(){return!0},link2.oncontextmenu=function(){return!0},link2.onselectstart=function(){return!0},$("#urunDetayKapak").css("MozUserSelect","all").unbind("selectstart").unbind("mousedown").unbind("contextmenu"),$(".urunAciklama").css("MozUserSelect","all").unbind("selectstart").unbind("mousedown").unbind("contextmenu"); } }, 300); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31050
