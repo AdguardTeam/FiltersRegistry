@@ -383,19 +383,19 @@ turkanime.net#%#document.cookie = "adblock=1; path=/";
 ||turkanime.net/js/jquery-func.js$replace=/var sojsonEncode[\s\S]*?sojsonEncode = 'sojson\...';//
 ||turkanime.net/js/jquery-func.js$replace=/(\,remove:function\(.\,.\)\{).\(.\,""\,.\(.\,\{expires:-1\}\)\)(\}\,)/\$1\$2/
 turkanime.net#%#AG_onLoad(function(){if(-1!=document.cookie.indexOf("adblock"))for(var b=document.cookie.split(";"),a=0;a<b.length;a++){var c=b[a].split("=")[0],d=b[a].split("=")[1];"adblock"===c&&"0"===d&&(AG_removeCookie("adblock"),document.cookie="adblock=1; path=/")}});
-turkanime.net#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/hasAdsBlocked/.test(a.toString()))return b(a,c)};})();
+turkanime.net#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/;Cookies\[/.test(a.toString()))return b(a,c)};})();
 !#endif
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
-turkanime.net#%#//scriptlet("prevent-setTimeout", "hasAdsBlocked")
-@@||cpmstar.com/cached/*.jpg$domain=turkanime.net
+turkanime.net#%#//scriptlet("prevent-setTimeout", ";Cookies[")
 !#endif
 @@||turkanime.net^$generichide
-@@||cpmstar.com/cached/js/lib.js$domain=turkanime.net
-@@||cpmstar.com/view.aspx?poolid=$domain=turkanime.net
-@@||cpmstar.com/cached/js/textad_async_v*.pack.js$domain=turkanime.net
-@@||cpmstar.com/cached/zonefiles/*_turkanime.js$domain=turkanime.net
-@@||cpmstar.com/cached/zonemasters/mobilemodules.js$domain=turkanime.net
-@@||cpmstar.com/cached/zonemasters/lib/prebid/prebid_*.js$domain=turkanime.net
+! @@||cpmstar.com/cached/*.jpg$domain=turkanime.net
+! @@||cpmstar.com/cached/js/lib.js$domain=turkanime.net
+! @@||cpmstar.com/view.aspx?poolid=$domain=turkanime.net
+! @@||cpmstar.com/cached/js/textad_async_v*.pack.js$domain=turkanime.net
+! @@||cpmstar.com/cached/zonefiles/*_turkanime.js$domain=turkanime.net
+! @@||cpmstar.com/cached/zonemasters/mobilemodules.js$domain=turkanime.net
+! @@||cpmstar.com/cached/zonemasters/lib/prebid/prebid_*.js$domain=turkanime.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45302
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=bunuokusana.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45303
@@ -893,6 +893,7 @@ haberler.com#?#.haberler-grids > div[class^="haberler-item"]:has(> a[target="_bl
 hurriyet.com.tr#?#.rhd-all-article-detail > p:has(> strong:contains(Misli.com))
 bandirmamanset.com#?#.grid-stack > div.grid-stack-item:has(> div[class*="Reklam_"])
 dizilla.com##.relative > div[class] > div.text-center:has(a[href^="https://record."])
+turkanime.net#$?#div[class^="col-xs-"]:has(> div.panel > div.panel-ust > div.panel-title:contains(SPONSOR REKLAM)) { visibility: hidden!important; height: 0px!important; }
 turkanime.net#?#.row > .col-xs-12[style] > .panel:has(> .panel-ust > .panel-title:contains(/^ÜCRETSİZ MMPORG OYUNLAR$/))
 yenimeram.com.tr#?#section > div.textwidget:has(> p > a[target="_blank"][rel^="noopener"])
 gidaturk.com.tr#?#.main_container + div.main-sidebar > div.tr_e3lan-widget:has(img[alt="ad"])
@@ -2290,6 +2291,7 @@ filmmodu.co,dizifilmix.org,sineturk.pw,altyazilifilmizle.tv,1080pfilmizle.net,do
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+||dizimov.net/admatic.js
 konhaber.com##.sagSabitKose
 konhaber.com##.ziledoviz
 hdfilmcehennemi.online##.bnr
@@ -2749,7 +2751,7 @@ altyazi.net##div[class$="-banner"]
 sakaryabomba.com##.IcReklam
 ||klassmagazin.com/img/banner/
 snobmagazin.com##.solreklam
-fotospor.com##.inner-right-ad-300
+gazetesok.com,fotospor.com##.inner-right-ad-300
 ||yvf8.com/p.js
 ||yvf8.com/popr.php
 ||bformu4.tk^$domain=yvf8.com
@@ -3919,7 +3921,7 @@ filmidirekizle.org##[id^="reklamkapat"]
 bahisvadisi24.org###fpub-popup
 ||bahisvadisi24.org/wp-content/uploads/*/mobilbahis.jpg
 ||bahisvadisi24.org/wp-content/uploads/*/*-bedava-bonus.gif
-papik.net###drk_reklam_text1-4
+papik.net##div[id^="drk_reklam_text"]:not(#drk_reklam_text1-5)
 iha.com.tr##.adIDM
 1haber.com##.dreklam
 1haber.com##.ust_kisim_reklam
