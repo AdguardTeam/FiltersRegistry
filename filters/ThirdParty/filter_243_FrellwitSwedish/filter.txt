@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2019-12-16 09:45:09 CET
+! Last modified: 2019-12-17 15:37:18 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -344,8 +344,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###eu-cookie-bar
@@ -457,7 +457,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 &log_ad$image,domain=yelp.se
 &type=load_offers$xmlhttprequest,domain=illvet.se|pctidningen.se
 *$csp=script-src 'none',domain=svtt.se|ssvd.se|exressen.se|eexpressen.se|sskatteverket.se|aatg.se|atgg.se
-*$csp=worker-src 'none',domain=minfil.com
 -ads.$image,domain=svenskbyggtidning.se
 -banner-$image,domain=litteraturmagazinet.se
 .com/annons.$script,subdocument
@@ -2737,7 +2736,7 @@ yougov.se##.cookie-confirm
 ||milotree.com^$third-party
 ||mindreskatt.se^
 ||minfil.com/sw$script
-||minfil.com^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' *.minfil.com
+||minfil.com^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' *.minfil.com;worker-src 'none'
 ||missaffiliate.com^$third-party
 ||molnvaxlar.se/banner/$third-party
 ||momondo.se/gtm/$subdocument
@@ -2773,8 +2772,7 @@ yougov.se##.cookie-confirm
 ||nyafilmer.*/banner$subdocument
 ||nyafilmer.*/branding/$image
 ||nyafilmer.*/sw.js$script
-||nyafilmer.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co upvtt.com wp.com *.wp.com *.googleapis.com vkpass.com *.gstatic.com *.tmdb.org
-||nyafilmer.*^$csp=worker-src 'none'
+||nyafilmer.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co *.googleapis.com;img-src *;worker-src 'none'
 ||nyckelspel.se/images/adblocker-leaderboard.$image
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
@@ -2901,9 +2899,7 @@ yougov.se##.cookie-confirm
 ||streamio.com/api/*/stats$xmlhttprequest
 ||streamtajm.*/images/reklam$image
 ||streamtajm.*/sw.js$script
-||streamtajm.*/webpush.$script
-||streamtajm.*/worker.$script
-||streamtajm.*^$csp=worker-src 'none'
+||streamtajm.*^$csp=default-src 'self' 'unsafe-inline' *.googleapis.com stload.com nxload.com;img-src *;worker-src 'none'
 ||strossle.com^$third-party
 ||studentum.se/nocache/home/ads$xmlhttprequest
 ||stumbleupon.com/hostedbadge.$script,domain=javligtgott.se
