@@ -35,7 +35,7 @@ This repository contains the known filters subscriptions available to AdGuard us
       "description": "EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.",
       "timeAdded": 1404115015843,
       "homepage": "https://kb.adguard.com/en/general/adguard-ad-filters#english",
-      "expires": "2 days",
+      "expires": "4 days",
       "displayNumber": 1,
       "groupId": 1,
       "subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
