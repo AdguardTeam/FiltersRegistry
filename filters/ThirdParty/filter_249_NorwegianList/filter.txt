@@ -1,5 +1,5 @@
 !
-! OriginalVersion: 10December2019v2
+! OriginalVersion: 17December2019v2
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
 ! Expires: 12 hours
@@ -126,8 +126,6 @@ vg.no##.wid-betting
 vg.no#?#.partner-studio:not(:-abp-has(a[href*="/nordiskfilm/"]))
 vgtv.no##.apnx-container
 vgtv.no##.video-branding
-viafree.no,viafree.dk##.ad-click-through
-viafree.no,viafree.dk##.pause-ad
 viaplay.no,viaplay.dk##.interaction-block
 xlmoto.no##.overlay-bg
 xlmoto.no##.overlay-container
@@ -159,7 +157,6 @@ rett24.no##.p_banner-responsive
 /bilder/erotikk1.jpg$domain=eavisa.com
 /entag.js$script,domain=eniro.se|eniro.no|eniro.dk|proff.se|proff.no|proff.dk
 /js/smartbanner/*$domain=tvkampen.com|tvsporten.dk
-/linktag2.js$important,script,domain=viafree.no|viafree.dk
 /liveodds-button_nordicbet$domain=tvkampen.com|tvsporten.dk
 /nordicbet_logo$domain=tvkampen.com|tvsporten.dk
 /partners/*_ad_icon$image,domain=tvkampen.com|tvsporten.dk
@@ -183,15 +180,12 @@ rett24.no##.p_banner-responsive
 ||amino.dk/images/partners/agera/240x140-forside-hardcoded*.jpg$image
 ||annonser.*.no^
 ||austevollforlag.no/wp-content/*/yachtmarine2014.$image
-||avod-fw-config.mtg-api.com^$important,xmlhttprequest,domain=viafree.no|viafree.dk
 ||banner.*.no^
 ||banner.landbrugsavisen.dk/reklame.aspx$subdocument
 ||bannere.oslonett.no^
 ||boligkanalen-maestro-new.azurewebsites.net$image
 ||bornholm.nu/nonsec/banner$image
 ||brandstudio.inventory.schibsted.io$subdocument,third-party
-||cdn.ravenjs.com^$script,domain=viafree.no|viafree.dk
-||client-stream-events.mtg-api.com^$domain=viafree.no|viafree.dk
 ||cluster.chart.dk$third-party
 ||cmt.no^
 ||delivered-by-madington.com^$third-party
@@ -201,8 +195,6 @@ rett24.no##.p_banner-responsive
 ||emerio.no^
 ||euroads.no^
 ||eyjar.net/skrar/ads
-||freewheel-mtgx-tv.akamaized.net^$media,domain=viafree.no|viafree.dk
-||getsentry.com^$third-party,domain=viafree.no|viafree.dk
 ||gratisxxx.no$image,domain=nakenprat.com
 ||helios.*.no
 ||i1media.no^
@@ -229,7 +221,6 @@ rett24.no##.p_banner-responsive
 ||tracking-genesisaffiliates.com$image,third-party
 ||tvshop.com/tradedoubler_files/
 ||vevlysingar.fo$subdocument,third-party
-||viafree.*/collect$important,xmlhttprequest
 ||viasport-assets.mtg-api.com/*/prod/comScore-*.js$script
 ||vikari.is/skjol/frjalsi-lif*.png$image
 ||webclick.no^
@@ -535,7 +526,6 @@ yrkesbil.no###side > div:nth-of-type(1)
 ||bilnorge.no/gifs/*emty.gif$image
 ||gaysir.no/rek/bb_inline$subdocument
 ||static.vg.no/css/admark_top.gif
-~raymond.cc,~bolha.com,~wiwo.de,~game.co.uk,~farnell.com##.ad:not(html):not(a)
 gamer.no##.aaa-placeholder
 google.no,google.dk,google.is###cnsi ~ [jsaction*=dismiss]
 180.no##.ai-top-ad-outer
@@ -557,6 +547,8 @@ dagbladet.no##[class^="AdPrefix-"]
 tunnelsyn.no#?#.widget_media_image:-abp-contains(/^ANNONSE/)
 tv2.no##.lp-r > div
 tidssonen.no##.widget_custom_html
+mbl.is#?#.col-sm-6.col-12:-abp-has(.augl):not(:-abp-has(.fluid))
+gulesider.no,degulesider.dk,krak.dk##.e-banner
 ! — — — — —
 !#if !env_mobile
 seher.no#$#.content-marketing-ribbon { margin-top: 20px !important }
@@ -597,7 +589,7 @@ vafo.dk##.adform-flexblock
 ##.adunit-wrapper
 ! bt.no
 ##.premium-spot
-! https://www.latterkula.no/se-streamerne-som-vinner-store-gevinster-mens-de-streamer-live/
+! latterkula.no/se-streamerne-som-vinner-store-gevinster-mens-de-streamer-live/
 ##.annonser
 ! www.latterkula.no/artikler/
 ##.mh-loop-ad
@@ -623,11 +615,16 @@ vafo.dk##.adform-flexblock
 ##.vc_empty_space
 ! demokraten.no, avisa-hordaland.no, blv.no, gat.no, lp.no, osogfusa.no, raumnes.no, setesdolen.no, sunnhordland.no, vaksdalposten.no, vtb.no
 ##.banners.post_sticky
+##div[data-adtext]
 ! ba.no
 ! https://github.com/DandelionSprout/adfilt/pull/53
 ##bazaar-ad
 ##[id^=art-bazaarAd]
 ||services.api.no/api/bazaar^$third-party
+! aftenbladet.no
+##.ad[data-config-name]
+! avisalofoten.no
+##.ad.text-center
 ! 🇳🇴: ——— Tomme skillebokser ———
 ! 🇩🇰: ——— Tomme adskillerbokser ———
 ! 🇬🇧: ——— Empty divider spaces ———
@@ -672,7 +669,7 @@ krom.is#@#.share-container
 @@_prebid_$domain=seher.no
 ! 🇳🇴: Solcellespesialisten, innlastingsproblem
 ! 🇬🇧: Solcellespesialisten, loading issue
-||wo.tc
+||wo.tc^
 ! 🇳🇴: Får Dplay sin påloggingsside til å vises riktig når «EasyPrivacy» blir brukt
 ! 🇬🇧: Makes Dplay's login page show up properly when using "EasyPrivacy"
 @@||mparticle.com$script,domain=auth.dplay.no|auth.dplay.dk
@@ -680,18 +677,16 @@ krom.is#@#.share-container
 ! 🇩🇰: Fikser knækking af videoer på TV 2 når "EasyList" bliver brugt
 ! 🇬🇧: Unbreaks videos at TV2 Denmark when using "EasyList"
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=tv2.dk
-! https://github.com/ryanbr/fanboy-adblock/issues/1243/
+! https://github.com/ryanbr/fanboy-adblock/issues/1243
 ||ktg-content.cdn.prismic.io/api/*/documents/*(my.newsletter_popup.uid
+! https://github.com/ryanbr/fanboy-adblock/issues/1261
+@@||cookieinformation.com^$third-party,domain=kart.gulesider.no|map.krak.dk|kort.degulesider.dk|kartor.eniro.se
 ! 🇳🇴/🇩🇰: ——— Anti-anti-reklameblokkering ———
 ! 🇬🇧: ——— Anti-anti-adblocking, in the event that https://forums.lanik.us/viewtopic.php?f=23&t=42273 were to specifically mention such entries as a reason to be denied EasyList affiliation or native ABP inclusion ———
 @@*.dk/assets/templates/*/ads.png$image,domain=maskinbladet.dk|agrar-plus.dk|fritidsmarkedet.dk|dagensbyggeri.dk|maskinteknik.dk|gronteknik.dk
 @@||5e529.v.fwmrm.net/ad/$script,domain=dplay.no|dplay.dk
 @@||bondebladet.screen9.tv^$generichide
 @@||eurosport.*^$generichide
-@@||fwmrm.net/*/AdManager.js$script,domain=viafree.no|viafree.dk
-@@||fwmrm.net/ad/$xmlhttprequest,domain=viafree.no|viafree.dk
-@@||fwmrm.net/ad/*$script,domain=viafree.no|viafree.dk
-@@||fwmrm.net/crossdomain.xml$xmlhttprequest,domain=viafree.no|viafree.dk
 @@||sixscissors.com^$third-party,domain=itavisen.no
 csp.screen9.com#@#.adsbox
 godt.no##.adblock-info-box
@@ -700,7 +695,6 @@ langaa-guiden.dk,madforfattigroeve.dk##div[class][style^="z-index: 999999; backg
 minmote.no,godt.no##.adblock-info
 ||elderlyscissors.com^
 ||vg.no/cnp-assets/src/sites/vg/components/AdblockModal$script,~third-party
-viafree.no,viafree.dk#$#.avodp.pause-ad-showing .vjs-progress-control, .avodp.ad-playing .vjs-progress-control { display: initial !important; }
 @@/js/ads.js$~third-party,domain=tvkampen.com|tvsporten.dk
 @@||www.tv2.no/s/js/ads.js$script,~third-party
 !#if !ext_ublock
@@ -749,23 +743,22 @@ vglive.no##.tipster-liveodds-embed
 ~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/lotteri/lotto"]
 ~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/lotteri/eurojackpot"]
 ~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/lotteri/extra"]
-! ——— Gamereactor ———
+! ——— Gamereactor + Viafree ———
 ! 🇳🇴: Disse oppføringene synkroniseres med de til «Frellwit's Swedish Filter» med noen måneders mellomrom, så det hadde blitt for strevsomt å kategorisere dem.
 ! 🇩🇰: Disse regler bliver synkroniseret med de hos «Frellwit's Swedish Filter» med nogle måneders mellemrum, så det hadde blivet for tungt at kategorisere dem.
 ! 🇬🇧: These entries are synchronised with those of "Frellwit's Swedish Filter" every few months-ish, and as such it'd be too much work to categorise them.
-gamereactor.no,gamereactor.dk#$##pagebackground { background-image: none !important }
-||gamereactor.*/lay/ad-video-stats.$important,script
-||gamereactor.*/lay/js/adblock_desktop.$important,script
-||gamereactor.*/lay/js/background.$important,script
-||gamereactor.*/lay/js/banners_config.$important,script
-||openx.gamereactor.dk/multi.php?$important,script
-gamereactor.no,gamereactor.dk#@#.afs_ads
+/adblock_mobile.$important,script,domain=gamereactor.no|gamereactor.dk
+/insert_grtv_stats.$xmlhttprequest,domain=gamereactor.no|gamereactor.dk
+/prerolls/*$domain=gamereactor.no|gamereactor.dk
+/viewability.$important,script,domain=gamereactor.no|gamereactor.dk
+@@||openx.gamereactor.dk/www/delivery/fc.php$xmlhttprequest,domain=gamereactor.no|gamereactor.dk
 gamereactor.no,gamereactor.dk###ad_mobiletopinsidetext
 gamereactor.no,gamereactor.dk###ad_video
 gamereactor.no,gamereactor.dk###bigVideoAd
 gamereactor.no,gamereactor.dk###eventad
 gamereactor.no,gamereactor.dk###facebooknotification
 gamereactor.no,gamereactor.dk###fbnotification
+gamereactor.no,gamereactor.dk#$##pagebackground { background-image: none !important }
 gamereactor.no,gamereactor.dk###sky2_1
 gamereactor.no,gamereactor.dk##.ad_smartphbig
 gamereactor.no,gamereactor.dk##.ad_video
@@ -775,13 +768,22 @@ gamereactor.no,gamereactor.dk##a[href*="/adclick.php"]
 gamereactor.no,gamereactor.dk##div[class^=ad300]
 gamereactor.no,gamereactor.dk##div[style*="width:300px;height:600px;"]
 gamereactor.no,gamereactor.dk##div[style="min-height: 600px; margin-bottom: 20px;"]
+gamereactor.no,gamereactor.dk#@#.afs_ads
+||gamereactor.*/lay/ad-video-stats.$important,script
+||gamereactor.*/lay/js/adblock_desktop.$important,script
+||gamereactor.*/lay/js/background.$important,script
+||gamereactor.*/lay/js/banners_config.$important,script
 ||gamereactor.*/media/eventad/$image
-@@||openx.gamereactor.dk/www/delivery/fc.php$xmlhttprequest,domain=gamereactor.no|gamereactor.dk
+||openx.gamereactor.dk/multi.php?$important,script
 ||ssl.p.jwpcdn.com^*/gapro.js$important,script,domain=gamereactor.no|gamereactor.dk
-/insert_grtv_stats.$xmlhttprequest,domain=gamereactor.no|gamereactor.dk
-/prerolls/*$domain=gamereactor.no|gamereactor.dk
-/adblock_mobile.$important,script,domain=gamereactor.no|gamereactor.dk
-/viewability.$important,script,domain=gamereactor.no|gamereactor.dk
+@@||fwmrm.net/ad/$image,xmlhttprequest,domain=viafree.no|viafree.dk
+@@||fwmrm.net/crossdomain.xml$xmlhttprequest,domain=viafree.no|viafree.dk
+viafree.no,viafree.dk##.ad-click-through
+viafree.no,viafree.dk##.pause-ad
+viafree.no,viafree.dk##.pause-ad-container
+||client-stream-events.mtg-api.com^$domain=viafree.no|viafree.dk
+||freewheel-mtgx-tv.akamaized.net^$media,domain=viafree.no|viafree.dk
+||viafree.*/collect$important,xmlhttprequest
 ! 🇳🇴: Korrigerer veldig grell feilinformasjon på Elkjøp og Elgiganten Danmark, hvor EU-energimerkingen til en del produkter fortsatt brukte før-2016-fargene, som førte til tilfeller hvor f.eks. en A-merking var mørkegrønn mens en A+-merking var gul med et hint av grønt.
 ! 🇩🇰: Rætter op i rigtigt grim fejlinformation på Elgiganten og Elkjøp, der EU-energimærkingen til mange produkter stadigt benytter før-2016-fargene, noget der førede til tilfelder der fx. et A-merke var mørkegrøn mens et A+-merke var gult med et hint af grøn.
 ! 🇬🇧: Fixing very severe misadvertising on Elkjøp and Elgiganten Denmark, in which the EU energy labels for a lot of products were still showing the colours of the pre-2016 labels, leading to cases where e.g. an A label was dark green while an A+ label was yellow with a hint of green.
