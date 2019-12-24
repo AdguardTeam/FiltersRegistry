@@ -7059,7 +7059,7 @@ voo.be###popinCookies
 tata.com###popup-privacypolicy
 culture.leclerc,hightech.leclerc###popupdescookies
 xn--bafg-7qa.de###privacy-note
-arcelik.com.tr,mp.pl,mymemory.translated.net###privacy-policy
+demirexport.com,arcelik.com.tr,mp.pl,mymemory.translated.net###privacy-policy
 speedtest.net###privacy-updated-modal
 fibs.it###privacy-wrapper
 humanic.net###privacyOverlay
@@ -13039,6 +13039,7 @@ macwelt.de,pcwelt.de#%#AG_setConstant('firebase.messaging', 'noopFunc');
 ||ss.6ib.ru^$third-party
 !
 ! /pnsw_init.js
+||informfeed.ru^$third-party
 ||bildirt.com^$third-party
 ||cracataum.com^$third-party
 ||pushchev.info^$third-party
@@ -14797,6 +14798,11 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !######### JS tweaks ##########
 !##############################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/46530
+!+ NOT_PLATFORM(windows, mac, android)
+sfile.mobi#%#//scriptlet("adjust-setInterval", "downloadButton", "", "0.02")
+!+ PLATFORM(windows, mac, android)
+sfile.mobi#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/downloadButton/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46090
 tech.dutchycorp.space#%#AG_onLoad(function() { var el = document.querySelector('#cl1 a[href]'); if(el) { window.location = el.href; } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46072
@@ -15504,6 +15510,7 @@ amp.focus.de##amp-embed[type="opinary"]
 !
 ! Chat widgets
 !
+||teknomehmet.com/wp-content/plugins/creame-whatsapp-me/public/js/whatsappme.min.js
 anonenime.com#?#.sidebar > div.section:has(> div.area > h3 > span:contains(Repot Link))
 knights-table.net###arrowchat_base
 set.or.th##.chatbot-icon
