@@ -1,8 +1,8 @@
 !
-! Checksum: OIoltDmpoQzYcNYNhotrRw
-! OriginalVersion: 202001011750
+! Checksum: h1HC0lKvN0dzgsViMvkKhQ
+! OriginalVersion: 202001012050
 ! Title: RU AdList + CSS Fixes
-! Last modified: 01 Jan 2020 17:50 UTC
+! Last modified: 01 Jan 2020 20:50 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -1390,6 +1390,7 @@ by,~mail.ru,ru,~sportmail.ru,ua##.banner_box
 ##a[href*="://et-cod.com/"]
 ##a[href*="://etcodes.com/"]
 ##a[href*="://getbrauzer.ru/"]
+##a[href*="://loderkkis.ru"]
 ##a[href*="://renderbrandium.com"]
 ##a[href*="://rendersaveron.com"]
 ##a[href*="://sub"][href*="bubblesmedia.ru"]
@@ -11281,6 +11282,7 @@ echo.msk.ru###sound_ad
 trend-city.ru###sp-left
 igra-prestoloff.cx,igra-prestoloff10.xyz#?##sp-right > .sp-inner > .module:-abp-has([id*="ScriptRoot"])
 igra-prestoloff.cx,igra-prestoloff10.xyz#?##sp-right > .sp-inner > .module:-abp-has([onerror])
+slavinfo.dn.ua###sp-top-banners
 rebill.me###space
 rebill.me###space + a[target="_blank"]
 itop-gear.ru###sping
@@ -12869,7 +12871,6 @@ news.turizm.ru##.jq_turoperator_adv_items
 mo4movin.dyndns.org##.jqmOverlay
 mo4movin.dyndns.org##.jqmWindow
 phonenumber.to##.js-ads
-checkadblock.ru##.js-ads-block
 e1.ru##.js-article-section-auto
 megalyrics.ru##.js-banner
 nat-geo.ru##.js-banner-stretch
@@ -15981,6 +15982,7 @@ fsell.biz##div[id^="slot-"]
 znachenieimenipro.ru##div[id^="smartrotator_ad"]
 poznamka.ru##div[id^="smurfik-"]
 mix.tj##div[id^="somon"]
+slavinfo.dn.ua##div[id^="sp-"] > .sp-column > .sp-module.hidden-xs
 2ip.ru##div[id^="speed-info-block"]
 komplat.by##div[id^="surveys"]
 vodotopim.ru##div[id^="svecha_"]
@@ -19906,6 +19908,11 @@ www.avito.ru##div[class^="template_serp_"]
 ||criteo.net^$domain=avito.ru
 ||taboola.com^$domain=avito.ru
 !
+! Checkadblock - бесполезный псевдо-тест
+$third-party,image,script,xmlhttprequest,domain=checkadblock.ru
+||checkadblock.ru/js/
+||checkadblock.ru^$csp=script-src 'self' * data:
+!
 ! GISMeteo domains
 gismeteo.md,gismeteo.ru###rbc
 gismeteo.ua###w-hor
@@ -20194,7 +20201,7 @@ go.mail.ru##div[class*="right__banner"]
 tv.mail.ru##div[class][id^="mailru"]
 pulse.mail.ru#?#div[id^="_pcard_"]:-abp-has([href*="t.mail.ru/redir"])
 minigames.mail.ru##div[id^="slot"][id*="sitezone"]
-go.mail.ru##html > body:not(#id) #layout [class^="response"] > div > [id^="js-"]:not(.morebutton):not(.result) > :first-child:not(nav) *
+go.mail.ru##html > body:not(#id) #layout [class^="response"] > section > [id^="js-"]:not(.morebutton):not(.result) > :first-child:not(nav) *
 go.mail.ru##html > body:not(#id) #layout div[class*="banner"][class*="right"] *
 maps.mail.ru##img[width="200"][height="30"]
 ! Блокировка ресурсов в основном на самом mail.ru
