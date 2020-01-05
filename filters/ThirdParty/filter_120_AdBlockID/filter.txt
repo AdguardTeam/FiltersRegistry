@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 20.004.43
+! OriginalVersion: 20.005.665
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 04 Jan 2020 00:43 UTC
+! Last modified: 05 Jan 2020 11:05 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -120,13 +120,13 @@
 /iklan6.
 /iklan6_
 /iklan_banner_
-/iklancpm.
 /iklanjpecmotor.
 /iklanmpdigital.
 /iklansb.png
 /iklantvg.
 /ikldesktop.
 /images/iklan/*
+/img-iklan/*
 /img/iklan/*
 /img_iklan/*
 /img_iklan_
@@ -136,6 +136,7 @@
 /indofreeads_
 /materi_iklan/*
 /materi_iklan_
+/media/iklan/*
 /melayang-kiri-dan-kanan-
 /ngiklan/*
 /piciklan/*
@@ -769,6 +770,7 @@ _996x50.gif
 ##.adct
 ##.adka
 ##.adkaki
+##.adkananbwh
 ##.adki
 ##.ads-970-panjang-1
 ##.ads-970-panjang-2
@@ -1684,6 +1686,7 @@ _996x50.gif
 ||dgw7ae5vrovs7.cloudfront.net^
 ||domainesia-assets.s3.amazonaws.com/Affiliasi/$third-party
 ||drda5yf9kgz5p.cloudfront.net^
+||iklancpm.files.wordpress.com^$third-party
 ||img.nt1.co/bn/$image,third-party
 ||jadwaltelevisi.com^$third-party
 ||kagetweb.com^*/banner110_$image,third-party
@@ -7299,32 +7302,39 @@ _penggugur_kandungan_$image
 ##img[src*="mbsbetting."]
 ##img[src*="rejekibet."]
 ! *** abid:src/addons/movie.adbl ***
-.gif$image,domain=anoboy.us|conan.id|gudangfilm.top|nanime.in|nontondrama.me
-/banner%$image,domain=huntersekai.website
-bioskop45.*,bioskopbos.*,kawanfilm21.*,layarindo21.*,lk21.*,manganime.*,nekopoi.*,nontongratis88.*##[href*="/bit.ly/"] > img
+! SPECIFIC HIDE
+! --------------------------------------------------------------
+bioskop45.*,bioskopbos.*,kawanfilm21.*,kazefuri.web.id,layarindo21.*,lk21.*,manganime.*,nekopoi.*,nontongratis88.*##[href*="/bit.ly/"] > img
 nontonanimeindo.net##a[href*="//goo.gl/"] > img
-||blogspot.com/*.gif$image,domain=lk21id.com|netnot21.com
-!
-*$popup,domain=awnime.net
-/popup.$script,domain=drakorindo.cc
 !
 doramaku.me###banner-tengah
 narashika.cc###btm_banner
 layarkeren.com###divFLRALeft
 lk21sub.net###form_view
+kazefuri.web.id###iklan-pos
+dramamu.net###netkevin-overlay
+d21.tv###overlay-pop
+dramamu.net###popup_content
 nonton.com##.adds
+kazefuri.web.id##.ads300
 manganime.id##.ads720
+kazefuri.web.id##.adsbawah1
 neonime.org##.berlangganan-300
 neonime.org##.berlangganan-460
 103.194.171.75##.bnner
 mivo.com##.home-page .player-ads-top-1
 drakorindofilms.net,inidramaku.com,korenlovers.co,oujanime.com##.iklan
 layarkeren.com##.mfp-bg
+dutafilm.live##.swal-overlay
+animelink.net##.toast:-abp-contains(Promosi)
+kazefuri.web.id##[class^="SC_TBlock_"]
 kantaii.web.id##[href*="/ref/bangago"]
+asiaxxi.*##.bnner
 bioskopkerenin.*###float-banner
 bioskopkerenin.*###middle-banner
 bioskopkerenin.*###ptbanner
 bioskopkerenin.*###top-banner
+dutafilm.live,kotaksilver.casa##body > a[href] > div[style^="position:absolute;"][style*="z-index:"]
 cinemaindo.*##.iklan
 dunia21.*###overlay-pop
 dunia21.*,filmapik.*,ns21.ltd,terbit21.*##[href*="/advertising"] > img
@@ -7333,7 +7343,14 @@ indoxxi.*##.popUpBannerBox
 lk21c.*##[href*="/rebrand.ly/"]
 sukamovie.*##.sukam-atas-post
 sukamovie.*##.sukam-bawah
-||api.nontongo.win/promomenubola.xml$xmlhttprequest
+!
+! SPECIFIC BLOCK
+! --------------------------------------------------------------
+.gif$image,domain=animenonton.tv|anoboy.us|conan.id|gudangfilm.top|nanime.in|nontondrama.me
+/banner%$image,domain=huntersekai.website
+||blogspot.com/*.gif$image,domain=lk21id.com|netnot21.com|rmcmv.us
+||ibb.co/*.gif$image,domain=kazefuri.web.id
+!
 ||awnime.net/*.gif
 ||bioskop168.*.gif
 ||bioskop45.*/banner/$image
@@ -7365,16 +7382,17 @@ sukamovie.*##.sukam-bawah
 ||nontonindoxx1.*/*.gif$image
 ||serunonton.*/wp-content/uploads*.gif$image
 !
+||api.nontongo.win/promomenubola.xml$xmlhttprequest
 ||bebasdownloadfilm.com/iframe/content.php$subdocument
 ||indexmovie.biz/iframe/content.php$subdocument
 !
-! --------------------------------------------------------------
 ! ANTI-ADBLOCK
+! --------------------------------------------------------------
 /rmp-blockadblock.js$domain=mivo.com
 @@/ads.$script,domain=negumo.com
 @@/adsbygoogle.$script,domain=nekopoi.care
-@@/indoxxi-logo-
 @@/pagead2.$script,domain=downmovie21.site
+!
 @@||anibatch.me^$generichide
 @@||animee.xyz$generichide
 @@||animenonton.tv^$generichide
@@ -7399,25 +7417,16 @@ drakoric.com,samehadaku.net.in#@##banner_ad
 filmboxoffice.web.id#@#.an-advert-banner
 cinemaindo21.*#@##topad
 !
-.gif$image,domain=animenonton.tv
-||blogspot.com/*.gif$image,domain=rmcmv.us
-||ibb.co/*.gif$image,domain=kazefuri.web.id
-!
-kazefuri.web.id###iklan-pos
-dramamu.net###netkevin-overlay
-d21.tv###overlay-pop
-dramamu.net###popup_content
-kazefuri.web.id##.ads300
-kazefuri.web.id##.adsbawah1
-dutafilm.live##.swal-overlay
-animelink.net##.toast:-abp-contains(Promosi)
-kazefuri.web.id##[class^="SC_TBlock_"]
-kazefuri.web.id##[href*="//bit.ly/"] > img
-asiaxxi.*##.bnner
-dutafilm.live,kotaksilver.casa##body > a[href] > div[style^="position:absolute;"][style*="z-index:"]
-! --------------------------------------------------------------
 ! ANNOYANCES
+! --------------------------------------------------------------
+*$popup,domain=awnime.net
+/popup.$script,domain=drakorindo.cc
+!
 /Download-Button.png$image,domain=anime-indo.id
+!
+! WHITELIST
+! --------------------------------------------------------------
+@@/indoxxi-logo-
 ! *** abid:src/addons/news.adbl ***
 -banner-$image,domain=indoaviation.asia
 -banner.$image,domain=haluankepri.com
@@ -7645,6 +7654,8 @@ _banner.$image,domain=bantennews.co.id
 ||winnetnews.com^*/banner/$image
 ||zonasumut.com^*-300x200.$image
 !
+! SPECIFIC HIDE
+! --------------------------------------------------------------
 inikebumen.net###HTML1
 pasbana.com###HTML13
 pasbana.com###HTML14
@@ -8059,8 +8070,8 @@ bisnis-tempo-co.cdn.ampproject.org,metro-tempo-co.cdn.ampproject.org##amp-fx-fly
 m-jatimnow-com.cdn.ampproject.org##amp-fx-flying-carpet[height="300px"]
 m-jatimnow-com.cdn.ampproject.org,techno-okezone-com.cdn.ampproject.org##amp-iframe[src^="https://click.advertnative.com/"]
 !
-! --------------------------------------------------------------
 ! ANTI-ADBLOCK
+! --------------------------------------------------------------
 @@/bplogo.$domain=beritapagi.co.id
 @@/fuckadblock.$script,domain=baritopost.co.id|kabar6.com|konten.co.id|listingberita.com|nusantarapos.co.id|suaranasional.com|terasmaluku.com
 @@/iklan-langganan.$domain=radarlombok.co.id
@@ -8083,11 +8094,14 @@ radarlombok.co.id##.adsbygoogle
 radarmalang.id#@#.td-ad-background-link
 suarasumselnews.co.id#@#.category-advertorial
 ! *** abid:src/addons/shortlink.adbl ***
+||adsafelink.com/banner/
+!
+! SAFELINK SCRIPT
+! --------------------------------------------------------------
 /js/full-page-script.js$script,third-party
 /wp-content/plugins/soralink/*/soralink.js$script
 /wpsafelink.js$script,domain=daizurin.com|klik-link.us|lucikun.com|shitaranime.com|sinanime.net
 =autosafeklinkz350_$script
-||adsafelink.com/banner/
 ||adsafelink.com/js/webscript.js$script,third-party
 ||androidbusiness.us^*/js/safelink.js$script,third-party
 ||bloggerku.com/safelink/auto.js$script,third-party
@@ -8111,8 +8125,8 @@ suarasumselnews.co.id#@#.category-advertorial
 ||statically.io/gh/awlagu/sflink/*/Auto.js$third-party
 ||statically.io/gh/hubgit21/club/*/club.js$third-party
 !
-! --------------------------------------------------------------
 ! ANTI-ADBLOCK
+! --------------------------------------------------------------
 @@/^https?:\/\/.*\/.*sw[0-9a-z(.|_)].*/$script,domain=uiz.io
 @@/advertisement.$script,domain=anifiles.org|berkas.cloud|mangalist.org|shortgoo.blogspot.com
 @@/fuckadblock.$script,domain=ac-mo.com|dares.xyz|elnurtech.com|giga74.com|hargawebsite.com|newhealthblog.com|newsdecorate.com|newsteez.com|ngantukberat.me|proapkmod.com|safelinkreviewx.com|wikiall.org|yungeblog.xyz|yusepjaelani.blogspot.com
@@ -8215,8 +8229,8 @@ safejobsbos.blogspot.com#@##adsense
 mediatulis.net#@##banner_ad
 fodz.xyz,glory-link.com,spiin.xyz#@#.ad-banner
 !
-! --------------------------------------------------------------
 ! EMPTY ADS PLACEHOLDERS
+! --------------------------------------------------------------
 intercelestial.com,linegee.net,sweetlantern.com,tribuntekno.com###externalinject-gpt-passback-container
 intercelestial.com,linegee.net,sweetlantern.com,tribuntekno.com###externalinject-gpt-passback-iframe
 apasih.pw,elsfile.org,hexafile.net,infosehatku.club,lastfashions.xyz,ljutkeunvpn.blogspot.com,nurhamka.com,proapkmod.com,sepintek.my.id,wikiall.org,zaqe.xyz,zonangopi.ml##.adsbygoogle
@@ -8226,8 +8240,8 @@ machineworlds.me##.banner-inner
 unduh.in##.bannersingletop
 zaqe.xyz##.klnsora
 !
-! --------------------------------------------------------------
 ! ANNOYANCES
+! --------------------------------------------------------------
 kertashitam.com###blockblockA
 kertashitam.com#$##blockblockB { visibility: visible !important; display: block !important; }
 dares.xyz##.aicp
@@ -8252,8 +8266,8 @@ movienear.me##img[width="200"][height="60"]
 /dw.png$image,domain=icutlink.com
 /skips.png$image,domain=semawur.com
 !
-! --------------------------------------------------------------
 ! SCRIPTLET
+! --------------------------------------------------------------
 ! *** abid:thirdparties-filter.txt ***
 $csp=child-src 'none'; frame-src 'self' *; worker-src 'none',domain=fileone.tv|theappguruz.com
 $csp=child-src 'none'; frame-src *; worker-src 'none',domain=adfreetv.ch|ahoypirate.click|ahoypirate.in|ahoypiratebaai.eu|airproxyproxy.pw|airproxytpb.red|alivbay.org|batpirate.info|bay.maik.rocks|bayception.pw|baypirate.click|baypiratebay.be|baypirateproxy.org|baypirateproxy.pw|bayproxy.eu|bypassed.st|capjackproxy.net|cruzing.xyz|ddmix.net|depiratenbaai.nl|duckingproxy.eu|extratorrent.cd|extratorrent.si|hq-porns.com|hyperproxy.net|ikwildepiratebay.org|ikwildepiratebay.xyzbrowse|indiaproxy.in|indiaproxydl.orgbrowse|intactoffers.club|kickass.cd|magnetbay.eu|myfeed4u.net|noobnoob.rocks|pietpiraat.org|pirat2.club|pirataibay.in|piratbaypirate.link|pirate.bet|pirate.blue|pirate.trade|pirateahoy.net|piratebaai.click|piratebaai.club|piratebay.click|piratebay.red|piratebay.telbrowse|piratebay.town|piratebay.website|piratebay247.net|piratebayblocked.com|piratebaymirror.eu|piratebayproxy.tf|piratebays.be|piratebays.co|piratenbucht.eu|piratepirate.eu|pirateprox.club|pirateproxy.click|pirateproxy.ist|pirateproxy.mx|pirateproxy.tf|pirateproxy.wf|pirateproxy.yt|piratetoday.click|proxybayduck.fi|proxydl.cf|proxyfl.info|proxyindia.net|proxyme.site|proxyme.win|proxyoneahoy.net|proxypirate.in|proxypirate.website|proxyproxyproxy.nl|proxyship.click|proxytpb.org|proxytpb.pw|reservedoffers.club|rowpirate.org|skyback.ru|superbay.link|szukajka.tv|thehiddenbay.cc|themagnetbay.info|thepbay.ga|thepirate.click|thepirate.xyz|thepiratebay-proxy.com|thepiratebay.bet|thepiratebay.blue|thepiratebay.cr|thepiratebay.futbol|thepiratebay.kiwi|thepiratebay.org|thepiratebay.pet|thepiratebay.pictures|thepiratebay.red|thepiratebay.rocks|thepiratebay.se.net|thepiratebay.tel|thepiratebay.wtf|thepirateproxy.host|thepirateproxy.pro|thepirateproxy.win|thepirateproxy.ws|thevideo.ch|thevideo.io|thevideo.me|thevideo.us|tpb.crushus.com|tpb.one|tpb.tw|tpbairproxy.in|tpbbay.eu|tpbduck.com|tpbmirror.us|tpbmonk.com|tpbonion.win|tpbpirate.info|tpbpirate.pw|tpbpirate.site|tpbportal.in|tpbproxy.club|tpbproxy.win|tpbproxyone.org|tpbrun.win|tpproxy.website|ukpirate.click|ukpirate.org|ukpirateproxy.xyz|unblockedhyperbay.info|unblocktheship.org|unblocktpb.com|urbanproxy.eu|vidoza.co|vidoza.net|vidup.me|vidup.tv|wearepirates.click|zombay.org
@@ -9074,4 +9088,4 @@ iklanpopuler.com,sebariklanbaris.net#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/103
 @@/particles.$script,domain=mangaku.in
-! Checksum: bJVI2TbNGSe7EyhULJRPdA
+! Checksum: t/KsKLRU20K1AEJ5XBeIhQ
