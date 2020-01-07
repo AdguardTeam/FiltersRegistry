@@ -373,6 +373,18 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/47098
+||mordefter.com/ad_killer/handler.js
+mordefter.com#%#AG_abortInlineScript(/ad_killer/, 'addEventListener');
+!+ PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$empty,important,domain=mordefter.com
+!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mordefter.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/47101
+messletters.com#%#//scriptlet("set-constant", "adsbygoogle.loaded", "true")
+! https://github.com/AdguardTeam/AdguardFilters/issues/47103
+1ahaber.com##body > div[id^="ai-adb-"][style^="position: fixed; top:"][style*="z-index: 9999"]
+1ahaber.com#%#//scriptlet("set-constant", "ai_adb_detected", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47084
 isgfrm.com##.wutime-adblock
 @@||isgfrm.com/js/wutime_adblock/ads.js
@@ -2264,6 +2276,7 @@ filmmodu.co,dizifilmix.org,sineturk.pw,altyazilifilmizle.tv,1080pfilmizle.net,do
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+messletters.com###addTop
 hdfilmizlett1.com##.rekKod
 dizigang.com##.rek-wrap
 full1080pfilmizle.com##a[href^="https://www.jull.com.tr"] > img
