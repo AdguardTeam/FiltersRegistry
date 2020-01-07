@@ -373,6 +373,12 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/47084
+isgfrm.com##.wutime-adblock
+@@||isgfrm.com/js/wutime_adblock/ads.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/47087
+@@||klavyeanaliz.org/*/adblock.js
+klavyeanaliz.org#%#//scriptlet("set-constant", "adblock", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46778
 turkeycrack.com##body > div[id^="ai-adb-"][style^="position: fixed; top:"][style*="z-index: 9999"]
 turkeycrack.com#%#//scriptlet("set-constant", "ai_adb_detected", "noopFunc")
@@ -1760,6 +1766,8 @@ sabah.com.tr#$#header.advertControlArea { top: 0!important; }
 !
 ! Unhide the player while ads timeout
 !
+hdfilmizlett1.com#$##rekSonrasi { display: block!important; }
+hdfilmizlett1.com#$##video_oncesi_rek { display: none!important; }
 netfilmtvizle.com#$##videos { display: block!important; }
 netfilmtvizle.com#$#.once-reklam { display: none!important; }
 filmatom.com#$##episode { height: unset!important; width: unset!important; position: unset!important; }
@@ -2256,9 +2264,11 @@ filmmodu.co,dizifilmix.org,sineturk.pw,altyazilifilmizle.tv,1080pfilmizle.net,do
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+hdfilmizlett1.com##.rekKod
 dizigang.com##.rek-wrap
 full1080pfilmizle.com##a[href^="https://www.jull.com.tr"] > img
-dizilla.com##.text-center > div[style^="background:red;padding:"]
+dizilla.com##.text-center div[style^="background:red;padding:"]
+dizilla.com##.text-center > section > a[href][target="_blank"] > img
 karadenizgazete.com.tr##.adversAreaa
 haberglobal.com.tr##.masthead-banner
 tafdi.org##.vidalt-ads
@@ -3386,7 +3396,7 @@ queenbet4.tv,celtabettv5.com,jojobet34.tv,vevobahis25.tv,volestream13.com,hilton
 ||pasizle*.com/assets/uploads/banners/
 ||pasizle*.com/assets/uploads/settings/player_bg_*.jpg
 1mac24.tv##.mobilrekla
-forum.miuiturkiye.net,1mac24.tv##.samCodeUnit
+isgfrm.com,forum.miuiturkiye.net,1mac24.tv##.samCodeUnit
 ||1mac24.tv/dnb.jpg
 ||*mac24.tv/*.gif
 ||matchservice1.ml/channel/VIDEOPROMO.jpg
