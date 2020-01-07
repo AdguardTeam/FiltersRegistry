@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 20.006.1324
+! OriginalVersion: 20.007.121
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 06 Jan 2020 22:04 UTC
+! Last modified: 07 Jan 2020 02:01 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -25,6 +25,7 @@
 -iklan2.
 -ikln.
 .com/iklan/
+.id/ads/
 .id/iklan/
 .id^*/ad.
 .id^*/ad/
@@ -101,6 +102,7 @@
 /gbr_iklan/*
 /gg-ads-
 /gif980x200.
+/iframe/iklan/*
 /iklan-
 /iklan1-
 /iklan1.
@@ -151,6 +153,7 @@
 /spaceads.
 /sponsor-iklan.
 /top_iklan1.
+/upload/iklan/*
 /vg728x90.
 /vic_image/iklan/*
 /xbanner-mediaads.
@@ -1184,7 +1187,6 @@ _996x50.gif
 ##.post-ads-top
 ##.post-adv
 ##.posts-ad
-##.pusat728
 ##.safelink-iklan-kanan
 ##.safelink-iklan-kiri
 ##.safelink-iklan-top
@@ -1225,6 +1227,8 @@ _996x50.gif
 ##.video-content-top-ads
 ##.videoOverAdBig
 ##.vlog-ad
+##.widget-iklan
+##.widget-iklanresponsive
 ##.widget_adace_ads_widget
 ##.widget_adswidget1-quick-adsense
 ##.widget_adswidget2-quick-adsense
@@ -1232,8 +1236,6 @@ _996x50.gif
 ##.wrap-fixed-ads
 ##[href*="/ads-"]
 ##[href*="/iklan-ads/"]
-##[href*="/iklan/"] > img
-##[href*="/info-iklan/"]
 ##[href^="/api/1/ad/"]
 ##[href^="/mellowads."]
 ##[id*="-iklan-kanan-"]
@@ -7540,15 +7542,12 @@ _banner.$image,domain=bantennews.co.id
 !
 ||adsimg.kompas.com^
 ||ajnn.net/files/sewaan/$image
-||akurasinews.com/wp-content/uploads/*-640x905.$image
 ||akurat.co/images/banner/$image
 ||ayobandung.com/assets/img/banner-$image
 ||ayosemarang.com/assets/img/banner_$image
 ||ayotegal.com/assets/img/banner/$image
 ||ayoyogya.com/assets/img/banner/$image
 ||banuatv.com^*-iklan-$image
-||batampos.co.id/wp-content/uploads/*/small-$image
-||batampos.co.id^*/ad-$image
 ||bengkuluekspress.com^*/banner-$image
 ||bengkuluinteraktif.com^*/promo/$image
 ||bengkulutoday.com^*/banner/$image
@@ -7560,7 +7559,6 @@ _banner.$image,domain=bantennews.co.id
 ||beritajakarta.id^*/banner/$image
 ||beritajateng.net^*/banner-$image
 ||beritakaltim.co^*/banner-$image
-||beritamerdekaonline.com^*/banner-
 ||beritamerdekaonline.com^*/banner-$image
 ||beritapenajam.net^*/bener-$image
 ||beritapenajam.net^*/benner-$image
@@ -7590,30 +7588,18 @@ _banner.$image,domain=bantennews.co.id
 ||harianjogja.com^*/banner/$image
 ||hariankepri.com^*/banner-$image
 ||harianmemokepri.com^*/banner-$image
-||harianrakyatbengkulu.com/wp-content/uploads/*/*120x600.$image
-||harianrakyatbengkulu.com^*-banner-$image
-||harianrakyatbengkulu.com^*/banner-$image
 ||hotabis.com/wp-content/uploads/*.gif$image
 ||iklan.beritajatim.com/$image
-||iklan.sorotmedianusantara.com/*^$third-party
-||indopos.co.id/assets/images/*_banner-$image
-||indopos.co.id^*/storage/uploads/a/$image
+||iklan.sorotmedianusantara.com/$third-party
 ||infojambi.com^*/banner-$image
 ||infosekitarpekalongan.com^*/banner-$image
-||infosultra.id/wp-content/uploads/*-1024x768.$image
-||infosultra.id/wp-content/uploads/*-768x1024.$image
 ||inibengkulu.com^*/banner-$image
 ||inilahkoran.com^*/banners/$image
 ||inspirasinews.co^*/promotion_$image
 ||jatengtoday.com^*/banner-$image
 ||jejamo.com^*/banner$image
 ||jemberpost.net^*/banner-$image
-||kabar.news//sites/default/files/gbb-uploads/$image
 ||kajanglako.com^*/banner/$image
-||kalbaronline.com/*-240x300.$image
-||kalbaronline.com/*-300x250.$image
-||kalimantanpost.com/wp-content/uploads/*/iklan*.$image
-||kalimantanpost.com^*/400x400px-300x300.$image
 ||kaltengpos.co/baner/$image
 ||katim.id^*/img/banner/$image
 ||kba.one/files/sewaan/$image
@@ -7817,6 +7803,7 @@ fajarmanado.com,sulutreview.com##.wrap-banner
 winnetnews.com##[href*="winnetnews.com/other/ads/"]
 suarantb.com##[href^="http://bit.ly/"] > img
 nusabali.com##[href^="https://bit.ly/"] > img
+balipost.com##[id^="ads-"]
 bantenkini.com,citrust.id,kabarsumbawa.com,listingberita.com,metrosulawesi.id,redkal.com,sakanews.com,sidakpost.id,suarasikka.com,suaratangsel.com,sumeks.co##a[href="#"] > img
 baliportalnews.com##a[rel="noopener noreferrer"] > img
 beritajatim.com,duta.co,infojambi.com,kejarfakta.com,kompaslima.com,nmcberita.id,pelitasumsel.com,penaberlian.com,radarlampung.co.id,riauterkini.com,samawarea.com,suarakristen.com,sumeks.co##a[target="_blank"] > img
@@ -8115,27 +8102,26 @@ bola-okezone-com.cdn.ampproject.org,celebrity-okezone-com.cdn.ampproject.org,eco
 !
 ! ANTI-ADBLOCK
 ! --------------------------------------------------------------
-@@/bplogo.$domain=beritapagi.co.id
-@@/fuckadblock.$script,domain=baritopost.co.id|kabar6.com|konten.co.id|listingberita.com|nusantarapos.co.id|suaranasional.com|terasmaluku.com
-@@/iklan-langganan.$domain=radarlombok.co.id
+@@/fuckadblock.$script,domain=akurasinews.com|baritopost.co.id|kabar6.com|konten.co.id|listingberita.com|nusantarapos.co.id|suaranasional.com|terasmaluku.com
 @@/pagead2.$domain=kalimantanpost.com
 @@://ads.$domain=klasika.kompas.com
-@@kompas.com/pasangiklan/api/ads/
 @@||balipost.com^$generichide
 @@||cidahu.com^$generichide
 @@||kabarmakkah.com^$generichide
-@@||kongkrit.com/category/iklan/$~third-party
 @@||konten.co.id^$generichide
 @@||newscorner.id^$generichide
 @@||radarlombok.co.id^$generichide
 @@||tribunislam.com^$generichide
-balipost.com##.adsbygoogle
+!
+!
+! EMPTY ADS PLACEHOLDERS
+! --------------------------------------------------------------
+balipost.com,konten.co.id,radarlombok.co.id##.adsbygoogle
 balipost.com##.paralax_div
-balipost.com##[id^="ads-"]
-konten.co.id##.adsbygoogle
-radarlombok.co.id##.adsbygoogle
-radarmalang.id#@#.td-ad-background-link
-suarasumselnews.co.id#@#.category-advertorial
+!
+! WHITELIST
+! --------------------------------------------------------------
+@@/bplogo.$image,domain=beritapagi.co.id
 ! *** abid:src/addons/shortlink.adbl ***
 ||adsafelink.com/banner/
 !
@@ -9051,22 +9037,13 @@ bagikancara.com,belajarbro.id,bloggerszones.com,contohblog.com,eirudo.com,gadget
 tutorialjaringan.com##.middle-ads
 hobybaca.com##.td-adspot-title
 ! *** abid:src/whitelist.adbl ***
-@@-belajar-$image
 @@/ayopasangiklan.$image
-@@/belajar-$image
 @@/belanja_iklan-$image
-@@/biaya-google-adwords-$image
 @@/cara-beriklan.$image
 @@/contoh-iklan-$image
-@@/google-ads-logo.$image
-@@/google-adwords-example-$image
-@@/istilah-google-$image
-@@/kelas-google-$image
+@@/iklan-langganan.$image
 @@/pasang-google-$image
 @@/pasang-iklan-$image
-@@/seminar-google-$image
-@@/workhsop-google-$image
-@@_belajar_$image
 !
 ! --------------------------------------------------------------
 ! Situs Iklan
@@ -9078,7 +9055,7 @@ sebariklanbaris.net#@#.content-ads
 ads-ina.org,topbisnis.org#@#[href*="/ads-"]
 jualo.com#@#[href*="/iklan-"] > img
 bekas.com,iklankost.com,jualo.com,kostjakarta.net,pusatpemasanganiklan.com#@#[href*="/iklan/"] > img
-iklanpopuler.com,sebariklanbaris.net#@#[src*="/iklan/"]
+iklanpopuler.com,sebariklanbaris.net,ziyata.com#@#[src*="/iklan/"]
 !
 @@-adwords.$image,domain=jasaiklanbandung.com
 @@-google-ads-$image,domain=oasisme.com
@@ -9099,6 +9076,7 @@ iklanpopuler.com,sebariklanbaris.net#@#[src*="/iklan/"]
 @@||jualo.com/images/$~third-party
 @@||tomato.co.id/wp-content/uploads/$image,~third-party
 @@||winstarlink.com/wp-content/uploads/$image,~third-party
+@@||ziyata.com/upload/$~third-party
 !
 ! --------------------------------------------------------------
 ! Memperbaiki kerusakan karena EasyList dan uBlock filters
@@ -9134,4 +9112,4 @@ iklanpopuler.com,sebariklanbaris.net#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/103
 @@/particles.$script,domain=mangaku.in
-! Checksum: jEfwoB9+6685cLcusKZUOg
+! Checksum: k9kzrs3hV+l10nVS4hzkzg
