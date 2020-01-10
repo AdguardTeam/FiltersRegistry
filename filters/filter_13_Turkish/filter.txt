@@ -374,6 +374,8 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/15571
+simulationmods.com##div[id^="ai-adb-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47230
 gecbunlari.com#@##adcontent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47117
@@ -638,14 +640,6 @@ torrentmafya.com#@#.an-advert-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23559
 @@||gta-gorevleri.com/js/ads-*-*.js|$~third-party
 gta-gorevleri.com#%#window.koddostu_com_adblock_yok = true;
-! https://github.com/AdguardTeam/AdguardFilters/issues/22920
-worldoftruckstr.com#%#Object.defineProperty(window, 'ai_adb_detected', { get: function() { return function() {}; } });
-@@||worldoftruckstr.com/wp-content/plugins/ad-inserter/js/ads.js
-@@||worldoftruckstr.com/wp-content/plugins/ad-inserter/js/sponsors.js
-worldoftruckstr.com#$##banner-advert-container { display: block!important; }
-worldoftruckstr.com#$##banner-advert-container img { display: block!important; }
-!+ PLATFORM(ios, ext_android_cb)
-@@||worldoftruckstr.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22919
 simulasyonturk.com#%#Object.defineProperty(window, 'ai_adb_detected', { get: function() { return function() {}; } });
 @@||simulasyonturk.com/wp-content/plugins/ad-inserter/js/ads.js
@@ -722,10 +716,6 @@ galpool.com#@#.adsbygoogle
 simulasyonturk.com#@##adsense
 simulasyonturk.com#@#.an-sponsored
 simulasyonturk.com#@#.an-advert-banner
-! https://github.com/AdguardTeam/AdguardFilters/issues/15571
-worldoftruckstr.com#@#.an-sponsored
-worldoftruckstr.com#@#.an-advert-banner
-worldoftruckstr.com#@##adsense
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15267
 !+ PLATFORM(ios, ext_android_cb)
 @@||androidmakale.com^$generichide
@@ -793,8 +783,6 @@ programinadresi.com#$##wrapfabber { height: 1px!important; }
 ||metin2bot.net/kontrol/adb.js
 ! https://forum.adguard.com/index.php?threads/24945/
 @@||serial69.com^$generichide
-! https://forum.adguard.com/index.php?threads/24610/
-||worldoftruckstr.com/wp-content/uploads/*/*.js?ver=
 ! https://forum.adguard.com/index.php?threads/https-www-gulmeklazim-com-adblock.24197/
 gulmeklazim.com#$#.adsmd { height: 1px!important; }
 !+ PLATFORM(ios, ext_android_cb)
@@ -2289,6 +2277,7 @@ filmmodu.co,dizifilmix.org,sineturk.pw,altyazilifilmizle.tv,1080pfilmizle.net,do
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+simulationmods.com##.td-banner-wrap-full
 malkaram.com##.linkli-reklamlar
 malkaram.com##a[href="https://www.facebook.com/sefim.et.9"][target="_blank"] > img
 kocaelihaberci.com##.rek:not(.haber_rek)
@@ -4705,7 +4694,6 @@ hepmacizle.net##a[href^="http://wlgorabet.adsrv.eacdn.com/"]
 hepmacizle.net##.sag > .widgetsarmal:first-child
 matchandbets.ml,matchandbet.ml##.marquee
 ||erotikhikayeoku.net/pop.php
-||hergundizi.org/banner/
 ||rsc.cdn77.org/matbet/yeni/1000x60.gif
 ||s3.eu-west-2.amazonaws.com/affb/25766/w1000-h50/1000x50.html
 egehaber.com###modal-ads
