@@ -1307,6 +1307,7 @@ slate.com,businessinsider.de,fastcompany.com,heise.de,history.com,itprotoday.com
 ! ##.cta-component-full-width
 bournemouthecho.co.uk,eveningtimes.co.uk,greenocktelegraph.co.uk,heraldscotland.com,swindonadvertiser.co.uk,wiltshiretimes.co.uk##.cta-component-full-width
 !
+surfer.com##.newsletter
 usgamer.net##.newsletter-promo
 makeup.ru##.footer-subscribe
 makeup.ru##.header-subscribe
@@ -4032,9 +4033,10 @@ aternos.org#@##adUnit
 @@||flashtalking.com/lgc|$domain=aternos.org
 @@||ib.adnxs.com/ut/v3/prebid|$domain=aternos.org
 @@||snigel-d.openx.net/w/1.0/arj?cc=1$domain=aternos.org
-!#endif
-!+ NOT_PLATFORM(windows, mac, android)
+aternos.org#%#//scriptlet("abort-on-property-read", "_0x5d75")
+aternos.org#%#//scriptlet("set-constant", "XMLHttpRequest.setUpdateListener", "noopFunc")
 aternos.org#%#(function(){var b=XMLHttpRequest.prototype.open,c=/[/.@](hbopenbid\.pubmatic\.com|c\.amazon-adsystem\.com|snigel-d\.openx\.net|i\.connectad\.io|fastlane\.rubiconproject\.com|ib\.adnxs\.com|d9\.flashtalking\.com|as-sec\.casalemedia\.com|tlx\.3lift\.com|smartadserver\.com|360yield\.com)[:/]/i;XMLHttpRequest.prototype.open=function(d,a){if(("GET"===d||"POST"===d)&&c.test(a))this.send=function(){return null},this.setRequestHeader=function(){return null},console.log("AG has blocked request: ",a);else return b.apply(this,arguments)}})();
+!#endif
 !
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||luzernerzeitung.ch^$generichide
@@ -9316,6 +9318,8 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! surfer.com - Vimeo video is not working
+@@||cdn.cookielaw.org^$domain=surfer.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47251
 win2day.at#@#.cookie-notification:not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47079
@@ -10220,8 +10224,6 @@ ukr-today.com##.soc_vidgets
 ##head[prefix~="medium-com:"] ~ body .js-openInAppButton
 ##head[prefix~="medium-com:"] ~ body .js-postActionsBarContent > .js-readNextInteractions
 !
-gir.im#$#.smartbanner-show { margin-top: 0!important; }
-gir.im##.smartbanner
 !+ NOT_PLATFORM(ios, ext_android_cb)
 shazam.com##.shz-frame-apps-banner
 !
@@ -10520,7 +10522,6 @@ coursera.org##.rc-MobilePromoBannerBottom
 hi-news.ru###app-post
 blickamabend.ch###mobdl
 binance.com##.ng-scope > div.download-fixed
-||gir.im/assets/scripts/smart-app-banner.js
 petburada.com###mobileAppNotify
 ||teknowebim.com/uploads/mobil-ads.png
 teknowebim.com##a[href^="https://play.google.com/store/apps/details?id=com.saytech.teknowebim"]
