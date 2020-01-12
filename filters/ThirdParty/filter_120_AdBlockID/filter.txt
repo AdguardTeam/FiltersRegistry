@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 20.011.1299
+! OriginalVersion: 20.012.449
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 11 Jan 2020 21:39 UTC
+! Last modified: 12 Jan 2020 07:29 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -1608,40 +1608,22 @@ _996x50.gif
 ! Telkom Indihome
 ! https://github.com/sentabi/telkom/blob/master/internet-positif.md
 ||118.97.116.10^$third-party
-||a01.uadexchange.com^$third-party
-||a03.uadexchange.com^$third-party
-||block.uzone.id^$third-party
-||cdn.uzone.id^$third-party^$third-party
-||cdn1.uzone.id^$third-party
-||cdn2.uzone.id^$third-party
-||cdn3.uzone.id^$third-party
-||cdn4.uzone.id^$third-party
-||cdn5.uzone.id^$third-party
-||cfs.uzone.id^$third-party^$third-party
-||csf.uzone.id^$third-party^$third-party
 ||d01.notifa.info^$third-party
-||das.uadexchange.com^$third-party
 ||digiads.co.id^$third-party
-||digilife.uzone.id^$third-party
-||expose.uzone.id^$third-party
-||food.uzone.id^$third-party
-||internetpositif.uzone.id^$third-party
 ||js.digiads.co.id^$third-party
-||kendedes.uzone.id^$third-party
-||mercusuar.uzone.id^$third-party
-||news.uzone.id^$third-party
 ||p01.notifa.info^$third-party
 ||p02.notifa.info^$third-party
 ||p03.notifa.info^$third-party
 ||p05.notifa.info^$third-party
-||terbaru.uzone.id^$third-party
-||terpopuler.uzone.id^$third-party
 ||uadexchange.com^$third-party
 ||upoint.id^$third-party
 ||usearch.co.id^$third-party
 ||welcome.indihome.co.id^$third-party
 ! ||d31qbv1cthcecs.cloudfront.net^$third-party,domain=~advertisingfresh.com|~kaskus.co.id
 ! ||d5nxst8fruw4z.cloudfront.net^$third-party,domain=~bukalapak.com
+! https://github.com/realodix/AdBlockID/issues/255
+||u-ad.info^$third-party
+||uzone.id^$third-party
 ! *** abid:src/thirdparty.adbl ***
 ||amazonaws.com^*/banner/$third-party,domain=bogornews.com
 ||cloudimg.io/*.gif$image,domain=mangaku.in
@@ -1933,54 +1915,12 @@ shopee.co.id##.shopee-search-item-result__item:-abp-contains(Iklan)
 tokopedia.com##.unf-card:-abp-has(img[alt*="TopAds"])
 ! ------------------------------------------------------------!
 ! *** abid:src/addons/annoyances.adbl ***
-###onesignal-bell-container
-###onesignal-popover-container
-##.onesignal-bell-container
-##.sumome-image-sharer
-##.sumome-share-client-wrapper
-/onesignal-modal.
-||20.detik.com/embed/*?smartautoplay=$domain=~20.detik.com
-||crowdynews.com^$third-party
-||foxpush.com^$third-party
-||foxpush.net^$third-party
-||indoxbet.$third-party
-||indoxplay.$third-party
-||izooto.com^$third-party
-||pushassist.com^$third-party
-||pushcrew.com^$third-party
-||sendpulse.com^$third-party
-||sumo.com^$third-party
-||sumome.com^$third-party
-||tangkas.gold$third-party
-||tv.kaskus.co.id/api/embed/widget/*&ads=$subdocument
-!
 ##amp-iframe[src^="https://www.vidio.com/embed/"]
 ||vidio.com/embed/*autoplay=true&player_only=true&live_chat=false&mute=true$subdocument,third-party
 !
 kaskus.co.id###thread_post_list > [id^="moderated-"]:-abp-contains(Post ini telah dihapus oleh)
 m.kaskus.co.id##.threadDetail .kaskus-tv-iframe
 m.kaskus.co.id##[id^="postdeleted"]
-!
-! COOKIE
-! --------------------------------------------------------------
-###catapult-cookie-bar
-###cookie-notice
-###cookie-pop
-###eu-cookie-law
-###js-gdpr-consent-banner
-###modal-cookie
-##.bs-gdpr-law
-##.cc-floating
-##.cc-type-info
-##.cc_banner
-##.cc_banner-wrapper
-##.cc_container
-##.cc_container--open
-##.cookie-notice-container
-##.cookieBanner
-##.eu-cookie-law
-##.modal-cookie
-##.widget_eu_cookie_law_widget
 !
 ! PRIVACY
 ! --------------------------------------------------------------
@@ -7183,6 +7123,7 @@ _penggugur_kandungan_$image
 ##[href*="bit.ly/1RN8pQw"] > img
 ##[href*="bit.ly/2BGykJH"] > img
 ##[href*="bit.ly/2Dn31EH"] > img
+##[href*="bit.ly/2ES75h2"] > img
 ##[href*="bit.ly/2J0M3Rm"] > img
 ##[href*="bit.ly/2LE6TWh"] > img
 ##[href*="bit.ly/2O7lY3n"] > img
@@ -7297,9 +7238,10 @@ sukamovie.*##.sukam-bawah
 ! --------------------------------------------------------------
 /rmp-blockadblock.js$domain=mivo.com
 @@/ads.$script,domain=negumo.com
-@@/fuckadblock.$script,domain=otaku.tekloggers.com
+@@/fuckadblock.$script,domain=aibouanime.xyz|otaku.tekloggers.com
 @@/pagead2.$script,domain=downmovie21.site
 !
+@@||aibouanime.xyz$generichide
 @@||anibatch.me^$generichide
 @@||animee.xyz$generichide
 @@||animenonton.tv^$generichide
@@ -7324,6 +7266,9 @@ filmboxoffice.web.id#@##adsense
 drakoric.com,samehadaku.net.in#@##banner_ad
 filmboxoffice.web.id#@#.an-advert-banner
 cinemaindo21.*#@##topad
+! EMPTY ADS PLACEHOLDERS
+! --------------------------------------------------------------
+aibouanime.xyz##[class$="_bn"]
 !
 ! ANNOYANCES
 ! --------------------------------------------------------------
@@ -7941,7 +7886,7 @@ balipost.com##.paralax_div
 ! SAFELINK SCRIPT
 ! --------------------------------------------------------------
 /js/full-page-script.js$script,third-party
-/soralink/assets/js/soralink.js$script
+/wp-content/plugins/soralink/*$script,third-party
 /wpsafelink.js$script,third-party
 =autosafeklinkz350_$script
 ||adsafelink.com/js/webscript.js$script,third-party
@@ -8921,4 +8866,4 @@ iklanpopuler.com,sebariklanbaris.net,ziyata.com#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/103
 @@/particles.$script,domain=mangaku.in
-! Checksum: IdwEuOijqK1xSFfoizDdFg
+! Checksum: AG+rLV2FmB1WC+dCzIfOEg
