@@ -5855,7 +5855,7 @@ $cookie=/^los\$/,domain=auto.ru
 !
 ||kinopoisk.ru^$cookie=/consultant|introductory|knowledge|transfer|technology|workplace/
 !
-24smi.org,sdamgia.ru,kakprosto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.RtbRender')
+24smi.org,kakprosto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.RtbRender')
 echo.msk.ru,kakprosto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.AdvManagerLoaderRender')
 ||echo.msk.ru^$replace=/AdvManager\.render/AdvManager._render/
 echo.msk.ru$$script[tag-content="DisplayAcceptableAdIfAdblocked"]
@@ -7388,6 +7388,8 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.zen-pa
 !------- JS ------------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/46986
+sdamgia.ru#%#document.cookie = "adb=0";
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47805
 linedia.ru#%#//scriptlet("abort-current-inline-script", "$", "dwpopup")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45414
@@ -8557,7 +8559,6 @@ tracktor.tv#$#.pagebg { padding-top: 10px!important; }
 i2hard.ru#$#body { padding-top: 0!important; }
 i2hard.ru#$#.main-wrap > main { margin-top: 0!important; }
 ! anitokyo.tv - удаление брендированного фона, отступа сверху
-anitokyo.tv#$#div[class^="header_bg"] { background: none!important; }
 anitokyo.tv#$#body { background: #e4f1f6!important; }
 anitokyo.tv#$#body > div#wrapper { padding-top: 0!important; }
 anitokyo.tv#$#body > div#wrapper > header { padding: 0!important; margin: 0px 0 0 0!important; }
@@ -10382,6 +10383,9 @@ mixervanga.ru,pupolita.ru,okaynews.me,newsandpolik.ru,blamper-news.ru,blamper-no
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+anitokyo.tv##a[href^="https://r.advg.agency/"]
+anitokyo.tv##div[class^="header_bg"]
+||stormo.xyz/player/loader.png
 7days-ua.com###sidebar-m
 7days-ua.com##div[id^="sblock_"]
 tapochek.net##table.attach > tbody > tr:not([class]) > td[class="attachheader"][align="center"]
