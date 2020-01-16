@@ -6279,6 +6279,7 @@ infox.ru#?#.row div.stlt:contains(Реклама)
 infox.ru#?#body > div.wr_container:has(> div.container > div.partner_news_gor)
 !
 usbdev.ru#?##quickModForm > div.windowbg:has(> .poster > h4:contains(USBDev.ru Forum))
+beat.rambler.ru#?##app > div[class] > div[class] > div[class] > div:has(> div:contains(реклама))
 1progs.ru#?##sidebar > aside.widget:has(> div.widget-title > h4:contains(Рекомендуем))
 quto.ru#?#div.block > div[class]:has(> div.gradient > div[style*="margin-bottom"][style*="30px"] > div[data-widget^="plista_widget"])
 savefrom.net#?#.wrapper > div[class]:has(> div[id^="yandex_rtb"])
@@ -7384,8 +7385,6 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.zen-pa
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47805
 linedia.ru#%#//scriptlet("abort-current-inline-script", "$", "dwpopup")
-! https://github.com/AdguardTeam/AdguardFilters/issues/47502
-fanofnfs.3dn.ru#%#//scriptlet("set-constant", "ads_script", "undefined")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45414
 tochka.net#%#//scriptlet("abort-current-inline-script", "Math", "var f,e,r,n,i")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42947
@@ -7401,11 +7400,8 @@ sportbar.biz,sportbox.ws,goool7.ws,sport-24tv.ru,365lives.net,sportboom.pro,spor
 alterera.org#%#//scriptlet("abort-current-inline-script", "document.referrer", "google")
 !+ PLATFORM(windows, mac, android)
 alterera.org#%#AG_abortInlineScript(/google/, 'document.referrer');
-! kinosvit.tv - popups
-!+ NOT_PLATFORM(windows, mac, android)
-kinosvit.tv#%#//scriptlet("abort-on-property-read", "ads_script")
-!+ PLATFORM(windows, mac, android)
-kinosvit.tv#%#AG_abortOnPropertyRead('ads_script');
+! popups - `ads_script`
+kinosvit.tv,kinosvit.net,fanofnfs.3dn.ru#%#//scriptlet("abort-on-property-read", "ads_script")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44512
 !+ NOT_PLATFORM(windows, mac, android)
 porno-incest.net#%#//scriptlet("prevent-window-open")
@@ -10381,6 +10377,11 @@ mixervanga.ru,pupolita.ru,okaynews.me,newsandpolik.ru,blamper-news.ru,blamper-no
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+grouple.co##.co_ba
+russkiiyazyk.ru###__BannerId
+regnum.ru##.slot-article-incut-partner
+regnum.ru##.slot-item.slot-w240.slot-h400
+regnum.ru##.slot-item.slot-w970.slot-h250
 tonkosti.ru##.cassiopeia-header
 tonkosti.ru##.cassiopeia-slider
 tonkosti.ru##.ib-tablet
@@ -10824,7 +10825,7 @@ kinoframe.net##div[style="text-align:center;"] > a[rel="nofollow"] > img
 pravo.by##[class*="banner"]
 mzmuz.ru##.block_rekl
 dokonline.com###Counters + div[class="block"] + div[class="block"]
-dokonline.com###news-partner
+kinosvit.tv,kinosvit.net,dokonline.com###news-partner
 ||kinofilms.ua/images/brands/
 kinofilms.ua###sitewrap > a[href^="/go/?"][target="_blank"]
 kinofilms.ua###KFside > aside > a[href^="/go/?"][target="_blank"]
