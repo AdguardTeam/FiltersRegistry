@@ -1096,7 +1096,7 @@ sports.ru##.news-item__sources
 m.sports.ru##.b-news-sources
 m.sports.ru##.b-tag-social
 ! остальное:
-m.sports.ru#$#div.b-tag-lenta__items > div > .b-tag-social-sub { display: none!important; }
+m.sports.ru##div.b-tag-lenta__items > div > aside.b-tag-social-sub
 !
 ! sports.ru - END
 !
@@ -9416,6 +9416,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+rtl.fr#%#AG_onLoad(function() { setTimeout(function() { var el=document.querySelector('button.didomi-button-highlight'); if(el) el.click(); }, 300); });
 2b-drinks.de#%#document.cookie = "allowCookie=1";
 cnet.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("button#onetrust-accept-btn-handler"); if(el) el.click(); }, 1000); });
 inc42.com#%#AG_onLoad(function(){setTimeout(function(){var a=document.querySelector("#ampforwpConsent > .gdpr");a&&!1===localStorage.hasOwnProperty("amp-store:https://inc42.com")&&"block"===window.getComputedStyle(a).display&&(a=document.querySelector(".gdpr-btns > form > button.gdpr_y"))&&a.click()},500)});
@@ -9618,6 +9619,12 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/47644
+@@||sdk.privacy-center.org/loader.js$domain=rtl.fr
+@@||sdk.privacy-center.org/sdk.*.js$domain=rtl.fr
+@@||sdk.privacy-center.org/ui-gdpr-fr.*.js$domain=rtl.fr
+! https://github.com/AdguardTeam/AdguardFilters/issues/47754
+beterbed.nl#@#.cookiewall:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47481
 fok.nl#@##cookieInfo
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46960#issuecomment-578081007
