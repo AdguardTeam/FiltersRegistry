@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-01-23 16:25:15 CET
+! Last modified: 2020-01-24 06:40:03 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -48,7 +48,6 @@ akerstromsblog.com,annsoderlund.com,ellinorlofgren.se,emmagreen.se,fokis.se,fred
 aktivtraning.se,iform.se,natgeo.se##li:has(.content-label:has-text(/annons/i))
 alexandrabring.se,biancaingrosso.se##article[id^="post-"]:has(em:has-text(/i samarbete med/i))
 alicestenlof.com#$#.noscroll { overflow: initial !important; }
-alingsastidning.se##.textwidget:has(a[href*="casino"])
 allabolag.se##article:has(.advert__mark)
 allakorsord.se,allas.se,baaam.se,dromhemochtradgard.se,elle.se,elledecoration.se,ellematovin.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##article[id^="post-"]:has(a[href$="/annons/"])
 allas.se,elle.se,hant.se,svenskdam.se###product-wrapper:has-text(/annonssamarbete/i)
@@ -347,8 +346,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###eu-cookie-bar
@@ -456,6 +455,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##a[href*="doktor-se.onelink.me"]
 ##a[href^="https://www.adsettings.com/scripts/reg_click."]
 ##a[title="LeoVegas"]
+##div.ad.container
 ##div.cookievarning-wrap
 ##img[alt="Leovegas"]
 ##img[alt="Spela på Betsson"]
@@ -735,7 +735,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /license.$script,domain=jawcloud.co|nxload.com
 /links/*casino*.$image,domain=emocore.se
 /listByType?*adSettings$xmlhttprequest,domain=kokaihop.se
-/listicles.js$script,domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
+/listicles.js$script,domain=alingsastidning.se|bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 /live-start/live-tv-se-sportexpressen-tv-direkt$xmlhttprequest,domain=expressen.se
 /live-start/live-tv-senaste-nyheterna$subdocument,xmlhttprequest,domain=expressen.se
 /live/radarmagazine.se.js$script
@@ -1004,8 +1004,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /ub-cookie-notice/*$script,stylesheet
 /urls/count.json$script,domain=emilysliv.se|gabriellajoss.me|kenzas.se|mybabydolls.se|vimedbarn.se
 /users/2401/*$image,domain=ng.se
-/veckansluncher.gif$domain=alingsastidning.se
-/vendorList.js$script,domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
+/vendorList.js$script,domain=alingsastidning.se|bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 /verksamt-adrum.js$script,domain=verksamt.se
 /videojs-preroll.$domain=himlentv7.se
 /view.analytics.js$script,domain=kodboken.se
@@ -1078,7 +1077,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/js/advertising.$script,~third-party,domain=byggnadsarbetaren.se|cykla.se|elbilsnytt.se|snowmobile.se|svegot.se|tekniksmart.se|vatternrundan.se|vi-tidningen.se|vi.se|vilaser.se
 @@/optimizelyjs/*$domain=ikea.com
 @@/opulens_banner$image,domain=opulens.se
-@@/scripts/advertisement*.$script,~third-party,domain=amelia.se|damernasvarld.se|expressen.se|mama.nu|skonahem.com
+@@/scripts/advertisement*.$script,~third-party,domain=amelia.se|damernasvarld.se|di.se|expressen.se|mama.nu|skonahem.com
 @@/show_ads.js$script,~third-party,domain=happypancake.com
 @@/wp-content/plugins/seagal-plugin-dfp/assets/showAds.js$script,~third-party
 @@/wp-content/plugins/seagal-plugin-dfp/src/showAds.js$script,~third-party
@@ -1089,13 +1088,14 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=tv4play.se
 @@||ad*.vg.no/check.js$script,domain=aftonbladet.se
 @@||aftonbladet.se^$generichide
+@@||alingsastidning.se^$generichide
 @@||amazonaws.com/ads/$image,domain=jobb.maxkompetens.se
 @@||assets-cdn.mytaste.org/js/ads.js$script
 @@||benjeey.se^$generichide
 @@||blocket.se^$generichide
 @@||bohuslaningen.se^$generichide
 @@||byggahus.se^$generichide
-@@||cdn.dynamicyield.com^$domain=bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
+@@||cdn.dynamicyield.com^$domain=alingsastidning.se|bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 @@||consensu.org^*/config.js$script
 @@||cykla.se/wp-admin/admin-ajax.php?action*&advert_search$xmlhttprequest
 @@||cykla.se/wp-content/themes/cykla/assets/images/advert-filter-top.jpg$image
@@ -1212,6 +1212,15 @@ aletorget.se,alingsastorget.se,almhulttorget.se,alvestatorget.se,amaltorget.se,a
 alexandrabring.se##.PW_instagram_widget
 alicestenlof.com,linnherbertsson.se,mestmotor.se,muscles.se##.overlay
 alicestenlof.com,tjanstebilen.se###cookies
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se###stampenCookieInformationContainer
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.c-ad
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.c-ad__floating
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.frequency-model__notice
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.lokus-engine
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.ml-adon-hide-box
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.o-grid__ad-column
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.rabble-widget
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.seekly
 allabolag.se##.topBnrContainer
 allakorsord.se,allas.se,baaam.se,dromhemochtradgard.se,elle.se,elledecoration.se,ellematovin.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##.ad-collapse
 allakorsord.se,allas.se,baaam.se,dromhemochtradgard.se,elle.se,elledecoration.se,ellematovin.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##.c-native-carousel--wrapper
@@ -1228,12 +1237,12 @@ allsvenskan.se,superettan.se##.app-cookie-line
 allsvenskan.se,superettan.se##.partners-slideshow-slide
 alltforforaldrar.se,battrestadsdel.se,casinoexpo.se,flashback.se,leta.se,mammasidan.se,minbebis.com###top-banner
 alltforforaldrar.se,dagensvastervik.se,dagensvimmerby.se,di.se,mammasidan.se,minbebis.com,sverigesnatur.org,upphandling24.se##.panorama
-alltforforaldrar.se,lerumstidning.se,mammasidan.se,minbebis.com,partilletidning.se##.middle-banner
 alltforforaldrar.se,mammasidan.se,minbebis.com###owl-products
 alltforforaldrar.se,mammasidan.se,minbebis.com###partnerMenuContainer
 alltforforaldrar.se,mammasidan.se,minbebis.com###partnerMenuContainerFiller
 alltforforaldrar.se,mammasidan.se,minbebis.com##.advertisements-sidebar
 alltforforaldrar.se,mammasidan.se,minbebis.com##.art-small > a[target="_blank"]
+alltforforaldrar.se,mammasidan.se,minbebis.com##.middle-banner
 alltforforaldrar.se,mammasidan.se,minbebis.com##.productheader
 alltforforaldrar.se,mammasidan.se,minbebis.com##.spons-artc
 alltforforaldrar.se,mammasidan.se,minbebis.com##[id*="blogg_panorama"]
@@ -1331,15 +1340,6 @@ blocket.se##div[style="height: 240px;"]
 bloggbevakning.se###ad
 bmwklubben.se###campaign-image
 bmwklubben.se##.ad-format
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se###stampenCookieInformationContainer
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.c-ad
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.c-ad__floating
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.frequency-model__notice
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.lokus-engine
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.ml-adon-hide-box
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.o-grid__ad-column
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.rabble-widget
-bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.seekly
 bokadirekt.se##.frontpage-banner
 bokadirekt.se##img[alt*="banner"]
 boktugg.se,opulens.se##.category-sponsrat
@@ -1752,7 +1752,6 @@ goteborgdirekt.se,stockholmdirekt.se,vasterastidning.se##[class^="casino-ad"]
 goteborgsgolfaren.se###sgpb-popup-dialog-main-div-wrapper
 goteborgsgolfaren.se##.sgpb-popup-overlay
 gotlandswebben.se##.header-ads-wrapper
-gp.se##.blogcGRCookieContainer
 grannar.se##.cookiebox
 grillbaronen.se##.spu-bg
 grillbaronen.se##.spu-box
@@ -2426,6 +2425,7 @@ yougov.se##.cookie-confirm
 ||blocket.se^*/gdpr-bundle$script
 ||blogg.se/public/js/metrics.$script
 ||bloggerfy.com/flash/$object
+||blogglisten.no^$third-party
 ||bloggportalen.se/BlogPortal/view/Statistics$image
 ||bloglovin.com/widget/$third-party
 ||bmbstatic.blob.core.windows.net^
@@ -2484,7 +2484,7 @@ yougov.se##.cookie-confirm
 ||connectio.s3.amazonaws.com/connect-retarget.$script
 ||consensu.org^$third-party,domain=~joe.ie|~mirror.co.uk|~sourceforge.net|~sportsjoe.ie|~vi.nl
 ||consent.cmp.oath.com^$script,domain=alltomstockholm.se|mitti.se
-||consent.cookiebot.com^$third-party,domain=alingsastidning.se|bax-shop.se|birthday.se|chiffer.se|clipmyhorse.tv|elitrapport.se|etc.se|gaffa.se|goteborgdirekt.se|hoglandsnytt.se|itaboutdoor.se|kingsizemag.se|kurera.se|lerumstidning.se|ljudochbild.se|mediaplanering.se|ng.se|norrahalland.se|norran.se|partilletidning.se|selmaspa.se|skeppsbrons.se|smartsenior.se|stockholmdirekt.se|swedroid.se|tankesport.se|totallyorebro.se|totallystockholm.se|upplysning.se|vasterastidning.se|villalivet.se|wesafe.se
+||consent.cookiebot.com^$third-party,domain=bax-shop.se|birthday.se|chiffer.se|clipmyhorse.tv|elitrapport.se|etc.se|gaffa.se|goteborgdirekt.se|hoglandsnytt.se|itaboutdoor.se|kingsizemag.se|kurera.se|ljudochbild.se|mediaplanering.se|ng.se|norrahalland.se|norran.se|selmaspa.se|skeppsbrons.se|smartsenior.se|stockholmdirekt.se|swedroid.se|tankesport.se|totallyorebro.se|totallystockholm.se|upplysning.se|vasterastidning.se|villalivet.se|wesafe.se
 ||consent.dk^$third-party
 ||contributor.google.com^*/loader.js$script,domain=tyda.se
 ||converdiant.com^$third-party
