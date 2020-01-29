@@ -4949,6 +4949,13 @@ sinoptik.ua$$script[tag-content="slotBranding"]
 sinoptik.ua$$script[tag-content="div-gpt-ad"]
 !+ PLATFORM(windows, mac, android)
 ||s.zmctrack.net^$domain=sinoptik.ua
+! Fixing login and register issues
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+@@||forumodua.com/register.php$genericblock,jsinject,generichide
+@@||forumodua.com/login.php$genericblock,jsinject,generichide
+forumodua.com#@#.body_wrapper > div > table[width="100%"] > tbody > tr > td[valign="top"]
+forumodua.com#$#.body_wrapper > div > table[width="100%"] > tbody > tr > td[valign="top"] { position: absolute!important; left: -3000px!important; }
+!#endif
 !
 ! END: Ads replacement (piguiqproxy.com etc.)
 !
@@ -10468,6 +10475,7 @@ mixervanga.ru,pupolita.ru,okaynews.me,newsandpolik.ru,blamper-news.ru,blamper-no
 ! adbetnet domains
 ||cdn.*/libs/b.js$third-party,domain=nnm-club.lib|nnm-club.me|nnm-club.tv|nnmclub.to|seasonvar.ru|mintmanga.com|realmadrid.ru
 !
+bobr.by##div[data-banner-id]
 fd.ru##.rightSidebar div.StatBlockWidget > noindex > div[class] > a[target="_blank"] > img
 ||z.cdn.*.*/load?o=v&z=*&random=
 yummyanime.club###top-anime
