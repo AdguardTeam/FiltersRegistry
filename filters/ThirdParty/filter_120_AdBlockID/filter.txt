@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 20.029.1226
+! OriginalVersion: 20.030.837
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 29 Jan 2020 20:26 UTC
+! Last modified: 30 Jan 2020 13:57 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -262,6 +262,7 @@ _promosi.
 -540x60-
 -540x60.
 -550-x-70.
+-550-x-70px.
 -550x70.
 -550x80.
 -565x80.
@@ -796,6 +797,8 @@ _996x50.gif
 ##.ads-bawah
 ##.ads-bock-1
 ##.ads-bottom-fixed
+##.ads-in-article
+##.ads-in-article-v2
 ##.ads-kanan
 ##.ads-kiri
 ##.ads-pop
@@ -817,6 +820,8 @@ _996x50.gif
 ##.adsFrameSidebar
 ##.adsFramedet
 ##.adsSpot
+##.ads_2l
+##.ads_2r
 ##.ads__banner
 ##.ads__boxr
 ##.ads__horizontal
@@ -2013,6 +2018,7 @@ m.kaskus.co.id##[id^="postdeleted"]
 -lotus2d1.$image
 -misiqq-$image
 -murnibet-$image
+-nagawinqq-$image
 -pakarbet.$image
 -probet24-$image
 -qq-slot-$image
@@ -2703,6 +2709,7 @@ m.kaskus.co.id##[id^="postdeleted"]
 /Agen-Game-Slots-Terpercaya.$image
 /Asean99-
 /Mitrahoki-$image
+/QQalfa.gif
 /acehbola-$image
 /acehpoke-$image
 /adsimontok/*
@@ -4668,6 +4675,7 @@ _penggugur_kandungan_$image
 ##[href*="agungqiu."] > img
 ##[href*="agungqq"] > img
 ##[href*="agwcash."] > img
+##[href*="ahhapoker."]
 ##[href*="ahliqq"]
 ##[href*="ajobola."] > img
 ##[href*="aktifqq."] > img
@@ -4842,6 +4850,7 @@ _penggugur_kandungan_$image
 ##[href*="bandartoke."] > img
 ##[href*="bandarwaletaa."] > img
 ##[href*="bandarxl."] > img
+##[href*="bantenpoker."]
 ##[href*="bape-qq"] > img
 ##[href*="bape88.id"] > img
 ##[href*="bapeqq"] > img
@@ -7367,6 +7376,8 @@ _penggugur_kandungan_$image
 ##[href*="zonawin."] > img
 ##[href*="zynga365."] > img
 ##[href*="zyngaqq."] > img
+##[onclick*="bantenpoker."]
+##[onclick*="ezebet."]
 ##img[src*="abadicash."]
 ##img[src*="iklanratu."]
 ##img[src*="indo55bet."]
@@ -7432,6 +7443,7 @@ _penggugur_kandungan_$image
 ##[href*="goo.gl/gzJKgG"]
 ##[href*="is.gd/zkudsJ"]
 ##[href*="rebrand.ly/DUNIA21QQ"] > img
+##[href*="rebrand.ly/IndofilmSidebarLuxury138"]
 ##[href*="rebrand.ly/KAKASLOT"]
 ##[href*="rebrand.ly/LUXURY111"]
 ##[href*="rebrand.ly/LUXURY138"]
@@ -7442,8 +7454,10 @@ _penggugur_kandungan_$image
 ##[href*="rebrand.ly/gudangfilm"]
 ##[href*="rebrand.ly/id88bkpfll19"]
 ##[href*="rebrand.ly/kawanfilm21"]
+##[href*="rebrand.ly/l21world"]
 ##[href*="rebrand.ly/lapakNikmatQQ"] > img
 ##[href*="rebrand.ly/lapaksedapModalQQ"] > img
+##[href*="rebrand.ly/layarkaca21world"]
 ##[href*="rebrand.ly/w88bkpfll19"]
 ##[href*="unibetplay.com/nobarfilm"]
 ##[onclick*="rebrand.ly/LUXURY111"] > img
@@ -7452,7 +7466,6 @@ _penggugur_kandungan_$image
 ! --------------------------------------------------------------
 doramaku.me###banner-tengah
 layarkeren.com###divFLRALeft
-lk21sub.net###form_view
 d21.tv###overlay-pop
 dramamu.net###popup_content
 nonton.com##.adds
@@ -7462,10 +7475,9 @@ neonime.org##.berlangganan-460
 103.194.171.75##.bnner
 mivo.com##.home-page .player-ads-top-1
 drakorindofilms.net,inidramaku.com,korenlovers.co,oujanime.com##.iklan
-dutafilm.live##.swal-overlay
 animelink.net##.toast:-abp-contains(Promosi)
 kantaii.web.id##[href*="/ref/bangago"]
-dutafilm.live,kotaksilver.casa##body > a[href] > div[style^="position:absolute;"][style*="z-index:"]
+kotaksilver.casa##body > a[href] > div[style^="position:absolute;"][style*="z-index:"]
 cinemaindo.*##.iklan
 huntersekai.*##.post:-abp-contains(Iklan)
 !
@@ -7473,32 +7485,22 @@ huntersekai.*##.post:-abp-contains(Iklan)
 ! --------------------------------------------------------------
 .gif$image,domain=conan.id|nanime.in|nontondrama.me
 /banner%$image,domain=huntersekai.website
-||blogspot.com/*.gif$image,domain=lk21.london|netnot21.com|rmcmv.us
+||blogspot.com/*.gif$image,domain=netnot21.com
 ||sharemydrive.xyz/*.gif$domain=149.56.24.226
 !
 ||awnime.net/*.gif
-||bioskopkeren*.gif|$image
-||cdn.indexmovie.site/*.gif$image
-||cinemaxx1.*/wp-content/uploads/*.gif$image
 ||duniafilm21.*/wp-content/uploads/*.gif$image
 ||gomunime.com^*/autoptimize_single_$script
-||grandxxi.*/img/banner/$image
 ||gudangmovies21.*.gif$image
-||idxxi.*.gif$image
 ||img.akubebas.com/images/*.gif$image
 ||img.teman.stream/*.gif$image
-||indexmovie.biz/assets/*.gif$image
 ||juraganfilm.*.gif$image
 ||jwplayer21.com/images/*.gif$image
-||langit21.*.gif
-||layarkaca21.*/assets/*.gif
-||lk21sub.net/images/banner/$image
 ||moviegan.*/*.gif$image
 !
 ||api.nontongo.win/promomenubola.xml$xmlhttprequest
 ||bebasdownloadfilm.com/iframe/content.php$subdocument
 ||bestvideo2019.xyz/script$script,third-party
-||indexmovie.biz/iframe/content.php$subdocument
 !
 ! ANTI-ADBLOCK
 ! --------------------------------------------------------------
@@ -7512,22 +7514,16 @@ huntersekai.*##.post:-abp-contains(Iklan)
 @@||animee.xyz$generichide
 @@||anisubindo.$generichide
 @@||blackavelic.com^$generichide
-@@||daizurin.com^$generichide
 @@||doramaindo.id^$generichide
 @@||dramaencode.com^$generichide
 @@||driverays.com^$generichide
 @@||mivo.com^$generichide
 @@||otaku.tekloggers.com^$generichide
-@@||rmcmv.us^$generichide
 @@||shinobijawi.id^$generichide
 @@||shirainime.com^$generichide
 @@||streamxxi.com^$generichide
 @@||zonachina21.blogspot.com^$generichide
 !
-filmboxoffice.web.id#@##adsense
-drakoric.com,samehadaku.net.in#@##banner_ad
-filmboxoffice.web.id#@#.an-advert-banner
-cinemaindo21.*#@##topad
 ! EMPTY ADS PLACEHOLDERS
 ! --------------------------------------------------------------
 aibouanime.xyz##[class$="_bn"]
@@ -7535,7 +7531,6 @@ aibouanime.xyz##[class$="_bn"]
 ! ANNOYANCES
 ! --------------------------------------------------------------
 *$popup,domain=awnime.net
-/popup.$script,domain=drakorindo.cc
 !
 /Download-Button.png$image,domain=anime-indo.id
 !
@@ -8161,6 +8156,7 @@ m.liputan6.com#@##back-to-top
 /wpsafelink.js$script,third-party
 =autosafeklinkz350_$script
 ||adsafelink.com/js/webscript.js$script,third-party
+||akashiro.co.id/safelink.$script,third-party
 ||amelin.us/public/assets/js/link-converter.js$script,third-party
 ||androidbusiness.us^*/js/safelink.js$script,third-party
 ||bloggerku.com/safelink/auto.js$script,third-party
@@ -8562,4 +8558,4 @@ iklanpopuler.com,sebariklanbaris.net,ziyata.com#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/103
 @@/particles.$script,domain=mangaku.in
-! Checksum: rjQOc5oWk60q7M5SJJMYDA
+! Checksum: ui4WfkOE6r3YhyMYYz98mg
