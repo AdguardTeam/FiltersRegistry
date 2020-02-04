@@ -66,6 +66,10 @@ const converter = (() => {
 
         const json = JSON.parse(source);
 
+        if (json.message) {
+            throw new Error(`Imported file for ${locale} language has wrong format!`);
+        }
+
         const map = new Map();
         for (let p in json) {
             const info = parseInfo(p, mask);
