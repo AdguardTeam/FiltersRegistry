@@ -373,6 +373,12 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/48715
+gigaho.com#$##unblk { display: none!important; }
+gigaho.com#$#.entry-content { display: block!important; }
+gigaho.com#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display:block!important; }
+gigaho.com#%#AG_onLoad(function() { var el=document.querySelector('ins.adsbygoogle'); var ce=document.createElement('iframe'); ce.style = 'width: 0px !important; border: none !important;'; if(el) { el.appendChild(ce); } });
+gigaho.com$$script[wildcard="*window.onload*document.getElementsByClassName*adsbygoogle*"][min-length="600"][max-length="1200"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46430
 manga1001.com#%#//scriptlet("abort-current-inline-script", "onload", "checkads")
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -530,6 +536,8 @@ anipo.jp#@#.adbanner
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/47356
+himasoku.com#?#.article-body > center:has(> a[href^="https://wu."] > img)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45195
 helpsupport.blog.fc2.com#?#.mdl-quigo > div[style^="height:"][style*="margin-bottom:"]:not([class]):not([id]):has(> script:first-child:contains(amzn_assoc_ad_type))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43602
@@ -771,6 +779,15 @@ _ds_adtag_
 !
 ! /banner/banner_ - if it is necessary, make this rule domain specific
 !
+sukebei.nyaa.si##.servers-cost-money1
+||gendai.ismedia.jp/common/bluebacks/images/sample/bnr_
+humoruniv.com##div[style^="width:300px;height:250px;"]
+gigaho.com##.box_drc
+gigaho.com##.amaw_box
+gigaho.com##.entry-content > span[style="display: block;"] > div[style="font-size:75%; color:#00BBDD;text-align: center;"]
+de-baystars.doorblog.jp##.blogroll_wrapper
+followcheck.itby.net##.mms.uk-margin-top
+japan.zdnet.com##.ad-bnr-rect
 forbesjapan.com##.pop2
 macsoft.jp##table[width="96%"] + div[class="K12"] > div[align="left"] > br + br + center
 gpoint.co.jp###footerbnr
@@ -1460,6 +1477,8 @@ gtoys.blog48.fc2.com###adright
 !
 ! White list. Fixing filtration errors(false-positive)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/47520
+@@||static.rebates.jp/img/*_300x250.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43771
 signal-flag-z.blogspot.com#@#.vertical-ads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41967
