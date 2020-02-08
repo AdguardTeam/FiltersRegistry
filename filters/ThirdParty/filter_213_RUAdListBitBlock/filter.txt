@@ -1,8 +1,8 @@
 !
-! Checksum: pSCf2Wt1LsntC3KMWIp+RQ
-! OriginalVersion: 202002080850
+! Checksum: 68LziW5hs1z53sC+LPfFgw
+! OriginalVersion: 202002081150
 ! Title: RU AdList: BitBlock
-! Last modified: 08 Feb 2020 08:50 UTC
+! Last modified: 08 Feb 2020 11:50 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -3225,11 +3225,14 @@ yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##body[class*="b-page_alt-widge
 yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##div[aria-label="Реклама"]
 music.yandex.by,music.yandex.kz,music.yandex.ru,music.yandex.ua,music.yandex.uz##div[class^="sidebar"] .no-ads
 !
-! - Экспериментальные правила, добавлять только для доменов, на которых нет :-abp
+! - Экспериментальные правила, добавлять только для доменов, на которых нет :-abp, либо изолировать
 forumodua.com#$?##fb_likeframe { display: block !important; pointer-events: none !important; opacity: 0 !important; height: 0 !important }
 www.kinopoisk.ru#$?#.kinopoisk-header-sticky-container { top: 0 !important }
 www.kinopoisk.ru#$?#.kinopoisk-header__navigation { margin-top: 0 !important }
 forumodua.com#$?#.mytweeter { display: block !important; pointer-events: none !important; opacity: 0 !important; height: 0 !important }
+4pda.*##html[style] > body :not(div)[class][id][style]:matches-css(height: /^89\./)
+4pda.*##html[style] > body [class]:matches-css(height: /^403\./)
+4pda.*#$#html[style] > body script ~ :not(div) ~ :not(div)[class][id][style] { background-image: none !important }
 www.kinopoisk.ru#$?#header > .kinopoisk-header-branding { height: 0 !important }
 !
 ! - "Тяжёлая артиллерия" против хитрой рекламы --------------------------------
@@ -3293,7 +3296,6 @@ change.org#@#.facebook-btn
 app.tbn.ru,livejournal.com#@#.fb_iframe_widget
 joblib.ru#@#.feedback-button
 store.steampowered.com#@#.follow_btn
-yandex.by,yandex.kz,yandex.ru#@#.g-plus
 adme.ru#@#.gallery-social
 app2top.ru,ekabu.ru,tjournal.ru#@#.icon-facebook
 comunicart.ru#@#.icon-facebook-official
@@ -3358,7 +3360,6 @@ rambler.ru#@#.social__item
 wikium.ru#@#.social__link
 igromania.ru#@#.social_block
 www.ixbt.com#@#.social_links
-popmech.ru#@#.social_list
 kinonews.ru#@#.socials
 sports.ru#@#.subscribe-button
 goodgame.ru,ngs.ru#@#.subscribe-popup
@@ -3845,6 +3846,7 @@ prom.ua#@#img[alt="facebook"]
 /android-share.
 /aolshare/*
 /app/social.
+/appSocialShare/*
 /article-shares.
 /article-social/*
 /ArticleSocialShare.
@@ -8606,6 +8608,7 @@ _youtube_social_
 ###social-contact
 ###social-container
 ###social-context-container
+###social-count
 ###social-counter-widget-1
 ###social-counter-widget-2
 ###social-counter-widget-3
@@ -10510,6 +10513,7 @@ _youtube_social_
 ##.box_condivisione
 ##.box_msg_social
 ##.box_social
+##.box_social_media
 ##.box_social_ticker_fixed
 ##.boxed-sharing-icons
 ##.boxsocial
@@ -18726,6 +18730,7 @@ _youtube_social_
 ##.widget-social-icons
 ##.widget-social-links
 ##.widget-social-twitter
+##.widget-social_menu
 ##.widget-twitter-timeline
 ##.widgetFB
 ##.widgetFollowUs
@@ -20125,6 +20130,7 @@ _youtube_social_
 /Components/newsletter/*
 /content/newsletter/*
 /content/newsletter_
+/csSubscribeToNews.
 /edjnewsletter.
 /email-newsletter/*
 /email/subscribe.
@@ -20541,6 +20547,8 @@ _xmlrss.
 !
 -scroll-to-top/
 .ui.totop.
+/appBackToTop/
+/appBackToTop_
 /avada-to-top.
 /back-to-top-
 /back-to-top.
@@ -20554,6 +20562,7 @@ _xmlrss.
 /btn_back2top_
 /btn_gotop.
 /btn_pagetop.
+/csBackToTop.js
 /dynamic-to-top/*
 /go_to_top.
 /goTop-
@@ -22602,6 +22611,7 @@ _backToTop.
 ##.nwletters
 ##.o-Newsletter
 ##.o-email-only-signup
+##.o-footer__newsletter
 ##.o-footer__newsletter-signup
 ##.o-widget__newsletter
 ##.ob-Newsletter
@@ -22966,7 +22976,6 @@ _backToTop.
 ##[data-target="#newsletter-modal"]
 ##a[title="Daily Email Newsletter"]
 ##div[class*="NewsletterSubscribe_"]
-##div[class^="MuiSnackbar-"]
 ##div[class^="NewsletterForm_"]
 ##div[class^="NewsletterPopup_"]
 ##div[class^="mpp-container-position"]
