@@ -30,8 +30,10 @@ This repository contains the known filters subscriptions available to AdGuard us
     
         ##### Trust levels:
         * `low` - default level, if "trustLevel" property is not configured at all.
-        * `high` - trusted third-party filter lists. Some advanced rules from there are allowed.
+        * `high` - trusted third-party filter lists. Some particular rules from there are allowed.
         * `full` - all types of filter rules are allowed. Only AdGuard filters have full trust at the moment.
+        
+        [Full list of trust levels exclusions settings](https://github.com/AdguardTeam/FiltersCompiler/tree/master/src/main/utils/trust-levels)
 
     Metadata example:
     ```javascript
