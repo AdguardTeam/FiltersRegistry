@@ -1,42 +1,40 @@
 !
 ! Title: Polish Anti Adblock Filters
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku
-! Last modified: 4 February 2019
+! Last modified: 11 February 2019
 ! Expires: 2 days
-! OriginalVersion: 2020020401
+! OriginalVersion: 2020021101
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020020401 aktualizacja: wt, 4 lutego 2020, 08:25:00
+! v.2020021101 aktualizacja: wt, 11 lutego 2020, 15:25:00
 !
 !
 !-----------------------Integration of supplement lists for uBlock & AdGuard-----------------------!
 ! Title: Polish Anti Adblock Filters - supplement for uBlock Origin
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku - uzupelnienie dla uBlock Origin
-! Last modified: 2 January 2019
+! Last modified: 12 February 2019
 ! Expires: 2 days
-! OriginalVersion: 2020010201
+! OriginalVersion: 2020021201
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020010201 aktualizacja: czw, 2 stycznia 2020, 07:55:00
+! v.2020021201 aktualizacja: sr, 12 lutego 2020, 10:25:00
 !
 !
 ! Adblock
 alefunny.pl###myModal, .modal-backdrop
-alefunny.pl#$#.modal-open { overflow: auto !important; padding-right: 0px !important; }
-dziwnekomiksy.pl#$#body>* { filter: blur(0px) !important; }
+!filmweb.pl##script:inject(abort-on-property-read.js, document.onreadystatechange)
+filmweb.pl#@%#//scriptlet("ubo-abort-current-inline-script.js", "decodeURIComponent", "newAdblockBoardDisplayed")
 filmweb.pl$$script[tag-content="adblockDisplayInformation."][min-length="8000"][max-length="50000"]
-scypion.pl#$#.adsbygoogle { position: absolute!important; left: -3000px!important; }
-zarabiam.com#$#body > font[color="green"]:last-of-type { color: transparent !important; }
+!pilot.wp.pl##script:inject(set-constant.js, WP.crux.sealed, falseFunc)
 @@||sso.ppapi.pl/rodo.js$xmlhttprequest
 polskatimes.pl,dziennikbaltycki.pl,expressilustrowany.pl#@##advert1
 polskatimes.pl,dziennikbaltycki.pl,expressilustrowany.pl#@#.div-gpt-ad
 !
 ! Rules after Adblock
-vod.pl#$#.infoCloud { position: absolute!important; left: -3000px!important; }
 !
 ! naszemiasto.pl - https://github.com/MajkiIT/polish-ads-filter/issues/3175
 !
@@ -52,7 +50,6 @@ vod.pl#$#.infoCloud { position: absolute!important; left: -3000px!important; }
 ! ps3-hack.pl
 !
 ! twojogrodek.pl
-twojogrodek.pl,waw4free.pl#$#.pub_300x250.pub_300x250m.text-ad.textAd.text-ads.text-ad-links { display: block !important; }
 !
 ! dniwolne.eu
 dniwolne.eu##.axv
@@ -67,13 +64,15 @@ dniwolne.eu$$.axv
 ! magazyn.wp.pl
 !#if cap_user_stylesheet
 magazyn.wp.pl##div:has(div > img[src*="NDM0MzY2YSUsUjtJdklsMG8KbxkpWhE3OVRvVntHbH5vHyQXOFUrN2JRLBh2XCcmY0AjHXtP"])
-magazyn.wp.pl#$#body { overflow: auto !important; }
-magazyn.wp.pl#$#body [class] { filter: none !important; }
 !#endif
-magazyn.wp.pl#$#body [class] { filter: none !important; }
 !
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=wp.pl|o2.pl|pudelek.pl|so-magazyn.pl
 @@||googletagservices.com/tag/js/gpt.js$domain=wp.pl|dobreprogramy.pl|o2.pl|pudelek.pl|so-magazyn.pl
+magazyn.wp.pl#@%#//scriptlet("ubo-set-constant.js", "Object.prototype.aggressiveAB", "false")
+magazyn.wp.pl#@%#//scriptlet("ubo-set-constant.js", "Object.prototype.isBlocked", "false")
+magazyn.wp.pl#@%#//scriptlet("ubo-abort-on-property-write.js", "__serviceAbModal")
+magazyn.wp.pl#@%#//scriptlet("ubo-set-constant.js", "PWA_adbd", "2")
+magazyn.wp.pl#@%#//scriptlet("ubo-set-constant.js", "WP.gaf.loadBunch", "noopFunc")
 wp.pl#@$#html, html > body { overflow: auto !important; }
 wp.pl#@$#body { overflow: auto !important; }
 wp.pl#@$#body [class] { filter: none !important; }
@@ -315,6 +314,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@/js/adverts.js$script,domain=forsal.pl|dziennik.pl
 @@/js/adv.$script,domain=glosregionu.pl|ziemialeszczynska.pl|ziemiagorowska.pl
 @@/js/ads.show.min.js$xmlhttprequest,domain=to.com.pl|dziennikbaltycki.pl|dzienniklodzki.pl|dziennikzachodni.pl|expressilustrowany.pl|gazetakrakowska.pl|gazetawroclawska.pl|gloswielkopolski.pl|kurierlubelski.pl|nto.pl|wspolczesna.pl|poranny.pl|pomorska.pl|gp24.pl|gazetalubuska.pl|echodnia.eu|nowiny24.pl|polskatimes.pl|gs24.pl|gk24.pl|expressbydgoski.pl|ekstramagazyn.pl|stronazdrowia.pl
+@@/js/ads.min.js$script,domain=zobacz.ws
 @@/reklama.js$domain=expressbydgoski.pl|pomorska.pl
 @@||24opole.pl^$generichide
 @@||adservice.google.com/adsid/integrator.js?domain=www.dieroten.pl$xmlhttprequest,third-party,domain=www.dieroten.pl
@@ -393,7 +393,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||onet.pl^$generichide
 @@||online-tv.pl/wp-content/plugins/pause-adblocker/inc/pause-front.css
 @@||ovh.webshark.pl/adserver/*/main_script.js?advertise_check=1
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl|dniwolne.eu|webkod.pl|cdahd.ml
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl|dniwolne.eu|webkod.pl|cdahd.ml|zobacz.ws
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=efizyka.net.pl|nk-net.pl|www.gry.pl
 @@||pagead2.googlesyndication.com/pagead/js/r*/show_ads_impl.js$domain=efizyka.net.pl|dniwolne.eu
 @@||pclab.pl^$generichide
@@ -521,7 +521,9 @@ vod.tvp.pl##.hidden-phone.rectangleWrapper
 @@||gfx.filmweb.pl/adbetween/adx.js$script,domain=www.filmweb.pl
 filmweb.pl#@#.ws__wrapper
 filmweb.pl#@#body .ws__wrapper
+filmweb.pl#@%#//scriptlet("ubo-setTimeout-defuser.js", "notDetected")
 filmweb.pl#@##advertBar-pl_PL
+filmweb.pl#@%#//scriptlet("ubo-abort-current-inline-script.js", "decodeURIComponent", "newAdblockBoardDisplayed")
 filmweb.pl#@##advertBar-pl_PL
 ||fwcdn.pl/adv/$important,script,domain=filmweb.pl,badfilter
 ||fwcdn.pl/adv/*.jpg
@@ -543,12 +545,7 @@ kobieta.wp.pl,ksiazki.wp.pl,wiadomosci.wp.pl##body > div[class][id]:has(div[clas
 prawo.money.pl#@#body > div[class="pub_300x250 text_ads ad_container"][style] + div[class]:not([id])
 film.wp.pl,finanse.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,opinie.wp.pl,sportowefakty.wp.pl,teleshow.wp.pl,wiadomosci.wp.pl##body > div[class][id]:has(div[class]:matches-css-before(content:"Nie teraz, wracam na WP.pl"))
 sportowefakty.wp.pl#?#body [class]:matches-css(position: fixed):matches-css(top: /^0\..*px$/)
-magazyn.wp.pl#$#body > [class] { filter: none!important; }
-magazyn.wp.pl#$#body { pointer-events: auto!important; }
-magazyn.wp.pl#$#body { overflow: visible!important; }
-magazyn.wp.pl#$#body { overflow: auto !important; }
-magazyn.wp.pl#$#body [class] { filter: none !important; }
-magazyn.wp.pl#$#body > [class] { filter: none!important; }
+pilot.wp.pl#@%#//scriptlet("ubo-set-constant.js", "WP.gaf.loadBunch", "noopFunc")
 pilot.wp.pl#@#.ads
 !
 !11#--------------------------Polsat------------!

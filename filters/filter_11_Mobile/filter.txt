@@ -177,6 +177,9 @@
 ||plugin.mobopay.baidu.com^
 ||mo.freeindoapp.com^
 !
+||config.88-f.net^
+||monetengine-d.openx.net^
+||cdn.88-f.net^
 ||ms.applvn.com^
 ||api.tapsell.ir^
 ||jioads.akamaized.net^
@@ -1215,6 +1218,10 @@ westseattleblog.com#@#.header-ad
 !
 ! Extended CSS rules
 !
+! epoznan.pl - ads
+epoznan.pl#?#.mobileNewsList__section > .mobileNewsList__container:has(> .mobileNewsList__right >a.postItem__category:contains(/^REKLAMA$/))
+! https://github.com/AdguardTeam/AdguardFilters/issues/48523
+filmkovani.com#?#body > div:has(> a[href^="https://bit.ly/"]):not(:has(> div))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48739
 m.glavnoe.ua#?#.ui-content > div.ui-listview > div[align]:has(> ins.adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48486
@@ -1412,6 +1419,8 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.touch-
 pornhub.com#%#AG_onLoad(function() { if (typeof redirect !== 'function') return; var str = redirect.toString(); var m = str.match(/\'(\/view.*)\'/); if (m.length != 2) return; var link = m[1]; window.location.href = m[1]; });
 !#################
 !
+! xhamster.com - popups
+xhamster.com#%#//scriptlet("set-constant", "initials.pop", "undefined")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47222
 gotporn.com#%#//scriptlet("set-constant", "PopUnder.bindEvent", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47227
@@ -1454,7 +1463,6 @@ estream.nu,estream.to#%#var d=document.addEventListener;document.addEventListene
 youjizz.com#%#AG_defineProperty('config.ads.mobilePopunder', {value: false});
 ! https://forum.adguard.com/index.php?threads/20737/
 pornhub.com#%#Object.defineProperty(window, 'initPopUnderLinks', { get: function() { return function() { }; } });
-!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6895
 m.iceporn.com#%#document.cookie = "adv_show=3";
 m.iceporn.com#%#Object.defineProperty(window, 'mobilePop', { get: function() { return ; } });
@@ -2000,10 +2008,16 @@ tomshardware.com,techbook.de,sueddeutsche.de,hurriyet.com.tr,elmundo.es,timesnow
 ! ##amp-ad
 dobreprogramy.pl,amp.pcwelt.de,tomshardware.com,techbook.de,forbes.com,auto-swiat.pl,dialog.ua,mobile.reuters.com,spiegel.de,amp.welt.de,forum.xda-developers.com,sueddeutsche.de,amp.usatoday.com,m.gadgets.ndtv.com##amp-ad
 !
+p4svip.com##body > style[type] + div[class*="_"][id]
+epoznan.pl##.bannerBox__mob
+mail.yahoo.com##form[method="get"][action^="/mb/"] ~ div[class*=" "] > img[src*="beap.gemini.yahoo.com/"] + div
+m.52qumao.com##iframe[src*="sogou.com/wapxml?id="]
+m.ok.ru##li.feed-card.__adv
+m.ok.ru##.game-campaign
+udn.com##.udn-ads--mobile
+bbs.saraba1st.com##div[style="line-height:420px;height:420px"]
 ||m.hamtruyen.com/Scripts/ads_vdc.js
 saglamindir.net##.text-center > a[class="download"][rel="nofollow"]
-filmkovani.com##.sogqrcimf
-filmkovani.com##.sogqrci
 ipad.hotnews.ro###ci-div-banner
 nfmovies.com##div[id^="sponsorAd"]
 spankwire.com##.sw-videoUnderplayerAd
@@ -2472,7 +2486,6 @@ momon-ga.com##.content > div[style="margin-bottom:12px;"]
 momon-ga.com##.container-inner > div[style="margin-bottom:12px;"]
 digit.in##.footerCatfishAdArea
 digit.in##iframe[src^="/blockarticledetailad/"][title="Advertisement"]
-kadikoylife.com##.gabfire_ad
 atmarkit.co.jp##div[style="width:300px;height:250px;margin:10px auto 20px;"]
 atmarkit.co.jp##div[style^="width:320px;height:50px;"]
 weblio.jp##.adBkOverlayClr
@@ -3369,10 +3382,15 @@ livejournal.com##.mdspost-aside__item--banner
 ||graph.facebook.com^$app=com.booking
 !
 ! Blocking Facebook mobile ads
+||graph.facebook.com^$app=com.puzzle.miniworld
+||graph.facebook.com^$app=hcom.buta.caculator
+||graph.facebook.com^$app=hd.uhd.live.wallpapers.topwallpapers
 ||graph.facebook.com^$app=com.fugo.wow
+||graph.facebook.com^$app=com.mobilexsoft.ezanvakti
 ||graph.facebook.com^$app=com.bbfilm.app
 ||graph.facebook.com^$app=com.lookandfeel.qrcodescanner
 ||graph.facebook.com^$app=steptracker.healthandfitness.walkingtracker.pedometer
+||graph.facebook.com^$app=com.ezhld.recipe
 ||graph.facebook.com^$app=Orion.Soft
 ||graph.facebook.com^$app=com.mobond.mindicator
 ||graph.facebook.com^$app=drug.vokrug
@@ -3615,8 +3633,6 @@ livejournal.com##.mdspost-aside__item--banner
 ||vast.kidoz.net^$app=com.PSVStudio.HippoDentist
 ||psvpromo.psvgamestudio.com^$app=com.PSVStudio.HippoDentist
 ||psdata.psvgamestudio.com^$app=com.PSVStudio.HippoDentist
-! https://github.com/AdguardTeam/AdguardFilters/issues/32072
-||d1si3tbndbzwz9.cloudfront.net^$app=com.fivemobile.thescore
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31633
 ||feed.4wnet.com^$app=com.Meteosolutions.Meteo3b
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29479
@@ -3988,6 +4004,8 @@ _*sec.mp4$mp4,domain=ivi.ru
 ||sensors.snaptubeapp.com^
 ! Snow Inc (Line) Apps
 ||log.kajicam.com^
+! Google Maps Promoted Pins
+||mobilemaps-pa.googleapis.com/google.internal.mothership.maps.mobilemaps.ads.v1.MobileMapsAdsService/ListPromotedPinAds^
 
 !---------------------------------------------------------------------------!
 !------------------ Content replacement rules ------------------------------!
