@@ -1,5 +1,5 @@
 !
-! OriginalVersion: 11February2020v2
+! OriginalVersion: 15February2020v3
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
 ! Expires: 12 hours
@@ -84,7 +84,6 @@ norskenettsider.no###g_image4
 norskenettsider.no##table
 opp.no##.classified-ads
 opp.no#?#.l-col-12:-abp-has(.classifieds-content)
-resett.no##a[href*="pureorganic.no"]
 sedenne.no#?#div[class*=articleItem]:-abp-contains(ANNONSE)
 sedenne.no#?#div[class*=articleListItem]:-abp-contains(ANNONSE)
 side2.no##[href*="clk.tradedoubler.com/click"]
@@ -138,7 +137,6 @@ rett24.no##.p_banner-responsive
 .is/skrar/augl/
 .no/ad/
 .no/ads/
-/*-annonse-*$image,domain=resett.no
 /_bm/abd$script,domain=eurosport.no|eurosport.dk
 /annonsar/*
 /annonse/*
@@ -278,7 +276,7 @@ bt.no##section[class$=-ad]
 ! 🇩🇰: ——— Tomme restebokser, som EasyList har efterladt ———
 ! 🇳🇴🏞: ——— Tomme resteboksar som EasyList har slengd ifrå seg ———
 ! 🇮🇸/🇫🇴: ——— Tóma afgangsrammar eftir EasyList ———
-! 🇬🇱: ——— Piunngitsut ungalusaqlu EasyList ———
+! 🇬🇱: ——— Piunngitsut ungalusaqlut EasyList ———
 ! ❄: ——— Gurrosat bovssaid bearrái EasyList ———
 ! 🇬🇧: ——— Leftover empty spaces that EasyList have left behind ———
 ###no-familieklubben-wde-front_topboard
@@ -464,6 +462,7 @@ prisjakt.no,prisjagt.dk##.desktop-inline-ad
 prisjakt.no,prisjagt.dk##.outsider-ads
 prissok.no##.internal-poster
 procycling.no##.container-ad
+sermitsiaq.ag##.rek-wrapper
 pulze.dk###topads
 purehelp.no##.dfptop
 purehelp.no#?#.float-left:-abp-has(span[id^=ezoic-pub-ad-placeholder-])
@@ -472,7 +471,6 @@ qxl.no,qxl.dk###lauritzListingView
 qxl.no,qxl.dk#$#.n_ListHeader { margin-top: 5px !important }
 qxl.no,qxl.dk#$##whitetop { margin-top: 0px !important }
 qxl.no,qxl.dk###leaderBoardListingviewTop
-resett.no#?#.code-block:-abp-contains(Reklame):not(:-abp-contains(butikk))
 rorfag.no###right_side
 rorfag.no##.anonse
 rssnyheter.sveip.no##div[class^=ad_]
@@ -583,6 +581,7 @@ m.kanalfrederikshavn.dk##.OA
 m.kanalfrederikshavn.dk##.OX
 tv2.no#?#.large-12:not(.article-figure):not(:-abp-has(a)):not(:-abp-has(img))
 fyens.dk##.adblock__text
+jv.dk##.adblock
 friflyt.no###ads_fullwidth_container
 tek.no##.b
 tek.no###application > div[class]:nth-of-type(1):nth-last-of-type(2)
@@ -707,7 +706,7 @@ dyrevennene.no##.td-footer-wrapper
 ! 🇬🇧: ——— Unbreakage ———
 ! Makes articles that would be counted as ads anywhere else on SeHer, show up on that page.
 @@||seher.no/reise$generichide
-! ——— Caused by «EasyPrivacy» ———
+! ——— «EasyPrivacy» unbreakage ———
 ! Attempting to fix a problem with voting online on Idol Norway
 @@||tv2.no/*/config/analytics.json$xmlhttprequest,~third-party
 ! Attempts to resolve how some frontpage articles are hard to open
@@ -720,6 +719,8 @@ dyrevennene.no##.td-footer-wrapper
 krom.is#@#.share-container
 @@/images/*youtube.jpg$domain=realityportalen.dk
 @@||api.instagram.com^$domain=samiteahter.org
+! https://github.com/ryanbr/fanboy-adblock/issues/1261
+@@||cookieinformation.com/*/*.js$domain=gulesider.no|degulesider.dk|krak.dk
 ! ——— Caused by «Fanboy's Annoyances List» ———
 ! https://github.com/ryanbr/fanboy-adblock/issues/1243
 ||ktg-content.cdn.prismic.io/api/*/documents/*(my.newsletter_popup.uid
@@ -843,16 +844,8 @@ viafree.no,viafree.dk##.pause-ad-container
 ||client-stream-events.mtg-api.com^$domain=viafree.no|viafree.dk
 ||freewheel-mtgx-tv.akamaized.net^$media,domain=viafree.no|viafree.dk
 ||viafree.*/collect$important,xmlhttprequest
-! 🇳🇴: Korrigerer veldig grell feilinformasjon på Elkjøp og Elgiganten Danmark, hvor EU-energimerkingen til en del produkter fortsatt brukte før-2016-fargene, som førte til tilfeller hvor f.eks. en A-merking var mørkegrønn mens en A+-merking var gul med et hint av grønt.
-! 🇩🇰: Rætter op i rigtigt grim fejlinformation på Elgiganten og Elkjøp, der EU-energimærkingen for mange produkter stadigt benytter før-2016-farvene, noget der førede til tilfelder der fx. et A-merke var mørkegrøn mens et A+-merke var gult med et hint af grøn.
-! 🇬🇧: Fixing very severe misadvertising on Elkjøp and Elgiganten Denmark, in which the EU energy labels for a lot of products were still showing the colours of the pre-2016 labels, leading to cases where e.g. an A label was dark green while an A+ label was yellow with a hint of green.
-! Amazingly, this does not seem to be a problem on elko.is or elding.fo, so kudos to them.
-elkjop.no,elgiganten.dk#$##A-value { fill: #fff12c !important }
-elkjop.no,elgiganten.dk#$##B-value { fill: #edb731 !important }
-elkjop.no,elgiganten.dk#$##C-value { fill: #ed8631 !important }
-! ——————————————————————————————————————————————————————————————————————————————————————————————————————
-! 🇳🇴: Nettsteder jeg nekter å besøke selv for å førstehåndsteste oppføringene
-! 🇬🇧: Sites that I refuse to visit on my own to test the entries
+! 🇳🇴: Oppføringer for ytre-høyre-nettsteder. Støtte for disse nettstedene er begrenset, og de fleste nye oppføringer for dem vil bli ordrett godkjent.
+! 🇬🇧: Entries for far-right websites. Support for these sites is limited, and most new entries for them will be accepted verbatim.
 alternativ-media.com##.wpa
 ektenyheter.no##.cm-message
 resett.no##.tdm-mobile-full
@@ -864,10 +857,19 @@ resett.no#?#.code-block:-abp-contains(annonse)
 resett.no##.td-visible-desktop
 resett.no##a[href*="ekstrahus.no"]
 resett.no##.td-ss-main-sidebar
+resett.no##a[href*="pureorganic.no"]
+/*-annonse-*$image,domain=resett.no
+resett.no#?#.code-block:-abp-contains(Reklame):not(:-abp-contains(butikk))
 norgesavisen.no##.td-fix-index
 frihetskamp.net##a[href*="greenpilled.com"]
 frihetskamp.net##a[href*="nordenstil.no"]
-! ——————————————————————————————————————————————————————————————————————————————————————————————————————
+! 🇳🇴: Korrigerer veldig grell feilinformasjon på Elkjøp og Elgiganten Danmark, hvor EU-energimerkingen til en del produkter fortsatt brukte før-2016-fargene, som førte til tilfeller hvor f.eks. en A-merking var mørkegrønn mens en A+-merking var gul med et hint av grønt.
+! 🇩🇰: Rætter op i rigtigt grim fejlinformation på Elgiganten og Elkjøp, der EU-energimærkingen for mange produkter stadigt benytter før-2016-farvene, noget der førede til tilfelder der fx. et A-merke var mørkegrøn mens et A+-merke var gult med et hint af grøn.
+! 🇬🇧: Fixing very severe misadvertising on Elkjøp and Elgiganten Denmark, in which the EU energy labels for a lot of products were still showing the colours of the pre-2016 labels, leading to cases where e.g. an A label was dark green while an A+ label was yellow with a hint of green.
+! Amazingly, this does not seem to be a problem on elko.is or elding.fo, so kudos to them.
+elkjop.no,elgiganten.dk#$##A-value { fill: #fff12c !important }
+elkjop.no,elgiganten.dk#$##B-value { fill: #edb731 !important }
+elkjop.no,elgiganten.dk#$##C-value { fill: #ed8631 !important }
 ! 🇬🇧: Category: Compatibility entries for ABP users, EasyList, and/or functionality whitelisting
 ! 🇳🇴: Viktig notis til tidligere brukere av sporerhvitelistingene for Prisjakt, Kickback, og Viatrumf: I lys av nye oppdagelser om reklameblokkereres støtte for sporeromdirigeringer, og endringer i sporernes egne verdier, har oppføringene nå blitt fjernet. Hvis du vil forbli sikker på å motta cashback, er du selv ansvarlig for å hviteliste "@@||doubleclick.net" og å ikke bruke EasyPrivacy. Skulle du selv da ikke motta cashback, kan du fortelle meg om det så fort du kan (Helst på GitHub).
 ! 🇬🇧: Important note to previous users of the tracker whitelistings for Prisjakt, Kickback, and Viatrumf: In light of new discoveries about adblockers' support for tracker redirections, and changes in the trackers' own values, the entries have now been removed. If you wish to remain certain of receiving cashback, you are yourself responsible for whitelisting "@@||doubleclick.net" and for not using EasyPrivacy. Should you fail to receive cashback even then, tell me about it as soon as you can (Preferably on GitHub).
