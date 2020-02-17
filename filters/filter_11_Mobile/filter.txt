@@ -1310,7 +1310,7 @@ nbcmontana.com,mynews4.com,nbc16.com,turnto10.com,news4sanantonio.com,nbc24.com,
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29888
 obozrevatel.com#?#div[style^="position:"][style*="relative"]:has(> [src^="https://i.obozrevatel.com/banners/"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29451
-nytimes.com#?##site-content > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"][-ext-has='> div[class^="css-"] > div[class^="css-"]:contains(Advertisement) + div[class*="dfp-ad-"]']
+nytimes.com,nytimes3xbfgragh.onion#?##site-content > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > div[class^="css-"][-ext-has='> div[class^="css-"] > div[class^="css-"]:contains(Advertisement) + div[class*="dfp-ad-"]']
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24411
 bunshun.jp#?#.sp-list-thumb > li[-ext-has='.pr']
 ! https://github.com/AdguardTeam/AdguardFilters/issues/24412
@@ -1392,6 +1392,7 @@ m.reddit.com#?#article[class="Post size-compact"][-ext-has=".PostHeader__sponsor
 zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.touch-feed > div.feed-item:has(> div > a[href^="https://an.yandex.ru/"])
 !
 ! END: Yandex
+
 !---------------------------------------------------------------------------!
 !-------------- General element hiding rules -------------------------------!
 !---------------------------------------------------------------------------!
@@ -1416,7 +1417,7 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.touch-
 !-------------------
 !### TEMPORARY ###
 ! https://forum.adguard.com/index.php?threads/12443/
-pornhub.com#%#AG_onLoad(function() { if (typeof redirect !== 'function') return; var str = redirect.toString(); var m = str.match(/\'(\/view.*)\'/); if (m.length != 2) return; var link = m[1]; window.location.href = m[1]; });
+pornhub.com,pornhubthbh7ap3u.onion#%#AG_onLoad(function() { if (typeof redirect !== 'function') return; var str = redirect.toString(); var m = str.match(/\'(\/view.*)\'/); if (m.length != 2) return; var link = m[1]; window.location.href = m[1]; });
 !#################
 !
 ! xhamster.com - popups
@@ -1462,7 +1463,7 @@ estream.nu,estream.to#%#var d=document.addEventListener;document.addEventListene
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9324
 youjizz.com#%#AG_defineProperty('config.ads.mobilePopunder', {value: false});
 ! https://forum.adguard.com/index.php?threads/20737/
-pornhub.com#%#Object.defineProperty(window, 'initPopUnderLinks', { get: function() { return function() { }; } });
+pornhub.com,pornhubthbh7ap3u.onion#%#Object.defineProperty(window, 'initPopUnderLinks', { get: function() { return function() { }; } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6895
 m.iceporn.com#%#document.cookie = "adv_show=3";
 m.iceporn.com#%#Object.defineProperty(window, 'mobilePop', { get: function() { return ; } });
@@ -1576,6 +1577,7 @@ bobfilm.tv$$script[wildcard="*script*this.onerror*eval(atob*"][max-length="1000"
 ! or #%#Object.defineProperty(window, 'AMSP', { get: function() { return []; } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2637
 nasimke.ru$$script[tag-content="function show_ads"][max-length="6000"]
+
 !---------------------------------------------------------------------------!
 !-------------- General URL blocking rules ---------------------------------!
 !---------------------------------------------------------------------------!
@@ -1844,7 +1846,7 @@ timesofindia.indiatimes.com#@#style[type="text/css"] + div[class]:not([id]):not(
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3755
 @@||m.haberturk.com/adscbg/mdet.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3616
-pornhub.com#@#div > [style*="width: 100%;"]:first-child
+pornhub.com,pornhubthbh7ap3u.onion#@#div > [style*="width: 100%;"]:first-child
 ! https://forum.adguard.com/index.php?threads/16921/
 m.veporn.net#@#.advertisment
 m.veporn.net#@##topAds
@@ -1945,6 +1947,7 @@ deviantart.com#@#.mobile-ad
 @@||market.viber.com^$elemhide
 ! Fixing pornhub.com
 @@||pornhub.com^$subdocument
+@@||pornhubthbh7ap3u.onion^$subdocument
 ! http://www.reddit.com/r/Android/comments/3422vw/a_quick_fix_for_everyone_having_mms_issues_with/
 @@||mms.vtext.com^$document
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/310
@@ -2697,7 +2700,7 @@ wasabisyrup.com##.top-group
 wasabisyrup.com##.article-gallery > .article-gallery-group > .content-group
 redtube.com###content_container > div[class]:not(.show_page_modals):not([id]):not([style]):not([class^="content"])
 youtube.com##ytm-promoted-video-renderer
-b-m.facebook.com,iphone.facebook.com,m.facebook.com,touch.facebook.com###m_newsfeed_stream article[data-ft*='"ei\":']
+b-m.facebook.com,iphone.facebook.com,m.facebook.com,touch.facebook.com,m.beta.facebook.com,touch.beta.facebook.com,m.facebookcorewwwi.onion###m_newsfeed_stream article[data-ft*='"ei\":']
 m.voyeurhit.com##.container > .section--normal[style*="margin-top: -15px"]
 avcanada.ca##.postbody > div[id^="post_content"] > .content ~ center
 xbabe.com###fltd
@@ -3359,6 +3362,7 @@ livejournal.com##div[id^="billboard_mobile_"]
 livejournal.com##.mdspost-aside__item--banner
 !
 ! END: Livejournal.com
+
 !---------------------------------------------------------------------------!
 !-------------- Rules for specific applications ----------------------------!
 !---------------------------------------------------------------------------!
