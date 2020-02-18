@@ -4924,9 +4924,12 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 ! START: Ads replacement (piguiqproxy.com etc.)
 !
 !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android)
+! 18.02.2020
+! `#%#AG_setConstant('String.prototype.charCodeAt', 'trueFunc');`
+gismeteo.ua#%#AG_setConstant('String.prototype.charCodeAt', 'trueFunc');
 ! 12.02.2020
 ! '#%#//scriptlet("abort-on-property-write", "Object.prototype.getAds")'
-forumodua.com,newsua.one,vsetv.com,textreferat.com,tv.ua,vgorode.ua,tivix.co,football24.ua,kinozal.tv,liga.net,bigmir.net,inforesist.org,vsetv.com,liga.net,sinoptik.ua,segodnya.ua,enovosty.com,4mama.ua,tochka.net,besplatka.ua,pravda.com.ua,gismeteo.ua#%#//scriptlet("abort-on-property-write", "Object.prototype.getAds")
+forumodua.com,newsua.one,vsetv.com,textreferat.com,tv.ua,vgorode.ua,tivix.co,football24.ua,kinozal.tv,liga.net,bigmir.net,inforesist.org,vsetv.com,liga.net,sinoptik.ua,segodnya.ua,enovosty.com,4mama.ua,tochka.net#%#//scriptlet("abort-on-property-write", "Object.prototype.getAds")
 !
 internetua.com#%#//scriptlet("set-constant", "String.prototype.charCodeAt", "trueFunc")
 obyava.ua,newsyou.info,socportal.info,~mail.ukr.net,ukr.net,smak.ua,eurointegration.com.ua,facenews.ua,tvgid.ua,bigmir.net,beauty.ua,strana.ua,epravda.com.ua,gagadget.com,censor.net.ua,okino.ua,etextlib.ru,glavcom.ua,real-vin.com,hvylya.net,kp.ua#%#//scriptlet("set-constant", "String.prototype.charCodeAt", "falseFunc")
@@ -4953,8 +4956,8 @@ wss://s.zmctrack.net/
 !.zmctrack.net^$~websocket,replace=/.+//,important
 ||s.zmctrack.net^$domain=korrespondent.net,important
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/38545
-@@://s.zmctrack.net/z|$domain=fishki.net|finance.i.ua,~script
+! https://github.com/AdguardTeam/AdguardFilters/issues/49990
+@@://s.zmctrack.net/z|$domain=fishki.net|finance.i.ua|vsetv.com,~script
 !
 !+ PLATFORM(windows, mac, android)
 ||s.zmctrack.net^$domain=sinoptik.ua
@@ -5452,11 +5455,12 @@ vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!importa
 overclockers.ru$$script[tag-content="enable_page_level_ads"]
 ||forums.overclockers.ru$replace=/(script.onerror = function\(\)\{)/\$1return;/,important
 forums.overclockers.ru#%#AG_onLoad(function() { window.chkA = function() {}; window.chkB = function() {}; });
-~forums.overclockers.ru,overclockers.ru#%#AG_abortInlineScript(/AdGuard/, 'cardinals');
+~forums.overclockers.ru,overclockers.ru#%#//scriptlet("abort-on-property-read", "cardinals")
 !
 ||overclockers.ru/static/js/app-pip.js|$empty,important
 forums.overclockers.ru#@##yandex_ad_1
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_chromium && !adguard_ext_safari)
+@@||js.mamydirect.com/js/$domain=overclockers.ru
 @@||overclockers.ru/static/js/app-pip.js$domain=overclockers.ru,important
 @@||rotor.overclockers.ru/www/delivery/asyncjs.php|$domain=overclockers.ru|~forums.overclockers.ru
 overclockers.ru#@#.material-inline-an
