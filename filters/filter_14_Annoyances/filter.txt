@@ -9917,6 +9917,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+notice.sp-prod.net#%#AG_onLoad(function() {if(-1==document.cookie.indexOf("_sp_")) {var a=new MutationObserver(function() {var a=document.querySelector("button.message-component:last-child");a&&a.click()});a.observe(document,{childList:!0,subtree:!0});setTimeout(function() {a.disconnect()},3E4)}});
 cbslocal.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("button#onetrust-accept-btn-handler"); if(el) el.click(); }, 3000); });
 consent.talpanetwork.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('.meer-button--primary > button.button--primary'); if(el) el.click(); }, 1500); });
 baudoo.de#%#document.cookie="no_thanks=true; path=/;";
@@ -10638,9 +10639,8 @@ rusta.com#@#.cookie-content
 @@||transip.*/services/cookie-consent/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17736
 @@||andreagaleazzi.com/wp-content/plugins/ag-cookie/js/eu-cookie-law.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/28796
-! https://github.com/AdguardTeam/AdguardFilters/issues/17705
-@@||consensu.org^$domain=ghacks.net|sourceforge.net
+! https://github.com/AdguardTeam/AdguardFilters/issues/51323
+@@||consensu.org^$domain=ghacks.net|sourceforge.net|globalplayer.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17602
 @@||cdn.iubenda.com/cookie_solution/*.js$domain=iphoneitalia.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17083
@@ -16299,6 +16299,10 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !######### JS tweaks ##########
 !##############################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/51342
+acortalo.live#%#AG_onLoad(function(){if("string"===typeof link&&link.startsWith("http"))try{location=link}catch(a){}});
+acortalo.org#%#AG_onLoad(function(){"function"===typeof fetch&&fetch("/inc/funciones.js",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"}}).then(function(a){return a.text()}).then(function(a){if(/var key = "([\S]*?)";/.test(a))try{var b=a.match(/var key = "([\S]*?)";/),c="key="+JSON.stringify(b[1])+"&link="+link;fetch("/ajax",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:c}).then(function(a){return a.text()}).then(function(a){location= a})}catch(d){}})});
+acortalo.xyz#%#AG_onLoad(function(){"function"===typeof fetch&&fetch("/inc/funciones.js",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"}}).then(function(a){return a.text()}).then(function(a){if(/var key = "([\S]*?)";/.test(a))try{var b=a.match(/var key = "([\S]*?)";/),c="key="+JSON.stringify(b[1])+"&link="+link;fetch("/data",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:c}).then(function(a){return a.text()}).then(function(a){location= a})}catch(d){}})});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51340
 urlpay.net#%#//scriptlet("adjust-setInterval", "timer", "", "0.02")
 urlpay.net#%#!function(){if(-1<window.location.href.indexOf("/?go=")){var a=location.href.split("?go=");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
