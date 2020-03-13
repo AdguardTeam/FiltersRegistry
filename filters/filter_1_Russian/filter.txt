@@ -67,7 +67,6 @@
 !
 #%#var AG_setConstant=function(e,a){if("undefined"===a)a=void 0;else if("false"===a)a=!1;else if("true"===a)a=!0;else if("noopFunc"===a)a=function(){};else if("trueFunc"===a)a=function(){return!0};else if("falseFunc"===a)a=function(){return!1};else if(/^\d+$/.test(a)){if(a=parseFloat(a),isNaN(a)||32767<Math.abs(a))return}else return;var b=!1;AG_defineProperty(e,{get:function(){return a},set:function(c){if(b)var d=!0;else void 0!==c&&void 0!==a&&typeof c!==typeof a&&(b=!0),d=b;d&&(a=c)}})};
 ! JS API FINISH
-
 !-------------------------------------------------------------------------------!
 !------------------ Advertising networks ---------------------------------------!
 !-------------------------------------------------------------------------------!
@@ -4257,7 +4256,6 @@ adbetnet.com$third-party
 ||greencuttlefish.com^$third-party,~xmlhttprequest
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||cpm.wargaming.net^$third-party
-
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
@@ -4444,7 +4442,6 @@ ws*://video.docfilms.info^
 ||ukrsvit.ukrmir.info^
 ||vozer.voffka.com^
 ||vw.onlinia.net^
-
 !-------------------------------------------------------------------------------!
 !------------------ Common anti-adblock ----------------------------------------!
 !-------------------------------------------------------------------------------!
@@ -4534,7 +4531,6 @@ poli-vsp.ru#@##adSense
 poli-vsp.ru#@##adsense
 ! https://forum.adguard.com/index.php?threads/35885/
 @@||ad.mail.ru/vast/$domain=khl.ru
-||ad.mail.ru/vast/*&duration=$domain=khl.ru,xmlhttprequest,redirect=noopvast-2.0,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42735
 minecraft20.ru#%#AG_abortInlineScript(/ad_element/, 'document.body.appendChild');
 !#if (adguard_ext_firefox || adguard_ext_opera || adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
@@ -6049,7 +6045,6 @@ livejournal.com#%#AG_setConstant('begun_new_callbacks', 'undefined');
 ! Kinopoisk
 ||strm.yandex.ru/get/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/
 !+ NOT_PLATFORM(windows, mac, android)
-||strm.yandex.ru/get/$script,redirect=noopvast-2.0,domain=kinopoisk.ru
 ! video ad if these requests are blocked
 @@||an.yandex.ru/system/context.js$domain=kinopoisk.ru
 @@||ads.adfox.ru/*/getbulk$xmlhttprequest,domain=kinopoisk.ru
@@ -6930,7 +6925,6 @@ yandex.by,yandex.com,yandex.fr,yandex.kz,yandex.ru,yandex.ua#?#body[data-bem*="w
 zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.zen-page div.feed__row > div[class^="feed__item-wrap"]:has(> div.feed__item > div > div > div[class$="-reverse"])
 ! END: Yandex
 !
-
 !-------------------------------------------------------------------------------!
 !------------------ General hiding rules----------------------------------------!
 !-------------------------------------------------------------------------------!
@@ -7562,7 +7556,6 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.zen-pa
 ##noindex > nofollow > table[onmouseout^="this.bgColor"]
 ##object#banner-1
 ##td[id^="advtd"]
-
 !-------------------------------------------------------------------------------!
 !------------------ General javascript, CSS and HTML extensions ----------------!
 !-------------------------------------------------------------------------------!
@@ -9360,7 +9353,6 @@ yaplakal.com,yap.ru$$script[tag-content="var banners"][max-length="2500"]
 zaycev-net.org$$script[tag-content="function banner"][max-length="1000"]
 zaycev-net.org$$script[tag-content="rusdating"][max-length="3000"]
 zerx.ru$$script[tag-content="document.write('<style>.modul-search"]
-
 !-------------------------------------------------------------------------------!
 !------------------ Banner names -----------------------------------------------!
 !-------------------------------------------------------------------------------!
@@ -10509,7 +10501,6 @@ ucoz.ru/informer/
 !**
 !**
 !****** TODO: end
-
 !-------------------------------------------------------------------------------!
 !------------------ News exchange ----------------------------------------------!
 !-------------------------------------------------------------------------------!
@@ -10675,7 +10666,6 @@ wasd.tv##wasd-player-overlay-banner
 i.ua##.list_simple.list_time:not(#news_cont)
 dumskaya.net#?##tops > table[width] > tbody > tr > td[height][width]
 zoneofgames.ru##div[class^="dver"]
-||barrowsauer.bid/assets/vendor/*.xml$redirect=noopvast-3.0
 share-wood.pro,sharewood.pro##.samBannerUnit
 share-wood.pro,sharewood.pro##.p-body-content > div.samBannerUnit + div.content
 share-wood.pro,sharewood.pro###banner-message
@@ -10694,7 +10684,6 @@ glavnoe-smi.ru###main-sidebar-wrapper
 uhl.ua##.banParent
 tarkov-market.com##.ads-horiz
 kindkino.ru###content > section > hr + center
-||wasd.tv/ssp/roll$redirect=noopvast-2.0
 ||poglyad.tv/wp-content/uploads/*/banner_800x600px_
 poglyad.tv###custom_html-26
 pcportal.org##a[href*="://newbrowser.club/"]
@@ -10778,10 +10767,7 @@ spaces.im,spcs.me,spac1.com##a[href^="https://tracker.ma-static.ru/"]
 animedub.ru##.rolic
 g-ek.com###ad_code
 ||conversion.im/storage/images/banners/
-||vast*.kinogo.by/code/video-steam/?id=$redirect=noopvast-2.0
 ||grodnonews.by/upload/images/bps.gif
-||anime.anidub.life/player/vast.php$redirect=noopvast-3.0
-||online.anidub.com/player/vast.php$redirect=noopvast-3.0
 udf.by##.helper_line > div.article_list_in:last-child
 tabletka.by##.header-reclame
 tabletka.by##.rekblockr
@@ -10811,7 +10797,6 @@ avaho.ru##.b-map__tgb
 overclockers.ru##.right-content-wrap > div.right-sticky-content
 wday.ru##.layout-wrapper > div.grid-row > article + aside[class]
 2ip.ua##.t3-sl-adsense-bottom
-||oneseasons.club/*.xml$redirect=noopvast-3.0
 ||ukrnews24.net/wp-content/uploads/2020/01/ROCO_ADD14.jpg
 qna.habr.com##.dfp_label
 business.ru##.rightSidebar div.StatBlockWidget > noindex > a[target="_blank"] > img
@@ -19978,7 +19963,6 @@ vc.ru###kryptonite-startup-challenge
 ||v.adfox.ru/*/getCode?pp=*&dl=http://tvc/pryamoy/efir/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/
 !
 bender/_bender*.js$script,replace=/this\.removeShadowBlockers\(\);/true; return;/
-
 !-------------------------------------------------------------------------------!
 !------------------ White list (exceptions list)  ------------------------------!
 !-------------------------------------------------------------------------------!

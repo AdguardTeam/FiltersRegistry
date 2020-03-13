@@ -67,7 +67,6 @@
 !
 #%#var AG_setConstant=function(e,a){if("undefined"===a)a=void 0;else if("false"===a)a=!1;else if("true"===a)a=!0;else if("noopFunc"===a)a=function(){};else if("trueFunc"===a)a=function(){return!0};else if("falseFunc"===a)a=function(){return!1};else if(/^\d+$/.test(a)){if(a=parseFloat(a),isNaN(a)||32767<Math.abs(a))return}else return;var b=!1;AG_defineProperty(e,{get:function(){return a},set:function(c){if(b)var d=!0;else void 0!==c&&void 0!==a&&typeof c!==typeof a&&(b=!0),d=b;d&&(a=c)}})};
 ! JS API FINISH
-
 !---------------------------------------------------------------------------!
 !-------------- Advertising networks ---------------------------------------!
 !---------------------------------------------------------------------------!
@@ -80,7 +79,6 @@
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
-
 !---------------------------------------------------------------------------!
 !-------------- Anti-adblock rules -----------------------------------------!
 !---------------------------------------------------------------------------!
@@ -475,14 +473,12 @@ shoptimise.fr#?#.reset-list > .prod-item[-ext-has='> div.adunit']
 ebooks-gratuit.com#?#tbody > tr > td[valign="top"][-ext-has=">table > tbody > tr > td.scapmain:contains(Partenaires et Sponsors EBG)"]
 ! https://forum.adguard.com/index.php?threads/jeuxvideo-com.21685/
 jeuxvideo.com#?#.list-actu-home > li[-ext-has='span.officiel']
-
 !---------------------------------------------------------------------------!
 !-------------- General element hiding rules -------------------------------!
 !---------------------------------------------------------------------------!
 !
 ! Section contains list general hiding rules
 !
-
 !---------------------------------------------------------------------------!
 !-------------- General javascript, CSS and HTML extensions ----------------!
 !---------------------------------------------------------------------------!
@@ -545,14 +541,12 @@ all-stadium.net#$##layer2 {top:50px!important; left:950px!important;}
 mac4ever.com$$script[wildcard="*((false?*https:*:document.location.protocol)+*//*+*"][max-length="1000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25407
 laprovence.com$$script[wildcard="*((false?*https:*:document.location.protocol)+*//*+*"][max-length="1000"]
-
 !---------------------------------------------------------------------------!
 !-------------- General URL blocking rules ---------------------------------!
 !---------------------------------------------------------------------------!
 !
 ! Banner names
 !
-
 !---------------------------------------------------------------------------!
 !-------------- Rules for specific websites --------------------------------!
 !---------------------------------------------------------------------------!
@@ -722,7 +716,6 @@ dl-protect1.com##a[href*="/rel/index.cfm?RST="]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33441
 !+ PLATFORM(ext_ff, ext_opera, ext_edge, ios, ext_android_cb, ext_safari, ext_ublock)
 annuaire-ebook.com##.adsbygoogle
-
 !---------------------------------------------------------------------------!
 !-------------- Content replacement rules ----------------------------------!
 !---------------------------------------------------------------------------!
@@ -1252,7 +1245,7 @@ shoptimise.fr#@#iframe[id^="google_ads_iframe"]
 &promo=*_mpu_
 &promo_alignment=
 &promo_sizes=
-&pub_redirect=
+&pub_redirect=$
 &pubsite=
 &r=*&zoneid=
 &redir_tool=*&size=
@@ -14199,11 +14192,11 @@ $popup,third-party,domain=agence-webside.fr|allmyvideos.net|avametrie.fr|ceesty.
 ||porndoe.com^$csp=media-src 'none' http: https:
 ||streamingqc.com^$csp=script-src 'self' 'unsafe-inline' *.google.com *.gstatic.com *.wp.com
 ||yourporno.fr^$csp=script-src 'self'
-||delivery.tf1.fr/pub$media,rewrite=abp-resource:blank-mp3,domain=tf1.fr
-||dnl-adv-ssl.tf1.fr^$media,rewrite=abp-resource:blank-mp3,domain=tf1.fr
-||loadshare.org/custom/$media,rewrite=abp-resource:blank-mp3,domain=01fmovies.com
-||static.6cloud.fr^*.mp4$media,rewrite=abp-resource:blank-mp3,domain=6play.fr
-||tf1.fr/assets/js/build/lib/ad$rewrite=abp-resource:blank-js,domain=tf1.fr
+||delivery.tf1.fr/pub$media,redirect=noopmp3.0.1s,domain=tf1.fr
+||dnl-adv-ssl.tf1.fr^$media,redirect=noopmp3.0.1s,domain=tf1.fr
+||loadshare.org/custom/$media,redirect=noopmp3.0.1s,domain=01fmovies.com
+||static.6cloud.fr^*.mp4$media,redirect=noopmp3.0.1s,domain=6play.fr
+||tf1.fr/assets/js/build/lib/ad$redirect=noopjs,domain=tf1.fr
 /^https?:\/\/s3\.amazonaws\.com\/[0-9a-f]{50,65}\/((secure\.js|[0-9a-f]{10}))$/$script,xmlhttprequest
 ||amazonaws.com^$domain=1host.name|4downfiles.org|adpop.me|adsrt.me|anyanime.com|ay.gy|azvideo.net|brain-magazine.fr|citethisforme.com|dailymotion.com|despair-paradise.com|easybib.com|esgentside.com|fas.li|faststream.in|filesupload.org|filmuptobox.net|gamecopyworld.click|gentside.com|gentside.com.br|gentside.de|gogoanime.bz|gogoanime.sh|gorillavid.com|inkapelis.com|justmp4.com|maquillage.com|maxisciences.com|media1fire.com|megadrive.co|megaup.net|namemc.com|ohmirevista.com|ohmymag.com|ohmymag.com.br|ohmymag.de|onmovies.to|pausefun.com|pausepeople.com|pelisplus.to|replaymod.com|solidfiles.com|stream2watch.org|streamingvf.pro|tokenfly.pw|uclaut.net|upbom.net|uploadcrazy.net|uploadocean.com|uploadproper.com|vercanalestv1.com|vertelevision.tv|vosbooks.tv|watcheng.tv|yggtorrent.ch|yggtorrent.gg|yggtorrent.pe|yggtorrent.ws|yggtorrents.gg|zippyshare.com|zlshorte.net
 /^https?:\/\/[a-z0-9]+\.cloudfront\.net\/.*[a-zA-Z0-9+\-\/]{200,}/$script,third-party
