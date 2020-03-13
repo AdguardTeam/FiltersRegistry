@@ -404,10 +404,6 @@ shikimori.one,shikimori.org##.about-ads
 last.fm##.nag-bar--language-mismatch-prompt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29341
 ritmoteka.ru##body > div[align="center"] > center > table > tbody > tr > td[height="300"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/27922
-@@||manjemedia.com/wp-content/plugins/convertplug/modules/assets/images/default.png
-manjemedia.com#$#.cp-modal-popup-container.cp_id_592ce { display: none!important; }
-manjemedia.com#$#html.cp-overflow-hidden { overflow: visible!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29547
 mangashow2.me,mangashow3.me##body > .noti-popup
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29419
@@ -9921,6 +9917,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+tradeciety.com#%#document.cookie = "wpca_cc=functional"; document.cookie = "wpca_consent=1";
 notice.sp-prod.net#%#AG_onLoad(function() {if(-1==document.cookie.indexOf("_sp_")) {var a=new MutationObserver(function() {var a=document.querySelector("button.message-component:last-child");a&&a.click()});a.observe(document,{childList:!0,subtree:!0});setTimeout(function() {a.disconnect()},3E4)}});
 cbslocal.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("button#onetrust-accept-btn-handler"); if(el) el.click(); }, 3000); });
 consent.talpanetwork.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('.meer-button--primary > button.button--primary'); if(el) el.click(); }, 1500); });
@@ -13939,7 +13936,6 @@ povarenok.ru##form.dayrecipes_p
 techblogng.com##iframe.HB-Takeover[src="about:blank"]
 medialnk.com#%#Object.defineProperty(window, 'Lightbox', { get: function() { return {}; } });
 com-magazin.de##w-div[role$="dialog"]
-||anonymousnews.ru/wp-content/plugins/convertplug/modules/modal/assets/js/modal.min.js
 ||auto.newsler.ru/assets/js/sideroll.js
 ||bleepstatic.com/js/jquery/jquery.simplemodal.*.min.js
 ||cache.ltn.com.tw/js/fb_mask.js
@@ -13955,7 +13951,6 @@ com-magazin.de##w-div[role$="dialog"]
 ||malerex.ru^$third-party
 ||mediaset.it/include/js/attivaPopUpEstero.js
 ||muzofond.com/mithdl.js
-||onlinemarketingrockstars.de/wp-content/plugins/convertplug/modules/modal/assets/css/modal.min.css
 ||sud.ua/js/jquery.arcticmodal*.min.js
 ||turkusozu.com/js/fancybox/
 ||ufatime.ru/st/libs/magnific/jquery.magnific-popup.min.js
@@ -14373,10 +14368,6 @@ easy-deutsch.de#%#AG_onLoad(function() { setTimeout(function() { var el = docume
 !--- Whitelist
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44115
 @@||martombike.com/wp-content/plugins/convertplug/modules/modal/functions/config/img/cross.png
-! https://forum.adguard.com/index.php?threads/23835/
-@@||kounta.com/wp-content/plugins/popup-maker/$domain=kounta.com
-! http://www.tradeciety.com/how-to-choose-the-best-indicators-for-your-trading/
-@@||tradeciety.com/wp-content/plugins/arscode-ninja-popups/js/jquery.placeholder.js
 ! https://forum.adguard.com/index.php?threads/23138/
 @@||photoshoptutorials.ws/wp-content/plugins/arscode-ninja-popups/js/jquery.placeholder.js
 !
@@ -14633,7 +14624,6 @@ ciasex.com.br##.notification-backdrop
 24smi.org###smi-webpush-popover-container
 egybest.network,egybest.club,egybest.xyz,egybest.co,egybest.biz,egybest.me###NotificationsAskMsg
 ||script.boerse-online.de/Content/Scripts/web-push^
-||torrentmegafilme.net/wp-content/plugins/smio-push-notification/js/frontend_webpush.js
 uol.com.br##.webalert_container
 lanacion.com.ar##.notificacion-modal
 ||pornl.com/ps/index.js
@@ -14642,7 +14632,6 @@ lanacion.com.ar##.notificacion-modal
 auchan.ua,lokalmatador.de#%#AG_setConstant('navigator.geolocation', 'noopFunc');
 /push.js$domain=acunn.com|tsn.ua|sputnik.by|nation-news.ru
 lifehacker.ru###lh-push-app
-||torrentmegafilme.com/wp-content/plugins/smio-push-notification/js/frontend_webpush.js
 youla.ru##.web_push_confirmation
 alkislarlayasiyorum.com,izlesene.com,doviz.com,sinemalar.com###x-comet-dialog
 stalkermods.ru,ucoz.net##.pshsndr
@@ -16318,6 +16307,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !######### JS tweaks ##########
 !##############################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/51424
+allinternetnews.com#%#!function(){if(-1<window.location.href.indexOf("/#")){var a=location.href.split("/#");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51342
 acortalo.live#%#AG_onLoad(function(){if("string"===typeof link&&link.startsWith("http"))try{location=link}catch(a){}});
 acortalo.org#%#AG_onLoad(function(){"function"===typeof fetch&&fetch("/inc/funciones.js",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"}}).then(function(a){return a.text()}).then(function(a){if(/var key = "([\S]*?)";/.test(a))try{var b=a.match(/var key = "([\S]*?)";/),c="key="+JSON.stringify(b[1])+"&link="+link;fetch("/ajax",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:c}).then(function(a){return a.text()}).then(function(a){location= a})}catch(d){}})});
