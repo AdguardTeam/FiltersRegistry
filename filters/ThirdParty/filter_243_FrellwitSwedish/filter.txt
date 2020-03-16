@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-03-15 11:09:20 CET
+! Last modified: 2020-03-16 15:34:17 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -321,7 +321,6 @@ mittkok.expressen.se#%#//scriptlet('ubo-acis.js', 'adblock')
 mittkok.expressen.se#%#//scriptlet('ubo-acis.js', 'burtSegments')
 mittkok.expressen.se#%#//scriptlet('ubo-aeld.js', 'click', 'trackClick')
 mittkok.expressen.se#$#.main { width: 100% !important; }
-mkse.com,nyadagbladet.se,senses.se#%#//scriptlet('ubo-acis.js', 'anOptions')
 mmanytt.se##.img-featured-posts-image:has(a[href$="/annons/"])
 mobil.se#$#.layout-mobil-site { padding-top: 0 !important; }
 mobilanyheter.net#%#//scriptlet('ubo-acis.js', 'idpt')
@@ -348,6 +347,7 @@ nsk.se,skd.se#$#body { opacity: 1 !important; }
 nsk.se,skd.se##div.skd-crsl-wrap:matches-css-before(content: Annons)
 nxload.com,upstream.to#%#//scriptlet('ubo-set.js', 'adb', '0')
 nyadagbladet.se#%#//scriptlet('ubo-aopr.js', 'cli_show_cookiebar')
+nyadagbladet.se,senses.se#%#//scriptlet('ubo-acis.js', 'anOptions')
 nyheter24.se#%#//scriptlet('ubo-acis.js', 'check_ab')
 nyheter24.se#%#//scriptlet('ubo-acis.js', 'ga', 'ypcomm')
 nyheter24.se##.lazyload:has(span:has-text(/^sponsrat$/i))
@@ -499,7 +499,6 @@ xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 ||tm.tradetracker.net/tag?$important,script,domain=agneswinqvist.se|enkelteknik.se|everydayexplorers.org|moviezine.se|netikett.se
 ||tv4play.se/hic_qos$redirect=noopjs,script
 ||viafree.se/collect$important,xmlhttprequest
-||videoplaza.tv/proxy/tracker/$image,important,domain=fotbollskanalen.se|tv4play.se
 ||webimages.lokus.se^$image,important,domain=affarsliv.com|affarslivgotland.se|corren.se|ekuriren.se|eposten.se|folkbladet.se|helagotland.se|kkuriren.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|sn.se|unt.se|uppgang.com|vimmerbytidning.se|vt.se
 ||youbora.com^$important,third-party,domain=aftonbladet.se|foxtv.se|svd.se
 !#if env_firefox
@@ -1112,11 +1111,11 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/share-and-follow/*
 /plugins/skydda-advisor/*
 /plugins/so-widgets-bundle/*$domain=lokalsport.nu
-/plugins/social-warfare/*$script,domain=mkse.com
 /plugins/sociallocker-next-premium/*$domain=travprat.se
 /plugins/socialsnap$script,domain=listor.se|samnytt.se
 /plugins/statebuilt-facebook-page-like-popup/*
 /plugins/sticky-facebook-banner/*$script,domain=ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
+/plugins/svenskaspel-$script
 /plugins/sw_ad_inserter/*
 /plugins/sw_cookie_consent/*
 /plugins/the-moneytizer/*$script
@@ -1261,7 +1260,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /wp-content/themes/keremiya1/js/jopper.$script
 /wp-content/themes/keremiya1/js/license.$script
 /wp-content/themes/keremiya1/js/script.js$script
-/wp-content/uploads/*.js?ver$script,domain=mkse.com|nyadagbladet.se
+/wp-content/uploads/*.js?ver$script,domain=nyadagbladet.se
 /wp-content/uploads/*/*bettingkollen$image
 /wp-content/uploads/*/*bettingstugan$image
 /wp-content/uploads/*/*Casinodealen$image
@@ -1375,7 +1374,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||tidningenhalsa.se^$generichide
 @@||ttela.se^$generichide
 @@||typkanske.se^$generichide
-@@||videoplaza.tv/proxy/distributor$xmlhttprequest,domain=fotbollskanalen.se|tv4play.se
 @@||www.alltforforaldrar.se/extra/js/ads.js$script
 _jquery.blockUI.$script,domain=fssweden.se
 abus.com#@##cookieChoiceInfo
@@ -1917,6 +1915,7 @@ forvaltarforum.se##[id^="ff_banner"]
 fotboll.com##.bo-wrapper
 fotboll.com##.fp-partner
 fotboll.com##.header-ad-lg
+fotboll.com##.header-static-lg
 fotboll.com##[class^="fp_side_ad"]
 fotbolldirekt.se,hockeysverige.se##a[href="https://www.comeon.com/"]
 fotbolldirekt.se,hockeysverige.se##a[href="https://www.svenskafans.com/betting/"]
@@ -2268,9 +2267,6 @@ ng.se##.js--llad
 ng.se##.partner-articles-wrap
 ng.se##.secondary-sidebar > .panel-pane:last-child
 ng.se##[class*="sponsored-article"]
-nhlbettingblog.se###firstSidebar
-nhlbettingblog.se###secondSidebar
-nhlbettingblog.se##.karusellWrapper
 nikkasystems.com##.elementor-popup-modal
 nordichardware.se##.pspy_info
 nordichardware.se##.td_block_social_counter
@@ -2425,6 +2421,7 @@ streamtajm.*##div[style*="width: 750px; height: 100px; padding: 5px 5px 5px 0;"]
 studentum.se###emg-cookie
 surfa.se###loader-wrapper
 surfa.se##.annonsDiv
+surfa.se##.container-smartphoneguiden-widget
 sv.geneanet.org###header-info-cookie
 svartgul.se##a[href*=".adsrv.eacdn.com"]
 svd.se###AdSplashOverlayWindow
@@ -3088,7 +3085,6 @@ yougov.se##.cookie-confirm
 ||richaudience.com^$third-party
 ||richmediastudio.com^$third-party
 ||royapp.com^$third-party
-||rumbletalk.com^$third-party,domain=nhlbettingblog.se
 ||runmewivel.com^
 ||runtnc.net^
 ||s3.amazonaws.com/cc.silktide.com/cookieconsent.$script
