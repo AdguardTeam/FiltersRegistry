@@ -375,6 +375,8 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/51663
+@@||popjav.tv^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51076
 fe-siken.com,sc-siken.com#%#//scriptlet("prevent-setTimeout", "ad", "3000")
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
@@ -547,6 +549,8 @@ anipo.jp#@#.adbanner
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/51663
+popjav.tv#$?#.releated_video_list > li.releated_video:has(> div.releatedadsholder) { visibility: hidden !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47356
 himasoku.com#?#.article-body > center:has(> a[href^="https://wu."] > img)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45195
@@ -786,6 +790,7 @@ _ds_adtag_
 !
 ! /banner/banner_ - if it is necessary, make this rule domain specific
 !
+popjav.tv##.poplayer
 eromanga-time.com###spwrapper
 sc-siken.com##.ad2
 limo.media##div[class^="affi-"]
