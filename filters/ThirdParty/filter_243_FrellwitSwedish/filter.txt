@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-03-16 15:34:17 CET
+! Last modified: 2020-03-19 12:14:55 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -272,7 +272,8 @@ jaktplay.se,svenskjakt.se#%#//scriptlet('ubo-acis.js', 'desktop_random_ad_id')
 justwannahavefun.se##.legible:has(.sub-title:has-text(/sponsrat av/i))
 kamerabild.se#%#//scriptlet('ubo-set.js', 'Annons', 'noopFunc')
 kamerabild.se,mobil.se#%#//scriptlet('ubo-set.js', 'Sidpyssel.prototype.fixaStoran', 'noopFunc')
-kamrat.com##div[style="float:left;padding:12px 0;max-width:255px;"]:has-text(casino)
+kamrat.com#%#//scriptlet('ubo-set.js', 'showAds', 'false')
+kamrat.com#%#//scriptlet('ubo-set.js', 'trap', 'noopFunc')
 kimura.se#%#//scriptlet('ubo-acis.js', 'advanced_ads_ready')
 kimura.se##article:has(#storknapp:has-text(/^till kampanj/i))
 kimura.se##article:has(img[src$="/sponsrad.png"])
@@ -567,8 +568,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###eu-cookie-bar
@@ -820,7 +821,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /buttonizer$domain=macken.xyz
 /campaign*/*$script,xmlhttprequest,domain=alltforforaldrar.se|kokaihop.se|mammasidan.se|minbebis.com|nyheter24.se
 /campaign-fallback.$script,domain=aftonbladet.se
-/casino/$image,domain=battrestadsdel.se|dayviews.com|hockeysverige.se|hypeline.se|kulturbloggen.com|newsvoice.se|nyheter24.se|spray.se|svenskhistoria.se|zeromagazine.nu
+/casino/$image,domain=battrestadsdel.se|dayviews.com|hockeysverige.se|hypeline.se|kamrat.com|kulturbloggen.com|newsvoice.se|nyheter24.se|spray.se|svenskhistoria.se|zeromagazine.nu
 /check-paywall$domain=dn.se
 /citygate/payingcompanies$xmlhttprequest
 /click-performance/cpg_ads.$script
@@ -2104,6 +2105,7 @@ kamerabild.se###storan
 kamerabild.se##.Partner
 kamerabild.se,mobil.se###gdpr
 kamrat.com###kadDiv
+kamrat.com##div[style="margin:25px 0;max-width:255px!important;"]
 kenzas.se##article[data-text*="In collaboration with"]
 kimura.se##.bg
 kimura.se##.submission-before-everything
@@ -2176,9 +2178,6 @@ lokalfotboll.se##.inside-right-sidebar > .really_simple_image_widget
 lokalnytt.se##.panoramaImageBox
 lokalsport.nu##.art-sidebar1
 lokalsport.nu##.art-sidebar2
-lokaltidningen.se##.annoncer-wrapper
-lokaltidningen.se##.casino
-lokaltidningen.se##.custom-annoncer-wrapper
 loppi.se##.entry__teaser--promotion
 loppi.se##.page__ad
 lundagard.se###bdCheckAlso.bdCheckAlsoShow
@@ -2219,7 +2218,6 @@ minfil.com##.ab-wrapper
 minhembio.com##.adbox
 minhembio.com##div[style="height: 120px;"]:not([id]):not([class])
 minsolresa.se,resatillsolen.se##aside#text-5
-mintur.se,spelo.se##[id^="banner"]
 miscotbloggen.se###side-right
 missatsamtal.se##.nosnaj
 mittkok.expressen.se##.newsletter__slide
@@ -2388,6 +2386,7 @@ spbi.se##.policy-disclaimer
 spela.se##div[class^="app_gdpr"]
 spelagratis.se##.ad_header + p
 spelagratis.se##.sidebar-right
+spelo.se##[id^="banner"]
 spelo.se,svenskaturistforeningen.se##.cookie-box
 spisa.nu###app > div > div > div[class]:not([data-reactid])
 sportbilen.se###text-4
