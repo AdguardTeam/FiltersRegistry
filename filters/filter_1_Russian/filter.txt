@@ -73,6 +73,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||susfvjh.pro^$third-party
 ||ngjzmt.com^$third-party
 ||adversting.riamedia.com.ua^$third-party
 ||cybugim4bdzqhwl.ru^$third-party
@@ -4981,7 +4982,7 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 !
 !#if (!adguard_app_mac && !adguard_app_windows && !adguard_app_android)
 !
-sinoptik.ua,gismeteo.ua#%#String.prototype.charCodeAt = function() { return true; }
+sinoptik.ua,gismeteo.ua#%#Object.defineProperty(String.prototype, 'charCodeAt', { get: function() { return function() { return true }; }});
 ! 12.02.2020
 ! '#%#//scriptlet("abort-on-property-write", "Object.prototype.getAds")'
 newsua.one,vsetv.com,textreferat.com,tivix.co,football24.ua,kinozal.tv,liga.net#%#//scriptlet("abort-on-property-write", "Object.prototype.getAds")
@@ -10594,6 +10595,12 @@ overclockers.ru##a[href^="http://segodnia.club/"] ~ *
 ||media.cackle.me/1/f4/1b3fe616939fb1a155e0d9fdc6901f41.jpg
 ||media.cackle.me/0/04/8168d1e327f6fa92f9a36f1ce56ed040.jpg
 !
+od-news.com##.entry-content > p ~ div:not([class])
+od-news.com##.entry-content > div.mc-menu
+od-news.com##.entry-content > div.mc-menu ~ ul
+od-news.com##.entry-content > div.mc-menu + p
+od-news.com##.entry-content > div.mc-menu ~ ul + p
+od-news.com##.adpartner-wrapper
 math-prosto.ru##div[id^="helpfullTutor"]
 ilibrary.ru###atlex
 footboom.com##.popup-wrapper
@@ -10622,8 +10629,8 @@ riavrn.ru##.article-adv
 varta1.com.ua##a[href^="//besplatka.ua/"]
 varta1.com.ua##a[href^="https://bit.ly/"]
 varta1.com.ua##div[class^="blockOf"]
-varta1.com.ua##.MIXADVERT_NET
-varta1.com.ua##div[id^="riainfo_"]
+od-news.com,varta1.com.ua##.MIXADVERT_NET
+meta.ua,od-news.com,varta1.com.ua##div[id^="riainfo_"]
 varta1.com.ua##div[id^="phoenix"]
 livemaster.ru##.js-context-advertising-block
 ||freetp.org/1.js
@@ -15755,7 +15762,6 @@ infocity.az##div[id^="random_banner"]
 restate.ru##div[id^="rbnr_"]
 ogoa.ru##div[id^="re_banner"]
 vellisa.ru##div[id^="reclamads"]
-meta.ua##div[id^="riainfo_"]
 maxpark.com##div[id^="right_banners_"]
 pravda.if.ua##div[id^="rtn4p"]
 kinotrek.co,tv-torrent.me##div[id^="rttr"]
