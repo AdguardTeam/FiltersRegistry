@@ -73,6 +73,8 @@
 !
 !######### Annoying elements (not ads)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/52523
+segodnya.ua##.read-our-telegram
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51671
 marketscreener.com#%#document.cookie = "pv_r0=1;expires=" + Date() + ";";
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51250
@@ -4364,9 +4366,9 @@ hnonline.sk,digitaltrends.com#%#//scriptlet("abort-current-inline-script", "docu
 !+ PLATFORM(windows, mac, android)
 hnonline.sk,digitaltrends.com#%#AG_abortInlineScript(/googlefc/, 'document.addEventListener');
 !+ NOT_PLATFORM(windows, mac, android)
-ign.com,dziennikbaltycki.pl,ghacks.net,marca.com,snopes.com,cnnturk.com,polskatimes.pl,abc.es,dumpert.nl,accuweather.com,expressilustrowany.pl#%#//scriptlet("abort-current-inline-script", "atob", "googlefc")
+marketscreener.com,zonebourse.com,ign.com,dziennikbaltycki.pl,ghacks.net,marca.com,snopes.com,cnnturk.com,polskatimes.pl,abc.es,dumpert.nl,accuweather.com,expressilustrowany.pl#%#//scriptlet("abort-current-inline-script", "atob", "googlefc")
 !+ PLATFORM(windows, mac, android)
-ign.com,dziennikbaltycki.pl,ghacks.net,marca.com,snopes.com,cnnturk.com,polskatimes.pl,abc.es,dumpert.nl,accuweather.com,expressilustrowany.pl#%#AG_abortInlineScript(/googlefc/, 'atob');
+marketscreener.com,zonebourse.com,ign.com,dziennikbaltycki.pl,ghacks.net,marca.com,snopes.com,cnnturk.com,polskatimes.pl,abc.es,dumpert.nl,accuweather.com,expressilustrowany.pl#%#AG_abortInlineScript(/googlefc/, 'atob');
 !+ NOT_PLATFORM(windows, mac, android)
 sunherald.com,latimes.com,lifestyle.bg,money.bg,news.bg,topsport.bg,elmundo.es,phonearena.com,kansascity.com,observador.pt,startv.com.tr,sanluisobispo.com,cinemablend.com,mtlblog.com,star-telegram.com,theindependent.com,ntv.com.tr,narcity.com,torontosun.com,bloomberght.com,thestate.com,trib.com,kupujemprodajem.com,windsorstar.com,fresnobee.com,theprovince.com,bnd.com,showtv.com.tr,haberturk.com,uol.com.br,metropoles.com,brantfordexpositor.ca,canoe.com,thesouthern.com,business.financialpost.com,vancouversun.com,poststar.com,wcfcourier.com,montrealgazette.com,nwitimes.com,elnuevoherald.com,bellinghamherald.com,elpais.com,okdiario.com#%#//scriptlet("abort-on-property-read", "googlefc")
 !+ PLATFORM(windows, mac, android)
@@ -6536,7 +6538,7 @@ medium.com#?#body > div:has(> div[class] > div > div.branch-journeys-top > div[c
 gratis.com###gratis-cookies-message
 canikarms.com###popup_cookies_wrapper
 jauns.lv##.gdpr-consent
-sbm.org.tr##.polite__alert
+sigortam360.com,sbm.org.tr##.polite__alert
 lingea.sk##.lck-wrapper
 morfikirler.com##.gpdr
 turna.com##.cookie-policy-dialog
@@ -6781,7 +6783,7 @@ foodlux.de###kb-cookie-banner
 dod.com.tr###cookieseal-banner
 sciencenews.org##div[class^="cookie-banner__wrapper"]
 stepstone.de##.info-banner__cookie-policy
-moretvtime.com##.sc-privacy-banner
+moretvtime.online,moretvtime.com##.sc-privacy-banner
 flingster.com##.cookie-use-notice
 novarge.com.tr##.bottom-notification
 sendgb.com##div.sendgb_cookiewarning
@@ -10025,6 +10027,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+tv3play.skaties.lv#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("tvplay-cookies-allowed", "true") } } catch (ex) {} })();
 moviepilot.de#%#document.cookie = "read-cookie-consent=true; path=/;";
 digitaltrends.com#%#document.cookie = "CookieConsent=1; path=/";
 wetransfer.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[class="button button--enabled welcome__agree"]'); if(el) el.click(); }, 800); });
@@ -16486,7 +16489,7 @@ bantusebarkan.blogspot.com#%#!function(){if(-1<window.location.href.indexOf("?ur
 crxne.de#%#//scriptlet("abort-current-inline-script", "alert", "Skipping Does Not Work")
 crxne.de#%#AG_onLoad(function(){var a=document.querySelector("a[href]#locked_action_link");a&&(location=a.href)});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52188
-moretvtime.com#%#//scriptlet("adjust-setInterval", "timer", "", "0.02")
+moretvtime.online,moretvtime.com#%#//scriptlet("adjust-setInterval", "timer", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52189
 toneden.io#%#AG_onLoad(function(){setTimeout(function(){try{var el=document.querySelector(".post-gate-btn > span > span"),loc=location.href.split("/"),username=loc[3],path=loc[5],isValidUrl=function(a){try{return new URL(a),!0}catch(b){return!1}};el&&fetch("https://www.toneden.io/api/v1/posts?author_username="+username+"&link_path="+path,{method:"GET",headers:{"Content-Type":"application/x-www-form-urlencoded"}}).then(function(a){return a.text()}).then(function(a){if((a=JSON.parse(a))&&a.post&&a.post.download_display_url&&(a=a.post.download_display_url, isValidUrl(a)))try{window.location=a}catch(b){}})}catch(a){};},1000);});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52152
