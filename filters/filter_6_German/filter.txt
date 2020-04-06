@@ -1987,8 +1987,12 @@ amateurbusters.com#?#.sb_area > .sb_area_headline:contains(Urlaub)
 !--------------------------------------!
 !------- JS rules ---------------------!
 !--------------------------------------!
+! https://github.com/AdguardTeam/AdguardFilters/issues/52959
+!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+tele5.de#%#//scriptlet("json-prune", "testhide")
+! https://github.com/AdguardTeam/AdguardFilters/issues/53012
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51634
-movie-blog.to#%#//scriptlet("abort-on-property-read", "vavpo")
+movie-blog.sx,movie-blog.to#%#//scriptlet("abort-on-property-read", "vavpo")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42934
 ani-stream.com#%#AG_onLoad(function() { setTimeout(function() { if(typeof loadplayer == "function") { loadplayer(); }; }, 300); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40359
@@ -2236,6 +2240,9 @@ chip.de$$article[tag-content="Anzeige |"]
 !--------------------------------------------------------!
 !-------------------- Specific rules --------------------!
 !--------------------------------------------------------!
+! https://github.com/AdguardTeam/AdguardFilters/issues/52959
+!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+||amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$redirect=nooptext,domain=tele5.de
 ! http://forum.adguard.com/showthread.php?8979 (#17)
 ||static.p7s1.com/vendor/webtrekk
 !
@@ -2300,6 +2307,7 @@ welt.de##.c-page-container--has-commercials
 ! ##.pdb-div-gpt-footerad
 haz.de,ostsee-zeitung.de,sn-online.de,dnn.de,kn-online.de,ln-online.de,neuepresse.de,lvz.de##.pdb-div-gpt-footerad
 !
+||p.jwpcdn.com/*/vast.js$important,domain=tele5.de
 ||speedlounge.org/js/fasdjasdad.js
 ||speedlounge.org/images/partner^
 zentrum-der-gesundheit.de##.akn-text.rs_skip
