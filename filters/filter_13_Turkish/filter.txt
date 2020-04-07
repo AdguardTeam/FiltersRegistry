@@ -381,6 +381,9 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/52970
+dovizborsa.com#@#.adBanner
+dovizborsa.com#$#.adBanner { display: block!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52934
 @@||tr.link/cloud_thema/ads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52533
@@ -901,7 +904,7 @@ vizyonfilmizle.tv#$?#html[-ext-has="> body"] { overflow: visible!important; }
 hdfilmcehennemi.io#?##sidebar > .widget > .textwidget2:has(> a[href][target="_blank"] > img)
 dizirun.com#$?#.rek-0 { remove: true; }
 hdfilmcehennem.com#$?#video#SlotBar > source[src^="/reklams/"] { remove: true; }
-film-dizi.com,filmzal.com#$?##rk-content { remove: true; }
+vipfilmlerizleme.com,film-dizi.com,filmzal.com#$?##rk-content { remove: true; }
 haberler.com#$?#.hbNewsBox > div.hbContainer > div.hbBoxScope > div.box:has(> iframe[src^="https://ads.yenimedya.com.tr/"]) { background: none!important; box-shadow: none!important; }
 haberler.com#?#.hbSideBar > div.hbBoxScope > #dailymotion_widget:has(> iframe[src^="https://ads.yenimedya.com.tr/Partner/"])
 salom.com.tr#?#.yanwidget > .widget > .do-space:has(div[id^="div-gpt-ad"])
@@ -1522,6 +1525,8 @@ mackolik.com,sahadan.com#%#setTimeout ("HideFloatAdBanner()", 1000);
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/53039
+vipfilmlerizleme.com#$#header.container { margin-top: 0!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52934
 tr.link#$##dinami { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52282
@@ -1773,6 +1778,8 @@ sabah.com.tr#$#header.advertControlArea { top: 0!important; }
 !
 ! Unhide the player while ads timeout
 !
+vipfilmlerizleme.com#$##rk-content { display: none!important; }
+vipfilmlerizleme.com#$##cn-content { display: block!important; }
 evrenselfilmlerim.net#$##preroll > div.autosize-container + video { display: none !important; }
 evrenselfilmlerim.net#$##preroll iframe[src] { display: block !important; }
 fullhd720pizle3.com#$#.filmicerik { display: block!important; }
@@ -2082,6 +2089,7 @@ sinemapol.org#$##video { display: block!important; }
 !
 ! Removing branded background
 !
+vipfilmlerizleme.com#$#body { background-image: none!important; }
 bayfilmizle.com#$#body { background-image: none!important; }
 diziay.me#$#html > body { background-image: none!important; }
 dizirun.com#$#body { background-image: none!important; }
@@ -2288,6 +2296,10 @@ t54.com.tr,haber266.com,safihaber.com,nazilliadalet.com,bizimyaka.com,spor46.com
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+filmindirhd.org##.fullstory > div[id="fstory-film"] + center
+filmindirhd.org##.fstory-content > div.clearfix + br + div
+filmindirhd.org##.swal-overlay
+||vipfilmlerizleme.com/anadoluBackground.webp
 ||evrenselfilmlerim.net/Yenireklam-2.mp4
 ||evrenselfilmlerim.net/pop*.js
 ||bayfilmizle.com/baysansli/*-Pageskin-mix-min.jpg
