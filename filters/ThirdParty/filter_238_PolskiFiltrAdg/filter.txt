@@ -1,53 +1,77 @@
 !
 ! Title: Polish Anti Adblock Filters
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku
-! Last modified: 11 February 2019
+! Last modified: 7 April 2020
 ! Expires: 2 days
-! OriginalVersion: 2020021101
+! OriginalVersion: 2020040702
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020021101 aktualizacja: wt, 11 lutego 2020, 15:25:00
+! v.2020040702 aktualizacja: wt, 7 kwietnia 2020, 21:15:00
 !
 !
 !-----------------------Integration of supplement lists for uBlock & AdGuard-----------------------!
 ! Title: Polish Anti Adblock Filters - supplement for uBlock Origin
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku - uzupelnienie dla uBlock Origin
-! Last modified: 12 February 2019
+! Last modified: 16 February 2019
 ! Expires: 2 days
-! OriginalVersion: 2020021201
+! OriginalVersion: 2020021601
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020021201 aktualizacja: sr, 12 lutego 2020, 10:25:00
+! v.2020021601 aktualizacja: nie, 16 lutego 2020, 21:00:00
 !
 !
 ! Adblock
+acmilan.com.pl#%#//scriptlet('ubo-set-constant.js', 'showAds', 'true')
 alefunny.pl###myModal, .modal-backdrop
 alefunny.pl#$#.modal-open { overflow: auto !important; padding-right: 0px !important; }
+astroweb.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'checkAds')
+aternos.org#%#//scriptlet('ubo-setTimeout-defuser.js', 'hasAdblock')
+cvninja.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'fuckAdBlock')
+darmowa-telewizja.online#%#//scriptlet('ubo-addEventListener-defuser.js', 'load', 'onload')
 dziwnekomiksy.pl#$#body>* { filter: blur(0px) !important; }
+!filmweb.pl##script:inject(abort-on-property-read.js, document.onreadystatechange)
+filmweb.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'notDetected')
+filmweb.pl#@%#//scriptlet('ubo-abort-current-inline-script.js', 'decodeURIComponent', 'newAdblockBoardDisplayed')
 filmweb.pl$$script[tag-content="adblockDisplayInformation."][min-length="8000"][max-length="50000"]
+fotoblogia.pl,gadzetomania.pl,wp.pl,autokult.pl,komorkomania.pl,medycyna24.pl,smaczneblogi.pl#%#//scriptlet('ubo-abort-on-property-write.js', '__serviceAbModal')
+niezalezna.pl#%#//scriptlet('ubo-noeval.js')
+!pilot.wp.pl##script:inject(set-constant.js, WP.crux.sealed, falseFunc)
+playpuls.pl#%#//scriptlet('ubo-setInterval-defuser.js', 'muted', '8000')
+playpuls.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'Math.round', '5000')
+skript.pl#%#//scriptlet('ubo-abort-current-inline-script.js', '$', 'alert')
+skript.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'document.addEventListener', 'adblocka')
 scypion.pl#$#.adsbygoogle { position: absolute!important; left: -3000px!important; }
+twojetv.ws#%#//scriptlet('ubo-abort-current-inline-script.js', 'atob', 'decodeURIComponent')
+warezdark.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'addBlocking')
 zarabiam.com#$#body > font[color="green"]:last-of-type { color: transparent !important; }
+dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gs24.pl,kurierlubelski.pl,motofakty.pl,naszemiasto.pl,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,stronakobiet.pl,telemagazyn.pl,to.com.pl,wspolczesna.pl#%#//scriptlet('ubo-set-constant.js', 'pp_adblock_is_off', 'trueFunc')
 @@||sso.ppapi.pl/rodo.js$xmlhttprequest
+miastakobiet.pl,stronazdrowia.pl#%#//scriptlet('ubo-set-constant.js', 'pp_adblock_is_off', 'trueFunc')
 polskatimes.pl,dziennikbaltycki.pl,expressilustrowany.pl#@##advert1
 polskatimes.pl,dziennikbaltycki.pl,expressilustrowany.pl#@#.div-gpt-ad
 !
 ! Rules after Adblock
 vod.pl#$#.infoCloud { position: absolute!important; left: -3000px!important; }
+webinsider.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'AdBlock')
 !
 ! naszemiasto.pl - https://github.com/MajkiIT/polish-ads-filter/issues/3175
+naszemiasto.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'czy_wlaczony_adblock')
 !
 ! calcoolator.pl
 ||calcoolator.pl/inc/js/adblockill_copy.js
 !
 ! zabawa z adquesto
+weszlo.com,prnews.pl,mambiznes.pl,kresy.pl,natemat.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'parseInt', 'adblock')
 !
 ! tvn24.pl
+tvn24.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'Vublock')
 !
 ! kitsune-subs.anime-odcinki.pl
+kitsune-subs.anime-odcinki.pl#%#//scriptlet('ubo-set-constant.js', 'showAds', 'true')
 !
 ! ps3-hack.pl
 !
@@ -55,10 +79,13 @@ vod.pl#$#.infoCloud { position: absolute!important; left: -3000px!important; }
 twojogrodek.pl,waw4free.pl#$#.pub_300x250.pub_300x250m.text-ad.textAd.text-ads.text-ad-links { display: block !important; }
 !
 ! dniwolne.eu
+dniwolne.eu#%#//scriptlet('ubo-set-constant.js', 'window.google_jobrunner', 'noopFunc')
 dniwolne.eu##.axv
 dniwolne.eu$$.axv
 !
 ! shinden.pl
+!shinden.pl##+js(abort-on-property-write.js, _pop)
+shinden.pl#%#//scriptlet('ubo-noeval-if.js', 'Criteo')
 !
 ! nk-net.pl
 !
@@ -71,9 +98,19 @@ magazyn.wp.pl#$#body { overflow: auto !important; }
 magazyn.wp.pl#$#body [class] { filter: none !important; }
 !#endif
 magazyn.wp.pl#$#body [class] { filter: none !important; }
+pudelek.pl,film.wp.pl,finanse.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,wiadomosci.wp.pl#%#//scriptlet('ubo-set-constant.js', 'Object.prototype.isBlocked', 'false')
+pudelek.pl,film.wp.pl,finanse.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,wiadomosci.wp.pl#%#//scriptlet('ubo-set-constant.js', 'Object.prototype.aggressiveAB', 'false')
+wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'asname')
+wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'Object.prototype.rebuild')
+wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl#%#//scriptlet('ubo-set.js', 'Object.prototype.advViewability', 'undefined')
 !
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=wp.pl|o2.pl|pudelek.pl|so-magazyn.pl
 @@||googletagservices.com/tag/js/gpt.js$domain=wp.pl|dobreprogramy.pl|o2.pl|pudelek.pl|so-magazyn.pl
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'Object.prototype.aggressiveAB', 'false')
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'Object.prototype.isBlocked', 'false')
+magazyn.wp.pl#@%#//scriptlet('ubo-abort-on-property-write.js', '__serviceAbModal')
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'PWA_adbd', '2')
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'WP.gaf.loadBunch', 'noopFunc')
 wp.pl#@$#html, html > body { overflow: auto !important; }
 wp.pl#@$#body { overflow: auto !important; }
 wp.pl#@$#body [class] { filter: none !important; }
@@ -86,8 +123,8 @@ wp.pl#@#body > div:nth-of-type(1)[style^="display: block;"]:not(#page)
 !1#---------------------------------Anti Adblock Rules element hide----------------------------------!
 ##.kill-adblock-container
 12zawodnik.pl##.ads-checker-msg
-24gliwice.pl,wyborkierowcow.pl,kino123.pl,jednoslad.pl,how2play.pl,polskiedzieje.pl,ciekawe.org,baza-lekow.com.pl,testhub.pl,widzewtomy.net,gadzet.telchina.pl,ostatniatawerna.pl,kulturalnemedia.pl,newonce.net,variatkowo.pl,legendyboksu.pl,mywildforest.pl#@##adsense
-24opole.pl,webcamera.pl,darmowe-torenty.pl,dziennikwschodni.pl,vorek.pl,katowickisport.pl,torrentcity.pl,wtkplay.pl,epoznan.pl,comperia.pl,poradnikzdrowie.pl#@#.ad
+24gliwice.pl,wyborkierowcow.pl,kino123.pl,jednoslad.pl,how2play.pl,polskiedzieje.pl,ciekawe.org,baza-lekow.com.pl,testhub.pl,widzewtomy.net,gadzet.telchina.pl,ostatniatawerna.pl,kulturalnemedia.pl,newonce.net,variatkowo.pl,legendyboksu.pl,mywildforest.pl,magyazyn.pl#@##adsense
+24opole.pl,webcamera.pl,darmowe-torenty.pl,dziennikwschodni.pl,vorek.pl,katowickisport.pl,torrentcity.pl,wtkplay.pl,epoznan.pl,comperia.pl,poradnikzdrowie.pl,eska.pl#@#.ad
 4geek.co##.wgAdBlockMessage, #adbd
 ##.adblock-alt
 ##.adblock-placeholder
@@ -135,15 +172,15 @@ ikorektor.pl###adb
 imged.pl##.m-puppies-detector
 infoship.pl,infoair.pl,infobike.pl,infotram.pl,inforail.pl,transinfo.pl,infobus.pl###popup_adblock
 ipon.pl##.alert-warning
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.pub_300x250
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.pub_300x250m
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.pub_728x90
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text_ad
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text-ad
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.textAd
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text-ad-links
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text_ads
-jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.ml,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text-ads
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.pub_300x250
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.pub_300x250m
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.pub_728x90
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text_ad
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text-ad
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.textAd
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text-ad-links
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text_ads
+jbzdy.com.pl,jbzdy.pl,kwejk.pl,piwniczkamemow.pl,eszkola.pl,dobreprogramy.pl,interia.pl,kwantowo.pl,katowickisport.pl,imeds.pl,pl.aleteia.org,overwatch.pl,jackcaleib.com,waw4free.pl,dziwneobrazki.pl,fm.tuba.pl,hentai-online.pl,epainfo.pl,bajeczki.org,tvbraniewo24.pl,anime-odcinki.pl,bh-res.pl,scentre.pl,towideo.pl,cypr24.eu,cdahd.co,player.radiozet.pl,meloradio.pl,antyradio.pl,chillizet.pl,radioplus.pl#@#.text-ads
 katowickisport.pl#@#.adform-slot
 katowickisport.pl#@##admain
 katowickisport.pl#@##adnp
@@ -190,10 +227,12 @@ ps3forum.pl###abl
 newsweb.pl###JEcnUkoYtyfs,.hmAdHKEaBMFO-bg
 nokiahacking.pl###unblock-please
 ocen-piwo.pl###osiemnascielat > div > h2:nth-of-type(2)
+poczta.onet.pl##.slot-top-container
+poczta.onet.pl##.slot-right-container
 parezja.pl,demotywatory.pl###adblock_info
 pecetowicz.pl#@#.adBanner
 pikio.pl##.adBlockDetectModal, .swal2-fade
-player.radiozet.pl#@#[class$="-ads"]
+player.radiozet.pl,eska.pl,mjakmama24.pl#@#[class$="-ads"]
 poczta.onet.pl#?#div[class^="slot-"]:-abp-has(> div[class^="slot"][class$="plug"])
 polskieszlaki.pl##.my-5
 polskihurtworld.eu##.modall-content
@@ -214,6 +253,8 @@ pzkosz.pl##.aside-ad-block
 queer.pl##.box-block
 ##.scrolled.infoBlock
 sadistic.pl###notifier
+se.pl##div[class^="zpr_inside_"][class*="placement__lazy"]
+se.pl#$#.adsbox.ad { display: block!important; }
 senda.pl#@#.advert_box
 skarzysko24.pl##.visible.show-sweet-alert.sweet-alert
 stylunio.pl##.blocked-info
@@ -231,14 +272,14 @@ tvmalbork.pl##.diablo-placeholder-ADB, .diablo-placeholder
 tvregionalna24.pl##.diablo-placeholder
 tvsztum.pl,tvdzierzgon.pl,zulawyimierzeja24.pl##.diablo-placeholder
 tv.wp.pl##.sc-15qxer4-0
-upflix.pl#@#.ad
+upflix.pl,mjakmama24.pl#@#.ad
 upflix.pl##.col > div
 webinsider.pl#@#.etad
 vitalia.pl###topbborlayer
 vod.pl#@#.infoCloud
 vod.pl#@#.text-ad
 vorek.pl,gry-planszowe.pl,darmowe-torenty.pl,torrentcity.pl,bitnova.info,waw4free.pl,darmowyskin.pl,lunaticfiles.com,www.nadmorski24.pl,www.realmadryt.pl#@#.adsbox
-virpe.com#@#.adsBox
+virpe.com,fileone.tv#@#.adsBox
 vorek.pl,shinden.pl#@#.ads
 waw4free.pl#@#.showad
 waw4free.pl#@#.showbox
@@ -265,6 +306,7 @@ zetchilli.pl,upflix.pl,paintballmarket.pl##.adblock-info
 zmiksowani.pl##.text-center.alert-danger.alert
 zarabiam.com#@#.adplacement
 zrabatowani.pl###popup-adblock-bottom
+zspnr1.lowicz.pl#%#//scriptlet('ubo-setInterval-defuser.js', 'seead')
 zw.pl###abpnotzw
 zycietoprzygoda.pl##[class^="tws_"]
 !
@@ -315,7 +357,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@/js/adverts.js$script,domain=forsal.pl|dziennik.pl
 @@/js/adv.$script,domain=glosregionu.pl|ziemialeszczynska.pl|ziemiagorowska.pl
 @@/js/ads.show.min.js$xmlhttprequest,domain=to.com.pl|dziennikbaltycki.pl|dzienniklodzki.pl|dziennikzachodni.pl|expressilustrowany.pl|gazetakrakowska.pl|gazetawroclawska.pl|gloswielkopolski.pl|kurierlubelski.pl|nto.pl|wspolczesna.pl|poranny.pl|pomorska.pl|gp24.pl|gazetalubuska.pl|echodnia.eu|nowiny24.pl|polskatimes.pl|gs24.pl|gk24.pl|expressbydgoski.pl|ekstramagazyn.pl|stronazdrowia.pl
-@@/js/ads.min.js$script,domain=zobacz.ws
+@@/js/ads.min.js$script,domain=zobacz.ws|nysainfo.pl
 @@/reklama.js$domain=expressbydgoski.pl|pomorska.pl
 @@||24opole.pl^$generichide
 @@||adservice.google.com/adsid/integrator.js?domain=www.dieroten.pl$xmlhttprequest,third-party,domain=www.dieroten.pl
@@ -331,7 +373,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||blog.programyzadarmo.net.pl/images/ad/*.gif$image,domain=blog.programyzadarmo.net.pl
 @@||burzowo.info/*.js?*ad
 @@||businessinsider.com.pl^$generichide
-@@||cdahd.ml^$generichide
+@@||cdahd.co^$generichide
 @@||cdn.cmc-gallery.pl/static/js/ads.js$script
 @@||cdnjs.cloudflare.com/ajax/libs/blockadblock/*/blockadblock.js$script,domain=eskago.pl
 @@||comperia.pl^$generichide
@@ -363,7 +405,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||ipla.tv^$generichide
 @@||istotne.pl^$generichide
 @@||jakimasklad.pl^$generichide
-@@/js/ads.js$script,domain=solarkurier.pl|satkurier.pl|saskakepa.waw.pl|e-krajna.pl|swiecie24.pl|zyciesokolowa.pl|ciechocinek.biz|napiprojekt.pl|uniejow.net.pl|nizanskie.info|pluznica.info|superchodziez.pl|tygodnik.pl|ekutno.pl|naszbrzesc.pl|bydgoszcz24.pl|terazlipno.pl|gwe24.pl|digi-tv.pl|chelsea24news.pl|wolomin24.info|splendo.pl|egorzow.pl|irembertow.pl|iminsk.pl|ikrakow.info|iskierniewice.pl|ikampinos.pl|e-wyszogrod.pl|ibielsk.pl|wterenie.pl|ciechanowinaczej.pl|wabrzezno-cwa.pl|infosiedlce.pl|rypin-cry.pl|golub-cgd.pl|iotwock.info|szczecinek.com|lipno-cli.pl|imokotow.pl|nolesnica.pl|itvpiaseczno.pl|histmag.org|lowcygier.pl|gorzowianin.com|polotv.pl|video.anyfiles.pl|brotkids.tv|fokus.tv|ithardware.pl|meteoprog.pl|nowa.tv|okazje.co|forsal.pl|gazetaprawna.pl|fxmag.pl|nasztomaszow.pl|dieroten.pl|reklama.pl|gpr24.pl|twojradom.pl|inowroclaw.info.pl|pultusk24.pl|bham.pl|vorek.pl|plonszczak.pl|zdrowowdomu.wp.pl|audiklub.org|video-static.tunnl.com|pcworld.pl|gostynin.info|zambrow.org|millemiglia.wp.pl|radiogol.pl|torrentcity.pl|kb.pl|bitnova.info|rozmerdani.wp.pl|dbamoswojafirme.wp.pl|jakrobicmarketing.pl|wtk.pl|minecraft.org.pl|wtkplay.pl|mjakmama24.pl|jeja.pl|kurierpodlaski.pl|wowhungary.wp.pl|sokol.wp.pl|gameflare.com|nowosci.com.pl|embed.twojetv.ws|nwloclawek.pl|nswiecie.pl|perelki.net|zmiksowani.pl|oppo.wp.pl
+@@/js/ads.js$script,domain=solarkurier.pl|satkurier.pl|saskakepa.waw.pl|e-krajna.pl|swiecie24.pl|zyciesokolowa.pl|ciechocinek.biz|napiprojekt.pl|uniejow.net.pl|nizanskie.info|pluznica.info|superchodziez.pl|tygodnik.pl|ekutno.pl|naszbrzesc.pl|bydgoszcz24.pl|terazlipno.pl|gwe24.pl|digi-tv.pl|chelsea24news.pl|wolomin24.info|splendo.pl|egorzow.pl|irembertow.pl|iminsk.pl|ikrakow.info|iskierniewice.pl|ikampinos.pl|e-wyszogrod.pl|ibielsk.pl|wterenie.pl|ciechanowinaczej.pl|wabrzezno-cwa.pl|infosiedlce.pl|rypin-cry.pl|golub-cgd.pl|iotwock.info|szczecinek.com|lipno-cli.pl|imokotow.pl|nolesnica.pl|itvpiaseczno.pl|histmag.org|lowcygier.pl|gorzowianin.com|polotv.pl|video.anyfiles.pl|brotkids.tv|fokus.tv|ithardware.pl|meteoprog.pl|nowa.tv|okazje.co|forsal.pl|gazetaprawna.pl|fxmag.pl|nasztomaszow.pl|dieroten.pl|reklama.pl|gpr24.pl|twojradom.pl|inowroclaw.info.pl|pultusk24.pl|bham.pl|vorek.pl|plonszczak.pl|zdrowowdomu.wp.pl|audiklub.org|video-static.tunnl.com|pcworld.pl|gostynin.info|zambrow.org|millemiglia.wp.pl|radiogol.pl|torrentcity.pl|kb.pl|bitnova.info|rozmerdani.wp.pl|dbamoswojafirme.wp.pl|jakrobicmarketing.pl|wtk.pl|minecraft.org.pl|wtkplay.pl|mjakmama24.pl|jeja.pl|kurierpodlaski.pl|wowhungary.wp.pl|sokol.wp.pl|gameflare.com|nowosci.com.pl|embed.twojetv.ws|nwloclawek.pl|nswiecie.pl|perelki.net|zmiksowani.pl|oppo.wp.pl|filmninja.ws
 @@/js/ads.js$xmlhttprequest,domain=minecraft.org.pl
 @@/js/ads-1.js$script,domain=www.napiprojekt.pl
 @@/advertisement.js$domain=vodnews.pl|cyfrowydoradca.pl|pajacyk.pl|psgfc.pl|ifotos.pl|ps3-hack.pl|arkowcy.pl|szlaki.net.pl|przeslij.com
@@ -394,7 +436,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||onet.pl^$generichide
 @@||online-tv.pl/wp-content/plugins/pause-adblocker/inc/pause-front.css
 @@||ovh.webshark.pl/adserver/*/main_script.js?advertise_check=1
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl|dniwolne.eu|webkod.pl|cdahd.ml|zobacz.ws
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl|dniwolne.eu|webkod.pl|cdahd.ml|zobacz.ws|nysainfo.pl
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=efizyka.net.pl|nk-net.pl|www.gry.pl
 @@||pagead2.googlesyndication.com/pagead/js/r*/show_ads_impl.js$domain=efizyka.net.pl|dniwolne.eu
 @@||pclab.pl^$generichide
@@ -407,6 +449,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||ppstatic.pl/lib/adblockdetect/$script
 @@/show_ads.js$script,domain=ki24.info|portalplock.pl|faktypilskie.pl|e-krajna.pl|swiecie24.pl|zyciesokolowa.pl|zyciesiedleckie.pl|koronowo.net.pl|ciechocinek.biz|gniewkowo.eu|kolniak24.pl|itvszubin.pl|uniejow.net.pl|nizanskie.info|pluznica.info|superchodziez.pl|tygodnik.pl|ekutno.pl|naszbrzesc.pl|bydgoszcz24.pl|terazlipno.pl|saskakepa.waw.pl|gwe24.pl|kolniak24.eu|mp3.teledyski.info|tibiopedia.pl
 @@||portel.pl/*/*adv*.js$script,domain=www.portel.pl
+@@||posty.pl^$generichide
 @@||potplayerclub.pl^$generichide
 @@||przegladsportowy.pl^$generichide
 @@||ps3-hack.pl^$generichide
@@ -491,6 +534,7 @@ naszamlawa.pl##.spacead-r-2, .adsbygoogle, .td-adspot-title, .td-is-sticky.td-pb
 @@||spolecznosci.net/js/core*-min.js$domain=shinden.pl
 @@||spolecznosci.net/js/modules/*.js$domain=shinden.pl
 @@||a.spolecznosci.net/pet?s=Shinden$domain=shinden.pl
+@@||spolecznosci.net/core/*/main.js$domain=shinden.pl
 shinden.pl##iframe[src^="https://reklama.shinden.eu/adpeeps.php?"]
 !
 !6#--------------------------a-o.ninja------------!
@@ -522,11 +566,14 @@ vod.tvp.pl##.hidden-phone.rectangleWrapper
 @@||gfx.filmweb.pl/adbetween/adx.js$script,domain=www.filmweb.pl
 filmweb.pl#@#.ws__wrapper
 filmweb.pl#@#body .ws__wrapper
+filmweb.pl#@%#//scriptlet('ubo-setTimeout-defuser.js', 'notDetected')
 filmweb.pl#@##advertBar-pl_PL
+filmweb.pl#@%#//scriptlet('ubo-abort-current-inline-script.js', 'decodeURIComponent', 'newAdblockBoardDisplayed')
 filmweb.pl#@##advertBar-pl_PL
 ||fwcdn.pl/adv/$important,script,domain=filmweb.pl,badfilter
 ||fwcdn.pl/adv/*.jpg
 ||fwcdn.pl/adv/*.png
+filmweb.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'IRI', 'Adblock')
 !
 !10#--------------------------WP Group------------!
 dobreprogramy.pl#@#.ad_container
@@ -550,6 +597,7 @@ magazyn.wp.pl#$#body { overflow: visible!important; }
 magazyn.wp.pl#$#body { overflow: auto !important; }
 magazyn.wp.pl#$#body [class] { filter: none !important; }
 magazyn.wp.pl#$#body > [class] { filter: none!important; }
+pilot.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'WP.gaf.loadBunch', 'noopFunc')
 pilot.wp.pl#@#.ads
 !
 !11#--------------------------Polsat------------!

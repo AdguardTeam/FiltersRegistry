@@ -26,6 +26,14 @@ This repository contains the known filters subscriptions available to AdGuard us
     * `groupId` - group identifier (see groups description below);
     * `subscriptionUrl` - default filter subscription URL
     * `tags` - a list of tags (see tags description below)
+    * `trustLevel` - level of trust (see trust levels description below)
+    
+        ##### Trust levels:
+        * `low` - default level, if "trustLevel" property is not configured at all.
+        * `high` - trusted third-party filter lists. Some particular rules from there are allowed.
+        * `full` - all types of filter rules are allowed. Only AdGuard filters have full trust at the moment.
+        
+        [Full list of trust levels exclusions settings](https://github.com/AdguardTeam/FiltersCompiler/tree/master/src/main/utils/trust-levels)
 
     Metadata example:
     ```javascript
@@ -44,7 +52,8 @@ This repository contains the known filters subscriptions available to AdGuard us
       "reference:101",
       "recommended",
       "reference:2"
-      ]
+      ],
+      "trustLevel": "full"
     }
     ```
 

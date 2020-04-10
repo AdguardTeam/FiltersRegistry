@@ -1,10 +1,10 @@
 !
 !##################### 0000-header.txt #####################
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Checksum: DeUrysxcF/YgqnROYF6zZQ
-! OriginalVersion: 202001261324
+! Checksum: N9ShNu9SXiwd8jQk4Pba5A
+! OriginalVersion: 202003271531
 ! Title: hufilter
-! Last modified: 26 Jan 2020 13:24 UTC
+! Last modified: 27 Mar 2020 15:31 UTC
 ! Expires: 16 hours (update frequency)
 ! Homepage: https://github.com/hufilter/hufilter/wiki
 ! Licence: CC-BY, see http://creativecommons.org/licenses/by/4.0/
@@ -34,6 +34,7 @@
 24.hu##.widget-mini-article
 24.hu##.u-overlayFullScreen
 24.hu##.m-fbExitPopup
+24.hu###stickyMobileNotification
 !
 ||sher.*.hu^
 ||rehs.*.hu^
@@ -267,9 +268,13 @@ mandiner.hu##html body div#all div#mainbgbg div#mainbg>div[style^="width: 125px"
 mandiner.hu##[class*="hirdetes"]
 !
 ||port-network.com/sponsoration_elements/
+||port.hu/js/adbd.min.js
+||port.hu/js/advert.min.js
 port.hu##[class*="_spon"]
 port.hu##.articleMetadata
 port.hu##[class="advert fix-advert"]
+port.hu##section.port-adbd
+port.hu##script:contains(ads.js)
 !
 pharmaonline.hu##[class*="contentBanner"]
 pharmaonline.hu##.justClassBanner
@@ -308,11 +313,15 @@ vatera.hu##DIV[id*="advert-container"]
 vatera.hu##.page-rightside-advert
 ||vatera.hu/affiliate/images/banner/
 !
+gyakorikerdesek.hu###cookiekezeles
 gyakorikerdesek.hu##IFRAME
 gyakorikerdesek.hu###adryf
 gyakorikerdesek.hu##[id*="aswift"]
 gyakorikerdesek.hu/reklam/
 gyakorikerdesek.hu/pic/bannerek/
+gyakorikerdesek.hu##div.reklam_jobbra
+gyakorikerdesek.hu##td.txtcenter:-abp-has(> script + ins)
+gyakorikerdesek.hu##td[style="width: 10px;"]:empty
 !
 ||klubradio.hu/data/files/banner
 klubradio.hu##DIV[id*="banner"]
@@ -402,7 +411,6 @@ startlap.hu##div.container.banner-container.wide > *
 startlap.hu##[box-name="Hirdetés"]
 startlap.hu##.kezdo-kereso
 kereso.startlap.hu###google-display
-startlap.hu#$#div.container.banner-container.wide { min-height: 0!important; height: auto!important; }
 !
 linkcenter.hu##[class*="adserver"]
 linkcenter.hu##[id*="hirdetes"]
@@ -432,6 +440,7 @@ femina.hu#@#[class="goAdverticum"]
 femina.hu##.szelso-jobb > div:-abp-has(> a)
 femina.hu##.cikk-torzs [data-miniapp-id]:-abp-has(.lapozgato-ajanlo)
 femina.hu##.cikk-torzs [data-miniapp-id]:-abp-has(.femina-shop-ajanlo-slider-hirdetes)
+femina.hu###femina-shop-ajanlo-slider
 !
 femcafe.hu##[class*="-adv"]
 femcafe.hu##[class*="_ad "]
@@ -451,7 +460,6 @@ hwsw.hu###cookiealert
 ||hwsw.hu/images/bodybgs2/
 ||hwsw.hu/images/zenfone-selfie-hwsw-skin-bg.jpg.pagespeed.ce.ysKXe6uFay.jpg$image
 hwsw.hu##body > div > a[target="_blank"]
-hwsw.hu#$#body[style*="padding-top"] { padding-top: 0px !important; background-color: #777 !important; }
 hwsw.hu###announcement
 hwsw.hu###cikktoolbaradomany
 hwsw.hu##.cikkszovegaction
@@ -530,7 +538,6 @@ magyarhirlap.hu##[class*="banner"]
 magyarhirlap.hu##.ad-verticalfull
 magyarhirlap.hu##.ad-magnum
 magyarhirlap.hu##.partners
-magyarhirlap.hu#$#header .container { padding: 10px 10px 0 10px !important; }
 !
 napi.hu###_iph_cp_popup
 napi.hu###interstitial
@@ -609,6 +616,8 @@ anyuci.hu##[class*="banner"]
 !
 csaladinet.hu##[class*="adv-"]
 csaladinet.hu##[class*="-adv"]
+csaladinet.hu###bdism1
+csaladinet.hu###CookieAcceptLayer
 !
 divany.hu###interstitial
 divany.hu##[id*="banner"]
@@ -737,9 +746,11 @@ eletmod.hu##[id*="etarget"]
 eletmod.hu##[id*="banner"]
 eletmod.hu##.rckaexclude
 !
-baon.hu##[class*="hirdetes"]
-baon.hu##[class*="ad "]
-baon.hu##.articleInArticleOfferer
+! elfeheredik az oldal
+!baon.hu##[class*="hirdetes"]
+!baon.hu##[class*="ad "]
+!baon.hu##.articleInArticleOfferer
+baon.hu##div.enews-article-offerer:-abp-has(div[style*="Tunderszepek"])
 !
 bama.hu##.hirdetes
 bama.hu##[class^="ad "]
@@ -899,9 +910,6 @@ automotor.hu##div.mw-banner-zone
 automotor.hu###_aloldali_header_banner
 automotor.hu###_fooldali_header_banner
 ! Esztetikai javitas, ha tamogatja az adblocker
-automotor.hu#$#div.layoutContent { margin-top: 0 !important; }
-automotor.hu#$##_cikk_tartalom_rb1 { margin-top: 0 !important; }
-automotor.hu#$#div.postContent { margin-top: 0 !important; }
 !
 donna.hu##[id*="banner"]
 donna.hu##[class*="banner"]
@@ -939,7 +947,6 @@ hosszupuskasub.com###permission-bar
 hosszupuskasub.com##[href*="hirdetes"]
 hosszupuskasub.com##.fu-container
 hosszupuskasub.com##a[href*="adf.ly"]
-hosszupuskasub.com#$# * { cursor: auto !important; }
 ||hosszupuskasub.com/css/*skin.jpg
 !
 teol.hu##.hirdetes
@@ -1101,6 +1108,8 @@ magyarhirlap.hu##.adslist
 !
 magyarnemet.hu###block-block-12
 magyarnemet.hu###block-block-19
+magyarnemzet.hu##div.gdprBoxContainer
+magyarnemzet.hu##div.promo-bar
 !
 magyarszo.com##[class*="reklam"]
 magyarszo.com##[id*="reklam"]
@@ -1275,7 +1284,6 @@ computerworld.hu,pcworld.hu,gamestar.hu,puliwood.hu##.box.ad
 computerworld.hu,pcworld.hu,gamestar.hu,puliwood.hu##.ad.ad-header-after-article
 computerworld.hu,pcworld.hu,gamestar.hu,puliwood.hu##.ad.ad-article-end
 ! Esztetikai javitas, ha tamogatja az adblocker
-pcworld.hu,gamestar.hu#$#.ad-header-after { margin-top: 70px !important; padding: 0 !important; }
 !
 ||iho.hu/img/banner/*
 ||iho.hu/img/flash/*
@@ -1381,6 +1389,8 @@ bpiautosok.hu###cookie-notice
 bpiautosok.hu##.post > p + center
 bpiautosok.hu##.post > p + center + hr
 bpiautosok.hu##.post ins + h6
+bpiautosok.hu##div.post > *:not(.single-title):not(.news-thumb):not(.posted-date):not(.comments-meta):not(.author-meta):not(.single-content):not(.entry-footer):not(.news-item)
+bpiautosok.hu##div[class*="rltd_item"]:-abp-has(.rltd_tag)
 !
 ! Androgeek
 androgeek.hu##div.rightside > iframe
@@ -1453,6 +1463,9 @@ muhelynet.hu###header
 magyarhang.org##.tagdiv-type
 magyarhang.org##.tdm_block_button
 magyarhang.org##.vc_raw_html
+magyarhang.org##div#moove_gdpr_cookie_info_bar
+magyarhang.org##div#ai-adb-overlay
+magyarhang.org##div#ai-adb-message
 !
 ! Magyar Telekom (ex-Westel)
 ! issue #168
@@ -1474,13 +1487,14 @@ telekom.hu###app-cookie-policy
 ! Gepigeny.hu
 gepigeny.hu###cookie-bar
 gepigeny.hu##.adt_hun
-gepigeny.hu#$#.main-container { margin-top: 100px !important; }
 !
 ! Hiros.hu
 hiros.hu##.banner_widget
 hiros.hu###cookieAlertBox
 hiros.hu##.sy-box
 hiros.hu##.frame:-abp-has(> span[style^="font-size: 11px;"])
+hiros.hu##div.szerzo_holder + div.szerzo_holder
+hiros.hu##div[style*="1px solid rgba(201,201,201,0.4);"]
 !
 ! Gyorihir.hu
 gyorihir.hu###cookie_bar
@@ -1502,6 +1516,9 @@ szeretlekmagyarorszag.hu###cookie-policy-bar
 szeretlekmagyarorszag.hu##.adslabel
 szeretlekmagyarorszag.hu##[class^="ads_"]
 szeretlekmagyarorszag.hu##[class^="ads_"] + .clear
+szeretlekmagyarorszag.hu##iframe[class*="my-fbrecommend"]
+||quantcast.mgr.consensu.org/cmp.js^$domain=szeretlekmagyarorszag.hu
+||static.quantcast.mgr.consensu.org/v30/cmpui-popup.js^$domain=szeretlekmagyarorszag.hu
 !
 pcguru.hu##a[href*="banner_click"]
 ||pcguru.hu/uploads/banners/*.jpg
@@ -1570,8 +1587,12 @@ hircsarda.hu/ads/
 hircsarda.hu###gyuri1
 hircsarda.hu###gyuri2
 !
-f1vilag.hu###elementor-popup-modal-85682
+f1vilag.hu##div.cc-window
+!f1vilag.hu###elementor-popup-modal-100010
+!f1vilag.hu###elementor-popup-modal-85682
+f1vilag.hu##div[id*="elementor-popup-modal-"]
 f1vilag.hu###catapult-cookie-bar
+f1vilag.hu##[class*="adzone"]
 !
 kezilabda.hu##div[style*="margin-bottom:10px"]:-abp-has(> div:-abp-contains(HIRDETÉS))
 kezilabda.hu##.cc_banner
@@ -1581,7 +1602,6 @@ atv.hu###cookie-warning
 atv.hu##header > .top-content
 atv.hu###facebookPopUpBackground
 atv.hu###facebookPopUp
-atv.hu#$#header { height: auto !important; }
 !
 calculat.org##.cookies
 calculat.org###zadost
@@ -1624,6 +1644,47 @@ fourfourtwo.hu###cookie-window
 kapu.hu###cookieSpan
 kapu.hu##div.bottom_sticky_banner
 !
+likenews.hu###cookie-notice
+likenews.hu##div.bpkad
+likenews.hu###upprev_box
+!
+keol.hu##div.cc_banner-wrapper
+keol.hu###wide_banners
+keol.hu###above_article_banner
+keol.hu###social
+keol.hu##div.subscribe_module
+keol.hu###below_content_banner
+keol.hu###left_banners
+keol.hu###right_banners
+keol.hu##div[class="fb-like fb_iframe_widget"]
+!
+szabadfold.hu###cookie-window
+szabadfold.hu##div.fb_shares
+!
+112press.hu###cookie-law
+112press.hu##div.banner_middle
+!
+retikul.hu###psCookieNotification
+retikul.hu##div.ad-sm-text
+!
+sportorvos.hu##div.tt-shortcode-1
+sportorvos.hu##div.tt-shortcode-2
+sportorvos.hu##div.sprtrvs-ad
+sportorvos.hu##[class*="ad_"]
+sportorvos.hu###text-9
+!
+haziallat.hu##[id*="_ads"]
+haziallat.hu##[id^="cookieconsent"]
+haziallat.hu##div.cc-window
+haziallat.hu###kapubanner
+!
+hatarido-szamitas.hu###cookie-bar
+!
+widescreen.hu##div.penci-wrap-gprd-law
+widescreen.hu##div.sgpb-popup-dialog-main-div-theme-wrapper-1
+widescreen.hu##div.sgpb-popup-overlay-42658
+widescreen.hu##div.sgpb-popup-overlay-42657
+!
 !##################### END 0100-websites.txt #####################
 !##################### 0200-singlerules.txt #####################
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -1650,7 +1711,6 @@ eoldal.hu/*eoldal_banner*
 epresso.hu##[class*="banner"]
 eron.hu##[id*="banner"]
 eropolis.hu##[class*="banner"]
-f1vilag.hu##[class*="adzone"]
 feliratok.info##DIV#advert
 filmoldal.hu##DIV[class*="reklam"]
 firstman.hu##[class*="banner"]
@@ -1664,8 +1724,6 @@ gportal.hu##[class*="banner"]
 gyoricegregiszter.hu##[class*="banner"]
 hajokonyha.hu##[class*="hirdetes"]
 hatarido-szamitas.hu##.szkozepkis
-haziallat.hu##[id*="_ads"]
-haziallat.hu##[id^="cookieconsent"]
 hbogo.hu##.cookie-consent
 helyitipp.hu##[id*="hirdet"]
 helyitipp.hu##.cookie-notice-container
@@ -1762,8 +1820,6 @@ samsungsport.hu##[class*="banner"]
 simple.hu###enableCookieDiv
 site88.net##.popup
 sportoldal.ro##[class*="banner"]
-sportorvos.hu##[class*="ad_"]
-sportorvos.hu###text-9
 stop.hu##[src*="hirdetes_"]
 superiorhirek.hu##[class*="-ad"]
 szabadfold.hu##[class*="hirdetes"]

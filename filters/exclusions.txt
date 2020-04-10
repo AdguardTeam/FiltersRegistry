@@ -2,47 +2,43 @@
 !############### General exclusions ###############
 !##################################################
 ! Exluding rules that looks like JS/CSS injections and $replace rules:
-#%#
-#@%#
-replace=
+! #%# - processed by trust-levels
+! #@%# - processed by trust-levels
+! replace= - processed by trust-levels
 ! Exluding unsupported ABP rules
 #$#abort-current-inline-script
 -abp-properties
 :xpath(
 (:scope
 ! Exluding unsupported uBlock rules
-##+js
-##script:inject
+! ##+js - processed by trust-levels
+! ##script:inject - processed by trust-levels
 $inline-script
 $inline-font
 ,inline-script
 ##^
 ! Excluding redirect instructions
-$redirect=
+! $redirect= - processed by trust-levels
 ,redirect=
 Redirect:
 redirect:
-! https://adblockplus.org/development-builds/rewriting-url-instead-of-blocking
-$rewrite=
 !
 ! Excluding foreign Extended CSS rules for Facebook
 facebook.com#?#
+facebook.com,facebookcorewwwi.onion#?#
 !
 ! Fixing $popup rules from EasyList
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/1566
 $popup,~third-party
 !
-|http://*
-|http:$
-|https:$
 /pb-ads/*
 ://ads.$popup
 !
 /adguard.
-! 
+!
 !##################################################
 !
-!*** Add new exlusions as: 
+!*** Add new exlusions as:
 !***  !### Filter name ###
 !***  ! Issue link
 !***  `exclusion`
@@ -52,6 +48,9 @@ $popup,~third-party
 /^##\.myTestAd$/
 /^##\.adsbox$/
 /adframe.
+! https://github.com/easylist/easylist/commit/e2efe2c3686cf6192f4e2d6a944ebe092c06f27a
+! Excluding the rule which breaks youtube embedded video player
+||youtube.com/get_video_info?$domain=youtube.com
 ! Excluding /google_ad_ because it gives a false positive on https://www.theregister.co.uk/2019/09/19/google_ad_blockers/
 ! and it is not really useful according to stats
 /google_ad_
@@ -83,7 +82,7 @@ mail.ru##.slot_left
 ! https://forum.adguard.com/index.php?threads/10523/
 .com/ad.$domain=~ad-tuning.de
 ! https://forum.adguard.com/index.php?threads/11577/
-@@||play-old-pc-games.com^$generichide 
+@@||play-old-pc-games.com^$generichide
 ! adf.ly - unnecessary exclusion
 @@||adf.ly^$generichide
 ! For desktop Adguard, an issue with popups. Replaced by ||am15.net^$script,image,media,third-party
@@ -170,7 +169,7 @@ $popup,domain=0
 ||hd-world.org^$subdocument,domain=hd-world.org
 ! Fixing gamona.de anti-adblock
 ||freenet.de/www/export/$script
-! End: EasyList Germany 
+! End: EasyList Germany
 !###########################
 !
 !### ABP Japanese Filter ###
