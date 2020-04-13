@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-04-12 15:22:19 CEST
+! Last modified: 2020-04-13 16:08:40 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -94,8 +94,6 @@ aventyriblodet.se#$#.template { visibility: visible !important; }
 babyhjalp.se#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')
 bandyfeber.com##.avia-content-slider:has(.slide-entry-excerpt:has-text(/annons:/i))
 bandyfeber.com##article:has(a[href*="/annons-"])
-bandyfeber.com,binero.se,boktugg.se,dagensanalys.se,dinbyggare.se,ettgottskratt.se,humorbibeln.se,i-chalmers.se,kvalitetsmagasinet.se,kvartal.se,ladok.se,miljo-utveckling.se,mobilanyheter.net,newsner.com,rikatillsammans.se,sportbibeln.se,sportpanelen.se,telekomidag.se,trafiksakerhet.se,vdtidningen.se,zeinaskitchen.se#%#//scriptlet('ubo-acis.js', 'monsterinsights_frontend')
-bandyfeber.com,binero.se,boktugg.se,dagensanalys.se,dinbyggare.se,ettgottskratt.se,humorbibeln.se,i-chalmers.se,kvalitetsmagasinet.se,kvartal.se,ladok.se,miljo-utveckling.se,mobilanyheter.net,newsner.com,rikatillsammans.se,sportbibeln.se,sportpanelen.se,telekomidag.se,trafiksakerhet.se,vdtidningen.se,zeinaskitchen.se#%#//scriptlet('ubo-set.js', 'mi_track_user', 'false')
 barnsemester.se#$#body { overflow: visible !important; }
 battrenyheter.se##.home-cat-first:has(a[href$="/sponsrad/"])
 battrenyheter.se##.post-item:has(a[href$="/samarbete/"])
@@ -341,12 +339,8 @@ nouw.com##.Container_blogPost:has(em:has-text(/reklamsamarbete/i))
 nouw.com##.magazine-grid-item:has(.badge:has-text(/annons/i))
 nsk.se,skd.se#$#body { opacity: 1 !important; }
 nxload.com,upstream.to#%#//scriptlet('ubo-set.js', 'adb', '0')
-nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'exactmetrics_frontend')
-nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'exactmetrics_scroll_tracking_load')
-nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'OneSignal')
 nyadagbladet.se#%#//scriptlet('ubo-aeld.js', 'mouseout')
 nyadagbladet.se#%#//scriptlet('ubo-aopr.js', 'cli_show_cookiebar')
-nyadagbladet.se#%#//scriptlet('ubo-set.js', 'em_track_user', 'false')
 nyadagbladet.se,senses.se#%#//scriptlet('ubo-acis.js', 'anOptions')
 nyheter24.se#%#//scriptlet('ubo-acis.js', 'check_ab')
 nyheter24.se#%#//scriptlet('ubo-acis.js', 'ga', 'ypcomm')
@@ -506,7 +500,13 @@ xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 !#if env_firefox
 !#endif
 !#if !env_firefox
+nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'OneSignal')
+nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'exactmetrics_frontend')
+nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'exactmetrics_scroll_tracking_load')
+bandyfeber.com,binero.se,boktugg.se,dagensanalys.se,dinbyggare.se,ettgottskratt.se,humorbibeln.se,i-chalmers.se,kvalitetsmagasinet.se,kvartal.se,ladok.se,miljo-utveckling.se,mobilanyheter.net,newsner.com,rikatillsammans.se,sportbibeln.se,sportpanelen.se,telekomidag.se,trafiksakerhet.se,vdtidningen.se,zeinaskitchen.se#%#//scriptlet('ubo-acis.js', 'monsterinsights_frontend')
 di.se#%#//scriptlet('ubo-nosiif.js', 'runAdBlockPaywall', '1000')
+nyadagbladet.se#%#//scriptlet('ubo-set.js', 'em_track_user', 'false')
+bandyfeber.com,binero.se,boktugg.se,dagensanalys.se,dinbyggare.se,ettgottskratt.se,humorbibeln.se,i-chalmers.se,kvalitetsmagasinet.se,kvartal.se,ladok.se,miljo-utveckling.se,mobilanyheter.net,newsner.com,rikatillsammans.se,sportbibeln.se,sportpanelen.se,telekomidag.se,trafiksakerhet.se,vdtidningen.se,zeinaskitchen.se#%#//scriptlet('ubo-set.js', 'mi_track_user', 'false')
 !#endif
 !#if env_chromium
 @@||nyheter24.se^$generichide
@@ -514,7 +514,9 @@ di.se#%#//scriptlet('ubo-nosiif.js', 'runAdBlockPaywall', '1000')
 nyheter24.se,tyda.se###accept-cookies-div
 !#endif
 !#if env_mobile
+m.sweclockers.com###topBanner
 swedroid.se##.externalTopMobile
+m.sweclockers.com##.listItem:has(.sponsoredArticle)
 aftonbladet.se##div[data-reactroot] > div > div#MegaAd ~ div[class]:not(#header):not(.abThemeGradientPage)
 swedroid.se##div[id$="_ad_mobile"]
 !#endif
@@ -569,8 +571,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###eu-cookie-bar
