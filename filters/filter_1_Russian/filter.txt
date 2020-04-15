@@ -5048,13 +5048,13 @@ flymer.ru#$#.ad-home { position: absolute!important; left: -3000px!important; }
 ! START: Ads replacement (piguiqproxy.com etc.)
 !
 !+ NOT_PLATFORM(windows, mac, android)
-gorod.dp.ua,4mama.ua,beauty.ua,bigmir.net,enovosty.com,epravda.com.ua,eurointegration.com.ua,facenews.ua,forumodua.com,gagadget.com,gismeteo.ua,hvylya.net,internetua.com,kolobok.ua,kp.ua,liga.net,nnovosti.info,obyava.ua,okino.ua,real-vin.com,ringside24.com,smak.ua,strana.ua,tochka.net,toneto.net,tv.ua,tvgid.ua,ubr.ua,vesti.ua#%#(function(){var a=document.currentScript,b=String.prototype.charCodeAt,c=function(){return true;};Object.defineProperty(String.prototype,"charCodeAt",{get:function(){return document.currentScript===a?b:c},set:function(a){}})})();
+autoua.net,gorod.dp.ua,4mama.ua,beauty.ua,bigmir.net,enovosty.com,epravda.com.ua,eurointegration.com.ua,facenews.ua,forumodua.com,gagadget.com,gismeteo.ua,hvylya.net,internetua.com,kolobok.ua,kp.ua,liga.net,nnovosti.info,obyava.ua,okino.ua,real-vin.com,ringside24.com,smak.ua,strana.ua,tochka.net,toneto.net,tv.ua,tvgid.ua,ubr.ua,vesti.ua#%#(function(){var a=document.currentScript,b=String.prototype.charCodeAt,c=function(){return true;};Object.defineProperty(String.prototype,"charCodeAt",{get:function(){return document.currentScript===a?b:c},set:function(a){}})})();
 ! Скрипт есть, но без рекламы
 ! tivix.co - ломается плеер
 censor.net.ua,football24.ua,etextlib.ru,kinozal.tv,inforesist.org,newsyou.info,newsua.one,textreferat.com,socportal.info,vsetv.com#%#(function(){var a=document.currentScript,b=String.prototype.charCodeAt,c=function(){return true;};Object.defineProperty(String.prototype,"charCodeAt",{get:function(){return document.currentScript===a?b:c},set:function(a){}})})();
 ! forumodua.com - fixing captcha(broken by scriptlet)
-@@||forumodua.com/login.php$jsinject
-@@||forumodua.com/register.php$jsinject
+!@@||forumodua.com/login.php$jsinject
+!@@||forumodua.com/register.php$jsinject
 !
 liga.net$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
 yahooeu.ru,tvgid.ua,rian.com.ua,oklivetv.com,kino-dom.org,hd-dream.ru,guru.ua,chudesa.site,azov-sea.info,animeget.net$$script[wildcard="*(function*String.fromCharCode(parseInt*.substr*"][max-length="10000"]
@@ -5070,6 +5070,11 @@ wss://s.zmctrack.net/
 ://s.zmctrack.net^$websocket
 ||zmctrack.net^$third-party
 @@://s.zmctrack.net/z|$xmlhttprequest,third-party
+!
+! for `zmctrack` if iframe isn't in ShadowRoot
+bigmir.net,glavcom.ua,hvylya.net,inforesist.org,nnovosti.info,obyava.ua,pravda.com.ua,smak.ua,strana.ua,tochka.net,u-news.com.ua,ukr.net,vesti.ua#$?#body > iframe:not([class]):not([id]):not([src]) { remove: true; }
+gorod.dp.ua,autoua.net,beauty.ua,besplatka.ua,enovosty.com,facenews.ua,forumodua.com,hvylya.net,kolobok.ua,kp.ua,liga.net,orakul.com,real-vin.com,segodnya.ua,tv.ua,ubr.ua,vesti.ua,vgorode.ua#$?#body iframe[name]:not([class]):not([id]):not([src]) { remove: true; }
+4mama.ua,autoua.net,censor.net.ua,epravda.com.ua,eurointegration.com.ua,gagadget.com,internetua.com,okino.ua,orakul.com,pravda.com.ua,ringside24.com,toneto.net,tvgid.ua#$?#head > iframe[name^="_"]:not([class]):not([id]):not([src]) { remove: true; }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52734
 ! !+ PLATFORM(windows, mac, android)
@@ -6448,10 +6453,6 @@ glavnoe-smi.ru#?#.footer-top-area > div.container > div.row > div[class^="col-"]
 !
 7days.ru#?##page_content > div[class] > div[id][style]:has(> div[id^="crt-"])
 7days.ru#?#.b-columns > div.b-columns__col > div.b-columns__col-in > div[class]:has(> div[id^="adfox_"])
-! for `zmctrack` if iframe isn't in ShadowRoot
-glavcom.ua,hvylya.net,strana.ua,pravda.com.ua,u-news.com.ua,ukr.net,inforesist.org,vesti.ua#$?#body > iframe:not([class]):not([id]):not([src]) { remove: true; }
-orakul.com,segodnya.ua,vgorode.ua,besplatka.ua#$?#body iframe[name]:not([class]):not([id]):not([src]) { remove: true; }
-orakul.com,censor.net.ua,pravda.com.ua#$?#head > iframe[name^="_"]:not([class]):not([id]):not([src]) { remove: true; }
 !
 fontanka.ru#?##app div[class] > aside[class] + div[class] > section[class] article[data-io-article-url] ~ div:has(div[id] > div.headline:contains(Читайте также))
 fontanka.ru#?##app div[class] > aside[class] + div[class] > section[class] > div > div[class] > div[class] > div[class] > div[class]:has(div[id^="adfox_"])
@@ -10687,6 +10688,9 @@ overclockers.ru##a[href^="http://segodnia.club/"] ~ *
 ! Блокировка сторонних скриптов, кроме перечисленных. Использовать осторожно.
 /^(?!.*(google\.com|gstatic\.com|googleapis\.com|recaptcha\.net|fluidplayer\.com|ebacdn\.com|vk\.com|facebook\.net)).*$/$third-party,script,domain=pornosuk.com|ebalovo.pro|yarnews.net
 !
+gagadget.com##.offers-index
+webformyself.com##.adsinpost
+webformyself.com##aside > div.clearing + div[class][id]
 donpress.com###block-advertblock
 m.ua##div[style="width: 240px; height: 400px;"]
 ||hdxclub.com/js8698/b51c4b6f96c8f7.js
@@ -19980,6 +19984,7 @@ sports.ru#$#body[class] > div#branding-layout { background: #a7a7a7!important; }
 ! END: sports.ru
 !
 ! Start: vc.ru, dtf.ru, tjournal.ru, spark.ru
+vc.ru,dtf.ru##a[class^="kinopoisk-branding"]
 vc.ru##.daily-promo-unit
 dtf.ru##.kinopoisk-article-header
 dtf.ru##.kinopoisk-site-header
