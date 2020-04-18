@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-04-16 20:31:25 CEST
+! Last modified: 2020-04-18 09:55:28 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -392,6 +392,7 @@ studentum.se#%#//scriptlet('ubo-set.js', 'cookieExists', 'true')
 studocu.com#$##page-container { user-select: text !important; }
 studocu.com#$#.new-viewer-wrapper .p2hv { pointer-events: auto !important; }
 svegot.se#%#//scriptlet('ubo-aeld.js', 'scroll', '(a)')
+svensktgolfforum.se#%#//scriptlet('ubo-acis.js', 'setTimeout', 'test')
 sverak.se#%#//scriptlet('ubo-set.js', 'disable_copy', 'noopFunc')
 sverak.se#%#//scriptlet('ubo-set.js', 'disableEnterKey', 'noopFunc')
 sverak.se#%#//scriptlet('ubo-set.js', 'disableSelection', 'noopFunc')
@@ -497,6 +498,7 @@ xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 ||webimages.lokus.se^$image,important,domain=affarsliv.com|affarslivgotland.se|corren.se|ekuriren.se|eposten.se|folkbladet.se|helagotland.se|kkuriren.se|kuriren.nu|mvt.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|sn.se|unt.se|vimmerbytidning.se|vt.se
 ||youbora.com^$important,third-party,domain=aftonbladet.se|foxtv.se|svd.se
 !#if env_firefox
+||issuu.com^$subdocument,domain=boktugg.se
 !#endif
 !#if !env_firefox
 nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'OneSignal')
@@ -570,8 +572,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###eu-cookie-bar
@@ -766,6 +768,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /advisible.js$script,domain=goteborgdirekt.se|stockholmdirekt.se|vasterastidning.se
 /affiliate/*$image,domain=minfil.com
 /agi-annons$domain=capdesign.se
+/AiMatch$script,domain=morningstar.se
 /ajax.php?action$domain=jnytt.se
 /ajax.php?action=get_cookies_policy$xmlhttprequest
 /ajax.php?action=get_policy&site=cookie-information$xmlhttprequest
@@ -794,6 +797,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /ast.js$domain=live.aftonbladet.se
 /at-internet-desktop.js$script,domain=klart.se
 /atomic-blocks/*$script,domain=dinlivsstil.nu|foretagsverige.se|forskningsverige.se|grillbibeln.se|hallbarhetsverige.se|kampenmotcancer.se|motorbibeln.se|tillvaxtsverige.se
+/AudienceTarget$script,domain=morningstar.se
 /autonytt-theme/js/blogger.$script,domain=autonytt.se
 /avia-snippet-cookieconsent.$script
 /bam-data?device$xmlhttprequest
@@ -838,6 +842,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /content/admbl/*$image,domain=skrattnet.se
 /cookie/GA$xmlhttprequest,domain=tui.se
 /cookie_info.$domain=trendenser.se
+/CookieBar$script,domain=morningstar.se
 /cookieconsent.$script,domain=friaordet.org|husbilskompisar.se|kiacarclub.se|modelltag.se|motivation.se|panzerbattalion.se|wwf.se
 /cookieconsent/cookieconsent.min.$script
 /cookieconsent2/*
@@ -861,6 +866,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /downloads.mailchimp.com/*$domain=branschkoll.se|landleyskok.se|vavawoom.com|villalivet.se
 /downloads.mailchimp.com/js/signup-forms/popup$image,script
 /ds-tracker.js$domain=dagenssamhalle.se
+/DynamicGAFunctions$script,domain=morningstar.se
 /emediate-responsive-wp-plugin/*
 /entag.$script,domain=eniro.se|leta.se|proff.se
 /entryclick;_
@@ -869,6 +875,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /eu-cookie-law.min.js$script
 /eu_cookie_alert/*
 /eu_cookie_compliance/*$script
+/EUModalDialog$script,domain=morningstar.se
+/evidon$script,domain=morningstar.se
 /exposure$xmlhttprequest,domain=lokalguiden.se
 /facebook/gillkom$xmlhttprequest,domain=kamerabild.se|mobil.se
 /facebook/postkoll$xmlhttprequest,domain=kamerabild.se|mobil.se
@@ -1014,6 +1022,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /perimeter$script,domain=yelp.se
 /permutive-async.js$script
 /phaser-ads.min.js$script
+/phpbb/ads$script,domain=svensktgolfforum.se
+/phpbb_ads$image
 /piraja-banners/*$domain=piraja.se
 /play_videos/*$media,domain=fastighetssverige.se
 /plugins/ab_appnexus_ads/*
@@ -1245,6 +1255,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /ub-ads/*uba*.$script
 /ub-cookie-notice/*
 /urls/count.json$script,domain=emilysliv.se|gabriellajoss.me|kenzas.se|mybabydolls.se|vimedbarn.se
+/usabilla$script,domain=morningstar.se
 /users/2401/*$image,domain=ng.se
 /vendorList.js$script,domain=alingsastidning.se|bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 /verksamt-adrum.js$script,domain=verksamt.se
@@ -1371,6 +1382,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||lovisawallin.se^$generichide
 @@||lwadm.com/lw/pbjs$script,domain=barometern.se|blt.se|bt.se|kristianstadsbladet.se|olandsbladet.se|ostrasmaland.se|smp.se|sydostran.se|trelleborgsallehanda.se|ut.se|ystadsallehanda.se
 @@||moamattsson.se^$generichide
+@@||morningstar.com/scripts/ads.js$domain=morningstar.se
 @@||ng.se^$generichide
 @@||nouw.com^$generichide
 @@||openx.gamereactor.dk/www/delivery/fc.php$xmlhttprequest,domain=gamereactor.se
@@ -2460,6 +2472,7 @@ svd.se##div[data-controller="newslettersubscription"]
 sveajordskog.se##[id^="jords-"]
 svegot.se##.et_bloom_popup
 svegot.se##[itemtype="https://schema.org/WPAdBlock"]
+svensk-seo.se#@#.adsbygoogle
 svenskafans.com###cookie-information
 svenskafans.com##.ad_info
 svenskafans.com##.puff--ad
@@ -2472,6 +2485,7 @@ svenskhistoria.se##.module-etads
 svenskhistoria.se##.widget_et_ads
 svenskhistoria.se##a[target="_blank"][rel="noopener noreferrer"]
 svenskjakt.se##.flaket-premium-adverts
+svensktgolfforum.se##[data-ad-id]
 svensktidskrift.se###bannercolumn
 sverak.se###third > #custom_html-19
 sverige.nu###spopup
@@ -3230,6 +3244,7 @@ yougov.se##.cookie-confirm
 ||vikispot.com^$third-party
 ||vinguiden.com^$third-party
 ||vk.se^$csp=worker-src 'none'
+||walls.io^$domain=svensktgolfforum.se
 ||webbannons.ntm.eu^$subdocument
 ||webbcensus.com^$third-party
 ||webbjobb.io^*/abb-$script
