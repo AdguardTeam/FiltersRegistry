@@ -74,6 +74,10 @@
 !
 !######### Annoying elements (not ads)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/54035
+kuchnia.wp.pl##.content a[data-st-area="goToSG"][href="https://www.wp.pl"]
+kuchnia.wp.pl#?#tr[data-reactid]:not([class]):not([id]) > td[class] > div[class*=" "]:has(> div[class*=" "] > iframe[src^="https://forms.freshmail.io/"])
+kuchnia.wp.pl,pudelek.pl#%#//scriptlet("prevent-addEventListener", "openFloatingPlayer", "FloatingPlayer")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54037
 pudelek.pl###page_content > a[data-st-area="gotosg"][href="https://www.wp.pl/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53791
@@ -6545,6 +6549,7 @@ elmundo.es,standaard.be,closermag.fr,elnortedecastilla.es,elpais.com,ibtimes.co.
 ! ###optanon
 allianz.de,easybib.com,st.com,mauijim.com,citationmachine.net,idevice.ro,tagheuer.com,adevarul.ro,arris.com,beinsports.com,cnn.com,globalscape.com,hotnews.ro,lorealparis.rs,oxouk.com,salesforce.com###optanon
 !
+freeyou.ag#$#.cookies { display: none !important; }
 motionarray.com##.site-accept-tos-warning
 inc.com##div[class*="privacyPolicyPopup"]
 speedtest.net#?#.main > div.container div.notification-container:has(> div > div.notification > div.notification-content a[href="/about/privacy"])
@@ -10183,6 +10188,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+freeyou.ag#%#//scriptlet('remove-class', 'fixed-body', 'body,html')
 zeit.de#%#AG_onLoad(function(){-1 != window.location.href.indexOf("/zustimmung?url=")&&setTimeout(function(){var a = document.querySelector('.box__accbtn');a&&a.click()},1E3)});
 eurogamer.net#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector(".optanon-show-settings"); if(el) { el.click(); document.querySelector(".menu-item-advertising").click(); document.querySelector(".optanon-status-checkbox").click(); document.querySelector(".optanon-white-button-middle > button").click(); } }, 500); });
 adidas.pl#%#document.cookie="notice_preferences=0; path=/;";
@@ -10439,6 +10445,8 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/54076
+freeyou.ag#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53992
 @@||cdn.cookielaw.org/consent^$domain=eurogamer.net
 @@||cdn.cookielaw.org/skins^
