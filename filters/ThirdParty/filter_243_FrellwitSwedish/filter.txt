@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-05-05 12:59:52 CEST
+! Last modified: 2020-05-06 09:21:20 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -288,6 +288,8 @@ kwiss.me##.qz-related-quizes-item:has(span:has-text(/sponsrat av/i))
 kwiss.me##.square-item:has(.qz-quiz-sponsored)
 lajvo.se#$#.flex-video { opacity: 1 !important; }
 lajvo.se##.postCard:has-text(/bonusar|casino|betting/i)
+lchfarkivet.se#%#//scriptlet('ubo-aopw.js', 'lepopup_resize')
+lchfarkivet.se,mobilanyheter.net,villalivet.se#%#//scriptlet('ubo-set.js', 'MonsterInsights', 'undefined')
 lesscarbs.se##.post:has(p:has-text(/^annonssamarbete/i))
 linnherbertsson.se##.content:has(.sponsored-container)
 linnherbertsson.se#$#body { overflow-y: auto !important; }
@@ -319,7 +321,6 @@ mittkok.expressen.se#$#.main { width: 100% !important; }
 mmanytt.se##.img-featured-posts-image:has(a[href$="/annons/"])
 mobil.se#$#.layout-mobil-site { padding-top: 0 !important; }
 mobilanyheter.net#%#//scriptlet('ubo-acis.js', 'idpt')
-mobilanyheter.net,villalivet.se#%#//scriptlet('ubo-set.js', 'MonsterInsights', 'undefined')
 modette.se##.lazyload_bar.show:has(span:has-text(/sponsrat/i))
 moviezine.se##.others:has-text(/sponsrat/i)
 moviezine.se##[class*="inner_"]:has(.badge:has-text(/sponsrat/i))
@@ -574,8 +575,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###eu-cookie-bar
@@ -689,6 +690,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##a[title="LeoVegas"]
 ##div.ad.container
 ##div.cookievarning-wrap
+##div.newsletter-slider
 ##img[alt="Leovegas"]
 ##img[alt="Spela på Betsson"]
 ##img[data-original*="destination.se"]
@@ -1043,6 +1045,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/annonstorget/*$script,domain=svenskjakt.se
 /plugins/appbanners/*
 /plugins/arscode-ninja-popups/*$domain=horoskoptid.se|springlfa.se
+/plugins/arscode-social-slider$image,script
 /plugins/better-adsmanager/*
 /plugins/blog-analytics/*
 /plugins/bmb-dfp-plugin/*
@@ -1351,7 +1354,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=fotbollskanalen.se|tv4play.se
 @@||acdn.adnxs.com/ast/ast.js$script,domain=svd.se
 @@||ad*.vg.no/check.js$script,domain=aftonbladet.se
-@@||aftonbladet.se^$generichide
 @@||alingsastidning.se^$generichide
 @@||amazonaws.com/ads/$image,domain=jobb.maxkompetens.se
 @@||assets-cdn.mytaste.org/js/ads.js$script
@@ -1404,6 +1406,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||tidningenhalsa.se^$generichide
 @@||ttela.se^$generichide
 @@||typkanske.se^$generichide
+@@||www.aftonbladet.se^$generichide
 @@||www.alltforforaldrar.se/extra/js/ads.js$script
 _jquery.blockUI.$script,domain=fssweden.se
 aapl.se,digilar.se,hrnytt.se,ljuskultur.se,omvarlden.se,svenskfotboll.se##.cookies
@@ -3270,6 +3273,7 @@ yougov.se##.cookie-confirm
 ||wishpond.net^$third-party
 ||wonderpush.com^$third-party
 ||woomio.com/assets/js/analytics$third-party
+||wpcc.io^*/cookieconsent$script
 ||yelp.se/eu_cookie_notice$subdocument
 ||yelp.se/sit_rep
 ||yieldbird.com^$third-party
