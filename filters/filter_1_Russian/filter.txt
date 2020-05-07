@@ -5950,14 +5950,14 @@ sdamgia.ru#%#AG_abortOnPropertyRead('Ya.Direct');
 !
 ! START: Yandex
 !
-$cookie=/blcrm|bltsr|^specific\$|ScSvCIlBC|telecommunications|pronunciation|involved|adequateing/,domain=yandex.by|yandex.com|yandex.com.tr|yandex.fr|yandex.kz|yandex.ru|yandex.ua
+$cookie=/blcrm|bltsr|^specific\$|kNAcVGYFWhx|telecommunications|pronunciation|involved|adequateing/,domain=yandex.by|yandex.com|yandex.com.tr|yandex.fr|yandex.kz|yandex.ru|yandex.ua
 !
-auto.ru,avito.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.kz,gismeteo.md,gismeteo.ru,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,liveinternet.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,razlozhi.ru,sdamgia.ru,syl.ru,vz.ru#%#AG_removeCookie('/blcrm|bltsr|^specific\$|ScSvCIlBC|telecommunications|pronunciation|involved|adequateing/');
+auto.ru,avito.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.kz,gismeteo.md,gismeteo.ru,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,liveinternet.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,razlozhi.ru,sdamgia.ru,syl.ru,vz.ru#%#AG_removeCookie('/blcrm|bltsr|^specific\$|kNAcVGYFWhx|telecommunications|pronunciation|involved|adequateing/');
 ! TODO: add domains auto.ru and kinopoisk.ru to the rule below after the next release of AG for macos (current 2.3.2)
-$cookie=/blcrm|bltsr|^specific\$|ScSvCIlBC|telecommunications|pronunciation|involved|adequateing/,domain=baby.ru|businessman.ru|dni.ru|e1.ru|echo.msk.ru|fb.ru|forexpf.ru|gismeteo.by|gismeteo.kz|gismeteo.md|gismeteo.ru|gorodrabot.ru|infoniac.ru|it-tehnik.ru|kakprosto.ru|liveinternet.ru|mk.ru|nkj.ru|ohotniki.ru|oko-planet.su|otzovik.com|rambler.ru|razlozhi.ru|sdamgia.ru|syl.ru|vz.ru
+$cookie=/blcrm|bltsr|^specific\$|kNAcVGYFWhx|telecommunications|pronunciation|involved|adequateing/,domain=baby.ru|businessman.ru|dni.ru|e1.ru|echo.msk.ru|fb.ru|forexpf.ru|gismeteo.by|gismeteo.kz|gismeteo.md|gismeteo.ru|gorodrabot.ru|infoniac.ru|it-tehnik.ru|kakprosto.ru|liveinternet.ru|mk.ru|nkj.ru|ohotniki.ru|oko-planet.su|otzovik.com|rambler.ru|razlozhi.ru|sdamgia.ru|syl.ru|vz.ru
 $cookie=/^los\$/,domain=auto.ru
 ! zen.yandex.ru - broken resources
-~passport.yandex.ru,~zen.yandex.ru,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#%#AG_removeCookie('/blcrm|bltsr|^specific\$|ScSvCIlBC|telecommunications|pronunciation|involved|adequateing/');
+~passport.yandex.ru,~zen.yandex.ru,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua#%#AG_removeCookie('/blcrm|bltsr|^specific\$|kNAcVGYFWhx|telecommunications|pronunciation|involved|adequateing/');
 !
 ! makes kinopoisk.ru redirect to sso.kinopoisk.ru and back endlessly
 ! ||kinopoisk.ru^$cookie=/consultant|introductory|knowledge|transfer|technology|workplace/
@@ -6430,6 +6430,7 @@ glavnoe-smi.ru#?#.footer-top-area > div.container > div.row > div[class^="col-"]
 fontanka.ru#?##app div[class] > aside[class] + div[class] > section[class] article[data-io-article-url] ~ div:has(> h3:contains(Наши партнёры))
 fontanka.ru#?##app div[class] > aside[class] + div[class] > section[class] > div > div[class] > div[class] > div[class] > div[class]:has(div[id^="adfox_"])
 !
+zr.ru#?##root > div > div[class^="relap-"] > div[class][style] > div > div[class^="relap-"][style] > div[class]:has(div[class^="relap-"] > a[target="_blank"][rel^="noopener"])
 habr.com#?#.sidebar_right > div.default-block:has(> div.sidebar-block > div.sidebar-block__banner)
 neg.by#?#.right > div.h2:contains(Реклама)
 neg.by#?#.right > div.h2:contains(Реклама) + div > div.banner
@@ -8006,6 +8007,9 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/54994
+zr.ru#$##storyAsideContent > div.aside-panel-other { bottom: auto !important; }
+zr.ru#$##storyAsideContent > div.sticky-parent { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54579
 filebase.ws#$#body > div.root { top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54398
@@ -19002,8 +19006,12 @@ betahdrezka.com,cokinopoisk.com,hdrezka-ag.com,hdrezka-online.me,hdrezka.club,hd
 ||24smi.org/adw/
 ||24smi.org/adwiles
 !
-dota2.ru##.darn
-dota2.ru##.kratos
+||dota2.ru/img/pmo*ua.jpg
+||dota2.ru/img/lbmaybrand*.jpg
+dota2.ru##body > div[id] > div[class] > div > a[rel="nofollow noreferrer noopener"]
+dota2.ru##.subline + style + div > a[target="_blank"][rel="nofollow"]
+dota2.ru##.lern
+dota2.ru##.bankreken
 dota2.ru##.a-in-after
 dota2.ru##.bn-btm
 !
