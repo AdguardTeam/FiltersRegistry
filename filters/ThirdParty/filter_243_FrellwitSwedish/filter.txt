@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-05-10 15:16:54 CEST
+! Last modified: 2020-05-11 11:24:29 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -31,7 +31,7 @@
 /adblock_mobile.$important,script,domain=gamereactor.se
 /aftonbladet/crypt/?lpkey$all
 /expressen/crypt/?lpkey$all
-/google-analytics-dashboard$important,script,domain=aktuellsakerhet.se|aktuelltfokus.se|byemilia.nu|cannabis.se|cyclingplus.se|firstfoto.se|fitnessformen.se|fysikstugan.se|halsafitness.se|hemmahosulrika.se|it-kanalen.se|macguiden.net|maklarvarlden.se|norrahalland.se|ordfrontforlag.se|ordfrontmagasin.se|plazakvinna.com|torbjornstips.se|transportarbetaren.se|ulrikadavidsson.se|vitamixsverige.se
+/google-analytics-dashboard$important,script,domain=aktuellsakerhet.se|aktuelltfokus.se|byemilia.nu|cannabis.se|cyclingplus.se|firstfoto.se|fitnessformen.se|fysikstugan.se|halsafitness.se|hemmahosulrika.se|it-kanalen.se|macguiden.net|maklarvarlden.se|norrahalland.se|ordfrontforlag.se|ordfrontmagasin.se|plazakvinna.com|spanaren.se|torbjornstips.se|transportarbetaren.se|ulrikadavidsson.se|vitamixsverige.se
 /google-analytics-for-wordpress$important,script,domain=4health.se|alltsomsker.nu|bandyfeber.com|batliv.se|battrestadsdel.se|binero.se|blogg.tv.nu|blogmindshare.se|boktugg.se|bugburger.se|businessarena.nu|bussmagasinet.se|callmecupcake.se|carinasphotolifestyle.se|clarakron.com|crisp.se|datatjej.se|dialasen.com|eventeffect.se|exakt24.se|fantasiresor.se|firefighters.se|fjl.se|flm.nu|folkblick.se|foodstories.se|fores.se|forummag.fi|frolundatorg.se|gamingaktier.com|gazzine.com|gronarader.se|hammarbybandy.se|hockeystaden.se|hujada.nu|hype.se|i-chalmers.se|internettricks.se|justwannahavefun.se|karolinesvintage.se|katerinamagasin.se|kultwatch.se|kvalitetsmagasinet.se|kvartal.se|ladok.se|magasinetneo.se|manskligsakerhet.se|miljo-utveckling.se|miljomagasinet.se|mmanytt.se|mobilanyheter.net|mokkasin.com|nyhetsbyran.org|ordkollen.se|popularastronomi.se|publichd.se|pustervik.nu|ralycka.se|resemagasinetbuss.se|resfredag.se|restaurangbar.se|schack.se|shoegazing.se|sjoaguden.se|sportbilen.se|sportpanelen.se|springlfa.se|starbys.se|staunstrup.se|streamasport.com|teknikministeriet.se|telekomidag.se|tidskriftenrespons.se|tina.se|trafiksakerhet.se|traningsgladje.se|tryckkokning.se|turismnytt.se|utebarn.se|vatternrundan.se|vdtidningen.se|vegokak.se|vemdalen.se|veterinarmagazinet.se|villalivet.se|vskbandy.se|wesafe.se|xn--sprkkrnikan-z8a8t.se|zeinaskitchen.se
 /google-analytics-premium$important,script,domain=branschkoll.se|dagensanalys.se|ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 /streamsense.$important,script,domain=dn.se
@@ -357,7 +357,7 @@ piraja.se##.intro:has(.spons)
 privataaffarer.se##.data-grid-teaser:has(.teaser-label:has-text(/^annons/i))
 professionalsecrets.se#%#//scriptlet('ubo-acis.js', '$', 'fancybox')
 pussad.se#$#html.g1-popup-visible { overflow: initial !important; }
-radio.se#%#//scriptlet('ubo-acis.js', 'radio_adblockEventLog')
+radio.se###main > div:last-child:has-text(/använder cookies/i)
 radron.se#$#.content__body.cms-content.restricted { max-height: initial !important; overflow: initial !important; }
 radron.se#$#.read-more__overlay, .graybubble__overlay { position: initial !important; }
 ratsit.se#$#body { overflow: auto !important; }
@@ -840,7 +840,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /casino/$image,domain=battrestadsdel.se|dayviews.com|hockeysverige.se|hypeline.se|kamrat.com|kulturbloggen.com|newsvoice.se|nyheter24.se|spray.se|svenskhistoria.se|zeromagazine.nu
 /check-paywall$domain=dn.se
 /citygate/payingcompanies$xmlhttprequest
-/click-performance/cpg_ads.$script
 /closest-native$xmlhttprequest,domain=expressen.se
 /cm-ad-changer-server
 /cmp.$script,domain=allas.se
@@ -866,6 +865,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /cookiswarning.$script,domain=visitskargarden.se
 /core/analytics$script,domain=sv.geneanet.org
 /core/minify/storage/*$script,domain=manolo.se
+/cpg_ads.$script
 /cs1pc.js$domain=kiaindex.se
 /cx-emediate-userprofile-se.$script
 /cx/Matchad$subdocument
@@ -1127,6 +1127,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/pixelyoursite$image,script
 /plugins/popup$domain=bugburger.se|forvaltarforum.se|grillbaronen.se|kvalitetsmagasinet.se|miljo-utveckling.se|mmabetz.se|ordfrontmagasin.se|sportpanelen.se|telekomidag.se|vdtidningen.se
 /plugins/popup-by-supsystic$domain=exakt24.se
+/plugins/popups/*$script,domain=svenskhistoria.se
 /plugins/quantcast-choice/*$script,domain=muscles.se
 /plugins/random-banner/*
 /plugins/sandviks-weblog/*$script,domain=babyvarlden.se
@@ -1856,6 +1857,7 @@ eurosport.se##.pub
 eurosportplayer.com###banner
 evalent.se##.loadPage
 eventeffect.se###secondary > .widget:nth-child(2)
+eventeffect.se,executiveeffect.se,saleseffect.se###nyhetsbrev-pp-wrapper__container
 eventeffect.se,executiveeffect.se,saleseffect.se##.partnerartikel
 eventeffect.se,executiveeffect.se,svartgul.se,tvmatchen.nu###panorama
 evertiq.se###carpet
@@ -2945,6 +2947,7 @@ yougov.se##.cookie-confirm
 ||icarabatt.com^
 ||iconosquare.com^$third-party
 ||idg.se/sharecounter?$xmlhttprequest
+||idrottonline.se/client-views/cookieinfo$xmlhttprequest
 ||imgix.net^*/analytics.$script
 ||imp.laget.se^$image
 ||improvedigital.com^$third-party
