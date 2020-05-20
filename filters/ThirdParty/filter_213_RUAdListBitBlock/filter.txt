@@ -1,8 +1,8 @@
 !
-! Checksum: P9YzZ+R5Myr86s7Bpr+HDg
-! OriginalVersion: 202005191250
+! Checksum: djp4zk5zQW4f73EYCAgXAA
+! OriginalVersion: 202005201640
 ! Title: RU AdList: BitBlock + Fanboy's General
-! Last modified: 19 May 2020 12:50 UTC
+! Last modified: 20 May 2020 16:40 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -895,7 +895,7 @@ livemaster.ru##.social-like-banner
 newstube.ru##.social-like-it
 1plus1.ua##.social-likes--small
 112.ua,fishki.net,rusplt.ru##.social-line
-mybrazz.club##.social-lines
+mybrazz.club,prokazan.ru##.social-lines
 mybrazz.club##.social-links-left
 kopilkasovetov.com##.social-media-area
 xsport.ua##.social-sharer-holder
@@ -2087,6 +2087,7 @@ _userbar_$image
 ||vc.ru/static/special/yota-stratum/
 ||vesti.uz/wp-content/plugins/snow-flurry/
 ||video.gamer-info.com/*.mp4|
+||vk.com/video_ext.php?*&autoplay=1$subdocument,domain=kanobu.ru
 ||vk.com/widget_post.php$domain=kritika24.ru
 ||vseiski.ru/consultant/
 ||wikimedia.org/wiki/Special:BannerLoader?$domain=wikipedia.org
@@ -2212,7 +2213,8 @@ kinogo-hd.net###go_top
 kinoafisha.ua###goodbye-box
 kingisepp-today.ru,xn----etbbecbrbp5ahkja1ae7v.xn--p1ai###gritter-notice-wrapper
 pogoda.by###header > table td[width][style="border: 0px; padding:0px;"] > *
-re.kufar.by,www.kufar.by###header ~ div[class^="ft-"] + div[class^="k"]:not([id]):not([style])
+re.kufar.by###header ~ div[class] + div[class^="k"]:last-child:not([id]):not([style])
+www.kufar.by###header ~ div[class^="ft-"] + div[class^="k"]:not([id]):not([style])
 master-css.com###header1 > h2 > span
 alexfilm.cc###headerProxy
 9111.ru###headerTopAsk
@@ -3035,6 +3037,7 @@ vedomosti.ru##aside.article__sidebar
 www.kinopoisk.ru##aside.dialog
 nur.kz##aside.groups--vk
 kanobu.ru#?#aside[class]:-abp-has(> iframe[src*="playercdn.cdnvideo.ru/aloha/players/igromania_player.html"])
+kanobu.ru#?#aside[class]:-abp-has(> iframe[src*="vk.com/video_ext.php?"][src*="&autoplay=1"])
 games.rambler.ru#?#body > #app > div[class*=" "]:-abp-has(a[href*="yabrowser"])
 ntv.ru##body > #bg250
 computerworld.ru,osp.ru##body > #bottom-bar
@@ -3111,6 +3114,7 @@ www.livejournal.com#?#div[class^="cat-widget"] > div[class*="cat-widget__card-wr
 avito.ru##div[class^="catalog-promo"]
 qiwi.com##div[class^="cookies-self-"]
 megogo.net##div[class^="cookiesNotification"]
+prokazan.ru##div[class^="divider"][class$=" divider_bottom-space"]
 google.com,google.com.ua,google.ru##div[class^="gb_"] > div[aria-label="promo"]
 google.com,google.com.ua,google.ru##div[class^="gb_"] > div[style="behavior:url(#default#userData)"]
 fssprus.ru##div[class^="header-infoline-"]
@@ -3151,6 +3155,7 @@ azbooki.ru,engisys.ru,zip1000.ru##html > div[style^="color: rgb"]
 www.championat.com##iframe[src*="bet.championat.com"]
 driveroff.net,samlab.ws##iframe[src*="money.yandex.ru"]
 igromania.ru##iframe[src*="player.twitch.tv/?channel=igromania"][src*="autoplay=true"]
+kanobu.ru##iframe[src*="vk.com/video_ext.php?"][src*="&autoplay=1"]
 depo.ua,igromania.ru,kanobu.ru##iframe[src^="https://www.youtube.com/embed/"][src*="modestbranding"]
 chastnik-m.ru##img[alt="баннер"]
 narutoplanet.ru##img[src*="narutoplanet.ru/player_Uppod/logo"]
@@ -3421,9 +3426,11 @@ market.yandex.by,market.yandex.kz,market.yandex.ru,market.yandex.ua,market.yande
 yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##div[id^="BlogPost"][data-state*="/promo/popup/"]
 !
 ! - Экспериментальные правила, добавлять только для доменов, на которых нет :-abp, либо изолировать
-www.kinopoisk.ru#$?#.kinopoisk-header-sticky-container { top: 0 !important }
-www.kinopoisk.ru#$?#.kinopoisk-header__navigation { margin-top: 0 !important }
-www.kinopoisk.ru#$?#header > .kinopoisk-header-branding { height: 0 !important }
+www.kinopoisk.ru#$?##kinopoisk-header-sticky-container { top: 0 !important }
+www.kinopoisk.ru#$?#.app__header[style^="--header-height:"] { top: 0 !important }
+www.kinopoisk.ru#$?#.desktop-layout-with-sidebar__header[style^="--header-height:"] { top: 0 !important }
+www.kinopoisk.ru#$?#header[style^="--header-height:"] > div[style*="background-color:"] + div[class] { margin-top: auto !important }
+www.kinopoisk.ru#$?#header[style^="--header-height:"] > div[style*="background-color:"] { display: none !important }
 !
 ! - "Тяжёлая артиллерия" против хитрой рекламы --------------------------------
 ! *** ruadlist:bitblock/magic.txt ***
