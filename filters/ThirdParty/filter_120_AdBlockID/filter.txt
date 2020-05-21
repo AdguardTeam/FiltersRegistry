@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 20.141.983
+! OriginalVersion: 20.142.558
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 20 May 2020 16:23 UTC
+! Last modified: 21 May 2020 09:18 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -823,6 +823,7 @@ _GIF1200x120-
 ##.ads-bawah
 ##.ads-bawah-player
 ##.ads-bawah-player-m
+##.ads-billboard
 ##.ads-bock-1
 ##.ads-bottom-fixed
 ##.ads-in-article
@@ -839,6 +840,7 @@ _GIF1200x120-
 ##.ads-skin__fluid--right
 ##.ads-skycraper
 ##.ads-sticky-bottom
+##.ads-top-bottom-headline
 ##.ads-two
 ##.ads-widget-kanan
 ##.ads-widget-kecil
@@ -1229,6 +1231,7 @@ _GIF1200x120-
 ##.td-ad-m
 ##.td-ad-p
 ##.td-ad-tp
+##.td-navbar-ads
 ##.top-ads-container
 ##.top-sponsor-besar
 ##.top-sponsor-kecil
@@ -7872,12 +7875,17 @@ _penggugur_kandungan_$image
 _banner.$image,domain=bantennews.co.id
 ||blogspot.com^*iklan$image,domain=inilahsultra.com|investigasindo.com
 ||drive.google.com/uc?export=$image,domain=kepri.info|lintaskepri.com|seputarkepri.co.id|suluhkepri.com
+||image-korankaltim.sgp1.digitaloceanspaces.com^*/ads/$image
 !
 ||adsimg.kompas.com^
 ||ajnn.net/files/sewaan/$image
 ||akurat.co/images/banner/$image
 ||analisadaily.com/imagesads/$image
 ||anteroaceh.com/files/sewaan/$image
+||apahabar.com^*/banner-$image
+||apahabar.com^*/bannerluar-$image
+||apahabar.com^*/bannerluarnew-$image
+||apahabar.com^*/benner-luar-$image
 ||ayobandung.com/assets/img/banner-$image
 ||ayosemarang.com/assets/img/banner_$image
 ||ayotegal.com/assets/img/banner/$image
@@ -7910,6 +7918,7 @@ _banner.$image,domain=bantennews.co.id
 ||detiksumsel.com/media/header_kiri/*/thumbheader_kiri*.jpeg$image
 ||dutatv.com^*/ads-$image
 ||eramuslim.com^*/banners/$image
+||fajar.co.id^*-banner$image
 ||fajarbali.co.id/images/banners/$image
 ||faktualnews.co/images/*-300px.$image
 ||gagasanriau.com^*/banner/$image
@@ -8055,8 +8064,10 @@ kontan.co.id###div-Halfpage-Personalfinance
 kontan.co.id###div-Halfpage-Regional
 kontan.co.id###div-Halfpage-Yangter
 faktabanten.co.id###fixedban
+apahabar.com###header-banner
 swarnajambi.co.id###leader-wrap
 detik.com###otp_banner
+apahabar.com###sidebar-right img[width="300"][height="132"]
 bola.net###top_leaderboard
 beritasatu.com###topbanner
 kapanlagi.com###v5-marcommpromotion
@@ -8119,9 +8130,11 @@ detikntb.com,fajarmanado.com,sulutreview.com##.headbanner
 semarakpost.com##.header-ad-section
 tangerangcorner.com##.header-adds
 liputanrakyat.com,panditfootball.com,riaukarya.com##.header-banner
+apahabar.com##.header-banner-wrap
 jurnalbandung.com##.header-image
 petisi.co##.header__banner
 kaltengekspres.com##.iklan
+korankaltim.com##.img-ads
 ligaolahraga.com##.infeedcenter_homepage
 suarabojonegoro.com##.inner-floatbanner-bottom
 kompas.com,sonora.id##.kcm
@@ -8137,7 +8150,7 @@ detik.com##.newsfeed-ads
 koropak.co.id##.parallax-ads
 medcom.id##.parallax_ads
 ngopibareng.id##.scroll-ad
-ngopibareng.id##.scroll-ad-visible.blink_me
+ngopibareng.id##.scroll-ad-visible
 harianjogja.com##.size-300x250
 detik.com##.skybanner
 harianjogja.com##.sp-griya
@@ -8152,6 +8165,7 @@ mtsbirrulrensing.com##.twp-ad
 newskaltim.com##.vc_single_image-img
 inilah.com##.wb-300x250
 nusadaily.com##.widget-area .attachment-600x600
+panrita.news##.widget-area img[alt^="adv" i]
 nusadaily.com##.widget-area img[src$=".gif"]
 viralkaltim.com##.wpb_wrapper
 fajarmanado.com,sulutreview.com##.wrap-banner
@@ -8173,6 +8187,7 @@ tabloidjubi.com##img[alt*="advertisement"]
 corongrakyat.co.id##img[alt*="banner"]
 sakanews.com##img[alt="Your ads"]
 bogornews.com,mediakendari.com,zonasultra.com##img[alt^="Iklan"]
+sulselsatu.com##img[alt^="iklan" i]
 mediakendari.com,nasionalnews.id,zonasultra.com##img[alt^="iklan"]
 pewarta-indonesia.com##img[sizes$="1000px"]
 suarabantennews.com##img[sizes$="1072px"]
@@ -8821,7 +8836,7 @@ iklanpopuler.com,sebariklanbaris.net,ziyata.com#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/467
 @@/social-sharing-$script,domain=axe.com
-! Checksum: 2HiO2px2iPcE6QutDlXL6Q
+! Checksum: ELm7j4ixcbr+4TPbQLlG4g
 
 ! OriginalVersion: 20.141.980
 ! Title: AdBlockID Plus
