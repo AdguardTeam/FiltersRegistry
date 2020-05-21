@@ -1,5 +1,5 @@
 !
-! OriginalVersion: 21May2020v5
+! OriginalVersion: 21May2020v8
 ! Title: Adblock List for Finland
 ! Description: Finnish adblock list
 ! Expires: 4 days
@@ -197,6 +197,7 @@ _mainosnappi.
 ##[href^="https://tc.tradetracker.net/"]
 ##a[href*="/clickthrgh.asp?"]
 ##a[href*="adtraction.com"]
+##a[href^="https://app.readpeak.com/ads"]
 ##div[class="ad-banner"]
 ##div[class="ad-wrapper"]
 ##div[class="block-ad"]
@@ -531,7 +532,7 @@ www.is.fi###kumppaneiden-tarjoukset
 www.is.fi##.border-b.lg\:w-main-lane.bg-is-ad-blue.mb-16
 www.is.fi##.is-advertorial.external.full-width.teaser
 www.is.fi##.ml-16.lg\:block.w-right.hidden > .border-b.lg\:w-main-lane.bg-is-ad-blue.mb-16
-www.is.fi##.overflow-hidden.relative.aspect-ratio-container.jsx-1666662990
+www.is.fi##a[href="https://www.startel.fi/?infront"]
 www.is.fi##div.sadblob-loading
 www.tori.fi###banner_panorama_bottom
 www.tori.fi###footer_partner_links
@@ -693,24 +694,18 @@ mtvuutiset.fi,mtv.fi,suomiareena.fi,www.studio55.fi,lumijapyry.fi,www.msn.com##.
 @@||fwmrm.net/crossdomain.xml$xmlhttprequest,domain=www.viafree.fi
 @@||mssl.fwmrm.net/p/MTG_Brightcove_HTML5/AdManager.js$script,domain=www.viafree.fi
 ||freewheel-mtgx-tv.akamaized.net/m/1/*.mp4$media,domain=www.viafree.fi
-! block "sponsored articles"/"native ads" on some sites
-##.spklw-post-attr[data-type="ad"]
-##a[href^="https://app.readpeak.com/ads"]
 ! unbreak Telia password change (maybe other functions as well), endless loading
 @@||www.telia.fi/fi/B2B_Portal/resources/js/b2b.portal.eventTracking.js$script,domain=www.telia.fi
-! unbreak "sponsored articles" from viewing on hs.fi
-! if someone gets idea how to block only from /mainos/, please tell me
-hs.fi#@#.mainos
-! hs.fi#@#DIV[class^="advert"]
-! https://www.hs.fi/aihe/mainokset/
-www.hs.fi#@#.mainokset
 ! unbreak "lue seuraavaksi" (read next) section
 ! broken by Easyprivacy & Fanboy's Annoyance List
 @@||scdn.cxense.com/cx.js$domain=ess.fi|savonsanomat.fi|itahame.fi|ksml.fi
 @@||content-thumbnail.cxpublic.com$domain=ess.fi|savonsanomat.fi|itahame.fi|ksml.fi
 ! broken by Easyprivacy, products on the main page
 @@||*/zooplus.fi/scripts/resonance.js
-! unbreak sponsored articles on kaksplus.fi
+! unbreak opening of sponsored articles
+anna.fi#@#.sponsored-content
+hs.fi#@#.mainos
+hs.fi#@#.mainokset
 www.kaksplus.fi#@#.sponsored-content
 ! Tori.fi ads
 ##[src*="://ad.doubleclick.net/"]
