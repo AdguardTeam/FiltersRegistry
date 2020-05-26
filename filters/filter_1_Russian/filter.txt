@@ -74,6 +74,7 @@
 !
 ! Содержит доменные имена, использующиеся рекламными сетями.
 !
+||spylees.com^$third-party
 ||info-megarules.ru^$third-party
 ||k3node.com^$third-party
 ||reclame.io^$third-party
@@ -7691,8 +7692,8 @@ ddgroupclub.win#%#//scriptlet("abort-current-inline-script", "Math.ceil", "x.cha
 ati.su#%#//scriptlet("set-constant", "Object.prototype.tryGetAdv", "undefined")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50821
 kinokong.org#%#//scriptlet("abort-on-property-read", "ABN")
-! https://github.com/AdguardTeam/AdguardFilters/issues/49446
-zloekino.ru#%#//scriptlet("prevent-window-open", "1", "stargate")
+! https://github.com/AdguardTeam/AdguardFilters/issues/56094
+zloekino.su,zloekino.ru#%#//scriptlet("prevent-window-open", "1", "stargate")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49364
 1tv.ru#%#//scriptlet("abort-on-property-read", "Object.prototype.disableSeek")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49307
@@ -8089,6 +8090,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/56099
+flashplayer.ru#$#.gametils > li { margin: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56030
 lordfilm6.tv,lordfilm7.tv#$#body > div.wrap { margin: 0 auto 0 auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55575
@@ -10778,6 +10781,9 @@ overclockers.ru##a[href^="http://segodnia.club/"] ~ *
 ||lena-miro.ru/*&callback=Begun_Autocontext_
 ||olegmakarenko.ru/*&callback=Begun_Autocontext_
 !
+/content/stargate/$image,domain=zloekino.ru|zloekino.su
+flashplayer.ru##.gametils > div[id][style*="z-index"][style*="position"][style*="overflow"]
+flashplayer.ru##.left > a[target="blank"] > img
 forum.ixbt.com##.horb60
 thereminder.ru##.promo
 muz-tv.ru##.rennab-placeholder
@@ -11161,7 +11167,6 @@ jstack.ru##aside > div.profile-inner + a[target="_blank"] > img
 kinotora.com##article > div.tfileblc + div[class]
 belretail.by##.article-content > article > p > a[target="_blank"] > img
 chipmaker.ru##.ipsSpacer_both
-||zloekino.ru/content/stargate/*.jpg
 mathprofi.ru##table[width][align="center"] > tbody > tr > td[valign="top"] > div[id="bar"] + p
 mathprofi.ru##table[width][align="center"] > tbody > tr > td[valign="top"] > p[align="center"] + noindex > p[align="center"]:not([style])
 kulturologia.ru##.post > div.content > p + center
@@ -19796,6 +19801,8 @@ pets.mail.ru##div[data-name="bottom ad"]
 pogoda.mail.ru##div#right_240x400
 pogoda.mail.ru##div[id^="trg-b-"]
 pogoda.mail.ru##iframe[src*="//r.mradx.net/"][width="100%"]
+!
+postmaster.mail.ru##.rb_banner
 !
 realty.mail.ru##.rb-video-widget
 realty.mail.ru##.js-special__container > div.p-special-wrap__item.js-track_click
