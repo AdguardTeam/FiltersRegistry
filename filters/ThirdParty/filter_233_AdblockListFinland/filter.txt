@@ -1,10 +1,11 @@
 !
-! OriginalVersion: 30May2020v2
+! OriginalVersion: 30May2020v7
 ! Title: Adblock List for Finland
 ! Description: Finnish adblock list
 ! Expires: 4 days
 ! Homepage: https://github.com/finnish-easylist-addition/finnish-easylist-addition
 ! License: https://unlicense.org/
+! -----EXTENDED FILTERS-----
 aamulehti.fi##DIV[id*="pipe"] > div > div:has-text(Kaupallinen yhteistyö)
 aamulehti.fi##DIV[id^="morearticles_"]:has(h2:has(span:has-text(Kaupallinen yhteistyö)))
 arvopaperi.fi##div#skyscraper-height-div > aside > div > a:has-text(Kaupallinen yhteistyö)
@@ -56,14 +57,10 @@ mediuutiset.fi##div#root > div > div > div > div > div > div:has-text(Kaupalline
 mobiili.fi##a.isobrick.half.one_col > .featuredinner:has(.bubble:has-text(Sponsoroitu))
 mobiili.fi##div.fullarticle:has(img[src="https://mobiili.fi/aaa.png"])
 mobiili.fi##p:has(small:has-text(Mainos:))
-! appears when blocking ^^:
-||mobiili.fi/wp-content/themes/mobiilitheme/images/small-loading.gif$image
 murha.info##.widget_text.widget:has-text(/Mainos|Autonosatkauppa.fi|Jurinet/)
 murha.info###custom_html-4 > .custom-html-widget.textwidget > table > tbody > tr > td
 muropaketti.com##article.grid__item_md-1-5.grid__item_1:has-text(Mainos)
 talouselama.fi##div#skyscraper-height-div > div > aside > div > div:has-text(KAUPALLINEN YHTEISTYÖ)
-talouselama.fi##div#skyscraper-height-div > div > main > div > section > div:has-text(Kaupallinen Yhteistyö)
-talouselama.fi##div#skyscraper-height-div > div > section > div:has-text(Kaupallinen Yhteistyö)
 talouselama.fi##div#skyscraper-height-div > section > div > div:has([src*="assets.almatalent.fi/static/podcasts/te/Privanet/privanet-podcast.jpg"]):has-text(Kaupallinen Yhteistyö)
 tekniikkatalous.fi##div#skyscraper-height-div > aside > div > div > a:has-text(Kaupallinen yhteistyö)
 tekniikkatalous.fi##div#skyscraper-height-div > section > div > a:has-text(Kaupallinen yhteistyö)
@@ -77,12 +74,14 @@ uusisuomi.fi##div#skyscraper-height-div > aside > section > a:has-text(Kaupallin
 uusisuomi.fi##div#skyscraper-height-div > div > aside > section > a:has-text(Kaupallinen yhteistyö)
 uusisuomi.fi##div#skyscraper-height-div > div > main > div > a:has-text(Kaupallinen yhteistyö)
 vapaasana.swedishforum.net#$##main-content { margin-top: -100px !important; }
-! Scripts
+! -----EXTENDED FILTERS END-----
+! -----NETWORK FILTERS-----
+! appears when blocking ^^:
+||mobiili.fi/wp-content/themes/mobiilitheme/images/small-loading.gif$image
+! -----NETWORK FILTERS END-----
+! -----SCRIPTS-----
 ! Mikrobitti anti adblock
 mikrobitti.fi#%#//scriptlet('ubo-nostif.js', 'bait')
-! MTV Oy video ads
-! https://github.com/finnish-easylist-addition/finnish-easylist-addition/issues/14#issuecomment-438683057
-! https://github.com/finnish-easylist-addition/finnish-easylist-addition/issues/12#issuecomment-438682037
 ! Gamereactor antiadblock nag
 gamereactor.fi#%#//scriptlet('ubo-aopr.js', 'adblockEnabled')
 ! Pirmediat Oy anti adblock
@@ -90,6 +89,7 @@ aamulehti.fi,satakunnankansa.fi,valkeakoskensanomat.fi,nokianuutiset.fi,janakkal
 ! The Pirate bay proxies ad windows
 proxyproxy.fi,pirateproxy.fi,piratesbay.fi,tpbproxy.fi,piratebays.fi#%#//scriptlet('ubo-window.open-defuser.js')
 uusisuomi.fi,xxl.fi,kaleva.fi#%#//scriptlet('ubo-abort-current-inline-script.js', 'NREUM')
+! -----SCRIPTS END-----
 !
 ! Please report any issues at:
 ! https://github.com/finnish-easylist-addition/finnish-easylist-addition/issues
@@ -487,9 +487,12 @@ suomi24.fi##div[class*="Ad__AdWrapper"]
 suomifutis.com##[href$="/nettikasinot/"]
 superlehti.fi##.ad-banner-lift__article.ad-banner-lift
 supersaa.fi##div[class^="supers-app-promo-container"]
+talouselama.fi##[id="skyscraper-height-div"] > div > main > div[class="LazyLoad is-visible"] > section > div:first-of-type + div[class^="sc-"]
 talouselama.fi##div#skyscraper-height-div > aside > div > a[href^="/kumppaniblogit/"]
 talouselama.fi##div#skyscraper-height-div > div > aside > div > a[href^="/kumppaniblogit/"]
-talouselama.fi##div#skyscraper-height-div > div > aside > div > a[href^="https://studio.talouselama.fi/"] > div
+talouselama.fi##div#skyscraper-height-div > div > aside > div > a[href^="https://studio.talouselama.fi/"] > div[class^="sc-"]
+talouselama.fi##div[class^="article-body"] > p[class^="paragraph"] ~ [class^="sc-"]
+talouselama.fi##div[id="skyscraper-height-div"] > div[class="LazyLoad is-visible"] > section > div:first-of-type + div[class^="sc-"]
 taisto.org###mw-data-after-content > div
 taisto.org##a[id="top"] ~ [id="siteNotice"][class="mw-body-content"]
 tehylehti.fi##.commercial-bottom.commercial
@@ -501,14 +504,10 @@ tekniikkatalous.fi##div#skyscraper-height-div > div > section > div > a[href^="/
 ticketmaster.fi##div[id^="ad-slot-"]
 tivi.fi##a[href^="/kumppaniblogit/"]
 tivi.fi##a[href^="https://studio.tivi.fi/tivi-studiovieras/"]
-ts.fi##[class$="nativead"]
-ts.fi##[class="tsv3-c-common-article__contentad notloaded"]
 tulikulma.fi##.slideshow
 uudenkaupunginsanomat.fi###auto-grid-container-5c40764673d19
 uusisuomi.fi##div#skyscraper-height-div > div > aside > section > a[href^="https://kumppaniblogit.uusisuomi.fi/"]
 uutissuora.fi##div[class="td-all-devices"]
-uutisvirta.fi###fancybox-overlay
-uutisvirta.fi##aside > div.spacer
 valioliiga.com##[href$="/vedonlyonti/"]
 vapaasana.swedishforum.net###p0
 vapaavuoro.uusisuomi.fi##.gray.commercial-blog-card
@@ -547,6 +546,9 @@ www.tori.fi###footer_partner_links
 www.tori.fi##DIV[id="banner_panorama_topmost"]
 www.tori.fi##DIV[id="panorama_top"]
 www.tori.fi##DIV[id="panorama_topmost"]
+www.ts.fi##div[class*="tsv3-c-common-smart noad-hideaction"]
+www.ts.fi##[class$="nativead"]
+www.ts.fi##[class="tsv3-c-common-article__contentad notloaded"]
 ylilauta.org###right > .center
 ! -----EXTENDED FILTERS END-----
 ! -----NETWORK FILTERS-----
@@ -675,10 +677,6 @@ ylilauta.org###right > .center
 ||ylilauta.org/fcdn/
 ! -----NETWORK FILTERS END-----
 ! -----UNSORTED-----
-! vr.fi info messages incorrectly blocked by fanboy's cookiemonster
-! https://github.com/ryanbr/fanboy-adblock/issues/666
-vr.fi#@#.infoMessages
-www.vr.fi##.headerContents > .infoMessages
 ! Sanoma Oyj video ads
 ||dwk14raokkwxv.cloudfront.net/sanomafi/media/*.mp4$media
 ||nelonenmedia.fi/ads/$media
@@ -696,7 +694,7 @@ mtvuutiset.fi,mtv.fi,suomiareena.fi,www.studio55.fi,lumijapyry.fi,www.msn.com##.
 ||damoh.katsomo.fi/*$image,domain=mtvuutiset.fi|mtv.fi|suomiareena.fi|www.studio55.fi|lumijapyry.fi|www.msn.com
 ||cloudfront.net/creatives/assets/$image,domain=mtvuutiset.fi
 @@||fi-mtv3.videoplaza.tv/proxy/pulse-sdk-html5/*/latest.min.js$script
-! To make viafree.fi videos to work without ads
+! viafree.fi video adblock
 @@||fwmrm.net/ad/*$xmlhttprequest,domain=www.viafree.fi
 @@||fwmrm.net/ad/*$script,domain=www.viafree.fi
 @@||fwmrm.net/ad/*$image,domain=www.viafree.fi
@@ -719,7 +717,7 @@ www.kaksplus.fi#@#.sponsored-content
 ! Tori.fi ads
 ##[src*="://ad.doubleclick.net/"]
 ||cloudfront.net/banners/$domain=tori.fi
-! Makes adblocking undetectable (script blocking hides them already)
+! Makes adblocking undetectable (adscript blocking hides them already)
 murha.info#@#.adsbygoogle
 murha.info#@#.adsbox
 ! -----UNSORTED END-----
@@ -756,7 +754,4 @@ download.fi#@##ad-top-banner-placeholder
 @@/wp-content/*twitter.jpg$domain=tekniikanmaailma.fi
 ! ville.utu.fi unbreak
 @@||*/icons/google$image,domain=utu.fi
-! Easylist cookie causes header to display incorrectly when scrolling
-staypro.fi#@#.cookie-inner
-staypro.fi#@#.cookie-bar:not(body):not(html)
 ! -----UNBREAK END-----
