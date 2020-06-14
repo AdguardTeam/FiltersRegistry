@@ -1,5 +1,5 @@
 !
-! OriginalVersion: 14June2020v2
+! OriginalVersion: 14June2020v4
 ! Title: Adblock List for Finland
 ! Description: Finnish adblock list
 ! Expires: 4 days
@@ -252,7 +252,12 @@ feissarimokat.com##DIV[class*="adbox"]
 finder.fi##.Advertisement__Box
 finnkino.fi,fum.fi,tilt.fi##.advertising
 funtampere.fi##.banner_container
+gamereactor.fi###adContainer
+gamereactor.fi###bigVideoAd_content
+gamereactor.fi###sky2_1
+gamereactor.fi###sky2_2
 gamereactor.fi##div[id="eventad"]
+gamereactor.fi##section.artistyle3.rightbox:nth-of-type(1)
 hardware.fi,kaksplus.fi##.advertisement
 hbl.fi##ksf-adblockers
 helsinginuutiset.fi,vihdinuutiset.fi##DIV[class*="lyads"]
@@ -708,15 +713,10 @@ mtvuutiset.fi,mtv.fi,suomiareena.fi,www.studio55.fi,lumijapyry.fi,www.msn.com##.
 ||freewheel-mtgx-tv.akamaized.net/m/1/*.mp4$media,domain=www.viafree.fi
 ! unbreak Telia password change (maybe other functions as well), endless loading
 @@||www.telia.fi/fi/B2B_Portal/resources/js/b2b.portal.eventTracking.js$script,domain=www.telia.fi
-! unbreak opening of sponsored articles
-anna.fi#@#.sponsored-content
-hs.fi#@#.mainos
-hs.fi#@#.mainokset
-www.kaksplus.fi#@#.sponsored-content
 ! Tori.fi ads
 ##[src*="://ad.doubleclick.net/"]
 ||cloudfront.net/banners/$domain=tori.fi
-! Makes adblocking undetectable (adscript blocking hides them already)
+! Adblock check
 murha.info#@#.adsbygoogle
 murha.info#@#.adsbox
 ! -----UNSORTED END-----
@@ -729,10 +729,13 @@ tjareborg.fi#@#.push-container
 @@||uk.cdn-net.com/cc.js$script,domain=www.power.fi
 ! Unbreaks chat function
 @@-tracking.js?$domain=telia.fi|moi.fi
+@@leiki.com/mtv3/mwidget$domain=mtvuutiset.fi
+@@leiki.com/mtv3/widgets/loader/$domain=mtvuutiset.fi
 @@||/api/*/visitor?$domain=elisa.fi
 @@||adlibris.com/pixel.gif$image
 @@||adservicemedia.dk/$image,domain=mobiili.fi
 @@||googletagmanager.com/gtm.js?$third-party,domain=elisa.fi
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=gamereactor.fi
 @@||leiki.com$domain=iltalehti.fi
 @@||pbs.twimg.com/ad_img/$image,domain=embed.is.fi
 @@||photour.net^$elemhide
@@ -740,29 +743,22 @@ tjareborg.fi#@#.push-container
 @@||s3.pji.nu/js/*/global_head.c-*.js$domain=hintaopas.fi|pricespy.co.nz|pricespy.co.uk|pricespy.ie|prisjakt.no
 @@||st.mtv.fi/static/javascripts/external-js/detectmobilebrowser.js?
 @@||unsubscribe.mailerlite.com^
-iltalehti.fi#@#.afs_ads
-mobiili.fi#@#.header_ad
-mobiili.fi#@##header_ad22
-www.rauhanpuolustajat.org#@#div[data-nconvert-cookie]
-@@leiki.com/mtv3/widgets/loader/$domain=mtvuutiset.fi
-@@leiki.com/mtv3/mwidget$domain=mtvuutiset.fi
+anna.fi#@#.sponsored-content
 download.fi#@##ad-top-banner-placeholder
+hs.fi#@#.mainokset
+hs.fi#@#.mainos
+iltalehti.fi#@#.afs_ads
+kaksplus.fi#@#.sponsored-content
+mobiili.fi#@##header_ad22
+mobiili.fi#@#.header_ad
 studio55.fi#@#.column-ad
+www.rauhanpuolustajat.org#@#div[data-nconvert-cookie]
 ! Will be removed after PR's accepted
-! https://github.com/easylist/easylist/pull/5448
-@@||*/zooplus.fi/scripts/resonance.js$script,domain=zooplus.fi
 ! https://github.com/easylist/easylist/pull/5445
 @@||proxy.strossle.it/proxy.html$subdocument,domain=como.fi|episodi.fi|fum.fi|inferno.fi|rumba.fi|rytmi.com|soundi.fi|tilt.fi
 @@||images.sprinklecontent.com/270/170/$image,domain=como.fi|episodi.fi|fum.fi|inferno.fi|rumba.fi|rytmi.com|soundi.fi|tilt.fi
 @@||widgets.sprinklecontent.com/v2/$script,xmlhttprequest,domain=como.fi|episodi.fi|fum.fi|inferno.fi|rumba.fi|rytmi.com|soundi.fi|tilt.fi
 @@||widgets.spklw.com/v1/data/*$xmlhttprequest,domain=como.fi|episodi.fi|fum.fi|inferno.fi|rumba.fi|rytmi.com|soundi.fi|tilt.fi
-! https://github.com/easylist/easylist/pull/5461
-@@||leffatykki.com/media/banners/tykkibanneri-728x90.png$image,domain=leffatykki.com
-leffatykki.com#@#.ad728x90
-! https://github.com/easylist/easylist/pull/5500
-power.fi#@##cookie-notification
-! https://github.com/easylist/easylist/pull/5519
-||cuponation.fi/cn-track$image,domain=cuponation.fi
 ! Fanboy's Annoyance List
 @@/wp-content/*twitter.jpg$domain=tekniikanmaailma.fi
 ! ville.utu.fi unbreak
