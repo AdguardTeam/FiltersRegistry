@@ -1,8 +1,8 @@
 !
-! Checksum: nNW51Vy2h82ywWDI8KNwzQ
-! OriginalVersion: 202006160850
+! Checksum: Z8f3CafNAW7IvOo2bgaE0A
+! OriginalVersion: 202006161250
 ! Title: RU AdList + CSS Fixes
-! Last modified: 16 Jun 2020 08:50 UTC
+! Last modified: 16 Jun 2020 12:50 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -28,7 +28,7 @@
 ! = Сайты-попапы (самостоятельно открываются в новом окне) ====================
 ! *** advblock/popup.txt ***
 ! - Частные правила -----------------------------------------------------------
-$popup,domain=176.114.0.126|176.114.0.132|37.220.36.15|assiatv.com|hentai-share.tv|imgbase.ru|imgcach.ru|kolikbolik.top|picclick.ru|picclock.ru|picforall.ru|rutor.in|torrent-world.ru
+$popup,domain=176.114.0.126|176.114.0.132|37.220.36.15|assiatv.com|drlink.online|hentai-share.tv|imgbase.ru|imgcach.ru|kolikbolik.top|picclick.ru|picclock.ru|picforall.ru|rutor.in|torrent-world.ru
 .biqle.ru^$popup,domain=biqle.ru
 .nahnews.org^$popup
 /*.php*clk$popup,domain=rustorka.club|rustorka.com|rustorka.innal.top|rustorka.net|rustorka2.innal.top|rustorka3.innal.top|rustorka4.innal.top|rustorka5.innal.top|rustorkacom.lib|tapochek.net
@@ -1315,6 +1315,7 @@ by,~mail.ru,ru,~sportmail.ru,ua##.banner_box
 ##[href*="driftawayforfun.com"]
 ~media.hubfiles.gdn##[href*="media.hubfiles.gdn"]
 ##[href*="pigiuqproxy.com"]
+##[href*="postlnk.com"]
 ##[id^="newPortal_informer_"]
 ##[id^="relap-custom-iframe-rec"]
 ##[id^="unit_"] > a[href*="://smi2.net"]
@@ -4930,6 +4931,7 @@ _tizers.
 ||bodyclick.net^$third-party
 ||bodyfit-muscles.ru^
 ||bodykaa.ru^$third-party
+||bokrelri.com^$third-party
 ||bold-in.ru^$third-party
 ||bombago.ru^$third-party
 ||bombeers.ru^$third-party
@@ -9900,6 +9902,7 @@ _tizers.
 ||xiss.ru^
 ||xiuuh.com^
 ||xjqha.com^$third-party
+||xksqb.com^$third-party
 ||xl-trk.com^$third-party
 ||xl415.com^$third-party
 ||xlbz.com^$third-party
@@ -11501,7 +11504,7 @@ programmersforum.ru###pagenav_menu + center
 rf-cheats.ru###pagenav_menu + center ~ center
 talkers.ru###pagenav_menu ~ center
 promebelclub.ru,xn----btbdkbsogebtjq6bm4g5b.xn--p1ai###pagenav_menu ~ div[style*="height:"]
-picclick.ru,picclock.ru,picforall.ru###pai_thumbz_hider
+drlink.online,picclick.ru,picclock.ru,picforall.ru###pai_thumbz_hider
 best-soft.npps.biz###parent-erocritic
 i-pic.ru,ipadus.ru,joomlatown.net,klanwin.ru,radikal.ru,ruspicbox.ru###parent_popup
 clip2net.com###partbn
@@ -15031,6 +15034,7 @@ autodmir.ru##[class^="block_tgb"]
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.nl,rutracker.org,zerkalo-torrent.tk##[class^="bn-"]
 season.ru##[class^="bnnr_bx_"]
 geonavigator.ge,navigator.az##[class^="brand"]
+fastpic.ru##[class^="embed-responsive"]
 animang.ru##[class^="game-"]
 protocol.ua##[class^="headerBanner"] > .top
 kinoafisha.info##[class^="illumination"]
@@ -17364,7 +17368,7 @@ ensage-forum.ru##div[id^="funbox_zone"]
 ||zdorovybudte.ru^$csp=script-src 'self' * 'unsafe-inline' data:
 ! ---
 $subdocument,domain=appmo.org|bookmo.org|eromo.org|hitmo.org|hotmo.org|muzmob.org|nasimke.com|picsmo.org|vidmo.org|vpopke.org
-$third-party,domain=money-pic.ru|picclick.ru|picclock.ru|picforall.ru
+$third-party,domain=drlink.online|money-pic.ru|picclick.ru|picclock.ru|picforall.ru
 $third-party,image,domain=gaykursk.ru|gaynsk.ru|novgay.ru
 $third-party,media,other,xmlhttprequest,domain=videoframe.at
 $third-party,object,subdocument,domain=imageban.ru|piccash.net
@@ -24114,7 +24118,8 @@ penzainform.ru#$?##divWrapper > * { pointer-events: auto }
 penzainform.ru#$?##divWrapper { pointer-events: none }
 penzainform.ru#$?#body { cursor: auto; pointer-events: none; background: whitesmoke !important }
 ! ---
-picclick.ru,picclock.ru,picforall.ru#$?#div[id^="pai_thumbz_"][id$="_side"] { background: #363636 !important }
+! Picforall и зеркала
+drlink.online,picclick.ru,picclock.ru,picforall.ru#$?#div[id^="pai_thumbz_"][id$="_side"] { background: #363636 !important }
 ! ---
 pikabu.ru#$?#.app > .app__inner[style*="padding-top"] { padding-top: 64px !important }
 pikabu.ru#$?#.footer { height: auto !important }
@@ -24297,6 +24302,7 @@ stopgame.ru#$?#div[id^="videoplayer_"][class^="iframe_wrapper"] { display: block
 stranamam.ru#$?#.n-main-branding-container { margin-top: 0 !important }
 ! ---
 stratege.ru###body_box_label #wrapper > #content > div:empty
+stratege.ru###body_box_label #wrapper > #content ~ :not(#footer)
 stratege.ru###body_box_label #wrapper > #footer > div[id]:not(.wrapper)
 stratege.ru#$?##body_box_label > [class]:not([style]):not([title]) { background-image: none !important; background-color: #dbdbdb !important }
 stratege.ru###body_box_label > [class]:not([title]) > style + [id]:not([class]):not(#wrapper)
