@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-06-16 11:42:14 CEST
+! Last modified: 2020-06-17 08:34:05 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -185,9 +185,6 @@ familjeliv.se#%#//scriptlet('ubo-nostif.js', 'sendImps')
 familjeliv.se#$?#div[data-element^="#article"]:has(.articleSuperTitle:has-text(/annons/i)) { remove: true; }
 fastighetssverige.se##.featuredArticle:has(.badge-partner-text)
 fastighetssverige.se#$#.mainVideoBox { display: inherit !important; }
-feber.se#%#//scriptlet('ubo-set.js', 'showReklam', 'false')
-feber.se,tjock.se#%#//scriptlet('ubo-acis.js', '$', 'GDPR')
-feber.se,tjock.se#%#//scriptlet('ubo-acis.js', 'showMutedUserAlert')
 filmtipset.se##.row.news:has(em:has-text(/sponsrad/i))
 finansliv.se#%#//scriptlet('ubo-aopw.js', 'nwlettersignupcheck')
 finansliv.se,lararnastidning.se,lektion.se,pedagogiskamagasinet.se,scanaktier.se,sulkysport.se,tidningenridsport.se#%#//scriptlet('ubo-aopr.js', 'OA_show')
@@ -337,6 +334,8 @@ nsk.se,skd.se#$#body { opacity: 1 !important; }
 nxload.com,upstream.to#%#//scriptlet('ubo-set.js', 'adb', '0')
 nyadagbladet.se#%#//scriptlet('ubo-aeld.js', 'mouseout')
 nyadagbladet.se#%#//scriptlet('ubo-aopr.js', 'cli_show_cookiebar')
+nyadagbladet.se##.widget_media_image:has-text(/annons/i)
+nyadagbladet.se##article:has(.sponsrad)
 nyadagbladet.se,senses.se#%#//scriptlet('ubo-acis.js', 'anOptions')
 nyheter24.se#%#//scriptlet('ubo-acis.js', 'check_ab')
 nyheter24.se#%#//scriptlet('ubo-acis.js', 'ga', 'ypcomm')
@@ -571,8 +570,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -1206,6 +1205,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /sf_tracking.js$script,domain=stayfriends.se
 /sh404sefsocial/*$script
 /share-link$script,domain=nyadagbladet.se
+/shared/crm-campaign-handler.js$script
 /sharedaddy/sharing.$domain=amusetidningen.se|bilresaieuropa.se|damhockey.se|mobilanyheter.net|nyheteridag.se|ulrica.askmorling.se
 /sharethis.js$domain=allsvenskan.se|superettan.se
 /sifo_analytics.$script
@@ -1448,7 +1448,7 @@ aftonbladet.se##div[style*="border-color:#0067b5;border-width:4px 0px 0px 0px;"]
 aftonbladet.se##h3[style*="background-color:#0067b5;border-radius:2px;margin:16px 0px 0px 0px;"]
 aftonbladet.se,autonytt.se,ekonominyheter.se,undervarttak.se,uwtd.me,xn--snabbalnen-75a.se##a[href*="/track.adtraction."]
 aftonbladet.se,embed.futuresportsmedia.com,fasttrack.webstream.dk,fotbolldirekt.se,freeride.se,happyride.se,hockeysverige.se,ilikeradio.se,innebandymagazinet.se,jwplayer.com,laget.se,maharajah.se,moviezine.se,muscles.se,nordichardware.se,nyckelspel.se,nyheteridag.se,streamio.com,svd.se,upstream.to#@#.afs_ads
-agriprim.se,automobil.se,bettips.se,bike.se,bilsport.se,boxerville.se,caroftheyear.se,dh.se,djungeltrumman.se,e.se,entreprenadaktuellt.se,fightermag.se,frillesasbandy.se,husbilhusvagn.se,ja.se,klassiker.nu,livsmedel.se,ljuskultur.se,lokalguiden.se,lovelylife.se,maskinbladet.se,maskinstationerna.se,mopedgaraget.se,nyckelspel.se,riksettan.net,scanaktier.se,skogsaktuellt.se,spelo.se,sweclockers.com,vaken.se,vibilagare.se##.banner
+agriprim.se,automobil.se,bettips.se,bike.se,bilsport.se,boxerville.se,caroftheyear.se,dh.se,djungeltrumman.se,e.se,entreprenadaktuellt.se,fightermag.se,frillesasbandy.se,husbilhusvagn.se,ja.se,klassiker.nu,livsmedel.se,ljuskultur.se,lokalguiden.se,lovelylife.se,maskinbladet.se,maskinstationerna.se,mopedgaraget.se,nyckelspel.se,riksettan.net,scanaktier.se,skik.se,skogsaktuellt.se,spelo.se,sweclockers.com,vaken.se,vibilagare.se##.banner
 aikfotboll.se,expressen.se,katerinamagasin.se,livsmedel.se##.banners
 akademiskahus.se###cookieConsent
 akaskidor.se,hemtrevligt.se,kingmagazine.se,livetombord.se,mestmotor.se,svenskgolf.se,tidningenhalsa.se,utemagasinet.se,vagabond.se###facebookSlideIn
@@ -1681,6 +1681,7 @@ byggvarlden.se##ul.productnews
 bytbil.com###privacyModal
 bytbil.com,ehandel.se##.article-sponsored
 cafe.se##[class^="oath-dac-"]
+cafe.se##a[href*="/cafe?kampanj"]
 cafe.se,kamerabild.se##.partner
 cafe.se,kingmagazine.se##.card-partner
 cafe.se,kingmagazine.se##.partner
@@ -2765,6 +2766,7 @@ yougov.se##.cookie-confirm
 ||cdn.iubenda.com/iubenda.$script
 ||cdn.jsdelivr.net/npm/search-insights$script,domain=forum.hallon.se
 ||cdn.livechatinc.com/tracking.$script
+||cdn.svenskalag.se/img/sponsors$image
 ||cdnbox.win/inc/ETKe.$script
 ||churnkit.com^$third-party
 ||cintnetworks.com^$third-party
@@ -3181,6 +3183,7 @@ yougov.se##.cookie-confirm
 ||sleeknote.com^$third-party
 ||slidesharecdn.com/ss_foundation/combined_li_tracking.$script
 ||snapwidget.com/images/snapwidget_ad$image
+||snigelweb.com^$third-party
 ||snt-matrix-app.herokuapp.com^*/user-tracking
 ||sociuslive.com^$third-party
 ||solidtango.com^*/player_statistics$image
@@ -3207,6 +3210,7 @@ yougov.se##.cookie-confirm
 ||streamtajm.*/sw.js$script
 ||streamtajm.*^$csp=default-src 'self' 'unsafe-inline' *.googleapis.com stload.com nxload.com jawcloud.co;img-src *;worker-src 'none'
 ||strossle.com^$third-party
+||studads.com^$third-party
 ||studentum.se/nocache/home/ads$xmlhttprequest
 ||stumbleupon.com/hostedbadge.$script,domain=javligtgott.se
 ||suntana.se^$third-party
