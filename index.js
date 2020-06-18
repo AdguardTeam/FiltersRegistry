@@ -26,7 +26,6 @@ if (whitelist.length > 0 || blacklist.length > 0) {
     reportPath = null;
 }
 
-const domainBlacklistFile = path.join(__dirname, './domains-blacklist.txt');
 const platformsPath = path.join(__dirname, './platforms');
 
-compiler.compile(filtersDir, logPath, reportPath, domainBlacklistFile, platformsPath, whitelist, blacklist);
+compiler.compile(filtersDir, logPath, reportPath, platformsPath, whitelist, blacklist);
