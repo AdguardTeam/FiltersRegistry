@@ -38,10 +38,10 @@
 ! anty mobilne
 weszlo.com##.col-xs-12.col-md-4
 !
-! Checksum: 6fFxrpGztY13NSomdddTsg
+! Checksum: 9qy+BrwF2FHzAIHqOc3xZA
 ! Title: Polskie Filtry Prenumerat
 ! Collaborators: KonoromiHimaries, hawkeye116477
-! OriginalVersion: 20190606
+! OriginalVersion: 20200624
 ! Expires: 3 days
 ! Wymagane:
 !   Rozszerzenia >> uBlock Origin lub Nano Adblocker
@@ -51,24 +51,19 @@ weszlo.com##.col-xs-12.col-md-4
 !
 !1$----------------------{ ogólne reguły }----------------------!
 !
-przegladlokalny.eu##.right-sidebar > .text-center
-www.tysol.pl##div > p
-www.tysol.pl##div:nth-of-type(3) > .news_header
+przegladlokalny.eu##.right-sidebar > .right-header, .right-sidebar > .text-center
+www.tysol.pl##.news_header:has-text(/^Najnowszy numer$/) + br + div
+www.tysol.pl##.news_header:has-text(/^Najnowszy numer$/)
 mensis.pl###custom_html-3
-oczymlekarze.pl##.publishing
-oczymlekarze.pl##.w-numerze-right.subpages
+ktociewyleczy.pl###avt-korona
 viva.pl##.medium-order-210.subscription
 plus.dziennikzachodni.pl##.promocja.promo
-www.esquire.pl##.recommended-box > .container > .article-list > .col-md-4.item:nth-of-type(3)
+!www.esquire.pl##.recommended-box > .container > .article-list > .col-md-4.item:nth-of-type(3) ! wadliwy do naprawy - ukrywa artykuły
 www.esquire.pl##.magazine-subscription-widget.widget
 !
 !& artykuł
 auto-swiat.pl##.rightBox.paperPromo
 www.auto-swiat.pl##.widgetLatestEditionWide
-!
-!& aplikacja
-www.tysol.pl##.news_header:nth-of-type(3)
-www.tysol.pl##div:nth-of-type(1) > div:nth-of-type(5)
 !
 !& zachęta do subskrybcji
 ##.pasek-pobierz > .row
@@ -78,37 +73,32 @@ www.tysol.pl##div:nth-of-type(1) > div:nth-of-type(5)
 !
 www.ckm.pl##.sidebar-advert:nth-of-type(4)
 !
-www.gazetapolska.pl###block-views-najnowszy-spis-block-1
-www.gazetapolska.pl###block-views-ostatninumer-block-1
-www.gazetapolska.pl###footer_wrapper:nth-of-type(2)
+www.gazetapolska.pl###block-views-najnowszy-spis-block-1, #block-views-ostatninumer-block-1m, #header_footera
 !
 playboy.pl##[class^="order"]
 !
-swietajno-szczycienskie.wm.pl##.box-ewydanie
-!
+swietajno-szczycienskie.wm.pl##.highlight:has(.box-ewydanie)
 wm.pl##.block-gazeta
+wm.pl###header > a[href*="kupgazete.pl"]
+!olsztyn.wm.pl,swietajno-szczycienskie.wm.pl##.print ! filtr wyżej wytnie bezpiecznie
 !
-olsztyn.wm.pl,swietajno-szczycienskie.wm.pl##.print
-!
-www.supertydzien.pl##.widget.row:nth-of-type(1)
-www.supertydzien.pl##.content > div:nth-of-type(2)
-www.supertydzien.pl##.widget.row:nth-of-type(n+6):nth-of-type(-n+7)
+!www.supertydzien.pl##.widget.row:nth-of-type(1) ! wycina majkiIT i zostają placeholdery
+!www.supertydzien.pl##.content > div:nth-of-type(2) ! brak w drzewie
+!www.supertydzien.pl##.widget.row:nth-of-type(n+6):nth-of-type(-n+7) ! wadliwy - wycina facebook
 !
 www.forbes.pl##.wdgImage.wdg:nth-of-type(3)
 !
-liberte.pl##.pobierz-nowe-wydanie
+liberte.pl##.entry-leftside > .headline, .entry-leftside > .headline + .row, .box-magazyn2
 !
-www.rynek-kolejowy.pl##.najnowszyNumerRK
-www.rynek-kolejowy.pl###wiadomoscBody > div:nth-of-type(4)
+www.rynek-kolejowy.pl##.najnowszyNumerRK, .miesiecznikRotatorBox
 !
-superhistoria.pl##.issue-cover
-superhistoria.pl##.issue-art-info
-superhistoria.pl##.art-text-relation-issue-dorzeczy.art-text-relation
+superhistoria.pl###footer > .section-issue
 !
 forumakademickie.pl###miesieczniki
 !
 www.dziennikpolski24.pl##.kontener-okladka.columns.medium-4
 www.dziennikpolski24.pl##.row.prenumerata-linki
+www.dziennikpolski24.pl##.atomsPromotionsLink.component:has(a[href*="/wykup-dostep/"][aria-label$="w formie gazety online"])
 !
 www.ckm.pl##.sidebar-advert:nth-of-type(7)
 www.ckm.pl##.clearfix.homepage-main-ad-box
@@ -5429,8 +5419,8 @@ animexin.xyz#$##CssMenu { position:absolute!important }
 !@Homepage: https://kadantiscam.netlify.app
 !@Title: KAD - Przekręty
 !@Description: Filtry chroniące przed różnego rodzaju przekrętami i oszustwami, takimi jak np. subskrypcje SMS, wirusy i fałszywe sklepy internetowe.
-!@Last modified: Tue, 23 Jun 2020, 21:00 UTC+02
-!@Version: 2020.6.23.1
+!@Last modified: Wed, 24 Jun 2020, 21:00 UTC+02
+!@Version: 2020.6.24.1
 !@Expires: 2 days
 !@Licencja: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 !@GitHub: https://github.com/PolishFiltersTeam/KAD
@@ -7966,6 +7956,7 @@ animexin.xyz#$##CssMenu { position:absolute!important }
 ||btclife.cloud^$all
 ||bulanmanabisadiam.com^$all
 ||bullito.site^$all
+||buytondiacyrid.tk^$all
 ||cerine-posals.icu^$all
 ||cjpyqf.live^$all
 ||claimyourprizes*.life^$all
@@ -8013,6 +8004,7 @@ animexin.xyz#$##CssMenu { position:absolute!important }
 ||great-prizes-here.info^$all
 ||heckcallohertons.info^$all
 ||hilleness.info^$all
+||igcecsrrt.site^$all
 ||ildexremusli.tk^$all
 ||jookerclik.site^$all
 ||largetfarget.ga^$all
@@ -8061,6 +8053,7 @@ animexin.xyz#$##CssMenu { position:absolute!important }
 ||sidnoy.site^$all
 ||skroc-link.ga^$all
 ||sm4ll.in^$all
+||snapexintoder.tk^$all
 ||ssl.mmtgo.me^$all
 ||syndication.exdynsrv.com^$all
 ||t1ny.in^$all
@@ -8201,7 +8194,7 @@ animexin.xyz#$##CssMenu { position:absolute!important }
 /^https?:\/\/([\w]{1,4}\.|)allegro(finanse)?\d+\.pl/$all
 /^https?:\/\/([\w]{1,4}\.|)faktury\d+\.org/$all
 /^https?:\/\/([\w]{1,4}\.|)(apps?|best|competition|game|mobile|play|prize|reward|sweeps)[0-9]{2,8}\.[a-z-]{4,22}[0-9]{1,8}\.(agency|icu|life|live|loan)/$document,domain=agency|icu|life|live|loan
-/^https?:\/\/([\w]{1,4}\.|)(betheprime|buntkorper|curtainhardsh|consquarters|contambeat|dsvhcc|garternal|greenelephants|headregret|jsdevelopmentq|lifefordatings|lisfirst|listentome|rainxpose|tekerstreet|testing3srv|vernistrail)\d+\.live/$all
+/^https?:\/\/([\w]{1,4}\.|)(betheprime|buntkorper|curtainhardsh|cuttherope|consquarters|contambeat|dsvhcc|garternal|greenelephants|headregret|jsdevelopmentq|lifefordatings|lisfirst|listentome|rainxpose|tekerstreet|testing3srv|vernistrail)\d+\.live/$all
 /^https?:\/\/([\w]{1,4}\.|)(\w+)?-?pocztex.*\d+-?(polska)?\..*/$all
 /^https?:\/\/([\w]{1,4}\.|)(\w+)?-?(\d+)?gwalt(fakty?|news|wiadomosci?|polska|monitoring)\..*/$all
 /^https?:\/\/([\w]{1,4}\.|)(\w+)?.?\w+-?poczta(\d+)?-?polska(\d+)?\..*/$all
@@ -8592,6 +8585,7 @@ animexin.xyz#$##CssMenu { position:absolute!important }
 ||dostadh.com^$all
 ||dostawaca24.online^$all
 ||dostawa-dhl.net^$all
+||dostawa-dhl.pl^$all
 ||dostawy24.com^$all
 ||doswedh.com^$all
 ||dotabet100.com^$all
@@ -9053,6 +9047,7 @@ animexin.xyz#$##CssMenu { position:absolute!important }
 ||in-post.net^$all
 ||in-post.online^$all
 ||in-post.org^$all
+||in-post.us^$all
 ||ionetporwanie.*^$all
 ||iphonepolska.pl^$all
 ||ipk0bp.net^$all
@@ -10038,6 +10033,7 @@ animexin.xyz#$##CssMenu { position:absolute!important }
 ||vod-play.pl^$all
 ||vod.co.pl^$all
 ||vtopiuops.info^$all
+||vulfehisil.tk^$all
 ||w3brasil.com^$all
 ||waly.pl^$all
 ||wanbuy.net^$all
