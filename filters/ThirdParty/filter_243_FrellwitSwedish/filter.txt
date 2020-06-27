@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-06-26 12:37:47 CEST
+! Last modified: 2020-06-27 12:41:06 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -13,7 +13,7 @@
 ! Special thanks to ryanbr@github for the rules from Fanboy's Swedish list.
 !
 ! --- Browser/extension specific filters
-*/tv4play_plugin.$redirect=noopjs,script,domain=fotbollskanalen.se|tv4play.se
+*/tv4play_plugin.$redirect=noopjs,script,domain=fotbollskanalen.se|koket.se|tv4play.se
 .*/*/*.php?*=aftonbladet-live-tv$document
 .info/dagens-nyheter/$document
 .info/dn-nyheter/$document
@@ -461,11 +461,11 @@ www.svd.se#%#//scriptlet('ubo-nostif.js', 'w()', '500')
 xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 ||*.*prize*.life/$document
 ||2mdn.net/instream/html5/ima3.js$important,script,domain=aftonbladet.se
-||ad.doubleclick.net/ddm/$image,important,domain=fotbollskanalen.se|tv4play.se
+||ad.doubleclick.net/ddm/$image,important,domain=fotbollskanalen.se|koket.se|tv4play.se
 ||aftonbladet.se.senaste.$document
 ||aftonbladet.se/kampanj/casinoguide$document
 ||amazon-adsystem.com^$third-party,important,domain=bilresaieuropa.se
-||b17g.net^*/play/log$redirect=nooptext,xmlhttprequest,domain=fotbollskanalen.se|tv4play.se
+||b17g.net^*/play/log$redirect=nooptext,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4play.se
 ||best-prizes-now.*^$all
 ||biowebb-data.s3.amazonaws.com^*/ad_loader$important,script
 ||byggkonsult.org^$all
@@ -515,7 +515,7 @@ m.sweclockers.com##.listItem:has(.sponsoredArticle)
 swedroid.se##div[id$="_ad_mobile"]
 !#endif
 !#if !env_mobile
-boktugg.se,lundagard.se#%#//scriptlet('ubo-aeld.js', 'wheel')
+boktugg.se,lundagard.se,outsidesweden.se#%#//scriptlet('ubo-aeld.js', 'wheel')
 forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__layer--active, .idgcp__layer--active body { overflow: auto !important; }
 forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__layer { z-index: 0 !important; }
 forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__modal--in .idgcp__layer { background: none !important; }
@@ -567,8 +567,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -1348,7 +1348,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@_advert.$domain=e-pages.dk
 @@||100kitchenstories.se^$generichide
 @@||2mdn.net/instream/html5/ima3.js$script,domain=modette.se|nyheter24.se
-@@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=fotbollskanalen.se|tv4play.se
+@@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4play.se
 @@||acdn.adnxs.com/ast/ast.js$script,domain=svd.se
 @@||ad*.vg.no/check.js$script,domain=aftonbladet.se
 @@||alingsastidning.se^$generichide
@@ -2775,7 +2775,7 @@ yougov.se##.cookie-confirm
 ||citygate.se^*/mainads$xmlhttprequest
 ||citygate.se^*/statistics$xmlhttprequest
 ||client-stream-events.mtg-api.com^$domain=viafree.se
-||cloudfront.net/creatives/assets/$image,media,domain=fotbollskanalen.se|tv4play.se
+||cloudfront.net/creatives/assets/$image,media,domain=fotbollskanalen.se|koket.se|tv4play.se
 ||cmatch.idg.se^
 ||cms.catena.media/js/cm-tracking.$script
 ||collect.breakit.se^$xmlhttprequest
@@ -2797,7 +2797,7 @@ yougov.se##.cookie-confirm
 ||cookieinformation.com^$subdocument,third-party
 ||cookieinformation.com^$third-party,domain=aktivtraning.se|cleannet.se|dagenshandel.se|digitalfotoforalla.se|entreprenad.com|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|iform.se|kemivarldenbiotech.se|lifesciencesweden.se|medtechmagazine.se|militarhistoria.se|motormagasinet.se|natgeo.se|packnet.se|pctidningen.se|plastnet.se|popularhistoria.se|processnet.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|valuta.se|varldenshistoria.se|verkstaderna.se|viivilla.se|woodnet.se
 ||cookieinfoscript.com^$third-party
-||cookielaw.org^$third-party
+||cookielaw.org/scripttemplates$script,domain=~eurogamer.net|~eurogamer.pl|~rockpapershotgun.com|~usgamer.net|~vg247.com|~zdnet.com
 ||cookienotice.co^$third-party
 ||cookiepolicy.peytz.dk^$third-party
 ||cookiepro.com^$third-party,domain=birthday.se|sd.se
