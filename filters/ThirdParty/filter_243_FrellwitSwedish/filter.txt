@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-06-30 10:51:24 CEST
+! Last modified: 2020-07-02 10:41:27 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -119,8 +119,6 @@ buzzter.se#%#//scriptlet('ubo-acis.js', 'Optins', 'inc_opt')
 buzzter.se#$#body.trend-lock #outer-wrap { position: inherit !important; }
 byggahus.se#$#.attachmentPreviewActive img { -webkit-filter: none !important; filter: none !important; }
 byggahus.se#$#body.wallpaper-ad #col-content { margin-top: 0 !important; }
-byggfaktadocu.se,byggvarlden.se#%#//scriptlet('ubo-acis.js', 'docu_stats_pageview_no_time')
-byggfaktadocu.se,byggvarlden.se#%#//scriptlet('ubo-acis.js', 'docu_stats_summaryview_no_time')
 byggipedia.se#$#* { user-select: text !important; }
 byggipedia.se#%#//scriptlet('ubo-acis.js', 'ai_insert')
 byggipedia.se#%#//scriptlet('ubo-acis.js', 'ai_insert_2')
@@ -294,6 +292,7 @@ lwcdn.com#%#//scriptlet('ubo-aeld.js', '/^(?:adBlocker|contextmenu)$/')
 magasin55.se##.td_module_wrap:has(a[href$="/annons/"])
 magasinetparagraf.se,omnihalsa.com,plazakvinna.com,senses.se#%#//scriptlet('ubo-acis.js', '_stq')
 maklarvarlden.se##article:has(.sponsored-inlist)
+matplatsen.net#$?#article:has(em:has-text(/i samarbete med/i)) { remove: true; }
 megafonen.nu##.sidebar-block:has(.block-title:has-text(/sponsrad/i))
 merinfo.se##.articles-article-wrapper:has(span:has-text(/sponsrad/i))
 merinfo.se##.snippet-article-wrapper:has(.sponsored)
@@ -776,6 +775,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /adnami/macro/*$script
 /ads-client.$xmlhttprequest,domain=games.softgames.com
 /ads.for.me/jsa?$script
+/ads.js?$script,domain=flashback.org
 /ads.json$xmlhttprequest,domain=pomu.se
 /adsLoader.$script,~third-party,domain=booli.se
 /adv_utils.$script,domain=viivilla.se
@@ -877,12 +877,13 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /cxense.$script,domain=affarsliv.com|affarslivgotland.se|corren.se|ekuriren.se|eposten.se|folkbladet.se|helagotland.se|kkuriren.se|klackspark.com|kuriren.nu|mvt.se|norran.se|norrbottensaffarer.se|nsd.se|nt.se|sn.se|strengnastidning.se|unt.se|vimmerbytidning.se|vt.se
 /d-footer.min.$script,domain=aftonbladet.se
 /discourse-adplugin$script
-/docunet_stats.js$script,domain=byggvarlden.se
+/docunet_stats.js$script
 /downloads.mailchimp.com/*$domain=branschkoll.se|landleyskok.se|vavawoom.com|villalivet.se
 /downloads.mailchimp.com/js/signup-forms/popup$image,script
 /ds-tracker.js$domain=dagenssamhalle.se
 /DynamicGAFunctions$script,domain=morningstar.se
 /emediate-responsive-wp-plugin/*
+/empty.html$subdocument,domain=byggvarlden.se|hotellorestaurang.se
 /entag.$script,domain=eniro.se|leta.se|proff.se
 /entryclick;_
 /ess.eurovator.se/*
@@ -1345,7 +1346,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/css/ad.$stylesheet,domain=sv.geneanet.org
 @@/jquery.scrollUp$script,domain=explorecurate.com
 @@/js/ad.js$~third-party,domain=sweclockers.com
-@@/js/ads.js$xmlhttprequest,domain=news55.se
 @@/js/ads.js$~third-party,domain=freeride.se|malagaguiden.se|rabattpris.se|snowmobile.se
 @@/js/advertisement*.$script,~third-party,domain=expressen.se
 @@/js/advertising.$script,~third-party,domain=byggnadsarbetaren.se|cykla.se|elbilsnytt.se|snowmobile.se|vatternrundan.se
@@ -1591,7 +1591,7 @@ avanza.se##.cookieMessage
 avanza.se##.noMarginAd
 avanza.se##.topAd
 avanza.se#@#a[title="LeoVegas"]
-aventyrsresor.se##.newsletter-popup
+aventyrsresor.se,travelnews.se##.newsletter-popup
 axier.se##.consent
 axier.se,emocore.se,svenskamagic.com###reklam
 baaam.se###carousel-container
@@ -1679,9 +1679,9 @@ byggnyheter.se,dagensfastigheter.se,dagensnaringsliv.se,energinyheter.se,industr
 byggteknikforlaget.se###text-2.widget_text
 byggteknikforlaget.se,fotbolldirekt.se,hockeysverige.se,hypeline.se,innebandymagazinet.se,maklarvarlden.se,skidresultat.se,uppslaget.se##.annons
 byggteknikforlaget.se,torbjornstips.se##.textwidget > a[target="_blank"]
-byggvarlden.se###bannnerContainer
-byggvarlden.se##.ContentRight-50 > .featured
-byggvarlden.se##ul.productnews
+byggvarlden.se,hotellorestaurang.se###bannnerContainer
+byggvarlden.se,hotellorestaurang.se##.ContentRight-50 > .featured
+byggvarlden.se,hotellorestaurang.se##ul.productnews
 bytbil.com###privacyModal
 bytbil.com,ehandel.se##.article-sponsored
 cafe.se##[class^="oath-dac-"]
@@ -2246,6 +2246,7 @@ market.se##article[about^="/annons"]
 marsta.nu###secondary-content > .panel--naringsliv
 marsta.nu##.outsider
 matklubben.se##.notification.cookies
+matplatsen.net,monasuniversum.se###gatsby-focus-wrapper > div[class^="css-"]:last-of-type
 megafonen.nu##.campaign-slides
 megafonen.nu##.content-main-adwrapper
 megafonen.nu##[data-article-sponsored="true"]
@@ -2722,6 +2723,7 @@ yougov.se##.cookie-confirm
 ||bloggerfy.com/flash/$object
 ||blogglisten.no^$third-party
 ||bloggportalen.se/BlogPortal/view/Statistics$image
+||bloggtoppen.fi^$third-party
 ||bloglovin.com/widget/$third-party
 ||bmbstatic.blob.core.windows.net^
 ||boka.holiday^$third-party
@@ -2745,7 +2747,6 @@ yougov.se##.cookie-confirm
 ||buzzador.com^$third-party
 ||byggahus.se/pixels$subdocument
 ||byggnadsarbetaren.se^*/ad-byline.png$image
-||byggvarlden.se/empty.html$subdocument
 ||bytbil.com/bundles/js/eas.$script
 ||bytelab.dk^$third-party
 ||cameraeushop.com^
@@ -2769,6 +2770,7 @@ yougov.se##.cookie-confirm
 ||citygate.se^*/googleaccount$xmlhttprequest
 ||citygate.se^*/mainads$xmlhttprequest
 ||citygate.se^*/statistics$xmlhttprequest
+||ck.page^$third-party
 ||client-stream-events.mtg-api.com^$domain=viafree.se
 ||cloudfront.net/creatives/assets/$image,media,domain=fotbollskanalen.se|koket.se|tv4play.se
 ||cmatch.idg.se^
@@ -2786,6 +2788,7 @@ yougov.se##.cookie-confirm
 ||consent.dk^$third-party
 ||contributor.google.com^*/loader.js$script,domain=tyda.se
 ||converdiant.com^$third-party
+||convertkit.com^$third-party
 ||conviva.com^$third-party
 ||cookie-disclaimer.onewp.net^$third-party
 ||cookie-script.com^$third-party
