@@ -1,8 +1,8 @@
 !
-! Checksum: TBJmRpxjhwRIoposfO7AmQ
-! OriginalVersion: 202007062050
+! Checksum: vT7z8WwLUprZUOmiO5FTWA
+! OriginalVersion: 202007062220
 ! Title: RU AdList + CSS Fixes
-! Last modified: 06 Jul 2020 20:50 UTC
+! Last modified: 06 Jul 2020 22:20 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -8039,6 +8039,7 @@ _tizers.
 ||pdloo.com^$third-party
 ||pdmayt.com^
 ||pdomainbig.ru^$third-party
+||pdvacde.com^$third-party
 ||pe5avnvi81ed.ru^
 ||peettold.ru^$third-party
 ||pelicanprogram.com^$third-party
@@ -15020,7 +15021,7 @@ nahnews.org,politpuzzle.ru##.zenLink
 pechiexpert.ru##.zenlink
 znaj.ua##.znaj-banners_ajax
 lfootball.ws##.zoneBanner
-liveinternet.ru##.zpromo_currency ~ *
+liveinternet.ru##.leftcolumn.leftcolumn_v2 > div[class] ~ *
 ovgorskiy.ru#?#.zsnazzy:-abp-has(.color_b:-abp-contains(Блок рекламы))
 tuchkatvsport.com##.zxc
 livesport.ru##.zz_tizer
@@ -17864,7 +17865,7 @@ $xmlhttprequest,domain=happy-biock.info|happy-block.info|howto-news.info|kinohom
 /od.js$script,domain=pic4you.ru|pic5you.ru
 /output/index/$script,domain=serial24.com
 /pic/background.jpg$domain=crazyatomicgames.com|xxx-igra.com|yaldagames.com
-/player/vast.php|$domain=googleapis.com
+/vast.php|$domain=googleapis.com
 /player/videojs/videojs.vast.$domain=anatomia-strasti.com|dnevniki-vampira.org|friends-online.co|sverhestestvenoe.com
 /prerolls.js$domain=goha.ru
 /prime-$domain=carrotblog.ru|kidpuz.ru
@@ -24284,10 +24285,9 @@ radioclub.ua#$?##js-content { padding-top: 0 !important }
 ! ---
 radiola.audio#$?#.mh-container { margin-top: 0 !important }
 ! ---
-razlozhi.ru#$?#body > div[class][style^="background: url"][style*="bgpattern."] > div > div[style^="width:"][style*="height:"] { width: auto !important }
-razlozhi.ru#$?#div[data-id][data-size] ~ div[data-size]:not([style^="background-image:"]) > div[class]:first-child { width: auto !important }
-razlozhi.ru#$?#div[data-id][data-size] ~ div[data-size]:not([style^="background-image:"]) { margin-left: 0 !important }
-razlozhi.ru#$?#html > body > div:nth-child(-n+5) > div[class]:first-child { width: auto !important }
+razlozhi.ru#$?#body div[class][style^="background: url"][style*="bgpattern."][style*="width:"][style*="height:"] { width: auto !important }
+razlozhi.ru#$?#div[data-id][data-size] ~ div:not([style^="background-image:"]) > div[class]:first-child { width: auto !important }
+razlozhi.ru#$?#div[data-id][data-size] ~ div:not([style^="background-image:"]):not(:last-child) { margin-left: 0 !important }
 razlozhi.ru#$?#html > body > div[class] { width: auto !important }
 razlozhi.ru#$?#html > head ~ body { width: 100% !important }
 ! ---
@@ -25395,7 +25395,9 @@ pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net#%#//scriptlet('ubo-abort-curr
 pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net#%#//scriptlet('ubo-abort-on-property-write.js', 'goout')
 radikal.ru,www.vesti.ru#%#//scriptlet('ubo-abort-current-inline-script.js', 'document.createElement', 'String.fromCharCode')
 rambler.ru#%#//scriptlet('ubo-remove-attr.js', 'class', '.j-mini-player__video')
-razlozhi.ru#%#//scriptlet('ubo-abort-on-property-read.js', 'Object.prototype.initSyncRtb')
+razlozhi.ru#%#//scriptlet('ubo-abort-on-property-read.js', 'Object.prototype.Rtb')
+razlozhi.ru#%#//scriptlet('ubo-cookie-remover.js', '/^yab/')
+razlozhi.ru##div:matches-css(z-index: 1000)
 remont-aud.net#%#//scriptlet('ubo-set-constant.js', 'window.ab', 'false')
 rns.online#%#//scriptlet('ubo-abort-on-property-read.js', 'eaglePlayerPlugins.autoplay_position')
 rp5.*#%#//scriptlet('ubo-no-setTimeout-if.js', '0x')
