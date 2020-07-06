@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-07-03 09:34:41 CEST
+! Last modified: 2020-07-06 08:35:30 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -51,6 +51,7 @@ affarsstaden.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'adblockdetect')
 aftonbladet.se#$?#.jwplayer:has(.svp-sponsor-label) { remove: true; }
 aftonbladet.se##a[href*=".se/kampanj?"]:has-text(/erbjudande/i)
 aftonbladet.se##article:has(a[data-sponsored="true"])
+aftonbladet.se##div[class][style^="text"]:has(h3:has-text(/annons/i))
 akaskidor.se,body.se,svenskgolf.se#$#body { background-image: none !important; }
 akaskidor.se,breakit.se,fotbolltransfers.com,hemtrevligt.se,husvagnochcamping.se,kingmagazine.se,livetombord.se,mestmotor.se,svenskgolf.se,tidningenhalsa.se,utemagasinet.se,vagabond.se#%#//scriptlet('ubo-acis.js', 'ADTECH', 'enqueueAd')
 akaskidor.se,svenskgolf.se##.margin-bottom:has(.row--native)
@@ -220,6 +221,7 @@ gamereactor.se#%#//scriptlet('ubo-aopw.js', 'banner_video')
 gamereactor.se#%#//scriptlet('ubo-nano-stb.js', 'timeDown')
 gamereactor.se#%#//scriptlet('ubo-set.js', 'adblockEnabled', 'noopFunc')
 gamereactor.se#%#//scriptlet('ubo-set.js', 'trackAdblock', 'noopFunc')
+gamereactor.se#$?#.external_div_bigVideoAd { remove: true; }
 gamereactor.se##article.rwd_row:has(a[href$="/sponsoredcontent/"])
 gamereactor.se,screen9.com#%#//scriptlet('ubo-ra.js', 'autoplay')
 garaget.org#%#//scriptlet('ubo-cookie-remover.js', '/^mayhem/')
@@ -270,6 +272,7 @@ kimura.se##article:has(img[src$="/sponsrad.png"])
 kittad.se##.article-list-item-container:has(.kittad-label-sponsored)
 kittad.se##a[href]:has(.kittad-label-sponsored)
 klart.se#%#//scriptlet('ubo-aopr.js', 'blockAdBlock')
+klart.se#%#//scriptlet('ubo-rc.js', 'mega-loading')
 klart.se##.content-box-list__item:has(.ad-text)
 koket.se##li.slide:has(.external_advertiser)
 krickelins.se##article[id^="post-"]:has(a[href$="/sponsrade-inlagg/"])
@@ -427,6 +430,7 @@ uppsalanyheter.se#%#//scriptlet('ubo-acis.js', 'uri', 'Math.random')
 valerieaflalo.com##[id^="post-"]:has(p[style="text-align: center"]:has-text(/i samarbete med/i))
 victoriatornegren.se##article[id^="post-"]:has(.entry-header:has-text(Paid post in collaboration))
 viivilla.se#%#//scriptlet('ubo-aopw.js', 'MauticTrackingObject')
+viivilla.se##.teaserblockdata:has(.teaser-sponsored-text)
 vilaser.se#%#//scriptlet('ubo-set.js', 'vil_js_params', 'undefined')
 villalivet.se#%#//scriptlet('ubo-acis.js', 'SGPB_POPUP_PARAMS')
 villalivet.se#%#//scriptlet('ubo-acis.js', 'sgpbPublicUrl')
@@ -1033,7 +1037,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /p/tourn/*$domain=dayviews.com
 /packs/consent.$domain=hemnet.se
 /packs/survey.$domain=hemnet.se
-/pages/tag$script,domain=aktuellhallbarhet.se|dagensmedia.se|fastighetsnytt.se|resume.se
+/pages/tag$domain=aktuellhallbarhet.se|dagensmedia.se|fastighetsnytt.se|resume.se
 /pagespeed_static/1.$image,domain=hockeysnack.com
 /partnerintegration$domain=hitta.se
 /partners/*_ad_icon$image,domain=tvmatchen.nu
@@ -1241,6 +1245,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /snowplow-tracker$script
 /social-buttons$script,domain=dagsattplocka.se|gardets.nu
 /social-sharing.$script,domain=fokus.se
+/splash-redirector$domain=tvmatchen.nu
 /sponsor/$image,domain=bandybyn.se|brynas.se|difhockey.se|ettgottskratt.se|farjestadbk.se|fotbollskanalen.se|freeride.se|frillesasbandy.se|frolundaindians.com|happyride.se|humorbibeln.se|hv71.se|ifkgoteborg.se|lhc.eu|luleahockey.se|malmoredhawks.com|moraik.se|newsner.com|orebrohockey.se|roglebk.se|skellefteaaik.se|sportbibeln.se|swehockey.se|timraik.se|vaxjolakers.se|vskbandy.se
 /Sponsor/*$xmlhttprequest,domain=grontvader.se
 /sponsored_articles/*$domain=fastighetssverige.se
