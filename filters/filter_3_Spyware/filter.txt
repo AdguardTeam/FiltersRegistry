@@ -182,6 +182,10 @@ journal-plaza.net#?#.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч
 !
 ! ||ensighten.com^$third-party - not a tracker
 !
+||js.rush-member.com^$third-party
+||js.passaro-de-fogo.biz^$third-party
+||js.mediams.mb.softbank.jp^$third-party
+||js.monetize-ssp.com^$third-party
 ||minkatu.com^$third-party
 ||udkcrj.com^$third-party
 ||accaii.com^$third-party
@@ -5231,8 +5235,14 @@ charlestownwyllie.oaklawnnonantum.com^
 !-------------- General (unsorted) url blocking --------------------------------!
 !-------------------------------------------------------------------------------!
 !
+! Popular on Japanese sites
+! https://github.com/AdguardTeam/AdguardFilters/issues/58587#issuecomment-656098019
+! Sample URL: ||js.passaro-de-fogo.biz/t/113/750/a1113750.js
+/^https?:\/\/js\.[-.0-9a-z]+\/t\/[0-9]{3}\/[0-9]{3}\/a[0-9]{7}\.js$/$script
+!
 ! Cloudflare
 /\/(public|resources|static|assets)\/([a-f0-9]){28,31}$/$script,xmlhttprequest,~third-party
+/cdn-cgi/bm/cv/*$script
 /cgi-bin/bm/cv/*$script
 !
 ! Tracking pixels (for instance, analytics.businessinsider.com/t.gif)
@@ -5553,6 +5563,7 @@ _tracking.php?b=
 ||nd.demdex.net/event?d_mid=$empty,important,domain=9now.com.au
 ||adc.nine.com.au/?token=$empty,important,domain=9now.com.au
 !
+||links.services.disqus.com/api/ping
 ||nikkei.com/.resources/tracking/
 ||nikkei.*^*/SC/
 ||nikkei.*^*/SC2/
