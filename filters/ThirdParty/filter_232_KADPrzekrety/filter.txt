@@ -4,8 +4,8 @@
 ! Homepage: https://kadantiscam.netlify.app
 ! Title: KAD - Przekręty
 ! Description: Filtry chroniące przed różnego rodzaju przekrętami i oszustwami, takimi jak np. subskrypcje SMS, wirusy i fałszywe sklepy internetowe.
-! Last modified: Sat, 11 Jul 2020, 13:01 UTC+02
-! OriginalVersion: 2020.7.11.0
+! Last modified: Sat, 11 Jul 2020, 17:01 UTC+02
+! OriginalVersion: 2020.7.11.1
 ! Expires: 2 days
 ! Licencja: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ! GitHub: https://github.com/PolishFiltersTeam/KAD
@@ -2824,6 +2824,8 @@
 ||zgarniij_vouchher.skroc.pl^$all
 !
 ! Przekręty
+!/\/((delivery-address|secure-payment|processingpayment|laststep).html?)|((barclaypayment|delivery-options|tracking)\.php)$/$document,domain=~przekrety-z-falszywym-kurierem
+/tracking-load.html?ssl=$document,domain=~przekrety-z-falszywym-kurierem
 /^https?:\/\/([\w]{1,4}\.|)allegro(finanse)?\d+\.pl/$all
 /^https?:\/\/([\w]{1,4}\.|)faktury\d+\.org/$all
 /^https?:\/\/([\w]{1,4}\.|)(apps?|best|competition|game|mobile|play|prize|reward|sweeps)[0-9]{2,8}\.[a-z-]{4,22}[0-9]{1,8}\.(agency|icu|life|live|loan)/$document,domain=agency|icu|life|live|loan
@@ -2929,7 +2931,6 @@
 ||allegroapk.net^$all
 ||allegrolokalne.*^$all
 ||allegrolokalnie-pl.*^$all
-||allegrolokalnie.su^$all
 ||allegrolokalnie.*^$document,domain=~allegrolokalnie.pl|~allegro.pl
 ||allegrosklep.online^$all
 ||allegrowork.site^$all
@@ -3033,6 +3034,7 @@
 ||bitcoincodesverigerecension.com^$all
 ||bitcoineraprounitedkingdomreview.com^$all
 ||bitcoinera-appl.com^$all
+||bitcoingemini.club^$all
 ||bitcoins-profit.com^$all
 ||bitcointime.biz^$all
 ||bitcointodaynews.me^$all
@@ -3144,11 +3146,13 @@
 ||cmentosrl.com^$all
 ||coast-bank.com^$all
 ||codzienniekazdycos.club^$all
+||coinmaximalist.com^$all
 ||colorking.es^$all
 ||complainerscla.xyz^$all
 ||com-gift-winner-lucky-day.vip^$all
 ||cool4mob.com^$all
 ||coolboxpl2.com^$all
+||coolboxpl.com^$all
 ||coreplays.com^$all
 ||coronadisco.co.uk^$all
 ||coronavirustestkit.co.za^$all
@@ -3649,6 +3653,7 @@
 ||hilantius.info^$all
 ||historieludzkie*.online^$all
 ||hitfilm.pl^$all
+||hlestersmith.com^$all
 ||holylamaoffers.com^$all
 ||holyurbanhotel.com^$all
 ||host1.5v.pl^$all
@@ -3775,6 +3780,7 @@
 ||januszsobo.online^$all
 ||janzwolinski.freehost.pl^$all
 ||jasaweb.biz^$all
+||javiermiguez.com^$all
 ||jbfilmyseriale.pl^$all
 ||jezykobcywdomu.eu^$all
 ||jmbase.my^$all
@@ -4308,7 +4314,6 @@
 ||poczta-polska.*^$document,domain=~poczta-polska.pl
 ||poczta-regulamin.com^$all
 ||poczta.ron-mil-pl.site^$all
-||pocztex24.pl^$all
 ||pocztexpolska.*^$all
 ||podatek2020.net^$all
 ||podatkigov.net^$all
@@ -5124,9 +5129,6 @@ szukajka.tv##a[href*="alltube.com.pl"], a[href*="filmyonline.com.pl"], a[href*="
 ##a[href*="weryfikacja/index"], a[href*="./weryfikacja/"], a[href*="/weryfikacja/"][target="_blank"]
 ##a[href^="sms:"][href*="?body="]
 /pobierz_*.exe$document
-/wp-includes/*/laststep.html$document
-/wp-includes/*/tracking-load.html?ssl=$document
-/wp-includes/*/tracking.php$document
 /*-AsystentPobierania.exe$document
 /*-ks.exe$document,popup
 /*-ks.exe$subdocument,domain=download.komputerswiat.pl,third-party
