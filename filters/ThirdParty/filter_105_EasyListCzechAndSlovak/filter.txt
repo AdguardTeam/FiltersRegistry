@@ -146,7 +146,6 @@
 ||banners.onebit.cz^$third-party
 ||betclick.com^$third-party
 ||bidmax.cz^$third-party
-||campaigns.caroda.io^$third-party
 ||chrek.stdout.cz^$third-party
 ||d.vvbox.cz^$third-party
 ||d.wedosas.net^$third-party
@@ -206,7 +205,6 @@
 @@||heureka.*/crossdomain.xml
 @@||heureka.*/direct/vyvoj-cen/
 @@||iboys.cz/advert-list.php
-@@||online.mbank.cz/Adv/$domain=mbank.cz
 @@||opti.cz/wp-content/uploads/*/reklama_*.jpg$image
 @@||optika-opti.cz/wp-content/uploads/*/reklama_*.jpg$image
 @@||pise.cz^$generichide
@@ -519,7 +517,6 @@ dotekomanie.cz#?#div.box:-abp-contains(/^reklama/i)
 lupa.cz,root.cz#?#div.article--content:-abp-has(div.design-advert)
 pctuning.tyden.cz#?#div.moduletable:-abp-has(div[style*="reklama-bg"])
 pctuning.tyden.cz#?#div.moduletable:-abp-has(div[id^="AdTrack"])
-search.seznam.cz,clanky.seznam.cz#?#div.Layout--left > div:-abp-has(div.ZboziCategory)
 !
 ! ---------- uBlock Extended filters ---------- !
 !
@@ -535,7 +532,7 @@ drbna.cz#%#//scriptlet('ubo-acis.js', '$', 'fancyBanner')
 games.tiscali.cz#%#//scriptlet('ubo-aeld.js', 'load', 'AdWrapper')
 hokej.cz#%#//scriptlet('ubo-set.js', 'canRunAds', 'true')
 horoskopy.cz#%#//scriptlet('ubo-aopw.js', 'Fisher')
-indian-tv.cz,nerdfix.cz##.container > div:has(a:matches-css(background-image: /jpg/))
+indian-tv.cz,nerdfix.cz##.container > div:has(a:matches-css(position: fixed))
 kupi.cz#$#.top_bg_content { top: 0px !important; }
 lupa.cz#%#//scriptlet('ubo-nofab.js')
 mall.tv#%#//scriptlet('ubo-aopr.js', 'adPlatformEvents.init')
@@ -551,7 +548,7 @@ onlajny.com#%#//scriptlet('ubo-acis.js', '$', 'PartnerRedirectAction')
 rychlost.cz,rychlost.sk#%#//scriptlet('ubo-nano-sib.js', 'ntmt_retest_btn_countdown_do', '1000')
 sauto.cz#%#//scriptlet('ubo-nano-stb.js', 'vendor-load', '3000')
 sector.sk,kinema.sk#$##frs { margin-top: 100px !important; }
-search.seznam.cz,clanky.seznam.cz##.Result--organic:has(div.Result-contentContainer > div + div:not(:matches-css(height: /^0/)))
+search.seznam.cz,clanky.seznam.cz#$?#.Result--organic:has(div.Result-contentContainer > div + div:has(>*:not(:matches-css(height: /^0/)))) { remove: true; }
 super.cz#%#//scriptlet('ubo-ra.js', 'style', 'body')
 svetandroida.cz#%#//scriptlet('ubo-aopr.js', 'detectAdBlocker')
 titulky.com#%#//scriptlet('ubo-acis.js', '$', 'Detected')
