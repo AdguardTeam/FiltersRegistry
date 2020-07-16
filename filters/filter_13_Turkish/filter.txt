@@ -387,6 +387,21 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/59367
+iskandinavya.com#%#//scriptlet("abort-current-inline-script", "jQuery", "ai_front")
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||iskandinavya.com^$generichide
+@@||contextual.media.net/dmedianet.js$domain=iskandinavya.com
+@@||google-analytics.com/analytics.js$domain=iskandinavya.com
+@@||iskandinavya.com/wp-content/plugins/ad-inserter-pro/images/ads.png$domain=iskandinavya.com
+@@||iskandinavya.com/wp-content/uploads/ad-inserter/*/*.js$domain=iskandinavya.com
+!#endif
+! https://github.com/AdguardTeam/AdguardFilters/issues/59364
+@@||iddaaorantahmin.com/cm-site/tema/iddaa/js/adsby.js
+iddaaorantahmin.com#@#.adsbygoogle
+iddaaorantahmin.com#$#.adsbygoogle { height: 6px!important; }
+iddaaorantahmin.com#$#.reklam-alan-tam { position: absolute!important; left: -3000px!important; }
+iddaaorantahmin.com#%#//scriptlet("set-constant", "canRunAds", "true")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59021
 hepgezelim.com#@##adcontent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/57642
@@ -2429,6 +2444,11 @@ macizlee1.com,macizlee.ne,dunyaatlasi.com,ensonhaber.com,gayrimenkulhaber.com,in
 !+ NOT_PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 ||yeniasya.com.tr/sites/yeniasya/static/*-kampanya
 !
+reklamlariengelleme.com###rek_fixed
+burakyeni.com##center > a[href] > img
+||burakyeni.com/dlive.jpg
+||burakyeni.com/wp-content/uploads/*/mehmet-reklam.jpg
+wmaraci.com##a[href][rel="sponsored"][target="_blank"] > img
 ||fullhdfilmizledayi.com/wp-content/themes/filmcidayi/assets/js/assetssx.js
 gazetevatan.com###_bottom_content_bottom a[href^="https://ykl.co/"][target="_blank"] > img
 ||gazetevatan.com/d/i/yenibirisbanner_*.jpg
