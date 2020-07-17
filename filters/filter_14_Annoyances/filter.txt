@@ -74,6 +74,8 @@
 !
 !######### Annoying elements (not ads)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/34115#issuecomment-497969885
+wp.pl#%#!function(){if(decodeURIComponent(location.href).startsWith("https://www.wp.pl/?s=https://"))try{var a=(new URL(window.location.href)).searchParams.get("s");location.replace(a)}catch(b){}}();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59007#issuecomment-658486652
 kp.ru#?##allrecords > div[id]:has(> div[class] > div.t-container script[async][src^="https://aflt.market.yandex.ru/"])
 kp.ru#?##allrecords > div[id]:has(> div[class] > div.t-container div[id^="marketWidget"])
@@ -1534,6 +1536,8 @@ whathifi.com,futurestud.io,slate.com,businessinsider.de,fastcompany.com,heise.de
 bournemouthecho.co.uk,eveningtimes.co.uk,greenocktelegraph.co.uk,heraldscotland.com,swindonadvertiser.co.uk,wiltshiretimes.co.uk##.cta-component-full-width
 !
 burakyeni.com##form[action="https://feedburner.google.com/fb/a/mailverify"]
+zona.media##.js-subscribe
+zona.media##.tools__container
 wmaraci.com##.e-posta-abonelik
 dictionary.com##.sidebar .gform_wrapper form[method="post"]
 habr.com###tm-editoral-subscription
@@ -18068,6 +18072,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !######### JS tweaks ##########
 !##############################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/59515
+nullslide.com#%#//scriptlet("adjust-setInterval", "countdown", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59437
 toppremiumpro.com#%#//scriptlet("adjust-setInterval", "countdown", "2000", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59014
@@ -18619,6 +18625,7 @@ toptech360.com,devicespecifications.com,apkinstaller.com,androidmtk.com,serial-k
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
 quotev.com#$#body #res_area ::selection { background-color: #3297FD!important; }
 !--- JS ----
+nullslide.com#%#//scriptlet("prevent-addEventListener", "/contextmenu|selectstart|dragstart|copy|cut|keydown|keyup/", "preventDefault")
 toppremiumpro.com#%#//scriptlet("prevent-addEventListener", "/contextmenu|selectstart|dragstart|copy|cut|keydown|keyup/", "bypassEventsInProxies")
 wikitechy.com#%#window.addEventListener("contextmenu",function(a){a.stopPropagation()},!0);
 teepr.com#%#//scriptlet("abort-current-inline-script", "document.oncontextmenu")
