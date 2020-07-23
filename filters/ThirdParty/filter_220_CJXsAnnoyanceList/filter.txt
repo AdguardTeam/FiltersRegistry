@@ -1,7 +1,7 @@
 !
-! OriginalVersion: 202005172115
+! OriginalVersion: 202007221922
 ! Title: CJX's Annoyance List
-! Last modified: 2020/05/17 21:15 +0800
+! Last modified: 2020/07/22 19:22 +0800
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/cjx82630/cjxlist
 !
@@ -10,9 +10,9 @@
 ! Removed Annoyances, Self-promotion & Privacy Protection on Chinese Websites
 ! Email (cjxlist@gmail.com)
 [Adblock Plus 2.0]
-! OriginalVersion: 202005071915
+! OriginalVersion: 202007051551
 ! Title: CJX's uBlock list
-! Last modified: 2020/05/07 19:15 +0800
+! Last modified: 2020/07/05 15:51 +0800
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/cjx82630/cjxlist
 ! Licence: https://github.com/cjx82630/cjxlist/blob/master/LICENSE
@@ -27,16 +27,20 @@
 !--------------------------Specific blocking filters--------------------------!
 chinaz.com##.CClose
 */videos/other/$redirect=noopmp4-1s,domain=m.iqiyi.com
-rjno1.com##div[id]:-abp-has(>p:-abp-contains(blocker))
+!https://bbs.kafan.cn/thread-2180923-1-1.html
+rjno1.com#?#div:-abp-has(> p:-abp-contains(chrome-based))
+@@||rjno1.com^$csp
 !------------------------Specific element hiding rules------------------------!
 !---------------------------------CSS Whitelist-------------------------------!
 !---------------------------------URL Whitelist-------------------------------!
 @@||tanx.com/ex?i=$script,domain=dlkoo.com,badfilter
 @@||bingfeng.tw^$generichide,badfilter
 !--------------------------------Tracking Systems-----------------------------!
-! Fork of https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
+!https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
+||cibntv.net/youku/*$media,redirect=noopmp3-0.1s,domain=youku.com
+||valipl.cp31.ott.cibntv.net^$media,redirect=noopmp3-0.1s,domain=youku.com
 @@||valipl.cp31.ott.cibntv.net^$xmlhttprequest,domain=youku.com
-! https://github.com/uBlockOrigin/uAssets/issues/7136
+!https://github.com/uBlockOrigin/uAssets/issues/7136
 iqiyi.com#@%#//scriptlet('ubo-aopr.js', 'DOMParser')
 ||data.video.iqiyi.com/videos/other/*$xmlhttprequest,~third-party
 ||static.iqiyi.com/js/common/mars_v.js$script,~third-party
@@ -890,6 +894,7 @@ iqiyi.com##div[data-adzone][adid]
 ||wpa.b.qq.com/cgi/wpa.php?
 ||zoosnet.net^$third-party
 ||zoossoft.cn^$third-party
+||easyliao.com^$third-party
 !---------------------------Popups--------------------------------------------!
 !--------------------------Specific blocking filters--------------------------!
 ||025yimei.com/templets/default/js/swt.js
@@ -945,7 +950,7 @@ iqiyi.com##div[data-adzone][adid]
 ||chinatimes.com/ads/
 ||cndns.com/incs/js/website_mobile.js
 ||con-article.hjapi.com/v1/txs/
-||cpu.baidu.com^
+||cpu.baidu.com^$third-party
 ||ctfile.com/img/*ssp
 ||daf-rs.com/imageViewer/wpAd
 ||dahe.cn/indiboy/ads/
@@ -1153,7 +1158,6 @@ iqiyi.com##div[data-adzone][adid]
 ||appledaily.hk/banners/subscription/
 ||bilibili.com/x/web-interface/archive/special/recommend?aid=
 ||lancdn.com/tmp3/GG_Notice.png
-||chinaacc.com/upload/*zhongjizhicheng
 ||zhangzishi.cc/cdn-cgi/apps/
 ||macx.cn/js/blockadblock.js
 ||bestqikan.com/static/js/swt.js
@@ -1168,7 +1172,6 @@ iqiyi.com##div[data-adzone][adid]
 ||sinaimg.cn/cj/finance/forex/res/searchCallup.js
 ||tsdm.live/weibo.html
 ||28.com/public/js/w3c_float.js
-||chinaacc.com/upload/js/cia_mjy_pf/
 ||kmf.com/da/do
 ||daiyanbao.com/flash/md
 ||banzou.name/qq/qq2.js
@@ -1180,7 +1183,6 @@ iqiyi.com##div[data-adzone][adid]
 ||chinalawedu.com/js/weixin/weixin.js
 ||chinalawedu.com/js/zxkf.js
 ||baidu.com/xpage/form/getform?id=wk_pc_skin
-||bdimg.com^*/popOperationView_*.js
 ||aixifan.com/static/*/appGuide/
 ||icourse163.org/dwr/call/plaincall/CommonBean.obtain.dwr
 ||3158.cn/min/webim.
@@ -1214,10 +1216,46 @@ iqiyi.com##div[data-adzone][adid]
 ||xyj321.com/static/zx/js/zx-con-jsq_
 ||sinaimg.cn/wap/project/blog_to_news_banner/
 ||zikao365.com/upload/js/pfgg/
+||gaosan.com/js/b.js
+||igo99.cn/js/freetest.js
+||huobaowang.com/meeting/js/hbchat.
+||chinaacc.com/upload/*_mjy_
+||music.163.com^$domain=mvcat.com
+||offcn.com/index.php?m=dbsource&c=call&a=get&id=77
 !------------------------Specific element hiding rules------------------------!
+qq.com##.notice[class^="jsx-"]
+qq.com##.elevator[class^="jsx-"]
+qq.com##.wrap[class^="jsx-"]
+php.cn##.layui-show > UL > .top-img
+offcn.com##.jlstc
+chinakaoyan.com##.side-wx
+neets.cc#?#div[class]:-abp-has(> div > .home_p)
+51zhishang.com###kyzb_layer
+51zhishang.com##.zhezhao
+mafengwo.cn###banner-con-gloable
+douyu.com##.ActPayDialog
+baidu.com##.reader-pop-manager-view-containter
+jingyingjiajiao.com##.bdgg
+jingyingjiajiao.com##DIV[style="width:auto;border: 1px solid #aaaaaa; position:fixed; bottom:1px; right:1px;z-index:2000"]
+baidu.com##.vip-member-pop-content
+baidu.com##.app-side-ad
+kanman.com###\5f _acgn-virtual-coin__
+ifeng.com##a[class^="bookrack-"]
+ifeng.com##section[class^="fixSlide-"]
+ifeng.com##div[class^="silde_box-"]
+yun.cn##div[class*="ad-block"]
+pcccp.cn##DIV[id^="xydl"]
+douyu.com##.PrivilegeGiftModalDialog
+igo99.cn##.adBG
+danzhaowang.com##.qxzx_scho
+redocn.com##.big_vip_gg
+redocn.com##.small_vip_gg
+yutu.cn###botfocus-res
+edutt.com##.foot-fixed
 bjx.com.cn##.layer_right2
 dyhjw.com##.index_luckdraw
-rrys2019.com###indexNav1
+rrys2020.com###indexNav1
+rrys2020.com##.corner > LI > A[href*="yyets."]
 acfun.cn##.pause-display
 examw.com###kefu_in
 examw.com##.acitvieLeftBox
@@ -1399,7 +1437,6 @@ epwk.com##.head_banner
 jd.com###m_common_tip
 taobao.com##.J_smartBanner
 appledaily.com###ebBannerTopDiv + A[href^="http://bit.ly/"]
-360kan.com###js-eb-bottomad
 tianyancha.com###banner_web
 vdianying.cc##div[style^="display:block !important;"]
 kuaibao.qq.com##.slider-box
@@ -2049,6 +2086,9 @@ m.babytree.com##script + a[class]
 /v.gif?logtype=
 /yesky/js/counter/*
 /zcool-analytics.js
+||tracking.kdnet.net^
+||lnd.com.cn/sys/real_calc.js
+||sogou.com/dr/p1.gif
 ||stat.jc001.cn^
 ||ip.tianqiapi.com^
 ||count.nuanyuehanxing.com^
@@ -2378,3 +2418,6 @@ weibo.com###Pl_Core_P7MultiPicPlay__7
 weibo.com##.apps_PCD_reco_detail_right
 !----------------------------------The End------------------------------------!
 
+!
+! https://github.com/AdguardTeam/FiltersRegistry/issues/347
+@@||wkstatic.bdimg.com/static/wapwenku/static/static_for_sf/sf_view/widget/toc/component/popOperationView/popOperationView_*.js$domain=wk.baidu.com
