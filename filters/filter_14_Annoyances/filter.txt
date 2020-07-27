@@ -3305,6 +3305,7 @@ doodlr.io#%#//scriptlet("set-constant", "isAdBlockActive", "false")
 polygun.io,sketchful.io#@#.adBanner
 @@||golem.de/bannertest/iqdigital/dist/show_ad.js
 @@||a2a-static-4players.act2access.com/dist/ads.js
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication-adsbygoogle,important,domain=jefawk.com
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,important,domain=battlestick2.net
 ||battlestick.net/assets/gfx/gui/adblock.jpg
 peacocktv.com##.playback-ad-blocker-notice
@@ -4974,6 +4975,8 @@ fontyukle.net#@#.adsbygoogle
 @@||doodlr.io/ads.js
 psychic.de#@#.ad-new
 ah.nl#@#.f-ad
+@@||automeme.io/assets/html/ad1.html
+@@||automeme.io/assets/html/ad2.html
 @@||wikihow.com/extensions/*/_ads/ads.js
 @@||ctrlv.cz/js/seo-ads.js
 @@||evades.io/ads.*.js
@@ -4981,6 +4984,9 @@ ah.nl#@#.f-ad
 @@||jkanime.net/ads.js
 @@||creatur.io/Content/js/ads/ad_status.js
 series.movie##.notice
+! https://github.com/AdguardTeam/AdguardFilters/issues/60006
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=jefawk.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42405
 @@||asset.pagefair.com/adimages/$domain=adn.com
 @@cloudfront.net/index.js$domain=adn.com
@@ -7055,10 +7061,16 @@ ignshop.hu,download.pixelexperience.org,waterdrop.com,exvital.de,mobile01.com,du
 ! ###cookie-box
 aksaelektrik.com.tr,ergo.de,fosforludusunceler.com,kirtkirtla.com,sonaktuel.com,muglaweather.com,denizcilikbilgileri.com,filmonerileri.org,wblogy.com,dnschecker.org,krombacher.de###cookie-box
 !
+financial-ombudsman.org.uk##.cookie-banner-body-overlay
+financial-ombudsman.org.uk#$#.overlay-showing { margin-top: 0px !important; }
+cio.com.br##.cookies-conteudo
+hobbybaecker.de#$#.modal-open { overflow: visible !important; }
+hobbybaecker.de#$#.modal-backdrop { display: none !important; }
 my.account.sony.com###js-SIEWS1lib-header
 doodlr.io###cookie_area
 chargecloud.de##.cb
 investors.com###investors-policy-terms-consent-dialog
+automeme.io##div[style^="width: 400px;"][style*="padding:25px"]
 all4shooters.com##.cookie-consent-dialogue__advertising
 support.theguardian.com##.component-consent-banner-consent-banner
 enbw.com#$#dialog[aria-label="Cookie Consent"] { display: none!important; }
@@ -11389,6 +11401,12 @@ ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = docume
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/60207
+!#if (adguard_app_ios || adguard_ext_android_cb)
+hobbybaecker.de#@##cookie-modal
+hobbybaecker.de#@#.cookie-modal
+hobbybaecker.de#@#.cookie-notice:not(body):not(html)
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59888
 @@||mediamarkt.com.tr/tr/layer/cookielaw.html
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59907
