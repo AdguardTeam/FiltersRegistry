@@ -1,27 +1,27 @@
 !
 ! Title: Polish Anti Adblock Filters
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku
-! Last modified: 3 July 2020
+! Last modified: 12 August 2020
 ! Expires: 2 days
-! OriginalVersion: 2020070301
+! OriginalVersion: 2020081202
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020070301 aktualizacja: ptk, 3 lipca 2020, 08:25:00
+! v.2020081202 aktualizacja: sr, 12 sierpnia 2020, 13:05:00
 !
 !
 !-----------------------Integration of supplement lists for uBlock & AdGuard-----------------------!
 ! Title: Polish Anti Adblock Filters - supplement for uBlock Origin
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku - uzupelnienie dla uBlock Origin
-! Last modified: 18 June 2020
+! Last modified: 6 July 2020
 ! Expires: 2 days
-! OriginalVersion: 2020061801
+! OriginalVersion: 2020070601
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020061801 aktualizacja: czw, 18 czerwca 2020, 06:30:00
+! v.2020070601 aktualizacja: pon, 6 lipca 2020, 20:20:00
 !
 !
 ! Adblock
@@ -109,6 +109,10 @@ exdb.net#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'mdpDeBlocker')
 ||pagead2.googlesyndication.com^$important,script,redirect=noopjs,domain=popkulturysci.pl
 ||pagead2.googlesyndication.com^$important,xmlhttprequest,redirect=nooptext,domain=popkulturysci.pl
 !
+!
+trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'HateAdBlock')
+trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'adBlockDetected')
+!
 ! magazyn.wp.pl
 !#if cap_user_stylesheet
 magazyn.wp.pl##div:has(div > img[src*="NDM0MzY2YSUsUjtJdklsMG8KbxkpWhE3OVRvVntHbH5vHyQXOFUrN2JRLBh2XCcmY0AjHXtP"])
@@ -141,7 +145,7 @@ wp.pl#@#body > div:nth-of-type(1)[style^="display: block;"]:not(#page)
 !1#---------------------------------Anti Adblock Rules element hide----------------------------------!
 ##.kill-adblock-container
 12zawodnik.pl##.ads-checker-msg
-24gliwice.pl,wyborkierowcow.pl,kino123.pl,jednoslad.pl,how2play.pl,polskiedzieje.pl,ciekawe.org,baza-lekow.com.pl,testhub.pl,widzewtomy.net,gadzet.telchina.pl,ostatniatawerna.pl,kulturalnemedia.pl,newonce.net,variatkowo.pl,legendyboksu.pl,mywildforest.pl,magyazyn.pl,waw4free.pl#@##adsense
+24gliwice.pl,wyborkierowcow.pl,kino123.pl,jednoslad.pl,how2play.pl,polskiedzieje.pl,ciekawe.org,baza-lekow.com.pl,testhub.pl,widzewtomy.net,gadzet.telchina.pl,ostatniatawerna.pl,kulturalnemedia.pl,newonce.net,variatkowo.pl,legendyboksu.pl,mywildforest.pl,magyazyn.pl,waw4free.pl,chillitorun.pl,zwiadowcahistorii.pl#@##adsense
 24opole.pl,webcamera.pl,darmowe-torenty.pl,dziennikwschodni.pl,vorek.pl,katowickisport.pl,torrentcity.pl,wtkplay.pl,epoznan.pl,comperia.pl,poradnikzdrowie.pl,eska.pl,pomponik.pl,interia.pl#@#.ad
 4geek.co##.wgAdBlockMessage, #adbd
 ##.adblock-alt
@@ -289,7 +293,7 @@ take-kino.pl##.ui-dialog, .ui-widget, .ui-widget-content, .ui-corner-all, .ui-fr
 tapeciarnia.pl,scypion.pl#@#.adsbygoogle
 tapeciarnia.pl#@#[id^="aswift_"]
 terrarium.com.pl##.header-ad, .ABD_display_adblock.ABD_display
-terrarium.com.pl,ps3-hack.pl#@##ads
+terrarium.com.pl,ps3-hack.pl,listatv.pl#@##ads
 trojmiasto.pl,trojmiasto.tv###block_info_wrap
 twojezaglebie.pl###modal
 twojezaglebie.pl##.modal-box
@@ -369,9 +373,11 @@ zycietoprzygoda.pl##[class^="tws_"]
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=zobacz.ws,redirect=nooptext,important
 !
 !3#---------------------------------Anti Adblock Rules whitelist filters----------------------------------!
-@@*$generichide,domain=break.pl|handballnews.pl|angielskieespresso.pl|dayz.pl|go4free.pl|meteomodel.pl|polski-sport.pl|wyborcza.pl|esarena.eu|queer.pl|wysokieobcasy.pl|eduzabawy.com|zadanie.pl|waw4free.pl
+@@*$generichide,domain=break.pl|handballnews.pl|angielskieespresso.pl|dayz.pl|go4free.pl|meteomodel.pl|polski-sport.pl|wyborcza.pl|esarena.eu|queer.pl|wysokieobcasy.pl|eduzabawy.com|zadanie.pl|waw4free.pl|listatv.pl
 @@/Scripts/ads.js$script,domain=www.reklama.pl
 @@/^(https|http):\/\/a-o\.ninja\/[0-9a-zA-z-]{10,200}\.js/$script
+@@/ads.css$domain=trojmiasto.pl
+@@||ads.trojmiasto.pl$xmlhttprequest,domain=trojmiasto.pl
 @@/adblockdetect/*$script,domain=to.com.pl|dziennikbaltycki.pl|dzienniklodzki.pl|dziennikzachodni.pl|expressilustrowany.pl|gazetakrakowska.pl|gazetawroclawska.pl|gloswielkopolski.pl|kurierlubelski.pl|nto.pl|wspolczesna.pl|poranny.pl|pomorska.pl|gp24.pl|gazetalubuska.pl|echodnia.eu|nowiny24.pl|polskatimes.pl|gs24.pl|gk24.pl|expressbydgoski.pl|ekstramagazyn.pl|stronazdrowia.pl
 @@/ad/banner/_adsense_/_adserver/_adview_.ad.json$domain=wyborcza.pl|wysokieobcasy.pl
 @@/ads.js$script,domain=sjp.pwn.pl|lunaticfiles.com|eveline.wp.pl|static.webcamera.pl|realmadryt.pl|lowcygier.pl|mp3.teledyski.info
@@ -413,6 +419,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||app.convertiser.com/scripts/*.advert.js
 @@||applemobile.pl^$generichide
 @@||auto-swiat.pl^$generichide
+@@||bejsment.com/wp-content/plugins/classifieds/img/ads/banner.gif$image
 @@||blog.programyzadarmo.net.pl/images/ad/*.gif$image,domain=blog.programyzadarmo.net.pl
 @@||burzowo.info/*.js?*ad
 @@||businessinsider.com.pl^$generichide
@@ -484,7 +491,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||onet.pl^$generichide
 @@||online-tv.pl/wp-content/plugins/pause-adblocker/inc/pause-front.css
 @@||ovh.webshark.pl/adserver/*/main_script.js?advertise_check=1
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl|dniwolne.eu|webkod.pl|cdahd.ml|zobacz.ws|nysainfo.pl|odsluchane.eu|lowcygier.pl
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl|dniwolne.eu|webkod.pl|cdahd.ml|zobacz.ws|nysainfo.pl|odsluchane.eu|lowcygier.pl|trojmiasto.pl|listatv.pl
 @@||pagead2.googlesyndication.com/pagead/js/r*/show_ads_impl.js$domain=efizyka.net.pl|dniwolne.eu
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=efizyka.net.pl|nk-net.pl|www.gry.pl|lowcygier.pl
 @@||pc-sos.pl/ad.htm$script,domain=pc-sos.pl|xn--strela-8db.pl
@@ -505,7 +512,8 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||ps3-hack.pl^$generichide
 @@||purepc.pl^$generichide
 @@||rapidgrab.pl^$generichide
-@@||r.trojmiasto.pl/adxmlrpc/json.php$xmlhttprequest,domain=trojmiasto.pl
+@@||r.trojmiasto.pl^$xmlhttprequest,domain=trojmiasto.pl
+@@||r-trojmiasto.pl^$xmlhttprequest,domain=trojmiasto.pl
 @@||realmadryt.pl^$xmlhttprequest,domain=realmadryt.pl
 @@||rek.www.wp.pl/vad.xml$xmlhttprequest
 @@||rodzinnywyjazd.pl/gads.js$script
@@ -570,6 +578,7 @@ chelmski.eu##.ad-text-headbaner
 chelmski.eu#?#div[class]:not([id]):-abp-has(> .ad-text)
 naszamlawa.pl##.spacead-r-2, .adsbygoogle, .td-adspot-title, .td-is-sticky.td-pb-span4.tdc-inner-column.vc_column_container.wpb_column.td_uid_26_5defeae8f3d3e_rand.vc_column_inner, .td_block_template_11.td-pb-border-top.td_uid_42_5defeae907025_rand.td_block_title.td_block_wrap, .td-is-sticky.td-pb-span4.tdc-inner-column.vc_column_container
 pilot.wp.pl##a[data-gtm-player-bar="guest_web_desktop"]
+||c.trojmiasto.pl/adblock/detected/$image,domain=trojmiasto.pl
 !
 !5#--------------------------shinden.pl------------!
 ||popads.net/pop.js^$important
@@ -656,6 +665,7 @@ pilot.wp.pl#@#.ads
 !
 !11#--------------------------polskatimes.pl------------!
 @@||ppstatic.pl/assets/nsk/*/js/compiled/atoms/ads/branding-video.js
+||ppstatic.pl/assets/nsk/*/js/compiled/atoms/ads/branding-video.js$script,domain=pl|eu,redirect=noopjs,important
 polskatimes.pl,dziennikbaltycki.pl#@##advert1
 polskatimes.pl,dziennikbaltycki.pl,www.realmadryt.pl#@#.div-gpt-ad
 !

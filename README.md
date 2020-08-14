@@ -69,10 +69,6 @@ This repository contains the known filters subscriptions available to AdGuard us
 
   Build log that contains excluded and converted rules with an explanation.
 
-### domains-blacklist.txt
-
-A list of domains to be removed from url-blocking domain modified rules.
-
 ### Tags
 
 Every filter can be marked by a number of tags. `/tags/metadata.json` contains every tag metadata.
@@ -96,6 +92,10 @@ Example:
 * `recommended` tag
 
   Filters that are recommended to use in their category. The category is determined by the pair of the `lang:` and `purpose:` tags.
+
+* `obsolete` tag
+
+  Filter's metadata with this tag will be excluded from filters.json and filters_i18n.json.
 
 ### Groups
 
