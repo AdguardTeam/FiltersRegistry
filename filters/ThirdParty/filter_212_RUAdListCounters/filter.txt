@@ -1,8 +1,8 @@
 !
-! Checksum: TfbzesPxwb7OaR6d2K6iWA
-! OriginalVersion: 202008191650
+! Checksum: VtPe2H1YIGKisGJxTeTSLQ
+! OriginalVersion: 202008192050
 ! Title: RU AdList: Counters
-! Last modified: 19 Aug 2020 16:50 UTC
+! Last modified: 19 Aug 2020 20:50 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -184,7 +184,6 @@ _pagespeed_beacon?
 ##img[src^="/stat/"][width="88"][height="31"]
 !
 ! = Общие блокировки (и с использованием имени доменов) =========================
-/^https?://mail\.yandex\.(by|kz|ru|ua|uz)/[^\s]{160,}/$script,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.ua|mail.yandex.uz
 /redir/stat/*$domain=autonews.ru|rbc.ru|sportrbc.ru
 |http://li.ru^$third-party,~subdocument
 |http://pr-cy.$third-party
@@ -624,6 +623,7 @@ _pagespeed_beacon?
 ||static.gazeta.ru^*/add_utm_links.js
 ||static.hotjar.com^$third-party
 ||static20.online^$third-party
+||statistics.fppressa.ru^$third-party
 ||statistics.wibiya.com^$third-party
 ||statok.net/image/
 ||statpipe.ru^$third-party
@@ -835,7 +835,6 @@ _pagespeed_beacon?
 ! = Частные и экспериментальные фильтры =======================================
 e.mail.ru###LEGO .b-rb
 e.mail.ru###LEGO div[id^="preload_banner"]
-e.mail.ru,octavius.mail.ru###app-canvas .application-mail__wrap > .layout > .layout__main-frame ~ .layout__column_right > :not(.sidebar-search)
 www.rambler.ru###main > div[class]:not([id]) > :first-child[style]:not(div):not([class]):not([id])
 fastpic.ru###picContainer > img
 happy-hack.ru#?##side_right > .block_r:-abp-has(noindex > center)
@@ -850,6 +849,7 @@ ivi.ru#?#+js(set-constant.js, Object.prototype.hasAdv, noopFunc)
 rutracker.lib,rutracker.net,rutracker.nl,rutracker.org#?#+js(set-constant.js, String.prototype.startsWith, noopFunc)
 rp5.am,rp5.by,rp5.co.uk,rp5.kz,rp5.lt,rp5.lv,rp5.md,rp5.ru,rp5.ua#?#+js(setTimeout-defuser.js, xvb)
 inoreader.com##.ad_title > a
+yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##.b-page__container > footer ~ .b-statcounter + div[class]
 militaryreview.su##.bbanerr
 uniongang.net,uniongang.org#?#.block:-abp-has(> .block-title:-abp-contains(Счётчики))
 yakusubstudio.home-forum.com,yakusubstudio.ru##.contbaner
@@ -885,6 +885,7 @@ mail.ru##body > .zeropixel ~ * .searchContainer ~ [class] > .tabs-content ~ div 
 yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##body.b-page > .b-page__container .card.content__adv.card
 yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##body[class*="b-page"] .main.widgets :not(div) :not(div) > div[class] > div[class] > style:not(div) + div[class]:not([class*="widget"])
 championat.com,eda.ru,gazeta.ru,lenta.ru,letidor.ru,motor.ru,passion.ru,quto.ru,rambler.*,rns.online,wmj.ru#?#+js(set-constant.js, Object.prototype.getPrefixes, undefined)
+yandex.ru##div > .banner-root ~ .page-root > #page div[class^="_"] > div > script + section div[class^="_"] > [data-id] + div[class^="_"]:not([data-id]) > div:first-child
 yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz##div[class*="turbo-advert_type_"]
 inoreader.com##div[id^="leaderboard_ad"] > *
 radioprofusion.com##footer > .counter
