@@ -1,9 +1,4 @@
 !
-! Checksum: /WRFUuATs/EcN28+F8WM+A
-! OriginalVersion: 202008192101
-! Title: hufilter
-! Last modified: 19 Aug 2020 21:01 UTC
-! Expires: 1 days (update frequency)
 ! Homepage: https://github.com/hufilter/hufilter/wiki
 ! Licence: CC-BY, see http://creativecommons.org/licenses/by/4.0/
 !
@@ -24,6 +19,9 @@
 ! GitHub issues: https://github.com/hufilter/hufilter/issues
 ! GitHub pull requests: https://github.com/hufilter/hufilter/pulls
 !
+!---------------------------------------------------------------------------!
+!-------------- General JS API ---------------------------------------------!
+!---------------------------------------------------------------------------!
 !-------------------------------------------------------------------------------!
 !------------------ Ads --------------------------------------------------------!
 !-------------------------------------------------------------------------------!
@@ -2305,40 +2303,52 @@ forbes.hu###catapult-cookie-bar
 @@||meszotar.hu/scripts/advertising.js
 /js/vendor/blockadblock.js^$domain=szineshir.net|zoldmano.info
 !---------------------------------------------------------------------------!
-!-------------- uBlock-specific rules --------------------------------------!
+!-------------- AdGuard-specific rules -------------------------------------!
 !---------------------------------------------------------------------------!
+!
+! Scriptlets and CSS rules simply don't work on iOS or Safari.
+!#if (adguard && !adguard_ext_safari && !adguard_app_ios)
 !
 !-------------- Scriptlets -------------------------------------------------!
 !
-! Divany, Totalcar, Totalbike adblock detection
-divany.hu,totalcar.hu,totalbike.hu#%#//scriptlet('ubo-acis.js', 'document.head', 'currentScript.remove')
+! Divany, Totalcar, Totalbike Adblock detection
+divany.hu,totalcar.hu,totalbike.hu#%#//scriptlet('abort-on-property-write', 'document.head', 'currentScript.remove')
 !
 ! Indavideo adblock detection
-embed.indavideo.hu#%#//scriptlet('ubo-set.js', 'AdHandler.checkAdblock', 'noopFunc')
+embed.indavideo.hu#%#//scriptlet('set-constant', 'AdHandler.checkAdblock', 'noopFunc')
 !
 ! Free space before article
-life.hu#%#//scriptlet('ubo-ra.js', 'class', 'section[class="life-section l-section-main article-section l-section-article"]')
+life.hu#%#//scriptlet('remove-attr', 'class', 'section[class="life-section l-section-main article-section l-section-article"]')
 !
-hosszupuskasub.com#%#//scriptlet('ubo-window.open-defuser.js')
+hosszupuskasub.com#%#//scriptlet('prevent-window-open')
 !
-sorozatwiki.hu#%#//scriptlet('ubo-ra.js', 'style', 'body')
+sorozatwiki.hu#%#//scriptlet('remove-attr', 'style', 'body')
 !
-magyarhang.org,hang.hu#%#//scriptlet('ubo-acis.js', 'document.addEventListener', 'ai_run_')
-magyarhang.org,hang.hu#%#//scriptlet('ubo-acis.js', 'document.getElementById', 'ai_run_')
+magyarhang.org,hang.hu$$script[tag-content="ai_run_"]
+magyarhang.org,hang.hu#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', 'ai_run_')
+magyarhang.org,hang.hu#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'ai_run_')
 !
-calculat.org#%#//scriptlet('ubo-nostif.js', 'adstest', '4000')
+calculat.org#%#//scriptlet('prevent-setTimeout', 'adstest', '4000')
 !
-traffihunter.hu#%#//scriptlet('ubo-rc.js', 'darken', 'body')
+traffihunter.hu#%#//scriptlet('remove-class', 'darken', 'body')
 !
+szeretlekmagyarorszag.hu$$script[tag-content="window.atob"]
 !
+port.hu$$script[tag-content="addEListener(DCL"]
+port.hu$$script[tag-content="ads.js"]
+port.hu$$script[tag-content="quantcast"]
 !
+grundoajandek.hu$$script[tag-content="contextmenu"]
 !
+hungliaonline.com$$script[tag-content="adblocker"]
 !
+openspeedtest.com$$script[tag-content="testadblock"]
 !
+karpathir.com$$script[tag-content="KillAdBlock"]
 !
 !-------------- CSS modifiers ----------------------------------------------!
 !
-citromail.hu#$#._ce_measure_row { margin-top: 1rem !important; }
+citromail.hu#$#._ce_measure_row  { margin-top: 1rem !important; }
 !
 startlap.hu#$#div.container.banner-container.wide { min-height: 0!important; height: auto!important; }
 !
@@ -2348,7 +2358,7 @@ automotor.hu#$#div.layoutContent { margin-top: 0 !important; }
 automotor.hu#$##_cikk_tartalom_rb1 { margin-top: 0 !important; }
 automotor.hu#$#div.postContent { margin-top: 0 !important; }
 !
-hosszupuskasub.com#$#* { cursor: auto !important; }
+hosszupuskasub.com#$# * { cursor: auto !important; }
 !
 gepigeny.hu#$#.main-container { margin-top: 100px !important; }
 !
@@ -2360,6 +2370,9 @@ atv.hu#$#header { height: auto !important; }
 player.hu##.adult-overelay
 traffihunter.hu##.ooono_promo
 karpathir.com##[class^="k"][class*="-container"][class*="-2"][class$="-hide"]
+!
+! End of iOS limitations
+!#endif
 !
 !-------------- Other ------------------------------------------------------!
 !
