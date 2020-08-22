@@ -1,12 +1,12 @@
 !
-! Checksum: kJnlyd81bh9u904VcItEPg
+! Checksum: vo/HWa08tBn9p7XGKClJ+A
 ! Title: Polskie Filtry Elementów Irytujących
 ! Polish Annoyance Filters
 ! Codename: Annoyance - Main
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego działania wymagana jest lista lub rozszerzenie I don't care about cookies!
-! Last modified: Thu, 20 Aug 2020, 12:01 UTC+02
-! OriginalVersion: 2020.8.20.0
+! Last modified: Sat, 22 Aug 2020, 12:00 UTC+02
+! OriginalVersion: 2020.8.22.0
 ! Expires: 2 days
 ! Najnowsza wersja zawsze na: https://github.com/PolishFiltersTeam/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -14,7 +14,7 @@
 !   GitHub => https://github.com/PolishFiltersTeam/PolishAnnoyanceFilters/issues
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Copyright © 2020 Polish Filters Team
-! Aktualizacja: czw, 20 sie 2020, 12:01 UTC+02
+! Aktualizacja: sob, 22 sie 2020, 12:00 UTC+02
 !
 !
 ! Newslettery (nie popupy)
@@ -2114,7 +2114,6 @@ myob.pl#?##popup-message-window:-abp-has(p > a >img[src*="popup_desktop"])
 mysize.com.pl###popup_box, #overlay
 m.czesciauto24.pl##.cps_app
 m.smaker.pl##.apkInfoPopup
-m.youtube.com##.upsell-dialog-lightbox
 nabory.kprm.gov.pl##.active.popup-newsletter
 naekranie.pl###welcome_screen-content
 najlepszebuty.com.pl##.pp-wrapper, .pp-overlay
@@ -2425,7 +2424,8 @@ wysokiewibracje.pl###modal-3606
 xn--gagan-l7a.pl##.bk_popup
 yoursclothing.pl##.js-overlay, .slideInBox
 yoursclothing.pl##.slide-in-box--newsletter
-youtube.com#?#ytd-popup-container > .ytd-popup-container[role="dialog"]:-abp-contains(Zmiany w Warunkach korzystania z usługi YouTube)
+youtube.com##body > .opened[opened][style^="z-index"]
+youtube.com#?#ytd-popup-container > paper-dialog.ytd-popup-container[role="dialog"]:-abp-has(a[href="https://support.google.com/youtube/?p=sign_in"])
 zaadoptujfaceta.pl##body > .v3:nth-of-type(5)
 zakazany-humor.pl##.snp-pop-111-wrap, .snp-pop-111-overlay
 zawojski.pl##.news-overlay
@@ -2445,6 +2445,8 @@ zuch.media###spu-10366, #spu-bg-10366
 !kulturaliberalna.pl##.kl-1procent-2020-banner, .kl-1procent-2020-bg
 !kulturaliberalna.pl##.newsletter-2019, .newsletter-2019-bg
 !mettosport.eu##.wf2-shake-box, .grwf2_backdrop
+!m.youtube.com##.upsell-dialog-lightbox
+!youtube.com#?#ytd-popup-container > .ytd-popup-container[role="dialog"]:-abp-contains(Zmiany w Warunkach korzystania z usługi YouTube)
 !||zaradnyfinansowo.pl/*/wp-content/plugins/wp-subscribe-pro/assets/js/magnificpopup-*.js
 /common/js/enp/modules/newsletterPopup/newsletterPopup.js$domain=mixmedia.pl|mycenter.pl
 /css/jquery.fancybox.css$domain=fakro.pl|modrzewiowy-dwor.pl
@@ -2482,6 +2484,7 @@ zuch.media###spu-10366, #spu-bg-10366
 ||centrumprasowe.pap.pl/cp/pl/ajax/popup/*$xmlhttprequest
 ||chamskie.pl/compress/popupFacebook.js
 ||chamskie.pl/compress/popups/popupFacebook_normal.css
+||claritine.pl/static/js/image_gallery/jquery.colorbox.js
 ||czarymary.pl/NewsletterPopup
 ||czerwionka-leszczyny.pl/mod/banery/top_baner_ciasteczko$xmlhttprequest
 ||daily.pl/modal/get/sticker-text
@@ -2496,21 +2499,25 @@ zuch.media###spu-10366, #spu-bg-10366
 ||gazetatrybunalska.pl/wp-content/plugins/uji-popup/js/popups.js
 ||gazetatrybunalska.pl/wp-content/plugins/uji-popup/modal/jquery.modal.min.js
 ||getall.pl/modules/popup/$script,stylesheet,domain=pl
+||grouponcdn.com/app/subscriptions/assets/email_zip_main_*.js
 ||haart.pl/wp-content/plugins/popup-builder/public/js/Popup.js
 ||heuristic.pl/css/magnific-popup.css
 ||home-you.com/themes/hy/popup/jquery.popup.js
 ||ibuk.pl/public/desktop/js/contentJs/aapopup.js
 ||img.babsft.com/site/images/babylon10/translation/popupScript.js
 ||inffuse-fbpopup.appspot.com/widget.html
+||izigsm.pl/js/newsletterpop.js
 ||jednoslad.pl/wp-content/plugins/custom-fan-gate-plugin/css/style.css
 ||jsystems.pl/resources/js/modal.js
 ||kbhakord.pl/sites/all/modules/popup_announcement/popup_announcement.js
 ||kierunekspozywczy.pl/js/magnific-popup/jquery.magnific-popup.js
 ||kubawpodrozy.pl/wp-content/plugins/newsletter-leads/libs/simplemodal/jquery.simplemodal.js
+||kuchenny.com.pl/popup/js/jquery.simplemodal.js
 ||liceum.org.pl/modules/mod_mh_ajax_popup/js/mhap.js
 ||losyziemi.pl/?spu_action=spu_load&lang=
 ||mailerlite.com^$third-party
 ||mailing.terapiasokami.pl/site2/subskrybenci_terapii_sokami
+||makita.sklep.pl/szablony/standardowy.rwd/exit-popup/scripts/main.js
 ||mamstartup.pl/newsletter/popup
 ||medyczny.pl/uploads/exit-popup/ml-exit-popup.min.js
 ||message-page.com/sound/open.mp3$media,object,domain=info-przetargi.pl
@@ -2520,6 +2527,7 @@ zuch.media###spu-10366, #spu-bg-10366
 ||motywujemy24.pl/compress/popupFacebook.js
 ||m-wierchomla.youlead.pl/ylcustom.js
 ||nawozy.eu/js/jquery.lockscroll.min.js
+||nivea.pl/-/proxy/web/*/nivea-club-pf/popup/*$xmlhttprequest
 ||phf-bosch.pl/kartki/kartki.js
 ||player.vimeo.com/video/*?autoplay=1$subdocument,domain=fakro.pl
 ||podaj.to/content/js/facebook.min.js
@@ -2540,6 +2548,7 @@ zuch.media###spu-10366, #spu-bg-10366
 ||sky-shop.pl/view/scripts/sweetalert/dist/sweetalert.min.js
 ||starter.net.pl/wp-content/plugins/modal-window/assets/css/style.min.css
 ||superkoszyk.pl/media/nl_modal/js/delay1page.js
+||super-toys.pl/javascript/banner_popup.php
 ||szkla.com/js/newsletter_popup.js
 ||timeandwatches.pl/modules/mod_onscreen_facebook_likebox_popup/assets/js/jquery.colorbox-min.js
 ||v2.getall.pl/modules/popup/*$domain=skladaniekomputera.pl
@@ -2549,16 +2558,9 @@ zuch.media###spu-10366, #spu-bg-10366
 ||widget.contactleader.pl^$script,third-party
 ||woblink.com/js/newsletterPopup.js
 ||wszystkookotach.pl/wp-content/plugins/popslide/assets/js/front.js
-||www1.grouponcdn.com/app/subscriptions/assets/email_zip_main_*.js
-||www.claritine.pl/static/js/image_gallery/jquery.colorbox.js
-||www.izigsm.pl/js/newsletterpop.js
-||www.kuchenny.com.pl/popup/js/jquery.simplemodal.js
-||www.makita.sklep.pl/szablony/standardowy.rwd/exit-popup/scripts/main.js
-||www.nivea.pl/-/proxy/web/*/nivea-club-pf/popup/*$xmlhttprequest
-||www.super-toys.pl/javascript/banner_popup.php
-||www.wymarzonyogrod.pl/popup-newsletter/*
-||www.youtube.com/get_video_info?*video_id=3mUaADvAK9E*eurl=*intermarche.pl*c=WEB_EMBEDDED_PLAYER$xmlhttprequest,domain=www.youtube.com
 ||wydawnictwokobiece.pl/wp-content/plugins/newsletter_popup//newsletter_popup.js
+||wymarzonyogrod.pl/popup-newsletter/*
+||youtube.com/get_video_info?*video_id=3mUaADvAK9E*eurl=*intermarche.pl*c=WEB_EMBEDDED_PLAYER$xmlhttprequest,domain=www.youtube.com
 ||zalajkowane.pl/wp-content/plugins/custom-fan-gate-plugin/js/custom-fan-gate.js
 ||znak.com.pl/popupNewsletter$xmlhttprequest
 !
@@ -9100,7 +9102,6 @@ www.microsoft.com###email-newsletter-dialog
 wynagrodzenia.pl###isbusiness-modal, .modal-backdrop
 yieldbird.com#$#.home { overflow: visible !important; }
 yieldbird.com##.overlay-layer, .default-modal
-youtube.com#?#ytd-popup-container > .ytd-popup-container[role="dialog"]:-abp-has(a[href="https://support.google.com/youtube/?p=sign_in"])
 zaufanekliniki.pl###modalMain, .modal-backdrop
 zegarkiipasja.pl##.emelu-lightbox-target
 zeskory.com##.newsletter-pop, .modal-backdrop
