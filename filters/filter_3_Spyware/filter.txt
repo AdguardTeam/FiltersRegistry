@@ -5643,6 +5643,7 @@ _tracking.php?b=
 ||nd.demdex.net/event?d_mid=$empty,important,domain=9now.com.au
 ||adc.nine.com.au/?token=$empty,important,domain=9now.com.au
 !
+||cnews.ru/inc/js/show_stat.js
 ||cdn.dopc.cz/gen/detect.png
 ||digikey.*/-/media/Designer/Web%20Analytics/MultiTrack/JS/multitrack.js
 ||digikey.*/resources/ba4e6e570brn21616213e20fbeb902d9
@@ -7952,6 +7953,15 @@ link.gmapp*.net$image
 ||rover.ebay.$image,object,script,badfilter
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/61851
+||googletagmanager.com/gtm.js$script,redirect=googletagmanager-gtm,domain=avast.com
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||googletagmanager.com/gtm.js$domain=avast.com
+@@||google-analytics.com/analytics.js$domain=avast.com
+@@||google-analytics.com/gtm/js?id=$domain=avast.com
+!#endif
+! https://github.com/AdguardTeam/AdguardFilters/issues/61844
+@@||github.com/carlomorgenstern/piwik-angular/$domain=github.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61868
 @@||officedepot.co.cr/_ui/shared/js/analyticsmediator.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61875
