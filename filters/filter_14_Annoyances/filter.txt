@@ -3170,9 +3170,9 @@ rp5.ru,rp5.ua,rp5.by,rp5.kz,rp5.co.uk#$?##content > div > div[id]:has(> ins.adsb
 @@||adservice.google.*/adsid/integrator.js$domain=m.rp5.ru|m.rp5.ua|m.rp5.by|m.rp5.kz|m.rp5.co.uk
 !#endif
 !
-! rambler with side-projects: wmj.ru,passion.ru,eda.ru,quto.ru,rns.online,championat.com,gazeta.ru,lenta.ru
+! rambler with side-projects: autorambler.ru,wmj.ru,passion.ru,eda.ru,quto.ru,rns.online,championat.com,gazeta.ru,lenta.ru
 !+ NOT_PLATFORM(windows, mac, android)
-wmj.ru,motor.ru,passion.ru,quto.ru,eda.ru,rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#//scriptlet("set-constant", "Object.prototype.insertBannerContent", "undefined")
+autorambler.ru,wmj.ru,motor.ru,passion.ru,quto.ru,eda.ru,rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#//scriptlet("set-constant", "Object.prototype.insertBannerContent", "undefined")
 ! rambler.ru - leftovers on the main page
 www.rambler.ru#?#main header ~ div div[class]:has(> div[class] > div[id] > script:contains(/^if\s?\(!window\..*{"status":/))
 www.rambler.ru#?#main header ~ div div[class]:has(> div[class] > div[id]:empty)
@@ -7216,7 +7216,6 @@ ignshop.hu,download.pixelexperience.org,waterdrop.com,exvital.de,mobile01.com,du
 ! ###cookie-box
 bilgilobi.com,aksaelektrik.com.tr,ergo.de,fosforludusunceler.com,kirtkirtla.com,sonaktuel.com,muglaweather.com,denizcilikbilgileri.com,filmonerileri.org,wblogy.com,dnschecker.org,krombacher.de###cookie-box
 !
-||cmp.chip.de/index.html?message_id=*&consentUUID=
 msn.com###onetrust-consent-sdk
 hetmanrecovery.com##._cookie-bar
 billiger-telefonieren.de###uc-central-banner-modal
@@ -10903,6 +10902,12 @@ wykop.pl#$#.type-permanent+#nav { top: 0!important; }
 ||tol.postnl.nl/toestemming
 ||unsertirol24.com/analytics/analytics_cookie.js
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/61906
+!#if (!adguard_app_ios && !adguard_ext_android_cb)
+chip.de#$?#style:contains(#sp_message_iframe) { remove: true; }
+||cmp.chip.de/index.html?message_id=*&consentUUID=
+!#endif
+!
 construction21.org#$##cookiesdirective { display: none !important; }
 construction21.org#$#.ext-el-mask { display: none !important; }
 construction21.org#$#body { overflow: auto !important; }
@@ -11685,7 +11690,7 @@ m-timesofindia-com.cdn.ampproject.org$$amp-consent
 !#######################################################
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61906
-/wrapperMessagingWithoutDetection.js$domain=chip.de
+@@/wrapperMessagingWithoutDetection.js$domain=chip.de
 ! Blitz app - stop asking for cookies on every start when already done
 @@||apis.quantcast.mgr.consensu.org/CookieAccess$domain=blitz.gg,app=Blitz.exe
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61499
