@@ -6835,6 +6835,7 @@ cc-fan.tv,cn-fan.tv,fox-fan.tv,nf-fan.tv#@#.text_ads
 !#######################################################
 /wp-content/plugins/smart-cookie-kit/*
 ||noterium.com^$third-party
+||c.evidon.com/sitenotice/evidon-banner.js
 /didomi.js
 /cmp_didomi.js
 ||cdn.trustcommander.net/privacy^
@@ -17941,12 +17942,16 @@ theultralinx.com##.m-brand-engagement
 darlingtonandstocktontimes.co.uk##body > #piano-message
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11944
 price.ru##.b-announce-queries__body
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39476
-mail.yahoo.com#?##messageListContainer > div > div[class]:contains(popular videos on Yahoo)
-mail.yahoo.com#?#div[data-test-id="efv-subheader"]:has(> span:contains(popular videos on Yahoo))
 mail.yahoo.com##div[style="width:640px;height:360px"][id="video-player"]
 mail.yahoo.com##div[data-test-id="video-container"]
 ||s.yimg.com/rx/builds/*/iframe-controller-page.html$domain=mail.yahoo.com
+! legacy interface 'mail.yahoo.com/b/folders/2'
+mail.yahoo.com#?#div[style="width:640px;height:360px"][id="video-player"]:upward(div:not([class]))
+! new interface 'mail.yahoo.com/d/folders/2'
+mail.yahoo.com#?#div[data-test-id="efv-header"] > div[data-test-id="efv-subheader"]:matches-css(font-size:13px)
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11061
 kinonews.ru##div[style="width:1010px;margin:0 auto;"] > table[style="width:100%;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10746
