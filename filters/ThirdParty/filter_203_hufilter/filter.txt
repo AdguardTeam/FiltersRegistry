@@ -20,11 +20,8 @@
 ! GitHub pull requests: https://github.com/hufilter/hufilter/pulls
 !
 !---------------------------------------------------------------------------!
-!-------------- General JS API ---------------------------------------------!
+!-------------- Ads --------------------------------------------------------!
 !---------------------------------------------------------------------------!
-!-------------------------------------------------------------------------------!
-!------------------ Ads --------------------------------------------------------!
-!-------------------------------------------------------------------------------!
 !
 ##A[href*="ad.eval.hu"]
 ##A[href*="ad.netmedia.hu"]
@@ -1795,7 +1792,6 @@ napjainkportal.hu##.code-block:-abp-has(> div + ins.adsbygoogle + script)
 ||2mdn.net^$third-party
 ||9klikk.com^$third-party
 ||a.adnium.com^
-||a.rvttrack.com^$third-party
 ||abmr.net^$third-party
 ||ad*.mediaweb.hu/adimage.php?*
 ||ad*.mellesleg.hu^
@@ -1824,7 +1820,6 @@ napjainkportal.hu##.code-block:-abp-has(> div + ins.adsbygoogle + script)
 ||ads.waxum.hu/adimage.php
 ||adsfac.eu/*.asp
 ||adswizz.com^$third-party
-||adtrackeraa.com^
 ||adv-adserver.com^
 ||adv.forpsi.hu^
 ||adv.hu^
@@ -1872,7 +1867,6 @@ napjainkportal.hu##.code-block:-abp-has(> div + ins.adsbygoogle + script)
 ||doubleclick.net^
 ||et.twyn.com^
 ||etargetnet.*
-||facebook.com^$domain=hirkosar.com|origoblog.net|origo-hirek.net|aktivhirek.net|napi-hirek.net|hiroldal.com|hvq-online.com,popup
 ||fastclick.net^
 ||feeds.videosz.com^$third-party
 ||flashkit.com/RealMedia/ads/
@@ -1897,7 +1891,6 @@ napjainkportal.hu##.code-block:-abp-has(> div + ins.adsbygoogle + script)
 ||m2mzona.hu/ads^$third-party
 ||match.rundsp.com^$third-party
 ||megaclick.com/ad.code*$third-party
-||myroitracking.com/newServing/
 ||mytarget.hu^$third-party
 ||napiaszhirdetesek^$third-party
 ||net-solutions.hu/banner/
@@ -1936,14 +1929,6 @@ napjainkportal.hu##.code-block:-abp-has(> div + ins.adsbygoogle + script)
 ||syndication.trafficreps.com^
 ||szv.lsdev.hu
 ||targetix.net^$third-party
-||track.calithornia.com^
-||track.rtb-media.me^
-||track.trackbyme.info^
-||track306.info^$third-party
-||tracker.azet.sk^
-||tracking.binarypromos.com^
-||tracking.tchibo.hu^
-||trackingterrorism.org^$third-party
 ||trafficshop.com^
 ||tripod.com^$third-party
 ||tripod.lycos.com^$third-party
@@ -2295,13 +2280,25 @@ magyarnemzet.hu##div.gdprBoxContainer
 forbes.hu###catapult-cookie-bar
 !
 !---------------------------------------------------------------------------!
+!-------------- Trackers ---------------------------------------------------!
+!---------------------------------------------------------------------------!
+!
+||a.rvttrack.com^$third-party
+||adtrackeraa.com^
+||facebook.com^$domain=hirkosar.com|origoblog.net|origo-hirek.net|aktivhirek.net|napi-hirek.net|hiroldal.com|hvq-online.com,popup
+||myroitracking.com/newServing/
+||track.calithornia.com^
+||track.rtb-media.me^
+||track.trackbyme.info^
+||track306.info^$third-party
+||tracker.azet.sk^
+||tracking.binarypromos.com^
+||tracking.tchibo.hu^
+||trackingterrorism.org^$third-party
+!---------------------------------------------------------------------------!
 !-------------- Other rules ------------------------------------------------!
 !---------------------------------------------------------------------------!
 !
-!-------------- General anti adblock detection -----------------------------!
-!
-@@||meszotar.hu/scripts/advertising.js
-/js/vendor/blockadblock.js^$domain=szineshir.net|zoldmano.info
 !---------------------------------------------------------------------------!
 !-------------- AdGuard-specific rules -------------------------------------!
 !---------------------------------------------------------------------------!
@@ -2344,7 +2341,8 @@ hungliaonline.com$$script[tag-content="adblocker"]
 !
 openspeedtest.com$$script[tag-content="testadblock"]
 !
-karpathir.com$$script[tag-content="KillAdBlock"]
+!karpathir.com$$script[tag-content="KillAdBlock"]
+karpathir.com#%#//scriptlet('abort-on-property-write', 'getComputedStyle')
 !
 !-------------- CSS modifiers ----------------------------------------------!
 !
@@ -2376,3 +2374,5 @@ karpathir.com##[class^="k"][class*="-container"][class*="-2"][class$="-hide"]
 !
 !-------------- Other ------------------------------------------------------!
 !
+@@||meszotar.hu/scripts/advertising.js
+/js/vendor/blockadblock.js^$domain=szineshir.net|zoldmano.info
