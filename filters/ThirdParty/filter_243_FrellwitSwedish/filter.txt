@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-08-28 20:51:06 CEST
+! Last modified: 2020-08-30 14:12:46 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -345,7 +345,6 @@ nouw.com##.box.slide.active:has(.badge:has-text(/annons/i))
 nouw.com##.Container_blogPost:has(em:has-text(/reklamsamarbete/i))
 nouw.com##.magazine-grid-item:has(.badge:has-text(/annons/i))
 nsk.se,skd.se#$#body { opacity: 1 !important; }
-nxload.com#%#//scriptlet('ubo-set.js', 'adb', '0')
 nyadagbladet.se#%#//scriptlet('ubo-aeld.js', 'mouseout')
 nyadagbladet.se#%#//scriptlet('ubo-aopr.js', 'cli_show_cookiebar')
 nyadagbladet.se##.widget_media_image:has-text(/annons/i)
@@ -602,8 +601,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -642,6 +641,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##.cc-grower:not(body):not(html)
 ##.cc-window.cc-floating:not(body):not(html)
 ##.CMAC_AdChangerWidget:not(body):not(html)
+##.comment-ad_wrapper:not(body):not(html)
 ##.cookie-banner-section:not(body):not(html)
 ##.Cookie-banner.is-open:not(body):not(html)
 ##.cookie-banner:not(body):not(html)
@@ -1177,7 +1177,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/popup-by-supsystic$domain=exakt24.se
 /plugins/popups/*$script,domain=bugburger.se|grillbaronen.se|svenskhistoria.se
 /plugins/pum-$script,domain=snowmobile.se
-/plugins/quantcast-choice/*$script,domain=kimura.se|muscles.se
+/plugins/quantcast-choice/*$script,domain=kimura.se|muscles.se|news55.se
 /plugins/random-banner/*
 /plugins/sandviks-weblog/*$script,domain=babyvarlden.se
 /plugins/sassy-social-share/*$script
@@ -1420,6 +1420,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||ccf.admeen.org^*/js/ads/adverts.min.js$domain=spelo.se
 @@||cdn.bluebillywig.com^*/components/admanager.js$script,domain=modette.se|nyheter24.se
 @@||cdn.dynamicyield.com^$domain=alingsastidning.se|bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
+@@||cdn.yieldwrapper.com/yieldwrapper.min.js$script,domain=spray.se
 @@||consensu.org^*/config.js$script
 @@||cykla.se/wp-admin/admin-ajax.php?action*&advert_search$xmlhttprequest
 @@||cykla.se/wp-content/themes/cykla/assets/images/advert-filter-top.jpg$image
@@ -2378,9 +2379,9 @@ natgeo.se##a[data-ad-placement="1"]
 natursidan.se###container > a:not(:first-child)
 natursidan.se###sidebar .widget_text a[target]
 netflixguiden.se##.a-instream
-news55.se##.footer_popup
-news55.se##.news-feed-article[data-n55-theme="n55-theme--native-articles"]
-news55.se##.page-sidebar > section > a.teaser__link[target="_blank"]
+news55.se###newsletter-popup
+news55.se##.after-article-widget
+news55.se##.is-native
 newsvoice.se##.td-footer-wrapper > .td-container > .td-pb-row > div:nth-of-type(2)
 newsvoice.se##a.td_single_image_bg[target="_blank"]
 ng.se##.js--llad
@@ -3148,7 +3149,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||nouw.com/api/campaignpost$xmlhttprequest
 ||nouw.com/api/postview$xmlhttprequest
 ||nouw.com/campaignpost/reg/$image
-||nxload.com^$csp=script-src 'self' 'unsafe-inline' 'unsafe-eval' code.jquery.com data: blob:
 ||nya-filmer.*/masha.$script
 ||nyafilmer.*/branding/$image
 ||nyafilmer.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co *.googleapis.com *.google.com *.gstatic.com;img-src *;worker-src 'none'
