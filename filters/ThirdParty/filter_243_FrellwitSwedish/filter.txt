@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-08-30 14:12:46 CEST
+! Last modified: 2020-08-31 12:29:26 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -279,6 +279,7 @@ kittad.se##a[href]:has(.kittad-label-sponsored)
 klart.se#%#//scriptlet('ubo-aopr.js', 'blockAdBlock')
 klart.se#%#//scriptlet('ubo-rc.js', 'mega-loading')
 klart.se##.content-box-list__item:has(.ad-text)
+kokaihop.se#%#//scriptlet('ubo-cookie-remover.js', 'receptRaknare')
 koket.se##li.slide:has(.external_advertiser)
 krickelins.se##article[id^="post-"]:has(a[href$="/sponsrade-inlagg/"])
 kultwatch.se#$#.js-preloader > .document, .js-preloader > .hero-section { opacity: 1 !important; visibility: visible !important; }
@@ -363,9 +364,11 @@ patient.info#$#body { overflow: auto !important; }
 piraja.se###featholder:has(.spons)
 piraja.se###hero:has(.spons)
 piraja.se##.intro:has(.spons)
+polestarclubsweden.se,sjofart.net,svensktgolfforum.se#%#//scriptlet('ubo-acis.js', 'setTimeout', 'test')
 privataaffarer.se##.data-grid-teaser:has(.teaser-label:has-text(/^annons/i))
 professionalsecrets.se#%#//scriptlet('ubo-acis.js', '$', 'fancybox')
 pussad.se#$#html.g1-popup-visible { overflow: initial !important; }
+qx.se##.col-4:has(script)
 radarbox.com#%#//scriptlet('ubo-set.js', 'ads_enabled', 'true')
 radio.se###main > div:last-child:has-text(/använder cookies/i)
 radron.se#$#.content__body.cms-content.restricted, .main .list__restricted { max-height: initial !important; overflow: initial !important; }
@@ -383,7 +386,6 @@ senses.se##.isobrick:has(a[href*="glhf-gg"])
 shortcut.se##.blockquote:has(strong:has-text(/^annons/i))
 shortcut.se##.employer:has(.sponsored)
 shortcut.se##.item:has(.sponsored)
-sjofart.net,svensktgolfforum.se#%#//scriptlet('ubo-acis.js', 'setTimeout', 'test')
 skanesport.se#%#//scriptlet('ubo-json-prune.js', 'main.content_data.ad_block')
 skovdeik.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'shareContainer')
 skrattsajten.com#%#//scriptlet('ubo-acis.js', '$', 'e.preventDefault')
@@ -778,6 +780,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 .se/wdg/tracking
 .se/wp-content/banners/
 .se/xhr/add-impression/
+.TB.min.js$domain=kokaihop.se
 /*Fokus_360x300px_animate*.gif$image,domain=fokus.se
 /250x360/$image,domain=marsta.nu
 /280x240/$image,domain=rumhemma.se
@@ -1342,6 +1345,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /webbresurser/banner/*
 /widget.hittarecept.se/blogcounter$image,script
 /wp-admin/admin-ajax.php?action=addthis_global_options$script,domain=expressen.se
+/wp-banner-manager.min.js$domain=branschkoll.se
 /wp-content/js/infinite-ads.$script
 /wp-content/plugins/addthis/*
 /wp-content/plugins/easy-social-share-buttons$script
@@ -1400,6 +1404,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/optimizelyjs/*$domain=ikea.com
 @@/opulens_banner$image,domain=opulens.se
 @@/plugins/convertplug/modules/modal/*/cross.png$image,~third-party
+@@/prebid.js$~third-party,domain=feber.se|tjock.se
 @@/scripts/advertisement*.$script,~third-party,domain=alltomtradgard.se|amelia.se|damernasvarld.se|di.se|expressen.se|mama.nu|skonahem.com
 @@/scrollReveal$script,domain=explorecurate.com
 @@/show_ads.js$script,~third-party,domain=happypancake.com
@@ -1968,6 +1973,7 @@ fbitullinge.nu,gtsoder.se,maskalpin.se,telgesibk.se###outerAd
 feber.se,tjock.se##.art_ad
 feber.se,tjock.se##.art_ad_sign
 feber.se,tjock.se##adline
+feber.se,tjock.se##f-deals
 feber.se,tjock.se##f-panorama
 fightermag.se##a[href*="/sponsra"]
 filmtipset.se###topslider-wrapper + .container > .sidebar
@@ -2234,8 +2240,10 @@ klart.se##.cookie-disclaimer
 klart.se##.gdpr-onboarding-container
 klart.se##.sponsor-message
 knulla.se###cookiescript_injected
+kokaihop.se###mat-se-buy-widget
 kokaihop.se###popupStatus
 kokaihop.se##.kng-cookie-info-bar
+kokaihop.se##.share-and-add-parent
 kokaihop.se,ratsit.se##.modal-backdrop
 kokaihop.se,tjanstebilen.se##.modal
 koket.se###react-newsletter-overlay
@@ -2255,6 +2263,7 @@ kungalvsposten.se,kungsbackaposten.se,lokaltidningensto.se,molndalsposten.se##.n
 kungalvsposten.se,kungsbackaposten.se,lokaltidningensto.se,molndalsposten.se##.wp-slot-layout-article-native
 kungalvsposten.se,kungsbackaposten.se,lokaltidningensto.se,molndalsposten.se##[data-html*="ad-container"]
 kurera.se##.annonswrapper
+kurera.se##.kurera-register-newsletter-popup
 kurslitteratur.se##.ad-section
 kvalitetsmagasinet.se,miljo-utveckling.se,telekomidag.se,vdtidningen.se###subscribe_splash
 kvartal.se##.email-popup-wrapper
@@ -3172,6 +3181,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||pixel.playbuzz.com^$xmlhttprequest
 ||pji.nu^$third-party,domain=99mac.se|amazonaws.com|feber.se|fz.se|idg.se|kamerabild.se|minhembio.com|mobil.se|nordichardware.se|surfa.se|sweclockers.com|viivilla.se
 ||platform.linkedin.com^$third-party
+||platform.tumblr.com/*/share.js$third-party
 ||platssajten.se^$third-party
 ||play.etc.se/sw.js$script
 ||pliing.com^$third-party
