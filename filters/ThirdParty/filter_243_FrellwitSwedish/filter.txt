@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-02 10:47:37 CEST
+! Last modified: 2020-09-03 11:44:50 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -56,6 +56,7 @@ akaskidor.se,body.se,svenskgolf.se#$#body { background-image: none !important; }
 akaskidor.se,breakit.se,fotbolltransfers.com,hemtrevligt.se,husvagnochcamping.se,kingmagazine.se,livetombord.se,mestmotor.se,svenskgolf.se,tidningenhalsa.se,utemagasinet.se,vagabond.se#%#//scriptlet('ubo-acis.js', 'ADTECH', 'enqueueAd')
 akaskidor.se,svenskgolf.se##.margin-bottom:has(.row--native)
 aktivtraning.se,iform.se,natgeo.se#$?#li:has(.content-label:has-text(/annons/i)) { remove: true; }
+aktuellhallbarhet.se,dagensmedia.se,fastighetsnytt.se,resume.se##article:matches-css-after(content: "Annonssamarbete")
 alexandrabring.se,biancaingrosso.se##article[id^="post-"]:has(em:has-text(/i samarbete med/i))
 alicestenlof.com,ellinorlofgren.se#$#.noscroll { overflow: initial !important; }
 alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-acis.js', '_adform')
@@ -522,6 +523,8 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||se-tv4.videoplaza.tv/proxy/tracker/$all
 !#endif
 !#if !env_firefox
+proffs.se#$#*::-webkit-scrollbar-thumb { background: #5e5e5e !important; border: 64px none #ffffff !important; border-radius: 0px !important; }
+proffs.se#$#*::-webkit-scrollbar { display: unset !important; }
 nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'OneSignal')
 lchfarkivet.se#%#//scriptlet('ubo-acis.js', '_ezaq')
 lchfarkivet.se#%#//scriptlet('ubo-acis.js', 'cmpCookies')
@@ -599,8 +602,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -823,6 +826,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /ajax_statistics_count/*$xmlhttprequest,domain=byggnyheter.se|dagensfastigheter.se|dagensnaringsliv.se|energinyheter.se|industrinyheter.se|infrastrukturnyheter.se|inredningsnyheter.se|jarnvagsnyheter.se|metallerochgruvor.se|papperochmassa.se|solenerginyheter.se|sportochfritidsnyheter.se|stockholmsbyggnyheter.se|transportochlogistik.se|vindkraftsnyheter.se
 /amp-addthis$domain=mobilanyheter.net
 /analytics$script,domain=dn.se
+/analytics-bmb$script
 /analytics.js$domain=carnegie.se
 /analytics/gallup/*$script
 /annons-banner
@@ -1381,7 +1385,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ?action=get_banners$domain=djungeltrumman.se
 @@/*490x224$image,domain=dansbandskanalen.se|guldkanalen.se
 @@/*_adframe.js$script,~third-party,domain=fssweden.se
-@@/ad-block-detection-script$~third-party,domain=blocket.se
+@@/ad-block-detection-script$domain=blocket.se
 @@/ad.php$script,~third-party,domain=99mac.se|skogstok.se|temperatur.nu
 @@/ads.js$script,~third-party,domain=hd.se|megafonen.se|sydsvenskan.se
 @@/ads.min.js$~third-party,domain=notebookcheck.se
@@ -1403,6 +1407,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/opulens_banner$image,domain=opulens.se
 @@/plugins/convertplug/modules/modal/*/cross.png$image,~third-party
 @@/prebid.js$~third-party,domain=feber.se|tjock.se
+@@/pulse.min.js$domain=omni.se|omniekonomi.se
 @@/scripts/advertisement*.$script,~third-party,domain=alltomtradgard.se|amelia.se|damernasvarld.se|di.se|expressen.se|mama.nu|skonahem.com
 @@/scrollReveal$script,domain=explorecurate.com
 @@/show_ads.js$script,~third-party,domain=happypancake.com
@@ -1461,7 +1466,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||remus.garaget.org/www/delivery/$script,~third-party,xmlhttprequest
 @@||samnytt.se^$generichide
 @@||sdk.pulse.schibsted.com/loader.min.js$domain=special.aftonbladet.se
-@@||sdk.pulse.schibsted.com^$domain=omni.se|omniekonomi.se
 @@||stockblogs.se^$generichide
 @@||stromstadstidning.se^$generichide
 @@||tidningenhalsa.se^$generichide
@@ -1474,6 +1478,7 @@ aapl.se,digilar.se,hrnytt.se,ljuskultur.se,omvarlden.se,svenskfotboll.se##.cooki
 accentmagasin.se##.site-cookies
 affarsliv.com,affarslivgotland.se,allsvenskan.se,alltomstockholm.se,babyhjalp.se,branschkoll.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,fotosidan.se,globalportalen.org,helagotland.se,kkuriren.se,klackspark.com,kollega.se,kuriren.nu,mitti.se,moviezine.se,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,osterbottenstidning.fi,pt.se,sn.se,unt.se,vimmerbytidning.se,vt.se##.ads
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norran.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,strengnastidning.se,unt.se,vimmerbytidning.se,vt.se##.cdk-overlay-pane
+affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norran.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,strengnastidning.se,unt.se,vimmerbytidning.se,vt.se##ad-block
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norran.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,strengnastidning.se,unt.se,vimmerbytidning.se,vt.se##ad-iris-sunt-ad-wrapper
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norran.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,strengnastidning.se,unt.se,vimmerbytidning.se,vt.se##widget-family
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norran.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,strengnastidning.se,unt.se,vimmerbytidning.se,vt.se##widget-jobb-plus
@@ -1663,6 +1668,7 @@ barnsemester.se###aggressivead
 barnsemester.se##.annonsfiendset
 barometern.se,blt.se,bt.se,kristianstadsbladet.se,olandsbladet.se,ostrasmaland.se,smp.se,sydostran.se,trelleborgsallehanda.se,ut.se,ystadsallehanda.se##.component__ad__ad-box
 barometern.se,blt.se,bt.se,kristianstadsbladet.se,olandsbladet.se,ostrasmaland.se,smp.se,sydostran.se,trelleborgsallehanda.se,ut.se,ystadsallehanda.se##.component__guide-ads
+barometern.se,blt.se,bt.se,kristianstadsbladet.se,olandsbladet.se,ostrasmaland.se,smp.se,sydostran.se,trelleborgsallehanda.se,ut.se,ystadsallehanda.se##.component_gdprMessage__container
 battrenyheter.se##.abnan-single
 battrenyheter.se##.gbnan
 battrenyheter.se##a[href*="bettingsidor"]
