@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-05 07:40:47 CEST
+! Last modified: 2020-09-07 20:27:36 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -269,6 +269,9 @@ innebandymagazinet.se,ng.se#%#//scriptlet('ubo-aopr.js', 'ADTECH')
 interiorbyvanessa.se##.post:has-text(I annonssamarbete med)
 isabellalowengrip.se##.post:has(em:has-text(/^i samarbete med/i))
 jaktplay.se,svenskjakt.se#%#//scriptlet('ubo-acis.js', 'desktop_random_ad_id')
+jamtlandstidning.se##.elementor-widget-sidebar:has(li[id^=media_image-1])
+jamtlandstidning.se##.elementor-widget-wrap:has(img[src*=-annons-])
+jamtlandstidning.se##.elementor-widget:has(h2:has-text(/^Annons$/))
 justwannahavefun.se##.legible:has(.sub-title:has-text(/sponsrat av/i))
 kamerabild.se#%#//scriptlet('ubo-set.js', 'Annons', 'noopFunc')
 kamerabild.se##.kol2 > div:has(.pane-title):has-text(/annons/i)
@@ -555,8 +558,8 @@ forum.macworld.se,forum.studio.se,idg.se#$#.idgcp__modal--in .idgcp__layer { bac
 /plugins/wp-enqueue/smoothscroll.$script
 /rokophoto-lite/js/SmoothScroll.$script
 /tapatalkdetect.$~third-party,script
+/themes/*/js/smoothscroll.$script
 /themes/buzzy/assets/js/modules/plugins/smoothPageScroll$script
-/themes/willow/js/smoothscroll.$script
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu:before
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#body.logged-out *> .c-user-menu { display: inherit !important; border: none !important; box-shadow: none !important; background: none !important; top: 20px !important; left: 400px !important; }
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out *> .c-user-menu__item:not(.js-epaper-trigger)
@@ -602,8 +605,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -832,7 +835,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /annons-banner
 /annons-linje.gif$image,domain=tkj.se
 /annons.aspx?
-/annons/$image,domain=barnsemester.se|battrestadsdel.se|beinspiredtravel.se|bjuvsnytt.se|boktugg.se|bubb.la|dansbandskanalen.se|etc.se|etunawebben.se|fastighetstidningen.se|flygtorget.se|frilagt.se|guldkanalen.se|kulturbloggen.com|kurera.se|laromedia.se|lesscarbs.se|lundagard.se|natursidan.se|newsvoice.se|nvp.se|opulens.se|polistidningen.se|rumhemma.se|saik.com|sff.nu|siriusbandy.se|skillingaryd.nu|svf.se|tekniksmart.se|vinbanken.se|xn--vrnamo-bua.nu
+/annons/$image,domain=barnsemester.se|battrestadsdel.se|beinspiredtravel.se|bjuvsnytt.se|boktugg.se|bubb.la|dansbandskanalen.se|etc.se|etunawebben.se|fastighetstidningen.se|flygtorget.se|frilagt.se|guldkanalen.se|jamtlandstidning.se|kulturbloggen.com|kurera.se|laromedia.se|lesscarbs.se|lundagard.se|natursidan.se|newsvoice.se|nvp.se|opulens.se|polistidningen.se|rumhemma.se|saik.com|sff.nu|siriusbandy.se|skillingaryd.nu|svf.se|tekniksmart.se|vinbanken.se|xn--vrnamo-bua.nu
 /annons/*$subdocument,domain=internetlankar.se
 /annons_hor.
 /annons_ver.
@@ -1663,6 +1666,7 @@ bandybyn.se##.StartPageBoxRow > .boxcontainer:nth-child(2) > .StartPageBoxNarrow
 bandybyn.se,falubsbandy.com###RightDiv
 bandyfeber.com##.widget_sp_image
 bandyfeber.com##a[title^="ANNONS"]
+bandyplay.se##div[class^="CookieConsent"]
 bandyplay.se,bettips.se,digitalfotoforalla.se,illvet.se,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,pctidningen.se##.top-banner
 barnsemester.se###aggressivead
 barnsemester.se##.annonsfiendset
@@ -2209,6 +2213,10 @@ isabellalowengrip.se,itrace.se,vitalisfoto.se###preloader
 it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,nyhetersto.se,svenskbyggtidning.se##a.gofollow[data-track]
 jaktplay.se##.jaktplay-ad
 jaktsidan.se##[data-role="sidebarAd"]
+jamtlandstidning.se##.animated-fast .elementor-element:not(:last-of-type)
+jamtlandstidning.se##.elementor-arrows-position-inside
+jamtlandstidning.se##.elementor-widget-image-carousel
+jamtlandstidning.se##div[data-elementor-type=single] .elementor-top-section[data-settings^="{\""]:not(.elementor-hidden-phone)
 javligtgott.se##a[href="https://klimatkompensera.se"]
 javligtgott.se,starbys.se,vegankrubb.se##.category-samarbeten
 jawcloud.co##.loloba
@@ -2297,6 +2305,10 @@ lindasbakskola.se,privataaffarer.se,skk.se##a[href*="/bit.ly/"]
 linnherbertsson.se##[id^="content-ad"]
 listor.se##.top-ads-widget
 livetombord.se##a[href^="//www.livetombord.se/artiklar/partner/"]
+livetsgoda.se##.custom-html-widget
+livetsgoda.se##.penci-rlt-popup
+livetsgoda.se##[class*="advads"]
+livetsgoda.se##a[target="_blank"]
 ljudochbild.se##.adremark
 ljudochbild.se##.coofad
 ljudochbild.se##.hideonphone.hidead
@@ -2703,6 +2715,7 @@ viivilla.se##.afubar-top
 viivilla.se##.native-ad-md
 viivilla.se##.overlay-bottom
 viivilla.se##.sp-article
+viktvaktarna.se##div[class*="GDPRBanner"]
 vilkenstorlek.se##.rcc-panel
 villalivet.se##.onp-sl-overlap-box
 vimedbarn.se##.annonsinlagg
@@ -3374,6 +3387,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||wishpond.net^$third-party
 ||wonderpush.com^$third-party
 ||woomio.com/assets/js/analytics$third-party
+||wp.com/wp-content/js/bilmur.min.js$script
 ||wpcc.io^*/cookieconsent$script
 ||xfm.se/cookie/cookie_popup.$script
 ||yelp.se/eu_cookie_notice$subdocument
