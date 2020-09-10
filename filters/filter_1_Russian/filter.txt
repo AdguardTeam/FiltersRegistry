@@ -4572,6 +4572,7 @@ adbetnet.com$third-party
 !
 ! Section contains the list of advertising networks, which are hosted on non advertising sites as subdomains
 !
+||banner.zol.ru^
 ||tothemoon.incest-porno.pro^
 ||sidebar.incest-porno.tv^
 ||engine-pmbk.ligastavok.ru^
@@ -7996,6 +7997,8 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.zen-pa
 !------- JS ------------
 !-----------------------
 !
+! proagro.com.ua - убран рекламный клик
+proagro.com.ua#%#//scriptlet('remove-attr', 'href', '.ban_head')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/62617
 xittv.net#%#//scriptlet("prevent-window-open")
 ! https://forum.adguard.com/index.php?threads/39523/
@@ -8462,6 +8465,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! proagro.com.ua - убран отступ
+proagro.com.ua#$##all > main { margin: 0 15px 0 165px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/63437
 modernrock.ru#$#body.custom-background { background-color: transparent !important; background-image: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/62781
@@ -11217,6 +11222,8 @@ lotzon.pro,novosti-n.org,prokazan.ru,20minut.ua,alnews.com.ua,gtavicecity.ru,haq
 ! vast ads on anime sites - for example: animego.org, yummyanime.club, etc
 /:\/\/[0-9]?[a-z0-9]{11,}(\.com|\.in\.net)/$xmlhttprequest,domain=aniqit.com|kodik.info|start.u-cdn.top|ustore.bz
 !
+/\/images\/b\/(?!youtube-logo\.jpg).*\.(gif|jpg|png)/$domain=proagro.com.ua
+proagro.com.ua##.bg-banner
 apk-inform.com##.content-second-banner
 ||propozitsiya.com/sites/default/files/*/banners/
 /\/(pioneer_branding_|Raundap_).*\.(jpg|gif)/$domain=propozitsiya.com
@@ -21071,6 +21078,12 @@ stratege.ru###wrapper > div#content + div[id]
 stratege.ru###content > div[id]:not([id="content-wrapper"])
 stratege.ru##body > div[class][id] > style + div[id*="-"]
 stratege.ru##body > div[id$="promo_layer"] > style[type] + div[id]
+!
+! zol.ru
+zol.ru##.central_banner
+zol.ru##div[id^="banner_main_top_"]
+zol.ru##.advertisement_main
+zol.ru###classified
 !
 ! gorodkiev.com.ua
 gorodkiev.com.ua##body > div[class^="container-"] > div[class] > table[width="580"]
