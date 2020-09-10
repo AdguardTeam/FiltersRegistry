@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-09 10:31:30 CEST
+! Last modified: 2020-09-10 11:47:29 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -83,7 +83,7 @@ alltforforaldrar.se,mammasidan.se,minbebis.com#%#//scriptlet('ubo-acis.js', 'loa
 alltforforaldrar.se,mammasidan.se,minbebis.com#%#//scriptlet('ubo-set.js', 'advertisementText', 'undefined')
 alltomburgare.se##.newscolumn:has(a[href$="/sponsrat/"])
 alltommat.se##.teaser:has(.teaser-label:has-text(/annonssamarbete/i))
-alltomtradgard.se,amelia.se,damernasvarld.se,mama.nu,skonahem.com#%#//scriptlet('ubo-acis.js', 'ExpressenAnalytics', 'push')
+alltomtradgard.se,amelia.se,damernasvarld.se,skonahem.com#%#//scriptlet('ubo-acis.js', 'ExpressenAnalytics', 'push')
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 altinget.se#%#//scriptlet('ubo-nostif.js', 'show_popup')
 arbetarskydd.se,lag-avtal.se,nyteknik.se,personalledarskap.se#%#//scriptlet('ubo-acis.js', 'ALMA', 'loadAd')
@@ -320,7 +320,7 @@ mestmotor.se#$#html,body { overflow: auto !important; }
 metrojobb.se##.headlines__block:has(.ad-header)
 metromode.se##.b-related__item:has(.advert)
 metromode.se##.js-blox-article:has(.advert)
-metromode.se##.slick-item:has(.advert)
+metromode.se#$?#.slick-item:has(.advert) { remove: true; }
 minimalisterna.se##.post:has(p:has-text(/i samarbete med/i))
 missatsamtal.se#%#//scriptlet('ubo-aopw.js', '_gaq')
 missatsamtal.se##.comment:has(.nosnaj)
@@ -1261,6 +1261,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /run/analytic$~third-party,xmlhttprequest,domain=momondo.se
 /s_code.js$domain=dagenstv.com
 /Scripts/burt/*$script
+/scripts/initLogging$domain=alltomtradgard.se|amelia.se|damernasvarld.se|expressen.se|skonahem.com
 /scripts/pb*.js$script,domain=100kitchenstories.se|benjeey.se|elinskoglund.com|fannystaaf.se|lovisawallin.se|moamattsson.se|nouw.com
 /se-wordpress-agilis-solum/assets/js/ad-collapse.$script
 /se-wordpress-gdpr
@@ -1387,6 +1388,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 99mac.se,akaskidor.se,allakorsord.se,baaam.se,bettingstugan.se,bioenergitidningen.se,bohuslaningen.se,byggnadsarbetaren.se,casinowings.se,cissiochfreddan.se,claudiagalliconcha.se,dagensmedia.se,dagensopinion.se,di.se,dn.se,driva-eget.se,dromhemochtradgard.se,ekuriren.se,elle.se,elledecoration.se,ellematovin.se,emilysliv.se,expressen.se,femina.se,filmtipset.se,folkbladet.nu,gabriellajoss.me,hemtrevligt.se,ifokus.se,interiorbyvanessa.se,kimura.se,kkuriren.se,linneasskafferi.se,linnherbertsson.se,livetombord.se,loppi.se,mabra.com,mariestadstidningen.se,markbladet.se,mestmotor.se,mobil.se,mybabydolls.se,nwt.se,padelfeber.se,paulas.me,poddtoppen.se,polistidningen.se,residencemagazine.se,skaraborgsbygden.se,skillingaryd.nu,sla.se,sn.se,sportbloggare.com,storstadsmamman.com,sv.picmix.com,svenskgolf.se,swedroid.se,tidningenbalans.se,tidningenhalsa.se,utemagasinet.se,vagabond.se,varmlandsaffarer.se,vimedbarn.se,vk.se,xn--vrnamo-bua.nu##.ad
 ://sifomedia.
 ?action=get_banners$domain=djungeltrumman.se
+@@.ad.json?$~third-party,xmlhttprequest,domain=byggahus.se
 @@/*490x224$image,domain=dansbandskanalen.se|guldkanalen.se
 @@/*_adframe.js$script,~third-party,domain=fssweden.se
 @@/ad-block-detection-script$domain=blocket.se
@@ -1412,7 +1414,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/plugins/convertplug/modules/modal/*/cross.png$image,~third-party
 @@/prebid.js$~third-party,domain=feber.se|tjock.se
 @@/pulse.min.js$domain=omni.se|omniekonomi.se
-@@/scripts/advertisement*.$script,~third-party,domain=alltomtradgard.se|amelia.se|damernasvarld.se|di.se|expressen.se|mama.nu|skonahem.com
+@@/scripts/advertisement*.$script,~third-party,domain=alltomtradgard.se|amelia.se|damernasvarld.se|di.se|expressen.se|skonahem.com
 @@/scrollReveal$script,domain=explorecurate.com
 @@/show_ads.js$script,~third-party,domain=happypancake.com
 @@/wpdcookiejs/*$domain=nordichardware.se
@@ -1595,7 +1597,7 @@ alltforforaldrar.se,mammasidan.se,minbebis.com##.spons-artc
 alltforforaldrar.se,mammasidan.se,minbebis.com##[id*="blogg_panorama"]
 alltforforaldrar.se,mammasidan.se,minbebis.com##a[href^="/native/"]
 alltforforaldrar.se,mammasidan.se,minbebis.com##li.views-row > a[target="_blank"]
-alltihemmet.se,alltomtradgard.se,amelia.se,damernasvarld.se,expressen.se,gardochtorp.se,godsochgardar.se,lantliv.com,mama.nu,skonahem.com,tara.se,topphalsa.se##.gdpr-banner
+alltihemmet.se,alltomtradgard.se,amelia.se,damernasvarld.se,expressen.se,gardochtorp.se,godsochgardar.se,lantliv.com,skonahem.com,tara.se,topphalsa.se##.gdpr-banner
 alltomhif.se,lyckasmedbakning.nu,restaurangilse.se,rikakvinnor.se,soja.se,tonyhatefnejad.se##.preloader
 alltommat.se,di.se,dn.se,familyliving.se,privataaffarer.se,viforaldrar.se##.teaser-native
 alltommat.se,familyliving.se,privataaffarer.se,viforaldrar.se##a.teaser[href*="/annonssamarbete/"]
@@ -1607,7 +1609,7 @@ alltomstockholm.se,mitti.se##.outsider-container
 alltomstockholm.se,mitti.se##.panorama_top
 alltomstockholm.se,mitti.se##.puff-container-native
 alltomstockholm.se,mitti.se##[class*="insider_"]
-alltomtradgard.se,amelia.se,damernasvarld.se,mama.nu,skonahem.com##.teaser__third-party
+alltomtradgard.se,amelia.se,damernasvarld.se,skonahem.com##.teaser__third-party
 alltomwhisky.se##.topmost-banner
 alpresor.se###toast-container
 altinget.se###CookieModal_cookiemodal
@@ -1856,6 +1858,7 @@ di.se##.footer__cookie-info
 di.se##.mc__overlay--show
 di.se##.native-box
 di.se##.segment__column > .service-box:last-child
+di.se##.site-header__panorama
 di.se##[class^="gdpr-policy"]
 di.se##a[href*="/annons-"]
 di.se##a[href^="/brandstudio/"]
