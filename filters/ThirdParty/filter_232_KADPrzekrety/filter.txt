@@ -4,8 +4,8 @@
 ! Homepage: https://kadantiscam.netlify.app
 ! Title: KAD - Przekręty
 ! Description: Filtry chroniące przed różnego rodzaju przekrętami i oszustwami, takimi jak np. subskrypcje SMS, wirusy i fałszywe sklepy internetowe.
-! Last modified: Sat, 12 Sep 2020, 13:02 UTC+02
-! OriginalVersion: 2020.9.12.0
+! Last modified: Sat, 12 Sep 2020, 17:02 UTC+02
+! OriginalVersion: 2020.9.12.1
 ! Expires: 2 days
 ! Licencja: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ! GitHub: https://github.com/PolishFiltersTeam/KAD
@@ -2384,7 +2384,7 @@
 ||zyski-z-innowacji.pl^$all
 !
 ! Przekierowują do innych stron z przekrętami
-/^https?:\/\/([\w]{1,4}\.|)(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\.[a-z-]{4,22}[0-9]{1,8}\.info/$document,domain=info
+/^https?:\/\/([\w]{1,4}\.)?(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\.[a-z-]{4,22}[0-9]{1,8}\.info/$document
 ||0n.click^$all
 ||185.34.52.4^$all
 ||abihpopihigh.tk^$all
@@ -2392,6 +2392,7 @@
 ||actraffic.com^$all
 ||adaranth.com^$all
 ||adsbtrack.com^$all
+||adservd.com^$all
 ||alatcommu.gq^$all
 ||all-tube.pl^$all
 ||arcicalonetal.pro^$all
@@ -2454,6 +2455,7 @@
 ||go-rilla.offerstrack.net^$all
 ||go.0o.click^$all
 ||go.data1rtb.com^$all
+||go.trckaffis.com^$all
 ||grand-prise-ishere*.life^$all
 ||great-prizeshere.life^$all
 ||great-prizes-here.info^$all
@@ -2463,6 +2465,7 @@
 ||igcecsrrt.site^$all
 ||ildexremusli.tk^$all
 ||iphone-za-darmo.over-blog.com^$all
+||kceo.icquerini.it^$all
 ||largetfarget.ga^$all
 ||largetfarge.ml^$all
 ||largetfarg.tk^$all
@@ -2656,11 +2659,12 @@
 ||zgarniij_vouchher.skroc.pl^$all
 !
 ! Przekręty
-/\/((delivery-(address|options)|secure-payment|processingpayment|tracking(-load)?|laststep).html?)|((barclaypayment|delivery-(address|options)|tracking)\.php)$/$document,domain=~przekrety-z-falszywym-kurierem
+*/tracking-load.html?ssl=$document,domain=~przekrety-z-falszywym-kurierem
+/\/(((delivery-(address|options)|secure-payment|processingpayment|tracking(-load)?|laststep)\.html?)|((barclaypayment|delivery-(address|options)|tracking)\.php))$/$document,domain=~przekrety-z-falszywym-kurierem
 /^https?:\/\/([\w]{1,4}\.)(\w+)?-?pocztex.*\d+-?(polska)?\.[\w]{2,14}/$all,domain=~pocztex.pl
 /^https?:\/\/([\w]{1,4}\.)?allegro(finanse)?\d+\.pl/$all
 /^https?:\/\/([\w]{1,4}\.)?faktury\d+\.org/$all
-/^https?:\/\/([\w]{1,4}\.)?(apps?|best|competition|game|mobile|play|prize|reward|sweeps)[\d]{2,8}\.[a-z-]{4,22}[\d]{1,8}\.(agency|icu|life|live|loan)/$document,domain=agency|icu|life|live|loan
+/^https?:\/\/([\w]{1,4}\.)?(apps?|best|competition|game|mobile|play|prize|reward|sweeps)[\d]{2,8}\.[a-z-]{4,22}[\d]{1,8}\.(agency|icu|life|live|loan)/$document
 /^https?:\/\/([\w]{1,4}\.)?(goedekans|flyingintheclouds|jsdevelopmentq|randalieren|thoughcopyforest|wildgrelns)[\d]{1,2}\.live/$all
 /^https?:\/\/([\w]{1,4}\.)?(\w+)?-?(\d+)?gwalt(fakty?|news|wiadomosci?|polska|monitoring)\.[\w]{2,14}/$all
 /^https?:\/\/([\w]{1,4}\.)?(\w+)?.?\w+-?poczta(\d+)?-?polska(\d+)?\.[\w]{2,14}/$all
@@ -3179,6 +3183,7 @@
 ||darmowyfilmrfm44.ek1.pl^$all
 ||darmowyfilmzlektoremoas10.ek1.pl^$all
 ||dates-here-now*.com^$all
+||dating-4-adults*.com^$all
 ||dating-heart*.com^$all
 ||davekurier.com^$all
 ||davekurier.org^$all
@@ -3667,6 +3672,7 @@
 ||gazetkawarszawa.pl^$all
 ||gazetowo.eu^$all
 ||gcesab.com^$all
+||gcginternational.com^$all
 ||gdynia-fakt24.pl^$all
 ||gdzieogladac.online^$all
 ||gdzie-zobaczyc.pl^$all
@@ -4778,6 +4784,7 @@
 ||qooqle-play.com^$all
 ||qooqle-play.eu^$all
 ||qooqle-sklep.eu^$all
+||quartexindustries.com^$all
 ||qubble.com^$all
 ||quebocalyalbum.byethost6.com^$all
 ||quiz-fun.com.my^$all
@@ -4937,6 +4944,7 @@
 ||skippyfile.com^$all
 ||sklepplay.net^$all
 ||sklepsilvermagic.pl^$all
+||sklep-play.cc^$all
 ||sknrtel.com^$all
 ||skuter.c0.pl^$all
 ||slonce-deszcz.net^$all
@@ -5321,6 +5329,7 @@
 ||windpl.org^$all
 ||windykacjajagoda.org^$all
 ||winfreetoday.com^$all
+||winnertoday.site^$all
 ||winningsidenow.com^$all
 ||wiocha-pl.eu^$all
 ||wirtualnapolska24.eu^$all
@@ -5491,23 +5500,29 @@
 ||123musicblend.blogspot.com^$all
 ||accelerationlife.blogspot.com^$all
 ||adrianzajewicz.blogspot.com^$all
+||aerie-photographer.blogspot.com^$all
 ||aisha-khadija.blogspot.com^$all
 ||aizuite.blogspot.com^$all
 ||aktualizacjafacebooka.blogspot.com^$all
+||alexreds.blogspot.com^$all
 ||alissaathirah.blogspot.com^$all
 ||almiranazelia.blogspot.com^$all
 ||alonewiththemalones.blogspot.com^$all
 ||amirahadilahhashim.blogspot.com^$all
 ||amirahanisadlin.blogspot.com^$all
+||amperfeicao.blogspot.com^$all
 ||amylewindesigns.blogspot.com^$all
 ||and-4ever.blogspot.com^$all
 ||anizajohan.blogspot.com^$all
 ||apihommie.blogspot.com^$all
 ||arischka.blogspot.com^$all
 ||arisyaumaira.blogspot.com^$all
+||ariyeka.blogspot.com^$all
+||artenalente.blogspot.com^$all
 ||asharbambang.blogspot.com^$all
 ||ashtonmari.blogspot.com^$all
 ||asimplyblog.blogspot.com^$all
+||axeramus-poeta.blogspot.com^$all
 ||azidacolours.blogspot.com^$all
 ||barrylearnsaboutart.blogspot.com^$all
 ||barsy*.blogspot.com^$all
@@ -5535,6 +5550,7 @@
 ||dascoininfo.blogspot.com^$all
 ||dataasmierci.blogspot.com^$all
 ||datasmierci01.blogspot.com^$all
+||delheartshanx.blogspot.com^$all
 ||dinalovesbeast.blogspot.com^$all
 ||dispositioning.blogspot.com^$all
 ||dobrefilmyhd.blogspot.com^$all
@@ -5573,10 +5589,12 @@
 ||filmyonline-24.blogspot.com^$all
 ||filmywhdpl.blogspot.com^$all
 ||filmy-za-free.blogspot.com^$all
+||film-vod-online.blogspot.com^$all
 ||franklikeme.blogspot.com^$all
 ||freefillmonline.blogspot.com^$all
 ||freeiqtest*.blogspot.com^$all
 ||furmarov.blogspot.com^$all
+||garaseku.blogspot.com^$all
 ||get-sensation.blogspot.com^$all
 ||girlmeetspeople.blogspot.com^$all
 ||graotronwszystkiesezonyonline.blogspot.com^$all
@@ -5589,6 +5607,7 @@
 ||hd-filmyonline.blogspot.com^$all
 ||hopefulsweeper.blogspot.com^$all
 ||informacjeszok24.blogspot.com^$all
+||ismahanilover.blogspot.com^$all
 ||jasonwhitefamily.blogspot.com^$all
 ||jazzlambasi.blogspot.com^$all
 ||jeremy-rodriguez.blogspot.com^$all
@@ -5600,6 +5619,7 @@
 ||kaciekace.blogspot.com^$all
 ||katieweightlossdiary.blogspot.com^$all
 ||katrinathephanter.blogspot.com^$all
+||khalisspirit.blogspot.com^$all
 ||kolloryfejsa.blogspot.com^$all
 ||kollory-fejsa.blogspot.com^$all
 ||kolorfacebooka24.blogspot.com^$all
@@ -5607,17 +5627,22 @@
 ||kolorowy-f-b.blogspot.com^$all
 ||koloryfejsa.blogspot.com^$all
 ||krista-carpediem.blogspot.com^$all
+||kuijacelyn.blogspot.com^$all
 ||lastbreath-fanfiction.blogspot.com^$all
 ||leakeslines.blogspot.com^$all
+||lethimshine.blogspot.com^$all
 ||lifeofmrsround.blogspot.com^$all
 ||life-filipe-fernandes.blogspot.com^$all
 ||lightthehedgehog.blogspot.com^$all
 ||lilyclan-warriors.blogspot.com^$all
 ||lilytailsblog.blogspot.com^$all
 ||linathefox.blogspot.com^$all
+||link5m.blogspot.com^$all
 ||littlebabywinter.blogspot.com^$all
 ||livelikesonja.blogspot.com^$all
+||lollastuff.blogspot.com^$all
 ||lots-of-feelings.blogspot.com^$all
+||lovesickchild.blogspot.com^$all
 ||lovewrittenbyheart.blogspot.com^$all
 ||luciathebat.blogspot.com^$all
 ||lynavincci.blogspot.com^$all
@@ -5676,6 +5701,7 @@
 ||polsatsportpremium1.blogspot.com^$all
 ||polsatsportpremium2.blogspot.com^$all
 ||premieryonline.blogspot.com^$all
+||proceder-film.blogspot.com^$all
 ||proemployer.blogspot.com^$all
 ||programyfb.blogspot.com^$all
 ||real-masterpiece.blogspot.com^$all
@@ -5748,11 +5774,14 @@
 ||winter-fillow.blogspot.com^$all
 ||wishlifewerebetta.blogspot.com^$all
 ||wolverineplonline.blogspot.com^$all
+||www-confusion-melisa-chaos-lame.blogspot.com^$all
 ||www-dailymotion-video.blogspot.com^$all
 ||wyciskaniepryszcza0*.blogspot.com^$all
 ||wyciskanie-pryszcza*.blogspot.com^$all
 ||wygrajnike*.blogspot.com^$all
 ||wypad3k0.blogspot.com^$all
+||yin-life.blogspot.com^$all
+||yuriereading.blogspot.com^$all
 ||zalokaj.blogspot.com^$all
 ||zamiana-koloru.blogspot.com^$all
 ||zgarnijnike*.blogspot.com^$all
