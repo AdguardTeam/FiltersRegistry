@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-17 12:53:15 CEST
+! Last modified: 2020-09-18 14:03:18 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -411,6 +411,7 @@ stowr.se##article:has(.user-card-sponsor-marker)
 studentum.se#%#//scriptlet('ubo-set.js', 'cookieExists', 'true')
 studocu.com#$##page-container { user-select: text !important; }
 studocu.com#$#.new-viewer-wrapper .p2hv { pointer-events: auto !important; }
+svampguiden.com##.panel:has(.label-sponsor)
 svegot.se#%#//scriptlet('ubo-aeld.js', 'scroll', '(a)')
 sverak.se#%#//scriptlet('ubo-set.js', 'disable_copy', 'noopFunc')
 sverak.se#%#//scriptlet('ubo-set.js', 'disableEnterKey', 'noopFunc')
@@ -606,8 +607,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -735,6 +736,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##div.avia-cookiemessage-bottom
 ##div.cookie-show-bar-bottom
 ##div.cookievarning-wrap
+##div.newsletter-cta
 ##div.newsletter-slider
 ##img[alt="Leovegas"]
 ##img[alt="Spela på Betsson"]
@@ -1170,6 +1172,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/mitti-oath-cmpi-js/*$domain=alltomstockholm.se|mitti.se
 /plugins/ml-adverts/*$script
 /plugins/modal-for-elementor/*$script,domain=miljomagasinet.se
+/plugins/newsletter$script,domain=56kilo.se
 /plugins/newsner-lead-tracking/*
 /plugins/notificationx$script,domain=nyadagbladet.se
 /plugins/ns-facebook-pixel-for-wp/*
@@ -1273,10 +1276,11 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /selections/native$xmlhttprequest,domain=svd.se
 /service-worker.js$script,domain=folkbladet.nu|vk.se
 /sf_tracking.js$script,domain=stayfriends.se
+/sg_reklam$domain=svampguiden.com
 /sh404sefsocial/*$script
 /share-link$script,domain=nyadagbladet.se
 /shared/crm-campaign-handler.js$script
-/sharedaddy/sharing.$domain=amusetidningen.se|bilresaieuropa.se|damhockey.se|mobilanyheter.net|nyheteridag.se|ulrica.askmorling.se
+/sharedaddy/sharing.$domain=56kilo.se|amusetidningen.se|bilresaieuropa.se|damhockey.se|mobilanyheter.net|nyheteridag.se|ulrica.askmorling.se
 /sharethis.js$domain=allsvenskan.se|superettan.se
 /sidebar-ads.php
 /sifo_analytics.$script
@@ -2564,9 +2568,10 @@ spisa.nu###app > div > div > div[class]:not([data-reactid])
 sportbilen.se###text-4
 sportbilen.se,vimeddjur.se###heateor_ss_browser_popup_bg
 sportbilen.se,vimeddjur.se###the_champ_sharing_more_providers
-sportbladetplay.se##[class^="CookieConsentPopup"]
+sportbladetplay.se,sportexpressenplay.se##[class^="CookieConsentPopup"]
 sportbloggare.com##.cube-bonus-list
 sportbloggare.com##.partners-box
+sportexpressenplay.se##[class^="BauProvider"]
 sporthalsa.se###text-6
 sporthalsa.se##.header_top
 sportpanelen.se###text-html-widget-3
@@ -3325,6 +3330,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||sv.picmix.com^$csp=worker-src 'none'
 ||svd.se^*/native-article$~third-party,xmlhttprequest
 ||svenskafans.com/se.js$script
+||svenskarecept.se/pwa-register-sw.js
 ||swedroid.se/pjembed.$subdocument
 ||swehockey.se/Ad/$image
 ||t.fml.rip^$third-party
