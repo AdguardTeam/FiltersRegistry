@@ -1,8 +1,8 @@
 !
-! Checksum: rs93rM/HE4fDS/q3NWRq6Q
-! OriginalVersion: 202009210050
+! Checksum: Gfn+3ycXaA7AZo0L/bmFLA
+! OriginalVersion: 202009211250
 ! Title: RU AdList + CSS Fixes
-! Last modified: 21 Sep 2020 00:50 UTC
+! Last modified: 21 Sep 2020 12:50 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -22523,6 +22523,7 @@ izvestia.ru##div[style*="/popup-banner/"]
 kurs.if.ua##iframe[src="/init.htm"] ~ #fader
 inforesist.org##tqwidget[style^="position: fixed"]
 ||5skyrim.com/js/showcur.js
+||900igr.net/bm/sc.js
 ||alibabaru.com/wp-content/plugins/elegance-modal-box/
 ||api.traq.li^$domain=champion.com.ua|epravda.com.ua|eurointegration.com.ua|pravda.com.ua
 ||apihost.ru/images/584676.gif
@@ -25925,9 +25926,10 @@ pravvest.ru#%#//scriptlet('ubo-abort-current-inline-script.js', 'clickExplorer')
 pravvest.ru#%#//scriptlet('ubo-abort-on-property-read.js', 'document.body.oncopy')
 radikal.ru,www.vesti.ru#%#//scriptlet('ubo-abort-current-inline-script.js', 'document.createElement', 'String.fromCharCode')
 rambler.ru#%#//scriptlet('ubo-remove-attr.js', 'class', '.j-mini-player__video')
-razlozhi.ru#%#//scriptlet('ubo-abort-on-property-read.js', 'Object.prototype.getRandomString')
-razlozhi.ru##div[class]:matches-css(height: 250px) + div:has(> div:empty) + div[class]
-razlozhi.ru#$?#div[class]:matches-css(margin-right: /^-\d\d\dpx/):matches-css(position: absolute):matches-css(display: block) { remove: true; }
+razlozhi.ru#%#//scriptlet('ubo-abort-on-property-read.js', 'Object.prototype.setTimeout')
+razlozhi.ru##div[class]:matches-css(height: 250px) ~ div:matches-css(width: 0px) + div[class]
+razlozhi.ru##div[class]:matches-css(height: 250px) ~ div:matches-css(width: 0px) + div[class] + div[class]
+razlozhi.ru#$?#div[class]:matches-css(margin-right: /^-\d|$\dpx/):matches-css(position: absolute):matches-css(display: block) { remove: true; }
 remont-aud.net#%#//scriptlet('ubo-set-constant.js', 'window.ab', 'false')
 rns.online#%#//scriptlet('ubo-abort-on-property-read.js', 'eaglePlayerPlugins.autoplay_position')
 rp5.*#%#//scriptlet('ubo-no-setTimeout-if.js', '0x')
