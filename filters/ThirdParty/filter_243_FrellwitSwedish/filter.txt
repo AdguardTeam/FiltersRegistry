@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-20 20:06:09 CEST
+! Last modified: 2020-09-21 15:23:31 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -64,7 +64,7 @@ alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidn
 alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-acis.js', 'adformtag', 'push')
 alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-acis.js', 'headerScripts', 'checkAdBlockers')
 alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-aeld.js', '/^(?:mousemove|mouseout)$/')
-alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-json-prune.js', 'autoplay players.1.autoplay players.0.ga players.1.ga acl.ads')
+alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-json-prune.js', 'autoplay players.*.ga acl.ads players.*.autoplay')
 alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-ra.js', 'data-access', '[data-access="false"]')
 alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-ra.js', 'data-frequencymodel')
 alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#%#//scriptlet('ubo-ra.js', 'frequency-model')
@@ -466,10 +466,10 @@ www.aftonbladet.se#%#//scriptlet('ubo-acis.js', 'preLoadAds', 'loadAd')
 www.aftonbladet.se#%#//scriptlet('ubo-acis.js', 'preLoadAds', 'setup')
 www.aftonbladet.se#%#//scriptlet('ubo-aeld.js', 'message', 'adError')
 www.aftonbladet.se#%#//scriptlet('ubo-aeld.js', 'mousemove', 'g()')
+www.aftonbladet.se#%#//scriptlet('ubo-nosiif.js', 'e.ping()')
+www.aftonbladet.se#%#//scriptlet('ubo-nosiif.js', 'e.reportVisibility()')
 www.aftonbladet.se#%#//scriptlet('ubo-nostif.js', 'onerror', '1000')
 www.aftonbladet.se#$#html,body { overflow: auto !important; }
-www.aftonbladet.se,www.svd.se#%#//scriptlet('ubo-nosiif.js', 'e.ping()')
-www.aftonbladet.se,www.svd.se#%#//scriptlet('ubo-nosiif.js', 'e.reportVisibility()')
 www.dn.se#%#//scriptlet('ubo-acis.js', 'DN', 'initAds')
 www.dn.se#%#//scriptlet('ubo-acis.js', 'gtmData')
 www.dn.se#%#//scriptlet('ubo-ra.js', 'data-auto-play')
@@ -483,9 +483,6 @@ www.expressen.se#%#//scriptlet('ubo-set.js', 'detect', 'noopFunc')
 www.google.se#%#//scriptlet('ubo-ra.js', 'onmousedown', '[onmousedown^="return"]')
 www.google.se#%#//scriptlet('ubo-ra.js', 'ping', '[ping^="/url?"]')
 www.svd.se#%#//scriptlet('ubo-acis.js', 'SvD', 'preDefineAd')
-www.svd.se#%#//scriptlet('ubo-aeld.js', '/^(?:mousemove|scroll|focus|mousedown|keydown|beforeunload)$/', 'j()')
-www.svd.se#%#//scriptlet('ubo-nostif.js', 'c()', '200')
-www.svd.se#%#//scriptlet('ubo-nostif.js', 'w()', '500')
 xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||*.*prize*.life/$document
@@ -1426,7 +1423,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||100kitchenstories.se^$generichide
 @@||2mdn.net/instream/html5/ima3.js$script,domain=modette.se|nyheter24.se
 @@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4play.se
-@@||acdn.adnxs.com/ast/ast.js$script,domain=svd.se
 @@||ad*.vg.no/check.js$script,domain=aftonbladet.se
 @@||alingsastidning.se^$generichide
 @@||amazonaws.com/ads/$image,domain=jobb.maxkompetens.se
@@ -1956,6 +1952,7 @@ expressen.se##.flashes--premium
 expressen.se##.flashes--visible
 expressen.se##.html-widget > div[style="text-align: center; font-size: 10px;"]
 expressen.se##.match-betting
+expressen.se##.pa-dialog
 expressen.se##.pressrelease-teaser
 expressen.se##.promotion-banner
 expressen.se##.rotator--external
@@ -1964,7 +1961,6 @@ expressen.se##.teaser > a[href*="happygreen.se"]
 expressen.se##.teaser--native-ad
 expressen.se##.teaser--sponsored
 expressen.se##.teaser__third-party
-expressen.se##.terms-dialog
 expressen.se##.widget-ad-marker
 expressen.se##.widget-area--collaboration
 expressen.se##a[href*="/annons"]
