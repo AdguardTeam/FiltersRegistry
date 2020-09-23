@@ -3271,6 +3271,21 @@ rp5.ru,rp5.ua,rp5.by,rp5.kz,rp5.co.uk#$?##content > div > div[id]:has(> ins.adsb
 letidor.ru,autorambler.ru,wmj.ru,motor.ru,passion.ru,quto.ru,eda.ru,rns.online,championat.com,gazeta.ru,lenta.ru,rambler.ru#%#//scriptlet("set-constant", "Object.prototype.placeNode", "undefined")
 !#endif
 rambler.ru#$#.ad.ad-banner.adbanner.nav-ad.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
+!#safari_cb_affinity(general)
+rambler.ru#@#.ad
+rambler.ru#@#.ad-banner
+rambler.ru#@#.adbanner
+rambler.ru#@#.nav-ad
+rambler.ru#@#.pub_300x250
+rambler.ru#@#.pub_300x250m
+rambler.ru#@#.pub_728x90
+rambler.ru#@#.text-ad
+rambler.ru#@#.textAd
+rambler.ru#@#.text_ad
+rambler.ru#@#.text_ads
+rambler.ru#@#.text-ads
+rambler.ru#@#.text-ad-links
+!#safari_cb_affinity
 ! rambler.ru - leftovers on the main page
 www.rambler.ru#?#main header ~ div div[class]:has(> div[class] > div[id] > script:contains(/^if\s?\(!window\..*{"status":/))
 www.rambler.ru#?#main header ~ div div[class]:has(> div[class] > div[id]:empty)
@@ -3544,6 +3559,7 @@ newsru.com,livejournal.com,tecmundo.com.br,rap.ru,abcnyheter.no##body div.fc-ab-
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=web2.0calc.com
 !
 !
+nekto.me##.no-adb
 tamrieltradecentre.com###unblock-msg-alert
 rbkgames.com##div#norris-detector
 0calc.com,0rechner.de#$#.modal-backdrop { display: none !important; }
@@ -5133,47 +5149,28 @@ forbes.com#$#page-standard[id^="article-container"] { position: unset!important;
 !
 !
 !
-!+ NOT_PLATFORM(windows, mac, android)
-@@||oneman.gr^$generichide
-!+ NOT_PLATFORM(windows, mac, android)
-mapa-turystyczna.pl#%#//scriptlet("prevent-setTimeout", "comBlocked")
-!+ PLATFORM(windows, mac, android)
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
 mapa-turystyczna.pl#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/comBlocked/.test(a.toString()))return b(a,c)};})();
-!+ NOT_PLATFORM(windows, mac, android)
-lowcygier.pl#%#//scriptlet("set-constant", "niceAdsCheck", "true")
-!+ PLATFORM(windows, mac, android)
 lowcygier.pl#%#AG_setConstant('niceAdsCheck', 'true');
-!+ NOT_PLATFORM(windows, mac, android)
-yusepjaelani.blogspot.com#%#//scriptlet("set-constant", "AdBlockSELECTOR", "undefined")
-!+ PLATFORM(windows, mac, android)
 yusepjaelani.blogspot.com#%#AG_setConstant('AdBlockSELECTOR', 'undefined');
-!+ NOT_PLATFORM(windows, mac, android)
-space.com#%#//scriptlet("abort-on-property-read", "window._sp_.config")
-!+ PLATFORM(windows, mac, android)
 space.com#%#AG_abortOnPropertyRead('window._sp_.config');
-!+ NOT_PLATFORM(windows, mac, android)
-wvnews.com#%#//scriptlet("set-constant", "__tnt.advertisements", "noopFunc")
-!+ PLATFORM(windows, mac, android)
 wvnews.com#%#AG_setConstant('__tnt.advertisements', 'noopFunc');
-!+ NOT_PLATFORM(windows, mac, android)
-basicweb.ru#%#//scriptlet("set-constant", "popUpInfo", "noopFunc")
-!+ PLATFORM(windows, mac, android)
 basicweb.ru#%#AG_setConstant('popUpInfo', 'noopFunc');
-!+ NOT_PLATFORM(windows, mac, android)
-gazzetta.it#%#//scriptlet("set-constant", "adv_openx_oas_ads", "true")
-!+ PLATFORM(windows, mac, android)
 gazzetta.it#%#AG_setConstant('adv_openx_oas_ads', 'true');
-!+ NOT_PLATFORM(windows, mac, android)
-thehindubusinessline.com#%#//scriptlet("set-constant", "Adblock", "false")
-!+ PLATFORM(windows, mac, android)
 thehindubusinessline.com#%#AG_setConstant('Adblock', 'false');
-!+ NOT_PLATFORM(windows, mac, android)
-myfxbook.com#%#//scriptlet("set-constant", "adBlockerDetect", "1")
-!+ PLATFORM(windows, mac, android)
 myfxbook.com#%#AG_setConstant('adBlockerDetect', '1');
-!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
-@@||brantfordexpositor.ca^$generichide
-@@||canoe.com^$generichide
+!#endif
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+@@||oneman.gr^$generichide
+mapa-turystyczna.pl#%#//scriptlet("prevent-setTimeout", "comBlocked")
+lowcygier.pl#%#//scriptlet("set-constant", "niceAdsCheck", "true")
+yusepjaelani.blogspot.com#%#//scriptlet("set-constant", "AdBlockSELECTOR", "undefined")
+space.com#%#//scriptlet("abort-on-property-read", "window._sp_.config")
+wvnews.com#%#//scriptlet("set-constant", "__tnt.advertisements", "noopFunc")
+basicweb.ru#%#//scriptlet("set-constant", "popUpInfo", "noopFunc")
+gazzetta.it#%#//scriptlet("set-constant", "adv_openx_oas_ads", "true")
+thehindubusinessline.com#%#//scriptlet("set-constant", "Adblock", "false")
+myfxbook.com#%#//scriptlet("set-constant", "adBlockerDetect", "1")
 !#endif
 !
 hdone.net#?##oframeplay > pjsdiv[style]:has(> pjsdiv[style]:contains(AdBlock))
