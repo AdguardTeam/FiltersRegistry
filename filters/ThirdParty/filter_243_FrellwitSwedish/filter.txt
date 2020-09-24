@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-23 11:52:01 CEST
+! Last modified: 2020-09-24 11:40:30 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -267,6 +267,7 @@ improveme.se#%#//scriptlet('ubo-acis.js', 'n_pbt')
 innebandymagazinet.se,ng.se#%#//scriptlet('ubo-aopr.js', 'ADTECH')
 interiorbyvanessa.se##.post:has-text(I annonssamarbete med)
 isabellalowengrip.se##.post:has(em:has-text(/^i samarbete med/i))
+isabellalowengrip.se,matplatsen.net#$?#article:has(em:has-text(/i samarbete med/i)) { remove: true; }
 jaktplay.se,svenskjakt.se#%#//scriptlet('ubo-acis.js', 'desktop_random_ad_id')
 jamtlandstidning.se##.elementor-widget-sidebar:has(li[id^=media_image-1])
 jamtlandstidning.se##.elementor-widget-wrap:has(img[src*=-annons-])
@@ -308,8 +309,8 @@ ljudochbild.se#$#.topper { margin-top: 0 !important; }
 lwcdn.com#%#//scriptlet('ubo-aeld.js', '/^(?:adBlocker|contextmenu)$/')
 magasin55.se##.td_module_wrap:has(a[href$="/annons/"])
 magasinetparagraf.se,omnihalsa.com,plazakvinna.com,senses.se#%#//scriptlet('ubo-acis.js', '_stq')
+majanilssonlindelof.com##article:has(.has-text-align-center:has-text(/samarbete med/i))
 maklarvarlden.se##article:has(.sponsored-inlist)
-matplatsen.net#$?#article:has(em:has-text(/i samarbete med/i)) { remove: true; }
 megafonen.se##.sidebar-block:has(.block-title:has-text(/sponsrad/i))
 merinfo.se##.articles-article-wrapper:has(span:has-text(/sponsrad/i))
 merinfo.se##.snippet-article-wrapper:has(.sponsored)
@@ -1125,6 +1126,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/convertplug/*
 /plugins/convertpro/*
 /plugins/cookie-bar/*
+/plugins/cookie-law-info/*$domain=majanilssonlindelof.com
 /plugins/cookie-notice/*
 /plugins/cookie_consent/*$script
 /plugins/cresta-social-share-counter-pro/*
@@ -1271,7 +1273,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /s_code.js$domain=dagenstv.com
 /Scripts/burt/*$script
 /scripts/initLogging$domain=alltomtradgard.se|amelia.se|damernasvarld.se|expressen.se|skonahem.com
-/scripts/pb*.js$script,domain=100kitchenstories.se|benjeey.se|elinskoglund.com|fannystaaf.se|lovisawallin.se|moamattsson.se|nouw.com
+/scripts/pb*.js$script,domain=elinskoglund.com|fannystaaf.se|lovisawallin.se|moamattsson.se|nouw.com
 /se-wordpress-agilis-solum/assets/js/ad-collapse.$script
 /se-wordpress-gdpr
 /se-wordpress-google-analytics
@@ -1389,7 +1391,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /www/images/*$image,domain=elektronikforumet.com
 /xhr-ads.min.js$script
 /zdadkit$script,domain=nordic.ign.com
-100kitchenstories.se###ConsentBanner
 180.se##.ai-top-ad-outer
 2000tv.se###bannerbox
 8sidor.se##.cookie-accept
@@ -1430,14 +1431,12 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/show_ads.js$script,~third-party,domain=happypancake.com
 @@/wpdcookiejs/*$domain=nordichardware.se
 @@_advert.$domain=e-pages.dk
-@@||100kitchenstories.se^$generichide
 @@||2mdn.net/instream/html5/ima3.js$script,domain=modette.se|nyheter24.se
 @@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4play.se
 @@||ad*.vg.no/check.js$script,domain=aftonbladet.se
 @@||alingsastidning.se^$generichide
 @@||amazonaws.com/ads/$image,domain=jobb.maxkompetens.se
 @@||assets-cdn.mytaste.org/js/ads.js$script
-@@||benjeey.se^$generichide
 @@||blocket.se^$generichide
 @@||bohuslaningen.se^$generichide
 @@||byggahus.se^$generichide
@@ -1695,8 +1694,6 @@ battrestadsdel.se###top-banner-mobile
 battrestadsdel.se##.apd-text
 battrestadsdel.se##.apds_main
 battrestadsdel.se##.entry-priomaker
-benjeey.se,elinskoglund.com,fannystaaf.se,lovisawallin.se,moamattsson.se,nouw.com###ConsentBanner
-benjeey.se,elinskoglund.com,fannystaaf.se,lovisawallin.se,moamattsson.se,nouw.com##[title="Ad space"]
 betting.se##.header-banners
 bettips.se##.bettips-am
 bildobubbla.se##.annonser
@@ -1903,6 +1900,8 @@ ekonominyheter.se###lblock-ads
 ekonominyheter.se,gjuteriet.se,haaf.se##.td-a-rec
 elektronikforumet.com##td > a[href*="bildelar"][target="_blank"]
 elektronikforumet.com,existenz.se,funfunfun.se##a[href*="bannerid"]
+elinskoglund.com,fannystaaf.se,lovisawallin.se,moamattsson.se,nouw.com###ConsentBanner
+elinskoglund.com,fannystaaf.se,lovisawallin.se,moamattsson.se,nouw.com##[title="Ad space"]
 ellinorlofgren.se,linnherbertsson.se,mp.se###cookies
 emocore.se###main > #home_start_div ~ .m_t.box:nth-last-child(-n+2)
 emocore.se###sticky-panorama
@@ -2347,7 +2346,7 @@ maipenrai.se###elGuestTerms
 maipenrai.se##.cWidgetContainer > ul > li:first-child
 maipenrai.se##[data-nbenhadv]
 maipenrai.se##article + div[align="center"]
-majanilssonlindelof.com##.apprl-title
+majanilssonlindelof.com##.apprl-title,.cli-modal,.cli-modal-backdrop
 maklarvarlden.se##.hustle-popup
 maklarvarlden.se##[id^="mts_ad"]
 markbladet.se###fixed
@@ -2854,7 +2853,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||breakit.se/accl$script
 ||breakit.se/api/visit$xmlhttprequest
 ||breakit.solidtango.com^$subdocument
-||browser-http-intake.logs.datadoghq.$third-party
 ||bstatic.com/static/affiliate$third-party
 ||btg.mtvnservices.com/aria/bentojs.js$script,domain=nickelodeon.se
 ||btg.mtvnservices.com/aria/coda.html$script,domain=nickelodeon.se
@@ -3126,6 +3124,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||liveagent.se/scripts/track.$script
 ||ljuskompaniet.se^
 ||logger.tv.nu^$script
+||logs.datadoghq.com^$third-party
 ||lokus.se^$~image,third-party,domain=~familj.se
 ||look.ufinkln.com^
 ||lwcdn.com/vendor/ima.min.js$script
