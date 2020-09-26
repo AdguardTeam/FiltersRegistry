@@ -1,5 +1,5 @@
 !
-! OriginalVersion: 24September2020v2
+! OriginalVersion: 26September2020v6
 ! Title: Adblock List for Finland
 ! Description: Finnish adblock list
 ! Expires: 4 days
@@ -8,11 +8,11 @@
 ! Raportoi mainoksenestoon liittyvistä ongelmista tai estämättömistä mainoksista täällä / Please report adblocking related issues or unblocked ads at:
 ! https://github.com/finnish-easylist-addition/finnish-easylist-addition/issues
 ! -----SPECIFIC FILTERS-----
+feissarimokat.com##div[style="background: rgb(246, 66, 100) none repeat scroll 0% 0%; color: rgb(255, 255, 255); padding: 20px;"]
 suomi24.fi#$#div[class^="ThreadGridItemWrapper__CardCol"][width="50%"]:has(+ div[class^="ThreadGridItemWrapper__CardCol"][width="100%"]) { width:100% !important }
 tekniikanmaailma.fi##.NoAdBlocker_main
 ! -----SPECIFIC FILTERS END-----
 ! -----NETWORK FILTERS-----
-||damoh.katsomo.fi/$media,redirect=noopmp3-0.1s,domain=mtvuutiset.fi|mtv.fi|suomiareena.fi|studio55.fi|lumijapyry.fi|msn.com
 ! -----NETWORK FILTERS END-----
 ! -----SCRIPTS-----
 ! Mikrobitti anti adblock
@@ -103,15 +103,15 @@ _mainosnappi.
 ##.yhteistyossa
 ##.ylamainokset
 ##.ylamainos
-##DIV[class*="newsFrontAd"]
-##DIV[class="AgAdCarousel_Container"]
-##DIV[class="AgAdCarousel_LightBox"]
-##DIV[class="ad container-right"]
-##DIV[class="ad partners box"]
-##DIV[id*="AdContainer"]
-##DIV[id="commercial-carousel"]
-##DIV[id="top-ad"]
-##DIV[id^="ads-content-bottom"]
+##div[class*="newsFrontAd"]
+##div[class="AgAdCarousel_Container"]
+##div[class="AgAdCarousel_LightBox"]
+##div[class="ad container-right"]
+##div[class="ad partners box"]
+##div[id*="AdContainer"]
+##div[id="commercial-carousel"]
+##div[id="top-ad"]
+##div[id^="ads-content-bottom"]
 ##[href^="/artikkeli/kaupallinen-yhteistyo/"]
 ##[href^="https://media.suomikasino.com/"]
 ##[href^="https://tc.tradetracker.net/"]
@@ -145,8 +145,9 @@ alibi.fi##.magazineorderwidget__content
 alibi.fi,hymy.fi##[href="https://www.paratiisi.fi/netchat.php"]
 alueviesti.fi##.soliloquy-link
 alypaa.com##[class^="banner-slot-preroll"]
-ampparit.com##DIV[class*="ad-"]
+ampparit.com##.ad-container
 ampparit.com##div[class*="ticker"]
+ampparit.com##div[class="nettiauto-newslist-banner"]
 anna.fi###dfp__desk-1_1
 anna.fi###native_text_wrapper
 anna.fi##.kaupalliset
@@ -175,6 +176,7 @@ como.fi,episodi.fi,fum.fi,inferno.fi,rumba.fi,rytmi.com,soundi.fi,tilt.fi##div[d
 deitti.net##.ad-article
 demi.fi##div[class*="ad__component"]
 demokraatti.fi##div[class^="AdStyles__Wrapper"]
+demokraatti.fi##div[class^="OrderMagazinestyles__Container"]
 download.fi#?#b[style="font-size:bigger;"] > a[class="download_link"][href$=".exe"]
 download.fi#?#div:-abp-has( > h3[style="font-size:20px;"])
 download.fi#?#div[class="splash_title"] + p + p:-abp-has( > a[href$=".exe"])
@@ -331,6 +333,8 @@ kauppalehti.fi#?#div#skyscraper-height-div > div > main > a:-abp-contains(Kaupal
 kauppalehti.fi#?#div#skyscraper-height-div > main > aside > div > a:-abp-contains(Kaupallinen yhteistyö)
 keskipohjanmaa.fi##.ad-list.col-xs-12
 keskipohjanmaa.fi##div.hidden-xs.news-n.newslink-ad.col-xs-12
+keskustelu.kaksplus.fi###native_text_wrapper
+keskustelu.kaksplus.fi##.native.feed_box_container
 keskustelu.suomi24.fi##div[class*="FooterAdWrapper"]
 keskustelu.suomi24.fi##div[class*="HeaderAdWrapper"]
 keskustelu.suomi24.fi##div[class^="RightSidePanel__AdContainer"]
@@ -405,6 +409,7 @@ metropoli.net###tdt_widget_minilanding-7
 metropoli.net##.rp-holder-419.main-term-1.listing-item-grid
 metropoli.net##.tdt-desktop-ad
 metropoli.net##.widget_bs-text-listing-4.widget.primary-sidebar-widget.w-t.h-bg-f2861a.h-bg.h-c-ffffff.h-c.h-ni.article-popular-post-widget
+metropoli.net,suomif1.com,suomifutis.com,suomikoris.com,suomiurheilu.com,viikonloppu.com##hr + h3 > strong, p + hr + h3, h3 + p, h3 + p + ul
 mikrobitti.fi##.is-visible.LazyLoad
 mikrobitti.fi##DIV[id="rosmo"]
 mobiili.fi###header_ad33
@@ -617,7 +622,6 @@ viikonloppu.com##[href^="https://www.kasinokaverit.com/"]
 viikonloppu.com##[href^="https://www.lainaovi.fi/"]
 viikonloppu.com##[rel="noreferrer noopener"]
 viikonloppu.com##li > a[href*="-jackpot-"]
-viikonloppu.com,metropoli.net##hr + h3 > strong, p + hr + h3, h3 + p, h3 + p + ul
 viisasraha.fi##.d-md-block.d-lg-block.d-none
 viisasraha.fi##.kumppani-artikkelit
 viisasraha.fi##div[class*="native-article"] > div[class="ezrichtext-field"] > p > a[href^="https://danskebank.fi/"]
@@ -664,6 +668,7 @@ yrittajat.fi##div[class$="kaupallinen-yhteistyo"]
 ||io-tech.fi/images/*_290x290px.png$image
 ||is.fi/kampanjat/taloussanomat/startel_600x300px.jpg$image
 ||kake.fi^$third-party
+||kaksplus.fi/wp-json/feeds/ad-feed$xmlhttprequest,domain=keskustelu.kaksplus.fi
 ||karjalainen.fi/images/banners/kiinnostuitko$image
 ||kelkkalehti.com/bannerit/
 ||kuvake.net/js/ad-
@@ -706,14 +711,14 @@ yrittajat.fi##div[class$="kaupallinen-yhteistyo"]
 ||dniadops-a.akamaihd.net/video-assets/$media,domain=dplay.fi
 ||dni-adops-proxy-prod-adopsmediaconverter.mercury.dnitv.com/*.mp4$media,domain=dplay.fi
 ! Prevent clicking video ads on MTV Oy
-mtvuutiset.fi,mtv.fi,suomiareena.fi,studio55.fi,lumijapyry.fi,msn.com##.mtv-player-ad-container
-||damoh.katsomo.fi/*$image,domain=mtvuutiset.fi|mtv.fi|suomiareena.fi|studio55.fi|lumijapyry.fi|msn.com
+mtvuutiset.fi,mtv.fi,suomiareena.fi,studio55.fi,msn.com##.mtv-player-ad-container
+||damoh.katsomo.fi/*$image,domain=mtvuutiset.fi|mtv.fi|suomiareena.fi|studio55.fi|msn.com
 ||cloudfront.net/creatives/assets/$image,domain=mtvuutiset.fi
 @@||fi-mtv3.videoplaza.tv/proxy/pulse-sdk-html5/*/latest.min.js$script
 ! viafree.fi video adblock
-@@||fwmrm.net/ad/*$xmlhttprequest,domain=viafree.fi
-@@||fwmrm.net/ad/*$script,domain=viafree.fi
-@@||fwmrm.net/ad/*$image,domain=viafree.fi
+@@||fwmrm.net/ad/$xmlhttprequest,domain=viafree.fi
+@@||fwmrm.net/ad/$script,domain=viafree.fi
+@@||fwmrm.net/ad/$image,domain=viafree.fi
 @@||fwmrm.net/crossdomain.xml$xmlhttprequest,domain=viafree.fi
 @@||mssl.fwmrm.net/p/MTG_Brightcove_HTML5/AdManager.js$script,domain=viafree.fi
 ||freewheel-mtgx-tv.akamaized.net/m/1/*.mp4$media,domain=viafree.fi
@@ -727,7 +732,7 @@ murha.info#@#.adsbygoogle
 murha.info#@#.adsbox
 !#if !ext_ublock
 !#if !adguard
-||damoh.katsomo.fi/*$media,redirect=noopmp3-0.1s,domain=mtvuutiset.fi|mtv.fi|suomiareena.fi|studio55.fi|lumijapyry.fi|msn.com
+||damoh.katsomo.fi/*$media,redirect=noopmp3-0.1s,domain=mtvuutiset.fi|mtv.fi|suomiareena.fi|studio55.fi|msn.com
 !#endif
 !#endif
 ! appears when blocking ^^:
