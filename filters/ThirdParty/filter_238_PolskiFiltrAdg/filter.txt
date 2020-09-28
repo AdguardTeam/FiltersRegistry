@@ -1,27 +1,27 @@
 !
 ! Title: Polish Anti Adblock Filters
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku
-! Last modified: 12 August 2020
+! Last modified: 26 September 2020
 ! Expires: 2 days
-! OriginalVersion: 2020081202
+! OriginalVersion: 2020092601
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020081202 aktualizacja: sr, 12 sierpnia 2020, 13:05:00
+! v.2020092601 aktualizacja: sob, 26 wrzesnia 2020, 10:10:00
 !
 !
 !-----------------------Integration of supplement lists for uBlock & AdGuard-----------------------!
 ! Title: Polish Anti Adblock Filters - supplement for uBlock Origin
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku - uzupelnienie dla uBlock Origin
-! Last modified: 6 July 2020
+! Last modified: 27 September 2020
 ! Expires: 2 days
-! OriginalVersion: 2020070601
+! OriginalVersion: 2020092701
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020070601 aktualizacja: pon, 6 lipca 2020, 20:20:00
+! v.2020092701 aktualizacja: nie, 27 września 2020, 22:10:00
 !
 !
 ! Adblock
@@ -37,7 +37,7 @@ dziwnekomiksy.pl#$#body>* { filter: blur(0px) !important; }
 filmweb.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'notDetected')
 filmweb.pl#@%#//scriptlet('ubo-abort-current-inline-script.js', 'decodeURIComponent', 'newAdblockBoardDisplayed')
 filmweb.pl$$script[tag-content="adblockDisplayInformation."][min-length="8000"][max-length="50000"]
-fotoblogia.pl,gadzetomania.pl,wp.pl,autokult.pl,komorkomania.pl,medycyna24.pl,smaczneblogi.pl#%#//scriptlet('ubo-abort-on-property-write.js', '__serviceAbModal')
+!fotoblogia.pl,gadzetomania.pl,wp.pl,autokult.pl,komorkomania.pl,medycyna24.pl,smaczneblogi.pl##+js(abort-on-property-write.js, __serviceAbModal)
 niezalezna.pl#%#//scriptlet('ubo-noeval.js')
 !pilot.wp.pl##+js(set-constant.js, WP.crux.sealed, falseFunc)
 playpuls.pl#%#//scriptlet('ubo-setInterval-defuser.js', 'muted', '8000')
@@ -113,18 +113,23 @@ exdb.net#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'mdpDeBlocker')
 trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'HateAdBlock')
 trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'adBlockDetected')
 !
+!
+interia.pl,pomponik.pl#%#//scriptlet('ubo-set.js', 'Inpl.Abd.onDetected', 'noopFunc')
+interia.pl,pomponik.pl#%#//scriptlet('ubo-set.js', 'isAdblockDetected', '0')
+!
 ! magazyn.wp.pl
 !#if cap_user_stylesheet
-magazyn.wp.pl##div:has(div > img[src*="NDM0MzY2YSUsUjtJdklsMG8KbxkpWhE3OVRvVntHbH5vHyQXOFUrN2JRLBh2XCcmY0AjHXtP"])
-magazyn.wp.pl#$#body { overflow: auto !important; }
-magazyn.wp.pl#$#body [class] { filter: none !important; }
+!magazyn.wp.pl##div:has(div > img[src*="NDM0MzY2YSUsUjtJdklsMG8KbxkpWhE3OVRvVntHbH5vHyQXOFUrN2JRLBh2XCcmY0AjHXtP"])
+!magazyn.wp.pl#$#body { overflow: auto !important; }
+!magazyn.wp.pl#$#body [class] { filter: none !important; }
 !#endif
-magazyn.wp.pl#$#body [class] { filter: none !important; }
-pudelek.pl,film.wp.pl,finanse.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,wiadomosci.wp.pl#%#//scriptlet('ubo-set-constant.js', 'Object.prototype.isBlocked', 'false')
-pudelek.pl,film.wp.pl,finanse.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,wiadomosci.wp.pl#%#//scriptlet('ubo-set-constant.js', 'Object.prototype.aggressiveAB', 'false')
-wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'asname')
-~pilot.wp.pl,~wideo.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'Object.prototype.rebuild')
-~pilot.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl#%#//scriptlet('ubo-set.js', 'Object.prototype.advViewability', 'undefined')
+!magazyn.wp.pl#$#body [class] { filter: none !important; }
+!magazyn.wp.pl##+js(overlay-buster.js)
+!pudelek.pl,film.wp.pl,finanse.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,wiadomosci.wp.pl##+js(set-constant, Object.prototype.isBlocked, false)
+!pudelek.pl,film.wp.pl,finanse.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,wiadomosci.wp.pl##+js(set-constant, Object.prototype.aggressiveAB, false)
+!~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(abort-on-property-read.js, asname)
+!~pilot.wp.pl,~wideo.wp.pl,~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(abort-on-property-read.js, Object.prototype.rebuild)
+!~pilot.wp.pl,~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(set, Object.prototype.advViewability, undefined)
 !
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=wp.pl|o2.pl|pudelek.pl|so-magazyn.pl
 @@||googletagservices.com/tag/js/gpt.js$domain=wp.pl|dobreprogramy.pl|o2.pl|pudelek.pl|so-magazyn.pl
@@ -145,7 +150,7 @@ wp.pl#@#body > div:nth-of-type(1)[style^="display: block;"]:not(#page)
 !1#---------------------------------Anti Adblock Rules element hide----------------------------------!
 ##.kill-adblock-container
 12zawodnik.pl##.ads-checker-msg
-24gliwice.pl,wyborkierowcow.pl,kino123.pl,jednoslad.pl,how2play.pl,polskiedzieje.pl,ciekawe.org,baza-lekow.com.pl,testhub.pl,widzewtomy.net,gadzet.telchina.pl,ostatniatawerna.pl,kulturalnemedia.pl,newonce.net,variatkowo.pl,legendyboksu.pl,mywildforest.pl,magyazyn.pl,waw4free.pl,chillitorun.pl,zwiadowcahistorii.pl#@##adsense
+24gliwice.pl,wyborkierowcow.pl,kino123.pl,jednoslad.pl,how2play.pl,polskiedzieje.pl,ciekawe.org,baza-lekow.com.pl,testhub.pl,widzewtomy.net,gadzet.telchina.pl,ostatniatawerna.pl,kulturalnemedia.pl,newonce.net,variatkowo.pl,legendyboksu.pl,mywildforest.pl,magyazyn.pl,waw4free.pl,chillitorun.pl,zwiadowcahistorii.pl,bp24.pl#@##adsense
 24opole.pl,webcamera.pl,darmowe-torenty.pl,dziennikwschodni.pl,vorek.pl,katowickisport.pl,torrentcity.pl,wtkplay.pl,epoznan.pl,comperia.pl,poradnikzdrowie.pl,eska.pl,pomponik.pl,interia.pl#@#.ad
 4geek.co##.wgAdBlockMessage, #adbd
 ##.adblock-alt
@@ -165,6 +170,7 @@ cda-online.pl###deadblocker_success_dialog
 chelsea24news.pl###rba2
 comperia.pl##.czarobox
 czasdiet.pl##.contop + [style*="border:2px solid;"], .consid + [style*="border:2px solid;"]
+dailyweb.pl##.adwse-blockerr, .adwse-headerr
 darkw.pl##.bladbl
 darmowyskin.pl##.info_add_block
 dieroten.pl,www.bravebeaver.pl,pomponik.pl,zadanie.pl#@#[class^="ad-"]
@@ -249,6 +255,7 @@ mojawyspa.co.uk#@#.adtable
 mylomza.pl ##body > div[id][style="display: block;"]:first-child
 nadajemy.pl###abp_info
 ps3forum.pl###abl
+nadmorski24.pl#@#.adsbox
 newsweb.pl###JEcnUkoYtyfs,.hmAdHKEaBMFO-bg
 nokiahacking.pl###unblock-please
 ocen-piwo.pl###osiemnascielat > div > h2:nth-of-type(2)
@@ -292,6 +299,7 @@ sucharry.pl###adb
 take-kino.pl##.ui-dialog, .ui-widget, .ui-widget-content, .ui-corner-all, .ui-front, .ui-resizable, .ui-widget-overlay
 tapeciarnia.pl,scypion.pl#@#.adsbygoogle
 tapeciarnia.pl#@#[id^="aswift_"]
+tapeciarnia.pl##.div_komentarz_zdjecie > [onclick*="adblock" i]
 terrarium.com.pl##.header-ad, .ABD_display_adblock.ABD_display
 terrarium.com.pl,ps3-hack.pl,listatv.pl#@##ads
 trojmiasto.pl,trojmiasto.tv###block_info_wrap
@@ -380,7 +388,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||ads.trojmiasto.pl$xmlhttprequest,domain=trojmiasto.pl
 @@/adblockdetect/*$script,domain=to.com.pl|dziennikbaltycki.pl|dzienniklodzki.pl|dziennikzachodni.pl|expressilustrowany.pl|gazetakrakowska.pl|gazetawroclawska.pl|gloswielkopolski.pl|kurierlubelski.pl|nto.pl|wspolczesna.pl|poranny.pl|pomorska.pl|gp24.pl|gazetalubuska.pl|echodnia.eu|nowiny24.pl|polskatimes.pl|gs24.pl|gk24.pl|expressbydgoski.pl|ekstramagazyn.pl|stronazdrowia.pl
 @@/ad/banner/_adsense_/_adserver/_adview_.ad.json$domain=wyborcza.pl|wysokieobcasy.pl
-@@/ads.js$script,domain=sjp.pwn.pl|lunaticfiles.com|eveline.wp.pl|static.webcamera.pl|realmadryt.pl|lowcygier.pl|mp3.teledyski.info
+@@/ads.js$script,domain=sjp.pwn.pl|lunaticfiles.com|eveline.wp.pl|static.webcamera.pl|realmadryt.pl|lowcygier.pl|mp3.teledyski.info|biznesradar.pl
 @@/ads.reklama.728x90$script,stylesheet,domain=zmianaczasu.info|antonimy.net|odmiana.net|definicja.net|krzyzowka.net|humoris.pl
 @@/adsense.js$script,domain=biznesforum.pl|optyczne.pl|to.proste.info.pl|seciki.pl|kompnet.info|kolniak24.eu|fiatpunto.com.pl
 @@/advert.js$script,domain=www.poradnikzdrowie.pl|fm.tuba.pl|wymarzonyogrod.pl|planeteplus.pl|mjakmama24.pl|player.pl|get.x-link.pl|gra.pl|echodnia.eu|maldrew.com.pl
@@ -560,6 +568,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 !
 !4#--------------------------Rules block ads after antiadblock rules-------------!
 /ad-$subdocument,domain=upflix.pl
+/adblockcheck.js$domain=jakitobank.pl
 animezone.pl##[id*="ScriptRoot"]
 cosplayjav.pl##.baner-bottom-section
 dieroten.pl###ad-sts-top

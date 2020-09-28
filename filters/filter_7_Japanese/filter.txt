@@ -128,6 +128,7 @@
 !
 ! Fc2.com
 ||analyzer*.fc2.com^
+||media5.fc2.com^
 !
 ! Excite.co.jp
 ||nc-log.excite.co.jp^
@@ -137,6 +138,7 @@
 ! Eimg.jp
 ||adingo.jp.eimg.jp^
 !
+||ala.durasite.net^
 ||scottdwebgraphics.com^$third-party
 ||p.permalink-system.com^$third-party
 ||adp.homes.co.jp^
@@ -358,7 +360,6 @@
 ||mmaaxx.com^$image,~image,popup
 ||mobalyzer.net^$third-party
 ||ot.ca-mpr.jp^
-||popin.cc^$third-party
 ||pvranking.com^$third-party
 ||qiyou.com^$third-party
 ||rcm-jp.amazon.co.jp/e/cm?$third-party
@@ -366,7 +367,7 @@
 ||rentracks.jp^$third-party
 ||rranking5.ziyu.net^$third-party
 ||rssad.jp^$third-party
-||durasite.net^$third-party
+*ad.durasite.net^$third-party
 ||scadnet.com^$third-party
 ||search.jword.jp^$third-party
 ||seoparts.com^$third-party
@@ -401,6 +402,20 @@
 !
 ! These rules are against all kinds of ad blocking reinjection/circumvention scripts
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/64591
+measuretrip.com#@#.adspace
+@@||measuretrip.com/style/css/adspace.css
+! https://github.com/AdguardTeam/AdguardFilters/issues/63217
+manga1000.com#%#//scriptlet("abort-current-inline-script", "onload", "Ad Block")
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||a.exosrv.com/ads.js$domain=manga1000.com
+manga1000.com#@#iframe[width="300"][height="250"]
+!#endif
+! https://github.com/AdguardTeam/AdguardFilters/issues/62482
+@@||animenew.be/css/adspace.css
+! https://github.com/AdguardTeam/AdguardFilters/issues/62217
+!+ PLATFORM(android)
+h-ken.net#%#//scriptlet("prevent-setTimeout", "adblock")
 ! https://github.com/AdguardTeam/AdguardFilters/pull/61513/
 @@||my0nio.seesaa.net^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/60864
@@ -433,12 +448,12 @@ ad-contents.jp#$#.mid-rectangle { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51663
 @@||popjav.tv^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51076
-fe-siken.com,sc-siken.com#%#//scriptlet("prevent-setTimeout", "/(ad|_0x1ca67c)/")
+ap-siken.com,db-siken.com,fe-siken.com,itpassportsiken.com,nw-siken.com,pm-siken.com,sc-siken.com,sg-siken.com#%#//scriptlet("prevent-setTimeout", "/(ad|_0x)/")
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
-fe-siken.com,sc-siken.com#@#.adsbygoogle
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=fe-siken.com|sc-siken.com
-@@||googletagservices.com/tag/js/gpt.js$domain=fe-siken.com|sc-siken.com
-@@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=fe-siken.com|sc-siken.com
+ap-siken.com,db-siken.com,fe-siken.com,itpassportsiken.com,nw-siken.com,pm-siken.com,sc-siken.com,sg-siken.com#@#.adsbygoogle
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ap-siken.com|db-siken.com|fe-siken.com|itpassportsiken.com|nw-siken.com|pm-siken.com|sc-siken.com|sg-siken.com
+@@||googletagservices.com/tag/js/gpt.js$domain=ap-siken.com|db-siken.com|fe-siken.com|itpassportsiken.com|nw-siken.com|pm-siken.com|sc-siken.com|sg-siken.com
+@@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=ap-siken.com|db-siken.com|fe-siken.com|itpassportsiken.com|nw-siken.com|pm-siken.com|sc-siken.com|sg-siken.com
 !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50977
 server-setting.info#@#.adsbygoogle
@@ -500,7 +515,7 @@ video.tv-tokyo.co.jp#@##adspace
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=video.tv-tokyo.co.jp
 @@||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$domain=video.tv-tokyo.co.jp
 !+ PLATFORM(windows, mac, android)
-||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$empty,important,domain=video.tv-tokyo.co.jp
+||pubads.g.doubleclick.net/gampad/ads?*/video.tv-tokyo.co.jp$redirect=nooptext,important,domain=video.tv-tokyo.co.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21737
 380cc.cc#%#Object.defineProperty(window, 'myaabpfun12', { get: function() { return; } });
 380cc.cc#$##playertopads { height: 51px!important; position: absolute!important; left: -3000px!important; }
@@ -598,6 +613,11 @@ anipo.jp#@#.adbanner
 !
 ! Extended CSS rules
 !
+! popIn ads
+animeanime.jp,cinemacafe.net,gamespark.jp,getnavi.jp,gow.asia,iionna.tokyo,inside-games.jp,macaro-ni.jp,mag.digle.tokyo,media.mamatenna.jp,moneyforward.com,mirror.asahi.com,realsound.jp,saitama-np.co.jp,the-uranai.jp,yamahack.com,yukawanet.com#?#._popIn_infinite_page > li:has(._popIn_recommend_article_ad)
+animeanime.jp,getnavi.jp,the-uranai.jp#?#._popIn_infinite_page > li:has(._popIn_recommend_article_ad_reserved)
+chosunonline.com,taishu.jp#?##_popIn_recommend li:has(._popIn_recommend_article_ad)
+cinemacafe.net#?#._popIn_infinite_page:has(._popIn_recommend_article_ad_reserved)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58879
 moeimg.net#?##main-2 > .post:has(> .pc_ad:only-child)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58587
@@ -663,6 +683,7 @@ mindhack2ch.com#?#.article-post-bottom > .rss-article:has(> .rss-article-item)
 !
 sponichi.co.jp#?#.mb30:has(> div > script[src*="rakuten"])
 sponichi.co.jp#?#.mb30 > h2:contains(スペシャルコンテンツ)
+busjav.one#?#.container > h4:has(> a[href^="javascript"] > span[id^="urad"])
 hosyusokuhou.jp#?##wrap .entrybox:contains(/(?:【スポンサー】|【PR】)/)
 2ch.vet#?#.table > tbody > tr.active:has(> td > center > script[src^="//j.microad.net/"])
 ghdnewzealandshopc.com#?##news-bottom > div.widget:has(> h3 > div:contains(/初の出会い系はここでした|出会い系サイトのリアルな部分|某県知事もここで女性と知り合いました/))
@@ -691,6 +712,8 @@ momon-ga.com#?#.repo-title:has(> strong)
 !
 ! Section contains list general hiding rules
 !
+##._popIn_recommend_article_ad
+##._popIn_recommend_article_ad_reserved
 ##.google-afc-image
 ##[class^=blogroll_wrapper]
 ###AD1line
@@ -813,7 +836,8 @@ sp.jp.wazap.com#$#body[style="position: fixed;"] { position: static !important }
 tv-asahi.co.jp#$##common-header > div[class^="common-header-pc-"] { padding-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58587
 uwl.weblio.jp#$##side { display: none !important; }
-uwl.weblio.jp#$##main { width: 1325px !important; padding-left: 15px !important; }
+uwl.weblio.jp#$##main { width:auto !important; padding-left:15px !important; }
+uwl.weblio.jp#$#.tngMainT { width:100% !important; }
 buhidoh.net#$##center-left { height: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58172
 punyu.com#$#.tblmain[width="900"] { height: auto !important; }
@@ -919,6 +943,24 @@ _ds_adtag_
 !
 ! /banner/banner_ - if it is necessary, make this rule domain specific
 !
+toyokeizai.net##.ad-bnr
+gizmodo.jp##.inner-buy-box
+dova-s.jp##.adAreaDownload
+dova-s.jp##.adAreaHead
+||popin.cc/searchbox/popin_ad_
+nekonikoban.org##body > div[style="text-align: center;"]
+xn--eckhu0c0d1b5kcu5305ksfpb.com##.Bnr
+xn--eckhu0c0d1b5kcu5305ksfpb.com##.execphpwidget
+diamond.jp##.banner-sp
+diamond.jp##a[href^="https://diamond.jp/oo/cc/creditcard_"] > img
+diamond.jp##a[href^="https://diamond.jp/oo/cc/rlink_"] > img
+diamond.jp##.pickup
+diamond.jp##.ad-bannar-floating
+||biglobe.ne.jp/js/display_affiliate_
+news.biglobe.ne.jp###gadsOverlayUnit
+busjav.one##ins[data-width="300"][data-height="250"]
+busjav.one##img[width="300"][height="250"]
+auctions.yahoo.co.jp##.ss
 my0nio.seesaa.net###links
 my0nio.seesaa.net##.text > a[href^="https://amzn."]
 my0nio.seesaa.net##img[src*="amazon-adsystem"] + br + a
@@ -1146,8 +1188,6 @@ kuron-zero.com###nextrayad
 ||kuron-zero.com/images/Banner*.jpg
 kuron-zero.com###kuron_ad_td
 ufret.jp###float-bnr
-loveheaven.net##.chapter-content > img.chapter-img ~ center
-/^(?!.*(google\.com|gstatic\.com|googleapis\.com|recaptcha.net|disqus\.com|disquscdn\.com|connect\.facebook\.net|static\.xx\.fbcdn\.net|dmca\.com)).*$/$third-party,script,domain=loveheaven.net
 5ch.net##.ADVERTISE_AREA
 5ch.net##body > div[style*="margin-top:10px;margin-bottom:10px;width:100%;text-align:center;"] > div[style*="background-color:#ccffcc"]
 popjav.tv##.poplayer
@@ -1860,13 +1900,12 @@ gtoys.blog48.fc2.com###adright
 !
 ! White list. Fixing filtration errors(false-positive)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/62583
+@@||proto2ad.durasite.net/A-affiliate2/mobile$script,domain=ok.goo-net.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58153
 @@||lacoste.com/on/demandware.static/*/js/dist-refit/framework/base/popin.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58022
 lifehacker.jp#@#.is-sponsored
-! https://github.com/AdguardTeam/AdguardFilters/issues/57117
-!+ PLATFORM(ext_ublock)
-@@||durasite.net^$image,domain=zozo.jp|wear.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56138
 news.2chblog.jp#@#.ad-center
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55775

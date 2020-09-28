@@ -1152,6 +1152,8 @@ nieuws.nl##.lokaal_banner_right
 woordenlijst.eu##.maincontents > center a[target="_blank"]
 allesamerika.com##.menu > p > a[target="_blank"]
 checkcams.com##.mfoot
+marktplaats.nl##.mp-Listing--cas
+marktplaats.nl##.mp-Listings__admarktTitle
 wiebetaaltwat.nl##.mr-miller-leaderboard-footer
 nu.nl##.nu-blendle-widget
 yasni.nl##.offerbox
@@ -1373,6 +1375,15 @@ tweakers.net#@#a[href^="http://pubads.g.doubleclick.net/"]
 @@||content.hwigroup.net/images^$domain=hardware.info
 hardware.info,tweakers.net#@#.AdBar
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/64292
+hardware.info$$script[tag-content="Flags."][min-length="20000"][max-length="300000"]
+hardware.info#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
+hardware.info#%#//scriptlet("prevent-addEventListener", "", "Flags.autoRecov")
+! https://github.com/AdguardTeam/AdguardFilters/issues/62479
+tweakers.net#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
+tweakers.net#%#//scriptlet("prevent-addEventListener", "", "Flags.autoRecov")
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||tweakers.net^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56379
 forum.fok.nl#%#//scriptlet("set-constant", "DAB", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61434
@@ -1520,6 +1531,8 @@ omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -40
 !-------------------- Specific rules --------------------!
 !--------------------------------------------------------!
 !
+buienradar.nl###adholderContainerHeader
+trouw.nl,parool.nl##.ad--section
 nnieuws.be##.banner-silver
 ah.nl##.ad-lane
 forum.fok.nl###wa_web_headertofloor
