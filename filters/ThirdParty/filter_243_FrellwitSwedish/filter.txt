@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-25 10:49:12 CEST
+! Last modified: 2020-09-28 11:28:59 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -200,7 +200,6 @@ flashscore.se###box-over-content-a:has(a[href^="/promobox"][target="_blank"])
 fokis.se##[id^="post-"]:has(strong:has-text(/i samarbete med/i))
 fokus.se#$#[id^="entry-content-post"], [id^="entry-content-related"] { height: 100% !important; }
 forni.se##section, .recent-article-small:has(.collaboration-brand)
-forum.studio.se##li[data-blocktitle="Anpassade Block"]:has(.sms-marking:has-text(Annons:))
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##.c-announcement:has(.c-label--sponsored)
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##.justnu_category:has(.datum:has-text(/sponsrat/i))
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##article:has(.datum:has-text(/sponsrat/i))
@@ -401,6 +400,9 @@ spela.se#%#//scriptlet('ubo-acis.js', '$jscomp')
 spela.se#%#//scriptlet('ubo-acis.js', 'AdPortal')
 spela.se#%#//scriptlet('ubo-acis.js', 'trackEvidonEvent')
 spisa.nu#$#body { overflow-y: auto !important; }
+sportfack.se#%#//scriptlet('ubo-set.js', 'AD', 'undefined')
+sportfack.se#%#//scriptlet('ubo-set.js', 'ANALYTICS', 'undefined')
+sportfack.se#%#//scriptlet('ubo-set.js', 'EGMONT', 'undefined')
 sportpanelen.se#%#//scriptlet('ubo-aopw.js', 'SG_POPUPS_QUEUE')
 sportpanelen.se##.stream-item-above-post:has(a[href*="/ads."])
 spray.se#$#body { -webkit-user-select: text !important; user-select: text !important; }
@@ -501,6 +503,7 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||cision.com^$badfilter
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$redirect=noopjs,script,domain=dplay.se
 ||look.utndln.com^$all
+||lwadm.com/lw/pbjs?pid=$important,script,domain=sydostran.se
 ||media.gamereactor.dk/*Promo$media,redirect=noopmp4-1s,domain=gamereactor.se
 ||media.gamereactor.dk/prerolls$media,redirect=noopmp4-1s,domain=gamereactor.se
 ||mediacreeper.com/image$image,redirect=32x32-transparent.png
@@ -942,6 +945,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /EUModalDialog$script,domain=morningstar.se
 /evidon$script,domain=morningstar.se
 /exposure$xmlhttprequest,domain=lokalguiden.se
+/facebook$script,domain=sportfack.se
 /facebook/gillkom$xmlhttprequest,domain=kamerabild.se|mobil.se
 /facebook/postkoll$xmlhttprequest,domain=kamerabild.se|mobil.se
 /facebook_sdk.js$script,domain=radioplay.se
@@ -1161,6 +1165,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/jetpack/_inc/build/widgets/eu-cookie-law/*$script
 /plugins/jnews-social-share/*$script,domain=svegot.se
 /plugins/lbg-audio8-html5-radio_ads/*$script,domain=svegot.se
+/plugins/leaky-paywall$domain=driva-eget.se
 /plugins/likebtn-like-button/*
 /plugins/loppi-cookie-consent/*$script
 /plugins/mailpoet/*$script,domain=opulens.se
@@ -1393,6 +1398,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 99mac.se,akaskidor.se,allakorsord.se,baaam.se,bettingstugan.se,bioenergitidningen.se,bohuslaningen.se,byggnadsarbetaren.se,casinowings.se,cissiochfreddan.se,claudiagalliconcha.se,dagensmedia.se,dagensopinion.se,di.se,dn.se,driva-eget.se,dromhemochtradgard.se,ekuriren.se,elle.se,elledecoration.se,ellematovin.se,emilysliv.se,expressen.se,femina.se,filmtipset.se,folkbladet.nu,gabriellajoss.me,hemtrevligt.se,ifokus.se,interiorbyvanessa.se,kimura.se,kkuriren.se,linneasskafferi.se,linnherbertsson.se,livetombord.se,loppi.se,mabra.com,mariestadstidningen.se,markbladet.se,mestmotor.se,mobil.se,mybabydolls.se,nwt.se,padelfeber.se,paulas.me,poddtoppen.se,polistidningen.se,residencemagazine.se,skaraborgsbygden.se,skillingaryd.nu,sla.se,sn.se,sportbloggare.com,storstadsmamman.com,sv.picmix.com,svenskgolf.se,sweclockers.com,swedroid.se,tidningenbalans.se,tidningenhalsa.se,utemagasinet.se,vagabond.se,varmlandsaffarer.se,vimedbarn.se,vk.se,xn--vrnamo-bua.nu##.ad
 ://sifomedia.
 ?action=get_banners$domain=djungeltrumman.se
+?url=*impse.tradedoubler.com$image
 @@.ad.json?$~third-party,xmlhttprequest,domain=byggahus.se
 @@/*490x224$image,domain=dansbandskanalen.se|guldkanalen.se
 @@/*_adframe.js$script,~third-party,domain=fssweden.se
@@ -2584,6 +2590,7 @@ startaochdriva.se##img[data-permalink]
 stayfriends.se###cookieHint
 stockblogs.se###cookie-notice
 studentum.se###emg-cookie
+studio.se###elGuestTerms
 studocu.com##footer + div:not([class])
 surfa.se###loader-wrapper
 surfa.se##.annonsDiv
