@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-28 11:28:59 CEST
+! Last modified: 2020-09-29 08:49:14 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -422,7 +422,6 @@ sverak.se#%#//scriptlet('ubo-set.js', 'nocontext', 'undefined')
 sverak.se#$#.unselectable, html { user-select: initial !important; -moz-user-select: initial !important; -webkit-user-select: initial !important; cursor: initial !important; -webkit-touch-callout: initial !important; }
 sverigespringer.se##.cd-sidebar-item, .cd-news-card:has(.cd-card-bar:has-text(/annons/i))
 sweclockers.com#%#//scriptlet('ubo-set.js', 'adblock', 'false')
-sweclockers.com##.pubItem:has(.sponsoredArticle)
 swedroid.se#$?#li.Notice:has(a[target="_blank"]) { remove: true; }
 swehockey.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'adscript')
 tasteline.com#%#//scriptlet('ubo-acis.js', 'Fusion', 'loadAds')
@@ -539,10 +538,8 @@ bandyfeber.com,binero.se,boktugg.se,carup.se,dagensanalys.se,dinbyggare.se,ettgo
 ||prod-adops-proxy.dnitv.net^$empty,domain=dplay.se
 !#endif
 !#if env_mobile
-m.sweclockers.com###topBanner
 aftonbladet.se#%#//scriptlet('ubo-nostif.js', 'abAndroidSmartAppBannerActive')
 swedroid.se##.externalTopMobile
-m.sweclockers.com##.listItem:has(.sponsoredArticle)
 swedroid.se##div[id$="_ad_mobile"]
 !#endif
 !#if !env_mobile
@@ -1206,6 +1203,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/share-and-follow/*
 /plugins/skydda-advisor/*
 /plugins/so-widgets-bundle/*$domain=lokalsport.nu
+/plugins/social-pug
 /plugins/sociallocker-next-premium/*$domain=travprat.se
 /plugins/socialsnap$script,domain=listor.se|samnytt.se
 /plugins/statebuilt-facebook-page-like-popup/*
@@ -2628,9 +2626,8 @@ sverige.nu###spopup
 sverigespringer.se##.cd-desktop-banner
 svt.se###nyh_cookie-message,#svtmat_cookie,section.nyh_share
 svtplay.se##.play_cookie-information
-sweclockers.com###wdgtMainMonsterJobs
-sweclockers.com##.monsterSide
-sweclockers.com##.prisjaktPopular
+sweclockers.com###prisjakt-popular
+sweclockers.com##.article-sponsored, .article-sponsored ~ div
 swedroid.se##.article-footer > .aeChart
 swedroid.se##.article-footer > h3
 swedroid.se##a[href^="//www.prisjakt.nu/produkt"]
