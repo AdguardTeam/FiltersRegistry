@@ -10999,6 +10999,7 @@ lotzon.pro,novosti-n.org,prokazan.ru,20minut.ua,alnews.com.ua,gtavicecity.ru,haq
 ! vast ads on anime sites - for example: animego.org, yummyanime.club, etc
 /:\/\/[0-9]?[a-z0-9]{11,}(\.com|\.in\.net)/$xmlhttprequest,domain=aniqit.com|kodik.info|start.u-cdn.top|ustore.bz|u-stream.in
 !
+||api.theins.ru/adv/
 ||tutby.gcdn.co/n/os/06/e/680x190_pm_bf.png
 ||tutby.gcdn.co/n/os/03/f/140_parimatch_bf.jpg
 a.pr-cy.ru##.slider-analysis__footer
@@ -21021,6 +21022,10 @@ tjournal.ru##.b-adv-300x500
 !
 ! The content replacement rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/64547
+! teleportal.ua - реклама перед видео. под этим комментарием второй вариант
+! может быть заблокировано этим `||vcms-api*.starlight.digital/hls/*?file=*&testadv=$removeparam=testadv`
+||vcms-api*.starlight.digital/player-api/$xmlhttprequest,replace=/"mediaHls"/"mediaHlsNoAdv"/
 ! Block vk ads(they are hidden, but visible in some reports)
 ||vk.com/al_feed.php?queue$replace=/-ads_experiment;rb://
 ! https://github.com/AdguardTeam/AdguardFilters/issues/57021
