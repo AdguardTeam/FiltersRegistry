@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-09-29 08:49:14 CEST
+! Last modified: 2020-09-30 12:45:27 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -194,6 +194,7 @@ feber.se,kalender.se,mrkoll.se,netflixguiden.se,nsk.se,regnradar.se,skd.se,tjock
 filmtipset.se##.row.news:has(em:has-text(/sponsrad/i))
 finansliv.se#%#//scriptlet('ubo-aopw.js', 'nwlettersignupcheck')
 finansliv.se,lararnastidning.se,lektion.se,pedagogiskamagasinet.se,scanaktier.se,sulkysport.se,tidningenridsport.se#%#//scriptlet('ubo-aopr.js', 'OA_show')
+firstclassmagazine.se##a:has(.feat-cat:has-text(/annons/i))
 fiskejournalen.se#%#//scriptlet('ubo-rc.js', 'no-scroll')
 flashback.org#%#//scriptlet('ubo-nostif.js', 'e', '10000')
 flashscore.se###box-over-content-a:has(a[href^="/promobox"][target="_blank"])
@@ -617,6 +618,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##._ning_outer._ning_jss_zone:not(body):not(html)
 ##.ad-rotator:not(body):not(html)
 ##.ad-single-news:not(body):not(html)
+##.ad_container_bottom:not(body):not(html)
 ##.adrotate-group:not(body):not(html)
 ##.adtoma_container:not(body):not(html)
 ##.alert-box.info.cookies:not(body):not(html)
@@ -747,6 +749,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 &log_ad$image,domain=yelp.se
 &type=load_offers$xmlhttprequest,domain=illvet.se|pctidningen.se
 *$csp=script-src 'none',domain=svtt.se|ssvd.se|exressen.se|eexpressen.se|sskatteverket.se|aatg.se|atgg.se
+*$subdocument,domain=flygtorget.se
 -ads.$image,domain=svenskbyggtidning.se
 -banner-$image,domain=litteraturmagazinet.se
 .ax/ad/
@@ -1415,7 +1418,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/css/ad.$stylesheet,domain=sv.geneanet.org
 @@/jquery.scrollUp$script,domain=explorecurate.com
 @@/js/ad.js$~third-party,domain=sweclockers.com
-@@/js/ads.js$~third-party,domain=freeride.se|fz.se|malagaguiden.se|rabattpris.se|snowmobile.se
+@@/js/ads.js$~third-party,domain=freeride.se|fz.se|malagaguiden.se|mobilanyheter.net|rabattpris.se|snowmobile.se
 @@/js/advertisement*.$script,~third-party,domain=expressen.se
 @@/js/advertising.$script,~third-party,domain=byggnadsarbetaren.se|cykla.se|elbilsnytt.se|snowmobile.se|vatternrundan.se
 @@/optimizelyjs/*$domain=ikea.com
@@ -1778,6 +1781,7 @@ chef.se##.global-cookie-msg
 chef.se##.Product-modal
 chef.se,svd.se##.Ad
 civilekonomen.se,market.se###rollup
+classic.prisjakt.nu###confirm_cookie_use
 cleannet.se,dagenshandel.se,entreprenad.com,food-supply.se,foodnet.se,fri-kopenskap.se,habit.se,kemivarldenbiotech.se,lifesciencesweden.se,medtechmagazine.se,motormagasinet.se,packnet.se,plastnet.se,processnet.se,recyclingnet.se,rt-forum.se,skyddosakerhet.se,transportnet.se,uochd.se,verkstaderna.se,woodnet.se###junglebogen
 cleannet.se,dagenshandel.se,entreprenad.com,food-supply.se,foodnet.se,fri-kopenskap.se,habit.se,kemivarldenbiotech.se,lifesciencesweden.se,medtechmagazine.se,motormagasinet.se,packnet.se,plastnet.se,processnet.se,recyclingnet.se,rt-forum.se,skyddosakerhet.se,transportnet.se,uochd.se,verkstaderna.se,woodnet.se##.rotating-junglebogen
 clipmyhorse.tv##.archive-player-ads
@@ -2303,7 +2307,7 @@ lantmannen.se##.cookieinformation
 lantmateriet.se##.cookie.show
 laromedia.se##img[alt="Annons"] + .img-flipper
 lchfarkivet.se##.wppopups-whole
-lektionsbanken.se###partners_right
+lektionsbanken.se###partners_right, #partners_top
 lesscarbs.se##.bd-flex-vertical > aside
 lesscarbs.se##a[href*="/affiliates/"]
 liberalerna.se###cc-notice
