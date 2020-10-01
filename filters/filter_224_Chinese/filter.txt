@@ -285,6 +285,11 @@ nfmovies.com#$#img[src^="/pic/tu/"] { visibility: hidden!important; }
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/57243
+nfmovies.com#$?#body > .hidden-xs > div[id]:has(> img[src^="/static/"][onclick^="open"]) { position: absolute!important; top: -9999px!important; left: -9999px!important; bottom: unset!important; }
+nfmovies.com#$?#div[id^="aaaDiv"] { remove: true; }
+!
+!
 jable.tv#?#div[class="col-6 col-sm-4 col-lg-12"] > div.video-img-box:has(> div.img-box > a[href*="?banner="])
 csdn.net#?#aside > div.slide-outer:has(> div.box > div[adsid])
 csdn.net#?##feedlist_id > li:has(> div[id^="kp_box_"])
@@ -303,6 +308,9 @@ csdn.net#?##feedlist_id > li:has(> div[id^="kp_box_"])
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/57243
+nfmovies.com#%#//scriptlet("adjust-setInterval", "timerAdCountdownCount", "", "0.02")
+nfmovies.com#%#//scriptlet("prevent-setTimeout", "/document\.getElementById[\s\S]*?\.style\.display\.indexOf/")
 !--------------------------------------!
 !------- CSS fixes --------------------!
 !--------------------------------------!
@@ -327,8 +335,6 @@ apple.com.cn#$#main[role="main"] { padding-top: 0 !important; }
 !
 ! Section contains rules for specific websites
 !
-jable.tv##a[href*="?banner="]
-jable.tv##.uu-ads
 sokoc2.com##.rHHc
 manhuafen.com##.ad
 pianku.me###playad
@@ -344,6 +350,20 @@ csdn.net###footerRightAds
 ||s3.amazonaws.com/dmas-public/sitemaji/vast.xml$domain=dailymotion.com
 ||c.mipcdn.com/static/*/mip-ad/mip-ad.js
 ||mycodes.net/js/*.js
+!
+!
+! jable.tv
+||jable.tv/assets/images/wejo/$image
+jable.tv##a[href="http://uus52.com/"]
+jable.tv##.badge
+jable.tv##a[href*="?banner="]
+jable.tv##.uu-ads
+! nfmovies.com
+nfmovies.com##a[href][onclick^="openurl()"] img[src^="/static/"]
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+nfmovies.com##body div[id^="aaaDiv"]
+!+ PLATFORM(windows, mac, android)
+||nfmovies.com/static/side.jpg$image,redirect=nooptext,domain=nfmovies.com
 !---------------------------------------------------------------------------!
 !-------------- Content replacement rules ----------------------------------!
 !---------------------------------------------------------------------------!
@@ -357,7 +377,9 @@ csdn.net###footerRightAds
 !
 ! White list. Fixing filtration errors (false-positive)
 !
-
+! https://github.com/AdguardTeam/AdguardFilters/issues/57243
+nfmovies.com#@?#div[id]:-abp-has(>img[onclick="openurl()"])
+@@||nfmovies.com/static/side.jpg$xmlhttprequest,domain=nfmovies.com
 !---------------------------------------------------------------------------!
 !--------------- EasyList China rules --------------------------------------!
 !---------------------------------------------------------------------------!
@@ -14341,6 +14363,8 @@ brandsales.58.com#@#div[id^="ad_"]
 gohome.com.hk#@#div[id^="div-gpt-ad"]
 @@&adurl=http://$domain=360bifen.cc|360bifen.com
 @@.adserver.$domain=litv.tv
+@@/adaffiliate_$image,domain=ipfs-lab.com
+@@||ipfs-lab.com^$generichide
 @@.com/adv/$domain=my.ctrip.com
 @@.gif#$domain=cnprint.org|huhupan.com|tgfcer.com|wgun.net
 @@.jpg#$domain=huhupan.com
