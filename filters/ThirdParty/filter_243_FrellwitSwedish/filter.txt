@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-10-04 13:51:15 CEST
+! Last modified: 2020-10-05 11:17:53 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -325,6 +325,7 @@ minimalisterna.se##.post:has(p:has-text(/i samarbete med/i))
 missatsamtal.se#%#//scriptlet('ubo-aopw.js', '_gaq')
 missatsamtal.se##.comment:has(.nosnaj)
 mitti.se#%#//scriptlet('ubo-noeval-if.js', 'addthis.layers.refresh')
+mitti.se#%#//scriptlet('ubo-set.js', 'NWS.config.enableAdblockerDetection', 'false')
 mitti.se##.teaser-large-container:has(.native-ad-mark)
 mittkok.expressen.se#%#//scriptlet('ubo-acis.js', 'adblock')
 mittkok.expressen.se#%#//scriptlet('ubo-acis.js', 'burtSegments')
@@ -598,8 +599,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -635,6 +636,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##.c-post--native-ad:not(body):not(html)
 ##.ca-consent-cookie-bar:not(body):not(html)
 ##.carrie-ad-block:not(body):not(html)
+##.casino-ad:not(body):not(html)
 ##.category-annons:not(body):not(html)
 ##.category-annonssamarbete:not(body):not(html)
 ##.category-om-samarbeten:not(body):not(html)
@@ -735,6 +737,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##a[href^="https://www.adsettings.com/scripts/reg_click."]
 ##a[title="LeoVegas"]
 ##article.category-samarbete
+##cookie-law-banner
 ##div.ad.container
 ##div.avia-cookiemessage-bottom
 ##div.cookie-show-bar-bottom
@@ -1173,8 +1176,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/mashsharer/*$script,domain=bilresaieuropa.se|dagensknep.se|djursidan.se|firefighters.se|misween.com|mysigast.se
 /plugins/material-admin/visitor-stats$script
 /plugins/metro-affiliate/*$script
-/plugins/mitti-cookie-disclaimer/*$script
-/plugins/mitti-oath-cmpi-js/*$domain=alltomstockholm.se|mitti.se
+/plugins/mitti-oath-cmpi-js/*
 /plugins/ml-adverts/*$script
 /plugins/modal-for-elementor/*$script,domain=miljomagasinet.se
 /plugins/newsletter$script,domain=56kilo.se
@@ -2117,7 +2119,7 @@ globalportalen.org##.follow-us-section
 godare.se##.privacy-information
 golfbladet.se###top_banner
 golfbladet.se##.startpage_banner
-goteborgdirekt.se,stockholmdirekt.se,vasterastidning.se##.gdpr-warning
+goteborgdirekt.se,mitti.se,stockholmdirekt.se,vasterastidning.se##.gdpr-warning
 goteborgdirekt.se,stockholmdirekt.se,vasterastidning.se##.profile-native
 goteborgdirekt.se,stockholmdirekt.se,vasterastidning.se##.push-component-native
 goteborgdirekt.se,stockholmdirekt.se,vasterastidning.se##[class^="casino-ad"]
@@ -2431,7 +2433,7 @@ nordfront.se###campaign_area
 nordichardware.se##.pspy_info
 nordichardware.se##.td_block_social_counter
 nordiskradio.se###cookieWindow
-norrahalland.se##.norra-leeads-ads
+norrahalland.se##.norra-leeads-ads,.egna_annonser_widget
 norrbotten.com##.td-ss-main-sidebar > .td-a-rec
 norrbotten.com##a[href*=".com/annons"]
 norrkopinghandel.se###wp-flybox_tab1
@@ -2901,14 +2903,13 @@ yelp.se##[data-ga-category="biz page ad"]
 ||connectad.io^$third-party
 ||connectio.s3.amazonaws.com/connect-retarget.$script
 ||consensu.org^$third-party,domain=~crfashionbook.com|~independent.co.uk|~joe.ie|~mirror.co.uk|~sourceforge.net|~sportsjoe.ie|~vi.nl
-||consent.cmp.oath.com^$script,domain=alltomstockholm.se|mitti.se
-||consent.cookiebot.com^$third-party,domain=bax-shop.se|clipmyhorse.tv|etc.se|goteborgdirekt.se|hoglandsnytt.se|itaboutdoor.se|kingsizemag.se|kurera.se|ng.se|norrahalland.se|ratsit.se|skeppsbrons.se|smartsenior.se|stockholmdirekt.se|swedroid.se|tankesport.se|totallyorebro.se|totallystockholm.se|upplysning.se|vasterastidning.se|villalivet.se|wesafe.se
 ||consent.dk^$third-party,domain=~ekstrabladet.dk
 ||converdiant.com^$third-party
 ||convertkit.com^$third-party
 ||conviva.com^$third-party
 ||cookie-disclaimer.onewp.net^$third-party
 ||cookie-script.com^$third-party
+||cookiebot.com^$third-party,domain=bax-shop.se|clipmyhorse.tv|etc.se|goteborgdirekt.se|itaboutdoor.se|kingsizemag.se|kurera.se|mitti.se|ng.se|skeppsbrons.se|smartsenior.se|stockholmdirekt.se|swedroid.se|tankesport.se|totallyorebro.se|totallystockholm.se|upplysning.se|vasterastidning.se|wesafe.se
 ||cookieinformation.com^$subdocument,third-party
 ||cookieinformation.com^$third-party,domain=aktivtraning.se|cleannet.se|dagenshandel.se|digitalfotoforalla.se|entreprenad.com|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|iform.se|kemivarldenbiotech.se|lifesciencesweden.se|medtechmagazine.se|militarhistoria.se|motormagasinet.se|natgeo.se|packnet.se|pctidningen.se|plastnet.se|popularhistoria.se|processnet.se|proff.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|valuta.se|varldenshistoria.se|verkstaderna.se|viivilla.se|woodnet.se
 ||cookieinfoscript.com^$third-party
