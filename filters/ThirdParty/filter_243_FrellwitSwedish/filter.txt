@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-10-05 11:17:53 CEST
+! Last modified: 2020-10-06 15:12:46 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -390,6 +390,7 @@ runnersworld.se##.postscroll:has(.sponsrat-promo)
 senses.se##.isobrick:has(a[href*="betting"])
 senses.se##.isobrick:has(a[href*="casino"])
 senses.se##.isobrick:has(a[href*="glhf-gg"])
+senses.se##.isobrick:has(a[title^="Reklam:"])
 shortcut.se##.blockquote:has(strong:has-text(/^annons/i))
 shortcut.se##.employer:has(.sponsored)
 shortcut.se##.item:has(.sponsored)
@@ -500,7 +501,6 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||bonnier-html-player.b17g.services/bumpers/$media,redirect=noopmp4-1s,domain=fotbollskanalen.se|koket.se|tv4play.se
 ||byggkonsult.org^$all
 ||cdn.segment.com/analytics.js$important,script,domain=dagen.se|se.trustpilot.com|studocu.com|tholin.se
-||cision.com^$badfilter
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$redirect=noopjs,script,domain=dplay.se
 ||look.utndln.com^$all
 ||lwadm.com/lw/pbjs?pid=$important,script,domain=sydostran.se
@@ -897,6 +897,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /campaign-fallback.$script,domain=aftonbladet.se
 /caos/analytics.js$script
 /casino/$image,domain=battrestadsdel.se|dayviews.com|fotboll.com|hockeysverige.se|hypeline.se|kamrat.com|kulturbloggen.com|newsvoice.se|nyadagbladet.se|nyheter24.se|spray.se|svenskhistoria.se|totallyorebro.se|totallystockholm.se|zeromagazine.nu
+/cecado/advisible.js
 /check-paywall$domain=dn.se
 /citygate/payingcompanies$xmlhttprequest
 /closest-native$xmlhttprequest,domain=expressen.se
@@ -1449,7 +1450,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||cykla.se/wp-admin/admin-ajax.php?action*&advert_search$xmlhttprequest
 @@||cykla.se/wp-content/themes/cykla/assets/images/advert-filter-top.jpg$image
 @@||d11j2g8hmtmh4u.cloudfront.net/orion/jquery.$script
-@@||dagensanalys.se/wp-content/*/pubmatic_$image
 @@||elinskoglund.com^$generichide
 @@||fannystaaf.se^$generichide
 @@||feed.meltwater.com^$subdocument
@@ -1545,7 +1545,10 @@ akaskidor.se,svenskgolf.se##.ad-wallpaper-panorama-container
 akaskidor.se,svenskgolf.se##.ad-wallpaper-wrapper
 aktiespararna.se##.analysguiden-promote-articles
 aktiespararna.se,alekuriren.se,civilekonomen.se,koket.se,nyheter24.se##.native
-aktivtraning.se,digitalfotoforalla.se,iform.se,militarhistoria.se,natgeo.se,popularhistoria.se##.scroll-message
+aktivtraning.se,digitalfotoforalla.se,iform.se,militarhistoria.se,natgeo.se,pctidningen.se,popularhistoria.se##.gallery-banner
+aktivtraning.se,digitalfotoforalla.se,iform.se,militarhistoria.se,natgeo.se,pctidningen.se,popularhistoria.se##.horseshoe
+aktivtraning.se,digitalfotoforalla.se,iform.se,militarhistoria.se,natgeo.se,pctidningen.se,popularhistoria.se##.scroll-message
+aktivtraning.se,digitalfotoforalla.se,iform.se,militarhistoria.se,natgeo.se,pctidningen.se,popularhistoria.se##a[data-ad-placement]
 aktuellhallbarhet.se,dagensmedia.se,fastighetsnytt.se,resume.se###__next > div[class^="css-"]:last-child
 aktuellhallbarhet.se,dagensmedia.se,fastighetsnytt.se,resume.se##.slot-articlemodule
 aktuellhallbarhet.se,dagensmedia.se,fastighetsnytt.se,resume.se##.slot-module
@@ -1877,8 +1880,6 @@ di.se,dn.se,expressen.se###rich-media-ads
 di.se,thelocal.se##.ad_container
 diabetes.se##.c-cookies
 dialasen.com##.textwidget > a[target="_blank"]
-digitalfotoforalla.se##.gallery-banner
-digitalfotoforalla.se,militarhistoria.se,natgeo.se,popularhistoria.se##.horseshoe
 djungeltrumman.se###right-banners
 djungeltrumman.se###sponsored-posts
 dn.se##.article--native
@@ -2415,7 +2416,6 @@ mytaste.se##.site-header__panorama
 mytaste.se##[class^="affiliate-container"]
 mytaste.se##[id^="Modal_plugin"]
 mytaste.se##div[id*="panorama_"]
-natgeo.se##a[data-ad-placement="1"]
 natursidan.se###container > a:not(:first-child)
 natursidan.se###sidebar .widget_text a[target]
 netflixguiden.se##.a-instream
@@ -2717,6 +2717,7 @@ uppsatser.se##li[style*="min-height:90px"]
 utsidan.se###mastertop
 varldenshaftigaste.se###getFixed
 varldenshaftigaste.se##[id*="annons"]
+varldenshistoria.se##.campaign-teaser-show
 veckorevyn.com##.annons-block
 veckorevyn.com##.category-partner-promotion
 veterinarmagazinet.se##.nyhet-ad
@@ -2910,8 +2911,8 @@ yelp.se##[data-ga-category="biz page ad"]
 ||cookie-disclaimer.onewp.net^$third-party
 ||cookie-script.com^$third-party
 ||cookiebot.com^$third-party,domain=bax-shop.se|clipmyhorse.tv|etc.se|goteborgdirekt.se|itaboutdoor.se|kingsizemag.se|kurera.se|mitti.se|ng.se|skeppsbrons.se|smartsenior.se|stockholmdirekt.se|swedroid.se|tankesport.se|totallyorebro.se|totallystockholm.se|upplysning.se|vasterastidning.se|wesafe.se
+||cookieinformation.com^$script,domain=aktivtraning.se|digitalfotoforalla.se|iform.se|militarhistoria.se|natgeo.se|pctidningen.se|popularhistoria.se|proff.se|valuta.se|varldenshistoria.se|viivilla.se
 ||cookieinformation.com^$subdocument,third-party
-||cookieinformation.com^$third-party,domain=aktivtraning.se|cleannet.se|dagenshandel.se|digitalfotoforalla.se|entreprenad.com|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|iform.se|kemivarldenbiotech.se|lifesciencesweden.se|medtechmagazine.se|militarhistoria.se|motormagasinet.se|natgeo.se|packnet.se|pctidningen.se|plastnet.se|popularhistoria.se|processnet.se|proff.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|valuta.se|varldenshistoria.se|verkstaderna.se|viivilla.se|woodnet.se
 ||cookieinfoscript.com^$third-party
 ||cookielaw.org/scripttemplates$script,domain=~crfashionbook.com|~eurogamer.net|~eurogamer.pl|~rockpapershotgun.com|~usgamer.net|~vg247.com|~zdnet.com
 ||cookienotice.co^$third-party
