@@ -6419,7 +6419,7 @@ livejournal.com#%#AG_setConstant('begun_new_callbacks', 'undefined');
 ||livejournal.com/*/*/*-$replace=/(^\{.*"common":.+"stationaryConnection":.+"commonRtbVisibility".+)|(^.+"blockId":.+visibilitySettings.+)//,script,other,xmlhttprequest
 ||otzovik.com/*/*/*-$replace=/(^\{.*"common":.+"stationaryConnection":.+"commonRtbVisibility".+)|(^.+"blockId":.+visibilitySettings.+)//,script,other,xmlhttprequest
 ||pikabu.ru/*/*/*-$replace=/(^\{.*"common":.+"stationaryConnection":.+"commonRtbVisibility".+)|(^.+"blockId":.+visibilitySettings.+)//,script,other,xmlhttprequest
-||razlozhi.ru/*/*/*/*-$script,replace=/{"rtb":.*//
+||razlozhi.ru/*/*/*/*-$script,replace=/({"rtb":.*)|(.*"blockId":.*"commonRtbVisibility":.*)//
 ! blocked while this is fixed in Extra
 ! ||yandex.*/q/$replace=/.*\[\{"adfoxPositions":.*//,script,xmlhttprequest,other,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua
 !#endif
@@ -8079,6 +8079,11 @@ zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua#?#.zen-pa
 !------- JS ------------
 !-----------------------
 !
+! playground.ru - clickunder
+playground.ru#%#//scriptlet('remove-attr', 'data-settings', 'body[id="userNotAuthorized"]')
+! https://github.com/AdguardTeam/AdguardFilters/issues/64922
+!+ NOT_PLATFORM(windows, mac, android)
+player.starlight.digital#%#//scriptlet("abort-on-property-read", "Object.prototype.BannerManager")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/64994
 720video.me#%#//scriptlet("prevent-window-open")
 ! sports.ru,tribuna.com - clickable background
@@ -8551,9 +8556,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/64922
-!+ NOT_PLATFORM(windows, mac, android)
-player.starlight.digital#%#//scriptlet("abort-on-property-read", "Object.prototype.BannerManager")
+! gametech.ru - убран отступ
+gametech.ru#$#.tm-wrapper > div.tm { margin-bottom: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/64449
 underver.se,underverse.su#$#p.magnet_magic{ pointer-events: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/64383
@@ -20998,6 +21002,12 @@ stratege.ru###content > div[id]:not([id="content-wrapper"])
 stratege.ru##body > div[class][id] > style + div[id*="-"]
 stratege.ru##body > div[id$="promo_layer"] > style[type] + div[id]
 !
+! gametech.ru
+||ixbt.online/banners/$image
+gametech.ru##.branding-desktop
+gametech.ru##.branding-mobile
+gametech.ru##body div.ixbtad
+!
 ! zol.ru
 zol.ru##.central_banner
 zol.ru##div[id^="banner_main_top_"]
@@ -21039,11 +21049,13 @@ kp.ru,kp.by,kp.kg,kp.kz,kp.md##div[data-show-empty="true"]
 ||kp.*/frames/*slot.html?
 ||kp.*/guide/js/brp.js
 ||kp.*/js/frames/loadGoogleTagBanners.js
+!
 ! 24tv.ua
 24tv.ua###top-revive-buttons
 24tv.ua##div[class^="b_reklama"]
 24tv.ua##.inner-wrap > section[class="nav-additional"]
 health.24tv.ua##.adv-news-within
+!
 ! Start: vc.ru, dtf.ru, tjournal.ru, spark.ru
 vc.ru##.vk-happy-birthday
 vc.ru##.special-mailru-teaser
