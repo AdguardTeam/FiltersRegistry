@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-10-07 14:19:20 CEST
+! Last modified: 2020-10-09 08:17:26 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -377,8 +377,7 @@ pussad.se#$#html.g1-popup-visible { overflow: initial !important; }
 qx.se##.col-4:has(script)
 radarbox.com#%#//scriptlet('ubo-set.js', 'ads_enabled', 'true')
 radio.se###main > div:last-child:has-text(/använder cookies/i)
-radron.se#$#.content__body.cms-content.restricted, .main .list__restricted { max-height: initial !important; overflow: initial !important; }
-radron.se#$#.read-more__overlay, .graybubble__overlay { position: initial !important; }
+radron.se#%#//scriptlet('ubo-cookie-remover.js', 'RR_RP')
 ratsit.se#$#body { overflow: auto !important; }
 realtid.se#%#//scriptlet('ubo-acis.js', 'sas')
 realtid.se#$#.modal-open { overflow: unset !important; }
@@ -599,8 +598,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -677,6 +676,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##.cookie_consent_bar:not(body):not(html)
 ##.cookie_popup_box:not(body):not(html)
 ##.cookieAlert:not(body):not(html)
+##.CookieBanner.is-visible:not(body):not(html)
 ##.cookiebar:not(body):not(html)
 ##.cookieConsent:not(body):not(html)
 ##.CookieConsentBanner:not(body):not(html)
@@ -1718,9 +1718,7 @@ bokadirekt.se##.frontpage-banner
 bokadirekt.se##img[alt*="banner"]
 booli.se###app > div:last-child
 borskollen.se##[id^="borskollen_small"],[id^="borskollen_large"]
-borsvarlden.com##.banner-wrapper
-borsvarlden.com##.index-side-banner-wrapper
-borsvarlden.com##.sponsored-articles-container
+borsvarlden.com##.sponsored-articles-container,.nav-sep-blink,.annons-label,.index-side-banner-wrapper
 bosidan.ax##.ad-li
 branschkoll.se##.advert-widget
 bravenewbusiness.se##.site-information-container
@@ -2482,7 +2480,6 @@ pussad.se##.g1-popup-newsletter
 pussad.se##.g1-slideup-wrap
 radionytt.se###toppannons
 radioplay.se###root > div[data-reactroot] > div:not([class]):not([id])
-radron.se##.c-page-restriction-infobar-content-wrapper, .main .list__restricted-overlay
 rastaochdalla.se##.sidebar-right > .widget_social_links
 rastaochdalla.se##.widget_advertise
 ratsit.se##.campaign-bar
