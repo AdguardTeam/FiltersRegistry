@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-10-11 07:44:08 CEST
+! Last modified: 2020-10-12 17:46:27 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -287,7 +287,7 @@ kittad.se##a[href]:has(.kittad-label-sponsored)
 klart.se#%#//scriptlet('ubo-aopr.js', 'blockAdBlock')
 klart.se#%#//scriptlet('ubo-rc.js', 'mega-loading')
 klart.se##.content-box-list__item:has(.ad-text)
-kokaihop.se#%#//scriptlet('ubo-cookie-remover.js', 'receptRaknare')
+kokaihop.se#$?#.cookieBarWrapper { remove: true; }
 koket.se##li.slide:has(.external_advertiser)
 krickelins.se##article[id^="post-"]:has(a[href$="/sponsrade-inlagg/"])
 kultwatch.se#$#.js-preloader > .document, .js-preloader > .hero-section { opacity: 1 !important; visibility: visible !important; }
@@ -795,7 +795,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 .se/wdg/tracking
 .se/wp-content/banners/
 .se/xhr/add-impression/
-.TB.min.js$domain=kokaihop.se
 /*Fokus_360x300px_animate*.gif$image,domain=fokus.se
 /250x360/$image,domain=marsta.nu
 /280x240/$image,domain=rumhemma.se
@@ -1044,7 +1043,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /license.$script,domain=jawcloud.co|nxload.com
 /linkpulse/*$script
 /links/*casino*.$image,domain=emocore.se
-/listByType?*adSettings$xmlhttprequest,domain=kokaihop.se
 /listicles.js$script,domain=alingsastidning.se|bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 /live-start/live-tv-se-sportexpressen-tv-direkt$xmlhttprequest,domain=expressen.se
 /live-start/live-tv-senaste-nyheterna$subdocument,xmlhttprequest,domain=expressen.se
@@ -2265,12 +2263,7 @@ klart.se##.cookie-disclaimer
 klart.se##.gdpr-onboarding-container
 klart.se##.sponsor-message
 knulla.se###cookiescript_injected
-kokaihop.se###mat-se-buy-widget
-kokaihop.se###popupStatus
-kokaihop.se##.kng-cookie-info-bar
-kokaihop.se##.share-and-add-parent
-kokaihop.se,ratsit.se##.modal-backdrop
-kokaihop.se,tjanstebilen.se##.modal
+kokaihop.se##.ads-wrapper-main
 koket.se###react-newsletter-overlay
 koket.se##.cookie_message__wrapper
 koket.se##.endorsed
@@ -2485,6 +2478,7 @@ rastaochdalla.se##.sidebar-right > .widget_social_links
 rastaochdalla.se##.widget_advertise
 ratsit.se##.campaign-bar
 ratsit.se##.js-cookie-modal
+ratsit.se##.modal-backdrop
 ratsit.se##.promo
 ratsit.se##.search-list-inline-ad
 ratsit.se##[class*="lonekollen"]
@@ -2667,6 +2661,7 @@ tittapavideon.se##.adv
 tjanstebilen.se###myModal
 tjanstebilen.se##.container-banner-sidebar
 tjanstebilen.se##.header-banner-top
+tjanstebilen.se##.modal
 tjanstebilen.se##a[href*="/?SPA="]
 tkj.se##.affiliatenatverk
 tkj.se##.sidebar1 > .widget_text:nth-last-child(-n+2)
