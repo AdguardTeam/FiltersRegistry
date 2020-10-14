@@ -1,5 +1,5 @@
 !
-! OriginalVersion: 13October2020v1
+! OriginalVersion: 13October2020v2
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
 ! Expires: 1 day
@@ -324,6 +324,9 @@ goal.com##.js-betting-widget.is-country-no:upward(2)
 ||brandstudio.inventory.schibsted.io^$subdocument,third-party
 ||matriell.dm-storage.no^$image,third-party
 ||tracking-genesisaffiliates.com^$image,third-party
+||betterbanners.org^$third-party
+||btrbnrs.link^$third-party
+||banner.3loops.com^
 !+ NOT_OPTIMIZED
 ||print2web.sn.dk^$image
 !+ NOT_OPTIMIZED
@@ -357,7 +360,7 @@ contentMarketing$xmlhttprequest,domain=sol.no
 ||acdn.adnxs.com/ast/ast.js$script,important,domain=vg.no
 ||acdn.adnxs.com/ast/ast.js$script,redirect=noopjs,important,domain=vgtv.no
 ||akamai.net^$script,domain=eniro.*
-||akamaihd.net^$media,domain=dplay.*
+||akamaihd.net^$media,domain=dplay.*|~dplay.it|~dplay.es
 ||amino.dk/images/partners/agera/240x140-forside-hardcoded*.jpg$image
 ||arendalstidende.no/wp-content/uploads/*_490px.jpg^$image
 ||austevollforlag.no/wp-content/*/yachtmarine2014.$image
@@ -373,7 +376,7 @@ contentMarketing$xmlhttprequest,domain=sol.no
 ||damoh.vgtv.no/hic_qos$script,redirect=noopjs,domain=vg.no
 ||deals.innocode.no/api^$third-party,subdocument
 ||deiligejenter.no^$image,domain=nakenprat.com
-||dnitv.com^$media,domain=dplay.dk
+||dnitv.com^$media,domain=dplay.*|~dplay.it|~dplay.es
 ||dust2.dk/img/banners/*$image
 ||export.prisguide.no^$domain=diskusjon.no
 ||export.prisguiden.no^$domain=diskusjon.no
@@ -539,6 +542,7 @@ _300x250px-*.gif^$domain=ilaks.no
 45.58.146.154$network
 82.196.13.38$network
 82.221.81.9$network
+178.79.136.45$network
 !#if !ext_ublock
 ||freewheel-mtgx-tv.akamaized.net^$app=no.viafree.android|dk.viafree.android
 ||ssl-mtgstream.tns-cs.net^$app=no.viafree.android|dk.viafree.android
@@ -708,7 +712,6 @@ friflyt.no###ads_fullwidth_container
 friflyt.no###wallpaperCenterAd
 friflyt.no,terrengsykkel.no##.inlineAdBlock
 fvn.no##.brandboard-container
-fyens.dk##.adblock__text
 gaffa.dk##.external-branding
 gaffa.dk##.sticky-banner-wrapper
 gamer.no##.aaa-980x150
@@ -1130,7 +1133,7 @@ baadmagasinet.dk##.article-bottom .qx-inner > .qx-section:last-of-type
 ! 🇬🇧: Entries for at least 3 websites
 dagens.dk,dust2.dk,kanalfrederikshavn.dk,videnskab.dk,politirapporten.dk,nyheder24.dk.tilbudsugen.dk,alletilbudsaviser.co.no##.banner
 komputer.no,natgeo.no,historienet.no,koplr.no,ing.dk,in.fo##.top-banner
-hsfo.dk,jv.dk,stiften.dk,viborg-folkeblad.dk,dagbladet-holstebro-struer.dk##.adblock
+hsfo.dk,jv.dk,stiften.dk,viborg-folkeblad.dk,dagbladet-holstebro-struer.dk,ugeavisen.dk,fyens.dk##.adblock
 prisjakt.*,prisjagt.dk,dv.is,drm24.no##.adbox
 aftenposten.no,hockeymagasinet.dk,l-a.no###top-ads-container
 bygg.no,mmm.dk,kino.no##.ad
@@ -1312,7 +1315,7 @@ dr.dk#?#.dre-container--margin-bottom:has(.hydra-marketing-banner)
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-683430537
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-689373261
 !#if env_chromium
-||prod-adops-proxy.dnitv.net^$redirect=nooptext,domain=dplay.*
+||prod-adops-proxy.dnitv.net^$redirect=nooptext,domain=dplay.*|~dplay.it|~dplay.es
 !#endif
 ! ——— Caused by «EasyPrivacy» ———
 ! Attempting to fix a problem with voting online on Idol Norway
@@ -1321,8 +1324,8 @@ dr.dk#?#.dre-container--margin-bottom:has(.hydra-marketing-banner)
 @@||schibsted.com/autoTracker$domain=vg.no
 ! 🇳🇴: Får Dplay sin påloggingsside til å vises riktig
 ! 🇬🇧: Makes Dplay's login page show up properly
-@@||mparticle.com$script,domain=auth.dplay.*
-@@||assets.adobedtm.com/*/satelliteLib-$domain=auth.dplay.*
+@@||mparticle.com$script,domain=auth.dplay.*|~auth.dplay.it|~auth.dplay.es
+@@||assets.adobedtm.com/*/satelliteLib-$domain=auth.dplay.*|~auth.dplay.it|~auth.dplay.es
 ! ——— Caused by «Fanboy's Social Blocking List», if I recall correctly ———
 krom.is#@#.share-container
 @@/images/*youtube.jpg$domain=realityportalen.dk
@@ -1444,8 +1447,8 @@ gamereactor.*#%#//scriptlet('ubo-ra.js', 'autoplay')
 ||gamereactor.*/lay/js/banners_config.$script
 ||gamereactor.*/lay/js/manageBanners.$script
 ||gamereactor.*/media/eventad/$image
-||media.gamereactor.dk/*Promo$media,redirect=noopmp4-1s,domain=gamereactor.*
-||media.gamereactor.dk/prerolls$media,redirect=noopmp4-1s,domain=gamereactor.*
+||media.gamereactor.dk/*Promo$redirect=noopmp4-1s,media,domain=gamereactor.*
+||media.gamereactor.dk/prerolls$redirect=noopmp4-1s,media,domain=gamereactor.*
 ||openx.gamereactor.dk/multi.php?$important,script
 /insert_grtv_stats.$xmlhttprequest,domain=gamereactor.*
 /prerolls/*$domain=gamereactor.*
@@ -1691,13 +1694,13 @@ vg.no#%#//scriptlet('ubo-aeld.js', 'load', 'concat')
 tipsbladet.dk#$#.js-isblured { -webkit-filter: none !important; filter: none !important }
 tipsbladet.dk###js-promo-welcome
 ||aftenposten.no/seksjon/dist/ads-$script
-||dni-adops-proxy-prod-adopsmediaconverter.mercury.dnitv.com/$media,redirect=noopmp3-0.1s,domain=dplay.*
+||dni-adops-proxy-prod-adopsmediaconverter.mercury.dnitv.com/$media,redirect=noopmp3-0.1s,domain=dplay.no|dplay.dk
 ||elderlyscissors.com^
-||imasdk.googleapis.com/pal/sdkloader/pal.js$script,redirect=noopjs,domain=dplay.*
+||imasdk.googleapis.com/pal/sdkloader/pal.js$script,redirect=noopjs,domain=dplay.no|dplay.dk
 ||vg.no/cnp-assets/src/sites/vg/components/AdblockModal$script,~third-party
 @@.dk/assets/templates/*/ads.png^$image,domain=maskinbladet.dk|agrar-plus.dk|fritidsmarkedet.dk|dagensbyggeri.dk|maskinteknik.dk|gronteknik.dk
 @@/js/ads.js$~third-party,domain=tvkampen.com|tvsporten.dk
-@@||fwmrm.net/ad/$script,domain=dplay.*
+@@||fwmrm.net/ad/$script,domain=dplay.no|dplay.dk
 @@||sixscissors.com^$third-party,domain=itavisen.no
 @@||www.tv2.no/s/js/ads.js$script,~third-party
 gamereactor.*#%#//scriptlet('ubo-set.js', 'adblockEnabled', 'noopFunc')
