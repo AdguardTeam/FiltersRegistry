@@ -7456,7 +7456,6 @@ makeuseof.com#$#body { overflow-y: auto !important; }
 jneurosci.org,medrxiv.org,novartis.com.tr,royal.uk,transcom.com,netcologne.de,belltower.news,bigfm.de,click.ro,demokrata.hu,emma.de,gysev.hu,humanite.fr,ikgastarten.nl,la7.it,london.gov.uk,mavcsoport.hu,mcdonalds.at,mcdonalds.it,mises.org,mnm.hu,musescore.com,nbcsports.com,pnas.org###sliding-popup
 ! Sourcepoint cookie consent
 theguardian.com##div[id^="sp_message_"]
-theguardian.com#%#//scriptlet('remove-class', 'sp-message-open', 'html.sp-message-open')
 techadvisor.co.uk,forum.notebookreview.com,computerworld.com,skysports.com#$#div[id^="sp_message_"] { display: none !important; }
 techadvisor.co.uk,forum.notebookreview.com,computerworld.com,skysports.com#$#div[class^="sp_veil"] { display: none !important; }
 techadvisor.co.uk,forum.notebookreview.com,computerworld.com,skysports.com#$#body { overflow: visible !important; }
@@ -7509,7 +7508,6 @@ gmx.at,gmx.net,web.de##atl-third-party-dialog
 serverprofis.de#$#body.cli-barmodal-open { overflow: visible !important; }
 serverprofis.de#$##cliSettingsPopup ~ .cli-modal-backdrop { display: none !important; }
 ||telia.se/.resources/telia-sitewide-resources/website-cookie-consent/
-web.de,gmx.net,gmx.at#%#//scriptlet('abort-current-inline-script', 'document.cookie', 'redirectToInterceptionPage')
 mercadolivre.com.br###cookieDisclaimerBanner
 numero.com##.component-cookie-bar
 facebook.com#$#div[data-testid="cookie-policy-banner"] { display: none !important; }
@@ -8201,7 +8199,7 @@ eluban.pl#$##popModal2 { display: none!important; }
 eluban.pl#$##popModal2 ~ .modal-backdrop { display: none!important; }
 eluban.pl#$#body.modal-open { overflow: visible!important; padding-right: 0!important; }
 mercurynews.com###cookie-notice
-breparat.de,superstreusel.de##.lightbox-backdrop
+camping-freizeitbedarf.de,breparat.de,superstreusel.de##.lightbox-backdrop
 ||lg.com/lg5-common-gp/js*/e-privacy.min.js
 ||pikio.pl/desktop/static/js/jscookie.js
 vetz.vet##.cookie-information-wrap
@@ -11293,7 +11291,6 @@ noor.eu#$#div[data-feature="Web.Core.Feature.PrivacyCategory.Dialog"] { display:
 noor.eu#$#div[data-feature="Web.Core.Feature.PrivacyCategory.Dialog"] ~ div.modal-backdrop { display: none !important; }
 noor.eu#$#body { overflow: auto !important; }
 !
-hsbc.com.tr,advantage.com.tr#%#(function() { try { if ('undefined' != typeof localStorage) { localStorage.setItem('cookiePolicy', 'true') } } catch (ex) {} })();
 !#if (adguard_app_ios || adguard_ext_android_cb || adguard_app_android)
 hsbc.com.tr,advantage.com.tr##.new-cookie
 !#endif
@@ -11301,7 +11298,6 @@ hsbc.com.tr,advantage.com.tr##.new-cookie
 !+ NOT_OPTIMIZED
 calkalasutasayrani.com##.bs-example-modal-lg
 !
-web.de,gmx.net,gmx.at#%#//scriptlet('abort-current-inline-script', 'document.cookie', 'redirectToInterceptionPage')
 web.de,gmx.net,gmx.at$$script[tag-content="redirectToInterceptionPage"][max-length="2500"]
 !
 ns.nl#$##cookie-notice { display: none !important; }
@@ -11831,6 +11827,10 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+cdn.privacy-mgmt.com#%#AG_onLoad(function(){if(window.self!==window.top&&document.referrer.startsWith("https://www.giga.de/")){var b=new MutationObserver(function(){var c=document.querySelector('button[title="Optionen"]'),a;c&&(a=c);a&&(b.disconnect(),a.click())});b.observe(document,{childList:!0,subtree:!0});setTimeout(function(){b.disconnect()},1E4)}});
+theguardian.com#%#//scriptlet('remove-class', 'sp-message-open', 'html.sp-message-open')
+hsbc.com.tr,advantage.com.tr#%#(function() { try { if ('undefined' != typeof localStorage) { localStorage.setItem('cookiePolicy', 'true') } } catch (ex) {} })();
+web.de,gmx.net,gmx.at#%#//scriptlet('abort-current-inline-script', 'document.cookie', 'redirectToInterceptionPage')
 ze.tt#%#AG_onLoad(function() {if (!document.cookie.includes("euconsent-v2")) {var g = new MutationObserver(function() {var b = document.querySelector(".ph-button-submit");b&&b.click();});g.observe(document, {childList: !0,subtree: !0});setTimeout(function() {g.disconnect()}, 1E4)}});
 eon.de#%#//scriptlet('set-cookie', 'consent_mgt', '1')
 consent-cdn.sueddeutsche.de#%#AG_onLoad(function(){if(!document.cookie.includes("euconsent-v2")){var c=new MutationObserver(function(){var a=document.querySelector('button[title="Einstellungen"]:not([class*="-hidden"])'),b=document.querySelector('button[aria-label="Auswahl Speichern" i]');a&&a.click();b&&b.click()});c.observe(document,{childList:!0,subtree:!0});setTimeout(function(){c.disconnect()},1E4)}});
@@ -12190,6 +12190,11 @@ m.timesofindia.com,m-timesofindia-com.cdn.ampproject.org$$amp-consent
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/65811
+giga.de#@%#(function(o){function a(a){return{get:function(){return a},set:b}}function b(){}function c(){throw"Adguard: stopped a script execution.";}var d={},e=a(function(a){a(!1)}),f={},g=EventTarget.prototype.addEventListener;o(d,{spid_control_callback:a(b),content_control_callback:a(b),vid_control_callback:a(b)});o(f,{config:a(d),_setSpKey:{get:c,set:c},checkState:e,isAdBlocking:e,getSafeUri:a(function(a){return a}),pageChange:a(b),setupSmartBeacons:a(b)});Object.defineProperty(window,"_sp_",a(f));EventTarget.prototype.addEventListener=function(a){"sp.blocking"!=a&&"sp.not_blocking"!=a&&g.apply(this,arguments)}})(Object.defineProperties);
+@@||cdn.privacy-mgmt.com/mms/choice_select
+@@||cdn.privacy-mgmt.com/wrapper/*/gdpr/native-message
+@@||cdn.privacy-mgmt.com/wrapperMessagingWithoutDetection.js$domain=giga.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/65680
 @@||cdn.privacy-mgmt.com^$domain=ze.tt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/65513
