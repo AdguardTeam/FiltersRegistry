@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-10-20 11:29:56 CEST
+! Last modified: 2020-10-21 05:35:33 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -281,7 +281,7 @@ jamtlandstidning.se##.elementor-widget:has(h2:has-text(/^Annons$/))
 justwannahavefun.se##.legible:has(.sub-title:has-text(/sponsrat av/i))
 kamerabild.se#%#//scriptlet('ubo-set.js', 'Annons', 'noopFunc')
 kamerabild.se##.kol2 > div:has(.pane-title):has-text(/annons/i)
-kamerabild.se,mobil.se#%#//scriptlet('ubo-set.js', 'Sidpyssel.prototype.fixaStoran', 'noopFunc')
+kamerabild.se,mobil.se#%#//scriptlet('ubo-set.js', 'fixaStoran', 'undefined')
 kamrat.com#%#//scriptlet('ubo-set.js', 'showAds', 'false')
 kamrat.com#%#//scriptlet('ubo-set.js', 'trap', 'noopFunc')
 kimura.se#%#//scriptlet('ubo-acis.js', 'advanced_ads_ready')
@@ -314,7 +314,6 @@ ljudochbild.se#$#.maincontent { max-height: unset !important; }
 ljudochbild.se#$#.topper { margin-top: 0 !important; }
 ljudochbild.se##a[href*="/?articleadvertorial"]:upward(1)
 lwcdn.com#%#//scriptlet('ubo-aeld.js', '/^(?:adBlocker|contextmenu)$/')
-magasin55.se##.td_module_wrap:has(a[href$="/annons/"])
 magasinetparagraf.se,omnihalsa.com,plazakvinna.com,senses.se#%#//scriptlet('ubo-acis.js', '_stq')
 majanilssonlindelof.com##article:has(.has-text-align-center:has-text(/samarbete med/i))
 maklarvarlden.se##.td-post-category:has-text(/spons/i):upward(2)
@@ -872,7 +871,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /assets/comeon/*$image,domain=fotbolldirekt.se|hockeysverige.se
 /assets/google-universal-analytics$script
 /assets/pb-$script,domain=weheartit.com
-/ast.js$domain=live.aftonbladet.se
 /at-internet-desktop.js$script,domain=klart.se
 /atomic-blocks$script,domain=dinlivsstil.nu|foretagsverige.se|forskningsverige.se|grillbibeln.se|hallbarhetsverige.se|kampenmotcancer.se|motorbibeln.se|tillvaxtsverige.se
 /AudienceTarget$script,domain=morningstar.se
@@ -1539,6 +1537,7 @@ aftonbladet.se##div[style*="border-color:#0067b5;"]
 aftonbladet.se##div[style*="border-color:#0067b5;"] ~ a
 aftonbladet.se##h3[style*="background-color:#0067b5;border-radius:2px;margin:16px 0px 0px 0px;"]
 aftonbladet.se,autonytt.se,ekonominyheter.se,lesscarbs.se,undervarttak.se,uwtd.me,xn--snabbalnen-75a.se##a[href*="/track.adtraction."]
+aftonbladet.se,businessclass.se,effektmagasin.se,spela.se,svenskorientering.se##.advert
 aftonbladet.se,embed.futuresportsmedia.com,fasttrack.webstream.dk,fotbolldirekt.se,freeride.se,happyride.se,hockeysverige.se,ilikeradio.se,innebandymagazinet.se,jwplayer.com,laget.se,maharajah.se,moviezine.se,muscles.se,nordichardware.se,nyckelspel.se,nyheteridag.se,streamio.com,svd.se,upstream.to#@#.afs_ads
 agriprim.se,automobil.se,bettips.se,bike.se,bilsport.se,boxerville.se,caroftheyear.se,dh.se,djungeltrumman.se,e.se,entreprenadaktuellt.se,fightermag.se,frillesasbandy.se,husbilhusvagn.se,ja.se,klassiker.nu,livsmedel.se,ljuskultur.se,lokalguiden.se,lovelylife.se,maskinbladet.se,maskinstationerna.se,mopedgaraget.se,nyckelspel.se,omni.se,riksettan.net,scanaktier.se,skik.se,skogsaktuellt.se,spelo.se,sweclockers.com,vaken.se,vibilagare.se##.banner
 aikfotboll.se,expressen.se,livsmedel.se##.banners
@@ -1732,7 +1731,6 @@ bukefalos.se##a > video
 bukefalos.se,thaisnack.se##.u-bottomFixer
 businessclass.se###bcpop
 businessclass.se##.reveal-modal-bg
-businessclass.se,effektmagasin.se,live.aftonbladet.se,spela.se,svenskorientering.se##.advert
 bussmagasinet.se###page > div[id]:not([class])
 bussmagasinet.se###titlebanner
 bussmagasinet.se##a.gofollow[data-track]
@@ -2950,6 +2948,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||delupe.se^*/iframe-track.$script
 ||destination.se^$third-party
 ||digital.di.se/api/sponsor/$xmlhttprequest
+||direkte.vg.no/vgc/cdn/js/libs/ast$domain=aftonbladet.se
 ||distansarbete.com^
 ||diu127fbe6pn6.cloudfront.net^*/ga-universal.html$subdocument
 ||dnitv.com^$media,domain=dplay.se
