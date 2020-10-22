@@ -1499,6 +1499,12 @@ maisgasolina.com#?##main [id$="Block"][-ext-has='.adsbygoogle']
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/66106
+megadescarga.net#%#//scriptlet("set-constant", "clicked", "true")
+megadescarga.net#%#//scriptlet("set-constant", "eClicked", "true")
+megadescarga.net#%#//scriptlet("set-constant", "number", "0")
+megadescarga.net#%#//scriptlet("set-constant", "sync", "true")
+megadescarga.net#%#AG_onLoad(function(){var a=document.querySelector("#link"),b=Math.floor((new Date).getTime()/1E3);a&&a.value&&(link=a.value,a=document.createElement("form"),a.setAttribute("method","post"),a.setAttribute("id","hash"),a.setAttribute("target","_blank"),a.setAttribute("action","https://acortar.info/redir?"+window.btoa(window.btoa(b))),b=document.createElement("input"),b.setAttribute("type","hidden"),b.setAttribute("name","hash"),b.setAttribute("value",link),a.appendChild(b),document.getElementsByTagName("body")[0].appendChild(a), document.getElementById("hash").submit(),setTimeout(function(){window.close()},10))});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61966
 lectulandia.eu#%#//scriptlet("adjust-setTimeout", "redirect", "11000", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/60106
@@ -1548,26 +1554,14 @@ fakings.com#%#AG_setConstant('a_consola', 'noopFunc');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45935
 mwpaste.com#%#(function(){window.open_=window.open;var c=window.open,d=/./;window.open=function(e,f){return"string"==typeof e&&d.test(e)?document.body:void c(e,f)};AG_onLoad(function(){document.querySelector(".tab_content")&&document.querySelectorAll(".hidebloq").forEach(function(a){var b=a.innerText;try{var c=atob(b);a.innerHTML=c;a.style.display="block"}catch(d){}})});})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45783
-!+ NOT_PLATFORM(windows, mac, android)
 repelisplus.vip#%#//scriptlet("abort-on-property-read", "adbClick")
-!+ PLATFORM(windows, mac, android)
-repelisplus.vip#%#AG_abortOnPropertyRead('adbClick');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45492
-!+ NOT_PLATFORM(windows, mac, android)
 descargaranimehentai.com#%#//scriptlet("abort-on-property-read", "pub")
-!+ PLATFORM(windows, mac, android)
-descargaranimehentai.com#%#AG_abortOnPropertyRead('pub');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45361
-!+ NOT_PLATFORM(windows, mac, android)
 a.topflix.tv#%#//scriptlet("adjust-setInterval", "adsHandle", "", "0.02")
-!+ PLATFORM(windows, mac, android)
-a.topflix.tv#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/adsHandle/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44237
 redirdx.in#%#document.cookie = "tronador=aproved; path=/";
-!+ NOT_PLATFORM(windows, mac, android)
 redirdx.in#%#//scriptlet("prevent-window-open", "1", "redirdx.in/go/")
-!+ PLATFORM(windows, mac, android)
-redirdx.in#%#(function() { window.open_ = window.open; var w_open = window.open, regex = /redirdx\.in\/go\//; window.open = function(a, b) { if (typeof a !== 'string' || !regex.test(a)) { w_open(a, b); } }; })();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43603#issuecomment-553749336
 hentaihd.xyz#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('div.fluid_initial_play'); if(el) el.click(); }, 300); });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42704
@@ -1577,12 +1571,10 @@ xn--lakornsubespaol-brb.com#%#AG_defineProperty('dtGonza.playeradstime', {value:
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41643
 hentai-id.tv#%#AG_onLoad(function(){var a=document.querySelectorAll('a[href*="://ouo.io/"][href*="=http"]');for(var b,c=0;c<a.length;c++)b=a[c].getAttribute("href"),(b=b.split(/^https?:\/\/ouo\.io\/[\S]*?\?.=/))&&a[c].setAttribute("href",b[1])});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42381
-playpaste.com#%#AG_setConstant('window.open', 'noopFunc');
 playpaste.com#%#//scriptlet("prevent-window-open")
 playpaste.com#%#document.cookie = "viewedad=true; path=/;";
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40879
 tuhentaionline.com#%#//scriptlet("abort-on-property-read", "Pub2")
-tuhentaionline.com#%#AG_abortOnPropertyRead('Pub2');
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38339
 dirto.life#%#document.cookie = "gmsf=wn275; path=/";
 dirto.life#%#AG_onLoad(function() { setTimeout(function() { var a=document.querySelector(".btn[style]");a&&a.addEventListener("click",function(){window.close()},!1); }, 300); });
@@ -1851,6 +1843,7 @@ http://adw.
 ! Incorrectly blocked domains can be excluded usig regex
 /^(?!.*(google\.com|gstatic\.com|googleapis\.com|recaptcha\.net|cdn\.ampproject\.org|fluidplayer\.com|facebook\.net|fbcdn\.net|cloudflare\.com|ebacdn\.com|vk\.com|jquery\.com|jsdelivr\.net|yastatic\.net|yandex\.net|ytimg\.com|fontawesome\.com|dmca\.com|disqus\.com|twitter\.com|vidazoo\.com|disquscdn\.com|jwpcdn\.com|shrink\.pe|zencdn\.net|unpkg\.com|github\.io|ulogin\.ru|jwplatform\.com|bootstrapcdn\.com|player)).*$/$third-party,script,domain=thepiratefilmestorrent.biz
 !
+xanimu.com##.gofollow
 ||animetw.net/js/atag.js
 ||animetw.xyz/asset/bann.js
 noticiasaominuto.com,noticiasaominuto.com.br##.pub-container
