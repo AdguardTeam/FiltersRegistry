@@ -853,7 +853,7 @@ ivoox.com##body > .fixed-bottom-right
 techradar.com##.omaha-background
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66042
 ! it seems element it Edge Chromium specific
-mail.google.com,news.google.com,drive.google.com##iframe[src^="https://ogs.google.com/widget/callout?prid="]
+docs.google.com,mail.google.com,news.google.com,drive.google.com##iframe[src^="https://ogs.google.com/widget/callout?prid="]
 ! google - Chrome banner
 google.*##div.gb_i[data-ogsr-up] > div[style*="overflow: hidden;"][style*="position: absolute;"][style*="z-index: "][style*="overflow: hidden;"][style*="margin-right: 25px;"]
 ! google - information about Stadia
@@ -3484,6 +3484,7 @@ skegnessstandard.co.uk#@#.text-ad-links
 !
 ! General anti-adblock rules
 !@@.com/ads.js|$~third-party,domain=~1ppt.com
+/wp-content/*/javascripts/*.passive_display_adblock.js$~third-party
 @@/js/adview_pic_cpc_cpm_cpa_guanggao_gg_ads_300x250.js
 @@.com/js/advertisement.js$~third-party
 ||wp-r.github.io/adsplacer_pro/$third-party
@@ -3627,8 +3628,12 @@ xdarom.com#%#//scriptlet('prevent-setTimeout', 'mdp-deblocker')
 ! #%#//scriptlet("abort-on-property-read", "mdpDeBlocker")
 ! masihbelajar.com,masihbelajar.com#%#//scriptlet("abort-on-property-read", "mdpDeBlocker")
 !#safari_cb_affinity(general)
-!+ PLATFORM(ios, ext_safari, ext_android_cb)
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=texture-packs.com|xdarom.com
+@@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl_*.js$domain=texture-packs.com
+@@||googleads.g.doubleclick.net/pagead/id|$domain=texture-packs.com
+@@||googleads.g.doubleclick.net/pagead/id?slf_rd=1$domain=texture-packs.com
+!#endif
 !#safari_cb_affinity
 !
 ! 'sidearm-adblock'
@@ -3659,6 +3664,7 @@ kadinlarkulubu.com,pinknews.co.uk,newsru.com,livejournal.com,tecmundo.com.br,rap
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=web2.0calc.com
 !
 !
+moneyguru.co###wrapfabtest
 @@||googleads.g.doubleclick.net/pagead/ads$domain=next-episode.net
 @@||adservice.google.com/adsid/integrator.js$domain=next-episode.net
 @@||googleads.g.doubleclick.net/pagead/ff.js$domain=next-episode.net
@@ -13725,6 +13731,7 @@ reddit.com#$#.XPromoPopup { display: none!important; }
 reddit.com#$#body.scroll-disabled { overflow: visible!important; position: static!important; }
 !
 ||m.pufei8.com/skin/iymbl-app.js
+m2o.it##.player > section.player-wrapper + div.footer_player
 drugs.com##.promo-content
 mobile.twitter.com###layers div[class="css-1dbjc4n r-urgr8i r-97e31f"]
 m.imdb.com##.imdb-footer > div[class^="_"]:not([class="container"])
@@ -14832,6 +14839,7 @@ sodapdf.com##.be-tooltip
 !
 ! Specific sites
 !
+ptt.gov.tr##div[id="15temmuz"]
 thedailybeast.com#%#//scriptlet('set-cookie', '_pc_annoyed', '1')
 thueringer-allgemeine.de#$#.tp-modal { display: none!important; }
 thueringer-allgemeine.de#$#.tp-backdrop { display: none!important; }
