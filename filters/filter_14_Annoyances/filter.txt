@@ -1620,6 +1620,8 @@ goldsilver.com,kp.ru,infobus.eu,atorus.ru,castorama.ru,guzellikbulvari.com,marie
 ! ###mc_embed_signup
 alcoparty.com.ua,codastory.com,informazionefiscale.it,kerch.fm,cinemablend.com,prostofinovo.ru,comss.ru,majorgeeks.com,buhgalter.com.ua,providr.com,24tv.ua,babylonbee.com,dexerto.com,football365.com,menrec.com,netdoktor.de,ottawamatters.com,retail-insider.com,walterfootball.com,wweek.com,zozhnik.ru###mc_embed_signup
 !
+comnews.ru##a[id^="subscribe-"]
+urbandictionary.com##.subscribe-panel
 psicologiaymente.com##.newsletter-module
 netzwelt.de##.subscribeboard
 gamepro.de#?#body div.container-fluid:has(> div.container div.newsletter-info)
@@ -7116,6 +7118,7 @@ slate.com#@#.ad-container
 !#######################################################
 !######### General URL blocking rules ##################
 !#######################################################
+||cookiepro.com^$third-party
 /wp-content/plugins/rdm-daac-notice/*
 ||choices.consentframework.com^$third-party
 ||consent-notice.magix.com^$third-party
@@ -7529,6 +7532,7 @@ sueddeutsche.de,gutefrage.net,shieldsgazette.com,spieletipps.de,ekstrabladet.dk,
 /wrapperMessagingWithoutDetection.*.js$script,domain=netzwelt.de
 !
 !
+fastweb.it###stdCookie
 bursadabugun.com###_re_cookie_policy
 zacks.com##.disclosure-fixed-slab[aria-label="Cookie Consent"]
 psd-nuernberg.de##.lightbox--cookie-consent
@@ -11942,6 +11946,7 @@ bmwfaq.org#?#.Notices[-ext-has='a[href="//www.bmwfaq.org/help/cookies"]']
 !
 ! JS rules
 !
+popsugar.co.uk#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[id="onetrust-accept-btn-handler"]'); if(el) { el.click(); } }, 1500); });
 consentv2.sport1.de#%#AG_onLoad(function(){if(!document.cookie.includes("euconsent-v2")){var g=new MutationObserver(function(){var b=document.querySelector('button[path="[0,2,0]"]'),c=document.querySelectorAll('.page-desc + div.page-action');b&&b.click();c[0]&&c[0].click();setTimeout(function(){var d=document.querySelectorAll('.is-checked');d.forEach(function(d){d&&d.click()}),1E4}); var e=document.querySelector("#li-header > .chevron");e&&e.click();c[1]&&c[1].click(); var f=document.querySelectorAll('.is-checked');f.forEach(function(f){f&&f.click()});var a=document.querySelector('button[path="[0,2,0,1]"]');a&&a.click()});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
 archiveofourown.org#%#//scriptlet("abort-current-inline-script", "$j", "showTOSPrompt")
 consent.portsmouth.co.uk#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('button[title="I Accept"]'); if(el) { el.click(); } }, 1000); });
@@ -12316,6 +12321,14 @@ m.timesofindia.com,m-timesofindia-com.cdn.ampproject.org$$amp-consent
 !######### White list. Fixing filtering errors #########
 !#######################################################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/66469
+! temporary
+@@||consentv2.sport1.de/wrapperMessagingWithoutDetection.js
+!
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/66480
+popsugar.co.uk#@##onetrust-consent-sdk
+@@||cookielaw.org^$third-party,domain=popsugar.co.uk
 ! portsmouth.co.uk - broken with UK IP
 @@||consent.portsmouth.co.uk/Notice.*.js$domain=consent.portsmouth.co.uk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66343
@@ -14859,6 +14872,9 @@ sodapdf.com##.be-tooltip
 !
 ! Specific sites
 !
+fastweb.it###stdSticky
+fastweb.it###stdLightbox
+fastweb.it###stdLightboxBg
 kibriswebhaber.com##.chip.ctc-analytics
 rejuvenation.com##div[id^="email-signup-flyin"]
 hbr-russia.ru##.sticky-message
@@ -17993,11 +18009,13 @@ macwelt.de,pcwelt.de#%#AG_setConstant('firebase.messaging', 'noopFunc');
 ||wwopenclick.vip^$third-party
 .vafrike.ru^$third-party
 ||maylohack.ru^$third-party
+||bildirimci.net^$third-party
 !
 ||ria.ru/js/firebase/firebase-messaging.js
 ||gstatic.com/firebasejs/*/firebase.js$domain=novayagazeta.ru|comments.ua|kinosimka.net|ilan365.net|cnbcindonesia.com|haberzamani.net
 ||gstatic.com/firebasejs/*/firebase-messaging.js$domain=ukranews.com|comments.ua|meduza.io|coub.com|porno90.me|cnnamador.com|giallozafferano.it|wcostream.com|fptplay.vn|jooble.org|mobile01.com|myinstants.com|pdalife.ru|rg.ru|m.iguides.ru|donanimhaber.com|profile.ru|womanhit.ru|news.noteru.com|narodna-pravda.ua|newstm.in|sabah.com.tr|dreamstime.com|popbee.com|avtovzglyad.ru
 !
+||filmakinesi.com/filmakinesipush.js
 ||mirror.co.uk/service-worker.js
 ||excite.co.jp/news/js/web-push.js
 ||ajansara.com/wp-content/plugins/wordpress-fire-push/public/js/wordpress-fire-push-public.js
@@ -18542,6 +18560,8 @@ realty.yandex.ru##.Offer__taxiBannerContainer
 !-----------------------------------------------
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/66491
+fastweb.it##.body > span[itemprop="articleBody"] > .middle-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/65815
 habr.com##a[href="https://u.tmtm.ru/tt2020fchr"] > img
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66330
@@ -19156,6 +19176,7 @@ experts-exchange.com##.ctaSolutionStickyWrapper
 ! Working rule, but JS: is.alicdn.com#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('2', '"{\"2USD_coupon_popup\":1}"'); }
 aliexpress.ru,aliexpress.com#$?##newuser-activity-config { remove: true; }
 !
+urbandictionary.com##.mug-ad
 phonearena.com##.widgetOffers__disclaimer
 phonearena.com##.widgetOffers
 forocoches.com#?#tr > td[class]:has(> div.navbar_notice > table a[href^="https://www.samsung.com/"])
