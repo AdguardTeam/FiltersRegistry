@@ -82,6 +82,8 @@ youtube.com,youtube-nocookie.com#%#//scriptlet('set-constant', 'ytInitialPlayerR
 youtube.com,youtube-nocookie.com#%#//scriptlet('set-constant', 'playerResponse.adPlacements', 'undefined')
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/66594
+media-polesye.by##.yandexd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66543
 fxlap.com##.banner
 fxlap.com##.blog-item
@@ -3671,6 +3673,7 @@ rawstory.com,news.goo.ne.jp,haberler.com,sondakika.com,regnradar.se,agazeta.com.
 zacks.com,kadinlarkulubu.com,pinknews.co.uk,newsru.com,livejournal.com,tecmundo.com.br,rap.ru,abcnyheter.no##body div.fc-ab-root
 !#if (adguard_app_ios || adguard_ext_android_cb)
 !#safari_cb_affinity(general)
+@@||synology-forum.de^$generichide
 @@||news.goo.ne.jp^$generichide
 @@||agazeta.com.br^$generichide
 !#safari_cb_affinity
@@ -3680,6 +3683,7 @@ zacks.com,kadinlarkulubu.com,pinknews.co.uk,newsru.com,livejournal.com,tecmundo.
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=web2.0calc.com
 !
 !
+megogo.ru#%#//scriptlet("prevent-addEventListener", "load", "adBlock")
 amgelescape.com#@#.afs_ads
 mapgenie.io###blobby-left
 timebucks.com#%#//scriptlet("set-constant", "canRunAds", "true")
@@ -5615,6 +5619,7 @@ myfxbook.com#%#//scriptlet("set-constant", "adBlockerDetect", "1")
 ! Common safari_cb_affinity(general)
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
 !#safari_cb_affinity(general)
+@@||s*.vcdn.biz/static/*/adgear.js$domain=megogo.ru
 @@||timebucks.com/publishers/pages/ads.js
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=zeelandnet.nl
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=abcya.com
@@ -7482,7 +7487,7 @@ google.ad,google.ae,google.al,google.am,google.as,google.at,google.az,google.ba,
 ! For the sites with '$generichide' exclusions
 sme.sk##.js-cookie-bar
 nfhost.eu,nfhost.me,nfhost.xyz###cookie-law-banner
-forum.blackhatindia.ru,xenforo.pk,androidrepublic.org,nulledteam.com,forum.miuiturkiye.net,leakforums.co##.notice--cookie
+synology-forum.de,forum.blackhatindia.ru,xenforo.pk,androidrepublic.org,nulledteam.com,forum.miuiturkiye.net,leakforums.co##.notice--cookie
 gametimers.it###eu-cookie-law
 hamburg.de###cookieChoiceInfo
 futurezone.de,waz.de,derwesten.de,abendblatt.de##.cookie-note
@@ -7543,6 +7548,7 @@ sueddeutsche.de,gutefrage.net,shieldsgazette.com,spieletipps.de,ekstrabladet.dk,
 /wrapperMessagingWithoutDetection.*.js$script,domain=netzwelt.de
 !
 !
+kabeleinsdoku.at,kabeleinsdoku.de##cmp-banner
 hesabet.com###dvCerezBilgisi
 chromeenterprise.google##.ce-cookie-banner
 eschuhe.de#$#body.no-scroll > div.popup { display: none !important; }
@@ -12347,6 +12353,11 @@ m.timesofindia.com,m-timesofindia-com.cdn.ampproject.org$$amp-consent
 @@||consentv2.sport1.de/wrapperMessagingWithoutDetection.js
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/66588
+@@||api.usercentrics.eu/settings/*/latest/*.json$domain=kabeleinsdoku.de|kabeleinsdoku.at
+@@||aggregator.service.usercentrics.eu/aggregate/de?templates=$domain=kabeleinsdoku.de|kabeleinsdoku.at
+@@||api.usercentrics.eu/tcf2/*.json$domain=wetter.com|kabeleinsdoku.de|kabeleinsdoku.at
+@@||graphql.usercentrics.eu/graphql$domain=kabeleinsdoku.de|kabeleinsdoku.at
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66563
 trade.telia.se#@##cookie-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66480
@@ -18046,6 +18057,8 @@ macwelt.de,pcwelt.de#%#AG_setConstant('firebase.messaging', 'noopFunc');
 ||gstatic.com/firebasejs/*/firebase.js$domain=novayagazeta.ru|comments.ua|kinosimka.net|ilan365.net|cnbcindonesia.com|haberzamani.net
 ||gstatic.com/firebasejs/*/firebase-messaging.js$domain=ukranews.com|comments.ua|meduza.io|coub.com|porno90.me|cnnamador.com|giallozafferano.it|wcostream.com|fptplay.vn|jooble.org|mobile01.com|myinstants.com|pdalife.ru|rg.ru|m.iguides.ru|donanimhaber.com|profile.ru|womanhit.ru|news.noteru.com|narodna-pravda.ua|newstm.in|sabah.com.tr|dreamstime.com|popbee.com|avtovzglyad.ru
 !
+||medonet.pl/sw-push.js
+||pravda.com.ua/push/push.js
 ||filmakinesi.com/filmakinesipush.js
 ||mirror.co.uk/service-worker.js
 ||excite.co.jp/news/js/web-push.js
