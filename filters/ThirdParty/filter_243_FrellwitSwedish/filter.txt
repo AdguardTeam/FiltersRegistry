@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-10-28 08:01:53 CET
+! Last modified: 2020-10-29 06:36:29 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -446,7 +446,7 @@ tidningenglobal.se##span:has-text(/annons/i):upward(.elementor-widget-wrap)
 tidningenridsport.se#$#.entry-content { display: initial !important; }
 tjanstebilen.se#%#//scriptlet('ubo-ra.js', 'onload')
 tjanstebilen.se##.post-item:has(.sponsored-article)
-totallyorebro.se,totallystockholm.se##[class*="tot-content-preview-container"]:has(a[href*="casino"])
+totallyorebro.se,totallystockholm.se#$?#[class*="tot-content-preview-container"]:has(a[href*="casino"]) { remove: true; }
 tradera.com##.react-modal:has([data-gdpr-modal])
 tradera.com##[id^="adsense-shopping"]:upward(1)
 travprat.se#%#//scriptlet('ubo-aopw.js', 'bizpanda')
@@ -1217,7 +1217,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/skydda-advisor/*
 /plugins/so-widgets-bundle/*$domain=lokalsport.nu
 /plugins/social-pug
-/plugins/socialsnap$script,domain=listor.se|samnytt.se
+/plugins/socialsnap$script,domain=katerinamagasin.se|listor.se|samnytt.se
 /plugins/statebuilt-facebook-page-like-popup/*
 /plugins/sticky-facebook-banner/*$script,domain=ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 /plugins/super-progressive-web-apps/*$domain=temadagar.se
@@ -1518,26 +1518,18 @@ aftonbladet.se###MegaAd
 aftonbladet.se##.ab-responsive-ads-wrapper
 aftonbladet.se##.abAdArea
 aftonbladet.se##.abAdWrapper
-aftonbladet.se##.abBtnShare
 aftonbladet.se##.abTheme-ad
 aftonbladet.se##.abTheme-adSportbladet
 aftonbladet.se##.abTheme-infeedad
-aftonbladet.se##.share-icons
-aftonbladet.se##.social-shares
+aftonbladet.se##.social-shares, .abBtnShare, .share-icons
 aftonbladet.se##[id*="abAdArea"]
-aftonbladet.se##a[href*="/se/app/aftonbladet/"]
-aftonbladet.se##a[href*="/store/apps/details?id=se.aftonbladet"]
 aftonbladet.se##a[href*="matspar.se/varumarke/"]
 aftonbladet.se##a[href^="/brandstudio"]
-aftonbladet.se##a[href^="/kampanj/casino"]
-aftonbladet.se##a[href^="/rabattkod"]
-aftonbladet.se##a[style*="border-color: rgb(0, 103, 181)"]
-aftonbladet.se##a[style*="border-color:#0067b5"]
+aftonbladet.se##a[href^="/kampanj/casino"], a[href^="/rabattkod"], a[href*="/se/app/aftonbladet/"], a[href*="/store/apps/details?id=se.aftonbladet"]
+aftonbladet.se##a[style*="border-color: rgb(0, 103, 181)"], a[style*="border-color:#0067b5"]
 aftonbladet.se##body.abTheme-entertainment *> .abAside > div[style^="text"]:last-child
-aftonbladet.se##div[style*="border-color: rgb(0, 103, 181);"]
-aftonbladet.se##div[style*="border-color: rgb(0, 103, 181);"] ~ a
-aftonbladet.se##div[style*="border-color:#0067b5;"]
-aftonbladet.se##div[style*="border-color:#0067b5;"] ~ a
+aftonbladet.se##div[style*="border-color: rgb(0, 103, 181);"], div[style*="border-color: rgb(0, 103, 181);"] ~ a
+aftonbladet.se##div[style*="border-color:#0067b5;"], div[style*="border-color:#0067b5;"] ~ a
 aftonbladet.se##h3[style*="background-color:#0067b5;border-radius:2px;margin:16px 0px 0px 0px;"]
 aftonbladet.se,autonytt.se,ekonominyheter.se,hockeybladet.nu,lesscarbs.se,undervarttak.se,uwtd.me,xn--snabbalnen-75a.se##a[href*="/track.adtraction."]
 aftonbladet.se,axess.se,embed.futuresportsmedia.com,fasttrack.webstream.dk,fotbolldirekt.se,freeride.se,happyride.se,hockeysverige.se,ilikeradio.se,innebandymagazinet.se,jwplayer.com,laget.se,maharajah.se,moviezine.se,muscles.se,nordichardware.se,nyckelspel.se,nyheteridag.se,streamio.com,svd.se,upstream.to#@#.afs_ads
@@ -1646,7 +1638,7 @@ arkitektur.se##[class*="panorama"]
 armsport.nu###page-overlay
 artbannersplus$subdocument,domain=www.elinor.se
 arvikanyheter.se,dalslanningen.se,filipstadstidning.se,fryksdalsbygden.se,hjotidning.se,karlskogatidning.se,kt.se,mariestadstidningen.se,nkp.se,nlt.se,nwt.se,provinstidningen.se,saffletidningen.se,sla.se,varmlandsaffarer.se,vf.se##[id^="nwt-marknadsguiden"]
-astmaoallergiforbundet.se##.banner-top, .banner-side
+astmaoallergiforbundet.se##.banner-top, .banner-side, .section-top
 atl.nu##a[href*="/atl-tv-annons/"]
 atl.nu#@#.adsbox
 atl.nu,land.se,landlantbruk.se,landskogsbruk.se##.has-sticky-add
@@ -2249,7 +2241,7 @@ kamerabild.se##.Partner
 kamerabild.se,mobil.se###gdpr
 kamrat.com###kadDiv
 kamrat.com##div[style="margin:25px 0;max-width:255px!important;"]
-katerinamagasin.se##.adv-area
+katerinamagasin.se##.adv-area,#right-areas
 kenzas.se##article[data-text*="In collaboration with"]
 kimura.se##.bg
 kimura.se##.submission-before-everything
@@ -2677,7 +2669,7 @@ tkj.se##a[href$="-sponsor/"]
 tkj.se##a[href*="tkj.se/ad/"]
 torbjornstips.se##.sfsi_plus_outr_div
 torbjornstips.se##.tag-sponsrat-inlagg
-totallyorebro.se,totallystockholm.se##a[href*="casino-bonus"]
+totallyorebro.se,totallystockholm.se##a[href*="casino-bonus"],a[href*="/sponsrat/"]
 totallyorebro.se,totallystockholm.se##div.tot-content-preview-container-small[style*="border-top:4px solid #ffb200;"]
 tradera.com##ads-takeover
 tradera.com##react-adslot
@@ -2766,6 +2758,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||accesslnk.com^
 ||acookiemonster.herokuapp.com^$third-party
 ||activate.social^$third-party
+||activehosted.com^$third-party
 ||ad.iplayer.org^$third-party
 ||adaptlogic.com^$third-party
 ||adcell.io^$third-party
