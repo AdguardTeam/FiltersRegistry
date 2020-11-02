@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-11-02 09:16:35 CET
+! Last modified: 2020-11-02 12:37:26 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -13,8 +13,7 @@
 ! Special thanks to ryanbr@github for the rules from Fanboy's Swedish list.
 !
 ! --- Browser/extension specific filters
-*/trailers$media,redirect=noopmp3-0.1s,domain=fotbollskanalen.se|koket.se|tv4play.se
-*/tv4play_plugin.$redirect=noopjs,script,domain=fotbollskanalen.se|koket.se|tv4play.se
+*/tv4play_plugin.$redirect=noopjs,script,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 .*/*/*.php?*=aftonbladet-live-tv$document
 .info/dagens-nyheter/$document
 .info/dn-nyheter/$document
@@ -209,7 +208,6 @@ forni.se##section, .recent-article-small:has(.collaboration-brand)
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##.c-announcement:has(.c-label--sponsored)
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##.justnu_category:has(.datum:has-text(/sponsrat/i))
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##article:has(.datum:has-text(/sponsrat/i))
-fotbollskanalen.se#%#//scriptlet('ubo-acis.js', 'containerId')
 fotbollskanalen.se##.notice__link:has(.notice__tag_sponsored)
 fotbolltransfers.com##.smallNewsLink:has(.smallNewsCategory:has-text(/sponsrad/i))
 fragbite.se#%#//scriptlet('ubo-noeval-if.js', 'cmd')
@@ -294,7 +292,6 @@ klart.se#%#//scriptlet('ubo-aopr.js', 'blockAdBlock')
 klart.se#%#//scriptlet('ubo-rc.js', 'mega-loading')
 klart.se##.content-box-list__item:has(.ad-text)
 kokaihop.se#$?#.cookieBarWrapper { remove: true; }
-koket.se##li.slide:has(.external_advertiser)
 krickelins.se##article[id^="post-"]:has(a[href$="/sponsrade-inlagg/"])
 kultwatch.se#$#.js-preloader > .document, .js-preloader > .hero-section { opacity: 1 !important; visibility: visible !important; }
 kwiss.me##.frontpage_top_image:has(span:has-text(/sponsrat av/i))
@@ -499,15 +496,13 @@ www.svd.se#%#//scriptlet('ubo-acis.js', 'SvD', 'preDefineAd')
 xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||2mdn.net/instream/html5/ima3.js$important,script,domain=aftonbladet.se
-||ad.doubleclick.net/ddm/$image,important,domain=fotbollskanalen.se|koket.se|tv4play.se
 ||aftonbladet.se.senaste.$document
 ||aftonbladet.se/kampanj/casinoguide$document
 ||amazon-adsystem.com^$third-party,important,domain=bilresaieuropa.se
 ||asmassets.mtvnservices.com^$media,redirect=noopmp4-1s,domain=mtv.se
-||b17g.net^*/play/log$redirect=nooptext,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4play.se
+||b17g.net^*/play/log$redirect=nooptext,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 ||best-prizes-now.*^$all
 ||biowebb-data.s3.amazonaws.com^*/ad_loader$important,script
-||bonnier-html-player.b17g.services/bumpers/$media,redirect=noopmp4-1s,domain=fotbollskanalen.se|koket.se|tv4play.se
 ||byggkonsult.org^$all
 ||cdn.segment.com/analytics.js$important,script,domain=dagen.se|se.trustpilot.com|studocu.com|tholin.se
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$redirect=noopjs,script,domain=dplay.se
@@ -528,12 +523,10 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||ssl.p.jwpcdn.com^*/sharing.js$important,script,domain=aftonbladet.se|eurosport.se|freeride.se|happyride.se
 ||ssl.p.jwpcdn.com^*/vast.js$important,script,domain=moviezine.se
 ||tm.tradetracker.net/tag?$important,script,domain=agneswinqvist.se|enkelteknik.se|everydayexplorers.org|moviezine.se|netikett.se
-||tv4play.se/hic_qos$redirect=noopjs,script
 ||viafree.se/collect$important,xmlhttprequest
 ||youbora.com^$important,third-party,domain=aftonbladet.se|foxtv.se|svd.se
 !#if env_firefox
 ||issuu.com^$subdocument
-||se-tv4.videoplaza.tv/proxy/tracker/$all
 !#endif
 !#if !env_firefox
 proffs.se#$#*::-webkit-scrollbar-thumb { background: #5e5e5e !important; border: 64px none #ffffff !important; border-radius: 0px !important; }
@@ -1446,7 +1439,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/wpdcookiejs/*$domain=nordichardware.se
 @@_advert.$domain=e-pages.dk
 @@||2mdn.net/instream/html5/ima3.js$script,domain=modette.se|nyheter24.se
-@@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4play.se
+@@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 @@||ad*.vg.no/check.js$script,domain=aftonbladet.se
 @@||alingsastidning.se^$generichide
 @@||amazonaws.com/ads/$image,domain=jobb.maxkompetens.se
@@ -2046,10 +2039,7 @@ fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##.h-background--sponsore
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##.row > .text-center > div[style*="background: #e4e4e4"]
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##.site-partnevisment
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se##img[alt*="Betting"]
-fotbollskanalen.se##.player-index-sponsor
-fotbollskanalen.se##.playerindex-ad
-fotbollskanalen.se##.top-item.brand
-fotbollskanalen.se,tv4play.se###skin-cover
+fotbollskanalen.se##.top-item.brand,.player-index-sponsor,.playerindex-ad
 fotbolltransfers.com##a[href^="https://ads."]
 fotbolltransfers.com##div[class^="ad"]
 fotosidan.se##.banner-panorama-wmn
@@ -2266,14 +2256,9 @@ klart.se##.gdpr-onboarding-container
 klart.se##.sponsor-message
 knulla.se###cookiescript_injected
 kokaihop.se##.ads-wrapper-main
-koket.se###react-newsletter-overlay
-koket.se##.cookie_message__wrapper
-koket.se##.endorsed
-koket.se##.external_advertiser
-koket.se##.list_item__sponsored
-koket.se##.native-simple__wrapperLink
-koket.se##.promo__container
-koket.se##.sponsor_top__wrapper a
+koket.se##div[class*="recipe_sponsored"] > [class*="sponsor_banner"]
+koket.se##div[class*="recipe_sponsored"] div[class*="list_item_wide_wrapper"]
+koket.se##div[class*="recipe_sponsored"] div[class*="recipe_sourceImageDesktop"]
 kolozzeum.com##td[width="305"]
 komponentkoll.se##.gdpr-wide
 konsolnyheter.se##.wplinktrade
@@ -2688,14 +2673,6 @@ tv.nu###app > div > div[class]:nth-of-type(2)
 tv.nu##.ad-mega--container
 tv.nu##.gdpr-bar-wrapper
 tv.nu##a[href*="adform.net"]
-tv4.se##.program-block-ad
-tv4.se##.program-header-sponsors
-tv4.se##.social-block-ad
-tv4.se##.social-buttons
-tv4.se##[class*="aside-ad"]
-tv4play.se###__next > div:not(:first-child)
-tv4play.se###pause-img-holder
-tv4play.se##.js-cookie-banner
 tv4play.se#@#.adBanner
 tvdags.se##.like-modal
 tvmatchen.nu###before-matches
@@ -2887,7 +2864,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||citygate.se^*/statistics$xmlhttprequest
 ||ck.page^$third-party
 ||client-stream-events.mtg-api.com^$domain=viafree.se
-||cloudfront.net/creatives/assets/$image,media,domain=fotbollskanalen.se|koket.se|tv4play.se
 ||cmatch.idg.se^
 ||cms.catena.media/js/cm-tracking.$script
 ||collect.breakit.se^$xmlhttprequest
@@ -3360,8 +3336,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||trn.ninja^$third-party
 ||trugaze.io^$third-party
 ||turistmal.se/js/popup-controller.js$script
-||tv4-trailers-prod.herokuapp.com/api/impression$xmlhttprequest
-||tv4-trailers.b17g.net/api/trailers$xmlhttprequest
 ||tvdags.se/json/stats$xmlhttprequest
 ||twingly.com^$third-party
 ||twittercounter.com^$third-party
