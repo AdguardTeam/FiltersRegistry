@@ -115,14 +115,15 @@ npm install
 
 Run the following command:
 ```
-  node index.js
+node index.js
 ```
+
 Build with white/black lists:
 ```
-  node index.js -i=1,2,3 -s=4,5,6
+node index.js -i=1,2,3 -s=4,5,6
 ```
 
 Validate `filters.json` and `filters_i18n.json` for platforms:
 ```
-  node validate ./platforms
+node validate ./platforms
 ```
