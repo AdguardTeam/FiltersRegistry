@@ -8598,8 +8598,8 @@ play.aniland.org#%#document.cookie = "rec=2001";
 metrprice.ru#%#AG_onLoad(function() { $('div.special-offers').closest('.h-layout__item').remove(); });
 ! strana.in.ua - кликандер
 strana.in.ua#%#AG_onLoad(function() { window.GetCookie = function() { return 'haha'; }; });
-! root-nation.com - remove branding
-root-nation.com#%#AG_onLoad(function() { document.body.className = document.body.className.replace("td-boxed-layout","."); });
+! root-nation.com - clickable background
+root-nation.com#%#//scriptlet('set-constant', 'td_ad_background_click_link', 'undefined')
 ! luxtorrents.com - удаление кликабельности фона
 luxtorrents.com#%#window.open = function() {};
 ! http://forum.adguard.com/showthread.php?6521
@@ -8635,6 +8635,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! root-nation.com - курсор при наведении на фон
+root-nation.com#$#.td-theme-wrap { cursor: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66406
 kinogo-net.org#$#.wr { padding-top: 64px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/65770
@@ -11134,6 +11136,10 @@ crazymailing.com,lotzon.pro,novosti-n.org,prokazan.ru,20minut.ua,alnews.com.ua,g
 ! vast ads on anime sites - for example: animego.org, yummyanime.club, etc
 /:\/\/[0-9]?[a-z0-9]{11,}(\.com|\.in\.net)/$xmlhttprequest,domain=aniqit.com|kodik.info|start.u-cdn.top|ustore.bz|u-stream.in
 !
+lubimiygorod.od.ua###custom_html-4
+lubimiygorod.od.ua##img[alt="baner"]
+root-nation.com##body > a
+root-nation.com##body > div.backstretch
 besplatka.ua##.container_banner
 diakov.net##td > a[target="_blank"] > img
 enovosty.com###redtram_news
