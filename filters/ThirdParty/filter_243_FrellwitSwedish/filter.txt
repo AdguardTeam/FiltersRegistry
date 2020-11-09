@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-11-08 20:01:19 CET
+! Last modified: 2020-11-09 10:20:57 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -340,7 +340,10 @@ mytaste.se#$#.site-wrapper[data-state=panorama] { padding-top: 40px !important; 
 mytaste.se#$#body.modal-active.modal-open::before, body.modal-active::before { opacity: unset !important; content: unset !important; }
 nasdaqomxnordic.com#%#//scriptlet('ubo-acis.js', '$', 'shuffle')
 netflixguiden.se#%#//scriptlet('ubo-aopr.js', 'apstag')
+newsvoice.se##.td-post-author-name > a[href$="/author/foretagaren/"]:upward(5)
+newsvoice.se##.td-post-author-name > a[href$="/author/underhallning/"]:upward(5)
 newsvoice.se##.td_module_wrap:has(a[title*="casino"])
+newsvoice.se##aside:has(h4:has-text(/annonser/i))
 nordfront.se##.post:has(span:not(.post-content):has-text(/annons/i))
 nordicchoicehotels.se#%#//scriptlet('ubo-nostif.js', 'n.modal.showWithCondition', '60000')
 nordichardware.se#%#//scriptlet('ubo-acis.js', 'message')
@@ -485,6 +488,7 @@ www.expressen.se#%#//scriptlet('ubo-ra.js', 'data-article-tracking-info')
 www.expressen.se#%#//scriptlet('ubo-ra.js', 'data-video-tracking-info')
 www.expressen.se#%#//scriptlet('ubo-set.js', 'detect', 'noopFunc')
 www.svd.se#%#//scriptlet('ubo-acis.js', 'SvD', 'preDefineAd')
+www.svd.se#%#//scriptlet('ubo-aopr.js', 'navigator.sendBeacon')
 xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||2mdn.net/instream/html5/ima3.js$important,script,domain=aftonbladet.se
@@ -593,8 +597,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -897,6 +901,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /campaign-fallback.$script,domain=aftonbladet.se
 /caos/analytics.js$script
 /casino/$image,domain=battrestadsdel.se|dayviews.com|djungeltrumman.se|fotboll.com|hockeybladet.nu|hockeysverige.se|hypeline.se|kamrat.com|kulturbloggen.com|newsvoice.se|nyadagbladet.se|nyheter24.se|spray.se|svenskhistoria.se|totallyorebro.se|totallystockholm.se|zeromagazine.nu
+/casno-$image,domain=newsvoice.se
 /cecado/advisible.js
 /check-paywall$domain=dn.se
 /citygate/payingcompanies$xmlhttprequest
@@ -1316,7 +1321,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /spotlight-ad_$image
 /sptAutoTracker.$script,domain=aftonbladet.se
 /static.marklar.se/track/custom-tracker.$script
-/static.svd.se\/assets\/[0-9]+\-/$script,domain=svd.se
 /static/js/loada.js$script
 /statistics.$script,xmlhttprequest,domain=alltforforaldrar.se|byggnyheter.se|dagensfastigheter.se|dagensnaringsliv.se|energinyheter.se|fria.nu|friatidningen.se|goteborgsfria.se|industrinyheter.se|infrastrukturnyheter.se|inredningsnyheter.se|jarnvagsnyheter.se|landetsfria.se|mammasidan.se|market.se|metallerochgruvor.se|minbebis.com|papperochmassa.se|plastikoperationsforum.se|sesam.nu|solenerginyheter.se|sportochfritidsnyheter.se|stockholmsbyggnyheter.se|stockholmsfria.se|sxk.se|testfakta.se|transportochlogistik.se|vindkraftsnyheter.se
 /stats.wp.com$script
@@ -2374,6 +2378,7 @@ news55.se###newsletter-popup
 news55.se##.after-article-widget
 news55.se##.is-native,.is-native-yes
 newsvoice.se##.td-footer-wrapper > .td-container > .td-pb-row > div:nth-of-type(2)
+newsvoice.se##a.td-image-wrap[title*="Annons"], .entry-title > a[title*="Annons"]
 newsvoice.se##a.td_single_image_bg[target="_blank"]
 ng.se##.js--llad
 ng.se##.partner-articles-wrap
@@ -2781,6 +2786,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||bilweb.se^$third-party
 ||biowebb-data.*.amazonaws
 ||bit.ly^$subdocument,domain=jawcloud.co
+||bitcoin-code.net^
 ||bjursundfastigheter.se^
 ||blocket.se^$third-party
 ||blocket.se^*/gdpr-bundle$script
