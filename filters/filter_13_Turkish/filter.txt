@@ -72,6 +72,7 @@
 !-------------- Advertising networks ---------------------------------------!
 !---------------------------------------------------------------------------!
 !
+||yes999.ml^$third-party
 ||yes999.tk^$third-party
 ||adnsafe.net^$third-party
 ||advertag.in^$third-party
@@ -961,8 +962,9 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ! Extended CSS rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66671
-filmwatch.net#?#.content-container > div[class][data-video] > div:has(> div[class] a[href]:contains(Reklamı Geç))
-filmwatch.net#$?#.content-container > div[class][data-video] > div:has(> iframe[src^="https://filmwatch.net/"]) { display: block !important; }
+filmwatch.net#?#body > div[class]:has(> a[href^="https://www.gizabet"])
+filmwatch.net#?#.content-container > div[class][data-video] > div:has(> div[class]:contains(Reklamı))
+filmwatch.net#$?#.content-container > div[class][data-video] > div:has(iframe[src^="https://filmwatch.net/"]) { display: block !important; }
 !
 vizyonfilmizle.tv#$?#.fancybox-overlay-fixed[-ext-has="> div"] { display: none!important; }
 vizyonfilmizle.tv#$?#.fancybox-lock body[-ext-has="> div"] { overflow: visible!important; }
@@ -2624,11 +2626,12 @@ rhaajans.com,nazillipost.com,spor264.com.tr,geyvelim.com,haberrtv.com.tr,hbrcald
 ! ##.ad
 lifebursa.com,mshowto.org,macizlee1.com,macizlee.ne,dunyaatlasi.com,ensonhaber.com,gayrimenkulhaber.com,internethaber.com,gercekgundem.com,cevapla.tv,cinemadran.com,ranini.tv,oggito.com,kocaeligazetesi.com.tr,rumma.org,kitaptansanattan.com,macizlee3.com,aydindenge.com.tr,gecmisgazete.com##.ad
 !
+/frmtr\.com\/images\/\w{0,2}\d?.gif/$domain=frmtr.com
 ||s.fullhdfilmizlesene.com/js/common.js
 filmwatch.net##div[data-no] > video[data-no] + a[href][target="_blank"]
 filmwatch.net##a[onclick="this.target='_blank'"][rel="nofollow external noopener"]
 ||film-modu.net/suv.js
-/filmwatch\.net\/wp-content\/[a-z]+\.f[a-z]?/$media,redirect=noopmp4-1s,domain=filmwatch.net
+/filmwatch\.net\/wp-content\/(giza|magnum)\.[a-z]{0,2}/$media,redirect=noopmp4-1s,domain=filmwatch.net
 filmwatch.net##body > div#mobile-menu + div[class]
 ||filmwatch.net/wp-content/uploads/*.jpeg
 airturkhaber.com##.header-banner
@@ -2735,7 +2738,6 @@ muglayenigun.com##.widget-ad-image
 ||akcaabatinsesi.com/d/other/b-773.jpg
 ||cdn.r10.net/mg/ticimaxd.gif
 ||selcuksportscdn.xyz/1920x1200.jpg
-/frmtr.com\/images\/\w\d.gif/$domain=frmtr.com
 haberler.com##img[src^="/mstatic/reklam/"]
 memurlar.net##.PageWidth .default-widget > a[href][rel="nofollow"]
 patronlardunyasi.com##div[style="width:1200px;"] > div[style="float:right; width:324px;"] > div[style="padding:11px; border:1px solid #ddd;"]
