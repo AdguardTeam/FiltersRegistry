@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 20.316.534
+! OriginalVersion: 20.316.585
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 11 Nov 2020 08:54 UTC
+! Last modified: 11 Nov 2020 09:45 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -1202,6 +1202,7 @@ _GIF1200x120-
 ##.in_up_ad-area
 ##.infeed-ads
 ##.infolinks-ad
+##.inner-floatbanner-bottom
 ##.inner-post-ads
 ##.isiAds
 ##.ixlan
@@ -1243,6 +1244,10 @@ _GIF1200x120-
 ##.mks_adswidget_ul
 ##.mobileadstop
 ##.myiklan
+##.newkarma-core-floatbanner
+##.newkarma-core-floatbanner-footer
+##.newkarma-core-floatbanner-left
+##.newkarma-core-floatbanner-right
 ##.newkarma-core-topbanner
 ##.newkarma-core-topbanner-aftermenu
 ##.news__ads
@@ -8578,8 +8583,10 @@ malasngeblog.com#$#.post-body { user-select: text !important; -webkit-touch-call
 -iklan-$image,domain=haluankepri.com|protapriau.com|beritabalionline.com
 -iklan.$image,domain=dimensinews.co.id|samawarea.com
 -promosi-$image,domain=kabarmanado.com
+/ads-$image,domain=dutatv.com|geunta.com|terasbalinews.com|terobosnews.com
+/adv-$image,domain=halmaherapost.com
 /baner-$image,domain=hariankepri.com|memo.co.id|semarakpost.com|viralkaltim.com
-/banner-$image,domain=beritasampit.co.id|djournalist.com|gemasulawesi.com|haluankepri.com|infosulsel.com|kabarmedan.com|manadoline.com|manadonews.co.id|parepos.co.id|pedomanrakyat.com|rakyatbengkulu.com|sinjai.info|speednews-manado.com|sumselterkini.co.id|sumselupdate.com|swarakaltim.com|swarakawanua.com|tanjungpinangpos.id|viralberita.net|wideazone.com
+/banner-$image,domain=beritasampit.co.id|djournalist.com|gemasulawesi.com|haluankepri.com|indonesiadaily.co.id|infosulsel.com|kabarmedan.com|manadoline.com|manadonews.co.id|parepos.co.id|pedomanrakyat.com|poskomalut.com|rakyatbengkulu.com|sinjai.info|speednews-manado.com|sumselterkini.co.id|sumselupdate.com|swarakaltim.com|swarakawanua.com|tanjungpinangpos.id|viralberita.net|wideazone.com
 /banner_$image,domain=bengkuluekspress.com|inijabar.com
 /bnner-$image,domain=haluankepri.com
 /gbb-uploads/*$image,domain=kabar.news
@@ -8635,7 +8642,6 @@ _banner/$image,domain=mediasulut.co
 ||detiknews.id^*/adv-$image
 ||detiksumsel.com/media/banner/$image
 ||detiksumsel.com/media/header_kiri/*/thumbheader_kiri*.jpeg$image
-||dutatv.com^*/ads-$image
 ||eramuslim.com^*/banners/$image
 ||fajar.co.id^*-banner$image
 ||fajarbali.co.id/images/banners/$image
@@ -8645,7 +8651,6 @@ _banner/$image,domain=mediasulut.co
 ||gatra.com/foldershared/images/banners-$image
 ||gatra.com/images/*/banner/$image
 ||gatra.com^*-banner-$image
-||geunta.com^*/ads-$image
 ||globalplanet.news/assets/images/banner/$image
 ||haluankepri.com^*/banners/$image
 ||harianandalas.com^*/banners/$image
@@ -8731,14 +8736,15 @@ _banner/$image,domain=mediasulut.co
 ||solopos.com/banner/$image
 ||suarabekasi.id^*/banner-$image
 ||suarabojonegoro.com^*/ademos-$image
+||suarakahayannews.com^*/barner-$image
 ||suaramerdeka.com^*/banners/$image
 ||suarapedia.com^*/banner/$image
 ||suarasiber.com^*/banner-$image
 ||suarasurabaya.net^*/banner/$image
 ||sultengterkini.com^*/banner-$image
+||sulutnews.com/images/banners/$image
 ||tangerang7.com^*/banner-$image
 ||tangerangnews.com^*/banner/$image
-||terasbalinews.com^*/ads-$image
 ||teropongsenayan.com/banner/$image
 ||teropongsenayan.com^*/banner/$image
 ||totabuan.co^*/banner-$image
@@ -8833,6 +8839,7 @@ iblindonesia.com##.banner-height
 klikpositif.com##.banner-item
 nmcberita.id##.banner-rights
 sonora.id##.banner-skin
+indonesiadaily.co.id##.banner-src
 ayobandung.com,elshinta.com##.banner-top
 industry.co.id##.banner-top-header
 kabarpost.com##.bannergroup
@@ -8886,12 +8893,11 @@ memo.co.id##.majalahpro-core-floatbanner
 kabarmanado.com,memo.co.id##.majalahpro-core-topbanner
 memo.co.id##.majalahpro-core-topbanner-aftermenu
 nenemonews.com,suaralomboknews.com##.modulebanner-1
-beritaasatu.com,depokpos.com,harianpilar.com,metropolis.co.id##.newkarma-core-floatbanner
-baritopost.co.id,depokpos.com,jurnaljatim.com,seputarkepri.co.id##.newkarma-core-topbanner
 detik.com##.newsfeed-ads
 koropak.co.id##.parallax-ads
 medcom.id##.parallax_ads
 lampost.co##.pop_ads
+indotimur.com##.popup-transparent
 ngopibareng.id##.scroll-ad
 ngopibareng.id##.scroll-ad-visible
 harianjogja.com##.size-300x250
@@ -9040,6 +9046,7 @@ swarakaltim.com##img[width="1300"][height="154"]
 sasambonews.com##img[width="1344"][height="1600"]
 beritamerdekaonline.com##img[width="1400"][height="850"]
 haluanriau.co##img[width="1444"][height="772"]
+inspirasikawanua.com##img[width="160"][height="600"]
 kliksumatera.com##img[width="1600"][height="2272"]
 kailipost.com##img[width="1600"][height="417"]
 protapriau.com##img[width="1600"][height="534"]
@@ -9062,6 +9069,7 @@ serangtimur.co.id##img[width="231"][height="307"]
 acehtrend.com##img[width="231"][height="327"]
 obor-nusantara.com##img[width="233"][height="300"]
 obor-nusantara.com##img[width="234"][height="300"]
+brindonews.com##img[width="242"][height="81"]
 sultengterkini.com##img[width="248"][height="330"]
 radarmalang.id##img[width="2480"][height="638"]
 protapriau.com##img[width="250"][height="600"]
@@ -9086,7 +9094,7 @@ lampungcentral.com,radarbanten.co.id##img[width="300"][height="450"]
 radarlampung.co.id##img[width="300"][height="498"]
 lampungcentral.com##img[width="300"][height="525"]
 pewarta.co##img[width="300"][height="535"]
-garudadaily.com##img[width="300"][height="600"]
+garudadaily.com,maluttoday.com##img[width="300"][height="600"]
 inilahsultra.com##img[width="300"][height="730"]
 radarsriwijaya.com##img[width="3150"][height="4724"]
 teboonline.id##img[width="320"][height="179"]
@@ -9351,7 +9359,7 @@ m.akurat.co#$#body { padding-top: 0!important; }
 ! ANTI-ADBLOCK
 ! --------------------------------------------------------------
 hightech.web.id#%#//scriptlet('ubo-acis.js', 'document.getElementById', 'adback')
-sultengraya.com#%#//scriptlet('ubo-aopr.js', 'adBlockDetected')
+malutsatu.com,sultengraya.com#%#//scriptlet('ubo-aopr.js', 'adBlockDetected')
 !
 @@/fuckadblock.$script,domain=akurasinews.com|baritopost.co.id|kabar6.com|konten.co.id|listingberita.com|nusantarapos.co.id|suaranasional.com|terasmaluku.com
 @@/pagead2.$domain=kalimantanpost.com
@@ -9871,5 +9879,5 @@ iklanpopuler.com,sebariklanbaris.net,ziyata.com#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/467
 @@/social-sharing-$script,domain=axe.com
-! Checksum: 7+IVsu2WUGs5PW2px5CzuA
+! Checksum: rnhsVnvNvJAu53BkNf8iiQ
 
