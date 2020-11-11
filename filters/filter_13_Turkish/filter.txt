@@ -72,6 +72,7 @@
 !-------------- Advertising networks ---------------------------------------!
 !---------------------------------------------------------------------------!
 !
+||yes999.ga^$third-party
 ||yes999.ml^$third-party
 ||yes999.tk^$third-party
 ||adnsafe.net^$third-party
@@ -962,9 +963,9 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ! Extended CSS rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66671
-filmwatch.net#?#body > div[class]:has(> a[href^="https://gizabet"])
-filmwatch.net#?#.content-container > div[class][data-video] > div:has(> div[class]:contains(Reklamı))
-filmwatch.net#$?#.content-container > div[class][data-video] > div:has(iframe[src^="https://filmwatch.net/"]) { display: block !important; }
+filmwatch.net#?#body > div[class]:has(> a[href^="https://rb.gy/"])
+filmwatch.net#?#.content-container > div[class][data-video] > section:has(> div[class]:contains(Reklam))
+filmwatch.net#$?#.content-container > div[class][data-video] > div > div[class]:has(iframe[src^="https://filmwatch.net/"]) { display: block !important; }
 !
 vizyonfilmizle.tv#$?#.fancybox-overlay-fixed[-ext-has="> div"] { display: none!important; }
 vizyonfilmizle.tv#$?#.fancybox-lock body[-ext-has="> div"] { overflow: visible!important; }
@@ -1470,6 +1471,8 @@ fullhdfilmizlesene.org,ultrahdfilmizle.org#%#AG_onLoad(function() { window.start
 ! END: Clickunders
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/66671
+filmwatch.net#%#//scriptlet("adjust-setInterval", "sayimiBaslat", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66997
 hizlitv.club#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66671
@@ -2641,7 +2644,7 @@ dunyasozluk.com##a[href="https://kafasozluk.com"][target="_blank"] > img
 filmwatch.net##div[data-no] > video[data-no] + a[href][target="_blank"]
 filmwatch.net##a[onclick="this.target='_blank'"][rel="nofollow external noopener"]
 ||film-modu.net/suv.js
-/filmwatch\.net\/wp-content\/(gi[0-9]?za|ma[0-9]?gnum)\.[a-z]{0,2}/$media,redirect=noopmp4-1s,domain=filmwatch.net
+/filmwatch\.net\/wp-content\/([giza_]|[magnum_])+\.[a-z_0-9]{0,3}/$media,redirect=noopmp4-1s,domain=filmwatch.net
 filmwatch.net##body > div#mobile-menu + div[class]
 ||filmwatch.net/wp-content/uploads/*.jpeg
 airturkhaber.com##.header-banner
