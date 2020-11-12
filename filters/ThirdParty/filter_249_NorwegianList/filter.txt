@@ -1,5 +1,5 @@
 !
-! OriginalVersion: 11November2020v1
+! OriginalVersion: 12November2020v1
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
 ! Expires: 1 day
@@ -188,6 +188,8 @@ utvarpsaga.is##.textwidget > center
 biff.no##.ads
 viivilla.no##.digital_bilag_wrapper_horizontal
 costume.*##.teaser__native:upward(4)
+byggebolig.no##.maestro-content-plugins + div[style]
+byggebolig.no##.maestro-banner-wallpaper
 ! — — — — — — — — —
 ! 🇳🇴: Oppføringer for minst 3 nettsteder
 ! 🇬🇧: Entries for at least 3 websites
@@ -310,7 +312,6 @@ goal.com##.js-betting-widget.is-country-no:upward(2)
 ||vevlysingar.fo^$subdocument,third-party
 ||ndstage.wpengine.com^$image
 ||boligkanalen-maestro-new.azurewebsites.net^$image
-||cdnboligkanalen.azureedge.net^$third-party
 ||brandstudio.inventory.schibsted.io^$subdocument,third-party
 ||matriell.dm-storage.no^$image,third-party
 ||tracking-genesisaffiliates.com^$image,third-party
@@ -562,6 +563,7 @@ _300x250px-*.gif^$domain=ilaks.no
 ||finn.no^$app=no.bt
 contentMarketing$app=no.sol
 ||jula.no^$removeparam=gclsrc
+||norsktipping.no$removeparam=WT.mc_id
 !#endif
 ! 🇳🇴: ——— Tomme restebokser som EasyList har etterlatt ———
 ! 🇩🇰: ——— Tomme restebokser, som EasyList har efterladt ———
@@ -1120,6 +1122,8 @@ fla.de###top-banner
 fla.de##.index-banner
 fla.de##div[data-glade]
 fla.de##.font-robotoregular.font10
+nettavisen.no##.skyskraper-container
+nettavisen.no##amedia-include[param-editionid=reklame]:upward(1)
 ||fcbarcelona.dk/*/images/footerbg.jpg^$image
 ||730.no/banner/*/sonymusic/$subdocument
 ||danishfamilysearch.dk/images/xp2^$image
@@ -1312,8 +1316,6 @@ ice.no##.air-block
 tnt-tv.no,tnt-tv.dk##.desktop_element.promo
 tnt-tv.no,tnt-tv.dk##.logos
 tnt-tv.no,tnt-tv.dk##.tabs_placeholder
-!+ NOT_OPTIMIZED
-avvir.no###block-block-1 > p:nth-of-type(4)
 dyrevennene.no##.td-footer-wrapper
 yrkesbil.no#?#tr:has-text(/^\xA0$/):not(:has-text(/\S/)):not(:has(img))
 yrkesbil.no#?#td:has-text(/^\xA0$/):not(:has-text(/\S/)):not(:has(img))
@@ -1321,6 +1323,9 @@ kvf.fo##.panels-flexible-row-grein-rnd-13
 oyggjatidindi.com##.bottom_space
 dr.dk#?#.dre-container--margin-bottom:has(.hydra-marketing-banner)
 steigan.no,allers.no##.vc_empty_space
+byggebolig.no##.body-spacer
+!+ NOT_OPTIMIZED
+avvir.no###block-block-1 > p:nth-of-type(4)
 ! 🇳🇴: ——— Distraherende bakgrunnsbilder ———
 ! 🇩🇰: ——— Distraherende baggrundsbilleder ———
 ! 🇮🇸: ——— Truflanda baksýnsmyndir ———
@@ -1429,6 +1434,7 @@ ba.no##.sportspill
 ~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/lotteri/lotto"]
 ~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/lotteri/eurojackpot"]
 ~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/lotteri/extra"]
+~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/flax"]
 ! https://www.ba.no/s/5-8-1221171
 ~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/lotteri/viking-lotto"]
 ~norsk-tipping.no,~tipster.no##a[href*="norsk-tipping.no/sales/validateCouponAndStoreToSession.json"]
@@ -1439,6 +1445,7 @@ nettavisen.no#?#.front article:has-text(Eurojackpot)
 dagsavisen.no##a[href*="norsk-tipping.no/artikler/"]
 startsiden.no##div[class*=partnerModule][data-ga-category^=NorskTipping]
 side2.no##.markupbox
+nettavisen.no##article[data-lp-section=sportspill]:has(.slotHeader):has-text(/lotto/i)
 ||vg.no/vgc/pool/tipster.png^$image
 /pustehullet/betting-header.png^$image
 ! ——— Gamereactor + Viafree PC ———
@@ -1731,14 +1738,16 @@ vg.no##div[data-test-tag=timestamp] + p + div::before
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-712799898
 !#if !env_mobile
 no###aid-overlay
-no#$#.aid-incentive-overlay { top: 850px !important }
+no,~nettavisen.no#$#.aid-incentive-overlay { top: 850px !important }
 no#$#.incentive-selector__positioner--visible, .incentive-selector__positioner, .aid-background-blur { filter: none !important }
 no#$#.login-card { color: #000 !important }
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-725741350
+nettavisen.no#$#.aid-incentive-overlay { top: 1875px !important }
 !#endif
 ! 🇳🇴/🇩🇰: ——— Anti-anti-reklameblokkering ———
 ! 🇮🇸: ——— And-and-auglýsingshindrun ———
 ! 🇬🇧: ——— Anti-anti-adblocking ———
-! Last updated: 20October2020v3-Extension
+! Last updated: 12November2020v1-Extension
 gratiskostplaner.dk#%#//scriptlet('ubo-aopw.js', 'KillAdBlock')
 csp.screen9.com#@#.adsbox
 dagensbyggeri.dk#%#//scriptlet('ubo-std.js', '()', '2500')
