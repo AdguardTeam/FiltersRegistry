@@ -72,6 +72,7 @@
 !-------------- Advertising networks ---------------------------------------!
 !---------------------------------------------------------------------------!
 !
+||yes999.cf^$third-party
 ||yes999.ga^$third-party
 ||yes999.ml^$third-party
 ||yes999.tk^$third-party
@@ -963,14 +964,17 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ! Extended CSS rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66671
-filmwatch.net#?#body > div[class]:has(> a[href^="https://rb.gy/"])
-filmwatch.net#?#.content-container > div[class][data-video] > section:has(> div[class]:contains(Reklam))
-filmwatch.net#$?#.content-container > div[class][data-video] > div > div[class]:has(iframe[src^="https://filmwatch.net/"]) { display: block !important; }
+filmwatch.net#?#body > div[class]:has(> a[href^="https://shorturl.at/"])
+filmwatch.net#?#body > div[class]:has(> a[href^="https://bit.ly/"])
+filmwatch.net#?#.content-container > div[class][data-video] > [id]:not(div):has(> div[class]:contains(Reklam))
+filmwatch.net#$?#.content-container > div[class][data-video] > div > div[class]:has(iframe[rel="nofollow"]) { display: block !important; }
 !
 vizyonfilmizle.tv#$?#.fancybox-overlay-fixed[-ext-has="> div"] { display: none!important; }
 vizyonfilmizle.tv#$?#.fancybox-lock body[-ext-has="> div"] { overflow: visible!important; }
 vizyonfilmizle.tv#$?#html[-ext-has="> body"] { overflow: visible!important; }
 !
+habersiz.co#?##sidebar > div.widget_text:has(> div.textwidget > ins.adsbygoogle)
+habersiz.co#?#.single_line:has(> ins.adsbygoogle)
 cumhuriyet.com.tr#?#.swiper-wrapper > div.swiper-slide:has(> a[href^="/reklam/"])
 oyunkuzusu.com#?#body > div[style^="margin: 0 auto; width: 970px;"]:has(> div[id^="reklam"])
 tr-cam.com#?#.in-bg-pop > #morev:has(> div[id*="ScriptRoot"])
@@ -2629,6 +2633,7 @@ rhaajans.com,nazillipost.com,spor264.com.tr,geyvelim.com,haberrtv.com.tr,hbrcald
 ! ##.ad
 lifebursa.com,mshowto.org,macizlee1.com,macizlee.ne,dunyaatlasi.com,ensonhaber.com,gayrimenkulhaber.com,internethaber.com,gercekgundem.com,cevapla.tv,cinemadran.com,ranini.tv,oggito.com,kocaeligazetesi.com.tr,rumma.org,kitaptansanattan.com,macizlee3.com,aydindenge.com.tr,gecmisgazete.com##.ad
 !
+habersiz.co##.pcads
 ha-ber.com##.widget_reklam_widget
 ||static.wixstatic.com/media/*/smarttradecoin.webp$domain=isiptv.net
 /\/.*banner(-\d)?\.(gif|jpg)/$domain=ha-ber.com
@@ -2645,7 +2650,7 @@ dunyasozluk.com##a[href="https://kafasozluk.com"][target="_blank"] > img
 filmwatch.net##div[data-no] > video[data-no] + a[href][target="_blank"]
 filmwatch.net##a[onclick="this.target='_blank'"][rel="nofollow external noopener"]
 ||film-modu.net/suv.js
-/filmwatch\.net\/wp-content\/([giza_]|[magnum_])+\.[a-z_0-9]{0,3}/$media,redirect=noopmp4-1s,domain=filmwatch.net
+/filmwatch\.net\/(g|m)?\._/$media,redirect=noopmp4-1s,domain=filmwatch.net
 filmwatch.net##body > div#mobile-menu + div[class]
 ||filmwatch.net/wp-content/uploads/*.jpeg
 airturkhaber.com##.header-banner
