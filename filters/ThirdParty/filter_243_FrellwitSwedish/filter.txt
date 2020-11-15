@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-11-13 13:06:43 CET
+! Last modified: 2020-11-15 17:13:13 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -304,7 +304,7 @@ lesscarbs.se##.post:has(p:has-text(/^annonssamarbete/i))
 linnherbertsson.se##.content:has(.sponsored-container)
 linnherbertsson.se#$#body { overflow-y: auto !important; }
 listor.se##article:has(a[href*="/annons/"])
-ljudochbild.se#$#.maincontent { max-height: unset !important; }
+ljudochbild.se#$#.maincontent { max-height: unset !important; overflow: initial !important; }
 ljudochbild.se#$#.topper { margin-top: 0 !important; }
 ljudochbild.se##a[href*="/?articleadvertorial"]:upward(1)
 lwcdn.com#%#//scriptlet('ubo-aeld.js', '/^(?:adBlocker|contextmenu)$/')
@@ -600,8 +600,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -815,6 +815,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /?agg_url=/shopping/*$xmlhttprequest,domain=nyheter24.se
 /?agg_url=/sponsratinnehall/*$xmlhttprequest,domain=nyheter24.se
 /?file=lokus$subdocument
+/?template=prisjakt$domain=ljudochbild.se
 /_adsmodern/*$image
 /_graphics/annons/*
 /_widget/destination$subdocument,domain=expressen.se
@@ -1135,7 +1136,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/convertplug/*
 /plugins/convertpro/*
 /plugins/cookie-bar/*
-/plugins/cookie-law-info/*$domain=carup.se|hockeybladet.nu|majanilssonlindelof.com|nyadagbladet.se|temadagar.se
+/plugins/cookie-law-info/*$domain=carup.se|hockeybladet.nu|ljudochbild.se|majanilssonlindelof.com|nyadagbladet.se|temadagar.se
 /plugins/cookie-notice/*
 /plugins/cookie_consent/*$script
 /plugins/cresta-social-share-counter-pro/*
@@ -2198,7 +2199,6 @@ intersport.*#@#.cookie-banner:not(body):not(html)
 ipo.se##.tag-sponsrad
 isabellalowengrip.se##.popup-block
 isabellalowengrip.se##main + div
-isabellalowengrip.se,itrace.se,vitalisfoto.se###preloader
 it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,nyhetersto.se,svenskbyggtidning.se##a.gofollow[data-track]
 jaktplay.se##.jaktplay-ad
 jaktsidan.se###ipsLayout_mainArea > iframe
@@ -2291,12 +2291,7 @@ livetsgoda.se##.custom-html-widget
 livetsgoda.se##.penci-rlt-popup
 livetsgoda.se##[class*="advads"]
 livetsgoda.se##a[target="_blank"]
-ljudochbild.se##.adremark
-ljudochbild.se##.coofad
-ljudochbild.se##.hideonphone.hidead
-ljudochbild.se##.phoneads
-ljudochbild.se##.popup-overlay
-ljudochbild.se##.pricecomp
+ljudochbild.se##.adremark, .coofad, .popup-overlay, .hideonphone.hidead, .phoneads, .pricecomp, .offerz
 lokalfotboll.se###topbar
 lokalfotboll.se##.inside-right-sidebar > .really_simple_image_widget
 lokalnytt.se##.panoramaImageBox
@@ -2503,6 +2498,7 @@ shortcut.se##.annons-block
 shortcut.se##.layout-advertisement
 siriusbandy.se,vetlandabk.se##[id$="-ad"]
 sjoaguden.se##.av-siteloader-wrap
+skandia.se##div[data-block="CookieBannerBlock"]
 skanesport.se##[id^="skane-slider"]
 skanesport.se,trbg.news###check-also-box.show-check-also
 skanesport.se,trbg.news##.stream-item
@@ -2559,7 +2555,6 @@ startaochdriva.se##.banner-left
 startaochdriva.se##.banner-right
 startaochdriva.se##img[data-permalink]
 stayfriends.se###cookieHint
-stockblogs.se###cookie-notice
 studentum.se###emg-cookie
 studio.se###elGuestTerms
 studocu.com##footer + div:not([class])
@@ -3185,7 +3180,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||pingback.issuu.com/ping$xmlhttprequest
 ||pipedrive.com^*/statistics/seen$xmlhttprequest
 ||pixel.playbuzz.com^$xmlhttprequest
-||pji.nu^$third-party,domain=99mac.se|amazonaws.com|feber.se|fz.se|idg.se|kamerabild.se|minhembio.com|mobil.se|nordichardware.se|surfa.se|sweclockers.com|viivilla.se
+||pji.nu^$third-party,domain=99mac.se|amazonaws.com|feber.se|fz.se|idg.se|kamerabild.se|ljudochbild.se|minhembio.com|mobil.se|nordichardware.se|surfa.se|sweclockers.com|viivilla.se
 ||platform.linkedin.com^$third-party
 ||platform.tumblr.com/*/share.js$third-party
 ||platssajten.se^$third-party
