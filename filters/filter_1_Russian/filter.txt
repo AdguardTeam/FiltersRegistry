@@ -6498,6 +6498,11 @@ livejournal.com#%#AG_setConstant('begun_new_callbacks', 'undefined');
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/67424
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
+kino-teatr.ru#?##root div[class^="relap-"]:contains(РЕКОМЕНДУЕТ) div[class^="relap-"] > div[style]:has(div[class^="relap-"] > div:contains(Реклама))
+kino-teatr.ru#?##root div[class^="relap-"]:contains(РЕКОМЕНДУЕТ) div[class^="relap-"]:has(> div[class^="relap-"] > span:contains(Relap))
+!#endif
 ! underverse.su
 underverse.su,underver.se#?##sidebar1-wrap > h3:contains(Реклама)
 underverse.su,underver.se#?##sidebar1-wrap > h3:contains(Реклама) + div.sb_back
@@ -8650,6 +8655,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/67439
+snob.ru#$##h-layoutWide { cursor: auto!important; }
 ! root-nation.com - курсор при наведении на фон
 root-nation.com#$#.td-theme-wrap { cursor: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66406
@@ -11149,9 +11156,11 @@ crazymailing.com,lotzon.pro,novosti-n.org,prokazan.ru,20minut.ua,alnews.com.ua,g
 ! vast ads on anime sites - for example: animego.org, yummyanime.club, etc
 /:\/\/[0-9]?[a-z0-9]{11,}(\.com|\.in\.net)/$xmlhttprequest,domain=aniqit.com|kodik.info|start.u-cdn.top|ustore.bz|u-stream.in
 !
+kino-teatr.ru##.js-relap-anchor
 stratege.ru###xs-top-echo
 stratege.ru###xs-link
 e1.ru##div[data-cms-place]
+snob.ru##.aside-p-c-a
 snob.ru##.p-c-a
 bel.biz##.business-banner
 kino-teatr.ru##.atdigital
