@@ -3,7 +3,7 @@
 ! License: https://github.com/yous/YousList#license
 ! Title: YousList
 ! Expires: 4 days
-! OriginalVersion: 20201114
+! OriginalVersion: 20201116
 ! General element hiding rules
 ##a[href*="//10x10bet888.com"]
 ##a[href*="//2020kkaggme.com"]
@@ -974,6 +974,8 @@ yug-ppl.com#@#a[href*="//yug-ppl.com"]
 ||ads.mncmedia.co.kr^
 ||ads.motorgraph.com/www/delivery/asyncjs.php^$domain=motorgraph.com
 ||ads.nicovideo.jp/api/OxBannerService/getAdvertisements.jsonp^$domain=embed.nicovideo.jp|nicovideo.jp
+||ads.nicovideo.jp/api/video/getAd.php^$domain=nicovideo.jp
+||ads.nicovideo.jp/api/video/requestAd.php^$domain=nicovideo.jp
 ||ads.nicovideo.jp/bannertext^$domain=embed.nicovideo.jp|nicovideo.jp
 ||ads.priel.co.kr/js/
 ||ads.pubmatic.com/AdServer/js/gshowad.js^
@@ -1076,6 +1078,7 @@ yug-ppl.com#@#a[href*="//yug-ppl.com"]
 ||api.ficm.contentlink.co.kr/api/ficm_result.php^
 ||api.ficm.contentlink.co.kr/api/ficm_result_view.php^
 ||api.hiyobi.me/dist/tjqjql/*.gif^$domain=hiyobi.me
+||api.nicoad.nicovideo.jp/v1/instream/vast^$domain=nicovideo.jp
 ||api.screensharp.kr/ad/get_banner/
 ||api.uad.nicovideo.jp/UadsVideoService/getSponsorsJsonp^$domain=embed.nicovideo.jp|nicovideo.jp
 ||api.wiseclick.co.kr/api/web_directad/
@@ -2103,6 +2106,7 @@ yug-ppl.com#@#a[href*="//yug-ppl.com"]
 ||redir.adap.tv/redir/javascript/adaptvAdPlayer.js^
 ||redir.adap.tv/redir/mobile/mobile-ad-source.html^
 ||render.helios.ligatus.com/ligrend.js^
+||res.ads.nicovideo.jp/assets/js/ads*.js^$domain=nicovideo.jp
 ||res.heraldm.com/adbanner/$domain=biz.heraldcorp.com|koreaherald.com|mbiz.heraldcorp.com|news.heraldcorp.com
 ||res.heraldm.com/iframe/
 ||res.heraldm.com/js/ad/
@@ -3490,9 +3494,15 @@ fmkorea.com##iframe[src^="//loader.fmkorea.com/_loader/loader.php"]
 fmkorea.com##iframe[src^="//www.fmkorea.com/_loader/loader.php"]
 fmkorea.com##iframe[src^="/_adpage/"]
 fnnews.com##div#ad_body
+fnnews.com##div#fn_addFooter
+fnnews.com##div#fn_addFooter2
+fnnews.com##div#madd06
+fnnews.com##div#madd07
+fnnews.com##div#mlist_add
 fnnews.com##div.ad_banner_leftWing
 fnnews.com##div.ad_banner_rightWing
 fnnews.com##div.ad_left_580x400
+fnnews.com##ul#lineAdList
 focus.kr##div.g_area>div[style="display:block;width:314px;height:258px;background-color:white;text-align:center;padding-top:7px;margin-bottom:25px;"]
 focus.kr##div.g_area>div[style="width: 314px; height: 258px; text-align: center; padding-top: 7px; margin-bottom: 25px; background-color: white;"]
 focus.kr##div.g_area>div[style="width:314px;height:188px;background-color:white;text-align:center;padding-top:7px;margin-bottom:25px;"]
@@ -4467,9 +4477,9 @@ m.dcinside.com##div.adv-group
 m.dcinside.com##div.adv-groupin
 m.dcinside.com##div.adv-groupno
 m.dcinside.com##div.adv-grouptop
+m.dcinside.com##div.all-comment>ul.all-comment-lst>li.comment:not([id])
 m.dcinside.com##div.detail-top-lnk>a[href^="http://addc.dcinside.com/NetInsight/click/dcinside/adver/adver@text"]
 m.dcinside.com##h3.power-tit
-m.dcinside.com##ul.all-comment-lst>li.comment:not([id])
 m.dcinside.com##ul.power-lst
 m.donga.com##div.ad_main01
 m.donga.com##div.ad_main03
@@ -5776,18 +5786,13 @@ newsworker.co.kr##div#floating_banner_body
 newtoki78.com##div.basic-banner
 newyorker.com##div[class^="Ad__global-footer___"]
 newyorker.com##div[class^="Ad__header___"]
-nicovideo.jp##div#head_ads
-nicovideo.jp##div#sideContents>div[style="min-height:240px;"]:not([class]):not([id])
+nicovideo.jp##div.Ads
 nicovideo.jp##div.BottomContainer-adContainer
 nicovideo.jp##div.CommentPanelBannerAd
-nicovideo.jp##div.CompanionAdContainer
-nicovideo.jp##div.NicoSpotAdContainer
-nicovideo.jp##div.footerBanner
-nicovideo.jp##div.sideAd
-nicovideo.jp##div.sideBanner
-nicovideo.jp##div.sideTxtAd
-nicovideo.jp##div.sidewallAd
+nicovideo.jp##div.HeaderContainer_Re-ad
+nicovideo.jp##div[class$="AdContainer"]
 nicovideo.jp##iframe[src^="https://ads.nicovideo.jp/bannertext"]
+nicovideo.jp##section[class$="AdSection"]
 nikkan-spa.jp##div#sp_ad_index
 nikkan-spa.jp##div#sp_ad_single
 nikkan-spa.jp##div.ad-area
@@ -6004,6 +6009,11 @@ polinews.co.kr##div.news_con>div>div[style="clear:both;margin-top:6px;margin-bot
 polinews.co.kr##div.news_con>div>div[style="clear:both;margin:0 auto;text-align:center;max-width:336px;max-height:280px;"]
 polinews.co.kr##iframe[src^="/data/ad/"]
 popit.kr##div.ant-layout-content>div[style="width:310px;margin-left:20px;float:left"]>div[style="width:300px;height:300px"]
+poro.gg##div.ap_middle_billboard
+poro.gg##div.ap_side1
+poro.gg##div.ap_side2
+poro.gg##div.ap_top
+poro.gg##div.ap_top_mobile
 ppomppu.co.kr##div#emart_banner
 ppomppu.co.kr##div#result_box>div.power-link
 ppomppu.co.kr##div#result_box>div.section:not([id])
