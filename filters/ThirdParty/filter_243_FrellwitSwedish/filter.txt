@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-11-15 17:13:13 CET
+! Last modified: 2020-11-16 20:26:59 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -50,6 +50,7 @@ aftonbladet.se##a[href*="aftonbladet.se/kampanj/artikel"]:upward(1)
 aftonbladet.se##a[href^="/tv/"]:has(span:has-text(/studio oddset/i)):upward(1)
 aftonbladet.se##article:has(a[data-sponsored="true"])
 aftonbladet.se##div[class][style^="text"]:has(h3:has-text(/annons/i))
+aftonbladet.se##source[srcset*="/ANNONS"]:upward(a)
 akaskidor.se,body.se,svenskgolf.se#$#body { background-image: none !important; }
 akaskidor.se,svenskgolf.se##.margin-bottom:has(.row--native)
 aktivtraning.se,iform.se,natgeo.se#$?#li:has(.content-label:has-text(/annons/i)) { remove: true; }
@@ -564,6 +565,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 !#endif
 /privacy/notification?$xmlhttprequest,domain=aftonbladet.se
 ! --- End browser/extension specific filters
+###___gatsby > div[class^="css-"]:last-child
 ###_ning_gdpr_approve
 ###accept-cookies-div
 ###ad-fullscreen:not(body):not(html)
@@ -750,6 +752,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##div.cli-modal-backdrop
 ##div.cookie-show-bar-bottom
 ##div.cookievarning-wrap
+##div.l-footer__adtext
 ##div.NativeAd
 ##div.newsletter-cta
 ##div.newsletter-slider
@@ -1152,7 +1155,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/easy-affiliate-links/*
 /plugins/easy-eu-cookie-law/*
 /plugins/easy-facebook-likebox/*$script,domain=glassakademin.se|listor.se|londonsvenskar.com|minibladet.se|rikakvinnor.se|travprat.se
-/plugins/easy-side-tab-pro/*$domain=samnytt.se
 /plugins/easy-social-sharing/*$script,domain=natursidan.se
 /plugins/easy-wp-cookie-popup/*
 /plugins/elfsight-social-share-buttons-cc/*$script
@@ -1220,7 +1222,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/skydda-advisor/*
 /plugins/so-widgets-bundle/*$domain=lokalsport.nu
 /plugins/social-pug
-/plugins/socialsnap$script,domain=folknyheter.se|katerinamagasin.se|listor.se|samnytt.se
+/plugins/socialsnap$script,domain=folknyheter.se|katerinamagasin.se|listor.se
 /plugins/statebuilt-facebook-page-like-popup/*
 /plugins/sticky-facebook-banner/*$script,domain=ettgottskratt.se|humorbibeln.se|newsner.com|sportbibeln.se
 /plugins/super-progressive-web-apps/*$domain=temadagar.se
@@ -1234,7 +1236,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/trackable-social-share-icons/*
 /plugins/treby/*$image,domain=radiotreby.se
 /plugins/triggerbee/*
-/plugins/uk-cookie-consent/*$domain=akerioentreprenad.se|datormagazin.se|hoglandsnytt.se|samnytt.se|transportarbetaren.se
+/plugins/uk-cookie-consent/*$domain=akerioentreprenad.se|datormagazin.se|hoglandsnytt.se|transportarbetaren.se
 /plugins/Ultimate-Premium-Plugin/*$script,xmlhttprequest,domain=opulens.se
 /plugins/ultimate-social-media-$image,script
 /plugins/vizzit-analytics-for-wordpress/*$script
@@ -1616,12 +1618,11 @@ alltforforaldrar.se,mammasidan.se,minbebis.com##.spons-artc
 alltforforaldrar.se,mammasidan.se,minbebis.com##[id*="blogg_panorama"]
 alltforforaldrar.se,mammasidan.se,minbebis.com##a[href^="/native/"]
 alltforforaldrar.se,mammasidan.se,minbebis.com##li.views-row > a[target="_blank"]
-alltihemmet.se,alltomtradgard.se,damernasvarld.se,expressen.se,gardochtorp.se,godsochgardar.se,lantliv.com,skonahem.com,tara.se,teknikensvarld.se,topphalsa.se##.gdpr-banner
+alltihemmet.se,alltomtradgard.se,damernasvarld.se,expressen.se,gardochtorp.se,godsochgardar.se,lantliv.com,skonahem.com,tara.se,teknikensvarld.se,tidningenhembakat.se,topphalsa.se##.gdpr-banner
 alltomhif.se,lyckasmedbakning.nu,pinkprogramming.se,restaurangilse.se,rikakvinnor.se,soja.se,tonyhatefnejad.se##.preloader
 alltommat.se,di.se,dn.se,familyliving.se,privataaffarer.se##.teaser-native
 alltommat.se,familyliving.se,privataaffarer.se##a.teaser[href*="/annonssamarbete/"]
 alltommat.se,familyliving.se,privataaffarer.se##a.teaser[href*="/promotion/"]
-alltommat.se,isabellalowengrip.se###___gatsby > div[class^="css-"]:last-child
 alltomstockholm.se##.panorama_top,.ad-mark-rotated,[class^="insider_"],[class*="ad_container"],.interstitial-background
 alltomstockholm.se,fotbollskanalen.se##.article-share
 alltomtradgard.se,damernasvarld.se,skonahem.com##.teaser__third-party
@@ -1730,6 +1731,7 @@ branschkoll.se##.advert-widget
 bravenewbusiness.se##.site-information-container
 breakit.se##.videoAd,.js-video-ad
 breakit.se##[class*="sponsored"]
+brinkenbakar.se,nikkasystems.com##.elementor-popup-modal
 brollopsmagasinet.se,bussmagasinet.se,customerinsider.se,maklarvarlden.se,startaochdriva.se##a[target="_blank"]
 brollopstorget.se,familjeliv.se##.ad_right
 bukefalos.se##a > video
@@ -2194,6 +2196,7 @@ iform.se##a[data-ad-sub-pillar="Annons"]
 ikea.com##.cookie-bot-overlay.is--visible
 ilikeradio.se,netdoktor.se,nevnarien.se,pomu.se,su.se,wwf.se##.cc-banner
 ingenjoren.se##.td-header-sp-recs
+innebandy.se##.external-banner-container-distrikt, .external-banner-container
 innebandy.se,lokalguiden.se##.banner-container
 intersport.*#@#.cookie-banner:not(body):not(html)
 ipo.se##.tag-sponsrad
@@ -2282,6 +2285,7 @@ lesscarbs.se##.bd-flex-vertical > aside
 lesscarbs.se##a[href*="/affiliates/"]
 liberalerna.se###cc-notice
 lidkopingsnytt.nu###annons_head
+lindasbakskola.se,mykitchenstories.se##.panorama-sticky, .sticky-area
 lindasbakskola.se,privataaffarer.se,skk.se##a[href*="/bit.ly/"]
 lindasbakskola.se,zeinaskitchen.se##.proad
 linnherbertsson.se##[id^="content-ad"]
@@ -2392,7 +2396,6 @@ ng.se##.js--llad
 ng.se##.partner-articles-wrap
 ng.se##.secondary-sidebar > .panel-pane:last-child
 ng.se##[class*="sponsored-article"]
-nikkasystems.com##.elementor-popup-modal
 nordfront.se###campaign_area
 nordichardware.se##.pspy_info
 nordichardware.se##.td_block_social_counter
@@ -2419,6 +2422,7 @@ nyhetersto.se##a[href*="/restaurangguidensto"]
 omni.se##.article--sponsored,.resource--sponsored,.component--sticky-sponsor-banner
 omnihalsa.com##.stream-item
 onlinepizza.se##.top-banner-container
+opulens.se###secondary
 opulens.se##.mailpoet_form
 opulens.se##a[href$="Opulens_Banner"]
 orebronyheter.com###top-wrapper
@@ -3148,7 +3152,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||network-n.com^$third-party
 ||news.google.com/swg$third-party,domain=thelocal.se
 ||newsharecounts.*.amazonaws.com/nsc.js$script
-||newsharecounts.com^$third-party,domain=samnytt.se
 ||newstats.blogg.se/collector.$script
 ||nichehuset.dk^$third-party
 ||nompakru.click^
@@ -3237,7 +3240,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||s3.amazonaws.com/cc.silktide.com/cookieconsent.$script
 ||sa.svenskalag.se/*/__tm.gif
 ||salesiq.zoho.com/widget$domain=seodesign.se
-||samnytt.se^$csp=frame-src 'self' *.youtube.com youtube.com *.youtube-nocookie.com youtube-nocookie.com *.vimeo.com disqus.com
 ||sannsyn.com^$third-party
 ||scandicpartners.se^$third-party
 ||schibsted.com/privacy-notifier.$third-party
