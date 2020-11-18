@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-11-16 20:26:59 CET
+! Last modified: 2020-11-18 11:05:06 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -370,6 +370,7 @@ nyheter24.se##article:has(a[href="/casino"])
 nyheteridag.se#%#//scriptlet('ubo-acis.js', 'sc', 'type')
 opulens.se#%#//scriptlet('ubo-acis.js', 'advanced_ads_adsense_UID')
 opulens.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'themifyPopup')
+oru.se#$#.no-scroll { overflow: initial !important; }
 patient.info#$#body { overflow: auto !important; }
 piraja.se###featholder:has(.spons)
 piraja.se###hero:has(.spons)
@@ -925,6 +926,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /consent.$script,domain=typkanske.se
 /consent.js$domain=nsk.se|skd.se
 /content/admbl/*$image,domain=skrattnet.se
+/cookie-banner$script,domain=skyscanner.se
 /cookie/GA$xmlhttprequest,domain=tui.se
 /cookie_info.$domain=trendenser.se
 /cookie_policy$script,domain=nasdaqomxnordic.com
@@ -1356,6 +1358,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /thumbs/webbannons$image
 /timeOnPage.$script,domain=arbetsmarknadsnytt.se
 /trackers/SessionCam-tag$script
+/trackolding$script,domain=skyscanner.se
 /trafikfonden/*
 /translations/sponsors$script,domain=sdhl.se|storvretaibk.se
 /trckr/*$xmlhttprequest,domain=cleannet.se|dagenshandel.se|entreprenad.com|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|kemivarldenbiotech.se|lifesciencesweden.se|medtechmagazine.se|motormagasinet.se|packnet.se|plastnet.se|processnet.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|verkstaderna.se|woodnet.se
@@ -1419,7 +1422,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ?url=*impse.tradedoubler.com$image
 @@.ad.json?$~third-party,xmlhttprequest,domain=byggahus.se
 @@/*490x224$image,domain=dansbandskanalen.se|guldkanalen.se
-@@/*_adframe.js$script,~third-party,domain=fssweden.se
 @@/ad-block-detection-script$domain=blocket.se
 @@/ad.php$script,~third-party,domain=99mac.se|skogstok.se|temperatur.nu
 @@/ads.js$script,~third-party,domain=hd.se|megafonen.se|sydsvenskan.se
@@ -1446,6 +1448,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/scrollReveal$script,domain=explorecurate.com
 @@/show_ads.js$script,~third-party,domain=happypancake.com
 @@/wpdcookiejs/*$domain=nordichardware.se
+@@_adframe.js$script,~third-party,domain=fssweden.se
 @@_advert.$domain=e-pages.dk
 @@||2mdn.net/instream/html5/ima3.js$script,domain=modette.se|nyheter24.se
 @@||a.zxcvads.com/a/ads/-image-ad_ads.html$xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
@@ -2224,6 +2227,7 @@ kamerabild.se###aside
 kamerabild.se###storan
 kamerabild.se##.Partner
 kamerabild.se,mobil.se###gdpr
+kamerabild.se,mobil.se##.storan
 kamrat.com###kadDiv
 kamrat.com##div[style="margin:25px 0;max-width:255px!important;"]
 katerinamagasin.se##.adv-area,#right-areas
@@ -2361,7 +2365,6 @@ mmabetz.se##.top-casino
 mmanytt.se##.bannerTop,.bannerHigh,.bannerWide,.front-banner,.front-banner-cover,#text-2,[class*="sponsrat-inlagg"],a[href*="://kampanjer."]
 mobil.se##.aside-puff
 mobil.se##.pspy_info
-mobil.se##.storan
 mobil.se##li.partner
 mobil.se##li.teaser.Partner
 mobilanyheter.net###amp-user-notification1
@@ -2426,6 +2429,7 @@ opulens.se###secondary
 opulens.se##.mailpoet_form
 opulens.se##a[href$="Opulens_Banner"]
 orebronyheter.com###top-wrapper
+oru.se##.modal-cookieform
 osterbottenstidning.fi,sydin.fi,vasabladet.fi##.dialogue-content
 osterbottenstidning.fi,sydin.fi,vasabladet.fi##.dialogue-footer
 osterbottenstidning.fi,sydin.fi,vasabladet.fi##.online-ad
@@ -2487,6 +2491,7 @@ runnersworld.se##.sponsored-stats
 runnersworld.se##body > div.d-md-block > a[target="_blank"]
 ruthless.se##.notices
 samnytt.se##[id^="samny-"]
+samnytt.se##a.c-news-post[href*="jackpott-pa"], a.c-news-post[href*="-casino-"], a.c-news-post[href*="-betting-"]
 schack.se###sidebar > .widget_custom_html
 schoolido.se##.so-cookie__area
 screen-marknaden.se##.fo-banner
@@ -2520,6 +2525,7 @@ skovdeik.se##.mlab-modal
 skrattnet.se,webben7.se##.region-sidebar-second
 skrattportalen.se##.topBanner
 skrattsajten.com##.cookieScript
+skyscanner.se###cookie-banner-root
 smartsenior.se##.modal-mobile-app
 smartsenior.se##.ss-modal
 smhi.se##.polopolyNotification
@@ -2586,6 +2592,7 @@ svenskafans.com##[class^="ad_display"]
 svenskanamn.se##[class$="-advert"]
 svenskaturistforeningen.se##.cookie-box
 svenskbyggtidning.se##.ad-toppbanner
+svenskfast.se##.cookie-law__wrapper
 svenskhistoria.se###text-13
 svenskhistoria.se##.module-etads
 svenskhistoria.se##.widget_et_ads
