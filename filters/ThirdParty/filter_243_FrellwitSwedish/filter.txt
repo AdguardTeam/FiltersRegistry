@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-11-18 11:05:06 CET
+! Last modified: 2020-11-19 08:08:52 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -368,6 +368,8 @@ nyheter24.se##[id^="article"]:has(.native_header)
 nyheter24.se##[id^="article"]:has(em:has-text(/artikeln är i samarbete med/i))
 nyheter24.se##article:has(a[href="/casino"])
 nyheteridag.se#%#//scriptlet('ubo-acis.js', 'sc', 'type')
+omni.se,omniekonomi.se#%#//scriptlet('ubo-aeld.js', 'omniPulseLoaded')
+omni.se,omniekonomi.se##a[href*="article-ad-"]:upward(.resource--link)
 opulens.se#%#//scriptlet('ubo-acis.js', 'advanced_ads_adsense_UID')
 opulens.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'themifyPopup')
 oru.se#$#.no-scroll { overflow: initial !important; }
@@ -603,8 +605,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -1091,6 +1093,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /mp_emediate/inc/annons.html
 /native.html$domain=allakorsord.se|allas.se|baaam.se|dromhemochtradgard.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se
 /native.js$domain=aktuellhallbarhet.se
+/native?$domain=varden.se
 /native?placeholder$xmlhttprequest,domain=hd.se|sydsvenskan.se
 /new_construction_ads/*$domain=hemnet.se
 /newsletter/*$domain=zalando.se
@@ -1141,7 +1144,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/convertplug/*
 /plugins/convertpro/*
 /plugins/cookie-bar/*
-/plugins/cookie-law-info/*$domain=carup.se|hockeybladet.nu|ljudochbild.se|majanilssonlindelof.com|nyadagbladet.se|temadagar.se
+/plugins/cookie-law-info/*$domain=carup.se|gilla.se|hockeybladet.nu|ljudochbild.se|majanilssonlindelof.com|nyadagbladet.se|temadagar.se
 /plugins/cookie-notice/*
 /plugins/cookie_consent/*$script
 /plugins/cresta-social-share-counter-pro/*
@@ -2422,7 +2425,7 @@ nyheteridag.se##.content > div > a[href$=".php"] > img
 nyheteridag.se##a[href*="www.casino"]
 nyhetersto.se##a[href*="/reklam/"]
 nyhetersto.se##a[href*="/restaurangguidensto"]
-omni.se##.article--sponsored,.resource--sponsored,.component--sticky-sponsor-banner
+omni.se,omniekonomi.se##.article--sponsored,.resource--sponsored,.component--sticky-sponsor-banner,.pre-banner
 omnihalsa.com##.stream-item
 onlinepizza.se##.top-banner-container
 opulens.se###secondary
@@ -2683,6 +2686,7 @@ uppsalanyheter.se###banner-top-block
 uppsatser.se##.spahotels
 uppsatser.se##li[style*="min-height:90px"]
 utsidan.se###mastertop
+varden.se##.cdk-overlay-container, app-cookies
 varldenshaftigaste.se###getFixed
 varldenshaftigaste.se##[id*="annons"]
 varldenshistoria.se##.campaign-teaser-show
@@ -2720,7 +2724,6 @@ webradio.dbmedia.se##.marquee
 xn--lnforum-exa.se##.LFRBox
 yelp.se##[data-ad-placement="above_biz_review"]
 yelp.se##[data-ga-category="biz page ad"]
-||*-ads.omni.news^
 ||10bet.com^$third-party
 ||123on.com/images/pixel.$image
 ||123on.com/logs$xmlhttprequest
@@ -3336,6 +3339,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||tripadvisor.se^$csp=worker-src 'none'
 ||trn.ninja^$third-party
 ||trugaze.io^$third-party
+||truthlyanalytics.com^$third-party
 ||turistmal.se/js/popup-controller.js$script
 ||tvdags.se/json/stats$xmlhttprequest
 ||twingly.com^$third-party
