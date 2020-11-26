@@ -6532,8 +6532,8 @@ livejournal.com#%#AG_setConstant('begun_new_callbacks', 'undefined');
 !
 ! Extended CSS rules
 !
-! sports.ru - clickable background
-sports.ru#$?#.page-layout:not(:has(> div.content-wrapper)) { remove: true; }
+! tribuna.com,sports.ru - clickable background
+tribuna.com,sports.ru#$?#.page-layout:not(:has(> div.content-wrapper)) { remove: true; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67424
 !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
 kino-teatr.ru#?##root div[class^="relap-"]:contains(РЕКОМЕНДУЕТ) div[class^="relap-"] > div[style]:has(div[class^="relap-"] > div:contains(Реклама))
@@ -8193,8 +8193,6 @@ playground.ru#%#//scriptlet('remove-attr', 'data-settings', 'body[id="userNotAut
 player.starlight.digital#%#//scriptlet("abort-on-property-read", "Object.prototype.BannerManager")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/64994
 720video.me#%#//scriptlet("prevent-window-open")
-! tribuna.com - clickable background
-tribuna.com#%#//scriptlet('json-prune', 'documents')
 ! audit-it.ru - ads replacement
 audit-it.ru#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "z.attachEvent")
 ! proagro.com.ua - убран рекламный клик
@@ -8661,6 +8659,8 @@ api.kinomoov.org#%#AG_onLoad(function() { window.flashLayerAdSkipDelay = 1; });
 !------- CSS -----------
 !-----------------------
 !
+! tribuna.com - white space
+tribuna.com#$#div[data-content-piece="before-header"] { margin-bottom: 0 !important; }
 ! https://forum.adguard.com/index.php?threads/40556/
 grippua.com.ua#$#a[data-wpel-link="external"] { visibility: hidden !important; pointer-events: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67614
@@ -11170,6 +11170,7 @@ crazymailing.com,lotzon.pro,novosti-n.org,prokazan.ru,20minut.ua,alnews.com.ua,g
 ! vast ads on anime sites - for example: animego.org, yummyanime.club, etc
 /:\/\/[0-9]?[a-z0-9]{11,}(\.com|\.in\.net)/$xmlhttprequest,domain=aniqit.com|kodik.info|start.u-cdn.top|ustore.bz|u-stream.in
 !
+tribuna.com##.banner__annotation
 animedub.ru##a[href^="https://r.advg.agency/"]
 ||gamebomb.ru/images/cod2.jpg
 gamebomb.ru##a[href^="https://ad.adriver.ru/"]
