@@ -977,10 +977,6 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 !
 ! Extended CSS rules
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/66671
-filmwatch.net#$?#.content-container > div.video-parts + div[class] > div[class]:has(~ *:not(div):contains(Reklam)) { display: none !important; }
-filmwatch.net#$?#.content-container > div.video-parts + div[class] > div[class] ~ *:not(div):contains(Reklam) { display: none !important; }
-filmwatch.net#$?#.content-container > div.video-parts + div[class]:has(> div[class] > iframe[src^="https://filmwatch.net/"]) { display: block !important; }
 !
 vizyonfilmizle.tv#$?#.fancybox-overlay-fixed[-ext-has="> div"] { display: none!important; }
 vizyonfilmizle.tv#$?#.fancybox-lock body[-ext-has="> div"] { overflow: visible!important; }
@@ -2675,6 +2671,7 @@ rhaajans.com,nazillipost.com,spor264.com.tr,geyvelim.com,haberrtv.com.tr,hbrcald
 ! ##.ad
 lifebursa.com,mshowto.org,macizlee1.com,macizlee.ne,dunyaatlasi.com,ensonhaber.com,gayrimenkulhaber.com,internethaber.com,gercekgundem.com,cevapla.tv,cinemadran.com,ranini.tv,oggito.com,kocaeligazetesi.com.tr,rumma.org,kitaptansanattan.com,macizlee3.com,aydindenge.com.tr,gecmisgazete.com##.ad
 !
+fullprogramarsivi.net###footer_fix_reklam
 kayiprihtim.com##a[target="_blank"] > img[width="300"][height="300"]
 oyun101.com##.Grid-item > .a534[style="min-height:250px"]
 konyaninnabzi.web.tr##img[src="https://www.konyaninnabzi.web.tr/headerrekalam.gif"]
@@ -2754,9 +2751,9 @@ dunyasozluk.com##a[href="https://kafasozluk.com"][target="_blank"] > img
 filmwatch.net##div[data-no] > video[data-no] + a[href][target="_blank"]
 filmwatch.net##a[onclick="this.target='_blank'"][rel="nofollow external noopener"]
 ||film-modu.net/suv.js
-filmwatch.net##body > div[style*="image/jpg;base64"]
-filmwatch.net##body img[src*="image/gif;base64"]
-/filmwatch\.net\/go\.ok[0-9]?/$media,redirect=noopmp4-1s,domain=filmwatch.net
+filmwatch.net##body > div[style^="background-image:url(blob:"]
+filmwatch.net##body img[src^="blob:https://www.filmwatch.net/"]
+/filmwatch\.net\/[zxc]+\.[zxc]+[0-9]?/$media,redirect=noopmp4-1s,domain=filmwatch.net
 filmwatch.net##body > div#mobile-menu + div[class]
 ||filmwatch.net/wp-content/uploads/*.jpeg
 airturkhaber.com##.header-banner
