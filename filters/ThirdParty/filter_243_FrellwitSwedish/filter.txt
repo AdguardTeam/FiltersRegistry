@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-11-26 12:19:48 CET
+! Last modified: 2020-11-27 13:05:56 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -40,6 +40,7 @@
 /wp-content/plugins/popup-builder-$important,script,domain=mmabetz.se
 100kitchenstories.se,clipmyhorse.tv,eurosport.se,jawcloud.co,modette.se,nxload.com,nyheter24.se,polistidningen.se,saraabrahamsson.se,streamio.com#%#//scriptlet('ubo-aeld.js', 'contextmenu')
 99mac.se##.nitem:has(a[href="/arkiv/kategori/annons"])
+99mac.se##a[href*="annons-"]:upward(.carousel-item)
 accentmagasin.se#%#//scriptlet('ubo-nostif.js', 'n.modal')
 adlanda.se,babyhjalp.se,omnihalsa.com#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')
 affarsliv.com,affarslivgotland.se,affarsvarlden.se,allas.se,arvikanyheter.se,baaam.se,barometern.se,blt.se,bt.se,cafe.se,corren.se,dalslanningen.se,ekuriren.se,elle.se,eposten.se,expressen.se,femina.se,filipstadstidning.se,folkbladet.se,fragbite.se,fryksdalsbygden.se,goteborgdirekt.se,gotland.net,hant.se,helagotland.se,hjotidning.se,ibnytt.se,karlskogatidning.se,kindaposten.se,kingmagazine.se,kkuriren.se,klackspark.com,kristianstadsbladet.se,kt.se,kuriren.nu,lwcdn.com,mariestadstidningen.se,mestmotor.se,mitti.se,modette.se,mvt.se,nkp.se,nlt.se,norran.se,norrbottensaffarer.se,nsd.se,nsk.se,nt.se,nwt.se,olandsbladet.se,ostrasmaland.se,provinstidningen.se,pt.se,realtid.se,saffletidningen.se,skanesport.se,skd.se,sla.se,smp.se,sn.se,strengnastidning.se,svenskanamn.se,svenskdam.se,sydostran.se,thelocal.se,trelleborgsallehanda.se,unt.se,ut.se,varmlandsaffarer.se,vasterastidning.se,vf.se,viivilla.se,vimmerbytidning.se,vt.se,youplay.se,ystadsallehanda.se#%#//scriptlet('ubo-json-prune.js', 'autoplay')
@@ -438,6 +439,7 @@ tasteline.com#$#.popup { overflow: auto !important; }
 tasteline.com##li.article:has(.category:has-text(/samarbete/i))
 teknifik.se##.post:has(.sponsor)
 teknikensvarld.se#$#.t-single.-content-hide .entry-content, .t-single.-content-hide .entry-content .paywall-gradient-overlay { height: auto !important; overflow: visible !important; }
+teknikveckan.se##.grid-item:has(.pill:has-text(/spons/i))
 tennisportalen.se##.tdc-row.stretch_row_content:has(a[href$="/category/sponsrat/"])
 tennisportalen.se##[class^="td-block-span"]:has(a[href$="/sponsrad/"])
 testfakta.se#%#//scriptlet('ubo-set.js', 'Drupal.behaviors.euCookieCompliancePopup', 'noopFunc')
@@ -1592,8 +1594,8 @@ alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidn
 alingsastidning.se,bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##.seekly
 alkompis.se###check-also-box
 allabolag.se##.topBnrContainer
+allakorsord.se,allas.se,baaam.se,dromhemochtradgard.se,elle.se,femina.se,hant.se,ikea.com,mabra.com,residencemagazine.se,spelo.se,svenskdam.se###onetrust-banner-sdk
 allakorsord.se,allas.se,baaam.se,dromhemochtradgard.se,elle.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##.c-newsletter
-allakorsord.se,baaam.se,dromhemochtradgard.se,elle.se,femina.se,hant.se,ikea.com,mabra.com,residencemagazine.se,spelo.se,svenskdam.se###onetrust-banner-sdk
 allakorsord.se,baaam.se,dromhemochtradgard.se,elle.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##.ad-collapse
 allakorsord.se,baaam.se,dromhemochtradgard.se,elle.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##.c-native-carousel--wrapper
 allakorsord.se,baaam.se,dromhemochtradgard.se,elle.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se##.native-sponsored-splash
@@ -1646,7 +1648,7 @@ arbetarskydd.se,lag-avtal.se,nyteknik.se##a[href*="/sponsrad/"]
 arbetarskydd.se,lag-avtal.se,nyteknik.se##a[href*="utm_campaign"][target="_blank"]
 arbetarskydd.se,lag-avtal.se,nyteknik.se##section.sponsored-articles-inline
 arbetsmarknadsnytt.se##.twitter-announcement-bg
-arkitekt.se##.cookie-popup
+arkitekt.se##.Cookie
 arkitekten.se##.post-teaser__wrapper--ad
 arkitektur.se##[class*="panorama"]
 armsport.nu###page-overlay
@@ -2064,7 +2066,6 @@ friidrott.se###sponsor
 frilagt.se###whitewrap > .wrapper-first:first-child
 frilagt.se##.column-2 > figure
 friluftsframjandet.se##.Ads
-funbeat.se##.l-adv-interstitial
 funnygames.se##.banner-container
 funnygames.se##.slot
 fuska.se###top1
