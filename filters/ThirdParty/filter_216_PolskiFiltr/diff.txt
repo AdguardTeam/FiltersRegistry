@@ -1,7 +1,3 @@
-! rybnik.com.pl##^iframe[name]:not([class]):not([id]):not([src])[style="display:none"] is excluded by "##^" in exclusions.txt
-rybnik.com.pl##^iframe[name]:not([class]):not([id]):not([src])[style="display:none"]
-! rybnik.com.pl##^script:has-text(/.*track.*atob.*ShadowRoot.*/):has-text(/[\w\W]{5000,10000}/) is excluded by "##^" in exclusions.txt
-rybnik.com.pl##^script:has-text(/.*track.*atob.*ShadowRoot.*/):has-text(/[\w\W]{5000,10000}/)
 ! ||r.trojmiasto.pl/*/json.php?zoneid= is excluded by ".php?zoneid=" in exclusions.txt
 ||r.trojmiasto.pl/*/json.php?zoneid=
 ! filmweb.pl##^#mainSkyBanner-pl_PL > script:has-text(skyBanner) is excluded by "##^" in exclusions.txt
@@ -14,12 +10,12 @@ komputerswiat.pl##^#googleAdsCont
 czasdzieci.pl##^div#allPage > script:has-text(corner)
 ! hdtvpolska.com##^script:has-text(#sdWelcomeScreen) is excluded by "##^" in exclusions.txt
 hdtvpolska.com##^script:has-text(#sdWelcomeScreen)
+! rybnik.com.pl##^iframe[name]:not([class]):not([id]):not([src])[style="display:none"] is excluded by "##^" in exclusions.txt
+rybnik.com.pl##^iframe[name]:not([class]):not([id]):not([src])[style="display:none"]
+! rybnik.com.pl##^script:has-text(/.*track.*atob.*ShadowRoot.*/):has-text(/[\w\W]{5000,10000}/) is excluded by "##^" in exclusions.txt
+rybnik.com.pl##^script:has-text(/.*track.*atob.*ShadowRoot.*/):has-text(/[\w\W]{5000,10000}/)
 ! polygamia.pl##^.screening is excluded by "##^" in exclusions.txt
 polygamia.pl##^.screening
-! Rule "mamdziecko.interia.pl###content .brief-list-items .brief-placeholder-list:style(height: 320px)" converted to: "mamdziecko.interia.pl#$##content .brief-list-items .brief-placeholder-list { height: 320px }"
-mamdziecko.interia.pl###content .brief-list-items .brief-placeholder-list:style(height: 320px)
-! Rule "purepc.pl##html > body:style(background-image: none!important; background-color: #d5d5d5!important;)" converted to: "purepc.pl#$#html > body { background-image: none!important; background-color: #d5d5d5!important; }"
-purepc.pl##html > body:style(background-image: none!important; background-color: #d5d5d5!important;)
 ! Rule "sport.se.pl##.lead:after" converted to: "sport.se.pl##.lead::after"
 sport.se.pl##.lead:after
 ! Rule "||tkchopin.pl/cams/video_file/*$media,rewrite=abp-resource:blank-mp3,domain=tkchopin.pl" converted to: "||tkchopin.pl/cams/video_file/*$media,redirect=noopmp3-0.1s,domain=tkchopin.pl"
@@ -102,8 +98,16 @@ www.dobreprogramy.pl##+js(remove-attr.js, style, #phContent_avastBadge)
 www.dobreprogramy.pl##.mfp-arrow-right:style(right: -90px !important;)
 ! Rule "www.dobreprogramy.pl##+js(nostif, PrebidDamOpen, 800)" converted to: "www.dobreprogramy.pl#%#//scriptlet('ubo-nostif.js', 'PrebidDamOpen', '800')"
 www.dobreprogramy.pl##+js(nostif, PrebidDamOpen, 800)
+! Rule "dobreprogramy.pl##body:style(pointer-events: auto!important;)" converted to: "dobreprogramy.pl#$#body { pointer-events: auto!important; }"
+dobreprogramy.pl##body:style(pointer-events: auto!important;)
+! Rule "dobreprogramy.pl##body:not(#bd):not([style*="background-image:"]):style(background-image:none!important;)" converted to: "dobreprogramy.pl#$#body:not(#bd):not([style*="background-image:"]) { background-image:none!important; }"
+dobreprogramy.pl##body:not(#bd):not([style*="background-image:"]):style(background-image:none!important;)
+! Rule "dobreprogramy.pl##+js(set-constant, Object.prototype.advViewability, undefined)" converted to: "dobreprogramy.pl#%#//scriptlet('ubo-set-constant.js', 'Object.prototype.advViewability', 'undefined')"
+dobreprogramy.pl##+js(set-constant, Object.prototype.advViewability, undefined)
 ! Rule "purepc.pl##a[href^="https://www.purepc.pl/redir.php"]:style(height: 0 !important; position: absolute !important;)" converted to: "purepc.pl#$#a[href^="https://www.purepc.pl/redir.php"] { height: 0 !important; position: absolute !important; }"
 purepc.pl##a[href^="https://www.purepc.pl/redir.php"]:style(height: 0 !important; position: absolute !important;)
+! Rule "purepc.pl##html > body:style(background-image: none!important; background-color: #d5d5d5!important;)" converted to: "purepc.pl#$#html > body { background-image: none!important; background-color: #d5d5d5!important; }"
+purepc.pl##html > body:style(background-image: none!important; background-color: #d5d5d5!important;)
 ! Rule "filmweb.pl##+js(abort-current-inline-script.js, decodeURIComponent, newAdblockBoardDisplayed)" converted to: "filmweb.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'decodeURIComponent', 'newAdblockBoardDisplayed')"
 filmweb.pl##+js(abort-current-inline-script.js, decodeURIComponent, newAdblockBoardDisplayed)
 ! Rule "filmweb.pl##+js(abort-current-inline-script, addEventListener, /faBar[\s\S]*?insertAdjacentElement/)" converted to: "filmweb.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'addEventListener', '/faBar[\s\S]*?insertAdjacentElement/')"
@@ -152,6 +156,20 @@ money.pl##+js(set-constant, Object.prototype.rekids, undefined)
 money.pl##+js(set-constant, Object.prototype.gafSlot, undefined)
 ! Rule "money.pl##+js(set-constant, Object.prototype.advViewability, undefined)" converted to: "money.pl#%#//scriptlet('ubo-set-constant.js', 'Object.prototype.advViewability', 'undefined')"
 money.pl##+js(set-constant, Object.prototype.advViewability, undefined)
+! Rule "pogoda.wp.pl,tv.wp.pl,horoskop.wp.pl,autokult.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,parenting.pl,pudelek.pl,fitness.wp.pl,kobieta.wp.pl,wawalove.wp.pl,komorkomania.pl,wiadomosci.wp.pl,portal.abczdrowie.pl,gwiazdy.wp.pl,teleshow.wp.pl,o2.pl,sportowefakty.wp.pl##+js(set, Object.prototype.advViewability, undefined)" converted to: "pogoda.wp.pl,tv.wp.pl,horoskop.wp.pl,autokult.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,parenting.pl,pudelek.pl,fitness.wp.pl,kobieta.wp.pl,wawalove.wp.pl,komorkomania.pl,wiadomosci.wp.pl,portal.abczdrowie.pl,gwiazdy.wp.pl,teleshow.wp.pl,o2.pl,sportowefakty.wp.pl#%#//scriptlet('ubo-set.js', 'Object.prototype.advViewability', 'undefined')"
+pogoda.wp.pl,tv.wp.pl,horoskop.wp.pl,autokult.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,parenting.pl,pudelek.pl,fitness.wp.pl,kobieta.wp.pl,wawalove.wp.pl,komorkomania.pl,wiadomosci.wp.pl,portal.abczdrowie.pl,gwiazdy.wp.pl,teleshow.wp.pl,o2.pl,sportowefakty.wp.pl##+js(set, Object.prototype.advViewability, undefined)
+! Rule "www.wp.pl,sportowefakty.wp.pl##+js(set, Object.prototype.loadBunch, noopFunc)" converted to: "www.wp.pl,sportowefakty.wp.pl#%#//scriptlet('ubo-set.js', 'Object.prototype.loadBunch', 'noopFunc')"
+www.wp.pl,sportowefakty.wp.pl##+js(set, Object.prototype.loadBunch, noopFunc)
+! Rule "profil.wp.pl##+js(set, Object.prototype.loadAndRunBunch, noopFunc)" converted to: "profil.wp.pl#%#//scriptlet('ubo-set.js', 'Object.prototype.loadAndRunBunch', 'noopFunc')"
+profil.wp.pl##+js(set, Object.prototype.loadAndRunBunch, noopFunc)
+! Rule "autokult.pl,kafeteria.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl##+js(nostif, HubAPI, 3000)" converted to: "autokult.pl,kafeteria.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl#%#//scriptlet('ubo-nostif.js', 'HubAPI', '3000')"
+autokult.pl,kafeteria.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl##+js(nostif, HubAPI, 3000)
+! Rule "autokult.pl,kafeteria.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl##+js(aeld, message, t.origin===k)" converted to: "autokult.pl,kafeteria.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl#%#//scriptlet('ubo-aeld.js', 'message', 't.origin===k')"
+autokult.pl,kafeteria.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl##+js(aeld, message, t.origin===k)
+! Rule "wp.pl##+js(no-setTimeout-if, /getComputedStyle[\s\S]*?style\.display="none"[\s\S]*?styleBlocked[\s\S]*?detected/)" converted to: "wp.pl#%#//scriptlet('ubo-no-setTimeout-if.js', '/getComputedStyle[\s\S]*?style\.display="none"[\s\S]*?styleBlocked[\s\S]*?detected/')"
+wp.pl##+js(no-setTimeout-if, /getComputedStyle[\s\S]*?style\.display="none"[\s\S]*?styleBlocked[\s\S]*?detected/)
+! Rule "sportowefakty.wp.pl##+js(aost, WP.prebid, onLoad)" converted to: "sportowefakty.wp.pl#%#//scriptlet('ubo-aost.js', 'WP.prebid', 'onLoad')"
+sportowefakty.wp.pl##+js(aost, WP.prebid, onLoad)
 ! Rule "poczta.o2.pl,poczta.wp.pl##body > #page:style(display: block !important;)" converted to: "poczta.o2.pl,poczta.wp.pl#$#body > #page { display: block !important; }"
 poczta.o2.pl,poczta.wp.pl##body > #page:style(display: block !important;)
 ! Rule "kurnik.pl##.adsbygoogle:style(height: 1px !important; width: 1px !important;)" converted to: "kurnik.pl#$#.adsbygoogle { height: 1px !important; width: 1px !important; }"
@@ -248,14 +266,16 @@ pl.vpnmentor.com##+js(setTimeout-defuser.js, bioEp.showPopup)
 pcworld.pl##+js(abort-on-property-read.js, uabpd3)
 ! Rule "lowcygier.pl##body:style(background-image: none !important;)" converted to: "lowcygier.pl#$#body { background-image: none !important; }"
 lowcygier.pl##body:style(background-image: none !important;)
+! Rule "mamdziecko.interia.pl###content .brief-list-items .brief-placeholder-list:style(height: 320px)" converted to: "mamdziecko.interia.pl#$##content .brief-list-items .brief-placeholder-list { height: 320px }"
+mamdziecko.interia.pl###content .brief-list-items .brief-placeholder-list:style(height: 320px)
 ! Rule "www.interia.pl##+js(remove-attr.js, scrolling, iframe#sg-iframe[scrolling="no"])" converted to: "www.interia.pl#%#//scriptlet('ubo-remove-attr.js', 'scrolling', 'iframe#sg-iframe[scrolling="no"]')"
 www.interia.pl##+js(remove-attr.js, scrolling, iframe#sg-iframe[scrolling="no"])
+! Rule "interia.pl,pomponik.pl##.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links:style(display: block !important;)" converted to: "interia.pl,pomponik.pl#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }"
+interia.pl,pomponik.pl##.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links:style(display: block !important;)
 ! Rule "www.elektroda.pl##+js(set, loadElement, noopFunc)" converted to: "www.elektroda.pl#%#//scriptlet('ubo-set.js', 'loadElement', 'noopFunc')"
 www.elektroda.pl##+js(set, loadElement, noopFunc)
 ! Rule "repairlab.pl##.sgpb-overflow-hidden, sgpb-overflow-hidden-body:style(overflow: auto !important;)" converted to: "repairlab.pl#$#.sgpb-overflow-hidden, sgpb-overflow-hidden-body { overflow: auto !important; }"
 repairlab.pl##.sgpb-overflow-hidden, sgpb-overflow-hidden-body:style(overflow: auto !important;)
-! Rule "2conv.com,flvto.biz,flv2mp3.by##.banner, div[class$="-ads"]:style(visibility: hidden !important; display: block !important; height: 0 !important;)" converted to: "2conv.com,flvto.biz,flv2mp3.by#$#.banner, div[class$="-ads"] { visibility: hidden !important; display: block !important; height: 0 !important; }"
-2conv.com,flvto.biz,flv2mp3.by##.banner, div[class$="-ads"]:style(visibility: hidden !important; display: block !important; height: 0 !important;)
 ! Rule "24pr.pl###primary-sidebar:style(width: auto !important;)" converted to: "24pr.pl#$##primary-sidebar { width: auto !important; }"
 24pr.pl###primary-sidebar:style(width: auto !important;)
 ! Rule "booklips.pl##.js:style(background-image: none !important;)" converted to: "booklips.pl#$#.js { background-image: none !important; }"
@@ -328,6 +348,8 @@ wykop.pl###dyingLinksBox > .dying-links:first-child ~ .dying-links:last-child:st
 wykop.pl###dyingLinksBox > .dying-links:first-child ~ .dying-links[style="display: list-item;"] ~ .dying-links:style(display: none !important;)
 ! Rule "www.poloniainfo.se###thePage:style(position: relative; margin: 0px auto 0px auto; max-width: 980px; background-color:white; padding: 0px 0px 0px 20px;)" converted to: "www.poloniainfo.se#$##thePage { position: relative; margin: 0px auto 0px auto; max-width: 980px; background-color:white; padding: 0px 0px 0px 20px; }"
 www.poloniainfo.se###thePage:style(position: relative; margin: 0px auto 0px auto; max-width: 980px; background-color:white; padding: 0px 0px 0px 20px;)
+! Rule "strabag-pfs.pl###page_margins:style(position: relative !important; margin: 0px auto 0px auto !important; max-width: 980px !important; background-color:white !important; padding: 0px 0px 0px 20px; !important)" converted to: "strabag-pfs.pl#$##page_margins { position: relative !important; margin: 0px auto 0px auto !important; max-width: 980px !important; background-color:white !important; padding: 0px 0px 0px 20px; !important }"
+strabag-pfs.pl###page_margins:style(position: relative !important; margin: 0px auto 0px auto !important; max-width: 980px !important; background-color:white !important; padding: 0px 0px 0px 20px; !important)
 ! Rule "ekino-tv.pl##+js(nano-setTimeout-booster.js)" converted to: "ekino-tv.pl#%#//scriptlet('ubo-nano-setTimeout-booster.js')"
 ekino-tv.pl##+js(nano-setTimeout-booster.js)
 ! Rule "swiatfilmow.com##+js(nano-setTimeout-booster.js, function, 1000, 0.02)" converted to: "swiatfilmow.com#%#//scriptlet('ubo-nano-setTimeout-booster.js', 'function', '1000', '0.02')"
@@ -380,6 +402,12 @@ powiatowa.info##.latestnews:style(-moz-column-count: 3; -moz-column-gap: 20px; -
 powiatowa.info##.latestnews:style(-moz-column-count: 2; -moz-column-gap: 20px; -webkit-column-count: 2; -webkit-column-gap: 20px; column-count: 2 ;column-gap: 20px;)
 ! Rule "otube.pl##+js(abort-current-inline-script.js, Math.random)" converted to: "otube.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'Math.random')"
 otube.pl##+js(abort-current-inline-script.js, Math.random)
+! Rule "napiprojekt.pl##+js(insert-iframe, 1, honeypot, https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993), width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important)" converted to: "napiprojekt.pl#%#//scriptlet('ubo-insert-iframe.js', '1', 'honeypot', 'https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993)', 'width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important')"
+napiprojekt.pl##+js(insert-iframe, 1, honeypot, https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993), width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important)
+! Rule "ppe.pl##+js(ac, active, #m_hot_1)" converted to: "ppe.pl#%#//scriptlet('ubo-ac.js', 'active', '#m_hot_1')"
+ppe.pl##+js(ac, active, #m_hot_1)
+! Rule "ppe.pl##+js(ac, box_active, #hot_1)" converted to: "ppe.pl#%#//scriptlet('ubo-ac.js', 'box_active', '#hot_1')"
+ppe.pl##+js(ac, box_active, #hot_1)
 ! Rule "benchmark.pl###bannerDBB:style(height: 10px !important;)" converted to: "benchmark.pl#$##bannerDBB { height: 10px !important; }"
 benchmark.pl###bannerDBB:style(height: 10px !important;)
 ! Rule "!shinden.pl##.ads:style(height: 203px!important;)" converted to: "!shinden.pl#$#.ads { height: 203px!important; }"
@@ -408,12 +436,16 @@ www.dobreprogramy.pl##.mfp-arrow-right:style(right: -90px !important;)
 milionkobiet.pl##.gallery-embed-list-images:style(height: auto !important;)
 ! Rule "lowcygier.pl##body:style(background-image: none !important;)" converted to: "lowcygier.pl#$#body { background-image: none !important; }"
 lowcygier.pl##body:style(background-image: none !important;)
+! Rule "mamdziecko.interia.pl###content .brief-list-items .brief-placeholder-list:style(height: 320px)" converted to: "mamdziecko.interia.pl#$##content .brief-list-items .brief-placeholder-list { height: 320px }"
+mamdziecko.interia.pl###content .brief-list-items .brief-placeholder-list:style(height: 320px)
+! Rule "www.interia.pl##+js(remove-attr.js, scrolling, iframe#sg-iframe[scrolling="no"])" converted to: "www.interia.pl#%#//scriptlet('ubo-remove-attr.js', 'scrolling', 'iframe#sg-iframe[scrolling="no"]')"
+www.interia.pl##+js(remove-attr.js, scrolling, iframe#sg-iframe[scrolling="no"])
+! Rule "purepc.pl##html > body:style(background-image: none!important; background-color: #d5d5d5!important;)" converted to: "purepc.pl#$#html > body { background-image: none!important; background-color: #d5d5d5!important; }"
+purepc.pl##html > body:style(background-image: none!important; background-color: #d5d5d5!important;)
 ! Rule "filmweb.pl##+js(abort-current-inline-script.js, decodeURIComponent, newAdblockBoardDisplayed)" converted to: "filmweb.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'decodeURIComponent', 'newAdblockBoardDisplayed')"
 filmweb.pl##+js(abort-current-inline-script.js, decodeURIComponent, newAdblockBoardDisplayed)
 ! Rule "filmweb.pl##body[class]:not(.rodo):style(overflow: auto !important;)" converted to: "filmweb.pl#$#body[class]:not(.rodo) { overflow: auto !important; }"
 filmweb.pl##body[class]:not(.rodo):style(overflow: auto !important;)
-! Rule "2conv.com,flvto.biz##.banner:style(visibility: hidden !important; display: block !important; height: 0 !important;)" converted to: "2conv.com,flvto.biz#$#.banner { visibility: hidden !important; display: block !important; height: 0 !important; }"
-2conv.com,flvto.biz##.banner:style(visibility: hidden !important; display: block !important; height: 0 !important;)
 ! Rule "24pr.pl###primary-sidebar:style(width: auto !important;)" converted to: "24pr.pl#$##primary-sidebar { width: auto !important; }"
 24pr.pl###primary-sidebar:style(width: auto !important;)
 ! Rule "booklips.pl##.js:style(background-image: none !important;)" converted to: "booklips.pl#$#.js { background-image: none !important; }"
@@ -512,8 +544,6 @@ Error: "Unknown modifier: object-subrequest" in the rule: "||reklamy.sterta.pl/$
 ||reklamy.sterta.pl/$object-subrequest,domain=patrz.pl
 Error: "Rule has spaces, seems to be an host rule" in the rule: "gazetarumska.pl#custom_html-7, .gazet-w-artykule-reklama"
 gazetarumska.pl#custom_html-7, .gazet-w-artykule-reklama
-Error: "Invalid cosmetic rule, wrong brackets" in the rule: "stooq.pl,stooq.com##:xpath(//*[@align="center"]/*[@id][contains(text(),"REKLAMA")])"
-stooq.pl,stooq.com##:xpath(//*[@align="center"]/*[@id][contains(text(),"REKLAMA")])
 Error: "Unknown modifier: object-subrequest" in the rule: "||nazwa.pl/a.php?$object-subrequest,domain=rmfon.pl"
 ||nazwa.pl/a.php?$object-subrequest,domain=rmfon.pl
 Error: "Unknown modifier: object-subrequest" in the rule: "||nazwa.pl/video/$object-subrequest,media,domain=rmfon.pl"
@@ -534,6 +564,8 @@ filmweb.pl#%#//scriptlet('ubo-nano-remove-elements-onready.js', '#skyBanner')
 www.wp.pl##:xpath(//div[@data-st-area='Zakupy'][count(*)=2][not(header)])
 Error: "Invalid cosmetic rule, wrong brackets" in the rule: "~www.wp.pl,wp.pl##:xpath(//div[count(*)=3][img[@class][@src]][*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=0]])"
 ~www.wp.pl,wp.pl##:xpath(//div[count(*)=3][img[@class][@src]][*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=0]])
+Error: "Invalid scriptlet" in the rule: "sportowefakty.wp.pl#%#//scriptlet('ubo-aost.js', 'WP.prebid', 'onLoad')"
+sportowefakty.wp.pl#%#//scriptlet('ubo-aost.js', 'WP.prebid', 'onLoad')
 Error: "Invalid cosmetic rule, wrong brackets" in the rule: "parenting.pl##:xpath(//div[count(*)=1][*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=0]])"
 parenting.pl##:xpath(//div[count(*)=1][*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=0]])
 Error: "Invalid cosmetic rule, wrong brackets" in the rule: "parenting.pl##:xpath(//div[count(*)=1][*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=1]/*[count(*)=0]])"
@@ -542,7 +574,13 @@ Error: "Invalid scriptlet" in the rule: "polygamia.pl#%#//scriptlet('ubo-nano-re
 polygamia.pl#%#//scriptlet('ubo-nano-remove-elements-onready.js', '.screening')
 ! Invalid selector:
 elka.pl,miedziowe.pl##:xpath(//*[@align="center"][contains(text(), 'reklama')])
-! Invalid selector:
-wylecz.to##a[href^="/zzz_click/"]:xpath(../..[div][@style])
-! Invalid selector:
-wylecz.to##iframe[src^="/zzz_click/"]:xpath(../..[div][@style])
+Error: "Invalid cosmetic rule, wrong brackets" in the rule: "stooq.pl,stooq.com##:xpath(//*[@align="center"]/*[@id][contains(text(),"REKLAMA")])"
+stooq.pl,stooq.com##:xpath(//*[@align="center"]/*[@id][contains(text(),"REKLAMA")])
+Error: "Invalid scriptlet" in the rule: "napiprojekt.pl#%#//scriptlet('ubo-insert-iframe.js', '1', 'honeypot', 'https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993)', 'width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important')"
+napiprojekt.pl#%#//scriptlet('ubo-insert-iframe.js', '1', 'honeypot', 'https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993)', 'width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important')
+Error: "Invalid scriptlet" in the rule: "ppe.pl#%#//scriptlet('ubo-ac.js', 'active', '#m_hot_1')"
+ppe.pl#%#//scriptlet('ubo-ac.js', 'active', '#m_hot_1')
+Error: "Invalid scriptlet" in the rule: "ppe.pl#%#//scriptlet('ubo-ac.js', 'box_active', '#hot_1')"
+ppe.pl#%#//scriptlet('ubo-ac.js', 'box_active', '#hot_1')
+Error: "Invalid cosmetic rule, wrong brackets" in the rule: "stooq.pl,stooq.com##:xpath(//*[@align="center"]/*[@id][contains(text(),"REKLAMA")])"
+stooq.pl,stooq.com##:xpath(//*[@align="center"]/*[@id][contains(text(),"REKLAMA")])

@@ -1,27 +1,27 @@
 !
 ! Title: Polish Anti Adblock Filters
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku
-! Last modified: 9 November 2020
+! Last modified: 27 November 2020
 ! Expires: 2 days
-! OriginalVersion: 2020110901
+! OriginalVersion: 2020112701
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020110901 aktualizacja: pon, 9 listopada 2020, 20:00:00
+! v.2020112701 aktualizacja: ptk, 27 listopada 2020, 08:05:00
 !
 !
 !-----------------------Integration of supplement lists for uBlock & AdGuard-----------------------!
 ! Title: Polish Anti Adblock Filters - supplement for uBlock Origin
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku - uzupelnienie dla uBlock Origin
-! Last modified: 20 October 2020
+! Last modified: 26 November 2020
 ! Expires: 2 days
-! OriginalVersion: 2020102001
+! OriginalVersion: 2020112601
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2020
-! v.2020102001 aktualizacja: wt, 20 października 2020, 06:10:00
+! v.2020112601 aktualizacja: czw, 26 listopada 2020, 20:10:00
 !
 !
 ! Adblock
@@ -115,6 +115,16 @@ trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'adBlockDetected')
 !
 ~poczta.interia.pl,interia.pl,pomponik.pl#%#//scriptlet('ubo-set.js', 'Inpl.Abd.onDetected', 'noopFunc')
 interia.pl,pomponik.pl#%#//scriptlet('ubo-set.js', 'isAdblockDetected', '0')
+!
+! techsetter.pl
+techsetter.pl#%#//scriptlet('ubo-nostif.js', '_actions(a)', '2')
+!
+! darmowa-tv.ws
+darmowa-tv.ws#%#//scriptlet('ubo-abort-on-property-write.js', 'adcashMacros')
+!
+! cdahd.co
+cdahd.co#%#//scriptlet('ubo-set-constant.js', 'adsBlocked', 'noopFunc')
+cdahd.co#%#//scriptlet('ubo-abort-current-inline-script.js', 'String.fromCharCode', '/(?:Math|btoa)/')
 !
 ! magazyn.wp.pl
 !#if cap_user_stylesheet
@@ -260,6 +270,7 @@ minecraftpolska.net,pracawgdansku.com.pl#@##reklama
 mmorpg.org.pl,parezja.pl,forum.purepc.pl##.adsbygoogle
 mmorpg.org.pl##div[style*="background-image: url(/images/info-peer.jpg);"]
 mojawyspa.co.uk#@#.adtable
+mylomza.pl##body > div[id][style="display: block;"]:first-child
 napiprojekt.pl###bannerContent > div > div >div
 nadajemy.pl###abp_info
 ps3forum.pl###abl
@@ -317,7 +328,7 @@ tvmalbork.pl##.diablo-placeholder-ADB, .diablo-placeholder
 tvregionalna24.pl##.diablo-placeholder
 tvsztum.pl,tvdzierzgon.pl,zulawyimierzeja24.pl##.diablo-placeholder
 tv.wp.pl##.sc-15qxer4-0
-upflix.pl,mjakmama24.pl#@#.ad
+upflix.pl,mjakmama24.pl,polsatnews.pl#@#.ad
 upflix.pl##.col > div
 webinsider.pl#@#.etad
 vitalia.pl###topbborlayer
@@ -468,7 +479,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||gtaforum.pl^$generichide
 @@||hentai-online.pl^$generichide
 @@||hit.stat24.com^$script,xmlhttprequest,domain=www.geekweek.pl
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=games.cdn.famobi.com|grydladzieci.pl|fm.tuba.pl|wp.pl|player.pl|animezone.pl|ipla.tv|www.polsatnews.pl|playpuls.pl|polsatsport.pl|twojapogoda.pl|wtk.pl|tvp.pl|polsatnews.pl|tvokazje.pl|parenting.pl|abczdrowie.pl|money.pl|meloradio.pl|antyradio.pl|chillizet.pl|radioplus.pl|radiozet.pl|www.geekweek.pl|video.onnetwork.tv
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=games.cdn.famobi.com|grydladzieci.pl|fm.tuba.pl|wp.pl|player.pl|animezone.pl|ipla.tv|www.polsatnews.pl|playpuls.pl|polsatsport.pl|twojapogoda.pl|wtk.pl|tvp.pl|polsatnews.pl|tvokazje.pl|parenting.pl|abczdrowie.pl|money.pl|meloradio.pl|antyradio.pl|chillizet.pl|radioplus.pl|radiozet.pl|www.geekweek.pl|video.onnetwork.tv|partner.redefine.pl
 @@||imasdk.googleapis.com/js/sdkloader/vpaid_adapter.js$script,domain=vod.tvp.pl
 @@||imged.pl/subframe/js/*/adblock-advertisement.js$script
 @@||interia.pl^$generichide
@@ -476,6 +487,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||ipla.tv^$generichide
 @@||istotne.pl/ajax/adverts.json
 @@||istotne.pl^$generichide
+@@||iwa3.hit.interia.pl^*/iwa_core?ts=$domain=pomponik.pl|interia.pl
 @@||jakimasklad.pl^$generichide
 @@||jbzd.*^$generichide
 @@||js.iplsc.com/inpl.adb/*/empt.js?*&adserv=$domain=interia.pl
@@ -507,7 +519,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||onet.pl^$generichide
 @@||online-tv.pl/wp-content/plugins/pause-adblocker/inc/pause-front.css
 @@||ovh.webshark.pl/adserver/*/main_script.js?advertise_check=1
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl|dniwolne.eu|webkod.pl|cdahd.ml|zobacz.ws|nysainfo.pl|odsluchane.eu|lowcygier.pl|trojmiasto.pl|listatv.pl
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dieroten.pl|ps3-hack.pl|dniwolne.eu|webkod.pl|cdahd.ml|zobacz.ws|nysainfo.pl|odsluchane.eu|lowcygier.pl|trojmiasto.pl|listatv.pl|darmowa-tv.ws
 @@||pagead2.googlesyndication.com/pagead/js/r*/show_ads_impl.js$domain=efizyka.net.pl|dniwolne.eu
 @@||pagead2.googlesyndication.com/pagead/show_ads.js$domain=efizyka.net.pl|nk-net.pl|www.gry.pl|lowcygier.pl
 @@||pc-sos.pl/ad.htm$script,domain=pc-sos.pl|xn--strela-8db.pl
@@ -528,6 +540,7 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||ps3-hack.pl^$generichide
 @@||purepc.pl^$generichide
 @@||rapidgrab.pl^$generichide
+@@||request.dqst.pl/v1/*$xmlhttprequest,domain=www.gosc.pl
 @@||r.trojmiasto.pl^$xmlhttprequest,domain=trojmiasto.pl
 @@||r-trojmiasto.pl^$xmlhttprequest,domain=trojmiasto.pl
 @@||realmadryt.pl^$xmlhttprequest,domain=realmadryt.pl
@@ -574,7 +587,6 @@ zycietoprzygoda.pl##[class^="tws_"]
 @@||zakupek.pl/wp-content/themes/zakupek/bannery/adbanner.htm$script,domain=zakupek.pl
 @@||zarabiajnaokazjach.pl^$generichide
 @@||zyciepabianic.pl^$generichide
-@@||raupsica.net/bootstrap.css$xmlhttprequest,domain=cdahd.co
 !
 !4#--------------------------Rules block ads after antiadblock rules-------------!
 /ad-$subdocument,domain=upflix.pl
@@ -653,6 +665,7 @@ filmweb.pl#@##advertBar-pl_PL
 ||fwcdn.pl/adv/*.jpg
 ||fwcdn.pl/adv/*.png
 filmweb.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'IRI', 'Adblock')
+filmweb.pl##.d_utru
 !
 !10#--------------------------WP Group------------!
 dobreprogramy.pl#@#.ad_container
