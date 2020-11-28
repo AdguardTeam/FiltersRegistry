@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-11-27 13:05:56 CET
+! Last modified: 2020-11-28 05:38:51 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -221,6 +221,7 @@ futsalmagasinet.se##.td_block_wrap:has(span:has-text(/annonserat innehåll/i))
 fz.se#%#//scriptlet('ubo-acis.js', 'Taiga', 'Blackboard')
 fz.se##.card:has(.article-sponsored)
 fz.se##.fp-carousel .fpci-kicker:has-text(/^sponsr/i):upward(.fpc-item)
+fz.se,sweclockers.com#%#//scriptlet('ubo-set.js', 'adblock', 'false')
 gamereactor.se#$##pagebackground { background-image: none !important }
 gamereactor.se#%#//scriptlet('ubo-acis.js', 'AdsReloadConfig')
 gamereactor.se#%#//scriptlet('ubo-aopw.js', 'banner_video')
@@ -386,7 +387,6 @@ pussad.se#$#html.g1-popup-visible { overflow: initial !important; }
 qx.se##.col-4:has(script)
 qx.se##.qxa-container:upward(1)
 radarbox.com#%#//scriptlet('ubo-set.js', 'ads_enabled', 'true')
-radio.se###main > div:last-child:has-text(/använder cookies/i)
 radron.se#%#//scriptlet('ubo-cookie-remover.js', 'RR_RP')
 ratsit.se#$#body { overflow: auto !important; }
 realtid.se#%#//scriptlet('ubo-acis.js', 'sas')
@@ -432,7 +432,6 @@ sverak.se#%#//scriptlet('ubo-set.js', 'disableSelection', 'noopFunc')
 sverak.se#%#//scriptlet('ubo-set.js', 'nocontext', 'undefined')
 sverak.se#$#.unselectable, html { user-select: initial !important; -moz-user-select: initial !important; -webkit-user-select: initial !important; cursor: initial !important; -webkit-touch-callout: initial !important; }
 sverigespringer.se##.cd-sidebar-item, .cd-news-card:has(.cd-card-bar:has-text(/annons/i))
-sweclockers.com#%#//scriptlet('ubo-set.js', 'adblock', 'false')
 swedroid.se#$?#li.Notice:has(a[target="_blank"]) { remove: true; }
 swehockey.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'adscript')
 tasteline.com#$#.popup { overflow: auto !important; }
@@ -923,6 +922,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /cecado/advisible.js
 /check-paywall$domain=dn.se
 /citygate/payingcompanies$xmlhttprequest
+/clickperformance$domain=radio.se
 /closest-native$xmlhttprequest,domain=expressen.se
 /cm-ad-changer-server
 /cmp.$script,domain=allas.se
@@ -1469,7 +1469,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||cdn.bluebillywig.com^*/components/admanager.js$script,domain=loppi.se|modette.se|nyheter24.se
 @@||cdn.dynamicyield.com^$domain=alingsastidning.se|bohuslaningen.se|gp.se|hallandsposten.se|hn.se|stromstadstidning.se|ttela.se
 @@||cdn.yieldwrapper.com/yieldwrapper.min.js$script,domain=spray.se
-@@||consensu.org^*/config.js$script
 @@||createsend1.com/css/
 @@||cykla.se/wp-admin/admin-ajax.php?action*&advert_search$xmlhttprequest
 @@||cykla.se/wp-content/themes/cykla/assets/images/advert-filter-top.jpg$image
@@ -1509,7 +1508,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||tidningenhalsa.se^$generichide
 @@||ttela.se^$generichide
 @@||typkanske.se^$generichide
-@@||vendorlist.consensu.org/vendorlist.json
 @@||www.aftonbladet.se^$generichide
 _jquery.blockUI.$script,domain=fssweden.se
 aapl.se,digilar.se,hrnytt.se,ljuskultur.se,omvarlden.se,svenskfotboll.se##.cookies
@@ -2457,6 +2455,7 @@ professionalsecrets.se##div[data-campaign="newsletter"]
 proffs.se##.cookie-wrapper
 pussad.se##.g1-popup-newsletter
 pussad.se##.g1-slideup-wrap
+radio.se###main > div > div:not([id])
 radionytt.se###toppannons
 radioplay.se###root > div[data-reactroot] > div:not([class]):not([id])
 rastaochdalla.se##.sidebar-right > .widget_social_links
@@ -2880,7 +2879,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||connect.nosto.com^*/behav-popup.$script
 ||connectad.io^$third-party
 ||connectio.s3.amazonaws.com/connect-retarget.$script
-||consensu.org^$third-party,domain=~crfashionbook.com|~independent.co.uk|~joe.co.uk|~joe.ie|~mirror.co.uk|~sourceforge.net|~sportsjoe.ie|~vi.nl
 ||consent.cmp.oath.com^$third-party,domain=alltomstockholm.se
 ||consent.dk^$third-party,domain=~ekstrabladet.dk
 ||converdiant.com^$third-party
@@ -3077,7 +3075,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||js.hs-banner.com^$script
 ||js.hs-scripts.com/*.js?integration$script,domain=borsvarlden.com
 ||js.hs-scripts.com/3322485.js$script
-||js.hs-scripts.com^$third-party,domain=tholin.se
+||js.hs-scripts.com^$third-party,domain=breakit.se|tholin.se
 ||jtp.expressen.se/notify$image
 ||juicer.io/api/page_views$xmlhttprequest
 ||kaloo.ga^$third-party
