@@ -20,8 +20,6 @@ polygamia.pl##^.screening
 sport.se.pl##.lead:after
 ! Rule "||tkchopin.pl/cams/video_file/*$media,rewrite=abp-resource:blank-mp3,domain=tkchopin.pl" converted to: "||tkchopin.pl/cams/video_file/*$media,redirect=noopmp3-0.1s,domain=tkchopin.pl"
 ||tkchopin.pl/cams/video_file/*$media,rewrite=abp-resource:blank-mp3,domain=tkchopin.pl
-! Rule "/^https\:\/\/(www\.)?youtube(-nocookie)?.com\/embed\//$3p,frame,object,redirect=click2load.html,domain=orionblues.pinger.pl" converted to: "/^https\:\/\/(www\.)?youtube(-nocookie)?.com\/embed\//$third-party,subdocument,object,redirect=click2load.html,domain=orionblues.pinger.pl"
-/^https\:\/\/(www\.)?youtube(-nocookie)?.com\/embed\//$3p,frame,object,redirect=click2load.html,domain=orionblues.pinger.pl
 ! Rule "alltube.tv###iframe-container:style(display: block !important;)" converted to: "alltube.tv#$##iframe-container { display: block !important; }"
 alltube.tv###iframe-container:style(display: block !important;)
 ! Rule "alltube.tv##+js(noeval.js)" converted to: "alltube.tv#%#//scriptlet('ubo-noeval.js')"
@@ -162,10 +160,10 @@ pogoda.wp.pl,tv.wp.pl,horoskop.wp.pl,autokult.pl,echirurgia.pl,fotoblogia.pl,gad
 www.wp.pl,sportowefakty.wp.pl##+js(set, Object.prototype.loadBunch, noopFunc)
 ! Rule "profil.wp.pl##+js(set, Object.prototype.loadAndRunBunch, noopFunc)" converted to: "profil.wp.pl#%#//scriptlet('ubo-set.js', 'Object.prototype.loadAndRunBunch', 'noopFunc')"
 profil.wp.pl##+js(set, Object.prototype.loadAndRunBunch, noopFunc)
-! Rule "kafeteria.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl##+js(nostif, HubAPI, 3000)" converted to: "kafeteria.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl#%#//scriptlet('ubo-nostif.js', 'HubAPI', '3000')"
-kafeteria.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl##+js(nostif, HubAPI, 3000)
-! Rule "kafeteria.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl##+js(aeld, message, t.origin===k)" converted to: "kafeteria.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl#%#//scriptlet('ubo-aeld.js', 'message', 't.origin===k')"
-kafeteria.pl,o2.pl,polygamia.pl,open.fm,pudelek.pl##+js(aeld, message, t.origin===k)
+! Rule "kafeteria.pl,polygamia.pl,open.fm,pudelek.pl##+js(nostif, HubAPI, 3000)" converted to: "kafeteria.pl,polygamia.pl,open.fm,pudelek.pl#%#//scriptlet('ubo-nostif.js', 'HubAPI', '3000')"
+kafeteria.pl,polygamia.pl,open.fm,pudelek.pl##+js(nostif, HubAPI, 3000)
+! Rule "kafeteria.pl,polygamia.pl,open.fm,pudelek.pl##+js(aeld, message, t.origin===k)" converted to: "kafeteria.pl,polygamia.pl,open.fm,pudelek.pl#%#//scriptlet('ubo-aeld.js', 'message', 't.origin===k')"
+kafeteria.pl,polygamia.pl,open.fm,pudelek.pl##+js(aeld, message, t.origin===k)
 ! Rule "wp.pl##+js(no-setTimeout-if, /getComputedStyle[\s\S]*?style\.display="none"[\s\S]*?styleBlocked[\s\S]*?detected/)" converted to: "wp.pl#%#//scriptlet('ubo-no-setTimeout-if.js', '/getComputedStyle[\s\S]*?style\.display="none"[\s\S]*?styleBlocked[\s\S]*?detected/')"
 wp.pl##+js(no-setTimeout-if, /getComputedStyle[\s\S]*?style\.display="none"[\s\S]*?styleBlocked[\s\S]*?detected/)
 ! Rule "abczdrowie.pl,autokult.pl,echirurgia.pl,film.wp.pl,fotoblogia.pl,gadzetomania.pl,gry.wp.pl,horoskop.wp.pl,kobieta.wp.pl,komorkomania.pl,medycyna24.pl,money.pl,parenting.pl,pogoda.wp.pl,tech.wp.pl,tv.wp.pl,twojeip.wp.pl,wiadomosci.wp.pl,wideo.wp.pl,www.wp.pl,sportowefakty.wp.pl##+js(aost, WP.prebid, onLoad)" converted to: "abczdrowie.pl,autokult.pl,echirurgia.pl,film.wp.pl,fotoblogia.pl,gadzetomania.pl,gry.wp.pl,horoskop.wp.pl,kobieta.wp.pl,komorkomania.pl,medycyna24.pl,money.pl,parenting.pl,pogoda.wp.pl,tech.wp.pl,tv.wp.pl,twojeip.wp.pl,wiadomosci.wp.pl,wideo.wp.pl,www.wp.pl,sportowefakty.wp.pl#%#//scriptlet('ubo-aost.js', 'WP.prebid', 'onLoad')"
@@ -406,6 +404,8 @@ powiatowa.info##.latestnews:style(-moz-column-count: 3; -moz-column-gap: 20px; -
 powiatowa.info##.latestnews:style(-moz-column-count: 2; -moz-column-gap: 20px; -webkit-column-count: 2; -webkit-column-gap: 20px; column-count: 2 ;column-gap: 20px;)
 ! Rule "otube.pl##+js(abort-current-inline-script.js, Math.random)" converted to: "otube.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'Math.random')"
 otube.pl##+js(abort-current-inline-script.js, Math.random)
+! Rule "/^https:\/\/(www\.)?youtube(-nocookie)?\.com\/embed\//$3p,frame,object,redirect=click2load.html,domain=orionblues.pinger.pl" converted to: "/^https:\/\/(www\.)?youtube(-nocookie)?\.com\/embed\//$third-party,subdocument,object,redirect=click2load.html,domain=orionblues.pinger.pl"
+/^https:\/\/(www\.)?youtube(-nocookie)?\.com\/embed\//$3p,frame,object,redirect=click2load.html,domain=orionblues.pinger.pl
 ! Rule "napiprojekt.pl##+js(insert-iframe, 1, honeypot, https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993), width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important)" converted to: "napiprojekt.pl#%#//scriptlet('ubo-insert-iframe.js', '1', 'honeypot', 'https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993)', 'width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important')"
 napiprojekt.pl##+js(insert-iframe, 1, honeypot, https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993), width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important)
 ! Rule "ppe.pl##+js(ac, active, #m_hot_1)" converted to: "ppe.pl#%#//scriptlet('ubo-ac.js', 'active', '#m_hot_1')"
@@ -556,8 +556,6 @@ Error: "Unknown modifier: object-subrequest" in the rule: "||ocs-pl.oktawave.com
 ||ocs-pl.oktawave.com/v1/AUTH_*/Reklamy/$object-subrequest
 Error: "Unknown modifier: object-subrequest" in the rule: "||statics.tarsago.pl/$object-subrequest,domain=meczelive.tv|mecze24.pl"
 ||statics.tarsago.pl/$object-subrequest,domain=meczelive.tv|mecze24.pl
-Error: "$redirect modifier is invalid" in the rule: "/^https\:\/\/(www\.)?youtube(-nocookie)?.com\/embed\//$third-party,subdocument,object,redirect=click2load.html,domain=orionblues.pinger.pl"
-/^https\:\/\/(www\.)?youtube(-nocookie)?.com\/embed\//$third-party,subdocument,object,redirect=click2load.html,domain=orionblues.pinger.pl
 Error: "Unknown modifier: object-subrequest" in the rule: "@@||sascdn.com^$object-subrequest,script,domain=poradnikzdrowie.pl|www4.rp.pl|eskago.pl"
 @@||sascdn.com^$object-subrequest,script,domain=poradnikzdrowie.pl|www4.rp.pl|eskago.pl
 ! Invalid selector:
@@ -584,6 +582,8 @@ polygamia.pl#%#//scriptlet('ubo-nano-remove-elements-onready.js', '.screening')
 elka.pl,miedziowe.pl##:xpath(//*[@align="center"][contains(text(), 'reklama')])
 Error: "Invalid cosmetic rule, wrong brackets" in the rule: "stooq.pl,stooq.com##:xpath(//*[@align="center"]/*[@id][contains(text(),"REKLAMA")])"
 stooq.pl,stooq.com##:xpath(//*[@align="center"]/*[@id][contains(text(),"REKLAMA")])
+Error: "$redirect modifier is invalid" in the rule: "/^https:\/\/(www\.)?youtube(-nocookie)?\.com\/embed\//$third-party,subdocument,object,redirect=click2load.html,domain=orionblues.pinger.pl"
+/^https:\/\/(www\.)?youtube(-nocookie)?\.com\/embed\//$third-party,subdocument,object,redirect=click2load.html,domain=orionblues.pinger.pl
 Error: "Invalid scriptlet" in the rule: "napiprojekt.pl#%#//scriptlet('ubo-insert-iframe.js', '1', 'honeypot', 'https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993)', 'width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important')"
 napiprojekt.pl#%#//scriptlet('ubo-insert-iframe.js', '1', 'honeypot', 'https://www.napiprojekt.pl/napisy-42731-Ostatni-U-Boot-(1993)', 'width: 1px !important; height: 1px !important; position: absolute !important; left: -3000px !important')
 Error: "Invalid scriptlet" in the rule: "ppe.pl#%#//scriptlet('ubo-ac.js', 'active', '#m_hot_1')"
