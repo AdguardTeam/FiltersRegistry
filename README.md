@@ -1,3 +1,5 @@
+# AG Filters Registry
+
 This repository contains the known filters subscriptions available to AdGuard users. We re-host these filters on `filters.adtidy.org`. Also, these filters can be slightly modified in order to achieve better compatibility with AdGuard.
 
 ## Filters metadata
