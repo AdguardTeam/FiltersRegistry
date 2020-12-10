@@ -12493,7 +12493,7 @@ kmweg.de#%#//scriptlet('set-cookie', 'cookie_consent', '1')
 abcya.com#%#//scriptlet('set-cookie', 'abcya_cb', '1')
 fehler-haft.de#%#//scriptlet('set-cookie', 'cookieerlaubnis', 'yes')
 msn.com,tvn24.pl#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("OptanonAlertBoxClosed")){var a=new MutationObserver(function(){var b=document.querySelector("#onetrust-consent-sdk"),c=document.querySelector("button#onetrust-accept-btn-handler");b&&c&&(a.disconnect(),c.click(),b.style="display: none !important;")});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});
-cdn.privacy-mgmt.com#%#AG_onLoad(function(){if(window.self!==window.top&&document.referrer.startsWith("https://www.giga.de/")){var b=new MutationObserver(function(){var c=document.querySelector('button[title="Optionen"]'),a;c&&(a=c);a&&(b.disconnect(),a.click())});b.observe(document,{childList:!0,subtree:!0});setTimeout(function(){b.disconnect()},1E4)}});
+cdn.privacy-mgmt.com#%#AG_onLoad(function(){if(window.self!==window.top&&document.referrer.startsWith("https://www.giga.de/")){var b=new MutationObserver(function(){var c=document.querySelector('button[title^="Akzeptieren"]'),a;c&&(a=c);a&&(b.disconnect(),a.click())});b.observe(document,{childList:!0,subtree:!0});setTimeout(function(){b.disconnect()},1E4)}});
 theguardian.com#%#//scriptlet('remove-class', 'sp-message-open', 'html.sp-message-open')
 hsbc.com.tr,advantage.com.tr#%#(function() { try { if ('undefined' != typeof localStorage) { localStorage.setItem('cookiePolicy', 'true') } } catch (ex) {} })();
 web.de,gmx.net,gmx.at#%#//scriptlet('abort-current-inline-script', 'document.cookie', 'redirectToInterceptionPage')
@@ -12864,6 +12864,9 @@ m.timesofindia.com,m-timesofindia-com.cdn.ampproject.org$$amp-consent
 @@||consentv2.sport1.de/wrapperMessagingWithoutDetection.js
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/69490
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||cdn.privacy-mgmt.com^$domain=giga.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69566
 @@||consent.cookiebot.com/uc.js$domain=lootboy.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69500
@@ -21407,6 +21410,7 @@ babelnovel.com,katzen-fieber.de,xn--80aaxitdbjk.xn--p1ai,toptech360.com,devicesp
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
 quotev.com#$#body #res_area ::selection { background-color: #3297FD!important; }
 !--- JS ----
+beginerboy.blogspot.com#%#AG_onLoad(function() { document.onselectstart = document.onmousedown = document.onmouseup = function() { return true; }; });
 ainamulyana.blogspot.com#%#//scriptlet("remove-attr", "oncontextmenu|onkeydown|onmousedown", "body")
 fssp.gov.ru#%#Object.defineProperties(document,{oncontextmenu:{get:function(){},set:function(){}},onselectstart:{get:function(){},set:function(){}}});
 kapiert.de#%#//scriptlet("prevent-addEventListener", "contextmenu", "preventDefault")
@@ -21605,6 +21609,7 @@ spy-soft.net,z-news.link#%#Object.defineProperty(window, 'disableSelection', { g
 thegreatdaily.com#%#Object.defineProperty(window, 'clearSelection', { get: function() { return []; } });
 webspor2.com,biyografi.info,seiya-saiga.com#%#AG_onLoad(function() { setTimeout(function() { document.getElementsByTagName("Body")[0].removeAttribute("oncontextmenu"); document.getElementsByTagName("Body")[0].removeAttribute("onselectstart"); }, 300); });
 !--- HTML ----
+beginerboy.blogspot.com$$script[tag-content="typeof document.onselectstart"]
 quotev.com$$style[tag-content="#res_area ::selection"][max-length="250"]
 quotev.com$$script[tag-content="document.body.ondragstart=function"][max-length="150"]
 turkstar.in$$script[id="wpcp_disable_selection"]
