@@ -1552,6 +1552,8 @@ budapestkornyeke.hu###custom_html-11
 budapestkornyeke.hu###custom_html-6
 budapestkornyeke.hu###media_image-17
 budapestkornyeke.hu###custom_html-10
+budapestkornyeke.hu##div[class*="widget"]:-abp-has(> .widgettitle:-abp-contains(Hirdetés))
+budapestkornyeke.hu##div[class*="widget"]:-abp-has(> .widgettitle:-abp-contains(Állásajánlat))
 !
 ! InfoVaros oldalak
 infomovar.hu,infoszigetkoz.hu,infosporon.hu,infopapa.hu,infocelldomolk.hu,infodebrecen.hu,infobekescsaba.hu,infosarvar.hu,infoszombathely.hu,infozalaegerszeg.hu,infokeszthely.hu,infoszentendre.hu,infocegled.hu,infokarcag.hu,infofehervar.hu,infotatabanya.hu,infogyor.hu,infoesztergom.hu,infokiskunfelegyhaza.hu,inforabakoz.hu,infodunaujvaros.hu,infodombovar.hu,infoveszprem.hu,infomiskolc.hu,infohodmezovasarhely.hu,infonograd.hu,infotamasi.hu###sidebar > div[class*="banner"]
@@ -1571,6 +1573,8 @@ keol.hu###above_article_banner
 keol.hu###below_content_banner
 keol.hu###left_banners
 keol.hu###right_banners
+keol.hu###advertisements
+keol.hu##.article_banner
 !
 112press.hu##div.banner_middle
 !
@@ -1960,7 +1964,7 @@ merce.hu##.popup-wrap
 computerworld.hu,pcworld.hu,gamestar.hu,puliwood.hu###cookie-policy-content
 computerworld.hu,pcworld.hu,gamestar.hu,puliwood.hu###web-push-popup
 !
-prohardver.hu,mobilarena.hu,gamepod.hu,itcafe.hu,logout.hu,hardverapro.hu,fototrend.hu###cookie-accept
+prohardver.hu,mobilarena.hu,gamepod.hu,itcafe.hu,logout.hu,hardverapro.hu,fototrend.hu###accept-container
 !
 hestore.hu###cookiewarnbar
 ||hestore.hu/pic/cookie.png$image
@@ -2221,6 +2225,7 @@ blikk.hu###qc-cmp2-ui
 !-------------- Other rules ------------------------------------------------!
 !---------------------------------------------------------------------------!
 !
+@@||pro.hit.gemius.pl/gstream.js$domain=embed.rtl.hu
 !---------------------------------------------------------------------------!
 !-------------- AdGuard-specific rules -------------------------------------!
 !---------------------------------------------------------------------------!
@@ -2308,6 +2313,14 @@ hwsw.hu#$#body[style*="padding-top"] { padding-top: 0px !important; background-c
 videa.hu#$##wrapfabtest { height: 1px!important; }
 !
 origo.hu#$#.first-section { margin-top: 0 !important; }
+!
+budapestkornyeke.hu#$#body { padding-top: 0 !important; }
+!
+! There is no need to add padding on small devices, so we need to add media query.
+! .content_start is the start page view, .content_content is the article view.
+keol.hu#$#@media (min-width: 1200px) { section[id="content_left"][class="content_start"] { padding-top: 80px !important; } }
+keol.hu#$#section[id="content_left"][class="content_content"] { width: auto !important; padding: 0 45px 0 46px !important; }
+keol.hu#$#div#search_container { margin-bottom: 0 !important; }
 !
 !-------------- Related ABP rules ------------------------------------------!
 ! These regular ABP rules dont't work properly without specific rules.

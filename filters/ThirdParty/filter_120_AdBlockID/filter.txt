@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 20.344.1259
+! OriginalVersion: 20.344.1388
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 09 Dec 2020 20:59 UTC
+! Last modified: 09 Dec 2020 23:08 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -719,6 +719,7 @@ _GIF1200x120-
 ###adsbawah1
 ###adsground
 ###adsic435
+###adsic728
 ###adsimgxatas
 ###adsimgxatas2
 ###adsimgxatass
@@ -1791,6 +1792,7 @@ _GIF1200x120-
 ##[id*="-iklan-kanan-"]
 ##[id*="-iklan-kiri-"]
 ##[id*="_iklan-block_"]
+##[id^="adsic728x90"]
 ##[id^="div-adx-ad-"]
 ##[id^="div-adx-iklan-"]
 ##[id^="rn_ad_native_"]
@@ -3463,6 +3465,7 @@ dutaislam.com#$#.outer-wrapper { margin-top:60px!important; }
 /demenqq-
 /dewacash-$image
 /dewancash.gif$image
+/dewifortunaqq.$image
 /doiqq.gif$image
 /doyangoyang.gif|
 /dpbola.gif|
@@ -5076,6 +5079,7 @@ _penggugur_kandungan_$image
 ##[href*="50.63.161.146"] img
 ##[href*="51.222.38.193"]
 ##[href*="51.222.38.196"] img
+##[href*="51.79.155.250"]
 ##[href*="51.79.155.251"] img
 ##[href*="51.79.158.236"] img
 ##[href*="51.79.165.59"] img
@@ -8783,12 +8787,14 @@ m.kaskus.co.id##[id^="postdeleted"]
 !
 ! ANTI-RIGHT-CLICK
 ! --------------------------------------------------------------
+nomis.id#%#//scriptlet('ubo-aeld.js', 'contextmenu')
 ilmumemikatwanita.com,psikologicinta.com,radiokucing.com#%#//scriptlet('ubo-aopr.js', 'document.oncontextmenu')
 !
 ! ANTI-SELECT
 ! --------------------------------------------------------------
 rencanamu.id#$##content_box { user-select: text !important; -webkit-touch-callout: default !important; }
 ilmumemikatwanita.com,psikologicinta.com,radiokucing.com#%#//scriptlet('ubo-acis.js', 'disableSelection', 'reEnable')
+nomis.id#%#//scriptlet('ubo-aeld.js', 'selectstart')
 steffifauziah.com#%#//scriptlet('ubo-set.js', 'document.onselectstart', 'noopFunc')
 bisablog.com#$#.entry-content { user-select: text !important; -webkit-touch-callout: default !important; }
 bungfrangki.com,dewaplokis.com,infoastronomy.org,teknolalat.com,webkeren.net#$#.post-body { user-select: text !important; -webkit-touch-callout: default !important; }
@@ -8797,6 +8803,10 @@ santaibareng.net,tigaribu.net#$#.post { user-select: text !important; -webkit-to
 suatekno.id#$#.td-post-content { user-select: text !important; -webkit-touch-callout: default !important; }
 ilmumemikatwanita.com,psikologicinta.com#$#.unselectable { user-select: text !important; -webkit-touch-callout: default !important; }
 ponselsoak.com#$#body { user-select: text !important; -webkit-touch-callout: default !important; }
+!
+! ANTI-COPY
+! --------------------------------------------------------------
+nomis.id#%#//scriptlet('ubo-aeld.js', 'copy')
 !
 ! ANTI-SAFELINK
 ! --------------------------------------------------------------
@@ -8880,7 +8890,7 @@ komiku.co.id#@##banner_ad
 ! *** abid:src/packages/movie.adbl ***
 ! SPECIFIC BLOCK
 ! --------------------------------------------------------------
-.gif$image,domain=animenonton.tv|anoboy.best|anoboy.us|conan.id|neumanga.tv|nontondrama.me|tancap88.me
+.gif$image,domain=conan.id|neumanga.tv|nontondrama.me|tancap88.me
 /banner-$image,domain=maxnime.com|neonime.moe|neonime.vip
 ||jwplayer21.com/images/*.gif$image
 ||sharemydrive.xyz/*.gif$domain=149.56.24.226
@@ -8924,8 +8934,6 @@ lk21c.fun###flobwh
 mangaku.pro###ftadsth
 207.180.252.218,lk21tv.com###hbanner
 kiminime.com###iklan
-anoboy.best###judi2
-animelu.com###mg-player-bar
 bioskopkerenin.org,movies21.stream,terbit21.cool,terbit21.fun###middle-banner
 ahanime.com###overplay
 207.180.252.218,lk21tv.com###pbanner
@@ -8959,7 +8967,7 @@ cafecinema.vip,layarfilm21.fun,nontonmovie251.org##.idmuvi-topplayer
 nimegami.com##.ik
 199.231.164.28,animebatch.web.id,drakorindofilms.net,drakorindofilms.tv,giladrakor.com,inidramaku.com,inidramaku.net,korenlovers.co,oujanime.com##.iklan
 dutafilm.us##.imgbanner
-anichin.my.id,animelu.com,awsubs.co##.kln
+anichin.my.id,awsubs.co##.kln
 anisora.net##.klnrec > .kln
 anisora.net##.klnrec > .mini
 indoxximovie.com##.mdl_container
@@ -8967,7 +8975,6 @@ indoxximovie.com##.mdl_container
 139.99.120.222,dunia21s.fun,fb21.club,fb21.tv,lk21c.fun##.ns-right
 206.189.151.55,209.97.170.87##.popUpBannerBox
 198.204.248.230##.top-banner
-animelu.com##.videoad
 149.56.24.226##.wrapper-inject
 kantaii.web.id##[href*="/ref/bangago"]
 185.217.95.238##a[href*="_medium=banners"] video
@@ -8995,7 +9002,6 @@ layarlebar.co#%#//scriptlet('ubo-aopr.js', 'document.querySelectorAll')
 movie-xx1.com#%#//scriptlet('ubo-aopr.js', 'document.querySelectorAll', 'popMagic')
 103.194.171.18,111.90.150.31,162.213.249.103,193.164.131.42,204.48.22.58,dutafilm.red,efek.stream,filmonlineindo.com,indxxi.vip,komikcast.com,komikstation.com,layarkacaxxi.org,nontonsub.top,sobatkeren.club#%#//scriptlet('ubo-window.open-defuser.js')
 ! Overlay
-/wp-content/plugins/modal-window/*$domain=boomxxi.me
 /wp-content/plugins/uji-popup/*$domain=bos21.bar|kordramass.com|kshowsubindo.org|layarkaca21indoxxi.co
 !
 111.90.142.151,detikxxi.com###divpopup
@@ -9032,14 +9038,15 @@ dutafilm.*##body > a[href] > div[style^="position:absolute;"][style*="z-index:"]
 !
 ! ANTI-ADBLOCK
 ! --------------------------------------------------------------
+daizurin.com,shinobijawi.id,tohaboy.web.id,zonachina21.blogspot.com#%#//scriptlet('ubo-acis.js', 'addEventListener', 'DOMNodeRemoved')
 animekuro.net,kurofansubs.xyz#%#//scriptlet('ubo-acis.js', 'eval', 'ignielAdBlock')
 nezunime.com#%#//scriptlet('ubo-acis.js', 'jQuery', 'ai_adb')
-aibouanime.site,aibouanime.xyz,kudonime.xyz,mikanime.com,onbatch.my.id,otaku.tekloggers.com,xizuanime.blogspot.com#%#//scriptlet('ubo-aopr.js', 'adBlockDetected')
-boomxxi.me,filmboxoffice.web.id,maachanime.com,neosubs.net#%#//scriptlet('ubo-aopr.js', 'anOptions')
+soranime.site#%#//scriptlet('ubo-aopr.js', 'KillAdBlock')
+aibouanime.site,aibouanime.xyz,blackavelic.com,kudonime.xyz,mikanime.com,onbatch.my.id,otaku.tekloggers.com,xizuanime.blogspot.com#%#//scriptlet('ubo-aopr.js', 'adBlockDetected')
 animecracks.com#%#//scriptlet('ubo-aopr.js', 'mdpDeBlocker')
 animee.xyz#%#//scriptlet('ubo-aopr.js', 'mdpDeBlockerDestroyer')
 aksensei.com,drakoric.com,dramaencode.com,driverays.com,fmoviez.org,kiminime.com,kiranime.pw,ld2tv.net,samehadaku.in.net,shirainime.com#%#//scriptlet('ubo-nobab.js')
-dorama.asia,soranime.site#%#//scriptlet('ubo-set.js', 'anOptions.anOptionChoice', 'null')
+filmboxoffice.web.id,maachanime.com,neosubs.net,tohaboy.web.id#%#//scriptlet('ubo-set.js', 'anOptions.anOptionAdsSelectors', 'noopFunc')
 !
 ||gomunime.com^*/autoptimize_single_$script
 !
@@ -9049,21 +9056,6 @@ cinemamkv.net#@##banner_ad
 @@/adsbygoogle.$domain=dl.nesia.my.id
 @@/pagead2.$script,domain=nekopoi.web.id|tokubatch.com
 !
-@@||anibatch.me^$generichide
-@@||animenonton.tv^$generichide
-@@||anisubindo.video^$generichide
-@@||anoboy.best^$generichide
-@@||anoboy.us^$generichide
-@@||blackavelic.com^$generichide
-@@||cinema-mkv.com^$generichide
-@@||daizurin.com^$generichide
-@@||nanonime.com^$generichide
-@@||shinobijawi.id^$generichide
-@@||zonachina21.blogspot.com^$generichide
-! Empty Ads Placeholders
-doramaku.me,doramaku.org##.klan728
-anoboy.best##a[target="_blank"] > amp-img
-!
 /ads-poi.$image,domain=nekopoi.web.id
 /ads-poi2.$image,domain=nekopoi.web.id
 ||animekompi.web.id/*/antiblocker$image
@@ -9071,16 +9063,18 @@ anoboy.best##a[target="_blank"] > amp-img
 ! ANTI-SAFELINK
 ! --------------------------------------------------------------
 samehadaku.in.net#%#//scriptlet('ubo-acis.js', 'adtival_base64_encode')
-animebatch.web.id,animenonton.tv,anitoki.web.id,daizurin.com,hakanime.com#%#//scriptlet('ubo-acis.js', 'auto_safelink')
+animebatch.web.id,anitoki.web.id,daizurin.com,hakanime.com#%#//scriptlet('ubo-acis.js', 'auto_safelink')
 maxnime.com#%#//scriptlet('ubo-aopr.js', 'go_url')
 anitoki.com,nekonime.video#%#//scriptlet('ubo-aopr.js', 'protected_links')
 !
 ! ANTI-RIGHT-CLICK
 ! --------------------------------------------------------------
 144.91.98.14#%#//scriptlet('ubo-aeld.js', '/^(?:contextmenu|selectstart)$/')
+maachanime.com#%#//scriptlet('ubo-aopw.js', 'nocontext')
 !
 ! ANTI-SELECT
 ! --------------------------------------------------------------
+maachanime.com#%#//scriptlet('ubo-acis.js', 'disableSelection', 'reEnable')
 144.91.98.14#%#//scriptlet('ubo-set.js', 'document.onselectstart', 'noopFunc')
 malasngeblog.com#$#.post-body { user-select: text !important; -webkit-touch-callout: default !important; }
 ! *** abid:src/packages/news.adbl ***
@@ -10472,5 +10466,5 @@ iklanpopuler.com,sebariklanbaris.net,ziyata.com#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/467
 @@/social-sharing-$script,domain=axe.com
-! Checksum: rP/unmDFdVTL57ETEqAKXQ
+! Checksum: +xi56gQYrF4Ha3Bd02yAyw
 
