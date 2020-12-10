@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-12-09 16:35:21 CET
+! Last modified: 2020-12-10 15:45:40 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -72,7 +72,8 @@ alltforforaldrar.se##.unslider-wrap.unslider-carousel>li:has(.preamble-category:
 alltforforaldrar.se,mammasidan.se,minbebis.com#%#//scriptlet('ubo-set.js', 'advertisementText', 'undefined')
 alltomburgare.se##.newscolumn:has(a[href$="/sponsrat/"])
 alltommat.se##.teaser:has(.teaser-label:has-text(/annonssamarbete/i))
-alltomtradgard.se,damernasvarld.se,skonahem.com#%#//scriptlet('ubo-acis.js', 'ExpressenAnalytics', 'push')
+alltommat.se,alltomtradgard.se,damernasvarld.se,expressen.se,skonahem.com,teknikensvarld.se##.teaser:has(.teaser__bottom--ad-marker)
+alltommat.se,alltomtradgard.se,damernasvarld.se,skonahem.com,teknikensvarld.se#%#//scriptlet('ubo-acis.js', 'ExpressenAnalytics', 'push')
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 altinget.se#%#//scriptlet('ubo-nostif.js', 'show_popup')
 arbetarskydd.se,lag-avtal.se,nyteknik.se,personalledarskap.se#%#//scriptlet('ubo-acis.js', 'ALMA', 'loadAd')
@@ -181,7 +182,6 @@ familjeliv.se#$?#li.flm-kampanj { remove: true; }
 familjeliv.se#$?#li:has(a[href*="/kampanj/"]) { remove: true; }
 fastighetssverige.se##.featuredArticle:has(.badge-partner-text)
 fastighetssverige.se#$#.mainVideoBox { display: inherit !important; }
-feber.se##.ArticleLight:has(#rpPopularText:has-text(/annons/i))
 filmtipset.se##.row.news:has(em:has-text(/sponsrad/i))
 finansliv.se#%#//scriptlet('ubo-aopw.js', 'nwlettersignupcheck')
 finansliv.se,lararnastidning.se,lektion.se,scanaktier.se,sulkysport.se,tidningenridsport.se#%#//scriptlet('ubo-aopr.js', 'OA_show')
@@ -582,8 +582,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -1259,6 +1259,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /private-browsing.js$domain=thelocal.se
 /proad/*$domain=forum.odla.nu
 /prod/adform$xmlhttprequest
+/profile$ping,domain=feber.se|tjock.se
 /publicPartners$domain=familjehemmet.se|familjehemsbanken.se
 /pubvendors.$domain=allas.se
 /pulsetracking$script,domain=aftonbladet.se
@@ -1592,12 +1593,12 @@ alltforforaldrar.se,mammasidan.se,minbebis.com##a[href^="/native/"]
 alltforforaldrar.se,mammasidan.se,minbebis.com##li.views-row > a[target="_blank"]
 alltihemmet.se,alltomtradgard.se,damernasvarld.se,expressen.se,gardochtorp.se,godsochgardar.se,lantliv.com,skonahem.com,tara.se,teknikensvarld.se,tidningenhembakat.se,topphalsa.se##.gdpr-banner
 alltomhif.se,lyckasmedbakning.nu,mat-meny.se,pinkprogramming.se,restaurangilse.se,rikakvinnor.se,soja.se,tonyhatefnejad.se##.preloader
+alltommat.se,alltomtradgard.se,damernasvarld.se,skonahem.com,teknikensvarld.se##.teaser__third-party
 alltommat.se,di.se,dn.se,familyliving.se,privataaffarer.se##.teaser-native
 alltommat.se,familyliving.se,privataaffarer.se##a.teaser[href*="/annonssamarbete/"]
 alltommat.se,familyliving.se,privataaffarer.se##a.teaser[href*="/promotion/"]
 alltomstockholm.se##.panorama_top,.ad-mark-rotated,[class^="insider_"],[class*="ad_container"],.interstitial-background
 alltomstockholm.se,fotbollskanalen.se##.article-share
-alltomtradgard.se,damernasvarld.se,skonahem.com##.teaser__third-party
 alltomwhisky.se##.topmost-banner
 alpresor.se###toast-container
 altinget.se###CookieModal_cookiemodal
@@ -1920,11 +1921,7 @@ fastighetssverige.se##div[class^="panel"][style^="background-color: lightgoldenr
 fastighetstidningen.se##div.ic-superpost-list-item-header[style="background-color:#fffed5;"]
 fastighetstidningen.se,skanetrafiken2020.se###cookie-consent-block
 fbitullinge.nu,gtsoder.se,maskalpin.se,telgesibk.se###outerAd
-feber.se,tjock.se##.art_ad
-feber.se,tjock.se##.art_ad_sign
-feber.se,tjock.se##adline
-feber.se,tjock.se##f-deals
-feber.se,tjock.se##f-panorama
+feber.se,tjock.se##.burt-unit, .art_ad, adline, f-panorama, f-deals, #rpPopular
 feministisktperspektiv.se##.two_column_ad
 fightermag.se##a[href*="/sponsra"]
 filmtipset.se###topslider-wrapper + .container > .sidebar
