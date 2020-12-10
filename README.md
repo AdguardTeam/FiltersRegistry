@@ -1,5 +1,3 @@
-# AG Filters Registry [![Build Status](https://travis-ci.com/AdguardTeam/FiltersRegistry.svg?branch=master)](https://travis-ci.com/AdguardTeam/FiltersRegistry)
-
 This repository contains the known filters subscriptions available to AdGuard users. We re-host these filters on `filters.adtidy.org`. Also, these filters can be slightly modified in order to achieve better compatibility with AdGuard.
 
 ## Filters metadata
@@ -7,7 +5,7 @@ This repository contains the known filters subscriptions available to AdGuard us
 - `template.txt`
 
     Template file is used by the filters compiler to prepare the final filter version.
- 
+
 - `exclude.txt`
 
     A list of regular expressions. Rules that match these exclusions will not be included in the resulting filter.
@@ -27,12 +25,12 @@ This repository contains the known filters subscriptions available to AdGuard us
     * `subscriptionUrl` - default filter subscription URL
     * `tags` - a list of tags (see tags description below)
     * `trustLevel` - level of trust (see trust levels description below)
-    
+
         ##### Trust levels:
         * `low` - default level, if "trustLevel" property is not configured at all.
         * `high` - trusted third-party filter lists. Some particular rules from there are allowed.
         * `full` - all types of filter rules are allowed. Only AdGuard filters have full trust at the moment.
-        
+
         [Full list of trust levels exclusions settings](https://github.com/AdguardTeam/FiltersCompiler/tree/master/src/main/utils/trust-levels)
 
     Metadata example:
