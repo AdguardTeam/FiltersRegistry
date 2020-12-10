@@ -191,6 +191,7 @@
 ||plugin.mobopay.baidu.com^
 ||mo.freeindoapp.com^
 !
+||promoted.sndcdn.com^
 ||adservice.tohsoft.com^
 ||delivery-cdn-cf.adswizz.com^
 ||appboy-images.com^
@@ -839,6 +840,7 @@
 ||i-vengo.com^
 ||i.skimresources.com^
 ||iad.appboy.com^
+||iad-*.appboy.com^
 ||iadsdk.apple.com^
 ||iamediaserve.com^
 ||imasdk.googleapis.com^
@@ -1282,6 +1284,9 @@ westseattleblog.com#@#.header-ad
 !
 ! Extended CSS rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/69433
+charlieintel.com#?##mvp-content-main > .code-block > .ai-attributes:upward(1)
+charlieintel.com#?##mvp-content-main > .code-block > div > .ai-attributes:upward(2)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67990
 metruyenchu.com#?#main > section.nh-section:has(> div.text-center [class="text-muted"])
 ! amazon.de mobile ad text in cart
@@ -1605,10 +1610,12 @@ yandex.ru#?#body[class*="news_phone"] div.news-container > span > div > div.unit
 pornhub.com,pornhubthbh7ap3u.onion#%#AG_onLoad(function() { if (typeof redirect !== 'function') return; var str = redirect.toString(); var m = str.match(/\'(\/view.*)\'/); if (m.length != 2) return; var link = m[1]; window.location.href = m[1]; });
 !#################
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/68663
+!+ PLATFORM(ios, ext_android_cb)
+||straitstimes.com/sites/all/themes/custom/bootdemo/js/ads_checker.js
+straitstimes.com#%#//scriptlet("abort-current-inline-script", "bindPostitial")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67931
 zoomtventertainment.com#%#//scriptlet('hide-in-shadow-dom', '.amp-flying-carpet-text-border, amp-fx-flying-carpet')
-! https://github.com/AdguardTeam/AdguardFilters/issues/67467
-straitstimes.com#%#//scriptlet("abort-current-inline-script", "bindPostitial")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/65853
 aol.com#%#//scriptlet('hide-in-shadow-dom', 'div[class^="AdItem-components-adPlaceholder"]')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/65274
@@ -1688,6 +1695,11 @@ sasisa.ru#%#AG_onLoad(function() { window.Umobi = function() {}; });
 !-------CSS---------
 !-------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/68853
+filmakinesi.com#$#.nav-mobile { top: 0 !important; }
+filmakinesi.com#$#.wrapper { padding-top: 64px !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/68850
+m.investing.com#$#footer { margin-bottom: -50px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68045
 wtftime.ru#$#.adaptive_ads { position: absolute!important; left: -3000px!important; }
 ! pcgames.de - left-over at top
@@ -1788,9 +1800,8 @@ deviantart.com#$#div[class*="dp-ad-"] {height: 0!important; width: 0!important; 
 ! AMP ads in ShadowRoot
 $$amp-ad
 zoomtventertainment.com$$amp-embed[type="taboola"]
-lifestyle.24tv.ua$$div[class="within-ads"]
+24tv.ua$$div[class="within-ads"]
 dni.ru$$amp-iframe[src="https://news.gnezdo.ru/"]
-24tv.ua##div[class="within-ads"]
 vokrug.tv$$amp-embed[type="engageya"]
 finance.rambler.ru$$div[class="read-also__lentainform"]
 gordonua.com$$amp-iframe[src="https://recreativ.ru/"]
@@ -1961,8 +1972,6 @@ businessinsider.co.za#@#.ad-loaded
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47849
 @@||bc.marfeelcache.com^$domain=01net.com
 @@||bc.marfeel.com^$domain=01net.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/46739
-m.olx.ua#@#.adbox
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44518
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=games.metv.com
 ! kiss-anime.ws - broken pages iOS
@@ -2059,9 +2068,9 @@ vip.de#@#.centered-ad
 @@||amazonaws.com/www.adnigma.com^$domain=opensubtitles.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15836
 !+ PLATFORM(ios)
-@@||oclasrv.com/apu.php^$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to|animeplus.tv
+@@||oclasrv.com/apu.php^$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.in|kiss-anime.me|kimcartoon.me|readcomiconline.to|animeplus.tv
 !+ PLATFORM(ios)
-@@||deloton.com/apu.php^$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to|animeplus.tv
+@@||deloton.com/apu.php^$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.in|kiss-anime.me|kimcartoon.me|readcomiconline.to|animeplus.tv
 ! https://forum.adguard.com/index.php?threads/28124/
 @@||mc.yandex.ru/metrika/watch.js$domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
 @@||ads.adfox.ru/*/prepareCode?$domain=tv.yandex.by|tv.yandex.kz|tv.yandex.ru|tv.yandex.ua
@@ -2318,6 +2327,20 @@ amp.n-tv.de,dni.ru,independent.co.uk,komputerswiat.pl,dobreprogramy.pl,amp.pcwel
 ! ##.inline-ad-container
 avclub.com,clickhole.com,deadspin.com,gizmodo.com,jalopnik.com,jezebel.com,kotaku.com,lifehacker.com,splinternews.com,theinventory.com,theonion.com,theroot.com,thetakeout.com##.inline-ad-container
 !
+m.seonews.ru##.detail-banner-wrapper
+beritasatu.com##.flying_carpet-box
+everyeye.it##.adv-top
+zeenews.india.com##.outbrain-bg
+m.investing.com##.adDrawer
+nv.ua##.content-wrapper > div#async__head_opinions:empty
+gadgets-ndtv-com.cdn.ampproject.org##amp-iframe[src^="https://apis.kostprice.com/"]
+gadgets-ndtv-com.cdn.ampproject.org##.kpframe
+gadgets-ndtv-com.cdn.ampproject.org##._ad
+24tv.ua##div[class="within-ads"]
+ndtv.com##.mx-spon
+republicworld.com,www-republicworld-com.cdn.ampproject.org##div[class^="ads_"]
+republicworld.com##.mainWrapper > .headerContainer ~ div[style^="overflow: hidden; justify-content: center;"]
+kupidonia.ru###mobile-offer-bottom
 haberler.com##body > input[type="hidden"] + div[style]
 /sponsor/*.jpg$domain=mephimnhat.com
 mephimnhat.com##.ff-banner
@@ -2526,7 +2549,6 @@ m.eprice.com.tw##body div.parallax-ads-container
 webmd.com##.inStreamAd
 amp.welt.de##.c-commercial
 zaycev.net##div[class^="Skeletonstyled__Wrapper-"]
-eurogamer.net##.ad-container
 ad-contents.jp##.mobile-big-banner
 sozcu.com.tr###hotelHideaway
 m.lenta.ru##.b-banner__amp
@@ -2586,7 +2608,6 @@ hentaivn.net##div[class^="a_d_s_"]
 news.avclub.com##div[class="bxm4mm-15 BiRlJ"]
 molbuk.ua###copyright
 inmyroom.ru##.b-Article_banner
-mumsnet.com##.ad-container
 virtualbrest.by##img[width="230"][height="90"]
 rebenok.by##.main-index-part-rekl-mobile
 moviepilot.de##section[itemprop="articleBody"] > div[class^="sc-1sz7y6m-"]
@@ -2614,7 +2635,7 @@ weather.com##div[class*="adWrapper"]
 mobil.krone.at##div[data-krn-click-id="startseite-mobil-jackpot"]
 sciencealert.com##.ad_div
 filmyani.com##.mobilreklam
-news18.com##.adv_wrp
+www-news18-com.cdn.ampproject.org,news18.com##.adv_wrp
 greatergood.berkeley.edu##.article-mobile-ad
 twocents-lifehacker-com.cdn.ampproject.org,skillet-lifehacker-com.cdn.ampproject.org,gizmodo-com.cdn.ampproject.org##div[class="pycp4o-0 ehquwE"]
 skillet-lifehacker-com.cdn.ampproject.org,gizmodo-com.cdn.ampproject.org##div[class="bxm4mm-11 ciBKcm"]
@@ -2770,7 +2791,7 @@ porntrex.com,daftsex.com##iframe[src^="https://a.adtng.com/"]
 youjizz.com##.underPlayerPr
 ||cdn.nsimg.net/cache/landing/pr/*/yjmobile-*.xml$domain=youjizz.com
 dailywire.com##article[class^="css-"] > div[style="width: 320px; height: 50px; margin: 0px auto 32px;"]
-hurriyet.com.tr,m.news.de##amp-fx-flying-carpet[height="300px"]
+www-firstpost-com.cdn.ampproject.org,firstpost.com,m.economictimes.com,m-economictimes-com.cdn.ampproject.org,hurriyet.com.tr,m.news.de##amp-fx-flying-carpet[height="300px"]
 prothomalo.com##.anchor_ad_wrapper
 tgd.kr##body > div[style="background: #efefef;padding:0;"]
 tgd.kr##div[align="center"][style^="width:320px;height:50px;"][style*="background:url(https://upload.tgd.kr/banner/"]
@@ -2917,8 +2938,8 @@ m.timesofindia.com##.asprime1
 m.timesofindia.com##.aroundthewebconatiner
 m.tarsushaber.com##.mobile-banner-in
 howtogeek.com,www-howtogeek-com.cdn.ampproject.org##.adfullwrap
-thehindubusinessline.com,zeenews.india.com,thenewsminute.com,thehindu.com,www-thehindu-com.cdn.ampproject.org,m-jatimnow-com.cdn.ampproject.org,bisnis-tempo-co.cdn.ampproject.org##amp-fx-flying-carpet[height="300px"]
-thehindubusinessline.com,zeenews.india.com,thenewsminute.com,thehindu.com,www-thehindu-com.cdn.ampproject.org,m-jatimnow-com.cdn.ampproject.org,bisnis-tempo-co.cdn.ampproject.org##.amp-flying-carpet-text-border
+zeenews-india-com.cdn.ampproject.org,thehindubusinessline.com,zeenews.india.com,thenewsminute.com,thehindu.com,www-thehindu-com.cdn.ampproject.org,m-jatimnow-com.cdn.ampproject.org,bisnis-tempo-co.cdn.ampproject.org##amp-fx-flying-carpet[height="300px"]
+zeenews-india-com.cdn.ampproject.org,thehindubusinessline.com,zeenews.india.com,thenewsminute.com,thehindu.com,www-thehindu-com.cdn.ampproject.org,m-jatimnow-com.cdn.ampproject.org,bisnis-tempo-co.cdn.ampproject.org##.amp-flying-carpet-text-border
 ||flmallplayer.online/melbetyeni.mp4
 m.tvzvezda.ru##.partners
 m.xuehongxs.com##div[style^="height: 90px;"]
@@ -3075,7 +3096,7 @@ milliyetemlak.com##a[href][target="_blank"].sno-itunes.external > img
 pdalife.ru##.js-banner
 anifresh.com###minpack-sticker-frame
 stockingfetishvideo.com##.happy-header-mobile
-news18.com,amp.indiatimes.com,dronedj.com,bodybuilding.com,transfermarkt.de,mobil.stern.de##.ad-container
+www-news18-com.cdn.ampproject.org,eurogamer.net,mumsnet.com,news18.com,amp.indiatimes.com,dronedj.com,bodybuilding.com,transfermarkt.de,mobil.stern.de##.ad-container
 jianshu.com##.dt-open-bg[data-scene="leftBtn"]
 jianshu.com##.note-comment-above-ad-wrap
 theinventory.com,thetakeout.com,theonion.com,splinternews.com,clickhole.com,avclub.com,deadspin.com,gizmodo.com,jalopnik.com,jezebel.com,kotaku.com,lifehacker.com,theroot.com##main > div > script[type="application/ld+json"] ~ div[class*="-1 "][class*="-0 "]
@@ -3416,10 +3437,10 @@ dn.pt##.t-columns-sys-col-2 > div[class^="t-columns-sys-col-box-"]
 vip.de##.rtli-master-morecontent__items > .centered-ad
 farmacoecura.it##.miniheadermobile
 thebrickfan.com###content > center
-/widgets/exo$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.in|9anime.is|kiss-anime.me|kimcartoon.me|readcomiconline.to
-mangapanda.com,memecenter.com,mangareader.net,animeland.tv,animetoon.org,animenova.org,animewow.org,goodanime.co,animeplus.tv,animeflv.net,toonova.net,gogoanime.to,gogoanime.in,9anime.is,kiss-anime.me,readcomiconline.to###adsFloat1
-mangapanda.com,memecenter.com,mangareader.net,animeland.tv,animetoon.org,animenova.org,animewow.org,goodanime.co,animeplus.tv,animeflv.net,toonova.net,gogoanime.to,gogoanime.in,9anime.is,kiss-anime.me,readcomiconline.to##div[class^="ads"]
-mangapanda.com,memecenter.com,mangareader.net,animeland.tv,animetoon.org,animenova.org,animewow.org,goodanime.co,animeplus.tv,animeflv.net,toonova.net,gogoanime.to,gogoanime.in,9anime.is,kiss-anime.me,readcomiconline.to##iframe[src*="/Ads"]
+/widgets/exo$domain=mangapanda.com|memecenter.com|mangareader.net|animeland.tv|animetoon.org|animenova.org|animewow.org|goodanime.co|animeplus.tv|animeflv.net|toonova.net|gogoanime.to|gogoanime.in|kiss-anime.me|kimcartoon.me|readcomiconline.to
+mangapanda.com,memecenter.com,mangareader.net,animeland.tv,animetoon.org,animenova.org,animewow.org,goodanime.co,animeplus.tv,animeflv.net,toonova.net,gogoanime.to,gogoanime.in,kiss-anime.me,readcomiconline.to###adsFloat1
+mangapanda.com,memecenter.com,mangareader.net,animeland.tv,animetoon.org,animenova.org,animewow.org,goodanime.co,animeplus.tv,animeflv.net,toonova.net,gogoanime.to,gogoanime.in,kiss-anime.me,readcomiconline.to##div[class^="ads"]
+mangapanda.com,memecenter.com,mangareader.net,animeland.tv,animetoon.org,animenova.org,animewow.org,goodanime.co,animeplus.tv,animeflv.net,toonova.net,gogoanime.to,gogoanime.in,kiss-anime.me,readcomiconline.to##iframe[src*="/Ads"]
 m.accuweather.com##.outer > div[id="top"][class="top lowered"]
 silenceisconsent.net##.z-ad-display
 themercury.com.au##.widget-area-main-content > .tgc-footer-fixed
@@ -4044,6 +4065,7 @@ m.tv.yandex.by,m.tv.yandex.kz,m.tv.yandex.ru,m.tv.yandex.ua##.grid-chunk__adv-wi
 ! Yandex.Zen
 zen.yandex.by,zen.yandex.com,zen.yandex.kz,zen.yandex.ru,zen.yandex.ua##.article-render-mobile__block_embed
 ! Yandex.Weather
+yandex.md,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##div[id^="ADVERT_Y-A-"]
 yandex.md,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##div[class*="Advert_container__"]
 yandex.md,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua##div[class^="Advert_lite-container__"]
 ~afisha.yandex.by,~afisha.yandex.kz,~afisha.yandex.ru,~afisha.yandex.ua,~avia.yandex.by,~avia.yandex.kz,~avia.yandex.ru,~avia.yandex.ua,~bilet.yandex.com.tr,~disk.yandex.by,~disk.yandex.com,~disk.yandex.com.tr,~disk.yandex.fr,~disk.yandex.kz,~disk.yandex.ru,~disk.yandex.ua,~docviewer.yandex.by,~docviewer.yandex.com,~docviewer.yandex.com.tr,~docviewer.yandex.fr,~docviewer.yandex.kz,~docviewer.yandex.ru,~docviewer.yandex.ua,~flights.yandex.com,~mail.yandex.by,~mail.yandex.com,~mail.yandex.com.tr,~mail.yandex.kz,~mail.yandex.ru,~mail.yandex.ua,~money.yandex.ru,~music.yandex.by,~music.yandex.kz,~music.yandex.ru,~music.yandex.ua,~rabota.yandex.by,~rabota.yandex.kz,~rabota.yandex.ru,~rabota.yandex.ua,~radio.yandex.by,~radio.yandex.kz,~radio.yandex.ru,~radio.yandex.ua,~rasp.yandex.by,~rasp.yandex.kz,~rasp.yandex.ru,~rasp.yandex.ua,~realty.yandex.by,~realty.yandex.kz,~realty.yandex.ru,~realty.yandex.ua,~tv.yandex.by,~tv.yandex.kz,~tv.yandex.ru,~tv.yandex.ua,~yadi.sk,yandex.by,yandex.com,yandex.com.tr,yandex.fr,yandex.kz,yandex.ru,yandex.ua,~zen.yandex.by,~zen.yandex.com,~zen.yandex.kz,~zen.yandex.ru,~zen.yandex.ua##.advert_type_news.yw-news

@@ -18,8 +18,8 @@
 /pb-ads/*
 ! /lr.php?zoneid=$popup is excluded by ".php?zoneid=" in exclusions.txt
 /lr.php?zoneid=$popup
-! ://ads.$popup is excluded by "://ads.$popup" in exclusions.txt
-://ads.$popup
+! ://ads.$popup,domain=~ads.instacart.com is excluded by "://ads.$popup" in exclusions.txt
+://ads.$popup,domain=~ads.instacart.com
 ! ##.adsbox is excluded by "/^##\.adsbox$/" in exclusions.txt
 ##.adsbox
 ! ##.myTestAd is excluded by "/^##\.myTestAd$/" in exclusions.txt
@@ -32,8 +32,6 @@
 ||bubblesmedia.ru^$third-party
 ! ||lockerdome.com^$third-party is excluded by "||lockerdome.com^$third-party" in exclusions.txt
 ||lockerdome.com^$third-party
-! ||sasontnwc.net^$popup,~third-party is excluded by "$popup,~third-party" in exclusions.txt
-||sasontnwc.net^$popup,~third-party
 ! ||130.211.$popup,third-party,domain=~in-addr.arpa is excluded by "||130.211." in exclusions.txt
 ||130.211.$popup,third-party,domain=~in-addr.arpa
 ! ||216.21.13.$popup,domain=~in-addr.arpa is excluded by "||216.21." in exclusions.txt
@@ -132,7 +130,11 @@ pornhub.com,pornhubthbh7ap3u.onion,youporn.com#?#:-abp-properties(float: right; 
 @@||msn.com^$popup,~third-party
 ! @@||gelbooru.com^$popup,~third-party is excluded by "$popup,~third-party" in exclusions.txt
 @@||gelbooru.com^$popup,~third-party
+! Rule "youtube.com#@##header.ytd-c4-tabbed-header-renderer:style(position: absolute !important; left: 0 !important;)" converted to: "youtube.com#@$##header.ytd-c4-tabbed-header-renderer { position: absolute !important; left: 0 !important; }"
+youtube.com#@##header.ytd-c4-tabbed-header-renderer:style(position: absolute !important; left: 0 !important;)
 ! Rule "||slacker.com^*/getspot/?spotid=$media,rewrite=abp-resource:blank-mp3,domain=slacker.com" converted to: "||slacker.com^*/getspot/?spotid=$media,redirect=noopmp3-0.1s,domain=slacker.com"
 ||slacker.com^*/getspot/?spotid=$media,rewrite=abp-resource:blank-mp3,domain=slacker.com
+Error: "Modifier $domain cannot be empty" in the rule: "@@||mcloud.to^$script,stylesheet,media,xmlhttprequest,domain="
+@@||mcloud.to^$script,stylesheet,media,xmlhttprequest,domain=
 Error: "Unknown modifier: ~document" in the rule: "@@||lemon-ads.com^$~document,~third-party"
 @@||lemon-ads.com^$~document,~third-party
