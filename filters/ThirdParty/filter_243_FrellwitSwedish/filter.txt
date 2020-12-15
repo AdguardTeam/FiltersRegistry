@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-12-15 08:08:03 CET
+! Last modified: 2020-12-15 11:21:24 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -370,6 +370,7 @@ piraja.se###featholder:has(.spons)
 piraja.se###hero:has(.spons)
 piraja.se##.intro:has(.spons)
 polestarclubsweden.se,sjofart.net,svensktgolfforum.se#%#//scriptlet('ubo-acis.js', 'setTimeout', 'test')
+pricerunner.se#$#.noscroll { overflow: initial !important; }
 privataaffarer.se##.data-grid-teaser:has(.teaser-label:has-text(/^annons/i))
 professionalsecrets.se#%#//scriptlet('ubo-acis.js', '$', 'fancybox')
 pussad.se#$#html.g1-popup-visible { overflow: initial !important; }
@@ -1007,6 +1008,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /impressions.js$script,domain=osterbottenstidning.fi|sydin.fi|vasabladet.fi
 /infopeek.min.js$domain=svd.se
 /initLogging$script,domain=dn.se|teknikensvarld.se
+/inlist-InlistSponsored$domain=pricerunner.se
 /insert_grtv_stats.$xmlhttprequest,domain=gamereactor.se
 /integrated_ads/*$script,domain=garaget.org
 /isbanner/ib.js$script,domain=alltforforaldrar.se|mammasidan.se|minbebis.com
@@ -1493,7 +1495,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||morningstar.com/scripts/ads.js$domain=morningstar.se
 @@||nouw.com^$generichide
 @@||openx.gamereactor.dk/www/delivery/fc.php$xmlhttprequest,domain=gamereactor.se
-@@||pricerunner.se^$generichide
 @@||remus.garaget.org/www/delivery/$script,~third-party,xmlhttprequest
 @@||sdk.pulse.schibsted.com/loader.min.js$domain=special.aftonbladet.se
 @@||stockblogs.se^$generichide
@@ -2399,7 +2400,8 @@ pomu.se##.Games-addLateral
 pomu.se##[class^="Banner"]
 popularastronomi.se##a.gofollow[data-track]:not([href*="www.popularastronomi.se"])
 posh24.se##.bannerArea
-pricerunner.se###data-protection-notification
+pricerunner.se###root > div[class]:not([id]):first-of-type
+pricerunner.se##a[href*="&clickarea=sponsored"]
 professionalsecrets.se##div[data-campaign="newsletter"]
 proffs.se##.cookie-wrapper
 pussad.se##.g1-popup-newsletter, .g1-slideup-wrap
