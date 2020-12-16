@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 20.351.779
+! OriginalVersion: 20.351.1208
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 16 Dec 2020 12:59 UTC
+! Last modified: 16 Dec 2020 20:08 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -943,7 +943,13 @@ _GIF1200x120-
 ##.ads-skin__fluid--left
 ##.ads-skin__fluid--right
 ##.ads-skycraper
+##.ads-sticky-atas
+##.ads-sticky-bawah
 ##.ads-sticky-bottom
+##.ads-sticky-kanan
+##.ads-sticky-kiri
+##.ads-sticky-left
+##.ads-sticky-right
 ##.ads-top-bottom-headline
 ##.ads-two
 ##.ads-widget-kanan
@@ -1002,6 +1008,12 @@ _GIF1200x120-
 ##.adstengah
 ##.adtext01
 ##.adunits
+##.adv-sticky-atas
+##.adv-sticky-bawah
+##.adv-sticky-kanan
+##.adv-sticky-kiri
+##.adv-sticky-left
+##.adv-sticky-right
 ##.advads-before-content
 ##.advads-widget
 ##.advs_box
@@ -1416,6 +1428,12 @@ _GIF1200x120-
 ##.iklan-sedangkanan
 ##.iklan-sedangkiri
 ##.iklan-slot
+##.iklan-sticky-atas
+##.iklan-sticky-bawah
+##.iklan-sticky-kanan
+##.iklan-sticky-kiri
+##.iklan-sticky-left
+##.iklan-sticky-right
 ##.iklan-tengah-artikel
 ##.iklan-tengah1
 ##.iklan-tengah2
@@ -1803,12 +1821,6 @@ _GIF1200x120-
 ##[src*="/iklan/"]
 ##div[id^="dfp-gpt-ad"]
 ##img[data-permalink^="/apps/iklan-"]
-!
-! INCORRECT BLOCKING (INTERNATIONAL)
-! https://github.com/AdguardTeam/AdguardFilters/issues/69599
-~banki24.by##.banner1
-! https://github.com/AdguardTeam/AdguardFilters/issues/70089
-~memepedia.ru##.banner-top
 !
 ##[href*="//geni.us/bnrbrg"] > img
 ##[href*="//goraps.com/fullpage.php?"] > img
@@ -2694,11 +2706,12 @@ pickybest.id###fixedban
 priceza.co.id###mobilePopupBtm
 historia-id.cdn.ampproject.org,www-computer1001-com.cdn.ampproject.org##.amp-flying-carpet-text-border
 parenting-orami-co-id.cdn.ampproject.org##.container:has-text(ADV)
+kincir.com##.entry-content > .caption.text-center:-abp-contains(ADV)
 www-cermati-com.cdn.ampproject.org##.sticky-banner-wrapper
 www-kincir-com.cdn.ampproject.org##.text-center:-abp-contains(ADV)
 m.kaskus.co.id##.threadDetail a[target="_blank"] img[src^="https://s.kaskus.id/images/"]
 www-cermati-com.cdn.ampproject.org##a[target="_blank"] > amp-img
-historia-id.cdn.ampproject.org,jalantikus-com.cdn.ampproject.org,keepo-me.cdn.ampproject.org,www-computer1001-com.cdn.ampproject.org,www-kincir-com.cdn.ampproject.org##amp-fx-flying-carpet
+gamebrott-com.cdn.ampproject.org,historia-id.cdn.ampproject.org,jalantikus-com.cdn.ampproject.org,keepo-me.cdn.ampproject.org,kincir.com,www-computer1001-com.cdn.ampproject.org,www-kincir-com.cdn.ampproject.org##amp-fx-flying-carpet
 !
 dutaislam.com#$##xmlthemes-feat1 { margin-top:60px!important; }
 dutaislam.com#$#.outer-wrapper { margin-top:60px!important; }
@@ -8801,8 +8814,10 @@ m.kaskus.co.id##[id^="postdeleted"]
 !
 ! ANTI-RIGHT-CLICK
 ! --------------------------------------------------------------
-1001tutorial.com,blogsecond.com,ilmumemikatwanita.com,psikologicinta.com,radiokucing.com,teraa.net#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')
-mahirngoding.blogspot.com,nomis.id#%#//scriptlet('ubo-aeld.js', 'contextmenu')
+1001tutorial.com,blogsecond.com,ilmumemikatwanita.com,kherysuryawan.id,psikologicinta.com,radiokucing.com,teraa.net#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')
+mahirngoding.blogspot.com,nomis.id,websiteedukasi.com#%#//scriptlet('ubo-aeld.js', 'contextmenu')
+guru-id.com#%#//scriptlet('ubo-aopr.js', 'document.oncontextmenu')
+ainamulyana.blogspot.com#%#//scriptlet('ubo-ra.js', 'oncontextmenu', 'body')
 /ZaloSec/chuotphai/*$script
 !
 ! ANTI-SELECT
@@ -8813,12 +8828,12 @@ radiokucing.com#%#//scriptlet('ubo-acis.js', 'disableselect', 'reEnable')
 nomis.id#%#//scriptlet('ubo-aeld.js', 'selectstart')
 satugoogle.blogspot.com,steffifauziah.com#%#//scriptlet('ubo-set.js', 'document.onselectstart', 'noopFunc')
 bisablog.com#$#.entry-content { user-select: text !important; -webkit-touch-callout: default !important; }
-ataeh.blogspot.com,bungfrangki.com,dewaplokis.com,dezige-in.blogspot.com,infoastronomy.org,teknolalat.com,webkeren.net#$#.post-body { user-select: text !important; -webkit-touch-callout: default !important; }
+ataeh.blogspot.com,bungfrangki.com,datadikdasmen.com,dewaplokis.com,dezige-in.blogspot.com,geograpik.blogspot.com,infoastronomy.org,infoguruku.net,teknolalat.com,webkeren.net#$#.post-body { user-select: text !important; -webkit-touch-callout: default !important; }
 jagoandzgn.com,serieswans.com#$#.post-outer { user-select: text !important; -webkit-touch-callout: default !important; }
-indravedia.com,santaibareng.net,tigaribu.net#$#.post { user-select: text !important; -webkit-touch-callout: default !important; }
+indravedia.com,kherysuryawan.id,santaibareng.net,tigaribu.net#$#.post { user-select: text !important; -webkit-touch-callout: default !important; }
 suatekno.id#$#.td-post-content { user-select: text !important; -webkit-touch-callout: default !important; }
 ilmumemikatwanita.com,psikologicinta.com#$#.unselectable { user-select: text !important; -webkit-touch-callout: default !important; }
-blogsecond.com,igniel.com,inblogspot.com,mahirngoding.blogspot.com,mrmung.com,ponselsoak.com#$#body { user-select: text !important; -webkit-touch-callout: default !important; }
+blogsecond.com,igniel.com,inblogspot.com,mahirngoding.blogspot.com,mrmung.com,ponselsoak.com,websiteedukasi.com#$#body { user-select: text !important; -webkit-touch-callout: default !important; }
 !
 ! ANTI-COPY
 ! --------------------------------------------------------------
@@ -9344,6 +9359,7 @@ kontan.co.id###div-Halfpage-Regional
 kontan.co.id###div-Halfpage-Yangter
 ayobekasi.net,ayobogor.com,ayocirebon.com,ayopurwakarta.com,ayosurabaya.com,ayotasik.com###fix-banner-top
 faktabanten.co.id,seruji.co.id###fixedban
+kontan.co.id###fixslowshow
 apahabar.com###header-banner
 kompas.com###js-banner-sticky
 swarnajambi.co.id###leader-wrap
@@ -9351,6 +9367,7 @@ detik.com###otp_banner
 apahabar.com###sidebar-right img[width="300"][height="132"]
 bola.net###top_leaderboard
 beritasatu.com###topbanner
+kontan.co.id###tutup_box
 kapanlagi.com###v5-marcommpromotion
 kapanlagi.com###v5-marcommpromotion2
 kapanlagi.com###v5-showcase2
@@ -10284,6 +10301,22 @@ droidtamvan.me,movienear.me,onlinecorp.me,sekilastekno.com##img[width="200"][hei
 ||mrfog.com^$domain=dr-farfar.net
 ||safeku.com/uploads/getlink.jpg$image
 ||semawur.com/o.png$image
+! *** abid:src/packages/international.adbl ***
+apkmody.io###above-the-fold-ad
+uptodown.com##.ad
+apk.support##.ad-box
+apkpure.com##.ad-box-auto
+apk.support##.advertisement
+filehorse.com##.dx-sb-1
+androidapksfree.com##.header-ad-heading
+! Mobile
+apk-support.cdn.ampproject.org##.advertisement
+!
+! INCORRECT BLOCKING (INTERNATIONAL)
+! https://github.com/AdguardTeam/AdguardFilters/issues/70089
+~memepedia.ru##.banner-top
+! https://github.com/AdguardTeam/AdguardFilters/issues/69599
+~banki24.by##.banner1
 ! ------------------------------------------------------------!
 ! *** abid:src/anti-adblock.adbl ***
 -adblock-notice-
@@ -10452,5 +10485,5 @@ iklanpopuler.com,sebariklanbaris.net,ziyata.com#@#[src*="/iklan/"]
 !
 ! https://github.com/realodix/AdBlockID/issues/467
 @@/social-sharing-$script,domain=axe.com
-! Checksum: SyyTwehlRnnnBALSCWE4gQ
+! Checksum: 9qnAZv5b4nv5xTNyyeJ0rA
 
