@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-12-15 18:09:48 CET
+! Last modified: 2020-12-16 15:30:53 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -45,6 +45,7 @@ accentmagasin.se#%#//scriptlet('ubo-nostif.js', 'n.modal')
 adlanda.se,babyhjalp.se,omnihalsa.com#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')
 affarsliv.com,affarslivgotland.se,affarsvarlden.se,allas.se,arvikanyheter.se,baaam.se,barometern.se,blt.se,bt.se,cafe.se,corren.se,dalslanningen.se,ekuriren.se,elle.se,eposten.se,expressen.se,femina.se,filipstadstidning.se,folkbladet.se,fragbite.se,fryksdalsbygden.se,goteborgdirekt.se,gotland.net,hant.se,helagotland.se,hjotidning.se,ibnytt.se,karlskogatidning.se,kindaposten.se,kingmagazine.se,kkuriren.se,klackspark.com,kristianstadsbladet.se,kt.se,kuriren.nu,lwcdn.com,mariestadstidningen.se,mestmotor.se,mitti.se,modette.se,mvt.se,nkp.se,nlt.se,norran.se,norrbottensaffarer.se,nsd.se,nsk.se,nt.se,nwt.se,olandsbladet.se,ostrasmaland.se,provinstidningen.se,pt.se,realtid.se,saffletidningen.se,skanesport.se,skd.se,sla.se,smp.se,sn.se,strengnastidning.se,svenskanamn.se,svenskdam.se,sydostran.se,thelocal.se,trelleborgsallehanda.se,unt.se,ut.se,varmlandsaffarer.se,vasterastidning.se,vf.se,viivilla.se,vimmerbytidning.se,vt.se,youplay.se,ystadsallehanda.se#%#//scriptlet('ubo-json-prune.js', 'autoplay')
 affarsstaden.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'adblockdetect')
+affarsvarlden.se##article:has(span:has-text(/annons/i))
 aftonbladet.se#$?#.jwplayer:has(.svp-sponsor-label) { remove: true; }
 aftonbladet.se##a[href*="/kampanj/artikel"]:upward(1)
 aftonbladet.se##a[href^="/tv/"]:has(span:has-text(/studio oddset/i)):upward(1)
@@ -421,6 +422,7 @@ sverak.se#%#//scriptlet('ubo-set.js', 'disableSelection', 'noopFunc')
 sverak.se#%#//scriptlet('ubo-set.js', 'nocontext', 'undefined')
 sverak.se#$#.unselectable, html { user-select: initial !important; -moz-user-select: initial !important; -webkit-user-select: initial !important; cursor: initial !important; -webkit-touch-callout: initial !important; }
 sverigespringer.se##.cd-sidebar-item, .cd-news-card:has(.cd-card-bar:has-text(/annons/i))
+swedroid.se##.article:has(span:has-text(/sponsr/i))
 swedroid.se#$?#li.Notice:has(a[target="_blank"]) { remove: true; }
 swehockey.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'adscript')
 tasteline.com#$#.popup { overflow: auto !important; }
@@ -1084,6 +1086,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /native.html$domain=allakorsord.se|allas.se|baaam.se|dromhemochtradgard.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se
 /native.js$domain=aktuellhallbarhet.se
 /native?$domain=hd.se|sydsvenskan.se|varden.se
+/native_$script,domain=affarsvarlden.se
 /new_construction_ads/*$domain=hemnet.se
 /newsletter/*$domain=zalando.se
 /nodecounter/*?token$image,domain=ng.se
@@ -1515,8 +1518,8 @@ affarsstaden.se##.esb-ad
 affarsstaden.se##.esb-front-news-roll-ad
 affarsstaden.se##.listing-partner
 affarsvarlden.se##.cookies-wrap
+affarsvarlden.se##.kingstreet-media-section
 affarsvarlden.se,alekuriren.se,arbetarskydd.se,arvikanyheter.se,byggahus.se,dalslanningen.se,expressen.se,filipstadstidning.se,filmtopp.se,fryksdalsbygden.se,hjotidning.se,improveme.se,karlskogatidning.se,kt.se,kungalvsposten.se,kungsbackaposten.se,lag-avtal.se,lokaltidningensto.se,mariestadstidningen.se,molndalsposten.se,nickelodeon.se,nkp.se,nlt.se,nwt.se,nyteknik.se,provinstidningen.se,saffletidningen.se,sla.se,varmlandsaffarer.se,vf.se##.ad-container
-affarsvarlden.se,arbetarskydd.se,lag-avtal.se,nyteknik.se##.sponsored-box
 aftonbladet.se###MegaAd
 aftonbladet.se##.ab-responsive-ads-wrapper
 aftonbladet.se##[classname="speltipsMarkup"]
@@ -1616,6 +1619,7 @@ arbetarskydd.se,lag-avtal.se,nyteknik.se##.ads-only
 arbetarskydd.se,lag-avtal.se,nyteknik.se##.annonstorget
 arbetarskydd.se,lag-avtal.se,nyteknik.se##.disable-ad-marks
 arbetarskydd.se,lag-avtal.se,nyteknik.se##.social-teasers
+arbetarskydd.se,lag-avtal.se,nyteknik.se##.sponsored-box
 arbetarskydd.se,lag-avtal.se,nyteknik.se##a[href*="/sponsrad/"]
 arbetarskydd.se,lag-avtal.se,nyteknik.se##a[href*="utm_campaign"][target="_blank"]
 arbetarskydd.se,lag-avtal.se,nyteknik.se##section.sponsored-articles-inline
