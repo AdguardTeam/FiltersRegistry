@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-12-19 10:14:22 CET
+! Last modified: 2020-12-20 09:25:50 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -491,6 +491,7 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||biowebb-data.s3.amazonaws.com^*/ad_loader$important,script
 ||byggkonsult.org^$all
 ||cdn.segment.com/analytics.js$important,script,domain=dagen.se|se.trustpilot.com|studocu.com|tholin.se
+||fast.fonts.net/t/1.css$redirect=nooptext,domain=pbswisstools.com
 ||freewheel-mtgx-tv.akamaized.net^$media,redirect=noopmp4-1s,domain=viafree.se
 ||google-analytics.com^$important,domain=aftonbladet.se|tradera.com|xxl.se
 ||googletagmanager.com^$important,domain=tradera.com|xxl.se
@@ -515,9 +516,7 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||tm.tradetracker.net/tag?$important,script,domain=agneswinqvist.se|enkelteknik.se|everydayexplorers.org|moviezine.se|netikett.se
 ||viafree.se/collect$important,xmlhttprequest
 ||youbora.com^$important,third-party,domain=aftonbladet.se|foxtv.se|svd.se
-!#if env_firefox
-!#endif
-!#if !env_firefox
+!#if env_chromium
 proffs.se#$#*::-webkit-scrollbar-thumb { background: #5e5e5e !important; border: 64px none #ffffff !important; border-radius: 0px !important; }
 proffs.se#$#*::-webkit-scrollbar { display: unset !important; }
 nyadagbladet.se#%#//scriptlet('ubo-acis.js', 'OneSignal')
@@ -528,6 +527,9 @@ di.se#%#//scriptlet('ubo-nosiif.js', 'runAdBlockPaywall', '1000')
 bastad.se,brpsystems.se,fysikstugan.se,gdpr.se,heleneholmsif.se,historiskahem.se,melodifestivalklubben.se,newsvoice.se,nyadagbladet.se,pppress.se,thorengruppen.se,trafikskola.se,utslappsratt.se#%#//scriptlet('ubo-set.js', 'em_track_user', 'false')
 bandyfeber.com,binero.se,boktugg.se,carup.se,dagensanalys.se,dinbyggare.se,ettgottskratt.se,exakt24.se,humorbibeln.se,i-chalmers.se,kvalitetsmagasinet.se,kvartal.se,ladok.se,lchfarkivet.se,miljo-utveckling.se,mobilanyheter.net,newsner.com,rikatillsammans.se,sportbibeln.se,sportpanelen.se,telekomidag.se,trafiksakerhet.se,vdtidningen.se,zeinaskitchen.se#%#//scriptlet('ubo-set.js', 'mi_track_user', 'false')
 ||prod-adops-proxy.dnitv.net^$redirect=nooptext,domain=dplay.se
+!#endif
+!#if !env_chromium
+@@||fast.fonts.net/t/1.css$domain=pbswisstools.com
 !#endif
 !#if env_mobile
 aftonbladet.se#%#//scriptlet('ubo-nostif.js', 'abAndroidSmartAppBannerActive')
@@ -588,8 +590,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
