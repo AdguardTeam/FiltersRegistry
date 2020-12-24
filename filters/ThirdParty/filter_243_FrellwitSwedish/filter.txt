@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-12-23 19:41:19 CET
+! Last modified: 2020-12-24 13:45:02 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -439,6 +439,7 @@ www.svd.se#%#//scriptlet('ubo-acis.js', 'SvD', 'preDefineAd')
 www.svd.se#%#//scriptlet('ubo-aopr.js', 'navigator.sendBeacon')
 xlbygg.se#$#.main.cookiewarning { margin-top: 0 !important }
 youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
+||2mdn.net^$media,redirect=noopmp4-1s,domain=viafree.se
 ||aftonbladet.se.senaste.$document
 ||aftonbladet.se/kampanj/casinoguide$all
 ||amazon-adsystem.com^$third-party,important,domain=bilresaieuropa.se
@@ -467,7 +468,6 @@ youplay.se#%#//scriptlet('ubo-aeld.js', 'loadstart')
 ||ssl.p.jwpcdn.com^*/sharing.js$important,script,domain=aftonbladet.se|eurosport.se|freeride.se|happyride.se
 ||ssl.p.jwpcdn.com^*/vast.js$important,script,domain=moviezine.se
 ||tm.tradetracker.net/tag?$important,script,domain=agneswinqvist.se|enkelteknik.se|everydayexplorers.org|moviezine.se|netikett.se
-||viafree.se/collect$important,xmlhttprequest
 ||youbora.com^$important,third-party,domain=aftonbladet.se|foxtv.se|svd.se
 !#if env_chromium
 proffs.se#$#*::-webkit-scrollbar-thumb { background: #5e5e5e !important; border: 64px none #ffffff !important; border-radius: 0px !important; }
@@ -872,6 +872,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /check-paywall$domain=dn.se
 /citygate/payingcompanies$xmlhttprequest
 /clickperformance$domain=radio.se
+/client-stream-events$domain=viafree.se
 /closest-native$domain=expressen.se
 /cm-ad-changer-server
 /cmp.js$script,domain=recept.se|reseguiden.se
@@ -1417,9 +1418,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||fannystaaf.se^$generichide
 @@||feed.meltwater.com^$subdocument
 @@||freeride.nu/js/ads.js$script,domain=happyride.se
-@@||fwmrm.net/ad/$image,xmlhttprequest,domain=viafree.se
 @@||fwmrm.net/ad/$script,domain=dplay.se
-@@||fwmrm.net/crossdomain.xml$xmlhttprequest,domain=viafree.se
+@@||fwmrm.net^$image,xmlhttprequest,domain=viafree.se
 @@||game-cdn.poki.com^$subdocument
 @@||games.softgames.com/assets/advertisement.js$script
 @@||games.softgames.com/assets/showads.js$script
@@ -1444,7 +1444,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 _jquery.blockUI.$script,domain=fssweden.se
 aapl.se,digilar.se,hrnytt.se,ljuskultur.se,omvarlden.se,svenskfotboll.se##.cookies
 accentmagasin.se##.site-cookies
-adecco.se###onetrust-consent-sdk
+adecco.se,viafree.se###onetrust-consent-sdk
 affarsliv.com,affarslivgotland.se,allsvenskan.se,alltomstockholm.se,babyhjalp.se,branschkoll.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,fotosidan.se,globalportalen.org,helagotland.se,kindaposten.se,kkuriren.se,klackspark.com,kollega.se,kuriren.nu,moviezine.se,mvt.se,norrbottensaffarer.se,nsd.se,nt.se,osterbottenstidning.fi,pt.se,sn.se,tasteline.com,unt.se,vimmerbytidning.se,vt.se##.ads
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kindaposten.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norran.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,strengnastidning.se,unt.se,vimmerbytidning.se,vt.se##.cdk-overlay-pane
 affarsliv.com,affarslivgotland.se,corren.se,ekuriren.se,eposten.se,folkbladet.se,helagotland.se,kindaposten.se,kkuriren.se,klackspark.com,kuriren.nu,mvt.se,norran.se,norrbottensaffarer.se,nsd.se,nt.se,pt.se,sn.se,strengnastidning.se,unt.se,vimmerbytidning.se,vt.se##ad-iris-sunt-ad-wrapper, ad-block
@@ -2479,7 +2479,7 @@ veckorevyn.com##.category-partner-promotion
 veterinarmagazinet.se##.nyhet-ad
 vi.se##.cookieNotification
 via.tt.se##.footer__notification
-viafree.se##.pause-ad-container, .pause-ad, .ad-click-through
+viafree.se##.pause-ad-container, .ad-click-through
 vibilagare.se##a[href^="/partnermaterial/"]
 viivilla.se###product-area
 viivilla.se##.afubar-top, .native-ad-md, .sp-article
@@ -2639,7 +2639,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||citygate.se^*/mainads$xmlhttprequest
 ||citygate.se^*/statistics$xmlhttprequest
 ||ck.page^$third-party
-||client-stream-events.mtg-api.com^$domain=viafree.se
 ||cmatch.idg.se^
 ||cms.catena.media/js/cm-tracking.$script
 ||collect.breakit.se^$xmlhttprequest
