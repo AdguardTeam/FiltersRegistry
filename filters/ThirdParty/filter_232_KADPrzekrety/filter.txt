@@ -4,8 +4,8 @@
 ! Homepage: https://kadantiscam.netlify.app
 ! Title: KAD - Przekręty
 ! Description: Filtry chroniące przed różnego rodzaju przekrętami i oszustwami, takimi jak np. subskrypcje SMS, wirusy i fałszywe sklepy internetowe. Oprócz własnego zestawu, zawierają one również wpisy z list stworzonych przez takie zespoły jak np. CERT Polska, legalniewsieci.pl i KNF.
-! Last modified: Fri, 25 Dec 2020, 16:05 UTC+01
-! OriginalVersion: 2020.12.25.1
+! Last modified: Fri, 25 Dec 2020, 20:05 UTC+01
+! OriginalVersion: 2020.12.25.2
 ! Expires: 2 days
 ! Licencja: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ! GitHub: https://github.com/PolishFiltersTeam/KAD
@@ -2182,6 +2182,7 @@
 ||4ur.click^$all
 ||15b37.skroc.pl^$all
 ||37.1.209.213^$all
+||37.228.116.200^$all
 ||45.145.185.65^$all
 ||51.77.145.209^$all
 ||51.210.43.4^$all
@@ -2304,6 +2305,11 @@
 /^https?:\/\/([\w]{1,4}\.)?.*-?emonitoring-?e?poczta[\w]{1,14}/$all
 /^https?:\/\/([\w]{1,4}\.)?.*-?(fakty?|news|wiadomosci?)gwalt(\d+)?\.[\w]{2,14}/$all
 /^https?:\/\/([\w]{1,4}\.)?\d+platnosci?\.online/$all
+/_foobar.$domain=~example.com
+/_foobar.$domain=~example.com,badfilter
+/_foobar.$domain= ~ example.com,badfilter
+_foobar.$domain=~example.com|~example.org
+_foobar.$domain=~example.com|~example.org,badfilter
 ||0b8cc331813049912.temporary.link^$all
 ||0e0.eu^$all
 ||0ff.page^$all
@@ -2332,7 +2338,6 @@
 ||4k.123moviesfox.xyz^$all
 ||4office.pl^$all
 ||4stronyzdrowia.com^$all
-||4.ogloszeniateraz97.club^$all
 ||5kplayer.pl^$all
 ||6m.pl^$all
 ||7demka24h7.live^$all
@@ -2346,7 +2351,6 @@
 ||24-biznes.eu^$all
 ||24.daily-news-24.com^$all
 ||24.ogloszeniateraz97.club^$all
-||37.228.116.200^$all
 ||60dnipremium.cloud^$all
 ||82-118-23-62.cprapid.com^$all
 ||96b4d58e213077161.temporary.link^$all
@@ -2957,15 +2961,9 @@
 ||delivery2you.page.link^$all
 ||delivery-olx-pl.info^$all
 ||delivery-pl-olx.site^$all
-||delivery.olx-pl.com^$all
-||delivery.olx-pl.link^$all
-||delivery.olx-pl.us^$all
-||delivery.olx.oferta.contact^$all
-||delivery.olx.oferta.fyi^$all
-||delivery.olx.oferta.lol^$all
-||delivery.olx.oferta.surf^$all
-||delivery.olx.pl-oferta.shop^$all
-||delivery.olx.pl-oferta.xyz^$all
+||delivery.olx-pl.*^$all
+||delivery.olx.oferta.*^$all
+||delivery.olx.pl-oferta.*^$all
 ||deliver-post.com^$all
 ||del-sieradz.neostrada.pl^$all
 ||demo.website.pl^$all
@@ -3011,10 +3009,7 @@
 ||dnw5n74x7xkb4qg.surrterreproperties.com^$all
 ||dobierajmy-wygranych.eu^$all
 ||dobrapolozna.pl^$all
-||dobrapraca2.ct8.pl^$all
-||dobrapraca3.ct8.pl^$all
-||dobrapraca4.ct8.pl^$all
-||dobrapraca.ct8.pl^$all
+||dobrapraca*.ct8.pl^$all
 ||dobra-bramka-sms.pl^$all
 ||dobra-notka.eu^$all
 ||dobreprogramy.pro^$all
@@ -3056,11 +3051,8 @@
 ||dostawaolx.site^$all
 ||dostawapost24.pl^$all
 ||dostawa-dhl.net^$all
-||dostawa-olx-pl.info^$all
-||dostawa-olx-pl.net^$all
-||dostawa-olx.eu^$all
-||dostawa-olx.org^$all
-||dostawa-olx.pl^$all
+||dostawa-olx-pl.*^$all
+||dostawa-olx.*^$all
 ||dostawa-paczki.com^$all
 ||dostawowo.com^$all
 ||dostawpack.com^$all
@@ -4590,6 +4582,7 @@
 ||oglaszamy-yorki.dkonto.pl^$all
 ||oglaszamy.ct8.pl^$all
 ||ogloszenia24.dfirma.pl^$all
+||ogloszeniateraz97.club^$all
 ||ogloszenia-24.cba.pl^$all
 ||ogloszenia-olx.you2.pl^$all
 ||ogloszenia-online.ct8.pl^$all
@@ -4623,8 +4616,7 @@
 ||olflowdesign.at^$all
 ||ollando.com^$all
 ||olszewski.ehost.pl^$all
-||olxdostawa.com^$all
-||olxdostawa.pl^$all
+||olxdostawa.*^$all
 ||olxm.epay-trade.ru^$all
 ||olxoferta.site^$all
 ||olxpaypl.pl^$all
@@ -4633,8 +4625,7 @@
 ||olxpln.site^$all
 ||olxplsafe.xyz^$all
 ||olxpl-3ds.zapls.site^$all
-||olxpl-dostawa.com^$all
-||olxpl-dostawa.net^$all
+||olxpl-dostawa.*^$all
 ||olxpl-oplata.online^$all
 ||olxpl-order.*^$all
 ||olxpl-pays.online^$all
@@ -4673,22 +4664,10 @@
 ||olx-c.pl^$all
 ||olx-deliverry.info^$all
 ||olx-deliverry.name^$all
-||olx-delivers.com^$all
-||olx-delivers.info^$all
-||olx-delivers.name^$all
-||olx-delivery.biz^$all
-||olx-delivery.in^$all
-||olx-delivery.me^$all
-||olx-deliver.cc^$all
-||olx-deliver.su^$all
-||olx-dostava.pl^$all
-||olx-dostava.su^$all
-||olx-dostawa.app^$all
-||olx-dostawa.cc^$all
-||olx-dostawa.co^$all
-||olx-dostawa.in^$all
-||olx-dostawa.mobi^$all
-||olx-dostawa.pro^$all
+||olx-delivers.*^$all
+||olx-delivery.*^$all
+||olx-deliver.*^$all
+||olx-dostava.*^$all
 ||olx-dostawa.*^$all
 ||olx-d.org^$all
 ||olx-d.pl^$all
@@ -4717,34 +4696,25 @@
 ||olx-pays.pl^$all
 ||olx-pay.org^$all
 ||olx-pln.eu^$all
-||olx-pl-delivery.cc^$all
-||olx-pl-delivery.info^$all
-||olx-pl-delivery.su^$all
+||olx-pl-delivery.*^$all
 ||olx-pl-dostava.cc^$all
-||olx-pl-dostawa.cc^$all
-||olx-pl-dostawa.info^$all
-||olx-pl-dostawa.net^$all
-||olx-pl-id-749141.ru^$all
-||olx-pl-id-759147.ru^$all
+||olx-pl-dostawa.*^$all
+||olx-pl-id-*.ru^$all
 ||olx-pl-mobile.site^$all
 ||olx-pl-oferta.eu^$all
 ||olx-pl-platnosci.info^$all
 ||olx-pl.3dsecure-cash.online^$all
 ||olx-pl.cc^$all
-||olx-pl.com-id235823.ru^$all
+||olx-pl.com-*.ru^$all
 ||olx-pl.dostawa.pro^$all
 ||olx-pl.eutransfer.info^$all
 ||olx-pl.eu^$all
-||olx-pl.id-3456784.ru^$all
+||olx-pl.id-*.ru^$all
 ||olx-pl.info^$all
 ||olx-pl.mirpay.info^$all
 ||olx-pl.ml^$all
 ||olx-pl.net^$all
-||olx-pl.oferta-pay.digital^$all
-||olx-pl.oferta-pay.fun^$all
-||olx-pl.oferta-pay.life^$all
-||olx-pl.oferta-pay.live^$all
-||olx-pl.oferta-pay.xyz^$all
+||olx-pl.oferta-pay.*^$all
 ||olx-pl.oferta.pw^$all
 ||olx-pl.online^$all
 ||olx-pl.org^$all
@@ -4753,11 +4723,9 @@
 ||olx-pl.pro^$all
 ||olx-pl.pw^$all
 ||olx-pl.pxd-pay.online^$all
-||olx-pl.ru-online.info^$all
-||olx-pl.ru-protect.com^$all
+||olx-pl.ru-*.*^$all
 ||olx-pl.su^$all
-||olx-poland.com^$all
-||olx-poland.pl^$all
+||olx-poland.*^$all
 ||olx-polland.com^$all
 ||olx-protection.pl^$all
 ||olx-pro.pl^$all
@@ -4770,17 +4738,13 @@
 ||olx-shipping.eu^$all
 ||olx-si.pl^$all
 ||olx-spedycja.pl^$all
-||olx-transfer.info^$all
-||olx-transfer.pl^$all
+||olx-transfer.*^$all
 ||olx-u.pl^$all
 ||olx-weryfikacja.pl^$all
 ||olx-wyplata.pl^$all
 ||olx-w.pl^$all
 ||olx-y.pl^$all
-||olx-zamowienie.co^$all
-||olx-zamowienie.eu^$all
-||olx-zamowienie.me^$all
-||olx-zamowienie.org^$all
+||olx-zamowienie.*^$all
 ||olx-zaplata.com^$all
 ||olx-zaplata.pl^$all
 ||olx-z.pl^$all
@@ -4789,23 +4753,16 @@
 ||olx.cards2pays.online^$all
 ||olx.com-id235823.ru^$all
 ||olx.com-id381949.xyz^$all
-||olx.deliverry.org^$all
-||olx.deliverry.su^$all
+||olx.deliverry.*^$all
 ||olx.deliverys.pl^$all
-||olx.delliverry.name^$all
-||olx.delliverry.net^$all
-||olx.delliverry.org^$all
-||olx.delliverry.su^$all
 ||olx.delliverry.*^$all
 ||olx.dellivers.info^$all
 ||olx.dellivers.net^$all
 ||olx.dellivery.*^$all
 ||olx.doreczanie.pl^$all
-||olx.dostawa.me^$all
-||olx.dostawa.name^$all
-||olx.dostawa.su^$all
-||olx.dostaw.biz^$all
-||olx.dostaw.name^$all
+||olx.dostawa-secure.com^$all
+||olx.dostawa.*^$all
+||olx.dostaw.*^$all
 ||olx.epay-trade.ru^$all
 ||olx.ilpay.ru^$all
 ||olx.informacja-pl.info^$all
@@ -4813,27 +4770,17 @@
 ||olx.merch-pays.ru^$all
 ||olx.oplata-is.com^$all
 ||olx.ortymac-pay.store^$all
-||olx.payment-otrymac.store^$all
 ||olx.payment-otrymac.*^$all
 ||olx.paysdeals.ru^$all
 ||olx.pay-euro.eu^$all
 ||olx.pay-otrymac.store^$all
 ||olx.pay-safe.store^$all
-||olx.pl-474693.site^$all
-||olx.pl-476693.site^$all
-||olx.pl-477693.site^$all
-||olx.pl-478693.site^$all
-||olx.pl-dostawa.com^$all
-||olx.pl-dostawa.ru^$all
-||olx.pl-dostawa.site^$all
-||olx.pl-id201926-order.mcdir.ru^$all
-||olx.pl-id202011-order.site^$all
+||olx.pl-dostawa.*^$all
 ||olx.pl-id335823.ru^$all
 ||olx.pl-id345823.ru^$all
 ||olx.pl-id431571.site^$all
 ||olx.pl-id519249.icu^$all
 ||olx.pl-id1488322.site^$all
-||olx.pl-id2046801-order.ru^$all
 ||olx.pl-id3221488.site^$all
 ||olx.pl-id6239662.info^$all
 ||olx.pl-id6379662.info^$all
@@ -4843,6 +4790,7 @@
 ||olx.pl-id41464578.com^$all
 ||olx.pl-id73885935.info^$all
 ||olx.pl-id741566512.net^$all
+||olx.pl-id*-order.*^$all
 ||olx.pl-m.xyz^$all
 ||olx.pl-odbior.site^$all
 ||olx.pl-oferta.*^$all
@@ -4852,10 +4800,7 @@
 ||olx.pl-otrymac.online^$all
 ||olx.pl-payx.site^$all
 ||olx.pl-przesylka.cc^$all
-||olx.pl-przesylka.club^$all
-||olx.pl-przesylka.link^$all
-||olx.pl-przesylka.live^$all
-||olx.pl-przesylka.site^$all
+||olx.pl-przesylka.*^$all
 ||olx.pl-safedeal.fun^$all
 ||olx.pl-safedeal.link^$all
 ||olx.pl-safedeal.store^$all
@@ -4864,8 +4809,9 @@
 ||olx.pl-track.online^$all
 ||olx.pl-track.uno^$all
 ||olx.pl-wysylka.info^$all
+||olx.pl-*-order.*^$all
+||olx.pl-*.site^$all
 ||olx.pl.delivery-pays.pw^$all
-||olx.pl.dostawa.website^$all
 ||olx.pl.dostawa.*^$all
 ||olx.pl.dostawy-online.info^$all
 ||olx.pl.dostawy-pay.site^$all
@@ -4874,10 +4820,6 @@
 ||olx.pl.informacija.*^$all
 ||olx.pl.obyalvenyie.shop^$all
 ||olx.pl.obyavlenije.com^$all
-||olx.pl.oferta-pay.digital^$all
-||olx.pl.oferta-pay.link^$all
-||olx.pl.oferta-pay.live^$all
-||olx.pl.oferta-pay.store^$all
 ||olx.pl.oferta-pay.*^$all
 ||olx.pl.oferta.*^$all
 ||olx.pl.oferto.*^$all
@@ -4892,11 +4834,7 @@
 ||olx.pl.zaplacic.info^$all
 ||olx.product-secure.ru^$all
 ||olx.przesylki.*^$all
-||olx.przesylk.biz^$all
-||olx.przesylk.com^$all
-||olx.przesylk.info^$all
-||olx.przesylk.org^$all
-||olx.przesylk.su^$all
+||olx.przesylk.*^$all
 ||olx.przewiezienie.pl^$all
 ||olx.rwpay.ru^$all
 ||olx.safe-pay.store^$all
@@ -4906,8 +4844,7 @@
 ||olx.ua.delivery.consulting^$all
 ||olx.wysyllka.pl^$all
 ||olx.zakup.me^$all
-||olx.zamowienie.org^$all
-||olx.zamowienie.su^$all
+||olx.zamowienie.*^$all
 ||olx.zaplacic.info^$all
 ||olympusmarkets.com^$all
 ||omega.best^$all
