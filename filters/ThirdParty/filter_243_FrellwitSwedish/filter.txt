@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-12-26 14:50:42 CET
+! Last modified: 2020-12-28 17:23:52 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -13,7 +13,6 @@
 ! Special thanks to ryanbr@github for the rules from Fanboy's Swedish list.
 !
 ! --- Browser/extension specific filters
-.*/*/*.php?*=aftonbladet-live-tv$document
 .info/dagens-nyheter/$document
 .info/dn-nyheter/$document
 .info/expressen-se-nyheter/$document
@@ -25,6 +24,7 @@
 .info/svt-se-nyheter/$document
 .info/tt-nyheter/$document
 .info/tv4-nyheter/$document
+.php?*=aftonbladet-live-tv$document
 .space/?domain=grabbers.info$all
 /aab/tv4play$redirect=noopjs,script,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 /aftonbladet/crypt/?lpkey$all
@@ -418,6 +418,7 @@ worldkustom.com##a[target="_blank"]:upward(.textwidget)
 www.aftonbladet.se#%#//scriptlet('ubo-aeld.js', 'mousemove', 'g()')
 www.aftonbladet.se#%#//scriptlet('ubo-nosiif.js', 'e.ping()')
 www.aftonbladet.se#%#//scriptlet('ubo-nosiif.js', 'e.reportVisibility()')
+www.aftonbladet.se#%#//scriptlet('ubo-nostif.js', 'onerror', '1000')
 www.dn.se#%#//scriptlet('ubo-acis.js', 'DN', 'initAds')
 www.dn.se#%#//scriptlet('ubo-ra.js', 'data-auto-play')
 www.dn.se#$#body { position: unset !important; }
@@ -526,8 +527,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -2301,13 +2302,8 @@ sportpanelen.se###text-html-widget-3
 sportpanelen.se###tie-block_1832
 sportpanelen.se##.main-content > div.stream-item
 sporttv.nu##a[onclick*="bannerClick"]
-spray.se##.accept-cookies-container
 spray.se##.column-left > .article-partial
-spray.se##.overlay-controller
-spray.se##.overlay-cover
-spray.se##.overlay-text
-spray.se##[class*="article-casino"]
-spray.se##[class^="ads-"]
+spray.se##[class^="ads-"], [class*="article-casino"]
 springlfa.se##.adrotate-loop
 springlfa.se##[class^="snp-pop"]
 springlfa.se##[id^="ad"]
