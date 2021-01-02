@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2020-12-30 14:46:32 CET
+! Last modified: 2021-01-02 10:44:52 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -389,7 +389,6 @@ tradera.com##[id^="adsense-shopping"]:upward(1)
 travprat.se#%#//scriptlet('ubo-aopw.js', 'bizpanda')
 trendenser.se##.post_feed_post:has(.sponsor-info)
 tvdags.se##.article-list__item:has(.sponsor)
-tvmatchen.nu#%#//scriptlet('ubo-aopw.js', 'onload')
 tvmatchen.nu#$#.custom-background { background-image: none !important; }
 underbaraclaras.se##article.post:has(.entry-summary > p:has-text(/annonssamarbete/i))
 underbaraclaras.se##article.post:has(.entry-summary > p:has-text(/innehåller reklam för/i))
@@ -523,8 +522,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -922,7 +921,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /glimr.$script,domain=affarsliv.com|affarslivgotland.se|aftonbladet.se|blocket.se|corren.se|di.se|dn.se|ekuriren.se|eposten.se|folkbladet.se|gotland.net|helagotland.se|kindaposten.se|kkuriren.se|klackspark.com|kuriren.nu|mvt.se|norran.se|norrbottensaffarer.se|nsd.se|nt.se|pt.se|sn.se|strengnastidning.se|unt.se|viivilla.se|vimmerbytidning.se|vt.se
 /google-tag-manager$script,domain=hemnet.se
 /google-tag-manager-datalayer.$script,domain=reseguiden.se
-/google_tag.script.js$script,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
 /googleyolo/impression$~third-party,xmlhttprequest,domain=momondo.se
 /gpAnalytics/*$script
 /gplus.php$script,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
@@ -1290,7 +1288,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /tv/annons$domain=expressen.se
 /tv/brand-studio$domain=expressen.se
 /tv/sponsrat$domain=expressen.se
-/twitter_count.php$xmlhttprequest,domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
+/twitter_count.php$domain=fria.nu|friatidningen.se|goteborgsfria.se|landetsfria.se|sesam.nu|stockholmsfria.se
 /ub-ads/*
 /ub-cookie-notice/*
 /uploads/bilder/Banner/*
@@ -1848,8 +1846,7 @@ freeride.se##img[src*="/sponsor/"] + br + .boxlogo
 freeride.se,gamereactor.se##.sponsor
 freeride.se,happyride.se###alert_cookieconsent
 freeride.se,happyride.se##[class^="anp"], [class^="ans"]
-fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria.se###cboxOverlay
-fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria.se###cboxWrapper
+fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria.se###cboxOverlay, #cboxWrapper
 fria.nu,friatidningen.se,goteborgsfria.se,landetsfria.se,sesam.nu,stockholmsfria.se##[class*="annonser"]
 friatider.se##.rightbox
 friidrott.se###sponsor
@@ -2847,6 +2844,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||momondo.se/ugtm/$subdocument
 ||monkey.tunnl.com/identify$subdocument
 ||mraffiliate.com^$third-party
+||mstar.com^*/adReloader
 ||mtpc.se^$third-party
 ||mtst.io/js/mtst.js$script
 ||muscles.se^*/fb-icon.$image
@@ -2854,6 +2852,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||muscles.se^*/twitter-icon.$image
 ||myadmessenger.com^$third-party
 ||mydatabankapp.com^$third-party
+||mymediaindex.com^$third-party
 ||netflixguiden.se^$csp=worker-src 'none'
 ||network-n.com^$third-party
 ||news.google.com/swg$third-party,domain=thelocal.se
