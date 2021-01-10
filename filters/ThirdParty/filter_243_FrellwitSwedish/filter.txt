@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2021-01-08 13:33:10 CET
+! Last modified: 2021-01-10 13:06:02 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -67,7 +67,6 @@ alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 altinget.se#%#//scriptlet('ubo-nostif.js', 'show_popup')
 arvikanyheter.se,dalslanningen.se,filipstadstidning.se,fryksdalsbygden.se,hjotidning.se,karlskogatidning.se,kt.se,mariestadstidningen.se,nkp.se,nlt.se,nwt.se,provinstidningen.se,saffletidningen.se,sla.se,varmlandsaffarer.se,vf.se#%#//scriptlet('ubo-acis.js', 'nwtThirdParties')
 arvikanyheter.se,dalslanningen.se,filipstadstidning.se,fryksdalsbygden.se,hjotidning.se,karlskogatidning.se,kt.se,mariestadstidningen.se,nkp.se,nlt.se,nwt.se,provinstidningen.se,saffletidningen.se,sla.se,varmlandsaffarer.se,vf.se#%#//scriptlet('ubo-cookie-remover.js', 'page-views')
-autonytt.se##.article_widget_preview:has(h2 > a:has-text(/artikel i samarbete/i))
 autonytt.se##a:has(.label:has-text(/sponsrad/i))
 avanza.se##.section:has(a:has-text(/^annons/i))
 aventyriblodet.se#$#.template { visibility: visible !important; }
@@ -203,8 +202,6 @@ hemnet.se##.recent-news__item:has(.recent-news__category:has-text(/sponsrad/i))
 hemnet.se##.result-article__link:has(.article__ribbon--sponsored)
 hemnet.se##.start-page-hero__caption:has(.start-page-hero__caption-category:has-text(/sponsrad av/i))
 himlentv7.se#%#//scriptlet('ubo-acis.js', 'fbq')
-hippson.se#%#//scriptlet('ubo-acis.js', 'sayHi', 'shown')
-hippson.se##.puff:has(.presentedby)
 hippson.se##.toolboxheader:has-text(/aktuella samarbeten/i) ~ a.more
 hockeymagasinet.com#%#//scriptlet('ubo-set.js', 'trackOutboundLink', 'noopFunc')
 hockeymagasinet.com#$#body.modal-open { overflow-y: scroll !important; }
@@ -456,8 +453,6 @@ bandyfeber.com,binero.se,boktugg.se,carup.se,dagensanalys.se,dinbyggare.se,ettgo
 !#endif
 !#if env_mobile
 aftonbladet.se#%#//scriptlet('ubo-nostif.js', 'abAndroidSmartAppBannerActive')
-swedroid.se##.externalTopMobile
-swedroid.se##div[id$="_ad_mobile"]
 !#endif
 !#if !env_mobile
 /jquery.smoothwheel/*$script
@@ -632,6 +627,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##.react-ad:not(body):not(html)
 ##.s-cookies-info:not(body):not(html)
 ##.site-alert--cookies:not(body):not(html)
+##.sponsrad-artikel:not(body):not(html)
 ##.sw-cookie-consent-wrapper:not(body):not(html)
 ##.sw-popular__article--ad:not(body):not(html)
 ##.sw-sponsored_post:not(body):not(html)
@@ -807,7 +803,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /assets/pb-$script,domain=weheartit.com
 /atomic-blocks$script,domain=dinlivsstil.nu|foretagsverige.se|forskningsverige.se|grillbibeln.se|hallbarhetsverige.se|kampenmotcancer.se|motorbibeln.se|tillvaxtsverige.se
 /AudienceTarget$script,domain=morningstar.se
-/autonytt-theme/js/blogger.$script,domain=autonytt.se
 /avia-snippet-cookieconsent.$script
 /bam-data$xmlhttprequest,domain=allehanda.se|arbetarbladet.se|avestatidning.com|bandypuls.se|bblat.se|dalademokraten.se|dt.se|fagersta-posten.se|falkopingstidning.se|gd.se|jnytt.se|jp.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|st.nu|tidningenharjedalen.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vlt.se|vn.se
 /banner/$image,media,subdocument,domain=alltomhif.se|automation.se|brandnews.se|brollopsmagasinet.se|bussmagasinet.se|byggteknikforlaget.se|customerinsider.se|dagenstv.com|danstidningen.se|dialasen.com|etc.se|fastighetstidningen.se|flm.nu|foodetc.se|forvaltarforum.se|friidrott.se|golfbladet.se|guldkanalen.se|halsasverige.se|ifkgoteborg.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|journalisten.se|katerinamagasin.se|kiacarclub.se|kulturbloggen.com|kurera.se|lakemedelsvarlden.se|landetsfria.nu|laromedia.se|ljuskultur.se|lokalguiden.se|lundagard.se|marsta.nu|metalcentral.net|milansverige.se|miljomat.se|minbebis.com|opulens.se|ordfrontmagasin.se|pellesoft.se|poolforum.se|sbktavling.se|sff.nu|sportbloggare.com|sportpanelen.se|storvretaibk.se|svenskhandboll.se|sydkusten.es|tidningenbalans.se|tidningenglobal.se|tidningenproffs.se|tidningensyre.se|tjanstebilen.se|transportnytt.se|turismnytt.se|vardfokus.se|verkstadstidningen.se|veterinarmagazinet.se|vi.se|viralsweden.com|worldkustom.com
@@ -1329,7 +1324,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 980x360$image,domain=marsta.nu
 99mac.se##.page-gutter.left, .page-gutter.right
 99mac.se##[id^="bbPrisjakt"]
-99mac.se,akaskidor.se,allakorsord.se,baaam.se,bettingstugan.se,bioenergitidningen.se,bohuslaningen.se,byggnadsarbetaren.se,casinowings.se,cissiochfreddan.se,claudiagalliconcha.se,dagensmedia.se,dagensopinion.se,di.se,dn.se,driva-eget.se,dromhemochtradgard.se,ekuriren.se,elle.se,elledecoration.se,ellematovin.se,emilysliv.se,expressen.se,femina.se,filmtipset.se,folkbladet.nu,gabriellajoss.me,hemtrevligt.se,ifokus.se,ifragasatt.se,interiorbyvanessa.se,kimura.se,kkuriren.se,linneasskafferi.se,linnherbertsson.se,livetombord.se,loppi.se,mabra.com,mariestadstidningen.se,mestmotor.se,mobil.se,mybabydolls.se,nwt.se,padelfeber.se,paulas.me,poddtoppen.se,polistidningen.se,residencemagazine.se,skaraborgsbygden.se,skillingaryd.nu,sla.se,sn.se,sportbloggare.com,storstadsmamman.com,sv.picmix.com,svenskgolf.se,sweclockers.com,swedroid.se,tidningenbalans.se,tidningenhalsa.se,tripadvisor.se,utemagasinet.se,vagabond.se,varmlandsaffarer.se,vimedbarn.se,vk.se,xn--vrnamo-bua.nu##.ad
+99mac.se,akaskidor.se,allakorsord.se,baaam.se,bettingstugan.se,bioenergitidningen.se,bohuslaningen.se,byggnadsarbetaren.se,casinowings.se,cissiochfreddan.se,claudiagalliconcha.se,dagensmedia.se,dagensopinion.se,di.se,dn.se,driva-eget.se,dromhemochtradgard.se,ekuriren.se,elle.se,elledecoration.se,ellematovin.se,emilysliv.se,expressen.se,femina.se,filmtipset.se,folkbladet.nu,fordonsproffs.eu,gabriellajoss.me,hemtrevligt.se,ifokus.se,ifragasatt.se,interiorbyvanessa.se,kimura.se,kkuriren.se,linneasskafferi.se,linnherbertsson.se,livetombord.se,loppi.se,mabra.com,mariestadstidningen.se,mestmotor.se,mobil.se,mybabydolls.se,nwt.se,padelfeber.se,paulas.me,poddtoppen.se,polistidningen.se,residencemagazine.se,skaraborgsbygden.se,skillingaryd.nu,sla.se,sn.se,sportbloggare.com,storstadsmamman.com,sv.picmix.com,svenskgolf.se,sweclockers.com,swedroid.se,tidningenbalans.se,tidningenhalsa.se,tripadvisor.se,utemagasinet.se,vagabond.se,varmlandsaffarer.se,vimedbarn.se,vk.se,xn--vrnamo-bua.nu##.ad
 ://sifomedia.
 ?action=get_banners$domain=djungeltrumman.se
 ?url=*impse.tradedoubler.com$image
@@ -1489,11 +1484,7 @@ atvmag.se,snowmobile.se##.more-stories
 atvmag.se,snowmobile.se##a[target="_blank"] > img.b-loaded
 autolife.se###Banners
 automation.se,peace.ax,transportnytt.se,verkstadstidningen.se##.bannergroup
-autonytt.se##.feed_ad
-autonytt.se##.social_and_search
-autonytt.se##.sponsrad-artikel
-autonytt.se##.start-leaderboard
-autonytt.se##a[href^="https://t.seenthis.se"]
+autonytt.se###main > .col-links
 autonytt.se,bilresaieuropa.se,bjornsennbrink.se,konstlistan.se##a[href*="/click.adrecord."]
 autonytt.se,sv.picmix.com##.leaderboard
 avanza.se##.cookieMessage
@@ -1857,6 +1848,7 @@ hemmafixbloggen.se,surfa.se###loader-wrapper
 hemnet.se###ad_unit_placeholder
 hemtrevligt.se##.row--native
 hemtrevligt.se,tidningenhalsa.se,utemagasinet.se,vagabond.se###facebookSlideIn
+hippson.se##.presentedby, .presentedby ~ *
 hippson.se##.sponsorpuff
 hitta.se###__next > div[class^="style_notification"]
 hitta.se##[class*="dummyAd"], [class*="StyledAdSlot"], [data-bind*="Ad"], div[class^="GraphicAd_"]
@@ -2261,12 +2253,9 @@ svt.se###nyh_cookie-message,#svtmat_cookie,section.nyh_share
 svtplay.se##.play_cookie-information
 sweclockers.com###prisjakt-popular
 sweclockers.com##.article-sponsored, .article-sponsored ~ div
-swedroid.se###nativendo-mainfeed + aside > .article
-swedroid.se##.article-footer > .aeChart
-swedroid.se##.article-footer > h3
+swedroid.se###nativendo-mainfeed + aside > .article, .article-footer > h3, .article-footer > .aeChart
 swedroid.se##a[href^="//www.prisjakt.nu/produkt"]
-swedroid.se##div[id$="_ad"]
-swedroid.se##table[style="width:1190px; height:76px"]
+swedroid.se##div[id$="_ad"], div[id$="_ad_mobile"], .externalTopMobile
 swedroid.se,tidningensyre.se##.social
 swefilmer.*###oscuridad
 swefilmer.*##.blueimp-gallery
@@ -2924,7 +2913,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||svenskafans.com/menu-logo/bottom
 ||svenskarecept.se/pwa-register-sw.js
 ||svenskfotboll.se/ui/dist/js/ai.$script
-||swedroid.se/pjembed.$subdocument
 ||swehockey.se/Ad/$image
 ||t.fml.rip^$third-party
 ||t.raptorsmartadvisor.com^$image
@@ -3012,8 +3000,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||yoursecurecheckout1.com^
 ||znaptag-tags-se.s3.amazonaws.com^$script
 ||zotabox.com^$third-party,domain=etunawebben.se
-||zummy.io^$third-party
-||zummycloud.com^$third-party
 
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30417

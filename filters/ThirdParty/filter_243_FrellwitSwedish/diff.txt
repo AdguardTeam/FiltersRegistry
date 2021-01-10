@@ -42,8 +42,8 @@ expressen.se##^script:has-text(window.ExpressenAnalytics)
 jawcloud.co,nyafilmer.*##^script:has-text(_Hasync)
 ! Rule "&autoplay$frame,queryprune=autoplay,domain=di.se|expressen.se" converted to: "&autoplay$subdocument,queryprune=autoplay,domain=di.se|expressen.se"
 &autoplay$frame,queryprune=autoplay,domain=di.se|expressen.se
-! Rule "&browser=MozillaFirefox$queryprune=|browser,xhr,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se" converted to: "&browser=MozillaFirefox$queryprune=|browser,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se"
-&browser=MozillaFirefox$queryprune=|browser,xhr,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
+! Rule "&browser=MozillaFirefox$queryprune=/^browser/,xhr,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se" converted to: "&browser=MozillaFirefox$queryprune=/^browser/,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se"
+&browser=MozillaFirefox$queryprune=/^browser/,xhr,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 ! Rule "/aab/tv4play$redirect=noop.js,script,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se" converted to: "/aab/tv4play$redirect=noopjs,script,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se"
 /aab/tv4play$redirect=noop.js,script,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 ! Rule "/prerolls$media,mp4,domain=gamereactor.se" converted to: "/prerolls$media,redirect=noopmp4-1s,domain=gamereactor.se"
@@ -228,8 +228,6 @@ hangotidningen.fi,hbl.fi,ostnyland.fi,vastranyland.fi##+js(set, ksfDfp.DisplayDi
 happypancake.se##+js(aopr, Object.prototype.adUnits)
 ! Rule "himlentv7.se##+js(acis, fbq)" converted to: "himlentv7.se#%#//scriptlet('ubo-acis.js', 'fbq')"
 himlentv7.se##+js(acis, fbq)
-! Rule "hippson.se##+js(acis, sayHi, shown)" converted to: "hippson.se#%#//scriptlet('ubo-acis.js', 'sayHi', 'shown')"
-hippson.se##+js(acis, sayHi, shown)
 ! Rule "hockeymagasinet.com##+js(set, trackOutboundLink, noopFunc)" converted to: "hockeymagasinet.com#%#//scriptlet('ubo-set.js', 'trackOutboundLink', 'noopFunc')"
 hockeymagasinet.com##+js(set, trackOutboundLink, noopFunc)
 ! Rule "hockeymagasinet.com##body.modal-open:style(overflow-y: scroll !important;)" converted to: "hockeymagasinet.com#$#body.modal-open { overflow-y: scroll !important; }"
@@ -500,16 +498,16 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##bo
 bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se##body.logged-out.is-header-sticky *> .c-user-menu:style(visibility: hidden !important;)
 Error: "Unknown modifier: queryprune=autoplay" in the rule: "&autoplay$subdocument,queryprune=autoplay,domain=di.se|expressen.se"
 &autoplay$subdocument,queryprune=autoplay,domain=di.se|expressen.se
-Error: "Unknown modifier: queryprune=|browser" in the rule: "&browser=MozillaFirefox$queryprune=|browser,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se"
-&browser=MozillaFirefox$queryprune=|browser,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
+Error: "Unknown modifier: queryprune=/^browser/" in the rule: "&browser=MozillaFirefox$queryprune=/^browser/,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se"
+&browser=MozillaFirefox$queryprune=/^browser/,xmlhttprequest,domain=fotbollskanalen.se|koket.se|tv4.se|tv4play.se
 Error: "Unknown modifier: queryprune=autoplay" in the rule: "?autoPlay$subdocument,queryprune=autoplay,domain=expressen.se"
 ?autoPlay$subdocument,queryprune=autoplay,domain=expressen.se
 ! Invalid selector:
 handbollskanalen.se##.td-pulldown-size:has-text(/^i samarbete med/i):upward(3).td_block_widget
 ! Invalid selector:
 tidningen.nu##span:has-text(/^Annons$/):upward(1) + .textwidget
-Error: "Unknown modifier: queryprune=|utm_" in the rule: "utm_$document,queryprune=|utm_,domain=aftonbladet.se|alltommat.se|booli.se|damernasvarld.se|expressen.se|skonahem.com|teknikensvarld.se|tv.nu"
-utm_$document,queryprune=|utm_,domain=aftonbladet.se|alltommat.se|booli.se|damernasvarld.se|expressen.se|skonahem.com|teknikensvarld.se|tv.nu
+Error: "Unknown modifier: queryprune=/^utm_/" in the rule: "utm_$document,queryprune=/^utm_/,domain=aftonbladet.se|alltommat.se|booli.se|damernasvarld.se|expressen.se|skonahem.com|teknikensvarld.se|tv.nu"
+utm_$document,queryprune=/^utm_/,domain=aftonbladet.se|alltommat.se|booli.se|damernasvarld.se|expressen.se|skonahem.com|teknikensvarld.se|tv.nu
 ! Invalid selector:
 victoriatornegren.se##article[id^="post-"]:has(.entry-header:has-text(/(?:samarbete|Samarbete)\s+med/i))
 Error: "The rule is not a scriptlet" in the rule: "www.google.se#%#//scriptlet('ubo-ra.js', 'onmousedown|ping', 'a[href][onmousedown]\', 'a[href][ping]')"
