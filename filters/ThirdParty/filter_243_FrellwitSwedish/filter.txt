@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2021-01-10 13:06:02 CET
+! Last modified: 2021-01-11 15:33:57 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -134,7 +134,6 @@ emmagreen.se,fokis.se,fredagskocken.se,frureinhold.se,gynning.net,hormonerhemorr
 emmagreen.se,fokis.se,fredagskocken.se,frureinhold.se,gynning.net,hormonerhemorrojder.se,magnusnorman.com,sannafischer.se,sannalundell.se,teresagrundin.se#%#//scriptlet('ubo-acis.js', 'jQuery', '.dfp')
 emmagreen.se,fokis.se,fredagskocken.se,frureinhold.se,gynning.net,hormonerhemorrojder.se,magnusnorman.com,sannafischer.se,sannalundell.se,teresagrundin.se##[id^="post-"]:has(.sponsored-notification)
 enkelteknik.se,fysikstugan.se,hamnen.se#%#//scriptlet('ubo-acis.js', 'ai_front')
-etc.se#$##page.hide-me { height: initial !important; }
 etc.se#%#//scriptlet('ubo-set.js', 'Drupal.behaviors.lock_article', 'undefined')
 ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sponsored-bar)
 etunawebben.se#%#//scriptlet('ubo-nostif.js', 'ad')
@@ -279,14 +278,13 @@ mytaste.se#$#.site-wrapper[data-state=panorama] { padding-top: 40px !important; 
 mytaste.se#$#body.modal-active.modal-open::before, body.modal-active::before { opacity: unset !important; content: unset !important; }
 nasdaqomxnordic.com#%#//scriptlet('ubo-acis.js', '$', 'shuffle')
 netflixguiden.se#%#//scriptlet('ubo-aopr.js', 'apstag')
+newsvoice.se##.td-post-author-name > a:has-text(/extern skribent/i):upward(5)
 newsvoice.se##.td-post-author-name > a[href$="/author/foretagaren/"]:upward(5)
 newsvoice.se##.td-post-author-name > a[href$="/author/underhallning/"]:upward(5)
-newsvoice.se##.td_module_wrap:has(a[title*="casino"])
 newsvoice.se##aside:has(h4:has-text(/annonser/i))
 newsvoice.se##h4:has-text(/annonser/i) ~ a
 nordfront.se##.post:has(span:not(.post-content):has-text(/annons/i))
 nordicchoicehotels.se#%#//scriptlet('ubo-nostif.js', 'n.modal.showWithCondition', '60000')
-nordichardware.se#%#//scriptlet('ubo-acis.js', 'message')
 nordichardware.se##.td-big-grid-post:has(a[href*="/sponsrat/"])
 nordichardware.se##.td_block_wrap:has(span:has-text(/sponsrat/i))
 nouw.com##.box.slide.active:has(.badge:has-text(/annons/i))
@@ -506,8 +504,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###CookieNotice
 ###cookieNotice
+###CookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -835,7 +833,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /campaign*/*$script,xmlhttprequest,domain=alltforforaldrar.se|kokaihop.se|mammasidan.se|minbebis.com|nyheter24.se
 /caos/analytics.js$script
 /casino/$image,domain=battrestadsdel.se|dayviews.com|djungeltrumman.se|fotboll.com|hockeybladet.nu|hockeysverige.se|hypeline.se|kamrat.com|kulturbloggen.com|newsvoice.se|nyadagbladet.se|nyheter24.se|spray.se|svenskhistoria.se|totallyorebro.se|totallystockholm.se|zeromagazine.nu
-/casno-$image,domain=newsvoice.se
 /cecado/advisible.js
 /check-paywall$domain=dn.se
 /citygate/payingcompanies$xmlhttprequest
@@ -1353,7 +1350,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@/scripts/advertisement*.$script,~third-party,domain=alltomtradgard.se|damernasvarld.se|di.se|expressen.se|skonahem.com|teknikensvarld.se
 @@/scrollReveal$script,domain=explorecurate.com
 @@/show_ads.js$script,~third-party,domain=happypancake.com
-@@/wpdcookiejs/*$domain=nordichardware.se
 @@_adframe.js$script,~third-party,domain=fssweden.se
 @@_advert.$domain=e-pages.dk
 @@||ad*.vg.no/check.js$script,domain=aftonbladet.se
@@ -1662,11 +1658,9 @@ emocore.se###main > #home_start_div ~ .m_t.box:nth-last-child(-n+2)
 emocore.se###sticky-panorama
 enkelteknik.se##.annons-label
 esportare.se##a[href*="utm_campaign"]
-etc.se###popup
-etc.se##.article-type-annons
-etc.se##.banner-wrap
-etc.se##.etc-mobile-app-buttons-wrapper
-etc.se##img[alt="Annons"]
+etc.se###popup, .etc-mobile-app-buttons-wrapper
+etc.se##.article-type-annons, .banner-wrap
+etc.se##.block-content > p img[alt]:not([class])
 etn.se,uppsalanyheter.se##.banneritem
 ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se###wsfb-container
 ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ad-space
@@ -2059,16 +2053,12 @@ netflixguiden.se##.a-instream
 news55.se###newsletter-popup
 news55.se##.after-article-widget
 news55.se##.is-native,.is-native-yes
-newsvoice.se##.td-footer-wrapper > .td-container > .td-pb-row > div:nth-of-type(2)
-newsvoice.se##a.td-image-wrap[title*="Annons"], .entry-title > a[title*="Annons"]
-newsvoice.se##a.td_single_image_bg[target="_blank"]
 ng.se##.partner-articles-wrap
 ng.se##.secondary-sidebar > .panel-pane:last-child
 ng.se##.secondary-top
 ng.se##[class*="sponsored-article"]
 nordfront.se###campaign_area
 nordichardware.se##.pspy_info
-nordichardware.se##.td_block_social_counter
 nordiskradio.se###cookieWindow
 norrahalland.se##.norra-leeads-ads,.egna_annonser_widget
 norrbotten.com##.td-ss-main-sidebar > .td-a-rec
@@ -2801,7 +2791,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||platform.linkedin.com^$third-party
 ||platform.tumblr.com/*/share.js$third-party
 ||platssajten.se^$third-party
-||play.etc.se/sw.js$script
+||play.etc.se/sw.js
 ||pliing.com^$third-party
 ||portalhc.com^$third-party
 ||powr.io/powr.js$script
