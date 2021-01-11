@@ -75,6 +75,8 @@
 !-------JS----------
 !-------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/70941
+pioneer.eu#%#//scriptlet('remove-attr', 'onclick', 'a[href][onclick^="trackOutboundLink"]')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/64616
 !+ PLATFORM(android)
 www.google.*#%#//scriptlet('remove-attr', 'onmousedown|data-mousedown|ping|data-click', 'a[href][onmousedown], a[href][ping]')
@@ -211,6 +213,17 @@ journal-plaza.net#?#.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч
 !||i.snssdk.com/log/*
 !||i.snssdk.com/slardar/sdk.js
 !
+! relateddigital.com domains
+||visilabs.com^$third-party
+||visilabs.net^$third-party
+!
+||log.perfecttitspics.com^
+||analytics.mbga.jp^
+||herald.loginside.co.kr^
+||110.93.143.144^$third-party
+||log002.commutil.kr^
+||analy1.dtnnetwork.be^$third-party
+||polarbyte.com^$third-party
 ||revcatch.com^$third-party
 ||revprotect.com^$third-party
 ||protectsubrev.com^$third-party
@@ -302,6 +315,7 @@ journal-plaza.net#?#.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч
 ||client-analytics.braintreegateway.com^
 ||log.propermessage.io^
 ||hit.acstat.com^
+||code.acstat.com^
 ||fhits.xyz^$third-party
 ||intelligenceretarget.com^$third-party
 ||stpmgo.com^$third-party
@@ -620,7 +634,6 @@ journal-plaza.net#?#.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч
 ||s.clicktex.ru^$third-party
 ||hitme.pw^$third-party
 ||tracking.lqm.io^$third-party
-||visilabs.net^$third-party
 ||app.shoptarget.com.br^$third-party
 ||netdeal.com.br^$third-party
 ||ibclick.stream^$third-party
@@ -2401,7 +2414,6 @@ journal-plaza.net#?#.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч
 ||omgpm.com^$third-party
 ||omguk.com^$third-party
 ||omkt.co^$third-party
-||omnitagjs.com^$third-party
 ||on-line.lv^$third-party
 ||onefeed.co.uk^$third-party
 ||onelink-translations.com^$third-party
@@ -3245,7 +3257,6 @@ journal-plaza.net#?#.rightside div.block.bnavi[-ext-has="h3.dtitle:contains(Сч
 ||visadd.com^$third-party
 ||visibility-stats.com^$third-party
 ||visibli.com^$third-party
-||visilabs.com^$third-party
 ||visioncriticalpanels.com^$third-party
 ||visistat.com^$third-party
 ||visit.webhosting.yahoo.com^$third-party
@@ -4659,6 +4670,22 @@ nethunt.com/api/v1/track/email/$image
 ! Disabled in DNS filter
 ||telemetry.mozilla.org^
 !
+||prod-collector.bigbasket.com^
+||tracking.game8.jp^
+||lcs.modoo.at^
+||check.tadapi.info^
+||count.munhwa.com^
+||geo.mattel163.com^
+||tc-log.mattel163.com^
+||events-api*.outfit7.com^
+||bilanx.dcard.tw^
+||events.emogi.com^
+||log.ohmynews.com^
+||analytics2.tvreport.co.kr^
+||counter.adguard.com^
+||l.www.naver.com^
+||metrics.makemytrip.com^
+||tracking.shopback.com^
 ||logger.cbs.co.kr^
 ||gather.donga.com^
 ||gak.webtoons.com^
@@ -4668,7 +4695,6 @@ nethunt.com/api/v1/track/email/$image
 ||log.cinematoday.jp^
 ||et.nytimes.com^
 ||adlog.shopping.naver.com^
-||signal-collector.gemaltodigitalbankingidcloud.com^
 ||analytics.bi.encuentra24.com^
 ||sl-h-statistics-ch-1.storeland.ru^
 ||hc-analytics.idp.clogin.att.com^
@@ -4776,7 +4802,6 @@ nethunt.com/api/v1/track/email/$image
 ||e2e.mashable.com^
 ||stats-dev.brid.tv^
 ||videostats.kakao.com^
-||stat.tiara.daum.net^
 ||webid.ad.daum.net^
 ||wt.soundestlink.com^
 ||pixelzirkus.gameforge.com^
@@ -6185,7 +6210,6 @@ charlestownwyllie.oaklawnnonantum.com^
 ||l.ooyala.com^
 ||l.player.ooyala.com^
 ||l.sharethis.com^
-||lgr.visilabs.net^$third-party
 ||lively-collect-elb-*.amazonaws.com^$third-party
 ||log-live.direct.ly^$third-party
 ||log.adap.tv^
@@ -6211,7 +6235,6 @@ charlestownwyllie.oaklawnnonantum.com^
 ||qnajplxtvz-a.akamaihd.net^$third-party
 ||r.remarketingpixel.com^$third-party
 ||recs.atgsvcs.com^$third-party
-||rt.visilabs.net^$third-party
 ||s.frida.vse42.ru^
 ||saber.srvcs.tumblr.com^
 ||segments.adap.tv^$third-party
@@ -6232,7 +6255,6 @@ charlestownwyllie.oaklawnnonantum.com^
 ||top-fwz1.mail.ru^
 ||tr.datanyze.com^
 ||track.dictionary.com^
-||track.tiara.daum.net^
 ||track.tooplay.com^
 ||tracking.adactioninteractive.com^$third-party
 ||tracking.rtl.de^
@@ -6591,6 +6613,7 @@ _analytics.js?
 /zz.gif?url=
 ://b.*/vanity/?
 ://top.*/count/cnt.php?
+://tracker.*/events-tracker/
 _pagespeed_beacon?
 _social_tracking.js^
 _tracking.php?b=
@@ -6622,9 +6645,34 @@ _tracking.php?b=
 ||nd.demdex.net/event?d_mid=$redirect=nooptext,important,domain=9now.com.au
 ||adc.nine.com.au/?token=$redirect=nooptext,important,domain=9now.com.au
 !
+||api-router.kaspersky-labs.com/logger2^
+||signal-collector.gemaltodigitalbankingidcloud.com^$script
+||notepet.co.kr/js/sitelog.js
+||notepet.co.kr/etc/logs/siteLog
+||ceoscoredaily.com/weblog/gtracker
+||avn.com/server/visitors/
+||a*.pr-cy.ru/stat/
+||sportsseoul.com/news/site_log/
+||comic.naver.com/ad/flex/stats.nhn
+||res.heraldm.com/js/acecounter_*.js
+||res.heraldm.com/js/logcollectscript_*.js
+||app.revhunter.tech/px^
+||cdn.cohesionapps.com^$domain=gamespot.com
+||m-economynews.com/weblog/gtracker
+||cgeimage.commutil.kr/jscomm/*/logger.js
+||www002.commutil.kr/adlog/adlog_arrviewset.php
+||dtory.ebs.co.kr/wlo^
+||home.ebs.co.kr/ebsnews/logProce/logAjax
+||home.ebs.co.kr/common/js/wlo.js
+||newzit.com/setABframe.html
+||seoul.co.kr/weblog/
+||pb.m.naver.com/abpblock
+||ewaline.su/stats.js
+||data.html5games.com/event/ad
 ||livehdcams.com/api/metrics
 ||livehdcams.com/api/events
 ||pornhublive.com/api/metrics
+||piano.io/tracker/$domain=inc42.com,important
 ||pornhublive.com/api/events
 ||nocutnews.co.kr/js/logger*.htm
 ||api2.branch.io^$app=com.newsdistill.mobile
@@ -6638,8 +6686,8 @@ _tracking.php?b=
 ||ytn.co.kr/_comm/asplog.php
 ||cinematoday.jp^*/pageviews.min.js
 ||zenback.jp^*/tracking.html
-||t1.daumcdn.net/tiara/js/*/tiara.min.js
-||cdn.retailrocket.ru/javascript/tracking.js
+||cdn.retailrocket.ru/*/tracking.js
+||ru-mi.com/*/ee_tracking.js
 ||matchid.adfox.yandex.ru/getcookie$domain=vseinstrumenti.ru
 ||player.vzaar.com/libs/googleAnalytics/vzaarGoogleAnalytics.js
 ||r.yna.co.kr/global/lib/*/js/nlogger.js
@@ -6753,7 +6801,6 @@ android-tools.ru###text-8
 ||arms.aliyuncs.com/r.png
 ||alljapanesepass.com/ascripts/gcu.js
 ||alljapanesepass.com/rstat
-||verify.snssdk.com^$xmlhttprequest,redirect=nooptext
 ||stats.viqeo.tv^
 ||links.services.disqus.com/api/ping
 ||nikkei.com/.resources/tracking/
@@ -6965,7 +7012,6 @@ dokonline.com###Counters + div[class="block"]
 ||steamprices.com/analytics^
 ||l-tike.com/akam/$script
 ||banggood.com/statistics.html
-||ladesk.com/scripts/track.js
 ||s.kk-resources.com/ks.js
 ||s.kelkoogroup.net/st?
 ||vivaldi.*/rep/rep.js
@@ -7141,16 +7187,16 @@ continentseven.com##.gaoop
 ||teenporn.ws/zaq/cron.php
 ||news.nate.com/js/today/userAgent
 ||search1.daumcdn.net/search/statics/common/js/log
-||map.naver.com/v5/api/searchAddressById
+||map.naver.com/*/api/searchAddressById
 ||ca-fe.pstatic.net/web-mobile/static/web-crash-logger
 ||ca-fe.pstatic.net/web-mobile/static/naverStatLogger
 ||cafe.naver.com/static/js/*/javascript/lcslog
-||scv.band.us/jackpotlog/v1/logs
+||scv.band.us/jackpotlog/*/logs
 ||comic.naver.com/aggregate/javascript/release/lcslog
 ||apis.naver.com/videostat/videostat/qoe
 ||s1.daumcdn.net/svc/original/U03/cssjs/userAgent
-||tv.naver.com/resources/release/js_v2/player*Logge
-||tv.naver.com/resources/release/js_v2/clickcr
+||tv.naver.com/resources/release/js_*/player*Logge
+||tv.naver.com/resources/release/js_*/clickcr
 ||ssl.pstatic.net/img.tvcast/pc/js/wcslog
 ||videostats.kakao.com/log^
 ||t1.daumcdn.net/language/cssjs/*/js/lib/userAgent
@@ -7672,7 +7718,6 @@ merkur.de##.id-Amp-recommendation
 ||sa.sayaclar.com/c/s*.php?$third-party
 ||faz.net/placingservice/count
 ||free-sex-video.net/templates/default/js/fingerprintjs/fingerprint2.js
-||hqq.watch/js/video.counters.js
 ||freehostedscripts.net^*.php?site=*&s=*&h=$third-party
 ||cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js
 ||cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js
@@ -7736,8 +7781,8 @@ computerbild.de##.articleAdditional > .mehrthema
 ||xtraffstat.com/js/ktr.js
 ||zapcdn.space/zapret.js
 ||patreon.com/api/tracking^
-/index/ping^$domain=encurtador.mineiroloko.co|atharori.net|meriabub.net|gdanstum.net|fiaharam.net|underhentai.net|gatustox.net|scuseami.net|gusimp.net|cowner.net|xterca.net|gloyah.net|uclaut.net|atabencot.net|thouth.net|cinebo.net|baymaleti.net|briskgram.net|ad.bdcraft.net|swiftviz.net|ad.sapixmedia.com|activetect.net|brightvar.bid|clearload.bid|restorecosm.bid|bee.anime-loads.org|threadsphere.bid|queuecosm.bid|yoitect.com|skamaker.com|adf.ly|ay.gy|cracksurl.com|tinyium.com|skamason.com|redir2.auto-login-xxx.com|dl.underclassblog.com|special.picons.eu|quainator.com|yoalizer.com|kibuilder.com|kimechanic.com|zo.ee|viahold.com|tinyical.com|mmoity.com|pintient.com|riffhold.com|picocurl.com|bitigee.com|atomcurve.com|atominik.com|battleate.com|kaitect.com|simizer.com|coginator.com|cogismith.com|twineer.com|yobuilder.com|go.awanpc.me|viwright.com|yabuilder.com|yamechanic.com|kializer.com|yoineer.com
-/callback/*$domain=encurtador.mineiroloko.co|atharori.net|meriabub.net|gdanstum.net|fiaharam.net|underhentai.net|gatustox.net|scuseami.net|gusimp.net|cowner.net|xterca.net|gloyah.net|uclaut.net|atabencot.net|thouth.net|cinebo.net|baymaleti.net|briskgram.net|ad.bdcraft.net|swiftviz.net|ad.sapixmedia.com|activetect.net|brightvar.bid|clearload.bid|restorecosm.bid|bee.anime-loads.org|threadsphere.bid|queuecosm.bid|yoitect.com|skamaker.com|adf.ly|ay.gy|cracksurl.com|tinyium.com|skamason.com|redir2.auto-login-xxx.com|dl.underclassblog.com|special.picons.eu|quainator.com|yoalizer.com|kibuilder.com|kimechanic.com|zo.ee|viahold.com|tinyical.com|mmoity.com|pintient.com|riffhold.com|picocurl.com|bitigee.com|atomcurve.com|atominik.com|battleate.com|kaitect.com|simizer.com|coginator.com|cogismith.com|twineer.com|yobuilder.com|go.awanpc.me|viwright.com|yabuilder.com|yamechanic.com|kializer.com|yoineer.com
+/index/ping^$domain=chinnica.net|encurtador.mineiroloko.co|atharori.net|meriabub.net|gdanstum.net|fiaharam.net|underhentai.net|gatustox.net|scuseami.net|gusimp.net|cowner.net|xterca.net|gloyah.net|uclaut.net|atabencot.net|thouth.net|cinebo.net|baymaleti.net|briskgram.net|ad.bdcraft.net|swiftviz.net|ad.sapixmedia.com|activetect.net|brightvar.bid|clearload.bid|restorecosm.bid|bee.anime-loads.org|threadsphere.bid|queuecosm.bid|yoitect.com|skamaker.com|adf.ly|ay.gy|cracksurl.com|tinyium.com|skamason.com|redir2.auto-login-xxx.com|dl.underclassblog.com|special.picons.eu|quainator.com|yoalizer.com|kibuilder.com|kimechanic.com|zo.ee|viahold.com|tinyical.com|mmoity.com|pintient.com|riffhold.com|picocurl.com|bitigee.com|atomcurve.com|atominik.com|battleate.com|kaitect.com|simizer.com|coginator.com|cogismith.com|twineer.com|yobuilder.com|go.awanpc.me|viwright.com|yabuilder.com|yamechanic.com|kializer.com|yoineer.com
+/callback/*$domain=chinnica.net|encurtador.mineiroloko.co|atharori.net|meriabub.net|gdanstum.net|fiaharam.net|underhentai.net|gatustox.net|scuseami.net|gusimp.net|cowner.net|xterca.net|gloyah.net|uclaut.net|atabencot.net|thouth.net|cinebo.net|baymaleti.net|briskgram.net|ad.bdcraft.net|swiftviz.net|ad.sapixmedia.com|activetect.net|brightvar.bid|clearload.bid|restorecosm.bid|bee.anime-loads.org|threadsphere.bid|queuecosm.bid|yoitect.com|skamaker.com|adf.ly|ay.gy|cracksurl.com|tinyium.com|skamason.com|redir2.auto-login-xxx.com|dl.underclassblog.com|special.picons.eu|quainator.com|yoalizer.com|kibuilder.com|kimechanic.com|zo.ee|viahold.com|tinyical.com|mmoity.com|pintient.com|riffhold.com|picocurl.com|bitigee.com|atomcurve.com|atominik.com|battleate.com|kaitect.com|simizer.com|coginator.com|cogismith.com|twineer.com|yobuilder.com|go.awanpc.me|viwright.com|yabuilder.com|yamechanic.com|kializer.com|yoineer.com
 ||tracking-opi.fonpit.de/tracking/
 ||cdn3.net/pixe/
 ||dig.ultimedia.com^
@@ -8106,6 +8151,9 @@ dreamprogs.net##td[width="88"][height="31"]
 ||giga-video.de/js/customer/tracking-consumer.min.js
 ||gismeteo.ru/stat.js
 ||github.com/notifications/beacon/$important
+||github.com/_private/browser/stats
+||github.com/_stats
+||github.com/hydro_browser_events
 ||global.sueddeutsche.de/globalassets/standalone/szstats/configuration.json
 ||go.com/b/ss/
 ||google-analytics.com^*/__utm.gif
@@ -8497,6 +8545,10 @@ link.gmapp*.net$image
 !+ PLATFORM(ios)
 ||exactag.com^$domain=saturn.de|mediamarkt.de
 !
+! $removeparam=
+! https://github.com/AdguardTeam/AdguardFilters/issues/69722
+||digikey.com^$removeparam=/^mkt_tok/
+||digikey.com^$removeparam=/^utm_cid/
 
 !-------------------------------------------------------------------------------!
 !-------------- Cookies --------------------------------------------------------!
@@ -8564,6 +8616,23 @@ link.gmapp*.net$image
 ||logs.supersonic.com^
 ||graph.facebook.com/*/activities?access_token=&event=
 ||graph.facebook.com/*?fields=supports_implicit_sdk_logging
+! xiaomi mi band app
+||datacollector-drru.dt.hicloud.com^
+||app-analytics-ru.huami.com^
+! spb tv android app
+||metrics.spbtv.com^
+! wifire tv android app
+||sas53netbynet.visualon.info^
+! acestream android app
+||android-stat.acestream.net^
+! whatsapp android app
+||privatestats.whatsapp.net^
+! influxdb
+||usage.influxdata.com^
+! grafana
+||stats.grafana.org^
+! smotrim.ru
+||rumstat.cdnvideo.ru^
 !
 ! Swiftkey(Microsoft) Keyboard
 ||telemetry.api.swiftkey.com^
@@ -8594,6 +8663,16 @@ link.gmapp*.net$image
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 ||adj.st^
 !
+||analytics.prod.mybuddy.ai^
+||logs.amap.com^
+||edmanalytics.pandahall.com^
+||applogs.pixelfederation.com^
+||applogs-v2.pixelfederation.com^
+||analytics.dns-shop.ru^
+||smetrics.aem.playstation.com^
+||telemetry.api.playstation.com^
+||trk2.pinterest.com^
+||mobiletelemetry.ebay.com^
 ||tracker.departapp.com^
 ||us-tracking.nextdoor.com^
 ||us-events.api.iheart.com^
@@ -9047,8 +9126,63 @@ link.gmapp*.net$image
 ||rover.ebay.$image,object,script,badfilter
 !
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/69740
-@@||daumcdn.net/tiara/js/v*/tiara.min.js$domain=kakao.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/71980
+@@||media.kaspersky.com/tracking/omniture/s_code_single_suite.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/71941
+! delayed removement of class async-hide
+@@||google-analytics.com/analytics.js$domain=glamour.de
+@@||google-analytics.com/gtm/js$domain=glamour.de
+! https://github.com/AdguardTeam/AdguardFilters/issues/71846
+@@||googletagmanager.com/gtm.js$domain=coolermaster.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/71347
+@@||codesoom.com/assets/js/google-analytics.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/70656
+@@||vattastic.com/js/fp2/fingerprint2.min.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/71692
+@@||googletagmanager.com/gtm.js$domain=cinemaxx.de
+! https://github.com/AdguardTeam/AdguardFilters/issues/71199
+@@||polfan.pl/app/vendor/fingerprint2.min.js
+! https://github.com/AdguardTeam/AdguardFilters/issues/71041
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||google-analytics.com/analytics.js$domain=1ahaber.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/70941
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||googletagmanager.com/gtm.js$domain=pioneer.eu
+! https://github.com/AdguardTeam/AdguardFilters/issues/70789
+@@||cdn.permutive.com/*-web.js$domain=independent.co.uk
+! https://github.com/AdguardTeam/AdguardFilters/issues/70625
+||googletagmanager.com/gtm.js$script,redirect=googletagmanager-gtm,domain=game8.jp
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||googletagmanager.com/gtm.js$domain=game8.jp
+@@||google-analytics.com/analytics.js$domain=game8.jp
+@@||google-analytics.com/gtm/js?id=$domain=game8.jp
+!#endif
+! https://github.com/AdguardTeam/AdguardFilters/issues/70603
+@@||google-analytics.com/analytics.js$domain=hepsiburada.com
+@@||google-analytics.com/plugins/ua/ec.js$domain=hepsiburada.com
+@@||google-analytics.com/gtm/js?id=$domain=hepsiburada.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/70452
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||google-analytics.com/analytics.js$domain=scubidu.eu
+! https://github.com/AdguardTeam/AdguardFilters/issues/70405
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||google-analytics.com/analytics.js$domain=politics-dz.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/70383
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||google-analytics.com/analytics.js$domain=game-owl.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/69907
+@@||googletagmanager.com/gtag/js?id=$domain=view.epageview.com
+||googletagmanager.com/gtag/js?id=$script,other,redirect=noopjs,domain=view.epageview.com,important
+! https://github.com/AdguardTeam/AdguardFilters/issues/69890
+||google-analytics.com/analytics.js$script,redirect=google-analytics,domain=naujasis.lrytas.lt,important
+@@||google-analytics.com/analytics.js$domain=naujasis.lrytas.lt
+! https://github.com/AdguardTeam/AdguardFilters/issues/69857
+||google-analytics.com/analytics.js$script,redirect=google-analytics,domain=chess24.com,important
+@@||google-analytics.com/analytics.js$domain=chess24.com
+@@||google-analytics.com/plugins/ua/linkid.js$domain=chess24.com
+@@||google-analytics.com/gtm/js?id=$domain=chess24.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/69578#issuecomment-744650704
+nnmclub.ro,nnm-club.t0r.xyz,nnm-club-me.appspot.com,nnm-club.lib,nnm-club.me,nnmclub.to#@#img[width="88"][height="31"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68894
 @@||lcs.naver.com/*?u=*service_id$image,domain=smartstore.naver.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68551
@@ -9914,6 +10048,21 @@ ciokorea.com,adpiamall.com,live.joins.com,naver.com,jbe.go.kr#%#//scriptlet('set
 @@||googletagmanager.com/gtm.js$domain=uspoloassn.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32695
 @@||se.visilabs.net/Target.js$domain=boyner.com.tr
+! https://github.com/AdguardTeam/AdguardFilters/issues/42234
+@@||vsh.visilabs.net/Visilabs.min.js^$domain=makyajtrendi.com
+@@||s.visilabs.net/Target.js^$domain=makyajtrendi.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/27312
+@@||vsh.visilabs.net/Visilabs.js^$domain=cinemaximum.com.tr
+! https://github.com/AdguardTeam/AdguardFilters/issues/21326
+@@||vsh.visilabs.net/Visilabs.js^$domain=boyner.com.tr
+@@||s.visilabs.net/Target.js^$domain=boyner.com.tr
+! https://github.com/AdguardTeam/AdguardFilters/issues/9381
+@@||lgr.visilabs.net/kapsamaharitasi/om.gif$domain=kapsamaharitasi.turktelekom.com.tr
+@@||rt.visilabs.net/kapsamaharitasi/om.gif$domain=kapsamaharitasi.turktelekom.com.tr
+@@||vsh.visilabs.net/Visilabs.js^$domain=kapsamaharitasi.turktelekom.com.tr
+! https://github.com/AdguardTeam/AdguardFilters/issues/8315
+@@||s.visilabs.net/Target.js^$domain=evidea.com
+@@||vsh.visilabs.net/Visilabs.js^$domain=evidea.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32345
 @@||googletagmanager.com/gtm.js$domain=capital.fr
 ! t-online.de - broken links in article

@@ -42,8 +42,6 @@
 !##[href*="addtoany.com"]
 ##[href*="kuponmania.hu"]
 ##[id*="GoogleAds"]
-##[id*="ad-google"]
-##[id*="adzone"]
 ##[id*="google_ads"]
 !##[id*="overlayBg"]
 ##[id^="ad_zone_"]
@@ -103,7 +101,6 @@ gyoricegregiszter.hu##[class*="banner"]
 hajokonyha.hu##[class*="hirdetes"]
 hatarido-szamitas.hu##.szkozepkis
 helyitipp.hu##[id*="hirdet"]
-hetek.hu##[id*="popup"]
 hir6.hu##[class*="banner"]
 hirado.hu##[class="video_preroll type_swf"]
 hirextra.hu##[class*="billboard"]
@@ -1648,6 +1645,20 @@ harmonikum.co#?#div:-abp-has(> .ai-attributes + script + ins)
 lifestory.hu#?#div.lol:-abp-has(> a[onclick="getValue()"])
 lifestory.hu#?#div.widget:-abp-has(> div.textwidget > p > script)
 !
+ugytudjuk.hu#?#.row:-abp-has(.mainTopBnr)
+ugytudjuk.hu##.leftSide > .bnr
+ugytudjuk.hu##.rightSide > .bnr
+!
+leet.hu##.category > #prodstop1
+leet.hu##.single-post > #prodstop1
+!
+raketa.hu##[class*="adv--"]
+!
+pcforum.hu##div#zone-titleheader
+!
+hetek.hu##[id*="popup"]
+hetek.hu##div.row:-abp-has(> div.ads)
+!
 !---------------------------------------------------------------------------!
 !-------------- Ad servers -------------------------------------------------!
 !---------------------------------------------------------------------------!
@@ -2099,6 +2110,7 @@ index.hu###_iph_cp_popup
 24.hu###stickyMobileNotification
 24.hu##div#qc-cmp2-container
 24.hu##div#webPushPopup
+24.hu##div.m-donationBottomLine
 !
 meszotar.hu##.cc_banner-wrapper
 !
@@ -2157,12 +2169,19 @@ online-filmek.me##[class*="cc_banner"]
 magyarnemzet.hu##div.gdprBoxContainer
 !
 forbes.hu###catapult-cookie-bar
+forbes.hu##.crp_related
 !
 infostart.hu##div[data-qa="oil-Layer"]
 !
 blikk.hu###pe_confirm
 blikk.hu###qc-cmp2-container
 blikk.hu###qc-cmp2-ui
+!
+privatbankar.hu##.mfor_cikk_beuszo
+privatbankar.hu##.news-page > div[style*="background: #FFF900;"]:first-child
+!
+raketa.hu##[aria-describedby="newsletter-modal"]
+raketa.hu##.ui-widget-overlay
 !
 !---------------------------------------------------------------------------!
 !-------------- Trackers ---------------------------------------------------!
@@ -2259,6 +2278,8 @@ traffihunter.hu#%#//scriptlet('remove-class', 'darken', 'body')
 vezess.hu#%#//scriptlet('prevent-addEventListener', 'mouseleave', 'showFbPopup')
 vezess.hu#%#//scriptlet('prevent-setTimeout', 'FbExit', '3000')
 !
+pcworld.hu#%#//scriptlet('remove-class', 'have-ad', 'body')
+!
 szeretlekmagyarorszag.hu$$script[tag-content="window.atob"]
 !
 port.hu$$script[tag-content="addEListener(DCL"]
@@ -2283,6 +2304,8 @@ divany.hu$$script[tag-content="window.onload = window.onfocus"]
 portfolio.hu$$script[tag-content="fbmodal-title"]
 !
 24.hu$$script[tag-content="2blck"]
+!
+hetek.hu#%#//scriptlet('remove-class', 'modal-open', 'body')
 !
 !-------------- CSS modifiers ----------------------------------------------!
 !
@@ -2322,19 +2345,26 @@ keol.hu#$#@media (min-width: 1200px) { section[id="content_left"][class="content
 keol.hu#$#section[id="content_left"][class="content_content"] { width: auto !important; padding: 0 45px 0 46px !important; }
 keol.hu#$#div#search_container { margin-bottom: 0 !important; }
 !
+kekvillogo.hu#$#body { padding-top: 0 !important; }
+!
 !-------------- Related ABP rules ------------------------------------------!
 ! These regular ABP rules dont't work properly without specific rules.
 !
 player.hu##.adult-overelay
 traffihunter.hu##.ooono_promo
 karpathir.com##[class^="k"][class*="-container"][class*="-2"][class$="-hide"]
-totalcar.hu##body > section:last-of-type
-totalbike.hu##body > section:last-of-type
-divany.hu##body > section:last-of-type
+! https://github.com/hufilter/hufilter/issues/212
+totalcar.hu,totalbike.hu,divany.hu##body > section:not(.site-header):last-of-type
+!totalcar.hu##body > section:last-of-type
+!totalbike.hu##body > section:last-of-type
+!divany.hu##body > section:last-of-type
 !
 ! Source: https://github.com/AdguardTeam/AdguardFilters/commit/554ca2274496755591b03e1474ba624eee7ff57d
 ! Author: AdamWr (https://github.com/AdamWr)
 videa.hu#@#.adBanner
+!
+hetek.hu###nyeremenyModal
+hetek.hu##[class="modal-backdrop fade show"]
 !
 ! End of iOS limitations
 !#endif
