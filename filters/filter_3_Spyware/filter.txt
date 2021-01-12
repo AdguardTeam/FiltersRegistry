@@ -75,6 +75,8 @@
 !-------JS----------
 !-------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/71368
+store.line.me#%#//scriptlet('remove-class', 'async-hide', 'html')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/70941
 pioneer.eu#%#//scriptlet('remove-attr', 'onclick', 'a[href][onclick^="trackOutboundLink"]')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/64616
@@ -4675,6 +4677,7 @@ nethunt.com/api/v1/track/email/$image
 ! Disabled in DNS filter
 ||telemetry.mozilla.org^
 !
+||x.babe.today^
 ||prod-collector.bigbasket.com^
 ||tracking.game8.jp^
 ||lcs.modoo.at^
@@ -6650,6 +6653,7 @@ _tracking.php?b=
 ||nd.demdex.net/event?d_mid=$redirect=nooptext,important,domain=9now.com.au
 ||adc.nine.com.au/?token=$redirect=nooptext,important,domain=9now.com.au
 !
+||rolite.eu/wp-content/*/js/cntr.js
 ||daumcdn.net/*/ba.min.js
 ||laurenhi.com/app/Eclog/
 /lcslog*.js$domain=naver.com|playentry.org|modoo.at
@@ -9135,6 +9139,13 @@ link.gmapp*.net$image
 ||rover.ebay.$image,object,script,badfilter
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/71368
+||googletagmanager.com/gtm.js$script,redirect=googletagmanager-gtm,domain=store.line.me
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||googletagmanager.com/gtm.js$domain=store.line.me
+@@||google-analytics.com/gtm/js?id=$domain=store.line.me
+@@||google-analytics.com/plugins/ua/ec.js$domain=store.line.me
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71099
 @@||st.top100.ru/top100/top100.js$domain=m.gazeta.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71980
