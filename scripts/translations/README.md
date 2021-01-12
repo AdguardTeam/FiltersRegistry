@@ -10,6 +10,10 @@ To import strings from the service, run the following in /translations scripts d
 ```
 ./download.sh
 ```
+After updated translations are downloaded, validate them:
+```
+yarn locales:validate
+```
 
 To export strings to the service, run the following in /translations scripts directory:
 ```

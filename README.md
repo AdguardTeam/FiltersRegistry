@@ -127,3 +127,8 @@ Validate `filters.json` and `filters_i18n.json` for platforms:
 ```
 node validate ./platforms
 ```
+
+Validate locales:
+```
+node validate-locales
+```
