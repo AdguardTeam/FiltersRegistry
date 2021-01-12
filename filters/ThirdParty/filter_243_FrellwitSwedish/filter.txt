@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2021-01-11 15:33:57 CET
+! Last modified: 2021-01-12 16:23:16 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -87,9 +87,6 @@ borskollen.se##a[href^="/nyheter"]:has(span:has-text(/annons/i))
 borsvarlden.com#%#//scriptlet('ubo-acis.js', 'setREVStartSize')
 borsvarlden.com##.format-thumb-small:has(.overlay-label:has-text(/spons/i))
 borsvarlden.com##article:has(.border-sponsored)
-breakit.se#%#//scriptlet('ubo-acis.js', '_adftrack', 'push')
-breakit.se#%#//scriptlet('ubo-acis.js', 'brktloadfs')
-breakit.se#%#//scriptlet('ubo-acis.js', 'twttr', 'trackPid')
 businessclass.se#%#//scriptlet('ubo-acis.js', '$', 'AdBlockDetector')
 buzzter.se#$##outer-wrap { overflow: auto !important; }
 buzzter.se#%#//scriptlet('ubo-acis.js', 'Optins', 'inc_opt')
@@ -219,8 +216,6 @@ jamtlandstidning.se##.elementor-widget-wrap:has(h2:has-text(/^Annonser$/))
 jamtlandstidning.se##.elementor-widget-wrap:has(img[src*=-annons-])
 jamtlandstidning.se##.elementor-widget:has(h2:has-text(/^Annons$/))
 justwannahavefun.se##.legible:has(.sub-title:has-text(/sponsrat av/i))
-kamerabild.se#%#//scriptlet('ubo-set.js', 'Annons', 'noopFunc')
-kamerabild.se##.kol2 > div:has(.pane-title):has-text(/annons/i)
 kamrat.com#%#//scriptlet('ubo-set.js', 'showAds', 'false')
 kamrat.com#%#//scriptlet('ubo-set.js', 'trap', 'noopFunc')
 kimura.se#%#//scriptlet('ubo-acis.js', 'advanced_ads_ready')
@@ -283,6 +278,7 @@ newsvoice.se##.td-post-author-name > a[href$="/author/foretagaren/"]:upward(5)
 newsvoice.se##.td-post-author-name > a[href$="/author/underhallning/"]:upward(5)
 newsvoice.se##aside:has(h4:has-text(/annonser/i))
 newsvoice.se##h4:has-text(/annonser/i) ~ a
+ng.se#$?##nativendo-mainfeed:upward(1) { remove: true; }
 nordfront.se##.post:has(span:not(.post-content):has-text(/annons/i))
 nordicchoicehotels.se#%#//scriptlet('ubo-nostif.js', 'n.modal.showWithCondition', '60000')
 nordichardware.se##.td-big-grid-post:has(a[href*="/sponsrat/"])
@@ -504,8 +500,8 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookiejar
 ###cookielawwarning
 ###cookieMsgBlock
-###cookieNotice
 ###CookieNotice
+###cookieNotice
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
@@ -973,7 +969,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /LogRocket.min.js$script,third-party,domain=~dsc.gg
 /losad/loada.$script
 /lottoland$image,domain=vett-och-etikett.com
-/lunchguiden*.$image,domain=folkbladet.nu|vk.se
 /magnific-popup$domain=shortcut.se
 /manageBanners$domain=gamereactor.se
 /maps.sponsored-pill.$script,domain=tripadvisor.se
@@ -994,7 +989,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /native_$script,domain=affarsvarlden.se
 /new_construction_ads/*$domain=hemnet.se
 /newsletter/*$domain=zalando.se
-/nodecounter/*?token$image,domain=ng.se
 /noview.$script,domain=gofm.se|trafikdirekt.se|trafikexperten.com|trafikradion.se
 /oil/*$script,domain=findit.fi|findit.se
 /omniture/s_code.js$script,domain=~atgplay.se
@@ -1197,7 +1191,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /se-wordpress-sunt
 /seenthis-hub/*$script
 /selections/native$xmlhttprequest,domain=svd.se
-/service-worker.js$script,domain=folkbladet.nu|vk.se
 /sf_tracking.js$script,domain=stayfriends.se
 /sg_reklam$domain=svampguiden.com
 /sh404sefsocial/*$script
@@ -1533,7 +1526,7 @@ bosidan.ax##.ad-li
 brafiler.se###header-banner
 branschkoll.se##.advert-widget
 bravenewbusiness.se##.site-information-container
-breakit.se##.videoAd,.js-video-ad
+breakit.se##.videoAd, .js-video-ad
 breakit.se##[class*="sponsored"]
 brinkenbakar.se,nikkasystems.com##.elementor-popup-modal
 brollopsmagasinet.se,bussmagasinet.se,customerinsider.se,maklarvarlden.se,startaochdriva.se##a[target="_blank"]
@@ -1548,7 +1541,7 @@ bussmagasinet.se,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retai
 buzzter.se###lock
 byggahus.se###svartalistan-login-required-overlay
 byggahus.se##.cookie-consent
-byggahus.se,mobil.se##a[href^="/partner/"]
+byggahus.se##a[href^="/partner/"]
 byggfaktadocu.se##.pop_box
 byggindustrin.se##.sponsrat
 byggipedia.se##.ai_widget
@@ -1737,11 +1730,7 @@ fokus.se##[class^="right-ads"]
 fokus.se##img[onload*="banner"]
 fokus.se,sverigeskonsumenter.se###cookie-box
 folkbladet.nu,vk.se##.vkmui-Text--grey
-folkbladet.nu,vk.se##[class^="adContainer"]
-folkbladet.nu,vk.se##a[href="https://umealunchguide.se/"]
-folkbladet.nu,vk.se##div[class^="bordersAndShadows"] > div[style^="min-height"]:only-child
-folkbladet.nu,vk.se##div[data-track-id="article-header"] + div:not([class])
-folkbladet.nu,vk.se##div[data-track-id="strossle"]
+folkbladet.nu,vk.se##[class^="adContainer"], div[class^="bordersAndShadows"] > div[style^="min-height"]:only-child
 foodfolder.se###myModal
 foreca.se###ckieconsent
 foreca.se###topbanner
@@ -1897,11 +1886,7 @@ jula.se##.g-cookie
 jusek.se##.l-advertisement
 jusek.se##.m-adform
 kalender.se##.day-nav ~ a:not([href*="kalender.se"])
-kamerabild.se###aside
-kamerabild.se###storan
-kamerabild.se##.Partner
-kamerabild.se,mobil.se###gdpr
-kamerabild.se,mobil.se##.storan
+kamerabild.se,mobil.se##.storan, .Partner
 kamrat.com###kadDiv
 kamrat.com##div[style="margin:25px 0;max-width:255px!important;"]
 kartor.eniro.se##.e-banner
@@ -2027,10 +2012,7 @@ mmabetz.se##.desktop-homepage-ad, .desktop-main-ad
 mmabetz.se##.latest-betting-campaigns
 mmabetz.se##.top-casino
 mmanytt.se##.bannerTop,.bannerHigh,.bannerWide,.front-banner,.front-banner-cover,#text-2,[class*="sponsrat-inlagg"],a[href*="://kampanjer."]
-mobil.se##.aside-puff
 mobil.se##.pspy_info
-mobil.se##li.partner
-mobil.se##li.teaser.Partner
 mobilanyheter.net###amp-user-notification1
 moderaterna.se##.sliding-popup-bottom
 modette.se##.true_native_block
@@ -2053,10 +2035,8 @@ netflixguiden.se##.a-instream
 news55.se###newsletter-popup
 news55.se##.after-article-widget
 news55.se##.is-native,.is-native-yes
-ng.se##.partner-articles-wrap
 ng.se##.secondary-sidebar > .panel-pane:last-child
-ng.se##.secondary-top
-ng.se##[class*="sponsored-article"]
+ng.se##.view-partner-articles, [class*="sponsored-article"]
 nordfront.se###campaign_area
 nordichardware.se##.pspy_info
 nordiskradio.se###cookieWindow
@@ -2442,8 +2422,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||brain.kit.se^$image,xmlhttprequest
 ||brandy.bonniernewslifestyle.se^$third-party
 ||breakit.se/adk$script
-||breakit.se/api/visit$xmlhttprequest
-||breakit.solidtango.com^$subdocument
 ||bstatic.com/static/affiliate$third-party
 ||btg.mtvnservices.com/aria/bentojs.js$script,domain=nickelodeon.se
 ||btg.mtvnservices.com/aria/coda.html$script,domain=nickelodeon.se
@@ -2480,7 +2458,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||ck.page^$third-party
 ||cmatch.idg.se^
 ||cms.catena.media/js/cm-tracking.$script
-||collect.breakit.se^$xmlhttprequest
+||collect.breakit.se^
 ||compricer.se^$third-party
 ||connect.facebook.net^*/fbds.js$third-party,domain=~facebook.com
 ||connect.getflowbox.com^$third-party,domain=aikfotboll.se|farjestadbk.se|svenskaturistforeningen.se
@@ -2586,7 +2564,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||feeds.feedburner.com^$image
 ||files.cdn.spilcloud.com/pb/$script
 ||flirtmatch.se^
-||folkbladet.nu^$csp=worker-src 'none'
 ||folkspel.se^$third-party
 ||foretagande.se/a/$xmlhttprequest
 ||foretagande.se/r/$xmlhttprequest
@@ -2724,8 +2701,8 @@ yelp.se##[data-ga-category="biz page ad"]
 ||mediaglacier.com^$third-party
 ||mediakraft.se^$third-party
 ||mediekompaniet.com^$third-party
-||mega.folkbladet.nu^$script,xmlhttprequest
-||mega.vk.se^$script,xmlhttprequest
+||mega.folkbladet.nu^
+||mega.vk.se^
 ||meltwater.com^$third-party
 ||metapic.se^$third-party
 ||metric-mobil.aftonbladet.se^$image
@@ -2735,7 +2712,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||milotree.com^$third-party
 ||mindreskatt.se^
 ||missaffiliate.com^$third-party
-||mobil.se/sites/*.mp4$media
 ||mogenromantik.com^
 ||molnvaxlar.se/banner/$third-party
 ||momondo.se/gtm/$subdocument
@@ -2756,6 +2732,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||news.google.com/swg$third-party,domain=thelocal.se
 ||newsharecounts.*.amazonaws.com/nsc.js$script
 ||newstats.blogg.se/collector
+||ng.se/nodecounter/
 ||nichehuset.dk^$third-party
 ||nompakru.click^
 ||nordicfynd.se^
@@ -2913,7 +2890,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||telemetric.dk^$third-party
 ||telemetry.bambuser.io^$websocket
 ||temadagar.se/ezoic
-||terms.vkmedia.se/agreements/$xmlhttprequest
+||terms.vkmedia.se^
 ||thestoryof2.se/em_event.html
 ||tibaco.net/scripts/tws.js$script
 ||topdisplaynetwork.com^$third-party
@@ -2941,7 +2918,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||twittercounter.com^$third-party
 ||ubembed.com^$third-party
 ||ues*.mmcloud.se/api/*/events$third-party
-||ues.vk.se^*/event$xmlhttprequest
+||ues.vk.se^*/events
 ||ufinkln.com/offer?prod$popup
 ||unformsy.mobi^$third-party
 ||upsales.com^$third-party
@@ -2956,7 +2933,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||viforetag.se^$third-party
 ||vikispot.com^$third-party
 ||vinguiden.com^$third-party
-||vk.se^$csp=worker-src 'none'
 ||walls.io^$domain=svensktgolfforum.se
 ||webbannons.ntm.eu^$subdocument
 ||webbcensus.com^$third-party
