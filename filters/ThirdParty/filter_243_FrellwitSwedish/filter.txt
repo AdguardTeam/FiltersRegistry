@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2021-01-12 16:23:16 CET
+! Last modified: 2021-01-13 08:22:28 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -64,7 +64,6 @@ alltommat.se##.teaser:has(.teaser-label:has-text(/annonssamarbete/i))
 alltommat.se,alltomtradgard.se,damernasvarld.se,expressen.se,skonahem.com,teknikensvarld.se##.teaser:has(.teaser__bottom--ad-marker)
 alltommat.se,alltomtradgard.se,damernasvarld.se,skonahem.com,teknikensvarld.se#%#//scriptlet('ubo-acis.js', 'ExpressenAnalytics', 'push')
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
-altinget.se#%#//scriptlet('ubo-nostif.js', 'show_popup')
 arvikanyheter.se,dalslanningen.se,filipstadstidning.se,fryksdalsbygden.se,hjotidning.se,karlskogatidning.se,kt.se,mariestadstidningen.se,nkp.se,nlt.se,nwt.se,provinstidningen.se,saffletidningen.se,sla.se,varmlandsaffarer.se,vf.se#%#//scriptlet('ubo-acis.js', 'nwtThirdParties')
 arvikanyheter.se,dalslanningen.se,filipstadstidning.se,fryksdalsbygden.se,hjotidning.se,karlskogatidning.se,kt.se,mariestadstidningen.se,nkp.se,nlt.se,nwt.se,provinstidningen.se,saffletidningen.se,sla.se,varmlandsaffarer.se,vf.se#%#//scriptlet('ubo-cookie-remover.js', 'page-views')
 autonytt.se##a:has(.label:has-text(/sponsrad/i))
@@ -138,6 +137,7 @@ eventeffect.se,executiveeffect.se,saleseffect.se##.post-teaser:has(a[href$="/ann
 evertiq.se#$##bgWrapp { pointer-events: none !important; }
 evertiq.se#$##content, .sitesTab, .menuBar, #foot { pointer-events: all !important; }
 evertiq.se#$#body { cursor: default !important; }
+existenz.se##a[href*="bannerid="]:upward(.link)
 expressen.se##.teaser:has(a[href*="/annons"])
 expressen.se##.teaser:has(a[href*="/brand-studio"])
 expressen.se##.teaser:has(a[href*="/brandstudio"])
@@ -218,7 +218,6 @@ jamtlandstidning.se##.elementor-widget:has(h2:has-text(/^Annons$/))
 justwannahavefun.se##.legible:has(.sub-title:has-text(/sponsrat av/i))
 kamrat.com#%#//scriptlet('ubo-set.js', 'showAds', 'false')
 kamrat.com#%#//scriptlet('ubo-set.js', 'trap', 'noopFunc')
-kimura.se#%#//scriptlet('ubo-acis.js', 'advanced_ads_ready')
 kimura.se##article:has(#storknapp:has-text(/^till kampanj/i))
 kimura.se##article:has(img[src$="/sponsrad.png"])
 kittad.se##.kittad-label-sponsored:upward(li)
@@ -258,7 +257,6 @@ metromode.se##.b-related__item:has(.advert)
 metromode.se##.js-blox-article:has(.advert)
 metromode.se#$?#.slick-item:has(.advert) { remove: true; }
 minimalisterna.se##.post:has(p:has-text(/i samarbete med/i))
-missatsamtal.se#%#//scriptlet('ubo-aopw.js', '_gaq')
 missatsamtal.se##.comment:has(.nosnaj)
 mittkok.expressen.se#%#//scriptlet('ubo-acis.js', 'adblock')
 mittkok.expressen.se#%#//scriptlet('ubo-aeld.js', 'click', 'trackClick')
@@ -310,7 +308,6 @@ qx.se##.col-4:has(script)
 qx.se##.qxa-container:upward(1)
 radarbox.com#%#//scriptlet('ubo-set.js', 'ads_enabled', 'true')
 radron.se#%#//scriptlet('ubo-cookie-remover.js', 'RR_RP')
-ratsit.se#$#body { overflow: auto !important; }
 realtid.se#$#.modal-open { overflow: unset !important; }
 rikakvinnor.se#$?#article.category-samarbete { remove: true; }
 rikatillsammans.se##article:has(.sponsor_pre_heading)
@@ -505,6 +502,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ###cookies-acceptance .alert.bottom
 ###cookiesInfo
 ###dialog-eu-cookie-law
+###div-leeadsFullpageAd
 ###eazy_ad_unblocker_dialog-message
 ###eu-cookie-bar
 ###gdpr-bar
@@ -660,6 +658,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##div.cookie-show-bar-bottom
 ##div.cookievarning-wrap
 ##div.elementor-widget-wp-widget-advads_ad_widget
+##div.gdpr-warning-slide-up
 ##div.holidAds
 ##div.l-footer__adtext
 ##div.NativeAd
@@ -760,7 +759,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /ads.for.me/jsa?$script
 /ads.js?$script,domain=flashback.org
 /ads.json$xmlhttprequest,domain=pomu.se
-/ads/mitti/*$image
 /adsLoader.$script,~third-party,domain=booli.se
 /adv_utils.$script,domain=viivilla.se
 /advertisement-dfp$script
@@ -863,6 +861,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /d-footer.$script,domain=aftonbladet.se
 /discourse-adplugin
 /docunet_stats.js$script
+/dovas/ads/*
 /downloads.mailchimp.com/*$domain=branschkoll.se|landleyskok.se|villalivet.se
 /downloads.mailchimp.com/js/signup-forms/popup$image,script
 /ds-tracker.js$domain=dagenssamhalle.se
@@ -1082,7 +1081,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /plugins/mashsharer/*$script,domain=bilresaieuropa.se|dagensknep.se|djursidan.se|firefighters.se|misween.com|mysigast.se
 /plugins/material-admin/visitor-stats$script
 /plugins/metro-affiliate/*$script
-/plugins/mitti-ad$script,domain=alltomstockholm.se
 /plugins/mitti-oath-cmpi-js/*
 /plugins/ml-adverts/*$script
 /plugins/modal-for-elementor/*$script,domain=miljomagasinet.se
@@ -1304,7 +1302,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /www/images/*$image,domain=elektronikforumet.com
 /xhr-ads.min.js$script
 /zdadkit$script,domain=nordic.ign.com
-180.se##.ai-top-ad-outer
+180.se##[class*="top-ad-"]
 2000tv.se###bannerbox
 250x360$image,domain=marsta.nu
 280x240$image,domain=rumhemma.se
@@ -1444,11 +1442,10 @@ alltommat.se,alltomtradgard.se,damernasvarld.se,skonahem.com,teknikensvarld.se##
 alltommat.se,di.se,dn.se,familyliving.se,privataaffarer.se##.teaser-native
 alltommat.se,familyliving.se,privataaffarer.se##a.teaser[href*="/annonssamarbete/"]
 alltommat.se,familyliving.se,privataaffarer.se##a.teaser[href*="/promotion/"]
-alltomstockholm.se##.panorama_top,.ad-mark-rotated,[class^="insider_"],[class*="ad_container"],.interstitial-background
+alltomstockholm.se##.panorama_top,.ad-mark-rotated,[class^="insider_"],.outsider-container,[class*="ad_container"],.interstitial-background
 alltomstockholm.se,fotbollskanalen.se##.article-share
 alltomwhisky.se##.topmost-banner
 alpresor.se###toast-container
-altinget.se###CookieModal_cookiemodal
 arbetaren.se##.adverter
 arbetarskydd.se,lag-avtal.se,nyteknik.se##.alman-teaser
 arbetarskydd.se,lag-avtal.se,nyteknik.se##.sponsored-box
@@ -1674,10 +1671,8 @@ evertiq.se##.bnrWrapper
 evertiq.se##.gdprcookie
 evertiq.se##[data-gabnr]
 evertiq.se,fz.se##.bnr
-existenz.se###backgroundad
-existenz.se###main > p[style="color:#7A7A7A;font-size:11px"]
 existenz.se###slidebox
-existenz.se##.wm-nopop
+existenz.se##.wm-nopop, #main > p[style^="color"]
 expo.se##div[class*="expo-ads"]
 exponera.nu##.wof-overlay
 exponera.nu##.wof-wheels
@@ -1792,10 +1787,6 @@ glassakademin.se##[class^="adverts-"]
 globalportalen.org##.follow-us-section
 godare.se##.privacy-information
 google.se##mobile-promo
-goteborgdirekt.se,mitti.se,vasterastidning.se##.gdpr-warning
-goteborgdirekt.se,vasterastidning.se##.profile-native
-goteborgdirekt.se,vasterastidning.se##.push-component-native
-goteborgdirekt.se,vasterastidning.se##[class^="casino-ad"]
 goteborgsgolfaren.se###sgpb-popup-dialog-main-div-wrapper
 goteborgsgolfaren.se##.sgpb-popup-overlay
 gotlandswebben.se##.header-ads-wrapper
@@ -1892,11 +1883,7 @@ kamrat.com##div[style="margin:25px 0;max-width:255px!important;"]
 kartor.eniro.se##.e-banner
 katerinamagasin.se##.adv-area,#right-areas
 kenzas.se##article[data-text*="In collaboration with"]
-kimura.se##.bg
-kimura.se##.submission-before-everything
-kimura.se##a[href*="/kampanjer."]
-kimura.se##a[href*="unibet.com"]
-kimura.se##a[href*="utm_campaign"]
+kimura.se##.bg, a[href*="unibet.com"], a[href*="/kampanjer."], a[href*="utm_campaign"]
 kingsizemag.se##a[href*="/redir/"][target="_blank"]
 kit.se##.box--newsletter
 kit.se##.isNative
@@ -1979,8 +1966,7 @@ maipenrai.se##article + div[align="center"]
 majanilssonlindelof.com##.apprl-title,.cli-modal,.cli-modal-backdrop
 maklarvarlden.se##.hustle-popup
 maklarvarlden.se##[id^="mts_ad"]
-market.se###newsletter-rollup
-market.se##[id^="fusion_ad"]
+market.se###rollup, #newsletter-rollup
 market.se##article[about^="/annons"]
 marsta.nu###secondary-content > .panel--naringsliv
 marsta.nu##.outsider
@@ -2092,12 +2078,7 @@ radionytt.se###toppannons
 radioplay.se###root > div[data-reactroot] > div:not([class]):not([id])
 rastaochdalla.se##.sidebar-right > .widget_social_links
 rastaochdalla.se##.widget_advertise
-ratsit.se##.campaign-bar
-ratsit.se##.js-cookie-modal
-ratsit.se##.modal-backdrop
 ratsit.se##.promo
-ratsit.se##.search-list-inline-ad
-ratsit.se##[class*="lonekollen"]
 ratsit.se,sonicmagazine.com##[class^="ad-"]
 ravarumarknaden.se###header > div > div.last
 readly.com##.cookies-container
@@ -2279,7 +2260,6 @@ tripadvisor.se##[class$="banner_ad"]
 turismnytt.se##.site-wrap > .row > .col-sm-3
 tv.nu###app > div > div[class]:nth-of-type(2)
 tv.nu##a[href*="adform.net"]
-tvdags.se##.like-modal
 tvmatchen.nu##.bet365
 typkanske.se##.adbar
 underbaraclaras.se##.ad_parent
@@ -2542,9 +2522,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||evidon.com^$third-party,domain=morningstar.se|mtv.se|spela.se|tripadvisor.se
 ||execute-api.eu-west-1.amazonaws.com/*/event$xmlhttprequest,domain=forum.hallon.se
 ||execute-api.eu-west-1.amazonaws.com/live/analytics/$xmlhttprequest
-||existenz.se/img/o/$image
-||existenz.se/img/prq.gif
-||existenz.se/js/wiget.$script
+||existenz.se/img/o/
 ||exitintel.com^$third-party
 ||experience.tinypass.com^*/execute$xmlhttprequest
 ||facebook.com/*/plugins/like$third-party
@@ -2790,7 +2768,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||qx.se/qxa/$xmlhttprequest
 ||rabattkoder.ifragasatt.se^
 ||rabble-res.cloudinary.com^$third-party
-||ratsit.se/Koppalett
 ||reaktion.se^$third-party
 ||realiteti.info^
 ||recirculation.spot.im^$third-party
@@ -2911,7 +2888,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||truthlyanalytics.com^$third-party
 ||turistmal.se/js/popup-controller.js$script
 ||tv4-video-tracking.b17g.net/event
-||tvdags.se/json/stats$xmlhttprequest
+||tvdags.se/json/stats
 ||tvmatchen.nu/plugins/splash-redirector
 ||tvmatchen.nu^*/smartbanner
 ||twingly.com^$third-party
