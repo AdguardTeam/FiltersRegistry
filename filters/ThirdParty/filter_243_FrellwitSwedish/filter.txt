@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2021-01-15 12:36:01 CET
+! Last modified: 2021-01-16 11:04:28 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -134,9 +134,7 @@ etc.se#%#//scriptlet('ubo-set.js', 'Drupal.behaviors.lock_article', 'undefined')
 ettgottskratt.se,humorbibeln.se,newsner.com,sportbibeln.se##.ssp_divider:has(.sponsored-bar)
 etunawebben.se#%#//scriptlet('ubo-nostif.js', 'ad')
 eventeffect.se,executiveeffect.se,saleseffect.se##.post-teaser:has(a[href$="/annons/"])
-evertiq.se#$##bgWrapp { pointer-events: none !important; }
-evertiq.se#$##content, .sitesTab, .menuBar, #foot { pointer-events: all !important; }
-evertiq.se#$#body { cursor: default !important; }
+evertiq.se#%#//scriptlet('ubo-acis.js', '$', 'banner_loader')
 existenz.se##a[href*="bannerid="]:upward(.link)
 expressen.se##.teaser:has(a[href*="/annons"])
 expressen.se##.teaser:has(a[href*="/brand-studio"])
@@ -317,7 +315,6 @@ shortcut.se##.employer:has(.sponsored)
 shortcut.se##article:has(.sponsored)
 skanesport.se#%#//scriptlet('ubo-json-prune.js', 'main.content_data.ad_block')
 skrattsajten.com#%#//scriptlet('ubo-acis.js', '$', 'e.preventDefault')
-sokmotorkonsult.se##.feature:has(a[href*="/sponsrade-lankar"])
 spela.se#%#//scriptlet('ubo-acis.js', '$jscomp')
 spela.se#%#//scriptlet('ubo-acis.js', 'AdPortal')
 spela.se#%#//scriptlet('ubo-acis.js', 'trackEvidonEvent')
@@ -732,6 +729,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /468adrotate.php
 /?agg_url=/shopping$domain=nyheter24.se
 /?agg_url=/sponsratinnehall$domain=nyheter24.se
+/?dtbnrspcid=$xmlhttprequest
 /?file=lokus$subdocument
 /?template=prisjakt$domain=ljudochbild.se
 /_adsmodern/*$image
@@ -811,8 +809,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /bilder/partners/*$domain=badminton.nu
 /bimber-live.localhost$image,domain=mmabetz.se
 /bitcsys/js/bit.js$script
-/blogcounter.js$script,domain=javligtgott.se
-/blogcounter/image?$image,domain=javligtgott.se
 /blogs/log_pageview/*$script
 /bmb-related-teasers$xmlhttprequest
 /bmb/*/native/boosted$xmlhttprequest
@@ -820,7 +816,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /bmbDfpUtils.$script
 /bmbFusionUtils.$script
 /bnrscr?$domain=cleannet.se|dagenshandel.se|entreprenad.com|food-supply.se|foodnet.se|fri-kopenskap.se|habit.se|kemivarldenbiotech.se|lifesciencesweden.se|medtechmagazine.se|motormagasinet.se|packnet.se|plastnet.se|processnet.se|recyclingnet.se|rt-forum.se|skyddosakerhet.se|transportnet.se|uochd.se|verkstaderna.se|woodnet.se
-/BrightcoveExperiences.js$script,domain=viktvaktarna.se
 /buttonizer$domain=macken.xyz
 /campaign*/*$script,xmlhttprequest,domain=alltforforaldrar.se|kokaihop.se|mammasidan.se|minbebis.com|nyheter24.se
 /caos/analytics.js$script
@@ -862,7 +857,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /dovas/ads/*
 /downloads.mailchimp.com/*$domain=branschkoll.se|landleyskok.se|villalivet.se
 /downloads.mailchimp.com/js/signup-forms/popup$image,script
-/ds-tracker.js$domain=dagenssamhalle.se
 /DynamicGAFunctions$script,domain=morningstar.se
 /emediate-responsive-wp-plugin/*
 /empty.html$subdocument,domain=byggvarlden.se|hotellorestaurang.se
@@ -1161,6 +1155,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /pulsetracking$script,domain=aftonbladet.se
 /pum/*$script,xmlhttprequest,domain=byggipedia.se|exponera.nu|flm.nu|opulens.se|tkj.se
 /pum/*$stylesheet,domain=it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se
+/QA.js$domain=qruiser.com
 /questback.popup$script
 /QXA.$script,domain=qruiser.com|qx.se
 /rabattkod$domain=aftonbladet.se
@@ -1176,6 +1171,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /s_code.js$domain=dagenstv.com
 /Scripts/burt/*$script
 /scripts/initLogging$domain=alltomtradgard.se|damernasvarld.se|expressen.se|skonahem.com
+/scripts/opt/view.analytics.js
 /scripts/pb*.js$script,domain=elinskoglund.com|fannystaaf.se|lovisawallin.se|moamattsson.se|nouw.com
 /se-wordpress-agilis-solum/assets/js/ad-collapse.$script
 /se-wordpress-gdpr
@@ -1217,7 +1213,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /sponsorer-$image,domain=ridsport.se
 /spotlight-ad_$image
 /sptAutoTracker$script,domain=aftonbladet.se
-/static.marklar.se/track/custom-tracker.$script
+/static.marklar.se/*-tracker
 /static/js/loada.js$script
 /statistics.$script,xmlhttprequest,domain=alltforforaldrar.se|byggnyheter.se|dagensfastigheter.se|dagensnaringsliv.se|energinyheter.se|fria.nu|friatidningen.se|goteborgsfria.se|industrinyheter.se|infrastrukturnyheter.se|inredningsnyheter.se|jarnvagsnyheter.se|landetsfria.se|mammasidan.se|market.se|metallerochgruvor.se|minbebis.com|papperochmassa.se|plastikoperationsforum.se|sesam.nu|solenerginyheter.se|sportochfritidsnyheter.se|stockholmsbyggnyheter.se|stockholmsfria.se|sxk.se|testfakta.se|transportochlogistik.se|vindkraftsnyheter.se
 /stats.wp.com$script
@@ -1232,13 +1228,11 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /swfobject.js$script,domain=dagenstv.com
 /swordfishinc.download.akamai.com/*$script
 /tabs_hits_counter.php$image
-/takeover.gif$image,domain=flamman.se
 /targeted_campaign$domain=spela.se
 /theme/set_resources$script,domain=maipenrai.se
 /themes/Jaz/inc/js/*scroll$script,domain=explorecurate.com
 /thumbnail_bettingstugan$image
 /thumbs/webbannons$image
-/timeOnPage.$script,domain=arbetsmarknadsnytt.se
 /TopBanner$subdocument,domain=hitta.se
 /trackers/SessionCam-tag$script
 /trackolding$script,domain=skyscanner.se
@@ -1260,7 +1254,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /videojs-preroll.$domain=himlentv7.se
 /videojs.ima.$script,domain=gamereactor.se|staylive.tv
 /view-resources/public/*/js/dfp.
-/view.analytics.js$script,domain=kodboken.se
 /view_count/view.php$xmlhttprequest
 /wdg/iab-active$script
 /wdg_cookie_bar
@@ -1358,7 +1351,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||happyride.se/img/admarket/$~third-party
 @@||imasdk.googleapis.com/js/sdkloader/ima3.$script,domain=atl.nu|ekuriren.se|gamereactor.se|kkuriren.se|screen9.com|sn.se|strengnastidning.se
 @@||js.createsend1.com/js/jquery
-@@||kurslitteratur.se^$generichide
 @@||morningstar.com/scripts/ads.js$domain=morningstar.se
 @@||mparticle.com^*/login$domain=discoveryplus.se
 @@||sdk.pulse.schibsted.com/loader.min.js$domain=special.aftonbladet.se
@@ -1444,7 +1436,6 @@ alpresor.se###toast-container
 arbetaren.se##.adverter
 arbetarskydd.se,lag-avtal.se,nyteknik.se##.alman-teaser
 arbetarskydd.se,lag-avtal.se,nyteknik.se##.sponsored-box
-arbetsmarknadsnytt.se##.twitter-announcement-bg
 arkitekt.se##.Cookie
 arkitekten.se##.post-teaser__wrapper--ad
 arkitektur.se##[class*="panorama"]
@@ -1588,8 +1579,7 @@ dagensinfrastruktur.se##[class^="ad-"]
 dagensjuridik.se##a[href*="/annons/"]
 dagensopinion.se##a[href^="/annons-"]
 dagensps.se##a[href*="/ps-partner/"]
-dagenssamhalle.se##.c-teaser.-native
-dagenssamhalle.se##.node-native
+dagenssamhalle.se##.node-native, .c-teaser.-native
 dagenssamhalle.se##.notice
 dagenstv.com###bt
 dagensvastervik.se,dagensvimmerby.se##.panoramaAnnons, .JobAdDiv, .annonsKolumn, .insideAd, .ingressAd, .familyAds
@@ -1659,10 +1649,8 @@ eventeffect.se,executiveeffect.se,saleseffect.se###nyhetsbrev-pp-wrapper__contai
 eventeffect.se,executiveeffect.se,saleseffect.se###sidebar-ads-right
 eventeffect.se,executiveeffect.se,saleseffect.se##.partnerartikel
 eventeffect.se,executiveeffect.se,svartgul.se,tvmatchen.nu###panorama
-evertiq.se###carpet
-evertiq.se##.bnrWrapper
 evertiq.se##.gdprcookie
-evertiq.se##[data-gabnr]
+evertiq.se##[data-gabnr], #carpet
 evertiq.se,fz.se##.bnr
 existenz.se###slidebox
 existenz.se##.wm-nopop, #main > p[style^="color"]
@@ -1706,7 +1694,6 @@ firstclassmagazine.se###leader-wrap
 fiskejournalen.se##.fisher-takeover-container
 fjallbrynt.se###itc-cookie-notify
 flamman.se##.Banner
-flamman.se##.TakeOverBanner
 flashback.org###top-banner-row,#bottom-banner-container,#right-banner-container,.post-banner-container
 flashscore.se###cookie-law
 flm.nu##.spons
@@ -1889,9 +1876,7 @@ kulturbloggen.com##.sidebar > .widget_custom_html
 kungalvsposten.se,kungsbackaposten.se,lokaltidningensto.se,molndalsposten.se##.native-div
 kungalvsposten.se,kungsbackaposten.se,lokaltidningensto.se,molndalsposten.se##.wp-slot-layout-article-native
 kungalvsposten.se,kungsbackaposten.se,lokaltidningensto.se,molndalsposten.se##[data-html*="ad-container"]
-kurera.se##.annonswrapper
 kurera.se##.kurera-register-newsletter-popup
-kurslitteratur.se##.ad-section
 kvalitetsmagasinet.se,miljo-utveckling.se,telekomidag.se,vdtidningen.se###subscribe_splash
 kvalitetsmagasinet.se,miljo-utveckling.se,telekomidag.se,vdtidningen.se##.partnermedia
 kvalitetsmagasinet.se,miljo-utveckling.se,telekomidag.se,vdtidningen.se##[class*="nativeadwidget"]
@@ -2118,7 +2103,6 @@ smartsenior.se##.modal-mobile-app
 smartsenior.se##.ss-modal
 smhi.se##.polopolyNotification
 so-rummet.se##.block-advert
-sokmotorkonsult.se##.pb-topbar
 solidtango.com###cookie-prompt
 spanaren.se##.textwidget > a[target="blank"] > img
 spbi.se##.policy-disclaimer
@@ -2491,7 +2475,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||es.loppi.se/get$script
 ||eteppy.com^
 ||europe-west1-bonnier-big-data.cloudfunctions.net^$third-party
-||evertiq.se/bximg/$image
+||evertiq.se/bximg/
 ||everydaystories.se^$third-party
 ||evidon.com^$third-party,domain=morningstar.se|mtv.se|spela.se|tripadvisor.se
 ||execute-api.eu-west-1.amazonaws.com/*/event$xmlhttprequest,domain=forum.hallon.se
@@ -2720,6 +2704,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||platssajten.se^$third-party
 ||play.etc.se/sw.js
 ||pliing.com^$third-party
+||plowking.mecenat.com^$third-party
 ||portalhc.com^$third-party
 ||powr.io/powr.js$script
 ||pricerunner.com/publisher-widgets/se/*&partnerId$third-party
@@ -2737,7 +2722,6 @@ yelp.se##[data-ga-category="biz page ad"]
 ||pushpushgo.com^$third-party
 ||pushwhy.com^
 ||pxl.host^$third-party
-||qx.se/qxa/$xmlhttprequest
 ||rabattkoder.ifragasatt.se^
 ||rabble-res.cloudinary.com^$third-party
 ||reaktion.se^$third-party
@@ -2819,7 +2803,7 @@ yelp.se##[data-ga-category="biz page ad"]
 ||strossle.com^$third-party
 ||studads.com^$third-party
 ||studentum.se/nocache/home/ads$xmlhttprequest
-||stumbleupon.com/hostedbadge.$script,domain=javligtgott.se
+||stumbleupon.com/hostedbadge$domain=javligtgott.se
 ||suntana.se^$third-party
 ||susnet.nu/susnetstat.js$script
 ||susnet.se/susnetstat.js$script
