@@ -1,17 +1,18 @@
 !
 ! Title: Polish Anti Adblock Filters
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku
-! Last modified: 5 stycznia 2021
+! Last modified: 17 stycznia 2021
 ! Expires: 2 days
-! OriginalVersion: 2021010502
+! OriginalVersion: 2021011701
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ! Copyright (C) 2021
-! v.2021010502 aktualizacja: wt, 5 stycznia 2021, 08:05:00
+! v.2021011701 aktualizacja: nie, 17 stycznia 2021, 18:35:00
 !
 !
 !-----------------------Integration of supplement lists for uBlock & AdGuard-----------------------!
+!#if ext_ublock
 ! Title: Polish Anti Adblock Filters - supplement for uBlock Origin
 ! Oficjalne polskie filtry przeciwko alertom o Adblocku - uzupelnienie dla uBlock Origin
 ! Last modified: 5 January 2021
@@ -20,7 +21,7 @@
 ! Support:
 !   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
 ! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
-! Copyright (C) 2020
+! Copyright (C) 2021
 ! v.2021010501 aktualizacja: wt, 5 stycznia 2021, 19:50:00
 !
 !
@@ -180,6 +181,182 @@ kurnik.pl#%#//scriptlet('ubo-aopr.js', 'abask')
 ! karmopedia.pl
 karmopedia.pl#%#//scriptlet('ubo-acis.js', 'showAdblockImage')
 karmopedia.pl#%#//scriptlet('ubo-nostif.js', 'showAdblockImage', '2000')
+!#endif
+!#if adguard
+! Title: Polish Anti Adblock Filters - supplement for Adguard
+! Oficjalne polskie filtry przeciwko alertom o Adblocku - uzupelnienie dla Adguard
+! Last modified: 17 January 2021
+! Expires: 2 days
+! OriginalVersion: 2021011701
+! Support:
+!   Github >> https://github.com/olegwukr/polish-privacy-filters/issues
+! License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+! Copyright (C) 2021
+! v.2021011701 aktualizacja: nie, 17 stycznia 2021, 18:35:00
+!
+!
+! Adblock
+/js/adblock.js$script,redirect=prevent-fab-3.2.0,domain=gorlice.in|limanowa.in|sacz.in,important
+@@||sso.ppapi.pl/rodo.js$xmlhttprequest
+acmilan.com.pl#%#//scriptlet('ubo-set-constant.js', 'showAds', 'true')
+alefunny.pl###myModal, .modal-backdrop
+alefunny.pl#$#.modal-open { overflow: auto !important; padding-right: 0px !important; }
+astroweb.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'checkAds')
+aternos.org#%#//scriptlet('ubo-setTimeout-defuser.js', 'hasAdblock')
+cvninja.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'fuckAdBlock')
+darmowa-telewizja.online#%#//scriptlet('ubo-addEventListener-defuser.js', 'load', 'onload')
+dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gs24.pl,kurierlubelski.pl,motofakty.pl,naszemiasto.pl,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,stronakobiet.pl,telemagazyn.pl,to.com.pl,wspolczesna.pl#%#//scriptlet('ubo-aeld.js', '', 'show')
+dziwnekomiksy.pl#$#body>* { filter: blur(0px) !important; }
+filmweb.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'notDetected')
+filmweb.pl#@%#//scriptlet('ubo-abort-current-inline-script.js', 'decodeURIComponent', 'newAdblockBoardDisplayed')
+filmweb.pl$$script[tag-content="adblockDisplayInformation."][min-length="8000"][max-length="50000"]
+miastakobiet.pl,stronazdrowia.pl#%#//scriptlet('ubo-set-constant.js', 'pp_adblock_is_off', 'trueFunc')
+mmorpg.org.pl#%#//scriptlet('ubo-nofab.js')
+niezalezna.pl#%#//scriptlet('ubo-noeval.js')
+playpuls.pl#%#//scriptlet('ubo-setInterval-defuser.js', 'muted', '8000')
+playpuls.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'Math.round', '5000')
+polskatimes.pl,dziennikbaltycki.pl,expressilustrowany.pl#@##advert1
+polskatimes.pl,dziennikbaltycki.pl,expressilustrowany.pl#@#.div-gpt-ad
+scypion.pl#$#.adsbygoogle { position: absolute!important; left: -3000px!important; }
+skript.pl#%#//scriptlet('ubo-abort-current-inline-script.js', '$', 'alert')
+skript.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'document.addEventListener', 'adblocka')
+twojetv.ws#%#//scriptlet('ubo-abort-current-inline-script.js', 'atob', 'decodeURIComponent')
+warezdark.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'addBlocking')
+zarabiam.com#$#body > font[color="green"]:last-of-type { color: transparent !important; }
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=twojahistoria.pl,redirect=noopjs
+||ppstatic.pl/*/reklama.js$script,domain=dziennikbaltycki.pl|dzienniklodzki.pl|dziennikpolski24.pl|dziennikzachodni.pl|echodnia.eu|expressbydgoski.pl|expressilustrowany.pl|gazetakrakowska.pl|gazetalubuska.pl|gazetawroclawska.pl|gk24.pl|gloswielkopolski.pl|gol24.pl|gp24.pl|gra.pl|gs24.pl|kurierlubelski.pl|motofakty.pl|naszemiasto.pl|nowiny24.pl|nowosci.com.pl|nto.pl
+||s-pt.ppstatic.pl/*/reklama.js$script,redirect=noopjs,important
+||wp.hit.gemius.pl/gdejs/xgde.js$script,redirect=noopjs,domain=pilot.wp.pl
+!
+! Rules after Adblock
+vod.pl#$#.infoCloud { position: absolute!important; left: -3000px!important; }
+webinsider.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'AdBlock')
+!
+! naszemiasto.pl - https://github.com/MajkiIT/polish-ads-filter/issues/3175
+naszemiasto.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'czy_wlaczony_adblock')
+!
+! calcoolator.pl
+||calcoolator.pl/inc/js/adblockill_copy.js
+!
+! start.me
+start.me#%#//scriptlet('ubo-nostif.js', 'adBanner')
+!
+! zabawa z adquesto
+weszlo.com,prnews.pl,mambiznes.pl,kresy.pl,natemat.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'parseInt', 'adblock')
+!
+! tvn24.pl
+tvn24.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'Vublock')
+!
+! kitsune-subs.anime-odcinki.pl
+kitsune-subs.anime-odcinki.pl#%#//scriptlet('ubo-set-constant.js', 'showAds', 'true')
+!
+! ps3-hack.pl
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,domain=ps3-hack.pl,important
+!
+! twojogrodek.pl
+twojogrodek.pl,waw4free.pl#$#.pub_300x250.pub_300x250m.text-ad.textAd.text-ads.text-ad-links { display: block !important; }
+!
+! dniwolne.eu
+dniwolne.eu#%#//scriptlet('ubo-set-constant.js', 'window.google_jobrunner', 'noopFunc')
+dniwolne.eu##.axv
+dniwolne.eu$$.axv
+!
+! shinden.pl
+!shinden.pl##+js(abort-on-property-write.js, _pop)
+shinden.pl#%#//scriptlet('ubo-noeval-if.js', 'Criteo')
+shinden.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'AdservingModule')
+!
+! exdb.net
+exdb.net#%#//scriptlet('ubo-abort-on-property-read.js', 'zfgformats')
+exdb.net#%#//scriptlet('ubo-abort-on-property-write.js', '_pop')
+exdb.net#%#//scriptlet('ubo-abort-on-property-read.js', 'mdpDeBlocker')
+exdb.net#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'mdpDeBlocker')
+!
+! nk-net.pl
+||pagead2.googlesyndication.com/pagead/show_ads.js$script,redirect=noopjs,domain=nk-net.pl|www.gry.pl,important
+!
+! popkulturysci.pl
+||pagead2.googlesyndication.com^$important,script,redirect=noopjs,domain=popkulturysci.pl
+||pagead2.googlesyndication.com^$important,xmlhttprequest,redirect=nooptext,domain=popkulturysci.pl
+!
+!
+trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'HateAdBlock')
+trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'adBlockDetected')
+!
+!
+~poczta.interia.pl,interia.pl,pomponik.pl#%#//scriptlet('ubo-set.js', 'Inpl.Abd.onDetected', 'noopFunc')
+interia.pl,pomponik.pl#%#//scriptlet('ubo-set.js', 'isAdblockDetected', '0')
+!
+! techsetter.pl
+techsetter.pl#%#//scriptlet('ubo-nostif.js', '_actions(a)', '2')
+!
+! darmowa-tv.ws
+darmowa-tv.ws#%#//scriptlet('ubo-abort-on-property-write.js', 'adcashMacros')
+!
+! cdahd.co
+cdahd.co#%#//scriptlet('ubo-set-constant.js', 'adsBlocked', 'noopFunc')
+cdahd.co#%#//scriptlet('ubo-abort-current-inline-script.js', 'String.fromCharCode', '/(?:Math|btoa)/')
+!
+! temi.pl
+temi.pl#%#//scriptlet('ubo-nostif.js', 'mdpDeBlocker')
+!
+! magazyn.wp.pl
+!#if cap_user_stylesheet
+!magazyn.wp.pl##div:has(div > img[src*="NDM0MzY2YSUsUjtJdklsMG8KbxkpWhE3OVRvVntHbH5vHyQXOFUrN2JRLBh2XCcmY0AjHXtP"])
+!magazyn.wp.pl#$#body { overflow: auto !important; }
+!magazyn.wp.pl#$#body [class] { filter: none !important; }
+!#endif
+!magazyn.wp.pl#$#body [class] { filter: none !important; }
+!magazyn.wp.pl##+js(overlay-buster.js)
+!pudelek.pl,film.wp.pl,finanse.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,wiadomosci.wp.pl##+js(set-constant, Object.prototype.isBlocked, false)
+!pudelek.pl,film.wp.pl,finanse.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,wiadomosci.wp.pl##+js(set-constant, Object.prototype.aggressiveAB, false)
+!~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(abort-on-property-read.js, asname)
+!~pilot.wp.pl,~wideo.wp.pl,~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(abort-on-property-read.js, Object.prototype.rebuild)
+!~pilot.wp.pl,~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(set, Object.prototype.advViewability, undefined)
+film.wp.pl,www.o2.pl,uroda.abczdrowie.pl#%#//scriptlet('ubo-nostif.js', 'block', '0')
+money.pl,komorkomania.pl,abczdrowie.pl,fotoblogia.pl,gadzetomania.pl,autokult.pl,parenting.pl,wiadomosci.wp.pl,tech.wp.pl,dom.wp.pl,facet.wp.pl,film.wp.pl,finanse.wp.pl,gry.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,kuchnia.wp.pl,moto.wp.pl,opinie.wp.pl,pogoda.wp.pl,teleshow.wp.pl,turystyka.wp.pl,wideo.wp.pl,wawalove.wp.pl#%#//scriptlet('ubo-nostif.js', 'detected', '300')
+!
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=wp.pl|o2.pl|pudelek.pl|so-magazyn.pl
+@@||googletagservices.com/tag/js/gpt.js$domain=wp.pl|dobreprogramy.pl|o2.pl|pudelek.pl|so-magazyn.pl
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'Object.prototype.aggressiveAB', 'false')
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'Object.prototype.isBlocked', 'false')
+magazyn.wp.pl#@%#//scriptlet('ubo-abort-on-property-write.js', '__serviceAbModal')
+!magazyn.wp.pl#@#+js(set-constant, PWA_adbd, 2)
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'WP.gaf.loadBunch', 'noopFunc')
+wp.pl#@$#html, html > body { overflow: auto !important; }
+wp.pl#@$#body { overflow: auto !important; }
+wp.pl#@$#body [class] { filter: none !important; }
+wp.pl#@$#body { pointer-events: auto!important; }
+wp.pl#@$#body > [class] { filter: none!important; }
+wp.pl#@$#body { overflow: visible!important; }
+wp.pl#@#body > div:nth-of-type(1)[style^="display: block;"]:not(#page)
+!
+! epidemia-koronawirus.pl
+/js/adsbygoogle.js$script,xmlhttprequest,redirect=nooptext,domain=epidemia-koronawirus.pl
+||googleads.g.doubleclick.net/pagead/id$script,xmlhttprequest,redirect=nooptext,domain=epidemia-koronawirus.pl
+epidemia-koronawirus.pl#%#//scriptlet("abort-on-property-read", "mdpDeBlocker")
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=epidemia-koronawirus.pl
+@@||googleads.g.doubleclick.net/pagead/id$domain=epidemia-koronawirus.pl
+!
+! eska.pl
+eska.pl#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'showFallbackImage')
+!
+! sadeczanin.info
+sadeczanin.info#%#//scriptlet('ubo-abort-current-inline-script.js', 'parseInt', '/adBlock/')
+!
+! kurnik.pl
+kurnik.pl#$#.adsbygoogle { height: 2px !important; width: 1px !important; }
+kurnik.pl#%#//scriptlet('ubo-aopr.js', 'abask')
+!
+! karmopedia.pl
+karmopedia.pl#%#//scriptlet('ubo-acis.js', 'showAdblockImage')
+karmopedia.pl#%#//scriptlet('ubo-nostif.js', 'showAdblockImage', '2000')
+!
+! geekweek.pl
+#if env_adguard
+geekweek.pl#@#.adocean-billboard
+#endif
+!#endif
 !
 !
 !1#---------------------------------Anti Adblock Rules element hide----------------------------------!
