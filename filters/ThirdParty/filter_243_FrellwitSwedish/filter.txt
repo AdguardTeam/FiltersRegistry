@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2021-01-23 13:45:06 CET
+! Last modified: 2021-01-24 15:43:55 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -154,7 +154,6 @@ flashscore.se###box-over-content-a:has(a[href^="/promobox"][target="_blank"])
 fokis.se##[id^="post-"]:has(strong:has-text(/i samarbete med/i))
 fokus.se#$#[id^="entry-content-post"], [id^="entry-content-related"] { height: 100% !important; }
 foretagande.se##article:has(.sponsored-text)
-foretagsnamngenerator.se##small:has-text(Annons):upward(1)
 forum.macworld.se,idg.se#$#.idgcp__layer--active, .idgcp__layer--active body { overflow: initial !important; }
 fotbollskanalen.se##.notice__tag_sponsored:upward(1)
 fotbolltransfers.com##.smallNewsLink:has(.smallNewsCategory:has-text(/sponsr/i))
@@ -216,7 +215,7 @@ lchfarkivet.se#%#//scriptlet('ubo-aeld.js', '/^Ezoic/')
 lchfarkivet.se#%#//scriptlet('ubo-aopw.js', 'lepopup_resize')
 lchfarkivet.se,mobilanyheter.net,villalivet.se#%#//scriptlet('ubo-set.js', 'MonsterInsights', 'undefined')
 leovegas.com#$##cookie-consent-banner + div[data-test-id="header"] { top: 0 !important; }
-lesscarbs.se##.post:has(p:has-text(/^annonssamarbete/i))
+lesscarbs.se###mid section.elementor-section:has(a[href*="/annonssamarbete/"])
 linnherbertsson.se##.content:has(.sponsored-container)
 linnherbertsson.se#$#body { overflow-y: auto !important; }
 listor.se##article:has(a[href*="/annons/"])
@@ -298,7 +297,6 @@ skrattsajten.com#%#//scriptlet('ubo-acis.js', '$', 'e.preventDefault')
 spisa.nu#$#body { overflow-y: auto !important; }
 spray.se#$#body { -webkit-user-select: text !important; user-select: text !important; }
 startaochdriva.se##.featured-image-wrap:has(a[href*="/sponsrat"])
-stegforhalsa.se#%#//scriptlet('ubo-json-prune.js', 'runtimeConfig.FACEBOOK_PIXEL_DMP runtimeConfig.FACEBOOK_PIXEL_ID')
 stowr.se##article:has(.sponsored)
 stowr.se##article:has(.user-card-sponsor-marker)
 studentum.se#%#//scriptlet('ubo-set.js', 'cookieExists', 'true')
@@ -827,6 +825,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /downloads.mailchimp.com/*$domain=branschkoll.se|landleyskok.se|villalivet.se
 /downloads.mailchimp.com/js/signup-forms/popup$image,script
 /DynamicGAFunctions$script,domain=morningstar.se
+/elementor/assets/lib/share-link$script
 /emediate-responsive-wp-plugin/*
 /empty.html$subdocument,domain=byggvarlden.se|hotellorestaurang.se
 /entag.$script,domain=eniro.se|leta.se
@@ -1112,7 +1111,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /prebid$script,domain=idg.se
 /proad/*$domain=forum.odla.nu
 /prod/adform$xmlhttprequest
-/profile$ping,domain=feber.se|lawline.se|tasteline.com|tjock.se
+/profile$ping,domain=feber.se|hamnen.se|lawline.se|tasteline.com|tjock.se
 /publicPartners$domain=familjehemmet.se|familjehemsbanken.se
 /pulsetracking$script,domain=aftonbladet.se
 /pum/*$script,xmlhttprequest,domain=byggipedia.se|exponera.nu|flm.nu|opulens.se|tkj.se
@@ -1144,7 +1143,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /selections/native$xmlhttprequest,domain=svd.se
 /sg_reklam$domain=svampguiden.com
 /sh404sefsocial/*$script
-/share-link$script,domain=nyadagbladet.se
 /shared/crm-campaign-handler.js$script
 /sharedaddy/sharing.$domain=56kilo.se|amusetidningen.se|bilresaieuropa.se|damhockey.se|mobilanyheter.net|nyheteridag.se|ulrica.askmorling.se
 /sharethis.js$domain=allsvenskan.se|superettan.se
@@ -1208,7 +1206,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /usabilla$script,domain=morningstar.se
 /users/2401/*$image,domain=ng.se
 /vackertvader.se\/assets\/[0-9]+\-/$script,domain=vackertvader.se
-/verksamt-adrum.js$script,domain=verksamt.se
 /vestigo/*/measure$domain=momondo.se
 /videojs-preroll.$domain=himlentv7.se
 /videojs.ima.$script,domain=gamereactor.se|staylive.tv
@@ -1714,10 +1711,8 @@ hallakonsument.se,handels.se,megafonen.se##.cookie-information
 hallbyhandboll.se,laget.se,skiljebosk.nu##.cookiePush
 hallbyhandboll.se,laget.se,skiljebosk.nu##.stickyFollow
 halsasverige.se##.isax
-hamnen.se##.tag-sponsrad
-hamnen.se##[class*="annons"]
-hamnenplay.solidtango.com##.ads-click-overlay
-hamnenplay.solidtango.com##.ads-overlay
+hamnen.se##[class*="annons"], .tag-sponsrad
+hamnenplay.solidtango.com##.ads-overlay, .ads-click-overlay
 hamsterpaj.net###accept-cookies
 hamsterpaj.net###sidebar_wrapper > .zone:last-child
 handbollskanalen.se##.hb-adlabel
@@ -1826,7 +1821,7 @@ lararen.se,voister.se##.cookiebanner
 laromedia.se##img[alt="Annons"] + .img-flipper
 lchfarkivet.se##.wppopups-whole
 lektionsbanken.se###partners_right, #partners_top
-lesscarbs.se##.bd-flex-vertical > aside
+lesscarbs.se##.elementor-image > a
 lesscarbs.se##a[href*="/affiliates/"]
 leta.se###bookingcom-resor-wrapper
 letsgoexplore.se##.tipi-tile.active
@@ -1867,8 +1862,7 @@ maklarvarlden.se##.hustle-popup
 maklarvarlden.se##[id^="mts_ad"]
 market.se###rollup, #newsletter-rollup
 market.se##article[about^="/annons"]
-marsta.nu###secondary-content > .panel--naringsliv
-marsta.nu##.outsider
+marsta.nu##.outsider, .panel--naringsliv
 matklubben.se##.notification.cookies
 matplatsen.net,monasuniversum.se###gatsby-focus-wrapper > div[class^="css-"]:last-of-type
 matspar.se##div[style="z-index: 2000;"],div[style="z-index: 2000;"] + div
@@ -2597,6 +2591,7 @@ yelp.se##.js-cookie-iframe
 ||prisguide.no/price.js?partner$third-party
 ||prisjakt-a.$third-party,domain=~hintaopas.fi|~ledenicheur.fr|~pricespy.co.nz|~pricespy.co.uk|~prisjagt.dk|~prisjakt.no|~prisjakt.nu
 ||prisjakt.nu^$third-party
+||privacy-center.org^$domain=stegforhalsa.se
 ||proxyas.com^$third-party
 ||ptm.flowplayer.com^*/display$xmlhttprequest
 ||ptm.flowplayer.com^*/ping$xmlhttprequest
@@ -2683,6 +2678,7 @@ yelp.se##.js-cookie-iframe
 ||stats.easyweb.se^$third-party
 ||stats.tipser.com^$xmlhttprequest
 ||stayfriends.de/metatag
+||stegforhalsa.se^$csp=worker-src 'none'
 ||step.dk^$third-party
 ||storymedia.se^$third-party
 ||streamio.com/api/*/stats$xmlhttprequest
@@ -2745,7 +2741,6 @@ yelp.se##.js-cookie-iframe
 ||uptobanner.com^$third-party
 ||uptobranding.com^$third-party
 ||vdsinside.com^$third-party
-||verksamt.se/TSbd/$script
 ||vgc.no/cdn/js/libs/ast$script,domain=aftonbladet.se
 ||viagogo.se^
 ||video-static.tunnl.com/js/blocker.min.js$script
