@@ -1,3 +1,11 @@
+! Rule "/^https?://mail\.yandex\.[^\s]{125,}/$empty,script,~third-party" converted to: "/^https?://mail\.yandex\.[^\s]{125,}/$redirect=nooptext,script,~third-party"
+/^https?://mail\.yandex\.[^\s]{125,}/$empty,script,~third-party
+! Rule "/^https?://yastatic\.net\/www\/_\/[^\s]{170,}/$empty,image,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua|yandex.uz" converted to: "/^https?://yastatic\.net\/www\/_\/[^\s]{170,}/$redirect=nooptext,image,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua|yandex.uz"
+/^https?://yastatic\.net\/www\/_\/[^\s]{170,}/$empty,image,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua|yandex.uz
+! Rule "||yastatic.net/*/front-maps-static/*/chunks/promo/$empty" converted to: "||yastatic.net/*/front-maps-static/*/chunks/promo/$redirect=nooptext"
+||yastatic.net/*/front-maps-static/*/chunks/promo/$empty
+! Rule "||yastatic.net/yandex-video-player-iframe-api-bundles-stable/*?adsdk-try=$empty" converted to: "||yastatic.net/yandex-video-player-iframe-api-bundles-stable/*?adsdk-try=$redirect=nooptext"
+||yastatic.net/yandex-video-player-iframe-api-bundles-stable/*?adsdk-try=$empty
 ! Rule "4pda.*##html[style] > body :not(div) ~ :not(div)[class][id][style]:style(background-image: none !important)" converted to: "4pda.*#$#html[style] > body :not(div) ~ :not(div)[class][id][style] { background-image: none !important }"
 4pda.*##html[style] > body :not(div) ~ :not(div)[class][id][style]:style(background-image: none !important)
 ! 4pda.*#$#html[style] > body :not(div) ~ :not(div)[class][id][style] { background-image: none !important } is excluded by "#$#" in exclusions-low.txt
@@ -19,8 +27,6 @@ rutracker.lib,rutracker.net,rutracker.nl,rutracker.org#?#+js(set-constant.js, St
 ! Invalid selector:
 rp5.am,rp5.by,rp5.co.uk,rp5.kz,rp5.lt,rp5.lv,rp5.md,rp5.ru,rp5.ua#?#+js(setTimeout-defuser.js, xvb)
 ! Invalid selector:
-4pda.*#?#+js(abort-current-inline-script.js, setTimeout, removeAttribute)
-! Invalid selector:
 autorambler.ru,championat.com,eda.ru,gazeta.ru,lenta.ru,letidor.ru,motor.ru,passion.ru,quto.ru,rambler.*,rns.online,wmj.ru#?#+js(json-prune.js, Blocks)
 ! Invalid selector:
 autorambler.ru,championat.com,eda.ru,gazeta.ru,lenta.ru,letidor.ru,motor.ru,passion.ru,quto.ru,rambler.*,rns.online,wmj.ru#?#^script:has-text("getPrefixes")
@@ -37,6 +43,8 @@ nova.rambler.*#?#+js(abort-on-property-read.js, Object.prototype.AdvManager)
 ! Invalid selector:
 ~yandex.net,yandex.*#?#+js(abort-on-property-read.js, yaads.renderWidget)
 ! Invalid selector:
+~yandex.net,yandex.*#?#+js(set-constant.js, __AAB__, false)
+! Invalid selector:
 ~yandex.net,yandex.*#?#+js(set-constant.js, Object.prototype.getHoneypot, null)
 ! Invalid selector:
 ~yandex.net,yandex.*#?#+js(set-constant.js, Object.prototype.getYaads, null)
@@ -47,7 +55,7 @@ nova.rambler.*#?#+js(abort-on-property-read.js, Object.prototype.AdvManager)
 ! Invalid selector:
 ~yandex.net,yandex.*#?#+js(set-constant.js, Object.prototype.useAbdBundle, false)
 ! Invalid selector:
-~yandex.net,yandex.*#?#+js(set-constant.js, __AAB__, false)
+4pda.*#?#+js(abort-current-inline-script.js, setTimeout, removeAttribute)
 Error: "Unknown modifier: queryprune=|" in the rule: "&ymclid=$document,queryprune=|"
 &ymclid=$document,queryprune=|
 Error: "Unknown modifier: queryprune=|" in the rule: "/story/*?lang=$document,queryprune=|,domain=yandex.*"
