@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2021-01-28 11:58:11 CET
+! Last modified: 2021-01-29 15:15:14 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -167,7 +167,6 @@ gotland.net#%#//scriptlet('ubo-set.js', 'ntm_kv', 'null')
 gynning.net##[id^="post-"]:has(h3:has-text(/i samarbete med/i))
 handbollskanalen.se#%#//scriptlet('ubo-acis.js', 'advads_has_ads')
 handbollskanalen.se#%#//scriptlet('ubo-acis.js', 'advadsTracking')
-handbollskanalen.se##.td-block-title-wrap:has-text(/^i samarbete med/i) + .td_block_inner:has(a[href*="/annons/"])
 happypancake.se#%#//scriptlet('ubo-aopr.js', 'Object.prototype.adUnits')
 hemmafixbloggen.se##.post-item:has(.sponsor-summary)
 hemnet.se##.article-list-post a:has(span:has-text(Sponsrad))
@@ -740,6 +739,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /annonssamarbete/*$xmlhttprequest
 /antiblock$domain=danskaspraket.se|digitalavykort.se|viseniorer.se|vmj.se
 /apester-javascript-sdk.min.js
+/api/banners$domain=cykla.se|vatternrundan.se
 /api/plugins/google-analytics$xmlhttprequest
 /app.php/adsview/*$xmlhttprequest
 /appnexus$script,domain=aftonbladet.se|blocket.se|bytbil.com|minhembio.com
@@ -915,6 +915,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /maps.sponsored-pill.$script,domain=tripadvisor.se
 /marbles/marbles.js
 /media/partners$domain=hockeynews.se|tvmatchen.nu
+/min/1/fpa-$domain=handbollskanalen.se
 /mod.js$domain=icd.internetmedicin.se
 /mod_responsivebannerslider$domain=bjuvsnytt.se
 /modal.js$script,domain=alltforforaldrar.se|mammasidan.se|minbebis.com
@@ -1236,7 +1237,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /wp-content/uploads/*unibet$image
 /wp-json/wpstatistics/*$xmlhttprequest
 /wpbm-banners/*$image
-/www/images/*$image,domain=elektronikforumet.com
+/www/images/*$domain=elektronikforumet.com
 /xhr-ads.min.js$script
 /zdadkit$script,domain=nordic.ign.com
 180.se##[class*="top-ad-"]
@@ -1292,7 +1293,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 @@||feed.meltwater.com^$subdocument
 @@||freeride.nu/js/ads.js$script,domain=happyride.se
 @@||fwmrm.net^$image,xmlhttprequest,domain=viafree.se
-@@||game-cdn.poki.com^$subdocument
 @@||happyride.se/img/admarket/$~third-party
 @@||imasdk.googleapis.com/js/sdkloader/ima3.$script,domain=atl.nu|ekuriren.se|gamereactor.se|kkuriren.se|screen9.com|sn.se|strengnastidning.se
 @@||js.createsend1.com/js/jquery
@@ -1326,7 +1326,6 @@ aftonbladet.se,businessclass.se,effektmagasin.se,spela.se,svenskorientering.se##
 aftonbladet.se,di.se##a[href^="/brandstudio"]
 agriprim.se,automobil.se,bettips.se,bike.se,bilsport.se,boxerville.se,caroftheyear.se,dh.se,djungeltrumman.se,e.se,entreprenadaktuellt.se,fightermag.se,frillesasbandy.se,husbilhusvagn.se,ja.se,klassiker.nu,ljuskultur.se,lokalguiden.se,lovelylife.se,maskinbladet.se,mopedgaraget.se,nyckelspel.se,omni.se,riksettan.net,scanaktier.se,skik.se,skogsaktuellt.se,spelo.se,sweclockers.com,vaken.se,vibilagare.se##.banner
 aikfotboll.se,expressen.se##.banners
-akademiskahus.se###cookieConsent
 aktiespararna.se##.analysguiden-promote-articles
 aktiespararna.se,alekuriren.se,civilekonomen.se,koket.se,nyheter24.se##.native
 aktivtraning.se,digitalfotoforalla.se,iform.se,militarhistoria.se,natgeo.se,pctidningen.se,popularhistoria.se##.gallery-banner, .horseshoe, [data-ad-type]
@@ -1494,8 +1493,7 @@ customerinsider.se##figure > a[target="_self"]
 cyclingplus.se,halsafitness.se,yogaworld.se##.sticky-sidebar
 cyclingplus.se,mkse.com###upprev_box
 cykla.se#@#.advertisment
-da.se##.external
-da.se##.privacy-info
+da.se##div.alignwide[style^="height"]
 dagen.se##.cookie-acceptance
 dagen.se##.video-annons
 dagensinfrastruktur.se##.g-single
@@ -1676,8 +1674,7 @@ halsasverige.se##.isax
 hamnen.se##[class*="annons"], .tag-sponsrad
 hamsterpaj.net###accept-cookies
 hamsterpaj.net###sidebar_wrapper > .zone:last-child
-handbollskanalen.se##.hb-adlabel
-handbollskanalen.se##[id^="hb-"]
+handbollskanalen.se##.hb-adlabel, [id^="hb-"]
 hangotidningen.fi,hbl.fi,ostnyland.fi,vastranyland.fi##.type-advertorial
 hangotidningen.fi,hbl.fi,ostnyland.fi,vastranyland.fi##gdpr-notice
 happypancake.se###__next > div > div.bar:first-child
@@ -1822,9 +1819,6 @@ matklubben.se##.notification.cookies
 matplatsen.net,monasuniversum.se###gatsby-focus-wrapper > div[class^="css-"]:last-of-type
 matspar.se##div[style="z-index: 2000;"],div[style="z-index: 2000;"] + div
 megafonen.se##[data-article-sponsored="true"], .content-main-adwrapper, .campaign-sidebar
-megaspel.se###app-root > footer ~ aside:first-of-type:last-of-type
-megaspel.se##[class*="advertisement"]
-megaspel.se##button[class][title="Show CMP"]
 merinfo.se##article[data-customer]
 mestmotor.se##.panel-native
 metalcentral.net##.bannergroupno-padding
@@ -1913,8 +1907,7 @@ revisionsvarlden.se##a[onclick*="banner"]
 ridsport.se##.svrf-block__banner
 ridsport.se##.svrf__sticky-ad
 riktighockey.se###custom_html-2
-rocknytt.net##[data-widget_type*="bnnrwidgets"]
-rocknytt.net##a[href*="/annons/"]
+rocknytt.net##[data-widget_type*="bnnrwidgets"], a[href*="/annons/"]
 rotter.se##.cookie_wrap
 rumhemma.se###aside > .html-widget
 rumhemma.se###aside > div:last-child
@@ -1941,7 +1934,6 @@ siriusbandy.se,vetlandabk.se##[id$="-ad"]
 sjoaguden.se##.av-siteloader-wrap
 skandia.se##div[data-block="CookieBannerBlock"]
 skanesport.se###black-studio-tinymce-3
-skidresultat.se###message_cookie_info_accept
 skidspar.se###ads-panorama
 skidspar.se###videoad
 skillingaryd.nu,xn--vrnamo-bua.nu###more-banners
@@ -2099,7 +2091,6 @@ yelp.se##.js-cookie-iframe
 ||1terms.com^
 ||7godscasino.com^$popup,third-party
 ||7hd.org^
-||a.poki.com/observer/t.js
 ||aa-cdn.mytaste.org/js/ad.js$script
 ||access.vasabladet.fi/6-pack/$subdocument
 ||accesslnk.com^
@@ -2246,7 +2237,7 @@ yelp.se##.js-cookie-iframe
 ||curemedia.se^$third-party
 ||custosgroup.com^$third-party
 ||cxpublic.com^$third-party
-||cykla.se/api/banners$xmlhttprequest
+||cykla.se/api/add-page-view
 ||d10lumateci472.cloudfront.net/?amuld$script
 ||d11j2g8hmtmh4u.cloudfront.net/losad
 ||d11j2g8hmtmh4u.cloudfront.net/loswidget
@@ -2334,7 +2325,6 @@ yelp.se##.js-cookie-iframe
 ||fritiden.se/js/cookiealert-standalone.js
 ||funnelytics.io^$third-party
 ||gamblingsyndication.com^$third-party
-||game-cdn.poki.com^*/poki-ads.$script
 ||gameanalytics.com^$third-party
 ||gamedistribution.com/libs/gd/analytics.$script
 ||gamesglue.com/js/gameanalytics/GameAnalytics.$script
@@ -2348,7 +2338,6 @@ yelp.se##.js-cookie-iframe
 ||gstatic.com/partners/badge$subdocument
 ||guavaaffiliate.blob.core.windows.net/banner$image
 ||hamsterpaj.net/gfx/banners/
-||handbollskanalen.se^*/esmg/se-$script
 ||happygreen.se^$third-party
 ||hapyak.com^$third-party
 ||hbid.*.digitaloceanspaces.com^$third-party
@@ -2384,7 +2373,6 @@ yelp.se##.js-cookie-iframe
 ||internetmedicin.se/log.php
 ||investerarbrevet.se^$third-party
 ||inxy.run^
-||itks.se/p/$domain=8sidor.se
 ||iubenda.com/cookie$script,subdocument
 ||izooto.com^$third-party
 ||jajja.com^$third-party
@@ -2500,7 +2488,6 @@ yelp.se##.js-cookie-iframe
 ||nya-filmer.*/masha.$script
 ||nyafilmer.*/branding/$image
 ||nyafilmer.*^$csp=default-src 'self' 'unsafe-inline' 'unsafe-eval' jawcloud.co *.jawcloud.co *.googleapis.com *.google.com *.gstatic.com;img-src *;worker-src 'none'
-||nyckelspel.se/images/adblocker-leaderboard.$image
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
 ||onetrust.com^$third-party,domain=yougov.se
