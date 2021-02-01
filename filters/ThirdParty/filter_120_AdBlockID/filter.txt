@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 21.031.1257
+! OriginalVersion: 21.031.1285
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 31 Jan 2021 20:57 UTC
+! Last modified: 31 Jan 2021 21:25 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 !
@@ -762,6 +762,9 @@ _GIF1200x120-
 ###ai-adb-ads
 ###ai-adb-sponsors
 ###areaiklan
+###banner-iklan-image
+###banner-iklan-inner
+###banner-iklan-wrap
 ###center-ads
 ###div-ad-video_detail
 ###div-banner-video_detail
@@ -1054,6 +1057,12 @@ _GIF1200x120-
 ##.anm__flying--iklan-right
 ##.anm__flying--iklan-wrap
 ##.areaiklan
+##.banner-ad-image
+##.banner-ad-inner
+##.banner-ad-wrap
+##.banner-ads-image
+##.banner-ads-inner
+##.banner-ads-wrap
 ##.banner-adv-1
 ##.banner-atas
 ##.banner-atas-artikel
@@ -1101,8 +1110,11 @@ _GIF1200x120-
 ##.banner-iklan-atas
 ##.banner-iklan-bawah
 ##.banner-iklan-expndm
+##.banner-iklan-image
+##.banner-iklan-inner
 ##.banner-iklan-kanan
 ##.banner-iklan-kiri
+##.banner-iklan-wrap
 ##.banner-item
 ##.banner-kanan
 ##.banner-kecil--atas
@@ -2401,6 +2413,7 @@ _banner/$image,domain=mediasulut.co
 ||acehtimes.id^*/iklan-$image
 ||ads-server.hipwee.com^
 ||adsimg.kompas.com^
+||agoezperdana.com^*/banner-$image
 ||ajnn.net/files/sewaan/$image
 ||akurat.co/images/banner/$image
 ||alumni-atwsolo.com/images/banner/$image
@@ -2419,6 +2432,8 @@ _banner/$image,domain=mediasulut.co
 ||ayotegal.com/assets/img/banner/$image
 ||ayoyogya.com/assets/img/banner/$image
 ||bakata.net^*/banner-$image
+||baliportalnews.com^*/iklan_$image
+||balitopnews.com/uploads/banner/$image
 ||banghasan.com/banner/$image
 ||bantenku.co.id^*/banner/$image
 ||bengkuluekspress.com^*/banner-$image
@@ -2542,6 +2557,7 @@ _banner/$image,domain=mediasulut.co
 ||lenterapendidikan.com/assets/img/loader.jpg$image
 ||lenterapendidikan.com^*/banner/$image
 ||lenterasultra.com^*/thumb-$image
+||lintasbali.com^*/iklan-$image
 ||lintasperistiwa.com^*/banner-$image
 ||lintasperistiwa.com^*/iklan_$image
 ||lokadata.id/images/banner_$image
@@ -2570,6 +2586,7 @@ _banner/$image,domain=mediasulut.co
 ||mimbarpublik.com^*/banner-$image
 ||minangsatu.com/banner/$image
 ||modusaceh.co/files/sewaan/$image
+||moi.or.id/images/banners/$image
 ||moralriau.com^*/banner-$image
 ||muslim.or.id^*/banner-$image
 ||newrevive.detik.com^
@@ -2774,7 +2791,7 @@ lampungpro.co##.add-img
 dialeksis.com##.add-space
 nonton.com##.adds
 cendananews.com,sultrakini.com##.adloc-is-banner
-jalantikus.com,kabarnusa.com,minangsatu.com,mivo.com,okezone.com,tabloidjubi.com,terasjabar.id##.ads
+jalantikus.com,kabarnusa.com,lintasbali.com,minangsatu.com,mivo.com,okezone.com,tabloidjubi.com,terasjabar.id##.ads
 heyriad.com##.ads-below-title
 tutgwarnetgold.com##.ads-blog
 cermati.com##.ads-container
@@ -3511,7 +3528,9 @@ kliksumatera.com,kriminal.co,ntt-news.com##img[width="720"][height="1280"]
 beritasulut.co.id##img[width="720"][height="166"]
 beritasulut.co.id##img[width="720"][height="181"]
 jalurnews.com##img[width="720"][height="182"]
+suarahukum-news.com##img[width="720"][height="294"]
 vimanews.com##img[width="720"][height="300"]
+suarahukum-news.com##img[width="720"][height="309"]
 riau.haluan.co##img[width="720"][height="370"]
 delegasi.com##img[width="720"][height="411"]
 annews.co.id##img[width="720"][height="472"]
@@ -10590,10 +10609,12 @@ _adblock_killer.
 .id^*/ads_$domain=~cartalog.id
 /ngiklan/*$image,domain=~ngiklan.gratis
 !
+@@-jasa-google-$image
 @@/ayopasangiklan.$image
 @@/belanja_iklan-$image
 @@/cara-beriklan.$image
 @@/contoh-iklan-$image
+@@/iklan-google-$image
 @@/iklan-langganan.$image
 @@/jasa-google-$image
 @@/jasa-iklan-$image
@@ -10632,6 +10653,7 @@ iklanpopuler.com,sebariklanbaris.net,ziyata.com#@#[src*="/iklan/"]
 @@/wp-content/uploads/*$domain=adstarsmedia.co.id|agency-iklan.com|berbagiide.com|bluecreative.co.id|dhadigital.com|doxadigital.com|herosoftmedia.co.id|idkeyword.com|jasaiklanbandung.com|jurnalweb.com|korporasi.kompas.id|mandreel.com|masterweb.com|oasisme.com|suranegara.com|tomato.co.id|winstarlink.com
 @@://ads.$domain=ads.bisnisjakarta.co.id|ads.dewarangga.com|ads.gadgetsquad.id|ads.genmuda.com|ads.id|ads.iklandaerah.com|ads.kaskus.co.id|ads.kontan.co.id|ads.panindai-ichilife.co.id|ads.pojoksatu.id|ads.wartaekonomi.co.id|klasika.kompas.com
 @@_advertising/$domain=advertising.katadata.co.id
+@@||akudigital.com/images/$~third-party
 @@||iklanku.shopee.co.id/img/$~third-party
 @@||jualo.com/images/$~third-party
 @@||resolusiweb.com/images/$~third-party
@@ -10655,5 +10677,5 @@ m.liputan6.com#@##back-to-top
 !
 ! https://github.com/realodix/AdBlockID/issues/467
 @@/social-sharing-$script,domain=axe.com
-! Checksum: KVlVY+E8k5WCtKDEbJsxyA
+! Checksum: C2OF305UeJ8xYSG5x3F9IA
 
