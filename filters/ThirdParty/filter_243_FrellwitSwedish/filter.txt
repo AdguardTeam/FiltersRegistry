@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days (update frequency)
-! Last modified: 2021-01-31 13:40:10 CET
+! Last modified: 2021-02-02 15:36:41 CET
 ! Homepage: https://github.com/lassekongo83/Frellwit-s-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPLv3
@@ -87,9 +87,7 @@ borsvarlden.com##.format-thumb-small:has(.overlay-label:has-text(/spons/i))
 borsvarlden.com##article:has(.border-sponsored)
 byggahus.se#$#.attachmentPreviewActive img { -webkit-filter: none !important; filter: none !important; }
 byggahus.se#$#body.forum-logged-out .svartalistan-results-login-required { height: unset !important; }
-byggipedia.se#$#* { user-select: text !important; }
-byggipedia.se#%#//scriptlet('ubo-acis.js', 'ai_insert')
-byggipedia.se#%#//scriptlet('ubo-acis.js', 'ai_insert_2')
+byggipedia.se#$#* { user-select: auto !important; }
 byggipedia.se#%#//scriptlet('ubo-acis.js', 'document.onkeypress')
 byggipedia.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'contextmenu')
 byggipedia.se#%#//scriptlet('ubo-acis.js', 'jQuery', 'wizard_accordion')
@@ -287,7 +285,7 @@ spisa.nu#$#body { overflow-y: auto !important; }
 spray.se#$#body { -webkit-user-select: text !important; user-select: text !important; }
 startaochdriva.se##.featured-image-wrap:has(a[href*="/sponsrat"])
 studentum.se#%#//scriptlet('ubo-set.js', 'cookieExists', 'true')
-studocu.com#$##page-container { user-select: text !important; }
+studocu.com#$##page-container { user-select: auto !important; }
 studocu.com#$#.new-viewer-wrapper .p2hv { pointer-events: auto !important; }
 svampguiden.com##.panel:has(.label-sponsor)
 sverak.se#%#//scriptlet('ubo-set.js', 'disable_copy', 'noopFunc')
@@ -601,6 +599,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##div#banner_right
 ##div#mega-ad-content
 ##div#panorama_ad
+##div#panoramaad
 ##div#schibsted-data-controller-sticky
 ##div#sliding-popup div[class^="eu-cookie"]
 ##div#toppannons
@@ -616,6 +615,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 ##div.elementor-widget-wp-widget-advads_ad_widget
 ##div.gdpr-warning-slide-up
 ##div.holidAds
+##div.ilcc-cookie-consent-notice
 ##div.l-footer__adtext
 ##div.NativeAd
 ##div.newsletter-cta
@@ -1168,7 +1168,6 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 /sweet-alert.$domain=hittaren.com
 /swordfishinc.download.akamai.com/*$script
 /tabs_hits_counter.php$image
-/theme/set_resources$script,domain=maipenrai.se
 /themes/Jaz/inc/js/*scroll$script,domain=explorecurate.com
 /thumbnail_bettingstugan$image
 /thumbs/webbannons$image
@@ -1244,7 +1243,7 @@ bohuslaningen.se,gp.se,hallandsposten.se,hn.se,stromstadstidning.se,ttela.se#$#b
 8sidor.se##.cookie-accept
 980x360$image,domain=marsta.nu
 99mac.se##.page-gutter.left, .page-gutter.right, [id^="bbPrisjakt"]
-99mac.se,akaskidor.se,allakorsord.se,baaam.se,bettingstugan.se,bioenergitidningen.se,bohuslaningen.se,byggnadsarbetaren.se,casinowings.se,cissiochfreddan.se,claudiagalliconcha.se,dagensmedia.se,dagensopinion.se,di.se,dn.se,driva-eget.se,dromhemochtradgard.se,ekuriren.se,elle.se,elledecoration.se,ellematovin.se,emilysliv.se,expressen.se,femina.se,filmtipset.se,folkbladet.nu,fordonsproffs.eu,gabriellajoss.me,hemtrevligt.se,ifokus.se,ifragasatt.se,interiorbyvanessa.se,kimura.se,kkuriren.se,linneasskafferi.se,linnherbertsson.se,livetombord.se,loppi.se,mabra.com,mariestadstidningen.se,mestmotor.se,mobil.se,mybabydolls.se,nwt.se,padelfeber.se,paulas.me,poddtoppen.se,polistidningen.se,residencemagazine.se,skaraborgsbygden.se,skillingaryd.nu,sla.se,sn.se,sportbloggare.com,storstadsmamman.com,sv.picmix.com,svenskgolf.se,sweclockers.com,swedroid.se,tidningenbalans.se,tidningenhalsa.se,tripadvisor.se,utemagasinet.se,vagabond.se,varmlandsaffarer.se,vimedbarn.se,vk.se,xn--vrnamo-bua.nu##.ad
+99mac.se,akaskidor.se,allakorsord.se,baaam.se,bettingstugan.se,bioenergitidningen.se,bohuslaningen.se,byggnadsarbetaren.se,casinowings.se,cissiochfreddan.se,claudiagalliconcha.se,dagensmedia.se,dagensopinion.se,di.se,dn.se,driva-eget.se,dromhemochtradgard.se,ekuriren.se,elle.se,elledecoration.se,ellematovin.se,emilysliv.se,expressen.se,femina.se,filmtipset.se,folkbladet.nu,fordonsproffs.eu,gabriellajoss.me,hemtrevligt.se,ifokus.se,ifragasatt.se,interiorbyvanessa.se,kimura.se,kkuriren.se,linneasskafferi.se,linnherbertsson.se,livetombord.se,loppi.se,mabra.com,mariestadstidningen.se,mestmotor.se,mobil.se,mybabydolls.se,nwt.se,padelfeber.se,paulas.me,poddtoppen.se,polistidningen.se,residencemagazine.se,skaraborgsbygden.se,skillingaryd.nu,sla.se,sn.se,sportbloggare.com,storstadsmamman.com,sv.picmix.com,svenskgolf.se,sweclockers.com,swedroid.se,tandlakartidningen.se,tidningenbalans.se,tidningenhalsa.se,tripadvisor.se,utemagasinet.se,vagabond.se,varmlandsaffarer.se,vimedbarn.se,vk.se,xn--vrnamo-bua.nu##.ad
 ://sifomedia.
 ?action=advanced-ads-tracking-track
 ?action=get_banners$domain=djungeltrumman.se
@@ -1448,7 +1447,6 @@ byggahus.se###svartalistan-login-required-overlay
 byggahus.se##a[href^="/partner/"]
 byggfaktadocu.se##.pop_box
 byggindustrin.se##.sponsrat
-byggipedia.se##.ai_widget
 byggipedia.se##.protect_contents-overlay
 byggnadsarbetaren.se##[class^="siteAds"], .siteAlerts
 byggnyheter.se,dagensfastigheter.se,dagensnaringsliv.se,energinyheter.se,industrinyheter.se,infrastrukturnyheter.se,inredningsnyheter.se,jarnvagsnyheter.se,metallerochgruvor.se,papperochmassa.se,solenerginyheter.se,sportochfritidsnyheter.se,stockholmsbyggnyheter.se,transportochlogistik.se,vindkraftsnyheter.se##.insider-ads, [id^="mainadvertorial"], [id^="dfptag"], .block-advertorial, .block-views-blockconventus-info-articles-info-article-block
@@ -1582,7 +1580,6 @@ familjesidan.se##.cookies-wrapper
 fastighetssverige.se##a[href*="/banner/out/"]
 fastighetssverige.se##div[class^="panel"][style*="lightgoldenrodyellow"]
 fastighetstidningen.se##.adspace
-fastighetstidningen.se##div.ic-superpost-list-item-header[style="background-color:#fffed5;"]
 fbitullinge.nu,gtsoder.se,maskalpin.se,telgesibk.se###outerAd
 feber.se,tjock.se##.burt-unit, .art_ad, adline, f-panorama, f-deals, #rpPopular
 feministisktperspektiv.se##.two_column_ad
@@ -1794,10 +1791,7 @@ macken.xyz##.et_builder_inner_content > .et_pb_section_2
 magasinetparagraf.se###large_banner
 maharajah.se###mainContent > #main > div:not(#news):not(.newsSlider)
 maharajah.se##a[target="blank"]
-maipenrai.se###elGuestTerms
-maipenrai.se##.cWidgetContainer > ul > li:first-child
-maipenrai.se##[data-nbenhadv]
-maipenrai.se##article + div[align="center"]
+maipenrai.se##.cWidgetContainer > ul > li:first-child, div[style*="border: 1px solid"] a[target="_blank"]
 majanilssonlindelof.com##.apprl-title,.cli-modal,.cli-modal-backdrop
 maklarvarlden.se##.hustle-popup
 maklarvarlden.se##[id^="mts_ad"]
@@ -1874,7 +1868,6 @@ piraja.se###panoramaholder, #parallax
 podplay.com##.site-mw
 pomu.se##[class^="Banner"]
 popularastronomi.se##a.gofollow[data-track]:not([href*="www.popularastronomi.se"])
-posh24.se##.bannerArea
 pricerunner.se###consent
 pricerunner.se##a[href*="&clickarea=sponsored"]
 proffs.se##.cookie-wrapper
@@ -1953,7 +1946,7 @@ startaochdriva.se##.banner-left
 startaochdriva.se##.banner-right
 startaochdriva.se##img[data-permalink]
 studentum.se###emg-cookie
-studocu.com##footer + div:not([class])
+studocu.com##[data-test-selector="the-cookie-banner"]
 surfa.se##div[class*="-promo"], div[class*="prisjakt-"]
 sv.geneanet.org###header-info-cookie
 svd.se###AdSplashOverlayWindow
@@ -1994,7 +1987,6 @@ swefilmer.*###oscuridad
 swefilmer.*##.blueimp-gallery
 swehockey.se##[class*="-reklam"], .sif-sponsorer
 sysidan.se##.adscolumn
-tandlakartidningen.se###panoramaad
 tasteline.com##.article.related > a[href*="&utm"][target="_blank"]
 tasteline.com##.popup-overlay
 teknikensvarld.se##.paywall-gradient-overlay
@@ -2032,8 +2024,6 @@ tvmatchen.nu##.bet365
 typkanske.se##.adbar
 upphandling24.se##.type-partnerartikel
 uppsalanyheter.se###banner-top-block
-uppsatser.se##.spahotels
-uppsatser.se##li[style*="min-height:90px"]
 utsidan.se###mastertop
 vagabond.se##.latest-article-native
 varden.se##.cdk-overlay-container, app-cookies
