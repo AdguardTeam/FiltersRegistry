@@ -1,7 +1,7 @@
 !
 ! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Translated title: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
-! OriginalVersion: 20July2021v1
+! OriginalVersion: 08August2021v1
 ! Expires: 1 day
 ! Lisens / Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md
@@ -58,7 +58,7 @@ bold.dk##._adr_abp_container
 boligdebatten.dk###selvsalg-reklame
 bornholm.nu##.bannercontent
 borsen.dk##[href*="://borsen.dk/sponsoreret"]
-bossman.dk###right_container > .right_content:not(:first-of-type)
+bossman.dk###right_container > .right_content:nth-of-type(1n+2)
 brudleyp.fo,hvat.fo##.vev
 bt.dk##.dre-item--feature-e-commerce
 bt.no###related-articles + div[class^=_]
@@ -315,6 +315,18 @@ tipsbladet.dk##main > section.l-padding-top-lg
 dagens.dk#?#.col-300 > .wrapper-sticky:has(a[href*=casino])
 dagbladet.no##main > div[class^=Row-] > div[class^=Column-]:last-of-type
 startsiden.no##div[class*=partnerWidgetContainer]
+nocc.no##.forsideReklame2
+nocc.no##.forsideReklame
+nocc.no##.forsideInnhold
+campingportalen.no###block-annonse-blokk1
+skaunnytt.no##.sb-widget
+reiseplaneten.no###rt-sidebar-c
+reiseplaneten.no##.custom > p:nth-of-type(1n+2)
+froya.no##.annonse-plass
+samferdselinfra.no###mobil-toppboard
+samferdselinfra.no###top-banner-wrap
+politiken.dk##.js-sticky-container.col--overflow
+roysni.fo###footer-adds
 ! — — — — — — — — —
 ! 🇳🇴: Oppføringer for minst 3 nettsteder
 ! 🇬🇧: Entries for at least 3 websites
@@ -400,7 +412,8 @@ goal.com##.js-betting-widget.is-country-no:upward(2)
 ~casinotop.com##a[href*="casinotop.com"]
 /banners/casinotop$image
 ! gnavergalleri.dk (along with ~60 affiliates sites)
-##.top-fixed-wrapper
+! https://github.com/DandelionSprout/adfilt/issues/233
+##.row > div[class=top-fixed-wrapper]
 ##.section-module.blog-frontpage-module.margin-top-10.row
 *galleri.dk/content/images/fixed^$image
 ! sol.dk (25/04/2021)
@@ -740,6 +753,14 @@ _300x500pix$domain=rykindribe.dk,image
 ||cms.sona.fo/ads^
 ||r7.fo/lysing^
 ||aftenposten.no/seksjon/dist/ads-$script
+||nocc.no/System_Promoteringssaker^
+||s3-eu-west-1.amazonaws.com/froya/*-980x500-$image
+||s3-eu-west-1.amazonaws.com/froya/*-toppannonse-$image
+||s3-eu-west-1.amazonaws.com/froya/*nettannonse-$image
+||s3-eu-west-1.amazonaws.com/froya/*.jpeg.jpg|
+||s3-eu-west-1.amazonaws.com/froya/*-annonse-*.gif|
+||s3-eu-west-1.amazonaws.com/froya/*.-jpg.jpg|
+||s3-eu-west-1.amazonaws.com/froya/bilder/nordbohus.gif|
 !#if false
 @@||vgtv.no$generichide
 !#endif
@@ -1009,10 +1030,8 @@ fiskeribladet.no##div[id^=banner_billboard1_]
 fiskeribladet.no##div[id^=banner_billboard1_] + .hide_on_print
 fl-arena.de##.content_right_medium_rect_ad_box
 fl-arena.de##.do_not_print.article_teaser_no_border
-fla.de###top-banner
 fla.de##.adsenseblock
 fla.de##.font-robotoregular.font10
-fla.de##.index-banner
 fla.de##div[data-glade]
 flatpanels.dk###sb-site > .hidden-xs.container
 flatpanels.dk##.hidden-xs.forsideboks2
@@ -1225,7 +1244,7 @@ opn.no###sidebar_2 #sidebarelement_2
 ordtak.no##.boksmarg
 parcferme.no##.code-block > p
 parcferme.no##ins[data-revive-zoneid]:upward(2)
-parcferme.no,rbkweb.no##.adsbygoogle:upward(2)
+parcferme.no##.adsbygoogle:upward(2)
 pengenytt.no#?#.entry-content > h4:has(script[src$="/adsbygoogle.js"])
 pengenytt.no#?#.entry-content > h6:has(script[src$="/adsbygoogle.js"])
 pengenytt.no#?#.so-widget-sow-editor:has(a[href^="https://online.adservicemedia.dk/"])
@@ -1420,6 +1439,8 @@ alle-apningstider.com##div[id^=google_ad_]
 startsiden.no#?#.small-6[class*=articleContainer_]:has(a[href*="tradedoubler.com"])
 startsiden.no###stop-sticky-ad + h4
 eurosport.*##div[class$=-top-advert]
+bvbnorge.no##.wsite-spacer
+bvbnorge.no#?#.wsite-multicol-col:has(> .wsite-spacer)
 ! — — — — —
 ! 🇳🇴: Oppføringer med spesielle omstendigheter
 ! 🇬🇧: Entries with special circumstances
@@ -1525,8 +1546,6 @@ vafo.dk##.adform-flexblock
 ~candidate.hr-manager.net##[class^=AdWrapper]
 ! historienet.no, natgeo.no, komputer.no
 ##.wallpaper > .horseshoe
-! https://www.nettavisen.no/okonomi/3423875562.html
-##.os-inline
 ! qxl.no
 ###GoogleAdsensePanorama
 ###GoogleAdsenseFooter
@@ -1607,7 +1626,7 @@ vafo.dk##.adform-flexblock
 ! bt.no, byas.no, aftenbladet.no (30/10/2020)
 ##.vertical-x1-ad > .column--big
 ! costume.no, costume.dk (09/11/2020)
-##.flow-banner
+##.grid > div[class=flow-banner]
 ! boligpluss.no (09/11/2020), women.dk
 ##.wg-banner
 ! ytresogn.no (16/12/2020)
@@ -1638,7 +1657,7 @@ _980banner_
 ! steinkjer-avisa.no (12/04/2021)
 ##optimus-element[linecount=undefined][width="280"]
 ! gnavergalleri.dk (along with ~60 affiliates sites; 21/04/2021)
-##.container-topbanner
+##.container.container-topbanner
 ! nidaros.no
 ##.ad-iframe-nt
 ! dagsavisen.no
@@ -1763,7 +1782,7 @@ finn.no#@##ad-content
 ! 🇬🇧: ——— Tries to make the web browser load files in HTTPS, if the website itself doesn't automatically redirect from HTTP to its HTTPS version ———
 ! Credit to https://raw.githubusercontent.com/Cybo1927/Hosts/master/Anti/Anti%2520Third-Party%2520HTTP for showing me the existence of this particular CSP command.
 ! Though in all fairness, you'd get better results from using https://github.com/ilGur1132/Smart-HTTPS as your main solution for these kinds of HTTPS upgrades.
-$csp=upgrade-insecure-requests,domain=skessuhorn.is|sporttv.is|bobilverden.no|win-xp.no
+$csp=upgrade-insecure-requests,domain=skessuhorn.is|sporttv.is|bobilverden.no|win-xp.no|geo.ngu.no|lofotenlinks.no|windowsnett.no|selstad.no|turnforening.no|ernaeringsradet.no|frigg.no|studentvelferd.no|luster.kommune.no|ugk.no|drs.dk|dsmu.dk|92grp.dk|kuntzanimation.dk
 ! 🇳🇴: Anti-'CPU-massakrering'
 ! 🇮🇸: And-örgjörvislatrun
 ! 🇬🇧: Anti-'CPU slaughtering'
@@ -2002,6 +2021,7 @@ sofabold.dk##.centerMgfx
 ||norskposten.com^$document
 ||oslo-tannlegene.no^$document
 ||y6.no^$all
+||havfruen4220.dk^$all
 !+ NOT_OPTIMIZED
 /?finn.no/login$document
 ! 🇳🇴: Som nevnt i diverse nyhetsartikler om svindelsider
@@ -2079,8 +2099,6 @@ sofabold.dk##.centerMgfx
 ||sikre-vipps-konto.$document
 ! https://www.datahjelperne.no/hvit-bjorn-river-kvinne-i-stykker-facebook-spam-oppdatert/
 ||vidcopa.me^$document
-! https://www.datahjelperne.no/netflix-korona-svindel/
-||luxshifting.com^$document
 ! https://www.adressa.no/pluss/nyheter/2020/08/26/Kristofer-Hivju-V%C3%A6r-s%C3%A5-snill-og-slutt-22527944.ece
 ||smallrise.com^$document
 ! https://www.nrk.no/sorlandet/advarer-mot-nytt-svindelforsok-1.15197328
@@ -2128,6 +2146,8 @@ sofabold.dk##.centerMgfx
 ||job-view.link^$document
 ! https://www.adressa.no/pluss/nyheter/2021/03/30/Ser-du-hvilken-profil-som-er-ekte-23739076.ece
 ||nordeninterior.weebly.com^$document
+! Googling Aksel Hennie (Results for prior week) in late July 2021
+.com/vg.no|$document
 ! IP addresses of servers notorious for hosting many of the sites above
 51.195.133.131$network
 66.206.3.34$network
@@ -2169,7 +2189,6 @@ sofabold.dk##.centerMgfx
 ||lindseysopticians.com^$document
 ||linkshe.com^$document
 ||lrgst.com^$document
-||manasporthorse.com^$document
 ||mbtnorge.com^$document
 ||meladermfacts.com^$document
 ||moteshoes.com^$document
@@ -2197,7 +2216,6 @@ sofabold.dk##.centerMgfx
 ||nodrakts.com^$document
 ||dkfodboldstore.com^$document
 ||vmfodboldtoj.com^$document
-||minfodboldbutik.com^$document
 5.39.217.206$network
 5.39.221.180$network
 193.148.70.153$network
@@ -2234,6 +2252,15 @@ sofabold.dk##.centerMgfx
 ||campingnews.dk^
 !
 !#if env_mobile
+!#endif
+!
+!#if env_chromium
+!#if env_safari
+!+ NOT_OPTIMIZED
+! OriginalVersion: 21July2021v1-Extension
+fla.de###top-banner
+fla.de##.index-banner
+!#endif
 !#endif
 ! 🇳🇴: ——— Vindusviskere for betalte artikler (sånn at de nederste linjene i en forhåndsvisning ikke toner ut) ———
 ! Takk til THEtomaso (https://github.com/THEtomaso) for de fleste av disse oppføringene.
@@ -2283,7 +2310,7 @@ vg.no##div[data-test-tag=timestamp] + p + div::before
 ! 🇳🇴/🇩🇰: ——— Anti-anti-reklameblokkering ———
 ! 🇮🇸: ——— And-and-auglýsingshindrun ———
 ! 🇬🇧: ——— Anti-anti-adblocking ———
-! Last updated: 15June2021v1-Extension
+! Last updated: 25July2021v1-Extension
 dagensbyggeri.dk#%#//scriptlet('ubo-std.js', '()', '2500')
 eurosport.*#%#//scriptlet('ubo-aeld.js', 'contextmenu')
 techstart.dk#%#//scriptlet('ubo-set.js', 'adblock', 'false')
@@ -2306,3 +2333,5 @@ gamereactor.*$$script[onError="adblockEnabled()"]
 ##div[style^="bottom: 0px;"][style*="width: 10"][style*="z-index: 2147"]
 ! https://github.com/uBlockOrigin/uAssets/issues/8648
 connery.dk#%#//scriptlet('ubo-set.js', 'adblockerAlert', 'noopFunc')
+! https://github.com/finnish-easylist-addition/finnish-easylist-addition/issues/305
+no#%#//scriptlet('ubo-ra.js', 'class', '.dfp-loaded')
