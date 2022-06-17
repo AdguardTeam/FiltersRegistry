@@ -1,6 +1,6 @@
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 11June2022v1
+! OriginalVersion: 16June2022v1
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -386,7 +386,9 @@ $removeparam=Osocial
 $removeparam=adxnnl
 $removeparam=adxnnlx
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-972519
+! (Exception: Concerns about https://nation.marketo.com/t5/champion-program-blogs/the-comprehensive-guide-to-setting-up-the-unsubscribe-link/ba-p/247118)
 $removeparam=mkt_tok
+@@^mkt_unsubscribe=$removeparam=mkt_tok
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1004671
 $removeparam=ampcid
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1015504
@@ -1200,9 +1202,13 @@ $removeparam=newts,domain=amazon.com
 $removeparam=returnFromLogin,domain=amazon.com
 ! Other
 @@/b/ref=$removeparam=ie
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2751033
+||amazon.*^$removeparam=tag
+||amazon.*^$removeparam=channel
 !!! ——— Bing ———
 ! https://www.bing.com/search?q=hello&form=QBLH&sp=-1&pq=hello&sc=8-5&qs=n&sk=&cvid=49B83A335B1C4884B71B2FAD4A8027A9 (02/03/2021)
-$removeparam=/^form=/i,domain=bing.com
+! Please do not add for the entire domain name or the image will not load, see https://github.com/DandelionSprout/adfilt/pull/608
+||bing.com/search?$removeparam=/^form=/i
 ! https://www.bing.com/search?q=hello&sp=-1&pq=hello&sk=&sc=8-5&qs=n (04/03/2021)
 ||bing.com^$removeparam=sp
 $removeparam=sc,domain=bing.com|qvc.com|startpage.com
@@ -1623,6 +1629,9 @@ $removeparam=aff_click_id
 ||b23.tv^$removeparam=/^share_/
 ||b23.tv^$removeparam=bbid
 ||b23.tv^$removeparam=ts
+! https://github.com/DandelionSprout/adfilt/pull/605
+! https://www.bilibili.com/video/BV1DY4y1G7tc?vd_source=33a986dae9358e2f068c82adcd1688e4 (13/06/2022)
+||bilibili.com^$removeparam=vd_source
 !!!! ——— iQIYI ———
 ! https://github.com/DandelionSprout/adfilt/pull/390
 ! https://www.iqiyi.com/v_126y0fmbvmw.html?vfrm=pcw_home&vfrmblk=D&vfrmrst=712211_focus_A_image1 (30/11/2021)
@@ -1764,8 +1773,8 @@ $removeparam=origin,denyallow=platform.twitter.com,domain=yle.fi|flaticon.com|dr
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 ! https://www.hs.fi/talous/art-2000006474289.html?share=095cb51bfd3619323ff183dd633ae8ab
-! https://www.quora.com/What-are-some-of-the-greatest-tennis-matches-ever-played?share=1
-$removeparam=share,domain=hs.fi|oerproject.com|quora.com
+! https://www.quora.com/What-are-some-of-the-greatest-tennis-matches-ever-played?share=1 --> https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2943328
+$removeparam=share,domain=hs.fi|oerproject.com
 ! https://www.loistoristeilyt.fi/?agency=napsu
 $removeparam=agency,domain=loistoristeilyt.fi
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1084659 (03/08/2021)
@@ -2801,11 +2810,6 @@ $removeparam=textadID,domain=media-cdn.costco.ca|media-cdn.costco.com
 ||blogs.oracle.com^$removeparam=pcode
 ! https://venturebeat.com/2022/05/05/google-goes-passwordless/?__vfz=medium%3Dconversations_top_pages
 $removeparam=__vfz,domain=venturebeat.com
-! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2751033
-||amazon.*^$removeparam=tag
-||amazon.*^$removeparam=visitId
-||amazon.*^$removeparam=maas
-||amazon.*^$removeparam=channel
 ! https://www.boots.com/dior-sauvage-eau-de-toilette-100ml-gift-box-10300220?affwin
 $removeparam=affwin,domain=boots.com
 ! https://www.studio.co.uk/shop/health---beauty/dental-care/oral-b-pro3-black-edition-cross-action-electric-toothbrush-with-travel-case?source=TQ45&ch=aw
@@ -2838,6 +2842,7 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 !#endif
 ! ——— Scriptlets ———
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1352038
+! https://buffalonews.com/news/#tracking-source=main-nav
 ! ——— Allowlist ——— !
 ! https://github.com/DandelionSprout/adfilt/commit/6dd010c70438a84cae7cf6b683d0d99dc56794ad
 @@mailinglist$removeparam=/^utm_/i
