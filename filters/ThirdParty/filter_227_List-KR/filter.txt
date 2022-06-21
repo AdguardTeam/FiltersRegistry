@@ -1,7 +1,7 @@
 !
 ! Title: List-KR
 ! Description: List-KR for AdGuard. Do not add this filter into your DNS filter.
-! OriginalVersion: 2022.617.0
+! OriginalVersion: 2022.621.0
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -296,6 +296,10 @@
 ||img.sbs.co.kr/news/ad/delay_redirect.html$document
 ||img.sbs.co.kr/news/ad/delay_redirect.html$subdocument
 !
+||shop-redapi.daum.net/red-apigate/shopad/
+||t1.daumcdn.net/kas/static/ka-middle-ad-event-handler.js
+||t1.kakaocdn.net/gamepub/daumgame/gamebar/
+||ssl.pstatic.net/adimg3.search/*/nx_powerlink.css
 /^https:\/\/t1\.daumcdn\.net\/b2\/creative\/[0-9]{6}\/[a-z0-9]{32}\./
 /^https:\/\/www\.filecity\.co\.kr\/img\/btn\/top_banner_[a-z]{4}\./
 ||mimg.filecity.co.kr/mimg3/admin/banner2/
@@ -684,14 +688,21 @@ hungryapp.co.kr,rhythmer.net##div[class$="Banner"]
 ! ##div[class$="banner"]
 dcinside.com##div[class$="banner"]
 ! ##div[class$="-banner"]
-toomics.com,nongmin.com,ilbe.com##div[class$="-banner"]
+item.gmarket.co.kr,toomics.com,nongmin.com,ilbe.com##div[class$="-banner"]
 ! ##div[class^="banner"]
-m.hungryapp.co.kr,m.edaily.co.kr,ichannela.com,m.news1.kr##div[class^="banner"]
+signinssl.gmarket.co.kr,m.hungryapp.co.kr,m.edaily.co.kr,ichannela.com,m.news1.kr##div[class^="banner"]
 ! ##div[class$="-ad"]
 gamemeca.com,yeongnam.com##div[class$="-ad"]
 ! ##div[id^="ad"]
 gamemeca.com,m.ohmynews.com,m.khan.co.kr,m.dcinside.com##div[id^="ad"]
+! ##div[id^="AD"]
+newsworker.co.kr##div[id^="AD"]
 !
+shoppinghow.kakao.com###contEtc > #nativeAdWrap
+pubg.game.daum.net##.ggb-bnr
+memberssl.auction.co.kr##div[id*="_AD_"]
+m.search.naver.com##section[class*="ad_"][data-ui]
+comic.naver.com##table.viewList tr.band_banner:not(.v2)
 comic.naver.com##.band_banner > a[onclick^="callWebAdBannerClick"]
 webtoon.kakao.com##div > a[href^="/event?event_id="][style]
 webtoon.kakao.com##div[id^="kakao_ad_"]
@@ -1203,7 +1214,7 @@ manatoki141.net,manatoki142.net,manatoki143.net,manatoki144.net,manatoki145.net,
 hellven.net##a[href$="&utm_medium=hellven1&referer=internal_hellven_banner_hellven1"]
 @@||advimg.ad-mapps.com/sdk/js/ver/*/ad_movie_script.js$domain=ichannela.com
 x86.co.kr#@#.download_ad
-@@/^https:\/\/ad-img\.ebaykorea\.com\/ADS\/Contents_\/[0-9_]{19}\/[a-z0-9]{16}\.[A-Za-z]{3,4}$/$domain=gmarket.co.kr
+@@/^https:\/\/ad-img\.ebaykorea\.com\/ADS\/Contents_\/[0-9_]{19}\/[a-z0-9]{16}\.[A-Za-z]{3,4}$/$domain=gmarket.co.kr|~signinssl.gmarket.co.kr
 @@||ssl.pstatic.net/adimg*.search/adpost/js/ad.js$domain=naver.com
 @@/^https:\/\/www\.ehanex\.com\/images\/main\/[a-z]{2}_ad\.gif$/
 @@||adimg3.search.naver.net/adpost/adpost_show_ads_min.js$domain=search.danawa.com
@@ -1223,6 +1234,9 @@ x86.co.kr#@#.download_ad
 @@||ac*.namu.la^$domain=arca.live,media,image,stealth
 !#endif
 !#if (!adguard_ext_android_cb)
+signinssl.gmarket.co.kr#$#.login-cont .login { margin-left: 25% !important; }
+search.danawa.com#$#body { overflow: auto !important; }
+memberssl.auction.co.kr#$#div[class="box__login"] > * { width: 100% !important; }
 mylgid.com#$#.hasBanner header { top: 0px !important; }
 game.naver.com#$#div[class^="loungehome_event_popup_container"] { display: none !important; }
 game.naver.com#$#body { overflow: auto !important; }
@@ -1260,6 +1274,8 @@ sign.dcinside.com#$#.login_inputbox { width: 100% !important; }
 ! Ad-Shield
 loawa.com#?##equip-info-modal:has(> .modal-dialog > .modal-content > .modal-body > button.close + button.float-right)
 !
+shoppinghow.kakao.com#?##contEtc > #rightContentbox:has(#SearchRightAdWrap)
+search.daum.net#?#article#mArticle [disp-attr].g_comp:has(.adLinkColl) + .line
 ygosu.com#?#table.bd_list tbody > tr:has(> td a[href^="https://ygosu.com/banner"])
 m.ygosu.com#?#ul#article_list > li.notice:has(a[href^="https://ygosu.com/banner"])
 ygosu.com#?#table.bd_list tr:has(img[src^="/images/ico_ad_black.png?"])
@@ -1334,6 +1350,8 @@ blacktoon174.com,blacktoon178.com,blacktoon179.com,blacktoon180.com,blacktoon181
 ! PopMagic
 watchfreejavonline.co#%#//scriptlet("abort-current-inline-script", "popMagic.init")
 !
+shoppinghow.kakao.com#%#//scriptlet("json-prune", "ads")
+memberssl.auction.co.kr#%#//scriptlet("abort-current-inline-script", "$", "adDisp")
 dpg.danawa.com#%#//scriptlet("abort-current-inline-script", "$", "/danawa-dpg-common-sponsorBanner-/")
 dpg.danawa.com#%#//scriptlet("abort-current-inline-script", "$", "myScript[myScript.length - 1 ]")
 cultureland.co.kr#%#//scriptlet("abort-on-property-read", "checkCookie", "popup_AD")
@@ -1460,6 +1478,7 @@ ppss.kr,ygosu.com,tgd.kr,inven.co.kr,loawa.com,feedclick.net,dailian.co.kr$$scri
 !#if (adguard_app_android)
 @@||api-ao-list.adison.co^$app=com.nhn.android.webtoon
 @@||api-ao-list.adison.co^$app=com.nhn.android.nbooks
+||firebaseinstallations.googleapis.com^$domain=instasaver.instagram.video.downloader.photo
 ||ds.11st.co.kr/NetInsight/text/11st/11st_mobile/mobile_product
 /^https:\/\/cdn\.011st\.com\/11dims/resize/[0-9]{3,4}x[0-9]{3,4}\//
 ||centaurs-rest.coupang.com^$app=com.timespread.Timetable2

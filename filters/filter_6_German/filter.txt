@@ -2463,7 +2463,7 @@ wetter.com#%#//scriptlet('set-constant', 'wcomAdFrameworkInit', 'undefined')
 spielen.com#%#//scriptlet("set-constant", "idhb", "emptyObj")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107055
 gamepro.de#%#//scriptlet("set-constant", "wgm.initAds", "noopFunc")
-gamepro.de#%#(function(){var a={cmd:[],"public":{getVideoAdUrl:function(){},createNewPosition:function(){},refreshAds:function(){}}};a.cmd.push=function(b){try{b()}catch(c){}};window.jad=a})();
+gamepro.de#%#(function(){var b={cmd:[],public:{getVideoAdUrl:function(){},createNewPosition:function(){},refreshAds:function(){},setTargetingOnPosition:function(){}}};b.cmd.push=function(a){try{a()}catch(a){}},window.jad=b})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102180
 duden.de#%#//scriptlet('remove-class', 'pageskin', 'body.pageskin')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/101799
@@ -2472,7 +2472,7 @@ katzen-forum.net#%#AG_onLoad(function() { document.body.innerHTML = document.bod
 blick.ch#%#//scriptlet("set-constant", "Object.prototype.adsEnabled", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94882
 gamestar.de#%#//scriptlet("set-constant", "wgm.initAds", "noopFunc")
-gamestar.de#%#(function(){var a={cmd:[],"public":{getVideoAdUrl:function(){},createNewPosition:function(){},refreshAds:function(){}}};a.cmd.push=function(b){try{b()}catch(c){}};window.jad=a})();
+gamestar.de#%#(function(){var b={cmd:[],public:{getVideoAdUrl:function(){},createNewPosition:function(){},refreshAds:function(){},setTargetingOnPosition:function(){}}};b.cmd.push=function(a){try{a()}catch(a){}},window.jad=b})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/93347
 joyn.de#%#//scriptlet('prevent-fetch', 'zomap.de')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/92118
@@ -2870,7 +2870,7 @@ bild.de##.outstreamAd
 !
 ! VAST video ads
 !+ NOT_PLATFORM(windows, mac, android)
-||damoh.*.de^$xmlhttprequest,redirect=nooptext,domain=stern.de|desired.de|pcgames.de|t-online.de|vox.de|spieletipps.de|wetter.de|golem.de|autobild.de|buffed.de|gamesaktuell.de|kino.de|pcgameshardware.de|videogameszone.de|familie.de
+||damoh.*.de^$xmlhttprequest,redirect=nooptext,domain=stern.de|desired.de|pcgames.de|t-online.de|vox.de|spieletipps.de|wetter.de|golem.de|autobild.de|buffed.de|gamesaktuell.de|kino.de|pcgameshardware.de|videogameszone.de|familie.de|tvnow.de
 !
 ! Common names:
 ! ##.pdb-div-gpt-footerad
@@ -5945,6 +5945,10 @@ homad-global-configs-eu-fra.schneevonmorgen.com.s3.amazonaws.com/*/config.json$r
 !###############
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/122203
+mobile.de#@#[data-ad-id]
+! https://github.com/AdguardTeam/AdguardFilters/issues/122120
+@@||static.cgames.de/gs_cb/assets/core/js/libs/adblockDetection.min.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/121633
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=mein-schoener-garten.de
 @@||ads.julephosting.de/podcasts/$domain=open.spotify.com
@@ -6748,8 +6752,7 @@ _woz_banner_vote.
 ##a[href^="https://trk.imobtrk.com/"]
 ##a[href^="https://www.communicationads.net/tc.php"] > img
 ##a[href^="https://www.handy-sextreffen.info/?c="]
-##a[href^="https://www.tik-tok-date.com/?a="]
-##a[href^="https://www.tik-tok-date.com/?c="]
+##a[href^="https://www.tik-tok-date.com/"]
 ##a[href^="https://www.tipico.com/?affiliateId="]
 ##a[href^="https://www.vavoo.tv/promo/"] > img
 ping-timeout.de#@##Advertisements
@@ -7623,6 +7626,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||dnv-online.net/_data/Fullsize-Banner.gif
 ||docma.info/wp-content/banners/
 ||drachenbootfestival-hannover.de/grafik/partner/
+||dragonball-tube.com/templates/caprica/amzb/
 ||dreambox.info/banner/
 ||drehscheibe-online.de/ds_cms/banner/
 ||druckerchannel.de/script/dc/ofr_single.php
@@ -8588,7 +8592,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||zurzeit.at/wp-content/uploads/*/Banner-
 ||zwerg-am-berg.de/wp-content/uploads/*/Banner_
 $csp=script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: www.googletagmanager.com *.google.com *.gstatic.com www.google-analytics.com *.googleapis.com *.cloudflare.com *.twitter.com connect.facebook.net cdn.hdfilme.net cdn.hdfilme.cx ssl.p.jwpcdn.com,domain=hdfilme.cx
-/^https?:\/\/.*\/[a-z0-9A-Z]{3,15}\.(php|jsx|1ph)/$image,script,subdocument,domain=beeg-pornos.com|deinesexfilme.com|deutsche-sexfilme.net|deutschsex.com|deutschsex.mobi|einfachtitten.com|german-porno-deutsch.info|gutesexfilme.com|hd-sexfilme.com|lesbenhd.com|meinyouporn.com|pornoaffe.com|pornoente.tv|pornofisch.com|pornohammer.com|pornohans.com|pornohirsch.net|pornojenny.com|pornoklinge.com|pornotom.com|pornotommy.com|pornozebra.com|reifporn.de|sexente.com|sexvideos-hd.com|tube8-pornos.com|xhamster-sexvideos.com|xnxx-porno.com
+/^https?:\/\/.*\/[a-z0-9A-Z]{3,15}\.(php|jsx|1ph)/$image,media,script,subdocument,domain=beeg-pornos.com|deinesexfilme.com|deutsche-sexfilme.net|deutschsex.com|deutschsex.mobi|einfachtitten.com|german-porno-deutsch.info|gutesexfilme.com|hd-pornos.info|hd-sexfilme.com|lesbenhd.com|meinyouporn.com|pornoaffe.com|pornoente.tv|pornofisch.com|pornohammer.com|pornohans.com|pornohirsch.net|pornojenny.com|pornoklinge.com|pornotom.com|pornotommy.com|pornozebra.com|reifporn.de|sexente.com|sexvideos-hd.com|tube8-pornos.com|xhamster-sexvideos.com|xnxx-porno.com
 /^https?:\/\/.*\/.*(sw[0-9a-z._-]|\.notify\.).*/$script,domain=hammerporno.xxx
 /^https?:\/\/[0-9a-z]{8,}\.com\/.*/$~media,~subdocument,third-party,domain=190.115.18.20|aniworld.to|bs.to|burningseries.ac|burningseries.cx|burningseries.nz|burningseries.se|burningseries.sx|burningseries.vc|kinox.top|s.to|serien.cam|serienstream.to|xcine.me
 g.doubleclick.net###adunit
@@ -8602,18 +8606,24 @@ musikexpress.de##iframe[src*="//fom.bildungscentrum.de/"]
 connextra.com##iframe[src^="https://ssl.connextra.com"]
 |http:$domain=adfarm1.adition.com
 |https:$domain=adfarm1.adition.com
-||2mdn.net^$domain=imasdk.googleapis.com|serving-sys.com
+||2mdn.net^$domain=autobild.de|imasdk.googleapis.com|serving-sys.com
+||a.df-srv.de^$domain=autobild.de
 ||ad.71i.de^$domain=autobild.de|gofeminin.de
+||ad.doubleclick.net^$domain=autobild.de
 ||ad.yieldlab.net^$domain=gofeminin.de
 ||ad4mat.de^$domain=googlesyndication.com
+||adcell.com^$domain=autobild.de
 ||adform.net^$domain=autobild.de|googlesyndication.com
-||adition.com^$domain=g.doubleclick.net
+||adition.com^$domain=autobild.de|g.doubleclick.net
+||adnxs-simple.com/creative/$domain=autobild.de
 ||adnxs.com^$domain=autobild.de|widgets.outbrain.com
 ||adrolays.de^$domain=autobild.de
 ||adsafeprotected.com^$domain=autobild.de|imasdk.googleapis.com
 ||adsnative.com^$domain=autobild.de
+||adsrvr.org^$domain=autobild.de
 ||amazon-adsystem.com^$domain=autobild.de|gofeminin.de
-||asadcdn.com/adlib/$domain=autobild.de
+||asadcdn.com/adlib/$~script,domain=autobild.de
+||auto-bild.de/js/rd/google.js$domain=autobild.de
 ||betrad.com^$domain=googlesyndication.com
 ||cas.*.criteo.com^$domain=autobild.de
 ||cas.criteo.com^$domain=autobild.de
@@ -8621,16 +8631,16 @@ connextra.com##iframe[src^="https://ssl.connextra.com"]
 ||criteo.net/js/ld/publishertag.prebid.js$domain=gofeminin.de
 ||f11-ads.com^$domain=gofeminin.de
 ||flashtalking.com^$domain=g.doubleclick.net
-||g.doubleclick.net^$domain=autobild.de
-||g.doubleclick.net^$domain=gofeminin.de|imasdk.googleapis.com
+||g.doubleclick.net^$domain=autobild.de|gofeminin.de|imasdk.googleapis.com
 ||google.com/adsense/$domain=autobild.de
 ||googlesyndication.com/daca_images/simgad/$domain=g.doubleclick.net
-||googlesyndication.com/pagead$domain=g.doubleclick.net
 ||googlesyndication.com/pagead/$domain=g.doubleclick.net|googlesyndication.com
 ||googlesyndication.com/sadbundle/$domain=g.doubleclick.net
 ||googlesyndication.com/safeframe/$domain=g.doubleclick.net|gofeminin.de|googlesyndication.com
 ||googlesyndication.com/sodar/$domain=googlesyndication.com
+||googletagservices.com/dcm/dcmads.js$domain=autobild.de
 ||googletagservices.com/tag/js/gpt.js$domain=gofeminin.de
+||imasdk.googleapis.com^$domain=autobild.de
 ||intellitxt.com^$domain=autobild.de
 ||moatads.com^$domain=autobild.de
 ||mookie1.com^$domain=autobild.de
@@ -8652,6 +8662,8 @@ connextra.com##iframe[src^="https://ssl.connextra.com"]
 ||static.criteo.net/js/ld/publishertag.prebid.js$domain=autobild.de
 ||teads.tv^$domain=autobild.de
 ||tmssl.akamaized.net//ads/ads.js$domain=transfermarkt.de
+||tpc.googlesyndication.com^$domain=autobild.de
+||track.webgains.com/link.html?wglinkid=$script,domain=autobild.de
 ||yieldlab.net^$domain=autobild.de
 /^https?:\/\/.*\.(jpg|jpeg|gif|png|php|svg|ico|js|txt|css)/$popup,domain=190.115.18.20|aniworld.to|canna-power.to|canna.to|hdfilme.cx|kinoonline.net|s.to|serien.cam|serienstream.to
 ^utm_medium=popunder^$popup,domain=hilfreich.de
@@ -8835,6 +8847,7 @@ gruen-weiss.at###carousel
 urnerwochenblatt.ch###carouselInserate
 sexei.net###catfad
 polizei.news###centcon-side-inner
+hd-pornos.info,pornoente.tv###chati_frame
 deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-sexfilme.com,hdpornos.net,nursexfilme.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoschlange.com,pornotom.com,pornotommy.com,pornozebra.com,sexente.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xhamster-sexfilme.com,xnxx-porno.com,xnxx-sexfilme.com###chatinator_frame
 beliebtestewebseite.de###checkdiv
 godmode-trader.de###coba_trading_investment_news
@@ -9106,6 +9119,7 @@ smsgott.de###smsboxIframe
 factsverlag.de###sp-content-top
 wochenblitz.com###sp-sidebar1
 deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-sexfilme.com,hdpornos.net,herzporno.com,nursexfilme.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoschlange.com,pornotom.com,pornotommy.com,pornozebra.com,sexente.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xhamster-sexfilme.com,xnxx-porno.com,xnxx-sexfilme.com###special_column
+hd-pornos.info,pornoente.tv###spezial_column
 mv-spion.de###spion_content_container
 chemnitzerfc.de,deutsche-mittelstands-nachrichten.de,games.ch###sponsor
 vfl-gummersbach.de###sponsor-footer
@@ -9192,7 +9206,7 @@ hc-neumarkt.com###tr-contentbottom
 pornotim.com###tracking-url
 kinofilme.ucoz.com###trade
 biallo.de###tso-billboard-1
-sexvideos-gratis.com,sexvideos-hd.com,xnxx-sexfilme.com###tt_wrapper
+pornoente.tv,sexvideos-gratis.com,sexvideos-hd.com,xnxx-sexfilme.com###tt_wrapper
 finanzen.net###ubs-banner-fallback
 wildesporno.xxx###unten_anzeigen
 wetter-deutschland.com###urban-medrect1
@@ -9209,6 +9223,7 @@ sexfilmegratis.net,sexvideoskostenlos.net###wa_join_btn
 deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-sexfilme.com,hdpornos.net,herzporno.com,nursexfilme.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoschlange.com,pornotom.com,pornotommy.com,pornozebra.com,sexente.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xhamster-sexfilme.com,xnxx-porno.com,xnxx-sexfilme.com###wa_widget
 games.ch###wallpaper
 spielesnacks.de###wallpaper-link
+hd-pornos.info,pornoente.tv###wb_widget
 astronews.com###wcontent
 bayer04.de###web-trekk-pageupdate
 weekli.de###weekli-interstitial
@@ -9566,6 +9581,7 @@ saugen.to##.d_702212
 laden.to##.d_702232
 servus.com,terramatermagazin.com##.da__placeholder
 bergwelten.com##.da_placeholder
+bluewin.ch##.daydeal-container
 spox.com##.dazn
 dubisthalle.de##.dbh-widget
 sportbuzzer.de##.dcm-section-wrapper
@@ -9964,6 +9980,7 @@ flugmodell-magazin.de,trucks-and-details.de##.sidebar_partners
 der-farang.com##.sideboard_conatainer
 automatentest.de##.sideinfo
 mytastedeu.com##.site-header__panorama
+hd-pornos.info,pornoente.tv##.size-300x250
 hifi.de##.sky1-outer-container
 frischauf-gp.de##.skyadd
 internet-sms.com##.skybg
@@ -10017,6 +10034,7 @@ sportclub-meran.it##.sponsorslider
 hceppan.it##.sportnews
 1milf.com,frauporn.com,wildesporno.xxx,xfilmen.com##.spot
 1milf.com,frauporn.com,xfilmen.com##.spot_bottom
+hd-pornos.info,pornoente.tv##.spz_height_60
 ebay.de##.srp-1p__banner
 mobile.de##.srp-placeholder
 bild.de##.stage-teaser__partner--advertorial
