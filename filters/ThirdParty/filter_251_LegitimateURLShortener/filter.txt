@@ -1,6 +1,6 @@
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 06July2022v2
+! OriginalVersion: 09July2022v2
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -405,7 +405,7 @@ $removeparam=in_source
 $removeparam=srnd
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1061792
 $removeparam=as_src
-$removeparam=coid,domain=~radioreference.com|~gv.at
+=adservice$removeparam=coid,domain=~radioreference.com|~finanzonline.bmf.gv.at
 $removeparam=edsacid
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1142244
 $removeparam=/^adjust_/
@@ -1129,7 +1129,7 @@ $removeparam=refRID
 @@||amazon.*/gp/slredirect/picassoRedirect.html^$removeparam
 ! https://www.amazon.com/Disney-Fairies-Lessons-Chapter-ebook-ebook/dp/B007R6UWG2/ref=sr_1_16?dchild=1&keywords=disney+fairies&qid=1606488113&sr=8-16 (27/11/2020)
 $removeparam=dchild
-$~xmlhttprequest,removeparam=qid,domain=~ebay.*|~zhidao.baidu.com|~tastedive.com
+$~xmlhttprequest,removeparam=qid,domain=~ebay.*|~zhidao.baidu.com|~tastedive.com|~hkex.com.hk
 ||amazon.$removeparam=sr
 ! https://www.amazon.co.uk/dp/B08K443FBQ/ref=asc_df_B08K443FBQ1606003200000/?creative=22374&creativeASIN=B08K443FBQ (28/11/2020)
 ||amazon.$removeparam=creative
@@ -2857,6 +2857,12 @@ $removeparam=ch,domain=studio.co.uk
 ^s=cl$document,removeparam=s
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3079679
 $removeparam=publisher_id,domain=t-mobile.com
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3101743
+$removeparam=x50878,domain=pmctraining.com
+! https://github.com/uBlockOrigin/uAssets/issues/13958#issuecomment-1178776992
+||redirect.appmetrica.yandex.com^$removeparam=c
+! https://www.bloomberg.com/news/articles/2022-07-07/stocks-set-to-rise-as-recession-obsession-cools-markets-wrap?fromMostRead=true
+$removeparam=fromMostRead,domain=bloomberg.com
 !#if !env_mobile
 ! ——— Mobile ——— !
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———

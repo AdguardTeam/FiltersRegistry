@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 22.7.117
+! OriginalVersion: 22.7.168
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 06 Jul 2022 09:26 UTC
+! Last modified: 13 Jul 2022 19:01 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/realodix/AdBlockID
 .id^*/ads_$domain=~cartalog.id
@@ -119,6 +119,7 @@
 /gambarpromosi-
 /gbr_iklan/*
 /gg-ads-
+/iklan-ads/*
 /iklan-api-
 /iklan-api/*
 /iklan-assets/*
@@ -554,6 +555,7 @@ _promosi.
 -1000-x-90.
 -1000-x124.
 -1000x100-$image
+-1000x100.$image
 -1000x120-$image
 -1000x124-$image
 -1000X180.
@@ -632,6 +634,7 @@ _promosi.
 -339x450.
 -350x464.
 -355x250px.
+-360x90.$image
 -361x65-
 -369x90.
 -370-x-100.
@@ -750,6 +753,7 @@ _promosi.
 -790-90.
 -798x230.
 -800-x-70.$image
+-800x100-$image
 -800x140-$image
 -800X70.
 -80x300-
@@ -947,11 +951,9 @@ _promosi.
 /pp728-200.
 /vg728x90.
 =w440-h90-
-_1000-X-120.
 _1000-x-120.$image
 _1000x100.$image
 _1000x120.$image
-_1000x20.
 _1000x20.$image
 _1000x250.gif$image
 _1000x50.$image
@@ -1313,6 +1315,7 @@ _GIF1200x120-
 ###le_header_ads
 ###left_ads_float_phonedevelop
 ###lmd-iklan
+###me-div-gpt-ad-stickyad
 ###myadsmodal
 ###obi_random_banners_posts
 ###popup_bawah
@@ -1393,6 +1396,8 @@ _GIF1200x120-
 ##.ads-middle-list-news
 ##.ads-mr
 ##.ads-nontonfilm
+##.ads-paralax
+##.ads-parallax
 ##.ads-pop
 ##.ads-position-here
 ##.ads-sidebar-1
@@ -1438,6 +1443,7 @@ _GIF1200x120-
 ##.ads__r1
 ##.ads__side
 ##.ads__skyscraper
+##.ads__spacing
 ##.ads__stick
 ##.ads__stick--left
 ##.ads__stick--right
@@ -1449,6 +1455,7 @@ _GIF1200x120-
 ##.ads__top
 ##.ads__top-big
 ##.ads__top-big250
+##.ads_area_go
 ##.ads_below_photo
 ##.ads_besar
 ##.ads_bottom_insGP
@@ -1456,6 +1463,7 @@ _GIF1200x120-
 ##.ads_box_2_2
 ##.ads_box_3
 ##.ads_box_5
+##.ads_gofilm
 ##.ads_image
 ##.ads_kecil
 ##.ads_r1
@@ -1486,6 +1494,7 @@ _GIF1200x120-
 ##.adspost520
 ##.adspost700
 ##.adspost728
+##.adssideblog1
 ##.adtext01
 ##.adunits
 ##.adv-link
@@ -1585,6 +1594,7 @@ _GIF1200x120-
 ##.dt-left-ads
 ##.dt-right-ads
 ##.dt-top-ads
+##.dual_ads
 ##.ezoic-adpicker-ad
 ##.ezoic-ads-adaptive
 ##.fixed-ads
@@ -1844,6 +1854,7 @@ _GIF1200x120-
 ##.videoOverAdBig
 ##.vlog-banner
 ##.vlog-bnr
+##.warp-ads-paralax
 ##.widget-ads-top
 ##.widget-ads3
 ##.widget-ads4
@@ -1854,7 +1865,6 @@ _GIF1200x120-
 ##[class*="ads-artikel"]
 ##[class*="ads-atas"]
 ##[class*="ads-bawah"]
-##[class*="ads-kanan"]
 ##[class*="ads-kiri"]
 ##[class*="ads-tengah"]
 ##[class*="ads_atas"]
@@ -1862,8 +1872,6 @@ _GIF1200x120-
 ##[class*="ads_kanan"]
 ##[class*="ads_kiri"]
 ##[class*="ads_tengah"]
-##[class*="adsatas"]
-##[class*="adsbawah"]
 ##[class*="adsimgxatas"]
 ##[class*="adsimgxbawah"]
 ##[class*="adsimgxkanan"]
@@ -1893,7 +1901,6 @@ _GIF1200x120-
 ##[class*="bnr-col-kiri"]
 ##[class*="bnr-kanan"]
 ##[class*="bnr-kecil"]
-##[class*="bnr-kiri"]
 ##[class*="bnr-samping"]
 ##[class*="bnr-sedang"]
 ##[class*="bnr-tengah"]
@@ -1931,9 +1938,6 @@ _GIF1200x120-
 ##[id*="ads_kanan"]
 ##[id*="ads_kiri"]
 ##[id*="ads_tengah"]
-##[id*="adsatas"]
-##[id*="adsbawah"]
-##[id*="adsimgxatas"]
 ##[id*="adsimgxbawah"]
 ##[id*="adsimgxkanan"]
 ##[id*="adsimgxkiri"]
@@ -1954,7 +1958,6 @@ _GIF1200x120-
 ##[id*="banner_kanan"]
 ##[id*="banner_kiri"]
 ##[id*="bannerkanan"]
-##[id*="bannerkiri"]
 ##[id*="bnr-atas"]
 ##[id*="bnr-bawah"]
 ##[id*="bnr-besar"]
@@ -1985,6 +1988,7 @@ _GIF1200x120-
 ##[id^="div-adx-ad-"]
 ##[id^="rn_ad_native_"]
 ##[id^="utp_ads_"]
+##a[title="iklan" i]
 ##banner-besar--top
 ##div[id^="dfp-gpt-ad"]
 ##gmn-companion-ad-renderer
@@ -1996,18 +2000,6 @@ _GIF1200x120-
 ##amp-img[width="364"][height="60"]
 ##amp-img[width="533"][height="60"]
 ##amp-img[width="640"][height="60"]
-##img[data-original-height="720"][data-original-width="180"]
-##img[data-original-height="90"][data-original-width="728"]
-##img[data-original-width="720"][data-original-height="120"]
-##img[data-srcset*="-1024x215."]
-##img[data-srcset*="-1536x322."]
-##img[data-srcset*="-2048x429."]
-##img[data-srcset*="-768x161."]
-##img[height="70"][width="1100"]
-##img[srcset*="-1024x215."]
-##img[srcset*="-1536x322."]
-##img[srcset*="-2048x429."]
-##img[srcset*="-768x161."]
 ##img[style="height: 70px; width: 1080px;"]
 ##img[style="height: 70px; width: 540px;"]
 ##img[style="height: 70px; width: 728px;"]
@@ -2028,12 +2020,12 @@ _GIF1200x120-
 ##img[width="1080"][height="80"]
 ##img[width="1080"][height="85"]
 ##img[width="1080"][height="90"]
-##img[width="1080px"][height="100px"]
 ##img[width="1080px"][height="65px"]
 ##img[width="1080px"][height="90px"]
 ##img[width="1080px"][height="95px"]
 ##img[width="1100"][height="140"]
 ##img[width="1100"][height="210"]
+##img[width="1100"][height="70"]
 ##img[width="1100px"][height="100px"]
 ##img[width="1110"][height="180"]
 ##img[width="1110"][height="208"]
@@ -2051,6 +2043,7 @@ _GIF1200x120-
 ##img[width="1280"][height="328"]
 ##img[width="1280"][height="330"]
 ##img[width="1280"][height="402"]
+##img[width="130"][height="385"]
 ##img[width="1300"][height="393"]
 ##img[width="1482"][height="120"]
 ##img[width="150"][height="560"]
@@ -2058,6 +2051,7 @@ _GIF1200x120-
 ##img[width="160"][height="600"]
 ##img[width="1600"][height="267"]
 ##img[width="1654"][height="355"]
+##img[width="180"][height="300"]
 ##img[width="295"][height="410"]
 ##img[width="300"][height="600"]
 ##img[width="370px"][height="60"]
@@ -2084,20 +2078,23 @@ _GIF1200x120-
 ##img[width="530"][height="90"]
 ##img[width="532px"][height="90px"]
 ##img[width="533"][height="909"]
+##img[width="535"][height="100"]
 ##img[width="535"][height="70"]
 ##img[width="537"][height="80"]
 ##img[width="540"][height="80px"]
-##img[width="540px"][height="100px"]
 ##img[width="550"][height="70"]
 ##img[width="571"][height="1024"]
 ##img[width="584"][height="97"]
 ##img[width="587"][height="1024"]
+##img[width="590"][height="50"]
 ##img[width="600"][height="120"]
 ##img[width="600"][height="150"]
 ##img[width="600"][height="73"]
 ##img[width="600"][height="90"]
 ##img[width="604"][height="1024"]
+##img[width="605"][height="90"]
 ##img[width="615"][height="1024"]
+##img[width="620"][height="90"]
 ##img[width="627"][height="69"]
 ##img[width="634"][height="1024"]
 ##img[width="645"][height="1024"]
@@ -2119,22 +2116,25 @@ _GIF1200x120-
 ##img[width="750"][height="158"]
 ##img[width="765"][height="96"]
 ##img[width="770"][height="117"]
-##img[width="786px"][height="90px"]
+##img[width="782"][height="132"]
 ##img[width="790"][height="100"]
 ##img[width="799"][height="90"]
 ##img[width="800"][height="200"]
 ##img[width="800"][height="2548"]
 ##img[width="800"][height="90"]
 ##img[width="800"][height="99"]
+##img[width="800px"][height="90px"]
 ##img[width="818"][height="1280"]
 ##img[width="820"][height="80"]
 ##img[width="820"][height="90"]
+##img[width="848"][height="148"]
 ##img[width="900"][height="150"]
 ##img[width="900"][height="179"]
 ##img[width="900"][height="232"]
 ##img[width="900"][height="280"]
 ##img[width="92"][height="958"]
 ##img[width="920"][height="126"]
+##img[width="960"][height="150"]
 ##img[width="970"][height="90"]
 ##img[width="980"][height="120"]
 ##img[width="980"][height="150"]
@@ -2203,7 +2203,6 @@ _GIF1200x120-
 ||adplus.co.id^$third-party
 ||adslop.com^$third-party
 ||adstarsmedia.co.id^$third-party
-||bannerku.xyz^$third-party
 ||berangkasilmu.com^$third-party
 ||c303.pw^$third-party
 ||caribanner.bid^$third-party
@@ -2249,6 +2248,12 @@ _GIF1200x120-
 ||upoint.id^$third-party
 ||welcome.indihome.co.id^$third-party
 ||darts-ads.telkom.co.id^$third-party
+||aistolsu.net^$third-party
+||aufr67i8sten.com^$third-party
+||fcouvtlwzocok.com^$third-party
+||fmjvsmavummyjnc.com^$third-party
+||ttwscqlqmbcb.com^$third-party
+||tyiqebrbpxc.com^$third-party
 ||dcwkgvoeufhnm.com^$third-party
 ||dsvkgvrftkpds.com^$third-party
 ||esoeoanl.com^$third-party
@@ -2409,7 +2414,7 @@ _GIF1200x120-
 -adv-$image,domain=realitasonline.id
 -banner$image,domain=fajar.co.id
 -banner-$image,domain=bekasipedia.com|beritasulteng.com|bisablog.com|blockchainmedia.id|bogoronline.com|dailypost.id|gatra.com|indoaviation.asia|islampos.com|iwanbanaran.com|manadoline.com|pewarta-indonesia.com|presmedia.id|speednews-manado.com|totabuan.news|trotoar.id
--banner.$image,domain=balapmotor.net|jurnalotaku.com|makassartoday.com|marketing.co.id|presmedia.id|suarantb.com
+-banner.$image,domain=balapmotor.net|jurnalotaku.com|makassartoday.com|marketing.co.id|musbikhin.com|presmedia.id|suarantb.com
 -ikl.$image,domain=bogornetwork.com
 -iklan-$image,domain=banuatv.com|beritabalionline.com|doktersehat.com|halamansembilan.com|komentaren.net|nusadaily.com|protapriau.com
 -iklan.$image,domain=dimensinews.co.id|samawarea.com
@@ -2421,7 +2426,7 @@ _GIF1200x120-
 /banner%$image,domain=instingjurnalis.com
 /banner-$image,domain=balapmotor.net|barometerjatim.com|bmspeed7.com|dailypost.id|djournalist.com|gemasulawesi.com|indonesiadaily.co.id|infosulsel.com|jagoankode.com|kabarmedan.com|kanalkalimantan.com|kliksulsel.com|lintaskepri.com|manadoline.com|manadonews.co.id|mariodevan.com|metrokepri.com|pedomanrakyat.com|pertamax7.com|populernews.id|poskomalut.com|potret24.com|presmedia.id|rakyatbengkulu.com|rodanesia.com|samuderakepri.co.id|sinjai.info|speednews-manado.com|suaracelebes.com|sukoharjonews.com|sumselupdate.com|swarakaltim.com|swarakawanua.com|tanjungpinangpos.id|trotoar.id|viralberita.net|wideazone.com
 /banner.$image,domain=prokepri.com
-/banner/*$image,domain=kapanlagi.com|maenhp.com
+/banner/*$image,domain=jagobengkel.com|kapanlagi.com|maenhp.com
 /banner_$image,domain=inijabar.com|radarbanten.co.id|ruparupa.com|seputarpapua.com
 /banners/*$image,domain=jelajahcoin.com
 /iklan%$image,domain=kliksulsel.com|koranakselerasi.com|mandalikapost.com|prodeteksi.com
@@ -2796,7 +2801,6 @@ _promohariini.$image,domain=ruparupa.com
 ||wartapati.com^*_ads.$image
 ||waspadaaceh.com^*/iklan_
 ||wawasanriau.com/assets/banner/
-||winnetnews.com/api/v*/banner/
 ||winnetnews.com^*/banner/
 ||zonalinenews.com^*/iklan-$image
 ||hxload.co^*/ads.js
@@ -2885,12 +2889,10 @@ radioonline.co.id##.add-box-top
 lampungpro.co##.add-img
 sumselnian.com##.add-inner
 dialeksis.com##.add-space
-nonton.com##.adds
 matamata.com,suara.com##.adds-top
-ayocirebon.com,duwitmu.com,gridoto.com,harianjogja.com,koran-jakarta.com,minangsatu.com,motorplus-online.com,pikiran-rakyat.com,rmol.id,tempo.co##.ads
+ayocirebon.com,duwitmu.com,gridoto.com,harianjogja.com,koran-jakarta.com,minangsatu.com,motorplus-online.com,pikiran-rakyat.com,rmol.id,tempo.co,wowbabel.com##.ads
 harpersbazaar.co.id,motherandbeyond.id##.ads-belt
 kompas.tv##.ads-big
-kontan.co.id##.ads-billboard
 inews.id##.ads-close
 petanikode.com##.ads-content
 kompas.tv##.ads-flycarpet
@@ -2903,8 +2905,6 @@ bolasport.com,kompas.tv##.ads-mgid-pag
 kompas.tv##.ads-mgid-read
 gridoto.com##.ads-on
 kompas.com##.ads-on-body
-bolasport.com##.ads-paralax
-codeflare.net##.ads-parallax
 tribunnews.com##.ads-placeholder
 tribunnews.com##.ads-placeholder-inside
 teknologiprograming.blogspot.com##.ads-posting
@@ -2978,7 +2978,7 @@ brainly.co.id##.brn-new-ad-placeholder--with-background
 brainly.co.id##.brn-new-ad-placeholder__below-question-rectangles
 brainly.co.id##.brn-new-ad-placeholder__bridge
 katadata.co.id##.close-ads-sticky
-diadona.id##.col-banner
+diadona.id,dream.co.id##.col-banner
 parapuan.co##.comm--fixed
 kompas.tv##.container_skinad
 kepogaul.com,posbagus.com##.content .box-height-100px-250px
@@ -3004,7 +3004,6 @@ qoala.app##.global-banner-left
 reformasiaktual.com##.gmr-banner-aftercontent
 lagikepo.com##.gmr-banner-stickyright
 mikaylabinar.com##.gmr-bannerpopup
-ceklissatu.com##.gmr-floatbanner
 parapuan.co##.gpt-ad-head-wrapper
 lifepal.co.id##.gtm_openleadform_inarticlebanner
 pilarbanten.com##.header-ad-color
@@ -3034,7 +3033,6 @@ kaskus.co.id##.jsSkyscrapperAdsRight
 infojateng.id,kompas.com,sonora.id##.kcm
 medikre.com##.kcm__horizontal
 motorplus-online.com##.kcm__tower
-bola.com##.layout__ads
 teknologi.id##.lazy-ads
 advertising-indonesia.id##.lded
 kontan.co.id##.liftdownclass
@@ -3130,7 +3128,7 @@ tmcblog.com##a[href*="banner"] > img
 bantenkini.com,citrust.id,kabarsumbawa.com,listingberita.com,metrosulawesi.id,realitasonline.id,redkal.com,sakanews.com,sidakpost.id,suarasikka.com,suaratangsel.com,sumeks.co##a[href="#"] > img
 andreasagung.com,centerklik.com,kostjakarta.com,tempat-kost.com##a[rel="nofollow"] > img
 ceklist.id##a[rel="sponsored"] img
-aftermarketplus.id,armaila.com,bagas31.info,bakata.net,beedrive.link,beritacrypto.com,beritajatim.com,beritasatu.com,blockchainmedia.id,campusnesia.co.id,coinvestasi.com,detikglobalnews.com,duta.co,gigapurbalingga.cc,idblanter.com,infoaktualnews.com,infojambi.com,jambipers.com,jambiseru.com,kabarterkini.co.id,kejarfakta.com,klikmania.net,kompaslima.com,korsum.id,kostjakarta.net,kuncitts.com,laptophia.com,lintaslampung.com,malangtimes.com,maniakmotor.com,medianews.co.id,murianews.com,nusadaily.com,penaberlian.com,pickybest.id,polisiinternet.com,posbali.co.id,potret24.com,radarbanten.co.id,radarlampung.co.id,radartuba.com,rakyatbengkulu.com,riauterkini.com,samawarea.com,sebelas12.com,suarakristen.com,sulselsatu.com,sumateranews.co.id,sumeks.co,swarakaltim.com,tutorial89.com,venuemagz.com,yangcanggih.com,zonabikers.com,zonalampung.co##a[target="_blank"] > img
+aftermarketplus.id,armaila.com,bagas31.info,bakata.net,beedrive.link,beritacrypto.com,beritajatim.com,beritasatu.com,blockchainmedia.id,campusnesia.co.id,caratekno.com,coinvestasi.com,detikglobalnews.com,duta.co,gigapurbalingga.cc,idblanter.com,infoaktualnews.com,infojambi.com,jambipers.com,jambiseru.com,kabarterkini.co.id,klikmania.net,kompaslima.com,korsum.id,kostjakarta.net,kuncitts.com,laptophia.com,lintaslampung.com,malangtimes.com,maniakmotor.com,medianews.co.id,murianews.com,musbikhin.com,nusadaily.com,penaberlian.com,pickybest.id,polisiinternet.com,posbali.co.id,potret24.com,radarbanten.co.id,radarlampung.co.id,radartuba.com,rakyatbengkulu.com,riauterkini.com,samawarea.com,sebelas12.com,suarakristen.com,sulselsatu.com,sumateranews.co.id,sumeks.co,swarakaltim.com,tutorial89.com,venuemagz.com,yangcanggih.com,zonabikers.com,zonalampung.co##a[target="_blank"] > img
 iwanbanaran.com##a[target="_blank"] div[style*="position: fixed;"]
 sumselindependen.com##a[title*="iklan" i] img
 beritabalap.com##article .code-block img
@@ -3223,16 +3221,16 @@ jalurnews.com,sinjai.info##.theiaStickySidebar img[style="max-width: 100%; heigh
 padangmedia.com##.theiaStickySidebar img[style="max-width: 100%;"]
 inijabar.com##.widget img[data-original-width="1080"][data-original-height="1080"]
 inijabar.com##.widget img[data-original-width="1280"][data-original-height="1280"]
-berandanusantara.com,bitnews.id,bogopapua.net,bogornetwork.com,cakrawalajabar.com,ceklissatu.com,depokrayanews.com,expontt.com,fajar.co.id,jubir.id,kabarntt.co,kabarpapua.co,kabarsinjai.com,klikjatim.com,ligo.id,lintasbali.com,matanews.net,mediasumutku.com,medinaslampungnews.co.id,portalntt.com,protapriau.com,purworejonews.com,radarbanten.co.id,radarlamtim.com,rakyatbengkulu.com,sekilasindonesia.id,speednews-manado.com,srbnews.id,suarasulut.com,sulawesion.com,sulutnewstv.com,wartaterkini.news##.widget img[style="max-width: 100%; height: auto;"]
+berandanusantara.com,bitnews.id,bogopapua.net,bogornetwork.com,cakrawalajabar.com,ceklissatu.com,depokrayanews.com,expontt.com,fajar.co.id,jubir.id,kabarntt.co,kabarpapua.co,kabarsinjai.com,klikjatim.com,ligo.id,lintasbali.com,matanews.net,mediasumutku.com,medinaslampungnews.co.id,portalntt.com,protapriau.com,purworejonews.com,radarbanten.co.id,rakyatbengkulu.com,sekilasindonesia.id,speednews-manado.com,srbnews.id,suarasulut.com,sulawesion.com,sulutnewstv.com,wartaterkini.news##.widget img[style="max-width: 100%; height: auto;"]
 portalntt.com##.widget img[style="width:300px;height:auto;"]
 lensametro.com##.widget img[width=""][height=""]
 sultengterkini.id##.widget img[width="100%"][height="100%"]
 inijabar.com##.widget img[width="320"][height="320"]
 mediametropolitan.id##.widget-content img[data-original-width="905"][data-original-height="1280"]
 papuadalamberita.com##.widget-content img[style="max-width: 100%; height: auto;"]
-apahabar.com,kumanika.com,lintastungkal.com,sawerigading-news.com##[id^="sidebar"] img[style="max-width: 100%; height: auto;"]
+apahabar.com,kumanika.com,lintastungkal.com##[id^="sidebar"] img[style="max-width: 100%; height: auto;"]
 tutorial.sangfajarnews.com##aside img[data-original-width="301"][data-original-height="251"]
-analisaaceh.com,asarpua.com,beritamerdekaonline.com,bogorchannel.id,bogorin.com,bogorupdate.com,cekpremi.com,dejurnal.com,expontt.com,fajarmanado.com,faktajabar.co.id,harianexpose.com,inisumedang.com,investigasibhayangkara.com,jabarekspres.com,jakposnews.com,jeratntb.com,kabarberitasatu.com,kabarlahat.com,kabarnuansa.id,kabarpublik.id,kailipost.com,kaldera.id,katakepri.com,kepridays.co.id,koranbanjar.net,koranmemo.com,lampung1.com,lampungcentral.com,lensantb.com,lutim-news.com,malangnews.id,mattanews.co,mediasembilan.co.id,mitrapost.com,narasiterkini.com,newskaltim.com,niaga.asia,ntt-news.com,nuansarealitanews.com,obor-nusantara.com,okemedan.com,papuabaratpos.com,patrolipost.com,pojokberita.co.id,poskita.id,radarbandung.id,radarlombok.co.id,radarmadiun.co.id,radarmalaka.com,realitalampung.com,redaksisulut.com,sakanews.com,semarakpost.com,sendapaleba.com,senentangnews.com,sindomanado.com,suara-ntt.com,suaramandiri.co,suarapublik.id,suarasiber.com,sumateranews.co.id,swarakaltim.com,talikanews.com,tapanulipost.com,timur-online.com,tobasatu.com,travelmaker.id,ujaran.co.id,wartamerdekanews.com##aside img[style="max-width: 100%; height: auto;"]
+analisaaceh.com,asarpua.com,beritamerdekaonline.com,bogorchannel.id,bogorin.com,bogorupdate.com,cekpremi.com,dejurnal.com,expontt.com,fajarmanado.com,faktajabar.co.id,harianexpose.com,inisumedang.com,investigasibhayangkara.com,jabarekspres.com,jakposnews.com,jeratntb.com,kabarberitasatu.com,kabarlahat.com,kabarnuansa.id,kabarpublik.id,kailipost.com,kaldera.id,katakepri.com,kepridays.co.id,koranbanjar.net,koranmemo.com,lampung1.com,lampungcentral.com,lensantb.com,lutim-news.com,malangnews.id,mattanews.co,mediasembilan.co.id,mitrapost.com,narasiterkini.com,newskaltim.com,niaga.asia,ntt-news.com,nuansarealitanews.com,obor-nusantara.com,okemedan.com,papuabaratpos.com,patrolipost.com,pojokberita.co.id,poskita.id,radarbandung.id,radarlombok.co.id,radarmalaka.com,realitalampung.com,redaksisulut.com,sakanews.com,semarakpost.com,sendapaleba.com,senentangnews.com,sindomanado.com,suara-ntt.com,suaramandiri.co,suarapublik.id,suarasiber.com,sumateranews.co.id,swarakaltim.com,talikanews.com,tapanulipost.com,timur-online.com,tobasatu.com,travelmaker.id,ujaran.co.id,wartamerdekanews.com##aside img[style="max-width: 100%; height: auto;"]
 kriminal.co##aside img[style="max-width: 100%;"]
 beritainspira.com##aside img[width="1080"][height="1080"]
 pewarta-indonesia.com##aside img[width="1182"][height="1182"]
@@ -3257,12 +3255,12 @@ trikinet.com##.widget:not(:has(a[href*="trikinet.com"])) > a > img
 bangkitmedia.com##aside p:matches-css(text-align: center):has(> a > img)
 gardapapua.com##aside:has-text(/adv/i)
 tempo.co#%#//scriptlet('ubo-rc.js', 'pad-apps', 'body')
-sindonews.com#%#//scriptlet('ubo-rc.js', 't480', '.parallax-non')
+sindonews.com#%#//scriptlet('ubo-rc.js', 't480', '.content-paralax')
 today.line.me##.midAdModule-root:has-text(/iklan/i)
 viva.co.id###_popIn_recommend
 viva.co.id###_popIn_recommend_middle
 androidsis.com,decoora.com###abn_singlestealer:has(> .adsbygoogle)
-kafekepo.com###adop_flyingcarpet
+kafekepo.com,kelasexcel.id###adop_flyingcarpet
 beritamuslimpress.blogspot.com,ucartade.blogspot.com###close-teaser
 hidupdigital.id###cont-megabillboard
 bola.net###content-news .w100p:has([id^="div-gpt-ad"])
@@ -3295,6 +3293,7 @@ bacalagers.com##.code-block:has(.adsbyadop)
 berakal.com,bukugue.com,dinaspendapatan.com,downloadsoftwaregratisan.com,duwitmu.com,ecaraku.com,inwepo.co,juguran.com,localstartupfest.id,mogamugi.com,narmadi.com,onlinemetro.id,pemerintahkota.com,penablog.com,saintif.com,selerasa.com,sulistio.xyz,thelastsurvivors.org,winpreso.com##.code-block:has(.adsbygoogle)
 buatatm.com,myjourney.id,pakaiatm.com,prosesbayar.com##.code-block:matches-css(text-align: center):has-text(/adv/i)
 arenabola.id##.col-lg-3:has-text(/adv/i)
+otodriver.com##.container:has(.text-center > [id^="div-gpt-ad"])
 mediaindonesia.com##.content-block #paralax_div
 mediaindonesia.com##.content-block .paralax_div
 sabiru.com##.ct-div-block:matches-css(align-items: center):has(.adsbygoogle)
@@ -3307,6 +3306,7 @@ ngemotor.com##.fixed-rside
 tipspetani.com##.fixed-rside:has(.adsbygoogle)
 alinea.id,bisnis.com,gadgetren.com,indozone.id,katadata.co.id,kompas.com,tek.id##.flying_carpet_div:has([id^="div-gpt-ad"])
 katadata.co.id##.flying_carpet_show:has(.flying_carpet_show_banner)
+kelasexcel.id##.flyingcarpet
 gadgetren.com,katadata.co.id,panditfootball.com,poskota.co.id,teknologi.id##.footer_sticky
 maxmanroe.com##.footer_sticky:has([id^="div-gpt-ad"])
 lokerjakarta.id##.footer_sticky_desktop
@@ -3333,6 +3333,7 @@ investor.id##.sticky
 populis.id,tvonenews.com##.sticky-bottom
 ggwp.id##.sticky-footer:has([id^="div-gpt-ad"])
 genpi.co##.text-center:has([id*="div-gpt-ad-"])
+suaramuhammadiyah.id##.widget img[style="max-width: 100%; height: auto;"]
 bantenraya.com,infoberita.id,infontt.com,jatimtimes.com,jurnalkepri.com,legaleraindonesia.com,malangtimes.com,meduonline.co.id,metromanado.com,nusadaily.com,pilarjambi.com,prokepri.com,suara-ntt.com##.widget:has-text(/adv/i)
 swara-bengkulu.com##.widget:has-text(/space available/i)
 mariodevan.com,motorrio.com##.wpa:has-text(/adv/i)
@@ -3397,8 +3398,9 @@ dutaislam.com#$#.outer-wrapper { margin-top:60px!important; }
 gridoto.com#$#.read_content { padding-top: 0!important; }
 uzone.id#$#.section-top { margin: 100px auto 0 auto!important; }
 m.akurat.co#$#body { padding-top: 0!important; }
+wowbabel.com#$#script + .container { padding-top: 160px!important; }
+anaktekno.com,azislamayuda.com,bismillah-gratis.blogspot.com,daridesignstudio.com,eplusgo.com,foldertips.com,fullversionsoftware.org,iqra.id,itkoding.com,kodingindonesia.com,kuyhaa-me.com,lebakcyber.net,lellyfitriana.com,mahirphotoshop.com,musbikhin.com,ndoware.com,nesabamedia.com,penaindigo.com,posciety.com,qerdus.com,rasabunda.com,resepbundaida.com,rumahcoding.co.id,saidalfaruq.net,skillacademy.com,teknocrash.web.id,thegorbalsla.com,yamaha-motor.co.id#$#*::selection { color:#212121!important;background:#fde69a!important; }
 #@#.adsBox
-dropshipin.id#%#//scriptlet('ubo-acis.js', '$', 'ads')
 teksnologi.com#%#//scriptlet('ubo-acis.js', 'String.fromCharCode', 'decodeURIComponent')
 cydiaguide.app,eltelu.blogspot.com,redaksiid.blogspot.com#%#//scriptlet('ubo-acis.js', 'addEventListener', 'DOMNodeRemoved')
 dafideff.com#%#//scriptlet('ubo-acis.js', 'addEventListener', 'google_ad_client')
@@ -3442,7 +3444,6 @@ berga-tech.com,rival-face.com#@#.adspost1
 @@/dh-new-anti-adblocker-lite/public/js/prebid-ads.js
 @@/js/prebid-ads.js$script
 @@/noadblock-nice-message/assets/js/ads.js?$~third-party,script
--adblock-notice-
 -adblock-notice/
 /abb-msg.js
 /adb_script/*
@@ -3694,7 +3695,7 @@ gadgetidn.id,nomis.id,seputarkuliah.com#%#//scriptlet('ubo-aeld.js', '/dragstart
 alamatbank.com,amskyindonesia.com,asianami.com,destiku.net,fachmycasofa.com,headlinekaltim.co,ilmumemikatwanita.com,majalahponsel.org,oliswel.com,paketsoundsystem.com,panduanteknisi.com,rajasanews.com,sahamok.net,santridrajat.com#%#//scriptlet('ubo-aopr.js', 'disableSelection')
 kaltaraaktual.com#%#//scriptlet('ubo-aopr.js', 'document.ondragstart')
 kerajaannusantara.com,rajasanews.com#%#//scriptlet('ubo-aopr.js', 'document.onmousedown')
-akupakarblog.blogspot.com,amplaumplu.com,ardra.biz,balimediakomputer.com,balipost.com,blog-dnz.com,broexcel.com,chiarafarina.blogspot.com,dailysocial.id,dedyakas.com,dinaspajak.com,dosenonline.id,duniamu38.com,fendydjael.blogspot.com,gudangcoding.com,gudangcodingaplikasi.blogspot.com,gurupenyemangat.com,hazamusik.com,heru.my.id,icloudice.com,invesnesia.com,iwakbuncit.com,jagoanredesign.eu.org,listrik-praktis.com,mediametropolitan.id,menoreh.net,metodepraktis.com,miuitutorial.com,pintudunia.com,rajaonline.my.id,rajasanews.com,sahabat-akmi.blogspot.com,satugoogle.blogspot.com,scanharga.com,sheptyiecha.com,steffifauziah.com,techno-ct2.eu.org,upahminimum.com#%#//scriptlet('ubo-aopr.js', 'document.onselectstart')
+akupakarblog.blogspot.com,amplaumplu.com,ardra.biz,balimediakomputer.com,balipost.com,blog-dnz.com,broexcel.com,chiarafarina.blogspot.com,dailysocial.id,dedyakas.com,dinaspajak.com,dosenonline.id,duniamu38.com,fendydjael.blogspot.com,gudangcoding.com,gudangcodingaplikasi.blogspot.com,gurupenyemangat.com,hazamusik.com,heru.my.id,icloudice.com,invesnesia.com,iwakbuncit.com,jagoanredesign.eu.org,kabarmakkah.com,listrik-praktis.com,mediametropolitan.id,menoreh.net,metodepraktis.com,miuitutorial.com,pintudunia.com,rajaonline.my.id,rajasanews.com,sahabat-akmi.blogspot.com,satugoogle.blogspot.com,scanharga.com,sheptyiecha.com,steffifauziah.com,techno-ct2.eu.org,upahminimum.com#%#//scriptlet('ubo-aopr.js', 'document.onselectstart')
 detikbanten.com#%#//scriptlet('ubo-aopw.js', 'disableSelection')
 1001tutorial.com,2lodoe.net,alternatifmu.com,animenyus.com,apabedanya.com,bacamalang.com,barusinopsis.blogspot.com,besoksore.com,binarayaberkahutama.com,bloggermuntilan.com,bospajak.com,burungnya.com,cilegonnews.com,contohsurat.co,daftarhewan.com,egsean.com,ekor9.com,hargacampur.com,hitlava.com,jakartastudio.com,jayaherlambang.com,kagetweb.com,kanzalia.com,lesiaso.com,malangnews.id,mditack.co.id,mengapa.net,miuiarena.com,nandatrio.com,nusramedia.com,overlordfree.web.id,radiokucing.com,renovrainbow.com,selatsunda.com,siantarupdate.com,smppgrisatubdl.com,sorodot.com,suaraindonesianews.com,suarapapua.com,teraa.net,tipssehatcantik.com,tobasatu.comx,yunoya.id#%#//scriptlet('ubo-aopw.js', 'document.onselectstart')
 digiaudiostore.com##.anticopas
@@ -3847,12 +3848,13 @@ _usafelink.$third-party,script
 /VoreCorporation/Customer-Host/*$third-party,script
 /xmithzyl/safelink/*$third-party,script
 $third-party,script,xmlhttprequest,denyallow=disqus.com|disquscdn.com|fastlylb.net|googleapis.com,domain=nanimein.xyz|nonton08.com
-.gif$image,domain=104.161.33.116|139.99.33.193|144.126.148.112|144.91.105.32|144.91.91.20|148.163.72.88|148.163.72.92|149.102.137.68|149.3.170.35|149.56.24.226|161.97.125.184|161.97.86.165|173.212.200.71|173.212.216.207|173.212.244.21|176.119.30.88|185.194.217.81|185.218.126.74|185.224.83.54|185.53.88.162|188.166.39.172|193.164.131.42|193.178.172.113|194.135.33.63|194.163.139.52|194.163.150.84|194.29.53.46|195.242.110.99|198.96.92.123|199.231.164.17|199.231.164.29|207.244.250.114|213.136.91.132|216.250.252.24|23.29.126.0|23.92.69.100|23.92.79.80|37.49.229.132|45.148.122.192|51.161.56.238|62.141.43.154|62.171.145.31|62.182.82.224|62.182.85.159|65.108.132.145|80.209.252.67|91.209.70.70|anoboy.online|bioskopkeren.monster|conan.id|idlix.xn--6frz82g|indofilm.wtf|juraganfilm.asia|layarfilm21.website|layarlebar24.digital|lengket.com|lk21.art|moflix.my.id|nobar24.bond|oploverz.asia|oploverz.cyou|oploverz.web.id|otakudesu.watch
+.gif$image,domain=104.161.21.25|104.161.33.111|104.161.33.116|104.161.33.126|104.219.250.236|139.99.33.193|144.126.141.214|144.126.148.112|144.91.105.32|144.91.91.20|148.163.72.66|148.163.72.88|148.163.72.92|149.102.137.68|149.3.170.35|149.56.24.226|161.97.125.184|161.97.144.237|161.97.149.35|161.97.86.165|167.99.71.200|173.212.200.71|173.212.216.207|173.212.244.21|176.119.30.88|185.194.217.81|185.218.126.74|185.224.83.54|185.53.88.162|188.166.39.172|193.164.131.42|193.178.172.113|194.135.33.63|194.163.139.52|194.163.150.84|194.29.53.46|195.242.110.99|198.96.92.123|199.231.164.17|199.231.164.29|207.244.250.114|213.136.91.132|216.250.252.24|23.29.126.0|23.92.69.100|23.92.79.80|37.49.229.132|38.242.129.194|38.242.140.66|38.242.237.91|45.148.122.192|51.161.56.238|51.79.180.107|62.141.43.154|62.171.145.31|62.182.82.224|62.182.85.159|65.108.132.145|80.209.252.67|91.209.70.70|anoboy.online|bioskopkeren.monster|bioskopvirtual.com|conan.id|dutafilm.photography|idlix.link|idlix.xn--6frz82g|indofilm.wtf|juraganfilm.asia|kotakputih.casa|layardrama21.guru|layarfilm21.website|layarlebar24.digital|lengket.com|lk21.art|moflix.my.id|nobar24.bond|oploverz.asia|oploverz.cyou|oploverz.web.id|otakudesu.watch
 /banner-$image,domain=maxnime.com
 ||imgbox.com/*.gif$image,domain=195.2.81.61
 ||jwplayer21.com/images/*.gif$image
 ||161.97.125.184/wp-content/uploads/$~image,redirect=noopmp4-1s,media
 ||213.136.91.132/wp-content/uploads/$~image,redirect=noopmp4-1s,media
+||38.242.215.228/wp-content/uploads/$~image,redirect=noopmp4-1s,media
 ||80.209.252.146/images/*.mp4$media
 ||api.nontongo.win/promomenubola.xml$xmlhttprequest
 ||bebasdownloadfilm.com/iframe/content.php$subdocument
@@ -3865,7 +3867,7 @@ $third-party,script,xmlhttprequest,denyallow=disqus.com|disquscdn.com|fastlylb.n
 107.152.46.155,107.152.46.48,idxxi.cyou###adf_tera
 nuflix.space###btm_banner
 desustream.me###close-button
-148.163.72.92,167.99.31.48,185.231.223.254,51.79.146.226,65.108.132.145,anichin.my.id,animebloom.xyz,animelinked.web.id,animexin.xyz,anixlife.xyz,beenime.com,dramaindo.cn,gatsunime.in,isekaisubs.web.id,jouganime.id,lendrive.web.id,oploverz.asia###close-teaser
+148.163.72.92,167.99.31.48,185.231.223.254,51.79.146.226,65.108.132.145,anichin.my.id,animebloom.xyz,animexin.xyz,anixlife.xyz,beenime.com,dramaindo.cn,gatsunime.in,isekaisubs.web.id,jouganime.id,lendrive.web.id,oploverz.asia###close-teaser
 akashinime.com###close-teaser-bottom
 akashinime.com###close-teaser-top
 inonton.com###fadeinbox
@@ -3886,21 +3888,24 @@ animekompi.web.id,mmsubs.com##.addads
 95.216.153.180##.advertising-box
 139.99.120.222##.ban_empat
 193.164.131.42##.banner
+nontonfilms24.com##.banner-float
 139.99.33.192##.banner-float-bottom
-188.166.39.172##.bannerdua
+nontonfilms24.com##.banner-left
+nontonfilms24.com##.banner-player
+nontonfilms24.com##.banner-right
+nontonfilms24.com##.banner-top
+nontonfilms24.com##.banner_cen
 93.104.211.22#$?#.bannerplayer { remove: true; }
 159.65.11.63,indoxx1film.me##.bannerx
 188.166.39.172##.float-bottom-banner
 188.166.39.172##.float-top-banner
 manganime.in##.float_tengah
 149.28.158.117##.fltbwh-mob
-juaramovie.org##.footer-sticky
 149.102.137.68,ligaxxi.org##.gmr-bannerpopup
 103.194.171.18,animekompi.web.id,mmsubs.com##.headads
 23.29.125.182##.idmuvi-afterplayer
 111.90.142.149,144.91.67.95,185.212.128.50,216.250.252.24##.idmuvi-topplayer
 nimegami.com##.ik
-148.163.72.77##.iklan
 103.194.171.75##.imgbanner
 148.163.72.92,65.108.132.145,anichin.my.id,beenime.com,gatsunime.in,jouganime.id,kazefuri.net,nuflix.space,oploverz.asia##.kln
 139.99.120.222##.ns-left
@@ -3912,7 +3917,7 @@ anoboy.online##[id$="_bnr"]
 185.217.95.238##a[href*="_medium=banners"] video
 176.119.30.88##a[href^="http://bit.ly/"] > img
 otakudere.net##a[rel^="nofollow"] > img
-104.161.21.25,104.161.33.116,104.161.33.126,109.234.34.246,112mov.xyz,139.99.33.192,139.99.33.193,144.126.148.112,144.91.91.20,148.163.67.238,148.163.72.79,148.163.72.92,149.3.170.35,149.56.198.206,149.56.24.226,154.53.35.209,154.53.44.57,161.97.125.184,161.97.86.165,173.212.200.71,173.212.216.207,185.224.83.54,185.231.223.76,185.53.88.162,188.166.39.172,193.178.172.113,194.135.33.63,194.163.139.52,194.163.150.84,194.29.53.46,198.96.92.123,199.231.164.17,199.231.164.29,207.244.250.114,213.136.91.132,23.29.126.0,37.49.229.132,38.242.237.91,45.148.122.192,51.161.56.238,54.39.39.151,62.141.43.154,62.171.145.31,62.182.82.224,62.182.85.159,65.108.132.145,75.119.147.15,80.209.252.67,91.209.70.70,beenime.com,bioskop-nonton.art,bioskop47.net,drachindo.us,ganooll.xyz,idlix.xn--6frz82g,indoxx1.space,inidramaku.us,kebioskop21.xyz,koenime.com,layardrama21.asia,layarfilm21.website,layarlebar24.digital,lengket.com,memekviral.site,nobar24.bond,oploverz.asia,otakudere.net,otakudesu.watch,topfilm21.com##a[target*="blank"] > img
+104.161.21.25,104.161.33.111,104.161.33.116,104.161.33.126,104.219.250.236,109.234.34.246,112mov.xyz,139.99.33.192,139.99.33.193,144.126.141.214,144.126.148.112,144.91.91.20,148.163.67.238,148.163.72.66,148.163.72.79,148.163.72.92,149.3.170.35,149.56.198.206,149.56.24.226,154.53.35.209,154.53.44.57,161.97.125.184,161.97.86.165,167.99.71.200,173.212.200.71,173.212.216.207,176.119.30.88,185.224.83.54,185.231.223.76,185.53.88.162,188.166.39.172,193.178.172.113,194.135.33.63,194.163.139.52,194.163.150.84,194.29.53.46,198.96.92.123,199.231.164.17,199.231.164.29,207.244.250.114,213.136.91.132,23.29.126.0,37.49.229.132,38.242.129.194,38.242.140.66,38.242.237.91,45.148.122.192,51.161.56.238,51.79.180.107,54.39.39.151,62.141.43.154,62.171.145.31,62.182.82.224,62.182.85.159,65.108.132.145,75.119.147.15,80.209.252.67,91.209.70.70,beenime.com,bioskop-nonton.art,bioskop47.net,bioskopvirtual.com,drachindo.us,ganooll.xyz,idlix.link,idlix.xn--6frz82g,indoxx1.space,inidramaku.us,kebioskop21.xyz,koenime.com,layardrama21.guru,layarfilm21.website,layarlebar24.digital,lengket.com,memekviral.site,nobar24.bond,oploverz.asia,otakudere.net,otakudesu.watch,topfilm21.com##a[target*="blank"] > img
 185.224.83.128##a[target*="blank"] > video
 139.99.120.222##a[target="_blank"][rel*="nofollow"] > video
 62.182.83.93##a[target="_blank"][rel^="nofollow"] > amp-img
@@ -3941,6 +3946,7 @@ dhaniproduction.com#%#//scriptlet('ubo-aopr.js', 'wcadbwp')
 /ads-$image,domain=nekopoi.web.id
 /adsby.$image,redirect=2x2-transparent.png,domain=62.182.83.93
 /topadz.$image,domain=nekopoi.web.id
+@@/adsbygoogle.$domain=91.208.197.24
 ||animekompi.web.id/*/antiblocker$image
 @@||ryuukoi.web.id^$generichide,badfilter
 213.190.4.103#@#.content-kuss-ads
@@ -3960,8 +3966,8 @@ lengket.com,sangkut.com#%#//scriptlet('ubo-aopr.js', 'SmartPopunder')
 159.65.11.63,indoxx1film.me#%#//scriptlet('ubo-aopr.js', 'showPopUpBanner')
 bioskopkere.club,kawanfilm.info,layarkaca.online#%#//scriptlet('ubo-aopr.js', 'ujiPopups')
 95.111.231.122#%#//scriptlet('ubo-aopr.js', 'window.pum_popups')
-103.194.171.18,111.90.150.31,139.99.120.222,139.99.61.225,144.126.136.208,154.53.35.209,154.53.44.56,161.97.149.35,161.97.86.165,162.213.249.103,173.212.216.207,176.57.150.203,185.217.93.56,185.241.151.22,193.164.131.42,194.147.58.136,194.163.129.165,194.163.139.52,194.163.150.84,194.242.56.199,199.231.164.17,38.242.237.91,51.79.159.65,62.182.82.226,75.119.139.75,75.119.152.230,75.119.155.191,amoviemedia.com,anichin.my.id,clampschoolholic.web.id,cloudfilm.co,drakorindoo.net,layarfilm21.website,nanidrama.com,negumo.com,oploverz.web.id,sobatgo.xyz,subindo.one,subindo.site,webdrakor.com#%#//scriptlet('ubo-window.open-defuser.js')
-206.189.85.218#%#//scriptlet('ubo-acis.js', 'parseInt', 'break;case $.')
+103.194.171.18,111.90.150.31,139.99.120.222,139.99.61.225,144.126.136.208,154.53.35.209,154.53.44.56,161.97.149.35,161.97.86.165,162.213.249.103,173.212.216.207,176.119.30.88,176.57.150.203,185.217.93.56,185.241.151.22,193.164.131.42,194.147.58.136,194.163.129.165,194.163.139.52,194.163.150.84,194.242.56.199,199.231.164.17,38.242.129.194,38.242.237.91,51.79.159.65,62.182.82.226,75.119.139.75,75.119.152.230,75.119.155.191,amoviemedia.com,anichin.my.id,clampschoolholic.web.id,cloudfilm.co,drakorindoo.net,layarfilm21.website,nanidrama.com,negumo.com,oploverz.web.id,sobatgo.xyz,subindo.one,subindo.site#%#//scriptlet('ubo-window.open-defuser.js')
+167.99.64.64,206.189.85.218#%#//scriptlet('ubo-acis.js', 'parseInt', 'break;case $.')
 $popup,domain=awnime.net
 /wp-content/plugins/angwp/*$domain=dramabarat.com|indoxximovie.org
 /wp-content/plugins/popup-by-supsystic/*$domain=213.190.4.103
@@ -3979,8 +3985,8 @@ kordramass.com##.blocker
 103.194.171.75,103.9.100.20,111.90.150.31,159.65.7.78,185.231.223.71,193.164.131.42,193.178.172.113,195.2.81.61,dutafilm.observer,dutafilm.photography,hakamovie.vip,idlix.xn--6frz82g,moviesrc.link##.swal-overlay
 103.194.171.205,149.3.170.35,185.224.83.128,194.135.33.63,45.141.56.23##[id^="netkevin-"]
 185.224.129.209##iframe[style^="width: 100% !important; height: 190px !important;"]
-/wp-content/plugins/cm-pop-up-banners/*$domain=161.97.86.165|23.92.79.80|drachindo.us|drakorindo.quest|drakorindo.world|oujanime.me
-144.126.148.112,148.163.72.90,161.97.86.165,178.18.242.20,23.92.79.80,drachindo.us,drakorindo.quest,drakorindo.world,inidramaku.us,oujanime.me#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')
+/wp-content/plugins/cm-pop-up-banners/*$domain=161.97.86.165|23.92.79.80|drachindo.us|drakorindo.quest|oujanime.me
+144.126.148.112,148.163.72.90,161.97.86.165,178.18.242.20,23.92.79.80,drachindo.us,drakorindo.quest,inidramaku.us,oujanime.me#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')
 /wp-content/plugins/wp-popup-banners/*$domain=185.53.88.162|rumahdrama.com
 185.53.88.162,rumahdrama.com###wpb_overlay
 185.231.223.71#%#//scriptlet('ubo-ra.js', 'href', '#clickfakeplayer')
@@ -4063,7 +4069,7 @@ mangadewasa.com#%#//scriptlet('ubo-aopr.js', 'nocontextmenu')
 lewat.tautan.pro,miuiku.com,onlinecorp.me,sekilastekno.com,semawur.com###fixedban
 miuiku.com,sekilastekno.com###teaser2
 casafelink2.blogspot.com##.ads
-aii.sh,liveshootv.com,oceantech.xyz,short2fly.xyz,stfly.me,tmearn.*##.banner
+aii.sh,oceantech.xyz,short2fly.xyz,stfly.me,tmearn.*##.banner
 bestcash2020.com,short2fly.xyz##.banner-inner
 dr-farfar.net##.footerBar > iframe
 intercelestial.com,sweetlantern.com##.idblog-floatbanner
@@ -4071,7 +4077,7 @@ asuransiku.info##.klnsora
 semawur.com##[href*="semawur.com/links/share/"]
 short2fly.xyz##a[target="_blank"] > img
 urbharat.xyz##iframe[width="300"]
-fc-lc.com,fc.lc,fcc.lc#%#//scriptlet('ubo-acis.js', 'addEventListener', 'DOMNodeRemoved')
+fc-lc.com,fc.lc#%#//scriptlet('ubo-acis.js', 'addEventListener', 'DOMNodeRemoved')
 belinfo.my.id,kangapip.com,linkerload.com,metroupdate.biz,pf-electronicstt.com,skiped.me#%#//scriptlet('ubo-acis.js', 'addEventListener', 'google_ad_client')
 bevru.club,bolssc.com,cuts-url.com,eio.io,eririo.club,exe.app,exee.io,exey.io,srek.net#%#//scriptlet('ubo-acis.js', 'disableItToContinue')
 toolss.net#%#//scriptlet('ubo-aeld.js', 'load', 'daadb_get_data')
@@ -4097,12 +4103,12 @@ short2fly.xyz#%#//scriptlet('ubo-acis.js', 'onclick', 'window.open')
 stfly.me,tei.ai#%#//scriptlet('ubo-aopr.js', 'open')
 tmearn.*#%#//scriptlet('ubo-aopw.js', '_pop')
 belinfo.my.id#%#//scriptlet('ubo-ra.js', 'onclick', '[onclick*="window.open"]')
-bevru.club,bolssc.com,cararegistrasi.com,ceesty.com,cuts-url.com,eio.io,eririo.club,exe.app,exee.io,exey.io,fc-lc.com,fc.lc,fcc.lc,liveshootv.com,luangusaha.com,miuiku.com,oceantech.xyz,onlinecorp.me,p4link.com,paired.my.id,ponselharian.com,sekilastekno.com,semawur.com,shrinke.me,srek.net,tmearn.*#%#//scriptlet('ubo-window.open-defuser.js')
+bevru.club,bolssc.com,cararegistrasi.com,ceesty.com,cuts-url.com,eio.io,eririo.club,exe.app,exee.io,exey.io,fc-lc.com,fc.lc,luangusaha.com,miuiku.com,oceantech.xyz,onlinecorp.me,p4link.com,paired.my.id,ponselharian.com,sekilastekno.com,semawur.com,shrinke.me,srek.net,tmearn.*#%#//scriptlet('ubo-window.open-defuser.js')
 cararegistrasi.com,modebaca.com,saungfirmware.id,teknorizen.blogspot.com#%#//scriptlet('ubo-nano-sib.js')
 urbharat.xyz#%#//scriptlet('ubo-nano-sib.js', 'timePassed', '1300')
 adikinfo.my.id,inafut.com#%#//scriptlet('ubo-nano-stb.js')
 ceesty.com#%#//scriptlet('ubo-set.js', 'app.options.timerPageVisibilityChecking', 'false')
-123link.biz,2ota.com,7r6.com,abdeo8.com,abre.click,adcorto.me,adcorto.xyz,adcripto.com,adfloz.co,adinsurance.xyz,adlinkfly.wartakilat.com,adly.fun,adnit.xyz,adomainscan.com,adpop.me,adsafelink.com,adsh.cc,adshort.*,adslink.programasfulltaf16.com,adslink.pw,adslinkfly.online,adsrt.click,adsrt.live,adsrt.net,adsrt.org,adsy.pw,adurly.cc,adwork.us,afly.pro,afly.us,aii.sh,akashort.com,allcryptoz.net,androidnougatapk.com,apkshrt.com,apksvip.com,arab-chat.club,articlix.com,artipedia.id,arurio.club,ashort1a.xyz,asiashort.link,asupload.com,automotur.club,aylink.info,baominh.tech,bblink.com,bdnewsx.com,beautyram.info,beingtek.com,bestcash2020.com,bestearnonline.com,bevru.club,bigb0ss.net,birdurls.com,biroads.com,bit-url.com,bitcoinly.in,bitconews.net,bitfly.io,bitlinks.pw,bitmos.co.in,bloggingguidance.com,bolssc.com,btcads24.com,btcdot.xyz,btcwalk.com,c-ut.com,cashearn.cc,cashurl.in,cekip.xyz,charexempire.com,cheappath.com,claimcrypto.cc,claimfreebits.com,clicksbee.com,clickscoin.com,clikern.com,clk.asia,clk.ink,coin.mg,coinadfly.com,coinlyhub.com,coinsparty.mcrypto.club,cookdov.com,coredp.com,cpm10.org,crazyblog.in,crt.im,cryptoads.space,cryptoon.xyz,csd.xmod.in,cslink.in,cut-fly.com,cut-y.net,cut.my.id,cut4fun.com,cutdl.xyz,cutlink.link,cutp.in,cuts-url.com,cuturl.in,dash-free.com,defaultfreeshort.in,dl.tech-story.net,doctor-groups.com,dogecoin.click,download.freestudyweb.com,download.sharenulled.net,droplink.co,du-link.in,dutchycorp.ovh,dutchycorp.space,dz-linkk.com,dz4win.com,earnfasts.com,earnforclick.online,earnguap.com,earnme.club,earnwithshortlink.com,easysky.in,eio.io,enagato.com,encurta.eu,enrt.eu,eririo.club,exe.app,exee.io,exey.*,express-cut.ovh,exy.ai,fameen.xyz,fc.lc,fcc.lc,fcdot.lc,fclcc.com,filezipa.com,filmyzilla-in.xyz,fir3.net,fire-link.net,foxseotools.com,freshi.site,fwarycash.moviestar.fun,fx4vip.com,gainbtc.click,galaxy-link.space,gameen.xyz,gamesrs.com,genpassword.top,get4link.xyz,getlink.tienichmaytinh.net,gibit.xyz,gir.ist,giscr.ac.th,go.gets4link.com,go.netfile.cc,go.zolomix.in,go2.surf,gonety.com,gplinks.co,gtlink.co,haonguyen.top,hoastie.com,holaurl.com,iir.ai,ilinks.in,illink.net,imagenesderopaparaperros.com,insurance-space.xyz,insuranceblog.xyz,insurglobal.xyz,internewstv.com,intothelink.com,ivn3.com,jameeltips.us,joska.xyz,jp88.xyz,kadal.club,kangapip.com,katflys.com,kiiw.icu,kingurls.com,kolotoken.site,kutt.io,link-yz.com,link.ltc24.com,link.tokenoto.com,link.turkdown.com,link1s.com,link1s.net,linkad.in,linkadshield.xyz,linkbr.xyz,linkebr.com,linkerhub.tk,linkfly.io,linkjust.com,linkres.in,linkrex.net,links.spidermods.in,linksfire.co,linkshorten.xyz,linkshortify.site,linkshorts.*,linkshorts.me,linkshrnk.com,linksly.co,linkszia.co,linkviet.xyz,lite-link.com,lite-link.xyz,liveshootv.com,loptelink.vip,luangusaha.com,lucidcam.com,manikusa.com,mcmcryptos.xyz,mealip.com,mediumarticles.com,metroupdate.biz,meulynk.com,mfk-shorter.com,miklpro.com,minilinks.in,mitly.us,miuiku.com,mixfaucet.com,modapk.link,mondainai.moe,mozlink.net,mshort.top,musicc.xyz,myad.biz,mynewshub.in,myshrinker.com,nerdy.vn,news.techrfour.com,newsalret.com,newshour.pw,newstomat.com,oceantech.xyz,oncehelp.com,onlinecorp.me,onroid.com,ouofly.com,owllink.net,p4link.com,paid4.link,paidthe.site,paidtomoney.com,pandaznetwork.com,payskip.org,pcprogramasymas.com,pewgame.com,pingit.link,pix4link.com,pkr.pw,pngit.live,popimed.com,powerclicks.xyz,pozvi.icu,profitlink.info,projecto2.xyz,proshort.gq,pslfive.com,ptc.wtf,pureshort.link,rajsayt.xyz,rancah.com,real-sky.com,recipestutorials.com,rocklink.in,rozfly.com,rubtech.xyz,sakastau.com,samaa-pro.com,samapro.me,sanos.xyz,sanoybonito.club,saungfirmware.id,savelink.site,sekilastekno.com,semawur.com,seulink.online,short-cash2.xyz,short.food-royal.com,short2.cash,short2fly.xyz,short88.com,shortbled.com,shorte.anxcinema.com,shortenbuddy.com,shortenmm.cf,shorter.fun,shorterall.com,shorthero.site,shorthitz.com,shortie.link,shortlink.prz.pw,shorttey.link,shorttey.org,shortx.net,shortz.one,shortzzy.in,shotly.io,shrink.icu,shrinkbtc.cc,shrinke.me,shrinkme.in,shrinkme.io,shrinkurl.org,shrinkzzy.link,shrlink.top,shrtvip.com,shrx.in,skincarie.com,skiped.me,slink.bid,smoner.com,softairbay.com,sohexo.org,srek.net,srt.leechpremium.link,srts.me,stfly.io,stfly.me,swzz.xyz,tawiia.com,techgeek.digital,techupme.com,tecnologiapp.site,tei.ai,theblissempire.com,theconomy.me,tii.ai,tlin.me,tmearn.*,tmearn.com,todaynewspk.win,toptap.website,toroox.com,trinddz.com,try2link.com,try2link.net,tui.click,ultraten.net,upfiles.com,upfiles.io,uplinks.in,upshrink.com,url4cut.xyz,usanewstoday.club,usdshort.com,vhorizads.com,viraloc.com,vrlinks.xyz,vshort.link,wealthystyle.online,webshort.in,win10.vn,womenhaircolors.review,wplink.*,xfiles.io,yameen.xyz,yxoshort.com,za.uy,zipurls.com,zirof.com,zlink.tk,zshort.cc,zshort.io#%#//scriptlet('ubo-set.js', 'blurred', 'false')
+123link.biz,2ota.com,7r6.com,abdeo8.com,abre.click,adcorto.me,adcorto.xyz,adcripto.com,adfloz.co,adinsurance.xyz,adlinkfly.wartakilat.com,adnit.xyz,adomainscan.com,adpop.me,adsafelink.com,adsh.cc,adshort.*,adslink.programasfulltaf16.com,adslink.pw,adslinkfly.online,adsrt.click,adsrt.live,adsrt.net,adsrt.org,adsy.pw,adurly.cc,adwork.us,afly.pro,afly.us,aii.sh,akashort.com,allcryptoz.net,androidnougatapk.com,apkshrt.com,apksvip.com,arab-chat.club,articlix.com,artipedia.id,arurio.club,ashort1a.xyz,asiashort.link,asupload.com,automotur.club,aylink.info,baominh.tech,bblink.com,bdnewsx.com,beautyram.info,beingtek.com,bestcash2020.com,bestearnonline.com,bevru.club,bigb0ss.net,birdurls.com,biroads.com,bit-url.com,bitcoinly.in,bitconews.net,bitfly.io,bitlinks.pw,bitmos.co.in,bloggingguidance.com,bolssc.com,btcads24.com,btcdot.xyz,btcwalk.com,c-ut.com,cashearn.cc,cashurl.in,cekip.xyz,charexempire.com,cheappath.com,claimcrypto.cc,claimfreebits.com,clicksbee.com,clickscoin.com,clikern.com,clk.asia,clk.ink,coin.mg,coinadfly.com,coinlyhub.com,cookdov.com,coredp.com,cpm10.org,crazyblog.in,crt.im,cryptoads.space,cryptoon.xyz,csd.xmod.in,cslink.in,cut-fly.com,cut-y.net,cut.my.id,cut4fun.com,cutdl.xyz,cutlink.link,cutp.in,cuts-url.com,cuturl.in,dash-free.com,defaultfreeshort.in,dl.tech-story.net,doctor-groups.com,dogecoin.click,download.freestudyweb.com,download.sharenulled.net,droplink.co,du-link.in,dutchycorp.ovh,dutchycorp.space,dz-linkk.com,dz4win.com,earnfasts.com,earnforclick.online,earnguap.com,earnme.club,earnwithshortlink.com,easysky.in,eio.io,enagato.com,encurta.eu,enrt.eu,eririo.club,exe.app,exee.io,exey.*,express-cut.ovh,fameen.xyz,fc.lc,fcdot.lc,filezipa.com,filmyzilla-in.xyz,fir3.net,fire-link.net,foxseotools.com,freshi.site,fwarycash.moviestar.fun,fx4vip.com,gainbtc.click,galaxy-link.space,gameen.xyz,gamesrs.com,genpassword.top,get4link.xyz,getlink.tienichmaytinh.net,gibit.xyz,gir.ist,giscr.ac.th,go.gets4link.com,go.netfile.cc,go2.surf,gonety.com,gplinks.co,gtlink.co,haonguyen.top,hoastie.com,holaurl.com,iir.ai,ilinks.in,illink.net,imagenesderopaparaperros.com,insurance-space.xyz,insuranceblog.xyz,insurglobal.xyz,internewstv.com,intothelink.com,ivn3.com,jameeltips.us,jp88.xyz,kadal.club,kangapip.com,katflys.com,kiiw.icu,kingurls.com,kolotoken.site,kutt.io,link-yz.com,link.ltc24.com,link.tokenoto.com,link.turkdown.com,link1s.com,link1s.net,linkad.in,linkadshield.xyz,linkbr.xyz,linkebr.com,linkerhub.tk,linkfly.io,linkjust.com,linkres.in,linkrex.net,links.spidermods.in,linksfire.co,linkshortify.site,linkshorts.*,linkshorts.me,linkshrnk.com,linksly.co,linkszia.co,linkviet.xyz,lite-link.com,lite-link.xyz,loptelink.vip,luangusaha.com,lucidcam.com,manikusa.com,mcmcryptos.xyz,mealip.com,mediumarticles.com,metroupdate.biz,mfk-shorter.com,miklpro.com,minilinks.in,mitly.us,miuiku.com,mixfaucet.com,modapk.link,mondainai.moe,mozlink.net,mshort.top,musicc.xyz,myad.biz,mynewshub.in,myshrinker.com,nerdy.vn,newsalret.com,newshour.pw,newstomat.com,oceantech.xyz,oncehelp.com,onlinecorp.me,onroid.com,ouofly.com,owllink.net,p4link.com,paid4.link,paidthe.site,paidtomoney.com,pandaznetwork.com,payskip.org,pewgame.com,pingit.link,pix4link.com,pkr.pw,pngit.live,popimed.com,profitlink.info,projecto2.xyz,pslfive.com,ptc.wtf,pureshort.link,rajsayt.xyz,rancah.com,real-sky.com,recipestutorials.com,rocklink.in,rozfly.com,rubtech.xyz,sakastau.com,samaa-pro.com,samapro.me,sanos.xyz,sanoybonito.club,saungfirmware.id,savelink.site,sekilastekno.com,semawur.com,semruwet.com,seulink.online,short-cash2.xyz,short2.cash,short2fly.xyz,short88.com,shortbled.com,shorte.anxcinema.com,shortenbuddy.com,shortenmm.cf,shorter.fun,shorterall.com,shorthero.site,shorthitz.com,shortie.link,shortlink.prz.pw,shorttey.link,shorttey.org,shortx.net,shortz.one,shortzzy.in,shotly.io,shrink.icu,shrinkbtc.cc,shrinke.me,shrinkme.in,shrinkme.io,shrlink.top,shrtvip.com,shrx.in,skincarie.com,skiped.me,slink.bid,smoner.com,softairbay.com,sohexo.org,srek.net,srt.leechpremium.link,srts.me,stfly.io,stfly.me,swzz.xyz,tawiia.com,techgeek.digital,techupme.com,tecnologiapp.site,tei.ai,theblissempire.com,theconomy.me,tii.ai,tlin.me,tmearn.*,tmearn.com,todaynewspk.win,toptap.website,toroox.com,trinddz.com,try2link.com,try2link.net,tui.click,ultraten.net,upfiles.com,upfiles.io,uplinks.in,upshrink.com,url4cut.xyz,usanewstoday.club,usdshort.com,vhorizads.com,viraloc.com,vrlinks.xyz,vshort.link,wealthystyle.online,win10.vn,womenhaircolors.review,wplink.*,yameen.xyz,yxoshort.com,za.uy,zipurls.com,zirof.com,zlink.tk,zshort.cc,zshort.io#%#//scriptlet('ubo-set.js', 'blurred', 'false')
 shrinke.me###imgAddDirectLink
 fotodovana.com,get4link.xyz,luangusaha.com,oceantech.xyz,p4link.com##.blog-item
 uiz.io##.btn-front:has-text(Download)
@@ -4110,7 +4116,9 @@ lewat.tautan.pro,miuiku.com##.klikdisini
 semawur.com##.text-center > [href] > [src^="/img/download_"]
 kangapip.com##img[data-original-width="342"][data-original-height="56"]
 modebaca.com##img[data-original-width="920"][data-original-height="304"]
+bagi.site##img[width="120"][height="24"]
 onlinecorp.me,sekilastekno.com,sportif.id##img[width="200"][height="60"]
+semruwet.com##img[width="320"][height="90"]
 /download-$image,domain=sekilastekno.com
 /download.$image,domain=belinfo.my.id
 /download3.$image,domain=semawur.com
@@ -4121,19 +4129,17 @@ onlinecorp.me,sekilastekno.com,sportif.id##img[width="200"][height="60"]
 ||semawur.com/o.png$image
 safelkmeong.blogspot.com,usesafelink.blogspot.com#%#//scriptlet('ubo-ra.js', 'oncontextmenu|ondragstart|onkeydown|onmousedown|onselectstart', 'body')
 @@/abdiusu/project-safelink-viomagz/*/safelink-ViomagzV3.2-2tombol$third-party,script
-.gif$image,domain=128.199.176.163|138.201.95.38|144.91.116.224|149.248.60.75|149.28.142.38|167.99.29.11|173.249.5.27|185.225.232.26|188.119.113.239|188.166.243.245|192.243.98.23|198.199.74.44|199.38.245.239|213.202.222.16|45.14.226.94|45.32.113.5|45.81.224.60|89.163.210.242|93.115.31.157|94.237.74.112|abgcrot.bar|agen-dewasa.blogspot.com|artikeljandamuda.blogspot.com|bacol.lol|beejav.cam|bokephub.online|bokepxxi.biz|ceritaseksindo.com|ceritaseq.com|cewekgenit.fun|filmbokep.id|indocabe.life|inibokep.ws|khalidcompany.com|linkbokep.bar|linkbokep.icu|linkbokep.pro|lonteku.bond|memekviral.site|nekopoi.care|nontonlayarxxx.blogspot.com|putri77.org|rajacoli.click|simantan.bond|streamingbokep80.blogspot.com|sukabokep.us|tanteseksi.cam|videowikwikk.blogspot.com
+.gif$image,domain=128.199.176.163|138.201.95.38|144.91.116.224|149.248.60.75|149.28.142.38|159.223.34.146|167.99.29.11|173.249.5.27|185.225.232.26|188.119.113.239|188.166.243.245|192.243.98.23|198.199.74.44|213.202.222.16|45.14.226.94|45.32.113.5|45.81.224.60|89.163.210.242|93.115.31.157|94.237.74.112|abgcrot.bar|agen-dewasa.blogspot.com|artikeljandamuda.blogspot.com|bacol.lol|beejav.cam|bokephub.online|bokepxxi.biz|ceritaseksindo.com|ceritaseq.com|cewekgenit.fun|dewabokep.xyz|filmbokep.id|indocabe.life|inibokep.ws|khalidcompany.com|linkbokep.bar|linkbokep.icu|linkbokep.pro|lonteku.bond|malemjumat.biz|memekviral.site|nekopoi.care|nontonlayarxxx.blogspot.com|putri77.org|rajacoli.click|simantan.bond|streamingbokep80.blogspot.com|sukabokep.us|tanteseksi.cam|videowikwikk.blogspot.com
+.webp$image,domain=159.223.34.146
 /banner-$image,domain=94.237.74.112|bokep8.icu
 /banner/*$image,domain=66.42.54.200|96.43.139.235|96.43.139.236|96.43.139.237
-/ngiklan/*$image,domain=94.237.69.118|94.237.69.98
 _GIF728x90.$image,domain=66.42.54.200
 ||51.79.154.59/wp-content/themes/*.gif$image
 ||80.209.252.69/btn_close.gif
-||avtub.pw/assets/iklan/
 ||bokep.host/ads.php
 ||bugil.top/adv/$image
 ||ceritaseq.com^*/promotion_$image
 ||dbofporn.com/getFrame?salt=$subdocument
-||malemjumat.guru/banner/$image
 ||pornhd.asia^*.gif$third-party,image
 ||tokosexy.com/$third-party,subdocument
 144.91.116.224,162.213.249.120,moviemantap21.blogspot.com##[href*="/bit.ly/"]
@@ -4141,19 +4147,17 @@ bacol.lol,perawanbokep.cam###ads
 94.237.69.121,94.237.69.126,94.237.74.194,94.237.74.225,94.237.78.220###advertisement
 herodex.org###btm_banner
 206.189.33.12,66.42.54.200,96.43.139.235,96.43.139.236,96.43.139.237###close-fixedban
-45.84.0.60###close-teaser
+185.250.149.60,45.84.0.60###close-teaser
 69.197.132.190###divbwh
 69.197.132.190###divkanan
 148.163.72.91,157.245.195.114,157.245.63.252,159.65.128.138,159.65.132.54,167.99.77.72,178.128.53.2,206.189.170.14,206.189.33.12,206.189.42.229,45.63.23.4,45.76.144.150,45.77.76.243,66.42.54.200,66.42.87.58,68.183.237.173,80.209.252.69,96.43.139.235,96.43.139.236,96.43.139.237,bokep8.icu,makkaroni.info###fixedban
 46.166.167.16,93.115.24.210,93.115.24.211,semprot.com,semprotgo.com,semprotlah.com###fixedbox
 185.215.164.126,minioppai.org###floatcenter
 192.243.98.23###floating_ads_bottom_textcss_container
-abgcrot.bar,cewekgenit.fun,jambulmemek.sbs,simantan.bond###floating_banner_top
+abgcrot.bar,cewekgenit.fun,indocabe.life,jambulmemek.sbs,simantan.bond###floating_banner_top
 93.115.31.156###floating_bot
 gocrot.com###gocrot_i_b_3
 gocrot.com###gocrot_i_b_4
-75.119.155.196###idmuvi-popup
-45.32.122.145###kontolbanner
 dunia121.blogspot.com###kr-box
 dunia121.blogspot.com###teaser2
 185.215.164.126,dunia121.blogspot.com###teaser3
@@ -4166,11 +4170,10 @@ ceritaseru.sextgem.com,potobugill.sextgem.com##._xt_ad_close_internal
 194.233.87.224##.banner-img
 128.199.102.136,45.76.33.4##.bannersinglefot
 45.76.33.4##.box-banner
-93.115.31.157,93.115.31.158##.btm_ban
+159.223.34.146,93.115.31.157,93.115.31.158##.btm_ban
 66.29.129.121,66.29.129.161,inibokep.ws,xbokep.bond##.close-text
 178.128.114.78##.close_insGP
 nesaporn.com##.container p:has-text(Advertising)
-199.38.245.239##.elementor-widget .elementor-image
 tontonan.net##.footer-sticky
 dunia121.blogspot.com##.gambar-space
 75.119.155.196##.gmr-bannerpopup
@@ -4185,16 +4188,9 @@ tanteseksi.space##.happy-footer
 128.199.102.136,149.248.60.75,45.32.122.145,45.76.33.4,jambulmemek.sbs##.headbanner
 indobispak.com##.header-img-wrapper
 128.199.176.163##.idmuvi-afterplayer
-indosemi45.org##.idmuvi-banner-beforecontent
-75.119.155.196##.idmuvi-center-ads
-75.119.155.196##.idmuvi-floatbanner
-75.119.147.12,75.119.155.196,indosemi45.org##.idmuvi-topbanner-aftermenu
 128.199.176.163##.idmuvi-topplayer
-75.119.147.12,videobokep17.top##.inner-floatbanner-bottom
 159.89.221.2,167.99.31.83,188.166.197.213##.inside-player-ad
 66.42.54.200,66.42.87.58,sexcelebrity.net##.ipprtcnt
-111.90.150.188,128.199.176.163##.ktz-aftermenubanner
-111.90.150.188##.ktz-bannersingletop
 45.76.33.4##.ktz_banner
 nekopoi.care##.leftarea
 ceritaseq.com##.qode-banner-left
@@ -4205,14 +4201,14 @@ stampin-de-va.blogspot.com##.seoquake-nofollow
 ceritaseq.com##.widget_buffercode_banner_upload_info
 157.245.195.114,157.245.63.252,206.189.33.12,68.183.237.173##.with-sidebar-ads
 ceritaseru.sextgem.com,potobugill.sextgem.com##[href*="_ad_"]
-103.194.170.153,111.90.150.188,128.199.102.136,128.199.174.22,128.199.175.251,128.199.176.163,128.199.66.55,128.199.84.59,139.180.219.176,139.59.223.160,139.99.118.115,139.99.33.195,139.99.33.199,139.99.33.204,139.99.33.205,139.99.33.207,139.99.33.210,139.99.33.213,139.99.33.214,139.99.51.105,144.126.154.75,144.91.116.224,148.163.72.91,149.248.60.75,149.28.142.38,149.28.156.65,154.12.229.9,155.138.155.177,157.230.193.154,157.245.195.114,157.245.59.57,157.245.63.252,159.65.128.138,159.65.132.54,159.89.198.98,159.89.214.26,159.89.221.2,162.213.249.120,164.68.111.161,164.68.127.15,167.71.196.69,167.99.31.83,167.99.77.72,173.249.49.204,173.249.5.27,173.82.166.10,173.82.166.11,173.82.166.12,173.82.166.13,173.82.166.14,178.128.114.78,178.128.220.28,178.128.53.2,178.128.62.5,185.211.5.9,185.215.164.126,185.250.149.60,185.63.253.200,188.119.113.239,188.166.197.213,188.166.211.48,188.166.243.245,192.243.98.23,193.38.54.77,194.135.33.203,194.233.87.224,198.54.112.76,199.38.245.239,206.189.170.14,206.189.33.12,206.189.42.229,206.189.88.35,207.148.6.82,207.148.70.66,209.126.6.6,209.97.161.160,209.97.171.113,45.138.157.10,45.14.226.94,45.32.122.145,45.63.23.4,45.76.144.150,45.76.156.98,45.76.33.4,45.77.246.31,45.77.37.28,45.77.76.243,45.81.224.60,45.84.0.60,51.81.115.212,54.36.246.81,66.29.129.121,66.29.129.161,66.42.54.200,66.42.87.58,68.183.237.173,69.197.132.190,75.119.147.12,75.119.155.196,80.209.252.69,93.115.31.156,93.115.31.157,93.115.31.158,94.237.69.121,94.237.69.126,94.237.74.194,94.237.74.225,94.237.78.220,96.43.139.235,96.43.139.236,96.43.139.237,abgcrot.bar,adultdeepfakes.com,avtub.info,avtub.ws,bacol.lol,bandarsub.com,birahi21.com,bokep8.icu,bokepah.com,bokepbarat.net,bokephub.online,bokepin.pics,bokepla.com,bokepr.com,bokepsd.online,bokepsub.com,bokepv.com,bokepxxi.biz,bugil.me,celebritysex.co,ceritabokepindonesia.com,ceritaseksindo.com,ceritaseq.com,ceritaseru.sextgem.com,cewekgenit.fun,dalamhati.com,deepfakeporn.net,deepfakesweb.com,dunia121.blogspot.com,filmbokep.id,filmbokepbarat168.com,filmsemibokep.com,gocrot.com,herodex.org,hijab.link,indo-bioskop.blogspot.com,indobispak.com,indocabe.life,indosemi45.org,indoviral.vip,inibokep.ws,itubokep.world,jambulmemek.sbs,javindosub.com,javstory.co,javsubindo.com,javsubindo.net,jilboob.top,kisahmalam.wtf,kontol.in,kumpulan-film-bokep.blogspot.com,linkbokep.bar,linkbokep.icu,linkbokep.pro,lonteku.bond,lonteku.sbs,makkaroni.info,malemjumat.guru,mdtaiwan.com,memeksiana.cam,memekviral.site,minioppai.org,moviemantap21.blogspot.com,mrdeepfakes.com,myhdjav.me,nekopoi.care,nesaporn.com,onbatch.my.id,perawanbokep.cam,photomemek.com,potobugill.sextgem.com,putri77.org,rajacoli.click,sange.link,sektedoujin.club,sexcelebrity.net,simantan.bond,softcore69.club,stampin-de-va.blogspot.com,subindojav.com,subindojav.xyz,subtitlecinema.com,tantenakal.bar,tanteseksi.cam,tanteseksi.space,tontonan.net,vetv.info,videobokep17.top,xbokep.bond,xbokep.rest,yabaisub.com##a[target*="blank"] > img
+103.194.170.153,111.90.150.188,128.199.102.136,128.199.174.22,128.199.175.251,128.199.176.163,128.199.66.55,128.199.84.59,139.180.219.176,139.59.223.160,139.99.118.115,139.99.33.195,139.99.33.199,139.99.33.204,139.99.33.205,139.99.33.207,139.99.33.210,139.99.33.213,139.99.33.214,139.99.51.105,144.126.154.75,144.91.116.224,148.163.72.91,149.248.60.75,149.28.142.38,149.28.156.65,154.12.229.9,155.138.155.177,157.230.193.154,157.245.195.114,157.245.59.57,157.245.63.252,159.65.128.138,159.65.132.54,159.89.198.98,159.89.214.26,159.89.221.2,162.213.249.120,164.68.111.161,164.68.127.15,167.71.196.69,167.99.31.83,167.99.77.72,173.249.49.204,173.249.5.27,173.82.166.10,173.82.166.11,173.82.166.12,173.82.166.13,173.82.166.14,178.128.114.78,178.128.220.28,178.128.53.2,178.128.62.5,185.211.5.9,185.215.164.126,185.250.149.60,185.63.253.200,188.119.113.239,188.166.197.213,188.166.211.48,188.166.243.245,192.243.98.23,193.38.54.77,194.135.33.203,194.233.87.224,198.54.112.76,206.189.170.14,206.189.33.12,206.189.42.229,206.189.88.35,207.148.6.82,207.148.70.66,209.126.6.6,209.97.161.160,209.97.171.113,45.138.157.10,45.14.226.94,45.32.122.145,45.63.23.4,45.76.144.150,45.76.156.98,45.76.33.4,45.77.246.31,45.77.37.28,45.77.76.243,45.81.224.60,45.84.0.60,51.81.115.212,54.36.246.81,66.29.129.121,66.29.129.161,66.42.54.200,66.42.87.58,68.183.237.173,69.197.132.190,75.119.147.12,75.119.155.196,80.209.252.69,93.115.31.156,93.115.31.157,93.115.31.158,94.237.69.121,94.237.69.126,94.237.74.194,94.237.74.225,94.237.78.220,96.43.139.235,96.43.139.236,96.43.139.237,abgcrot.bar,adultdeepfakes.com,avtub.info,avtub.ws,bacol.lol,bandarsub.com,birahi21.com,bokep8.icu,bokepah.com,bokepbarat.net,bokephub.online,bokepin.pics,bokepla.com,bokepr.com,bokepsd.online,bokepsub.com,bokepv.com,bokepxxi.biz,bugil.me,celebritysex.co,ceritabokepindonesia.com,ceritaseksindo.com,ceritaseq.com,ceritaseru.sextgem.com,cewekgenit.fun,dalamhati.com,deepfakeporn.net,deepfakesweb.com,dewabokep.xyz,dunia121.blogspot.com,filmbokep.id,filmbokepbarat168.com,gocrot.com,herodex.org,hijab.link,indo-bioskop.blogspot.com,indobispak.com,indocabe.life,indosemi45.org,indoviral.vip,inibokep.ws,itubokep.world,jambulmemek.sbs,javindosub.com,javstory.co,javsubindo.com,javsubindo.net,jilboob.top,kontol.in,kumpulan-film-bokep.blogspot.com,linkbokep.bar,linkbokep.icu,linkbokep.pro,lonteku.bond,lonteku.sbs,makkaroni.info,malemjumat.biz,mdtaiwan.com,memeksiana.cam,memekviral.site,minioppai.org,moviemantap21.blogspot.com,mrdeepfakes.com,myhdjav.me,nekopoi.care,nesaporn.com,onbatch.my.id,perawanbokep.cam,photomemek.com,potobugill.sextgem.com,putri77.org,rajacoli.click,sange.link,sektedoujin.club,sexcelebrity.net,simantan.bond,softcore69.club,stampin-de-va.blogspot.com,subindojav.com,subindojav.xyz,subtitlecinema.com,tantenakal.bar,tanteseksi.cam,tanteseksi.space,tontonan.net,vetv.info,videobokep17.top,xbokep.bond,xbokep.rest,yabaisub.com##a[target*="blank"] > img
 206.189.170.14##a[target*="blank"] > img:matches-css(text-align: center)
 128.199.175.251,139.99.33.204,157.230.193.154,159.65.128.138,159.65.132.54,164.68.127.15,178.128.53.2,185.63.253.200,188.166.211.48,206.189.42.229,46.166.167.16,93.115.24.210,moviemantap21.blogspot.com,semprot.com,semprotgo.com,semprotlah.com,videobokep17.top##div[class*="banner"]
 indoviral.vip,nekopoi.care##div[class^="ads"]
 moviemantap21.blogspot.com##div[class^="iklan-"]
 46.166.167.16,93.115.24.210,93.115.24.211,semprot.com,semprotgo.com,semprotlah.com##div[class^="semprotnenenmontok_"]
 46.166.167.16,93.115.24.210,93.115.24.211,semprot.com,semprotgo.com,semprotlah.com##div[class^="semprotpokemon_"]
-144.91.116.224,149.248.60.75,188.119.113.239,199.38.245.239,45.76.33.4,75.119.147.12,filmbokepbarat168.com,filmsemibokep.com,jambulmemek.sbs,memeksiana.cam,videobokep17.top##div[id*="banner"]
+144.91.116.224,149.248.60.75,188.119.113.239,45.76.33.4,75.119.147.12,filmbokepbarat168.com,jambulmemek.sbs,memeksiana.cam,videobokep17.top##div[id*="banner"]
 188.119.113.239##div[id^="ads"]
 139.99.118.115,139.99.33.195,139.99.33.199,139.99.33.210,139.99.33.213,139.99.33.214,139.99.51.105,51.81.115.212,54.36.246.81,ceritabokepindonesia.com,photomemek.com,subtitlecinema.com##div[id^="adsic"]
 46.166.167.16,93.115.24.210,93.115.24.211,semprot.com,semprotgo.com,semprotlah.com##div[id^="semprotnenenmontok_"]
@@ -4231,6 +4227,7 @@ hijab.link,sange.link#%#//scriptlet('ubo-acis.js', 'addEventListener', 'DOMNodeR
 46.166.167.16,93.115.24.210,93.115.24.211,semprot.com,semprotgo.com,semprotlah.com##.semprot_wizard:has-text(adblocker)
 jilboob.top#%#//scriptlet('ubo-acis.js', 'document.querySelectorAll', 'adConfig')
 167.71.196.69#%#//scriptlet('ubo-acis.js', 'isp_base_url')
+80.85.140.251#%#//scriptlet('ubo-acis.js', 'parseInt', 'break;case $.')
 185.211.5.9,75.119.147.12#%#//scriptlet('ubo-acis.js', 'puShown', '/doOpen|popundr/')
 softcore69.club#%#//scriptlet('ubo-acis.js', 'userout')
 bugil.me#%#//scriptlet('ubo-aeld.js', 'load', '/popMagic|nextFunction/')
@@ -4239,19 +4236,17 @@ dalamhati.com#%#//scriptlet('ubo-aopr.js', '$', 'SPU_master')
 173.249.5.27#%#//scriptlet('ubo-aopr.js', 'minutes_popup')
 139.180.219.176,149.28.156.65,207.148.70.66,45.76.156.98,45.77.246.31,45.77.37.28,vetv.info#%#//scriptlet('ubo-aopr.js', 'rPop')
 memekviral.site#%#//scriptlet('ubo-aopr.js', 'window.pum_popups')
-103.194.170.153,111.90.150.188,128.199.102.136,128.199.174.22,128.199.175.251,128.199.176.163,128.199.66.55,128.199.84.59,139.180.219.176,139.59.223.160,139.99.118.115,139.99.33.195,139.99.33.199,139.99.33.204,139.99.33.205,139.99.33.207,139.99.33.210,139.99.33.213,139.99.33.214,139.99.51.105,144.126.154.75,144.91.116.224,148.163.72.91,149.248.60.75,149.28.142.38,149.28.156.65,154.12.229.9,155.138.155.177,157.230.193.154,157.245.195.114,157.245.59.57,157.245.63.252,159.65.128.138,159.65.132.54,159.89.198.98,159.89.214.26,159.89.221.2,162.213.249.120,164.68.111.161,164.68.127.15,167.71.196.69,167.99.31.83,167.99.77.72,173.249.49.204,173.249.5.27,173.82.166.10,173.82.166.11,173.82.166.12,173.82.166.13,173.82.166.14,178.128.114.78,178.128.220.28,178.128.53.2,178.128.62.5,185.211.5.9,185.215.164.126,185.250.149.60,185.63.253.200,188.119.113.239,188.166.197.213,188.166.211.48,188.166.243.245,192.243.98.23,193.38.54.77,194.135.33.203,194.233.87.224,198.54.112.76,198.54.121.217,199.38.245.239,206.189.170.14,206.189.33.12,206.189.42.229,206.189.88.35,207.148.6.82,207.148.70.66,209.126.6.6,209.97.161.160,209.97.171.113,45.138.157.10,45.14.226.94,45.32.122.145,45.63.23.4,45.76.144.150,45.76.156.98,45.76.33.4,45.77.246.31,45.77.37.28,45.77.76.243,45.81.224.60,45.84.0.60,51.81.115.212,54.36.246.81,66.29.129.121,66.29.129.161,66.42.54.200,66.42.87.58,68.183.237.173,69.197.132.190,75.119.147.12,75.119.155.196,80.209.252.69,93.115.31.156,93.115.31.157,93.115.31.158,94.237.69.121,94.237.69.126,94.237.74.194,94.237.74.225,94.237.78.220,96.43.139.235,96.43.139.236,96.43.139.237,abgcrot.bar,adultdeepfakes.com,avtub.info,avtub.ws,bacol.lol,bandarsub.com,birahi21.com,bokep8.icu,bokepah.com,bokepbarat.net,bokephub.online,bokepin.pics,bokepla.com,bokepr.com,bokepsd.online,bokepsub.com,bokepv.com,bokepxxi.biz,bugil.me,celebritysex.co,ceritabokepindonesia.com,ceritaseksindo.com,ceritaseq.com,ceritaseru.sextgem.com,cewekgenit.fun,cewekgenit.top,dalamhati.com,deepfakeporn.net,deepfakesweb.com,dunia121.blogspot.com,filmbokep.id,filmbokepbarat168.com,filmsemibokep.com,gocrot.com,herodex.org,hijab.link,indo-bioskop.blogspot.com,indobispak.com,indocabe.life,indosemi45.org,indoviral.vip,inibokep.ws,itubokep.world,jambulmemek.sbs,javindosub.com,javstory.co,javsubindo.com,javsubindo.net,jilboob.top,kisahmalam.wtf,kontol.in,kumpulan-film-bokep.blogspot.com,linkbokep.bar,linkbokep.icu,linkbokep.pro,lonteku.bond,lonteku.sbs,makkaroni.info,malemjumat.guru,mdtaiwan.com,memeksiana.cam,memekviral.site,minioppai.org,moviemantap21.blogspot.com,mrdeepfakes.com,myhdjav.me,nekopoi.care,nesaporn.com,onbatch.my.id,perawanbokep.cam,photomemek.com,potobugill.sextgem.com,putri77.org,rajacoli.click,sange.link,sektedoujin.club,sexcelebrity.net,simantan.bond,softcore69.club,stampin-de-va.blogspot.com,subindojav.com,subindojav.xyz,subtitlecinema.com,tantemontok.site,tantenakal.bar,tanteseksi.cam,tanteseksi.space,tontonan.net,vetv.info,videobokep17.top,xbokep.bond,xbokep.rest,yabaisub.com#%#//scriptlet('ubo-window.open-defuser.js')
-144.91.116.224###fadeinbox
+103.194.170.153,111.90.150.188,128.199.102.136,128.199.141.28,128.199.174.22,128.199.175.251,128.199.176.163,128.199.66.55,128.199.84.59,139.180.219.176,139.59.223.160,139.99.118.115,139.99.33.195,139.99.33.199,139.99.33.204,139.99.33.205,139.99.33.207,139.99.33.210,139.99.33.213,139.99.33.214,139.99.51.105,144.126.154.75,144.91.116.224,148.163.72.91,149.248.60.75,149.28.142.38,149.28.156.65,154.12.229.9,155.138.155.177,157.230.193.154,157.245.195.114,157.245.59.57,157.245.63.252,159.65.128.138,159.65.132.54,159.89.198.98,159.89.214.26,159.89.221.2,162.213.249.120,164.68.111.161,164.68.127.15,167.71.196.69,167.99.31.83,167.99.77.72,173.249.49.204,173.249.5.27,173.82.166.10,173.82.166.11,173.82.166.12,173.82.166.13,173.82.166.14,178.128.114.78,178.128.220.28,178.128.53.2,178.128.62.5,185.211.5.9,185.215.164.126,185.250.149.60,185.63.253.200,188.119.113.239,188.166.196.86,188.166.197.213,188.166.211.48,188.166.243.245,192.243.98.23,193.38.54.77,194.135.33.203,194.233.87.224,198.54.112.76,198.54.121.217,206.189.170.14,206.189.33.12,206.189.42.229,206.189.88.35,207.148.6.82,207.148.70.66,209.126.6.6,209.97.161.160,209.97.171.113,45.138.157.10,45.14.226.94,45.32.122.145,45.63.23.4,45.76.144.150,45.76.156.98,45.76.33.4,45.77.246.31,45.77.37.28,45.77.76.243,45.81.224.60,45.84.0.60,51.81.115.212,54.36.246.81,66.29.129.121,66.29.129.161,66.42.54.200,66.42.87.58,68.183.237.173,69.197.132.190,75.119.147.12,75.119.155.196,80.209.252.69,80.85.140.251,93.115.31.156,93.115.31.157,93.115.31.158,94.237.69.121,94.237.69.126,94.237.74.194,94.237.74.225,94.237.78.220,96.43.139.235,96.43.139.236,96.43.139.237,abgcrot.bar,adultdeepfakes.com,avtub.info,avtub.ws,bacol.lol,bandarsub.com,birahi21.com,bokep8.icu,bokepah.com,bokepbarat.net,bokephub.online,bokepin.pics,bokepla.com,bokepr.com,bokepsd.online,bokepsub.com,bokepv.com,bokepxxi.biz,bugil.me,celebritysex.co,ceritabokepindonesia.com,ceritaseksindo.com,ceritaseq.com,ceritaseru.sextgem.com,cewekgenit.fun,cewekgenit.top,dalamhati.com,deepfakeporn.net,deepfakesweb.com,dunia121.blogspot.com,filmbokep.id,filmbokepbarat168.com,gocrot.com,herodex.org,hijab.link,indo-bioskop.blogspot.com,indobispak.com,indocabe.life,indosemi45.org,indoviral.vip,inibokep.ws,itubokep.world,jambulmemek.sbs,javindosub.com,javstory.co,javsubindo.com,javsubindo.net,jilboob.top,kontol.in,kumpulan-film-bokep.blogspot.com,linkbokep.bar,linkbokep.icu,linkbokep.pro,lonteku.bond,lonteku.sbs,makkaroni.info,malemjumat.biz,mdtaiwan.com,memeksiana.cam,memekviral.site,minioppai.org,moviemantap21.blogspot.com,mrdeepfakes.com,myhdjav.me,nekopoi.care,nesaporn.com,onbatch.my.id,perawanbokep.cam,photomemek.com,potobugill.sextgem.com,putri77.org,rajacoli.click,sange.link,sektedoujin.club,sexcelebrity.net,simantan.bond,softcore69.club,stampin-de-va.blogspot.com,subindojav.com,subindojav.xyz,subtitlecinema.com,tantemontok.site,tantenakal.bar,tanteseksi.cam,tanteseksi.space,tontonan.net,vetv.info,videobokep17.top,xbokep.bond,xbokep.rest,yabaisub.com#%#//scriptlet('ubo-window.open-defuser.js')
 185.215.164.126,209.126.6.6###overplay
 kumpulan-film-bokep.blogspot.com###trickstoo-box
 185.250.149.60###tutupen
 ceritaseq.com###wpb_overlay
-199.38.245.239##.elementor-popup-modal
 videobokep17.top##.gmr-bannerpopup
 66.29.129.161,avtub.ws##.jquery-modal
 66.42.54.200,96.43.139.235,96.43.139.236,96.43.139.237##.popUpBannerBox
 bokepbarat.net##.simple_overlay
 ceritaseq.com##.wpb-outer-wrap
-111.90.150.188,128.199.102.136,139.180.219.176,149.28.156.65,188.166.243.245,193.38.54.77,207.148.70.66,45.76.156.98,45.77.246.31,45.77.37.28,kisahmalam.wtf,vetv.info##[id^="netkevin-"]
+111.90.150.188,128.199.102.136,139.180.219.176,149.28.156.65,188.166.243.245,193.38.54.77,207.148.70.66,45.76.156.98,45.77.246.31,45.77.37.28,vetv.info##[id^="netkevin-"]
 45.77.76.243##iframe[sandbox*="allow-popups"]
 /wp-content/plugins/cm-pop-up-banners/domain=154.12.229.9
 154.12.229.9,45.32.122.145,75.119.147.12,herodex.org,indosemi45.org#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')
@@ -4269,7 +4264,6 @@ indoviral.vip#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')
 51.195.89.106,indoviral11.com,indoviral18.com#%#//scriptlet('ubo-aopr.js', 'disableSelection')
 128.199.176.163,51.195.89.106,indoviral11.com,indoviral12.com,indoviral18.com#%#//scriptlet('ubo-aopr.js', 'document.oncontextmenu')
 ||livechatinc.com^$image,domain=artikeljandamuda.blogspot.com|dalamhati.com
-46.166.167.16,93.115.24.210,93.115.24.211,semprot.com,semprotgo.com,semprotlah.com#%#//scriptlet('ubo-acis.js', 'String.fromCharCode', 'ahli')
 46.166.167.16,93.115.24.210,93.115.24.211,semprot.com,semprotgo.com,semprotlah.com##.js-post:has-text(Banned)
 /luxury_hd_dvd_hd.mp4$media
 ||imgur.com/PptFxqt.$image
@@ -5264,7 +5258,6 @@ _topbandar_$image
 ||134.209.154.182^$third-party,stylesheet,image,script
 ||134.209.205.104^$third-party,stylesheet,image,script
 ||134.209.78.30^$third-party,stylesheet,image,script
-||134.209.99.197^$third-party,stylesheet,image,script
 ||135.148.1.139^$third-party,stylesheet,image,script
 ||138.197.139.68^$third-party,stylesheet,image,script
 ||138.68.80.19^$third-party,stylesheet,image,script
@@ -5312,7 +5305,6 @@ _topbandar_$image
 ||139.59.121.144^$third-party,stylesheet,image,script
 ||139.59.2.99^$third-party,stylesheet,image,script
 ||139.59.226.217^$third-party,stylesheet,image,script
-||139.59.5.246^$third-party,stylesheet,image,script
 ||139.59.88.218^$third-party,stylesheet,image,script
 ||139.59.96.174^$third-party,stylesheet,image,script
 ||139.59.96.74^$third-party,stylesheet,image,script
@@ -5347,7 +5339,6 @@ _topbandar_$image
 ||14.128.35.107^$third-party,stylesheet,image,script
 ||14.128.35.112^$third-party,stylesheet,image,script
 ||14.128.40.154^$third-party,stylesheet,image,script
-||142.11.241.8^$third-party,stylesheet,image,script
 ||142.44.131.249^$third-party,stylesheet,image,script
 ||142.44.144.187^$third-party,stylesheet,image,script
 ||142.93.141.94^$third-party,stylesheet,image,script
@@ -5359,12 +5350,10 @@ _topbandar_$image
 ||143.198.210.224^$third-party,stylesheet,image,script
 ||143.198.220.122^$third-party,stylesheet,image,script
 ||143.198.41.150^$third-party,stylesheet,image,script
-||143.244.160.174^$third-party,stylesheet,image,script
 ||143.95.100.218^$third-party,stylesheet,image,script
 ||143.95.32.10^$third-party,stylesheet,image,script
 ||144.126.240.89^$third-party,stylesheet,image,script
 ||144.126.241.203^$third-party,stylesheet,image,script
-||144.126.242.177^$third-party,stylesheet,image,script
 ||144.126.242.47^$third-party,stylesheet,image,script
 ||144.126.243.183^$third-party,stylesheet,image,script
 ||144.91.101.159^$third-party,stylesheet,image,script
@@ -5380,10 +5369,8 @@ _topbandar_$image
 ||156.67.218.12^$third-party,stylesheet,image,script
 ||156.67.218.139^$third-party,stylesheet,image,script
 ||156.67.221.129^$third-party,stylesheet,image,script
-||156.67.221.184^$third-party,stylesheet,image,script
 ||157.230.243.61^$third-party,stylesheet,image,script
 ||157.230.33.30^$third-party,stylesheet,image,script
-||157.230.34.218^$third-party,stylesheet,image,script
 ||157.230.44.224^$third-party,stylesheet,image,script
 ||157.230.47.45^$third-party,stylesheet,image,script
 ||157.230.80.61^$third-party,stylesheet,image,script
@@ -5415,18 +5402,14 @@ _topbandar_$image
 ||162.213.251.11^$third-party,stylesheet,image,script
 ||162.213.251.136^$third-party,stylesheet,image,script
 ||162.213.253.73^$third-party,stylesheet,image,script
-||162.243.160.53^$third-party,stylesheet,image,script
 ||162.243.173.12^$third-party,stylesheet,image,script
 ||162.253.42.20^$third-party,stylesheet,image,script
 ||162.253.42.91^$third-party,stylesheet,image,script
 ||162.255.160.218^$third-party,stylesheet,image,script
-||163.47.8.157^$third-party,stylesheet,image,script
 ||165.22.107.153^$third-party,stylesheet,image,script
 ||165.22.111.15^$third-party,stylesheet,image,script
-||165.22.210.120^$third-party,stylesheet,image,script
 ||165.22.211.205^$third-party,stylesheet,image,script
 ||165.22.55.12^$third-party,stylesheet,image,script
-||165.232.168.93^$third-party,stylesheet,image,script
 ||165.232.171.38^$third-party,stylesheet,image,script
 ||166.62.10.125^$third-party,stylesheet,image,script
 ||166.62.29.185^$third-party,stylesheet,image,script
@@ -5498,9 +5481,7 @@ _topbandar_$image
 ||174.138.25.6^$third-party,stylesheet,image,script
 ||174.138.31.145^$third-party,stylesheet,image,script
 ||175.41.170.147^$third-party,stylesheet,image,script
-||178.128.103.205^$third-party,stylesheet,image,script
 ||178.128.16.130^$third-party,stylesheet,image,script
-||178.128.19.6^$third-party,stylesheet,image,script
 ||178.128.202.118^$third-party,stylesheet,image,script
 ||178.128.210.189^$third-party,stylesheet,image,script
 ||178.128.218.201^$third-party,stylesheet,image,script
@@ -5561,7 +5542,6 @@ _topbandar_$image
 ||198.54.121.217^$third-party,stylesheet,image,script
 ||198.54.125.147^$third-party,stylesheet,image,script
 ||198.54.125.21^$third-party,stylesheet,image,script
-||198.72.111.143^$third-party,stylesheet,image,script
 ||198.96.92.14^$third-party,stylesheet,image,script
 ||202.182.107.17^$third-party,stylesheet,image,script
 ||202.182.118.55^$third-party,stylesheet,image,script
@@ -5686,7 +5666,6 @@ _topbandar_$image
 ||66.29.142.216^$third-party,stylesheet,image,script
 ||66.42.50.236^$third-party,stylesheet,image,script
 ||66.42.53.234^$third-party,stylesheet,image,script
-||66.42.61.3^$third-party,stylesheet,image,script
 ||66.70.192.248^$third-party,stylesheet,image,script
 ||67.205.139.89^$third-party,stylesheet,image,script
 ||67.215.252.130^$third-party,stylesheet,image,script
@@ -5725,13 +5704,11 @@ _topbandar_$image
 ||91.233.198.123^$third-party,stylesheet,image,script
 ||91.233.198.15^$third-party,stylesheet,image,script
 ||91.233.198.17^$third-party,stylesheet,image,script
-||91.233.198.1^$third-party,stylesheet,image,script
 ||91.233.198.25^$third-party,stylesheet,image,script
 ||91.233.198.28^$third-party,stylesheet,image,script
 ||91.233.198.29^$third-party,stylesheet,image,script
 ||91.233.198.32^$third-party,stylesheet,image,script
 ||91.233.198.33^$third-party,stylesheet,image,script
-||91.233.198.5^$third-party,stylesheet,image,script
 ||91.233.198.77^$third-party,stylesheet,image,script
 ||91.233.198.78^$third-party,stylesheet,image,script
 ||91.233.198.98^$third-party,stylesheet,image,script
@@ -5794,6 +5771,7 @@ _topbandar_$image
 ##[href="https://bit.ly/joker99menangterus"]
 ##[href="https://bit.ly/kdslotsfreechip"]
 ##[href="https://bit.ly/ligadunia365"]
+##[href="https://bit.ly/linkwebgacor"]
 ##[href="https://bit.ly/luck99gacorbanget"]
 ##[href="https://bit.ly/lvonlineads006"]
 ##[href="https://bit.ly/mahadewa88"]
@@ -5816,6 +5794,8 @@ _topbandar_$image
 ##[href="https://bit.ly/super_itcmovie"]
 ##[href="https://bit.ly/terimabola365"]
 ##[href="https://bit.ly/tradisibetslot"]
+##[href="https://cek.to/gudangap"]
+##[href="https://cek.to/gudangbp"]
 ##[href="https://cek.to/lk21xxi180h"]
 ##[href="https://cek.to/sobatkeren180fb"]
 ##[href="https://cek.to/sobatkerenfa1801"]
@@ -5829,8 +5809,6 @@ _topbandar_$image
 ##[href="https://klik.fun/boomxxiidk"]
 ##[href="https://klik.fun/duniafilm18"]
 ##[href="https://klik.fun/ngebo180"]
-##[href="https://klik.fun/ngefilm2188"]
-##[href="https://klik.fun/ngefilm88"]
 ##[href="https://klik.fun/nodrakoricu"]
 ##[href="https://klik.fun/waktu21"]
 ##[href="https://klik.gg/duniafilm21"]
@@ -5851,18 +5829,13 @@ _topbandar_$image
 ##[href="https://minilink.id/qq801idlix"]
 ##[href="https://minilink.id/qq820idlix"]
 ##[href="https://plink.site/gacor855"]
-##[href="https://rebrand.ly/20jkr18"]
-##[href="https://rebrand.ly/20jkr99"]
-##[href="https://rebrand.ly/20mcu18"]
-##[href="https://rebrand.ly/20mpo66"]
-##[href="https://rebrand.ly/20mpslt8"]
-##[href="https://rebrand.ly/20mslt8"]
-##[href="https://rebrand.ly/20mslt9"]
-##[href="https://rebrand.ly/20qq82"]
 ##[href="https://rebrand.ly/Gcr-mk"]
 ##[href="https://rebrand.ly/Saldobet88"]
+##[href="https://rebrand.ly/cs88-dutafilm"]
+##[href="https://rebrand.ly/dafatrbokep01"]
 ##[href="https://rebrand.ly/daftar-77mega"]
 ##[href="https://rebrand.ly/daftarmpojackpot"]
+##[href="https://rebrand.ly/dut4f1lm"]
 ##[href="https://rebrand.ly/filmlokal"]
 ##[href="https://rebrand.ly/ggslot777"]
 ##[href="https://rebrand.ly/istana"]
@@ -5900,9 +5873,22 @@ _topbandar_$image
 ##img[alt^="situs togel online" i]
 ##img[alt^="slot online termurah" i]
 ##[href="https://bit.ly/2Sifbtu"]
+##[href="https://bit.ly/3GffHx7"]
+##[href="https://bit.ly/3NHWFBK"]
+##[href="https://bit.ly/3NLPb0r"]
+##[href="https://bit.ly/3ONgzfX"]
+##[href="https://bit.ly/3aC7oj0"]
+##[href="https://bit.ly/3apCv17"]
 ##[href="https://bit.ly/3ghYkz2"]
 ##[href="https://bit.ly/3pxoGRM"]
+##[href="https://bit.ly/3taIjSG"]
+##[href="https://bit.ly/3xyBITK"]
+##[href="https://bit.ly/3y1RRT6"]
+##[href="https://bit.ly/3ypQRZn"]
 ##[href="https://cutt.ly/JH5W5LG"]
+##[href="https://klik.gg/bccwY"]
+##[href="https://rebrand.ly/20crwl38"]
+##[href="https://rebrand.ly/20mpo65"]
 ##[href="https://bit.ly/32EvDcJ"]
 ##[href="https://bit.ly/32EvTbH"]
 ##[href="https://bit.ly/39LYPlu"]

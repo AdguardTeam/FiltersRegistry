@@ -13,26 +13,12 @@
 ! Good: $removeparam=utm_id
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
-!
-$removeparam=adfrom
-$removeparam=nx_source
-$removeparam=_zucks_suid
-$removeparam=cmpid
-$removeparam=asgtbndr
-$removeparam=guccounter
-$removeparam=guce_referrer
-$removeparam=guce_referrer_sig
-$removeparam=_openstat
-$removeparam=action_object_map
-$removeparam=action_ref_map
-$removeparam=action_type_map
-$removeparam=fb_action_ids
-$removeparam=fb_action_types
-$removeparam=fb_comment_id
-$removeparam=fb_ref
-$removeparam=fb_source
-$removeparam=fbclid
+! https://github.com/AdguardTeam/AdguardFilters/issues/123544
+! ad click tracking
+/?uclick=*;uclickhash=$removeparam
+&uclick=*&uclickhash=$removeparam
 ! PopMagic clickthrough tracking
+/?r=dir&zoneid=$removeparam
 /?rb=*&zoneid=$removeparam
 ! awin.com
 $removeparam=awc
@@ -163,7 +149,25 @@ $removeparam=ebisAdID
 $removeparam=irgwc
 ! Facebook analytics
 $removeparam=fbclid
-
+!
+$removeparam=adfrom
+$removeparam=nx_source
+$removeparam=_zucks_suid
+$removeparam=cmpid
+$removeparam=asgtbndr
+$removeparam=guccounter
+$removeparam=guce_referrer
+$removeparam=guce_referrer_sig
+$removeparam=_openstat
+$removeparam=action_object_map
+$removeparam=action_ref_map
+$removeparam=action_type_map
+$removeparam=fb_action_ids
+$removeparam=fb_action_types
+$removeparam=fb_comment_id
+$removeparam=fb_ref
+$removeparam=fb_source
+$removeparam=fbclid
 !---------------------------------------------------------------------------!
 !-------------- Specific web sites ---------------------------------------------!
 !---------------------------------------------------------------------------!
@@ -175,6 +179,30 @@ $removeparam=fbclid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/123415
+||revolut.com^$removeparam=%7Ecampaign_id
+||revolut.com^$removeparam=%7Eclick_id
+||revolut.com^$removeparam=ext
+||revolut.com^$removeparam=%7Esecondary_publisher
+||revolut.com^$removeparam=%243p
+! https://github.com/AdguardTeam/AdguardFilters/issues/123908
+||wise.com^$removeparam=partnerizecampaignID
+||wise.com^$removeparam=adref
+||wise.com^$removeparam=clickref
+||wise.com^$removeparam=partnerID
+! https://github.com/AdguardTeam/AdguardFilters/issues/123824
+||join.worldoftanks.$removeparam=xid
+||join.worldoftanks.$removeparam=sid
+||join.worldoftanks.$removeparam=enctid
+||join.worldoftanks.$removeparam=pub_id
+! https://github.com/AdguardTeam/AdguardFilters/issues/123835
+||weather.com$removeparam=par
+! https://github.com/AdguardTeam/AdguardFilters/issues/123493
+||mirtesen.ru^$removeparam=nvuuid
+||mirtesen.ru^$removeparam=bvuuid
+||mirtesen.ru^$removeparam=ad
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2381922
+$removeparam=oref,domain=defenseone.com|govexec.com|nextgov.com|route-fifty.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123160
 ||whistleout.com.au^$cookie=ARRAffinity
 ||whistleout.com.au^$cookie=ARRAffinitySameSite

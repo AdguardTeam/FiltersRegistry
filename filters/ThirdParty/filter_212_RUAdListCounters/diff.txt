@@ -22,8 +22,12 @@ razlozhi.*#?#div[class][style*="width:"][style*="height"][style*="/themes/defaul
 /^https?://mail\.yandex\.[^\s]{125,}/$empty,script,~third-party
 ! Rule "/^https?://yastatic\.net\/www\/_\/[^\s]{150,}/$empty,image,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz" converted to: "/^https?://yastatic\.net\/www\/_\/[^\s]{150,}/$redirect=nooptext,image,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz"
 /^https?://yastatic\.net\/www\/_\/[^\s]{150,}/$empty,image,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
+! Rule "mail.yandex.*#?#html.with-widgets .mail-App-Footer-Group_reverse > .mail-App-Footer-Item > [href^="https://yandex."]:style(top: 12px !important; left: 19px !important; height: 36px !important; position: fixed !important; z-index: 130 !important; opacity: 0 !important)" converted to: "mail.yandex.*#$?#html.with-widgets .mail-App-Footer-Group_reverse > .mail-App-Footer-Item > [href^="https://yandex."] { top: 12px !important; left: 19px !important; height: 36px !important; position: fixed !important; z-index: 130 !important; opacity: 0 !important }"
+mail.yandex.*#?#html.with-widgets .mail-App-Footer-Group_reverse > .mail-App-Footer-Item > [href^="https://yandex."]:style(top: 12px !important; left: 19px !important; height: 36px !important; position: fixed !important; z-index: 130 !important; opacity: 0 !important)
 ! Rule "yandex.*##.mini-suggest__item:has(> a[href^="http://"]):remove()" converted to: "yandex.*#$?#.mini-suggest__item:has(> a[href^="http://"]) { remove: true; }"
 yandex.*##.mini-suggest__item:has(> a[href^="http://"]):remove()
+! Rule "yandex.*##.PSHeaderLogo360 > a[href^="https://360.yandex."]:style(pointer-events: none !important)" converted to: "yandex.*#$#.PSHeaderLogo360 > a[href^="https://360.yandex."] { pointer-events: none !important }"
+yandex.*##.PSHeaderLogo360 > a[href^="https://360.yandex."]:style(pointer-events: none !important)
 ! Rule "||market.yandex.ru/widget/$empty,domain=zen.yandex.by|zen.yandex.kz|zen.yandex.ru|zen.yandex.uz" converted to: "||market.yandex.ru/widget/$redirect=nooptext,domain=zen.yandex.by|zen.yandex.kz|zen.yandex.ru|zen.yandex.uz"
 ||market.yandex.ru/widget/$empty,domain=zen.yandex.by|zen.yandex.kz|zen.yandex.ru|zen.yandex.uz
 ! Rule "||yastatic.net/*/front-maps-static/*/chunks/promo/$empty" converted to: "||yastatic.net/*/front-maps-static/*/chunks/promo/$redirect=nooptext"
@@ -52,6 +56,8 @@ google.*#%#//scriptlet('ubo-remove-attr.js', 'data-jsarwt', '#rcnt [data-ved] a'
 www.google.*#%#//scriptlet('ubo-remove-attr.js', 'jsaction', '#islmp .isv-r > a')
 ! www.google.*#%#//scriptlet('ubo-remove-attr.js', 'jsaction', '#islsp c-wiz a[href^="http"][data-ved][target]', 'stay') is excluded by "#%#//scriptlet" in exclusions-low.txt
 www.google.*#%#//scriptlet('ubo-remove-attr.js', 'jsaction', '#islsp c-wiz a[href^="http"][data-ved][target]', 'stay')
+! yandex.*#$#.PSHeaderLogo360 > a[href^="https://360.yandex."] { pointer-events: none !important } is excluded by "#$#" in exclusions-low.txt
+yandex.*#$#.PSHeaderLogo360 > a[href^="https://360.yandex."] { pointer-events: none !important }
 ! !yandex.ru##+js(no-setTimeout-if, b-spec-adv) is excluded by "##+js" in exclusions-low.txt
 !yandex.ru##+js(no-setTimeout-if, b-spec-adv)
 ! !yandex.ru##+js(no-setTimeout-if, antiadb, home) is excluded by "##+js" in exclusions-low.txt
@@ -91,7 +97,7 @@ ivi.ru#?#+js(set-constant, Object.prototype.canShowMoreAds, noopFunc)
 ! Invalid selector:
 ivi.ru#?#+js(set-constant, Object.prototype.hasAdv, noopFunc)
 ! Invalid selector:
-frontend.vh.yandex.ru,yastatic.net#?#+js(set-constant, Object.prototype.hasPreroll, null)
+frontend.vh.yandex.ru,widgets.kinopoisk.ru,yastatic.net#?#+js(set-constant, Object.prototype.hasPreroll, null)
 ! Invalid selector:
 horoscopes.rambler.*#?#+js(set-constant, Object.prototype.needShowAlicePopup, null)
 ! Invalid selector:

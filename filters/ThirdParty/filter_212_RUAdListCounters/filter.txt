@@ -1,8 +1,8 @@
 !
-! Checksum: L9DQ9eXDewG5RaD9D28+sw
-! OriginalVersion: 202207070444
+! Checksum: rHLv6iwNAMU0BqwqofrF0g
+! OriginalVersion: 202207141244
 ! Title: RU AdList: Counters
-! Last modified: 07 Jul 2022 04:44 UTC
+! Last modified: 14 Jul 2022 12:44 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -372,6 +372,7 @@ _pagespeed_beacon?
 ||d3qxef4rp70elm.cloudfront.net^
 ||d7d3cf2e81d293050033-3dfc0615b0fd7b49143049256703bfce.ssl.cf1.rackcdn.com^
 ||data.giraff.io/track/$third-party,domain=~5-tv.ru|~vse42.ru
+||datadome.co^$third-party
 ||dataxpand.com^$third-party
 ||dc.services.visualstudio.com^*/track
 ||demandbase.com^$third-party
@@ -1088,6 +1089,9 @@ zannn.top#@?#this-is-a-malicious-site
 @@/^https?://yandex\.ru\/turbo[^\s]+(dni24\.com|fishki\.net|news\.ru|publy\.ru|tsargrad\.tv)/$csp=script-src
 @@://yandex.*/news/$generichide
 @@://yandex.*/news|$generichide
+disk.yandex.*##.Base-Onboarding
+docs.yandex.*##a[href^="https://360.yandex."][href$="/?from=documents-header-360"]
+mail.yandex.*#$?#html.with-widgets .mail-App-Footer-Group_reverse > .mail-App-Footer-Item > [href^="https://yandex."] { top: 12px !important; left: 19px !important; height: 36px !important; position: fixed !important; z-index: 130 !important; opacity: 0 !important }
 newssearch.yandex.*##.news-advert__column
 tv.yandex.*##.recommended-ott
 yandex.*###bk-container
@@ -1097,6 +1101,7 @@ yandex.*##.dist-popup
 yandex.*##.mg-grid__col > div[class*="_type_native"]
 yandex.*##.mini-suggest__item > a[href^="http://"]
 yandex.*#$?#.mini-suggest__item:has(> a[href^="http://"]) { remove: true; }
+yandex.*##.PSHeaderLogo360-360
 yandex.*##.turbo-embed_market_widget
 yandex.*##[class*="segment__container"] > div > [class^="card "][class*="_"]
 yandex.*##body[class*="b-page"] .widgets[role="main"] :not(div) :not(div) :not(div) > div[class]:not([class*="widget"]) > div[class]:not([class*="widget"]) > div[class]:not([class*="widget"]):not([class^="services"]):not([class*="search"]):not([class*="home"])
@@ -1113,6 +1118,7 @@ yandex.*##div[data-bem*="climate-calendar-"] ~ .content > .content__section:firs
 yandex.*##section ~ .news-top-rubric-heading > h1:only-child:if-not(> a)
 yandex.*#?#.feed__row[id^="zen-row-"] .feed__item-wrap:-abp-has(> .feed__item [class$="header-subtitle"]:-abp-contains(реклама))
 yandex.*#?#.feed__row[id^="zen-row-"] .feed__item-wrap:-abp-has(> .feed__item [class^="zen-ui-channel-info"][class$="subtitle-text"]:-abp-contains(промо))
+yandex.*#?#.serp-list > .serp-item:-abp-has(> .bno .serp-adv__counter)
 yandex.*#?#.serp-list > .serp-item:-abp-has(> div > div > [data-event-required])
 yandex.*#?#div[class*="-header"] ~ div[id*="page"] div[class*="__col"]:-abp-has(> div[class*="-feed__"][class*="_type_"] > .root123)
 yandex.*#?#div[class*="-header"] ~ div[id*="page"] div[class*="__col"]:-abp-has(> div[class*="-feed__"][class*="_type_"] > div[class*="loader"])
@@ -1202,6 +1208,8 @@ zen.yandex.*##div[class*="yandex-direct"]
 ! реклама при скачивании на форуме
 4pda.*##html:not([style]) > body:not([itemscope]) > div[id]:not([href]) > [href="#"]:empty ~ [href^="http"]
 4pda.*#$?##lbOverlay { background: none !important }
+! реклама в QMS и мобильной версии сайта
+4pda.*##.menu-main-mobile > [style="display:none;"]
 !
 ! Экспериментальные правила для маркеров
 $document,removeparam=fm,domain=go.mail.ru|r.mail.ru
@@ -1232,6 +1240,9 @@ $removeparam=gtm
 $removeparam=irclickid
 $removeparam=irgwc
 $removeparam=mt_click_id
+$removeparam=pulse_traffic
+$removeparam=ref_src
+$removeparam=ref_url
 $removeparam=rtclick
 $removeparam=sid,domain=nnm-club.lib|nnm-club.me|nnmclub.ro|nnmclub.to|rutor.in
 $removeparam=utm_campaign
@@ -1243,6 +1254,7 @@ $removeparam=utm_medium
 $removeparam=utm_referrer
 $removeparam=utm_source
 $removeparam=utm_term
+$removeparam=utm_test
 $removeparam=yaclid
 $removeparam=yclid
 $removeparam=ysclid
@@ -1307,6 +1319,7 @@ utm_$document,removeparam=ig_rid,domain=instagram.com
 ||imdb.com/*pf_rd_$document,removeparam=|pf_rd_,domain=imdb.com
 ||imdb.com/*ref_=$document,removeparam=|ref,domain=imdb.com
 ||mail.ru^*exp_id=$document,removeparam=|,domain=mail.ru
+||my.mail.ru/apps$document,removeparam=ref,domain=my.mail.ru
 ||sportmail.ru^*exp_id=$document,xmlhttprequest,removeparam=|,domain=sportmail.ru
 ||www.google.*/search?$removeparam=aqs
 ||www.google.*/search?$removeparam=authuser
