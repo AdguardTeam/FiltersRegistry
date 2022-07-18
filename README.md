@@ -158,7 +158,11 @@ Validate `filters.json` and `filters_i18n.json` for platforms:
 node validate ./platforms
 ```
 
+> For AdGuard filters **all locales** are required, it means 100% translated.
+
 Validate locales:
 ```
-node validate-locales
+yarn locales:validate
 ```
+
+> For third-party filters only `REQUIRED_LOCALES` should be 100% done.
