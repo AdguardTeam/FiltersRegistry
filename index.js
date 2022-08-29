@@ -31,15 +31,18 @@ const customPlatformsConfig = require('./custom_platforms.js');
 const platformsPath = path.join(__dirname, './platforms');
 
 /**
- * Search for specific files by extension type and
- * replaces all occurrencies of necessary strings to new ones in the build results.
+ * 
+ * Replaces all occurrencies of necessary strings to new ones in the build results.
  */
 
  async function replaceInFilters() {
 /**
- *  
- * @param {String} dir - specific directory that limits the search.
- * @param {String} type - type of the file.
+ * 
+ * Search for specific files by extension type recursively.
+ * Some directories and files are currently excluded due to the task.
+ * 
+ * @param {string} dir - specific directory that limits the search.
+ * @param {string} type - type of the file.
  */
     function searchFiles(dir, type) {
         let values = [];
