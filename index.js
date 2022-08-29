@@ -70,7 +70,7 @@ const platformsPath = path.join(__dirname, './platforms');
  * Compiler entry point.
  */
 async function main() {
-    /**await compiler.compile(
+    await compiler.compile(
         filtersDir,
         logPath,
         reportPath,
@@ -79,7 +79,6 @@ async function main() {
         blacklist,
         customPlatformsConfig,
     );
-    */
     // TODO: remove this when ExtCSS v2.0 is released to all AG products.
     await replaceInFilters();
 }
