@@ -61,7 +61,7 @@ const platformsPath = path.join(__dirname, './platforms');
       let filesTxt = searchFiles(platformsPath, '.txt');
       filesTxt.forEach((fileTxt) => {
         let data = fs.readFileSync(fileTxt, 'utf8');
-        let formattedData = data.replaceAll(/:has\(/g, ':-abp-has(');
+        let formattedData = data.replace(/:has\(/g, ':-abp-has(');
         fs.writeFileSync(fileTxt, formattedData, 'utf8');
       });
 }
@@ -70,7 +70,7 @@ const platformsPath = path.join(__dirname, './platforms');
  * Compiler entry point.
  */
 async function main() {
-    await compiler.compile(
+    /**await compiler.compile(
         filtersDir,
         logPath,
         reportPath,
@@ -79,6 +79,7 @@ async function main() {
         blacklist,
         customPlatformsConfig,
     );
+    */
     // TODO: remove this when ExtCSS v2.0 is released to all AG products.
     await replaceInFilters();
 }
