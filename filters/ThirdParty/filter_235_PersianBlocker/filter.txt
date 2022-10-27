@@ -2,9 +2,9 @@
 ! Title: PersianBlocker
 ! Description: سرانجام، یک لیست بهینه و گسترده برای مسدودسازی تبلیغ ها و ردیاب ها در سایت های پارسی زبان!
 ! Expires: 2 days
-! Last modified: 2022-09-15
+! Last modified: 2022-10-21
 ! Homepage: https://github.com/MasterKia/PersianBlocker
-! Licence: AGPLv3 (https://github.com/MasterKia/PersianBlocker/blob/main/LICENSE)
+! License: AGPLv3 (https://github.com/MasterKia/PersianBlocker/blob/main/LICENSE)
 ! Issues/Suggestions: https://github.com/MasterKia/PersianBlocker/issues
 ! Pull requests: https://github.com/MasterKia/PersianBlocker/pulls
 ! TODO: Remove unbreak filters from Adguard Unbreak after PersianBlocker is added
@@ -18,18 +18,21 @@
 ! wp-content/plugins/google-analytics
 ! wp-content/plugins/better-ads
 ! wp-content/plugins/adwised
-! ||cdn.hostdl.com/*/*.gif
 ! ##[href^="https://gameup.ir/"]
 ! /najva.js
 ! /jwplayer/vast.js
 ! https://github.com/MasterKia/PersianBlocker/issues/68#issuecomment-1241797575
 ##.zxc
+##.zxc-m
+##.zxc-visible-fixed
+##.zxc-stik
+##.zxc-mobile
+##.zxc-padding-custom
 !-------------------------^ Experimental Generic Filters ^-----------------------!
 !-------------------------v Persian Ads/Trackers/Annoyances Filters v-----------------------!
 ! >> A <<
 ||adexo.ir^$all
 ||adskav.com^$all
-||adtube.ir^$all
 ||advn.ir^$all
 ||amaroid.net^$all
 ||lnk.amaroid.net^$all
@@ -43,6 +46,7 @@
 ||adwised.com^$all
 ||adwisedfs.com^$all
 ||adwised.azureedge.net^$all
+! TODO: Remove adwised.azureedge.net, but navatv.com still links to it
 ||adivery.com^$all
 ||adnegah.net^$all
 ||adpulse.ir^$all
@@ -55,8 +59,6 @@
 ! ^ Used by irna.ir
 ||adro.co^$all
 ||affstat.adro.co^$all
-||affstat.digikala.com^$all
-||affiliate.digikala.com^$all
 ||1abzaar.ir/abzar/tools/no-rightclick.js
 ||1abzaar.ir/abzar/tools/no-selects.js
 ||1abzar.ir/abzar/tools/post-view/
@@ -70,7 +72,7 @@
 ||backlink.behtarinseo.ir/ads
 ||backority.ir^$all
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99240
-||blogfa.com/a/
+||blogfa.com/a^
 ! >> C <<
 ||chavosh.org^$all
 ||ck.chavosh.org^$all
@@ -93,8 +95,6 @@
 ||click.digiato.com^$all
 ! ^ Used by Digiato, Vigiato, Rooziato
 ! >> E <<
-||emenshowapp.xyz^$all
-! ^ Phishing
 !#if adguard
 ||trustseal.enamad.ir^$third-party,cookie
 !#endif
@@ -105,15 +105,19 @@
 ||fastclick.ir^$all
 ||fa-tools.ir/code/rightclick/right-click1.js
 ||widget.fafait.net^$third-party
-||farakav.com^$websocket
+||farakav.com^$all
 ||ads.farakav.com^$all
 ! ^ TODO: Check for breakages (used by tamasha.com), investigate into more tracking
 ! >> G <<
 ! >> H <<
+||cdn.hostdl.com/img/*.gif$image,third-party,domain=~soft98.ir
+! ^ Example: p30day.ir
+!  cdn.hostdl.com/assets/downloadha.gif, cdn.hostdl.com/img/mihandownload.gif, cdn.hostdl.com/img/p30day.gif
 ||hantana.org^$all
 ! >> I <<
 ||intrack.ir^$all
 ||geoip.imber.live^$all
+! ^ Example: malltina.com
 ! >> J <<
 ||jetbux.ir^$all
 ! >> K <<
@@ -153,14 +157,11 @@
 ||popunder.ir^$all
 ! TODO: Remove it, Used by marzfun.com
 ||popupdl.ir^$all
-! ^ TODO: Remove it, Used by dlfox.com
 ||popland.info^$all
 ||peyvandha.ir^$third-party
 ||10.10.34.^$all
 ! ^ Example: imovie-dl.org
 ||phoenixad.io^$all
-! ||phoenixad.io^$popup
-! ||phoenixad.io/click^$all
 ||partclick.ir^$all
 ||persianrank.ir^$all
 ||popgozar.com^$all
@@ -221,7 +222,7 @@
 @@||player.tavoos.net/assets/$image
 ! ^ Example: film.tebyan.net
 ||cashback.takhfifan.com^$all
-! TODO: Investigate ^
+! Example: https://portal.server.ir/cart.php?a=confproduct&i=0
 ||tapsell.ir^$all
 ||toppopup.com^$all
 ||counter.toolsir.com^$all
@@ -340,6 +341,11 @@
 !-------------------------^ Non-Persian Ads/Trackers/Annoyances Filters used in Persian websites ^-----------------------!
 !-------------------------v Site-Specific Filters v-----------------------!
 ! >> A <<
+||analytics.asiatech.ir^$all
+||192.168.10.113^$all,domain=airport.ir
+artmusics.top#%#//scriptlet('ubo-nowoif.js')
+artmusics.top##.left > .box > .title:has-text(تبلیغات):upward(.box)
+adanayi.ir,adanayi.blogfa.com#$#* { -webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; }
 ! https://github.com/MasterKia/PersianBlocker/issues/48
 ||arzcenter.com/static/plugin/gtag.js
 arzcenter.com##[href*="nobitex.ir"]
@@ -419,11 +425,13 @@ androidgozar.com##.cas-pubg
 ||dsp.aparat.com/*/dsp/bid?ads_type
 ||aparat.com/static/vendor/dox
 ||aparat.com/agf
+||aparat.com/external/romeo^
 aparat.com##.side-ads
 aparat.com###sideAds
 aparat.com##.ad-link
 aparat.com##.ad-banner
 aparat.com##.dsp-ad
+aparat.com##.video-list-wrapper.list-responsive:has(.ad)
 ! TODO: Check for more possible filters
 ||aftabir.com/uploads/banners/
 aftabir.com###footer_js_d1
@@ -466,6 +474,8 @@ accpress.com###text-25
 afkarnews.com##.main-zxc
 apktops.ir##.widget_links
 apktops.ir##.asiatech
+apktops.ir#$?#.apktops-slider-section ul > li:not(:has(a[href="https://t.me/+UgVXT9YqXOs0MQTy"])) { remove: true; }
+apktops.ir##.spcontent
 ! >> B <<
 biainobokhor.ir#$#.step:nth-of-type(4)::after { content: 'هشدار از طرف لیست PersianBlocker: با ثبت کردن این اطلاعات، این سایت می‌تواند آدرس خانه و همه اطلاعات شما که در حساب‌کاربری اسنپ‌فود ثبت شده است را مشاهده کند و یا حتی اقدام به تغییر اطلاعات و ثبت سفارش کند. از این سایت با ریسک خودتان استفاده کنید و بعد از اتمام بررسی، دکمه "خروج" در سایت اسنپ‌فود را زده تا Token شما لغو شده و دسترسی این سایت به حساب‌کاربری شما قطع شود.' !important; color: #E6000D !important; margin-top: 20px !important; }
 ! https://github.com/MasterKia/PersianBlocker/issues/4#issuecomment-1198560570
@@ -496,9 +506,9 @@ binanews.ir#%#//scriptlet('ubo-set.js', 'openTelegram', 'noopFunc')
 ||bartarinha.ir/servev*/*.gif
 bartarinha.ir##.zxc
 bartarinha.ir##.all_adv
-!#if env_mobile
+! !#if env_mobile
 bartarinha.ir##.fixed_adv_mob
-!#endif
+! !#endif
 ||barato.ir/wp-content/*/ad/
 barato.ir###featured > .owl-stage-outer
 buzdid.ir##.linkbox
@@ -512,9 +522,12 @@ barsadic.com##div.text-center.col-md-3 > .paddingAll10.panel-success.panel
 ||backtory.com/Bucket/deepchart/DeepChartAnalytics.js
 borna.news##[href^="/advertisements/"]
 borna.news##.side_adv
+borna.news##.webgardi
+!#if !env_mobile
 borna.news#$#.cols_cnt { max-width: 95% !important; }
 borna.news#$#.first_col, .n_first_col { width: 70% !important; }
 borna.news#$#.second_col, .n_second_col { width: 30% !important; }
+!#endif
 ||beautyhome.ir/wp-content/plugins/meks-easy-ads
 ||beautyhome.ir/wp-content/plugins/ads
 ||beautyhome.ir/wp-content/plugins/sticky-ad
@@ -546,15 +559,22 @@ boyernews.com##.tarh-forosh.panel-heading:nth-of-type(23)
 boyernews.com##center
 boyernews.com##.table-striped.table
 ! >> C <<
+||chaapaar.ir/ads^$all
 ! https://github.com/MasterKia/PersianBlocker/issues/69
 ||charbzaban.com/wp-content/uploads/*.gif
 charbzaban.com##.widget:has(.widgettitle:has-text(/پیشنهاد|مفید/))
 charbzaban.com##figcaption
+! Don't remove the if below:
+!#if env_mobile
+charbzaban.com##.at_bottom
+!#endif
 ! https://github.com/MasterKia/PersianBlocker/issues/35
 ||chetor.com/wp-content/uploads/*.gif
 chetor.com###custom_html-51
 chetor.com##.linkbox:upward(4)
 chetor.com#@#.ads-block
+@@||chetor.com/wp-content/uploads/2016/04/instagram-banner.chetor-media2.gif$image,~third-party
+@@||chetor.com/wp-content/uploads/2021/07/book-banner.1250.240.2.gif$image,~third-party
 ||sentry.cafebazaar.org^$all
 ! coffeeapps.ir##+js(nowoif)
 coffeeapps.ir#%#//scriptlet('ubo-aopr.js', 'nocontext')
@@ -590,6 +610,12 @@ click.ir##.clads-inner
 ||caffecinema.com/media/banners/
 @@||caffecinema.com/media/banners/telegram-$image,~third-party
 ! >> D <<
+! https://github.com/MasterKia/PersianBlocker/commit/26c10ed9dbd342000990334905f345ddecbe6bb6#commitcomment-87467148
+darooyab.ir###rightPanelContent > div > .a_class1:not(.a_class1[href*="darooyab.ir"])
+! !#if env_mobile
+darooyab.ir##.DivContent_BottomOfPageAdvertising
+! !#endif
+||ta.dideo.ir/ad^
 delgarm.com##[href*="/banners/click/"]
 delgarm.com##.weblink
 1da.ir,1ea.ir,2ad.ir#%#//scriptlet('ubo-set.js', 'blurred', 'false')
@@ -600,25 +626,32 @@ delgarm.com##.weblink
 1da.ir##.khp-site-info p
 1ea.ir##.phoenixad
 1ea.ir##a[rel="dofollow"]
+! https://github.com/MasterKia/PersianBlocker/issues/85
+||download1music.ir/wp-content/themes/d1m/ads.jpg
 download1music.ir##[id^="pos-article-display-"]
-download1music.ir##a:has(a>img[class^="aligncenter size-full "])
-||digiro.ir/wp-content/plugins/better-ads
-||digiro.ir/wp-content/uploads/*/*.gif
-digiro.ir##.texttab
+download1music.ir##section li:not(:has([href^="https://download1music.ir/"]))
+download1music.ir##.d1yekta
+! https://github.com/MasterKia/PersianBlocker/issues/85
+||digiro.ir/wp-content/plugins/better-adsmanager^
+||digiro.ir/wp-content/uploads/*.gif
+digiro.ir##.vc_col-sm-9 .type-post:has(a[href*="/author/ads/"])
 digiro.ir##.uizv
+digiro.ir##.texttab
+! !#if env_mobile
+digiro.ir##.main-term-3705
+! !#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42827
-||dlfox.com/wp-content/uploads/*/*.gif
+! https://github.com/AdguardTeam/AdguardFilters/issues/131661
 ||dlfox.com/wp-admin/admin-ajax.php?action=adwised
-dlfox.com##.ADS_wrapper
+||cdn.dlfox.com/wp-content/uploads/*.gif
+.gif^$image,domain=dlfox.com
+dlfox.com##a[href*="gameriver.ir"]
+dlfox.com##a[href*="dlfox.com/adspage"] > img
 dlfox.com##.WK_ads
-dlfox.com##.ads_area_small_banner
-dlfox.com##.banner_small_dlbox_b
-dlfox.com##.single_post_banner
+dlfox.com##.shbanner_cover:upward(div[class^="col"])
+dlfox.com##.home_mid_ads
+dlfox.com##.ADS_wrapper
 dlfox.com##.blog_list
-dlfox.com###block-6
-dlfox.com##.custom-html-widget.textwidget
-dlfox.com##.litespeed-loaded.entered.aligncenter
-dlfox.com##.bottom_single_message
 ||tadv.didestan.net
 ||didestan.com/*/script/vast
 ||didestan.com/stats
@@ -658,13 +691,18 @@ downloadsoftware.ir##.ads-matni
 ||api.dunro.com/api/*/geoip
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33352
 ! https://github.com/AdguardTeam/AdguardFilters/issues/90477
-downloadly.ir##.postfixedafterpost
-downloadly.ir##.stacking_default.valign_top.wpb_row:nth-of-type(8)
-downloadly.ir###kaprila_linktable
+||downloadly.ir/wp-content/plugins/blackswanlab-click-counter^
+downloadly.ir###page-content > .wpb_row:has(a[href*="faradars.org"])
+downloadly.ir###kaprila_downloadly_ir_static-post:upward(.g-cols)
+downloadly.ir###kaprila_downloadly_ir_top-side:upward(.g-cols)
+downloadly.ir###kaprila_downloadly_ir_side-2:upward(.g-cols)
+downloadly.ir###kaprila_linktable:upward(.g-cols)
+downloadly.ir##.postfixedafterpost:upward(.g-cols)
+downloadly.ir###faradars
 ! https://github.com/AdguardTeam/AdguardFilters/issues/109129
-||digiboy.ir/wp-content/img/sponsors/
-||digiboy.ir/wp-content/img/sidebar/
-||digiboy.ir/wp-content/img/header/
+||digiboy.ir/wp-content/img/sponsors^
+||digiboy.ir/wp-content/img/sidebar^
+||digiboy.ir/wp-content/img/header^
 digiboy.ir###header-bar
 digiboy.ir##.sidebar-digiads
 digiboy.ir##.slider-tab-ring:not(:has(>:has-text(دیدگاه)))
@@ -681,9 +719,9 @@ dabi.ir##.Js_Div5
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1197045471
 ||digiato.com/wp-content/plugins/duracelltomi-google-tag-manager/js/analytics-talk-content-tracking.js
 digiato.com##.homeMainBanner
-!#if env_mobile
+! !#if env_mobile
 digiato.com##.digiBannerMobile
-!#endif
+! !#endif
 digiato.com##.todaysNewsList__sidebar
 digiato.com#$#.todaysNewsList__posts { max-width: 100% !important; flex-grow: 1 !important }
 digiato.com###primary:not(> .categoriesPageHead:has-text(رپورتاژ آگهی)).rowList > li:has(a[href*="/promoted/"])
@@ -693,18 +731,20 @@ digiato.com###primary:not(> .categoriesPageHead:has-text(رپورتاژ آگهی
 ||digikala.com^$removeparam=affid
 ||digikala.com^$removeparam=cpcAdToken
 ||digikala.com/sw.js
-||digikala.com/tracker^$all
+||digikala.com/tracker^
 ||tracker.digikala.com^$all
 ||new-sentry.digikala.com^$all
 ||analytics.digikala.com^$all
+||affstat.digikala.com^$all
+||affiliate.digikala.com^$all
 digikala.com##.radius-large-lg:has([class*="SponsoredBrandCarousel"])
 digikala.com##.mb-4:has(.mr-auto.text-caption.ai-center)
 digikala.com##[class*="VerticalProductCard"]:has(.mr-auto.text-caption.ai-center):upward(1)
 digikala.com##[class*="ProductContent"]:has(.mr-auto.text-caption.ai-center)
-!#if env_mobile
+! !#if env_mobile
 digikala.com##.flex-wrap > .border-b:has(.mr-auto.text-caption.ai-center)
 digikala.com##[class*="BaseLayoutStaticFooterAppInstall"]
-!#endif
+! !#endif
 digikala.com#$#[class*="fakeBadge"] { font-size: 1.4rem !important; }
 digikala.com#$?#.text-caption-strong:has-text(غیر اصل) { font-size: 1.9rem !important; border-radius: 12px !important; color: var(--color-hint-text-caution) !important; background-color: rgba(var(--color-hint-object-caution-rgb),.2); padding-right: calc(2 * var(--spacing-base)) !important; padding-left: calc(2 * var(--spacing-base)) !important; margin-bottom: calc(1 * var(--spacing-base)) !important; }
 digikala.com#$#.user-select-none { -webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; }
@@ -713,7 +753,7 @@ digikala.com#$#.user-select-none { -webkit-touch-callout: default !important; -w
 ||digikalajet.com^$removeparam=/^utm_/
 ||digistyle.com^$removeparam=/promo/
 ||digistyle.com^$removeparam=/^utm_/
-||digistyle.com/tracker^$all
+||digistyle.com/tracker^
 ||sentry-new.divar.ir^$all
 ||ammaar.delivery.zeerak.cloud
 ||doostihaa.com/wp-content/plugins/jw-player-7-for-wp-premium/jwplayer/gapro.js
@@ -721,7 +761,6 @@ doostihaa.com##.adsfix_box
 doostihaa.com##.ads_txtcv
 doostihaa.com##aside.lefts_sides:nth-of-type(6)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42827
-||cdn.hostdl.com/assets/downloadha.gif
 downloadha.com##.ads
 downloadha.com##.popup-ads
 ||download.ir/api/geoip
@@ -730,6 +769,8 @@ download.ir###kaprila_linktable
 download.ir##.parsi-ads
 download.ir##.content-top-ads-box
 ! >> E <<
+! https://github.com/MasterKia/PersianBlocker/discussions/70#discussioncomment-3655852
+||etma.ir/fa/LogSiteVisit^
 ! https://github.com/MasterKia/PersianBlocker/issues/68
 etemadonline.com##.zxc
 ! https://github.com/MasterKia/PersianBlocker/issues/60
@@ -742,7 +783,6 @@ eghtesadgardan.ir#$#.container { width: 95% !important; }
 eghtesadepooya.ir##.all_ads
 eghtesadepooya.ir#$#.container { width: 95% !important; }
 ! https://github.com/MasterKia/PersianBlocker/issues/57
-! https://github.com/MasterKia/PersianBlocker/pull/74
 econews.ir##.advertise-place
 econews.ir##.province-advertise
 econews.ir##main > div:has([href*="/advertising/"])
@@ -780,9 +820,20 @@ eghtesadnews.com##[href^="/advertisements/"]
 eghtesadnews.com##.zxc
 eghtesadnews.com##.advs-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95321
+! https://github.com/MasterKia/PersianBlocker/issues/85
+eghtesadonline.com#%#//scriptlet('ubo-aeld.js', 'scroll')
+||eghtesadonline.com/servev2/*.gif
+||websocket.eghtesadonline.com^$all
+eghtesadonline.com##[href*="/advertisements/triggered/"]
+eghtesadonline.com##.zxc
+eghtesadonline.com#$?##carousel { remove: true; }
 eghtesadonline.com##.tiny_linky_boxes
 eghtesadonline.com##.talfighat-BS
-eghtesadonline.com##.type-resource-image
+eghtesadonline.com##.shopping_list
+eghtesadonline.com##.backlink
+!#if !env_mobile
+eghtesadonline.com#$#.right-news-wrap { width: 100% !important; }
+!#endif
 elmefarda.com###head728
 elmefarda.com###ad640a
 elmefarda.com##.ads
@@ -838,10 +889,12 @@ fartaknews.com##.talfighat-row
 fartaknews.com##.ul-talfigh-con
 fartaknews.com##.inline-news-box
 ||faradeed.ir/fa/generate/userid
-||fardanews.com/statics/
+! https://github.com/MasterKia/PersianBlocker/commit/ccd9af83ced447f363fd706df92df2f5d0756156#commitcomment-84053159
 fardanews.com##.header-adv
 fardanews.com##.txt-adv-box
 fardanews.com##.zxc
+fardanews.com##.zxc-visible-fixed
+fardanews.com##.zxc-stik
 fardanews.com##.others_media
 fardanews.com##.sticky_notify2
 fardanews.com#$#.n-first-col-left { width: 100% !important; }
@@ -860,16 +913,18 @@ faaltarin.com##.advertisement
 faceit.ir##.pull-right.zm-post-lay-a-area
 faceit.ir##.header-mdh
 faceit.ir##.advertisement
+! https://github.com/MasterKia/PersianBlocker/issues/84
 farnet.io#%#//scriptlet('ubo-acis.js', 'eif')
-||farnet.io/wp-content/plugins/better-adsmanager
-||farnet.io/wp-content/plugins/better-post-views
-farnet.io##.eif-link
+||farnet.io/wp-content/plugins/better-adsmanager^
+||farnet.io/wp-content/plugins/better-post-views^
+farnet.io##.eif:not(:has(a[href*="farnet.io"]))
 farnet.io##.content-column:not(> .archive-title:has-text(رپرتاژ تبلیغاتی)) .item-inner:has(a[href*="/pr/"])
+farnet.io###site-footer .col-sm-4:has(a[rel="noopener"][target="_blank"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42827
 farsroid.com#%#//scriptlet('ubo-aopr.js', 'faPa')
 ||farsroid.com/js/?url=$script
 ! ||farsroid.com/api/os-info$xhr
-||farsroid.com/wp-content/uploads/dicardo
+farsroid.com##.swiper-wrapper > .swiper-slide:not(:has(a[href*="farsroid.com/"]))
 farsroid.com##.site-middle-banners
 farsroid.com##.gtm-farsroid-ads
 farsroid.com##.download-link-ads-below
@@ -890,6 +945,11 @@ fa-tools.ir##.list
 fa-tools.ir##.t-adv
 fa-tools.ir##div.post:nth-of-type(2)
 ! >> G <<
+! https://github.com/MasterKia/PersianBlocker/issues/83
+7ganj.ir##.meta-ad
+7ganj.ir#@#.herald-ad
+7ganj.ir##.herald-ad:not(:has(a[href*="kurdsoft"])):not(:has(a[href*="7ganj.ir"]))
+7ganj.ir##.herald-sidebar .widget:has(.widget-title:has-text(تبلیغات)) p:not(:has(a[href*="kurdsoft"])):not(:has(a[href*="7ganj.ir"]))
 ! https://github.com/MasterKia/PersianBlocker/issues/67
 ||ghatar.com/wp-content/uploads/*.gif
 ||getandroid.ir/Files/js/landinga.js
@@ -900,13 +960,16 @@ gold-team.org##.aligncenter.wp-image-9273.size-full
 gamesetup.ir#%#//scriptlet('ubo-acis.js', 'vc_url')
 ||gamesetup.ir/wp-content/uploads/*/ads
 gamesetup.ir##.sidebar > div.box:nth-of-type(5)
+! https://github.com/MasterKia/PersianBlocker/commit/ccd9af83ced447f363fd706df92df2f5d0756156#commitcomment-84035664
 ||gostaresh.news/statics/
 gostaresh.news##.zxc_home
 gostaresh.news##.zxc_news
+!#if !env_mobile
 gostaresh.news#$#.main_wrapper { max-width: 95% !important; }
 gostaresh.news#$#.right_col { width: 95% !important; }
 gostaresh.news#$#.page_first_clm { width: 70% !important; }
 gostaresh.news#$#.page_second_clm { width: 30% !important; }
+!#endif
 gamesib.ir###next1-231
 gamesib.ir##.asd_top
 gamesib.ir##.fl.block_right > div.box_sh.ads_2
@@ -959,9 +1022,9 @@ gadgetnews.net##.ad-cell
 gadgetnews.net##.widget_text
 gadgetnews.net##.ads-post
 gadgetnews.net###ad14
-!#if env_mobile
+! !#if env_mobile
 gadgetnews.net##.sticky-ad
-!#endif
+! !#endif
 ! >> H <<
 harmonydl.us###ads
 harmonydl.us##.cside1 > .hside2:has-text(تبلیغات):upward(.cside1)
@@ -1015,6 +1078,9 @@ imvbox.com##div[class^="cr-banner-"]
 ! https://github.com/MasterKia/PersianBlocker/pull/2
 idehalmag.com##.primary-sidebar-widget:has(a[rel*=sponsored])
 idehaltech.com##.secondary-sidebar-widget:has(a[rel*=sponsored])
+! https://github.com/MasterKia/PersianBlocker/issues/85
+[$path=/^((?!\/reportage).)*$/]idehalmag.com#$?# .main-term-4998 { remove: true; }
+[$path=/^((?!\/reportage).)*$/]idehaltech.com#$?# .main-term-4662 { remove: true; }
 ||i-video.ir/ipop.js
 ||i-video.ir/ipop.php
 iwo.ir#%#//scriptlet('ubo-nano-sib.js')
@@ -1049,11 +1115,11 @@ irannaz.com##div.CBS.CenterBlock:nth-of-type(2)
 irannaz.com##div.CBS.CenterBlock:nth-of-type(3)
 irannaz.com##div.CBS.CenterBlock:nth-of-type(5)
 irannaz.com##div.CBS.CenterBlock:nth-of-type(6)
-||itresan.com/wp-content/cache/busting/
-||itresan.com/wp-content/plugins/better-adsmanager/
-||itresan.com/wp-content/uploads/*/*/*.gif
+||itresan.com/wp-content/cache/busting^
+||itresan.com/wp-content/plugins/better-adsmanager^
+||itresan.com/wp-content/uploads/*.gif
 itresan.com###NR-Ads
-! TODO: Remove "رپورتاژ آگهی"
+itresan.com##.listing-item-blog:has(a[href*="/author/ads/"])
 ! https://github.com/MasterKia/PersianBlocker/issues/22
 ||ilna.ir/servev2/*.gif
 ||websocket.ilna.ir$all
@@ -1063,9 +1129,9 @@ ilna.ir##.zxc
 ilna.ir#$#.xcon12 { margin: auto !important; }
 ilna.ir#$#.ml120 { margin-left: 5% !important; margin-bottom: 5% !important; }
 !#endif
-!#if env_mobile
+! !#if env_mobile
 ilna.ir##.zxc-mobile
-!#endif
+! !#endif
 ! https://github.com/MasterKia/PersianBlocker/issues/26
 ||isna.ir/rest/visit
 ||cdn.isna.ir/d/*.gif$~third-party
@@ -1089,14 +1155,18 @@ irna.ir##.ads.box
 jeyran.net#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')
 jeyran.net##.content_item:has(a[href*="/category/ads/"])
 jeyran.net##.sidebar-area .image
+!#if !env_mobile
 jeyran.net#$#.main-content > .row > .content, .main-conten { max-width: 99% !important; flex: 0 0 99% !important; }
+!#endif
 ||jabeh.com/assets/videojs-contrib-ads
 ||jabeh.com/assets/videojs.ima.min.js
 ||jabeh.com/assets/videojs.ima.min.css
 ||jabeh.com/analytics^
+! https://github.com/MasterKia/PersianBlocker/issues/85
 jalebamooz.com##.stream-item-top-wrapper
 jalebamooz.com###block-3
 jalebamooz.com###block-4
+jalebamooz.com##li:has([href^="https://jalebamooz.com/reportage/"])
 ||jahannews.com/images/advertise/
 jahannews.com##.col-xs-36.col-sm-4.col-md-4.col-lg-4
 jahannews.com##.hidden-xs.col-sm-4.col-md-4.col-lg-4
@@ -1110,24 +1180,30 @@ jobinja.ir#$#[class*="forceToLogin"] [class*="forceToLogin"] { filter: none !imp
 ||javanmobile.com/wp-content/cache/min/*/wp-content/plugins/adrotate
 ! >> K <<
 ! https://github.com/MasterKia/PersianBlocker/issues/65
+! https://github.com/MasterKia/PersianBlocker/commit/7e101d27a104aa1bbd6a75c5849ea120bdfc78f7#r84036961
 ||khaandaniha.ir/Upload/Public/Advertisement^
 khaandaniha.ir##.ads-containter
 khaandaniha.ir###textads-contents
+!#if !env_mobile
 khaandaniha.ir#$#.col-md-21 { width: 70% !important; }
 khaandaniha.ir#$#.col-md-9 { width: 30% !important; }
+!#endif
 ||khabareazad.com/aec.min.js^
 khabareazad.com##[class^="zxc"]
 khabareazad.com##.sticky_notify
 ! https://github.com/MasterKia/PersianBlocker/issues/33
 ||konkur.in/image/ads/
 @@||dl.konkur.in/image/ads/gold.png$image,~third-party
+konkur.in###HeaderImg
 konkur.in##[id^="tabligh"]
 konkur.in#$#.sidebar-taliq { visibility: hidden; !important; }
 konkur.in##.text-center:has-text(پست تبلیغاتی):upward(3)
 konkur.in##.tabliqat-text
-!#if env_mobile
+konkur.in##.m-top10:has-text(تبلیغات)
+! !#if env_mobile
+konkur.in##.vvv
 konkur.in###mobileBottomAd
-!#endif
+! !#endif
 ! https://github.com/MasterKia/PersianBlocker/issues/32
 ||konkur.info/wp-content/uploads/*.gif
 konkur.info##.size-large.attachment-large
@@ -1160,34 +1236,39 @@ kojaro.com##.banner-wrapper
 kojaro.com##.advertisement-in-topic
 kojaro.com##.bannercontainer
 kojaro.com##.homepage-content
-!#if env_mobile
+! !#if env_mobile
 kojaro.com##.mobileBanner
 kojaro.com##.article-mobile-inContent
-!#endif
+! !#endif
 @@||images.kojaro.com/assets/ad/advertise-$image,~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33437
 ! https://github.com/AdguardTeam/AdguardFilters/issues/101735
 ! https://github.com/MasterKia/PersianBlocker/issues/41
-khabaronline.ir#$#.container { max-width: 95% !important; flex-grow: 1 !important; }
-khabaronline.ir#$#.main-content { max-width: 60% !important; flex: 0 0 60% !important; }
-khabaronline.ir#$#.col-md-3 { max-width: 40% !important; flex: 0 0 40% !important; }
 khabaronline.ir###header-ad
 khabaronline.ir##.ads
 khabaronline.ir##[href^="/redirect/ads/"]
 khabaronline.ir##.bg-gray-links.box
-khabaronline.ir###ads-container > .list-thumbs.title-only.list.box
 khabaronline.ir#@##ads-container
+khabaronline.ir###ads-container > .list-thumbs.title-only.list.box
+!#if !env_mobile
+khabaronline.ir#$#.container { max-width: 95% !important; flex-grow: 1 !important; }
+khabaronline.ir#$#.main-content { max-width: 60% !important; flex: 0 0 60% !important; }
+khabaronline.ir#$#.col-md-3 { max-width: 40% !important; flex: 0 0 40% !important; }
+!#endif
+! !#if env_mobile
+khabaronline.ir###ads-container:has-text(خواندنی ها)
+! !#endif
 ||koolakmag.ir/wp-admin/admin-ajax.php?postviews_id=
 koolakmag.ir##.widget_custom_html.widget.container-wrapper.widget_text
-! ||khabarpu.com/js/all_sc_without_yektanet.js
-||khabarpu.com/js/getscript.js
-khabarpu.com##div.rbox:nth-of-type(1)
-! @@||yektanet.com^$3p,domain=khabarpu.com
-! TODO: Fix the video getting crippled
+||khabarpu.com/js/getscript.js^
+||khabarpu.com/js/all_sc_without_yektanet.js^
+khabarpu.com##.rbox .rbox-h:has-text(تبلیغات):upward(.rbox)
+khabarpu.com##.inline_ads
 ! https://github.com/MasterKia/PersianBlocker/issues/38
 khabarfoori.com##[href*="/advertisements/"]
 khabarfoori.com##.zxc
 khabarfoori.com##.peyvand
+khabarfoori.com#$#.rowTwo .right_side, .rowTwo .column_1 { width: 100% !important; }
 ketabesabz.com#%#//scriptlet('ubo-set.js', 'KetabrahPopup', 'noopFunc')
 ketabesabz.com##div.white-block:nth-of-type(2)
 ||kalakamuz.ir/wp-content/uploads/ad
@@ -1217,11 +1298,36 @@ lahzeakhar.com#%#//scriptlet('ubo-set.js', 'customnotify', 'noopFunc')
 ||lahzeakhar.com/ShowAds
 ! ||lahzeakhar.com/sw.js
 ! >> M <<
+||magland.ir/banner_images^
+||analytic.magland.ir^$all
+! ||malltina.com^$removeparam=/^upn_/
+||affiliate.malltina.com^$all
+||sentry.malltina.com^$all
+||mihand.ir/wp-content/uploads/*.gif
+mihand.ir##.entry:has(.title:has-text(تبلیغات))
+mihand.ir##.text-ads
+! https://github.com/MasterKia/PersianBlocker/issues/77
+||moviemag.ir/media/com_rstbox/js/engagebox.js^
+||moviemag.ir/media/com_rstbox/css/engagebox.css^
+moviemag.ir##.banneritem:has(a[href*="/banners/click/"])
+moviemag.ir##.eb-inst
+! https://github.com/MasterKia/PersianBlocker/issues/79
+||modirnameh.ir/wp-content/uploads/*.gif
+modirnameh.ir##.sezfvg
+modirnameh.ir###sezfvg-2
+modirnameh.ir##.sticky-column:not(:has(a[href*="modirnameh.ir"]))
+! https://github.com/MasterKia/PersianBlocker/commit/4a1e751ebf579aac2de11c99a9b250d6d6dbbf7c#commitcomment-84077844
 mosalasonline.com##.zxc
+mosalasonline.com##.zxc-visible-fixed
 mosalasonline.com##.news-col-2 .related-news
 mosalasonline.com##.sticky_notify
+! !#if env_mobile
+mosalasonline.com##.mobile-visible-fixed
+! !#endif
+!#if !env_mobile
 mosalasonline.com#$#.news-col-1 { width: 70% !important; }
 mosalasonline.com#$#.news-col-2 { width: 30% !important; }
+!#endif
 ||mipersia.com/wp-content/cache/caos-analytics
 ! https://github.com/MasterKia/PersianBlocker/issues/27
 mobo.news##.ads-full-banner-img
@@ -1280,7 +1386,6 @@ news.mihanmarket.com##div.banner_v
 mihanfal.com##.mdiaad
 mihanfal.com##section.sidebox:nth-of-type(4)
 ||mihandownload.com/sw.js
-||cdn.hostdl.com/img/mihandownload.gif
 mihandownload.com##.text-center.py-3.bg-all-box
 mihandownload.com##.pt-3.text-center.py-2.bg-all-box
 mihandownload.com##.text-center.mt-3.py-3.bg-all-box
@@ -1293,17 +1398,20 @@ myhastidl.cam#%#//scriptlet('ubo-set.js', 'needpop', '0')
 myhastidl.cam##center:nth-of-type(2)
 myhastidl.cam##.col-xs-12.col-md-6.main-sidebar > center
 ! >> N <<
+nab-music.com#%#//scriptlet('ubo-aopr.js', 'vc_url')
 ! https://github.com/MasterKia/PersianBlocker/issues/72
-||niniban.com/files/adv^
-niniban.com##.row-adv-2tayi
-niniban.com##.panel-ads-h
-niniban.com##.New-adv
-niniban.com##.height-adv
-niniban.com##.padding_news_right_adv, .padd-news-advertise
-niniban.com##.box:has(a[href*="/ads/redirect"])
+! https://github.com/MasterKia/PersianBlocker/pull/81
+||niniban.com/files/adv/*.gif
+niniban.com##[href*="l.24d.ir"]
 niniban.com##.fixed_box_adv
-niniban.com##.footer_adv
+niniban.com##.box:has(a[href*="/ads/redirect"])
+niniban.com##.padding_news_right_adv, .padd-news-advertise
+!#if !env_mobile
 niniban.com#$?#.col-xs-36.col-md-24:not(:has(.gutter_xs)) { width: 83% !important; }
+!#endif
+! !#if env_mobile
+niniban.com##.instant_news_2
+! !#endif
 ||netbarg.com/matomo.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/83080
 ||namasha.com/visit?id=
@@ -1316,13 +1424,14 @@ netnevesht.com#@#.widget-ad
 ||navatv.com/wp-admin/admin-ajax.php?action=adwised
 ||navatv.com/?wordfence
 nicmusic.net#@#.boxads
+! https://github.com/MasterKia/PersianBlocker/issues/85
+||netpaak.com/wp-content/uploads/*.gif
+netpaak.com##.stream-item-above-post
 netpaak.com##.stream-item-widget
-netpaak.com##.stream-item-above-post.stream-item
+netpaak.com###text-5
 ||sentry.namava.ir^$all
 ! ||namava.ir/api/v1.0/users/anonymous-info
 ! TODO: Remove arbitrary IP limitaion
-||adserver.netshahr.com^
-netshahr.com##.ads-a
 nodud.com##.advertorial
 ||ninifile.com/content/js/niniVastAdsJs
 ||stc.ninisite.com
@@ -1340,6 +1449,8 @@ niksalehi.com##.box-custom.box_other
 namnak.com##.Dr.D2.Cu.o
 ||namakstan.net/wp-content/cache/busting/1/gtm-
 ! >> O <<
+98oldmusics.site#%#//scriptlet('ubo-nowoif.js')
+98oldmusics.site##[id^="ads-"]:upward(.panel)
 opizo.me#%#//scriptlet('ubo-aeld.js', 'blur')
 ! https://github.com/uBlockOrigin/uAssets/commit/9eb324a7dff561f00b270f076a5ed31ad841ab17#commitcomment-82863816
 !#if ext_ublock
@@ -1365,21 +1476,28 @@ pichak.net##div > font > font > .menuheader
 pichak.net##center > center > center > center
 pichak.net##center:nth-of-type(2) > center
 pichak.net##body > div > font
-! ||p30konkor.com/wp-content/plugins/better-ads
-||p30konkor.com/wp-content/uploads/*/*.gif
+! https://github.com/MasterKia/PersianBlocker/issues/85
+! ||p30konkor.com/wp-content/plugins/better-adsmanager^
+||p30konkor.com/wp-content/uploads/*.gif
 p30konkor.com###header-ad1
-p30konkor.com##.vc_col-has-fill
-p30konkor.com###text-19
+p30konkor.com###p30konkor-ads-p div:has(p > a[rel]):not(:has(a[href*="p30konkor.com"]))
+p30konkor.com###p30konkor-ads-p a[rel="follow"]
+p30konkor.com##.widget:has(.h-text:has-text(لینک های پیشنهادی))
+p30konkor.com#$#.vc_col-sm-4 { width: 100% !important; }
+! !#if env_mobile
+p30konkor.com###parandeh-b2
+! !#endif
 par30dl.net##.adpar30
 par30dl.net##.adsidimg
 par30dl.net##div:has(:scope > div > div> strong:has-text(تبلیغ))
+! https://github.com/MasterKia/PersianBlocker/issues/85
 ||p30day.ir/images/tabligh
-||cdn.hostdl.com/img/p30day.gif
-p30day.ir##.adsblockpop
 p30day.ir##.ads
 p30day.ir##.banners
-p30day.ir##.nomobilebanner
+p30day.ir##.afc_popup
 p30day.ir##.textAds
+p30day.ir##.adsblockpop
+p30day.ir###kaprila_linktable
 ||parsiblog.com/adv/
 ||imencms.com/mobile/ptadv.jpg
 @@||parsiblog.com/Adv/imgs/$image,~third-party
@@ -1426,6 +1544,9 @@ pedal.ir###custom_html-108
 ||img.patoghu.com^$script
 patoghu.com##.bigtab-cont
 patoghu.com##.tabd
+! !#if env_mobile
+patoghu.com##.cntmobad
+! !#endif
 parstools.com##.widget_whmcs_ads_widget.widget
 parstools.com##.wpb_content_element.sidebar.wpb_widgetised_column
 parstools.com##.topbanners
@@ -1444,9 +1565,9 @@ par30games.net##.fixedadv:upward(3)
 par30games.net##.fixedbanner
 par30games.net##.sidebar-box-shop
 par30games.net##.ads
-!#if env_mobile
+! !#if env_mobile
 par30games.net##.mobilebanner
-!#endif
+! !#endif
 @@||par30games.net/wp-content/uploads/*/advertise-plan$image,~third-party
 ||paperhub.ir/images/*.gif
 p30world.com##.post-ads
@@ -1468,10 +1589,14 @@ forum.p30world.com#@##ad_global_above_footer
 ! >> Q <<
 ||sentry.quera.org^$all
 ! >> R <<
+rasm.io##[class^="RequireAuth_mainBox"]
+rasm.io#$#[class*="hsCode_LimitedItem"] { -webkit-filter: none !important; filter: none !important; pointer-events: auto !important; }
 ! https://github.com/MasterKia/PersianBlocker/issues/52
 ||rouydad24.ir/files/adv^
 rouydad24.ir##.tabligh-logo
+!#if !env_mobile
 rouydad24.ir#$#.container, .main { width: 95% !important; }
+!#endif
 ||rizy.ir/img/*.gif
 ||rightel.ir^$removeparam=/^utm_/
 radiojavan-iran.com##.ads.big_post
@@ -1505,6 +1630,21 @@ rastannews.ir##.all_ads
 ||rajanews.com/sites/default/files/superadmin/*.gif
 rajanews.com###block-block-22.ads
 ! >> S <<
+||sid.ir/adv^
+sid.ir###arasideadvertising
+sid.ir##.advertising
+! https://github.com/MasterKia/PersianBlocker/issues/86
+||salameno.com/rest/visit^
+||media.salameno.com/d/*.gif
+salameno.com##.ads
+salameno.com##.box:has(header:has-text(مفید))
+! https://github.com/MasterKia/PersianBlocker/issues/78
+||shmi.ir/wp-content/uploads/*gif
+shmi.ir##.ads
+shmi.ir##.left_banner
+shmi.ir##.links
+shmi.ir#$#.left_news_box > .left { width: 100% !important; }
+shmi.ir#$#.main_right_archsing > .single { width: 100% !important; }
 ! https://github.com/MasterKia/PersianBlocker/issues/73
 sharghdaily.com##.header_adv
 sharghdaily.com##.zxc
@@ -1517,8 +1657,11 @@ setare.com##.homebar a[href="https://setare.com/%d8%aa%d8%a8%d9%84%db%8c%d8%ba%d
 setare.com##.cyt-ad-content
 ||shomavaeghtesad.com/rss-rasa.php^
 shomavaeghtesad.com##.zxc
+shomavaeghtesad.com##.adv
+!#if !env_mobile
 shomavaeghtesad.com#$#.column_1 { width: 70% !important; }
 shomavaeghtesad.com#$#.column_2 { width: 30% !important; }
+!#endif
 ||sheypoor.com/js/analytics-
 shereno.com##.b_box
 shereno.com##.widget:has(.widget_title:has-text(پیوند))
@@ -1534,6 +1677,7 @@ searchline.ir#$#* { -webkit-touch-callout: default !important; -webkit-user-sele
 ||snappfood.ir/*/track^$all
 sornamusic.ir##.textwidget
 sornamusic.ir##aside:nth-of-type(5)
+! https://github.com/MasterKia/PersianBlocker/commit/b1113d568e008e898fe79226bc0c6e2dc82eaadd
 ||shomanews.com/box.php^$third-party
 ||shomanews.com/player/vastlink.js^
 ||shomanews.com/player/vast.js^
@@ -1541,6 +1685,8 @@ sornamusic.ir##aside:nth-of-type(5)
 shomanews.com##.mnb
 shomanews.com##.mauto_div
 shomanews.com##.generalBoxStyle:has-text(تبلیغات متنی)
+shomanews.com##.mt16:has(span:has-text(از دست ندهید))
+shomanews.com##.noagahi:not(:has(a[itemprop="url"]))
 shomanews.com#$#.row_one_content { width: 100% !important; }
 ||stnews.ir/ads/
 smusic.ir##.heading-ads
@@ -1549,8 +1695,7 @@ smusic.ir##.sidebar-right > div.box:nth-of-type(1)
 shirazsong.in##.no-mobile.out-container:nth-of-type(3)
 ||samatak.com/ads
 ||shop-theme.ir/code/popup
-||snn.ir/files/adv/
-||snn.ir/fa/generate/userid
+||snn.ir/files/adv^
 snn.ir##.adv_mobile
 ||sourceiran.com^$removeparam=/^utm_/
 ||sourceiran.com/wp-content/plugins/layered-popups/js/ads
@@ -1594,21 +1739,27 @@ soft98.ir,~forum.soft98.ir#%#//scriptlet('ubo-aeld.js', 'mousedown')
 soft98.ir,~forum.soft98.ir#%#//scriptlet('ubo-window-close-if.js', '/link-')
 sysban.ir#%#//scriptlet('ubo-window-close-if.js', '/telephone-service')
 smostafa.ir#%#//scriptlet('ubo-window-close-if.js', '/^/')
-||file.soft98.ir^$image,redirect=1x1-transparent.gif,domain=soft98.ir|~forum.soft98.ir
-||cdn.hostdl.com^$image,redirect=1x1-transparent.gif,domain=soft98.ir|~forum.soft98.ir
-soft98.ir,~forum.soft98.ir#$#img[src*="file.soft98.ir"] { height: 90px !important; width: 728px !important; }
-^utm_source=soft98^$removeparam=/^utm_/
-^utm_source=soft98^$all
+^utm_source=soft98^$document,popup,domain=asiatech.ir|iranicard.ir|ok-ex.io
+^utm_source=s98^$document,popup,domain=asiatech.ir|iranicard.ir|ok-ex.io
+^utm_source=c29mdDk4^$document,popup,domain=asiatech.ir|iranicard.ir|ok-ex.io
 .ir^$popup,domain=soft98.ir|~forum.soft98.ir,third-party
-||iranick0d.ir^$all
-||iranicard.ir^$all,domain=soft98.ir
-||asiatech.ir^$all,domain=soft98.ir
-||hostdl.com^$all,domain=soft98.ir
+||iranick0d.ir^$document,popup
+||iranicard.ir^$document,popup,domain=soft98.ir
+||iranicard.ir^$removeparam=/utm_source|utm_campaign|utm_content/
+||asiatech.ir^$document,popup,domain=soft98.ir
+||asiatech.ir^$removeparam=/utm_source|utm_campaign|utm_content/
+||hostdl.com^$document,popup,domain=soft98.ir
 ||cdn.hostdl.com^$removeheader=location
-||smostafa.ir^$all,domain=soft98.ir
-||sysban.ir^$all,domain=soft98.ir
-soft98.ir,~forum.soft98.ir#$?#*:has-text(@):has(a[href*="soft98.ir/user"]):not(body,html) { remove: true; }
-soft98.ir,~forum.soft98.ir#$?#*:has-text(@):has(a[href*="s98.ir/"]):not(body,html) { remove: true; }
+||ok-ex.io^$document,popup,domain=soft98.ir
+||ok-ex.io^$removeparam=/utm_source|utm_campaign|utm_content/
+||smostafa.ir^$document,popup,domain=soft98.ir
+||sysban.ir^$document,popup,domain=soft98.ir
+||iranicard.ir/خرید-اکانت-اسپاتیفای-spotify-2/?utm_medium=banner^$csp=script-src
+||asiatech.ir/tabestan1401/?utm_medium=referral^$csp=script-src
+||ok-ex.io/?utm_medium=banner^$csp=script-src
+[$path=/utm_medium=banner/]iranicard.ir#$?# html { remove: true; }
+[$path=/utm_medium=referral/]asiatech.ir#$?# html { remove: true; }
+[$path=/utm_medium=banner/]ok-ex.io#$?# html { remove: true; }
 linkdoni.soft98.ir#$?#html { remove: true; }
 !#if (adguard_ext_firefox || adguard_app_windows || adguard_app_mac || adguard_app_android)
 !#endif
@@ -1649,11 +1800,11 @@ shahrsakhtafzar.com##.ads2col
 shahrsakhtafzar.com##.flexbanneritem
 shahrsakhtafzar.com###g-top
 [$path=/^((?!\/fa\/news\/pr).)*$/]shahrsakhtafzar.com##.items-row:has(.sazitem_imgcat:has-text(رپورتاژ آگهی))
-!#if env_mobile
+! !#if env_mobile
 shahrsakhtafzar.com###logoads
 shahrsakhtafzar.com##.ads2colmobile
 shahrsakhtafzar.com##.mobile-fix-bottom
-!#endif
+! !#endif
 sakhtafzar.com#@#.ads-title
 sakhtafzar.com#@#.ads-content
 sakhtafzar.com#@#.ads_box
@@ -1721,11 +1872,11 @@ technews-iran.com#$#.col-12.col-md-8 { max-width: 100% !important; flex: 0 0 100
 ! ||api.torob.com/*/base-product/details-log-click^
 ! ^ Causes infinite loading
 torob.com##.seller-element.shop-card:has(.click_vijhe)
-!#if env_mobile
+! !#if env_mobile
 torob.com##.sellers_section:not(:has(.modal-header)) > div > div:has(.click_vijhe)
 torob.com##.sellers_section > div > div > div > div > div > div > div:has(.click_vijhe)
 torob.com##[class^="jsx-"] > [class^="jsx-"] > [class^="jsx-"] > [class^="jsx-"]:has-text(نصب شود)
-!#endif
+! !#endif
 ! https://github.com/uBlockOrigin/uAssets/issues/12411
 takmili.com#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')
 takmili.com#%#//scriptlet('ubo-set.js', 'disable_copy', 'noopFunc')
@@ -1740,8 +1891,10 @@ takmili.com#$#* { -webkit-touch-callout: default !important; -webkit-user-select
 takmili.com#$#*::selection { background-color:#338FFF!important }
 takmili.com#$?#style:has-text(wccp) { remove: true; }
 takmili.com#$?#style:has-text(user-select) { remove: true; }
+! https://github.com/MasterKia/PersianBlocker/issues/85
 techfars.com##.right-ads
 techfars.com##.left-ads
+[$path=/^((?!category/website/reportage).)*$/]techfars.com## .box:has-text(رپورتاژ آگهی)
 ||technet24.ir/wp-content/plugins/better-ads
 technet24.ir##.havdqrmf-align-right
 takblog.net###popbox-blackout
@@ -1763,14 +1916,10 @@ texahang.org##.myside.right-sidebar
 trainbit.com#%#//scriptlet('ubo-nano-stb.js', '', '', '0')
 ||tafrihi.com/wp-content/plugins/simple-ads
 ||techrato.com^$removeparam=/^utm_/
+techrato.com##[id^="widget_sp_image-"]
 techrato.com##.header-ads
-techrato.com##*[id^="widget_sp_image-"]
-! techrato.com###widget_sp_image-126
-! techrato.com###widget_sp_image-127
-! techrato.com###widget_sp_image-130
-! techrato.com###widget_sp_image-131
-! techrato.com###widget_sp_image-134
-! techrato.com###widget_sp_image-135
+techrato.com##.ads-300x250
+techrato.com##.ads-cpc-post
 tigatravel.com#%#//scriptlet('ubo-nostif.js', '/^/')
 ||tigatravel.com/set_cookie_popup.php
 tigatravel.com##.fade
@@ -1782,18 +1931,11 @@ timecity.ir##.sidebar-banners
 timecity.ir##.inner-wrapper-sticky > .mb-3
 ! https://github.com/MasterKia/PersianBlocker/pull/12
 tabnak.ir#%#//scriptlet('ubo-acis.js', 'document.write', 'renderAds')
-||tabnak.ir/files/adv
-! ||tabnak.ir/fa/ads/redirect^$all
-! tabnak.ir##[href*="/ads/redirect/"]
-! tabnak.ir##.adv_logo
+||tabnak.ir/files/adv^
 tabnak.ir##.film_box:has-text(مدرسه آنلاین)
 tabnak.ir##.stitle_box:has(.top_title:has-text(وب گردی))
 tabnak.ir##.box:has(.top_title:has-text(نیازمندیها))
 tabnak.ir###cycle_adv_tabnak
-! tabnak.ir##.home_adv_height
-! !#if env_mobile
-! tabnak.ir##.adv_header_fixed
-! !#endif
 ! https://github.com/MasterKia/PersianBlocker/issues/24
 ||tabnakjavan.com/files/adv/
 tabnakjavan.com#@#.top_adv
@@ -1862,14 +2004,16 @@ tejaratnews.com##div.widget.aside-widget:nth-of-type(5) > .section-title--dotted
 ||film.tebyan.net/files/jwplayer//vast.js
 tebyan.net##.ads
 article.tebyan.net##.AdsContainer
+! https://github.com/MasterKia/PersianBlocker/commit/ccd9af83ced447f363fd706df92df2f5d0756156#commitcomment-84036682
 ||newsmedia.tasnimnews.com/Tasnim/Uploaded/Ads/
+tasnimnews.com##.ads
 tasnimnews.com##.ad-item
 tasnimnews.com##.ads-footer
 tasnimnews.com#$#.col-md-9 { width: 100% !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88769
-||tarafdari.com/advertise
-||tarafdari.com/sites/default/files/apps/advertise
-||tarafdari.com/modules/statistics/statistics.php
+||tarafdari.com/advertise^
+||tarafdari.com/modules/statistics^
+tarafdari.com##.column-side > .block > .block-title:has-text(وبگردی):upward(.block)
 ! ||adservice.google.com/adsid/integrator.js?domain=tamasha.com
 talab.org##.Topadver
 taktemp.com##.link-ads
@@ -1890,6 +2034,8 @@ taknaz.ir##.ads120000
 tamin.ir#@#.ads2
 @@||tamin.ir/content/ads/
 ! >> U <<
+uptrack.ir##[href*="b2n.ir"]
+uptrack.ir##.aside_box:has(.aside_box_title:has-text(لینک های ویژه))
 uplod.ir##.free_ad_con
 uplod.ir##.footer-back-link
 uplod.ir##.logo_full_view
@@ -1913,12 +2059,18 @@ up44.ir#%#//scriptlet('ubo-nano-sib.js', '', '', '0')
 up44.ir##div.sideheader2:nth-of-type(3)
 up44.ir##.full2.box.right
 ||unp.ir/downloads/*/*.gif
-uploadboy.com#%#//scriptlet('ubo-nano-stb.js')
 uploadboy.com#%#//scriptlet('ubo-cookie-remover.js', 'captcha_key')
-||uploadboy.com/analytics.js
-||uploadboy.com/banner/
+uploadboy.com#%#//scriptlet('ubo-acs.js', '$', 'navigator.appVersion')
+uploadboy.com#$?#form[name="F1"] > input[id="usr_resolution"] { remove: true; }
+uploadboy.com#$?#form[name="F1"] > input[id="usr_os"] { remove: true; }
+uploadboy.com#$?#form[name="F1"] > input[id="usr_browser"] { remove: true; }
+uploadboy.com#$?#form[name="F1"] > input[name="referer"] { remove: true; }
+||uploadboy.com/analytics.js^
+||uploadboy.com/banner^
+uploadboy.com##.time_circles
 uploadboy.com##.litebox
 uploadboy.com##a[href="http://www.asiatech.ir/"]
+uploadboy.com##[id^="mediaad"]:upward(.text-center)
 ! >> V <<
 ||vipofilm.com/wp-content/plugins/adwised/assets/adwisedpop.js
 ||vipofilm.com/wp-admin/admin-ajax.php?action=adwised
@@ -1954,20 +2106,19 @@ varoone.ir##.ads120
 varoone.ir##.ads468
 ||vajehyab.com^$removeparam=/^utm_/
 ||vajehyab.com/img/ads
-||varzeshe3.com/js/ads
-||varzeshe3.com/banners/*$image
-||biz.varzesh3.com/events/view
-||news-view-api.varzesh3.com/view
-||video-view-api.varzesh3.com/play
-varzesh3.com##.adlink
-varzesh3.com##.header-ad
-varzesh3.com##.sticky-ad
+||biz-cdn.varzesh3.com/banners^
+||static.varzesh3.com/js/ads.js^
+||biz.varzesh3.com/vast^
+||biz.varzesh3.com/events/view^
+||news-view-api.varzesh3.com^$all
+||video-view-api.varzesh3.com^$all
+varzesh3.com##.left-side-ad-col
 varzesh3.com##.right-ads
-varzesh3.com##.ima-ad-container
-||video-learn.ir/code/popup
+varzesh3.com##.adbox:not(.adbar)
+||video-learn.ir/code/popup^
 video-learn.ir#@#.header-adv
-||vigiato.net/wp-content/plugins/duracelltomi-google-tag-manager/js/analytics
-||vista.ir/ads/
+||vigiato.net/wp-content/plugins/duracelltomi-google-tag-manager^
+||vista.ir/ads^
 vista.ir##[href^="/ad/"]
 vista.ir##.textad
 ! >> W <<
@@ -1976,7 +2127,7 @@ vista.ir##.textad
 wikisemnan.com###text-12
 wikisemnan.com###text-24
 wikisemnan.com#@#.ads-image
-||webii.ir/Images/Banner/
+||webii.ir/Images/Banner^
 ||webii.ir/images/loading.svg
 webii.ir###slider-box
 webii.ir##.mortabet-links
@@ -1984,9 +2135,9 @@ webii.ir##div.row:nth-of-type(2) > .col-xs-12 > .category-side-ads
 webii.ir#@#.ads-sidebar
 webii.ir#@#.ads-box
 @@||webii.ir/upload/ads/$image,~third-party
-||wikihoax.org/wp-content/plugins/eazy-ad
+||wikihoax.org/wp-content/plugins/eazy-ad-unblocker^
+||wikihoax.org/wp-content/cache/busting/1/wp-content/plugins/eazy-ad-unblocker^
 ||wikihoax.org/wp-content/uploads/*/ads
-||wikihoax.org/wp-content/cache/busting/1/wp-content/plugins/eazy-ad-unblocker/
 wikihoax.org##.two-ad-banners
 wikihoax.org##.widget-ad-image
 wikihoax.org##.stream-item-widget
@@ -1996,12 +2147,13 @@ webgoo.ir###kaprila_linktable_left
 webgoo.ir##.left-block-top
 ! >> X <<
 xip.li#%#//scriptlet('ubo-set.js', 'count', '0')
-xip.li###text:has-text(ثانیه)
 ! >> Y <<
 ! https://github.com/MasterKia/PersianBlocker/issues/36
-||yektapress.com/files/adv/
+||yektapress.com/files/adv^
+!#if !env_mobile
 yektapress.com#$#.col-2 { width: 60% !important; }
 yektapress.com#$#.no-padd-1st-child { width: 40% !important; }
+!#endif
 ||yektablog.net/js/adjs.php
 yektablog.net###popbox-blackout
 yektablog.net###box_1398
@@ -2009,7 +2161,8 @@ yektablog.net###box_1398
 !#if adguard
 yun.ir#%#//scriptlet('set-cookie-reload', 'bypasstimer', '10')
 !#endif
-||yun.ir/advertisement/
+*$subdocument,domain=yun.ir
+||yun.ir/advertisement^
 yun.ir##.advertisements
 yasdl.com##.ads-block
 yasdl.com##.top-ads
@@ -2026,9 +2179,9 @@ zibamoon.com##.AdAreaDetail
 zibamoon.com##.NewsLetterPopUp
 zibamoon.com###RelatedContentPopupArea
 zibamoon.com##[id^="BehinAva"]
-!#if env_mobile
+! !#if env_mobile
 zibamoon.com##.MobileBannerArea
-!#endif
+! !#endif
 zohur12.ir##.sideads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28759
 ! https://github.com/AdguardTeam/AdguardFilters/issues/78626
@@ -2036,18 +2189,16 @@ zohur12.ir##.sideads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110569
 ! https://github.com/MasterKia/PersianBlocker/issues/4
 zoomg.ir#%#//scriptlet('ubo-aopr.js', 'banner')
-||zoomg.ir/common/visitcount/
-||zoomg.ir/cdn-cgi/apps/head/*$script
+||zoomg.ir/common/visitcount^
 ||zoomg.ir/Themes/Zoomg.ir/Content/css/img/AD.svg
-||namava.ir/ZoomitAds/
 zoomg.ir##.wide-adv-box
 zoomg.ir##.main-top-ads
 zoomg.ir##.main-inside-ads
 zoomg.ir##.top-ads
 zoomg.ir##.afterintro
-!#if env_mobile
+! !#if env_mobile
 zoomg.ir###mobileBannerAfterTags
-!#endif
+! !#endif
 @@||cdn.zoomg.ir/banners/demo/advertise-$image,~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/78626
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79988
@@ -2061,17 +2212,17 @@ zoomit.ir##.wide-adv-row
 zoomit.ir##.wide-adv-row-home
 zoomit.ir##.bannercontainer
 zoomit.ir##.price-sticky
-!#if env_mobile
+zoomit.ir##.item-list-row:has(a[href*="/pr/"])
+! !#if env_mobile
 zoomit.ir##.InsideArticleIntro
 zoomit.ir##.article-mobile-inContent
 zoomit.ir###mobileBannerAfterTags
-!#endif
-zoomit.ir##.item-list-row:has(a[href*="/pr/"])
+! !#endif
 @@||zoomit.ir/assets/img/advertise-$image,~third-party
 zoomtech.org###top_ads
 zoomtech.org###posts_single_ads
 !-------------------------^ Site-Specific Filters ^-----------------------!
-!-------------------------v Scam Exchange/Cryptocurrency Sites v-----------------------!
+!-------------------------v Scam Sites v-----------------------!
 ! https://webamoozcom.github.io/warning-list/
 ! Discussion?
 ||excoino.com^$document
@@ -2137,18 +2288,10 @@ zoomtech.org###posts_single_ads
 ||emway.ir^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/39
 ||defigroups.com^$document
-! https://github.com/Webamoozcom/warning-list/discussions/42
-||ecompanypoll.com^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/43
 ||leumia.io^$document
-! https://github.com/Webamoozcom/warning-list/discussions/44
-||general.tradings.ir^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/45
 ||aitrades.com^$document
-! https://github.com/Webamoozcom/warning-list/discussions/46
-||ratinbank.com^$document
-! https://github.com/Webamoozcom/warning-list/discussions/47
-||coinstwf.com^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/49
 ||propertiq.io^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/50
@@ -2156,8 +2299,6 @@ zoomtech.org###posts_single_ads
 ||bixb.exchange^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/52
 ||synchrobit.io^$document
-! https://github.com/Webamoozcom/warning-list/discussions/54
-||dedino.ir^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/55
 ||imsmining.com^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/56
@@ -2177,12 +2318,8 @@ zoomtech.org###posts_single_ads
 ! https://github.com/Webamoozcom/warning-list/discussions/66
 ||kingmoney.io^$document
 ||utbyte.io^$document
-! https://github.com/Webamoozcom/warning-list/discussions/67
-||espadannet.ir^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/70
 ||quahl.com^$document
-! https://github.com/Webamoozcom/warning-list/discussions/72
-||denatoken.com^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/74
 ||gpm.ltd^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/75
@@ -2211,8 +2348,6 @@ zoomtech.org###posts_single_ads
 ||bahatoken.site^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/119
 ||shamining.com^$document
-! https://github.com/Webamoozcom/warning-list/discussions/121
-||teeth1.info^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/125
 ||t.me/BITBOD_TRADING_CLUB^$document
 ! https://github.com/Webamoozcom/warning-list/discussions/130
@@ -2227,5 +2362,7 @@ zoomtech.org###posts_single_ads
 ||usdtcan.com^$all
 ||usdtbbc.com^$all
 ||imtokenwallet.biz^$all
-!-------------------------^ Scam Exchange/Cryptocurrency Sites ^-----------------------!
+||emenshowapp.xyz^$all
+! ^ Phishing
+!-------------------------^ Scam Sites ^-----------------------!
 

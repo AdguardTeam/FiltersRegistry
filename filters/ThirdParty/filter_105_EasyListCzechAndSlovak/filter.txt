@@ -126,6 +126,7 @@
 ||rtvs.sk/bs/xml/vast.xml
 ||rtvs.sk/bs/xml/vmap.xml
 ||sector.sk/a/
+||serialy.io/theme/json/episode.ad.etarget.php
 ||ta3.com/api/v1/livebox/video/
 ||zn.sk/galeria/
 !
@@ -195,6 +196,7 @@
 ! ---------- Slovak 3rd party blocking rules ---------- !
 !
 ||ban.tipsport.sk^$third-party
+||firebasestorage.googleapis.com/v0/b/tivio-dev.appspot.com/*vast*.xml$third-party,domain=garaz.tv
 ||heureka.sk^$third-party
 ||imr.sk^$third-party
 ||inclick.sk^$third-party
@@ -208,6 +210,7 @@
 ||productads.sk^$third-party
 ||recycle-static.zoznam.sk^$third-party
 ||robene.sk^$third-party
+||turbo.web2media.sk$third-party
 ||zachej.sk^$third-party
 !
 ! ---------- Czech Whitelisted blocking rules ------------ !
@@ -459,8 +462,7 @@ super.cz##a[data-dot="hp_pozadi"]
 super.cz##a[data-dot="c_pozadi"]
 tipcars.com##.amalker
 tiscali.cz##.bbtitle
-titulky.com###bnx300x300
-titulky.com##A[onclick^="openAd"]
+titulky.com###martevax-main
 topzine.cz###vyjizdeciBoxikDiv
 tryhard.cz##[class*="sda-"]
 tv.seznam.cz##div[class^="branding-ad"]
@@ -520,6 +522,7 @@ pokec.azet.sk##.c_banner300x300
 pretaktovanie.zoznam.sk##.post.bg5
 sector.sk,kinema.sk##[id^="back"][onclick]
 sector.sk##iframe[data-src^="/default-ad"]
+serialy.io##div[id][style="position: absolute; top: 0; left: 0; width: 100%; height: 380px; text-align: center;"]
 sktorrent.eu##div[style*="position:absolute;"]
 topky.sk###top-offers-slider
 topky.sk##.ad
@@ -528,6 +531,7 @@ topky.sk##.box_advertisment.addbox.recycle
 topky.sk##.nastip
 topky.sk##.takeoverKlik
 touchit.sk##.gate-advert-wrap
+tvtv.sk##.ad
 tv-program.sk##.dragobj > div:nth-of-type(2)
 tv-program.sk##.stn.stns > a[target="_blank"]
 tv-program.sk##.stn.stnu > a[target="_blank"]
@@ -541,6 +545,7 @@ csfd.cz#?#.ct-related:-abp-contains(/^\s+Reklama/)
 doktorka.cz#?#.block-imageblock:-abp-contains(Reklama)
 dotekomanie.cz#?#div.box:-abp-contains(/^reklama/i)
 lupa.cz,root.cz#?#div.article--content:-abp-has(div.design-advert)
+tvtv.sk#?#.content-item:-abp-has(.header a[href^="/reklama/"])
 !
 ! ---------- uBlock Extended filters ---------- !
 !
@@ -549,6 +554,7 @@ lupa.cz,root.cz#?#div.article--content:-abp-has(div.design-advert)
 cc.cz#%#//scriptlet('ubo-aopr.js', 'App.branding')
 cdr.cz,diit.cz#$#body { background-image: none !important; padding-top: 0 !important; }
 csfd.cz,csfd.sk#$#div.body { padding-top: 0 !important; }
+csfd.cz,csfd.sk#%#//scriptlet('ubo-acis.js', '$', 'Ads')
 ctrlv.link#%#//scriptlet('ubo-aopr.js', 'adsAllowed')
 drbna.cz#%#//scriptlet('ubo-acis.js', '$', 'fancyBanner')
 ||echo24.cz^$csp=child-src *
@@ -584,10 +590,7 @@ search.seznam.cz,clanky.seznam.cz##div[data-e-b-n*="advert"]
 sreality.cz#%#//scriptlet('ubo-nosiif.js', 'checkRods')
 super.cz#%#//scriptlet('ubo-ra.js', 'style', 'body')
 svetandroida.cz#%#//scriptlet('ubo-aopr.js', 'detectAdBlocker')
-titulky.com#%#//scriptlet('ubo-ra.js', 'style', 'div[id^="head"]')
-titulky.com#%#//scriptlet('ubo-set.js', 'showBanner600', 'true')
-titulky.com#%#//scriptlet('ubo-aeld.js', 'load')
-titulky.com#%#//scriptlet('ubo-aopr.js', 'onload')
+titulky.com#%#//scriptlet('ubo-set.js', 'showBanner700', 'true')
 tn.nova.cz#%#//scriptlet('ubo-set.js', 'useSeznamAds', 'false')
 ||trackad.cz/adtrack.php$domain=nova.cz,script,redirect=noopjs
 uloz.to#$#div.l-wrapper { padding-top: 0px !important; }
