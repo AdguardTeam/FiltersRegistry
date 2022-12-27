@@ -317,8 +317,6 @@ module.exports = {
                 ":nth-ancestor\\(",
                 ":upward\\(",
                 ":remove\\(",
-                ":is\\(",
-                ":not\\(",
                 ":matches-css-before\\(",
                 ":matches-css-after\\(",
                 ":-abp-has\\(",
