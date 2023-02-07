@@ -64,7 +64,7 @@ We may add third-party filters to AdGuard Filters Registry. When making a decisi
       "name": "AdGuard Base filter",
       "description": "EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.",
       "timeAdded": 1404115015843,
-      "homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/#adguard-filters",
+      "homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
       "expires": "4 days",
       "displayNumber": 1,
       "groupId": 1,
