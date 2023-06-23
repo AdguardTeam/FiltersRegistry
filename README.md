@@ -135,6 +135,37 @@ For each filter, AdGuard compiles two versions: full and optimized. Optimized ve
 
 `custom_platforms.js` customizes the way filters are compiled for certain platforms. We should use it if we need to
 temporary change rules for a platform. In all other cases, we should prefer the default configuration.
+Below is a example of the configuration for the platform `AdGuard for Chrome` with comments:
+```javascript
+    "EXTENSION_CHROMIUM": {
+        "platform": "ext_chromium", // Defines the platform for which the settings are specified.
+        "path": "extension/chromium", // Defines the path that can be used to access the settings or resources associated with this platform.
+        "configuration": {
+            "removeRulePatterns": [ // Sets an array of regular expressions that will be used to remove certain rules.
+                "^((?!#%#).)*\\$\\$|\\$\\@\\$",
+                "\\$(.*,)?replace=",
+                "important,replace=",
+                "\\$(.*,)?app",
+                "\\$network",
+                "\\$protobuf",
+                "important,protobuf",
+                "\\$extension",
+                ",extension"
+            ],
+            "replacements": [ // Sets an array of objects that will be used to replace certain values.
+                {
+                    "from": ":has\\(",
+                    "to": ":-abp-has("
+                }
+            ],
+            "ignoreRuleHints": false // Specifies whether to ignore hints for rules. A value of "false" means that hints will not be ignored.
+        },
+        "defines": {
+            "adguard": true,
+            "adguard_ext_chromium": true
+        }
+    },
+```
 
 ## Filters localization
 
