@@ -138,10 +138,13 @@ temporary change rules for a platform. In all other cases, we should prefer the 
 Below is a example of the configuration for the platform `AdGuard for Chrome` with comments:
 ```javascript
     "EXTENSION_CHROMIUM": {
-        "platform": "ext_chromium", // Defines the platform for which the settings are specified.
-        "path": "extension/chromium", // Defines the path that can be used to access the settings or resources associated with this platform.
+        // Defines the platform for which the settings are specified.
+        "platform": "ext_chromium",
+        // Defines the path that can be used to access the settings or resources associated with this platform.
+        "path": "extension/chromium",
         "configuration": {
-            "removeRulePatterns": [ // Sets an array of regular expressions that will be used to remove certain rules.
+            // Sets an array of regular expressions that will be used to remove certain rules.
+            "removeRulePatterns": [
                 "^((?!#%#).)*\\$\\$|\\$\\@\\$",
                 "\\$(.*,)?replace=",
                 "important,replace=",
@@ -152,13 +155,15 @@ Below is a example of the configuration for the platform `AdGuard for Chrome` wi
                 "\\$extension",
                 ",extension"
             ],
-            "replacements": [ // Sets an array of objects that will be used to replace certain values.
+            // Sets an array of objects that will be used to replace certain values.
+            "replacements": [ 
                 {
                     "from": ":has\\(",
                     "to": ":-abp-has("
                 }
             ],
-            "ignoreRuleHints": false // Specifies whether to ignore hints for rules. A value of "false" means that hints will not be ignored.
+            // Specifies whether to ignore hints for rules. A value of "false" means that hints will not be ignored.
+            "ignoreRuleHints": false
         },
         "defines": {
             "adguard": true,
