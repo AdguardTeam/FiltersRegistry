@@ -156,7 +156,7 @@ Below is a example of the configuration for the platform `AdGuard for Chrome` wi
                 ",extension"
             ],
             // Sets an array of objects that will be used to replace certain values.
-            "replacements": [ 
+            "replacements": [
                 {
                     "from": ":has\\(",
                     "to": ":-abp-has("
@@ -181,11 +181,11 @@ Please learn more about translating our products: https://adguard.com/kb/miscell
 ## <a id="templates"></a> Filters templates
 `@include` directive allows to include the content of specified file into the filter.
 
-If you want to add a filter and keep all its rules during optimization, use the `/notOptimized` parameter.
+More information about the `@include` directive and its options can be found here: https://github.com/AdguardTeam/FiltersCompiler/#include-directive.
 
 Example:
 ```
-@include "https://example.org/test-filter.txt" /notOptimized
+@include "https://example.org/test-filter.txt" /notOptimized /addModifiers="script" /exclude="../exclusions.txt" /stripComments
 ```
 
 ## How to build
