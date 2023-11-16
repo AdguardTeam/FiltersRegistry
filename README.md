@@ -183,11 +183,6 @@ Please learn more about translating our products: https://adguard.com/kb/miscell
 
 More information about the `@include` directive and its options can be found here: https://github.com/AdguardTeam/FiltersCompiler/#include-directive.
 
-Example:
-```
-@include "https://example.org/test-filter.txt" /notOptimized /addModifiers="script" /exclude="../exclusions.txt" /stripComments
-```
-
 ## How to build
 
 ```
