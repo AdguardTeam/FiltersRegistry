@@ -707,6 +707,8 @@ module.exports = {
                 ...REFERRERPOLICY_MODIFIER_PATTERNS,
                 ...HLS_MODIFIER_PATTERNS,
                 ...JSONPRUNE_MODIFIER_PATTERNS,
+                ...JSINJECT_MODIFIER_PATTERNS,
+                ...URLBLOCK_MODIFIER_PATTERNS,
             ],
             "ignoreRuleHints": false
         },
