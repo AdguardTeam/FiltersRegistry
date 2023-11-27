@@ -19,6 +19,10 @@ git add old_platforms
 git commit -m "skip ci. old patches and filters from $(date)"
 git push --force origin old-platforms
 
+# Clean old filters
+git reset origin/master
+rm -rf old_platforms/
+
 # Push updated filter lists to the repo.
 git status
 git add .
