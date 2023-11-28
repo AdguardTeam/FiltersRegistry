@@ -7,15 +7,14 @@ let blacklist = [];
 let args = process.argv.slice(2);
 args.forEach(function (val) {
     if (val.startsWith('-i=')) {
-        whitelist = whitelist.concat(val.substr(3).split(',').map(x => Number.parseInt(x)));
+        whitelist = whitelist.concat(val.slice(3).split(',').map(x => Number.parseInt(x)));
     }
 
     if (val.startsWith('-s=')) {
-        blacklist = blacklist.concat(val.substr(3).split(',').map(x => Number.parseInt(x)));
+        blacklist = blacklist.concat(val.slice(3).split(',').map(x => Number.parseInt(x)));
     }
 });
 
-const fs = require('fs');
 const path = require('path');
 const compiler = require("adguard-filters-compiler");
 
