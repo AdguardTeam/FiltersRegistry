@@ -1,7 +1,7 @@
 set -x -e
 
 # Copy old version of filters
-git cherry-pick old-platforms
+git checkout old-platforms -- old_platforms
 
 FOLDER_WITH_NEW_FILTERS="platforms"
 FOLDER_WITH_OLD_FILTERS="old_platforms"
@@ -27,4 +27,3 @@ for new_filter in "$FOLDER_WITH_NEW_FILTERS"/**/filters/*.txt; do
         $($DIFF_BUILDER build $old_filter $new_filter $path_to_patches -n $basename -r h -t 1)
     fi
 done
-
