@@ -11,7 +11,8 @@ DIFF_BUILDER=node_modules/@adguard/diff-builder/dist/diff-builder
 chmod +x "$DIFF_BUILDER"
 
 # Iterate over all *.txt files
-for new_filter in "$FOLDER_WITH_NEW_FILTERS"/**/filters/*.txt; do
+all_filters=$(find "$FOLDER_WITH_NEW_FILTERS" -type f -name "*.txt")
+for new_filter in $all_filters; do
     # Check if file exists
     if [ -e "$new_filter" ]; then
         path_to_file=$(echo "$new_filter" | sed 's/^[^/]*\///')
