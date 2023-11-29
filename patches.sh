@@ -10,8 +10,8 @@ FOLDER_WITH_OLD_FILTERS="old_platforms"
 DIFF_BUILDER=node_modules/@adguard/diff-builder/dist/diff-builder
 chmod +x "$DIFF_BUILDER"
 
-# Iterate over all *.txt files
-all_filters=$(find "$FOLDER_WITH_NEW_FILTERS" -type f -name "*.txt")
+# Iterate over all *.txt files in all 'filters/' folders inside $FOLDER_WITH_NEW_FILTERS
+all_filters=$(find $FOLDER_WITH_NEW_FILTERS/**/filters -type f -name "*.txt")
 for new_filter in $all_filters; do
     # Check if file exists
     if [ -e "$new_filter" ]; then
@@ -20,7 +20,7 @@ for new_filter in $all_filters; do
 
         dirname=$(dirname "$new_filter")
         basename=$(basename "$new_filter" .txt)
-        parent_dir=$(echo "$dirname" | cut -d'/' -f1-2)
+        parent_dir=$(dirname "$dirname")
 
         path_to_patches="$parent_dir/patches/$basename"
 
