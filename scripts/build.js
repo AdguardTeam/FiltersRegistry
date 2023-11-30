@@ -10,16 +10,13 @@ let blacklist = [];
 const args = process.argv.slice(2);
 args.forEach((val) => {
     if (val.startsWith('-i=')) {
-        whitelist = whitelist.concat(val.slice(3).split(',').map(x => Number.parseInt(x, 10)));
+        whitelist = whitelist.concat(val.slice(3).split(',').map((x) => Number.parseInt(x, 10)));
     }
 
     if (val.startsWith('-s=')) {
-        blacklist = blacklist.concat(val.slice(3).split(',').map(x => Number.parseInt(x, 10)));
+        blacklist = blacklist.concat(val.slice(3).split(',').map((x) => Number.parseInt(x, 10)));
     }
 });
-
-const path = require('path');
-const compiler = require("adguard-filters-compiler");
 
 const filtersDir = path.join(__dirname, './filters');
 const logPath = path.join(__dirname, './log.txt');
