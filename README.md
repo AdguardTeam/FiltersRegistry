@@ -194,12 +194,12 @@ yarn install
 
 Build filters and patches:
 ```
-yarn build
+yarn build && yarn build:patches
 ```
 
 Build with white/black lists:
 ```
-yarn build -- -i=1,2,3 -s=4,5,6
+yarn build -i=1,2,3 -s=4,5,6 && yarn build:patches
 ```
 
 Validate `filters.json` and `filters_i18n.json` for platforms:
