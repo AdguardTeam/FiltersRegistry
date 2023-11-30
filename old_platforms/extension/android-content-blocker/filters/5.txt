@@ -1,0 +1,269 @@
+! Checksum: H4Dik0AtYM+0XGC/uSIk8w
+! Title: AdGuard Experimental filter
+! Description: Filter designed to test certain hazardous filtering rules before they are added to the basic filters.
+! Version: 2.0.1.24
+! TimeUpdated: 2023-10-25T18:31:55+03:00
+! Expires: 4 days (update frequency)
+! Homepage: https://github.com/AdguardTeam/AdGuardFilters
+! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
+!
+!-------------------------------------------------------------------!
+!------------------ General JS API ---------------------------------!
+!-------------------------------------------------------------------!
+! JS API START
+!
+! AG_removeCookie
+! Examples: AG_removeCookie('/REGEX/') or AG_removeCookie('part of the cookie name')
+!
+!
+! AG_defineProperty
+! See https://github.com/AdguardTeam/deep-override
+!
+!
+! AG_abortOnPropertyWrite(property, debug)
+! Aborts execution of a script when it attempts to write the specified property.
+! Based on AG_defineProperty (https://github.com/AdguardTeam/deep-override)
+!
+! Examples:
+! AG_abortOnPropertyWrite('String.fromCharCode');
+!
+! @param property property or properties chain
+! @param debug optional, if true - we will print warning when script is aborted.
+!
+!
+! AG_abortOnPropertyRead(property, debug)
+! Aborts execution of a script when it attempts to read the specified property.
+! Based on AG_defineProperty (https://github.com/AdguardTeam/deep-override)
+!
+! Examples:
+! AG_abortOnPropertyRead('String.fromCharCode');
+!
+! @param property property or properties chain
+! @param debug optional, if true - we will print warning when script is aborted.
+!
+!
+! AG_abortInlineScript(regex, property, debug)
+! Aborts execution of an inline script when it attempts to access the specified property
+! AND content of the <script> element matches specified regular expression.
+! Based on AG_defineProperty (https://github.com/AdguardTeam/deep-override)
+!
+! Examples:
+! AG_abortInlineScript(/zfgloadedpopup|zfgloadedpushopt/, 'String.fromCharCode');
+!
+! @param regex regular expression that the inline script contents must match
+! @param property property or properties chain
+! @param debug optional, if true - we will print warning when script is aborted.
+!
+!
+! AG_setConstant('property.chain', 'true') // defines boolean (true), same for false;
+! AG_setConstant('property.chain', '123') // defines Number 123;
+! AG_setConstant('property.chain', 'noopFunc') // defines function(){};
+! AG_setConstant('property.chain', 'trueFunc') // defines function(){return true};
+! AG_setConstant('property.chain', 'falseFunc') // defines function(){return false};
+!
+! JS API FINISH
+!-------------------------------------------------------------------!
+!------- Experimental rules for English filter ---------------------!
+!-------------------------------------------------------------------!
+!
+! Advertising networks known rotator domains
+!
+! This section contains the list of rules blocking requests
+! to known rotator domains of the advertising networks.
+! For example, "*.doubleclick.net" are rotator domains
+! of Doubleclick ad network.
+!
+! Do not mix it up with direct adverts domains.
+! Read about it in direct_adverts.txt
+!
+!
+! Direct adverts
+!
+! Contains rules which are blocking URLs to direct adverts.
+! What do we mean by direct adverts - it is all kind of advertisers
+! who are not ad networks.
+!
+! For example, rules that block referral links.
+!
+!
+! URL blocking rules unsorted list
+! http://adguard.com/filterrules.html#baseRules
+!
+! Add basic rule here if it cannot be added to
+! direct_adverts.txt or advertising_networks.txt.
+! For example rules like "http://example.com/banner.png"
+! blocking specific URL should be added to this section.
+!
+!
+! Common CSS rules
+!
+! This section contains CSS rules without domain restrictions.
+! Be cautious and add rules here even if you are sure that this
+! rule could be used for more than one web site.
+!
+!
+! Common HTML rules
+! http://adguard.com/filterrules.html#htmlContentFilter
+!
+! This section contains the list of common HTML rules
+! without domain restrictions.
+! Be aware that rules added to this section cannot be used
+! by Adguard extensions.
+! We advise you to stick to CSS/Javascript/URL rule types
+! and use HTML rules if there is no other way only.
+!
+!
+! Common javascript rules
+! http://adguard.com/filterrules.html#javascriptInjection
+!
+! Javascript rules which are not restricted to specific domains.
+! Be VERY cautious with this type of rules.
+!
+!
+! YouTube ads (for old and new ads)
+! youtube.com - white screen with skip button
+! I am not sure why we need this, commented out
+! !#if (!adguard_app_ios && !adguard_ext_android_cb)
+! @@||youtube.com/get_video_info
+! !#endif
+!
+! Rules that are restricted to one or more domains.
+! This section contain any type of rule grouped by domain.
+!
+! vipbox.lc - streaming provider - blocking popunders specific to that page
+/[a-z]{8,}\.(com|info|xyz)/$domain=nolive.me,third-party
+! main youtube page - changing view for the first row of elements
+! https://github.com/AdguardTeam/AdguardFilters/issues/96262
+developer.android.com,adssettings.google.com##sc-survey-survey-manager
+!
+!
+! Allowlist
+! http://adguard.com/filterrules.html#exclusionRules
+! http://adguard.com/filterrules.html#hideRulesExceptions
+! http://adguard.com/filterrules.html#cssInjectionExceptions
+! http://adguard.com/filterrules.html#javascriptInjectionExceptions
+!
+! This section contains all kinds of exception rules.
+!
+!-------------------------------------------------------------------!
+!------- Experimental rules for Spyware filter ---------------------!
+!-------------------------------------------------------------------!
+!
+! This file contains all experimental rules for Spyware filter.
+!
+!-------------------------------------------------------------------!
+!------- Experimental rules for Social filter ----------------------!
+!-------------------------------------------------------------------!
+!
+! This file contains all experimental rules for Social filter.
+!
+!-------------------------------------------------------------------!
+!------- Experimental rules for Russian filter ---------------------!
+!-------------------------------------------------------------------!
+!
+! Advertising networks known rotator domains
+!
+! This section contains the list of rules blocking requests
+! to known rotator domains of the advertising networks.
+! For example, "*.doubleclick.net" are rotator domains
+! of Doubleclick ad network.
+!
+! Do not mix it up with direct adverts domains.
+! Read about it in direct_adverts.txt
+!
+!
+!
+! Direct adverts
+!
+! Contains rules which are blocking URLs to direct adverts.
+! What do we mean by direct adverts - it is all kind of advertisers
+! who are not ad networks.
+!
+! For example, rules that block referral links.
+!
+!
+! URL blocking rules unsorted list
+! http://adguard.com/filterrules.html#baseRules
+!
+! Add basic rule here if it cannot be added to
+! direct_adverts.txt or advertising_networks.txt.
+! For example rules like "http://example.com/banner.png"
+! blocking specific URL should be added to this section.
+!
+!
+! Common CSS rules
+! http://adguard.com/filterrules.html#hideRules
+! http://adguard.com/filterrules.html#cssInjection
+!
+! This section contains CSS rules without domain restrictions.
+! Be cautious and add rules here even if you are sure that this
+! rule could be used for more than one web site.
+!
+!
+! Common HTML rules
+! http://adguard.com/filterrules.html#htmlContentFilter
+!
+! This section contains the list of common HTML rules
+! without domain restrictions.
+! Be aware that rules added to this section cannot be used
+! by Adguard extensions.
+! We advise you to stick to CSS/Javascript/URL rule types
+! and use HTML rules if there is no other way only.
+!
+!
+! Common javascript rules
+! http://adguard.com/filterrules.html#javascriptInjection
+!
+! Javascript rules which are not restricted to specific domains.
+! Be VERY cautious with this type of rules.
+!
+!
+! Rules which are restricted to one or more domains.
+! This section contain any type of rule grouped by domain.
+!
+!
+! Allowlist
+!
+! This section contains all kinds of exception rules.
+!
+!-------------------------------------------------------------------!
+!------- Experimental rules for Other filters ----------------------!
+!-------------------------------------------------------------------!
+!
+! This file contains all filters other than English, Social, Spyware and Russian.
+! Also filters by platforms https://github.com/AdguardTeam/AdguardBrowserExtension/issues/917
+!
+!
+!
+! Filters for adguard without safari
+||chrome.test.filter.com^$third-party
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/142875
+!
+! Special rules for AdGuard websites' test pages. The only purpose of these
+! rules is to make test pages work so that users could verify that AdGuard
+! is properly working.
+!
+!+ NOT_OPTIMIZED
+adguard.info,adguard.com,adguard.app##.hello_from_adguard_experimental
+!
+!-------------------------------------------------------------------!
+!------- Experimental rules for Mobile ads filter-------------------!
+!-------------------------------------------------------------------!
+!
+! Mobile advertising networks known rotator domains
+! Used to show ads in mobile apps and websites
+!
+!-------------------------------------------------------------------!
+!---------------------- Dangerous rules ----------------------------!
+!-------------------------------------------------------------------!
+!#######################################################
+!######### The list of dangerous rules #################
+!#######################################################
+!
+!################## For advertisement ##################
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/64754
+!
+!################## For tracking ##################
+||uim.tifbs.net/js/2048.js
