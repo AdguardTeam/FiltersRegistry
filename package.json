@@ -3,12 +3,9 @@
   "version": "1.1.0",
   "description": "AdGuard filters registry",
   "homepage": "https://adguard.com",
-  "dependencies": {
-    "adguard-filters-compiler": "git+https://github.com/AdguardTeam/FiltersCompiler.git#v1.1.115",
-    "@adguard/diff-builder": "/Volumes/dev/diff-builder/package"
-  },
   "main": "scripts/build.js",
   "scripts": {
+    "lint": "eslint . --cache --ext .js",
     "build": "node scripts/build.js && bash scripts/patches.sh && bash scripts/save_old_platforms.sh && bash scripts/push_platforms.sh",
     "validate": "yarn validate:platforms && validate:locales",
     "validate:platforms": "node scripts/validate-platforms.js",
@@ -16,5 +13,14 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "adguard-filters-compiler": "git+https://github.com/AdguardTeam/FiltersCompiler.git#v1.1.115",
+    "@adguard/diff-builder": "/Volumes/dev/diff-builder/package"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0"
   }
 }

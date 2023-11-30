@@ -7097,8 +7097,9 @@ mail.ru##div[class*="rb-slot_plug"]
 mail.ru,sportmail.ru##div[class*="m-fixed-panel__box"]
 mail.ru,sportmail.ru,~my.mail.ru,~touch.mail.ru#%#//scriptlet('set-constant', 'Object.prototype.mimic', 'null')
 ! ad on main page
-[$path=/^\/$|mail\.ru\/\?/]mail.ru#%#//scriptlet('set-constant', 'Object.prototype.MimicTgb', 'undefined')
+[$path=/^\/$|mail\.ru\/\?/]mail.ru#%#//scriptlet('set-constant', 'Object.prototype.encrypt', 'undefined')
 [$path=/^\/$|mail\.ru\/\?/]mail.ru#?#div:has(> a.traffic-widget) + div
+[$path=/^\/$|mail\.ru\/\?/]mail.ru##div[slot="main-column"] > div.tgb-wrapper
 ! kino.mail.ru
 kino.mail.ru##.block_ad-text
 kino.mail.ru##button[class*="adv-marker"]
@@ -7567,6 +7568,8 @@ disk.yandex.*##.direct
 ||docviewer.yandex.*/sw.js
 !
 ! Yandex.Docs
+docviewer.yandex.*#%#//scriptlet('json-prune', 'seatbid rtbAuctionInfo')
+docviewer.yandex.*##.js-doc-html > div[class^="pages_"] > div[class*=" "]:empty
 docviewer.yandex.*##div[class^="pages_"] > div > div[style="width: 100%;"]
 !
 ! Yandex.Mail
@@ -9840,6 +9843,9 @@ kadrovik01.com.ua,kom-dir.ru,gd.ru,buhsoft.ru,dirklinik.ru,fd.ru,business.ru,pro
 !
 !
 !
+rg.ru##div[class*="_spiegelWrapper_"]
+rg.ru##div[class^="NewsFeedList_list"] > div[class^="NewsFeedList_item"] + div[class]:has(div[id][class*="index"])
+spletnik.ru##.z-ad
 vz.ru##section[class^="ad_"]
 gastronom.ru##div[class^="_headerAd"]
 ||mover.uz/*/serving/fc.php?*zones=pre-roll
@@ -18119,7 +18125,6 @@ blackhacker.ru##img[width="410"][height="60"]
 money-pic.ru,pixcloud.ru,sharezones.biz##img[width="468"][height="60"]
 imagefile.org##img[width="468px"]
 yarportal.ru##img[width="480"][height="100"]
-turbobit.net##img[width="600"][height="80"]
 7days-ua.com##img[width="600px"][height="100px"]
 pravdu.ru##img[width="680"][height="140"]
 torrent-pirat.com##img[width="700"][height="90"]
@@ -21412,8 +21417,6 @@ player.ex.co#@##ad-container
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
-! https://github.com/AdguardTeam/AdGuardExtra/issues/476#issuecomment-1832100757
-@@||mail.ru^$extension
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166369
 ddl-warez.cc#@#.affiliate
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162363

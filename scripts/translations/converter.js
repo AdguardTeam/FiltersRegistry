@@ -1,15 +1,13 @@
-/* globals require, __dirname */
-
 /**
- * Converts to/from oneskyapp format
+ * Converts to/from crowdin format
  *
  * @type {{importFile, exportFile}}
  */
 const converter = (() => {
     'use strict';
 
+    // eslint-disable-next-line global-require
     const fs = require('fs');
-    const path = require('path');
 
     /**
      * Reads file to string
@@ -17,7 +15,7 @@ const converter = (() => {
      */
     const readFile = (path) => {
         try {
-            return fs.readFileSync(path, {encoding: 'utf-8'});
+            return fs.readFileSync(path, { encoding: 'utf-8' });
         } catch (e) {
             return null;
         }
@@ -39,16 +37,16 @@ const converter = (() => {
      * @returns {{id: *, message: *}}
      */
     const parseInfo = (string, mask) => {
-        let searchIndex = string.indexOf(mask) + mask.length;
+        const searchIndex = string.indexOf(mask) + mask.length;
 
         return {
             id: string.substring(searchIndex, string.indexOf('.', searchIndex)),
-            message: string.substring(string.lastIndexOf('.') + 1)
+            message: string.substring(string.lastIndexOf('.') + 1),
         };
     };
 
     /**
-     * Converts file from oneskyapp format
+     * Converts file from crowdin format
      *
      * @param locale
      * @param file
@@ -56,10 +54,12 @@ const converter = (() => {
      * @param mask
      */
     const importFile = (locale, file, outFile, mask) => {
-        console.log('Importing file for locale: ' + locale);
+        // eslint-disable-next-line no-console
+        console.log(`Importing file for locale: ${locale}`);
 
         const source = readFile(file);
         if (!source) {
+            // eslint-disable-next-line no-console
             console.warn('File is empty');
             return;
         }
@@ -67,7 +67,8 @@ const converter = (() => {
         const json = JSON.parse(source);
 
         const map = new Map();
-        for (let p in json) {
+        // eslint-disable-next-line no-restricted-syntax, guard-for-in
+        for (const p in json) {
             const info = parseInfo(p, mask);
             let item = map.get(info.id);
             if (!item) {
@@ -80,9 +81,10 @@ const converter = (() => {
         }
 
         const result = [];
-        map.forEach(function (value, key) {
+        map.forEach((value, key) => {
             const o = {};
-            for (let p in value) {
+            // eslint-disable-next-line no-restricted-syntax, guard-for-in
+            for (const p in value) {
                 o[`${mask}${key}.${p}`] = value[p].replace(/\n/g, '');
             }
             result.push(o);
@@ -90,27 +92,30 @@ const converter = (() => {
 
         writeFile(outFile, JSON.stringify(result, null, '\t'));
 
-        console.log('Importing file for locale: ' + locale + ' ok!');
+        // eslint-disable-next-line no-console
+        console.log(`Importing file for locale: ${locale} ok!`);
     };
 
     /**
-     * Converts file to oneskyapp format
+     * Converts file to crowdin format
      *
      * @param locale
      * @param file
      * @param outFile
      */
     const exportFile = (locale, file, outFile) => {
-        console.log('Exporting for locale: ' + locale);
+        // eslint-disable-next-line no-console
+        console.log(`Exporting for locale: ${locale}`);
 
         const source = readFile(file);
         const json = JSON.parse(source);
 
         const result = {};
-        json.forEach(function (o) {
-            for (let p in o) {
+        json.forEach((o) => {
+            // eslint-disable-next-line no-restricted-syntax, guard-for-in
+            for (const p in o) {
                 result[p] = {
-                    message: o[p]
+                    message: o[p],
                 };
             }
         });
@@ -119,8 +124,8 @@ const converter = (() => {
     };
 
     return {
-        importFile: importFile,
-        exportFile: exportFile
+        importFile,
+        exportFile,
     };
 })();
 
@@ -138,5 +143,3 @@ if (action === 'import') {
 } else if (action === 'export') {
     converter.exportFile(locale, path.join(__dirname, file), path.join(__dirname, out));
 }
-
-

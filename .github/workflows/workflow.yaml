@@ -23,9 +23,12 @@ jobs:
       - name: Install dependencies
         run: yarn install --network-concurrency 1
 
+      - name: Lint code
+        # TODO: add a separate workflow for linting
+        run: yarn lint
+
       - name: Build filters and patches
-        run: |
-          TLS=insecure yarn build
+        run: TLS=insecure yarn build
 
       - name: Validate platforms and locales
         run: |
