@@ -14,16 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js
+
+      - name: Setup node@18
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
 
-      - name: yarn install
+      - name: Install dependencies
         run: yarn install --network-concurrency 1
 
-      - name: node
+      - name: Build filters and patches
         run: |
-          TLS=insecure node index.js
-          node validate.js
-          node validate-locales.js
+          TLS=insecure yarn build
+
+      - name: Validate platforms and locales
+        run: |
+          yarn validate:platforms
+          yarn validate:locales

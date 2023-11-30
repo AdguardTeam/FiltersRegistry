@@ -129,11 +129,11 @@ Possible tags:
 
 For each filter, AdGuard compiles two versions: full and optimized. Optimized version is much more lightweight and does not contain rules which are not used at all or used rarely. Rules usage frequency comes from the collected [filter rules statistics](https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics/) (thanks to the volunteers who enabled it in their AdGuard).
 
-* `optimization_config.json` - defines the target for the optimization process. AdGuard will try to compress the lists by removing the most rarely used rules until the compression goal (defined in percents) is met.
+* `script/optimization_config.json` - defines the target for the optimization process. AdGuard will try to compress the lists by removing the most rarely used rules until the compression goal (defined in percents) is met.
 
 ## Filters compiler customization
 
-`custom_platforms.js` customizes the way filters are compiled for certain platforms. We should use it if we need to
+`script/custom_platforms.js` customizes the way filters are compiled for certain platforms. We should use it if we need to
 temporary change rules for a platform. In all other cases, we should prefer the default configuration.
 Below is a example of the configuration for the platform `AdGuard for Chrome` with comments:
 
@@ -192,26 +192,26 @@ More information about the `@include` directive and its options can be found her
 yarn install
 ```
 
-Run the following command:
+Build filters and patches:
 ```
-node index.js
+yarn build
 ```
 
 Build with white/black lists:
 ```
-node index.js -i=1,2,3 -s=4,5,6
+yarn build -- -i=1,2,3 -s=4,5,6
 ```
 
 Validate `filters.json` and `filters_i18n.json` for platforms:
 ```
-node validate ./platforms
+yarn validate:platforms ./platforms
 ```
 
 > For AdGuard filters **all locales** are required, it means 100% translated.
 
 Validate locales:
 ```
-yarn locales:validate
+yarn validate:locales
 ```
 
 > For third-party filters only `REQUIRED_LOCALES` should be 100% done.

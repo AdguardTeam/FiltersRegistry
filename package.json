@@ -1,15 +1,18 @@
 {
   "name": "adguard-filters",
-  "version": "1.0.55",
+  "version": "1.1.0",
   "description": "AdGuard filters registry",
   "homepage": "https://adguard.com",
   "dependencies": {
     "adguard-filters-compiler": "git+https://github.com/AdguardTeam/FiltersCompiler.git#v1.1.115",
     "@adguard/diff-builder": "/Volumes/dev/diff-builder/package"
   },
-  "main": "index.js",
+  "main": "scripts/build.js",
   "scripts": {
-    "locales:validate": "node validate-locales.js"
+    "build": "node scripts/build.js && bash scripts/patches.sh && bash scripts/save_old_platforms.sh && bash scripts/push_platforms.sh",
+    "validate": "yarn validate:platforms && validate:locales",
+    "validate:platforms": "node scripts/validate-platforms.js",
+    "validate:locales": "node scripts/validate-locales.js"
   },
   "engines": {
     "node": ">=18"

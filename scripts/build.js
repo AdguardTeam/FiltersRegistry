@@ -1,5 +1,5 @@
 /* globals require, __dirname, process */
-const { formatDate } = require('./utils/strings');
+const { formatDate } = require('./utils/strings.js');
 
 let whitelist = [];
 let blacklist = [];
