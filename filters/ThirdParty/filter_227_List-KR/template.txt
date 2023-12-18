@@ -1,4 +1,3 @@
 !
 @include "https://raw.githubusercontent.com/List-KR/List-KR/master/filter-AdGuard.txt" /exclude="../../exclusions.txt"
-! Javascript rules
-tv.nate.com#%#AG_onLoad(() => { var BuildObs, PlayerObs; let PlayerCall = (mutationList, observer) => { mutationList.forEach((e) => { if (Array.from(e.target.classList).some((e) => { return e === "ntv-ad-playing" })) { player.trigger("adended"); PlayerObs.disconnect() }})}; let BuildCall = (mutationList, observer) => { mutationList.forEach((e) => { Array.from(e.addedNodes).filter((o) => { return o.id === "natePlayer" }).forEach((k) => { PlayerObs = new MutationObserver(PlayerCall); PlayerObs.observe(k, { attributes: true }); BuildObs.disconnect() })})}; BuildObs = new MutationObserver(BuildCall); BuildObs.observe(document.querySelector(".player-wrapper"), { childList: true }) })
+@include "https://raw.githubusercontent.com/List-KR/List-KR/master/filters-AG/javascript.txt" /ignoreTrustLevel
