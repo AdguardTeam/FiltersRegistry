@@ -50,7 +50,7 @@ We may add third-party filters to AdGuard Filters Registry. When making a decisi
         * `low` — only low-risk rule types are allowed; defaults to **low** if trust level is not configured at all
         * `high` — trusted third-party filter lists; some particular rules from there are still permitted
         * `full` — all types of filter rules are allowed; only AdGuard filter lists have full trust at the moment
-        * `ignoreTrustLevel` - note that this directive will allow ignoring the trustLevel for a specific internal file of a third-party filter. The behavior is the same as if `trustLevel` were used with a value of `full`
+        * `ignoreTrustLevel` - note that this directive will allow ignoring the `trustLevel` for a specific internal file of a third-party filter. The behavior is the same as if `trustLevel` were used with a value of `full`
     * `platformsIncluded` — [the list of platforms](https://adguard.com/kb/general/ad-filtering/create-own-filters/#platform-and-not_platform-hints) to compile the filter for, e.g. `["mac", "windows", "android"]`. If you need to compile the filter for all platforms remove this property
     * `platformsExcluded` — [the list of platforms](https://adguard.com/kb/general/ad-filtering/create-own-filters/#platform-and-not_platform-hints) to skip while filter compiling, e.g. `["ios", "ext_safari"]`. If you need to compile the filter for all platforms remove this property
 
