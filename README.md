@@ -99,6 +99,10 @@ We may add third-party filters to AdGuard Filters Registry. When making a decisi
 
   Build log that contains excluded and converted rules with an explanation.
 
+- `trusted-rules.txt`
+
+  This file contains rules that are excluded by the filters compiler based on the specified trustLevel.
+
 ### <a id="tags"></a> Tags
 
 Every filter can be marked by a number of tags. Every tag metadata listed in `/tags/metadata.json`.
