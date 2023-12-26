@@ -1,7 +1,7 @@
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2023.1224.1
+! OriginalVersion: 2023.1226.6
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://github.com/List-KR/List-KR/issues/223
@@ -10,6 +10,7 @@
 ! Version must be UTC format.
 !
 !#if adguard
+||ad1.missyusa.com^
 ||ads.motorgraph.com^
 ||arm.c.appier.net^
 ||ad.mediamixer.co.kr^
@@ -454,6 +455,12 @@
 ##iframe[src*="//www.mediacategory.com/servlet/"]
 ##div[id^="targetpushAd_"]
 !#if adguard_app_ios
+cookmana18.com,cookmana19.com,cookmana20.com,cookmana21.com,cookmana22.com,cookmana23.com,cookmana24.com,cookmana25.com,cookmana26.com,cookmana27.com,cookmana28.com,cookmana29.com##.contents > .gridArea
+!#endif
+!#if adguard_app_ios
+##img[src*="//wwwimageup.angle777899.com/other/atoona/"]
+!#endif
+!#if adguard_app_ios
 m.humoruniv.com##a[onclick*="_boom("] > div[id*="_boom_"]
 m.humoruniv.com##div[id$="_boom"][class*=" "]
 m.humoruniv.com##form[action^="boardexp/run.html"] ~ dd[class^="bt"]#d3
@@ -472,6 +479,8 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,funbe282.com,funbe283.com,funbe284.com,funbe285.com,funbe286.com,funbe287.com,funbe288.com,funbe289.com,funbe290.com##img[src^="/images/"]
 !#endif
 !
+[$path=/ca-fe\\/web\\/cafes\\/(inmacbook|12175294)(\\/|\\?)/]m.cafe.naver.com##.banner_add
+[$path=/(&|\\.|\\?)clubid=12175294(&|$)/]~m.cafe.naver.com,cafe.naver.com##img[src][alt="매니저 등록 배너"]
 [$path=/ca-fe\\/web\\/cafes\\/(true8|18736796)(\\/|\\?)/]m.cafe.naver.com##.banner_add
 [$path=/(&|\\.|\\?)clubid=18736796(&|$)/]~m.cafe.naver.com,cafe.naver.com##img[src][alt="매니저 등록 배너"]
 [$path=/ca-fe\\/web\\/cafes\\/(perfumelove|10001688)(\\/|\\?)/]m.cafe.naver.com##.banner_add
@@ -519,6 +528,8 @@ funbe276.com,funbe277.com,funbe278.com,funbe279.com,funbe280.com,funbe281.com,fu
 /data/banner.json?
 /ad-manager.min.js
 !
+||tvdaily.co.kr/banner/
+||tvdaily.co.kr/ad/
 /^https:\/\/humorpick\.com\/data\/editor\/[0-9]{4}\/(?!thumb-)/$domain=humorpick.com
 ||dentalnews.or.kr/data/banner/
 ||m2.nateimg.co.kr/cms/*.gif|$image
@@ -1439,7 +1450,7 @@ mydaily.co.kr,section.cafe.naver.com,mlbpark.donga.com,forwarder.kr,kwnews.co.kr
 ! ##div[class^="ad"]
 m.gamechosun.co.kr,hub.zum.com,news.heraldcorp.com,lalawin.com,badayak.com,ujnews.co.kr,realty.chosun.com,koreadaily.com,it.chosun.com,m.fmkorea.com,maple.gg,ytn.co.kr,www.ebs.co.kr,newsis.com,m.newsen.com,jwmx.tistory.com,thespike.co.kr,hobbyen.co.kr,socialvalue.kr,entertainpost.com,m.moneys.co.kr,basketkorea.com,m.ohmynews.com,heraldcorp.com,slrclub.com##div[class^="ad"]
 ! ##div[class^="banner_"]
-m.hub.zum.com,gqkorea.co.kr,beyondpost.co.kr,m.fomos.kr,m.kin.naver.com,jjan.kr,m.sports.naver.com,newspic.kr,www.ebs.co.kr,prod.danawa.com,auth.danawa.com,socialvalue.kr,news.jtbc.co.kr,ajunews.com,mk.co.kr##div[class^="banner_"]
+metroseoul.co.kr,m.hub.zum.com,gqkorea.co.kr,beyondpost.co.kr,m.fomos.kr,m.kin.naver.com,jjan.kr,m.sports.naver.com,newspic.kr,www.ebs.co.kr,prod.danawa.com,auth.danawa.com,socialvalue.kr,news.jtbc.co.kr,ajunews.com,mk.co.kr##div[class^="banner_"]
 ! ##div[class$="Banner"]
 mimint.co.kr,economist.co.kr,dailian.co.kr,bigkinds.or.kr,hungryapp.co.kr,rhythmer.net##div[class$="Banner"]
 ! ##div[class$="banner"]
@@ -1483,6 +1494,7 @@ eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
 !
+mobile.missyusa.com##.div_banner
 m.dcinside.com##*[class^="adv-group"]
 url.kr##form[method="post"] > #maskLayer
 m.tinnews.co.kr##.bn
@@ -2682,6 +2694,7 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 !#endif
 !#endif
 !#if (adguard && !adguard_ext_android_cb)
+etoland.co.kr#$##mw_mobile > .mw_icon_box { margin-top: 25px !important; }
 m.hub.zum.com#$#.banner_slot_top + #container .article_cover { top: 100px !important; }
 mlbpark.donga.com#$#div[id^="SmartPhone_"][id$="_today"] .lists > li::before { padding-top: 0px !important; border-bottom: none !important; }
 thehousemagazine.kr,tminews.co.kr,maxmovie.kr,capress.kr,youtu.co,dfast.kr,mememedia.co.kr,newautopost.co.kr#$#.news-view-wrap { padding-top: 0px !important; }
@@ -2889,6 +2902,9 @@ tgd.kr#$##article-info > h2 { overflow: visible !important; }
 2cpu.co.kr#$#header .row[style] { margin-bottom: 35px !important; }
 sign.dcinside.com#$#.login_inputbox { width: 100% !important; }
 !#endif
+etoland.co.kr#?##mw_mobile > section[style]:has(> #coupang_cover_box > #coupang_ad_box)
+missyusa.com#?#tbody td > div[id^="MAX_"]:has(#gpt-passback)
+m.tvdaily.co.kr#?##news_content:has(> #news_padding:is(:not(:has(> *)), *:has(> iframe:matches-css(display: none)), *:has(img:matches-css(display: none)), *:has(> script[src]), *:has(> #_popIn_recommend)))
 m.osen.co.kr#?#.txt table#bodyMainImg tr:has(> td[style^="margin:"][style*=";padding:"] > table)
 www.naver.com#?##newsstand ~ #feed.id_cargame .feed_box:has(span[class^="HighlightedColumnView-module__tag_ad_"])
 yul-do.com#?##pp_bd *:is(.ppatc_header, .bd_header) ~ div[class^="cd_"]:has(div[style=""].xe-widget-wrapper > div[style*=" "])
@@ -3577,6 +3593,7 @@ ff14angler.com#@#ins.adsbygoogle
 !#if (adguard && adguard_app_android)
 @@||api-ao-list.adison.co^$app=com.nhn.android.webtoon
 @@||api-ao-list.adison.co^$app=com.nhn.android.nbooks
+||settings.cashwalk.io/cashwalk/*/notice/notice2_main|
 ||braze-images.com^$app=kr.co.rememberapp
 ||app.dcinside.com/api/_ad_search_link2.php
 ||firebaseinstallations.googleapis.com^$app=instasaver.instagram.video.downloader.photo
