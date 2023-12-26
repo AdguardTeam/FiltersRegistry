@@ -32,10 +32,10 @@ jobs:
         run: TLS=insecure yarn build
 
       - name: Build patches
-        # Does not matter how long patches are
-        # valid because these patches (as well as filter)
-        # would not be merged to master.
-        run: yarn build:patches --time=3600 --resolution=s
+        # Does not matter how long patches are valid because
+        # these patches (as well as filter) would not be merged to master,
+        # so for example set it to '10 minutes' in seconds.
+        run: yarn build:patches --time=600 --resolution=s
 
       - name: Validate platforms and locales
         run: yarn validate

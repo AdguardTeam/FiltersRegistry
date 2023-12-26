@@ -40,13 +40,13 @@ echo "Selected mode: $MODE"
 if [[ "$MODE" == "all" ]]; then
     # Build all filters
     yarn build
-    # Set the time live of patches to '4 hours'
-    yarn build:patches --time=4 --resolution=h
+    # Set the time live of patches to '4 hours' in seconds
+    yarn build:patches --time=14400 --resolution=s
 elif [[ "$MODE" == "adguard" ]]; then
     # Build specific AdGuard filters based on the filter IDs
     yarn build --include=$ADGUARD_FILTERS
-    # Set the time live of patches to '60 minutes'
-    yarn build:patches --time=60 --resolution=m
+    # Set the time live of patches to '60 minutes' in seconds
+    yarn build:patches --time=3600 --resolution=s
 fi
 
 # Validate platforms and locales
