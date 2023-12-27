@@ -20,6 +20,9 @@ if (firstArgument) {
 async function squashAndPush() {
     const git = simpleGit();
 
+    let headBeforeSquashHash = await git.revparse(['HEAD']);
+    headBeforeSquashHash = headBeforeSquashHash.trim();
+
     // Step 1: Checkout to the commitsToKeep'th commit and save its hash
     await git.checkout(`HEAD~${commitsToKeep}`);
     let squashedCommitHash = await git.raw([
@@ -66,8 +69,8 @@ async function squashAndPush() {
     // Step 7: Cherry-pick the commits you want to store
     // Use the `log` method with a range specification to get the commit history
     const historyToSave = await git.log({
-        from: `${squashedCommitHash}`,
-        to: 'HEAD',
+        from: squashedCommitHash,
+        to: headBeforeSquashHash,
         '--no-merges': true,
     });
     const commits = historyToSave.all.reverse();
