@@ -356,6 +356,12 @@ Once a year, we will compress the repository to reduce its size. We will delete 
 
     It will retain the first [commits_to_keep] (default is 10,000, which is approximately one year of history) commits, starting from now, in their original order in the history. All other older commits (except the very first one) will be squashed into a single commit.
 
+1. **Overwrite master branch**:
+
+    ```bash
+    git push --set-upstream origin --force master
+    ```
+
 1. **List all remote branches**:
 
     ```bash
@@ -380,7 +386,7 @@ Once a year, we will compress the repository to reduce its size. We will delete 
 
     ```bash
     git reflog expire --expire=now --all
-    git gc --prune=now
+    git gc --aggressive --prune=now
     ```
 
     This will remove unnecessary entries from the reflog and perform garbage collection.

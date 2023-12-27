@@ -99,17 +99,7 @@ async function squashAndPush() {
     await git.reset(['--hard', 'squashed']);
     console.log('Step 9: Reset "master" to the new rebased "master"');
 
-    // Step 10: Push with --force to overwrite the remote 'master' branch
-    await git.addConfig('user.name', 'filters@adguard.com');
-    await git.addConfig('user.email', 'Filters Builder');
-    await git.push(['--set-upstream', 'origin', '--force', 'master']);
-    console.log('Step 10: Pushed with --force to overwrite the remote "master" branch');
-
-    // Step 11: Clean space with aggressive garbage collection
-    await git.raw(['gc', '--aggressive', '--prune=now']);
-    console.log('Step 11: Cleaned space with aggressive garbage collection');
-
-    console.log('Git actions completed successfully.');
+    console.log('Git actions for compression completed successfully.');
 }
 
 // Execute the squashAndPush function
