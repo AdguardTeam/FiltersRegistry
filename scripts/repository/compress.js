@@ -67,7 +67,7 @@ async function squashAndPush() {
     // Use the `log` method with a range specification to get the commit history
     const historyToSave = await git.log({
         from: `${squashedCommitHash}`,
-        to: 'HEAD',
+        to: 'master',
         '--no-merges': true,
     });
     const commits = historyToSave.all.reverse();
