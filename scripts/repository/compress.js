@@ -32,8 +32,18 @@ async function squashAndPush() {
     squashedCommitHash = squashedCommitHash.trim();
     console.log(`Step 1: Checked out to commit ${squashedCommitHash}`);
 
-    // Step 2: Create a new branch named 'squashed'
-    await git.checkoutBranch('squashed', squashedCommitHash);
+    try {
+        // Step 2: Create a new branch named 'squashed'
+        await git.checkoutBranch('squashed', squashedCommitHash);
+    } catch (e) {
+        // If the branch already exists, checkout to it
+        if (e.message.includes('already exists')) {
+            console.log('Branch "squashed" already exists. Delete it (`git branch -D squashed`) and try again.');
+            return;
+        }
+
+        throw e;
+    }
     console.log('Step 2: Created branch "squashed"');
 
     // Step 3: Get the hash of the very first commit
