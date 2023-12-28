@@ -18,18 +18,19 @@ if (firstArgument) {
  * @returns {Promise<void>} - A promise that resolves when the process is complete.
  */
 async function squashAndPush() {
-    const git = simpleGit();
+    // Add `trim` call to remove trailing newlines from the output of git.raw.
+    const git = simpleGit({
+        trimmed: true,
+    });
 
-    let headBeforeSquashHash = await git.revparse(['HEAD']);
-    headBeforeSquashHash = headBeforeSquashHash.trim();
+    const headBeforeSquashHash = await git.revparse(['HEAD']);
 
     // Step 1: Checkout to the commitsToKeep'th commit and save its hash
     await git.checkout(`HEAD~${commitsToKeep}`);
-    let squashedCommitHash = await git.raw([
+    const squashedCommitHash = await git.raw([
         'rev-parse',
         'HEAD',
     ]);
-    squashedCommitHash = squashedCommitHash.trim();
     console.log(`Step 1: Checked out to commit ${squashedCommitHash}`);
 
     try {
@@ -47,12 +48,11 @@ async function squashAndPush() {
     console.log('Step 2: Created branch "squashed"');
 
     // Step 3: Get the hash of the very first commit
-    let firstCommitHash = await git.raw([
+    const firstCommitHash = await git.raw([
         'rev-list',
         '--max-parents=0',
         'HEAD',
     ]);
-    firstCommitHash = firstCommitHash.trim();
     console.log(`Step 3: Retrieved hash of the first commit: ${firstCommitHash}`);
 
     // Step 4: Drop all directories to the very first commit
@@ -83,26 +83,30 @@ async function squashAndPush() {
         to: headBeforeSquashHash,
         '--no-merges': true,
     });
+    console.log('Step 7: commits to cherry-pick:', historyToSave.all.length);
     const commits = historyToSave.all.reverse();
     for (let i = 0; i < commits.length; i += 1) {
         const {
             hash,
             date,
-            author_name: authorName,
-            author_email: authorEmail,
         } = commits[i];
-
-        /* eslint-disable no-await-in-loop */
-        // Save original author.
-        await git.addConfig('user.name', authorName);
-        await git.addConfig('user.email', authorEmail);
 
         // Save original commit date.
         git.env('GIT_COMMITTER_DATE', date);
 
-        // Use git cherry-pick command for each commit to cherry-pick.
-        await git.raw(['cherry-pick', hash, '--strategy-option', 'theirs']);
-        console.debug(`Cherry-picked commit#${i} ${hash}`);
+        try {
+            // Use git cherry-pick command for each commit to cherry-pick.
+            await git.raw(['cherry-pick', hash, '--strategy-option', 'theirs']);
+            console.debug(`Cherry-picked commit#${i} ${hash}`);
+        } catch (e) {
+            if (e.message.includes('nothing to commit, working tree clean')) {
+                console.debug(`Commit#${i} ${hash} skipped because it is empty.`);
+                await git.raw(['cherry-pick', '--skip']);
+                continue;
+            }
+
+            throw e;
+        }
         /* eslint-enable no-await-in-loop */
     }
 
