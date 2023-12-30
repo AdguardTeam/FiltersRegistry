@@ -8,7 +8,7 @@
 set -x -e
 
 # Define a list of AdGuard filter IDs
-ADGUARD_FILTERS="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,224"
+ADGUARD_FILTERS="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,224,227"
 
 # Default mode is "all"
 MODE="all"
