@@ -156,7 +156,11 @@ Possible tags:
 
 For each filter, AdGuard compiles two versions: full and optimized. Optimized version is much more lightweight and does not contain rules which are not used at all or used rarely. Rules usage frequency comes from the collected [filter rules statistics](https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics/) (thanks to the volunteers who enabled it in their AdGuard).
 
-* `script/optimization_config.json` - defines the target for the optimization process. AdGuard will try to compress the lists by removing the most rarely used rules until the compression goal (defined in percents) is met.
+* `optimization_config.json` - This file defines the target for the optimization process. AdGuard will attempt to compress the lists by removing the least frequently used rules until the compression goal (defined in percentages) is achieved.
+
+    **NOTE:**
+    However, these changes will only take effect after being uploaded to the server, as `filters-compiler` does not use this file locally but retrieves it from the server.
+
 
 ### Compiler customization
 
