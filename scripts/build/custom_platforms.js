@@ -89,8 +89,8 @@ const HTML_FILTERING_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,protobuf`,
- *   and rules with `$removeparam` modifier like `$removeparam=protobuf`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,protobuf` and rules with `$removeparam` modifier like `$removeparam=protobuf`
  * - `.*protobuf` — protobuf modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$protobuf` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
@@ -108,8 +108,8 @@ const PROTOBUF_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,[app="ads"]`,
- *   and rules with `$removeparam` modifier like `$removeparam=app=ads`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,[app="ads"]` and rules with `$removeparam` modifier like `$removeparam=app=ads`
  * - `.*app=` — app= modifier itself
  *
  * @example
@@ -125,8 +125,8 @@ const APP_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,extension`,
- *   and rules with `$removeparam` modifier like `$removeparam=extension`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,extension` and rules with `$removeparam` modifier like `$removeparam=extension`
  * - `.*extension` — extension modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$extension` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
@@ -154,8 +154,8 @@ const ONLY_CONTENT_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,content`,
- *    and rules with `$removeparam` modifier like `$removeparam=content`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,content` and rules with `$removeparam` modifier like `$removeparam=content`
  * - `.*content` — content modifier itself
  * - `(,|$)` — end of line or modifiers divider, as `$content` can be followed by other modifiers (`,`).
  *
@@ -172,8 +172,8 @@ const CONTENT_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,jsinject`,
- *   and rules with `$removeparam` modifier like `$removeparam=jsinject`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,jsinject` and rules with `$removeparam` modifier like `$removeparam=jsinject`
  * - `.*jsinject` — jsinject modifier itself
  * - `(,|$)` — end of line or modifiers divider, as `$jsinject` can be followed by other modifiers (`,`).
  *
@@ -190,8 +190,8 @@ const JSINJECT_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,urlblock`,
- *   and rules with `$removeparam` modifier like `$removeparam=urlblock`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,urlblock` and rules with `$removeparam` modifier like `$removeparam=urlblock`
  * - `.*urlblock` — urlblock modifier itself
  * - `(,|$)` — end of line or modifiers divider, as `$urlblock` can be followed by other modifiers (`,`).
  *
@@ -208,8 +208,8 @@ const URLBLOCK_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,referrerpolicy`,
- *   and rules with `$removeparam` modifier like `$removeparam=referrerpolicy`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,referrerpolicy` and rules with `$removeparam` modifier like `$removeparam=referrerpolicy`
  * - `.*referrerpolicy` — referrerpolicy modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$referrerpolicy` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
@@ -227,8 +227,8 @@ const REFERRERPOLICY_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,[replace="ads"]`,
- *   and rules with `$removeparam` modifier like `$removeparam=replace=ads`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,[replace="ads"]` and rules with `$removeparam` modifier like `$removeparam=replace=ads`
  * - `.*replace` — replace modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$replace` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
@@ -306,8 +306,8 @@ const REMOVEPARAM_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,[removeheader="ads"]`,
- *   and rules with `$removeparam` modifier like `$removeparam=removeheader`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,[removeheader="ads"]` and rules with `$removeparam` modifier like `$removeparam=removeheader`
  * - `.*removeheader` — removeheader modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$removeheader` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
@@ -325,8 +325,8 @@ const REMOVEHEADER_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,[stealth="ads"]`,
- *   and rules with `$removeparam` modifier like `$removeparam=stealth`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *  `[$path=...]##.textad,[stealth="ads"]` and rules with `$removeparam` modifier like `$removeparam=stealth`
  * - `.*stealth` — stealth modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$stealth` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
@@ -344,8 +344,8 @@ const STEALTH_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,cookie`,
- *   and rules with `$removeparam` modifier like `$removeparam=cookie`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,cookie` and rules with `$removeparam` modifier like `$removeparam=cookie`
  * - `.*cookie` — cookie modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$cookie` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
@@ -363,8 +363,8 @@ const COOKIE_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,redirect`
- *   and rules with `$removeparam` modifier like `$removeparam=redirect`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,redirect` and rules with `$removeparam` modifier like `$removeparam=redirect`
  * - `.*redirect` — redirect modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$redirect` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
@@ -382,8 +382,8 @@ const REDIRECT_MODIFIER_PATTERNS = [
  *
  * Pattern parts:
  * - `\\$` — modifiers divider
- * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like `[$path=...]##.textad,redirect-rule`,
- *   and rules with `$removeparam` modifier like `$removeparam=redirect-rule`
+ * - `(?!((path|domain)=.*])|.*removeparam=).*` — negative lookahead to exclude rules like
+ *   `[$path=...]##.textad,redirect-rule` and rules with `$removeparam` modifier like `$removeparam=redirect-rule`
  * - `.*redirect-rule` — redirect-rule modifier itself
  * - `(,|=|$)` — end of line or modifiers divider, as `$redirect-rule` can be followed by other modifiers (`,`),
  *   it may have a value (`=`), or it may be the last modifier in the rule (`$`).
