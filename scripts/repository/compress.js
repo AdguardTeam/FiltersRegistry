@@ -19,9 +19,7 @@ if (firstArgument) {
  */
 async function squashAndPush() {
     // Add `trim` call to remove trailing newlines from the output of git.raw.
-    const git = simpleGit({
-        trimmed: true,
-    });
+    const git = simpleGit({ trimmed: true });
 
     const headBeforeSquashHash = await git.revparse(['HEAD']);
 
