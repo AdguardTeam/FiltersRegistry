@@ -46,32 +46,6 @@ args.forEach((val) => {
 });
 
 /**
- * Copies old patch files from one directory to another.
- *
- * @param oldFilterDir The directory containing old patch files.
- * @param newFilterDir The directory where old patch files will be copied.
- */
-const copyOldPatches = async (oldFilterDir, newFilterDir) => {
-    const oldPatches = await findFiles(
-        oldFilterDir,
-        (file) => file.endsWith(PATCH_EXTENSION)
-    );
-
-    for (let i = 0; i < oldPatches.length; i += 1) {
-        const oldPatch = oldPatches[i];
-        const relativePath = path.relative(oldFilterDir, oldPatch);
-        const newPath = path.join(newFilterDir, relativePath);
-
-        try {
-            await fs.promises.mkdir(path.dirname(newPath), { recursive: true });
-            await fs.promises.copyFile(oldPatch, newPath);
-        } catch (error) {
-            console.error(`Error copying old patch ${oldPatch} to ${newPath}: ${error}`);
-        }
-    }
-};
-
-/**
  * Main function to generate and copy patches for filter files.
  */
 const main = async () => {
@@ -130,9 +104,6 @@ const main = async () => {
             verbose: true,
         });
     }
-
-    // Copy old patches
-    await copyOldPatches(FOLDER_WITH_OLD_FILTERS, FOLDER_WITH_NEW_FILTERS);
 
     // Clear temporary copied platforms
     await fs.promises.rm(FOLDER_WITH_OLD_FILTERS, { recursive: true });
