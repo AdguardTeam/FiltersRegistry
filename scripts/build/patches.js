@@ -2,7 +2,7 @@
 /* eslint-disable no-await-in-loop */
 const fs = require('fs');
 const path = require('path');
-const { DiffBuilder, PATCH_EXTENSION } = require('@adguard/diff-builder');
+const { DiffBuilder } = require('@adguard/diff-builder');
 
 const {
     FOLDER_WITH_NEW_FILTERS,
