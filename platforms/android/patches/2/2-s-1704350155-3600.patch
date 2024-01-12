@@ -1,0 +1,35 @@
+d1 2
+a2 2
+! Checksum: MUcBkOrrrwSpCZs6NZ2rCA
+! Diff-Path: ../patches/2/2-s-1704353771-3600.patch
+d5 2
+a6 2
+! Version: 2.3.16.49
+! TimeUpdated: 2024-01-04T07:33:22+00:00
+d7576 2
+d9235 3
+a9455 1
+! https://github.com/AdguardTeam/AdguardFilters/issues/169882
+d9457 2
+a9458 3
+privatemoviez.*#@#.adbanner
+privatemoviez.*#@#[id^="google_ads_iframe"]
+privatemoviez.*#%#//scriptlet('prevent-setTimeout', '/placebo\.height|siteAccess/')
+a23627 3
+! https://github.com/AdguardTeam/AdguardFilters/issues/169879
+deliciousmagazine.pl#?#style + div[class] > img[src^="https://v.wpimg.pl/"]:only-child:upward(1)
+deliciousmagazine.pl#?#style + div[class] > img[src^="https://v.wpimg.pl/"]:first-child + div:last-child:upward(1)
+d23751 1
+a23751 1
+deliciousmagazine.pl,poczta.wp.pl#%#(function(){Object.defineProperty=new Proxy(Object.defineProperty,{apply:(a,b,c)=>{const d=c[1];return d&&"VP"===d&&(c[2].get=function(){return function(){return!1}}),Reflect.apply(a,b,c)}})})();
+a24144 4
+||deliciousmagazine.pl^$replace=/(^(WP\.[\s\S]*?\.bodies)=WP\.[\s\S]*?\.bodies\|\|\{\};[\s\S]*)//,script
+||deliciousmagazine.pl^$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,xmlhttprequest,other,~script
+||deliciousmagazine.pl^$replace=/(aabv\d[\s\S]*?.=function\(\)\{)return .===.(\}\,)/\$1return\$2/,script
+||deliciousmagazine.pl^$replace=/(aabv\d[\s\S]*?.=\(\)=>).===.(\,)/\$1{return}\$2/,script
+a57533 1
+@@||akademia.nfz.gov.pl^$stealth=dpi
+a119510 1
+chorus.fm##.f-soc
+a122562 1
+boatsonline.com.au,yachthub.com##.js-sticky
