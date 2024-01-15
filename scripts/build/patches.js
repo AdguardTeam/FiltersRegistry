@@ -55,6 +55,11 @@ args.forEach((val) => {
  * @returns A promise that resolves when the patch file is successfully moved.
  */
 const moveCreatedPatch = async (oldPatchesDir) => {
+    // It means, that we don't have any old patches for this filter.
+    if (!fs.existsSync(oldPatchesDir)) {
+        return;
+    }
+
     const files = await fs.promises.readdir(oldPatchesDir);
 
     const patches = files
