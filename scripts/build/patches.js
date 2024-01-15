@@ -46,29 +46,32 @@ args.forEach((val) => {
 });
 
 /**
- * Copies old patch files from one directory to another.
+ * Moves the latest patch file from the old patches directory to a new directory.
  *
- * @param oldFilterDir The directory containing old patch files.
- * @param newFilterDir The directory where old patch files will be copied.
+ * @param oldPatchesDir The directory containing old patch files.
+ *
+ * @throws {Error} Throws an error if no patch files are found in the specified directory.
+ *
+ * @returns A promise that resolves when the patch file is successfully moved.
  */
-const copyOldPatches = async (oldFilterDir, newFilterDir) => {
-    const oldPatches = await findFiles(
-        oldFilterDir,
-        (file) => file.endsWith(PATCH_EXTENSION)
-    );
+const moveCreatedPatch = async (oldPatchesDir) => {
+    const files = await fs.promises.readdir(oldPatchesDir);
 
-    for (let i = 0; i < oldPatches.length; i += 1) {
-        const oldPatch = oldPatches[i];
-        const relativePath = path.relative(oldFilterDir, oldPatch);
-        const newPath = path.join(newFilterDir, relativePath);
+    const patches = files
+        .filter((f) => f.endsWith(PATCH_EXTENSION))
+        .sort((a, b) => b.localeCompare(a));
 
-        try {
-            await fs.promises.mkdir(path.dirname(newPath), { recursive: true });
-            await fs.promises.copyFile(oldPatch, newPath);
-        } catch (error) {
-            console.error(`Error copying old patch ${oldPatch} to ${newPath}: ${error}`);
-        }
+    if (patches.length === 0) {
+        throw new Error(`Not found patches in folder: "${oldPatchesDir}".`);
     }
+
+    const lastPatch = patches[0];
+
+    const fullPath = path.join(oldPatchesDir, lastPatch);
+    const pathToMove = fullPath.replace(FOLDER_WITH_OLD_FILTERS, FOLDER_WITH_NEW_FILTERS);
+
+    await fs.promises.copyFile(fullPath, pathToMove);
+    console.log(`Moved new patch from "${fullPath}" to "${pathToMove}".`);
 };
 
 /**
@@ -127,12 +130,14 @@ const main = async () => {
             name,
             time,
             resolution,
-            verbose: true,
+            verbose: false,
         });
-    }
 
-    // Copy old patches
-    await copyOldPatches(FOLDER_WITH_OLD_FILTERS, FOLDER_WITH_NEW_FILTERS);
+        // Patch to old filter recorded to temp/platforms folder, because old
+        // filters located inside this folder and path to patch is relative
+        // to filter.
+        await moveCreatedPatch(path.join(path.dirname(path.dirname(oldFilterPath)), 'patches', name));
+    }
 
     // Clear temporary copied platforms
     await fs.promises.rm(FOLDER_WITH_OLD_FILTERS, { recursive: true });
