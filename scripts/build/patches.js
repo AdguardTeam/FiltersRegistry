@@ -135,7 +135,7 @@ const main = async () => {
             name,
             time,
             resolution,
-            verbose: false,
+            verbose: true,
         });
 
         // Patch to old filter recorded to temp/platforms folder, because old
