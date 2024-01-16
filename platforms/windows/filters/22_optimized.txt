@@ -1,9 +1,9 @@
-! Checksum: /r6EiFFKA6hs1FJdtvfkUQ
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1705343843-3600.patch
+! Checksum: OT7Vewp4xcsAQivejlJVWA
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1705408809-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.7.8
-! TimeUpdated: 2024-01-15T18:32:57+00:00
+! Version: 2.0.7.11
+! TimeUpdated: 2024-01-16T12:34:34+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -621,6 +621,7 @@ koe-koe.com##.rss_c
 ||doujinlist.com/rss.js
 ||2nt.com/b/o/t/bottisoku/$subdocument,domain=bottisoku.blog.2nt.com
 .sprss002.html$domain=moeero-library.com|eromanga-moeerolibrar.com
+||eromanga-cafe.com^$subdocument,~third-party
 eromanga-cafe.com###custom_html-4
 nandemoiiyoch.com,eromanga-cafe.com###custom_html-7
 eromanga-cafe.com##.loop-single-widget
@@ -971,6 +972,7 @@ wenmi.com##.alc
 ||live-cwc.elron.titancs.mindtitan.com/chat-web-sdk-$domain=elron.ee
 ||stdntl.ru/*/std-order-chat.js
 ankerjapan.com###ch-plugin
+siracusanews.it###ht-ctc-chat
 ||sp-prod-bot1.predu.sk/chat/chat.js$domain=posta.sk
 gamesir.hk###envolve-chat
 boxberry.ru##.popup-messenger
@@ -1088,6 +1090,7 @@ ukr.net###sinoptik_container
 ##.gsInformer
 /gs_informerClient.min.$third-party
 ||gismeteo.*/getInformer/$third-party
+miraheze.org###siteNotice
 winstall.app##div[class^="donateCard_container__"]
 openstreetmap.org###banner
 wbur.org##.section--takeover
@@ -1127,7 +1130,6 @@ texty.org.ua###the-only-donate-banner
 paperpaper.*##.bottom-block > div.post-info-block
 mediazona.online,fourth-sphere-302420.appspot.com,zona.media##.tools__support_container
 ||static.theprint.in/wp-content/uploads/*/subscribe_*.png
-hani.co.kr##.bn-promotion-support
 bitcoin.org##.donation-container
 gellerreport.com#?#.widget-area > section.widget h2.donate-title:upward(section.widget)
 firstthings.com##.leaderboard
