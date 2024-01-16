@@ -2,7 +2,7 @@
 /* eslint-disable no-await-in-loop */
 const fs = require('fs');
 const path = require('path');
-const { DiffBuilder, PATCH_EXTENSION } = require('@adguard/diff-builder');
+const { DiffBuilder } = require('@adguard/diff-builder');
 
 const {
     FOLDER_WITH_NEW_FILTERS,
@@ -44,56 +44,6 @@ args.forEach((val) => {
             .map((x) => Number.parseInt(x, 10));
     }
 });
-
-/**
- * Moves the latest patch file from the old patches directory to a new directory.
- *
- * @param oldPatchesDir The directory containing old patch files.
- *
- * @throws {Error} Throws an error if no patch files are found in the specified directory.
- *
- * @returns A promise that resolves when the patch file is successfully moved.
- */
-const moveCreatedPatch = async (oldPatchesDir) => {
-    // It means, that we don't have any old patches for this filter.
-    if (!fs.existsSync(oldPatchesDir)) {
-        return;
-    }
-
-    const files = await fs.promises.readdir(oldPatchesDir);
-
-    const patchesWithMTimeMs = await Promise.all(files
-        .filter((f) => f.endsWith(PATCH_EXTENSION))
-        .map(async (f) => {
-            const p = path.join(oldPatchesDir, f);
-            const { mtimeMs } = await fs.promises.stat(p);
-
-            return [p, mtimeMs];
-        }));
-
-    const patchesTimes = new Map(patchesWithMTimeMs);
-
-    const patches = files
-        .filter((f) => f.endsWith(PATCH_EXTENSION))
-        .sort((a, b) => {
-            const aMtimeMs = patchesTimes.get(path.join(oldPatchesDir, a));
-            const bMtimeMs = patchesTimes.get(path.join(oldPatchesDir, b));
-
-            return bMtimeMs - aMtimeMs;
-        });
-
-    if (patches.length === 0) {
-        throw new Error(`Not found patches in folder: "${oldPatchesDir}".`);
-    }
-
-    const lastPatch = patches[0];
-
-    const fullPath = path.join(oldPatchesDir, lastPatch);
-    const pathToMove = fullPath.replace(FOLDER_WITH_OLD_FILTERS, FOLDER_WITH_NEW_FILTERS);
-
-    await fs.promises.copyFile(fullPath, pathToMove);
-    console.log(`Moved new patch from "${fullPath}" to "${pathToMove}".`);
-};
 
 /**
  * Main function to generate and copy patches for filter files.
@@ -153,11 +103,6 @@ const main = async () => {
             resolution,
             verbose: true,
         });
-
-        // Patch to old filter recorded to temp/platforms folder, because old
-        // filters located inside this folder and path to patch is relative
-        // to filter.
-        await moveCreatedPatch(path.join(path.dirname(path.dirname(oldFilterPath)), 'patches', name));
     }
 
     // Clear temporary copied platforms
