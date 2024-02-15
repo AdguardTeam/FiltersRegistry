@@ -102,6 +102,11 @@ const main = async () => {
             time,
             resolution,
             verbose: true,
+            /**
+             * Chose 11 days because expiration time of filters is 10 days,
+             * so we took it and add one day to exclude overlaps.
+             */
+            deleteOlderThanSec: 950400,
         });
     }
 
