@@ -106,7 +106,7 @@ const main = async () => {
              * Chose 11 days because expiration time of filters is 10 days,
              * so we took it and add one day to exclude overlaps.
              */
-            deleteOlderThanSec: 950400,
+            deleteOlderThanSec: 60 * 60 * 24 * 11,
         });
     }
 
