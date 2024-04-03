@@ -53,7 +53,8 @@ const main = async () => {
     const newFilterFiles = await findFiles(
         FOLDER_WITH_NEW_FILTERS,
         (file) => {
-            const fileInFiltersFolder = file.includes('filters/');
+            // "/" for unix-like or "\\" for windows in path.
+            const fileInFiltersFolder = file.includes('filters/') || file.includes('filters\\');
             const fileHasTxtExtension = file.endsWith('.txt');
 
             const filename = path.basename(file);
