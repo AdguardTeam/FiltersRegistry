@@ -1126,8 +1126,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/FiltersHeroes/KAD/master/KAD.txt",
-			"version": "2.0.54.62",
-			"timeUpdated": "2024-04-03T21:03:17+0000",
+			"version": "2.0.54.63",
+			"timeUpdated": "2024-04-05T11:43:59+0000",
 			"languages": []
 		},
 		{
