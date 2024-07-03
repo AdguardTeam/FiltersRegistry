@@ -16,6 +16,7 @@ import { WildcardDomains } from './wildcard-domains-updater';
 import { DOMAIN_MODIFIERS } from './domain-extractor';
 import { utils } from './utils';
 import { updateContentChecksum } from '../checksum';
+import { splitByLines } from '../utils/splitter';
 
 /**
  * Expands wildcards in a network rule AST.
@@ -240,7 +241,7 @@ export function expandWildcardsInRule(rule: string, wildcardDomains: WildcardDom
  * @returns The patched filter content with expanded wildcards.
  */
 function expandWildcardDomainsInFilter(filterContent: string, wildcardDomains: WildcardDomains): string {
-    const rules = filterContent.split(/\r?\n/);
+    const rules = splitByLines(filterContent);
     const newRules = [];
     for (const rule of rules) {
         const newRule = expandWildcardsInRule(rule, wildcardDomains);
@@ -248,7 +249,7 @@ function expandWildcardDomainsInFilter(filterContent: string, wildcardDomains: W
             newRules.push(newRule);
         }
     }
-    return newRules.join('\n');
+    return newRules.join('');
 }
 
 /**

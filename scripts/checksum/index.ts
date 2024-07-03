@@ -1,6 +1,8 @@
 import MD5 from 'crypto-js/md5';
 import Base64 from 'crypto-js/enc-base64';
 
+import { splitByLines } from '../utils/splitter';
+
 const CHECKSUM_TAG = 'Checksum';
 
 /**
@@ -37,18 +39,6 @@ function calculateChecksumMD5(content: string): string {
     const checksum = Base64.stringify(MD5(content));
 
     return checksum.trim().replace(/=+$/g, '');
-}
-
-/**
- * Splits a string by lines while preserving line breaks within the original lines.
- *
- * @param s The input string to split.
- * @returns An array of strings where each element is a complete line of text,
- * including its line break.
- */
-function splitByLines(s: string): string[] {
-    // Preserve end-of-line characters in the split strings.
-    return s.split(/(?<=\r?\n)/);
 }
 
 /**
