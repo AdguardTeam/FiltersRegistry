@@ -69,8 +69,8 @@ elif [[ "$MODE" == "adguard" ]]; then
     yarn build:patches --time=3600 --resolution=s --include=$ADGUARD_FILTERS
 fi
 
-# Validate platforms and locales
-yarn validate
-
-# Update built platforms and filters in the repository
-yarn push
+## Validate platforms and locales
+#yarn validate
+#
+## Update built platforms and filters in the repository
+#yarn push
