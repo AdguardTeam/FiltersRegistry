@@ -9,7 +9,7 @@ set -x -e
 
 # Define a list of AdGuard filter IDs
 # NOTE: id 12 is not included because it is an obsolete Safari filter.
-ADGUARD_FILTERS="1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,224"
+ADGUARD_FILTERS="1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24,224"
 
 # Default mode is "all"
 MODE="all"
