@@ -606,7 +606,6 @@ module.exports = {
         'configuration': {
             'removeRulePatterns': [
                 ...CHROMIUM_BASED_EXTENSION_PATTERNS,
-                // https://github.com/AdguardTeam/FiltersCompiler/issues/231
                 ...REDIRECT_RULE_MODIFIER_PATTERNS,
             ],
             'replacements': null,
