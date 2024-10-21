@@ -1,9 +1,9 @@
-! Checksum: jN7QAMzL5fomhgcIqJeRZA
-! Diff-Path: ../patches/7/7-s-1729517830-3600.patch
+! Checksum: XZW8Wd7Z5S+XFs1t98fjQA
+! Diff-Path: ../patches/7/7-s-1729525049-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.15
-! TimeUpdated: 2024-10-21T13:32:58+00:00
+! Version: 2.0.58.16
+! TimeUpdated: 2024-10-21T15:33:06+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -506,8 +506,7 @@ yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
-||wiki.yjsnpi.nu^$script,replace=/if\(document\[.+?\*\*.+?\)\)/if(0)/
-wiki.yjsnpi.nu#%#(()=>{const n={construct:(n,t,c)=>{const o=t[0],e=o?.toString();return e.includes("0x")&&!e.includes("['disconnect']()")&&(t[0]=function(){}),Reflect.construct(n,t,c)}};window.MutationObserver=new Proxy(window.MutationObserver,n)})();
+wiki.yjsnpi.nu#%#//scriptlet('trusted-create-element', 'head', 'meta', 'name="22" content="0123456789abcdef"')
 $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 !wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'DOMTokenList.prototype.remove', 'noopFunc')
 !wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'HTMLElement.prototype.remove', 'noopFunc')
@@ -1763,6 +1762,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 !
 !
+||sutekinakijo.com/ads/
 geinoutopics-plus.blog.jp##img[src^="https://www19.a8.net/"]
 ||city.bunkyo.lg.jp/banner/
 chocotabi-saitama.jp###banner_area > h3
