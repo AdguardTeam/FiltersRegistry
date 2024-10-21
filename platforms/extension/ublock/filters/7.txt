@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0o9k2+MiDPIdNjPWsLl78g
-! Diff-Path: ../patches/7/7-s-1729525037-3600.patch
+! Checksum: 6fUAoVmGf8i+O/K+1pwAJg
+! Diff-Path: ../patches/7/7-s-1729532206-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.16
-! TimeUpdated: 2024-10-21T15:33:06+00:00
+! Version: 2.0.58.17
+! TimeUpdated: 2024-10-21T17:32:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -494,6 +494,10 @@ yourfones.net##+js(spoof-css, ins.adsbygoogle, display, block)
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
+||wiki.yjsnpi.nu^$script
+@@||wiki.yjsnpi.nu/yjsnpi.js$script,~third-party
+@@||wiki.yjsnpi.nu/comments/comments.js$script,~third-party
+@@||wiki.yjsnpi.nu/w/load.php?$script,~third-party
 $subdocument,redirect-rule=noop.html,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#$#body img, body .Inmbox, body .lazy-image-placeholder { width: auto !important; height: auto !important; opacity: 1 !important; visibility: visible !important; display: block !important; color: unset !important; background: none !important; }
 wiki.yjsnpi.nu#$##comments-loading { display: none !important; }
@@ -1517,6 +1521,7 @@ jikayosha.jp#$#.wym-v2022__header.is-scroll-up ~ .wym-v2022__footer-fixed.is-pc-
 /wp-content/uploads/2024/09/fanza_ad$image
 !
 ! Malware/Phishing
+/jp-mason-goo-dynamic/?$document
 /?p=(0101)-$document
 /M0cSmwEr00JP1/*$document
 .cn/bot/bot.php|$document
@@ -1748,6 +1753,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 !
 !
+alfalfalfa.com##div[style="text-align:center;margin-bottom:15px;height:250px;"]
 ||sutekinakijo.com/ads/
 geinoutopics-plus.blog.jp##img[src^="https://www19.a8.net/"]
 ||city.bunkyo.lg.jp/banner/
