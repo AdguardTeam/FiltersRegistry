@@ -1,9 +1,9 @@
-! Checksum: CjZDWhGvlqWmv2vk2b5fWw
-! Diff-Path: ../patches/17/17-s-1729273015-3600.patch
+! Checksum: sUKW+EFZTmfHvHub2DBPcA
+! Diff-Path: ../patches/17/17-s-1729511660-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.9.66
-! TimeUpdated: 2024-10-18T17:33:23+00:00
+! Version: 2.0.9.67
+! TimeUpdated: 2024-10-21T11:33:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21,6 +21,10 @@
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
 !
+! Segmentify
+$removeparam=_sgm_campaign
+$removeparam=_sgm_term
+$removeparam=_sgm_pinned
 ! https://support.ebis.ne.jp/s/article/23146
 $removeparam=ebisOther1
 $removeparam=ebisOther2
@@ -381,6 +385,12 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191305
+||puma.com^$removeparam=sc_src
+||puma.com^$removeparam=sc_lid
+||puma.com^$removeparam=sc_uid
+||puma.com^$removeparam=sc_llid
+||puma.com^$removeparam=sc_eh
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191029
 ||reddit.com^$removeparam=%24deep_link
 ||reddit.com^$removeparam=%243p
