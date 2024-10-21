@@ -1,8 +1,8 @@
-! Checksum: AsEBoeN3ahopSVq7B7p7Yg
+! Checksum: ik3jACvPRWCbRFTUu8mKJw
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.1.44
-! TimeUpdated: 2024-10-21T08:33:35+00:00
+! Version: 2.0.1.45
+! TimeUpdated: 2024-10-21T09:33:42+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35,6 +35,16 @@
 ! TODO: remove it when the issue is fixed
 ://ads.$~image,domain=~ads.8designers.com|~ads.ac.uk|~ads.adstream.com.ro|~ads.allegro.pl|~ads.am|~ads.amazon|~ads.apple.com|~ads.atmosphere.copernicus.eu|~ads.band|~ads.bestprints.biz|~ads.bikepump.com|~ads.brave.com|~ads.buscaempresas.co|~ads.business.bell.ca|~ads.cafebazaar.ir|~ads.colombiaonline.com|~ads.comeon.com|~ads.cvut.cz|~ads.doordash.com|~ads.dosocial.ge|~ads.dosocial.me|~ads.elevateplatform.co.uk|~ads.finance|~ads.google.cn|~ads.google.com|~ads.gree.net|~ads.gurkerl.at|~ads.harvard.edu|~ads.instacart.com|~ads.jiosaavn.com|~ads.kaipoke.biz|~ads.kazakh-zerno.net|~ads.kifli.hu|~ads.knuspr.de|~ads.listonic.com|~ads.luarmor.net|~ads.magalu.com|~ads.mercadolivre.com.br|~ads.mgid.com|~ads.microsoft.com|~ads.midwayusa.com|~ads.mobilebet.com|~ads.mojagazetka.com|~ads.msstate.edu|~ads.mst.dk|~ads.mt|~ads.nc|~ads.nipr.ac.jp|~ads.olx.pl|~ads.pinterest.com|~ads.red|~ads.rohlik.cz|~ads.rohlik.group|~ads.route.cc|~ads.safi-gmbh.ch|~ads.scotiabank.com|~ads.selfip.com|~ads.shopee.cn|~ads.shopee.co.th|~ads.shopee.com.br|~ads.shopee.com.mx|~ads.shopee.com.my|~ads.shopee.kr|~ads.shopee.ph|~ads.shopee.pl|~ads.shopee.sg|~ads.shopee.tw|~ads.shopee.vn|~ads.smartnews.com|~ads.snapchat.com|~ads.socialtheater.com|~ads.spotify.com|~ads.studyplus.co.jp|~ads.taboola.com|~ads.tiktok.com|~ads.typepad.jp|~ads.us.tiktok.com|~ads.viksaffiliates.com|~ads.vk.com|~ads.watson.ch|~ads.x.com|~ads.yandex|~badassembly.com|~caravansforsale.co.uk|~fusac.fr|~memo2.nl|~reempresa.org|~satmetrix.com|~seriouswheels.com,badfilter
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191168 21-10-2024
+flixseries.org#$##playx { display: none !important; }
+flixseries.org#$##plays { display: block !important; }
+flixseries.org#%#//scriptlet('set-cookie', 'player', '1')
+! https://github.com/AdguardTeam/AdguardFilters/issues/191279 21-10-2024
+jpopsingles.eu,superpsx.com#$#body[class*="blur"] > * { filter: none !important; }
+jpopsingles.eu,superpsx.com#$#body > div[class*="-blackout"] { display: none !important; }
+jpopsingles.eu,superpsx.com#$#body > div[class*="-blackout"] + div[class*="-wrapper"] { display: none !important; }
+jpopsingles.eu,superpsx.com#%#//scriptlet('trusted-suppress-native-method', 'Array.prototype.includes', '"error"')
+jpopsingles.eu,superpsx.com#%#//scriptlet('trusted-suppress-native-method', 'fetch', '"pagead2.googlesyndication.com"')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191271 21-10-2024
 live-tv-channels.org#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 live-tv-channels.org#%#//scriptlet('trusted-replace-node-text', 'script', 'adsbygoogle.js', '/&&!!.\.headers\.get\("Content-Length"\)/', '')
@@ -162,11 +172,12 @@ facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion#%#!f
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190993 17-10-2024
 ||0gomovies-official.site/jss/dectector-2025.js
 fmovies24.watch#%#//scriptlet('set-constant', 'AB_Detector', 'noopFunc')
-! https://github.com/AdguardTeam/AdguardFilters/issues/190943 20-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/190943 21-10-2024
+wiki.yjsnpi.nu#%#(()=>{const n={construct:(n,t,c)=>{const o=t[0],e=o?.toString();return console.log("callback:",o),e.includes("0x")&&!e.includes("['disconnect']()")&&(t[0]=function(){}),Reflect.construct(n,t,c)}};window.MutationObserver=new Proxy(window.MutationObserver,n)})();
 wiki.yjsnpi.nu#@%#//scriptlet('set-constant', 'DOMTokenList.prototype.remove', 'noopFunc')
 wiki.yjsnpi.nu#@%#//scriptlet('set-constant', 'HTMLElement.prototype.remove', 'noopFunc')
 wiki.yjsnpi.nu#@%#//scriptlet('abort-on-stack-trace', 'Function.prototype.bind', 'gZ')
-wiki.yjsnpi.nu#%#(()=>{const t={construct:(t,n,o)=>(n[0].toString().includes("0x")&&(n[0]=function(){}),Reflect.construct(t,n,o))};window.MutationObserver=new Proxy(window.MutationObserver,t)})();
+wiki.yjsnpi.nu#@%#(()=>{const t={construct:(t,n,o)=>(n[0].toString().includes("0x")&&(n[0]=function(){}),Reflect.construct(t,n,o))};window.MutationObserver=new Proxy(window.MutationObserver,t)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190699 16-10-2024
 ||vidlink.pro/api/adcash
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190718 16-10-2024
@@ -605,9 +616,10 @@ $script,third-party,denyallow=authkong.com|rsc.cdn77.org|linkvertise.com|fastly.
 japscan.lol##body > style + .container > .row > #main + #sidebar.col-md-3 > .card.mt-1 > .card[style="margin: 0px auto; display: block;"] > a.aikoi.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
 japscan.lol##body > style + .container > .row > #main.col-md-9 > .card > #chapters.tab-content > .row.justify-content-center.align-items-center > a.image-box.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
 japscan.lol##body > .container.text-center > .mb-2.mt-2[style="margin: 0px auto; display: block;"] > .text-center > a.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
+japscan.lol#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'nApA')
 japscan.lol#%#//scriptlet('prevent-setTimeout', 'replaceChildren')
 japscan.lol#%#//scriptlet('prevent-addEventListener', 'load', 'setTimeout')
-japscan.lol#%#//scriptlet('remove-node-text', 'script', 'QioE')
+japscan.lol#%#//scriptlet('remove-node-text', 'script', '/QioE|new RegExp/')
 japscan.lol#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '(e)=>')
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189504 26-09-2024

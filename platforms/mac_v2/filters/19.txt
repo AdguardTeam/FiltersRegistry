@@ -1,9 +1,9 @@
-! Checksum: /NxIIQHShxRKcT8OFd6JKQ
-! Diff-Path: ../patches/19/19-s-1729273030-3600.patch
+! Checksum: qW/UWNuTOxtBEsF0SX+9OA
+! Diff-Path: ../patches/19/19-s-1729503440-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.44.71
-! TimeUpdated: 2024-10-18T17:33:25+00:00
+! Version: 2.0.44.72
+! TimeUpdated: 2024-10-21T09:33:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1739,6 +1739,10 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+chronicle.com#%#//scriptlet('set-attr', 'chron-head#chron-head-data:not([data-slc-name])', 'data-slc-name', 'true')
+chronicle.com#%#//scriptlet('remove-attr', 'hidden', '.ArticlePage-articleContainer > .ArticlePage-articleBody.contentBody')
+chronicle.com#$#.ArticlePage-articleContainer > .ArticlePage-articleBody.contentBody { display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important; }
+chronicle.com#$?#.ArticlePage-articleContainer > .ArticlePage-articleBody:has(> #cdp-summary-notification:has(> p:contains(This is most likely due to a content blocker))) { display: none !important; }
 regex101.com#%#//scriptlet('prevent-fetch', 'srv.buysellads.com')
 regex101.com#%#//scriptlet('prevent-element-src-loading', 'script', 'srv.buysellads.com')
 regex101.com#%#//scriptlet('prevent-setTimeout', 'new Error("JSONP request to')
@@ -12713,6 +12717,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+chronicle.com##.ArticlePage-aside-content > .SignupModule
 ||img.etimg.com/photo/msid-111576466/whatsapp-banner.jpg
 montanafreepress.org##.has-dark-gray-background-color.has-background
 press.pl##.pressletter

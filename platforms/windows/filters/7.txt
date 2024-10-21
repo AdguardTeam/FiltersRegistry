@@ -1,9 +1,9 @@
-! Checksum: 4NEK4+tTUmshOclHTto4HA
-! Diff-Path: ../patches/7/7-s-1729492632-3600.patch
+! Checksum: 6yi8HCJiDuj+bKIeIc2jxw
+! Diff-Path: ../patches/7/7-s-1729503449-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.10
-! TimeUpdated: 2024-10-21T06:32:57+00:00
+! Version: 2.0.58.11
+! TimeUpdated: 2024-10-21T09:33:14+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -506,8 +506,8 @@ yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
-||wiki.yjsnpi.nu^$script,replace=/try\{\['[\S\s]+?catch\([0-9A-z]+\)\{.+?\}//
-wiki.yjsnpi.nu#%#(()=>{const t={construct:(t,n,o)=>(n[0].toString().includes("0x")&&(n[0]=function(){}),Reflect.construct(t,n,o))};window.MutationObserver=new Proxy(window.MutationObserver,t)})();
+||wiki.yjsnpi.nu^$script,replace=/if\(document\[.+?\*\*.+?\)\)/if(0)/
+wiki.yjsnpi.nu#%#(()=>{const n={construct:(n,t,c)=>{const o=t[0],e=o?.toString();return console.log("callback:",o),e.includes("0x")&&!e.includes("['disconnect']()")&&(t[0]=function(){}),Reflect.construct(n,t,c)}};window.MutationObserver=new Proxy(window.MutationObserver,n)})();
 $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 !wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'DOMTokenList.prototype.remove', 'noopFunc')
 !wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'HTMLElement.prototype.remove', 'noopFunc')

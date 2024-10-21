@@ -1,9 +1,9 @@
-! Checksum: 3trDWKJegnCZy9TEPb1dBg
-! Diff-Path: ../patches/14/14-s-1729499836-3600.patch
+! Checksum: 749xVwyibuU4elVtt8ILpw
+! Diff-Path: ../patches/14/14-s-1729503439-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.11.42
-! TimeUpdated: 2024-10-21T08:33:25+00:00
+! Version: 2.2.11.43
+! TimeUpdated: 2024-10-21T09:33:32+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22040,6 +22040,10 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+chronicle.com#%#//scriptlet('set-attr', 'chron-head#chron-head-data:not([data-slc-name])', 'data-slc-name', 'true')
+chronicle.com#%#//scriptlet('remove-attr', 'hidden', '.ArticlePage-articleContainer > .ArticlePage-articleBody.contentBody')
+chronicle.com#$#.ArticlePage-articleContainer > .ArticlePage-articleBody.contentBody { display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important; }
+chronicle.com#$?#.ArticlePage-articleContainer > .ArticlePage-articleBody:has(> #cdp-summary-notification:has(> p:contains(This is most likely due to a content blocker))) { display: none !important; }
 regex101.com#%#//scriptlet('prevent-fetch', 'srv.buysellads.com')
 regex101.com#%#//scriptlet('prevent-element-src-loading', 'script', 'srv.buysellads.com')
 regex101.com#%#//scriptlet('prevent-setTimeout', 'new Error("JSONP request to')
@@ -33014,6 +33018,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+chronicle.com##.ArticlePage-aside-content > .SignupModule
 ||img.etimg.com/photo/msid-111576466/whatsapp-banner.jpg
 montanafreepress.org##.has-dark-gray-background-color.has-background
 press.pl##.pressletter
@@ -49021,6 +49026,9 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+metaratings.ru#$##main-header > div.mainHeaderSubs { display: none !important; }
+metaratings.ru#%#//scriptlet('remove-class', 'hasHeaderPromoMenu', 'main')
+metaratings.ru#$#aside[class^="Announce_announceBar"] { --announce-top-indent: 0 !important; }
 rawkuma.com##.kln > a > img
 skillbox.ru##.js-article-banner
 infoq.com###infoq section.promo
