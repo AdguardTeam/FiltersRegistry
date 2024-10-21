@@ -1,9 +1,9 @@
-! Checksum: dAwrtCd5CF+Ko/ynr0EzwQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1729517817-3600.patch
+! Checksum: XZbyOSCn0cCvVJsGs+qVoQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1729521403-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.11.46
-! TimeUpdated: 2024-10-21T13:33:15+00:00
+! Version: 2.2.11.47
+! TimeUpdated: 2024-10-21T14:32:45+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -62,7 +62,7 @@
 ##.gdpr-banner
 ##.cc-floating
 ###cerez-politikasi
-##.orejime-Notice
+##body:not(.orejimeBody-WithModalOpen) div.orejime-Notice
 ##div[data-cy="cookie-banner"]
 ##.u-cookies-consent
 ###consent-banner-overlay
@@ -7230,7 +7230,6 @@ szaniteronline.hu#@#.cookie-alert
 @@||sdk.privacy-center.org/*/loader.js$domain=nicematin.com
 @@||sdk.privacy-center.org/sdk/*/modern/*.*.js$domain=nicematin.com
 konyhatizezercikk.hu#@##cookieModal
-ccifp.pl,ccifrance-international.org#@#.orejime-Notice
 @@||consent.cookiebot.eu/uc.js$domain=mullerpolska.pl
 kramerguitars.com,mesaboogie.com,maestroelectronics.com,epiphone.com#@##cookieModal
 takaritogep.hu#@#.cookie-alert
@@ -7330,7 +7329,6 @@ craftscouncil.org.uk#@#.cookie-banner:not(body):not(html)
 fotogena.de#@##onetrust-consent-sdk
 isybank.com#@#.cookie-modal
 isybank.com#@##cookieModal
-neomouv.com#@#.orejime-Notice
 piceramic.com#@#.cc-window[aria-label="cookieconsent"]
 piceramic.com#@#.cc-floating
 pressone.ro#@#.cookie-notice:not(body):not(html)
