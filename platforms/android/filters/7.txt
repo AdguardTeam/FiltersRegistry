@@ -1,9 +1,9 @@
-! Checksum: mtf/wYgHns1xT1oOEIux9A
-! Diff-Path: ../patches/7/7-s-1729597080-3600.patch
+! Checksum: RYgRpT+AnKrvifzr+O8Wrw
+! Diff-Path: ../patches/7/7-s-1729604221-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.24
-! TimeUpdated: 2024-10-22T11:33:35+00:00
+! Version: 2.0.58.25
+! TimeUpdated: 2024-10-22T13:33:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -506,9 +506,10 @@ yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
+||wiki.yjsnpi.nu^$script,replace=/if\([0-9A-z]+[[0-9A-z]+\(0x.+?length.+?content.+?\)\)/if(0)/
 wiki.yjsnpi.nu#%#//scriptlet('prevent-setTimeout', '0x')
 wiki.yjsnpi.nu#%#(()=>{const n={construct:(n,t,c)=>{const e=t[0],o=e?.toString();return o.includes("0x")&&o.length>50&&!o.includes("['disconnect']()")&&(t[0]=function(){}),Reflect.construct(n,t,c)}};window.MutationObserver=new Proxy(window.MutationObserver,n)})();
-wiki.yjsnpi.nu#%#(()=>{let n;Object.defineProperty(document,"onscroll",{get:function(){return n?function(n){return n}:null},set:function(t){n=t}})})();
+wiki.yjsnpi.nu#%#(()=>{let n;Object.defineProperty(document,"onscroll",{get:function(){return n?function(n){if(n==="mr65a503ae4bbd9e") return "fe6a68fc5f45b308"}:null},set:function(t){n=t}})})();
 $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 !wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'DOMTokenList.prototype.remove', 'noopFunc')
 !wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'HTMLElement.prototype.remove', 'noopFunc')
