@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /N9qAEycz2COvZFcULPkpw
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1729559116-14400.patch
+! Checksum: 5N0irwNwIoQvX+ZEcOLCXw
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1729573517-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.58.6
-! TimeUpdated: 2024-10-22T01:01:07+00:00
+! Version: 2.1.58.7
+! TimeUpdated: 2024-10-22T05:01:07+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -41,6 +41,7 @@
 -468-x-60.
 -468x601.
 -728-180.
+-728-90d.
 -728-x-90-
 -728-x-90.
 -728_90.
@@ -105,6 +106,7 @@
 -pub/prod/$third-party
 -viceads.
 -viewability.
+-webAds-
 .ad.intl.
 .ad4mat.$domain=~ad4mat.com
 .ad6.$domain=~ad6.com
@@ -112,6 +114,7 @@
 .ads.*?zone=
 .ads6-
 .ads7-
+.ads8-
 .adtech.
 .adv?id=
 .adxcore.
@@ -420,6 +423,7 @@
 /adx-dir-
 /adx.js
 /adxAdmin/*
+/aff/ads/*
 /aff_*/banners/*
 /aff_*?aff_id=
 /aff_banner.
@@ -520,6 +524,7 @@
 /bnr/468/*
 /bnr/720/*
 /bnr/ad/*
+/bnr_xload.
 /bnrs/yn_bnr.
 /brand-ads-
 /brightcoveAds.
@@ -686,6 +691,7 @@
 /pop-ads.
 /pop.php|$script
 /pop_*&ref=
+/popunderjs.
 /popup1.js
 /prebid-dfp.
 /prometeo-widgets.
@@ -869,6 +875,7 @@
 ://sc.*/popper.
 ://serve.*?random=
 ://syndication.$~subdocument,third-party
+://tools.*/ban/
 ://video-ads.
 ://wwwad.
 ://xads.
@@ -1076,6 +1083,7 @@ _werbebanner_
 /cc?imgid=$popup
 /click.*&pubid=$popup
 /click?*&subid=$popup
+/click?*=ad&$popup
 /click?trvid=*&externalid=$popup
 /delivery/ck.$popup
 /directclick/?$popup
@@ -1088,6 +1096,7 @@ _werbebanner_
 /jump/next.php?$popup
 /landing.*?ad_id=$popup
 /landing.*banner$popup
+/landing/*&publisher=$popup,third-party
 /out.php?link=t$popup
 /pop_redirect.php$popup
 /promo.*/?nats=$popup
@@ -1216,6 +1225,7 @@ _lx.ads/$popup
 ||carasexe.info^$third-party
 ||carasexe.name^$third-party
 ||cashpage.net^$third-party
+||catraff.com^$third-party
 ||cclpub.com^$third-party
 ||cdn3.net^$third-party
 ||cfgr2.com^$third-party
@@ -1256,6 +1266,7 @@ _lx.ads/$popup
 ||egnatius-ear.com^$third-party
 ||eurolive.com^$~image,third-party
 ||explorads.com^$third-party
+||fancybar.net^$third-party
 ||fgn.me^$third-party
 ||flinteractive.fr^$third-party
 ||frtyi.com^$third-party
@@ -1402,7 +1413,6 @@ _lx.ads/$popup
 ||xclick24.com^$third-party
 ||xn--ae-tja.ch^$third-party
 ||xpicw.top^$third-party
-||xxxtraffic.biz^$third-party
 ||yospace.com^$~object,third-party
 ||youborafds01.com^$third-party
 ||zebestof.com^$third-party
@@ -1502,7 +1512,6 @@ _lx.ads/$popup
 ||ansariecaroche.top^
 ||antiquarianjenny.com^
 ||anubiscycliae.com^
-||anyonemost.com^
 ||aptlycover.com^
 ||aptouste.net^
 ||aqgdlgshs.com^
@@ -1575,6 +1584,7 @@ _lx.ads/$popup
 ||bouncelargo.com^
 ||bouvierbang.com^
 ||bouwofiwoaph.net^
+||bracecherry.com^
 ||brashstudiocrucial.com^
 ||bravobusboy.com^
 ||britsratafee.com^
@@ -1628,6 +1638,7 @@ _lx.ads/$popup
 ||clrpdhptoddatj49.pro^
 ||codableprovene.com^
 ||commonssquegs.com^
+||compatriotelephant.com^
 ||contensel.space^
 ||convenebeice.com^
 ||copercato.com^
@@ -1789,6 +1800,7 @@ _lx.ads/$popup
 ||greysummergo.biz^
 ||gridiogrid.com^
 ||gronsirsou.com^
+||grottogamer.com^
 ||grujeeroowie.com^
 ||grurducuze.com^
 ||gsurl.in^
@@ -1892,6 +1904,7 @@ _lx.ads/$popup
 ||kdwdrpiwdxof.com^
 ||kdxhsaaealyadm.com^
 ||kebobsswidge.com^
+||kelsaurt.com^
 ||kempygateway.com^
 ||kennexor.com^
 ||kikongoguydom.click^
@@ -1978,6 +1991,7 @@ _lx.ads/$popup
 ||mxdadjpe.com^
 ||mybestclick.net^
 ||mzungushisn.com^
+||n1gopush.com^
 ||nahnoji.cz^
 ||naichootikie.com^
 ||nailumaihogo.com^
@@ -2044,6 +2058,7 @@ _lx.ads/$popup
 ||outlottint.com^
 ||outseeksliding.com^
 ||outswumvinose.com^
+||ouzosbesiren.com^
 ||overcobalionom.com^
 ||oversnubbulltor.com^
 ||ozjga.top^
@@ -2358,6 +2373,7 @@ _lx.ads/$popup
 ||yy8fgl2bdv.com^
 ||yyezwddjly.com^
 ||zaujooro.com^
+||zesemen.cz^
 ||zollzunis.top^
 ||zonsingise.com^
 .aspx?poolid=
@@ -2645,10 +2661,12 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||bitly.com^$script,third-party
 ||link.tl^$script,third-party
 ||safelinku.com^$script,third-party
+||shink.me^$script,third-party
 ||shorte.st^$script,third-party
 ||shortem.com^$script,subdocument,third-party
 ||zap.buzz^$script,subdocument,third-party
 ||1.bp.blogspot.com/-F1hVz0Ov_54/X7PxUM5Ua_I/AAAAAAAAH3E/_jcDu8y2mJUg0XeHRPNG1YIZoZliPi3fACLcBGAsYHQ/s300/poonam-pandey-hot.jpg
+||hostpic.org^$domain=fdesouche.com
 ||i.imgur.com/32xkKog.jpg
 ||nsa40.casimages.com/img/2020/05/11/200511033032222532.png
 ||zupimages.net/up/21/14/7x9v.gif
@@ -3004,6 +3022,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###ad4
 ###ad728b
 ###adBoven
+###adComm
 ###adInPlayer
 ###adLeaderBoard
 ###adRechts
@@ -3129,6 +3148,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###fixed-ads
 ###floated-ad
 ###footer-advertising
+###footer-pub
 ###footer_haut-publicite
 ###footer_pub
 ###google-ads-1
@@ -3181,17 +3201,20 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pub-haut
 ###pub-head
 ###pub-header
+###pub-large
 ###pub-left
 ###pub-right
 ###pub-sky
 ###pub-text
 ###pub-top
+###pub160
 ###pub160x600
 ###pub300
 ###pub300x250
 ###pub468x60_centree
 ###pub468x60_text
 ###pub468x60_text2
+###pub728
 ###pub728_ATF
 ###pub728bas
 ###pubAside
@@ -3209,6 +3232,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pub_728x90
 ###pub_728x90-1
 ###pub_728x90-2
+###pub_banner
 ###pub_banniere_basse
 ###pub_banniere_haute
 ###pub_bas
@@ -4240,6 +4264,7 @@ cuisineactuelle.fr##.magazineBlock
 allocine.fr##.main-banner
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
+igraal.com##.merchant__banner-wrap
 ceesty.com,clkmein.com,cllkme.com,corneey.com,destyy.com,festyy.com,sh.st,shorte.st,skipp.io##.middle-container
 ouedkniss.com##.mt-4.mt-md-6.home-front-store
 jetanimes.com##.mysticky-welcomebar-fixed
