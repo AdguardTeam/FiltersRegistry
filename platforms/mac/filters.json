@@ -379,8 +379,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.35.8",
-			"timeUpdated": "2024-10-21T21:01:16+0000",
+			"version": "2.1.35.9",
+			"timeUpdated": "2024-10-22T01:00:59+0000",
 			"languages": []
 		},
 		{
@@ -426,8 +426,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.43.29",
-			"timeUpdated": "2024-10-21T17:01:02+0000",
+			"version": "2.1.43.30",
+			"timeUpdated": "2024-10-22T01:01:02+0000",
 			"languages": []
 		},
 		{
@@ -458,8 +458,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.58.5",
-			"timeUpdated": "2024-10-21T21:01:19+0000",
+			"version": "2.1.58.6",
+			"timeUpdated": "2024-10-22T01:01:03+0000",
 			"languages": []
 		},
 		{
@@ -502,8 +502,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.58.7",
-			"timeUpdated": "2024-10-21T21:01:22+0000",
+			"version": "2.1.58.8",
+			"timeUpdated": "2024-10-22T01:01:04+0000",
 			"languages": [
 				"it"
 			]
@@ -547,8 +547,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.58.6",
-			"timeUpdated": "2024-10-21T21:01:22+0000",
+			"version": "2.1.58.7",
+			"timeUpdated": "2024-10-22T01:01:05+0000",
 			"languages": [
 				"ar"
 			]
@@ -565,8 +565,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.58.5",
-			"timeUpdated": "2024-10-21T21:01:24+0000",
+			"version": "2.1.58.6",
+			"timeUpdated": "2024-10-22T01:01:07+0000",
 			"languages": []
 		},
 		{
@@ -708,8 +708,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.35.35",
-			"timeUpdated": "2024-10-21T21:01:34+0000",
+			"version": "2.1.35.36",
+			"timeUpdated": "2024-10-22T01:01:16+0000",
 			"languages": []
 		},
 		{
@@ -740,8 +740,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.29.80",
-			"timeUpdated": "2024-10-21T21:01:36+0000",
+			"version": "2.0.29.81",
+			"timeUpdated": "2024-10-22T01:01:17+0000",
 			"languages": []
 		},
 		{
@@ -866,8 +866,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.58.6",
-			"timeUpdated": "2024-10-21T21:01:38+0000",
+			"version": "2.1.58.7",
+			"timeUpdated": "2024-10-22T01:01:19+0000",
 			"languages": []
 		},
 		{
@@ -940,8 +940,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.57.31",
-			"timeUpdated": "2024-10-21T21:01:38+0000",
+			"version": "2.1.57.32",
+			"timeUpdated": "2024-10-22T01:01:20+0000",
 			"languages": []
 		},
 		{
@@ -1230,8 +1230,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.58.7",
-			"timeUpdated": "2024-10-21T21:01:46+0000",
+			"version": "2.1.58.8",
+			"timeUpdated": "2024-10-22T01:01:28+0000",
 			"languages": []
 		},
 		{
@@ -1389,8 +1389,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.41.5",
-			"timeUpdated": "2024-10-21T21:01:56+0000",
+			"version": "2.1.41.6",
+			"timeUpdated": "2024-10-22T01:01:37+0000",
 			"languages": []
 		},
 		{
@@ -1465,8 +1465,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.54.13",
-			"timeUpdated": "2024-10-21T21:01:58+0000",
+			"version": "2.1.54.14",
+			"timeUpdated": "2024-10-22T01:01:39+0000",
 			"languages": []
 		},
 		{
@@ -1563,8 +1563,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.51.38",
-			"timeUpdated": "2024-10-21T21:02:07+0000",
+			"version": "2.0.51.39",
+			"timeUpdated": "2024-10-22T01:01:48+0000",
 			"languages": [
 				"hi"
 			]
@@ -1593,8 +1593,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
-			"version": "2.0.3.87",
-			"timeUpdated": "2024-10-21T13:02:01+0000",
+			"version": "2.0.3.88",
+			"timeUpdated": "2024-10-22T01:01:49+0000",
 			"languages": []
 		},
 		{
