@@ -1,9 +1,9 @@
-! Checksum: 2yC9dhleaaURqNoF96RliA
-! Diff-Path: ../patches/20/20-s-1729589822-3600.patch
+! Checksum: 9a20WYhr/N4eaRitiDj+EQ
+! Diff-Path: ../patches/20/20-s-1729597102-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.17.18
-! TimeUpdated: 2024-10-22T09:33:29+00:00
+! Version: 2.0.17.19
+! TimeUpdated: 2024-10-22T11:34:06+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -124,6 +124,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+fontanka.ru##article > div[class^="wrapper_"]:has(> a[href^="https://redirect.appmetrica.yandex.com/"])
 proton.me##div[aria-labelledby="mobile-banner-title"]
 chatgpt.com##div[class^="lg"]:has(> div.mx-auto > div.block > div.relative > div.mb-2 > div.flex > div.flex-row > svg[height="62"][width="62"])
 meteoprog.com###app-popup
@@ -620,7 +621,6 @@ tim.it#%#//scriptlet('set-cookie', 'TIM_ScaricaApp_Negative', '1')
 max.book118.com##.side-app
 max.book118.com##.preview-app
 community.oneplus.com##.oneplus-app
-amazon.*,amazon.es,amazon.fr,amazon.com,amazon.com.br,amazon.ca,amazon.com.mx,amazon.co.jp###native-app-upsell
 telnavi.jp#?#table > tbody > tr:has(> th:contains(PR文))
 remanga.org#%#//scriptlet('set-local-storage-item', 'isPromoHidden', 'true')
 tw.yahoo.com#?#div[data-reactroot] > div[class]:has(> div[class] > div#dss)
@@ -3243,6 +3243,8 @@ check24.de#$#.c24m-asb-visible { position: absolute !important; }
 !
 ! Misc rules, removed during optimization. If some rules are in groups, no need to move them here
 !
+!+ NOT_OPTIMIZED
+amazon.*,amazon.es,amazon.fr,amazon.com,amazon.com.br,amazon.ca,amazon.com.mx,amazon.co.jp###native-app-upsell
 !+ NOT_OPTIMIZED
 joyn.de##.ButtonMobileStickyHint_HintContainer__Layout__coBBZ
 !+ NOT_OPTIMIZED
