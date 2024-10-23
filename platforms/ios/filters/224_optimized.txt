@@ -1,9 +1,9 @@
-! Checksum: loszTnkoIUM3WX1c52opYQ
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1729669038-3600.patch
+! Checksum: OwLANBohcyVZVl3tu0FnYA
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1729687037-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.24.43
-! TimeUpdated: 2024-10-23T07:33:38+00:00
+! Version: 2.1.24.44
+! TimeUpdated: 2024-10-23T12:33:35+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -956,7 +956,6 @@ newtalk.tw##.dable_response
 newtalk.tw###_popIn_recommend
 newtalk.tw##div[id^="ATS_"]
 4gamers.com.tw##.vue-portal-target > div[style="min-height: auto;"]
-iqiyi.com##.content-wrap > .ch-res > .ad-ef
 feebee.com.tw###ad_mid_module + #item_backfill
 economist.com##.adComponent
 ahhhhfs.com###ri_home_slider_widget-2
@@ -2387,6 +2386,13 @@ hanime1.me#%#//scriptlet("trusted-replace-node-text", "script", "popunder", "/wi
 ||imgsrc.baidu.com/*/pic/*.jpg$domain=8727ck.cc|8726ck.cc|8724ck.cc
 8727ck.cc,8726ck.cc,8724ck.cc##body > div[style] > a[href][target="_blank"]
 8727ck.cc,8726ck.cc,8724ck.cc##.stui-vodlist > li:has(> div.stui-vodlist__box > a[href][target="_blank"])
+iqiyi.com##.content-wrap > .ch-res > .ad-ef
+iqiyi.com###middle_banner_ad_bk
+iqiyi.com##.search-item-box:has(> a > div > div[class^="ad_adContent"])
+iqiyi.com##div[class^="list_list__"] > div[style*="margin-bottom:"] > div[style*="margin-right:"]:has(> div > div[style*="background-image:"] div > div[class^="video-list-item_"] > div[class^="video-list-item_"] > a[href*="&creative_id="][href*="&impress_id="])
+iqiyi.com##div[class^="list_list__"] > div[style*="margin-bottom:"] > div[style*="margin-right:"]:has(> div > div[style*="background-image:"] div > div[class^="video-list-item_"] > div[class^="video-list-item_"] > a > div[class^="video-list-item_"] > div[class*="video-list-item_"] > img[src*="/ADS/"])
+iqiyi.com#%#//scriptlet('json-prune', 'data.template.tabs.*.blocks.*.data.data.videos.*.ad')
+iqiyi.com#%#(()=>{let e=!1;window.qyMesh=window.qyMesh||{},window.qyMesh=new Proxy(window.qyMesh,{get:function(a,t,d){return!e&&a?.preload?.Page_recommend_1?.response?.items&&(a.preload.Page_recommend_1.response.items.forEach((e=>{e.extData?.dataExtAd&&(e.extData.dataExtAd={}),e.video&&e.video.forEach((e=>{e.adverts&&(e.adverts=[]),e.data&&(e.data=e.data.filter((e=>!e.ad)))}))})),e=!0),Reflect.get(a,t,d)}})})();
 /js/hf*.js?v=$script,domain=bqgaa.com|bi25.cc
 huya.com#$##banner > a ~ .banner-close { display: none !important; }
 huya.com#%#//scriptlet('remove-attr', 'style', '#banner[style*="background-image:url"]')
@@ -4331,6 +4337,7 @@ newduba.cn###jq_youxi
 ||iouvxlio.top^
 ||snueirk.icu^
 ||cvmuia.xyz^
+||pg2bk.icu^
 ||gyunce.xyz^
 ||mlgowell.com^
 ||rqroytj33.fun^

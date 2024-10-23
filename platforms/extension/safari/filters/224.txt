@@ -1,9 +1,9 @@
-! Checksum: F7Z5J/e4/lRutKzeqo/8lQ
-! Diff-Path: ../patches/224/224-s-1729669029-3600.patch
+! Checksum: 0ayjQt5Mcrzg6BmFkPgN4A
+! Diff-Path: ../patches/224/224-s-1729687027-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.24.43
-! TimeUpdated: 2024-10-23T07:33:38+00:00
+! Version: 2.1.24.44
+! TimeUpdated: 2024-10-23T12:33:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1330,7 +1330,6 @@ newtalk.tw##.dable_response
 newtalk.tw###_popIn_recommend
 newtalk.tw##div[id^="ATS_"]
 4gamers.com.tw##.vue-portal-target > div[style="min-height: auto;"]
-iqiyi.com##.content-wrap > .ch-res > .ad-ef
 feebee.com.tw###ad_mid_module + #item_backfill
 economist.com##.adComponent
 ahhhhfs.com###ri_home_slider_widget-2
@@ -2766,6 +2765,16 @@ hanime1.me#%#//scriptlet("trusted-replace-node-text", "script", "popunder", "/wi
 ||imgsrc.baidu.com/*/pic/*.jpg$domain=8727ck.cc|8726ck.cc|8724ck.cc
 8727ck.cc,8726ck.cc,8724ck.cc##body > div[style] > a[href][target="_blank"]
 8727ck.cc,8726ck.cc,8724ck.cc##.stui-vodlist > li:has(> div.stui-vodlist__box > a[href][target="_blank"])
+!
+! iqiyi.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/190766
+iqiyi.com##.content-wrap > .ch-res > .ad-ef
+iqiyi.com###middle_banner_ad_bk
+iqiyi.com##.search-item-box:has(> a > div > div[class^="ad_adContent"])
+iqiyi.com##div[class^="list_list__"] > div[style*="margin-bottom:"] > div[style*="margin-right:"]:has(> div > div[style*="background-image:"] div > div[class^="video-list-item_"] > div[class^="video-list-item_"] > a[href*="&creative_id="][href*="&impress_id="])
+iqiyi.com##div[class^="list_list__"] > div[style*="margin-bottom:"] > div[style*="margin-right:"]:has(> div > div[style*="background-image:"] div > div[class^="video-list-item_"] > div[class^="video-list-item_"] > a > div[class^="video-list-item_"] > div[class*="video-list-item_"] > img[src*="/ADS/"])
+iqiyi.com#%#//scriptlet('json-prune', 'data.template.tabs.*.blocks.*.data.data.videos.*.ad')
+iqiyi.com#%#(()=>{let e=!1;window.qyMesh=window.qyMesh||{},window.qyMesh=new Proxy(window.qyMesh,{get:function(a,t,d){return!e&&a?.preload?.Page_recommend_1?.response?.items&&(a.preload.Page_recommend_1.response.items.forEach((e=>{e.extData?.dataExtAd&&(e.extData.dataExtAd={}),e.video&&e.video.forEach((e=>{e.adverts&&(e.adverts=[]),e.data&&(e.data=e.data.filter((e=>!e.ad)))}))})),e=!0),Reflect.get(a,t,d)}})})();
 !
 ! Online books
 ! Example of an ad script: https://729081de.bi25.cc/js/hfee22.js?v=1.3
@@ -4896,6 +4905,7 @@ newduba.cn###jq_youxi
 ||iouvxlio.top^
 ||snueirk.icu^
 ||cvmuia.xyz^
+||pg2bk.icu^
 ||gyunce.xyz^
 ||mlgowell.com^
 ||rqroytj33.fun^
