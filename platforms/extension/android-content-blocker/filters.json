@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.57.38",
-			"timeUpdated": "2024-10-23T06:31:24+0000",
+			"version": "2.3.57.39",
+			"timeUpdated": "2024-10-23T07:31:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.11.63",
-			"timeUpdated": "2024-10-23T06:32:47+0000",
+			"version": "2.2.11.64",
+			"timeUpdated": "2024-10-23T07:33:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -696,8 +696,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.75",
-			"timeUpdated": "2024-10-22T20:33:24+0000",
+			"version": "2.0.49.76",
+			"timeUpdated": "2024-10-23T07:33:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -718,8 +718,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.80",
-			"timeUpdated": "2024-10-23T06:32:54+0000",
+			"version": "2.0.44.81",
+			"timeUpdated": "2024-10-23T07:33:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -740,8 +740,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.17.20",
-			"timeUpdated": "2024-10-22T14:33:27+0000",
+			"version": "2.0.17.21",
+			"timeUpdated": "2024-10-23T07:33:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1657,8 +1657,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.24.42",
-			"timeUpdated": "2024-10-23T04:33:24+0000",
+			"version": "2.1.24.43",
+			"timeUpdated": "2024-10-23T07:33:38+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

@@ -1,9 +1,9 @@
-! Checksum: SOGUsd+HjMysHp6Fu0KMLw
-! Diff-Path: ../patches/17/17-s-1729611547-3600.patch
+! Checksum: lrecJT8W9D8qWH50mB7PYA
+! Diff-Path: ../patches/17/17-s-1729669012-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.9.69
-! TimeUpdated: 2024-10-22T15:35:16+00:00
+! Version: 2.0.9.70
+! TimeUpdated: 2024-10-23T07:33:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -393,11 +393,21 @@ $removeparam=fb_source
 ||puma.com^$removeparam=sc_uid
 ||puma.com^$removeparam=sc_llid
 ||puma.com^$removeparam=sc_eh
+! reddit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191029
 ||reddit.com^$removeparam=%24deep_link
 ||reddit.com^$removeparam=%243p
-||reddit.com^$removeparam=rdt
 ||reddit.com^$removeparam=post_index
+! reddit.com - email tracking
+||reddit.com^$removeparam=post_fullname
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7211861
+||reddit.com^$removeparam=share_id
+! https://github.com/AdguardTeam/AdguardFilters/issues/94662
+||reddit.com^$removeparam=correlation_id
+||reddit.com^$removeparam=ref_campaign
+||reddit.com^$removeparam=ref_source
+||reddit.com^$removeparam=ref
+! https://github.com/AdguardTeam/AdguardFilters/issues/191029#issuecomment-2424807493
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190916
 ||boosty.to^$removeparam=_1ld
 ||boosty.to^$removeparam=_1lp
@@ -1903,8 +1913,6 @@ $removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||imdb.com^$removeparam=ref_
 ! https://github.com/AdguardTeam/AdguardFilters/issues/104987
 ||livedoor.biz^$removeparam=ref
-! reddit.com - email tracking
-||reddit.com^$removeparam=post_fullname
 ! adjust.com tracking
 ||adj.st^$removeparam=CollectionId
 ||adj.st^$removeparam=adjust_deeplink
@@ -1947,13 +1955,6 @@ $removeparam=aid,domain=adguard-vpn.com|adguard-dns.io|adguard.com|adguard.info|
 ||start.pm.by^$removeparam=adtag
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100613
 ||redhotpawn.com^$removeparam=cbqsid
-! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7211861
-||reddit.com^$removeparam=share_id
-! https://github.com/AdguardTeam/AdguardFilters/issues/94662
-||reddit.com^$removeparam=correlation_id
-||reddit.com^$removeparam=ref_campaign
-||reddit.com^$removeparam=ref_source
-||reddit.com^$removeparam=ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99645
 ||trendyol.com^$removeparam=tyutm_source
 ||trendyol.com^$removeparam=tyutm_medium
