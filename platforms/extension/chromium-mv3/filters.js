@@ -707,8 +707,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.17.26",
-			"timeUpdated": "2024-10-23T16:34:02+0000",
+			"version": "2.0.17.27",
+			"timeUpdated": "2024-10-23T22:34:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
