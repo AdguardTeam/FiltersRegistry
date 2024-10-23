@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.57.44",
-			"timeUpdated": "2024-10-23T12:31:18+0000",
+			"version": "2.3.57.45",
+			"timeUpdated": "2024-10-23T13:31:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.6.97",
-			"timeUpdated": "2024-10-23T09:32:40+0000",
+			"version": "2.1.6.98",
+			"timeUpdated": "2024-10-23T13:33:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.5",
-			"timeUpdated": "2024-10-23T10:32:43+0000",
+			"version": "2.0.44.6",
+			"timeUpdated": "2024-10-23T13:33:48+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.11.68",
-			"timeUpdated": "2024-10-23T12:33:22+0000",
+			"version": "2.2.11.69",
+			"timeUpdated": "2024-10-23T13:34:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -696,8 +696,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.80",
-			"timeUpdated": "2024-10-23T12:33:28+0000",
+			"version": "2.0.49.81",
+			"timeUpdated": "2024-10-23T13:34:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -740,8 +740,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.17.23",
-			"timeUpdated": "2024-10-23T10:33:11+0000",
+			"version": "2.0.17.24",
+			"timeUpdated": "2024-10-23T13:34:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
