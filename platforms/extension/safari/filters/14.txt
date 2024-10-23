@@ -1,9 +1,9 @@
-! Checksum: +zbFbusPVtCV347vWgroYA
-! Diff-Path: ../patches/14/14-s-1729701471-3600.patch
+! Checksum: xY/uHxk2Y9uOZNsHjNasSg
+! Diff-Path: ../patches/14/14-s-1729705032-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.11.71
-! TimeUpdated: 2024-10-23T16:33:55+00:00
+! Version: 2.2.11.72
+! TimeUpdated: 2024-10-23T17:33:26+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2491,6 +2491,8 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 !
 ! NOTE: Regular rules
 !
+ames-tools.co.uk#$#.wt-cli-cookie-bar-container { display: none !important; }
+ames-tools.co.uk#$#.cli-barmodal-open { overflow: auto !important; }
 blocket.se##div[class^="SchibstedBanner__Wrapper"]
 bio-hoflieferant.de#$#.modal-backdrop { display: none !important; }
 bio-hoflieferant.de#$#body { overflow: auto !important; padding-right: 0 !important; }
@@ -16260,6 +16262,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191183
+ames-tools.co.uk#@##cliSettingsPopup
+ames-tools.co.uk#@##cookie-law-info-bar
+ames-tools.co.uk#@#.cli-popupbar-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191201
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191478
 @@||cmp.inmobi.com/choice/*/choice.js$domain=ilgiornale.it
@@ -25583,7 +25589,6 @@ moneycontrol.com#$?##cbSignup.credit_bureau_promo_popup { remove: true; }
 ec-store.net###rt\.popup-overlay_rt_popup_sws
 ec-store.net###rt_popup_sws
 wbur.org##.cannelton-campaign
-casabrutus.com##.fixed.bottom-32
 quizlet.com##.LoginBottomBar
 ipa.zeejb.com###myModal
 pdfcandy.com###ratingBox
@@ -31840,6 +31845,8 @@ easy-deutsch.de#%#AG_onLoad(function() { setTimeout(function() { var el = docume
 ! Blocking it also causes that videos are not playing automatically
 ! twitter.com##div[data-testid="BottomBar"]
 !
+!+ NOT_OPTIMIZED
+casabrutus.com##.fixed.bottom-32
 !+ NOT_OPTIMIZED
 ladyblog.me,apkmodhub.in,freshercooker.in,henryharvin.com##.chaty-widget
 !+ NOT_OPTIMIZED
