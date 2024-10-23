@@ -1,5 +1,5 @@
-! Checksum: fzzbQhUhiq5Oa4p2RRKLiw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1729631129-14400.patch
+! Checksum: 2+/EfZ7oZUwGK50sBV2lbA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1729659980-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.38
@@ -32,7 +32,6 @@
 ##.go-to-app:not(html,body,:empty)
 ##.installAppPopup:not(html,body,:empty)
 ##.js-app_banner:not(html,body,:empty)
-##.js-mobile-app:not(html,body,:empty)
 ##.mobile-app-links:not(html,body,:empty)
 ##.mobile_apps:not(html,body,:empty)
 ##.mobileApp:not(html,body,:empty)
@@ -129,6 +128,7 @@ www.google.*,ipv6.google.com##.g:has(a[href^="https://books.google."])
 ||138.68.252.54^$document
 ||fileplanet.com^$document,popup
 windowsreport.com##.code-block
+appuals.com##.info.box
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
 ||majorgeeks.com/images/icons/red_icon_18x17px.png$image
 drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
@@ -525,7 +525,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||potsaglu.net^$all
 ||rafkxx.com^$all
 ||waisheph.com^$all
-||whookroo.com^$all
 ||zeekaihu.net^$all
 ||37.1.223.231^$all
 ||139.45.197.167^$all
@@ -543,7 +542,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||69.16.230.226^$all
 ||208.91.196.46^$all
 /page/bouncy.php?$all
-||avenueinvoke.com^$all
+||curryfielddistribution.com^$all
 ||profitablecpmgate.com^$all
 ||unseenreport.com^$all
 ||crmentjg.com^$all
@@ -554,6 +553,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||vgfrrtc.click^$all
 ||38.180.96.244^$all
 ||aysesuretobea.com^$all
+||pringed.space^$all
 ||tsapphires.buzz^$all
 ||34.195.224.242^$all
 ||54.225.185.110^$all
@@ -601,6 +601,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||193.143.1.217^$all
 ||208.91.189.203^$all
 /?nw=1&tb=false&cw=$document
+.advancedhosters.com^$document,domain=~mirror.advancedhosters.com|~www.advancedhosters.com
 ||ezexfzek.com^$all
 ||videosprofitnetwork.com^$all
 ||192.243.59.12^$document
@@ -1224,6 +1225,7 @@ google.*##div[data-attrid^="images "]:has-text(/, [1-9][1-46-9]% OF{2}/)
 ://ww5.$document,domain=~ww5.ikea.com|~ww5.msu.ac.zw
 ://ww6.$document,domain=~ww6.generali.pt
 ://ww7.$document,domain=~ww7.be|~ww7.readsnk.com
+://ww9.$document,domain=~ww9.ikea.com|~ww9.tiki.ne.jp|~ww9.sakura.ne.jp|~ww9.generali.pt|~ww9.itau.com.br
 ://ww10.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww12.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww16.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
@@ -1864,7 +1866,6 @@ play.max.com##div[class*=Gradient-Beam-]:empty
 ~imdb.com##.jt-imdb:not(html,body,:empty)
 ~imdb.com##.imdb-score:not(html,body,:empty)
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
-~imdb.com##.imdbrating:not(html,body,:empty)
 ~imdb.com##div[title="IMDb Rating" i]
 bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 playpilot.com##.ratings
@@ -1937,7 +1938,6 @@ $document,removeparam=psf_variant
 $document,removeparam=bxid
 $document,removeparam=irgwc
 $document,removeparam=/^clickid=.*$/i,domain=~discover.*
-$document,removeparam=ito
 $document,removeparam=c[0]
 $document,removeparam=rlz
 $document,removeparam=pcampaignid
@@ -1965,6 +1965,7 @@ $removeparam=admitad_uid
 $removeparam=traffic_type
 $removeparam=traffic_id
 $removeparam=dcmp
+$removeparam=clickOrigin
 $removeparam=istCompanyId
 $removeparam=istFeedId
 $removeparam=istItemId
@@ -2078,6 +2079,8 @@ $removeparam=afsrc
 $~ping,removeparam=lcid,domain=~rekono.si
 $removeparam=usource
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
+$removeparam=c3ch
+$removeparam=c3nid
 $removeparam=trackingCode
 $removeparam=CJAID
 $removeparam=CJSID
@@ -2105,6 +2108,8 @@ $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org
 $removeparam=affuid
 $removeparam=refclickid
+$removeparam=sp_source
+$removeparam=sp_medium
 $removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
 $document,removeparam=/^affSource.*$/i
@@ -2223,8 +2228,6 @@ $removeparam=pk_content
 $removeparam=pk_kwd
 $removeparam=pk_keyword
 $removeparam=ig_mid
-$removeparam=au_advert_id
-$removeparam=au_car_id
 $document,removeparam=/^source=rss$/
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
@@ -2234,6 +2237,8 @@ $removeparam=affcode
 $removeparam=belboon
 $removeparam=channable
 $removeparam=int_source
+$removeparam=int_medium
+$removeparam=int_content
 $removeparam=int_campaign
 $removeparam=sudaref
 $removeparam=oref
@@ -2277,6 +2282,7 @@ $removeparam=ttd_tdid
 $removeparam=bsw_param
 $removeparam=google_push
 $removeparam=partneruserid
+$removeparam=sExtCookieId
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
@@ -2351,6 +2357,7 @@ $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com|linkedin.com|
 ||amazon.$removeparam=crid
 ||amazon.$removeparam=/^cv_ct_.*$/
 ||amazon.$removeparam=sprefix
+||amazon.$removeparam=ac_md
 $removeparam=coliid
 $removeparam=geniuslink
 ||amazon.$removeparam=aaxitk
@@ -2767,6 +2774,8 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 $removeparam=context,domain=imdb.com|fiverr.com|spotify.com|avito.ru|avito.ma
 $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
 $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
+$removeparam=tag,domain=argos.co.uk|habitat.co.uk|tv2.no|support.github.com
+$removeparam=publisher_id,domain=t-mobile.com|udemy.com
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
@@ -2977,6 +2986,7 @@ $document,removeparam=refresh,domain=cnn.com|startribune.com
 ||emag.ro^$removeparam=scenario_ID
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=/(\$)ja.*$/,domain=argos.co.uk
+$removeparam=clickPR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
 $removeparam=/^cid=DSS-Affiliate.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
@@ -3285,6 +3295,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 @@://advertising.adtech.adserver.$third-party
 www.youtube.com##.ytd-watch-flexy #dismissible:has(.badge-style-type-simple)
 www.youtube.com##ytd-shelf-renderer[thumbnail-style]
+tv2.no##.banner
 www.finn.no#%#//scriptlet('ubo-rc.js', 'ads__unit--premium', '.ads__unit', 'stay')
 positivr.fr#$#.viously-sticked { position: absolute !important; top: 0 !important; left: 0 !important; bottom: 0 !important; right: 0 !important; width: 100% !important;  height: 100% !important; z-index: 1 !important; display: block !important }
 youtube.com#$?#ytd-miniplayer[has-playlist-data] #movie_player video { remove: true; }
