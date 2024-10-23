@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Is51DIu4QT6TU553EoaDsg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1729697846-3600.patch
+! Checksum: eTJ8ph7QKV/cP5jNcj/p0w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1729701479-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.57.47
-! TimeUpdated: 2024-10-23T15:31:20+00:00
+! Version: 2.3.57.48
+! TimeUpdated: 2024-10-23T16:31:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26996,6 +26996,8 @@ globalpublishers.co.tz#?#.listing > article:has(> div.item-inner a[href*="-chapr
 !------------------------------ Swedish ------------------------------
 !---------------------------------------------------------------------
 ! NOTE: Swedish
+! blocket.se - ad when searching for a car
+blocket.se##a[href^="https://wheelaway.se"][href*="campaign"]
 !
 omni.se##div[class^="Ad_placement__"]
 aftonbladet.se##+js(set-cookie, abMegaAd, 1)
@@ -34351,6 +34353,13 @@ $xmlhttprequest,third-party,denyallow=vixcloud.co|cdn.plyr.io|authkong.com|rsc.c
 !
 ! NOTE: Specific rules
 !
+||111.90.159.132/wp-content/plugins/catfish-advert-banner/
+||111.90.159.132/wp-content/uploads/*OPPA888-Banner-
+111.90.159.132#$#body > div[class^="mfp-"] { display: none !important; }
+111.90.159.132#$#html { overflow: auto !important; }
+111.90.159.132###catfish
+111.90.159.132###custom_html-8
+||cgjnf.com/*/adsbanner
 eztv.wf##a > img[alt="Anonymous Download"]
 eztvx.to##.episode_middle_column a[href] > img[alt*="Anonymous"]
 redgifs.com##.bannerWrapper
@@ -53828,6 +53837,9 @@ partner.ads.js$domain=d3ward.github.io
 ! SECTION: Temporary
 ! ATTENTION: The rules in this section must be accompanied by a link of an issue, where the problem will be fixed
 ! or with clear description what to do next
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/191482
+! TODO: remove it when the issue is fixed https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2992
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187875#issuecomment-2361917970
 ! Problem occurs only in Brave browser with MV3 extension
