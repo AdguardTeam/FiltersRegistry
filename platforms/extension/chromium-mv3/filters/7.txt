@@ -1,8 +1,8 @@
-! Checksum: ovN4s7Qax5ObGJq4E5ODTA
+! Checksum: ph45sTTdaeR5sPFYr/h9Ig
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.32
-! TimeUpdated: 2024-10-24T09:34:05+00:00
+! Version: 2.0.58.33
+! TimeUpdated: 2024-10-24T11:34:25+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -494,6 +494,12 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191177
+contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','microad.net/js/compass.js')
+contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','adingo.jp/p.js')
+contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','criteo.net/js/ld/publishertag.js')
+contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','ad-stir.com/js/adstir.js')
+contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','doubleclick.net/tag/js/gpt.js')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190534
 in-jpn.com##.sk-popup-window
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190202
@@ -1742,6 +1748,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 !
 !
+contents-group.work#?#div[align="center"][style="margin: 20px 0px;"]:contains(/^- PR -$/)
+contents-group.work###interstitial
 ||kazokuchannel.doorblog.jp/ads/
 spocale.com##div[class*="ads-container"]
 reserva.be##.ad_tab_wrap
