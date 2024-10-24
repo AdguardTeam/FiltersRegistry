@@ -1,9 +1,9 @@
-! Checksum: EOGopEFd2C5rbG3pN6cdxw
-! Diff-Path: ../patches/7/7-s-1729769969-3600.patch
+! Checksum: XqZBWMSWGYrcGjDpPIFamQ
+! Diff-Path: ../patches/7/7-s-1729773488-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.33
-! TimeUpdated: 2024-10-24T11:34:25+00:00
+! Version: 2.0.58.34
+! TimeUpdated: 2024-10-24T12:33:16+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -497,6 +497,8 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191181
+bm.best-hit.tv#%#//scriptlet('prevent-addEventListener', 'load', 'delayCheckAB')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191177
 contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','microad.net/js/compass.js')
 contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','adingo.jp/p.js')
@@ -512,7 +514,7 @@ yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
-wiki.yjsnpi.nu#%#//scriptlet('prevent-setTimeout', 'document[')
+wiki.yjsnpi.nu#%#//scriptlet('prevent-setTimeout', '/^\(\)=>\{const .{2000,2500}/')
 $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 !wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'DOMTokenList.prototype.remove', 'noopFunc')
 !wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'HTMLElement.prototype.remove', 'noopFunc')
@@ -1768,6 +1770,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 !
 !
+best-hit.tv##div[style="margin-top:10px; margin-bottom:10px; text-align:center;"]
 contents-group.work#?#div[align="center"][style="margin: 20px 0px;"]:contains(/^- PR -$/)
 contents-group.work###interstitial
 ||kazokuchannel.doorblog.jp/ads/
@@ -10968,6 +10971,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191181
+best-hit.tv#@#.ad-space:not(.textads)
+best-hit.tv#@#div[id^="div-gpt-"]
+best-hit.tv#@#[id^="div-gpt-ad"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190666#issuecomment-2408330385
 ||taboola.com^$domain=pashplus.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184080

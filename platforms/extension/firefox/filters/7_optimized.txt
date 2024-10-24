@@ -1,9 +1,9 @@
-! Checksum: ZZlTzuVU+PhCcii2Xv4vew
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1729769944-3600.patch
+! Checksum: BSTUyjMHJUy7pJEu4G33sQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1729773463-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.33
-! TimeUpdated: 2024-10-24T11:34:25+00:00
+! Version: 2.0.58.34
+! TimeUpdated: 2024-10-24T12:33:16+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -391,6 +391,7 @@
 ||kok.eroterest.net^
 ||ad-hatena.com^
 ||advert.punyu.com^
+bm.best-hit.tv#%#//scriptlet('prevent-addEventListener', 'load', 'delayCheckAB')
 contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','microad.net/js/compass.js')
 contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','adingo.jp/p.js')
 contents-group.work#%#//scriptlet('prevent-element-src-loading', 'script','criteo.net/js/ld/publishertag.js')
@@ -401,7 +402,7 @@ in-jpn.com##.sk-popup-window
 yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
-wiki.yjsnpi.nu#%#//scriptlet('prevent-setTimeout', 'document[')
+wiki.yjsnpi.nu#%#//scriptlet('prevent-setTimeout', '/^\(\)=>\{const .{2000,2500}/')
 $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#$##comments-loading { display: none !important; }
 @@||wiki.yjsnpi.nu^$image,xmlhttprequest,~third-party
@@ -1295,6 +1296,7 @@ city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.iko
 city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+best-hit.tv##div[style="margin-top:10px; margin-bottom:10px; text-align:center;"]
 contents-group.work#?#div[align="center"][style="margin: 20px 0px;"]:contains(/^- PR -$/)
 contents-group.work###interstitial
 ||kazokuchannel.doorblog.jp/ads/
@@ -10451,6 +10453,9 @@ gtoys.blog.fc2.com###adright
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+best-hit.tv#@#.ad-space:not(.textads)
+best-hit.tv#@#div[id^="div-gpt-"]
+best-hit.tv#@#[id^="div-gpt-ad"]
 ||taboola.com^$domain=pashplus.jp
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=tver.jp,important
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=gd.gesoten.com
