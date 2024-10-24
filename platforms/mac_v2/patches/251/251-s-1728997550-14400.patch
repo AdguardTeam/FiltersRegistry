@@ -1,0 +1,16 @@
+d1 2
+a2 2
+! Checksum: Lw9YIDzTzCrTkiiRFJfzcw
+! Diff-Path: ../patches/251/251-s-1729789542-14400.patch
+d5 2
+a6 2
+! Version: 2.0.8.26
+! TimeUpdated: 2024-10-24T17:01:51+00:00
+d10 1
+a10 1
+! OriginalVersion: 24October2024v1
+a1840 4
+! Removing a Google search parameter, based on extensive research to determine that search terms with Google will always use UTF-8 no matter what and will under no known circumstances actually treat text as Shift_JIS even when using "&ie=Shift_JIS"
+! https://support.google.com/adsense/answer/9055049 imply that "Shift_JIS" was supposed to be accepted by Google, but while https://www.google.co.jp/search?q=%E3%83%9E%E3%83%BC%E3%83%A1%E3%82%A4%E3%83%89%E3%83%A9%E3%82%B0%E3%83%BC%E3%83%B3%E3%81%AE%E3%83%A9%E3%83%8B%E3%83%BC works correctly (マーメイドラグーンのラニー, the Japanese name of a book), https://www.google.co.jp/search?q=%E3%83%9E%E3%83%BC%E3%83%A1%E3%82%A4%E3%83%89%E3%83%A9%E3%82%B0%E3%83%BC%E3%83%B3%E3%81%AE%E3%83%A9%E3%83%8B%E3%83%BC&ie=Shift_JIS clearly doesn't, no matter which combinations of online converters or halfwidth/fullwidth I tested with.
+://www.google.$document,removeparam=ie,domain=www.google.*|ipv6.google.com
+://ipv6.google.com^$document,removeparam=ie,domain=www.google.*|ipv6.google.com
