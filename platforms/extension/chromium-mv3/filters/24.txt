@@ -1,8 +1,8 @@
-! Checksum: 1j/chgk8PC3A/AQwECqxkQ
+! Checksum: plUugJybnwKCZWOHPQjdbw
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.1.73
-! TimeUpdated: 2024-10-23T16:34:04+00:00
+! Version: 2.0.1.74
+! TimeUpdated: 2024-10-24T05:33:25+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37,6 +37,19 @@
 ! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2992
 ||livejasmin.com^$popup,third-party,badfilter
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191500 24-10-2024
+hegra.cam##div[id^="fixedban"]
+hegra.cam##.visible-block
+hegra.cam##div[class^="adbn"][class*="wrap"]
+hegra.cam##div[class^="rts"][class*="-urts"]
+hegra.cam##div[class^="dr"][class*="-udr"]
+hegra.cam##body > div[class^="content"][class*="-block"]
+hegra.cam##center > a[target="_blank"] > button[onclick="hideButton()"]
+hegra.cam#%#//scriptlet('prevent-addEventListener', 'click', 'window.open(_0x')
+hegra.cam#%#//scriptlet('abort-on-property-write', 'openPopUnder')
+hegra.cam#%#//scriptlet('prevent-element-src-loading', 'script', '/profitsence\.com|pagead2\.googlesyndication\.com|doubleclick\.net|headerbidding\.ai/')
+hegra.cam#%#//scriptlet('prevent-fetch', 'method:HEAD')
+hegra.cam#%#//scriptlet('prevent-setTimeout', '/new Request[\s\S]*?Promise\.all[\s\S]*?\.status|function _0x|\.onerror|\.style\.display|=== .none./')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191201
 bio-hoflieferant.de#@##cookie_modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191478 23-10-2024
@@ -300,7 +313,8 @@ facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion#%#!f
 ||0gomovies-official.site/jss/dectector-2025.js
 fmovies24.watch#%#//scriptlet('set-constant', 'AB_Detector', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943 24-10-2024
-wiki.yjsnpi.nu#%#//scriptlet('prevent-setTimeout', '/^\(\)=>\{const .+0x/')
+wiki.yjsnpi.nu#%#//scriptlet('prevent-setTimeout', 'document[')
+wiki.yjsnpi.nu#@%#//scriptlet('prevent-setTimeout', '/^\(\)=>\{const .+0x/')
 wiki.yjsnpi.nu#@%#//scriptlet('prevent-setTimeout', '/^\(\)=>\{function .+0x/')
 wiki.yjsnpi.nu#@%#//scriptlet('prevent-setTimeout', '0x')
 wiki.yjsnpi.nu#%#(()=>{let n;Object.defineProperty(document,"onscroll",{get:function(){return n?function(n){if(n==="mr65a503ae4bbd9e") return "fe6a68fc5f45b308"}:null},set:function(t){n=t}})})();
@@ -500,17 +514,6 @@ igram.world##.helper-widget
 afisha.yandex.*#@?#.grid__container:has(.grid__inner > div[class]:matches-attr("/[a-z0-9]{6,12}/"="/R-A-[0-9]{6}/"))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190572 10-10-2024
 bbc.co.uk#@$#div[data-testid="test-overlay"][class*="-Overlay"] { display: none !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/190576 10-10-2024
-migration.cam##div[id^="fixedban"]
-migration.cam##.visible-block
-migration.cam##div[class^="adbn"][class*="wrap"]
-migration.cam##div[class^="rts"][class*="-urts"]
-migration.cam##div[class^="dr"][class*="-udr"]
-migration.cam##body > div[class^="content"][class*="-block"]
-migration.cam#%#//scriptlet('abort-on-property-write', 'openPopUnder')
-migration.cam#%#//scriptlet('prevent-element-src-loading', 'script', '/profitsence\.com|pagead2\.googlesyndication\.com|doubleclick\.net|headerbidding\.ai/')
-migration.cam#%#//scriptlet('prevent-fetch', 'method:HEAD')
-migration.cam#%#//scriptlet('prevent-setTimeout', '/new Request[\s\S]*?Promise\.all[\s\S]*?\.status|function _0x|\.onerror|\.style\.display|=== .none./')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190607 10-10-2024
 infor.pl,forsal.pl#%#//scriptlet('prevent-setTimeout', 'error-report.com')
 infor.pl,forsal.pl#%#//scriptlet('remove-node-text', 'script', 'error-report.com')
@@ -746,7 +749,7 @@ bauhaus.cz##.modal:has(> .modal-container > .cookie-modal)
 japscan.lol##body > style + .container > .row > #main + #sidebar.col-md-3 > .card.mt-1 > .card[style="margin: 0px auto; display: block;"] > a.aikoi.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
 japscan.lol##body > style + .container > .row > #main.col-md-9 > .card > #chapters.tab-content > .row.justify-content-center.align-items-center > a.image-box.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
 japscan.lol##body > .container.text-center > .mb-2.mt-2[style="margin: 0px auto; display: block;"] > .text-center > a.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
-japscan.lol#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'aBqE')
+japscan.lol#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'nBzD')
 japscan.lol#%#//scriptlet('prevent-setTimeout', 'getElementById')
 japscan.lol#%#//scriptlet('prevent-addEventListener', 'load', 'setTimeout')
 japscan.lol#%#//scriptlet('remove-node-text', 'script', '});}}}())));')
