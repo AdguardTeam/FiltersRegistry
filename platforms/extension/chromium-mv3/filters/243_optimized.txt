@@ -1,8 +1,8 @@
-! Checksum: UeaDKUmCE/FbzOxYhoZtzw
+! Checksum: q/2zqez1sFPnIM5QvofvJA
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.19.80
-! TimeUpdated: 2024-10-23T09:02:13+00:00
+! Version: 2.0.19.81
+! TimeUpdated: 2024-10-24T05:01:41+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -99,24 +99,16 @@ affarsstaden.se##section.elementor-section:has(a[href="https://stodlinjen.se/"][
 affarsstaden.se#%#//scriptlet('ubo-acs.js', 'jQuery', 'adblockdetect')
 affarsvarlden.se##.article-tag-header:has-text(/Annons/i):upward(article)
 affarsvarlden.se##.cookies-wrap, .Modal, .article-list-item--native, .advert-notice-box, .native-popup, .takeover-wrap, .native-notice-box, .darwin--content
-aftonbladet.se##article[class^="article-wrapper"] ~ div:has-text(ANNONS)
-aftonbladet.se##aside > div:has(h2:has-text(/^annons/i))
-aftonbladet.se##a:has-text(Kommersiell text, innehåller annonslänkar)
-aftonbladet.se##a[href^="https://kampanj."]:upward(1):not(section):not(div[class^="article-wrapper"])
-aftonbladet.se##div[class^="css-"]:has([data-ad-subtype="mega"])
+aftonbladet.se##article[class^="article-wrapper"] ~ div[class^="hyperion"]:has(a[href*="/t?a="], a[href*="/click"], a[href^="http"][nofollow], a[href^="http"][rel*="nofollow"])
+aftonbladet.se##aside > div[class^="hyperion"]:has(a[href*="/rabattkod"], a[href*="/kampanj"], a[href*="/brandstudio"], a[href*="/brand-studio"])
+aftonbladet.se##a:has-text(innehåller annonslänkar)
 aftonbladet.se##div[class^="hyperion-css"]:matches-css(margin:/32px/):has(iframe[src*="tize.no"])
 aftonbladet.se##main > section > div:first-child:matches-css(box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 24px 0px)
-aftonbladet.se##main > section > div[class^="css-"]:first-child:has(img[src*="closeButton"])
-aftonbladet.se##p:has-text(/^PRESENTERAS AV$/):upward(1)
-aftonbladet.se##section > div:has(h2:has-text(/^annons/i))
-aftonbladet.se##span:has-text(/^annons/i):upward(a)
-aftonbladet.se##strong:has-text(/ANNONS/i):upward(p)
-aftonbladet.se###main > div > div > div:has(h2:has-text(/^annons/i))
-aftonbladet.se###megaAd-placeholder, #superright-side, a[href*="/casinoguide"], [id^="adPlacement"], a[href^="https://kampanj.aftonbladet"], a[href*="/rabattkod"][data-test-tag="internal-link"], a[href^="/sportbladet/speltips/"], a[href*="aftonbladet.se/kampanj/"], div[class*="stickyloginoverlay"]
-[$path=/^/$/]aftonbladet.se##p:has-text(Artikeln innehåller annonslänkar):upward(a)
+aftonbladet.se###superright-side, a[href*="/casinoguide"], [id^="adPlacement"], a[href^="https://kampanj."], a[href*="/rabattkod"][data-test-tag="internal-link"], a[href^="/sportbladet/speltips/"], a[href*="aftonbladet.se/kampanj/"], div[class*="stickyloginoverlay"], #takeover-container
+aftonbladet.se##:is(main > section > div[class^="hyperion"], #main > section > div[class^="hyperion"]):has(a[href*="/brandstudio"], a[href*="/brand-studio"])
 aftonbladet.se##[data-ad-subtype]:upward(1):matches-css(min-height:/[0-9]+/)
 aftonbladet.se,godare.se,livsstil.se##div[style*="min-height:240px"]:has(iframe[src*="/widgets/ads/"])
-aftonbladet.se,godare.se,livsstil.se##[data-test-tag="prisjakt-carousel"], a[href^="/brandstudio"], div[class^="advertory-"]:not(.advertory-header-anchor)
+aftonbladet.se,godare.se,livsstil.se##[data-test-tag="prisjakt-carousel"], a[href*="/brandstudio"], a[href*="/brand-studio"], div[class^="advertory-"]:not(.advertory-header-anchor)
 aftonbladet.se,godare.se,livsstil.se,skonhetsredaktorerna.se,omni.se,omniekonomi.se,svd.se#$#.sp-message-open body { overflow:initial!important; position:unset!important; margin-top:unset!important; }
 aftonbladet.se,halsasverige.se,mandarinmedia.se,nojesmagasinet.nu,stoppapressarna.se,langd.se,pressbladet.se,svenskpress.se,foretagsbladet.se,gestrikemagasinet.se,cfanytt.se,lasarnas.se,hembostad.nu,sportidrott.se,computersweden.se,thatsup.se,arbetaren.se,sjofartstidningen.se##.advert
 aftonbladet.se,livsstil.se,godare.se,byggahus.se,expressen.se,elle.se,femina.se,svenskdam.se,galamagasin.se,rodeo.net,familjeliv.se,vitaestilo.se#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*="/t?a="]', '?url')
@@ -883,7 +875,6 @@ livsmedelsverket.se#$#.lock-scroll { overflow:unset!important }
 livsstil.se##article + div[class^="hyperion"]:has(iframe[src*="tize.no"])
 livsstil.se##article:has(.ad)
 livsstil.se##a[href*="campaign"][data-test-tag="external-link"], div[data-ad-subtype]
-livsstil.se##div[data-variants*="article-panorama"]:upward(1)
 livsstil.se##h3:has-text(/^Annons$/):upward(1)
 livsstil.se##p:has-text(/^kommersiellt innehåll/i):upward(article)
 livsstil.se##p:has-text(/^kommersiellt innehåll|^annons$/i):upward(a)
