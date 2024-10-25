@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Btm79ixYFEvafFXWF7trmA
-! Diff-Path: ../patches/14/14-s-1729841827-3600.patch
+! Checksum: A9KEo5vN6cKiOwn4gM3J1g
+! Diff-Path: ../patches/14/14-s-1729845437-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.11.87
-! TimeUpdated: 2024-10-25T07:33:26+00:00
+! Version: 2.2.11.88
+! TimeUpdated: 2024-10-25T08:33:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2452,6 +2452,7 @@ docs.powershelluniversal.com,docs.snyk.io,docs.keeper.io,developers.deepl.com##[
 !
 ! NOTE: Regular rules
 !
+nrk.no##.nrk-masthead__info-banner--cookie
 halfprice.eu##o-cookie-consent-manager
 aquagradus.com###cookiefy_bar
 kudyznudy.cz##.sx-coinfo
@@ -15483,6 +15484,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191547
+@@||sdk.privacy-center.org^$domain=ladepeche.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191497
 computherm.hu#@#.cookie-alert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191183
@@ -43482,6 +43485,8 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191547
+ladepeche.fr##+js(set-constant, ultimediaVisiblePlayer.scrollVisiblePlayer, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191550
 player.fm##.sponsored-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190980
@@ -48660,6 +48665,10 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+iza.ne.jp##.sidebar-items div.story-card-feed:has(div.under-headline > span.article-highlight-tag.shopping)
+nrk.no##.widget:has(> div > a.login-banner-hack)
+full-count.jp###c2_click_jera_banner_sp_article_end
+nikkei.com##.paywall_pzomzzc
 asahi.com###main > div[class]:has(> div[class] > span[x-component-name][x-component-data*="iref"][x-component-data*="freeArticlePW_imasugu"])
 businessinsider.jp#?#.p-cardList:has(> div.p-cardList-header > h2:contains(BI BRAND STUDIO))
 kontur.ru##section[data-show-event-name^="event-adv-link-"]
