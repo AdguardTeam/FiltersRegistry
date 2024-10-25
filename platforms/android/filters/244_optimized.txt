@@ -1,9 +1,9 @@
-! Checksum: f5BgA/4WeuH7f0/xGAovcQ
-! Diff-Path: ../patches/244_optimized/244_optimized-s-1729343110-14400.patch
+! Checksum: /IG1x4Z50LVcZgus0Ag1yA
+! Diff-Path: ../patches/244_optimized/244_optimized-s-1729861550-14400.patch
 ! Title: YousList (Optimized)
 ! Description: Filter that blocks ads on Korean sites.
-! Version: 2.0.10.84
-! TimeUpdated: 2024-10-19T13:01:41+00:00
+! Version: 2.0.10.85
+! TimeUpdated: 2024-10-25T13:02:03+00:00
 ! Expires: 5 days (update frequency)
 ##amp-ad
 ##amp-embed.ad_cnt
@@ -291,6 +291,7 @@
 ##iframe[src*="//vod.shoppingcall.me/ad_shoppingCallme.php"]
 ##iframe[src*="//vsc.send.microad.jp/delivery/afr.php"]
 ##iframe[src*="//was.livere.me/ad"]
+##iframe[src*="//webmetic.net/CLad.php"]
 ##iframe[src*="//widget.barnebys.com/widget.php"]
 ##iframe[src*="//wr.catad5959.com/native/wrcatad.t"][src*=".native_banner.asp"]
 ##iframe[src*="//wr.catad5959.com/text/wrcatad.t"][src*=".Text_banner.asp"]
@@ -1433,6 +1434,7 @@
 ||ib.adnxs.com/ut/v3/prebid^
 ||ibabynews.com/script/bannerpop.js^$domain=ibabynews.com
 ||ichannela.com/ch/*adpost*
+||iframe-cp.inews24.com/coupang/*.php^$domain=inews24.com|joynews24.com
 ||iframe.inews24.com/ad/$domain=inews24.com
 ||iframe.inews24.com/adm/$domain=inews24.com
 ||iframe.joynews24.com/ad/$domain=joynews24.com
@@ -2329,6 +2331,7 @@
 ||web.humoruniv.com/banner/cm/datawave_cm_read.html^
 ||web.humoruniv.com/banner/ddn_banner_*.html^$domain=web.humoruniv.com
 ||web.n2s.co.kr^
+||webmetic.net/CLad.php^
 ||webstore.ansi.org/Images/banners/$domain=webstore.ansi.org
 ||wec.co.kr/banner/
 ||whosaeng.com/data/whosaeng_com/upload/banner/$domain=m.whosaeng.com|whosaeng.com
@@ -3222,6 +3225,7 @@ dkbnews.donga.com##div#secondWingAd
 dkbnews.donga.com##div.ad_right01
 dkbnews.donga.com##div.aside_ad
 dmitory.com##div#naverAd
+dmitory.com##div.content>div[class^="google_top_"]
 dmitory.com##div.footer_google_ad
 dmitory.com##div.google_m_read_ad
 dmitory.com##div.latest_google_ad
@@ -3825,9 +3829,11 @@ gyunggijh.co.kr##div#floating_banner_body
 gyunggijh.co.kr##ins[data-ad-slot="6372983748"]
 hackintosh.zone##div#ipsLayout_mainArea>div[align="center"]
 hackintosh.zone##ins#aswift_3_expand
+hani.co.kr##div[class*=" ArticleDetailContent_adWrap__"]
 hani.co.kr##div[class*=" BaseAd_adWrapper__"]
 hani.co.kr##div[class^="ArticleAdTop_topAdWrapper__"]
 hani.co.kr##div[class^="ArticleBottomFixedAd_adFixed__"]
+hani.co.kr##div[class^="ArticleDetailContent_adWrap__"]
 hani.co.kr##div[class^="ArticleDetail_adGroup__"]
 hani.co.kr##div[class^="BaseAd_adWrapper__"]
 hani.co.kr##div[class^="MainTopArticleList_adWrap__"]
@@ -4087,6 +4093,7 @@ inews24.com,joynews24.com##container.ad
 inews24.com,joynews24.com##container.ad-head
 inews24.com,joynews24.com##container.view>div[style="position:sticky;top:10px;width:299px;height:600px;display:flex;padding-bottom:100px;"]
 inews24.com,joynews24.com##hr.ad
+inews24.com,joynews24.com##iframe[src*="//iframe-cp.inews24.com/coupang/"][src*=".php"]
 insight.co.kr##div.ad-google-side1
 insight.co.kr##div.ad-google-side2
 insight.co.kr##div.aside-sticky>div[style="display: block;width: 300px;height: 250px;"]
@@ -4293,6 +4300,7 @@ kbench.com##iframe[src^="//www.kbench.com/article_right_box.php"]
 kbench.com##iframe[src^="https://shop.kbench.com/09shop/article_right_box.php"]
 kbmaeil.com##div.sticky-container>div>div.banner_box
 keybr.com##div.Supporter
+khan.co.kr##div.ad-area
 khan.co.kr##div.adBanner
 khan.co.kr##div.ad_highlight_tf
 khan.co.kr##div.ad_hotclip
@@ -4304,6 +4312,7 @@ khan.co.kr##div.ad_popularInfo
 khan.co.kr##div.ad_subwing_mid
 khan.co.kr##div.ad_subwing_wrap
 khan.co.kr##div.ad_txt_cont_btm
+khan.co.kr##div.art_mid_ad
 khan.co.kr##div.article_bottom_ad
 khan.co.kr##div.section_AD
 khan.co.kr##div.wrap_ad_cont_btm
@@ -4483,11 +4492,8 @@ kyongbuk.co.kr##ins[data-ad-slot="I_kyongbuk_middlebottom_580_400"]
 kyongbuk.co.kr##ins[data-ad-slot="I_kyongbuk_middletop_970_90"]
 kyongbuk.co.kr##ins[data-ad-slot="I_kyongbuk_rightmiddle_300_600"]
 kyongbuk.co.kr##ins[data-ad-slot="I_kyongbuk_righttop_300_600"]
-lady.khan.co.kr##div#article_bottom_ad
-lady.khan.co.kr##div.aSide>div[style="margin-top:20px;  height:250px"]
-lady.khan.co.kr##div.aSide>div[style="margin:20px 0 40px 0;  height:250px"]
-lady.khan.co.kr##div[data-widget_id="GokE9Nlv"]
-lady.khan.co.kr##div[data-widget_id="goPmBr7Q"]
+lady.khan.co.kr##div#mAdsBottom
+lady.khan.co.kr##div.art_top_bn
 land.naver.com##div#_home_smart_banner
 laptopmag.com##div#leaderboard
 laptopmag.com##div#rightcol_top
@@ -6776,12 +6782,12 @@ sports.hankooki.com##div.right_promo div.num_pro:not(.golfhk)
 sports.hankooki.com##div.wrap_over_72890
 sports.hankooki.com##iframe[src^="http://sports.hankooki.com/ad/"]
 sports.hankooki.com##span#AD_GISA_PHOTO_LINE
-sports.khan.co.kr##aside.aside_cont_right>div[align="center"][style="margin-top:20px; height:250px"]
-sports.khan.co.kr##div.ad_left
-sports.khan.co.kr##div.ad_popular_Info
-sports.khan.co.kr##div.ad_right
-sports.khan.co.kr##div[data-widget_id="1XDxd3Xe"]
-sports.khan.co.kr##div[data-widget_id="wXQwdM7A"]
+sports.khan.co.kr##div#adBottom
+sports.khan.co.kr##div.ad-main-mid-bn
+sports.khan.co.kr##div.ad-mj-txt
+sports.khan.co.kr##div.ad-top-bn
+sports.khan.co.kr##div.ad-top-wrap
+sports.khan.co.kr##div.wrap-ad-btm-area
 sports.khan.co.kr##iframe[src^="http://sports.khan.co.kr/htdocs/ad/"]
 sports.media.daum.net##a.link_ad
 sports.media.daum.net##div.link_ad
