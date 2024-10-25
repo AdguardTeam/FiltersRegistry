@@ -31,6 +31,18 @@
 ! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2992
 ||livejasmin.com^$popup,third-party,badfilter
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191565 25-10-2024
+ext.to#%#//scriptlet('abort-on-property-read', 'Adcash')
+ext.to#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.hasAttribute', 'isActionAllowedOnElement')
+! https://github.com/AdguardTeam/AdguardFilters/issues/191545 25-10-2024
+btvnovinite.bg#$#.vjs-control-bar { z-index: 1; }
+btvnovinite.bg#$#.vjs-continue-watching-bar { display: none !important; }
+btvnovinite.bg#$?##leading_video_player_autoplay_wrapper { remove: true; }
+btvnovinite.bg#$##leading_video_player_autoplay_main_wrapper { display: block !important; }
+btvnovinite.bg#%#//scriptlet('set-constant', 'isEnhancedContentAvailable', 'undefined')
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=btvnovinite.bg
+! https://github.com/AdguardTeam/AdguardFilters/issues/191541 25-10-2024
+tiroalpaloes.net#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '/google_ad_client/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191519 24-10-2024
 petitfute.com###adup_bigContentAd
 ||cdn.jokerly.com/scripts/LPF_abChoice.js
@@ -290,8 +302,6 @@ cmp.seznam.cz#@%#//scriptlet('trusted-click-element', '.szn-cmp-dialog-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191036 17-10-2024
 ||html-load.com^$script,redirect=noopjs,domain=infinityfree.com,badfilter
 infinityfree.com#$?#iframe[src="about:blank"] { remove: true; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/191036 22-10-2024
-dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const t="loader.min.js",e={includes:String.prototype.includes,querySelector:Document.prototype.querySelector},n=()=>(new Error).stack,o={construct:(o,r,c)=>{const i=n();return e.includes.call(i,t)&&e.querySelector.call(document,'link[rel="stylesheet"][href*="/resources"')&&!e.includes.call(r[0]?.toString(),"[native code]")&&!e.includes.call(r[0]?.toString(),"():")&&(r[0]=function(t,e){}),Reflect.construct(o,r,c)}};window.Promise=new Proxy(window.Promise,o),window.Promise.prototype.constructor=new Proxy(window.Promise.prototype.constructor,o);const r={apply:(o,r,c)=>{const i=n();if(e.includes.call(i,t)&&c[0]instanceof HTMLScriptElement&&(e.includes.call(c[0]?.textContent,"[native code]")||e.includes.call(c[0]?.textContent,"loader.min.js"))){const t=c[0].textContent;c[0].setAttribute("data-original-script",t),c[0].textContent=c[0].textContent.replace(/(\(function\(\){)/,'$1document.currentScript.textContent = document.currentScript.getAttribute("data-original-script");document.currentScript.removeAttribute("data-original-script");'),c[0].textContent=c[0].textContent.replace(/(if\(typeof .(\[0\])?===.\)|(\[0\];)if\(.\(.,.\)\))/,"$3if(!1)")}return Reflect.apply(o,r,c)}};Element.prototype.appendChild=new Proxy(Element.prototype.appendChild,r)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190996 17-10-2024
 elespanol.com###sticky_container:has(> .stickyanuncio)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190772 17-10-2024
