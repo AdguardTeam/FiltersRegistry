@@ -1,9 +1,9 @@
-! Checksum: YYx87tx6U99r2RvIwaLzbA
-! Diff-Path: ../patches/7/7-s-1729849069-3600.patch
+! Checksum: UERNF7BXc45AI14QvEB5Uw
+! Diff-Path: ../patches/7/7-s-1729856204-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.37
-! TimeUpdated: 2024-10-25T09:33:23+00:00
+! Version: 2.0.58.38
+! TimeUpdated: 2024-10-25T11:32:31+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -514,10 +514,8 @@ yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
-wiki.yjsnpi.nu#%#//scriptlet('abort-on-property-read', 'console')
+wiki.yjsnpi.nu#%#//scriptlet('abort-on-stack-trace', 'Function.prototype.toString', 'ar')
 $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
-!wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'DOMTokenList.prototype.remove', 'noopFunc')
-!wiki.yjsnpi.nu#%#//scriptlet('set-constant', 'HTMLElement.prototype.remove', 'noopFunc')
 wiki.yjsnpi.nu#$##comments-loading { display: none !important; }
 @@||wiki.yjsnpi.nu^$image,xmlhttprequest,~third-party
 @@||wiki.yjsnpi.nu^$generichide
@@ -1770,6 +1768,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 !
 !
+gensin.blog.jp###lite_link
 ||favry.app/ad-sp.png
 dissoku.net##.v-row:has(> div.v-col > div > a[href="https://favry.app"])
 best-hit.tv##div[style="margin-top:10px; margin-bottom:10px; text-align:center;"]
