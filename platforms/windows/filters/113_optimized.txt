@@ -1,9 +1,9 @@
-! Checksum: jrM27AUDICA42b/zIQ2zmA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1729904741-14400.patch
+! Checksum: Tq9yZYFdcN9wFDsv1OZWhg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1729919163-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.58.30
-! TimeUpdated: 2024-10-26T01:01:12+00:00
+! Version: 2.1.58.31
+! TimeUpdated: 2024-10-26T05:01:09+00:00
 ! Expires: 12 hours (update frequency)
 &ad_count=
 &ad_unit_
@@ -78,6 +78,7 @@
 -adv-1.
 -adv-2.
 -adv-3.
+-advanced-ads/
 -advertising/tmg-gpt.
 -affiliate-banner-
 -affiliate-earn-
@@ -228,6 +229,7 @@
 /728x90px.
 /728X90px_
 /730_90.
+/736x92.
 /782x90.
 /900x90.
 /900x90_
@@ -253,6 +255,7 @@
 /ad.*&placement=
 /ad.*/ads.
 /ad.*/delivery?
+/ad.ashx/*
 /ad.js?_=
 /ad.tags.
 /ad/*/160/*
@@ -348,6 +351,7 @@
 /ads/ad2.
 /ads/add.
 /ads/ban-
+/ads/boost.
 /ads/bottom_
 /ads/click/*
 /ads/eps_
@@ -1090,7 +1094,6 @@ _werbebanner_
 .engine?*&ZoneId=$popup
 .gamingaffiliation.$popup
 .php?a_aid=*&$popup
-.popunder.$popup
 .superpromo.$popup
 /?*&a_aid=*&$popup
 /ad.*/aff_$popup
@@ -1442,6 +1445,7 @@ _lx.ads/$popup
 ||xxxtraff.com^$third-party
 ||yospace.com^$~object,third-party
 ||youborafds01.com^$third-party
+||youwatch.org^$third-party
 ||zebestof.com^$third-party
 ||zmctrack.net^$third-party
 ||zononi.com^$third-party
@@ -1465,6 +1469,7 @@ _lx.ads/$popup
 ||virtuagirl.com^$third-party
 ||virtuaguyhd.com^$third-party
 ||19bk5lo5q2.com^
+||1clic1don.fr^
 ||2cnjuh34jb.com^
 ||2cnjuh34jbhub.com^
 ||3692022.com^
@@ -1542,6 +1547,7 @@ _lx.ads/$popup
 ||bashesmockery.com^
 ||bbnfcfrvjs.com^
 ||bdros.com^
+||beatentransfer.com^
 ||beduskstrung.com^
 ||beliefnormandygarbage.com^
 ||bestcontentcost.top^
@@ -1561,7 +1567,6 @@ _lx.ads/$popup
 ||bolsaifoony.com^
 ||bordelsdislink.com^
 ||botanysummarytables.com^
-||botaptipo.net^
 ||botkano.info^
 ||bottlestonightapp.com^
 ||boughtrellyan.click^
@@ -1572,7 +1577,6 @@ _lx.ads/$popup
 ||broggerneven.com^
 ||brunettemattersrefused.com^
 ||buckonealodies.com^
-||bultongpocoson.com^
 ||burinsarrow.com^
 ||bushwahjim.click^
 ||bydcczwmxyd.com^
@@ -2062,6 +2066,7 @@ _lx.ads/$popup
 ||stupagebang.com^
 ||sublineazlons.top^
 ||supportxmr.com^
+||svbzpenplok.com^
 ||swangylockjaw.com^
 ||sweeperpiltock.com^
 ||swiftmining.win^
@@ -2701,6 +2706,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||nextwarez.com/wp-content/uploads/*-300x250.
 ||niooz.fr^$subdocument
 ||norefer.com/images/legagnant.png
+||notube.net/*sw.js
 ||online-xxxmovies.com^$script
 ||openingstijdengids.nl/template/images/publi/
 ||openspa.webhop.info/img/sponsors/
@@ -2786,6 +2792,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###LeftAdDiv
 ###LeftAds
 ###PubBas
+###PubFooter
 ###PubHeader
 ###PubTop
 ###RightAds
@@ -3259,6 +3266,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.adsholder
 ##.adspromo
 ##.adsquare
+##.adtitle728
 ##.adtxtlegend
 ##.aduh__cntn
 ##.aduh__label
@@ -3410,6 +3418,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.mobile-ads__main
 ##.mobile_ad
 ##.mobile_adhesion
+##.mod-ad-middle
 ##.mod-ad-top
 ##.mod-ad-top-2
 ##.mod-advertisement
@@ -3617,6 +3626,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.tag-adverline
 ##.tag-sponsored-content
 ##.text_pub
+##.toast-ad
 ##.top-ads-728-90
 ##.top-banner-pub
 ##.top-publicite
@@ -3666,6 +3676,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##[id^="pub_728x90_"]
 ##[id^="pub_dart_"]
 ##[id^="show_ads_"]
+##[id^="sn_ads-"]
 ##[slot-id^="div-gpt-ad-"]
 ##a[class^="adsbutt_"]
 ##a[class^="mn-container-adsby"]
@@ -3743,6 +3754,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##a[href*="weborama.fr/fcgi-bin/"]
 ##a[href*="xiti.com/go.ad?"]
 ##a[href="#tab-ad"]
+##a[href^="//www.poweredbyliquidfire.mobi/"]
 ##a[href^="ads.php?id="]
 ##a[href^="http://188.165.178.248/"]
 ##a[href^="http://3dxchat.com/?"]
@@ -3914,6 +3926,7 @@ manga-news.com###block-up
 lanutrition.fr###block-views-remote-products-block-home
 voyages-sncf.com###block-vsct_vsca-megabanner
 cowcotland.com###blocpub1
+memoclic.com###bom_ban
 cowcotland.com###bottom_pubN2
 flashresultats.fr,flashscore.fr###box-over-content-a
 ktotv.com###campain-bandeau
@@ -3952,11 +3965,13 @@ orange.fr###o_carrepub
 orange.fr###oan_ora_1_300x250_hp.prospects
 net-iris.fr###offer
 youtube.com###offer-module
+e-wok.tv,mp4upload.com###overlay
 expat.com###partner-ajax-on-forum
 tube8.fr###pb_block
 hdss.watch,voirfilms.bz###playerOver
 aufeminin.com###precontent
 hellokids.com###preroll
+bobvoyeur.com###products-export
 lacanausurfinfo.com###promo
 ouedkniss.com###promo-header
 journaldemontreal.com###promo-pkp
@@ -4027,7 +4042,6 @@ egora.fr##.block-egora-pub
 francetvsport.fr##.block-ftv-loading-of-mad
 cotemaison.fr##.block_partners
 aveq.ca##.blog-sidebar a > img
-trocdestrains.com##.boite-partenaire-v
 techniques-ingenieur.fr##.boxPub
 gamergen.com,generation-nt.com##.bup
 lecho.be##.c-adh-connecthpwrapper
