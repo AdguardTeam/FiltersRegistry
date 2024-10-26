@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.57.80",
-			"timeUpdated": "2024-10-26T17:31:19+0000",
+			"version": "2.3.57.81",
+			"timeUpdated": "2024-10-26T18:31:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -639,8 +639,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.72.0",
-			"timeUpdated": "2024-10-26T12:33:16+0000",
+			"version": "2.0.72.1",
+			"timeUpdated": "2024-10-26T18:33:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
