@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.11.95",
-			"timeUpdated": "2024-10-25T20:33:14+0000",
+			"version": "2.2.11.96",
+			"timeUpdated": "2024-10-26T08:33:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -787,8 +787,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.36",
-			"timeUpdated": "2024-10-25T19:33:24+0000",
+			"version": "2.0.27.37",
+			"timeUpdated": "2024-10-26T08:33:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.24.63",
-			"timeUpdated": "2024-10-26T06:33:32+0000",
+			"version": "2.1.24.64",
+			"timeUpdated": "2024-10-26T08:33:50+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
