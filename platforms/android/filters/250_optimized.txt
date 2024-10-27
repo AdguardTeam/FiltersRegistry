@@ -1,9 +1,9 @@
-! Checksum: Nw9zWifvz3rtlGYi4vVkvw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1730005503-14400.patch
+! Checksum: 9u6Wban/HifMWaaq0VCnFw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1730048712-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.43
-! TimeUpdated: 2024-10-26T17:01:50+00:00
+! Version: 2.0.15.44
+! TimeUpdated: 2024-10-27T17:01:50+00:00
 ! Expires: 5 days (update frequency)
 ###app-badges
 ###app-download
@@ -76,9 +76,10 @@ wattpad.com###bottom-banner-container
 waze.com##.wz-downloadbar
 zargan.com###app-menu
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##span.hidden[class$="m:block"]
-/jquery.smartbanner/*
-/js/smartbanner.
-/smart-app-banner.
+/^.*/jquery\.smartbanner/.*$/$match-case
+/^.*/js/smartbanner\..*$/$match-case
+/^.*/smart-app-banner\..*$/$match-case
+/^.*/smartbanner/appbanner\.js.*$/$match-case
 fandom.com##.global-footer__section-fandom-apps
 fandom.com##.global-footer__section-fandom-stores
 www.youtube.com###teaser-carousel:has(img[src*="/youtube_kids_"])
@@ -2257,12 +2258,15 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 ##span[class*=share-icon]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class^=share_btn]
 ##ul[class*=-share-buttons]
-*/images/share_icons/
-*/images/social-share/
-/^.*(\.|//)shar(e|ing)\.[a-z0-9-]{2,60}\..*$/$image,domain=~discord.com|~reddit.com
+/images/share_icons/*
+/images/social-share/*
+/share-newsletter/*
+/^.*(\.|//)shar(e|ing)\.[a-z0-9-]{2,60}\..*$/$image,match-case,domain=~discord.com|~reddit.com
 /addthis_widget.js^
 /btn_share_fb.
-/share/*-icon.png$image
+/^.*/pinitbtn\..*/$image,match-case
+/^.*/share-icons_.*$/$image,match-case
+/^.*/share/.*-icon\.png.*$/$image,match-case
 /sharing/facebook.$image
 /sharing/reddit.$image
 /sharing/stumbleupon.$image
