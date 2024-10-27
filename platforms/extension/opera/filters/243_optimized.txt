@@ -1,9 +1,9 @@
-! Checksum: IxKctXo2SDiIhuYVyYXvSQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1729919146-14400.patch
+! Checksum: 9dThTubYHbbhviBPW7hXoQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1730019954-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.19.83
-! TimeUpdated: 2024-10-26T05:02:12+00:00
+! Version: 2.0.19.84
+! TimeUpdated: 2024-10-27T09:01:56+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -98,7 +98,7 @@ affarerinorr.se##a[href^="/nyheter/native-artiklar/"]
 affarsstaden.se##section.elementor-section:has(a[href="https://stodlinjen.se/"][target="_blank"])
 affarsstaden.se##section.elementor-section:has(a[href="https://stodlinjen.se/"][target="_blank"]) + section.elementor-section
 affarsstaden.se#%#//scriptlet('ubo-acs.js', 'jQuery', 'adblockdetect')
-affarsvarlden.se##.article-tag-header:has-text(/Annons/i):upward(article)
+affarsvarlden.se##article.article-list-item:has(a[href*="/native/"])
 affarsvarlden.se##.cookies-wrap, .Modal, .article-list-item--native, .advert-notice-box, .native-popup, .takeover-wrap, .native-notice-box, .darwin--content
 aftonbladet.se##article[class^="article-wrapper"] ~ div[class^="hyperion"]:has(a[href*="/t?a="], a[href*="/click"], a[href^="http"][nofollow], a[href^="http"][rel*="nofollow"])
 aftonbladet.se##aside > div[class^="hyperion"]:has(a[href*="/rabattkod"], a[href*="/kampanj"], a[href*="/brandstudio"], a[href*="/brand-studio"])
@@ -328,7 +328,6 @@ carup.se##div[id^="carup-"]
 casinoguiden$image,domain=samnytt.se|samnytt.nu
 casino$domain=pirkt.se
 casino-utan-$image
-cfosvepet.se##.recent-post-item:has(a[href="#"]:not(.w-condition-invisible))
 chefstidningen.se##[id^="block-views-ad"], .modal-container
 chef.se#%#//scriptlet('ubo-remove-cookie.js', 'ca_public_page_views')
 chef.se##.Cookie-notice, .Product-modal, .Offer-popup, .Toaster
@@ -688,6 +687,7 @@ hejaolika.se##[class*="partnerinfostyle"], div[id^="hejao-"], .kb-advanced-image
 hejauppsala.com##:is(div[class^="u-text"], h2):has-text(/^Reklam$/):upward(section)
 hejauppsala.com,bredband.se#$#.cli-barmodal-open { overflow:auto!important }
 helahisingen.se###custom_html-15, .code-block img, .banner-promotions-wrapper
+helahisingen.se##.latest-posts-grid:has(a[href*="/annons/"])
 helgon.se##[id*="banner"], a[href^="https://ad."], a[href^="https://ad2."]
 hellofresh.se##a[data-test-id^="top-banner-ad"], div[data-test-id="exit-intent-banner"], div[data-test-id="urgency-banner-modal"]
 hemhyra.se##.pageCookies, #ad-insider1, #ad-insider2, #ad-mobil-1, #ad-mobil-2, #ad-mobil-3, #ad, #ad1, #ad2, #adform-outstream, .ad__text, .entry__ad, .entry__related__sponsored, .module__sponsored
@@ -723,8 +723,8 @@ horisontmagasin.se##.custom-html-widget a[href]:not([href^="/"]):not([href*="hor
 hotellorestaurang.se,citymark.today,byggfakta.today###bannnerContainer, #pop_overlay, .banner-s, div.featured
 hrnytt.se##article:has(.sponsored-article)
 hrnytt.se##.banner-box
-hrsvepet.se##.mini-title-link:not(.w-condition-invisible):has-text(/sponsra/i):upward(1)
 hrsvepet.se,cfosvepet.se##.cookie-banner, .desktopbanner
+hrsvepet.se,cfosvepet.se##.recent-post-item:has(a[href="#"]:not(.w-condition-invisible))
 humorbibeln.se,newsner.com,sportbibeln.se,ettgottskratt.se,djurbibeln.se##.inline-share-buttons
 hungrig.nu##.ui-widget-overlay, .ui-dialog
 husbilhusvagn.se##.article-native
@@ -914,9 +914,9 @@ magasinetparagraf.se###large_banner
 magasink.se##[data-magasintrackbid]
 maipenrai.se##.cWidgetContainer > ul > li:first-child, div[style*="border: 1px solid"] a[target="_blank"], div[data-role="sidebarAd"], a[href*="&ad="]
 maklarvarlden.se##article:has(.sponsored-inlist)
-maklarvarlden.se##.hustle-popup
-maklarvarlden.se##.td-post-category:has-text(/spons/i):upward(2)
-maklarvarlden.se##.td-pulldown-size:has-text(/spons/i):upward(3)
+maklarvarlden.se##div[data-td-block-uid]:has(a[href*="/kategori/sponsra"])
+maklarvarlden.se##.hustle-popup, div[class$="-sponsrat"]
+maklarvarlden.se##.td_module_wrap:has(div[class$="-sponsrat"])
 maltermagasin.se##.mh-sidebar, .mh-header-columns
 maltermagasin.se##.widget_media_image:has-text(/annons/i)
 maringuiden.se##.banner_hoger, .google_ads_mg_frontpage, .footerComercialDiv
@@ -1987,6 +1987,7 @@ zeromagazine.nu##div[id^="ads"]
 /ext/phpbb/ads/*
 /ezoic$domain=temadagar.se
 /facebook_tracking_pixel$script
+/fancybox$script,domain=borsvarlden.com
 /fb_pixel.js
 /featured/promotion$domain=borskollen.se
 /filarkiv/bilderbanner/*
