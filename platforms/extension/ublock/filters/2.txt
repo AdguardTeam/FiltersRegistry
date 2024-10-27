@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LblpMj78Sv43J3UlhqaXTQ
-! Diff-Path: ../patches/2/2-s-1730046979-3600.patch
+! Checksum: qTeigLSl/Jvu50APbfh4+A
+! Diff-Path: ../patches/2/2-s-1730054213-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.57.86
-! TimeUpdated: 2024-10-27T16:31:18+00:00
+! Version: 2.3.57.87
+! TimeUpdated: 2024-10-27T18:31:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9622,12 +9622,12 @@ conceptartworld.com,themezon.net,mrproblogger.com##+js(abort-on-stack-trace, doc
 emailnator.com##+js(no-setTimeout-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156181
 ad-maven.com##+js(no-fetch-if, adsbygoogle.js)
-! https://github.com/AdguardTeam/AdguardFilters/issues/156706
-xfreehd.com##+js(no-fetch-if, ads.exosrv.com)
-xfreehd.com##+js(abort-current-script, $, abk_vmsg)
-xfreehd.com##+js(abort-on-stack-trace, String.fromCharCode, HTMLScriptElement.onerror)
-xfreehd.com##div[style^="height:"][style*="position: relative;"] > div[class][style^="position:"][style*="absolute"][style*="z-index:"]
-xfreehd.com##div[style^="height:"][style*="position: relative;"] > div[class][style^="position:"][style*="absolute"][style*="z-index:"] + div[class][style*="position:"][style*="absolute"][style*="opacity:"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/191599
+xfreehd.com##+js(no-setTimeout-if, .innerHTML)
+xfreehd.com##+js(remove-node-text, script, .abk_msg)
+xfreehd.com#@#.ad-title
+xfreehd.com##.abk_msg
+xfreehd.com#@#.ad-body
 !+ NOT_PLATFORM(windows, mac, android)
 $script,redirect-rule=noop.js,domain=xfreehd.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156515
@@ -10751,11 +10751,6 @@ vector-eps.com#$#.download-home + .disableadblock { display: none !important; }
 kissanime.com.ru##+js(set-constant, check_adblock, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131308
 i-polls.com##+js(abort-on-property-read, detectAdBlock)
-! https://github.com/AdguardTeam/AdguardFilters/issues/131089
-@@||tsyndicate.com/iframes2/$domain=xfreehd.com
-@@||ads.exosrv.com/iframe.php$domain=xfreehd.com
-||ads.exosrv.com/iframe.php$domain=xfreehd.com,redirect=noop.txt,important,image,media,subdocument,stylesheet,script,xmlhttprequest,other
-||tsyndicate.com/iframes2/$domain=xfreehd.com,redirect=noop.txt,important,image,media,subdocument,stylesheet,script,xmlhttprequest,other
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130986
 ||googletagmanager.com/gtag/js$script,redirect=noop.js,domain=hackerranksolution.in
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=noop.js,domain=hackerranksolution.in
@@ -10805,8 +10800,6 @@ $redirect-rule=noop.js,domain=cryptowidgets.net|insurancegold.in,script
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130397
 emsnow.com##+js(abort-current-script, document.getElementById, adsanityAdBlock)
-! https://github.com/AdguardTeam/AdguardFilters/issues/130031
-xfreehd.com##.video-container-bxPower > div:not(.fluid_video_wrapper)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130167
 tiger-algebra.com##.adt-layout-fade
 tiger-algebra.com##.ad-blocker-detector
@@ -11064,9 +11057,6 @@ onlinehacking.in#$##adblock_msg { display: none!important; }
 onlinehacking.in#$#body { overflow: visible!important; }
 @@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_fy2019.js$domain=onlinehacking.in
 ||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_fy2019.js$script,redirect=googlesyndication.com/adsbygoogle.js,important,domain=onlinehacking.in
-! https://github.com/AdguardTeam/AdguardFilters/issues/125507
-xfreehd.com##.video-container > div:not(.fluid_video_wrapper)
-xfreehd.com##+js(abort-on-property-write, axtest01)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125462
 @@||matystudios.github.io/banner_ad.png$domain=serialyzdarma.eu
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122282
@@ -11725,11 +11715,6 @@ toolss.net###adb
 toeflmocks.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107000
 @@||lootup.me/assets/js/ads-prebid.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/114495
-xfreehd.com##+js(remove-node-text, script, .abk_msg)
-xfreehd.com#@#.ad-title
-xfreehd.com##.abk_msg
-xfreehd.com#@#.ad-body
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173746
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103540
 ||bizjournals.com/static/js/app/cxense.js
@@ -108268,6 +108253,7 @@ browsershots.org#@#.advert_area
 ||56514411.xyz^$document,popup
 ||58e0.site^$document,popup
 ||59644010.xyz^$document,popup
+||59768910.xyz^$document,popup
 ||5ab2f817.xyz^$document,popup
 ||5afc476a.xyz^$document,popup
 ||5cc3ac02.xyz^$document,popup

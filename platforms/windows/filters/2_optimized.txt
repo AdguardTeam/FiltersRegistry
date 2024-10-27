@@ -1,9 +1,9 @@
-! Checksum: +iRmCVH3cO0j9+Rhnp9GPA
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1730046988-3600.patch
+! Checksum: 8rDwtTAHU+2vLERwCWnh4Q
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1730054224-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.57.86
-! TimeUpdated: 2024-10-27T16:31:18+00:00
+! Version: 2.3.57.87
+! TimeUpdated: 2024-10-27T18:31:24+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -2507,9 +2507,11 @@ hecker.likesyou.org#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com'
 conceptartworld.com,themezon.net,mrproblogger.com#%#//scriptlet('abort-on-stack-trace', 'document.createElement', 'doTest')
 emailnator.com#%#//scriptlet('prevent-setTimeout', 'adsbygoogle')
 ad-maven.com#%#//scriptlet('prevent-fetch', 'adsbygoogle.js')
-xfreehd.com#%#//scriptlet('prevent-fetch', 'ads.exosrv.com')
-xfreehd.com#%#//scriptlet('abort-current-inline-script', '$', 'abk_vmsg')
-xfreehd.com#%#//scriptlet('abort-on-stack-trace', 'String.fromCharCode', 'HTMLScriptElement.onerror')
+xfreehd.com#%#//scriptlet('prevent-setTimeout', '.innerHTML')
+xfreehd.com#%#//scriptlet('remove-node-text', 'script', '.abk_msg')
+xfreehd.com#@#.ad-title
+xfreehd.com##.abk_msg
+xfreehd.com#@#.ad-body
 all3dp.com#%#//scriptlet('set-constant', 'ALL3DP_ABDC', 'true')
 citytv.com#%#//scriptlet('prevent-xhr', 'get_ad_targets_by_url', 'true')
 sharer.pm#%#//scriptlet('set-constant', 'hadeh_ads', 'false')
@@ -3115,8 +3117,6 @@ orbispatches.com#%#AG_onLoad(function(){const a=document.querySelectorAll(".adsb
 orbispatches.com#%#(()=>{window.viAPItag={init(){}}})();
 orbispatches.com#%#//scriptlet('prevent-fetch', 'services.vlitag.com/adv')
 @@||et.novelgames.com/ads.js?adTagUrl=
-xfreehd.com##.video-container > div:not(.fluid_video_wrapper)
-xfreehd.com#%#//scriptlet("abort-on-property-write", "axtest01")
 10play.com.au#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=10play.com.au
 ansedo.com#%#//scriptlet("set-constant", "canRunAdvertBanner", "true")
@@ -3371,10 +3371,6 @@ quizack.com#%#//scriptlet("prevent-setTimeout", "blocker")
 ||cdn.jsdelivr.net/gh/mytoolznet/M-AdBlocker/2.0/code.min.js
 toeflmocks.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 @@||lootup.me/assets/js/ads-prebid.js
-xfreehd.com#%#//scriptlet('remove-node-text', 'script', '.abk_msg')
-xfreehd.com#@#.ad-title
-xfreehd.com##.abk_msg
-xfreehd.com#@#.ad-body
 bizjournals.com#%#//scriptlet('prevent-fetch', '/pagead2\.googlesyndication\.com|cdn\.cxense\.com|securepubads\.g\.doubleclick\.net/')
 $xmlhttprequest,third-party,redirect-rule=noopjs,domain=bizjournals.com
 clickscoin.com#%#//scriptlet("abort-current-inline-script", "$", "'body'")
@@ -36095,6 +36091,7 @@ browsershots.org#@#.advert_area
 ||49766251.xyz^$document,popup
 ||55766925.xyz^$document,popup
 ||59644010.xyz^$document,popup
+||59768910.xyz^$document,popup
 ||65035033.xyz^$document,popup
 ||65894140.xyz^$document,popup
 ||72888710.xyz^$document,popup
