@@ -1,8 +1,8 @@
-! Checksum: vH6JVKfEGunBruKoIGOjXQ
+! Checksum: glSUwRvWjvqXZvWldr/c6w
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.2.1
-! TimeUpdated: 2024-10-28T06:33:36+00:00
+! Version: 2.0.2.2
+! TimeUpdated: 2024-10-28T07:33:58+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37,6 +37,13 @@
 ! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2992
 ||livejasmin.com^$popup,third-party,badfilter
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191682 29-10-2024
+lernu.net#@#input.vk
+! https://github.com/AdguardTeam/AdguardFilters/issues/191724 29-10-2024
+@@/js/adview_*.adsbygoogle.js$~third-party,domain=letv8.cc|zhibo1.cc
+letv8.cc,zhibo1.cc#%#//scriptlet('trusted-set-constant', 'adsv', '"Y"')
+! https://github.com/AdguardTeam/AdguardFilters/issues/191715 29-10-2024
+tiscali.cz#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.querySelectorAll', 'about:srcdoc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191655 29-10-2024
 ! linkjust.com
 stelux.online,gooltok.com###page + div[id][class]
@@ -66,6 +73,7 @@ kimberlyonlocal.com#%#//scriptlet("abort-current-inline-script", "document.creat
 kimberlyonlocal.com#%#//scriptlet("abort-current-inline-script", "EventTarget.prototype.addEventListener", "/document\['body'\]|\^https\?:|\['location'\]/")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191485 25-10-2024
 torrentfunk.com##.content td[align="center"] > a[href*=".html"] > picture
+torrentfunk.com##main > .title:has(> table.tmain > tbody > tr > td > div[style="float:left"] > a[href*=".html"]:not([href*="torrentfunk.com"], [href^="/"]))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191562 25-10-2024
 peniaze.sk#$##main { margin-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191559
