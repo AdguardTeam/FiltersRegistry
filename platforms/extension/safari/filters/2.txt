@@ -1,9 +1,9 @@
-! Checksum: xmdKQFlal9labAgh/9jJQA
-! Diff-Path: ../patches/2/2-s-1730101079-3600.patch
+! Checksum: 3Zdzo2moGEMcdSCaieiHpA
+! Diff-Path: ../patches/2/2-s-1730104634-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.57.92
-! TimeUpdated: 2024-10-28T07:31:26+00:00
+! Version: 2.3.57.93
+! TimeUpdated: 2024-10-28T08:31:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8192,6 +8192,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191672
+rain-alarm.com#%#//scriptlet('set-constant', 'showAds', 'false')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191570
 techmize.net,atravan.net#%#//scriptlet('prevent-xhr', 'adsbygoogle')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -8869,8 +8871,7 @@ veev.to##.veevad-interstitial
 @@/ad-provider.js$xmlhttprequest,domain=veev.to
 veev.to#%#//scriptlet('set-constant', '_iab', 'false')
 veev.to#%#(()=>{const t={apply:(t,n,e)=>{if(e[0]&&null===e[0].html?.detected&&"function"==typeof e[0].html?.instance?.start&&"function"==typeof e[0].env?.instance?.start&&"function"==typeof e[0].http?.instance?.start){const t=function(){Object.keys(this).forEach((t=>{"boolean"==typeof this[t]&&(this[t]=!1)}))};["html","env","http"].forEach((n=>{e[0][n].instance.start=t}))}return Reflect.apply(t,n,e)}};window.Object.keys=new Proxy(window.Object.keys,t)})();
-! The rule below fixes popups, but also causes detection if rule above is not used, so it's necessary to exclude it from some platforms
-!+ NOT_PLATFORM(ext_ff, ext_ublock)
+!+ NOT_PLATFORM(ext_ublock)
 veev.to#%#//scriptlet('abort-on-property-read', 'VEEVPop')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=veev.to
 @@||securepubads.g.doubleclick.net/pagead/js/adsbygoogle.js$domain=veev.to
@@ -24404,8 +24405,8 @@ nieznany-numer.pl##.content div[style="height:280px"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168285
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168272
 ! Speed up loading video player
-domekiogrodek.pl,swiatzwierzat.pl,smakosze.pl,pacjenci.pl,rolnikinfo.pl,turysci.pl,portalparentingowy.pl,biznesinfo.pl,lelum.pl,goniec.pl#%#//scriptlet('adjust-setTimeout', '/moviesetdelayed|0x|waitingForUserConsent/', '*', '0.001')
-domekiogrodek.pl,swiatzwierzat.pl,smakosze.pl,pacjenci.pl,rolnikinfo.pl,turysci.pl,portalparentingowy.pl,biznesinfo.pl,lelum.pl,goniec.pl##div:is(.w-full, .col-span-3) > .items-center[style*="min-height:"]:has(> .ad-placeholder)
+aleklasa.pl,domekiogrodek.pl,swiatzwierzat.pl,smakosze.pl,pacjenci.pl,rolnikinfo.pl,turysci.pl,portalparentingowy.pl,biznesinfo.pl,lelum.pl,goniec.pl#%#//scriptlet('adjust-setTimeout', '/moviesetdelayed|0x|waitingForUserConsent/', '*', '0.001')
+aleklasa.pl,domekiogrodek.pl,swiatzwierzat.pl,smakosze.pl,pacjenci.pl,rolnikinfo.pl,turysci.pl,portalparentingowy.pl,biznesinfo.pl,lelum.pl,goniec.pl##div:is(.w-full, .col-span-3) > .items-center[style*="min-height:"]:has(> .ad-placeholder)
 domekiogrodek.pl,portalparentingowy.pl###anchor
 domekiogrodek.pl,swiatzwierzat.pl##.scrollAd
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
@@ -59901,6 +59902,7 @@ implbits.com#@#.banner_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191380
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190787
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191021
+! https://github.com/AdguardTeam/AdguardFilters/issues/191691
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190280
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190793
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190422

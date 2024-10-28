@@ -1,8 +1,8 @@
-! Checksum: 7L4T6Eb5QriNDEF8hIaE8A
+! Checksum: EMdB6rspx90pKTFEWzkFWQ
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.57.92
-! TimeUpdated: 2024-10-28T07:31:26+00:00
+! Version: 2.3.57.93
+! TimeUpdated: 2024-10-28T08:31:24+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1678,6 +1678,7 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 #@#.ads_banner
 ##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"]):not(:empty)
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"]):not(:empty)
+rain-alarm.com#%#//scriptlet('set-constant', 'showAds', 'false')
 techmize.net,atravan.net#%#//scriptlet('prevent-xhr', 'adsbygoogle')
 opinary.com#@#.ad-frame
 animedb.in##.full-page
@@ -1946,7 +1947,7 @@ veev.to##.veevad-interstitial
 @@/ad-provider.js$xmlhttprequest,domain=veev.to
 veev.to#%#//scriptlet('set-constant', '_iab', 'false')
 veev.to#%#(()=>{const t={apply:(t,n,e)=>{if(e[0]&&null===e[0].html?.detected&&"function"==typeof e[0].html?.instance?.start&&"function"==typeof e[0].env?.instance?.start&&"function"==typeof e[0].http?.instance?.start){const t=function(){Object.keys(this).forEach((t=>{"boolean"==typeof this[t]&&(this[t]=!1)}))};["html","env","http"].forEach((n=>{e[0][n].instance.start=t}))}return Reflect.apply(t,n,e)}};window.Object.keys=new Proxy(window.Object.keys,t)})();
-!+ NOT_PLATFORM(ext_ff, ext_ublock)
+!+ NOT_PLATFORM(ext_ublock)
 veev.to#%#//scriptlet('abort-on-property-read', 'VEEVPop')
 myabandonware.com#%#//scriptlet('set-constant', 'j321', 'true')
 myabandonware.com#%#//scriptlet('abort-on-stack-trace', 'XMLHttpRequest', 'putPb')
@@ -6353,9 +6354,9 @@ pananimacja.pl#%#//scriptlet('set-constant', 'td_ad_background_click_link', '')
 megane.com.pl#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 @@||megane.com.pl^$generichide,badfilter
 nieznany-numer.pl##.content div[style="height:280px"]
-domekiogrodek.pl,swiatzwierzat.pl,smakosze.pl,pacjenci.pl,rolnikinfo.pl,turysci.pl,portalparentingowy.pl,biznesinfo.pl,lelum.pl,goniec.pl#%#//scriptlet('adjust-setTimeout', '/moviesetdelayed|0x|waitingForUserConsent/', '*', '0.001')
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=goniec.pl|lelum.pl|biznesinfo.pl|portalparentingowy.pl|pacjenci.pl|rolnikinfo.pl|turysci.pl|smakosze.pl|swiatzwierzat.pl|domekiogrodek.pl
-domekiogrodek.pl,swiatzwierzat.pl,smakosze.pl,pacjenci.pl,rolnikinfo.pl,turysci.pl,portalparentingowy.pl,biznesinfo.pl,lelum.pl,goniec.pl##div:is(.w-full, .col-span-3) > .items-center[style*="min-height:"]:has(> .ad-placeholder)
+aleklasa.pl,domekiogrodek.pl,swiatzwierzat.pl,smakosze.pl,pacjenci.pl,rolnikinfo.pl,turysci.pl,portalparentingowy.pl,biznesinfo.pl,lelum.pl,goniec.pl#%#//scriptlet('adjust-setTimeout', '/moviesetdelayed|0x|waitingForUserConsent/', '*', '0.001')
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=goniec.pl|lelum.pl|biznesinfo.pl|portalparentingowy.pl|pacjenci.pl|rolnikinfo.pl|turysci.pl|smakosze.pl|swiatzwierzat.pl|domekiogrodek.pl|aleklasa.pl
+aleklasa.pl,domekiogrodek.pl,swiatzwierzat.pl,smakosze.pl,pacjenci.pl,rolnikinfo.pl,turysci.pl,portalparentingowy.pl,biznesinfo.pl,lelum.pl,goniec.pl##div:is(.w-full, .col-span-3) > .items-center[style*="min-height:"]:has(> .ad-placeholder)
 domekiogrodek.pl,portalparentingowy.pl###anchor
 domekiogrodek.pl,swiatzwierzat.pl##.scrollAd
 goniec.pl#?#.col-span-3 > .justify-center:has(> .ad-placeholder:only-child)
@@ -17305,7 +17306,7 @@ implbits.com#@#.banner_container
 @@||teams.microsoft.com/v*/?meetingjoin=$stealth=webrtc
 @@||cdnformanga.net/wp-*/$stealth=referrer
 @@||deadshot.io^$stealth
-@@||kingwar.cn^$stealth=referrer,domain=mh160.cc
+@@||kingwar.cn^$image,stealth=referrer
 @@||trgoals.*.workers.dev/*.jpg$stealth=referrer
 @@||betaplayer.site/embed/$stealth=referrer
 @@||kapsamaharitasi.turktelekom.com.tr^$stealth=ip
