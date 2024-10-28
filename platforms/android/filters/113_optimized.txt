@@ -1,9 +1,9 @@
-! Checksum: TBmT0AOgG8tkzaTUbDUOeA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1730077500-14400.patch
+! Checksum: 9gyQrp5mVrlfcIKYBjBWEg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1730091901-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.58.40
-! TimeUpdated: 2024-10-28T01:01:09+00:00
+! Version: 2.1.58.41
+! TimeUpdated: 2024-10-28T05:01:09+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -356,6 +356,7 @@
 /ads/bottom_
 /ads/click/*
 /ads/eps_
+/ads/footer4.
 /ads/get_
 /ads/gif/*
 /ads/left/*
@@ -424,10 +425,12 @@
 /adv/ad_
 /adv/ads.
 /adv/banners/*
+/adv_banner.
 /adv_js.
 /advert-serv.
 /advert/pop/*
 /advertise2.
+/advertise250.
 /advertisement?
 /advertiserv2/*
 /advertising-block.
@@ -547,6 +550,7 @@
 /brinpopup.
 /c.amazon-adsystem.com/*
 /campaigns/banner?
+/cams/live-banners/*
 /cdn.adv.
 /cdn/banners/*
 /cgi-bin/banner/*
@@ -572,9 +576,11 @@
 /delivery/rta/*
 /delivery?*&callback=
 /dfp-leaderboard.
+/dfp-rectangle.
 /dfp-skyscraper.
 /dfp/dfp.
 /DfpAd|
+/display/*&300&250
 /display/items.*&
 /display_pub.
 /DisplayAdTargets.
@@ -595,6 +601,7 @@
 /fcl.php?keyword=*&originUrl=
 /fillerAds/*
 /fond_pub_
+/footer-ad/*
 /forward?key=$subdocument
 /frame/ad?
 /frame_popup.
@@ -607,6 +614,7 @@
 /get_affiliate_
 /get_links_*&zone=
 /getAdCode.
+/getadsor.
 /getappmsgAd?
 /getDlAd?
 /getPub.php
@@ -698,6 +706,7 @@
 /partners-ads/*
 /partners-banners/*
 /partners/ads-
+/path/ads/*
 /pdv.js
 /phantomPopunder.
 /phpad-pub-
@@ -803,6 +812,7 @@
 /shareaholic/*
 /shared/ad/*
 /shopify_rolling_
+/show_adv.
 /show_i.php?b=$subdocument
 /show_std.php?
 /showads?
@@ -817,6 +827,7 @@
 /square-ads.
 /src/ads.
 /src/adv_
+/static-ads.
 /static.ads-
 /static/*/ads/
 /store/mfbanners/*
@@ -829,6 +840,7 @@
 /trackads.
 /travelAds.
 /twitter-ads.
+/update.adsvertisement.
 /upload/ad/*
 /upload/adv/*
 /uploads/*/ads-
@@ -868,6 +880,7 @@
 ://ad.*/embed.
 ://ad.*/native.
 ://ad.*?pid=
+://adlik.
 ://adscdn.
 ://adspaces.
 ://adss.
@@ -886,6 +899,7 @@
 ://engine.*&subid=
 ://fr.*/ads?
 ://get.*&clickid=
+://go.*?zoneid=
 ://link.*&siteid=$third-party
 ://pop.$script,subdocument,third-party,xmlhttprequest
 ://promo2.$third-party
@@ -943,6 +957,7 @@
 ?ufuad=
 ?varpub=
 ?w=468&h=60
+?zoneid=*&ab=$script
 ?zoneid=*&cid=$script
 ?zoneid=*&placement=
 ?zoneid=*&r=
@@ -1087,6 +1102,7 @@ _werbebanner_
 &utm_*=cpm&$popup
 &utm_ad=$popup
 &utm_medium=ads$popup
+&zone=*&banner=$popup
 &zone=*&clickid=$popup
 &zoneid=*&banner=$popup
 &zoneid=*&bannerid=$popup
@@ -1097,6 +1113,7 @@ _werbebanner_
 .engine?*&ZoneId=$popup
 .gamingaffiliation.$popup
 .php?a_aid=*&$popup
+.popunder.$popup
 .superpromo.$popup
 /?*&a_aid=*&$popup
 /ad.*/aff_$popup
@@ -1229,6 +1246,7 @@ _lx.ads/$popup
 ||adultwork.com^$third-party
 ||adverdata.net^$third-party
 ||adverline.com^$third-party
+||advertoly.com^$third-party
 ||advideo.ru^$third-party
 ||adwidecenter.com^$third-party
 ||adwidgets.ru^$third-party
@@ -1273,6 +1291,7 @@ _lx.ads/$popup
 ||clickscloud.net^$third-party
 ||clickzzs.nl^$third-party
 ||comandclick.com^$third-party
+||como.com^$third-party
 ||conduit.com^$third-party
 ||cougar-rencontre.net^$third-party
 ||cpa-content.com^$third-party
@@ -1311,6 +1330,7 @@ _lx.ads/$popup
 ||goracash.com^$third-party
 ||hebdotop.com^$third-party
 ||heliumads.com^$third-party
+||hentai-heroes.com^$third-party
 ||hentaiheroes.com^$third-party
 ||hilltopads.com^$third-party
 ||holyclock.com^$third-party
@@ -1323,6 +1343,7 @@ _lx.ads/$popup
 ||jdoqocy.com^$third-party
 ||jygotubvpyguak.com^$third-party
 ||kinkypeepz.com^$third-party
+||kiwys.com^$third-party
 ||kyoads.com^$third-party
 ||las4srv.com^$third-party
 ||leb961.com^$third-party
@@ -1346,7 +1367,6 @@ _lx.ads/$popup
 ||mobidea.com^$third-party
 ||mobileoffers-*-download.com^$third-party
 ||mobsuccess.com^$third-party
-||mobvista.com^$third-party
 ||mochiads.com^$third-party
 ||monetiz.fr^$third-party
 ||motorsregie.com^$third-party
@@ -1414,6 +1434,7 @@ _lx.ads/$popup
 ||smartstream.tv^$third-party
 ||spacepush.ru^$third-party
 ||static-od.com^$third-party
+||statisticresearch.com^$third-party
 ||stripcdn.com^$third-party,domain=~xhamsterlive.com
 ||stripchat.com^$third-party
 ||strpjmp.com^$third-party
@@ -1544,7 +1565,6 @@ _lx.ads/$popup
 ||avwjyvzeyeov.top^
 ||awavjblaaebqv.top^
 ||aweyqalylqqr.top^
-||awgbrojzdpesxx.com^
 ||axersbarling.com^
 ||axfdwhsi.com^
 ||aynhnrgxjxfv.com^
@@ -2257,6 +2277,7 @@ _lx.ads/$popup
 ||multiupload.com^$popup,third-party
 ||o000oo.com^$popup
 ||ojrq.net^$popup,third-party
+||powv1deo.cc^$popup
 ||redirectingat.com^$popup,third-party
 ||revsharecash.com^$popup,third-party
 ||schjmp.com^$popup
@@ -2710,6 +2731,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||lexpress.fr/pub/
 ||live.whassup.fr/*&campaign=
 ||location-etudiant.fr/pubs/
+||logicielmac.com^*/zpub/
 ||maison-travaux.fr/wp-content/uploads/sites/8/2021/04/deco.jpg
 ||mameworld.info/net/pics/da.gif
 ||mamytwink.com/pub2/bg.php?
@@ -2747,6 +2769,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||rapidgator.net/images/pics/
 ||reflectim.fr/wp-content/plugins/popup-builder/
 ||regie.hiwit.org^
+||rencontresanslendemain.net/wp-content/uploads/*/banniere-
 ||ruedesjoueurs.com/images/articles-/promo/
 ||ruedesjoueurs.com/images/banners/
 ||ruedesjoueurs.com/images/campagnes/habillage/
@@ -2940,7 +2963,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###container_pub
 ###container_pub_left
 ###contenu_liens-sponso
-###contextuel-publicite-video
 ###custom-ad
 ###desktopAd
 ###desktopMessageAd
@@ -2956,6 +2978,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###div-gpt-ad-Rectangle
 ###div-gpt-ad-habillage
 ###div-gpt-ad-mainColumn_double
+###divADV
 ###divHomeAd1
 ###divHomeAd2
 ###divHomeAd3
@@ -2972,7 +2995,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###floated-ad
 ###footer-advertising
 ###footer-pub
-###footer_haut-publicite
 ###footer_pub
 ###google-ads-1
 ###google-ads-2
@@ -3501,6 +3523,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.pub-promo
 ##.pub-replace
 ##.pub-right
+##.pub-single-top
 ##.pub-text
 ##.pub-top
 ##.pub300
@@ -3622,6 +3645,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.smiliar_ads
 ##.special-banner
 ##.sponsored-articles
+##.sponsored-by__main-wrap
 ##.sponsored-fly
 ##.sponsored-fly__brand
 ##.sponsored-fly__close
@@ -3898,6 +3922,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##div[id^="block-views-ads-sidebar-"]
 ##div[id^="crt-"][data-criteo-id]
 ##div[id^="div-gpt-promo-"]
+##div[id^="divsda-"]
 ##div[id^="exoNativeWidget"]
 ##div[id^="gabarit_pub"]
 ##div[id^="gpt-ad-mpu"]
@@ -4201,6 +4226,7 @@ autonews.fr##.uptogo
 mariefrance.fr,science-et-vie.com##.viously-player
 pornovore.fr,tukif.com##.vjs-toolbar
 positivr.fr##.vsly-player, .positivr-positivrtv-cta
+wikiclic.com##.widget-area
 macg.co##.wrapper > a
 lepetiteconomiste.com##.zoom
 alloforfait.fr##.zpart
