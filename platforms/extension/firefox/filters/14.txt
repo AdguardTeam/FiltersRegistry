@@ -1,9 +1,9 @@
-! Checksum: dsi7Xwnhx78K0NDbBFaO9w
-! Diff-Path: ../patches/14/14-s-1730111821-3600.patch
+! Checksum: 2qYginz2PjD85nkAIKoGVA
+! Diff-Path: ../patches/14/14-s-1730115853-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.12.4
-! TimeUpdated: 2024-10-28T10:33:27+00:00
+! Version: 2.2.12.5
+! TimeUpdated: 2024-10-28T11:33:55+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11060,7 +11060,7 @@ infobus.*#?#body > #layer1:has(> div#layer2 > div.layer-message-container button
 portalbhp.pl,portalprzedszkolny.pl,portaloswiatowy.pl#$#.overlay-cookie { display: none !important; }
 portalbhp.pl,portalprzedszkolny.pl,portaloswiatowy.pl#$#.overlay-hidden-cookie { overflow: visible !important; }
 tankionline.com,easycosmetic.de##.footer-cookies
-4kdownload.com,folhavitoria.com.br,giffits-articles-publicitaires.ch,giffits.*,easycosmetic.de##.overlay
+4kdownload.com,folhavitoria.com.br,giffits-articles-publicitaires.ch,giffits-werbeartikel.at,giffits-werbeartikel.ch,giffits.*,easycosmetic.de##.overlay
 easycosmetic.de##.cookies-consent-container
 plk-sa.pl,dge.de,mohrsiebeck.com,lempertz.com,starnbergammersee.de,merten.de,bwi.de,medizinischerdienst.de,kunstmuseum-moritzburg.de,bmeia.gv.at,integrationsfonds.at,landesentwicklung-bayern.de,landsberg.de,w-hs.de,stmwi.bayern.de,easybell.de###cookieman-modal
 plk-sa.pl##.modal-backdrop
@@ -11081,7 +11081,7 @@ internalpointers.com##.ip-cookie-banner
 developer.samsung.com###cookie-bottom-layer
 speedtesting.herokuapp.com##body > div[style^="z-index:90000"][style*="background-color:white;"]
 0rechner.de#$##cookieconsentmodal { display: none !important; }
-giffits-articles-publicitaires.ch,giffits.*##.cookie_opt_in--wrapper
+giffits-articles-publicitaires.ch,giffits-werbeartikel.at,giffits-werbeartikel.ch,giffits.*##.cookie_opt_in--wrapper
 kohlhammer.de##div[id^="cookieConsentPanel"]
 zomato.com###root > div.jnxZPg
 free-powerpoint-templates-design.com,sigortammax.com##.snackbar-container
@@ -16279,6 +16279,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191766
+@@||delivery.consentmanager.net/delivery/cmp.php$domain=werstreamt.es
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191618
 @@||bigmotoringworld.co.uk/static-*/js/plugins/cookieconsent-*.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191547
@@ -33076,6 +33078,9 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+minkara.carview.co.jp#$#.modaal-inline:has(a#link_regist) { display: none !important; }
+minkara.carview.co.jp#$#.modaal-overlay { display: none !important; }
+minkara.carview.co.jp#$#.modaal-noscroll { overflow: auto !important; }
 nytimes.com##.reporter-update-container + div[data-place-component="nlsignup"]
 svaboda.org##.mailchimp-signup-form
 diariodecuba.com##.newsletter-social-wrapper
@@ -45663,7 +45668,9 @@ kavkaz-uzel.eu#?#.articles-body_contents > p:contains(ИНОСТРАННЫМ А�
 thebell.io#?#.post_content > p:contains(ПРОИЗВЕДЕН И РАСПРОСТРАНЕН ИНОСТРАННЫМ АГЕНТОМ)
 netprizyvu.ru#?#.currentnews__subtitle > noindex:has(> span:contains(РАСПРОСТРАНЕН ИНОСТРАННЫМ АГЕНТОМ))
 novayagazeta.ru#?##article-body #materialBlock_0 > div:has(> div > p:contains(НАПРАВЛЕН ИНОСТРАННЫМ АГЕНТОМ))
+!+ NOT_OPTIMIZED
 thebell.io##app-inoagent-banner
+!+ NOT_OPTIMIZED
 thebell.io##.arena-cut-grey
 rosbalt.ru##.rkngov
 vtimes.io##.article__fa-disclaimer
@@ -56804,6 +56811,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+thebell.io##app-adfox-top
 verstka.media##.wp-block-post:has(> a[href="http://verstkasupport.media/"])
 habr.com##.article-donation-block
 chicago.suntimes.com##.Page-header-banner
