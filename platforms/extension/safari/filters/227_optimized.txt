@@ -1,9 +1,9 @@
-! Checksum: y6Uidsv9Bdzdfua3qxdzVg
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1730207151-14400.patch
+! Checksum: Hqp4Ywriu7H0ZRtkIHbccQ
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1730235951-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.19.22
-! TimeUpdated: 2024-10-29T13:01:38+00:00
+! Version: 2.0.19.23
+! TimeUpdated: 2024-10-29T21:01:42+00:00
 ! Expires: 1 day (update frequency)
 ||centaurs-rest.coupang.com^
 ||ad.cashdoc.io^
@@ -235,6 +235,8 @@
 ||ttse.b-cdn.net^
 ||i.keezip.com^
 ||awd.spochak.com^
+||mobon.net^$third-party
+||nhnace.com^$third-party
 ||splash-ad.classting.com^
 ||ad-files.classting.com^
 ||middlepoint.co.kr^$third-party
@@ -511,6 +513,9 @@ board.namu.wiki#@#div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "]
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.com|~nintendo.ru|~nintendo.net|~nintendo.com.au|~nintendo.com.tr|~nintendo.co.uk|~nintendo.co|~nintendo.gr|~nintendo.ca|~nintendo.de|~nintendo.fr|~nintendo.me|~nintendo.by|~nintendo.jp|~nintendo.com.tw|~nintendo.co.za|~nintendo.co.il|~nintendo.eu|~nintendo.it|~nintendo.com.br|~nintendo.es|~nintendo.ch|~nintendo.co.in|~nintendo.nl|~nintendo.us|~nintendo.pl|~nintendo.cl|~nintendo.co.jp|~nintendo.co.nz|~nintendo.cn|~nintendo.co.kr|~nintendo.mx|~nintendo.se|~nintendo.cz|~nintendo.shop|~nintendo.tw|~nintendo.be|~nintendo.store|~nintendo.dk|~nintendo.hu|~nintendo.md|~nintendo.com.hk|~nintendo.no|~nintendo.pw|~nintendo.com.bd|~nintendo.ie|~nintendo.at|~nintendo.com.np|~nintendo.ph|~nintendo.fi|~nintendo.lv|~nintendo.pe|~nintendo.sk|~nintendo.hk|~nintendo.gov.bd|~nintendo.sa|~nintendo.pt|~nintendo.one|~nintendo.kg|~nintendo.com.pe|~nintendo.org.il|~nintendo.is|~nintendo.gov.np|~nintendo.work
 /ad-manager.min.js
+||boardlife.co.kr/data/adv_sponsor
+||boardlife.co.kr/data/adv_promote
+||dctrend.ai/widget/trendWidget.html$domain=dcinside.com
 ||imgdb.in/b/$domain=gnu.kilho.net
 ||moneypin.biz/_next/image/?url=https%3A%2F%2Fmoneypin-web.s3.ap-northeast-2.amazonaws.com%2Fbizno-ad%2F
 ||kilho.net/img/b/
@@ -1496,6 +1501,8 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+boardlife.co.kr##.promote-box
+dcinside.com##.trend-rank
 gnu.kilho.net##div[id^="detect"]
 moneypin.biz##.flex > a[href][target="_blank"]
 chzzk.naver.com##div[class^="popup_cheat_key_container__"]
@@ -3341,6 +3348,7 @@ t.hi098123.com#$#.tabad { top: -100px !important; }
 naver.com#%#//scriptlet('set-cookie', 'ba.uuid', '0', '/', 'naver.com')
 @@||ssl.pstatic.net/tveta/libs/glad/prod/$script,domain=chzzk.naver.com
 @@||nam.veta.naver.com/vas$xmlhttprequest,domain=chzzk.naver.com
+boardlife.co.kr#$##top-sponsor { height: 60px !important; top: -60px !important; position: absolute !important; visibility: hidden !important; }
 klauncher.kr#%#//scriptlet('remove-node-text', 'script', '_0x')
 ||tistory1.daumcdn.net/tistory/3827361/skin/images/script3.js$domain=devjit.tistory.com
 hub.weirdhost.xyz#%#//scriptlet('prevent-fetch', 'adblockanalytics.com')
