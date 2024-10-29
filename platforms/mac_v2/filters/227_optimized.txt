@@ -1,9 +1,9 @@
-! Checksum: usqOdD18fRb/9uxfMhAOkA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1730135165-14400.patch
+! Checksum: ccWF1sf39nkKqYCtDo2yBg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1730192764-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.19.20
-! TimeUpdated: 2024-10-28T17:01:35+00:00
+! Version: 2.0.19.21
+! TimeUpdated: 2024-10-29T09:01:45+00:00
 ! Expires: 12 hours (update frequency)
 ||centaurs-rest.coupang.com^
 ||ad.cashdoc.io^
@@ -495,6 +495,9 @@
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
+||boardlife.co.kr/data/adv_sponsor
+||boardlife.co.kr/data/adv_promote
+||dctrend.ai/widget/trendWidget.html$domain=dcinside.com
 ||imgdb.in/b/$domain=gnu.kilho.net
 ||moneypin.biz/_next/image/?url=https%3A%2F%2Fmoneypin-web.s3.ap-northeast-2.amazonaws.com%2Fbizno-ad%2F
 ||kilho.net/img/b/
@@ -1480,6 +1483,8 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+boardlife.co.kr##.promote-box
+dcinside.com##.trend-rank
 gnu.kilho.net##div[id^="detect"]
 moneypin.biz##.flex > a[href][target="_blank"]
 chzzk.naver.com##div[class^="popup_cheat_key_container__"]
@@ -3310,6 +3315,7 @@ t.hi098123.com#$#.tabad { top: -100px !important; }
 naver.com#%#//scriptlet('set-cookie', 'ba.uuid', '0', '/', 'naver.com')
 @@||ssl.pstatic.net/tveta/libs/glad/prod/$script,domain=chzzk.naver.com
 @@||nam.veta.naver.com/vas$xmlhttprequest,domain=chzzk.naver.com
+boardlife.co.kr#$##top-sponsor { height: 60px !important; top: -60px !important; position: absolute !important; visibility: hidden !important; }
 klauncher.kr#%#//scriptlet('remove-node-text', 'script', '_0x')
 ||tistory1.daumcdn.net/tistory/3827361/skin/images/script3.js$domain=devjit.tistory.com
 hub.weirdhost.xyz#%#//scriptlet('prevent-fetch', 'adblockanalytics.com')
