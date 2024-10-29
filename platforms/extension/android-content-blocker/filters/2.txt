@@ -1,8 +1,8 @@
-! Checksum: kIegwmPtA9Btz8sbDUUmvw
+! Checksum: WbTVUGWCJV5lQcxSpOl22Q
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.58.9
-! TimeUpdated: 2024-10-29T08:31:22+00:00
+! Version: 2.3.58.10
+! TimeUpdated: 2024-10-29T09:31:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -76,6 +76,7 @@
 !
 !
 !
+||dareka4te.shop^
 ||rpjkwhkxh.com^
 ||shauduptel.net^
 ||ccryxqgqf.com^
@@ -8041,6 +8042,11 @@ uaclips.com,kzclip.com,ru-clip.com,ruclip.com###morev
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191816
+arldeemix.com#$#body { overflow-y: auto !important; }
+arldeemix.com#$#.adblock-container { display: none !important; }
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||arldeemix.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191672
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191570
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -22399,6 +22405,7 @@ roweroweporady.pl#@#.ad_container
 @@||lib.wtg-ads.com/prebid/prebid_*.js$domain=tvn.pl
 !
 !
+forex-nawigator.biz##.ads
 xyz.pl##.promoBar
 xyz.pl##.partnersBox
 well.pl##.noads
@@ -22411,6 +22418,10 @@ gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="po
 instalki.pl##center > a.gofollow > img
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/191854
+zloteprzeboje.pl###onnetwork--html:empty
+! https://github.com/AdguardTeam/AdguardFilters/issues/191853
+rybnik.com.pl##.ppl-cnt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191725
 wprost.pl##.bli-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191407
@@ -24575,20 +24586,15 @@ pomponik.pl##body .ad-rectangle:not(#style_important)
 pomponik.pl##.box.ad
 pomponik.pl###feed_grupa.ad
 pomponik.pl##.article-body__ad-gora-srodek
+! https://github.com/AdguardTeam/AdguardFilters/issues/191859
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182414
-zielona.interia.pl###ad-adsearch
-zielona.interia.pl###ad-dol_srodek
-zielona.interia.pl##div[id^="ad-box"]
-zielona.interia.pl##div[id^="ad-gora_"]
-zielona.interia.pl##div[id^="ad-banner_"]
-zielona.interia.pl##div[id^="ad-rectangle"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175157
-kobieta.interia.pl###ad-adsearch
-kobieta.interia.pl###ad-dol_srodek
-kobieta.interia.pl##div[id^="ad-box"]
-kobieta.interia.pl##div[id^="ad-gora_"]
-kobieta.interia.pl##div[id^="ad-banner"]
-kobieta.interia.pl##div[id^="ad-rectangle"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl###ad-adsearch
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl###ad-dol_srodek
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-box"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-gora_"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-banner_"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-rectangle"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170328
 interia.pl##.ad#feed_grupa
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167845
@@ -31419,6 +31425,25 @@ neowin.net#$#div[class^="banner-"] { height: 0!important; min-height: 0!importan
 ! https://urlscan.io/result/fb21aa1b-9c79-4ac4-8e82-386403964206/
 /?u1=*&o1=*&sid=t*~$document
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{4,}\.[a-z]{2,11}\.?[a-z]{0,7}\/(?:[0-9a-z]{6,10}\/)?\/?(?:article\d{4}\.doc)?\?(?:cid=[0-9a-z]+&)?[ou]=[0-9a-z]{7}(?:&t=\d+)?&[ou]=[0-9a-z]{7}/$document,match-case
+!
+! Fake WordPress plugins loading ads/malware
+! https://www.godaddy.com/resources/news/threat-actors-push-clickfix-fake-browser-updates-using-stolen-credentials
+! https://github.com/AdguardTeam/AdguardFilters/issues/191813
+/wp-content/plugins/admin-bar-customizer/abc-script.js
+/wp-content/plugins/advanced-user-manager/aum-script.js
+/wp-content/plugins/advanced-widget-manage/awm-script.js
+/wp-content/plugins/content-blocker/cb-script.js
+/wp-content/plugins/custom-css-injector/cci-script.js
+/wp-content/plugins/custom-footer-generator/cfg-script.js
+/wp-content/plugins/custom-login-styler/cls-script.js
+/wp-content/plugins/dynamic-sidebar-manager/dsm-script.js
+/wp-content/plugins/easy-themes-manager/script.js
+/wp-content/plugins/form-builder-pro/fbp-script.js
+/wp-content/plugins/quick-cache-cleaner/qcc-script.js
+/wp-content/plugins/responsive-menu-builder/rmb-script.js
+/wp-content/plugins/seo-optimizer-pro/sop-script.js
+/wp-content/plugins/simple-post-enhancer/spe-script.js
+/wp-content/plugins/social-media-integrator/smi-script.js
 !
 ! PopAds
 .com/*=3&*,1|$script,third-party

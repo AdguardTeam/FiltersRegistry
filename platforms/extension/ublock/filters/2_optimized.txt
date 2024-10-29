@@ -1,11 +1,12 @@
 ![Adblock Plus 2.0]
-! Checksum: rTKmKUT0O3KfAgrQk1tu4A
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1730191029-3600.patch
+! Checksum: UuKQ5lP94k84Wy0qSqUY5Q
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1730194621-3600.patch
 ! Title: AdGuard Base filter + EasyList (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.58.9
-! TimeUpdated: 2024-10-29T08:31:22+00:00
+! Version: 2.3.58.10
+! TimeUpdated: 2024-10-29T09:31:22+00:00
 ! Expires: 5 days (update frequency)
+||dareka4te.shop^
 ||rpjkwhkxh.com^
 ||shauduptel.net^
 ||ccryxqgqf.com^
@@ -1772,6 +1773,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 #@#.ads_banner
 ##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"]):not(:empty)
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"]):not(:empty)
+arldeemix.com#$#body { overflow-y: auto !important; }
+arldeemix.com#$#.adblock-container { display: none !important; }
+arldeemix.com##+js(no-setTimeout-if, .offsetHeight)
 rain-alarm.com##+js(set-constant, showAds, false)
 techmize.net,atravan.net##+js(no-xhr-if, adsbygoogle)
 opinary.com#@#.ad-frame
@@ -6693,12 +6697,17 @@ gostynska.pl,ddbelchatow.pl,jarocinska.pl,klodzko24.eu,nowaruda24.pl,portalplock
 glospowiatusredzkiego.pl,wgospodarce.pl,gostynska.pl,ddbelchatow.pl,jarocinska.pl,klodzko24.eu,nowaruda24.pl,portalplock.pl,korsosanockie.pl,korsokolbuszowskie.pl,korso.pl,korso24.pl,forsal.pl,zwielkopolski24.pl,se.pl,dziennik.pl,rawicz24.pl,tko.pl,tvn.pl,roweroweporady.pl,tulodz.pl,weszlo.com##+js(set-constant, questpassGuard, noopFunc)
 roweroweporady.pl#@#.ad_container
 ||cdn.questvert.pl/publishers/*/qpscript.js
+forex-nawigator.biz##.ads
+defence24.pl##main > section.block:has(> div > a > span > figure > figcaption:contains(Reklama))
 xyz.pl##.promoBar
 xyz.pl##.partnersBox
 widzewtomy.net##.banner-height
 tko.pl##article[class^="post-"] > div[id^="tdi_"] > div.tdc_zone > div.tdc-row > div.vc_row > style + div.vc_column > div.wpb_wrapper > div.vc_row_inner:not(:has(div.td_block_wrap))
 tko.pl##div[id^="nol24-"]
 instalki.pl##center > a.gofollow > img
+zloteprzeboje.pl###onnetwork--html:empty
+zloteprzeboje.pl##.display--desktop:has(> .advert-container:only-child)
+rybnik.com.pl##.ppl-cnt
 wprost.pl##.bli-ad
 wprost.pl##.page-layout > .page-box:has(> .ad-aside:only-child)
 wprost.pl##.page-layout > .page-box:has(> .wrapper:only-child > .ad-slider-svr)
@@ -7248,18 +7257,12 @@ pomponik.pl##body .ad-rectangle:not(#style_important)
 pomponik.pl##.box.ad
 pomponik.pl###feed_grupa.ad
 pomponik.pl##.article-body__ad-gora-srodek
-zielona.interia.pl###ad-adsearch
-zielona.interia.pl###ad-dol_srodek
-zielona.interia.pl##div[id^="ad-box"]
-zielona.interia.pl##div[id^="ad-gora_"]
-zielona.interia.pl##div[id^="ad-banner_"]
-zielona.interia.pl##div[id^="ad-rectangle"]
-kobieta.interia.pl###ad-adsearch
-kobieta.interia.pl###ad-dol_srodek
-kobieta.interia.pl##div[id^="ad-box"]
-kobieta.interia.pl##div[id^="ad-gora_"]
-kobieta.interia.pl##div[id^="ad-banner"]
-kobieta.interia.pl##div[id^="ad-rectangle"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl###ad-adsearch
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl###ad-dol_srodek
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-box"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-gora_"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-banner_"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-rectangle"]
 kobieta.interia.pl#$##portal-container > div[class^="sc-"][class*=" "]:has(a[href*="interia.pl/horoskop-"]) { margin-top: 100px !important; }
 interia.pl##div[width] > div[class^="sc"][style*="overflow: auto;"]:has(> #feed_grupa:only-child > div > .ad)
 interia.pl##.ad#feed_grupa
@@ -10429,6 +10432,21 @@ cdkeyit.it,allkeyshop.com#$#body { background-image: none!important; }
 /?pl=*&sm=$document
 .live/web/?sid=t*~$document
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{4,}\.[a-z]{2,11}\.?[a-z]{0,7}\/(?:[0-9a-z]{6,10}\/)?\/?(?:article\d{4}\.doc)?\?(?:cid=[0-9a-z]+&)?[ou]=[0-9a-z]{7}(?:&t=\d+)?&[ou]=[0-9a-z]{7}/$document,match-case
+/wp-content/plugins/admin-bar-customizer/abc-script.js
+/wp-content/plugins/advanced-user-manager/aum-script.js
+/wp-content/plugins/advanced-widget-manage/awm-script.js
+/wp-content/plugins/content-blocker/cb-script.js
+/wp-content/plugins/custom-css-injector/cci-script.js
+/wp-content/plugins/custom-footer-generator/cfg-script.js
+/wp-content/plugins/custom-login-styler/cls-script.js
+/wp-content/plugins/dynamic-sidebar-manager/dsm-script.js
+/wp-content/plugins/easy-themes-manager/script.js
+/wp-content/plugins/form-builder-pro/fbp-script.js
+/wp-content/plugins/quick-cache-cleaner/qcc-script.js
+/wp-content/plugins/responsive-menu-builder/rmb-script.js
+/wp-content/plugins/seo-optimizer-pro/sop-script.js
+/wp-content/plugins/simple-post-enhancer/spe-script.js
+/wp-content/plugins/social-media-integrator/smi-script.js
 .com/*=3&*,1|$script,third-party
 .com/*=3&*,0|$script,third-party
 .com/*=e3&*,1|$script,third-party

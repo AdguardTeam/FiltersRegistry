@@ -1,9 +1,9 @@
-! Checksum: m6cveOTNFtzWGAWV/erzNQ
-! Diff-Path: ../patches/2/2-s-1730191032-3600.patch
+! Checksum: yoy7laVoYLQ2uzrdaU30ZA
+! Diff-Path: ../patches/2/2-s-1730194624-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.58.9
-! TimeUpdated: 2024-10-29T08:31:22+00:00
+! Version: 2.3.58.10
+! TimeUpdated: 2024-10-29T09:31:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -87,6 +87,7 @@
 !
 !
 !
+||dareka4te.shop^
 ||rpjkwhkxh.com^
 ||shauduptel.net^
 ||ccryxqgqf.com^
@@ -8422,6 +8423,12 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191816
+arldeemix.com#$#body { overflow-y: auto !important; }
+arldeemix.com#$#.adblock-container { display: none !important; }
+arldeemix.com#%#//scriptlet('prevent-setTimeout', '.offsetHeight')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||arldeemix.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191672
 rain-alarm.com#%#//scriptlet('set-constant', 'showAds', 'false')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191570
@@ -25160,6 +25167,8 @@ roweroweporady.pl#@#.ad_container
 @@||lib.wtg-ads.com/prebid/prebid_*.js$domain=tvn.pl
 !
 !
+forex-nawigator.biz##.ads
+defence24.pl##main > section.block:has(> div > a > span > figure > figcaption:contains(Reklama))
 xyz.pl##.promoBar
 xyz.pl##.partnersBox
 well.pl##.noads
@@ -25174,6 +25183,11 @@ gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="po
 instalki.pl##center > a.gofollow > img
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/191854
+zloteprzeboje.pl###onnetwork--html:empty
+zloteprzeboje.pl##.display--desktop:has(> .advert-container:only-child)
+! https://github.com/AdguardTeam/AdguardFilters/issues/191853
+rybnik.com.pl##.ppl-cnt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191725
 wprost.pl##.bli-ad
 wprost.pl##.page-layout > .page-box:has(> .ad-aside:only-child)
@@ -27597,20 +27611,15 @@ pomponik.pl##body .ad-rectangle:not(#style_important)
 pomponik.pl##.box.ad
 pomponik.pl###feed_grupa.ad
 pomponik.pl##.article-body__ad-gora-srodek
+! https://github.com/AdguardTeam/AdguardFilters/issues/191859
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182414
-zielona.interia.pl###ad-adsearch
-zielona.interia.pl###ad-dol_srodek
-zielona.interia.pl##div[id^="ad-box"]
-zielona.interia.pl##div[id^="ad-gora_"]
-zielona.interia.pl##div[id^="ad-banner_"]
-zielona.interia.pl##div[id^="ad-rectangle"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175157
-kobieta.interia.pl###ad-adsearch
-kobieta.interia.pl###ad-dol_srodek
-kobieta.interia.pl##div[id^="ad-box"]
-kobieta.interia.pl##div[id^="ad-gora_"]
-kobieta.interia.pl##div[id^="ad-banner"]
-kobieta.interia.pl##div[id^="ad-rectangle"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl###ad-adsearch
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl###ad-dol_srodek
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-box"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-gora_"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-banner_"]
+styl.interia.pl,zielona.interia.pl,kobieta.interia.pl##div[id^="ad-rectangle"]
 kobieta.interia.pl#$##portal-container > div[class^="sc-"][class*=" "]:has(a[href*="interia.pl/horoskop-"]) { margin-top: 100px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170328
 interia.pl##div[width] > div[class^="sc"][style*="overflow: auto;"]:has(> #feed_grupa:only-child > div > .ad)
@@ -36838,6 +36847,25 @@ neowin.net#$#div[class^="banner-"] { height: 0!important; min-height: 0!importan
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{4,}\.[a-z]{2,11}\.?[a-z]{0,7}\/(?:[0-9a-z]{6,10}\/)?\/?(?:article\d{4}\.doc)?\?(?:cid=[0-9a-z]+&)?[ou]=[0-9a-z]{7}(?:&t=\d+)?&[ou]=[0-9a-z]{7}/$document,match-case
 !+ PLATFORM(ios, ext_safari)
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z][-0-9a-z][-0-9a-z][-0-9a-z]+\.[a-z][a-z]+\.?[a-z]*\/([0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]+\/)?\/?(article[0-9][0-9][0-9][0-9]\.doc)?\?(cid=[0-9a-z]+&)?[ou]=[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z](&t=[0-9]+)?&[ou]=[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]/$document,match-case
+!
+! Fake WordPress plugins loading ads/malware
+! https://www.godaddy.com/resources/news/threat-actors-push-clickfix-fake-browser-updates-using-stolen-credentials
+! https://github.com/AdguardTeam/AdguardFilters/issues/191813
+/wp-content/plugins/admin-bar-customizer/abc-script.js
+/wp-content/plugins/advanced-user-manager/aum-script.js
+/wp-content/plugins/advanced-widget-manage/awm-script.js
+/wp-content/plugins/content-blocker/cb-script.js
+/wp-content/plugins/custom-css-injector/cci-script.js
+/wp-content/plugins/custom-footer-generator/cfg-script.js
+/wp-content/plugins/custom-login-styler/cls-script.js
+/wp-content/plugins/dynamic-sidebar-manager/dsm-script.js
+/wp-content/plugins/easy-themes-manager/script.js
+/wp-content/plugins/form-builder-pro/fbp-script.js
+/wp-content/plugins/quick-cache-cleaner/qcc-script.js
+/wp-content/plugins/responsive-menu-builder/rmb-script.js
+/wp-content/plugins/seo-optimizer-pro/sop-script.js
+/wp-content/plugins/simple-post-enhancer/spe-script.js
+/wp-content/plugins/social-media-integrator/smi-script.js
 !
 ! PopAds
 .com/*=3&*,1|$script,third-party
