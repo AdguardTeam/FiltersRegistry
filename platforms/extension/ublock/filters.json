@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.58.34",
-			"timeUpdated": "2024-10-30T14:31:27+0000",
+			"version": "2.3.58.35",
+			"timeUpdated": "2024-10-30T15:31:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.5",
-			"timeUpdated": "2024-10-30T13:32:40+0000",
+			"version": "2.0.76.6",
+			"timeUpdated": "2024-10-30T15:33:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.24",
-			"timeUpdated": "2024-10-30T10:32:57+0000",
+			"version": "2.0.44.25",
+			"timeUpdated": "2024-10-30T15:33:17+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.61",
-			"timeUpdated": "2024-10-30T12:32:51+0000",
+			"version": "2.0.58.62",
+			"timeUpdated": "2024-10-30T15:33:21+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.17",
-			"timeUpdated": "2024-10-30T12:32:56+0000",
+			"version": "2.0.27.18",
+			"timeUpdated": "2024-10-30T15:33:25+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.1",
-			"timeUpdated": "2024-10-30T14:33:11+0000",
+			"version": "2.0.54.2",
+			"timeUpdated": "2024-10-30T15:33:31+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.12.31",
-			"timeUpdated": "2024-10-30T14:33:20+0000",
+			"version": "2.2.12.32",
+			"timeUpdated": "2024-10-30T15:33:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -639,8 +639,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.72.15",
-			"timeUpdated": "2024-10-30T12:33:11+0000",
+			"version": "2.0.72.16",
+			"timeUpdated": "2024-10-30T15:33:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.17",
-			"timeUpdated": "2024-10-30T12:33:16+0000",
+			"version": "2.0.50.18",
+			"timeUpdated": "2024-10-30T15:33:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.11",
-			"timeUpdated": "2024-10-30T14:33:28+0000",
+			"version": "2.0.45.12",
+			"timeUpdated": "2024-10-30T15:33:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -809,8 +809,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.10.2",
-			"timeUpdated": "2024-10-28T11:34:04+0000",
+			"version": "2.0.10.3",
+			"timeUpdated": "2024-10-30T15:33:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.24.86",
-			"timeUpdated": "2024-10-30T07:33:26+0000",
+			"version": "2.1.24.87",
+			"timeUpdated": "2024-10-30T15:33:54+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
