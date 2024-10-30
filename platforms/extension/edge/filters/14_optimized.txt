@@ -1,9 +1,9 @@
-! Checksum: 9d4XKMEbL9kf0BqoSXTVXw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1730277408-3600.patch
+! Checksum: yvk3CB59jSh2trGM4APsgg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1730281049-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.12.25
-! TimeUpdated: 2024-10-30T08:33:17+00:00
+! Version: 2.2.12.26
+! TimeUpdated: 2024-10-30T09:33:54+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -3960,6 +3960,8 @@ smule.com#$#body[style^="overflow:"] { overflow: auto !important; }
 kobo.com##.gdpr-consent-wrap
 bulldogjob.com,bulldogjob.pl##footer + div.fixed.shadow-article
 zawodtyper.pl###cookie-allow-box
+partner.seznam.cz#$#.scmp-noscroll { overflow: auto !important; }
+partner.seznam.cz#$#.szn-cmp-dialog-container { display: none !important; }
 bookings.sevenair.com,tvbanywhere.com###gdprcookie
 yibian.hopto.org###we-use-cookie
 lesecologistes.fr,htw-berlin.de##div[id^="gdpr-"]
@@ -21234,6 +21236,7 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.banki.ru/products/"]
 ##a[href^="https://apay-up-banner.com?merchantId="] > img
 ||apay-up-banner.com^$image,third-party
+itest.5ch.net##div[itemscope="itemscope"] > p[style]:has(> a[href="//uplift.5ch.net"])
 rb.ru##.custom-tag-banner
 rb.ru##.programms__wrapper
 download.io#%#//scriptlet('trusted-set-cookie-reload', 'dlio_offer_eligible', 'not_eligible')
