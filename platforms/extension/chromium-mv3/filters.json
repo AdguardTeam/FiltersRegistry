@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.58.54",
-			"timeUpdated": "2024-10-30T05:01:06+0000",
+			"version": "2.1.58.55",
+			"timeUpdated": "2024-10-30T09:01:21+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.58.53",
-			"timeUpdated": "2024-10-30T05:01:07+0000",
+			"version": "2.1.58.54",
+			"timeUpdated": "2024-10-30T09:01:21+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1092,8 +1092,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.32.92",
-			"timeUpdated": "2024-10-30T05:01:22+0000",
+			"version": "2.0.32.93",
+			"timeUpdated": "2024-10-30T09:01:38+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1311,8 +1311,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.19.87",
-			"timeUpdated": "2024-10-29T21:01:52+0000",
+			"version": "2.0.19.88",
+			"timeUpdated": "2024-10-30T09:01:56+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.51.85",
-			"timeUpdated": "2024-10-30T05:01:49+0000",
+			"version": "2.0.51.86",
+			"timeUpdated": "2024-10-30T09:02:08+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1463,8 +1463,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.2.9",
-			"timeUpdated": "2024-10-29T09:02:08+0000",
+			"version": "2.0.2.10",
+			"timeUpdated": "2024-10-30T09:02:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

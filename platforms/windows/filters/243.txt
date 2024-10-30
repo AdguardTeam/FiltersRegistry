@@ -1,14 +1,14 @@
-! Checksum: RLc1i0bVPUYnOjdAJkVnOQ
-! Diff-Path: ../patches/243/243-s-1730235969-14400.patch
+! Checksum: 9FaEb81h+ToHznHFr2pAsQ
+! Diff-Path: ../patches/243/243-s-1730279186-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.19.87
-! TimeUpdated: 2024-10-29T21:01:52+00:00
+! Version: 2.0.19.88
+! TimeUpdated: 2024-10-30T09:01:56+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2024-10-29 18:20:55 CET
+! Last modified: 2024-10-30 08:13:35 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -520,10 +520,10 @@ fastighetssverige.se##a[href*="/banner/out/"], .bnr_box, div[class^="panel"][sty
 fastighetssverige.se##.featured-article:has(.badge-partner-text)
 fastighetstidningen.se##.adspace, a[class*="annons"]
 fasting.nu#$#body { display:unset!important }
-feber.se,tjock.se##f-internallinks-new:has-text(Annons)
+feber.se,tjock.se##f-internallink:has(a[href="#"])
 feber.se,tjock.se#%#//scriptlet('ubo-nosiif.js', 'checkGDPRInt')
 feber.se,tjock.se#%#//scriptlet('ubo-set.js', 'dovideostuffAD', 'noopFunc')
-feber.se,tjock.se##.burt-unit, .art_ad, adline, f-panorama, f-deals, #rpPopular, #maxetiseFull, #outsider, [data-ad="true"]
+feber.se,tjock.se##.burt-unit, .art_ad, adline, f-panorama, f-deals, #rpPopular, #maxetiseFull, #outsider, [data-ad="true"], f-internallink[adid]
 festivalinfo.se##a[title*="Casino"], #top-content
 festivalinfo.se##.node-news:has(a[href*="casino"])
 fightermag.se##article:has(a[href*="betting"], a[href*="casino"], a[href*="kasino"], a[href*="/gastskribent/"])
@@ -640,10 +640,10 @@ gaffa.se##h4:has-text(/sponsrade länkar/i):upward(.link-list)
 gaffa.se##.article-overview__col:has(.gpt--loaded)
 gais.se##.cookie--wrapper
 gamereactor.se###cookielawwarning, #eventad, [id^="sky"], [id^="ad_lead"], a[rel="sponsored"], .external_div_bigVideoAd, #mpu, #leftToLogo, .itsanad, div[class^="ad_Bumper"], div[style="min-height: 600px; margin-bottom: 20px;"], div[id^="ad_"], div[class^="preAd_"], div[class^="ad_smartphbig"], .adMobileBig, div[class^="preMobileBig"], .external_div_videoAd, .ad_mobilebigwrap
-gamereactor.se###grtvbelt_Sponsored:upward(1)
 gamereactor.se#%#//scriptlet('ubo-set.js', 'adblockEnabled', 'falseFunc')
 gamereactor.se##.ad_interscroller:upward(.wrapper)
 gamereactor.se#$?#.colHomePlayer:has([data-slotads="videoad"]) { remove: true; }
+gamereactor.se##.rightbox:has(#grtvbelt_Sponsored)
 garaget.org#%#//scriptlet('ubo-rmnt.js', '#text', 'casino')
 garaget.org##.gorgad, .gorg-side-content > div.small:nth-last-child(2), .gorg-side-content .bottom-buffer ~ *, a[href*="casino"]
 gasetten.se##.footer-widgets .widget_block li
@@ -1028,9 +1028,8 @@ ng.se##.view-partner-articles, [class*="sponsored-article"], .tertiary-bottom, d
 nogg.se##:is(td[rowspan="2"][align="left"], table[width="640"][cellpadding="7"]):has(a[href*="casino"])
 nordfront.se##span:not(.post-content):has-text(/annons/i):upward(.post)
 nordfront.se###campaign_area
-nordichardware.se##span:has-text(/sponsrat/i):upward(.td_block_wrap)
 nordichardware.se##.pspy_info, [class^="prisjakt-"]
-nordichardware.se##.td-big-grid-post:has(a[href*="/sponsrat/"])
+nordichardware.se##:is(.td-big-grid-post, .td_block_inner):has(a[href*="/sponsrat/"])
 nordiskradio.se###cookieWindow
 nordiskskog.se##.templateHelannonsBOX
 norrahalland.se##.bannercontent
@@ -1295,7 +1294,6 @@ sverigespringer.se##.cd-desktop-banner, .cd-mobile-banner, .cd-header-banner-wra
 sverige.nu##a[href*="casino"]
 sweclockers.com##div[class^="card-info"]:has-text(/spons/i):upward(.card)
 sweclockers.com###prisjakt-popular, .ad:not(.adPanorama), .adForumSticker, .dark-mode__sponsor
-sweclockers.com#$#.ad.adPanorama { height:100px!important; position:absolute!important; }
 sweclockers.com##.bbSize:has-text(Sponsormeddelande):upward(.bbRelatedBox)
 swedroid.se#$?#a[target="_blank"]:upward(li.Notice) { remove: true; }
 swedroid.se##div[id$="_ad"], div[id$="_ad_mobile"], .externalTopMobile, #externalTopMobile, .externalBottomMobile, a[href^="//www.prisjakt.nu/produkt"], #nativendo-mainfeed + aside > .article, .article-footer > h3, .article-footer > .aeChart, #newExternal
@@ -1324,9 +1322,7 @@ teknikguiden.se##:is(.vce-sticky, .vce-content-bottom):has(a[target])
 tekniknytt.se##.label:has-text(/samarbete|annons|reklam|presenteras av/i):upward(a)
 tekniknytt.se##:is(.article_widget_preview, .article_widget_listing):has(a[href*="casino"], a[href*="kasino"])
 tekniknytt.se##:is(.top-news, .big_article):has(img[src*="casino"], img[src*="surfeo"])
-tekniksmart.se##center:has-text(/annons/i):upward(1)
-tekniksmart.se##.code-block, main > div:last-child:not(:only-child), #uid_08313ba73, #uid_ab3738b5a, .jeg_header_wrapper .jeg_midbar
-tekniksmart.se##.wpb_row:has(a[href*="casino"])
+tekniksmart.se##.elementor-widget-container:has(a[href*="casino"])
 teknikveckan.se##.no-ad
 teknikveckan.se##.pill:has-text(/spons/i):upward(.grid-item, .pinned, .articleFlow-item)
 teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,vardfokus.se,kamerabild.se,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,dagensopinion.se,driva-eget.se,ifokus.se,sv.picmix.com,ifragasatt.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se,aktiespararna.se,receptfavoriter.se,tyda.se,mittforetag.com,lajvo.se##.ad
@@ -2589,6 +2585,7 @@ zeromagazine.nu##div[id^="ads"]
 ||adnordics.com^$third-party
 ||adonsales.com^$third-party
 ||adonstudio.com^$third-party
+||ads.google.com^$third-party
 ||ads.holid.io^$script,redirect=noopjs,domain=elevspel.se
 ||adviral.s3.amazonaws.com/sponsored/
 ||advisa.se^$third-party
