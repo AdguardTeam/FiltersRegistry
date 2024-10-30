@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: I7q9Jf149IkGRnbAcJ7dIQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1730266606-3600.patch
+! Checksum: OHO8NFghEh9dzDpOKMCRpQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1730270225-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.58.25
-! TimeUpdated: 2024-10-30T05:31:23+00:00
+! Version: 2.3.58.26
+! TimeUpdated: 2024-10-30T06:31:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8169,6 +8169,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191879
+getexploits.com##+js(no-fetch-if, googleads.g.doubleclick.net)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191816
 arldeemix.com#$#body { overflow-y: auto !important; }
 arldeemix.com#$#.adblock-container { display: none !important; }
@@ -34041,7 +34043,7 @@ _clickunder&pb=$popup
 !
 ! https://github.com/AdguardTeam/AdguardFilters/pull/136624
 ! PropellerAds
-/^https:\/\/[a-z-]{8,15}\.(?:com|net|tv|xyz)\/(?:40[01]|50?0?)\/\d{6,7}\??\S*$/$script,xmlhttprequest,third-party
+/^https:\/\/[a-z-]{6,15}\.(?:com|net|tv|xyz)\/(?:40[01]|50?0?)\/\d{6,7}\??\S*$/$script,xmlhttprequest,third-party
 ! Popular on Japanese sites but seen in other countries too
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58587#issuecomment-656098019
 ! Sample URL: ||js.passaro-de-fogo.biz/t/113/750/a1113750.js
@@ -34512,6 +34514,8 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+getexploits.com##.min-h-full > .hidden:has(> .adsbygoogle)
+getexploits.com##.border:has(> .bg-background-default > .adsbygoogle:only-child)
 ||xtapes.to/ad/
 mkvcinemas.*###SH-Ads
 climate-data.org###stay

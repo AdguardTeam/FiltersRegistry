@@ -1,8 +1,8 @@
-! Checksum: jAQ6pfXhSE58DO8+++Rt+A
+! Checksum: /1eIhh5SOb6nBWQMeQ7vnQ
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.58.25
-! TimeUpdated: 2024-10-30T05:31:23+00:00
+! Version: 2.3.58.26
+! TimeUpdated: 2024-10-30T06:31:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8307,6 +8307,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/191879
+getexploits.com#%#//scriptlet('prevent-fetch', 'googleads.g.doubleclick.net')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191816
 arldeemix.com#$#body { overflow-y: auto !important; }
 arldeemix.com#$#.adblock-container { display: none !important; }
@@ -34535,7 +34537,7 @@ _clickunder&pb=$popup
 !
 ! https://github.com/AdguardTeam/AdguardFilters/pull/136624
 ! PropellerAds
-/^https:\/\/[a-z-]{8,15}\.(?:com|net|tv|xyz)\/(?:40[01]|50?0?)\/\d{6,7}\??\S*$/$script,xmlhttprequest,third-party
+/^https:\/\/[a-z-]{6,15}\.(?:com|net|tv|xyz)\/(?:40[01]|50?0?)\/\d{6,7}\??\S*$/$script,xmlhttprequest,third-party
 ! Popular on Japanese sites but seen in other countries too
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58587#issuecomment-656098019
 ! Sample URL: ||js.passaro-de-fogo.biz/t/113/750/a1113750.js
@@ -35060,6 +35062,8 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+getexploits.com##.min-h-full > .hidden:has(> .adsbygoogle)
+getexploits.com##.border:has(> .bg-background-default > .adsbygoogle:only-child)
 ||xtapes.to/ad/
 mkvcinemas.*###SH-Ads
 climate-data.org###stay
