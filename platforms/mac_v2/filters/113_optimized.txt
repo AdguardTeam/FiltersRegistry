@@ -1,9 +1,9 @@
-! Checksum: ZaFk6tdhAvOLv4nF8lnC0w
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1730336738-14400.patch
+! Checksum: BWM6skuwDHwdwNU8jgER1w
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1730351137-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.58.57
-! TimeUpdated: 2024-10-31T01:01:11+00:00
+! Version: 2.1.58.58
+! TimeUpdated: 2024-10-31T05:01:09+00:00
 ! Expires: 12 hours (update frequency)
 &ad_count=
 &ad_unit_
@@ -30,7 +30,6 @@
 -300-x-250.
 -300x250.$subdocument
 -300x250.gif?
--300x300.gif
 -300x350-
 -300x37.$image
 -300x60_
@@ -141,7 +140,6 @@
 .fr/*/ads/$domain=~lemde.fr|~sellplus.fr|~yoopies.fr
 .fr/ads-
 .fr/ads/
-.fr/adv.
 .fr/affiliate/
 .gif?partner=
 .id/ads.
@@ -375,6 +373,7 @@
 /ads120.
 /ads13.
 /ads14.
+/ads15.
 /ads16.
 /ads17.
 /ads?device=
@@ -635,7 +634,6 @@
 /ibd-ads/*
 /ico-ad.
 /iframe.*?idzone=
-/iframe468x60/*
 /iframe_dfp.
 /image/ad.
 /images/*_ads/
@@ -753,7 +751,6 @@
 /pub/bandeau_
 /pub/banniere/*
 /pub/banniere_
-/pub/bannieres/*
 /pub/bg.php?
 /pub/partners/*
 /pub/pop.
@@ -1053,6 +1050,7 @@ _pub_iframe.
 _publicite.
 _publicite_
 _smads_
+_smartclick.js
 _werbebanner_
 /wp-content/*/bloc-partenaire-
 /wp-content/banners/*$third-party
@@ -1111,6 +1109,7 @@ _werbebanner_
 &type=*&iframeDetected=$popup
 &url_bnm_redirect=$popup
 &utm_*&adult=$popup
+&utm_*=banner-ad&$popup
 &utm_*=cpm&$popup
 &utm_ad=$popup
 &utm_medium=ads$popup
@@ -1130,6 +1129,7 @@ _werbebanner_
 /?*&a_aid=*&$popup
 /__utm.gif$popup
 /ad.*/aff_$popup
+/adcash.$popup
 /ads.php$popup
 /ads/out.$popup
 /ads2.php$popup
@@ -1153,6 +1153,7 @@ _werbebanner_
 /fp.*&referrerUrl=$popup
 /gtm.js?*&pid=$popup,third-party
 /install.*&clickid=$popup
+/install.*&subid=$popup
 /install.*?pid=$popup
 /jump/next.php?$popup
 /landing.*?ad_id=$popup
@@ -1205,6 +1206,7 @@ _werbebanner_
 ?key=*&zoneid=$popup
 ?lpkey=*&uclick=$popup
 ?MediaSegmentId=$popup
+?popunder=$popup
 ?pub_id=$popup
 ?pubid=*&subid=$popup,third-party
 ?subid=*&clickid=$popup
@@ -1280,6 +1282,7 @@ _lx.ads/$popup
 ||asiatmessenger.com^$third-party
 ||askmecca.com^$third-party
 ||atedra.com^$third-party
+||avantajadas.com.br^$third-party
 ||best-deals-products.com^$third-party
 ||bestcontentwork.top^$third-party
 ||betterbannerscloud.com^$third-party
@@ -1354,6 +1357,7 @@ _lx.ads/$popup
 ||hilltopads.com^$third-party
 ||holyclock.com^$third-party
 ||hrtya.com^$third-party
+||idevdirect.com^$third-party
 ||idhad.com^$third-party
 ||imgsynd.com^$third-party
 ||impactify.it^$third-party
@@ -1413,6 +1417,7 @@ _lx.ads/$popup
 ||oniad.com^$third-party
 ||opti-digital.com^$third-party
 ||orangepublicite.fr^$third-party
+||ovnet.fr^$third-party
 ||permato.com^$third-party
 ||picxxxhub.com^$third-party
 ||piximedia.com^$third-party
@@ -1477,6 +1482,7 @@ _lx.ads/$popup
 ||trafficroots.com^$third-party
 ||traffictrade.pro^$third-party
 ||travelbar.tools^$third-party
+||trck.me^$third-party
 ||trk-egestas.com^$third-party
 ||truenat.bid^$third-party
 ||ulclick.ru^$third-party
@@ -1940,6 +1946,7 @@ _lx.ads/$popup
 ||mxdadjpe.com^
 ||mybestclick.net^
 ||n1gopush.com^
+||n1goserch.com^
 ||nahnoji.cz^
 ||nanaimostarkle.com^
 ||native.com^
@@ -2076,6 +2083,7 @@ _lx.ads/$popup
 ||samiana.com^
 ||sauhonaik.com^
 ||schonecorchat.com^
+||sckxppzdm.com^
 ||secure.securitetotale.com^
 ||sedgygalways.com^
 ||see-work.info^
@@ -2197,6 +2205,7 @@ _lx.ads/$popup
 ||vrfupfyu.com^
 ||vrochtalburn.click^
 ||vwlknjjt.com^
+||webmaghome.com^
 ||webmine.cz^
 ||webminepool.com^
 ||webminerpool.com^
@@ -2283,6 +2292,7 @@ _lx.ads/$popup
 ||buysellads.com^$popup,third-party
 ||camsoda.com^$popup,third-party
 ||clickadilla.com^$popup
+||clickadu.com^$popup,third-party
 ||clickzzs.nl^$popup,third-party
 ||cloudgallery.net^$popup
 ||cmvrclicks000.com^$popup
@@ -2299,6 +2309,7 @@ _lx.ads/$popup
 ||getresponse.com^$popup
 ||gsurl.in^$popup
 ||gsurl.me^$popup
+||homyanus.com^$popup,third-party
 ||iqoption.com^$popup
 ||jewhouca.net^$popup
 ||livepartners.com^$popup,third-party
@@ -2381,7 +2392,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||cloudfront.net/img/banner
 ||cloudfront.net^*?partner=
 ||cloudfront.net^*tid=$script
-||clubsoleil.net/images/bannierecs.
 ||comdotcdn.com/hiqqu/files/widgets/
 ||coteblog.com/_logo/$third-party
 ||csstatic.com/banners/
@@ -2402,6 +2412,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||etrevisible.com^$image,third-party
 ||ezojs.com/ezoic/
 ||f00.psgsm.net/p/891014/sigma-forum.gif
+||fcdn.webme.com^$third-party
 ||filestore.me/banner/$third-party
 ||forokeys.com/foro/banners/
 ||fpcplugs.com/do.cgi?
@@ -2775,7 +2786,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||monbestseller.com/sites/default/files/pushs/
 ||nestoria.fr/jsp/include/banners/
 ||nextwarez.com/wp-content/uploads/*-300x250.
-||niooz.fr^$subdocument
 ||norefer.com/images/legagnant.png
 ||notube.net/*sw.js
 ||online-xxxmovies.com^$script
@@ -2814,12 +2824,12 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||salaire-brut-en-net.fr/wp-content/*/img/banners/
 ||securite.01net.com^
 ||seneweb.com/dynamic/modules/banners/
+||signification-prenom.com/Images/voyance-par-telephone.gif
 ||static.lefigaro.fr/figads/
 ||static.pornovore.fr/zboobz/
 ||storage.googleapis.com/kompagnion/$third-party
 ||tahiti-infos.com/photo/*.gif$image
 ||tahiti-infos.com/photo/*_habillage_
-||tchatche.com/123m?
 ||techpowerup.com/reviyu
 ||tendancehotellerie.fr/img/gif/
 ||test-achats.be/*/skins/
@@ -2871,6 +2881,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###PubFooter
 ###PubHeader
 ###PubTop
+###RightAdDiv
 ###RightAds
 ###abd-ad-div
 ###abd-ad-iframe
@@ -2940,7 +2951,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###adsence
 ###adsense3
 ###adsenseCSA
-###adsensenative
 ###adsforsearchGrid
 ###adsforsearch_content
 ###adsleft
@@ -3001,6 +3011,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###container-pub
 ###container_pub
 ###container_pub_left
+###content_pub
 ###contenu_liens-sponso
 ###custom-ad
 ###desktopAd
@@ -3096,6 +3107,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pub-sky
 ###pub-text
 ###pub-top
+###pub01
 ###pub160
 ###pub160x600
 ###pub300
@@ -3158,7 +3170,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pub_texte
 ###pub_top
 ###pub_ventre
-###pubarticle2
 ###pubbas
 ###pubcarre
 ###pubdirecte
@@ -3296,6 +3307,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.ads-container-1
 ##.ads-container-2
 ##.ads-core-placeholder
+##.ads-download
 ##.ads-entry
 ##.ads-first
 ##.ads-fixed
@@ -3317,7 +3329,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.ads-sqre2
 ##.ads-top-728x90
 ##.ads-track
-##.ads-tracking-top
 ##.ads-under-data
 ##.ads-under-data__main
 ##.ads-under-header
@@ -3423,11 +3434,9 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.dfp-ads
 ##.dfp-slot-megaban
 ##.dfp-slot.megaban
-##.divAdsBottom
 ##.div_ads
 ##.dm_ads_InRead
 ##.dp-ad-chrome
-##.dp-ad-visible
 ##.drt-ad-url
 ##.drt-sponsor-block
 ##.drt-sponsor-data
@@ -3488,6 +3497,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.lbl-ad
 ##.leaderboard728
 ##.leftSideAds
+##.left_middle_ad
 ##.lien_commerciaux_bann
 ##.lien_commerciaux_bann_texte
 ##.liens-sponsorises__external
@@ -3521,6 +3531,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.oboxads
 ##.oboxads-ad-widget
 ##.of-ad-container
+##.padscreen
 ##.page-head-ad
 ##.pagin_pub
 ##.panel-ads
@@ -3626,6 +3637,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.pub_pave
 ##.pub_sky
 ##.pub_skyscraper
+##.pub_slot
 ##.pub_square
 ##.pub_tag
 ##.pub_text
@@ -3768,7 +3780,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##[id^="ligatus_"]
 ##[id^="pub_728x90_"]
 ##[id^="pub_dart_"]
-##[id^="pub_google"]
 ##[id^="show_ads_"]
 ##[id^="sn_ads-"]
 ##[slot-id^="div-gpt-ad-"]
@@ -4034,6 +4045,7 @@ ruedesjoueurs.com###classmentMobile
 jetanimes.com###clickfakeplayer
 auchan.fr###cms-slot-disclaimerSlot
 tukif.com###co_sponsor
+signification-prenom.com###colpub > #bloc_forum
 orange.fr###commercial-links
 boulanger.com###criteo_pageListe_middle
 journaldunet.com###ctn_infeed
@@ -4144,6 +4156,7 @@ francetvsport.fr##.block-ftv-loading-of-mad
 cotemaison.fr##.block_partners
 aveq.ca##.blog-sidebar a > img
 techniques-ingenieur.fr##.boxPub
+lepoint.fr##.branding
 gamergen.com,generation-nt.com##.bup
 lecho.be##.c-adh-connecthpwrapper
 rtl.fr##.c-prebid
@@ -4213,7 +4226,6 @@ igraal.com##.merchant__banner-wrap
 ceesty.com,clkmein.com,cllkme.com,corneey.com,destyy.com,festyy.com,sh.st,shorte.st,skipp.io##.middle-container
 ouedkniss.com##.mt-4.mt-md-6.home-front-store
 jetanimes.com##.mysticky-welcomebar-fixed
-tchatche.com##.native-banner
 porndoe.com##.news-ticker-wrap
 nordicmag.info##.nordi-widget
 lenouveleconomiste.fr##.nveco-widget
@@ -4255,7 +4267,6 @@ challenges.fr,sciencesetavenir.fr##.pub-home
 01net.com,bfmtv.com,pagesjaunes.fr##.pub-title
 cdiscount.com##.pubBloc
 fsolver.fr##.pubCLS
-niooz.fr##.pubDiv
 mariefrance.fr,science-et-vie.com##.pub_dfp
 winds-up.com##.pubhaut
 heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.publSibar
@@ -4275,8 +4286,6 @@ ladiagonale.net##.slidingDiv2
 lepoint.fr##.slotadm
 boursorama.com##.smart
 tsa-algerie.com##.sponsored-by
-xstory-fr.com##.sponsorise
-forum.sportytrader.com##.tableau_bleu
 diaspordc.com##.td-a-rec-id-content_bottom
 lexpress.fr##.teads__block
 ecranlarge.com##.top-banner
@@ -4299,6 +4308,7 @@ webstar-electro.com##[class^="banner"]
 doctissimo.fr##[class^="doc-ad-"]
 guide-piscine.fr##[class^="regie_"]
 qwantjunior.com##[data-testid="autopromoJuniorLink"]
+toutvendre.fr##[href*=".kelkoogroup.net/"]
 filecrypt.cc,filecrypt.co##[href^="javascript:"]
 fnac.com##[id$="-sponsored_products-0"]
 comarketing-news.fr##[id^="comar-"]
