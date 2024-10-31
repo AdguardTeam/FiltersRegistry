@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.58.60",
-			"timeUpdated": "2024-10-31T19:31:20+0000",
+			"version": "2.3.58.61",
+			"timeUpdated": "2024-10-31T21:31:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
