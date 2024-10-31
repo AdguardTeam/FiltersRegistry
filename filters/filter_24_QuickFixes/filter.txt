@@ -19,11 +19,9 @@
 ! - Flexibility: Rules can be added to resolve critical issues quickly, with no restrictions based on the source of the problem.
 !
 ! To make it easier to delete rules in the future, they must be added with their date of addition.
-! Template:
-! Link or description of the issue DD-MM-YYYY
-! Example:
-! https://github.com/AdguardTeam/AdguardFilters/issues/100000 01-01-2024
-! example.com#@#body
+! When adding the first rule in a day, you must add a comment with a date.
+!
+! Rules added for frequently updated sites should be added to the section below the rest of rules.
 !
 ! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2992 09-10-2024
 ! TODO: remove it when the issue is fixed
@@ -31,56 +29,62 @@
 ! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2992
 ||livejasmin.com^$popup,third-party,badfilter
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/191997 31-10-2024
+! NOTE: 31-10-2024
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/191997
 epravda.com.ua#$?#body > iframe:not([class]):not([id]):not([src]) { remove: true; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/191994 31-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191994
 @@||google.com/adsense/domains/caf.js$domain=wotaku.moe
 wotaku.moe#@#iframe[width="100%"][height="90"]
 wotaku.moe#@#[data-adblockkey]
 @@||syndicatedsearch.goog^$domain=wotaku.moe|syndicatedsearch.goog
 wotaku.moe#@#.ad-block
 wotaku.moe#@##ad-1
-! https://github.com/AdguardTeam/AdguardFilters/issues/191972 31-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191972
 lol.ps###double_mpu-home
 lol.ps###billboard-champ-bottom
 lol.ps###desktop_takeover:empty
-! https://github.com/AdguardTeam/AdguardFilters/issues/191983 31-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191983
 mmnm.store#%#//scriptlet('prevent-window-open')
 y2meta.tube#%#//scriptlet("abort-current-inline-script", "document.createElement", "break;case $.")
-! https://github.com/AdguardTeam/AdguardFilters/issues/191969 31-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191969
 @@||cmp.pubtech.ai/*/pubtech-cmp-v2*.js$script,domain=everyeye.it
-! https://github.com/AdguardTeam/AdguardFilters/issues/191981 31-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191981
 webador.*###cookie-notice-wrapper
-! https://github.com/AdguardTeam/AdguardFilters/issues/191601 30-10-2024
+!
+! NOTE: 30-10-2024
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/191601
 musichq.cc###modalshare
-! https://github.com/AdguardTeam/AdguardFilters/issues/191617 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191617
 ||bearmoonlodge.com^
-! https://github.com/AdguardTeam/AdguardFilters/issues/191896 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191896
 koreliscans.com#%#//scriptlet("abort-current-inline-script", "document.createElement", "break;case $.")
-! https://github.com/AdguardTeam/AdguardFilters/issues/191938 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191938
 /\/[0-9][0-9][0-9][0-9][0-9][0-9]$/$third-party,script,domain=69shuba.cx
-! https://github.com/AdguardTeam/AdguardFilters/issues/191906 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191906
 distractify.com##main > div[class*=" "]:has(> .lngtd-dynamic-inarticle)
 distractify.com##article > div[class*=" "]:has(> .lngtd-dynamic-inarticle)
 distractify.com##aside > div[class*=" "]:has(> div[class*=" "] > .lngtd-dynamic-rr)
-! https://github.com/AdguardTeam/AdguardFilters/issues/191900 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191900
 ||movieblog.to/scriptloads.php
 movieblog.to##.code-block:not(.code-block-1)
 movieblog.to#%#//scriptlet('abort-on-property-write', 'stagedPopFrequency')
-! https://github.com/AdguardTeam/AdguardFilters/issues/191926 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191926
 limehd.tv#$#.AdHeader.ad-zone.ad-space.ad-unit.textads.banner-ads.banner_ads.w-px.h-px.absolute.-top-10.-left-10 { display: block !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/178356 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/178356
 infinityscans.net,infinityscans.xyz#?#.user-select-none > .alert:has(> .p-3:contains(/^Advertisement blockers/))
 infinityscans.net,infinityscans.xyz#%#//scriptlet('prevent-window-open', '/quackupsilon\.com|sunnshele\.com/')
 infinityscans.net,infinityscans.xyz#%#//scriptlet("trusted-replace-outbound-text", "atob", "window.matchMedia('(display-mode: standalone)').matches", "!0")
 infinityscans.net,infinityscans.xyz#%#//scriptlet("trusted-replace-outbound-text", "atob", "/[\s\S]*?(pagead2\.googlesyndication\.com|googletag|depend on advertisement|window\.stop)[\s\S]*/", "")
 *$script,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com|vixcloud.co|cdn.plyr.io|authkong.com|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|cloudflare.net|rabbitstream.net|x.com,_____,domain=infinityscans.net|infinityscans.xyz
-! https://github.com/AdguardTeam/AdguardFilters/issues/191895 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191895
 android.com.pl#?#.wp-block-acp-post-feed:has(> h2:contains(Promocje i oferty polecane przez redakcję))
-! https://github.com/AdguardTeam/AdguardFilters/issues/191879 30-10-2024
+! https://github.com/AdguardTeam/AdguardFilters/issues/191879
 getexploits.com##.min-h-full > .hidden:has(> .adsbygoogle)
 getexploits.com##.border:has(> .bg-background-default > .adsbygoogle:only-child)
 getexploits.com#%#//scriptlet('prevent-fetch', 'googleads.g.doubleclick.net')
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191835 29-10-2024
 extra.ec##.ads
 extra.ec##div[class^="PUBBANNER"]
@@ -329,4 +333,24 @@ muratordom.pl#%#//scriptlet('prevent-setTimeout', '/offsetWidth[\s\S]*?sponsored
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=muratordom.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191362 22-10-2024
 vibefm.pl##.article__placement
+!
+! NOTE: Frequently updated sites
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/190943
+wiki.yjsnpi.nu#%#//scriptlet('prevent-eval-if', 'adoptNode')
+wiki.yjsnpi.nu#%#const shuffleArray=e=>e.sort((()=>Math.random()-Math.random()));function fetchComments(e){const t=new XMLHttpRequest;let n;t.onreadystatechange=()=>{4===t.readyState&&200===t.status&&(n=JSON.parse(t.responseText),renderComments(n))},t.open("GET","/comments/comments.php?article_id="+RLCONF.wgArticleId+"&cursor="+e,!0),t.send()}function fetchMore(e){fetchComments(e.target.dataset.cursor)}function renderComments(e){const t=document.querySelector("#comments"),n=document.querySelector("#comments-contents"),o=document.querySelector("#comments-loading"),c=document.querySelector("#comments-more"),m=document.querySelector("#comments-recent");if(o&&o.remove(),c&&c.remove(),e.comments.forEach((e=>{const n=window.comments.template.querySelector("#comment").cloneNode(!0);n.id="comment-"+e.number,n.dataset.commentId=e.comment_id,n.querySelector(".comment-author").innerHTML=e.author,n.querySelector(".comment-timestamp").innerHTML=e.created_at,n.querySelector(".comment-body").innerHTML=e.comment,t.appendChild(n)})),e.cursor>0){const t=window.comments.template.querySelector("#comments-more").cloneNode(!0);t.dataset.cursor=e.cursor,t.addEventListener("click",fetchMore),n.appendChild(t)}const r=document.createElement("ul");e.recent=shuffleArray(e.recent),e.recent.forEach((e=>{const t=document.createElement("li"),n=document.createElement("a");n.href="/w/index.php?curid="+e.article_id,e.comment.length>70&&(e.comment=e.comment.substring(0,70)+"&hellip;"),n.innerHTML=e.comment,t.appendChild(n),r.appendChild(t)})),m.appendChild(r.cloneNode(!0)),m.appendChild(r.cloneNode(!0)),"#comments-section"==location.hash&&(location.hash="",location.hash="#comments-section")}function submitComment(e){const t=document.querySelector('#comment-editor input[name="author"]'),n=document.querySelector("#comment-editor textarea");if(""==n.value)return void mw.notify("（本文が）ないです");e.target.disabled=!0,e.target.innerHTML="送信中…";const o={article_id:RLCONF.wgArticleId,author:t.value,comment:n.value},c=[];for(const[e,t]of Object.entries(o))c.push(`${encodeURIComponent(e)}=${encodeURIComponent(t)}`);const m=new XMLHttpRequest;m.onreadystatechange=()=>{4===m.readyState&&(e.target.disabled=!1,e.target.innerHTML="投稿する",200===m.status?(mw.notify("投稿しました"),t.value="",n.value="",document.querySelector("#comments").innerHTML="",document.querySelector("#comments-recent").innerHTML="",setTimeout((()=>{fetchComments(0)}),"100")):403===m.status?mw.notify("（フリーWi-Fiからは書け）ないです"):429===m.status?mw.notify("書きすぎィ！ちょっと待って、どうぞ！"):mw.notify("投稿できませんでした…"))},m.open("POST","/comments/comments.php"),m.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),m.send(c.join("&").replace(/%20/g,"+"))}window.addEventListener("load",(()=>{if(0==RLCONF.wgNamespaceNumber&&"view"==RLCONF.wgAction&&0!=RLCONF.wgArticleId&&!RLCONF.wgIsRedirect&&RLCONF.wgRevisionId==RLCONF.wgCurRevisionId){"#comments-section"==location.hash&&window.scroll(0,document.documentElement.scrollHeight-document.documentElement.clientHeight),window.comments={};const e=new XMLHttpRequest;e.onreadystatechange=()=>{4===e.readyState&&200===e.status&&(window.comments.template=(new DOMParser).parseFromString(e.responseText,"text/html").body,document.querySelector("#bodyContent").appendChild(window.comments.template.querySelector("#comments-section")),document.querySelector("#comment-submit").addEventListener("click",submitComment),fetchComments(0))},e.open("GET","/comments/template.html",!0),e.send()}}));
+||wiki.yjsnpi.nu^$script
+@@||wiki.yjsnpi.nu/yjsnpi.js$script,~third-party
+@@||wiki.yjsnpi.nu/w/load.php?$script,~third-party
+! https://github.com/AdguardTeam/AdguardFilters/issues/189567
+japscan.lol##body > .container.text-center > .mb-2.mt-2[style="margin: 0px auto; display: block;"] > iframe[id^="__clb-"][id$="_container"][style="display: inline-block; width: 300px; height: 100px; border: medium; margin: 0px; padding: 0px;"][sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-scripts allow-top-navigation-to-custom-protocols"][scrolling="no"]
+japscan.lol##body > style + .container > .row > #main + #sidebar.col-md-3 > .card.mt-1 > .card[style="margin: 0px auto; display: block;"] > iframe[id^="__clb-"][id$="_container"][style="display: inline-block; width: 300px; height: 250px; border: medium; margin: 0px; padding: 0px;"][sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-scripts allow-top-navigation-to-custom-protocols"][scrolling="no"]
+japscan.lol##body > style + .container > .row > #main.col-md-9 > .card > .card-body[style="margin: 0px auto; display: block;"] > iframe[id^="__clb-"][id$="_container"][style="display: inline-block; width: 300px; height: 100px; border: medium; margin: 0px; padding: 0px;"][sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-scripts allow-top-navigation-to-custom-protocols"][scrolling="no"]
+japscan.lol##body > style + .container > .row > #main + #sidebar.col-md-3 > .card.mt-1 > .card[style="margin: 0px auto; display: block;"] > a.aikoi.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
+japscan.lol##body > style + .container > .row > #main.col-md-9 > .card > #chapters.tab-content > .row.justify-content-center.align-items-center > a.image-box.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
+japscan.lol##body > .container.text-center > .mb-2.mt-2[style="margin: 0px auto; display: block;"] > .text-center > a.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
+japscan.lol#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '\'fu\'+')
+japscan.lol#%#//scriptlet('remove-node-text', 'script', '[\'log\',')
+japscan.lol#%#//scriptlet('remove-node-text', 'script', '=\'/0\'')
+japscan.lol#@%#//scriptlet('remove-node-text', 'script', '/\}\);\}\}\}\(\)\)\)\);|\]\(\)\);\}\}\}\(/')
 
