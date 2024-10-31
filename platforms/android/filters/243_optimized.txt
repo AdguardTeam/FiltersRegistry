@@ -1,9 +1,9 @@
-! Checksum: LUC9j7hfJbZQU76QNeMPhw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1730279148-14400.patch
+! Checksum: GokY/PdrGn1WE0O9/u3bZw
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1730365560-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.19.88
-! TimeUpdated: 2024-10-30T09:01:56+00:00
+! Version: 2.0.19.89
+! TimeUpdated: 2024-10-31T09:02:02+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -365,6 +365,7 @@ dagensps.se,news55.se##.postbox:has(.sponsored_post)
 dagensps.se,news55.se##.text-sm:has(a[href*="casino"])
 dagenstech.se##a[href^="https://dagenstech.se/articles/"]:upward(1):has-text(SPONSRAT)
 dagenstech.se##.banner-desk, .banner-mob
+dagenstech.se#$?#.label:has-text(SPONSRAT):upward(.swiper-slide) { remove: true; }
 dagenstech.se##.text-right:has-text(ANNONS)
 dagenstech.se##:is(.sticky.-top-4, .container > div[class=""]):has(a[href*=".se/ads/"])
 dagenstv.com##.slick-slide:has-text(/casino/i)
@@ -716,7 +717,9 @@ hockeyettan.se##.club-ad-item, .banner-row
 hockeyguiden.com##.main-loader.loader-bg
 hockeymagasinet.com##gdpr-alert
 hockeynews.se#$#html.overflow-hidden { overflow:unset!important; }
+hockeynews.se#$?#.bg-white:has(iframe[allow*="autoplay"]) { remove: true; }
 hockeynews.se##.fixed.z-50:has(a[href="/plus"])
+hockeynews.se##.h-\[152px\]:has(iframe)
 hockeynews.se##.items-center:has(a[target="_blank"])
 horisontmagasin.se##small:has-text(/annons/i)
 horisontmagasin.se##.custom-html-widget a[href]:not([href^="/"]):not([href*="horisontmagasin.se"]) img
@@ -1069,6 +1072,7 @@ padeldirekt.se##.text-center:has(div[id^="padeldirekt"])
 padelfeber.se##.pfm-partners, .pff-partners, .c-widget-ad, .c-teaser--native, #toBanner
 pakryss.se##div[id*="ad_banner"]
 passioneffect.se###nyhetsbrev-pp-wrapper__container, .partnerartikel, #secondary .textwidget a:not([href*="passioneffect.se"]) img
+pilsner.nu#%#//scriptlet('ubo-rmnt.js', 'script', 'decodeURIComponent')
 pilsner.nu##.overlay-loader
 pilsner.nu##:is(.et_pb_fullwidth_image, .et_pb_image) a:not([href^="/"]):not([href*="pilsner.nu"]), .mctb-position-bottom
 piraja.se###panoramaholder, #parallax, .cc-floating, a[href*="utm_medium=banner"]
