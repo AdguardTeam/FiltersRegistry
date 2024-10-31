@@ -1,9 +1,9 @@
-! Checksum: AIgIespBcjJObcvD+FutIQ
-! Diff-Path: ../patches/11/11-s-1730352997-3600.patch
+! Checksum: JF8NBOQw0reDuHN8SrKXVw
+! Diff-Path: ../patches/11/11-s-1730360204-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.55.69
-! TimeUpdated: 2024-10-31T05:33:08+00:00
+! Version: 2.0.55.70
+! TimeUpdated: 2024-10-31T07:33:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1383,10 +1383,6 @@ tube8.com#%#//scriptlet('trusted-click-element', 'a[href].continue-to-video')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9324
 ! TODO: Change AG_defineProperty to scripltet when this issue will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/65
 youjizz.com#%#AG_defineProperty('config.ads.mobilePopunder', {value: false});
-! https://github.com/AdguardTeam/AdguardFilters/issues/2520
-sasisa.ru#%#AG_onLoad(function() { window.show_ads = function() {}; });
-sasisa.ru#%#//scriptlet("set-constant", "Umobi", "noopFunc")
-sasisa.ru#%#AG_onLoad(function() { window.Umobi = function() {}; });
 !-------------------
 !-------CSS---------
 !-------------------
@@ -1538,8 +1534,6 @@ ddd-smart.net#$##inviewstitial { display: none !important; }
 ddd-smart.net#$#body { overflow: auto !important; }
 ! maclife.de - left-over at top
 maclife.de#$#body.mobile.ads .mobilesticky { min-height: 0px !important; height: 50px !important; top: 0px !important; margin-top: 0px !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/137945
-t.lafa.site#$##wrapper { margin-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137676
 bogmedia.org#$#.fp-player > div[style^="position: absolute;"][style*="z-index"] { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137600
@@ -2399,6 +2393,7 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+ndtv.com##div[class^="ad-art_"]
 zestolu.cz,osobnosti.cz##div[class^="mobile-"]
 kakijun.jp##.gaddiv
 forvo.com###fixed-banner-container
@@ -3924,7 +3919,6 @@ buhitter.com##aside[style="display: flex; justify-content: center;height: 300px;
 cumhuriyet.com.tr##header > address + div[style^="text-align:center; margin-bottom:20px;"]
 ||doujinnomori.com/ad/
 coinranking.com##.sticky--full-width
-||t.lafa.site/pic/yabrmob.png
 moviewalker.jp##div[style*="min-width:320px;"]
 business.nikkei.com##.dag_rectangle
 a-eroland.net###fam_rectp
