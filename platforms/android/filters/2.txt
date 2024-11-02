@@ -1,9 +1,9 @@
-! Checksum: XGERImx8BM/AmK4dX+meLg
-! Diff-Path: ../patches/2/2-s-1730551003-3600.patch
+! Checksum: XE0DikNx2WKaivW8DHrPyQ
+! Diff-Path: ../patches/2/2-s-1730554627-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.58.86
-! TimeUpdated: 2024-11-02T12:31:25+00:00
+! Version: 2.3.58.87
+! TimeUpdated: 2024-11-02T13:31:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26472,6 +26472,7 @@ pilot.wp.pl##.wp-player > .adpause > .plchldr
 jastrzabpost.pl,pysznosci.pl,genialne.pl,polygamia.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,money.pl,parenting.pl,pudelek.pl,o2.pl,wp.pl#%#!function(){const r={apply:(r,o,e)=>(e[0]?.includes?.("</VAST>")&&(e[0]=""),Reflect.apply(r,o,e))};window.DOMParser.prototype.parseFromString=new Proxy(window.DOMParser.prototype.parseFromString,r)}();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144971
 open.fm#%#//scriptlet('set-constant', 'Object.prototype.adv', 'false')
+!+ NOT_PLATFORM(ext_ff)
 ||ofmweb.wpcdn.pl/dist/*/static/chunks/*.js$replace=/adv:!.\,/adv:!1\,/,domain=open.fm
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95566
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75066
@@ -34881,7 +34882,7 @@ eztv.unblocked.sh,vidzi.tv##body > div[id][style*="position: fixed"][style*="z-i
 !***
 !
 ! Spotify
-||spotifycdn.com/audio/$media,redirect=noopmp4-1s,domain=open.spotify.com
+||spotifycdn.com/audio/$media,~xmlhttprequest,redirect=noopmp4-1s,domain=open.spotify.com
 ||media-us.amillionads.com/*.mp3$media,redirect=noopmp4-1s,domain=spotify.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136566
 ||audio-*.scdn.co/audio/$media,redirect=noopmp4-1s,domain=spotify.com
@@ -54702,6 +54703,7 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/190511
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192041
 semprot.com#@#.adUnit
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191994
@@ -62626,6 +62628,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /exoads/*$script
 /exoclick.$~script,domain=~exoclick.bamboohr.co.uk|~exoclick.kayako.com
 /exonb/*$script
+/exonob/*$script
 /exports/tour/*$third-party
 /exports/tour_20/*$subdocument
 /external/ad.$script
