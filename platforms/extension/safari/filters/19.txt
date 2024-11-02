@@ -1,9 +1,9 @@
-! Checksum: VBYDbO57VKK/Kp31kn+dNg
-! Diff-Path: ../patches/19/19-s-1730471876-3600.patch
+! Checksum: dd3FsoOIki2DnLQS9q0aWg
+! Diff-Path: ../patches/19/19-s-1730536613-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.45.22
-! TimeUpdated: 2024-11-01T14:34:23+00:00
+! Version: 2.0.45.23
+! TimeUpdated: 2024-11-02T08:33:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1817,6 +1817,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+my.bidvert.com#$#.ad-wrapper.ads { display: block !important; }
 thebaynet.com##.newspack-popup-container
 sadistic.pl##.body-opacity-info
 pokeos.com#%#//scriptlet('prevent-fetch', 'www3.doubleclick.net')
@@ -4343,6 +4344,9 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Anti-adblock - The rules for content blockers only
 !#safari_cb_affinity(general)
+my.bidvert.com#@#div[id^="div-gpt-"]
+my.bidvert.com#@#[id^="div-gpt-ad"]
+my.bidvert.com#@#.ad-wrapper
 @@||cdn.blueconic.net/hearst.js$domain=michigansthumb.com
 myshows.me#@#.adblock
 @@||myshows.me^$generichide
