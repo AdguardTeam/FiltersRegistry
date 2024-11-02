@@ -1,9 +1,9 @@
-! Checksum: 7CrWWcrtXh5rGWtBfk8nSQ
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1730509532-14400.patch
+! Checksum: PL55nFrko4KBl9AQdIQNNg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1730524146-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.58.69
-! TimeUpdated: 2024-11-02T01:01:13+00:00
+! Version: 2.1.58.70
+! TimeUpdated: 2024-11-02T05:01:11+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -37,7 +37,6 @@
 -336x280.
 -468-x-60-
 -468-x-60.
--468x601.
 -728-180.
 -728-90-1.
 -728-90b.
@@ -91,10 +90,10 @@
 -banner-300x250.
 -banner-728.
 -banner-rotation.
+-banner/?*&subAffId=
 -banner250-
 -banner_600x100.
 -banniere-300x600-
--bonus-Ad-
 -Content-ads-
 -display-ads_
 -home-ad-
@@ -185,6 +184,7 @@
 .tn/ads/
 .wbdds.
 .xyz/ads.$subdocument
+/*300x250_pub.
 /.s/src/crit_image.js
 /00125x00125-
 /1000x90_
@@ -286,7 +286,6 @@
 /ad_js/*
 /ad_placements/*
 /ad_setting?
-/ad_smallflow_
 /adaptive_*?type=ads&
 /adb.php?tag=
 /adbarmetrosprite.
@@ -314,7 +313,6 @@
 /adpick.
 /adplexity-
 /adplexmedia.
-/adporn.
 /adpower.
 /adr.php
 /adRender.
@@ -501,6 +499,7 @@
 /banner/728
 /banner/ads-
 /banner/ads.js
+/banner/bottom?
 /banner/ebay/*
 /banner/iframe?
 /banner/pop/*
@@ -708,7 +707,6 @@
 /npawAdAdapter.
 /npop.js|
 /ntfc.php?p=
-/otherads/*
 /pab-ssl.js
 /pagead/*?$subdocument
 /pagead/ads.
@@ -810,6 +808,7 @@
 /sas-banner-
 /script.packed.
 /script/*&cbiframe=*&cbkeywords=
+/script/suurl.php?r=
 /scripts/adv_
 /sdk-ads/*
 /sdkconfig.ad.
@@ -832,7 +831,6 @@
 /showads?
 /side-pub.
 /sidebar-ad.
-/sidebar/partner-$image
 /similarClickAds|
 /skipad.
 /slide_banner/*
@@ -874,7 +872,6 @@
 /Web_Ad_
 /Web_banner_
 /WebAd_
-/webmaster_banner_
 /werbebanner-ad.
 /wgAds.
 /widgets.stackcommerce.com/*
@@ -1001,6 +998,7 @@ _728x90(2).
 _728x90@
 _728x90v2.
 _758x60.
+_90x728_
 _970_90_
 _970x250.
 _990x557.
@@ -1026,6 +1024,7 @@ _ads_banner&
 _ads_banner_
 _ads_desktop.
 _ads_one_
+_ads_toroadv.
 _ads_view/
 _adunit=
 _adv.js
@@ -2104,6 +2103,7 @@ _lx.ads/$popup
 ||pusher1.com^
 ||pvrtx.net^
 ||qhip.com^
+||qingolor.com^
 ||quelmesale.com^
 ||questionfly.com^
 ||questormyxo.com^
@@ -2212,7 +2212,6 @@ _lx.ads/$popup
 ||teengirltgp.com^
 ||terapou.com^
 ||tercabilis.info^
-||texterra.me^
 ||thauhocm.net^
 ||thewhizproducts.com^
 ||thirsuftutch.com^
@@ -2251,7 +2250,6 @@ _lx.ads/$popup
 ||updatemobilee.com^
 ||upsendmusky.com^
 ||uptrillgracy.com^
-||usinesmycete.info^
 ||vetchesthiever.com^
 ||viaclefachan.com^
 ||videoadex.com^
@@ -2353,7 +2351,7 @@ _lx.ads/$popup
 ||a2adjk.com^$popup
 ||adjux.com^$popup,third-party
 ||admarketplace.net^$popup,third-party
-||adschoom.com^$popup,third-party
+||adskeeper.co.uk^$popup,third-party
 ||afflat3a1.com^$popup
 ||agkn.com^$popup,third-party
 ||alitems.com^$popup,third-party
@@ -2380,7 +2378,6 @@ _lx.ads/$popup
 ||flixtab.com^$popup
 ||freeadult.games^$popup,third-party
 ||getresponse.com^$popup
-||gsurl.in^$popup
 ||gsurl.me^$popup
 ||homyanus.com^$popup,third-party
 ||iqoption.com^$popup
@@ -2389,6 +2386,7 @@ _lx.ads/$popup
 ||lucky-bet.site^$popup
 ||monetizze.com.br^$popup,third-party
 ||multiupload.com^$popup,third-party
+||mybestclick.net^$popup,third-party
 ||o000oo.com^$popup
 ||ojrq.net^$popup,third-party
 ||powv1deo.cc^$popup
@@ -2399,6 +2397,7 @@ _lx.ads/$popup
 ||sersh.com^$popup,third-party
 ||slutroulette.com^$popup,third-party
 ||smapp.work^$popup
+||spklmis.com^$popup,third-party
 ||stripchat.com^$popup,third-party
 ||techopedia.care^$popup
 ||themoneytizer.com^$popup,third-party
@@ -2429,9 +2428,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||adultempire.com/bn/
 ||ajoutezvotresite.com/button.php
 ||akamaized.net/images/banner/
-||alfafile.net/img/buttons/promo/
 ||ali.pub^$subdocument,third-party
-||alicdn.com^*-300x250.$domain=~alibaba.com|~aliexpress.com|~aliexpress.ru
 ||alicdn.com^*_220x220.$domain=~alibaba.com|~aliexpress.com|~aliexpress.ru
 ||all-ladies.net/banners/
 ||alloref.com^$image,third-party
@@ -2523,6 +2520,9 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||kaltura.com^*/a.mp4|$media
 ||laredoute.com/marketing/$third-party,domain=~laredoute.be|~laredoute.ch|~laredoute.co.uk|~laredoute.com|~laredoute.es|~laredoute.fr|~laredoute.gr|~laredoute.hr|~laredoute.it|~laredoute.kr|~laredoute.lu|~laredoute.ma|~laredoute.nl|~laredoute.pl|~laredoute.pt|~laredoute.ru|~laredouteliban.com
 ||legagnant.com/pv$image
+||les-meilleurs-plans.com^$script,subdocument,third-party
+||lesplansduweb.com^$script,subdocument,third-party
+||linkbucks.com^$subdocument,third-party
 ||linkshrink.net/content/img/$third-party
 ||logo.gralon.net/plogo-gralon-$third-party
 ||maxannu.com^$image,third-party
@@ -2588,7 +2588,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||voirseries.*/media/$media
 ||vultr.com/?ref=$third-party
 ||vuplus-support.org/custom_files/banner.gif
-||vyper.io^$subdocument,third-party
 ||webself.net/WebselfEditeur/FormulaireDemo.aspx?
 ||webutation.net/js/load_badge.js
 ||whentai.com^*.gif
@@ -2853,7 +2852,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||mamytwink.com/pub2/bg.php?
 ||manga-news.com/public/bans/
 ||mediabong.*/loader.js
-||medialot.fr/wp-content/uploads/*/Logo-
 ||monbestseller.com/sites/default/files/pushs/
 ||nestoria.fr/jsp/include/banners/
 ||nextwarez.com/wp-content/uploads/*-300x250.
@@ -2906,7 +2904,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||tlemcen-electronic.com/forum/vf.gif
 ||torrentgalaxy.to/common/images/*-lo.png
 ||torrentgalaxy.to/common/images/*-sc.png
-||trafficzipper.com/rotatorShowBanners-
 ||trovit.*/index.php/cod.get_premium/$xmlhttprequest
 ||trovitargentina.*/index.php/cod.get_premium/
 ||trucsweb.com^*/ban_$image
@@ -2927,7 +2924,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||winamax.fr/img/pub/
 ||winds-up.com/pub/
 ||xn--mto-bmab.fr/include/$subdocument
-||ygg.re/assets/img/vpn_
 ||yts.mx/*.gif
 ||zebest-3000.com/*.html
 ||zone-streaming.fr/wp-content/uploads/amazon-video.jpg
@@ -2937,7 +2933,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 @@||static.eroprofile.com^*/tools.js$script,~third-party
 ||eroprofile.com^$script
 ||1movies.*/user/$popup
-||batiactu.com/cap_pub/$popup
 ||yts.*/assets/$popup
 ###ADSblock
 ###AdBannerBT
@@ -3028,6 +3023,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###advertisement-2
 ###advertising-disclosure-block
 ###advpanel
+###affinfospecialechalons
 ###after-adv
 ###anAdScCgp728x90
 ###anAdScGame728x90
@@ -3047,7 +3043,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###atlads_place_top
 ###ban728
 ###bandeau_pub
-###banner-pub
 ###bannerLeaderboard
 ###banner_pub
 ###banner_pub_0
@@ -3233,7 +3228,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###pub_plop-1
 ###pub_right
 ###pub_square
-###pub_texte
 ###pub_top
 ###pub_ventre
 ###pubarticle2
@@ -3280,6 +3274,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###splashbox-advcorner
 ###sponsor-block
 ###sponsored-container
+###sponsoredContainer
 ###sponsoredProducts
 ###stickyDFP
 ###stop_ad
@@ -3406,7 +3401,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.adsMobile
 ##.adsPave
 ##.adsPost
-##.adsPromo
 ##.adsSky
 ##.adsTitle
 ##.ads_ban
@@ -3481,6 +3475,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.boxadvert
 ##.breaking-ad
 ##.buzz-ads
+##.carre_pub
 ##.carrepub
 ##.catAds
 ##.category__mobile-ads
@@ -3622,6 +3617,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.pub-300-250
 ##.pub-300-250-600
 ##.pub-300x250
+##.pub-300x250-bottom
 ##.pub-728
 ##.pub-728-90
 ##.pub-728x90
@@ -3832,6 +3828,9 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##[id*="_custom_ads-"]
 ##[id^="ad_block_"]
 ##[id^="adace_ads_widget"]
+##[id^="ads_adnemo_"]
+##[id^="ads_djezzy"]
+##[id^="ads_mobilis"]
 ##[id^="ads_ooredoo"]
 ##[id^="adswidget1-quick-adsense"]
 ##[id^="adswidget2-quick-adsense"]
@@ -4126,6 +4125,7 @@ mega-p2p.net###imCell_259
 ladepeche.fr,midilibre.fr###immobilier
 flaticon.com###layer_coupon
 zdnet.fr###leaderBottom
+zdnet.fr###leaderTop
 agriaffaires.com,bloggif.com,lesoir.be,play3-live.com,topquizz.fr###leaderboard
 hellokids.com###mask
 gulli.fr###masthead
@@ -4180,6 +4180,7 @@ cnews.fr###wrapper-banner
 yahoo.com###yad-billboard
 alloforfait.fr###zzone
 lequipe.fr##.AmPlaceholder
+application-remuneratrice.com##.HB-Modal
 outlook.live.com##.Ogt7j[id*="-"]
 radiofrance.fr##.PopSlot
 cotemaison.fr##.actu_pub
@@ -4262,7 +4263,6 @@ footmercato.net##.gtag
 cbanque.com,clubpronostics.com,gratuiciel.com,lelogicielgratuit.com,logicielmac.com,logitheque.com,made-in-algeria.com,made-in-tunisia.net,maghrebex.com,mediscom.com,quetelecharger.com,toucharger.com##.habillage
 frandroid.com##.hb__ad
 avis-express.com,lnr-dz.com##.header-banner
-medialot.fr##.header-sub
 frandroid.com##.home-featured-plans-container
 ouedkniss.com##.home-promo-header
 hitek.fr##.incontent
@@ -4304,7 +4304,6 @@ planeterenault.com##.p300
 ouedkniss.com##.page-top-1.py-3.home-land-header
 ouedkniss.com##.page-top.d-print-none
 monbestseller.com##.pane-mbspush
-portail.free.fr,sante-dz.com##.partenaire
 boursorama.com,caradisiac.com,dunod.com,ficam.ma,lesechos.fr,lfp.fr,mangario.fr,nouvelobs.com,saint-etienne.fr##.partenaires
 constructeurdemaison.net,ffr.fr,gameblog.fr,hepatoweb.com,lexpress.fr,mensup.fr,swissquote.ch,turbo.fr##.partner
 caci.dz,lavenir.net,nintendo-master.com,ogaming.tv,savefrom.net##.partners
@@ -4331,6 +4330,7 @@ challenges.fr,sciencesetavenir.fr##.pub-home
 01net.com,bfmtv.com,pagesjaunes.fr##.pub-title
 cdiscount.com##.pubBloc
 fsolver.fr##.pubCLS
+cciaf.org##.pubDroite
 mariefrance.fr,science-et-vie.com##.pub_dfp
 winds-up.com##.pubhaut
 heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.publSibar
@@ -4411,7 +4411,6 @@ fdesouche.com,lacoccinelle.net,wikimonde.com##a[href^="https://www.amazon.fr/"]
 qwant.com##a[href^="https://www.bing.com/aclick?"]
 mega-p2p.net##a[href^="https://www.clictune.com/"]
 telecharger-jeuxpc.fr##a[href^="https://www.instant-gaming.com/"]
-lalibre.be##a[href^="https://www.ipmstore.be/"] > img
 castorama.fr##a[href^="https://www.needhelp.com/projet.php?"]
 credit-agricole.fr##a[href^="https://www.onatousuncotefoot.fr/"]
 solutions-numeriques.com##a[href^="https://www.solutions-numeriques.com/r/?"]
@@ -4543,7 +4542,6 @@ zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|Publicité/))
 @@||www.mrsexe.com/bower_components/jquery/dist/jquery.min.js$script,domain=mrsexe.com
 @@||www.mrsexe.com/inc/clic.php?video=$script,domain=mrsexe.com
 @@||www.mrsexe.com/jwplayer/jwplayer.$script,domain=mrsexe.com
-@@||xcdnpro.com/plugin/epay/$script,domain=cam4.com|cam4.fr
 @@||xcdnpro.com/web/js/$script,domain=cam4.com|cam4.fr
 @@||xcdnpro.com/web/v2/app/js/$script,domain=cam4.com|cam4.fr
 @@||gstatic.com/*/cast_sender.js$script
