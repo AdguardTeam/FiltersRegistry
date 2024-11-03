@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 6/OxUPHd0vUYmbHw4fHUdw
-! Diff-Path: ../patches/7/7-s-1730565446-3600.patch
+! Checksum: 5kQGiM0o8Zp5iZDQAsE8ag
+! Diff-Path: ../patches/7/7-s-1730651809-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.82
-! TimeUpdated: 2024-11-02T16:33:11+00:00
+! Version: 2.0.58.83
+! TimeUpdated: 2024-11-03T16:32:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -497,7 +497,7 @@ yourfones.net##+js(spoof-css, ins.adsbygoogle, display, block)
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
-wiki.yjsnpi.nu##+js(noeval-if, /\d\([-\d]+\,[-\d]+/)
+wiki.yjsnpi.nu##+js(noeval-if, /g('\,')?e('\,')?t('\,')?U('\,')?T('\,')?C/)
 !+ NOT_PLATFORM(ext_ff)
 $subdocument,redirect-rule=noop.html,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#$##comments-loading { display: none !important; }
@@ -2335,6 +2335,7 @@ gameinn.jp##a[id$="-banner"]
 ddnavi.com##.archives-list > ul > li.archives-list__item:has(> div[id^="div-gpt-ad"])
 sakigake.jp##.p-articles__list > .p-articles__item:has(> div[id^="sakigake_"])
 ||nan-net.com/bbs_side/ada_$subdocument
+adacomi.com##iframe[src^="//tool2.nan-net.com/bbs_side/ada_"]
 adacomi.com##div[style="height:90px;"]
 ||suruga-ya.jp/images/idol_bn.jpg$domain=hobbylabon.com
 ||contents-thumbnail2.fc2.com^$domain=hobbylabon.com
@@ -7712,6 +7713,7 @@ bcnretail.com,smt.docomo.ne.jp,hitosara.com,goo.ne.jp,ocn.ne.jp##div[id^="gooad"
 cs.sonylife.co.jp###iframeHeader
 s2-log.com,alfalfalfa.com##.amazon_link
 ||ambassador-system.mercari.com^$domain=alfalfalfa.com
+alfalfalfa.com##img[src^="https://ambassador-system.mercari.com"]
 alfalfalfa.com##.clearfix.article_bodyfooter
 ||zyuken.net/ads/
 zyuken.net##.MenuBox[style="padding: 5px; min-height: 280px;"]
@@ -10902,8 +10904,8 @@ vip-front.video.g.fc2.com,video.laxd.com,video.fc2.com##[class^="c-ad"]:not(.c-a
 ||nijigen-erogazou.com^$script,third-party
 !
 ! itest.5ch.net,itest.bbspink.com
-itest.5ch.net##.ad_nth
-itest.5ch.net##.ad_nth_li
+itest.5ch.net#?#.ad_nth
+itest.5ch.net#?#.ad_nth_li
 itest.5ch.net#$#div[itemprop="itemListElement"][style="margin-top: 100px;"] { margin-top: 0 !important; }
 ||itest.5ch.net/assets/img/*-300x250.png
 itest.5ch.net##.ad_5th_300x250
