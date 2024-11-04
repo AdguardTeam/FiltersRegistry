@@ -1,5 +1,5 @@
-! Checksum: b172jY7y8b5gK1N5XAd9JQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1730637438-3600.patch
+! Checksum: P1gsgXX3RY0rrZR2f7rckw
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1730687813-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.27.63
@@ -91,7 +91,6 @@ vogue.*#%#//scriptlet('remove-class', 'isCurrentlySticky', 'div[class^="StickyVa
 cpt.com.br###faixa-bottom
 dire.it#%#//scriptlet('prevent-addEventListener', 'loadedmetadata', 'isImmediatePropagationStopped')
 people.com#$?#div[id^="article__broad-video-"] { remove: true; }
-zeflix.online##.fplayer > div[style]:has(> a[href="https://vk.com/zetfliks"])
 hachiraw.net##.ng-scope[ng-if] > img[data-original$="/01.png"]
 n-tv.de##.sitemap__group:has(> .sitemap__newsletter)
 ||cdn.jsdelivr.net/npm/disable-devtool^
@@ -182,7 +181,6 @@ fontanka.ru##section[data-test="report-news"]
 securityonline.info#%#//scriptlet('set-constant', 'isGwd', 'true')
 scitechdaily.com#%#//scriptlet('set-constant', 'isGwd', 'true')
 infor.pl#%#//scriptlet('remove-class', 'videoScrollClass', '.video-box.videoScrollClass')
-thelocal.ch##.article-single__content > .ml-manual-widget-container
 sports.ru###media-promo-mount-point
 stopgame.ru##div[class^="_youtube-promo_"]
 genius.com##aside[class^="RecommendedSongs__"]
@@ -280,6 +278,7 @@ strefaobrony.pl,shownews.pl,e-ogrodek.pl,gra.pl,stronakuchni.pl,stronapodrozy.pl
 deepl.com##aside[aria-labelledby="customer-quotes-heading"]
 flashback.org###top-banner-wrapper
 cinemablend.com,livescience.com,gamesradar.com,tomshardware.com,pcgamer.com,windowscentral.com,laptopmag.com,techradar.com##.related-articles-block
+sia.ru###right_fixed_block
 ||softpedia.com/zds.php
 msn.com##.banner-container
 theweathernetwork.com#$#body[style*="overflow"] { overflow-y: visible !important; }
@@ -339,6 +338,7 @@ blogto.com##.fire_video_style
 ||fireworkapi1.com^$domain=jj-jj.net|mensnonno.jp|olive-hitomawashi.com|gizmodo.jp|final-inc.com|roomie.jp|gendai.media|as-web.jp|boldsky.com|blogto.com|getnews.jp|lp.p.pia.jp|fudge.jp|motor-fan.jp|madamefigaro.jp|forzastyle.com|maquia.hpplus.jp|web.gekisaka.jp
 forzastyle.com##.m-firework
 madamefigaro.jp##.firework_story_block_col
+sunnylife.tw##.bottom-side-menu > li > a:not([title="GOTOP"])
 rlsnet.ru##.attention-modal
 leparisien.fr###dailymotion-pip-large-viewport
 avg.com,avast.com###offer-chrome
@@ -584,6 +584,8 @@ fashion.appledaily.com.tw#%#AG_defineProperty('options.subscriptionContent', { v
 genius.com##apple-music-player
 ltn.com.tw#%#AG_onLoad(function() { $('div[class^="photo picbox 1 photoOn"] > a[href="//draw.ltn.com.tw/slot_v8/"]').closest('div.picbox.\\31').remove(); });
 last.fm##.nag-bar--language-mismatch-prompt
+voltimum.com.tr#$##myMod.overlay { display:none!important; }
+voltimum.com.tr#$##vlt-article-body { filter:none!important; }
 desired.de#$#body { padding-top: 0!important; }
 /wp-content/plugins/snow-3d/*
 trashbox.ru##a[href^="https://t.me"]
@@ -668,7 +670,7 @@ wikipedia.org##.mw-dismissable-notice
 ||epochtimes.de/assets/themes/eptde16/popup/fb-like-epochtimes.de.html
 comss.ru##td[style="width:180px"] > div.block
 otzyv.ru##div[align="center"] > .aviasales
-pcworld.com##.howto-video
+vchaspik.ua##div[id="conteiner"][style="height: 410px;"]
 pcworld.com#%#setInterval(function() { var el = document.querySelector('.howto-video video'); if (el) { el.pause(); el.src = ''; }}, 100);
 grammarly.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("ch:overlay.closed.time", "5000000000000") } } catch (ex) {} })();
 focus.ua###at4-follow
@@ -889,6 +891,7 @@ disk.yandex.ru#%#//scriptlet('remove-attr', 'href', '.InfoSpace[href^="https://3
 [$path=/images]ya.ru,yandex.*##.ImagesViewer-Products
 [$path=/maps]yandex.*##.business-card-view__section:has(> .business-ownership-view)
 [$path=/maps]yandex.*##.card-special-offers-view
+[$path=/maps]yandex.*#?#.business-card-view__orgpage-actions div.carousel__item > div._type_action_button > a[role] > span:contains(Скачать приложение)
 [$path=/maps]yandex.*##.business-card-view__main-wrapper div.card-offer-view
 [$path=/maps]yandex.*##.business-card-title-view__advert
 [$path=/maps]yandex.*##.business-card-title-view__actions .button._view_advertisement
@@ -1124,6 +1127,7 @@ live.fc2.com##.m-lbxLst-bnr
 apkmirror.com###bottom-slider
 golem.de##.career-widget
 movie-tsutaya.tsite.jp##.banner-detail
+movie-tsutaya.tsite.jp##.adv-promotion-price
 journal.tinkoff.ru##div[data-analytics="banner"]
 outlook.live.com#?#div[data-app-section="MessageList"] > div:first-child:has(> div > div > div > div div > div[class] img[src*="/ads-"])
 outlook.live.com#?#.customScrollBar[tabindex] .customScrollBar > div[style] > div:first-child:has(> div[data-animatable] div[class] > div[class] > div[class] > span:contains(Microsoft Outlook))
@@ -1665,7 +1669,6 @@ vc.ru#$#html { --layout-header-height-large: 60px !important; }
 vc.ru##.distribution
 kotsovolos.gr###top-pre-header
 smopia.com###custom_html-25
-videogameschronicle.com##.vgc-products
 kinoart.ru###issue_banner
 baseconnect.in###side_banner
 baseconnect.in##.add__wrapper
@@ -1738,7 +1741,6 @@ astral.sh##main ~ div.container:has(> div > div.relative > div > a[href="https:/
 rakumachi.jp###js-MultiPageHeader
 rakumachi.jp##.postBanner
 home.kingsoft.jp##.col-md-3 > a[href] > img
-eikoh.co.jp##.targetSpace
 dbook.docomo.ne.jp##.p-top-banner
 sbermarket.ru##div[class^="BannersAndSlidersThroughCatalog"]
 sbermarket.ru##div[class*="ShowJsPlacement_bannerMainHeader"]
@@ -2035,7 +2037,6 @@ wandoujia.com##.qr-box
 webmath.ru##.calc-banner
 leparisien.fr##.homepage__top-subscribe-anchor
 zhidao.baidu.com##.jump-top-box
-||mornlong.com/zb_users/upload/images_ads/
 asahi.co.jp##.headerBnr
 asahi.co.jp##.bnr
 freeconvert.com###TryFree
@@ -2350,7 +2351,6 @@ baike.baidu.com##.BK-before-content-wrapper > div > a[target="_blank"][data-num]
 g2.com##.product-listing--banner
 analyticsindiamag.com##.elementor-widget-container > a[href="https://machinecon.analyticsindiamag.com/"]
 ufret.jp##.btn-lg[href="/signup.php"]
-edureka.co##.blog-content > div.cr-group-tr-cs-carousal
 pay.rakuten.co.jp###DETAIL-ad-modal-parts
 item.rakuten.co.jp###newUserBanner--a
 tunelf.com##.article-product-block
@@ -2581,7 +2581,6 @@ reviews.org##.header-disclaimer
 ccc.eu##.is-umbrella
 premier.ua###bpu_prem_side
 premier.ua##.flying-action
-multiplex.ua##.catfish-masterpass
 windows.com,visualstudio.com,office.com,xbox.com,microsoft.com,msra.cn###epb
 femina.hu##div[data-miniapp-id]
 coolutils.com###bottomBanner
