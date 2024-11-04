@@ -1,9 +1,9 @@
-! Checksum: zofwlmWngM14Bcr1PyNlJg
-! Diff-Path: ../patches/14/14-s-1730716609-3600.patch
+! Checksum: kT1lqYjHeC88/eyzRySK2w
+! Diff-Path: ../patches/14/14-s-1730720870-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.12.68
-! TimeUpdated: 2024-11-04T10:33:00+00:00
+! Version: 2.2.12.69
+! TimeUpdated: 2024-11-04T11:33:34+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32287,6 +32287,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+starwalk.space###root > div[style="transform: translateY(0px); opacity: 1;"]
 e.mail.ru###octavius-notify-tamagotchi
 haberler.com###notification-popup
 ||smocca.jp/assets/api/ask_notification_permission
@@ -44316,7 +44317,9 @@ sravni.ru##div[class^="special-offers-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160093
 pepper.pl#?#.js-threadList > .js-banner:has(img[alt="Hall Of Flame"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158912
-||player.cnevids.com/interlude/glamour.js*&embeddedVideos=&rightRail=true
+! player.cnevids.com
+||player.cnevids.com/interlude/$domain=glamour.com|gqjapan.jp|wired.it|wired.com|vogue.de|gq.com|revistagq.com|gqmagazine.fr|gq-magazin.de|gqitalia.it|gqindia.com|gq.com.tw|gq.com.mx|gq-magazine.co.uk|gq.ru
+||player.cnevids.com/interlude/gq*&rightRail=true$domain=gq.com.mx
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158891
 ||img-global.cpcdn.com/promotional_banners
 cookpad.com##div[data-source-tracking-screen-value="home_banner"]
@@ -49451,7 +49454,6 @@ eikaiwa.dmm.com##.banner-single-top
 vook.vc##[class*="-spnsr"]
 finance.sina.com.cn##.wrap > div[style^="margin-top:"]:has(> a[href][target="_blank"] > img)
 ||camonster.io/streams/streams_live.php$domain=nsfwmonster.com
-||player.cnevids.com/interlude/$domain=wired.it|wired.com|vogue.de|gq.com|revistagq.com|gqmagazine.fr|gq-magazin.de|gqitalia.it|gqindia.com|gq.com.tw|gq.com.mx|gq-magazine.co.uk
 ||creative.cams.gifsauce.com/widgets/
 gifsauce.com##.sm\:block:has(> div.hidden > div.sticky > iframe[src^="https://creative.cams.gifsauce.com/widgets/"])
 faselhds.*##.alert-danger
@@ -49542,7 +49544,6 @@ dengekionline.com##li[class^="ArticleList_listBanner__"]
 terabox.com##.coupon-Popup-box
 ||wk-partners.co.jp/homepage/wp-content/themes/webkikaku/assets/images/blog-banner-ad.png
 ||best-hit.tv/random_pr.js
-||player.cnevids.com/interlude/gq-jp.js
 spiderum.com##spiderum-ads
 iotransfer.itopvpn.com#$#.itop-fl-banner { display: none !important; }
 iotransfer.itopvpn.com#$#.language { margin-top: 0 !important; padding-top: 0 !important; }
@@ -50315,7 +50316,6 @@ tripadvisor.com##footer ~ div[class^="Su"][style="bottom: 284px;"]
 tokyo-np.co.jp##.koudoku_annai
 hepsiburada.com##div[id^="sponProduct"]
 live.kufu.co.jp##.ad_list_block
-||player.cnevids.com/interlude/gq*&rightRail=true$script
 thesource.com###custom_html-8
 yomiuri.co.jp##div[style="height:150px;text-align:center; margin-bottom: 16px;"]
 ||okbizcs.okwave.jp/img/ss/oemfile/*/right_side_banner_
