@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.59.8",
-			"timeUpdated": "2024-11-04T12:31:23+0000",
+			"version": "2.3.59.9",
+			"timeUpdated": "2024-11-04T14:31:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.7.30",
-			"timeUpdated": "2024-11-02T15:32:50+0000",
+			"version": "2.1.7.31",
+			"timeUpdated": "2024-11-04T14:33:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.34",
-			"timeUpdated": "2024-11-04T13:32:55+0000",
+			"version": "2.0.44.35",
+			"timeUpdated": "2024-11-04T14:33:09+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.12.70",
-			"timeUpdated": "2024-11-04T13:33:17+0000",
+			"version": "2.2.12.71",
+			"timeUpdated": "2024-11-04T14:33:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.32",
-			"timeUpdated": "2024-11-04T13:33:24+0000",
+			"version": "2.0.45.33",
+			"timeUpdated": "2024-11-04T14:33:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -765,8 +765,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.17.46",
-			"timeUpdated": "2024-11-04T10:33:08+0000",
+			"version": "2.0.17.47",
+			"timeUpdated": "2024-11-04T14:33:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
