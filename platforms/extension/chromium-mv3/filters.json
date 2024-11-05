@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.14",
-			"timeUpdated": "2024-11-05T11:31:13+0000",
+			"version": "2.0.95.15",
+			"timeUpdated": "2024-11-05T16:31:06+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.90",
-			"timeUpdated": "2024-11-05T15:32:37+0000",
+			"version": "2.0.58.91",
+			"timeUpdated": "2024-11-05T16:33:02+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.69",
-			"timeUpdated": "2024-11-05T15:33:03+0000",
+			"version": "2.0.27.70",
+			"timeUpdated": "2024-11-05T16:33:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -751,8 +751,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.10.10",
-			"timeUpdated": "2024-11-05T09:33:38+0000",
+			"version": "2.0.10.11",
+			"timeUpdated": "2024-11-05T16:33:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -773,8 +773,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.5.52",
-			"timeUpdated": "2024-10-31T14:33:26+0000",
+			"version": "2.0.5.53",
+			"timeUpdated": "2024-11-05T16:33:28+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
@@ -801,8 +801,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.2.62",
-			"timeUpdated": "2024-11-05T14:33:32+0000",
+			"version": "2.0.2.63",
+			"timeUpdated": "2024-11-05T16:33:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
