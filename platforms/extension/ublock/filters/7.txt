@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: lagbtqsWuDeFlfuzB4qj4Q
-! Diff-Path: ../patches/7/7-s-1730889417-3600.patch
+! Checksum: 57HswlT6ZkAU9Vza2Etb+g
+! Diff-Path: ../patches/7/7-s-1730893130-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.58.94
-! TimeUpdated: 2024-11-06T10:33:03+00:00
+! Version: 2.0.58.95
+! TimeUpdated: 2024-11-06T11:34:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1026,8 +1026,9 @@ kasegeru.blog.jp##+js(remove-node-text, #text, /スポンサードリンク：?|
 blog.livedoor.jp##+js(abort-current-script, Array.prototype.join, amazon)
 ! overlay
 erommd-street.com##+js(abort-current-script, document.createElement, overview)
-! https://github.com/uBlockOrigin/uAssets/issues/23285
-twivideo.net##+js(addEventListener-defuser, load, /interstitialAd|videoInstArea/)
+! https://github.com/AdguardTeam/AdguardFilters/issues/192076
+twivideo.net##+js(abort-current-script, document.getElementById, imageUrls)
+twivideo.net##+js(addEventListener-defuser, load, videoInstArea)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176598
 ac-illust.com,photo-ac.com##+js(abort-current-script, $, google_ads_iframe_)
 ! ad-leftover on click
@@ -1754,6 +1755,9 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+||twivideo.net/templates/images/ad/
+twivideo.net##a[id^="randomImageLink"]
+twivideo.net#$#div[style^="max-width: 1000px; width: 100%; height: 150px; margin: 0 auto 50px auto;"] { height: 0 !important; }
 repsoku.net##.thumb:has(> a[target="_blank"]:only-child)
 city.natori.miyagi.jp##.footer_banner_wrap
 my-best.com##div[data-testid^="advertisement-"]
