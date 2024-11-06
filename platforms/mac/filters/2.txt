@@ -1,8 +1,8 @@
-! Checksum: pRFV/saCh2fHabkH7aEStA
+! Checksum: 0qogD7kyFRlL1ob9VcFkkQ
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.59.45
-! TimeUpdated: 2024-11-06T11:31:43+00:00
+! Version: 2.3.59.46
+! TimeUpdated: 2024-11-06T12:31:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7573,6 +7573,8 @@ trancehost.com,magicgameworld.com,karanpc.com#%#//scriptlet('prevent-xhr', 'stat
 jpopsingles.eu,superpsx.com#%#//scriptlet('trusted-suppress-native-method', 'Array.prototype.includes', '"error"')
 ! #%#//scriptlet('trusted-suppress-native-method', 'fetch', '"pagead2.googlesyndication.com"')
 jpopsingles.eu,superpsx.com#%#//scriptlet('trusted-suppress-native-method', 'fetch', '"pagead2.googlesyndication.com"')
+! #%#//scriptlet('trusted-suppress-native-method', 'DOMTokenList.prototype.add', '"-style-"')
+3dzip.org,jpopsingles.eu,superpsx.com#%#//scriptlet('trusted-suppress-native-method', 'DOMTokenList.prototype.add', '"-style-"')
 ! #%#//scriptlet('abort-current-inline-script', 'eval', 'split')
 web1s.asia,mizugigurabia.com,matomeiru.com,pornleaks.in,insideeducation.co.za,tirumalatirupatiyatra.in,geekering.com,banfaucet.com,trigonevo.com,digter8.com,ymknow.xyz,nullpk.com,onemarksolution.com,oportaln10.com.br,adslide.io,meteoregioneabruzzo.it,descargaseriestv.com,animexin.vip,bitview.cloud,camcam.cc,60fps.xyz,s1os.icu,shineads.org,azoranov.com,jenismac.com,nsw2u.*,unofficialtwrp.com,downloadlyir.com,pinsystem.co.uk,173.249.8.3,rttar.com,torrentmac.net#%#//scriptlet('abort-current-inline-script', 'eval', 'split')
 ! $$script[wildcard="*split*eval(function(h,u,n,t,e,r)*"][min-length="70000"][max-length="200000"]
@@ -8385,6 +8387,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192414
+@@||static.doubleclick.net/instream/ad_status.js$domain=3dzip.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191694
 @@||s.nitropay.com/ads-437.js$domain=wago.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192036
@@ -17431,9 +17435,6 @@ orangespotlight.com#%#//scriptlet("abort-on-property-read", "adBlockDetected")
 @@||gstatic.com/cv/js/sender/v1/cast_sender.js$domain=kora-online.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43401
 ||deloplen.com^$redirect=nooptext,domain=eg.arblionz.tv,important
-! https://github.com/AdguardTeam/AdguardFilters/issues/37579
-nabmovie.com#%#window.open=function(){};
-nabmovie.com#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35921
 ||aflamfree.top/tv/BoxO.gif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34349
@@ -32165,8 +32166,6 @@ house.porn#%#//scriptlet("abort-on-property-read", "q4SS")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53215
 porngo.com#%#//scriptlet("abort-on-property-read", "detectAdb")
 porngo.com#%#//scriptlet("abort-current-inline-script", "$", ".append(data.code)")
-! https://github.com/AdguardTeam/AdguardFilters/issues/53188
-javjunkies.com#%#(function(){var b=window.open,c=/^\/[\S]*?.php$/;window.open=function(a,d){if("string"===typeof a&&c.test(a))return window;b(a,d)}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53104
 javher.com#%#//scriptlet("set-constant", "Object.prototype.showPopUnder", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52857
@@ -32501,8 +32500,6 @@ soundpark-club.casa,soundpark.best,sound-park.world,soundpark.red#%#(function() 
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33587
 hihbt.com#%#//scriptlet("abort-current-inline-script", "window.open")
 hihbt.com#%#window.open = function() { };
-! https://github.com/AdguardTeam/AdguardFilters/issues/37545
-recordmp3.co#%#(function(){window.open_=window.open;var c=window.open,d=/ecpms\.net/;window.open=function(e,f){return"string"==typeof e&&d.test(e)?document.body:void c(e,f)}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35611
 0xxx.ws#%#(function(){var c=document.addEventListener;document.addEventListener=function(a,b,d,e){"mousedown"!=a&&-1==b.toString().indexOf('Z4P')&&c(a,b,d,e)}.bind(document); var b=window.setTimeout;window.setTimeout=function(a,c){if(!/\..4P\(|=setTimeout\(/.test(a.toString()))return b(a,c)};})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167726
@@ -32558,8 +32555,6 @@ imgadult.com#%#//scriptlet("abort-on-property-read", "adbctipops")
 imgadult.com#%#(function(){Object.defineProperty(window, 'ExoLoader', { get: function() { return; } }); var c=document.addEventListener;document.addEventListener=function(a,b,d,e){"getexoloader"!=a&&-1==b.toString().indexOf('loader')&&c(a,b,d,e)}.bind(document);})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33357
 wickedsick.tv#%#//scriptlet("abort-current-inline-script", "spot", "api/direct")
-! nitroflare.com - popunder when downloading
-nitroflare.com#%#(function(){window.open_=window.open;var c=window.open,d=/./;window.open=function(e,f){return"string"==typeof e&&d.test(e)?document.body:void c(e,f)}})();
 ! linkshrink.net mobile website - popups
 linkshrink.net#%#//scriptlet("prevent-window-open")
 linkshrink.net#%#//scriptlet("abort-current-inline-script", "confirm", "ads.linkshrink.net")
@@ -32632,8 +32627,6 @@ youtube6download.top#%#(function() { window.open_ = window.open; var w_open = wi
 ycapi.org#%#(function() { window.open_ = window.open; var w_open = window.open, regex = /ycapi\.org\/p\//; window.open = function(a, b) { if (typeof a !== 'string' || !regex.test(a)) { w_open(a, b); } }; })();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27936
 dvdgayporn.com#%#//scriptlet("set-constant", "dtGonza.playeradstime", "-1")
-! 9movies.us - popups
-9movies.us#%#(function(){window.open_=window.open;var c=window.open,d=/go\.pub2srv\.com/;window.open=function(e,f){return"string"==typeof e&&d.test(e)?document.body:void c(e,f)}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25451
 hotpornfile.org#%#//scriptlet("abort-current-inline-script", "document.dispatchEvent", "getexldr")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26931
@@ -32817,8 +32810,6 @@ peekvids.com#%#window["pop_clicked"] = 1;
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,electrek.co#%#window.canRunAds = true; window.OXHBConfig = {};
 ! qz.com header glitch
 qz.com#%#AG_onLoad(function(){if(document.body.classList){document.body.classList.remove("has-marquee");var a=document.getElementById("settingsNav");a&&a.classList.remove("header-stuck")}});
-! https://forum.adguard.com/index.php?threads/linclik-com.20662/
-linclik.com#%#(function(a){window.open=function(){if("Popup_Window"!==argument[1])return a.apply(window,arguments)};})(window.open);
 ! https://forum.adguard.com/index.php?threads/18374/
 dato.porn#%#window.open = function() {};
 ! https://forum.adguard.com/index.php?threads/19046/
@@ -32830,8 +32821,6 @@ uppit.com#%#//scriptlet("adjust-setTimeout", "#countdown", "", "0.02")
 hqq.tv#%#AG_onLoad(function() { setTimeout(function() { if(typeof after_click === "function") { after_click(); } }, 300); });
 ! https://forum.adguard.com/index.php?threads/18216/
 imgclick.net#%#AG_onLoad(function() { document.getElementById("form-captcha").submit(); });
-! https://forum.adguard.com/index.php?threads/www-apkpromod-net.18611/
-apkpromod.net#%#(function(){var a=window.open;window.open=function(){if(-1==arguments[0].indexOf("www.facebook.com/"))return a.apply(window,arguments)}})();
 ! https://forum.adguard.com/index.php?threads/18584/
 youjizz.com#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('ExoLoader') == 0) { window[key] = {}; } }; });
 ! https://forum.adguard.com/index.php?threads/9895/
@@ -32849,13 +32838,8 @@ vg247.com#%#AG_onLoad(function() { window.yafaIt = function() {}; });
 ndtv.com#%#AG_onLoad(function() { if (window.location.href.indexOf("hpinterstitial.aspx") != -1) { window.setCookie1('sitecapture_interstitial', 1, 1); window.location.href = "http://www.ndtv.com/"; } });
 ! nypost.com
 nypost.com#%#window.checkState = function() {};
-! https://forum.adguard.com/index.php?threads/10683/
-videomega.tv#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('ppu_main_none', 1 + (1 ? "; expires=" + (new Date((new Date()).getTime() )).toUTCString() : "")); }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2345
 pcmag.com#%#window.checkState = function() {};
-! https://forum.adguard.com/index.php?threads/11171/
-mediafire.com#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('InfNumFastPops', '5'); }
-mediafire.com#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('InfNumFastPopsExpire', new Date(new Date().setYear(2020))); }
 ! https://forum.adguard.com/index.php?threads/10684/
 imagetwist.com#%#AG_onLoad(function() { setTimeout(function() {document.cookie="ppu_sub=1"; document.cookie="ppu_main=1";}, 300); });
 ! https://forum.adguard.com/index.php?threads/9717/
@@ -32893,8 +32877,6 @@ ilive.to#%#function setOverlayHTML_new() {};
 ilive.to#%#setTimeout(removeOverlayHTML, 2000);
 ! any.gs autoredirect
 any.gs#%#var parts = document.URL.split("/url/"); if (parts.length == 2 && parts[1].indexOf('script') < 0 && /^https?:\/\/[a-z0-9.-_]+\/.*$/.test(parts[1])) { document.location = parts[1]; };
-! thepiratebay and pirateproxy anti-popup
-pirateproxy.in,pirateproxy.be#%#window.open=function() {};
 ! Fixing zive.cz video ad
 zive.cz#%#AG_onLoad(function() { window.VIDEO_AD_ENABLED = false; } );
 ! pornhub.com -- it does not show popups in opera
@@ -34907,12 +34889,12 @@ eztv.unblocked.sh,vidzi.tv##body > div[id][style*="position: fixed"][style*="z-i
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171225
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165079
 ||creativeservice-production.scdn.co/mp3-ad/*.mp3$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
-||audio-ak*-spotify-com.akamaized.net/audio/$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
+||audio-ak*-*.akamaized.net/audio/$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/3087
 ||audio-*.scdn.co/audio/$media,redirect=noopmp4-1s,app=Spotify.exe
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165079
 ||creativeservice-production.scdn.co/mp3-ad/*.mp3$media,~xmlhttprequest,redirect=noopmp4-1s,app=Spotify.exe
-||audio-ak*-spotify-com.akamaized.net/audio/$media,~xmlhttprequest,redirect=noopmp4-1s,app=Spotify.exe
+||audio-ak*-*.akamaized.net/audio/$media,~xmlhttprequest,redirect=noopmp4-1s,app=Spotify.exe
 ||spclient.wg.spotify.com/ad-logic/flashpoint
 ! Breaks next track button and seeking
 ! ||spotify.com/track-playback/$xmlhttprequest,jsonprune=\$.state_machine.tracks[?(key-eq 'content_type' 'AD')]
@@ -80546,6 +80528,7 @@ browsershots.org#@#.advert_area
 ||apptjmp.com^
 ||apptquitesouse.com^
 ||appwebview.com^
+||appwtehujwi.com^
 ||appyrinceas.com^
 ||appyrincene.com^
 ||appzery.com^
@@ -83624,6 +83607,7 @@ browsershots.org#@#.advert_area
 ||clickwork7secure.com^
 ||clickxchange.com^
 ||clictrck.com^
+||cliencywast.top^
 ||clientoutcry.com^
 ||cliffaffectionateowners.com^
 ||cliffestablishedcrocodile.com^
@@ -83960,6 +83944,7 @@ browsershots.org#@#.advert_area
 ||conductoraspirinmetropolitan.com^
 ||conduit-banners.com^
 ||conduit-services.com^
+||conerchina.top^
 ||conetizable.com^
 ||confabureas.com^
 ||confdatabase.com^
@@ -86626,6 +86611,7 @@ browsershots.org#@#.advert_area
 ||etm1lv06e6j6.shop^
 ||etnacsqssv.com^
 ||etobepartoukfare.info^
+||etoexukpreses.com^
 ||etothepointato.info^
 ||etougais.net^
 ||etphoneme.com^
@@ -88919,6 +88905,7 @@ browsershots.org#@#.advert_area
 ||gtosmdjgn.xyz^
 ||gtsads.com^
 ||gtslufuf.xyz^
+||gtusaexrlpab.world^
 ||gtwoedjmjsevm.xyz^
 ||gtxlouky.xyz^
 ||gtyjpiobza.com^
@@ -90915,6 +90902,7 @@ browsershots.org#@#.advert_area
 ||jegoypoabxtrp.com^
 ||jehobsee.com^
 ||jekesjzv.com^
+||jekzyyowqvzby.top^
 ||jelliescroon.click^
 ||jelllearnedhungry.com^
 ||jellyhelpless.com^
@@ -95627,6 +95615,7 @@ browsershots.org#@#.advert_area
 ||owlunimmvn.com^
 ||owndata.network^
 ||ownzzohggdfb.com^
+||owojqopr.com^
 ||owppijqakeo.com^
 ||owrkwilxbw.com^
 ||owwczycust.com^
@@ -99173,6 +99162,7 @@ browsershots.org#@#.advert_area
 ||ruwfempxgwry.xyz^
 ||ruxmkiqkasw.com^
 ||ruzotchaufu.xyz^
+||rv-syzfedv.rocks^
 ||rvddfchkj.xyz^
 ||rvetreyu.net^
 ||rvotdlvpwmynan.xyz^
@@ -101449,6 +101439,7 @@ browsershots.org#@#.advert_area
 ||szkzvqs.com^
 ||szlipubod.com^
 ||szpjpzi.com^
+||szqxnpcqnzl.com^
 ||szqxvo.com^
 ||t.uc.cn^
 ||t0gju20fq34i.com^
@@ -102899,6 +102890,7 @@ browsershots.org#@#.advert_area
 ||ufzanvc.com^
 ||ugailidsay.xyz^
 ||ugeewhee.xyz^
+||ughtanothin.info^
 ||ughzfjx.com^
 ||ugloopie.com^
 ||ugopkl.com^
@@ -103590,6 +103582,7 @@ browsershots.org#@#.advert_area
 ||verify-human.b-cdn.net^
 ||veritiesgarlejobade.com^
 ||vernementsec.info^
+||verneukdottle.shop^
 ||verninchange.com^
 ||vernondesigninghelmet.com^
 ||vernongermanessence.com^
@@ -105393,6 +105386,7 @@ browsershots.org#@#.advert_area
 ||yvoria.com^
 ||yvzgazds6d.com^
 ||yweowwmomqnbwj.com^
+||ywfbjvmsw.com^
 ||ywgpkjg.com^
 ||ywhowascryin.com^
 ||ywopyohpihnkppc.xyz^
@@ -105693,6 +105687,7 @@ browsershots.org#@#.advert_area
 ||zwnoeqzsuz.com^
 ||zwqzxh.com^
 ||zwsxsqp.com^
+||zwunpyyqhp.com^
 ||zwyjpyocwv.com^
 ||zxcdn.com^
 ||zxmojgj.com^

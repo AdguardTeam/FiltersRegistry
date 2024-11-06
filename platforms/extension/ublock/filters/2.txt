@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 2wbbjHTUpoX0acK3KJUSMg
-! Diff-Path: ../patches/2/2-s-1730893128-3600.patch
+! Checksum: x6ukRIf3syBL5jkew8J4ZQ
+! Diff-Path: ../patches/2/2-s-1730896641-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.59.45
-! TimeUpdated: 2024-11-06T11:31:43+00:00
+! Version: 2.3.59.46
+! TimeUpdated: 2024-11-06T12:31:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8247,6 +8247,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192414
+@@||static.doubleclick.net/instream/ad_status.js$domain=3dzip.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191694
 @@||s.nitropay.com/ads-437.js$domain=wago.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192036
@@ -17607,8 +17609,6 @@ orangespotlight.com##+js(abort-on-property-read, adBlockDetected)
 @@||gstatic.com/cv/js/sender/v1/cast_sender.js$domain=kora-online.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43401
 ||deloplen.com^$redirect=noop.txt,domain=eg.arblionz.tv,important,image,media,subdocument,stylesheet,script,xmlhttprequest,other
-! https://github.com/AdguardTeam/AdguardFilters/issues/37579
-nabmovie.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35921
 ||aflamfree.top/tv/BoxO.gif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34349
@@ -31905,7 +31905,6 @@ house.porn##+js(abort-on-property-read, q4SS)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53215
 porngo.com##+js(abort-on-property-read, detectAdb)
 porngo.com##+js(abort-current-script, $, .append(data.code))
-! https://github.com/AdguardTeam/AdguardFilters/issues/53188
 ! https://github.com/AdguardTeam/AdguardFilters/issues/53104
 javher.com##+js(set-constant, Object.prototype.showPopUnder, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52857
@@ -32209,7 +32208,6 @@ cle0desktop.blogspot.com##+js(abort-on-property-read, popunder)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37884
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33587
 hihbt.com##+js(abort-current-script, window.open)
-! https://github.com/AdguardTeam/AdguardFilters/issues/37545
 ! https://github.com/AdguardTeam/AdguardFilters/issues/35611
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167726
 multiup.io##+js(no-setInterval-if, $("form").submit())
@@ -32253,7 +32251,6 @@ empflix.com##+js(set-constant, FlixPop.isPopGloballyEnabled, falseFunc)
 imgadult.com##+js(abort-on-property-read, adbctipops)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33357
 wickedsick.tv##+js(abort-current-script, spot, api/direct)
-! nitroflare.com - popunder when downloading
 ! linkshrink.net mobile website - popups
 linkshrink.net##+js(window.open-defuser)
 linkshrink.net##+js(abort-current-script, confirm, ads.linkshrink.net)
@@ -32302,7 +32299,6 @@ vumoo.life##+js(set-constant, dtGonza.playeradstime, -1)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/28250
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27936
 dvdgayporn.com##+js(set-constant, dtGonza.playeradstime, -1)
-! 9movies.us - popups
 ! https://github.com/AdguardTeam/AdguardFilters/issues/25451
 hotpornfile.org##+js(abort-current-script, document.dispatchEvent, getexldr)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26931
@@ -32430,7 +32426,6 @@ israelnationalnews.com##+js(abort-current-script, Math.random, new RegExp)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11692
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4874
 ! qz.com header glitch
-! https://forum.adguard.com/index.php?threads/linclik-com.20662/
 ! https://forum.adguard.com/index.php?threads/18374/
 ! https://forum.adguard.com/index.php?threads/19046/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75252
@@ -32438,7 +32433,6 @@ israelnationalnews.com##+js(abort-current-script, Math.random, new RegExp)
 uppit.com##+js(adjust-setTimeout, #countdown, , 0.02)
 ! https://forum.adguard.com/index.php?threads/18968/
 ! https://forum.adguard.com/index.php?threads/18216/
-! https://forum.adguard.com/index.php?threads/www-apkpromod-net.18611/
 ! https://forum.adguard.com/index.php?threads/18584/
 ! https://forum.adguard.com/index.php?threads/9895/
 motherless.com##+js(abort-current-script, jQuery, secondPop)
@@ -32449,9 +32443,7 @@ motherless.com##+js(abort-current-script, jQuery, secondPop)
 ! https://forum.adguard.com/index.php?threads/13088/
 ! https://forum.adguard.com/index.php?threads/11545/
 ! nypost.com
-! https://forum.adguard.com/index.php?threads/10683/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2345
-! https://forum.adguard.com/index.php?threads/11171/
 ! https://forum.adguard.com/index.php?threads/10684/
 ! https://forum.adguard.com/index.php?threads/9717/
 ! http://forum.adguard.com/showthread.php?9989
@@ -32474,7 +32466,6 @@ spectrum.ieee.org##+js(set-constant, splashpage, undefined)
 ! filepost.com (fixing popups on low speed download click)
 ! ilive.to  (found on http://freetvall.com/video/5U2B12R6R878/CNN-USA)
 ! any.gs autoredirect
-! thepiratebay and pirateproxy anti-popup
 ! Fixing zive.cz video ad
 ! pornhub.com -- it does not show popups in opera
 ! http://forum.adguard.com/showthread.php?3431
@@ -34378,7 +34369,7 @@ eztv.unblocked.sh,vidzi.tv##body > div[id][style*="position: fixed"][style*="z-i
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171225
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165079
 ||creativeservice-production.scdn.co/mp3-ad/*.mp3$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
-||audio-ak*-spotify-com.akamaized.net/audio/$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
+||audio-ak*-*.akamaized.net/audio/$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/3087
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165079
 ||spclient.wg.spotify.com/ad-logic/flashpoint
@@ -78217,6 +78208,7 @@ browsershots.org#@#.advert_area
 ||apptjmp.com^
 ||apptquitesouse.com^
 ||appwebview.com^
+||appwtehujwi.com^
 ||appyrinceas.com^
 ||appyrincene.com^
 ||appzery.com^
@@ -81295,6 +81287,7 @@ browsershots.org#@#.advert_area
 ||clickwork7secure.com^
 ||clickxchange.com^
 ||clictrck.com^
+||cliencywast.top^
 ||clientoutcry.com^
 ||cliffaffectionateowners.com^
 ||cliffestablishedcrocodile.com^
@@ -81631,6 +81624,7 @@ browsershots.org#@#.advert_area
 ||conductoraspirinmetropolitan.com^
 ||conduit-banners.com^
 ||conduit-services.com^
+||conerchina.top^
 ||conetizable.com^
 ||confabureas.com^
 ||confdatabase.com^
@@ -84297,6 +84291,7 @@ browsershots.org#@#.advert_area
 ||etm1lv06e6j6.shop^
 ||etnacsqssv.com^
 ||etobepartoukfare.info^
+||etoexukpreses.com^
 ||etothepointato.info^
 ||etougais.net^
 ||etphoneme.com^
@@ -86590,6 +86585,7 @@ browsershots.org#@#.advert_area
 ||gtosmdjgn.xyz^
 ||gtsads.com^
 ||gtslufuf.xyz^
+||gtusaexrlpab.world^
 ||gtwoedjmjsevm.xyz^
 ||gtxlouky.xyz^
 ||gtyjpiobza.com^
@@ -88586,6 +88582,7 @@ browsershots.org#@#.advert_area
 ||jegoypoabxtrp.com^
 ||jehobsee.com^
 ||jekesjzv.com^
+||jekzyyowqvzby.top^
 ||jelliescroon.click^
 ||jelllearnedhungry.com^
 ||jellyhelpless.com^
@@ -93298,6 +93295,7 @@ browsershots.org#@#.advert_area
 ||owlunimmvn.com^
 ||owndata.network^
 ||ownzzohggdfb.com^
+||owojqopr.com^
 ||owppijqakeo.com^
 ||owrkwilxbw.com^
 ||owwczycust.com^
@@ -96844,6 +96842,7 @@ browsershots.org#@#.advert_area
 ||ruwfempxgwry.xyz^
 ||ruxmkiqkasw.com^
 ||ruzotchaufu.xyz^
+||rv-syzfedv.rocks^
 ||rvddfchkj.xyz^
 ||rvetreyu.net^
 ||rvotdlvpwmynan.xyz^
@@ -99120,6 +99119,7 @@ browsershots.org#@#.advert_area
 ||szkzvqs.com^
 ||szlipubod.com^
 ||szpjpzi.com^
+||szqxnpcqnzl.com^
 ||szqxvo.com^
 ||t.uc.cn^
 ||t0gju20fq34i.com^
@@ -100570,6 +100570,7 @@ browsershots.org#@#.advert_area
 ||ufzanvc.com^
 ||ugailidsay.xyz^
 ||ugeewhee.xyz^
+||ughtanothin.info^
 ||ughzfjx.com^
 ||ugloopie.com^
 ||ugopkl.com^
@@ -101261,6 +101262,7 @@ browsershots.org#@#.advert_area
 ||verify-human.b-cdn.net^
 ||veritiesgarlejobade.com^
 ||vernementsec.info^
+||verneukdottle.shop^
 ||verninchange.com^
 ||vernondesigninghelmet.com^
 ||vernongermanessence.com^
@@ -103064,6 +103066,7 @@ browsershots.org#@#.advert_area
 ||yvoria.com^
 ||yvzgazds6d.com^
 ||yweowwmomqnbwj.com^
+||ywfbjvmsw.com^
 ||ywgpkjg.com^
 ||ywhowascryin.com^
 ||ywopyohpihnkppc.xyz^
@@ -103364,6 +103367,7 @@ browsershots.org#@#.advert_area
 ||zwnoeqzsuz.com^
 ||zwqzxh.com^
 ||zwsxsqp.com^
+||zwunpyyqhp.com^
 ||zwyjpyocwv.com^
 ||zxcdn.com^
 ||zxmojgj.com^
