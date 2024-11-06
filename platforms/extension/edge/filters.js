@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.38",
-			"timeUpdated": "2024-11-05T18:33:05+0000",
+			"version": "2.0.44.39",
+			"timeUpdated": "2024-11-06T22:32:57+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
