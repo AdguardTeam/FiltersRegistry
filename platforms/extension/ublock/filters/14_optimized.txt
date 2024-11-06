@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1Ti5Hck4kynxb/tqRN/KhA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1730896639-3600.patch
+! Checksum: px8+YkPkAnHNYjg0XqGQMg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1730900230-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.12.96
-! TimeUpdated: 2024-11-06T12:33:32+00:00
+! Version: 2.2.12.97
+! TimeUpdated: 2024-11-06T13:33:33+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1357,6 +1357,8 @@ focus.it##+js(remove-class, cp-banner-visible, body)
 codesandbox.io,damota.me,pracazarogiem.pl,pracezarohem.cz,pracazarohom.sk,seduo.*##+js(remove-class, force--consent|show--consent, html)
 /cookieconsent.js$domain=wedos.com|scssoft.com|umino.io
 docs.powershelluniversal.com,docs.snyk.io,docs.keeper.io,developers.deepl.com##[aria-label="Cookies"]
+app.filen.io#?#main > div.right-4:contains(This site uses cookies)
+filen.io###__next > div:has(> p + div > button)
 sportano.*##+js(remove-class, cookie-overlay-active, body)
 sportano.*#$#.global-cookie { display: none !important; }
 daisharin.co.jp###name-ga-cookie-accept-bar
@@ -13250,6 +13252,7 @@ itemci.com#$#html { overflow: visible!important; }
 oneplus.com#$#.dialog-lock { overflow:visible!important; position:relative!important; top:0px!important; }
 oneplus.com#$##header-auto-subscribe { display:none!important; }
 cont.ws##.iziToast-wrapper
+lucidchart.com##+js(set-local-storage-item, exit-intent-marketing, 1)
 drive.google.com##body > [aria-labelledby$=".afp"]
 thenation.com##.meerkat
 thenation.com#$#body { overflow: visible!important; }
@@ -20973,6 +20976,7 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.banki.ru/products/"]
 ##a[href^="https://apay-up-banner.com?merchantId="] > img
 ||apay-up-banner.com^$image,third-party
+telegram.hr##.softwall
 stash.clash.gg###ad-scroll-banner
 stash.clash.gg##.adv-desktop-left
 igg-games.com##.uk-margin-medium-top > div[style^="display:"]:has(> a[href^="/offernf?offer="])

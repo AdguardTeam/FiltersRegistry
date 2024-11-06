@@ -1,9 +1,9 @@
-! Checksum: TQoP/+gnn3wSkFTCAbZNEg
-! Diff-Path: ../patches/14/14-s-1730896648-3600.patch
+! Checksum: jFpjm1Eefp1XI6XfccdEgQ
+! Diff-Path: ../patches/14/14-s-1730900238-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.12.96
-! TimeUpdated: 2024-11-06T12:33:32+00:00
+! Version: 2.2.12.97
+! TimeUpdated: 2024-11-06T13:33:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2494,6 +2494,8 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 !
 ! NOTE: Regular rules
 !
+app.filen.io#?#main > div.right-4:contains(This site uses cookies)
+filen.io###__next > div:has(> p + div > button)
 sportano.*#%#//scriptlet('remove-class', 'cookie-overlay-active', 'body')
 sportano.*#$#.global-cookie { display: none !important; }
 daisharin.co.jp###name-ga-cookie-accept-bar
@@ -2834,7 +2836,6 @@ motorinsel.de#%#//scriptlet('trusted-click-element', 'button[value="disallow"]')
 zeus-grill-re.de##div[class]:has(> div[class]:only-child > div[class] > button#manage-cookies-button)
 guidelinecentral.com###cdp-gdpr-popup
 2gis.*##div[style="height:100%"] > div._121zpzx > div._e27xbxx > div._1jefphjl
-filen.io#%#//scriptlet('trusted-set-cookie', 'cookieConsent', 'needed')
 reports.turnerandtownsend.com#%#//scriptlet('trusted-click-element', 'div[data-testid="accept-cc-button"] > a')
 gpz-opskrba.hr###gdc-shade
 konyhatizezercikk.hu##.nanobar:has(> div[class] > .js-nanobar-cookies)
@@ -2882,7 +2883,6 @@ antiyoutuber.cz,idnes.cz#%#//scriptlet('trusted-click-element', '#didomi-host ~ 
 expres.cz#%#//scriptlet('trusted-click-element', '.contentwall_ok', '', '1000')
 autos.suzuki.com.mx#%#//scriptlet('set-cookie', 'suzuki-accept-cookie', 'true')
 wizards.com#%#//scriptlet('set-session-storage-item', 'cookie-agreed', '0')
-filen.io#%#//scriptlet('trusted-set-cookie', 'cookieConsent', 'needed')
 filen.io##.css-kiphvj
 wizards.com##div[data-fetch-key^="TheCookiePrompt"]
 tvsyd.dk##div[x-data^="cookieNotice"]
@@ -30136,7 +30136,7 @@ oneplus.com#$##header-auto-subscribe { display:none!important; }
 15min.lt###feedback-btn
 cont.ws##.iziToast-wrapper
 couriermail.com.au,heraldsun.com.au###persistent-marketing-banner
-lucidchart.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("exit-intent-marketing", "1") } } catch (ex) {} })();
+lucidchart.com#%#//scriptlet('set-local-storage-item', 'exit-intent-marketing', '1')
 drive.google.com##body > [aria-labelledby$=".afp"]
 mafengwo.cn###float-pannel-gloable
 thenation.com##.meerkat
@@ -38742,8 +38742,6 @@ deathwithdignity.org###email-signup
 zapier.com##.e1741cg91
 oggusto.com##.home-newsletter
 premierguitar.com##div[id^="sNewsletter_"]
-timesofindia.indiatimes.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("gendernlsubscription", "") } } catch (ex) {} })();
-timesofindia.indiatimes.com##.gendernewsletternudge
 howtogeek.com,reviewgeek.com###v2campaignmidpage
 annualreviews.org##.ar-right-col > div.collections-arBuzz
 chromeunboxed.com##.newsletterSignupBlock > *:not(.wp-rss-template-container):not(h6)
@@ -49228,6 +49226,7 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+telegram.hr##.softwall
 stash.clash.gg###ad-scroll-banner
 stash.clash.gg##.adv-desktop-left
 igg-games.com##.uk-margin-medium-top > div[style^="display:"]:has(> a[href^="/offernf?offer="])
