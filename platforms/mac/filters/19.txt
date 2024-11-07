@@ -1,8 +1,8 @@
-! Checksum: BIlaxwturTx7IE3t1dRdhA
+! Checksum: h35WX0nsBjWOPa55qRT+6w
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.45.45
-! TimeUpdated: 2024-11-07T09:33:39+00:00
+! Version: 2.0.45.46
+! TimeUpdated: 2024-11-07T10:33:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4372,6 +4372,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+dzen.ru##div[class*="--auth-popup-feed-trigger__"]
 sifiraracal.com##.ortu
 sifiraracal.com##.popupteklif
 jleague.jp###banner
@@ -4411,8 +4412,7 @@ jp.msi.com#$##feedback_monitor { display: none !important; }
 jp.msi.com#$#.modal-backdrop { display: none !important; }
 jp.msi.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 playground.ru###steamPollSuggestion
-x.com,pinterest.com###credential_picker_container
-pinterest.com###credential_picker_iframe
+x.com,pinterest.com##[id^="credential_picker_"]
 vuejs.org#%#//scriptlet('trusted-set-local-storage-item', 'JS_CERT_LAUNCH_OFFER_VUEJS_URGENT_CLOSED', '1')
 ||cdnjs.cloudflare.com/ajax/libs/fancybox$domain=ya.zerocoder.ru
 www.tumblr.com##div[data-testid=scroll-container][style*=blog-title-color] div[style^="background-color:"]:has(footer[role="contentinfo"])
@@ -10557,7 +10557,6 @@ utro.ru##.mask
 utro.ru##.facebook__box
 ren.tv###banner_ss_all
 qadin.net##.qadin_footer > div.hot_news
-news.rambler.ru#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('rnews.disablePopups', '9999999999999'); }
 mirtankov.su###popup-message-window
 mirtankov.su###popup-message-background
 sitepoint.com##body > .reveal-modal-bg
@@ -11136,9 +11135,6 @@ freshline.gr#$#body.fancybox-active { overflow: visible!important; margin-right:
 ipon.hu#$#.noscroll { overflow:visible!important; }
 ipon.hu#$##gdpr-popup { display:none!important; }
 ipon.hu#$#.js-overlay is-visible  { display:none!important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/16823
-allocine.fr###newsletter-anchor
-allocine.fr#%#(function(){try{if("undefined"!=typeof localStorage){var a={month:(new Date).getMonth(),day:(new Date).getDate(),counter:1};localStorage.setItem("ac_newsletter_modal_capping",JSON.stringify(a));localStorage.setItem("ac_promote_signup_modal_capping",JSON.stringify(a));localStorage.setItem("ac_promote_affinity_modal_capping",JSON.stringify(a))}}catch(b){}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16630
 wrestling-online.com#$#.sg-popup-overlay { display: none!important; }
 wrestling-online.com#$#.sg-popup-content { display: none!important; }
