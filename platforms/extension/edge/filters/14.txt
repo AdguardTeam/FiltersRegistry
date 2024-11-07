@@ -1,9 +1,9 @@
-! Checksum: 3Py5izjCpBiiEm0hzVqxTg
-! Diff-Path: ../patches/14/14-s-1730979448-3600.patch
+! Checksum: aqcvuioCnAVctIOj6Q+6+A
+! Diff-Path: ../patches/14/14-s-1730983011-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.8
-! TimeUpdated: 2024-11-07T11:33:59+00:00
+! Version: 2.2.13.9
+! TimeUpdated: 2024-11-07T12:33:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2500,6 +2500,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+reebok.*#%#//scriptlet('trusted-set-local-storage-item', 'SHOW_COOKIE_BANNER', 'no')
+kyoceradocumentsolutions.*#$?#div[data-gdpr] { remove: true; }
+kyoceradocumentsolutions.*#%#//scriptlet('remove-attr', 'inert')
 atlassian.com##div[data-testid="site-banners-container"]
 ||cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js$domain=gmr-foto.at
 byu.edu#%#//scriptlet('remove-class', 'meru-cc__force--consent|meru-cc__show--consent', 'html')
@@ -3222,7 +3225,6 @@ cooppank.ee#%#//scriptlet('trusted-set-cookie', 'cookie-consent', 'necessary%2B1
 op-media.fi###ocm-container
 kroesewatersport.nl##div.cookie-position
 slackgreen.com##one-time-notice
-kyoceradocumentsolutions.*##div[data-gdpr]
 cherryservers.com##[x-data="cookiesConsent"]
 drogariavenancio.com.br##.cookiesModal__wrapper
 htmlhifive.com###cookie_agreement_popup
@@ -13324,7 +13326,7 @@ belsat.eu#$#.popmake-overlay { display: none!important; }
 belsat.eu#$#body { overflow: visible!important; }
 belsat.eu#$#html { overflow: visible!important; }
 gazetapraca.pl##body #agreeNoticeWrapper.open
-manualslib.de,manualslib.com##body #cookie-alert
+manualslib.es,manualslib.de,manualslib.com##body #cookie-alert
 gazetapraca.pl##body #cookieInfoMsgWrapper.open
 gsp.ro##body .qc-cmp-ui-container
 reise-preise.de##body > #blend
@@ -16300,6 +16302,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192440
+pomadziarz.pl#@##shoper-foot ~ div.consents
+pomadziarz.pl#@#.shop_index > div.consents
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191828
 @@||sdk.privacy-center.org^$domain=profil.at
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191731
@@ -24715,6 +24720,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+xmtrading.com###risk-block
+reebok.*#%#//scriptlet('set-session-storage-item', 'NEWSLETTER_POPUP_SHOWN', 'true')
 dzen.ru##div[class*="--auth-popup-feed-trigger__"]
 sifiraracal.com##.ortu
 sifiraracal.com##.popupteklif
@@ -43904,6 +43911,8 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192313
+gizchina.gr##div[style="clear:both; margin-top:0em; margin-bottom:1em;"] > a
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191602
 ign.com##div[data-cy="faceoff-view-trigger"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191933
@@ -49136,6 +49145,8 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+xmtrading.com##.main-photo
+harrypotter.com##div[data-testid="navRibbonRoot"]
 immobilienscout24.de##.touchpoint-space
 pravmir.ru##div[id^="hh_fond_cause_widget"]
 mastory.jp##.p-article__banners
