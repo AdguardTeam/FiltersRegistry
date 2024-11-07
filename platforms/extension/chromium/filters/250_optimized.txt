@@ -1,5 +1,5 @@
-! Checksum: lI5lKxgYdeQRI3V6TfAyqw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1730883929-14400.patch
+! Checksum: j1aVp6e9fIXLC+GjOcDA9Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1730955908-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.50
@@ -12,6 +12,7 @@
 ###download-app-banner
 ###smart-banner
 ###smartbanner
+##.ad-app:not(html,body,:empty)
 ##.app-advertising:not(html,body,:empty)
 ##.app-banner:not(html,body,:empty)
 ##.app-btn:not(html,body,:empty)
@@ -21,7 +22,6 @@
 ##.app-nag-body:not(html,body,:empty)
 ##.app-nag:not(html,body,:empty)
 ##.app-teaser:not(html,body,:empty)
-##.appBanner:not(html,body,:empty)
 ##.AppBanner:not(html,body,:empty)
 ##.appdownload:not(html,body,:empty)
 ##.appPromo:not(html,body,:empty)
@@ -150,6 +150,7 @@ cfoc.org###top_custom_banner
 appuals.com##p + div > div:first-of-type
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
+||outbyte.com^$document
 ||solvusoft.com^$document
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
@@ -173,6 +174,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||mycleanpc.com^$document
 ||realdefen.se^$document
 ||yasir252.com^$all
+||xiaobaixitong.com^$all
 ||flash.cn^$all
 !+ NOT_OPTIMIZED
 ||132.148.220.142^$document
@@ -200,7 +202,6 @@ coolrom.com.au,coolrom.com##.download_link
 !+ NOT_OPTIMIZED
 ://landings.*_slots/?partner=$document
 ||707.su^$all
-||potsaglu.net^$all
 ||rafkxx.com^$all
 ||waisheph.com^$all
 ||zaltaumi.net^$all
@@ -969,6 +970,7 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 ##span[class*=-social-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class*=share-icon]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class^=share_btn]
+##span[data-lnkd-debug]
 ##ul[class*=-share-buttons]
 /images/share_icons/*
 /images/social-share/*
@@ -1009,7 +1011,6 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###share-facebook
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###share-facebook-bottom
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.btn[href*="facebook.com/sharer/"]
-~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.facebook-page-plugin:not(html,body,:empty)
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.facebook-share:not(html,body,:empty)
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.facebook[href*="/sharer/"]:not(html,body,:empty)
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.facebook_share:not(html,body,:empty)
@@ -1065,6 +1066,7 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 ~pinterest.*##a[data-pin-do=buttonPin]
 ~pinterest.*##a[href*="pinterest.com/pin/find/?"]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
+~pinterest.*##a[href="#pinit"]
 ~pinterest.*##a[href="/#pinterest"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
 ~pinterest.*##a[title="Share on Pinterest" i]
@@ -1117,6 +1119,7 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 /wp-content/plugins/wp-social-bookmarking
 ##button[data-google-events*="\"socialAction\":\"share\""]
 ##.twitterbtn:not(html,body)
+##a[href^=javascript][onclick*="javascript:window.open('https://www.facebook.com/sharer/"]
 ##div[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-social-share])
 ##a[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.react-share__ShareButton:not(body,html,:empty)
@@ -1206,6 +1209,7 @@ linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea
 ##.paywall-gradient:not(html, body)
 touch.facebook.com,mtouch.facebook.com,x.facebook.com,iphone.facebook.com,m.beta.facebook.com,touch.beta.facebook.com,mtouch.beta.facebook.com,x.beta.facebook.com,iphone.beta.facebook.com,m.facebook.com,b-m.facebook.com,touch.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,mtouch.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,x.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,iphone.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,m.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,b-m.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###mobile_login_bar,div[style="background: none; height: 214px;"]
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~touch.facebook.com,~mtouch.facebook.com,~x.facebook.com,~iphone.facebook.com,~m.facebook.com,~touch.beta.facebook.com,~mtouch.beta.facebook.com,~x.beta.facebook.com,~iphone.beta.facebook.com,~m.beta.facebook.com,~b-m.facebook.com,~touch.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~mtouch.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~x.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~iphone.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~m.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~b-m.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~mbasic.facebook.com,~d.facebook.com,~free.facebook.com,~0.facebook.com,~mbasic.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~d.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~free.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~0.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##div[class^=AdBox i] ~ div[class^=x][class*=" "]
+zapytaj.onet.pl##.know-better-answer
 instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
 zeit.de#$?#.paragraph--faded { overflow: visible !important }
 zeit.de#$?##paywall { top: 250px !important }
@@ -1263,6 +1267,7 @@ dianping.com##.J_aside-qrcode
 dianping.com##.qrcode-fixed
 jd.com##.jdm-tbar-tab-qrcode.jdm-toolbar-tab.J-trigger
 mi.com##div.section:nth-of-type(31)
+news.sina.com.cn##.clearfix.blk-wxfollow
 smzdm.com##.footer-right
 tmall.com###mobile
 ctrip.com###fl_wrap_default
@@ -1427,6 +1432,7 @@ netflix.com#$#div[class^=watch-video--][class*="-container "] { background-image
 tv.nrk.no#$#:is(.episode-info-gradient,.tv-layout-fill) { background:unset!important }
 *#$?#.playkit-bottom-bar { background: none !important }
 *#$?#.playkit-top-bar { background: none !important }
+##.c-controls__background:not(html, body)
 www.youtube.com##head:has(meta[property$=":video:url"]) + body div[class$=-gradient-bottom]
 ##div[class^=ytp-gradient-]
 www.youtube.com#$#.ytp-time-display > span { font-weight: 800 !important; text-shadow: black 0 0 3px !important }
@@ -1494,7 +1500,6 @@ $document,removeparam=exta
 $document,removeparam=ranMID
 $document,removeparam=ranEAID
 $document,removeparam=ranSiteID
-$document,removeparam=ransiteID
 $document,removeparam=xtor
 $document,removeparam=SRC
 $document,removeparam=ectrans
@@ -1660,7 +1665,6 @@ $removeparam=ads_params
 $removeparam=CJPIXEL
 $document,removeparam=/^affiliateID=.*$/i
 $removeparam=affiliate_id
-$removeparam=affiliate_location_id
 $removeparam=cjdata
 $removeparam=click_id,domain=~bookings.beatthatflight.*
 $removeparam=cm_soc
@@ -1752,6 +1756,7 @@ $removeparam=data3
 $removeparam=effi_id
 $removeparam=effi_id2
 $removeparam=fobs
+$removeparam=pubref
 $removeparam=sub1
 $removeparam=sub2,domain=~go.dgdp.net
 $removeparam=sub3
@@ -2011,7 +2016,6 @@ $removeparam=hvlocphy
 $removeparam=hvtargid
 $removeparam=adgrpid
 $removeparam=hvbmt
-$removeparam=hvexid
 $removeparam=cstrackid
 ||amazon.$removeparam=SubscriptionId
 ||amazon.$removeparam=hydadcr
@@ -2254,6 +2258,7 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=sa
 ||baidu.com^$removeparam=params_ssrt
 ||baidu.com^$removeparam=t_kt
+||m.baidu.com^$removeparam=from
 ||baidu.com^$removeparam=vit
 ||baidu.com^$removeparam=lm
 ||baidu.com^$removeparam=od
@@ -2408,6 +2413,7 @@ $removeparam=article_url,domain=shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
+$removeparam=region,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=nid,domain=columbia.com|columbiasportswear.*|sorel.com
 $removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com
@@ -2420,6 +2426,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 ||humblebundle.com^$removeparam=mcID
 ||artstation.com^$removeparam=/^\d.*$/
 $removeparam=context,domain=imdb.com|fiverr.com|spotify.com|avito.ru|avito.ma
+$removeparam=action,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=module,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|scmp.com
 $removeparam=pgtype,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|scmp.com
 $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
@@ -2442,7 +2449,6 @@ $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||roblox.com^$removeparam=refPageId
 ||newegg.com^$removeparam=nm_mc
 ||target.com^$removeparam=clkid
-$removeparam=adcampaigngroup
 ||dell.com^$removeparam=dgc
 ||dell.com^$removeparam=VEN1
 ||dell.com^$removeparam=gacd
@@ -2642,6 +2648,7 @@ $document,removeparam=refresh,domain=cnn.com|startribune.com
 ||emag.ro^$removeparam=recid
 ||emag.ro^$removeparam=scenario_ID
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
+$removeparam=/(\$)ja.*$/,domain=argos.co.uk
 $removeparam=clickPR,domain=argos.co.uk
 $removeparam=clickCSR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
@@ -2658,6 +2665,7 @@ $removeparam=intcid,domain=cbsnews.com
 ||qwant.com^$removeparam=client
 ||ecosia.org^$removeparam=addon
 $removeparam=referralInfo,domain=wix.com
+$removeparam=searchResultPosition,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=locale,domain=udemy.com
 ||zoho.com^$removeparam=zsrc
 ||nortonsafe.search.ask.com^$removeparam=installsource
@@ -2737,6 +2745,7 @@ $removeparam=is,domain=nextdoor.com
 $removeparam=mar,domain=nextdoor.com
 ||dzen.ru^$removeparam=yredirect
 ||youtube.com^$removeparam=source_ve_path
+^ref=hackernoon.com^$removeparam=ref
 $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com|yiyouliao.com
 ||github.com^$removeparam=ref_cta
 ||github.com^$removeparam=ref_loc
