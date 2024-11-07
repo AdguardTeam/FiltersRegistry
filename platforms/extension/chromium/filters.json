@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.19",
-			"timeUpdated": "2024-11-07T10:31:12+0000",
+			"version": "2.0.95.20",
+			"timeUpdated": "2024-11-07T15:31:18+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.32",
-			"timeUpdated": "2024-11-07T13:33:34+0000",
+			"version": "2.0.76.33",
+			"timeUpdated": "2024-11-07T15:33:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.29",
-			"timeUpdated": "2024-11-07T11:33:45+0000",
+			"version": "2.0.27.30",
+			"timeUpdated": "2024-11-07T15:33:30+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.13.11",
-			"timeUpdated": "2024-11-07T14:33:44+0000",
+			"version": "2.2.13.12",
+			"timeUpdated": "2024-11-07T15:33:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -787,8 +787,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.79",
-			"timeUpdated": "2024-11-07T12:33:32+0000",
+			"version": "2.0.27.80",
+			"timeUpdated": "2024-11-07T15:33:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -831,8 +831,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.5.54",
-			"timeUpdated": "2024-11-06T16:33:40+0000",
+			"version": "2.0.5.55",
+			"timeUpdated": "2024-11-07T15:33:54+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
