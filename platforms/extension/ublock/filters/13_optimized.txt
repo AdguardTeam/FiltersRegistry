@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Y3HM86vznSZvjuxRGAUqqQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1730990253-3600.patch
+! Checksum: OjbVmfkpfXV6v4E/cZCymg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1731001059-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.54.5
-! TimeUpdated: 2024-11-07T14:33:34+00:00
+! Version: 2.0.54.6
+! TimeUpdated: 2024-11-07T17:33:22+00:00
 ! Expires: 5 days (update frequency)
 ||kingbaba.org^
 ||yelads2.life^
@@ -779,6 +779,8 @@ itemci.com##+js(nano-setInterval-booster, advert, *, 0.001)
 bizimyaka.com##+js(abort-current-script, $, /ads/)
 tranimeizle.*##+js(abort-on-property-read, jsPopunder)
 aydindenge.com.tr##+js(set-constant, start, 1)
+milligazete.com.tr#$?#ul.row[role="tablist"] > li:has(> a[href^="/service/advertclick"]) { remove: true; }
+milligazete.com.tr#$?#div.slick-track > a[href^="/service/advertclick"] { remove: true; }
 mobile.donanimhaber.com##+js(set-session-storage-item, pageCount, 0)
 webdramaturkey.com#$#body > .container { margin-top: 0 !important; }
 dizikorea.*#$#.wrapper { margin-top: 0 !important; }
