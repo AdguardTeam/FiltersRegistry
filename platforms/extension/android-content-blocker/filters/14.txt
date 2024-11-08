@@ -1,8 +1,8 @@
-! Checksum: 5gdnfTG20leav0Ph8etrzQ
+! Checksum: GhM5KkqebBTwmLRXTmrbhA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.19
-! TimeUpdated: 2024-11-08T11:33:52+00:00
+! Version: 2.2.13.20
+! TimeUpdated: 2024-11-08T15:34:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2449,6 +2449,9 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+m.tomtop.com##.m_Europe_confirm.confirm2
+koreanair.com#$#ke-cookie-banner { display: none !important; }
+koreanair.com#$#body[style] { overflow: auto !important; position: static !important; }
 gu.spb.ru###bannerTopPD
 analizy.pl#$#div[class^="mfp-"] { display: none !important; }
 analizy.pl#$#html { overflow: auto !important; }
@@ -3554,7 +3557,7 @@ miniclip.com##.mc-consents-wrapper
 lactoflorene.eu##.pup-container-cookie
 ||consent.cookiebot.com/Framework/IAB/consent-sdk-*.js$important,domain=tfl.gov.uk
 ||consent.cookiebot.com/*/cc.js$important,domain=continente.pt|tfl.gov.uk
-uptodown.com,targeo.pl###cookiescript_injected_wrapper
+kriptomat.io,uptodown.com,targeo.pl###cookiescript_injected_wrapper
 ask4.com##.cookie-notice__background
 dify.ai,bunq.com,framer.com##.--framer-cookie-banner-container
 linkedin.com##.global-alert--notice
@@ -14178,6 +14181,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192223
+koreanair.com#@#.cookie-banner:not(body):not(html)
+koreanair.com#@##cookieBanner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192153
 @@||generali-cosweb-tech-prod.s3.eu-central-1.amazonaws.com/website/js/tagcommander/tc_CosmosDirekt_*.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192440
@@ -29962,7 +29968,7 @@ elmir.ua###subscribe-prompt
 appleinsider.ru###pushbanner
 business-standard.com##body > .bg#bg
 oligarh.media##.push-container
-oligarh.media##.push-overlay
+myslo.ru,oligarh.media##.push-overlay
 ||capital.com.tr/bundles/onesignal^
 bloomberght.com##.pushNotWrap
 weather.com##.styles-WdPwMspF__pushBanner__1e3SD
@@ -36490,6 +36496,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+s.shufoo.net##a[id][rel^="app_appeal_btn"]
 ljsilvers.com##.site-popup
 nytimes.com##.promo
 coingecko.com##div[data-controller="navbar"] a[href^="https://coingecko.app.link/"]
