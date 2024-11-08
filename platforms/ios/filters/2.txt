@@ -1,9 +1,9 @@
-! Checksum: 6jYGinBGCB28YNsflM2IGw
-! Diff-Path: ../patches/2/2-s-1731065883-3600.patch
+! Checksum: ylP0w1Oo7dFwKFW/t+EtmA
+! Diff-Path: ../patches/2/2-s-1731069450-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.59.81
-! TimeUpdated: 2024-11-08T11:31:30+00:00
+! Version: 2.3.59.82
+! TimeUpdated: 2024-11-08T12:31:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -87,6 +87,9 @@
 !
 !
 !
+||byzoruator.com^
+||sjilyhwpu.xyz^
+||shoorsoacmo.xyz^
 ||qkyojtlabrhy.com^
 ||neat-period.com^
 ||punctual-window.com^$all
@@ -23505,6 +23508,9 @@ movie76.com##img[alt="ads"]
 !---------------------------------------------------------------------
 ! NOTE: Italian
 !
+corriere.it##div[style="min-height: 1500px;"]
+corriere.it###box_mkt_hp_spalla_dx
+corriere.it###pno_manina_2024_inline
 everyeye.it##.p-dealLink
 mangaworld.ac##.col-sm-12 > div.row:has(> div.col-md-12 > div.ads)
 gamelegends.it##div[id^="gamelegends-dsk_"]
@@ -25174,6 +25180,7 @@ roweroweporady.pl#@#.ad_container
 @@||lib.wtg-ads.com/prebid/prebid_*.js$domain=tvn.pl
 !
 !
+wiadomoscihandlowe.pl##.container--break-00
 fanipogody.pl##div[id^="oa_placeholder"]
 ppe.pl##body .navbar__ad-opera
 mjakmalopolska.pl##div.text-center:has(> div.d-inline-block-not-important > small)
@@ -31674,6 +31681,10 @@ truyenqqhot.com##div[id^="ads_"]
 !+ NOT_OPTIMIZED
 ##.ContentAd
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192351
+##body ~ div[style^="z-index: 2147483647 !important; position: fixed !important; width:"]
+##body ~ iframe[id][style^="width: 100% !important; height:"][style*="inset:"]
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186475
 ##body > div[style="position: fixed; display: block; width: 100%; height: 100%; inset: 0px; background-color: rgba(0, 0, 0, 0); z-index: 300000;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186160
@@ -36743,6 +36754,9 @@ neowin.net#$#div[class^="banner-"] { height: 0!important; min-height: 0!importan
 ! Example: https://sheegiwo.com/tag.min.js
 !          https://alwingulla.com/88/tag.min.js
 /^https:\/\/[a-z]{8,15}\.(?:(com|net)\/(?:\d{1,3}\/)?tag\.min\.js$)/$script,third-party
+! https://github.com/AdguardTeam/AdguardFilters/issues/192351
+! Example: https://ucferqgpkc.xyz/
+/^https?:\/\/[a-z]{8,15}\.xyz\/$/$xmlhttprequest,third-party,method=head,to=xyz
 ! ex. https://jzjj.jeoawamjbbzjy.top/kljyjjeajazry/mevjvz?d=1
 /^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$script,third-party,match-case
 !+ PLATFORM(ios, ext_safari)
@@ -37206,26 +37220,38 @@ lovelive-petitsoku.com,infinityfree.com,tportal.hr,cool-style.com.tw,rabitsokuho
 !
 ##a + div > div > div > a[href^="https://html-load.com/contents/"] > amp-img[class^="img_"] > img[src*=".html-load.com/contents/"]
 ##a:has(+ div[aria-hidden="true"]) > amp-img.aspw
-##a[href^="https://html-load.com/fl1hrrg/"] > amp-img.aspw[height="345"]
+##a[class^="img_"][on$="_asochNbParam='9')"]
+##a[href^="https://html-load.com/contents/"] > amp-img.aspw[height="345"]
+##a[href^="https://html-load.com/contents/"] > [style^="-webkit-box-sizing:border-box"]
 ##a[rel="noopener"] > div[class^="img_"] > img[class^="img_"][src*=".html-load.com/contents/"]
-##a[class^="jizsl_"][on$="_asochNbParam='9')"]
+##a[class^="img_"][on$="_asochNbParam='9')"]
 ##amp-img[id^="img_"][height="345"]
+##body[style="background-color:transparent"] > div[id^="img_"]
+##body[style="width:100%;height:100%;margin:0;"] > div[class^="img_"]
 ##canvas.aspw[blur-background="1"]
+##div + div[style="display:inline"] > a > img.aspw
 ##div[banner_watch_params]
 ##div[id^="img_"] + a[id^="img_"] > img.aspw[border="0"][style="display:block"]
 ##div[id^="img_"][style="width:300px;height:250px;position:relative;"]
 ##div[id^="img_"][x-frame-height="336"]
-##div[id^="jizsl_"][audience_id_type]
-##div[id^="jizsl_"][name^="adroute_ads_adblock_1"][name$="_type_1"]
+##div[id^="img_"][audience_id_type]
+##div[id^="img_"][name^="adroute_ads_adblock_1"][name$="_type_1"]
 ##div[id][onclick="fireClickHandler()"]
-##div[class^="jizsl_"][x-remove]
-##head:has(> style[amp-custom=""]) + body > div[id^="jizsl_"]
+##div[class^="img_"][aria-hidden="true"][dir="ltr"] + div[id^="img_"]
+##div[class^="img_"][style="position: absolute; inset: 0px; z-index: 800; cursor: pointer; pointer-events: auto;"]
+##div[class^="img_"][bsc="0"]
+##div[class^="img_"][bsc="2"]
+##div[class^="img_"][x-remove]
+##div[miss_click_url^="https://uncn.jp/1/data/invalid_click/gn."][miss_click_url*="?bid="]
+##div[style^="background-image:"][style*=".html-load.com/contents/"][style$="background-size: contain;"]
+##head:has(> meta[name="referrer"]) + body a[href^="https://html-load.com/contents/"]
+##head:has(> style[amp-custom=""]) + body > div[id^="img_"]
 ##img.aspw[alt*="300x250"]
 ##img.aspw[style$="visible;pointer-events:auto;vertical-align:bottom;"]
-##meta + meta + div[class^="jizsl_"]
-##script[async] + script + div > span[style] > a[href^="https://html-load.com/fl1hrrg/"][style][target="_top"]
-##script[async] + script + script + script + div[id^="jizsl_"]
-##script + div:not([class]):not([id]) > script + script[src] + script + div[id^="jizsl_"] > script + script + span[id^="jizsl_"]
+##meta + meta + div[class^="img_"]
+##script[async] + script + div > span[style] > a[href^="https://html-load.com/contents/"][style][target="_top"]
+##script[async] + script + script + script + div[id^="img_"]
+##script + div:not([class]):not([id]) > script + script[src] + script + div[id^="img_"] > script + script + span[id^="img_"]
 @@||dogdrip.net^$generichide
 @@||mlbpark.donga.com^$generichide
 ! END: Ad-Shield ad reinsertion
