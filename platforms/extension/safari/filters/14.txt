@@ -1,9 +1,9 @@
-! Checksum: QqCQgXEpYRjFOdC/xZldmg
-! Diff-Path: ../patches/14/14-s-1731145028-3600.patch
+! Checksum: V3IZFnwMUDqHVGZv3U2F+g
+! Diff-Path: ../patches/14/14-s-1731148620-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.24
-! TimeUpdated: 2024-11-09T09:33:29+00:00
+! Version: 2.2.13.25
+! TimeUpdated: 2024-11-09T10:33:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2501,6 +2501,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+buffalonews.com#%#//scriptlet('trusted-click-element', '.osano-cm-accept-all')
+xxxlutz.de#%#//scriptlet('trusted-click-element', 'button[data-purpose="cookieBar.button.accept"] > span')
 cosmosdirekt.de#$#.tc-modal-open { overflow: auto !important; position: unset !important; }
 cosmosdirekt.de#%#//scriptlet('trusted-click-element', '#popin_tc_privacy_button_3')
 gardengirls.de##.grey_ovarlay
@@ -16331,6 +16333,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! buffalonews.com - comments not shown
+@@||cmp.osano.com^$domain=buffalonews.com
+@@||consent.api.osano.com/record$domain=buffalonews.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192223
 koreanair.com#@#.cookie-banner:not(body):not(html)
 koreanair.com#@##cookieBanner

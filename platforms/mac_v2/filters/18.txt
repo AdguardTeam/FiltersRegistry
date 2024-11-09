@@ -1,9 +1,9 @@
-! Checksum: FhyQiv8uk+e3ED4NABqY5A
-! Diff-Path: ../patches/18/18-s-1731145041-3600.patch
+! Checksum: PAe7xz7kERhyO2vj4gJt2A
+! Diff-Path: ../patches/18/18-s-1731148631-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.50.83
-! TimeUpdated: 2024-11-09T09:33:35+00:00
+! Version: 2.0.50.84
+! TimeUpdated: 2024-11-09T10:33:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2500,6 +2500,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+buffalonews.com#%#//scriptlet('trusted-click-element', '.osano-cm-accept-all')
+xxxlutz.de#%#//scriptlet('trusted-click-element', 'button[data-purpose="cookieBar.button.accept"] > span')
 cosmosdirekt.de#$#.tc-modal-open { overflow: auto !important; position: unset !important; }
 cosmosdirekt.de#%#//scriptlet('trusted-click-element', '#popin_tc_privacy_button_3')
 gardengirls.de##.grey_ovarlay
@@ -16369,6 +16371,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! buffalonews.com - comments not shown
+@@||cmp.osano.com^$domain=buffalonews.com
+@@||consent.api.osano.com/record$domain=buffalonews.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192223
 koreanair.com#@#.cookie-banner:not(body):not(html)
 koreanair.com#@##cookieBanner
