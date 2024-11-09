@@ -1,9 +1,9 @@
-! Checksum: 23y0alfl+OJrfD3zJEMUkw
-! Diff-Path: ../patches/235_optimized/235_optimized-s-1731042322-14400.patch
+! Checksum: 5aayhlvlGhGF6mYbnnASWg
+! Diff-Path: ../patches/235_optimized/235_optimized-s-1731143133-14400.patch
 ! Title: Persian Blocker (Optimized)
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.7
-! TimeUpdated: 2024-11-08T05:01:42+00:00
+! Version: 2.0.5.8
+! TimeUpdated: 2024-11-09T09:01:53+00:00
 ! Expires: 5 days (update frequency)
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.site/"]
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.co/"]
@@ -1216,12 +1216,11 @@ khabarfarsi.com###block-block-120
 ||karpishe.com/api/collect/job-click^
 ||karpishe.com/api/actionlog^
 ||karpishe.com/api/shared/log^
-||kojaro.com/kojaro/ui/js/banner.js
-kojaro.com##.banner-wrapper
-kojaro.com##.advertisement-in-topic
-kojaro.com##.bannercontainer
-kojaro.com##.homepage-content
-@@||images.kojaro.com/assets/ad/advertise-$image,~third-party
+*$subdocument,third-party,domain=kojaro.com
+||images.kojaro.com/*.gif^$image,~third-party
+||kojaro.com/kojaro/ui/js/banner.js^$script,~third-party
+kojaro.com##div.wideheader-b1:has(> div.bannercontainer)
+kojaro.com##div.mobileBanner
 khabaronline.ir###header-ad
 khabaronline.ir##.ads
 khabaronline.ir##[href^="/redirect/ads/"]
@@ -1410,6 +1409,10 @@ mehrnews.com###ads-container
 myhastidl.cam#%#//scriptlet('ubo-set.js', 'needpop', '0')
 myhastidl.cam##center:nth-of-type(2)
 myhastidl.cam##.col-xs-12.col-md-6.main-sidebar > center
+||stats.nournews.ir/nournews.js^$script,~third-party
+||nournews.ir/media/Photo/*.webp^$image,~third-party
+||nournews.ir/media/Photo/*.gif^$image,~third-party
+nournews.ir##div#Ads_Fix_pnlMain
 ||api.zin.co.com/assets/as/load.js^$script,third-party
 ||files.niniplus.com/uploads2/advertise^$image,~third-party
 ||niloblog.com/images/ads^$image,~third-party
