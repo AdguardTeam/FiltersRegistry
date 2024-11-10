@@ -1,5 +1,5 @@
-! Checksum: d+EKhFDbqE+hQUg+9dkpQQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1731163014-3600.patch
+! Checksum: AjX8j2XEEZKjX/50rHA/Jg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1731206180-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.44.45
@@ -642,6 +642,7 @@ dvdschnaeppchen.de#%#AG_onLoad(function() { window.myatu_bgm = 0; });
 chip.de#%#var originalUserAgent = navigator.userAgent; Object.defineProperty(navigator, 'userAgent', { get: function() { return originalUserAgent + ' Edge'; } });
 menshealth.de#%#function google_ad_request_done() {};
 bluray-disc.de#$#.content-wrapper { padding-top: 0px !important; }
+bluray-disc.de#$#.wallpaper-adv { display: none !important; }
 kino.de#$#body.alice-navbar-sticky,body nav[data-position="smart-sticky"] { margin-top: 0px !important; }
 finanzen.net#$#body.page-layout { grid-template-rows: auto !important; }
 golem.de#$#div[class*="grcol"]{ min-height: auto !important; }
@@ -818,7 +819,6 @@ promiflash.de##.hidden.sm\:flex:has(> div.hidden.sm\:block)
 rp-online.de##div.floated
 fernsehserien.de##.sky-anzeige
 hardwareluxx.de##div[style="height:200px;width:100%;"]:empty
-hardwareluxx.de##html a[target="_blank"][href*="banner"]
 11880.com##.box-entry-detail--ad
 11880.com##div[id^="responsive-bhvr--ad-sidebar-"]
 sir-apfelot.de##.entry-content > .code-block:has(> div[style] > a:contains(Werbung))
@@ -887,6 +887,8 @@ hifi.de##article:has(> a > div[class] > .portal-sidebarblock-preview__sponsored)
 schreiben.net##.codeee-block:has(> div[data-ai-tracking] > a[href*="/link/"])
 chip.de##.Ad-Slot
 chip.de##p:has(> .aff-link)
+benzinpreis.de##.start-teaser-banner
+benzinpreis.de##.multi-content:has(> .right-content-content:only-child > .start-teaser-banner:only-child)
 fussballfieber.de##div[data-ads-slot]
 noz.de##.grid > div.grid-cell--m-12:has(> div.grid--column > div.ad_label)
 stylebook.de###superbanner
@@ -1051,6 +1053,7 @@ heise.de##div[id^="HEI_"][class]
 unsere-helden.com##div[style^="margin: 0 auto; text-align: center;"]
 unsere-helden.com##div[data-ads-slot]
 ||publicfiles.studysmarter.de/campaigns/*-stusta-
+flz.de##app-full-width-media-sub-type
 reviersport.de##.rs-superbanner
 om-online.de##.molecule-adcontainer
 lz.de##div[style*="min-height:310px;"]
@@ -1226,6 +1229,7 @@ hausgarten.net##.block-body > article.message:not([data-author])
 4kfilme.de##.tdi_104
 4kfilme.de##.tdi_132
 4kfilme.de##.tdi_78
+4kfilme.de###tdi_51
 bm-online.de##.widget_custom_html
 watson.de##.jumbo
 winfuture.de##.primis_widget
@@ -1829,7 +1833,6 @@ krone.at##.kmm-article-box + .row > .c_label
 ||pfaffenhofen-today.de/images/banners/
 eurosport.de##div[class^="adtech_"]
 augsburger-allgemeine.de##.p-ad
-journalistenwatch.com##a[href^="https://www.fincabayano.net"]
 ef-magazin.de###articlefootad
 sueddeutsche.de##.ad:not([class="ad"]):not(.ad_iqadtileOOP)
 finanzen.net##.small-font.light-grey
@@ -1841,14 +1844,12 @@ motorsport-total.com###bs-container > .b-top
 ||hardwareluxx.de/images/stories/werbung^
 wetter.de,kochbar.de##.admanager
 gmx.net##.inbox-ad-panel
-journalistenwatch.com##div[class^="journ-nach-dem-inhalt"]
 web.de,gmx.net##.partner-links
 schnittberichte.com##a[href^="https://www.schnittberichte.com/goto.php"]
 integralrechner.de,ableitungsrechner.net###content > .center > .middle-right-col:not(.btcf)
 onlinetvrecorder.com###topbannerdiv
 ||static.onlinetvrecorder.com/images/*banner
 mopo.de##a[href*="advertorial"]
-kino.de###hockeystick
 stern.de##.stern-gutscheinbox
 focus.de##.ps-trackingposition_OrangerButton
 focus.de##.adsBlock
@@ -2207,6 +2208,7 @@ forum.golem.de#?#li:has(div[id^="csi_forum"])
 formel1.de#?##right_column > div.teaser_container:has(span.ads-anzeige)
 formel1.de#?##right_column > div.teaser_container:has(div.OUTBRAIN)
 rtde.site#?#.Section-root:has(> div.Section-container > div.Section-block > div[id^="adfox_"])
+flz.de#?#.swiper-wrapper > div.swiper-slide:has(> div.preview-slider__preview-holder > div[app-media-preview])
 deutschlandkurier.de#?#.vc_column > div.wpb_wrapper > div.td_block_wrap:has(> div.td-fix-index:contains(Anzeige))
 wetter.de#?#.article-teaser-list__articles > div > div.v-spacing-md:has(> div.showheroes-ad-slot)
 ww-kurier.de#?#.uk-width-1-4 > div.uk-panel:has(> div.uk-text-center > a.ads-link)
@@ -2685,6 +2687,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||datingpartner.com/medien/$third-party
 ||dragonbox.de/img/banner/$third-party
 ||druckiad-che.newsmemory.com^$third-party
+||eteleon.de/partner/$third-party,domain=~facebook.com
 ||fastad.beepworld.de^
 ||funke.code.outtra.com/outtra-
 ||gpaf.net/b/$third-party
@@ -2796,7 +2799,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||druckerchannel.de/script/dc/ofr_single.php
 ||dtb.de/fileadmin/user_upload/dtb.de/Sponsoren/
 ||dubisthalle.de/wp-content/uploads/*_300x300_
-||dubisthalle.de/wp-content/uploads/*_banner_
 ||egun.de/market/images/banner/
 ||eisbaeren.de/assets/img/sponsorenbox_
 ||erogeschichten.com/b/
@@ -2819,7 +2821,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||finanzen.net/images/b_realtime/vontobel-banner.jpg
 ||finanznachrichten.de/w/ad_
 ||football-aktuell.de/rechts/
-||free-gay.org^*/eaCtrl.js
 ||freenet.de^*/mail/ads/
 ||freieporno.com^*/ssu.v2.js
 ||fussball.de^*/partner/
@@ -2997,6 +2998,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||wohnmobilforum.de/luftfederung.jpg
 ||wohnmobilforum.de/motorradtraeger.jpg
 ||wohnmobilforum.de/wasserhy.jpg
+||woz.ch/files/banner/
 ||wp.com/custombike.de/wp-content/uploads/sites/*/banner_
 ||wp.com/nh24.de/wp-content/uploads/*/Banner-
 ||wp.com/nh24.de/wp-content/uploads/*/banner_
@@ -3071,7 +3073,6 @@ inside-digital.de###INS_D_ROS_Parallax
 tips.at###Leaderboard_1_Superbanner_1_Billboard_1_Top_
 teltarif.de###LxShop
 teltarif.de###LxTN2ADV
-teltarif.de###LxTNADV
 kinderspiele-welt.de###MR
 mtb-news.de###MTB_M_ROS_Sticky
 bauexpertenforum.de,elektrikforen.de,megane-board.de,windows-7-forum.net###MidRectangle
@@ -3123,6 +3124,7 @@ macgadget.de###banner-floater
 dasoertliche.de###banner-right
 annos.de,chefkoch.de,dasoertliche.de,sexy-land.ch###banner-top
 testedich.ch,testedich.de###banner-top-all-viewports
+altertuemliches.at###banner5
 all-in.de###banner6_container
 juve.de###banner_sidebar
 dreingau-zeitung.de,linguee.de###banner_top
@@ -3218,7 +3220,6 @@ mtb-news.de###header
 archiexpo.de,directindustry.de,medicalexpo.de,nauticexpo.de,rotelaterne.de###header-banner
 klamm.de###header_main
 amazon.de###heroQuickPromo_feature_div
-kino.de###hockeystick
 kleinanzeigen.de###home-billboard
 winfuture.de###homepage_rectangle
 bz-berlin.de###inpage
@@ -3358,7 +3359,6 @@ computerschach.de,nachrichten.es,nh24.de,randombrick.de,tollabea.de###text-2
 ebook-fieber.de###text-20
 nh24.de###text-26
 bitcoinnews.ch,nh24.de###text-28
-bitcoinnews.ch,blog-der-republik.de,computerschach.de,ddl-warez.cc,nen-n.de,nh24.de,radzeit.de###text-3
 sparneuwagen.de###text-53
 sparneuwagen.de###text-56
 lokalo.de###text-60
@@ -3409,6 +3409,7 @@ chip.de##.FC.mt-md-so[role="complementary"]
 netmoms.de,praxistipps.focus.de##.FC__Ad
 blick.de##.OAS_AD
 kostenlose-urteile.de##.RTaktAds
+t-online.de,www-t--online-de.cdn.ampproject.org##.Tadc
 de.rt.com##.TopBanner-root
 via-ferrata.de##.YouTubeoetz
 gartenjournal.net##._gartenjournal_billboard
@@ -3494,6 +3495,7 @@ lokalmatador.de##.article-adbanner
 heise.de##.article-layout__header-wrbng
 computerbase.de##.article-view__rectangle
 kurier.de##.article_nachDerWerbungWeiterlesen-desktop
+itmagazine.ch##.article_rectangle
 rhein-zeitung.de##.articlebody__rectangle
 prad.de##.asa2_ajax_container
 fitforfun.de##.aside-rectangle
@@ -3661,7 +3663,6 @@ ff-bz.com##.ff-ba
 autoextrem.de,skodacommunity.de##.fh-sidebar
 pedelecforum.de,toyota-forum.de##.fh-sidebar-top
 toyota-forum.de##.fh-sidebar.block > .block-container
-zeitpunkt.ch##.field--name-field-werbebild
 rewe.de##.flagship-container
 kleinezeitung.at##.flex.justify-center.mx-auto.hidden.lg\:flex.lg\:mb-4.lg\:pb-4
 tvinfo.de##.floatLeft[style="padding:10px;"]
@@ -3858,6 +3859,7 @@ teneriffa-news.com##.qm-head
 teneriffa-news.com##.qm-side
 grazia-magazin.de,idee-fuer-mich.de,ok-magazin.de,vital.de##.quartermedia
 dartsnews.de,power-wrestling.de,radsportaktuell.de,tennisaktuell.de##.raw-html-component
+videoaktiv.de##.rec
 nydus.org##.recommend
 games.ch##.rect
 fussballdaten.de,i-fidelity.net,metal.de,modhoster.de,rheintaler.ch,telepolis.de##.rectangle
@@ -3927,6 +3929,7 @@ sg-flensburg-handewitt.de##.sponsors-col
 tsg-hoffenheim.de##.sponsors-slider
 1milf.com,frauporn.com,wildesporno.xxx,xfilmen.com##.spot
 1milf.com,frauporn.com,xfilmen.com##.spot_bottom
+hansa-online.de##.spu-box
 spox.com##.spx-adsurbg-banner
 ebay.de##.srp-1p__banner
 finanzen.net##.sticky__container--mrec
@@ -4376,7 +4379,6 @@ metager.de##.result:has(a[href^="https://metager.de/partner/r?"])
 metager.de##.result:has(a[href^="https://r.search.yahoo.com/"])
 zwischengas.com##.row.mt-0.mb-3.d-print-none:has(.fa-ad)
 wallstreet-online.de##.sbteaser:has(span.generalAdTag)
-prad.de##.second-list > li:has(a[href^="https://amzn.to/"])
 prad.de##.second-list > li:has(a[href^="https://ipn.idealo.de/ts/"])
 prad.de##.second-list > li:has(a[href^="https://tracking.s24.com/"])
 podcast.de##.section:has(.ad-container)
@@ -4417,6 +4419,7 @@ apfeltalk.de#?#div.wpb_text_column:-abp-contains(Werbung)
 avguide.ch#?#.avgrid_1_of_1.viewlet-bottom:-abp-has(h2:-abp-contains(Advertorials))
 baur.de#?#div[data-testid="card"]:-abp-has(span.MuiCardHeader-title:-abp-contains(Gesponserte Artikel))
 baur.de#?#span:-abp-contains(Gesponserte Artikel)
+bergsteiger.de#?#.eight.columns.alpha.content:-abp-has(span:-abp-contains(Advertorial))
 chip.de#?#a[href^="https://www.chip.de/downloads/"]:-abp-has(div[id]:-abp-contains(Werbung))
 computerbild.de#?#article.gridArea__teaserM:-abp-has(div.teaserBlock__label:-abp-contains(Anzeige))
 games.ch#?#.col4:-abp-has(h3:-abp-contains(Unterstützt durch:))
@@ -4478,6 +4481,8 @@ winfuture-forum.de#?#div.ExtraPostBlock:-abp-has(div.post_block:-abp-contains(An
 @@||mmcomputer.de^*&BannerID=$subdocument
 @@||mps-gba.de/ads/adserving/close_black.png$domain=auto-motor-und-sport.de|motorradonline.de
 @@||rubiconproject.com/prebid/dynamic/18086.js$domain=4p.de|derwesten.de|futurezone.de|leckerschmecker.me|moin.de|news38.de|thueringen24.de|wmn.de
+@@||smartclip.net/?plc=$script,domain=spiele.rtl.de
+@@||smartclip.net/ads?$script,domain=spiele.rtl.de
 @@||spotlight.offerista.com^$domain=aktionspreis.de|dasoertliche.de|donau-ries-aktuell.de|infranken.de|meinestadt.de
 @@||tdn.da-services.ch/current/20min_durable.js$domain=20min.ch
 @@||tpc.googlesyndication.com/simgad/$image,domain=auto-motor-und-sport.de|motorradonline.de
