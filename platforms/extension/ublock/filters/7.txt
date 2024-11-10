@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JPI8rfOQHj9/y7SlSE25bg
-! Diff-Path: ../patches/7/7-s-1731091041-3600.patch
+! Checksum: ViRIw0XU/FHop4lAVPHp/g
+! Diff-Path: ../patches/7/7-s-1731199029-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.59.6
-! TimeUpdated: 2024-11-08T18:33:21+00:00
+! Version: 2.0.59.7
+! TimeUpdated: 2024-11-10T00:33:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -498,8 +498,6 @@ yourfones.net##+js(spoof-css, ins.adsbygoogle, display, block)
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
-!+ NOT_PLATFORM(windows, mac, android, ext_ff, ext_chromium_mv3)
-wiki.yjsnpi.nu##+js(no-setTimeout-if, /\(\)=>\{.+catch/)
 $subdocument,redirect-rule=noop.html,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#$##comments-loading { display: none !important; }
 @@||wiki.yjsnpi.nu^$image,xmlhttprequest,~third-party
@@ -7024,6 +7022,7 @@ connpass.com##.side_ads_area
 doujin-rpgfan.com##.AdsArea
 doujin-rpgfan.com##.AdsArea + table + table
 doujin-rpgfan.com##.right-column-inner > div.plugin-memo
+wiki.yjsnpi.nu###mw-content-text > div.ad.top[style*="min-height:"]
 wiki.yjsnpi.nu###mw-content-text > div[style*="min-height:"]:has(> a[rel*="sponsored"][target="_blank"] > img)
 wiki.yjsnpi.nu###mw-content-text > div[style*="min-height:"]:has(> div[id^="im-"] > script)
 wiki.yjsnpi.nu###mw-content-text > div[style*="min-height:"]:has(> div[style] > div[id^="im-"] > script)
@@ -8432,6 +8431,7 @@ recordchina.co.jp##.ad-outer
 recordchina.co.jp##.right-ranking
 kobe-np.co.jp##.bottomPrArea
 kobe-np.co.jp##li.active.native
+wikiwiki.jp##.fluct-overlay-container
 wikiwiki.jp##.admenu-sticky
 wikiwiki.jp###inbound-ad-container
 wikiwiki.jp###pc-bottom-parent-ad-container
