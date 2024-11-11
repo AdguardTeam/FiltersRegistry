@@ -1,14 +1,14 @@
-! Checksum: HFavIAX5WryM2rHxAEmCfg
-! Diff-Path: ../patches/243/243-s-1731229584-14400.patch
+! Checksum: Ob+Q1+0791/zu/jmxMi24w
+! Diff-Path: ../patches/243/243-s-1731316001-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.19.97
-! TimeUpdated: 2024-11-10T09:02:02+00:00
+! Version: 2.0.19.98
+! TimeUpdated: 2024-11-11T09:01:57+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2024-11-10 07:46:41 CET
+! Last modified: 2024-11-11 07:42:38 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -373,6 +373,7 @@ dagensps.se,news55.se##div[class^="bg-"]:has(a[href="/ps-partner"])
 dagensps.se,news55.se##.infinite-scroll-component > .container:has(a[href*="/ut.dagensps.se/"], .grid:empty)
 dagensps.se,news55.se##.postbox:has(.sponsored_post)
 dagensps.se,news55.se##.text-sm:has(a[href*="casino"])
+dagensps.se,news55.se##.text-xs:has-text(ANNONS):upward(1)
 dagenstech.se##a[href^="https://dagenstech.se/articles/"]:upward(1):has-text(SPONSRAT)
 dagenstech.se##.banner-desk, .banner-mob
 dagenstech.se#$?#.label:has-text(SPONSRAT):upward(.swiper-slide) { remove: true; }
@@ -568,8 +569,8 @@ foretagande.se##div[id*="panorama"], .panorama-pos
 foretagsverige.se,forskningsverige.se,motorbibeln.se,hallbarhetsverige.se,tillvaxtsverige.se,grillbibeln.se,kampenmotcancer.se,folkhalsasverige.se##.whitebox-container:has-text(/sponsra/i)
 foretagsverige.se,forskningsverige.se,motorbibeln.se,hallbarhetsverige.se,tillvaxtsverige.se,grillbibeln.se,kampenmotcancer.se,folkhalsasverige.se##:is(div[class*="vicky-whitebox"], .vicky-category-label, .vicky-video-infobox-label, .vicky-post-headline-container__category__inner):has-text(/spons/i):upward(a, .carousel-caption, .featurette, article)
 forexgruppen.se##div[data-widget_type="image.default"] a:not([href*="forexgruppen.se"], [href^="/"]), .widget_media_image a:not([href*="forexgruppen.se"], [href^="/"])
-forexgruppen.se#%#//scriptlet('ubo-noeval-if.js', 'adbEnableForPage')
 forexgruppen.se,datormagazin.se,skogen.se,studeravidare.se,kvalitetsmagasinet.se,miljo-utveckling.se,telekomidag.se,vdtidningen.se##.cky-consent-container
+forexgruppen.se,kattannonser.se#%#//scriptlet('ubo-noeval-if.js', 'adbEnableForPage')
 forni.se##.recent-articles:has(.collaboration-brand)
 forskning.se##.cli-modal
 forstasidorna.se##.tingle-modal--visible
@@ -1336,6 +1337,7 @@ tranakampsport.se##a[class*="annons"], .annonser-sektion
 tranakampsport.se##.w-dyn-item:has(.sponsrad-artikel-wrapper:not(.w-condition-invisible))
 traning40plus.se##[id^="bunyad"]
 travelnews.se##.bottom-bar--animate-in, #job_ads_scroller, .header_banner
+travnet.se##div.text-\[8px\].text-center:has-text(ANNONS):upward(1)
 travnet.se##:is(.hidden, div[class="lg:hidden"]):has(div[id^="travnet_"])
 travronden.se##a[href*="/sponsrat/"]
 travronden.se##div:matches-css(visibility: hidden):has-text(ANNONS)
@@ -1371,7 +1373,6 @@ upphandling24.se##.type-partnerartikel
 upplysning.se##.buy-items, div[style*="min-height"]:has(#topbanner, script[data-pbid], [id^="nativendo"], div[id^="upplysning_outstream"])
 uppsalanyheter.se###banner-top-block
 uppsatser.se##.results li[style^="margin"]:not(.result), .spahotels
-upptack-sverige.se##.front-cta:has-text(/sponsrat innehåll/i)
 usabil.nu##.image-post-link[target]
 utm_$document,removeparam=/^utm_/,domain=tv.nu|booli.se|expressen.se|aftonbladet.se|bostad.blocket.se|dagensps.se|prisjakt.nu|vinborsen.se
 utsidan.se##.betart-marker:matches-css(after, content: /Annons/i):upward(.documentpush-group)
@@ -2141,7 +2142,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/bfp-popup$script,domain=omtanke.today
 /plugins/blog-analytics
 /plugins/bmb-dfp-plugin
-/plugins/borlabs-cookie$script,domain=alltombrollop.com
+/plugins/borlabs-cookie$script,domain=alltombrollop.com|digiteket.se
 /plugins/boxzilla$script,domain=dialasen.com|arbetaren.se
 /plugins/bravepopup$script,domain=matkasse.se|tidningenglobal.se|fempers.se
 /plugins/bsa-plugin-pro-scripteo
@@ -2520,7 +2521,7 @@ zeromagazine.nu##div[id^="ads"]
 @@/plugins/ad-ace/*/adblock-detector
 @@/plugins/convertplug/modules/modal/*/cross.png$image,~third-party
 @@/scripts/advert_$~third-party,domain=di.se
-@@/viralize_player_content$script,xmlhttprequest,domain=nyheter24.se|modette.se|familjeliv.se|alltforforaldrar.se|loppi.se|devote.se|vimedbarn.se|brollopstorget.se|rodeo.net
+@@/viralize_player_content$script,xmlhttprequest,domain=nyheter24.se|modette.se|familjeliv.se|alltforforaldrar.se|loppi.se|devote.se|vimedbarn.se|brollopstorget.se|rodeo.net|travnet.se
 @@_advert.$domain=e-pages.dk
 @@||cargodisplayads.com/gota/api/v1/adImage$image,domain=barometern.se|blt.se|bt.se|olandsbladet.se|smp.se|sydostran.se|ut.se|vxonews.se
 @@||cargodisplayads.com/till_minne/
@@ -2655,7 +2656,7 @@ zeromagazine.nu##div[id^="ads"]
 ||casinoutankonto.net^$third-party
 ||casono.se^$third-party
 ||ccpa.sp-prod.net^$domain=m3.se|pcforalla.se|macworld.se|computersweden.se
-||cdn-cookieyes.com^$domain=lokalti.se|jarnvagar.nu|senses.se|norrmejerier.se|temadagar.se|smartsenior.se|tekniknytt.se|nordigt.se|autonytt.se|vm-fotboll.se|kak.se|smhi.se|borattforum.se|mis.se|universitetslararen.se|em-fotboll.se|lakemedelsvarlden.se|samfalligheterna.se|husbilsplats.se|katerinamagasin.se|dagenslogistik.se|biostock.se|skellefteaworks.se|datormagazin.se|travnet.se|malarbok.nu|barn-filmer.se|matmenyer.se|sunnenytt.se|kristendate.se|hockeynews.se|swe3.se|spelbloggen.se|matinspo.se|trendenser.se
+||cdn-cookieyes.com^$domain=lokalti.se|jarnvagar.nu|senses.se|norrmejerier.se|temadagar.se|smartsenior.se|tekniknytt.se|nordigt.se|autonytt.se|vm-fotboll.se|kak.se|smhi.se|borattforum.se|mis.se|universitetslararen.se|em-fotboll.se|lakemedelsvarlden.se|samfalligheterna.se|husbilsplats.se|katerinamagasin.se|dagenslogistik.se|biostock.se|skellefteaworks.se|datormagazin.se|travnet.se|malarbok.nu|barn-filmer.se|matmenyer.se|sunnenytt.se|kristendate.se|hockeynews.se|swe3.se|spelbloggen.se|matinspo.se|trendenser.se|kattannonser.se
 ||cdn.adt*/atag.js?$third-party
 ||cdn.adt*/jsTag?$third-party
 ||cdn.advisible.com/accl
@@ -2755,6 +2756,7 @@ zeromagazine.nu##div[id^="ads"]
 ||emotorsport.se/ans/$image
 ||eniro.se/scoop.js
 ||episerver.net/*/epi-util/find.js
+||epollstats.infotheme.net/js/fingerprint
 ||es.loppi.se^
 ||etc.nu/ethical.min.js
 ||eugamblers.org^$third-party
@@ -3155,6 +3157,7 @@ zeromagazine.nu##div[id^="ads"]
 ||track.yetric.app^
 ||tradehouse.media^$third-party
 ||travellink.se/marketing-channel
+||travnet.se/sulkysport$subdocument
 ||travronden.se/monitoring
 ||travtjansten.se^$third-party
 ||trckr*.nordiskemedier.dk^
