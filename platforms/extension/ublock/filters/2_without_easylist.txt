@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ht6/hynjgPriQOLe2U/bjw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1731325746-3600.patch
+! Checksum: 1UX5psgwWtmWdAKbxSlwNg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1731328673-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.60.9
-! TimeUpdated: 2024-11-11T11:31:30+00:00
+! Version: 2.3.60.10
+! TimeUpdated: 2024-11-11T12:31:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32184,9 +32184,6 @@ xsexvideos.pro,mature-tube.sexy##+js(no-setTimeout-if, /window\.location\.href =
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43481
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43304
 vev.red,vidup.io##+js(set-constant, Object.prototype.ads, undefined)
-! https://github.com/AdguardTeam/AdguardFilters/issues/43252
-!+ NOT_PLATFORM(windows, mac, android)
-pornlib.*##+js(window.open-defuser, about:blank)
 ! https://forum.adguard.com/index.php?threads/35677/
 cutpaid.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59431
@@ -32229,7 +32226,6 @@ tmearn.com##+js(window.open-defuser)
 ! ipornia.com - popups
 ipornia.com##+js(abort-on-property-read, vertis.popunder.neverblock)
 ipornia.com##+js(set-constant, vdaVars.neverblock.loaderUrl, undefined)
-! https://github.com/AdguardTeam/AdguardFilters/issues/40649
 ! lkop.me - popups
 lkop.me##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40540
@@ -32251,25 +32247,17 @@ imagevenue.com##+js(abort-on-property-read, __ads)
 palmtube.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39690
 pornflixhd.com##+js(set-constant, dtGonza.playeradstime, -1)
-! https://github.com/AdguardTeam/AdguardFilters/issues/39199
-mangoporn.net##+js(window.open-defuser)
-! https://github.com/AdguardTeam/AdguardFilters/issues/39492
-digitallearn.online##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38730
 tube8.com##+js(set-constant, showPopunder, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123945
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39254
 protopage.com##+js(set-constant, a2d, false)
 protopage.com##+js(set-constant, displayAds, false)
-! https://github.com/AdguardTeam/AdguardFilters/issues/39135
-pornwhite.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181646
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39362
 sendvid.com##+js(window.open-defuser, /about:blank|juicyads\.com/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39158
 tvlogy.to##+js(set-constant, second, 0)
-! https://github.com/AdguardTeam/AdguardFilters/issues/38925
-shrtfly.net##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39071
 yesvids.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38818
@@ -34803,7 +34791,8 @@ uploadvr.com##.tag-vr-games::before
 uploadvr.com###sticky-rail-container::before
 uploadvr.com###sticky-rail-container > :not(:first-child)::before
 animeworld.*##.content > div.widget:has(> div > script[src^="//wn.trusteenubian.com/"])
-groceries.morrisons.com##div[class^="sc-"] > div[data-test^="fop-wrapper"]:has(.product-card-container > div.header-container div[data-test="fop-featured"])
+groceries.morrisons.com#?#[data-test^="fop-wrapper"] > div:has([data-test="fop-featured"]:contains(Sponsored))
+groceries.morrisons.com#?#[data-test^="fop-wrapper"] > div.outer-header-container:has(> span[data-test="breadcrumb-text"]:contains(Featured))
 northdata.*##.ad-container:not(#style_important)
 cp24.com##.b-ads-custom
 toronto.citynews.ca##div[data-ad-type]

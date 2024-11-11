@@ -1,9 +1,9 @@
-! Checksum: iR++9vU8jBd6azmh5xZPow
-! Diff-Path: ../patches/2/2-s-1731325466-3600.patch
+! Checksum: gBZW7daMDojF+mP+3OIcrA
+! Diff-Path: ../patches/2/2-s-1731328657-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.9
-! TimeUpdated: 2024-11-11T11:31:30+00:00
+! Version: 2.3.60.10
+! TimeUpdated: 2024-11-11T12:31:29+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -33273,9 +33273,6 @@ xsexvideos.pro,mature-tube.sexy#%#//scriptlet('prevent-setTimeout', '/window\.lo
 moneymanagement.com.au#%#(function(){if(-1!=window.location.href.indexOf("/intro-mm"))for(var c=document.cookie.split(";"),b=0;b<c.length;b++){var a=c[b];a=a.split("=");"redirect_url_to_intro"==a[0]&&window.location.replace(decodeURIComponent(a[1]))}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43304
 vev.red,vidup.io#%#//scriptlet("set-constant", "Object.prototype.ads", "undefined")
-! https://github.com/AdguardTeam/AdguardFilters/issues/43252
-!+ NOT_PLATFORM(windows, mac, android)
-pornlib.*#%#//scriptlet("prevent-window-open", "about:blank")
 ! https://forum.adguard.com/index.php?threads/35677/
 cutpaid.com#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59431
@@ -33318,8 +33315,6 @@ tmearn.com#%#//scriptlet("prevent-window-open")
 ! ipornia.com - popups
 ipornia.com#%#//scriptlet("abort-on-property-read", "vertis.popunder.neverblock")
 ipornia.com#%#//scriptlet("set-constant", "vdaVars.neverblock.loaderUrl", "undefined")
-! https://github.com/AdguardTeam/AdguardFilters/issues/40649
-thejournal.ie#%#(function() { var w_open = window.open, regex = /specsavers\.ie/; window.open = function(a, b) { if (typeof a !== 'string' || !regex.test(a)) { w_open(a, b); } }; })();
 ! lkop.me - popups
 lkop.me#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40540
@@ -33342,27 +33337,17 @@ imagevenue.com#%#//scriptlet("abort-on-property-read", "__ads")
 palmtube.com#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39690
 pornflixhd.com#%#//scriptlet("set-constant", "dtGonza.playeradstime", "-1")
-! https://github.com/AdguardTeam/AdguardFilters/issues/39199
-mangoporn.net#%#window.open = function() {};
-mangoporn.net#%#//scriptlet("prevent-window-open")
-! https://github.com/AdguardTeam/AdguardFilters/issues/39492
-digitallearn.online#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38730
 tube8.com#%#//scriptlet("set-constant", "showPopunder", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123945
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39254
 protopage.com#%#//scriptlet("set-constant", "a2d", "false")
 protopage.com#%#//scriptlet("set-constant", "displayAds", "false")
-! https://github.com/AdguardTeam/AdguardFilters/issues/39135
-pornwhite.com#%#//scriptlet("prevent-window-open")
-pornwhite.com#%#window.open = function() {};
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181646
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39362
 sendvid.com#%#//scriptlet('prevent-window-open', '/about:blank|juicyads\.com/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39158
 tvlogy.to#%#//scriptlet("set-constant", "second", "0")
-! https://github.com/AdguardTeam/AdguardFilters/issues/38925
-shrtfly.net#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/39071
 yesvids.com#%#//scriptlet("prevent-window-open")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38818
@@ -36101,7 +36086,8 @@ uploadvr.com##.tag-vr-games::before
 uploadvr.com###sticky-rail-container::before
 uploadvr.com###sticky-rail-container > :not(:first-child)::before
 animeworld.*##.content > div.widget:has(> div > script[src^="//wn.trusteenubian.com/"])
-groceries.morrisons.com##div[class^="sc-"] > div[data-test^="fop-wrapper"]:has(.product-card-container > div.header-container div[data-test="fop-featured"])
+groceries.morrisons.com#?#[data-test^="fop-wrapper"] > div:has([data-test="fop-featured"]:contains(Sponsored))
+groceries.morrisons.com#?#[data-test^="fop-wrapper"] > div.outer-header-container:has(> span[data-test="breadcrumb-text"]:contains(Featured))
 northdata.*##.ad-container:not(#style_important)
 cp24.com##.b-ads-custom
 toronto.citynews.ca##div[data-ad-type]
@@ -77554,6 +77540,7 @@ _800x80_
 ##[href^="http://clicks.totemcash.com/"]
 ##[href^="http://mypillow.com/"] > img
 ##[href^="http://www.mypillow.com/"] > img
+##[href^="https://aads.com/campaigns/"]
 ##[href^="https://ad.admitad.com/"]
 ##[href^="https://ad1.adfarm1.adition.com/"]
 ##[href^="https://affiliate.fastcomet.com/"] > img
@@ -79522,6 +79509,7 @@ browsershots.org#@#.advert_area
 ||abruptalertness.com^
 ||abruptboroughjudgement.com^
 ||abruptcompliments.com^
+||abruptcooperationbummer.com^
 ||abruptlydummy.com^
 ||abruptlyretortedbat.com^
 ||abruptnesscarrier.com^
@@ -81806,6 +81794,7 @@ browsershots.org#@#.advert_area
 ||ayboll.com^
 ||aycrxa.com^
 ||aydandelion.com^
+||ayehxorfaiqry.com^
 ||ayga.xyz^
 ||aymobi.online^
 ||ayrather.com^
@@ -82489,6 +82478,7 @@ browsershots.org#@#.advert_area
 ||bigvids.online^
 ||bigvids.space^
 ||bihunekus.com^
+||biirmjnw.icu^
 ||bikesmachineryi.com^
 ||bikrurda.net^
 ||bilateralgodmother.com^
@@ -84598,6 +84588,7 @@ browsershots.org#@#.advert_area
 ||confrontationwanderer.com^
 ||confrontbitterly.com^
 ||confusetellee.top^
+||congealsubgit.shop^
 ||congratulationsgraveseem.com^
 ||congressaffrayghosts.com^
 ||congressbench.com^
@@ -85126,6 +85117,7 @@ browsershots.org#@#.advert_area
 ||cutelylookups.shop^
 ||cuterbond.com^
 ||cutescale.online^
+||cutlipsdanelaw.shop^
 ||cutsauvo.net^
 ||cuttingdemeanoursuperintend.com^
 ||cuttingstrikingtells.com^
@@ -85770,6 +85762,7 @@ browsershots.org#@#.advert_area
 ||dgptxzz.com^
 ||dgxmvglp.com^
 ||dhadbeensoattr.info^
+||dharnaslaked.top^
 ||dhhuakggx.xyz^
 ||dhkecbu.com^
 ||dhkrftpc.xyz^
@@ -88106,6 +88099,7 @@ browsershots.org#@#.advert_area
 ||flourishbriefing.com^
 ||flourishingcollaboration.com^
 ||flourishinghardwareinhibit.com^
+||flousecuprate.top^
 ||flower1266.fun^
 ||flowerbooklet.com^
 ||flowerdicks.com^
@@ -93198,6 +93192,7 @@ browsershots.org#@#.advert_area
 ||lptrak.com^
 ||lptrck.com^
 ||lptyuosfcv.com^
+||lpuafmkidvm.com^
 ||lqbzuny.com^
 ||lqcaznzllnrfh.com^
 ||lqcdn.com^
@@ -94269,6 +94264,7 @@ browsershots.org#@#.advert_area
 ||molttenglobins.casa^
 ||molypsigry.pro^
 ||momclumsycamouflage.com^
+||momdurationallowance.com^
 ||momentarilyhalt.com^
 ||momentincorrect.com^
 ||momentumjob.com^
@@ -95393,6 +95389,7 @@ browsershots.org#@#.advert_area
 ||nutshellcellularfibber.com^
 ||nutshellwhipunderstood.com^
 ||nutsmargaret.com^
+||nuttedmoireed.shop^
 ||nuttishstromb.shop^
 ||nv3tosjqd.com^
 ||nvane.com^
@@ -97479,6 +97476,7 @@ browsershots.org#@#.advert_area
 ||poolgmsd.com^
 ||poolsperlite.click^
 ||pooptoom.net^
+||pooraithacuzaum.net^
 ||poorlystepmotherresolute.com^
 ||poorlytanrubbing.com^
 ||poorstress.pro^
@@ -98576,6 +98574,7 @@ browsershots.org#@#.advert_area
 ||qorlxle.com^
 ||qowncyf.com^
 ||qozveo.com^
+||qp-kkhdfspt.space^
 ||qpbtocrhhjnz.one^
 ||qppq166n.de^
 ||qprthjab.com^
@@ -102797,6 +102796,7 @@ browsershots.org#@#.advert_area
 ||theyeiedmadeh.info^
 ||theyunm.com^
 ||thickcharityinextricable.com^
+||thickcultivation.com^
 ||thickshortwage.com^
 ||thickstatements.com^
 ||thiefbeseech.com^
@@ -104878,6 +104878,7 @@ browsershots.org#@#.advert_area
 ||vpn-offers.com^
 ||vpn-offers.info^
 ||vpnlist.to^
+||vpnonly.site^
 ||vpop2.com^
 ||vprtrfc.com^
 ||vptbn.com^
@@ -113753,6 +113754,7 @@ browsershots.org#@#.advert_area
 ||digitaloceanspaces.com/woohoo/
 ||disqus.com/ads-iframe/
 ||disqus.com/listPromoted?
+||dnscloud.github.io/js/waypoints.min.js
 ||dtrk.slimcdn.com^
 ||dunhilltraveldeals.com^$third-party
 ||dx.com/affiliate/
@@ -124285,7 +124287,6 @@ checkfelix.com,kayak.ae,kayak.bo,kayak.ch,kayak.cl,kayak.co.cr,kayak.co.id,kayak
 checkfelix.com,kayak.ae,kayak.bo,kayak.ch,kayak.cl,kayak.co.cr,kayak.co.id,kayak.co.in,kayak.co.jp,kayak.co.kr,kayak.co.th,kayak.co.uk,kayak.co.ve,kayak.com,kayak.com.ar,kayak.com.au,kayak.com.br,kayak.com.co,kayak.com.do,kayak.com.ec,kayak.com.gt,kayak.com.hk,kayak.com.hn,kayak.com.mx,kayak.com.my,kayak.com.ni,kayak.com.pa,kayak.com.pe,kayak.com.ph,kayak.com.pr,kayak.com.py,kayak.com.sv,kayak.com.tr,kayak.com.uy,kayak.de,kayak.dk,kayak.es,kayak.fr,kayak.ie,kayak.it,kayak.nl,kayak.no,kayak.pl,kayak.pt,kayak.sa,kayak.se,kayak.sg,swoodoo.com##div[data-resultid]:has(a.IZSg-adlink)
 tripadvisor.com#?#.AaFRW:-abp-contains(Sponsored)
 shoprite.com##div[class^="Row"]:has(div[data-component] a[data-testid] picture source[media="(min-width: 1024px)"] + img[class*="ImageTextButtonImage"][src*=".jpg"])
-morrisons.com#?#[data-test^="fop-wrapper"]:has([data-test="fop-featured"]:-abp-contains(Sponsored))
 kslnewsradio.com,ksltv.com,ktar.com#?#.wrapper:-abp-contains(Sponsored Articles)
 shopee.sg#?#.shopee-search-item-result__item:-abp-contains(Ad)
 shopee.sg#?#.shopee-header-section__content:-abp-contains(Ad)

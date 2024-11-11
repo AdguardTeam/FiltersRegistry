@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1tAOpiCKkQn/kA4xv14AEg
-! Diff-Path: ../patches/14/14-s-1731321470-3600.patch
+! Checksum: Ql8KKZu2f2ustwr+cutasQ
+! Diff-Path: ../patches/14/14-s-1731328670-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.29
-! TimeUpdated: 2024-11-11T10:33:55+00:00
+! Version: 2.2.13.30
+! TimeUpdated: 2024-11-11T12:33:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2461,6 +2461,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+ensonhaber.com##.cookiepolicy-banner
+||promees.pl/modules/x13eucookies/views/js/front.js
 hallo-eltern.de#$?#.cmp-modal-open { overflow: auto !important ; }
 cosmosdirekt.de#$#.tc-modal-open { overflow: auto !important; position: unset !important; }
 gardengirls.de##.grey_ovarlay
@@ -12554,6 +12556,7 @@ uysisguvenligi.com.tr,makrosepetim.com,agenturfilmgesichter.de,agentur-filmgesic
 nanodatex.pl###cookis-box
 theathletesfoot.com###cpolicy
 krupp-krankenhaus.de,encoreungateau.com###ct-ultimate-gdpr-cookie-popup
+adwokat-obrebski.pl##.ct-ultimate-gdpr-cookie-fullPanel-overlay
 pri.org###cta_prompt_bottom
 antoineonline.com###ctl00_overlay
 doodle.com###d-cookiesWarningAdsLayout
@@ -15557,6 +15560,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192699
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=pokemontcgpocket.com
+pokemontcgpocket.com#@##onetrust-consent-sdk
 ! hallo-eltern.de - broken comments
 @@||cdn.opencmp.net/tcf-v2/cmp-stub-latest.js$domain=hallo-eltern.de
 ! buffalonews.com - comments not shown
