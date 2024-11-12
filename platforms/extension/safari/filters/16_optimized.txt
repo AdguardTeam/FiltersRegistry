@@ -1,9 +1,9 @@
-! Checksum: uxwZPFlo2mes2ruYgp49qw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1731411436-3600.patch
+! Checksum: H+X34h4+OLRabJZx48GgaA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1731429429-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.47.99
-! TimeUpdated: 2024-11-12T11:33:17+00:00
+! Version: 2.0.48.0
+! TimeUpdated: 2024-11-12T16:33:32+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -30,8 +30,6 @@ bilan.ch#%#!function(){function b(){}function a(a){return{get:function(){return 
 capital.fr#@#.plainAd
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari)
 @@||bilan.ch^$generichide
-m6.fr#%#//scriptlet('prevent-xhr', 'v.fwmrm.net')
-@@||v.fwmrm.net/|$xmlhttprequest,domain=m6.fr
 ||cdn.jokerly.com/scripts/LPF_abChoice.js
 petitfute.com###cadreJokerlyADSContainer
 petitfute.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
@@ -299,14 +297,14 @@ qub.ca#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.te
 @@||v.fwmrm.net/ad/g/1?*&resp=vmap$domain=canalplus.com
 canalplus.com#%#//scriptlet('json-prune', 'ads.enableAntiAdBlocking')
 @@||static.canal-plus.net/resources/adframe.html?adName=$domain=canalplus.com
-6play.fr#%#//scriptlet('prevent-xhr', 'v.fwmrm.net/', 'true')
-6play.fr#%#//scriptlet('set-constant', 'Object.prototype.isBlockerDetected', 'false')
-@@||ads.stickyadstv.com/auto-user-sync$domain=6play.fr
-@@||ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=$domain=6play.fr
-@@||v.fwmrm.net/ad/g/1$domain=6play.fr
-@@||cdn.stickyadstv.com/www/images/*.mp4$xmlhttprequest,domain=6play.fr
-@@||imasdk.googleapis.com/js/sdkloader/vpaid_adapter.js$domain=6play.fr
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=6play.fr
+m6.fr#%#//scriptlet('prevent-xhr', 'v.fwmrm.net')
+m6.fr#%#//scriptlet('set-constant', 'Object.prototype.isBlockerDetected', 'false')
+@@||ads.stickyadstv.com/auto-user-sync$domain=m6.fr
+@@||ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=$domain=m6.fr
+@@||v.fwmrm.net^$xmlhttprequest,domain=m6.fr
+@@||cdn.stickyadstv.com/www/images/*.mp4$xmlhttprequest,domain=m6.fr
+@@||imasdk.googleapis.com/js/sdkloader/vpaid_adapter.js$domain=m6.fr
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=m6.fr
 tf1.fr#%#//scriptlet('set-constant', '__TF1_CONFIG__.featureFlag.contentAccess.isAdblockCheckRequired', 'false')
 tf1.fr#%#//scriptlet('set-constant', '__TF1_CONFIG__.adblock.display', 'false')
 tf1.fr,tf1info.fr#$#.ads.ad.adsbox.ad-placement.carbon-ads { display: block !important; }
@@ -844,7 +842,7 @@ hsreplay.net#@#.ads-container
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
 @@||prod.adspsp.com/adb.*.min.js$domain=healthline.com
 @@||img.dorzeczy.pl/*static/*.css
-@@||yospace.com/csm/*.mpd$xmlhttprequest,domain=6play.fr
+@@||yospace.com/csm/*.mpd$xmlhttprequest,domain=m6.fr
 123-movies.com,123-movies.net,123-movies.in,123-movies.co.uk,123-movies.tv,123-movies.rs,123-movies.top,123-movies.com.bd,123-movies.com.np,123-movies.cloud,123-movies.gov.bd,123-movies.blog,123-movies.one,123-movies.fm,123-movies.win,123-movies.gov.np,123-movies.icu#@#.fake_player
 123-movies.com,123-movies.net,123-movies.in,123-movies.co.uk,123-movies.tv,123-movies.rs,123-movies.top,123-movies.com.bd,123-movies.com.np,123-movies.cloud,123-movies.gov.bd,123-movies.blog,123-movies.one,123-movies.fm,123-movies.win,123-movies.gov.np,123-movies.icu#@#a[href="#tab-ad"]
 123-movies.com,123-movies.net,123-movies.in,123-movies.co.uk,123-movies.tv,123-movies.rs,123-movies.top,123-movies.com.bd,123-movies.com.np,123-movies.cloud,123-movies.gov.bd,123-movies.blog,123-movies.one,123-movies.fm,123-movies.win,123-movies.gov.np,123-movies.icu#@##tab-ad
@@ -913,6 +911,7 @@ cifraclub.com.br#@#.pub_header
 adverts.ie#@#div[data-ad-id]
 @@||static.cloudflareinsights.com^$domain=easypara.fr
 @@||googletagmanager.com/gtm.js$domain=easypara.fr
+@@||partner-api.sddan.com/api/*/segment-$domain=m6.fr
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||c.amazon-adsystem.com/aax2/apstag.js$domain=programme-tv.net
 whatpub.com#@#.pub_left

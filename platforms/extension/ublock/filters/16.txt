@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: e5vYoYyXSTKv/xn0GBLFmw
-! Diff-Path: ../patches/16/16-s-1731411441-3600.patch
+! Checksum: WnIxDC8x7VdSSnJctGGJQA
+! Diff-Path: ../patches/16/16-s-1731429433-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.47.99
-! TimeUpdated: 2024-11-12T11:33:17+00:00
+! Version: 2.0.48.0
+! TimeUpdated: 2024-11-12T16:33:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -115,9 +115,6 @@ capital.fr#@#.plainAd
 !
 !
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/192425
-m6.fr##+js(no-xhr-if, v.fwmrm.net)
-@@||v.fwmrm.net/|$xmlhttprequest,domain=m6.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191519
 ||cdn.jokerly.com/scripts/LPF_abChoice.js
 petitfute.com###cadreJokerlyADSContainer
@@ -608,18 +605,19 @@ canalplus.com##+js(json-prune, ads.enableAntiAdBlocking)
 @@||static.canal-plus.net/resources/adframe.html?adName=$domain=canalplus.com
 @@||proxy.ads.canalplus-bo.net/web/*/adserver/info/?asset=$domain=canalplus.com
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192425
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143831
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85384
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37231
-6play.fr##+js(no-xhr-if, v.fwmrm.net/, true)
-6play.fr##+js(set-constant, Object.prototype.isBlockerDetected, false)
-@@||ads.stickyadstv.com/auto-user-sync$domain=6play.fr
-@@||ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=$domain=6play.fr
-@@||v.fwmrm.net/ad/g/1$domain=6play.fr
-@@||cdn.stickyadstv.com/www/images/*.mp4$xmlhttprequest,domain=6play.fr
-@@||imasdk.googleapis.com/js/sdkloader/vpaid_adapter.js$domain=6play.fr
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=6play.fr
-||cdn.stickyadstv.com/www/images/*.mp4$media,redirect=noop-0.1s.mp3,domain=6play.fr
+m6.fr##+js(no-xhr-if, v.fwmrm.net)
+m6.fr##+js(set-constant, Object.prototype.isBlockerDetected, false)
+@@||ads.stickyadstv.com/auto-user-sync$domain=m6.fr
+@@||ads.stickyadstv.com/www/delivery/swfIndex.php?reqType=$domain=m6.fr
+@@||v.fwmrm.net^$xmlhttprequest,domain=m6.fr
+@@||cdn.stickyadstv.com/www/images/*.mp4$xmlhttprequest,domain=m6.fr
+@@||imasdk.googleapis.com/js/sdkloader/vpaid_adapter.js$domain=m6.fr
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=m6.fr
+||cdn.stickyadstv.com/www/images/*.mp4$media,redirect=noop-0.1s.mp3,domain=m6.fr
 !
 ! https://forum.adguard.com/index.php?threads/www-rtlplay-be-tvi-humour-rtl-tvi.29736
 @@||be-rtl.videoplaza.tv/proxy/distributor/$domain=rtlplay.be
@@ -1788,7 +1786,7 @@ hsreplay.net#@#.ads-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160601
 @@||img.dorzeczy.pl/*static/*.css
 ! https://github.com/uBlockOrigin/uAssets/issues/19469
-@@||yospace.com/csm/*.mpd$xmlhttprequest,domain=6play.fr
+@@||yospace.com/csm/*.mpd$xmlhttprequest,domain=m6.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160011
 123-movies.*#@#.fake_player
 123-movies.*#@#a[href="#tab-ad"]
@@ -1918,7 +1916,7 @@ adverts.ie#@#div[data-ad-id]
 @@||static.cloudflareinsights.com^$domain=easypara.fr
 @@||googletagmanager.com/gtm.js$domain=easypara.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134220
-@@||partner-api.sddan.com/api/*/segment-$domain=6play.fr
+@@||partner-api.sddan.com/api/*/segment-$domain=m6.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135955
 ||c.amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon_apstag.js,domain=programme-tv.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135982
