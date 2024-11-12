@@ -1,9 +1,9 @@
-! Checksum: YBkUr1QRZKRlLphafGh2Tw
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1731404271-3600.patch
+! Checksum: ncH4cycRGYOzS5bMW+McXg
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1731407893-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.50.97
-! TimeUpdated: 2024-11-12T09:34:34+00:00
+! Version: 2.0.50.98
+! TimeUpdated: 2024-11-12T10:34:52+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -19,6 +19,7 @@
 !#######################################################
 !######### General element hiding rules ################
 !#######################################################
+##dialog[data-controller="common--cookies--alert"]
 ##.cookie-message-overlay
 ###cookieAgree
 ##.CookiePolicyBar
@@ -1383,6 +1384,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
 scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
+mediamarkt.*#%#//scriptlet('trusted-click-element', '#pwa-consent-layer-form button[data-test="pwa-consent-layer-save-settings"]', '!cookie:pwaconsent')
 detmir.ru##div[data-testid="notification"]
 supplierhub.webuildgroup.com,library.webuildgroup.com##.sg-cookie_panel
 webuildgroup.com,webuildgroup.ro,webuild-group.com.au#%#//scriptlet('trusted-set-cookie', 'general_cookie_consent', '')
@@ -1391,7 +1393,6 @@ webuildgroup.com,webuildgroup.ro,webuild-group.com.au#%#//scriptlet('trusted-set
 webuildgroup.com,webuildgroup.ro,webuild-group.com.au#%#//scriptlet('trusted-set-cookie', 'matomo_cookie_consent', '')
 webuildgroup.com,webuildgroup.ro,webuild-group.com.au#%#//scriptlet('trusted-set-cookie', 'twitter_cookie_consent', '')
 webuildgroup.com,webuildgroup.ro,webuild-group.com.au#%#//scriptlet('trusted-set-cookie', 'youtube_cookie_consent', '')
-mediamarkt.ch#%#//scriptlet('trusted-click-element', '#pwa-consent-layer-form button[data-test="pwa-consent-layer-save-settings"]', '!cookie:pwaconsent')
 atlasformen.fr#%#//scriptlet('trusted-click-element', 'dialog[data-cookie-wall-dialog] button[data-accept-all]')
 alusy.pl##.easyNotificationBck
 alusy.pl##.bgDim
