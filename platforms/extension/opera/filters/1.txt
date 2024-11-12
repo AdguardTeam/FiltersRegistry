@@ -1,9 +1,9 @@
-! Checksum: iXdKVi3T150NqnLccgmsXQ
-! Diff-Path: ../patches/1/1-s-1731396996-3600.patch
+! Checksum: GZ+3GLR2DZINI5SJIAtL9g
+! Diff-Path: ../patches/1/1-s-1731418707-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.28
-! TimeUpdated: 2024-11-12T07:31:13+00:00
+! Version: 2.0.95.29
+! TimeUpdated: 2024-11-12T13:31:12+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4494,7 +4494,10 @@ metasirus.su#%#//scriptlet('set-constant', 'Ya', 'emptyObj')
 ! reshuolymp.ru
 reshuolymp.ru#%#//scriptlet('adjust-setTimeout', 'function(){return', '20000', '0.00')
 ! sdamgia.ru
-||sdamgia.ru^$cookie=bda
+! https://github.com/AdguardTeam/AdguardFilters/issues/192803
+||an.yandex.ru/resource/spacer.gif$image,redirect=1x1-transparent.gif,domain=sdamgia.ru,important
+@@||an.yandex.ru/resource/spacer.gif$domain=sdamgia.ru
+@@||sdamgia.ru^$generichide
 sdamgia.ru#%#//scriptlet('adjust-setTimeout', 'f(!1)', '20000', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150448
 litehd.tv#@#.ad-container
@@ -4580,8 +4583,6 @@ all-episodes.fun,all-episodes.club#$#div[id^="adv"] { display: none !important; 
 all-episodes.fun,all-episodes.club##.advtss
 ! breaks video at https://all-episodes.fun/mayans/season5/series9
 ! all-episodes.fun,all-episodes.club#%#//scriptlet("abort-on-property-read", "perROS")
-! sdamgia.ru - adb detection
-sdamgia.ru#$#.googlead.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88638
 letyshops.com#$#.banner_ad.ad_banner.ad-button { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88498
@@ -5587,8 +5588,6 @@ urok-cs.ru##.no-adb
 satsis.ru##.adb
 ! http://forum.adguard.com/showthread.php?4506
 ||polismed.ru/js/check.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/32465
-||sdamgia.ru^$cookie=adb
 ! gismeteo domains: gismeteo.ru,gismeteo.by,gismeteo.pl,gismeteo.lt,gismeteo.md,gismeteo.kz
 gismeteo.by#%#//scriptlet("abort-on-property-write", "yaads")
 !

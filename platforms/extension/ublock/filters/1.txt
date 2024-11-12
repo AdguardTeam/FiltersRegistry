@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: m1d07xmkoiThXhRxxnzeHA
-! Diff-Path: ../patches/1/1-s-1731397004-3600.patch
+! Checksum: 5SVZiq7yGNkHKXZ/LKNNaw
+! Diff-Path: ../patches/1/1-s-1731418716-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.28
-! TimeUpdated: 2024-11-12T07:31:13+00:00
+! Version: 2.0.95.29
+! TimeUpdated: 2024-11-12T13:31:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4478,6 +4478,10 @@ metasirus.su##+js(set-constant, Ya, {})
 ! reshuolymp.ru
 reshuolymp.ru##+js(adjust-setTimeout, function(){return, 20000, 0.00)
 ! sdamgia.ru
+! https://github.com/AdguardTeam/AdguardFilters/issues/192803
+||an.yandex.ru/resource/spacer.gif$image,redirect=1x1.gif,domain=sdamgia.ru,important
+@@||an.yandex.ru/resource/spacer.gif$domain=sdamgia.ru
+@@||sdamgia.ru^$generichide
 sdamgia.ru##+js(adjust-setTimeout, f(!1), 20000, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150448
 litehd.tv#@#.ad-container
@@ -4559,8 +4563,6 @@ shadowcore.ru##+js(abort-on-property-read, justDetectAdblock)
 all-episodes.fun,all-episodes.club#$#div[id^="adv"] { display: none !important; }
 all-episodes.fun,all-episodes.club##.advtss
 ! breaks video at https://all-episodes.fun/mayans/season5/series9
-! sdamgia.ru - adb detection
-sdamgia.ru#$#.googlead.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88638
 letyshops.com#$#.banner_ad.ad_banner.ad-button { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88498
@@ -5498,7 +5500,6 @@ urok-cs.ru##.no-adb
 satsis.ru##.adb
 ! http://forum.adguard.com/showthread.php?4506
 ||polismed.ru/js/check.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/32465
 ! gismeteo domains: gismeteo.ru,gismeteo.by,gismeteo.pl,gismeteo.lt,gismeteo.md,gismeteo.kz
 gismeteo.by##+js(abort-on-property-write, yaads)
 !
