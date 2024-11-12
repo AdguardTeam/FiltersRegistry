@@ -1,9 +1,9 @@
-! Checksum: +3oYNzZciVxzT5p9OxgAMQ
-! Diff-Path: ../patches/2/2-s-1731389827-3600.patch
+! Checksum: eEqKaFgM2Kncsj/phPQK4Q
+! Diff-Path: ../patches/2/2-s-1731393444-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.24
-! TimeUpdated: 2024-11-12T05:31:22+00:00
+! Version: 2.3.60.25
+! TimeUpdated: 2024-11-12T06:31:27+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27334,6 +27334,7 @@ money.pl#$#body { overflow: visible!important; }
 ||autocentrum.pl^$replace=/(aabv\d[\s\S]*?.=function\(\)\{)return .===.(\}\,)/\$1return\$2/,script
 ||autocentrum.pl^$replace=/(aabv\d[\s\S]*?.=\(\)=>).===.(\,)/\$1{return}\$2/,script
 ||autocentrum.pl^$replace=/(\,).===.(&&[\s\S]*?\(\)\})/\$1false\$2/,~script,~stylesheet,~xmlhttprequest,~other
+||dobreprogramy.pl^$replace=/^var wp_gaf_rv[\s\S]*?\n.*"spin".*"dfpConfig".*"slots?".*//,script
 ||dobreprogramy.pl^$replace=/(^.{1\,150}\(\{).*?"bunch".*?"bidRequestId".*(}\);)/\$1\$2/,script
 ||dobreprogramy.pl^$replace=/(^(WP\.[\s\S]*?\.bodies)=WP\.[\s\S]*?\.bodies\|\|\{\};[\s\S]*)//,script
 ||dobreprogramy.pl^$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,xmlhttprequest,other,~script
@@ -30548,6 +30549,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192508
+a-lohas.jp#%#//scriptlet('prevent-addEventListener', 'click', 'puTSstrpcht')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190695
 addictinggames.com#%#(()=>{window.Bolt={on:(o,n,i)=>{"precontent_ad_video"===o&&"AD_COMPLETE"===n&&"function"==typeof i&&i()},BOLT_AD_COMPLETE:"AD_COMPLETE",BOLT_AD_ERROR:"AD_ERROR"},window.ramp=window.ramp||{},window.ramp.addUnits=()=>Promise.resolve(),window.ramp.displayUnits=()=>{setTimeout((()=>{"function"==typeof window.ramp.onPlayerReady&&window.ramp.onPlayerReady()}),1)};})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189857
@@ -35645,8 +35648,8 @@ convertcase.net,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.pl,ec
 lovelive-petitsoku.com,infinityfree.com,tportal.hr,cool-style.com.tw,rabitsokuhou.2chblog.jp,infor.pl,forsal.pl,oraridiapertura24.it,suzusoku.blog.jp,yugioh-starlight.com,news4vip.livedoor.biz,onecall2ch.com,laleggepertutti.it,raetsel-hilfe.de,the-crossword-solver.com,allthetests.com,javatpoint.com,globalrph.com,islamicfinder.orgwouldurather.io,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,thatgossip.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,ff14net.2chblog.jp,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#$?#iframe[src="about:blank"] { remove: true; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192302
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192107
-account.heureka.cz,dash.infinityfree.com#@$?#iframe[src="about:blank"] { remove: true; }
-account.heureka.cz,dash.infinityfree.com#$?#iframe[src="about:blank"] { position: absolute !important; left: -3000px !important; }
+winfuture.de,account.heureka.cz,dash.infinityfree.com#@$?#iframe[src="about:blank"] { remove: true; }
+winfuture.de,account.heureka.cz,dash.infinityfree.com#$?#iframe[src="about:blank"] { position: absolute !important; left: -3000px !important; }
 ! Common rules, which partially hide banners
 ! END: Ad-Shield ad reinsertion
 !
@@ -119330,6 +119333,7 @@ closerweekly.com,intouchweekly.com,lifeandstylemag.com,usmagazine.com##.ami-vide
 faroutmagazine.co.uk##.amp-next-page-separator
 cyberciti.biz##.amp-wp-4ed0dd1
 thepostemail.com##.amp-wp-b194b9a
+gocomics.com##.amu-ad-leaderboard-atf
 archpaper.com##.an-ads
 letras.com##.an-pub
 adspecials.us,ajanlatok.hu,akcniletak.cz,catalogosofertas.cl,catalogosofertas.com.ar,catalogosofertas.com.br,catalogosofertas.com.co,catalogosofertas.com.ec,catalogosofertas.com.mx,catalogosofertas.com.pe,catalogueoffers.co.uk,catalogueoffers.com.au,flugblattangebote.at,flyerdeals.ca,folderz.nl,folhetospromocionais.com,folletosofertas.es,gazetki.pl,kundeavisogtilbud.no,ofertelecatalog.ro,offertevolantini.it,promocatalogues.fr,promotiez.be,promotions.ae,prospektangebote.de,reklambladerbjudanden.se,tilbudsaviseronline.dk##.anchor-wrapper
