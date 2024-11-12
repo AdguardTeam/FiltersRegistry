@@ -1,9 +1,9 @@
-! Checksum: dnFfJ3Dh8Bc0jvsn1G2qxQ
-! Diff-Path: ../patches/224/224-s-1731429431-3600.patch
+! Checksum: MpmmMsyll1kjcTEx6fiLZQ
+! Diff-Path: ../patches/224/224-s-1731433124-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.25.74
-! TimeUpdated: 2024-11-12T16:33:41+00:00
+! Version: 2.1.25.75
+! TimeUpdated: 2024-11-12T17:35:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -85,6 +85,7 @@
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
 !
+||avspda.xyz^$third-party
 ||666hh999gg.com^
 ||776.jstatic.xyz^
 ||kmqianneng66.com^
@@ -339,6 +340,9 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192543
+t66y.com#%#//scriptlet('prevent-setTimeout', 'tpcHt0ml', '1006')
+t66y.com#%#//scriptlet('prevent-setTimeout', 'adhtml', '10006')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191724
 @@/js/adview_*.adsbygoogle.js$~third-party,domain=letv8.cc|zhibo1.cc
 letv8.cc,zhibo1.cc#%#//scriptlet('trusted-set-constant', 'adsv', '"Y"')
@@ -1162,6 +1166,7 @@ $script,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com|vixclou
 !
 ! NOTE: Specific rules
 !
+||a.d/adblo_ck.jpg
 health.tvbs.com.tw##.h-\[280px\]
 jr31.xyz##body > div.wp > div.wp > a[rel="nofollow"] > img
 ||s.rmimg.com/*.gif|$domain=nodeloc.com
