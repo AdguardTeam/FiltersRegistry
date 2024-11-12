@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bCk0ogn4++Tq1jLCrZfOjA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1731407909-3600.patch
+! Checksum: 9RX/0d+oBvrvZm59oth4KQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1731411446-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.59.13
-! TimeUpdated: 2024-11-12T10:34:28+00:00
+! Version: 2.0.59.14
+! TimeUpdated: 2024-11-12T11:32:52+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 ||adsby.2bet.co.jp^
@@ -389,7 +389,7 @@ yourfones.net##+js(spoof-css, ins.adsbygoogle, display, block)
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 !+ NOT_PLATFORM(ext_chromium_mv3)
-wiki.yjsnpi.nu##+js(abort-current-script, onload, catch)
+wiki.yjsnpi.nu##+js(remove-node-text, script, /\+[\'"`]\w.+catch/)
 $subdocument,redirect-rule=noop.html,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#$##comments-loading { display: none !important; }
 @@||wiki.yjsnpi.nu^$image,xmlhttprequest,~third-party
