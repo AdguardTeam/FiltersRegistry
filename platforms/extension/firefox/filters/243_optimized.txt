@@ -1,9 +1,9 @@
-! Checksum: zKG0Y9Jl3a5/8CPpXesUNg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1731315973-14400.patch
+! Checksum: Ptz3eKxL2AVrVwmPL0lC4w
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1731402368-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.19.98
-! TimeUpdated: 2024-11-11T09:01:57+00:00
+! Version: 2.0.19.99
+! TimeUpdated: 2024-11-12T09:02:01+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -102,11 +102,11 @@ affarsvarlden.se##article.article-list-item:has(a[href*="/native/"])
 affarsvarlden.se##.cookies-wrap, .Modal, .article-list-item--native, .advert-notice-box, .native-popup, .takeover-wrap, .native-notice-box, .darwin--content
 aftonbladet.se##article[class^="article-wrapper"] ~ div[class^="hyperion"]:has(a[href*="/t?a="], a[href*="/click"], a[href^="http"][nofollow], a[href^="http"][rel*="nofollow"])
 aftonbladet.se##aside > div[class^="hyperion"]:has(a[href*="/rabattkod"], a[href*="/kampanj"], a[href*="/brandstudio"], a[href*="/brand-studio"])
-aftonbladet.se##div[class^="hyperion-css"]:matches-css(margin:/32px/):has(iframe[src*="tize.no"])
 aftonbladet.se##main > section > div:first-child:matches-css(box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 24px 0px)
+aftonbladet.se##section[class*="layout-main"] > div[class^="hyperion-css"]:has(a[href*="/produkt/"]:not(a[href^="/"]), a[href*="/varumarken/"]:not(a[href^="/"]), a[href*="/prisjakt.nu"])
 aftonbladet.se###superright-side, a[href*="/casinoguide"], [id^="adPlacement"], a[href^="https://kampanj."], a[href*="/rabattkod"][data-test-tag="internal-link"], a[href^="/sportbladet/speltips/"], a[href*="aftonbladet.se/kampanj/"], div[class*="stickyloginoverlay"], #takeover-container
-aftonbladet.se##:is(main > section a[data-test-tag="internal-link"], main > aside a[data-test-tag="internal-link"]):has-text(innehåller annonslänkar)
-aftonbladet.se##:is(main > section > div[class^="hyperion"], #main > section > div[class^="hyperion"]):has(a[href*="/brandstudio"], a[href*="/brand-studio"])
+aftonbladet.se##:is(main > section a[data-test-tag="internal-link"], #main > section a[data-test-tag="internal-link"], main > aside a[data-test-tag="internal-link"]):has-text(innehåller annonslänkar)
+aftonbladet.se##:is(main > section > div[class^="hyperion"], #main > section > div[class^="hyperion"]):has(a[href*="/brandstudio"], a[href*="/brand-studio"], a[href*="/rabattkod/"], a[href*="/casinoguide/"])
 aftonbladet.se##[data-ad-subtype]:upward(1):matches-css(min-height:/[0-9]+/)
 aftonbladet.se,godare.se,livsstil.se##div[style*="min-height:240px"]:has(iframe[src*="/widgets/ads/"])
 aftonbladet.se,godare.se,livsstil.se##[data-test-tag="prisjakt-carousel"], a[href*="/brandstudio"], a[href*="/brand-studio"], div[class^="advertory-"]:not(.advertory-header-anchor)
@@ -1186,8 +1186,6 @@ sponsor$image,domain=obosdamallsvenskan.se|elitettan.se
 sportal.se##.cookie-div, a[href$="/banner/"]
 sportapp.travsport.se##div[class^="CookieDisclaimer"]
 sportbilen.se###text-4
-sportbladetplay.se#$#body.dimmed { overflow:unset!important }
-sportbladetplay.se##.ui.page.dimmer:has(div[class^="CookieConsentPopup"])
 sportbloggare.com##div.section-body-plus:has-text(/bonus|casino/i)
 sportbloggare.com##.container:has-text(Senaste nyheterna om spelbolag:)
 sportbloggare.com##.partners-box, .cube-bonus-list, .section-featured-links-column, .section-bonus-list, a[href="https://sportbloggare.com/casino-bonus"], a[href="https://sportbloggare.com/bettingsidor"], a[href="https://sportbloggare.com/betting-bonus"]
@@ -1789,6 +1787,7 @@ zeromagazine.nu##div[id^="ads"]
 /ad-widget
 /ad-$image,domain=schack.se
 /ad.aspx?
+/ad.html$domain=vinochmatguiden.se
 /ad/getNouw.$script
 /ad?platform$domain=viaplayradio.se
 /ad_acknowledgment$xmlhttprequest
@@ -3204,6 +3203,7 @@ zeromagazine.nu##div[id^="ads"]
 ||wishpond.net^$third-party
 ||woomio.com/assets/js/analytics
 ||workhaus.se^$third-party
+||wurfl.io^$domain=vinochmatguiden.se
 ||www-kittad-se.filesusr.com^$subdocument
 ||yelp.se/sit_rep
 ||yieldwrapper.com^$third-party
