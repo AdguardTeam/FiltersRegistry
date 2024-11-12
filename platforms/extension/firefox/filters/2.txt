@@ -1,9 +1,9 @@
-! Checksum: qiz04b6aylh5YsdL6MUbTg
-! Diff-Path: ../patches/2/2-s-1731418705-3600.patch
+! Checksum: iawAmZHum+0RNypi0mPv5g
+! Diff-Path: ../patches/2/2-s-1731422288-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.31
-! TimeUpdated: 2024-11-12T13:31:34+00:00
+! Version: 2.3.60.32
+! TimeUpdated: 2024-11-12T14:31:31+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -33540,8 +33540,6 @@ vidup.io#%#(function(){var c=document.addEventListener;document.addEventListener
 katfile.com#%#//scriptlet('prevent-window-open')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18543
 embedy.me#%#window.open = function() {};
-! https://github.com/AdguardTeam/AdguardFilters/issues/18219
-mp3-pn.com#%#(function() { window.open_ = window.open; var w_open = window.open, regex = /demolat\.com/; window.open = function(a, b) { if (typeof a !== 'string' || !regex.test(a)) { w_open(a, b); } }; })();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17495
 asiananimaltube.org#%#window.open = function() {};
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16854
@@ -33555,8 +33553,6 @@ pacogames.com#%#AG_onLoad(function() { setTimeout(function() { AG_defineProperty
 sex.com#%#window.open = function() {};
 ! thevid.net - popups
 thevid.net#%#(function(){var c=document.addEventListener;document.addEventListener=function(a,b,d,e){"click"!=a&&-1==b.toString().indexOf('"dtnoppu"')&&c(a,b,d,e)}.bind(document);})();
-! https://github.com/AdguardTeam/AdguardFilters/issues/15306
-bagusdl.pro#%#(function() { window.open_ = window.open; var w_open = window.open, regex = /adserver\.adreactor\.com/; window.open = function(a, b) { if (typeof a !== 'string' || !regex.test(a)) { w_open(a, b); } }; })();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14842
 rmdown.com#%#window.open = function() {};
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13191
@@ -35872,6 +35868,11 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+ezyzip.com###right-column div[style*="width:"][style*=":center"]:not([class], [id])
+gamejolt.com##.-leaderboard-ad
+gamejolt.com##._right-scroller div.scroll-affix-container:has(div.ad-widget-inner)
+gamejolt.com##.gj-scroll-affix-placeholder
+gamejolt.com##.-ad-container
 rock.porn#$##int-over { display: none !important; }
 rock.porn#$#body { overflow: auto !important; }
 katestube.com##.pre-block
