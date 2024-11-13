@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: lM7RzNMsfpyZehLHZlIYdA
-! Diff-Path: ../patches/1/1-s-1731508688-3600.patch
+! Checksum: HstGaPW9vbbIXyYfKNysPw
+! Diff-Path: ../patches/1/1-s-1731537402-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.37
-! TimeUpdated: 2024-11-13T14:31:16+00:00
+! Version: 2.0.95.38
+! TimeUpdated: 2024-11-13T22:31:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17819,6 +17819,11 @@ vost.pw,animevost.am,smotret-anime-365.ru,animevost.online,animevost.org,animero
 ||4pda.*/st/ztm?
 ||app.4pda.*/er/*/m2?_=
 ||4pda.*/ad/
+[$domain=/^4pda\.to$/]##body > * > * > * > div[id][class]:has(> script + *:not(a):not(div))
+[$domain=/^4pda\.to$/]##+js(spoof-css, body > * > * > * > div[id][class], display, block)
+[$domain=/^4pda\.to$/]#$#body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] { background: #e6e7e9 !important; }
+[$domain=/^4pda\.to$/]#$?#body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article:matches-css(height: /^(148(?:\.\d{1,3})?|149(?:\.\d{1,3})?|150(?:\.0{1,3})?)px$/) { remove: true; }
+[$domain=/^4pda\.to$/]##+js(spoof-css, body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article, height, 149px)
 ! на форуме в шапке
 4pda.ru,4pda.to##html:not([style]) tr[valign="top"] > td[width*="%"] + td > a[target="_blank"] > img[alt=""]
 !

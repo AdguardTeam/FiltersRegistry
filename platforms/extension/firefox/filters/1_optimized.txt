@@ -1,9 +1,9 @@
-! Checksum: oVdSkr8sgyQjx7lo5NE9/Q
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1731508677-3600.patch
+! Checksum: 5zeYVHteZey/p1nsVPizUA
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1731537398-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.37
-! TimeUpdated: 2024-11-13T14:31:16+00:00
+! Version: 2.0.95.38
+! TimeUpdated: 2024-11-13T22:31:05+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -6637,6 +6637,11 @@ vost.pw,animevost.am,smotret-anime-365.ru,animevost.online,animevost.org,animero
 4pda.to##a[href*="//4pda.to/honor/?utm_"]
 ||app.4pda.*/er/*/m2?_=
 ||4pda.*/ad/
+[$domain=/^4pda\.to$/]##body > * > * > * > div[id][class]:has(> script + *:not(a):not(div))
+[$domain=/^4pda\.to$/]#%#//scriptlet('spoof-css', 'body > * > * > * > div[id][class]', 'display', 'block')
+[$domain=/^4pda\.to$/]#$#body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] { background: #e6e7e9 !important; }
+[$domain=/^4pda\.to$/]#$?#body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article:matches-css(height: /^(148(?:\.\d{1,3})?|149(?:\.\d{1,3})?|150(?:\.0{1,3})?)px$/) { remove: true; }
+[$domain=/^4pda\.to$/]#%#//scriptlet('spoof-css', 'body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article', 'height', '149px')
 4pda.ru,4pda.to##html:not([style]) tr[valign="top"] > td[width*="%"] + td > a[target="_blank"] > img[alt=""]
 rbc.ru#?#.l-col-100h-parent > div.l-col-100h:has(> div.l-sticky > div.fox-tail > a.banner__container__link)
 autonews.ru,rbc.ru##.topline__branding__wrapper
