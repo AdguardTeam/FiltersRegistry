@@ -1,9 +1,9 @@
-! Checksum: FxANzVKKmtBDwurFbS9dng
-! Diff-Path: ../patches/18/18-s-1731498099-3600.patch
+! Checksum: bJmBIlQYIdUfJ2V1ab8NWw
+! Diff-Path: ../patches/18/18-s-1731501675-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.51.9
-! TimeUpdated: 2024-11-13T11:37:48+00:00
+! Version: 2.0.51.10
+! TimeUpdated: 2024-11-13T12:36:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2502,6 +2502,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+mediapart.fr##.gateaux-secs
+sii.org.pl#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> a[data-cmp-purpose][aria-label="Purpose: Social media"], #cmpwrapper >>> a.cmptxt_btn_save')
 panascais.net,essential.gg##.storage-banner[aria-label="Cookie dialog"]
 sakhalinmedia.ru##.cookies-wrap
 la3eb.com##div[class^="AllowCookiesDisclaimer"]
@@ -4022,7 +4024,7 @@ vod.warszawa.pl#$#body { overflow: auto !important; }
 basketligakobiet.pl,plk.pl,pzkosz.pl##.zgoda_na_cookie
 ||ga.de/assets/consent/consent-page.js
 efacil.com.br#%#//scriptlet('trusted-click-element', 'main ~ div[class*=" "] > div:has(a[href="/loja/PrivacyPolicyPage/"]) + button')
-autism-unlimited.org###cookie-cover
+chcemelepsicesko.cz,autism-unlimited.org###cookie-cover
 emlak.mitula.com.tr#%#//scriptlet('set-cookie', 'cookieBannerDesktop', 'true')
 androidpolice.com#$#main ~ .adsninja-ad-zone ~ .adsninja-ad-zone ~ div[class][style*="z-index"] { display: none !important; }
 androidpolice.com#$#html { overflow: visible !important; }
@@ -15588,7 +15590,6 @@ search.deleteme.com#%#//scriptlet('set-cookie', 'cookieControlPrefs', '0')
 lasestrellas.tv#%#//scriptlet('set-cookie', '_tvsPrivacy', 'true')
 upday.com#%#//scriptlet("set-constant", "_sp_.addEventListener", "noopFunc")
 10015.io#%#//scriptlet('set-local-storage-item', 'cookie-dismissed', 'true')
-inszury.pl#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('CookieAccept', '{"Necessary":true,"Statistics":false,"Marketing":false}'); };
 officesuite.com#%#//scriptlet('set-cookie', 'intro', 'true')
 tradersunion.com#%#//scriptlet('remove-class', 'cookie-not-accepted', 'body')
 millionpugs.com#%#//scriptlet('set-local-storage-item', 'cookiesPopUpClosed', 'true')
@@ -16334,6 +16335,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192864
+@@||delivery.consentmanager.net/delivery/cmp.php$domain=sii.org.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192787
 @@||app.usercentrics.eu/browser-ui/*.js$domain=sennheiser.com
 @@||api.usercentrics.eu/settings/*/latest/*.json$domain=sennheiser.com

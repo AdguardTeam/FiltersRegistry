@@ -1,9 +1,9 @@
-! Checksum: 6WsqExcRZpPk2eK/W+0lYw
-! Diff-Path: ../patches/19/19-s-1731498126-3600.patch
+! Checksum: Te1Cfy9rzGg5gK1r2cLUCQ
+! Diff-Path: ../patches/19/19-s-1731501708-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.45.72
-! TimeUpdated: 2024-11-13T11:37:49+00:00
+! Version: 2.0.45.73
+! TimeUpdated: 2024-11-13T12:36:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4375,6 +4375,10 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
+ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] { display: none !important; }
+ajc.com,inews.co.uk#$#html > body.tp-modal-open { overflow: auto !important; position: static !important; height: auto !important; touch-action: auto !important; }
+ajc.com,inews.co.uk#$##html.tp-scroll-prevented { overflow: auto !important; touch-action: auto !important; }
 temu.com##div[role="main"] > div[class^="container-"]:has(> div[class^="wrap-"] > div[class^="guideText-"] + div[class^="guideButton-"])
 e.mail.ru,octavius.mail.ru###octavius-notify-third-party-analytics-data
 quotidianodipuglia.it###mp-placeholder
@@ -7816,8 +7820,8 @@ egrp365.ru,vegasslotsonline.com##.exit-popup
 vegasslotsonline.com##.subscribe-to-newsletter-sticky
 tutorialsduniya.com,betootaadvocate.com,financefwd.com##.hustle-slidein-position--south
 crackevil.com###pop-ad-wrap
-elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"]
-elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop
+rnd.de,elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"]
+rnd.de,elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop
 deepl.com###dl_app_banner_popup
 typography.com##div[class^="App__footerRegion_"] > footer[class^="SiteFooter__footer"]
 influencermarketinghub.com###ccl_ppu

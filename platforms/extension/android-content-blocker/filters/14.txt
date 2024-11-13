@@ -1,8 +1,8 @@
-! Checksum: 1/mh4VMGozfIlC1zPB8R2A
+! Checksum: q4TY9DrDVfX9sWs0v9PVpQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.57
-! TimeUpdated: 2024-11-13T11:37:41+00:00
+! Version: 2.2.13.58
+! TimeUpdated: 2024-11-13T12:36:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2451,6 +2451,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+mediapart.fr##.gateaux-secs
 panascais.net,essential.gg##.storage-banner[aria-label="Cookie dialog"]
 sakhalinmedia.ru##.cookies-wrap
 la3eb.com##div[class^="AllowCookiesDisclaimer"]
@@ -3489,7 +3490,7 @@ vod.warszawa.pl#$#.app-cookie__modal { display: none !important; }
 vod.warszawa.pl#$#body { overflow: auto !important; }
 basketligakobiet.pl,plk.pl,pzkosz.pl##.zgoda_na_cookie
 ||ga.de/assets/consent/consent-page.js
-autism-unlimited.org###cookie-cover
+chcemelepsicesko.cz,autism-unlimited.org###cookie-cover
 androidpolice.com#$#main ~ .adsninja-ad-zone ~ .adsninja-ad-zone ~ div[class][style*="z-index"] { display: none !important; }
 androidpolice.com#$#html { overflow: visible !important; }
 androidpolice.com#$#body { overflow-y: auto !important; }
@@ -14197,6 +14198,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192864
+@@||delivery.consentmanager.net/delivery/cmp.php$domain=sii.org.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192787
 @@||app.usercentrics.eu/browser-ui/*.js$domain=sennheiser.com
 @@||api.usercentrics.eu/settings/*/latest/*.json$domain=sennheiser.com
@@ -22543,6 +22546,10 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
+ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] { display: none !important; }
+ajc.com,inews.co.uk#$#html > body.tp-modal-open { overflow: auto !important; position: static !important; height: auto !important; touch-action: auto !important; }
+ajc.com,inews.co.uk#$##html.tp-scroll-prevented { overflow: auto !important; touch-action: auto !important; }
 e.mail.ru,octavius.mail.ru###octavius-notify-third-party-analytics-data
 quotidianodipuglia.it###mp-placeholder
 ok.ru###hook_Block_FixedPromoBanner
@@ -25493,8 +25500,8 @@ egrp365.ru,vegasslotsonline.com##.exit-popup
 vegasslotsonline.com##.subscribe-to-newsletter-sticky
 tutorialsduniya.com,betootaadvocate.com,financefwd.com##.hustle-slidein-position--south
 crackevil.com###pop-ad-wrap
-elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"]
-elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop
+rnd.de,elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"]
+rnd.de,elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop
 deepl.com###dl_app_banner_popup
 typography.com##div[class^="App__footerRegion_"] > footer[class^="SiteFooter__footer"]
 influencermarketinghub.com###ccl_ppu
@@ -44799,6 +44806,7 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+baidu.com###con-ceiling-wrapper
 mail.proton.me##button[data-testid="cta:special-offer"]
 gizchina.gr###vw_widget_image_banner-9
 lista.mercadolivre.com.br##.ui-search-sidebar-placements__container

@@ -1,9 +1,9 @@
-! Checksum: ifqphrDOenR60XXaA/OW4w
-! Diff-Path: ../patches/14/14-s-1731498119-3600.patch
+! Checksum: Chhkmf972HXdlC0ceFX8ag
+! Diff-Path: ../patches/14/14-s-1731501699-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.57
-! TimeUpdated: 2024-11-13T11:37:41+00:00
+! Version: 2.2.13.58
+! TimeUpdated: 2024-11-13T12:36:47+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2502,6 +2502,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+mediapart.fr##.gateaux-secs
+sii.org.pl#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> a[data-cmp-purpose][aria-label="Purpose: Social media"], #cmpwrapper >>> a.cmptxt_btn_save')
 panascais.net,essential.gg##.storage-banner[aria-label="Cookie dialog"]
 sakhalinmedia.ru##.cookies-wrap
 la3eb.com##div[class^="AllowCookiesDisclaimer"]
@@ -4023,7 +4025,7 @@ vod.warszawa.pl#$#body { overflow: auto !important; }
 basketligakobiet.pl,plk.pl,pzkosz.pl##.zgoda_na_cookie
 ||ga.de/assets/consent/consent-page.js
 efacil.com.br#%#//scriptlet('trusted-click-element', 'main ~ div[class*=" "] > div:has(a[href="/loja/PrivacyPolicyPage/"]) + button')
-autism-unlimited.org###cookie-cover
+chcemelepsicesko.cz,autism-unlimited.org###cookie-cover
 emlak.mitula.com.tr#%#//scriptlet('set-cookie', 'cookieBannerDesktop', 'true')
 androidpolice.com#$#main ~ .adsninja-ad-zone ~ .adsninja-ad-zone ~ div[class][style*="z-index"] { display: none !important; }
 androidpolice.com#$#html { overflow: visible !important; }
@@ -15611,7 +15613,6 @@ search.deleteme.com#%#//scriptlet('set-cookie', 'cookieControlPrefs', '0')
 lasestrellas.tv#%#//scriptlet('set-cookie', '_tvsPrivacy', 'true')
 upday.com#%#//scriptlet("set-constant", "_sp_.addEventListener", "noopFunc")
 10015.io#%#//scriptlet('set-local-storage-item', 'cookie-dismissed', 'true')
-inszury.pl#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('CookieAccept', '{"Necessary":true,"Statistics":false,"Marketing":false}'); };
 officesuite.com#%#//scriptlet('set-cookie', 'intro', 'true')
 tradersunion.com#%#//scriptlet('remove-class', 'cookie-not-accepted', 'body')
 millionpugs.com#%#//scriptlet('set-local-storage-item', 'cookiesPopUpClosed', 'true')
@@ -16389,6 +16390,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192864
+@@||delivery.consentmanager.net/delivery/cmp.php$domain=sii.org.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192787
 @@||app.usercentrics.eu/browser-ui/*.js$domain=sennheiser.com
 @@||api.usercentrics.eu/settings/*/latest/*.json$domain=sennheiser.com
@@ -24835,6 +24838,10 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
+ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] { display: none !important; }
+ajc.com,inews.co.uk#$#html > body.tp-modal-open { overflow: auto !important; position: static !important; height: auto !important; touch-action: auto !important; }
+ajc.com,inews.co.uk#$##html.tp-scroll-prevented { overflow: auto !important; touch-action: auto !important; }
 temu.com##div[role="main"] > div[class^="container-"]:has(> div[class^="wrap-"] > div[class^="guideText-"] + div[class^="guideButton-"])
 e.mail.ru,octavius.mail.ru###octavius-notify-third-party-analytics-data
 quotidianodipuglia.it###mp-placeholder
@@ -28276,8 +28283,8 @@ egrp365.ru,vegasslotsonline.com##.exit-popup
 vegasslotsonline.com##.subscribe-to-newsletter-sticky
 tutorialsduniya.com,betootaadvocate.com,financefwd.com##.hustle-slidein-position--south
 crackevil.com###pop-ad-wrap
-elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"]
-elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop
+rnd.de,elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"]
+rnd.de,elmundo.es##div[class="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop
 deepl.com###dl_app_banner_popup
 typography.com##div[class^="App__footerRegion_"] > footer[class^="SiteFooter__footer"]
 influencermarketinghub.com###ccl_ppu
@@ -49297,6 +49304,7 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+baidu.com###con-ceiling-wrapper
 mail.proton.me##button[data-testid="cta:special-offer"]
 gizchina.gr###vw_widget_image_banner-9
 lista.mercadolivre.com.br##.ui-search-sidebar-placements__container

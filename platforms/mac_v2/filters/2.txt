@@ -1,9 +1,9 @@
-! Checksum: WzJUy7Co2ISlLvKNao+H8w
-! Diff-Path: ../patches/2/2-s-1731498120-3600.patch
+! Checksum: ldUWOQGKQwjoFWDRfIMXTA
+! Diff-Path: ../patches/2/2-s-1731501702-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.46
-! TimeUpdated: 2024-11-13T11:31:50+00:00
+! Version: 2.3.60.47
+! TimeUpdated: 2024-11-13T12:31:34+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20694,6 +20694,10 @@ shinigami06.com##.lepopup-animated
 176.119.30.88###tv-play
 176.119.30.88##.footer1
 duniaku.idntimes.com##amp-script[script="parallax-script"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/192859
+||cosmic*.co/wp-content/uploads/*.gif|
+[$domain=/cosmic\d+\.co/]###floatcenter
+[$domain=/cosmic\d+\.co/]##.kln
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191291
 anichin.co.id###floatcenter
 anichin.co.id#%#//scriptlet('abort-current-inline-script', '$', 'window.open(')
@@ -22924,6 +22928,8 @@ gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="po
 instalki.pl##center > a.gofollow > img
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/192864
+sii.org.pl###sidebar .sidemain > .mustsee:has(> .adshold)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191855
 mybank.pl###rek_gora
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191854
@@ -35112,6 +35118,8 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+desi-porn.tube##.da-container
+desi-porn.tube#%#//scriptlet('remove-node-text', 'script', 'utm_mapping')
 miruro.tv##.a-ads
 adtival.network##.flex > button[onclick^="dl"]
 tempatwisata.pro##.text-center > span[style^="text-copy font-family:"]
@@ -35144,7 +35152,7 @@ a-lohas.jp$$script:contains(puURLstrpcht)
 a-lohas.jp#%#//scriptlet('remove-node-text', 'script', 'puURLstrpcht')
 rumble.com##main > section.homepage-section:has(> div.constrained a[href^="https://polymarket.com"])
 uploady.io##.adsbypubpower
-thegay.com##.nopop
+desi-porn.tube,thegay.com##.nopop
 itsfoss.com##.c-content > div.kg-card:has(> a[href="https://itsfoss.com/#/portal/signup"])
 itsfoss.com##.c-content > div.kg-card:has(> a[href^="https://www.raspberrypi.com/"])
 ebay.*##.srp-river-answer[class*="CAROUSEL"]:not([class*="NAVIGATION"])
