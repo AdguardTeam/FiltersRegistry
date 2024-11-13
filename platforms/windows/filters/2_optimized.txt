@@ -1,9 +1,9 @@
-! Checksum: bwYLmxcs0O3fDAqQ0TugAQ
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1731487236-3600.patch
+! Checksum: NZ23lzrRHokImLNMXdE1eQ
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1731490668-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.43
-! TimeUpdated: 2024-11-13T08:31:28+00:00
+! Version: 2.3.60.44
+! TimeUpdated: 2024-11-13T09:31:32+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -7305,7 +7305,11 @@ open.fm##.Placeholder
 wiadomosci.wp.pl,pysznosci.pl,open.fm,fotoblogia.pl,autokult.pl,money.pl,pudelek.pl#?#style + div[class*=" "] > img[src^="https://v.wpimg.pl/"] + div:last-child:upward(1)
 www.o2.pl,rozrywka.o2.pl##.w-full[class*="bg-"] > div[class*="w-"][class*="px"] > div[class][style="width:100%"]
 o2.pl##div[data-testid^="ad-placeholder-"]
-o2.pl#?#div[class*=" "] > img[src^="https://v.wpimg.pl/"]:is(.wp-placeholder-img, .absolute):first-child + div:last-child:upward(1)
+o2.pl##body > .mx-auto:has(> h6:first-child + div[data-testid^="ad-placeholder-"] + #section-for-you:last-child)
+o2.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"]:is(.wp-placeholder-img, .absolute):first-child + div:last-child)
+rozrywka.o2.pl##article > div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"]:first-child + div[class*=" "] + script:last-child)
+rozrywka.o2.pl##article > .flex-col > div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"]:first-child + div[class*=" "] + script:last-child)
+rozrywka.o2.pl##div[data-st-area="st-article"] > div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"]:first-child + div[class*=" "] + script:last-child)
 !+ NOT_OPTIMIZED
 www.o2.pl#?##root div[class]:matches-property("/__reactFiber/.return.memoizedProps.placeholder"="true"):has(> div > img:first-child + div:last-child)
 /^https:\/\/[a-z]{2,14}\.wp\.pl\/[a-zA-Z0-9_-]{200,}/$script,domain=poczta.o2.pl,badfilter
