@@ -1,9 +1,9 @@
-! Checksum: 2Wq1kLMHghPveuFTJ6hVug
-! Diff-Path: ../patches/2/2-s-1731512280-3600.patch
+! Checksum: blv7EhRoV5nMC4RBNE+UjQ
+! Diff-Path: ../patches/2/2-s-1731515892-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.50
-! TimeUpdated: 2024-11-13T15:31:28+00:00
+! Version: 2.3.60.51
+! TimeUpdated: 2024-11-13T16:31:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8626,6 +8626,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192841
+oromoyo.ai#%#//scriptlet('prevent-setTimeout', 'await', '5000')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=oromoyo.ai
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192836
 tempatwisata.pro#%#//scriptlet('adjust-setInterval', '/counter|Wait/', '*', '0.001')
@@ -37280,19 +37282,22 @@ lovelive-petitsoku.com,infinityfree.com,tportal.hr,cool-style.com.tw,rabitsokuho
 ##a[href^="https://html-load.com/contents/"][style="position:relative;display:inline-block;"]
 ##a[href^="https://html-load.com/contents/"][style="text-decoration:none;"] > div[style]
 ##a[href^="https://html-load.com/contents/"][style="text-decoration:none;"] > img
-##amp-ad-exit + div[class^="jizsl_"] > div[class^="jizsl_"][lang] > div > div > div > div > a[on*="exit-api.exit(target="]
+##amp-ad-exit + div[class^="img_"] > div[class^="img_"][lang] > div > div > div > div > a[on*="exit-api.exit(target="]
 ##body > a:has(+ script[src*=".html-load.com/contents/"]) > img.aspw[height="252"]
 ##body > div[class^="img_"] > a[target="_blank"][rel="noopener"][href^="https://html-load.com/contents/"]:nth-child(2)
+##body > div[id^="img_"] > div[id^="img_"] > a[on^="tap"]:has(+ div[aria-hidden="true"][dir="ltr"]) > amp-img.aspw:only-child
 ##body > div[id^="img_"]:has(+ amp-pixel) > div[id^="img_"]
+##div[class^="img_"][aria-hidden="true"] + div[id^="img_"] > div[id^="img_"]
 ##div[id^="img_"] > div[id^="img_"][style^="display: block; width:"] > img
 ##div[id^="img_"][video_player_url^="https://as.uncn.jp/js/video/"]
 ##div[id^="img_"][name^="adroute_ads_adblock_15"]
 ##div[id^="img_"][style*="1000000000;"] > div[style="width:320px;height:100%;margin:auto;"]
 ##div[id^="img_"][style="text-align: initial"]
 ##div[onclick="swipeButtonClick(event)"] + div > div[class^="img_"]
-##div[ontouchstart="fCidsp(event)"] + div + img[id^="jizsl_"]
+##div[ontouchstart="fCidsp(event)"] + div + img[id^="img_"]
 ##div[style^="width:17px;height:15px;background:rgba"] + a[href^="https://html-load.com/contents/"]
 ##div[id^="img_"][style^="position: relative; overflow: hidden"] > iframe[style^="width:100%;height:100%;position:relative"]
+##div[id^="img_"][x-frame-width="380"]
 ##div[id^="img_"][x-frame-width="412"]
 ##div[style*="image-rendering:pixelated;z-index:2147483647;background-image:url(data:image"]:empty
 ##div[style="position:absolute;"] > script + div[id^="img_"]:last-child
@@ -37303,6 +37308,7 @@ lovelive-petitsoku.com,infinityfree.com,tportal.hr,cool-style.com.tw,rabitsokuho
 ##img[src*=".html-load.com/contents/"][style="display: block;"]
 ##script + div + div[style="display:inline"] > a > img.aspw
 ##script + div:not([class]):not([id]) > script + script[src] + script + div[id^="img_"] > script + script + span[id^="img_"]
+##script[async=""][src*=".html-load.com/contents/"] + script + div[id^="img_"]
 ##video[id^="img_"][muted=""]
 @@||rostercon.com^$generichide
 @@||heureka.cz^$generichide
@@ -37571,10 +37577,8 @@ tempatwisata.pro#%#//scriptlet('prevent-window-open', '!/tempatwisata\.pro|short
 startpage.com###main > div[style^="margin-bottom:"] > div[style^="display: block; padding:"]:has(> div[style^="margin-bottom:"] > svg)
 rostercon.com##.container-sda
 ezyzip.com###right-column div[style*="width:"][style*=":center"]:not([class], [id])
-gamejolt.com##.-leaderboard-ad
-gamejolt.com##._right-scroller div.scroll-affix-container:has(div.ad-widget-inner)
-gamejolt.com##.gj-scroll-affix-placeholder
-gamejolt.com##.-ad-container
+gamejolt.com##.ad-feed-parent > div[class="-item"] > div.text-center:has( div.ad-widget-inner)
+gamejolt.com##.button-group ~ div[style^="text-align: center;"]:has(div.ad-widget-inner)
 rock.porn#$##int-over { display: none !important; }
 rock.porn#$#body { overflow: auto !important; }
 katestube.com##.pre-block
@@ -81296,6 +81300,7 @@ _800x80_
 ##.html5-ad-progress-list
 ##.hw-ad--frTop
 ##.hyad
+##.hyperAd
 ##.i-amphtml-element.live-updates.render-embed
 ##.i-amphtml-unresolved
 ##.iAdserver

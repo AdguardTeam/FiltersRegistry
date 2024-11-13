@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Bxnor6ltOBhJLw2Qm7FEBw
-! Diff-Path: ../patches/2/2-s-1731512275-3600.patch
+! Checksum: s1D3bfUD+GkAgYAA5vFRcQ
+! Diff-Path: ../patches/2/2-s-1731515886-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.50
-! TimeUpdated: 2024-11-13T15:31:28+00:00
+! Version: 2.3.60.51
+! TimeUpdated: 2024-11-13T16:31:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8367,7 +8367,7 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192841
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=oromoyo.ai
+oromoyo.ai##+js(no-setTimeout-if, await, 5000)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192836
 tempatwisata.pro##+js(nano-setInterval-booster, /counter|Wait/, *, 0.001)
 tempatwisata.pro##+js(no-fetch-if, pagead2.googlesyndication.com)
@@ -34628,10 +34628,8 @@ tempatwisata.pro##+js(window.open-defuser, !/tempatwisata\.pro|shortid/)
 startpage.com###main > div[style^="margin-bottom:"] > div[style^="display: block; padding:"]:has(> div[style^="margin-bottom:"] > svg)
 rostercon.com##.container-sda
 ezyzip.com###right-column div[style*="width:"][style*=":center"]:not([class], [id])
-gamejolt.com##.-leaderboard-ad
-gamejolt.com##._right-scroller div.scroll-affix-container:has(div.ad-widget-inner)
-gamejolt.com##.gj-scroll-affix-placeholder
-gamejolt.com##.-ad-container
+gamejolt.com##.ad-feed-parent > div[class="-item"] > div.text-center:has( div.ad-widget-inner)
+gamejolt.com##.button-group ~ div[style^="text-align: center;"]:has(div.ad-widget-inner)
 rock.porn#$##int-over { display: none !important; }
 rock.porn#$#body { overflow: auto !important; }
 katestube.com##.pre-block
@@ -72017,6 +72015,7 @@ _800x80_
 ##.html5-ad-progress-list
 ##.hw-ad--frTop
 ##.hyad
+##.hyperAd
 ##.i-amphtml-element.live-updates.render-embed
 ##.i-amphtml-unresolved
 ##.iAdserver
