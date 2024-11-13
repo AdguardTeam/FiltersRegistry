@@ -1,9 +1,9 @@
-! Checksum: LdxOlTsFzlX2Sg4x4ZFT3w
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1731483453-3600.patch
+! Checksum: 2vFQQ5m9cqW5f/k1rFf3ng
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1731519502-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.9.77
-! TimeUpdated: 2024-11-13T07:33:50+00:00
+! Version: 2.0.9.78
+! TimeUpdated: 2024-11-13T17:34:22+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=_sgm_campaign
 $removeparam=_sgm_term
@@ -704,18 +704,22 @@ mailchimp.com$removeparam=amp%3Butm_medium
 mailchimp.com$removeparam=amp%3Butm_campaign
 mailchimp.com$removeparam=amp%3Baid
 mailchimp.com$removeparam=amp%3Bafl
+||wetransfer.com^$removeparam=t_lsid
+||wetransfer.com^$removeparam=t_rid
+||wetransfer.com^$removeparam=t_exp
+||wetransfer.com^$removeparam=t_ts
 ||wetransfer.com^$removeparam=trk
 ||wetransfer.com^$removeparam=amp;utm_campaign
 ||wetransfer.com^$removeparam=amp;utm_medium
 ||wetransfer.com^$removeparam=amp;utm_source
-||douyin.com^$removeparam=extra_params
-||douyin.com^$removeparam=previous_page
-||bandcamp.com^$removeparam=from
 ||wetransfer.zendesk.com^$removeparam=amp%3Btrk
 ||wetransfer.zendesk.com^$removeparam=amp%3Btoken
 ||wetransfer.zendesk.com^$removeparam=amp%3Butm_campaign
 ||wetransfer.zendesk.com^$removeparam=amp%3Butm_source
 ||wetransfer.zendesk.com^$removeparam=amp%3Butm_medium
+||douyin.com^$removeparam=extra_params
+||douyin.com^$removeparam=previous_page
+||bandcamp.com^$removeparam=from
 ||dvdfab.org^$removeparam=trackid
 ||dvdfab.org^$removeparam=c_ad
 ||dvdfab.org^$removeparam=c_app
@@ -1607,7 +1611,6 @@ $removeparam=ns_linkname,domain=bbc.com|bbc.co.uk
 $removeparam=ns_fee,domain=bbc.com|bbc.co.uk
 ||office.com^$removeparam=ocid
 $removeparam=refsrc,domain=twitter.com|x.com
-||x.com^$removeparam=ref_src
 $removeparam=ref_src,domain=twitter.com|x.com
 $removeparam=ref_url,domain=twitter.com|x.com
 $removeparam=cxt,domain=twitter.com|x.com
