@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: KzEZkxFOrOT8Ax0a0eBSRw
-! Diff-Path: ../patches/16/16-s-1731501688-3600.patch
+! Checksum: awI4bDWS4N0oDzi0agDD5Q
+! Diff-Path: ../patches/16/16-s-1731508689-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.2
-! TimeUpdated: 2024-11-13T12:36:52+00:00
+! Version: 2.0.48.3
+! TimeUpdated: 2024-11-13T14:34:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -224,9 +224,9 @@ monumentum.fr##+js(abort-current-script, document.getElementById, Blocking Ads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147842
 japscan.lol##+js(no-setTimeout-if, getElementById)
 japscan.lol##+js(addEventListener-defuser, load, setTimeout)
-japscan.lol##+js(remove-node-text, script, /7([\'"`]\+[\'"`])?2([\'"`]\+[\'"`])?8([\'"`]\+[\'"`])?x([\'"`]\+[\'"`])?9([\'"`]\+[\'"`])?0|replaceChildren/)
+japscan.lol##+js(remove-node-text, script, /(7|\\u0037)([\'"`]\+[\'"`])?(2|\\u0032)([\'"`]\+[\'"`])?(8|\\u0038)([\'"`]\+[\'"`])?(x|\\u0078)([\'"`]\+[\'"`])?(9|\\u0039)([\'"`]\+[\'"`])?(0|\\u0030)|(r|\\u0072)([\'"`]\+[\'"`])?(e|\\u0065)([\'"`]\+[\'"`])?(p|\\u0070)([\'"`]\+[\'"`])?(l|\\u006c)([\'"`]\+[\'"`])?(a|\\u0061)([\'"`]\+[\'"`])?(c|\\u0063)([\'"`]\+[\'"`])?(e|\\u0065)([\'"`]\+[\'"`])?(C|\\u0043)([\'"`]\+[\'"`])?(h|\\u0068)([\'"`]\+[\'"`])?(i|\\u0069)([\'"`]\+[\'"`])?(l|\\u006c)([\'"`]\+[\'"`])?(d|\\u0064)([\'"`]\+[\'"`])?(r|\\u0072)([\'"`]\+[\'"`])?(e|\\u0065)([\'"`]\+[\'"`])?(n||\\u006e)/)
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a[href^="http://www.toueapo.shop/"] { text-indent: -5000px !important; }
-japscan.lol##+js(addEventListener-defuser, DOMContentLoaded, iPhone)
+japscan.lol##+js(addEventListener-defuser, DOMContentLoaded, Samsung)
 $script,xmlhttprequest,redirect-rule=noop.js,domain=japscan.lol
 @@$image,domain=japscan.lol
 @@||japscan.lol^$image,xmlhttprequest,script,~third-party
@@ -1779,6 +1779,9 @@ hsreplay.net#@#.ads-container
 @@||prod.adspsp.com/adb.*.min.js$domain=healthline.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160601
 @@||img.dorzeczy.pl/*static/*.css
+! https://github.com/AdguardTeam/AdguardFilters/issues/192425
+! https://github.com/uBlockOrigin/uAssets/issues/19469
+@@||yospace.com/csm/*.mpd$xmlhttprequest,domain=m6.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160011
 123-movies.*#@#.fake_player
 123-movies.*#@#a[href="#tab-ad"]
