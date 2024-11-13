@@ -1,9 +1,9 @@
-! Checksum: E7a2r7qx70+nl1xzCFUXqA
-! Diff-Path: ../patches/14/14-s-1731490632-3600.patch
+! Checksum: kD0/twAMk85ojpRWs+G4RA
+! Diff-Path: ../patches/14/14-s-1731498082-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.56
-! TimeUpdated: 2024-11-13T09:33:51+00:00
+! Version: 2.2.13.57
+! TimeUpdated: 2024-11-13T11:37:41+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2502,6 +2502,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+panascais.net,essential.gg##.storage-banner[aria-label="Cookie dialog"]
 sakhalinmedia.ru##.cookies-wrap
 la3eb.com##div[class^="AllowCookiesDisclaimer"]
 madcatz.com###cookirPolicy
@@ -15588,7 +15589,6 @@ rocketjobs.pl,hellohr.pl#%#//scriptlet('set-cookie', 'cookiesPopup', '1')
 atelier801.com#%#//scriptlet('set-cookie', 'cb-enabled', 'true')
 snap.com#%#//scriptlet('set-cookie', 'sc-cookies-accepted', 'true')
 meteoprog.pl#%#//scriptlet('prevent-setTimeout', 'gdpr')
-infosecurity24.pl,defence24.pl,cyberdefence24.pl,energetyka24.com,space24.pl,defence24.com#%#(function() { try { if ('undefined' != typeof localStorage) { localStorage.setItem('privacy2022', '{"required":true,"performance":false,"functional":true,"marketing":false,"analytics":false}') } } catch (ex) {} })();
 filen.io#%#//scriptlet('set-cookie', 'cookieConsent', 'yes')
 hellotv.nl#%#//scriptlet('set-cookie', 'cookieConsentClosed', 'true')
 qatarairways.com#%#//scriptlet("set-cookie", "cookie_visited", "true")
@@ -24769,6 +24769,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+temu.com##div[role="main"] > div[class^="container-"]:has(> div[class^="wrap-"] > div[class^="guideText-"] + div[class^="guideButton-"])
 e.mail.ru,octavius.mail.ru###octavius-notify-third-party-analytics-data
 quotidianodipuglia.it###mp-placeholder
 gamechampions.com#%#//scriptlet('set-constant', 'displayModal', 'false')
@@ -40543,6 +40544,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+temu.com#%#//scriptlet('trusted-click-element', 'div[class^="downloadUI-"] > div[class^="closeArea-"]', '', '800')
 trip.com##.h5-install-banner
 mail.proton.me##.content-container > div[aria-label="Notification"]:has(> a[href*="webapp-mail-topbanner"])
 s.shufoo.net##a[id][rel^="app_appeal_btn"]
@@ -40605,7 +40607,7 @@ level.travel##div[class^="DesktopAppBanner__Container"]
 level.travel#%#//scriptlet('trusted-set-cookie', 'lt_go_to_app_mobile_popup', 'hiding')
 level.travel##div[class^="dynamicDataWrapper-module__appBannersWrapper"]
 perekrestok.ru#%#//scriptlet('trusted-click-element', 'button.app-banner-close', '', '800')
-magnit.ru##.install-app-banner
+m.sonyunara.jp,magnit.ru##.install-app-banner
 lenta.com##.fl-embedded-wrapper
 navitime.co.jp###body-left > div.section:has(> a[href="https://www.navitime.co.jp/pcstorage/html/japan_travel/english/"])
 megamarket.ru##.header-entry-point__app > a
