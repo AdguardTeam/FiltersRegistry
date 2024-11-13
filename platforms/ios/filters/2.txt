@@ -1,9 +1,9 @@
-! Checksum: BIOyha0PfY4pFifVQOKrow
-! Diff-Path: ../patches/2/2-s-1731483450-3600.patch
+! Checksum: Rjh5IK3QixiwICzeUcPFIA
+! Diff-Path: ../patches/2/2-s-1731487224-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.42
-! TimeUpdated: 2024-11-13T07:31:25+00:00
+! Version: 2.3.60.43
+! TimeUpdated: 2024-11-13T08:31:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8624,6 +8624,12 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192832
+startpage.com#%#//scriptlet('spoof-css', '.ad.a-bg', 'display', 'block')
+startpage.com#%#//scriptlet('trusted-set-constant', 's1PxyAdsTag', '"01234567890123456789"')
+! https://github.com/AdguardTeam/AdguardFilters/issues/192178
+zeperfs.com#@#.adLink
+zeperfs.com###alertemsg
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192838
 reverse-dictionary.virock.org#%#//scriptlet('set-constant', 'adsbygoogle', 'emptyArr')
 virock.org#@#ins.adsbygoogle[data-ad-slot]
@@ -23623,6 +23629,7 @@ movie76.com##img[alt="ads"]
 !---------------------------------------------------------------------
 ! NOTE: Italian
 !
+hdblog.it#?##news_page1 > article:has(> p[class] > span.toplabel > span:contains(Sponsor))
 corriere.it##div[style="min-height: 1500px;"]
 corriere.it###box_mkt_hp_spalla_dx
 corriere.it###pno_manina_2024_inline
@@ -37324,6 +37331,7 @@ lovelive-petitsoku.com,infinityfree.com,tportal.hr,cool-style.com.tw,rabitsokuho
 ##script[async] + script + div > span[style] > a[href^="https://html-load.com/contents/"][style][target="_top"]
 ##script[async] + script + script + script + div[id^="img_"]
 ##script + div:not([class]):not([id]) > script + script[src] + script + div[id^="img_"] > script + script + span[id^="img_"]
+@@||jin115.com^$generichide
 @@||rostercon.com^$generichide
 @@||heureka.cz^$generichide
 @@||dogdrip.net^$generichide
@@ -37580,6 +37588,7 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+startpage.com###main > div[style^="margin-bottom:"] > div[style^="display: block; padding:"]:has(> div[style^="margin-bottom:"] > svg)
 rostercon.com##.container-sda
 ezyzip.com###right-column div[style*="width:"][style*=":center"]:not([class], [id])
 gamejolt.com##.-leaderboard-ad
@@ -61697,7 +61706,6 @@ implbits.com#@#.banner_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175300
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175302
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176360
-! https://github.com/AdguardTeam/AdguardFilters/issues/174957
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175211
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175116
 ! https://github.com/List-KR/List-KR/issues/896
