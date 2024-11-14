@@ -1,9 +1,9 @@
-! Checksum: aIoDrBXsKnGUkNR2im1+zA
-! Diff-Path: ../patches/23/23-s-1731573702-3600.patch
+! Checksum: KO0grxY0LiQjzSCeJqbvRQ
+! Diff-Path: ../patches/23/23-s-1731623828-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.5.61
-! TimeUpdated: 2024-11-14T08:37:39+00:00
+! Version: 2.0.5.62
+! TimeUpdated: 2024-11-14T22:33:46+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4442,8 +4442,6 @@ ashdi.vip#%#//scriptlet('trusted-replace-node-text', 'script', 'eval', '|preroll
 root-nation.com#%#//scriptlet('set-constant', 'td_ad_background_click_link', 'undefined')
 ! silf.ua - popup
 silf.ua#%#//scriptlet('abort-on-property-read', 'parent.window.opener')
-! https://github.com/AdguardTeam/AdguardFilters/issues/113914
-kharkivoda.gov.ua#%#AG_onLoad(function () {var el = document.querySelector('.sharethis-inline-share-buttons'); var regex = /Поделиться|Поділиться/; if (el && el.previousSibling && el.previousSibling.textContent.match(regex)){el.previousSibling.remove();}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73757
 ain.ua#%#//scriptlet('prevent-window-open', '/\/special\//')
 ! proagro.com.ua - убран рекламный клик
@@ -4460,19 +4458,6 @@ comments.ua#%#//scriptlet("abort-current-inline-script", "script.onerror", "eval
 comments.ua#%#//scriptlet("abort-current-inline-script", "document.getElementsByTagName", "html_brain_link")
 ! marketgid.com V3
 freerutor.me#%#//scriptlet("abort-current-inline-script", "MarketGidJSON")
-! https://forum.adguard.com/index.php?threads/26986/
-meta.ua#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('AD_DOMAIN_URL') == 0) { window[key] = undefined; } }; });
-! novostimira ads (WS)
-realist.online#%#window.WebSocket = function() {};
-comments.ua#%#AG_onLoad(function() { window.getWss = function() {}; });
-dialog.ua,depo.ua,zp.today#%#window.atob = function() { };
-asn.in.ua#%#window.atob = function() { };
-! https://forum.adguard.com/index.php?threads/17434/
-znaj.ua#%#window.flag_gtrf = true;
-! strana.in.ua - кликандер
-strana.in.ua#%#AG_onLoad(function() { window.GetCookie = function() { return 'haha'; }; });
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/287
-thepiratebay.com.ua#%#window.open = function() {};
 !
 !-----------------------
 !------- CSS -----------
@@ -4612,7 +4597,7 @@ unian.net#$#.social-shares { visibility: hidden!important; }
 ! ##.ad
 liga.net,appstorrent.ru,graniru.org,3dnews.ru,zaks.ru,ukranews.com,mr-7.ru,ferra.ru,cont.ws,riavrn.ru,maanimo.com,begaem.com,passion.ru,gq.ru,agravery.com,appsgames.ru,buhgalteria.ru,dumskaya.net,hotcharts.xyz,klops.ru,mmovote.ru,molnet.ru,news.pn,newsru.co.il,shazoo.ru##.ad
 ! ##.adv
-progroshi.news,thepage.ua,newsru.co.il,freetone.org,infox.ru,internet-technologies.ru,xcadr.tv,dota2.ru,newkaliningrad.ru,reestr.rublacklist.net,ringon.site,glavcom.ua,qna.center,afanasy.biz,happymonday.ua,xcadr.org,dugtor.ru,trud.ru,amic.ru,dugtor.org,kinoafisha.info,niknews.mk.ua,sovety.net,vesti.uz,vestivrn.ru,wotsite.net##.adv
+progroshi.news,thepage.ua,newsru.co.il,freetone.org,infox.ru,internet-technologies.ru,xcadr.tv,dota2.ru,newkaliningrad.ru,reestr.rublacklist.net,ringon.site,glavcom.ua,qna.center,afanasy.biz,happymonday.ua,xcadr.org,dugtor.ru,trud.ru,amic.ru,dugtor.org,kinoafisha.info,niknews.mk.ua,sovety.net,vesti.uz,wotsite.net##.adv
 ! ##center > a[rel="nofollow"] > img
 faptime.ru,kremlinmedia.ru,cyberpedia.su,megaobuchalka.ru,rsload.net,gig-games.net,only-soft.org,freetp.org,10torrent.net,7themes.su,a-age.ru,babestar.ru,biblprog.org.ua,cwer.me,cwer.ru,dc-marvel.ru,dom-filmov.net,fast-torrent.co,frogik.ru,gighub.net,goldenshara.org,goodkino.biz,hd-bit.net,kingdia.com,kino-live2.org,kinocok.com,mskd-ru.net,nashynogi.ru,openssource.biz,pornotor.org,ru-zerkalo.org,rutorent.net,rutorgames.org,seasontor.com,serialpro.net,torentor.co,torentor.net,torrent-am.net,torrent2games.net,torrentik.co,vectornews.net,wotpack.ru,xatab-repack.net##center > a[rel="nofollow"] > img
 ! ##center > a[target="_blank"] > img

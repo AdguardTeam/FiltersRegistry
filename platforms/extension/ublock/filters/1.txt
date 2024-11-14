@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 8cS1FlqvVLmndraZCj4jPQ
-! Diff-Path: ../patches/1/1-s-1731598681-3600.patch
+! Checksum: oQQN/2QFMZP0RK1l1UxzNQ
+! Diff-Path: ../patches/1/1-s-1731623839-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.40
-! TimeUpdated: 2024-11-14T15:31:15+00:00
+! Version: 2.0.95.41
+! TimeUpdated: 2024-11-14T22:31:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4500,13 +4500,6 @@ api-video.khl.ru##+js(no-xhr-if, an.yandex.ru)
 @@||olegon.ru/ads/advert.js
 olegon.ru###okmenu > div[style^="font-weight: bold;"]
 olegon.ru###someshith
-! https://github.com/AdguardTeam/AdguardFilters/issues/140815
-docs-python.ru##+js(no-setTimeout-if, resolve)
-docs-python.ru#$#nav { visibility: visible !important; }
-docs-python.ru#$#aside { visibility: visible !important; }
-docs-python.ru#$##container-share-error { visibility: visible !important; }
-docs-python.ru#$##donate-row { visibility: visible !important; }
-docs-python.ru#$#pre { color: #212529 !important; user-select: text !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138822
 @@||staticmv.mediavitrina.ru/yastatic/ads.js$domain=player.mediavitrina.ru
 ! antiadblock
@@ -4675,9 +4668,6 @@ poli-vsp.ru#@##adSense
 helpsetup.ru#$##solnisko111 { height: 1px!important; }
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,important,domain=helpsetup.ru
 ||mc.yandex.ru/metrika/tag.js$script,redirect=noop.js,important,domain=helpsetup.ru
-! https://github.com/AdguardTeam/AdguardFilters/issues/63514
-!+ NOT_PLATFORM(windows, mac, android)
-pronpic.org#$##teaser + div[id] { height: 1px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74166
 balticlivecam.com##+js(no-setTimeout-if, isAdsBlock, 5000)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51401
@@ -5236,6 +5226,7 @@ ok.ru##.exit-popup > *
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3070
 vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!important; left: -3000px!important; }
 !
+forums.overclockers.ru##+js(set-constant, chkA, noopFunc)
 ~forums.overclockers.ru,overclockers.ru##+js(abort-on-property-read, cardinals)
 !
 ||overclockers.ru/static/js/app-pip.js|$script,redirect=noop.js,important
@@ -5308,8 +5299,6 @@ qq-new.ru##.xenOverlay
 ! https://forum.adguard.com/index.php?threads/7182/
 @@||svetmonet.ru^$generichide
 ! https://forum.adguard.com/index.php?threads/11090/
-! https://forum.adguard.com/index.php?threads/11020/
-info-mage.ru###helpme
 ! kinogb.net
 ||kinogb.net/js/lev-lisun.js
 ! https://forum.adguard.com/index.php?threads/17789/
@@ -5451,10 +5440,6 @@ tree.tv#@##adverts
 @@||37.220.36.15^$elemhide
 ! remoteshaman.com - anti-adblock message
 @@||remoteshaman.com/*/ads.js
-! megogo.net
-megogo.net##.Overlay_adb
-megogo.net##.brand__shifter
-megogo.net#$##player_object { display: block!important; }
 ! http://forum.adguard.com/showthread.php?6038
 spec-komp.com##.adb
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/651
@@ -6027,8 +6012,6 @@ strip2.in,spaces.im,modsanandroid.ru##+js(abort-on-property-read, MobiAds)
 vesti.uz##+js(abort-current-script, document.createElement, rtIsWebSocket)
 ! forum.fonarevka.ru - ads
 forum.fonarevka.ru##+js(abort-current-script, atob, _0x)
-! https://github.com/AdguardTeam/AdguardFilters/issues/26157
-! https://forum.adguard.com/index.php?threads/29400/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/18300
 synthira.ru##+js(abort-current-script, document.write, adsteroid)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/84516
@@ -6038,42 +6021,24 @@ gamer-info.com##+js(abort-current-script, $, /\$\(\'\.roarticlecol\'\)\.height\(
 sberometer.ru##+js(abort-current-script, document.addEventListener, place_rvn)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42288
 spaces.im,spaces-blogs.com,strip2.me##+js(set-constant, mobiads_loader, noopFunc)
-! https://github.com/AdguardTeam/AdguardFilters/issues/11775
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11776
 economistua.com##+js(set-constant, onlyBodyClick, noopFunc)
-! https://github.com/AdguardTeam/AdguardFilters/issues/11174
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9168
 ruclip.com##+js(abort-current-script, atob, decodeURIComponent)
-! https://forum.adguard.com/index.php?threads/24201/
 ! https://forum.adguard.com/index.php?threads/23865/
 fainaidea.com##+js(abort-on-property-read, td_ad_background_click_link)
-! https://forum.adguard.com/index.php?threads/23005/
-! https://forum.adguard.com/index.php?threads/22979/
-! unionpeer.com - удаление отступа сверху
-! https://forum.adguard.com/index.php?threads/22416/
-! https://github.com/AdguardTeam/AdguardFilters/issues/4527
 ! https://forum.adguard.com/index.php?threads/33157/
 @@||pr-cy.ru/js/ad1.js
-! https://forum.adguard.com/index.php?threads/15549/
 ! politeka.net - side banners
 ! kinozal.me,kinozal.tv - break WS loader script
-! vk.com - Adguard style was removed
-! https://forum.adguard.com/index.php?threads/10196/
-! https://forum.adguard.com/index.php?threads/9958/
-! https://forum.adguard.com/index.php?threads/9960/
-! vestivrn.ru - удаление кликабельности фона
 ! http://forum.adguard.com/showthread.php?9737
-! lets-play.tv - удаление кликабельности фона
 ! http://forum.adguard.com/showthread.php?9567
 ! clickunder
 ! http://www.yaplakal.com/forum44/topic894652.html - clickunder на странице перехода по ссылке (после клика на любой ссылке)
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/126
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/590
-! http://forum.adguard.com/showthread.php?5821
 ! unionpeer.org - кликандер
-! http://forum.adguard.com/showthread.php?7163
 ! For Moscow metro Wi-Fi
-!
 !
 ! Yandex search
 !
@@ -7055,8 +7020,6 @@ vk.com#$##ads_left { position: absolute; top: -2500px; }
 got.vg#$#body > #Page { margin-top: 60px!important; }
 ! http://forum.adguard.com/showthread.php?9699
 bikepost.ru#$#.ooDgoDoo { height: 0!important; }
-! http://forum.adguard.com/showthread.php?9625
-lets-play.tv#$##branding {padding-top: 0!important; }
 ! the-rutor.org,new-rutor.org - удаление отступа сверху
 37.1.207.65,new-rutor.org#$##brand-frame { display: none !important; }
 37.1.207.65,new-rutor.org#$##main-wrapper { padding: 0 !important; }
@@ -7294,7 +7257,7 @@ www.kinopoisk.ru##div[class*="styles_height250__"]
 ! ##.ad
 liga.net,appstorrent.ru,graniru.org,3dnews.ru,zaks.ru,ukranews.com,mr-7.ru,ferra.ru,cont.ws,riavrn.ru,maanimo.com,begaem.com,passion.ru,gq.ru,agravery.com,appsgames.ru,buhgalteria.ru,dumskaya.net,hotcharts.xyz,klops.ru,mmovote.ru,molnet.ru,news.pn,newsru.co.il,shazoo.ru##.ad
 ! ##.adv
-progroshi.news,thepage.ua,newsru.co.il,freetone.org,infox.ru,internet-technologies.ru,xcadr.tv,dota2.ru,newkaliningrad.ru,reestr.rublacklist.net,ringon.site,glavcom.ua,qna.center,afanasy.biz,happymonday.ua,xcadr.org,dugtor.ru,trud.ru,amic.ru,dugtor.org,kinoafisha.info,niknews.mk.ua,sovety.net,vesti.uz,vestivrn.ru,wotsite.net##.adv
+progroshi.news,thepage.ua,newsru.co.il,freetone.org,infox.ru,internet-technologies.ru,xcadr.tv,dota2.ru,newkaliningrad.ru,reestr.rublacklist.net,ringon.site,glavcom.ua,qna.center,afanasy.biz,happymonday.ua,xcadr.org,dugtor.ru,trud.ru,amic.ru,dugtor.org,kinoafisha.info,niknews.mk.ua,sovety.net,vesti.uz,wotsite.net##.adv
 ! ##center > a[rel="nofollow"] > img
 faptime.ru,kremlinmedia.ru,cyberpedia.su,megaobuchalka.ru,rsload.net,gig-games.net,only-soft.org,freetp.org,10torrent.net,7themes.su,a-age.ru,babestar.ru,biblprog.org.ua,cwer.me,cwer.ru,dc-marvel.ru,dom-filmov.net,fast-torrent.co,frogik.ru,gighub.net,goldenshara.org,goodkino.biz,hd-bit.net,kingdia.com,kino-live2.org,kinocok.com,mskd-ru.net,nashynogi.ru,openssource.biz,pornotor.org,ru-zerkalo.org,rutorent.net,rutorgames.org,seasontor.com,serialpro.net,torentor.co,torentor.net,torrent-am.net,torrent2games.net,torrentik.co,vectornews.net,wotpack.ru,xatab-repack.net##center > a[rel="nofollow"] > img
 ! ##center > a[target="_blank"] > img
@@ -13150,7 +13113,6 @@ sob.ru##.adv-page-tgb
 kun.uz##.adv-wrapper
 aex.ru,tele.ru,consmed.ru##.adv-youdo
 vedom.ru##.adv__banner
-vestivrn.ru##.adv__horizontal
 oren.ru##.adv_block
 ffclub.ru##.adv_center
 gurutestov.ru##.adv_collumn
@@ -16611,7 +16573,6 @@ webware.ru/*/clients/
 ||lenmit.com^$third-party
 ||leporno.org/russian.js
 ||letitbit.net/images/skymonk/
-||lets-play.tv/_/branding.jpg
 ||lib.ru/KARTINKI/krutilka/
 ||lib.rus.ec/ads/
 ||lifehacker.ru/wp-content/uploads/2015/09/3-1-1_1442837449-1024x294.png
@@ -17527,7 +17488,7 @@ azfiles.ru##div[id^="ad_center_"]
 agroxxi.ru,kinosklad.com,muzofon.com##.brending
 /banner/*$domain=kinokosmos.ru|vidal.ru|web-ip.ru|gaming-torrent.net|medi.ru|promebelclub.ru|prosmarttv.ru|tehnari.ru
 /images/banner_$domain=chelovek-online.ru|ozersk74.ru|vgoru.org
-/images/banners/*$domain=0-50.ru|19rus.info|animaunt.ru|aniplay.tv|antimuh.ru|asmlocator.ru|autogrodno.by|avtovolgograda.ru|bvedomosti.ru|byflyhelp.by|cxem.net|dknews.kz|express-prigorod.ru|gamemag.ru|gorod342.ru|gtrkchita.ru|hevc.club|hornews.com|huawei.mobzon.ru|info83.ru|infokam.su|iskra-news.ru|izmail-city.org|kaluga.ru|kamchatinfo.com|kyzyl-online.ru|metalinfo.ru|mirnov.ru|mo-taxi.ru|nashdisk.ru|ngregion.ru|nikopolnews.net|nikvesti.com|nokstv.ru|novosti.respublika.cz|novosti44.ru|nu-stars.com|obzor.press|occlub.ru|ok-inform.ru|osipinfo.by|penzadoctor.ru|pkforum.ru|post-tracker.ru|prague-express.cz|prozak.info|ria-m.tv|seopult.tv|sevkavportal.ru|shkvarki.org|snowrock.ru|spbwmcasher.ru|stu.ru|ua-independent.com|uglich-online.ru|ulyanovskcity.ru|uz24.uz|valetudo.ru|vechor.ru|vestivrn.ru|vseprosport.ru|vybortv.ru|wow-only.ru|xn--90aiasbk5as2f.xn--p1ai|l2op.ru|mycity.by|darkmoney.de|ndn.info|stranakrovi.com|kartoteka.by|ng.kz|xlib.info|volkovysknews.by|ppt.ru|ufocar.ru|abnews.ru|mos-holidays.ru|город-кингисепп.рф|пышмаинфо.рф
+/images/banners/*$domain=0-50.ru|19rus.info|animaunt.ru|aniplay.tv|antimuh.ru|asmlocator.ru|autogrodno.by|avtovolgograda.ru|bvedomosti.ru|byflyhelp.by|cxem.net|dknews.kz|express-prigorod.ru|gamemag.ru|gorod342.ru|gtrkchita.ru|hevc.club|hornews.com|huawei.mobzon.ru|info83.ru|infokam.su|iskra-news.ru|izmail-city.org|kaluga.ru|kamchatinfo.com|kyzyl-online.ru|metalinfo.ru|mirnov.ru|mo-taxi.ru|nashdisk.ru|ngregion.ru|nikopolnews.net|nikvesti.com|nokstv.ru|novosti.respublika.cz|novosti44.ru|nu-stars.com|obzor.press|occlub.ru|ok-inform.ru|osipinfo.by|penzadoctor.ru|pkforum.ru|post-tracker.ru|prague-express.cz|prozak.info|ria-m.tv|seopult.tv|sevkavportal.ru|shkvarki.org|snowrock.ru|spbwmcasher.ru|stu.ru|ua-independent.com|uglich-online.ru|ulyanovskcity.ru|uz24.uz|valetudo.ru|vechor.ru|vseprosport.ru|vybortv.ru|wow-only.ru|xn--90aiasbk5as2f.xn--p1ai|l2op.ru|mycity.by|darkmoney.de|ndn.info|stranakrovi.com|kartoteka.by|ng.kz|xlib.info|volkovysknews.by|ppt.ru|ufocar.ru|abnews.ru|mos-holidays.ru|город-кингисепп.рф|пышмаинфо.рф
 /img/banners/*$domain=skidkaonline.ru|avtoudostoverenie.ru|gadgetblog.ru|grinkod.spb.ru|intermedia.ru|mediametrics.ru|megamult.net|novosti-n.org|nuz.uz|primpress.ru|rbc.ru|revision.ru|track24.ru|vestifinance.ru|xuk.net|megaresheba.ru|sobaka.ru|mytriface.com|place.ge
 /img/b/*$domain=eserver.ru|mctop.su|texnic.ru|timeweb.com
 /porebl/*$script,domain=greenflash.su|ucoz.net|ucoz.ru
@@ -19674,8 +19635,6 @@ gorodkirov.ru#@#.reklama
 ! http://forum.adguard.com/showthread.php?3906
 @@adfox.ru/$domain=ozon.ru
 ozon.ru#@#div[id^="AdFox_banner_"]
-! http://forum.adguard.com/showthread.php?3737
-@@||lets-play.tv/templates/lp/images/banner_
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/279
 @@||static.ngs.ru^$domain=e1.ru
 ! http://forum.adguard.com/showthread.php?3578
