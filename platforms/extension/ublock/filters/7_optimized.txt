@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: id18QkUeGz9XuxE3VbeIzA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1731530245-3600.patch
+! Checksum: 4jW8NXCZoZ77XLzsMjSKcg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1731559032-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.59.22
-! TimeUpdated: 2024-11-13T20:33:34+00:00
+! Version: 2.0.59.23
+! TimeUpdated: 2024-11-14T04:33:05+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 ||adsby.2bet.co.jp^
@@ -388,7 +388,7 @@ yourfones.net##+js(spoof-css, ins.adsbygoogle, display, block)
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 !+ NOT_PLATFORM(ext_chromium_mv3)
-wiki.yjsnpi.nu##+js(remove-node-text, script, /\+[\'"`]\w.+catch/)
+wiki.yjsnpi.nu##+js(remove-node-text, script, /catch.+catch/)
 $subdocument,redirect-rule=noop.html,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#$##comments-loading { display: none !important; }
 @@||wiki.yjsnpi.nu^$image,xmlhttprequest,~third-party
@@ -10260,6 +10260,7 @@ blog.livedoor.jp#?#.plugin-memo > div.side > div#verticalrank:upward(2)
 livedoor.biz,blog.livedoor.jp#?#.plugin-memo > div.side > div.AMvertical:upward(2)
 blog.livedoor.jp#?#.plugin-memo > div.side > iframe[src*="blogparts.dmm.com"]:upward(2)
 blog.livedoor.jp#?#.plugin-memo > div.side > table a[href*="amazon.co.jp/exec"][target="_blank"] > img[src^="https://images-na.ssl-images-amazon.com"]:upward(.plugin-memo)
+blog.livedoor.jp##:matches-path(/goldennews/)a[href^="https://www.amazon.co.jp"],a[href^="https://amzn.to"]
 blog.livedoor.jp##:matches-path(/umadori0726).entry-body > div[align="center"]:has(+ div[class^="google-2ad"])
 blog.livedoor.jp#?#:matches-path(/rbkyn844).sidetitle:contains(スポンサー)
 blog.livedoor.jp#?#.plugin-memo > div.side > center > iframe[src^="//rcm-fe.amazon-adsystem.com"]:upward(3)
