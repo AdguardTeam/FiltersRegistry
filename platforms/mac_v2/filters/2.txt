@@ -1,9 +1,9 @@
-! Checksum: zMIRckz1iQ2YKvkWwvZHTQ
-! Diff-Path: ../patches/2/2-s-1731602271-3600.patch
+! Checksum: Vsl1ayvbQUrwYKXNIQGm2A
+! Diff-Path: ../patches/2/2-s-1731605879-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.68
-! TimeUpdated: 2024-11-14T16:31:25+00:00
+! Version: 2.3.60.69
+! TimeUpdated: 2024-11-14T17:31:34+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -30858,7 +30858,6 @@ novelroom.net#%#//scriptlet("abort-current-inline-script", "Node.prototype.inser
 mysexgames.com#%#//scriptlet("set-constant", "createCanvas", "noopFunc")
 ! edoujin.net - redirection to ads
 edoujin.net#%#//scriptlet('prevent-refresh')
-edoujin.net$$meta[http-equiv="refresh"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/121309
 strtapewithadblock.*,strtapeadblocker.art,strtapeadblocker.*#%#//scriptlet("abort-current-inline-script", "document.createElement", "o.contentWindow.document.createElement")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123687
@@ -35113,6 +35112,7 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+businessinsider.in#?#div[class^="w-full lg:w-[22rem]"] > div.border-grey-400:has(> div > p:contains(Advertisement))
 filespayout.com##.box-content > a[target="_blank"]
 upns.online#%#//scriptlet('prevent-addEventListener', 'click', '_blank')
 cybernews.com##.a-wrapper
@@ -54243,7 +54243,7 @@ thepostmillennial.com##.surfsharkcontent
 !+ NOT_OPTIMIZED
 masalaseen.com##a[target="_blank"] > img
 ! filmy4wap.co.in - popups and ads redirection
-filmy4wap.co.in$$meta[http-equiv="refresh"]
+filmy4wap.co.in#%#//scriptlet('prevent-refresh')
 filmy4wap.co.in#%#//scriptlet('prevent-window-open')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190784
 mashable.com#$#.topadv { height: auto !important; }

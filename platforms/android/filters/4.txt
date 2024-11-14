@@ -1,9 +1,9 @@
-! Checksum: jTFETMjM2Mqo9LSUj+CVTg
-! Diff-Path: ../patches/4/4-s-1731602238-3600.patch
+! Checksum: 8eeUyMnEsgxCkYU9AVpEwg
+! Diff-Path: ../patches/4/4-s-1731605845-3600.patch
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.7.60
-! TimeUpdated: 2024-11-14T16:33:12+00:00
+! Version: 2.1.7.61
+! TimeUpdated: 2024-11-14T17:33:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -387,29 +387,19 @@ sensatsiya.com#%#//scriptlet('remove-in-shadow-dom', '.ss-shr')
 stomp.straitstimes.com#%#(()=>{window.a2a={init(){}}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133855
 kkbox.com#%#//scriptlet('hide-in-shadow-dom', 'share-box')
-! https://github.com/AdguardTeam/AdguardFilters/issues/119421
-brestcity.com#%#AG_onLoad(function() { document.body.innerHTML = document.body.innerHTML.replace(/\sПонравилась новость\?\sПоделитесь\sс\sдрузьями:/g, ""); });
-! https://github.com/AdguardTeam/AdguardFilters/issues/111965
-archive.org#%#AG_onLoad(function() { var el = document.querySelector('.js-playset-items'); if(el) { el.innerHTML = el.innerHTML.replace(/ Share/g,''); } });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102905
 klubjagiellonski.pl#%#//scriptlet('remove-attr', 'href|onclick', 'a[href^="http://twitter.com/intent/tweet?"][onclick]')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94041
 kp.ru#%#//scriptlet('remove-in-shadow-dom', 'span[class^="styled__ShareAmp"]')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67931
 zoomtventertainment.com#%#//scriptlet('hide-in-shadow-dom', '._share_social')
-! https://github.com/AdguardTeam/AdguardFilters/issues/63255
-gorodkiev.com.ua#%#AG_onLoad(() => {const a = document.querySelector('.commentsfacebook');const b = a?.firstElementChild?.previousSibling;if (b) b.remove();});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/63345
 finance.rambler.ru#%#//scriptlet('hide-in-shadow-dom', 'body > div.social')
 finance.rambler.ru#%#//scriptlet('hide-in-shadow-dom', '.social--top')
-! https://github.com/AdguardTeam/AdguardFilters/issues/60188
-businessinsider.in#%#AG_onLoad(function(){location.href.includes("/amp_")&&(new MutationObserver(function(){document.querySelectorAll("div.i-amphtml-next-page-shadow-root").forEach(function(a){a.shadowRoot&&a.shadowRoot.querySelectorAll("div.share_widget:not([style]), div#social:not([style])").forEach(function(b){b.style="display: none !important;"})})})).observe(document,{childList:!0,subtree:!0})});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58976
 himovies.to#%#document.cookie="show_share=true; path=/;";
 ! https://github.com/AdguardTeam/AdguardFilters/issues/13064
 forbes.com#%#//scriptlet('remove-attr', 'href', '.article-body .tweet_quote > a[href^="https://twitter.com/intent/"]')
-! https://github.com/AdguardTeam/AdguardFilters/issues/46696
-yasir252.com#%#AG_onLoad(function(){setTimeout(function(){var a=document.querySelector(".onp-sl-content");if("function"===typeof jQuery&&"object"===typeof bizpanda.lockerOptions&&a)try{a=0;for(var c=Object.keys(bizpanda.lockerOptions);a<c.length;a++){var d=c[a];if(d.includes("onpLock")){var b=bizpanda.lockerOptions[d];b&&jQuery.ajax({url:b.ajaxUrl,method:"post",data:{lockerId:b.lockerId,action:"opanda_loader",hash:b.contentHash},success:function(a){var b=jQuery(".onp-sl-content"),c=jQuery(".onp-sl-social-locker"); b.append(a);b.css("display","block");c.css("display","none")}})}}}catch(e){}},1E3)});
 !
 ~yandex.ru,~wetter.com,~milli-firka.org,~assassinscreed.com,~surfingbird.ru,~samsung.com,~imgur.com,~rockstargames.com#%#var addthis = { init: function() {}, addEventListener: function() {}, button: function() {}, counter: function() {}, update: function() {}, toolbox: function() {}, layers: function() {} };
 hopesandfears.com#%#twttr={events: { bind: function() {} }};
@@ -747,6 +737,8 @@ pcmag.com,onefootball.com,ign.com,israelnationalnews.com,lifehacker.com,cgmagonl
 !
 ! NOTE: Specific rules
 !
+businessinsider.in##.bi-articleshow > div.items-center:has(> div.flex-shrink > button[aria-label="facebook"])
+archive.org#%#//scriptlet('hide-in-shadow-dom', 'button#share')
 ver-online.cc,tuseries.cc##span[style="margin-bottom:30px;"]
 semafor.com##div[class^="styles_mobileShare__"]
 gamejolt.com##.share-card

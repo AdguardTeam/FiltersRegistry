@@ -1,9 +1,9 @@
-! Checksum: SkXeNWL5zkDoemfsh87SBw
-! Diff-Path: ../patches/14/14-s-1731602269-3600.patch
+! Checksum: Jtd7lti7Vyea1/QA7w5qFw
+! Diff-Path: ../patches/14/14-s-1731605877-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.75
-! TimeUpdated: 2024-11-14T16:33:44+00:00
+! Version: 2.2.13.76
+! TimeUpdated: 2024-11-14T17:33:59+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16242,9 +16242,8 @@ gxr.world#%#(()=>{if("adoptedStyleSheets"in document)try{const t=new CSSStyleShe
 afjord-sparebank.no,andebu-sparebank.no,aurskog-sparebank.no,berg-sparebank.no,bien.no,birkenes-sparebank.no,bjugn-sparebank.no,dengulebanken.no,eh-sparebank.no,eika.no,esbank.no,etnedalsparebank.no,gildeskaal-sparebank.no,grong-sparebank.no,gruesparebank.no,haltdalensparebank.no,hegrasparebank.no,hemnesparebank.no,hjartdalbanken.no,hjelmeland-sparebank.no,hsbank.no,jaerensparebank.no,jbf.no,kvinesdalsparebank.no,larvikbanken.no,marker-sparebank.no,melhusbanken.no,nordirekte.no,oasparebank.no,odal-sparebank.no,oppdalsbanken.no,orklasparebank.no,orskogsparebank.no,oslofjordsparebank.no,rindalsbanken.no,romsdalsbanken.no,rorosbanken.no,rsbank.no,skagerraksparebank.no,skuesparebank.no,sn.no,sognbank.no,soknedal-sparebank.no,strommensparebank.no,sunndal-sparebank.no,tinnbank.no,totenbanken.no,tsbank.no,tysnes-sparebank.no,valdressparebank.no,valle-sparebank.no,vekselbanken.no#%#//scriptlet('set-cookie', 'eika_consent_analytics', 'true')
 afjord-sparebank.no,andebu-sparebank.no,aurskog-sparebank.no,berg-sparebank.no,bien.no,birkenes-sparebank.no,bjugn-sparebank.no,dengulebanken.no,eh-sparebank.no,eika.no,esbank.no,etnedalsparebank.no,gildeskaal-sparebank.no,grong-sparebank.no,gruesparebank.no,haltdalensparebank.no,hegrasparebank.no,hemnesparebank.no,hjartdalbanken.no,hjelmeland-sparebank.no,hsbank.no,jaerensparebank.no,jbf.no,kvinesdalsparebank.no,larvikbanken.no,marker-sparebank.no,melhusbanken.no,nordirekte.no,oasparebank.no,odal-sparebank.no,oppdalsbanken.no,orklasparebank.no,orskogsparebank.no,oslofjordsparebank.no,rindalsbanken.no,romsdalsbanken.no,rorosbanken.no,rsbank.no,skagerraksparebank.no,skuesparebank.no,sn.no,sognbank.no,soknedal-sparebank.no,strommensparebank.no,sunndal-sparebank.no,tinnbank.no,totenbanken.no,tsbank.no,tysnes-sparebank.no,valdressparebank.no,valle-sparebank.no,vekselbanken.no#%#//scriptlet('set-cookie', 'eika_consent_marketing', 'true')
 afjord-sparebank.no,andebu-sparebank.no,aurskog-sparebank.no,berg-sparebank.no,bien.no,birkenes-sparebank.no,bjugn-sparebank.no,dengulebanken.no,eh-sparebank.no,eika.no,esbank.no,etnedalsparebank.no,gildeskaal-sparebank.no,grong-sparebank.no,gruesparebank.no,haltdalensparebank.no,hegrasparebank.no,hemnesparebank.no,hjartdalbanken.no,hjelmeland-sparebank.no,hsbank.no,jaerensparebank.no,jbf.no,kvinesdalsparebank.no,larvikbanken.no,marker-sparebank.no,melhusbanken.no,nordirekte.no,oasparebank.no,odal-sparebank.no,oppdalsbanken.no,orklasparebank.no,orskogsparebank.no,oslofjordsparebank.no,rindalsbanken.no,romsdalsbanken.no,rorosbanken.no,rsbank.no,skagerraksparebank.no,skuesparebank.no,sn.no,sognbank.no,soknedal-sparebank.no,strommensparebank.no,sunndal-sparebank.no,tinnbank.no,totenbanken.no,tsbank.no,tysnes-sparebank.no,valdressparebank.no,valle-sparebank.no,vekselbanken.no#%#//scriptlet('set-cookie', 'eika_consent_set', 'true')
-! TODO: remove when `trusted-set-local-storage-item` will be available in all AdGuard release verions
 ! https://github.com/AdguardTeam/AdguardFilters/issues/141023
-szkolenia.pfp.com.pl#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('persist:cookies', '{"isAccepted":"true"}'); };
+szkolenia.pfp.com.pl#%#//scriptlet('trusted-set-local-storage-item', 'persist:cookies', '{"isAccepted":"true"}')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167103
 sky.it#%#//scriptlet('trusted-click-element', 'button[title^="ACCETTA TUTTI I COOKIES"]')
 ! TODO: rewrite and move to top when https://github.com/AdguardTeam/Scriptlets/issues/284 is resolved
@@ -33212,6 +33211,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+businessinsider.in#?#.bi-articleshow > div.border-grey-400:has(> div.container > div > span:contains(BI NEWSLETTER))
 inverse.com##aside > div > div[class*=" "]:has(form > div > input[type="email"])
 sakhalinmedia.ru###soc_invites_block
 fanatical.com##.product-giveaway-newsletter-required
@@ -41707,7 +41707,7 @@ myhome.nifty.com,service.smt.docomo.ne.jp##.app_info
 myhome.nifty.com##.selfmade-smart-app-banner
 myhome.nifty.com##.block-fixed-banner-induction-to-app
 myhome.nifty.com##.toappstore
-tv.wp.pl#%#(function(){try{"undefined"!==typeof localStorage&&(localStorage.setItem(`promo-info`,`{"closeDatetime":${Date.now()}}`))}catch(a){}})();
+tv.wp.pl#%#//scriptlet('trusted-set-local-storage-item', 'promo-info', '{"appLinkVisited":false,"closeDatetime":1751604073749}')
 kwork.ru##.recommendation-app
 yahoo.co.jp###bnr_app
 dokusho-ojikan.jp##.sc-1tsub89-0.eGoBZQ
@@ -42316,7 +42316,6 @@ m.augsburger-allgemeine.de###piano_wrapper_unten
 dictionary.goo.ne.jp#$#.appDlPc__inner { visibility: hidden !important; }
 m.hoyolab.com#%#//scriptlet('set-local-storage-item', 'closedAppHeader', '1')
 jp.stanby.com,theriver.jp##div[class^="app-banner"]
-stanby.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem('app_banner_close', '{"value":"close"}') } } catch (ex) {} })();
 kids-doctor.jp,ecosia.org,pierrotshop.jp##.cta
 hoyolab.com##.mhy-download-section
 mihoyo.com,hoyolab.com##.mhy-hoyolab-app-header
@@ -43503,7 +43502,6 @@ kompas.com#%#//scriptlet('set-cookie', 'cbapps_close', '1')
 kinopovtor1.online#%#//scriptlet("abort-on-property-read", "stickyConfig")
 m.kwejk.pl#%#(function(){var a=new Date;a=a.getFullYear()+"-"+(a.getMonth()+1)+"-"+a.getDate();document.cookie="closed="+a})();
 akinator.mobi#%#document.cookie="com.digidust.elokence.akinator.freemium-smartbanner-closed=true; path=/;";
-yemek.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("smartAppStatus", "false") } } catch (ex) {} })();
 m.jbzd.cc,m.jbzdy.cc#%#//scriptlet('set-cookie','play-creation', '1')
 finanzen.net,vodafone.cz,m.jdsports.co.uk,mmajunkie.com#%#document.cookie="sb-closed=true; path=/;";
 fcn.de,kq2.com,kdrv.com,wfft.com,wtva.com,wktv.com,actionnewsnow.com#%#//scriptlet('set-cookie', 'smartbanner-closed', 'true')
@@ -45016,8 +45014,6 @@ chip.de###footer-white-global
 biglobe.ne.jp###spage-bnr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/104390
 meduza.io##div[class^="AnnouncementInText-module_root__"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/115016
-banbye.com#%#(function(){try{"undefined"!==typeof localStorage&&(localStorage.getItem("npm-vuex")||localStorage.setItem("npm-vuex",'{"app":{"snackbarMessage":"","snackbarDelay":5000,"snackbar":false},"auth":{"user":{},"token":"","loginDialogDismissed":true}}'))}catch(a){}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100595
 entrepreneur.com###mainDomContainer > noscript + div.bg-gray-200
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102956
@@ -45276,7 +45272,7 @@ hitechplus.in###sidebarrightsc > #HTML2
 ! notion.so - annoyance
 notion.so##.spacer + div.signup-wrap
 ! https://github.com/AdguardTeam/AdguardFilters/issues/90258
-laprovence.com$$meta[http-equiv="refresh"][content="180"]
+laprovence.com#%#//scriptlet('prevent-refresh')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/89747
 ||brief.pl/wp-content/uploads/2021/06/baner-www-750x100px.png
 ! https://github.com/AdguardTeam/AdguardFilters/issues/90105
@@ -52540,8 +52536,6 @@ modshost.net#%#//scriptlet("adjust-setInterval", "timeleft", "*", "0.02")
 codenova-center.web.app#%#//scriptlet("adjust-setInterval", "contador", "*", "0.02")
 ! http://adfoc.us/serve/?id=47525085215776
 adfoc.us#%#//scriptlet("set-constant", "count", "0")
-! https://github.com/AdguardTeam/AdguardFilters/issues/127047
-ghostcloud.ml#%#AG_onLoad(function(){const a=document.querySelector("body > meta[http-equiv=\"refresh\"][content*=\";url=http\"]");if(a)try{const b=a.content?.split(";url=").pop();location.assign(b)}catch(a){}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/126658
 minecraftalpha.net#%#//scriptlet("adjust-setInterval", "Your Link", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/126604
