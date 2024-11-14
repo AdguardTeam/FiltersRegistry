@@ -1,8 +1,8 @@
-! Checksum: 9I2X5lLDEac7QGslktAOSQ
+! Checksum: Xuy2kSuqvE5himQzea23Mg
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.51.28
-! TimeUpdated: 2024-11-14T17:34:05+00:00
+! Version: 2.0.51.29
+! TimeUpdated: 2024-11-14T21:33:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2503,6 +2503,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+pepperdeals.se#%#//scriptlet('trusted-click-element', '.vue-portal-target .vue-portal-target button[data-t="acceptAll"] > span', '', '1000')
 bing.com#%#//scriptlet('trusted-click-element', '#bnp_cookie_banner button#bnp_btn_reject', '', '1000')
 kyonavi.kyoto.travel#%#//scriptlet('set-cookie', 'ktaAgreed', 'false')
 intloop.com##.cookie-opt
@@ -6905,6 +6906,7 @@ kuveytturk.com.tr##.ins-politika
 amara.org#$#div[class^="cookie-consent"] { display: none !important; }
 amara.org#$#body { overflow: auto !important; }
 ||api.workwise.io/cookieConsents
+workwise.io#%#//scriptlet('trusted-click-element', '.ReactModalPortal button:last-child span')
 museenkoeln.de###ac_cookiebanner
 emall.by,edostavka.by##div[class^="accept-cookies_"]
 theyetee.com##.js--cookies
@@ -16372,6 +16374,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/192592
+@@||api.workwise.io/cookieConsents$domain=workwise.io
 !
 @@||bbcgoodfood.com/unified/wrapperMessagingWithoutDetection.js$domain=bbcgoodfood.com
 bbcgoodfood.com#%#//scriptlet('trusted-click-element', '.message-component > button[title="More Options"]')
