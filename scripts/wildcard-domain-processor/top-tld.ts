@@ -5,6 +5,7 @@
  * If this list is modified, re-run the script that collects wildcards manually to ensure consistency.
  */
 export const TOP_LEVEL_DOMAIN_LIST = [
+    'adult',
     'ac.id',
     'ac.in',
     'ac.ir',
@@ -30,6 +31,7 @@ export const TOP_LEVEL_DOMAIN_LIST = [
     'ca',
     'cc',
     'ch',
+    'ci',
     'cl',
     'cloud',
     'club',
@@ -95,15 +97,6 @@ export const TOP_LEVEL_DOMAIN_LIST = [
     'go.id',
     'go.th',
     'gob.mx',
-    'gov',
-    'gov.bd',
-    'gov.co',
-    'gov.in',
-    'gov.my',
-    'gov.np',
-    'gov.tr',
-    'gov.ua',
-    'gov.vn',
     'gr',
     'guru',
     'hk',
