@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.59.47",
-			"timeUpdated": "2024-11-14T17:01:13+0000",
+			"version": "2.1.59.48",
+			"timeUpdated": "2024-11-14T21:01:23+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.59.46",
-			"timeUpdated": "2024-11-14T17:01:14+0000",
+			"version": "2.1.59.47",
+			"timeUpdated": "2024-11-14T21:01:24+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1311,8 +1311,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.20.1",
-			"timeUpdated": "2024-11-14T05:01:45+0000",
+			"version": "2.0.20.2",
+			"timeUpdated": "2024-11-14T21:01:59+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1369,8 +1369,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/SerboCroatianList.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.54",
-			"timeUpdated": "2024-11-03T01:01:55+0000",
+			"version": "2.0.0.55",
+			"timeUpdated": "2024-11-14T21:02:10+0000",
 			"deprecated": false,
 			"languages": [
 				"sr",
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.52.78",
-			"timeUpdated": "2024-11-14T17:02:00+0000",
+			"version": "2.0.52.79",
+			"timeUpdated": "2024-11-14T21:02:11+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
