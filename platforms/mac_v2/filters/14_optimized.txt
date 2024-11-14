@@ -1,9 +1,9 @@
-! Checksum: lR8K/sNPaA1EMh85fzGr0A
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1731584393-3600.patch
+! Checksum: Js3xJM7bT9TyNUSRBmWRSw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1731587915-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.70
-! TimeUpdated: 2024-11-14T11:35:07+00:00
+! Version: 2.2.13.71
+! TimeUpdated: 2024-11-14T12:34:07+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1380,6 +1380,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
 scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
+bing.com#%#//scriptlet('trusted-click-element', '#bnp_cookie_banner button#bnp_btn_reject', '', '1000')
 kyonavi.kyoto.travel#%#//scriptlet('set-cookie', 'ktaAgreed', 'false')
 intloop.com##.cookie-opt
 info.b-platform.biz##div[class^="fs-cc-banner_component"]
@@ -2034,8 +2035,6 @@ anthropic.com##div[class^="ConsentBanner_"]
 getir.com##div[data-testid="cookie-permission"]
 on24.ee#%#//scriptlet('trusted-set-cookie', 'cookieConsent', 'a000')
 revolut.com#%#//scriptlet('trusted-set-cookie', 'rev_cookie_consent', '{%22preferences%22:false%2C%22analytics%22:false%2C%22advertising%22:false}')
-bing.com##div[id^="bnp"]:has(> #bnp_cookie_banner)
-bing.com#$#html[style="overflow: hidden;"] { overflow: auto !important; }
 ||kaup24.ee/*/home/cookiebox
 renlife.ru##.popap_cookie
 nowymarketing.pl#%#//scriptlet('trusted-set-cookie', 'cmplz_banner-status', 'dismissed')
@@ -7188,8 +7187,7 @@ asklepios.com#%#//scriptlet('set-cookie', 'askk.cookie-overlay-shown', 'true')
 vorteilshop.com,hagengrote.de#%#//scriptlet('abort-current-inline-script', '$', '#modal-consent')
 hildegardis-krankenhaus.de,st-agatha-krankenhaus.de#%#//scriptlet("abort-current-inline-script", "document.createElement", "consent.cookiebot.com")
 swoodoo.com,momondo.*#%#//scriptlet('set-cookie', 'DATA_CONSENT', 'false')
-schuh-okay.de,abc-schuhe.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("cookiePreference", "required") } } catch (ex) {} })();
-eneba.com#%#(function(){try{"undefined"==typeof localStorage||localStorage.getItem("termsUnderstood")||localStorage.setItem("termsUnderstood",Date.now())}catch(a){}})();
+schuh-okay.de,abc-schuhe.com#%#//scriptlet('trusted-set-local-storage-item', 'cookiePreference', 'required')
 eneba.com#%#//scriptlet('set-cookie', 'cconsent', '1')
 digital-fuer-deutschland.de,deutsche-islam-konferenz.de,auslandsschulwesen.de,bamf.de,bvl.bund.de#%#document.cookie="cookiebanner=closed; path=/;";
 onlineshop-baumarkt.de#%#//scriptlet('set-cookie', 'mnd-cookie-accepted-wwwonlineshopbaumarktde1', '1')
@@ -19606,9 +19604,6 @@ yahoo.com,arukereso.hu###app-promo
 zhihu.com##.MobileAppHeader-downloadLink
 zhihu.com##.ViewAllInappCard
 zhihu.com##.OpenInAppButton
-bing.com#$#body > div[id^="bnp.nid"] { display: none !important; }
-bing.com#$#html[style="overflow: hidden;"] { overflow: visible !important; }
-bing.com#$#html[style^="background:"][style$="overflow: hidden;"] { overflow: visible !important; }
 avito.ru##.common-banner
 sina.cn##.fl_qr
 ||static.fastpic.ru/android.png
@@ -21400,7 +21395,7 @@ auto.ru##.Modal:has(> div.Modal__container > div.Modal__content_wrapper div[clas
 regioactive.de##.sitebody > div.inner > div#slider
 www-ettoday-net.cdn.ampproject.org##.googlenews_subscribe
 ||jleague.jp/img/skyscraper/
-itest.5ch.net##p[style]:has(> a[hreaf="https://uplift.5ch.net"])
+itest.5ch.net#?#p[style]:has(> a:matches-attr(/hrea?f/=/^https:\/\/uplift\.5ch\.net$/))
 rb.ru##.custom-tag-banner
 rb.ru##.programms__wrapper
 download.io#%#//scriptlet('trusted-set-cookie-reload', 'dlio_offer_eligible', 'not_eligible')
@@ -22746,7 +22741,7 @@ melongmovie.site#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '
 uploadhaven.com#%#//scriptlet('adjust-setInterval', 'countDown()', '*', '0.28')
 babup.com#%#//scriptlet('adjust-setInterval', 'timer', '*', '0.001')
 file-upload.com#%#//scriptlet('adjust-setTimeout', 'tick', '', '0.02')
-stelux.online,gooltok.com,loiz.store,glo-n.online,jolk.online,minipet.online,spidergame.online,pedalpower.online,offeergames.online,sealat.com,fx4ever.com,businessnews-nigeria.com,day4news.com,net4you.xyz,maos4alaw.online,mamahawa.com,10short.pro#%#//scriptlet('adjust-setInterval', '/proceed|mdtimer/', '*', '0.001')
+wisw.online,stelux.online,gooltok.com,loiz.store,glo-n.online,jolk.online,minipet.online,spidergame.online,pedalpower.online,offeergames.online,sealat.com,fx4ever.com,businessnews-nigeria.com,day4news.com,net4you.xyz,maos4alaw.online,mamahawa.com,10short.pro#%#//scriptlet('adjust-setInterval', '/proceed|mdtimer/', '*', '0.001')
 terbit21.app,lk21static.*#%#//scriptlet('adjust-setInterval', 'time', '*', '0.02')
 present.rssing.com#%#//scriptlet('adjust-setTimeout', 'setC', '1000', '0.001')
 djrudrabasti.in#%#//scriptlet('adjust-setInterval', 'Popup will close in', '*', '0.001')

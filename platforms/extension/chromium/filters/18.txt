@@ -1,9 +1,9 @@
-! Checksum: wkqMQp28c24v8JslHNyhQw
-! Diff-Path: ../patches/18/18-s-1731584354-3600.patch
+! Checksum: Qjw2dEw4U5ISi6HxLLUzYQ
+! Diff-Path: ../patches/18/18-s-1731587881-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.51.22
-! TimeUpdated: 2024-11-14T11:35:13+00:00
+! Version: 2.0.51.23
+! TimeUpdated: 2024-11-14T12:34:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2504,6 +2504,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+bing.com#%#//scriptlet('trusted-click-element', '#bnp_cookie_banner button#bnp_btn_reject', '', '1000')
 kyonavi.kyoto.travel#%#//scriptlet('set-cookie', 'ktaAgreed', 'false')
 intloop.com##.cookie-opt
 info.b-platform.biz##div[class^="fs-cc-banner_component"]
@@ -3450,8 +3451,6 @@ anthropic.com##div[class^="ConsentBanner_"]
 getir.com##div[data-testid="cookie-permission"]
 on24.ee#%#//scriptlet('trusted-set-cookie', 'cookieConsent', 'a000')
 revolut.com#%#//scriptlet('trusted-set-cookie', 'rev_cookie_consent', '{%22preferences%22:false%2C%22analytics%22:false%2C%22advertising%22:false}')
-bing.com##div[id^="bnp"]:has(> #bnp_cookie_banner)
-bing.com#$#html[style="overflow: hidden;"] { overflow: auto !important; }
 ||kaup24.ee/*/home/cookiebox
 renlife.ru##.popap_cookie
 nowymarketing.pl#%#//scriptlet('trusted-set-cookie', 'cmplz_banner-status', 'dismissed')
@@ -15956,8 +15955,7 @@ asklepios.com#%#//scriptlet('set-cookie', 'askk.cookie-overlay-shown', 'true')
 vorteilshop.com,hagengrote.de#%#//scriptlet('abort-current-inline-script', '$', '#modal-consent')
 hildegardis-krankenhaus.de,st-agatha-krankenhaus.de#%#//scriptlet("abort-current-inline-script", "document.createElement", "consent.cookiebot.com")
 swoodoo.com,momondo.*#%#//scriptlet('set-cookie', 'DATA_CONSENT', 'false')
-schuh-okay.de,abc-schuhe.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("cookiePreference", "required") } } catch (ex) {} })();
-eneba.com#%#(function(){try{"undefined"==typeof localStorage||localStorage.getItem("termsUnderstood")||localStorage.setItem("termsUnderstood",Date.now())}catch(a){}})();
+schuh-okay.de,abc-schuhe.com#%#//scriptlet('trusted-set-local-storage-item', 'cookiePreference', 'required')
 eneba.com#%#//scriptlet('set-cookie', 'cconsent', '1')
 digital-fuer-deutschland.de,deutsche-islam-konferenz.de,auslandsschulwesen.de,bamf.de,bvl.bund.de#%#document.cookie="cookiebanner=closed; path=/;";
 onlineshop-baumarkt.de#%#//scriptlet('set-cookie', 'mnd-cookie-accepted-wwwonlineshopbaumarktde1', '1')
