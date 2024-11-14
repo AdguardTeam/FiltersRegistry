@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.60.59",
-			"timeUpdated": "2024-11-14T06:31:29+0000",
+			"version": "2.3.60.60",
+			"timeUpdated": "2024-11-14T07:31:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.7.57",
-			"timeUpdated": "2024-11-13T17:33:44+0000",
+			"version": "2.1.7.58",
+			"timeUpdated": "2024-11-14T07:35:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/9_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.43",
-			"timeUpdated": "2024-11-13T07:33:30+0000",
+			"version": "2.0.27.44",
+			"timeUpdated": "2024-11-14T07:35:33+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.13.65",
-			"timeUpdated": "2024-11-14T05:33:49+0000",
+			"version": "2.2.13.66",
+			"timeUpdated": "2024-11-14T07:35:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.17",
-			"timeUpdated": "2024-11-14T05:33:54+0000",
+			"version": "2.0.51.18",
+			"timeUpdated": "2024-11-14T07:35:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.73",
-			"timeUpdated": "2024-11-13T12:36:55+0000",
+			"version": "2.0.45.74",
+			"timeUpdated": "2024-11-14T07:35:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
