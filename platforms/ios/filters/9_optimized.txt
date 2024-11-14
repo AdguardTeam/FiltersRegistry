@@ -1,9 +1,9 @@
-! Checksum: ZYFLBFzd4ILTG3wsBv9EJw
-! Diff-Path: ../patches/9_optimized/9_optimized-s-1731570003-3600.patch
+! Checksum: ZFqNRVTAA23qolSMbOIa+Q
+! Diff-Path: ../patches/9_optimized/9_optimized-s-1731602269-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.27.44
-! TimeUpdated: 2024-11-14T07:35:33+00:00
+! Version: 2.0.27.45
+! TimeUpdated: 2024-11-14T16:33:29+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -497,15 +497,16 @@ pobre.wtf#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 @@||suaurl.com^$generichide
 @@||reidoplacar.com^$generichide
 @@||suaads.com^$generichide
+suaurl.com,reidoplacar.com,suaads.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+suaurl.com,reidoplacar.com,suaads.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('prevent-fetch', '/^(?!.*(chrome-extension:)).*$/ method:HEAD')
 suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('prevent-setTimeout', 'Por favor, desative')
 suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('prevent-setInterval', '/adblock|Por favor, desative|adsbygoogle\.js/')
 suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('set-constant', 'cdo', '0')
 suaads.com,reidoplacar.com,suaurl.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', '.innerHTML')
-suaads.com,reidoplacar.com,suaurl.com#%#(function(){document.location.hostname&&AG_onLoad((function(){const d=document.createElement("div");d.classList.add("textads","banner-ads","banner_ads","ad-unit","ad-unit","ad-zone","ad-space","adsbox"),document.body.appendChild(d)}));})();
 @@||ad-delivery.net/px.gif$xmlhttprequest,domain=suaurl.com|reidoplacar.com|suaads.com
 @@||get.optad360.io^$xmlhttprequest,domain=suaurl.com|reidoplacar.com|suaads.com
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=suaurl.com|reidoplacar.com|suaads.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=suaurl.com|reidoplacar.com|suaads.com
 impactoespananoticias.com#%#//scriptlet('set-constant', 'canRunAds', 'true')
 @@||impactoespananoticias.com/static/plugins/ads-prebid.js
 themasterkramers.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
@@ -518,10 +519,6 @@ acortame.xyz#%#!function(){if(-1<window.location.href.indexOf("/#aHR0c")){var a=
 costumbresmexico.com,desbloqueador.site#%#//scriptlet('prevent-fetch', 'ads-twitter.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||static.ads-twitter.com/uwt.js$domain=desbloqueador.site|costumbresmexico.com
-@@||acortalo.net^$generichide
-acortalo.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=acortalo.net
 link-descarga.site##.adp
 link-descarga.site##.adp-underlay
 link-descarga.site#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
@@ -646,9 +643,6 @@ stardeos.com#%#(function(){var b=XMLHttpRequest.prototype.open,c=/pagead2\.googl
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=stardeos.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=netmovies.com.br
 netmovies.com.br#%#//scriptlet('prevent-fetch', '/adsbygoogle.js')
-@@||dxmlinks.site^$generichide
-dxmlinks.site#%#(function(){if(-1<window.location.href.indexOf("/s.php?i="))try{for(var a=location.href.split("/s.php?i=")[1],c=0;10>c;c++){a=atob(a);try{new URL(a);var d=!0}catch(b){d=!1}if(d)try{a=a.replace(/[a-zA-Z]/g,function(b){return String.fromCharCode(("Z">=b?90:122)>=(b=b.charCodeAt(0)+13)?b:b-26)});a=decodeURIComponent(a);window.location=a;break}catch(b){}}}catch(b){}})();
-hdpastes.com#%#AG_onLoad(function(){try{document.querySelectorAll('span > a[href^="/go.php?out="]').forEach(function(c){for(var d=c.getAttribute("href").split("/go.php?out=")[1],e=0;10>e;e++)try{d=atob(d)}catch(g){var b=d.replace(/[a-zA-Z]/g,function(a){return String.fromCharCode(("Z">=a?90:122)>=(a=a.charCodeAt(0)+13)?a:a-26)});b=decodeURIComponent(b);try{new URL(b);var f=!0}catch(a){f=!1}if(f){c.setAttribute("href",b);break}}})}catch(c){}});
 @@||tpc.googlesyndication.com/safeframe/*/html/container.html$domain=muyhistoria.es|marie-claire.es|miarevista.es|muynegociosyeconomia.es|muyinteresante.es
 @@||tpc.googlesyndication.com/safeframe/*/html/container.html$domain=serpadres.es
 @@||static.vocento.com/dab/latest/strategy.js$domain=elcorreo.com
@@ -1065,11 +1059,6 @@ playview.io#%#//scriptlet('set-constant', 'runningAdsAllowed', 'true')
 @@||adservice.google.es/adsid/integrator.js$domain=muyinteresante.es
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@||latinohentai.com^$generichide
-artesacro.org#%#AG_onLoad(function() { var el=document.querySelector('ins.adsbygoogle'); if(el) { el.appendChild(document.createElement('div')); } });
-!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=artesacro.org
-!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
-@@||pagead2.googlesyndication.com/pagead/js/r*/show_ads_impl.js$domain=artesacro.org
 ||lavozdealmeria.es/js/addblock.js
 uol.com.br#$##banner_b { display: block !important; }
 uol.com.br#$#iframe#google_ads_iframe_b { display: block !important; }
@@ -1098,11 +1087,6 @@ vsports.pt#%#window.adblockDetecter = true;
 @@||habboin.net/public/js/fuckadblock.js
 !+ PLATFORM(ios, ext_android_cb)
 @@||habboin.net^$generichide
-bmwfaq.org#%#AG_onLoad(function() { XenForo.rellect.AdBlockDetectorParams = {}; XenForo.rellect.AdBlockDetectorParams.loadScript = function() {}; });
-!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=bmwfaq.org
-!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
-@@||bmwfaq.org^$generichide
 @@||gamersclub.com.br^*/ads.js
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb)
 @@||futbolchile.net^$generichide
@@ -1322,8 +1306,6 @@ suaurl.com#%#//scriptlet('prevent-setTimeout', 'window.location.href')
 suaurl.com#%#//scriptlet('abort-current-inline-script', '$', 'notficationAd')
 suaurl.com#%#//scriptlet('abort-current-inline-script', 'open', 'document.getElementById')
 estacio.br#%#//scriptlet('set-cookie', 'modal_promo', '1')
-mwpaste.com#%#(()=>{try{const o=location.href.split("go?u=");if(o[1]){let t=o[1];for(let o=0;o<10;o++)try{t=atob(t)}catch(o){break}const c=decodeURIComponent(t);c&&location.assign(c)}}catch(o){console.error(o)}})();
-tuserie.net#%#(()=>{window.addEventListener("message",(e=>{e?.data?.includes("tmp")&&e?.data?.length<15&&Object.defineProperty(e,"origin",{value:""})}),!0);const e=new MutationObserver((function(){const t=document.querySelector("button.linkhidder");t&&(e.disconnect(),t.addEventListener("click",(function(){setTimeout((function(){postMessage('{"tmp":""}')}),1e3)})))}));e.observe(document,{childList:!0,subtree:!0})})();
 multipaste.org#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll('.count > li > a[href*="/#!"]').forEach((t=>{const e=(t=>{let e=t;for(let t=0;t<10;t++)try{e=atob(e)}catch(t){break}return e})(t.href.split("/#!")[1]);(t=>{let e=t;try{e=new URL(t)}catch(t){return!1}return"http:"===e.protocol||"https:"===e.protocol})(e)&&t.setAttribute("href",e)}))}));})();
 gourlpro.com#%#!function(){if(window.location.href.includes(".php?")&&window.location.href.includes("=")){const o=location.href.split("=");if(o&&o[1]){let t=o[1];for(let o=0;o<10;o++)try{t=atob(t)}catch(o){const n=decodeURIComponent(t);let c=!1;try{new URL(n),c=!0}catch(o){c=!1}if(c){location.assign(n);break}}}}}();
 myfirstdollar.org,gourlpro.com,adclic.es,adclic.org,mundopolo.net,jurisfera.com,adclicker.info,adclicker.io#%#//scriptlet('set-constant', 'global.noobMaxTry', '0')
@@ -1336,9 +1318,6 @@ desbloquea.me,mega-enlace.com#%#AG_onLoad(function(){try{var a;"function"==typeo
 desbloquea.me,mega-enlace.com#%#(function(){if(-1<window.location.href.indexOf("?i=")){var b=location.href.split("?i=");if(b&&b[1]){b=b[1];for(var f=0;10>f;f++)try{b=atob(b)}catch(a){var g=b.replace(/[a-zA-Z]/g,function(a){return String.fromCharCode(("Z">=a?90:122)>=(a=a.charCodeAt(0)+13)?a:a-26)});try{new URL(g);var d=!0}catch(a){d=!1}if(d){const a=g.includes("|")?g.split("|")[0]:g;window.location=a;break}}}}})();
 enlacito.com#%#AG_onLoad(function(){try{var a;"function"==typeof decode_link&&"string"==typeof link_out&&(a=decode_link(atob(link_out)),location.assign(a)),"string"==typeof api_key&&(document.cookie=`${api_key}=Wn275; path=/`);var b=document.querySelector("* > .button#contador");b&&a&&setTimeout(()=>{var c=b.cloneNode(!0);b.parentNode.replaceChild(c,b),c.addEventListener("click",function(){location.assign(a)},!1)},500)}catch(a){}});
 yourihollier.com#%#(()=>{try{const o=location.href.split("/#");if(o[1]){let t=o[1];for(let o=0;o<10;o++)try{t=atob(t)}catch(o){break}const c=decodeURIComponent(t).split("&url=")[1];c&&location.assign(c)}}catch(o){console.error(o)}})();
-adskeeper.net#%#(()=>{const a=window.fetch,b={apply:async(b,c,d)=>{const e=d[0]instanceof Request?d[0].url:d[0];if("string"!=typeof e||0===e.length)return Reflect.apply(b,c,d);if(-1<e.indexOf("/ajax.php")){const b=await a(...d);let c=await b.text();const e=JSON.parse(c);e?.url&&location.assign(e?.url)}return Reflect.apply(b,c,d)}};try{window.fetch=new Proxy(window.fetch,b)}catch(a){console.debug(a)}})();
-acortalo.net#%#(()=>{const a=window.fetch,b={apply:async(b,c,d)=>{const e=d[0]instanceof Request?d[0].url:d[0];if("string"!=typeof e||0===e.length)return Reflect.apply(b,c,d);if(-1<e.indexOf("/ajax.php")){const b=await a(...d);let c=await b.text();const e=JSON.parse(c);e?.l&&location.assign(e?.l)}return Reflect.apply(b,c,d)}};try{window.fetch=new Proxy(window.fetch,b)}catch(a){console.debug(a)}})();
-mwpaste.com#%#(()=>{const a=window.fetch,b={apply:async(a,b,c)=>{const d=c[0]instanceof Request?c[0].url:c[0];if("string"!=typeof d||0===d.length)return Reflect.apply(a,b,c);if(-1<d.indexOf("&url=")){const a=new URL(d),b=a.searchParams,c=b.get("url");c&&location.assign(c)}return Reflect.apply(a,b,c)}};try{window.fetch=new Proxy(window.fetch,b)}catch(a){console.debug(a)}})();
 geeknetic.es#%#//scriptlet("prevent-window-open")
 safepc.online,solopc.net#%#//scriptlet('set-constant', 'global.noobMaxTry', '0')
 safepc.online,solopc.net#%#(function(){try{var a=location.href.split("out#!");if(a[1]){a=a[1];for(var b=0;10>b;b++){a=atob(a);try{new URL(decodeURIComponent(a));var c=!0}catch(d){c=!1}if(c)try{location.assign(decodeURIComponent(a));break}catch(d){}}}}catch(d){}})();
@@ -1441,10 +1420,9 @@ mwpaste.com#%#(function(){window.open_=window.open;var c=window.open,d=/./;windo
 repelisplus.vip#%#//scriptlet("abort-on-property-read", "adbClick")
 descargaranimehentai.com#%#//scriptlet("abort-on-property-read", "pub")
 redirdx.in#%#//scriptlet("prevent-window-open", "redirdx.in/go/")
-hentai-id.tv#%#AG_onLoad(function(){var a=document.querySelectorAll('a[href*="://ouo.io/"][href*="=http"],a[href*="://ouo.io/"][href*="= http"]');for(var b,c=0;c<a.length;c++)b=a[c].getAttribute("href"),(b=b.split(/^https?:\/\/ouo\.io\/[\S]*?\?.=/))&&a[c].setAttribute("href",b[1])});
+hentai-id.tv#%#//scriptlet('href-sanitizer', 'a[href*="://ouo.io/"]', '?s')
 playpaste.com#%#//scriptlet("prevent-window-open")
 tuhentaionline.com#%#//scriptlet("abort-on-property-read", "Pub2")
-zonammorpg.com#%#AG_onLoad(function() { setTimeout(function() { $('body').unbind('click'); }, 300); });
 futeboltvgratis.com#%#window.open = function() {};
 gnula.nu#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/\(\)>0x0\)\{fA=setTimeout\(/.test(a.toString()))return b(a,c)};})();
 !+ NOT_PLATFORM(windows, mac, android)
@@ -3498,7 +3476,6 @@ mercadolivre.com.br##.menu-myml-ads
 enrt.eu##.banner-inner
 enrt.eu###link-view > a[href][rel="nofollow"] > img
 tioanime.com##.sidebar .banner
-mwpaste.com##.tab_content > p[style="text-align: center;"] > a.button
 lagacetadesalamanca.es###slider-oferplan
 tsf.pt##.t-a-pub-1
 tsf.pt##.t-pubbox-mrec-1

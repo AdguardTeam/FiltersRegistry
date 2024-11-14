@@ -1,9 +1,9 @@
-! Checksum: 9CQM9+KO2oGOnsON25vNCw
-! Diff-Path: ../patches/18/18-s-1731598664-3600.patch
+! Checksum: RwdpjrV1ZYXp7LD2SvEBTA
+! Diff-Path: ../patches/18/18-s-1731602244-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.51.26
-! TimeUpdated: 2024-11-14T15:34:07+00:00
+! Version: 2.0.51.27
+! TimeUpdated: 2024-11-14T16:33:50+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16165,11 +16165,8 @@ linkedin.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.
 fis-ski.com#%#//scriptlet('trusted-set-cookie', 'cookieDisclaimer', 'approved')
 !
 homebook.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,jejswiat.pl,kafeteria.pl,komorkomania.pl,luxlux.pl,medycyna24.pl,mixer.pl,money.pl,nocowanie.pl,open.fm,parenting.pl,pinger.pl,pogodnie.pl,samosia.pl,testwiedzy.pl#%#//scriptlet("set-constant", "__wpjslib__", "emptyObj")
-dane.gov.pl#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("OD_isAcquintedWithRodo", "true") } } catch (ex) {} })();
-jetphotos.com#%#(function() { try { if ("undefined" != typeof localStorage) { localStorage.setItem("cookieConsent", "1") } } catch (ex) {} })();
+dane.gov.pl#%#//scriptlet('trusted-set-local-storage-item', 'OD_isAcquintedWithRodo', '"true"')
 gadgethacks.com#%#//scriptlet("set-constant", "WHT.ShowConsentForm", "trueFunc")
-twitch.tv#%#if (typeof localStorage != 'undefined' && localStorage.setItem) { localStorage.setItem('twilight.gdpr.preferences', '{"version":1,"vendorPreferences":{"amazon":false,"comscore":false,"google":false,"nielsen":false,"salesforce_dmp":false}}'); };
-rtlmost.hu#%#(function(){try{"undefined"==typeof localStorage||localStorage.getItem("termsUnderstood")||localStorage.setItem("gdprUserHasInteracted",Date.now())}catch(a){}})();
 trustarc.com#%#//scriptlet('trusted-click-element', 'a.call')
 autovisie.nl#%#AG_onLoad(function() { setTimeout(function() {if(window.location.href.indexOf("ookie-consent") != -1){ consentOk(); }}, 300); });
 3suisses.fr#%#!function(a,b,c,f,g,d,e){e=a[c]||a['WebKit'+c]||a['Moz'+c],e&&(d=new e(function(){b[f].contains(g)&&(b[f].remove(g),d.disconnect())}),d.observe(b,{attributes:!0,attributeFilter:['class']}))}(window,document.documentElement,'MutationObserver','classList','layer_cookie__visible');
@@ -16330,6 +16327,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+!
+@@||bbcgoodfood.com/unified/wrapperMessagingWithoutDetection.js$domain=bbcgoodfood.com
+bbcgoodfood.com#%#//scriptlet('trusted-click-element', '.message-component > button[title="More Options"]')
+bbcgoodfood.com#%#//scriptlet('trusted-click-element', '.message-component > button[title="REJECT ALL"]', '', '300')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192901
 wubertools.pl#@#.cookie-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192864

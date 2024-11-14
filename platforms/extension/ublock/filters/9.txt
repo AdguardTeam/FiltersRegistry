@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: NE6725UP83bu4jbeuhjQJA
-! Diff-Path: ../patches/9/9-s-1731569998-3600.patch
+! Checksum: Aw4ofkMcg2WU+lKxe+2uKA
+! Diff-Path: ../patches/9/9-s-1731602264-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.27.44
-! TimeUpdated: 2024-11-14T07:35:33+00:00
+! Version: 2.0.27.45
+! TimeUpdated: 2024-11-14T16:33:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -614,6 +614,7 @@ pobre.wtf##+js(no-fetch-if, pagead2.googlesyndication.com)
 @@||suaurl.com^$generichide
 @@||reidoplacar.com^$generichide
 @@||suaads.com^$generichide
+suaurl.com,reidoplacar.com,suaads.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 $xmlhttprequest,redirect-rule=noop.txt,domain=suaurl.com|reidoplacar.com|suaads.com
 suaads.com,reidoplacar.com,suaurl.com##+js(no-fetch-if, /^(?!.*(chrome-extension:)).*$/ method:HEAD)
 suaads.com,reidoplacar.com,suaurl.com##+js(no-setTimeout-if, Por favor\, desative)
@@ -634,9 +635,6 @@ legendei.net##+js(set-constant, eazy_ad_unblocker_msg_var, '')
 csrevo.com##+js(abort-current-script, $, !document.getElementById()
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136557
 costumbresmexico.com,desbloqueador.site##+js(no-fetch-if, ads-twitter.com)
-! https://github.com/AdguardTeam/AdguardFilters/issues/136572
-@@||acortalo.net^$generichide
-acortalo.net##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135094
 link-descarga.site##.adp
 link-descarga.site##.adp-underlay
@@ -785,8 +783,6 @@ link.baixedetudo.net.br##+js(abort-current-script, document.createElement, adblo
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94485
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=netmovies.com.br
 netmovies.com.br##+js(no-fetch-if, /adsbygoogle.js)
-! https://github.com/AdguardTeam/AdguardFilters/issues/94446
-@@||dxmlinks.site^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/92484
 @@||tpc.googlesyndication.com/safeframe/*/html/container.html$domain=muyhistoria.es|marie-claire.es|miarevista.es|muynegociosyeconomia.es|muyinteresante.es
 ! https://github.com/AdguardTeam/AdguardFilters/issues/90442
@@ -1327,11 +1323,6 @@ playview.io##+js(set-constant, runningAdsAllowed, true)
 ! https://forum.adguard.com/index.php?threads/25538/
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 @@||latinohentai.com^$generichide
-! https://github.com/AdguardTeam/AdguardFilters/issues/6778
-!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=artesacro.org
-!+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
-@@||pagead2.googlesyndication.com/pagead/js/r*/show_ads_impl.js$domain=artesacro.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6788
 ||lavozdealmeria.es/js/addblock.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6766
@@ -1362,7 +1353,6 @@ uol.com.br#$#iframe#google_ads_iframe_123_bait { display: block !important; }
 @@||cdnjs.cloudflare.com/ajax/libs/fuckadblock^$domain=inmanga.com
 ! https://forum.adguard.com/index.php?threads/habboin-net.24436/
 @@||habboin.net/public/js/fuckadblock.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/6326
 ! https://github.com/AdguardTeam/AdguardFilters/issues/12421
 @@||gamersclub.com.br^*/ads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6175
@@ -1676,7 +1666,6 @@ suaurl.com##+js(abort-current-script, $, notficationAd)
 suaurl.com##+js(abort-current-script, open, document.getElementById)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139603
 estacio.br##+js(set-cookie, modal_promo, 1)
-! https://github.com/AdguardTeam/AdguardFilters/issues/177234
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190685
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191026
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178968
@@ -1692,8 +1681,6 @@ myfirstdollar.org,gourlpro.com,adclic.es,adclic.org,mundopolo.net,jurisfera.com,
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156973
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174863
 ! gatonplayseries.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/152316
-! https://github.com/AdguardTeam/AdguardFilters/issues/136572
 ! https://github.com/uBlockOrigin/uAssets/issues/13159#issuecomment-1320248188
 geeknetic.es##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151620
@@ -1878,11 +1865,11 @@ descargaranimehentai.com##+js(abort-on-property-read, pub)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44237
 redirdx.in##+js(window.open-defuser, redirdx.in/go/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41643
+hentai-id.tv##+js(href-sanitizer, a[href*="://ouo.io/"], ?s)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42381
 playpaste.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40879
 tuhentaionline.com##+js(abort-on-property-read, Pub2)
-! https://github.com/AdguardTeam/AdguardFilters/issues/33854
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22053
 ! https://github.com/AdguardTeam/AdguardFilters/issues/21977
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7559
@@ -4076,7 +4063,6 @@ mercadolivre.com.br##.menu-myml-ads
 enrt.eu##.banner-inner
 enrt.eu###link-view > a[href][rel="nofollow"] > img
 tioanime.com##.sidebar .banner
-mwpaste.com##.tab_content > p[style="text-align: center;"] > a.button
 lagacetadesalamanca.es###slider-oferplan
 tsf.pt##.t-a-pub-1
 tsf.pt##.t-pubbox-mrec-1

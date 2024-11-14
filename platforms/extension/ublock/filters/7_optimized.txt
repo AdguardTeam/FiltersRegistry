@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5PQtf+sBwOQ637VoxTrUDg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1731584387-3600.patch
+! Checksum: yVc8ECdQ7wcgz/epm+VEBQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1731602264-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.59.24
-! TimeUpdated: 2024-11-14T11:34:49+00:00
+! Version: 2.0.59.25
+! TimeUpdated: 2024-11-14T16:33:24+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 ||adsby.2bet.co.jp^
@@ -387,6 +387,8 @@ in-jpn.com##.sk-popup-window
 yourfones.net##+js(spoof-css, ins.adsbygoogle, display, block)
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
+!+ NOT_PLATFORM(windows, mac, android, ext_ff, ext_chromium_mv3)
+wiki.yjsnpi.nu##+js(abort-current-script, onload, catch)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 wiki.yjsnpi.nu##+js(remove-node-text, script, /catch.+catch/)
 $subdocument,redirect-rule=noop.html,domain=wiki.yjsnpi.nu
@@ -1295,6 +1297,7 @@ city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.iko
 pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+marshmallow-qa.com##div[style="min-height: 280px"]
 marshmallow-qa.com##main > div.flex:has(> div.flex > div.text-center > div[id] > iframe[id^="google_ads_"])
 city.setagaya.lg.jp###tmp_advert
 anicomigamania.com##div[id^="anico-"]:has(> ins)

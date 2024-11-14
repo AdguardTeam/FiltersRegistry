@@ -1,9 +1,9 @@
-! Checksum: mUn6v940ck+kSsuxozMrjg
-! Diff-Path: ../patches/16/16-s-1731559032-3600.patch
+! Checksum: Thhw9RKuegal9KZD1SaWwA
+! Diff-Path: ../patches/16/16-s-1731602265-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.4
-! TimeUpdated: 2024-11-14T04:33:27+00:00
+! Version: 2.0.48.5
+! TimeUpdated: 2024-11-14T16:33:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -270,9 +270,9 @@ monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementB
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
 japscan.lol#%#//scriptlet('prevent-setTimeout', 'getElementById')
 japscan.lol#%#//scriptlet('prevent-addEventListener', 'load', 'setTimeout')
-japscan.lol#%#//scriptlet('remove-node-text', 'script', 'querySelectorAll')
+japscan.lol#%#//scriptlet("remove-node-text", "script", "exception'")
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a[href^="http://www.toueapo.shop/"] { text-indent: -5000px !important; }
-japscan.lol#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'Motorola')
+japscan.lol#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'Nokia')
 @@$image,domain=japscan.lol
 @@||japscan.lol^$image,xmlhttprequest,script,~third-party
 japscan.lol#@#.tangoai
@@ -704,6 +704,8 @@ canalplus.com#%#//scriptlet('json-prune', 'ads.enableAntiAdBlocking')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37231
 m6.fr#%#//scriptlet('prevent-xhr', 'v.fwmrm.net')
 m6.fr#%#//scriptlet('set-constant', 'Object.prototype.isBlockerDetected', 'false')
+!+ PLATFORM(ios, ext_android_cb)
+@@||v.fwmrm.net/ad/g/1$domain=m6.fr
 !
 ! https://forum.adguard.com/index.php?threads/www-rtlplay-be-tvi-humour-rtl-tvi.29736
 @@||be-rtl.videoplaza.tv/proxy/distributor/$domain=rtlplay.be
