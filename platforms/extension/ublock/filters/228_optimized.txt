@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bzBtbihKbbokDvOOKwJYBw
-! Diff-Path: ../patches/228_optimized/228_optimized-s-1731027945-14400.patch
+! Checksum: KdO5lBFudq/v3RdcPkKRDg
+! Diff-Path: ../patches/228_optimized/228_optimized-s-1731546349-14400.patch
 ! Title: xinggsf (Optimized)
 ! Description: Blocks ads on the Chinese video platforms (MangoTV, DouYu and others).
-! Version: 2.0.2.99
-! TimeUpdated: 2024-11-08T01:01:39+00:00
+! Version: 2.0.3.0
+! TimeUpdated: 2024-11-14T01:01:41+00:00
 ! Expires: 5 days (update frequency)
 @@||bdstatic.com/static/common/widget/ui/admanager/$script,domain=image.baidu.com
 ||cpro.$domain=~baidu.com
@@ -1184,7 +1184,8 @@ show.ssports.com
 v.qq.com##.video-card-module > .card-wrap
 v.qq.com##.quick_games.quick_item, div.game-switch-ad
 qq.com##+js(json-prune, ads ad material.video)
-v.qq.com##+js(no-fetch-if, /(beacon|trace)\.qq\.com/)
+v.qq.com,news.qq.com##+js(no-fetch-if, /(beacon|trace)\.qq\.com/)
+v.qq.com,news.qq.com##+js(no-xhr-if, snowflake.qq.com)
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
 iwan-s.video.qq.com
 gdt.qq.com
@@ -1194,8 +1195,14 @@ cm.l.qq.com
 ||gtimg.com/qqlive/
 ||qzonestyle.gtimg.cn/qzone/biz/ac/comm/$script
 |https://imgcache.qq.com/qzone/biz/comm/js/qbs.js
-new.qq.com##+js(set-constant, SSPAd.prototype.loadAd, noopFunc)
+news.qq.com##+js(set-constant, SSPAd.prototype.loadAd, noopFunc)
 ||news.ssp.qq.com/app
+||ssp.qq.com/ad^$xmlhttprequest
+||staticfile.qq.com/datong/$script
+||staticfile.qq.com/qimei/$script
+||vfiles.gtimg.cn/tvideo/js/new_ping_video.js^$script
+||res.ab.qq.com/tab/$script
+||v.qq.com/cache/wuji/object^$script
 bilibili.com##.ad-report, .ad-floor
 bilibili.com##.gg-floor-module,#slide_ad,a[href^="//cm.bilibili.com"]
 ||api.bilibili.com/x/web-show/res/loc?pf=$~script
