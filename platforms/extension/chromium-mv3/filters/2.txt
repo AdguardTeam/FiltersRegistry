@@ -1,8 +1,8 @@
-! Checksum: XMOZA3gujRZ2FM2XDE6R2w
+! Checksum: ZFhmfwWLPLj6E5+UucYZeg
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.65
-! TimeUpdated: 2024-11-14T12:31:35+00:00
+! Version: 2.3.60.66
+! TimeUpdated: 2024-11-14T13:31:27+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8292,7 +8292,7 @@ unityassets4free.com##body > #scroll-top + div[id][class*=" "]
 freevstplugins.net##body > div#site + div[id][class*=" "]
 majorscans.com,xerifetech.com,gokushiteki.com,warungkomik.com,tarotscans.com,chineseanime.org,ayatoon.com##body > #footer + div[id][class*=" "]
 gemiadamlari.org##body > .normal + div[id][class*=" "]
-rinconpsicologia.com##.site-container + div[id][class*=" "]
+vectogravic.com,rinconpsicologia.com##.site-container + div[id][class*=" "]
 tenbaiquest.com##.drawer-overlay + div[id][class*=" "]
 lapagan.org###return-to-top + div[id][class*=" "]
 bloxo.online,tvappapk.com,violablu.net,villettt.kitchen,chataigpt.org,aitohuman.org,sciencebe21.in,dailyweb.pl,zerogptai.org,fresherbaba.com,nsw2u.com,nsw2u.net,nsw2u.org,nsw2u.in,nsw2u.xyz,nsw2u.com.bd,nsw2u.com.np,nsw2u.gov.bd,nsw2u.gov.np,game-2u.com,rubyskitchenrecipes.uk,know-how-tree.com,nswrom.com##body > #page + div[id][class*=" "]
@@ -8450,6 +8450,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192945
+upns.online#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192598
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=hentaicovid.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192841
@@ -32583,8 +32585,6 @@ peekvids.com#%#window["pop_clicked"] = 1;
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,electrek.co#%#window.canRunAds = true; window.OXHBConfig = {};
 ! qz.com header glitch
 qz.com#%#AG_onLoad(function(){if(document.body.classList){document.body.classList.remove("has-marquee");var a=document.getElementById("settingsNav");a&&a.classList.remove("header-stuck")}});
-! https://forum.adguard.com/index.php?threads/18374/
-dato.porn#%#window.open = function() {};
 ! https://forum.adguard.com/index.php?threads/19046/
 katfile.com#%#AG_onLoad(function() { window.newlink = true; window.bodyclick = true; });
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75252
@@ -32617,15 +32617,11 @@ pcmag.com#%#window.checkState = function() {};
 imagetwist.com#%#AG_onLoad(function() { setTimeout(function() {document.cookie="ppu_sub=1"; document.cookie="ppu_main=1";}, 300); });
 ! https://forum.adguard.com/index.php?threads/9717/
 sportlive.me#%#window.setTimeout=function() {};
-! http://forum.adguard.com/showthread.php?9989
-streamlive.to#%#window.open = function() {};
 ! http://forum.adguard.com/showthread.php?8765
 hltv.org#%#AG_onLoad(function() { window.foo = function(){}; });
 ! http://forum.adguard.com/showthread.php?9338
 pornxs.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'popunder')
 pornxs.com#%#//scriptlet('prevent-setTimeout', 'window.location.href')
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/1642
-play3r.net#%#(function() { var w_open = window.open, regex = /goo.gl/; window.open = function(a, b) { if (typeof a !== 'string' || !regex.test(a)) { w_open(a, b); } }; })();
 ! cpmstar ads
 armorgames.com,onrpg.com,mmohuts.com,newgrounds.com#%#//scriptlet('set-constant', 'cpmstar_siteskin_settings', 'emptyObj')
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1607
@@ -32638,8 +32634,6 @@ thinkcomputers.org#%#window.myatu_bgm = 0;
 datafilehost.com#%#AG_onLoad(function() { setTimeout(function() { document.cbf.cb.checked = false; }, 1000); });
 ! sendspace.com - clickunder
 sendspace.com#%#AG_onLoad(function() { window.runad = function() {} });
-! your-pictures.net - remove redirect by click
-your-pictures.net#%#window.open = function() {};
 ! http://forum.adguard.com/showthread.php?1805
 sendspace.com#%#window.runad = function() {};
 ! filepost.com (fixing popups on low speed download click)
@@ -32654,8 +32648,6 @@ any.gs#%#var parts = document.URL.split("/url/"); if (parts.length == 2 && parts
 zive.cz#%#AG_onLoad(function() { window.VIDEO_AD_ENABLED = false; } );
 ! pornhub.com -- it does not show popups in opera
 pornhub.com,pornhub.org,pornhub.net#%#window.opera = true;
-! http://forum.adguard.com/showthread.php?3431
-secureupload.eu#%#window.open = function() {};
 ! clickunder(empty) http://www.imagebam.com/image/fc3dc3397258172
 imagebam.com#%#window.open = function() {};
 ! http://forum.adguard.com/showthread.php?4971
@@ -34548,7 +34540,13 @@ convertcase.net,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.pl,ec
 !
 ||html-load.com/loader.min.js$domain=issuya.com|pravda.com.ua|lamire.jp|picrew.me|mydaily.co.kr|badmouth1.com|taxguru.in|sportsrec.com|reportera.co.kr|tweaksforgeeks.com|fourfourtwo.co.kr|flatpanelshd.com|wfmz.com|videogamemods.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|eurointegration.com.ua|jin115.com|gloria.hr|etnews.com|carscoops.com|sportsseoul.com|onlinegdb.com|text-compare.com|winfuture.de|hoyme.jp|indiatimes.com|blog.esuteru.com|modhub.us|thatgossip.com|gazetaprawna.pl
 ||content-loader.com/loader.min.js$domain=issuya.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp
+!
+! Removing of iframe[src="about:blank"] causes breakage in FireFox. Use CSS rule in this case
+! #$?#iframe[src="about:blank"] { remove: true; }
+!+ NOT_PLATFORM(ext_ff)
 lovelive-petitsoku.com,infinityfree.com,tportal.hr,cool-style.com.tw,rabitsokuhou.2chblog.jp,infor.pl,forsal.pl,oraridiapertura24.it,suzusoku.blog.jp,yugioh-starlight.com,news4vip.livedoor.biz,onecall2ch.com,laleggepertutti.it,raetsel-hilfe.de,the-crossword-solver.com,allthetests.com,javatpoint.com,globalrph.com,islamicfinder.orgwouldurather.io,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,thatgossip.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,ff14net.2chblog.jp,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#$?#iframe[src="about:blank"] { remove: true; }
+! #$?#iframe[src="about:blank"] { position: absolute !important; left: -3000px !important; }
+!
 ! Common rules, which partially hide banners
 ! END: Ad-Shield ad reinsertion
 !
@@ -34798,6 +34796,8 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+filespayout.com##.box-content > a[target="_blank"]
+upns.online#%#//scriptlet('prevent-addEventListener', 'click', '_blank')
 cybernews.com##.a-wrapper
 cybernews.com##div:has(> div.main-deals)
 cybernews.com##div:has(> div.main-deals) + hr
@@ -34817,6 +34817,8 @@ tempatwisata.pro#%#//scriptlet('prevent-window-open', '!/tempatwisata\.pro|short
 startpage.com###main > div[style^="margin-bottom:"] > div[style^="display: block; padding:"]:has(> div[style^="margin-bottom:"] > svg)
 rostercon.com##.container-sda
 ezyzip.com###right-column div[style*="width:"][style*=":center"]:not([class], [id])
+gamejolt.com##._right-scroller div.scroll-affix-container > div[style^="text-align: center;"]
+gamejolt.com##.-leaderboard-ad
 gamejolt.com##.ad-feed-parent > div[class="-item"] > div.text-center:has( div.ad-widget-inner)
 gamejolt.com##.button-group ~ div[style^="text-align: center;"]:has(div.ad-widget-inner)
 rock.porn#$##int-over { display: none !important; }
@@ -35869,7 +35871,7 @@ gizchina.com##.widget_vw_widget_image_banner
 drudgereport.com##body #DR-DESKTOP-NITRO-TOP
 drudgereport.com##body #DR_AE_AD_INJECTION
 digipuzzle.net###maindiv > tbody > tr > td[style="display:inline-block;width:180px;height:630px;text-align:left"]
-game3rb.com##center > a[rel]
+filespayout.com,game3rb.com##center > a[rel]
 game3rb.com###post-footer:has(> a[target])
 ||tatrck.com/redir/clickGate.php$popup
 hdtoday.tv##div[style^="pointer-events: none; position: absolute;"][style$="z-index: 2147483647;"]
@@ -52844,7 +52846,7 @@ check-host.net##div[class*="sm:text-left"]:has(> span > img[src="/images/close.s
 check-host.net##div[class*=":"]:has(> a[onclick] > img)
 check-host.net#?#*[class*="extra-"]:upward(4)
 check-host.net##.rt-elative
-check-host.net#%#//scriptlet('trusted-set-cookie', 'closen_advertisments', '"aeza-permnnt,privatealps,alexhost,pp-juiaryt2,pp-juiaryt"')
+check-host.net#%#//scriptlet('trusted-set-cookie', 'closem_advertisments', '"aeza-permnnt,privatealps,alexhost,pp-juiaryt2,pp-juiaryt"')
 !
 ! quora.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149846
@@ -78214,6 +78216,7 @@ browsershots.org#@#.advert_area
 ||absentlybiddingleopard.com^
 ||absentlygratefulcamomile.com^
 ||absentlyrindbulk.com^
+||absentmissingaccept.com^
 ||abservinean.com^
 ||abskursin.com^
 ||abslroan.com^
@@ -81982,6 +81985,7 @@ browsershots.org#@#.advert_area
 ||buttersource.com^
 ||buuftxcii.com^
 ||buxbaumiaceae.sbs^
+||buxfmookn.com^
 ||buyadvupfor24.com^
 ||buyeasy.by^
 ||buyfrightencheckup.com^
@@ -87879,6 +87883,7 @@ browsershots.org#@#.advert_area
 ||gloumsie.net^
 ||glounugeepse.xyz^
 ||glouseer.net^
+||glousoonomsy.xyz^
 ||gloussowu.xyz^
 ||gloustoa.net^
 ||gloutanacard.com^
@@ -95117,6 +95122,7 @@ browsershots.org#@#.advert_area
 ||outofthecath.org^
 ||outrotomr.com^
 ||outseeltor.com^
+||outseethoozet.net^
 ||outsetnormalwaited.com^
 ||outseylor.com^
 ||outsimiseara.com^
@@ -98355,6 +98361,7 @@ browsershots.org#@#.advert_area
 ||rhinocerosobtrusive.com^
 ||rhombicsomeday.com^
 ||rhouseoyopers.info^
+||rhoxbneasg.xyz^
 ||rhrim.com^
 ||rhsorga.com^
 ||rhubarbmasterpiece.com^
@@ -102755,6 +102762,7 @@ browsershots.org#@#.advert_area
 ||umoxomv.icu^
 ||umpedshumal.com^
 ||umqmxawxnrcp.com^
+||umtchdhkrx.com^
 ||umtudo.com^
 ||umumallowecouldl.info^
 ||unacceptableclevercapable.com^

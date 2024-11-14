@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: xkAd4L6kh/WU8e0bCdgQ2A
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1731587908-3600.patch
+! Checksum: JxZPU5pImtISYq6R+/rlDA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1731591447-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.60.65
-! TimeUpdated: 2024-11-14T12:31:35+00:00
+! Version: 2.3.60.66
+! TimeUpdated: 2024-11-14T13:31:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8217,7 +8217,7 @@ unityassets4free.com##body > #scroll-top + div[id][class*=" "]
 freevstplugins.net##body > div#site + div[id][class*=" "]
 majorscans.com,xerifetech.com,gokushiteki.com,warungkomik.com,tarotscans.com,chineseanime.org,ayatoon.com##body > #footer + div[id][class*=" "]
 gemiadamlari.org##body > .normal + div[id][class*=" "]
-rinconpsicologia.com##.site-container + div[id][class*=" "]
+vectogravic.com,rinconpsicologia.com##.site-container + div[id][class*=" "]
 tenbaiquest.com##.drawer-overlay + div[id][class*=" "]
 lapagan.org###return-to-top + div[id][class*=" "]
 bloxo.online,tvappapk.com,violablu.net,villettt.kitchen,chataigpt.org,aitohuman.org,sciencebe21.in,dailyweb.pl,zerogptai.org,fresherbaba.com,nsw2u.*,game-2u.com,rubyskitchenrecipes.uk,know-how-tree.com,nswrom.com##body > #page + div[id][class*=" "]
@@ -8369,6 +8369,7 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192945
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192598
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=hentaicovid.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192841
@@ -32522,7 +32523,6 @@ israelnationalnews.com##+js(abort-current-script, Math.random, new RegExp)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11692
 ! https://github.com/AdguardTeam/AdguardFilters/issues/4874
 ! qz.com header glitch
-! https://forum.adguard.com/index.php?threads/18374/
 ! https://forum.adguard.com/index.php?threads/19046/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75252
 ! https://forum.adguard.com/index.php?threads/19043/
@@ -32542,12 +32542,10 @@ motherless.com##+js(abort-current-script, jQuery, secondPop)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2345
 ! https://forum.adguard.com/index.php?threads/10684/
 ! https://forum.adguard.com/index.php?threads/9717/
-! http://forum.adguard.com/showthread.php?9989
 ! http://forum.adguard.com/showthread.php?8765
 ! http://forum.adguard.com/showthread.php?9338
 pornxs.com##+js(addEventListener-defuser, DOMContentLoaded, popunder)
 pornxs.com##+js(no-setTimeout-if, window.location.href)
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/1642
 ! cpmstar ads
 armorgames.com,onrpg.com,mmohuts.com,newgrounds.com##+js(set-constant, cpmstar_siteskin_settings, {})
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1607
@@ -32557,14 +32555,12 @@ spectrum.ieee.org##+js(set-constant, splashpage, undefined)
 ! clickable background
 ! datafilehost.com - disable loader
 ! sendspace.com - clickunder
-! your-pictures.net - remove redirect by click
 ! http://forum.adguard.com/showthread.php?1805
 ! filepost.com (fixing popups on low speed download click)
 ! ilive.to  (found on http://freetvall.com/video/5U2B12R6R878/CNN-USA)
 ! any.gs autoredirect
 ! Fixing zive.cz video ad
 ! pornhub.com -- it does not show popups in opera
-! http://forum.adguard.com/showthread.php?3431
 ! clickunder(empty) http://www.imagebam.com/image/fc3dc3397258172
 ! http://forum.adguard.com/showthread.php?4971
 ! zippymoviez.com - clickunder
@@ -34414,7 +34410,13 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 ! START: Ad-Shield ad reinsertion
 ||07c225f3.online/loader.min.js$domain=edaily.co.kr|tenasia.hankyung.com
 !
+!
+! Removing of iframe[src="about:blank"] causes breakage in FireFox. Use CSS rule in this case
+! #$?#iframe[src="about:blank"] { remove: true; }
+!+ NOT_PLATFORM(ext_ff)
 lovelive-petitsoku.com,infinityfree.com,tportal.hr,cool-style.com.tw,rabitsokuhou.2chblog.jp,infor.pl,forsal.pl,oraridiapertura24.it,suzusoku.blog.jp,yugioh-starlight.com,news4vip.livedoor.biz,onecall2ch.com,laleggepertutti.it,raetsel-hilfe.de,the-crossword-solver.com,allthetests.com,javatpoint.com,globalrph.com,islamicfinder.orgwouldurather.io,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,thatgossip.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,ff14net.2chblog.jp,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#$?#iframe[src="about:blank"] { remove: true; }
+! #$?#iframe[src="about:blank"] { position: absolute !important; left: -3000px !important; }
+!
 ! Common rules, which partially hide banners
 ! END: Ad-Shield ad reinsertion
 !
@@ -34632,6 +34634,8 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+filespayout.com##.box-content > a[target="_blank"]
+upns.online##+js(addEventListener-defuser, click, _blank)
 cybernews.com##.a-wrapper
 cybernews.com##div:has(> div.main-deals)
 cybernews.com##div:has(> div.main-deals) + hr
@@ -34651,6 +34655,8 @@ tempatwisata.pro##+js(window.open-defuser, !/tempatwisata\.pro|shortid/)
 startpage.com###main > div[style^="margin-bottom:"] > div[style^="display: block; padding:"]:has(> div[style^="margin-bottom:"] > svg)
 rostercon.com##.container-sda
 ezyzip.com###right-column div[style*="width:"][style*=":center"]:not([class], [id])
+gamejolt.com##._right-scroller div.scroll-affix-container > div[style^="text-align: center;"]
+gamejolt.com##.-leaderboard-ad
 gamejolt.com##.ad-feed-parent > div[class="-item"] > div.text-center:has( div.ad-widget-inner)
 gamejolt.com##.button-group ~ div[style^="text-align: center;"]:has(div.ad-widget-inner)
 rock.porn#$##int-over { display: none !important; }
@@ -35694,7 +35700,7 @@ gizchina.com##.widget_vw_widget_image_banner
 drudgereport.com##body #DR-DESKTOP-NITRO-TOP
 drudgereport.com##body #DR_AE_AD_INJECTION
 digipuzzle.net###maindiv > tbody > tr > td[style="display:inline-block;width:180px;height:630px;text-align:left"]
-game3rb.com##center > a[rel]
+filespayout.com,game3rb.com##center > a[rel]
 game3rb.com###post-footer:has(> a[target])
 ||tatrck.com/redir/clickGate.php$popup
 hdtoday.tv##div[style^="pointer-events: none; position: absolute;"][style$="z-index: 2147483647;"]
