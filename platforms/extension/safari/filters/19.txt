@@ -1,9 +1,9 @@
-! Checksum: 2iVWW5IwTHZOv6hUHR80Og
-! Diff-Path: ../patches/19/19-s-1731670735-3600.patch
+! Checksum: 0s0BKke6OzuD2wotABy4FQ
+! Diff-Path: ../patches/19/19-s-1731677871-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.45.82
-! TimeUpdated: 2024-11-15T11:35:13+00:00
+! Version: 2.0.45.83
+! TimeUpdated: 2024-11-15T13:34:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4559,6 +4559,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+trip.com###h5_gg_prompt_parent_id
 ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
 ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] { display: none !important; }
 ajc.com,inews.co.uk#$#html > body.tp-modal-open { overflow: auto !important; position: static !important; height: auto !important; touch-action: auto !important; }
@@ -6151,8 +6152,8 @@ radarbox.com#?#body > div > .modal-component:has(> .content > a[href^="https://t
 sweetwater.com##.site-contact--verbose
 teknosa.com#%#//scriptlet('remove-class', 'header-infobar-active', 'body')
 ilsole24ore.com##.popout-video--popout
-ilsole24ore.com##.styleguide-modal
-ilsole24ore.com##.modal-backdrop
+ilsole24ore.com#$#body.modal-open { overflow: auto !important; }
+ilsole24ore.com#%#//scriptlet('prevent-addEventListener', 'mouseleave', 'recommended')
 eranda.jp##.m_floatFooter
 bloomberglinea.com.br##.block-sticky.bottom-right
 russian.rt.com##.Popup-arabic
@@ -11493,7 +11494,9 @@ easy-deutsch.de#%#AG_onLoad(function() { setTimeout(function() { var el = docume
 ! twitter.com##div[data-testid="BottomBar"]
 !
 !+ NOT_OPTIMIZED
-trip.com##.tcp-h5-install-pop__reward
+trip.com#$#.tcp-h5-install-pop__reward { display: none!important; }
+!+ NOT_OPTIMIZED
+trip.com#$#body { overflow: auto !important; }
 !+ NOT_OPTIMIZED
 casabrutus.com##.fixed.bottom-32
 !+ NOT_OPTIMIZED

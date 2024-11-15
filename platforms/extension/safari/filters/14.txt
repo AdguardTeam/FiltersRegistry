@@ -1,9 +1,9 @@
-! Checksum: Iro7BUTI5KRmlHAOHyst7A
-! Diff-Path: ../patches/14/14-s-1731674446-3600.patch
+! Checksum: aNsvrldaYnGKUPoQ1LE+8A
+! Diff-Path: ../patches/14/14-s-1731677869-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.85
-! TimeUpdated: 2024-11-15T12:36:26+00:00
+! Version: 2.2.13.86
+! TimeUpdated: 2024-11-15T13:34:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16354,6 +16354,8 @@ hgtv.com#@##onetrust-consent-sdk
 @@||bbcgoodfood.com/unified/wrapperMessagingWithoutDetection.js$domain=bbcgoodfood.com
 bbcgoodfood.com#%#//scriptlet('trusted-click-element', '.message-component > button[title="More Options"]')
 bbcgoodfood.com#%#//scriptlet('trusted-click-element', '.message-component > button[title="REJECT ALL"]', '', '300')
+! https://github.com/AdguardTeam/AdguardFilters/issues/193030
+@@||transcend-cdn.com/*/ui.js$domain=support.1password.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192901
 wubertools.pl#@#.cookie-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192864
@@ -25076,6 +25078,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+trip.com###h5_gg_prompt_parent_id
 ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
 ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] { display: none !important; }
 ajc.com,inews.co.uk#$#html > body.tp-modal-open { overflow: auto !important; position: static !important; height: auto !important; touch-action: auto !important; }
@@ -26668,8 +26671,8 @@ radarbox.com#?#body > div > .modal-component:has(> .content > a[href^="https://t
 sweetwater.com##.site-contact--verbose
 teknosa.com#%#//scriptlet('remove-class', 'header-infobar-active', 'body')
 ilsole24ore.com##.popout-video--popout
-ilsole24ore.com##.styleguide-modal
-ilsole24ore.com##.modal-backdrop
+ilsole24ore.com#$#body.modal-open { overflow: auto !important; }
+ilsole24ore.com#%#//scriptlet('prevent-addEventListener', 'mouseleave', 'recommended')
 eranda.jp##.m_floatFooter
 bloomberglinea.com.br##.block-sticky.bottom-right
 russian.rt.com##.Popup-arabic
@@ -32010,7 +32013,9 @@ easy-deutsch.de#%#AG_onLoad(function() { setTimeout(function() { var el = docume
 ! twitter.com##div[data-testid="BottomBar"]
 !
 !+ NOT_OPTIMIZED
-trip.com##.tcp-h5-install-pop__reward
+trip.com#$#.tcp-h5-install-pop__reward { display: none!important; }
+!+ NOT_OPTIMIZED
+trip.com#$#body { overflow: auto !important; }
 !+ NOT_OPTIMIZED
 casabrutus.com##.fixed.bottom-32
 !+ NOT_OPTIMIZED

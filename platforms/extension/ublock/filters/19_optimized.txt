@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: VPW8mTVk+j7V0UPRfcP7Qg
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1731670740-3600.patch
+! Checksum: 6iJtt9Bm4kgFmz/VOeh5MA
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1731677873-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.45.82
-! TimeUpdated: 2024-11-15T11:35:13+00:00
+! Version: 2.0.45.83
+! TimeUpdated: 2024-11-15T13:34:09+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*##:matches-path(/images).AdvMastHead
@@ -2562,6 +2562,7 @@ api.flocktory.com
 ||accounts.google.com/gsi/client^$third-party,script,domain=dtf.ru|stackoverflow.com|vc.ru|pikabu.ru|nytimes.com|baltimoresun.com|rozetka.com.ua|estadao.com.br|medium.com|gzt.com|mercurynews.com|drukarnia.com.ua|diffchecker.com|kaystls.site|kaystls.site|overclock.net|nissanclub.com|crazygames.com|notion.so|usnews.com|nypost.com|etnownews.com|timesnownews.com|menshealth.com|themirror.com|cq.ru|voetbalzone.nl|perplexity.ai|lefigaro.fr|lifehacker.ru|app.notta.ai|vnexpress.net
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+trip.com###h5_gg_prompt_parent_id
 ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
 ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] { display: none !important; }
 ajc.com,inews.co.uk#$#html > body.tp-modal-open { overflow: auto !important; position: static !important; height: auto !important; touch-action: auto !important; }
@@ -3541,8 +3542,8 @@ focus.de#$#.cls_videoRecoCT > div > div[style*="width: 360px; position: fixed;"]
 sweetwater.com##.site-contact--verbose
 teknosa.com##+js(remove-class, header-infobar-active, body)
 ilsole24ore.com##.popout-video--popout
-ilsole24ore.com##.styleguide-modal
-ilsole24ore.com##.modal-backdrop
+ilsole24ore.com#$#body.modal-open { overflow: auto !important; }
+ilsole24ore.com##+js(addEventListener-defuser, mouseleave, recommended)
 eranda.jp##.m_floatFooter
 bloomberglinea.com.br##.block-sticky.bottom-right
 open.spotify.com#?#body > div.ReactModalPortal:has(> div > div[aria-label="In-App Message Modal"])
@@ -5273,7 +5274,9 @@ facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.ac
 catalogmineralov.ru#$#body { overflow: visible!important; }
 bomb01.com#$#.modal-open { overflow: visible!important; }
 !+ NOT_OPTIMIZED
-trip.com##.tcp-h5-install-pop__reward
+trip.com#$#.tcp-h5-install-pop__reward { display: none!important; }
+!+ NOT_OPTIMIZED
+trip.com#$#body { overflow: auto !important; }
 !+ NOT_OPTIMIZED
 casabrutus.com##.fixed.bottom-32
 !+ NOT_OPTIMIZED

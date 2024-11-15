@@ -1,9 +1,9 @@
-! Checksum: ZQTFY6ONMKmm+6Bu/JUkPw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1731674417-3600.patch
+! Checksum: EykMXrn7PqP9PcyOx+GXBw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1731677855-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.85
-! TimeUpdated: 2024-11-15T12:36:26+00:00
+! Version: 2.2.13.86
+! TimeUpdated: 2024-11-15T13:34:02+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -7481,6 +7481,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 @@||bbcgoodfood.com/unified/wrapperMessagingWithoutDetection.js$domain=bbcgoodfood.com
 bbcgoodfood.com#%#//scriptlet('trusted-click-element', '.message-component > button[title="More Options"]')
 bbcgoodfood.com#%#//scriptlet('trusted-click-element', '.message-component > button[title="REJECT ALL"]', '', '300')
+@@||transcend-cdn.com/*/ui.js$domain=support.1password.com
 wubertools.pl#@#.cookie-modal
 @@||delivery.consentmanager.net/delivery/cmp.php$domain=sii.org.pl
 @@||app.usercentrics.eu/browser-ui/*.js$domain=sennheiser.com
@@ -11700,6 +11701,7 @@ api.flocktory.com
 ||accounts.google.com/gsi/client^$third-party,script,domain=dtf.ru|stackoverflow.com|vc.ru|pikabu.ru|nytimes.com|baltimoresun.com|rozetka.com.ua|estadao.com.br|medium.com|gzt.com|mercurynews.com|drukarnia.com.ua|diffchecker.com|kaystls.site|kaystls.site|overclock.net|nissanclub.com|crazygames.com|notion.so|usnews.com|nypost.com|etnownews.com|timesnownews.com|menshealth.com|themirror.com|cq.ru|voetbalzone.nl|perplexity.ai|lefigaro.fr|lifehacker.ru|app.notta.ai|vnexpress.net
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+trip.com###h5_gg_prompt_parent_id
 ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
 ajc.com,inews.co.uk#$#div[class^="tp-modal"][style^="z-index: 300050; display: block;"] { display: none !important; }
 ajc.com,inews.co.uk#$#html > body.tp-modal-open { overflow: auto !important; position: static !important; height: auto !important; touch-action: auto !important; }
@@ -12724,8 +12726,8 @@ focus.de#$#.cls_videoRecoCT > div > div[style*="width: 360px; position: fixed;"]
 sweetwater.com##.site-contact--verbose
 teknosa.com#%#//scriptlet('remove-class', 'header-infobar-active', 'body')
 ilsole24ore.com##.popout-video--popout
-ilsole24ore.com##.styleguide-modal
-ilsole24ore.com##.modal-backdrop
+ilsole24ore.com#$#body.modal-open { overflow: auto !important; }
+ilsole24ore.com#%#//scriptlet('prevent-addEventListener', 'mouseleave', 'recommended')
 eranda.jp##.m_floatFooter
 bloomberglinea.com.br##.block-sticky.bottom-right
 open.spotify.com#?#body > div.ReactModalPortal:has(> div > div[aria-label="In-App Message Modal"])
@@ -14472,7 +14474,9 @@ bomb01.com#$#.modal-open { overflow: visible!important; }
 easy-deutsch.de#%#AG_onLoad(function() { document.querySelector('html').style.cssText+=';overflow: auto!important'; });
 easy-deutsch.de#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector('.tve-leads-slide-in.tve-tl-anim'); if (el) {el.remove()} }, 2500); });
 !+ NOT_OPTIMIZED
-trip.com##.tcp-h5-install-pop__reward
+trip.com#$#.tcp-h5-install-pop__reward { display: none!important; }
+!+ NOT_OPTIMIZED
+trip.com#$#body { overflow: auto !important; }
 !+ NOT_OPTIMIZED
 casabrutus.com##.fixed.bottom-32
 !+ NOT_OPTIMIZED
