@@ -1,5 +1,5 @@
-! Checksum: AKiSTl0bMMFgYXKmMJrHXw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1731603964-14400.patch
+! Checksum: 6kMZdWKPVz6ABVQ0+eo8dQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1731647164-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.57
@@ -148,7 +148,6 @@ drivereasy.com#?#.pakb-content div.info.note:has-text(drivereasy.com)
 drivereasy.com#?#.pakb-content img[sizes^="(max-width: 80"]
 drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 drivereasy.com#?#.pakb-content img[sizes^="(max-width: 79"]
-drivereasy.com#?#.pakb-content p:has-text(click Update All)
 cfoc.org###top_custom_banner
 appuals.com##p + div > div:first-of-type
 softwaretested.com##.st-alternative
@@ -375,6 +374,7 @@ coolrom.com.au,coolrom.com##.download_link
 27.220.253.78$network
 !+ PLATFORM(windows, mac, android)
 192.3.194.242$network
+||traversedlp.com^$all
 ||trkk4.com^$document,domain=~malware-redirection-trains.*
 !+ PLATFORM(windows, mac, android)
 23.94.26.138$network
@@ -892,6 +892,7 @@ coolrom.com.au,coolrom.com##.download_link
 !+ PLATFORM(windows, mac, android)
 192.243.61.227$network
 ||darknesstrace.com^$all
+||katecrochetvanity.com^$all
 ||tobaccosturgeon.com^$all
 !+ PLATFORM(windows, mac, android)
 167.71.252.38$network
@@ -2065,7 +2066,6 @@ vg.no###comments
 indiatimes.com##div[class$="cmtwrapper "]
 ghacks.net###comments
 color-hex.com##.txtgray
-color-hex.com##.well-sm.well.commentcontainer
 color-hex.com##a[href="#comments"]
 rule34.paheal.net###comment-list-recent
 rule34.xxx###comment-list
@@ -2286,14 +2286,8 @@ play.max.com##div[class*=Gradient-Beam-]:empty
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
 bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 playpilot.com##.ratings
-www.google.*,ipv6.google.com##.g .r:has(a[href*=".imdb.com"]) + .s > div > div:first-of-type
-www.google.*,ipv6.google.com##div[data-async-context^="query:"] > .g > div:has(a[href*=".imdb.com"]) g-review-stars:upward(1)
-www.google.*,ipv6.google.com##div[data-async-context^="query:"] > .g:has(a[href*=".imdb.com/"]) div:has(> g-review-stars)
-www.google.*,ipv6.google.com##.g:has(a[href*="imdb.com"]) g-review-stars:upward(1)
-www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
 www.google.*,ipv6.google.com#?#.g:has-text(imdb.com › title) div[data-snf]:has(g-bubble)
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
-www.google.*,ipv6.google.com##.g div[jscontroller]:has(a[href*=imdb]) div + div + div[class*=" "]:has(span[role=img])
 tv.nu#?#a[title] span:has-text(IMDb)
 tv.nu##a[title] span:has(path[d^="M9.465 "])
 kissanime.*##.rating
@@ -2498,7 +2492,6 @@ $removeparam=click_id,domain=~bookings.beatthatflight.*
 $removeparam=cm_soc
 $removeparam=o_lid
 $removeparam=o_sch
-$removeparam=o_xid
 $removeparam=wtExtndSource
 $removeparam=FpAffiliate
 $removeparam=rfsn
@@ -2539,7 +2532,6 @@ $removeparam=sp_source
 $removeparam=sp_medium
 $removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
-$document,removeparam=/^affSource.*$/i
 $document,removeparam=/^cid_.*$/
 $document,removeparam=p_sid,domain=~wgv.de
 $removeparam=depth_1-utm_source
@@ -2612,6 +2604,7 @@ $document,removeparam=/^source=webgains$/
 $document,removeparam=/^from=kelkoo.*$/
 $removeparam=paid
 $removeparam=pacid
+$removeparam=thg_ppc_campaign
 $removeparam=adtype
 $removeparam=tmcampid
 $removeparam=s_afcid
@@ -2648,6 +2641,7 @@ $removeparam=aftr_source
 $removeparam=ko_click_id
 $removeparam=nrtv_cid
 $removeparam=nrtv_as_src
+$removeparam=trk_ref
 $removeparam=ircid
 $document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
@@ -2734,6 +2728,7 @@ $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
 $removeparam=taboola_hm
 $removeparam=adroll_fpc
+$removeparam=google_gid
 $removeparam=ad-session-id
 $removeparam=ga_cid
 $removeparam=hubspotUtk
@@ -2799,6 +2794,8 @@ $removeparam=dchild
 ||amazon.$removeparam=sr
 ||amazon.$removeparam=creative
 $removeparam=creativeASIN
+||amazon.$removeparam=/^sc_i.*$/
+$removeparam=trkCampaign
 $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com|linkedin.com|lnkd.in
 ||amazon.$removeparam=/^__mk_*_.*$/
 ||amazon.$removeparam=ascsubtag
@@ -2932,6 +2929,7 @@ $removeparam=hc_location
 $removeparam=sfnsn
 ?*__$~xmlhttprequest,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
+$removeparam=dti
 $removeparam=fref
 $removeparam=lst,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=privacy_mutation_token
@@ -2970,9 +2968,6 @@ $removeparam=iflsig,domain=www.google.*|ipv6.google.com
 $removeparam=uact,domain=www.google.*|ipv6.google.com
 ://www.google.*/search^$removeparam=kgs
 ://www.google.*/search^$removeparam=shndl
-://www.google.*/search^$removeparam=entrypoint
-://ipv6.google.com*/search^$removeparam=kgs
-://ipv6.google.com*/search^$removeparam=shndl
 ://ipv6.google.com*/search^$removeparam=entrypoint
 ||google.*/search$removeparam=sqi
 ||google.$removeparam=gs_ssp
@@ -2985,7 +2980,6 @@ $removeparam=uact,domain=www.google.*|ipv6.google.com
 ||googleadservices.com^$removeparam=ms
 ||googleadservices.com^$removeparam=ohost
 ||www.google.*/search?$document,removeparam=sclient
-||ipv6.google.com*/search?$document,removeparam=sclient
 ||accounts.google.com^$removeparam=dsh,document
 ||support.google.com^$removeparam=ref_topic
 $removeparam=_x_tr_pto
@@ -2994,7 +2988,6 @@ $removeparam=_x_tr_pto
 ||support.google.com^$document,removeparam=sjid
 $document,removeparam=gs_lp,domain=www.google.*|ipv6.google.com
 ||www.google.*/search$removeparam=oq,document
-||ipv6.google.com*/search$removeparam=oq,document
 ||google.$document,removeparam=sca_esv
 $removeparam=/^udm=$/,domain=www.google.*|ipv6.google.com
 ||translate.goog^$removeparam=_x_tr_pto
@@ -3271,6 +3264,7 @@ $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||dell.com^$removeparam=dgc
 ||dell.com^$removeparam=VEN1
 ||dell.com^$removeparam=gacd
+$removeparam=ref_id,domain=expedia.com|intuit.com|tunnelbear.com
 ||asahi.com^$removeparam=iref
 ||malwarebytes.com^$removeparam=guard
 ||malwarebytes.com^$removeparam=x-source
@@ -3428,7 +3422,6 @@ $removeparam=brand,domain=cyberghostvpn.com|privateinternetaccess.com
 ||cyberghostvpn.com^$removeparam=media_source
 ||zhihu.com^$removeparam=hybrid_search_source
 ||zhihu.com^$removeparam=hybrid_search_extra
-||theregister.com^$removeparam=td
 ||feedspot.com^$removeparam=_src
 $removeparam=plink,domain=audible.*
 ||startpage.$removeparam=segment
@@ -3619,7 +3612,6 @@ $removeparam=ProspectID,domain=citi.com
 ||patreon.com/posts/$document,removeparam=token
 $document,removeparam=bpli,domain=blogger.com
 $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
-||tempo.co^$document,removeparam=tracking_page_direct
 ||trendyol.com^$document,removeparam=link_userID
 ||trendyol.com^$document,removeparam=link_contentid
 ||cimri.com^$document,removeparam=platformName

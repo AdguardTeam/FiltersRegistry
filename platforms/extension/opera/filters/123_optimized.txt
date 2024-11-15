@@ -1,9 +1,9 @@
-! Checksum: J3fsucDBiP9ITflxSRwsIQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1731632733-14400.patch
+! Checksum: fRNFQCUS8AbEHfMRfxmthA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1731647141-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.32.5
-! TimeUpdated: 2024-11-15T01:01:30+00:00
+! Version: 2.1.32.6
+! TimeUpdated: 2024-11-15T05:01:26+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -43,7 +43,6 @@
 /jquery.shareaholic-publishers-sb.min.js
 /jquery.sharecount.min.js
 /juiz-social-post-sharer.min.js
-/lg-share.js
 /like_button.png
 /likebox.php
 /likesScript.js
@@ -95,7 +94,6 @@
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
-/socialbookmarks.js
 /socialite.js
 /socialite.min.js
 /socialize/library.js
@@ -187,13 +185,11 @@ _social_footer_
 ###facebook-panel
 ###facebook-share
 ###facebook-slider
-###facebook-social-wrapper
 ###facebookBox
 ###facebookIcon
 ###facebookLike
 ###facebookLikeBox
 ###facebookLikeButton
-###facebookShareButton
 ###facebookWidget
 ###facebook_like
 ###facebook_link
@@ -286,7 +282,6 @@ _social_footer_
 ###js-Social-Share-0
 ###js-SocialWidget-Container
 ###js-Stay-Connected-Container-0
-###js-share
 ###linkShare
 ###linkedin_share
 ###mainShare
@@ -331,6 +326,7 @@ _social_footer_
 ###playerShare
 ###plug-facebook
 ###plug-twitter
+###popup-social
 ###popup_social
 ###post-social
 ###post-social-wrap
@@ -529,7 +525,6 @@ _social_footer_
 ###socialFooter
 ###socialHolder
 ###socialIcons
-###socialInstagram
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
@@ -617,7 +612,6 @@ _social_footer_
 ###twitterBtn
 ###twitterContainer
 ###twitterFollow
-###twitterShareButton
 ###twitter_btn
 ###twitter_button
 ###twitter_content
@@ -676,7 +670,6 @@ _social_footer_
 ##.Share-item
 ##.ShareBar
 ##.ShareBlock-isReact
-##.ShareBox
 ##.ShareButton
 ##.ShareButtons
 ##.ShareButtons__link
@@ -832,6 +825,7 @@ _social_footer_
 ##.article__details__share
 ##.article__header__share
 ##.article__share
+##.article__share-buttons
 ##.article__share-title
 ##.article__sharebar
 ##.article__shares
@@ -885,7 +879,6 @@ _social_footer_
 ##.bc-author-socials
 ##.bc_social_icons
 ##.bd-FooterSocials-item
-##.bd-socialicon
 ##.bdaia-social-io
 ##.beSocialShare
 ##.beacon-social
@@ -911,7 +904,6 @@ _social_footer_
 ##.blog-post-share
 ##.blog-post-share-aside
 ##.blog-share
-##.blog-share-container
 ##.blog-social
 ##.blog-social-item
 ##.blog_post_share
@@ -921,7 +913,6 @@ _social_footer_
 ##.bottom-share
 ##.bottom-share-buttons
 ##.bottom-social
-##.bottom-social-share
 ##.bottom-socials
 ##.bottom_share
 ##.bottom_social
@@ -957,6 +948,7 @@ _social_footer_
 ##.c-article-share
 ##.c-aside--subscribe
 ##.c-footer-social
+##.c-footer-social-link
 ##.c-footer-social-media
 ##.c-footer__social
 ##.c-footer__social-links
@@ -1027,7 +1019,6 @@ _social_footer_
 ##.csbwfs-social-widget
 ##.ct-footer-socials
 ##.ct-header-socials
-##.ct-share
 ##.ct-share-box
 ##.custom-follow-button
 ##.custom-share-button
@@ -1049,7 +1040,6 @@ _social_footer_
 ##.dfd-share-icons
 ##.diks-dropdown--share
 ##.div-share
-##.div_share
 ##.dmSocialHub
 ##.doc-menu-social
 ##.dp-share
@@ -1166,8 +1156,8 @@ _social_footer_
 ##.facebooklink
 ##.facebookshare
 ##.facewrapper
-##.fastsocialshare_container
 ##.fb-cont
+##.fb-count-flag
 ##.fb-follow-button
 ##.fb-footer
 ##.fb-like-box
@@ -1410,6 +1400,7 @@ _social_footer_
 ##.gt-social-menu
 ##.gtm-clipboard-share-button
 ##.gtm-email-share-button
+##.gtm-social-link
 ##.gtm_footer_facebook
 ##.gtm_footer_instagram
 ##.gtm_footer_twitter
@@ -1457,6 +1448,7 @@ _social_footer_
 ##.header-top__social
 ##.header-twitter
 ##.headerShare
+##.headerSocialIcons
 ##.header__content__social
 ##.header__nav-social
 ##.header__social
@@ -1497,6 +1489,7 @@ _social_footer_
 ##.icon--linkedin
 ##.icon--pinterest
 ##.icon--share
+##.icon--snapchat
 ##.icon--twitter
 ##.icon--youtube
 ##.icon-circle-facebook
@@ -1648,7 +1641,6 @@ _social_footer_
 ##.jetpack_widget_social_icons
 ##.jiathis_style
 ##.js-Share
-##.js-article-tool-socialshare-menu
 ##.js-icon-facebook
 ##.js-icon-twitter
 ##.js-share-btn
@@ -1748,7 +1740,6 @@ _social_footer_
 ##.ly-share
 ##.lzd-follow-us-icon
 ##.m-article-share
-##.m-brand-engagement--social-link
 ##.m-footer-social
 ##.m-header--social-nav
 ##.m-icon-tw
@@ -1894,10 +1885,10 @@ _social_footer_
 ##.normal_social
 ##.novashare-buttons-wrapper
 ##.ns-social
-##.null-instagram-feed
 ##.nv-post-share
 ##.o-footer__social
 ##.o-shareBooster__item
+##.o-social-icon
 ##.o_footer_social_media
 ##.ob-ShareBar-share
 ##.oi-share
@@ -1906,7 +1897,6 @@ _social_footer_
 ##.open-share-toolbar
 ##.os-social-bar
 ##.overlay-open-share
-##.ow-social-icons
 ##.oxy-social-icons
 ##.p-button-social
 ##.p-footer-social
@@ -1991,7 +1981,6 @@ _social_footer_
 ##.post-share-menu-item
 ##.post-share-pinterest
 ##.post-share-twitter
-##.post-share-whatsapp
 ##.post-share-widget
 ##.post-sharing
 ##.post-social
@@ -2066,6 +2055,7 @@ _social_footer_
 ##.s_fb
 ##.s_google
 ##.s_twitter
+##.s_youtube
 ##.saboxplugin-socials
 ##.safirShare
 ##.save-share
@@ -2198,6 +2188,7 @@ _social_footer_
 ##.share-link-facebook
 ##.share-link-twitter
 ##.share-linkedin
+##.share-links-label
 ##.share-list
 ##.share-list-container
 ##.share-mail
@@ -2369,7 +2360,6 @@ _social_footer_
 ##.share_button_facebook
 ##.share_buttons
 ##.share_buttons_container
-##.share_center
 ##.share_con
 ##.share_container
 ##.share_content
@@ -2381,6 +2371,7 @@ _social_footer_
 ##.share_entry
 ##.share_facebook
 ##.share_fb
+##.share_hidden
 ##.share_horizontal
 ##.share_icon
 ##.share_icons
@@ -2720,7 +2711,6 @@ _social_footer_
 ##.social-media-header
 ##.social-media-li
 ##.social-media-list-container
-##.social-media-nav
 ##.social-media-nav__sticky
 ##.social-media-panel
 ##.social-media-share
@@ -2884,6 +2874,7 @@ _social_footer_
 ##.socialSharing
 ##.socialTab
 ##.socialToolbar
+##.socialTop
 ##.socialTwitter
 ##.socialWrap
 ##.socialWrapper
@@ -3127,6 +3118,7 @@ _social_footer_
 ##.twitterIcon
 ##.twitterLink
 ##.twitterShare
+##.twitterShareButton
 ##.twitterWidget
 ##.twitter_btn
 ##.twitter_follow
@@ -3143,13 +3135,11 @@ _social_footer_
 ##.twitterlink
 ##.twittershare
 ##.twshare
-##.twt-icon
 ##.twtr
 ##.twtr-widget
 ##.ty-social-link
 ##.ty-social-link-block
 ##.u-btni-share
-##.u-socialWrapper
 ##.ui-icon-facebook
 ##.ui-share-page
 ##.ui-socials
@@ -3611,6 +3601,7 @@ cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
 thegatewaypundit.com,wersm.com##.essb_links
 yardbarker.com##.expanded.button
+trueachievements.com##.fa-comments
 kslnewsradio.com,structurae.net##.fa-instagram
 trueachievements.com##.fa-reddit
 techradar.com##.facebook-icon
@@ -3718,6 +3709,7 @@ bukvy.org,digitalinformationworld.com,douglasnow.com,earthsky.org,gidhaur.com,sa
 foodandwaterwatch.org,medcitynews.com,publicbooks.org##.post-social-share
 eurointegration.com.ua##.post__social
 cointelegraph.com##.post__socials-block
+captainaltcoin.com,celebritycruises.com,tomzorg.nl##.post_share
 pravda.com.ua##.post_social_item
 dailymail.co.uk##.prevNextWrapper-1Vg7e
 reason.com##.rcom-social-tools
@@ -3735,6 +3727,7 @@ beebom.com,captimes.com,cheknews.ca,cockroachlabs.com,estadao.com.br,fandomwire.
 newsnow.co.uk##.share-highlight
 cgtn.com,citynews.ca##.share-icon
 crooksandliars.com##.share-inner
+techforbrains.com##.share-it
 cyberark.com##.share-item
 gizmodo.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
 thehackernews.com##.share-open-modal
@@ -3958,6 +3951,7 @@ finanznachrichten.de##.article--footer
 n-tv.de##.article__share-wrapper
 berliner-zeitung.de##.articlepreviewfooter_share-section__Pt8mf
 paz.de##.btn-group.d-flex.mb-4
+t3n.de##.c-social
 welt.de##.c-social-bar
 nn.de,nordbayern.de##.icon__social
 kicker.de##.kick__article__social
@@ -3971,6 +3965,8 @@ orf.at##.share-dialog
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
 derfinanzinvestor.de,esg-aktien.de,inv3st.de,kapitalerhoehungen.de##.smIconsWrap
 presseportal.de##.story-sharing
+t3n.de##.tg-pockethinweis
+t3n.de##.tg-social-bottom
 handelsblatt.com##app-icon-link
 berliner-kurier.de##section[class^="article-top-panel_socials_"]
 focus.de##.socFbLikeShare
@@ -3985,6 +3981,7 @@ bfmtv.com##.footer_social_media
 allocine.fr##.icon-share
 lesnumeriques.com##.ln__m-shr
 autoplus.fr##.nl-social
+europe1.fr,orientxxi.info##.partage
 quechoisir.org##.qc-footer_social-media-links
 moneyvox.fr##.reseau-soc-page
 phonandroid.com##.social-networks
@@ -4131,6 +4128,7 @@ novalaplata.com###redesSocialesNota
 bandaancha.eu###shBt
 milenio.com###share-icons-container
 excelsior.com.mx###social-bottom-node
+excelsior.com.mx###social-top-node
 europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
 elpais.com.uy##.Page-actions-wrapper
@@ -4166,7 +4164,6 @@ ecologiaverde.com##.open-compartir
 biobiochile.cl##.post-social-container
 eleconomista.com.ar##.redes-share
 acierto.com,cadenaser.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,welife.es##.rrss
-elcomercio.pe##.s-buttons
 betano.com##.sb-footer__notes__socials
 infobae.com##.second-saved-buttons
 cnnespanol.cnn.com##.section__social
@@ -4307,7 +4304,6 @@ petsmart.com#@#a[href^="https://www.facebook.com/sharer/sharer.php"]
 @@||jsdelivr.net/npm/sharer.js
 @@||moneyweb.co.za^*/social-shares.min.js?
 @@||nhk.or.jp/common/sns/nol_share.js$script,~third-party
-@@||player.fm^*/social-icons/$image
 @@||sharethis.com/button/buttons.js$domain=bristan.com
 @@||svgrepo.com/show/$image,~third-party
 @@||wettercomassets.com/wcomv5/images/footer/$domain=wetter.com
