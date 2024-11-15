@@ -57,19 +57,36 @@ async function getAliveDomains(domains: string[]): Promise<string[]> {
 }
 
 /**
- * Updates a JSON file with a key-value pair.
- * @param filename - The name of the JSON file.
- * @param key - The key to update in the JSON file.
- * @param value - The value to set for the key in the JSON file.
- * @returns A promise that resolves when the file is updated.
+ * Reads a JSON file and returns the parsed JSON.
+ *
+ * @param filename JSON file name.
+ *
+ * @returns Parsed JSON.
+ * @throws Error if the file cannot be read or parsed.
  */
-async function updateJsonFile(filename: string, key: string, value: string[]): Promise<void> {
+async function getJson(filename: string): Promise<WildcardDomains> {
+    let oldJson: WildcardDomains = {};
+    try {
+        const filePath = path.resolve(__dirname, filename);
+        const json = await readFile(filePath);
+        oldJson = JSON.parse(json);
+        return oldJson;
+    } catch (e) {
+        throw new Error(`Error reading old JSON file: ${e}`);
+    }
+}
+
+/**
+ * Saves a JSON file with the given data.
+ *
+ * @param filename JSON file name.
+ * @param data Object data to save.
+ */
+async function saveJson(filename: string, data: WildcardDomains): Promise<void> {
     const filePath = path.resolve(__dirname, filename);
-    const json = await readFile(filePath);
-    const parsedJson = JSON.parse(json);
-    parsedJson[key] = value;
-    const data = JSON.stringify(parsedJson, null, 4);
-    await writeFile(filePath, data);
+    // use tab character for indentation in JSON to decrease file size
+    const content = JSON.stringify(data, null, '\t');
+    await writeFile(filePath, content);
 }
 
 /**
@@ -94,18 +111,41 @@ export const updateWildcardDomains = async (
     const wildcardDomainsWithTld = supplementWithTld(wildcardDomains);
     console.log('Totally found wildcard domains length:', Object.keys(wildcardDomainsWithTld).length);
 
+    const oldJson = await getJson(wildcardDomainsJsonFilename);
+
+    const newData = { ...oldJson };
+
+    const batchSize = 50;
+    const entries = Object.entries(wildcardDomainsWithTld);
     const start = performance.now();
     console.log('Start finding dead domains', start);
-    const validatedWildcardDomains: { [key: string]: string[] } = {};
-    for (const [key, value] of Object.entries(wildcardDomainsWithTld)) {
-        const aliveDomains = await getAliveDomains(value);
-        // validation of one wildcard domain might take a while
-        // that's why we update the json file after each wildcard domain validation
-        await updateJsonFile(wildcardDomainsJsonFilename, key, aliveDomains);
-        validatedWildcardDomains[key] = aliveDomains;
+    console.log(`Processing domains by batches of ${batchSize} domains.`);
+
+    for (let i = 0; i < entries.length; i += batchSize) {
+        const batch = entries.slice(i, i + batchSize);
+        console.log(`In progress batch: ${i / batchSize + 1} of ${Math.ceil(entries.length / batchSize)}`);
+
+        const domainsInProcess: string[] = [];
+
+        const batchPromises = batch.map(async ([key, value]) => {
+            domainsInProcess.push(key);
+
+            const aliveDomains = await getAliveDomains(value);
+
+            newData[key] = aliveDomains;
+
+            if (aliveDomains.length === 0) {
+                console.error(`Domain ${key} has no alive domains, consider removing rules with this domain.`);
+            }
+        });
+
+        console.log(`Checking wildcard domains: ${domainsInProcess.join(', ')}`);
+        await Promise.all(batchPromises);
     }
+
+    await saveJson(wildcardDomainsJsonFilename, newData);
 
     // TODO: Add removal of domains that should be removed from the list of wildcard domains
     //  Currently, we only update lists of alive domains in the JSON file and do not remove them.
-    console.log('End finding dead domains', performance.now() - start);
+    console.log('End finding dead domains. Spent time:', performance.now() - start);
 };
