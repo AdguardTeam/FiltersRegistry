@@ -1,9 +1,9 @@
-! Checksum: uyVBYOGs0t/qtZC7IYLoHg
-! Diff-Path: ../patches/2/2-s-1731663444-3600.patch
+! Checksum: 7/dJwN2bZbB0kwHZ6kkwig
+! Diff-Path: ../patches/2/2-s-1731667062-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.60.77
-! TimeUpdated: 2024-11-15T09:31:36+00:00
+! Version: 2.3.60.78
+! TimeUpdated: 2024-11-15T10:31:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -34975,6 +34975,8 @@ realsporter.info##.widget:has(> center > div[id^="HBai_"])
 realsporter.info##.shadow-sm:has(> center > div > script[src^="//urgerrebasis.com/"])
 ||symbaloo.com/static/banners/*/pwHomepage.js
 symbaloo.com#%#//scriptlet('abort-on-property-write', 'bannerGetSlotsConfig')
+symbaloo.com#%#//scriptlet('json-prune', '*.data.wallpaperAndAd.branding')
+symbaloo.com###homepageWrapper > div[class] > div[class*=" "] > div[class][style]:has(> a[href*="/campaign/"][target="_blank"])
 hongkongfp.com##a[href="https://hongkongfp.com/advertise/"] > img
 kickasssubtitles.com##app-footer > .js-app-external
 convert-me.com###afterhead
@@ -58537,6 +58539,10 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/192837
+@@||loyalty-hub.api.unoapp.io/api/$domain=monsterenergyloyalty.com,stealth=referrer
+! https://github.com/AdguardTeam/AdguardFilters/issues/192777
+@@||mapi.perfectworldgames.com/*/api/user/token/login$stealth=xclientdata
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192523
 @@||ac.namu.la^$image,domain=arca.live,stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192242
@@ -120234,7 +120240,7 @@ playbuzz.com##.pb-site-player
 washingtonpost.com##.pb-sm.pt-sm.b
 publicbooks.org##.pb_ads_widget
 allthatsinteresting.com##.pbh_inline
-recipesandcooker.com##.pbl
+babynombres.com,culturanimation.com,nombresmolones.com,recetasmaria.com,recipesandcooker.com,sombracycling.com,techobras.com##.pbl
 caixinglobal.com##.pc-ad-left01
 serverstoplist.com##.pcOnly
 lazada.co.id,lazada.co.th,lazada.com.my,lazada.com.ph,lazada.sg,lazada.vn##.pdp-block__product-ads
