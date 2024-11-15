@@ -115,15 +115,21 @@ export const updateWildcardDomains = async (
 
     const newData = { ...oldJson };
 
-    const batchSize = 50;
+    /**
+     * The number of domains to process in a single batch.
+     *
+     * Needed to speed up the process.
+     */
+    const BATCH_SIZE = 50;
+
     const entries = Object.entries(wildcardDomainsWithTld);
     const start = performance.now();
     console.log('Start finding dead domains');
-    console.log(`Processing domains by batches of ${batchSize} domains.`);
+    console.log(`Processing domains by batches of ${BATCH_SIZE} domains.`);
 
-    for (let i = 0; i < entries.length; i += batchSize) {
-        const batch = entries.slice(i, i + batchSize);
-        console.log(`In progress batch: ${i / batchSize + 1} of ${Math.ceil(entries.length / batchSize)}`);
+    for (let i = 0; i < entries.length; i += BATCH_SIZE) {
+        const batch = entries.slice(i, i + BATCH_SIZE);
+        console.log(`In progress batch: ${i / BATCH_SIZE + 1} of ${Math.ceil(entries.length / BATCH_SIZE)}`);
 
         const domainsInProcess: string[] = [];
 
