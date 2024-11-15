@@ -1,9 +1,9 @@
-! Checksum: xy3MXqD6QvQcf80La32Jkw
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1731638230-3600.patch
+! Checksum: tes4GTrwv3KINVWIBZ6r9Q
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1731656273-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.27.99
-! TimeUpdated: 2024-11-14T21:33:37+00:00
+! Version: 2.0.28.0
+! TimeUpdated: 2024-11-15T07:33:34+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1459,6 +1459,9 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.banki.ru/products/"]
 ##a[href^="https://apay-up-banner.com?merchantId="] > img
 ||apay-up-banner.com^$image,third-party
+news.tennis365.net##.newsdetailcontent_body > b:has(> a[href^="https://bit.ly/"])
+news.tennis365.net##.newsdetailcontent_body > b:has(> a[href^="https://bit.ly/"]) + br
+news.tennis365.net##.newsdetailcontent_body > b:has(> a[href^="https://bit.ly/"]) + br ~ a[href^="https://bit.ly/"]
 baidu.com###con-ceiling-wrapper
 mail.proton.me##button[data-testid="cta:special-offer"]
 gizchina.gr###vw_widget_image_banner-9
