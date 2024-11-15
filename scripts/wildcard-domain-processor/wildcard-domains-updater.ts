@@ -118,7 +118,7 @@ export const updateWildcardDomains = async (
     const batchSize = 50;
     const entries = Object.entries(wildcardDomainsWithTld);
     const start = performance.now();
-    console.log('Start finding dead domains', start);
+    console.log('Start finding dead domains');
     console.log(`Processing domains by batches of ${batchSize} domains.`);
 
     for (let i = 0; i < entries.length; i += batchSize) {
@@ -147,5 +147,6 @@ export const updateWildcardDomains = async (
 
     // TODO: Add removal of domains that should be removed from the list of wildcard domains
     //  Currently, we only update lists of alive domains in the JSON file and do not remove them.
-    console.log('End finding dead domains. Spent time:', performance.now() - start);
+    const spentTimeSec = ((performance.now() - start) / 1000).toFixed(2);
+    console.log('End finding dead domains. Spent time, seconds:', spentTimeSec);
 };
