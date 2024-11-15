@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.60.82",
-			"timeUpdated": "2024-11-15T15:31:49+0000",
+			"version": "2.3.60.83",
+			"timeUpdated": "2024-11-15T16:31:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.67",
-			"timeUpdated": "2024-11-15T13:33:28+0000",
+			"version": "2.0.76.68",
+			"timeUpdated": "2024-11-15T16:34:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
