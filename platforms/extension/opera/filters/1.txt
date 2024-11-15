@@ -1,9 +1,9 @@
-! Checksum: TTGbNG6qgj7PJQvcDfP14g
-! Diff-Path: ../patches/1/1-s-1731674438-3600.patch
+! Checksum: kj098GyDf3EyzbRr34QkLg
+! Diff-Path: ../patches/1/1-s-1731685098-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.44
-! TimeUpdated: 2024-11-15T12:31:18+00:00
+! Version: 2.0.95.45
+! TimeUpdated: 2024-11-15T15:31:31+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5863,6 +5863,9 @@ talks.happymonday.com.ua,unisender.com#$#body { overflow: visible!important; }
 !------- JS ------------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/193024
+fastdl.app#%#//scriptlet('prevent-window-open')
+fastdl.app#%#//scriptlet('set-constant', 'clickAds.init', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191195
 sopranos-hdrezka.net,modern-family-lostfilm.net#%#//scriptlet('remove-class', 'branded', 'body')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181297
@@ -6086,11 +6089,6 @@ ruspornvideos.com#%#//scriptlet("set-constant", "String.prototype.charCodeAt", "
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40993
 tofight.ru#%#//scriptlet("set-constant", "AIsEnabled", "false")
 tofight.ru#%#//scriptlet("set-constant", "AdvFunc", "undefined")
-! https://github.com/AdguardTeam/AdguardFilters/issues/39183
-vmusi.ru#%#//scriptlet("prevent-window-open", "/tutad\.ru/")
-! https://github.com/AdguardTeam/AdguardFilters/issues/41449
-mobdisc.com#%#//scriptlet("prevent-window-open")
-mobdisc.com#%#window.open = function() {};
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38616
 anito.net#%#//scriptlet('remove-attr', 'onclick', 'a[href*="/torrent/"]')
 ! https://forum.adguard.com/index.php?threads/https-dyvys-info.34358/
@@ -6140,14 +6138,6 @@ tvsmotr.ru#%#(function() { var intervalId = 0; var blockAds = function() { try {
 ! http://forum.adguard.com/showthread.php?9567
 ! clickunder
 porno-tour.net#%#(function(){var getElementsByTagName=document.getElementsByTagName;document.getElementsByTagName=function(tagName){if(tagName=="script")return[];return getElementsByTagName.call(this,tagName)}})();
-! http://www.yaplakal.com/forum44/topic894652.html - clickunder на странице перехода по ссылке (после клика на любой ссылке)
-alpha.yaplakal.com#%#window.open = function() {};
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/126
-alpha.yap.ru#%#window.open = function() {};
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/590
-valetudo.ru#%#window.open = function() {};
-! unionpeer.org - кликандер
-unionpeer.org#%#window.open = function() {};
 ! For Moscow metro Wi-Fi
 auth.wi-fi.ru#%#(function(){var b={};(function(a,c,d){"undefined"!==typeof window[a]?window[a][c]=d:Object.defineProperty(window,a,{get:function(){return b[a]},set:function(e){b[a]=e;e[c]=d}})})("authConfig","adfox",[])})();
 !
@@ -7698,6 +7688,7 @@ ivanovonews.ru,gorodn.ru,bits.media,devyatka.ru,gazeta-n1.ru,gorod48.ru,hi-fi.ru
 !
 !
 !
+postal.ninja##.pnj-ax-content:has(> ins.adsbygoogle[data-ad-slot])
 tech.onliner.by##.news-promo
 byrutgame.org##.block_down_game > div.block_down:has(> a.itemdown_nottorent)
 sakhalinmedia.ru##.banner-container

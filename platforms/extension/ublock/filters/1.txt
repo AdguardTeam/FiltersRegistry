@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Gl+sCCTi9ujcpRxjPeBUPA
-! Diff-Path: ../patches/1/1-s-1731674452-3600.patch
+! Checksum: Uz72Wew3KnhFWyd7TchUFg
+! Diff-Path: ../patches/1/1-s-1731685105-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.44
-! TimeUpdated: 2024-11-15T12:31:18+00:00
+! Version: 2.0.95.45
+! TimeUpdated: 2024-11-15T15:31:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5768,6 +5768,9 @@ talks.happymonday.com.ua,unisender.com#$#body { overflow: visible!important; }
 !------- JS ------------
 !-----------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/193024
+fastdl.app##+js(window.open-defuser)
+fastdl.app##+js(set-constant, clickAds.init, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191195
 sopranos-hdrezka.net,modern-family-lostfilm.net##+js(remove-class, branded, body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181297
@@ -5987,10 +5990,6 @@ ruspornvideos.com##+js(set-constant, String.prototype.charCodeAt, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/40993
 tofight.ru##+js(set-constant, AIsEnabled, false)
 tofight.ru##+js(set-constant, AdvFunc, undefined)
-! https://github.com/AdguardTeam/AdguardFilters/issues/39183
-vmusi.ru##+js(window.open-defuser, /tutad\.ru/)
-! https://github.com/AdguardTeam/AdguardFilters/issues/41449
-mobdisc.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38616
 anito.net##+js(remove-attr, onclick, a[href*="/torrent/"])
 ! https://forum.adguard.com/index.php?threads/https-dyvys-info.34358/
@@ -6034,10 +6033,6 @@ fainaidea.com##+js(abort-on-property-read, td_ad_background_click_link)
 ! http://forum.adguard.com/showthread.php?9737
 ! http://forum.adguard.com/showthread.php?9567
 ! clickunder
-! http://www.yaplakal.com/forum44/topic894652.html - clickunder на странице перехода по ссылке (после клика на любой ссылке)
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/126
-! https://github.com/AdguardTeam/ExperimentalFilter/issues/590
-! unionpeer.org - кликандер
 ! For Moscow metro Wi-Fi
 !
 ! Yandex search
@@ -7569,6 +7564,7 @@ ivanovonews.ru,gorodn.ru,bits.media,devyatka.ru,gazeta-n1.ru,gorod48.ru,hi-fi.ru
 !
 !
 !
+postal.ninja##.pnj-ax-content:has(> ins.adsbygoogle[data-ad-slot])
 tech.onliner.by##.news-promo
 byrutgame.org##.block_down_game > div.block_down:has(> a.itemdown_nottorent)
 sakhalinmedia.ru##.banner-container
