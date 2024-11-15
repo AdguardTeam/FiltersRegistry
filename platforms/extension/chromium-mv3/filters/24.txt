@@ -1,8 +1,8 @@
-! Checksum: pPsSsMdw+sTg1txGZR4lsQ
+! Checksum: hnQCowVb15PornQexl3RXQ
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.3.20
-! TimeUpdated: 2024-11-15T15:34:37+00:00
+! Version: 2.0.3.21
+! TimeUpdated: 2024-11-15T19:33:45+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28,6 +28,10 @@
 ! When adding the first rule in a day, you must add a comment with a date.
 !
 ! Rules added for frequently updated sites should be added to the section below the rest of rules.
+!
+! BUG: https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2900
+! TODO: remove this only when the issue above is fixed
+||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
 !
 ! NOTE: 15-11-2024
 !
@@ -87,8 +91,6 @@ geekweek.interia.pl##div[id^="ad-rectangle"]
 ||content-loader.com/loader.min.js$domain=sourceforge.net
 sourceforge.net#%#//scriptlet('remove-node-text', 'script', 'error-report.com')
 sourceforge.net#%#//scriptlet('abort-on-stack-trace', 'document.getElementById', 'onerror')
-! https://github.com/AdguardTeam/AdguardFilters/issues/192915
-||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192558
 vk.com,vk.ru#?##feed_rows > div[class="feed_row "] > div.page_block > div._post_content > div.ads_light_container:upward(#feed_rows > div[class="feed_row "])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192885
