@@ -1,9 +1,9 @@
-! Checksum: Or76GCuqzA/JnjEXQg3tbw
-! Diff-Path: ../patches/14/14-s-1731760632-3600.patch
+! Checksum: 7rptZ2Qm0ajDhiPJfo/39w
+! Diff-Path: ../patches/14/14-s-1731764209-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.94
-! TimeUpdated: 2024-11-16T12:33:47+00:00
+! Version: 2.2.13.95
+! TimeUpdated: 2024-11-16T13:33:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2504,6 +2504,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+perfluence.net##div[class^="CookieBlock_container"]
 nebo.app#%#//scriptlet('trusted-set-cookie', 'nebo', '{%22acceptance%22:true%2C%22analytics%22:false}')
 ads.luarmor.net#%#//scriptlet('trusted-click-element', '.swal2-confirm')
 infinixmobility.com##.popup-content:has(> .bg > p > a[href="/cookies-policy"])
@@ -15464,7 +15465,7 @@ mentimeter.com#%#//scriptlet('set-cookie-reload', 'has_approved_cookie_policy', 
 zdnet.com#%#//scriptlet('trusted-set-cookie', 'OptanonConsent', 'groups=C0001%3A1%2CC0002%3A0%2CC0003%3A0%2CC0004%3A0%2CC0005%3A1')
 help.snapchat.com#%#//scriptlet('prevent-addEventListener', 'wheel', 'preventDefault()')
 sudameapteek.ee#%#//scriptlet('set-cookie', 'gdpr_cookie_token', '1')
-ruhr24.de,thomas-philipps.de,infranken.de,fraenkische-rezepte.de,parkerlebnis.de,moin.de,futurezone.de,derwesten.de#%#//scriptlet('trusted-click-element', '.cmpboxbtnspan > a.cmpboxbtnyes')
+sii.org.pl,ruhr24.de,thomas-philipps.de,infranken.de,fraenkische-rezepte.de,parkerlebnis.de,moin.de,futurezone.de,derwesten.de#%#//scriptlet('trusted-click-element', '.cmpboxbtnspan > a.cmpboxbtnyes')
 chrono24.*#%#//scriptlet('trusted-set-cookie', 'c24-consent', 'AAAAH0Eq')
 xv-ru.com,xvideos.com#%#//scriptlet('trusted-click-element', 'span#disclaimer-reject_cookies')
 crtm.es#%#//scriptlet('set-cookie', 'crtmcookiesCPersonalizacion', '1')
@@ -55024,6 +55025,7 @@ beasoku.com##.l-rss-header
 ! 2chblog.jp,blog.jp,blog.livedoor.jp,bloggeek.jp,blogism.jp,blogo.jp,blogstation.jp,blogto.jp,cafeblog.jp,corpblog.jp,diary.to,doorblog.jp,dreamlog.jp,gger.jp,golog.jp,ldblog.jp,liblo.jp,livedoor.biz,livedoor.blog,myjournal.jp,mynikki.jp,officeblog.jp,officialblog.jp,publog.jp,storeblog.jp,teamblog.jp,techblog.jp,weblog.to,xxxblog.jp,youblog.jp,seesaa.net,blog.fc2.com,blog.2nt.com
 ! specify subdomain or use unique and safe selector; for blog.livedoor.jp make your rule as specific as possible or use $path
 !
+||blog.livedoor.jp/diet2channel/js/
 blog.livedoor.jp###hokanokiji + div#kijisaikabu
 blog.livedoor.jp##iframe[src^="http://blog.livedoor.jp/diet2channel/rss/"]
 blog.livedoor.jp###main.column p[style^="background-color:#FFFFFF;border:1px solid #999999;padding:7px;"]
