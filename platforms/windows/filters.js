@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.25.97",
-			"timeUpdated": "2024-11-16T02:34:03+0000",
+			"version": "2.1.25.98",
+			"timeUpdated": "2024-11-16T10:33:52+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
