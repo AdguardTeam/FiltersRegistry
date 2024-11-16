@@ -1,9 +1,9 @@
-! Checksum: uBc1ua9BlfX76iAkjs5LQg
-! Diff-Path: ../patches/14/14-s-1731767860-3600.patch
+! Checksum: C7H7eWe0PY/f419vf6eJfQ
+! Diff-Path: ../patches/14/14-s-1731771449-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.13.96
-! TimeUpdated: 2024-11-16T14:34:08+00:00
+! Version: 2.2.13.97
+! TimeUpdated: 2024-11-16T15:34:02+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16170,32 +16170,21 @@ vox.com#%#(function(){if(-1==document.cookie.indexOf("_chorus_privacy_consent"))
 auto.ru#%#//scriptlet('trusted-click-element', '.buttons > a#confirm-button')
 consent.yahoo.com#%#//scriptlet('trusted-click-element', '#consent-page .manage-settings')
 consent.yahoo.com#%#//scriptlet('trusted-click-element', '#consent-page button[type="submit"][name="save"]')
-linkedin.com#%#AG_onLoad(function() { setTimeout(function() {var el = document.querySelectorAll('artdeco-global-alert[severity="notice"]')[0]; if(el) { el.remove(); }}, 1500); });
-linkedin.com#%#AG_onLoad(function() { setTimeout(function() { var el = document.getElementsByClassName("application-outlet no-scroll")[0]; if(el) { el.classList.remove("no-scroll") }}, 1000); });
 fis-ski.com#%#//scriptlet('trusted-set-cookie', 'cookieDisclaimer', 'approved')
 !
 homebook.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,jejswiat.pl,kafeteria.pl,komorkomania.pl,luxlux.pl,medycyna24.pl,mixer.pl,money.pl,nocowanie.pl,open.fm,parenting.pl,pinger.pl,pogodnie.pl,samosia.pl,testwiedzy.pl#%#//scriptlet("set-constant", "__wpjslib__", "emptyObj")
 dane.gov.pl#%#//scriptlet('trusted-set-local-storage-item', 'OD_isAcquintedWithRodo', '"true"')
 gadgethacks.com#%#//scriptlet("set-constant", "WHT.ShowConsentForm", "trueFunc")
 trustarc.com#%#//scriptlet('trusted-click-element', 'a.call')
-autovisie.nl#%#AG_onLoad(function() { setTimeout(function() {if(window.location.href.indexOf("ookie-consent") != -1){ consentOk(); }}, 300); });
 3suisses.fr#%#!function(a,b,c,f,g,d,e){e=a[c]||a['WebKit'+c]||a['Moz'+c],e&&(d=new e(function(){b[f].contains(g)&&(b[f].remove(g),d.disconnect())}),d.observe(b,{attributes:!0,attributeFilter:['class']}))}(window,document.documentElement,'MutationObserver','classList','layer_cookie__visible');
-justwatch.com#%#AG_onLoad(function() { setTimeout(function() { document.body.className = document.body.className.replace("promotion","."); },1500); });
-marktplaats.nl#%#AG_onLoad(function() { var form = document.forms['track-accept']; if (form) { form.submit(); } });
-moviemeter.nl#%#AG_onLoad(function() { if (document.cookie.indexOf("cok") == -1) { cookieProceed(); } });
-msn.com#%#AG_onLoad(function() { var cookiemsg = document.getElementById("msnstaticpage"); if (cookiemsg) acceptAction(); });
-postnl.be#%#AG_onLoad(function() { if (document.cookie.indexOf('CookiePermissionInfo') ==-1) { AllowAll(domains); } });
+postnl.be#%#//scriptlet('trusted-click-element', 'pnl-cookie-wall-widget >>> .pci-button--secondary > span')
 rtlz.nl#%#var cw;Object.defineProperty(window,"cookieWallSettings",{get:function(){return cw},set:function(a){document.cookie="rtlcookieconsent="+a.version.toString()+";";cw=a}});
-trouw.nl#%#AG_onLoad(function() { var check = document.getElementsByClassName('site-tr bg-blur has-shadow')[0]; if (check){document.cookie = "nl_cookiewall_version=1"; location.reload();}; });
-ziekenhuis.nl#%#AG_onLoad(function() { setTimeout(function() {var check = document.getElementsByClassName('cookiewall')[0]; if (check){document.cookie = "acceptcookies=true"; location.reload();}; }, 300); });
+trouw.nl#%#//scriptlet('trusted-click-element', '#pg-shadow-root-host >>> #pg-accept-btn')
+come-on.de#%#//scriptlet('trusted-click-element', '.cmp-root-container >>> .cmp-button-accept-all')
+bnnvara.nl#%#//scriptlet('trusted-click-element', 'ccm-notification >>> .ccm_btn--accept-all > font > font')
 !
 ! The button to click is in the shadow root.
 ! TODO: Rework when support for clicking inside the shadow root appears.
-come-on.de#%#AG_onLoad(function(){setTimeout(function() {if(!document.cookie.includes("euconsent-v2") || !document.cookie.includes("trf-euconsent-v2")){var g=new MutationObserver(function(){var b=document.querySelector(".cmp-root-container")?.shadowRoot?.querySelector(".cmp-button-accept-all");b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}}, 1500)});
-bnnvara.nl#%#AG_onLoad(function(){var g=new MutationObserver(function(){var b=document.querySelector("ccm-notification").shadowRoot.querySelector(".ccm_btn--accept-all");b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)});
-sir-apfelot.de,well.pl#%#AG_onLoad(function(){if(!document.cookie.includes("cmpconsent") || !document.cookie.includes("__cmpcccu")){var g=new MutationObserver(function(){var b=document.querySelector("#cmpwrapper")?.shadowRoot?.querySelector("#cmpwelcomebtnyes > a");b&&b.click();});g.observe(document,{childList:!0,subtree:!0});setTimeout(function(){g.disconnect()},1E4)}});
-wz.de#%#AG_onLoad(function(){var a=new MutationObserver(function(){var b=document.querySelector('#consentAccept');b&&(a.disconnect(),b.click())});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)});
-einhell.de#%#AG_onLoad(function(){if("undefined"!=typeof localStorage)try{if(!localStorage.getItem("uc_user_interaction")){var b=new MutationObserver(function(){var a,c,d=null==(a=document.querySelector("#usercentrics-root"))?void 0:null==(c=a.shadowRoot)?void 0:c.querySelector('button[data-testid="uc-accept-all-button"]');d&&(b.disconnect(),d.click())});b.observe(document,{childList:!0,subtree:!0,attributeFilter:["style"]});setTimeout(function(){b.disconnect()},1E4)}}catch(a){}});
 sat1.at,kabeleinsdoku.at,ran.de,kabeleinsdoku.de,prosiebenmaxx.de,sixx.de,kabeleins.de,prosieben.de,sat1.de#%#AG_onLoad(function(){if(null===localStorage.getItem("uc_user_interaction")){var d=new MutationObserver(function(){var a=document.querySelector("cmp-banner");a&&a.shadowRoot&&(a=a.shadowRoot.querySelector("cmp-dialog"));a&&a.shadowRoot&&(a=a.shadowRoot.querySelector(".dialog__action--secondary > cmp-button"));a&&a.shadowRoot&&(a=a.shadowRoot.querySelector("button"));a&&a.click();setTimeout(function(){var c,e,f,g,b=null==(c=document.querySelector("cmp-banner"))?void 0:null==(e=c.shadowRoot)?void 0: null==(f=e.querySelector("cmp-dialog"))?void 0:null==(g=f.shadowRoot)?void 0:g.querySelectorAll('cmp-accordion[label="Berechtigtes Interesse"] > div[slot="content"] > .dialog__item > cmp-item[hasswitch] > cmp-switch');b&&(b[0]&&b[0].shadowRoot.querySelector("input").click(),b[1]&&b[1].shadowRoot.querySelector("input").click(),b[2]&&b[2].shadowRoot.querySelector("input").click(),b[3]&&b[3].shadowRoot.querySelector("input").click(),b[4]&&b[4].shadowRoot.querySelector("input").click());var h,k,l,m;(c= null==(h=document.querySelector("cmp-banner"))?void 0:null==(k=h.shadowRoot)?void 0:null==(l=k.querySelector("cmp-dialog"))?void 0:null==(m=l.shadowRoot)?void 0:m.querySelector('cmp-button[variant="secondary"]'))&&(d.disconnect(),c.click())},5E3)});d.observe(document,{childList:!0,subtree:!0});setTimeout(function(){d.disconnect()},1E4)}});
 joyn.de#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("userConsentCommunity")){var f=setInterval(function(){var b=document.querySelectorAll("cmp-banner");b.length&&b.forEach(function(a){var c,d,e;if(a=null==(c=a.shadowRoot)?void 0:null==(d=c.querySelector("cmp-dialog"))?void 0:null==(e=d.shadowRoot)?void 0:e.querySelector("cmp-button"))clearInterval(f),a.click()})},500);setTimeout(function(){clearInterval(f)},2E4)}});
 totaaltv.nl,dpgmedia.nl,dpgmediagroup.com,dpgmediagroup.net#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("#pg-shadow-host").shadowRoot.querySelector("#pg-accept-btn"); if(el) { el.click(); } }, 1000); });
@@ -31125,8 +31114,7 @@ naszesprawy.eu,kbcsm.hr,nintendosoup.com,collive.com,valuewalk.com,ellalanguage.
 collive.com,valuewalk.com,ellalanguage.com,spiritualresearchfoundation.org,conference2go.com,animeout.xyz,ludent.ru,askdavetaylor.com,responsibility.org,golos.te.ua,soft4fun.net,lingq.com,therecoveryvillage.com,informator.news,memepedia.ru,richluck.ru,eusouandroid.co,bizled.co.in,ternopillive.com.ua,dyvys.info,comments.ua,ilife99.com,mur.tv,online-buhuchet.ru,richlife7.com,журналистика-обучение.рф##.spu-box
 microsoftstore.ru##.subscribe-b
 kariyer.net,annsummers.com,3dnews.ru,sobesednik.ru##.ui-dialog
-clubmonaco.com,kariyer.net,pixalate.com,purina.co.uk,ralphlauren.com,hottopic.com,talk.sonymobile.com,annsummers.com,numbeo.com,global.llbean.com,price.ua,clarins.ru,gezondheidsplein.nl,babycenter.de,sobesednik.ru,ziekenhuis.nl##.ui-widget-overlay
-ziekenhuis.nl##.ui-widget.ui-widget-content
+clubmonaco.com,kariyer.net,pixalate.com,purina.co.uk,ralphlauren.com,hottopic.com,talk.sonymobile.com,annsummers.com,numbeo.com,global.llbean.com,price.ua,clarins.ru,gezondheidsplein.nl,babycenter.de,sobesednik.ru##.ui-widget-overlay
 natureweight.ru##.ulp-animated
 lingusta.com.tr,armyhelp.ru,theturtleislandnews.com,petr-panda.ru,ogrenio.com,alexgoldcheidt.com,karaoke-tutor.com,espaebook.org,javacodegeeks.com##.ulp-window-container
 vivatropical.com,lingusta.com.tr,odernichtoderdoch.de,armyhelp.ru,ewdn.com,theturtleislandnews.com,petr-panda.ru,ogrenio.com,alexgoldcheidt.com,karaoke-tutor.com,espaebook.org,javacodegeeks.com,highbrewcoffee.com##.ulp-overlay
@@ -33168,6 +33156,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+economictimes.com##div[data-name="art-details"] > div[class^="_"]:has(> a[href^="https://whatsapp.com/channel/"])
 trip.com##.h5-subscribe-card-con
 snob.ru##.v-grid-layout__main > div.article-links-block:has(> div > a[href="tg://resolve?domain=snobru"])
 m.economictimes.com##.whatsappFollow
