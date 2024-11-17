@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.59",
-			"timeUpdated": "2024-11-15T19:33:16+0000",
+			"version": "2.0.44.60",
+			"timeUpdated": "2024-11-17T13:33:13+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.16",
-			"timeUpdated": "2024-11-16T14:33:57+0000",
+			"version": "2.0.56.17",
+			"timeUpdated": "2024-11-17T13:33:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
