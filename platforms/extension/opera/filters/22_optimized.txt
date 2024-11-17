@@ -1,5 +1,5 @@
-! Checksum: zFTN6T7ir0QHqQ7c8hJWig
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1731767877-3600.patch
+! Checksum: EmSwVgVxjY1BuXg4b18JIA
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1731811044-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.10.21
@@ -35,7 +35,6 @@
 .com/rss2.htm$subdocument,~third-party
 .jp/rss.htm$subdocument,~third-party
 .net/rss.htm$subdocument,~third-party
-.net/rss2.htm$subdocument,~third-party
 .com/rss/$subdocument,~third-party
 ||blog-rss.com^$third-party
 ||rssfetcher.blogsys.jp^
@@ -99,7 +98,6 @@ twibuz.com##footer ~ div[class^="sitabar"]
 onecall2ch.com##.selector00
 onecall2ch.com##iframe[src$="rss.html"]
 yuumi-sokuhou.com##aside div[id^="custom_html-"]
-lovelive-ss.com##.blogroll-header
 cherio199.blog.fc2.com##.free_space_body
 cherio199.blog.fc2.com##.mainEntryBlock ~ center > table[width="920"]:has(div[style^="height:205px;overflow:auto;"])
 ||watch2chan.com/pickup_$script
@@ -257,6 +255,8 @@ efire-matome.com###text-17
 chomanga.org#?#.widget:has(div[class^="rss-box"])
 genshin-matomech.umadacchi.net###block-8
 genshin-matomech.umadacchi.net##.rss-flex
+geektushin.com##.widget-above-related-entries
+geektushin.com##.widget-below-related-entries
 nintendoevery.com,geektushin.com##.widget_rss
 uma-log.net###custom_html-8
 negisoku.com##.t_a > span
@@ -491,7 +491,6 @@ squallchannel.com,2chnewsblog.blog.jp##.article-body-more > a[target="_blank"] +
 m4ex.com#?##the-content > center > b:has(> div.inmaincmframe)
 ||dameparts.com/pbanner/
 ||nijitoraware.com/wp-content/uploads/*/niji_header_
-nijitoraware.com##.niji_center
 blog-news.doorblog.jp##.column-inner-2 > .rss
 squallchannel.com##div[class^="rss02"]
 2ch-matomenews.com##.postTopRss
@@ -626,6 +625,7 @@ xn--r8jwklh769h2mc880dk1o431a.com,leaked.jp##.dfad
 brow2ing.com###newRelease
 openworldnews.net,lifehack2ch.livedoor.biz,football-2ch.com,f1jouhou2.com,ryusoku.com,fgo.news,kanasoku.info,brow2ing.com,animanch.com,news4vip.livedoor.biz,hosyusokuhou.jp###headline
 katuru2ch.blog12.fc2.com##div[id^="more"] > p > b > a[href^="http://katuru.com/rss/"]
+otonary.net###article-bot-rss
 otonarisoku.com##div[style="height:280px; overflow:hidden;"]
 otonarisoku.com##div[class$="blogroll"]
 ||gazounabi.com/toprss1.html
@@ -720,7 +720,6 @@ fx2ch.net##[class^="rss-blogroll"]
 momoniji.com###content-top-in > .widget-content-top:first-child
 irodorich.com,kemochan.com##.header-rss-box
 blog.domesoccer.jp##.article-header-rss
-blog.domesoccer.jp#?#.main-post-list > div.blogrss:upward(1)
 minigob-matome.blog.jp,samuraisoccer.doorblog.jp##.bt-rss
 tarosoku.com##div[class^="kijishita_rss"]
 ||fc2.com/2/c/h/2chxvideos/rss_$subdocument,domain=2chav.com
@@ -729,8 +728,6 @@ tarosoku.com##div[class^="kijishita_rss"]
 rastaneko-blog.com,2chav.com##.plugin3_outline
 2chav.com##.kijinakakoteeei
 2chav.com##.kijinakakoteeei02
-||4pd.org/js/fpd-rss.
-yoshidakenkou.net###header-rss
 1000mg.jp##div[class$="rss"]
 worldrankingup.blog.2nt.com,youskbe.com,kyousoku.net,jiwasoku.com,irodorich.com,kemochan.com,anitubu.com,itaishinja.com##[id^="rss"]
 youskbe.com,gurum.biz,newtoku.jp##.blogroll
@@ -850,7 +847,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||informers.sinoptik.ua^$third-party
 ||helpscout.net^$third-party
 ||foresee.com^$third-party
-||form.cloudleadia.com^$third-party
 ||consultsystems.ru^$third-party
 ||cp.onicon.ru^$third-party
 ||digital-interview.com^$third-party
@@ -1066,6 +1062,7 @@ tech.hindustantimes.com#?#.article div[class]:has(> section.ProductAffilateWrapp
 pharmencyclopedia.com.ua###geo_wgt
 ixbt.com##div[id^="marketWidget"]
 ||go.pardot.com^$third-party
+kp.ru##.t-records > div[style^="padding-top:45px;padding-bottom:45px;background-color:#f3f3f3;"]
 3dnews.ru,irecommend.ru##.ymarket-affiliate-widget
 ||aflt.market.yandex.ru/widget$domain=~tehno-rating.ru
 ||dl.metabar.ru^$third-party
@@ -1119,6 +1116,7 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 ||tracker.tolvnow.com^$third-party
 ||synalio.com^$third-party
 ||chatbot.com^$third-party
+||cdn-chat.grattis.ru^$third-party
 ||cdn.carrotquest.app^$third-party
 ||continual.ly^$third-party
 ||corover.mobi^$third-party
@@ -1317,6 +1315,7 @@ itc.ua##.popup-bottom
 ovd.info##.content div.popmechanic-js-form
 ||frontend.poool.fr/engage/
 kyivindependent.com##iframe[src^="https://frontend.poool.fr/"]
+verstka.media##.vm-single-post-content > p[class="has-background"][style="background-color:#47d4ff"]
 novayagazeta.ru###article-body div[class]:has(> div[class] > p[class]:contains(Поддержите))
 novayagazeta.ru##div[id^="materialBlock"] > div[style="height: 100px;"]
 zona.media##body > a[href^="https://donate.zona.media/"][href$="utm_campaign=donate"]
