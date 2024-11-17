@@ -1,9 +1,9 @@
-! Checksum: 01IuVZWzxZvT/LFLTgHceA
-! Diff-Path: ../patches/118_optimized/118_optimized-s-1731805565-14400.patch
+! Checksum: jxwWy2txYTSDvbBHWpOy1w
+! Diff-Path: ../patches/118_optimized/118_optimized-s-1731819950-14400.patch
 ! Title: EasyPrivacy (Optimized)
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.34.82
-! TimeUpdated: 2024-11-17T01:01:22+00:00
+! Version: 2.1.34.83
+! TimeUpdated: 2024-11-17T05:01:18+00:00
 ! Expires: 12 hours (update frequency)
 &action=js_stats&
 &ev=PageView&
@@ -414,6 +414,7 @@
 /gaaddons.js
 /gaclicktracking-universal.js
 /gaEvents.js
+/gaEventTracking.js
 /ganalytics.js
 /gapro.js
 /gascript.js
@@ -504,8 +505,6 @@
 /js_ibeat_ext.cms
 /js_log_error.js
 /js_tracker.js
-/js_tracking?
-/jstats.php
 /kameleoon-iframe.html
 /kameleoon.js
 /kameleoon/script.js
@@ -535,6 +534,7 @@
 /log/event?
 /log/impression/*
 /log/init?
+/log/log.php?
 /log/metrics?
 /log/page-view
 /log/report/*
@@ -569,6 +569,7 @@
 /logImpressions?
 /logs/report_js_error
 /logstats.php
+/logview.js
 /logviewedpage?
 /ls.gif?
 /lunametrics-
@@ -678,6 +679,7 @@
 /pixel.*/track/*
 /pixel.gif?
 /pixel.modern.js
+/pixel.track
 /pixel/sbs?
 /pixel/view?
 /pixel_tracking?
@@ -830,6 +832,7 @@
 /stats.wp.com/*
 /stats/?rt=
 /stats/api/event
+/stats/bezoek_count.php
 /stats/c/*$image
 /stats/collect/*
 /stats/events$xmlhttprequest
@@ -851,6 +854,7 @@
 /t?tcid=
 /taboola-header.js
 /taboola.js
+/taboolaHead.js
 /taevents-c.js
 /tagcommander/prd/*
 /tagmanager/pptm.js
@@ -1071,7 +1075,6 @@ _social_tracking.js
 _stat.php?referer=
 _trackWebtrekkEvents.
 _webanalytics.
-/ng.gif?
 /ajax/bz?_
 .com/vtrack
 /ls.php?t=
@@ -1137,10 +1140,7 @@ _webanalytics.
 .google-analytics.com/
 .intercom-mail.com/via/$image
 .keap-link003.com/$image
-.keap-link004.com/$image
-.keap-link007.com/$image
 .keap-link011.com/$image
-.keap-link015.com/$image
 .klclick.com/$image
 .maillist-manage.com/click/$image
 .members.babbel.com/mo/
@@ -1242,6 +1242,7 @@ omni.soundestlink.com$image
 ||bounceexchange.com^
 ||bouncex.net^
 ||briskpelican.io^
+||broadstreet.ai^
 ||brsrvr.com^
 ||brwsrfrm.com^
 ||btloader.com^
@@ -1331,6 +1332,7 @@ omni.soundestlink.com$image
 ||lltrck.com^
 ||lmepbq.com^
 ||log.dance^
+||lordofthesuperfrogs.com^
 ||lyfnh.io^
 ||markadver.com^
 ||matheranalytics.com^
@@ -1340,6 +1342,7 @@ omni.soundestlink.com$image
 ||michiganrobotflower.com^
 ||minstats.xyz^
 ||mitself.net^
+||mobildev.in^
 ||monu.delivery^
 ||mysingleromance.com^
 ||nmgassets.com^
@@ -1537,6 +1540,7 @@ omni.soundestlink.com$image
 ||analitycs.net^$third-party
 ||analytically.net^$third-party
 ||analytics-helper.com^$third-party
+||anametrix.net^$third-party
 ||anonymised.io^$third-party
 ||anrdoezrs.net^$third-party
 ||antiblock.info^$third-party
@@ -1778,6 +1782,7 @@ omni.soundestlink.com$image
 ||doceree.com^$third-party
 ||doclix.com^$third-party
 ||dojomojo.ninja^$third-party
+||domdog.io^$third-party
 ||domodomain.com^$third-party
 ||dpbolvw.net^$third-party
 ||driv-analytics.com^$third-party
@@ -1812,6 +1817,7 @@ omni.soundestlink.com$image
 ||enhencer.com^$third-party
 ||enquisite.com^$third-party
 ||ensighten.com^$third-party
+||epilot.com^$third-party
 ||esearchvision.com^$third-party
 ||esm1.net^$third-party
 ||esputnik.com^$third-party
@@ -1956,6 +1962,7 @@ omni.soundestlink.com$image
 ||gsght.com^$third-party
 ||gsspat.jp^$third-party
 ||gssprt.jp^$third-party
+||guanoo.net^$third-party
 ||gvisit.com^$third-party
 ||gwmtracking.com^$third-party
 ||hadronid.net^$third-party
@@ -2014,6 +2021,7 @@ omni.soundestlink.com$image
 ||illumenix.com^$third-party
 ||imhd.io^$third-party
 ||impression.link^$third-party
+||imrtrack.com^$third-party
 ||imtwjwoasak.com^$third-party
 ||incentivesnetwork.net^$third-party
 ||index.ru^$third-party
@@ -2054,7 +2062,6 @@ omni.soundestlink.com$image
 ||iperceptions.com^$third-party
 ||ipfind.com^$third-party
 ||ipfingerprint.com^$third-party
-||ipgeolocation.io^$third-party
 ||ipinfo.info^$third-party
 ||ipinfodb.com^$third-party
 ||iplocationtools.com^$third-party
@@ -2208,12 +2215,14 @@ omni.soundestlink.com$image
 ||motrixi.com^$third-party
 ||mouseflow.com^$third-party
 ||mousestats.com^$third-party
+||mousetrace.com^$third-party
 ||mparticle.com^$third-party
 ||mpianalytics.com^$third-party
 ||mpio.io^$third-party
 ||mplxtms.com^$third-party
 ||msgapp.com^$third-party
 ||msgfocus.com^$third-party
+||mtracking.com^$third-party
 ||mutinycdn.com^$third-party
 ||mvilivestats.com^$third-party
 ||mxcdn.net^$third-party
@@ -2518,7 +2527,6 @@ omni.soundestlink.com$image
 ||siftscience.com^$third-party
 ||signalfx.com^$third-party
 ||signifyd.com^$third-party
-||silverpop.com^$third-party
 ||silverpush.co^$third-party
 ||simonsignal.com^$third-party
 ||simpleanalyticscdn.com^$third-party
@@ -2636,7 +2644,6 @@ omni.soundestlink.com$image
 ||tgdaudience.com^$third-party
 ||tgtag.io^$third-party
 ||theadex.com^$third-party
-||thebestlinks.com^$third-party
 ||thecounter.com^$third-party
 ||thoughtmetric.io^$third-party
 ||tinb.net^$third-party
@@ -2652,6 +2659,7 @@ omni.soundestlink.com$image
 ||topblogging.com^$third-party
 ||toplist.cz^$third-party
 ||toplist.eu^$third-party
+||topmalaysia.com^$third-party
 ||topofblogs.com^$third-party
 ||topstat.cn^$third-party
 ||torbit.com^$third-party
@@ -2798,6 +2806,7 @@ omni.soundestlink.com$image
 ||wtstats.com^$third-party
 ||wundercounter.com^$third-party
 ||wunderloop.net^$third-party
+||wywy.com^$third-party
 ||wzrk.co^$third-party
 ||wzrkt.com^$third-party
 ||x-stat.de^$third-party
@@ -2821,7 +2830,6 @@ omni.soundestlink.com$image
 ||zanox-affiliate.de^$third-party
 ||zanox.com^$third-party
 ||zarget.com^$third-party
-||zdtag.com^$third-party
 ||zeotap.com^$third-party
 ||zeustechnology.com^$third-party
 ||zoomanalytics.co^$third-party
@@ -2865,6 +2873,7 @@ omni.soundestlink.com$image
 ||tercabilis.info^
 ||trustiseverything.de^$third-party
 ||trustisimportant.fun^
+||tulip18.com^$third-party
 ||turnsocial.com^$third-party
 ||webmine.cz^$third-party
 ||webminepool.com^$third-party
@@ -2878,7 +2887,6 @@ omni.soundestlink.com$image
 ||agreeabletouch.com^
 ||aliveachiever.com^
 ||ambrosialsummit.com^
-||analyzecorona.com^
 ||aspiringapples.com^
 ||bagbeam.com^
 ||bandborder.com^
@@ -2910,6 +2918,7 @@ omni.soundestlink.com$image
 ||coalkitchen.com^
 ||coatfood.com^
 ||colossalcoat.com^
+||colossalcry.com^
 ||consumerzero.com^
 ||copycarpenter.com^
 ||crawlclocks.com^
@@ -2966,7 +2975,6 @@ omni.soundestlink.com$image
 ||haltingbadge.com^
 ||hammerhearing.com^
 ||handsomelythumb.com^
-||headydegree.com^
 ||hfc195b.com^
 ||honeybulb.com^
 ||hospitablehall.com^
@@ -3002,7 +3010,6 @@ omni.soundestlink.com$image
 ||oldfashionedoffer.com^
 ||optimallimit.com^
 ||opulentsylvan.com^
-||outsidevibe.com^
 ||overconfidentfood.com^
 ||partplanes.com^
 ||phonicsblitz.com^
@@ -3053,7 +3060,6 @@ omni.soundestlink.com$image
 ||sentinelp.com^
 ||shallowblade.com^
 ||shamerain.com^
-||shapecomb.com^
 ||shesubscriptions.com^
 ||shinypond.com^
 ||shiveringspot.com^
@@ -3066,7 +3072,6 @@ omni.soundestlink.com$image
 ||smoggysongs.com^
 ||soundstocking.com^
 ||spellsalsa.com^
-||stakingsmile.com^
 ||startercost.com^
 ||steadfastsystem.com^
 ||stiffstem.com^
@@ -3080,7 +3085,6 @@ omni.soundestlink.com$image
 ||superficialspring.com^
 ||swankysquare.com^
 ||tackytrains.com^
-||techconverter.com^
 ||tiresomethunder.com^
 ||toecircle.com^
 ||trackcaddie.com^
@@ -3157,7 +3161,6 @@ omni.soundestlink.com$image
 ||google-analytics-cn.com^
 ||googleoptimize-cn.com^
 ||googletagmanager-cn.com^
-||0.0.0.1^
 ||brdtest.com^
 ||brdtnet.com^
 ||brightdata.com^$third-party
@@ -3189,7 +3192,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||asadcdn.com^$third-party
 ||audiencemanager.de^$third-party
 ||backlinkdino.de^$third-party
-||besucherzaehler-homepage.de^$third-party
 ||bf-tools.net^$third-party
 ||blog-webkatalog.de^$third-party
 ||blogcounter.com^$third-party
@@ -3290,7 +3292,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||air360tracker.net^$third-party
 ||analytics-cdiscount.com^$third-party
 ||carts.guru^$third-party
-||compteur-gratuit.org^$third-party
 ||compteur-visite.com^$third-party
 ||cshield.io^$third-party
 ||datadome.co^$third-party
@@ -3312,7 +3313,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||phywi.org^$third-party
 ||titag.com^$third-party
 ||tracking.wlscripts.net^
-||webcompteur.com^$third-party
 ||wysistat.com^$third-party
 ||x-traceur.com^$third-party
 ||circle.am^$third-party
@@ -3363,6 +3363,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||tenmax.io^$third-party
 ||threatbook.cn^$third-party
 ||top-bloggers.com^$third-party
+||vamaker.com^$third-party
 ||vdoing.com^$third-party
 ||vm5apis.com^$third-party
 ||xtgreat.com^$third-party
@@ -3429,7 +3430,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||caprofitx.com^$third-party
 ||catsys.jp^$third-party
 ||cheqzone.com^$third-party
-||cosmi.io^$third-party
 ||d-markets.net^$third-party
 ||d2-apps.net^$third-party
 ||d2c.ne.jp^$third-party
@@ -3586,6 +3586,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||kmindex.ru^$third-party
 ||lentainform.com^$third-party
 ||logxp.ru^$third-party
+||lookmy.info^$third-party
 ||mediatoday.ru^$third-party
 ||metrika-informer.com^$third-party
 ||mobtop.com^$third-party
@@ -3851,6 +3852,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||api-location-prd.pelcro.com^$domain=newsweek.com
 ||api.autopilothq.com^
 ||api.country.is^$third-party
+||api.ipgeolocation.io/getip
 ||api.iris.tv/update
 ||api.june.so^
 ||api.sardine.ai/assets/loader.min.js$third-party
@@ -4359,7 +4361,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||inmobi.com/?log
 ||inmoment.com/intercept/$third-party
 ||ins.connatix.com^
-||insiderdata360online.com/service/platform.js
 ||insights.algolia.io^
 ||insights.sitesearch360.com^
 ||insitez.blob.core.windows.net^
@@ -4459,7 +4460,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||ltwebstatic.com/she_dist/libs/devices/fpv2.
 ||lucid.mjhassoc.com^
 ||m.clear.link/cpr/external/track
-||m.stripe.com^$third-party,domain=~stripe.network
 ||ma.logsss.com^
 ||magento-recs-sdk.adobe.net^
 ||mail.ru/dstat?
@@ -5001,6 +5001,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||tm.vendemore.com^
 ||tmp.argusplatform.com/js/wid.tracker.js
 ||tms.fmm.io^
+||tmtarget.com/tracking/
 ||to.getnitropack.com^
 ||top-fwz1.mail.ru^
 ||tpx.tesseradigital.com^
@@ -5201,6 +5202,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||video.google.com/api/stats/
 ||videoevents.outbrain.com^
 ||videoly.co^*/event/
+||viglink.com/api/ping$third-party
 ||vimeocdn.com/add/player-stats?
 ||vimeocdn.com/ga/
 ||viralize.tv/track/
@@ -6232,7 +6234,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||analytics.slashdotmedia.com^
 ||analytics.synchrony.com^
 ||analytics.ticketmaster.
-||analytics.tomato.gg^
 ||analytics.vedantu.com^
 ||analytics.vortexscans.com^
 ||ancestry.com/core.js
@@ -6325,7 +6326,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||client-metrics.chess.com^
 ||cm.nordvpn.com^
 ||cmp.vg.no^*/metrics/
-||cnt.hd21.com^
 ||cnt.xhamster.com^
 ||codecademy.com/analytics/
 ||coincodex.com/cdn-cgi/trace
@@ -6775,7 +6775,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||pornbox.com/event/
 ||pornbox.com/stats/
 ||porzo.com/js/analytics
-||pravda.com.ua/counter/
 ||priceline.com/pws/v1/ace/impression/
 ||priceline.com/svcs/mkt/tag/
 ||princetonreview.com/logging/
@@ -6968,7 +6967,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||thisiswhyimbroke.com/api/user/tracking
 ||thriftbooks.com/scripts/sp.js
 ||thtk.temu.com^
-||tiendeo.*/_statsapi/
 ||tif.ionos.com^
 ||tiktok.com/ttwid/check/
 ||tiktok.com/v1/list
@@ -7070,7 +7068,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||vk.com/js/lib/px.js
 ||vortex.hulu.com^
 ||vsco.co/api/cantor/track
-||w2g-mtrx.w2g.tv^
 ||w2g-ping.b-cdn.net^
 ||w3-reporting.reddit.com^
 ||w9g7dlhw3kaank.www.eldorado.gg^
@@ -7332,7 +7329,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||extramilefloorcare.ericksonbuilt.com^
 ||hurricane.tinybird.co^
 ||pa.opqr.co^
-||pl.hackathon-makers.com^
 ||plau.devitjobs.uk^
 ||plausible.alexandar.me^
 ||plausible.logicboard.com^
@@ -7369,6 +7365,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||a1.api.bbc.co.uk^
 ||a1.api.bbc.com^
 ||abncx.amv.fr^
+||ama.planet-wissen.de^
 ||ama.wdr.de^
 ||arrietty.nrj.fr^
 ||at-cddc.actu-juridique.fr^
@@ -7804,7 +7801,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||data.canon.club-news.com.hk^
 ||data.cliente.clubeextra.com.br^
 ||data.communication.guard.me^
-||data.comunicaciones.bancosantafe.net^
 ||data.comunitat.3cat.cat^
 ||data.crm-edm.thsrc.com.tw^
 ||data.dm.casio.info^
@@ -7860,6 +7856,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||data1.virginplus.ca^
 ||dc.realmadrid.com^
 ||dc.repsol.com^
+||dc.stenaline.de^
 ||dc.stenaline.pl^
 ||dcs.audi.com^
 ||dcs.esprit.de^
@@ -8044,7 +8041,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||metrics.egencia.no^
 ||metrics.egencia.se^
 ||metrics.einsure.com.au^
-||metrics.el-mundo.net^
 ||metrics.elsevier.com^
 ||metrics.energyaustralia.com.au^
 ||metrics.escape.com.au^
@@ -8214,6 +8210,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||omniture-ssl.kia.com^
 ||omniture-ssl.walmart.ca^
 ||omniture-ssl.walmart.com^
+||omniture.groceries.asda.com^
 ||omniture.kennametal.com^
 ||omniture.scotiabank.com^
 ||omniture443.partycity.ca^
@@ -8430,8 +8427,8 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||sanalytics.allianz-assistance.co.uk^
 ||sanalytics.autozone.com^
 ||sanalytics.bd.com^
-||sanalytics.boingtv.it^
 ||sanalytics.boomerangtv.co.uk^
+||sanalytics.boomerangtv.fr^
 ||sanalytics.box.com^
 ||sanalytics.cartoonito.co.uk^
 ||sanalytics.cartoonito.com.tr^
@@ -8502,6 +8499,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||sanl.footlocker.it^
 ||sanl.footlocker.kr^
 ||sanl.footlocker.nl^
+||sanl.footlocker.pl^
 ||sanl.footlocker.pt^
 ||sanl.footlocker.se^
 ||sanmet.originenergy.com.au^
@@ -8646,6 +8644,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetricas.fgv.br^
 ||smetrics-cns.panasonic.com^
 ||smetrics-ieeexplore.ieee.org^
+||smetrics-smartcommerce.amazon.in^
 ||smetrics.10play.com.au^
 ||smetrics.1800contacts.com^
 ||smetrics.24hourfitness.com^
@@ -8772,7 +8771,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.bbva.mx^
 ||smetrics.bbva.pe^
 ||smetrics.bbvacib.com^
-||smetrics.bbvaexperience.com^
 ||smetrics.bbvanet.com.co^
 ||smetrics.bbvanet.com.mx^
 ||smetrics.bbvanetcash.pe^
@@ -9000,6 +8998,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.ets.org^
 ||smetrics.eurekalert.org^
 ||smetrics.eurobet.it^
+||smetrics.eurocard.com^
 ||smetrics.europafm.com^
 ||smetrics.eurowings.com^
 ||smetrics.evernorth.com^
@@ -9035,6 +9034,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.finning.com^
 ||smetrics.firestonebpco.com^
 ||smetrics.flashnews.com.au^
+||smetrics.fleetcardsusa.com^
 ||smetrics.flex.amazon.com^
 ||smetrics.flex.amazon.in^
 ||smetrics.fm96.com^
@@ -9115,7 +9115,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.heromotocorp.com^
 ||smetrics.higheroneaccount.com^
 ||smetrics.hitachi-hightech.com^
-||smetrics.hitachivantara.com^
 ||smetrics.hoken.zexy.net^
 ||smetrics.hollandamerica.com^
 ||smetrics.hollisterco.com^
@@ -9184,6 +9183,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.kebuena.com.mx^
 ||smetrics.kerry.com^
 ||smetrics.keysight.com^
+||smetrics.kioxia-holdings.com^
 ||smetrics.kioxia.com.cn^
 ||smetrics.kioxia.com^
 ||smetrics.kone.com^
@@ -9261,6 +9261,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.marketing.lighting.philips.com.my^
 ||smetrics.marketing.lighting.philips.com.tr^
 ||smetrics.marketing.lighting.philips.com.tw^
+||smetrics.marketing.lighting.philips.com.vn^
 ||smetrics.marketing.lighting.philips.fr^
 ||smetrics.marketing.lighting.philips.it^
 ||smetrics.marketing.lighting.philips.lt^
@@ -9473,7 +9474,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.pwc.com^
 ||smetrics.pwc.ec^
 ||smetrics.pwc.fi^
-||smetrics.pwc.fr^
 ||smetrics.pwc.ie^
 ||smetrics.pwc.in^
 ||smetrics.pwc.lu^
@@ -9578,7 +9578,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.seat.de^
 ||smetrics.seat.es^
 ||smetrics.seat.fr^
-||smetrics.seat.ie^
 ||smetrics.seat.mx^
 ||smetrics.seat.pl^
 ||smetrics.seguro.mediaset.es^
@@ -9622,6 +9621,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smetrics.smtb.jp^
 ||smetrics.sofina.co.jp^
 ||smetrics.sofina.com^
+||smetrics.softcrylic.com^
 ||smetrics.softwareag.com^
 ||smetrics.solarwinds.com^
 ||smetrics.solaseedair.jp^
@@ -9853,7 +9853,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||smtc.qantas.com^
 ||smtx.belfius.be^
 ||smy.iheart.com^
-||snalytics.allianz-assistance.at^
 ||snalytics.allianz-reiseversicherung.de^
 ||snalytics.allianz-travel.com.hk^
 ||so.boh.com^
@@ -10044,7 +10043,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||ssitecat.eset.com^
 ||ssitectlyst.saksfifthavenue.com^
 ||ssl-metrics.tim.it^
-||ssl.aafp.org^
 ||ssl.o.additudemag.com^
 ||ssl.o.auspost.com.au^
 ||ssl.o.coliquio.de^
@@ -10104,8 +10102,8 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||sstats.fishersci.no^
 ||sstats.fishersci.pt^
 ||sstats.fishersci.se^
+||sstats.gaba.co.jp^
 ||sstats.harlequin.com^
-||sstats.harrods.com^
 ||sstats.hellobank.be^
 ||sstats.hostplus.com.au^
 ||sstats.investors.com^
@@ -10381,6 +10379,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||target.footlocker.it^
 ||target.footlocker.nl^
 ||target.footlocker.no^
+||target.footlocker.pl^
 ||target.footlocker.pt^
 ||target.footlocker.se^
 ||target.groupama.fr^
@@ -10542,6 +10541,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||emarketing.landisgyr.com^
 ||engage.ca.victorinsurance.com^
 ||engage.td.org^
+||engage.us.victorinsurance.com^
 ||finley.finleyusa.com^
 ||go.brunswickgroup.com^
 ||go.lanair.com^
@@ -10564,12 +10564,12 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||info.charityvillage.com^
 ||info.constellationbehavioralhealth.com^
 ||info.cresinsurance.com^
-||info.datasci.com^
 ||info.eco.ca^
 ||info.eu.tmi.yokogawa.com^
 ||info.franklin.edu^
 ||info.furykeywest.com^
 ||info.girlswhoinvest.org^
+||info.guardiancu.org^
 ||info.halo.com^
 ||info.harmonyhit.com^
 ||info.healthcareittoday.com^
@@ -10596,7 +10596,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||info.navitor.com^
 ||info.neptune-software.com^
 ||info.netec.com^
-||info.osufoundation.org^
 ||info.rates.ca^
 ||info.secotools.com^
 ||info.summitministries.org^
@@ -10611,6 +10610,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||innovation.rlgbuilds.com^
 ||lgm.averydennison.com^
 ||lp.fsresidential.com^
+||m.acmgloballab.com^
 ||ma.pasco.com^
 ||mailer.gameloft.com^
 ||marketing.acieu.net^
@@ -10633,7 +10633,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||marketing.clientsfirst-us.com^
 ||marketing.comda.com^
 ||marketing.construsoft.com^
-||marketing.couplescruise.com^
 ||marketing.dantecdynamics.com^
 ||marketing.deltechomes.com^
 ||marketing.discoverphl.com^
@@ -10649,6 +10648,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||marketing.foxrehab.org^
 ||marketing.gbg.com^
 ||marketing.globalmedics.co.nz^
+||marketing.goprovidence.com^
 ||marketing.gotolouisville.com^
 ||marketing.grandecheese.com^
 ||marketing.hhglobal.com^
@@ -10676,7 +10676,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||marketing.partnerrc.com^
 ||marketing.pentaho.com^
 ||marketing.petsit.com^
-||marketing.precisiondoor.tech^
 ||marketing.pronaca.com^
 ||marketing.redlion.net^
 ||marketing.scenicsedona.com^
@@ -10687,7 +10686,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||marketing.stamen.com^
 ||marketing.sunny.org^
 ||marketing.technicalprospects.com^
-||marketing.theplasticsurgeryclinic.ca^
 ||marketing.theresortatsummerlin.com^
 ||marketing.towerfcu.org^
 ||marketing.transperfect.com^
@@ -10705,6 +10703,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||marketing.visitpasadena.com^
 ||marketing.visitpensacola.com^
 ||marketing.visitsacramento.com^
+||marketing.visitsouthwalton.com^
 ||marketing.visitwilliamsburg.com^
 ||marketing.voltexelectrical.com.au^
 ||marketing.washington.org^
@@ -10754,7 +10753,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||seahorseinfo.agilent.com^
 ||seniorliving.vantagehouse.org^
 ||shop.iwantclips.com^
-||smf.southernmetalfab.com^
 ||solutions.toolepeet.com^
 ||success.vertigisstudio.com^
 ||support.flex.com^
@@ -10773,6 +10771,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||visit.monroecollege.edu^
 ||www.healthcare-distribution.com^
 ||www2.2ndgear.com^
+||www2.acsvalves.com^
 ||www2.bobcad.com^
 ||www2.citizensclimatelobby.org^
 ||youronestopshop.themagnetgroup.com^
@@ -10799,7 +10798,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||net.jumia.com^
 ||net.shop.com.mm^
 ||nsm.tr.netsalesmedia.pl^
-||r.akipam.com^
 ||r.powuta.com^
 ||f1.mailperformance.com^
 ||f1.np6.com^
@@ -10848,7 +10846,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||tr.news.ailleurs.com^
 ||tr.news.alinea.com^
 ||tr.news.allopneus.com^
-||tr.news.capfun.com^
 ||tr.news.casinomax.fr^
 ||tr.news.corsicaferries.com^
 ||tr.news.cotemaison.fr^
@@ -10913,7 +10910,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||app.connections.te.com^
 ||app.cubuffs.com^
 ||app.fightingillini.com^
-||app.gobearcats.com^
 ||app.godeacs.com^
 ||app.gofrogs.com^
 ||app.gohuskies.com^
@@ -10968,7 +10964,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||dg.ptl.irco.com^
 ||dhlsupplychain.dhl.com^
 ||dialogue.mazda.cz^
-||dialogue.mazda.de^
 ||dialogue.mazda.eu^
 ||dialogue.mazda.fr^
 ||discover.clarivate.com^
@@ -11041,7 +11036,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||images.e.gallup.com^
 ||images.email.hkaf.org^
 ||images.go.aifs.com^
-||images.go.bge.com^
 ||images.go.bluejacketslink.com^
 ||images.go.fastweb.it^
 ||images.go.mathworks.com^
@@ -11053,6 +11047,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||images.myhealthyfinances.com^
 ||images.noticias.clarin.com^
 ||images.online.mt.com^
+||images.oracle.netsuite.com^
 ||images.respond.overheaddoor.com^
 ||images.rsvp.capitalgrouppcs.com^
 ||images.seemore.zebra.com^
@@ -11062,12 +11057,10 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||info.kubotausa.com^
 ||info.lloydslistintelligence.com^
 ||info.pella.com^
-||info.revvity.com^
 ||info.scorecardrewards.com^
 ||info.thermofisher.com^
 ||insights.atradiuscollections.com^
 ||iot-business.vodafone.com^
-||it-business.vodafone.com^
 ||join.ifsecglobal.com^
 ||know.wolterskluwerlr.com^
 ||lacinfo.motorolasolutions.com^
@@ -11154,7 +11147,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||tracking.solutions.parker.com^
 ||tracking.ti.com^
 ||tracks3.ferrari.com^
-||trk.createyournextcustomer.com^
 ||trk.futureelectronics.com^
 ||trk.go.ingrammicrocloud.com^
 ||trk.vodafone.com.tr^
@@ -11345,6 +11337,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||wbtrkk.teufelaudio.com^
 ||wbtrkk.teufelaudio.es^
 ||wbtrkk.teufelaudio.fr^
+||wbtrkk.teufelaudio.nl^
 ||wbtrkk.teufelaudio.pl^
 ||web.crm.beps.it^
 ||web.e.bolts.co.uk^
@@ -11374,10 +11367,8 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||tk.boutique.capital.fr^
 ||tk.bricoprive.com^
 ||tk.conforama.fr^
-||tk.domitys.fr^
 ||tk.engie.fr^
 ||tk.etam.com^
-||tk.evaneos.de^
 ||tk.frenchbee.com^
 ||tk.kidsaround.com^
 ||tk.kusmitea.com^
@@ -11450,7 +11441,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||t.wayfair.de^
 ||taz.de/count/
 ||teltarif.de/scripts/ttt.js
-||teltarif.de^$ping
 ||tgw.gmx.net^
 ||tgw.web.de^
 ||tm.swp.de^
@@ -11713,6 +11703,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||r.kleertjes.com^
 ||sat.sanoma.fi^
 ||statistiek.rijksoverheid.nl^
+||t.ad.nl^$image
 ||t.bd.nl^$image
 ||t.hln.be^$image
 ||topspin.npo.nl^
@@ -11743,6 +11734,7 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 ||ta.tokopedia.com/promo/v1/views
 ||tokopedia.com/helios-client/client-log
 ||analytics.tio.ch^
+||c.corriere.it^
 ||fanpage.it/views/
 ||lupoporno.com/js/analytics
 ||paginebianche.it/cgi-bin/jbimpres.cgi?
@@ -12053,7 +12045,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 @@||adobedtm.com^*/s-code-$script
 @@||adobedtm.com^*/satellite-$script
 @@||analytics.analytics-egain.com/onetag/$script,domain=boohoo.com|digikey.at|digikey.be|digikey.bg|digikey.ca|digikey.ch|digikey.cn|digikey.co.il|digikey.co.nz|digikey.co.th|digikey.co.uk|digikey.co.za|digikey.com|digikey.com.au|digikey.com.br|digikey.com.mx|digikey.cz|digikey.de|digikey.dk|digikey.ee|digikey.es|digikey.fi|digikey.fr|digikey.gr|digikey.hk|digikey.hu|digikey.ie|digikey.in|digikey.it|digikey.jp|digikey.kr|digikey.lt|digikey.lu|digikey.lv|digikey.my|digikey.nl|digikey.no|digikey.ph|digikey.pl|digikey.pt|digikey.ro|digikey.se|digikey.sg|digikey.si|digikey.sk|digikey.tw
-@@||api.ipinfodb.com^$xmlhttprequest,domain=management30.com
 @@||api.lab.amplitude.com/v1/vardata?$domain=gaiagps.com
 @@||api.perfops.net^$script,xmlhttprequest,domain=cdnperf.com|dnsperf.com
 @@||api.vk.com/method/statEvents.$~third-party
@@ -12064,7 +12055,6 @@ abema.tv$$script[tag-content="NREUM"][max-length="262144"]
 @@||bgp.he.net/images/flags/*.gif?$image,~third-party
 @@||blackcircles.ca^$script,~third-party
 @@||browser-intake-datadoghq.com^$domain=pluto.tv
-@@||browser.covatic.io/sdk/v1/bauer.js$script,domain=hellorayo.co.uk
 @@||c.paypal.com/da/r/fb.js$script
 @@||c.webtrends-optimize.com/acs/$image,script,domain=tvlicensing.co.uk
 @@||canadacomputers.com/templates/ccnew/assets/js/jquery.browser-fingerprint-$~third-party
