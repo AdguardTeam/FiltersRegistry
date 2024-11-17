@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: vs8vfF3gnEou+cif4OmeUA
-! Diff-Path: ../patches/18/18-s-1731775063-3600.patch
+! Checksum: /TXrlUMmevGDNUo6zq9a5g
+! Diff-Path: ../patches/18/18-s-1731857859-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.51.39
-! TimeUpdated: 2024-11-16T16:33:57+00:00
+! Version: 2.0.51.40
+! TimeUpdated: 2024-11-17T15:33:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15479,9 +15479,6 @@ empik.com##+js(set-cookie, cad, 1)
 homebook.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,jejswiat.pl,kafeteria.pl,komorkomania.pl,luxlux.pl,medycyna24.pl,mixer.pl,money.pl,nocowanie.pl,open.fm,parenting.pl,pinger.pl,pogodnie.pl,samosia.pl,testwiedzy.pl##+js(set-constant, __wpjslib__, {})
 gadgethacks.com##+js(set-constant, WHT.ShowConsentForm, trueFunc)
 !
-! The button to click is in the shadow root.
-! TODO: Rework when support for clicking inside the shadow root appears.
-!
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,testwiedzy.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#body > * { filter: none !important; }
 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,testwiedzy.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html > body { overflow: auto !important; }
@@ -15493,9 +15490,6 @@ gadgethacks.com##+js(set-constant, WHT.ShowConsentForm, trueFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173053
 ! TODO: remove the hints, JS rule when the issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/407
 !+ NOT_PLATFORM(windows, mac, android)
-! https://github.com/AdguardTeam/AdguardFilters/issues/186422
-!+ NOT_PLATFORM(windows, mac, android)
-! https://github.com/uBlockOrigin/uAssets/issues/24060
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170168
 ! TODO: use trusted-click-element scriptlet when issues below are fixed
 ! Support for clicking in shadow DOM - https://github.com/AdguardTeam/Scriptlets/issues/323
@@ -15586,6 +15580,12 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !
 !
 !
+! kabeleinsdoku.de - unable to watch embedded video
+@@||privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js$domain=kabeleinsdoku.de|kabeleinsdoku.at
+@@||api.usercentrics.eu/settings/*/latest$domain=kabeleinsdoku.de|kabeleinsdoku.at
+@@||api.usercentrics.eu/gvl/$domain=kabeleinsdoku.de|kabeleinsdoku.at
+@@||app.usercentrics.eu/browser-sdk/$domain=kabeleinsdoku.de|kabeleinsdoku.at
+@@||consent-api.service.consent.usercentrics.eu/consent/$domain=kabeleinsdoku.de|kabeleinsdoku.at
 ! warsteiner-gruppe.de - unable to accept cookie
 @@||warsteiner-gruppe.de/wp-content/themes/warsteiner/js/gdpr.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193023
