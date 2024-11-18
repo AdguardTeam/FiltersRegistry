@@ -1,10 +1,11 @@
-! Checksum: ICpI0fLVJfnIhlOEOaktOw
+! Checksum: X/jiAQg6uuRoJeovSUU6Ng
 ! Title: AdGuard Quick Fixes filter (Optimized)
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.3.31
-! TimeUpdated: 2024-11-18T13:36:38+00:00
+! Version: 2.0.3.32
+! TimeUpdated: 2024-11-18T14:36:46+00:00
 ! Expires: 10 days (update frequency)
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
+ogrodinfo.pl#@##cookie-law-info-bar
 ddcar.com.tw##.popup-adv
 ddcar.com.tw##div[id^="div-adsense-"]
 ddcar.com.tw##.section-page-articles > .text-center[style="min-width: 970px; min-height: 250px;"]
@@ -411,6 +412,8 @@ muratordom.pl#%#//scriptlet('prevent-setTimeout', '/offsetWidth[\s\S]*?sponsored
 vibefm.pl##.article__placement
 exploader.net#$#article > div[style="margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;"] { position: absolute !important; clip:rect(1px,1px,1px,1px) !important; }
 exploader.net#@$?#article > div[style="margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;"] { remove: true; }
+wiki.yjsnpi.nu#$##mw-content-text > div[style="text-align: center; margin: 1rem auto; max-width: 320px;"] { position: absolute !important; left: -4000px !important; }
+wiki.yjsnpi.nu#$##mw-content-text > div[style="text-align: center; margin: 1rem auto; max-width: 100%;"] { position: absolute !important; left: -4000px !important; }
 wiki.yjsnpi.nu#%#//scriptlet('abort-current-inline-script', 'onload', 'catch')
 wiki.yjsnpi.nu#%#//scriptlet('remove-node-text', 'script', '/catch.+catch/')
 wiki.yjsnpi.nu#%#(()=>{let e;if(0==RLCONF.wgNamespaceNumber&&"view"==RLCONF.wgAction&&0!=RLCONF.wgArticleId&&!RLCONF.wgIsRedirect&&RLCONF.wgRevisionId==RLCONF.wgCurRevisionId){const n=document.querySelector("#bodyContent");if(n){const c=new XMLHttpRequest;c.onloadend=()=>{200===c.status&&(e=(new DOMParser).parseFromString(c.responseText,"text/html").body,n.appendChild(e.querySelector("#comments-section")),document.querySelector("#comment-submit").addEventListener("click",o),t(0))},c.open("GET","/comments/assets/template.html",!0),c.send()}}function t(t){const o=document.querySelector("#comments-more"),c=document.querySelector("#comments-message"),r=()=>{c.innerText="読み込めませんでした",o&&(o.innerText="もっと見る",o.disabled=!1)},m=new XMLHttpRequest;m.responseType="json",m.onloadend=()=>{const o=document.querySelector("#comments-loading");o&&o.remove(),200===m.status?function(t){const o=document.querySelector("#comments"),c=document.querySelector("#comments-contents"),r=document.querySelector("#comments-recent"),m=document.querySelector("#comments-more"),s=document.querySelector("#comments-message");m&&m.remove();if(s.innerHTML="",o&&c&&r){if(t.comments.forEach((t=>{const n=e.querySelector("#comment").cloneNode(!0);n.id="comment-"+t.number,n.dataset.commentId=t.number,n.querySelector(".comment-author").innerHTML=t.author,n.querySelector(".comment-timestamp").innerHTML=t.created_at,n.querySelector(".comment-body").innerHTML=t.comment,o.appendChild(n)})),t.cursor>0){const o=e.querySelector("#comments-more").cloneNode(!0);o.dataset.cursor=t.cursor,o.addEventListener("click",n),c.appendChild(o)}const m=document.createElement("ul");t.recent.sort((()=>Math.random()-Math.random())).forEach((e=>{const t=document.createElement("li"),n=document.createElement("a");n.href="/w/index.php?curid="+e.article_id,e.comment.length>70&&(e.comment=e.comment.substring(0,70)+"&hellip;"),n.innerHTML=e.comment,t.appendChild(n),m.appendChild(t)})),r.appendChild(m.cloneNode(!0)),r.appendChild(m.cloneNode(!0))}}(m.response):0==t&&r()},m.ontimeout=r,m.onerror=r,m.open("GET","/comments/comments.php?article_id="+RLCONF.wgArticleId+"&cursor="+t,!0),m.send()}function n(e){const n=document.querySelector("#comments-more");n.disabled=!0,n.innerText="読込中…",t(e.target.dataset.cursor)}function o(e){const n=document.querySelector('#comment-editor input[name="author"]'),o=document.querySelector("#comment-editor textarea");if(""==o.value)return void mw.notify("（本文が）ないです");e.target.disabled=!0,e.target.innerHTML="送信中…";const c={article_id:RLCONF.wgArticleId,author:n.value,comment:o.value},r=[];for(const[e,t]of Object.entries(c))r.push(`${encodeURIComponent(e)}=${encodeURIComponent(t)}`);const m=new XMLHttpRequest;m.onloadend=()=>{e.target.disabled=!1,e.target.innerHTML="投稿する",200===m.status?(mw.notify("投稿しました"),n.value="",o.value="",document.querySelector("#comments").innerHTML="",document.querySelector("#comments-recent").innerHTML="",t(0)):403===m.status?mw.notify("（フリーWi-Fiからは書け）ないです"):429===m.status?mw.notify("書きすぎィ！ちょっと待って、どうぞ！"):mw.notify("投稿できませんでした…")},m.open("POST","/comments/comments.php"),m.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),m.send(r.join("&").replaceAll("%20","+"))}})();
@@ -420,11 +423,14 @@ wiki.yjsnpi.nu#@%#//scriptlet('trusted-suppress-native-method', 'Document.protot
 wiki.yjsnpi.nu#@%#//scriptlet('remove-node-text', 'script', '/\(\(\)=>\{function [A-z]+\(\)\{const /')
 wiki.yjsnpi.nu#@%#//scriptlet("prevent-eval-if", "/g(',')?e(',')?t(',')?U(',')?T(',')?C/")
 ||wiki.yjsnpi.nu^$script
+@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=ext.cite.ux-enhancements$script,~third-party
+@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=ext.categoryTree$script,~third-party
 @@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=codex-search-styles$script,~third-party
 @@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=ext.visualEditor$script,~third-party
 @@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=jquery$script,~third-party
 @@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=mediawiki.Uri$script,~third-party
 @@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=startup$script,~third-party
+japscan.lol##body > style + .container > .row > #main + #sidebar.col-md-3 > .card.mt-1 > .card[style="margin: 0px auto; display: block;"] > iframe[id^="__clb-"][id$="_container"][style^="display: inline-block; width: 300px; height: 100px;"][sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-scripts allow-top-navigation-to-custom-protocols"][scrolling="no"]
 japscan.lol##body > .container.text-center > .mb-2.mt-2[style="margin: 0px auto; display: block;"] > iframe[id^="__clb-"][id$="_container"][style^="display: inline-block; width: 300px; height: 100px;"][sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-scripts allow-top-navigation-to-custom-protocols"][scrolling="no"]
 japscan.lol##body > style + .container > .row > #main + #sidebar.col-md-3 > .card.mt-1 > .card[style="margin: 0px auto; display: block;"] > iframe[id^="__clb-"][id$="_container"][style^="display: inline-block; width: 300px; height: 250px;"][sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-scripts allow-top-navigation-to-custom-protocols"][scrolling="no"]
 japscan.lol##body > style + .container > .row > #main.col-md-9 > .card > .card-body[style="margin: 0px auto; display: block;"] > iframe[id^="__clb-"][id$="_container"][style^="display: inline-block; width: 300px; height: 100px;"][sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms allow-scripts allow-top-navigation-to-custom-protocols"][scrolling="no"]
@@ -432,5 +438,5 @@ japscan.lol##body > style + .container > .row > #main + #sidebar.col-md-3 > .car
 japscan.lol##body > style + .container > .row > #main.col-md-9 > .card > #chapters.tab-content > .row.justify-content-center.align-items-center > a.image-box.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
 japscan.lol##body > .container.text-center > .mb-2.mt-2[style="margin: 0px auto; display: block;"] > .text-center > a.donate[href^="http"][target="_blank"][rel="noopener noreferrer nofollow"]:not([href^="http://japscan.lol"]) > img
 japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Olive|typeof kDo|eval\(|=0x1,|=>\{var|'ty'/")
-japscan.lol#%#//scriptlet("remove-node-text", "script", "touchmove'")
+japscan.lol#%#//scriptlet("remove-node-text", "script", "/function NgB|Function\('return|07\.png|innerHTML'|preventDefault'|exception'|uchmove'|appendChild'|querySelector'|refresh'|stopPropagation'|\);\}\}\(\)\)\);\}\}\}\(\)\)\)\);/")
 japscan.lol#@%#//scriptlet('remove-node-text', 'script', '/\}\);\}\}\}\(\)\)\)\);|\]\(\)\);\}\}\}\(/')
