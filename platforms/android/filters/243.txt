@@ -1,14 +1,14 @@
-! Checksum: QgutiO2BOSIFQirXCQaCVg
-! Diff-Path: ../patches/243/243-s-1731834333-14400.patch
+! Checksum: 5TOu7ltq86fhEKbOzl/bvg
+! Diff-Path: ../patches/243/243-s-1731920760-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.4
-! TimeUpdated: 2024-11-17T09:01:53+00:00
+! Version: 2.0.20.5
+! TimeUpdated: 2024-11-18T09:01:52+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2024-11-17 07:42:18 CET
+! Last modified: 2024-11-18 07:19:34 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -835,7 +835,9 @@ lakartidningen.se,canariajournalen.se##.advertisement
 landleyskok.se##.inpostbanner, .banner-leaderboard
 langd.se##.single-entry__ads
 lantbruksnytt.se##article:has(.ads_text)
-lantbruksnytt.se###startpage-top-right, .ads_text + a, div[class*="square_rotate"], a[target="_blank"][rel="nofollow"], #ouibounce-modal
+lantbruksnytt.se##aside.enhanced-text-widget:has(div[class^="square_rotate"])
+lantbruksnytt.se##aside.side-box:has(.adsbygoogle)
+lantbruksnytt.se###startpage-top-right, .ads_text + a, div[class*="square_rotate"], a[target="_blank"][rel="nofollow"], #ouibounce-modal, iframe[src*="iframebanner"], .widget_maskinstationer_widget
 laromedia.se##img[alt="Annons"] + .img-flipper
 lawline.se##[class^="CookiesModal"]
 lchfarkivet.se##.modal-wrapper, div#beskrivning[style="font-size: 10px; text-align: center; color: #8E8C8C; max-width: 700px;"]
@@ -902,7 +904,6 @@ m3.se,pcforalla.se,macworld.se#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*="
 macken.xyz##a[target="_blank"]:not([href^="/"]):not([href*="/macken.xyz"])
 macken.xyz#$#.et_pb_section { opacity:1!important; animation-duration:unset!important; animation-fill-mode:unset!important; }
 magasinetparagraf.se###large_banner
-magasink.se##[data-magasintrackbid]
 maipenrai.se##.cWidgetContainer > ul > li:first-child, div[style*="border: 1px solid"] a[target="_blank"], div[data-role="sidebarAd"], a[href*="&ad="]
 maklarvarlden.se##article:has(.sponsored-inlist)
 maklarvarlden.se##div[data-td-block-uid]:has(a[href*="/kategori/sponsra"])
@@ -937,6 +938,7 @@ merinfo.se##article[data-customer]
 mestmotor.se##.advInsideSticky
 mestmotor.se##ul.wp-block-post-template:has(a[href*="/kategori/partner/"])
 metalcentral.net##.bannergroupno-padding
+metalcentral.net##.bannergroup:upward(.uk-panel-box)
 metalcentral.net,egoinas.se###tm-top-a
 metalcentral.net,rotter.se##.bannergroup
 metromode.se#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*="metromode.se/bouncer"]', '?url')
@@ -1063,7 +1065,7 @@ piraja.se###panoramaholder, #parallax, .cc-floating, a[href*="utm_medium=banner"
 piraja.se##:is(.intro, #hero, #featholder):has(.spons)
 pirkt.se##aside#below-header, aside.sidebar-right img, aside.sidebar-left img, aside#above-main, aside#after-first-post, h1 + .wp-block-video, h2 + .wp-block-image img[src$=".gif"]
 placera.se##.noMarginAd
-placera.se##.vignette.XLText a:has-text(/^annons/i):upward(.section)
+placera.se##.vignette.XLText :is(a[href*="/externa-tjanster"], a[href*="promoted"]):upward(.section)
 plastikoperationsforum.se,riksettan.net,automobil.se,endurobloggen.se,vibilagare.se,mopedgaraget.se,caroftheyear.se,klassiker.nu,alandsradio.ax,svjt.se,so-rummet.se###sliding-popup
 playradio.se##.sidealtcol
 podcasts.nu##.sponsor-list, .cookie-law-wrapper, .big-ad-placeholder, .affiliate-wrapper
@@ -1345,7 +1347,6 @@ tv4play.se,tv4.se,fotbollskanalen.se,koket.se##.visit-advertiser-link
 tv4.se##.maxetise
 tv24.se##li[id^="infeed"], div.presented-by
 tvmatchen.nu##.bet365, .panorama-wrapper, .tvg-manager-box, .tv102945, .tv102987, #event_banner, .go-to-partner, .odds, #text-13
-tvprogram.se##.backdrop, .fcb
 tvsporten.nu##div[class*="odds_container"], .sidebar a[target]
 tv.nu##a[href*="adform.net"], .ad-fullscreenWallpaper__container
 tv.nu###modal div[itemtype][itemscope] > div[class]:has(a[href*="doubleclick"])
@@ -1358,7 +1359,6 @@ undervarttak.se##.middle-banner
 ungdomar.se##.post-item:has(a[href*="casino"], a[href*="-lan-"], a[href*="kasino"], a[href*="kredit"])
 ungdomsfotboll.se##div[id^="ungdo-"]
 universitetslararen.se##div[id^="unive-"]
-upphandling24.se##aside .textwidget:has-text(ANNONS)
 upphandling24.se##.type-partnerartikel
 upplysning.se##.buy-items, div[style*="min-height"]:has(#topbanner, script[data-pbid], [id^="nativendo"], div[id^="upplysning_outstream"])
 uppsalanyheter.se###banner-top-block
@@ -1432,7 +1432,6 @@ vovve.net###sticky_ad, div[style*="ad_hor.gif"], a[href*="casino"], a[href*="kas
 webbjobb.io##.cookie
 webbkameror.se###cookiescript_injected
 webbkryss.nu##.skyad-wrapper
-webb-tv.nu##[id^="adservice"]
 webhallen.com##.takeover-link
 whowhatwear.co.uk#@#a[href*="/click.linksynergy"] img
 www.aftonbladet.se#%#//scriptlet('ubo-nostif.js', 'TAKEOVER')
@@ -1736,6 +1735,7 @@ zeromagazine.nu##div[id^="ads"]
 /Banners/webbannons
 /BlogPortal/view/Statistics
 /CookieBar$script,domain=morningstar.se
+/DAC.js$domain=swedroid.se
 /DO-theme/ads.js
 /DynamicGAFunctions$script,domain=morningstar.se
 /EAS_tag$script
@@ -2424,6 +2424,7 @@ zeromagazine.nu##div[id^="ads"]
 /viewed$xmlhttprequest,domain=fotbolltransfers.com
 /view_count/view.php
 /view_count/view$domain=byggahus.se
+/visit$xmlhttprequest,domain=placera.se
 /visit/v.js
 /wdg/iab-active
 /wds_nyhetsbrev_popup
@@ -2489,7 +2490,6 @@ zeromagazine.nu##div[id^="ads"]
 /?template=prisjakt$domain=ljudochbild.se
 /?trafikkalla$image,domain=bloggplatsen.se
 /_adsmodern/*$image
-/_api/*/visit$domain=placera.se
 /_graphics/annons
 /_papers_media/banners
 /_sites_media/*/uploads/Banners
