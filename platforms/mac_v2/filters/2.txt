@@ -1,9 +1,9 @@
-! Checksum: DORdwiLR73E+VgSSiHxqHg
-! Diff-Path: ../patches/2/2-s-1731915453-3600.patch
+! Checksum: DGn+nqwrDAwAQyAYcdNXAw
+! Diff-Path: ../patches/2/2-s-1731919086-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.61.7
-! TimeUpdated: 2024-11-18T07:31:27+00:00
+! Version: 2.3.61.8
+! TimeUpdated: 2024-11-18T08:31:30+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35041,6 +35041,9 @@ $xmlhttprequest,third-party,denyallow=fastlycdn.com|doodcdn.co|intensedebate.com
 !
 ! NOTE: Specific rules
 !
+veporn.net##.vcover2
+kijiji.ca##aside > div[class^="sc"]:has(> div#gpt-rightrail-top)
+kijiji.ca##div[id^="gpt-leader-"]
 ||deeplol.gg/images/ad_
 simpcity.su##.p-body-sidebar > a[href^="https://catflix.su/"]
 imagebam.com#%#//scriptlet('set-cookie', '_pre_js', '1')
@@ -42781,7 +42784,7 @@ hdzog.tube,hdzog.com,hotmovs.com,privatehomeclips.com##.partners-wrap
 ||hardwarezone.com.sg/ads/ad_site_notice.js
 dogeflix.net##.preloader
 ||overclockers.co.uk/KitGuru/similarArticle?sku=$domain=kitguru.net
-perfectgirls.xxx,pornhat.*##.before-player
+veporn.net,perfectgirls.xxx,pornhat.*##.before-player
 userupload.in##a[href^="https://apkland.net/"]
 jawcloud.co##.jwbanner
 /\.com\/[a-zA-Z]{10}\.js$/$script,~third-party,domain=povaddict.com
@@ -58992,6 +58995,15 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/193038
+@@||imgtmo.com^$stealth=referrer
+@@||techobras.com^$stealth=referrer
+@@||babynombres.com^$stealth=referrer
+@@||sombracycling.com^$stealth=referrer
+@@||recetasmaria.com^$stealth=referrer
+@@||culturanimation.com^$stealth=referrer
+@@||zonatmo.com/index.php/view_uploads/$stealth=referrer
+@@/uploads/*$image,stealth=referrer,domain=zonatmo.com|culturanimation.com|recetasmaria.com|techobras.com|babynombres.com|sombracycling.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193041
 @@||api.themoviedb.org^$stealth=3p-auth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192837
@@ -116047,7 +116059,7 @@ asgg.php$domain=ghostbin.me|paste.fo
 ||innovid.com/media/encoded/*.mp4$redirect=noopmp4-1s,domain=ktla.com
 ||interestingengineering.com/partial/connatix_desktop.html
 ||jwpcdn.com^$script,domain=bgr.com|decider.com|dexerto.com
-||jwplayer.com^$domain=americansongwriter.com|dexerto.com|ginx.tv|imfdb.org|infoworld.com|kiplinger.com|lifewire.com|soulbounce.com|spokesman-recorder.com|tennis.com|thestreet.com|tomshardware.com|variety.com|whathifi.com
+||jwplayer.com^$domain=americansongwriter.com|dexerto.com|ginx.tv|imfdb.org|infoworld.com|kiplinger.com|lifewire.com|soulbounce.com|spokesman-recorder.com|tennis.com|thecooldown.com|thestreet.com|tomshardware.com|variety.com|whathifi.com
 ||live.primis.tech^$third-party
 ||minute.ly^$third-party
 ||minutemedia-prebid.com^$third-party
@@ -123753,6 +123765,7 @@ thepinknews.com##.video-player__container
 dpreview.com##.videoWrapper
 consequence.net##.video_container
 comicbook.com##.wp-block-savage-platform-primis-video
+thecooldown.com##.wp-block-tcd-multipurpose-gutenberg-block
 bigthink.com##.wrapper-connatixElements
 bigthink.com##.wrapper-connatixPlayspace
 totalprosports.com##[data-stn-player="n2psbctm"]
