@@ -1,9 +1,9 @@
-! Checksum: sBtiYsH6C1LfHBJZaQNjhg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1731944376-3600.patch
+! Checksum: w4jBolaJ6Qli9gwy8Jr0hg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1731947925-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.44.63
-! TimeUpdated: 2024-11-18T15:35:15+00:00
+! Version: 2.0.44.64
+! TimeUpdated: 2024-11-18T16:34:26+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -627,7 +627,7 @@ ddl-warez.cc#%#//scriptlet('prevent-window-open', 'af.php')
 infranken.de#%#//scriptlet('remove-attr', 'href', 'a[rel*="sponsored"]')
 prosieben.de#%#//scriptlet('set-constant', 'Object.prototype.checkAdProxyAvailability', 'noopFunc')
 20min.ch#%#(()=>{window.TATM=window.TATM||{},TATM.init=()=>{},TATM.initAdUnits=()=>{},TATM.pageReady=()=>{},TATM.getVast=function(n){return new Promise((n=>{n()}))},TATM.push=function(n){if("function"==typeof n)try{n()}catch(n){console.debug(n)}};})();
-data-load.in#%#//scriptlet('set-cookie', '_xflora', '1')
+data-load.*#%#//scriptlet('set-cookie', '_xflora', '1')
 gmx.net,gmx.at,web.de#%#(()=>{const a=(a,b,c)=>{const d=Reflect.apply(a,b,c),e=".list-programmatic-ad-item--multi-line, .list-inbox-ad-item--multi-line { display: none !important; }";if("adoptedStyleSheets"in document){const a=new CSSStyleSheet;a.replaceSync(e),d.adoptedStyleSheets=[a]}else{const a=document.createElement("style");a.innerText=e,d.appendChild(a)}return d};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,{apply:a})})();
 chip.de#%#//scriptlet('abort-current-inline-script', 'document.querySelector', 'DisplayAcceptableAdIfAdblocked')
 chip.de#%#//scriptlet('trusted-replace-node-text', 'style', '/a [\s\S]* padding-top[\s\S]*aspect-ratio/', '/.*(\..*?) [\s\S]*padding-top[\s\S]*aspect-ratio[\s\S]*/', '$1 { display: none !important; }')
@@ -1141,7 +1141,7 @@ isteshaltbar.de##div[style^="min-height:"][class*="-rectangle-"]
 sportdeutschland.tv##app-top-banner
 kuechengoetter.de##.c-adverts__content
 kuechengoetter.de##.c-adverts:not(.c-adverts--header)
-data-load.in##.p-body-sidebar > div.block:not([data-widget-key])
+data-load.*##.p-body-sidebar > div.block:not([data-widget-key])
 ||myboerse.bz/persecute.php
 karrierebibel.de###above-footer
 computerbase.de##.forum-teaser
@@ -1445,7 +1445,7 @@ steuertipps.de##.goAdMan
 gmx.*##.left-col-bottom
 tellows.de##.container #singlecomments > li:not([id])
 pcgames.de##a[href*="/E-Commerce-Thema-"]
-data-load.in##center > a[target="_blank"] > img
+data-load.*##center > a[target="_blank"] > img
 netzwelt.de##a[href^="https://www.awin1.com/cread.php?"]
 nzz.ch##.resor
 amazon.de##div[class*="ad-topper"]
@@ -2208,6 +2208,7 @@ onvista.de#?#.col__content section:has(> div > h2 + div.ov-subline:contains(Werb
 stern.de#$?#.group-teaserblock__items > article:has(> .teaser__text-content > .ad-labels) { remove: true; }
 werkenntdenbesten.de#?#.w-full.flex-col.items-center:has(> .relative > div[x-data="modules.ad()"])
 tvspielfilm.de#?#.info-table > tbody > tr:not([class]):has(> td > .desktop_banner_any)
+data-load.*#?#.p-body-sidebar > div.block:has(> div.block-container > div.block-body > center > a[target="_blank"] > img[src*="partner/"])
 live.vodafone.de#?#.swiper-wrapper > .swiper-slide > .gujAd:upward(1)
 mactechnews.de#?#div[class] > div[id^="traffective-ad-"]:upward(1)
 dubisthalle.de#?#.sidebar-content > div[id^="block-"]> div[id^="dbh-"] > .dbh-adlabel:upward(2)

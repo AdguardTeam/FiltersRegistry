@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FqdhNe1vOfoZ9bgGBDWw8A
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1731944386-3600.patch
+! Checksum: 7i0mUO/c2olHadOIWuH9MA
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1731947932-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.44.63
-! TimeUpdated: 2024-11-18T15:35:15+00:00
+! Version: 2.0.44.64
+! TimeUpdated: 2024-11-18T16:34:26+00:00
 ! Expires: 5 days (update frequency)
 ||remp-campaign.golem.de^
 ||web-ads.10sq.net^
@@ -558,7 +558,7 @@ restegourmet.de##+js(nano-setInterval-booster, invoke, 1000, 0.01)
 ddl-warez.cc##+js(window.open-defuser, af.php)
 infranken.de##+js(remove-attr, href, a[rel*="sponsored"])
 prosieben.de##+js(set-constant, Object.prototype.checkAdProxyAvailability, noopFunc)
-data-load.in##+js(set-cookie, _xflora, 1)
+data-load.*##+js(set-cookie, _xflora, 1)
 chip.de##+js(abort-current-script, document.querySelector, DisplayAcceptableAdIfAdblocked)
 chip.de##+js(set-cookie, chipde-r2d2-view-state , 1)
 eispop.com##+js(set-constant, Object.prototype.AdOverlay, noopFunc)
@@ -1052,7 +1052,7 @@ isteshaltbar.de##div[style^="min-height:"][class*="-rectangle-"]
 sportdeutschland.tv##app-top-banner
 kuechengoetter.de##.c-adverts__content
 kuechengoetter.de##.c-adverts:not(.c-adverts--header)
-data-load.in##.p-body-sidebar > div.block:not([data-widget-key])
+data-load.*##.p-body-sidebar > div.block:not([data-widget-key])
 ||myboerse.bz/persecute.php
 karrierebibel.de###above-footer
 computerbase.de##.forum-teaser
@@ -1356,7 +1356,7 @@ steuertipps.de##.goAdMan
 gmx.*##.left-col-bottom
 tellows.de##.container #singlecomments > li:not([id])
 pcgames.de##a[href*="/E-Commerce-Thema-"]
-data-load.in##center > a[target="_blank"] > img
+data-load.*##center > a[target="_blank"] > img
 netzwelt.de##a[href^="https://www.awin1.com/cread.php?"]
 nzz.ch##.resor
 amazon.de##div[class*="ad-topper"]
@@ -2119,6 +2119,7 @@ onvista.de#?#.col__content section:has(> div > h2 + div.ov-subline:contains(Werb
 stern.de#$?#.group-teaserblock__items > article:has(> .teaser__text-content > .ad-labels) { remove: true; }
 werkenntdenbesten.de#?#.w-full.flex-col.items-center:has(> .relative > div[x-data="modules.ad()"])
 tvspielfilm.de#?#.info-table > tbody > tr:not([class]):has(> td > .desktop_banner_any)
+data-load.*#?#.p-body-sidebar > div.block:has(> div.block-container > div.block-body > center > a[target="_blank"] > img[src*="partner/"])
 live.vodafone.de#?#.swiper-wrapper > .swiper-slide > .gujAd:upward(1)
 mactechnews.de#?#div[class] > div[id^="traffective-ad-"]:upward(1)
 dubisthalle.de#?#.sidebar-content > div[id^="block-"]> div[id^="dbh-"] > .dbh-adlabel:upward(2)
