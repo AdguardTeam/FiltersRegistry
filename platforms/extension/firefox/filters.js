@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.61.22",
-			"timeUpdated": "2024-11-19T14:31:24+0000",
+			"version": "2.3.61.23",
+			"timeUpdated": "2024-11-19T15:31:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.37",
-			"timeUpdated": "2024-11-19T14:33:58+0000",
+			"version": "2.0.59.38",
+			"timeUpdated": "2024-11-19T15:34:22+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.14.19",
-			"timeUpdated": "2024-11-19T14:34:20+0000",
+			"version": "2.2.14.20",
+			"timeUpdated": "2024-11-19T15:34:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.9",
-			"timeUpdated": "2024-11-18T14:36:38+0000",
+			"version": "2.0.48.10",
+			"timeUpdated": "2024-11-19T15:34:45+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -765,8 +765,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.17.77",
-			"timeUpdated": "2024-11-19T14:34:28+0000",
+			"version": "2.0.17.78",
+			"timeUpdated": "2024-11-19T15:34:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -809,8 +809,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.10.22",
-			"timeUpdated": "2024-11-19T14:34:28+0000",
+			"version": "2.0.10.23",
+			"timeUpdated": "2024-11-19T15:34:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

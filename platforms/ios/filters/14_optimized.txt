@@ -1,9 +1,9 @@
-! Checksum: iQzRG7MirLnR7y6SfDJ4zQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1732027115-3600.patch
+! Checksum: eBNDl+DeH+vJexuEV1JG9g
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1732030745-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.14.19
-! TimeUpdated: 2024-11-19T14:34:20+00:00
+! Version: 2.2.14.20
+! TimeUpdated: 2024-11-19T15:34:41+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -18002,6 +18002,8 @@ buttondown.email#@##subscribe-form
 !+ PLATFORM(ios)
 #$?#meta[name="apple-itunes-app"] { remove: true; }
 turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+nperf.com#%#//scriptlet('set-session-storage-item', 'modalDownloadAppShown', 'true')
+nperf.com##.row > div.justify-content-center:has(> div.card > div.mobile-app)
 teradownloader.com#%#//scriptlet('set-local-storage-item', 'showDownloadDialog', 'false')
 teradownloader.com##section > section:has(> div > a[href*="?id=com.parrot.downloader"])
 ||lk21static.buzz/assets/dlapps.png
@@ -23917,6 +23919,7 @@ mhwg.org,biyografi.info,seiya-saiga.com#%#//scriptlet("remove-attr", "oncontextm
 !### Weather, money exchange, 3rd-party feedbacks, #####
 !### 3rd-party assistants, etc #########################
 !#######################################################
+||yameyou.com^$third-party
 ||antennasync.me^$third-party
 ||matomeantena.com/scripts/$third-party
 ||nullpoantenna.com/scripts/$third-party
@@ -24296,6 +24299,7 @@ ryusoku.com##.widget-topic
 livejupiter2.blog.jp,jishin-yogen.com,shuraba.net,uwasakijo.net,ikuji-news.com,kichimama.com,kijobibouroku.com,kimagure-kijyo.com##.pickup
 nijimoemoe.com##.sine1 ~ div[class^="sine"]
 nijimoemoe.com#$#.raibudoasine { height: auto !important; }
+/kotei.js$domain=ikuji-news.com|kichimama-life.com|kichimama.net|kichimamasenki.com|kijonikki.net|kijyonohimitsu.com|kijyotown.net|kimagure-kijyo.com|romeodensetsu.com|shuraba-dendo.com|shuraba.net|shurabanote.com|sukashuraba.net|uwasakijo.net|densetsunokijo.net|kijyokaigi.com
 majikichi.com##div[class^="headline_"]
 majikichi.com#?##article-body > h3:has(+ div[class^="headline_"])
 nadarenews.com##div[class$="uebar1"]
@@ -24387,7 +24391,7 @@ gadget2ch.com##.article-text-rss-box
 2chblog.jp##.kiji-ue-rss
 2chmatome.net,elephant.2chblog.jp,vippers.jp###topRss
 kitizawa.com###headerRSS
-mojomojo-licarca.com,sonicch.com,kijomatomelog.com,okkisokuho.com,no-one-no.net,ertk.net,uwakitaiken.com,blog.esuteru.com,kidan-m.com,onihimechan.com,kijonotakuhaibin.com,okusama-kijyo.com,otakomu.jp,exawarosu.net,mindhack2ch.com,duellinks.doorblog.jp,dragonquestwalk.blog.jp,netamesi.com,sk2ch.net,kijyomita.com,tanu-soku.com,akb48matomemory.com##.rss
+kijyokaigi.com,mojomojo-licarca.com,sonicch.com,kijomatomelog.com,okkisokuho.com,no-one-no.net,ertk.net,uwakitaiken.com,blog.esuteru.com,kidan-m.com,onihimechan.com,kijonotakuhaibin.com,okusama-kijyo.com,otakomu.jp,exawarosu.net,mindhack2ch.com,duellinks.doorblog.jp,dragonquestwalk.blog.jp,netamesi.com,sk2ch.net,kijyomita.com,tanu-soku.com,akb48matomemory.com##.rss
 mojomojo-licarca.com,akb48matomemory.com##.rss2
 matometanews.com##iframe[src="http://matometanews.com/rss.html"]
 hosyusokuhou.jp###more_rss
@@ -24411,9 +24415,9 @@ npb-news.com##iframe[src="http://npb-news.blog.jp/matome.html"]
 ||npb-news.com/matome.html
 nanj-world.blog.jp###header_rss_c
 nanj-world.blog.jp#?#body > #second-header:has(> #header_rss_c)
-/front.js$domain=kichimama-life.com|kichimama.net|kijonikki.net|kijyonohimitsu.com|kijyotown.net|romeodensetsu.com|shuraba-dendo.com|shurabanote.com|sukashuraba.net|labradorsokuho.net|densetsunokijo.net
-/middle.js$domain=kichimama-life.com|kichimama.net|kijonikki.net|kijyonohimitsu.com|kijyotown.net|romeodensetsu.com|shuraba-dendo.com|shurabanote.com|sukashuraba.net|labradorsokuho.net|densetsunokijo.net
-/under.js$domain=kichimama-life.com|kichimama.net|kijonikki.net|kijyonohimitsu.com|kijyotown.net|romeodensetsu.com|shuraba-dendo.com|shurabanote.com|sukashuraba.net|labradorsokuho.net|densetsunokijo.net
+/front.js$domain=kichimama-life.com|kichimama.net|kijonikki.net|kijyonohimitsu.com|kijyotown.net|romeodensetsu.com|shuraba-dendo.com|shurabanote.com|sukashuraba.net|labradorsokuho.net|densetsunokijo.net|kijyokaigi.com
+/middle.js$domain=kichimama-life.com|kichimama.net|kijonikki.net|kijyonohimitsu.com|kijyotown.net|romeodensetsu.com|shuraba-dendo.com|shurabanote.com|sukashuraba.net|labradorsokuho.net|densetsunokijo.net|kijyokaigi.com
+/under.js$domain=kichimama-life.com|kichimama.net|kijonikki.net|kijyonohimitsu.com|kijyotown.net|romeodensetsu.com|shuraba-dendo.com|shurabanote.com|sukashuraba.net|labradorsokuho.net|densetsunokijo.net|kijyokaigi.com
 densetsunokijo.net,kichimama.net,romeodensetsu.com,shuraba-dendo.com,sukashuraba.net,labradorsokuho.net###rss2
 gundam-futab.info##.rss_label
 sexytvcap.com,pokebrary.blog.jp,gundam-futab.info##.blogroll-channel
