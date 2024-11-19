@@ -1,9 +1,9 @@
-! Checksum: bKdPFa8EXm0Gi0GroUe3XQ
-! Diff-Path: ../patches/2/2-s-1732037955-3600.patch
+! Checksum: Tuha521iZ3fkAxOprDPtaQ
+! Diff-Path: ../patches/2/2-s-1732045117-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.61.25
-! TimeUpdated: 2024-11-19T17:31:27+00:00
+! Version: 2.3.61.26
+! TimeUpdated: 2024-11-19T19:31:23+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8521,6 +8521,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/193068
+@@||googleads.g.doubleclick.net/pagead/interaction/$domain=hotels.historyofyesterday.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193141
 buyactivate.com###adb
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193137
@@ -35137,6 +35139,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+file-upload.org##body + iframe:not([src])
+file-upload.org#%#//scriptlet("abort-on-property-read", "URLSearchParams")
 fap-nation.org##div[data-natio-trackid]:has(> center > a[rel])
 fap-nation.org##ul[id^="menu-td-demo-header-"] > li > a[target="_blank"]
 akirabox.com#%#//scriptlet('prevent-addEventListener', 'click', 'Ads')
