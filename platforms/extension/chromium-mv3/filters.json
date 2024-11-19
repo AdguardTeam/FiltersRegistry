@@ -846,8 +846,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/tomasko126/easylistczechandslovak/master/filters.txt",
 			"trustLevel": "high",
-			"version": "2.0.2.70",
-			"timeUpdated": "2024-10-31T21:01:20+0000",
+			"version": "2.0.2.71",
+			"timeUpdated": "2024-11-19T09:01:16+0000",
 			"deprecated": false,
 			"languages": [
 				"cs",
@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.59.74",
-			"timeUpdated": "2024-11-19T05:01:10+0000",
+			"version": "2.1.59.75",
+			"timeUpdated": "2024-11-19T09:01:18+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.59.73",
-			"timeUpdated": "2024-11-19T05:01:11+0000",
+			"version": "2.1.59.74",
+			"timeUpdated": "2024-11-19T09:01:19+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1092,8 +1092,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.33.36",
-			"timeUpdated": "2024-11-19T05:01:28+0000",
+			"version": "2.0.33.37",
+			"timeUpdated": "2024-11-19T09:01:35+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.53.5",
-			"timeUpdated": "2024-11-19T05:01:57+0000",
+			"version": "2.0.53.6",
+			"timeUpdated": "2024-11-19T09:02:02+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1463,8 +1463,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.2.29",
-			"timeUpdated": "2024-11-18T09:02:04+0000",
+			"version": "2.0.2.30",
+			"timeUpdated": "2024-11-19T09:02:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1483,8 +1483,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.4.56",
-			"timeUpdated": "2024-11-18T17:02:01+0000",
+			"version": "2.0.4.57",
+			"timeUpdated": "2024-11-19T09:02:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
