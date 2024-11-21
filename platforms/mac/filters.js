@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.14.47",
-			"timeUpdated": "2024-11-21T20:34:05+0000",
+			"version": "2.2.14.48",
+			"timeUpdated": "2024-11-21T22:33:56+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.51.73",
-			"timeUpdated": "2024-11-21T20:34:10+0000",
+			"version": "2.0.51.74",
+			"timeUpdated": "2024-11-21T22:34:02+0000",
 			"languages": []
 		},
 		{
