@@ -1,9 +1,9 @@
-! Checksum: x9Z2fFOMczDLWAYRzy+PyQ
-! Diff-Path: ../patches/2/2-s-1732160285-3600.patch
+! Checksum: 5CuLxLj7IEUR/AyaSHLdLA
+! Diff-Path: ../patches/2/2-s-1732167495-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.61.41
-! TimeUpdated: 2024-11-21T03:31:27+00:00
+! Version: 2.3.61.42
+! TimeUpdated: 2024-11-21T05:31:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35385,12 +35385,6 @@ bemywife.cc#%#window.canRunAds = !0;
 ! https://forum.adguard.com/index.php?threads/telegraph-co-uk.16064/
 ! We need a scriptlet to change/set HTML elements attributes, it's part of this task - https://github.com/AdguardTeam/Scriptlets/issues/106
 telegraph.co.uk#%#AG_onLoad(function(){AG_each(".gallery.component > .gallery-settings[data-gallery-ad-viewability][data-gallery-slides-per-ad]",function(a){a.setAttribute("data-gallery-ad-viewability","1E9");a.setAttribute("data-gallery-slides-per-ad","1E9")})});
-! https://github.com/AdguardTeam/AdguardFilters/issues/3364
-vg247.com#%#AG_onLoad(function() { window.yafaIt = function() {}; });
-! https://forum.adguard.com/index.php?threads/13088/
-8muses.com#%#AG_onLoad(function() { for (var key in window) { if (key.indexOf('_0x') == 0) { window[key] = []; } }; });
-! https://forum.adguard.com/index.php?threads/11545/
-ndtv.com#%#AG_onLoad(function() { if (window.location.href.indexOf("hpinterstitial.aspx") != -1) { window.setCookie1('sitecapture_interstitial', 1, 1); window.location.href = "http://www.ndtv.com/"; } });
 ! nypost.com
 nypost.com#%#window.checkState = function() {};
 ! https://github.com/AdguardTeam/AdguardFilters/issues/2345
@@ -69736,7 +69730,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /amp4ads-host-v0.js$script
 /ane-popup-1/ane-popup.js$script
 /ane-popup-banner.js$script
-/api.ads.$domain=~ads.instacart.com|~www.ads.com
+/api.ads.$script,domain=~ads.instacart.com|~www.ads.com
 /api/ad.$script
 /api/ads?
 /api/users?token=$subdocument,third-party
@@ -130566,6 +130560,8 @@ forexlive.com##.article-slot__wrapper:has(.article-header__sponsored)
 time.com##.article-small-sidebar > .sticky-container:has(div[id^="ad-"])
 blitz.gg##.aside-content-column:has(.display-ad)
 olympics.com##.b2p-list__item:has(> .adv-fluid)
+bing.com##.b_algo:has(.rms_img[src*="/th?id=OADD2."][src$="21.2"])
+bing.com##.b_algo:has(.rms_img[src*="=AdsPlus"])
 atlanticsuperstore.ca,fortinos.ca,maxi.ca,newfoundlandgrocerystores.ca,nofrills.ca,provigo.ca,realcanadiansuperstore.ca,valumart.ca,yourindependentgrocer.ca,zehrs.ca##.block-wrapper:has(.element-header__sponsoredLabel)
 loblaws.ca##.block-wrapper:has([data-track-product-component="carousel||rmp_sponsored"])
 haveibeenpwned.com##.bodyGradient > :has(.why1Password)
