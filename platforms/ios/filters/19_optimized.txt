@@ -1,9 +1,9 @@
-! Checksum: 3W7RkCKazFm+BUCMpBxxOg
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1732203806-3600.patch
+! Checksum: OspV8QxbzzPY6bCh1ADm5w
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1732207173-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.46.7
-! TimeUpdated: 2024-11-21T15:39:23+00:00
+! Version: 2.0.46.8
+! TimeUpdated: 2024-11-21T16:35:28+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1816,6 +1816,9 @@ api.flocktory.com
 ||accounts.google.com/gsi/client^$third-party,script,domain=dtf.ru|stackoverflow.com|vc.ru|pikabu.ru|nytimes.com|baltimoresun.com|rozetka.com.ua|estadao.com.br|medium.com|gzt.com|mercurynews.com|drukarnia.com.ua|diffchecker.com|kaystls.site|kaystls.site|overclock.net|nissanclub.com|crazygames.com|notion.so|usnews.com|nypost.com|etnownews.com|timesnownews.com|menshealth.com|themirror.com|cq.ru|voetbalzone.nl|perplexity.ai|lefigaro.fr|lifehacker.ru|app.notta.ai|vnexpress.net
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+similarweb.com#$#.app-modal__overlay { display: none !important; }
+similarweb.com#$#.exit-popup { display: none !important; }
+similarweb.com#$#body { overflow: auto !important; }
 coopmobile.ch##.super-container > div[is-sticky="true"]:has(> div.w-full a[href="tel:0800 361 361"])
 rockmachine-germany.de#%#//scriptlet('set-cookie', 'overlay-banner-hide', 'true')
 e.mail.ru,octavius.mail.ru###octavius-tooltip-widget-tamagotchi-header
@@ -4482,6 +4485,7 @@ yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.
 yandex.*#?#div[class*=" "] > div[id][class]:has(> div[class*=" "] > div[class] > div[class] > div:contains(Сделать поиск Яндекса основным))
 ya.ru,yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws###distr-pcode-container
 mail.yandex.ru#$#div[data-test-id="promopopup"] { display: none !important; }
+mail.yandex.ru#$#div[data-test-id="promofullscreen"] { display: none !important; }
 mail.yandex.ru#$#body[style*="overflow:"] { overflow: auto !important; }
 mail.yandex.ru##main > div.ns-view-react-promo-container:has(> div.yagpt-neurofilter-banner-portal)
 market.yandex.al,market.yandex.app,market.yandex.asia,market.yandex.at,market.yandex.az,market.yandex.by,market.yandex.ca,market.yandex.cc,market.yandex.cl,market.yandex.cloud,market.yandex.cn,market.yandex.co,market.yandex.co.il,market.yandex.com,market.yandex.com.bd,market.yandex.com.np,market.yandex.com.tr,market.yandex.com.ua,market.yandex.de,market.yandex.dk,market.yandex.ee,market.yandex.es,market.yandex.eu,market.yandex.fi,market.yandex.fm,market.yandex.fr,market.yandex.ie,market.yandex.in,market.yandex.io,market.yandex.it,market.yandex.jp,market.yandex.kg,market.yandex.kz,market.yandex.lt,market.yandex.lv,market.yandex.ma,market.yandex.md,market.yandex.mobi,market.yandex.mx,market.yandex.net,market.yandex.news,market.yandex.no,market.yandex.org,market.yandex.pl,market.yandex.pro,market.yandex.pt,market.yandex.ro,market.yandex.rs,market.yandex.ru,market.yandex.se,market.yandex.shop,market.yandex.site,market.yandex.sk,market.yandex.store,market.yandex.su,market.yandex.top,market.yandex.ua,market.yandex.uk,market.yandex.us,market.yandex.uz,market.yandex.work,market.yandex.ws##div[data-apiary-widget-name="@MarketNode/ReviewPollPopup"]

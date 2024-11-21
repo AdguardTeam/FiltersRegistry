@@ -1,8 +1,8 @@
-! Checksum: V4tXLayS7Ne+mq7ReqACbw
+! Checksum: bvtotthujeqsQvIHpqwehg
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.46.7
-! TimeUpdated: 2024-11-21T15:39:23+00:00
+! Version: 2.0.46.8
+! TimeUpdated: 2024-11-21T16:35:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4384,6 +4384,9 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+similarweb.com#$#.app-modal__overlay { display: none !important; }
+similarweb.com#$#.exit-popup { display: none !important; }
+similarweb.com#$#body { overflow: auto !important; }
 coopmobile.ch##.super-container > div[is-sticky="true"]:has(> div.w-full a[href="tel:0800 361 361"])
 rockmachine-germany.de#%#//scriptlet('set-cookie', 'overlay-banner-hide', 'true')
 e.mail.ru,octavius.mail.ru###octavius-tooltip-widget-tamagotchi-header
@@ -10858,6 +10861,7 @@ ya.ru,yandex.*###distr-pcode-container
 !
 ! Yandex.Mail
 mail.yandex.ru#$#div[data-test-id="promopopup"] { display: none !important; }
+mail.yandex.ru#$#div[data-test-id="promofullscreen"] { display: none !important; }
 mail.yandex.ru#$#body[style*="overflow:"] { overflow: auto !important; }
 mail.yandex.ru##main > div.ns-view-react-promo-container:has(> div.yagpt-neurofilter-banner-portal)
 !

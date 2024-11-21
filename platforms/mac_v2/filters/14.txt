@@ -1,9 +1,9 @@
-! Checksum: KhdOTieb13o7tw4X2K/qtg
-! Diff-Path: ../patches/14/14-s-1732203809-3600.patch
+! Checksum: 3zxwCuq9FQBlOWBEWdhglA
+! Diff-Path: ../patches/14/14-s-1732207177-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.14.42
-! TimeUpdated: 2024-11-21T15:39:15+00:00
+! Version: 2.2.14.43
+! TimeUpdated: 2024-11-21T16:35:20+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24895,6 +24895,9 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+similarweb.com#$#.app-modal__overlay { display: none !important; }
+similarweb.com#$#.exit-popup { display: none !important; }
+similarweb.com#$#body { overflow: auto !important; }
 coopmobile.ch##.super-container > div[is-sticky="true"]:has(> div.w-full a[href="tel:0800 361 361"])
 rockmachine-germany.de#%#//scriptlet('set-cookie', 'overlay-banner-hide', 'true')
 e.mail.ru,octavius.mail.ru###octavius-tooltip-widget-tamagotchi-header
@@ -31369,6 +31372,7 @@ ya.ru,yandex.*###distr-pcode-container
 !
 ! Yandex.Mail
 mail.yandex.ru#$#div[data-test-id="promopopup"] { display: none !important; }
+mail.yandex.ru#$#div[data-test-id="promofullscreen"] { display: none !important; }
 mail.yandex.ru#$#body[style*="overflow:"] { overflow: auto !important; }
 mail.yandex.ru##main > div.ns-view-react-promo-container:has(> div.yagpt-neurofilter-banner-portal)
 !
@@ -47550,6 +47554,9 @@ tv.yandex.*##.recommended-ott
 !
 ! Yandex.Eda
 eda.yandex.ru##.TrackingBanner_root
+!
+! Yandex.360
+360.yandex.ru##div[data-test-id="promotopline"]
 !
 ! Kinopoisk
 www.kinopoisk.ru##div[class^="trailer-promo"]
