@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.56",
-			"timeUpdated": "2024-11-21T16:31:11+0000",
+			"version": "2.0.95.57",
+			"timeUpdated": "2024-11-21T17:31:10+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.61.52",
-			"timeUpdated": "2024-11-21T16:31:29+0000",
+			"version": "2.3.61.53",
+			"timeUpdated": "2024-11-21T17:31:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/9_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.53",
-			"timeUpdated": "2024-11-21T12:39:47+0000",
+			"version": "2.0.27.54",
+			"timeUpdated": "2024-11-21T17:34:28+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.14.43",
-			"timeUpdated": "2024-11-21T16:35:20+0000",
+			"version": "2.2.14.44",
+			"timeUpdated": "2024-11-21T17:34:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.69",
-			"timeUpdated": "2024-11-21T14:36:56+0000",
+			"version": "2.0.51.70",
+			"timeUpdated": "2024-11-21T17:34:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -787,8 +787,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.19",
-			"timeUpdated": "2024-11-21T16:35:28+0000",
+			"version": "2.0.28.20",
+			"timeUpdated": "2024-11-21T17:34:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
