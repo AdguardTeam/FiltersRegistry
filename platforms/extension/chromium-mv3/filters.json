@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.7.81",
-			"timeUpdated": "2024-11-21T16:34:49+0000",
+			"version": "2.1.7.82",
+			"timeUpdated": "2024-11-21T19:33:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.48",
-			"timeUpdated": "2024-11-21T14:36:28+0000",
+			"version": "2.0.59.49",
+			"timeUpdated": "2024-11-21T19:33:53+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.54",
-			"timeUpdated": "2024-11-21T17:34:28+0000",
+			"version": "2.0.27.55",
+			"timeUpdated": "2024-11-21T19:33:58+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.71",
-			"timeUpdated": "2024-11-21T18:34:16+0000",
+			"version": "2.0.51.72",
+			"timeUpdated": "2024-11-21T19:34:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -751,8 +751,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.10.26",
-			"timeUpdated": "2024-11-21T15:39:24+0000",
+			"version": "2.0.10.27",
+			"timeUpdated": "2024-11-21T19:34:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -801,8 +801,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.3.61",
-			"timeUpdated": "2024-11-21T17:34:51+0000",
+			"version": "2.0.3.62",
+			"timeUpdated": "2024-11-21T19:34:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

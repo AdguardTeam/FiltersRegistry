@@ -1,9 +1,9 @@
-! Checksum: LfIUPjcWU8Xfe8Q9hFqphg
-! Diff-Path: ../patches/9/9-s-1732210708-3600.patch
+! Checksum: pU8IBe5XDLT9dn9vRhw8cg
+! Diff-Path: ../patches/9/9-s-1732217853-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.27.54
-! TimeUpdated: 2024-11-21T17:34:28+00:00
+! Version: 2.0.27.55
+! TimeUpdated: 2024-11-21T19:33:58+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -846,11 +846,14 @@ seriesretro.com#%#//scriptlet("abort-on-property-read", "gothamBatAdblock")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/80724
 audiotools.in##div[id^="chp_ads_blocker-"]
 audiotools.in#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'blocker_detector')
+! https://github.com/AdguardTeam/AdguardFilters/issues/193307
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186776
-foodiesgallery.com,caroloportunidades.com.br#$##player { display: block !important; }
-foodiesgallery.com,caroloportunidades.com.br#%#//scriptlet('prevent-xhr', 'popads.net')
-foodiesgallery.com,caroloportunidades.com.br#%#//scriptlet('prevent-setTimeout', 'hasAdblock')
-@@||popads.net/js/adblock.js$xmlhttprequest,domain=caroloportunidades.com.br|foodiesgallery.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/115301
+! hinatasoul.com, anitube.biz
+receitasdaora.online,foodiesgallery.com,caroloportunidades.com.br#$##player { display: block !important; }
+receitasdaora.online,foodiesgallery.com,caroloportunidades.com.br#%#//scriptlet('prevent-xhr', 'popads.net')
+receitasdaora.online,foodiesgallery.com,caroloportunidades.com.br#%#//scriptlet('prevent-setTimeout', 'hasAdblock')
+@@||popads.net/js/adblock.js$xmlhttprequest,domain=caroloportunidades.com.br|foodiesgallery.com|receitasdaora.online
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190058
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186902
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184038
@@ -1962,8 +1965,6 @@ receitasdochico.life#$##colunas { display: block !important; }
 knightnoscanlation.com#$##manga-title { height: unset !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/115299
 futlances.net#$##colunas { display: block !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/115301
-receitasdaora.online#$##player { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/115228
 gastronomiabrasileira.net#$##colunas { display: block !important; }
 ! https://github.com/uBlockOrigin/uAssets/issues/12640
