@@ -1,8 +1,8 @@
-! Checksum: dg7bmCbJ5WLuX4MyeBYjSQ
+! Checksum: hVX0Odaq3mr8jnyqVKs/gQ
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.51.66
-! TimeUpdated: 2024-11-21T10:34:30+00:00
+! Version: 2.0.51.67
+! TimeUpdated: 2024-11-21T11:39:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16230,9 +16230,10 @@ hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.nl,villeroy-boch.f
 ! trusted-click-element doesn't work for cookie acceptance here
 ! Rework when this issue will be fixed: https://github.com/AdguardTeam/Scriptlets/issues/391
 virginaustralia.com#%#AG_onLoad(function(){if(-1==document.cookie.indexOf("virginCookiesAccepted")){var a=new MutationObserver(function(){var b=document.querySelector('#cookieAcceptanceBtn');b&&b.click()});a.observe(document,{childList:!0,subtree:!0});setTimeout(function(){a.disconnect()},1E4)}});
+! https://github.com/AdguardTeam/AdguardFilters/issues/193266
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173053
 ! TODO: remove the hints, JS rule when the issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/407
-!+ PLATFORM(windows, mac, android)
+!+ PLATFORM(windows, mac, android, ios, ext_safari)
 linternaute.com,lachainemeteo.com,journaldesfemmes.fr,lefigaro.fr#%#AG_onLoad(function(){if("undefined"!=typeof localStorage)try{if(!localStorage.getItem("_pubcid")){var b=new MutationObserver(function(){var a=document.querySelector("#appconsent > iframe");a&&a.contentDocument&&(a=a.contentDocument.querySelector(".button__acceptAll"))&&(b.disconnect(),a.click())});b.observe(document,{childList:!0,subtree:!0,attributes:!0});setTimeout(function(){b.disconnect()},1E4)}}catch(a){}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170168
 ! TODO: use trusted-click-element scriptlet when issues below are fixed
