@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.61.45",
-			"timeUpdated": "2024-11-21T08:31:38+0000",
+			"version": "2.3.61.46",
+			"timeUpdated": "2024-11-21T10:31:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.76.85",
-			"timeUpdated": "2024-11-20T18:34:10+0000",
+			"version": "2.0.76.86",
+			"timeUpdated": "2024-11-21T10:33:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.46",
-			"timeUpdated": "2024-11-21T06:34:11+0000",
+			"version": "2.0.59.47",
+			"timeUpdated": "2024-11-21T10:34:07+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.14.36",
-			"timeUpdated": "2024-11-21T09:34:47+0000",
+			"version": "2.2.14.37",
+			"timeUpdated": "2024-11-21T10:34:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.65",
-			"timeUpdated": "2024-11-21T09:34:53+0000",
+			"version": "2.0.51.66",
+			"timeUpdated": "2024-11-21T10:34:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.26.34",
-			"timeUpdated": "2024-11-21T05:34:34+0000",
+			"version": "2.1.26.35",
+			"timeUpdated": "2024-11-21T10:34:37+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

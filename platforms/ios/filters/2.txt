@@ -1,9 +1,9 @@
-! Checksum: 914JLMwMvI6EKuB6g74ASw
-! Diff-Path: ../patches/2/2-s-1732178333-3600.patch
+! Checksum: Tf/xidHrD8Jd3rDNbotZjQ
+! Diff-Path: ../patches/2/2-s-1732185519-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.61.45
-! TimeUpdated: 2024-11-21T08:31:38+00:00
+! Version: 2.3.61.46
+! TimeUpdated: 2024-11-21T10:31:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20579,6 +20579,12 @@ extra.cz##[data-advert-container]
 rychlost.cz##.t-ban
 olympijskytym.cz##div.bg-texture:has(> div[class^="ad-"])
 impuls.cz##.r-main
+! https://github.com/AdguardTeam/AdguardFilters/issues/193324
+serialyzadara.cz##a[href^="https://tracking.affiliateport.eu/"]
+serialyzadara.cz##.sidebar aside.widget:has(a[href^="https://tracking.affiliateport.eu/"])
+serialyzadara.cz#$?##fakeplayer > a[id^="clickfakeplayer"]:not(#clickfakeplayerlast) { remove: true; }
+serialyzadara.cz#$##fakeplayer > a#clickfakeplayerlast[style*="display: none"] { display: block !important; }
+serialyzadara.cz#%#//scriptlet('remove-attr', 'href', 'a[href][id^="clickfakeplayer"]')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193270
 instaluj.cz##.banner
 instaluj.cz##.text-reklama
@@ -61633,6 +61639,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/193316
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193151
 ! https://github.com/AdguardTeam/AdguardForWindows/issues/5261
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193038
