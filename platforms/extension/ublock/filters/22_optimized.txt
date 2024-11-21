@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: o9xuELsVX6vVcFBM26RHIg
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1732156711-3600.patch
+! Checksum: nEVybrrPjcAq1XSaIjtJMQ
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1732193104-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.10.24
-! TimeUpdated: 2024-11-19T19:35:01+00:00
+! Version: 2.0.10.25
+! TimeUpdated: 2024-11-21T12:40:12+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### Block useless widgets #######################
@@ -273,7 +273,9 @@ gameleaks.org###pc_text-57
 ge-soku.com##.mainbottom-widget
 kannyu.blog.jp##.rssWrapper
 himasoku.com#?#.article-body-more > span[style]:contains(おすすめ記事)
-vipnews.jp##+js(remove-node-text, div, おすすめ記事)
+vipnews.jp#?#.article-body-more > div[class]:contains(おすすめ記事)
+vipnews.jp#?#.plugin-memo:has(> div.sidetitlebody > div.sidetitle:contains(/おすすめ記事|2ちゃんねるの最新ネタ！/))
+vipnews.jp#?#.article-body-more > div[style^="text-align:"]:has(> b > span:contains(以下人気記事もよく読まれております))
 vipnews.jp##.article-body-more > b
 vipnews.jp##.article-body-more > b + div:not([class])
 vipnews.jp##.article-body-more > b + br
