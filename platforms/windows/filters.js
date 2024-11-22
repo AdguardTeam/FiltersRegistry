@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.58",
-			"timeUpdated": "2024-11-22T09:31:09+0000",
+			"version": "2.0.95.59",
+			"timeUpdated": "2024-11-22T12:31:16+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.61.62",
-			"timeUpdated": "2024-11-22T11:31:40+0000",
+			"version": "2.3.61.63",
+			"timeUpdated": "2024-11-22T12:31:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.7.85",
-			"timeUpdated": "2024-11-22T11:36:05+0000",
+			"version": "2.1.7.86",
+			"timeUpdated": "2024-11-22T12:35:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.14.54",
-			"timeUpdated": "2024-11-22T11:36:38+0000",
+			"version": "2.2.14.55",
+			"timeUpdated": "2024-11-22T12:36:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -639,8 +639,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.73.9",
-			"timeUpdated": "2024-11-22T06:34:30+0000",
+			"version": "2.0.73.10",
+			"timeUpdated": "2024-11-22T12:36:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.79",
-			"timeUpdated": "2024-11-22T11:36:46+0000",
+			"version": "2.0.51.80",
+			"timeUpdated": "2024-11-22T12:36:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -765,8 +765,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.17.82",
-			"timeUpdated": "2024-11-22T10:37:05+0000",
+			"version": "2.0.17.83",
+			"timeUpdated": "2024-11-22T12:36:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
