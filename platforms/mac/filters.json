@@ -379,8 +379,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.37.2",
-			"timeUpdated": "2024-11-23T17:01:06+0000",
+			"version": "2.1.37.3",
+			"timeUpdated": "2024-11-23T21:01:16+0000",
 			"languages": []
 		},
 		{
@@ -458,8 +458,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.59.99",
-			"timeUpdated": "2024-11-23T17:01:10+0000",
+			"version": "2.1.60.0",
+			"timeUpdated": "2024-11-23T21:01:23+0000",
 			"languages": []
 		},
 		{
@@ -502,8 +502,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.60.1",
-			"timeUpdated": "2024-11-23T17:01:12+0000",
+			"version": "2.1.60.2",
+			"timeUpdated": "2024-11-23T21:01:25+0000",
 			"languages": [
 				"it"
 			]
@@ -547,8 +547,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.60.0",
-			"timeUpdated": "2024-11-23T17:01:13+0000",
+			"version": "2.1.60.1",
+			"timeUpdated": "2024-11-23T21:01:26+0000",
 			"languages": [
 				"ar"
 			]
@@ -565,8 +565,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.59.99",
-			"timeUpdated": "2024-11-23T17:01:14+0000",
+			"version": "2.1.60.0",
+			"timeUpdated": "2024-11-23T21:01:27+0000",
 			"languages": []
 		},
 		{
@@ -708,8 +708,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.37.29",
-			"timeUpdated": "2024-11-23T17:01:24+0000",
+			"version": "2.1.37.30",
+			"timeUpdated": "2024-11-23T21:01:37+0000",
 			"languages": []
 		},
 		{
@@ -740,8 +740,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.31.74",
-			"timeUpdated": "2024-11-23T17:01:26+0000",
+			"version": "2.0.31.75",
+			"timeUpdated": "2024-11-23T21:01:40+0000",
 			"languages": []
 		},
 		{
@@ -866,8 +866,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.60.0",
-			"timeUpdated": "2024-11-23T17:01:28+0000",
+			"version": "2.1.60.1",
+			"timeUpdated": "2024-11-23T21:01:42+0000",
 			"languages": []
 		},
 		{
@@ -940,8 +940,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.59.25",
-			"timeUpdated": "2024-11-23T17:01:28+0000",
+			"version": "2.1.59.26",
+			"timeUpdated": "2024-11-23T21:01:43+0000",
 			"languages": []
 		},
 		{
@@ -1230,8 +1230,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.60.1",
-			"timeUpdated": "2024-11-23T17:01:37+0000",
+			"version": "2.1.60.2",
+			"timeUpdated": "2024-11-23T21:01:51+0000",
 			"languages": []
 		},
 		{
@@ -1246,8 +1246,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.63.91",
-			"timeUpdated": "2024-11-23T17:01:39+0000",
+			"version": "2.0.63.92",
+			"timeUpdated": "2024-11-23T21:01:53+0000",
 			"languages": []
 		},
 		{
@@ -1389,8 +1389,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.42.99",
-			"timeUpdated": "2024-11-23T17:01:46+0000",
+			"version": "2.1.43.0",
+			"timeUpdated": "2024-11-23T21:01:59+0000",
 			"languages": []
 		},
 		{
@@ -1465,8 +1465,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.56.7",
-			"timeUpdated": "2024-11-23T17:01:48+0000",
+			"version": "2.1.56.8",
+			"timeUpdated": "2024-11-23T21:02:02+0000",
 			"languages": []
 		},
 		{
@@ -1515,8 +1515,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.15.60",
-			"timeUpdated": "2024-11-23T05:01:50+0000",
+			"version": "2.0.15.61",
+			"timeUpdated": "2024-11-23T21:02:11+0000",
 			"languages": []
 		},
 		{
@@ -1563,8 +1563,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.53.32",
-			"timeUpdated": "2024-11-23T17:01:58+0000",
+			"version": "2.0.53.33",
+			"timeUpdated": "2024-11-23T21:02:13+0000",
 			"languages": [
 				"hi"
 			]
