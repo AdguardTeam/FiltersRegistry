@@ -1,9 +1,9 @@
-! Checksum: jGnnthHP7C+ago0HyOahSg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1732329450-3600.patch
+! Checksum: vmaKeZH4Jz5mCorHjTddJg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1732343869-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.17
-! TimeUpdated: 2024-11-21T18:34:15+00:00
+! Version: 2.0.48.18
+! TimeUpdated: 2024-11-23T06:34:37+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -85,12 +85,18 @@ ebookdz.com#%#//scriptlet('abort-on-property-read', 'ABDetector')
 ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ||ebookdz.com/forum/libab/script.js
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
+japscan.lol#$?#.nav ~ div[id] + div[id][class][style] { remove: true; }
+japscan.lol#%#//scriptlet('remove-attr', 'class', '.nav ~ div[id][class]:has(+ div[id]:not(#chapters))', 'asap')
+japscan.lol#$?#.justify-content-center div[id] + div[id][class][style] { remove: true; }
+japscan.lol#%#//scriptlet('remove-attr', 'class', '.justify-content-center div[id][class]:has(+ div[id]:not(#reader))', 'asap')
+japscan.lol#%#//scriptlet('abort-on-property-write', 'Brazil')
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
-japscan.lol#%#//scriptlet('prevent-setTimeout', 'getElementById')
+japscan.lol#%#//scriptlet('prevent-setTimeout', '', '2000')
+japscan.lol#%#//scriptlet('prevent-setTimeout', '/function\(\)\{var|getPropertyValue|fontSize|0px|\/00/')
 japscan.lol#%#//scriptlet('prevent-addEventListener', 'load', 'setTimeout')
 japscan.lol#%#//scriptlet("remove-node-text", "script", "/\+'a'|\+parseInt|\+String|log'|fromCharCode'|createElement'|querySel'|clipPath'|catch'|forEach'|\\x22return|90\.jpg|soft\$|\.nextElementSibling|style\.width|return eval|document\(\)|String\(\)/")
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a[href^="http://www.toueapo.shop/"] { text-indent: -5000px !important; }
-japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Amazon|Russia|\(0x|\+''|'un'/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/\(event\)|\{return\}|_\$|[a-z]+\$[a-z]+\$[a-z]+\$|=>\{if|_\d+_|\d+\(\)\(|^.{750,800}$|setTimeout\(function/")
 $script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.lol
 @@$image,domain=japscan.lol
 @@||japscan.lol^$image,xmlhttprequest,script,~third-party
