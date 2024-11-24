@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ceo1WQ4vb22NaQQHihKp0g
-! Diff-Path: ../patches/16/16-s-1732376279-3600.patch
+! Checksum: iwgCrySiyqi7ZZ2D54t6JA
+! Diff-Path: ../patches/16/16-s-1732430289-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.19
-! TimeUpdated: 2024-11-23T15:34:20+00:00
+! Version: 2.0.48.20
+! TimeUpdated: 2024-11-24T06:34:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -222,16 +222,10 @@ ebookdz.com##+js(no-xhr-if, pagead2.googlesyndication.com)
 monumentum.fr##+js(abort-current-script, document.getElementById, Blocking Ads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147842
-japscan.lol#$?#.nav ~ div[id] + div[id][class][style] { remove: true; }
-japscan.lol##+js(remove-attr, class, .nav ~ div[id][class]:has(+ div[id]:not(#chapters)), asap)
-japscan.lol#$?#.justify-content-center div[id] + div[id][class][style] { remove: true; }
-japscan.lol##+js(remove-attr, class, .justify-content-center div[id][class]:has(+ div[id]:not(#reader)), asap)
-japscan.lol##+js(no-setTimeout-if, , 2000)
 japscan.lol##+js(no-setTimeout-if, /function\(\)\{var|getPropertyValue|fontSize|0px|\/00/)
 japscan.lol##+js(addEventListener-defuser, load, setTimeout)
-japscan.lol##+js(remove-node-text, script, /\+'a'|\+parseInt|\+String|log'|fromCharCode'|createElement'|querySel'|clipPath'|catch'|forEach'|\\x22return|90\.jpg|kso\$|\.nextEl|le\.width|return \s*eval|document\(\s*\)|String\(\s*\)/)
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a[href^="http://www.toueapo.shop/"] { text-indent: -5000px !important; }
-japscan.lol##+js(addEventListener-defuser, DOMContentLoaded, /=>\{var|^.{3500\,3600}$|Putin|Aliexpress|display'|\/0'\+|ob'|f'\+|\}{8}|\(\);\}{3}else\{let|\+'\)'|setTimeout\(function/)
+japscan.lol##+js(addEventListener-defuser, DOMContentLoaded, /=>\{function|^.{600\,650}$|Youtube|Trello|Vietnam|Doa'|typ'|fi'\+|else return typeof|setTimeout\(function/)
 $script,xmlhttprequest,redirect-rule=noop.js,domain=japscan.lol
 @@$image,domain=japscan.lol
 @@||japscan.lol^$image,xmlhttprequest,script,~third-party
