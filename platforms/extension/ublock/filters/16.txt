@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iwgCrySiyqi7ZZ2D54t6JA
-! Diff-Path: ../patches/16/16-s-1732430289-3600.patch
+! Checksum: QXhxsYJ9HMVS/p2ZhSaLFQ
+! Diff-Path: ../patches/16/16-s-1732541959-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.20
-! TimeUpdated: 2024-11-24T06:34:35+00:00
+! Version: 2.0.48.21
+! TimeUpdated: 2024-11-25T13:35:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -225,7 +225,7 @@ monumentum.fr##+js(abort-current-script, document.getElementById, Blocking Ads)
 japscan.lol##+js(no-setTimeout-if, /function\(\)\{var|getPropertyValue|fontSize|0px|\/00/)
 japscan.lol##+js(addEventListener-defuser, load, setTimeout)
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a[href^="http://www.toueapo.shop/"] { text-indent: -5000px !important; }
-japscan.lol##+js(addEventListener-defuser, DOMContentLoaded, /=>\{function|^.{600\,650}$|Youtube|Trello|Vietnam|Doa'|typ'|fi'\+|else return typeof|setTimeout\(function/)
+japscan.lol##+js(addEventListener-defuser, DOMContentLoaded, /=>\{\s*function|^.{600\,650}$|Sick|Netflix|Albenia|\+'o|\(\){3};\}|setTimeout\(function/)
 $script,xmlhttprequest,redirect-rule=noop.js,domain=japscan.lol
 @@$image,domain=japscan.lol
 @@||japscan.lol^$image,xmlhttprequest,script,~third-party
@@ -743,6 +743,7 @@ japscan.me##+js(abort-current-script, document.createElement, document.documentE
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159695
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119411
 maxisciences.com,gentside.com,femmeactuelle.fr,geo.fr,voici.fr,programme-tv.net,gala.fr,capital.fr##+js(set-constant, Object.prototype.withAds, false)
+! probably required. Cannot check if AG_onLoad may be replaced by `document.addEventListener("DOMContentLoaded"`
 ! allocine.fr - fixing delay in the video player
 allocine.fr##+js(set-constant, AC.config.ads, {})
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118970

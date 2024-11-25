@@ -1,9 +1,9 @@
-! Checksum: lJyVFBFC1vqQVN6dsf4cog
-! Diff-Path: ../patches/16/16-s-1732430282-3600.patch
+! Checksum: f8J3EqjO1d4j5fw9X6dTMw
+! Diff-Path: ../patches/16/16-s-1732541954-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.20
-! TimeUpdated: 2024-11-24T06:34:35+00:00
+! Version: 2.0.48.21
+! TimeUpdated: 2024-11-25T13:35:22+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -240,13 +240,13 @@ monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementB
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147842
 japscan.lol#$?#.nav ~ div[id] + div[id][class][style] { remove: true; }
 japscan.lol#%#//scriptlet('remove-attr', 'class', '.nav ~ div[id][class]:has(+ div[id]:not(#chapters))', 'asap')
-japscan.lol#$?#.w-100 > div[class]:has(+ div[id]) { remove: true; }
+japscan.lol#$?#.w-100 > [class]:has(+ div[id]) { remove: true; }
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
 japscan.lol#%#//scriptlet('prevent-setTimeout', '/function\(\)\{var|getPropertyValue|fontSize|0px|\/00/')
 japscan.lol#%#//scriptlet('prevent-addEventListener', 'load', 'setTimeout')
 !japscan.lol#%#//scriptlet("remove-node-text", "script", "/\+'a'|\+parseInt|\+String|log'|fromCharCode'|createElement'|querySel'|clipPath'|catch'|forEach'|\\x22return|90\.jpg|kso\$|\.nextEl|le\.width|return \s*eval|document\(\s*\)|String\(\s*\)/")
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a[href^="http://www.toueapo.shop/"] { text-indent: -5000px !important; }
-japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/=>\{function|^.{600,650}$|Youtube|Trello|Vietnam|Doa'|typ'|fi'\+|else return typeof|setTimeout\(function/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/=>\{\s*function|^.{600,650}$|Sick|Netflix|Albenia|\+'o|\(\){3};\}|setTimeout\(function/")
 $script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.lol
 @@$image,domain=japscan.lol
 @@||japscan.lol^$image,xmlhttprequest,script,~third-party
@@ -784,6 +784,7 @@ japscan.me#%#//scriptlet("abort-current-inline-script", "document.createElement"
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159695
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119411
 maxisciences.com,gentside.com,femmeactuelle.fr,geo.fr,voici.fr,programme-tv.net,gala.fr,capital.fr#%#//scriptlet('set-constant', 'Object.prototype.withAds', 'false')
+! probably required. Cannot check if AG_onLoad may be replaced by `document.addEventListener("DOMContentLoaded"`
 maxisciences.com,gentside.com,femmeactuelle.fr,geo.fr,voici.fr,programme-tv.net,gala.fr,capital.fr#%#AG_onLoad(function(){if(window.pmsCoreAds&&Array.isArray(pmsCoreAds)){window.pmsCoreAds=new Proxy(pmsCoreAds,{set:(a,b,c,d)=>{if("function"==typeof c)try{let a=!1;const b=b=>{var c=document.querySelector(".ads-core-video");c&&a?clearInterval(d):(b(),a=!0)},d=setInterval(b,1e3,c)}catch(a){}return Reflect.set(a,b,c,d)}})}});
 ! allocine.fr - fixing delay in the video player
 allocine.fr#%#//scriptlet("set-constant", "AC.config.ads", "emptyObj")
