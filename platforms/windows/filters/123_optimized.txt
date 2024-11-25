@@ -1,9 +1,9 @@
-! Checksum: hxs7iZ+hK5EnuowYUMqp5g
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1732496755-14400.patch
+! Checksum: FGbJDE2UFy8GOfz3zaX++w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1732511154-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.32.56
-! TimeUpdated: 2024-11-25T01:01:25+00:00
+! Version: 2.1.32.57
+! TimeUpdated: 2024-11-25T05:01:21+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -111,7 +111,6 @@
 /twitter-footer-
 /twitter-v2.png
 /twitter_follow.jpg
-/twitter_follow.png
 /twitter_footer.png
 /twitter_header.jpg
 /twitter_header.png
@@ -191,8 +190,6 @@ _social_footer_
 ###facebook-like-box
 ###facebook-link
 ###facebook-share
-###facebook-slider
-###facebookBox
 ###facebookIcon
 ###facebookLike
 ###facebookLikeBox
@@ -261,7 +258,7 @@ _social_footer_
 ###footerSocialButtons
 ###footerSocialIcons
 ###footerSocialLinks
-###footerSocialMenu
+###footer_block_social
 ###footer_follow
 ###footer_social
 ###footer_social_icons
@@ -573,6 +570,7 @@ _social_footer_
 ###social_share_wrapper
 ###social_sharing
 ###social_sidebar
+###social_snapchat
 ###social_top
 ###social_twitter
 ###social_widget
@@ -620,8 +618,6 @@ _social_footer_
 ###twitter-widget
 ###twitter2
 ###twitterBtn
-###twitterContainer
-###twitterFollow
 ###twitterShareButton
 ###twitter_btn
 ###twitter_content
@@ -853,6 +849,7 @@ _social_footer_
 ##.articlesharebox
 ##.aside-social
 ##.aside-socials
+##.asocial-area
 ##.aspexifblikebox
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
@@ -921,6 +918,7 @@ _social_footer_
 ##.blog-social
 ##.blog-social-item
 ##.blog_post_share
+##.bloque-social
 ##.bookmark-share
 ##.bottom-footer__social
 ##.bottom-share
@@ -962,6 +960,7 @@ _social_footer_
 ##.c-footer-social
 ##.c-footer-social-link
 ##.c-footer-social-media
+##.c-footer__list--follow
 ##.c-footer__social
 ##.c-footer__social-links
 ##.c-footer__social-list
@@ -1594,7 +1593,6 @@ _social_footer_
 ##.idc-share
 ##.ig-share-button
 ##.ikonz-social
-##.image-share
 ##.image-social
 ##.img-social
 ##.imgShare
@@ -2000,6 +1998,7 @@ _social_footer_
 ##.post-share-links
 ##.post-share-menu-item
 ##.post-share-twitter
+##.post-share-whatsapp
 ##.post-share-widget
 ##.post-sharing
 ##.post-social
@@ -2042,7 +2041,6 @@ _social_footer_
 ##.redes-sociales
 ##.redes_sociales
 ##.region-social
-##.region-social-links
 ##.reseaux-sociaux
 ##.reseaux-sociaux-list
 ##.reseauxSociaux
@@ -2101,7 +2099,6 @@ _social_footer_
 ##.sfacebook
 ##.sfsi_widget
 ##.sfsiaftrpstwpr
-##.sfsibeforpstwpr
 ##.sg-facebook-btn
 ##.sg-social
 ##.sg-twitter-btn
@@ -2394,7 +2391,6 @@ _social_footer_
 ##.share_counter
 ##.share_cta
 ##.share_digg
-##.share_entry
 ##.share_facebook
 ##.share_fb
 ##.share_hidden
@@ -2412,7 +2408,6 @@ _social_footer_
 ##.share_post
 ##.share_product
 ##.share_row
-##.share_sidebar
 ##.share_small
 ##.share_social
 ##.share_story
@@ -2561,7 +2556,6 @@ _social_footer_
 ##.simple-social-icons
 ##.simplesocialbuttons
 ##.simplesocialbuttons_inline
-##.single-post-meta-info-share
 ##.single-post-share
 ##.single-post-social
 ##.single-post__share
@@ -2678,6 +2672,7 @@ _social_footer_
 ##.social-follow
 ##.social-follow-bar
 ##.social-follow-button
+##.social-follow-item
 ##.social-foot
 ##.social-footer
 ##.social-footer-block
@@ -2864,7 +2859,6 @@ _social_footer_
 ##.socialFacebook
 ##.socialFeed
 ##.socialFixed
-##.socialFollow
 ##.socialFooter
 ##.socialGroup
 ##.socialHeader
@@ -3043,7 +3037,6 @@ _social_footer_
 ##.sub_jeu_social_twitter
 ##.subfooter-social
 ##.svp-share
-##.swp-hover-pin-button
 ##.synved-social-button
 ##.tags-share-box
 ##.td-icon-facebook
@@ -3624,7 +3617,6 @@ sonomamag.com##.cph-gallery-share-button
 overwolf.com##.creator-social
 bloomberg.com##.css--social-wrapper-outer
 chatelaine.com##.css-1lq2xsx-ShareButtons
-therighthairstyles.com##.custom-pinterest-wrap
 dinneratthezoo.com##.cwp-food-footer
 dailymail.co.uk##.dms-puff
 thefitcareerist.com,thewalrus.ca##.dpsp-network-list-item
@@ -3704,6 +3696,7 @@ moneycontrol.com##.join_follow
 euronews.com##.js-c-article-partage-commentaire-share
 buzzfeed.com##.js-inline-share-bar
 myanimelist.net##.js-sns-icon-container
+4sysops.com##.kleo-quick-contact-wrapper
 axios.com##.leading-0
 cybernews.com##.links-bar
 exchangerates.org.uk,idownloadblog.com,kyivpost.com,thedrinksbusiness.com##.list-inline
@@ -3743,10 +3736,12 @@ playbuzz.com##.pb-share-bar
 playbuzz.com##.pb-site-social
 theyucatantimes.com##.penci_social_counter
 news18.com##.pht-artcl-shr2
+sugarandsoul.co##.pin-block
 sundaysuppermovement.com##.pin-recipe-container
 wholesomeyum.com##.pinterest-with-id
 getcomics.org##.post-footer-shr
 bukvy.org,digitalinformationworld.com,douglasnow.com,earthsky.org,gidhaur.com,san.com,watchinamerica.com##.post-share
+eurointegration.com.ua##.post__social
 cointelegraph.com##.post__socials-block
 captainaltcoin.com,celebritycruises.com,tomzorg.nl##.post_share
 pravda.com.ua##.post_social_item
@@ -3808,6 +3803,7 @@ rte.ie##.social-btn-container
 allkeyshop.com,largus.fr##.social-btns
 fujitsu.com##.social-content
 gfinityesports.com,stealthoptional.com##.social-follow-unit
+estadao.com.br,india.com,news18.com,recipetineats.com,wionews.com##.social-icon
 bonappetit.com,cntraveler.com##.social-icons--share
 tmz.com##.social-item
 afro.com,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,theatlantavoice.com,washingtoncitypaper.com,washingtonmonthly.com##.social-links-menu
@@ -3815,6 +3811,7 @@ knowablemagazine.org,newskarnataka.com,securityaffairs.com,ucl.ac.uk##.social-me
 blackamericaweb.com,cassiuslife.com,gosunoob.com,insideclimatenews.org,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
 adrenaline.com.br,bossip.com,insidehpc.com,mundoconectado.com.br,sportsbusinessjournal.com##.social-networks
 govexec.com##.social-options
+bessiebakes.com,sugarandsoul.co##.social-rocket-floating-buttons
 iflscience.com##.social-share-elements
 computerworld.com##.social-share-sticky-men
 mirror.co.uk##.social-sites
@@ -3850,6 +3847,8 @@ todayonline.com##.subcription-two
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
 hindustantimes.com##.subscribe-social
 davidlebovitz.com##.swp_share_button
+elements.visualcapitalist.com,marktechpost.com,podwatch.io,stuffparentsneed.com##.swp_social_panel
+stuffparentsneed.com##.swp_social_panelSide
 thediplomat.com##.td-follow
 areavip.com.br,jewishpress.com,schengen.news,techgenyz.com,thenewsglobe.net##.td-post-sharing
 carnewschina.com##.td-post-sharing-style2
@@ -4030,6 +4029,7 @@ lefigaro.fr##.fig-share-mobile-layer
 lefigaro.fr##.fig-sharebar
 bfmtv.com##.footer_social_media
 lesnumeriques.com##.ln__m-shr
+autoplus.fr##.nl-social
 europe1.fr,orientxxi.info##.partage
 quechoisir.org##.qc-footer_social-media-links
 phonandroid.com##.social-networks
@@ -4190,7 +4190,6 @@ rpp.pe##.article__follow
 elespanol.com##.article__footer-nav
 elfinanciero.com.mx##.b-footer__social-links-container
 estadiodeportivo.com##.boton-share
-de10.com.mx,elgrafico.mx##.botonGoogleNews
 biobiochile.cl##.botones-google-news-wsp
 chocale.cl##.botones-rrss-final-noticia
 ecuavisa.com##.btn-compartir
@@ -4221,7 +4220,6 @@ canalnet.tv##.main-video-single__socials
 genbeta.com,vidaextra.com##.menu-follow
 depor.com##.nav__story-social-network
 perfil.com##.navbar__social-top
-ecologiaverde.com##.open-compartir
 biobiochile.cl##.post-social-container
 eleconomista.com.ar##.redes-share
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,welife.es##.rrss
@@ -4382,4 +4380,3 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||github.io^$generichide
 @@||ifttt.com^$generichide
 @@||restream.io^$generichide
-@@||zeplin.io^$generichide

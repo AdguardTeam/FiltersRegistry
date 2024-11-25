@@ -1,5 +1,5 @@
-! Checksum: /RTvmSn0z0URh2klo1jWvQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1732424719-14400.patch
+! Checksum: UfnSXVZdDQoDh1RBSmHOHw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1732511115-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.61
@@ -108,9 +108,6 @@ www.google.*,ipv6.google.com##.g:has(a[href^="https://books.google."])
 ||test-iq.org^$document
 windowsreport.com##.code-block
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
-ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-offer-header
-ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es#?#h2:has-text(/^Repair\syour\sErrors\sautomatical{2}y$/i)
-ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es#?#h2:has-text(/^Repair\syour\sErrors\sautomatical{2}y$/i) + p
 ||majorgeeks.com/images/icons/red_icon_18x17px.png$image
 drivereasy.com#?#.pakb-content ol:has-text(Download and install Driver Easy)
 drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
@@ -309,6 +306,7 @@ coolrom.com.au,coolrom.com##.download_link
 37.0.10.83$network
 !+ PLATFORM(windows, mac, android)
 192.3.110.170$network
+||totalav.com^$all
 !+ PLATFORM(windows, mac, android)
 91.241.19.38$network
 !+ PLATFORM(windows, mac, android)
@@ -773,7 +771,6 @@ coolrom.com.au,coolrom.com##.download_link
 !+ PLATFORM(windows, mac, android)
 57.128.71.215$network
 ||waisheph.com^$all
-||zaltaumi.net^$all
 ||zeekaihu.net^$all
 !+ PLATFORM(windows, mac, android)
 37.1.223.231$network
@@ -860,7 +857,6 @@ coolrom.com.au,coolrom.com##.download_link
 192.243.61.225$network
 !+ PLATFORM(windows, mac, android)
 192.243.61.227$network
-||darknesstrace.com^$all
 ||katecrochetvanity.com^$all
 ||tobaccosturgeon.com^$all
 !+ PLATFORM(windows, mac, android)
@@ -1705,6 +1701,7 @@ www.nrk.no##.nrkno-player-controls__bar::before
 ~imdb.com##.btn-imdb:not(html,body,:empty)
 ~imdb.com##.jt-imdb:not(html,body,:empty)
 ~imdb.com##.imdb-score:not(html,body,:empty)
+~imdb.com##.imdb-ic:not(html,body,:empty)
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
 bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 www.google.*,ipv6.google.com#?#.g:has-text(imdb.com › title) div[data-snf]:has(g-bubble)
@@ -1751,6 +1748,7 @@ $document,removeparam=ranSiteID
 $document,removeparam=xtor
 $document,removeparam=SRC
 $document,removeparam=ectrans
+$document,removeparam=dartycid
 $document,removeparam=bbaid
 ||paypal.$document,removeparam=ppid
 $document,removeparam=unptid
@@ -1926,6 +1924,9 @@ $removeparam=usource
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=trackingCode
 $removeparam=affiliateCustomId
+$removeparam=REFERRAL_ID
+$removeparam=impradid
+$removeparam=impradname
 Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=awin$/i
 $removeparam=cjid
@@ -2032,7 +2033,6 @@ $removeparam=af_c_id
 $removeparam=af_channel
 $removeparam=af_click_lookback
 $removeparam=af_force_deeplink
-$removeparam=af_keywords
 $removeparam=af_referrer_customer_id
 $removeparam=af_referrer_uid
 $removeparam=af_siteid
@@ -2161,6 +2161,7 @@ $removeparam=criteoId
 $removeparam=dspCookie
 $removeparam=_rand
 $removeparam=dsp_uid
+$removeparam=adsafe_url
 $removeparam=mt_uuid
 $removeparam=_rlid
 $removeparam=ga_fc
@@ -2169,6 +2170,7 @@ $removeparam=s_id
 $removeparam=b_id
 $removeparam=dspUserId
 $removeparam=tpmn_buid
+$removeparam=adsafe_type
 $removeparam=variationId
 $removeparam=beeswax_id
 $removeparam=_gfid
@@ -2186,6 +2188,7 @@ $removeparam=yandexuid
 $removeparam=google_nid
 $removeparam=cbuster
 $removeparam=ns_ts
+$removeparam=adsafe_jsinfo
 $removeparam=ex-src
 $document,removeparam=uid_bam
 $removeparam=pv_ts
@@ -2231,6 +2234,7 @@ $removeparam=geniuslink
 ||amazon.$removeparam=lp_asins
 ||amazon.$removeparam=lp_slot
 ||amazon.$removeparam=lp_page_asin
+||amazon.$removeparam=asc_contentid
 ||amazon.$removeparam=visitId
 ||amazon.$removeparam=field-lbr_brands_browse-bin
 ||amazon.$removeparam=maas
@@ -2571,10 +2575,6 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||iqiyi.com^$removeparam=r_area
 ||iqiyi.com^$removeparam=r_source
 ||iqiyi.com^$removeparam=stype
-||iqiyi.com^$removeparam=source
-||iqiyi.com^$removeparam=sr
-||iqiyi.com^$removeparam=ssra
-||iqiyi.com^$removeparam=ssrt
 ||help.iqiyi.com^$removeparam=entry
 ||sogou.com^$removeparam=_asf
 ||sogou.com^$removeparam=_ast
@@ -2631,6 +2631,7 @@ $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.
 $removeparam=argsite,domain=metaffiliation.com
 $removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
+$removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=article_name,domain=shop-links.co
 $removeparam=article_url,domain=shop-links.co
@@ -2639,7 +2640,6 @@ $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|a
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=region,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
-$removeparam=reflink,domain=marketwatch.com|mansionglobal.com|wsj.com
 $removeparam=hpt,domain=cnn.com
 ||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
@@ -2721,7 +2721,6 @@ $removeparam=ref_ctx_id
 $removeparam=ssdcat,domain=norton.com|ask.com
 ||cdninstagram.com^$removeparam=ccb
 ||cdninstagram.com^$removeparam=efg
-||tokopedia.com^$removeparam=whid
 $removeparam=fm,domain=flipkart.com|shopbop.com
 ||flipkart.com^$removeparam=ppn
 ||flipkart.com^$removeparam=ppt
@@ -2903,7 +2902,6 @@ $removeparam=o,domain=nortonsafe.search.ask.com|linkvertise.com|demo.thisischip.
 ||nortonsafe.search.ask.com^$removeparam=tpr
 ||nortonsafe.search.ask.com^$removeparam=cmpgn
 ||nortonsafe.search.ask.com^$removeparam=doi
-$removeparam=intlid,domain=hotels.com
 $removeparam=rfrr,domain=ebookers.*|hotels.com
 ||ekstrabladet.dk^$removeparam=ilc
 $removeparam=ct,domain=nextdoor.com
@@ -2959,6 +2957,9 @@ $removeparam=srsltid,document
 ||dl-protect.$removeparam=fn
 ||dl-protect.$removeparam=rl
 ||search.yahoo.com^$removeparam=fr2
+||malwarebytes.com^$removeparam=x-affid
+||malwarebytes.com^$removeparam=ADDITIONAL_AFFID
+$removeparam=x-wts
 $removeparam=%243p,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=%24deep_link,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=post_index,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
@@ -3081,8 +3082,6 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=.src
 ||login.yahoo.com^$document,removeparam=pspid
 ||login.yahoo.com^$document,removeparam=activity
-||qzone.qq.com^$document,removeparam=g
-||qzone.qq.com^$document,removeparam=g_f
 ||asos.com^$removeparam=ctaref
 ||gumroad.com^$removeparam=recommended_by
 ref=words.filippo.io$document,removeparam=ref
