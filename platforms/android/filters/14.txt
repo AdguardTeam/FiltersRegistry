@@ -1,9 +1,9 @@
-! Checksum: I1FEjimBER45vaS3/uwcag
-! Diff-Path: ../patches/14/14-s-1732606707-3600.patch
+! Checksum: MR74grdBcIedtfTr/9yWWQ
+! Diff-Path: ../patches/14/14-s-1732610259-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.14.76
-! TimeUpdated: 2024-11-26T07:35:11+00:00
+! Version: 2.2.14.77
+! TimeUpdated: 2024-11-26T08:34:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2507,6 +2507,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+tensorpix.ai#%#//scriptlet('trusted-set-local-storage-item', 'cookieconsent', '{"targetingCookies":false,"performanceCookies":false}')
 biletbayisi.com##.cookie-modal-container
 ubaldi.com#%#//scriptlet('trusted-click-element', '.cb-btn-line .cb-btn-confirm')
 12punto.com.tr##.content > div.popup:has(> div.popup-content a[href^="https://12punto.com.tr/cerez-politikasi"])
@@ -16256,8 +16257,14 @@ geberit.de#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button
 hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.nl,villeroy-boch.fr#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-deny-all-button"]')
 !
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
+! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_firefox)
+! 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#body > * { filter: none !important; }
+! 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html > body { overflow: auto !important; }
+! 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html:not(#style_important) { overflow: auto !important; }
+! 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#?#body > div[class]:has(> div[class] > div[class] > div[class] > div[class] > button:contains(/^(I ACCEPT AND GO TO THE WEBSITE|AKCEPTUJĘ I PRZECHODZĘ DO SERWISU|Я ПРИЙМАЮ ТА ПЕРЕХОДЖУ НА САЙТ)$/))
+! !#endif
 ! wp.pl
-dailywrap.net,pysznosci.pl,genialne.pl,finansowysupermarket.pl,deliciousmagazine.pl,jastrzabpost.pl,audioteka.com,easygo.pl,so-magazyn.pl,o2.pl,pudelek.pl,benchmark.pl,wp.pl#%#//scriptlet('trusted-click-element', 'div[class]:has(a[href*="holding.wp.pl"]) div[class]:only-child > button[class*=" "] + button:not([class*=" "])')
+money.pl,autokult.pl,komorkomania.pl,polygamia.pl,autocentrum.pl,allani.pl,homebook.pl,domodi.pl,open.fm,gadzetomania.pl,fotoblogia.pl,abczdrowie.pl,parenting.pl,kafeteria.pl,vibez.pl,wakacje.pl,extradom.pl,totalmoney.pl,superauto.pl,nerwica.com,forum.echirurgia.pl,dailywrap.net,pysznosci.pl,genialne.pl,finansowysupermarket.pl,deliciousmagazine.pl,jastrzabpost.pl,audioteka.com,easygo.pl,so-magazyn.pl,o2.pl,pudelek.pl,benchmark.pl,wp.pl#%#//scriptlet('trusted-click-element', 'div[class]:has(a[href*="holding.wp.pl"]) div[class]:only-child > button[class*=" "] + button:not([class*=" "])')
 !
 ! trusted-click-element doesn't work for cookie acceptance here
 ! Rework when this issue will be fixed: https://github.com/AdguardTeam/Scriptlets/issues/391
@@ -24948,6 +24955,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+realrawnews.com##.elementor-popup-modal:has(a[href^="https://www.givesendgo.com/realrawnews"])
 fb2.top#%#//scriptlet('set-cookie', 'vk_ad_shown', '1')
 m.avito.ru#%#//scriptlet('trusted-click-element', 'svg[data-marker="onboarding-close-icon"]')
 txbiz.tv-tokyo.co.jp##.live-noti-items
@@ -33439,6 +33447,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+pulzo.com##.whatsappBtn
 todojujuy.com##.banner__newsletter
 usermag.co##div[class*="_subscribeDialog"]
 usermag.co##div[class*="_background"]:empty[style*="opacity"]
@@ -39775,7 +39784,6 @@ kempinski.com##[data-target="#newsletter-modal"]
 kempinski.com#?#h4.footer__title:contains(BÜLTENİMİZ İÇİN KAYDOLUN)
 bankchart.com.ua,prostopravo.com.ua,prostobank.ua##.subscription-ad
 glamour.ru##.sign-up-block
-pulzo.com,hellomagazine.com##.formNewsletter
 birdinflight.com##.newsletter-subsribe
 smashingmagazine.com##.c-garfield-aside--newsletter
 smashingmagazine.com###article__content div[data-component="FeaturePanel"][data-audience="non-subscriber"]
@@ -40750,6 +40758,8 @@ flightradar24.com##[data-id="a5b8151"][data-element_type="widget"]
 flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
+!+ NOT_OPTIMIZED
+pulzo.com,hellomagazine.com##.formNewsletter
 !+ NOT_OPTIMIZED
 medium.com#?##root div[style^="top:"][style*="50vh"]:has(span > button:contains(Sign up for free))
 !+ NOT_OPTIMIZED

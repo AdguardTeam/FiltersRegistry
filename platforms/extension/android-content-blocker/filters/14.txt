@@ -1,8 +1,8 @@
-! Checksum: UtnzEhUnh5I16F5JCaoOBg
+! Checksum: tiUffiHBBqSJZMIpvaB2uQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.14.76
-! TimeUpdated: 2024-11-26T07:35:11+00:00
+! Version: 2.2.14.77
+! TimeUpdated: 2024-11-26T08:34:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14133,9 +14133,11 @@ online.swedbank.se##fdp-widget-cookie-consent
 !
 !
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
-17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#body > * { filter: none !important; }
-17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html > body { overflow: auto !important; }
-17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html:not(#style_important) { overflow: auto !important; }
+! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_firefox)
+! 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#body > * { filter: none !important; }
+! 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html > body { overflow: auto !important; }
+! 17bankow.com,5mindlazdrowia.pl,kazimierzdolny.pl,vpolshchi.pl,dobreprogramy.pl,essanews.com,dailywrap.ca,dailywrap.uk,dailywrap.net#$#html:not(#style_important) { overflow: auto !important; }
+! !#endif
 ! wp.pl
 !
 ! trusted-click-element doesn't work for cookie acceptance here
@@ -30417,6 +30419,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+pulzo.com##.whatsappBtn
 todojujuy.com##.banner__newsletter
 usermag.co##div[class*="_subscribeDialog"]
 usermag.co##div[class*="_background"]:empty[style*="opacity"]
@@ -35630,7 +35633,6 @@ osnmedia.ru##.subscribe-line
 kempinski.com##[data-target="#newsletter-modal"]
 bankchart.com.ua,prostopravo.com.ua,prostobank.ua##.subscription-ad
 glamour.ru##.sign-up-block
-pulzo.com,hellomagazine.com##.formNewsletter
 birdinflight.com##.newsletter-subsribe
 smashingmagazine.com##.c-garfield-aside--newsletter
 smashingmagazine.com###article__content div[data-component="FeaturePanel"][data-audience="non-subscriber"]
@@ -36551,6 +36553,8 @@ flightradar24.com##[data-id="a5b8151"][data-element_type="widget"]
 flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
+!+ NOT_OPTIMIZED
+pulzo.com,hellomagazine.com##.formNewsletter
 !+ NOT_OPTIMIZED
 medium.com#$#html { overflow-y: visible!important; }
 !+ NOT_OPTIMIZED
