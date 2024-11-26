@@ -1,8 +1,8 @@
-! Checksum: rg8mlh8gVR4aEPEUGqz/EA
+! Checksum: PNP/0QKA83CLla8fBh9d8Q
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.62.18
-! TimeUpdated: 2024-11-26T18:31:29+00:00
+! Version: 2.3.62.19
+! TimeUpdated: 2024-11-26T19:31:25+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -5954,12 +5954,6 @@ suara.com##div[id^="div-ad-"]
 sonora.id###div-Inside-MediumRectangle
 kusonime.com##.iklanads
 ad4msan.com#%#//scriptlet("abort-current-inline-script", "String.fromCharCode", "decodeURIComponent")
-||laksa19.github.io/assets/js/jroute.js$replace=/if \(!document.*?\).*?{/if(!1){/
-laksa19.github.io#%#//scriptlet('prevent-setInterval', '/chkAds|ads\.|!document\.querySelector/')
-laksa19.github.io#%#//scriptlet('prevent-setTimeout', '/chkAds|ads\.|!document\.querySelector/')
-laksa19.github.io#%#//scriptlet('prevent-xhr', 'doubleclick.net')
-laksa19.github.io#%#AG_onLoad((function(){if(location.href.includes("googleads"))return;const e=document.createDocumentFragment(),t=document.createElement("iframe");t.src="googleads",e.appendChild(t);const n=document.createElement("ins");n.classList.add("adsbygoogle"),e.appendChild(n);const d=document.createElement("div");d.setAttribute("title","Advertisement"),e.appendChild(d),document.body.appendChild(e)}));
-laksa19.github.io#$#.adsbygoogle { height: 1px !important; }
 download.ipeenk.com#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "adlinkfly_url")
 blog.aming.info#%#//scriptlet("prevent-window-open")
 bioskopkeren.*#$##film { display: block !important; }
@@ -6959,15 +6953,12 @@ otomoto.pl##div[data-testid="underlying_banner"]
 jeja.pl###top > .top-wrap
 jeja.pl#%#//scriptlet('set-constant', '_goad', '0')
 jeja.pl#%#//scriptlet('adjust-setTimeout', 'show_game', '*', '0.001')
-jeja.pl#%#AG_onLoad(function() { setTimeout(function() { if(typeof show_game_iframe === "function") { show_game_iframe(); } }, 1000); });
+jeja.pl#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{   setTimeout(function() { if(typeof show_game_iframe === "function") { show_game_iframe(); } }, 1000); }));})();
 jeja.pl#@##bottomAd
 jeja.pl#%#//scriptlet('prevent-setTimeout', 'adBlockDetected')
 bankier.pl##a.o-ecom-box__link[href^="https://www.bankier.pl/e/lead/"]
 bankier.pl#%#//scriptlet('remove-class', 'async-hide', 'html')
 bankier.pl###article-link-box > a[href^="https://s.bankier.pl/"].o-article-link-box__anchor
-tapetus.pl,tapeciarnia.pl#$#body .adsbygoogle { display: block!important; height: 1px!important; }
-tapetus.pl,tapeciarnia.pl#%#//scriptlet('remove-cookie', 'adblock')
-tapetus.pl,tapeciarnia.pl#%#AG_onLoad(function() { if( typeof sprawdz_czy_adblock === 'function' ) { sprawdz_czy_adblock = function() {}; } });
 encyklopedia.pwn.pl##.banner
 sjp.pwn.pl##.banner
 pwn.pl,translatica.pl###top-banners
@@ -10637,7 +10628,7 @@ tportal.hr,cool-style.com.tw,infor.pl,forsal.pl,winfuture.de,woxikon.de,verkaufs
 thesaurus.net#%#//scriptlet('prevent-setTimeout', 'loader.min.js')
 mlbpark.donga.com,tweaksforgeeks.com#%#//scriptlet('remove-node-text', 'script', 'KCgpPT57bGV0IGU')
 tenasia.hankyung.com#%#//scriptlet('trusted-create-element', 'head', 'link', 'rel="stylesheet" https://hkstatic.hankyung.com/css/rel/tenasia/w/common.css"')
-dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e="loader.min.js",o={includes:String.prototype.includes,querySelector:Document.prototype.querySelector,proxy:Proxy},t=()=>(new Error).stack,r={construct:(r,n,c)=>{const l=t();return o.includes.call(l,e)&&o.querySelector.call(document,'link[rel="stylesheet"][href*="/resources"]')&&!o.includes.call(n[0]?.toString(),"[native code]")&&!o.includes.call(n[0]?.toString(),"():")&&(n[0]=function(e,o){}),Reflect.construct(r,n,c)}};window.Promise=new Proxy(window.Promise,r);const n={construct:(r,n,c)=>{const l=t();return o.includes.call(l,e)&&"Promise"===n[0]?.name&&"function"==typeof n[0]?.resolve&&o.includes.call(n[1]?.construct?.toString(),"(...arguments)")?Promise:Reflect.construct(r,n,c)}};window.Proxy=new Proxy(window.Proxy,n)})();
+dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const t="loader.min.js",n={includes:String.prototype.includes,querySelector:Document.prototype.querySelector},c=()=>(new Error).stack,e={apply:(e,o,r)=>{const l=c(),u=r[1]?.[0];return n.includes.call(l,t)&&u&&"function"==typeof u&&n.includes.call(u?.toString(),"new Blob")&&(r[1][0]=function(){}),Reflect.apply(e,o,r)}},o={construct:(o,r,l)=>{const u=c();return n.includes.call(u,t)&&"Promise"===r[0]?.name&&"function"==typeof r[0]?.resolve&&"function"==typeof r[1]?.construct&&(n.includes.call(r[1]?.construct?.toString(),"(...arguments)")||n.includes.call(r[1]?.construct?.toString(),"return Reflect["))&&(r[1].construct=new Proxy(r[1].construct,e)),Reflect.construct(o,r,l)}};window.Proxy=new Proxy(window.Proxy,o)})();
 issuya.com#$?#script[src$="/loader.min.js"][onerror*="error-report.com"] { remove: true; }
 petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,thatgossip.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,ff14net.2chblog.jp,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('abort-on-stack-trace', 'Object.defineProperty', 'html-load.com')
 petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,thatgossip.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,ff14net.2chblog.jp,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('prevent-setTimeout', '/document\.querySelectorAll[\s\S]*?\.remove\(\)[\s\S]*?alert/')
