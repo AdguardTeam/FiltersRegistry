@@ -1,9 +1,9 @@
-! Checksum: ugvoaePv+7dExhRzdzgO+g
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1732631987-3600.patch
+! Checksum: JJ6+Jvbk2op6JS/1RTSkIw
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1732639185-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.59.67
-! TimeUpdated: 2024-11-26T14:35:22+00:00
+! Version: 2.0.59.68
+! TimeUpdated: 2024-11-26T16:35:20+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -411,14 +411,10 @@ mytry.jp#$#body > #container { display: block !important; }
 wiki.yjsnpi.nu#%#//scriptlet('abort-current-inline-script', 'onload', 'catch')
 $script,~third-party,redirect-rule=noopjs,domain=wiki.yjsnpi.nu
 wiki.yjsnpi.nu#%#//scriptlet("prevent-setTimeout", "/\+'.+catch/", "!0")
-wiki.yjsnpi.nu#%#//scriptlet('prevent-element-src-loading', 'script', '/\/w\/load\.php$/')
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) { font-size: 0 !important; }
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img { height: 0 !important; }
 wiki.yjsnpi.nu#%#//scriptlet('prevent-eval-if', '/catch.+catch/')
 wiki.yjsnpi.nu#%#//scriptlet('remove-node-text', 'script', '/catch.+catch/')
-@@||wiki.yjsnpi.nu/comments/assets/comments.js
-wiki.yjsnpi.nu#%#function copyToClipboad(e){navigator.clipboard.writeText(this.caller.dataset.text).then((()=>{mw.notify("クリップボードにコピーしました"),gtag("event","clipboard",{wgTitle:RLCONF.wgTitle,clipboard_status:"done"})}),(()=>{mw.notify("クリップボードにコピーできませんでした…"),gtag("event","clipboard",{wgTitle:RLCONF.wgTitle,clipboard_status:"failed"})}))}function searchProduct(e){var t="";if("FANZA"===this.caller.dataset.asp){{const e="https://www.dmm.co.jp/digital/videoa/-/list/search/=/?searchstr="+encodeURI(RLCONF.wgPageName);t="https://al.dmm.co.jp/?lurl="+encodeURI(e)+"&af_id=takayama-001&ch=toolbar&ch_id=link"}window.open(t,"_blank"),gtag("event","search_products",{wgTitle:RLCONF.wgTitle,asp:this.caller.dataset.asp})}}function sfw(e){this.caller.classList.remove("nsfw"),gtag("event","nsfw",{wgTitle:RLCONF.wgTitle})}function getAbsolutePath(e){const t=location.href;return new URL(e,t).href}document.querySelectorAll(".copy_to_clipboard").forEach((e=>{e.addEventListener("click",{caller:e,handleEvent:copyToClipboad})})),document.querySelectorAll(".search_products").forEach((e=>{e.addEventListener("click",{caller:e,handleEvent:searchProduct})})),document.querySelectorAll(".share_button").forEach((e=>{e.addEventListener("click",(async e=>{const t={title:RLCONF.wgTitle+" - 真夏の夜の淫夢Wiki",text:RLCONF.wgTitle+" - 真夏の夜の淫夢Wiki",url:getAbsolutePath("/wiki/"+encodeURI(RLCONF.wgPageName))};if(navigator.canShare&&navigator.canShare(t))try{await navigator.share(t),mw.notify("シェアしました"),gtag("event","share",{wgTitle:RLCONF.wgTitle,share_type:"share",share_status:"done"})}catch(e){mw.notify("シェアできませんでした…"),gtag("event","share",{wgTitle:RLCONF.wgTitle,share_type:"share",share_status:"cancelled"})}else navigator.clipboard.writeText(t.text+" "+t.url).then((()=>{mw.notify("クリップボードにコピーしました"),gtag("event","share",{wgTitle:RLCONF.wgTitle,share_type:"clipboard",share_status:"done"})}),(()=>{mw.notify("クリップボードにコピーできませんでした…"),gtag("event","share",{wgTitle:RLCONF.wgTitle,share_type:"clipboard",share_status:"failed"})}))}))})),document.querySelectorAll(".nsfw").forEach((e=>{e.addEventListener("click",{caller:e,handleEvent:sfw})}));
-||wiki.yjsnpi.nu^$script
 /\/w\/load\.php\?lang=ja&modules=codex-search-styles(?:%2C)?$/$script,~third-party,domain=wiki.yjsnpi.nu,important
 ||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=startup&only=scripts&raw=1&skin=|$script,~third-party,important
 @@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=ext.cite.ux-enhancements$script,~third-party
