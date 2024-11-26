@@ -1,9 +1,9 @@
-! Checksum: zqvKQl3eP3IPdQc9+CcXOA
-! Diff-Path: ../patches/14/14-s-1732599465-3600.patch
+! Checksum: 8aWx6OHbJWYhV0nK7/pj/A
+! Diff-Path: ../patches/14/14-s-1732603069-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.14.74
-! TimeUpdated: 2024-11-26T05:34:26+00:00
+! Version: 2.2.14.75
+! TimeUpdated: 2024-11-26T06:34:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2507,6 +2507,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+biletbayisi.com##.cookie-modal-container
+ubaldi.com#%#//scriptlet('trusted-click-element', '.cb-btn-line .cb-btn-confirm')
 12punto.com.tr##.content > div.popup:has(> div.popup-content a[href^="https://12punto.com.tr/cerez-politikasi"])
 moebel.de#$#div[class^="__variable_"] > div.fixed.items-center { display: none !important; }
 moebel.de#$#body { overflow: auto !important; padding-right: 0 !important; }
@@ -16239,7 +16241,7 @@ consent.yahoo.com#%#//scriptlet('trusted-click-element', '#consent-page .manage-
 consent.yahoo.com#%#//scriptlet('trusted-click-element', '#consent-page button[type="submit"][name="save"]')
 fis-ski.com#%#//scriptlet('trusted-set-cookie', 'cookieDisclaimer', 'approved')
 !
-homebook.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,jejswiat.pl,kafeteria.pl,komorkomania.pl,luxlux.pl,medycyna24.pl,mixer.pl,money.pl,nocowanie.pl,open.fm,parenting.pl,pinger.pl,pogodnie.pl,samosia.pl,testwiedzy.pl#%#//scriptlet("set-constant", "__wpjslib__", "emptyObj")
+homebook.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,jejswiat.pl,kafeteria.pl,komorkomania.pl,luxlux.pl,medycyna24.pl,mixer.pl,money.pl,nocowanie.pl,open.fm,parenting.pl,pinger.pl,pogodnie.pl,samosia.pl#%#//scriptlet("set-constant", "__wpjslib__", "emptyObj")
 dane.gov.pl#%#//scriptlet('trusted-set-local-storage-item', 'OD_isAcquintedWithRodo', '"true"')
 gadgethacks.com#%#//scriptlet("set-constant", "WHT.ShowConsentForm", "trueFunc")
 trustarc.com#%#//scriptlet('trusted-click-element', 'a.call')
@@ -16255,7 +16257,7 @@ hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.nl,villeroy-boch.f
 !
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
 ! wp.pl
-so-magazyn.pl,o2.pl,pudelek.pl,benchmark.pl,wp.pl#%#//scriptlet('trusted-click-element', 'div[class]:has(a[href*="holding.wp.pl/zaufani-partnerzy"]) div[class]:only-child > button[class*=" "] + button:not([class*=" "])')
+dailywrap.net,pysznosci.pl,genialne.pl,finansowysupermarket.pl,deliciousmagazine.pl,jastrzabpost.pl,audioteka.com,easygo.pl,so-magazyn.pl,o2.pl,pudelek.pl,benchmark.pl,wp.pl#%#//scriptlet('trusted-click-element', 'div[class]:has(a[href*="holding.wp.pl"]) div[class]:only-child > button[class*=" "] + button:not([class*=" "])')
 !
 ! trusted-click-element doesn't work for cookie acceptance here
 ! Rework when this issue will be fixed: https://github.com/AdguardTeam/Scriptlets/issues/391
@@ -40748,7 +40750,7 @@ flightradar24.com##[data-id="35ae40a"][data-element_type="widget"]
 !
 !
 !+ NOT_OPTIMIZED
-medium.com###root div[style^="top:"][style*="50vh"]:has(span > button:contains(Sign up for free))
+medium.com#?##root div[style^="top:"][style*="50vh"]:has(span > button:contains(Sign up for free))
 !+ NOT_OPTIMIZED
 medium.com#$#html { overflow-y: visible!important; }
 !+ NOT_OPTIMIZED
