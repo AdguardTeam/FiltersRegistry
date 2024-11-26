@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: xulZ49100syxrLqgCBew7A
-! Diff-Path: ../patches/120_optimized/120_optimized-s-1732568761-14400.patch
+! Checksum: g7NxQhJItPspwLYSWVvamQ
+! Diff-Path: ../patches/120_optimized/120_optimized-s-1732597537-14400.patch
 ! Title: AdBlockID (Optimized)
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.22.60
-! TimeUpdated: 2024-11-25T21:01:27+00:00
+! Version: 2.0.22.61
+! TimeUpdated: 2024-11-26T05:01:14+00:00
 ! Expires: 5 days (update frequency)
 .id^*/bnr/$domain=~kalbarprov.go.id
 /iklan/*$image,domain=~jualrumahjakarta.com|~jualsewakios.com|~jualsewaruko.com|~kostjakarta.com|~pusatiklan.co.id|~sewa-apartemen.net|~sewa-rumah.net|~sewa-villa.com|~situsproperti.com|~tempat-usaha.com
@@ -3925,16 +3925,15 @@ anixverse.com,hepinime.id,lendrive.web.id,melongmovie.site,sokuja.uk##body > div
 kebioskop21.digital#$?#a[target*="blank"] > video { remove: true; }
 manganime.live##img[data-original-width="905"][data-original-height="1300"]
 drakorid.icu###arlinablock
-idlix.asia##body > div:matches-css(position: fixed)
-idlix.asia#$#body > div { filter: unset!important; }
 drakorid.icu#$#body { overflow: auto!important; position: unset!important; }
+idlix.asia#$#body[class*="-style-"] > * { filter: none !important; }
+idlix.asia##body[class*="-style-"] > div[class$=" active"][style]
+idlix.asia##body[class*="-style-"] > div[class$=" active"][style] + div[class*="-"]:has(> div[class$=" active"][style])
 kopajasubs.info##+js(abort-on-property-read, adAdbLoad)
 filmboxoffice.web.id,neosubs.net##+js(abort-on-property-read, anOptions)
 blurayufr.cam##+js(abort-current-script, chp_ads_blocker_detector)
 dramakore21.net,layardrama21.my##+js(noeval-if, /fairAdblock|chp_?adblock|adsbygoogle\.js/)
 123moviesmy.site##body > div:matches-css(position: fixed):has(> div:matches-css(position: relative))
-@@||static.doubleclick.net/instream/ad_status.js$domain=idlix.asia
-idlix.asia##+js(abort-on-stack-trace, DOMTokenList.prototype.contains, manageBodyClasses)
 ||googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=noop.js,domain=anidraw.net
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication.com/adsbygoogle.js,domain=auratail.com
 /ads-$image,domain=nekopoi.web.id
