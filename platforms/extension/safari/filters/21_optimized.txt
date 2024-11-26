@@ -1,5 +1,5 @@
-! Checksum: UPpHzYu2YltXyWRcUz0nnQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1732559884-3600.patch
+! Checksum: 0qFNpzme2UlAWlSbjW5GAQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1732588706-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.28.29
@@ -98,6 +98,7 @@ n-tv.de##.sitemap__group:has(> .sitemap__newsletter)
 ||cdn.jsdelivr.net/npm/disable-devtool^
 [$path=/\/(search|tag)\//]www.nicovideo.jp##.nicoadVideoItem
 [$path=/tag/]www.nicovideo.jp##.nicodicNicoadVideoList
+fotospor.com##a[href="https://t.me/efsanefotospor"] > img
 nihongomaster.com##div[class]:has(> div[wire\:snapshot*="newsletter-signup"])
 sueddeutsche.de##div[data-newsletter-id]
 sueddeutsche.de##div[class]:has(> div[data-teaserlist-element]:only-child > .basebox:only-child > div[data-newsletter-id])
@@ -641,6 +642,7 @@ whispersinthecorridors.com##.media > .space
 javhiv.com##.block-body > .block.announcement
 answers.yahoo.com##.ginsuAd
 youtube.com#$##ticker.ytd-masthead { display: none!important; }
+||macerkopf.de/wp-content/plugins/dreamgrow-scroll-triggered-box/js/script.js
 thefreedictionary.com###OccupSlider
 allmusic.com###ctoolbar
 wikipedia.org###frb-inline
@@ -725,6 +727,7 @@ mail.ru##.m-pwa-custom-infobar
 mail.ru#?#body > div.tooltip:has(div.m-push-notifications__buttons)
 ||pogoda.mail.ru/*/ct-push-notifications/ct-push-notifications.xml.js
 e.mail.ru###theme-currency-notify
+sport24.ru##div:has(> p + a[href^="https://sport24.ru/"])
 mail.ru,~e.mail.ru,~octavius.mail.ru##.js-promo-popup
 sportmail.ru##div[id^="notification"]
 health.mail.ru##form[data-module="Subscription"]
@@ -744,7 +747,6 @@ cgtips.org#$#.mts-cl[id^="content-locker-"] { display: none !important; }
 3dmodelshare.org,3dzip.org#$#.mts-cl[id^="content-locker-"] { display: none !important; }
 3dmodelshare.org,3dzip.org#$#div[class][data-locker-id] { display: block !important; }
 yasir252.com#%#AG_onLoad(function(){setTimeout(function(){var a=document.querySelector(".onp-sl-content");if("function"===typeof jQuery&&"object"===typeof bizpanda.lockerOptions&&a)try{a=0;for(var c=Object.keys(bizpanda.lockerOptions);a<c.length;a++){var d=c[a];if(d.includes("onpLock")){var b=bizpanda.lockerOptions[d];b&&jQuery.ajax({url:b.ajaxUrl,method:"post",data:{lockerId:b.lockerId,action:"opanda_loader",hash:b.contentHash},success:function(a){var b=jQuery(".onp-sl-content"),c=jQuery(".onp-sl-social-locker"); b.append(a);b.css("display","block");c.css("display","none")}})}}}catch(e){}},1E3)});
-||trimay.ru/?
 i-fields.jp###wpp-social-icons
 girlsreport.net##.main-container > iframe[src*="rssfeed"]
 girlsreport.net##.article-sub-popular2
@@ -780,7 +782,6 @@ nato.int##.socialbar
 ||i.dailymail.co.uk/i/pix/2017/08/02/636x90_facebook_ad_sport.png
 newsru.co.il##article > a[href="https://t.me/s/NEWSruIsrael"]
 pepper.ru##div[data-track*="vk_banner"]
-the-village.ru##div[class="base-Layout--Layout__asideCol"] > section[class^="screens-"] + section[class$="socialBlock"]
 translate.ru###blogRSSRight
 dailymail.co.uk##.article-text > a[href="https://www.facebook.com/DailyMailSport/"]
 moddroid.com##.fixed-icons
@@ -804,6 +805,7 @@ menunedeli.ru##.save-recipe-blk
 delovoymir.biz##.dmpr_bl_mini
 mag.103.by,mag.103.ua##.b-journal-cat-banner
 news-postseven.com##.w-Share
+datarobot.com,bessarabiainform.com##.news-bar
 full-count.jp#?#.l-sidebar > aside.l-sidebar__block:has(> div.l-sidebar-ranking > h2:contains(SAMURAI JAPAN))
 ntv.com.tr##.article-socialFrame-widget
 news.cookpad.com##a[href="https://line.me/R/ti/p/%40oa-cookpadnews"]
@@ -872,6 +874,7 @@ ya.ru##.message-promo
 ya.ru##.search3__inner > div.link-bro
 ya.ru##.promo-gallery
 ya.ru,yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws##.simple-popup__close-in-overlay-wrapper
+ya.ru,yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws##.dist-overlay__popup_type_edge
 ya.ru,yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws##.simple-popup_horizontal-centered_true
 ya.ru,yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws##.simple-popup_direction_center:has(> div > div > div.dist-overlay__description)
 ya.ru,yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws##.simple-popup__overlay_shown_true
@@ -900,7 +903,6 @@ disk.yandex.ru#%#//scriptlet('remove-attr', 'href', '.InfoSpace[href^="https://3
 [$path=/maps]yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws##.business-card-view__main-wrapper div.card-offer-view
 [$path=/maps]yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws##.business-card-title-view__advert
 [$path=/maps]yandex.al,yandex.app,yandex.asia,yandex.at,yandex.az,yandex.by,yandex.ca,yandex.cc,yandex.cl,yandex.cloud,yandex.cn,yandex.co,yandex.co.il,yandex.com,yandex.com.bd,yandex.com.np,yandex.com.tr,yandex.com.ua,yandex.de,yandex.dk,yandex.ee,yandex.es,yandex.eu,yandex.fi,yandex.fm,yandex.fr,yandex.ie,yandex.in,yandex.io,yandex.it,yandex.jp,yandex.kg,yandex.kz,yandex.lt,yandex.lv,yandex.ma,yandex.md,yandex.mobi,yandex.mx,yandex.net,yandex.news,yandex.no,yandex.org,yandex.pl,yandex.pro,yandex.pt,yandex.ro,yandex.rs,yandex.ru,yandex.se,yandex.shop,yandex.site,yandex.sk,yandex.store,yandex.su,yandex.top,yandex.ua,yandex.uk,yandex.us,yandex.uz,yandex.work,yandex.ws##.business-card-title-view__actions .button._view_advertisement
-music.yandex.al,music.yandex.app,music.yandex.asia,music.yandex.at,music.yandex.az,music.yandex.by,music.yandex.ca,music.yandex.cc,music.yandex.cl,music.yandex.cloud,music.yandex.cn,music.yandex.co,music.yandex.co.il,music.yandex.com,music.yandex.com.bd,music.yandex.com.np,music.yandex.com.tr,music.yandex.com.ua,music.yandex.de,music.yandex.dk,music.yandex.ee,music.yandex.es,music.yandex.eu,music.yandex.fi,music.yandex.fm,music.yandex.fr,music.yandex.ie,music.yandex.in,music.yandex.io,music.yandex.it,music.yandex.jp,music.yandex.kg,music.yandex.kz,music.yandex.lt,music.yandex.lv,music.yandex.ma,music.yandex.md,music.yandex.mobi,music.yandex.mx,music.yandex.net,music.yandex.news,music.yandex.no,music.yandex.org,music.yandex.pl,music.yandex.pro,music.yandex.pt,music.yandex.ro,music.yandex.rs,music.yandex.ru,music.yandex.se,music.yandex.shop,music.yandex.site,music.yandex.sk,music.yandex.store,music.yandex.su,music.yandex.top,music.yandex.ua,music.yandex.uk,music.yandex.us,music.yandex.uz,music.yandex.work,music.yandex.ws##div[class^="player-bar_miniBrickContainer"] > div[data-name="MINI_BRICK"]
 music.yandex.*#$#html > body.no-scroll { overflow: auto !important; }
 music.yandex.*#$#.pay-promo-popup { display: none !important; }
 music.yandex.al,music.yandex.app,music.yandex.asia,music.yandex.at,music.yandex.az,music.yandex.by,music.yandex.ca,music.yandex.cc,music.yandex.cl,music.yandex.cloud,music.yandex.cn,music.yandex.co,music.yandex.co.il,music.yandex.com,music.yandex.com.bd,music.yandex.com.np,music.yandex.com.tr,music.yandex.com.ua,music.yandex.de,music.yandex.dk,music.yandex.ee,music.yandex.es,music.yandex.eu,music.yandex.fi,music.yandex.fm,music.yandex.fr,music.yandex.ie,music.yandex.in,music.yandex.io,music.yandex.it,music.yandex.jp,music.yandex.kg,music.yandex.kz,music.yandex.lt,music.yandex.lv,music.yandex.ma,music.yandex.md,music.yandex.mobi,music.yandex.mx,music.yandex.net,music.yandex.news,music.yandex.no,music.yandex.org,music.yandex.pl,music.yandex.pro,music.yandex.pt,music.yandex.ro,music.yandex.rs,music.yandex.ru,music.yandex.se,music.yandex.shop,music.yandex.site,music.yandex.sk,music.yandex.store,music.yandex.su,music.yandex.top,music.yandex.ua,music.yandex.uk,music.yandex.us,music.yandex.uz,music.yandex.work,music.yandex.ws##.fullscreen-popup.deco-pane-popup
@@ -997,6 +999,7 @@ crunchbase.com##.side-panel > .native-magic-side native-magic-card > a[href^="ht
 moneycontrol.com##.creScroe
 moneycontrol.com##.pink-bar[href*="/credit-score"]
 moneycontrol.com##.mcApp_btn[href*="/credit-score"]
+wyofile.com##.newspack-popup-container
 diepresse.com###abocontainer-f
 pngtree.com##a[data-huejs="enterprise_hours_left"]
 pngtree.com##a[data-huejs="couponfixed-nologin-click"]
@@ -1063,6 +1066,7 @@ virustotal.com#%#//scriptlet('hide-in-shadow-dom', '.alert-info')
 virustotal.com#%#//scriptlet('hide-in-shadow-dom', 'span[slot="header"] > div + a[href^="https://developers.virustotal.com/"]')
 !+ NOT_PLATFORM(windows, mac, android)
 liga.net##a[href="https://www.liga.net/adfree"]
+m.yahoo.co.jp##a[class^="TimelineTargeting_TimelineTargeting__link__"]
 audioholics.com#%#//scriptlet("prevent-setTimeout", "#sitemodal")
 abczdrowie.pl##.be-healthy
 ||img5.lalafo.com/i/banners
@@ -1251,7 +1255,6 @@ vokrug.tv##.sponsor-false-bg
 rakko.tools##.rakkoma-widget-iframe
 w3schools.com###getdiploma
 findamasters.com###billboard
-findamasters.com##.inSearchAdRow
 findamasters.com#%#//scriptlet("set-constant", "AdGlare", "emptyObj")
 javhoho.com##center > a[href="https://javhoho.com/subscription-plan/"]
 bloomberg.com###fortress-preblocked-container-root
@@ -1318,6 +1321,9 @@ duckduckgo.com##.onboarding-ed
 duckduckgo.com#$#.js-header-aside.is-hidden { display: block!important; }
 duckduckgo.com#$#.badge-link.ddg-extension-hide { display: none!important; }
 hdrezka-sex-city.net,hdrezka.kim,kvk.pub,hdrezka1twwpb.org,omnirezka.tv,hdrezka1dhpkk.org,hdrezka9bsbhq.org,hdrezka720dhh.org,hdrezka320ypq.org,hdrezka180map.org,hdrezka320hjh.org,hdrezka9fmskj.org,hdrezka2vmmty.org,hdrezka8dgquu.org,hdrezkayyh5pq.org,hdrezka2tepnm.org,standby-rezka.tv,flymaterez.net,hdrezka320fkk.org,hdrezka.vip,rezka.space,hdrezka8bdhtq.org,hdrezka1tqbbd.org,hdrezka1qkpbx.org,hdrezka320rtq.org,rezka-ua.tv,hdrezkabmmshq.org,hdrezka.in,hdrezka66yhfg.net,hdrezka.rest,hdrezka19139.org,hdrezka.ag,upivi.com,hdrezka.me,kinopub.me,3ivi.com,rezkify.com,bestofkinopoisk.com,rezkery.com,hdrezkaonline.com,hdrezka.sh,cokinopoisk.com,hdrezka-ag.com,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.name,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.website,hdrezkayou.com,rezka.ag###tg-info-block-exclusive
+gekkan-fukugyou.jp##.FixedWidget__fixed_widget
+gekkan-fukugyou.jp###custom_html-7
+gekkan-fukugyou.jp###footer-fix-banner
 videostar.pl,pilot.wp.pl##div[class^="sc-"] > a[href="/oferta/"][style="cursor: pointer; text-decoration: none;"]
 videostar.pl,pilot.wp.pl###gatsby-focus-wrapper > div[style^="min-height:calc"] > div[class*=" "]:has(> div[class^="sc-"]:only-child > div[class*=" "]:only-child > :is(a, button)[data-gtm-button="guest_create_account_bar"])
 bongacams26.com,bongacams20.com,bongacams19.com,bongacams18.com,bongacams11.com,bongacams.net,royalcams.com,adultcams.me,adultchat2100.com,alphafreecams.com,bimbolive.com,bongacam.net,bongacam.org,bongacams-chat.ru,bongacams.com,bongacams.eu,bongacams2.com,cammbi.com,prostocams.com,smutcam.com##.banner_wrp
@@ -1649,6 +1655,7 @@ pixiv.net##div[style^="margin-left: 0px; --columns"] div[class^="sc-"] > div[cla
 pixiv.net##.banner-ad-footer-scale
 prospectmagazine.co.uk###piano_ribbon_collapsible_container
 myupchar.com##a[class^="ad_slot_"]
+myupchar.com##.banner_section
 1024terabox.com##.seo-banner-box
 jfrog.com##.top-fixed-stripe
 jfrog.com##.cta-div
@@ -1670,7 +1677,6 @@ finance.sina.com.cn##.wrap > div[style^="margin-top:"]:has(> a[href][target="_bl
 gifsauce.com##.sm\:block:has(> div.hidden > div.sticky > iframe[src^="https://creative.cams.gifsauce.com/widgets/"])
 faselhds.com.bd,faselhds.com.np,faselhds.world##.alert-danger
 faselhds.com.bd,faselhds.com.np,faselhds.world##body > div[id]:has(> div > a[href^="https://www.faselplus.com/onboarding?"])
-hesgoal.watch###block-9
 email1.io##.browser-card
 thetimes.com#$#html { overflow: auto !important; }
 thetimes.com#$#body { overflow: auto !important; }
@@ -2083,6 +2089,8 @@ hira2.jp##.p-infobar-wrapper--header-bottom
 urbandictionary.com##a[href^="https://ads.urbandictionary.com"]
 realsound.jp###bookStore
 24h.tv##.notify.is_freshdesk
+chugainippoh.co.jp##header > div.pr
+chugainippoh.co.jp##header > div[class$="_mc"]
 rakuten-card.co.jp##.logoutArea > h2.box__ttl
 hostlove.com##.ad0
 new-123movies.live#?#script + div[class] div[id]:has(> a[href="/user/profile/premium-membership"])
@@ -2129,7 +2137,6 @@ so.com###so-activity-entry
 xxxlutz.de#?#div[data-purpose="listing.productsContainer"] > div[class^="_"]:has(> div[class^="_"] > div[class^="_"] > span + img)
 yanmaga.jp##.episode-special-banner
 dmm.co.jp##.l-areaPromotionBnr
-adult.contents.fc2.com##a[data-counter-id^="cmkPointsback_"]
 exefiles.com#?#body > div.row:has(> div.large-12 a[href*="/recommended/winthruster/"])
 solvusoft.com##.button-topper
 solvusoft.com##.button-topper + .button
@@ -2177,6 +2184,7 @@ gname.com##.footShow
 litcharts.com##.distance-learning-promo
 litcharts.com##.banner-promo
 tuoitre.vn##.boxraovat_catedetail
+ranking.rakuten.co.jp###pageTop > div#rnkWrapper > div > div[style^="background-color: #FF008C;"][style$="height: 50px;"]
 ||error.fc2.com/web/image/bnr_kantan_404.png
 amazon.ae,amazon.ai,amazon.al,amazon.am,amazon.app,amazon.at,amazon.az,amazon.ba,amazon.be,amazon.best,amazon.bg,amazon.biz,amazon.by,amazon.ca,amazon.cc,amazon.ch,amazon.ci,amazon.cl,amazon.cloud,amazon.cn,amazon.co,amazon.co.il,amazon.co.in,amazon.co.jp,amazon.co.ke,amazon.co.kr,amazon.co.nz,amazon.co.th,amazon.co.uk,amazon.co.za,amazon.com,amazon.com.ar,amazon.com.au,amazon.com.bd,amazon.com.br,amazon.com.cn,amazon.com.co,amazon.com.hk,amazon.com.mx,amazon.com.ng,amazon.com.np,amazon.com.pe,amazon.com.sa,amazon.com.sg,amazon.com.tr,amazon.com.tw,amazon.com.ua,amazon.com.vn,amazon.cz,amazon.de,amazon.dev,amazon.digital,amazon.dk,amazon.edu.vn,amazon.ee,amazon.es,amazon.eu,amazon.fi,amazon.fr,amazon.ge,amazon.gg,amazon.gr,amazon.guru,amazon.hk,amazon.hr,amazon.hu,amazon.id,amazon.ie,amazon.in,amazon.in.th,amazon.in.ua,amazon.info,amazon.io,amazon.ir,amazon.is,amazon.it,amazon.jp,amazon.kg,amazon.kr,amazon.kz,amazon.life,amazon.link,amazon.live,amazon.lt,amazon.lv,amazon.ma,amazon.md,amazon.me,amazon.media,amazon.mk,amazon.ml,amazon.mn,amazon.mobi,amazon.mx,amazon.my,amazon.net,amazon.net.au,amazon.net.ua,amazon.ng,amazon.nl,amazon.no,amazon.online,amazon.org,amazon.org.in,amazon.org.uk,amazon.pe,amazon.ph,amazon.pk,amazon.pl,amazon.pt,amazon.ro,amazon.rs,amazon.ru,amazon.sa,amazon.se,amazon.sg,amazon.sh,amazon.si,amazon.site,amazon.sk,amazon.space,amazon.store,amazon.tech,amazon.tk,amazon.tn,amazon.to,amazon.tv,amazon.tw,amazon.ua,amazon.uk,amazon.us,amazon.uz,amazon.vn,amazon.website,amazon.work,amazon.ws,amazon.xyz##article[data-automation-id="hero-quick-promo"]
 atida.fr###top-info
@@ -2413,6 +2421,7 @@ eff.org###site_banner
 jetbrains.com##.slideup-banner
 social-dog.net##.link_box
 ||seolaboratory.jp/banner/
+gd.ru##a[href="/subscribe/"]
 ec.toranoana.jp##.toto-obi
 coolztricks.com###wpfront-notification-bar-spacer
 app.raindrop.io##.svSidebar > a[class^="upgrade-"]
@@ -2440,7 +2449,6 @@ plus.espn.com##.popup-container
 hvg.hu#?#.content ~ section.articlebox:has(> div.articleitem a[href^="https://hvg.hu/brandchannel/"])
 edureka.co##.cta-ads-block-inline
 business.tutsplus.com##.post__inarticle-ad-template-mobile
-uteka.ru##._advertising
 testbook.com##.signup-banner
 ebay.de###gh-topl a#gh-doodleS
 kinogo.app,kinogo.at,kinogo.be,kinogo.best,kinogo.biz,kinogo.blog,kinogo.ca,kinogo.cc,kinogo.ch,kinogo.club,kinogo.co,kinogo.co.in,kinogo.com,kinogo.com.bd,kinogo.com.np,kinogo.dev,kinogo.dk,kinogo.eu,kinogo.fi,kinogo.fm,kinogo.fr,kinogo.fun,kinogo.ge,kinogo.gr,kinogo.guru,kinogo.icu,kinogo.id,kinogo.in,kinogo.io,kinogo.is,kinogo.it,kinogo.kz,kinogo.life,kinogo.link,kinogo.live,kinogo.lt,kinogo.lv,kinogo.me,kinogo.media,kinogo.mn,kinogo.mobi,kinogo.net,kinogo.net.ua,kinogo.news,kinogo.nl,kinogo.no,kinogo.one,kinogo.online,kinogo.ph,kinogo.pl,kinogo.pro,kinogo.pw,kinogo.ro,kinogo.ru,kinogo.se,kinogo.sh,kinogo.shop,kinogo.si,kinogo.site,kinogo.sk,kinogo.store,kinogo.su,kinogo.today,kinogo.top,kinogo.uk,kinogo.uz,kinogo.vip,kinogo.win,kinogo.work,kinogo.ws,kinogo.xyz##.kreativ
@@ -2551,8 +2559,6 @@ phonearena.com##.widgetOffers
 anidl.org##.logo-row > div.stream-item-top-wrapper
 imdb.com##div[class^="pro_title_link"]
 the-village.ru##main[class] a[href="/page/advertisers"]
-topcomputer.ru##.owl-carousel4banner
-topcomputer.ru##.row-no-gutters
 ||usefomo.com^$third-party
 irccloud.com###limits > a
 livelaw.in###news_on_exit
