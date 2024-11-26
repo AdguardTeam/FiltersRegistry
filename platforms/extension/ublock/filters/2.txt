@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1z1SWYxVgAJaD7TvHpw5sQ
-! Diff-Path: ../patches/2/2-s-1732639198-3600.patch
+! Checksum: +9/zKiVUAPXcPBXd3nLT4A
+! Diff-Path: ../patches/2/2-s-1732642769-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.62.16
-! TimeUpdated: 2024-11-26T16:31:32+00:00
+! Version: 2.3.62.17
+! TimeUpdated: 2024-11-26T17:31:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25987,8 +25987,6 @@ matzoo.pl##+js(no-setTimeout-if, adblock)
 wirtualnemedia.pl##.partner-news-wrapper
 ! party.pl - ads
 ||edipresse.pl/script/init.js
-! nfspolska.pl - ads
-nfspolska.pl#$#.carousel-item > a[href^="https://eu.puma.com/"] { visibility: hidden!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51720
 @@||bham.pl/templates/bham_res/js/adsbygoogle.js
 bham.pl##+js(abort-on-property-read, TestPage)
@@ -26902,8 +26900,6 @@ pilot.wp.pl##.wp-player > .adpause > .plchldr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148911
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144971
 open.fm##+js(set-constant, Object.prototype.adv, false)
-! https://github.com/AdguardTeam/AdguardFilters/issues/95566
-!+ NOT_PLATFORM(windows, mac, android, ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75066
 ||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon_apstag.js,domain=wp.pl|money.pl|open.fm
 sportowefakty.wp.pl#?#div:not([class]):not([id]):has(> div[class] > div[class*=" "] > div:not([class]):not([id]):contains(/^REKLAMA$/))
@@ -27260,6 +27256,8 @@ stooq.pl##div[onclick*="window.open('http://stooq.pl/ads/"]
 ! shinden.pl - anti-adblock
 @@||shinden.pl^$generichide
 ! czasbajki.pl - skip timer
+czasbajki.pl##+js(remove-class, kHidden, #kFinal)
+czasbajki.pl#$?##kSplash { remove: true; }
 ! wp.pl - anti-adblock
 @@||adv.wp.pl/bar.gif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/127297
@@ -27917,9 +27915,10 @@ stream037hd.xyz##+js(set-constant, Object.prototype.ads, [])
 playulti.com##.banner
 playulti.com##section[style="text-align: center;"] > section > a[target="_blank"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130111
+thaihubx.tv###spin-r
 siamblockchain.com##.ads
 player.octopusbanner.com#$##ads { display: none !important; }
-player.octopusbanner.com#$##main { display: block !important; }
+thaihubx.tv,player.octopusbanner.com#$##main { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/128945
 anime-masters.com##.banner-close
 anime-masters.com##center > p > a[target="_blank"] > img
@@ -28164,7 +28163,6 @@ doomovie-hd.com##.side_floating_ad
 xn--72czp7a9bc4b9c4e6b.video##.ads-player
 xn--72czp7a9bc4b9c4e6b.video##.ads-comment
 xn--72czp7a9bc4b9c4e6b.video#$#div[class^="ads-"][class$="-player"] { visibility: hidden !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/93991
 ! https://github.com/AdguardTeam/AdguardFilters/issues/93989
 /wp-content/uploads/*.gif$domain=moviedee24.com|123-hd.com|movie2uhd.com|nung2uhd.com|nung2hdd.com|movieshdfree.com|newseries-hd.com|movie22hd.com|moviehdfree.net|dooseries2uhd.com|newseries24.com|serieshd24.com
 ||bp.blogspot.com/*.gif$domain=nung2hdd.com|nanamovies.me
@@ -28380,15 +28378,6 @@ jav777.cc##div[aria-describedby="myaabpfun12dialog"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11897
 !+ NOT_PLATFORM(ios, ext_android_cb)
 javboss.me###preroll
-! https://forum.adguard.com/index.php?threads/https-www-2510avporn-com-nsfw.25516/
-||2510porn.com/banner/
-||xxxthhd.com/wp-content/uploads/banner
-||2510porn.com/wp-content/uploads/*/banner
-||2510porn.com/wp-content/uploads/2017/09/2510avporn-960x100.jpg
-2510porn.com##[id^="banner"]
-2510porn.com#$##sgcolorbox { display: none!important; }
-2510porn.com#$##sgcboxOverlay { display: none!important; }
-2510porn.com#$#body[style="overflow: hidden;"] { overflow: visible!important; }
 ! http://forum.adguard.com/showthread.php?7078
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=voicetv.co.th
 ! http://forum.adguard.com/showthread.php?5788
@@ -29988,8 +29977,6 @@ onloop.pro##+js(abort-on-property-read, PopUnder)
 mybestgames.dk##+js(nano-setInterval-booster, PrerollAd, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176436
 linksbypasser.com##+js(window.open-defuser, /previewcontent)
-! https://github.com/AdguardTeam/AdguardFilters/issues/176233
-! TODO: use href-sanitizer scriptlet when it will be available
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175978
 nuuuppp.*##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175863
