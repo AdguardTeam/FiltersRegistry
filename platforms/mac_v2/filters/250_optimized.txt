@@ -1,5 +1,5 @@
-! Checksum: NB2ENIKxcmCdhoGfOKtZSA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1732655184-14400.patch
+! Checksum: jYwmRe3PBF+d92mVlFngTw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1732683951-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.62
@@ -229,7 +229,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||feverfreeman.com^$all
 ||footwearheartedswig.com^$all
 ||rattlekindergartencultivate.com^$all
-||unanimousinflammableboxing.com^$all
 !+ PLATFORM(windows, mac, android)
 178.128.142.109$network
 /^https://\d{1,2}\.[a-z0-9-]{1,}\.(club|me)(/|$)/$document
@@ -286,7 +285,6 @@ coolrom.com.au,coolrom.com##.download_link
 5.188.62.36$network
 !+ PLATFORM(windows, mac, android)
 69.49.231.244$network
-||37.34.176.37^$document
 !+ PLATFORM(windows, mac, android)
 37.34.176.37$network
 ||auslogics.com^$document
@@ -827,7 +825,6 @@ coolrom.com.au,coolrom.com##.download_link
 38.180.96.244$network
 ||aysesuretobea.com^$all
 ||pringed.space^$all
-||tsapphires.buzz^$all
 !+ PLATFORM(windows, mac, android)
 34.195.224.242$network
 !+ PLATFORM(windows, mac, android)
@@ -1112,6 +1109,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.share__list:not(html,body,:empty)
 ##.share_area:not(html,body,:empty)
 ##.share_btn:not(html,body,:empty)
+##.Share_Icons:not(html,body,:empty)
 ##.share_toggle:not(html,body,:empty)
 ##.shareBar:not(html,body,:empty)
 ##.shareBottom:not(html,body,:empty)
@@ -1139,6 +1137,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.social-sharing:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.social-widget:not(html,body,:empty)
 ##.social-wrap:not(html,body,:empty)
+##.social.shares:not(html,body,:empty)
 ##.social_buttons:not(html,body,:empty)
 ##.social_media:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.socialbuttons:not(html,body,:empty)
@@ -1218,12 +1217,9 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##ul[class*=-share-buttons]
 /images/share_icons/*
 /images/social-share/*
-/share-newsletter/*
 /^.*(\.|//)shar(e|ing)\.[a-z0-9-]{2,60}\..*$/$image,match-case,domain=~discord.com|~reddit.com
 /addthis_widget.js^
 /btn_share_fb.
-/^.*/pinitbtn\..*/$image,match-case
-/^.*/share-icons_.*$/$image,match-case
 /^.*/share/.*-icon\.png.*$/$image,match-case
 /sharing/facebook.$image
 /sharing/reddit.$image
@@ -1493,7 +1489,6 @@ e621.net,e926.net###comments
 ###hot-network-questions
 /endscreen.js$script,domain=youtube.com|youtu.be|youtube-nocookie.com|35.190.94.206
 /endscreen.js$app=com.google.android.youtube|com.google.android.apps.youtube.vr|com.google.android.youtube.tv|com.google.android.youtube.googletv
-vimeo.com##._16rrx
 ||rumble.com/embedJS/u3/?request=related$xmlhttprequest
 ||static1.dmcdn.net/playerv5/dmp.end_screen.*.js$script
 ||ixigua.com/api/feedv2^
@@ -1527,11 +1522,14 @@ coolapk.com##.apk_topba_code
 ctrip.com##.service-notice-right
 dianping.com##.qrcode-aside
 dianping.com##.shop-owner.mod
+ditu.amap.com###mobileenterance_no_bg
 jd.com###J_mobile
 lianjia.com,zu.ke.com,csair.com##.qr-code
 map.baidu.com##.poi-ads
 map.baidu.com###leadDownloadCard
 mi.com##.item-image.item
+qunar.com##.q_header_app_logo
+qunar.com##.qrcode.btn-item
 qyer.com##.advertising
 smzdm.com##.download
 smzdm.com##.qrcode
@@ -1701,6 +1699,7 @@ www.nrk.no##.nrkno-player-controls__bar::before
 ~imdb.com##.imdb-score:not(html,body,:empty)
 ~imdb.com##.imdb-ic:not(html,body,:empty)
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
+~imdb.com##.imdbrating:not(html,body,:empty)
 bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 www.google.*,ipv6.google.com#?#.g:has-text(imdb.com › title) div[data-snf]:has(g-bubble)
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
@@ -1922,6 +1921,7 @@ $removeparam=usource
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=trackingCode
 $removeparam=affiliateCustomId
+$removeparam=CJSID
 $removeparam=REFERRAL_ID
 $removeparam=impradid
 $removeparam=impradname
@@ -1938,6 +1938,7 @@ $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org
 $removeparam=LSID
 $removeparam=affuid
+$removeparam=icid2
 $removeparam=refclickid
 $removeparam=irclid
 $removeparam=sp_campaign
@@ -2059,6 +2060,8 @@ $removeparam=amp_device_id
 $removeparam=awinaffid
 $removeparam=iclid
 $removeparam=a_fid
+$removeparam=afCampaignId
+$removeparam=afCreativeId
 $removeparam=trk_contact
 $removeparam=trk_msg
 $removeparam=trk_sid
@@ -2184,7 +2187,6 @@ $removeparam=lotamePanoramaId
 $removeparam=yandexuid
 $removeparam=google_nid
 $removeparam=cbuster
-$removeparam=ns_ts
 $removeparam=adsafe_jsinfo
 $removeparam=ex-src
 $document,removeparam=uid_bam
@@ -2654,7 +2656,6 @@ $removeparam=pgtype,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj
 $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
 $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
 $removeparam=tag,domain=argos.co.uk|habitat.co.uk|tv2.no|support.github.com
-$removeparam=publisher_id,domain=t-mobile.com|udemy.com
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
@@ -2796,6 +2797,7 @@ $removeparam=iid,domain=cnn.com
 ||lazada.$removeparam=exlaz
 ||target.com^$removeparam=lnm
 ||target.com^$removeparam=lnk
+$removeparam=marketing_id
 $removeparam=s,domain=greenhouse.io|mothership.sg|spreadprivacy.com|youku.com|nextdoor.com
 $document,removeparam=t,domain=rakuten.com|steamcdn-a.akamaihd.net|elprecio.es|adressa.no|tiktok.com|lookmovie211.xyz
 ||yandex.$removeparam=clid
@@ -2864,6 +2866,7 @@ $removeparam=xcreo
 ||skimresources.com^$removeparam=xed
 $removeparam=rffrid
 $removeparam=ad_name
+$removeparam=rcode,domain=kucoin.com
 ||deezer.com^$removeparam=deferredFl
 $removeparam=pr_prod_strat
 $removeparam=pr_rec_id
@@ -2881,7 +2884,6 @@ $removeparam=clickPR,domain=argos.co.uk
 ||blog.getadblock.com^$removeparam=gi
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
-$removeparam=/^cid=DSS-Search-.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||espn.com^$removeparam=ex_cid
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
@@ -2889,7 +2891,6 @@ $removeparam=cxt,domain=twitter.com|x.com
 $removeparam=af,domain=1fichier.com|comodo.com
 $removeparam=intcid,domain=cbsnews.com
 ||lidl.$removeparam=flyx
-||apple.com^$removeparam=ctx_brand
 $removeparam=s_kw,domain=expansion.com|marca.com
 ||qwant.com^$removeparam=client
 ||ecosia.org^$removeparam=addon
@@ -3011,8 +3012,6 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 ||businessinsider.com^$removeparam=op,document
 ref=spreadprivacy.com$removeparam=ref
 $removeparam=caniuse_source,document
-$removeparam=ref_page,document,domain=theathletic.com|nytimes.com
-$removeparam=login_source,document,domain=theathletic.com|nytimes.com
 $removeparam=afSmartRedirect
 ||linkedin.com/feed/update$removeparam=origin
 $document,removeparam=plcmt,domain=grafana.com
@@ -3023,6 +3022,7 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||google.$removeparam=fg
 ||instagram.com^$removeparam=ig_rid
 ||cdninstagram.com^$removeparam=_nc_sid
+$document,removeparam=jp_cmp,domain=chase.com
 $document,removeparam=orig_ref,domain=peacocktv.com
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|sky.it
 ||xvideos.$document,removeparam=sxcaf
