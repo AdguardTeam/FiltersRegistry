@@ -1,9 +1,9 @@
-! Checksum: 1sSKub4b6Tj3PvcJGBCvVw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1732597530-14400.patch
+! Checksum: bQnTVmSCwsaqA7JCY6bT3Q
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1732698411-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.13
-! TimeUpdated: 2024-11-26T05:01:41+00:00
+! Version: 2.0.20.14
+! TimeUpdated: 2024-11-27T09:02:04+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -1076,6 +1076,8 @@ pressbladet.se,svenskpress.se,foretagsbladet.se,gestrikemagasinet.se,cfanytt.se,
 prisjakt.nu##.pjra-relative, .outsider-ads, div[class^="AdPlacementWrapper"]
 proshop.se#$#body { background-image: none !important; }
 proshop.se##.site-background-banner
+psykoterapicentrum.se###omtag p[style^="margin-top"]:not([class]):has(a[target="_blank"])
+psykoterapicentrum.se##.textmenyspalt:has(img[src^="bilder/annons"])
 pussad.se#$#html.g1-popup-visible { overflow: initial !important; }
 pussad.se##.g1-popup-newsletter, .g1-slideup-wrap
 quizza.nu,elbilen.se###takeover
@@ -1152,6 +1154,7 @@ skaneridsport.se##.sp-banner-block
 skanesport.se###black-studio-tinymce-3, .menu-item a[target="_blank"], .footer-widgets
 skargarden.se##article:has([title^="Annons"], a[href*="/annons"])
 skargarden.se###topbanner, #mittbanner, #topbannerm, #mittbannerm
+skargarden.se##.textwidget:has(.adtext)
 skellefteamedia.se###tdi_51, .td-content-more-articles-box
 skidspar.se###videoad
 skillingaryd.nu,xn--vrnamo-bua.nu###more-banners
@@ -1411,8 +1414,9 @@ viseniorer.se##.topheaderinfo
 viseniorer.se##.leftinfo:has-text(/Externa artiklar:|Länktips:/)
 vi.se#$#body.cookie-modal-open { overflow:unset!important; }
 vi.se###westander-cookie-dialog, .Cookie-consent__backdrop
+vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu##article div[style^="padding-bottom"]:not([class]):has(div[data-tagid*="_panorama"])
 vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu#%#//scriptlet('ubo-set.js', 'manualAutoplay_', 'noopFunc')
-vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu##.vkmui-Text--grey, [class^="adContainer"], div[class^="bordersAndShadows"] > div[style^="min-height"]:only-child, div[data-track-id="family.Familjeannonser"], div[class*="adElement"], div[id*="_panorama"], div[data-track-id*="panoramaAd"]
+vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu##.vkmui-Text--grey, [class^="adContainer"], div[class^="bordersAndShadows"] > div[style^="min-height"]:only-child, div[data-track-id="family.Familjeannonser"], div[class*="adElement"], div[id*="_panorama"], div[data-track-id*="panoramaAd"], div[data-track-id$=".native"], div[data-track-id$=".blockAd"]
 vmj.se##.sidebox:has-text(/Externa länkar|Artiklar/)
 vmj.se,danskaspraket.se,digitalavykort.se##.topdiv
 vmj.se,danskaspraket.se,digitalavykort.se,viseniorer.se##.cc-cookies
@@ -1851,7 +1855,7 @@ zeromagazine.nu##div[id^="ads"]
 /at_banners$domain=alandstidningen.ax
 /a?callback=pfmod.saveadsettings
 /bannersidor/*
-/banners$domain=magasinetparagraf.se|sporttv.nu|cykla.se|vatternrundan.se|dagenstv.com|sydkusten.es|pellesoft.se|dykarna.nu|varmepumpsforum.com|poolforum.se
+/banners$domain=magasinetparagraf.se|sporttv.nu|cykla.se|vatternrundan.se|dagenstv.com|sydkusten.es|pellesoft.se|dykarna.nu|varmepumpsforum.com|poolforum.se|classiccars.se
 /banners/annons
 /banners/scripts/adx.js
 /banners/*casino$image
@@ -1918,7 +1922,7 @@ zeromagazine.nu##div[id^="ads"]
 /cookies-and-content-security-policy$script,domain=cannabisifokus.se|futsalmagasinet.se|sd.se
 /cookie-banner$script,domain=sprintchallenge.se
 /cookie-consent$script,domain=minhembio.com|sjf.se|gais.se
-/cookie-law-info$script,domain=gilla.se|startaochdriva.se|sverige.nu|conpot.se|firstclassmagazine.se|magasinetkonkret.se|kvalitetsmagasinet.se|miljo-utveckling.se|telekomidag.se|vdtidningen.se|gullislastips.se|nyfiknainvesterare.se|discoveringtheplanet.com|bussmagasinet.se|torbjornstips.se|affarsstaden.se|marknadschefer.se|automation.se|dinbyggare.se|aktieskolan.se|insikt24.se|skogen.se|sulkysport.se|bitzmagasin.se|battrestadsdel.se|automatos.se|80-talet.se|goteborgnyheter.se|elitepadel.se|vetenskaphalsa.se|rakapuckar.com
+/cookie-law-info$script,domain=gilla.se|startaochdriva.se|sverige.nu|conpot.se|firstclassmagazine.se|magasinetkonkret.se|kvalitetsmagasinet.se|miljo-utveckling.se|telekomidag.se|vdtidningen.se|gullislastips.se|nyfiknainvesterare.se|discoveringtheplanet.com|bussmagasinet.se|torbjornstips.se|affarsstaden.se|marknadschefer.se|automation.se|dinbyggare.se|aktieskolan.se|insikt24.se|skogen.se|sulkysport.se|bitzmagasin.se|battrestadsdel.se|automatos.se|80-talet.se|goteborgnyheter.se|elitepadel.se|vetenskaphalsa.se|rakapuckar.com|konstperspektiv.nu
 /cookie.min.js$domain=assistanskoll.se
 /cookie_consent.js$domain=djungeltrumman.se
 /cookie_info.js$domain=goteborgfilmfestival.se
@@ -2021,7 +2025,7 @@ zeromagazine.nu##div[id^="ads"]
 /illustrationer/annons_
 /images/site/annonser
 /images/*casino$domain=festivalinfo.se
-/imatrics/read$domain=vk.se|folkbladet.nu|nordsverige.se|mellanbygden.nu|vasterbottningen.se|lokaltidningen.nu
+/imatrics$domain=vk.se|folkbladet.nu|nordsverige.se|mellanbygden.nu|vasterbottningen.se|lokaltidningen.nu
 /img/allalanse$image,domain=ekonominyheter.se
 /img/banklan/*$image,domain=ekonominyheter.se
 /img/bettingstugan.$image
