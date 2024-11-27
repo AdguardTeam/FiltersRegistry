@@ -1,9 +1,9 @@
-! Checksum: n0qERwqwiCTpWgKS2pkTwA
-! Diff-Path: ../patches/2/2-s-1732715056-3600.patch
+! Checksum: N9Jo1ByEkz6RJCr8qPdeiQ
+! Diff-Path: ../patches/2/2-s-1732718783-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.62.31
-! TimeUpdated: 2024-11-27T13:31:46+00:00
+! Version: 2.3.62.32
+! TimeUpdated: 2024-11-27T14:32:30+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9962,6 +9962,7 @@ infinityscans.net,infinityscans.xyz#%#//scriptlet("abort-current-inline-script",
 infinityscans.net,infinityscans.xyz#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'innerHTML')
 infinityscans.net,infinityscans.xyz#%#//scriptlet("trusted-replace-outbound-text", "atob", "window.matchMedia('(display-mode: standalone)').matches", "!0")
 infinityscans.net,infinityscans.xyz#%#//scriptlet("trusted-replace-outbound-text", "atob", "/[\s\S]*?(pagead2\.googlesyndication\.com|googletag|depend on advertisement|window\.stop)[\s\S]*/", "")
+infinityscans.net,infinityscans.xyz#%#//scriptlet('trusted-replace-node-text', 'script', 'catch', '/catch\(.{1,20}\)\{.{1,2000}window\[.stop.\]\(\);}/', 'catch(e){}')
 @@||infinityscans.*/*.js$script,domain=infinityscans.xyz|infinityscans.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164348
 porn4f.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
@@ -28399,6 +28400,7 @@ asilmedia.org###banner
 !
 ! NOTE: Vietnamese
 !
+||newoneinoldoneout.pro^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192655
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=danet.vn
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191689
@@ -34969,7 +34971,7 @@ thesaurus.net#%#//scriptlet('prevent-setTimeout', 'loader.min.js')
 mlbpark.donga.com,tweaksforgeeks.com#%#//scriptlet('remove-node-text', 'script', 'KCgpPT57bGV0IGU')
 ! Stylesheet is loaded by html-load.com script, so we need to add it manually
 tenasia.hankyung.com#%#//scriptlet('trusted-create-element', 'head', 'link', 'rel="stylesheet" https://hkstatic.hankyung.com/css/rel/tenasia/w/common.css"')
-dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const t="loader.min.js",n={includes:String.prototype.includes,querySelector:Document.prototype.querySelector},c=()=>(new Error).stack,e={apply:(e,o,r)=>{const l=c(),u=r[1]?.[0];return n.includes.call(l,t)&&u&&"function"==typeof u&&n.includes.call(u?.toString(),"new Blob")&&(r[1][0]=function(){}),Reflect.apply(e,o,r)}},o={construct:(o,r,l)=>{const u=c();return n.includes.call(u,t)&&"Promise"===r[0]?.name&&"function"==typeof r[0]?.resolve&&"function"==typeof r[1]?.construct&&(n.includes.call(r[1]?.construct?.toString(),"(...arguments)")||n.includes.call(r[1]?.construct?.toString(),"return Reflect["))&&(r[1].construct=new Proxy(r[1].construct,e)),Reflect.construct(o,r,l)}};window.Proxy=new Proxy(window.Proxy,o)})();
+dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const t="loader.min.js",n={includes:String.prototype.includes,querySelector:Document.prototype.querySelector},c=()=>(new Error).stack,o={apply:(o,e,r)=>{const l=c(),u=r[1]?.[0];return n.includes.call(l,t)&&u&&"function"==typeof u&&n.includes.call(u?.toString(),"new Blob")&&(r[1][0]=function(){}),Reflect.apply(o,e,r)}},e={construct:(e,r,l)=>{const u=c();return n.includes.call(u,t)&&"Promise"===r[0]?.name&&"function"==typeof r[0]?.resolve&&"function"==typeof r[1]?.construct&&(n.includes.call(r[1]?.construct?.toString(),")=>")||n.includes.call(r[1]?.construct?.toString(),"return Reflect["))&&(r[1].construct=new Proxy(r[1].construct,o)),Reflect.construct(e,r,l)}};window.Proxy=new Proxy(window.Proxy,e)})();
 ! Workaround also for iOS, where we cannot apply url blocking rule
 ! Related to https://github.com/AdguardTeam/FiltersCompiler/issues/226
 ! After implementation, we could add any rules for AdGuard for iOS only with Advanced Protection
@@ -36323,7 +36325,6 @@ bscscan.com##.row > div.col-auto:has(> div.d-none > a[href^="https://goto.bscsca
 smashingmagazine.com##.partners
 realmofmetal.org###bsadsheadline
 oklikshare.com###prplads01
-||goraidparty.com/images/ad_banner
 nycpokemap.com,londonpogomap.com,vanpokemap.com,sgpokemap.com,sydneypogomap.com#%#//scriptlet('remove-attr', 'style', '#map')
 nycpokemap.com,londonpogomap.com,vanpokemap.com,sgpokemap.com,sydneypogomap.com##.please
 thestrayferret.co.uk##div[class^="BlockOfAdverts"]
@@ -53860,6 +53861,8 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 !
 !
 !+ NOT_OPTIMIZED
+||goraidparty.com/images/ad_banner
+!+ NOT_OPTIMIZED
 news.itsfoss.com##[href^="https://www.pikapods.com/"]
 !+ NOT_OPTIMIZED
 greatandhra.com##.container:has(> .container-inner > #id1.child)
@@ -62692,7 +62695,6 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /adengine.js$script
 /adfox/loader.js$script
 /adfshow?
-/adfurikun/*$~image
 /adfx.loader.bind.js$script
 /adhandler/*$~subdocument
 /adiframe|*|adtech;
@@ -86210,6 +86212,7 @@ browsershots.org#@#.advert_area
 ||eertoamogn.net^
 ||eesidesukbeingaj.com^
 ||eesihighlyrec.xyz^
+||eesnfoxhh.com^
 ||eespekw.com^
 ||eessoong.com^
 ||eessoost.net^
@@ -86629,6 +86632,7 @@ browsershots.org#@#.advert_area
 ||eskimi.com^
 ||eslp34af.click^
 ||esmyinteuk.info^
+||esmystemgthro.org^
 ||esnlynotquiteso.com^
 ||esoussatsie.xyz^
 ||especiallyspawn.com^
@@ -93074,6 +93078,7 @@ browsershots.org#@#.advert_area
 ||mergeindigenous.com^
 ||mergerecoil.com^
 ||mergobouks.xyz^
+||mericantpastellih.org^
 ||merig.xyz^
 ||meritabroadauthor.com^
 ||merry-hearing.pro^
@@ -95349,6 +95354,7 @@ browsershots.org#@#.advert_area
 ||oungoowe.xyz^
 ||ounigaugsurvey.space^
 ||ounobdlzzks.world^
+||ounsissoadry.net^
 ||oupaumul.net^
 ||ouphouch.com^
 ||oupushee.com^
@@ -96865,7 +96871,6 @@ browsershots.org#@#.advert_area
 ||printgrownuphail.com^
 ||printsmull.com^
 ||priorityblockinghopped.com^
-||prisasd.com^
 ||priselapse.com^
 ||prisonfirmlyswallow.com^
 ||prisonrecollectionecstasy.com^
@@ -100304,6 +100309,7 @@ browsershots.org#@#.advert_area
 ||soodupsep.xyz^
 ||soogandrooped.cam^
 ||sookypapoula.com^
+||soolivawou.net^
 ||soommezail.com^
 ||soonlint.com^
 ||soonpersuasiveagony.com^
@@ -109892,6 +109898,7 @@ browsershots.org#@#.advert_area
 ||menepe.com^$popup
 ||menews.org^$popup
 ||meofmukindwoul.info^$popup
+||mericantpastellih.org^$popup
 ||merterpazar.com^$popup
 ||mesqwrte.net^$popup
 ||messagereceiver.com^$popup
@@ -112944,6 +112951,7 @@ browsershots.org#@#.advert_area
 ||d11zevc9a5598r.cloudfront.net^
 ||d126kahie2ogx0.cloudfront.net^
 ||d127s3e8wcl3q6.cloudfront.net^
+||d12bql71awc8k.cloudfront.net^
 ||d12czbu0tltgqq.cloudfront.net^
 ||d12dky1jzngacn.cloudfront.net^
 ||d12t7h1bsbq1cs.cloudfront.net^
