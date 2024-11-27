@@ -1,5 +1,5 @@
-! Checksum: OkWac0n72ZVa0FAHGRyHdw
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1732635536-3600.patch
+! Checksum: AImlxeJsprXFUxib/zsDkQ
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1732675077-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.10.32
@@ -30,7 +30,6 @@
 ||rcm.shinobi.jp^
 ||nullpoantenna.com/scripts/parts/blog/
 ||matomeantena.com/scripts/parts/blog/
-||moviegate4.net/fukugansan/
 ||rss.tc^$third-party
 /rss/rss.html$subdocument,~third-party
 .com/rss.htm$subdocument,~third-party
@@ -204,6 +203,7 @@ maspiai.com##.recommended-summary
 tousatu.xyz##.textwidget > div[style]:has(> div[style] > div[id^="blz_rss"])
 tousatu.xyz###related-box
 kh-pokemon-mc.com##.custom-html-widget
+ameblo.jp##header ~ div div[style^="min-height:"]:has(div[id^="blogInfeed"])
 etude000.com###mainEntity > .clearfix > span[style$="padding:0 10px;font-weight:bold; font-size:large;"]:has(+ div[style="text-align: center;"])
 etude000.com###side-fixed
 korewaeroi.com##div[class^="divider"] > aside.widget-main
@@ -370,6 +370,7 @@ akb48matomemory.com##.article_body_more > span[style^="font-size"]
 akb48matomemory.com##.section-title-single0
 akb48matomemory.com##.section-title-style-2ch
 akb48matomemory.com##.ad-article
+oppai-doga.info###hdr-pickup
 ||js.blozoo.info/js/locktool/blogparts.js$domain=kininatta2chmatome.doorblog.jp
 alfalfalfa.com##.rss_headline
 oppainorakuen.com###more > a[target="_blank"]
@@ -574,6 +575,8 @@ gfoodd.com##.box_group ~ div.singleh4
 gfoodd.com##.box_group ~ br
 gfoodd.com#?#.code-block > div.sponserdrink:contains(RSS)
 marasoku.info##.rss_ninja_title
+||marasoku.info/rss_
+marasoku.info##iframe[src^="http://marasoku.info/rss_"]
 toychan.blog.jp,shouginews.blog.jp,hinomoto99.com,fireflyframer.blog.jp##.message-board-outer
 news4wide.net##.box-antenna
 vipnews.jp##.custom-rss-container
@@ -805,6 +808,7 @@ blog.livedoor.jp#$#.top-right { margin-top: 0 !important; }
 blog.livedoor.jp#$#.toprss5 { display: none !important; }
 blog.livedoor.jp#$##blog-body-outer > #left-t { margin-top: 0 !important; }
 blog.livedoor.jp##div[class^="blogroll_innner"]
+blog.livedoor.jp##div[style="overflow-y:scroll; width:384px; height:300px;"]
 [$path=/soccerkusoyarou]blog.livedoor.jp##.column-inner-2 > .article-body2
 blog.livedoor.jp##.column-inner-2 > table[summary="<%blog_name>"][width="728"]
 blog.livedoor.jp###article_rss
@@ -1045,6 +1049,7 @@ vinmec.com##.global-thread-create-cta
 ||online.a1.by/js/button.js
 ||pg-chatn9.bjmantis.net/chat
 ||plusinbound.hachidori.io/operators/js_chat.js
+||provodim24.ru/_*.php$script
 ||s.9111s.ru/*/js/robot_chat/addQ_chat.js
 ||s.acquire.io/*/init.js
 ||s.blamper.ru/js/app/widgets/common/FakeChat/
