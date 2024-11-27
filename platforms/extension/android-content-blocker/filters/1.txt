@@ -1,8 +1,8 @@
-! Checksum: VxFw5aeArZ/lVFfV36ysEQ
+! Checksum: QskV6mxR0U72VRLgLa1OKg
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.69
-! TimeUpdated: 2024-11-27T13:31:27+00:00
+! Version: 2.0.95.70
+! TimeUpdated: 2024-11-27T19:31:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5172,6 +5172,14 @@ ok.ru##.exit-popup > *
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43985
 @@||ad.mail.ru/adq/?callback=mailruEnabled$domain=ok.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/19112
+!
+! VK.com
+@@||vk.com^$generichide
+!#safari_cb_affinity(general,privacy)
+@@||ads.vk.com^|$xmlhttprequest,~third-party
+@@||top-fwz1.mail.ru^|$xmlhttprequest,domain=vk.com
+@@||tns-counter.ru^|$xmlhttprequest,domain=vk.com
+!#safari_cb_affinity
 !
 ! Common rules
 !
@@ -17031,7 +17039,6 @@ vk.com,vk.ru##.ads_ads_news_wrap
 vk.com,vk.ru##.wall_marked_as_ads
 vk.com,vk.ru##.wall_marked_as_ads + div.published_sec_quote
 vk.com,vk.ru##._ads_block_data_w
-@@||ads.vk.com^|$xmlhttprequest,~third-party
 !
 ! END: mail.ru
 !

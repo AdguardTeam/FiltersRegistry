@@ -1,9 +1,9 @@
-! Checksum: gKjyPbMddPZ71XnHW++z0g
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1732715041-3600.patch
+! Checksum: ndHyVZNXtKqRCNcnSNg91Q
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1732736249-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.69
-! TimeUpdated: 2024-11-27T13:31:27+00:00
+! Version: 2.0.95.70
+! TimeUpdated: 2024-11-27T19:31:09+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -2289,6 +2289,13 @@ ok.ru###hook_Block_AnonymMainRightColumnAd
 ok.ru##.browser-banner
 ok.ru##.exit-popup > *
 @@||ad.mail.ru/adq/?callback=mailruEnabled$domain=ok.ru
+@@||vk.com^$generichide
+vk.com#%#//scriptlet('prevent-fetch', '/(\.com|\.ru)$/ method:HEAD')
+!#safari_cb_affinity(general,privacy)
+@@||ads.vk.com^|$xmlhttprequest,~third-party
+@@||top-fwz1.mail.ru^|$xmlhttprequest,domain=vk.com
+@@||tns-counter.ru^|$xmlhttprequest,domain=vk.com
+!#safari_cb_affinity
 vk.city4me.com#$##goo_rekm { height: 101px!important; position: absolute!important; left: -3000px!important; }
 forums.overclockers.ru#%#//scriptlet('set-constant', 'chkA', 'noopFunc')
 ~forums.overclockers.ru,overclockers.ru#%#//scriptlet("abort-on-property-read", "cardinals")
@@ -6818,6 +6825,7 @@ youla.ru##div[data-test-block="IndexContainer"] > section > div:first-child:empt
 youla.ru##div[data-test-component="MyTargetBanner"]
 youla.ru##div[data-container="AdTopBannerContainer"]
 vfokuse.mail.ru##a[class^="rb-"][class*="branding"]
+vk.com,vk.ru###feed_rows > div.feed_row > div.post:has(a[data-ad-details-link])
 vk.com,vk.ru#?##feed_rows > div[class="feed_row "] > div.page_block > div._post_content div.mkit_noClickarea:upward(#feed_rows > div[class="feed_row "])
 vk.com,vk.ru#?##feed_rows > div[class="feed_row "] > div.page_block > div._post_content div[data-role="advertisinglabel"]:upward(#feed_rows > div[class="feed_row "])
 vk.com,vk.ru#?##feed_rows > div[class="feed_row "] > div.page_block > div._post_content > div.ads_light_container:upward(#feed_rows > div[class="feed_row "])
@@ -6838,7 +6846,6 @@ vk.com,vk.ru##.ads_ads_news_wrap
 vk.com,vk.ru##.wall_marked_as_ads
 vk.com,vk.ru##.wall_marked_as_ads + div.published_sec_quote
 vk.com,vk.ru##._ads_block_data_w
-@@||ads.vk.com^|$xmlhttprequest,~third-party
 ||region.dfs.ivi.ru^$media,domain=ivi.ru
 otzovik.com##.produkt-cobtent div.product-nav-wrap + div[class] ~ div[class]:not([style]):not([class="bottom-row"])
 otzovik.com##.produkt-cobtent div.review-contents + [class]
