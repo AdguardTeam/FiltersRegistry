@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.0.95.67",
-			"timeUpdated": "2024-11-27T10:31:09+0000",
+			"version": "2.0.95.68",
+			"timeUpdated": "2024-11-27T12:31:09+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.62.29",
-			"timeUpdated": "2024-11-27T11:31:38+0000",
+			"version": "2.3.62.30",
+			"timeUpdated": "2024-11-27T12:31:25+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.77.12",
-			"timeUpdated": "2024-11-27T11:35:30+0000",
+			"version": "2.0.77.13",
+			"timeUpdated": "2024-11-27T12:33:47+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.14.92",
-			"timeUpdated": "2024-11-27T11:36:06+0000",
+			"version": "2.2.14.93",
+			"timeUpdated": "2024-11-27T12:34:22+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.73.30",
-			"timeUpdated": "2024-11-27T06:35:03+0000",
+			"version": "2.0.73.31",
+			"timeUpdated": "2024-11-27T12:34:22+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.28.32",
-			"timeUpdated": "2024-11-27T11:36:15+0000",
+			"version": "2.0.28.33",
+			"timeUpdated": "2024-11-27T12:34:31+0000",
 			"languages": []
 		},
 		{
@@ -1120,8 +1120,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.26.69",
-			"timeUpdated": "2024-11-27T05:35:06+0000",
+			"version": "2.1.26.70",
+			"timeUpdated": "2024-11-27T12:34:37+0000",
 			"languages": [
 				"zh"
 			]

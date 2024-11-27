@@ -1,9 +1,9 @@
-! Checksum: lTg6jrSqRTm5Awz8aNaPUQ
-! Diff-Path: ../patches/14/14-s-1732707633-3600.patch
+! Checksum: YFCV6JxNJ/PkMfdDmMiUYg
+! Diff-Path: ../patches/14/14-s-1732711134-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.14.92
-! TimeUpdated: 2024-11-27T11:36:06+00:00
+! Version: 2.2.14.93
+! TimeUpdated: 2024-11-27T12:34:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -53317,10 +53317,6 @@ icutlink.com#%#//scriptlet("set-constant", "sec", "0")
 zegtrends.com#%#//scriptlet("adjust-setInterval", "time", "2500", "0.02")
 ! littlebyte.net - skip timer
 littlebyte.net#%#//scriptlet("adjust-setInterval", "freeRemind", "", "0.02")
-! https://github.com/AdguardTeam/AdguardFilters/issues/103846
-! https://github.com/AdguardTeam/AdguardFilters/issues/88701
-megadescargas.net#%#//scriptlet("adjust-setInterval", "contador", "", "0.02")
-megadescargas.net#%#AG_onLoad(function(){setTimeout(function(){if("string"===typeof code){var a=document.createElement("form");a.setAttribute("method","post");a.setAttribute("id","hash");a.setAttribute("action","/?download="+code);var b=document.createElement("input");b.setAttribute("type","hidden");b.setAttribute("name","hash");b.setAttribute("value",code);a.appendChild(b);document.querySelector("body").appendChild(a);(a=document.querySelector("form#hash"))&&a.submit()}},300)});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88658
 pearos.xyz#%#//scriptlet("adjust-setInterval", "countdown", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88324
@@ -53394,8 +53390,6 @@ yoshare.net#%#//scriptlet("adjust-setInterval", "counter", "2000", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/87661
 ! go.leechpremium.link - skip timer
 go.leechpremium.link#%#(function(){"function"===typeof fetch&&location.href.includes("/?id=")&&fetch(location.href).then(function(e){e.headers.forEach(function(a,f){if("refresh"===f&&a.includes("url=http"))try{if(a.includes("&url=aHR0c")){var b,c=null==(b=a.split(/&url=/))?void 0:b[1];location=atob(c)}else{var d;location=c=null==(d=a.split(/url=(.+)/))?void 0:d[1]}}catch(g){}})})})();
-! https://github.com/AdguardTeam/AdguardFilters/issues/78545
-mrpcgamer.com#%#AG_onLoad(function(){document.querySelectorAll('a[href^="https://shorttey.com/full/?api="][href*="&url=aHR0c"]').forEach(function(b){var a=(new URL(b.getAttribute("href"))).searchParams.get("url");a=atob(a);b.setAttribute("href",a)})});
 ! https://github.com/uBlockOrigin/uAssets/issues/8744
 abhaydigitalmarketer.com#%#//scriptlet("adjust-setInterval", "countdown", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79083
@@ -53496,8 +53490,6 @@ render-state.to#%#//scriptlet("adjust-setTimeout", "params.redirect", "5000", "0
 mylink1.biz#%#//scriptlet("set-constant", "seconde", "-1")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/72001
 janusnotes.com#%#//scriptlet("adjust-setInterval", "updatePercentage", "100", "0.02")
-! https://github.com/AdguardTeam/AdguardFilters/issues/78085
-sub2unlock.*#%#AG_onLoad(function(){var a=document.querySelector("#theGetLink");if(a&&a.textContent.startsWith("http"))try{window.location=a.textContent}catch(b){}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71050
 eco-area.com#%#//scriptlet("adjust-setInterval", ".stop()", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/70724
@@ -53514,8 +53506,6 @@ safelink.rezkozpatch.xyz#%#//scriptlet("adjust-setInterval", "Link will appear",
 safelink.rezkozpatch.xyz#%#!function(){if(-1<window.location.href.indexOf(".html?url=aHR0c")){var a=location.href.split(".html?url=");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
 ! fcc.lc - skip timers
 short.fc-lc.com#%#//scriptlet('trusted-click-element', '#submitbtn', '', '300')
-! fclcc.com,articlix.com,fcc.lc#%#AG_onLoad(function() { setTimeout(function() { var el = document.querySelector("#invisibleCaptchaShortlink"); if(el) { el.classList.remove("disabled"); el.removeAttribute("disabled"); el.click(); } }, 300); });
-bclikeqt.com,fclcc.com#%#AG_onLoad(function(){setTimeout(function(){var a=document.querySelector("#surl"),c=function(){var d=jQuery.ajax({url:domain,method:"POST",dataType:"json",data:jQuery("#form12").serialize()});setTimeout(function(){try{var b=d.responseText;b=JSON.parse(b);if(b.url&&b.url.startsWith("http"))a.href=b.url,a.text="Get Link",a.classList.add("btn-success"),a.click();else throw Error();}catch(e){console.log("Failed, try again..."),c()}},1E3)};a&&(a.classList.remove("disabled"),c())},500)});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59717
 anonymous-links.com#%#//scriptlet("set-constant", "waitSeconds", "0")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/70370
