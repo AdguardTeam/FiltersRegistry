@@ -1,8 +1,8 @@
-! Checksum: xkj7UdlnqoiUjapoL1+8Ug
+! Checksum: oPddsOKwhYW2+Tw9G6+NmA
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.62.27
-! TimeUpdated: 2024-11-27T09:31:28+00:00
+! Version: 2.3.62.28
+! TimeUpdated: 2024-11-27T10:31:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20793,8 +20793,9 @@ kusonime.com#$#.lexot #dl { display: block !important; }
 duduk123.com,beritanaik.com#@#.adVertical
 duduk123.com,beritanaik.com##.warning_iklan
 duduk123.com,beritanaik.com##div[class^="semprotnenenmontok"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/193626
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152290
-westmanga.info##.kln
+westmanga.*##.kln
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149836
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38345#issuecomment-1584886448
 nomat.*##.popup
@@ -32042,8 +32043,13 @@ hoyme.jp#$#span[id^="img_"][style^="display:"] { position: absolute !important; 
 ##body > a[href^="https://s.click.aliexpress.com"][target="_blank"][rel="noopener noreferrer"]
 !
 ##div[id^="img_"] + a[attributionsrc*=".html-load.com/contents/"]
+##body > div[id^="img_"]:first-child:empty + div[id^="img_"]:empty
 ##body > div[id^="img_"] > div[id^="img_"][style^="display: block; width:"] > img[alt]
+##div:not([id]):not([class]) > script[async][src] ~ script[src] ~ script + div[id^="img_"] > script + script + span[id^="img_"]
+##div[class^="img"] > div[style^="position: absolute"]
+##div[class^="img"] > div[style^="pointer-events: none"]
 ##div[class^="img_"]:first-child > div[id^="img_"][class^="img_"] + a[href^="https://html-load.com/contents/"]
+##div[class^="img_"][name]
 ##div[style="display:inline"] > a[href^="https://html-load.com/contents/"][target="_blank"] > img.aspw[style="display:block"]
 ##div[style="display:inline"] > div:not([class]):not([id]) > div[id^="img_"] > script:first-child + script + span[id^="img_"][style="border:none;margin:0;padding:0;position:relative;display:inline-block"] > a[style="border:none;margin:0;padding:0;"][target="_top"]
 ##div[style="display:inline"] > script:first-child + div:not([class]):not([id]) > script + script[src] + script + div[id^="img_"] > script + script + span[id^="img_"]
@@ -32055,6 +32061,9 @@ hoyme.jp#$#span[id^="img_"][style^="display:"] { position: absolute !important; 
 ##div[x-frame-height] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##html > body > a[target="_blank"][rel="noopener noreferrer"][href^="https://html-load.com/contents/"][href*="/0/"] > div[id^="img_"][class*=" img_"] > div[class^="img_"] > *
 ##img.aspw[style$="display:inline-block;width:300px;height:250px;-webkit-backface-visibility:visible;pointer-events:auto;vertical-align:bottom;"]
+##img[src*=".html-load.com/contents/"][style="display: block;"]
+##script + div[id^="img_"][fs_ad_stat="ok"]
+##script[async][src] + script[src] + div:not([class]):not([id]) > script + script[src] + script + div[id^="img_"] > script + script + span[id^="img_"]
 ##span[id^="img_"] > style + script + script + div[id^="img_"]
 ##style[type] + div[id^="img_"]
 ##style[type] + div[id^="img_"] + div[class^="img_"]
@@ -32288,6 +32297,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+mediafire.com##.WZ
 brooklynrail.org##* > .relative.theme > div.fixed.bottom-0
 cnet.com##.c-ShortcodeContent > div[id][overridecaption*="sponsored-placement"]
 vox.com##.duet--navigation--wiki-banner

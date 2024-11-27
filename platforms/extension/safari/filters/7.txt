@@ -1,9 +1,9 @@
-! Checksum: erW8yTMaFsVzLoaTd0J7zA
-! Diff-Path: ../patches/7/7-s-1732693158-3600.patch
+! Checksum: waniLL4bdjf+JAf89GvcDg
+! Diff-Path: ../patches/7/7-s-1732703935-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.59.69
-! TimeUpdated: 2024-11-27T07:35:07+00:00
+! Version: 2.0.59.70
+! TimeUpdated: 2024-11-27T10:34:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -523,22 +523,14 @@ mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
 !+ NOT_PLATFORM(windows, mac, android, ext_ff, ext_chromium_mv3)
 wiki.yjsnpi.nu#%#//scriptlet('abort-current-inline-script', 'onload', 'catch')
+wiki.yjsnpi.nu#%#//scriptlet('abort-on-stack-trace', 'Function.prototype.toString', '/[A-z]+\s.+comments\.js/')
 wiki.yjsnpi.nu#%#//scriptlet("prevent-setTimeout", "/\+'.+catch/", "!0")
-!wiki.yjsnpi.nu#%#//scriptlet('prevent-element-src-loading', 'script', '/\/w\/load\.php$/')
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) { font-size: 0 !important; }
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img { height: 0 !important; }
 wiki.yjsnpi.nu#%#//scriptlet('prevent-eval-if', '/catch.+catch/')
 wiki.yjsnpi.nu#%#//scriptlet('remove-node-text', 'script', '/catch.+catch/')
-!||wiki.yjsnpi.nu^$script
-/\/w\/load\.php\?lang=ja&modules=codex-search-styles(?:%2C)?$/$script,~third-party,domain=wiki.yjsnpi.nu,important
-||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=startup&only=scripts&raw=1&skin=|$script,~third-party,important
-@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=ext.cite.ux-enhancements$script,~third-party
-@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=ext.categoryTree$script,~third-party
-@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=codex-search-styles$script,~third-party
-@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=ext.visualEditor$script,~third-party
-@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=jquery$script,~third-party
-@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=mediawiki.Uri$script,~third-party
-@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=startup$script,~third-party
+||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=codex-search-styles$script,~third-party
+@@||wiki.yjsnpi.nu/w/load.php?lang=ja&modules=codex-search-styles%2Cjquery%2Coojs%2*&skin=vector-2022&version=$script,~third-party
 @@||wiki.yjsnpi.nu^$image,xmlhttprequest,~third-party
 @@||wiki.yjsnpi.nu^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190069
