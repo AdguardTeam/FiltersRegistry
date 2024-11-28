@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: SGloTg7ez6HRdj8vfMLNmg
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1732675084-3600.patch
+! Checksum: ieKhHvq9rgV9U8Cx8Y9x6w
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1732761463-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.10.32
@@ -26,6 +26,7 @@
 .com/rss2.htm$subdocument,~third-party
 .jp/rss.htm$subdocument,~third-party
 .net/rss.htm$subdocument,~third-party
+.net/rss2.htm$subdocument,~third-party
 .com/rss/$subdocument,~third-party
 ||blog-rss.com^$third-party
 ||rssfetcher.blogsys.jp^
@@ -274,7 +275,6 @@ turbo-bee.com##.aspranker
 2chav.com#$##left[style^="position: fixed"] { position: static !important; }
 jumpmatome2ch.biz##.rss02
 gameleaks.org###pc_text-57
-ge-soku.com##.mainbottom-widget
 kannyu.blog.jp##.rssWrapper
 himasoku.com#?#.article-body-more > span[style]:contains(おすすめ記事)
 vipnews.jp#?#.article-body-more > div[class]:contains(おすすめ記事)
@@ -552,7 +552,6 @@ mutyun.com###chuukan
 sk2ch.net##.recommend
 crx7601.com###main > div.column-inner > div.column-inner-2 > div[align="center"] + table
 ||moez-m.com/top-rssnews1.html
-moez-m.com#?#.widget-content-top table.has-fixed-layout td:has(> div > div#moe_blog_parts_000)
 jumpmatome2ch.biz##div[class^="sprss"]
 jumpmatome2ch.biz#?#.rss-hd:contains(/(?:おすすめ|人気)記事$/)
 pokemonbbs.com###rss_pc
@@ -588,8 +587,6 @@ gundamlog.com###top_rss
 ||norisoku.com/rss-
 mona-news.com##div[id^="rss_"]
 gamestlike.com,vtubersokuhou.com##.maintop-widget
-vtubersokuhou.com###block-11
-vtubersokuhou.com###block-15
 revuestarlightre.com,scienceplus2ch.com###rss-roll-01
 ||tsubamesoku.blog.jp/new.html
 ||tsubamesoku.blog.jp/yakutu.htm
@@ -598,7 +595,6 @@ tsubamesoku.blog.jp#?#article > h1.article-option-title:contains(/^おススメ�
 mildch.com,amaebi.co,umamusume-umapyoi.com,incident-wo.com##.blogroll-wrapper
 ge-soku.com,incident-wo.com###custom_html-35
 ge-soku.com,ichinuke.com###custom_html-48
-ge-soku.com###custom_html-91
 ge-soku.com###custom_html-95
 ge-soku.com##.container_top_widget
 aaieba.livedoor.biz##div[style="BORDER: #FEEED9 1px solid; margin: 3px 0px 0px 0px ;  BACKGROUND: #FEEED9; COLOR: #000000; "]
@@ -845,7 +841,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||formilla.com^$third-party
 ||app.livechatoo.com^$third-party
 ||components.justanswer.com^$third-party
-||girnarsoft.com^$third-party
 ||salesiq.zoho.in^$third-party
 ||iadvize.com^$third-party
 ||kommunicate.io^$third-party
@@ -1105,6 +1100,7 @@ mbs.jp##.common-wrap--ranking
 ||api.popin.cc^$third-party
 media.moneyforward.com##.mp-recommends
 media.moneyforward.com##.mp-popin-analytics
+media.moneyforward.com##.home-ranking
 otonanswer.jp##aside > div[style="min-height: 881px;"]
 otonanswer.jp#$?#.swiper-slide[data-history^="photo_extra"] { remove: true; }
 full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND))
@@ -1320,7 +1316,6 @@ thebell.io##app-adfox-top
 verstka.media##.wp-block-post:has(> a[href="http://verstkasupport.media/"])
 habr.com##.article-donation-block
 chicago.suntimes.com##.Page-header-banner
-meduza.io##.PopoverBanner-module-root
 itc.ua##.about-noa
 itc.ua##.popup-bottom
 ||frontend.poool.fr/engage/
@@ -1328,7 +1323,6 @@ kyivindependent.com##iframe[src^="https://frontend.poool.fr/"]
 verstka.media##.vm-single-post-content > p[class="has-background"][style="background-color:#47d4ff"]
 novayagazeta.ru###article-body div[class]:has(> div[class] > p[class]:contains(Поддержите))
 novayagazeta.ru##div[id^="materialBlock"] > div[style="height: 100px;"]
-zona.media##body > a[href^="https://donate.zona.media/"][href$="utm_campaign=donate"]
 annas-archive.org##.js-fundraiser-banner
 motherjones.com##section[id^="mj-article-bottom-membership"]
 gigazine.net##div[id^="donate"]
