@@ -1,9 +1,9 @@
-! Checksum: geiPsI1kHMSuT7BtafR4+A
-! Diff-Path: ../patches/14/14-s-1732876682-3600.patch
+! Checksum: gUCcVT3N9R28AIuYuRyuBw
+! Diff-Path: ../patches/14/14-s-1732880411-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.15.15
-! TimeUpdated: 2024-11-29T10:34:40+00:00
+! Version: 2.2.15.16
+! TimeUpdated: 2024-11-29T11:36:21+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -33272,6 +33272,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+healthline.com#%#//scriptlet('set-local-storage-item', 'healthline.newsletterModalLastShownTime', 'true')
 dee-okinawa.com##.followBlock
 slashdot.org##.ad-blocked-newsletter
 banki.ru##section[class^="Appstyled__StyledBottomWidgets"]
@@ -49393,6 +49394,9 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+investing.com##div.preloaded_lightbox[aria-label="Modal Overlay Box"]
+investing.com##div[class*="promo-strip_proPromo"]
+investing.com#$#body { overflow: auto !important; }
 buhgalteria.ru###article-post > div.text:has(> div.mobileimg > a[href="https://www.buhgalteria.ru/godovoy-otchet/"])
 buhgalteria.ru##.block-bg-berator
 vuejs.org##.vuemastery-banner-wrapper
