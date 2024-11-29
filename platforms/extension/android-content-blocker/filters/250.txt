@@ -1,8 +1,8 @@
-! Checksum: ubDyU/3dNuv/8wSZL1dByA
+! Checksum: DcDBiYid91+Xiv8+129+yg
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.62
-! TimeUpdated: 2024-11-26T21:02:10+00:00
+! Version: 2.0.15.63
+! TimeUpdated: 2024-11-29T05:01:50+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -462,7 +462,7 @@ accuweather.com###app-store-links
 .SmartMessage.$script,domain=weather.com
 quora.com##.modal_bg
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 29October2024v2
+! OriginalVersion: 29November2024v2
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -481,7 +481,10 @@ quora.com##.modal_bg
 ! Palau (Put on break due to too many whitelistings being needed)
 !!!||pw^$document,domain=~libgen.pw|~petridish.pw|~palaugov.pw|~dpc.pw|~buttercup.pw|~rezka.pw|~darkcrystal.pw|~xor.pw|~fullhdfilmizlesene.pw|~gopass.pw|~vost.pw|~core.pw|~bittor.pw|~plutonium.pw|~nitter.pw|~kge.pw
 ! Legitimate use is almost non-existent, but has a tiny userbase in Japan. Its extreme common-ness in malware redirections means that the entry will be kept forever.
-||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~techblog.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~mastodon.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~pegelinux.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top
+||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top
+! Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067
+@@||masto*.top^$document,domain=top
+@@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document,domain=top
 ! International topical domains that have consistently horrendous scores on watchlists of bad TLDs, and whose use for legit purposes is practically non-existent.
 ||loan^$document
 !!!||agency^$document,domain=~battlefield.agency|~baam.agency|~robotzebra.agency|~uphotel.agency|~ws.agency (Can't remember the last time I saw it used in a redirection train.)
@@ -666,10 +669,8 @@ azdll.net##.dllhelper-banner
 ! ¤¤¤ WinThruster ¤¤¤
 ||solvusoft.com^$document
 ! Common scam domain patterns
-/^http://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live)/$~third-party,document
-/^https://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live)/$~third-party,document
-/^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
-/^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?u=[0-9a-z]{7}&o=[0-9a-z]{7}/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
+/^https?://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
+/^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
 ! https://github•com/AdguardTeam/AdguardFilters/issues/58737
 /^https?:\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php\$/$document,domain=biz|fun|live
 ! ——— Banner for "MSN New Tab" ———
@@ -792,7 +793,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||videoadblockextension.$document,popup
 ://142.91.159.$document
 ! https://github.com/DandelionSprout/adfilt/issues/942
-/^172\.255\.6\.(\d{1,2}|[12][0-689]\d|17[0-689])\$/
+/^172\.255\.6\.(\d\d?|[12][0-689]\d|17[0-689])\$/
 ://23.109.150.$document
 ://23.109.248.$document
 ://173.233.137.$document
@@ -805,11 +806,10 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 /scan-update-and-protect-your-browser.html$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61755
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61743
-/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/|$)/$document,popup
+/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 ! https://github.com/easylist/easylist/issues/6111
 ||178.128.142.109^$document
-/^http://\d{1,2}\.[a-z0-9-]{1,}\.(club|me)(/|$)/$document
-/^https://\d{1,2}\.[a-z0-9-]{1,}\.(club|me)(/|$)/$document
+/^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 ||134.209.136.174^$document
 ||62.210.6.153^$document
 ||62.210.7.209^$document
@@ -835,16 +835,14 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ! https://maldita•es/malditobulo/2020/11/18/no-no-es-cierto-que-amancio-ortega-haya-invertido-100-millones-en-bitcoin-revolution-es-una-web-falsa/
 ||starpowders.github.io^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69611
-/^http://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/|$)/
-/^https://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/|$)/
+/^https?://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/.*)?$/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71721
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71369
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73623
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73627
-/^http://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/|$)/
-/^https://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/|$)/
+/^https?://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/.*)?$/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73133
-/^(https?://)?\d{1,2}\.[a-z0-9-]{1,}\.biz(/|$)/$document
+/^(https?://)?\d\d?\.[a-z0-9-]{1,}\.biz(/.*)?$/$document
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-428333
 ||safe-offers.net^$document
 /bitcoinrevolution/lp.php^$document
@@ -882,7 +880,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ! https://github.com/DandelionSprout/adfilt/issues/224
 ||69.49.231.244^$document
 ! https://movsb•0x0•st/users/mia
-||vid.me^$third-party
 ||5starhdporn.com^$subdocument,third-party
 ! https://github.com/DandelionSprout/adfilt/issues/228
 ! https://github.com/DandelionSprout/adfilt/issues/241
@@ -1030,7 +1027,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ! https://github.com/iam-py-test/investigations/blob/main/2021/10/24/1.md#html-capture
 ||google-yandex.$document
 ||cloud-apps.store^$document
-/(^|://|\.)[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz($|/)/$document
+/^(.*://|.*\.)?[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz(/.*)?$/$document
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-951321929
 ! https://github.com/iam-py-test/investigations/blob/main/2021/10/26/1.md#domains
 ! https://github.com/iam-py-test/investigations/blob/main/2021/11/1/1.md
@@ -1143,7 +1140,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||myget.org/feed/discord-nitro-hack/package/nuget/Free-discord-nitro-codes-2021^$document
 ! https://twitter•com/iam_py_test/status/1496259425493225472
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111970
-/(^|\.|://)[a-z0-9-]{2,}trk\.xyz(/|$)/$document,popup,domain=~malware-redirection-trains.*
+/^(.*\.|.*://)?[a-z0-9-]{2,}trk\.xyz(/.*)?$/$document,popup,domain=~malware-redirection-trains.*
 ! https://bazaar•abuse•ch/sample/d7308dab0110ae3bc79fd15024f5ccfcbd6e676b7c42b27a0112506e8357a6dc/ → https://app•any•run/tasks/bc53e7a9-5fd7-4682-894d-11e48e9ea89a#
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1074966240
 ||melding.link^$document
@@ -1352,7 +1349,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||livejasmin.com/*&origin=$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161364
 ! (https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2497)
-/(//|\.|^)github\.[a-z]{2,20}(/|$)/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
+/^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 ! https://www•tv2•no/nyheter/innenriks/advarer-ikke-klikk-pa-lenken/16040614/
 ! https://new•reddit•com/r/engrish/comments/16lg4i1/seems_legit/
 ||reschedule-delivery.ups.com.$document
@@ -1421,7 +1418,7 @@ toorgle.net##.join
 ||192.243.59.12^$document
 ||192.243.59.13^$document
 ||192.243.59.20^$document
-/^(https?://)?192\.243\.59\.\d{1,3}($|/)/$document
+/^(https?://)?192\.243\.59\.\d{1,3}(/.*)?$/$document
 ! rule34hentaiNET when uBlock Filters and AdGuard Base are turned off
 ! Googling Aksel Hennie (Results for prior week) in late July 2021
 ! Other
@@ -1577,7 +1574,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 /ad_click/q?&url=$document,domain=~malware-redirection-results.*
 ! Laughably blatant fraud site
 ! Fraudulent art thefts for money on Google Image Search, e.g. 'cassandra tangled site:tumblr.com suit'
-/\.[a-z]{2,18}\/Stars\.php\?/$match-case,all
+/^.*\.[a-z]{2,18}\/Stars\.php\?.*$/$match-case,all
 .php?iid=*&cid=$document
 .asp?iid=*&cid=$document
 .med.br/?q=artstation-$document
@@ -1589,6 +1586,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ! Visibly fake item descriptions and prices
 ! Tumblr spammers
 ! https://walyou•com/gameloft-dungeon-hunter-5-dragon-mania-legends-apple-tv-3029/
+! Search results on Tumblr (31/10/2024)
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
 ||unofficialtwrp.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*

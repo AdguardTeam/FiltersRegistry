@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: NqqWhIpbctuWkAYk7dhcvA
-! Diff-Path: ../patches/250/250-s-1732655175-14400.patch
+! Checksum: 26K5BEm3nE70Bw75MCK+ag
+! Diff-Path: ../patches/250/250-s-1732856750-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.62
-! TimeUpdated: 2024-11-26T21:02:10+00:00
+! Version: 2.0.15.63
+! TimeUpdated: 2024-11-29T05:01:50+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -516,7 +516,7 @@ quora.com##.modal_bg
 linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 ! Title: 💊 Dandelion Sprout's Anti-Malware List
-! OriginalVersion: 14November2024v1
+! OriginalVersion: 29November2024v2
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -822,10 +822,8 @@ azdll.net##.dllhelper-banner
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 ! Common scam domain patterns
-/^http://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live)/$~third-party,document
-/^https://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live)/$~third-party,document
-/^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
-/^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?u=[0-9a-z]{7}&o=[0-9a-z]{7}/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
+/^https?://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
+/^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
 ! https://github•com/AdguardTeam/AdguardFilters/issues/58737
 /^https?:\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php$/$document,domain=biz|fun|live
 ! ——— Banner for "MSN New Tab" ———
@@ -992,11 +990,10 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 /scan-update-and-protect-your-browser.html$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61755
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61743
-/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/|$)/$document,popup
+/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 ! https://github.com/easylist/easylist/issues/6111
 ||178.128.142.109^$document
-/^http://\d{1,2}\.[a-z0-9-]{1,}\.(club|me)(/|$)/$document
-/^https://\d{1,2}\.[a-z0-9-]{1,}\.(club|me)(/|$)/$document
+/^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 ||134.209.136.174^$document
 ||62.210.6.153^$document
 ||62.210.7.209^$document
@@ -1022,16 +1019,14 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ! https://maldita•es/malditobulo/2020/11/18/no-no-es-cierto-que-amancio-ortega-haya-invertido-100-millones-en-bitcoin-revolution-es-una-web-falsa/
 ||starpowders.github.io^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69611
-/^http://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/|$)/
-/^https://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/|$)/
+/^https?://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/.*)?$/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71721
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71369
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73623
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73627
-/^http://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/|$)/
-/^https://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/|$)/
+/^https?://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/.*)?$/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/73133
-/^(https?://)?\d{1,2}\.[a-z0-9-]{1,}\.biz(/|$)/$document
+/^(https?://)?\d\d?\.[a-z0-9-]{1,}\.biz(/.*)?$/$document
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-428333
 ||safe-offers.net^$document
 /bitcoinrevolution/lp.php^$document
@@ -1070,7 +1065,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ! https://github.com/DandelionSprout/adfilt/issues/224
 ||69.49.231.244^$document
 ! https://movsb•0x0•st/users/mia
-||vid.me^$third-party
 ||5starhdporn.com^$subdocument,third-party
 ! https://github.com/DandelionSprout/adfilt/issues/228
 ! https://github.com/DandelionSprout/adfilt/issues/241
@@ -1219,7 +1213,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ! https://github.com/iam-py-test/investigations/blob/main/2021/10/24/1.md#html-capture
 ||google-yandex.$document
 ||cloud-apps.store^$document
-/(^|://|\.)[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz($|/)/$document
+/^(.*://|.*\.)?[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz(/.*)?$/$document
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-951321929
 ! https://github.com/iam-py-test/investigations/blob/main/2021/10/26/1.md#domains
 ! https://github.com/iam-py-test/investigations/blob/main/2021/11/1/1.md
@@ -1336,7 +1330,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||myget.org/feed/discord-nitro-hack/package/nuget/Free-discord-nitro-codes-2021^$document
 ! https://twitter•com/iam_py_test/status/1496259425493225472
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111970
-/(^|\.|://)[a-z0-9-]{2,}trk\.xyz(/|$)/$document,popup,domain=~malware-redirection-trains.*
+/^(.*\.|.*://)?[a-z0-9-]{2,}trk\.xyz(/.*)?$/$document,popup,domain=~malware-redirection-trains.*
 ! https://bazaar•abuse•ch/sample/d7308dab0110ae3bc79fd15024f5ccfcbd6e676b7c42b27a0112506e8357a6dc/ → https://app•any•run/tasks/bc53e7a9-5fd7-4682-894d-11e48e9ea89a#
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1074966240
 ||melding.link^$document
@@ -1527,7 +1521,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||livejasmin.com/*&origin=$document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161364
 ! (https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2497)
-/(//|\.|^)github\.[a-z]{2,20}(/|$)/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
+/^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 ! https://www•tv2•no/nyheter/innenriks/advarer-ikke-klikk-pa-lenken/16040614/
 ||no-forny*$all,domain=~no
 ||my-altinn*$all,domain=~no
@@ -1561,7 +1555,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||accedenonre.xyz^$all
 ||adeditiontowritingef.net^$all
 ||adiingsinspiringt.net^$all
-||adthereis.buzz^$all
 ||ajorinryesopert.com^$all
 ||ajorinryesoperty.com^$all
 ||alsoextraorduki.info^$all
@@ -1575,7 +1568,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||arnofourgugtj.info^$all
 ||arrowabhbtalst.info^$all
 ||arrowtoldilim.com^$all
-||artistictastesnly.info^$all
 ||asifiwoeryjtyj.info^$all
 ||asosettoourma.info^$all
 ||aspectsofc.hair^$all
@@ -1585,7 +1577,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||atedlittleme.xyz^$all
 ||ationiamcur.com^$all
 ||ationslieemrger.info^$all
-||atthewon.buzz^$all
 ||aukndaspirati.com^$all
 ||aysesuretobea.com^$all
 ||baconaces.pro^$all
@@ -1600,7 +1591,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||comfortykive.xyz^$all
 ||compathered.xyz^$all
 ||connectedithco.com^$all
-||consukultingeca.com^$all
 ||conversitym.com^$all
 ||councernedasesium.com^$all
 ||dblueclaockbro.info^$all
@@ -1615,7 +1605,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||dukerationpe.com^$all
 ||dwouldmakefe.info^$all
 ||eamsauknda.com^$all
-||eastfeukufunde.com^$all
 ||ebelfarewesbegi.com^$all
 ||echildren.buzz^$all
 ||econsultingcoem.com^$all
@@ -1623,9 +1612,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||edassiumw.xyz^$all
 ||editiontowrit.info^$all
 ||edrubyglo.buzz^$all
-||edstevermotorie.com^$all
 ||edverys.buzz^$all
-||eesihighlyrec.xyz^$all
 ||efgrghhindhimi.info^$all
 ||efvtgbnanddescri.info^$all
 ||ehappy.buzz^$all
@@ -1634,7 +1621,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||eitcuyjfromthe.info^$all
 ||emydreamsa.com^$all
 ||emyresumef.hair^$all
-||endream.buzz^$all
 ||enectedithco.com^$all
 ||entoftheusysian.com^$all
 ||entsiwoulukdli.com^$all
@@ -1646,7 +1632,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||ervantasrelate.info^$all
 ||esterdayauol.info^$all
 ||etingefifort.info^$all
-||etingplansfo.buzz^$all
 ||etorealiukzem.com^$all
 ||etyrthonrong.info^$all
 ||eukworektobe.pics^$all
@@ -1654,7 +1639,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||everefor.buzz^$all
 ||evermoto.xyz^$all
 ||everwiththinleav.net^$all
-||ewallowi.buzz^$all
 ||ewmeofmukindwo.com^$all
 ||ewoverth.buzz^$all
 ||ewrevenuewasad.info^$all
@@ -1668,7 +1652,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||gtdjidencenha.info^$all
 ||gukthwaalsoex.info^$all
 ||hableleader.xyz^$all
-||hatwasallokmv.info^$all
 ||heinndonfgnorh.info^$all
 ||heodeidsofhnm.info^$all
 ||hereabithec.xyz^$all
@@ -1681,7 +1664,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||iasninancuka.com^$all
 ||ibilitukydteamw.com^$all
 ||ictastesnly.buzz^$all
-||ifefashionismscold.com^$all
 ||ileesidesu.hair^$all
 ||inarilyhukel.info^$all
 ||ingforanopportu.com^$all
@@ -1698,21 +1680,16 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||jtffjwecouldle.info^$all
 ||kabuukimuuki.com^$all
 ||kectivetraining.info^$all
-||kefeagreatase.info^$all
 ||kelpmetoreali.com^$all
 ||kentinedaug.xyz^$all
 ||kenwellsgrpo.com^$all
-||kitwkuouldhukel.xyz^$all
-||kmodukuleqasfo.info^$all
 ||kmyunderth.com^$all
 ||kolpihvfongrou.info^$all
 ||krkskillsombin.com^$all
-||ksehinkitw.hair^$all
 ||ktobedirectu.xyz^$all
 ||ktobedirectuklye.com^$all
 ||lemopaserawecas.com^$all
 ||leqasforsalesrep.info^$all
-||liondolularhene.info^$all
 ||liukzemydream.com^$all
 ||llsombineukdwit.com^$all
 ||longmansuchcesu.com^$all
@@ -1740,7 +1717,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||natallcolumnsto.info^$all
 ||ncelewasgildeda.net^$all
 ||ncukanking.com^$all
-||ndandinter.hair^$all
 ||ndeedeisasbeautiful.net^$all
 ||ndencesch.xyz^$all
 ||ndsragedwithb.info^$all
@@ -1759,7 +1735,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||normaticalaccu.com^$all
 ||notquiteso.buzz^$all
 ||nowledconsideu.com^$all
-||npracticalwhic.buzz^$all
 ||nryesopertyv.com^$all
 ||ntaspectsofcukorp.com^$all
 ||ntheworldw.buzz^$all
@@ -1769,14 +1744,12 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||oefanyorbesttn.info^$all
 ||ofchildr.buzz^$all
 ||offerentlyport.xyz^$all
-||ojapanelm.xyz^$all
 ||omefukmendat.xyz^$all
 ||onalhedgelnham.com^$all
 ||onopolicycr.xyz^$all
 ||onopolicycreat.com^$all
 ||onsukultingecauy.com^$all
 ||oratefinaukn.xyz^$all
-||oratefinauknceiwo.com^$all
 ||ordukinarilyhu.info^$all
 ||osiextantlyvfhn.info^$all
 ||otheruigfsfohi.info^$all
@@ -1789,11 +1762,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||placugceofres.info^$all
 ||playeranydwould.info^$all
 ||ploddingtotogcb.info^$all
-||pmetorealiukze.xyz^$all
-||pohsoneche.info^$all
 ||precially.space^$all
-||pringed.space^$all
-||puldhukelpmet.com^$all
 ||racterdeilbsweet.info^$all
 ||rainingukmod.info^$all
 ||ratiotyuknsye.pics^$all
@@ -1802,9 +1771,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||reckedmane.xyz^$all
 ||rentlysearchin.com^$all
 ||responsidejo.xyz^$all
-||rgentssep.xyz^$all
 ||rgyflexibilitu.com^$all
-||ricewaterhou.xyz^$all
 ||ritingsynther.com^$all
 ||rthfeoveukrnme.com^$all
 ||runkingoutinteah.info^$all
@@ -1822,35 +1789,30 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||smetotrea.xyz^$all
 ||smurtyards.space^$all
 ||ssdwellsgrpo.info^$all
-||starvardsee.xyz^$all
 ||stellihandles.hair^$all
 ||subsectivexe.xyz^$all
 ||sultingcoe.buzz^$all
 ||swordhilte.buzz^$all
 ||sysianedukera.com^$all
 ||taitlastwebegan.com^$all
-||tasesetitoefany.info^$all
 ||tbrohwnmyest.info^$all
 ||tebilaterde.xyz^$all
 ||tedithconsukult.com^$all
 ||tesupervis.hair^$all
 ||texcepededo.info^$all
 ||tfoollowingba.info^$all
-||tgandmotivat.com^$all
 ||thaitingshos.xyz^$all
 ||thaoheakolons.info^$all
 ||thegravehthh.info^$all
 ||theharityhild.buzz^$all
 ||theparlornextthef.com^$all
 ||thrememboer.info^$all
-||ticaframeofm.xyz^$all
 ||tionpecialukizei.com^$all
 ||tivatingotheremplo.com^$all
 ||toftheca.buzz^$all
 ||tooaastandhei.info^$all
 ||toolsahoulofd.info^$all
 ||tostaracare.com^$all
-||tsapphires.buzz^$all
 ||tuallyenitwasbr.com^$all
 ||tunitytostara.com^$all
 ||tureukwore.xyz^$all
@@ -1880,12 +1842,10 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||verwiththinleave.net^$all
 ||wasanasosett.info^$all
 ||wasanasset.buzz^$all
-||wedonhisdhiltew.info^$all
 ||withmefeyauknaly.com^$all
 ||wukbgater.buzz^$all
 ||yauknalyticafra.com^$all
 ||yhukelpfulinot.info^$all
-||yidbyhersle.xyz^$all
 ||yremovementxv.com^$all
 ||ysearchingfo.xyz^$all
 ||yticaframeofm.com^$all
@@ -1915,38 +1875,20 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||167.71.252.38^$all
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183432
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184671
-||2rlive.com^$all
 ||afro-melanin.com^$all
 ||alatterapistroke.com^$all
 ||andreasfarago.com^$all
-||artiscomplete.com^$all
 ||astrarestaurant.com^$all
-||athletumcomplex.com^$all
 ||babadonews.com^$all
 ||bamasolutions.com^$all
 ||beginning-end.buzz^$all
-||brawallpapers.com^$all
-||bstrawng.com^$all
-||buybestin.com^$all
 ||chinatobd.com^$all
 ||citiap.com^$all
 ||city-village.buzz^$all
-||clippingpathdnj.com^$all
 ||day-night.buzz^$all
-||divyatarang.com^$all
-||dmplus-id.com^$all
-||doubledboutiquegifts.com^$all
-||doveragway.com^$all
-||farmsteadingforfreedom.com^$all
 ||friendship-enmity.buzz^$all
-||gizalus.com^$all
-||gs-cpem.com^$all
-||gulfportmarijuana.com^$all
-||gurbaniquotes.com^$all
-||hashtagparents.com^$all
 ||home-work.buzz^$all
 ||joy-sorrow.buzz^$all
-||kiamotorss.com^$all
 ||kitapradio.com^$all
 ||lachitaxom.com^$all
 ||laptopcompanion.com^$all
@@ -1956,7 +1898,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||learntohindi.com^$all
 ||likelyup.com^$all
 ||likimrotambola.com^$all
-||lilywhitecosmeticsltd.com^$all
 ||linkslot99jp.com^$all
 ||loan1news.com^$all
 ||lokalfarma.com^$all
@@ -1969,109 +1910,28 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||mclarrenlife.com^$all
 ||mellow-face.com^$all
 ||memesfera.com^$all
-||metrodemedellin.com^$all
 ||miepiematerials.com^$all
 ||mmbti.com^$all
-||moerie-forever.com^$all
-||mohallamart.com^$all
-||mycorporatecarservice.com^$all
-||need-web3.com^$all
 ||nembutalonlinestore.com^$all
-||newb-outlet.com^$all
-||norbertochavez.com^$all
-||noruche.com^$all
 ||nowfitnesscj.com^$all
 ||numberswala.com^$all
-||ofdiceandmagic.com^$all
-||ofertaspee.com^$all
-||oflofitness.com^$all
-||opendataology.com^$all
 ||optoutmydomain.com^$all
-||overthedgethinking.com^$all
-||oviyauniversal.com^$all
-||ovuxir.com^$all
-||painkila.com^$all
 ||paqueteaegipto.com^$all
-||parkotforboe.com^$all
-||paulohmktdigital.com^$all
 ||peace-motion.buzz^$all
-||porlakultur.com^$all
-||primefarmhouses.com^$all
-||pronewsfm.com^$all
-||pujatrimbakeshwar.com^$all
 ||purealgermany.com^$all
-||quangcaohoanglethuduc.com^$all
-||quaradigitalsolutions.com^$all
-||quinielonperez.com^$all
-||rapidnutrition.com^$all
-||raspberryclouds.com^$all
-||ratemymeanmug.com^$all
-||realmindpowersecrets.com^$all
-||realsuccessnetwork.com^$all
 ||reclinersmall.com^$all
-||redalgaeskin.com^$all
-||resultcheak.com^$all
-||rexho.com^$all
-||rishtamubarik.com^$all
-||rsbport.com^$all
-||rtpkopi4djp.com^$all
-||saidentalcarevirar.com^$all
-||saigonsenses.com^$all
-||sanskritifancydresses.com^$all
-||sarkairesult24.com^$all
-||sarkaripanda.com^$all
-||satyainn.com^$all
-||saudenaturalfitoterapia.com^$all
 ||sea-beach.buzz^$all
-||seohugger.com^$all
-||service-bazar.com^$all
-||shivake.com^$all
 ||silence-storm.buzz^$all
-||simhanyr.com^$all
 ||skillsastracademy.com^$all
-||socialkeyagency.com^$all
-||sodohot.com^$all
-||somasteroids4sale.com^$all
-||somboonthaifoodca.com^$all
-||southwest-star.com^$all
-||stedcon.com^$all
-||stylesbymn.com^$all
 ||summer-winter.buzz^$all
 ||sun-moon.buzz^$all
-||sunichenterprises.com^$all
-||sunnahnaturalshop.com^$all
-||suvasinfrastructure.com^$all
-||swiftatlanta2023.com^$all
-||synergylabstn.com^$all
-||tayalg.com^$all
-||tecweb-noticias.com^$all
-||thangamconstruction.com^$all
-||thehamletsummary.com^$all
-||thehardsecret.com^$all
-||thelovehunk.com^$all
-||themaratthonclothing.com^$all
-||theparati.com^$all
 ||thesilverbacksway.com^$all
-||thevaali.com^$all
-||thevalorous.com^$all
-||toethiopia.com^$all
-||tradetheprice.com^$all
-||truemarketingtools.com^$all
-||ufa9000-vip.com^$all
-||unicitypetrochems.com^$all
 ||up-2-down.buzz^$all
-||usa--magnesiumbreakthrough.com^$all
-||usedpartfinder.com^$all
-||uu-dai-khach-hang-truc-tuyen.com^$all
-||vigagestion.com^$all
 ||water-fire.buzz^$all
 ||webprosystems.com^$all
 ||wellbeingxpert.com^$all
-||whistleslaser.com^$all
-||wonderlustdestinations.com^$all
 ||woobtvprime.com^$all
 ||worldbankdc.com^$all
-||xepes.com^$all
 ||yesterday-tomorrow.buzz^$all
 ||yourivyonly.com^$all
 ||zglobalindia.com^$all
@@ -2106,7 +1966,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||aggiornamento-dati-i-n-p-s.com^$all
 ||aib-loginsecure.com^$all
 ||aib-onlinesecurity-sca.com^$all
-||airdrop.chain.link.eligible.haruibt.com^$all
 ||aiutobancobpm.com^$all
 ||aktivalia-ntflx.com^$all
 ||alditrp.com^$all
@@ -2280,7 +2139,6 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||gmailsetupinfo.com^$all
 ||gouvamendes.com^$all
 ||hakayet-album.com^$all
-||haruibt.com^$all
 ||helpdesk-ledger.com^$all
 ||helpdeskcba.com^$all
 ||helpledg.com^$all
