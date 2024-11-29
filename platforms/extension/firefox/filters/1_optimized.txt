@@ -1,9 +1,9 @@
-! Checksum: 0o8SPs6BGO8HgJ9aCXhuUw
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1732891121-3600.patch
+! Checksum: izbwDPeB+TGdsmsuC/qkWw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1732898287-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.76
-! TimeUpdated: 2024-11-29T14:31:08+00:00
+! Version: 2.0.95.77
+! TimeUpdated: 2024-11-29T16:31:11+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -7112,6 +7112,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ||v.adfox.ru/*/getCode?pp=*&dl=http://tvc/pryamoy/efir/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ||v.adfox.ru/*/getCode?pp=*&dl=http://tvc/pryamoy/efir/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/
 bender/_bender*.js$script,replace=/this\.removeShadowBlockers\(\);/true; return;/
+@@/videojs-contrib-ads.min.js$domain=gamak.tv|telek.top
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=gamak.tv|telek.top
 consumer.huawei.com#@#div[data-banner-name]
 @@||tds.fandom.com/load.php
 oztech.ru#@##bottomBanners
@@ -7281,8 +7283,6 @@ devid.info#@##top_banner
 @@||gazprom-neft.ru/images/tizers/
 @@||nstarikov.ru^$generichide
 @@banner$domain=xtremetop100.com,image,third-party
-@@/videojs-contrib-ads.min.js$domain=gamak.tv|telek.top
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=gamak.tv|telek.top
 weebly.com#@##banner-wrap
 @@||l2top.ru/js/
 7-chat.weebly.com#@#iframe[width="200"][height="300"]

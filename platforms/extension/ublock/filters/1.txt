@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: gtpDs6sFP8UiyFMAsPXPZA
-! Diff-Path: ../patches/1/1-s-1732891135-3600.patch
+! Checksum: 49F6YABFGu0i5KSQOQC8iQ
+! Diff-Path: ../patches/1/1-s-1732898293-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.76
-! TimeUpdated: 2024-11-29T14:31:08+00:00
+! Version: 2.0.95.77
+! TimeUpdated: 2024-11-29T16:31:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7289,6 +7289,7 @@ mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,
 !
 !
 !
+gamak.tv###ima-ad-container
 unian.net##.newsfeed__banner
 unian.net##.partner-news
 repack.me#$#main > div.container { padding-top: 0 !important; margin-top: 0 !important; }
@@ -12716,7 +12717,6 @@ muzmo.org###ifrb
 muzmo.org###ifrt
 pozdravlandia.ru###imCel_Rekl
 pozdravlandia.ru###imCel_SideBar
-gamak.tv###ima-ad-container
 briefly.ru###in_article
 sexxx.gg###in_listBanner
 bc-city.com###index_stats > a[target="_new"][style] > img
@@ -18774,6 +18774,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_russian
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/54436
+! https://github.com/AdguardTeam/AdguardFilters/issues/67983
+@@/videojs-contrib-ads.min.js$domain=gamak.tv|telek.top
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=gamak.tv|telek.top
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192827
 consumer.huawei.com#@#div[data-banner-name]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192322
@@ -19293,10 +19297,6 @@ devid.info#@##top_banner
 @@||sociomantic.com/js/*/adpan/2-berega-ru$domain=2-berega.ru
 ! https://forum.adguard.com/index.php?threads/14868/
 @@||devimages.apple.com.edgekey.net/app-store/marketing/guidelines/$domain=apple.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/54436
-! https://github.com/AdguardTeam/AdguardFilters/issues/67983
-@@/videojs-contrib-ads.min.js$domain=gamak.tv|telek.top
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=gamak.tv|telek.top
 ! https://github.com/AdguardTeam/AdguardFilters/issues/3189
 @@||advertising.my1.ru^$domain=advertising.my1.ru
 ! https://forum.adguard.com/index.php?threads/14661/

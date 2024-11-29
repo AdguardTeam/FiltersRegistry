@@ -1,9 +1,9 @@
-! Checksum: C+ezZZhrmK9soApMRlpuQg
-! Diff-Path: ../patches/23/23-s-1732783141-3600.patch
+! Checksum: TnC438BqwyjOBDmeg5hrhA
+! Diff-Path: ../patches/23/23-s-1732898278-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.5.68
-! TimeUpdated: 2024-11-28T08:35:40+00:00
+! Version: 2.0.5.69
+! TimeUpdated: 2024-11-29T16:34:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4651,6 +4651,7 @@ mmo13.ru,altapress.ru,gastronom.ru,eg.ru,newsmaker.md,delo-vcusa.ru,tolknews.ru,
 !
 !
 !
+gamak.tv###ima-ad-container
 unian.net##.newsfeed__banner
 unian.net##.partner-news
 repack.me#$#main > div.container { padding-top: 0 !important; margin-top: 0 !important; }
@@ -6287,6 +6288,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/54436
+! https://github.com/AdguardTeam/AdguardFilters/issues/67983
+@@/videojs-contrib-ads.min.js$domain=gamak.tv|telek.top
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=gamak.tv|telek.top
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192827
 consumer.huawei.com#@#div[data-banner-name]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192322
