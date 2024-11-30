@@ -1,13 +1,13 @@
-! Checksum: Vr0Tx+CBWEkcmRKjUr1Nag
-! Diff-Path: ../patches/250/250-s-1732856768-14400.patch
+! Checksum: 1x9lWFjaRYCchcKmbKkUPA
+! Diff-Path: ../patches/250/250-s-1732928768-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.63
-! TimeUpdated: 2024-11-29T05:01:50+00:00
+! Version: 2.0.15.64
+! TimeUpdated: 2024-11-30T01:01:59+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 03November2024v1-Compilation
+! OriginalVersion: 29November2024v1-Compilation
 ! Expires: 18 hours
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -24427,7 +24427,7 @@ forbes.com##.article-sharing
 ||syndication.twitter.com/srv/timeline-profile^$third-party
 *##iframe[src*="//syndication.twitter.com/"]:has(div[data-testid=empty_state_header_text])
 ! Title: 🔮 I Don't Want to Download Your Browser
-! OriginalVersion: 12September2024v1-Beta
+! OriginalVersion: 29November2024v1-Beta
 ! Expires: 5 days
 ! Description: Do you already have a favourite browser or PDF reader? Are you tired of seeing "Try out [some browser] now!" on some websites? Then this is a list for you!
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -24441,6 +24441,8 @@ futureordering.com,bestill.egon.no###unsupported
 ##.chrome-footer:not(html, body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108684
 ##.chrome-banner:not(html, body)
+! Chrome's uninstall survey page
+www.google.com##.chr-panel-switcher__card:first-of-type
 ! ——— Edge ———
 ##.epb-container.f-information.c-uhfh-alert
 bing.com#?##b_pole:has-text(Microsoft Edge)
@@ -30604,3 +30606,6 @@ valdemarsro.dk###recipe-intro p:last-of-type
 ||detectportal.firefox.com^$csp=upgrade-insecure-requests
 ! If Bandcamp wishes to enforce a limit on online track plays, surely they could at least have dropped the comically obvious dark pattern
 .bcbits.com/img/heartbreak.png^
+! So that people who uninstall Chrome can complete the "Why did you uninstall Chrome?" survey (Caused by AdGuard Popups Filter)
+@@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script
+google.*#@##google-hats-survey
