@@ -1,9 +1,9 @@
-! Checksum: X9PrrKoaOiT15OnBDlRg4A
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1732928737-14400.patch
+! Checksum: /tCcBP6efP5+qk4Ho3upzw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1732943127-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.64
-! TimeUpdated: 2024-11-30T01:01:59+00:00
+! Version: 2.0.15.65
+! TimeUpdated: 2024-11-30T05:01:52+00:00
 ! Expires: 10 days (update frequency)
 ###app-download
 ###app-modal
@@ -24,7 +24,6 @@
 ##.AppBanner:not(html,body,:empty)
 ##.appdownload:not(html,body,:empty)
 ##.appPromo:not(html,body,:empty)
-##.banner-apps:not(html,body,:empty)
 ##.download-app-banner:not(html,body,:empty)
 ##.download-app:not(html,body,:empty)
 ##.download_app:not(html,body,:empty)
@@ -108,7 +107,6 @@ www.google.*,ipv6.google.com##.g:has(a[href^="https://books.google."])
 windowsreport.com##.code-block
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
 ||majorgeeks.com/images/icons/red_icon_18x17px.png$image
-drivereasy.com#?#.pakb-content ol:has-text(Download and install Driver Easy)
 drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
 drivereasy.com#?#.pakb-content div.info.note:has-text(drivereasy.com)
 drivereasy.com#?#.pakb-content img[sizes^="(max-width: 80"]
@@ -132,7 +130,6 @@ coolrom.com.au,coolrom.com##.download_link
 /^172\.255\.6\.(\d\d?|[12][0-689]\d|17[0-689])\$/
 ||endorseprovisional.com^$all
 ||feverfreeman.com^$all
-||footwearheartedswig.com^$all
 ||rattlekindergartencultivate.com^$all
 /^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 /^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
@@ -171,7 +168,6 @@ coolrom.com.au,coolrom.com##.download_link
 /page/bouncy.php?$all
 ||banquetunarmedgrater.com^$all
 ||curryfielddistribution.com^$all
-||nannyamplify.com^$all
 ||truthfulsensor.com^$all
 ||livejasmin.com/*&origin=$document
 /^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
@@ -369,7 +365,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[data-hook=social-sharing]
-##div[id^=btnShare i]
 ##div[id^=dpsp-]
 ##h2[class*=share-links]
 ##h4[class*=social-share-label]
@@ -378,6 +373,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##span[class*=-social-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class*=share-icon]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class^=share_btn]
+##span[data-lnkd-debug]
 ##ul[class*=-share-buttons]
 /images/share_icons/*
 /images/social-share/*
@@ -672,6 +668,8 @@ cda.pl###tVC
 fandom.com##.ad-slot-placeholder
 amap.com##.dir_qr
 csair.com##.qrcode
+dianping.com##.J_aside-qrcode
+dianping.com##.qrcode-fixed
 jd.com##.jdm-tbar-tab-qrcode.jdm-toolbar-tab.J-trigger
 mi.com##div.section:nth-of-type(31)
 news.sina.com.cn##.clearfix.blk-wxfollow
@@ -686,9 +684,12 @@ amap.com###amapAppDownload
 amap.com###to_lushu
 coolapk.com##.apk_topba_code
 ctrip.com##.service-notice-right
+dianping.com##.qrcode-aside
+dianping.com##.shop-owner.mod
 ditu.amap.com###mobileenterance_no_bg
 jd.com###J_mobile
 lianjia.com,zu.ke.com,csair.com##.qr-code
+map.baidu.com##.message-panel-open
 map.baidu.com##.poi-ads
 map.baidu.com###leadDownloadCard
 mi.com##.item-image.item
@@ -721,6 +722,7 @@ knowyourmeme.com###leaderboard
 knowyourmeme.com###top-entries-sidebar
 knowyourmeme.com###spp-gallery
 knowyourmeme.com###trending_photos
+knowyourmeme.com##.homepage-share
 knowyourmeme.com##.fb-page-like
 knowyourmeme.com##.cbox-smedia
 wikia.org,fandom.com###WikiaBarWrapper
@@ -910,6 +912,7 @@ $document,removeparam=unptid
 $document,removeparam=unp_tpcid
 $document,removeparam=pgrp
 $document,removeparam=mchn
+$document,removeparam=asgtbndr
 .userapi.com/impg^$removeparam=type
 $document,removeparam=taid
 $removeparam=AID,document,denyallow=firestore.googleapis.com,domain=~google.*|~disqus.*|~disquscdn.com
@@ -1006,6 +1009,7 @@ $removeparam=tctx
 $document,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
 $removeparam=ad_type
+$removeparam=CAWELAID
 $removeparam=adgroup_id
 $removeparam=rlsatarget
 $document,removeparam=targetid,domain=~myanonamouse.net
@@ -1110,6 +1114,7 @@ $removeparam=ldtag_cl
 $removeparam=vero_conv
 $removeparam=vero_id
 $removeparam=a_aid
+$removeparam=otracker
 $removeparam=ref_source
 $removeparam=ref_campaign
 $removeparam=spMailingID
@@ -1538,7 +1543,6 @@ $removeparam=iflsig,domain=www.google.*|ipv6.google.com
 $removeparam=uact,domain=www.google.*|ipv6.google.com
 ://www.google.*/search^$removeparam=kgs
 ://www.google.*/search^$removeparam=shndl
-://ipv6.google.com*/search^$removeparam=entrypoint
 ||google.*/search$removeparam=sqi
 ||google.$removeparam=gs_ssp
 ||google.$removeparam=prds
@@ -1807,7 +1811,6 @@ $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|disc
 ||microsoft.com^$removeparam=headerid
 ||microsoft.com^$removeparam=destrt
 $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moosejaw.com|multitronic.fi|scandinavianphoto.fi|swamp.fi|ocado.com|ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
-||squarespace.com^$removeparam=subchannel
 ||verizon.com^$removeparam=vendorid
 ||hp.com^$removeparam=jumpid
 ||walmart.com^$removeparam=veh
@@ -1977,11 +1980,11 @@ $removeparam=deep_and_deferred
 ||lenovo.com^$removeparam=orgRef
 $removeparam=ppref,domain=digidip.net
 ||dhgate.com^$removeparam=f
+$removeparam=brand,domain=cyberghostvpn.com|privateinternetaccess.com
 ||cyberghostvpn.com^$removeparam=media_source
 ||zhihu.com^$removeparam=hybrid_search_source
 ||zhihu.com^$removeparam=hybrid_search_extra
 ||theregister.com^$removeparam=td
-||feedspot.com^$removeparam=_src
 $removeparam=plink,domain=audible.*
 ||startpage.$removeparam=segment
 ||netflix.com^$removeparam=trackId
@@ -1991,6 +1994,7 @@ $removeparam=plink,domain=audible.*
 ||netflix.com^$removeparam=dpRightClick
 $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
+$removeparam=ici,domain=shein.com
 $removeparam=adp,domain=shein.com
 $removeparam=sr_id,domain=reddit.app.link
 $removeparam=sr_name,domain=reddit.app.link
@@ -2089,6 +2093,7 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=urlState
 ||jcpenney.com^$removeparam=productGridView
 ||jcpenney.com^$removeparam=badge
+||jcpenney.com^$removeparam=selectedSKUId
 ||bandcamp.com^$removeparam=search_item_id
 ||bandcamp.com^$removeparam=search_item_type
 ||bandcamp.com^$removeparam=search_match_part
@@ -2154,7 +2159,6 @@ $removeparam=embeds_referring_euri
 $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepages.com
 ||whitepages.com^$document,removeparam=wp_content
 ||whitepages.com^$document,removeparam=wp_term
-||sciencedirect.com/*?via%3D$removeparam=/^via%3D.*$/,document
 ||deepl.com^$document,removeparam=cta
 ||kahoot.it^$removeparam=refer_method
 ||open.substack.com^$removeparam=r,document
