@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.44.80",
-			"timeUpdated": "2024-11-29T14:34:39+0000",
+			"version": "2.0.44.81",
+			"timeUpdated": "2024-11-30T13:33:56+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
