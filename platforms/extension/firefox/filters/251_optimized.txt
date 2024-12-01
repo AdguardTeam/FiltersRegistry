@@ -1,9 +1,9 @@
-! Checksum: dl9m5jAFYytYq4xrU1MNLA
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1732943132-14400.patch
+! Checksum: ebMumNTAYydO3lhFsXh3dQ
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1733015142-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.8.32
-! TimeUpdated: 2024-11-30T05:01:53+00:00
+! Version: 2.0.8.33
+! TimeUpdated: 2024-12-01T01:01:57+00:00
 ! Expires: 10 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1247,8 +1247,8 @@ $removeparam=uact,domain=www.google.*|ipv6.google.com
 ||accounts.google.com^$removeparam=dsh,document
 ||support.google.com^$removeparam=ref_topic
 $removeparam=_x_tr_pto
-||google.$removeparam=/^sa=X$/
-||google.$removeparam=/^sa=N$/
+||google.$document,removeparam=/^sa=X$/
+||google.$document,removeparam=/^sa=N$/
 ||support.google.com^$document,removeparam=sjid
 $document,removeparam=gs_lp,domain=www.google.*|ipv6.google.com
 ||www.google.*/search$removeparam=oq,document
@@ -1259,6 +1259,10 @@ $removeparam=/^udm=$/,domain=www.google.*|ipv6.google.com
 $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ://www.google.$document,removeparam=ie,domain=www.google.*|ipv6.google.com
 ://ipv6.google.com^$document,removeparam=ie,domain=www.google.*|ipv6.google.com
+||www.google.$document,removeparam=fbs
+||www.google.$document,removeparam=ictx
+||www.google.$document,removeparam=dpr
+||www.google.$document,removeparam=tfu
 ||tiktok.com^$removeparam=_r
 $removeparam=share_ab_group
 $removeparam=u_code
@@ -2209,7 +2213,6 @@ $removeparam=sub,domain=allboner.com|twinkvideos.com
 ||tokopedia.com^$removeparam=extParam
 ||tokopedia.com^$removeparam=refined
 ||sony.$removeparam=cpint
-||target.$removeparam=preselect
 $removeparam=ueid,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 $removeparam=qo,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com|search.ask.com
 $removeparam=qsrc,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com|search.ask.com
