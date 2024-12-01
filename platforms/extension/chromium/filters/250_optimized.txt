@@ -1,5 +1,5 @@
-! Checksum: hCetCLDthdxwXF0OWI+TEQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1733015133-14400.patch
+! Checksum: gtOGf+KFP0hQlf31xDFcyw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1733029527-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.67
@@ -63,6 +63,7 @@ metservice.com##.HasPromoPadding
 momondo.*#$##mobile-splash-popup { display: none!important }
 momondo.*#$##mui-header { display: block!important }
 momondo.*#$#.flights-section-container { display: block!important }
+pcgames.de##div.header_footer.ui-footer.ui-bar-inherit.ui-footer-fixed.slideup[data-role="footer"]
 radarbox.com##.apps
 roblox.com###app-bumper-main
 rt.com###offers
@@ -181,10 +182,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||file2share.co^$all
 ||erothots.co^$all
 |http://www6.$document,domain=~often-used-in-malware-redirections.*
-.aspx?iid=*&cid=$all
 /^.*\.[a-z]{2,18}\/Stars\.php\?.*$/$match-case,all
-||kalan.asia^$all
-||d1pplo45p828lj.cloudfront.net^$all
 ||kabin.asia^$all
 www.tumblr.com##div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a[target=_blank] > div > div:has-text(/^.*🔞.*insta( |gram).*\n.*$/i))
 ||cdn32316413.blazingcdn.net^$all
@@ -448,7 +446,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ~line.me##a[href*="/lineit/share?"]
 ~linkedin.com##.addthis_button_linkedin:not(html,body,:empty)
 ~linkedin.com##.linkedin_share:not(html,body,:empty)
-~linkedin.com##.linkedinShare:not(html,body,:empty)
 ~linkedin.com##.share-linkedin:not(html,body,:empty)
 ~linkedin.com##a[href*="linkedin.com/cws/share?"]
 ~linkedin.com##a[href*="linkedin.com/shareArticle?"]
@@ -1089,7 +1086,6 @@ $removeparam=CJSID
 $removeparam=REFERRAL_ID
 $removeparam=impradid
 $removeparam=impradname
-Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=awin$/i
 $removeparam=cjid
 $removeparam=sv_affiliate_id
@@ -1100,13 +1096,13 @@ $document,removeparam=/^.*affcid.*$/i
 $removeparam=afflid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org
-$removeparam=LSID
 $removeparam=affuid
 $removeparam=icid2
 $removeparam=refclickid
 $removeparam=irclid
 $removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
+$document,removeparam=/^cid_.*$/
 $document,removeparam=p_sid,domain=~wgv.de
 $removeparam=depth_1-utm_source
 $removeparam=cmp_id
@@ -1193,6 +1189,7 @@ $removeparam=af_adset_id
 $removeparam=af_c_id
 $removeparam=af_channel
 $removeparam=af_click_lookback
+$removeparam=af_cost_model
 $removeparam=af_force_deeplink
 $removeparam=af_referrer_customer_id
 $removeparam=af_referrer_uid
@@ -1342,6 +1339,7 @@ $removeparam=google_nid
 $removeparam=cbuster
 $removeparam=adsafe_jsinfo
 $removeparam=ex-src
+$document,removeparam=uid_bam
 $removeparam=pv_ts
 $removeparam=bidswitch_ssp_id
 $removeparam=tgclid
@@ -1846,7 +1844,6 @@ $removeparam=SID,domain=ae.com|anntaylor.com|applevacations.com|ashford.com|auto
 $removeparam=acid,domain=lenovo.com
 $removeparam=aid,domain=adguard-dns.com|adguard-vpn.com|adguard.com|brownells.*|cafago.com|get.protonmail.com|get.protonvpn.com|tomtop.com|viator.com|wevpn.com
 $removeparam=camp,domain=amazon.*|calvinklein.*|dickssportinggoods.com|dockers.com|dressbarn.com|lanebryant.com|levi.com|maurices.com|worldmarket.com|xg4ken.com
-$removeparam=channelref,domain=asos.com
 $removeparam=cmp,domain=agentprovocateur.com|brooksbrothers.com|cbc.ca|hulu.com|bestbuy.com
 $removeparam=cp,domain=converse.com|nike.com|nextdoor.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
 $removeparam=mc,domain=bose.*|hallmark.com
@@ -2039,7 +2036,6 @@ $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.u
 $removeparam=cxt,domain=twitter.com|x.com
 ||comodo.com^$removeparam=track
 $removeparam=af,domain=1fichier.com|comodo.com
-$removeparam=intcid,domain=cbsnews.com
 ||lidl.$removeparam=flyx
 $removeparam=s_kw,domain=expansion.com|marca.com
 ||qwant.com^$removeparam=client
@@ -2292,7 +2288,6 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 @@||email-link.$removeparam
 @@||manage.kmail-lists.com/subscriptions^$removeparam
 @@||urldefense.com^$removeparam
-@@||flagpedia.net^$ping,xmlhttprequest,removeparam=gtm
 @@/login-redirect/*$removeparam
 @@/login?$removeparam=referrer
 1000mg.jp,1geki.jp,2nn.jp,4travel.jp,account.nicovideo.jp,altema.jp,amiami.jp,amy.tokyo,ark-pc.co.jp,ascii.jp,athome.co.jp,atpress.ne.jp,auone.jp,automaton-media.com,biccamera.com,blog.esuteru.com,bloomberg.co.jp,books-sanseido.jp,cdjapan.co.jp,cero.gr.jp,ch.nicovideo.jp,cinematoday.jp,coat.co.jp,cookpad.com,dengekionline.com,diamond.jp,direct.sanwa.co.jp,dmkt-sp.jp,dmm.co.jp,dmm.com,doope.jp,doorblog.jp,dto.jp,eagate.573.jp,entabe.jp,entamepost.jp,eonet.jp,epark.jp,eposcard.co.jp,expresscard.jp,expy.jp,familio-folkloro.com,famitsu.com,faq.radiko.jp,fgomatomeplus.com,g123.jp,gamefactory.jp,gamepedia.jp,gameranbu.jp,gamewith.jp,geekjob.jp,getchu.com,gigazine.net,goguynet.jp,granbluefantasy.jp,gta5.jp,h1g.jp,hentai-image.com,hentai-img.com,hosyusokuhou.jp,hotpepper.jp,huffingtonpost.jp,hulu.jp,ib-game.jp,impress.co.jp,innervision.co.jp,insightnow.jp,iphone-mania.jp,itmedia.co.jp,japan-animemusic.com,jgrants-portal.go.jp,jmty.jp,joshinweb.jp,jp.ign.com,jp.nexon.com,jp.wsj.com,k-manga.jp,kabutan.jp,kakaku.com,kamigame.jp,kinokuniya.co.jp,kitimama-matome.net,kojima.net,konoyubitomare.jp,livedoor.com,logroid.blogspot.com,maidonanews.jp,mainichi.jp,mapion.co.jp,matu.cocolog-nifty.com,mechacomic.jp,melonbooks.co.jp,mgjshop.co.jp,mineo.jp,mixi.jp,mora.jp,nazonazo.jp,nec.co.jp,neowing.co.jp,news.infoseek.co.jp,newsweekjapan.jp,nicenature.top,nicoco.net,nijie.info,nikkan.co.jp,nojima.co.jp,ntj.jac.go.jp,nttxstore.jp,ocn.ne.jp,odakyu.jp,omni7.jp,onojibi.jp,originalnews.nico,osawa-inc.co.jp,otakomu.jp,otanew.jp,pex.jp,platinedispositif.net,point.recruit.co.jp,poptapbeat.taiko-ch.net,qa.nicovideo.jp,qoo10.jp,rakuten.co.jp,rank-king.jp,recipe-blog.jp,research-panel.jp,sankei.com,sanwa-d.co.jp,security-next.com,seesaa.jp,seiga.nicovideo.jp,sengokuixa.jp,shogakukan.co.jp,store-tsutaya.tsite.jp,suruga-ya.jp,suumo.jp,takarazuka-an.co.jp,taking-a-stand.jp,tenki.jp,tinami.com,tokubai.co.jp,tokyo-np.co.jp,tsukumo.co.jp,tv-tokyo.co.jp,vector.co.jp,vippers.jp,vita.taiko-ch.net,weathernews.jp,web-ace.jp,webcomics.jp,weblio.jp,westjr.co.jp,wowkorea.jp,wowma.jp,www.gpoint.co.jp,www.homes.co.jp,www.infoseek.co.jp,www.jorudan.co.jp,www.meti.go.jp,www.nikkei.com,www.nintendo.co.kr,www.swiki.jp,yahoo.co.jp,yamanashirei.blog.fc2.com,yodobashi.com,yomiuri.co.jp,yugioh-card.com,~justpass.epark.jp,~mall.epark.jp,bookmeter.com,mottainaihonpo.com,netoff.co.jp,tokyodisneyresort.jp,nijimen.kusuguru.co.jp,applion.jp,mayla.jp,kawade.co.jp,koupenchan-store.jp,asunaro.shop-pro.jp,st-c.co.jp,eikoh-prize.jp,cocreco.kodansha.co.jp,kenko-tokina.co.jp,ganguoroshi.jp,shop.hanshintigers.jp,loft.co.jp,universal-music.co.jp,animate-onlineshop.jp,takaratomymall.jp,shop.adidas.jp,ftnews.jp,rtrp.jp,jalan.net,2ch2.net,japan-baseball.jp#$#:is(body,div,li,a,strong,dd,span) { font-family: "Segoe UI", "Calibri", "Verdana", "Ubuntu", "Noto Sans CJK JP", "Noto Sans CJK", "Hiragino Maru Gothic Pro W4", "ヒラギノ丸ゴ W4", "Hiragino Maru Gothic Pro W3", "ヒラギノ丸ゴ W3", "Ume Gothic", "Ume UI Gothic", "Yu Gothic", "Yu Gothic UI", "Meiryo", "メイリオ", "BabelStone Han", "Nishiki-teki", "FRBTaiwaneseKana", "Malgun Gothic", "맑은 고딕", "NanumGothic", "AppleSDGothicNeo", "NanumBarumGothic", "sandoll-gothicneo3", "sandoll-gothicneo2", "sandoll-gothicneo1", "NanumSquareRoundB", sans-serif !important }
