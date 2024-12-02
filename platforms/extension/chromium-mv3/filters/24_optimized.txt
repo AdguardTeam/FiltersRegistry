@@ -1,10 +1,19 @@
-! Checksum: H6LAYOS9dVm6+lHLwj5K3g
+! Checksum: 6NK3hWckZXTc/c30fndgEg
 ! Title: AdGuard Quick Fixes filter (Optimized)
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.4.16
-! TimeUpdated: 2024-12-02T09:40:44+00:00
+! Version: 2.0.4.17
+! TimeUpdated: 2024-12-02T10:34:40+00:00
 ! Expires: 10 days (update frequency)
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
+||openx.tiesraides.lv^
+||cdn.tiesraides.lv/app/viblast/*/videojs.vast.js
+||cdn.tiesraides.lv/app/viblast/*/lib/vast-client.js
+tiesraides.lv#%#//scriptlet('trusted-replace-node-text', 'script', 'VideoJsPlayer', 'vid.vast({', '//vid.vast({')
+1jour1film.*#%#//scriptlet('remove-attr', 'href', '#clickfakeplayer')
+jeansaispasplus.homes#%#//scriptlet('set-constant', 'Set_Popup', '2')
+jeansaispasplus.homes#%#//scriptlet('prevent-window-open', '/^(?!.*(\/d\/)).*$/')
+jeansaispasplus.homes#%#//scriptlet('prevent-addEventListener', 'click', 'Set_Popup')
+jeansaispasplus.homes###video_player ~ div[id]:has(> div[style^="position:fixed;inset:0px;z-index"] > a[target="_blank"])
 powstream.*##.ad
 powstream.*###oly
 powstream.*###uverlay

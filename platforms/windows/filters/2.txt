@@ -1,9 +1,9 @@
-! Checksum: P7MmWjok0Cmqse2gGIfdpg
-! Diff-Path: ../patches/2/2-s-1733132713-3600.patch
+! Checksum: yFAX7aOOPC2utSyv9X2sAg
+! Diff-Path: ../patches/2/2-s-1733135911-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.62.89
-! TimeUpdated: 2024-12-02T09:31:32+00:00
+! Version: 2.3.62.90
+! TimeUpdated: 2024-12-02T10:31:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7473,6 +7473,7 @@
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||openx.tiesraides.lv^
 ||ctent.povvverz.one^
 ||az-neverblock.aznude.workers.dev^
 ||creatives.wetransfer.net^
@@ -22676,6 +22677,10 @@ mixnews.lv##.banner-space
 mixnews.lv##img[src="/images/baltkom_player_tez.jpg"]
 vesti.lv###subscribe-banner
 vesti.lv##.banner
+! https://github.com/AdguardTeam/AdguardFilters/issues/193917
+||cdn.tiesraides.lv/app/viblast/*/videojs.vast.js
+||cdn.tiesraides.lv/app/viblast/*/lib/vast-client.js
+tiesraides.lv#%#//scriptlet('trusted-replace-node-text', 'script', 'VideoJsPlayer', 'vid.vast({', '//vid.vast({')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181477
 ||antik-war.lv^$cookie=AntikWarUsersGood
 antik-war.lv##center > a[onclick^="countAdClick"]
@@ -30584,9 +30589,9 @@ gpucheck.com#%#//scriptlet('set-constant', 'myAdManager', 'emptyObj')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175480
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159332
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148909
-moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top#%#//scriptlet('prevent-addEventListener', 'click', 'Set_Popup')
-moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top#%#//scriptlet('set-constant', 'Set_Popup', '2')
-moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top,hindimoviestv.com#%#//scriptlet('prevent-window-open', '/^(?!.*(\/d\/)).*$/')
+jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top#%#//scriptlet('prevent-addEventListener', 'click', 'Set_Popup')
+jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top#%#//scriptlet('set-constant', 'Set_Popup', '2')
+jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top,hindimoviestv.com#%#//scriptlet('prevent-window-open', '/^(?!.*(\/d\/)).*$/')
 hindimoviestv.com#%#//scriptlet('abort-on-property-read', 'PopShow3')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148849
 telugu360.com#%#//scriptlet('trusted-click-element', '.skip_ad_custom')
@@ -35238,6 +35243,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+gadgetsnow.indiatimes.com##.mercwapper
+gadgetsnow.indiatimes.com##div[class]:has(> div[data-mode="thumbnails-mid"])
+nmac.to##.sidebar-inner > div.widget-unwrapped:has(> iframe[src^="//acceptable.a-ads.com/"])
+nmac.to##.it-ad:not(:has(form.form-search))
 parkers.co.uk##.grid-list > li.grid-list__cell:has(> div.grid-list__cell__content > div.advert)
 parkers.co.uk##.grid-list > li.grid-list__cell:has(> div.grid-list__cell__content div.advert-container)
 workupload.com##.row > .text-center.col-md-6
@@ -51496,7 +51505,7 @@ chron.com#?#main > div[data-layout="Layout2ColumnPadded"] > .none > .package.non
 whatismyipaddress.com#?#.fl-page-content > .fl-builder-content > .fl-row > .fl-row-content-wrap:has(#whatismyipaddress_billboard_mid)
 app.mobalytics.gg#?##container > div > aside > div[class] > div[class]:has(> div[class] > header > div > span:contains(/^Advertisement$/))
 apnews.com#$?#.Page-header-leaderboardAd { remove: true; }
-vidstreaming.xyz,boosterx.stream,filmcdn.top,moviesapi.club,vidlop.com,vectorx.top,mov18plus.cloud,forplayx.ink###video_player ~ div[id]:has(> div[style^="position:fixed;inset:0px;z-index"] > a[target="_blank"])
+jeansaispasplus.homes,vidstreaming.xyz,boosterx.stream,filmcdn.top,moviesapi.club,vidlop.com,vectorx.top,mov18plus.cloud,forplayx.ink###video_player ~ div[id]:has(> div[style^="position:fixed;inset:0px;z-index"] > a[target="_blank"])
 eporner.com#?#.mb:has(> .adnative-1x1)
 independent.co.uk#?##main > div:has(> div[data-mpu])
 reuters.com#?#div[class^="regular-article-layout__refinitiv_workspace"]:has(> div[class] > a img[class^="workspace-article-banner"])
