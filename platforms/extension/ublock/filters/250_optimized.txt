@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: COTq3gLNJLlKyXK7r1ck9g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1733072746-14400.patch
+! Checksum: 49K62mBmFs6V/+RJu9Ui1w
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1733115947-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.68
@@ -56,11 +56,10 @@
 ~macgamestore.com##.get-the-app:not(html,body,:empty)
 adguard.com##.sidebar-download
 bilibili.com##.nav-link-item a[href$="app.bilibili.com"]
+dagbladet.no##.slide-in-banner
 ifeng.com##.openApp[onclick^="loadOpen.init(download"]
 imageban.ru##img[alt="Get it on Google Play"]
 kurashiru.com##.footer-image-wrapper
-metservice.com##.Footer-section--promo
-metservice.com##.HasPromoPadding
 momondo.*#$##mobile-splash-popup { display: none!important }
 momondo.*#$##mui-header { display: block!important }
 momondo.*#$#.flights-section-container { display: block!important }
@@ -148,7 +147,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||[2a02:1668:1034::2]^$document
 ||auslogics.com^$document
 /^(.*\.|.*//)?tkqlhce\.com/click-.*([?&][a-tv-z]{1,}(=[a-zA-Z0-9]{1,})?){1,}$/$document
-||trkk4.com^$document,domain=~malware-redirection-trains.*
 ||driversupport.com^$document
 /^(.*://|.*\.)?[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz(/.*)?$/$document
 ||datingmap.top^$document
@@ -760,8 +758,6 @@ pixiv.net##div > div + section:has(a[href^="/premium/lead/"])
 cda.pl##.video-baner
 cda.pl##.row-video-clip-wrapper
 cda.pl###tVC
-||images.opencollective.com^$domain=socket.io
-||socket.io/images/sponsors^$image
 fandom.com##.ad-slot-placeholder
 amap.com##.dir_qr
 csair.com##.qrcode
@@ -849,6 +845,7 @@ fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no##+js(set-constant, __INITIAL_STATE__.features.should-show-snow, false)
 /particles.min.js^
 ##.snowflakes:not(html, body)
+/snowfall.min.jquery.js
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
 alpresor.se##+js(abort-current-script, snowMax)
@@ -856,6 +853,7 @@ alpresor.se##+js(abort-current-script, snowMax)
 /wp-content/plugins/christmasify^
 /wp-content/plugins/snow-3d^
 daz3d.ru##+js(set-constant, snow, undefined)
+/let-it-snow.
 /snow-falling.js
 /snowfall-master.min.js
 /snowfall.jquery.
@@ -900,6 +898,7 @@ reports.adguard.com$badfilter
 @@||fanboy.co.nz/*.txt^
 ||gazisoft.com/services.php?*service=namaz^$third-party
 thenews.com.pk##a[href$="/prayer-time"]
+ahaber.com.tr##.menu-timer
 trgthaber.com.tr,haberturk.com##a[href$="namaz-vakitleri"]
 todaytime.ir##.navbar-nav [href="/اوقات-شرعی-اذان"]
 ##a[href$=PrayerTimes]
@@ -1024,7 +1023,6 @@ $document,removeparam=xtor
 $document,removeparam=SRC
 $document,removeparam=ectrans
 $document,removeparam=dartycid
-$document,removeparam=bbaid
 ||paypal.$document,removeparam=ppid
 $document,removeparam=unptid
 $document,removeparam=unp_tpcid
@@ -1181,10 +1179,8 @@ $removeparam=adposition
 $removeparam=gbraid
 $removeparam=wbraid
 $removeparam=cvosrc
-$document,removeparam=/^cvo_.*$/
 $removeparam=ads_params
 $removeparam=recurring_goal_id
-$removeparam=CJPIXEL
 $document,removeparam=/^affiliateID=.*$/i
 $removeparam=affiliate_id
 $removeparam=affiliate_location_id
@@ -1264,7 +1260,6 @@ $removeparam=data1,domain=~web3.cmvm.pt
 $removeparam=data2
 $removeparam=data3
 $removeparam=effi_id
-$removeparam=effi_id2
 $removeparam=fobs
 $removeparam=pubref
 $removeparam=sub1
@@ -2016,6 +2011,7 @@ $document,removeparam=ct,domain=apple.com|bumble.com|newsroom.co.nz
 ||apple.com^$removeparam=/^ign-.*$/
 $removeparam=xcust
 $removeparam=xs,domain=skimresources.com|skimlinks.com|redirectingat.com
+$removeparam=variant,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=algo,document
 $removeparam=imp_id,document
 ||steampowered.com^$removeparam=ser
@@ -2199,6 +2195,7 @@ $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
 $removeparam=sub,domain=allboner.com|twinkvideos.com
 ||fandom.com^$removeparam=so
+||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
 ||tokopedia.com^$removeparam=extParam
 ||tokopedia.com^$removeparam=refined
@@ -2301,6 +2298,8 @@ $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengaw
 $document,removeparam=iId,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=partner,domain=accuweather.com|fastcompany.com|humblebundle.com
 ||audible.$removeparam=source_code
+||audible.$removeparam=ipRedirectFrom
+||audible.$removeparam=ipRedirectOriginalURL
 $removeparam=csrc,domain=mcafee.com|vitacost.com
 $removeparam=csrcl2
 ||mcafee.com^$removeparam=cctype
