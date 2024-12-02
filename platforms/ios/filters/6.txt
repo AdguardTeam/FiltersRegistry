@@ -1,9 +1,9 @@
-! Checksum: grEZBpaHI6bemcdWjVuc3g
-! Diff-Path: ../patches/6/6-s-1733150308-3600.patch
+! Checksum: VKEsk38NrBUNCT+HVTBFrA
+! Diff-Path: ../patches/6/6-s-1733168405-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.44.82
-! TimeUpdated: 2024-12-02T14:34:13+00:00
+! Version: 2.0.44.83
+! TimeUpdated: 2024-12-02T19:35:50+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -940,6 +940,10 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 @@||ads-api.twitter.com^$domain=schnittmuster-datenbank.de
 !
 !
+! https://github.com/uBlockOrigin/uAssets/issues/26234
+dfbplay.tv#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dfbplay.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189027
 xup.in#%#//scriptlet('set-constant', 'zshowabx', 'noopFunc')
 xup.in##body div#xupabx
@@ -2169,6 +2173,7 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+||api.app.dfbplay.tv/*/Adverts/
 winfuture.de##.green_box.bulb:has( a[href^="https://winfutu.re"])
 winfuture.de##.green_box.bulb[style="display: none !important;"] + br
 winfuture.de##a[href^="https://winfutu.re"] + br

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ctibmXThN8uOCQSLekqqFw
-! Diff-Path: ../patches/14/14-s-1733161116-3600.patch
+! Checksum: IqjMi8lBjIZhTrROHqiZ/A
+! Diff-Path: ../patches/14/14-s-1733168397-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.15.36
-! TimeUpdated: 2024-12-02T17:34:58+00:00
+! Version: 2.2.15.37
+! TimeUpdated: 2024-12-02T19:36:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2469,6 +2469,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+||sfirmware.com/ajax/gdpr-desc
 fedex.com##fedex-gdpr
 foundryvtt.com###analytics-prompt
 genspark.ai##.agree_terms_dialog_background
@@ -15641,6 +15642,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !
 !
 !
+! https://github.com/uBlockOrigin/uAssets/issues/26234
+@@||app.usercentrics.eu/browser-ui/$domain=dfbplay.tv
+@@||api.usercentrics.eu/settings/$domain=dfbplay.tv
 ! paramountplus.com - player does not appear
 @@||consent-api.onetrust.com/v1/preferences?syncgroup=$domain=paramountplus.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193887
@@ -30528,7 +30532,8 @@ myfoxzone.com,wtol.com,5newsonline.com,fox61.com,wthr.com,wqad.com,fox43.com,10t
 dream.ai##div[data-testid="overlay-backdrop"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/89306
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74468
-pasco.com#$#body { overflow: visible!important; }
+! Not shown when visiting the site anymore - 2024-12-02
+! pasco.com#$#body { overflow: visible!important; }
 !
 grammarly.com#$#div[class="_1X8pZ-src-shared-components-popup--popup-overlay"] { display: none !important; }
 grammarly.com#$#body { overflow: auto !important; }
@@ -53255,7 +53260,6 @@ goodssh.com##+js(set-constant, counter, -1)
 a2zupload.com##+js(nano-setInterval-booster, download, , 0.02)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45486
 katfile.com##+js(adjust-setTimeout, #freebtn, , 0.02)
-! https://github.com/AdguardTeam/AdguardFilters/issues/45347
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43273
 !+ NOT_PLATFORM(windows, mac, android)
 coolrom.com.au##+js(adjust-setTimeout, download())
