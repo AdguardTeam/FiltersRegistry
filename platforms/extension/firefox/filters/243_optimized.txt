@@ -1,9 +1,9 @@
-! Checksum: YW3UjQxSBPHR/0CehA8yag
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1733029536-14400.patch
+! Checksum: CPhEcUad6+rE+JVMbcp9Kg
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1733130387-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.17
-! TimeUpdated: 2024-12-01T05:01:43+00:00
+! Version: 2.0.20.18
+! TimeUpdated: 2024-12-02T09:02:13+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -1257,10 +1257,10 @@ sweclockers.com##div[class^="card-info"]:has-text(/spons/i):upward(.card)
 sweclockers.com###prisjakt-popular, .ad:not(.adPanorama), .adForumSticker, .dark-mode__sponsor
 sweclockers.com##.bbSize:has-text(Sponsormeddelande):upward(.bbRelatedBox)
 swedroid.se#$?#a[target="_blank"]:upward(li.Notice) { remove: true; }
-swedroid.se##div[id$="_ad"], div[id$="_ad_mobile"], .externalTopMobile, #externalTopMobile, a[href*="prisjakt.nu/produkt"], #nativendo-mainfeed + aside > .article, .article-footer > h3, .article-footer > .aeChart, #newExternal
+swedroid.se##div[id$="_ad"], div[id$="_ad_mobile"], .externalTopMobile, #externalTopMobile, #nativendo-mainfeed + aside > .article, .article-footer > h3, .article-footer > .aeChart, #newExternal, div[onclick*="prisjakt.nu/produkt"]
 swedroid.se#%#//scriptlet('ubo-rmnt.js', 'script', 'checkAdsBlocked')
 swedroid.se##.mostReadMobile:has-text(/annons/i)
-swedroid.se##.puff:has(script[src*="lwadm.com"], .pjSidebar)
+swedroid.se##.puff:has(script[src*="lwadm.com"], .pjSidebar, div[onclick*="prisjakt.nu/produkt"])
 swehockey.se##[class*="-reklam"], .sif-sponsorer, .teaserblock, .commonblock a:not([href^="/"], [href*="/swehockey.se"])
 sydasien.se##.thb-cookie-bar
 sydnarkenytt.se##.toppbanner-outer, .reklamplats_hspalt, .egenbanner
