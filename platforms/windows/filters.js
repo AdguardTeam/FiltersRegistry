@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.23",
-			"timeUpdated": "2024-12-03T06:34:42+0000",
+			"version": "2.0.77.24",
+			"timeUpdated": "2024-12-03T12:36:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.87",
-			"timeUpdated": "2024-12-03T11:36:23+0000",
+			"version": "2.0.59.88",
+			"timeUpdated": "2024-12-03T12:36:54+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.15.44",
-			"timeUpdated": "2024-12-03T11:36:44+0000",
+			"version": "2.2.15.45",
+			"timeUpdated": "2024-12-03T12:37:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -639,8 +639,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.73.57",
-			"timeUpdated": "2024-12-03T10:34:12+0000",
+			"version": "2.0.73.58",
+			"timeUpdated": "2024-12-03T12:37:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.52.38",
-			"timeUpdated": "2024-12-03T11:36:51+0000",
+			"version": "2.0.52.39",
+			"timeUpdated": "2024-12-03T12:37:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -809,8 +809,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.10.36",
-			"timeUpdated": "2024-12-03T10:34:20+0000",
+			"version": "2.0.10.37",
+			"timeUpdated": "2024-12-03T12:37:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.27.7",
-			"timeUpdated": "2024-12-03T10:34:25+0000",
+			"version": "2.1.27.8",
+			"timeUpdated": "2024-12-03T12:37:32+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

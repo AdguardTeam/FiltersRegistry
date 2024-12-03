@@ -1,9 +1,9 @@
-! Checksum: Y6cLhv9UfunXSapAMVHZFg
-! Diff-Path: ../patches/14/14-s-1733226058-3600.patch
+! Checksum: Ik0IOS7oMVXLOxW+E9onvw
+! Diff-Path: ../patches/14/14-s-1733229677-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.15.44
-! TimeUpdated: 2024-12-03T11:36:44+00:00
+! Version: 2.2.15.45
+! TimeUpdated: 2024-12-03T12:37:15+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2510,6 +2510,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+support.wolterskluwer.ca###siCookieNoticeContainer
 wolt.com#%#//scriptlet('trusted-click-element', 'button[data-localization-key="gdpr-consents.banner.manage-cookies-button"]')
 wolt.com#%#//scriptlet('trusted-click-element', 'body[style="padding-inline-end: 17px;"] button[data-test-id="manage-consents-v2-save-button"]', '', '2000')
 justica.gov.pt##.justica-cookie_bar
@@ -54155,6 +54156,9 @@ nanjei-baseball.blog.jp,baynews.blog.jp,xresolutionx.livedoor.blog,kimamamatome.
 !
 ! NOTE: Blogroll specific rules
 !
+jiwasoku.com##[id^="mobile_text"]:has(> div.text-mobile > div[id^="sp-top_body"])
+jiwasoku.com##[class^="widget"]:has(> div > div[id^="top_body"])
+jiwasoku.com###widget-in-article
 ||danseisama.com/js/*link.js
 kimootoko.net##div:has(> div.textwidget > div.tyuou)
 vipnews.jp###lite_link:has(> ul.list-box > li > a[href^="https://bit.ly/"])
