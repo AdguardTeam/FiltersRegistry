@@ -1,9 +1,9 @@
-! Checksum: ExZyf4O+snB13ukItkL69A
-! Diff-Path: ../patches/2/2-s-1733222257-3600.patch
+! Checksum: MwIPs9Xh2jHDdp7WlHSRMQ
+! Diff-Path: ../patches/2/2-s-1733226051-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.63.6
-! TimeUpdated: 2024-12-03T10:31:24+00:00
+! Version: 2.3.63.7
+! TimeUpdated: 2024-12-03T11:31:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10039,11 +10039,11 @@ uptoearn.xyz#%#//scriptlet('trusted-replace-node-text', 'script', 'downloadConfi
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164439
 infinityscans.net,infinityscans.xyz#?#.user-select-none > .alert:has(> .p-3:contains(/^Advertisement blockers/))
 infinityscans.net,infinityscans.xyz#%#//scriptlet('prevent-window-open', '/quackupsilon\.com|sunnshele\.com|pubadx\.one|psegeevalrat\.net/')
-infinityscans.net,infinityscans.xyz#%#//scriptlet("abort-current-inline-script", "$", "['html']")
+infinityscans.net,infinityscans.xyz#%#//scriptlet("abort-current-inline-script", "$", "/\['html'\]|\['toString'\][\s\S]*?'bind'/")
 infinityscans.net,infinityscans.xyz#%#//scriptlet("trusted-replace-outbound-text", "atob", "window.matchMedia('(display-mode: standalone)').matches", "!0")
 infinityscans.net,infinityscans.xyz#%#//scriptlet("trusted-replace-outbound-text", "atob", "/[\s\S]*?(pagead2\.googlesyndication\.com|googletag|depend on advertisement)[\s\S]*?window\.stop[\s\S]*/")
 infinityscans.net,infinityscans.xyz#%#//scriptlet('trusted-replace-node-text', 'script', 'catch', '/catch\(.{1,20}\)\{.{1,2000}window\[.stop.\]\(\);}/', 'catch(e){}')
-infinityscans.net,infinityscans.xyz#%#//scriptlet('trusted-create-element', 'body', 'div', 'id="hkRVplDugaPY"')
+@@||ubo.zapto.org/admgr.js$domain=infinityscans.xyz|infinityscans.net
 @@||cdn.statically.io/gh/ubo-coder/og/main/adsAPI.js$domain=infinityscans.xyz|infinityscans.net
 @@||infinityscans.*/*.js$script,domain=infinityscans.xyz|infinityscans.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164348
@@ -63226,7 +63226,6 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /RealMedia/ads/*$~xmlhttprequest
 /redirect/?spot_id=
 /redirect?tid=
-/reklam.$domain=~github.com|~reklam.com.tr
 /reklam/*$~xmlhttprequest,domain=~cloudflare.com|~github.com|~reklam.com.tr
 /reklama2.jpg$image
 /reklama2.png$image,domain=~aerokuz.ru
@@ -113143,6 +113142,7 @@ browsershots.org#@#.advert_area
 ||js.phoenixmanga.com^
 ||js.surecart.com/v1/affiliates?
 ||jsdelivr.net/gh/InteractiveAdvertisingBureau/
+||jsdelivr.net/gh/qxomer/reklam@master/reklam.js
 ||jsdelivr.net/npm/prebid-
 ||jvzoo.com/assets/widget/
 ||jwpcdn.com/player/*/googima.js
@@ -123187,6 +123187,7 @@ nicelocal.com##div[style="min-height: 90px;"]:has(iframe[id^="google_ads_"])
 tartaria-faucet.net##div[style^="display"]:has([src^="https://multiwall-ads.shop/"])
 90min.com##figure:has(> div > #mm-player-placeholder-large-screen)
 nex-software.com##h4:has(a[href$="/reimage"])
+bing.com##li.b_algo:has(img.cico.siteicon.rms_img[src^="https://www.bing.com/th?id=O"])
 walmart.com##li.items-center:has(div[data-ad-component-type="wpa-tile"])
 walgreens.com##li.owned-brands:has(figure.sponsored)
 macys.com##li.productThumbnailItem:has(.sponsored-items-label)
