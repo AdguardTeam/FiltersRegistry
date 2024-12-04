@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.63.15",
-			"timeUpdated": "2024-12-04T05:31:24+0000",
+			"version": "2.3.63.16",
+			"timeUpdated": "2024-12-04T06:31:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.88",
-			"timeUpdated": "2024-12-03T12:36:54+0000",
+			"version": "2.0.59.89",
+			"timeUpdated": "2024-12-04T06:35:41+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -612,8 +612,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.30",
-			"timeUpdated": "2024-12-03T08:36:20+0000",
+			"version": "2.0.48.31",
+			"timeUpdated": "2024-12-04T06:36:05+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.52.44",
-			"timeUpdated": "2024-12-04T04:34:19+0000",
+			"version": "2.0.52.45",
+			"timeUpdated": "2024-12-04T06:36:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.61",
-			"timeUpdated": "2024-12-04T05:35:05+0000",
+			"version": "2.0.28.62",
+			"timeUpdated": "2024-12-04T06:36:08+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -801,8 +801,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.4.24",
-			"timeUpdated": "2024-12-03T16:35:49+0000",
+			"version": "2.0.4.25",
+			"timeUpdated": "2024-12-04T06:36:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

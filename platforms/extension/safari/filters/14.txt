@@ -1,9 +1,9 @@
-! Checksum: vuSJBF49ac0FIr1o49SVxA
-! Diff-Path: ../patches/14/14-s-1733290709-3600.patch
+! Checksum: KiwNi/SAF0O1i6UZHWRIKg
+! Diff-Path: ../patches/14/14-s-1733294380-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.15.54
-! TimeUpdated: 2024-12-04T05:34:57+00:00
+! Version: 2.2.15.55
+! TimeUpdated: 2024-12-04T06:36:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2511,6 +2511,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+mic.eucast.org#%#//scriptlet('trusted-set-cookie', 'cookieconsent_status', 'dismiss')
 shop-apotheke.com#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-accept-all-button"]')
 myworkdayjobs.com##div[data-automation-id="legalNotice"]
 atresplayer.com#$#body { overflow: auto !important; }
@@ -16413,6 +16414,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194027
+mic.eucast.org#@#.cc-window[aria-label="cookieconsent"]
+mic.eucast.org#@#.cc-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194011
 @@||consent.cookiebot.com/uc.js$domain=shop-apotheke.com
 @@||consentcdn.cookiebot.com/sdk/$domain=shop-apotheke.com
@@ -53782,9 +53786,6 @@ apps2app.com#%#//scriptlet("adjust-setInterval", "#countdown", "", "0.02")
 mage.si#%#//scriptlet("adjust-setInterval", "countdown", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56155
 d0000d.com,do0od.com,ds2play.com,doods.pro,dooood.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws#%#//scriptlet("adjust-setInterval", ".countdown", "", "0.02")
-! https://github.com/AdguardTeam/AdguardFilters/issues/56054
-linkdecode.com#%#//scriptlet("adjust-setInterval", "counter--", "", "0.02")
-linkdecode.com#%#AG_onLoad(function(){var a=document.querySelector('body > .adsbygoogle[style^="float:"] > a[href]#popup');if(a)try{location=a.href}catch(b){}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55954
 anomize.xyz#%#//scriptlet("adjust-setInterval", "#timer", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55855
@@ -53849,9 +53850,6 @@ urlpay.net#%#//scriptlet("adjust-setInterval", "timer", "", "0.02")
 urlpay.net#%#!function(){if(-1<window.location.href.indexOf("/?go=")){var a=location.href.split("?go=");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51281
 prueba.pixelshost.com#%#!function(){if(-1<window.location.href.indexOf("?url=")){var a=location.href.split("?url=");if(a&&a[1])try{window.location=atob(a[1])}catch(b){}}}();
-! https://github.com/AdguardTeam/AdguardFilters/issues/51238
-curimovie.com#%#//scriptlet("adjust-setTimeout", "#counter", "", "0.02")
-curimovie.com#%#AG_onLoad(function(){var a=document.querySelector(".inside > a[href]#link");if(a)try{window.location=a.href}catch(b){}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51178
 ishort.xyz#%#//scriptlet("adjust-setTimeout", "countDown", "", "0.02")
 ishort.xyz#%#AG_onLoad(function(){if("object"===typeof _0xfcd1)try{/\?campain=81/.test(_0xfcd1.toString())&&(location="https://ishort.xyz/redir/?campain=81")}catch(a){}});
