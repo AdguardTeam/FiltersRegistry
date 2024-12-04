@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ZKhuHbT0V9nfe66wtGY+Dg
-! Diff-Path: ../patches/1/1-s-1733308754-3600.patch
+! Checksum: Vd29+0Elk7D0AvIbsygI9w
+! Diff-Path: ../patches/1/1-s-1733323137-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.85
-! TimeUpdated: 2024-12-04T10:31:13+00:00
+! Version: 2.0.95.86
+! TimeUpdated: 2024-12-04T14:31:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5512,6 +5512,7 @@ ya.ru##.i-mini-bem:has(> div[data-hydration-id] > div > div.direct-close-block)
 ya.ru##.main-home-banner
 !
 ! Yandex.Search
+ya.ru##div[data-hydration-id] > style + div[style^="--image-aspect-ratio:"]
 ya.ru,yandex.*##.services-feed_banner_yes
 ya.ru##.Skeleton_type_ad_search
 ya.ru,yandex.*##:matches-path(/search).AdvMedia
@@ -5527,6 +5528,8 @@ ya.ru,yandex.*##:matches-path(/search).content__right div[class][data-bem]:has(>
 ya.ru,yandex.*##:matches-path(/search).content__right div[class][data-cid]:has(> div[data-vnl*='"renderTo"'])
 ya.ru,yandex.*##:matches-path(/search).content__right div.serp-item:has(> div[data-state-id] span.LabelDirect)
 ya.ru,yandex.*##:matches-path(/search).content__right div.serp-item:has(> div[data-vnl*='"nonceId"'])
+! in the dropdown list of the search suggestions
+ya.ru##form[role="search"] div[id^="suggest-list-"] > div[class*="__group "]:has(> div[data-suggest-counter] [data-clps-id] > div[class$="__item-warning_disclaimer"])
 ! In the search suggestions when typing
 ya.ru##.mini-suggest__popup-content > div.mini-suggest__group_layout_separated:has(> div > a[target="_blank"])
 ! Right side, where usually shown useful content
