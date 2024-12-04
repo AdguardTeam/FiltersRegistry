@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kA2nT3l2opGskmBKsK+RmQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1733202355-14400.patch
+! Checksum: TQRrY+WxFlxp9fsJMDpr/A
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1733317591-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.19
-! TimeUpdated: 2024-12-03T05:01:46+00:00
+! Version: 2.0.20.20
+! TimeUpdated: 2024-12-04T13:01:54+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -391,8 +391,10 @@ designbase.se#$#html,body { overflow:unset!important; }
 designbase.se##.banner-hidden, .z-newsletter-modal, .z-newsletter-popup
 desktop-banner$image,domain=bokadirekt.se
 destination.se,sistaminuten.se##+js(set-cookie, CM_cookieConsent, 0)
+devote.se##article.article-object:has(.article_slideshow img[src*="samarbete"])
 devote.se##div[class^="ad_"], a[href*="annons"], a[href*="spel"], a[href*="casino"], a[href*="kasino"], a[href*="extrapengar"], a[href*="investera"], a[href*="boka"], a[href*="strategier"], a[href*="buda-"]
 devote.se##div[data-losjs^="borka"]:upward(1)
+devote.se##:is(.tag_articles_item, .toplist_article):has(img[src*="samarbete"])
 devote.se,familjeliv.se##div[style*="height: 244px;"]
 digitalavykort.se##.rightdiv p:has-text(/casino|kasino|lån|betting|odds|lotto/i)
 digitalfotoforalla.se,iform.se,pctidningen.se,varldenshistoria.se##.scroll-message, .gallery-banner, .horseshoe, [data-ad-type], .bcm-banner, .default-banner-size
@@ -1396,10 +1398,11 @@ vietnamportalen.se##br ~ a[target="_blank"]
 viivilla.se##gen-article-wrapper:has(.article__header-native-banner)
 viivilla.se###rich-media-wrapper
 viivilla.se##.teaser:has(.teaser__native-marker)
+vilarare.se##.adcontainer
 vilaser.se##.Internal-ad
 vildmarken.se##.g-single:upward(section[data-settings*="background_background"])
 villalivet.se##.mtsnb, .villalivet-target, a[href*="/sponsrat-innehall/"], div[data-td-block-uid="tdi_85"], a[href*="utm_campaign"][target="_blank"], div[data-td-block-uid="tdi_87"]
-villalivet.se##:is(a, span):has-text(/sponsr/i):upward(3)
+villalivet.se##.td-block-title span:has-text(/sponsr/i):upward(3)
 villatidningen.se##.wppsac-post-carousel:has(a[href*="/spons"])
 vimedbarn.se#$?#button:has-text(/annons/i):upward(.owl-item) { remove: true; }
 vimedbarn.se##.annonsinlagg, .annonsen

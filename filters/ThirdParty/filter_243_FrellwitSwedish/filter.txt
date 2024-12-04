@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2024-12-03 05:54:09 CET
+! Last modified: 2024-12-04 12:10:03 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -396,8 +396,10 @@ designbase.se#$#html,body { overflow:unset!important; }
 designbase.se##.banner-hidden, .z-newsletter-modal, .z-newsletter-popup
 desktop-banner$image,domain=bokadirekt.se
 destination.se,sistaminuten.se#%#//scriptlet('ubo-set-cookie.js', 'CM_cookieConsent', '0')
+devote.se##article.article-object:has(.article_slideshow img[src*="samarbete"])
 devote.se##div[class^="ad_"], a[href*="annons"], a[href*="spel"], a[href*="casino"], a[href*="kasino"], a[href*="extrapengar"], a[href*="investera"], a[href*="boka"], a[href*="strategier"], a[href*="buda-"]
 devote.se##div[data-losjs^="borka"]:upward(1)
+devote.se##:is(.tag_articles_item, .toplist_article):has(img[src*="samarbete"])
 devote.se,familjeliv.se##div[style*="height: 244px;"]
 digitalavykort.se##.rightdiv p:has-text(/casino|kasino|lån|betting|odds|lotto/i)
 digitalfotoforalla.se,iform.se,pctidningen.se,varldenshistoria.se##.scroll-message, .gallery-banner, .horseshoe, [data-ad-type], .bcm-banner, .default-banner-size
@@ -1401,10 +1403,11 @@ vietnamportalen.se##br ~ a[target="_blank"]
 viivilla.se##gen-article-wrapper:has(.article__header-native-banner)
 viivilla.se###rich-media-wrapper
 viivilla.se##.teaser:has(.teaser__native-marker)
+vilarare.se##.adcontainer
 vilaser.se##.Internal-ad
 vildmarken.se##.g-single:upward(section[data-settings*="background_background"])
 villalivet.se##.mtsnb, .villalivet-target, a[href*="/sponsrat-innehall/"], div[data-td-block-uid="tdi_85"], a[href*="utm_campaign"][target="_blank"], div[data-td-block-uid="tdi_87"]
-villalivet.se##:is(a, span):has-text(/sponsr/i):upward(3)
+villalivet.se##.td-block-title span:has-text(/sponsr/i):upward(3)
 villatidningen.se##.wppsac-post-carousel:has(a[href*="/spons"])
 vimedbarn.se#$?#button:has-text(/annons/i):upward(.owl-item) { remove: true; }
 vimedbarn.se##.annonsinlagg, .annonsen
