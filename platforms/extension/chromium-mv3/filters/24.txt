@@ -1,8 +1,8 @@
-! Checksum: LU4ryAT8kR/eApDqevfSNg
+! Checksum: p/0dyIHDRyro8DV3WHlqCQ
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.4.35
-! TimeUpdated: 2024-12-05T06:34:50+00:00
+! Version: 2.0.4.36
+! TimeUpdated: 2024-12-05T07:34:40+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32,6 +32,16 @@
 ! BUG: https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2900
 ! TODO: remove this only when the issue above is fixed
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
+!
+! NOTE: 05-12-2024
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/194100
+||topcinema.show/static/js/adBlock.js
+topcinema.show#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
+! https://github.com/AdguardTeam/AdguardFilters/issues/194067
+nxbrew.net#$#body { overflow: auto !important; }
+nxbrew.net#$#div[id$="-blanket"] { display: none !important; }
+nxbrew.net#%#//scriptlet('prevent-addEventListener', '', 'aadb_get_data')
 !
 ! NOTE: 04-12-2024
 !
