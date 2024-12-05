@@ -1,5 +1,5 @@
-! Checksum: O1FwHbmyhQzde33syoma5g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1733288733-14400.patch
+! Checksum: HuqkiDKCo+LYcx8OFZVL6w
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1733375127-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.68
@@ -64,7 +64,6 @@ momondo.*#$##mobile-splash-popup { display: none!important }
 momondo.*#$##mui-header { display: block!important }
 momondo.*#$#.flights-section-container { display: block!important }
 pcgames.de##div.header_footer.ui-footer.ui-bar-inherit.ui-footer-fixed.slideup[data-role="footer"]
-radarbox.com##.apps
 roblox.com###app-bumper-main
 rt.com###offers
 soundcloud.com##article.mobileApps
@@ -135,7 +134,6 @@ coolrom.com.au,coolrom.com##.download_link
 /^172\.255\.6\.(\d\d?|[12][0-689]\d|17[0-689])\$/
 ||endorseprovisional.com^$all
 ||feverfreeman.com^$all
-||rattlekindergartencultivate.com^$all
 /^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 /^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 /^https?://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/.*)?$/
@@ -157,6 +155,7 @@ coolrom.com.au,coolrom.com##.download_link
 /^(.*\.|.*://)?[a-z0-9-]{2,}trk\.xyz(/.*)?$/$document,popup,domain=~malware-redirection-trains.*
 !+ NOT_OPTIMIZED
 /^https?://(www\.)?[a-z0-9-]{1,}\.[a-z]{2,17}/[a-z0-9]/\?[a-z0-9.-]{8,}\$/$document
+||kdmttk.com^$all
 /^(.*\.|.*//)?1xslot\d{5,}\.com(/.*)?$/$all
 /^(.*\.|.*//)?linebet\d{4}\.com(/.*)?$/$all
 /^(.*\.|.*//)?linebet\d{5,}[a-z]\.com(/.*)?$/$all
@@ -223,6 +222,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ###social_buttons:not([class*=body i])
 ###ss-floating-bar
 ###tell-a-friend
+###top_share
 ##.addthis_button_facebook:not(html,body,:empty)
 ##.addthis_button_more:not(html,body,:empty)
 ##.addthis_counter:not(html,body,:empty)
@@ -494,6 +494,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.twitter[href*="/share?"]:not(html,body,:empty)
 ##.twitter_share:not(html,body,:empty)
 ##a[class$=share-twitter]
+##a[class=twitter i][title=Tweet]
 ##a[data-js=twitter-share]
 ##a[data-sharer=twitter]
 ##a[href*="twitter.com/home?status="]
@@ -685,7 +686,6 @@ dianping.com##.qrcode-aside
 dianping.com##.shop-owner.mod
 ditu.amap.com###mobileenterance_no_bg
 jd.com###J_mobile
-lianjia.com,zu.ke.com,csair.com##.qr-code
 map.baidu.com##.message-panel-open
 map.baidu.com##.poi-ads
 map.baidu.com###leadDownloadCard
@@ -708,9 +708,6 @@ baidu.com##.poiLeadDownloadCard
 12306.cn##.foot-code
 flights.ctrip.com##.seo-links
 mafengwo.cn###footer
-globalpublishers.co.tz##.adcontainer
-globalpublishers.co.tz##.widget_custom_html a[href="#"]
-globalpublishers.co.tz###custom_html-40
 alaroye.org#@#.navbar-ad-section
 knowyourmeme.com###popular_galleries
 knowyourmeme.com###trending-bar
@@ -882,6 +879,7 @@ $removeparam=ysclid
 $document,removeparam=/^\??utm_.*$/i,domain=~tradedoubler.com|~sendgb.com|~allegro.pl|~tix.axs.com|~transfernow.*|~carrefourpl.snrpage.com|~justdial.com|~pepper.pl|~gaugau.futabanet.jp|~uploadnow.io
 $document,removeparam=/^itm_.*$/,domain=~redir.tradedoubler.com
 $document,removeparam=/^stm_.*$/,domain=~redir.tradedoubler.com
+$document,removeparam=/^_utm_.*$/i
 $removeparam=logTag,document
 $removeparam=gclsrc,document
 $document,removeparam=smid,domain=~amazon.*|~opinion.no
@@ -935,9 +933,7 @@ $document,removeparam=snr,domain=steampowered.com|steamcommunity.com|steamgames.
 $document,removeparam=referrer,domain=~bolt.com|~f4map.com|~deviantart.com|~github.com|~discover.*|~vimeo.*|~123-reg.co.uk|~cravesandflames.com|~portswigger.net|~aluminate.net
 $removeparam=iradid
 $removeparam=irpid
-$removeparam=iradtype
 $removeparam=irmptype
-$removeparam=mp_value1
 $removeparam=email_work_card
 $removeparam=tracking_source
 $~image,removeparam=itok
@@ -1028,7 +1024,7 @@ $removeparam=cmt
 $removeparam=at_gd
 $document,removeparam=/^amp=$/,domain=~eurasiantimes.com|~cybersecuritynews.com
 $removeparam=_gl
-$removeparam=AgentCode
+$removeparam=vfadid
 $removeparam=ncid
 $document,removeparam=/^ecid=.*$/i,domain=~account.microsoft.com
 $removeparam=mkt_tok
@@ -1130,6 +1126,7 @@ $removeparam=aff_track
 $removeparam=cj_aid
 $removeparam=cj_pid
 $removeparam=adj_campaign
+$removeparam=adj_adgroup
 $removeparam=ceneo_spo
 $removeparam=__s,document
 $removeparam=_kx
@@ -1156,7 +1153,6 @@ $document,removeparam=/^subid3=.*$/i
 $document,removeparam=/^subid4=.*$/i
 $document,removeparam=/^subid5=.*$/i
 $removeparam=tid1
-$removeparam=tid4
 $removeparam=avad
 $removeparam=__cn_tracker
 $document,removeparam=/^sfmc_.*$/
@@ -1232,6 +1228,7 @@ $removeparam=pk_source
 $removeparam=pk_content
 $removeparam=pk_kwd
 $removeparam=pk_keyword
+$removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
 $removeparam=ads_adid
@@ -1288,6 +1285,7 @@ $removeparam=relatedposts_origin
 $removeparam=relatedposts_position
 ref=itsfoss.com$document,removeparam=ref
 ref=news.itsfoss.com$document,removeparam=ref
+$removeparam=b_campaign
 $removeparam=gad_source
 $removeparam=ga_vid
 $removeparam=ga_sid
@@ -1752,11 +1750,15 @@ $removeparam=user_ip
 ||mp.weixin.qq.com^$removeparam=scene
 ||mp.weixin.qq.com^$removeparam=xtrack
 ||mp.weixin.qq.com^$removeparam=key
+||mp.weixin.qq.com^$removeparam=ascene
 ||mp.weixin.qq.com^$removeparam=uin
 ||mp.weixin.qq.com^$removeparam=devicetype
+||mp.weixin.qq.com^$removeparam=version
 ||mp.weixin.qq.com^$removeparam=exportkey
 ||mp.weixin.qq.com^$removeparam=pass_ticket
+$removeparam=clicktime
 $removeparam=nettype
+||mp.weixin.qq.com^$removeparam=abtest_cookie
 ||mp.weixin.qq.com^$removeparam=chksm
 ||mp.weixin.qq.com^$removeparam=count
 ||mp.weixin.qq.com^$removeparam=enterid
@@ -2343,7 +2345,6 @@ docs.google.com###docs-presence
 ://go.microsoft.com/fwlink/?LinkID=219472^$all
 foodora.*#$#.page-wrapper.order-component { margin-top: 128px !important }
 foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
-||dinreisevaksine.no/wp-content/themes/dbh/assets/images/background.jpg^
 @@/favicon.ico|
 @@/favicon1.ico|
 @@://adserver.adtech.advertising.
