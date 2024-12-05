@@ -1,9 +1,9 @@
-! Checksum: M9MvRy6pynrASMhEQzWE4Q
-! Diff-Path: ../patches/19/19-s-1733434689-3600.patch
+! Checksum: Myo1/+WMLnmCdBa2i5n5Rw
+! Diff-Path: ../patches/19/19-s-1733438323-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.46.70
-! TimeUpdated: 2024-12-05T21:34:53+00:00
+! Version: 2.0.46.71
+! TimeUpdated: 2024-12-05T22:35:16+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2750,7 +2750,7 @@ s0urce.io#?#.login-window > .login-element:has(>#messageTester)
 salidzini.lv#%#//scriptlet('prevent-setTimeout', 'testAdBlock')
 salon.com#%#//scriptlet("set-constant", "data.ad_free", "true")
 salon.com#%#//scriptlet("set-constant", "use_adblock", "false")
-salon.com#%#AG_defineProperty('salon_config.live_ads', {value: "0"});
+salon.com#%#//scriptlet('set-constant', 'salon_config.live_ads', '0')
 samfw.com###block-mess
 samfw.com###block-mess ~ div.holder
 sanalkurs.net#$#.advert { height: 1px!important; }
@@ -3168,7 +3168,6 @@ iqiyi.com##div[adid]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/22801
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14731
 ! m.iqiyi.com#%#//scriptlet("set-constant", "QiyiPlayerLoader.Package.ad.adPlayerId", "") - doesn't work probably due to scriptlet bug
-! m.iqiyi.com#%#AG_defineProperty('QiyiPlayerLoader.Package.ad.adMap', { value: {}, writable: false }); - another working rule, but fixed by a scriptlet
 sports.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.adPlayerId", "")
 www.iqiyi.com#%#//scriptlet('set-constant', 'QiyiPlayerProphetData.a.data', 'emptyObj')
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.parseXML", "noopFunc")
@@ -6328,8 +6327,8 @@ deadline.com##section[data-toaster-wrap]
 argumenti.ru###doscroll_prompt
 longreads.trust.org##.pa-footer
 behance.net##li[class^="PrimaryNav-loggedOutOption-"] > div[class*="PrimaryNav-tooltipWrapper-"]
-naga-ken.info,times.zt.ua,mercomindia.com,speedify.com,uniqueten.net,letsstudytogether.co,empowerwisconsin.org,legendofkorra.tv#$#html { overflow: auto !important; }
-naga-ken.info,times.zt.ua,mercomindia.com,speedify.com,uniqueten.net,letsstudytogether.co,empowerwisconsin.org,legendofkorra.tv#$#.pum-overlay { display: none !important; }
+naga-ken.info,times.zt.ua,mercomindia.com,speedify.com,letsstudytogether.co,empowerwisconsin.org,legendofkorra.tv#$#html { overflow: auto !important; }
+naga-ken.info,times.zt.ua,mercomindia.com,speedify.com,letsstudytogether.co,empowerwisconsin.org,legendofkorra.tv#$#.pum-overlay { display: none !important; }
 postupi.online##.asterisk-nd_sm
 goboo.com#$#section[class^="popIndexBox_"] { display: none!important; }
 goboo.com#$#body { overflow: auto!important; }
@@ -8266,9 +8265,6 @@ ft.com##.js-instant-alerts-promo
 lawlex.org##.mb_elegantModal
 procon.sp.gov.br##.jet-popup
 gitlab.com##.broadcast-notification-message
-freenulledworld.com#$?#.modal:has(> div.modal-dialog a[href^="https://play.google.com/store/"]) { display: none !important; }
-freenulledworld.com#$#.modal-backdrop:last-child { display: none !important; }
-freenulledworld.com#$#body.modal-open { overflow: visible !important; padding-right: 0 !important; }
 loudtechie.com#$#.featherlight { display: none !important; }
 loudtechie.com#$#html { overflow: visible !important; }
 speedify.com##.tco-content-dock
