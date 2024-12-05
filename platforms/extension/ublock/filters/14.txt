@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: gl4J9ZmmBOivLR7W7He++Q
-! Diff-Path: ../patches/14/14-s-1733398733-3600.patch
+! Checksum: ixWfCuklesj1ngPfeJVHWQ
+! Diff-Path: ../patches/14/14-s-1733408213-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.15.71
-! TimeUpdated: 2024-12-05T11:34:57+00:00
+! Version: 2.2.15.72
+! TimeUpdated: 2024-12-05T14:12:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2469,6 +2469,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+clickandprint.de#$##klaro { display: none !important; }
+clickandprint.de#$#.no-scroll { overflow: auto !important; }
+kaspersky.ru##section[data-at-selector="cookie-banner"]
 freebetrange.com##.landing__cookie-info
 cirkev.cz##.cookies-toolbar-wrapper
 fresha.com##div[class*="Banner_banner_"]:has(> div[role="dialog"] > div > p > a[href$="/cookies"])
@@ -2930,7 +2933,7 @@ packhelp.*,zapakuj.to###cookie-consent-mountpoint
 serasaexperian.com.br##.cookie_footer
 serasaexperian.com.br##.containerCookie
 airport.wroclaw.pl##body .cookies__overlay
-biglifejournal.com###polaris-consent-widgets
+saatva.com,biglifejournal.com###polaris-consent-widgets
 movistar.es###cookies-bar-component
 tallink.com#$##cms-web-consent-root { display: none !important; }
 tallink.com#$#body { overflow: auto !important; }
@@ -15660,6 +15663,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194140
+clickandprint.de#@#.cookie-notice:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194069
 @@||cdn.opencmp.net/tcf-v2/$domain=tz.de
 @@||cdn.opencmp.net/publisher/$domain=tz.de
@@ -24097,8 +24102,9 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+daily.dev##.start-reading-popover
+semianalysis.com##+js(set-cookie, SemiAnalysis_splash-screen, true)
 nuxt.com###__nuxt > div > a[href^="https://survey.devographics.com/"]
-||cdn.greenvideo.io/players/gv.js$domain=tz.de
 baseball-reference.com##+js(set-session-storage-item, sr_s, 1)
 mail.proton.me#?#section > div.tip-box:has(> div.tip-box-content > p > span > button:contains(@pm.me))
 klook.com##.mobile-login-google-one-tap-wrapper
@@ -49217,6 +49223,7 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+kaspersky.ru##div[class^="ArticleBody_conten"] > p > a[href^="/downloads/secure-connection-free-trial?"]
 nicomanga.com##div[class^="col-"] > center:has(> h3 > b > a[href="https://nicomanga.com/remove-all-ads/"])
 bellesa.co##div[class^="MediaQuery__Query-"]:has(div[class^="Display__RatioOuter"] > div[class^="Display__RatioInner"] > a[href^="https://bellesaplus.co/studio-preview/bellesa-originals"])
 nuxt.com##.space-y-3:has(> div[class] > div.flex-1 > a[href^="https://ui.nuxt.com/pro?"])

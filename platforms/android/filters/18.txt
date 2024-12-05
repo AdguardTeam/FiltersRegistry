@@ -1,9 +1,9 @@
-! Checksum: Zc4Bk5cYBvRrvq7hHFYlrg
-! Diff-Path: ../patches/18/18-s-1733398708-3600.patch
+! Checksum: RtCvfPsyh+kjEqMSoLM/Ow
+! Diff-Path: ../patches/18/18-s-1733408178-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.52.54
-! TimeUpdated: 2024-12-05T11:35:04+00:00
+! Version: 2.0.52.55
+! TimeUpdated: 2024-12-05T14:12:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2510,6 +2510,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+clickandprint.de#$##klaro { display: none !important; }
+clickandprint.de#$#.no-scroll { overflow: auto !important; }
+kaspersky.ru##section[data-at-selector="cookie-banner"]
 freebetrange.com##.landing__cookie-info
 cirkev.cz##.cookies-toolbar-wrapper
 fresha.com##div[class*="Banner_banner_"]:has(> div[role="dialog"] > div > p > a[href$="/cookies"])
@@ -3089,7 +3092,7 @@ packhelp.*,zapakuj.to###cookie-consent-mountpoint
 serasaexperian.com.br##.cookie_footer
 serasaexperian.com.br##.containerCookie
 airport.wroclaw.pl##body .cookies__overlay
-biglifejournal.com###polaris-consent-widgets
+saatva.com,biglifejournal.com###polaris-consent-widgets
 movistar.es###cookies-bar-component
 tallink.com#$##cms-web-consent-root { display: none !important; }
 tallink.com#$#body { overflow: auto !important; }
@@ -16496,6 +16499,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194140
+clickandprint.de#@#.cookie-notice:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194069
 @@||cdn.opencmp.net/tcf-v2/$domain=tz.de
 @@||cdn.opencmp.net/publisher/$domain=tz.de
