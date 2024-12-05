@@ -1,9 +1,9 @@
-! Checksum: ZIoXam+6RSNjYQh4BFMztg
-! Diff-Path: ../patches/2/2-s-1733395453-3600.patch
+! Checksum: Pi2PfKjsXguGlgPVG5oAog
+! Diff-Path: ../patches/2/2-s-1733398726-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.63.38
-! TimeUpdated: 2024-12-05T10:32:27+00:00
+! Version: 2.3.63.39
+! TimeUpdated: 2024-12-05T11:31:25+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19133,6 +19133,9 @@ extra.cz##[data-advert-container]
 rychlost.cz##.t-ban
 olympijskytym.cz##div.bg-texture:has(> div[class^="ad-"])
 impuls.cz##.r-main
+! https://github.com/AdguardTeam/AdguardFilters/issues/194095
+cirkev.cz###branding
+cirkev.cz###brandingCaption
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193544
 krajskelisty.cz##.advert
 krajskelisty.cz###wpBannerPlace
@@ -35775,6 +35778,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+sexvid.*##.intro
+sexvid.*##a[onclick*="paysite_outgoing"]
+sexvid.*##div[id][style*="height:101px;"]
+||sexvid.*/ysla/
 ||perfectpussypics.com/perfectpussy.shtml
 perfectpussypics.com##div[role="main"] > div[id] > .h-on:not([data-mid]):has(> iframe[rel="nofollow"])
 nuxt.com##.space-y-3:has(> div[class] > script[src^="https://cdn.carbonads.com/"])
@@ -123135,7 +123142,6 @@ time.com##.article-small-sidebar > .sticky-container:has(div[id^="ad-"])
 blitz.gg##.aside-content-column:has(.display-ad)
 beaumontenterprise.com,chron.com,ctinsider.com,ctpost.com,expressnews.com,greenwichtime.com,houstonchronicle.com,lmtonline.com,manisteenews.com,michigansthumb.com,middletownpress.com,mrt.com,myjournalcourier.com,myplainview.com,mysanantonio.com,newstimes.com,nhregister.com,ourmidland.com,registercitizen.com,sfchronicle.com,stamfordadvocate.com,thehour.com,theintelligencer.com##.b-gray300:has-text(Advertisement)
 olympics.com##.b2p-list__item:has(> .adv-fluid)
-bing.com##.b_algo:has(p[class^="b_lineclamp2 b_algoSlug "])
 outsports.com##.bg-gray-100:has(.adb-os-lb-incontent)
 atlanticsuperstore.ca,fortinos.ca,maxi.ca,newfoundlandgrocerystores.ca,nofrills.ca,provigo.ca,realcanadiansuperstore.ca,valumart.ca,yourindependentgrocer.ca,zehrs.ca##.block-wrapper:has(.element-header__sponsoredLabel)
 loblaws.ca##.block-wrapper:has([data-track-product-component="carousel||rmp_sponsored"])
@@ -123274,6 +123280,7 @@ svgrepo.com##[class^="style_native"]:has([href*="buysellads.com"])
 tesco.com##[class^="styled__StyledLIProductItem"]:has([class^="styled__StyledOffers"])
 argos.co.uk##[class^="styles__LazyHydrateCard"]:has([class*="ProductCardstyles__FlyoutBadge"])
 argos.co.uk##[class^="styles__LazyHydrateCard-sc"]:has([class*="SponsoredBadge"])
+outlook.live.com##[data-app-section="MessageList"] div[style^="position: absolute; left: 0px; top: 0px"]:has(.ms-Shimmer-container)
 cargurus.com##[data-cg-ft="car-blade"]:has([data-eyebrow^="FEATURED"])
 cargurus.com##[data-cg-ft="car-blade-link"]:has([data-cg-ft="srp-listing-blade-sponsored"])
 avxhm.se##[data-localize]:has(a[href^="https://canv.ai/"])
@@ -123359,7 +123366,7 @@ nicelocal.com##div[style="min-height: 90px;"]:has(iframe[id^="google_ads_"])
 tartaria-faucet.net##div[style^="display"]:has([src^="https://multiwall-ads.shop/"])
 90min.com##figure:has(> div > #mm-player-placeholder-large-screen)
 nex-software.com##h4:has(a[href$="/reimage"])
-bing.com##li.b_algo:has(img.cico.siteicon.rms_img[src^="https://www.bing.com/th?id=O"])
+bing.com##li.b_algo:has(> [class="b_caption"] > p.b_lineclamp2.b_algoslug > span.algoSlug_icon)
 walmart.com##li.items-center:has(div[data-ad-component-type="wpa-tile"])
 walgreens.com##li.owned-brands:has(figure.sponsored)
 macys.com##li.productThumbnailItem:has(.sponsored-items-label)
