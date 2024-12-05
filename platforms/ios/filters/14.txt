@@ -1,9 +1,9 @@
-! Checksum: 6lPHWU0HuV+I0M8er1Dq1A
-! Diff-Path: ../patches/14/14-s-1733391623-3600.patch
+! Checksum: p9D+K28YnR/sthQc/NctWA
+! Diff-Path: ../patches/14/14-s-1733395468-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.15.69
-! TimeUpdated: 2024-12-05T09:36:07+00:00
+! Version: 2.2.15.70
+! TimeUpdated: 2024-12-05T10:39:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2512,6 +2512,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+evarkadasi.com##.kvkk-container
 bookmyname.com#%#//scriptlet('set-cookie-reload', '_scw_rgpd_analytics', 'false')
 tz.de#%#//scriptlet('trusted-click-element', 'html.cmp-modal-open .cmp-root-container >>> .cmp-button-accept-all')
 eliandelm.com#%#//scriptlet('set-cookie', '_klv_common_ext_int_popup_shown', 'true')
@@ -6045,7 +6046,6 @@ eventix.io##.ot-cookies
 ||cookies.openticket.tech/latest/cookies.js
 refurbed.ie#$#section[x-data^="CookieBanner"] { display: none !important; }
 refurbed.ie#$#body.overflow-hidden { overflow: auto !important; }
-karrierportal.hu##.cookie-overLay
 getaround.com#$#body { position: static !important; }
 getaround.com#$#.js_cookie-consent { display: none !important; }
 menulog.com.au,just-eat.co.uk,just-eat.ie,just-eat.es,justeat.it##div[data-cookie-anchor]
@@ -15156,6 +15156,8 @@ befestigungsfuchs.de,jawoll.de,cafe-royal.com,campingplus.de,bikebox-shop.de,mli
 ! Misc rules, removed during optimization. If some rules are in groups, no need to move them here
 !
 !
+!+ NOT_OPTIMIZED
+karrierportal.hu##.cookie-overLay
 !+ NOT_OPTIMIZED
 ||cookiewarden-content.teb.com.tr^
 !+ NOT_OPTIMIZED
@@ -33914,6 +33916,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+web-promo.ua##.section-subscribe
+web-promo.ua###subscribe_banner_blog
 cointelegraph.com##form[data-ct-widget="newsletter-subscription-form"]
 phonearena.com##.gnews-sharetools-wrapper
 phonearena.com##.newsletter-subscription-section-tag-based
@@ -41365,6 +41369,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+media.wear.jp##.wear-app-download
 podcastaddict.com##.aspect-ratio-box-foo
 upscale.media##a[class^="HeaderRight__AppLink"]
 mundolucha.com##a[href="https://play.google.com/store/apps/details?id=com.mlw.app"] > img
@@ -45566,7 +45571,7 @@ utaten.com###philippines_banner
 kotaku.com##div[class^="sc-"] > div[class^="sc-"]:has(> div.related-stories-inset-video)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182473
 vogue.es#$?#.body__inner-container > figure.cne-video-embed { remove: true; }
-wired.jp,vogue.*,newyorker.com#$?#figure[data-testid="cne-interlude-container"] { remove: true; }
+self.com,wired.jp,vogue.*,newyorker.com#$?#figure[data-testid="cne-interlude-container"] { remove: true; }
 wired.com#$?#.grid-layout__aside > .sticky-box > .sticky-box__primary > div[data-in-view] > figure[data-testid="cne-interlude-container-right-rail"]:has(> .cne-video-embed) { remove: true; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182413
 futurebeat.pl##body > .f2size > .fbt-f5-cc:has(> #outsider2 > #insider2 > .fbt-prod-box)
@@ -50728,6 +50733,7 @@ banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.ba
 !
 ! SECTION: Self-promo - Regular rules
 !
+bellesa.co##div[class^="MediaQuery__Query-"]:has(div[class^="Display__RatioOuter"] > div[class^="Display__RatioInner"] > a[href^="https://bellesaplus.co/studio-preview/bellesa-originals"])
 nuxt.com##.space-y-3:has(> div[class] > div.flex-1 > a[href^="https://ui.nuxt.com/pro?"])
 phonearena.com##.promo-banner
 americanas.com.br##div[class^="src__TopBanner-"]
@@ -55396,6 +55402,8 @@ nanjei-baseball.blog.jp,baynews.blog.jp,xresolutionx.livedoor.blog,kimamamatome.
 !
 ! NOTE: Blogroll specific rules
 !
+honmotakeshi.com##div[class*="rss_area"]
+moeasia.net###rsswrap
 jiwasoku.com##[id^="mobile_text"]:has(> div.text-mobile > div[id^="sp-top_body"])
 jiwasoku.com##[class^="widget"]:has(> div > div[id^="top_body"])
 jiwasoku.com###widget-in-article
