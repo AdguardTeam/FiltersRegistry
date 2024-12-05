@@ -1,9 +1,9 @@
-! Checksum: zB+yv1vL9+loKOFDlvvplA
-! Diff-Path: ../patches/2/2-s-1733413131-3600.patch
+! Checksum: mWGBIsw3J0wIwwTYCew/hw
+! Diff-Path: ../patches/2/2-s-1733416731-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.63.41
-! TimeUpdated: 2024-12-05T15:31:33+00:00
+! Version: 2.3.63.42
+! TimeUpdated: 2024-12-05T16:31:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8704,7 +8704,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! NOTE: Regular rules
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194085
-@@||pagead2.googlesyndication.com/pagead/$domain=noice.com
+noice.com#%#//scriptlet('set-constant', 'adsBlocked', 'false')
+noice.com#%#(()=>{const e={breakStatus:"done"},o=["beforeReward","adViewed","adBreakDone"];window.adsbygoogle=window.adsbygoogle||[],window.adsbygoogle.push=function(d){var a;d&&"object"==typeof d&&(a=d,o.every((e=>e in a&&"function"==typeof a[e])))&&(d.beforeReward(),d.adViewed(),d.adBreakDone(e))}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194050
 @@||google.com/adsense/domains/caf.js$domain=paint.net
 @@||syndicatedsearch.goog^$domain=paint.net

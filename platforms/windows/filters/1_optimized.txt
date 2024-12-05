@@ -1,9 +1,9 @@
-! Checksum: 11BEoe32H50cxQvo3y8XMA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1733409532-3600.patch
+! Checksum: K1tweGvbKvCWxrynEcti6w
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1733416734-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.95.91
-! TimeUpdated: 2024-12-05T14:31:14+00:00
+! Version: 2.0.95.92
+! TimeUpdated: 2024-12-05T16:31:10+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -2336,8 +2336,8 @@ echo.msk.ru,kakprosto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototy
 ||echo.msk.ru^$replace=/AdvManager\.render/AdvManager._render/
 echo.msk.ru$$script[tag-content="DisplayAcceptableAdIfAdblocked"]
 otzovik.com$$script[wildcard="*function*blockId*"][min-length="1000"][max-length="2500"]
-||ya.ru$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "settings"]
-||yandex.$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "settings"],domain=~afisha.yandex.*
+||ya.ru$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"]
+||yandex.$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"]
 yandex.*#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
 $cookie=/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/,domain=yandex.*
 ||static-mon.yandex.net/static/main.js$script,xmlhttprequest,replace=/"cookieName":.?"\w+"\,/"cookieName": "nonexisting"\,/
