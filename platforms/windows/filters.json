@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.63.40",
-			"timeUpdated": "2024-12-05T14:08:36+0000",
+			"version": "2.3.63.41",
+			"timeUpdated": "2024-12-05T15:31:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.15.72",
-			"timeUpdated": "2024-12-05T14:12:23+0000",
+			"version": "2.2.15.73",
+			"timeUpdated": "2024-12-05T15:34:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.52.55",
-			"timeUpdated": "2024-12-05T14:12:30+0000",
+			"version": "2.0.52.56",
+			"timeUpdated": "2024-12-05T15:35:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.27.24",
-			"timeUpdated": "2024-12-05T09:36:24+0000",
+			"version": "2.1.27.25",
+			"timeUpdated": "2024-12-05T15:35:08+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
