@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.90",
-			"timeUpdated": "2024-12-05T10:32:05+0000",
+			"version": "2.0.95.91",
+			"timeUpdated": "2024-12-05T14:31:14+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.33",
-			"timeUpdated": "2024-12-05T14:11:45+0000",
+			"version": "2.0.77.34",
+			"timeUpdated": "2024-12-05T14:34:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
