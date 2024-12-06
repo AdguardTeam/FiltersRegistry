@@ -1,9 +1,9 @@
-! Checksum: V/YhDCVv6jg090j8QlAipw
-! Diff-Path: ../patches/2/2-s-1733470616-3600.patch
+! Checksum: MVWBLCXgF/IxWV6sGB1ACQ
+! Diff-Path: ../patches/2/2-s-1733474324-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.63.51
-! TimeUpdated: 2024-12-06T07:31:27+00:00
+! Version: 2.3.63.52
+! TimeUpdated: 2024-12-06T08:31:29+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8649,6 +8649,9 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194179
+gpldose.com#%#//scriptlet('abort-on-property-write', 'Dataffcecd')
+@@||static.doubleclick.net/instream/ad_status.js$domain=gpldose.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194085
 noice.com#%#//scriptlet('set-constant', 'adsBlocked', 'false')
 noice.com#%#(()=>{const e={breakStatus:"done"},o=["beforeReward","adViewed","adBreakDone"];window.adsbygoogle=window.adsbygoogle||[],window.adsbygoogle.push=function(d){var a;d&&"object"==typeof d&&(a=d,o.every((e=>e in a&&"function"==typeof a[e])))&&(d.beforeReward(),d.adViewed(),d.adBreakDone(e))}})();
@@ -34538,6 +34541,7 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 ! START: Ad-Shield ad reinsertion
 ! Don't add url blocking rules inside this directive, which break sites in iOS without Advanced Protection
 ! Use the next directive, where iOS is excluded
+powerpyx.com#%#//scriptlet('remove-node-text', 'script', 'html-load.com')
 webdesignledger.com#%#//scriptlet('abort-on-stack-trace', 'navigator', 'html-load')
 webdesignledger.com#$?#iframe[src=""] { position: absolute !important; left: -3000px !important; }
 economictimes.com#%#//scriptlet('set-constant', 'objVc.ad_shield_wap', 'undefined')
@@ -34566,7 +34570,7 @@ issuya.com#$?#script[src$="/loader.min.js"][onerror*="error-report.com"] { remov
 kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,thatgossip.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,ff14net.2chblog.jp,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('abort-on-stack-trace', 'Object.defineProperty', 'html-load.com')
 kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,thatgossip.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,ff14net.2chblog.jp,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('prevent-setTimeout', '/document\.querySelectorAll[\s\S]*?\.remove\(\)[\s\S]*?alert/')
 !
-||html-load.com/loader.min.js$domain=issuya.com|pravda.com.ua|lamire.jp|picrew.me|mydaily.co.kr|badmouth1.com|taxguru.in|sportsrec.com|reportera.co.kr|tweaksforgeeks.com|fourfourtwo.co.kr|flatpanelshd.com|wfmz.com|videogamemods.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|eurointegration.com.ua|jin115.com|gloria.hr|etnews.com|carscoops.com|sportsseoul.com|onlinegdb.com|text-compare.com|winfuture.de|hoyme.jp|indiatimes.com|blog.esuteru.com|modhub.us|thatgossip.com|gazetaprawna.pl|sourceforge.net|slashdot.org|economictimes.com|convertcase.net|kreuzwortraetsel.de
+||html-load.com/loader.min.js$domain=issuya.com|pravda.com.ua|lamire.jp|picrew.me|mydaily.co.kr|badmouth1.com|taxguru.in|sportsrec.com|reportera.co.kr|tweaksforgeeks.com|fourfourtwo.co.kr|flatpanelshd.com|wfmz.com|videogamemods.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|eurointegration.com.ua|jin115.com|gloria.hr|etnews.com|carscoops.com|sportsseoul.com|onlinegdb.com|text-compare.com|winfuture.de|hoyme.jp|indiatimes.com|blog.esuteru.com|modhub.us|thatgossip.com|gazetaprawna.pl|sourceforge.net|slashdot.org|economictimes.com|convertcase.net|kreuzwortraetsel.de|powerpyx.com
 ||content-loader.com/loader.min.js$domain=issuya.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|sourceforge.net|slashdot.org|economictimes.com
 !
 hoyme.jp#$#span[id^="img_"][style^="display:"] { position: absolute !important; left: -3000px !important; }

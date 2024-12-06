@@ -1,9 +1,9 @@
-! Checksum: rb1l9ifDtzFHQmSRmisTrQ
-! Diff-Path: ../patches/2/2-s-1733470633-3600.patch
+! Checksum: Z6oIz5ZL3RR2q7e0qn88zQ
+! Diff-Path: ../patches/2/2-s-1733474344-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.63.51
-! TimeUpdated: 2024-12-06T07:31:27+00:00
+! Version: 2.3.63.52
+! TimeUpdated: 2024-12-06T08:31:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8819,6 +8819,9 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194179
+gpldose.com#%#//scriptlet('abort-on-property-write', 'Dataffcecd')
+@@||static.doubleclick.net/instream/ad_status.js$domain=gpldose.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194085
 noice.com#%#//scriptlet('set-constant', 'adsBlocked', 'false')
 noice.com#%#(()=>{const e={breakStatus:"done"},o=["beforeReward","adViewed","adBreakDone"];window.adsbygoogle=window.adsbygoogle||[],window.adsbygoogle.push=function(d){var a;d&&"object"==typeof d&&(a=d,o.every((e=>e in a&&"function"==typeof a[e])))&&(d.beforeReward(),d.adViewed(),d.adBreakDone(e))}})();
@@ -37226,6 +37229,7 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 ! START: Ad-Shield ad reinsertion
 ! Don't add url blocking rules inside this directive, which break sites in iOS without Advanced Protection
 ! Use the next directive, where iOS is excluded
+powerpyx.com#%#//scriptlet('remove-node-text', 'script', 'html-load.com')
 webdesignledger.com#%#//scriptlet('abort-on-stack-trace', 'navigator', 'html-load')
 webdesignledger.com#$?#iframe[src=""] { position: absolute !important; left: -3000px !important; }
 economictimes.com#%#//scriptlet('set-constant', 'objVc.ad_shield_wap', 'undefined')

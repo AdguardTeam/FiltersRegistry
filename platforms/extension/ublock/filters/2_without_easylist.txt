@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: pFWypLTOwS91U1KkjF1uqg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1733470631-3600.patch
+! Checksum: 00EUc4duM0vhIdh87I2vVQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1733474340-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.63.51
-! TimeUpdated: 2024-12-06T07:31:27+00:00
+! Version: 2.3.63.52
+! TimeUpdated: 2024-12-06T08:31:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8561,6 +8561,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194179
+gpldose.com##+js(abort-on-property-write, Dataffcecd)
+@@||static.doubleclick.net/instream/ad_status.js$domain=gpldose.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194085
 noice.com##+js(set-constant, adsBlocked, false)
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_chromium_mv3, ext_opera)
