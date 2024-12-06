@@ -1,5 +1,5 @@
-! Checksum: RX3dPuqlkkEj3zpftj0Vtg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1733434713-3600.patch
+! Checksum: 1lS9Am42F653WImazTmS5w
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1733452664-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.48.36
@@ -684,6 +684,7 @@ lefigaro.fr##.fig-sticky-bottom-subscription-banner
 zeste.ca##.isPub
 zeste.ca##.wrapper-pub
 charentelibre.fr,sudouest.fr,techno-science.net##.pub
+||v.fwmrm.net/ad/$important,domain=bfmtv.com
 paroles2chansons.lemonde.fr##div[style="min-height:280px;"]
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
@@ -1165,6 +1166,7 @@ residentadvisor.net#@#.add-space
 m.olx.pl,m.olx.ua#@#.container-ad
 comandotorrents.com#@#a[href^="http://www.masterads.info/"]
 @@||dl.opensubtitles.org/*/download^
+@@||api.opensubtitles.org^$third-party
 techno-med.com.ua#@#[id^="ad_block_"]
 amazon.de#@#.marketing-container
 @@||code.jquery.com^$script,domain=anime-loads.org
@@ -1371,6 +1373,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 .fr/adv_
 .fr/affiliate/
 .fr/affiliates/
+.fr/publicity/
 .gif?partner=
 .html?placement_id=
 .id/ads.
@@ -1398,7 +1401,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 .php?ads&
 .php?aid=pause_
 .php?banner=$subdocument
-.php?file=pub/
 .php?id=*&ref=$script,third-party
 .php?sponsor=
 .productads.
@@ -1418,7 +1420,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /00250x00250-
 /00728x0090-
 /1000x90_
-/1170x120px-
 /120-x-600.
 /160-x-600-
 /160-x-600.
@@ -1542,6 +1543,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /adpick.
 /adplayerX.
 /adplexity-
+/adr.php
 /adRender.
 /adrequest/*
 /Ads*/banner_
@@ -1777,9 +1779,9 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /bnr.php?*&format=
 /bnr/300/*
 /bnr/468/*
+/bnr/720/*
 /bnr/ad/*
 /bnr468.
-/bnrs/yn_bnr.
 /bouton_pub.
 /brand-ads-
 /brightcoveAds.
@@ -1886,6 +1888,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /img/sponsorships/*
 /img/vda_
 /imgs/adv/*
+/imu-320x480/*
 /in-stream-ad-
 /ina_ad_
 /inc/ezcl.
@@ -1953,7 +1956,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /partners-banners/*
 /partners/ads-
 /path/ads/*
-/pave_PUB_
 /pdv.js
 /phantomPopunder.
 /phpad-pub-
@@ -1971,6 +1973,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /popup1.js
 /promo-banner.$third-party
 /promo.*/banner/*
+/promo/bannieres/*
 /promoredirect?key=
 /promotools.static.js
 /pu-placer.js
@@ -2192,6 +2195,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?campid=*&bandeau_id=
 ?clicktag=
 ?Page=*&Width=300&
+?promo=*&url=
 ?pub_id=
 ?redir=*/click?
 ?size=728x90|$subdocument
@@ -2291,8 +2295,6 @@ _werbebanner_
 /wp-content/banners/*$third-party
 /wp-content/plugins/bazooka-shopping/*
 /wp-content/plugins/easy-affiliate-links/*
-/wp-content/plugins/mm-ad-widget/*
-/wp-content/plugins/mm-kelkoo/*
 /wp-content/plugins/mts-wp-in-post-ads/*
 /wp-content/plugins/progressads/*
 /wp-content/plugins/quick-adsense-reloaded/*
@@ -2423,7 +2425,6 @@ _werbebanner_
 ://go.*&zoneid=$popup
 ://go.*?zoneid=$popup
 ://landing.*/?ats=$popup,third-party
-://pop.*.&$popup
 ://pops.*.$popup
 ://syndication.$popup,third-party
 ://tour.*?id=*&type=$popup,third-party
@@ -2560,7 +2561,6 @@ _close_ad$popup
 ||e-mailit.com^$third-party
 ||easysexe.com^$third-party
 ||ebuzzing.fr^$third-party
-||effective-ads.com^$third-party
 ||egnatius-ear.com^$third-party
 ||eurolive.com^$~image,third-party
 ||exashare.com^$third-party
@@ -2632,6 +2632,7 @@ _close_ad$popup
 ||ntl.cloud^$third-party
 ||nuggad.net^$third-party
 ||num-link.ru^$third-party
+||obozrevatelcom.info^$third-party
 ||octea.com^$third-party
 ||oniad.com^$third-party
 ||opti-digital.com^$third-party
@@ -2654,6 +2655,7 @@ _close_ad$popup
 ||pwspace.com^$third-party
 ||pxltgr.com^$third-party
 ||pxt-networks.com^$third-party
+||quaelead.com^$third-party
 ||reactivpub.fr^$third-party
 ||recoco.it^$third-party
 ||rederditium.com^$third-party
@@ -2668,7 +2670,6 @@ _close_ad$popup
 ||sersh.com^$third-party
 ||shareaholic.com^$third-party
 ||sharemyads.com^$third-party
-||shoosh.co^$third-party
 ||slutroulette.com^$third-party
 ||smartclip.net^$~object,third-party
 ||smartmovies.net^$third-party
@@ -2743,7 +2744,6 @@ _close_ad$popup
 ||1clic1don.fr^
 ||2cnjuh34jb.com^
 ||2cnjuh34jbhub.com^
-||3692022.com^
 ||69688qp.com^
 ||aanqylta.com^
 ||aboriginesprimary.com^
@@ -2925,7 +2925,6 @@ _close_ad$popup
 ||go2yd.com^
 ||goahouma.xyz^
 ||goeco.mobi^
-||gopusher1.com^
 ||greysummergo.biz^
 ||gridiogrid.com^
 ||groundlesscobwebmiller.com^
@@ -3075,7 +3074,6 @@ _close_ad$popup
 ||papizedromon.life^
 ||papoto.com^
 ||pauzajoo.net^
-||pebafisk.com^
 ||pelepedants.click^
 ||pertholin.com^
 ||pfgipxikznmvy.com^
@@ -3201,7 +3199,6 @@ _close_ad$popup
 ||tubevideos.biz^
 ||tuckspobedy.guru^
 ||turbo-cdn.net^
-||turkstench.com^
 ||uaadi.com^
 ||unarceusan.com^
 ||unbitimmures.click^
@@ -3230,7 +3227,6 @@ _close_ad$popup
 ||webmine.cz^
 ||webminepool.com^
 ||webminerpool.com^
-||wedespirale.com^
 ||whataboutnews.com^
 ||whehilru.com^
 ||whiteclick.biz^
@@ -3357,7 +3353,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||abowman.com/widgets/
 ||actu-direct.fr/rep/rep_pub/
 ||ad.genybet.fr^
-||ad.zanox.com^
 ||ad1.sibnet.ru^
 ||ads-tracking.beop.io^
 ||ads.vnhell.com^
@@ -3380,7 +3375,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||azurewebsites.net/widget/
 ||banner-adz.com/view.php
 ||be.com/wp-content/uploads/$third-party
-||biltoturf.com/logos/$third-party
 ||blogspot.com^$image,domain=desiupload.co|desiupload.in
 ||bluehost.com/track/$third-party
 ||brsimg.com/pub/
@@ -3391,6 +3385,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||cashtravel.info/banners/
 ||cdn.citytourgirls.com/static/bn/
 ||cdn.escortdude.com/static/bn/
+||cdn.ev.mu/js/optim/gg_cc/ev/boot.js$domain=~easyviaggio.com|~easyviajar.com|~easyvols.fr|~easyvoyage.co.uk|~easyvoyage.com|~easyvoyage.de
 ||cdn.playwire.com^$domain=filehippo.com
 ||cdn13.com^*/banners/
 ||cdnpark.com/registrar/*/loader.js
@@ -3689,7 +3684,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||bdgest.com/prepub/
 ||bedetheque.com/javascript/campagne?
 ||blablastream.watch/voir/
-||bleachmx.fr/wp-content/uploads/bleach-
 ||boursier.com/illustrations/campaigns/
 ||bricozone.fr/styles/soft_responsive/xenforo/layout/j
 ||cambro.tv/player/html.php
@@ -3770,7 +3764,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||lerepairedesmotards.com/img/pub/
 ||les-terrains.com/ajax/iframe/
 ||les-terrains.com/images_pub/
-||les-terrains.com^*.gif$image
 ||lexpress.fr/pub/
 ||live.whassup.fr/*&campaign=
 ||location-etudiant.fr/pubs/
@@ -3804,7 +3797,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||pronosoft.com/*/bookmakers/unibet/
 ||pronosoft.com/img/pub/
 ||pub.le360.ma^
-||pyrenees-team.com/graphics/baniere/logo.jpg
 ||rapidgator.net/images/pics/
 ||ruedesjoueurs.com/images/articles-/promo/
 ||ruedesjoueurs.com/images/banners/
@@ -3921,7 +3913,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###ad_rect_sub
 ###ad_smartphbig
 ###ad_video
-###adcontainerAdSense
 ###adcontainer_2
 ###adcontainer_recherche
 ###addspace
@@ -4301,7 +4292,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.ad336x280_sidebar
 ##.ad730
 ##.ad970-wrapper
-##.adBannerLeft
 ##.adBannerRight
 ##.adBottom
 ##.adDisplay
@@ -4704,7 +4694,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.pub_text
 ##.pub_top
 ##.pub_video
-##.pubads
 ##.pubadsense
 ##.pubbottomvideo
 ##.pubcontainer
@@ -4738,7 +4727,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.r-pub--leader
 ##.regiePub2
 ##.reklaama-casino2
-##.reklam-gizle
 ##.reklam728x90
 ##.reklam_300x250
 ##.reklama-box
@@ -5292,7 +5280,6 @@ technplay.com##.kt-inside-inner-col
 linguee.com,linguee.fr##.l_deepl_ad_container
 lefigaro.fr##.le-figaro-ad-bar-custom
 cine-media.fr##.lienbackground
-team-aaa.com##.list-sponsors
 lesnumeriques.com##.ln__a-dc
 cdiscount.com##.lpMBan
 ma-reduc.com##.m-coveringIab
@@ -5411,7 +5398,6 @@ seneweb.com##a[href*="/xban/"]
 jeuxetcompagnie.fr##a[href*="://www.ludeek.com/"] > img
 jds.fr##a[href*="_clic.php?"]
 boursorama.com,zdnet.fr##a[href*="smartadserver.com/h/cc?imgid="]
-leparking.fr##a[href="http://www.ligloo.fr"]
 radioalgerie.dz##a[href="https://www.radioalgerie.dz/pub/"]
 agroligne.com,zone911.com##a[href^="/component/banners/"]
 babesxworld.com,cocogals.com##a[href^="/goto/"]
@@ -5556,6 +5542,7 @@ zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|Publicité/))
 @@||ssl.p.jwpcdn.com/player/v/$script,stylesheet,xmlhttprequest,domain=ahvsh.com|allviid.live|allviid.xyz|allviids.xyz|daktna.net|databasegdriveplayer.co|filelions.com|filelions.site|gdriveplayer.me|gdriveplayer.to|jeansaispasplus.homes|liiivideo.com|lvturbo.com|mcloud.to|movcloud.net|onlystream.tv|sbanh.com|sblona.com|sblongvu.com|sbrapid.com|segavid.com|streamhide.com|streamhide.to|streamsb.com|strema.site|supervideo.cc|theproxy.how|vadbam.com|vadbam.net|vedbam.xyz|vedbom.com|vidbam.org|vidhd2.com|vidhdr.com|vidlo.us|vidmoly.to|vidshar.org|vidspeed.net|vidspeeds.com
 @@||st.chatango.com/js/gz/emb.js$script,domain=adkami.com|crichd.com|crichd.to|crichd.xyz|gdriveplayer.to|jetanimes.com|mavanimes.cc|mavanimes.co|otakufr.co|voiranime.com
 @@||st.chatango.com^*/id.html$subdocument,domain=adkami.com|crichd.com|crichd.to|crichd.xyz|jetanimes.com
+@@||static.uppcdn.com^$image,script,domain=uppit.com
 @@||suggestqueries.google.com/complete/search?$script,domain=9xbuddy.online
 @@||vjs.zencdn.net^$script,domain=hexload.com|streamcdn.to|streamlive.to|voirfilms.al|voirfilms.bz|voirfilms.live
 @@||wp.com/*/build/lazy-images/$script,domain=animevostfr.tv|gum-gum-streaming.com
