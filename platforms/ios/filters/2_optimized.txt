@@ -1,9 +1,9 @@
-! Checksum: tUiErgQi/aHl5mEpS/BQgw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1733485209-3600.patch
+! Checksum: 6tS2SKVpZs0+HHMSyBbimA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1733488782-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.63.55
-! TimeUpdated: 2024-12-06T11:31:28+00:00
+! Version: 2.3.63.56
+! TimeUpdated: 2024-12-06T12:31:30+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -3193,8 +3193,6 @@ linuxcapable.com#%#//scriptlet('set-constant', 'nitroAds.abp', 'true')
 hqq.to#%#//scriptlet('abort-on-stack-trace', 'olplayer.error', 'Be.o.dispatcher.o.dispatcher')
 hqq.to#%#//scriptlet('set-constant', 'adblockcheck', 'false')
 mitaku.net,hitomi.la,klmanga.app,mangarawjp.tv,coomer.su,kemono.su,safestream.cc,javmix.tv,hentai2read.com,sxyprn.com,xmoviesforyou.com,fapfappy.com,jav.direct,syosetu.*,telorku.xyz,kissjav.li,lovingsiren.com,mesex.pro,vlxyz.tv,xanimeporn.com#%#//scriptlet('abort-current-inline-script', 'WebAssembly', 'atob')
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-/^https:\/\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]+\.com\/en\/[a-z][a-z]+\/[a-z][a-z]+\/[a-z][a-z]+\?([a-z]+=[0-9a-z]+&)*id=[12][0-9][0-9][0-9][0-9][0-9][0-9]/$script,third-party,match-case,domain=mitaku.net|safestream.cc|javmix.tv|hentai2read.com|sxyprn.com|xmoviesforyou.com|fapfappy.com|jav.direct|syosetu.com|syosetu.com.bd|syosetu.com.np|syosetu.me|syosetu.net|syosetu.org|syosetu.se|syosetu.si|syosetu.top|syosetu.work|syosetu.xyz|telorku.xyz|kissjav.li|lovingsiren.com|mesex.pro|vlxyz.tv|xanimeporn.com|doujindesu.tv
 wellness4live.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=wellness4live.com
@@ -13158,6 +13156,8 @@ cdkeyit.it,allkeyshop.com#$#body { background-image: none!important; }
 /contents/images-banners/*
 .com/pw/waWQiOjEw
 /^https:\/\/[a-z]{8,12}\.com\/en\/(?:[a-z]{2,5}\/){0,2}[a-z]{2,}\?(?:[a-z]+=(?:\d+|[a-z]+)&)*?id=[12]\d{6}/$script,third-party,match-case
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+/^https:\/\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]+\.com\/en\/([a-z][a-z]+\/)?([a-z][a-z]+\/)?[a-z][a-z]+\?([a-z]+=[0-9a-z]+&)*id=[12][0-9][0-9][0-9][0-9][0-9][0-9]/$script,third-party,match-case
 /get/*?zoneid=*&jp=$script
 /assets/jwplayer-*/vast.js$script,~third-party
 /duayn7.$script,~third-party
@@ -13300,11 +13300,13 @@ kreuzwortraetsel.de,slashdot.org,sourceforge.net,lovelive-petitsoku.com,infinity
 ##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + div[style^="bottom:0;r"])
 ##a[href^="javascript"] > div[id^="img_"]
 ##a[href^="https://html-load.com/contents/"][attributionsrc^="https://apm.yahoo.co.jp"][style^="display:block"]
+##body > div[class^="img_"] > div[id^="img_"][class^="img_"] + a[href^="https://html-load.com/contents/"][target="_blank"][rel="noopener"]:last-child
 ##body > div[class^="img_"] > div[id^="img_"][class^="img_"] + a[href^="https://html-load.com/contents/"][target="_blank"][rel="noopener"][class^="img_"]
 ##body > div[id^="img_"]:has(+ amp-analytics) > div[id^="img_"]
 ##body > div[id^="img_"]:has(+ amp-pixel + div[style^="bottom:"]) > div[id^="img_"]
 ##body > div[id^="img_"]:has(+ div[style^="bottom:"]) > div[id^="img_"]
 ##div[id^="img_"] > div[id^="img_"][style^="display: block; width:"] > img[alt*=" "][width]
+##div[id^="img_"] > div[style="width:100%;height:100%;opacity:1"][class=""]
 ##div[id^="img_"][style$="transform: scale(1);"]
 ##div[miss_click_url^="https://uncn.jp/1/data/invalid_click/pb.C"]
 ##div[miss_click_url^="https://uncn.jp/1/data/invalid_click/"][miss_click_url*="?bid=Ci"]
@@ -46038,6 +46040,7 @@ amateurphotographer.com,cryptoslate.com,techspot.com##.cta
 simracingsetup.com##.cta-box
 finbold.com##.cta-etoro
 timesofindia.indiatimes.com##.ctn-workaround-div
+u.today##.ctyptopcompare__widget
 pokebattler.com##.curse-ad
 dexscreener.com##.custom-1hol5du
 dexscreener.com##.custom-1ii6w9
@@ -46425,7 +46428,7 @@ lowes.com##.lws_pdp_recommendations_southdeep
 thestreet.com##.m-balloon-header
 politifact.com##.m-billboard
 aol.com##.m-gam__container
-thestreet.com##.m-in-content-ad-row
+bitcoinmagazine.com,thestreet.com##.m-in-content-ad-row
 meidasnews.com##.m-outbrain
 insideevs.com##.m1-apb
 poebuilds.net##.m6lHKI
