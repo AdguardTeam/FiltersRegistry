@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Gb83c5eB7ge2eZkEf4aYTg
-! Diff-Path: ../patches/7/7-s-1733481519-3600.patch
+! Checksum: BDpJ/kwXMcTDcDx7Y1PX0Q
+! Diff-Path: ../patches/7/7-s-1733485205-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.2
-! TimeUpdated: 2024-12-06T10:33:55+00:00
+! Version: 2.0.60.3
+! TimeUpdated: 2024-12-06T11:35:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -512,17 +512,9 @@ $subdocument,redirect-rule=noop.html,domain=wiki.yjsnpi.nu
 @@||wiki.yjsnpi.nu^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190069
 gunauc.net##+js(no-fetch-if, pagead2.googlesyndication.com)
-! https://github.com/AdguardTeam/AdguardFilters/issues/167434
-@@||b1.best-hit.tv^$generichide
-@@||h178.com^$generichide
-@@||j-baseball.club^$generichide
-@@||j-basketball.club^$generichide
-j-basketball.club##ins.adsbygoogle[data-ad-slot]
-h178.com,j-baseball.club,j-basketball.club###gStickyAd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188965
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-exploader.net##+js(spoof-css, a[href^="https://al.dmm.co"], display, block)
 @@||daotag.com/tag/$script,domain=exploader.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181591
 iwb.jp##+js(no-setTimeout-if, getComputedStyle(a).height)
@@ -563,14 +555,15 @@ blog.2nt.com#@#.AdSense
 pvpoke-re.com##body > div[id][style*="9999"][style*="fixed"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166650
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167434
-best-hit.tv,h178.com,jukenbbs.com,j-baseball.club,j-basketball.club##.substitute-area-footer-on
-best-hit.tv,h178.com,jukenbbs.com,j-baseball.club,j-basketball.club##.substitute-area-middle-on
-best-hit.tv,h178.com,jukenbbs.com,j-baseball.club,j-basketball.club##.substitute-show-area-on
-bm.best-hit.tv,h178.com,jukenbbs.com###gStickyAd
-@@||bm.best-hit.tv^$generichide
+j-basketball.club##ins.adsbygoogle[data-ad-slot]
+best-hit.tv,h178.com,jukenbbs.com,j-baseball.club,j-basketball.club##body div[class^="substitute-"][style="display: block !important;"]
+best-hit.tv,h178.com,j-baseball.club,j-basketball.club,jukenbbs.com###gStickyAd
+@@||best-hit.tv^$generichide
 @@||h178.com^$generichide
+@@||j-baseball.club^$generichide
+@@||j-basketball.club^$generichide
 @@||jukenbbs.com^$generichide
-jukenbbs.com##+js(addEventListener-defuser, load, delayCheckAdBlock)
+best-hit.tv,h178.com,j-baseball.club,j-basketball.club,jukenbbs.com##+js(addEventListener-defuser, load, delayCheckAdBlock)
 ! https://github.com/uBlockOrigin/uAssets/issues/20629
 @@||shindanmaker.com^$generichide
 shindanmaker.com#$#div[id^="div-gpt-"] { min-height: 1px !important; }
@@ -1716,7 +1709,7 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 !
 ! For URL shorteners or simple sites with frequently changed ad servers.
 ! Incorrectly blocked domains can be excluded using regex(synchronize this regexp in all filters)
-/^(?!.*(fastlycdn.com|doodcdn.co|intensedebate.com|cdn.plyr.io|authkong.com|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|(\/\/|\.)vk\.com|yandex.|yastatic.net|ytimg.com|zencdn.net|player|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|imgsmail.ru|cloudflare.net|(\/\/|\.)x\.com)).*$/$third-party,script,_____,domain=viki.ja-jp.nina.az|uraaka-joshi.com
+/^(?!.*(bytecdntp.com|fastlycdn.com|doodcdn.co|intensedebate.com|cdn.plyr.io|authkong.com|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|(\/\/|\.)vk\.com|yandex.|yastatic.net|ytimg.com|zencdn.net|player|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|imgsmail.ru|cloudflare.net|(\/\/|\.)x\.com)).*$/$third-party,script,_____,domain=viki.ja-jp.nina.az|uraaka-joshi.com
 !
 ! ###banner
 nanbbs.jp,eroita.net,city.hirosaki.aomori.jp,iyasiya.com,adacomi.com,pref.shimane.lg.jp,pref.osaka.lg.jp,illust-ai.com,nan-net.com,radiolife.com,keimei.ne.jp,5ch.net,bbspink.com,crank-in.net###banner
@@ -1768,7 +1761,6 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-moeasia.net##.pickupbox
 nicomanga.com##div[class^="col-"] > center:has(> div > div[style] > iframe[name="myiFrame"])
 moeasia.net###leftside > div.sidewrapper:has(> div.execphpwidget > div > ins.adsbygoogle)
 moeasia.net##.amazon-container
@@ -2935,7 +2927,6 @@ kantan.game##.c-modal-light-score__ad-frame
 motimoti3d.jp###sidemenu > dl.sidemenu_body:first-child
 motimoti3d.jp##.entry_body > p.ichiran
 j-baseball.club,j-basketball.club,bm.best-hit.tv##div[style^="margin-top"][style$="text-align:center;"][style*="margin-bottom"]
-j-baseball.club,j-basketball.club,bm.best-hit.tv,h178.com##.substitute-display-area-on
 h178.com##div[style="box-sizing:border-box; text-align:center; width:100%; height:100px; overflow:hidden; padding-bottom:10px; border-bottom:1px solid #ccc;"]
 h178.com##.list-group > div[style*="max-height:125px"]
 h178.com##div[style="padding:0 0 30px 0; text-align:center; border-bottom:1px solid #ccc;"]
