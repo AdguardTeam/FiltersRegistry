@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.63.58",
-			"timeUpdated": "2024-12-06T15:31:35+0000",
+			"version": "2.3.63.59",
+			"timeUpdated": "2024-12-06T17:31:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.37",
-			"timeUpdated": "2024-12-06T15:33:10+0000",
+			"version": "2.0.77.38",
+			"timeUpdated": "2024-12-06T17:33:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.45",
-			"timeUpdated": "2024-12-06T12:35:24+0000",
+			"version": "2.0.56.46",
+			"timeUpdated": "2024-12-06T17:34:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.15.87",
-			"timeUpdated": "2024-12-06T16:36:45+0000",
+			"version": "2.2.15.88",
+			"timeUpdated": "2024-12-06T17:34:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.52.66",
-			"timeUpdated": "2024-12-06T13:33:38+0000",
+			"version": "2.0.52.67",
+			"timeUpdated": "2024-12-06T17:34:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.46.79",
-			"timeUpdated": "2024-12-06T15:33:52+0000",
+			"version": "2.0.46.80",
+			"timeUpdated": "2024-12-06T17:34:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
