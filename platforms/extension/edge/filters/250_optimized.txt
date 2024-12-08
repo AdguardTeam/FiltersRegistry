@@ -1,5 +1,5 @@
-! Checksum: HEuUl9ZM1JWlOeS5A/cJFg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1733576718-14400.patch
+! Checksum: vENfVl60POfRSiGkAuGfNw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1733634330-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.69
@@ -61,6 +61,7 @@ kurashiru.com##.footer-image-wrapper
 momondo.*#$##mobile-splash-popup { display: none!important }
 momondo.*#$##mui-header { display: block!important }
 momondo.*#$#.flights-section-container { display: block!important }
+onlineradiobox.com##.page__column-right > .playmarket
 pcgames.de##div.header_footer.ui-footer.ui-bar-inherit.ui-footer-fixed.slideup[data-role="footer"]
 roblox.com###app-bumper-main
 rt.com###offers
@@ -138,6 +139,8 @@ coolrom.com.au,coolrom.com##.download_link
 /^(https?://)?\d\d?\.[a-z0-9-]{1,}\.biz(/.*)?$/$document
 ||auslogics.com^$document
 ||mediaget.com^$all
+||rewardsgiantusa.com^$document
+||onlinepromotionsusa.com^$document
 ||traversedlp.com^$all
 ||driversupport.com^$document
 /^(.*://|.*\.)?[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz(/.*)?$/$document
@@ -371,7 +374,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##span[class*=-social-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class*=share-icon]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class^=share_btn]
-##span[data-lnkd-debug]
 ##ul[class*=-share-buttons]
 /images/share_icons/*
 /images/social-share/*
@@ -468,7 +470,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ~pinterest.*##a[href*="pinterest.com/pin/find/?"]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
 ~pinterest.*##a[href="#pinit"]
-~pinterest.*##a[href="/#pinterest"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
 ~pinterest.*##a[title="Share on Pinterest" i]
 ~pinterest.*##button[data-href*="pinterest.com/pin/create/button/"]
@@ -522,7 +523,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 /wp-content/plugins/wp-social-bookmarking
 ##button[data-google-events*="\"socialAction\":\"share\""]
 ##.twitterbtn:not(html,body)
-##a[href^=javascript][onclick*="javascript:window.open('https://www.facebook.com/sharer/"]
 ##div[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-social-share])
 ##a[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.react-share__ShareButton:not(body,html,:empty)
@@ -725,6 +725,8 @@ knowyourmeme.com##.cbox-smedia
 wikia.org,fandom.com###WikiaBarWrapper
 wikia.org,fandom.com##.mcf-mosaic
 wikia.org,fandom.com###mixed-content-footer
+wikia.org,fandom.com#$?##wds-company-logo-fandom-white { pointer-events: none !important; cursor: default !important; }
+wikia.org,fandom.com#$?#.wds-global-footer__header { pointer-events: none !important; cursor: default !important }
 fandom.com##.unified-search__layout__right-rail
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
@@ -769,7 +771,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /wp-snow-effect^
 /christmas-snow.js
 @@||epochtimes.com^
-@@||ntdtv.com^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||siteadvisor.com^
 @@||www.joesandbox.com^
@@ -797,6 +798,7 @@ reports.adguard.com$badfilter
 @@||cdn.jsdelivr.net/gh/*@master$~third-party
 @@||cdn.statically.io/gh/*/master/$~third-party
 @@||easylist.to/*.txt^
+@@||someonewhocares.org/hosts/
 @@||fanboy.co.nz/*.txt^
 ||gazisoft.com/services.php?*service=namaz^$third-party
 hamariweb.com##div.col-md-4:has(td[Width="25%"])
@@ -996,6 +998,9 @@ $removeparam=wgu
 $removeparam=wgexpiry
 $removeparam=Referrer
 $removeparam=algo_pvid
+$removeparam=algo_expid
+$removeparam=btsid
+$removeparam=ws_ab_test
 $removeparam=spLa
 $removeparam=shrsl_analytics_sscid
 $removeparam=shrsl_analytics_sstid
@@ -1331,6 +1336,7 @@ $removeparam=ga_fc
 $removeparam=ga_client_id
 $removeparam=s_id
 $removeparam=b_id
+$removeparam=kltstamp
 $removeparam=dspUserId
 $removeparam=tpmn_buid
 $removeparam=adsafe_type
@@ -1790,7 +1796,6 @@ $document,removeparam=channel,domain=1sol.io|amazon.*|bybit.com|coinpanel.com|do
 $removeparam=fr,domain=baidu.com|thegay.com|todayonline.com|hclips.com|search.yahoo.com
 $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
-$removeparam=argsite,domain=metaffiliation.com
 $removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
 $removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
@@ -1875,8 +1880,6 @@ $removeparam=pt,domain=apple.com|icedrive.net
 ||kohls.com^$removeparam=bdrecsId
 ||kohls.com^$removeparam=prdPV
 $removeparam=wapa6,domain=hoteles.com|hotels.com
-||skyscanner.$removeparam=redirectedFrom
-||skyscanner.$removeparam=previousCultureSource
 $removeparam=site_refer,domain=saksfifthavenue.com|saksoff5th.com
 ||fubo.tv^$removeparam=irad
 ||fubo.tv^$removeparam=irmp
