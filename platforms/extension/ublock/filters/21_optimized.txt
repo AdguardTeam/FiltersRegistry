@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 3cQ0waDhYy/1r/KAPk/T4Q
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1733625454-3600.patch
+! Checksum: Tjx7e3UULV36t4z0CkY6nQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1733711920-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.28.77
@@ -102,7 +102,6 @@ www.nicovideo.jp##:matches-path(/tag/).nicodicNicoadVideoList
 fotospor.com##a[href="https://t.me/efsanefotospor"] > img
 nihongomaster.com##div[class]:has(> div[wire\:snapshot*="newsletter-signup"])
 sueddeutsche.de##div[data-newsletter-id]
-sueddeutsche.de##div[class]:has(> div[data-teaserlist-element]:only-child > .basebox:only-child > div[data-newsletter-id])
 24sata.hr##+js(remove-class, sticky-top, .vjs-wrapper)
 24sata.hr##+js(remove-class, sticky-bottom, .video-js)
 ac-illust.com##.belt-banner
@@ -253,6 +252,7 @@ mp.pl##.anchor-banners
 cnbc.com#$#.UniversalVideoPlayer-videoContainer { position: absolute !important; }
 cnbc.com##.UniversalVideoPlayer-videoContainer.customControls #jw-container
 cyclismactu.net###dailymotion-pip-large-viewport
+danas.hr##.videoContent_player_fixed
 danas.hr##+js(remove-class, videoContent_player_fixed, .videoContent_player_fixed)
 diletant.media##.js-print + .news__bottom-btn
 femmeactuelle.fr###dailymotion-pip-large-viewport
@@ -605,7 +605,6 @@ webtekno.com##.content-bottom
 pri.org##aside.always-under.donate
 wikipedia.org##.cnotice
 vk.com##.feed_friends_recomm
-vk.com##aside[aria-label="Актуальные новости"]
 ixbt.video##.clickable_zone
 ixbt.video#$#body { background: none!important; }
 handelsblatt.com###hb-message-alert-bookmark
@@ -622,7 +621,6 @@ allmusic.com###ctoolbar
 wikipedia.org###frb-inline
 wikipedia.org###frb-nag
 kitguru.net###check-also-box
-pornhd6k.net###menu-item-44372
 xtapes.to##.menu-item-2370
 last.fm##.chartlist-break
 last.fm##.join-cta.link-block
@@ -1029,7 +1027,6 @@ basketball-reference.com###modal-container[style*="/images/stathead/stathead-"]
 easylearn.baidu.com##.kaixue-dialog-mask
 easylearn.baidu.com##.vip-banner-cont
 famitsu.com#?#.game-title-content > .row > .col-12:has(> .col-12 > .banner-ad-mark)
-famitsu.com#?#.game-title-content > .row > .col-12:has(> .card > .ad-native-campaign)
 frag-mutti.de###fm-shadow
 thebell.co.kr##.bannerBox
 ||appewa.com/assets/promo-$image
@@ -1218,7 +1215,6 @@ lenta.ru##+js(addEventListener-defuser, scroll, window.history.pushState)
 news.nifty.com##.mod_ad_nifty
 wixsite.com#$##WIX_ADS { display: none !important; }
 wixsite.com#$##site-root { top: 0 !important; }
-news.careerconnection.jp##.ccn-side-ads
 forums.macrumors.com###mrsubscribe
 livelib.ru##.prm-block
 eigo.plus###widget-fixed-footer
@@ -1399,7 +1395,6 @@ gsmarena.com###wrapper > div#outer > div#subHeader
 ##.canvas__header > .banner[data-google-analytics-payload]
 msn.com#$#body { overflow: initial!important; }
 dailytelegraph.com.au##.iseDiv
-cnews.ru##.video.img-block
 1tv.ru##.footer-promo-place
 nim.ru##.widget.banner
 ||nim.ru/i/1920_1101/banner/
@@ -1721,6 +1716,7 @@ wco.tv,wcofun.net,wcofun.org##.saklasanabunu
 qjweb.jp##.l-aside_ad
 ||blogparts.bookwalker.jp^$domain=ddnavi.com
 ddnavi.com##.biblio2023
+ncode.syosetu.com##div[class*="rankingtag"]:has(> a[href^="https://www.amazon.co.jp/s"])
 blog.eva.ua##.article-banner
 ||rule34.xxx/images/rule34_merch.jpg
 gamer.ne.jp##.card-list__item:has(> div > div > span.card-list__ad)
@@ -1769,6 +1765,8 @@ infourok.ru##.academy-banner
 infourok.ru##.btn-worksheet-banner
 infourok.ru##.course-offer
 infourok.ru##div[id^="common-banner"]
+infourok.ru##.dpo-banner
+infourok.ru###teachers-filter-react-app
 cumhuriyet.com.tr##.right-row > a[href="https://tatil.cumhuriyet.com.tr"]
 billboard.com##.lrv-a-wrapper:has(> div.bb-pro-promotional-banner)
 support.qq.com##.promotionbit
@@ -1932,7 +1930,6 @@ altema.jp###sidebar-50
 ||5ch.net/images/uplift-itest.png
 itest.5ch.net#?#[id] > p[style^="font-weight:"]:has(> a[href="//uplift.5ch.net"][target="_blank"])
 jetlearn.com##.static-cta-image
-twitch.tv##body div.subtember-gradient
 pixiv.net##.ciUaug > section:has(> div > div.gtm-toppage-premium-close)
 crunchyroll.com##.erc-upsell-popup > div.erc-upsell-popup-body
 journal.tinkoff.ru#?#div[data-test-element="ui-kit_container"]:has(> div > a[class^="banner"])
@@ -2577,6 +2574,7 @@ britannica.com##.marketing-INLINE_SUBSCRIPTION
 epicentrk.ua##div[class="__action-slider"]
 globo.com##.banner-bottom-fixed-cpnt
 maski-proekt.media,proekt.media##.alerts.reversed
+thetimes.co.uk###paywall-portal-page-footer
 makuring.jp,dontpayfull.com##.sponsored
 theatlantic.com###nonMeteredNudge
 theatlantic.com##.c-non-metered-nudge
@@ -3396,7 +3394,6 @@ gamejksokuhou.com,shoneekapoor.com,extrememanual.net,kakaowebtoon.com,cafe.daum.
 bestxiaomiproducts.com#$?#body style:contains(::selection) { remove: true; }
 novel.naver.com#$#body { user-select: auto !important; }
 healthfeed.co.kr,cafe.naver.com#$#body[style*="user-select: none;"] { user-select: auto !important; }
-xiebruce.top#$##main .entry-content p { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 sajuplus.net,tistory.com,bingotingo.com,promocode99.in,nawalakarsa.id#$#html > body * :not(input):not(textarea) { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 ltnovel.com,lightnovelpub.com,lightnovelworld.com#$#.chapter-content { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
 7days2die.info,ezms.link,comeinsidebox.com,7days2die.info#$#:not(input,select,textarea):not(#style_important) { -webkit-touch-callout: default!important; -moz-user-select: text!important; -webkit-user-select: text!important; -ms-user-select: text!important; -o-user-select: text!important; user-select: text!important; -khtml-user-select: text!important; }
