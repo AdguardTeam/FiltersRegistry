@@ -1,10 +1,12 @@
-! Checksum: Xzg3hdp17wV2dBUSC1zcww
+! Checksum: 9ShOFeORcBpbkmiK4m1Y2A
 ! Title: AdGuard Quick Fixes filter (Optimized)
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.4.57
-! TimeUpdated: 2024-12-09T09:34:51+00:00
+! Version: 2.0.4.58
+! TimeUpdated: 2024-12-09T10:37:45+00:00
 ! Expires: 10 days (update frequency)
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
+||my-best.com^$cookie=mybest_uuid
+thedirect.com##.mv-ad-box
 journaldesseniors.20minutes.fr##.ad
 tvi.iol.pt##.pub-outer-wrapper
 carteldemanhwas.com###floatcenter
@@ -440,8 +442,11 @@ vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div.page_block div.PostHead
 vk.com,vk.ru###feed_rows > div.feed_row > div.post:has(a[data-ad-details-link])
 @@||vk.com^$generichide
 vk.com#%#//scriptlet('prevent-fetch', '/(\.com|\.ru)$/ method:HEAD')
-exploader.net#%#//scriptlet('spoof-css', 'a[style^="display:"][href^="https://al.dmm.co.jp"]', 'display', 'flex !important')
-exploader.net##a[style^="display:"][href^="https://al.dmm.co.jp"]
+exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'height', '20px')
+exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'display', 'block')
+exploader.net##a[style*="display:"][href^="https://al.dmm.co.jp"] img
+exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] > div:has(img) { height: 20px !important; }
+exploader.net#@#a[style^="display:"][href^="https://al.dmm.co.jp"]
 exploader.net#@#a[href^="https://al.dmm.co"]
 exploader.net#@%#//scriptlet('spoof-css', 'article > div[style="margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;"]', 'clip', 'auto')
 exploader.net#@$#article > div[style="margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;"] { position: absolute !important; clip:rect(1px,1px,1px,1px) !important; }

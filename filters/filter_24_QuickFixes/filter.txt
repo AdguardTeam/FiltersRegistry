@@ -29,6 +29,10 @@
 !
 ! NOTE: 09-12-2024
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194354
+||my-best.com^$cookie=mybest_uuid
+! https://github.com/AdguardTeam/AdguardFilters/issues/194352
+thedirect.com##.mv-ad-box
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194238
 journaldesseniors.20minutes.fr##.ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194259
@@ -697,8 +701,11 @@ vk.com,vk.ru###feed_rows > div.feed_row > div.post:has(a[data-ad-details-link])
 @@||vk.com^$generichide
 vk.com#%#//scriptlet('prevent-fetch', '/(\.com|\.ru)$/ method:HEAD')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-exploader.net#%#//scriptlet('spoof-css', 'a[style^="display:"][href^="https://al.dmm.co.jp"]', 'display', 'flex !important')
-exploader.net##a[style^="display:"][href^="https://al.dmm.co.jp"]
+exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'height', '20px')
+exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'display', 'block')
+exploader.net##a[style*="display:"][href^="https://al.dmm.co.jp"] img
+exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] > div:has(img) { height: 20px !important; }
+exploader.net#@#a[style^="display:"][href^="https://al.dmm.co.jp"]
 exploader.net#@#a[href^="https://al.dmm.co"]
 exploader.net#@%#//scriptlet('spoof-css', 'article > div[style="margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;"]', 'clip', 'auto')
 exploader.net#@$#article > div[style="margin-left: -63px;width: 1120px;height: 450px;margin-bottom: 5px;display: flex;align-items: center;"] { position: absolute !important; clip:rect(1px,1px,1px,1px) !important; }

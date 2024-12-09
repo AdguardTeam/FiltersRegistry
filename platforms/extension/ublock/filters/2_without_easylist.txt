@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bJ7MnaOm282T/T2KryoSoQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1733737133-3600.patch
+! Checksum: rmHU/9b7jGui3+zl0il06w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1733740924-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.63.80
-! TimeUpdated: 2024-12-09T09:31:32+00:00
+! Version: 2.3.63.81
+! TimeUpdated: 2024-12-09T10:31:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -29849,6 +29849,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194267
+! Website is broken if any ExtendedCss rule is applied in app, rule below should fixes it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192508
 a-lohas.jp##+js(addEventListener-defuser, click, puTSstrpcht)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190695
@@ -34719,6 +34721,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+chromeactions.com##div:has(> .adsbygoogle[data-ad-client])
+chromeactions.com##div > header ~ :is(div, h1) + div:has(> div .adsbygoogle[data-ad-client])
+thedirect.com##.mv-ad-box
 pc-builds.com##.mon-holder
 disneyplus.com##+js(json-prune, ads.metadata ads.document ads.dxc ads.live ads.vod)
 qrz.com##.lads
@@ -50983,8 +50988,6 @@ online2pdf.com#?#.content_box_inner > div:has(> div + div[style^="min-height:"])
 online2pdf.com#?#.side_bar > div:has(> div:contains(Advertisements))
 amazon.*#?#div[data-order-sm]:has(> div[data-csa-c-painter="ad-topper-desktop-card"]:first-child + div[data-csa-c-painter="enumclaw-slot-display-ad"]:last-child)
 linkvertise.com#?#.content-right > div.ng-star-inserted:has(> lv-ad-dp4)
-chromeactions.com#?#div:has(> .adsbygoogle[data-adsbygoogle-status])
-chromeactions.com#?#div[class] > header ~ div + div:has(> div .adsbygoogle[data-adsbygoogle-status])
 rumble.com#?#main section.homepage-section:has(> div.constrained > div[class^="rac-ad__"])
 file.io#?#div[class^="css-"] > div[class^="css-"]:has(> div.vm-placement:not([style]))
 pornwhite.com#?#.container-side:has(> b:first-child + div[data-banner]:last-child)
