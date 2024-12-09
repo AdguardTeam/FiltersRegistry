@@ -1,14 +1,14 @@
-! Checksum: 7IwuH6maxcSjeaUkgJqbUw
-! Diff-Path: ../patches/243/243-s-1733634343-14400.patch
+! Checksum: PSKU8lRJFNM1pI0SHwh23Q
+! Diff-Path: ../patches/243/243-s-1733749552-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.23
-! TimeUpdated: 2024-12-08T05:01:44+00:00
+! Version: 2.0.20.24
+! TimeUpdated: 2024-12-09T13:01:55+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2024-12-08 05:54:28 CET
+! Last modified: 2024-12-09 13:31:24 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -597,7 +597,7 @@ fotbolltransfers.com##div[style^="min-height"]:has(div[id^="fotbolltransfers_mpu
 fotbolltransfers.com##img[src*="/images/annonser/"]:upward(1)
 fotbolltransfers.com##.border-b:has(#vi-ad, div[data-adk-container], div[id^="fotbolltransfers_mpu"])
 fotbolltransfers.com##.smallNewsCategory:has-text(/sponsr/i):upward(.smallNewsLink)
-fotboll-tv.se##.SMBoxContentBanner, a[data-gaevent*="action=bookmaker_odds"], #ouibounce-modal, .SMGameAtomSingleGameOddsComponent
+fotboll-tv.se##.SMBoxContentBanner, a[data-gaevent*="action=bookmaker_odds"], #ouibounce-modal, .SMGameAtomSingleGameOddsComponent, #headBanner, #SMSalesPromoSlotContainerHeaderWrapper
 fotboll.com##.header-static-lg, .fp-partner, .xs-ad, .bo-wrapper, #betsid, .news-banner-mini, .xs-cblock, .cookie_consent_bar, #odds, a.bellows-target[href*="/svenskaspel"], a.bellows-target[href*="/betting"], a[href*="/go/"][onclick], #lg-box-scyscraper
 fotboll.com##:is(div.text-center, div.d-none):has(a[href*="/go/"][onclick], .fotboll_content_wrapper[data-id])
 fotboll.com,allsvenskan.se,superettan.se,swebbtv.se,hastnet.se##.smartbanner
@@ -1341,8 +1341,9 @@ traning40plus.se##[id^="bunyad"]
 travelnews.se##.bottom-bar--animate-in, #job_ads_scroller, .header_banner
 travnet.se##div.text-\[8px\].text-center:has-text(ANNONS):upward(1)
 travnet.se##:is(.hidden, div[class="lg:hidden"]):has(div[id^="travnet_"])
-travronden.se##a[href*="/sponsrat/"]
-travronden.se##div:matches-css(visibility: hidden):has-text(ANNONS)
+travrondenspel.se###root div[id]:not([id^="checkout"]):empty:upward(2)
+travronden.se##a[href*="/sponsrat/"], div[class*="strossle-widget"]
+travronden.se##main div[id]:not([id^="checkout"]):empty:upward(2)
 travsport.se,gavletravet.se##.banner-component, .partners, .cookie-meddelande
 trendenser.se##a[href=""].uppercase:has-text(REKLAM):upward(.popular-post)
 trendenser.se##.featured-post:has(a[href*="/category/reklam"], a[href*="/category/annons"])
