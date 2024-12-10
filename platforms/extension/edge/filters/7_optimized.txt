@@ -1,9 +1,9 @@
-! Checksum: iqVl6em1V905JlV+bulmxQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1733837979-3600.patch
+! Checksum: +NRVlocL8B2Sxv6SxLtUXw
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1733845044-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.19
-! TimeUpdated: 2024-12-10T13:35:32+00:00
+! Version: 2.0.60.20
+! TimeUpdated: 2024-12-10T15:33:16+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1268,11 +1268,6 @@ n.lat/login|$document
 /lps/index?ad_cd=*&lp_cd=$document
 |http://*/log_index.php$document
 /regist_execute.html$document
-/^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{3,5}\/item-(?:(?=[a-z]*\d)[0-9a-z]{10}|\d{8})\.html$/$document,match-case,domain=art|baby|biz|cc|cfd|click|cloud|club|fun|homes|info|lat|life|lol|me|mom|one|online|shop|site|store|top|world|xyz
-/^https?:\/\/(?!www)[a-z]{3,5}\.[0-9a-z]{4,10}\.[a-z]{2,6}\/[a-z]{3,15}\/(?=[a-z]{0,9}[0-9A-Z])[0-9A-z]{10}\.html$/$document,match-case,domain=art|baby|biz|cc|cfd|click|cloud|club|fun|homes|info|lat|life|lol|me|mom|one|online|shop|site|store|top|world|xyz
-.com/ae/login.php?openid.pape.max_auth_age=0&openid.return_to=%$document
-/?AC=*&IC=$document,domain=com|fun|online|site
-.asp?AC=*&IC=$document,domain=com|fun|online|site
 /step1.php?msg=*&cnv=*&cnt=$document
 /index.php?cpno=$document
 /ec2_index.html?cpno=$document
@@ -1280,15 +1275,20 @@ n.lat/login|$document
 _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=sign-in&path=home&ref_=nav_Account&signIn=1&useRedirectOnSuccess=1|$document
 .com/regist.php?step=1&cp=$document
 .com/regist.php?*/1|$document
+://eki*.*.com/Personal/member/Login/index.php?oneTimeAccessID=$document
+.com/ae/login.php?openid.pape.max_auth_age=0&openid.return_to=%$document
+/^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{3,5}\/item-(?:(?=[a-z]*\d)[0-9a-z]{10}|\d{8})\.html$/$document,match-case,domain=art|baby|biz|cc|cfd|click|cloud|club|fun|homes|info|lat|life|lol|me|mom|one|online|shop|site|store|top|world|xyz
+/^https?:\/\/(?!www)[a-z]{3,5}\.[0-9a-z]{4,10}\.[a-z]{2,6}\/[a-z]{3,15}\/(?=[a-z]{0,9}[0-9A-Z])[0-9A-z]{10}\.html$/$document,match-case,domain=art|baby|biz|cc|cfd|click|cloud|club|fun|homes|info|lat|life|lol|me|mom|one|online|shop|site|store|top|world|xyz
+/?AC=*&IC=$document,domain=com|fun|online|site
+.asp?AC=*&IC=$document,domain=com|fun|online|site
 /ap/signin/openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.co.jp$document,domain=cn|top|xyz
 /index.php?route=product/product&product_id=$document,domain=cyou|life|live|shop|xyz|~ocam.live
 /index.php?main_page=product_info*&cPath=$document,domain=asia|bar|beauty|best|bond|buzz|cam|cfd|click|cloud|cyou|fit|fun|homes|icu|ink|life|live|ltd|me|monster|one|online|pics|quest|ru.com|sa.com|sbs|shop|site|space|store|tokyo|top|website|work|xyz|za.com
 /index.php?main_page=product_info&products_id=$document,domain=asia|bar|beauty|best|bond|buzz|cam|cfd|click|cloud|cyou|fit|fun|homes|icu|ink|life|live|ltd|me|monster|one|online|pics|quest|ru.com|sa.com|sbs|shop|site|space|store|tokyo|top|website|work|xyz|za.com
-://eki*.*.com/Personal/member/Login/index.php?oneTimeAccessID=$document
 /\.(?:club|cn|icu|top|pro|site|work)\/Personal\/member\/Login\/index\.php\?oneTimeAccessID=/$document,domain=club|cn|icu|top|pro|site|work
 /^https:\/\/[a-z]{4,8}\.[a-z]{7,10}\.shop\/product\/\d{4,7}$/$document,match-case
 /^https:\/\/[-0-9a-z]{6,20}\.com\/item-[0-9a-z]{10}\.html$/$document,match-case
-/^https?:\/\/([-0-9a-z]{3,}\.)?[a-z]{8,}\.[a-z]{3,6}\/product\/\d{6,}(\.html)?$/$document,domain=online|top
+/^https?:\/\/([-0-9a-z]{3,}\.)?[a-z]{8,}\.[a-z]{3,6}\/product\/\d{6,}(\.html)?$/$document,to=online|top
 /^(?!.*(bytecdntp.com|fastlycdn.com|doodcdn.co|intensedebate.com|cdn.plyr.io|authkong.com|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|polyfill.io|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|(\/\/|\.)vk\.com|yandex.|yastatic.net|ytimg.com|zencdn.net|player|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|imgsmail.ru|cloudflare.net|(\/\/|\.)x\.com)).*$/$third-party,script,_____,domain=viki.ja-jp.nina.az|uraaka-joshi.com
 nanbbs.jp,eroita.net,city.hirosaki.aomori.jp,iyasiya.com,adacomi.com,pref.shimane.lg.jp,pref.osaka.lg.jp,illust-ai.com,nan-net.com,radiolife.com,keimei.ne.jp,5ch.net,bbspink.com,crank-in.net###banner
 reibun.biz,atodeyo.com,minyu-net.com,cyclesports.jp,precious.jp,creatorzine.jp,pointi.jp,townnews.co.jp,point-game.jp,azby.fmworld.net,adult-machiko.com,newsoku.blog,nikkan-gendai.com,ceron.jp,kids.gakken.co.jp,5chan.jp,toyokeizai.net,twpf.jp,chunichi.co.jp,tokyo-np.co.jp,db.msin.jp,minpo.jp##.pr
@@ -7081,6 +7081,7 @@ gp-warau.fun,gampa.jp##.ad__dbl-rectangle--box
 gp-warau.fun,gampa.jp##.largeskyscraperBnrBox
 gampa.jp##.superBnrBox
 gpoint.co.jp##.sspPR
+e-mansion.co.jp##.data-es-link[href*="-banner"]
 e-mansion.co.jp###bottom_bottom_ad
 e-mansion.co.jp###part_footer
 e-mansion.co.jp##.main_present_thread > div.padding > div.right.column
