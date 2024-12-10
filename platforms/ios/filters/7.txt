@@ -1,9 +1,9 @@
-! Checksum: w9OTDah5AuAiDzoFJRfr6w
-! Diff-Path: ../patches/7/7-s-1733773079-3600.patch
+! Checksum: d/aC+Pu1MEX7ogSnTrbZNg
+! Diff-Path: ../patches/7/7-s-1733809202-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.15
-! TimeUpdated: 2024-12-09T19:33:58+00:00
+! Version: 2.0.60.16
+! TimeUpdated: 2024-12-10T05:35:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -522,6 +522,12 @@ yourfones.net#%#//scriptlet('spoof-css', 'ins.adsbygoogle', 'display', 'block')
 mytry.jp#@#.ad_box
 mytry.jp#$#body > #container { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
+@@||imp-adedge.i-mobile.co.jp/script/v1/spot.js$domain=wiki.yjsnpi.nu
+@@||ssp-bidapi.i-mobile.co.jp/api/v1/spot.ashx$domain=wiki.yjsnpi.nu
+@@||spnativeapi-tls.i-mobile.co.jp/api/ad_spot.ashx$domain=wiki.yjsnpi.nu
+wiki.yjsnpi.nu#@##mw-content-text > div.ad.top[style*="min-height:"]
+wiki.yjsnpi.nu#@##mw-content-text > div[style*="min-height:"]:has(> div[id^="im-"] > script)
+wiki.yjsnpi.nu###mw-content-text > div > div[style^="position:fixed; bottom:0;left:0;right:0;width:100%;background:"]
 !+ NOT_PLATFORM(windows, mac, android, ext_ff, ext_chromium_mv3)
 wiki.yjsnpi.nu#%#//scriptlet('abort-current-inline-script', 'onload', 'catch')
 wiki.yjsnpi.nu#%#//scriptlet('prevent-element-src-loading', 'script', '/w/load.php?lang=ja&modules=codex-search-styles')
@@ -539,6 +545,7 @@ gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188965
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
+exploader.net#%#//scriptlet('trusted-suppress-native-method', 'Element.prototype.querySelectorAll', '"img"', 'prevent', 'setBox')
 exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'height', '20px')
 exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'display', 'block')
 exploader.net##a[style*="display:"][href^="https://al.dmm.co.jp"] img
