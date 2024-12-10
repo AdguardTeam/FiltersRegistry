@@ -1,5 +1,5 @@
-! Checksum: ZfLqu+J5lXhwfEjgqmlWJA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1733792745-14400.patch
+! Checksum: L6GZ0kzzwkC/abOC+qSJqQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1733807143-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.73
@@ -172,7 +172,6 @@ coolrom.com.au,coolrom.com##.download_link
 /page/bouncy.php?$all
 ||banquetunarmedgrater.com^$all
 ||curryfielddistribution.com^$all
-||truthfulsensor.com^$all
 ||livejasmin.com/*&origin=$document
 /^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 ||exs7oilq14cz6.click^$all
@@ -351,6 +350,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##div[class*=_share_button]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=addthis]
 ##div[class*=article-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-article-share])
+##div[class*=box--share]
 ##div[class*=footer__share]
 ##div[class*=FooterShare i]
 ##div[class*=iconShare]
@@ -751,6 +751,7 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
+##canvas[data-testid=SnowfallCanvas i]
 ##.snowflakes:not(html, body)
 ##span.falling-snow > em:empty
 /snowfall.min.jquery.js
@@ -774,7 +775,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||epochtimes.com^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||siteadvisor.com^
-@@||www.joesandbox.com^
 @@||virustotal.com^
 @@||fortiguard.com^
 @@||sitecheck.sucuri.net^
@@ -944,6 +944,7 @@ $document,removeparam=snr,domain=steampowered.com|steamcommunity.com|steamgames.
 $document,removeparam=referrer,domain=~bolt.com|~f4map.com|~deviantart.com|~github.com|~discover.*|~vimeo.*|~123-reg.co.uk|~cravesandflames.com|~portswigger.net|~aluminate.net
 $removeparam=iradid
 $removeparam=irpid
+$removeparam=iradtype
 $removeparam=irmptype
 $removeparam=email_work_card
 $removeparam=tracking_source
@@ -1700,14 +1701,11 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=xzhid
 ||baidu.com^$document,removeparam=fid
 ||baidu.com^$document,removeparam=pi
-||baidu.com^$document,removeparam=iid
 ||baidu.com^$document,removeparam=query
-||baidu.com^$document,removeparam=lattr
 ||baidu.com^$document,removeparam=category
 ||baidu.com^$document,removeparam=jid
 ||baidu.com^$document,removeparam=prod_type
 ||baidu.com^$document,removeparam=cf
-||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
 ||bilibili.com^$removeparam=/^from.*$/
@@ -1809,7 +1807,6 @@ $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=token,domain=al.to|combat.pl|x-kom.pl
 $removeparam=nid,domain=columbia.com|columbiasportswear.*|sorel.com
 $removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com
-$removeparam=hpt,domain=cnn.com
 ||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
 ||youtube.com^$removeparam=ab_channel
@@ -1879,6 +1876,8 @@ $removeparam=pt,domain=apple.com|icedrive.net
 ||kohls.com^$removeparam=bdrecsId
 ||kohls.com^$removeparam=prdPV
 $removeparam=wapa6,domain=hoteles.com|hotels.com
+||skyscanner.$removeparam=redirectedFrom
+||skyscanner.$removeparam=previousCultureSource
 $removeparam=site_refer,domain=saksfifthavenue.com|saksoff5th.com
 ||fubo.tv^$removeparam=irad
 ||fubo.tv^$removeparam=irmp
@@ -2263,6 +2262,7 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=.src
 ||login.yahoo.com^$document,removeparam=pspid
 ||login.yahoo.com^$document,removeparam=activity
+||abcnyheter.no^$removeparam=nr
 ||asos.com^$removeparam=ctaref
 ||gumroad.com^$removeparam=recommended_by
 ref=words.filippo.io$document,removeparam=ref
