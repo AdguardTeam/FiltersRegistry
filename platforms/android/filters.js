@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.63.97",
-			"timeUpdated": "2024-12-10T08:31:35+0000",
+			"version": "2.3.63.98",
+			"timeUpdated": "2024-12-10T10:31:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.17",
-			"timeUpdated": "2024-12-10T06:35:26+0000",
+			"version": "2.0.60.18",
+			"timeUpdated": "2024-12-10T10:36:25+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.16.5",
-			"timeUpdated": "2024-12-10T09:37:12+0000",
+			"version": "2.2.16.6",
+			"timeUpdated": "2024-12-10T10:36:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.52.78",
-			"timeUpdated": "2024-12-10T07:34:40+0000",
+			"version": "2.0.52.79",
+			"timeUpdated": "2024-12-10T10:36:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -787,8 +787,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.82",
-			"timeUpdated": "2024-12-10T09:37:21+0000",
+			"version": "2.0.28.83",
+			"timeUpdated": "2024-12-10T10:36:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.27.52",
-			"timeUpdated": "2024-12-10T02:34:38+0000",
+			"version": "2.1.27.53",
+			"timeUpdated": "2024-12-10T10:37:03+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

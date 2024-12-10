@@ -1,9 +1,9 @@
-! Checksum: +i/Znrp6D6Q+Gammdm9W7g
-! Diff-Path: ../patches/7/7-s-1733812767-3600.patch
+! Checksum: fxbt5bCwQsOTpCzIjfK0IA
+! Diff-Path: ../patches/7/7-s-1733827254-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.17
-! TimeUpdated: 2024-12-10T06:35:26+00:00
+! Version: 2.0.60.18
+! TimeUpdated: 2024-12-10T10:36:25+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -536,7 +536,8 @@ gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188965
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-exploader.net#%#//scriptlet('trusted-suppress-native-method', 'Element.prototype.querySelectorAll', '"img"', 'prevent', 'setBox')
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ublock)
+exploader.net#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.getBoundingClientRect', 'setBox')
 exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'height', '20px')
 exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'display', 'block')
 exploader.net##a[style*="display:"][href^="https://al.dmm.co.jp"] img
