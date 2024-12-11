@@ -99,6 +99,8 @@ spletnik.ru#%#//scriptlet('set-local-storage-item', '/^_ym/', '$remove$')
 spletnik.ru#%#//scriptlet('set-local-storage-item', 'adrcid', '$remove$')
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194454
+ohmynews.com#%#//scriptlet('set-constant', 'GA_Event', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193023
 hgtv.com#%#//scriptlet('remove-class', 'block-user', '#root.block-user')
 hgtv.com#$#.block-user * { opacity: 1 !important; pointer-events: auto !important; touch-action: auto !important; }
@@ -115330,6 +115332,11 @@ inapps.appsflyersdk.com^
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !#endif
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194454
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||ohmynews.com/NWS_Web/Common/JS/TagManager.JS
+@@||googletagmanager.com/gtm.js$domain=ohmynews.com
+!#endif
 ! https://github.com/easylist/easylist/pull/20815
 @@||googletagmanager.com/gtm.js$domain=almamedia.fi
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194011
