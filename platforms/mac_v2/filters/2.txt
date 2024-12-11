@@ -1,9 +1,9 @@
-! Checksum: 3l9L4W01QSX01Ld/5OwtAA
-! Diff-Path: ../patches/2/2-s-1733935170-3600.patch
+! Checksum: D5DVDzcfHy05RUhkJJuyXw
+! Diff-Path: ../patches/2/2-s-1733938687-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.64.16
-! TimeUpdated: 2024-12-11T16:31:45+00:00
+! Version: 2.3.64.17
+! TimeUpdated: 2024-12-11T17:31:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -29553,6 +29553,7 @@ truyenqqhot.com##div[id^="ads_"]
 ! Popular ad on streaming services
 ##button[data-openuri="|BTN_URL|"]
 !
+##div[data-clickadilla-banner]
 ##.player-section__ad-b
 ##.video.ad-w
 ##.advMasthead
@@ -35126,6 +35127,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+forge.plebmasters.de#%#//scriptlet('json-prune', 'servers.*.imageThumbnailUrl servers.*.adDescription servers.*.redirectUrl servers.*.adTitle')
+forge.plebmasters.de##.server-row:has(> td > div[aria-label="Pleb Masters: Forge partner logo"])
+dropmms.com##p[id^="a-ads"]
+||js.dropmms.net/adprovider.js
 standard.co.uk##article > div[class]:has(> div[class] > div[data-mpu])
 ||textbinn.com/left-ad.gif
 textbinn.com##.container > a[target="_blank"] > img
@@ -38571,7 +38576,7 @@ quizangel.com##.static_ads
 prydwen.gg##.fuse-ad-placeholder
 maxcheaters.com##.mxc-left
 maxcheaters.com##.mxc-right
-overclockers.ge,maxcheaters.com##div[data-role="sidebarAd"]
+dropmms.com,overclockers.ge,maxcheaters.com##div[data-role="sidebarAd"]
 maxcheaters.com##.ipsResponsive_inlineBlock > a[href*="advert"] > img
 meetdownload.com##.panel-block > div > a[target="_blank"][rel="nofollow"]
 outlookindia.com###_snup-rtdx-ldgr1
@@ -62589,7 +62594,6 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /adrecover-new.js$script
 /adrecover.js$script
 /adright.$domain=~adright.com
-/adriver.$~script,domain=~adriver.co
 /ads-250.$image
 /ads-async.$script
 /ads-common.$image,script
