@@ -1,9 +1,9 @@
-! Checksum: FsRle2qvwFpdea5EOY/Akg
-! Diff-Path: ../patches/18/18-s-1733909957-3600.patch
+! Checksum: 5u1iDPdwvBJPcWleFCg68g
+! Diff-Path: ../patches/18/18-s-1733913504-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.52.84
-! TimeUpdated: 2024-12-11T09:35:21+00:00
+! Version: 2.0.52.85
+! TimeUpdated: 2024-12-11T10:34:30+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2510,6 +2510,10 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+enjoyx.com#$#body { overflow-y: auto !important; }
+enjoyx.com#$#body .cookieconsent { display: none !important; }
+xlogic.org#$##wpca-lay-out-wrapper { display: none !important; }
+xlogic.org#$#html { overflow: auto !important; }
 galaxus.de##div[class^="cookieBanner"]
 tama.com###header-gdpr
 nic.ru###inform-notification
@@ -16512,6 +16516,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194437
+enjoyx.com#@#.cookieconsent:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194407
 @@||cdn.opencmp.net^$domain=serienjunkies.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194374
