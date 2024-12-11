@@ -1,8 +1,8 @@
-! Checksum: 1BENmdSXjGiG14KB1hPCKg
+! Checksum: 0t/PIDLLBKHS4B/o6WFHFQ
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.4.77
-! TimeUpdated: 2024-12-11T11:36:23+00:00
+! Version: 2.0.4.78
+! TimeUpdated: 2024-12-11T13:39:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35,6 +35,13 @@
 !
 ! NOTE: 11-12-2024
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/193278
+@@||ag.sytes.net/admgr.js$domain=infinityscans.xyz|infinityscans.net|infinityscans.org
+infinityscans.org,infinityscans.net,infinityscans.xyz#@%#//scriptlet("abort-current-inline-script", "$", "/\['html'\]|\['toString'\][\s\S]*?'bind'|_\$_/")
+infinityscans.org,infinityscans.net,infinityscans.xyz#%#//scriptlet("abort-current-inline-script", "$", "/\['html'\]|\['toString'\][\s\S]*?'bind'|_\$_|!document\[_0x/")
+infinityscans.org,infinityscans.net,infinityscans.xyz#@%#//scriptlet("trusted-replace-outbound-text", "atob", "/[\s\S]*?(pagead2\.googlesyndication\.com|googletag|depend on advertisement)[\s\S]*?window\.stop[\s\S]*/")
+infinityscans.org,infinityscans.net,infinityscans.xyz#%#//scriptlet("trusted-replace-outbound-text", "atob", "/[\s\S]*?(pagead2\.googlesyndication\.com|googletag|depend on advertisement)[\s\S]*?window\.stop\(\)[\s\S]*/")
+infinityscans.org,infinityscans.net,infinityscans.xyz#%#//scriptlet('trusted-replace-node-text', 'script', 'catch', '/catch\(.{1,20}\)\{.{1,200}window\[_0x.{1,20}\]\(\);}/', 'catch(e){}')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194466
 edatv.news##.ad-container
 edatv.news##.stickyFooterContainer
@@ -347,14 +354,14 @@ vk.com,vk.ru###feed_rows > div.feed_row > div.post:has(a[data-ad-details-link])
 @@||vk.com^$generichide
 vk.com#%#//scriptlet('prevent-fetch', '/(\.com|\.ru)$/ method:HEAD')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-exploader.net#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.getBoundingClientRect', 'set_daotag')
+exploader.net#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.getBoundingClientRect', '/[0-9a-z]{20,}\W.+daotag/')
 exploader.net#@%#//scriptlet('trusted-suppress-native-method', 'Element.prototype.querySelectorAll', '"img"', 'prevent', 'setBox')
 exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'height', '20px')
 exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img', 'display', 'block')
 exploader.net##a[style*="display:"][href^="https://al.dmm.co.jp"] img
 exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] > div:has(img) { height: 20px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
-wiki.yjsnpi.nu#%#//scriptlet('prevent-element-src-loading', 'script', '/w/load.php?lang=ja&modules=codex-search-styles')
+wiki.yjsnpi.nu#%#//scriptlet('abort-on-stack-trace', 'Function.prototype.toString', '/w/load.php?lang=ja&modules=codex-search-styles%2Cjquery%2Coojs%2C&skin=vector-2022&version=L58hf')
 wiki.yjsnpi.nu#%#//scriptlet("prevent-setTimeout", "()=>k(S(4")
 wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"])', 'font-size', '14px')
 wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img', 'height', '128px')
