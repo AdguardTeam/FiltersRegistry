@@ -1,14 +1,14 @@
-! Checksum: DY2MuJ69jAk7hIlTcrJ6dg
-! Diff-Path: ../patches/243/243-s-1733821631-14400.patch
+! Checksum: 3CzBe/DwWoew4pahdaMWpw
+! Diff-Path: ../patches/243/243-s-1733907984-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.25
-! TimeUpdated: 2024-12-10T09:02:23+00:00
+! Version: 2.0.20.26
+! TimeUpdated: 2024-12-11T09:02:05+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2024-12-10 07:25:55 CET
+! Last modified: 2024-12-11 07:26:45 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -464,7 +464,7 @@ emocore.se###sticky-panorama-container, #mob-wrap
 energi.se##.advertisement--item
 eniro.se##article:has(#marketing)
 eniro.se##div.rounded-4xl:has(a[href$="/firma#marketing"])
-eniro.se##:is(.grid.place-items-center, div[style^="height"].items-center):has(div[id*="LeaderBoard"], div[id*="Leaderboard"])
+eniro.se##:is(.grid.place-items-center, div[style^="height"].items-center, div[style^="min-height"].items-center):has(div[id*="LeaderBoard"], div[id*="Leaderboard"], div[id^="LandingPage"])
 enkelteknik.se##.wpb_wrapper > .vc_row_inner:has(script[data-bid])
 enterprisemagazine.se###ew-cookiebar-full, #ew-cookiebar-manage
 epochtimes.se##.fixed.bottom-0, a[target="_blank"][href*="utm_campaign"]
@@ -675,7 +675,7 @@ hammarbyfotboll.se#$#body[data-modal-open] { overflow-y:unset!important; }
 hammarbyfotboll.se###seasonalTakeover, div[class*="sponsorBarContainer"], div[class*="footerSponsors"], .slick-slide a[target="_blank"]
 handbollskanalen.se##.hb-adlabel, [id^="hb-"], .ad-placement-side, p > a[target="_blank"]
 handelsnytt.com##.headerannons, .sidebarannonsseg, .footerannons
-handel.ax###topadmob
+handel.ax###topadmob, div[id^="hande-"]:empty
 hant.se,svenskdam.se##div.text-center:has(div[ad-placement])
 happypancake.se##a[href*="casino"]:upward(1)
 happypancake.se###__next > div > div.bar:first-child
@@ -1011,6 +1011,7 @@ newsvoice.se##.sponsrad, .sponsradcol1, .newsv-widget
 nextconomy.se##.list-item:has(.news-spot-medium__ad-title)
 ng.se#$?##nativendo-mainfeed:upward(1) { remove: true; }
 ng.se##.secondary-sidebar > .panel-pane:last-child
+ng.se##.views-row:has(.sponsored-article)
 ng.se##.view-partner-articles, [class*="sponsored-article"], .tertiary-bottom, div[class*="nojesguidenads"]
 nogg.se##:is(td[rowspan="2"][align="left"], table[width="640"][cellpadding="7"]):has(a[href*="casino"])
 nordfront.se##span:not(.post-content):has-text(/annons/i):upward(.post)
@@ -1159,6 +1160,7 @@ siriusbandy.se,vetlandabk.se##[id$="-ad"]
 sistersinlaw.se###annonser
 si.se,sweden.se###cookie-manager
 sjofartstidningen.se###newsletter-overlay, #newsletter-modal
+sjofart.ax##div[id^="sjofa-"]:empty
 sjofart.ax#$#section.huvudsektion { margin-top:unset!important }
 sjofart.ax##:is(.sjofa-top-takeover, .sjofa-artikel-pano):upward(section)
 sjostadsbladet.se##a.td_single_image_bg, span.td_single_image_bg[data-img-url*="Annons"]
@@ -1422,8 +1424,8 @@ vildmarken.se##.g-single:upward(section[data-settings*="background_background"])
 villalivet.se##.mtsnb, .villalivet-target, a[href*="/sponsrat-innehall/"], div[data-td-block-uid="tdi_85"], a[href*="utm_campaign"][target="_blank"], div[data-td-block-uid="tdi_87"]
 villalivet.se##.td-block-title span:has-text(/sponsr/i):upward(3)
 villatidningen.se##.wppsac-post-carousel:has(a[href*="/spons"])
-vimedbarn.se#$?#button:has-text(/annons/i):upward(.owl-item) { remove: true; }
-vimedbarn.se##.annonsinlagg, .annonsen
+vimedbarn.se##.annonsinlagg, .annonsen, a[href^="/artiklar/info/"]
+vimedbarn.se##.toplist_article:has(a[href^="/artiklar/info/"])
 vinbanken.se#$#.fancybox-lock { overflow-y: auto !important; }
 vinbanken.se##.push-to-newsletter, .fancybox-overlay
 vinbanken.se##.top-add, .sidebar-adds, .spons-content
@@ -2335,7 +2337,7 @@ zeromagazine.nu##div[id^="ads"]
 /qc_cmp$domain=reseguiden.se
 /questback.popup$script
 /rantekartan$subdocument,domain=expressen.se
-/raven$script,domain=mitti.se|travnet.se|nyheter24.se|tyda.se|devote.se|egoinas.se|hemtrevligt.se|alltforforaldrar.se|familjeliv.se|brollopstorget.se|blogg.se|nouw.com|lchfarkivet.se|fotbolltransfers.com|norrahalland.se|svenskgolf.se
+/raven$script,domain=mitti.se|travnet.se|nyheter24.se|tyda.se|devote.se|egoinas.se|hemtrevligt.se|alltforforaldrar.se|familjeliv.se|brollopstorget.se|blogg.se|nouw.com|lchfarkivet.se|fotbolltransfers.com|norrahalland.se|svenskgolf.se|vimedbarn.se|modette.se
 /recommendations$xmlhttprequest,domain=expressen.se
 /registerhit?$image
 /renderBanner.do?zoneId=
@@ -2511,6 +2513,7 @@ zeromagazine.nu##div[id^="ads"]
 /?adsforwp_front_js
 /?agg_url=/shopping$domain=nyheter24.se
 /?agg_url=/sponsratinnehall$domain=nyheter24.se
+/?agg_url=/vimedbarn/artiklar/info
 /?client=ca-pub-$script
 /?dtbnrspcid=$xmlhttprequest
 /?file=lokus$subdocument
@@ -2852,6 +2855,7 @@ zeromagazine.nu##div[id^="ads"]
 ||gtm.ekonomifakta.se^
 ||gtm.findroommate.dk^
 ||guesssverige.com.se^
+||guv-bounce.eniro.com^
 ||gymshark-sweden.com.se^
 ||g.ezodn.com/cmp/$domain=temadagar.se
 ||hajper.com^$third-party
@@ -2945,7 +2949,6 @@ zeromagazine.nu##div[id^="ads"]
 ||lookaside.fbsbx.com/lookaside/crawler/
 ||look.ufinkln.com^
 ||look.utndln.com^$all
-||lwadm.com^$important,domain=sydostran.se
 ||lwcdn.com/vendor/ima.min.js$script
 ||lystra.se^$third-party
 ||m1.analytics.sitevision-cloud.se^
