@@ -1,9 +1,9 @@
-! Checksum: 9tHmRROSm0gR4n8CQze52A
-! Diff-Path: ../patches/237/237-s-1733936785-14400.patch
+! Checksum: 1USo5xIvMzUYySTkYov0WA
+! Diff-Path: ../patches/237/237-s-1733952214-14400.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.32.79
-! TimeUpdated: 2024-12-11T17:02:10+00:00
+! Version: 1.0.32.80
+! TimeUpdated: 2024-12-11T21:18:39+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -12,8 +12,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Wed, 11 Dec 2024, 16:39 UTC+01:00
-! OriginalVersion: 2024.12.11.0
+! Last modified: Wed, 11 Dec 2024, 21:38 UTC+01:00
+! OriginalVersion: 2024.12.11.1
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -22,7 +22,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: śro, 11 gru 2024, 16:39 UTC+01:00
+! Aktualizacja: śro, 11 gru 2024, 21:38 UTC+01:00
 !
 !
 ! Newslettery (nie popupy)
@@ -2363,6 +2363,7 @@ bdl.lasy.gov.pl##.blockPage.blockMsg.blockUI, .blockOverlay.blockUI
 beardman.pl,polskicaravaning.pl,swiatopon.info,warsztat.pl,wiadomoscihandlowe.pl,wiadomoscikosmetyczne.pl###newsletter-popup-wrapper
 beardman.pl,subiektywnieofinansach.pl###newsletter-overlay
 beautikon.com###mteo_popup_bg_layer
+beliani.pl###front_overlay_subscription
 bemuke.pl##div[id^="tws_i_"]
 beskidy.news##.c-pop-up
 beslow.pl##.ulp-window[data-title*="Newsletter"], .ulp-overlay
@@ -2994,6 +2995,7 @@ siatka.org##.scroll-top-wr
 siligan.pl###blackout
 siligan.pl###contentWindow
 sillydesign.pl###blanket, #popUpDiv
+sinsay.com##.newsletterPopupOverlay
 siriuspro.pl###sp-newsletter-popup-bg
 sjp.pwn.pl,slowniki.pwn.pl###floater
 sklep.bi-es.eu##.ybc-newsletter-popup
@@ -3629,7 +3631,7 @@ bibliotekarium.pl,halonet.pl,poettinger.at,rutkowscy.pl##.icon-angle-up
 bikesalon.pl,snowshop.pl,surfshop.pl##.js-go-up
 bioeco.pl,dekolo.pl,dolasu.pl,happytime.com.pl,szachownica.com.pl,witek.pl##.to_top_btn
 bip.powiat.poznan.pl,e-marcom.pl,fotoprint.pl,kwestiasmaku.com,zloty-pociag.com##.do_gory
-bip.slaskie.pl,bipum.kielce.eu,mazovia.pl,pulawy.eu###totopicon
+bip.slaskie.pl,bipum.kielce.eu,mazovia.pl,podlaskie.eu,pulawy.eu###totopicon
 bisko.pl,cng.auto.pl,iwetto.com,montaz-anten.pl,olbud.com.pl,penguinbm.com,pl.vpnmentor.com,retromedia.pl###scroll
 bithub.pl##.st-site-scroll-top
 bitserwis.com.pl##.flaticon-home
@@ -4312,6 +4314,7 @@ shell.pl##.site-footer__back-to-top
 shopalike.pl###totop-btn
 shopee.pl##.md-container--back-to-top
 shoperia.pl##.scrollTopTrigger
+sinsay.com###app button + div:has(> svg[viewBox="0 0 24 24"] > path:empty)
 sip.lex.pl##.wk-back-to-top-button
 siriuspro.pl###sp-scroll-to-top-button
 skierniewice.istrefa.com##.circle.jq-elevator
@@ -7233,6 +7236,9 @@ nat.pl#@##cookies-modal
 nat.pl#@##cookieWarning
 nat.pl#@##cookieWarning:not(body):not(html)
 nat.pl#@#.cookieContent:not(body):not(html)
+podlaskie.eu#@#.gdprcookie
+sinsay.com#@##cookiebanner
+sinsay.com#@##cookieBannerOverlay
 !
 !
 ! Filtry specjalne
@@ -12310,10 +12316,9 @@ polishannoyancefilters.netlify.app,polishannoyancefilters.netlify.com###pafadgua
 !
 !
 ! Codename: Web Push - Supplement
-@@/sw.js$important,domain=youtube.com
 ||pepper.pl/assets/js/PushNotifications_$important,redirect=noopjs,domain=pepper.pl
 ||pushpushgo.com/js/*.js$important,redirect=noopjs,script,domain=centrumriviera.pl
-adaware.com,androidlista.pl,anime-odcinki.pl,brain-start.tech,chillizet.pl,comment-reparer.com,domodi.pl,epoznan.pl,flvto.biz,grupamagnum.eu,howtodo.rocks,inea.pl,inkbook.pl,izigsm.pl,joom.com,kupbilecik.pl,m.leroymerlin.pl,mediaexpert.pl,medyczny.store,new.reddit.com,nokia.com,radiozet.pl,rego-bis.pl,tygodnik-rolniczy.pl,unisono.eu,wish.com,wolnislowianie.pl,wtk.pl,~www.radiozet.pl,www.reddit.com,yoursclothing.pl#%#//scriptlet('ubo-set.js', 'Notification.requestPermission', 'falseFunc')
+adaware.com,androidlista.pl,anime-odcinki.pl,beliani.pl,brain-start.tech,chillizet.pl,comment-reparer.com,domodi.pl,epoznan.pl,flvto.biz,grupamagnum.eu,howtodo.rocks,inea.pl,inkbook.pl,izigsm.pl,joom.com,kupbilecik.pl,m.leroymerlin.pl,mediaexpert.pl,medyczny.store,radiozet.pl,rego-bis.pl,tygodnik-rolniczy.pl,unisono.eu,wish.com,wolnislowianie.pl,wtk.pl,~www.radiozet.pl,www.reddit.com,yoursclothing.pl#%#//scriptlet('ubo-set.js', 'Notification.requestPermission', 'falseFunc')
 dorzeczy.pl#%#//scriptlet('ubo-aeld.js', 'install', 'function')
 egami-image.com,mpcforum.pl,winclub.pl#%#//scriptlet('ubo-set.js', 'ips.utils.notification.supported', 'false')
 filmweb.pl#%#//scriptlet('ubo-aopr.js', 'webPushPublicKey')
