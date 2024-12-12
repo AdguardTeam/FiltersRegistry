@@ -1,5 +1,5 @@
-! Checksum: +KC4SKbf8b81zVv1Z7lUCw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1733936795-14400.patch
+! Checksum: sZ/MzTDudJ0bba6WwuX1EA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1733979930-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.76
@@ -80,7 +80,6 @@ doctolib.fr##.MuiModal-root:has([href*="play.google"])
 /^.*/jquery\.smartbanner/.*$/$match-case
 /^.*/js/smartbanner\..*$/$match-case
 /^.*/smart-app-banner\..*$/$match-case
-/^.*/smartbanner/appbanner\.js.*$/$match-case
 fandom.com##.global-footer__section-fandom-apps
 fandom.com##.global-footer__section-fandom-stores
 ||unleashedprepaids.com/mobiquo/smartbanner/
@@ -526,8 +525,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.react-share__ShareButton:not(body,html,:empty)
 ##.mh-share-buttons:not(body,html,:empty)
-##button.btn-twitter-liveblog
-~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##button.btn-facebook-liveblog
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###article-share-facebook
 ###article-share-twitter
 ##.uSocial-Share:not(body,html,:empty)
@@ -638,6 +635,7 @@ trello.com##.mod-warning.header-banner
 pinterest.*##div[data-test-id=giftWrap]
 quizlet.com##.LoginBottomBar
 quizlet.com#$#.SetPageTerm-largeSide { filter: none !important }
+volunteermatch.org###window_overlay
 dev.mysql.com##.login-callout
 investing.com###PromoteSignUpPopUp
 context.reverso.net###register-popup-bottom
@@ -866,7 +864,6 @@ www.nrk.no##.nrkno-player-controls__bar::before
 ~imdb.com##.imdb-score:not(html,body,:empty)
 ~imdb.com##.imdb-ic:not(html,body,:empty)
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
-~imdb.com##.imdbrating:not(html,body,:empty)
 bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 rakuten.tv##a[href*=".imdb.com/title/"]
 www.google.*,ipv6.google.com#?#.g:has-text(imdb.com › title) div[data-snf]:has(g-bubble)
@@ -989,7 +986,6 @@ $removeparam=msclkid
 $removeparam=litb_from
 $removeparam=ggcid
 $removeparam=ftag
-$document,removeparam=/^__xts__.*$/
 $removeparam=akmClientCountry
 $removeparam=ns_mchannel
 $removeparam=ns_source
@@ -1099,6 +1095,7 @@ $removeparam=impradid
 $removeparam=impradname
 Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=awin$/i
+$removeparam=affil
 $removeparam=cjid
 $removeparam=sv_affiliate_id
 $removeparam=sv_campaign_id
@@ -1113,7 +1110,6 @@ $removeparam=affuid
 $removeparam=icid2
 $removeparam=refclickid
 $removeparam=irclid
-$removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
 $document,removeparam=/^affSource.*$/i
 $document,removeparam=/^cid_.*$/
@@ -1314,6 +1310,7 @@ $removeparam=ttd_tdid
 $removeparam=bsw_param
 $removeparam=google_push
 $removeparam=partneruserid
+$removeparam=sExtCookieId
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
@@ -1331,6 +1328,7 @@ $removeparam=criteoId
 $removeparam=dspCookie
 $removeparam=_rand
 $removeparam=dsp_uid
+$removeparam=cs_xi
 $removeparam=pn_id
 $removeparam=adsafe_url
 $removeparam=mt_uuid
@@ -1760,7 +1758,6 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 $removeparam=clickArea
 $removeparam=user_ip
 ||sogou.com^$removeparam=bh
-||sogou.com^$removeparam=entityid
 ||sogou.com^$removeparam=hintidx
 ||sogou.com^$removeparam=htdbg
 ||sogou.com^$removeparam=interation
@@ -2056,6 +2053,7 @@ $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=clickPR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
+$removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||espn.com^$removeparam=ex_cid
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
