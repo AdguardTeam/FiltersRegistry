@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.4",
-			"timeUpdated": "2024-12-12T13:31:24+0000",
+			"version": "2.0.96.5",
+			"timeUpdated": "2024-12-12T16:31:33+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.64.31",
-			"timeUpdated": "2024-12-12T15:32:01+0000",
+			"version": "2.3.64.32",
+			"timeUpdated": "2024-12-12T16:31:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.57",
-			"timeUpdated": "2024-12-12T14:41:35+0000",
+			"version": "2.0.77.58",
+			"timeUpdated": "2024-12-12T16:36:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.16.30",
-			"timeUpdated": "2024-12-12T15:36:38+0000",
+			"version": "2.2.16.31",
+			"timeUpdated": "2024-12-12T16:37:08+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.9",
-			"timeUpdated": "2024-12-12T15:36:47+0000",
+			"version": "2.0.47.10",
+			"timeUpdated": "2024-12-12T16:37:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -831,8 +831,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.5.78",
-			"timeUpdated": "2024-12-12T10:35:21+0000",
+			"version": "2.0.5.79",
+			"timeUpdated": "2024-12-12T16:37:21+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
