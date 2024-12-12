@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.64.29",
-			"timeUpdated": "2024-12-12T12:32:27+0000",
+			"version": "2.3.64.30",
+			"timeUpdated": "2024-12-12T14:36:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.56",
-			"timeUpdated": "2024-12-12T13:35:59+0000",
+			"version": "2.0.77.57",
+			"timeUpdated": "2024-12-12T14:41:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.16.28",
-			"timeUpdated": "2024-12-12T12:37:39+0000",
+			"version": "2.2.16.29",
+			"timeUpdated": "2024-12-12T14:42:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -639,8 +639,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.73.95",
-			"timeUpdated": "2024-12-12T12:37:40+0000",
+			"version": "2.0.73.96",
+			"timeUpdated": "2024-12-12T14:42:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.52.93",
-			"timeUpdated": "2024-12-12T12:37:45+0000",
+			"version": "2.0.52.94",
+			"timeUpdated": "2024-12-12T14:42:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.7",
-			"timeUpdated": "2024-12-12T12:37:47+0000",
+			"version": "2.0.47.8",
+			"timeUpdated": "2024-12-12T14:42:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.27.63",
-			"timeUpdated": "2024-12-12T10:35:26+0000",
+			"version": "2.1.27.64",
+			"timeUpdated": "2024-12-12T14:42:32+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
