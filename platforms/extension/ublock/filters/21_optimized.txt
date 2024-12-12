@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: dJpwKck7BlGH/+Cvsr4+QQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1733945905-3600.patch
+! Checksum: sCMWVSLwiV6DSnqXGHWVfA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1733971114-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.28.90
@@ -52,8 +52,6 @@ evrimagaci.org##.inarticle-feed
 cyberleninka.ru###content > div.viewer-similars
 rockpapershotgun.com##.poll_wrapper
 gamesindustry.biz##.jobs-widget
-vogue.co.th##section.daily_right_player
-vogue.co.th##div.vdo-show-only-mobile-size
 !+ NOT_OPTIMIZED
 winfuture.de#?#.content_wrap > #news_content > br + b:contains(?)
 !+ NOT_OPTIMIZED
@@ -123,6 +121,7 @@ foxnews.com##+js(set-constant, Taplytics.featureFlagEnabled, trueFunc)
 foxnews.com##+js(set-constant, Taplytics.runningExperiments, falseFunc)
 foxnews.com##+js(adjust-setTimeout, Taplytics, *, 0.001)
 foxnews.com##+js(remove-class, has-gated-overlay|gated-article-body, .gated-article-body)
+cumhuriyet.com.tr#?#div[class^="col"] > div.row:has(> div.row > div.dailymotion-player-root)
 cnyes.com##+js(remove-class, ppn-overflows, .ppn-overflows.ppn-floating_enable)
 livejournal.com#$?#div[lj0sale0autoplay0dockable0video0mount] { remove: true; }
 m.censor.net##.block-social-link
@@ -213,7 +212,6 @@ elle.com##+js(remove-class, glimmer-sticky, .content-lede-video.glimmer-sticky-c
 famitsu.com#?#.l-contents-block:has(> .heading > .heading__title:contains(特設・企画))
 famitsu.com#?#.row > .col-12:has(> .card > .ad-native-campaign)
 ||coin-hive.com^$third-party
-||coinhive.com^$third-party
 123telugu.com###text-16
 timesofisrael.com##+js(remove-class, vjs-pip-active, .video-js.vjs-pip-active)
 ultimedia.com##+js(set-constant, dtkPlayer.infos.visible_plus, 0)
@@ -256,7 +254,6 @@ cnbc.com##.UniversalVideoPlayer-videoContainer.customControls #jw-container
 cyclismactu.net###dailymotion-pip-large-viewport
 danas.hr##.videoContent_player_fixed
 danas.hr##+js(remove-class, videoContent_player_fixed, .videoContent_player_fixed)
-diletant.media##.js-print + .news__bottom-btn
 femmeactuelle.fr###dailymotion-pip-large-viewport
 tecnologia.libero.it###iol_player_container.vjs-floater-parent
 gayforit.eu#$#.vid_page #glbtPlayer { margin-top: 0 !important; }
@@ -395,10 +392,9 @@ securitymagazine.com##.sponsored-content-widget
 gismeteo.ru##.follow-zen
 diamond.jp###trend-watch
 vgr.by##body .edgtf-post-group
+kv.by##.telegramim_button
 fb.ru##.intext
 news.trendmicro.com##div[class*="nav_top-info-bar"]
-blog.hubspot.com#?#.blog-post-body span > [style*="text-align: center;"]:has(> a[href^="https://offers.hubspot.com/"]):contains(Featured Resource:)
-blog.hubspot.com#?#.blog-post-body span > [style*="text-align: center;"]:has(> a[href^="https://offers.hubspot.com/"]):contains(Featured Resource:) + p:has(> a[href^="https://offers.hubspot.com/"])
 levada.ru###ebala
 novayagazeta.ru#?##article-body #materialBlock_0 > div:has(> div > p:contains(НАПРАВЛЕН ИНОСТРАННЫМ АГЕНТОМ))
 !+ NOT_OPTIMIZED
@@ -408,7 +404,6 @@ thebell.io##.arena-cut-grey
 techtarget.com#?#.resources-bar-header:contains(Sponsored News)
 techtarget.com##.sponsored-news
 smt-cinema.com##.tieupBanner
-andro-news.com##img[title="telegram__banner.png"]
 laprovence.com##+js(prevent-refresh)
 livemint.com##+js(set-cookie, _hlm_skipCounter, 15)
 platformazakupowa.pl##.alert-info
@@ -626,6 +621,7 @@ wikipedia.org###frb-inline
 wikipedia.org###frb-nag
 kitguru.net###check-also-box
 xtapes.to##.menu-item-2370
+||view.vzaar.com/*/player$domain=filehippo.com
 last.fm##.chartlist-break
 last.fm##.join-cta.link-block
 lostfilm.info##body > div.wrapper > a[title^="LostFilm"]
@@ -699,6 +695,7 @@ travel.yandex.*##noindex[id^="gzab"][class*=" "]
 go.mail.ru###goTopBn
 my.mail.ru##.b-column-right__block-sale
 my.mail.ru##.b-column-right__block-apps
+pulse.mail.ru##div[class="f_am f_ap"]
 !+ NOT_OPTIMIZED
 mail.ru##.m-pwa-custom-infobar
 mail.ru#?#body > div.tooltip:has(div.m-push-notifications__buttons)
@@ -1219,6 +1216,7 @@ lenta.ru##+js(addEventListener-defuser, scroll, window.history.pushState)
 news.nifty.com##.mod_ad_nifty
 wixsite.com#$##WIX_ADS { display: none !important; }
 wixsite.com#$##site-root { top: 0 !important; }
+news.careerconnection.jp##.ccn-side-ads
 forums.macrumors.com###mrsubscribe
 livelib.ru##.prm-block
 eigo.plus###widget-fixed-footer
@@ -1308,7 +1306,6 @@ bongacams26.com,bongacams20.com,bongacams19.com,bongacams18.com,bongacams11.com,
 diamond.jp###zai-subcolumn-banners
 diamond.jp##.zai-subcolumn-banners-plus
 diamond.jp##.zai-subcolumn-fbanners
-m.dm5.com##.guide
 pixiv.net##.premium-lead-t-footer
 pixiv.net##.premium-lead-new-t-info-home-top
 pixiv.net#?#section[class^="sc-"] > div[class^="sc-"]:has(+ div[class^="sc-"] > aside[class*="-0 "] > iframe[src^="https://imp.pixiv.net/premium_"][class^="sc-"])
@@ -1522,7 +1519,6 @@ rb.ru##.custom-tag-banner
 rb.ru##.programms__wrapper
 ||qgraph.io/dist/aiqua-wp.js$domain=cw.com.tw
 ||optimonk.com^$domain=bnext.com.tw
-xboxera.com###header-notification-bar
 iza.ne.jp##.story-card-feed:has(div.under-headline > span.article-highlight-tag.shopping)
 nrk.no##.widget:has(> div > a.login-banner-hack)
 nikkei.com##.paywall_pzomzzc
@@ -1561,7 +1557,6 @@ tproger.ru##.tp-ui-infinite-scroll > div.tp-widget-card:has(div.tp-widget-jobs-w
 ya.zerocoder.ru##.layout-sidebar > div.banner
 [$path]fontanka.ru#?#.gridContainer > div[class*="grid"]:has(> section[class^="baseBlock_"] > a[href]:contains(/^(Новости компаний|Фонтанка PRO)$/))
 sravni.ru##div[class^="page_mainColumn"] > div[class]:has(> div[class^="special-offers_wrapper"])
-hexlet.io##.hexlet-blog-post-body > blockquote:has(> p > a[href*="promo_name=courses"][target="_blank"])
 playground.ru###steamInfoBlock
 playground.ru##.main-navigation > li:has(> a.btn-steam-pay)
 stackoverflow.com##.nav-links > li.js-overflowai-cta
@@ -1655,7 +1650,6 @@ uptodown.com###uptodown-turbo-promo
 newsmax.com###SMSbanner
 cnews.ru##.other-news-note
 cnews.ru##.news_container > noindex:has(> ul > li > a[href^="https://market.cnews.ru/?service_id"])
-||hachiraw.net/01.png
 ||ichiba.faq.rakuten.net/resource/*/RakutenMobile_Banner/
 eldorado.ru##.gr-top-banner
 op.gg###opgg-kit-house-image-banner
@@ -1748,6 +1742,7 @@ dandy-house.co.jp##.post_content > a[href*="?utm_source"] > img
 artstation.com##support-artstation
 iwate-np.co.jp#?#.side .article-list > li:has(.published > .date:contains(広告))
 tabs.ultimate-guitar.com##aside ~ div:has(> div > div > iframe[title="video"])
+hensonshaving.jp##.widget_media_image
 watchsomuch.to###btnStopAds
 news.denfaminicogamer.jp###dfng-banner
 spektrum.de##.kiosk__magazine
@@ -2455,7 +2450,6 @@ zerohedge.com##div[class^="TheMarketEarHomePageSidebar_container__"]
 cyberleninka.ru#?#.infoblock:has(> div[class="full"] > div.bibloid_serp)
 downloadcrew.com##.downloadsAd
 rakuten-card.co.jp##.list-bnr-wrap
-qualtrics.com##ul[data-gatext="Banners"]
 altclick.ru##.marquiz-pops
 sme.sk##.composer-bottom-popup
 vk.com##.audio_promo
@@ -2521,6 +2515,7 @@ thepostmillennial.com##.contributions-container
 ok.ru###hook_Block_VideoBannerBlock
 nauchniestati.ru##.adv-universal
 zerkalo.io##script[src*=".zerkalo.io/api?rev=r0~r0~r0~r0"] + div[class^="news-section-"]
+contentkingapp.com##section[data-testid="start-free-trial"]
 intellipaat.com##.tutorial-cta-wrapper
 zerkalo.io##.b-prmplace
 careeraddict.com,matchtv.ru##.banner-container
@@ -2540,7 +2535,6 @@ vedantu.com##div[class^="rightSection_"]
 mayoclinic.org##.appointmentbanner
 mayoclinic.org##.internal-promo-stack-order
 zhangxinxu.com#?#a[onclick*="Home ad"]
-rockpapershotgun.com##.supporters_promo
 tableau.com##.entity-paragraphs-item.bg--dark-gray-1
 transtutors.com##.pgc_side
 smashingmagazine.com##div[id^="promo-article-end"]
@@ -2613,6 +2607,7 @@ inc42.com##.plus-bottom-bar
 autoua.net##a[href="https://insurance.autoua.net/ru/osago/"]
 eksisozluk.com##aside > iframe[src^="https://eksiseyler.com/sozluk/"]
 phonearena.com##.widgetOffers
+backup4all.com##.toast-bottom-right
 ||cdn.myanimelist.net/images/event/support_mal/banner-ani-*.gif
 anidl.org##.logo-row > div.stream-item-top-wrapper
 imdb.com##div[class^="pro_title_link"]
