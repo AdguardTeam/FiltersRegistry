@@ -1,9 +1,9 @@
-! Checksum: GW5Mc61cVpfgAipPQlNzBw
-! Diff-Path: ../patches/14/14-s-1734097303-3600.patch
+! Checksum: Hu+YZ4igkgPqpM6tax2LRw
+! Diff-Path: ../patches/14/14-s-1734101039-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.16.41
-! TimeUpdated: 2024-12-13T13:36:52+00:00
+! Version: 2.2.16.42
+! TimeUpdated: 2024-12-13T14:39:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15699,7 +15699,7 @@ octopusenergy.es#%#//scriptlet("set-cookie", "dismissCookieMessage", "true")
 ebatpro.fr#%#//scriptlet('set-cookie', 'cookie_necessity', '1')
 arthousecnma.de#%#//scriptlet('trusted-set-local-storage-item', 'cookieSettings', '{"fullOptIn":false,"googleAnalytics":false,"facebookTrackingPixel":false,"googleAds":false}')
 helmut-fischer.com#%#//scriptlet('trusted-set-cookie', 'cookie-level-v4', '3,2,1,0')
-pixiv.net#%#//scriptlet('set-cookie-reload', 'privacy_policy_agreement', '6')
+pixiv.net#%#//scriptlet('set-cookie-reload', 'privacy_policy_agreement', '7')
 karofilm.ru#%#//scriptlet('set-cookie', 'cookie_usage', 'yes')
 vod.warszawa.pl#%#//scriptlet('trusted-set-cookie', '_c_a', 'required')
 radiox.co.uk#%#//scriptlet('trusted-click-element', 'button[title="Accept all"]')
@@ -22364,6 +22364,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+avforums.com#%#//scriptlet('prevent-addEventListener', 'load', 'ad_megabanner')
+/avforums\.com\/index\.php\?\w{3}\/\d{6}\//$xmlhttprequest,domain=avforums.com
 archangelvideo.com###ad_blocker_note
 baomidou.com##astro-island[opts^="{\"name\":\"CheckAdBlocked\""]
 live.vkvideo.ru##div[class^="AdBlockAlert_"]
@@ -33400,6 +33402,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+avforums.com##.notices--floating
 fastcompany.com##.article-container > div.flex:has(> div > div.newsletters__page__marketo__form__container)
 victoriametrics.com##.block_skyrocket:has(#book-demo-form)
 standard.co.uk###main > div:has(> div > div[class] > img[src^="/img/newsletters/"])
