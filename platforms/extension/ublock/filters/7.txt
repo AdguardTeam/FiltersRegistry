@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: lvqVDzPnaJHJIaP+m53i5A
-! Diff-Path: ../patches/7/7-s-1734018067-3600.patch
+! Checksum: 2W6jgygH0gJfZvpf/bZZ5w
+! Diff-Path: ../patches/7/7-s-1734108076-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.28
-! TimeUpdated: 2024-12-12T15:36:16+00:00
+! Version: 2.0.60.29
+! TimeUpdated: 2024-12-13T16:36:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -521,11 +521,6 @@ gunauc.net##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188965
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-exploader.net##+js(spoof-css, a[style*="display:"][href^="https://al.dmm.co.jp"] img, height, 20px)
-exploader.net##+js(spoof-css, a[style*="display:"][href^="https://al.dmm.co.jp"] img, display, block)
-exploader.net##a[style*="display:"][href^="https://al.dmm.co.jp"] img
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] > div:has(img) { height: 0 !important; }
-exploader.net##a[style*="display:"][href^="https://al.dmm.co.jp"] span
 @@||daotag.com/tag/$script,domain=exploader.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181591
 iwb.jp##+js(no-setTimeout-if, getComputedStyle(a).height)
@@ -8167,7 +8162,8 @@ fx-koryaku.com##.textwidget > center > a[target="_blank"]
 ||dmm.co.jp^$domain=exploader.net
 ||exploader.net/d/$image
 ||dmm.co.jp^$popup,domain=exploader.net
-exploader.net##article > div[style="display: flex;align-items: center;margin-bottom: 5px;"] > div[data-pr="1"][style^="min-height: 20px;"]
+exploader.net##article > div:not([class]):not([id]):not([style]) > div[style*="305px"][div*="750px"]
+exploader.net##article > div[style="display: flex;align-items: center;margin-bottom: 5px;"]
 exploader.net###preview_images > div[style^="max-width: 560px; position: relative; height: "] > div.h_items[style="margin-bottom: 10px;"]
 exploader.net###preview_images > span[class^="tracking_"] > div[style="position: fixed;"] > div[data-pr]
 exploader.net###newfiles > ul.list > li[style*="height: 120px;"]
