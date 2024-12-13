@@ -1,9 +1,9 @@
-! Checksum: KEj0IyQMgZVoGibdbpy8Jw
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1734057456-3600.patch
+! Checksum: 3aVS/sJ7AE66oDsfw8csDw
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1734075506-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.28.92
-! TimeUpdated: 2024-12-12T10:35:20+00:00
+! Version: 2.0.28.93
+! TimeUpdated: 2024-12-13T07:34:58+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -3439,7 +3439,7 @@ mastercoria.com#%#//scriptlet("adjust-setInterval", "countdown", "", "0.02")
 dailymail.co.uk###chromelessPlayer
 dailymail.co.uk#%#//scriptlet("abort-on-property-read", "Object.prototype.videoAdvertisingMode")
 translit.net,translit.ru#%#//scriptlet("set-constant", "setblur", "noopFunc")
-wowroms.com#%#AG_onLoad(function() { setTimeout(function() { second = 0; }, 300); });
+wowroms.com#%#document.addEventListener('DOMContentLoad', function() { setTimeout(function() { second = 0; }, 300); });
 !+ NOT_PLATFORM(windows, mac, android)
 sfile.mobi#%#//scriptlet("adjust-setInterval", "downloadButton", "", "0.02")
 goodssh.com#%#//scriptlet("set-constant", "counter", "-1")

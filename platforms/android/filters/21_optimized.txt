@@ -1,9 +1,9 @@
-! Checksum: SsVWTwKZNGwlw3DTiXrNeg
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1734057446-3600.patch
+! Checksum: ikV5hapjN5FPCJ9kD/c1Bw
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1734075491-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.28.92
-! TimeUpdated: 2024-12-12T10:35:20+00:00
+! Version: 2.0.28.93
+! TimeUpdated: 2024-12-13T07:34:58+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -3471,7 +3471,7 @@ mastercoria.com#%#//scriptlet("adjust-setInterval", "countdown", "", "0.02")
 dailymail.co.uk###chromelessPlayer
 dailymail.co.uk#%#//scriptlet("abort-on-property-read", "Object.prototype.videoAdvertisingMode")
 translit.net,translit.ru#%#//scriptlet("set-constant", "setblur", "noopFunc")
-wowroms.com#%#AG_onLoad(function() { setTimeout(function() { second = 0; }, 300); });
+wowroms.com#%#document.addEventListener('DOMContentLoad', function() { setTimeout(function() { second = 0; }, 300); });
 !+ PLATFORM(windows, mac, android)
 sfile.mobi#%#(function(){var c=window.setInterval;window.setInterval=function(f,g){return g===1e3&&/downloadButton/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 goodssh.com#%#//scriptlet("set-constant", "counter", "-1")
