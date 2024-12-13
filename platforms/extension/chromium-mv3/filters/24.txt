@@ -1,8 +1,8 @@
-! Checksum: B7bmrG5Eceo7lIlm3LTbdw
+! Checksum: qzbNRQ9XQ0+BEBqYRv27JQ
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.4.88
-! TimeUpdated: 2024-12-13T08:34:32+00:00
+! Version: 2.0.4.89
+! TimeUpdated: 2024-12-13T09:35:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35,6 +35,18 @@
 !
 ! NOTE: 13-12-2024
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194573
+x1337x.cc##div[onclick^="location.href="][style]
+x1337x.cc,1337x.st,1337x.to,1337xx.to,x1337x.eu,x1337x.ws,1337x.unblock2.xyz##.page-content > .box-info:has(> .box-info-heading > div[onclick^="location.href="][style])
+x1337x.cc,1337x.st,1337x.to,1337xx.to,x1337x.eu,x1337x.ws,1337x.unblock2.xyz#%#//scriptlet('trusted-set-constant', 'tz_ipaddress', '"HIDDEN"')
+! https://github.com/AdguardTeam/AdguardFilters/issues/194004
+dziennik.pl#%#//scriptlet('remove-node-text', 'script', 'html-load.com')
+! https://github.com/AdguardTeam/AdguardFilters/issues/194572
+hanime1.me##.search-rows-wrapper > .content-padding-new > .row > .multiple-link-wrapper:has(> a[href*=".labsda.com"])
+! https://github.com/AdguardTeam/AdguardFilters/issues/194568
+||vidlink.pro/api/newcash
+vidlink.pro#%#//scriptlet('abort-on-property-read', 'Adcash')
+vidlink.pro#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.hasAttribute', 'isActionAllowedOnElement')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194570
 ilgiornale.it##.banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194547
@@ -309,8 +321,6 @@ flightaware.com#%#//scriptlet('trusted-suppress-native-method', 'sessionStorage.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191731
 atresplayer.com#@##didomi-host
 atresplayer.com#@##didomi-notice
-! https://github.com/AdguardTeam/AdguardFilters/issues/194004
-dziennik.pl#%#//scriptlet('abort-current-inline-script', 'Symbol', 'error-report.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194001
 play.virginmediatelevision.ie#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
 play.virginmediatelevision.ie#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3_dai.js')
