@@ -1,9 +1,9 @@
-! Checksum: yj/fgq7n6FVWhT3Yd3d0eQ
-! Diff-Path: ../patches/14/14-s-1734105589-3600.patch
+! Checksum: 5pgMcsnMQKXF1T0eHlctJw
+! Diff-Path: ../patches/14/14-s-1734111739-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.16.43
-! TimeUpdated: 2024-12-13T15:55:52+00:00
+! Version: 2.2.16.44
+! TimeUpdated: 2024-12-13T17:38:13+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -29682,7 +29682,6 @@ vk.com##.OldBrowser
 novagente.pt#%#//scriptlet('remove-cookie', 'visit')
 laroche-posay.pl##.widget_popin_newsletter
 theswaddle.com##.module-newsletter__timer
-rozetka.com.ua##.lang-switcher-popup
 stackshare.io#%#//scriptlet('remove-cookie', 'pageViews')
 tvoemisto.tv##.community_promo
 sobesednik.ru##.navbar.fixed-bottom
@@ -33080,7 +33079,6 @@ indiatoday.in#%#//scriptlet("abort-on-property-read", "notifyMe")
 ||pornxbit.com/sw.js
 takiedela.ru##.b-push-notification
 justnutritive.com##.order-notification
-||api-analytics.rozetka.com.ua/js/exponea.min.js
 ||7themes.su/sw.js
 blackhatworld.com,forum.redfox.bz,macrumors.com,platinmods.com##.notice--enablePush
 wvnews.com,mdjonline.com,wfmz.com,tv6tnt.com##.notification-button
@@ -33484,6 +33482,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rozetka.com.ua##rz-marketing-subscription
 avforums.com##.notices--floating
 fastcompany.com##.article-container > div.flex:has(> div > div.newsletters__page__marketo__form__container)
 victoriametrics.com##.block_skyrocket:has(#book-demo-form)
@@ -53088,11 +53087,6 @@ insurglobal.xyz#%#//scriptlet("adjust-setInterval", "yuidea-", "*", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163948
 premads.com#%#//scriptlet('adjust-setInterval', 'myCounter', '*', '0.001')
 infortechno.com#%#!function(){if(location.href.includes("wpsafelink")){var e=new MutationObserver((function(){try{var t=document.querySelector('form#landing > input[name="go"][value]'),n=document.querySelector("body > script");t&&t.value.startsWith("aHR0c")&&n&&n.textContent.includes("document.getElementById('landing').submit();")&&(n.remove(),e.disconnect(),location.assign(atob(t.value)))}catch(e){}}));e.observe(document,{childList:!0,subtree:!0}),setTimeout((function(){e.disconnect()}),1e4)}}();
-! https://github.com/AdguardTeam/AdguardFilters/issues/111791
-! https://github.com/AdguardTeam/AdguardFilters/issues/111673
-! https://github.com/AdguardTeam/AdguardFilters/issues/111471
-leeapk.com,mealcold.com,foodxor.com,mixrootmods.com,freemodsapp.xyz,infortechno.com,getintoway.com,worldmak.com,ftuapps.dev,dl.tech-story.net,themorningtribune.com,bimo-cash.readi.online,blog.textpage.xyz,claimlite.club,bitcomarket.net,mcrypto.club,gamepure.in,veganab.co,gaminplay.com,choiceappstore.xyz,worldappsstore.xyz,insurance-space.xyz,therootdroid.com#%#//scriptlet('adjust-setInterval', '/wpsafe|wait/', '*', '0.001')
-leeapk.com,mixrootmods.com,worldmak.com,bimo-cash.readi.online,bitcomarket.net,mcrypto.club,gaminplay.com,choiceappstore.xyz,worldappsstore.xyz,tudaydeals.com,toolss.net,insurance-space.xyz,rajsayt.xyz,jaunpurmusic.info,gaminplay.com,therootdroid.com#%#AG_onLoad(function(){try{var a=document.querySelector('form > input[name="newwpsafelink"]');if(a){var b,c=null==(b=JSON.parse(atob(a.value)))?void 0:b.linkr;if(c){var d=JSON.parse(atob(c.split("?safelink_redirect=")[1]));location.assign(decodeURIComponent(null==d?void 0:d.safelink))}}}catch(e){}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111705
 technoashwath.com#%#//scriptlet("adjust-setTimeout", "/waiting|\.classList\.remove|gotoo/", "*", "0.02")
 technoashwath.com#%#!function(){if(-1<location.href.indexOf("?data=aHR0c")){var a=(new URL(window.location.href)).searchParams.get("data");if(a)try{window.location.assign(atob(a))}catch(b){}}}();
@@ -53594,8 +53588,6 @@ d0000d.com,do0od.com,ds2play.com,doods.pro,dooood.com,dood.yt,dood.re,dood.wf,do
 anomize.xyz#%#//scriptlet("adjust-setInterval", "#timer", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/55158
 hikarinoakariost.info#%#//scriptlet("adjust-setInterval", "count", "", "0.02")
-! https://github.com/AdguardTeam/AdguardFilters/issues/54555
-apglinks.net,zona-games.net#%#AG_onLoad(function(){setTimeout(function(){if("object"===typeof megabux&&"[object String]"===Object.prototype.toString.call(megabux.link)){try{new URL(megabux.link);var a=!0}catch(b){a=!1}if(a)try{window.location=megabux.link}catch(b){}}},500)});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54403
 verteleseriesonline.com#%#//scriptlet("adjust-setTimeout", "updateReloj", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54426
@@ -53638,8 +53630,6 @@ lg-firmwares.com,sfirmware.com#%#//scriptlet("adjust-setInterval", "#download-po
 ! https://github.com/AdguardTeam/AdguardFilters/issues/81702
 imagehaha.com,imgblaze.net,pixsera.net,imgfrost.net,imgair.net#%#//scriptlet("adjust-setInterval", ".timer", "", "0.02")
 imagehaha.com,imgblaze.net,pixsera.net,imgfrost.net,imgair.net#%#//scriptlet('trusted-click-element', 'a[href].url-link')
-! https://github.com/AdguardTeam/AdguardFilters/issues/50428
-1v.to#%#AG_onLoad(function(){var a=document.querySelector("#oculto > a[href]");if(a)try{window.location=a.href}catch(b){}});
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50154
 wallpaperplay.com#%#//scriptlet("adjust-setInterval", "#download_menu", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/50150
