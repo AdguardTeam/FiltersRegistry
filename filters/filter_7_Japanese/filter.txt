@@ -555,9 +555,8 @@ gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
 !#if (!adguard_ext_chromium_mv3 && !ext_ublock)
-exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img,a[style*="display:"][href^="https://al.dmm.co.jp"] span', 'clip', 'auto')
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] img { position: absolute !important; clip:rect(1px,1px,1px,1px) !important; }
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] span { position: absolute !important; clip:rect(1px,1px,1px,1px) !important; }
+exploader.net##article > div[style] > div[data-loaded]:not([data-pr])
+exploader.net#%#//scriptlet('remove-attr', 'data-pr', 'article > div[style] > div[data-pr][data-loaded]', 'complete')
 !#endif
 @@||daotag.com/tag/$script,domain=exploader.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181591
@@ -8381,8 +8380,9 @@ fx-koryaku.com##.textwidget > center > a[target="_blank"]
 ||dmm.co.jp^$domain=exploader.net
 ||exploader.net/d/$image
 ||dmm.co.jp^$popup,domain=exploader.net
+[$path=/^\/$/]exploader.net##a[href^="https://al.dmm.co.jp"]
 exploader.net##article > div:not([class]):not([id]):not([style]) > div[style*="305px"][div*="750px"]
-exploader.net##article > div[style="display: flex;align-items: center;margin-bottom: 5px;"]
+exploader.net##article > div[style="display: flex; align-items: center; margin-bottom: 5px;"]
 exploader.net###preview_images > div[style^="max-width: 560px; position: relative; height: "] > div.h_items[style="margin-bottom: 10px;"]
 exploader.net###preview_images > span[class^="tracking_"] > div[style="position: fixed;"] > div[data-pr]
 exploader.net###newfiles > ul.list > li[style*="height: 120px;"]
