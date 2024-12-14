@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: nG0H139q2qHvTX3xaYRgHg
-! Diff-Path: ../patches/7/7-s-1734161878-3600.patch
+! Checksum: nbq1KNniOap1rel9ftKBDA
+! Diff-Path: ../patches/7/7-s-1734183519-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.32
-! TimeUpdated: 2024-12-14T07:34:18+00:00
+! Version: 2.0.60.33
+! TimeUpdated: 2024-12-14T13:34:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -82,6 +82,7 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 !
+||jp1media.com^$third-party
 ||bra.almado.jp^$all
 ||adsby.2bet.co.jp^
 ||indexad.net^
@@ -8163,11 +8164,11 @@ fx-koryaku.com##.textwidget > center > a[target="_blank"]
 ||dmm.co.jp^$domain=exploader.net
 ||exploader.net/d/$image
 ||dmm.co.jp^$popup,domain=exploader.net
-exploader.net##:matches-path(/^\/$/)a[href^="https://al.dmm.co.jp"]
+exploader.net##:matches-path(/(^\/$|\/preview)/)a[href^="https://al.dmm.co.jp"]
 exploader.net##article > div:not([class]):not([id]):not([style]) > div[style*="305px"][div*="750px"]
 exploader.net##article > div[style="display: flex; align-items: center; margin-bottom: 5px;"]
 exploader.net###preview_images > div[style^="max-width: 560px; position: relative; height: "] > div.h_items[style="margin-bottom: 10px;"]
-exploader.net###preview_images > span[class^="tracking_"] > div[style="position: fixed;"] > div[data-pr]
+exploader.net###preview_images > span[class^="tracking_"]
 exploader.net###newfiles > ul.list > li[style*="height: 120px;"]
 exploader.net###wrapper > div[data-style][style*="fixed"]
 exploader.net##a[link*="al.dmm.co.jp"]

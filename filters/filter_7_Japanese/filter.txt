@@ -86,6 +86,7 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 !
+||jp1media.com^$third-party
 ||bra.almado.jp^$all
 ||adsby.2bet.co.jp^
 ||indexad.net^
@@ -555,8 +556,9 @@ gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
 !#if (!adguard_ext_chromium_mv3 && !ext_ublock)
-exploader.net##article > div[style] > div[data-loaded]:not([data-pr])
-exploader.net#%#//scriptlet('remove-attr', 'data-pr', 'article > div[style] > div[data-pr][data-loaded]', 'complete')
+||daotag.com/tag/$script,replace=/\(\);if\(.+?\)\{(window\.[0-9a-f]{20\,})=false;return;\}/();if(1){\$1=true;return;}/,domain=exploader.net
+exploader.net##article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"]) div:not([style]):not([class])
+exploader.net#%#//scriptlet('remove-attr', 'class|style', 'article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"])', 'complete')
 !#endif
 @@||daotag.com/tag/$script,domain=exploader.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181591
@@ -8380,11 +8382,11 @@ fx-koryaku.com##.textwidget > center > a[target="_blank"]
 ||dmm.co.jp^$domain=exploader.net
 ||exploader.net/d/$image
 ||dmm.co.jp^$popup,domain=exploader.net
-[$path=/^\/$/]exploader.net##a[href^="https://al.dmm.co.jp"]
+[$path=/(^\/$|\/preview)/]exploader.net##a[href^="https://al.dmm.co.jp"]
 exploader.net##article > div:not([class]):not([id]):not([style]) > div[style*="305px"][div*="750px"]
 exploader.net##article > div[style="display: flex; align-items: center; margin-bottom: 5px;"]
 exploader.net###preview_images > div[style^="max-width: 560px; position: relative; height: "] > div.h_items[style="margin-bottom: 10px;"]
-exploader.net###preview_images > span[class^="tracking_"] > div[style="position: fixed;"] > div[data-pr]
+exploader.net###preview_images > span[class^="tracking_"]
 exploader.net###newfiles > ul.list > li[style*="height: 120px;"]
 exploader.net###wrapper > div[data-style][style*="fixed"]
 exploader.net##a[link*="al.dmm.co.jp"]
