@@ -1,9 +1,9 @@
-! Checksum: 0JTFlJXqrY6SlQNiATRSDg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1734152728-14400.patch
+! Checksum: i8Ru+FJpbpgEP5jKX+cAeQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1734267932-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.77
-! TimeUpdated: 2024-12-13T01:01:48+00:00
+! Version: 2.0.15.78
+! TimeUpdated: 2024-12-15T13:01:45+00:00
 ! Expires: 10 days (update frequency)
 ###app-download
 ###app-modal
@@ -44,7 +44,6 @@
 ##div[class$="-download-app-container"]
 ##div[class*=smart-banner i]:not(.smart-banner-visible)
 ##div[class*=smartbanner i]
-##div[class^=app-download-wrap]
 ##div[class^=app_banner]
 ##div[class^=app_download]
 ##div[class^=AppBanner__]
@@ -100,8 +99,9 @@ quora.com#$?#.PageWrapper { filter: none !important; }
 linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 ||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top
-@@||masto*.top^$document,domain=top
-@@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document,domain=top
+@@||masto*.top^$document
+@@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
+@@://blog.*.top^$document
 ||bid^$document
 .xyz/*/?*=*&*=*&*=*&*=*&*=$document
 www.google.*,ipv6.google.com##.g:has(cite:has-text(.it › )):has(a[href*="-"][href$=".html"]:not([href*="://www."], [href*="://m."], [href*="carrefour.it"], [href*="gospesa.it"]))
@@ -185,9 +185,11 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||erothots.co^$all
 |http://www6.$document,domain=~often-used-in-malware-redirections.*
 /^.*\.[a-z]{2,18}\/Stars\.php\?.*$/$match-case,all
-||kabin.asia^$all
+www.tumblr.com##div[style="margin-top: 0px;"][tabindex]:has-text(🔞):has-text(/Insta/i)
 www.tumblr.com##div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a[target=_blank] > div > div:has-text(/^.*🔞.*insta( |gram).*\n.*$/i))
 ||cdn32316413.blazingcdn.net^$all
+||d373n2hi69hqg3.cloudfront.net^$all
+||kabin.asia^$all
 ||unofficialtwrp.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
 ||ytechb.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
 ://ww4.$document,domain=~ww4.ikea.com|~ww4.sig-ge.ch
@@ -304,7 +306,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.socialbuttons:not(html,body,:empty)
 ##.socialmedia:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.ssba:not(html,body,:empty)
-##.ssk-group:not(html,body,:empty)
 ##.story-share-bottom:not(html,body,:empty)
 ##.swp_social_panel:not(html,body,:empty)
 ##.wpusb:not(html,body,:empty)
@@ -674,7 +675,6 @@ dianping.com##.J_aside-qrcode
 dianping.com##.qrcode-fixed
 jd.com##.jdm-tbar-tab-qrcode.jdm-toolbar-tab.J-trigger
 mi.com##div.section:nth-of-type(31)
-news.sina.com.cn##.clearfix.blk-wxfollow
 smzdm.com##.footer-right
 tmall.com###mobile
 xinhuanet.com##.s-ewm
@@ -988,7 +988,6 @@ $removeparam=msclkid
 $removeparam=litb_from
 $removeparam=ggcid
 $removeparam=ftag
-$removeparam=akmClientCountry
 $removeparam=ns_mchannel
 $removeparam=ns_source
 $removeparam=ns_campaign
@@ -1090,7 +1089,6 @@ $removeparam=c3ch
 $removeparam=c3nid
 $removeparam=om_mmc
 $removeparam=trackingCode
-$removeparam=affiliateCustomId
 $removeparam=CJSID
 $removeparam=REFERRAL_ID
 $removeparam=impradid
@@ -1182,13 +1180,13 @@ $removeparam=cm_cat
 $removeparam=cm_pla
 $removeparam=cm_ite
 $removeparam=cm_lm
+$removeparam=CSID
 $removeparam=kpartnerid
 $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
 $document,removeparam=/^from=kelkoo.*$/
 $removeparam=paid
 $removeparam=pacid
-$removeparam=thg_ppc_campaign
 $removeparam=adtype
 $removeparam=tmad
 $removeparam=tmcampid
@@ -1289,6 +1287,7 @@ $removeparam=nosto
 $removeparam=af_id
 $removeparam=trafficSource
 $removeparam=gps_adid
+$removeparam=app_clickref
 $removeparam=as_campaign
 $removeparam=as_camptype
 $removeparam=as_channel
@@ -1384,8 +1383,6 @@ $removeparam=dchild
 ||amazon.$removeparam=sr
 ||amazon.$removeparam=creative
 $removeparam=creativeASIN
-||amazon.$removeparam=/^sc_i.*$/
-$removeparam=trkCampaign
 $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com|linkedin.com|lnkd.in
 ||amazon.$removeparam=/^__mk_*_.*$/
 ||amazon.$removeparam=ascsubtag
@@ -1850,7 +1847,6 @@ $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||dell.com^$removeparam=dgc
 ||dell.com^$removeparam=VEN1
 ||dell.com^$removeparam=gacd
-$removeparam=ref_id,domain=expedia.com|intuit.com|tunnelbear.com
 $removeparam=sourceID,domain=gamestop.com|verizon.com
 ||asahi.com^$removeparam=iref
 ||malwarebytes.com^$removeparam=guard
@@ -2313,7 +2309,6 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 !+ NOT_OPTIMIZED
 ||hotels.com^$removeparam=latLong
 ref=dtf.ru$document,removeparam=ref
-||atlassian.net^$document,removeparam=atlOrigin
 ||rentio.jp^$document,removeparam=click_from
 ||forms.office.com^$removeparam=route
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set.js', 'GSvars.addressTracking', 'false')
@@ -2322,6 +2317,7 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 @@||img*.nga$removeparam=cmpid
 @@/aff_c?$removeparam=/^aff_id\d?=.*$/i
 @@||hitta.se^$removeparam=ad_id
+@@||youtube.com/videoplayback$removeparam=source
 @@||facebook.com^$removeparam=__s
 @@||bing.*/ws/redirect/$removeparam
 @@/unsub/?$removeparam

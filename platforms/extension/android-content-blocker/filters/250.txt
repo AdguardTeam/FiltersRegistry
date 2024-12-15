@@ -1,8 +1,8 @@
-! Checksum: bj+gjCiqfDX3MoNq0Wd/bA
+! Checksum: 20YpUlLq/52w5Gq5zraJ+Q
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.77
-! TimeUpdated: 2024-12-13T01:01:48+00:00
+! Version: 2.0.15.78
+! TimeUpdated: 2024-12-15T13:01:45+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -465,7 +465,7 @@ accuweather.com###app-store-links
 .SmartMessage.$script,domain=weather.com
 quora.com##.modal_bg
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 08December2024v2
+! OriginalVersion: 15December2024v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks heavily abused top-level domains (and even search engine results for them), blocks domains used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
@@ -485,9 +485,11 @@ quora.com##.modal_bg
 !!!||pw^$document,domain=~libgen.pw|~petridish.pw|~palaugov.pw|~dpc.pw|~buttercup.pw|~rezka.pw|~darkcrystal.pw|~xor.pw|~fullhdfilmizlesene.pw|~gopass.pw|~vost.pw|~core.pw|~bittor.pw|~plutonium.pw|~nitter.pw|~kge.pw
 ! Legitimate use is almost non-existent, but has a tiny userbase in Japan. Its extreme common-ness in malware redirections means that the entry will be kept forever.
 ||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top
-! Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067
-@@||masto*.top^$document,domain=top
-@@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document,domain=top
+! (Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067)
+@@||masto*.top^$document
+@@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
+! (An E-mail tip)
+@@://blog.*.top^$document
 ! International topical domains that have consistently horrendous scores on watchlists of bad TLDs, and whose use for legit purposes is practically non-existent.
 ||loan^$document
 !!!||agency^$document,domain=~battlefield.agency|~baam.agency|~robotzebra.agency|~uphotel.agency|~ws.agency (Can't remember the last time I saw it used in a redirection train.)
@@ -1512,7 +1514,6 @@ toorgle.net##.join
 ||147.135.16.27^$document
 ! https://www•google•no/search?q=mlp+g5&newwindow=1&tbm=isch&oq=mlp+g5&sclient=img
 ||ingeniovirtual.com^$document
-! Spambot posts on Tumblr (19/09/2022)
 ! https://scambiofigu•forumcommunity•net/?t=57482915
 ! Only links to another site's (APKPure) APKs, yet tries to promote its own browser extension on the alleged download pages, which comes across as suspicious
 apkfab.com##.tip-extension
@@ -1568,11 +1569,8 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 *norgestores.com^$document
 *skobutikks.com^$document
 *butikksoslo.com^$document
-! Spam on W.I.T.C.H. and Winx text search results
 ! A scam SMS I got
 ! Overly dedicated E-mail spammers
-! Tumblr spambots
-||172.67.158.57^$document,popup
 ! Google results for «SodaStream site:no cranberry»
 /^https?://[a-z0-9.-]{1,}\.([a-z]{3,}|[a-z][a-tv-z]|[a-qs-z][a-z])/.*(go\.php|redirect|url=|\?re=).*\.(xn--p1ai|рф|%D1%80%D1%84)\$/$document,domain=~malware-redirection-results.*
 ||adservice.google.*/ddm/clk/$document,domain=~malware-redirection-results.*
@@ -1589,9 +1587,9 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ! More search terms than what can be counted with a supercomputer (11/03/2024)
 ! Scam E-mails I've got
 ! Visibly fake item descriptions and prices
-! Tumblr spammers
 ! https://walyou•com/gameloft-dungeon-hunter-5-dragon-mania-legends-apple-tv-3029/
-! Search results on Tumblr (31/10/2024)
+! Tumblr spammers
+||172.67.158.57^$document,popup
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
 ||unofficialtwrp.com^$document,domain=~had-not-updated-their-root-guides-to-reflect-a-b-partition-phones-as-of-2021.*
