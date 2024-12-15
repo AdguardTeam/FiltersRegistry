@@ -1,9 +1,9 @@
-! Checksum: opO5fAi1vyrnXAGPRdg6Cw
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1734183505-3600.patch
+! Checksum: n/bdKqxaI7/b1tly8QaMqQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1734262679-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.33
-! TimeUpdated: 2024-12-14T13:34:30+00:00
+! Version: 2.0.60.34
+! TimeUpdated: 2024-12-15T11:34:10+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -421,8 +421,8 @@ $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 @@||wiki.yjsnpi.nu^$generichide
 gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||kuji.xth.jp/ad-x-check.js
-exploader.net##article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"]) div:not([style]):not([class])
-exploader.net#%#//scriptlet('remove-attr', 'class|style', 'article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"])', 'complete')
+[$path=/download]exploader.net#?#article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"]) div:not([style]):not([class]):matches-attr("data-*") div
+[$path=/download]exploader.net#%#//scriptlet('remove-attr', 'class|style', 'article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"])', 'complete')
 @@||daotag.com/tag/$script,domain=exploader.net
 iwb.jp#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(a).height')
 kotobank.jp#%#//scriptlet('prevent-setTimeout', 'return')
@@ -1312,6 +1312,8 @@ city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.iko
 city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+esports-world.jp##.post__detail__banner
+esports-world.jp##.sidebar__item__ad
 chil-chil.net###anchor_book
 hannoumatome.com##.entry_body > div[style="text-align: center;"]
 hannoumatome.com##td[id$="_outline"] > p[align="center"]
@@ -5605,7 +5607,7 @@ at-s.com##.sideBannerGA01
 at-s.com##.sidePicup
 at-s.com##.topMainBannerGA01
 mofmo.jp##div[id^="ad_pos"]
-office54.net,piapro.jp##div[style^="width:300px; height:250px;"]
+itest.bbspink.com,office54.net,piapro.jp##div[style^="width:300px; height:250px;"]
 sanyonews.jp,piapro.jp##div[style^="width:728px; height:90px"]
 project.nikkeibp.co.jp##.prBox
 full-count.jp##.s-entry-ads
@@ -7710,7 +7712,7 @@ fx-koryaku.com##.textwidget > center > a[target="_blank"]
 ||dmm.co.jp^$domain=exploader.net
 ||exploader.net/d/$image
 ||dmm.co.jp^$popup,domain=exploader.net
-[$path=/(^\/$|\/preview)/]exploader.net##a[href^="https://al.dmm.co.jp"]
+[$path=/(^\/$|\/free|\/search|\/preview|\/tag)/]exploader.net##a[href^="https://al.dmm.co.jp"]
 exploader.net##article > div:not([class]):not([id]):not([style]) > div[style*="305px"][div*="750px"]
 exploader.net##article > div[style="display: flex; align-items: center; margin-bottom: 5px;"]
 exploader.net###preview_images > div[style^="max-width: 560px; position: relative; height: "] > div.h_items[style="margin-bottom: 10px;"]
