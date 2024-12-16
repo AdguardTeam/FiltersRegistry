@@ -9484,6 +9484,7 @@ bong.ink##body > div[style^="position: fixed; top:"][style*="z-index:"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144268
 @@||sportnews.to^$generichide
 @@||topsporter.net^$generichide
+sportnews.to#%#//scriptlet('remove-node-text', 'script', 'Dev tools checker')
 sportshub.to#%#//scriptlet('prevent-element-src-loading', 'script', 'pubads.g.doubleclick.net/pagead/js/adsbygoogle.js')
 sportshub.to,sportnews.to,topsporter.net#%#//scriptlet('prevent-xhr', 'pubads.g.doubleclick.net/pagead/js/adsbygoogle.js')
 sportnews.to,topsporter.net#%#//scriptlet('abort-current-inline-script', '$', 'keepChecking')
@@ -9493,6 +9494,7 @@ sportnews.to#%#//scriptlet('set-constant', 'document.write', 'undefined')
 *$xmlhttprequest,redirect-rule=nooptext,domain=sportfacts.net|sportshub.to
 sportfacts.net,sportshub.to##.popSc
 !#if (adguard_app_ios || adguard_ext_android_cb)
+@@||googletagmanager.com/gtag/js$domain=sportnews.to
 @@||pubads.g.doubleclick.net/pagead/js/adsbygoogle.js$domain=sportshub.to
 @@||static.doubleclick.net/instream/ad_status.js$domain=topsporter.net|sportnews.to
 @@||googleads.g.doubleclick.net/pagead/js/adsbygoogle.js$domain=sportshub.to
@@ -39560,6 +39562,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+sportnews.to##.widget-body > .card:has(> .card-body >  [id^="scoreaxis-widget-"])
 *.com/|$xmlhttprequest,domain=footyroom.top|miztv.shop
 *.net/|$xmlhttprequest,domain=miztv.shop
 *.css$script,third-party,domain=miztv.shop
@@ -59534,6 +59537,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194727
+nihon-ikuji.com#@#.showads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193934
 nytimes.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194223
