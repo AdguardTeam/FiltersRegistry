@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.64.56",
-			"timeUpdated": "2024-12-16T11:31:37+0000",
+			"version": "2.3.64.57",
+			"timeUpdated": "2024-12-16T12:31:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.57",
-			"timeUpdated": "2024-12-16T11:37:17+0000",
+			"version": "2.1.8.58",
+			"timeUpdated": "2024-12-16T12:35:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.4",
-			"timeUpdated": "2024-12-16T10:35:46+0000",
+			"version": "2.0.45.5",
+			"timeUpdated": "2024-12-16T12:35:19+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.38",
-			"timeUpdated": "2024-12-16T11:37:28+0000",
+			"version": "2.0.60.39",
+			"timeUpdated": "2024-12-16T12:35:22+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.39",
-			"timeUpdated": "2024-12-16T11:37:39+0000",
+			"version": "2.0.54.40",
+			"timeUpdated": "2024-12-16T12:35:34+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.53.5",
-			"timeUpdated": "2024-12-16T10:36:18+0000",
+			"version": "2.0.53.6",
+			"timeUpdated": "2024-12-16T12:35:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
