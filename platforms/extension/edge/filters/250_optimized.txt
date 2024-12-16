@@ -1,5 +1,5 @@
-! Checksum: 1fRSpA01tTGQ4yxV76/ktg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1734296767-14400.patch
+! Checksum: 3re32jIAN+9gON5DoCQXiA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1734325519-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.79
@@ -115,6 +115,7 @@ drivereasy.com#?#.pakb-content ol:has-text(Download and install Driver Easy)
 drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
 drivereasy.com#?#.pakb-content div.info.note:has-text(drivereasy.com)
 drivereasy.com#?#.pakb-content img[sizes^="(max-width: 80"]
+drivereasy.com#?#.pakb-content p:has-text(the FREE version)
 drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 drivereasy.com#?#.pakb-content p:has-text(click Update All)
 appuals.com##p + div > div:first-of-type
@@ -128,7 +129,6 @@ exefiles.com##.row:has(a[href*="/recommended/"])
 /^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
 ||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
-||githubu.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
 /^172\.255\.6\.(\d\d?|[12][0-689]\d|17[0-689])\$/
 ||endorseprovisional.com^$all
 ||feverfreeman.com^$all
@@ -143,7 +143,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||mediaget.com^$all
 ||rewardsgiantusa.com^$document
 ||onlinepromotionsusa.com^$document
-||traversedlp.com^$all
 /^(.*://|.*\.)?[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz(/.*)?$/$document
 ||yasir252.com^$all
 ||xiaobaixitong.com^$all
@@ -184,6 +183,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||file2share.co^$all
 ||erothots.co^$all
 |http://www6.$document,domain=~often-used-in-malware-redirections.*
+.aspx?iid=*&cid=$all
 /^.*\.[a-z]{2,18}\/Stars\.php\?.*$/$match-case,all
 www.tumblr.com##div[style="margin-top: 0px;"][tabindex]:has-text(🔞):has-text(/Insta/i)
 www.tumblr.com##div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a[target=_blank] > div > div:has-text(/^.*🔞.*insta( |gram).*\n.*$/i))
@@ -403,7 +403,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||social-plugins.line.me/widget/share?url=$subdocument
 ||static.addtoany.com/buttons^$image
 ||static.addtoany.com/menu^$script
-||static.mixi.jp/share_button.html^$subdocument,domain=~mixi.jp
 ||tumblr.com/share/$third-party
 ||twitter.com/share$third-party
 ||widgets.getpocket.com/v1/button?label=pocket$subdocument
@@ -733,6 +732,7 @@ fandom.com##.unified-search__layout__right-rail
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
 fandom.com#$?#:root { --theme-body-background-image: none !important }
 @@||wikia.nocookie.net^*/images/$image,badfilter
+fandom.com###SurveyModule
 fandom.com#$?#.page__right-rail:has(.sticky-modules-wrapper:last-of-type) { width: 210px !important }
 fandom.com#$#.right-rail-wrapper { padding: 0 1px !important }
 fandom.com#$##WikiaAdInContentPlaceHolder { padding: 7px !important }
@@ -760,7 +760,6 @@ spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-sn
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 /snow.js|$script
 /wp-content/plugins/christmasify^
-/wp-content/plugins/snow-3d^
 ##.xenfocus-snow:not(html, body, article)
 daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 ##.xenfocus-snow:not(html, body, article)
@@ -1133,7 +1132,6 @@ $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
 $removeparam=oly_anon_id
-$removeparam=rb_clickid,document
 $removeparam=s_cid
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
@@ -1319,7 +1317,6 @@ $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
 $removeparam=taboola_hm
 $removeparam=adroll_fpc
-$removeparam=google_gid
 $removeparam=ad-session-id
 $removeparam=ga_cid
 $removeparam=hubspotUtk
@@ -1347,6 +1344,7 @@ $removeparam=adsafe_type
 $removeparam=variationId
 $removeparam=beeswax_id
 $removeparam=_gfid
+$removeparam=ex_uid
 $removeparam=mt_exid
 $removeparam=_sid
 $removeparam=client-ts
@@ -1380,7 +1378,6 @@ $removeparam=offer_id,domain=catch.com.au|surfshark.com
 $document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 ||amazon.$removeparam=th
 ||amazon.$removeparam=linkCode
-$removeparam=dchild
 ||amazon.$~xmlhttprequest,removeparam=qid
 ||amazon.$removeparam=sr
 ||amazon.$removeparam=creative
@@ -1835,6 +1832,8 @@ $removeparam=publisher_id,domain=t-mobile.com|udemy.com
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
 ||apple.com^$removeparam=fnode
+||epidemicsound.com^$removeparam=_us
+||epidemicsound.com^$removeparam=_usx
 ||microsoft.com^$removeparam=headerid
 ||microsoft.com^$removeparam=destrt
 $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moosejaw.com|multitronic.fi|scandinavianphoto.fi|swamp.fi|ocado.com|ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
@@ -2021,6 +2020,7 @@ $removeparam=plink,domain=audible.*
 ||netflix.com^$removeparam=trackIdTrailer
 ||netflix.com^$removeparam=trackIdEpisode
 ||netflix.com^$removeparam=dpRightClick
+$removeparam=vndid,domain=paramountplus.com|cbs.com
 $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
@@ -2179,6 +2179,7 @@ $removeparam=qid,domain=bookdepository.com|eastday.com
 ||xiaohongshu.com^$removeparam=apptime,document
 ||login.afreecatv.com^$removeparam=szFrom
 ||typeform.com^$removeparam=typeform-source
+$removeparam=_1lr
 $removeparam=ymid
 $removeparam=ad_sub,domain=homo.xxx
 ||homedepot.com^$removeparam=fromReminder
@@ -2253,8 +2254,6 @@ $document,removeparam=_x_ads_sub_channel,domain=temu.com
 $document,removeparam=_x_vst_scene,domain=temu.com
 $document,removeparam=refer_page_el_sn,domain=temu.com
 $document,removeparam=refccid,domain=bedbathandbeyond.com
-$document,removeparam=osp,domain=bedbathandbeyond.com
-$document,removeparam=lyceumGuid,domain=bedbathandbeyond.com
 $document,removeparam=searchidx,domain=bedbathandbeyond.com
 $document,removeparam=tk,domain=indeed.com
 $removeparam=from,domain=indeed.com
