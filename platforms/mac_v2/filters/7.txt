@@ -1,9 +1,9 @@
-! Checksum: wAv3xAvqdbmyJiu2c3Q3Lw
-! Diff-Path: ../patches/7/7-s-1734338496-3600.patch
+! Checksum: mSNSCmnbs+TY3VaQGOxgFw
+! Diff-Path: ../patches/7/7-s-1734349354-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.37
-! TimeUpdated: 2024-12-16T08:36:53+00:00
+! Version: 2.0.60.38
+! TimeUpdated: 2024-12-16T11:37:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -539,8 +539,8 @@ gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188965
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-[$path=/download]exploader.net#?#article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"]) div:not([style]):not([class]):matches-attr("data-*") div
-[$path=/download]exploader.net#%#//scriptlet('remove-attr', 'class|style', 'article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"])', 'complete')
+[$path=/download]exploader.net#?#article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"]) div:matches-attr("data-*") div
+exploader.net#%#(()=>{document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("body script");if(!t)return;const e=t.textContent.match(/"] = '(.*?)'/g);if(!e)return;const r=[];e.forEach((t=>{const e=t.replace(/.*'(.*?)'/,"$1");r.push(e)}));const c=document.querySelector('a.dl_button[href*="?"]');if(!r||!c)return;let n=null;const o=c.getAttribute("href");r.forEach((t=>{const e=o.replace(/\?.*/,`?${t}`);(t=>{const e=window.open(t);const d=!e.document.body.textContent.includes("広告ブロックをしていると画像プレビューを使用できません。");e.close();return d})(e)&&(n=t,document.querySelectorAll('a.dl_button[href*="?"]').forEach((t=>{let e=t.getAttribute("href");e=e.replace(/\?.*/,`?${n}`),t.setAttribute("href",e)})))}))})})();
 @@||daotag.com/tag/$script,domain=exploader.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181591
 iwb.jp#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(a).height')
@@ -1792,7 +1792,9 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-rank.sho-room.net##.flex.justify-center.py-12
+gravure-grazie.com##.amazon-info
+chomagireko.blog.jp##.right-column-inner > div.plugin-memo
+chomagireko.blog.jp##.left-column-inner > div.plugin-memo
 adult-now.blogterest.net##div[style="width: 100%; height: 400px; overflow-y: hidden; background:none; border: 0px #999999 solid; background: none;"]
 erokiwami.com###main > center:has(+ ins.widget-banner)
 erokiwami.com###main > center:has(+ script[src^="https://img.ad-nex.com"])

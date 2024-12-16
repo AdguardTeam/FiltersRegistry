@@ -1,8 +1,8 @@
-! Checksum: DnTVIDvX4ebT00nD3w2edA
+! Checksum: K56CYclCibK89pggusQZvQ
 ! Title: AdGuard Quick Fixes filter (Optimized)
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.4.97
-! TimeUpdated: 2024-12-15T11:34:37+00:00
+! Version: 2.0.4.98
+! TimeUpdated: 2024-12-16T11:38:03+00:00
 ! Expires: 10 days (update frequency)
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
 flightaware.com#%#//scriptlet('trusted-click-element', 'div[style*="fsab-button"]  h2 + span')
@@ -237,16 +237,18 @@ solowrestling.mundodeportivo.com##div[class^="banner-"]
 solowrestling.mundodeportivo.com##div[class^="banner-"] + span.text-uppercase
 mundolucha.com#@#.ad-box:not(#ad-banner):not(:empty)
 mundolucha.com#%#//scriptlet('prevent-setTimeout', 'siteAccessPopup()')
+vk.com,vk.ru###feed_rows > div[class^="feed_row"]:has(> div.page_block.mailru-visibility-check)
 vk.com,vk.ru###feed_rows > div[class^="feed_row"]:has(> div.page_block > div._post_content div.ads_ad_snippet)
 vk.com,vk.ru###feed_rows > div[class^="feed_row"]:has(> div.page_block > div._post_content span.ads_ad_avatar)
 vk.com,vk.ru#?##feed_rows > div[class="feed_row "] > div.page_block > div._post_content div.ads_wall_text:upward(#feed_rows > div[class="feed_row "])
 vk.com,vk.ru#?##feed_rows > div[class="feed_row "] > div.page_block > div._post_content > div.ads_light_container:upward(#feed_rows > div[class="feed_row "])
 vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div.page_block div.PostHeaderSubtitle__item > span:not([class]):contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
+vk.com,vk.ru#?##feed_rows > div[class^="feed_row"]:has(> ._post > ._post_content .PostHeaderInfo .PostHeaderSubtitle__item:contains(Реклама в сообществе))
 vk.com,vk.ru###feed_rows > div.feed_row > div.post:has(a[data-ad-details-link])
 @@||vk.com^$generichide
 vk.com#%#//scriptlet('prevent-fetch', '/(\.com|\.ru)$/ method:HEAD')
-[$path=/download]exploader.net#?#article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"]) div:not([style]):not([class]):matches-attr("data-*") div
-[$path=/download]exploader.net#%#//scriptlet('remove-attr', 'class|style', 'article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"])', 'complete')
+[$path=/download]exploader.net#?#article div:not(article>div[style="width: 750px;margin-left: auto;margin-right: auto;"],article>div[style="width: 750px;margin-left: auto;margin-right: auto;"]>div[style="float: right;width: 180px;"],[class="information"],[class="information"]+[class="thumbnail"],[class="information"]>[class="warning"],[class="information"]>[class="d_"]) div:matches-attr("data-*") div
+exploader.net#%#(()=>{document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("body script");if(!t)return;const e=t.textContent.match(/"] = '(.*?)'/g);if(!e)return;const r=[];e.forEach((t=>{const e=t.replace(/.*'(.*?)'/,"$1");r.push(e)}));const c=document.querySelector('a.dl_button[href*="?"]');if(!r||!c)return;let n=null;const o=c.getAttribute("href");r.forEach((t=>{const e=o.replace(/\?.*/,`?${t}`);(t=>{const e=window.open(t);const d=!e.document.body.textContent.includes("広告ブロックをしていると画像プレビューを使用できません。");e.close();return d})(e)&&(n=t,document.querySelectorAll('a.dl_button[href*="?"]').forEach((t=>{let e=t.getAttribute("href");e=e.replace(/\?.*/,`?${n}`),t.setAttribute("href",e)})))}))})})();
 wiki.yjsnpi.nu#%#//scriptlet('abort-on-stack-trace', 'Function.prototype.toString', '/w/load.php?lang=ja&modules=codex-search-styles%2Cjquery%2Coojs%2C&skin=vector-2022&version=L58hf')
 wiki.yjsnpi.nu#%#//scriptlet("prevent-setTimeout", "()=>k(S(4")
 wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"])', 'font-size', '14px')
