@@ -1,9 +1,9 @@
-! Checksum: u5vBWOCyX3cS77hERj1PZA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1734547202-3600.patch
+! Checksum: QrlwP6SrBJ1S5o9+Gc0mfg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1734550812-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.16.79
-! TimeUpdated: 2024-12-18T18:35:47+00:00
+! Version: 2.2.16.80
+! TimeUpdated: 2024-12-18T19:36:16+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -22471,7 +22471,7 @@ imagehaha.com,imgblaze.net,pixsera.net,imgfrost.net,imgair.net#%#//scriptlet('tr
 wallpaperplay.com#%#//scriptlet("adjust-setInterval", "#download_menu", "", "0.02")
 apkmos.com#%#//scriptlet("adjust-setInterval", "downloadButton", "", "0.02")
 lnk.parts,lnk.news#%#//scriptlet("adjust-setInterval", "r--", "", "0.02")
-lnk.parts,lnk.news#%#AG_onLoad(function(){if(-1<location.pathname.indexOf("/go/")){var b=new MutationObserver(function(){if(document.querySelector("#get_link_btn"))try{[].slice.call(document.getElementsByTagName("script")).some(function(a){a.text.match(/goToUrl \("/)&&(a=a.text.split(/goToUrl \("([\s\S]*?)"\);/),location=a[1])})}catch(a){}});b.observe(document,{childList:!0,subtree:!0});setTimeout(function(){b.disconnect()},1E4)}});
+lnk.parts,lnk.news#%#(()=>{document.addEventListener('DOMContentLoaded',()=>{if(-1<location.pathname.indexOf("/go/")){var b=new MutationObserver(function(){if(document.querySelector("#get_link_btn"))try{[].slice.call(document.getElementsByTagName("script")).some(function(a){a.text.match(/goToUrl \("/)&&(a=a.text.split(/goToUrl \("([\s\S]*?)"\);/),location=a[1])})}catch(a){}});b.observe(document,{childList:!0,subtree:!0});setTimeout(function(){b.disconnect()},1E4)}})})();
 sammobile.com#%#//scriptlet("adjust-setInterval", "showDownloadButton", "", "0.02")
 videouroki.net#%#//scriptlet("adjust-setTimeout", "/action-downloadFile?")
 tr3fit.xyz#%#//scriptlet("set-constant", "tempo2", "0")
