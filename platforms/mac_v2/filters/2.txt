@@ -1,9 +1,9 @@
-! Checksum: kxlK5fWvsu4I87AsD9S+ZA
-! Diff-Path: ../patches/2/2-s-1734518459-3600.patch
+! Checksum: XuF6XvsY4cTrovwBygTKgw
+! Diff-Path: ../patches/2/2-s-1734536510-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.64.87
-! TimeUpdated: 2024-12-18T10:31:38+00:00
+! Version: 2.3.64.88
+! TimeUpdated: 2024-12-18T15:31:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18377,6 +18377,8 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
+||titulky.com/mybanalter/
+titulky.com##div[id^="bny"]
 rychlost.cz##a[href^="/_pub/"]
 bombuj.si##div[id^="zatvorit-rekllamu"]
 idos.cz##.r-main
@@ -18399,6 +18401,8 @@ extra.cz##[data-advert-container]
 rychlost.cz##.t-ban
 olympijskytym.cz##div.bg-texture:has(> div[class^="ad-"])
 impuls.cz##.r-main
+! https://github.com/AdguardTeam/AdguardFilters/issues/194647
+titulky.com#%#//scriptlet('set-constant', 'showFairUser', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194536
 info.cz##.i-ads-wrap
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194095
@@ -23066,6 +23070,8 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xmlhttprequest,redirect=nooptext
 !
 !
+lca.pl##.baner
+lca.pl##body.toplayer-visible .new-toplayer
 polskieradio24.pl##div[class^="Screening_"]
 bialystokonline.pl##.firma.premium
 wirtualnemedia.pl##div[id^="wtg_"]
@@ -34869,7 +34875,7 @@ kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.p
 ||content-loader.com/loader.min.js$domain=issuya.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|sourceforge.net|slashdot.org|economictimes.com
 !
 ! Common rules, which partially hide banners
-#$?#span[id^="img_"][class^="img_"] > div[style*="justify-content:"][style*="align-items:"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { margin-right: -5000px !important; }
+#$?#span[id^="img_"][class^="img_"] > div[style*="justify-content"][style*="align-items"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { position: relative !important; right: 10000px !important; }
 ! END: Ad-Shield ad reinsertion
 !
 ! ExoClick
@@ -35108,6 +35114,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+puck.news##.entry-content td:has(> a[href^="https://www.hbomaxfyc.com/"])
 cracksports.me##.btn-danger
 cracksports.me##.ratio > iframe ~ div[class*=" bg-opacity-"]
 voicendata.com##.ads-div-style

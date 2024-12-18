@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.64.87",
-			"timeUpdated": "2024-12-18T10:31:38+0000",
+			"version": "2.3.64.88",
+			"timeUpdated": "2024-12-18T15:31:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.77.68",
-			"timeUpdated": "2024-12-17T11:35:48+0000",
+			"version": "2.0.77.69",
+			"timeUpdated": "2024-12-18T15:35:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.45",
-			"timeUpdated": "2024-12-18T14:35:18+0000",
+			"version": "2.0.60.46",
+			"timeUpdated": "2024-12-18T15:35:21+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.16.76",
-			"timeUpdated": "2024-12-18T14:35:41+0000",
+			"version": "2.2.16.77",
+			"timeUpdated": "2024-12-18T15:35:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -787,8 +787,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.29.7",
-			"timeUpdated": "2024-12-18T06:34:11+0000",
+			"version": "2.0.29.8",
+			"timeUpdated": "2024-12-18T15:35:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.28.2",
-			"timeUpdated": "2024-12-18T14:35:55+0000",
+			"version": "2.1.28.3",
+			"timeUpdated": "2024-12-18T15:35:58+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

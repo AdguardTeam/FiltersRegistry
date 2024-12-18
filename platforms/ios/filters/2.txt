@@ -1,9 +1,9 @@
-! Checksum: cDTEL8uPfZFfaOuiMZfneg
-! Diff-Path: ../patches/2/2-s-1734518456-3600.patch
+! Checksum: oTSDCUJ2/xHIJ3G3negGUg
+! Diff-Path: ../patches/2/2-s-1734536504-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.64.87
-! TimeUpdated: 2024-12-18T10:31:38+00:00
+! Version: 2.3.64.88
+! TimeUpdated: 2024-12-18T15:31:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20597,6 +20597,8 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
+||titulky.com/mybanalter/
+titulky.com##div[id^="bny"]
 rychlost.cz##a[href^="/_pub/"]
 bombuj.si##div[id^="zatvorit-rekllamu"]
 idos.cz##.r-main
@@ -20619,6 +20621,10 @@ extra.cz##[data-advert-container]
 rychlost.cz##.t-ban
 olympijskytym.cz##div.bg-texture:has(> div[class^="ad-"])
 impuls.cz##.r-main
+! https://github.com/AdguardTeam/AdguardFilters/issues/194647
+titulky.com#%#//scriptlet('set-constant', 'showFairUser', 'true')
+!+ PLATFORM(ios, ext_android_cb)
+@@||titulky.com/ads/titulky-ads-banner.js$domain=titulky.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194536
 info.cz##.i-ads-wrap
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194095
@@ -25457,6 +25463,8 @@ roweroweporady.pl#@#.ad_container
 @@||lib.wtg-ads.com/prebid/prebid_*.js$domain=tvn.pl
 !
 !
+lca.pl##.baner
+lca.pl##body.toplayer-visible .new-toplayer
 polskieradio24.pl##div[class^="Screening_"]
 bialystokonline.pl##.firma.premium
 wirtualnemedia.pl##div[id^="wtg_"]
@@ -37251,7 +37259,7 @@ kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.p
 !
 !
 ! Common rules, which partially hide banners
-#$?#span[id^="img_"][class^="img_"] > div[style*="justify-content:"][style*="align-items:"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { margin-right: -5000px !important; }
+#$?#span[id^="img_"][class^="img_"] > div[style*="justify-content"][style*="align-items"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { position: relative !important; right: 10000px !important; }
 kreuzwortraetsel.de,slashdot.org,sourceforge.net,lovelive-petitsoku.com,infinityfree.com,tportal.hr,cool-style.com.tw,rabitsokuhou.2chblog.jp,infor.pl,forsal.pl,oraridiapertura24.it,suzusoku.blog.jp,yugioh-starlight.com,news4vip.livedoor.biz,onecall2ch.com,laleggepertutti.it,raetsel-hilfe.de,the-crossword-solver.com,allthetests.com,javatpoint.com,globalrph.com,islamicfinder.orgwouldurather.io,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,thatgossip.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,ff14net.2chblog.jp,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com##a[target="_blank"][rel="noopener noreferrer"]:has(> div#container > div.img_container > img[src^="https://asset.ad-shield.cc"])
 ##body > a[href^="https://www.amazon."][href*="tag=adshield"][target="_blank"]
 ##body > a[href^="https://s.click.aliexpress.com"][target="_blank"][rel="noopener noreferrer"]
@@ -37552,6 +37560,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+puck.news##.entry-content td:has(> a[href^="https://www.hbomaxfyc.com/"])
 cracksports.me##.btn-danger
 cracksports.me##.ratio > iframe ~ div[class*=" bg-opacity-"]
 voicendata.com##.ads-div-style
