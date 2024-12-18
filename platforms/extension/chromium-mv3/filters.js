@@ -1210,8 +1210,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.19.82",
-			"timeUpdated": "2024-12-18T17:01:44+0000",
+			"version": "2.0.19.83",
+			"timeUpdated": "2024-12-18T21:01:40+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1259,8 +1259,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlocker.txt",
 			"trustLevel": "high",
-			"version": "2.0.5.19",
-			"timeUpdated": "2024-12-18T13:02:13+0000",
+			"version": "2.0.5.20",
+			"timeUpdated": "2024-12-18T21:01:45+0000",
 			"deprecated": false,
 			"languages": [
 				"fa",

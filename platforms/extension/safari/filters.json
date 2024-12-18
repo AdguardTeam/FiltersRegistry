@@ -1184,8 +1184,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.36.49",
-			"timeUpdated": "2024-12-18T17:01:25+0000",
+			"version": "2.1.36.50",
+			"timeUpdated": "2024-12-18T21:01:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1281,8 +1281,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.38.72",
-			"timeUpdated": "2024-12-18T17:01:32+0000",
+			"version": "2.1.38.73",
+			"timeUpdated": "2024-12-18T21:01:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1305,8 +1305,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.33.82",
-			"timeUpdated": "2024-12-18T17:01:33+0000",
+			"version": "2.1.33.83",
+			"timeUpdated": "2024-12-18T21:01:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1706,8 +1706,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.19.82",
-			"timeUpdated": "2024-12-18T17:01:44+0000",
+			"version": "2.0.19.83",
+			"timeUpdated": "2024-12-18T21:01:40+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1783,8 +1783,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.64.97",
-			"timeUpdated": "2024-12-18T17:01:47+0000",
+			"version": "2.0.64.98",
+			"timeUpdated": "2024-12-18T21:01:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1854,8 +1854,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlocker.txt",
 			"trustLevel": "high",
-			"version": "2.0.5.19",
-			"timeUpdated": "2024-12-18T13:02:13+0000",
+			"version": "2.0.5.20",
+			"timeUpdated": "2024-12-18T21:01:45+0000",
 			"deprecated": false,
 			"languages": [
 				"fa",
@@ -1909,8 +1909,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "1.0.32.88",
-			"timeUpdated": "2024-12-18T17:01:51+0000",
+			"version": "1.0.32.89",
+			"timeUpdated": "2024-12-18T21:01:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1981,8 +1981,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.44.43",
-			"timeUpdated": "2024-12-18T17:01:54+0000",
+			"version": "2.1.44.44",
+			"timeUpdated": "2024-12-18T21:01:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
