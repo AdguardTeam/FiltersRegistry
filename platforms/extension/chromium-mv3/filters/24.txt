@@ -1,8 +1,8 @@
-! Checksum: 7vbkMndwVCjR9REyPvs4Tg
+! Checksum: USdpmhZkSkCKiQnttPximg
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.5.4
-! TimeUpdated: 2024-12-18T12:38:26+00:00
+! Version: 2.0.5.5
+! TimeUpdated: 2024-12-18T14:35:51+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -258,9 +258,7 @@ vk.com,vk.ru###feed_rows > div.feed_row > div.post:has(a[data-ad-details-link])
 @@||vk.com^$generichide
 vk.com#%#//scriptlet('prevent-fetch', '/(\.com|\.ru)$/ method:HEAD')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-exploader.net#%#//scriptlet('spoof-css', 'a[style*="display:"][href^="https://al.dmm.co.jp"] img,a[style*="display:"][href^="https://al.dmm.co.jp"] span', 'clip', '')
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] img { position: absolute !important; clip:rect(1px,1px,1px,1px) !important; }
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] span { position: absolute !important; clip:rect(1px,1px,1px,1px) !important; }
+exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] { width: 27px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190943
 wiki.yjsnpi.nu#%#//scriptlet('abort-on-stack-trace', 'Function.prototype.toString', '/w/load.php?lang=ja&modules=codex-search-styles%2Cjquery%2Coojs%2C&skin=vector-2022&version=L58hf')
 wiki.yjsnpi.nu#%#//scriptlet("prevent-setTimeout", "()=>k(S(4")
@@ -269,8 +267,7 @@ wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([hre
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) { font-size: 0 !important; }
 wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img { height: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189567
-japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item', 'width', 'auto')
-japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { width: 0 !important; overflow: hidden !important; }
+japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { clip-path: circle(0) !important; }
 japscan.lol#@$#.navbar-nav > li#navpromo2.nav-item > a[href^="http://www.toueapo.shop/"] { text-indent: -5000px !important; }
-japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/function\s*\(\s*\)\s*\{[$\w]+\s*\(function\s*\(\s*\)|Porita|getComputedStyle'|getAttribute'|#Roi'\+|\+'pr|\(Lol|Niger|Charger|GoodDay|funct'|t'\+'y/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Zodora|checkVar\)|p'\+'r|Niger|Charger|GoodDay|funct'|t'\+'y/")
 japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "/navpromo|clipPath|0p'\+/")
