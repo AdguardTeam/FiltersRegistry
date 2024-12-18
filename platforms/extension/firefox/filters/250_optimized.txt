@@ -1,9 +1,9 @@
-! Checksum: MxNiJ/YfyvKkkbUAqzpEqg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1734469547-14400.patch
+! Checksum: Mexj6JW5Xe6IXmTDNNVDMg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1734498329-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.80
-! TimeUpdated: 2024-12-17T21:02:03+00:00
+! Version: 2.0.15.81
+! TimeUpdated: 2024-12-18T05:01:46+00:00
 ! Expires: 10 days (update frequency)
 ###app-download
 ###app-modal
@@ -122,6 +122,7 @@ appuals.com##p + div > div:first-of-type
 ||driver-soft.com^$document
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
+processlibrary.com##.bottom > .row:last-of-type
 ||testedforyou.net^$all
 ||solvusoft.com^$document
 exefiles.com##.row:has(a[href*="/recommended/"])
@@ -197,7 +198,6 @@ www.tumblr.com##div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a[
 ://ww7.$document,domain=~ww7.be|~ww7.readsnk.com
 ://ww8.$document,domain=~ww8.co|~ww8.ikea.com|~ww8.tiki.ne.jp|~ww8.erovoice.us|~ww8.anyanime.com|~ww8.bakushpal.az|~ww8.tokyoghoulre.com|~ww8.readonepiece.com
 ://ww10.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
-://ww11.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww12.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww16.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww17.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
@@ -223,7 +223,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ###social-share:not([class*=body i])
 ###social_buttons:not([class*=body i])
 ###ss-floating-bar
-###tell-a-friend
 ###top_share
 ##.addthis_button_facebook:not(html,body,:empty)
 ##.addthis_button_more:not(html,body,:empty)
@@ -508,6 +507,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[onclick*="twitter.com/share?"]
 ##a[title="Share on Twitter" i]
 ##a[title="Tweet this post"]
+##div[class=twitterShare i]
 ##li[data-share=twitter]
 ~viber.com##a[href^="viber://forward?text"]
 ~vk.com##.share-vk:not(html,body,:empty)
@@ -759,6 +759,7 @@ spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-sn
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
+||cdnjs.cloudflare.com/ajax/libs/Snowstorm/$script,important
 /snow.js|$script
 /wp-content/plugins/christmasify^
 ##.xenfocus-snow:not(html, body, article)
@@ -965,7 +966,6 @@ $removeparam=traffic_type
 $removeparam=traffic_id
 $removeparam=dcmp
 $removeparam=clickOrigin
-$removeparam=clickSR
 $removeparam=istCompanyId
 $removeparam=istFeedId
 $removeparam=istItemId
@@ -988,6 +988,7 @@ $removeparam=msclkid
 $removeparam=litb_from
 $removeparam=ggcid
 $removeparam=ftag
+$removeparam=akmClientCountry
 $removeparam=ns_mchannel
 $removeparam=ns_source
 $removeparam=ns_campaign
@@ -1032,6 +1033,7 @@ $document,removeparam=campaignid
 $removeparam=loc,document,domain=bestbuy.*|shopping.google.com
 $removeparam=acampID
 $removeparam=cmt
+$removeparam=extcmp
 $removeparam=at_gd
 $document,removeparam=/^amp=$/,domain=~eurasiantimes.com|~cybersecuritynews.com
 $removeparam=_gl
@@ -1260,6 +1262,7 @@ $removeparam=affcode
 $removeparam=channable
 $removeparam=int_source
 $removeparam=int_medium
+$removeparam=int_content
 $removeparam=int_campaign
 $removeparam=sudaref
 $removeparam=pm_source
@@ -1270,7 +1273,6 @@ $removeparam=gaa_at
 $removeparam=gaa_n
 $removeparam=gaa_ts
 $removeparam=gaa_sig
-$removeparam=amp_gsa
 $removeparam=vgo_ee
 $document,removeparam=/^amp;utm_.*$/
 $removeparam=sap-outbound-id
@@ -1594,6 +1596,7 @@ $removeparam=sender_device
 ||tiktok.com^$removeparam=preview_pb
 ||tiktok.com^$document,removeparam=user_id
 ||tiktok.com^$document,removeparam=sec_user_id
+$removeparam=share_app_id
 $removeparam=share_item_id
 $removeparam=share_link_id
 ||tiktok.com^$~xmlhttprequest,removeparam=referer_url
@@ -1721,6 +1724,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
 ||bilibili.com/video/*$removeparam=ts
+||bilibili.com^$removeparam=refer_from
 ||bilibili.com^$removeparam=msource
 ||bilibili.com/bangumi$removeparam=theme
 ^p=1^$removeparam=p,domain=bilibili.com
@@ -2175,6 +2179,7 @@ $removeparam=qid,domain=bookdepository.com|eastday.com
 $removeparam=_1lr
 $removeparam=ymid
 $removeparam=ad_sub,domain=homo.xxx
+||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
 ||etsy.com^$removeparam=gpla
@@ -2199,6 +2204,7 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||google.$removeparam=fg
 ||instagram.com^$removeparam=ig_rid
 ||cdninstagram.com^$removeparam=_nc_sid
+||adguard.info^$removeparam=nc
 $document,removeparam=jp_cmp,domain=chase.com
 $document,removeparam=orig_ref,domain=peacocktv.com
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|sky.it
@@ -2268,6 +2274,8 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=pspid
 ||login.yahoo.com^$document,removeparam=activity
 ||abcnyheter.no^$removeparam=nr
+||qzone.qq.com^$document,removeparam=jumptoqzone
+||qzone.qq.com^$document,removeparam=g
 ||gumroad.com^$removeparam=recommended_by
 ||www.booking.com^$document,removeparam=aid
 ||www.booking.com^$document,removeparam=sid
@@ -2358,7 +2366,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 @@/favicon1.ico|
 @@://adserver.adtech.advertising.
 www.youtube.com##.ytd-watch-flexy #dismissible:has(.badge-style-type-simple)
-www.youtube.com##ytd-shelf-renderer[thumbnail-style]
+www.youtube.com##ytd-video-renderer ~ ytd-shelf-renderer[thumbnail-style]
 tv2.no##.banner
 www.finn.no#%#//scriptlet('ubo-rc.js', 'ads__unit--premium', '.ads__unit', 'stay')
 positivr.fr#$#.viously-sticked { position: absolute !important; top: 0 !important; left: 0 !important; bottom: 0 !important; right: 0 !important; width: 100% !important;  height: 100% !important; z-index: 1 !important; display: block !important }
