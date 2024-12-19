@@ -1210,8 +1210,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.19.83",
-			"timeUpdated": "2024-12-18T21:01:40+0000",
+			"version": "2.0.19.84",
+			"timeUpdated": "2024-12-19T05:01:26+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1311,8 +1311,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.20.31",
-			"timeUpdated": "2024-12-18T05:01:38+0000",
+			"version": "2.0.20.32",
+			"timeUpdated": "2024-12-19T05:01:37+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"

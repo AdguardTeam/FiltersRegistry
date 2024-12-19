@@ -426,8 +426,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.45.65",
-			"timeUpdated": "2024-12-19T01:01:05+0000",
+			"version": "2.1.45.66",
+			"timeUpdated": "2024-12-19T05:01:01+0000",
 			"languages": []
 		},
 		{
@@ -708,8 +708,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.38.74",
-			"timeUpdated": "2024-12-19T01:01:20+0000",
+			"version": "2.1.38.75",
+			"timeUpdated": "2024-12-19T05:01:15+0000",
 			"languages": []
 		},
 		{
@@ -850,8 +850,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.2.2",
-			"timeUpdated": "2024-12-01T05:01:23+0000",
+			"version": "2.0.2.3",
+			"timeUpdated": "2024-12-19T05:01:18+0000",
 			"languages": []
 		},
 		{
@@ -1167,8 +1167,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
-			"version": "2.0.19.83",
-			"timeUpdated": "2024-12-18T21:01:40+0000",
+			"version": "2.0.19.84",
+			"timeUpdated": "2024-12-19T05:01:26+0000",
 			"languages": [
 				"ko"
 			]
@@ -1389,8 +1389,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.44.45",
-			"timeUpdated": "2024-12-19T01:01:42+0000",
+			"version": "2.1.44.46",
+			"timeUpdated": "2024-12-19T05:01:36+0000",
 			"languages": []
 		},
 		{
@@ -1415,8 +1415,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
-			"version": "2.0.20.31",
-			"timeUpdated": "2024-12-18T05:01:38+0000",
+			"version": "2.0.20.32",
+			"timeUpdated": "2024-12-19T05:01:37+0000",
 			"languages": [
 				"sv"
 			]
