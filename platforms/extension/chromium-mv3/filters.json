@@ -1092,8 +1092,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.33.84",
-			"timeUpdated": "2024-12-18T13:02:01+0000",
+			"version": "2.0.33.85",
+			"timeUpdated": "2024-12-19T01:01:25+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1443,8 +1443,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.5.0",
-			"timeUpdated": "2024-12-18T13:02:31+0000",
+			"version": "2.0.5.1",
+			"timeUpdated": "2024-12-19T01:01:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

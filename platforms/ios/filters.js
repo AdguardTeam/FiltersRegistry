@@ -907,8 +907,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.45.64",
-			"timeUpdated": "2024-12-18T17:01:15+0000",
+			"version": "2.1.45.65",
+			"timeUpdated": "2024-12-19T01:01:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1184,8 +1184,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.36.50",
-			"timeUpdated": "2024-12-18T21:01:20+0000",
+			"version": "2.1.36.51",
+			"timeUpdated": "2024-12-19T01:01:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1281,8 +1281,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.38.73",
-			"timeUpdated": "2024-12-18T21:01:28+0000",
+			"version": "2.1.38.74",
+			"timeUpdated": "2024-12-19T01:01:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1305,8 +1305,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.33.83",
-			"timeUpdated": "2024-12-18T21:01:29+0000",
+			"version": "2.1.33.84",
+			"timeUpdated": "2024-12-19T01:01:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1516,8 +1516,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.33.84",
-			"timeUpdated": "2024-12-18T13:02:01+0000",
+			"version": "2.0.33.85",
+			"timeUpdated": "2024-12-19T01:01:25+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1981,8 +1981,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.44.44",
-			"timeUpdated": "2024-12-18T21:01:49+0000",
+			"version": "2.1.44.45",
+			"timeUpdated": "2024-12-19T01:01:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2231,8 +2231,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.5.0",
-			"timeUpdated": "2024-12-18T13:02:31+0000",
+			"version": "2.0.5.1",
+			"timeUpdated": "2024-12-19T01:01:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
