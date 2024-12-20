@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.59",
-			"timeUpdated": "2024-12-20T07:35:22+0000",
+			"version": "2.0.48.60",
+			"timeUpdated": "2024-12-20T08:34:34+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
