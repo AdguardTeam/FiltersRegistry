@@ -1,9 +1,9 @@
-! Checksum: fTBjoGZOLTladoZ8EFpAYQ
-! Diff-Path: ../patches/2/2-s-1734701920-3600.patch
+! Checksum: 1KxgAuu9475TQQ2iKEheTg
+! Diff-Path: ../patches/2/2-s-1734705629-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.65.16
-! TimeUpdated: 2024-12-20T13:31:33+00:00
+! Version: 2.3.65.17
+! TimeUpdated: 2024-12-20T14:31:33+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35692,6 +35692,8 @@ youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', '
 youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', 'playerResponse.adPlacements', 'undefined')
 !
 ! Modify YT xhr responses
+||youtube.com/youtubei/v1/get_watch?$xmlhttprequest,replace=/"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,//
+||youtube.com/youtubei/v1/get_watch?$xmlhttprequest,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167440
 ! The rule trusted-replace-xhr-response with '\"adPlacements.*?([A-Z]"\}|"\}{2})\}\]\,' causes breakage on tv.youtube.com
 ! The problem is that rules with '~' do not work correctly in Safari, the same might be for exceptions,

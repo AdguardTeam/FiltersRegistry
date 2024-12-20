@@ -1,9 +1,9 @@
-! Checksum: YTB3FWOW6lczgw9VapadvQ
-! Diff-Path: ../patches/2/2-s-1734701906-3600.patch
+! Checksum: 3NIU1xphHN74/BOD6cgxwQ
+! Diff-Path: ../patches/2/2-s-1734705620-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.65.16
-! TimeUpdated: 2024-12-20T13:31:33+00:00
+! Version: 2.3.65.17
+! TimeUpdated: 2024-12-20T14:31:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -34977,6 +34977,8 @@ youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', '
 youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', 'playerResponse.adPlacements', 'undefined')
 !
 ! Modify YT xhr responses
+||youtube.com/youtubei/v1/get_watch?$xmlhttprequest,replace=/"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,//
+||youtube.com/youtubei/v1/get_watch?$xmlhttprequest,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
 !.com/watch?$xmlhttprequest,jsonprune=\$.playerConfig.ssapConfig,domain=youtubekids.com|youtube-nocookie.com|youtube.com
 !/youtubei/v*/player?$jsonprune=\$.playerConfig.ssapConfig,domain=youtubekids.com|youtube-nocookie.com|youtube.com
 !.com/playlist?list=$jsonprune=\$.playerConfig.ssapConfig,domain=youtubekids.com|youtube-nocookie.com|youtube.com
