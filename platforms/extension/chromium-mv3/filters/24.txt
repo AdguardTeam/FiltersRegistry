@@ -1,8 +1,8 @@
-! Checksum: Wt4eH+FF8VqqL3bhkEy0fw
+! Checksum: GBR3C5Rz5jkQC6u2SxBkjg
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.5.16
-! TimeUpdated: 2024-12-20T14:36:32+00:00
+! Version: 2.0.5.17
+! TimeUpdated: 2024-12-20T15:35:10+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35,6 +35,11 @@
 !
 ! NOTE: 20-12-2024
 !
+! YT
+youtube.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=|get_watch\?/')
+youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=|get_watch\?/')
+youtube.com#@%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=/')
+youtube.com#@%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=/')
 ! AS
 #@$?#span[id^="img_"][class^="img_"] > div[style*="justify-content"][style*="align-items"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { position: relative !important; right: 10000px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194984
