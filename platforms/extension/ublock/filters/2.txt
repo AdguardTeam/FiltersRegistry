@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qO//6mmxsvzELfZH0QlxIA
-! Diff-Path: ../patches/2/2-s-1734719952-3600.patch
+! Checksum: DP3W88dMaMz0oDxirPkq+w
+! Diff-Path: ../patches/2/2-s-1734723515-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.65.21
-! TimeUpdated: 2024-12-20T18:31:39+00:00
+! Version: 2.3.65.22
+! TimeUpdated: 2024-12-20T19:31:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16847,8 +16847,6 @@ adisteme.kz,adobevn.net,aggressivecars.com,allbluevr.com,androidcrush.com,applos
 ! https://forum.adguard.com/index.php?threads/20348/
 @@||outlookindia.com/*anti_ab.js$script
 @@||outlookindia.com$generichide
-! https://forum.adguard.com/index.php?threads/14368/
-@@||gelbooru.com/ads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23200
 @@||onlinemschool.com/script/ads.js
 @@||onlinemschool.com/script/ads1.js
@@ -20927,7 +20925,6 @@ alphashoppers.co##.sponsered-links
 ! https://github.com/AdguardTeam/AdguardFilters/issues/9117
 /vqa^$domain=pagalguy.com
 pagalguy.com##iframe[id^="vqa:ads:"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/4787#issuecomment-316871958
 ! https://forum.adguard.com/index.php?threads/resolved-m-indiatimes-com-missed-ads-ios.20774/#post-140718
 ||media.indiatimes.in/idthat/
 ! https://forum.adguard.com/index.php?threads/22437/
@@ -20970,15 +20967,7 @@ mensxp.com###rhsLatestCont > div[class]:not(.ListingBlock)
 mensxp.com##.cont.blk + style:not([type]) + style[type="text/css"] + div[class]
 mensxp.com###section_WhatsHot > div:not([id])
 mensxp.com###right_panel > style[type="text/css"] + div[class]:not([id]):not([style])
-! https://forum.adguard.com/index.php?threads/lifehacker-co-in-missed-ads-windows.19297/#post-125419
-lifehacker.co.in##.articlelist1 > article.article:not([id^="btm_"])
-lifehacker.co.in##.top-content.list1 > li > style[type="text/css"] + div[class]:not([id]):not([style]):not([class*=" "])
-lifehacker.co.in###colombiaAdBox
-lifehacker.co.in##.rhs_widget_h > h3.heading2 + ul > li[style^="display:"][style$="inline-block;"]:not([data-id])
-||lifehacker.co.in/lhega/$image
 ! https://forum.adguard.com/index.php?threads/colombia-ads-missed-ads-windows.19238/
-in.techradar.com##style[type="text/css"] + div[class]:not([id]):not([style]):not([class*=" "])
-||in.techradar.com/trcdem/
 indiatimes.com##.last8brdiv > div.sponsor_block
 ||indiatimes.com/toiitpic/
 ! https://forum.adguard.com/index.php?threads/15978/
@@ -21872,10 +21861,6 @@ aranzulla.it###ad97090
 ||googletagmanager.com/gtm.js$script,redirect=googletagmanager_gtm.js,domain=lastampa.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161841
 geopop.it##.cp_banner-native
-! Rule below fixes embedded Tweets, for example - https://www.geopop.it/schianto-frecce-tricolori-a-torino-le-possibili-cause-e-il-bird-strike/
-! TODO: use redirect resource when it will be added - https://github.com/AdguardTeam/Scriptlets/issues/328
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
-@@||cdn.adsafeprotected.com/iasPET.1.js$domain=geopop.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161755
 hwupgrade.it##:matches-path(/forum/).page-content td[style="padding-left:10px; width:300px;"]:not([class],[id])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161706
@@ -31543,8 +31528,6 @@ jacquieetmicheltv.net##+js(set-constant, showPopunder, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/commit/4269f6e99ad54f56e04829bbe9eeaf4c24f4921b#r50935671
 ! popup
 hoastie.com##+js(abort-on-property-read, open)
-! popup on click
-sportbet.tips##+js(abort-on-property-read, _wm)
 ! auto redirect after click
 muztext.com##+js(no-setTimeout-if, reachGoal)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/80479
@@ -34717,6 +34700,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+camwhores.tv##.list_videos > div a[target="_blank"]
+idiva.com##.hometop-ads
 deepl.com##div[class]:has(> aside[data-testid="write-promo-banner"])
 truckersmp.com##.ads-icon
 tokyvideo.com##div.intensive-add
@@ -48576,7 +48561,7 @@ new-game-apk.com/wp-content/uploads/2017/*_SLUT_18_*.gif
 torrent-series24.com###widgets-wrap-sidebar-left
 ||luscious.net/lamia
 ||luscious.net/static/tools.js
-wuxiaworld.com,tomshardware.co.uk,healthline.com##div[adonis-marker]
+wuxiaworld.com,healthline.com##div[adonis-marker]
 healthline.com##header#site-header~div[class^="css-"]:empty:last-child
 healthline.com##header#site-header > section[class]
 ||sendvid.com/tpd.png
@@ -49329,7 +49314,6 @@ wired.com##.ad-component--box
 wired.com##.advertisement__leaderboard
 wired.com##.cns-ads-stage:not(.cns-ads-slot-type-newsletter-interstitial)
 tomsguide.com##.rightcol-ads
-tomshardware.co.uk##.page-content-rightcol > div#rightcol_top
 cpu-world.com##.top_adh2
 cpu-world.com##.side_ad300
 allkeyshop.com##a[href="https://skinjoker.com/s/allkeyshop"] > img
@@ -54390,6 +54374,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! cambabe.video - broken videos
+@@||wpnrtnmrewunrtok.xyz/remote_control.php?file=
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194727
 nihon-ikuji.com#@#.showads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193934
@@ -58490,6 +58476,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! cambabe.video - broken videos
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194617
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194184
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193402
@@ -86436,6 +86423,7 @@ browsershots.org#@#.advert_area
 ||grashaksoudry.net^
 ||grasshusk.com^
 ||grasutie.net^
+||gratataxis.shop^
 ||graterpatent.com^
 ||gratertwentieth.com^
 ||gratificationdesperate.com^
@@ -107174,6 +107162,7 @@ browsershots.org#@#.advert_area
 ||granddaughterrepresentationintroduce.com^$popup
 ||granthspillet.top^$popup
 ||grapseex.com^$popup
+||gratataxis.shop^$popup
 ||gratifiedmatrix.com^$popup
 ||grauglak.com^$popup
 ||grazingmarrywomanhood.com^$popup
