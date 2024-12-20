@@ -1,9 +1,9 @@
-! Checksum: 6hpjMLy36ZbyxABGmdVphg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1734656725-14400.patch
+! Checksum: wjpb5OKczFk3SNw3rew4pw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1734671119-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.33.89
-! TimeUpdated: 2024-12-20T01:01:14+00:00
+! Version: 2.1.33.90
+! TimeUpdated: 2024-12-20T05:01:14+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -share-bar/$~stylesheet
@@ -114,6 +114,7 @@
 /twitter-footer-
 /twitter-v2.png
 /twitter_follow.png
+/twitter_footer.png
 /twitter_header.png
 /videojs-share.js
 /weiboshare.html
@@ -511,6 +512,7 @@ _social_bookmark/
 ###socialMedia
 ###socialMediaSection
 ###socialModal
+###socialNav
 ###socialNetworks
 ###socialPopup
 ###socialShare
@@ -568,9 +570,7 @@ _social_bookmark/
 ###stickySocial
 ###sticky_sharing
 ###subFooterSocial
-###subscription-box
 ###tab-share
-###table_shareus
 ###top-bar-social
 ###top-share
 ###topSocial
@@ -597,6 +597,7 @@ _social_bookmark/
 ###twitter_timeline-2
 ###twitter_widget
 ###twitterbtn
+###twittericon
 ###v-share
 ###vbseo-likes
 ###vce_social_menu
@@ -699,7 +700,6 @@ _social_bookmark/
 ##.actnbr-has-follow
 ##.adSocial
 ##.add-this
-##.addthis-container
 ##.addthis-smartlayers
 ##.addthis-smartlayers-desktop
 ##.addthis:not(body)
@@ -708,6 +708,7 @@ _social_bookmark/
 ##.addthis_button_digg
 ##.addthis_button_expanded
 ##.addthis_button_facebook
+##.addthis_button_facebook_follow
 ##.addthis_button_facebook_like
 ##.addthis_button_linkedin
 ##.addthis_button_more
@@ -715,6 +716,7 @@ _social_bookmark/
 ##.addthis_button_reddit
 ##.addthis_button_tweet
 ##.addthis_button_twitter
+##.addthis_button_twitter_follow
 ##.addthis_button_whatsapp
 ##.addthis_container
 ##.addthis_default_style
@@ -777,7 +779,6 @@ _social_bookmark/
 ##.article-social-bar
 ##.article-social-btn
 ##.article-social-button
-##.article-social-container
 ##.article-social-links
 ##.article-social-media
 ##.article-social-panel
@@ -841,6 +842,7 @@ _social_bookmark/
 ##.bar-social
 ##.bc-author-socials
 ##.bc_social_icons
+##.bctt-click-to-tweet
 ##.bd-FooterSocials-item
 ##.bd-socialicon
 ##.bdaia-social-io
@@ -1141,7 +1143,6 @@ _social_bookmark/
 ##.fb-msg
 ##.fb-page-like
 ##.fb-recommend
-##.fb-send-to-messenger
 ##.fb-share
 ##.fb-share-button
 ##.fb-share-button-static
@@ -1187,9 +1188,9 @@ _social_bookmark/
 ##.flaticon-facebook
 ##.float-share
 ##.floating-header-share
-##.floating-share
 ##.floating-share-bar
 ##.floating-social
+##.floating-social-container
 ##.floatinglikebox
 ##.fluid_share_container
 ##.fluid_share_wrapper
@@ -1200,7 +1201,6 @@ _social_bookmark/
 ##.follow-instagram
 ##.follow-link-facebook
 ##.follow-link-twitter
-##.follow-link-wrapper
 ##.follow-linkedin
 ##.follow-pinterest
 ##.follow-rs
@@ -1271,11 +1271,9 @@ _social_bookmark/
 ##.footer-social-links
 ##.footer-social-n
 ##.footer-social-ul
-##.footer-socialIcons
 ##.footer-sociallink
 ##.footer-sociallinks
 ##.footer-socialmedia
-##.footer-socialmediaIcon
 ##.footer-socials
 ##.footer-socials-section
 ##.footer-top__social
@@ -1286,7 +1284,6 @@ _social_bookmark/
 ##.footerFacebook
 ##.footerFollow
 ##.footerFollowUs
-##.footerMainMoreSocial
 ##.footerShare
 ##.footerSocial
 ##.footerSocialIcons
@@ -1543,6 +1540,7 @@ _social_bookmark/
 ##.in_social
 ##.info-sns-list
 ##.info_share
+##.inline-share
 ##.inline-share-buttons
 ##.inline-social
 ##.inline_socials
@@ -1562,7 +1560,6 @@ _social_bookmark/
 ##.instagram_share
 ##.instagramicon
 ##.ion-social-facebook
-##.ion-social-google
 ##.ion-social-linkedin
 ##.ion-social-twitter
 ##.ipsShareButton
@@ -1688,6 +1685,7 @@ _social_bookmark/
 ##.list_sns
 ##.listing-share
 ##.logo-social
+##.logo_social
 ##.lsi-social-icons
 ##.lst-shrpst
 ##.lst-social
@@ -1758,6 +1756,7 @@ _social_bookmark/
 ##.mh-social-nav
 ##.mini-share-post
 ##.mk-header-social
+##.mkd-share-link
 ##.mkdf-social-icon-widget
 ##.mks_social_widget
 ##.mng-follow
@@ -1901,6 +1900,7 @@ _social_bookmark/
 ##.post-like-share
 ##.post-meta-share
 ##.post-share
+##.post-share-area
 ##.post-share-b
 ##.post-share-block
 ##.post-share-bot
@@ -1948,6 +1948,7 @@ _social_bookmark/
 ##.r-footer--social
 ##.rambler-share
 ##.rc_social
+##.rcom-social-site-footer
 ##.react-share__ShareButton
 ##.react_share_icons
 ##.redes-sociais
@@ -2014,7 +2015,6 @@ _social_bookmark/
 ##.sg-social
 ##.sg-twitter-btn
 ##.sg-twitter-share
-##.share--aside
 ##.share--facebook
 ##.share--item
 ##.share--twitter
@@ -2037,7 +2037,6 @@ _social_bookmark/
 ##.share-bar-container
 ##.share-bar-item-desktop
 ##.share-bar-medium-container
-##.share-bar__link
 ##.share-before
 ##.share-bg
 ##.share-block
@@ -2057,6 +2056,7 @@ _social_bookmark/
 ##.share-button-list
 ##.share-button-wrapper
 ##.share-buttons-2
+##.share-buttons-area
 ##.share-buttons-bottom
 ##.share-buttons-box
 ##.share-buttons-container
@@ -2086,6 +2086,7 @@ _social_bookmark/
 ##.share-filled
 ##.share-flipboard
 ##.share-float
+##.share-floating
 ##.share-follow
 ##.share-footer
 ##.share-head
@@ -2180,6 +2181,7 @@ _social_bookmark/
 ##.share-this
 ##.share-this-page
 ##.share-this-popover
+##.share-this-post
 ##.share-tiktok
 ##.share-title
 ##.share-to
@@ -2291,7 +2293,6 @@ _social_bookmark/
 ##.share_btn_white
 ##.share_btns
 ##.share_button
-##.share_button_facebook
 ##.share_buttons
 ##.share_buttons_container
 ##.share_con
@@ -2355,6 +2356,7 @@ _social_bookmark/
 ##.sharefb
 ##.shareit
 ##.shareitem
+##.sharelight
 ##.sharelike
 ##.shareline
 ##.sharelink
@@ -2442,6 +2444,7 @@ _social_bookmark/
 ##.show-share
 ##.showShareMore
 ##.show_social
+##.shr-bookmarks
 ##.shr-btn
 ##.si-share
 ##.side-social
@@ -2806,7 +2809,6 @@ _social_bookmark/
 ##.socialMenu
 ##.socialNav
 ##.socialNetworks
-##.socialNew
 ##.socialPanel
 ##.socialSection
 ##.socialShare
@@ -2819,6 +2821,7 @@ _social_bookmark/
 ##.socialTools
 ##.socialTop
 ##.socialTwitter
+##.socialWidget
 ##.socialWrap
 ##.socialWrapper
 ##.social_bar
@@ -2888,7 +2891,6 @@ _social_bookmark/
 ##.socialmedia-buttons
 ##.socialmedia-container
 ##.socialmedia-footer
-##.socialmedia_float
 ##.socialmedia_link
 ##.socialmediabar
 ##.socialmobile
@@ -2980,7 +2982,6 @@ _social_bookmark/
 ##.td-social-sharing-button
 ##.td-social-wrap
 ##.td_block_social_counter
-##.td_shareus
 ##.td_social_type
 ##.tdb_single_post_share
 ##.tdm-social-item-wrap
@@ -3009,7 +3010,6 @@ _social_bookmark/
 ##.top-share
 ##.top-sharebar
 ##.top-social
-##.top-social-icon
 ##.top-social-icons
 ##.top-social-item
 ##.top-social-links
@@ -3095,7 +3095,6 @@ _social_bookmark/
 ##.uix_socialMedia
 ##.uix_socialMediaLinks
 ##.ul-social
-##.ulSocialmedia
 ##.uptl_container-share
 ##.us_share_buttons
 ##.user-share
@@ -3435,7 +3434,6 @@ thenewstack.io###tns-footer-bar
 thenewstack.io###tns-post-body-sidebar-share
 walesonline.co.uk###whatsapp-community
 citizen.co.za###whatsapp-widget
-oneindia.com###youtube_promo
 tennis.com##.-sharebar
 nhl.com,petri.com##.-social
 ynet.co.il,ynetnews.com##.AccordionShareWrapper
@@ -3512,7 +3510,6 @@ lawandcrime.com##.c-article-foot__site
 thenextweb.com##.c-engage
 lawandcrime.com##.c-header-social-item
 dev.to##.c-link--icon-alone
-united24media.com##.c-post__props
 euroweeklynews.com,thisisfutbol.com,videocelts.com##.c-post__social
 news.itsfoss.com##.c-share
 kyivindependent.com##.c-share__wrapper
@@ -3595,8 +3592,6 @@ ghacks.net##.ghacks_share_widget
 avaaz.org##.global-footer-connect
 cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
-cnbctv18.com##.google-btn-div
-pcguide.com##.google-news
 gadgets360.com##.gsocialbar
 egotastic.com,egotasticsports.com##.h-fixed-footer
 malaymail.com##.header-social-menu
@@ -3659,7 +3654,6 @@ nerdnomads.com,stationx.net##.ns-share-count
 nationaltoday.com##.nt-share
 nowtoronto.com##.nt-sidebar-social
 nowtoronto.com##.nt-social
-foodnetwork.com##.o-SocialShare
 support.microsoft.com##.ocArticleFooterShareContainer
 support.microsoft.com##.ocArticleFooterShareLinksWrapper
 omgubuntu.co.uk##.omg-socials
@@ -3681,10 +3675,12 @@ thetruthaboutcars.com##.project-actions-header
 sports.ndtv.com##.pst_scl
 cbn.com##.py-4.flex-wrap.flex
 reason.com##.rcom-social-tools
+dermatologytimes.com,drive.com.au##.react-share__ShareButton
 outdoorlife.com,popsci.com,taskandpurpose.com,thedrive.com,twz.com##.recurrent-share
 12tomatoes.com##.s2c-card
 sordum.org##.sbar_social_div
 oracle.com##.scl-icons
+kyivpost.com##.section-soc-icons
 bravotube.net##.sh
 sleepfoundation.org##.sh_space.share
 onlinelibrary.wiley.com##.share-access__ctrl
@@ -3738,7 +3734,6 @@ afro.com,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,the
 denofgeek.com##.social-links__anchor--sharing
 knowablemagazine.org,newskarnataka.com,securityaffairs.com,ucl.ac.uk##.social-media-links
 adrenaline.com.br,bossip.com,insidehpc.com,mundoconectado.com.br,sportsbusinessjournal.com##.social-networks
-govexec.com##.social-options
 bessiebakes.com,sugarandsoul.co##.social-rocket-floating-buttons
 iflscience.com##.social-share-elements
 arnnet.com.au,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
@@ -3751,7 +3746,6 @@ tech.hindustantimes.com##.socialWidgets
 jetphotos.com##.social__link--share
 salon.com,snopes.com##.social_comments_app_wrapper
 ringsidenews.com##.social_holder
-commondreams.org,twenteinsite.nl##.social_icon
 audi-sport.net,eurogamer.net,metacritic.com,trustedreviews.com,woodworkforinventor.com##.social_icons
 moneycontrol.com##.social_icons_wrapper
 ringsidenews.com##.social_label
@@ -3947,6 +3941,7 @@ t3n.de##.tg-social-bottom
 watson.ch##.watson-sharebuttons
 handelsblatt.com##app-icon-link
 berliner-kurier.de##section[class^="article-top-panel_socials_"]
+jetzt.de##.social-channels
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 radiofrance.fr##.ShareManager
@@ -4097,7 +4092,6 @@ kinoland.biz##.page__share
 forklog.com##.post_bottom_socials_buttons_wrapper
 aif.ru##.sharing_item
 academic.ru##.smm
-ta3.com##.detail_text_socials
 sme.sk##.social-dialog-wrapper
 24ur.com##.flex.flex-row.items-center.justify-center.md\:justify-start.p-16.md\:p-0
 24ur.com##.w-full.md\:w-auto.h-full.flex.flex-row.items-center.justify-center.md\:justify-start.pt-16.md\:pt-0.border-t.md\:border-none.border-black\/10.dark\:border-white\/10

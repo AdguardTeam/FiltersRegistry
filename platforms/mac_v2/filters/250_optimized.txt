@@ -1,5 +1,5 @@
-! Checksum: WHYmTuF8GIdKntiLHhBYwQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1734584737-14400.patch
+! Checksum: d+fzsXH/Lz5PIJP7Ji/icA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1734671140-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.81
@@ -597,7 +597,6 @@ coolrom.com.au,coolrom.com##.download_link
 115.194.38.143$network
 !+ PLATFORM(windows, mac, android)
 61.52.79.32$network
-||xiaobaixitong.com^$all
 ||flash.cn^$all
 !+ NOT_OPTIMIZED
 ||132.148.220.142^$document
@@ -1067,7 +1066,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.article__share:not(html,body,:empty)
 ##.btn--facebook:not(html,body,:empty)
 ##.btn-google-plus:not(html,body,:empty)
-##.btn-messenger:not(html,body,:empty)
 ##.btn-share:not(html,body,:empty)
 ##.btn-tweet:not(html,body,:empty)
 ##.button--share:not(html,body,:empty)
@@ -1139,7 +1137,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.socialbuttons:not(html,body,:empty)
 ##.socialmedia:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.ssba:not(html,body,:empty)
-##.story-share-bottom:not(html,body,:empty)
 ##.swp_social_panel:not(html,body,:empty)
 ##[class*=share-toolbar]:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-share-toolbar])
 ##[class*=social_share]:not(article,html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
@@ -1234,6 +1231,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||social-plugins.line.me/widget/share?url=$subdocument
 ||static.addtoany.com/buttons^$image
 ||static.addtoany.com/menu^$script
+||static.mixi.jp/share_button.html^$subdocument,domain=~mixi.jp
 ||tumblr.com/share/$third-party
 ||twitter.com/share$third-party
 ||widgets.getpocket.com/v1/button?label=pocket$subdocument
@@ -1245,7 +1243,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###fb-share
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###fb_share
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###share-facebook
-~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###share-facebook-bottom
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.btn[href*="facebook.com/sharer/"]
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.facebook-page-plugin:not(html,body,:empty)
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.facebook-share:not(html,body,:empty)
@@ -1321,7 +1318,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ~tumblr.com##a[href*="tumblr.com/widgets/share/"]
 ~tumblr.com##a[title="Share on Tumblr" i]
 ###share-twitter
-###share-twitter-bottom
 ##.btn-twitter:not(html,body,:empty)
 ##.icon--twitter:not(html,body,:empty)
 ##.js-share-twitter:not(html,body,:empty)
@@ -1420,6 +1416,7 @@ segmentfault.com#$#.modal-open { overflow: auto !important; padding-right: 0 !im
 segmentfault.com#$#.modal-open [style]:is([data-padding-right], [data-margin-right]) { padding-right: 0 !important; margin-right: 0 !important; }
 tumblr.com###glass-container > div[role=dialog]:has(p + p):has(a[href^="/auth/google?"])
 ||assets.tumblr.com/pop/js/modern/async-login-wall$script,domain=www.tumblr.com
+theepochtimes.com##.modal__overlay
 theepochtimes.com#$#body.single-post { overflow: unset !important }
 studocu.com#$#.page-content { filter: none !important; user-select: unset !important }
 studocu.com###document-wrapper > div:first-of-type:not([style])
@@ -1527,7 +1524,6 @@ mi.com##.item-image.item
 qunar.com##.q_header_app_logo
 qunar.com##.qrcode.btn-item
 qyer.com##.advertising
-smzdm.com##.download
 smzdm.com##.qrcode
 smzdm.com###index-elevator > li:nth-of-type(2)
 smzdm.com###index-elevator > li:nth-of-type(3)
@@ -2049,12 +2045,12 @@ $removeparam=dt_platform
 $removeparam=waad
 $removeparam=_gac
 $removeparam=af_campaign
-$removeparam=ko_click_id
 $removeparam=nrtv_cid
 $removeparam=nrtv_as_src
 $removeparam=trk_ref
 $removeparam=ircid
 $document,removeparam=/^src=rss$/
+$removeparam=amp_device_id
 $removeparam=awinaffid
 $removeparam=iclid
 $removeparam=a_fid
@@ -2356,7 +2352,6 @@ $removeparam=privacy_mutation_token
 $~xmlhttprequest,removeparam=/^refsrc=.*$/i
 $removeparam=_rdr
 $document,removeparam=_ft_
-$removeparam=m_entstream_source
 $removeparam=referral_code,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=referral_story_type,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=_nc_cat,domain=~instagram.com
@@ -2418,7 +2413,6 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 @@://www.google.com/maps?entry=$removeparam=utm_campaign
 ||tiktok.com^$removeparam=_r
 $removeparam=u_code
-$removeparam=is_copy_url
 $removeparam=is_from_webapp
 $removeparam=sender_device
 ||tiktok.com^$removeparam=_d
@@ -2651,6 +2645,7 @@ $removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwareby
 ||paypal.com^$removeparam=calc
 ||youtube.com^$removeparam=ab_channel
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
+||pinterest.*/?mt=login^$removeparam=mt
 ||humblebundle.com^$removeparam=linkID
 ||humblebundle.com^$removeparam=mcID
 ||artstation.com^$removeparam=/^\d.*$/
@@ -2865,7 +2860,6 @@ $removeparam=mweb_loid_created,domain=reddit.app.link
 $removeparam=tags,domain=reddit.app.link
 ||adjust.com^$removeparam=adgroup
 $removeparam=xcreo
-||skimresources.com^$removeparam=xed
 $removeparam=rffrid
 $removeparam=ad_name
 $removeparam=rcode,domain=kucoin.com
@@ -3001,6 +2995,7 @@ $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com
 ||github.com^$removeparam=ref_loc
 ||github.com^$removeparam=ref_page
 ||quizlet.com^$removeparam=funnelUUID
+||quizlet.com^$removeparam=signupOrigin
 $removeparam=qid,domain=bookdepository.com|eastday.com
 ||xiaohongshu.com^$removeparam=app_platform,document
 ||xiaohongshu.com^$removeparam=app_version,document
@@ -3040,7 +3035,6 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||cdninstagram.com^$removeparam=_nc_sid
 ||adguard.info^$removeparam=nc
 $document,removeparam=jp_cmp,domain=chase.com
-$document,removeparam=orig_ref,domain=peacocktv.com
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|sky.it
 ||xvideos.$document,removeparam=sxcaf
 $document,removeparam=iId,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
@@ -3113,7 +3107,6 @@ $document,removeparam=af_xp
 ||gumroad.com^$removeparam=recommended_by
 ||www.booking.com^$document,removeparam=aid
 ||www.booking.com^$document,removeparam=sid
-||www.booking.com^$document,removeparam=redirected
 ||www.booking.com^$document,removeparam=srpvid
 ||www.roblox.com^$document,removeparam=isAd
 ||www.roblox.com^$document,removeparam=nativeAdData
@@ -3144,7 +3137,6 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 ||hotels.com^$removeparam=pwa_ts
 !+ NOT_OPTIMIZED
 ||hotels.com^$removeparam=latLong
-ref=dtf.ru$document,removeparam=ref
 ||forms.office.com^$removeparam=route
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set.js', 'GSvars.addressTracking', 'false')
 buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
@@ -3464,7 +3456,6 @@ youtube.com##ytd-miniplayer[has-playlist-data][closed] ~ * .ytp-miniplayer-butto
 $third-party,denyallow=microsoft.com,domain=store.rg-adguard.net
 fandom.com##.notifications-box
 flipkart.com##div[style^=flex-grow] div:first-of-type + div.col
-flipkart.com##footer section + div:last-of-type
 ###custom-css .vjs-loading-spinner
 ||detectportal.firefox.com^$csp=upgrade-insecure-requests
 @@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script
