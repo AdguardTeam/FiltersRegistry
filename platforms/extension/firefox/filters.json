@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.65.18",
-			"timeUpdated": "2024-12-20T15:31:26+0000",
+			"version": "2.3.65.19",
+			"timeUpdated": "2024-12-20T16:31:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.73",
-			"timeUpdated": "2024-12-20T15:34:32+0000",
+			"version": "2.1.8.74",
+			"timeUpdated": "2024-12-20T16:34:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.27.96",
-			"timeUpdated": "2024-12-19T19:34:24+0000",
+			"version": "2.0.27.97",
+			"timeUpdated": "2024-12-20T16:34:37+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.83",
-			"timeUpdated": "2024-12-19T17:35:05+0000",
+			"version": "2.0.56.84",
+			"timeUpdated": "2024-12-20T16:34:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.16.98",
-			"timeUpdated": "2024-12-20T15:35:01+0000",
+			"version": "2.2.16.99",
+			"timeUpdated": "2024-12-20T16:34:51+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.50",
-			"timeUpdated": "2024-12-20T12:38:55+0000",
+			"version": "2.0.47.51",
+			"timeUpdated": "2024-12-20T16:34:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
