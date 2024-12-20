@@ -1,9 +1,9 @@
-! Checksum: E5W3oX/RipN1IzoE3LwZVQ
-! Diff-Path: ../patches/14/14-s-1734716424-3600.patch
+! Checksum: /ZC7u9Cgr9e0SbwfIyFBCw
+! Diff-Path: ../patches/14/14-s-1734719939-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.0
-! TimeUpdated: 2024-12-20T17:35:55+00:00
+! Version: 2.2.17.1
+! TimeUpdated: 2024-12-20T18:35:09+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11824,7 +11824,7 @@ support.activision.com##.atvi-privacy-policy-module.show
 expressen.se##.terms-dialog
 r-tt.com,drive-image.com,r-studio.com###pp-info
 l2db.info##.access-cookies
-deezer.com##.cookie-banner-layer
+deezer.com#%#//scriptlet('trusted-click-element', '#gdpr-btn-accept-all')
 ||swoodoo.com/s/horizon/common/gdpr/CookieConsentV2?scriptsMetadata=
 send.tresorit.com,web.tresorit.com###notification-wrapper
 freedomplatform.tv,londonreal.tv##.lr-consent
@@ -16266,8 +16266,6 @@ gelia.fi,gelia.no,gelia.se#%#//scriptlet('remove-attr', 'style', 'body div.main-
 autokino-duesseldorf.ticket.io#%#//scriptlet('remove-class', 'modal-open', 'body')
 mazda.com.tr#%#//scriptlet('remove-class', 'cookie-panel-enabled', '.cookie-panel-enabled[data-module="header"]')
 freeyou.ag#%#//scriptlet('remove-class', 'fixed-body', 'body,html')
-adidas.dk,adidas.be,adidas.pt,adidas.gr,adidas.at,adidas.cz,adidas.ch,adidas.com.tr,adidas.it,adidas.com.br,adidas.es,adidas.se,adidas.no,adidas.fi,adidas.com.ar,adidas.co.uk,adidas.nl,adidas.pl#%#//scriptlet('set-cookie', 'notice_preferences', '1')
-adidas.com,adidas.de,adidas.fr#%#document.cookie="notice_preferences=[0]; path=/;";
 sourceforge.net#%#//scriptlet("set-constant", "window.cmpmngr.setConsentViaBtn", "noopFunc")
 lg-firmwares.com#%#//scriptlet('trusted-set-local-storage-item', 'gdpr', 'accepted')
 eluban.pl#%#document.cookie="rodopop=1; path=/;";
@@ -24623,10 +24621,6 @@ aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; m
 ! Redirect rules
 $script,redirect-rule=noopjs,domain=aternos.org
 $xmlhttprequest,redirect-rule=nooptext,domain=aternos.org
-!
-! https://github.com/AdguardTeam/AdguardFilters/issues/42476
-readmanga.me#$#.adsbox.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display:block!important;}
-!
 !
 ! rp5.ru
 m.rp5.ru,m.rp5.by,m.rp5.kz,m.rp5.co.uk,m.rp5.md#%#//scriptlet("set-constant", "adFilters", "undefined")
@@ -39864,7 +39858,6 @@ coinmarketcal.com##.support-us
 infox.ru##.ya-invite-block
 bithub.pl,economiasc.com,hrpicks.com##.widget_bs-newsletter-mailchimp
 theregister.co.uk##.faux-article
-readmanga.me#?#.rightContent > div.rightBlock:has(> h5:contains(Подписаться))
 origo.hu,mytoys.de##.newsletter-layer
 discounto.de##div[data-toggle="notification-form"]
 autostat.ru##a[data-yacounter-click^="banner_zen"]
@@ -50856,7 +50849,6 @@ spojoba.com###ad_1
 emailnator.com###mailList
 neilpatel.com##.widget-analyzer
 ||h1.rmr.rocks/auto/44/82/89/14.png
-readmanga.live##div[style="width: 800px; height: 600px;"]
 gabastyle.com###rListingBnr
 gabastyle.com##.dfad
 bst.bratsk.ru##.my-sheet-Adv
