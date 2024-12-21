@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.12",
-			"timeUpdated": "2024-12-20T19:34:14+0000",
+			"version": "2.0.45.13",
+			"timeUpdated": "2024-12-21T11:34:07+0000",
 			"deprecated": false,
 			"languages": [
 				"de"

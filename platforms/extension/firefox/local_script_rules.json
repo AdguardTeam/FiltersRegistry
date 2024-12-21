@@ -1434,6 +1434,10 @@
             "script": "(()=>{const t={construct:(t,n,e)=>{const o=n[0],r=o?.toString();return r&&r.length>500&&r.length<1e3&&/=>[\\s\\S]*?for[\\s\\S]*?\\[.+\\]/.test(r)&&(n[0]=()=>{}),Reflect.construct(t,n,e)}};window.MutationObserver=new Proxy(window.MutationObserver,t)})();"
         },
         {
+            "domains": "giga.de,spiegel.de,welt.de,t-online.de",
+            "script": "(()=>{window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,{apply:(a,b,c)=>{const d=b.urlCalled;return\"string\"!=typeof d||0===d.length?Reflect.apply(a,b,c):d.match(/\\.damoh\\./)?void 0:Reflect.apply(a,b,c)}})})();"
+        },
+        {
             "domains": "moviepilot.de",
             "script": "!function(){var n={cmd:[],public:{getVideoAdUrl:function(){},createNewPosition:function(){},refreshAds:function(){},setTargetingOnPosition:function(){},getDailymotionAdsParamsForScript:function(n,t){if(\"function\"==typeof t)try{1===t.length&&t({preroll:\"moviepilot\"})}catch(t){}},setConfig:function(){},loadPositions:function(){},displayPositions:function(){}}};n.cmd.push=function(n){let t=function(){try{\"function\"==typeof n&&n()}catch(n){}};\"complete\"===document.readyState?t():window.addEventListener(\"load\",(()=>{t()}))},window.jad=n}();"
         },
