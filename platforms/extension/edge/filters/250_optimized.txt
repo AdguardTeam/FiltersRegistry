@@ -1,5 +1,5 @@
-! Checksum: kZGRR2oK8eB4HBdO2Whckg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1734671116-14400.patch
+! Checksum: Ndj4ks3sIlWYlQugiABjxw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1734757529-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.81
@@ -470,6 +470,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ~pinterest.*##a[data-pin-do=buttonPin]
 ~pinterest.*##a[href*="pinterest.com/pin/find/?"]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
+~pinterest.*##a[href="#pinit"]
 ~pinterest.*##a[href="/#pinterest"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
 ~pinterest.*##a[title="Share on Pinterest" i]
@@ -618,6 +619,7 @@ facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion,~tou
 nijie.info##.twit-button
 zapytaj.onet.pl##.know-better-answer
 instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
+photoblog.pl##.frontpage-teaser-photo-container > .register > #registration-form
 community.spiceworks.com#%#//scriptlet('ubo-cookie-remover.js', 'visit_count')
 ||glassdoor.com^*/gd-user-hardsell-overlay.
 ##.tmblr-iframe--follow-teaser
@@ -633,6 +635,7 @@ substack.com,microsoftsecurityinsights.com,chipstrat.com##div[class^=subscribe-]
 substack.com,microsoftsecurityinsights.com,chipstrat.com##.subscription-widget-wrap > .show-subscribe
 amazon.*##.nav-flyout.nav-signin-tt
 trello.com##.mod-warning.header-banner
+facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.generic_dialog_modal.pop_dialog
 pinterest.*##div[data-test-id=giftWrap]
 quizlet.com##.LoginBottomBar
 quizlet.com#$#.SetPageTerm-largeSide { filter: none !important }
@@ -960,7 +963,6 @@ $removeparam=traffic_type
 $removeparam=traffic_id
 $removeparam=dcmp
 $removeparam=clickOrigin
-$removeparam=istCompanyId
 $removeparam=istFeedId
 $removeparam=istItemId
 $removeparam=istBid
@@ -990,6 +992,7 @@ $removeparam=ns_linkname
 $removeparam=zanpid
 $removeparam=wgu
 $removeparam=wgexpiry
+$removeparam=fsrc
 $removeparam=Referrer
 $removeparam=algo_pvid
 $removeparam=algo_expid
@@ -1030,6 +1033,7 @@ $removeparam=cmt
 $removeparam=extcmp
 $removeparam=at_gd
 $document,removeparam=/^amp=$/,domain=~eurasiantimes.com|~cybersecuritynews.com
+$document,removeparam=/^amp=1$/,domain=newsweek.com
 $removeparam=_gl
 $removeparam=vfadid
 $removeparam=orig_referrer
@@ -1089,7 +1093,6 @@ $removeparam=REFERRAL_ID
 $removeparam=impradid
 $removeparam=impradname
 Ref=CJ^$document,removeparam=ref
-$document,removeparam=/^source=awin$/i
 $removeparam=affil
 $removeparam=cjid
 $removeparam=sv_affiliate_id
@@ -1129,6 +1132,7 @@ $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
 $removeparam=oly_anon_id
+$removeparam=oly_enc_id,document,domain=~greenbuildingadvisor.com
 $removeparam=s_cid
 $removeparam=_branch_match_id
 $removeparam=_branch_referrer
@@ -1375,6 +1379,7 @@ $document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 ||amazon.$removeparam=sr
 ||amazon.$removeparam=creative
 $removeparam=creativeASIN
+||amazon.$removeparam=/^sc_i.*$/
 $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com|linkedin.com|lnkd.in
 ||amazon.$removeparam=/^__mk_*_.*$/
 ||amazon.$removeparam=ascsubtag
@@ -1414,7 +1419,6 @@ $removeparam=hvlocphy
 $removeparam=hvtargid
 $removeparam=adgrpid
 $removeparam=hvbmt
-$removeparam=hvexid
 $removeparam=cstrackid
 ||amazon.$removeparam=SubscriptionId
 ||amazon.$removeparam=hydadcr
@@ -1795,6 +1799,7 @@ $document,removeparam=channel,domain=1sol.io|amazon.*|bybit.com|coinpanel.com|do
 $removeparam=fr,domain=baidu.com|thegay.com|todayonline.com|hclips.com|search.yahoo.com
 $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
+$removeparam=argsite,domain=metaffiliation.com
 $removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
 $removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
@@ -1822,7 +1827,6 @@ $removeparam=module,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj
 $removeparam=pgtype,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|scmp.com
 $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
 $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
-$removeparam=tag,domain=argos.co.uk|habitat.co.uk|tv2.no|support.github.com
 $removeparam=publisher_id,domain=t-mobile.com|udemy.com
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
@@ -1830,6 +1834,8 @@ $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|disc
 ||epidemicsound.com^$removeparam=_us
 ||epidemicsound.com^$removeparam=_usx
 ||microsoft.com^$removeparam=headerid
+||babbel.com^$removeparam=bsc
+||babbel.com^$removeparam=btp
 ||microsoft.com^$removeparam=destrt
 $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moosejaw.com|multitronic.fi|scandinavianphoto.fi|swamp.fi|ocado.com|ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 ||hp.com^$removeparam=jumpid
@@ -1876,6 +1882,9 @@ $removeparam=pt,domain=apple.com|icedrive.net
 ||kohls.com^$removeparam=bdrecsId
 ||kohls.com^$removeparam=prdPV
 $removeparam=wapa6,domain=hoteles.com|hotels.com
+$removeparam=site_id,domain=taskrabbit.com|kochava.com
+||kochava.com^$removeparam=network_id
+||kochava.com^$removeparam=device_id
 ||skyscanner.$removeparam=redirectedFrom
 ||skyscanner.$removeparam=previousCultureSource
 $removeparam=site_refer,domain=saksfifthavenue.com|saksoff5th.com
@@ -1960,7 +1969,6 @@ $removeparam=iid,domain=cnn.com
 ||lazada.$removeparam=laz_token
 ||lazada.$removeparam=exlaz
 ||target.com^$removeparam=lnm
-||target.com^$removeparam=lnk
 $removeparam=marketing_id
 $removeparam=s,domain=greenhouse.io|mothership.sg|spreadprivacy.com|youku.com|nextdoor.com
 $document,removeparam=t,domain=rakuten.com|steamcdn-a.akamaihd.net|elprecio.es|adressa.no|tiktok.com|lookmovie211.xyz
@@ -1992,6 +2000,7 @@ $removeparam=recs_placement,domain=nordstrom.com
 $removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
 $removeparam=recs_seed,domain=nordstrom.com
+$removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
 ||banggood.com^$removeparam=custlinkid
 ||market.yandex.ru^$removeparam=cpc
@@ -1999,6 +2008,7 @@ $removeparam=recs_seed,domain=nordstrom.com
 ||kelkoogroup.net^$removeparam=custom1
 ||lenovo.com^$removeparam=orgRef
 $removeparam=ppref,domain=digidip.net
+||dhgate.com^$removeparam=f
 $removeparam=brand,domain=cyberghostvpn.com|privateinternetaccess.com
 ||cyberghostvpn.com^$removeparam=media_source
 ||zhihu.com^$removeparam=hybrid_search_source
@@ -2047,7 +2057,6 @@ $removeparam=clickPR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
 $removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
-||espn.com^$removeparam=ex_cid
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
 ||comodo.com^$removeparam=track
@@ -2330,6 +2339,7 @@ www.svt.se#$#div[class*=TextContent_textContent__] { font-family: "Segoe UI Bold
 @@||wikia.nocookie.net^*/images/$image,badfilter
 fandom.com,wikia.org#$?#a:link { cursor: pointer !important }
 cursor_hover.$image
+||nocookie.net/*_cursor_*.png^
 ||nocookie.net/*cursor.png^
 _Cursor1.png^
 tumblr.com#$#.custom-cursor { cursor: unset !important }
