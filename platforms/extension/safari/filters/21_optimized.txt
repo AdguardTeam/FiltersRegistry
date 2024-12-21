@@ -1,5 +1,5 @@
-! Checksum: B+gK2MRPgj4nsiMZtOmoyQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1734723512-3600.patch
+! Checksum: sEzjqLgtT6Q2imRoWHicYg
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1734748595-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.29.18
@@ -138,6 +138,7 @@ foxnews.com#%#//scriptlet('remove-class', 'has-gated-overlay|gated-article-body'
 cumhuriyet.com.tr#?#div[class^="col"] > div.row:has(> div.row > div.dailymotion-player-root)
 cnyes.com#%#//scriptlet('remove-class', 'ppn-overflows', '.ppn-overflows.ppn-floating_enable')
 livejournal.com#$?#div[lj0sale0autoplay0dockable0video0mount] { remove: true; }
+remanga.org##canvas[data-testid="SnowfallCanvas"]
 m.censor.net##.block-social-link
 forum.outerspace.com.br##.focus-guest
 seekingalpha.com##div[style^="--largeTopBannerBackground:"]
@@ -326,7 +327,6 @@ football-tribe.com##.dugout
 football-tribe.com##.dugout_video_cont
 ||embed.dugout.com^$script,third-party,domain=~sportowefakty.wp.pl|~ultra-soccer.jp
 gala.fr###dailymotion-pip-large-viewport
-turkishairlines.com#?##page_wrapper > section.nopadding:has(> div.middle-wrapper img[title^="Turkish Airlines"])
 eurosport.tvn24.pl#%#//scriptlet('prevent-requestAnimationFrame', 'toggleFloatingClass')
 ||img.weblogssl.com/*/js/dailymotion-$domain=applesfera.com
 applesfera.com##.base-asset-video
@@ -627,7 +627,6 @@ journo.com.tr##.herald-single-sticky
 semrush.com#$#body { overflow:visible!important; }
 m.auto.ru##.index-evaluation-banner
 newtab.club##.section-icon-tabs
-webtekno.com##.content-bottom
 pri.org##aside.always-under.donate
 wikipedia.org##.cnotice
 emaze.com#%#var _st = window.setTimeout; window.setTimeout = function(a, b) { if(!/loginPopup.show/.test(a)){ _st(a,b);}};
@@ -679,6 +678,7 @@ yurtgazetesi.com.tr##.hbr-ilgililer
 subs.ro###subtitles-page > .items > li:empty
 3dnews.ru###youtube-chunk-wrapper
 mavikocaeli.com.tr##.hbr-ilgililer
+gamenguide.com##.at_nwletters
 siliconera.com##.show-ads div.t-footer-wrapper
 cnet.com#$?#.stickyColumn + div[data-video-player] .videoPlayer { remove: true; }
 comss.ru##div[style="margin-top:25px;width:300px;"] > a > img
@@ -688,7 +688,6 @@ pcworld.com#%#setInterval(function() { var el = document.querySelector('.howto-v
 ctc.ru##.widget.special-block[data-trackable]
 focus.ua###at4-follow
 disqus.com##div[data-role="motd-alert"]
-online-life.cc##div[class="pull-left"][style="margin-left: 5px;"]
 online-life.cc###top-line
 bigbangnews.com##.follow-fb-fixed
 arcor.de###fmsurvey
@@ -723,6 +722,7 @@ youtube-nocookie.com,youtube.com###yt-lang-alert-container
 yandex.ru##.Warning_type_roskomnadzor
 travel.yandex.al,travel.yandex.app,travel.yandex.asia,travel.yandex.at,travel.yandex.az,travel.yandex.by,travel.yandex.ca,travel.yandex.cc,travel.yandex.cl,travel.yandex.cloud,travel.yandex.cn,travel.yandex.co,travel.yandex.co.il,travel.yandex.com,travel.yandex.com.bd,travel.yandex.com.np,travel.yandex.com.tr,travel.yandex.com.ua,travel.yandex.de,travel.yandex.dk,travel.yandex.ee,travel.yandex.es,travel.yandex.eu,travel.yandex.fi,travel.yandex.fm,travel.yandex.fr,travel.yandex.ie,travel.yandex.in,travel.yandex.io,travel.yandex.it,travel.yandex.jp,travel.yandex.kg,travel.yandex.kz,travel.yandex.lt,travel.yandex.lv,travel.yandex.ma,travel.yandex.md,travel.yandex.mobi,travel.yandex.mx,travel.yandex.net,travel.yandex.news,travel.yandex.no,travel.yandex.org,travel.yandex.pl,travel.yandex.pro,travel.yandex.pt,travel.yandex.ro,travel.yandex.rs,travel.yandex.ru,travel.yandex.se,travel.yandex.shop,travel.yandex.site,travel.yandex.sk,travel.yandex.store,travel.yandex.su,travel.yandex.top,travel.yandex.ua,travel.yandex.uk,travel.yandex.us,travel.yandex.uz,travel.yandex.work,travel.yandex.ws##noindex[id^="gzab"][class*=" "]
 mail.ru#?#.pulse-lenta div[class*="_"] > div > div[class*=" "]:has(> div[class] > a[href^="https://pulse.mail.ru/"][target="_blank"] > div[class] span[class]:contains(Промо))
+mail.ru##.amb_more-pulse
 go.mail.ru###goTopBn
 my.mail.ru##.b-column-right__block-sale
 my.mail.ru##.b-column-right__block-apps
@@ -854,6 +854,7 @@ appleinsider.ru,hi-news.ru##.sidebar-banner-telegram
 webtekno.com##.sidebar-social
 tomshardware.com##.social-promote-box
 kinopoisk.ru##.social-teasers
+akket.com##.social-zone
 statista.com##.socialMediaBox
 everyeye.it##.social_containerx
 newkaliningrad.ru##.soclinks__list
@@ -926,7 +927,6 @@ music.yandex.al,music.yandex.app,music.yandex.asia,music.yandex.at,music.yandex.
 music.yandex.al,music.yandex.app,music.yandex.asia,music.yandex.at,music.yandex.az,music.yandex.by,music.yandex.ca,music.yandex.cc,music.yandex.cl,music.yandex.cloud,music.yandex.cn,music.yandex.co,music.yandex.co.il,music.yandex.com,music.yandex.com.bd,music.yandex.com.np,music.yandex.com.tr,music.yandex.com.ua,music.yandex.de,music.yandex.dk,music.yandex.ee,music.yandex.es,music.yandex.eu,music.yandex.fi,music.yandex.fm,music.yandex.fr,music.yandex.ie,music.yandex.in,music.yandex.io,music.yandex.it,music.yandex.jp,music.yandex.kg,music.yandex.kz,music.yandex.lt,music.yandex.lv,music.yandex.ma,music.yandex.md,music.yandex.mobi,music.yandex.mx,music.yandex.net,music.yandex.news,music.yandex.no,music.yandex.org,music.yandex.pl,music.yandex.pro,music.yandex.pt,music.yandex.ro,music.yandex.rs,music.yandex.ru,music.yandex.se,music.yandex.shop,music.yandex.site,music.yandex.sk,music.yandex.store,music.yandex.su,music.yandex.top,music.yandex.ua,music.yandex.uk,music.yandex.us,music.yandex.uz,music.yandex.work,music.yandex.ws##.deco-pane-overlay
 market.yandex.al,market.yandex.app,market.yandex.asia,market.yandex.at,market.yandex.az,market.yandex.by,market.yandex.ca,market.yandex.cc,market.yandex.cl,market.yandex.cloud,market.yandex.cn,market.yandex.co,market.yandex.co.il,market.yandex.com,market.yandex.com.bd,market.yandex.com.np,market.yandex.com.tr,market.yandex.com.ua,market.yandex.de,market.yandex.dk,market.yandex.ee,market.yandex.es,market.yandex.eu,market.yandex.fi,market.yandex.fm,market.yandex.fr,market.yandex.ie,market.yandex.in,market.yandex.io,market.yandex.it,market.yandex.jp,market.yandex.kg,market.yandex.kz,market.yandex.lt,market.yandex.lv,market.yandex.ma,market.yandex.md,market.yandex.mobi,market.yandex.mx,market.yandex.net,market.yandex.news,market.yandex.no,market.yandex.org,market.yandex.pl,market.yandex.pro,market.yandex.pt,market.yandex.ro,market.yandex.rs,market.yandex.ru,market.yandex.se,market.yandex.shop,market.yandex.site,market.yandex.sk,market.yandex.store,market.yandex.su,market.yandex.top,market.yandex.ua,market.yandex.uk,market.yandex.us,market.yandex.uz,market.yandex.work,market.yandex.ws##div[data-apiary-widget-name="@marketfront/CreativeBanner"]
 [$path=/^\/$|\/\?/]market.yandex.al,market.yandex.app,market.yandex.asia,market.yandex.at,market.yandex.az,market.yandex.by,market.yandex.ca,market.yandex.cc,market.yandex.cl,market.yandex.cloud,market.yandex.cn,market.yandex.co,market.yandex.co.il,market.yandex.com,market.yandex.com.bd,market.yandex.com.np,market.yandex.com.tr,market.yandex.com.ua,market.yandex.de,market.yandex.dk,market.yandex.ee,market.yandex.es,market.yandex.eu,market.yandex.fi,market.yandex.fm,market.yandex.fr,market.yandex.ie,market.yandex.in,market.yandex.io,market.yandex.it,market.yandex.jp,market.yandex.kg,market.yandex.kz,market.yandex.lt,market.yandex.lv,market.yandex.ma,market.yandex.md,market.yandex.mobi,market.yandex.mx,market.yandex.net,market.yandex.news,market.yandex.no,market.yandex.org,market.yandex.pl,market.yandex.pro,market.yandex.pt,market.yandex.ro,market.yandex.rs,market.yandex.ru,market.yandex.se,market.yandex.shop,market.yandex.site,market.yandex.sk,market.yandex.store,market.yandex.su,market.yandex.top,market.yandex.ua,market.yandex.uk,market.yandex.us,market.yandex.uz,market.yandex.work,market.yandex.ws##div[data-zone-data*="bannerUrl"]:not([data-zone-name="deals-banner"])
-market.yandex.al,market.yandex.app,market.yandex.asia,market.yandex.at,market.yandex.az,market.yandex.by,market.yandex.ca,market.yandex.cc,market.yandex.cl,market.yandex.cloud,market.yandex.cn,market.yandex.co,market.yandex.co.il,market.yandex.com,market.yandex.com.bd,market.yandex.com.np,market.yandex.com.tr,market.yandex.com.ua,market.yandex.de,market.yandex.dk,market.yandex.ee,market.yandex.es,market.yandex.eu,market.yandex.fi,market.yandex.fm,market.yandex.fr,market.yandex.ie,market.yandex.in,market.yandex.io,market.yandex.it,market.yandex.jp,market.yandex.kg,market.yandex.kz,market.yandex.lt,market.yandex.lv,market.yandex.ma,market.yandex.md,market.yandex.mobi,market.yandex.mx,market.yandex.net,market.yandex.news,market.yandex.no,market.yandex.org,market.yandex.pl,market.yandex.pro,market.yandex.pt,market.yandex.ro,market.yandex.rs,market.yandex.ru,market.yandex.se,market.yandex.shop,market.yandex.site,market.yandex.sk,market.yandex.store,market.yandex.su,market.yandex.top,market.yandex.ua,market.yandex.uk,market.yandex.us,market.yandex.uz,market.yandex.work,market.yandex.ws##.mediaBanner
 market.yandex.al,market.yandex.app,market.yandex.asia,market.yandex.at,market.yandex.az,market.yandex.by,market.yandex.ca,market.yandex.cc,market.yandex.cl,market.yandex.cloud,market.yandex.cn,market.yandex.co,market.yandex.co.il,market.yandex.com,market.yandex.com.bd,market.yandex.com.np,market.yandex.com.tr,market.yandex.com.ua,market.yandex.de,market.yandex.dk,market.yandex.ee,market.yandex.es,market.yandex.eu,market.yandex.fi,market.yandex.fm,market.yandex.fr,market.yandex.ie,market.yandex.in,market.yandex.io,market.yandex.it,market.yandex.jp,market.yandex.kg,market.yandex.kz,market.yandex.lt,market.yandex.lv,market.yandex.ma,market.yandex.md,market.yandex.mobi,market.yandex.mx,market.yandex.net,market.yandex.news,market.yandex.no,market.yandex.org,market.yandex.pl,market.yandex.pro,market.yandex.pt,market.yandex.ro,market.yandex.rs,market.yandex.ru,market.yandex.se,market.yandex.shop,market.yandex.site,market.yandex.sk,market.yandex.store,market.yandex.su,market.yandex.top,market.yandex.ua,market.yandex.uk,market.yandex.us,market.yandex.uz,market.yandex.work,market.yandex.ws##.main > noindex:not([data-tid])
 market.yandex.al,market.yandex.app,market.yandex.asia,market.yandex.at,market.yandex.az,market.yandex.by,market.yandex.ca,market.yandex.cc,market.yandex.cl,market.yandex.cloud,market.yandex.cn,market.yandex.co,market.yandex.co.il,market.yandex.com,market.yandex.com.bd,market.yandex.com.np,market.yandex.com.tr,market.yandex.com.ua,market.yandex.de,market.yandex.dk,market.yandex.ee,market.yandex.es,market.yandex.eu,market.yandex.fi,market.yandex.fm,market.yandex.fr,market.yandex.ie,market.yandex.in,market.yandex.io,market.yandex.it,market.yandex.jp,market.yandex.kg,market.yandex.kz,market.yandex.lt,market.yandex.lv,market.yandex.ma,market.yandex.md,market.yandex.mobi,market.yandex.mx,market.yandex.net,market.yandex.news,market.yandex.no,market.yandex.org,market.yandex.pl,market.yandex.pro,market.yandex.pt,market.yandex.ro,market.yandex.rs,market.yandex.ru,market.yandex.se,market.yandex.shop,market.yandex.site,market.yandex.sk,market.yandex.store,market.yandex.su,market.yandex.top,market.yandex.ua,market.yandex.uk,market.yandex.us,market.yandex.uz,market.yandex.work,market.yandex.ws##div[data-apiary-widget-id^="/content/cms/CmsPageLayout-"] div[data-apiary-widget-name="@marketfront/MediaCarousel"]
 mail.yandex.al,mail.yandex.app,mail.yandex.asia,mail.yandex.at,mail.yandex.az,mail.yandex.by,mail.yandex.ca,mail.yandex.cc,mail.yandex.cl,mail.yandex.cloud,mail.yandex.cn,mail.yandex.co,mail.yandex.co.il,mail.yandex.com,mail.yandex.com.bd,mail.yandex.com.np,mail.yandex.com.tr,mail.yandex.com.ua,mail.yandex.de,mail.yandex.dk,mail.yandex.ee,mail.yandex.es,mail.yandex.eu,mail.yandex.fi,mail.yandex.fm,mail.yandex.fr,mail.yandex.ie,mail.yandex.in,mail.yandex.io,mail.yandex.it,mail.yandex.jp,mail.yandex.kg,mail.yandex.kz,mail.yandex.lt,mail.yandex.lv,mail.yandex.ma,mail.yandex.md,mail.yandex.mobi,mail.yandex.mx,mail.yandex.net,mail.yandex.news,mail.yandex.no,mail.yandex.org,mail.yandex.pl,mail.yandex.pro,mail.yandex.pt,mail.yandex.ro,mail.yandex.rs,mail.yandex.ru,mail.yandex.se,mail.yandex.shop,mail.yandex.site,mail.yandex.sk,mail.yandex.store,mail.yandex.su,mail.yandex.top,mail.yandex.ua,mail.yandex.uk,mail.yandex.us,mail.yandex.uz,mail.yandex.work,mail.yandex.ws##div[class^="DisableAdsButton"]
@@ -1183,7 +1183,6 @@ car-mo.jp##.ad-carview
 nijiyome.jp###topjackContents
 journal.tinkoff.ru##.article-body > div.inline-level
 heise.de##section[data-component="MarketingTeaserModule"]
-heise.de#?#.ho-modules-container > div[class]:has(> div[class] > div[class]:contains(Eigenwerbung))
 heise.de#?#article[data-component="TeaserContainer"]:has(> a > div[data-component="TeaserLinkContainer"] > footer[data-component="TeaserMeta"] > .font-bold:contains(heise-Angebot))
 heise.de#?#article[data-component="TeaserContainer"]:has(> a > div[data-component="TeaserLinkContainer"] > footer[data-component="TeaserMeta"] > .font-bold:contains(heise-Angebot)) + hr.border-gray-100
 admin.blog.fc2.com##.adimn_pr_txt
@@ -1333,7 +1332,6 @@ member.id.rakuten.co.jp###recommendService
 duckduckgo.com##.onboarding-ed
 duckduckgo.com#$#.js-header-aside.is-hidden { display: block!important; }
 duckduckgo.com#$#.badge-link.ddg-extension-hide { display: none!important; }
-hdrezka-sex-city.net,hdrezka.kim,kvk.pub,hdrezka1twwpb.org,omnirezka.tv,hdrezka1dhpkk.org,hdrezka9bsbhq.org,hdrezka720dhh.org,hdrezka320ypq.org,hdrezka180map.org,hdrezka320hjh.org,hdrezka9fmskj.org,hdrezka2vmmty.org,hdrezka8dgquu.org,hdrezkayyh5pq.org,hdrezka2tepnm.org,standby-rezka.tv,flymaterez.net,hdrezka320fkk.org,hdrezka.vip,rezka.space,hdrezka8bdhtq.org,hdrezka1tqbbd.org,hdrezka1qkpbx.org,hdrezka320rtq.org,rezka-ua.tv,hdrezkabmmshq.org,hdrezka.in,hdrezka66yhfg.net,hdrezka.rest,hdrezka19139.org,hdrezka.ag,upivi.com,hdrezka.me,kinopub.me,3ivi.com,rezkify.com,bestofkinopoisk.com,rezkery.com,hdrezkaonline.com,hdrezka.sh,cokinopoisk.com,hdrezka-ag.com,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.name,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.website,hdrezkayou.com,rezka.ag###tg-info-block-exclusive
 gekkan-fukugyou.jp##.FixedWidget__fixed_widget
 gekkan-fukugyou.jp###custom_html-7
 gekkan-fukugyou.jp###footer-fix-banner
@@ -1667,11 +1665,9 @@ vseinstrumenti.ru##div[data-behavior="header-info-line"]
 tproger.ru##.tp-lubok-top
 retty.me##.firstview-ad-section
 oneesports.gg##.article-footer-banner
-switch.ch##.m-cookie-banner
 service.smt.docomo.ne.jp##.bnr_area
 dns-shop.ru###top-banner
 civitai.com##div[class^="mantine-"][style^="grid-template-columns:"] > div.flex-col.border.p-2
-beeline.ru##.desktopOnlyElement > div > div[style^="background-color:"]:has(> div > button[aria-label="Скрыть баннер"])
 fotosklad.ru##div[class^="HeaderTopline_topline__"]
 epicentrk.ua##._PhbwaI
 ||ufret.jp/img/ads/U-FRETpremium_2312_banner.jpg
@@ -2089,7 +2085,6 @@ travel.co.jp##.ad-msq
 myoji-kamon.net###sidebar_right div[style^="width"][style*="margin:"][style*="text-align:"]
 storm.mg###premium_block_inner_wrap_outer
 shonenjumpplus.com##.daily-series-banner-wrapper
-kutikomi.com##.side_k_aca_banner
 thehindubusinessline.com###economy
 reuters.com#$#div[class^="refinitiv-promo-bar"] { display: none !important; }
 reuters.com#$#div[class^="site-header__inner"] { top: 0 !important; }
@@ -2173,6 +2168,7 @@ wedding.mynavi.jp##div[id="1_recommend_divid"]
 cyberghostvpn.com##.table-of-contents-wrapper > div[style="background-color: #f4f5f6; padding: 20px;"]
 apteka911.ua##.tab-content > div.div-img-html
 nordvpn.com##.GetAppSection
+adlock.com##.download-panel
 lopinion.fr##bsp-sticky-banner
 happymod.com##.container-right > div.righthm
 youtube-thumbnail-grabber.com###extension-container
@@ -2245,7 +2241,6 @@ solvusoft.com##.recommendation
 adac.de##.richtextComponent-banner
 testbook.com##.desktop-side-banner-mcq
 testbook.com##.super-banner--mcq
-tripadvisor.*#?##lithium-root > div[style^="bottom:"]:has(> div[class] span > svg[viewBox="0 0 24 24"])
 mall.hr###above-header
 currentaffairs.org##.lifestyle-print-appeal
 currentaffairs.org##.subscribe-block
@@ -2317,7 +2312,6 @@ zvuk.com#?#main > div > div[width]:has(> a[href] > img[data-banner-category])
 15min.lt#?#.col-right > div.widget-group:has(> div.widget div.item-info > div.item-category:contains(Reklama))
 rlsnet.ru##.js-banner-group
 smbc-card.com##.banner_area
-nii.ac.jp###promotion
 novayagazeta.eu##.donate-block-europe
 medium.com#?#div:not([class]):has(> a[href^="/plans?source=upgrade_membership-"])
 tonkosti.ru##.SeasonBloks
@@ -2346,7 +2340,6 @@ comic-days.com##.gtm-top-days-premium-banner
 vibe.naver.com#%#//scriptlet("set-cookie", "NPM_POPUP", "Y")
 as-web.jp##.w-md-320 > div.sticky
 hotline.ua##.promo-list-item
-blog.avast.com##.blog-sidebar-ad
 ldmnq.com##.ld-download-zuanban
 newsweek.pl##.bottomBar
 polityka.pl##.cg_promo_popup
@@ -2366,6 +2359,7 @@ newsweek.pl###tpTopBarSticky
 msn.com#%#//scriptlet('hide-in-shadow-dom', '.mail-signout-banner-container')
 shutterstock.com##div[data-automation="header-banner"]
 deepl.com##aside[aria-labelledby="pro-ad-banner-heading"]
+gizmodo.jp#?#.p-timeline-card1 > div > div > ul > li.p-timeline-card1AssistSponsored:upward(4)
 ckworks.jp###rightContentsInnerBox > div[style="margin:0px 0px 10px 0px; padding:0;"]
 wmaraci.com###widget > div > a[href="/reklam"]
 netaemon.com,menuguildsystem.com##.amazon-item-box
@@ -2851,7 +2845,6 @@ liveresult.ru#$#.header { margin-top: 0!important; }
 uzone.id#$#body { margin-top: 0!important; }
 cossa.ru,nevasport.ru#$#.main-wrapper { margin-top: 0 !important; }
 dota2.ru#$##dappo { padding-top: 0px!important; }
-lnk.news#$##skip_form { display: block!important; }
 saechsische.de#$#body { overflow: visible!important; }
 focus.de#$##teaserRss { border-top: 0px !important; }
 nnmclub.to#$#select[id="fs"][name="f[]"][multiple="multiple"] { height: 250px !important; }
