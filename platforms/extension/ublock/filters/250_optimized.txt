@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ODzyF/5r1RT1gHeZkULjYA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1734757545-14400.patch
+! Checksum: OUavUYEkerQIPDfr1oCKFg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1734843937-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.15.81
-! TimeUpdated: 2024-12-18T05:01:46+00:00
+! Version: 2.0.15.82
+! TimeUpdated: 2024-12-22T05:01:52+00:00
 ! Expires: 5 days (update frequency)
 ###app-download
 ###app-modal
@@ -86,7 +86,6 @@ fandom.com##.global-footer__section-fandom-stores
 www.youtube.com###teaser-carousel:has(img[src*="/youtube_kids_"])
 francetvinfo.fr##.o-footer__apps-block
 francetvinfo.fr##.m-app-links
-##.o_social_push_notifications_permission_request:not(html,body,:empty)
 @@/jquery.smartbanner.js^
 .smartbanner.js$domain=~mcpedl.com
 ###___ndtvpushdiv
@@ -135,7 +134,6 @@ softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ||solvusoft.com^$document
-exefiles.com##.row:has(a[href*="/recommended/"])
 /^https?://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
 /^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
 /^https?:\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php$/$document,domain=biz|fun|live
@@ -328,7 +326,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ###ss-floating-bar
 ###top_share
 ##.addthis_button_facebook:not(html,body,:empty)
-##.addthis_button_more:not(html,body,:empty)
 ##.addthis_counter:not(html,body,:empty)
 ##.addtoany_content:not(html,body,:empty)
 ##.addtoany_share:not(html,body,:empty)
@@ -406,6 +403,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.socialbuttons:not(html,body,:empty)
 ##.socialmedia:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.ssba:not(html,body,:empty)
+##.ssk-group:not(html,body,:empty)
 ##.swp_social_panel:not(html,body,:empty)
 ##[class*=share-toolbar]:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-share-toolbar])
 ##[class*=social_share]:not(article,html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
@@ -479,7 +477,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##ul[class*=-share-buttons]
 /images/share_icons/*
 /images/social-share/*
-/^.*(\.|//)shar(e|ing)\.[a-z0-9-]{2,60}\..*$/$image,match-case,domain=~discord.com|~reddit.com
+/^.*(\.|//)shar(e|ing)\.[a-z0-9-]{2,60}\..*$/$image,match-case,domain=~discord.com|~reddit.com|~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 /addthis_widget.js^
 /btn_share_fb.
 /^.*/share/.*-icon\.png.*$/$image,match-case
@@ -504,7 +502,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||tumblr.com/share/$third-party
 ||twitter.com/share$third-party
 ||widgets.getpocket.com/v1/button?label=pocket$subdocument
-||ws.sharethis.com^$third-party
 ~allrecipes.com,~myrecipes.com##div[class*=sharebar]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-sharebar],[class*=hassharebar])
 ~baidu.com##.share-list:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ~digg.com##a[href*="://digg.com/submit?url="]
@@ -633,6 +630,10 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.uSocial-Share:not(body,html,:empty)
 ~line.me,~linecorp.com##a.js-share-line
 ~line.me,~linecorp.com##a[href^="line://msg/text/"]:is([class*=share i],[aria-label*=share i])
+##.b-share-bar__twitter
+~pinterest.*##.b-share-bar__pinterest:not(body,html,:empty)
+~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.b-share-bar__facebook:not(body,html,:empty)
+~linkedin.com##.b-share-bar__linkedin:not(body,html,:empty)
 ##[class*=socialshare i]:not(html,body,article,[class*=body i],[id*=body i])
 ~kjokkenskriveren.no##[class*=ShareButton i]:not(button,body,html,article,[class*=body i],[id*=body i])
 pixivision.net##._floated-bottom-bar
@@ -646,6 +647,7 @@ forbes.com##.article-sharing
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
 bing.com#?##b_pole:has-text(Microsoft Edge)
+bing.com##.bnp_fly_hp
 microsoft.com,windows.com###epb
 outlook.live.com##div[class*=" body-"] > div[class] > div[class]:not([role]) > div:first-of-type:not([class])
 ||united-infos.net^$third-party
@@ -700,6 +702,7 @@ substack.com,microsoftsecurityinsights.com,chipstrat.com#$#body #main { visibili
 pinterest.*#$#div[style^="filter:"] { filter: none !important }
 quora.com#$#.signup_wall_prevent_scroll .PageWrapper { filter: none !important }
 quora.com#$#.signup_wall_prevent_scroll { position: unset !important }
+cooking.nytimes.com##div[class*=modal_show_]:not(:has(button[aria-label=close], div[class*=grocerylist_listContainer]))
 quizlet.com#$#.SetPageTerm { display: block !important }
 seekingalpha.com#$#.p { display: block !important }
 seekingalpha.com#$#.blured { opacity: 1.0 !important }
@@ -782,6 +785,7 @@ ctrip.com###fl_wrap_default
 58.com##.wx-xcx-qrcode
 amap.com###amapAppDownload
 amap.com###to_lushu
+bilibili.com##.mobile-link-l
 coolapk.com##.apk_topba_code
 ctrip.com##.service-notice-right
 dianping.com##.qrcode-aside
@@ -1303,14 +1307,12 @@ $removeparam=cm_pla
 $removeparam=cm_ite
 $removeparam=cm_lm
 $removeparam=CSID
-$removeparam=kpartnerid
 $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
 $document,removeparam=/^from=kelkoo.*$/
 $removeparam=paid
 $removeparam=pacid
 $removeparam=adtype
-$removeparam=tmad
 $removeparam=tmcampid
 $removeparam=szredirectid
 $removeparam=af_ad
@@ -1386,8 +1388,6 @@ $removeparam=int_content
 $removeparam=int_campaign
 $removeparam=sudaref
 $removeparam=pm_source
-$removeparam=pm_medium
-$removeparam=pm_campaign
 $removeparam=oref
 $removeparam=gaa_at
 $removeparam=gaa_n
@@ -1725,6 +1725,7 @@ $removeparam=share_link_id
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|zappos.com
 $removeparam=gtm
 $removeparam=referral,domain=tv2.no|spotify.com|yubo.live
+||open.spotify.com^$removeparam=uid
 ||aliexpress.*/item/$removeparam=pvid
 ||aliexpress.$removeparam=_t
 ||aliexpress.$removeparam=gps-id
@@ -1751,7 +1752,6 @@ $removeparam=aff_trace_key
 ||aliexpress.$removeparam=cv
 $removeparam=spm
 $removeparam=tracelog
-$removeparam=cardId,document,domain=alibaba.com
 $removeparam=aff_click_id
 ||aliexpress.$removeparam=gatewayAdapt
 ||aliexpress.$removeparam=pdp_npi
@@ -2107,7 +2107,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
-||dw.com^$removeparam=maca
 ||fiverr.com^$removeparam=bta
 ||fiverr.com^$removeparam=afp
 ||fiverr.com^$removeparam=cxd_token
@@ -2158,7 +2157,6 @@ $removeparam=mweb_loid,domain=reddit.app.link
 $removeparam=mweb_loid_created,domain=reddit.app.link
 $removeparam=tags,domain=reddit.app.link
 ||adjust.com^$removeparam=adgroup
-$removeparam=xcreo
 $removeparam=rffrid
 $removeparam=ad_name
 $removeparam=rcode,domain=kucoin.com
@@ -2350,7 +2348,6 @@ $document,removeparam=aoOfferParams,domain=citi.com
 $removeparam=ProspectID,domain=citi.com
 ||patreon.com/posts/$document,removeparam=token
 $document,removeparam=bpli,domain=blogger.com
-$document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||tempo.co^$document,removeparam=tracking_page_direct
 ||trendyol.com^$document,removeparam=link_userID
 ||trendyol.com^$document,removeparam=link_contentid
