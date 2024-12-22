@@ -1,8 +1,8 @@
-! Checksum: GBR3C5Rz5jkQC6u2SxBkjg
+! Checksum: hFMAXa5Ev77DiEtZJm/2zQ
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.5.17
-! TimeUpdated: 2024-12-20T15:35:10+00:00
+! Version: 2.0.5.18
+! TimeUpdated: 2024-12-22T16:35:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -289,17 +289,11 @@ vk.com,vk.ru#?##feed_rows > div.feed_row:has(.PostHeaderSubtitle__item:contains(
 vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div.page_block .PostHeaderSubtitle__item > span:not([class]):contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
 vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Реклама в сообществе))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] { width: 27px !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/190943
-wiki.yjsnpi.nu#%#//scriptlet('abort-on-stack-trace', 'Function.prototype.toString', '/w/load.php?lang=ja&modules=codex-search-styles%2Cjquery%2Coojs%2C&skin=vector-2022&version=L58hf')
-wiki.yjsnpi.nu#%#//scriptlet("prevent-setTimeout", "()=>k(S(4")
-wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"])', 'font-size', '14px')
-wiki.yjsnpi.nu#%#//scriptlet('spoof-css', '#mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img', 'height', '128px')
-wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) { font-size: 0 !important; }
-wiki.yjsnpi.nu#$##mw-content-text div[style] a:is([href*="contents.fc2.com"],[href*="dmm.co.jp"]) img { height: 0 !important; }
+exploader.net#$#article > div[style*="1120px"] > div { position: absolute !important; clip:rect(1px,1px,1px,1px) !important; }
+exploader.net#%#//scriptlet('spoof-css', 'article > div[style*="1120px"] > div', 'clip', '')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189567
 japscan.lol#@%#//scriptlet('remove-node-text', 'script', 'Roiyehe')
-japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { content-visibility: hidden !important; }
-japscan.lol#@$#.navbar-nav > li#navpromo2.nav-item > a[href^="http://www.toueapo.shop/"] { text-indent: -5000px !important; }
-japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/^\s*function\s*\(\s*\)\s*{\s*[^s][$_0-9A-Za-z]+\s*\(\s*function\s*\(\s*\)\s*\{|Borito|getComput'|p'\+''|Niger|Charger|GoodDay|funct'|t'\+'y/")
-japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "/navpromo|clipPath|0p'\+/")
+japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0 !important; }
+japscan.lol#%#//scriptlet('set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'href', '')
+japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Niger|Charger|GoodDay|funct'|t'\+'y/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "/function\s*\(\s*\)\s*\{\s*[$\w]+\s*\(\s*function\s*\(\s*\)\s*\{\s*|Yutamo|='\/'\+|appendChild'\]/")
