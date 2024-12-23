@@ -1,9 +1,9 @@
-! Checksum: 43UzmKJOS1jlRRyaYN5bGg
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1734961044-3600.patch
+! Checksum: LPuLXJDKOWXovRP0KVHaCw
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1734989854-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.5
-! TimeUpdated: 2024-12-23T13:33:31+00:00
+! Version: 2.0.10.6
+! TimeUpdated: 2024-12-23T21:34:04+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=_sgm_campaign
 $removeparam=_sgm_term
@@ -1804,6 +1804,15 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+@@||glavnoe.life^$removeparam=utm_campaign
+@@||glavnoe.life^$removeparam=utm_content
+@@||glavnoe.life^$removeparam=utm_medium
+@@||glavnoe.life^$removeparam=utm_referrer
+@@||glavnoe.life^$removeparam=utm_source
+@@||glavnoe.life^$removeparam=utm_term
+@@||kortko.cc^$removeparam=utm_campaign
+@@||kortko.cc^$removeparam=utm_content
+@@||kortko.cc^$removeparam=utm_source
 @@||booklive.jp/vcentry/landing?$removeparam=vc_lpp
 @@||google.*/maps^$removeparam=utm_campaign
 @@||uploadnow.*/share$removeparam=utm_source
