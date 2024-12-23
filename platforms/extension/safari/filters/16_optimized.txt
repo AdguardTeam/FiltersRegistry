@@ -1,9 +1,9 @@
-! Checksum: WcVn87t+MFnBf/j2982v7w
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1734950328-3600.patch
+! Checksum: RP+Zz07l9DVPKO51bRiBcw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1734968313-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.73
-! TimeUpdated: 2024-12-23T10:34:42+00:00
+! Version: 2.0.48.74
+! TimeUpdated: 2024-12-23T15:34:18+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -30,11 +30,13 @@ bilan.ch#%#!function(){function b(){}function a(a){return{get:function(){return 
 capital.fr#@#.plainAd
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari)
 @@||bilan.ch^$generichide
+/image/ad.$badfilter
 /adscontroller.$badfilter
 /affiliate/*/banners/*$badfilter
 /banner-ads$badfilter
 /ad/*/728/*$badfilter
 /ad/ads.$badfilter
+/image/ad.$~xmlhttprequest
 /adscontroller.$~xmlhttprequest
 /affiliate/*/banners/*$~xmlhttprequest
 /banner-ads$~xmlhttprequest
@@ -126,10 +128,10 @@ ebookdz.com#%#//scriptlet('abort-on-property-read', 'ABDetector')
 ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ||ebookdz.com/forum/libab/script.js
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
-japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0 !important; }
-japscan.lol#%#//scriptlet('set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'href', '')
+japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { display: none !important; }
+japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item', 'display', 'block')
 japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Niger|Charger|GoodDay|funct'|t'\+'y/")
-japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "/function\s*\(\s*\)\s*\{\s*[$\w]+\s*\(\s*function\s*\(\s*\)\s*\{\s*|Yutamo|='\/'\+|appendChild'\]/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "/DOMContentLoaded|load/", "/function\s*\(\s*\)\s*\{\s*[a-z]+\s+[$\w]+\s*=\s*['`]|LetsGo|toString'\]\(\s*\)|top'\]|==='0'/")
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
 @@$image,domain=japscan.lol
 @@||japscan.lol^$image,xmlhttprequest,script,~third-party

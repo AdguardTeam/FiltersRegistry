@@ -1,9 +1,9 @@
-! Checksum: ymipKx1g4AXexiGFxPRaFQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1734950314-3600.patch
+! Checksum: UPOytBVgjy8FU8rS0JYzhQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1734968297-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.73
-! TimeUpdated: 2024-12-23T10:34:42+00:00
+! Version: 2.0.48.74
+! TimeUpdated: 2024-12-23T15:34:18+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -29,11 +29,13 @@
 capital.fr,maxisciences.com#%#!function(){function b(){}function a(a){return{get:function(){return a},set:b}}function c(a){a(!1)}AG_defineProperty('_sp_.config.content_control_callback',a(b)),AG_defineProperty('_sp_.config.spid_control_callback',a(b)),AG_defineProperty('_sp_.config.vid_control_callback',a(b)),AG_defineProperty('_sp_.config.disableBlockerStyleSheets',a(!1)),AG_defineProperty('_sp_.checkState',a(c)),AG_defineProperty('_sp_.isAdBlocking',a(c)),AG_defineProperty('_sp_.isAdblocking',a(c)),AG_defineProperty('_sp_.isContentBlockerPresent',a(c)),AG_defineProperty('_sp_.getSafeUri',a(function(a){return a})),AG_defineProperty('_sp_.pageChange',a(b)),AG_defineProperty('_sp_.setupSmartBeacons',a(b)),AG_defineProperty('_sp_.msg.startMsg',a(b)),document.addEventListener('sp.blocking',function(a){a.stopImmediatePropagation(),a=document.createEvent('Event'),a.initEvent('sp.not_blocking',!0,!1),this.dispatchEvent(a)})}();
 bilan.ch#%#!function(){function b(){}function a(a){return{get:function(){return a},set:b}}function c(a){a(!1)}AG_defineProperty('_sp_.config.content_control_callback',a(b)),AG_defineProperty('_sp_.config.spid_control_callback',a(b)),AG_defineProperty('_sp_.config.vid_control_callback',a(b)),AG_defineProperty('_sp_.config.disableBlockerStyleSheets',a(!1)),AG_defineProperty('_sp_.checkState',a(c)),AG_defineProperty('_sp_.isAdBlocking',a(c)),AG_defineProperty('_sp_.isAdblocking',a(c)),AG_defineProperty('_sp_.isContentBlockerPresent',a(c)),AG_defineProperty('_sp_.getSafeUri',a(function(a){return a})),AG_defineProperty('_sp_.pageChange',a(b)),AG_defineProperty('_sp_.setupSmartBeacons',a(b)),AG_defineProperty('_sp_.msg.startMsg',a(b)),document.addEventListener('sp.blocking',function(a){a.stopImmediatePropagation(),a=document.createEvent('Event'),a.initEvent('sp.not_blocking',!0,!1),this.dispatchEvent(a)})}();
 capital.fr#@#.plainAd
+/image/ad.$badfilter
 /adscontroller.$badfilter
 /affiliate/*/banners/*$badfilter
 /banner-ads$badfilter
 /ad/*/728/*$badfilter
 /ad/ads.$badfilter
+/image/ad.$~xmlhttprequest
 /adscontroller.$~xmlhttprequest
 /affiliate/*/banners/*$~xmlhttprequest
 /banner-ads$~xmlhttprequest
@@ -95,10 +97,10 @@ ebookdz.com#%#//scriptlet('abort-on-property-read', 'ABDetector')
 ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ||ebookdz.com/forum/libab/script.js
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
-japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0 !important; }
-japscan.lol#%#//scriptlet('set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'href', '')
+japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { display: none !important; }
+japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item', 'display', 'block')
 japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Niger|Charger|GoodDay|funct'|t'\+'y/")
-japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "/function\s*\(\s*\)\s*\{\s*[$\w]+\s*\(\s*function\s*\(\s*\)\s*\{\s*|Yutamo|='\/'\+|appendChild'\]/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "/DOMContentLoaded|load/", "/function\s*\(\s*\)\s*\{\s*[a-z]+\s+[$\w]+\s*=\s*['`]|LetsGo|toString'\]\(\s*\)|top'\]|==='0'/")
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
 $script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.lol
 @@$image,domain=japscan.lol
