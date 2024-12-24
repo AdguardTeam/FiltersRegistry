@@ -1,8 +1,8 @@
-! Checksum: OcLoBNGKsOTRiSS+Zme8kw
+! Checksum: k+gxuK+jOdPwN9dB1Fgvuw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.24
-! TimeUpdated: 2024-12-24T14:36:14+00:00
+! Version: 2.2.17.25
+! TimeUpdated: 2024-12-24T15:40:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16514,6 +16514,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !
 !
 !
+! hamburg-business.com - broken map
+@@||api.usercentrics.eu^$domain=hamburg-business.com
+@@||app.usercentrics.eu/*.js$script,domain=hamburg-business.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195146
 @@||consent.cookiebot.com/uc.js$domain=wero-wallet.eu
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194756
@@ -52602,6 +52605,10 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195185
+lnk2.cc#%#//scriptlet('set-constant', 'secs', '0')
+lnk2.cc#%#//scriptlet('remove-class', 'd-none', '#pass')
+lnk2.cc#%#//scriptlet('remove-attr', 'disabled', '#getLink')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194436
 dood.li#%#//scriptlet('set-constant', 'check', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194326

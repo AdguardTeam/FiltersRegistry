@@ -1,9 +1,9 @@
-! Checksum: e92pwDDuWHir1zTINLFv+Q
-! Diff-Path: ../patches/224/224-s-1735040338-3600.patch
+! Checksum: w8BFxl23jneNI3bMvdYdgg
+! Diff-Path: ../patches/224/224-s-1735055123-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.28.43
-! TimeUpdated: 2024-12-24T11:35:30+00:00
+! Version: 2.1.28.44
+! TimeUpdated: 2024-12-24T15:41:03+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -357,6 +357,8 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195203
+xchina.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'check')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194144
 2urs.com#%#//scriptlet('abort-on-property-read', 'ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192543
@@ -692,8 +694,6 @@ logi.im#%#//scriptlet("prevent-setTimeout", "ins.adsbygoogle")
 logi.im##body > div[style^="background: black; position: fixed; "][style*="opacity: 0.5; z-index: 1999;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56651
 wenxuecity.com#%#//scriptlet("set-constant", "adsbygoogle", "noopFunc")
-! https://github.com/AdguardTeam/AdguardFilters/issues/58327
-lnk2.cc#%#//scriptlet("set-constant", "adblock", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59264
 youranshare.com#%#//scriptlet("abort-current-inline-script", "$", "adskilltest")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61563
@@ -4928,6 +4928,8 @@ newduba.cn###jq_youxi
 ||wwilmie.top^
 ||k9u.icu^
 ||shuucerz.com^
+||qwilmiy.top^
+||m51.icu^
 ||rusnuiyu.com^
 ||ndlwtl.icu^
 ||swilmib.top^

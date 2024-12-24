@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: DxCwaszkdDW74FXbOnKIKg
-! Diff-Path: ../patches/224/224-s-1735040360-3600.patch
+! Checksum: 6I1cI7kRv3NJbeYE1KMhlQ
+! Diff-Path: ../patches/224/224-s-1735055145-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.28.43
-! TimeUpdated: 2024-12-24T11:35:30+00:00
+! Version: 2.1.28.44
+! TimeUpdated: 2024-12-24T15:41:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -347,6 +347,8 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195203
+xchina.co##+js(addEventListener-defuser, DOMContentLoaded, check)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194144
 2urs.com##+js(abort-on-property-read, ads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192543
@@ -692,8 +694,6 @@ logi.im##+js(no-setTimeout-if, ins.adsbygoogle)
 logi.im##body > div[style^="background: black; position: fixed; "][style*="opacity: 0.5; z-index: 1999;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56651
 wenxuecity.com##+js(set-constant, adsbygoogle, noopFunc)
-! https://github.com/AdguardTeam/AdguardFilters/issues/58327
-lnk2.cc##+js(set-constant, adblock, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59264
 youranshare.com##+js(abort-current-script, $, adskilltest)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61563
@@ -4910,6 +4910,8 @@ newduba.cn###jq_youxi
 ||wwilmie.top^
 ||k9u.icu^
 ||shuucerz.com^
+||qwilmiy.top^
+||m51.icu^
 ||rusnuiyu.com^
 ||ndlwtl.icu^
 ||swilmib.top^

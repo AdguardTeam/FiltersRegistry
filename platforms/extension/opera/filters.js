@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.65.52",
-			"timeUpdated": "2024-12-24T14:31:21+0000",
+			"version": "2.3.65.53",
+			"timeUpdated": "2024-12-24T15:31:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.17.24",
-			"timeUpdated": "2024-12-24T14:36:14+0000",
+			"version": "2.2.17.25",
+			"timeUpdated": "2024-12-24T15:40:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.75",
-			"timeUpdated": "2024-12-24T05:33:59+0000",
+			"version": "2.0.48.76",
+			"timeUpdated": "2024-12-24T15:40:50+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.53.48",
-			"timeUpdated": "2024-12-24T14:36:21+0000",
+			"version": "2.0.53.49",
+			"timeUpdated": "2024-12-24T15:40:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -787,8 +787,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.29.23",
-			"timeUpdated": "2024-12-24T13:35:52+0000",
+			"version": "2.0.29.24",
+			"timeUpdated": "2024-12-24T15:40:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.28.43",
-			"timeUpdated": "2024-12-24T11:35:30+0000",
+			"version": "2.1.28.44",
+			"timeUpdated": "2024-12-24T15:41:03+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

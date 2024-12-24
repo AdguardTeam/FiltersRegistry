@@ -1,9 +1,9 @@
-! Checksum: SQBtTjfGvVSx2BQJ7A27XQ
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1735040365-3600.patch
+! Checksum: u9BNPTrCRP+bfMGiUs56ng
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1735055151-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.28.43
-! TimeUpdated: 2024-12-24T11:35:30+00:00
+! Version: 2.1.28.44
+! TimeUpdated: 2024-12-24T15:41:03+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -263,6 +263,7 @@
 ||two.fsylr.com^
 ||ad.juksy.com^
 ||ads.tvb.com^
+xchina.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'check')
 2urs.com#%#//scriptlet('abort-on-property-read', 'ads')
 !+ PLATFORM(ios, ext_android_cb)
 @@||2urs.com/js/*_cpa_$script
@@ -565,7 +566,6 @@ jav777.xyz#%#//scriptlet("prevent-eval-if", "ADS_BLOCKED")
 logi.im#%#//scriptlet("prevent-setTimeout", "ins.adsbygoogle")
 logi.im##body > div[style^="background: black; position: fixed; "][style*="opacity: 0.5; z-index: 1999;"]
 wenxuecity.com#%#//scriptlet("set-constant", "adsbygoogle", "noopFunc")
-lnk2.cc#%#//scriptlet("set-constant", "adblock", "false")
 !+ PLATFORM(ios, ext_android_cb)
 @@||static.youranshare.com/*/adsbygoogle_adview_pic_cpc_cpm_cpa_guanggao_gg_ads_300x250.js
 youranshare.com#%#//scriptlet("abort-current-inline-script", "$", "adskilltest")
@@ -4416,6 +4416,8 @@ newduba.cn###jq_youxi
 ||wwilmie.top^
 ||k9u.icu^
 ||shuucerz.com^
+||qwilmiy.top^
+||m51.icu^
 ||rusnuiyu.com^
 ||ndlwtl.icu^
 ||swilmib.top^
