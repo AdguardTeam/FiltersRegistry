@@ -1,9 +1,9 @@
-! Checksum: Ygy0Wj+uNAAE79AEBTr7zw
-! Diff-Path: ../patches/14/14-s-1735036752-3600.patch
+! Checksum: kuYmhRcLu0nSki9G0+IAuQ
+! Diff-Path: ../patches/14/14-s-1735040353-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.20
-! TimeUpdated: 2024-12-24T10:35:22+00:00
+! Version: 2.2.17.21
+! TimeUpdated: 2024-12-24T11:35:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2537,8 +2537,7 @@ cvv.org.br##.camada
 confused.com##body .cnf-cookies_cookie-wall:not(#style_important)
 youtrack.jetbrains.com##.alertContainer_f7cb
 dailymail.co.uk#$#div[data-project="mol-fe-cmp"] { display: none !important; }
-dailymail.co.uk#$#html:not(.allow-scroll) > body { overflow: auto !important; }
-dailymail.co.uk#$#html:not(.allow-scroll) { overflow: auto !important; }
+dailymail.co.uk#$#html[class]:not(.allow-scroll) { overflow: auto !important; }
 milliyet.com.tr#%#//scriptlet('trusted-click-element', '.fc-primary-button.fc-cta-consent')
 enjoyx.com#$#body { overflow-y: auto !important; }
 enjoyx.com#$#body .cookieconsent { display: none !important; }
@@ -33695,6 +33694,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rbc.ru##.article__text > p:has(> strong > a[href^="https://t.me/"])
+rbc.ru##.article__text > div.article__special_container:has(> p > a[href^="https://t.me/"])
 transformernews.ai#%#//scriptlet('trusted-click-element', '.pencraft ._dismissButton_15pnt_13', '!localStorage:pub-1688188-takeover-next-shown-at')
 thesaurus.com###synonym-of-the-day
 ipaidia.gr##.followipaidia
@@ -49881,6 +49882,8 @@ book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 !
 ! SECTION: Self-promo - Regular rules
 !
+inoreader.com##div[id^="promo_dialog_"]
+inoreader.com###black_friday
 mobalytics.gg#?#main > div[class^="m-"]:has(> div[class^="m-"] > #lol-video-all-pages-mobile)
 xgp.pl#%#//scriptlet('set-cookie', 'hpb_closed', '1')
 internxt.com#$?##__next > .group:has(> div[class] > #topBannerActionButton) { display: none !important; }
