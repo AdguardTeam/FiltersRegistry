@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: THdkv5wAntzB5Kpyrc4k6Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1735043929-3600.patch
+! Checksum: aLfmYEkWQbLnZq5+IWj7cg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1735047590-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.65.50
-! TimeUpdated: 2024-12-24T12:31:31+00:00
+! Version: 2.3.65.51
+! TimeUpdated: 2024-12-24T13:31:26+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8113,8 +8113,8 @@ competentedigitale.ro,onehack.us##+js(abort-on-property-write, adregain_wall)
 ! IMPORTANT: Add generichide exception for content blockers to `content-blocker.txt` in the same section
 #$#div[class*=" "][style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"] { display: block !important; }
 !
-fakt.pl,eggnsemulator.com,nintendoswitchroms.net,tvn.pl,halkarz.com,businessinsider.com.pl,learn-japanese-adventure.com,thetvdb.com,aranzulla.it,drikpanchang.com,ettoday.net,smstome.com,tvp.info,medevel.com,abczdrowie.pl,tvn24.pl,nikkei225jp.com,apuntesdeingles.com,cnbeta.com.tw,lidovky.cz,gazeta.pl,animefillerlist.com,i.pl,interia.pl,japan.techinsight.jp,f1-gate.com,dailymail.co.uk#$#body { overflow: visible !important; }
-fakt.pl,eggnsemulator.com,nintendoswitchroms.net,tvn.pl,halkarz.com,businessinsider.com.pl,learn-japanese-adventure.com,thetvdb.com,aranzulla.it,drikpanchang.com,ettoday.net,smstome.com,tvp.info,medevel.com,abczdrowie.pl,tvn24.pl,nikkei225jp.com,apuntesdeingles.com,cnbeta.com.tw,lidovky.cz,gazeta.pl,animefillerlist.com,i.pl,interia.pl,japan.techinsight.jp,f1-gate.com,dailymail.co.uk#$#body div.fc-ab-root:not(#style_important) { display: none !important; }
+meneame.net,fakt.pl,eggnsemulator.com,nintendoswitchroms.net,tvn.pl,halkarz.com,businessinsider.com.pl,learn-japanese-adventure.com,thetvdb.com,aranzulla.it,drikpanchang.com,ettoday.net,smstome.com,tvp.info,medevel.com,abczdrowie.pl,tvn24.pl,nikkei225jp.com,apuntesdeingles.com,cnbeta.com.tw,lidovky.cz,gazeta.pl,animefillerlist.com,i.pl,interia.pl,japan.techinsight.jp,f1-gate.com,dailymail.co.uk#$#body { overflow: visible !important; }
+meneame.net,fakt.pl,eggnsemulator.com,nintendoswitchroms.net,tvn.pl,halkarz.com,businessinsider.com.pl,learn-japanese-adventure.com,thetvdb.com,aranzulla.it,drikpanchang.com,ettoday.net,smstome.com,tvp.info,medevel.com,abczdrowie.pl,tvn24.pl,nikkei225jp.com,apuntesdeingles.com,cnbeta.com.tw,lidovky.cz,gazeta.pl,animefillerlist.com,i.pl,interia.pl,japan.techinsight.jp,f1-gate.com,dailymail.co.uk#$#body div.fc-ab-root:not(#style_important) { display: none !important; }
 !
 korben.info,alternativeto.net##+js(abort-current-script, atob, /googlefc|\.parentNode\.removeChild\(f\)/)
 !
@@ -20053,6 +20053,11 @@ globes.co.il##+js(set-constant, ____ads_js_blocked, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48600
 @@||player.ynet.co.il/*/flowplayer.ads.*.ynet.js$domain=ynet.co.il
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45799
+! https://github.com/AdguardTeam/AdguardFilters/issues/194951
+themarker.com#@#div[data-adunit]
+themarker.com#@#.banner-ad
+themarker.com#$#.advert { height: 1px !important; }
+themarker.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 !+ NOT_PLATFORM(windows, mac, android)
 themarker.com##+js(addEventListener-defuser, load, hblocked?returnTo)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45669
@@ -54255,6 +54260,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/194945
+@@||analytics.analytics-egain.com/onetag/$script,domain=digikey.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195007
 @@||flormar.webinstats.com^$domain=flormar.com.tr
 ! cambabe.video - broken videos
