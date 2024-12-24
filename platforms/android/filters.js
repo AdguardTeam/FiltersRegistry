@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.28",
-			"timeUpdated": "2024-12-24T13:31:09+0000",
+			"version": "2.0.96.29",
+			"timeUpdated": "2024-12-24T14:31:04+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.65.51",
-			"timeUpdated": "2024-12-24T13:31:26+0000",
+			"version": "2.3.65.52",
+			"timeUpdated": "2024-12-24T14:31:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.15",
-			"timeUpdated": "2024-12-23T17:34:34+0000",
+			"version": "2.0.45.16",
+			"timeUpdated": "2024-12-24T14:35:50+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.88",
-			"timeUpdated": "2024-12-24T11:35:05+0000",
+			"version": "2.0.56.89",
+			"timeUpdated": "2024-12-24T14:36:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.17.23",
-			"timeUpdated": "2024-12-24T13:35:44+0000",
+			"version": "2.2.17.24",
+			"timeUpdated": "2024-12-24T14:36:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.53.47",
-			"timeUpdated": "2024-12-24T11:35:22+0000",
+			"version": "2.0.53.48",
+			"timeUpdated": "2024-12-24T14:36:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
