@@ -1,5 +1,5 @@
-! Checksum: brATlzejJzIL+qwbaP2iqw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1734987947-14400.patch
+! Checksum: fQ1TWPvRAp/t0KB7yQEkXA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1735016726-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.83
@@ -81,7 +81,6 @@ doctolib.fr##.MuiModal-root:has([href*="play.google"])
 /^.*/smart-app-banner\..*$/$match-case
 fandom.com##.global-footer__section-fandom-apps
 fandom.com##.global-footer__section-fandom-stores
-||unleashedprepaids.com/mobiquo/smartbanner/
 www.youtube.com###teaser-carousel:has(img[src*="/youtube_kids_"])
 francetvinfo.fr##.o-footer__apps-block
 francetvinfo.fr##.m-app-links
@@ -106,7 +105,6 @@ linkedin.com#$?#body { overflow: auto !important; }
 www.google.*,ipv6.google.com##.g:has(cite:has-text(.it › )):has(a[href*="-"][href$=".html"]:not([href*="://www."], [href*="://m."], [href*="carrefour.it"], [href*="gospesa.it"]))
 www.google.*,ipv6.google.com##.g:has(a[href^="https://books.google."])
 ||fileplanet.com^$document,popup
-||test-iq.org^$document
 windowsreport.com##.code-block
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
 ||majorgeeks.com/images/icons/red_icon_18x17px.png$image
@@ -170,6 +168,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||explorefreeresults.com^$all
 /page/bouncy.php?$all
 ||banquetunarmedgrater.com^$all
+||curryfielddistribution.com^$all
 ||nannyamplify.com^$all
 ||livejasmin.com/*&origin=$document
 /^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
@@ -197,7 +196,6 @@ www.tumblr.com##div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a[
 ://ww6.$document,domain=~ww6.generali.pt
 ://ww7.$document,domain=~ww7.be|~ww7.readsnk.com
 ://ww8.$document,domain=~ww8.co|~ww8.ikea.com|~ww8.tiki.ne.jp|~ww8.erovoice.us|~ww8.anyanime.com|~ww8.bakushpal.az|~ww8.tokyoghoulre.com|~ww8.readonepiece.com
-://ww10.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww12.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww16.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww17.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
@@ -502,6 +500,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[onclick*="twitter.com/share?"]
 ##a[title="Share on Twitter" i]
 ##a[title="Tweet this post"]
+##button[data-href*="twitter.com/share?text="]
 ##div[class=twitterShare i]
 ##li[data-share=twitter]
 ~viber.com##a[href^="viber://forward?text"]
@@ -774,6 +773,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /snowfall.jquery.
 /snowstorm-min.js
 /snowstorm.js
+/snowstorm.min.js
 /christmas-snow.js
 @@||epochtimes.com^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
@@ -850,7 +850,6 @@ www.youtube.com##head:has(meta[property$=":video:url"]) + body div[class$=-gradi
 www.youtube.com#$#.ytp-time-display > span { font-weight: 800 !important; text-shadow: black 0 0 3px !important }
 twe.no#$#div[style*=overlayFadeTo] { --overlayFadeTo: none !important }
 play.max.com##div[class*=Gradient-Beam-]:empty
-www.nrk.no##.nrkno-player-controls__bar::before
 ~imdb.com##.imdb:not(html,body,:empty)
 ~imdb.com##.imdb-rating:not(html,body,:empty)
 ~imdb.com##.btn[href*=".imdb.com"]
@@ -1097,6 +1096,7 @@ $removeparam=REFERRAL_ID
 $removeparam=impradid
 $removeparam=impradname
 Ref=CJ^$document,removeparam=ref
+$document,removeparam=/^source=pepperjam$/
 $removeparam=affil
 $removeparam=cjid
 $removeparam=sv_affiliate_id
@@ -1111,7 +1111,6 @@ $document,removeparam=msid,domain=~rsc.org
 $removeparam=affuid
 $removeparam=icid2
 $removeparam=refclickid
-$removeparam=irclid
 $removeparam=sp_source
 $removeparam=sp_medium
 $removeparam=sp_campaign
@@ -1187,6 +1186,7 @@ $removeparam=CSID
 $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
 $document,removeparam=/^from=kelkoo.*$/
+$removeparam=sClickID
 $removeparam=paid
 $removeparam=pacid
 $removeparam=adtype
@@ -1201,6 +1201,7 @@ $removeparam=af_channel
 $removeparam=af_click_lookback
 $removeparam=af_cost_model
 $removeparam=af_force_deeplink
+$removeparam=af_keyword
 $removeparam=af_referrer_customer_id
 $removeparam=af_referrer_uid
 $removeparam=af_siteid
@@ -1391,7 +1392,6 @@ $removeparam=geniuslink
 ||amazon.$removeparam=store_ref
 ||amazon.$removeparam=lp_asins
 ||amazon.$removeparam=lp_slot
-||amazon.$removeparam=lp_page_asin
 ||amazon.$removeparam=asc_contentid
 ||amazon.$removeparam=visitId
 ||amazon.$removeparam=field-lbr_brands_browse-bin
@@ -1421,6 +1421,7 @@ $removeparam=cstrackid
 ||amazon.$removeparam=hydadcr
 $removeparam=%2AVersion%2A,domain=amazon.*
 $removeparam=%2Aentries%2A,domain=amazon.*
+$removeparam=pldnSite,domain=amazon.*
 $removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
@@ -1772,8 +1773,6 @@ $removeparam=nettype
 ||mp.weixin.qq.com^$removeparam=chksm
 ||mp.weixin.qq.com^$removeparam=count
 ||mp.weixin.qq.com^$removeparam=enterid
-||mp.weixin.qq.com^$removeparam=from_msgid
-||mp.weixin.qq.com^$removeparam=from_itemidx
 ||mp.weixin.qq.com^$removeparam=sessionid
 ||mp.weixin.qq.com^$removeparam=subscene
 $removeparam=report_recomm_player
@@ -1900,7 +1899,6 @@ $removeparam=fm,domain=flipkart.com|shopbop.com
 ||flipkart.com^$removeparam=ssid
 ||flipkart.com^$removeparam=store
 ||flipkart.com^$removeparam=marketplace
-||mozilla.org^$removeparam=redirect_source
 ||fiverr.com^$removeparam=funnel
 ||epicgames.com^$removeparam=epic_affiliate
 ||epicgames.com^$removeparam=epic_gameId
@@ -2218,8 +2216,6 @@ $removeparam=ProspectID,domain=citi.com
 ||patreon.com/posts/$document,removeparam=token
 $document,removeparam=bpli,domain=blogger.com
 ||tempo.co^$document,removeparam=tracking_page_direct
-||trendyol.com^$document,removeparam=link_userID
-||trendyol.com^$document,removeparam=link_contentid
 ||cimri.com^$document,removeparam=platformName
 ||cimri.com^$document,removeparam=offerSponsored
 ||cimri.com^$document,removeparam=offerCount
