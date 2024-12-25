@@ -1,9 +1,9 @@
-! Checksum: NzAXZv+QTkkJ3rKKYsbxSw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1735016725-14400.patch
+! Checksum: cvMXl+B7KHOr8VcXto2jjA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1735103117-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.36
-! TimeUpdated: 2024-12-24T05:01:53+00:00
+! Version: 2.0.20.37
+! TimeUpdated: 2024-12-25T05:01:40+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -519,10 +519,10 @@ filatelisten.se##:is(a[target="_blank"]:not([href^="/"], [href*="filatelisten.se
 filmparadiset.se##.jnews-cookie-law-policy, a[href*="casino"], .custom-html-widget a[target="_blank"]
 filmparadiset.se##.widget_text:has(a[href*="casino"])
 filmtipset.se###topslider-wrapper + .container > .sidebar, .sidebar a[target="_blank"], .sidebar a[href*="casino"], .sidebar a[href*="betting"], .sidebar a[href*="automater"]
-filmtipset.se##.news:has(a[href*="casino"], a[href*="free-spins"])
-filmtipset.se##.news:has-text(casino)
 filmtipset.se##.postmeta em:has-text(/sponsrad/i):upward(.row.news)
 filmtipset.se##.row.news > div[style^="border"]:last-of-type
+filmtipset.se##:is(.news, a[href^="nyhet"]):has-text(/casino|kasino|poker/i)
+filmtipset.se##:is(.news, .outer):has(a[href*="casino"], a[href*="free-spins"])
 filmtopp.se#$#body { overflow:initial!important }
 filmtopp.se##.cooperation-banner__container, .takeover-desktop, .takeover-mobile, #discover-banner
 finanstid.se##a.td-post-category[href*="/category/annons/"]:upward(.td-category-pos-image)
@@ -984,6 +984,8 @@ moviezine.se##.inner_article:has-text(/sponsrat|annons/i)
 musikermagasinet.se##a[href^="/redirect-ad"]
 mygatemagazine.se##.textwidget:has-text(Annons)
 mytaste.se##div[style^="max-width"]:has(div[id^="ad-"])
+mytaste.se##section.ball:has(a[href*="systembolaget.se"])
+mytaste.se##section[data-enter="load_recommended_products"]
 m.yelp.se##div[class^="overlay-color-cohort"]:has(a[aria-label="Download the Yelp app"])
 m.yelp.se#$#html { overflow:unset!important; position:unset!important; }
 naringslivetvgl.se,dalarnasaffarer.se,stockholmsaffarer.se,jamtlandsaffarer.se,hallandsnaringsliv.se,sjuharadsnaringsliv.se###dr-preloader

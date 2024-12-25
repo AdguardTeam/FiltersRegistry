@@ -1,5 +1,5 @@
-! Checksum: eH09YxGTVcUt5M5Qs/kHZw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1735031154-14400.patch
+! Checksum: CXs+xllrNx2mJYEX/oDbUw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1735103117-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.84
@@ -177,9 +177,9 @@ coolrom.com.au,coolrom.com##.download_link
 .avito.www.booking.$all
 ||darknesstrace.com^$all
 ||paddlemoscowsplit.com^$all
+||padsims.com^$all
 /^(https?://)?192\.243\.59\.\d{1,3}(/.*)?$/$document
 cdburnerxp.se##[href*="/downloadsetup.exe"]
-||file2share.co^$all
 ||erothots.co^$all
 |http://www6.$document,domain=~often-used-in-malware-redirections.*
 .aspx?iid=*&cid=$all
@@ -195,7 +195,6 @@ www.tumblr.com##div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a[
 ://ww5.$document,domain=~ww5.ikea.com|~ww5.msu.ac.zw
 ://ww6.$document,domain=~ww6.generali.pt
 ://ww7.$document,domain=~ww7.be|~ww7.readsnk.com
-://ww8.$document,domain=~ww8.co|~ww8.ikea.com|~ww8.tiki.ne.jp|~ww8.erovoice.us|~ww8.anyanime.com|~ww8.bakushpal.az|~ww8.tokyoghoulre.com|~ww8.readonepiece.com
 ://ww12.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww16.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
 ://ww17.$document,domain=~practically-always-leads-to-a-domain-parking-service-known-for-malware.*
@@ -228,6 +227,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.article__share:not(html,body,:empty)
 ##.btn--facebook:not(html,body,:empty)
 ##.btn-google-plus:not(html,body,:empty)
+##.btn-messenger:not(html,body,:empty)
 ##.btn-share:not(html,body,:empty)
 ##.btn-tweet:not(html,body,:empty)
 ##.button--share:not(html,body,:empty)
@@ -878,7 +878,6 @@ $removeparam=yclid
 $removeparam=gclid
 $removeparam=fbclid
 $removeparam=_openstat
-$removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
 $removeparam=aiad_clid
@@ -1104,6 +1103,7 @@ $removeparam=sv_affiliate_id
 $removeparam=sv_campaign_id
 $document,removeparam=/^sv_tax.*$/
 $document,removeparam=/^icid_.*$/
+$removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
 $removeparam=afflid
 $document,removeparam=maid
@@ -1121,7 +1121,6 @@ $document,removeparam=/^cid_.*$/
 $removeparam=depth_1-utm_source
 $removeparam=cmp_id
 $removeparam=adg_id
-$removeparam=ldtag_cl
 $removeparam=vero_conv
 $removeparam=vero_id
 $removeparam=a_aid
@@ -1260,6 +1259,7 @@ $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
+$removeparam=belboon
 $removeparam=channable
 $removeparam=int_source
 $removeparam=int_medium
@@ -1301,6 +1301,7 @@ $removeparam=b_campaign
 $removeparam=gad_source
 $removeparam=ga_vid
 $removeparam=ga_sid
+$removeparam=ttd_puid
 $removeparam=partner_device_id
 $removeparam=google_hm
 $removeparam=piggybackCookie
@@ -1327,7 +1328,6 @@ $removeparam=_rand
 $removeparam=dsp_uid
 $removeparam=cs_xi
 $removeparam=pn_id
-$removeparam=adsafe_url
 $removeparam=mt_uuid
 $removeparam=_rlid
 $removeparam=ga_fc
@@ -1337,7 +1337,6 @@ $removeparam=b_id
 $removeparam=kltstamp
 $removeparam=dspUserId
 $removeparam=tpmn_buid
-$removeparam=adsafe_type
 $removeparam=variationId
 $removeparam=beeswax_id
 $removeparam=_gfid
@@ -1352,7 +1351,6 @@ $removeparam=ucf_user_id
 $removeparam=yandexuid
 $removeparam=google_nid
 $removeparam=cbuster
-$removeparam=adsafe_jsinfo
 $removeparam=ex-src
 $document,removeparam=uid_bam
 $removeparam=pv_ts
@@ -1513,7 +1511,6 @@ $removeparam=cmpgn,domain=ebay.*
 ||ebay.$removeparam=segname
 ://www.ebay.$document,removeparam=/^itm[a-zA-Z0-9].*$/
 $removeparam=hc_ref
-$removeparam=hc_location
 $removeparam=sfnsn
 ?*__$~xmlhttprequest,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
@@ -1523,6 +1520,7 @@ $removeparam=privacy_mutation_token
 $~xmlhttprequest,removeparam=/^refsrc=.*$/i
 $removeparam=_rdr
 $document,removeparam=_ft_
+$removeparam=m_entstream_source
 $removeparam=referral_code,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=referral_story_type,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=_nc_cat,domain=~instagram.com
@@ -1594,7 +1592,6 @@ $removeparam=share_app_id
 $removeparam=share_item_id
 $removeparam=share_link_id
 ||tiktok.com^$~xmlhttprequest,removeparam=referer_video_id
-||tiktok.com^$~xmlhttprequest,removeparam=refer
 ||tiktok.com^$removeparam=checksum
 ||tiktok.com^$removeparam=sec_uid
 ||tiktok.com^$removeparam=share_author_id
@@ -1979,6 +1976,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
+||dw.com^$removeparam=maca
 ||fiverr.com^$removeparam=bta
 ||fiverr.com^$removeparam=afp
 ||fiverr.com^$removeparam=cxd_token
@@ -2006,6 +2004,7 @@ $removeparam=brand,domain=cyberghostvpn.com|privateinternetaccess.com
 ||zhihu.com^$removeparam=hybrid_search_source
 ||zhihu.com^$removeparam=hybrid_search_extra
 ||theregister.com^$removeparam=td
+||feedspot.com^$removeparam=_src
 $removeparam=plink,domain=audible.*
 ||startpage.$removeparam=segment
 ||netflix.com^$removeparam=trackId
@@ -2171,7 +2170,6 @@ $removeparam=qid,domain=bookdepository.com|eastday.com
 ||typeform.com^$removeparam=typeform-source
 $removeparam=_1lr
 $removeparam=ymid
-$removeparam=ad_sub,domain=homo.xxx
 ||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
@@ -2190,7 +2188,7 @@ $removeparam=caniuse_source,document
 $removeparam=afSmartRedirect
 ||wsj.com^$removeparam=st
 ||linkedin.com/feed/update$removeparam=origin
-||geoguessr.com/join/$document,domain=geoguessr.com,removeparam=s
+$document,removeparam=plcmt,domain=grafana.com
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||gitlab.$removeparam=ref_type
@@ -2294,6 +2292,7 @@ $document,removeparam=maltcode,domain=gamestop.com|ubisoft.com|steampowered.com
 ||walmart.com/ip/$document,removeparam=from
 $document,domain=youtube.com,removeparam=embeds_referring_origin
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
+$removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 ||hotels.com^$removeparam=referrerUrl
@@ -2356,6 +2355,7 @@ foodora.*#$#.page-wrapper.order-component { margin-top: 128px !important }
 foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 @@/favicon.ico|
 @@/favicon1.ico|
+@@/doubleclick.ico|
 @@://adserver.adtech.advertising.
 www.youtube.com##.ytd-watch-flexy #dismissible:has(.badge-style-type-simple)
 www.youtube.com##ytd-video-renderer ~ ytd-shelf-renderer[thumbnail-style]
