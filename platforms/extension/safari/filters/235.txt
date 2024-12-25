@@ -1,9 +1,9 @@
-! Checksum: lacL/ZAjFsDyaj7qOAvyUQ
-! Diff-Path: ../patches/235/235-s-1735088739-14400.patch
+! Checksum: Zb6jGDX2NmPU2HjZQGANIg
+! Diff-Path: ../patches/235/235-s-1735146365-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.21
-! TimeUpdated: 2024-12-25T01:01:31+00:00
+! Version: 2.0.5.22
+! TimeUpdated: 2024-12-25T17:01:47+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: PersianBlocker
@@ -363,6 +363,11 @@ anaj.ir,salamatnews.com#%#//scriptlet('ubo-set.js', 'document.referrer', 'undefi
 @@||cdn.yektanet.com/fonts/$font,third-party,domain=fararu.com|gostaresh.news
 @@||yektanet.com/static/vast-client.js^$script,third-party,domain=fararu.com|gostaresh.news
 @@||yektanet.com/static/silvermine-videojs-quality-selector.min.js^$script,third-party,domain=fararu.com|gostaresh.news
+! https://yek.link/hamdam, https://sales.yek.link/
+||api.yek.link/api/landing/click^$xmlhttprequest,~third-party
+||api.yeklinks.ir/api/landing/click^$xmlhttprequest,third-party
+||api.yeklinks.ir/api/domain/*/view^$xmlhttprequest,third-party
+||sentry.yektanet.tech^
 ||yekbux.com^
 ! >> Z <<
 ||zarad.net^
@@ -2616,8 +2621,6 @@ webgoo.ir##.left-block-top
 ! >> X <<
 xip.li#%#//scriptlet('ubo-set.js', 'count', '0')
 ! >> Y <<
-! Tracking on custom pages
-||api.yek.link/api/domain/*/view^$xmlhttprequest,~third-party,method=options|post
 ! https://github.com/MasterKia/PersianBlocker/issues/175
 youc.ir##.stream-item
 youc.ir##.widget > .widget-title:has-text(تبلیغات):upward(.widget)
