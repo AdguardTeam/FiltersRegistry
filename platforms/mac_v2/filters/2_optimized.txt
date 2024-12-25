@@ -1,9 +1,9 @@
-! Checksum: 8G1DJMB8cC0zUbGKMpbFuw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1735141259-3600.patch
+! Checksum: S/433PV6Dv59TkWJ7qf1tg
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1735144710-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.65.63
-! TimeUpdated: 2024-12-25T15:31:27+00:00
+! Version: 2.3.65.64
+! TimeUpdated: 2024-12-25T16:31:27+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -16,6 +16,7 @@
 #%#var AG_abortOnPropertyRead=function(a,b){var c=Math.random().toString(36).substr(2,8);AG_defineProperty(a,{beforeGet:function(){b&&console.warn("AdGuard aborted property read: "+a);throw new ReferenceError(c);}});var d=window.onerror;window.onerror=function(e){if("string"===typeof e&&-1!==e.indexOf(c))return b&&console.warn("AdGuard has caught window.onerror: "+a),!0;if(d instanceof Function)return d.apply(this,arguments)}};
 #%#var AG_abortInlineScript=function(g,b,c){var d=function(){if("currentScript"in document)return document.currentScript;var a=document.getElementsByTagName("script");return a[a.length-1]},e=Math.random().toString(36).substr(2,8),h=d();AG_defineProperty(b,{beforeGet:function(){var a=d();if(a instanceof HTMLScriptElement&&a!==h&&""===a.src&&g.test(a.textContent))throw c&&console.warn("AdGuard aborted execution of an inline script"),new ReferenceError(e);}});var f=window.onerror;window.onerror=function(a){if("string"===typeof a&&-1!==a.indexOf(e))return c&&console.warn("AdGuard has caught window.onerror: "+b),!0;if(f instanceof Function)return f.apply(this,arguments)}};
 #%#var AG_setConstant=function(e,a){if("undefined"===a)a=void 0;else if("false"===a)a=!1;else if("true"===a)a=!0;else if("noopFunc"===a)a=function(){};else if("trueFunc"===a)a=function(){return!0};else if("falseFunc"===a)a=function(){return!1};else if(/^\d+$/.test(a)){if(a=parseFloat(a),isNaN(a)||32767<Math.abs(a))return}else return;var b=!1;AG_defineProperty(e,{get:function(){return a},set:function(c){if(b)var d=!0;else void 0!==c&&void 0!==a&&typeof c!==typeof a&&(b=!0),d=b;d&&(a=c)}})};
+||server.megabrain.co^
 ||cf.adxcel.com^
 ||cda7k-ddok.com^
 ||sat.cellordion3.net^
@@ -5416,6 +5417,7 @@ mako.co.il##div.ad
 !+ NOT_OPTIMIZED
 hometheater.co.il##td[width="900"][align="center"][valign="top"]
 mako.co.il#%#//scriptlet('set-constant', 'isBs', 'false')
+prothomalo.com##.bottom-space div[style^="height:"]:has(> iframe.row-widget)
 kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '300x600')
 kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '650x80')
 kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x60')
