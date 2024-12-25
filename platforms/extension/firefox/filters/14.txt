@@ -1,9 +1,9 @@
-! Checksum: bg7DnA/wpIvDfoJv3/cyfw
-! Diff-Path: ../patches/14/14-s-1735144685-3600.patch
+! Checksum: hnRi/a4/8Kgg4MOoBvy9sw
+! Diff-Path: ../patches/14/14-s-1735148430-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.33
-! TimeUpdated: 2024-12-25T16:34:20+00:00
+! Version: 2.2.17.34
+! TimeUpdated: 2024-12-25T17:36:01+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2517,6 +2517,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+tgsoft.it#%#//scriptlet('trusted-set-cookie', 'cookie_google', '1')
 senecalearning.com##div[class^="Layout-module--"] > div[class^="Toast-module--"]:has(> a[href$="cookie-policy"])
 cryptorank.io###footer + div.sc-3e540587-0
 linztourismus.at#%#//scriptlet('trusted-click-element', '.f__privacy-cookie-manager__actions a[href="privacymanager/acceptOnlyFunctional"]')
@@ -32127,7 +32128,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! SECTION: Popups - Allowlist
 !
 ! https://github.com/uBlockOrigin/uAssets/issues/26606
-!+ PLATFORM(ext_ff)
+!+ PLATFORM(ext_ff, ext_ublock)
 @@||inducks.org^$permissions=identity-credentials-get=()
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193384
 @@||fregat.com/wp-content/plugins/popup-maker/assets/js/site.min.js
