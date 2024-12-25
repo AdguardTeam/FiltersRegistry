@@ -1,9 +1,9 @@
-! Checksum: 498Bgc9fe6U3AJGGkqM/Ng
-! Diff-Path: ../patches/14/14-s-1735148435-3600.patch
+! Checksum: ZSbKett0SO4mHL/qh83aJA
+! Diff-Path: ../patches/14/14-s-1735151967-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.34
-! TimeUpdated: 2024-12-25T17:36:01+00:00
+! Version: 2.2.17.35
+! TimeUpdated: 2024-12-25T18:35:34+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2517,6 +2517,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+infoyatirim.com#$##modal-cookie-policy { display: none !important; }
+infoyatirim.com#$#.modal-backdrop { display: none !important; }
+infoyatirim.com#$#.modal-open { overflow: auto !important; }
 tgsoft.it#%#//scriptlet('trusted-set-cookie', 'cookie_google', '1')
 senecalearning.com##div[class^="Layout-module--"] > div[class^="Toast-module--"]:has(> a[href$="cookie-policy"])
 cryptorank.io###footer + div.sc-3e540587-0
@@ -3394,8 +3397,8 @@ lemanapro.ru##div[data-qa="cookie-notification"]
 tjpr.jus.br###politica-privacidade-tjpr
 cuvva.com###cuvva-app-injection-site > div:has(> div button[data-testid="accept-cookies"])
 sheepesports.com##body > .fixed.bottom-0.right-0:has(> .border > .flex > p.text-sm > a[href="/terms"])
-hornet.com#%#//scriptlet('set-cookie', '_consent_ads', '0')
-hornet.com#%#//scriptlet('set-cookie', '_consent_analytics', '0')
+hornetapp.com,hornet.com#%#//scriptlet('set-cookie', '_consent_ads', '0')
+hornetapp.com,hornet.com#%#//scriptlet('set-cookie', '_consent_analytics', '0')
 airstop.sk,airstop.cz,airstop.pl#$#body[style^="overflow:"] { overflow: auto !important; }
 airstop.sk,airstop.cz,airstop.pl#$#div[class^="cookiebar"] { display: none !important; }
 moss.co.uk,international.mossbros.com#%#//scriptlet('trusted-set-cookie', 'consent_acceptance', '{"functionality_storage":"granted","security_storage":"granted","ad_personalization":"denied","ad_user_data":"denied","personalization_storage":"denied","ad_storage":"denied","analytics_storage":"denied"}')
@@ -32064,6 +32067,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! SECTION: Popups - Allowlist
 !
 ! https://github.com/uBlockOrigin/uAssets/issues/26606
+! TODO: remove when FireFox will support `permissions`
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193384
 @@||fregat.com/wp-content/plugins/popup-maker/assets/js/site.min.js
 ! ttk-com.ru - fix software order
@@ -40931,6 +40935,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+yatirimnedir.com##.container > div.row:has(> div.col-lg-12 > div.card-shadow > div.text-center > a[href^="https://play.google.com/store/apps/"])
 g-mh.org,godamh.com,manhuafree.com###PwaBarButton
 wzstats.gg##app-download-app-banner
 bing.com###id_mobpoppos
@@ -41837,10 +41842,10 @@ tokyo-calendar.jp#?#.sub-contents > div.sidebar-panel:has(> div > img[alt="東�
 tokyo-calendar.jp#?#.sub-contents > div.sidebar-panel:has(> div > img[alt="東京カレンダーアプリ"]) + div.app-dl-buttons
 androeed.ru##.our_app
 medicalnote.jp##.p-app-area
-hornet.com##.homepage__form > h3.homepage__form-title
-hornet.com##.homepage__form > h3.homepage__form-title + div.app-store-badges
-hornet.com##.homepage__last-cta
-hornet.com##.app-download-cta
+hornetapp.com,hornet.com##.homepage__form > h3.homepage__form-title
+hornetapp.com,hornet.com##.homepage__form > h3.homepage__form-title + div.app-store-badges
+hornetapp.com,hornet.com##.homepage__last-cta
+hornetapp.com,hornet.com##.app-download-cta
 m.yicai.com##.linkapp
 m.yicai.com###appdownload
 ranker.com##div[class^="container_innerContainer__"] > a[href^="https://go.watchworthy.app/"]

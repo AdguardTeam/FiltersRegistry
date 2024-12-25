@@ -1,9 +1,9 @@
-! Checksum: fbiMeUZH7AGOWXiXRbSScg
-! Diff-Path: ../patches/18/18-s-1735148421-3600.patch
+! Checksum: +paaeGrYgLozgeLs7y1PAw
+! Diff-Path: ../patches/18/18-s-1735151952-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.53.55
-! TimeUpdated: 2024-12-25T17:36:08+00:00
+! Version: 2.0.53.56
+! TimeUpdated: 2024-12-25T18:35:40+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2517,6 +2517,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+infoyatirim.com#$##modal-cookie-policy { display: none !important; }
+infoyatirim.com#$#.modal-backdrop { display: none !important; }
+infoyatirim.com#$#.modal-open { overflow: auto !important; }
 tgsoft.it#%#//scriptlet('trusted-set-cookie', 'cookie_google', '1')
 senecalearning.com##div[class^="Layout-module--"] > div[class^="Toast-module--"]:has(> a[href$="cookie-policy"])
 cryptorank.io###footer + div.sc-3e540587-0
@@ -3394,8 +3397,8 @@ lemanapro.ru##div[data-qa="cookie-notification"]
 tjpr.jus.br###politica-privacidade-tjpr
 cuvva.com###cuvva-app-injection-site > div:has(> div button[data-testid="accept-cookies"])
 sheepesports.com##body > .fixed.bottom-0.right-0:has(> .border > .flex > p.text-sm > a[href="/terms"])
-hornet.com#%#//scriptlet('set-cookie', '_consent_ads', '0')
-hornet.com#%#//scriptlet('set-cookie', '_consent_analytics', '0')
+hornetapp.com,hornet.com#%#//scriptlet('set-cookie', '_consent_ads', '0')
+hornetapp.com,hornet.com#%#//scriptlet('set-cookie', '_consent_analytics', '0')
 airstop.sk,airstop.cz,airstop.pl#$#body[style^="overflow:"] { overflow: auto !important; }
 airstop.sk,airstop.cz,airstop.pl#$#div[class^="cookiebar"] { display: none !important; }
 moss.co.uk,international.mossbros.com#%#//scriptlet('trusted-set-cookie', 'consent_acceptance', '{"functionality_storage":"granted","security_storage":"granted","ad_personalization":"denied","ad_user_data":"denied","personalization_storage":"denied","ad_storage":"denied","analytics_storage":"denied"}')
