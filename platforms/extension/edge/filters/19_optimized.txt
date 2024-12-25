@@ -1,9 +1,9 @@
-! Checksum: CaRnFSb6/I4CKZPiMNneSw
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1735094262-3600.patch
+! Checksum: pKO0NXmonMfjERjFeEfliw
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1735119610-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.47.65
-! TimeUpdated: 2024-12-24T12:34:44+00:00
+! Version: 2.0.47.66
+! TimeUpdated: 2024-12-25T09:36:27+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -31,6 +31,8 @@ music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 [$path=/video]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'throwFunc')
 afisha.yandex.*#%#//scriptlet('prevent-eval-if', 'bidReqIdStr')
 docviewer.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.Rtb')
+mail.yandex.*##div[class^="RightColumn-m__root--"]
+mail.yandex.*##.message-list-banner-portal + div[class][id]:has(> div:empty)
 mail.yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 tv.yandex.*#%#//scriptlet('json-prune', 'rtb')
