@@ -1,9 +1,9 @@
-! Checksum: BPYcs5BUApKemDuh/MSvtA
-! Diff-Path: ../patches/7/7-s-1735216717-3600.patch
+! Checksum: gkEyg320HQnXGQU9wQnbkw
+! Diff-Path: ../patches/7/7-s-1735234662-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.68
-! TimeUpdated: 2024-12-26T12:34:30+00:00
+! Version: 2.0.60.69
+! TimeUpdated: 2024-12-26T17:33:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -543,8 +543,9 @@ gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188965
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
+$image,redirect-rule=32x32-transparent.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] { pointer-events: none !important; }
+exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
 @@||daotag.com/tag/$script,domain=exploader.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181591
 iwb.jp#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(a).height')

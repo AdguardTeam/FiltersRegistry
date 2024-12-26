@@ -1,10 +1,15 @@
-! Checksum: yDYA2SnsBNSDwm4cN29EeA
+! Checksum: 6Em6/Rtx+xPK1crWgbE38Q
 ! Title: AdGuard Quick Fixes filter (Optimized)
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.5.44
-! TimeUpdated: 2024-12-26T16:35:28+00:00
+! Version: 2.0.5.45
+! TimeUpdated: 2024-12-26T17:34:25+00:00
 ! Expires: 10 days (update frequency)
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
+smallville.fandom.com##.page__right-rail
+genius.com##div[class^="SidebarAd-"]
+genius.com##div[class^="InreadContainer-"]
+genius.com##div[class^="DfpAd-"]
+||sentinelbi.com^
 disney--games.com##div[class$=-responsive-wrapper]
 getcomics.org##a[target="_blank"][class="center"] > img
 dramafren.com#%#//scriptlet('prevent-eval-if', '/fairAdblock|chp_?adblock|adsbygoogle\.js/')
@@ -91,7 +96,7 @@ vk.com,vk.ru#?##feed_rows > div.feed_row:has(.PostHeaderSubtitle__item:contains(
 vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div.page_block .PostHeaderSubtitle__item > span:not([class]):contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
 vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Реклама в сообществе))
 ||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] { pointer-events: none !important; }
+exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
 japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/^navpromo/', 'abort')
 japscan.lol#@%#//scriptlet('remove-node-text', 'script', 'Roiyehe')
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0.1 !important; }

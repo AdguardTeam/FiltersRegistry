@@ -1,9 +1,9 @@
-! Checksum: 9EM0NkZm35SaAYPztkpp4A
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1735216723-3600.patch
+! Checksum: CAbxxNQQd1wiIYaKjy9aQQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1735234668-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.68
-! TimeUpdated: 2024-12-26T12:34:30+00:00
+! Version: 2.0.60.69
+! TimeUpdated: 2024-12-26T17:33:57+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -421,8 +421,9 @@ $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 @@||wiki.yjsnpi.nu^$generichide
 gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||kuji.xth.jp/ad-x-check.js
+$image,redirect-rule=32x32-transparent.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
-exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] { pointer-events: none !important; }
+exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
 @@||daotag.com/tag/$script,domain=exploader.net
 iwb.jp#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(a).height')
 kotobank.jp#%#//scriptlet('prevent-setTimeout', 'return')
