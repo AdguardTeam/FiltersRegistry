@@ -32,6 +32,15 @@
 !
 ! NOTE: 26-12-2024
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195052
+chehov-vid.ru##.container-fluid > div#events
+chehov-vid.ru##div[id^="unit_"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/194873
+telepolis.pl##.banner
+! https://github.com/AdguardTeam/AdguardFilters/issues/195056
+territorioese.com##.ad
+! https://github.com/AdguardTeam/AdguardFilters/issues/195057
+docviewer.yandex.*##div[class^="pages_"] > div[class][id]:has(> div[class] + div[style="position: absolute; display: none; visibility: hidden; width: 0px; height: 0px;"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195269
 @@||html-load.com^$script,domain=wort-suchen.de
 !
@@ -81,7 +90,7 @@ forums.redflagdeals.com###primisContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194609
 ||s3-iad-ww.cf.videorolls.row.aiv-cdn.net^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195118
-pvpoke-re.com#%#//scriptlet('prevent-setTimeout', 'ad_blocker')
+pvpoke-re.com#%#//scriptlet('prevent-setTimeout', '/ad_blocker|checkMyBlock/')
 pvpoke-re.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=pvpoke-re.com
@@ -384,8 +393,8 @@ vk.com,vk.ru#?##feed_rows > div.feed_row:has(.PostHeaderSubtitle__item:contains(
 vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div.page_block .PostHeaderSubtitle__item > span:not([class]):contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
 vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Реклама в сообществе))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
-exploader.net#%#//scriptlet('spoof-css', 'article > div[style*="1120px"] > div', 'display', 'flex')
-exploader.net#$#article > div[style*="1120px"] > div { display: none !important; }
+||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
+exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] { pointer-events: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189567
 japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/^navpromo/', 'abort')
 japscan.lol#@%#//scriptlet('remove-node-text', 'script', 'Roiyehe')

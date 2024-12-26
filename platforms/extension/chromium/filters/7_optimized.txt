@@ -1,9 +1,9 @@
-! Checksum: GUqrml6Ko8Rz37wXL7Jr7Q
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1735205914-3600.patch
+! Checksum: dOPS5dxHj2PzawPapDK2eg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1735209429-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.66
-! TimeUpdated: 2024-12-26T09:34:50+00:00
+! Version: 2.0.60.67
+! TimeUpdated: 2024-12-26T10:33:12+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -396,7 +396,7 @@
 ||kok.eroterest.net^
 ||ad-hatena.com^
 ||advert.punyu.com^
-pvpoke-re.com#%#//scriptlet('prevent-setTimeout', 'ad_blocker')
+pvpoke-re.com#%#//scriptlet('prevent-setTimeout', '/ad_blocker|checkMyBlock/')
 pvpoke-re.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||pixnest.pipio.site/adblock.js
 pixnest.pipio.site#%#//scriptlet('abort-on-property-write', 'checkAdIframe')
@@ -421,8 +421,8 @@ $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 @@||wiki.yjsnpi.nu^$generichide
 gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||kuji.xth.jp/ad-x-check.js
-exploader.net#%#//scriptlet('spoof-css', 'article > div[style*="1120px"] > div', 'display', 'flex')
-exploader.net#$#article > div[style*="1120px"] > div { display: none !important; }
+||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
+exploader.net#$#a[style*="display:"][href^="https://al.dmm.co.jp"] { pointer-events: none !important; }
 @@||daotag.com/tag/$script,domain=exploader.net
 iwb.jp#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(a).height')
 kotobank.jp#%#//scriptlet('prevent-setTimeout', 'return')
@@ -447,7 +447,6 @@ jprime.jp#$#.image-area { opacity: 1 !important; pointer-events: auto !imortant;
 jprime.jp#$#.js-article-wrap .article-body { opacity: 1 !important; pointer-events: auto !imortant; filter: none !important; }
 blog.2nt.com#@#.AdSense
 ||nazology.kusuguru.co.jp/wp-content/themes/*/js/adb/
-pvpoke-re.com##body > div[id][style*="9999"][style*="fixed"]
 j-basketball.club##ins.adsbygoogle[data-ad-slot]
 best-hit.tv,h178.com,jukenbbs.com,j-baseball.club,j-basketball.club##body div[class^="substitute-"][style="display: block !important;"]
 best-hit.tv,h178.com,j-baseball.club,j-basketball.club,jukenbbs.com###gStickyAd
@@ -1317,6 +1316,7 @@ city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.iko
 city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+game.yomipo.yomiuri.co.jp##.c-modal-light-score__ad-frame
 books.j-cast.com##div[style^="display: flex; align-items: center; justify-content: space-around; margin: 2rem 0;"]
 autoby.jp##.gam
 autoby.jp###pc_home_header

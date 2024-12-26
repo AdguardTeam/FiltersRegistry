@@ -1,9 +1,9 @@
-! Checksum: FJQn5bVxJbXFUszhifQXlA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1735180673-3600.patch
+! Checksum: 7ax+f1ngw2EGT51Gh8QnXA
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1735209468-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.96.29
-! TimeUpdated: 2024-12-24T14:31:04+00:00
+! Version: 2.0.96.30
+! TimeUpdated: 2024-12-26T10:31:12+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -2414,8 +2414,7 @@ music.yandex.*##.sidebar__placeholder .teaser ~ div
 disk.yandex.*##.direct
 ||docviewer.yandex.*/sw.js
 docviewer.yandex.*#%#//scriptlet('json-prune', 'seatbid rtbAuctionInfo')
-docviewer.yandex.*##.js-doc-html > div[class^="pages_"] > div[class*=" "]:empty
-docviewer.yandex.*##div[class^="pages_"] > div > div[style="width: 100%;"]
+docviewer.yandex.*##div[class^="pages_"] > div[class][id]:has(> div[class] + div[style="position: absolute; display: none; visibility: hidden; width: 0px; height: 0px;"])
 ||mail.yandex.*/*/*/*/*$replace=/.*"adIds":.*"imptrackers":.*//,xmlhttprequest,domain=mail.yandex.*
 mail.yandex.*##div[class*="disableAdsContainer"]
 rasp.yandex.*##.Direct
