@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.31",
-			"timeUpdated": "2024-12-26T11:31:07+0000",
+			"version": "2.0.96.32",
+			"timeUpdated": "2024-12-26T15:31:11+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.65.74",
-			"timeUpdated": "2024-12-26T13:32:33+0000",
+			"version": "2.3.65.75",
+			"timeUpdated": "2024-12-26T15:31:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.78.2",
-			"timeUpdated": "2024-12-26T14:33:58+0000",
+			"version": "2.0.78.3",
+			"timeUpdated": "2024-12-26T15:37:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.96",
-			"timeUpdated": "2024-12-26T12:34:37+0000",
+			"version": "2.0.56.97",
+			"timeUpdated": "2024-12-26T15:37:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/16_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.80",
-			"timeUpdated": "2024-12-26T10:33:35+0000",
+			"version": "2.0.48.81",
+			"timeUpdated": "2024-12-26T15:38:04+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -1657,8 +1657,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.28.57",
-			"timeUpdated": "2024-12-26T13:41:20+0000",
+			"version": "2.1.28.58",
+			"timeUpdated": "2024-12-26T15:38:16+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
