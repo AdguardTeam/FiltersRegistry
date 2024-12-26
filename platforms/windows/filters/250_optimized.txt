@@ -1,5 +1,5 @@
-! Checksum: C8yVBaBIerCnWr8eR2I82Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1735103148-14400.patch
+! Checksum: uaAenfWPkdlV/OuKUs1uiw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1735189538-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.84
@@ -10,7 +10,6 @@
 ###app-promo
 ###download-app-banner
 ###smart-banner
-###smartbanner
 ##.app-banner:not(html,body,:empty)
 ##.app-btn:not(html,body,:empty)
 ##.app-cta:not(html,body,:empty)
@@ -19,10 +18,12 @@
 ##.app-nag-body:not(html,body,:empty)
 ##.app-nag:not(html,body,:empty)
 ##.app-teaser:not(html,body,:empty)
+##.app__banner:not(html,body,:empty)
 ##.appBanner:not(html,body,:empty)
 ##.AppBanner:not(html,body,:empty)
 ##.appdownload:not(html,body,:empty)
 ##.appPromo:not(html,body,:empty)
+##.banner-apps:not(html,body,:empty)
 ##.download-app-banner:not(html,body,:empty)
 ##.download-app:not(html,body,:empty)
 ##.download_app:not(html,body,:empty)
@@ -50,6 +51,7 @@
 ##div[class^=mobile-upsell]
 ##div[id*=smart-banner i]
 ##div[id*=smartbanner i]
+##smart-banner
 ~macgamestore.com##.get-the-app:not(html,body,:empty)
 adguard.com##.sidebar-download
 bilibili.com##.nav-link-item a[href$="app.bilibili.com"]
@@ -1164,6 +1166,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[title="Share on Telegram" i]
 ##a[title="Share on WhatsApp" i]
 ##a[title^="Share to "]
+##amedia-share
 ##amp-social-share
 ##button[aria-controls=ShareContainer]
 ##button[data-a-target^=share]
@@ -1474,7 +1477,6 @@ volunteermatch.org###window_overlay
 dev.mysql.com##.login-callout
 investing.com###PromoteSignUpPopUp
 context.reverso.net###register-popup-bottom
-vg.no###comments
 ||comment.youmaker.com^$domain=theepochtimes.com
 ||viafoura.co^$domain=nottinghampost.com|liverpoolecho.co.uk
 indiatimes.com##div[class$="cmtwrapper "]
@@ -1636,7 +1638,6 @@ reports.adguard.com$badfilter
 @@||easylist.to/*.txt^
 @@||someonewhocares.org/hosts/
 @@||fanboy.co.nz/*.txt^
-thenews.com.pk##a[href$="/prayer-time"]
 ahaber.com.tr##.menu-timer
 bloombergquint.com#%#//scriptlet('ubo-acis.js', 'document.oncopy')
 bloombergquint.com#%#//scriptlet('ubo-aopr.js', 'getSelection')
@@ -1778,6 +1779,7 @@ $removeparam=iradid
 $removeparam=irpid
 $removeparam=iradtype
 $removeparam=irmptype
+$removeparam=mp_value1
 $removeparam=email_work_card
 $removeparam=tracking_source
 $~image,removeparam=itok
@@ -1881,7 +1883,6 @@ $removeparam=affname
 $removeparam=MID,domain=~media-cdn.costco.*|~community.arubanetworks.com
 $removeparam=srnd
 $document,removeparam=/^bsft_.*$/
-$document,removeparam=/^dpg_.*$/
 $document,removeparam=/^adjust.*$/,domain=~adj.st
 $document,removeparam=elq,domain=~comcast.com|~comcastforbusiness.com
 $document,removeparam=elqaid,domain=~comcast.com|~comcastforbusiness.com
@@ -1959,6 +1960,7 @@ $removeparam=vero_id
 $removeparam=a_aid
 $removeparam=otracker
 $removeparam=ref_source
+$removeparam=ref_campaign
 $removeparam=spMailingID
 $removeparam=spUserID
 $removeparam=spJobID
@@ -2416,6 +2418,7 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||tiktok.com^$removeparam=_r
 $removeparam=u_code
 $removeparam=sender_device
+$removeparam=sender_web_id
 ||tiktok.com^$removeparam=_d
 ||tiktok.com^$removeparam=tt_from
 ||tiktok.com^$removeparam=preview_pb
@@ -2486,7 +2489,6 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=sa
 ||baidu.com^$removeparam=params_ssrt
 ||baidu.com^$removeparam=t_kt
-||m.baidu.com^$removeparam=from
 ||baidu.com^$removeparam=vit
 ||baidu.com^$removeparam=lm
 ||baidu.com^$removeparam=od
@@ -2634,7 +2636,6 @@ $removeparam=article_url,domain=shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
-$removeparam=sm12
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=token,domain=al.to|combat.pl|x-kom.pl
 $removeparam=nid,domain=columbia.com|columbiasportswear.*|sorel.com
@@ -2658,7 +2659,6 @@ $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|disc
 ||apple.com^$removeparam=fnode
 ||epidemicsound.com^$removeparam=_us
 ||epidemicsound.com^$removeparam=_usx
-||microsoft.com^$removeparam=headerid
 ||babbel.com^$removeparam=bsc
 ||babbel.com^$removeparam=btp
 ||microsoft.com^$removeparam=destrt
@@ -2722,7 +2722,6 @@ $removeparam=ref_ctx_id
 $removeparam=ssdcat,domain=norton.com|ask.com
 ||cdninstagram.com^$removeparam=ccb
 ||cdninstagram.com^$removeparam=efg
-$removeparam=content,domain=1sol.io|bybit.com|coinpanel.com|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|runnode.com|t.me|twitter.com|x.com|youtube.com
 $removeparam=fm,domain=flipkart.com|shopbop.com
 ||flipkart.com^$removeparam=ppn
 ||flipkart.com^$removeparam=ppt
@@ -2809,6 +2808,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
+$removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||dw.com^$removeparam=maca
 ||fiverr.com^$removeparam=bta
 ||fiverr.com^$removeparam=afp
@@ -2881,6 +2881,7 @@ $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=clickPR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
+$removeparam=/^cid=DSS-Affiliate.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 $removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
@@ -3101,6 +3102,7 @@ $document,removeparam=af_xp
 ||abcnyheter.no^$removeparam=nr
 ||qzone.qq.com^$document,removeparam=jumptoqzone
 ||qzone.qq.com^$document,removeparam=g
+||asos.com^$removeparam=ctaref
 ||gumroad.com^$removeparam=recommended_by
 ||www.booking.com^$document,removeparam=aid
 ||www.booking.com^$document,removeparam=sid
@@ -3112,8 +3114,6 @@ $document,removeparam=af_xp
 ||www.roblox.com^$document,removeparam=universeId
 ||www.roblox.com^$document,removeparam=discoverPageSessionInfo
 ||www.roblox.com^$document,removeparam=gameSetTargetId
-||www.roblox.com^$document,removeparam=RelatedAssetType
-||www.roblox.com^$document,removeparam=RelatedAssetID
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 $document,removeparam=entrypoint,domain=bing.com
 ||audible.$removeparam=creativeId
