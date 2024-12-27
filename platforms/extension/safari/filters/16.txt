@@ -1,9 +1,9 @@
-! Checksum: fiGvEU2ff93ztQqD7LWDtQ
-! Diff-Path: ../patches/16/16-s-1735245510-3600.patch
+! Checksum: QIw10E7ekfWTfEjjo3ZWpw
+! Diff-Path: ../patches/16/16-s-1735313948-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.84
-! TimeUpdated: 2024-12-26T20:34:52+00:00
+! Version: 2.0.48.85
+! TimeUpdated: 2024-12-27T15:34:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -280,11 +280,11 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147842
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/^navpromo/', 'abort')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^#navpromo/', 'abort')
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0.1 !important; }
 japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'href', ' ')
 japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Niger|Charger|GoodDay|funct'|t'\+'y/")
-japscan.lol#%#//scriptlet("prevent-addEventListener", "/DOMContentLoaded|load/", "/^[$\w]+\s*=>\s*\{\s*(?:const|var|let)\s+[$\w]+\s*=\s*[$\w]+\s*;|playGo|a'\+|'N'\+/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "/^[$\w]+\s*=>\s*\{\s*(?:const|var|let)\s+[$\w]+\s*=\s*[$\w]+\s*[,;]\s*[$\w]+\s=['\"]|Youpi|push'\]|\+'nt|\+'i/")
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
 @@$image,domain=japscan.lol
 @@||japscan.lol^$image,xmlhttprequest,script,~third-party

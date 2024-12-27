@@ -16605,7 +16605,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
-!
+! https://github.com/easylist/easylist/pull/20909
+@@||api.usercentrics.eu^$domain=s-pankki.fi
+@@||app.usercentrics.eu/*.js$script,domain=s-pankki.fi
 ! hamburg-business.com - broken map
 @@||api.usercentrics.eu^$domain=hamburg-business.com
 @@||app.usercentrics.eu/*.js$script,domain=hamburg-business.com
@@ -21373,8 +21375,7 @@ mail.ru#?#body > div > style + div:has(> div > div.description:contains(/До[б
 dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adItems')
 dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.ssrBanner')
 dzen.ru#%#//scriptlet('abort-on-stack-trace', 'Promise', 'initContext')
-dzen.ru##div[class^="news-"][class$="_banner"]
-dzen.ru##.news-app-layout-redesign__content > div[class*="_position_tsar news-"]
+dzen.ru#$?##LayoutTopMicroRoot div[style^="padding-top:"][style*="position: relative; height: 0;"] { remove: true; }
 ! Ads in the feed
 !
 ! Interview popup
@@ -51402,7 +51403,8 @@ adukar.com###modal-popup-popup2
 adukar.com###campaign_adukar_news
 minecraft-turkiye.com##a[href="https://minecraft-turkiye.com/threads/minecraft-tuerkiye-reklam-ve-sponsorluk.8692/"] img
 meneame.net###newsletter
-inoreader.com##div[id^="promo_dialog_"]
+inoreader.com#$#div[id^="promo_dialog_"] { display: none !important; }
+inoreader.com#%#//scriptlet('remove-class', 'modal-open', 'html')
 inoreader.com###black_friday
 mobalytics.gg#?#main > div[class^="m-"]:has(> div[class^="m-"] > #lol-video-all-pages-mobile)
 xgp.pl#%#//scriptlet('set-cookie', 'hpb_closed', '1')

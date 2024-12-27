@@ -1,9 +1,9 @@
-! Checksum: aMSwz0c+Sep5GRkJTH1cdQ
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1735310352-3600.patch
+! Checksum: nBbNySiHKDC8WN2quO0eAw
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1735313934-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.47.83
-! TimeUpdated: 2024-12-27T14:35:24+00:00
+! Version: 2.0.47.84
+! TimeUpdated: 2024-12-27T15:34:37+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -82,8 +82,7 @@ mail.ru#?#body > div > style + div:has(> div > div.description:contains(/До[б
 dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adItems')
 dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.ssrBanner')
 dzen.ru#%#//scriptlet('abort-on-stack-trace', 'Promise', 'initContext')
-dzen.ru##div[class^="news-"][class$="_banner"]
-dzen.ru##.news-app-layout-redesign__content > div[class*="_position_tsar news-"]
+dzen.ru#$?##LayoutTopMicroRoot div[style^="padding-top:"][style*="position: relative; height: 0;"] { remove: true; }
 dzen.ru##div[class^="float-interview__float-"]
 [$path=/video]dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.rtb', 'undefined')
 [$path=/video]dzen.ru##div[class*="item-info__videoViewerItemInfo-"] + div:not([class])

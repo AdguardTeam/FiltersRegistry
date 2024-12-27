@@ -1,9 +1,9 @@
-! Checksum: Y9dCe83sVO69ukkfffOW0Q
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1735310385-3600.patch
+! Checksum: go8KyCUvhJP3hz1ntyFJ1w
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1735313978-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.29.33
-! TimeUpdated: 2024-12-27T14:35:25+00:00
+! Version: 2.0.29.34
+! TimeUpdated: 2024-12-27T15:34:38+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1474,7 +1474,8 @@ adukar.com###modal-popup-popup2
 adukar.com###campaign_adukar_news
 minecraft-turkiye.com##a[href="https://minecraft-turkiye.com/threads/minecraft-tuerkiye-reklam-ve-sponsorluk.8692/"] img
 meneame.net###newsletter
-inoreader.com##div[id^="promo_dialog_"]
+inoreader.com#$#div[id^="promo_dialog_"] { display: none !important; }
+inoreader.com#%#//scriptlet('remove-class', 'modal-open', 'html')
 inoreader.com###black_friday
 mobalytics.gg#?#main > div[class^="m-"]:has(> div[class^="m-"] > #lol-video-all-pages-mobile)
 xgp.pl#%#//scriptlet('set-cookie', 'hpb_closed', '1')

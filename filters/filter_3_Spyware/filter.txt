@@ -45998,6 +45998,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||telemetry.dzen.ru^
 ||gtm.temu.com^
 .prod.pr.analytics.console.aws.a2z.com
 ||log.shortbread.analytics.console.aws.a2z.com^
@@ -111443,7 +111444,6 @@ pcmag.com##img[src^="https://t.myvisualiq.net/"]
 ||rou.video/js/yd.js
 ||elle.com.hk/assets/js/ur.js
 ||re-volver.net/visitor/
-||cdn.dzen.ru/pingx
 ||ocn-tag.sienca.jp/api/v1/event/pv
 ||amazonaws.com/jsstore/*/ge.js
 ||billboard.com/wp-content/plugins/pmc-plugins/pmc-trackonomics/build/index.js
@@ -111494,8 +111494,6 @@ tv2.no##.article-recommended
 erostopics.net###custom_html-81
 erostopics.net###custom_html-137
 erostopics.net###related-box
-||cdn.dzen.ru/pingx
-||suggest.sso.dzen.ru/clck/$image
 ||cdn.rvohealth.com/preamp/api/*/decisions|
 ||api.cgyx.tv:66/tj/tongji.js
 ||checkoutshopper-live.adyen.com/checkoutshopper/images/analytics.png?
@@ -112355,7 +112353,6 @@ ciudad.com.ar###cxense-wrapper
 ||api.edkt.io/analytics
 ||amzgame.com/home/CreateAnalytics.js
 ||diariodonordeste.verdesmares.com.br/static/assets/scripts/p_googletag.js
-||clck.dzen.ru/click/$ping
 ||cp.hallo-eltern.de/stats
 ||yastatic.net/*/rsya-tag-users/
 ||lifenewsjr.com/xstat/
@@ -115068,11 +115065,6 @@ dreamprogs.net##td[width="88"][height="31"]
 ||ztat.net/*/webtrekk.min.js^
 ||google.com/log?$redirect=nooptext
 ||yandex.ru/clck/click|
-||clck.dzen.ru/click|
-!+ PLATFORM(windows, mac, android)
-||dzen.ru/api/*/stats/$badfilter
-!+ NOT_PLATFORM(windows, mac, android)
-||dzen.ru/api/*/launcher/stats/$xmlhttprequest,image
 !+ NOT_PLATFORM(ios, ext_safari)
 ||yandex.*/clck/
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
@@ -115080,6 +115072,19 @@ dreamprogs.net##td[width="88"][height="31"]
 !
 !+ NOT_PLATFORM(ios, ext_safari)
 ||1gr.cz/log^
+!
+! dzen.ru
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adPixelsLink')
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adPixelsData')
+||clck.dzen.ru/click/$ping
+||cdn.dzen.ru/pingx
+||cdn.dzen.ru/pingx
+||suggest.sso.dzen.ru/clck/$image,ping
+||clck.dzen.ru/click|
+!+ PLATFORM(windows, mac, android)
+||dzen.ru/api/*/stats/$badfilter
+!+ NOT_PLATFORM(windows, mac, android)
+||dzen.ru/api/*/launcher/stats/$xmlhttprequest,image
 !
 ! Netflix
 ! do not block some requests from `/cadmium/` path - the videos won't play
@@ -118072,6 +118077,8 @@ inapps.appsflyersdk.com^
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !#endif
 !
+! https://www.toweroffantasy-global.com/events/accounttransfer/jp/index.html
+@@||toweroffantasy-global.com/events/accounttransfer/public/js/fingerprint.js$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194929 - main page missing story buttons
 @@||prra.spxl.socy.es/pixel/js/$domain=cadenaser.com
 @@||prra.spxl.socy.es/pixel.json$domain=cadenaser.com

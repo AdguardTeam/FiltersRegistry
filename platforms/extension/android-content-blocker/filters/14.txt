@@ -1,8 +1,8 @@
-! Checksum: BZfhX/YO6slYLG2WmJx6nA
+! Checksum: uI3bMmf0n4+fPStLmMuqdQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.52
-! TimeUpdated: 2024-12-27T14:35:17+00:00
+! Version: 2.2.17.53
+! TimeUpdated: 2024-12-27T15:34:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14291,7 +14291,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
-!
+! https://github.com/easylist/easylist/pull/20909
+@@||api.usercentrics.eu^$domain=s-pankki.fi
+@@||app.usercentrics.eu/*.js$script,domain=s-pankki.fi
 ! hamburg-business.com - broken map
 @@||api.usercentrics.eu^$domain=hamburg-business.com
 @@||app.usercentrics.eu/*.js$script,domain=hamburg-business.com
@@ -18844,8 +18846,6 @@ mail.ru##div[slot="main-column"] > div.stripe-wrapper
 ! e.mail.ru
 ! dzen.ru
 ! Ads in news
-dzen.ru##div[class^="news-"][class$="_banner"]
-dzen.ru##.news-app-layout-redesign__content > div[class*="_position_tsar news-"]
 ! Ads in the feed
 !
 ! Interview popup
@@ -45171,7 +45171,7 @@ adukar.com###modal-popup-popup2
 adukar.com###campaign_adukar_news
 minecraft-turkiye.com##a[href="https://minecraft-turkiye.com/threads/minecraft-tuerkiye-reklam-ve-sponsorluk.8692/"] img
 meneame.net###newsletter
-inoreader.com##div[id^="promo_dialog_"]
+inoreader.com#$#div[id^="promo_dialog_"] { display: none !important; }
 inoreader.com###black_friday
 map.naver.com##.promotion_wrap
 wildberries.ru##.main-page__banner
