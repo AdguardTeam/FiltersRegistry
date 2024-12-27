@@ -1,9 +1,9 @@
-! Checksum: j3/cwvgBoQWSpg/MSjj6LQ
-! Diff-Path: ../patches/2/2-s-1735306758-3600.patch
+! Checksum: d8df5tnOG97UiotRvQcbvQ
+! Diff-Path: ../patches/2/2-s-1735310347-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.65.86
-! TimeUpdated: 2024-12-27T13:31:27+00:00
+! Version: 2.3.65.87
+! TimeUpdated: 2024-12-27T14:31:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8301,6 +8301,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195337
+||cartometro.com/abd.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195267
 owoanime.com##.modal:not(#style_important)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195168
@@ -34193,7 +34195,7 @@ kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.p
 ||content-loader.com/loader.min.js$domain=issuya.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|sourceforge.net|slashdot.org|economictimes.com
 !
 ! Common rules, which partially hide banners
-#$?#span[id^="img_"][class^="img_"] > style:first-child + div[style*="flex"][style*="relative"] > iframe[src][marginwidth][width][style] { content-visibility: hidden !important; }
+#$?#span[id^="img_"][class^="img_"] > style:first-child + div[style*="relative"] > iframe[src][marginwidth][width][style] { mask-image: linear-gradient(transparent, transparent) !important; -webkit-mask-image: linear-gradient(transparent, transparent) !important; z-index: -2147483647 !important; }
 ! END: Ad-Shield ad reinsertion
 !
 ! ExoClick
@@ -34430,6 +34432,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+cartometro.com##div[class^="cmad"]
 thetvdb.com###ATF
 euronews.com##.tp-outbrain
 redgifs.com##.InformationBar

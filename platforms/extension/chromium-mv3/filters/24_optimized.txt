@@ -1,10 +1,16 @@
-! Checksum: tuJwz5KvqldrPlLPbkB+bw
+! Checksum: vSs+JeM3xZyVgjrm2sUi/w
 ! Title: AdGuard Quick Fixes filter (Optimized)
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.5.50
-! TimeUpdated: 2024-12-27T13:35:27+00:00
+! Version: 2.0.5.51
+! TimeUpdated: 2024-12-27T14:35:27+00:00
 ! Expires: 10 days (update frequency)
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
+||telemetry.dzen.ru^
+||suggest.sso.dzen.ru/clck/$image,ping
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adPixelsLink')
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adPixelsData')
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adItems')
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.ssrBanner')
 ||cartometro.com/abd.js
 cartometro.com##div[class^="cmad"]
 bzmh.org##.adshow
@@ -93,6 +99,7 @@ izmirdesondakika.com.tr###video-gallery-widget
 ||easybell.de/typo3temp/assets/compressed/cookieman-theme-min.js.gz
 @@||res.ads.nicovideo.jp/assets/js/ads2.js$domain=sp.nicovideo.jp
 pirelli.com#$#body { overflow: auto !important; }
+#@$?#span[id^="img_"][class^="img_"] > style:first-child + div[style*="flex"][style*="relative"] > iframe[src][marginwidth][width][style] { content-visibility: hidden !important; }
 #@$?#span[id^="img_"][class^="img_"] > style:first-child + div[style*="align-items"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { transform: translateX(-10000px) !important; }
 #@$?#span[id^="img_"][class^="img_"] > div[style*="justify-content:"][style*="align-items:"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { margin-right: -5000px !important; }
 ||titulky.com/mybanalter/

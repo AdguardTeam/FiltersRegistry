@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: MGokdH3UmpDO21nE68ahRw
-! Diff-Path: ../patches/19/19-s-1735306774-3600.patch
+! Checksum: x1j4MHuemEp2no57zYmcrA
+! Diff-Path: ../patches/19/19-s-1735310367-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.47.82
-! TimeUpdated: 2024-12-27T13:35:25+00:00
+! Version: 2.0.47.83
+! TimeUpdated: 2024-12-27T14:35:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -222,6 +222,8 @@ e.mail.ru,octavius.mail.ru##+js(remove-class, letter-list_top-line-adv-2pane|let
 mail.ru#?#body > div > style + div:has(> div > div.description:contains(/До[баба]вьт[ее] Mail в исключения/))
 ! dzen.ru
 ! Ads in news
+dzen.ru##+js(json-prune, ssrData.exportResponse.feedData.adItems)
+dzen.ru##+js(json-prune, ssrData.exportResponse.ssrBanner)
 dzen.ru##+js(abort-on-stack-trace, Promise, initContext)
 dzen.ru##div[class^="news-"][class$="_banner"]
 dzen.ru##.news-app-layout-redesign__content > div[class*="_position_tsar news-"]

@@ -1,9 +1,9 @@
-! Checksum: wtoMslWTNPRplGEjrxjl2Q
-! Diff-Path: ../patches/14/14-s-1735306781-3600.patch
+! Checksum: 1FqNrt21O1Gy315CYMKT2A
+! Diff-Path: ../patches/14/14-s-1735310377-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.51
-! TimeUpdated: 2024-12-27T13:35:18+00:00
+! Version: 2.2.17.52
+! TimeUpdated: 2024-12-27T14:35:17+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13121,7 +13121,7 @@ ilanversen.com###cookiesusage
 uysisguvenligi.com.tr,makrosepetim.com,agenturfilmgesichter.de,agentur-filmgesichter.de###cookietoast
 nanodatex.pl###cookis-box
 theathletesfoot.com###cpolicy
-krupp-krankenhaus.de,encoreungateau.com###ct-ultimate-gdpr-cookie-popup
+thepresetsroom.com,krupp-krankenhaus.de,encoreungateau.com###ct-ultimate-gdpr-cookie-popup
 adwokat-obrebski.pl##.ct-ultimate-gdpr-cookie-fullPanel-overlay
 pri.org###cta_prompt_bottom
 antoineonline.com###ctl00_overlay
@@ -20921,6 +20921,8 @@ e.mail.ru,octavius.mail.ru#%#//scriptlet('remove-class', 'letter-list_top-line-a
 mail.ru#?#body > div > style + div:has(> div > div.description:contains(/До[баба]вьт[ее] Mail в исключения/))
 ! dzen.ru
 ! Ads in news
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adItems')
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.ssrBanner')
 dzen.ru#%#//scriptlet('abort-on-stack-trace', 'Promise', 'initContext')
 dzen.ru##div[class^="news-"][class$="_banner"]
 dzen.ru##.news-app-layout-redesign__content > div[class*="_position_tsar news-"]
@@ -47844,6 +47846,7 @@ disk.yandex.ru#%#//scriptlet('remove-attr', 'href', '.InfoSpace[href^="https://3
 [$path=/images]ya.ru,yandex.*##.ImagesViewer-Products
 !
 ! Yandex.Pogoda
+[$path=/pogoda]yandex.*##.feels-like-promo
 [$path=/pogoda]yandex.*##a[class^="BannerHobbies_promo"]
 yandex.*##.meteum-promo
 !
@@ -49744,6 +49747,7 @@ book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 !
 ! SECTION: Self-promo - Regular rules
 !
+dzen.ru##div[class*="__bannerContainer-"]
 vegasslotsonline.com#$#footer + dialog[data-dialog-type="showModal"] { display: none !important; }
 vegasslotsonline.com#$#body.overflow-hidden { overflow: auto !important; }
 live-theater.net##div[data-sticky-container-header-height] div[data-sticky-container-header-height] ._margin + div[class] div[class] > div[class]:not([class*=" "]):has(> div:not([id],[class]) > div[class] > a[target="_blank"][rel="nofollow noopener"] > img:not([src*="live-theater.net"]) + button)

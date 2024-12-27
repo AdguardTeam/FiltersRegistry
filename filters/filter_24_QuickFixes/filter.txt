@@ -29,6 +29,13 @@
 !
 ! NOTE: 27-12-2024
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195294
+||telemetry.dzen.ru^
+||suggest.sso.dzen.ru/clck/$image,ping
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adPixelsLink')
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adPixelsData')
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adItems')
+dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.ssrBanner')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195337
 ||cartometro.com/abd.js
 cartometro.com##div[class^="cmad"]
@@ -196,6 +203,7 @@ pirelli.com#$#body { overflow: auto !important; }
 ! NOTE: 18-12-2024
 !
 ! AS
+#@$?#span[id^="img_"][class^="img_"] > style:first-child + div[style*="flex"][style*="relative"] > iframe[src][marginwidth][width][style] { content-visibility: hidden !important; }
 #@$?#span[id^="img_"][class^="img_"] > style:first-child + div[style*="align-items"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { transform: translateX(-10000px) !important; }
 #@$?#span[id^="img_"][class^="img_"] > div[style*="justify-content:"][style*="align-items:"][style*="relative"][style*="center"] > iframe[src][marginwidth][width][style] { margin-right: -5000px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194647
