@@ -1,9 +1,9 @@
-! Checksum: yv4gqwMdljxQ5vRRAzXPug
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1735261527-14400.patch
+! Checksum: z1HafGMeLVm7WeNyOaVmww
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1735275908-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.61.88
-! TimeUpdated: 2024-12-27T01:01:14+00:00
+! Version: 2.1.61.89
+! TimeUpdated: 2024-12-27T05:01:10+00:00
 ! Expires: 10 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -24,6 +24,7 @@
 -160x296.
 -240x90-
 -250x250.gif
+-300-250a.
 -300-x-250-
 -300-x-250.
 -300x250.$subdocument
@@ -108,6 +109,7 @@
 -pub-300-
 -pub-300x250.
 -pub/prod/$third-party
+-templates-ads_
 -viewability.
 -webAds-
 .ad.intl.
@@ -243,6 +245,7 @@
 /730_90.
 /900-90-
 /900-90.
+/900-x-250.
 /900_90_
 /900x90-
 /900x90.
@@ -472,12 +475,12 @@
 /affiliates/images/banners/*
 /affiliates/media/banners/*
 /affiliates/promotools/*
+/affiliation_simple/*
 /afiliados/*
 /afu.php?id=
 /amazonaffiliate-
 /amazonaffiliate.
 /amp-ad-exit-
-/anti-pub.
 /anuncios/banner_
 /anuncy/*/ads/
 /aoa-functions.
@@ -556,7 +559,6 @@
 /bg_ads.
 /bigbangads.
 /blockadvertising/*
-/blog/ads_
 /bn_bnad_
 /bnr/300/*
 /bnr/468/*
@@ -714,10 +716,10 @@
 /modules.pub.js
 /mpop.js
 /myadvertisements.
-/nadstive.
 /native-ad/*
 /nendAdLoader.
 /new/pu.js
+/newcafv2.js
 /newpromo.
 /no-banner-$image
 /noaabd/*&promo=
@@ -888,7 +890,6 @@
 /Web_Ad_
 /Web_banner_
 /WebAd_
-/webmaster_banner_
 /werbebanner-ad.
 /wgAds.
 /widgets.stackcommerce.com/*
@@ -970,7 +971,6 @@
 ?advert_type=
 ?aff=*&size=
 ?affiliateCode=
-?bannertag=
 ?callback=ADS.
 ?campid=*&bandeau_id=
 ?clicktag=
@@ -1153,6 +1153,7 @@ _werbebanner_
 .clickmoileclito.$popup
 .engine?*&ZoneId=$popup
 .php?a_aid=*&$popup
+/*qertewrt.com$popup
 /?*&a_aid=*&$popup
 /?a_bid=$popup
 /?token=*&q=$popup
@@ -1237,6 +1238,7 @@ _werbebanner_
 _adb_300x250_$popup
 _build=iclick-$popup
 _lx.ads/$popup
+_regie/clic.$popup
 ||online^*&zoneid=$popup
 ||online^*?zoneid=$popup
 ||1-1ads.com^$third-party
@@ -1293,6 +1295,7 @@ _lx.ads/$popup
 ||adwise.bg^$third-party
 ||affilae.com^$third-party
 ||affiliatable.io^$third-party
+||affiliatehub.co.in^$third-party
 ||afilio.com.br^$third-party
 ||afromessenger.com^$third-party
 ||am-media.fr^$third-party
@@ -1355,6 +1358,7 @@ _lx.ads/$popup
 ||getpublica.com^$third-party
 ||getresponse.com^$third-party
 ||goracash.com^$third-party
+||grupoxxx.com^$third-party
 ||hebdotop.com^$third-party
 ||heliumads.com^$third-party
 ||hentaiheroes.com^$third-party
@@ -1481,6 +1485,7 @@ _lx.ads/$popup
 ||utl-1.com^$third-party
 ||viahelium.com^$third-party
 ||videostep.com^$third-party
+||visadd.com^$third-party
 ||vyking.io^$third-party
 ||widespace.com^$third-party
 ||widgetbooster.com^$third-party
@@ -1990,7 +1995,6 @@ _lx.ads/$popup
 ||pvrtx.net^
 ||pycnictouchup.click^
 ||qhip.com^
-||quelmesale.com^
 ||questionfly.com^
 ||quilterdochter.shop^
 ||quoitsbearers.shop^
@@ -2032,6 +2036,7 @@ _lx.ads/$popup
 ||sijillshirvan.com^
 ||silimbompom.com^
 ||skreelkowtows.shop^
+||skymedia7.me^
 ||slideslive.com^
 ||smart2cnjuh34jb.com^
 ||smartoffer.site^
@@ -2189,6 +2194,7 @@ _lx.ads/$popup
 ||opsktp.com^$popup
 ||passion.com^$popup
 ||porncrash.com^$popup,third-party
+||powa.fr^$popup,third-party
 ||profitablecpmnetwork.com^$popup
 ||pushlinck.com^$popup,third-party
 ||redirectingat.com^$popup,third-party
@@ -2321,7 +2327,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||laredoute.com/marketing/$third-party,domain=~laredoute.be|~laredoute.ch|~laredoute.co.uk|~laredoute.com|~laredoute.es|~laredoute.fr|~laredoute.gr|~laredoute.hr|~laredoute.it|~laredoute.kr|~laredoute.lu|~laredoute.ma|~laredoute.nl|~laredoute.pl|~laredoute.pt|~laredoute.ru|~laredouteliban.com
 ||legagnant.com/legagnant$image
 ||legagnant.com/pv$image
-||les-meilleurs-plans.com^$script,subdocument,third-party
 ||lewebfacilement.com^$script,subdocument,third-party
 ||lh3.googleusercontent.com/$image,domain=forum.gsmhosting.com
 ||logo.gralon.net/plogo-gralon-$third-party
@@ -2540,7 +2545,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||batiactu.com/cap_pub/
 ||batiactu.com/images/pub/
 ||batiactu.com/sites/all/libraries/bati/cronjobs/specials.js
-||batiactu.com^*/partenaire/
 ||bdgest.com/habillages/
 ||bdgest.com/prepub/
 ||bedetheque.com/javascript/campagne?
@@ -2558,6 +2562,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||clubpoker.net/medias/images/club-poker/habillages/
 ||coco.gg/chat/bigban
 ||cowcotland.com/images/habillage/$image
+||cut.so/banner/
 ||developpez.com/show_i.php
 ||developpez.com/template/offres.php?
 ||developpez.net/forums/anooffresdvp.php?
@@ -2583,7 +2588,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||forumconstruire.com/letsgo/
 ||frandroid.com/plsbl/
 ||free-proxy.cz/i/HMA/
-||free-reseau.fr/images/ban_
 ||free.fr/webmails/pub/
 ||frprn.com/even/
 ||gauleporno.xxx/assets/js/head.
@@ -2631,6 +2635,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||live.whassup.fr/*&campaign=
 ||location-etudiant.fr/pubs/
 ||maison-travaux.fr/wp-content/uploads/sites/8/2021/04/deco.jpg
+||mameworld.info/net/pics/da.gif
 ||mamytwink.com/pub2/bg.php?
 ||mediabong.*/loader.js
 ||medialot.fr/wp-content/uploads/*/Logo-
@@ -2686,6 +2691,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ||turfomania.fr/*-publicitaire/
 ||twitch.tv/track?
 ||unblocked2.vip/app/$script
+||unleashed.fr/media/habillage/
 ||uploadgig.com/static_/$media
 ||vakarm.net/css/sprite_vkm_2.css
 ||viamichelin.*/img/partners/
@@ -2917,7 +2923,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ###oPublicite
 ###partner-ads
 ###partner-ads2
-###pave1_ad
 ###pavePub
 ###pavepub
 ###pie_pub_google
@@ -3097,7 +3102,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.ad.placeholder
 ##.ad250heightreel
 ##.ad280height
-##.ad336x280_sidebar
 ##.ad730
 ##.ad970-wrapper
 ##.adBannerRight
@@ -3197,7 +3201,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.adtxtlegend
 ##.aduh__cntn
 ##.aduh__label
-##.adum__cntn
 ##.adv-placeholder
 ##.adv2
 ##.adv_block
@@ -3545,7 +3548,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##.text_pub
 ##.texte_pub
 ##.threadSponsor
-##.top-ads-728-90
 ##.top-banner-pub
 ##.top-publicite
 ##.topPub
@@ -3600,7 +3602,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshr.ink|adshr
 ##a[href*=".atimaze.com/"]
 ##a[href*=".bdwafx.com/"]
 ##a[href*=".digital2cloud.com/?"]
-##a[href*=".djfiln.com/"]
 ##a[href*=".hop.clickbank.net"] > img
 ##a[href*=".hrtye.com/"]
 ##a[href*=".igraal.com/#parrain="] > img
@@ -3843,7 +3844,6 @@ hardware.fr###footer_img
 centerblog.net###gauche > iframe[Width="300"][height="250"]
 bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
-webcamtoy.com###home-sponsor
 leboncoin.fr###home-top-banner
 ladepeche.fr,midilibre.fr###immobilier
 agriaffaires.com,bloggif.com,lesoir.be,play3-live.com,topquizz.fr###leaderboard
@@ -4095,18 +4095,19 @@ qwantjunior.com##[data-testid="autopromoJuniorLink"]
 toutvendre.fr##[href*=".kelkoogroup.net/"]
 filecrypt.cc,filecrypt.co##[href^="javascript:"]
 fnac.com##[id$="-sponsored_products-0"]
+comarketing-news.fr##[id^="comar-"]
 boulanger.com##[id^="criteo_pageListe"]
 3dnatives.com##[id^="dnati-"]
 moneyvox.fr##[mam-campaign="Ban"]
 toutvendre.fr##[onclick*=".kelkoogroup.net/"]
 filecrypt.cc,filecrypt.co,lacoccinelle.net##[onclick] img
+filecrypt.cc,filecrypt.co##[onmousedown]
 lesoir.be##a > [Width="300"][height="250"]
 medialot.fr##a > img[height="250"]
 israelmagazine.co.il##a > img[Width="238"]
 cowcotland.com##a#habiclic
 voyageforum.com##a[class^="offer"]
 audiofanzine.com##a[href*="&ref="]
-free-reseau.fr##a[href*="&tag=freereseaufr-"]
 3dnatives.com,audiofanzine.com,lesimprimantes3d.fr##a[href*="&utm_"]
 1001ebooks.com,1337x.biz,1337x.st,1337x.to,amairgil.cz,blablastream.kim,blablastream.watch,cinemay.vip,cineplateforme.co,cocostream.rip,cpasbien.fun,cpasfini.me,cpasmieux.buzz,enstream.plus,extreme-down.cyou,film01stream.com,film01stream.ws,filmgratuit.net,filmstreaming01.org,filmzenstream.cloud,fullstream.plus,gktorrent.xyz,hds.quest,hdss.at,hdss.watch,mistergeek.net,monstream.win,nemours-medieval.fr,novaflix.me,novaflix.one,ostreaming.biz,oxtorrent.ac,papystreaming.black,papystreaming.fyi,papystreaming.stream,papystreaming.win,planet-streaming.ws,series-streamings.vin,sokrostream.tube,streamonsport.club,streampourvous.lol,tirexo.fun,topsddns.net,topsitestreaming.top,torrent.ws,torrent9-super.com,vfcomplet.vip,vfserie.win,vofilms.vin,voirfilm.top,voirfilms.al,voirfilms.bz,voirfilms.live,voirfilms.win,voirfilmstreaming.tv,voirseries.co,voirseries.rip,wawacity.nl,weserie.info,wiflix-catalogue.autos,wiflixien.space,x1337x.eu,x1337x.se,x1337x.ws,yggtorrent.fm,yggtorrent.sbs,yggtorrent.support,zt-za.fr##a[href*=".php"]
 7-up.net,abidjan.net,algerie-eco.com,algerie-focus.com,algerie360.com,bigbike-magazine.com,bismirabbika.com,brain-magazine.fr,cnetfrance.fr,doukkalia.press.ma,freeonline.org,grimper.com,igen.fr,internetparsatellite.net,kiteboarder-mag.com,ktotv.com,lebonfap.com,letagparfait.com,macg.co,montagnes-magazine.com,mubawab.ma,nintendo-master.com,niveales.com,portail.free.fr,public.fr,radego.over-blog.com,skieur.com,skimagazine.fr,snowsurf.com,streaming-one.com,supmag.fr,tahiti-infos.com,telecharger-jeuxpc.fr,telesatellite.com,trekmag.com,unleashed.fr,upload.ac,vakarm.net,watchgeneration.fr,widermag.com,windmag.com##a[href*="//bit.ly/"]
@@ -4116,7 +4117,6 @@ exefiles.com##a[href*="/recommended/"]
 seneweb.com##a[href*="/xban/"]
 jeuxetcompagnie.fr##a[href*="://www.ludeek.com/"] > img
 jds.fr##a[href*="_clic.php?"]
-boursorama.com,zdnet.fr##a[href*="smartadserver.com/h/cc?imgid="]
 radioalgerie.dz##a[href="https://www.radioalgerie.dz/pub/"]
 agroligne.com,zone911.com##a[href^="/component/banners/"]
 babesxworld.com,cocogals.com##a[href^="/goto/"]
@@ -4128,10 +4128,10 @@ fdesouche.com,lacoccinelle.net,wikimonde.com##a[href^="https://www.amazon.fr/"]
 toplien.fr##a[href^="https://www.awin1.com/"]
 qwant.com##a[href^="https://www.bing.com/aclick?"]
 mega-p2p.net##a[href^="https://www.clictune.com/"]
-telecharger-jeuxpc.fr##a[href^="https://www.instant-gaming.com/"]
 castorama.fr##a[href^="https://www.needhelp.com/projet.php?"]
 solutions-numeriques.com##a[href^="https://www.solutions-numeriques.com/r/?"]
 undernews.fr##a[href^="https://www.undernews.fr/redirect/"]
+windsurfjournal.com##a[href^="link,"]
 savefrom.net##a[id][href][target][style]
 petit-bulletin.fr##a[onclick^="_gaq.push(['_trackEvent'"]
 lejournaldelamaison.fr,maison-travaux.fr,mariefrance.fr,zoneadsl.com##a[rel="sponsored"]
@@ -4148,6 +4148,7 @@ gamopat-forum.com##div#wrapper > div#right img[src*="/11/03/61/79/"]
 laprovence.com##div[class*="Ads_ad_"]
 newpharma.fr##div[class*="adh-banner"]
 gauleporno.xxx,pornburst.xxx##div[class*="banner"]
+rakuten.com##div[class*="rads_placement"]
 leboncoin.fr##div[class="vl"]
 booska-p.com##div[class][style^="background"]
 ledenicheur.fr##div[class^="AdPlacement"]
