@@ -1,9 +1,9 @@
-! Checksum: CNIeTyTB7AouE9WEVNnvug
-! Diff-Path: ../patches/16/16-s-1735313975-3600.patch
+! Checksum: 80Mp9Plbb6dLL2nav05xnQ
+! Diff-Path: ../patches/16/16-s-1735367934-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.85
-! TimeUpdated: 2024-12-27T15:34:34+00:00
+! Version: 2.0.48.86
+! TimeUpdated: 2024-12-28T06:35:10+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -249,11 +249,14 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147842
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^#navpromo/', 'abort')
+japscan.lol#%#//scriptlet('abort-on-stack-trace', 'getComputedStyle', 'Youz')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'parseFloat', '/\d+px/', 'abort')
+japscan.lol#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelectorAll', '/^#navpromo/', 'abort')
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0.1 !important; }
 japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'href', ' ')
 japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Niger|Charger|GoodDay|funct'|t'\+'y/")
-japscan.lol#%#//scriptlet("prevent-addEventListener", "/^[$\w]+\s*=>\s*\{\s*(?:const|var|let)\s+[$\w]+\s*=\s*[$\w]+\s*[,;]\s*[$\w]+\s=['\"]|Youpi|push'\]|\+'nt|\+'i/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "/^[$\w]+\s*=>\s*\{\s*(?:const|var|let)\s+(?:[$\w]+\s*=\s*[$\w]+\s*[,;])+\s*[$\w]+\s*=['\"]|Youha|appendChild'\]|==='0px'|'\+'\)|\+'e'\]|\}\.constructor/")
 ||japscan.lol/zjs/$script,replace=/function GoodDay\(\)\{.+?\}\}\}//
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
 $script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.lol

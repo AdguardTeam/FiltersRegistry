@@ -1,8 +1,8 @@
-! Checksum: 5P61pqPNZP2yM4OZFIqMZw
+! Checksum: mRSSdrM9YaRTHO0e2DrSTQ
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.5.55
-! TimeUpdated: 2024-12-28T00:34:50+00:00
+! Version: 2.0.5.56
+! TimeUpdated: 2024-12-28T06:35:15+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -241,8 +241,10 @@ game8.jp,forsal.pl,lacuarta.com,dziennik.pl,syosetu.com,powerpyx.com#%#//scriptl
 autoby.jp,daily.co.jp,j-town.net,wetteronline.de#%#//scriptlet('remove-node-text', 'script', '.slice(-2);return decodeURIComponent')
 ||html-load.com^$script,redirect=noopjs,domain=wouldurather.io|oraridiapertura24.it|laleggepertutti.it|cruciverba.it|motscroises.fr|palabr.as|word-grabber.com|dramabeans.com|thesaurus.net|blog.esuteru.com|blog.livedoor.jp|carscoops.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|eurointegration.com.ua|flatpanelshd.com|fourfourtwo.co.kr|issuya.com|itainews.com|iusm.co.kr|mydaily.co.kr|onlinegdb.com|pravda.com.ua|reportera.co.kr|sportsrec.com|taxguru.in|text-compare.com|thesaurus.net|thestar.co.uk|tweaksforgeeks.com|videogamemods.com|wfmz.com|worldhistory.org|yorkshirepost.co.uk|the-crossword-solver.com|missyusa.com|crosswordsolver.com|raetsel-hilfe.de|heureka.cz|verkaufsoffener-sonntag.com|mynet.com|ff14net.2chblog.jp|onecall2ch.com|news4vip.livedoor.biz|yugioh-starlight.com|suzusoku.blog.jp|forsal.pl|infor.pl|rabitsokuhou.2chblog.jp|cool-style.com.tw|tportal.hr|yutura.net|lacuarta.com|tportal.hr|apkmirror.com|game8.jp|dnevno.hr|wort-suchen.de|woxikon.de|autoby.jp|daily.co.jp|j-town.net|wetteronline.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153796
-rekidai-info.github.io#%#//scriptlet('prevent-setInterval', '/loc|about:blank/')
-rekidai-info.github.io#%#//scriptlet('prevent-setTimeout', '/loc|about:blank/')
+rekidai-info.github.io#%#//scriptlet('prevent-setInterval', '/loc|about:blank|href|window/')
+rekidai-info.github.io#%#//scriptlet('prevent-setTimeout', '/loc|about:blank|href|window/')
+rekidai-info.github.io#%#//scriptlet('prevent-setInterval', '/\(\s*\)\s*=>\s*\{/', '!20')
+rekidai-info.github.io#%#//scriptlet('prevent-setTimeout', '/\(\s*\)\s*=>\s*\{/', '!20')
 rekidai-info.github.io#@%#//scriptlet('prevent-setTimeout', '', '3000')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192558
 vk.com,vk.ru#?##feed_rows > div.feed_row:has(.PostHeaderSubtitle__item:contains(/Реклама в|Реклама от/))
@@ -252,9 +254,12 @@ vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Р�
 ||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
 exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189567
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^#navpromo/', 'abort')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'parseFloat', '/\d+px/', 'abort')
+japscan.lol#%#//scriptlet('abort-on-stack-trace', 'getComputedStyle', 'Youz')
+japscan.lol#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelectorAll', '/^#navpromo/', 'abort')
 japscan.lol#@%#//scriptlet('remove-node-text', 'script', 'Roiyehe')
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0.1 !important; }
 japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'href', ' ')
 japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Niger|Charger|GoodDay|funct'|t'\+'y/")
-japscan.lol#%#//scriptlet("prevent-addEventListener", "/^[$\w]+\s*=>\s*\{\s*(?:const|var|let)\s+[$\w]+\s*=\s*[$\w]+\s*[,;]\s*[$\w]+\s=['\"]|Youpi|push'\]|\+'nt|\+'i/")
+japscan.lol#%#//scriptlet("prevent-addEventListener", "/^[$\w]+\s*=>\s*\{\s*(?:const|var|let)\s+(?:[$\w]+\s*=\s*[$\w]+\s*[,;])+\s*[$\w]+\s*=['\"]|Youha|appendChild'\]|==='0px'|'\+'\)|\+'e'\]|\}\.constructor/")

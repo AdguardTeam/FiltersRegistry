@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JRhkzifpoSzTn2T59y1itA
-! Diff-Path: ../patches/2/2-s-1735335480-3600.patch
+! Checksum: 5ph1WgcSdXRe/w8OmEM8wA
+! Diff-Path: ../patches/2/2-s-1735367924-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.65.91
-! TimeUpdated: 2024-12-27T21:31:18+00:00
+! Version: 2.3.65.92
+! TimeUpdated: 2024-12-28T06:31:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10042,8 +10042,10 @@ ontools.net##+js(no-fetch-if, /google-analytics\.com|adblockanalytics\.com/)
 canirunthegame.com##div[class^="blocker-"]
 canirunthegame.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153796
-rekidai-info.github.io##+js(no-setInterval-if, /loc|about:blank/)
-rekidai-info.github.io##+js(no-setTimeout-if, /loc|about:blank/)
+rekidai-info.github.io##+js(no-setInterval-if, /loc|about:blank|href|window/)
+rekidai-info.github.io##+js(no-setTimeout-if, /loc|about:blank|href|window/)
+rekidai-info.github.io##+js(no-setInterval-if, /\(\s*\)\s*=>\s*\{/, !20)
+rekidai-info.github.io##+js(no-setTimeout-if, /\(\s*\)\s*=>\s*\{/, !20)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com^$xmlhttprequest,domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_$script,domain=rekidai-info.github.io
