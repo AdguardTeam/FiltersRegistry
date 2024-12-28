@@ -1,8 +1,8 @@
-! Checksum: h+oK3eMFQWL9sjWa3eTM9A
+! Checksum: CwHzoehM3GIEqcYqzIO2tw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.59
-! TimeUpdated: 2024-12-28T13:34:39+00:00
+! Version: 2.2.17.60
+! TimeUpdated: 2024-12-28T14:34:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20391,6 +20391,8 @@ dyxs.sbs##.popup-tips
 sndeep.info###additionalInfoHidden
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194850
 nintendolife.com##.insert-blocker
+nintendolife.com##iframe[src^="https://images.nintendolife.com/"][src$=".jpg"]
+nintendolife.com##.items > li[style="margin: 20px auto; text-align: center; display: block !important;"]
 /avforums\.com\/index\.php\?\w{3}\/\d{6}\//$xmlhttprequest,domain=avforums.com
 archangelvideo.com###ad_blocker_note
 baomidou.com##astro-island[opts^="{\"name\":\"CheckAdBlocked\""]
@@ -22300,7 +22302,9 @@ promote.telegram.org#@#.ads-content
 ! script checks these elements even if rules changed
 ! .responsive-sky-scraper
 ! .header-link-exaroton
-aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; min-height: 1px !important; }
+aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; }
+aternos.org#$#.placement { content-visibility: hidden !important; }
+@@||aternos.org^$generichide
 !#safari_cb_affinity(general)
 @@||hb.vntsm.io/content.html$domain=aternos.org
 @@||hb.vntsm.com/v4/live/vms/ad-manager.js$domain=aternos.org

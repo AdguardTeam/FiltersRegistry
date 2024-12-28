@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: or7+f1QoD++40fbf/G0tow
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1735393103-3600.patch
+! Checksum: sSGerWkSWLGG9U1aGsoKRw
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1735396678-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.47.89
-! TimeUpdated: 2024-12-28T13:34:46+00:00
+! Version: 2.0.47.90
+! TimeUpdated: 2024-12-28T14:34:16+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*##:matches-path(/images).AdvMastHead
@@ -344,6 +344,8 @@ sndeep.info###additionalInfoHidden
 pushsquare.com##+js(set-constant, dgpReadyWrapper, undefined)
 nintendolife.com##+js(no-setTimeout-if, dgp.blockr)
 nintendolife.com##.insert-blocker
+nintendolife.com##iframe[src^="https://images.nintendolife.com/"][src$=".jpg"]
+nintendolife.com##.items > li[style="margin: 20px auto; text-align: center; display: block !important;"]
 avforums.com##+js(addEventListener-defuser, load, ad_megabanner)
 /avforums\.com\/index\.php\?\w{3}\/\d{6}\//$xmlhttprequest,domain=avforums.com
 archangelvideo.com###ad_blocker_note
@@ -1352,7 +1354,9 @@ weather.com##+js(abort-on-property-read, setNptTechAdblockerCookie)
 @@||securepubads.g.doubleclick.net/pagead/ppub_config$domain=weather.com
 @@||weather.com/daybreak-today/assets/peel1.ext.df9c55.js$domain=weather.com
 !#safari_cb_affinity
-aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; min-height: 1px !important; }
+aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; }
+aternos.org#$#.placement { content-visibility: hidden !important; }
+@@||aternos.org^$generichide
 !#safari_cb_affinity(general)
 @@||hb.vntsm.io/content.html$domain=aternos.org
 @@||hb.vntsm.com/v4/live/vms/ad-manager.js$domain=aternos.org

@@ -1,8 +1,8 @@
-! Checksum: cWxb0gBV2pnRw1QTbQ3Fzw
+! Checksum: rM3LazYvrt1lLOQYcm5lDw
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.47.89
-! TimeUpdated: 2024-12-28T13:34:46+00:00
+! Version: 2.0.47.90
+! TimeUpdated: 2024-12-28T14:34:16+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 [$path=/images]ya.ru,yandex.*##.AdvMastHead
@@ -344,6 +344,8 @@ play-games.com###ad-block-enabled-body
 dyxs.sbs##.popup-tips
 sndeep.info###additionalInfoHidden
 nintendolife.com##.insert-blocker
+nintendolife.com##iframe[src^="https://images.nintendolife.com/"][src$=".jpg"]
+nintendolife.com##.items > li[style="margin: 20px auto; text-align: center; display: block !important;"]
 /avforums\.com\/index\.php\?\w{3}\/\d{6}\//$xmlhttprequest,domain=avforums.com
 archangelvideo.com###ad_blocker_note
 baomidou.com##astro-island[opts^="{\"name\":\"CheckAdBlocked\""]
@@ -1128,7 +1130,9 @@ promote.telegram.org#@#.text-ad-links
 promote.telegram.org#@#.ads-header
 promote.telegram.org#@#.ads-content
 !#safari_cb_affinity
-aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; min-height: 1px !important; }
+aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; }
+aternos.org#$#.placement { content-visibility: hidden !important; }
+@@||aternos.org^$generichide
 !#safari_cb_affinity(general)
 @@||hb.vntsm.io/content.html$domain=aternos.org
 @@||hb.vntsm.com/v4/live/vms/ad-manager.js$domain=aternos.org

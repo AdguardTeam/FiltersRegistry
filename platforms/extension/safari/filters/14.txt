@@ -1,9 +1,9 @@
-! Checksum: blBWCNjv/KLQ6P64rjsv/A
-! Diff-Path: ../patches/14/14-s-1735393098-3600.patch
+! Checksum: gW55M2RCycKjmmMUI5/5mg
+! Diff-Path: ../patches/14/14-s-1735396673-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.59
-! TimeUpdated: 2024-12-28T13:34:39+00:00
+! Version: 2.2.17.60
+! TimeUpdated: 2024-12-28T14:34:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22573,6 +22573,8 @@ sourcecon.com#%#//scriptlet('trusted-set-local-storage-item', 'adBlockerModalSta
 pushsquare.com#%#//scriptlet('set-constant', 'dgpReadyWrapper', 'undefined')
 nintendolife.com#%#//scriptlet('prevent-setTimeout', 'dgp.blockr')
 nintendolife.com##.insert-blocker
+nintendolife.com##iframe[src^="https://images.nintendolife.com/"][src$=".jpg"]
+nintendolife.com##.items > li[style="margin: 20px auto; text-align: center; display: block !important;"]
 flightaware.com#%#//scriptlet('trusted-click-element', 'div[style*="fsab-button"]  h2 + span')
 avforums.com#%#//scriptlet('prevent-addEventListener', 'load', 'ad_megabanner')
 /avforums\.com\/index\.php\?\w{3}\/\d{6}\//$xmlhttprequest,domain=avforums.com
@@ -24811,7 +24813,9 @@ promote.telegram.org#@#.ads-content
 ! script checks these elements even if rules changed
 ! .responsive-sky-scraper
 ! .header-link-exaroton
-aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; min-height: 1px !important; }
+aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; }
+aternos.org#$#.placement { content-visibility: hidden !important; }
+@@||aternos.org^$generichide
 !#safari_cb_affinity(general)
 @@||hb.vntsm.io/content.html$domain=aternos.org
 @@||hb.vntsm.com/v4/live/vms/ad-manager.js$domain=aternos.org

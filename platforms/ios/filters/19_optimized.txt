@@ -1,9 +1,9 @@
-! Checksum: 0ohAKAhRlUULBrqGqDuCXg
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1735393107-3600.patch
+! Checksum: r0n6A1HT97yCUQnBWnfS9A
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1735396682-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.47.89
-! TimeUpdated: 2024-12-28T13:34:46+00:00
+! Version: 2.0.47.90
+! TimeUpdated: 2024-12-28T14:34:16+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -453,6 +453,8 @@ sourcecon.com#%#//scriptlet('trusted-set-local-storage-item', 'adBlockerModalSta
 pushsquare.com#%#//scriptlet('set-constant', 'dgpReadyWrapper', 'undefined')
 nintendolife.com#%#//scriptlet('prevent-setTimeout', 'dgp.blockr')
 nintendolife.com##.insert-blocker
+nintendolife.com##iframe[src^="https://images.nintendolife.com/"][src$=".jpg"]
+nintendolife.com##.items > li[style="margin: 20px auto; text-align: center; display: block !important;"]
 flightaware.com#%#//scriptlet('trusted-click-element', 'div[style*="fsab-button"]  h2 + span')
 avforums.com#%#//scriptlet('prevent-addEventListener', 'load', 'ad_megabanner')
 /avforums\.com\/index\.php\?\w{3}\/\d{6}\//$xmlhttprequest,domain=avforums.com
@@ -1549,7 +1551,9 @@ promote.telegram.org#@#.text-ad-links
 promote.telegram.org#@#.ads-header
 promote.telegram.org#@#.ads-content
 !#safari_cb_affinity
-aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; min-height: 1px !important; }
+aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; }
+aternos.org#$#.placement { content-visibility: hidden !important; }
+@@||aternos.org^$generichide
 !#safari_cb_affinity(general)
 @@||hb.vntsm.io/content.html$domain=aternos.org
 @@||hb.vntsm.com/v4/live/vms/ad-manager.js$domain=aternos.org

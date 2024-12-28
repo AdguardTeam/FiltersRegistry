@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: O54YdPbWoS8vDFTNSIYQKA
-! Diff-Path: ../patches/14/14-s-1735393101-3600.patch
+! Checksum: y5jdhgR6ZglZW4nsK6JDqg
+! Diff-Path: ../patches/14/14-s-1735396677-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.59
-! TimeUpdated: 2024-12-28T13:34:39+00:00
+! Version: 2.2.17.60
+! TimeUpdated: 2024-12-28T14:34:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21593,6 +21593,8 @@ sndeep.info###additionalInfoHidden
 pushsquare.com##+js(set-constant, dgpReadyWrapper, undefined)
 nintendolife.com##+js(no-setTimeout-if, dgp.blockr)
 nintendolife.com##.insert-blocker
+nintendolife.com##iframe[src^="https://images.nintendolife.com/"][src$=".jpg"]
+nintendolife.com##.items > li[style="margin: 20px auto; text-align: center; display: block !important;"]
 avforums.com##+js(addEventListener-defuser, load, ad_megabanner)
 /avforums\.com\/index\.php\?\w{3}\/\d{6}\//$xmlhttprequest,domain=avforums.com
 archangelvideo.com###ad_blocker_note
@@ -23791,7 +23793,9 @@ promote.telegram.org#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_
 ! script checks these elements even if rules changed
 ! .responsive-sky-scraper
 ! .header-link-exaroton
-aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; min-height: 1px !important; }
+aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; }
+aternos.org#$#.placement { content-visibility: hidden !important; }
+@@||aternos.org^$generichide
 !#safari_cb_affinity(general)
 @@||hb.vntsm.io/content.html$domain=aternos.org
 @@||hb.vntsm.com/v4/live/vms/ad-manager.js$domain=aternos.org
