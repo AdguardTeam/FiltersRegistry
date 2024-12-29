@@ -1,9 +1,9 @@
-! Checksum: 9puNdDdIuMzawmcXJbP1LA
-! Diff-Path: ../patches/16/16-s-1735450700-3600.patch
+! Checksum: Qr/5Lm5IzFCj6tSQfhX0Zw
+! Diff-Path: ../patches/16/16-s-1735490263-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.48.88
-! TimeUpdated: 2024-12-29T05:35:07+00:00
+! Version: 2.0.48.89
+! TimeUpdated: 2024-12-29T16:34:12+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -249,16 +249,14 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147842
-japscan.lol#$?##Roiyehe { remove: true; }
-japscan.lol#%#//scriptlet('set-constant', 'NeSi', 'noopFunc')
+japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item', 'opacity', '1')
+japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item > a', 'pointer-events', 'auto')
+japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a { pointer-events: none !important; }
+japscan.lol#%#//scriptlet('set-constant', 'JoQe', 'noopFunc')
 japscan.lol#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/^#(navpromo|Roi)/', 'prevent')
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^#(navpromo|Roi)/', 'prevent')
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelectorAll', '/^#(navpromo|Roi)/', 'prevent')
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0.1 !important; }
-japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'href', ' ')
 japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/Niger|Charger|GoodDay|funct'|t'\+'y/")
-japscan.lol#%#//scriptlet("prevent-addEventListener", "/^[$\w]+\s*=>\s*\{\s*\w+\s*(?:[$\w]+\s*=\s*[$\w]+\s*[,;])+\s*[$\w]+\s*=['\"]|Yuki|pro'|getCo'|href'\)|=='0p'|shop/")
+!japscan.lol#%#//scriptlet("prevent-addEventListener", "/^[$\w]+\s*=>\s*\{\s*\w+\s*(?:[$\w]+\s*=\s*[$\w]+\s*[,;])+\s*[$\w]+\s*=['\"]|Yuki|pro'|getCo'|href'\)|=='0p'|shop/")
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')
 $script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.lol
 @@$image,domain=japscan.lol
@@ -8494,6 +8492,7 @@ _siteunder/$popup
 ||foxforlog.live^
 ||fpdhinscvjwgsw.xyz^
 ||fractionfridgejudiciary.com^
+||fragrantanger.com^
 ||frayedpause.com^
 ||freckedlieut.top^
 ||freedomyapa.com^
@@ -9175,6 +9174,7 @@ _siteunder/$popup
 ||nearaworry.shop^
 ||nedassiumw.xyz^
 ||neepseph.com^
+||negative-speed.pro^
 ||nergaukibe.com^
 ||neriphine.com^
 ||nerojimsee.xyz^
