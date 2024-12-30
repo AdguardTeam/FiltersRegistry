@@ -1,9 +1,9 @@
-! Checksum: gIJhMhf9b4UN82Yj8TFa1Q
-! Diff-Path: ../patches/2/2-s-1735551523-3600.patch
+! Checksum: Fo3cdw8ypE34/V1Y8nWrzg
+! Diff-Path: ../patches/2/2-s-1735555138-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.66.17
-! TimeUpdated: 2024-12-30T09:31:20+00:00
+! Version: 2.3.66.18
+! TimeUpdated: 2024-12-30T10:31:20+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8358,7 +8358,7 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! NOTE[id=common_baits]
 #@#.stickyads
 #@#.ads_banner
-##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
+##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"], [data-freestar-ad="123"]):not(:empty)
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
 !
 ! NOTE: Regular rules
@@ -34730,6 +34730,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+nextpit.com##.cpgSlot
+nextpit.com##.articlePart > aside[data-affiliate="true"]
+nextpit.com##.articlePart *:not(center) > aside[data-affiliate="true"]
 wionews.com##.ads-div-style
 scworld.com##body .dfp-slot
 scworld.com##div[class^="prestitial_wrapper"]
@@ -61924,15 +61927,14 @@ $websocket,domain=300mbfilms.io|lib.rus.ec
 ! NOTE: Anti-adblock
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194919
-@@||btv.bg/static/bg/shared/js/admanager/ads.js
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=btv.bg
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191545
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190807
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187565
 btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$#.vjs-control-bar { z-index: 1; }
 btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$#.vjs-continue-watching-bar { display: none !important; }
-btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$?##leading_video_player_autoplay_wrapper { remove: true; }
-btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$##leading_video_player_autoplay_main_wrapper { display: block !important; }
+btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$?#div[id^="leading_video_player_autoplay_wrapper"] { remove: true; }
+btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$#div[id^="leading_video_player_autoplay_"][id*="_main_wrapper"] { display: block !important; }
+btvnovinite.bg,btvplus.bg,businessnovinite.bg,btv.bg,btvsport.bg#%#//scriptlet('abort-on-property-read', 'branDetective')
 btvnovinite.bg,btvplus.bg,businessnovinite.bg,btv.bg,btvsport.bg#%#//scriptlet('set-constant', 'isEnhancedContentAvailable', 'undefined')
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=businessnovinite.bg|btv.bg|btvsport.bg|btvplus.bg|btvnovinite.bg
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190638
@@ -112149,6 +112151,7 @@ browsershots.org#@#.advert_area
 ||steamtraffic.com^$third-party
 ||streamateaccess.com^$third-party
 ||stripsaver.com^$third-party
+||sultrytraffic.com^$third-party
 ||supuv3.com^$third-party
 ||sv2.biz^$third-party
 ||sweetmedia.org^$third-party
@@ -123006,6 +123009,7 @@ sciencetimes.com##.player
 bossip.com##.player-wrapper-inner
 theroar.com.au##.pm-video-player__container-outermost
 swimswam.com##.polls-461
+baseball-reference.com,basketball-reference.com,fbref.com,hockey-reference.com,pro-football-reference.com,sports-reference.com##.primis
 appleinsider.com##.primis-ad-wrap
 iheart.com##.provider-stn
 pedestrian.tv##.recent-jobs-widget

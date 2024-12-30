@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: g6NPu9VUzccHgwRI2azweg
-! Diff-Path: ../patches/18/18-s-1735551507-3600.patch
+! Checksum: DRHBcv14SGH/Zntvbupuww
+! Diff-Path: ../patches/18/18-s-1735555126-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.53.73
-! TimeUpdated: 2024-12-30T09:34:42+00:00
+! Version: 2.0.53.74
+! TimeUpdated: 2024-12-30T10:35:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2477,6 +2477,10 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+arbitr-praktika.ru##.customer-info-block__coockie
+boo.world##+js(set-cookie, cookieConsentAnalytics, false)
+boo.world##+js(set-cookie, cookieConsentPerformance, false)
+boo.world##+js(set-cookie, cookieConsentCheck, true)
 bubilet.com.tr##.mobile-cookie
 galaxus.de###__next > div:not([class], [id]):has(> div[role="dialog"][aria-labelledby="cookieBannerTitle"])
 api.de##.dp--cookie-consent::before
@@ -5057,9 +5061,9 @@ stuytown.com#$?#body { overflow: auto !important; }
 stuytown.com#$?#.cookie-notice { display: none !important; }
 stuytown.com##+js(addEventListener-defuser, wheel, var r="deltaY"in n?w)
 jcconcursos.com.br##.jc-lgpd-consent
-tfoa.eu#$##website_cookies_bar { display: none !important; }
-tfoa.eu#$#body.modal-open { overflow: auto !important; }
-tfoa.eu#$#.modal-open #wrapwrap { overflow: auto !important; }
+skridr.no,tfoa.eu#$##website_cookies_bar { display: none !important; }
+skridr.no,tfoa.eu#$#body.modal-open { overflow: auto !important; }
+skridr.no,tfoa.eu#$#.modal-open #wrapwrap { overflow: auto !important; }
 europafm.ro##.optanon-toggle-display
 moscowseasons.com##.cookies_container
 kiron.ngo#$#.blur_cookies * { filter: none !important; }
@@ -15694,6 +15698,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195457
+@@||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js$domain=nextpit.com
 ! gamepro.de - broken videos
 @@||sdk.privacy-center.org/sdk/$domain=gamepro.de
 ! https://github.com/easylist/easylist/pull/20909

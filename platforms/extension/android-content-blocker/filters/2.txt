@@ -1,8 +1,8 @@
-! Checksum: fWtyJwsWmK61xdyBl2JLTA
+! Checksum: LkNIUiE8vdofSoeAjKm0XA
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.66.17
-! TimeUpdated: 2024-12-30T09:31:20+00:00
+! Version: 2.3.66.18
+! TimeUpdated: 2024-12-30T10:31:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8091,7 +8091,7 @@ uaclips.com,kzclip.com,ru-clip.com,ruclip.com###morev
 ! NOTE[id=common_baits]
 #@#.stickyads
 #@#.ads_banner
-##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
+##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"], [data-freestar-ad="123"]):not(:empty)
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
 !
 ! NOTE: Regular rules
@@ -31872,6 +31872,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+nextpit.com##.cpgSlot
+nextpit.com##.articlePart > aside[data-affiliate="true"]
+nextpit.com##.articlePart *:not(center) > aside[data-affiliate="true"]
 wionews.com##.ads-div-style
 scworld.com##body .dfp-slot
 scworld.com##div[class^="prestitial_wrapper"]
@@ -60419,7 +60422,7 @@ cari.com.my###cvidloader
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187565
 btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$#.vjs-control-bar { z-index: 1; }
 btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$#.vjs-continue-watching-bar { display: none !important; }
-btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$##leading_video_player_autoplay_main_wrapper { display: block !important; }
+btvnovinite.bg,businessnovinite.bg,btv.bg,btvsport.bg#$#div[id^="leading_video_player_autoplay_"][id*="_main_wrapper"] { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190638
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178821
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=play.nova.bg
@@ -110628,6 +110631,7 @@ browsershots.org#@#.advert_area
 ||steamtraffic.com^$third-party
 ||streamateaccess.com^$third-party
 ||stripsaver.com^$third-party
+||sultrytraffic.com^$third-party
 ||supuv3.com^$third-party
 ||sv2.biz^$third-party
 ||sweetmedia.org^$third-party
@@ -121162,6 +121166,7 @@ sciencetimes.com##.player
 bossip.com##.player-wrapper-inner
 theroar.com.au##.pm-video-player__container-outermost
 swimswam.com##.polls-461
+baseball-reference.com,basketball-reference.com,fbref.com,hockey-reference.com,pro-football-reference.com,sports-reference.com##.primis
 appleinsider.com##.primis-ad-wrap
 iheart.com##.provider-stn
 pedestrian.tv##.recent-jobs-widget
