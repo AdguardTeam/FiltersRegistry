@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.66.16",
-			"timeUpdated": "2024-12-30T08:31:21+0000",
+			"version": "2.3.66.17",
+			"timeUpdated": "2024-12-30T09:31:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.78.15",
-			"timeUpdated": "2024-12-30T07:34:23+0000",
+			"version": "2.0.78.16",
+			"timeUpdated": "2024-12-30T09:34:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.7",
-			"timeUpdated": "2024-12-28T11:34:43+0000",
+			"version": "2.0.28.8",
+			"timeUpdated": "2024-12-30T09:34:22+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.53.72",
-			"timeUpdated": "2024-12-30T08:34:57+0000",
+			"version": "2.0.53.73",
+			"timeUpdated": "2024-12-30T09:34:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -685,8 +685,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.97",
-			"timeUpdated": "2024-12-30T08:34:58+0000",
+			"version": "2.0.47.98",
+			"timeUpdated": "2024-12-30T09:34:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -707,8 +707,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.18.25",
-			"timeUpdated": "2024-12-30T08:34:59+0000",
+			"version": "2.0.18.26",
+			"timeUpdated": "2024-12-30T09:34:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -801,8 +801,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.5.69",
-			"timeUpdated": "2024-12-30T08:35:01+0000",
+			"version": "2.0.5.70",
+			"timeUpdated": "2024-12-30T09:34:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

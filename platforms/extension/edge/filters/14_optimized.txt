@@ -1,9 +1,9 @@
-! Checksum: zGaFKyGJuDEquPomg8tc/w
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1735547905-3600.patch
+! Checksum: K5B3n9x4juFhdLY5lzuoEQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1735551487-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.74
-! TimeUpdated: 2024-12-30T08:34:51+00:00
+! Version: 2.2.17.75
+! TimeUpdated: 2024-12-30T09:34:36+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1375,6 +1375,7 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#div[consent-skip-blocker] { display: none !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+bubilet.com.tr##.mobile-cookie
 galaxus.de###__next > div:not([class], [id]):has(> div[role="dialog"][aria-labelledby="cookieBannerTitle"])
 api.de##.dp--cookie-consent::before
 piotrovsky.store##.js-popup-cookie
@@ -3152,7 +3153,6 @@ tracemyip.org###acTOSckBar
 nec-solutioninnovators.co.jp,nec.com##.func-cookie
 szkolnastrona.pl##.backdrop-cookies
 drovae.gov.ua,octoparse.jp##div[class^="cookies_cookies_"]
-||cdn.ans-media.com/*/CookiesConsentPopUp
 revanced.app#%#//scriptlet('set-local-storage-item', 'analytics', 'false')
 antwerpen.be##aui-cookie-consent
 arsys.es##div[name="cookies"]
@@ -4214,7 +4214,9 @@ realt.by##.gdpr-confirmation
 focustaiwan.tw###jsGDPR
 bnn.in.th##.the-pdpa-consent-bar
 intermedia.ru##.сookieAgreement
-answear.*#$#body.modal--open { overflow: auto !important;}
+answear.*#%#//scriptlet('prevent-element-src-loading', 'script', 'CookiesConsentPopUp')
+answear.*#$#body > div[class^="NewModal"]:has(> div[class] > div[class*="CookiesConsentPopUp"]) { display: none !important; }
+answear.*#$#.modal--open { overflow: auto !important; position: static !important; width: 100% !important; }
 perkinelmerinformatics.com#%#//scriptlet("remove-class", "minddnd-wa-announcement-padding-top", "body")
 muziker.*#$#body { overflow: auto !important; }
 muziker.*#$#body .cookies-backdrop { display: none !important; }
@@ -9456,6 +9458,9 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 @@||search-module.s3.us-east-2.amazonaws.com/pubs/trib/adblockdetect.js
 !#safari_cb_affinity
 armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwesterndaily.com.au,crookwellgazette.com.au,dailyadvertiser.com.au,dailyliberal.com.au,examiner.com.au,illawarramercury.com.au,newcastleherald.com.au,portnews.com.au,thecourier.com.au,thesenior.com.au#%#//scriptlet('set-cookie', 'dismissCheck', '1')
+||estaticos-cdn.*/data/cmp/prensaiberica-es.js$domain=sport.es|elperiodico.com
+sport.es,elperiodico.com#%#//scriptlet('set-constant', '_an.ABMode', 'undefined')
+sport.es,elperiodico.com#%#(()=>{const d={getUserConsentStatusForVendor:()=>!0};window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push=n=>{"function"==typeof n&&n(d)}})();
 play-games.com###ad-block-enabled-body
 animeworld.so##.widget:has(> .this-message-does-not-harm-to-you-dont-remove-it:only-child:empty)
 ||img.animeworld.so/general/ADBLOCK.gif
@@ -17410,6 +17415,8 @@ buttondown.email#@##subscribe-form
 ###smartbanner.ios
 ###smartbanner.windows
 turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+darkreader.org##darkreader-backers-side
+darkreader.org##darkreader-ios-static
 wionews.com##.gh-post-page__share > button[style*="background-color:"]
 pokemongo-get.com##.mt-40.mb-10
 books.yandex.ru##div[class^="ContentLeftColumn_appContainer"]

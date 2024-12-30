@@ -1,9 +1,9 @@
-! Checksum: js7d6wH61a0YM8aSoq/BwA
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1735547917-3600.patch
+! Checksum: ExwD9fqMUQxWzQGcswowdg
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1735551503-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.53.72
-! TimeUpdated: 2024-12-30T08:34:57+00:00
+! Version: 2.0.53.73
+! TimeUpdated: 2024-12-30T09:34:42+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1376,6 +1376,7 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#div[consent-skip-blocker] { display: none !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+bubilet.com.tr##.mobile-cookie
 galaxus.de###__next > div:not([class], [id]):has(> div[role="dialog"][aria-labelledby="cookieBannerTitle"])
 api.de##.dp--cookie-consent::before
 piotrovsky.store##.js-popup-cookie
@@ -3152,7 +3153,6 @@ tracemyip.org###acTOSckBar
 nec-solutioninnovators.co.jp,nec.com##.func-cookie
 szkolnastrona.pl##.backdrop-cookies
 drovae.gov.ua,octoparse.jp##div[class^="cookies_cookies_"]
-||cdn.ans-media.com/*/CookiesConsentPopUp
 revanced.app#%#//scriptlet('set-local-storage-item', 'analytics', 'false')
 antwerpen.be##aui-cookie-consent
 arsys.es##div[name="cookies"]
@@ -4213,7 +4213,9 @@ realt.by##.gdpr-confirmation
 focustaiwan.tw###jsGDPR
 bnn.in.th##.the-pdpa-consent-bar
 intermedia.ru##.сookieAgreement
-answear.*#$#body.modal--open { overflow: auto !important;}
+answear.*#%#//scriptlet('prevent-element-src-loading', 'script', 'CookiesConsentPopUp')
+answear.*#$#body > div[class^="NewModal"]:has(> div[class] > div[class*="CookiesConsentPopUp"]) { display: none !important; }
+answear.*#$#.modal--open { overflow: auto !important; position: static !important; width: 100% !important; }
 perkinelmerinformatics.com#%#//scriptlet("remove-class", "minddnd-wa-announcement-padding-top", "body")
 muziker.*#$#body { overflow: auto !important; }
 muziker.*#$#body .cookies-backdrop { display: none !important; }

@@ -1,9 +1,9 @@
-! Checksum: o4UO1CvKuy1r14vEHqquMQ
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1735547919-3600.patch
+! Checksum: nDLNKb4YDgiax9bLz1lLhw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1735551505-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.66.16
-! TimeUpdated: 2024-12-30T08:31:21+00:00
+! Version: 2.3.66.17
+! TimeUpdated: 2024-12-30T09:31:20+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -2832,8 +2832,8 @@ ontools.net#%#//scriptlet('prevent-fetch', '/google-analytics\.com|adblockanalyt
 @@||ads-api.twitter.com^$domain=eurekaddl.skin
 @@||vatchus.com^$generichide
 canirunthegame.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
-rekidai-info.github.io#%#//scriptlet('prevent-setTimeout', '/location\.href\s*=\s*"about:blank"\s*\)\s*\}\s*$/')
-rekidai-info.github.io#%#//scriptlet('prevent-setInterval', '/location\.href\s*=\s*"about:blank"\s*\)\s*\}\s*$/')
+rekidai-info.github.io#%#//scriptlet('prevent-setTimeout', '/location\[.+\]\s*=\s*[$\w]+\(\d+\)\s*\)\s*\}/')
+rekidai-info.github.io#%#//scriptlet('prevent-setInterval', '/location\[.+\]\s*=\s*[$\w]+\(\d+\)\s*\)\s*\}/')
 infotamizhan.xyz#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=infotamizhan.xyz
@@ -43889,6 +43889,7 @@ pushsquare.com,songlyrics.com##.masthead
 buzzheavier.com##.max-w-\[60rem\] > p.mt-5.text-center.text-lg
 spin.com##.max-w-\[970px\]
 mayoclinic.org##.mayoad > .policy
+poe2db.tw##.mb-1 > [href^="/s/tl3"]
 racgp.org.au##.mb-1.small
 wccftech.com##.mb-11
 gamedev.net##.mb-3.align-items-center.justify-content-start
@@ -44716,7 +44717,6 @@ cnx-software.com##[href*="url2.cnx-software.com/"]
 cnx-software.com##[href*="url3.cnx-software.com/"]
 audiobookbay.is##[href="/ddeaatr"]
 mywaifulist.moe##[href="/nord"]
-poe2db.tw##[href="/s/tl3us"]
 slaynews.com##[href="https://slaynews.com/ads/"]
 multimovies.bond##[href="https://telegram.me/multilootdeals"]
 uncrate.com##[href="https://un.cr/advertise"]
@@ -45672,6 +45672,7 @@ fakings.com###undervideo
 kisscos.net###v-overlay
 xvideos.com###video-right
 xvideos.com###video-sponsor-links
+javtrailers.com###videoPlayerContainer a[target="_blank"]
 drtuber.com###video_list_banner
 hentaiplay.net###video_overlays
 redtube.com###video_right_col > .clearfix

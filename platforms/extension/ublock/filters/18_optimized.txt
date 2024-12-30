@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 6+7xBTpNMuByiLxM5+MsVg
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1735547922-3600.patch
+! Checksum: BivEyBmdwv37I0SvDKKJ5g
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1735551507-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.53.72
-! TimeUpdated: 2024-12-30T08:34:57+00:00
+! Version: 2.0.53.73
+! TimeUpdated: 2024-12-30T09:34:42+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1346,6 +1346,7 @@ help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keeper.io,developer
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#div[consent-skip-blocker] { display: none !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+bubilet.com.tr##.mobile-cookie
 galaxus.de###__next > div:not([class], [id]):has(> div[role="dialog"][aria-labelledby="cookieBannerTitle"])
 api.de##.dp--cookie-consent::before
 piotrovsky.store##.js-popup-cookie
@@ -2748,7 +2749,6 @@ tracemyip.org###acTOSckBar
 nec-solutioninnovators.co.jp,nec.com##.func-cookie
 szkolnastrona.pl##.backdrop-cookies
 drovae.gov.ua,octoparse.jp##div[class^="cookies_cookies_"]
-||cdn.ans-media.com/*/CookiesConsentPopUp
 revanced.app##+js(set-local-storage-item, analytics, false)
 antwerpen.be##aui-cookie-consent
 arsys.es##div[name="cookies"]
@@ -3798,7 +3798,8 @@ realt.by##.gdpr-confirmation
 focustaiwan.tw###jsGDPR
 bnn.in.th##.the-pdpa-consent-bar
 intermedia.ru##.сookieAgreement
-answear.*#$#body.modal--open { overflow: auto !important;}
+answear.*#$#body > div[class^="NewModal"]:has(> div[class] > div[class*="CookiesConsentPopUp"]) { display: none !important; }
+answear.*#$#.modal--open { overflow: auto !important; position: static !important; width: 100% !important; }
 perkinelmerinformatics.com##+js(remove-class, minddnd-wa-announcement-padding-top, body)
 muziker.*#$#body { overflow: auto !important; }
 muziker.*#$#body .cookies-backdrop { display: none !important; }

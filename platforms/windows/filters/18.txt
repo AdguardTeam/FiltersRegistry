@@ -1,9 +1,9 @@
-! Checksum: Zb4lD72ditleS/9omq90/w
-! Diff-Path: ../patches/18/18-s-1735547934-3600.patch
+! Checksum: SvjUdi/pMoRv60wGi3WpsQ
+! Diff-Path: ../patches/18/18-s-1735551522-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.53.72
-! TimeUpdated: 2024-12-30T08:34:57+00:00
+! Version: 2.0.53.73
+! TimeUpdated: 2024-12-30T09:34:42+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2518,6 +2518,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+bubilet.com.tr##.mobile-cookie
 galaxus.de###__next > div:not([class], [id]):has(> div[role="dialog"][aria-labelledby="cookieBannerTitle"])
 api.de##.dp--cookie-consent::before
 piotrovsky.store##.js-popup-cookie
@@ -5276,7 +5277,6 @@ fmdataba.com###coki61
 coupondojo.com,coupondojo.pl#$##rodo-message { display: none !important; }
 coupondojo.com,coupondojo.pl#$#.modal-backdrop { display: none !important; }
 coupondojo.com,coupondojo.pl#$#body { overflow: auto !important; padding-right: 0 !important; }
-||cdn.ans-media.com/*/CookiesConsentPopUp
 revanced.app#%#//scriptlet('set-local-storage-item', 'analytics', 'false')
 anstar.edu.pl##.tarnow-cookies-wrapper
 haber.com###habercom-cookie-box
@@ -7880,8 +7880,9 @@ hytec-hydraulik.de,dolmar.de###cookie-hinweis
 starbucks.co.th##.mpp-container
 getkeepsafe.com##body .cookie-consent-banner-wrapper
 intermedia.ru##.сookieAgreement
-answear.*#?#body > div.modal:has(> div.container--basic > div.row > div[class*="CookiesConsentPopUp"])
-answear.*#$#body.modal--open { overflow: auto !important;}
+answear.*#%#//scriptlet('prevent-element-src-loading', 'script', 'CookiesConsentPopUp')
+answear.*#$#body > div[class^="NewModal"]:has(> div[class] > div[class*="CookiesConsentPopUp"]) { display: none !important; }
+answear.*#$#.modal--open { overflow: auto !important; position: static !important; width: 100% !important; }
 luisaviaroma.com#?#body > div:not([class]):not([id]):has(> div[class^="_"] div[class] > a[href^="/myarea/CookiePolicy.aspx"])
 perkinelmerinformatics.com#%#//scriptlet("remove-class", "minddnd-wa-announcement-padding-top", "body")
 perkinelmerinformatics.com#$#.minddnd-wa-announcement-wrap { display: none !important; }

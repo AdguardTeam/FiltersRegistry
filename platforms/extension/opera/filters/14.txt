@@ -1,9 +1,9 @@
-! Checksum: /27ndGxSmeh93Z2JxWAn6Q
-! Diff-Path: ../patches/14/14-s-1735547912-3600.patch
+! Checksum: N1JUNpBUAn9uG/iULeJlKw
+! Diff-Path: ../patches/14/14-s-1735551497-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.17.74
-! TimeUpdated: 2024-12-30T08:34:51+00:00
+! Version: 2.2.17.75
+! TimeUpdated: 2024-12-30T09:34:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2518,6 +2518,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+bubilet.com.tr##.mobile-cookie
 galaxus.de###__next > div:not([class], [id]):has(> div[role="dialog"][aria-labelledby="cookieBannerTitle"])
 api.de##.dp--cookie-consent::before
 piotrovsky.store##.js-popup-cookie
@@ -5274,7 +5275,6 @@ fmdataba.com###coki61
 coupondojo.com,coupondojo.pl#$##rodo-message { display: none !important; }
 coupondojo.com,coupondojo.pl#$#.modal-backdrop { display: none !important; }
 coupondojo.com,coupondojo.pl#$#body { overflow: auto !important; padding-right: 0 !important; }
-||cdn.ans-media.com/*/CookiesConsentPopUp
 revanced.app#%#//scriptlet('set-local-storage-item', 'analytics', 'false')
 anstar.edu.pl##.tarnow-cookies-wrapper
 haber.com###habercom-cookie-box
@@ -7874,8 +7874,9 @@ hytec-hydraulik.de,dolmar.de###cookie-hinweis
 starbucks.co.th##.mpp-container
 getkeepsafe.com##body .cookie-consent-banner-wrapper
 intermedia.ru##.сookieAgreement
-answear.*#?#body > div.modal:has(> div.container--basic > div.row > div[class*="CookiesConsentPopUp"])
-answear.*#$#body.modal--open { overflow: auto !important;}
+answear.*#%#//scriptlet('prevent-element-src-loading', 'script', 'CookiesConsentPopUp')
+answear.*#$#body > div[class^="NewModal"]:has(> div[class] > div[class*="CookiesConsentPopUp"]) { display: none !important; }
+answear.*#$#.modal--open { overflow: auto !important; position: static !important; width: 100% !important; }
 luisaviaroma.com#?#body > div:not([class]):not([id]):has(> div[class^="_"] div[class] > a[href^="/myarea/CookiePolicy.aspx"])
 perkinelmerinformatics.com#%#//scriptlet("remove-class", "minddnd-wa-announcement-padding-top", "body")
 perkinelmerinformatics.com#$#.minddnd-wa-announcement-wrap { display: none !important; }
@@ -22404,6 +22405,9 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+||estaticos-cdn.*/data/cmp/prensaiberica-es.js$domain=sport.es|elperiodico.com
+sport.es,elperiodico.com#%#//scriptlet('set-constant', '_an.ABMode', 'undefined')
+sport.es,elperiodico.com#%#(()=>{const d={getUserConsentStatusForVendor:()=>!0};window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push=n=>{"function"==typeof n&&n(d)}})();
 play-games.com###ad-block-enabled-body
 animeworld.so##.widget:has(> .this-message-does-not-harm-to-you-dont-remove-it:only-child:empty)
 ||img.animeworld.so/general/ADBLOCK.gif
@@ -40976,6 +40980,8 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+darkreader.org##darkreader-backers-side
+darkreader.org##darkreader-ios-static
 wionews.com##.gh-post-page__share > button[style*="background-color:"]
 pokemongo-get.com##.mt-40.mb-10
 books.yandex.ru##div[class^="ContentLeftColumn_appContainer"]
