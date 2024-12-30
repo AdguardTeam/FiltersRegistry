@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.66.21",
-			"timeUpdated": "2024-12-30T13:31:22+0000",
+			"version": "2.3.66.22",
+			"timeUpdated": "2024-12-30T14:31:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.8.99",
-			"timeUpdated": "2024-12-30T11:38:50+0000",
+			"version": "2.1.9.0",
+			"timeUpdated": "2024-12-30T14:39:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/13_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.53",
-			"timeUpdated": "2024-12-27T13:35:09+0000",
+			"version": "2.0.54.54",
+			"timeUpdated": "2024-12-30T14:39:25+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.17.79",
-			"timeUpdated": "2024-12-30T13:39:12+0000",
+			"version": "2.2.17.80",
+			"timeUpdated": "2024-12-30T14:39:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.53.76",
-			"timeUpdated": "2024-12-30T12:39:11+0000",
+			"version": "2.0.53.77",
+			"timeUpdated": "2024-12-30T14:39:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.99",
-			"timeUpdated": "2024-12-30T10:35:01+0000",
+			"version": "2.0.48.0",
+			"timeUpdated": "2024-12-30T14:39:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
