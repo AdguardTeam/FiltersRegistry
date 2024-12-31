@@ -1,5 +1,5 @@
-! Checksum: XmVty4vpNFEdAksrqOuOKg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1735607128-14400.patch
+! Checksum: +5LkiDHmAHxtJJyCkxXmlg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1735621521-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.89
@@ -82,8 +82,6 @@ doctolib.fr##.MuiModal-root:has([href*="play.google"])
 fandom.com##.global-footer__section-fandom-apps
 fandom.com##.global-footer__section-fandom-stores
 www.youtube.com###teaser-carousel:has(img[src*="/youtube_kids_"])
-francetvinfo.fr##.o-footer__apps-block
-francetvinfo.fr##.m-app-links
 @@/jquery.smartbanner.js^
 .smartbanner.js$domain=~mcpedl.com
 ###___ndtvpushdiv
@@ -687,6 +685,7 @@ baidu.com##.leadDownloadCard
 baidu.com##.poiLeadDownloadCard
 12306.cn##.foot-code
 flights.ctrip.com##.seo-links
+mafengwo.cn###footer
 globalpublishers.co.tz##.adcontainer
 globalpublishers.co.tz##.widget_custom_html a[href="#"]
 globalpublishers.co.tz###custom_html-40
@@ -697,7 +696,6 @@ knowyourmeme.com###leaderboard
 knowyourmeme.com###top-entries-sidebar
 knowyourmeme.com###spp-gallery
 knowyourmeme.com###trending_photos
-knowyourmeme.com##.homepage-share
 knowyourmeme.com##.fb-page-like
 knowyourmeme.com##.cbox-smedia
 wikia.org,fandom.com###WikiaBarWrapper
@@ -823,6 +821,7 @@ transfermarkt.com##.clearer
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
 pixiv.net##div[class*=" "]:empty:has(+ aside + aside)
+viaplay.*##.backdrop-bottom
 netflix.com#$#div[class^=watch-video--][class*="-container "] { background-image: none !important }
 tv.nrk.no#$#:is(.episode-info-gradient,.tv-layout-fill) { background:unset!important }
 *#$?#.playkit-bottom-bar { background: none !important }
@@ -846,6 +845,7 @@ play.max.com##div[class*=Gradient-Beam-]:empty
 ~imdb.com##.imdb_r:not(html,body,:empty)
 ~imdb.com##.btn-imdb:not(html,body,:empty)
 ~imdb.com##.jt-imdb:not(html,body,:empty)
+~imdb.com##a[data-testhook=imdb-link i]
 ~imdb.com##.imdb-score:not(html,body,:empty)
 ~imdb.com##.imdb-ic:not(html,body,:empty)
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
@@ -931,7 +931,6 @@ $removeparam=mp_value1
 $removeparam=email_work_card
 $removeparam=tracking_source
 $~image,removeparam=itok
-$removeparam=smtyp
 $removeparam=tpcc
 $~xmlhttprequest,removeparam=mbid
 $removeparam=itid
@@ -1097,7 +1096,6 @@ $removeparam=sp_medium
 $removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
 $document,removeparam=/^affSource.*$/i
-$document,removeparam=/^cid_.*$/
 $removeparam=depth_1-utm_source
 $removeparam=cmp_id
 $removeparam=adg_id
@@ -1181,7 +1179,6 @@ $removeparam=af_adset_id
 $removeparam=af_c_id
 $removeparam=af_channel
 $removeparam=af_click_lookback
-$removeparam=af_cost_model
 $removeparam=af_force_deeplink
 $removeparam=af_keyword
 $removeparam=af_referrer_customer_id
@@ -1201,7 +1198,6 @@ $removeparam=waad
 $removeparam=_gac
 $removeparam=af_campaign
 $removeparam=nrtv_cid
-$removeparam=nrtv_as_src
 $removeparam=trk_ref
 $removeparam=ircid
 $document,removeparam=/^src=rss$/
@@ -1336,7 +1332,6 @@ $removeparam=ucf_user_id
 $removeparam=yandexuid
 $removeparam=google_nid
 $removeparam=ex-src
-$document,removeparam=uid_bam
 $removeparam=pv_ts
 $removeparam=bidswitch_ssp_id
 $removeparam=tgclid
@@ -1557,7 +1552,6 @@ $document,removeparam=gs_lp,domain=www.google.*|ipv6.google.com
 ||google.$document,removeparam=sca_esv
 $removeparam=/^udm=$/,domain=www.google.*|ipv6.google.com
 ||translate.goog^$removeparam=_x_tr_pto
-$document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ://www.google.$document,removeparam=ie,domain=www.google.*|ipv6.google.com
 ||www.google.$document,removeparam=fbs
 ||www.google.$document,removeparam=ictx
@@ -1566,6 +1560,7 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 @@://www.google.com/maps?entry=$removeparam=utm_campaign
 ||tiktok.com^$removeparam=_r
 $removeparam=u_code
+$removeparam=is_from_webapp
 $removeparam=sender_device
 $removeparam=sender_web_id
 ||tiktok.com^$removeparam=_d
@@ -1651,7 +1646,6 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=vslid
 ||baidu.com^$removeparam=logid
 ||baidu.com^$removeparam=srcp
-||baidu.com^$removeparam=sfrom
 ||haokan.baidu.com/v?$removeparam=pd
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaId
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaTitle
@@ -1805,6 +1799,7 @@ $removeparam=pgtype,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj
 $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
 $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
 $removeparam=publisher_id,domain=t-mobile.com|udemy.com
+||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
 ||apple.com^$removeparam=fnode
@@ -1814,6 +1809,7 @@ $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|disc
 ||babbel.com^$removeparam=btp
 ||microsoft.com^$removeparam=destrt
 $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moosejaw.com|multitronic.fi|scandinavianphoto.fi|swamp.fi|ocado.com|ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
+||verizon.com^$removeparam=vendorid
 ||hp.com^$removeparam=jumpid
 ||walmart.com^$removeparam=veh
 ||bbc.$removeparam=at_campaign
@@ -2153,6 +2149,7 @@ $removeparam=qid,domain=bookdepository.com|eastday.com
 ||typeform.com^$removeparam=typeform-source
 $removeparam=_1lr
 $removeparam=ymid
+^z=*&var=$removeparam=var,document
 ||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
