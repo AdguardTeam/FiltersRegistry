@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: i8dlEa/gWZV6gDUIz2Cvng
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1735634611-3600.patch
+! Checksum: UnInD7MifOMzFwXAaHZx9A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1735638457-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.66.31
-! TimeUpdated: 2024-12-31T08:31:20+00:00
+! Version: 2.3.66.32
+! TimeUpdated: 2024-12-31T09:31:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26582,6 +26582,9 @@ uroda.abczdrowie.pl#?#.article__textbox:matches-css(background-image: /^url\(htt
 uroda.abczdrowie.pl#?#.article__container > .content-aside .content-aside__item:matches-css(background-image: /^url\(https:\/\/uroda\.abczdrowie\.pl\/media\/images\/commb\.png/)
 pytania.abczdrowie.pl#?#.article__textbox:matches-css(background-image: /^url\(https:\/\/pytania\.abczdrowie\.pl\/media\/images\/commb\.png/)
 forum.parenting.pl,forum.abczdrowie.pl#?##ipsLayout_sidebar > .article__side .article__side__stickblock:matches-css(background-image: /^url\(https:\/\/portal\.abczdrowie\.pl\/media\/images\/commb\.png/)
+! https://github.com/AdguardTeam/AdguardFilters/issues/195536
+pogoda.wp.pl#@?#.desktop > div[class*=" "]:-abp-has(div)
+sportowefakty.wp.pl,kobieta.wp.pl,moto.wp.pl,tech.wp.pl,gry.wp.pl,opinie.wp.pl,turystyka.wp.pl,pogoda.wp.pl,tv.wp.pl,finanse.wp.pl#@#* > DIV[style*="max-width: 100%;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168450
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56048
 pogoda.wp.pl##div[class^="placeholder_"]
@@ -36664,9 +36667,12 @@ fetlife.com##div[class="lg:w-200px"] > div[class="hidden py-8 lg:block"]
 nhl.com##.nhl-l-section-bg__adv
 nhl.com##.nhl-c-editorial-list__mrec
 javguard.xyz##body > div[class]:last-child:empty
-yourstory.com#?#main > div[class^="sc-"] > div[class^="sc-"]:empty
-yourstory.com#?#main > div[class^="sc-"] > div[class^="sc-"]:has(> div[id*="-banner-"]:only-child)
-yourstory.com##div[id^="page-style-default-"] > img + div[class^="sc-"]:empty
+yourstory.com##main > .block > div[class^="fixed bottom-"]:has(> a[href^="https://form.jotform.com/"][target="_blank"])
+yourstory.com##header > .text-center > div[class^="sc-"]:has(> .relative:only-child > div[id*="-banner-story-def"])
+yourstory.com##.text-center > .relative:only-child:has(> div[class^="sc-"][id*="-"][height]:first-child + div[height][width] + a[href^="https://form.jotform.com/"][target="_blank"]:last-child)
+yourstory.com#$#header > .text-center > .relative:has(> a[href^="https://form.jotform.com/"][target="_blank"]) { display: none !important; }
+yourstory.com#$#header > .w-full > .text-center > .mx-auto > .relative:has(> a[href^="https://form.jotform.com/"][target="_blank"]) { display: none !important; }
+yourstory.com#$##app_root > main:has(> #header-collapse-trigger) { margin-top: -250px !important; }
 linkvertise.com##.skeleton__image > ngx-skeleton-loader[appearance="line"] > span.progress:empty
 nuuuppp.*##.adcla
 nuuuppp.*##body > div[class][style^="cursor:pointer;position:absolute;"][style*="z-index"]
@@ -51064,8 +51070,6 @@ torrentfreak.com#?#.page__sidebar > .widget_text > .o-widget__title:contains(/^S
 cinereporters.com#?##btm-widget > h1:contains(/^From around the web$/)
 cinereporters.com#?#.colombiaonesuccess > div[class]:has(> div[id] > div > a[onclick] > div > .brand_ctn)
 cinereporters.com#?#.story-mainnews > .row > .col-md-6 > .colombiaonesuccess > div[class]:has(> div[id] > div > a[href] > div > p:matches-css(before, content: /^Ad$/))
-yourstory.com#?#main > div[class^="sc-"] > div[id$="-banner-0-landing"]:only-child:empty:upward(1)
-yourstory.com#?#div[id^="page-style-"][id*="-multisize-"][id$="-story-def"]:only-child:empty:upward(1)
 independent.co.uk#?#article > div[class^="sc-"]:has(> div > div[data-tile-name="top_banner"])
 cointelegraph.com#?#.sidebar > .sidebar__widget:has(> div > div > a[href*="cointelegraph.com/advertise"])
 cointelegraph.com#?#.posts-listing__list > .posts-listing__item:has(> div > div > a[href^="javascript:void(0);"][data-link] img)
