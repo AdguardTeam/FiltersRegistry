@@ -1,5 +1,5 @@
-! Checksum: 4NqpAFyQzsDSnOhpjhkXSw
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1735566164-3600.patch
+! Checksum: RsjU006BqLaSZ68xYcwcoA
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1735613040-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.10.61
@@ -30,7 +30,6 @@
 ||rcm.shinobi.jp^
 ||nullpoantenna.com/scripts/parts/blog/
 ||matomeantena.com/scripts/parts/blog/
-||moviegate4.net/fukugansan/
 ||rss.tc^$third-party
 /rss/rss.html$subdocument,~third-party
 .com/rss.htm$subdocument,~third-party
@@ -169,6 +168,7 @@ shirotomaster.com###container > div[style]:has(> iframe[src^="https://www.elog-c
 minkch.com##.click-drawing-container + div.yarpp-related-website
 minkch.com##.click-drawing-container + div.yarpp-related-website ~ li
 minkch.com###execphp-5
+tousatusin.com##footer div[id^="text-"]:has(div.ninja-recommend-block)
 umaumanews.com###st_custom_html_widget-3
 umaumanews.com###text-20
 netouyonews.net##main > aside[id^="pc_text"]:has(script[src^="https://blogroll.livedoor.net/"])
@@ -256,7 +256,6 @@ geinou-nude.com##div[id^="widget_main_top"]
 gamestlike.com##.singletop-widget
 negisoku.com##.t_h div[class^="res_"] .t_a div[style*="padding: 10px; margin: 5px 20px 10px;"]
 incident-wo.com,nandemoiiyoch.com###custom_html-13
-hentai-tanker.com#?#main > div.card-white__blue:has(> div.rss-scroll)
 matome.f-book.net##.rss_head
 ||fc2.com/s/e/t/setv/blogroll_custom.js
 ||tokimeki-s.com/kansha.html
@@ -308,8 +307,6 @@ kitizawa.com##.article-body-more > div[style="border:1px solid #F90;padding:10px
 kijomatomelog.com##.rss-single
 kijomatomelog.com,sukattojapan.com##.section-rss1
 ||vtubernews.jp/*link.js
-hiragana46matome.com,toriizaka46.jp##.sec-rss
-hiragana46matome.com,toriizaka46.jp##.sec-rss-article
 pazdra2ch.blog.jp##div[id^="rss-box"]
 otonarisoku.com,pazdra2ch.blog.jp###comment-title
 world-fusigi.net##.ad_btm
@@ -544,9 +541,6 @@ moeimg.net##.news_footer
 inutomo11.com##iframe[src^="http://inutomo11.com/nanj"]
 moeasia.net,syurabahazard.com###middlerss
 syurabahazard.com##.middlersstitle
-honwaka2ch.livedoor.biz##div[style^="width: 100%; height: 270px;"][style$="background: #fff;"]
-honwaka2ch.livedoor.biz##div[style^="width: 100%; height: 235px;"][style$="background: #fff;"]
-honwaka2ch.livedoor.biz#?#div[style^="font-weight: bold;text-align: left"]:contains(/ヘッドライン|おススメ/)
 po-kaki-to.com###text-5 div.site-Introduction
 po-kaki-to.com##.top-site-andander
 moeimg.net###page-pickup-link_frame
@@ -717,6 +711,8 @@ inazumanews2.com#$##sub { margin-top: 0!important; }
 hidromelphilipmead.com.br##.btn-whatsapp
 ironsaga-msoku.xyz#$##content { margin-top: 180px!important; }
 ironsaga-msoku.xyz#$##rss_wrap { display: none!important; }
+||monhan-mhw.com^$subdocument,~third-party
+monhan-mhw.com###main div.column-inner-2 > div[style$="background: #FFFFFF;"]
 ||toushichannel.net^$subdocument,~third-party
 world-best-news.doorblog.jp,news-channel.doorblog.jp,coolpan.net##.pickupList
 coolpan.net###rss_link3
@@ -778,6 +774,7 @@ blog.livedoor.jp##.rsslist
 ||blog.livedoor.jp/diet2channel/$subdocument,~third-party
 blog.livedoor.jp###container > div[style^="width:1105px;height:270px;overflow:auto;background-color:#ffffff;"]
 blog.livedoor.jp###main > div[style="border-bottom: black 1px solid; border-left: black 1px solid; padding-bottom: 5px; background-color: white; padding-left: 5px; width: 588px; padding-right: 5px; color: red; border-top: black 1px solid; border-right: black 1px solid; padding-top: 10px"]
+||blog.livedoor.jp/hibinanchara/$subdocument,~third-party
 blog.livedoor.jp##.sp_kizi_recommend
 ||blog.livedoor.jp/kekkongo/$subdocument,~third-party
 ||blog.livedoor.jp/livejupiter2/rss_$subdocument
@@ -1184,7 +1181,6 @@ tcaeintegral.es,tremplin-numerique.org,ordvor.com##.joinchat
 ||selcdn.net/chatBot.js
 ||service.force.com/embeddedservice/*/esw.min.js
 ||smartsuppchat.com/loader.js
-||studlancer.net/images/chat/studlancer_form.js
 ||video.ibm.com/socialstream/$domain=myoplay.club
 ||wchat.freshchat.com^$domain=unstoppabledomains.com
 ||web.tolstoycomments.com^$domain=zaycev.fm
