@@ -1,5 +1,5 @@
-! Checksum: tHMvoB3zG4bFPueSkUH1DQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1735664721-14400.patch
+! Checksum: WTaQglx9/VZ9XyhyqBji1A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1735707909-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.90
@@ -54,7 +54,6 @@
 ~macgamestore.com##.get-the-app:not(html,body,:empty)
 adguard.com##.sidebar-download
 bilibili.com##.nav-link-item a[href$="app.bilibili.com"]
-dagbladet.no##.slide-in-banner
 ifeng.com##.openApp[onclick^="loadOpen.init(download"]
 imageban.ru##img[alt="Get it on Google Play"]
 kurashiru.com##.footer-image-wrapper
@@ -62,7 +61,6 @@ momondo.*#$##mobile-splash-popup { display: none!important }
 momondo.*#$##mui-header { display: block!important }
 momondo.*#$#.flights-section-container { display: block!important }
 onlineradiobox.com##.page__column-right > .playmarket
-pcgames.de##div.header_footer.ui-footer.ui-bar-inherit.ui-footer-fixed.slideup[data-role="footer"]
 roblox.com###app-bumper-main
 rt.com###offers
 soundcloud.com##article.mobileApps
@@ -99,6 +97,8 @@ linkedin.com#$?#body { overflow: auto !important; }
 @@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
 @@://blog.*.top^$document
 ||bid^$document
+.life/*/?*=*&*=*&*=*&*=*&*=$document
+.live/*/?*=*&*=*&*=*&*=*&*=$document
 .xyz/*/?*=*&*=*&*=*&*=*&*=$document
 www.google.*,ipv6.google.com##.g:has(cite:has-text(.it › )):has(a[href*="-"][href$=".html"]:not([href*="://www."], [href*="://m."], [href*="carrefour.it"], [href*="gospesa.it"]))
 www.google.*,ipv6.google.com##.g:has(a[href^="https://books.google."])
@@ -149,6 +149,9 @@ coolrom.com.au,coolrom.com##.download_link
 !+ NOT_OPTIMIZED
 /^https?://(www\.)?[a-z0-9-]{1,}\.[a-z]{2,17}/[a-z0-9]/\?[a-z0-9.-]{8,}\$/$document
 ||kdmttk.com^$all
+||edaukooru.net^$all
+||seepsoaceva.net^$all
+||stelronsi.net^$all
 !+ NOT_OPTIMIZED
 /^http://imgblaze.net/[a-z0-9]{6}\$/$document,popup
 !+ NOT_OPTIMIZED
@@ -195,6 +198,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||amazonaws.com^$badfilter
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
 ###divShare
+###ppsPopupBgOverlay
 ###rail-share-bar
 ###share-buttons
 ###share-tool
@@ -744,7 +748,6 @@ alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 ###snowflakes
 daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 ##.xenfocus-snow:not(html, body, article)
-/let-it-snow.
 /snow-fall.js
 /snow-falling.js
 /snowfall-master.min.js
@@ -789,7 +792,6 @@ bloombergquint.com#%#//scriptlet('ubo-aopr.js', 'getSelection')
 delfi.lt#%#//scriptlet('ubo-aeld.js', 'copy')
 !+ NOT_OPTIMIZED
 ||www.15min.lt/naujiena^$csp=script-src 'self' 'unsafe-eval' http: https:
-/plugins/wp-copy-protect-with-color-design^
 /secure-copy-content-protection-public.css^$stylesheet
 hirunews.lk,ada.lk#$?#body { user-select: unset !important; -webkit-user-select: unset !important; -moz-user-select: unset !important }
 niskevesti.rs#$#:not(input):not(textarea)::selection { background-color: #B4D5FFA0 !important }
@@ -899,7 +901,6 @@ $document,removeparam=unptid
 $document,removeparam=unp_tpcid
 $document,removeparam=pgrp
 $document,removeparam=mchn
-$document,removeparam=asgtbndr
 .userapi.com/impg^$removeparam=type
 $document,removeparam=taid
 $removeparam=AID,document,denyallow=firestore.googleapis.com,domain=~google.*|~disqus.*|~disquscdn.com
@@ -966,6 +967,8 @@ $removeparam=rmmds
 $removeparam=utmid
 $removeparam=msclkid
 $removeparam=litb_from
+$document,removeparam=/^adword_.*$/,domain=~justdial.com
+$removeparam=adw_src_id
 $removeparam=ggcid
 $removeparam=ftag
 $removeparam=akmClientCountry
@@ -1197,6 +1200,7 @@ $removeparam=dt_platform
 $removeparam=waad
 $removeparam=_gac
 $removeparam=af_campaign
+$removeparam=ko_click_id
 $removeparam=nrtv_cid
 $removeparam=trk_ref
 $removeparam=ircid
@@ -1803,6 +1807,7 @@ $removeparam=publisher_id,domain=t-mobile.com|udemy.com
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
+||thehackernews.com^$removeparam=_m
 ||apple.com^$removeparam=fnode
 ||epidemicsound.com^$removeparam=_us
 ||epidemicsound.com^$removeparam=_usx
@@ -1996,6 +2001,7 @@ $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
 $removeparam=adp,domain=shein.com
 $removeparam=is_manual_change_site,domain=shein.com
+$removeparam=from_country,domain=shein.com
 $removeparam=sr_id,domain=reddit.app.link
 $removeparam=sr_name,domain=reddit.app.link
 $removeparam=domain,domain=reddit.app.link
