@@ -1,9 +1,9 @@
-! Checksum: 1tZSa4KZ/2OjGVttN9ix7w
-! Diff-Path: ../patches/18/18-s-1735807424-3600.patch
+! Checksum: qs06Z/IYCEguRjiph/8Yjg
+! Diff-Path: ../patches/18/18-s-1735811036-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.53.85
-! TimeUpdated: 2025-01-02T08:39:53+00:00
+! Version: 2.0.53.86
+! TimeUpdated: 2025-01-02T09:40:06+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2518,6 +2518,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+smarteru.com#%#//scriptlet('trusted-click-element', '#accept_cookie')
 regio-guide.de#%#//scriptlet('abort-on-stack-trace', 'DOMTokenList.prototype.add', 'openConsentLayerNavigationModal')
 webhallen.com#%#//scriptlet('set-local-storage-item', 'necessaryConsent', 'true')
 webhallen.com#%#//scriptlet('set-local-storage-item', 'marketingConsent', 'false')
@@ -16540,6 +16541,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195613
+smarteru.com#@##accept_cookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195594
 timetopet.com#@#.cookie-check
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195539
