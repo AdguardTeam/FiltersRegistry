@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.43",
-			"timeUpdated": "2024-12-28T16:31:15+0000",
+			"version": "2.0.96.44",
+			"timeUpdated": "2025-01-02T07:31:05+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.66.42",
-			"timeUpdated": "2025-01-02T06:31:28+0000",
+			"version": "2.3.66.43",
+			"timeUpdated": "2025-01-02T07:31:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.56",
-			"timeUpdated": "2024-12-31T14:39:33+0000",
+			"version": "2.0.54.57",
+			"timeUpdated": "2025-01-02T07:40:07+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.53.83",
-			"timeUpdated": "2024-12-31T12:39:41+0000",
+			"version": "2.0.53.84",
+			"timeUpdated": "2025-01-02T07:40:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -801,8 +801,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.5.81",
-			"timeUpdated": "2025-01-01T14:39:28+0000",
+			"version": "2.0.5.82",
+			"timeUpdated": "2025-01-02T07:40:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1185,8 +1185,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.29.6",
-			"timeUpdated": "2025-01-02T05:40:30+0000",
+			"version": "2.1.29.7",
+			"timeUpdated": "2025-01-02T07:40:33+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

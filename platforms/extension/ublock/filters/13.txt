@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5SGlFJgO6LbXKs1crFh8nw
-! Diff-Path: ../patches/13/13-s-1735656206-3600.patch
+! Checksum: 80fansZP7CIUu4WtZx2TTw
+! Diff-Path: ../patches/13/13-s-1735803848-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.54.56
-! TimeUpdated: 2024-12-31T14:39:33+00:00
+! Version: 2.0.54.57
+! TimeUpdated: 2025-01-02T07:40:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -76,6 +76,7 @@
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
 !
+||ds.macellan.online^
 ||kops1.site^
 ||kingbaba.org^
 ||yelads2.life^
@@ -1681,8 +1682,7 @@ r10.net##.postList > ul > li:not(.post, [data-order])
 r10.net##div[data-cname*="rk"]
 r10.net##.rabdfe3
 sinefil.tv###psContainer
-sinefil.tv##+js(abort-current-script, document.createElement, /\.src=[\s\S]*?Date[\s\S]*?getElementsByTagName/)
-||ds.macellan.online/*/?ts=$script,domain=sinefil.tv
+sinefil.tv##+js(abort-current-script, document.createElement, /\.src=[\s\S]*?getElementsByTagName/)
 yenisafak.com##.gif-banner
 ||assets.yenisafak.com/yenisafak/wwwroot/images/gif-banner*.gif
 sporx.com###maintop ~ div[style^="margin-left:"]
@@ -5546,10 +5546,14 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 ! dizilla.club/dizilla.com  - frequently changed domains
 [$domain=/(^\|.+\.)dizilla\d+\.com/]###mPlayerFd
 [$domain=/(^\|.+\.)dizilla\d+\.com/]###psContainer
+[$domain=/(^\|.+\.)dizilla\d+\.com/]###footerFixedDivWrapper
 [$domain=/(^\|.+\.)dizilla\d+\.com/]##a[target="_blank"] > .alert
+[$domain=/(^\|.+\.)dizilla\d+\.com/]##+js(abort-current-script, document.createElement, /\.src=[\s\S]*?getElementsByTagName/)
 dizilla.club,dizilla10.com,dizilla11.com,dizilla12.com,dizilla13.com,dizilla14.com,dizilla15.com,dizilla16.com,dizilla17.com,dizilla18.com,dizilla19.com,dizilla20.com###mPlayerFd
 dizilla.club,dizilla10.com,dizilla11.com,dizilla12.com,dizilla13.com,dizilla14.com,dizilla15.com,dizilla16.com,dizilla17.com,dizilla18.com,dizilla19.com,dizilla20.com###psContainer
+dizilla.club,dizilla10.com,dizilla11.com,dizilla12.com,dizilla13.com,dizilla14.com,dizilla15.com,dizilla16.com,dizilla17.com,dizilla18.com,dizilla19.com,dizilla20.com###footerFixedDivWrapper
 dizilla.club,dizilla10.com,dizilla11.com,dizilla12.com,dizilla13.com,dizilla14.com,dizilla15.com,dizilla16.com,dizilla17.com,dizilla18.com,dizilla19.com,dizilla20.com##a[target="_blank"] > .alert
+dizilla.club,dizilla10.com,dizilla11.com,dizilla12.com,dizilla13.com,dizilla14.com,dizilla15.com,dizilla16.com,dizilla17.com,dizilla18.com,dizilla19.com,dizilla20.com##+js(abort-current-script, document.createElement, /\.src=[\s\S]*?getElementsByTagName/)
 !
 ! selcuksportshd*.xyz - frequently changed domains
 cinque.668a396e58bcbc27.click##+js(set-constant, config.advertisement.enabled, false)
