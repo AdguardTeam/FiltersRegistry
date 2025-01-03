@@ -1,9 +1,9 @@
-! Checksum: izvBkixpISCu3jFDgT9TMw
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1735904649-3600.patch
+! Checksum: 8+mjBTw3WEhEjzvhnchSZA
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1735911795-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.96.49
-! TimeUpdated: 2025-01-03T11:31:07+00:00
+! Version: 2.0.96.50
+! TimeUpdated: 2025-01-03T13:31:06+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -2306,6 +2306,8 @@ market.yandex.*###banner-streamer
 market.yandex.*##div[data-apiary-widget-name*="@marketfront/HeroBanner"]
 market.yandex.*##div[data-apiary-widget-id*="/headerPromo"]
 [$path=/video]ya.ru,yandex.*##.Viewer-Content div[class$="Block_bottomRounded"]
+[$path=/video]ya.ru,yandex.*#%#//scriptlet('json-prune', 'rtb seatbid')
+[$path=/video]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'throwFunc')
 [$path=/video]ya.ru,yandex.*##.Viewer > div[style^="height:"]
 [$path=/video]ya.ru,yandex.*##.Viewer-ScrollContainer > div[class$="Block"] > div[class*="_placement_"]
 [$path=/video]ya.ru,yandex.*##.DirectStripe
