@@ -1,9 +1,9 @@
-! Checksum: 3dOOf/mDLUqs4vPIKJ7n2w
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1735911804-3600.patch
+! Checksum: fL1ydAR6V+dQoL24oS+fwg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1735915463-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.80
-! TimeUpdated: 2025-01-03T13:39:27+00:00
+! Version: 2.0.60.81
+! TimeUpdated: 2025-01-03T14:40:12+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -421,7 +421,9 @@ $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 @@||wiki.yjsnpi.nu^$generichide
 gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||kuji.xth.jp/ad-x-check.js
-exploader.net#$#a[style*="display:"][target="_blank"] { width: 90px !important; }
+exploader.net#%#(()=>{const e="広告ブロックをしていると画像プレビューを使用できません。広告ブロックを解除してダウンロードページをリロードしてください";let t=!1,n="";const o=new Set,c=c=>{c.preventDefault();const l=c.target.href,r=window.open(l,"_blank");r.addEventListener("load",(c=>{if(c.target.documentElement.innerText.includes(e)){const c=o.values().next().value;n=c,o.delete(c);const l=setInterval((()=>{if(r.document.documentElement?.innerText.includes(e)){const e=o.values().next().value;n=e,o.delete(e),r.location.replace(r.location.href.replace(/\?.*/,`?${e}`))}if(!t&&r.document.getElementById("preview_images")){document.querySelectorAll(".dl_button[href]").forEach((e=>e.href=e.href.replace(/\?.*/,`?${n}`))),t=!0,clearInterval(l)}}),500);r.location.replace(r.location.href.replace(/\?.*/,`?${c}`))}}))};document.addEventListener("DOMContentLoaded",(()=>{const e=document.querySelector("body script").textContent.match(/"] = '(.*?)'/g);if(!e)return;e.forEach((e=>{const t=e.replace(/.*'(.*?)'/,"$1");o.add(t)}));const t=document.querySelector('.dl_button[href*="preview"]').href.split("?")[1];o.has(t)&&o.delete(t);document.querySelectorAll(".dl_button[href]").forEach((e=>e.addEventListener("click",c)))}))})();
+exploader.net#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '.innerHTML')
+exploader.net##article > div[style*="1120px"]
 $image,redirect-rule=32x32-transparent.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
 exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
