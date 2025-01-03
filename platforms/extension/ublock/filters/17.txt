@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +hlmJ+Zxa/zWTrdgHJHlLg
-! Diff-Path: ../patches/17/17-s-1735313954-3600.patch
+! Checksum: bzgotfGiAVuMnZO15eP/Jw
+! Diff-Path: ../patches/17/17-s-1735922612-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.8
-! TimeUpdated: 2024-12-27T15:34:35+00:00
+! Version: 2.0.10.9
+! TimeUpdated: 2025-01-03T16:39:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2192,6 +2192,17 @@ $removeparam=igshid,domain=instagram.com|threads.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88784
 ||express.de^$removeparam=cb
 ||ksta.de^$removeparam=cb
+!
+! LinkedIn
+! Survey and self-promos
+||linkedin.com^$removeparam=courseClaim
+||linkedin.com^$removeparam=lipi
+||linkedin.com^$removeparam=trk
+! Premium upsell survey tracking
+||linkedin.com/premium/$removeparam=isSS
+||linkedin.com/premium/$removeparam=referenceId
+||linkedin.com/premium/$removeparam=upsellOrderOrigin
+||linkedin.com/premium/$removeparam=destRedirectURL
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3262558
 ||linkedin.com^$removeparam=original_referer
 ||linkedin.com^$removeparam=refId
@@ -2201,6 +2212,7 @@ $removeparam=igshid,domain=instagram.com|threads.net
 ||linkedin.com/authwall?$removeparam=originalReferer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110477
 ||linkedin.com^$removeparam=/^trk/
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69722
 ||digikey.com^$removeparam=/^utm_cid/
 !
