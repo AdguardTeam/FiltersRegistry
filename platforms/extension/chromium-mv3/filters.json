@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.66.80",
-			"timeUpdated": "2025-01-05T13:31:24+0000",
+			"version": "2.3.66.81",
+			"timeUpdated": "2025-01-05T14:31:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.85",
-			"timeUpdated": "2025-01-05T10:39:45+0000",
+			"version": "2.0.60.86",
+			"timeUpdated": "2025-01-05T14:39:37+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.15",
-			"timeUpdated": "2025-01-04T18:40:18+0000",
+			"version": "2.0.57.16",
+			"timeUpdated": "2025-01-05T14:39:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -612,8 +612,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.7",
-			"timeUpdated": "2025-01-05T10:40:08+0000",
+			"version": "2.0.49.8",
+			"timeUpdated": "2025-01-05T14:40:01+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -801,8 +801,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.6.2",
-			"timeUpdated": "2025-01-05T11:40:04+0000",
+			"version": "2.0.6.3",
+			"timeUpdated": "2025-01-05T14:40:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1185,8 +1185,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.29.35",
-			"timeUpdated": "2025-01-05T13:40:07+0000",
+			"version": "2.1.29.36",
+			"timeUpdated": "2025-01-05T14:40:13+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
