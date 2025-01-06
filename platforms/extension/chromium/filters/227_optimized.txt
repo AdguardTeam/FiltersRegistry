@@ -1,9 +1,9 @@
-! Checksum: lOqYJk6Xw7TyKnpgCbqk/g
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1735995915-14400.patch
+! Checksum: nC8DpJFbC+Yxl1OfctWpCQ
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1736139909-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.19.92
-! TimeUpdated: 2025-01-04T13:01:27+00:00
+! Version: 2.0.19.93
+! TimeUpdated: 2025-01-06T05:01:28+00:00
 ! Expires: 10 days (update frequency)
 ||centaurs-rest.coupang.com^
 ||ad.cashdoc.io^
@@ -1499,6 +1499,8 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+m.search.naver.com##ul[data-adlog].shop_default_list > ._product:has(._ad_icon)
+m.search.naver.com##div[data-meta-area*="_ad"]
 dak.gg##div[id^="venatus-"][id*="-banner-"]
 teamblind.com##div[class^="adfit_"]
 maple.gg###content-container > div[class*=" "]:has(.VenatusAdContainer)
@@ -3384,7 +3386,7 @@ naver.com#%#//scriptlet('set-cookie', 'ba.uuid', '0', '/', 'naver.com')
 @@||nam.veta.naver.com/vas$xmlhttprequest,domain=chzzk.naver.com
 dinfo.3dpchip.com#%#//scriptlet('set-constant', 'linkPass', 'true')
 boardlife.co.kr#$##top-sponsor { height: 60px !important; top: -60px !important; position: absolute !important; visibility: hidden !important; }
-klauncher.kr#%#//scriptlet('remove-node-text', 'script', '_0x')
+klauncher.kr#%#//scriptlet('prevent-addEventListener', 'load', '_0x')
 ||tistory1.daumcdn.net/tistory/3827361/skin/images/script3.js$domain=devjit.tistory.com
 hub.weirdhost.xyz#%#//scriptlet('prevent-fetch', 'adblockanalytics.com')
 hub.weirdhost.xyz#%#//scriptlet('prevent-fetch', 'adsbygoogle.js')
