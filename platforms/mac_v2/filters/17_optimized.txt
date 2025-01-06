@@ -1,9 +1,9 @@
-! Checksum: TCDJu3mzFq4GdY6jT1ojBg
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1736171268-3600.patch
+! Checksum: axrCltQSoVJb9/J88NmuFA
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1736178231-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.11
-! TimeUpdated: 2025-01-06T13:39:13+00:00
+! Version: 2.0.10.12
+! TimeUpdated: 2025-01-06T15:39:40+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=_sgm_campaign
 $removeparam=_sgm_term
@@ -247,6 +247,7 @@ $removeparam=fb_action_types
 $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
+||klerk.ru^$removeparam=srsltid
 ||vpnpay.io$removeparam=sr
 ||vpnpay.io$removeparam=pr
 ||vpnpay.io$removeparam=arf
@@ -628,16 +629,17 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com
 ||announcements.bybit.com^$removeparam=sa_utm_channel
 ||announcements.bybit.com^$removeparam=sa_utm_tcn
 ||game-i.daa.jp/?cmd=ad_mode$removeparam=cmd
+||slickdeals.net^$removeparam=sdtrk
 ||slickdeals.net^$removeparam=attr_track
 ||slickdeals.net^$removeparam=trd
+||slickdeals.net^$removeparam=sdtid
+||slickdeals.net^$removeparam=prop
 ||slickdeals.net^$removeparam=pv
 ||slickdeals.net^$removeparam=au
-||slickdeals.net^$removeparam=prop
-||slickdeals.net^$removeparam=sdtrk
+||slickdeals.net^$removeparam=peid
+||slickdeals.net^$removeparam=adobeRef
 ||slickdeals.net^$removeparam=attrsrc
 ||slickdeals.net^$removeparam=src
-||slickdeals.net/?adobeRef=$removeparam=adobeRef
-||slickdeals.net/*&sdtid=$removeparam=sdtid
 ||slickdeals.net/*&sdpid=$removeparam=sdpid
 ||slickdeals.net/*&sdfid=$removeparam=sdfid
 ||slickdeals.net/*&sdtrk=$removeparam=sdtrk
@@ -1614,7 +1616,6 @@ $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
 ||amazon.*$removeparam=ref
 ||amazon.*$removeparam=ie
 ||amazon.*$removeparam=adgrpid
-||amazon.*$removeparam=ascsubtag
 ||amazon.*$removeparam=AssociateTag
 ||amazon.*/gp/buyagain$removeparam=ats
 ||amazon.*$removeparam=c

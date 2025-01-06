@@ -1,9 +1,9 @@
-! Checksum: QJVGmU1a249fYy1RDKJayw
-! Diff-Path: ../patches/17/17-s-1736171316-3600.patch
+! Checksum: PIk7oG+kz4BakildMRqd6Q
+! Diff-Path: ../patches/17/17-s-1736178236-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.11
-! TimeUpdated: 2025-01-06T13:39:13+00:00
+! Version: 2.0.10.12
+! TimeUpdated: 2025-01-06T15:39:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -383,6 +383,8 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195101
+||klerk.ru^$removeparam=srsltid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195153
 ||vpnpay.io$removeparam=sr
 ||vpnpay.io$removeparam=pr
@@ -948,16 +950,17 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167273
 ||game-i.daa.jp/?cmd=ad_mode$removeparam=cmd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167051
+||slickdeals.net^$removeparam=sdtrk
 ||slickdeals.net^$removeparam=attr_track
 ||slickdeals.net^$removeparam=trd
+||slickdeals.net^$removeparam=sdtid
+||slickdeals.net^$removeparam=prop
 ||slickdeals.net^$removeparam=pv
 ||slickdeals.net^$removeparam=au
-||slickdeals.net^$removeparam=prop
-||slickdeals.net^$removeparam=sdtrk
+||slickdeals.net^$removeparam=peid
+||slickdeals.net^$removeparam=adobeRef
 ||slickdeals.net^$removeparam=attrsrc
 ||slickdeals.net^$removeparam=src
-||slickdeals.net/?adobeRef=$removeparam=adobeRef
-||slickdeals.net/*&sdtid=$removeparam=sdtid
 ||slickdeals.net/*&sdpid=$removeparam=sdpid
 ||slickdeals.net/*&sdfid=$removeparam=sdfid
 ||slickdeals.net/*&sdtrk=$removeparam=sdtrk
@@ -2366,6 +2369,8 @@ $removeparam=from,domain=anime.nicovideo.jp|dic.nicovideo.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148958
 ! Breaks navigation and removes chosen seller id on the item's page
 ! ||amazon.*$removeparam=smid
+! Broken redirect to Amazon from stores
+! ||amazon.*$removeparam=ascsubtag
 !
 ! ||amazon.*$removeparam=sr - breaks automatic jump to review details
 ! ||amazon.*$removeparam=s - breaks URLs which includes it to sort
@@ -2381,7 +2386,6 @@ $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
 ||amazon.*$removeparam=ref
 ||amazon.*$removeparam=ie
 ||amazon.*$removeparam=adgrpid
-||amazon.*$removeparam=ascsubtag
 ||amazon.*$removeparam=AssociateTag
 ||amazon.*/gp/buyagain$removeparam=ats
 ||amazon.*$removeparam=c
