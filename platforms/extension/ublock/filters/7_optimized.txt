@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: V519C/C4w4b7Dsm6uOswYA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1736163845-3600.patch
+! Checksum: 5mhI0EXkvIigxO1iRb8VgA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1736167462-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.88
-! TimeUpdated: 2025-01-06T11:39:49+00:00
+! Version: 2.0.60.89
+! TimeUpdated: 2025-01-06T12:39:58+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 ||carrier202205.tokyo^
@@ -419,7 +419,7 @@ gunauc.net##+js(no-fetch-if, pagead2.googlesyndication.com)
 ||kuji.xth.jp/ad-x-check.js
 $image,redirect-rule=32x32.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32.png,domain=exploader.net
-exploader.net##+js(remove-attr, href, a[style*="display:"][href^="https://al.dmm.co.jp"], complete)
+exploader.net##+js(remove-attr, href, a[style*="display:"][href^="https://al.dmm.co.jp"], stay)
 @@||daotag.com/tag/$script,domain=exploader.net
 iwb.jp##+js(no-setTimeout-if, getComputedStyle(a).height)
 kotobank.jp##+js(no-setTimeout-if, return)
@@ -10625,6 +10625,7 @@ gtoys.blog.fc2.com###adleft
 gtoys.blog.fc2.com###adright
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
+@@||hbb.afl.rakuten.co.jp/hgb/*%3A%2F%2Fthumbnail.$domain=plaza.rakuten.co.jp
 @@||cpt.geniee.jp/hb/*/wrapper.min.js$domain=hoyme.jp
 @@||yads.c.yimg.jp/js/yads-async.js$domain=hoyme.jp
 pooh2rohhobby.blogspot.com#@##ad-target

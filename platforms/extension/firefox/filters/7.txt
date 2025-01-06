@@ -1,9 +1,9 @@
-! Checksum: DQ183emvPTo/NdN2jfaGjQ
-! Diff-Path: ../patches/7/7-s-1736163833-3600.patch
+! Checksum: BUWM5CWgwTT6Ps5P6gX9EA
+! Diff-Path: ../patches/7/7-s-1736167449-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.88
-! TimeUpdated: 2025-01-06T11:39:49+00:00
+! Version: 2.0.60.89
+! TimeUpdated: 2025-01-06T12:39:58+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -546,9 +546,11 @@ gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188965
 ||kuji.xth.jp/ad-x-check.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
+!+ PLATFORM(ext_ff)
+||daotag.com/tag/$script,replace=/[\S\s]*(if\(typeof [0-9a-z]+==='undefined'\)\{)[\S\s]+(if\(typeof [0-9a-z]+==='function'\)\{[0-9a-z]+\(\)\})[\S\s]+(window\.addEventListener\('load'.)[\S\s]+/\$1\$3()=>{\$2})}/
 $image,redirect-rule=32x32-transparent.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
-exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
+exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'stay')
 @@||daotag.com/tag/$script,domain=exploader.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181591
 iwb.jp#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(a).height')
@@ -11146,6 +11148,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195541
+@@||hbb.afl.rakuten.co.jp/hgb/*%3A%2F%2Fthumbnail.$domain=plaza.rakuten.co.jp
 ! https://hoyme.jp/shindan/94283
 @@||cpt.geniee.jp/hb/*/wrapper.min.js$domain=hoyme.jp
 @@||yads.c.yimg.jp/js/yads-async.js$domain=hoyme.jp

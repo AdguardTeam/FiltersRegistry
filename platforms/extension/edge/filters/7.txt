@@ -1,9 +1,9 @@
-! Checksum: 1fd/n+BQ+Xpi0J/UMeKqxg
-! Diff-Path: ../patches/7/7-s-1736163829-3600.patch
+! Checksum: AlAt7pwgbxq7rZDv2XPq5w
+! Diff-Path: ../patches/7/7-s-1736167444-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.88
-! TimeUpdated: 2025-01-06T11:39:49+00:00
+! Version: 2.0.60.89
+! TimeUpdated: 2025-01-06T12:39:58+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -549,7 +549,7 @@ exploader.net#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototyp
 exploader.net##article > div[style*="1120px"]
 $image,redirect-rule=32x32-transparent.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
-exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
+exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'stay')
 @@||daotag.com/tag/$script,domain=exploader.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181591
 iwb.jp#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(a).height')
@@ -11137,6 +11137,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195541
+@@||hbb.afl.rakuten.co.jp/hgb/*%3A%2F%2Fthumbnail.$domain=plaza.rakuten.co.jp
 ! https://hoyme.jp/shindan/94283
 @@||cpt.geniee.jp/hb/*/wrapper.min.js$domain=hoyme.jp
 @@||yads.c.yimg.jp/js/yads-async.js$domain=hoyme.jp
