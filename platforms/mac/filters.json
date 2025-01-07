@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.67.0",
-			"timeUpdated": "2025-01-07T13:31:31+0000",
+			"version": "2.3.67.1",
+			"timeUpdated": "2025-01-07T14:31:27+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.78.41",
-			"timeUpdated": "2025-01-07T13:38:40+0000",
+			"version": "2.0.78.42",
+			"timeUpdated": "2025-01-07T14:38:56+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.9.33",
-			"timeUpdated": "2025-01-07T13:38:43+0000",
+			"version": "2.1.9.34",
+			"timeUpdated": "2025-01-07T14:38:59+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.60.97",
-			"timeUpdated": "2025-01-07T13:38:57+0000",
+			"version": "2.0.60.98",
+			"timeUpdated": "2025-01-07T14:39:10+0000",
 			"languages": [
 				"ja"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.18.47",
-			"timeUpdated": "2025-01-07T13:39:16+0000",
+			"version": "2.2.18.48",
+			"timeUpdated": "2025-01-07T14:39:30+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.29.65",
-			"timeUpdated": "2025-01-07T13:39:24+0000",
+			"version": "2.0.29.66",
+			"timeUpdated": "2025-01-07T14:39:38+0000",
 			"languages": []
 		},
 		{
@@ -1120,8 +1120,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.29.51",
-			"timeUpdated": "2025-01-07T12:40:16+0000",
+			"version": "2.1.29.52",
+			"timeUpdated": "2025-01-07T14:39:46+0000",
 			"languages": [
 				"zh"
 			]

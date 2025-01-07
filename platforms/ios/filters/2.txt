@@ -1,9 +1,9 @@
-! Checksum: uUffdeN3abrQ0u8MNfVutg
-! Diff-Path: ../patches/2/2-s-1736257397-3600.patch
+! Checksum: Hhp7pPZ9uSEGex6QXJwgfA
+! Diff-Path: ../patches/2/2-s-1736261024-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.67.0
-! TimeUpdated: 2025-01-07T13:31:31+00:00
+! Version: 2.3.67.1
+! TimeUpdated: 2025-01-07T14:31:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -45028,12 +45028,14 @@ kreuzwortraetsel.de,slashdot.org,sourceforge.net,lovelive-petitsoku.com,infinity
 ##body > a[href^="https://s.click.aliexpress.com"][target="_blank"][rel="noopener noreferrer"]
 !
 ##adfm-ad
+##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + amp-pixel + amp-pixel)
 ##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + amp-pixel + div[style^="bottom:0;right:0;width"])
 ##amp-ad-exit + div[class^="img_"]:has(+ div[aria-hidden="true"] + div[style^="bottom:0;right:0;width"])
 ##a[href^="https://html-load.com/contents/"] > amp-img[src^="https://tpc.googlesyndication.com/daca_images/simgad/"]
 ##a[href^="https://html-load.com/contents/"]:has(+ amp-pixel + div[aria-hidden="true"]) > amp-img.aspw
 ##a[href^="https://html-load.com/contents/"][style$="margin:0px auto;text-decoration:none;"]
 ##a[href="javascript:void(window.open(clickTag))"] > div[id^="img_"]
+##a[style="text-decoration:none;"] > div[style^="border: none; margin: 0px;"]
 ##body > div[id^="img_"]:has(+ amp-pixel + amp-analytics)
 ##body > div[id^="img_"]:has(+ amp-pixel + div[style^="bottom:0;right:0;width"])
 ##body > script + div + div[style="display:inline"] > a[target="_blank"][href^="https://html-load.com/contents/"]
@@ -45041,6 +45043,8 @@ kreuzwortraetsel.de,slashdot.org,sourceforge.net,lovelive-petitsoku.com,infinity
 ##body > script[src]:first-child + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##body > script[src]:first-child + script + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##canvas[id^="img_"][width]
+##div[class^="img_"][style$="196px; position: absolute;"]
+##div[id^="img_"] > div[id^="img_"][style="width: auto;"]
 ##div[id^="img_"]:first-child > div[aria-hidden="true"] + div[id^="img_"]
 ##div[id^="img_"][coupang]
 ##div[id^="img_"][style$="overflow:hidden; display:inline-block;"]
@@ -45058,7 +45062,9 @@ kreuzwortraetsel.de,slashdot.org,sourceforge.net,lovelive-petitsoku.com,infinity
 ##div[x-frame-height="100"] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##div[x-frame-height$="50"] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##html > body > a[target="_blank"][rel="noopener noreferrer"][href^="https://html-load.com/contents/"][href*="/0/"] > div[id^="img_"][class*=" img_"] > div[class^="img_"] > *
-##img[src*=".html-load.com/contents/"][style^="position: absolute;"]
+##html[lang*="-"] > body[style="width:100%;height:100%;margin:0;"] > div[class^="img_"][style="width:100%; height:100%;"]
+##iframe[src="javascript:false"] ~ div[style="display:inline"]
+##img[src*=".html-load.com/contents/"][style^="position: absolute; left: 0px;"]
 ##img[src*=".html-load.com/contents/"][width="100%"][alt=""][style="display: block;"]
 ##link[rel="stylesheet"][href*=".html-load.com/contents/"][media="screen"] + script + div[class^="img_"]
 ##meta[charset="utf-8"] + meta[name="viewport"] + div[class^="img_"]
@@ -45327,6 +45333,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+axios.com###main-content > .hp-margins > .block > .hidden > .flex > .pb-40:has(> .sticky > .border-t > .sideRailAd)
+axios.com##div[data-cy="tab-content-top-stories"] ul[class^="space-"] > li.border-accent-blue-tint:has(> .shortFormNativeAd)
+babepump.com##div[style="height: 180px;"]
+babepump.com##div[style="height: 60px;"]
 ||mail.yahoo.com/n/gemini_api/?adCount=
 musicca.com##div[data-ads-box]
 moneycontrol.com###mc_headband
@@ -46623,6 +46633,8 @@ armenpress.am##a[href="https://t.me/armenpress_am"]
 gizchina.com##.widget_vw_widget_image_banner
 drudgereport.com##body #DR-DESKTOP-NITRO-TOP
 drudgereport.com##body #DR_AE_AD_INJECTION
+drudgereport.com#$?##DR-DESKTOP-NITRO-AD-CENTER { remove: true; }
+drudgereport.com#$?##DR-DESKTOP-NITRO-AD-LEFT { remove: true; }
 digipuzzle.net###maindiv > tbody > tr > td[style="display:inline-block;width:180px;height:630px;text-align:left"]
 filespayout.com,game3rb.com##center > a[rel]
 game3rb.com###post-footer:has(> a[target])
@@ -99377,6 +99389,7 @@ browsershots.org#@#.advert_area
 ||dcfnihzg81pa.com^
 ||dcgjpojm.space^
 ||dcjaefrbn.xyz^
+||dcjrdjwf.com^
 ||dd0122893e.com^
 ||dd1xbevqx.com^
 ||dd4ef151bb.com^
@@ -100260,6 +100273,7 @@ browsershots.org#@#.advert_area
 ||dqeaa.com^
 ||dqgmtzo.com^
 ||dqjkzrx.com^
+||dqqlwldixzxx.com^
 ||dqxifbm.com^
 ||dr0.biz^
 ||dr22.biz^
@@ -104630,6 +104644,7 @@ browsershots.org#@#.advert_area
 ||ightsapph.info^
 ||iginnis.site^
 ||iglegoarous.net^
+||igloaptopto.net^
 ||igloohq.com^
 ||iglooprin.com^
 ||ignals.com^
@@ -105671,6 +105686,7 @@ browsershots.org#@#.advert_area
 ||joinpropeller.com^
 ||joinsportsnow.com^
 ||jojqyxrmh.com^
+||jokersguaiac.shop^
 ||jokingzealotgossipy.com^
 ||jolecyclist.com^
 ||joltidiotichighest.com^
@@ -109439,6 +109455,7 @@ browsershots.org#@#.advert_area
 ||obviousestate.com^
 ||oc2tdxocb3ae0r.com^
 ||ocardoniel.com^
+||ocbnihhu.com^
 ||occasion219.fun^
 ||occdmioqlo.com^
 ||occndvwqxhgeicg.xyz^
@@ -113540,6 +113557,7 @@ browsershots.org#@#.advert_area
 ||robotrenamed.com^
 ||robspabah.com^
 ||rochesterbreedpersuade.com^
+||rochestertrend.com^
 ||rockersbaalize.com^
 ||rocketme.top^
 ||rocketplaintiff.com^
@@ -116079,6 +116097,7 @@ browsershots.org#@#.advert_area
 ||swallowaccidentdrip.com^
 ||swallowhairdressercollect.com^
 ||swamgreed.com^
+||swamperhyphens.shop^
 ||swampexpulsionegypt.com^
 ||swan-swan-goose.com^
 ||swanbxca.com^
@@ -116499,6 +116518,7 @@ browsershots.org#@#.advert_area
 ||tftrm.com^
 ||tgandmotivat.com^
 ||tgbpdufhyqbvhx.com^
+||tgcnyxew.com^
 ||tgel2ebtx.ru^
 ||tgktlgyqsffx.xyz^
 ||tgolived.com^
@@ -120059,6 +120079,7 @@ browsershots.org#@#.advert_area
 ||yogar2ti8nf09.com^
 ||yohavemix.live^
 ||yoibbka.com^
+||yoickscaper.shop^
 ||yokeeroud.com^
 ||yolkhandledwheels.com^
 ||yomeno.xyz^
@@ -125933,6 +125954,7 @@ browsershots.org#@#.advert_area
 ||roaddataay.live^$popup
 ||roadmappenal.com^$popup
 ||roastoup.com^$popup
+||rochestertrend.com^$popup
 ||rocketmedia24.com^$popup,third-party
 ||rockstorageplace.com^$popup
 ||rockytrails.top^$popup
