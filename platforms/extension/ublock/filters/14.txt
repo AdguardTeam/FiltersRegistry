@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PTw1Wog1F+GrSmr0OHzxCA
-! Diff-Path: ../patches/14/14-s-1736239381-3600.patch
+! Checksum: GBWsrMj48tCva9Aa+WetaQ
+! Diff-Path: ../patches/14/14-s-1736243016-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.18.43
-! TimeUpdated: 2025-01-07T08:39:00+00:00
+! Version: 2.2.18.44
+! TimeUpdated: 2025-01-07T09:39:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2488,7 +2488,6 @@ store.drivereasy.com###cookie-management
 freenet.de##+js(remove-class, fn-sp, body.fn-sp)
 fastwebvodafone.it##iframe.ck_if
 ||fastwebvodafone.it/cookie-center/
-regio-guide.de##+js(abort-on-stack-trace, DOMTokenList.prototype.add, openConsentLayerNavigationModal)
 webhallen.com##+js(set-local-storage-item, necessaryConsent, true)
 webhallen.com##+js(set-local-storage-item, marketingConsent, false)
 webhallen.com##+js(set-local-storage-item, personalisationConsent, false)
@@ -14344,6 +14343,10 @@ forum.gamer.com.tr#?#.p-body-inner > .notices > .notice:has(> .notice-content > 
 bethesda.net#?#visor-alert > div > div > div:last-child:has(> a[href$="/cookie-policy"])
 maximum.com.tr#?#.sticky_cookie_warning:has(> a[href^="/TR/gizlilik-politikamiz/Sayfalar/gizlilik-politikamiz.aspx"])
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195498
+regio-guide.de##.consent-layer-modal
+||regio-guide.de/*/consent-layer-view.*.
+regio-guide.de##+js(abort-on-stack-trace, DOMTokenList.prototype.add, openConsentLayerNavigationModal)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184455
 !+ PLATFORM(ext_ublock)
 all-inkl.com#$?##ai-hinweis { remove: true; }
@@ -14774,10 +14777,6 @@ befestigungsfuchs.de,jawoll.de,cafe-royal.com,campingplus.de,bikebox-shop.de,mli
 !
 !+ NOT_OPTIMIZED
 f-secure.com##.fs-consent
-!+ NOT_OPTIMIZED
-regio-guide.de##.consent-layer-modal
-!+ NOT_OPTIMIZED
-||regio-guide.de/*/consent-layer-view.*.
 !+ NOT_OPTIMIZED
 p.sokai.jp,xinedome.de,japannews.yomiuri.co.jp###consentModal
 !+ NOT_OPTIMIZED
@@ -32699,6 +32698,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rynekinformacji.pl##iframe[data-src^="https://forms.freshmail.io/"]
 elmundo.es##.ue-l-article__newsletter-widget
 noticiasaominuto.com##.newsletter-stripe
 noticiasaominuto.com##.flex > div:has(> div.bg-white > form[action="/newsletters"])
@@ -37151,7 +37151,7 @@ marianne.net##+js(set-cookie, mrn_nl_abo, 1)
 moses-verlag.de##+js(set-local-storage-item, newsletter-flyout, 1)
 m.vz.ru##main > div.signature
 f5.com##div[class*="-newsletter-signup-"]
-naszemma.pl,obserwatorlogistyczny.pl,footbar.info,obserwatorgospodarczy.pl###fm-pu-container
+rynekinformacji.pl,naszemma.pl,obserwatorlogistyczny.pl,footbar.info,obserwatorgospodarczy.pl###fm-pu-container
 ajansspor.com##.detail__item-sub
 bradford.de###mageplaza-betterpopup-block
 bradford.de###bio_ep_bg
@@ -46045,7 +46045,7 @@ money.pl##a[data-st-area="gotosg"][href="https://www.wp.pl/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136773
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54035
 wp.pl##a[data-st-area="goToSG"][href="https://www.wp.pl"]
-kuchnia.wp.pl#?#tr[data-reactid]:not([class]):not([id]) > td[class] > div[class*=" "]:has(> div[class*=" "] > iframe[src^="https://forms.freshmail.io/"])
+kuchnia.wp.pl##tr[data-reactid]:not([class]):not([id]) > td[class] > div[class*=" "]:has(> div[class*=" "] > iframe[src^="https://forms.freshmail.io/"])
 ! TODO: remove the hint below when a new version of the extension for Firefox and Opera will be released, current version is 4.1.53
 ! Related to - https://github.com/AdguardTeam/Scriptlets/issues/266
 ~1login.wp.pl,~pilot.wp.pl,abczdrowie.pl,dobreprogramy.pl,wp.pl,pudelek.pl,pysznosci.pl,jastrzabpost.pl,money.pl,o2.pl##+js(addEventListener-defuser, openFloatingPlayer, FloatingPlayer)
@@ -52411,6 +52411,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/3089
+leakedpacks.com##+js(nano-setInterval-booster, counter, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195744
 updown.fun##+js(nano-setInterval-booster, downloadTime, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195780

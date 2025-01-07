@@ -2534,7 +2534,6 @@ freenet.de#%#//scriptlet('remove-class', 'fn-sp', 'body.fn-sp')
 fastwebvodafone.it##iframe.ck_if
 ||fastwebvodafone.it/cookie-center/
 smarteru.com#%#//scriptlet('trusted-click-element', '#accept_cookie')
-regio-guide.de#%#//scriptlet('abort-on-stack-trace', 'DOMTokenList.prototype.add', 'openConsentLayerNavigationModal')
 webhallen.com#%#//scriptlet('set-local-storage-item', 'necessaryConsent', 'true')
 webhallen.com#%#//scriptlet('set-local-storage-item', 'marketingConsent', 'false')
 webhallen.com#%#//scriptlet('set-local-storage-item', 'personalisationConsent', 'false')
@@ -14791,6 +14790,13 @@ forum.gamer.com.tr#?#.p-body-inner > .notices > .notice:has(> .notice-content > 
 bethesda.net#?#visor-alert > div > div > div:last-child:has(> a[href$="/cookie-policy"])
 maximum.com.tr#?#.sticky_cookie_warning:has(> a[href^="/TR/gizlilik-politikamiz/Sayfalar/gizlilik-politikamiz.aspx"])
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195498
+!#if (!adguard_app_ios && !adguard_ext_android_cb)
+regio-guide.de##.consent-layer-modal
+||regio-guide.de/*/consent-layer-view.*.
+!#endif
+regio-guide.de#%#//scriptlet('abort-on-stack-trace', 'DOMTokenList.prototype.add', 'openConsentLayerNavigationModal')
+regio-guide.de#%#//scriptlet('trusted-click-element', '.consent-layer-modal #consent-layer-modal-nav ion-footer button.consent-layer__footer__button[aria-label="Weiter mit essenziellen Einstellungen"] > span')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184455
 !+ PLATFORM(ext_ublock)
 all-inkl.com#$?##ai-hinweis { remove: true; }
@@ -15270,10 +15276,6 @@ befestigungsfuchs.de,jawoll.de,cafe-royal.com,campingplus.de,bikebox-shop.de,mli
 !
 !+ NOT_OPTIMIZED
 f-secure.com##.fs-consent
-!+ NOT_OPTIMIZED
-regio-guide.de##.consent-layer-modal
-!+ NOT_OPTIMIZED
-||regio-guide.de/*/consent-layer-view.*.
 !+ NOT_OPTIMIZED
 p.sokai.jp,xinedome.de,japannews.yomiuri.co.jp###consentModal
 !+ NOT_OPTIMIZED
@@ -34513,6 +34515,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rynekinformacji.pl##iframe[data-src^="https://forms.freshmail.io/"]
 elmundo.es##.ue-l-article__newsletter-widget
 noticiasaominuto.com##.newsletter-stripe
 noticiasaominuto.com##.flex > div:has(> div.bg-white > form[action="/newsletters"])
@@ -38997,7 +39000,7 @@ marianne.net#%#//scriptlet('set-cookie', 'mrn_nl_abo', '1')
 moses-verlag.de#%#//scriptlet('set-local-storage-item', 'newsletter-flyout', '1')
 m.vz.ru##main > div.signature
 f5.com##div[class*="-newsletter-signup-"]
-naszemma.pl,obserwatorlogistyczny.pl,footbar.info,obserwatorgospodarczy.pl###fm-pu-container
+rynekinformacji.pl,naszemma.pl,obserwatorlogistyczny.pl,footbar.info,obserwatorgospodarczy.pl###fm-pu-container
 ajansspor.com##.detail__item-sub
 bradford.de###mageplaza-betterpopup-block
 bradford.de###bio_ep_bg
@@ -48017,7 +48020,7 @@ money.pl##a[data-st-area="gotosg"][href="https://www.wp.pl/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136773
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54035
 wp.pl##a[data-st-area="goToSG"][href="https://www.wp.pl"]
-kuchnia.wp.pl#?#tr[data-reactid]:not([class]):not([id]) > td[class] > div[class*=" "]:has(> div[class*=" "] > iframe[src^="https://forms.freshmail.io/"])
+kuchnia.wp.pl##tr[data-reactid]:not([class]):not([id]) > td[class] > div[class*=" "]:has(> div[class*=" "] > iframe[src^="https://forms.freshmail.io/"])
 ! TODO: remove the hint below when a new version of the extension for Firefox and Opera will be released, current version is 4.1.53
 ! Related to - https://github.com/AdguardTeam/Scriptlets/issues/266
 !#if (!adguard_ext_firefox)
@@ -54461,6 +54464,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/3089
+leakedpacks.com#%#//scriptlet('adjust-setInterval', 'counter', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195744
 updown.fun#%#//scriptlet('adjust-setInterval', 'downloadTime', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195780
