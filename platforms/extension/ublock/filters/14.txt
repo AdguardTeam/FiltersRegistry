@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iKD8/C01UrsGLXtptVRyHA
-! Diff-Path: ../patches/14/14-s-1736253854-3600.patch
+! Checksum: FOfjCDK9JJo2COSikLpQpw
+! Diff-Path: ../patches/14/14-s-1736257390-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.18.46
-! TimeUpdated: 2025-01-07T12:40:00+00:00
+! Version: 2.2.18.47
+! TimeUpdated: 2025-01-07T13:39:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2477,6 +2477,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+okinawastory.jp##.os-l-cookie
+murf.ai###murfCookiePrompt
 geoportal.wroclaw.pl##.poi-cookie-banner
 notion.com##section[class^="cookiePreferencesBanner_container"]
 3djake.pl##div[is="tracking-consent"]
@@ -32699,6 +32701,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+mantan-web.jp###webpush-confirm-dialog
 citilink.ru##div[class^="app-catalog-"] > form[method="post"]:has(input[name="subscription_email"])
 123.ru###news
 rynekinformacji.pl##iframe[data-src^="https://forms.freshmail.io/"]
@@ -50361,9 +50364,10 @@ translate.com##.tsl_hero__buttons + div.tsl_hero__features
 cocokara-next.com##.shopping
 music.tower.jp##div[class^="promotion"]
 fakedetail.com##.ads_us
-deviantart.com#$?#div[role="complementary"] > div[class]:has(> iframe[src*="/?realEstateId="]) { height: 0 !important; }
+deviantart.com##div[role="complementary"] > div[class] > div[class]:has(> a[href^="https://www.deviantart.com/"][href*="/shop/"])
+deviantart.com#$#div[role="complementary"] > div[class]:has(> div[class][style]:only-child > iframe[src*="/?realEstateId="]) { height: 0 !important; }
 deviantart.com##div[role="complementary"] > div[class] > iframe[src*="/?realEstateId="]
-deviantart.com#?#div[role="complementary"] > div[class]:empty:not(:has(>*))
+deviantart.com##div[role="complementary"] > div[class]:empty:not(:has(>*))
 boards.4channel.org##.middlead.center
 ||deviantart.com/*/?realEstateId=
 eltiempo.com##.banner-club-vivamos

@@ -1,9 +1,9 @@
-! Checksum: iN/HPw1QPKisA9MhADvXUQ
-! Diff-Path: ../patches/14/14-s-1736253830-3600.patch
+! Checksum: JGVAV26kM5cMA7tVRRApRw
+! Diff-Path: ../patches/14/14-s-1736257369-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.18.46
-! TimeUpdated: 2025-01-07T12:40:00+00:00
+! Version: 2.2.18.47
+! TimeUpdated: 2025-01-07T13:39:16+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2518,6 +2518,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+okinawastory.jp##.os-l-cookie
+murf.ai###murfCookiePrompt
 star.edu.pl#%#//scriptlet('trusted-set-local-storage-item', 'cookieConsentGranted', '{"ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}')
 geoportal.wroclaw.pl##.poi-cookie-banner
 notion.com##section[class^="cookiePreferencesBanner_container"]
@@ -33525,6 +33527,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+mantan-web.jp###webpush-confirm-dialog
 citilink.ru##div[class^="app-catalog-"] > form[method="post"]:has(input[name="subscription_email"])
 123.ru###news
 rynekinformacji.pl##iframe[data-src^="https://forms.freshmail.io/"]
@@ -41063,6 +41066,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+tubitv.com#%#//scriptlet('trusted-set-local-storage-item', 'isAppDownloadBannerDismissed', 'true')
 citilink.ru##div[class*="app-catalog-"] > div[class*="app-catalog-"]:has(> div[class*="app-catalog-"] > div[class*="app-catalog-"] > span:contains(Скачайте приложение))
 yourchannel.blog.jp###app-follow-banner > .app-button
 noticiasaominuto.com##.mb-8 > div.flex:has(> div.flex > a[href^="https://play.google.com/store/apps/"])
@@ -50664,9 +50668,10 @@ translate.com##.tsl_hero__buttons + div.tsl_hero__features
 cocokara-next.com##.shopping
 music.tower.jp##div[class^="promotion"]
 fakedetail.com##.ads_us
-deviantart.com#$?#div[role="complementary"] > div[class]:has(> iframe[src*="/?realEstateId="]) { height: 0 !important; }
+deviantart.com##div[role="complementary"] > div[class] > div[class]:has(> a[href^="https://www.deviantart.com/"][href*="/shop/"])
+deviantart.com#$#div[role="complementary"] > div[class]:has(> div[class][style]:only-child > iframe[src*="/?realEstateId="]) { height: 0 !important; }
 deviantart.com##div[role="complementary"] > div[class] > iframe[src*="/?realEstateId="]
-deviantart.com#?#div[role="complementary"] > div[class]:empty:not(:has(>*))
+deviantart.com##div[role="complementary"] > div[class]:empty:not(:has(>*))
 boards.4channel.org##.middlead.center
 ||deviantart.com/*/?realEstateId=
 eltiempo.com##.banner-club-vivamos
