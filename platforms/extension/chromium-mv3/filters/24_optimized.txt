@@ -1,10 +1,12 @@
-! Checksum: A7+tRZ6saY5fORrAuBhIRg
+! Checksum: TGiJz7RxCaI+WvVVmfPv/g
 ! Title: AdGuard Quick Fixes filter (Optimized)
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.6.13
-! TimeUpdated: 2025-01-07T10:40:02+00:00
+! Version: 2.0.6.14
+! TimeUpdated: 2025-01-07T12:40:12+00:00
 ! Expires: 10 days (update frequency)
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
+||bjjky.cfd^$all
+filespayout.com#%#//scriptlet('prevent-window-open')
 joymaxtr.com#%#//scriptlet('prevent-setTimeout', 'jsAd')
 joymaxtr.com#%#//scriptlet("abort-current-inline-script", "$", "!document.getElementById(btoa")
 mail.yahoo.com##a[data-test-id="preview-pane-ad"]
@@ -283,18 +285,13 @@ rekidai-info.github.io#@%#//scriptlet('prevent-setTimeout', '', '3000')
 vk.com,vk.ru#?##feed_rows > div.feed_row:has(.PostHeaderSubtitle__item:contains(/Реклама в|Реклама от/))
 vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div.page_block .PostHeaderSubtitle__item > span:not([class]):contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
 vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Реклама в сообществе))
-exploader.net#$#article > div a[target="_blank"][style*="display"] { opacity: 0 !important; cursor: default !important; }
 ||dmm.co.jp^$domain=exploader.net,badfilter
 exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelectorAll', '"FjZoRb"', 'abort')
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/navpromo/', 'abort')
+japscan.lol#%#//scriptlet('abort-on-property-write', 'Happy_Year')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelectorAll', '"#OhYeh"', 'abort')
+japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a { height: 0 !important; }
+japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item > a', 'height', '40px')
 japscan.lol##body > div.container > #blare-inter[style*="position"]
 japscan.lol##body > div.container > #interstitial[style*="display"]
-japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item', 'opacity', '1')
-japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item > a', 'pointer-events', 'auto')
-japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a { pointer-events: none !important; }
-japscan.lol#%#//scriptlet('set-constant', 'JoQe', 'noopFunc')
 japscan.lol#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
 japscan.lol#@%#//scriptlet('remove-node-text', 'script', 'Roiyehe')
-japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0.1 !important; }
-japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/[$\w]+\s*=>\s*\{\s*(const|let|var).+'Rb'.{700,900}$/")

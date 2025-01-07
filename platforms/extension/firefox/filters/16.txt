@@ -1,9 +1,9 @@
-! Checksum: +dyDhQMwBrHiOOs8FcoAcw
-! Diff-Path: ../patches/16/16-s-1736174579-3600.patch
+! Checksum: rfJI91yS3jgXLN1me4ZRJg
+! Diff-Path: ../patches/16/16-s-1736253837-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.49.9
-! TimeUpdated: 2025-01-06T14:39:13+00:00
+! Version: 2.0.49.10
+! TimeUpdated: 2025-01-07T12:40:05+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -253,17 +253,13 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147842
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelectorAll', '"FjZoRb"', 'abort')
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/navpromo/', 'abort')
+japscan.lol#%#//scriptlet('abort-on-property-write', 'Happy_Year')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelectorAll', '"#OhYeh"', 'abort')
+japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a { height: 0 !important; }
+japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item > a', 'height', '40px')
 japscan.lol##body > div.container > #blare-inter[style*="position"]
 japscan.lol##body > div.container > #interstitial[style*="display"]
-japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item', 'opacity', '1')
-japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item > a', 'pointer-events', 'auto')
-japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a { pointer-events: none !important; }
-japscan.lol#%#//scriptlet('set-constant', 'JoQe', 'noopFunc')
 japscan.lol#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
-japscan.lol#$#.navbar-nav > li#navpromo2.nav-item { opacity: 0.1 !important; }
-japscan.lol#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "/[$\w]+\s*=>\s*\{\s*(const|let|var).+'Rb'.{700,900}$/")
 !japscan.lol#%#//scriptlet("prevent-addEventListener", "/^[$\w]+\s*=>\s*\{\s*\w+\s*(?:[$\w]+\s*=\s*[$\w]+\s*[,;])+\s*[$\w]+\s*=['\"]|Yuki|pro'|getCo'|href'\)|=='0p'|shop/")
 ||japscan.lol/zjs/$script,replace=/function GoodDay\(\)\{.+?\}\}\}//
 japscan.lol#%#//scriptlet('prevent-element-src-loading', 'script', 'acscdn.com')

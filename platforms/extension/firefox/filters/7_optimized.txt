@@ -1,9 +1,9 @@
-! Checksum: hpvJ4PePqgAKGsxsKO9ovw
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1736250224-3600.patch
+! Checksum: AIT3aFOS/nf0fW8AR2qlGA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1736253842-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.60.95
-! TimeUpdated: 2025-01-07T11:39:29+00:00
+! Version: 2.0.60.96
+! TimeUpdated: 2025-01-07T12:39:40+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -430,8 +430,6 @@ $subdocument,redirect-rule=noopframe,domain=wiki.yjsnpi.nu
 @@||wiki.yjsnpi.nu^$generichide
 gunauc.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ||kuji.xth.jp/ad-x-check.js
-!+ PLATFORM(ext_ff)
-||daotag.com/tag/$script,replace=/[\S\s]*(if\(typeof [0-9a-z]+==='undefined'\)\{)[\S\s]+(if\(typeof [0-9a-z]+==='function'\)\{[0-9a-z]+\(\)\})[\S\s]+(window\.addEventListener\('load'.)[\S\s]+/\$1\$3()=>{\$2})}/
 $image,redirect-rule=32x32-transparent.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32-transparent.png,domain=exploader.net
 exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'stay')
@@ -1317,6 +1315,7 @@ city.inazawa.aichi.jp,city.kawasaki.jp,city.nagoya.jp,city.yao.osaka.jp,city.iko
 city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+maruchiba.jp###detailShare
 suki-kira.com###comment-top-ad
 suki-kira.com###vote-bottom-ad
 tumadouga.jp##.index_banner_space
