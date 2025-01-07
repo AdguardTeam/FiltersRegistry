@@ -1,9 +1,9 @@
-! Checksum: mk/pyq+TrGauwIl5IUvVvA
-! Diff-Path: ../patches/2/2-s-1736271790-3600.patch
+! Checksum: kx/3ldG5zePfNcvDfrzg5g
+! Diff-Path: ../patches/2/2-s-1736275660-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.67.4
-! TimeUpdated: 2025-01-07T17:31:30+00:00
+! Version: 2.3.67.5
+! TimeUpdated: 2025-01-07T18:31:32+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -88,6 +88,8 @@
 !
 !
 !
+||mqprzapns.com^
+||dzeaqmeuaql.com^
 ||bjjky.cfd^$all
 ||dsfvmx.click^
 ||mentionideablit.com^
@@ -27908,6 +27910,12 @@ patrika.com##.google-ads-full
 !
 ! NOTE: Hungarian
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195685
+filmvilag.me##a > img[src*="filmvilag.me/style/"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/195690
+||vadaszapro.net/banners/
+||z-shops.eu/banner
+vadaszapro.net##iframe[src*="z-shops.eu/banner"] + div[style]:empty
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195552
 mozinet.me##div[class^="container_"] > div[class]:has(> a[href] > img[src])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195251
@@ -30361,6 +30369,8 @@ dap-news.com##.ads
 !
 ! NOTE: Korean
 !
+||nooo.tv/theme/basic/img/banner
+||tvwiki*.com/AD
 kybkhy.tistory.com##div[class^="anyBannerArea"]
 tvroom4.org##[class*="banner"]
 web.humoruniv.com###naver_adpost_wrap
@@ -42631,8 +42641,9 @@ kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.p
 ||content-loader.com/loader.min.js$domain=issuya.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|sourceforge.net|slashdot.org|economictimes.com
 !
 ! Common rules, which partially hide banners
-#$?#body > div[id^="img_"][class^="img_"][style^="width"]:first-child { visibility: hidden !important; }
-#$?#body > a:only-child > div[id^="img_"][class^="img_"] { visibility: hidden !important; }
+#$?#body > div[id^="img_"][class^="img_"][style^="width"]:first-child { position: absolute !important; top: -100000px !important; }
+#$?#body > div:first-child > script + div[id^="img_"][class^="img_"] { position: absolute !important; top: -100000px !important; }
+#$?#body > a:only-child > div[id^="img_"][class^="img_"] { position: absolute !important; top: -100000px !important; }
 ! END: Ad-Shield ad reinsertion
 !
 ! ExoClick
@@ -92142,6 +92153,7 @@ browsershots.org#@#.advert_area
 ||couwooji.xyz^
 ||coveredsnortedelectronics.com^
 ||coveredstress.com^
+||covertcourse.com^
 ||covettunica.com^
 ||covivado.club^
 ||cowtpvi.com^
@@ -117335,6 +117347,7 @@ browsershots.org#@#.advert_area
 ||coticoffee.com^$popup
 ||countertrck.com^$popup
 ||courageousdiedbow.com^$popup
+||covertcourse.com^$popup
 ||cpacrack.com^$popup
 ||cpalabtracking.com^$popup
 ||cpaoffers.network^$popup
