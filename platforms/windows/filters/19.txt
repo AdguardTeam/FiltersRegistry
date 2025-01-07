@@ -1,9 +1,9 @@
-! Checksum: Fcx9YiZbJumONgAPDrdgiA
-! Diff-Path: ../patches/19/19-s-1736257406-3600.patch
+! Checksum: HOPUno9ETDzSib+gNgKeLw
+! Diff-Path: ../patches/19/19-s-1736264640-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.48.39
-! TimeUpdated: 2025-01-07T13:39:23+00:00
+! Version: 2.0.48.40
+! TimeUpdated: 2025-01-07T15:39:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11572,8 +11572,6 @@ labs.google.com#@##google-hats-survey
 ##.tsoft-push--in-notification
 ##.cleverpush-bell
 !
-.site/?te=$script
-.biz/?te=$script
 ||sdk.chirpyweb.com^$third-party
 /larapush_script_
 /OneSignalPageSDKES6.js
@@ -11594,6 +11592,9 @@ labs.google.com#@##google-hats-survey
 /pushwoosh-$script,domain=~pushwoosh.com
 ! `window.wpnConfig`
 ! https://vinuser5.biz/?pu=ha3gemtcg45ha3ddf4ytanju
+.ru/?re=$script,third-party
+.site/?te=$script
+.biz/?te=$script
 .me/?pu=$script,third-party
 .ru/?pu=$script,third-party
 .vip/?pu=$script,third-party
@@ -12869,6 +12870,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rbc.ru##.article__text  > div.article__special_container:has(> p > span a[href="https://t.me/rbcspb"])
 mantan-web.jp###webpush-confirm-dialog
 citilink.ru##div[class^="app-catalog-"] > form[method="post"]:has(input[name="subscription_email"])
 123.ru###news

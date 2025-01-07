@@ -1,9 +1,9 @@
-! Checksum: Jvg/UmEHwfLotkVfaBqVVQ
-! Diff-Path: ../patches/14/14-s-1736261007-3600.patch
+! Checksum: t+DdibT9y8WyD6HQE9OXAQ
+! Diff-Path: ../patches/14/14-s-1736264610-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.18.48
-! TimeUpdated: 2025-01-07T14:39:30+00:00
+! Version: 2.2.18.49
+! TimeUpdated: 2025-01-07T15:39:26+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2518,6 +2518,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+leaderos.com.tr##div[x-data="cookieModal()"]
+isteyim.com##footer + .MuiDrawer-root:has(p > a[href="/assets/terms/web-sitesi-aydinlatma-metni.pdf"])
 okinawastory.jp##.os-l-cookie
 murf.ai###murfCookiePrompt
 star.edu.pl#%#//scriptlet('trusted-set-local-storage-item', 'cookieConsentGranted', '{"ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}')
@@ -32238,8 +32240,6 @@ labs.google.com#@##google-hats-survey
 ##.tsoft-push--in-notification
 ##.cleverpush-bell
 !
-.site/?te=$script
-.biz/?te=$script
 ||sdk.chirpyweb.com^$third-party
 /larapush_script_
 /OneSignalPageSDKES6.js
@@ -32260,6 +32260,9 @@ labs.google.com#@##google-hats-survey
 /pushwoosh-$script,domain=~pushwoosh.com
 ! `window.wpnConfig`
 ! https://vinuser5.biz/?pu=ha3gemtcg45ha3ddf4ytanju
+.ru/?re=$script,third-party
+.site/?te=$script
+.biz/?te=$script
 .me/?pu=$script,third-party
 .ru/?pu=$script,third-party
 .vip/?pu=$script,third-party
@@ -33537,6 +33540,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+rbc.ru##.article__text  > div.article__special_container:has(> p > span a[href="https://t.me/rbcspb"])
 mantan-web.jp###webpush-confirm-dialog
 citilink.ru##div[class^="app-catalog-"] > form[method="post"]:has(input[name="subscription_email"])
 123.ru###news
@@ -41076,6 +41080,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+zillow.com###local-app-upsell
 tubitv.com#%#//scriptlet('trusted-set-local-storage-item', 'isAppDownloadBannerDismissed', 'true')
 citilink.ru##div[class*="app-catalog-"] > div[class*="app-catalog-"]:has(> div[class*="app-catalog-"] > div[class*="app-catalog-"] > span:contains(Скачайте приложение))
 yourchannel.blog.jp###app-follow-banner > .app-button
@@ -47489,6 +47494,8 @@ yasir252.com#%#document.addEventListener('DOMContentLoaded', function(){setTimeo
 ||trimay.ru/?
 !
 !
+rbc.ru##.js-company-news-slider-wrapper
+solar.lowtechmagazine.com##.post-footer
 ||informer.rs/files/img/gde-da-gledate*.png
 dnevno.hr##a[href="https://www.dnevno.hr/wp-content/uploads/2024/08/imate-dnevno-vizual-1.jpg"]
 gazetadopovo.com.br##div[class^="style_button-sidebar-container"]
@@ -55804,7 +55811,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (specific)
 !
-theporndude.com##.chat-widget
+theporndude.vip,theporndude.com##.chat-widget
 pw.live##.sticky-call
 sanevv.com.ua###animate_btn_4
 ||repsoku.net/img_feeds/
@@ -55942,6 +55949,7 @@ wind10.ru###custom_html-7
 world-of-facts.com###leadia_science_widget
 youla.ru#?##app > div > div[class]:has(> div[class] > span[data-test-component="OnboardingTooltip"])
 yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
+||livechat.leaderos.net^$script
 ||salesiq.zohopublic.eu/widget
 ||static.arc.io/widget$third-party
 ||chat.bitkub.com/chat.js
@@ -56659,6 +56667,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+vox.com#?##zephr-anchor > aside:has(> form > div[class] div[class] > .duet--cta--button > span:contains(Monthly))
 rsf.org###block-rsf-bandeaux-alerte-block
 holod.media##.a-donate-block
 montanafreepress.org##.newspack-popup-container
