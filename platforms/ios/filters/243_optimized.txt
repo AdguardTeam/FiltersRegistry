@@ -1,9 +1,9 @@
-! Checksum: 8wc+QY317IjAC8E7ix66DQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1736139933-14400.patch
+! Checksum: 69Fhnr6Anyyq1GquiYNUEQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1736226345-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.46
-! TimeUpdated: 2025-01-06T05:01:39+00:00
+! Version: 2.0.20.47
+! TimeUpdated: 2025-01-07T05:01:40+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -580,6 +580,7 @@ fotbolltransfers.com##img[src*="/images/annonser/"]:upward(1)
 fotbolltransfers.com##.border-b:has(#vi-ad, div[data-adk-container], div[id^="fotbolltransfers_mpu"])
 fotbolltransfers.com##.smallNewsCategory:has-text(/sponsr/i):upward(.smallNewsLink)
 fotboll-tv.se##.SMBoxContentBanner, a[data-gaevent*="action=bookmaker_odds"], #ouibounce-modal, .SMGameAtomSingleGameOddsComponent, #headBanner, #SMSalesPromoSlotContainerHeaderWrapper
+fotboll.com##a[href*="casino"]:upward(.content)
 fotboll.com##.header-static-lg, .fp-partner, .xs-ad, .bo-wrapper, #betsid, .news-banner-mini, .xs-cblock, .cookie_consent_bar, #odds, a.bellows-target[href*="/svenskaspel"], a.bellows-target[href*="/betting"], a[href*="/go/"][onclick], #lg-box-scyscraper
 fotboll.com##:is(div.text-center, div.d-none):has(a[href*="/go/"][onclick], .fotboll_content_wrapper[data-id])
 fotboll.com,allsvenskan.se,superettan.se,swebbtv.se,hastnet.se##.smartbanner
@@ -1064,7 +1065,7 @@ piraja.se##:is(.intro, #hero, #featholder):has(.spons)
 pirkt.se##aside#below-header, aside.sidebar-right img, aside.sidebar-left img, aside#above-main, aside#after-first-post, h1 + .wp-block-video, h2 + .wp-block-image img[src$=".gif"]
 placera.se##.noMarginAd
 placera.se##.vignette.XLText :is(a[href*="/externa-tjanster"], a[href*="promoted"]):upward(.section)
-plastikoperationsforum.se,riksettan.net,automobil.se,endurobloggen.se,vibilagare.se,mopedgaraget.se,caroftheyear.se,klassiker.nu,alandsradio.ax,svjt.se,so-rummet.se###sliding-popup
+plastikoperationsforum.se,riksettan.net,automobil.se,endurobloggen.se,vibilagare.se,mopedgaraget.se,caroftheyear.se,klassiker.nu,alandsradio.ax,svjt.se,so-rummet.se,skatter.se###sliding-popup
 playradio.se##.sidealtcol
 podcasts.nu##.sponsor-list, .cookie-law-wrapper, .big-ad-placeholder, .affiliate-wrapper
 poddtoppen.se##.txs-a
@@ -1523,6 +1524,7 @@ zeromagazine.nu##div[id^="ads"]
 ##div#ads-panorama
 ##div#ads_column
 ##div#ad_global_below_navbar
+##div#ad_top_page
 ##div#annons_topp
 ##div#banner_right
 ##div#block-adreviveheader
@@ -2402,6 +2404,7 @@ zeromagazine.nu##div[id^="ads"]
 /tabs_hits_counter.php$image
 /takeover-ad.js$domain=ridsport.se
 /takeover.js$domain=gekas.se
+/tarteaucitron.js$domain=sv.geneanet.org
 /tbilen/banner/*
 /templates/ad_$domain=jaktojagare.se
 /thumbnail_bettingstugan$image
@@ -3129,7 +3132,7 @@ zeromagazine.nu##div[id^="ads"]
 ||static.web-repository.com/scripts/common/hit.js
 ||stats2.ehandel.se^
 ||stats.allabolag.se^
-||stats.blogg.se^$image
+||stats.blogg.se^
 ||stats.docu.info^
 ||stats.easyweb.se^$third-party
 ||stats.ehandel.se^
@@ -3229,6 +3232,7 @@ zeromagazine.nu##div[id^="ads"]
 ||wishpond.net^$third-party
 ||woomio.com/assets/js/analytics
 ||workhaus.se^$third-party
+||wp3.xyz/tdw.js$domain=lakemedelsvarlden.se
 ||wurfl.io^$domain=vinochmatguiden.se
 ||www-kittad-se.filesusr.com^$subdocument
 ||yelp.se/sit_rep
