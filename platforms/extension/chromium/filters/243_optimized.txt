@@ -1,9 +1,9 @@
-! Checksum: dX1tJpP9NhAhd/C6JCp1kA
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1736226322-14400.patch
+! Checksum: NzU8gmxatzuvH9ZJ4JqpaQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1736312725-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.47
-! TimeUpdated: 2025-01-07T05:01:40+00:00
+! Version: 2.0.20.48
+! TimeUpdated: 2025-01-08T05:01:46+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -211,6 +211,7 @@ barnistan.se,welma.se##.featured-teaser:has(a[onclick*="adClick"])
 barnistan.se,welma.se##.newsletter, a[onclick*="adClick"], .gpt-slot
 barnistan.se,welma.se,ingenjorsjobb.se,vardegrunden.se##.cookie-notice
 barnsemester.se##.puffLine, .d-flex > div[style*="min-height"], div[style="overflow-x: hidden;background-color:rgb(250,250,250);width:320px;min-height:200px;"], div[style="overflow-x: hidden;background-color:rgb(250,250,250);width:320px;min-height:320px;"]
+batliv.se##.add_div
 battregolf.se##article.elementor-post:has(a[href*="casino"], a[href*="bonus"], a[href*="betting"], a[href*="/noje/"])
 battregolf.se##.elementor-element[data-widget_type="image.default"], .aeywhae-single
 battrestadsdel.se###top-banner-mobile, .apd-text, .apds_main, .entry-priomaker, [class^="dls-"], .csmi
@@ -1003,7 +1004,9 @@ nogg.se##:is(td[rowspan="2"][align="left"], table[width="640"][cellpadding="7"])
 nordfront.se##span:not(.post-content):has-text(/annons/i):upward(.post)
 nordfront.se###campaign_area
 nordichardware.se##.pspy_info, [class^="prisjakt-"]
-nordichardware.se##:is(.td-big-grid-post, .td_block_inner):has(a[href*="/sponsrat/"])
+nordichardware.se##.su-label:has-text(/sponsra/i):upward(.wpb_text_column)
+nordichardware.se##.td-excerpt:has-text(/sponsra/i):upward(.meta-info-container)
+nordichardware.se##:is(.td-big-grid-post, .td_block_inner):has(a[href*="/sponsrat/"], a[href$="/sponsor/"])
 nordiskradio.se###cookieWindow
 nordiskskog.se##.templateHelannonsBOX
 norrahalland.se##.bannercontent
@@ -1221,7 +1224,7 @@ stoppapressarna.se##.premium-page-ad, .footer-banner-wrapper, div[id^="stopp-"]
 storyhouseegmont.se##div[class^="Navigation__Overlay"]
 streamio.com,nyan.ax,spelhubben.se,illvet.se,varldenshistoria.se#%#//scriptlet('ubo-aeld.js', 'contextmenu')
 studeravidare.se##.premium-carousel-wrapper
-surfa.se##div[class*="-promo"], div[class*="prisjakt-"]
+surfa.se##div[class*="-promo"], div[class*="prisjakt-"], .td-banner-wrap-full
 surfa.se,teknikfreak.se###loader-wrapper
 surveyors.se###custom_html-3
 svampguiden.com##.label-sponsor:upward(.panel)
@@ -1230,7 +1233,7 @@ svartgul.se,eventeffect.se,executiveeffect.se,saleseffect.se###panorama
 svd.se##article:has(div[class^="NativeBarWrapper"])
 svd.se#$#body { visibility:visible!important; }
 svd.se###mega-ad-wrapper, #svd-top-ad, div[class*="advertory"], div[data-custom-ad-handled="true"], span[data-id="bottom-sticker-offer"], div[data-context-pageview*="native-svd"]
-svd.se,chef.se,vvsforum.se,elinstallatoren.se,arkitekten.se,natursidan.se,svenskfarmaci.se,da.se,frisor.se##.Ad
+svd.se,chef.se,vvsforum.se,elinstallatoren.se,arkitekten.se,natursidan.se,svenskfarmaci.se,da.se,frisor.se,revisionsvarlden.se##.Ad
 svenskadating.com##.pubhead, #bannermobile
 svenskafans.com##.h-52:has(iframe[srcdoc*="ad_div"])
 svenskafans.com##.puff__ad-heading, ad-skyscraper__wrapper, iframe[title*="Bet 365"], iframe[srcdoc*="ad_div"]
@@ -1483,6 +1486,7 @@ zeromagazine.nu##div[id^="ads"]
 ##aside.ad-container
 ##aside.annonser-widget
 ##a#top-banner.banner-holder
+##a.Teaser[data-content-item-category="Annons"]
 ##a.adv-link
 ##a.card.-sponsored
 ##a.is-native-ad
@@ -1857,7 +1861,7 @@ zeromagazine.nu##div[id^="ads"]
 /app.php/adsview$xmlhttprequest
 /article-analytics$domain=bulletin.nu
 /artikelannons/*
-/arto/api/event$domain=arkitekten.se|natursidan.se|svenskfarmaci.se
+/arto/api/event$domain=arkitekten.se|natursidan.se|svenskfarmaci.se|revisionsvarlden.se
 /assets/DynamicAds-
 /assets/partnerstat.php?partner=$xmlhttprequest
 /assets/site/modules/GTM_
@@ -1877,7 +1881,6 @@ zeromagazine.nu##div[id^="ads"]
 /banners/annons
 /banners/scripts/adx.js
 /banners/*casino$image
-/banner$domain=revisionsvarlden.se
 /banner$domain=thepattayanews.se
 /banner/ads/*
 /banner?cg$xmlhttprequest,domain=blocket.se
@@ -2249,6 +2252,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/pixel-cat
 /plugins/popups/*$script,domain=svenskhistoria.se|bugburger.se
 /plugins/popup$domain=ordfrontmagasin.se|snowmobile.se|forvaltarforum.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|jobsinsweden.se
+/plugins/pressidium-cookie-consent$script,domain=undervarttak.se
 /plugins/pum-$script,domain=snowmobile.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se
 /plugins/quantcast-choice$script,domain=javligtgott.se|dh.se
 /plugins/quick-adsense
