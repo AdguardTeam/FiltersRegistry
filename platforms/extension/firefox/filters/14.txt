@@ -1,9 +1,9 @@
-! Checksum: rD1rIO1Ehrp2BHh19SzNmw
-! Diff-Path: ../patches/14/14-s-1736336570-3600.patch
+! Checksum: Iwg4EN/idhDSu4RfG9Thcg
+! Diff-Path: ../patches/14/14-s-1736340199-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.18.60
-! TimeUpdated: 2025-01-08T11:39:04+00:00
+! Version: 2.2.18.61
+! TimeUpdated: 2025-01-08T12:39:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2518,6 +2518,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+finhack.pl##[class^="fhmm-consent-mode"]
+||finhack.pl/wp-content/cache/min/1/wp-content/plugins/fhmm-consent-mode/
+hillspet.pl,meridol.pl,colgate.pl,elmex.pl#%#//scriptlet('trusted-click-element', '#consent_blackbar #truste-consent-button')
 hungermag.com##cookie-consent-banner
 mywot.com#%#//scriptlet('trusted-set-cookie-reload', 'cookies_consent_disclaimer', 'closed')
 weather.com##section[data-testid="PrivacyFeedCard"]
@@ -16533,6 +16536,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195968
+! https://github.com/AdguardTeam/AdguardFilters/issues/195966
+@@||consent.trustarc.com/notice$domain=elmex.pl|colgate.pl|meridol.pl|hillspet.pl
+@@||consent.trustarc.com/asset/notice.js/$domain=elmex.pl|colgate.pl|meridol.pl|hillspet.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195878
 sony.pl#@##onetrust-consent-sdk
 ! https://github.com/uBlockOrigin/uAssets/issues/26670
@@ -45411,19 +45418,19 @@ vogue.co.th##section.daily_right_player
 vogue.co.th##div.vdo-show-only-mobile-size
 ! winfuture.de - annoying user engagement text at end of article
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > script + b:contains(?)
+winfuture.de#?#.content_wrap #news_content > script + b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > br + b:contains(?)
+winfuture.de#?#.content_wrap #news_content > br + b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > br + i > b:contains(?)
+winfuture.de#?#.content_wrap #news_content > br + i > b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > br + div + b:contains(?)
+winfuture.de#?#.content_wrap #news_content > br + div + b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > blockquote + b:contains(?)
+winfuture.de#?#.content_wrap #news_content > blockquote + b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de##.content_wrap > #news_content > br + b[style="display: none !important;"] + br
+winfuture.de##.content_wrap #news_content > br + b[style="display: none !important;"] + br
 !+ NOT_OPTIMIZED
-winfuture.de##.content_wrap > #news_content > br + b[style="display: none !important;"] + br + br
+winfuture.de##.content_wrap #news_content > br + b[style="display: none !important;"] + br + br
 !+ NOT_OPTIMIZED
 m.winfuture.de#?##articleBody > script + b:contains(?)
 !+ NOT_OPTIMIZED
@@ -50558,7 +50565,7 @@ book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 ! SECTION: Self-promo - Regular rules
 !
 videohelp.com##div[style] > span[style]:has(> a[href="https://www.videohelp.com/donate"])
-videohelp.com##div:not([class], [id]) > div[id]:has(> a[href="https://www.videohelp.com/donate"])
+videohelp.com##div:not([class], [id]) > div:is([id], [style]):has(> a[href="https://www.videohelp.com/donate"])
 citilink.ru##header > div[class^="app-catalog"]:has(> a[href^="https://www.citilink.ru/promo/"])
 e.mail.ru,octavius.mail.ru##div[class^="ReactVirtualized"] > div[style]:has(> div.promo-block-letter)
 foxford.ru##div[class^="styled__ContainerInner-"] > div[class^="styled__Wrapper-"]:has(> div[class^="styled__Container-"] > a[href^="https://foxford.ru/catalog/product_packs/"])

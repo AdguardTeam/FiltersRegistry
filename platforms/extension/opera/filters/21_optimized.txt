@@ -1,9 +1,9 @@
-! Checksum: yz4JPZcjd88yL8ad7FF2jg
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1736329444-3600.patch
+! Checksum: YhGa42f5O3nSR7fu150a+A
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1736340204-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.29.69
-! TimeUpdated: 2025-01-08T09:40:35+00:00
+! Version: 2.0.29.70
+! TimeUpdated: 2025-01-08T12:39:44+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -62,19 +62,19 @@ rockpapershotgun.com##.poll_wrapper
 ctvnews.ca#%#//scriptlet('trusted-click-element', 'button[id="playPauseButtonId"][aria-label="Pause"]', '', '1000')
 gamesindustry.biz##.jobs-widget
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > script + b:contains(?)
+winfuture.de#?#.content_wrap #news_content > script + b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > br + b:contains(?)
+winfuture.de#?#.content_wrap #news_content > br + b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > br + i > b:contains(?)
+winfuture.de#?#.content_wrap #news_content > br + i > b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > br + div + b:contains(?)
+winfuture.de#?#.content_wrap #news_content > br + div + b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de#?#.content_wrap > #news_content > blockquote + b:contains(?)
+winfuture.de#?#.content_wrap #news_content > blockquote + b:contains(?)
 !+ NOT_OPTIMIZED
-winfuture.de##.content_wrap > #news_content > br + b[style="display: none !important;"] + br
+winfuture.de##.content_wrap #news_content > br + b[style="display: none !important;"] + br
 !+ NOT_OPTIMIZED
-winfuture.de##.content_wrap > #news_content > br + b[style="display: none !important;"] + br + br
+winfuture.de##.content_wrap #news_content > br + b[style="display: none !important;"] + br + br
 !+ NOT_OPTIMIZED
 m.winfuture.de#?##articleBody > script + b:contains(?)
 !+ NOT_OPTIMIZED
@@ -1444,7 +1444,7 @@ rbc.ru##.fox-fallback[style="width: 300px; height: 600px;"]
 book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 ||apay-up-banner.com^$image,third-party,domain=book.oricon.co.jp
 videohelp.com##div[style] > span[style]:has(> a[href="https://www.videohelp.com/donate"])
-videohelp.com##div:not([class], [id]) > div[id]:has(> a[href="https://www.videohelp.com/donate"])
+videohelp.com##div:not([class], [id]) > div:is([id], [style]):has(> a[href="https://www.videohelp.com/donate"])
 citilink.ru##header > div[class^="app-catalog"]:has(> a[href^="https://www.citilink.ru/promo/"])
 e.mail.ru,octavius.mail.ru##div[class^="ReactVirtualized"] > div[style]:has(> div.promo-block-letter)
 foxford.ru##div[class^="styled__ContainerInner-"] > div[class^="styled__Wrapper-"]:has(> div[class^="styled__Container-"] > a[href^="https://foxford.ru/catalog/product_packs/"])

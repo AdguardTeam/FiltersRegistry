@@ -1,9 +1,9 @@
-! Checksum: Is/V/g287d18h5TPWs4SWw
-! Diff-Path: ../patches/18/18-s-1736322220-3600.patch
+! Checksum: BlWRwIS0YOuk4uKplYA32w
+! Diff-Path: ../patches/18/18-s-1736340197-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.54.17
-! TimeUpdated: 2025-01-08T07:40:03+00:00
+! Version: 2.0.54.18
+! TimeUpdated: 2025-01-08T12:39:42+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2518,6 +2518,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+finhack.pl##[class^="fhmm-consent-mode"]
+||finhack.pl/wp-content/cache/min/1/wp-content/plugins/fhmm-consent-mode/
+hillspet.pl,meridol.pl,colgate.pl,elmex.pl#%#//scriptlet('trusted-click-element', '#consent_blackbar #truste-consent-button')
 hungermag.com##cookie-consent-banner
 mywot.com#%#//scriptlet('trusted-set-cookie-reload', 'cookies_consent_disclaimer', 'closed')
 weather.com##section[data-testid="PrivacyFeedCard"]
@@ -16491,6 +16494,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195968
+! https://github.com/AdguardTeam/AdguardFilters/issues/195966
+@@||consent.trustarc.com/notice$domain=elmex.pl|colgate.pl|meridol.pl|hillspet.pl
+@@||consent.trustarc.com/asset/notice.js/$domain=elmex.pl|colgate.pl|meridol.pl|hillspet.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195878
 sony.pl#@##onetrust-consent-sdk
 ! https://github.com/uBlockOrigin/uAssets/issues/26670
