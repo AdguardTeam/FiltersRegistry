@@ -1,9 +1,9 @@
-! Checksum: 7w60u2UaxzWAmIy9bb2Gcg
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1736433818-3600.patch
+! Checksum: oIVxVzlduxddh6jvNluUTg
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1736437385-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.67.24
-! TimeUpdated: 2025-01-09T14:31:29+00:00
+! Version: 2.3.67.25
+! TimeUpdated: 2025-01-09T15:31:24+00:00
 ! Expires: 12 hours (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -5833,6 +5833,7 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 #@#.ads_banner
 ##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"], [data-freestar-ad="123"]):not(:empty)
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
+idyllic.app#%#//scriptlet('prevent-setTimeout', '[native code]', '100')
 woiden.id#%#//scriptlet('prevent-fetch', 'www3.doubleclick.net')
 leakedpacks.com#@#.sidebar-ad
 leakedpacks.com#@#.Ad-Container
@@ -13880,7 +13881,7 @@ kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.p
 ||content-loader.com/loader.min.js$domain=issuya.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|sourceforge.net|slashdot.org|economictimes.com
 #$?#body > div[id^="img_"][class^="img_"][style^="width"]:first-child { position: absolute !important; top: -100000px !important; }
 #$?#body > div:first-child > script + div[id^="img_"][class^="img_"] { position: absolute !important; top: -100000px !important; }
-#$?#body > a:only-child > div[id^="img_"][class^="img_"] { max-width: 0px !important; max-height: 0px !important; opacity: 0 !important; }
+#$?#body > a:only-child > div[id^="img_"][class^="img_"] { height: 0px !important; width: 0px !important; filter: opacity(0) !important; }
 07c225f3.online,content-loader.com,css-load.com,html-load.com,img-load.com#$?#body > *:not(pre) { filter: opacity(0) !important; pointer-events: none !important; }
 .php$script,domain=onmpeg.com
 /backend_loader.php$domain=beeg.com|croea.com|imagetwist.com|imgskull.com|kporno.com|picfox.org|picshick.com|picturelol.com|porntube.com|yourporn.sexy
@@ -20353,7 +20354,6 @@ cars.bg##a[href^="http://www.ads.bg/"]
 -ads-bottom.
 -ads-manager/$domain=~wordpress.org
 -ads/assets/$script,domain=~web-ads.org
--auto-ads-
 -banner-ad_
 -banner-ads-$~script
 -contrib-ads.$~stylesheet
@@ -20365,7 +20365,6 @@ cars.bg##a[href^="http://www.ads.bg/"]
 -popunder.
 -publicidad.
 -right-ad.
--sidebar-ad.
 -sponsor-ad.
 -top-ads.
 -web-advert-$image
@@ -20373,7 +20372,6 @@ cars.bg##a[href^="http://www.ads.bg/"]
 .adriver.$~object,domain=~adriver.co
 .adrotate.
 .ads-lazy.
-.ads-min.
 .ads.controller.
 .ads.css
 .adsbox.
@@ -20391,6 +20389,7 @@ cars.bg##a[href^="http://www.ads.bg/"]
 .click/cuid/?$third-party
 .click/rf/$third-party
 .clkads.
+.club/js/popunder.js$script
 .cn/sc/*?n=$script,third-party
 .com/4/js/$third-party
 .com/a?pagetype
@@ -20579,7 +20578,9 @@ cars.bg##a[href^="http://www.ads.bg/"]
 /amazon-ad-link-$stylesheet
 /amazon-associates-link-$~stylesheet
 /amp-ad-$script
+/amp-auto-ads-$script
 /amp-sticky-ad-$script
+/amp-story-auto-ads-$script
 /ane-popup-banner.js$script
 /api/ad.$script
 /api/ads?
@@ -20855,18 +20856,16 @@ cars.bg##a[href^="http://www.ads.bg/"]
 ?service=ad&
 ?usid=*&utid=
 ?wppaszoneid=
-_ad_250.
-_ad_300.
+_ad_250.$image
+_ad_300.$image
 _ad_banner.
 _ad_bottom.
-_ad_box.
 _ad_choices.
 _ad_header.
 _ad_image_
 _ad_layer_
 _ad_right.
 _ad_side.
-_ad_sidebar_
 _ad_skyscraper.
 _ad_wrapper.
 _adbanner_
@@ -20874,7 +20873,6 @@ _adchoice.
 _adchoices.
 _adhome.
 _adlabel_
-_adnetwork.
 _adpartner.
 _adplugin.
 _adright.
@@ -20884,7 +20882,6 @@ _ads.php?
 _ads_updater-
 _adserve.
 _adskin.
-_adskin_
 _adtitle.
 _advertise-$domain=~linkedin.com
 _advertise.
@@ -20893,10 +20890,8 @@ _affiliate_ad.
 _assets/ads/
 _asyncspc.
 _background_ad.
-_banner_ad.
 _banner_ad_
 _Banner_Ads_
-_bannerad.
 _BannerAd_
 _bottom_ads.
 _bottom_ads_
@@ -20909,9 +20904,7 @@ _images/ad.$image
 _images/ad_
 _images/ads/
 _layerad.
-_left_ad.
 _panel_ads.
-_partner_ad.
 _popunder_
 _pushads.
 _rectangle_ads.
@@ -20919,17 +20912,12 @@ _reklama_$domain=~youtube.com
 _reporting_ads.
 _rightad.
 _rightad_
-_sidead.
 _sidebar_ad.
 _sidebar_ad_
-_square_ad.
 _sticky_ad.
 _StickyAd.
-_text_ads.
 _top_ad.
-_vertical_ad.
 _web-advert.
-_widget_ad.
 /plugins/ad-ace/assets/js/coupons.js$script
 /plugins/ad-ace/assets/js/slot-slideup.js$script
 /plugins/ad-ace/includes/shoppable-images/*$script
@@ -34027,6 +34015,7 @@ browsershots.org#@#.advert_area
 ||partners.hostgator.com^
 ||pb.s3wfg.com^
 ||pips.taboola.com^
+||pixfs.net/js/sticky-sidebar-ad.min.js
 ||play-asia.com^$image,subdocument,third-party
 ||promos.fling.com^
 ||pubfeed.linkby.com^
