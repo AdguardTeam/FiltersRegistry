@@ -108,8 +108,8 @@ we follow these rules:
     - `platformsExcluded` — string array, [the list of platforms][kb-hint-platforms] to skip while filter compiling,
       e.g. `["ios", "ext_safari"]`. If you need to compile the filter for all platforms remove this property.
 
-    > Please note that both `platformsIncluded` and `platformsExcluded` should not be set
-    > in filter's metadata simultaneously.
+    > [!WARNING]
+    > Both `platformsIncluded` and `platformsExcluded` should not be set in filter's metadata simultaneously.
 
     <details>
         <summary>Metadata example</summary>
@@ -205,10 +205,9 @@ thanks to the volunteers who enabled it in their AdGuard.
 AdGuard will attempt to compress the lists by removing the least frequently used rules
 until the compression goal (defined in percentages) is achieved.
 
-<!-- FIXME -->
-**NOTE**:
-However, these changes will only take effect after being uploaded to the server,
-as `filters-compiler` does not use this file locally but retrieves it from the server.
+> [!NOTE]
+> However, these changes will only take effect after being uploaded to the server,
+> as `filters-compiler` does not use this file locally but retrieves it from the server.
 
 [kb-filter-statistics]: https://adguard.com/kb/general/ad-filtering/tracking-filter-statistics/
 
