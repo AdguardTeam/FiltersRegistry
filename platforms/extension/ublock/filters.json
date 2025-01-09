@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.60",
-			"timeUpdated": "2025-01-08T08:39:08+0000",
+			"version": "2.0.54.61",
+			"timeUpdated": "2025-01-09T20:38:47+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
