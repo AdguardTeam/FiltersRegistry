@@ -1,5 +1,5 @@
-! Checksum: /Lo/NO3qyaRYRiEyt5jajA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1736341552-14400.patch
+! Checksum: +SYNszTQrDwJjVAKnNDa5Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1736399136-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.96
@@ -293,7 +293,6 @@ coolrom.com.au,coolrom.com##.download_link
 37.0.10.83$network
 !+ PLATFORM(windows, mac, android)
 192.3.110.170$network
-||rewardsgiantusa.com^$document
 !+ PLATFORM(windows, mac, android)
 91.241.19.38$network
 !+ PLATFORM(windows, mac, android)
@@ -1041,6 +1040,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||avast.$app=CCleaner.exe|CCleaner64.exe|CCleanerCloudAgent.exe|ccsetup617.exe|ccsetup618.exe|ccsetup619.exe|ccsetup620.exe|ccsetup621.exe|ccsetup622.exe|ccsetup623.exe|ccsetup624.exe|ccsetup625.exe|ccsetup70.exe
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
 ###share-buttons
+###share-tool
 ###share_bar
 ###share_container:not([class*=body i])
 ###sharebar
@@ -1082,6 +1082,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.share-trigger:not(html,body,:empty)
 ##.share-whatsapp:not(html,body,:empty)
 ##.share__list:not(html,body,:empty)
+##.share_area:not(html,body,:empty)
 ##.share_btn:not(html,body,:empty)
 ##.shareBar:not(html,body,:empty)
 ##.sharebtns:not(html,body,:empty)
@@ -1227,7 +1228,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ~hatena.ne.jp##.hatena-bookmark-button:not(html,body,:empty)
 ~line.me##a[href*="/lineit/share?"]
 ~linkedin.com##.addthis_button_linkedin:not(html,body,:empty)
-~linkedin.com##.linkedin_share:not(html,body,:empty)
 ~linkedin.com##.share-linkedin:not(html,body,:empty)
 ~linkedin.com##a[href*="linkedin.com/cws/share?"]
 ~linkedin.com##a[href*="linkedin.com/shareArticle?"]
@@ -1244,7 +1244,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ~pinterest.*##.pinterest-share:not(html,body,:empty)
 ~pinterest.*##.pinterest[href*="/pin/create/"]
 ~pinterest.*##.share-pinterest:not(html,body,:empty)
-~pinterest.*##a[class$=share-pinterest]
 ~pinterest.*##a[data-pin-do=buttonPin]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
@@ -1633,7 +1632,6 @@ bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 playpilot.com##.ratings
 www.google.*,ipv6.google.com#?#.g:has-text(imdb.com › title) div[data-snf]:has(g-bubble)
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
-kissanime.*##.rating
 primewire.*#?#div:has(> span:has-text(IMDb))
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 $removeparam=yclid
@@ -1692,6 +1690,7 @@ $document,removeparam=guccounter
 $document,removeparam=guce_referrer
 $document,removeparam=guce_referrer_sig
 $document,removeparam=referringSource
+$document,removeparam=source_location
 $document,removeparam=psf_variant
 $document,removeparam=bxid
 $document,removeparam=cndid
@@ -1836,6 +1835,7 @@ $removeparam=affiliate_id
 $removeparam=affiliate_location_id
 $removeparam=cjdata
 $removeparam=click_id,domain=~bookings.beatthatflight.*
+$removeparam=cm_soc
 $removeparam=o_lid
 $removeparam=o_sch
 $removeparam=wtExtndSource
@@ -1852,10 +1852,13 @@ $removeparam=c3nid
 $removeparam=om_mmc
 $removeparam=trackingCode
 $removeparam=CJSID
+$removeparam=irmpname
 Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=pepperjam$/
 $removeparam=affil
 $removeparam=cjid
+$removeparam=irsharedid
+$removeparam=hvarAID
 $removeparam=sv_affiliate_id
 $removeparam=sv_campaign_id
 $document,removeparam=/^sv_tax.*$/
@@ -1892,7 +1895,6 @@ $removeparam=spReportId
 $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
-$removeparam=oly_anon_id
 $removeparam=oly_enc_id,document,domain=~greenbuildingadvisor.com
 $document,removeparam=/^wickedsource=.*$/i
 $removeparam=s_cid
@@ -2760,7 +2762,6 @@ $removeparam=pr_rec_pid
 $removeparam=pr_ref_pid
 $removeparam=pr_seq
 $document,removeparam=refresh,domain=cnn.com|startribune.com
-||tradingview.com^$removeparam=feature
 ||emag.ro^$removeparam=recid
 ||emag.ro^$removeparam=scenario_ID
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
@@ -2962,7 +2963,6 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=.src
 ||login.yahoo.com^$document,removeparam=pspid
 ||login.yahoo.com^$document,removeparam=activity
-||abcnyheter.no^$removeparam=nr
 ||qzone.qq.com^$document,removeparam=jumptoqzone
 ||qzone.qq.com^$document,removeparam=g
 ||qzone.qq.com^$document,removeparam=res_uin
@@ -3039,6 +3039,7 @@ tumblr.com,strategix.dk#$#body { cursor: unset !important }
 /wp-content/uploads/*/cursor.png|
 nerdelandslaget.no#$#html { cursor: auto !important }
 ||files.cargocollective.com/*_Plan-de-travail-$image,third-party
+.ani|$domain=~pixiv.net|~deviantart.com
 prisjakt.*,pricespy.*,prisjagt.dk,hintaopas.fi,ledenicheur.fr#$#.category-page > div { max-width: 98vw !important }
 prisjakt.*,pricespy.*,prisjagt.dk,hintaopas.fi,ledenicheur.fr#$#.category-page--wrapper { max-width: none !important }
 prisjakt.*,pricespy.*,prisjagt.dk,hintaopas.fi,ledenicheur.fr#$#div[class^=Content-] { max-width: calc(100vw - 100px) !important }
