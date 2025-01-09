@@ -1,9 +1,9 @@
-! Checksum: ST6A1V/PZouf8ew8i9duyg
-! Diff-Path: ../patches/14/14-s-1736408642-3600.patch
+! Checksum: ZH/rBC618m1i/8/pDfJ5DQ
+! Diff-Path: ../patches/14/14-s-1736412189-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.18.68
-! TimeUpdated: 2025-01-09T07:39:33+00:00
+! Version: 2.2.18.69
+! TimeUpdated: 2025-01-09T08:38:51+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2519,6 +2519,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+tandem.net##section[class^="styles_cookieBanner"]
 finhack.pl##[class^="fhmm-consent-mode"]
 ||finhack.pl/wp-content/cache/min/1/wp-content/plugins/fhmm-consent-mode/
 hillspet.pl,meridol.pl,colgate.pl,elmex.pl#%#//scriptlet('trusted-click-element', '#consent_blackbar #truste-consent-button')
@@ -4066,7 +4067,7 @@ q21.pl###change_terms_message
 sklepratowniczy.pl,q21.pl#%#//scriptlet('abort-current-inline-script', 'jQuery', 'cookies_message_modal')
 kakto.pl#%#//scriptlet('abort-current-inline-script', '$', 'RodoCookiesInfo')
 iobit.com##.agree-pop
-skype.com,microsoft.com,setup.office.com,rewards.bing.com,github.blog,resources.github.com###wcpConsentBannerCtrl
+skype.com,microsoft.com,setup.office.com,rewards.bing.com,github.blog,github.com###wcpConsentBannerCtrl
 blog.bizvibe.com#$##cookie-law-info-bar { display: none!important; }
 blog.bizvibe.com#$#.cli-popupbar-overlay { display: none!important; }
 blog.bizvibe.com#$#body.cli-barmodal-open { overflow: auto!important; position: static !important; }
@@ -25152,6 +25153,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+tandem.net#%#//scriptlet('set-session-storage-item', 'TandemWeb.BlogPopupShown', 'true')
 sky.pro#%#//scriptlet('trusted-set-session-storage-item', 'popup-banner', '1736410895611')
 sky.pro#%#//scriptlet('trusted-set-session-storage-item', 'second-popup-show-date', '1736410895611')
 sky.pro#%#//scriptlet('trusted-set-session-storage-item', 'wiki_exit_popup_show_date', '1736410895611')
@@ -41184,6 +41186,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+tandem.net##div[class^="styles_getAppBanner"]
 giphy.com##a[href="https://giphy.page.link/home"]
 business-standard.com#%#//scriptlet('set-cookie', 'popupShown', 'true')
 kitaaa.net###submenu > ul.mb-4.font-weight-bold
