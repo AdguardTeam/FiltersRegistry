@@ -1,9 +1,9 @@
-! Checksum: JxFKQeuSQTIOJAuvnrJGWA
-! Diff-Path: ../patches/14/14-s-1736440941-3600.patch
+! Checksum: cb22BPL3JswyEjR4uVsrGw
+! Diff-Path: ../patches/14/14-s-1736448112-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.18.75
-! TimeUpdated: 2025-01-09T16:38:53+00:00
+! Version: 2.2.18.77
+! TimeUpdated: 2025-01-09T18:38:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2519,6 +2519,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+erotik.com##.swinger-consent
 ||public.imyfone.com/assets/js/cmp_data_collection/
 intuit.com###gdpr-cookie-test
 businessweekly.com.tw###gdrp-el
@@ -20884,6 +20885,8 @@ music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 [$path=/pogoda]yandex.*#%#//scriptlet('json-prune', 'rtb')
 !
 ! Yandex.Video
+[$path=/video]ya.ru,yandex.*#%#//scriptlet('json-prune', 'rtb seatbid')
+[$path=/video]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'throwFunc')
 !
 ! Yandex.Afisha
 afisha.yandex.*#%#//scriptlet('prevent-eval-if', 'bidReqIdStr')
