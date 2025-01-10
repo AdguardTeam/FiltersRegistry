@@ -1,9 +1,9 @@
-! Checksum: bZoZ/Hu8f+ra8YzP67Etsw
-! Diff-Path: ../patches/19/19-s-1736512979-3600.patch
+! Checksum: miY4QqmCULuNWFF+hBjI7Q
+! Diff-Path: ../patches/19/19-s-1736516684-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.48.57
-! TimeUpdated: 2025-01-10T12:39:17+00:00
+! Version: 2.0.48.58
+! TimeUpdated: 2025-01-10T13:41:15+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4390,6 +4390,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+dotcom-tools.com#%#//scriptlet('set-local-storage-item', 'hideSaveTestMessage', 'true')
 trovagnocca.com#%#//scriptlet('set-cookie', 'telegram-channel-hide', 'true')
 tandem.net#%#//scriptlet('set-session-storage-item', 'TandemWeb.BlogPopupShown', 'true')
 sky.pro#%#//scriptlet('trusted-set-session-storage-item', 'popup-banner', '1736410895611')
@@ -10865,13 +10866,6 @@ com-magazin.de##w-div[role$="dialog"]
 ||sud.ua/js/jquery.arcticmodal*.min.js
 /jquery.magnific-popup.min.js$domain=ufatime.ru|koreanworld.ru
 !
-! TODO: check the element after 2024 May 1 - https://github.com/AdguardTeam/AdguardFilters/issues/173453
-kurier.at###view-offer
-! TODO: check the element after 2024 May 1 - https://github.com/AdguardTeam/AdguardFilters/issues/173225
-cloud.tencent.com##body > .cdc-portal-wrapper:has(.cdc-modal__mask + .mod-m-new-year)
-! TODO: check the element after 2024 Jan 10 - https://github.com/AdguardTeam/AdguardFilters/issues/169645
-||piano.io/xbuilder/experience/execute?aid=$domain=athleterecipe.com
-!
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156472#issue-1805785001
 m.youtube.com#$#body > c3-overlay.bottom-sheet-overlay-scrim { display: none !important; }
@@ -12872,6 +12866,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+secretroma.com##form[data-name="Newsletter form"]
 tesa.com##.cross-link-teaser
 tesa.com#%#//scriptlet('trusted-set-local-storage-item', 'dismissedActionLayerIds', '{"11572803":{"dontDisplayAgainBefore":4890107313765}}')
 gagadget.com##.js-post > div.l-container:has(.l-inner >  .post-links > a[href="https://t.me/gagadget_uk"])
