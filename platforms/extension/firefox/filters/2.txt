@@ -1,9 +1,9 @@
-! Checksum: 3UZNkaL6J4nDfOd7m2b4OA
-! Diff-Path: ../patches/2/2-s-1736512989-3600.patch
+! Checksum: aJDbVkuKl24YKB6ZrJmQfQ
+! Diff-Path: ../patches/2/2-s-1736520299-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.67.37
-! TimeUpdated: 2025-01-10T12:31:28+00:00
+! Version: 2.3.67.38
+! TimeUpdated: 2025-01-10T14:31:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28070,6 +28070,7 @@ autopapa.ge##.top-rek
 !
 ! NOTE: Greek
 !
+insomnia.gr##div[class^="banner-"]
 newsit.gr##div[style="min-height: 620px;"]
 newsauto.gr##div[class^="ad-"]
 ipaidia.gr##.inarticle-add
@@ -43381,10 +43382,14 @@ kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,infor.pl,forsal.p
 ||html-load.com/loader.min.js$domain=issuya.com|pravda.com.ua|lamire.jp|picrew.me|mydaily.co.kr|badmouth1.com|taxguru.in|sportsrec.com|reportera.co.kr|tweaksforgeeks.com|fourfourtwo.co.kr|flatpanelshd.com|wfmz.com|videogamemods.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|eurointegration.com.ua|jin115.com|gloria.hr|etnews.com|carscoops.com|sportsseoul.com|onlinegdb.com|text-compare.com|winfuture.de|hoyme.jp|indiatimes.com|blog.esuteru.com|modhub.us|thatgossip.com|sourceforge.net|slashdot.org|economictimes.com|convertcase.net|kreuzwortraetsel.de|powerpyx.com|syosetu.com|dnevno.hr|woxikon.de|wort-suchen.de
 ||content-loader.com/loader.min.js$domain=issuya.com|dziennik.pl|inven.co.kr|ff14net.2chblog.jp|sourceforge.net|slashdot.org|economictimes.com
 !
+! Problematic sites
+dogdrip.net#$?#html[lang="ko"] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
+infinityfree.com#$?#html[lang][dir="ltr"] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
+smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 ! Common rules, which partially hide banners
-#$?#body > div[id^="img_"][class^="img_"][style^="width"]:first-child { position: absolute !important; top: -100000px !important; }
-#$?#body > div:first-child > script + div[id^="img_"][class^="img_"] { position: absolute !important; top: -100000px !important; }
-#$?#body > a:only-child > div[id^="img_"][class^="img_"] { height: 0px !important; width: 0px !important; filter: opacity(0) !important; }
+~dogdrip.net,~infinityfree.com,~smsonline.cloud#$?#body > div[id^="img_"][class^="img_"][style^="width"]:first-child { position: absolute !important; top: -100000px !important; }
+~dogdrip.net,~infinityfree.com,~smsonline.cloud#$?#body > div:first-child > script + div[id^="img_"][class^="img_"] { position: absolute !important; top: -100000px !important; }
+~dogdrip.net,~infinityfree.com,~smsonline.cloud#$?#body > a:only-child > div[id^="img_"][class^="img_"] { height: 0px !important; width: 0px !important; filter: opacity(0) !important; }
 07c225f3.online,content-loader.com,css-load.com,html-load.com,img-load.com#$?#body > *:not(pre) { filter: opacity(0) !important; pointer-events: none !important; }
 ! END: Ad-Shield ad reinsertion
 !
@@ -67649,6 +67654,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/195971
+! affected many porn sites with the similar player
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195990
 @@/media/*$image,stealth=referrer,domain=bato.to
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195772
@@ -68510,8 +68517,6 @@ implbits.com#@#.banner_container
 @@||app.humanornot.ai^$stealth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150722 [Stealth Mode - Referrer]
 @@||media-files.bunkr.ru^$media,stealth
-! https://github.com/AdguardTeam/AdguardFilters/issues/150740 [Stealth Mode - Referrer]
-@@||video.xpembed.me/remote_control.php$stealth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150734 [Stealth Mode - Block third-party Authorization header]
 @@||commercelayer.io^$stealth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150237 [Stealth Mode - Referrer]
@@ -69807,8 +69812,6 @@ implbits.com#@#.banner_container
 @@||amhcdn.net/*/*.mp4$stealth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36048 [Stealth Mode - Block third-party Authorization header]
 @@||api.pinger.com$stealth
-! https://github.com/AdguardTeam/AdguardFilters/issues/36278 [Stealth Mode - Referrer]
-@@||rykoeb.com/remote_control.php^$stealth
 ! https://forum.adguard.com/index.php?threads/opera-my-flow-problem.33645 [ Stealth Mode - Block third-party Authorization header]
 @@||flow.opera.com/*/pairing-tokens$stealth
 ! frankenpost.de - "Vorlesen" broken [Stealth Mode - Referrer]
@@ -97168,6 +97171,7 @@ browsershots.org#@#.advert_area
 ||graivampouth.net^
 ||graizoah.com^
 ||graizout.net^
+||grallichalvas.com^
 ||gralneurooly.com^
 ||grammarselfish.com^
 ||gramotherwise.com^
