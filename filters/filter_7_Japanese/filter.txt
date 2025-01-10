@@ -1203,6 +1203,7 @@ kyukyoku-matome.com##.widget_pc_ad
 ! NOTE: placeholders on iOS
 ! Usually, IFRAME and IMG leftovers, which cannot be collapced like with browser extensions
 !#if (adguard_ext_safari || adguard_app_ios)
+##iframe[src^="https://ad.duga.jp/"]
 ##img[src*="a8.net/"]
 ##iframe[src^="https://ads.mediams.mb.softbank.jp/"]
 ##iframe[src^="https://gallerieshub.com/"]
@@ -1748,6 +1749,7 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 /wp-content/uploads/2024/09/fanza_ad$image
 !
 ! Malware/Phishing
+://eki.*.net/eki3242$document
 ://icloud.apple.*.cn/account_int/$document
 .com/top/client/select_*.php|$document
 /all/firstSelect.php?$document
@@ -1778,7 +1780,6 @@ jcb*/tetsuzuki/login.htm|$document,domain=com|org
 .com/smbc.co.jp/*/?cmd=_identifier_Demarrer_ID=$document
 /M08Myr0hotline0JP07/*$document
 /W08Myr0hotline0JP07/*$document
-/?Rfunccode=*&nextfunc=$document,domain=cn
 ://sm*/sp/index$document,domain=buzz|cfd
 .top/memx/force_login?acr_values=$document
 /?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=sign-in&path=home&ref_=nav_Account&signIn=1&useRedirectOnSuccess=1|$document,domain=cn|com
@@ -1900,6 +1901,7 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 .com/ae/login.php?openid.pape.max_auth_age=0&openid.return_to=%$document
 !
 !#if (!adguard_ext_chromium_mv3 && !ext_ublock)
+/?Rfunccode=*&nextfunc=$document,domain=cn|top
 /brand/detail/m*.html?zenid=$document,domain=cfd|shop|space|top
 /shopping/item/m*/?zenid=$document,domain=cfd|fun|shop|space|top
 /mart/*.html?zenid=$document,domain=cfd|fun|shop|space|top
@@ -1914,6 +1916,7 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 /\.(?:club|cn|icu|top|pro|site|work)\/Personal\/member\/Login\/index\.php\?oneTimeAccessID=/$document,domain=club|cn|icu|top|pro|site|work
 !#endif
 !#if (adguard_ext_chromium_mv3 || ext_ublock)
+/?Rfunccode=*&nextfunc=$document,to=cn|top
 /brand/detail/m*.html?zenid=$document,to=cfd|shop|space|top
 /shopping/item/m*/?zenid=$document,to=cfd|shop|space|top
 /mart/*.html?zenid=$document,to=cfd|shop|space|top
@@ -2005,6 +2008,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+||doujin-assets.dmm.co.jp/p/dc/doujin/bnr
+the-3rd.net##.entry_field > div[onclick*="campaign"]
 livedoor.blog##.plugin-memo:has(> div.side > div[id^="im-"])
 sougomatomechannel.livedoor.blog##.plugin-memo:has(> div.side > script[src^="https://www.mgstage.com"])
 plaza.rakuten.co.jp##.dText.break-word > table[border="0"]:has(a[href^="https://hb.afl.rakuten.co.jp/ichiba/"][rel^="nofollow sponsored"] > img)
@@ -6142,10 +6147,11 @@ webcg.net##.single-gallery-ad-hol-block
 webcg.net##.webcg-1030
 jidoushatounan.com##.banner_set:not(.pl_banner_top)
 ||jidoushatounan.com/wp/wp-content/uploads/2018/06/a2m_jtj.jpg
+erogamescape.org,erogamescape.dyndns.org##div[id^="ad_"]
+erogamescape.org,erogamescape.dyndns.org###nav_1 > .menu > div:last-child:has(a[href^="https://al.dmm.co.jp"] > img)
+erogamescape.org,erogamescape.dyndns.org#?##nav_1 > .menu > h2:contains(広告)
 erogamescape.org,erogamescape.dyndns.org###adv_dmm_main
 erogamescape.org,erogamescape.dyndns.org###toContents + div[style="margin-bottom: 20px;"]
-erogamescape.org,erogamescape.dyndns.org###ad_rudel_1
-erogamescape.org,erogamescape.dyndns.org###ad_rudel_2
 phileweb.com###rightBanner_1
 city.yachiyo.chiba.jp,phileweb.com###topBanner
 sirabee.com,fumumu.net##.entryBottomBanner

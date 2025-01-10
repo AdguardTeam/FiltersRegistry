@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.67.40",
-			"timeUpdated": "2025-01-10T16:31:30+0000",
+			"version": "2.3.67.41",
+			"timeUpdated": "2025-01-10T17:31:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.9.52",
-			"timeUpdated": "2025-01-10T16:38:36+0000",
+			"version": "2.1.9.53",
+			"timeUpdated": "2025-01-10T17:38:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.35",
-			"timeUpdated": "2025-01-09T18:38:11+0000",
+			"version": "2.0.45.36",
+			"timeUpdated": "2025-01-10T17:38:39+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.61.14",
-			"timeUpdated": "2025-01-10T15:38:57+0000",
+			"version": "2.0.61.15",
+			"timeUpdated": "2025-01-10T17:38:42+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.35",
-			"timeUpdated": "2025-01-10T16:38:55+0000",
+			"version": "2.0.57.36",
+			"timeUpdated": "2025-01-10T17:38:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/16_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.21",
-			"timeUpdated": "2025-01-10T14:41:08+0000",
+			"version": "2.0.49.22",
+			"timeUpdated": "2025-01-10T17:39:06+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
