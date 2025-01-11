@@ -1,5 +1,5 @@
-! Checksum: pByiN4pNriN3ifvDWKaE7g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1736485559-14400.patch
+! Checksum: kk63C1QmxCQZcCPKBWtvCw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1736571951-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.96
@@ -55,6 +55,7 @@ waze.com##.wz-downloadbar
 zargan.com###app-menu
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##span.hidden[class$="m:block"]
 bfmtv.com#$?#.fixed_title { top: 0 !important }
+/^.*/jquery\.smartbanner/.*$/$match-case
 /^.*/js/smartbanner\..*$/$match-case
 /^.*/smart-app-banner\..*$/$match-case
 /^.*/smartbanner/appbanner\.js.*$/$match-case
@@ -114,7 +115,6 @@ softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
-||testedforyou.net^$all
 ||solvusoft.com^$document
 exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
@@ -1763,6 +1763,7 @@ $removeparam=wgu
 $removeparam=wgexpiry
 $removeparam=fsrc
 $removeparam=Referrer
+$removeparam=ad_pvid
 $removeparam=algo_pvid
 $removeparam=spLa
 $removeparam=shrsl_analytics_sscid
@@ -1850,7 +1851,6 @@ $removeparam=c3ch
 $removeparam=c3nid
 $removeparam=om_mmc
 $removeparam=trackingCode
-$removeparam=CJSID
 $removeparam=irmpname
 $document,removeparam=/^source=pepperjam$/
 $removeparam=affil
@@ -2061,7 +2061,6 @@ $removeparam=ttd_tdid
 $removeparam=bsw_param
 $removeparam=google_push
 $removeparam=partneruserid
-$removeparam=sExtCookieId
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=taboola_hm
@@ -2075,8 +2074,6 @@ $document,removeparam=traceId
 $removeparam=refDomain
 $removeparam=criteoId
 $removeparam=_rand
-$removeparam=dsp_uid
-$removeparam=cs_xi
 $removeparam=pn_id
 $removeparam=mt_uuid
 $removeparam=sifi_uid
@@ -2134,6 +2131,7 @@ $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com|linkedin.com|
 ||amazon.$removeparam=crid
 ||amazon.$removeparam=/^cv_ct_.*$/
 ||amazon.$removeparam=sprefix
+||amazon.$removeparam=ac_md
 $removeparam=coliid
 $removeparam=geniuslink
 ||amazon.$removeparam=aaxitk
@@ -2548,6 +2546,7 @@ $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
 $removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
+$removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=article_name,domain=shop-links.co
 $removeparam=article_url,domain=shop-links.co
@@ -2564,7 +2563,6 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 ||humblebundle.com^$removeparam=mcID
 ||artstation.com^$removeparam=/^\d.*$/
 $removeparam=context,domain=imdb.com|fiverr.com|spotify.com|avito.ru|avito.ma
-$removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
 $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
@@ -2602,7 +2600,6 @@ $removeparam=SID,domain=ae.com|anntaylor.com|applevacations.com|ashford.com|auto
 $removeparam=acid,domain=lenovo.com
 $removeparam=aid,domain=adguard-dns.com|adguard-vpn.com|adguard.com|brownells.*|cafago.com|get.protonmail.com|get.protonvpn.com|tomtop.com|viator.com|wevpn.com
 $removeparam=camp,domain=amazon.*|calvinklein.*|dickssportinggoods.com|dockers.com|dressbarn.com|lanebryant.com|levi.com|maurices.com|worldmarket.com|xg4ken.com
-$removeparam=cp,domain=converse.com|nike.com|nextdoor.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
 $document,removeparam=/^refID=.*$/i,domain=allmodern.com|calphalon.com|priceline.com|questrade.com|wayfair.*|yankeecandle.com
 $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|anntaylor.com|asos.com|awd-it.*|barenecessities.com|barrons.com|beautyencounter.com|buckle.com|burpee.com|chacos.com|coursera.org|dxl.com|dyson.com|ebay.*|famousfootwear.com|finishline.com|freetaxusa.com|gap.com|gapcanada.ca|gucci.com|hanes.com|hotwire.com|hulu.com|hunterboots.com|jcrew.com|josbank.com|kobo.com|lanebryant.com|laroche-posay.us|loft.com|magazines.com|marketwatch.com|maurices.com|merrell.com|newbalance.com|nordstrom.com|officedepot.com|onehanesplace.com|online4baby.com|radissonhotelsamericas.com|ralphlauren.com|saksfifthavenue.com|saksoff5th.com|samash.com|samsclub.com|saucony.com|sharperimage.com|skinceuticals.com|thingsremembered.com|thrifty.*|timeformecatalog.com|verabradley.com|vivaterra.com|wine.com|yoox.com
 ||kohls.com^$removeparam=kls_sbp
@@ -2759,7 +2756,6 @@ $document,removeparam=refresh,domain=cnn.com|startribune.com
 ||emag.ro^$removeparam=scenario_ID
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
-$removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
 ||comodo.com^$removeparam=track
@@ -2811,7 +2807,6 @@ $removeparam=sub,domain=allboner.com|twinkvideos.com
 $removeparam=ueid,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 $removeparam=qo,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com|search.ask.com
 $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
-||qvc.com^$removeparam=qq
 ||jcpenney.com^$removeparam=deptId
 ||jcpenney.com^$removeparam=catId
 ||jcpenney.com^$removeparam=urlState
@@ -2848,8 +2843,6 @@ $removeparam=srsltid,document
 $removeparam=x-wts
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
-$removeparam=link_source_user_id,domain=nextdoor.com
-$removeparam=mar,domain=nextdoor.com
 ||dzen.ru^$removeparam=yredirect
 ||verizon.com^$removeparam=campaignGroup
 ||verizon.com^$removeparam=campaignName
@@ -2909,6 +2902,7 @@ $removeparam=csrcl2
 ||mcafee.com^$removeparam=ccstype
 $removeparam=ProspectID,domain=citi.com
 $document,removeparam=bpli,domain=blogger.com
+$document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||cimri.com^$document,removeparam=platformName
 ||cimri.com^$document,removeparam=offerSponsored
 ||cimri.com^$document,removeparam=offerCount
