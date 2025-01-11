@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: g+pfrNUVxeYVImXwd5RouA
-! Diff-Path: ../patches/7/7-s-1736613842-3600.patch
+! Checksum: 7Me+u/Xs6uzMeR/5hyFlmA
+! Diff-Path: ../patches/7/7-s-1736617401-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.61.19
-! TimeUpdated: 2025-01-11T16:39:38+00:00
+! Version: 2.0.61.20
+! TimeUpdated: 2025-01-11T17:39:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1470,6 +1470,7 @@ uwl.weblio.jp#$#.tngMainT { width:100% !important; }
 buhidoh.net#$##center-left { height: auto !important; }
 !
 ! fix blog sidebar
+gadget2ch.com#$##sidebar { position: static !important; }
 saikyo-jump.com#$#.right-container { position: static !important; }
 kosoch.com#$##plugin2[style^="position: fixed"] { position: static !important; }
 blog.livedoor.jp#$#:matches-path(/kinisoku)#aside[style] { position: static !important; }
@@ -1783,6 +1784,10 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+trailrunner.jp##.right_banner_xl
+||img.moppy.jp/pub/global/sp/friend/banner/blue/234x60.jpg$domain=i.best-hit.tv
+||j-basketball.club/images/banner/320_267_1.jpg$domain=i.best-hit.tv
+||kurodore.sakura.ne.jp/img/wakuwakusozai.jpg
 the-3rd.net##a[href^="https://al.dmm.co.jp/"]
 the-3rd.net##.entry_field > div[onclick*="campaign"]
 livedoor.blog##.plugin-memo:has(> div.side > div[id^="im-"])
@@ -9775,13 +9780,13 @@ mail.yahoo.co.jp#?##tagYadsDetail:upward(1)
 mail.yahoo.co.jp#?##tagYadsSideColumn:upward(1)
 mail.yahoo.co.jp#?##tagYadsListTop:upward(1)
 esportsnewsjapan.jp#?#.bg--deep a[class*="gtm-ad"]:upward(.bg--deep)
-gadget2ch.com#?#.posts-inner:contains(/スポンサードリンク|関連コンテンツ|他サイト様人気記事|最新記事|こちらもオススメ/)
+gadget2ch.com#?#.posts-inner:contains(/スポンサードリンク|関連コンテンツ|最新記事/)
 2ch-c.net#?#.nend_text_ad:upward(li)
 hibiki-radio.jp#?#.ng-isolate-scope > li.ng-scope ins.adsbygoogle:upward(li)
 geartics.com#?#.mt-12:has(> div.ads-double)
 geartics.com#?#.my-8:has(> div.ads-double)
 geartics.com#?#.white:has(+ .my-8 > div.ads-double) > hr:last-child
-trailrunner.jp#?#.news_list > li > ins.adsbygoogle:upward(1)
+trailrunner.jp##.news_list > li:has(> ins.adsbygoogle)
 kabumatome.doorblog.jp#?#blockquote:has(a[href^="https://www.amazon.co."])
 sp.oshaburi.net#?##dmm_ranking_pc_more ~ h2:contains(ランキング)
 mondotv.jp#?#li.mb10:has(script.optanon-category-ad)
@@ -10537,7 +10542,7 @@ ff14hikasensokuhou.com#?#div.plugin_item:has(> div.plugin_content > h2 > span:co
 fukuishimbun.co.jp#?#.article-body > .inread:has(> div[id^="div-gpt-"])
 ongakumichi523.jp#?##main_contents > .content:has(> h3.plg_header:contains(スポンサーリンク))
 ongakumichi523.jp#?##sidemenu > .sidemenu_content:has(> h3.plg_header:contains(スポンサーリンク))
-i.best-hit.tv#?#.col-lg-4 > div[style="text-align:center;margin-bottom:15px;"] div.panel-default:has(a[href^="https://prf.hn"])
+i.best-hit.tv##.col-lg-4 > div[style="text-align:center;margin-bottom:15px;"] div.panel-default:has(a[href^="https://prf.hn"])
 ani-chat.net#?#.posts-under-1 > div.execphpwidget > div.idname:contains(【PR】)
 switchsoku.com#?#.l-main > div.dividerBottom > div.dividerBottom:has(> aside.widget > div.adWidget)
 aaieba.livedoor.biz#?#.plugin-memo:has(> div.side > div > div[id^="mhub-"])
