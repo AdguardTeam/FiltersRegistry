@@ -1,9 +1,9 @@
-! Checksum: oRfqeSu+uxFYdgZo4HsjnA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1736567006-3600.patch
+! Checksum: HaMG6tnTPldWUgymhHEfCg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1736610202-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.49.23
-! TimeUpdated: 2025-01-11T03:39:45+00:00
+! Version: 2.0.49.24
+! TimeUpdated: 2025-01-11T15:39:40+00:00
 ! Expires: 5 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -30,6 +30,7 @@ bilan.ch#%#!function(){function b(){}function a(a){return{get:function(){return 
 capital.fr#@#.plainAd
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari)
 @@||bilan.ch^$generichide
+/aff_*/banners/*$badfilter
 _adagency_$badfilter
 /image/ad.$badfilter
 /adscontroller.$badfilter
@@ -37,6 +38,7 @@ _adagency_$badfilter
 /banner-ads$badfilter
 /ad/*/728/*$badfilter
 /ad/ads.$badfilter
+/aff_*/banners/*$~xmlhttprequest
 _adagency_$~xmlhttprequest
 /image/ad.$~xmlhttprequest
 /adscontroller.$~xmlhttprequest
@@ -128,6 +130,7 @@ ebookdz.com#%#//scriptlet('abort-on-property-read', 'ABDetector')
 ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ||ebookdz.com/forum/libab/script.js
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/^navpromo/', 'abort', 'inlineScript')
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a { content-visibility: hidden !important; }
 japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item > a', 'content-visibility', 'visible')
 japscan.lol##body > div.container > #blare-inter[style*="position"]
