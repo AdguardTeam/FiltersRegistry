@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.38",
-			"timeUpdated": "2025-01-11T13:39:17+0000",
+			"version": "2.0.45.39",
+			"timeUpdated": "2025-01-11T18:39:46+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
