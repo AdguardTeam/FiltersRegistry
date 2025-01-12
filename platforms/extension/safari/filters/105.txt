@@ -1,9 +1,9 @@
-! Checksum: p899PgR1fG19hRfz+VsgJw
-! Diff-Path: ../patches/105/105-s-1736629562-14400.patch
+! Checksum: loPaYEqPgDUWWQt5zWs2mg
+! Diff-Path: ../patches/105/105-s-1736701548-14400.patch
 ! Title: EasyList Czech and Slovak
 ! Description: Additional filter list for websites in Czech and Slovak.
-! Version: 2.0.2.86
-! TimeUpdated: 2025-01-11T21:01:29+00:00
+! Version: 2.0.2.87
+! TimeUpdated: 2025-01-12T17:01:11+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Homepage: http://adblock.sk
@@ -90,7 +90,6 @@ kurzy.cz#%#//scriptlet('abp-abort-on-property-write', 's_back')
 ||mediatn.cms.nova.cz/robots.txt$xmlhttprequest
 ||motorkari.cz^$subdocument
 ||mrk.cz/images/inz/
-||parabola.cz/img_menu/*_01.$image
 ||pornuj.cz/files/ntva.php
 ||presentation.lmc.cz/aliance/
 ||prvnizpravy.cz/repository/banner
@@ -112,6 +111,7 @@ titulky.com/banaltr/
 ||uschovna.cz/branding
 ||vascak.cz/data/img/adblock.png$image
 ||videoad.cz^
+warcenter.cz/interstitial_fs.js
 ||warforum.cz/ads/$image
 ||wesa.cz/banner/
 ||*/wp-content/plugins/wp-content-copy-protection/assets/js/script.min.js$domain=rozbor-dila.cz|rozbor-dila.eu|rozborknihy.cz|studijni-svet.cz|ekonomie-ucetnictvi.cz|biologie-chemie.cz|anglictina-maturita.cz
@@ -143,6 +143,7 @@ titulky.com/banaltr/
 ||ourphorum.com/images/banner
 ||pricemania.sk/pictures/banners/
 ||pricemania.sk/pictures/campaigns/
+programujte.com/img/pozadi_2024.jpg
 ||radia.sk/_uputavky/$subdocument
 ||radia.sk/scripts/ads.js
 ||recycle.zoznam.sk/get.fcgi
@@ -173,6 +174,7 @@ titulky.com/banaltr/
 ||ads.esports.cz^$third-party
 ||adverts.cz^$third-party
 ||automodul.cz^$third-party
+||ban.tipsport.cz^$third-party
 ||banan.cz^$third-party
 ||banner.ifortuna.cz^$third-party
 ||banners.onebit.cz^$third-party
@@ -185,6 +187,7 @@ titulky.com/banaltr/
 ||dot.idot.cz^$third-party
 ||ecigareta.eu^$third-party
 ||ehub.cz^$third-party
+||fastshare.cloud^$third-party
 ||fastshare.cz^$third-party
 ||graphics.stdout.cz/b:commercial$third-party
 ||heureka.cz^$third-party
@@ -271,7 +274,6 @@ denik.cz#@#.reklama-box
 hyundai.com#@#.r-main
 jaguar-club.net,mazdaclub.cz,nissanclub.cz#@#.reklama
 novinky.cz#@#.g_ad
-www.parabola.cz#@#.rklm
 skrblik.cz#@##adsense
 sluzebnik.cz#@##adverts
 !
@@ -448,10 +450,13 @@ krimi-plzen.cz##.article-partnｅr-bοx
 krimi-plzen.cz##.ad-seznam-responsive
 kupi.cz##.top_background
 kurzy.cz##[id^="adv_"]
-kurzy.cz###z990x200
 kurzy.cz###zr300x600
-kurzy.cz##iframe[src^="https://img.kurzy.cz/og"]
+kurzy.cz##iframe[src^="https://img.kurzy.cz/sback"]
 kurzy.cz##a[href*="utm_campaign=kurzy_"]
+kurzy.cz###notifpopup
+kurzy.cz###sticky_bottom
+kurzy.cz##.ecb.loga-partneru
+kurzy.cz###wise-calc-widget
 lamer.cz,moda.cz##.square
 libise.eu###aa1
 lidovky.cz##div[id^="hyper"]
@@ -470,7 +475,9 @@ motoforum.cz##img[alt="Reklama"]
 motoforum.cz##.advert
 motorkari.cz##a[trgurl],a[href*="relocate.php"]
 motorkari.cz##.banner,.left-side-banner,.right-side-banner
-mrk.cz##.komerce
+mrk.cz###pozadistranky
+mrk.cz##.oznaceno
+mrk.cz###kolotoc1
 nasepenize.cz##.box-offer
 nasepraha.cz##.npab
 navratdoreality.cz##.box-responsive
@@ -480,7 +487,13 @@ onlajny.com###sportObchodBanner
 onlajny.com##div.bannerHolderZapasRight
 onlymen.cz##pp
 osel.cz##.right
-parabola.cz##div[style^="float:left;width:468px;"] + img[src^="data:image/gif;base64,"]
+parabola.cz##.main_menu2 h1#logo + div
+parabola.cz##.nav_sloupec h3.idr
+parabola.cz##.nav_sloupec h3.idr + a
+parabola.cz##.nav_sloupec h3.ridr
+parabola.cz##.nav_sloupec h3.ridr + a
+parabola.cz##.main_menu5 > .clear_both ~ a
+parabola.cz##.main_menu5 > .clear_both ~ img
 pctuning.cz##[class*="sda-"]
 pravidla.cz##.advtick
 pravopisne.cz,pravopisne.sk##.advert
@@ -528,6 +541,7 @@ tvfreak.cz##.skyscrapper-right
 uschovna.cz##.branding-link
 vortex.cz##.banner-brand
 war4all.com###tblHorniLista
+warcenter.cz##td[bgcolor="#066490"]
 warezforum.cz##.center
 warezforum.cz##object[id*="bfad"]
 warforum.cz###adLocation-21
@@ -633,7 +647,6 @@ konzolista.cz#?#.v-card--link:-abp-has(.ad)
 lupa.cz,root.cz#?#div.article--content:-abp-has(div.design-advert)
 motorkari.cz#?#div:-abp-has(> a[href*="?act=detail&f=8"])
 msmt.cz#?#.bcc:-abp-has(.banners)
-parabola.cz#?#h3:-abp-contains(/^Reklama$/)
 presovak.sk#?#.wrapper__list__article:-abp-has(.widget__form-subscribe)
 slovnik.aktuality.sk#?#.desktop-wrapper:-abp-has([id^="div-gpt-ad"])
 sports24.cz#?#.tdc-row:not(:-abp-has(>.tdc-element-style))
@@ -664,6 +677,7 @@ impuls.cz#%#//scriptlet('ubo-set.js', 'first', 'false')
 indian-tv.cz,nerdfix.cz##a:matches-css(background-image: /url/):matches-css(position: fixed):upward(1)
 indian-tv.cz,nerdfix.cz#%#//scriptlet('ubo-aeld.js', 'click', 'location')
 kupi.cz#$#.top_bg_content { top: 0px !important; }
+kurzy.cz#%#//scriptlet('ubo-nostif.js', 'img_ab_s', '3000')
 letemsvetemapplem.eu,samsungmagazine.eu#$#.headerbanner-wrapper { min-height: 0 !important; }
 letemsvetemapplem.eu,samsungmagazine.eu,androidmagazine.eu#$#header.lsa { margin-top: 0 !important; }
 letemsvetemapplem.eu,samsungmagazine.eu,androidmagazine.eu,jablickar.cz#$##page_wrapper { cursor: auto !important; }
