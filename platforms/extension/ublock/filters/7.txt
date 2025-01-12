@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 72lioCdke6tJRp+EERErVg
-! Diff-Path: ../patches/7/7-s-1736667952-3600.patch
+! Checksum: FR9pgEC/t0bfGPD268CjCA
+! Diff-Path: ../patches/7/7-s-1736671399-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.61.23
-! TimeUpdated: 2025-01-12T07:41:40+00:00
+! Version: 2.0.61.24
+! TimeUpdated: 2025-01-12T08:39:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1592,8 +1592,6 @@ jcb*/tetsuzuki/login.htm|$document,domain=com|org
 .com/grp01.id.rakuten.co.jp/jp/$document
 -co-jp-*.com/reg/login$document
 _co_jp.*.php$document,domain=cc|com
-/\/all\/login\.php\?([0-9a-f]{32})=\1$/$document,match-case,domain=com
-/\/t_([0-9A-Za-z]{32})\?token=\1/$document,domain=cn|com|net|top|vip
 -go-jp.com/$document
 .com/wp-content/mufg.jp$document
 ||web.core.windows.net/merrx01*/index.html$document
@@ -1703,6 +1701,8 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 ://eki*.*.com/Personal/member/Login/index.php?oneTimeAccessID=$document
 .com/ae/login.php?openid.pape.max_auth_age=0&openid.return_to=%$document
 !
+/\/all\/login\.php\?([0-9a-f]{32})=\1$/$document,match-case,to=com
+/\/t_([0-9A-Za-z]{32})\?token=\1/$document,to=cloud|cn|com|net|top|vip
 /?Rfunccode=*&nextfunc=$document,to=cn|top
 /brand/detail/m*.html?zenid=$document,to=cfd|shop|space|top
 /shopping/item/m*/?zenid=$document,to=cfd|shop|space|top
@@ -8742,12 +8742,13 @@ kanaloco.jp##.top-head-bnr
 tktube.com##.fp-player > div[style*="z-index:"]
 tktube.com##.footer-margin
 tktube.com##.table
+friday.kodansha.co.jp#$#div[class^="detail_adContainer"] { display: none !important; }
+friday.kodansha.co.jp##div[class*="styles_sideColumnAd"]
 friday.kodansha.co.jp##div[class^="detail_adBillboard"]
 friday.kodansha.co.jp##div[class^="detail_adLeaderBoard"]
 friday.kodansha.co.jp##div[class^="detail_doubleAdRow"]
-friday.kodansha.co.jp##div[class^="detail_sideColumnItem"] > div[class^="styles_sticky"] > div[class^="detail_adContainer"]
 friday.kodansha.co.jp##div[class^="styles_leaderBoardAd_"]
-friday.kodansha.co.jp#$#.detail_sideColumnItem__5kZXh.detail_under__MIvHm { min-height: 0 !important; }
+friday.kodansha.co.jp#$#.detail_sideColumnItem__5kZXh { min-height: 0 !important; }
 friday.kodansha.co.jp##section[class^="detail_recommended_"]
 friday.kodansha.co.jp##div[class^="detail_adArea"]
 friday.kodansha.co.jp##div[class^="styles_ad"]
