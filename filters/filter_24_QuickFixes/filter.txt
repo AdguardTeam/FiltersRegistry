@@ -27,6 +27,12 @@
 ! TODO: remove this only when the issue above is fixed
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
 !
+! NOTE: 12-01-2025
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/194856
+! Temporary fix until new version of extension is released
+www.youtube.com#%#//scriptlet('set-constant', 'Object.prototype.fetchFn', 'undefined')
+!
 ! NOTE: 11-01-2025
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196167
@@ -588,7 +594,8 @@ vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Ð Ð
 $image,redirect-rule=32x32-transparent.png,domain=exploader.net
 exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189567
-japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/^navpromo/', 'abort', 'inlineScript')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^#navpromo/', 'abort')
+japscan.lol#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelectorAll', '/^#/', 'abort')
 japscan.lol#$#.navbar-nav > li#navpromo2.nav-item > a { content-visibility: hidden !important; }
 japscan.lol#%#//scriptlet('spoof-css', '.navbar-nav > li#navpromo2.nav-item > a', 'content-visibility', 'visible')
 japscan.lol##body > div.container > #blare-inter[style*="position"]
