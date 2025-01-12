@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.18.95",
-			"timeUpdated": "2025-01-12T16:39:44+0000",
+			"version": "2.2.18.96",
+			"timeUpdated": "2025-01-12T17:39:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.42",
-			"timeUpdated": "2025-01-12T16:39:50+0000",
+			"version": "2.0.54.43",
+			"timeUpdated": "2025-01-12T17:40:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
