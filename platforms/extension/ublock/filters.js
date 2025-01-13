@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.67.60",
-			"timeUpdated": "2025-01-13T00:31:32+0000",
+			"version": "2.3.67.61",
+			"timeUpdated": "2025-01-13T07:31:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.25",
-			"timeUpdated": "2025-01-10T12:38:55+0000",
+			"version": "2.0.28.26",
+			"timeUpdated": "2025-01-13T07:38:32+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.18.96",
-			"timeUpdated": "2025-01-12T17:39:53+0000",
+			"version": "2.2.18.97",
+			"timeUpdated": "2025-01-13T07:38:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.43",
-			"timeUpdated": "2025-01-12T17:40:00+0000",
+			"version": "2.0.54.44",
+			"timeUpdated": "2025-01-13T07:38:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.60",
-			"timeUpdated": "2025-01-10T16:39:15+0000",
+			"version": "2.0.48.61",
+			"timeUpdated": "2025-01-13T07:38:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -787,8 +787,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.29.77",
-			"timeUpdated": "2025-01-12T14:39:31+0000",
+			"version": "2.0.29.78",
+			"timeUpdated": "2025-01-13T07:38:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
