@@ -1,9 +1,9 @@
-! Checksum: sksiALxuQ7P8O+wdwb+azg
-! Diff-Path: ../patches/2/2-s-1736757794-3600.patch
+! Checksum: UAhOOfXCfoYCVeTjWDbYow
+! Diff-Path: ../patches/2/2-s-1736761547-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.67.62
-! TimeUpdated: 2025-01-13T08:31:28+00:00
+! Version: 2.3.67.63
+! TimeUpdated: 2025-01-13T09:32:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13774,6 +13774,7 @@
 ||video.adsninja.ca^
 !
 ! Webair : ak-is2.net disguised advertising networks
+||google-analyticals.com^
 ||bidmyqps.xyz^
 ||ctrtraffic.com^
 ||userwave.com^
@@ -30449,6 +30450,7 @@ movie76.com##img[alt="ads"]
 !
 ! NOTE: Italian
 !
+cashbackdeals.it##aside[class^="SideBanners_"]
 gamesurf.it##div[class*="adv-"]
 gamesurf.it##div.container:has(> adv-element)
 gamesurf.it###sky_fluid
@@ -40908,7 +40910,7 @@ linkflash.techipe.info#%#//scriptlet('prevent-addEventListener', '/^PN_CREAT/', 
 linkflash.techipe.info#%#//scriptlet('prevent-addEventListener', 'PN_BEFORE_CREATE', '][')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177490
 ! https://github.com/AdguardTeam/AdguardFilters/issues/72369
-loadout.tf#%#(()=>{const e=new MutationObserver(((e,t)=>{for(let t of e)if(t.target?.matches?.(".loadout-application-main")){t.target.querySelectorAll("div").forEach((e=>{if(e.shadowRoot&&e.shadowRoot.querySelector?.('.header > div[data-i18n="#advertisement"]'))try{e.remove()}catch(e){console.error(e)}}))}})),t={apply:(t,o,r)=>{try{r[0].mode="open"}catch(e){console.error(e)}const a=Reflect.apply(t,o,r);return e.observe(a,{subtree:!0,childList:!0}),a}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,t)})();
+loadout.tf#%#(()=>{const t=new MutationObserver((t=>{for(let e of t){const t=e.target;if(t?.querySelector?.("div:not([class], [id]):first-child + div:not([class], [id]):not([class], [id]):last-child")){const e=t.querySelector("div:not([class], [id]):last-child");if("#advertisement"===e?.shadowRoot?.querySelector?.("div:not([class], [id]) > div:not([class], [id])")?.textContent)try{e.remove()}catch(t){console.trace(t)}}}})),e={apply:(e,o,c)=>{try{c[0].mode="open"}catch(t){console.error(t)}const s=Reflect.apply(e,o,c);return t.observe(s,{subtree:!0,childList:!0}),s}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,e)})();
 loadout.tf#%#//scriptlet("prevent-setTimeout", "htmlAd.getBoundingClientRect")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/72597
 cryptoads.space#%#//scriptlet("prevent-window-open")
@@ -44049,6 +44051,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||ssl.p.jwpcdn.com/player/v/*/freewheel.js$domain=nbclosangeles.com
 softpedia.com##div[class^="grid"]:has(> hr:first-child + .ad:last-child)
 softpedia.com##div[class^="grid"][style="display: none !important;"] + .grid_48:has(> hr:only-child)
 $script,third-party,denyallow=googlvideo.com|fastlycdn.com|doodcdn.co|intensedebate.com|vixcloud.co|cdn.plyr.io|authkong.com|rsc.cdn77.org|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|googleoptimize.com|vuukle.com|chatango.com|twimg.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|cloudflare.net|rabbitstream.net|x.com,_____,domain=aniwave.se
@@ -130758,6 +130761,7 @@ consobaby.co.uk,gumtree.com,pcgamingwiki.com,thefootballnetwork.net###mpu
 news.sky.com,skysports.com###mpu-1
 bbc.com###mpu-side-aside-content
 standard.co.uk###mpu_bottom_sb_2_parent
+gmanetwork.com###mrec-container
 spin.ph###mrec3
 nitrome.com###mu_2_container
 nitrome.com###mu_3_container
