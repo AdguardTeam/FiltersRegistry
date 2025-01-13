@@ -1,9 +1,9 @@
-! Checksum: 8eU3IcT7sFvT3fUnchoBlg
-! Diff-Path: ../patches/2/2-s-1736761529-3600.patch
+! Checksum: l36RCA29S65pv/W/JpLXOA
+! Diff-Path: ../patches/2/2-s-1736765110-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.67.63
-! TimeUpdated: 2025-01-13T09:32:00+00:00
+! Version: 2.3.67.64
+! TimeUpdated: 2025-01-13T10:31:38+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16643,13 +16643,14 @@ bestloanoffer.net,techconnection.in###popup
 ! So, the rule below adds a click event listener to the link, and when it's clicked then
 ! it opens a new tab with one of the allowed website, the address of the website contains special parameter "cc" and encoded in Base64 link to file.
 ! This "cc" parameter is checked and decoded by inline script from the opened website and then it redirects to the file.
-!uploadmall.com#%#AG_onLoad((function(){const t=document.querySelector('a[href*="uploadmall.com/cgi-bin/dl.cgi/"]');if(t){const e=t.getAttribute("href");t.addEventListener("click",(t=>{try{const t=`{"link":"${e}"}`,c=`https://mendationforc.info/?cc=${btoa(t)}`;window.open(c)}catch(t){console.debug(t)}}))}}));
+uploadmall.com#%#(()=>{document.addEventListener('DOMContentLoaded',()=>{const t=document.querySelector('a[href*="uploadmall.com/cgi-bin/dl.cgi/"]');if(t){const e=t.getAttribute("href");t.addEventListener("click",(t=>{try{const t=`{"link":"${e}"}`,c=`https://mendationforc.info/?cc=${btoa(t)}`;window.open(c)}catch(t){console.debug(t)}}))}})})();
 mendationforc.info#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'onerror')
 uploadmall.com#@#.AdSense
 uploadmall.com#@#.Adsense
 uploadmall.com#@#.adSense
 uploadmall.com#@#iframe[Width="728"][height="90"]
 uploadmall.com#%#//scriptlet('set-constant', 'navigator.brave', 'undefined')
+uploadmall.com#%#//scriptlet('trusted-replace-outbound-text', 'atob', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 'data:text/javascript;base64,KCk9Pnt9')
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=uploadmall.com
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
 @@||dcbbwymp1bhlf.cloudfront.net^$script,domain=uploadmall.com
@@ -42635,6 +42636,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||seed*.bitchute.com/*/play_*.mp4$media,redirect=noopmp4-1s
+||api.bitchute.com/slot*/value?adDataKey$subdocument
+bitchute.com###right_column div.q-card:has(> .q-card__section > button.q-btn svg[data-icon="rectangle-ad"])
 ||ssl.p.jwpcdn.com/player/v/*/freewheel.js$domain=nbclosangeles.com
 softpedia.com##div[class^="grid"]:has(> hr:first-child + .ad:last-child)
 softpedia.com##div[class^="grid"][style="display: none !important;"] + .grid_48:has(> hr:only-child)
@@ -75228,7 +75232,6 @@ _800x80_
 ##.Ad--presenter
 ##.Ad--sidebar
 ##.Ad-Advert_Container
-##.Ad-Container
 ##.Ad-Header
 ##.Ad-Inner
 ##.Ad-adhesive
@@ -75753,7 +75756,6 @@ _800x80_
 ##.ad-alsorectangle
 ##.ad-anchor
 ##.ad-aps-wide
-##.ad-area
 ##.ad-area--pd
 ##.ad-area-small
 ##.ad-article-breaker
@@ -76309,7 +76311,6 @@ _800x80_
 ##.ad-place
 ##.ad-place-active
 ##.ad-place-holder
-##.ad-placeholder
 ##.ad-placeholder--mpu
 ##.ad-placeholder-leaderboard
 ##.ad-placeholder-wrapper
@@ -76456,7 +76457,6 @@ _800x80_
 ##.ad-skyscraper2
 ##.ad-skyscraper3
 ##.ad-slider
-##.ad-slot
 ##.ad-slot--container
 ##.ad-slot--inline
 ##.ad-slot--mostpop
@@ -83022,7 +83022,6 @@ _800x80_
 ##.sideadtable
 ##.sideadvert
 ##.sideadverts
-##.sidebar-ad
 ##.sidebar-ad-area
 ##.sidebar-ad-b
 ##.sidebar-ad-box
@@ -84159,14 +84158,9 @@ _800x80_
 ##[class^="adDisplay-module"]
 ##[class^="amp-ad-"]
 ##[data-ad-cls]
-##[data-ad-manager-id]
-##[data-ad-module]
 ##[data-ad-name]
-##[data-ad-width]
-##[data-adblockkey]
 ##[data-adbridg-ad-class]
 ##[data-adshim]
-##[data-advadstrackid]
 ##[data-asg-ins]
 ##[data-block-type="ad"]
 ##[data-css-class="dfp-inarticle"]
@@ -84242,7 +84236,6 @@ _800x80_
 ##[id^="ad-wrap-"]
 ##[id^="ad_sky"]
 ##[id^="ad_slider"]
-##[id^="div-gpt-ad"]
 ##[id^="section-ad-banner"]
 ##[name^="google_ads_iframe"]
 ##[onclick^="location.href='https://1337x.vpnonly.site/"]
@@ -84555,7 +84548,6 @@ _800x80_
 ##div[id^="crt-"][style]
 ##div[id^="dfp-ad-"]
 ##div[id^="div-ads-"]
-##div[id^="div-gpt-"]
 ##div[id^="ezoic-pub-ad-"]
 ##div[id^="google_dfp_"]
 ##div[id^="gpt_ad_"]
@@ -84574,6 +84566,18 @@ _800x80_
 ##span[id^="ezoic-pub-ad-placeholder-"]
 ##topadblock
 ##zeus-ad
+##.Ad-Container:not(.adsbygoogle)
+##.ad-area:not(.text-ad)
+##.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
+##.ad-slot:not(.adsbox):not(.adsbygoogle)
+##.sidebar-ad:not(.adsbygoogle)
+##[data-ad-manager-id]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle)
+##[data-ad-module]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle)
+##[data-ad-width]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle)
+##[data-adblockkey]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(html):not(.adsbygoogle)
+##[data-advadstrackid]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle)
+##[id^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]):not([style="pointer-events: none; height: 1px; width: 0px; opacity: 0; visibility: hidden; position: fixed; bottom: 0px;"])
+##div[id^="div-gpt-"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]):not([style="pointer-events: none; height: 1px; width: 0px; opacity: 0; visibility: hidden; position: fixed; bottom: 0px;"])
 ###target.pk-page-ready #pk-status-message
 ###sellwild-loader
 ##.ad_1tdq7q5
@@ -86188,6 +86192,7 @@ browsershots.org#@#.advert_area
 ||absorbingwiden.com^
 ||absorptionsuspended.com^
 ||abstortvarna.com^
+||absurdbatchconfess.com^
 ||absurdunite.com^
 ||abtaurosa.club^
 ||abtfliping.top^
@@ -87042,6 +87047,7 @@ browsershots.org#@#.advert_area
 ||aggressivefrequentneckquirky.com^
 ||aghppuhixd.com^
 ||agilaujoa.net^
+||agileskincareunrented.com^
 ||agisdayra.com^
 ||agitatechampionship.com^
 ||agl001.bid^
@@ -87122,6 +87128,7 @@ browsershots.org#@#.advert_area
 ||aimaudooptecma.net^
 ||aimaunongeez.net^
 ||aimpocket.com^
+||aimportfoliosquid.com^
 ||aimukreegee.net^
 ||aintydevelelastic.com^
 ||ainuftou.net^
@@ -87552,6 +87559,7 @@ browsershots.org#@#.advert_area
 ||angledunion.top^
 ||angletolerate.com^
 ||anglezinccompassionate.com^
+||angrilyanimatorcuddle.com^
 ||angrilyinclusionminister.com^
 ||angryheadlong.com^
 ||anguishedjudgment.com^
@@ -88026,6 +88034,7 @@ browsershots.org#@#.advert_area
 ||astoundweighadjoining.com^
 ||astra9dlya10.com^
 ||astrokompas.com^
+||astrologyflyabletruth.com^
 ||astronomybreathlessmisunderstand.com^
 ||astronomycrawlingcol.com^
 ||astronomyfitmisguided.com^
@@ -89639,6 +89648,7 @@ browsershots.org#@#.advert_area
 ||britishgrease.com^
 ||britishinquisitive.com^
 ||brittleraising.com^
+||brittlesturdyunlovable.com^
 ||brixfdbdfbtp.com^
 ||brizzdirging.top^
 ||brksxofnsadkb.xyz^
@@ -90125,6 +90135,7 @@ browsershots.org#@#.advert_area
 ||cash4members.com^
 ||cashbattleindictment.com^
 ||cashbeside.com^
+||cashcinemaunbiased.com^
 ||cashewsforlife208.com^
 ||cashibohs.digital^
 ||cashlayer.com^
@@ -90574,6 +90585,7 @@ browsershots.org#@#.advert_area
 ||choongou.xyz^
 ||chooretsi.net^
 ||chooseimmersed.com^
+||chooseroverlaidspecies.com^
 ||choossux.com^
 ||chooxaur.com^
 ||chophairsacky.xyz^
@@ -91202,6 +91214,7 @@ browsershots.org#@#.advert_area
 ||connectingresort.com^
 ||connectionsdivide.com^
 ||connectionsoathbottles.com^
+||connectoritineraryswimming.com^
 ||connectreadoasis.com^
 ||connecttoday.eu^
 ||connextra.com^
@@ -91269,6 +91282,7 @@ browsershots.org#@#.advert_area
 ||contentedinterimregardless.com^
 ||contentedsensationalprincipal.com^
 ||contentjs.com^
+||contentmayinterest.com^
 ||contentmentchef.com^
 ||contentmentfairnesspesky.com^
 ||contentmentwalterbleat.com^
@@ -91375,6 +91389,7 @@ browsershots.org#@#.advert_area
 ||cornflowershallow.com^
 ||coronafly.ru^
 ||corpsehappen.com^
+||correctdilutetrophy.com^
 ||correlationcocktailinevitably.com^
 ||correspondaspect.com^
 ||corruptsolitaryaudibly.com^
@@ -91383,6 +91398,7 @@ browsershots.org#@#.advert_area
 ||cosignpresentlyarrangement.com^
 ||cosmeticsgenerosity.com^
 ||cosmicpartially.com^
+||cosponsorgarnetmorphing.com^
 ||costaquire.com^
 ||costhandbookfolder.com^
 ||costivecohorts.top^
@@ -91434,6 +91450,7 @@ browsershots.org#@#.advert_area
 ||coveredsnortedelectronics.com^
 ||coveredstress.com^
 ||covertcourse.com^
+||coveteddutifulprescribe.com^
 ||covettunica.com^
 ||covivado.club^
 ||cowtpvi.com^
@@ -92075,6 +92092,7 @@ browsershots.org#@#.advert_area
 ||decswci.com^
 ||dedicatedmedia.com^
 ||dedicatedsummarythrone.com^
+||dedicateimaginesoil.com^
 ||dedicationfits.com^
 ||dedicationflamecork.com^
 ||deditiontowritin.com^
@@ -92416,6 +92434,7 @@ browsershots.org#@#.advert_area
 ||difficultyefforlessefforlessthump.com^
 ||diffidentniecesflourish.com^
 ||diffusedpassionquaking.com^
+||diffusionsubletunnamed.com^
 ||difice-milton.com^
 ||difyferukentasp.com^
 ||digadser.com^
@@ -92446,6 +92465,7 @@ browsershots.org#@#.advert_area
 ||dimessing-parker.com^
 ||dimfarlow.com^
 ||dimlmhowvkrag.xyz^
+||dimmerlingowashable.com^
 ||dimnaamebous.com^
 ||dimnessinvokecorridor.com^
 ||dimnessslick.com^
@@ -93215,6 +93235,7 @@ browsershots.org#@#.advert_area
 ||easerefrain.com^
 ||eashasvsucoc.info^
 ||easierroamaccommodation.com^
+||easilygreateststuff.com^
 ||eastergurgle.com^
 ||eastfeukufu.info^
 ||eastfeukufunde.com^
@@ -93230,6 +93251,7 @@ browsershots.org#@#.advert_area
 ||easygoingasperitydisconnect.com^
 ||easygoingseducingdinner.com^
 ||easygoingtouchybribe.com^
+||easylummos.com^
 ||easymrkt.com^
 ||easysearch.click^
 ||easysemblyjusti.info^
@@ -93769,6 +93791,7 @@ browsershots.org#@#.advert_area
 ||eresultedinncre.info^
 ||ergadx.com^
 ||ergjohl.com^
+||ergonomicparadeupstroke.com^
 ||eringosdye.com^
 ||erkteplkjs.com^
 ||erm5aranwt7hucs.com^
@@ -94021,6 +94044,7 @@ browsershots.org#@#.advert_area
 ||exobafrgdf.com^
 ||exoclick.com^
 ||exodsp.com^
+||exodusjailhousetarantula.com^
 ||exofrwe.com^
 ||exomonyf.com^
 ||exoprsdds.com^
@@ -94054,6 +94078,7 @@ browsershots.org#@#.advert_area
 ||exposureawelessawelessladle.com^
 ||expressalike.com^
 ||expressingblossomjudicious.com^
+||expressjustifierlent.com^
 ||expressmealdelivery.shop^
 ||expressproducer.com^
 ||exptlgooney.com^
@@ -94074,6 +94099,7 @@ browsershots.org#@#.advert_area
 ||extensivemusseldiscernible.com^
 ||extentacquire.com^
 ||extentbananassinger.com^
+||extenuatemusketsector.com^
 ||exterminateantique.com^
 ||exterminatesuitcasedefenceless.com^
 ||externalfavlink.com^
@@ -94513,6 +94539,7 @@ browsershots.org#@#.advert_area
 ||finalice.net^
 ||finance-hot-news.com^
 ||finanvideos.com^
+||finchoiluntainted.com^
 ||findanonymous.com^
 ||findbetterresults.com^
 ||finder2024.com^
@@ -95204,6 +95231,7 @@ browsershots.org#@#.advert_area
 ||gaijiglo.net^
 ||gaimauroogrou.net^
 ||gaimoupy.net^
+||gainingpartyyoga.com^
 ||gaiphaud.xyz^
 ||gaipochipsefoud.net^
 ||gaireegroahy.net^
@@ -95850,6 +95878,7 @@ browsershots.org#@#.advert_area
 ||goocivede.com^
 ||good-ads-online.com^
 ||goodadvert.ru^
+||goodandsoundcontent.com^
 ||goodappforyou.com^
 ||goodbusinesspark.com^
 ||gooddemands.com^
@@ -96039,6 +96068,7 @@ browsershots.org#@#.advert_area
 ||green-search-engine.com^
 ||green4762.com^
 ||greenads.org^
+||greenandhappiness.com^
 ||greenfox.ink^
 ||greenlinknow.com^
 ||greenmortgage.pro^
@@ -96419,6 +96449,7 @@ browsershots.org#@#.advert_area
 ||harassmenttrolleyculinary.com^
 ||hardabbuy.live^
 ||hardaque.xyz^
+||hardcoretrayversion.com^
 ||harderjuniormisty.com^
 ||hardynylon.com^
 ||hareeditoriallinked.com^
@@ -97109,6 +97140,7 @@ browsershots.org#@#.advert_area
 ||humilityslammedslowing.com^
 ||hummingexam.com^
 ||humoralpurline.com^
+||humoristshamrockzap.com^
 ||humpdecompose.com^
 ||humplollipopsalts.com^
 ||humremjobvipfun.com^
@@ -97376,6 +97408,7 @@ browsershots.org#@#.advert_area
 ||imaginableexecutedmedal.com^
 ||imaginaryawarehygienic.com^
 ||imaginaryspooky.com^
+||imagingkneelankiness.com^
 ||imagoluchuan.com^
 ||imamictra.com^
 ||imasdk.googleapis.com^
@@ -97911,6 +97944,7 @@ browsershots.org#@#.advert_area
 ||isgost.com^
 ||ishousumo.com^
 ||isiu0w9gv.com^
+||islamiclyricallyvariable.com^
 ||islandgeneric.com^
 ||islandracistreleased.com^
 ||islerobserpent.com^
@@ -98475,6 +98509,7 @@ browsershots.org#@#.advert_area
 ||jurisdiction423.fun^
 ||jursoateed.com^
 ||jursp.com^
+||juryolympicsspookily.com^
 ||juslsp.info^
 ||juslxp.com^
 ||just-news.pro^
@@ -100855,6 +100890,7 @@ browsershots.org#@#.advert_area
 ||moneymakercdn.com^
 ||moneytatorone.com^
 ||mongailrids.net^
+||mongrelonsetstray.com^
 ||monhax.com^
 ||monieraldim.click^
 ||monismartlink.com^
@@ -103033,6 +103069,7 @@ browsershots.org#@#.advert_area
 ||pacifics.sbs^
 ||pacificvernonoutskirts.com^
 ||packageeyeball.com^
+||packsofgood.com^
 ||pacquetmuysca.com^
 ||paddlediscovery.com^
 ||paddlemenu.com^
@@ -103846,6 +103883,7 @@ browsershots.org#@#.advert_area
 ||playwrightsovietcommentary.com^
 ||plcubmiinxa.com^
 ||pleadsbox.com^
+||pleasantinformation.com^
 ||pleasantlyknives.com^
 ||pleasantpaltryconnections.com^
 ||pleasedexample.com^
@@ -111970,6 +112008,7 @@ browsershots.org#@#.advert_area
 ||whutchey.com^
 ||whuzucot.net^
 ||whyl-laz-i-264.site^
+||whywolveshowl.com^
 ||wibtntmvox.com^
 ||wicdn.cloud^
 ||wickedhumankindbarrel.com^
@@ -123309,6 +123348,7 @@ $popup,third-party,domain=1337x.buzz|adblockeronstape.me|adblockeronstreamtape.m
 ||rentalcars.com/?affiliateCode=$popup,domain=seatguru.com
 ||routeumber.com^$popup,domain=hltv.org
 ||rx.link^$popup,domain=uploadgig.com
+||s.click.aliexpress.com^$popup,domain=dzapk.com|up-4ever.net
 ||sendspace.com/defaults/sendspace-pop.html$popup
 ||skycheats.com^$popup,domain=elitepvpers.com
 ||t.co^$popup,domain=hltv.org
