@@ -1,9 +1,9 @@
-! Checksum: RygaW/cHvyrfHFJ2IwUALg
-! Diff-Path: ../patches/14/14-s-1736862494-3600.patch
+! Checksum: W2i+j6eFFJkESqkSiWTxGg
+! Diff-Path: ../patches/14/14-s-1736865803-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.15
-! TimeUpdated: 2025-01-14T13:44:13+00:00
+! Version: 2.2.19.16
+! TimeUpdated: 2025-01-14T14:39:02+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25193,6 +25193,9 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+icebreaker.com#$##modal-mask { display: none !important; }
+icebreaker.com#$#.global-email-popup-box { display: none !important; }
+icebreaker.com#$#.facile-modal-open { overflow: auto !important; }
 klarna.com###promotion-banner-container
 klarna.com#%#//scriptlet('trusted-click-element', 'div[id$="-onboarding"] > button[aria-label]')
 dotcom-tools.com#%#//scriptlet('set-local-storage-item', 'hideSaveTestMessage', 'true')
@@ -25269,7 +25272,6 @@ landyzone.co.uk##.u-bottomFixer
 perplexity.ai#%#//scriptlet('prevent-addEventListener', 'wheel', '===a){var n="deltaY"in t?P')
 perplexity.ai#$#body > div:not([class]):not([id]):not([role]):has(> div.items-stretch + div.flex.items-center .space-y-sm > button.border) { display: none !important; }
 context.reverso.net##body > div#popups-container:has(> div.signin)
-nicovideo.jp##div[class*="anim-n_slideFadeInFromBottom"]:not([aria-label]):has(a[data-anchor-area$="floating_premium_banner"])
 daily.dev##.start-reading-popover
 semianalysis.com#%#//scriptlet('set-cookie', 'SemiAnalysis_splash-screen', 'true')
 nuxt.com##.app-banner
