@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: HQliApNnovdwJGvyX41UMQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1736840553-3600.patch
+! Checksum: 6kRraBuvjHyXgr7xVg8NKw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1736844206-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.67.78
-! TimeUpdated: 2025-01-14T07:31:26+00:00
+! Version: 2.3.67.79
+! TimeUpdated: 2025-01-14T08:31:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -776,7 +776,7 @@
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196097
 ||tn.porngo.xxx^$badfilter
-||tn.porngo.xxx^$third-party
+||tn.porngo.xxx^$third-party,domain=~porngo.*
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189721
 ! Opera promo on third-party sites
@@ -34617,6 +34617,7 @@ poczta.wp.pl#@#[class^="css-"]
 poczta.o2.pl,poczta.wp.pl##main > div[class] > div[class] > div[class*=" "]:has(> div[class]:empty:first-child + div[class]:last-child > div[class^="css-"] > div[class^="css-"]:empty)
 poczta.o2.pl,poczta.wp.pl###topbar + div[class] > div[class^="css-"] > div[class]:empty:first-child + div[class^="css-"]:last-child > div[class^="css-"]:only-child:empty
 poczta.o2.pl,poczta.wp.pl#?#main > div[class] > div:not([class]) > div:not([class]) > div[class*=" "]:has(> div[class]:only-child > div[class]:first-child > div[class]:only-child:contains(/^REKLAMA$/))
+poczta.o2.pl,poczta.wp.pl#?#main > .rounded_base > div:not([class], [id]):has(> div:only-child:not([class], [id]) > div:not([class], [id]) > .overflow_hidden > div[class^="css-"] > div[class*=" "] > div[class*=" "]:contains(/^REKLAMA$/))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/83689
 profil.wp.pl##div[id^="placeholder"]
 profil.wp.pl###rightLogBox > img.imgRight[src^="/login/"]  ~ div[class]
@@ -43031,6 +43032,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||filehippo.com/prebid-client.js
+filehippo.com##div[data-meta="placeholder-slot"]
 dailydot.com##.article-ad__top
 dailydot.com##footer:has(> .wrapper:only-child > .text-center:only-child > .article-ad__footer:only-child)
 standard.co.uk##div[id^="mpu"]
