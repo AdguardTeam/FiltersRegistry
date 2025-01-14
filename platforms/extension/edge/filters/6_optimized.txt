@@ -1,9 +1,9 @@
-! Checksum: jgG0OQg4LHR3Gd3aw2uFLA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1736822513-3600.patch
+! Checksum: DoNHs9fItFIxWKpXb3x+Tw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1736858711-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.45.45
-! TimeUpdated: 2025-01-13T17:39:28+00:00
+! Version: 2.0.45.46
+! TimeUpdated: 2025-01-14T12:40:18+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -392,6 +392,10 @@ t-online.de#@#div[class^="Tsshopst"]
 essen-und-trinken.de#%#//scriptlet('prevent-setTimeout', 's.call(null)', '10')
 /^https:\/\/www\.essen-und-trinken\.de\/[a-z]{10,}\.js$/$script,~third-party,match-case
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
+||cinemaxxl.de/js/adblock.js
+cinemaxxl.de#%#//scriptlet('set-constant', 'dnt_info', '')
+cinemaxxl.de#%#//scriptlet('set-constant', 'adblocker', 'false')
+cinemaxxl.de#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'pagead2.googlesyndication.com')
 retrohahn.com#%#//scriptlet('prevent-fetch', 'ssl.geoplugin.net/javascript.gp')
 dfbplay.tv#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 xup.in#%#//scriptlet('set-constant', 'zshowabx', 'noopFunc')

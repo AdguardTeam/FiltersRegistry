@@ -1,9 +1,9 @@
-! Checksum: 0kiaKKPqDTHo7IK7tUJzBg
-! Diff-Path: ../patches/6/6-s-1736790215-3600.patch
+! Checksum: PrYZrBMCwqCUuARhdFW49A
+! Diff-Path: ../patches/6/6-s-1736858716-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.45.45
-! TimeUpdated: 2025-01-13T17:39:28+00:00
+! Version: 2.0.45.46
+! TimeUpdated: 2025-01-14T12:40:18+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -931,6 +931,11 @@ urbia.de,essen-und-trinken.de#@#.playerAd
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196140
+||cinemaxxl.de/js/adblock.js
+cinemaxxl.de#%#//scriptlet('set-constant', 'dnt_info', '')
+cinemaxxl.de#%#//scriptlet('set-constant', 'adblocker', 'false')
+cinemaxxl.de#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194480
 retrohahn.com#%#//scriptlet('prevent-fetch', 'ssl.geoplugin.net/javascript.gp')
 @@||ssl.geoplugin.net/javascript.gp$domain=retrohahn.com
