@@ -1,9 +1,9 @@
-! Checksum: n61x5US6J6U+FpodTeERhA
-! Diff-Path: ../patches/1/1-s-1736844192-3600.patch
+! Checksum: 6C3es+q7Iz280ponRtHO4A
+! Diff-Path: ../patches/1/1-s-1736869438-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.96.65
-! TimeUpdated: 2025-01-14T08:31:09+00:00
+! Version: 2.0.96.66
+! TimeUpdated: 2025-01-14T15:31:25+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5633,8 +5633,7 @@ yandex.*##body:not([data-bem*="pogoda"]) .mini-suggest__popup-content > li[data-
 ! In search results - not context ads
 ya.ru,yandex.*###search-result > li:has(> div.Bno_isPromoSnippet)
 ! inline search ads
-[$path=/search]ya.ru,yandex.*###search-result > [class][data-cid]:has(> div.Organic > div a[href][data-event-required])
-[$path=/search]ya.ru,yandex.*###search-result > .serp-item:has(> div.Organic > div.VanillaReact > a[href][data-event-required])
+ya.ru,yandex.*###search-result > [class][data-cid]:has(> div.Organic > div a[href*="_crpd"][data-click])
 ! the ad is on the right side, which is mostly non-reproducible
 [$path=/search]ya.ru,yandex.*##.content__right div[class][data-bem]:has(> div[class] div[class] > button[data-maukl*="advertiser"])
 [$path=/search]ya.ru,yandex.*##.content__right div[class][data-cid]:has(> div[data-vnl*='"renderTo"'])
