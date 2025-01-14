@@ -1,9 +1,9 @@
-! Checksum: W2i+j6eFFJkESqkSiWTxGg
-! Diff-Path: ../patches/14/14-s-1736865803-3600.patch
+! Checksum: F3dgXlOhTH6sw5V9hx9NLw
+! Diff-Path: ../patches/14/14-s-1736873140-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.16
-! TimeUpdated: 2025-01-14T14:39:02+00:00
+! Version: 2.2.19.17
+! TimeUpdated: 2025-01-14T16:40:35+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2524,6 +2524,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+wolt.com##.ConsentsBannerOverlay
 recycleapp.be##div[class^="Modal_modal_"]:has(> div > div[role="dialog"] > div[class^="Banner_actions_"] > a[href="/cookies"])
 karrotmarket-com.jp.karrotmarket.com#%#//scriptlet('trusted-set-local-storage-item', 'user-cookie-consent', '$now$')
 cam4.eu##div[class^="index__cookieConsent_"]
@@ -2660,7 +2661,6 @@ atresplayer.com#$##didomi-host { display: none !important; }
 atresplayer.com#$##didomi-host ~ div div[class^="style__StyledBackground-sc-"] { display: none !important; }
 descifrandolaguerra.es###adam-cookie-banner
 support.wolterskluwer.ca###siCookieNoticeContainer
-wolt.com#%#//scriptlet('trusted-click-element', 'div[role="dialog"] > .cb-elevated div[data-modal-content-container] div[data-test-id="data-protection-functional-root"] input[data-test-id="data-protection-functional"], div[role="dialog"] > .cb-elevated div[data-modal-content-container] button[data-test-id="manage-consents-v2-save-button"]')
 justica.gov.pt##.justica-cookie_bar
 nat.pl#%#//scriptlet('trusted-set-cookie', '_CookiesPolicyAccepted', '[%22necessary%22]')
 dnb.com##.globalPrivacyControlPopupWrapper
@@ -6307,7 +6307,6 @@ ras.bz.it##body.dp--cookie-consent .body-inner::before
 docs.libretro.com,hiddify.com,baslerweb.com,nokogiri.org,github.io,docs.nefarius.at,forethought.ai##.md-consent
 prensariomusica.com##.rgpd-leyend
 st-andrews.ac.uk##div[id^="sta-cc"][aria-label^="Cookie preferences"]
-track.wolt.com#%#//scriptlet('trusted-click-element', 'div[aria-modal="true"] button.dvEptr')
 similarweb.com,book24.ru##.app-cookies-notification
 drogeria-ekologiczna.pl,strefamocy.pl##.x13eucookies__backdrop
 gamearter.com###awagon_gdpr_box
@@ -7670,7 +7669,6 @@ puzzle-by.krupion.de#$?#ion-modal { remove: true; }
 fups.com#$#body[style*="overflow:"] { overflow: auto !important; }
 fups.com#$#.cookie-bar:not(body) { display: none !important; }
 fups.com#$#.overlay { display: none !important; }
-wolt.com##div[class^="GdprConsentsModal_"]
 franquiciasmalvon.com,malvon.es###data-cookie + .bg_popup
 suslusozluk.com#$?##container > div#modal:has(div[data-op="accept-cookies"]) { display: none!important; }
 suslusozluk.com#$##lightsout { display: none!important; }
@@ -33674,6 +33672,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+theintercept.com#%#//scriptlet('trusted-set-local-storage-item', 'newsletter', '{"subscribed":true}')
 abc7news.com###themeProvider > div[class]:has(> div > div > div > form#signup_form)
 themirror.com##.article-body > p:has(> b > u > a[href^="https://news.google.com/publications/"])
 themirror.com##.factbox
@@ -44764,6 +44763,9 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196307
+||20.detik.com/embed/$subdocument,~third-party
+sport.detik.com##.detail__body-text > div.aevp:has(> div.pip-vid.sisip_video_ds)
 ! zalando.de - influencers in product view
 zalando.de###main-content div:has(> div[data-experiment-hint]:only-child)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195686

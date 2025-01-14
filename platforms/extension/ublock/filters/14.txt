@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: jyCJF65KuDG4U1gZTs/O+A
-! Diff-Path: ../patches/14/14-s-1736865795-3600.patch
+! Checksum: RPyeeI43PwEd7J9KIMlX9g
+! Diff-Path: ../patches/14/14-s-1736873130-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.16
-! TimeUpdated: 2025-01-14T14:39:02+00:00
+! Version: 2.2.19.17
+! TimeUpdated: 2025-01-14T16:40:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2483,6 +2483,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+wolt.com##.ConsentsBannerOverlay
 recycleapp.be##div[class^="Modal_modal_"]:has(> div > div[role="dialog"] > div[class^="Banner_actions_"] > a[href="/cookies"])
 cam4.eu##div[class^="index__cookieConsent_"]
 ||cdn.shopify.com/extensions/*/metizsoft-gdpr-cookie-compiler-*/$script
@@ -7221,7 +7222,6 @@ puzzle-by.krupion.de#$?#ion-modal { remove: true; }
 fups.com#$#body[style*="overflow:"] { overflow: auto !important; }
 fups.com#$#.cookie-bar:not(body) { display: none !important; }
 fups.com#$#.overlay { display: none !important; }
-wolt.com##div[class^="GdprConsentsModal_"]
 franquiciasmalvon.com,malvon.es###data-cookie + .bg_popup
 suslusozluk.com#$?##container > div#modal:has(div[data-op="accept-cookies"]) { display: none!important; }
 suslusozluk.com#$##lightsout { display: none!important; }
@@ -44389,6 +44389,9 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196307
+||20.detik.com/embed/$subdocument,~third-party
+sport.detik.com##.detail__body-text > div.aevp:has(> div.pip-vid.sisip_video_ds)
 ! zalando.de - influencers in product view
 zalando.de###main-content div:has(> div[data-experiment-hint]:only-child)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195686
