@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.19.19",
-			"timeUpdated": "2025-01-14T19:38:05+0000",
+			"version": "2.2.19.20",
+			"timeUpdated": "2025-01-14T20:38:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -696,8 +696,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.58",
-			"timeUpdated": "2025-01-14T17:41:40+0000",
+			"version": "2.0.54.59",
+			"timeUpdated": "2025-01-14T20:38:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -718,8 +718,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.72",
-			"timeUpdated": "2025-01-14T19:38:13+0000",
+			"version": "2.0.48.73",
+			"timeUpdated": "2025-01-14T20:38:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
