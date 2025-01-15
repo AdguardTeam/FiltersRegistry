@@ -1,9 +1,9 @@
-! Checksum: oRMIPGfmE+pxGTwDTc+pPg
-! Diff-Path: ../patches/14/14-s-1736923401-3600.patch
+! Checksum: hmA2NOYS4j8oC2TDnQs4/A
+! Diff-Path: ../patches/14/14-s-1736927145-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.24
-! TimeUpdated: 2025-01-15T06:39:18+00:00
+! Version: 2.2.19.25
+! TimeUpdated: 2025-01-15T07:41:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2524,7 +2524,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
-gov.pl#%#//scriptlet('set-cookie', 's24PortalCookiesAgreement', 'true')
+ekrs.ms.gov.pl#%#//scriptlet('set-cookie', 's24PortalCookiesAgreement', 'true')
 wolt.com##.ConsentsBannerOverlay
 recycleapp.be##div[class^="Modal_modal_"]:has(> div > div[role="dialog"] > div[class^="Banner_actions_"] > a[href="/cookies"])
 karrotmarket-com.jp.karrotmarket.com#%#//scriptlet('trusted-set-local-storage-item', 'user-cookie-consent', '$now$')
@@ -25277,7 +25277,7 @@ e-mansion.co.jp##.new-building-label
 flicksbar.mom###tgWrapper
 flicksbar.mom###TopAdMb
 landyzone.co.uk##.u-bottomFixer
-perplexity.ai#%#//scriptlet('prevent-addEventListener', 'wheel', '===a){var n="deltaY"in t?P')
+perplexity.ai#%#//scriptlet('prevent-addEventListener', '/^(?:wheel|touchmove)$/', '/===.\)\{var .="deltaY"in .\?./')
 perplexity.ai#$#body > div:not([class]):not([id]):not([role]):has(> div.items-stretch + div.flex.items-center .space-y-sm > button.border) { display: none !important; }
 context.reverso.net##body > div#popups-container:has(> div.signin)
 daily.dev##.start-reading-popover
@@ -33682,6 +33682,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+thetechenabler.substack.com#%#//scriptlet('trusted-set-local-storage-item', 'follow-prompt-for-post-153869077-and-referrer-308265064-shown-at', '$now$')
 any.run##.regular-banner:has(> a[href*="app.any.run"])
 theintercept.com#%#//scriptlet('trusted-set-local-storage-item', 'newsletter', '{"subscribed":true}')
 abc7news.com###themeProvider > div[class]:has(> div > div > div > form#signup_form)
@@ -50042,6 +50043,7 @@ book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 !
 ! SECTION: Self-promo - Regular rules
 !
+zerohedge.com##.sidebar-left > a#store-promo
 krisp.ai##.post_banner
 bitchute.com##.q-banner
 dailymail.co.uk##.link-bogr2 > li[data-ad-marker-group]:has(> a[href^="/shopping-uk/"])
