@@ -1,9 +1,9 @@
-! Checksum: KMlT2XSAV6BR3ZT7NJwmdQ
-! Diff-Path: ../patches/14/14-s-1736930644-3600.patch
+! Checksum: 07AGioJi7Nqei1elJJG0QA
+! Diff-Path: ../patches/14/14-s-1736934246-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.26
-! TimeUpdated: 2025-01-15T08:40:00+00:00
+! Version: 2.2.19.27
+! TimeUpdated: 2025-01-15T09:39:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2525,6 +2525,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+selfpub.ru##div[class^="AgreementBanner_"]
 imperialtickets.com##div[id^="cookie-overlay"]
 ekrs.ms.gov.pl#%#//scriptlet('set-cookie', 's24PortalCookiesAgreement', 'true')
 wolt.com##.ConsentsBannerOverlay
@@ -25390,6 +25391,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+theautopian.com#%#//scriptlet('trusted-click-element', 'div[data-pbs-position="sticky"] div.exp-ui__sticky__close-btn')
 abcnews.go.com##div[class]:has(> a[tracking="lpos=widget[breakingnews_banner]&lid=link[text]"])
 icebreaker.com#$##modal-mask { display: none !important; }
 icebreaker.com#$#.global-email-popup-box { display: none !important; }
@@ -50213,6 +50215,10 @@ book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 !
 ! SECTION: Self-promo - Regular rules
 !
+blog.selfpub.ru##.t-rec:has(> div[class] > div[data-artboard-recid] > div[data-elem-id] > a[href^="https://selfpub.ru/account/registration?"])
+blog.selfpub.ru##.t-rec:has(> div[class] > div[class^="t-container_"] a[href^="https://selfpub.ru/account/registration"])
+blog.selfpub.ru#$#body.t-body_popupshowed { overflow: auto !important; }
+blog.selfpub.ru#$##rec751874288 { display: none !important; }
 zerohedge.com##.sidebar-left > a#store-promo
 krisp.ai##.post_banner
 bitchute.com##.q-banner

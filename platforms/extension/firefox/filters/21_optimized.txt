@@ -1,9 +1,9 @@
-! Checksum: J9PtRPQs7vc0mCHrgsxbkQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1736927117-3600.patch
+! Checksum: hSTPOxwE9TP62aprZE5tzg
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1736934237-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.29.89
-! TimeUpdated: 2025-01-15T07:41:09+00:00
+! Version: 2.0.29.90
+! TimeUpdated: 2025-01-15T09:39:52+00:00
 ! Expires: 10 days (update frequency)
 #%#var AG_onLoad=function(func){if(document.readyState==="complete"||document.readyState==="interactive")func();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",func);else if(document.attachEvent)document.attachEvent("DOMContentLoaded",func)};
 #%#var AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
@@ -1453,6 +1453,10 @@ rbc.ru#?#.js-index-central-column > div[data-publisher-index]:has(> div.js-index
 rbc.ru##.fox-fallback[style="width: 300px; height: 600px;"]
 book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 ||apay-up-banner.com^$image,third-party,domain=book.oricon.co.jp
+blog.selfpub.ru##.t-rec:has(> div[class] > div[data-artboard-recid] > div[data-elem-id] > a[href^="https://selfpub.ru/account/registration?"])
+blog.selfpub.ru##.t-rec:has(> div[class] > div[class^="t-container_"] a[href^="https://selfpub.ru/account/registration"])
+blog.selfpub.ru#$#body.t-body_popupshowed { overflow: auto !important; }
+blog.selfpub.ru#$##rec751874288 { display: none !important; }
 zerohedge.com##.sidebar-left > a#store-promo
 krisp.ai##.post_banner
 bitchute.com##.q-banner

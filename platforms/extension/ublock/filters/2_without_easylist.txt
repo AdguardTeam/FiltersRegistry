@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 7ou9sSuot9j2l1uH2wLuMg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1736930652-3600.patch
+! Checksum: scc7dY1z45UOXfbGF6XLBg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1736934254-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.67.97
-! TimeUpdated: 2025-01-15T08:32:02+00:00
+! Version: 2.3.67.98
+! TimeUpdated: 2025-01-15T09:31:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24864,6 +24864,8 @@ bank-codes.com##+js(set-constant, ab4, false)
 ! https://forum.adguard.com/index.php?threads/24564/
 ur.ly#@##bottomad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/6517
+1001tracklists.com##+js(set-constant, lR, 0)
+1001tracklists.com##+js(spoof-css, a[href], display, block)
 1001tracklists.com#$?#div[class*="adngin"].exNet { remove: true; }
 1001tracklists.com#@##adframe:not(frameset)
 ! https://forum.adguard.com/index.php?threads/zippyshare-com-pop-up-on-download-now-windows.24433/
@@ -43039,6 +43041,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||theautopian.com/content/plugins/jzl-autopian/js/htl-ad-placement.js
 /uploads/eng/*.gif$~third-party,domain=mangagun.net|rawinu.com|weloma.art
 weloma.art,rawinu.com,mangagun.net##center > a[target="_blank"] > picture > img
 zerohedge.com##.leaderboard-container:has(> #leaderboard:only-child:empty)
@@ -43908,6 +43911,9 @@ javbest.tv##a[href^="https://go.lnkpth.com/"]
 javbrazez.com##.right > div.content:has(> div.ads)
 jpvhub.com##iframe[src^="https://streamtape.com/"] + div[class^="MuiBox-root"]
 viwlivehdplay.ru##+js(abort-on-property-read, JSON.parse)
+1001tracklists.com###head + div[id] div[class] > a[target="_blank"][rel] > img
+1001tracklists.com###head + div[id] div[class] > a[target="_blank"][rel] > div[style^="background-image: url"]
+1001tracklists.com###head + div[id] div[class*=" "][id]:has(> div[data-freestar-ad]:only-child)
 1001tracklists.com###middle > div[class] > .mt20:has(> .adI)
 1001tracklists.com###top > div[style] > a[rel="noopener noreferrer"]
 1001tracklists.com###root > div[style^="width: 300px;"][style*="height"]
