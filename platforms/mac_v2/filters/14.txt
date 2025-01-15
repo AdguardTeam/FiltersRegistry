@@ -1,9 +1,9 @@
-! Checksum: 9U50549vyOk0JLR1MhoOiA
-! Diff-Path: ../patches/14/14-s-1736934261-3600.patch
+! Checksum: 7wILA8prgHJGeCIJFCkfow
+! Diff-Path: ../patches/14/14-s-1736937904-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.27
-! TimeUpdated: 2025-01-15T09:39:43+00:00
+! Version: 2.2.19.28
+! TimeUpdated: 2025-01-15T10:40:59+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25198,6 +25198,7 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+istockphoto.com#%#//scriptlet('set-local-storage-item', 'ai-gen-pre-shot-merchandising', 'true')
 theautopian.com#%#//scriptlet('trusted-click-element', 'div[data-pbs-position="sticky"] div.exp-ui__sticky__close-btn')
 abcnews.go.com##div[class]:has(> a[tracking="lpos=widget[breakingnews_banner]&lid=link[text]"])
 icebreaker.com#$##modal-mask { display: none !important; }
@@ -39642,6 +39643,7 @@ clickhole.com,lifehacker.com,splinternews.com,avclub.com,deadspin.com,gizmodo.co
 rockstargames.su###wpdiscuz_hidden_secondary_form
 rockstargames.su##.zenlink
 news.mail.ru###subscriptionFormBlockId
+news.mail.ru##div[data-qa="Box"]:has(div[data-qa="subscription_form"])
 robbreport.com,parasut.com##.signup-newsletter
 1cloud.ru##.sidebar__banner
 thebell.io##app-subscription-header-form
@@ -52983,6 +52985,9 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196388
+alex71.com#%#//scriptlet('remove-attr', 'style', '#download-link')
+alex71.com#%#//scriptlet('remove-attr', 'disabled', '#download-btn')
 ! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/3089
 leakedpacks.com#%#//scriptlet('adjust-setInterval', 'counter', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195744
