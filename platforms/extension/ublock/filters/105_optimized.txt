@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: NROq1Y/pdOS8FcrjAWF1gA
-! Diff-Path: ../patches/105_optimized/105_optimized-s-1736802352-14400.patch
+! Checksum: kLmM3QICQCQ8W1QKTLQSmw
+! Diff-Path: ../patches/105_optimized/105_optimized-s-1736975159-14400.patch
 ! Title: EasyList Czech and Slovak (Optimized)
 ! Description: Additional filter list for websites in Czech and Slovak.
-! Version: 2.0.2.88
-! TimeUpdated: 2025-01-13T21:01:24+00:00
+! Version: 2.0.2.89
+! TimeUpdated: 2025-01-15T21:01:21+00:00
 ! Expires: 5 days (update frequency)
 .com/bannery/
 .cz/ads/
@@ -452,7 +452,11 @@ parabola.cz##.nav_sloupec h3.ridr
 parabola.cz##.nav_sloupec h3.ridr + a
 parabola.cz##.main_menu5 > .clear_both ~ a
 parabola.cz##.main_menu5 > .clear_both ~ img
+parlamentnilisty.cz###aoleaderboard
+parlamentnilisty.cz###aowallpaperone
 pctuning.cz##[class*="sda-"]
+playzone.cz##.aab-alert-wrap
+playzone.cz###ad-top-second
 pravidla.cz##.advtick
 pravopisne.cz,pravopisne.sk##.advert
 prehrajto.cz##.ad-leaderboard-alt-wrapper
@@ -513,6 +517,9 @@ webtrh.cz##.banner
 www.seznam.cz##div.ogm-sticky-repeater
 www.seznam.cz##div.ad-exclusive
 zakonyprolidi.cz##.SkyLeft.Banner
+zdopravy.cz##.otherAds
+zdopravy.cz##.otherAds#gm-outstream+div
+zdopravy.cz##ins.adsbygoogle
 zena-in.cz##div.main-top
 zena-in.cz##div.site-reklama
 zing.cz##[class*="sda-"]
@@ -644,8 +651,6 @@ navratdoreality.cz##+js(addEventListener-defuser, ended)
 navratdoreality.cz##+js(nobab)
 onlajny.com##+js(abort-current-script, $, PartnerRedirectAction)
 parlamentnilisty.cz##+js(abort-on-property-read, Ads)
-||playzone.cz^$csp=child-src *
-playzone.cz##+js(set-cookie, pl_aab_hide, 1)
 podcasty.seznam.cz##+js(set-constant, sssp.config, noopFunc)
 podcasty.seznam.cz##+js(set-constant, sssp, {})
 prehrajto.cz#$#.content { margin-top: 0px !important; }
@@ -663,9 +668,9 @@ svetandroida.cz##+js(abort-on-property-read, detectAdBlocker)
 titulky.com##+js(set-constant, sssp, {})
 titulky.com##+js(set-constant, errSZ, undefined)
 titulky.com##+js(spoof-css, #bnn_nu300x300, display, block)
-titulky.com#$##martevax1 { height:1px!important;overflow:hidden }
-titulky.com#$##martevax2 { height:1px!important;overflow:hidden }
-titulky.com#$##martevax3 { height:1px!important;overflow:hidden }
+titulky.com#$##martevax1 { width:1px!important;overflow:hidden }
+titulky.com#$##martevax2 { width:1px!important;overflow:hidden }
+titulky.com#$##martevax3 { width:1px!important;overflow:hidden }
 tn.nova.cz##+js(set-constant, useSeznamAds, false)
 ||trackad.cz/adtrack.php$domain=nova.cz,script,redirect=noop.js
 uloz.to#$#div.l-wrapper { padding-top: 0px !important; }
@@ -678,7 +683,7 @@ youradio.cz##+js(nofab)
 zing.cz#$#div.jeg_topbar { margin-bottom: 0px !important; }
 zive.cz##+js(abort-current-script, window.addEventListener, :visible)
 zdopravy.cz##+js(abort-on-property-read, atob)
-zdopravy.cz##+js(abort-on-property-read, adBlockEnabled)
+zdopravy.cz##+js(set-constant, hasUserActiveSubscription, true)
 @@||sbazar.cz^$generichide
 @@||seznam.cz^$generichide
 @@||seznamzpravy.cz^$generichide
