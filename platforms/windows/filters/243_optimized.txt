@@ -1,9 +1,9 @@
-! Checksum: +A+3+kupw2ryCqPlul0X8g
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1736831149-14400.patch
+! Checksum: EUB87FnxiTG+XDIb5/R1UA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1736917548-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.54
-! TimeUpdated: 2025-01-14T05:01:47+00:00
+! Version: 2.0.20.55
+! TimeUpdated: 2025-01-15T05:01:47+00:00
 ! Expires: 12 hours (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -368,7 +368,7 @@ dagenstv.com,kolla.tv##.grid-add-container
 dagensvimmerby.se,dagensvastervik.se,dagenskalmar.nu,dagenshultsfred.se#$#body { margin-top: 0 !important; }
 dagensvimmerby.se,dagensvastervik.se,dagenskalmar.nu,dagenshultsfred.se##.panoramaAnnons, .JobAdDiv, .annonsKolumn, .insideAd, .ingressAd, .familyAds, .annonsWrapper, #indexLinks
 dagens.se##.item:has(.prebid, div[data-ad-unit-id], a[href*="casino"])
-dagen.se##.video-annons, .native-box, .arcad-block-container
+dagen.se##.video-annons, .native-box, .arcad-block-container, #ribbon
 daisybeauty.com##div[class$="-insider"]
 daisybeauty.com##.single-post .content h5:has-text(ANNONSSAMARBETE):upward(a.single-post)
 dansbandsnytt.se##.ai-rotate, .two-ads-wide-container
@@ -956,9 +956,9 @@ mmanytt.se##.img-featured-posts-image:has(a[href$="/annons/"])
 mmanytt.se##.tablepress:has(a[href*="expekt"])
 mobilanyheter.net##a[href*="rocketpot.io"], a[href*="casino"], a[href*="betting"], .a-wrap
 mobilanyheter.net#%#//scriptlet('ubo-set.js', 'ai_run_scripts', 'noopFunc')
-mobil.se,kamerabild.se##article:has(a[href*="/partner"])
+mobil.se,kamerabild.se##article:has(a[href*="/partner"], a[href*="casino"])
 mobil.se,kamerabild.se##a[href*="/partner"]
-mobil.se,kamerabild.se##.markupbox:has(a[href*="casino"])
+mobil.se,kamerabild.se##.markupbox:has(a[href*="casino"], .holidAds)
 modernalivet.se#$#body.modal-active { overflow:unset!important }
 modernalivet.se##.excerpt:has-text(/annons/i):upward(article)
 modernalivet.se##.modal-wrap, .slide-in-box
@@ -1167,6 +1167,7 @@ skargarden.se##.textwidget:has(.adtext)
 skellefteamedia.se###tdi_51, .td-content-more-articles-box
 skidspar.se###videoad
 skillingaryd.nu,xn--vrnamo-bua.nu###more-banners
+skillingaryd.nu,xn--vrnamo-bua.nu##.teaser-item:has(a[href*="casino"], img[src*="-Lanea-"])
 skippo.se##a[href*="/sponsra"]
 skk.se###cookie-button-banner, .campaigns, [id*="GlobalCampaigns"]
 skogen.se##.jobslider.up
@@ -1297,7 +1298,7 @@ tekniknytt.se##:is(.top-news, .big_article):has(img[src*="casino"], img[src*="su
 tekniksmart.se##.elementor-widget-container:has(a[href*="casino"])
 teknikveckan.se##.no-ad
 teknikveckan.se##.pill:has-text(/spons/i):upward(.grid-item, .pinned, .articleFlow-item)
-teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,vardfokus.se,kamerabild.se,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,dagensopinion.se,driva-eget.se,ifokus.se,sv.picmix.com,ifragasatt.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se,aktiespararna.se,receptfavoriter.se,tyda.se,mittforetag.com,lajvo.se,magazin24.se##.ad
+teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,driva-eget.se,ifokus.se,sv.picmix.com,ifragasatt.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se,aktiespararna.se,receptfavoriter.se,tyda.se,mittforetag.com,lajvo.se,magazin24.se##.ad
 teknologiexperten.se##a[href*="casino"]
 teknologiexperten.se##.item:has(img[src*=".se-www"])
 temaarkiv.se##.md\:mt-\[100px\]:has(script[data-adfscript])
@@ -3059,7 +3060,7 @@ zeromagazine.nu##div[id^="ads"]
 ||prismic.io/prismic-toolbar$domain=alltomarbetsmiljo.se
 ||privacypolicies.com^$domain=fl-net.se
 ||privacy-center.org^$domain=180.se|agriaffaires.se|truckscorner.se|machineryzone.se|stegforhalsa.se|netdoktor.se|netdoktorpro.se|news55.se|hastnet.se|kvd.se|dagensps.se|realtid.se|kpwebben.se
-||privacy-mgmt.com^$domain=radio.se|dagenstv.com|kolla.tv|computersweden.se|woxikon.se|dagen.se|filmtopp.se|upday.com|gaffa.se|handbollskanalen.se
+||privacy-mgmt.com^$domain=radio.se|dagenstv.com|kolla.tv|computersweden.se|woxikon.se|dagen.se|filmtopp.se|upday.com|gaffa.se|handbollskanalen.se|stayfriends.se
 ||proxyas.com^$third-party
 ||prylguiden.expressen.se^
 ||ptm.flowplayer.com^*/display$xmlhttprequest
