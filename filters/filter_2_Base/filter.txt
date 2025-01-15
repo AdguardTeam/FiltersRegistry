@@ -17234,6 +17234,10 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196379
+dongknows.com#%#//scriptlet("abort-current-inline-script", "eval", "String.fromCharCode")
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dongknows.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
 @@||superpsx.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196232
@@ -40877,8 +40881,11 @@ asilmedia.org###banner
 animevietsub.biz,animevietsub.info,animevietsub.video,animevietsub.*##center > a[target="_blank"] > img
 animevietsub.biz,animevietsub.info,animevietsub.video,animevietsub.*#%#//scriptlet('trusted-set-cookie', 'popupOpened', 'true')
 !
+animevietsub.page##.Adv
+animevietsub.page##.Ads
+animevietsub.page##.notif-300
 hentaivn.ws#%#//scriptlet('trusted-set-local-storage-item', 'click_time', '$now$')
-hentaivn.ws##div[id$="-catfish"]
+animevietsub.page,hentaivn.ws##div[id$="-catfish"]
 ||cliphotnews.*/uploads/images/*.gif
 cliphotnews.*###vl-underplayer-adx
 cliphotnews.*##.ads-catfish-desktop
@@ -47885,6 +47892,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+alex71.com#%#//scriptlet('prevent-window-open')
 viralxxxporn.com#%#//scriptlet('set-constant', 'flashvars.adv_pre_url', '')
 viralxxxporn.com#%#//scriptlet('set-constant', 'flashvars.adv_pre_src', '')
 viralxxxporn.com##.asside-link

@@ -1,9 +1,9 @@
-! Checksum: yZAeiC9wEOZxvlUkLxCliQ
-! Diff-Path: ../patches/2/2-s-1736937878-3600.patch
+! Checksum: Xz9wk3az+H5RAO+tjO934w
+! Diff-Path: ../patches/2/2-s-1736941421-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.67.99
-! TimeUpdated: 2025-01-15T10:31:40+00:00
+! Version: 2.3.68.0
+! TimeUpdated: 2025-01-15T11:31:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16924,6 +16924,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196379
+dongknows.com#%#//scriptlet("abort-current-inline-script", "eval", "String.fromCharCode")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
 @@||superpsx.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196232
@@ -36531,8 +36533,11 @@ asilmedia.org###banner
 animevietsub.biz,animevietsub.info,animevietsub.video,animevietsub.*##center > a[target="_blank"] > img
 animevietsub.biz,animevietsub.info,animevietsub.video,animevietsub.*#%#//scriptlet('trusted-set-cookie', 'popupOpened', 'true')
 !
+animevietsub.page##.Adv
+animevietsub.page##.Ads
+animevietsub.page##.notif-300
 hentaivn.ws#%#//scriptlet('trusted-set-local-storage-item', 'click_time', '$now$')
-hentaivn.ws##div[id$="-catfish"]
+animevietsub.page,hentaivn.ws##div[id$="-catfish"]
 ||cliphotnews.*/uploads/images/*.gif
 cliphotnews.*###vl-underplayer-adx
 cliphotnews.*##.ads-catfish-desktop
@@ -43146,6 +43151,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+alex71.com#%#//scriptlet('prevent-window-open')
 viralxxxporn.com#%#//scriptlet('set-constant', 'flashvars.adv_pre_url', '')
 viralxxxporn.com#%#//scriptlet('set-constant', 'flashvars.adv_pre_src', '')
 viralxxxporn.com##.asside-link

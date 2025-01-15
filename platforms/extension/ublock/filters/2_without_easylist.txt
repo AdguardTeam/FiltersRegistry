@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1Qw2WXQqikBm/Xs/MvKrhw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1736937898-3600.patch
+! Checksum: IyXCIA8ci62iwhDEong0Rw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1736941443-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.67.99
-! TimeUpdated: 2025-01-15T10:31:40+00:00
+! Version: 2.3.68.0
+! TimeUpdated: 2025-01-15T11:31:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16837,6 +16837,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196379
+dongknows.com##+js(abort-current-script, eval, String.fromCharCode)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
 @@||superpsx.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196232
@@ -36720,7 +36722,10 @@ asilmedia.org###banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194923
 animevietsub.biz,animevietsub.info,animevietsub.video,animevietsub.*##center > a[target="_blank"] > img
 !
-hentaivn.ws##div[id$="-catfish"]
+animevietsub.page##.Adv
+animevietsub.page##.Ads
+animevietsub.page##.notif-300
+animevietsub.page,hentaivn.ws##div[id$="-catfish"]
 ||cliphotnews.*/uploads/images/*.gif
 cliphotnews.*###vl-underplayer-adx
 cliphotnews.*##.ads-catfish-desktop
@@ -43041,6 +43046,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+alex71.com##+js(window.open-defuser)
 viralxxxporn.com##+js(set-constant, flashvars.adv_pre_url, '')
 viralxxxporn.com##+js(set-constant, flashvars.adv_pre_src, '')
 viralxxxporn.com##.asside-link
