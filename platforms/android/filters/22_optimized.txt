@@ -1,5 +1,5 @@
-! Checksum: Uv038MEDxocRsxN+XJaGnQ
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1736822501-3600.patch
+! Checksum: vfDiuMLsLO5gTq46nrlhGA
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1736909010-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.10.76
@@ -276,6 +276,7 @@ himasoku.com#?#.article-body-more > span[style]:contains(おすすめ記事)
 inazumanews2.com##.link01
 inutomo11.com##.article-body-more > script ~ b
 inutomo11.com##.article-body-more > script ~ br
+bl-archive.net##.main-top > div.column-inner > div.widget_text
 brow2ing.com##.popular_article_pick_up
 jishin-yogen.com##.rss_outline02
 mudasure.com##.footerrss
@@ -469,6 +470,7 @@ tozanchannel.blog.jp##.article-body-inner div[style="font-size: 120%; padding-le
 gundamlog.com###kijisita_rss2
 kanasoku.info##.headline_middle
 kanasoku.info#?##headrank2:contains(/Pickup|オススメ|注目の記事/)
+||blog.livedoor.jp/kijyomita/rss/
 kijonotakuhaibin.com,kijyomita.com##.osusume-saisin
 ||anicobin.ldblog.jp^$subdocument,~third-party
 anicobin.ldblog.jp#$#.rss-wrapper2 { height: 0 !important; background: none !important; padding-bottom: 0 !important; }
@@ -545,7 +547,6 @@ gfoodd.com##.box_group ~ div.singleh4
 gfoodd.com##.box_group ~ br
 gfoodd.com#?#.code-block > div.sponserdrink:contains(RSS)
 marasoku.info##.rss_ninja_title
-toychan.blog.jp,shouginews.blog.jp,hinomoto99.com,fireflyframer.blog.jp##.message-board-outer
 news4wide.net##.box-antenna
 /rss_$subdocument,domain=eegg.fun
 ||eegg.fun/rssline.html
@@ -647,7 +648,6 @@ kidan-m.com,otakumix.doorblog.jp###rss1
 otakumix.doorblog.jp##iframe[src="http://otakumix.doorblog.jp/testrss.html"]
 pokemon-matome.net###header_rssbox
 pokemon-matome.net##div[class^="rss_inner"]
-h-library.com,4545comics.com##.card-white__blue.padding8
 ||onecall2ch.com^$subdocument,~third-party
 bipblog.com##iframe[src^="http://bipblog.com/"]
 ||bipblog.com^$subdocument,~third-party
@@ -752,6 +752,7 @@ blog.livedoor.jp##.rsstop
 blog.livedoor.jp##.tabmoji
 blog.livedoor.jp##.tabmoji2
 blog.livedoor.jp###rss3
+blog.livedoor.jp###content > div.banner1
 blog.livedoor.jp###container > div[style$="scrollbar-track-color:#ffffff;"]
 blog.livedoor.jp##.rss-sub
 blog.livedoor.jp###RSSbox
@@ -808,6 +809,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||leadball.ru^$third-party
 ||widget.flowxo.com^$third-party
 ||tidio.com^$third-party
+||webchat.cmcplanet.com^$third-party
 ||chatntr.com^
 ||formilla.com^$third-party
 ||app.livechatoo.com^$third-party
@@ -947,7 +949,6 @@ eldorado.ru###custom-livetex-fab
 f.ua##.callback_buttons
 hdfcbank.com###chatTogglerDiv
 justanswer.com##.th-chat-window
-klaster.ua##.sonar_effect
 muzofond.fm##.feedback-main-container
 network.mobile.rakuten.co.jp###rexSurveyEmbedded
 ozon.ru##div[data-widget="webFeedbackForm"]
@@ -1023,6 +1024,7 @@ newsee-media.com,saitama-np.co.jp,htb.co.jp,oricon.co.jp,maidonanews.jp##.uz-ny
 ||gacraft.jp^$third-party
 houyhnhnm.jp##.section-similer-post
 otonano-shumatsu.com##.popin-block
+news.audee.jp###popinBox
 yamakei-online.com##.ad-pop-nw3-nw4
 ryukyushimpo.jp#?#article ~ .flex-col:has(.items-center > #_popIn_recommend)
 mbs.jp##.common-wrap--recommend
@@ -1083,7 +1085,6 @@ freestreams-live.my###custom_html-9
 litres.ru###call_support
 aeza.net#?#header > div[class^="sc-"] > div[class^="sc-"] > div[class^="sc-"]:has(> div[class^="sc-"]:first-child:contains(/^Support$/))
 ||k-pilot.kariyer.net^
-||chatdealer.jp^$domain=zeirisi.co.jp
 sofmap.com###voc_ec_button
 connect.podium.com/nitro-min-widget.js$third-party
 ||library.telefonica.de/*/components/contact-link/bundle.js
@@ -1094,6 +1095,7 @@ ing.com.tr###chat
 ||webpage.qidian.qq.com/qidian/chatv3/$third-party
 diskgenius.cn##.class_qidian_wpa
 ||guest-agent.mobilus.me/web/mobi-agent-client-frame-loader.min.js$domain=city.arakawa.tokyo.jp
+wenmi.com##.alc
 ||live-cwc.elron.titancs.mindtitan.com/chat-web-sdk-$domain=elron.ee
 ||studlancer.net/images/chat/studlancer_chat.js
 ankerjapan.com###ch-plugin
@@ -1120,6 +1122,7 @@ tcaeintegral.es,tremplin-numerique.org,ordvor.com##.joinchat
 @@||config.gorgias.chat^$domain=thefeed.com
 @@||client.crisp.chat^$domain=journey.cloud
 @@||service.force.com/embeddedservice/*/esw.min.js$domain=microchip.com|visible.com|playstation.com|cyberpowersystems.com|lego.com|support.sonos.com
+@@||client.crisp.chat^$domain=support.aftership.com
 namu.wiki#?#div[class*=" "] > div[class*=" "]:has(> a[target="_blank"][rel="noopener"]):contains(더 보기)
 asianpinay.com#?#.row > div[class^="order-"]:has(> .video-block-happy)
 zerohedge.com###polymarket-market-embed
@@ -1147,6 +1150,7 @@ laptopmag.com##.hawk-nest
 ||arc.io/widget.*js$third-party
 haberler.com#%#//scriptlet("abort-current-inline-script", "document.write", "widget.yenimedya.com.tr/Partner/")
 ||widget.getyourguide.com^$third-party
+||my.openwrite.cn/js/readmore.js
 ||actionbutton.co^$third-party
 ||holyclock.com^$third-party
 apollo.pl##.thulium-chat-wrapper
@@ -1202,6 +1206,7 @@ mediametrics.ru##.currency-moving-block
 miningclub.info#?#.p-body-sidebar > div.block:has(> div.block-container > h3.block-minorHeader:contains(Курсы))
 abplive.com,irliepaja.lv##.weather-widget
 syzran-small.ru##.pogoda
+||money.hu/assets-new/js/calculator-widget-init.js
 culturemeter.od.ua##.extendedwopts-hide[id^="text-"]
 miasskiy.ru##.theiaStickySidebar > div.jeg_pb_boxed_shadow
 ||informer.gismeteo.ru^$domain=~gismeteo.ru
@@ -1249,7 +1254,6 @@ veved.ru##.donating-top
 theins.ru###app-root main > div[class] > div[class] > div[class]:has(> div[class] > p > a[href="https://donate.theins.ru"])
 theins.ru###articleContainer > div:has(a[href^="https://donate.theins.ru/"])
 nashaniva.com##.article__content > div[style]:has(> a[href="https://patreon.com/nashaniva"])
-jam-news.net###donationPopup
 proekt.media##proekt-group > proekt-block:has(> proekt-columns span#donateButton)
 ||cdn.fundraiseup.com/widget/$domain=tvrain.tv
 novayagazeta.ru##main > div:has(> svg[width="10000"] + div)
