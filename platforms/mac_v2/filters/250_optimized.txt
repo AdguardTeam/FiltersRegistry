@@ -1,5 +1,5 @@
-! Checksum: wp5L8HrRrELBaIZEt8zPIA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1736932016-14400.patch
+! Checksum: creppitTC+hSss5kzhx+mQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1737003940-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.15.98
@@ -98,6 +98,7 @@ drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
 drivereasy.com#?#.pakb-content img[sizes^="(max-width: 80"]
 drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 drivereasy.com#?#.pakb-content p:has-text(click Update All)
+windowsdispatch.com##strong
 windowsreport.com##div[class^=restoro-download] + section
 appuals.com##p + div > div:first-of-type
 wikidll.com,dllfile.net,dll-files.org##.detection-os
@@ -691,6 +692,7 @@ coolrom.com.au,coolrom.com##.download_link
 64.132.201.92$network
 !+ PLATFORM(windows, mac, android)
 209.141.51.49$network
+||semygruja.com^$all
 !+ PLATFORM(windows, mac, android)
 208.88.225.116$network
 !+ PLATFORM(windows, mac, android)
@@ -1271,7 +1273,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[href*="twitter.com/share?url="]
 ##a[onclick*="twitter.com/share?"]
 ##a[title="Share on Twitter" i]
-##a[title="Tweet this post"]
 ##button[data-href*="twitter.com/share?text="]
 ##li[data-share=twitter]
 ~viber.com##a[href^="viber://forward?text"]
@@ -1442,6 +1443,7 @@ smzdm.com##.footer-right
 tmall.com###mobile
 xinhuanet.com##.s-ewm
 ctrip.com###fl_wrap_default
+smzdm.com##.qr-buy-container
 12306.cn##.fixed-right-menu > li.menu-item:nth-of-type(3)
 amap.com###amapAppDownload
 amap.com###to_lushu
@@ -1470,9 +1472,6 @@ baidu.com##.poiLeadDownloadCard
 12306.cn##.foot-code
 flights.ctrip.com##.seo-links
 mafengwo.cn###footer
-globalpublishers.co.tz##.adcontainer
-globalpublishers.co.tz##.widget_custom_html a[href="#"]
-globalpublishers.co.tz###custom_html-40
 alaroye.org#@#.navbar-ad-section
 knowyourmeme.com###popular_galleries
 knowyourmeme.com###trending-bar
@@ -1524,6 +1523,7 @@ alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 ###snowflakes
 daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /jquery.snow.js
+/let-it-snow.
 /snow-fall.js
 /snow-falling.js
 /snow-storm^$script
@@ -1594,6 +1594,7 @@ autoplius.lt#%#//scriptlet('ubo-ra.js', 'target', '[target="_blank"]', 'stay')
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 ##.et_pb_divider:not(html,body)
 ##div.dfd-spacer-module:empty
+transfermarkt.com##.clearer
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
 pixiv.net##div[class*=" "]:empty:has(+ aside + aside)
@@ -1633,6 +1634,7 @@ $removeparam=yclid
 $removeparam=gclid
 $removeparam=fbclid
 $removeparam=_openstat
+$removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
 $removeparam=adfrom
@@ -1851,7 +1853,9 @@ $removeparam=affil
 $removeparam=cjid
 $removeparam=irsharedid
 $removeparam=hvarAID
+$removeparam=sv_affiliate_id
 $removeparam=sv_campaign_id
+$document,removeparam=/^sv_tax.*$/
 $removeparam=LSNSUBSITE
 $removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
@@ -1861,8 +1865,6 @@ $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org
 $removeparam=affuid
 $removeparam=refclickid
-$removeparam=sp_source
-$removeparam=sp_medium
 $removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
 $document,removeparam=/^affSource.*$/i
@@ -1883,8 +1885,6 @@ $removeparam=spUserID
 $removeparam=spJobID
 $removeparam=spReportId
 $removeparam=actId
-$removeparam=actCampaignType
-$removeparam=actSource
 $removeparam=oly_enc_id,document,domain=~greenbuildingadvisor.com
 $document,removeparam=/^wickedsource=.*$/i
 $removeparam=s_cid
@@ -1968,6 +1968,7 @@ $removeparam=ko_click_id
 $removeparam=nrtv_cid
 $removeparam=trk_ref
 $removeparam=ircid
+$document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
 $removeparam=awinaffid
 $removeparam=iclid
@@ -2051,6 +2052,7 @@ $removeparam=ttd_tdid
 $removeparam=bsw_param
 $removeparam=google_push
 $removeparam=partneruserid
+$removeparam=ns__t
 $removeparam=sExtCookieId
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
@@ -2403,17 +2405,14 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=rq
 ||baidu.com^$removeparam=vslid
 ||baidu.com^$removeparam=logid
-||baidu.com^$removeparam=srcp
 ||haokan.baidu.com/v?$removeparam=pd
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaId
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaTitle
 ||baidu.com^$removeparam=sourceFrom
 ||baidu.com/link?$removeparam=eqid
 ||baidu.com/link?$removeparam=wd
-||map.baidu.com^$removeparam=compat
 ||map.baidu.com^$removeparam=da_src
 ||map.baidu.com^$removeparam=device_ratio
-||map.baidu.com^$removeparam=pcevaname
 ||map.baidu.com^$removeparam=ugc_type
 ||map.baidu.com^$removeparam=ugc_ver
 ||baidu.com^$removeparam=hl_tag
@@ -2537,10 +2536,9 @@ $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
 $removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
+$removeparam=subid,domain=admitad.com|mintmobile.com|secretlab.*|webmasterplan.com
 $removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
 $removeparam=u1,domain=linksynergy.com|shop-links.co
-$removeparam=article_name,domain=shop-links.co
-$removeparam=article_url,domain=shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
@@ -2632,7 +2630,6 @@ $document,removeparam=/^src=Linkfire$/,domain=apple.com|youtube.com
 $document,removeparam=ct,domain=apple.com|bumble.com|newsroom.co.nz
 ||music.apple.com^$removeparam=itsct
 ||music.apple.com^$removeparam=itscg
-||apple.com^$removeparam=/^ign-.*$/
 $removeparam=xcust
 $removeparam=xs,domain=skimresources.com|skimlinks.com|redirectingat.com
 $removeparam=algo,document
@@ -2652,7 +2649,6 @@ $removeparam=_ref,domain=fanatics.com|nhl.com
 ||xg4ken.com^$removeparam=locphy
 ||macys.com^$removeparam=trackingid
 $removeparam=/^m_.*$/,domain=macys.com|macysinc.com
-$removeparam=CAGPSPN
 $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||apple.com^$removeparam=mttn3pid
 ||apple.com^$removeparam=mttnagencyid
@@ -2796,7 +2792,6 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=urlState
 ||jcpenney.com^$removeparam=productGridView
 ||jcpenney.com^$removeparam=badge
-||jcpenney.com^$removeparam=selectedSKUId
 ||bandcamp.com^$removeparam=search_item_id
 ||bandcamp.com^$removeparam=search_item_type
 ||bandcamp.com^$removeparam=search_match_part
@@ -2877,6 +2872,7 @@ $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengaw
 $document,removeparam=iId,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=partner,domain=accuweather.com|fastcompany.com|humblebundle.com
 ||audible.$removeparam=source_code
+$removeparam=f_id,domain=admitad.com
 $removeparam=x-acqsource
 $removeparam=csrc,domain=mcafee.com|vitacost.com
 $removeparam=csrcl2
@@ -2958,7 +2954,6 @@ $document,removeparam=entrypoint,domain=bing.com
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
-$document,removeparam=maltcode,domain=gamestop.com|ubisoft.com|steampowered.com
 ||youtube.com^$document,removeparam=bp
 ||walmart.com/ip/$document,removeparam=classType
 $document,domain=youtube.com,removeparam=embeds_referring_origin
