@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: O1WrOtQ8yMJ2Zr2neLrsXQ
-! Diff-Path: ../patches/2/2-s-1737013455-3600.patch
+! Checksum: D9Wh2pwS5g1dEC66jIU06g
+! Diff-Path: ../patches/2/2-s-1737020645-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.68.11
-! TimeUpdated: 2025-01-16T07:31:28+00:00
+! Version: 2.3.68.12
+! TimeUpdated: 2025-01-16T09:31:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17413,9 +17413,11 @@ vectorx.top,boltx.stream##+js(no-fetch-if, pagead2.googlesyndication.com)
 sonixgvn.net##body > div[class][style*="position:"][style*="visibility:"]
 sonixgvn.net##body > div[class][style*="position:"][style*="z-index:"]
 sonixgvn.net#$#.sonix > div[class^="bot"][class*="on"] { display: block !important; }
-sonixgvn.net#$#body[class*="blur"] > * { filter: none !important; }
+sonixgvn.net#$#body > * { filter: none !important; }
 sonixgvn.net#$#body > div[class*="-blackout"] { display: none !important; }
 sonixgvn.net#$#body > div[class*="-blackout"] + div[class*="-wrapper"] { display: none !important; }
+sonixgvn.net#$#body > div[class*=" active"][style] { display: none !important; }
+sonixgvn.net#$#body > div[class*=" active"][style] + div[class]:has(> .active [class*="close"]) { display: none !important; }
 sonixgvn.net##+js(noeval-if, -blackout)
 sonixgvn.net##+js(no-xhr-if, cdn.vlitag.com)
 sonixgvn.net##+js(abort-on-stack-trace, setTimeout, /https?:\/\/sonixgvn\.net\/.*\.js:|data:text\/javascript;base64|blocker|crabdance\.com|\/ads\//)
@@ -35026,6 +35028,9 @@ kreskowkazone.pl#@#.myTestAd
 ||i.iplsc.com/twoje-zdrowie-banner^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23702
 dziennik.pl##.widget-list-ul > .infeed1
+! https://github.com/MajkiIT/polish-ads-filter/issues/22709
+! Some links redirects through "wykop.pl/api/v3/ads/redirect?data=" and it might be blocked by some rules,
+! so rule below converts links to destination URL
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170628
 wykop.pl#?#aside.tag-top > .hits-slider:matches-css(before, content: /^reklama$/)
 ||r.wykop.pl/widget-api/*/widget$xmlhttprequest

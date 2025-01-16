@@ -1,8 +1,8 @@
-! Checksum: 8XKFmfvW3qBoUlYkVAspMQ
+! Checksum: yHV/RDLDmCWx65YRI4gb4A
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.68.11
-! TimeUpdated: 2025-01-16T07:31:28+00:00
+! Version: 2.3.68.12
+! TimeUpdated: 2025-01-16T09:31:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17318,9 +17318,10 @@ waploaded.com#@#.ad-slot
 sonixgvn.net##body > div[class][style*="position:"][style*="visibility:"]
 sonixgvn.net##body > div[class][style*="position:"][style*="z-index:"]
 sonixgvn.net#$#.sonix > div[class^="bot"][class*="on"] { display: block !important; }
-sonixgvn.net#$#body[class*="blur"] > * { filter: none !important; }
+sonixgvn.net#$#body > * { filter: none !important; }
 sonixgvn.net#$#body > div[class*="-blackout"] { display: none !important; }
 sonixgvn.net#$#body > div[class*="-blackout"] + div[class*="-wrapper"] { display: none !important; }
+sonixgvn.net#$#body > div[class*=" active"][style] { display: none !important; }
 @@||static.doubleclick.net/instream/ad_status.js$domain=sonixgvn.net
 ! URL shorteners used on sonixgvn.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176543
@@ -34169,6 +34170,9 @@ kreskowkazone.pl#@#.myTestAd
 ||i.iplsc.com/twoje-zdrowie-banner^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/23702
 dziennik.pl##.widget-list-ul > .infeed1
+! https://github.com/MajkiIT/polish-ads-filter/issues/22709
+! Some links redirects through "wykop.pl/api/v3/ads/redirect?data=" and it might be blocked by some rules,
+! so rule below converts links to destination URL
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170628
 ||r.wykop.pl/widget-api/*/widget$xmlhttprequest
 ! Rule below fixes issue with loading content on - https://wykop.pl/tag/reklama
