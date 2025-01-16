@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: D9oWgy39xFtufORHOLSOkQ
-! Diff-Path: ../patches/2/2-s-1737045730-3600.patch
+! Checksum: joCVyAbFMJ7lKkoabQ2+qw
+! Diff-Path: ../patches/2/2-s-1737049314-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.68.19
-! TimeUpdated: 2025-01-16T16:31:28+00:00
+! Version: 2.3.68.20
+! TimeUpdated: 2025-01-16T17:31:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -42781,6 +42781,10 @@ http://www.ads.$third-party
 !
 !### Temporary ###
 ! SECTION: Temporary
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/195088
+! BUG: https://github.com/AdguardTeam/CoreLibs/issues/1949
+! TODO: remove this rule when the issue above will be fixed
 ! https://github.com/AdguardTeam/CoreLibs/issues/1887
 ! TODO: check with release version of CoreLibs 1.15
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131124
@@ -43021,6 +43025,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+flickr.com##.moola-default-banner-view
+10play.com.au##+js(json-prune, ads breaks cuepoints times, ads)
 whoer.net###render-mini-banners
 whoer.net###render-big-banners
 whoer.net##.main-ip-info__anonimity
@@ -64814,8 +64820,10 @@ kzstock.blogspot.com#@##ad-target
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146902
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=10play.com.au
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=10play.com.au
-@@||pubads.g.doubleclick.net/ondemand/hls/content/*/streams|$xmlhttprequest,domain=10play.com.au
-@@||pubads.g.doubleclick.net/ondemand/hls/content/*/streams/*.m3u8$domain=10play.com.au
+@@||pubads.g.doubleclick.net/ondemand/*/content/*/streams|$xmlhttprequest,domain=10play.com.au
+@@||pubads.g.doubleclick.net/ondemand/*/content/*/streams/*.m3u8$domain=10play.com.au
+@@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/SIN/streams/*/time-events.json$domain=10play.com.au
+@@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/SIN/streams/*/manifest.mpd$domain=10play.com.au
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48072
 @@||pussyspace.com/class/captcha/captcha.php$domain=pussyspace.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47914
@@ -68238,6 +68246,7 @@ implbits.com#@#.banner_container
 ! This section contains the list of the content replacement rules that block ads. Rules must be domain-specific.
 !
 ! Bad:  ||example.org/video-links (should be in specific.txt)
+!
 !
 ! https://github.com/AdguardTeam/CoreLibs/issues/1720
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186870
