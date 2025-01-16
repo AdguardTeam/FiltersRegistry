@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: T7NA9tUH08uxxp0j9f6w7w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1737031659-3600.patch
+! Checksum: E8kF3Rp9RuIJjOn5aLwgpg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1737035058-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.68.15
-! TimeUpdated: 2025-01-16T12:31:36+00:00
+! Version: 2.3.68.16
+! TimeUpdated: 2025-01-16T13:31:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16814,6 +16814,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196478
+watch.plex.tv##+js(no-fetch-if, /doubleclick\.com/ method:HEAD, , opaque)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196454
 @@||sshkit.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196379
@@ -43018,6 +43020,11 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||vod.provider.plex.tv/ad/err?code
+||vod.provider.plex.tv/ad?givn=
+simpcity.su##.notices
+simpcity.su##.block-body > div.node:has(> div.node-body > div.node-main h3.node-title > a[href^="/link-forums/catflix"])
+simpcity.su##.block-body > div.node:has(> div.node-body > div.node-main h3.node-title > a[href^="/link-forums/catflix"]) ~ div.node
 winaero.com##.winrec
 winaero.com##.windiv:has(> a.winrec)
 rumble.com##.homepage-section:has(> div.constrained > div[data-js^="rac-rp_"])
@@ -53790,7 +53797,8 @@ allsex.xxx##div[class^="block-"] > .table
 ||zooredtube.com/zr*.js
 utorrent.com,windowscentral.com##a[href^="https://go.nordvpn.net/"]
 nuvid.*##iframe#spot_video_livecams
-vivatube.com,nuvid.*##iframe#spot_video_underplayer_livecams
+vivatube.com##iframe#spot_video_underplayer_livecams
+nuvid.*###spot_video_underplayer_livecams
 nuvid.*##.video-options > div[style="position:relative;"] > span[style="width: 100%;text-align: left;display: inline-block;position: absolute;top: -12px;font-size: 10px;"]
 washingtonpost.com###leaderboard-wrapper
 lifehack.org##.ad-wrap-transparent
