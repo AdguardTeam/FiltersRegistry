@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: oQ67n2b6xfJW1LVcoadrwQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1737024218-3600.patch
+! Checksum: GXINVs+DGOlOG8N8t+u7OA
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1737053089-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.45.49
-! TimeUpdated: 2025-01-16T10:38:52+00:00
+! Version: 2.0.45.50
+! TimeUpdated: 2025-01-16T18:39:35+00:00
 ! Expires: 5 days (update frequency)
 ||remp-campaign.golem.de^
 ||web-ads.10sq.net^
@@ -747,6 +747,14 @@ wiwo.de##app-content-advertisement
 heise.de#?#span[class^="right"]:contains(Anzeige)
 kabeleinsdoku.at,kabeleinsdoku.de##div[data-testid="display-ad"]
 stern.de##.ad-container
+stern.de#$?#.d-md-revert.ad-container { display: none !important; }
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:only-child)
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent:last-child)
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent:last-child)
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent:last-child)
+stern.de##article:has(> .ad-labels)
+stern.de##div[data-upscore-zone="subsection-teaser-25"]
+stern.de##div[data-upscore-zone="subsection-teaser-5"]
 katzen-forum.net#?#.js-replyNewMessageContainer > article[class="message message--post"]:has(h4 > span:contains(Werbung))
 ariva.de##div[id^="ariva.de_"]
 wiwo.de##app-commercial-teaser-group
@@ -1311,6 +1319,7 @@ clever-tanken.de##.google-ad
 heise.de##section[data-component="TeaserList"] > div:not(.flex)
 heise.de##div[data-component="NewAdModule"]
 bild.de##.ad-wrapper--mark
+bild.de#$?#.ad-wrapper { remove: true; }
 paketda.de##span[style^="font-size:80%"]
 schnittberichte.com##section[style] > a[href^="/goto.php?ID="] > img
 schnittberichte.com##.wrapper__content a[href^="/goto.php"] > img[src*="banner"]

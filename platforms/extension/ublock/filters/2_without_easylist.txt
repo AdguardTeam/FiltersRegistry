@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: N94FmXkVfEDV0VJNnwDgKA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1737049316-3600.patch
+! Checksum: uQ8AwmYoT6KLs8Y1npXI+g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1737053088-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.68.20
-! TimeUpdated: 2025-01-16T17:31:28+00:00
+! Version: 2.3.68.21
+! TimeUpdated: 2025-01-16T18:31:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26840,6 +26840,11 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
+autojournal.cz##body > div:not([class],[id]):has(> .r-main)
+autojournal.cz##div:has(> .r-main:only-child)
+autojournal.cz##.r-main
+autojournal.cz###leftsidebar > div[id]:has(> .textwidget:only-child > a:only-child > img[src*="Banner"]:only-child)
+autojournal.cz#$##leftsidebar[style*="height"] { height: calc(100%) !important; }
 smartmania.cz###leaderboard-wrapper
 ||titulky.com/mybanalter/
 titulky.com##div[id^="bny"]
@@ -43025,6 +43030,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+bing.com##.ra_car_block
 flickr.com##.moola-default-banner-view
 10play.com.au##+js(json-prune, ads breaks cuepoints times, ads)
 whoer.net###render-mini-banners

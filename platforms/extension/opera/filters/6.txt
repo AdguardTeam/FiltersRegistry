@@ -1,9 +1,9 @@
-! Checksum: swrAdiRexbR43h5K0xWKLQ
-! Diff-Path: ../patches/6/6-s-1737024205-3600.patch
+! Checksum: uybEKuvnJWFRSjhMwk3Wqg
+! Diff-Path: ../patches/6/6-s-1737053081-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.45.49
-! TimeUpdated: 2025-01-16T10:38:52+00:00
+! Version: 2.0.45.50
+! TimeUpdated: 2025-01-16T18:39:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1731,6 +1731,14 @@ infranken.de#?#.listing-item:has( > article > .teaser-inner .post-topline:contai
 heise.de#?#span[class^="right"]:contains(Anzeige)
 kabeleinsdoku.at,kabeleinsdoku.de##div[data-testid="display-ad"]
 stern.de##.ad-container
+stern.de#$?#.d-md-revert.ad-container { display: none !important; }
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:only-child)
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent:last-child)
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent:last-child)
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent:last-child)
+stern.de##article:has(> .ad-labels)
+stern.de##div[data-upscore-zone="subsection-teaser-25"]
+stern.de##div[data-upscore-zone="subsection-teaser-5"]
 katzen-forum.net#?#.js-replyNewMessageContainer > article[class="message message--post"]:has(h4 > span:contains(Werbung))
 ariva.de##div[id^="ariva.de_"]
 wiwo.de##app-commercial-teaser-group
@@ -2631,6 +2639,7 @@ heise.de##div[data-component="NewAdModule"]
 heise.de##section[data-component="NewAdModule"]
 ||branchen-info.net/tmp/desktop/bilder/hinweise/
 bild.de##.ad-wrapper--mark
+bild.de#$?#.ad-wrapper { remove: true; }
 paketda.de##span[style^="font-size:80%"]
 schnittberichte.com##main #thumbnail-slider
 schnittberichte.com##main td > a[href^="/goto.php?ID="] > img
