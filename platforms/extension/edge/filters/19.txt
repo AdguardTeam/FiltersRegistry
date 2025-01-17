@@ -1,9 +1,9 @@
-! Checksum: 6F6u26/YSJD5XVfVLE0u+A
-! Diff-Path: ../patches/19/19-s-1737114307-3600.patch
+! Checksum: SU0trOJ4xG3XVrO2T7a+tw
+! Diff-Path: ../patches/19/19-s-1737117890-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.48.89
-! TimeUpdated: 2025-01-17T11:41:03+00:00
+! Version: 2.0.48.90
+! TimeUpdated: 2025-01-17T12:40:49+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4385,6 +4385,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+flypobeda.ru###__next ~ div[class][role="dialog"]:has(> div[class] > button[type="button"] > span)
+travel.yandex.ru###travel_app ~ div[class]:has(> div[class] > a[href="/journal/writing/"] ~ a[href^="https://travel.yandex.ru/promo/"])
 istockphoto.com#%#//scriptlet('set-local-storage-item', 'ai-gen-pre-shot-merchandising', 'true')
 theautopian.com#%#//scriptlet('trusted-click-element', 'div[data-pbs-position="sticky"] div.exp-ui__sticky__close-btn')
 abcnews.go.com##div[class]:has(> a[tracking="lpos=widget[breakingnews_banner]&lid=link[text]"])
@@ -12871,6 +12873,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+journal.tinkoff.ru##div[class^="_articleView"] > div:not([class]):has(> div[class^="_container"] > div[class^="_banner"])
+aviasales.ru##div[class^="SubscriptionCard_container"]
 tutu.ru###banner-covid-19
 axios.com##div[data-vars-experiment="content_to_subscription_recommendations"]
 today.com##.preloaded_lightbox:has(> iframe[title="(LIVE) Start TODAY App | Al with Weights"])

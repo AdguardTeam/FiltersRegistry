@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.68.27",
-			"timeUpdated": "2025-01-17T11:31:43+0000",
+			"version": "2.3.68.28",
+			"timeUpdated": "2025-01-17T12:31:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.9.78",
-			"timeUpdated": "2025-01-17T10:40:51+0000",
+			"version": "2.1.9.79",
+			"timeUpdated": "2025-01-17T12:40:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.19.49",
-			"timeUpdated": "2025-01-17T11:40:55+0000",
+			"version": "2.2.19.50",
+			"timeUpdated": "2025-01-17T12:40:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -639,8 +639,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.75.40",
-			"timeUpdated": "2025-01-17T06:38:40+0000",
+			"version": "2.0.75.41",
+			"timeUpdated": "2025-01-17T12:40:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -696,8 +696,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.77",
-			"timeUpdated": "2025-01-17T10:41:31+0000",
+			"version": "2.0.54.78",
+			"timeUpdated": "2025-01-17T12:40:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -718,8 +718,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.48.89",
-			"timeUpdated": "2025-01-17T11:41:03+0000",
+			"version": "2.0.48.90",
+			"timeUpdated": "2025-01-17T12:40:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1657,8 +1657,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.30.10",
-			"timeUpdated": "2025-01-17T11:41:11+0000",
+			"version": "2.1.30.11",
+			"timeUpdated": "2025-01-17T12:40:58+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
