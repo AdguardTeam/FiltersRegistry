@@ -1,9 +1,9 @@
-! Checksum: MOonKj+a+jShs5Sapj6vhA
-! Diff-Path: ../patches/22/22-s-1737096144-3600.patch
+! Checksum: 74AhN9JepljhuSKqJ64B+w
+! Diff-Path: ../patches/22/22-s-1737099886-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.10.79
-! TimeUpdated: 2025-01-17T06:38:47+00:00
+! Version: 2.0.10.80
+! TimeUpdated: 2025-01-17T07:40:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -153,6 +153,7 @@ nanjei-baseball.blog.jp,baynews.blog.jp,xresolutionx.livedoor.blog,kimamamatome.
 !
 ! NOTE: Blogroll specific rules
 !
+himasoku.com##.article-body-more > iframe[src^="http://himasoku.com/"][width]
 toushichannel.net#?#.article-body-more > div[style="font-size: small;"]:contains(中間おすすめ記事) > *:not(.t_h)
 toushichannel.net##article .bottom-link
 splatoon-torikara.com##.single-section:has(> div.footer-rss-box)
@@ -936,6 +937,11 @@ pokemonbbs.com##.rss_sp
 ikarishintou.com###rss_area
 ikarishintou.com##.RSScon
 /js/koteilink*.js$domain=ikarishintou.com|heartlife-matome.com|ikuji-news.com|uwasakijo.net|sutekinakijo.com
+uwakich.com##iframe:is([src="/include1_iframe1.html"], [src="/include2_iframe1.html"])
+uwakich.com##aside > .plugin-memo:has(> .side > div[style] > div[style] > script[src="https://blogroll.livedoor.net/js/blogroll.js"])
+||blogroll.livedoor.net/js/blogroll.js$script,redirect=noopjs,domain=uwakich.com
+||uwakich.com/include1.html$subdocument
+||uwakich.com/include2.html$subdocument
 ||uwakich.com/js/kiji*.js
 ||uwakich.com/js/top*.js
 uwakich.com##.links-navy1

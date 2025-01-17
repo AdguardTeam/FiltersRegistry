@@ -1,8 +1,8 @@
-! Checksum: Z+0YrQR0p0dhZLUatEZtIA
+! Checksum: zmZ2HoQ2bNi3SdO1BksHlQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.44
-! TimeUpdated: 2025-01-17T06:38:39+00:00
+! Version: 2.2.19.45
+! TimeUpdated: 2025-01-17T07:40:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -39982,6 +39982,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+zap.co.il#$##androidStrip { display: none !important; }
+zap.co.il#$##androidStrip + div.Main { padding: 0 !important; }
+mako.co.il#$##content > nav#toolbar { top: 0 !important; }
 babypark.jp#$#div[data-krt-blocks-id] { display: none !important; }
 babypark.jp#$#body { overflow: auto !important; }
 babypark.jp#$#html { overflow: auto !important; }
@@ -40613,6 +40616,7 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196530
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196307
 ||20.detik.com/embed/$subdocument,~third-party
 ! zalando.de - influencers in product view
@@ -48760,6 +48764,7 @@ nanjei-baseball.blog.jp,baynews.blog.jp,xresolutionx.livedoor.blog,kimamamatome.
 !
 ! NOTE: Blogroll specific rules
 !
+himasoku.com##.article-body-more > iframe[src^="http://himasoku.com/"][width]
 toushichannel.net##article .bottom-link
 ||pinkt.cocolog-nifty.com/pink/antenna.js
 oshiridaisuki.com##.article-header > div#text-4
@@ -49407,6 +49412,9 @@ pokemonbbs.com##.rss_sp
 ikarishintou.com###rss_area
 ikarishintou.com##.RSScon
 /js/koteilink*.js$domain=ikarishintou.com|heartlife-matome.com|ikuji-news.com|uwasakijo.net|sutekinakijo.com
+uwakich.com##iframe:is([src="/include1_iframe1.html"], [src="/include2_iframe1.html"])
+||uwakich.com/include1.html$subdocument
+||uwakich.com/include2.html$subdocument
 ||uwakich.com/js/kiji*.js
 ||uwakich.com/js/top*.js
 uwakich.com##.links-navy1
