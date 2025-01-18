@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.40",
-			"timeUpdated": "2025-01-17T14:41:38+0000",
+			"version": "2.0.49.41",
+			"timeUpdated": "2025-01-18T04:38:57+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
