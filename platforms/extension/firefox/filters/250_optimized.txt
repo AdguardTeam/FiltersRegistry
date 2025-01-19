@@ -1,5 +1,5 @@
-! Checksum: 5o0lPSAivUuISzups7jteg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1737191163-14400.patch
+! Checksum: /gHT50I3G78UosReUp5hZg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1737263137-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.1
@@ -166,6 +166,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||livejasmin.com/*&origin=$document
 ||exs7oilq14cz6.click^$all
 ||aysesuretobea.com^$all
+||ndencesch.xyz^$all
 .avito.www.booking.$all
 ||affordedseasick.com^$all
 ||crawledgoblet.com^$all
@@ -381,7 +382,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ~digg.com##a[href*="://digg.com/submit?url="]
 ~ef.com##.social-btns:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###fb-share
-~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###share-facebook
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.btn[href*="facebook.com/sharer/"]
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.facebook-like-box:not(html,body,:empty)
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.facebook-share:not(html,body,:empty)
@@ -710,6 +710,7 @@ alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /jquery.snow.js
 /let-it-snow.
+/script/snow.js
 /snow-fall.js
 /snow-falling.js
 /snow-storm^$script
@@ -819,9 +820,13 @@ $removeparam=yclid
 $removeparam=gclid
 $removeparam=fbclid
 $removeparam=_openstat
+$removeparam=fb_action_ids
 $removeparam=fb_comment_id
+$removeparam=fb_action_types
 $removeparam=fb_ref
 $removeparam=fb_source
+$removeparam=action_object_map
+$removeparam=action_ref_map
 $removeparam=adfrom
 $removeparam=aiad_clid
 $removeparam=maf
@@ -990,6 +995,7 @@ $removeparam=mkt_tok
 $removeparam=affname
 $removeparam=MID,domain=~media-cdn.costco.*|~community.arubanetworks.com
 $removeparam=srnd
+$removeparam=action_type_map
 $document,removeparam=/^bsft_.*$/
 $document,removeparam=/^adjust.*$/,domain=~adj.st
 $document,removeparam=elq,domain=~comcast.com|~comcastforbusiness.com
@@ -1115,7 +1121,6 @@ $removeparam=cm_ite
 $removeparam=cm_lm
 $removeparam=CSID
 $document,removeparam=/^source=webgains$/
-$document,removeparam=/^from=kelkoo.*$/
 $removeparam=sClickID
 $removeparam=paid
 $removeparam=pacid
@@ -1144,7 +1149,6 @@ $removeparam=deep_link_sub1
 $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
 $removeparam=dt_dapp
-$removeparam=dt_platform
 $removeparam=waad
 $removeparam=_gac
 $removeparam=af_campaign
@@ -1160,6 +1164,9 @@ $removeparam=rndad
 $removeparam=a_fid
 $removeparam=afCampaignId
 $removeparam=afCreativeId
+$removeparam=trk_contact
+$removeparam=trk_msg
+$removeparam=trk_sid
 $removeparam=mkwid
 $removeparam=pcrid
 $removeparam=ef_id
@@ -1763,7 +1770,6 @@ $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||malwarebytes.com^$removeparam=x-source
 ||malwarebytes.com^$removeparam=ADDITIONAL_x-source
 ||ozon.ru^$removeparam=advert
-$document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
 ||surfshark.com^$removeparam=transaction_id
@@ -1779,6 +1785,7 @@ $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|a
 $removeparam=pt,domain=apple.com|icedrive.net
 ||kohls.com^$removeparam=kls_sbp
 ||kohls.com^$removeparam=pfm
+||kohls.com^$removeparam=bdrecsId
 ||kohls.com^$removeparam=prdPV
 ||kochava.com^$removeparam=network_id
 ||kochava.com^$removeparam=device_id
@@ -1959,6 +1966,7 @@ $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
+$removeparam=sub,domain=allboner.com|twinkvideos.com
 ||fandom.com^$removeparam=so
 ||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
@@ -1990,7 +1998,6 @@ $document,removeparam=helpref,domain=whatsapp.com|facebook.*|facebookwkhpilnemxj
 $removeparam=srsltid,document
 ||dl-protect.$removeparam=fn
 ||dl-protect.$removeparam=rl
-||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
 ||malwarebytes.com^$removeparam=x-affid
 ||malwarebytes.com^$removeparam=ADDITIONAL_AFFID
@@ -2011,7 +2018,6 @@ $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com
 ||github.com^$removeparam=ref_loc
 ||github.com^$removeparam=ref_page
 ||quizlet.com^$removeparam=funnelUUID
-||quizlet.com^$removeparam=signupOrigin
 ||xiaohongshu.com^$removeparam=app_platform,document
 ||xiaohongshu.com^$removeparam=app_version,document
 ||xiaohongshu.com^$removeparam=share_from_user_hidden,document
