@@ -1,8 +1,8 @@
-! Checksum: vR5w2zxEJwj//Sh0qtTLQA
+! Checksum: kDiG72qmAlrLWgNiR0GWmA
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.68.50
-! TimeUpdated: 2025-01-20T08:31:36+00:00
+! Version: 2.3.68.51
+! TimeUpdated: 2025-01-20T09:31:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -34111,6 +34111,8 @@ dziennik.pl##.widget-list-ul > .infeed1
 ! https://github.com/MajkiIT/polish-ads-filter/issues/22709
 ! Some links redirects through "wykop.pl/api/v3/ads/redirect?data=" and it might be blocked by some rules,
 ! so rule below converts links to destination URL
+!+ NOT_PLATFORM(windows, mac, android)
+@@||wykop.pl/api/v3/ads/redirect?data=$xmlhttprequest,domain=wykop.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170628
 ||r.wykop.pl/widget-api/*/widget$xmlhttprequest
 ! Rule below fixes issue with loading content on - https://wykop.pl/tag/reklama
@@ -37079,6 +37081,8 @@ truyenqqhot.com##div[id^="ads_"]
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196780
+! Fixes video player
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194267
 ! Website is broken if any ExtendedCss rule is applied in app, rule below should fixes it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192508
@@ -40541,6 +40545,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+collider.com###adsninja-below-main-pic
 gogoanime.co.at##.megavid > .mvelement > .kln
 klz9.com###aigirlfriendad
 traverseticker.com##a[onclick*="Ads"]
@@ -40619,7 +40624,7 @@ nypost.com##body .ad--container
 igdb.com##a[href^="https://www.loremasters.com/"]
 dailyfly.com###zox-lead-top-in
 dailyfly.com##:is(.theiaStickySidebar, .zox-post-side-wrap) > .zox-divs > div[id^="block-"]
-nextpit.com##.cpgSlot
+nextpit.*##.cpgSlot
 nextpit.com##.articlePart > aside[data-affiliate="true"]
 nextpit.com##.articlePart *:not(center) > aside[data-affiliate="true"]
 wionews.com##.ads-div-style
@@ -57620,6 +57625,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196780
+collider.com#@#.w-adsninja-video-player
 ! app.datapacket.com - broken by HTML filtering
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195676
 @@||e.mp4.center^$domain=niceporn.tv|beeg.porn
@@ -69894,8 +69901,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /RdmAdFeed.js$script
 /rdrr/renderer.js$third-party
 /RealMedia/ads/*$~xmlhttprequest
-/redirect/?spot_id=
-/redirect?tid=
+/redirect/?spot_id=$third-party
 /reklam/*$~xmlhttprequest,domain=~cloudflare.com|~github.com|~reklam.com.tr
 /reklama2.jpg$image
 /reklama2.png$image,domain=~aerokuz.ru

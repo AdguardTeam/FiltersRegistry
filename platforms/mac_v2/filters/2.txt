@@ -1,9 +1,9 @@
-! Checksum: 6Y/2G+hoobTFLXNrO88HRQ
-! Diff-Path: ../patches/2/2-s-1737362936-3600.patch
+! Checksum: Pcnt0HuoMWInl0CqCGLCyA
+! Diff-Path: ../patches/2/2-s-1737366256-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.68.50
-! TimeUpdated: 2025-01-20T08:31:36+00:00
+! Version: 2.3.68.51
+! TimeUpdated: 2025-01-20T09:31:34+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -38235,6 +38235,9 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196780
+! Fixes video player
+collider.com#%#(()=>{const n=[];n.push=n=>{try{n()}catch(n){console.error(n)}},window.adsNinja=window.adsNinja||{queue:n}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194267
 ! Website is broken if any ExtendedCss rule is applied in app, rule below should fixes it
 !+ PLATFORM(windows, mac, android)
@@ -43416,6 +43419,13 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+pushsquare.com###page-sidebar > .insert:has(> div[data-dfp-id])
+pushsquare.com###content > .article-billboard:has(> div[data-dfp-id])
+pushsquare.com###page > .inset:not(.content-wrapper):has(> .insert > div[data-dfp-id])
+collider.com###adsninja-below-main-pic
+esports.op.gg##.content > .hidden:has(> .text-center:only-child > .adsbygoogle:only-child)
+esports.op.gg##.sticky > div[class^="lg"]:has(> div[class^="min-h-"]:only-child > .adsbygoogle:only-child)
+esports.op.gg##.content > .mt-6 > div[class^="lg"]:has(> .text-center:only-child > .adsbygoogle:only-child)
 gogoanime.co.at##.megavid > .mvelement > .kln
 klz9.com###aigirlfriendad
 traverseticker.com##a[onclick*="Ads"]
@@ -43533,7 +43543,7 @@ androidapksfree.com##.posts-list > div[style]:has(> div.header-ad-heading)
 igdb.com##a[href^="https://www.loremasters.com/"]
 dailyfly.com###zox-lead-top-in
 dailyfly.com##:is(.theiaStickySidebar, .zox-post-side-wrap) > .zox-divs > div[id^="block-"]
-nextpit.com##.cpgSlot
+nextpit.*##.cpgSlot
 nextpit.com##.articlePart > aside[data-affiliate="true"]
 nextpit.com##.articlePart *:not(center) > aside[data-affiliate="true"]
 wionews.com##.ads-div-style
@@ -63327,6 +63337,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196780
+collider.com#@#.w-adsninja-video-player
 ! app.datapacket.com - broken by HTML filtering
 @@||app.datapacket.com^$content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195676
@@ -71506,8 +71518,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /RdmAdFeed.js$script
 /rdrr/renderer.js$third-party
 /RealMedia/ads/*$~xmlhttprequest
-/redirect/?spot_id=
-/redirect?tid=
+/redirect/?spot_id=$third-party
 /reklam/*$~xmlhttprequest,domain=~cloudflare.com|~github.com|~reklam.com.tr
 /reklama2.jpg$image
 /reklama2.png$image,domain=~aerokuz.ru
