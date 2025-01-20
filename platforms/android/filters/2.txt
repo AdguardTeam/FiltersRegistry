@@ -1,9 +1,9 @@
-! Checksum: zQ8WiUMvaNlGQfFWRpiypA
-! Diff-Path: ../patches/2/2-s-1737384443-3600.patch
+! Checksum: ulw2ZBubwNexG+wULmD1dQ
+! Diff-Path: ../patches/2/2-s-1737388251-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.68.56
-! TimeUpdated: 2025-01-20T14:31:47+00:00
+! Version: 2.3.68.57
+! TimeUpdated: 2025-01-20T15:31:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17286,6 +17286,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196789
+file-upload.net#%#//scriptlet('set-constant', 'advertisement3', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196799
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=titans.com.au
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196663
@@ -43812,6 +43814,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+brisbanetimes.com.au,smh.com.au,theage.com.au,watoday.com.au###content > div > div:has(> div.container > div.adWrapper)
 lingolia.com##div[id^="traffective-ad-"]
 lingolia.com###lingolia-plus-adv
 theroar.com.au##div[style^="min-height:"][style*="max-height:"]
