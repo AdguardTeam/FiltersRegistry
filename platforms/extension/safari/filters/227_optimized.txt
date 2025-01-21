@@ -1,9 +1,9 @@
-! Checksum: eSY/FhQ2afNexbaIVH7PZA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1737349539-14400.patch
+! Checksum: o6YiVXu/pBIwJPAkGSFOBA
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1737435930-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.20.13
-! TimeUpdated: 2025-01-20T05:01:33+00:00
+! Version: 2.0.20.14
+! TimeUpdated: 2025-01-21T05:01:32+00:00
 ! Expires: 1 day (update frequency)
 ||ad-creative.pstatic.net^
 ||centaurs-rest.coupang.com^
@@ -2869,6 +2869,7 @@ auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ||api-gw.sports.naver.com/cms/contents/adContents/$domain=m.sports.naver.com
 @@||api-gw.sports.naver.com/cms/contents/adContents/GENERAL$domain=m.sports.naver.com
 @@||api-gw.sports.naver.com/cms/contents/adContents/BRAND_STORY$domain=m.sports.naver.com
+www.naver.com#$##shortcutArea { height: auto !important; padding-left: 14px !important; }
 search.shopping.naver.com#$#.seller_filter_area ~ div[class*="_list_"] div[class^="adProduct_item"] { visibility: hidden !important; height: 1px !important; padding: 0 !important; }
 academy.prompie.com#$#body > #academyMainModal:has(a[href^="https://academy.prompie.com/banners/"]) { display: none !important; }
 academy.prompie.com#$#body.modal-open:has(> #academyMainModal a[href^="https://academy.prompie.com/banners/"]) { overflow: auto !important; }
@@ -3309,6 +3310,7 @@ m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', '_boom')
 m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.?(jpg|gif)/')
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
+www.naver.com#%#//scriptlet('remove-class', 'type_ad', '#shortcutArea')
 enjoyplan.tistory.com#%#//scriptlet('prevent-setTimeout', 'coupangAd')
 laftel.net#%#//scriptlet('prevent-setInterval', '[native code]', '1000')
 doctornow.co.kr#%#//scriptlet('json-prune', 'data', 'data.getBannerAdExchange')
