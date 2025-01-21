@@ -1,9 +1,9 @@
-! Checksum: 0fgEZUB4xj+exWxYchhP7w
-! Diff-Path: ../patches/14/14-s-1737459954-3600.patch
+! Checksum: d4T0UYdz3AuAAjKSHTWBOQ
+! Diff-Path: ../patches/14/14-s-1737463982-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.78
-! TimeUpdated: 2025-01-21T11:41:35+00:00
+! Version: 2.2.19.79
+! TimeUpdated: 2025-01-21T12:47:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20810,6 +20810,10 @@ docviewer.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.Rtb
 mail.yandex.*##div[class^="RightColumn-m__root--"]
 mail.yandex.*##.message-list-banner-portal + div[class][id]:has(> div:empty)
 mail.yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
+!
+! Yandex.Search
+! Main page under the search bar
+ya.ru##.body__content > aside.content__informers-bg + div[style]:has(> style)
 !
 ! Yandex.TV
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
@@ -49937,6 +49941,7 @@ book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 !
 ! SECTION: Self-promo - Regular rules
 !
+onet.pl##section[class^="Body_content_"] #pianoInfo:has(> .tp-container-inner > iframe[src*="&displayMode=inline&widget=template"])
 olx.com.br##nav[aria-label="Carrossel de banners"]
 uyamaresort.com###block-25
 uyamaresort.com###block-33

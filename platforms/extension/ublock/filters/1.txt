@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /jzOOOMxL+Qi01AhgTj3rg
-! Diff-Path: ../patches/1/1-s-1737405762-3600.patch
+! Checksum: FmHcxjlyeJNw0Gg/rwPifw
+! Diff-Path: ../patches/1/1-s-1737464001-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.96.77
-! TimeUpdated: 2025-01-20T20:31:16+00:00
+! Version: 2.0.96.78
+! TimeUpdated: 2025-01-21T12:32:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4373,6 +4373,9 @@ modsforwot.ru,helpsetup.ru,vargr.ru,trialkeys.ru##+js(abort-on-property-write, a
 modsforwot.ru,helpsetup.ru,vargr.ru,trialkeys.ru##+js(abort-on-property-read, ad_nodes)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196802
+howdyho.net#$##nevermind { display: block !important; }
+howdyho.net#$##rustrover { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191632
 cont.ws##+js(abort-on-property-read, Object.prototype.RenderMarks)
 cont.ws##div[class^="main-fullwidth-banner-"]
@@ -4390,9 +4393,6 @@ animix.lol##+js(no-fetch-if, www3.doubleclick.net)
 anidubonline.com##+js(no-xhr-if, /(vast|getCode)\?/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181132
 ||v*.plrjs.org/*.xml$xmlhttprequest,redirect=noop.txt,domain=volley.ru
-! https://github.com/AdguardTeam/AdguardFilters/issues/177587
-howdyho.net#$##anti-adblock { display: none !important; }
-howdyho.net##+js(remove-attr, style, #download div.dwrapper)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176423
 leingpt.ru#@#div[id^="yandex_rtb"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176044
@@ -7547,6 +7547,7 @@ chehov-vid.ru,161.ru,prufy.ru,ysia.ru,5koleso.ru,ngs.ru,i38.ru,chita.ru,lenta.ru
 !
 !
 !
+howdyho.net#?#.inner > section.default:has(> header > h1:contains(PEKЛAМA))
 io.gidonline.fun###main .tiznews
 habr.com##.banner-wrapper
 overclockers.ru##.ui:has(> div[class] > div[id^="yandex_"])
