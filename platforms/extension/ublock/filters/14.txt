@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 7IhImvDWqbvlaRhHIiJMFA
-! Diff-Path: ../patches/14/14-s-1737470773-3600.patch
+! Checksum: 8cwi+gkckbNdzm2fPqb+9A
+! Diff-Path: ../patches/14/14-s-1737474263-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.19.81
-! TimeUpdated: 2025-01-21T14:40:54+00:00
+! Version: 2.2.19.82
+! TimeUpdated: 2025-01-21T15:40:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2429,6 +2429,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+lamoda.by##section[class^="_notifyForm_"]
 synlab.cz#$##cookieman-modal { display: none !important; }
 synlab.cz#$#.modal-backdrop { display: none !important; }
 synlab.cz#$#body { overflow: auto !important; padding-right: 0 !important; }
@@ -32552,6 +32553,8 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 !
 ! SECTION: Push notifications - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196878
+@@||a.lmcdn.ru/static/*/assets/pushwoosh-$script,domain=lamoda.by
 ! comfy.ua - broken recommendations
 @@||esputnik.com/scripts/$domain=comfy.ua
 @@||ai.esputnik.com/graphql
@@ -43719,6 +43722,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+lamoda.by##div[banner-slot="js_smart_banner"]
 mega.nz##.mega-header > div.banner-block
 zap.co.il#$##androidStrip { display: none !important; }
 zap.co.il#$##androidStrip + div.Main { padding: 0 !important; }
