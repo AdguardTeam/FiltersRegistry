@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.68.72",
-			"timeUpdated": "2025-01-21T16:31:34+0000",
+			"version": "2.3.68.73",
+			"timeUpdated": "2025-01-21T17:31:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.9.93",
-			"timeUpdated": "2025-01-21T15:39:42+0000",
+			"version": "2.1.9.94",
+			"timeUpdated": "2025-01-21T17:45:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.61.42",
-			"timeUpdated": "2025-01-20T20:38:07+0000",
+			"version": "2.0.61.43",
+			"timeUpdated": "2025-01-21T17:45:44+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -615,8 +615,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.19.82",
-			"timeUpdated": "2025-01-21T15:40:13+0000",
+			"version": "2.2.19.83",
+			"timeUpdated": "2025-01-21T17:46:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.56",
-			"timeUpdated": "2025-01-21T14:40:59+0000",
+			"version": "2.0.49.57",
+			"timeUpdated": "2025-01-21T17:46:09+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.55.4",
-			"timeUpdated": "2025-01-21T15:40:19+0000",
+			"version": "2.0.55.5",
+			"timeUpdated": "2025-01-21T17:46:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
