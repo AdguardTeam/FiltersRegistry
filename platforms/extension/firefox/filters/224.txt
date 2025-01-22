@@ -1,9 +1,9 @@
-! Checksum: 7EDPOJKIIdI8HShC4buu3g
-! Diff-Path: ../patches/224/224-s-1737539033-3600.patch
+! Checksum: JUb3Zq7cBiwQxd4jC0TZOQ
+! Diff-Path: ../patches/224/224-s-1737543063-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.30.31
-! TimeUpdated: 2025-01-22T09:40:20+00:00
+! Version: 2.1.30.32
+! TimeUpdated: 2025-01-22T10:47:05+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -304,10 +304,6 @@ colamanga.com#@#.ADLeader
 xchina.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'check')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194144
 2urs.com#%#//scriptlet('abort-on-property-read', 'ads')
-! https://github.com/AdguardTeam/AdguardFilters/issues/192543
-t66y.com#%#//scriptlet('prevent-setTimeout', 'tpcHt1ml', '1006')
-t66y.com#%#//scriptlet('prevent-setTimeout', 'tpcHt0ml', '1006')
-t66y.com#%#//scriptlet('prevent-setTimeout', 'adhtml', '10006')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191724
 @@/js/adview_*.adsbygoogle.js$~third-party,domain=letv8.cc|zhibo1.cc
 letv8.cc,zhibo1.cc#%#//scriptlet('trusted-set-constant', 'adsv', '"Y"')
@@ -644,8 +640,8 @@ game735.com#$#div[id^="gklobl"] { height: 1px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43307
 @@||www.ruanyifeng.com^$csp=script-src 'self' * 'sha256-0McqMM66/wAVZmxF6zXpjNsb1UMbTl4LXBXdhqPKxws='
 ruanyifeng.com#@#a > img[src*="wangbase.com/blogimg/asset/"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/46061#issuecomment-601842012
-t66y.com#%#//scriptlet('prevent-setTimeout', '/tpc.?[A-Z0-9].?tml/')
+! https://github.com/AdguardTeam/AdguardFilters/issues/196593
+t66y.com#%#//scriptlet('prevent-setTimeout', '/(\s|\()tpc/')
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_edge)
 t66y.com#$?#.sptable_do_not_remove { display: block !important; visibility: hidden !important; }
 ||alicdn.com^$domain=t66y.com

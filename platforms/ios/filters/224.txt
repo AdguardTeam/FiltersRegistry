@@ -1,9 +1,9 @@
-! Checksum: gPsSuoMlheO0rYPnGjLFrQ
-! Diff-Path: ../patches/224/224-s-1737539054-3600.patch
+! Checksum: Vvwuh4LI4JzWCn2M4ixOVg
+! Diff-Path: ../patches/224/224-s-1737543086-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.30.31
-! TimeUpdated: 2025-01-22T09:40:20+00:00
+! Version: 2.1.30.32
+! TimeUpdated: 2025-01-22T10:47:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -305,14 +305,6 @@ xchina.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'check')
 2urs.com#%#//scriptlet('abort-on-property-read', 'ads')
 !+ PLATFORM(ios, ext_android_cb)
 @@||2urs.com/js/*_cpa_$script
-! https://github.com/AdguardTeam/AdguardFilters/issues/192543
-t66y.com#%#//scriptlet('prevent-setTimeout', 'tpcHt1ml', '1006')
-t66y.com#%#//scriptlet('prevent-setTimeout', 'tpcHt0ml', '1006')
-t66y.com#%#//scriptlet('prevent-setTimeout', 'adhtml', '10006')
-!+ PLATFORM(ios, ext_android_cb)
-t66y.com#@#.tips
-!+ PLATFORM(ios, ext_android_cb)
-t66y.com#@#.sptable_do_not_remove
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191724
 @@/js/adview_*.adsbygoogle.js$~third-party,domain=letv8.cc|zhibo1.cc
 letv8.cc,zhibo1.cc#%#//scriptlet('trusted-set-constant', 'adsv', '"Y"')
@@ -699,8 +691,8 @@ game735.com#$#div[id^="gklobl"] { height: 1px!important; }
 @@||game735.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43307
 ruanyifeng.com#@#a > img[src*="wangbase.com/blogimg/asset/"]
-! https://github.com/AdguardTeam/AdguardFilters/issues/46061#issuecomment-601842012
-t66y.com#%#//scriptlet('prevent-setTimeout', '/tpc.?[A-Z0-9].?tml/')
+! https://github.com/AdguardTeam/AdguardFilters/issues/196593
+t66y.com#%#//scriptlet('prevent-setTimeout', '/(\s|\()tpc/')
 t66y.com#@#.tips
 t66y.com#@#.sptable_do_not_remove
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_edge)
