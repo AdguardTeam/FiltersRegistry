@@ -1,9 +1,9 @@
-! Checksum: +VtPzu2biy3t2b4KanfrZw
-! Diff-Path: ../patches/2/2-s-1737531947-3600.patch
+! Checksum: FNQ6/y5Dr5rUukf/5XpQxg
+! Diff-Path: ../patches/2/2-s-1737535409-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.68.80
-! TimeUpdated: 2025-01-22T07:32:00+00:00
+! Version: 2.3.68.81
+! TimeUpdated: 2025-01-22T08:31:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28280,6 +28280,12 @@ tainio-mania.online##a[href^="https://affcpatrk.com/"]
 coverapi.store##.home_lefts
 queen.gr##.inline-banner
 kathimerini.gr##.nx-billboard-ad-row
+! https://github.com/AdguardTeam/AdguardFilters/issues/196914
+sport24.gr##html > body [id^="ros"]:not(#style_important)
+@@||player.ex.co/config$domain=sport24.gr
+@@||player.ex.co/player/$domain=sport24.gr
+@@||cdn.ex.co/player/*.js$domain=sport24.gr
+@@||cdn.ex.co/transformations/production/$domain=sport24.gr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192963
 omegatv.com.cy#%#//scriptlet('set-constant', 'Brid.A9.prototype.runCMSBidding', 'noopPromiseResolve')
 omegatv.com.cy#%#//scriptlet('set-constant', 'Brid.A9.prototype.runBackfillBidding', 'noopPromiseResolve')
@@ -43827,6 +43833,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+heypoorplayer.com###widgets > div[id^="block-"]:has(> div[id^="nn_mpu"])
 javboys.upn.one##body > iframe[style*=" position: absolute;"][style*="overflow: hidden;"]:not([src])
 igetintopc.com##.blocks > li.block:has(a[id^="dl-banner-"])
 christianforums.com##.block-body > div[style]:has(> a[href^="https://amzn.to/"])

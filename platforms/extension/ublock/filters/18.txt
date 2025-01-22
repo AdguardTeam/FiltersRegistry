@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cfdjWiSu1ga9Gpf00diwVA
-! Diff-Path: ../patches/18/18-s-1737528221-3600.patch
+! Checksum: MJu7gNEBfP80ZbLoL39Veg
+! Diff-Path: ../patches/18/18-s-1737535393-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.55.7
-! TimeUpdated: 2025-01-22T06:39:47+00:00
+! Version: 2.0.55.8
+! TimeUpdated: 2025-01-22T08:39:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2429,6 +2429,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+lenco.com###cookies-banner-overlay
 mironet.cz###cookiesDialog
 bunq.me##+js(set-local-storage-item, bunq:CookieConsentStore:isBannerVisible, false)
 lime-shop.com##.l-accept-cookies
@@ -15725,6 +15726,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! iclicker.com - accept cookies is reqired
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=iclicker.com
+iclicker.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196812
 oxfam.org#@#.cookie-wrapper
 oxfam.org#@#.cookie-banner:not(body):not(html)
