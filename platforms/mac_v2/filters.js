@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.10.0",
-			"timeUpdated": "2025-01-22T16:39:42+0000",
+			"version": "2.1.10.1",
+			"timeUpdated": "2025-01-22T19:38:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
