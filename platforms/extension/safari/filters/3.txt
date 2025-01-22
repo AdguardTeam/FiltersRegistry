@@ -1,9 +1,9 @@
-! Checksum: n8eBK9QwxTti604YEgPqLQ
-! Diff-Path: ../patches/3/3-s-1737546512-3600.patch
+! Checksum: qDHgNiqpIrttzoczVZn4qA
+! Diff-Path: ../patches/3/3-s-1737550068-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.79.14
-! TimeUpdated: 2025-01-22T11:42:41+00:00
+! Version: 2.0.79.15
+! TimeUpdated: 2025-01-22T12:42:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -40976,10 +40976,11 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||ump.sf-express.com/monitor/*/report|
 ||cdn-assets.dzcdn.net/common/js/gdpr-appliance.js
 ||cdn.builder.io/api/v1/pixel
 ||dell.com/*/clickstream/collect
-/\.coupang\.com\/[A-Za-z0-9-_]+\/[A-Za-z0-9-_]+\/[A-Za-z0-9-_]+\/[A-Za-z0-9-_]+\/[A-Za-z0-9-_]+/$domain=coupang.com,script,xmlhttprequest,method=get
+/\.coupang\.com\/(?!resources)[A-Za-z0-9-_]+\/[A-Za-z0-9-_]+\/[A-Za-z0-9-_]+\/[A-Za-z0-9-_]+\/[A-Za-z0-9-_]+/$domain=coupang.com,script,xmlhttprequest,method=get
 ||tripadvisor.*/wm/record
 ||tripadvisor.*/PVLog
 nike.com#%#//scriptlet('set-local-storage-item', 'pi_pageview_count', '$remove$')
@@ -45594,6 +45595,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Bad:  example.org#@##cookie
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196703
+@@||googletagmanager.com/gtm.js$domain=cuisineactuelle.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188829
 !+ PLATFORM(ios, ext_safari)
 @@||worthitorwoke.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js
