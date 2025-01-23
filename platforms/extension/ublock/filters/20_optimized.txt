@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 0m4dRihMtmrFW3ibpx8CJw
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1737557252-3600.patch
+! Checksum: 660dU3y+jeqiFXgw86e8TQ
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1737600210-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.18.74
@@ -64,7 +64,6 @@ g-mh.org,godamh.com,manhuafree.com###PwaBarButton
 wzstats.gg##app-download-app-banner
 bing.com###id_mobpoppos
 dyxs.sbs##.popup-ts
-etstur.com###appStoreContentForm
 lavka.yandex.ru###root > button[style*="avatars.mds.yandex.net/get-bunker/"]
 ||animatebookstore.com/js/smartbanner/smart-app-banner.js
 tenbin.ai##.p-WorkspacePWAInstallBanner
@@ -143,6 +142,7 @@ sp.manga.nicovideo.jp##div.fixed.bottom-2
 sakurazaka46.com##.app-button
 hangikredi.com##div[class*="bg-bannerLeftGradient"]
 meteum.ai##button[class^="AppPromo_container"]
+level.travel##div[class^="dynamicDataWrapper-module__appBannersWrapper"]
 m.sonyunara.jp,magnit.ru##.install-app-banner
 navitime.co.jp###body-left > div.section:has(> a[href="https://www.navitime.co.jp/pcstorage/html/japan_travel/english/"])
 megamarket.ru##.header-entry-point__app > a
@@ -228,7 +228,6 @@ chirashi.delishkitchen.tv##div[class^="delish-chirashi-"][class$="-install-banne
 manga.nicovideo.jp##a[href^="https://nicomanga.onelink.me/"]
 m.economictimes.com##+js(set-session-storage-item, nudgeStickyBannerHide, true)
 m.economictimes.com##a[href*="app.goo.gl/?link="]
-zutool.jp##.column_app_box01
 zutool.jp##[class^="cmn_app_link"]
 mpj-portal.jp##.mHoldem-app
 meijutt.net##.widget-weixin
@@ -325,6 +324,7 @@ u.gg##.builds-page-promo
 happymod.com##.download_button
 hellobacsi.com##a[href="https://hellobacsivn.page.link/app"]
 clubd.co.jp##.dc-footer-banner
+nairametrics.com##.code-block.code-block-2
 japantravel.navitime.com,uniqlo.com.hk##.app-modal
 japantravel.navitime.com##.p__aside__app
 youla.ru##+js(set-cookie, youla_fullscreenbanner, disabled)
@@ -426,7 +426,6 @@ sfes.rakuten-bank.co.jp#$##area_download-app { display: none !important; }
 chizhik.club#?##__next > div[class]:has(> div.wrapperContainer > a[href="https://chizhik.club/mobile"])
 www-aljazeera-com.cdn.ampproject.org,aljazeera.com##div[class*="app-download-banner"]
 ryukyushimpo.jp#?#.flex-col > .justify-center:has(a[href*="//play.google.com/store/apps/details"])
-locipo.jp##div[class^="app_bannar_"]
 nicomanga.com#?#.card-dark:has(> div.card-body > center > a[href="https://kutt.it/lovehugapk"])
 linkedin.com##.cta-modal.windows-app-upsell
 giga.de##a[href^="https://apps.apple.com/de/app/giga/"]
@@ -460,6 +459,7 @@ cenoteka.rs##+js(set-cookie-reload, android_download_hide, 1)
 baike.baidu.com##.wgt-baikeapp-promote-container
 kavkazr.com##.banner__a
 espreso.co.rs###installAndroidApp
+vesti.kz##.button-install
 flagma.by##+js(set-cookie-reload, flagmajob_ads_shown, 1)
 ithome.com##.down_app
 m.shein.com###branch-app
@@ -578,6 +578,7 @@ ali213.net##.appjctj
 sofabold.dk##.AppStoreRight
 xinhuanet.com##.xwApp
 apkpure.*##.aegon-down-item
+clearnotebooks.com#?#.grid-notes_container > div.base-component:has(> div.base-component > div.how-to-use)
 producthunt.com##+js(addEventListener-defuser, scroll, Math.round(e/n)!==r)
 weblio.jp##.weblio-apps
 androeed.ru##.our_app
@@ -882,11 +883,11 @@ spbdnevnik.ru###getAppAdds
 mcdonalds.co.jp###freestyle-apps-sns
 m.hungryapp.co.kr##.Mibox_down
 suzuri.jp##.footer-app-banner
-ozmall.co.jp##.cmp__banner-item > a[href^="/app/"]
 lp.p.pia.jp##.piawebFooter__download
 ||s.yimg.jp/images/weather/promo/banner
 r.gnavi.co.jp###sub-ap
 1track.ru##.offer_app
+kariyer.net##.download-app-wrapper
 pointcard.rakuten.co.jp###optionalAppDownload
 wifiman.com##+js(set-cookie, sb-closed, 1)
 dmzj.com##.float_code
@@ -1085,11 +1086,13 @@ uol.com.br##.c-notification-link-app
 blog.system76.com#$#body { padding-top: 0!important; }
 n-tv.de##.teaser__appbanner
 tver.jp##a[class^="app-banner_container"]
+cart.fc2.com##.app_notice_overlay
 booking.com##div[data-item-id="gta_smart_banner"]
 livemint.com#$#.mobileAd { height: 0 !important; }
 rei.com,ck101.com,av.movie,ettoday.net,portal.librus.pl###app-download
 portal.librus.pl##picture > img[src="https://portal.librus.pl/images/base/aplikacjamobilna.jpg"]
 ||portal.librus.pl/images/base/aplikacjamobilna.jpg
+||portal.librus.pl/images/base/aplikacjamobilna_mobile.jpg
 ||portal.librus.pl/ad|
 reverso.net###home-badges
 ifunny.co#$#body { overflow-y: auto !important; }
@@ -1312,6 +1315,7 @@ market.yandex.*##div[data-apiary-widget-name*="/HeaderAppDistributionBanner"]
 realty.ya.ru##+js(set-cookie, splash_banner_closed, 1)
 uslugi.yandex.ru##.DistributionCard-Container
 uslugi.yandex.ru##.MobAppStoreLinks
+auto.ru#$#.page_freeze { overflow: auto !important; position: static !important; }
 bookmate.ru##.book-cover div.store-links
 bookmate.ru##.app-banner
 fredmeyer.com#$?#.kds-Modal-overlay--afterOpen { display: none !important; }
