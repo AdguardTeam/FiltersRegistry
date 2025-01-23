@@ -1,8 +1,8 @@
-! Checksum: WxbywT1jy+jN65dFNwlfEw
+! Checksum: T9oL5+5w+aXATpV4IwGU3g
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.5
-! TimeUpdated: 2025-01-23T15:39:25+00:00
+! Version: 2.2.20.6
+! TimeUpdated: 2025-01-23T17:43:00+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -9321,6 +9321,7 @@ music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 [$path=/video]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'throwFunc')
 afisha.yandex.*#%#//scriptlet('prevent-eval-if', 'bidReqIdStr')
 docviewer.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.Rtb')
+mail.yandex.*##div[class^="PageLayout"] > div[class*=" "][style]:has(> div > div > a[class*="DisableAdsButton"])
 mail.yandex.*##div[class^="RightColumn-m__root--"]
 mail.yandex.*##.message-list-banner-portal + div[class][id]:has(> div:empty)
 mail.yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
@@ -9453,6 +9454,7 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Hom
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.InArticleAd
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.SidebarAd
 !#safari_cb_affinity
+||sprysummit.com^
 ||pixelvariety.com^
 ||unloadyourself.com^
 ||granlite.com^
@@ -19244,6 +19246,8 @@ yourchannel.blog.jp#@##app-follow-banner
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
 instagram.com#?#div[style*="opacity"] > div > div[class]:has(> div[class] > div[style] > div[style] > div[aria-labelledby] > div[class]:last-child > button)
 instagram.com##._aagw:empty
+://www.google.*/async/folsrch?*&async=_basejs:*,_basecomb:*&q=$xmlhttprequest
+google.*##div[data-q][data-al]
 op.gg##.css-1l7e8un
 techinsider.ru##.article-detail__recommendation-video
 today.com#%#//scriptlet('remove-class', 'jw-flag-floating', '.inline-video__player div.jwplayer.jw-flag-floating')

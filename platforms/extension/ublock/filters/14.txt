@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kGA0toGqKVggjphrsjbnHw
-! Diff-Path: ../patches/14/14-s-1737647013-3600.patch
+! Checksum: GWSoaYb/tdsLf/J+2A00+Q
+! Diff-Path: ../patches/14/14-s-1737654417-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.5
-! TimeUpdated: 2025-01-23T15:39:25+00:00
+! Version: 2.2.20.6
+! TimeUpdated: 2025-01-23T17:43:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20063,6 +20063,7 @@ afisha.yandex.*##+js(noeval-if, bidReqIdStr)
 docviewer.yandex.*##+js(abort-on-property-read, Object.prototype.Rtb)
 !
 ! Yandex.Mail
+mail.yandex.*##div[class^="PageLayout"] > div[class*=" "][style]:has(> div > div > a[class*="DisableAdsButton"])
 mail.yandex.*##div[class^="RightColumn-m__root--"]
 mail.yandex.*##.message-list-banner-portal + div[class][id]:has(> div:empty)
 mail.yandex.*##+js(json-prune, seatbid rtb)
@@ -20356,6 +20357,7 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 !
 ! Add without $third-party, so apps are blocking them too
 !
+||sprysummit.com^
 ||pixelvariety.com^
 ||unloadyourself.com^
 ||granlite.com^
@@ -44473,6 +44475,9 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! Google Search - AI Overview
+://www.google.*/async/folsrch?*&async=_basejs:*,_basecomb:*&q=$xmlhttprequest
+google.*##div[data-q][data-al]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196753
 op.gg##.css-1l7e8un
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196503

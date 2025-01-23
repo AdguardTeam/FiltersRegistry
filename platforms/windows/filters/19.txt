@@ -1,9 +1,9 @@
-! Checksum: 13gsfTQ0PNyVXzZQzrh8nQ
-! Diff-Path: ../patches/19/19-s-1737647025-3600.patch
+! Checksum: I3HvDeTcECYhkXK6msi5qw
+! Diff-Path: ../patches/19/19-s-1737654425-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.49.25
-! TimeUpdated: 2025-01-23T15:39:33+00:00
+! Version: 2.0.49.26
+! TimeUpdated: 2025-01-23T17:43:07+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -58,6 +58,7 @@ afisha.yandex.*#%#//scriptlet('prevent-eval-if', 'bidReqIdStr')
 docviewer.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.Rtb')
 !
 ! Yandex.Mail
+mail.yandex.*##div[class^="PageLayout"] > div[class*=" "][style]:has(> div > div > a[class*="DisableAdsButton"])
 mail.yandex.*##div[class^="RightColumn-m__root--"]
 mail.yandex.*##.message-list-banner-portal + div[class][id]:has(> div:empty)
 mail.yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
@@ -377,6 +378,7 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 !
 ! Add without $third-party, so apps are blocking them too
 !
+||sprysummit.com^
 ||pixelvariety.com^
 ||unloadyourself.com^
 ||granlite.com^
