@@ -71,6 +71,7 @@ export const TOP_LEVEL_DOMAIN_LIST = [
     'com.vn',
     'cz',
     'de',
+    'desi',
     'dev',
     'digital',
     'dk',
