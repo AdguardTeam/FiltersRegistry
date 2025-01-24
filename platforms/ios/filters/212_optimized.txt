@@ -1,9 +1,9 @@
-! Checksum: NsgHQSpoHwg8aChZAMGMtQ
-! Diff-Path: ../patches/212_optimized/212_optimized-s-1737709629-14400.patch
+! Checksum: IRJyFAguHUWQ/xk0on5Gpg
+! Diff-Path: ../patches/212_optimized/212_optimized-s-1737723970-14400.patch
 ! Title: RU AdList: Counters (Optimized)
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.62.82
-! TimeUpdated: 2025-01-24T09:01:54+00:00
+! Version: 2.1.62.83
+! TimeUpdated: 2025-01-24T13:01:32+00:00
 ! Expires: 5 days (update frequency)
 @@/m/counter$~third-party,xmlhttprequest,domain=dtf.ru|vc.ru
 @@||alcogolizm.com/addons/counter/$script,stylesheet,domain=alcogolizm.com
@@ -58,6 +58,7 @@
 /acint-counter.js
 /adlogger_tracker.js?
 /admp-tc.
+/atlas/metrics/*
 /awstats_misc_tracker.
 /b/ss/*?aqb=1&ndh=
 /bitrix/spread.php?
@@ -1156,7 +1157,8 @@ avtorambler.com,rambler.ru#?#section > nav ~ div div:-abp-has(> div > [id^="rcmw
 dzen.*#$?#[aria-label*="Лент"] article:has(> div:matches-css(display: none)) { display: none !important }
 dzen.*#$?#div[class*="__col"]:has(> div[class*="-feed__"][class*="_type_"] > div[class*="loader"]) { display: none !important }
 mail.yandex.al,mail.yandex.app,mail.yandex.asia,mail.yandex.at,mail.yandex.az,mail.yandex.by,mail.yandex.ca,mail.yandex.cc,mail.yandex.cl,mail.yandex.cloud,mail.yandex.cn,mail.yandex.co,mail.yandex.co.il,mail.yandex.com,mail.yandex.com.bd,mail.yandex.com.np,mail.yandex.com.tr,mail.yandex.com.ua,mail.yandex.de,mail.yandex.dk,mail.yandex.ee,mail.yandex.es,mail.yandex.eu,mail.yandex.fi,mail.yandex.fm,mail.yandex.fr,mail.yandex.ie,mail.yandex.in,mail.yandex.io,mail.yandex.it,mail.yandex.jp,mail.yandex.kg,mail.yandex.kz,mail.yandex.lt,mail.yandex.lv,mail.yandex.ma,mail.yandex.md,mail.yandex.mobi,mail.yandex.mx,mail.yandex.net,mail.yandex.news,mail.yandex.no,mail.yandex.org,mail.yandex.pl,mail.yandex.pro,mail.yandex.pt,mail.yandex.ro,mail.yandex.rs,mail.yandex.ru,mail.yandex.se,mail.yandex.shop,mail.yandex.site,mail.yandex.sk,mail.yandex.store,mail.yandex.su,mail.yandex.top,mail.yandex.ua,mail.yandex.uk,mail.yandex.us,mail.yandex.uz,mail.yandex.work,mail.yandex.ws###js-mail-layout-content-header > .message-list-banner-portal + div[id]:empty
-mail.yandex.al,mail.yandex.app,mail.yandex.asia,mail.yandex.at,mail.yandex.az,mail.yandex.by,mail.yandex.ca,mail.yandex.cc,mail.yandex.cl,mail.yandex.cloud,mail.yandex.cn,mail.yandex.co,mail.yandex.co.il,mail.yandex.com,mail.yandex.com.bd,mail.yandex.com.np,mail.yandex.com.tr,mail.yandex.com.ua,mail.yandex.de,mail.yandex.dk,mail.yandex.ee,mail.yandex.es,mail.yandex.eu,mail.yandex.fi,mail.yandex.fm,mail.yandex.fr,mail.yandex.ie,mail.yandex.in,mail.yandex.io,mail.yandex.it,mail.yandex.jp,mail.yandex.kg,mail.yandex.kz,mail.yandex.lt,mail.yandex.lv,mail.yandex.ma,mail.yandex.md,mail.yandex.mobi,mail.yandex.mx,mail.yandex.net,mail.yandex.news,mail.yandex.no,mail.yandex.org,mail.yandex.pl,mail.yandex.pro,mail.yandex.pt,mail.yandex.ro,mail.yandex.rs,mail.yandex.ru,mail.yandex.se,mail.yandex.shop,mail.yandex.site,mail.yandex.sk,mail.yandex.store,mail.yandex.su,mail.yandex.top,mail.yandex.ua,mail.yandex.uk,mail.yandex.us,mail.yandex.uz,mail.yandex.work,mail.yandex.ws##.mail-Page-Body .Popup2 > .Tooltip-Content:has-text(2001—2024)
+mail.yandex.al,mail.yandex.app,mail.yandex.asia,mail.yandex.at,mail.yandex.az,mail.yandex.by,mail.yandex.ca,mail.yandex.cc,mail.yandex.cl,mail.yandex.cloud,mail.yandex.cn,mail.yandex.co,mail.yandex.co.il,mail.yandex.com,mail.yandex.com.bd,mail.yandex.com.np,mail.yandex.com.tr,mail.yandex.com.ua,mail.yandex.de,mail.yandex.dk,mail.yandex.ee,mail.yandex.es,mail.yandex.eu,mail.yandex.fi,mail.yandex.fm,mail.yandex.fr,mail.yandex.ie,mail.yandex.in,mail.yandex.io,mail.yandex.it,mail.yandex.jp,mail.yandex.kg,mail.yandex.kz,mail.yandex.lt,mail.yandex.lv,mail.yandex.ma,mail.yandex.md,mail.yandex.mobi,mail.yandex.mx,mail.yandex.net,mail.yandex.news,mail.yandex.no,mail.yandex.org,mail.yandex.pl,mail.yandex.pro,mail.yandex.pt,mail.yandex.ro,mail.yandex.rs,mail.yandex.ru,mail.yandex.se,mail.yandex.shop,mail.yandex.site,mail.yandex.sk,mail.yandex.store,mail.yandex.su,mail.yandex.top,mail.yandex.ua,mail.yandex.uk,mail.yandex.us,mail.yandex.uz,mail.yandex.work,mail.yandex.ws##.mail-Page-Body .Popup2 > .Tooltip-Content:has-text(2001—202)
+mail.yandex.al,mail.yandex.app,mail.yandex.asia,mail.yandex.at,mail.yandex.az,mail.yandex.by,mail.yandex.ca,mail.yandex.cc,mail.yandex.cl,mail.yandex.cloud,mail.yandex.cn,mail.yandex.co,mail.yandex.co.il,mail.yandex.com,mail.yandex.com.bd,mail.yandex.com.np,mail.yandex.com.tr,mail.yandex.com.ua,mail.yandex.de,mail.yandex.dk,mail.yandex.ee,mail.yandex.es,mail.yandex.eu,mail.yandex.fi,mail.yandex.fm,mail.yandex.fr,mail.yandex.ie,mail.yandex.in,mail.yandex.io,mail.yandex.it,mail.yandex.jp,mail.yandex.kg,mail.yandex.kz,mail.yandex.lt,mail.yandex.lv,mail.yandex.ma,mail.yandex.md,mail.yandex.mobi,mail.yandex.mx,mail.yandex.net,mail.yandex.news,mail.yandex.no,mail.yandex.org,mail.yandex.pl,mail.yandex.pro,mail.yandex.pt,mail.yandex.ro,mail.yandex.rs,mail.yandex.ru,mail.yandex.se,mail.yandex.shop,mail.yandex.site,mail.yandex.sk,mail.yandex.store,mail.yandex.su,mail.yandex.top,mail.yandex.ua,mail.yandex.uk,mail.yandex.us,mail.yandex.uz,mail.yandex.work,mail.yandex.ws##[data-test-id="ps-header-logo-free-badge-link"]
 ya.*,yandex.*#$?#.content__right div:has(> div > button:matches-attr(/[a-z0-9]/=/advertiser/)) { display: none !important }
 ya.*,yandex.*#$?#[id][aria-label] > [class*="_card"]:has(> div > button:matches-attr(/[a-z0-9]/=/advertiser/)) { display: none !important }
 ya.*,yandex.*#$?#[id][aria-label] > [class*="_card"]:has(> div > div > [data-event-required]) { display: none !important }
