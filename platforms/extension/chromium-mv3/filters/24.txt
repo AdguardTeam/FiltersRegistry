@@ -1,8 +1,8 @@
-! Checksum: 4F9RIJ1LFAt2G7iE/SRaKw
+! Checksum: RY9x7qeIs0I9CFvy9vC0AA
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.6.88
-! TimeUpdated: 2025-01-24T11:42:05+00:00
+! Version: 2.0.6.89
+! TimeUpdated: 2025-01-24T15:39:08+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -68,6 +68,11 @@ nafezly.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 play.diziyou.live#%#//scriptlet("set-constant", "player.vroll", "undefined")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196990
 publico.pt##html > body .pubHorz:not(#style_important)
+! https://github.com/AdguardTeam/AdguardFilters/issues/196968
+it-sharks.com#$##adBlocker { display: none !important; }
+it-sharks.com#$#.modal-backdrop { display: none !important; }
+it-sharks.com#$#body { overflow: auto !important; padding-right: 0 !important; }
+it-sharks.com#%#//scriptlet('prevent-setTimeout', 'adBlockerModal')
 !
 ! NOTE: 23-01-2025
 !
@@ -288,6 +293,7 @@ vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Ð Ð
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
 exploader.net#%#//scriptlet('remove-attr', 'href', 'a[style*="display:"][href^="https://al.dmm.co.jp"]', 'complete')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189567
+japscan.lol#@#div.container > [href]
 japscan.lol#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
 japscan.lol#@#body > div.container > #blare-inter[style*="position"]
 japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'onclick', 'let a=function(){};return false;')
