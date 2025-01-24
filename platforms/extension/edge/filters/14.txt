@@ -1,9 +1,9 @@
-! Checksum: 8snairVM8GqI3h0HOlqacg
-! Diff-Path: ../patches/14/14-s-1737711895-3600.patch
+! Checksum: LaWq0BwXlEM7nzmgzgGiXA
+! Diff-Path: ../patches/14/14-s-1737719177-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.10
-! TimeUpdated: 2025-01-24T09:40:49+00:00
+! Version: 2.2.20.11
+! TimeUpdated: 2025-01-24T11:41:53+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2463,6 +2463,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+nytimes.com#%#//scriptlet('trusted-click-element', '#complianceOverlay button[data-tpl-type="Button"]', '', '2500')
+nytimes.com#%#//scriptlet('remove-class', 'fides-no-scroll', 'body')
 ||igeeksblog.com/wp-content/plugins/webtoffee-cookie-consent/
 academyofathens.gr##footer ~ div[class^="_Modal_"]:has(> p > a[href*="/prosopika-dedomena"])
 desport.ru##div[class^="Cookies_cookie__"]
@@ -2800,7 +2802,7 @@ app.filen.io#?#main > div.right-4:contains(This site uses cookies)
 filen.io###__next > div:has(> p + div > button)
 sportano.*#%#//scriptlet('remove-class', 'cookie-overlay-active', 'body')
 sportano.*#$#.global-cookie { display: none !important; }
-jice.or.jp,daisharin.co.jp,houseofrose.co.jp,exgen.co.jp,morimatsu-group.co.jp,asahi-kg.co.jp,asahi-agria.co.jp###name-ga-cookie-accept-bar
+l2blocker.com,jice.or.jp,daisharin.co.jp,houseofrose.co.jp,exgen.co.jp,morimatsu-group.co.jp,asahi-kg.co.jp,asahi-agria.co.jp###name-ga-cookie-accept-bar
 ec.daiwa-cycle.co.jp##.cookie_policy_linkbox
 prestaciones.seg-social.es##app-banner-cookies
 aver.com###cookieScriptBox
@@ -34465,8 +34467,8 @@ wheresyoured.at#$#.outpost-cta { display: none !important; }
 wheresyoured.at#$#.post-template[style] { overflow: auto !important; }
 covid19.nj.gov##.custom-signup-modal
 estadao.com.br##div[class^="styles__Container-"]:has(> div > picture >img[alt="imagem newsletter"])
-kevinstratvert.com#$#body { overflow: auto !important; }
-kevinstratvert.com#$#.jetpack-subscribe-modal { display: none !important; }
+vridar.org,kevinstratvert.com#$#body { overflow: auto !important; }
+vridar.org,kevinstratvert.com#$#.jetpack-subscribe-modal { display: none !important; }
 m-strana.ru##.telegramSlide-block
 elle.com.hk##.block-default:has(> div.content-wrapper div.email-bar)
 terrabrasilnoticias.com###block-18
@@ -41213,6 +41215,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+snapinst.app##.download-footer > .btn-app
 appbrain.com###pwa-install
 desport.ru##div[class^="PopupAppDesktop_"]
 donanimhaber.com##span[class^="open-with-app-"]
