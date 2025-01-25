@@ -283,8 +283,8 @@
 				"ext_safari",
 				"ext_android_cb"
 			],
-			"version": "2.0.10.26",
-			"timeUpdated": "2025-01-23T08:46:57+0000",
+			"version": "2.0.10.27",
+			"timeUpdated": "2025-01-25T20:38:37+0000",
 			"languages": []
 		},
 		{

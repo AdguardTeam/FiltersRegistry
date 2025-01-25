@@ -1,9 +1,9 @@
-! Checksum: wFA5unDAuuMXaYW49S1awA
-! Diff-Path: ../patches/17/17-s-1737622324-3600.patch
+! Checksum: V28NjwYGlmwMZ/K3ORzIjg
+! Diff-Path: ../patches/17/17-s-1737837741-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.26
-! TimeUpdated: 2025-01-23T08:46:57+00:00
+! Version: 2.0.10.27
+! TimeUpdated: 2025-01-25T20:38:37+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2804,6 +2804,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1683830
 @@||mywot.com/*/confirmNewEmail/$removeparam
+! app.plex.tv - login page is broken by removing UTM parameters
+@@||app.plex.tv/auth-form/$removeparam=utm_source,domain=app.plex.tv
+@@||app.plex.tv/auth-form/$removeparam=utm_content,domain=app.plex.tv
+@@||app.plex.tv/auth-form/$removeparam=utm_medium,domain=app.plex.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/96900
 @@||plex.tv/api/v*/users/*?utm_source=$removeparam=utm_source,domain=watch.plex.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/96746
