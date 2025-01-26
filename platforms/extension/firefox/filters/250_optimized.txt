@@ -1,5 +1,5 @@
-! Checksum: 93w9ryEyFGP8+vJa942Rsg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1737824748-14400.patch
+! Checksum: 5ezc2kTU7m+K+Ox6K+j99g
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1737867930-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.7
@@ -32,6 +32,7 @@
 ##div[class^=AppBanner__]
 ##div[id*=smart-banner i]
 ##div[id*=smartbanner i]
+##smart-banner
 ~macgamestore.com##.get-the-app:not(html,body,:empty)
 adguard.com##.sidebar-download
 bilibili.com##.nav-link-item a[href$="app.bilibili.com"]
@@ -123,10 +124,8 @@ softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ||solvusoft.com^$document
-exefiles.com##.panel:has([href*="/en/recommended/winthruster/"])
 exefiles.com##.row:has(a[href*="/recommended/"])
 coolrom.com.au,coolrom.com##.download_link
-||sarah.*.com^$document
 ?bemobdata=$all
 ||connatedresspint.com^$all
 ||dominioneastern.com^$all
@@ -8941,7 +8940,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||zodiacirrigateglobal.com^$all
 ||zooskatehesitation.com^$all
 ||erothots.co^$all
-||only2leaked.co^$document
 |http://www6.$document,domain=~often-used-in-malware-redirections.*
 ||wp3.xyz^$all
 tumblr.com##div[tabindex][style]:has(a[href*="://cutt.ly/"])
@@ -8995,7 +8993,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
 ###share-buttons
 ###share-tool
-###share_bar
 ###share_container:not([class*=body i])
 ###sharebar
 ###social-share:not([class*=body i])
@@ -9110,7 +9107,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##div[class^=shareLinks]
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
-##div[data-hook=social-sharing]
 ##div[id^=dpsp-]
 ##h4[class*=social-share-label]
 ##share-grid
@@ -9244,6 +9240,8 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.react-share__ShareButton:not(body,html,:empty)
 ##.mh-share-buttons:not(body,html,:empty)
+##button.btn-twitter-liveblog
+~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##button.btn-facebook-liveblog
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###article-share-facebook
 ###article-share-twitter
 ##.uSocial-Share:not(body,html,:empty)
@@ -9482,6 +9480,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||virustotal.com^
 @@||fortiguard.com^
 @@||sitecheck.sucuri.net^
+@@://global.sitesafety.trendmicro.com^
 @@://www.fortiguard.com^
 @@://wikipedia.org^
 @@://github.com^|
@@ -9525,7 +9524,6 @@ autoplius.lt#%#//scriptlet('ubo-ra.js', 'target', '[target="_blank"]', 'stay')
 ##.spacer-20:not(html, body)
 ##.space20:not(html, body)
 ##div[class=spacer]:empty
-##.mk-padding-divider:not(html, body)
 ##.section-break:not(html, body)
 ~simplenote.com##.wp-block-spacer:not(html, body)
 ##.spacer-block:not(html,body)
@@ -9779,9 +9777,7 @@ $removeparam=CAID
 $removeparam=rfsn
 $document,removeparam=trackid,domain=~nzpost.co.nz
 $removeparam=afsrc
-$removeparam=lctid
 $~ping,removeparam=lcid,domain=~rekono.si
-$removeparam=usource
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
@@ -9861,6 +9857,7 @@ $document,removeparam=/^subid2=.*$/i
 $document,removeparam=/^subid3=.*$/i
 $document,removeparam=/^subid4=.*$/i
 $document,removeparam=/^subid5=.*$/i
+$removeparam=tid1
 $removeparam=tid2
 $removeparam=tid3
 $removeparam=avad
@@ -9906,6 +9903,7 @@ $removeparam=waad
 $removeparam=_gac
 $removeparam=ko_click_id
 $removeparam=nrtv_cid
+$removeparam=trk_ref
 $removeparam=ircid
 $document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
@@ -9931,8 +9929,6 @@ $removeparam=pk_source
 $removeparam=pk_content
 $removeparam=pk_kwd
 $removeparam=pk_keyword
-$removeparam=au_advert_id
-$removeparam=au_car_id
 $removeparam=ads_adid
 $removeparam=ads_cmpid
 $removeparam=ads_creative
@@ -10026,6 +10022,7 @@ $removeparam=ses_id
 $removeparam=_gfid
 $removeparam=mt_exid
 $removeparam=_sid
+$removeparam=client-ts
 $removeparam=tp_uid
 $removeparam=ft_section
 $removeparam=correlator
@@ -10099,6 +10096,7 @@ $removeparam=hvtargid
 $removeparam=adgrpid
 $removeparam=hvbmt
 $removeparam=cstrackid
+||amazon.$removeparam=SubscriptionId
 ||amazon.$removeparam=hydadcr
 $removeparam=%2AVersion%2A,domain=amazon.*
 $removeparam=returnFromLogin,domain=amazon.*
@@ -10159,7 +10157,6 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 ||bing.com/search?$removeparam=FPIG
 $removeparam=_trkparms
 $removeparam=_from
-$removeparam=amdata,domain=ebay.*
 $removeparam=hash,domain=ebay.*
 ||ebay.$removeparam=mkevt
 ||ebay.$removeparam=mkcid
@@ -10482,6 +10479,8 @@ $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.c
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
+$removeparam=nid,domain=columbia.com|columbiasportswear.*|sorel.com
+$removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com
 ||paypal.com^$removeparam=calc
 ||youtube.com^$removeparam=ab_channel
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
@@ -10528,6 +10527,7 @@ $removeparam=PID,domain=1800getlens.com|ae.com|allmodern.com|applevacations.com|
 $removeparam=SID,domain=ae.com|anntaylor.com|applevacations.com|ashford.com|autodesk.com|bedbathandbeyond.com|bhphotovideo.com|booksamillion.com|cheapcaribbean.com|chegg.com|chggtrx.com|ecampus.com|expedia.com|express.com|intuit.com|jockey.com|loft.com|mcafee.com|norton.com|overstock.com|perfumania.com|samsung.com|sierra.com|staples.com|taskrabbit.com|teleflora.com|verizon.com|vistaprint.com|walgreens.com|wwe.com|yahoo.com|zchocolat.com|zulily.com
 $removeparam=aid,domain=adguard-dns.com|adguard-vpn.com|adguard.com|brownells.*|cafago.com|get.protonmail.com|get.protonvpn.com|tomtop.com|viator.com|wevpn.com
 $removeparam=camp,domain=amazon.*|calvinklein.*|dickssportinggoods.com|dockers.com|dressbarn.com|lanebryant.com|levi.com|maurices.com|worldmarket.com|xg4ken.com
+$removeparam=mid,domain=agentprovocateur.com|change.org|columbia.com|dxl.com|hanes.com|josbank.com|links.e.malwarebytes.com|onehanesplace.com|productshopper.*|columbiasportswear.*|saksfifthavenue.com|saksoff5th.com|sorel.com|lookmovie211.xyz|verabradley.com
 $removeparam=mktvar002,domain=autodesk.com
 $document,removeparam=/^refID=.*$/i,domain=allmodern.com|calphalon.com|priceline.com|questrade.com|wayfair.*|yankeecandle.com
 $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|anntaylor.com|asos.com|awd-it.*|barenecessities.com|barrons.com|beautyencounter.com|buckle.com|burpee.com|chacos.com|coursera.org|dxl.com|dyson.com|ebay.*|famousfootwear.com|finishline.com|freetaxusa.com|gap.com|gapcanada.ca|gucci.com|hanes.com|hotwire.com|hulu.com|hunterboots.com|jcrew.com|josbank.com|kobo.com|lanebryant.com|laroche-posay.us|loft.com|magazines.com|marketwatch.com|maurices.com|merrell.com|newbalance.com|nordstrom.com|officedepot.com|onehanesplace.com|online4baby.com|radissonhotelsamericas.com|ralphlauren.com|saksfifthavenue.com|saksoff5th.com|samash.com|samsclub.com|saucony.com|sharperimage.com|skinceuticals.com|thingsremembered.com|thrifty.*|timeformecatalog.com|verabradley.com|vivaterra.com|wine.com|yoox.com
@@ -10600,6 +10600,7 @@ $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||apple.com^$removeparam=mttnsubad
 $removeparam=wfr,domain=weidian.com|baidu.com
 $removeparam=organic_search_click
+$removeparam=pop,domain=etsy.com
 $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
@@ -10633,7 +10634,6 @@ $removeparam=hoan,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hooid,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hoas,domain=hotspotshield.com|gethotspotshield.com
 $removeparam=hoaci,domain=hotspotshield.com|gethotspotshield.com
-||dw.com^$removeparam=maca
 ||reuters.com^$removeparam=edition-redirect
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
@@ -10815,6 +10815,7 @@ $removeparam=csrc,domain=mcafee.com|vitacost.com
 $removeparam=csrcl2
 ||mcafee.com^$removeparam=cctype
 ||mcafee.com^$removeparam=ccstype
+$removeparam=ProspectID,domain=citi.com
 $document,removeparam=bpli,domain=blogger.com
 $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||cimri.com^$document,removeparam=platformName
