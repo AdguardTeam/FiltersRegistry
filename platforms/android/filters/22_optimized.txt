@@ -1,5 +1,5 @@
-! Checksum: YbEanQ1zDGAIjVm4lhunZQ
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1737772945-3600.patch
+! Checksum: bndvb5f4zyLFjCQR77gftw
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1737859409-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.10.89
@@ -85,6 +85,8 @@ moeasia.net##.pickupbox
 moeasia.net###rsswrap
 jiwasoku.com##[class^="widget"]:has(> div > div[id^="top_body"])
 jiwasoku.com###widget-in-article
+/b1_link.js$domain=danseisama.com|jyoseisama.com
+/top_randomlink.js$domain=danseisama.com|jyoseisama.com
 kimootoko.net##div:has(> div.textwidget > div.tyuou)
 gia-chan.com#?#.widget_st_custom_html_widget:has(> p.st-widgets-title:contains(相互RSS))
 abroadch.com###article_bottom_wrapper_ab
@@ -169,7 +171,6 @@ blog.livedoor.jp##.headlinerss
 ||bot.jaicp.com/chatwidget/
 fob.jp###swell_ad_widget-7
 fob.jp##.widget_swell_ad_widget:has(> div.p-blogParts > div.ek-linked-block)
-emuokunmaster.com##div[style="width: 1225px; height: 267px; margin: auto; text-align: center;"]
 you1news.com##h2.caption-title:has(+ div[class*="-rss"])
 netouyonews.net##.rss-entry-cards
 aqua2ch.net##.menu_outline3
@@ -634,7 +635,6 @@ pokemon-matome.net#$##wrap-main { padding-top:0 !important; }
 pokemon-matome.net##div[class^="basehtml"]
 warotanikki.com##.code-block
 ||tb.53kf.com/code/$script
-||kami-ch.com/blogparts/
 ||hayamimi-hobby.com/gen-rss/
 suresuta.jp,sikopedia.com,kisslog2.com###custom_html-6
 akankore.doorblog.jp,beelzeboulxxx.com,gossip1.net,kisslog2.com##.rss_wrapper
@@ -890,6 +890,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||widget.happyfoxchat.com^$third-party
 ||widget.helpcrunch.com^$third-party
 ||userlike.com^$third-party
+||vchat.essaygator.net^$third-party
 ||verbox.ru^$third-party
 ||uberlaw.ru^$third-party
 ||tidiochat.com^$third-party
@@ -995,7 +996,6 @@ vinmec.com##.global-thread-create-cta
 ||support-widget.nakanohito.jp^$domain=jre-travel.com
 ||tforms.fcc-online.pl/public/widget.js
 ||tocplus*.com/chatLoader.do?
-||urist-24.com/*/addwidget.js
 ||uxfeedback-cdn.s3.yandex.net/_static/widget/widget.js
 ||w.chatlio.com/v5/w.chatlio-widget.js
 ||wchat.freshchat.com/js/widget.js
@@ -1200,7 +1200,6 @@ habr.com#?#.tm-article-blocks > section:has(> div.tm-block__body > div.tm-vacanc
 happycoin.club##.currency-social
 rbc.ru##.js-forecast
 smartpress.by##.ex-rates
-volyninfa.com.ua###custom_html-3
 ||widgets.coingecko.com^$third-party
 mediametrics.ru##.currency-moving-block
 ||informer.minfin.com.ua
@@ -1274,6 +1273,7 @@ thejournal.ie#%#//scriptlet('set-local-storage-item', 'total_page_views', '2')
 thejournal.ie##.contribution-prompt-wrapper-redesign
 nookgaming.com##.ko_fi_widget
 nookgaming.com#?#.entry-content .awac-wrapper:has(div.ko-fi-button)
+service.webgoto.net##[data-is^="riot-fee"]
 fplstatistics.com##[style="text-align:center; margin-top: 10px"]
 echofm.online##main > article.wp-embed-responsive ~ div[class^="sc-"]:has(> div[style="visibility: visible;"] > div[class] > div[class] > label > input[name="paymentMethod"])
 proekt.media##proekt-blocks > proekt-block:has(span#donateButton)
@@ -1320,7 +1320,6 @@ osboxes.org#$#html { overflow: auto !important; }
 osboxes.org#$#.__b-popup1__ { display: none !important; }
 osboxes.org#$##popuppress-7080 { display: none !important; }
 holod.media##.footer-donate
-discours.io##.donate-container
 unian.ua,unian.net##.support-post
 proagro.com.ua#$#.td-outer-container { background-image: none !important; cursor: default !important; }
 proagro.com.ua#%#//scriptlet("abort-on-property-read", "wpsite_clickable_data")
