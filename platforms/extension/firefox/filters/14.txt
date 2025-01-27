@@ -1,9 +1,9 @@
-! Checksum: 1tq+47QRqLpYtwNIofZ2Nw
-! Diff-Path: ../patches/14/14-s-1737978395-3600.patch
+! Checksum: Qm7uZ+V7YgQgnFnKSlIjfA
+! Diff-Path: ../patches/14/14-s-1737989451-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.25
-! TimeUpdated: 2025-01-27T11:41:54+00:00
+! Version: 2.2.20.26
+! TimeUpdated: 2025-01-27T14:40:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2467,6 +2467,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+apply.workable.com##div[style*="cookie-consent"]
 nevotex.*###dwCookieModal
 topmarkety.pl#%#//scriptlet('set-local-storage-item', 'asl-gdpr', '1')
 konferencje.pl#$#body[style] { overflow: auto !important; padding-right: 0 !important; }
@@ -2970,7 +2971,7 @@ bauhaus.cz##.modal:has(> .modal-container > .cookie-modal)
 asicomp.cz##.reakt-susenka
 officemag.ru##.ddMainInfoPanel--cookies
 letu.ru##.web-cookie-popup
-llama.com,meta.com#%#//scriptlet('trusted-click-element', 'body > div[class="x1n2onr6 x1vjfegm"] div[aria-hidden="false"] > div[class="x6ikm8r x10wlt62"] div[class]:last-child > div[aria-hidden="true"] + div div[role="button"] > div[role="none"][class^="x1ja2u2z"][class*="x1oktzhs"]')
+llama.com,meta.com#%#//scriptlet('trusted-click-element', 'body > div[class="x1n2onr6 x1vjfegm"] div[aria-hidden="false"] > .x1o1ewxj div[class]:last-child > div[aria-hidden="true"] + div div[role="button"] > div[role="none"][class^="x1ja2u2z"][class*="x1oktzhs"]')
 workplace.com,about.meta.com#%#//scriptlet('trusted-click-element', 'button[data-cookiebanner="accept_only_essential_button"]')
 shoppers.media##div[class^="CookiePopup"]
 mediately.co###__next > div[class^="sc-"]:has(> div[class^="sc-"] > div[class^="sc-"] > div[class^="sc-"] > a[href$="/docs/privacy"])
@@ -33615,6 +33616,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+dictionary.com##div[data-type="mailing-list-sign-up-form"]
 localsamosa.com##iframe[src^="https://www.mailerswift.host/form?"]
 gazette.com##.footer-attic
 westword.com###fdn-sm-NewsletterSignupWidgetSlideIn
@@ -40218,8 +40220,8 @@ lamoda.ru##.subscription-footer_wrapper
 protips.dickssportinggoods.com##footer > .dsgfooter-top
 burdastyle.ru##footer > .follow
 coinmarketcap.com#?#.cmc-bottom-margin-2x > div[class]:has(> div.cmc-newsletter-signup__widget)
-lansingstatejournal.com,usatoday.com##aside[aria-label="Newsletter signup form"]
-lansingstatejournal.com,usatoday.com##form[aria-label^="Sign up for newsletter"]
+cjonline.com,lansingstatejournal.com,usatoday.com##aside[aria-label="Newsletter signup form"]
+cjonline.com,lansingstatejournal.com,usatoday.com##form[aria-label^="Sign up for newsletter"]
 gomel.today,mogilev.online##img[src="https://gomel.today/uploads/News/2018/11/02/plashka.png"]
 ||mogilev.online/uploads/images/*_read.jpg
 gomel.today,mogilev.online##.teleg
@@ -45706,6 +45708,7 @@ bing.com###tob_rail_container
 bdtonline.com##.ahm-tvx
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166648
 ||player.anyclip.com^$domain=dictionary.com
+dictionary.com##footer ~ div[class]:has(> div > script[src^="https://player.anyclip.com/"])
 dictionary.com#?#main[class] > div[class] > div[class]:has(> div > div.ac-widget-placeholder)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166440
 thecity.nyc##.newspack-popup-container
@@ -50662,6 +50665,7 @@ book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 !
 ! SECTION: Self-promo - Regular rules
 !
+deepl.com##div[data-testid="write-advertisement-banner"]
 asuracomic.net##body > div > a[href="/subscription"] > img
 asuracomic.net##body > .bg-gradient-to-br:has(> .relative > .items-center > button)
 iobit.com##div[class*="-pop"]

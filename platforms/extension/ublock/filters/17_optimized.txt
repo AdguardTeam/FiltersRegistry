@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bHgrgqQwEY/iMbDsCeXwkg
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1737837738-3600.patch
+! Checksum: JcQjr6SB9ZNh92/C2c4FYA
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1737989713-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.27
-! TimeUpdated: 2025-01-25T20:38:37+00:00
+! Version: 2.0.10.28
+! TimeUpdated: 2025-01-27T14:40:41+00:00
 ! Expires: 5 days (update frequency)
 $removeparam=_sgm_campaign
 $removeparam=_sgm_term
@@ -249,6 +249,19 @@ $removeparam=fb_action_types
 $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
+||rd.bizrate.com$removeparam=af_creative_id
+||rd.bizrate.com$removeparam=af_assettype_id
+||rd.bizrate.com$removeparam=rf_code
+||rd.bizrate.com$removeparam=af_placement_id
+||rd.bizrate.com$removeparam=cobrand
+||rd.bizrate.com$removeparam=af_permalink_id
+||rd.bizrate.com$removeparam=af_rid
+||rd.bizrate.com$removeparam=af_id
+||rd.bizrate.com$removeparam=bidType
+||rd.bizrate.com$removeparam=bId
+||rd.bizrate.com$removeparam=tokenId
+||rd.bizrate.com$removeparam=dMid
+||metro.*$removeparam=cnxclid
 ||ehon.alphapolis.co.jp^$removeparam=from
 ||liferbc.ru^$removeparam=from
 ||luisaviaroma.com/*/p$removeparam=lvrid
@@ -1854,6 +1867,8 @@ $removeparam=s,domain=twitter.com|x.com
 ||gamesplanet.com^$removeparam=ref
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
+@@||rd.bizrate.com^$removeparam=utm_campaign
+@@||rd.bizrate.com^$removeparam=utm_medium
 @@||reddit.app.link^$removeparam=utm_content,domain=reddit.app.link
 @@||video-shoper.ru^$removeparam=utm_source
 @@||glavnoe.life^$removeparam=utm_campaign

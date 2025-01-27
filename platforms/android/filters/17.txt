@@ -1,9 +1,9 @@
-! Checksum: 0h2B9YoCs2SwyjixI62K9Q
-! Diff-Path: ../patches/17/17-s-1737837728-3600.patch
+! Checksum: hL4BNd3frCiLK2RI3M5e7A
+! Diff-Path: ../patches/17/17-s-1737989075-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.27
-! TimeUpdated: 2025-01-25T20:38:37+00:00
+! Version: 2.0.10.28
+! TimeUpdated: 2025-01-27T14:40:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -386,6 +386,20 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! redirecting link on mobile from mydealz.de to Metro
+||rd.bizrate.com$removeparam=af_creative_id
+||rd.bizrate.com$removeparam=af_assettype_id
+||rd.bizrate.com$removeparam=rf_code
+||rd.bizrate.com$removeparam=af_placement_id
+||rd.bizrate.com$removeparam=cobrand
+||rd.bizrate.com$removeparam=af_permalink_id
+||rd.bizrate.com$removeparam=af_rid
+||rd.bizrate.com$removeparam=af_id
+||rd.bizrate.com$removeparam=bidType
+||rd.bizrate.com$removeparam=bId
+||rd.bizrate.com$removeparam=tokenId
+||rd.bizrate.com$removeparam=dMid
+||metro.*$removeparam=cnxclid
 ! https://ehon.alphapolis.co.jp/?from=alphapolis
 ||ehon.alphapolis.co.jp^$removeparam=from
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195661
@@ -2697,6 +2711,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !
 !
 !
+! redirecting link on mobile from mydealz.de to Metro
+@@||rd.bizrate.com^$removeparam=utm_campaign
+@@||rd.bizrate.com^$removeparam=utm_medium
 ! reddit.com - e-mails about replies not resolving to the post
 @@||reddit.app.link^$removeparam=utm_content,domain=reddit.app.link
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196067
