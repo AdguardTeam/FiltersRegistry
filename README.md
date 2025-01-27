@@ -423,49 +423,49 @@ More information on why this feature was needed can be found in [the related tas
 
 1. **Install dependencies**
 
-```bash
-yarn install
-```
+    ```bash
+    yarn install
+    ```
 
 1. **Update wildcard domains**
 
-This command extracts wildcard domains from the filters, converts them to a list of domains,
-selects the alive domains, and saves the resulting map to a JSON file [wildcard_domains.json].
+    This command extracts wildcard domains from the filters, converts them to a list of domains,
+    selects the alive domains, and saves the resulting map to a JSON file [wildcard_domains.json].
 
-```bash
-yarn update-wildcard-domains <filtersDir> <wildcardDomainsFile>
-```
+    ```bash
+    yarn update-wildcard-domains <filtersDir> <wildcardDomainsFile>
+    ```
 
-- **Arguments**:
+    - **Arguments**:
 
-    - `<filtersDir>` — directory containing the filter files.
-    - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
+        - `<filtersDir>` — directory containing the filter files.
+        - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
 
-- **Example**:
+    - **Example**:
 
-```bash
-yarn update-wildcard-domains filters scripts/wildcard-domain-processor/wildcard_domains.json
-```
+    ```bash
+    yarn update-wildcard-domains filters scripts/wildcard-domain-processor/wildcard_domains.json
+    ```
 
 1. **Expand wildcard domains**
 
-This command processes platform filters and expands wildcard domains
-based on the previously generated map in the file [wildcard_domains.json].
+    This command processes platform filters and expands wildcard domains
+    based on the previously generated map in the file [wildcard_domains.json].
 
-```bash
-yarn expand-wildcard-domains <platformsDir> <wildcardDomainsFile>
-```
+    ```bash
+    yarn expand-wildcard-domains <platformsDir> <wildcardDomainsFile>
+    ```
 
-- **Arguments**:
+    - **Arguments**:
 
-    - `<platformsDir>` — directory containing the platform files.
-    - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
+        - `<platformsDir>` — directory containing the platform files.
+        - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
 
-- **Example**:
+    - **Example**:
 
-```bash
-yarn expand-wildcard-domains platforms scripts/wildcard-domain-processor/wildcard_domains.json
-```
+    ```bash
+    yarn expand-wildcard-domains platforms scripts/wildcard-domain-processor/wildcard_domains.json
+    ```
 
 [wildcard_domains.json]: ./scripts/wildcard-domain-processor/wildcard_domains.json
 
