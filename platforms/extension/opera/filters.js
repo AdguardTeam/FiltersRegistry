@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.78",
-			"timeUpdated": "2025-01-27T01:39:03+0000",
+			"version": "2.0.49.79",
+			"timeUpdated": "2025-01-27T02:39:19+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
