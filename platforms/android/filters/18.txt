@@ -1,9 +1,9 @@
-! Checksum: 3O5AjNNPTu79GonrswlsgA
-! Diff-Path: ../patches/18/18-s-1737967425-3600.patch
+! Checksum: 92Ygynjp0OEVDpL8jy3h/w
+! Diff-Path: ../patches/18/18-s-1737974660-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.55.31
-! TimeUpdated: 2025-01-27T08:40:02+00:00
+! Version: 2.0.55.32
+! TimeUpdated: 2025-01-27T10:40:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2320,6 +2320,11 @@ elespanol.com,techcrunch.com,shadow.tech,letemps.ch,nicematin.com,purepeople.com
 corrieredellosport.it#$#body { overflow: auto !important; }
 lavozdegalicia.es#$#body.blocked::before { display: none !important; }
 !
+! RodoCookiesInfo
+camoshop.pl,deltaoptical.pl,hurtowniakarm.pl,muzyka.sklep.pl,steelseries.com#$#body { overflow: auto !important; }
+camoshop.pl,deltaoptical.pl,hurtowniakarm.pl,muzyka.sklep.pl#$##RodoCookiesInfo { display: none !important; }
+camoshop.pl,deltaoptical.pl,hurtowniakarm.pl,muzyka.sklep.pl#$##RodoCookiesInfo ~ .modal-backdrop { display: none !important; }
+!
 ! realCookieBanner
 ! #%#//scriptlet('set-constant', 'realCookieBanner', 'undefined')
 phpconference.com,turkishminute.com,gemeinde.ramsau.at,die-gesunde-wahrheit.de,geekguide.de,androjungle.com,vampster.com,noobguides.de,fcportables.com,wagenheber24.de,emojiszumkopieren.de,technikshavo.de,indibit.de,audiovision.de,ratgeber-umschulung.de,viel-unterwegs.de,ahorn-camp.de,mmo-sankar.de,der-windows-papst.de#%#//scriptlet('set-constant', 'realCookieBanner', 'undefined')
@@ -3787,13 +3792,7 @@ tagred.pl,soteshop.com,sote.pl,q21.pl,emilio.pl#$##cookies_message_modal { displ
 tagred.pl,soteshop.com,sote.pl,q21.pl,emilio.pl#$#.modal-backdrop { display: none !important; }
 pja.edu.pl##body > .popup:has(> .popup-inner .cookies-header)
 hesapkurdu.com###__next > .MuiGrid-root:has(> .MuiGrid-container > .MuiGrid-item > span > a[href="https://www.hesapkurdu.com/cerez-politikasi"])
-deltaoptical.pl,hurtowniakarm.pl#$#body { overflow: auto !important; }
-deltaoptical.pl,hurtowniakarm.pl#$#.modal-backdrop { display: none !important; }
-deltaoptical.pl,hurtowniakarm.pl#$##RodoCookiesInfo { display: none !important; }
 ||steelseries.com/static/css/eu-osano.
-muzyka.sklep.pl,steelseries.com#$#body { overflow: auto !important; }
-muzyka.sklep.pl#$##RodoCookiesInfo { display: none !important; }
-muzyka.sklep.pl#$##RodoCookiesInfo ~ .modal-backdrop { display: none !important; }
 muzyka.sklep.pl,excellent.com.pl,inbag.pl,dziergaczkowo.pl#%#//scriptlet('set-cookie-reload', 'AtomStore[COOKIES_ACCEPTED]', '1')
 cnet.com,zdnet.com##.c-siteTermsBanner
 pixelgun3d.com##.my_cookie_alert
@@ -16590,6 +16589,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197188
+camoshop.pl#@#.cookie-modal
+! https://github.com/AdguardTeam/AdguardFilters/issues/197210
+@@||cdn.privacy-mgmt.com^$domain=einfachbacken.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197183
 topmarkety.pl#@#.gdpr-box:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197184
