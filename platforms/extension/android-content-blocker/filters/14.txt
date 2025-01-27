@@ -1,8 +1,8 @@
-! Checksum: Kmqfg0ECG/Q8jXka1Fonwg
+! Checksum: L7c/AP+qJYzzEVDHR+PgoQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.20
-! TimeUpdated: 2025-01-27T06:39:00+00:00
+! Version: 2.2.20.21
+! TimeUpdated: 2025-01-27T07:42:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2419,6 +2419,11 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+konferencje.pl#$#body[style] { overflow: auto !important; padding-right: 0 !important; }
+konferencje.pl#$##js-cookie-consent { display: none !important; }
+konferencje.pl#$#.modal-backdrop { display: none !important; }
+enerad.pl#$#body { overflow: auto !important; }
+enerad.pl#$##cp-cookies { display: none !important; }
 shop.mango.com##aside[class^="CookiesWrapper_"]
 androprice.com.ua##.f-cookies
 sentione.com##.cookie-policy-bar
@@ -3307,9 +3312,9 @@ bellroy.com#$#body { overflow-y: auto !important; }
 ||cmp.*/*/consent-bundle-$domain=springer.com|nature.com|springernature.com
 5ka.ru##aside[class*="-CookieMessage-"]
 firebase.google.com##devsite-cookie-notification-bar
-soteshop.com,sote.pl,q21.pl,emilio.pl#$#body[style] { overflow: auto !important; padding-right: 0 !important; }
-soteshop.com,sote.pl,q21.pl,emilio.pl#$##cookies_message_modal { display: none !important; }
-soteshop.com,sote.pl,q21.pl,emilio.pl#$#.modal-backdrop { display: none !important; }
+tagred.pl,soteshop.com,sote.pl,q21.pl,emilio.pl#$#body[style] { overflow: auto !important; padding-right: 0 !important; }
+tagred.pl,soteshop.com,sote.pl,q21.pl,emilio.pl#$##cookies_message_modal { display: none !important; }
+tagred.pl,soteshop.com,sote.pl,q21.pl,emilio.pl#$#.modal-backdrop { display: none !important; }
 deltaoptical.pl,hurtowniakarm.pl#$#body { overflow: auto !important; }
 deltaoptical.pl,hurtowniakarm.pl#$#.modal-backdrop { display: none !important; }
 deltaoptical.pl,hurtowniakarm.pl#$##RodoCookiesInfo { display: none !important; }
@@ -14315,6 +14320,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197184
+enerad.pl#@#.cookies-popup
+enerad.pl#@#.cookies-overlay
 ! https://github.com/uBlockOrigin/uAssets/issues/26937
 bugs.mojang.com#@#.consent-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196933
@@ -48034,6 +48042,7 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197068
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196802
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196388
 ! https://github.com/AdguardTeam/AdguardBrowserExtension/issues/3089

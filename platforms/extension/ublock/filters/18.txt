@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: n++5bKbpJk4TmuRY0kN2xQ
-! Diff-Path: ../patches/18/18-s-1737960183-3600.patch
+! Checksum: HWjlO649Y7VESK8eAuQAXg
+! Diff-Path: ../patches/18/18-s-1737964005-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.55.29
-! TimeUpdated: 2025-01-27T06:39:06+00:00
+! Version: 2.0.55.30
+! TimeUpdated: 2025-01-27T07:42:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2431,6 +2431,11 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+konferencje.pl#$#body[style] { overflow: auto !important; padding-right: 0 !important; }
+konferencje.pl#$##js-cookie-consent { display: none !important; }
+konferencje.pl#$#.modal-backdrop { display: none !important; }
+enerad.pl#$#body { overflow: auto !important; }
+enerad.pl#$##cp-cookies { display: none !important; }
 shop.mango.com##aside[class^="CookiesWrapper_"]
 androprice.com.ua##.f-cookies
 atozmath.com##+js(set-cookie, cookiesconsent, ok)
@@ -3535,9 +3540,9 @@ rosbalt.ru,newia.ru,dns.pl,bel.ru##+js(set-cookie, cookie-accepted, true)
 springernature.com,nature.com,springer.com#$?#.cc-banner { remove: true; }
 5ka.ru##aside[class*="-CookieMessage-"]
 firebase.google.com##devsite-cookie-notification-bar
-soteshop.com,sote.pl,q21.pl,emilio.pl#$#body[style] { overflow: auto !important; padding-right: 0 !important; }
-soteshop.com,sote.pl,q21.pl,emilio.pl#$##cookies_message_modal { display: none !important; }
-soteshop.com,sote.pl,q21.pl,emilio.pl#$#.modal-backdrop { display: none !important; }
+tagred.pl,soteshop.com,sote.pl,q21.pl,emilio.pl#$#body[style] { overflow: auto !important; padding-right: 0 !important; }
+tagred.pl,soteshop.com,sote.pl,q21.pl,emilio.pl#$##cookies_message_modal { display: none !important; }
+tagred.pl,soteshop.com,sote.pl,q21.pl,emilio.pl#$#.modal-backdrop { display: none !important; }
 pja.edu.pl##body > .popup:has(> .popup-inner .cookies-header)
 hesapkurdu.com###__next > .MuiGrid-root:has(> .MuiGrid-container > .MuiGrid-item > span > a[href="https://www.hesapkurdu.com/cerez-politikasi"])
 deltaoptical.pl,hurtowniakarm.pl#$#body { overflow: auto !important; }
@@ -15739,6 +15744,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197184
+enerad.pl#@#.cookies-popup
+enerad.pl#@#.cookies-overlay
 ! https://github.com/uBlockOrigin/uAssets/issues/26937
 bugs.mojang.com#@#.consent-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196933
