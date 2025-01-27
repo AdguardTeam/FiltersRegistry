@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.77",
-			"timeUpdated": "2025-01-27T00:39:19+0000",
+			"version": "2.0.49.78",
+			"timeUpdated": "2025-01-27T01:39:03+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
