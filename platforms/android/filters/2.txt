@@ -1,9 +1,9 @@
-! Checksum: C6LjkX2+RbbR65qLP2TTPw
-! Diff-Path: ../patches/2/2-s-1738075432-3600.patch
+! Checksum: i84rDP70ZONMZgNPjVDg3w
+! Diff-Path: ../patches/2/2-s-1738079110-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.69.57
-! TimeUpdated: 2025-01-28T14:31:39+00:00
+! Version: 2.3.69.58
+! TimeUpdated: 2025-01-28T15:31:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -64267,6 +64267,12 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! @@||react-spring.dev^$elemhide,extension,content
 !+ PLATFORM(windows, mac, android)
 ||react-spring.dev/assets/components-*.js$replace=/throw Error\(.\(418\)\);/null;/,domain=react-spring.dev
+! https://github.com/AdguardTeam/AdguardFilters/issues/186661
+! https://github.com/AdguardTeam/CoreLibs/issues/1904
+! Use exception rule if for some reason $replace causes problem
+! @@||gxr.world^$elemhide,extension
+!+ PLATFORM(windows, mac, android)
+||appcms-gxr.asset.viewlift.com/build/*/client.*.js$replace=/throw Error\(.\(418\)\);/null;/,domain=gxr.world
 ! https://github.com/AdguardTeam/CoreLibs/issues/1730
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143916
 !+ PLATFORM(windows, mac, android)
@@ -64317,6 +64323,10 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197278
+! TODO: remove the rule when this issue https://github.com/AdguardTeam/DisableAMP/issues/110 is fixed
+! aglint-disable-next-line
+@@||onmanorama.com/*.amp.html$extension="Disable AMP"
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196967
 ! It's broken by any extension
 @@||tailwindcss.com^$extension
@@ -64403,10 +64413,6 @@ nejm.org#@#.adplaceholder
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186934
 ||pornpics.com^$subdocument,badfilter
 ||pornpics.com^$subdocument,~xmlhttprequest
-! https://github.com/AdguardTeam/AdguardFilters/issues/186661
-! https://github.com/AdguardTeam/CoreLibs/issues/1904
-!+ PLATFORM(windows, mac, android)
-@@||gxr.world^$elemhide,extension
 ! mydealz.de - opening deal not working - blocked by $document rule
 @@||track.adtraction.com/t/t?a*epi=*url=
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186427
