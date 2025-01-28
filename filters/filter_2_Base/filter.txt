@@ -48355,6 +48355,13 @@ http://www.ads.$third-party
 !### Temporary ###
 ! SECTION: Temporary
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197113
+! https://github.com/AdguardTeam/AdguardFilters/issues/197276
+! Possible bug: error in console "Uncaught Error: Minified React error #***" and site does not load
+!#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
+||yf.com.tr/_next/static/chunks/*.js$replace=/throw Error\(i\((329|418)\)\)/null/
+/obj/lemon8-web-*/lemon8_web/master/vendors/*.js$replace=/throw Error\(.\(418\)\);/null;/,domain=lemon8-app.com
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195088
 ! BUG: https://github.com/AdguardTeam/CoreLibs/issues/1949
 ! TODO: remove this rule when the issue above will be fixed
@@ -68917,12 +68924,11 @@ channel4.com#@%#//scriptlet('prevent-xhr', 'v.fwmrm.net/ad/')
 !+ PLATFORM(windows, mac, android)
 @@||bing.com/search?showselans=$document,subdocument,important
 ! https://github.com/AdguardTeam/CoreLibs/issues/1730
-! https://github.com/AdguardTeam/AdguardFilters/issues/170565
-@@||jetpack.io^$elemhide,jsinject,extension,content
-! https://github.com/AdguardTeam/CoreLibs/issues/1730
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169776
+! Use exception rule if for some reason $replace causes problem
+! @@||react-spring.dev^$elemhide,extension,content
 !+ PLATFORM(windows, mac, android)
-@@||react-spring.dev^$elemhide,extension,content
+||react-spring.dev/assets/components-*.js$replace=/throw Error\(.\(418\)\);/null;/,domain=react-spring.dev
 ! https://github.com/AdguardTeam/CoreLibs/issues/1730
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143916
 !+ PLATFORM(windows, mac, android)
