@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.98",
-			"timeUpdated": "2025-01-27T14:31:10+0000",
+			"version": "2.0.96.99",
+			"timeUpdated": "2025-01-28T07:31:08+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.69.51",
-			"timeUpdated": "2025-01-28T00:31:29+0000",
+			"version": "2.3.69.52",
+			"timeUpdated": "2025-01-28T07:31:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.79.37",
-			"timeUpdated": "2025-01-27T19:38:49+0000",
+			"version": "2.0.79.38",
+			"timeUpdated": "2025-01-28T07:39:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.55.35",
-			"timeUpdated": "2025-01-27T15:40:19+0000",
+			"version": "2.0.55.36",
+			"timeUpdated": "2025-01-28T07:40:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -773,8 +773,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.6.4",
-			"timeUpdated": "2025-01-27T11:42:07+0000",
+			"version": "2.0.6.5",
+			"timeUpdated": "2025-01-28T07:40:16+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
@@ -801,8 +801,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.7.1",
-			"timeUpdated": "2025-01-27T15:40:26+0000",
+			"version": "2.0.7.2",
+			"timeUpdated": "2025-01-28T07:40:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

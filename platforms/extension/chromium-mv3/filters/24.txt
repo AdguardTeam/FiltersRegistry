@@ -1,8 +1,8 @@
-! Checksum: aWQQmkVBR1iNbMeEZLOiJg
+! Checksum: lrsV2J29As6zsu7CtyOHLw
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.7.1
-! TimeUpdated: 2025-01-27T15:40:26+00:00
+! Version: 2.0.7.2
+! TimeUpdated: 2025-01-28T07:40:17+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -46,6 +46,11 @@
 ! BUG: https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2900
 ! TODO: remove this only when the issue above is fixed
 ||npttech.com/advertising.js$important,script,redirect=noopjs,domain=~vijesti.me,badfilter
+!
+! NOTE: 28-01-2025
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/197245
+flypgs.com#@#div[data-banner-name]
 !
 ! NOTE: 27-01-2025
 !
@@ -339,7 +344,7 @@ autoby.jp,daily.co.jp,j-town.net,wetteronline.de#%#//scriptlet('remove-node-text
 rekidai-info.github.io#%#//scriptlet('trusted-create-element', 'body', 'iframe', 'src="https://www.google.com/recaptcha/api2/aframe"')
 rekidai-info.github.io#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^iframe/', 'abort')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192558
-vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div[class] .PostHeaderSubtitle__item:contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
+vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div[class] .PostHeaderSubtitle:contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
 vk.com,vk.ru###feed_rows > div[class^="feed_row"]:has(> div[class*="ads_block_data"])
 vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Реклама в сообществе))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
