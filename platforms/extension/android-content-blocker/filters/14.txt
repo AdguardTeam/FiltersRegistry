@@ -1,8 +1,8 @@
-! Checksum: tnYX965VIrtFHkZxHNCHSA
+! Checksum: 7IXXEf2FdZH+dwTAq7OA/g
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.46
-! TimeUpdated: 2025-01-29T18:38:42+00:00
+! Version: 2.2.20.47
+! TimeUpdated: 2025-01-29T21:38:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -30587,6 +30587,12 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 !
 ! SECTION: Subscriptions - Regular rules
 !
+nknews.org#$##subscribeModal { display: none !important; }
+nknews.org#$#.modal-backdrop { display: none !important; }
+nknews.org#$#.modal-open { overflow: auto !important; }
+nknews.org#$#body.modal-open .container { filter: none !important; }
+nknews.org##.subscribe-block
+nknews.org###fwidget-text-70
 gloria-jeans.ru##div[class*="-page__subscription"]
 ysia.ru##.theme-post-read-us
 fishingby.com##.telegramim_button
@@ -38772,7 +38778,8 @@ m.rabota.ua##app-promo-banner
 warnung.bund.de##.apphint
 bulurum.com##.MobileContainer
 mcqlearn.com##.app_store > span.android
-essenjet.com###mobileApp
+nknews.org,essenjet.com###mobileApp
+nknews.org##a[href^="https://www.nknews.org/pro/mobile-apps/"] > img
 huijiwiki.com###HuijiAppBanner
 mcqslearn.com##.knrdap
 mcqslearn.com##.android
@@ -40590,6 +40597,8 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/196958
+ctvnews.ca##.b-alert-bar-wrapper-custom
 ! Google Search - AI Overview
 ://www.google.*/async/folsrch?*&async=_basejs:*,_basecomb:*&q=$xmlhttprequest
 google.*##div[data-q][data-al]
@@ -43691,6 +43700,9 @@ habr.com###effect-sidebar
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197001
+nknews.org###single-advert
+nknews.org##.sidebarBanner
 ! adac.de - self-promo in article
 adac.de##div[data-tracking*="ANZEIGE"][data-tracking*="adac"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196637
