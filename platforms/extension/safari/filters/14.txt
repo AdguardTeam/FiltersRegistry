@@ -1,9 +1,9 @@
-! Checksum: PmD96aWBQngNy0KZnMMEvw
-! Diff-Path: ../patches/14/14-s-1738169238-3600.patch
+! Checksum: 2tP9qcpSJDepMVnpdUzNAw
+! Diff-Path: ../patches/14/14-s-1738176159-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.45
-! TimeUpdated: 2025-01-29T16:42:29+00:00
+! Version: 2.2.20.46
+! TimeUpdated: 2025-01-29T18:38:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2469,6 +2469,10 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+dmas.virginia.gov##.usn-notification
+jobs.virginia.gov#$#.consent-modal { display: none !important; }
+jobs.virginia.gov#$#.modal-backdrop { display: none !important; }
+jobs.virginia.gov#$#body { overflow: auto !important; }
 plenti.app#%#//scriptlet('trusted-set-cookie', 'cookie_consent', '%7B%22marketing%22%3Afalse%2C%22analytical%22%3Afalse%7D')
 link.com##.LinkNotificationCenter
 apply.workable.com##div[style*="cookie-consent"]
@@ -45004,9 +45008,6 @@ flowgpt.com##main > div.rounded-lg > div > div.relative:has(> div.swiper)
 ladepeche.fr#%#//scriptlet('set-constant', 'ultimediaVisiblePlayer.scrollVisiblePlayer', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191550
 player.fm##.sponsored-content
-! https://github.com/AdguardTeam/AdguardFilters/issues/190980
-store.steampowered.com##div[data-featuretarget="broadcast-embed"]
-||store.cloudflare.steamstatic.com/public/javascript/applications/store/broadcast.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190881
 kod.ru##div[class^="Share_wrapper"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190219
