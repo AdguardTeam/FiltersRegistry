@@ -1,9 +1,9 @@
-! Checksum: SlMRGx56F+O9E2rALxP88g
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1738147478-3600.patch
+! Checksum: 8IW4GnGalsVabuu3wRJMQA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1738151134-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.41
-! TimeUpdated: 2025-01-29T10:39:59+00:00
+! Version: 2.2.20.42
+! TimeUpdated: 2025-01-29T11:41:04+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -22129,6 +22129,7 @@ softpedia.com#$#iframe.swipebox-rightxd[id="relcontent"] { top: 60px!important; 
 !##############################
 !######### JS tweaks ##########
 !##############################
+osmanonline.me#%#//scriptlet('adjust-setTimeout', 'redirectButton', '*', '0.001')
 legendei.net#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 howdyho.net#%#//scriptlet('trusted-set-attr', '#progress-value', 'data-timer', '0')
 alex71.com#%#//scriptlet('remove-attr', 'style', '#download-link')
@@ -23771,6 +23772,9 @@ beasoku.com##.rss-flex
 beasoku.com##.rss-block
 !+ NOT_PLATFORM(android, ios, ext_android_cb)
 beasoku.com##.l-rss-header
+blog.livedoor.jp##.article-body-more > div.t_b[style="font-weight:bold;font-size:18px;line-height:27px;margin-bottom:30px;"] ~ span[style="font-size: 125%;"] > b
+blog.livedoor.jp##.article-body-more > div.t_b[style="font-weight:bold;font-size:18px;line-height:27px;margin-bottom:30px;"] ~ span[style="font-size: 125%;"] + div:not([class]) > span[style="font-size: 125%;"]
+blog.livedoor.jp##.article-body > br + br + font[size="4"] > b
 blog.livedoor.jp##.article-content > h3.linkh
 blog.livedoor.jp##iframe[id^="gazoupickup_"]
 ||blog.livedoor.jp/diet2channel/js/
