@@ -18044,6 +18044,10 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197404
+bitcotasks.com#%#//scriptlet('remove-attr', 'onerror', 'script[src^="https://www.googletagmanager.com/gtag/js?"]')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||googletagmanager.com/gtag/js?$domain=bitcotasks.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197048
 perverzija.com,pervtube.net#@#.ad-unit:not(.textads)
 perverzija.com,pervtube.net#%#//scriptlet('prevent-setTimeout', '.offsetHeight')
@@ -36078,6 +36082,14 @@ gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="po
 instalki.pl##center > a.gofollow > img
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/197403
+iswinoujscie.pl###adsSpecial
+||iswinoujscie.pl/gfx/banery/
+! https://github.com/AdguardTeam/AdguardFilters/issues/197396
+bham.pl###baner728
+bham.pl##.tresc > .con:has(> .adsbygoogle)
+! https://github.com/AdguardTeam/AdguardFilters/issues/197398
+motofilm.pl##.jedynka:has(> .adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196775
 webcamera.pl###screening
 webcamera.pl#%#//scriptlet('set-constant', 'STREAM_PLAYER_CONFIG.ads', 'emptyArr')
@@ -145357,7 +145369,6 @@ kisscos.net###v-overlay
 homemoviestube.com###v_right
 xvideos.com###video-right
 xvideos.com###video-sponsor-links
-javtrailers.com###videoPlayerContainer a[target="_blank"]
 drtuber.com###video_list_banner
 dofap.com###video_overlay_banner
 hentaiplay.net###video_overlays

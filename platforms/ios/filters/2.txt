@@ -1,9 +1,9 @@
-! Checksum: Zzuv8SahJae8kRNIZz+Nzw
-! Diff-Path: ../patches/2/2-s-1738223108-3600.patch
+! Checksum: FqV+ZKIDkyAVvCHR04X2YA
+! Diff-Path: ../patches/2/2-s-1738230328-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.69.78
-! TimeUpdated: 2025-01-30T07:31:43+00:00
+! Version: 2.3.69.79
+! TimeUpdated: 2025-01-30T09:32:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17905,6 +17905,10 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197404
+bitcotasks.com#%#//scriptlet('remove-attr', 'onerror', 'script[src^="https://www.googletagmanager.com/gtag/js?"]')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||googletagmanager.com/gtag/js?$domain=bitcotasks.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197048
 perverzija.com,pervtube.net#@#.ad-unit:not(.textads)
 perverzija.com,pervtube.net#%#//scriptlet('prevent-setTimeout', '.offsetHeight')
@@ -34731,6 +34735,14 @@ gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="po
 instalki.pl##center > a.gofollow > img
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/197403
+iswinoujscie.pl###adsSpecial
+||iswinoujscie.pl/gfx/banery/
+! https://github.com/AdguardTeam/AdguardFilters/issues/197396
+bham.pl###baner728
+bham.pl##.tresc > .con:has(> .adsbygoogle)
+! https://github.com/AdguardTeam/AdguardFilters/issues/197398
+motofilm.pl##.jedynka:has(> .adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196775
 webcamera.pl###screening
 webcamera.pl#%#//scriptlet('set-constant', 'STREAM_PLAYER_CONFIG.ads', 'emptyArr')
@@ -141024,7 +141036,6 @@ kisscos.net###v-overlay
 homemoviestube.com###v_right
 xvideos.com###video-right
 xvideos.com###video-sponsor-links
-javtrailers.com###videoPlayerContainer a[target="_blank"]
 drtuber.com###video_list_banner
 dofap.com###video_overlay_banner
 hentaiplay.net###video_overlays
