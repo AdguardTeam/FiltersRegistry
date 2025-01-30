@@ -1,9 +1,9 @@
-! Checksum: h/DY/QuThzzBuDAxktAtuw
-! Diff-Path: ../patches/2/2-s-1738215738-3600.patch
+! Checksum: 98NwuhUW787iDst0Z0gROg
+! Diff-Path: ../patches/2/2-s-1738223079-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.69.77
-! TimeUpdated: 2025-01-30T05:31:29+00:00
+! Version: 2.3.69.78
+! TimeUpdated: 2025-01-30T07:31:43+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21873,13 +21873,14 @@ maxstream.video#%#//scriptlet("adjust-setInterval", "counter", "*", "0.02")
 @@||c.adsco.re/|$script,domain=hotfrog.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/102882
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=pigeonburger.xyz
+! https://github.com/AdguardTeam/AdguardFilters/issues/197354
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176137
 ! https://github.com/AdguardTeam/AdguardFilters/issues/96899
 ! 1cloudfile.com, koramaup.com - antiadblock
 ! Website checks content of the "pagead2.googlesyndication.com" request, information is stored in ArrayBuffer
-1cloudfile.com,koramaup.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
-1cloudfile.com,koramaup.com#%#//scriptlet('trusted-replace-node-text', 'script', 'getNextDownloadPageLink', '200===r.status', '0===r.status')
-1cloudfile.com,koramaup.com#%#//scriptlet('trusted-replace-node-text', 'script', 'getNextDownloadPageLink', 'return r.responseText', 'return `a.getAttribute("data-ad-client")||""`')
+bowfile.com,1cloudfile.com,koramaup.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
+bowfile.com,1cloudfile.com,koramaup.com#%#//scriptlet('trusted-replace-node-text', 'script', '/getNextDownloadPageLink|download-timer/', '200===r.status', '!0')
+bowfile.com,1cloudfile.com,koramaup.com#%#//scriptlet('trusted-replace-node-text', 'script', '/getNextDownloadPageLink|download-timer/', 'return r.responseText', 'return `a.getAttribute("data-ad-client")||""`')
 ||cloudfront.net/?*=$script,xmlhttprequest,redirect=noopjs,domain=1cloudfile.com
 ||cloudfront.net/?rwlrd=$redirect=noopframe,domain=1cloudfile.com
 1cloudfile.com#@#.advert-wrapper
@@ -21938,7 +21939,6 @@ beatsnoop.com#%#//scriptlet("abort-current-inline-script", "document.createEleme
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95200
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=calculator-online.net,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136570
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=bowfile.com
 ||cloudfront.net/?rwlrd=$redirect=noopframe,domain=bowfile.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/95132
 cdkm.com#%#//scriptlet("set-constant", "google_jobrunner", "noopFunc")
@@ -39121,8 +39121,8 @@ veev.to#%#//scriptlet('trusted-click-element', '.wwc-play-button > .bc-content >
 [$domain=/^filemoon-.*\.xyz/]#%#//scriptlet('abort-on-property-read', 'Borath')
 [$domain=/^filemoon-.*\.xyz/]#%#//scriptlet('abort-on-property-read', 'popns')
 [$domain=/^filemoon-.*\.xyz/]#%#//scriptlet('prevent-window-open')
-bf0skv.org,ulike-filter-sowe-canplay-rightlets-generate-themrandomlyl89u8.fun,gorro-chfzoaas.fun,stephenking-c8bxyhnp.fun,mee-x63tvple.com,0cbcq8mu.com,brr-69xwmut5-moo.com,moo-teau4c9h-mkay.com,6v254h9v.xyz,fle-rvd0i9o8-moo.com,fle-2ggdmu8q-moo.com,u6lyxl0w.xyz,iqksisgw.xyz,filemoon-j0l2wxjk.com,moon-4uemks89-embed.com,4k2h4w04.xyz,file-mi11ljwj-embed.com,moonfile-62es3l9z.com,moon-kg83docx.com,file-1bl9ruic-moon.com,moon-fm43w1qv.com,jmzkzesy.xyz,filemoon-qm3chdkh.xyz,altyazilivipx3.shop,filemoon.*#%#//scriptlet('abort-on-property-read', 'Cuba')
-bf0skv.org,ulike-filter-sowe-canplay-rightlets-generate-themrandomlyl89u8.fun,gorro-chfzoaas.fun,stephenking-c8bxyhnp.fun,mee-x63tvple.com,0cbcq8mu.com,brr-69xwmut5-moo.com,moo-teau4c9h-mkay.com,6v254h9v.xyz,fle-rvd0i9o8-moo.com,fle-2ggdmu8q-moo.com,u6lyxl0w.xyz,iqksisgw.xyz,filemoon-j0l2wxjk.com,moon-4uemks89-embed.com,4k2h4w04.xyz,file-mi11ljwj-embed.com,moonfile-62es3l9z.com,moon-kg83docx.com,file-1bl9ruic-moon.com,moon-fm43w1qv.com,jmzkzesy.xyz,filemoon-qm3chdkh.xyz,altyazilivipx3.shop,fmembed.cc,rgeyyddl.skin,kerapoxy.cc,fmoonembed.*,defienietlynotme.com,embedme.*,filemoon.*,finfang.*,hellnaw.*,moonembed.*,sulleiman.com,vpcxz19p.xyz,z12z0vla.*#%#//scriptlet('prevent-window-open')
+l1afav.net,bf0skv.org,ulike-filter-sowe-canplay-rightlets-generate-themrandomlyl89u8.fun,gorro-chfzoaas.fun,stephenking-c8bxyhnp.fun,mee-x63tvple.com,0cbcq8mu.com,brr-69xwmut5-moo.com,moo-teau4c9h-mkay.com,6v254h9v.xyz,fle-rvd0i9o8-moo.com,fle-2ggdmu8q-moo.com,u6lyxl0w.xyz,iqksisgw.xyz,filemoon-j0l2wxjk.com,moon-4uemks89-embed.com,4k2h4w04.xyz,file-mi11ljwj-embed.com,moonfile-62es3l9z.com,moon-kg83docx.com,file-1bl9ruic-moon.com,moon-fm43w1qv.com,jmzkzesy.xyz,filemoon-qm3chdkh.xyz,altyazilivipx3.shop,filemoon.*#%#//scriptlet('abort-on-property-read', 'Cuba')
+l1afav.net,bf0skv.org,ulike-filter-sowe-canplay-rightlets-generate-themrandomlyl89u8.fun,gorro-chfzoaas.fun,stephenking-c8bxyhnp.fun,mee-x63tvple.com,0cbcq8mu.com,brr-69xwmut5-moo.com,moo-teau4c9h-mkay.com,6v254h9v.xyz,fle-rvd0i9o8-moo.com,fle-2ggdmu8q-moo.com,u6lyxl0w.xyz,iqksisgw.xyz,filemoon-j0l2wxjk.com,moon-4uemks89-embed.com,4k2h4w04.xyz,file-mi11ljwj-embed.com,moonfile-62es3l9z.com,moon-kg83docx.com,file-1bl9ruic-moon.com,moon-fm43w1qv.com,jmzkzesy.xyz,filemoon-qm3chdkh.xyz,altyazilivipx3.shop,fmembed.cc,rgeyyddl.skin,kerapoxy.cc,fmoonembed.*,defienietlynotme.com,embedme.*,filemoon.*,finfang.*,hellnaw.*,moonembed.*,sulleiman.com,vpcxz19p.xyz,z12z0vla.*#%#//scriptlet('prevent-window-open')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174521
 xmateur.com#%#//scriptlet('set-constant', 't8660acdc24.adv_pre_html', 'undefined')
 xmateur.com#%#//scriptlet('set-constant', 't8660acdc24.protect_block', 'undefined')
