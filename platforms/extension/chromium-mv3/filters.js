@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.63.99",
-			"timeUpdated": "2025-01-31T13:01:19+0000",
+			"version": "2.1.64.0",
+			"timeUpdated": "2025-01-31T17:01:15+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.63.98",
-			"timeUpdated": "2025-01-31T13:01:20+0000",
+			"version": "2.1.63.99",
+			"timeUpdated": "2025-01-31T17:01:15+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1235,8 +1235,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.11.25",
-			"timeUpdated": "2025-01-07T01:01:34+0000",
+			"version": "2.0.11.26",
+			"timeUpdated": "2025-01-31T17:01:43+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.57.30",
-			"timeUpdated": "2025-01-31T13:02:12+0000",
+			"version": "2.0.57.31",
+			"timeUpdated": "2025-01-31T17:02:03+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
