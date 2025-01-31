@@ -1,9 +1,9 @@
-! Checksum: USYJYUGhHtWHmLEtBfSH6w
-! Diff-Path: ../patches/19/19-s-1738324041-3600.patch
+! Checksum: e9GAh/ldW5mGdefgrRaOfw
+! Diff-Path: ../patches/19/19-s-1738331164-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.49.57
-! TimeUpdated: 2025-01-31T11:42:16+00:00
+! Version: 2.0.49.58
+! TimeUpdated: 2025-01-31T13:41:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3999,10 +3999,13 @@ promote.telegram.org#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_
 ! script checks these elements even if rules changed
 ! .responsive-sky-scraper
 ! .header-link-exaroton
-aternos.org#$#.responsive-leaderboard { content-visibility: hidden !important; }
-aternos.org#$#.placement { content-visibility: hidden !important; }
+aternos.org#$#.responsive-leaderboard { transform: rotate3d(1, 1, 0, 90deg) !important; }
+aternos.org#$#.placement { transform: rotate3d(1, 1, 0, 90deg) !important; }
+aternos.org#$#.header-link-exaroton-link { transform: rotate3d(1, 1, 0, 90deg) !important; }
 @@||aternos.org^$generichide
 !#safari_cb_affinity(general)
+@@||securepubads.g.doubleclick.net/gampad/ads?pvsid=$domain=aternos.org
+@@||securepubads.g.doubleclick.net/pagead/ppub_config?ippd=aternos.org$domain=aternos.org
 @@||hb.vntsm.io/content.html$domain=aternos.org
 @@||hb.vntsm.com/v4/live/vms/ad-manager.js$domain=aternos.org
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=aternos.org
@@ -4011,7 +4014,6 @@ aternos.org#$#.placement { content-visibility: hidden !important; }
 !#safari_cb_affinity
 ! Redirect rules
 $script,redirect-rule=noopjs,domain=aternos.org
-$xmlhttprequest,redirect-rule=nooptext,domain=aternos.org
 !
 ! rp5.ru
 m.rp5.ru,m.rp5.by,m.rp5.kz,m.rp5.co.uk,m.rp5.md#%#//scriptlet("set-constant", "adFilters", "undefined")
@@ -4365,6 +4367,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+telusdigital.com###main > section.fixed:has(> div.container-p > div.text-textInverse + div > a[href="/contact/sales"])
+telusdigital.com###header > div[class]:has(> a[href="https://www.telusdigital.com/telus-international-is-now-telus-digital"])
 xn----etbpba5admdlad.xn--p1ai#$#body[style] { overflow: auto !important; }
 xn----etbpba5admdlad.xn--p1ai#$?#body[style] > div:not([class]):has(> div > div > div > div > div > button:contains(Реклама)) { display: none !important; }
 xn--d1aqf.xn--p1ai##.js--telegram-block
@@ -12878,6 +12882,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 fxstreet.es##div[id^="subscribetonewsletter"]
 modcombo.com##.box-discord
 frankmedia.ru##.page-media__block--telegram
+boundless.com##.o-block:has(> form[data-lead-magnet-name="bit-newsletter"])
 kavkaz-uzel.eu##.text-block > div.too:has(> p > a[href="https://t.me/cknot"])
 babylonbee.com###app > div.bg-gray-50 > div.mx-auto.flex.items-center:has(form[action="/newsletter"])
 ctvnews.ca##.b-promo-medium-manual-custom
