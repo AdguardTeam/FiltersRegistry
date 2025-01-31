@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.63.98",
-			"timeUpdated": "2025-01-31T09:01:32+0000",
+			"version": "2.1.63.99",
+			"timeUpdated": "2025-01-31T13:01:19+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.63.97",
-			"timeUpdated": "2025-01-31T09:01:33+0000",
+			"version": "2.1.63.98",
+			"timeUpdated": "2025-01-31T13:01:20+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1071,8 +1071,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.0.16",
-			"timeUpdated": "2025-01-31T01:01:26+0000",
+			"version": "2.1.0.17",
+			"timeUpdated": "2025-01-31T13:01:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1259,8 +1259,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlocker.txt",
 			"trustLevel": "high",
-			"version": "2.0.5.29",
-			"timeUpdated": "2025-01-29T09:02:08+0000",
+			"version": "2.0.5.30",
+			"timeUpdated": "2025-01-31T13:01:52+0000",
 			"deprecated": false,
 			"languages": [
 				"fa",
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.57.29",
-			"timeUpdated": "2025-01-31T09:02:28+0000",
+			"version": "2.0.57.30",
+			"timeUpdated": "2025-01-31T13:02:12+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1443,8 +1443,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.5.87",
-			"timeUpdated": "2025-01-31T01:01:59+0000",
+			"version": "2.0.5.88",
+			"timeUpdated": "2025-01-31T13:02:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1483,8 +1483,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.5.94",
-			"timeUpdated": "2025-01-30T05:02:01+0000",
+			"version": "2.0.5.95",
+			"timeUpdated": "2025-01-31T13:02:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
