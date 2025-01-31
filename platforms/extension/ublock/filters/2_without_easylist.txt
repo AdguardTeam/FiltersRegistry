@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FQRzQo/3PRde0MCO6W/7eQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1738320622-3600.patch
+! Checksum: ZGvX0UWH26IPshc5J7f48g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1738324063-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.69.93
-! TimeUpdated: 2025-01-31T10:34:31+00:00
+! Version: 2.3.69.94
+! TimeUpdated: 2025-01-31T11:31:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17660,6 +17660,7 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197502
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197404
 bitcotasks.com##+js(remove-attr, onerror, script[src^="https://www.googletagmanager.com/gtag/js?"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197048
@@ -19976,8 +19977,6 @@ castracoin.com#$#.textads.adsbox { display: block !important; }
 coins-town.com#$#.adsbox.doubleclick.ad-placement { display: block !important; }
 coins-town.com##+js(set-constant, noAdBlock, undefined)
 coins-town.com##+js(addEventListener-defuser, load, window.getComputedStyle)
-! https://github.com/AdguardTeam/AdguardFilters/issues/144293
-@@||in91vip.win/default_ad_js/ad_code.js
 ! techcyan.com - https://listauthorschat.slack.com/archives/C010PK1A022/p1677591789790399
 techcyan.com##+js(no-setTimeout-if, google_ads_iframe_)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143871
@@ -38854,6 +38853,8 @@ truyenqqhot.com##div[id^="ads_"]
 ! Postmedia
 ! https://www.postmedia.com/brands/
 ##aside[data-aqa="widget-breaking-banner"]
+! Cox Media Group.
+##.arcad_feature
 !
 ##div[data-clickadilla-banner]
 ##.player-section__ad-b
@@ -44002,6 +44003,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+isitdownorjustme.net##.aioc_advertise_box
+isitdownorjustme.net##img[width="970"][height="250"]
 investopedia.com##.mm-ads-leaderboard-spacer
 modcombo.com##.txt-ads
 pricecharting.com##div[style*="width:"][style*="height:"][style*="margin-top:"]:has(> ins.epn-placement)
