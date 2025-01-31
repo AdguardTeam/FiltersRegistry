@@ -1,5 +1,5 @@
-! Checksum: YyqJk3peqwCjZydplPd6YA
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1738252068-3600.patch
+! Checksum: 70ApC8YDaswemOX3OcrckQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1738291419-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.30.32
@@ -42,6 +42,8 @@ wap.baidu.com##.tab_news
 baidu.com##.s-hotsearch-wrapper
 lasestrellas.tv###video-players-container > .fixed.bottom-0
 bloomberg.com##div[data-component="inline-recirc"]
+jomalone.jp#$#.gnav-header-block__top { display: none !important; }
+jomalone.jp#$#.gnav-header-block__inner { height: auto !important; }
 mynet.com##.interest-widget-container
 eurogamer.net##.article_body_content > aside.poll_wrapper
 independent.co.uk##.sponsored-features
@@ -285,7 +287,9 @@ filmweb.pl#$#.videoPlayer.isPinned { visibility: hidden !important; }
 filmweb.pl#%#//scriptlet('remove-class', 'isPinned', '.videoPlayer.isPinned')
 perekrestok.ru#?#footer div.delivery-notify-text:upward(1)
 burninghut.ru#$#.layout-default__content--brand { margin-top: 0 !important; }
+proekt.media#?#.stk-post > div.stk-grid:has(> div.stk-grid-col > h4#donateButton)
 gfoodd.com##div[class^="code-block code-block-"][style="margin: 8px 0; clear: both;"]
+numerama.com###dailymotion-pip-large-viewport
 propertynews.pl##.partners-bar
 propertynews.pl##.partners-scroller-bar
 chosun.com#$#div[class^="paywall-"] { display: none !important; }
@@ -419,6 +423,8 @@ kv.by###our-channels
 kv.by##.telegramim_button
 fb.ru##.intext
 news.trendmicro.com##div[class*="nav_top-info-bar"]
+blog.hubspot.com#?#.blog-post-body span > [style*="text-align: center;"]:has(> a[href^="https://offers.hubspot.com/"]):contains(Featured Resource:)
+blog.hubspot.com#?#.blog-post-body span > [style*="text-align: center;"]:has(> a[href^="https://offers.hubspot.com/"]):contains(Featured Resource:) + p:has(> a[href^="https://offers.hubspot.com/"])
 kavkaz-uzel.eu##.text-block > p:contains(КАСАЕТСЯ ДЕЯТЕЛЬНОСТИ ИНОСТРАННОГО АГЕНТА)
 nasiliu.net###headWarning
 novayagazeta.ru#?##article-body #materialBlock_0 > div:has(> div > p:contains(НАПРАВЛЕН ИНОСТРАННЫМ АГЕНТОМ))
@@ -621,6 +627,7 @@ calendar.google.com,docs.google.com,mail.google.com,news.google.com,drive.google
 kresy.pl##.ls-popup [id^="layerslider_"]
 journo.com.tr##.herald-single-sticky
 semrush.com#$#body { overflow:visible!important; }
+m.auto.ru##.index-evaluation-banner
 gmx.net###topper
 phys.org##.nwletter-box
 newtab.club##.section-icon-tabs
@@ -631,10 +638,10 @@ vk.com##.feed_friends_recomm
 ixbt.video##.clickable_zone
 ixbt.video#$#body { background: none!important; }
 handelsblatt.com###hb-message-alert-bookmark
+last.fm##.profile-banner
 skype.com,xbox.com##.f-information.epb-container
 screenshots.firefox.com##.alt-notification
 ||srviral.com^$domain=alrincon.com
-whispersinthecorridors.com##.media > .space
 javhiv.com##.block-body > .block.announcement
 youtube.com#$##ticker.ytd-masthead { display: none!important; }
 amalgama-lab.com###quality
@@ -675,6 +682,7 @@ wikipedia.org##.mw-dismissable-notice
 addons.mozilla.org###site-welcome.site-balloon
 overclockers.com###sidebar > div:not(.reference)
 comss.ru##div[style="margin-top:25px;width:300px;"] > a > img
+comss.ru##td[style="width:180px"] > div.block
 news.com.au##.footer-statements
 otzyv.ru##div[align="center"] > .aviasales
 pcworld.com#%#setInterval(function() { var el = document.querySelector('.howto-video video'); if (el) { el.pause(); el.src = ''; }}, 100);
@@ -1081,7 +1089,6 @@ easylearn.baidu.com##.kaixue-dialog-mask
 easylearn.baidu.com##.vip-banner-cont
 frag-mutti.de###fm-shadow
 thebell.co.kr##.bannerBox
-m.thebell.co.kr##article[class$="_banner"]
 more.tv#$#body { overflow: auto !important; }
 virustotal.com#%#//scriptlet('hide-in-shadow-dom', '.alert-info')
 virustotal.com#%#//scriptlet('hide-in-shadow-dom', 'span[slot="header"] > div + a[href^="https://developers.virustotal.com/"]')
@@ -1284,6 +1291,7 @@ winfuture.de##.topnews > .clearfix
 winfuture.de#?#div[class^="hp_"] div:has(> .topteaser:contains(/(Anzeige)|wieder lieferbar|Schnäppchen|sale|An(?<!-)Angebot(?!s)gebot|Rabatt|nur bis[\s\S]*Euro/))
 winfuture.de#?#.newsTicker > li:has(> a:contains(/(Anzeige)|Schnäppchen|sale|(?<!-)Angebot(?!s)/))
 winfuture.de#?#.topnews > div[class]:has(> h2 > a[href*="/special/"][href*="/angebote/"])
+analyticsvidhya.com###sale-strip
 dvdfab.cn##.coupon-link
 educba.com###topbar
 urlvoid.com###sticky-banner
@@ -1314,7 +1322,6 @@ finance.sina.com.cn###sina-pages-u
 ||rakuten.co.jp/sitemap/img/banner/
 pinnacle.com##a[data-gtm-id^="promo_banner_"]
 ||jugem.jp/user_blog/ad/
-alibaba.com#?#div[data-content="abox-ProductNormalList"] > div.J-offer-wrapper:has(> div > i.search-ad-icon)
 similarsites.com##div[class^="HomepageBanner__"]
 similarsites.com##div[class^="SimilarSitesCardBanner__"]
 similarsites.com##div[class^="FooterBanner__"]
@@ -1334,6 +1341,7 @@ kakaku.com#?#.alignC > div.mTop10 > div[style="border:1px solid #ccc;"]:contains
 www.kinopoisk.ru#?#div[class^="styles_root"] > div[data-tid]:has(> div[class*="blockClassName"] a[href*="trailer_promo"])
 www.kinopoisk.ru##a[href="https://hd.kinopoisk.ru/?source=kinopoisk_head_button"]
 www.kinopoisk.ru##div[class^="trailer-promo"]
+mediaite.com##.jw-adthrive-wrap > .o-jw-sub-promo
 e.mail.ru,octavius.mail.ru##div[data-test-id^="subscriptions_v"]
 e.mail.ru,octavius.mail.ru#$?#html { --vkui--octavius_size_headline_height--regular: 36px !important; }
 mail.ru#?#body a[href^="https://r.mail.ru/"]:has(> span[class] > span[id^="tb-close-"])
@@ -1436,6 +1444,7 @@ heise.de##.stage-advertising
 ||flashondemand.top-ix.org/video-omg/channels/vvvvid.mp4
 ||myshows.me/shared/img/fe/banners/pro-*.gif
 search.yahoo.com###browserExtensionPromotion
+darlingtonandstocktontimes.co.uk##body > #piano-message
 123pan.com#$#.verifyBox { background: none !important; }
 123pan.com##.bg_svip_block_ads
 ||app.123pan.com/manager/share_background/*.png
@@ -1540,6 +1549,7 @@ meneame.net###newsletter
 inoreader.com#$#div[id^="promo_dialog_"] { display: none !important; }
 inoreader.com#%#//scriptlet('remove-class', 'modal-open', 'html')
 inoreader.com###black_friday
+mobalytics.gg#?#main > div[class^="m-"]:has(> div[class^="m-"] > #lol-video-all-pages-mobile)
 xgp.pl#%#//scriptlet('set-cookie', 'hpb_closed', '1')
 internxt.com#$?##__next > .group:has(> div[class] > #topBannerActionButton) { display: none !important; }
 internxt.com#$?#div[class*="pt-[64px] md:pt-[54px]"]:has(> #navbar) { padding-top: 0px !important; }
@@ -2140,6 +2150,7 @@ forums.malwarebytes.com##.ipsMmalware.ipsSpacer_both
 iplocation.net#?##ip-placeholder span:has(> a[href^="/go/hide-ip-with-vpn/"])
 iplocation.net##.iptable a[href^="/go/hide-ip-with-vpn/"]
 apowersoft.jp##.ad
+best-legal.jp###consultation-sp
 best-legal.jp##.consultation-more
 shopping.yahoo.co.jp##div[class^="style_SideMenuBanner_"]
 travel.co.jp##.ad-msq
@@ -2235,8 +2246,6 @@ hira2.jp##.p-infobar-wrapper--header-bottom
 urbandictionary.com##a[href^="https://ads.urbandictionary.com"]
 realsound.jp###bookStore
 24h.tv##.notify.is_freshdesk
-rakuten-card.co.jp##.logoutArea > div.box__inner
-rakuten-card.co.jp##.logoutArea > h2.box__ttl
 hostlove.com##.ad0
 new-123movies.live#?#script + div[class] div[id]:has(> a[href="/user/profile/premium-membership"])
 new-123movies.live,fmovies.style#?#fmovies + section > script + div[class]:has(> div[style] > a[href="/user/profile/premium-membership"])
@@ -2318,6 +2327,7 @@ nhk.or.jp###stickyBanner
 tuoitre.vn##.box-raovat
 123pan.com##.VipBanner
 travel.rakuten.co.jp###block-mailmagazine-link
+||ecbeing.net/cms/images/headline/kokuchi.jpg
 ||minnano-anime.com/p/minnanovideo_bn634.png
 businessinsider.de##.piano__footer
 rnd.de###piano-sticky-template-article-rnd
@@ -2393,7 +2403,6 @@ auto123.com##.head_banner
 hotline.ua##.promo-list-item
 ldmnq.com##.ld-download-zuanban
 newsweek.pl##.bottomBar
-polityka.pl##.cg_promo_popup
 naurok.com.ua##.show-time-item
 cnki.net##.banner-main
 hangikredi.com##div.w-full > .relative[data-testid="nativeCard"]:has(> a[target="_blank"][rel])
@@ -2742,11 +2751,11 @@ kimovil.com##.hotdeals-block
 ||abeagle-public.buzzfeed.com/public/v2/experiment_variants?
 reviews.org##.header-disclaimer
 ccc.eu##.is-umbrella
+search.yahoo.com###browserExtensionPromotionBanner
 windows.com,visualstudio.com,office.com,xbox.com,microsoft.com,msra.cn###epb
 badatel.net##div[id^="badat-"]
 femina.hu##div[data-miniapp-id]
 coolutils.com###bottomBanner
-dyttw.com.cn##a[href="/ads"]
 drweb.ru###ShowIt
 lenta.ru##iframe[name="banner"]
 ||journalistenwatch.com/wp-content/uploads/2017/08/Boxerin-03.gif
