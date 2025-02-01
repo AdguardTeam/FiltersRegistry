@@ -1,9 +1,9 @@
-! Checksum: h2gtPUzNCfzng5F8WjV+qg
-! Diff-Path: ../patches/8/8-s-1737553522-3600.patch
+! Checksum: hwLHzKelfC6CHeX9QHJ+NA
+! Diff-Path: ../patches/8/8-s-1738435420-3600.patch
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.7.59
-! TimeUpdated: 2025-01-22T13:41:01+00:00
+! Version: 2.0.7.60
+! TimeUpdated: 2025-02-01T18:39:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1498,6 +1498,9 @@ vakantieplaats.nl#@#.topAds
 @@||content.hwigroup.net/images^$domain=hardware.info
 hardware.info,tweakers.net#@#.AdBar
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197442
+hartvannederland.nl#@##topbanner_ad
+@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178088
 topkleurplaat.nl#%#//scriptlet('prevent-setTimeout', '.height() === 0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177923
@@ -1667,6 +1670,8 @@ omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -40
 ! Good: example.org###rek; ||example.com/ads/
 ! Bad: example.org#@##banner_ad (for instance, should be in allowlist.txt or in antiadblock.txt)
 !
+hartvannederland.nl##div[data-advert-slot-state]
+hartvannederland.nl##div:has(> span:first-child:contains(Advert))
 omroepbrabant.nl#%#//scriptlet('google-ima3')
 omroepbrabant.nl#%#//scriptlet('adjust-setTimeout', '[native code]', '6000', '0.001')
 9292.nl##:is(div, aside, astro-island):has(> div[data-testid="gpt-ad-root"])
