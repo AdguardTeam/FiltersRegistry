@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.86",
-			"timeUpdated": "2025-01-30T12:41:06+0000",
+			"version": "2.0.54.87",
+			"timeUpdated": "2025-02-01T19:38:49+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
