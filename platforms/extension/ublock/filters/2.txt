@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: DQCMWy4+MWsAeHDRqhJYgQ
-! Diff-Path: ../patches/2/2-s-1738377819-3600.patch
+! Checksum: i48qwUNfVjztrQWnHUOOig
+! Diff-Path: ../patches/2/2-s-1738384981-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.70.3
-! TimeUpdated: 2025-02-01T02:31:36+00:00
+! Version: 2.3.70.4
+! TimeUpdated: 2025-02-01T04:31:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -76438,6 +76438,7 @@ _800x80_
 ##.ad-skyscraper2
 ##.ad-skyscraper3
 ##.ad-slider
+##.ad-slot
 ##.ad-slot--container
 ##.ad-slot--inline
 ##.ad-slot--mostpop
@@ -78424,7 +78425,6 @@ _800x80_
 ##.ads_center
 ##.ads_code
 ##.ads_column
-##.ads_container
 ##.ads_container_top
 ##.ads_content
 ##.ads_css
@@ -84142,9 +84142,14 @@ _800x80_
 ##[class^="adDisplay-module"]
 ##[class^="amp-ad-"]
 ##[data-ad-cls]
+##[data-ad-manager-id]
+##[data-ad-module]
 ##[data-ad-name]
+##[data-ad-width]
+##[data-adblockkey]
 ##[data-adbridg-ad-class]
 ##[data-adshim]
+##[data-advadstrackid]
 ##[data-asg-ins]
 ##[data-block-type="ad"]
 ##[data-css-class="dfp-inarticle"]
@@ -84220,6 +84225,7 @@ _800x80_
 ##[id^="ad-wrap-"]
 ##[id^="ad_sky"]
 ##[id^="ad_slider"]
+##[id^="div-gpt-ad"]
 ##[id^="section-ad-banner"]
 ##[name^="google_ads_iframe"]
 ##[onclick^="location.href='https://1337x.vpnonly.site/"]
@@ -84533,6 +84539,7 @@ _800x80_
 ##div[id^="crt-"][style]
 ##div[id^="dfp-ad-"]
 ##div[id^="div-ads-"]
+##div[id^="div-gpt-"]
 ##div[id^="ezoic-pub-ad-"]
 ##div[id^="google_dfp_"]
 ##div[id^="gpt_ad_"]
@@ -84555,15 +84562,8 @@ _800x80_
 ##.Ad-Container:not(.adsbygoogle)
 ##.ad-area:not(.text-ad)
 ##.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
-##.ad-slot:not(.adsbox):not(.adsbygoogle)
+##.ads_container:not(.text-ad)
 ##.sidebar-ad:not(.adsbygoogle)
-##[data-ad-manager-id]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle)
-##[data-ad-module]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle)
-##[data-ad-width]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle)
-##[data-adblockkey]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(html):not(.adsbygoogle)
-##[data-advadstrackid]:not([style$="left: -10000px !important; top: -1000px !important;"]):not(.adsbygoogle)
-##[id^="div-gpt-ad"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]):not([style="pointer-events: none; height: 1px; width: 0px; opacity: 0; visibility: hidden; position: fixed; bottom: 0px;"])
-##div[id^="div-gpt-"]:not([style^="width: 1px; height: 1px; position: absolute; left: -10000px; top: -"]):not([style="pointer-events: none; height: 1px; width: 0px; opacity: 0; visibility: hidden; position: fixed; bottom: 0px;"])
 ###target.pk-page-ready #pk-status-message
 ###sellwild-loader
 ##.ad_1tdq7q5
@@ -84997,7 +84997,7 @@ soundandvision.com,stereophile.com#@##topbannerad
 gamingcools.com#@#.Adsense
 m.motonet.fi#@#.ProductAd
 flightview.com#@#.ad-160-600
-job.inshokuten.com,kurukura.jp#@#.ad-area
+job.inshokuten.com,kurukura.jp#@#.ad-area:not(.text-ad)
 kincho.co.jp,niji-gazo.com#@#.ad-block
 ikkaku.net#@#.ad-bottom
 job.inshokuten.com,sexgr.net,webbtelescope.org,websaver.ca#@#.ad-box:not(#ad-banner):not(:empty)
@@ -85171,7 +85171,7 @@ eneuro.org,jneurosci.org#@#.region-ad-top
 offmoto.com#@#.reklama
 msn.com#@#.serversidenativead
 audioholics.com,classy-online.jp#@#.side-ad
-ekitan.com,kissanadu.com#@#.sidebar-ad
+ekitan.com,kissanadu.com#@#.sidebar-ad:not(.adsbygoogle)
 independent.com#@#.sidebar-ads
 cadlinecommunity.co.uk#@#.sidebar_advert
 proininews.gr#@#.small-ads
