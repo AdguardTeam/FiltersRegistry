@@ -1,5 +1,5 @@
-! Checksum: 7QQ9pELkYWX50ivko5vnRg
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1738324077-3600.patch
+! Checksum: zTAHwX7E09WKw5VIHIeu7Q
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1738377832-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.18.91
@@ -113,6 +113,7 @@ bbcgoodfood.com#$#div[class^="tp-modal"][style="z-index: 300050; display: block;
 bbcgoodfood.com#$#div[class^="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
 bbcgoodfood.com#$#html > body.tp-modal-open { overflow: auto !important; }
 temu.com#%#//scriptlet('trusted-click-element', 'div[class^="downloadUI-"] > div[class^="closeArea-"]', '', '800')
+trip.com##.h5-install-banner
 mail.proton.me##.content-container > div[aria-label="Notification"]:has(> a[href*="webapp-mail-topbanner"])
 nytimes.com##.promo
 coingecko.com##div[data-controller="navbar"] a[href^="https://coingecko.app.link/"]
@@ -198,6 +199,7 @@ medyascope.tv##.elementor-element-5bded82f
 thehindu.com##.read-in-app-floating-btn
 2gis.ru##._pzh6x0:has(> div > div[style*="d-assets.2gis.ru/images/daf4560904bc6dc14f90.png"])
 potreningu.pl##.mobile-popup-window
+donanimhaber.com##.open-with-app-popup
 clubd.co.jp##.app-dl-banner
 bestmovie.it###bestmovie-store-apps
 just-eat.*##section[data-qa="download-app-section"]
@@ -239,7 +241,6 @@ m.economictimes.com#%#//scriptlet('set-session-storage-item', 'nudgeStickyBanner
 m.economictimes.com##a[href*="app.goo.gl/?link="]
 wrtn.jp#%#//scriptlet('trusted-click-element', '#web-modal button.css-1d86b5p')
 zutool.jp##[class^="cmn_app_link"]
-mpj-portal.jp##.mHoldem-app
 meijutt.net#%#//scriptlet('trusted-set-cookie-reload', 'meijutt2024', 'meijutt2025')
 bundesliga.com##app-banner-wrapper
 realtor.com##div[class^="MobileBannerstyles"]
@@ -279,7 +280,6 @@ iq.com##.type1024
 iq.com##.type1023
 iq.com##.right-header > div.qrcode-wrap
 fedex.com##fedex-smart-banner
-progressive.com##ps-smart-banner
 emojipedia.org##div[class^="Footer_footer-navigation-zedge__"]
 truecaller.com#%#//scriptlet('set-cookie', 'tc:dismissexitintentpopup', 'true')
 kakuyomu.jp##div[class^="CompactWorkFooter_openInAppLink"]
@@ -364,6 +364,7 @@ m.n11.com#%#//scriptlet('trusted-set-cookie', 'redirectToAppCookie', 'mobileapp'
 gumtree.com##.image-app-banner
 avito.ru##div[class^="apps-banner-"]
 bbcgoodfood.com##.piano-inline-template__content
+makc.ru###main-mobile-app
 finance.yahoo.com#$#html { overflow: auto !important; }
 lescon.com.tr,telekom.de,openrice.com,pass.telekom.de,lazada.com.ph,lamoda.ru,lazada.co.id,milliyet.com.tr,esky.com.tr,allo.ua,home24.de,cbsnews.com,lieferheld.de##.smart-banner
 telekom.de#%#//scriptlet('trusted-set-cookie', 'mma-banner', 'viewed')
@@ -513,6 +514,7 @@ list.jd.com##.jdm-tbar-tab-qrcode
 house.goo.ne.jp##.cmnAppli
 ulifestyle.com.hk###open-in-modal
 ulifestyle.com.hk###Open-appLink-banner
+app.diandian.com###__layout > div > div[class="box dd-base-color"]
 eksisozluk.com#%#//scriptlet('set-cookie', 'app-suggestion', '1')
 myoji-yurai.net#?#a[href="https://play.google.com/store/apps/details?id=net.myoji_yurai.myojiOmikuji"]:upward(1)
 coolapk.com##.download-group
@@ -839,7 +841,6 @@ atlasbus.*#%#(function(){-1==document.cookie.indexOf("native-app-topper")&&(docu
 dolap.com#?#.fancybox-overlay > .fancybox-wrap:has(div.fancybox-inner > div.redirectToDownloadApp)
 dolap.com#$#.fancybox-lock { overflow: auto !important }
 wallstreetcn.com#$#body { overflow: auto !important; }
-pharmaguideline.com#?#h2:contains(GET APP FOR NEWS UPDATES)
 sketch.pixiv.net###MobilePromote
 gooworld.jp,goo-net.com,goobike.com###appbnr
 ||jmd.co.jp/api/linkimg.php?imgid=JMD_Application_
@@ -1129,7 +1130,6 @@ bhaskar.com,divyabhaskar.co.in#?#div[class][style^="position:"] > div[class]:has
 volia.com#$#div[class="product.component__wrapperWithApp"] { margin-top: 0px!important; }
 kelimeler.net##.idea
 ||ssl.pstatic.net/static/m/comic/im/app_banner_
-m.kooora.com#$#html { margin-top: 0 !important; }
 account.mail.ru##.mail-app-promo
 10jqka.com.cn###backWashNav
 nur.kz##.js-page-top
@@ -1335,6 +1335,7 @@ goodreads.com#$#html.withAppInstallationBanner .siteHeader { top: 0 !important; 
 goodreads.com#$#html[style="margin-top: 80px;"] { margin-top: 0 !important; }
 linkedin.com#$#.no-scroll { overflow:visible!important; }
 m.tokopedia.com#$#body { overflow: visible!important; }
+m.webtoons.com##._appDownloadPopup
 m.webtoons.com#$#body { overflow: visible !important; position: relative !important; }
 rtl2.de#$#body { overflow: auto !important; }
 tieba.baidu.com#$#.navbar-box { top: 44px!important; }
