@@ -1,5 +1,5 @@
-! Checksum: Sjv6wFew/QdY0SguvJuvJQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1738299937-14400.patch
+! Checksum: DeqXjpsZWkGxawF4ufAcEw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1738386349-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.10
@@ -12,6 +12,8 @@
 ##.app-cta:not(html,body,:empty)
 ##.app-download-wrap:not(html,body,:empty)
 ##.app-download:not(html,body,section,.content)
+##.app-nag-body:not(html,body,:empty)
+##.app-nag:not(html,body,:empty)
 ##.AppBanner:not(html,body,:empty)
 ##.appdownload:not(html,body,:empty)
 ##.download-app-banner:not(html,body,:empty)
@@ -111,6 +113,7 @@ drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 drivereasy.com##.pakb-content img[sizes^="(max-width: 79"]
 drivereasy.com#?#.pakb-content p:has-text(click Update All)
 windowsdispatch.com##strong
+windowsreport.com##div[class^=restoro-download] + section
 appuals.com##p + div > div:first-of-type
 wikidll.com,dllfile.net,dll-files.org##.detection-os
 wikidll.com,dllfile.net,dll-files.org##.detection-desc
@@ -127,9 +130,9 @@ processlibrary.com##.bottom > .row:last-of-type
 ||solvusoft.com^$document
 exefiles.com##.row:has(a[href*="/recommended/"])
 coolrom.com.au,coolrom.com##.download_link
+||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
 ?bemobdata=$all
 ||dominioneastern.com^$all
-/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 ||auslogics.com^$document
 ||mediaget.com^$all
 ||yasir252.com^$all
@@ -360,7 +363,6 @@ coolrom.com.au,coolrom.com##.download_link
 .avito.www.booking.$all
 ||affordedseasick.com^$all
 ||crawledgoblet.com^$all
-||paddlemoscowsplit.com^$all
 ||padsims.com^$all
 ||abberantdisheartenbandage.com^$all
 ||ablyglossmartyr.com^$all
@@ -9040,11 +9042,11 @@ tumblr.com##div[tabindex][style]:has(a[href*="://cutt.ly/"])
 ##.shareon:not(html,body,:empty)
 ##.shariff-button:not(html,body,:empty)
 ##.sharing-btn:not(html,body,:empty)
-##.sharing-container:not(html,body,:empty)
 ##.sharing-item:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.sharing-links:not(html,body,:empty)
 ##.sharing:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.shr-opn:not(html,body,:empty)
+##.single-share:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.sns:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.soc-list:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.social-footer:not(html,body,:empty)
@@ -9107,6 +9109,7 @@ tumblr.com##div[tabindex][style]:has(a[href*="://cutt.ly/"])
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[id^=dpsp-]
+##h2[class*=share-links]
 ##h4[class*=social-share-label]
 ##share-grid
 ##span[class*=-social-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
@@ -9460,7 +9463,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /script/snow.js
 /snow-fall.js
 /snow-falling.js
-/snow-storm^$script
 /snowfall-master.min.js
 /snowfall.jquery.
 /snowstorm-min.js

@@ -1,5 +1,5 @@
-! Checksum: l4DBFLZ7yMaSx0JLMOe5Jg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1738299926-14400.patch
+! Checksum: 7lTgdZ/BjtWC7sdmsGWgIg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1738386338-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.10
@@ -12,6 +12,8 @@
 ##.app-cta:not(html,body,:empty)
 ##.app-download-wrap:not(html,body,:empty)
 ##.app-download:not(html,body,section,.content)
+##.app-nag-body:not(html,body,:empty)
+##.app-nag:not(html,body,:empty)
 ##.AppBanner:not(html,body,:empty)
 ##.appdownload:not(html,body,:empty)
 ##.download-app-banner:not(html,body,:empty)
@@ -111,6 +113,7 @@ drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 drivereasy.com##.pakb-content img[sizes^="(max-width: 79"]
 drivereasy.com#?#.pakb-content p:has-text(click Update All)
 windowsdispatch.com##strong
+windowsreport.com##div[class^=restoro-download] + section
 appuals.com##p + div > div:first-of-type
 wikidll.com,dllfile.net,dll-files.org##.detection-os
 wikidll.com,dllfile.net,dll-files.org##.detection-desc
@@ -127,9 +130,9 @@ processlibrary.com##.bottom > .row:last-of-type
 ||solvusoft.com^$document
 exefiles.com##.row:has(a[href*="/recommended/"])
 coolrom.com.au,coolrom.com##.download_link
+||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
 ?bemobdata=$all
 ||dominioneastern.com^$all
-/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
 ||auslogics.com^$document
 ||mediaget.com^$all
 ||yasir252.com^$all
@@ -360,7 +363,6 @@ coolrom.com.au,coolrom.com##.download_link
 .avito.www.booking.$all
 ||affordedseasick.com^$all
 ||crawledgoblet.com^$all
-||paddlemoscowsplit.com^$all
 ||padsims.com^$all
 ||abberantdisheartenbandage.com^$all
 ||ablyglossmartyr.com^$all
@@ -9041,11 +9043,11 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.shareon:not(html,body,:empty)
 ##.shariff-button:not(html,body,:empty)
 ##.sharing-btn:not(html,body,:empty)
-##.sharing-container:not(html,body,:empty)
 ##.sharing-item:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.sharing-links:not(html,body,:empty)
 ##.sharing:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.shr-opn:not(html,body,:empty)
+##.single-share:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.sns:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.soc-list:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.social-footer:not(html,body,:empty)
@@ -9108,6 +9110,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[id^=dpsp-]
+##h2[class*=share-links]
 ##h4[class*=social-share-label]
 ##share-grid
 ##span[class*=-social-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
@@ -9462,7 +9465,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /script/snow.js
 /snow-fall.js
 /snow-falling.js
-/snow-storm^$script
 /snowfall-master.min.js
 /snowfall.jquery.
 /snowstorm-min.js
@@ -9706,7 +9708,9 @@ $document,removeparam=/^aff_id\d?=.*$/i,domain=~affiliate.salestring.com
 $removeparam=twitchReferral
 $document,removeparam=elqTrackId,domain=~comcast.com|~comcastforbusiness.com
 $removeparam=tctx
+$removeparam=ad_medium
 $document,removeparam=/^adgroup=.*$/i
+$removeparam=ads_name
 $removeparam=ad_type
 $removeparam=adgroup_id
 $removeparam=rlsatarget
@@ -9780,6 +9784,7 @@ $removeparam=CJURL
 $removeparam=irmpname
 Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=cj$/
+$removeparam=affil
 $removeparam=cjid
 $removeparam=irsharedid
 $removeparam=hvarAID
@@ -9881,7 +9886,6 @@ $removeparam=af_channel
 $removeparam=af_click_lookback
 $removeparam=af_force_deeplink
 $removeparam=af_keywords
-$removeparam=af_prt
 $removeparam=af_referrer_customer_id
 $removeparam=af_referrer_uid
 $removeparam=af_siteid
@@ -9890,7 +9894,6 @@ $removeparam=af_sub_siteid
 $removeparam=is_retargeting
 $document,removeparam=shortlink
 $document,removeparam=/^pid=.*_int$/
-$removeparam=deep_link_sub1
 $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
 $removeparam=tg_ref
@@ -9900,7 +9903,6 @@ $removeparam=_gac
 $removeparam=ko_click_id
 $removeparam=nrtv_cid
 $removeparam=trk_ref
-$removeparam=ircid
 $document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
 $removeparam=awinaffid
@@ -10243,6 +10245,7 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||www.google.$document,removeparam=ictx
 ||www.google.$document,removeparam=dpr
 ||www.google.$document,removeparam=tfu
+@@://www.google.com/maps?entry=$removeparam=utm_campaign
 ||tiktok.com^$removeparam=_r
 $removeparam=u_code
 $removeparam=is_from_webapp
@@ -10473,6 +10476,7 @@ $removeparam=sm12
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 $removeparam=nid,domain=columbia.com|columbiasportswear.*|sorel.com
 $removeparam=uid,domain=alldebrid.fr|columbia.com|entradas.com|links.e.malwarebytes.com|sorel.com|tomtop.com
+||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
 ||youtube.com^$removeparam=ab_channel
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
@@ -10551,6 +10555,7 @@ $removeparam=fm,domain=flipkart.com|shopbop.com
 ||flipkart.com^$removeparam=store
 ||flipkart.com^$removeparam=marketplace
 ||mozilla.org^$removeparam=redirect_source
+||fiverr.com^$removeparam=funnel
 ||epicgames.com^$removeparam=epic_affiliate
 ||epicgames.com^$removeparam=epic_gameId
 $document,removeparam=cId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com
@@ -10712,7 +10717,6 @@ $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
-$removeparam=sub,domain=allboner.com|twinkvideos.com
 ||fandom.com^$removeparam=so
 ||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
@@ -10734,7 +10738,6 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||bandcamp.com^$removeparam=search_page_no
 ||bandcamp.com^$removeparam=search_rank
 ||nicovideo.jp/comic^$removeparam=track
-||onenote.com^$removeparam=nf
 ||onenote.com^$removeparam=fromAR
 ||adobe.com^$removeparam=mv2
 ||bbc.$removeparam=at_campaign_type
@@ -10762,7 +10765,6 @@ $removeparam=mobile_deeplink_data
 ||verizon.com^$removeparam=campaignName
 ||verizon.com^$removeparam=campaignSource
 ||youtube.com^$removeparam=source_ve_path
-^ref=hackernoon.com^$removeparam=ref
 ||notion.so^$removeparam=gspk
 ||notion.so^$removeparam=gsxid
 ||notion.so^$removeparam=pscd
