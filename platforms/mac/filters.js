@@ -379,8 +379,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.41.13",
-			"timeUpdated": "2025-02-02T17:01:06+0000",
+			"version": "2.1.41.14",
+			"timeUpdated": "2025-02-02T21:01:15+0000",
 			"languages": []
 		},
 		{
@@ -458,8 +458,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.64.10",
-			"timeUpdated": "2025-02-02T17:01:09+0000",
+			"version": "2.1.64.11",
+			"timeUpdated": "2025-02-02T21:01:19+0000",
 			"languages": []
 		},
 		{
@@ -502,8 +502,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.64.12",
-			"timeUpdated": "2025-02-02T17:01:11+0000",
+			"version": "2.1.64.13",
+			"timeUpdated": "2025-02-02T21:01:21+0000",
 			"languages": [
 				"it"
 			]
@@ -547,8 +547,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.64.11",
-			"timeUpdated": "2025-02-02T17:01:12+0000",
+			"version": "2.1.64.12",
+			"timeUpdated": "2025-02-02T21:01:22+0000",
 			"languages": [
 				"ar"
 			]
@@ -565,8 +565,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.64.10",
-			"timeUpdated": "2025-02-02T17:01:13+0000",
+			"version": "2.1.64.11",
+			"timeUpdated": "2025-02-02T21:01:23+0000",
 			"languages": []
 		},
 		{
@@ -708,8 +708,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.41.42",
-			"timeUpdated": "2025-02-02T17:01:23+0000",
+			"version": "2.1.41.43",
+			"timeUpdated": "2025-02-02T21:01:33+0000",
 			"languages": []
 		},
 		{
@@ -740,8 +740,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.35.85",
-			"timeUpdated": "2025-02-02T17:01:24+0000",
+			"version": "2.0.35.86",
+			"timeUpdated": "2025-02-02T21:01:34+0000",
 			"languages": []
 		},
 		{
@@ -866,8 +866,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.64.11",
-			"timeUpdated": "2025-02-02T17:01:27+0000",
+			"version": "2.1.64.12",
+			"timeUpdated": "2025-02-02T21:01:36+0000",
 			"languages": []
 		},
 		{
@@ -940,8 +940,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.63.36",
-			"timeUpdated": "2025-02-02T17:01:27+0000",
+			"version": "2.1.63.37",
+			"timeUpdated": "2025-02-02T21:01:37+0000",
 			"languages": []
 		},
 		{
@@ -1230,8 +1230,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.64.12",
-			"timeUpdated": "2025-02-02T17:01:36+0000",
+			"version": "2.1.64.13",
+			"timeUpdated": "2025-02-02T21:01:45+0000",
 			"languages": []
 		},
 		{
@@ -1246,8 +1246,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.66.90",
-			"timeUpdated": "2025-02-02T17:01:39+0000",
+			"version": "2.0.66.91",
+			"timeUpdated": "2025-02-02T21:01:48+0000",
 			"languages": []
 		},
 		{
@@ -1326,8 +1326,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "1.0.33.91",
-			"timeUpdated": "2025-02-02T17:01:43+0000",
+			"version": "1.0.33.92",
+			"timeUpdated": "2025-02-02T21:01:51+0000",
 			"languages": []
 		},
 		{
@@ -1389,8 +1389,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.47.13",
-			"timeUpdated": "2025-02-02T17:01:46+0000",
+			"version": "2.1.47.14",
+			"timeUpdated": "2025-02-02T21:01:54+0000",
 			"languages": []
 		},
 		{
@@ -1465,8 +1465,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.60.18",
-			"timeUpdated": "2025-02-02T17:01:48+0000",
+			"version": "2.1.60.19",
+			"timeUpdated": "2025-02-02T21:01:56+0000",
 			"languages": []
 		},
 		{
@@ -1563,8 +1563,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.57.43",
-			"timeUpdated": "2025-02-02T17:01:59+0000",
+			"version": "2.0.57.44",
+			"timeUpdated": "2025-02-02T21:02:06+0000",
 			"languages": [
 				"hi"
 			]
