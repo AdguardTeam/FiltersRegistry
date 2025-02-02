@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XThFpzvFhG4pXQWwCudg+Q
-! Diff-Path: ../patches/14/14-s-1738518204-3600.patch
+! Checksum: H6x5Jadh6KeR2HtKIPEPeQ
+! Diff-Path: ../patches/14/14-s-1738532604-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.71
-! TimeUpdated: 2025-02-02T17:39:34+00:00
+! Version: 2.2.20.72
+! TimeUpdated: 2025-02-02T21:39:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2436,6 +2436,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+liontuning-carparts.de#$##cookie-banner { display: none !important; }
+liontuning-carparts.de#$#.modal-backdrop { display: none !important; }
+liontuning-carparts.de#$#.modal-open { overflow: auto !important; }
 ||kaup24.ee/*/cookieBox|
 performingarts.jpf.go.jp##.sgcc-main-wrapper
 cybershoke.net###application > div.modal-enter-done:has(> div > img[src$="/cookie.svg"])
@@ -15751,6 +15754,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197625
+liontuning-carparts.de#@##cookie-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197442
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=hartvannederland.nl
 hartvannederland.nl#@##onetrust-consent-sdk
