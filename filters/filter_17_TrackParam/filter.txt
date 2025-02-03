@@ -382,6 +382,8 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197733
+||allegro.pl^$removeparam=clickId
 ! blog.naver.com
 ||blog.naver.com^$removeparam=trackingCode
 ||blog.naver.com^$removeparam=proxyReferer
@@ -2741,6 +2743,12 @@ adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_i
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197733
+!#if (adguard_ext_chromium || adguard_ext_firefox || adguard_ext_opera)
+@@||allegro.pl/affiliate?redirect_url=$removeparam=clickId
+@@||allegro.pl/affiliate?redirect_url=$removeparam=utm_source
+@@||allegro.pl/affiliate?redirect_url=$removeparam=utm_campaign
+!#endif
 ! redirecting link on mobile from mydealz.de to Metro
 @@||rd.bizrate.com^$removeparam=utm_campaign
 @@||rd.bizrate.com^$removeparam=utm_medium

@@ -1,9 +1,9 @@
-! Checksum: crRMrX8UR+kTWLH0Ur1nkA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1738561809-3600.patch
+! Checksum: RNXA7gdnXp3iheo3kKwTpg
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1738583268-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.34
-! TimeUpdated: 2025-02-03T05:46:19+00:00
+! Version: 2.0.10.35
+! TimeUpdated: 2025-02-03T11:42:54+00:00
 ! Expires: 10 days (update frequency)
 $removeparam=srsltid
 $removeparam=_sgm_campaign
@@ -250,6 +250,7 @@ $removeparam=fb_action_types
 $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
+||allegro.pl^$removeparam=clickId
 ||blog.naver.com^$removeparam=trackingCode
 ||blog.naver.com^$removeparam=proxyReferer
 ||blog.naver.com^$removeparam=referrerCode
@@ -1897,6 +1898,9 @@ $removeparam=s,domain=twitter.com|x.com
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+@@||allegro.pl/affiliate?redirect_url=$removeparam=clickId
+@@||allegro.pl/affiliate?redirect_url=$removeparam=utm_source
+@@||allegro.pl/affiliate?redirect_url=$removeparam=utm_campaign
 @@||rd.bizrate.com^$removeparam=utm_campaign
 @@||rd.bizrate.com^$removeparam=utm_medium
 @@||reddit.app.link^$removeparam=utm_content,domain=reddit.app.link

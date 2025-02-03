@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mXQTTPx6QpCfqMPQTzd45A
-! Diff-Path: ../patches/17/17-s-1738561816-3600.patch
+! Checksum: 2GiJwD9ymXLYK10Kox4xyA
+! Diff-Path: ../patches/17/17-s-1738583281-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.34
-! TimeUpdated: 2025-02-03T05:46:19+00:00
+! Version: 2.0.10.35
+! TimeUpdated: 2025-02-03T11:42:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -388,6 +388,8 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197733
+||allegro.pl^$removeparam=clickId
 ! blog.naver.com
 ||blog.naver.com^$removeparam=trackingCode
 ||blog.naver.com^$removeparam=proxyReferer
@@ -2725,6 +2727,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197733
 ! redirecting link on mobile from mydealz.de to Metro
 @@||rd.bizrate.com^$removeparam=utm_campaign
 @@||rd.bizrate.com^$removeparam=utm_medium
