@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ov7NMSpphLzFyUYKxUq3kA
-! Diff-Path: ../patches/224/224-s-1738597537-3600.patch
+! Checksum: fGu/QfZeUsYkDyR5v3anVw
+! Diff-Path: ../patches/224/224-s-1738608211-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.30.93
-! TimeUpdated: 2025-02-03T15:41:35+00:00
+! Version: 2.1.30.94
+! TimeUpdated: 2025-02-03T18:39:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1080,6 +1080,13 @@ ipv6.baidu.com,m.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###resul
 ! https://uploads.adguard.com/up04___pqptj.png
 ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .result ~ div:not([class]):not([style])
 ! From Easylist China (without websocket and subdocument modifiers)
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/197350
+! maomiav.com - randomized domains
+##body[onresize="stopDebugger()"][onbeforecopy="return!1"] > div#root div[id^="notice_modal"]
+##body[onresize="stopDebugger()"][onbeforecopy="return!1"] > div#root div:has(> img[src$=".gif"])
+##body[onresize="stopDebugger()"][onbeforecopy="return!1"] > div#root div.m0auto > div > div.grid + div > div:empty
+||im.1vkx.cn/uploads/images/*.gif$third-party
 !
 ! For URL shorteners or simple sites with frequently changed ad servers.
 ! Incorrectly blocked domains can be excluded using regex(synchronize this regexp in all filters)
