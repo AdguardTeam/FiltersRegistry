@@ -18052,6 +18052,10 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197655
+api.ytapi.cc#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=api.ytapi.cc
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197502
 in91vip.win#%#//scriptlet('trusted-replace-node-text', 'script', 'detectAdsenseBlock', '/if \(isAdsenseBlocked\)/', 'if (!isAdsenseBlocked)')
 !#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
@@ -40228,7 +40232,7 @@ portel.pl#$#iframe[src*="/R1"][src$=".html"][style*="display:block !important;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137190
 auto-swiat.pl##.asideAds
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185362
-auto-swiat.pl,komputerswiat.pl##.ods-ads__ph
+onet.pl,auto-swiat.pl,komputerswiat.pl##.ods-ads__ph
 .pl/*/*/tags?domain=$~third-party,xmlhttprequest,domain=komputerswiat.pl|auto-swiat.pl
 ! komputerswiat.pl - ad leftovers
 plejada.pl,auto-swiat.pl,newsweek.pl,onet.pl,medonet.pl,komputerswiat.pl###onet-ad-flat-belkagorna
@@ -48438,6 +48442,8 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 !##################
 !
 ! START: Ad-Shield ad reinsertion
+! For all platforms including iOS
+||html-load.com/loader.min.js$domain=nikkansports.com
 ||ad-shield.cc^
 !#if (!adguard_ext_android_cb && !ext_ublock)
 ! Don't add url blocking rules inside this directive, which break sites in iOS without Advanced Protection
@@ -83049,7 +83055,6 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /ad.html?$~xmlhttprequest
 /ad.min.js$script
 /ad/ad_common.js$script
-/ad/dfp/*$script
 /ad/getban?$script
 /ad/image/*$image
 /ad/images/*$image,domain=~studiocalling.it
@@ -83203,6 +83208,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /advanced-ads-$script,stylesheet,domain=~transinfo.pl|~wordpress.org
 /advbanner.frontend.js$script
 /advert.$~script,~xmlhttprequest,domain=~advert.ae|~advert.club|~advert.com.tr|~advert.ee|~advert.ge|~advert.io|~advert.media|~advert.org.pl|~motortrader.com.my
+/advertising/ad-shield.js$script
 /advertising/banners/*$image
 /adverts.$~script,~xmlhttprequest,domain=~0xacab.org|~adverts.ie|~adverts.org.ua|~github.com|~gitlab.com
 /adverts/*$~xmlhttprequest
@@ -83388,6 +83394,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /jquery.popunder.js$script
 /js/ad_common.js$script
 /js/advRotator.js$script
+/js/dfp.js$script
 /jsAds-1.4.min.js$script
 /jshexi.hj?lb=
 /jspopunder.js$script

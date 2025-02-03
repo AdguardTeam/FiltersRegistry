@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 91YmOf5UdY5uffMdU0gTjg
-! Diff-Path: ../patches/2/2-s-1738572573-3600.patch
+! Checksum: N0/XZ71hSS8dm15lJu6cMw
+! Diff-Path: ../patches/2/2-s-1738575979-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.70.19
-! TimeUpdated: 2025-02-03T08:31:33+00:00
+! Version: 2.3.70.20
+! TimeUpdated: 2025-02-03T09:31:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17665,6 +17665,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197655
+api.ytapi.cc##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197502
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197404
 bitcotasks.com##+js(remove-attr, onerror, script[src^="https://www.googletagmanager.com/gtag/js?"])
@@ -36204,7 +36206,7 @@ portel.pl#$#iframe[src*="/R1"][src$=".html"][style*="display:block !important;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137190
 auto-swiat.pl##.asideAds
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185362
-auto-swiat.pl,komputerswiat.pl##.ods-ads__ph
+onet.pl,auto-swiat.pl,komputerswiat.pl##.ods-ads__ph
 .pl/*/*/tags?domain=$~third-party,xmlhttprequest,domain=komputerswiat.pl|auto-swiat.pl
 ! komputerswiat.pl - ad leftovers
 plejada.pl,auto-swiat.pl,newsweek.pl,onet.pl,medonet.pl,komputerswiat.pl###onet-ad-flat-belkagorna
@@ -43782,6 +43784,8 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 !##################
 !
 ! START: Ad-Shield ad reinsertion
+! For all platforms including iOS
+||html-load.com/loader.min.js$domain=nikkansports.com
 ||ad-shield.cc^
 !
 !
@@ -69785,7 +69789,6 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /ad.html?$~xmlhttprequest
 /ad.min.js$script
 /ad/ad_common.js$script
-/ad/dfp/*$script
 /ad/getban?$script
 /ad/image/*$image
 /ad/images/*$image,domain=~studiocalling.it
@@ -69939,6 +69942,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /advanced-ads-$script,stylesheet,domain=~transinfo.pl|~wordpress.org
 /advbanner.frontend.js$script
 /advert.$~script,~xmlhttprequest,domain=~advert.ae|~advert.club|~advert.com.tr|~advert.ee|~advert.ge|~advert.io|~advert.media|~advert.org.pl|~motortrader.com.my
+/advertising/ad-shield.js$script
 /advertising/banners/*$image
 /adverts.$~script,~xmlhttprequest,domain=~0xacab.org|~adverts.ie|~adverts.org.ua|~github.com|~gitlab.com
 /adverts/*$~xmlhttprequest
@@ -70124,6 +70128,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /jquery.popunder.js$script
 /js/ad_common.js$script
 /js/advRotator.js$script
+/js/dfp.js$script
 /jsAds-1.4.min.js$script
 /jshexi.hj?lb=
 /jspopunder.js$script

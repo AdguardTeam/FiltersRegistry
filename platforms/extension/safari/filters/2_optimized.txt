@@ -1,9 +1,9 @@
-! Checksum: Sca7lnyBw5letuP5PnHVJw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1738572569-3600.patch
+! Checksum: dKXVQ4UCbXLVmkqhR13Saw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1738575976-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.70.19
-! TimeUpdated: 2025-02-03T08:31:33+00:00
+! Version: 2.3.70.20
+! TimeUpdated: 2025-02-03T09:31:39+00:00
 ! Expires: 5 days (update frequency)
 ||humiliatingregion.com^
 ||sapsobughoatch.net^
@@ -2577,6 +2577,9 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 #@#.ads_banner
 ##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"], [data-freestar-ad="123"]):not(:empty)
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
+api.ytapi.cc#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=api.ytapi.cc
 in91vip.win#%#//scriptlet('trusted-replace-node-text', 'script', 'detectAdsenseBlock', '/if \(isAdsenseBlocked\)/', 'if (!isAdsenseBlocked)')
 in91vip.win#@#iframe[width="728"][height="90"]
 @@||a.magsrv.com^$domain=in91vip.win
@@ -9420,7 +9423,7 @@ tokfm.pl#%#window.adsOk = !0;
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=tokfm.pl
 tokfm.pl#%#window.ads_ok = true;
-auto-swiat.pl,komputerswiat.pl##.ods-ads__ph
+onet.pl,auto-swiat.pl,komputerswiat.pl##.ods-ads__ph
 .pl/*/*/tags?domain=$~third-party,xmlhttprequest,domain=komputerswiat.pl|auto-swiat.pl
 plejada.pl,auto-swiat.pl,newsweek.pl,onet.pl,medonet.pl,komputerswiat.pl###onet-ad-flat-belkagorna
 pclab.pl#%#//scriptlet('prevent-setTimeout', 'document.body.getAttribute("abp")')
@@ -12307,6 +12310,7 @@ Banner468x60
 !### HINTS are at the end of file
 !### Temporary ###
 !##################
+||html-load.com/loader.min.js$domain=nikkansports.com
 dolldivine.com#%#//scriptlet('remove-node-text', 'script', 'adrecover.com')
 ||bg-mania.jp/assets/js/anymanagerrecover.js
 ://www.*.xyz/script/$script,third-party,domain=jmty.jp|dolldivine.com|knowt.com
@@ -23454,7 +23458,6 @@ cars.bg##a[href^="http://www.ads.bg/"]
 /ad.html?$~xmlhttprequest
 /ad.min.js$script
 /ad/ad_common.js$script
-/ad/dfp/*$script
 /ad/getban?$script
 /ad/image/*$image
 /ad/images/*$image,domain=~studiocalling.it
@@ -23552,6 +23555,7 @@ cars.bg##a[href^="http://www.ads.bg/"]
 /adv_vert.js$script
 /advanced-ads-$script,stylesheet,domain=~transinfo.pl|~wordpress.org
 /advert.$~script,~xmlhttprequest,domain=~advert.ae|~advert.club|~advert.com.tr|~advert.ee|~advert.ge|~advert.io|~advert.media|~advert.org.pl|~motortrader.com.my
+/advertising/ad-shield.js$script
 /adverts.$~script,~xmlhttprequest,domain=~0xacab.org|~adverts.ie|~adverts.org.ua|~github.com|~gitlab.com
 /adverts/*$~xmlhttprequest
 /aff_ad?$script
@@ -23649,6 +23653,7 @@ cars.bg##a[href^="http://www.ads.bg/"]
 /jquery.lazyload-ad.js$script
 /jquery.popunder.js$script
 /js/ad_common.js$script
+/js/dfp.js$script
 /jsAds-1.4.min.js$script
 /jspopunder.js$script
 /jspopunder.min.js$script
