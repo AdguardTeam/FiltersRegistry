@@ -1,9 +1,9 @@
-! Checksum: EzAUJLzc9V6bLFXVlQc7ww
-! Diff-Path: ../patches/14/14-s-1738586870-3600.patch
+! Checksum: I/NBQUOGLCKN2kNLGxoYJg
+! Diff-Path: ../patches/14/14-s-1738590378-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.20.82
-! TimeUpdated: 2025-02-03T12:41:42+00:00
+! Version: 2.2.20.83
+! TimeUpdated: 2025-02-03T13:40:49+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2469,6 +2469,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+lkslodz.pl##.modal-cacsp-box:has(> .modal-cacsp-box-content > a[href*="/polityka-prywatnosci/"])
 dailybuzz.nl#%#//scriptlet('set-constant', 'cookie', 'true')
 fightershop.com.pl##.cMonster
 rejestry.ezdrowie.gov.pl##cez-cookies
@@ -3167,10 +3168,10 @@ newjobs.gr##div[style^="--color-cookie-consent:"]
 shop-weck.de##.lightbox-backdrop-cc-dialog
 mercafe.com.br#%#//scriptlet('trusted-set-local-storage-item', 'cookie-lgpd', 'hide')
 radiko.jp#%#//scriptlet('trusted-click-element', '.js-policy-accept')
-fanaticbike.hu#$#.cookie-alert-popup { display: none !important; }
-fanaticbike.hu#$##exposeMaskOverlay { display: none !important; }
-fanaticbike.hu#$#.scroll-lock { overflow: auto !important; position: unset !important; }
-fanaticbike.hu#$#.scroll-lock * { filter: none !important; -webkit-filter: none !important; }
+vrsoft.pl,fanaticbike.hu#$#.cookie-alert-popup { display: none !important; }
+vrsoft.pl,fanaticbike.hu#$##exposeMaskOverlay { display: none !important; }
+vrsoft.pl,fanaticbike.hu#$#.scroll-lock { overflow: auto !important; position: unset !important; }
+vrsoft.pl,fanaticbike.hu#$#.scroll-lock * { filter: none !important; -webkit-filter: none !important; }
 motorinsel.de#%#//scriptlet('trusted-click-element', 'button[value="disallow"]')
 zeus-grill-re.de##div[class]:has(> div[class]:only-child > div[class] > button#manage-cookies-button)
 guidelinecentral.com###cdp-gdpr-popup
@@ -16417,7 +16418,7 @@ br.de,hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.nl,villeroy-
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173053
 ! TODO: remove the hints, JS rule when the issue is fixed - https://github.com/AdguardTeam/Scriptlets/issues/407
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_safari)
-linternaute.com,lachainemeteo.com,journaldesfemmes.fr,lefigaro.fr#%#//scriptlet('trusted-click-element', 'button.button__acceptAll')
+journaldunet.com,linternaute.com,lachainemeteo.com,journaldesfemmes.fr,lefigaro.fr#%#//scriptlet('trusted-click-element', 'button.button__acceptAll')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170168
 ! TODO: use trusted-click-element scriptlet when issues below are fixed
 ! Support for clicking in shadow DOM - https://github.com/AdguardTeam/Scriptlets/issues/323
@@ -16530,6 +16531,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197694
+vrsoft.pl#@#.cookie-alert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197700
 rjwprm.ezdrowie.gov.pl#@##acceptCookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197625
@@ -21109,6 +21112,7 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 !
 ! Add without $third-party, so apps are blocking them too
 !
+||jubilanttempest.com^
 ||hospitablehat.com^
 ||majesticwilderness.com^
 ||makesimpact.com^
