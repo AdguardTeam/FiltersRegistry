@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JLSKluA5ISv49jABmnStQg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1738676613-3600.patch
+! Checksum: 5hAVGCUIAoNHppIZskMzIA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1738680485-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.70.40
-! TimeUpdated: 2025-02-04T13:31:33+00:00
+! Version: 2.3.70.41
+! TimeUpdated: 2025-02-04T14:32:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,9 @@
 !
 !
 !
+||videocdnmetrika.com^
+||pkyffuewwuhnld.com^
+||phahifoobsie.net^
 ||humiliatingregion.com^
 ||sapsobughoatch.net^
 ||xszjh.tech^
@@ -17785,7 +17788,6 @@ myabandonware.com##+js(abort-on-stack-trace, XMLHttpRequest, putPb)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175339
 streamingcommunity.*##+js(abort-on-property-read, blockAdBlock)
 streamingcommunity.*##+js(remove-node-text, script, /blockAdBlock|_cqjduonc|\/blockadblock\.min\.js/)
-streamingcommunity.*##+js(no-xhr-if, /\.\w+\/$/)
 @@||streamingcommunity.*/*.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175083
 babia.to##+js(remove-node-text, script, !document.getElementById(btoa()
@@ -26998,6 +27000,9 @@ fofmyanmar.com##center > a[rel="noopener noreferrer"] > img
 !
 ! NOTE: Croatian
 !
+filmoviplex.com##+js(set-constant, openNewTab, noopFunc)
+filmoviplex.com###levo
+filmoviplex.com###desno
 dnevno.hr##.wpipa-container
 dnevno.hr##.mj-pf-widget
 filmoviplex.com###wrapper > div[style="overflow:hidden;"]
@@ -34984,8 +34989,9 @@ genialne.pl##style + div[class]:has(> img[src^="https://v.wpimg.pl/"]:first-chil
 genialne.pl##style + div[class]:has(> div:first-child:not([class]) + img[src^="https://v.wpimg.pl/"] + div:last-child)
 ||std.wpcdn.pl/adv/config/inline/*.js$domain=pysznosci.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137324
-behealthymagazine.abczdrowie.pl##style + div[class]:has(> img[src^="https://v.wpimg.pl/"]:only-child)
-behealthymagazine.abczdrowie.pl##style + div[class]:has(> img[src^="https://v.wpimg.pl/"]:first-child + div:last-child)
+abczdrowie.pl##style + div[class]:has(> img[src^="https://v.wpimg.pl/"]:only-child)
+abczdrowie.pl##style + div[class]:has(> img[src^="https://v.wpimg.pl/"]:first-child + div:last-child)
+abczdrowie.pl##style + div[class]:has(> div:first-child:not([class]) + img[src^="https://v.wpimg.pl/"] + div:last-child)
 behealthymagazine.abczdrowie.pl##article a[href^="https://www.zabka.pl/?utm_source"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134997
 vibez.pl##div[suppresshydrationwarning]
@@ -43420,9 +43426,9 @@ nullforums.net,landyzone.co.uk,nullcave.pro,woxmax.com,waskucity.com,babia.to,te
 ! Requests lile https://almstda.tv/5/6202259
 !
 ! related to /tag.min.js regexp blocking rule
-.com^|$xmlhttprequest,third-party,domain=kaido.to|swatchseries.is|hianime.*|dbsullca.com|hdtodayz.to|hdtoday.cc|myasiantv.ac|anitaku.pe|s3embtaku.pro|footyroom.top|miztv.shop|movieshd.watch|watch.cricstream.me|mega4upload.net
-.net^|$xmlhttprequest,third-party,domain=kaido.to|swatchseries.is|hianime.*|dbsullca.com|hdtodayz.to|hdtoday.cc|myasiantv.ac|anitaku.pe|s3embtaku.pro|footyroom.top|miztv.shop|movieshd.watch|watch.cricstream.me|mega4upload.net
-.to^|$xmlhttprequest,third-party,domain=kaido.to|swatchseries.is|hianime.*|dbsullca.com|hdtodayz.to|hdtoday.cc|myasiantv.ac|anitaku.pe|s3embtaku.pro|footyroom.top|miztv.shop|movieshd.watch|watch.cricstream.me|mega4upload.net
+.com^|$xmlhttprequest,third-party,domain=kaido.to|swatchseries.is|hianime.*|dbsullca.com|hdtodayz.to|hdtoday.cc|myasiantv.ac|anitaku.pe|s3embtaku.pro|footyroom.top|miztv.shop|movieshd.watch|watch.cricstream.me|mega4upload.net|streamingcommunity.*|vixcloud.co
+.net^|$xmlhttprequest,third-party,domain=kaido.to|swatchseries.is|hianime.*|dbsullca.com|hdtodayz.to|hdtoday.cc|myasiantv.ac|anitaku.pe|s3embtaku.pro|footyroom.top|miztv.shop|movieshd.watch|watch.cricstream.me|mega4upload.net|streamingcommunity.*|vixcloud.co
+.to^|$xmlhttprequest,third-party,domain=kaido.to|swatchseries.is|hianime.*|dbsullca.com|hdtodayz.to|hdtoday.cc|myasiantv.ac|anitaku.pe|s3embtaku.pro|footyroom.top|miztv.shop|movieshd.watch|watch.cricstream.me|mega4upload.net|streamingcommunity.*|vixcloud.co
 !
 ! For URL shorteners or simple sites with frequently changed ad servers.
 ! Incorrectly blocked domains can be excluded using regex(synchronize this regexp in all filters)
