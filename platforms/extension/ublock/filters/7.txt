@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: pPJPYYtVNf907HmqF/Sdng
-! Diff-Path: ../patches/7/7-s-1738644228-3600.patch
+! Checksum: rYjx7sZoDbFJhc1PgP3MYg
+! Diff-Path: ../patches/7/7-s-1738647790-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.61.78
-! TimeUpdated: 2025-02-04T04:39:20+00:00
+! Version: 2.0.61.79
+! TimeUpdated: 2025-02-04T05:38:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -409,6 +409,7 @@
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
+||ad.datadeliver.net^
 ||ad.firestorage.jp^
 ||mbada.nan.co.jp^
 ||ads.nicovideo.jp^
@@ -1663,14 +1664,14 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 /brand/detail/m*.html?zenid=$document,to=cfd|shop|space|top
 /shopping/item/m*/?zenid=$document,to=cfd|shop|space|top
 /mart/*.html?zenid=$document,to=cfd|shop|space|top
-/^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,5}\/item-(?:(?=[a-z]*\d)[0-9a-z]{10}|\d{8})\.html$/$document,match-case,to=art|baby|biz|blog|cc|cfd|click|cloud|club|eu|fit|fun|homes|info|ink|lat|life|lol|me|mom|one|online|sbs|shop|site|skin|store|top|world|xyz
+/^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:(?=[a-z]*\d)[0-9a-z]{10}|\d{8})\.html$/$document,match-case,to=art|baby|biz|blog|cc|cfd|click|cloud|club|eu|fit|fun|homes|info|ink|lat|life|lol|me|mom|one|online|sbs|shop|site|skin|store|top|world|xyz
 /^https?:\/\/(?!www)[a-z]{3,5}\.[0-9a-z]{4,10}\.[a-z]{2,6}\/[a-z]{3,15}\/(?=[a-z]{0,9}[0-9A-Z])[0-9A-z]{10}\.html$/$document,match-case,to=art|baby|biz|blog|cc|cfd|click|cloud|club|eu|fit|fun|homes|info|ink|lat|life|lol|me|mom|one|online|sbs|shop|site|skin|store|top|world|xyz
 /?AC=*&IC=$document,to=com|fun|online|site
 .asp?AC=*&IC=$document,to=com|fun|online|site
 /ap/signin/openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.co.jp$document,to=cn|top|xyz
 /index.php?route=product/product&product_id=$document,to=cyou|life|live|shop|xyz|~ocam.live
-/index.php?main_page=product_info*&cPath=$document,to=asia|bar|beauty|best|bond|buzz|cam|cfd|click|cloud|club|cyou|fit|fun|homes|icu|ink|life|live|ltd|me|monster|one|online|pics|quest|ru.com|sa.com|sbs|shop|site|space|store|tokyo|top|website|work|xyz|za.com
-/index.php?main_page=product_info&products_id=$document,to=asia|bar|beauty|best|bond|buzz|cam|cfd|click|cloud|club|cyou|fit|fun|homes|icu|ink|life|live|ltd|me|monster|one|online|pics|quest|ru.com|sa.com|sbs|shop|site|space|store|tokyo|top|website|work|xyz|za.com
+/index.php?main_page=product_info*&cPath=$document,to=asia|bar|beauty|best|bond|buzz|cam|cfd|click|cloud|club|cyou|fit|fun|homes|icu|ink|life|live|ltd|me|monster|one|online|pics|quest|ru.com|sa.com|sbs|shop|site|space|store|tokyo|top|website|wiki|work|xyz|za.com
+/index.php?main_page=product_info&products_id=$document,to=asia|bar|beauty|best|bond|buzz|cam|cfd|click|cloud|club|cyou|fit|fun|homes|icu|ink|life|live|ltd|me|monster|one|online|pics|quest|ru.com|sa.com|sbs|shop|site|space|store|tokyo|top|website|wiki|work|xyz|za.com
 /\.(?:club|cn|icu|top|pro|site|work)\/Personal\/member\/Login\/index\.php\?oneTimeAccessID=/$document,to=club|cn|icu|top|pro|site|work
 !
 /^https:\/\/[a-z]{4,8}\.[a-z]{7,10}\.shop\/product\/\d{4,7}$/$document,match-case
@@ -1741,6 +1742,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+money-plan.net##.clear[style$="height:296px;"]
 shogi-sanpo.com##.ad_200
 jumpmatome2ch.biz##.kakomi3
 ikuzi2p.livedoor.blog##div[class^="article-body"] > a[href^="https://www.dlsite.com/home/dlaf/"][rel="noopener sponsored"][target="_blank"] > img.target_type
@@ -3943,6 +3945,8 @@ silyugoi.cfbx.jp##.sidebar_content > .widget_custom_html
 gameleaks.org###pc_text-43
 ||zokeisha.co.jp/image/700x120_bike-ou.gif
 jump.5ch.net###content-widget
+eikaiwa.weblio.jp###eikaiwa-column-side-navi-up-pc + a[href*="?utm_source="]
+eikaiwa.weblio.jp##div[style^="position:fixed;bottom:0;width:100%;height:90px"]
 eikaiwa.weblio.jp###secondary > a[href^="https://go.ad-link.net/"]
 next.rikunabi.com##.article__body > div[id^="text-"]
 spur.hpplus.jp##.inread-banner
@@ -9643,6 +9647,7 @@ ogeji.hatenablog.com##.entry-content > .code ~ table[style*="width:300px"]
 wiki.seesaa.jp##.ad-boomapp
 ||llnwd.net^*/ejje_ads_$script,domain=ejje.weblio.jp
 weblio.jp##.flex-rectangle-ads-frame
+ejje.weblio.jp###right-side-middle
 ejje.weblio.jp##.slfAdsBox
 ejje.weblio.jp##div[class="sideBlock"]:has(+ .slfAdsBox)
 ejje.weblio.jp###ejjeRightTopAdId
