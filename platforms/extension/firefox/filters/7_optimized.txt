@@ -1,9 +1,9 @@
-! Checksum: /Tbr5WeCZir6U87Rd66fYQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1738626110-3600.patch
+! Checksum: lo8ykN9rQLm/E11u0uwhTw
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1738644217-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.61.77
-! TimeUpdated: 2025-02-03T23:37:46+00:00
+! Version: 2.0.61.78
+! TimeUpdated: 2025-02-04T04:39:20+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 ||amawidget.yutbr.com^
@@ -1326,7 +1326,8 @@ okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 shogi-sanpo.com##.ad_200
 jumpmatome2ch.biz##.kakomi3
-ikuzi2p.livedoor.blog##.plugin-memo.sidewrapper:has(a[rel*="sponsored"])
+ikuzi2p.livedoor.blog##div[class^="article-body"] > a[href^="https://www.dlsite.com/home/dlaf/"][rel="noopener sponsored"][target="_blank"] > img.target_type
+livedoor.blog##.plugin-memo:has(> div.side > center > a[href^="https://hb.afl.rakuten.co.jp"][target="_blank"][rel^="nofollow sponsored"])
 ||gorillawiki.jp/img/ads/
 nishispo.nishinippon.co.jp##.pc_article_billboard
 irohakamon.com##.col-md-12[style="height:305px;"]
@@ -8399,7 +8400,7 @@ eromazofu.com##.c_c_t_w
 doope.jp###head_box
 doope.jp##.at_adwbox
 news.yahoo.co.jp##li > a[class^="sc-"][href^="https://rd.listing."]
-||dlsite.jp/modpub/images2/work/$domain=wiki.yjsnpi.nu|the-3rd.net|2ch-c.net|doujinonsei.jp|bipblog.com|digital-soccer.net|loveliveforever.com|ear-phone-review.com|nikke-jp-news.com|mukuu.herokuapp.com|yaruomatomex.com|cavemanerg.com
+||dlsite.jp/modpub/images2/work/$domain=wiki.yjsnpi.nu|the-3rd.net|2ch-c.net|doujinonsei.jp|bipblog.com|digital-soccer.net|loveliveforever.com|ear-phone-review.com|nikke-jp-news.com|mukuu.herokuapp.com|yaruomatomex.com|cavemanerg.com|ikuzi2p.livedoor.blog
 ||top.bcdn.jp/i/center_banner/
 ||top.bcdn.jp/i/hd_banner/
 biglobe.ne.jp###h_bar
@@ -10379,7 +10380,7 @@ majikichi.com#?#.plugin-memo > div.side > script[src^="https://js.ad-stir.com/"]
 rabitsokuhou.2chblog.jp#?#.plugin-memo > div.side > div.adblock:upward(2)
 rabitsokuhou.2chblog.jp#?#.plugin-memo > div.side > div.gdblock:upward(2)
 8mato.jp#?#.footer_content > div.recommend_ads:upward(1)
-baiku-sokuho.info,kasegeru.blog.jp,imas-cg.net#?#.plugin-memo:has(> div.side > center > a[href^="https://www.amazon.co.jp"])
+baiku-sokuho.info,kasegeru.blog.jp,imas-cg.net##.plugin-memo:has(> div.side > center > a[href^="https://www.amazon.co.jp"])
 imas-cg.net#?#.plugin-memo > div.side div.ad-center:upward(.plugin-memo)
 matometatta-news.net#?#.entry[data-type=space] script[src^="https://img.ad-nex.com/"]:upward(.entry)
 gentosha-go.com#$?#._popIn_infinite_page > li:has(> a[class*="_popIn_recommend_article_ad"]) { remove: true; }
