@@ -1,9 +1,9 @@
-! Checksum: zuHb/+3oWxPwELC0s30H+w
-! Diff-Path: ../patches/2/2-s-1738669439-3600.patch
+! Checksum: X7bxvkxIs3nmVqXmL+GFBQ
+! Diff-Path: ../patches/2/2-s-1738673041-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.70.38
-! TimeUpdated: 2025-02-04T11:31:43+00:00
+! Version: 2.3.70.39
+! TimeUpdated: 2025-02-04T12:31:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17898,6 +17898,8 @@ gearingcommander.com#%#//scriptlet('prevent-setTimeout', 'fnMaskAdBlock')
 veev.to##.veevad-interstitial
 @@||veev.to^$generichide
 @@/ad-provider.js$xmlhttprequest,domain=veev.to
+veev.to#%#//scriptlet('set-constant', 'AdscoreInit', 'noopFunc')
+veev.to#%#//scriptlet('prevent-element-src-loading', 'script', 'c.adsco.re')
 veev.to#%#//scriptlet('set-constant', '_iab', 'false')
 veev.to#%#(()=>{const t={apply:(t,n,e)=>{if(e[0]&&null===e[0].html?.detected&&"function"==typeof e[0].html?.instance?.start&&"function"==typeof e[0].env?.instance?.start&&"function"==typeof e[0].http?.instance?.start){const t=function(){Object.keys(this).forEach((t=>{"boolean"==typeof this[t]&&(this[t]=!1)}))};["html","env","http"].forEach((n=>{e[0][n].instance.start=t}))}return Reflect.apply(t,n,e)}};window.Object.keys=new Proxy(window.Object.keys,t)})();
 !+ NOT_PLATFORM(ext_ublock)
@@ -43574,7 +43576,7 @@ ranoz.gg#%#//scriptlet('remove-attr', 'href', 'div[class^="page_box_wrapper"] a[
 statnews.com##.wp-block-stat-article-recirc-adunit
 isitdownorjustme.net##.aioc_advertise_box
 isitdownorjustme.net##img[Width="970"][height="250"]
-investopedia.com##.mm-ads-leaderboard-spacer
+seriouseats.com,investopedia.com##.mm-ads-leaderboard-spacer
 modcombo.com##.txt-ads
 pricecharting.com##div[style*="width:"][style*="height:"][style*="margin-top:"]:has(> ins.epn-placement)
 onworks.net,stream.offidocs.com#%#//scriptlet('prevent-fetch', '/ip-acl-all.php')
@@ -44917,7 +44919,6 @@ filext.com###ba1c
 vjav.com##.video-page__content > div.left + div:has(> div > div[id^="ntv_"])
 lilymanga.net##.code-block > a[target="_blank"] > img
 macheforum.com##.samCodeUnit > .samItem:has(> .customizedBox > div[data-aa-adunit])
-seriouseats.com#$#.mm-ads-leaderboard-spacer { min-height: 0 !important; }
 nexusmods.com##.items-center:has(>div[data-testid^="ad-container-"])
 thetimes.com###article-main > div:has(> div > div#ad-header)
 ziperto.com##a[href*="https://givawey.click/"]
@@ -122139,7 +122140,7 @@ browsershots.org#@#.advert_area
 ||hide-my-ip.com/promo/
 ||highepcoffer.com/images/banners/
 ||hitleap.com/assets/banner
-||hosted.muses.org/mrp.js
+||hosted.muses.org/mrp.js$domain=flamecomics.xyz
 ||hostmonster.com/src/js/$third-party
 ||hostslick.com^$domain=fileditch.com
 ||hotlink.cc/promo/

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iloPkz7TUZgT1VQwn/q8Bw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1738669463-3600.patch
+! Checksum: 5h2SOf922QuAcuTF7PFqEQ
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1738673063-3600.patch
 ! Title: AdGuard Base filter + EasyList (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.70.38
-! TimeUpdated: 2025-02-04T11:31:43+00:00
+! Version: 2.3.70.39
+! TimeUpdated: 2025-02-04T12:31:30+00:00
 ! Expires: 5 days (update frequency)
 ||humiliatingregion.com^
 ||sapsobughoatch.net^
@@ -2928,6 +2928,7 @@ gearingcommander.com##+js(no-setTimeout-if, fnMaskAdBlock)
 veev.to##.veevad-interstitial
 @@||veev.to^$generichide
 @@/ad-provider.js$xmlhttprequest,domain=veev.to
+veev.to##+js(set-constant, AdscoreInit, noopFunc)
 veev.to##+js(set-constant, _iab, false)
 myabandonware.com##+js(set-constant, j321, true)
 myabandonware.com##+js(abort-on-stack-trace, XMLHttpRequest, putPb)
@@ -10807,7 +10808,7 @@ ranoz.gg##+js(remove-attr, href, div[class^="page_box_wrapper"] a[aria-label="Do
 statnews.com##.wp-block-stat-article-recirc-adunit
 isitdownorjustme.net##.aioc_advertise_box
 isitdownorjustme.net##img[width="970"][height="250"]
-investopedia.com##.mm-ads-leaderboard-spacer
+seriouseats.com,investopedia.com##.mm-ads-leaderboard-spacer
 modcombo.com##.txt-ads
 pricecharting.com##div[style*="width:"][style*="height:"][style*="margin-top:"]:has(> ins.epn-placement)
 onworks.net,stream.offidocs.com##+js(no-fetch-if, /ip-acl-all.php)
@@ -11472,7 +11473,6 @@ watchporn.to##.container > center > .top > a > img
 avclub.com,deadspin.com,gizmodo.com,jalopnik.com,jezebel.com,kinja.com,kotaku.com,lifehacker.com,qz.com,splinternews.com,theinventory.com,theonion.com,theroot.com,thetakeout.com##.js_ad-dynamic
 vjav.com##.video-page__content > div.left + div:has(> div > div[id^="ntv_"])
 lilymanga.net##.code-block > a[target="_blank"] > img
-seriouseats.com#$#.mm-ads-leaderboard-spacer { min-height: 0 !important; }
 nexusmods.com##.items-center:has(>div[data-testid^="ad-container-"])
 thetimes.com###article-main > div:has(> div > div#ad-header)
 moneycontrol.com##.advSlotsWithoutGrayBox
@@ -28964,7 +28964,7 @@ browsershots.org#@#.advert_area
 ||hb.yahoo.net^
 ||hbid.ams3.cdn.digitaloceanspaces.com^
 ||heimalesssinpad.com/overroll/
-||hosted.muses.org/mrp.js
+||hosted.muses.org/mrp.js$domain=flamecomics.xyz
 ||html-load.cc/script/$script
 ||htvapps.com/ad_fallback/
 ||humix.com/video.js
