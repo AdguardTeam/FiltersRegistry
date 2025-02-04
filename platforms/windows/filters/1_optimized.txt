@@ -1,9 +1,9 @@
-! Checksum: +9BZwm5iz0aQui6X6vJXKA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1738683928-3600.patch
+! Checksum: UycC50qpybMA2JO+k/6qZQ
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1738691279-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.32
-! TimeUpdated: 2025-02-04T15:31:12+00:00
+! Version: 2.0.97.33
+! TimeUpdated: 2025-02-04T17:31:33+00:00
 ! Expires: 12 hours (update frequency)
 ||yandex.ru/ads/adfox/
 .shop/tb/#$all
@@ -6563,6 +6563,8 @@ youla.ru##div[data-test-block="IndexContainer"] > section > div:first-child:empt
 youla.ru##div[data-test-component="ProductSimilar"] a[title][href^="https://t.mail.ru/redir/"]
 youla.ru##.product_item--ad
 vfokuse.mail.ru##a[class^="rb-"][class*="branding"]
+||vk.com/al_feed.php$replace=/banner: \{/_banner: \{/
+vk.com,vk.ru#%#//scriptlet('trusted-replace-xhr-response', '/banner:/g', '_banner:', '.php', 'true')
 vk.com,vk.ru###feed_rows > div[class="feed_row "]:has(div[class^="PostHeaderTitle "] > div.PostHeaderTitle__authorBlock span.PostHeaderTitle__authorName)
 vk.com,vk.ru#?##feed_rows > div:has(.FunnyMonk > *:matches-css(before, content: /[Реклама]|^•$/))
 vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div[class] .PostHeaderSubtitle:contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
