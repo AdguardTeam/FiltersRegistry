@@ -1,8 +1,8 @@
-! Checksum: yrMSKtSYGSx/AUl0UWx0yQ
+! Checksum: KKfHhPvofR11Tz5ANZy0LA
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.36
-! TimeUpdated: 2025-02-05T10:31:14+00:00
+! Version: 2.0.97.37
+! TimeUpdated: 2025-02-05T13:31:28+00:00
 ! Expires: 5 days (update frequency)
 ||yandex.ru/ads/adfox/
 .shop/tb/#$all
@@ -2160,7 +2160,7 @@ dzen.ru,auto.ru,avito.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,f
 $cookie=/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/,domain=dzen.ru|baby.ru|businessman.ru|dni.ru|e1.ru|echo.msk.ru|fb.ru|forexpf.ru|gismeteo.by|gismeteo.kz|gismeteo.md|gismeteo.ru|gorodrabot.ru|infoniac.ru|it-tehnik.ru|kakprosto.ru|liveinternet.ru|mk.ru|nkj.ru|ohotniki.ru|oko-planet.su|otzovik.com|rambler.ru|razlozhi.ru|sdamgia.ru|syl.ru|vz.ru
 ://dzen.ru^$document,replace=/"isAdvertEnabled":true/"isAdvertEnabled":false/
 ://dzen.ru^$document,replace=/Ya.\w+.\w+.render/Ya.render/
-||dzen.ru^$script,xmlhttprequest,jsonprune=\$..[direct\, seatbid\, rtb]
+$script,xmlhttprequest,domain=dzen.ru,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
 dzen.ru#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
 dzen.ru#?#div[class^="dzen-desktop--top-micro-app__"]:matches-attr("data-*"="ad-banner")
 dzen.ru###ya-dist-splashscreen
@@ -2299,8 +2299,8 @@ echo.msk.ru,kakprosto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototy
 ||echo.msk.ru^$replace=/AdvManager\.render/AdvManager._render/
 echo.msk.ru$$script[tag-content="DisplayAcceptableAdIfAdblocked"]
 otzovik.com$$script[wildcard="*function*blockId*"][min-length="1000"][max-length="2500"]
-||ya.ru$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"]
-||yandex.$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"]
+||ya.ru$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
+||yandex.$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
 yandex.*#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
 $cookie=/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/,domain=yandex.*
 ||static-mon.yandex.net/static/main.js$script,xmlhttprequest,replace=/"cookieName":.?"\w+"\,/"cookieName": "nonexisting"\,/

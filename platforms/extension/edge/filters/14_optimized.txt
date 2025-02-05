@@ -1,9 +1,9 @@
-! Checksum: 21cs90xHV4cAZjwumJLRkA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1738759547-3600.patch
+! Checksum: tn6lJKVgMdOYHzHERGndGQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1738763118-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.21.5
-! TimeUpdated: 2025-02-05T12:41:25+00:00
+! Version: 2.2.21.6
+! TimeUpdated: 2025-02-05T13:41:01+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -9340,6 +9340,8 @@ dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adItems')
 dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.ssrBanner')
 dzen.ru#%#//scriptlet('abort-on-stack-trace', 'Promise', 'initContext')
 dzen.ru#$?##LayoutTopMicroRoot div[style^="padding-top:"][style*="position: relative; height: 0;"] { remove: true; }
+m.dzen.ru##div[class^="desktop2--redesign-feed__"] div:has(> article[class*="--card-rtb__"])
+m.dzen.ru##div[aria-label="Лента Дзена"] div + article[class*="--card-rtb__"]
 dzen.ru##div[class^="float-interview__float-"]
 [$path=/video]dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.rtb', 'undefined')
 [$path=/video]dzen.ru##div[class*="item-info__videoViewerItemInfo-"] + div:not([class])
@@ -14961,7 +14963,7 @@ pulshr.pl##.google-box
 pulshr.pl##.news-box
 historyfacts.com#$#.popup-modal#subscription-drawer { display: none !important; }
 sud.ua##.bbone-list
-shopbop.com##div[data-slot-id^="email-widget-"]
+shopbop.com#$?#div[data-slot-id^="email-widget-"] { remove: true; }
 covergirl.com#%#//scriptlet('trusted-set-local-storage-item', 'newsletterbox_en-us', 'true')
 huckberry.com#$#.SoftGate__modal { display: none !important; }
 huckberry.com#$#.SoftGate__overlay { display: none !important; }

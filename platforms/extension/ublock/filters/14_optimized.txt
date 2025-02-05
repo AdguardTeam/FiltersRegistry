@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: c4Ieke99id4/bCM4sg3ClA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1738759572-3600.patch
+! Checksum: BpK18evn4R1/Oh1BbVw5UA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1738763139-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.21.5
-! TimeUpdated: 2025-02-05T12:41:25+00:00
+! Version: 2.2.21.6
+! TimeUpdated: 2025-02-05T13:41:01+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -8570,6 +8570,8 @@ dzen.ru##+js(json-prune, ssrData.exportResponse.feedData.adItems)
 dzen.ru##+js(json-prune, ssrData.exportResponse.ssrBanner)
 dzen.ru##+js(abort-on-stack-trace, Promise, initContext)
 dzen.ru#$?##LayoutTopMicroRoot div[style^="padding-top:"][style*="position: relative; height: 0;"] { remove: true; }
+m.dzen.ru##div[class^="desktop2--redesign-feed__"] div:has(> article[class*="--card-rtb__"])
+m.dzen.ru##div[aria-label="Лента Дзена"] div + article[class*="--card-rtb__"]
 dzen.ru##div[class^="float-interview__float-"]
 dzen.ru##:matches-path(/video)div[class*="item-info__videoViewerItemInfo-"] + div:not([class])
 rambler.ua,rambler.ru##+js(set-cookie, _blocker_hidden, 1)
@@ -14145,7 +14147,7 @@ pulshr.pl##.google-box
 pulshr.pl##.news-box
 historyfacts.com#$#.popup-modal#subscription-drawer { display: none !important; }
 sud.ua##.bbone-list
-shopbop.com##div[data-slot-id^="email-widget-"]
+shopbop.com#$?#div[data-slot-id^="email-widget-"] { remove: true; }
 huckberry.com#$#.SoftGate__modal { display: none !important; }
 huckberry.com#$#.SoftGate__overlay { display: none !important; }
 huckberry.com#$#html { overflow: auto !important; }
