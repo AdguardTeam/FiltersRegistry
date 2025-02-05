@@ -1,9 +1,9 @@
-! Checksum: NWTzWT3BJFINIYp/5HbjTg
-! Diff-Path: ../patches/14/14-s-1738766784-3600.patch
+! Checksum: IHpaBz/qsWE/kXUBumWrbg
+! Diff-Path: ../patches/14/14-s-1738770299-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.21.7
-! TimeUpdated: 2025-02-05T14:41:32+00:00
+! Version: 2.2.21.8
+! TimeUpdated: 2025-02-05T15:40:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2474,10 +2474,13 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+||cointracker.io/*/CookieConsentWrapper.
 storyboardthat.com##body #cookieConsentContainer
 heydude.pl,crocs.pl##.cookie-banner-consent
 oantagonista.com.br###card-cookies
 careers.hugoboss.com##.ph-cookie-popup-v2-view2-default
+kanga.exchange#$#article[class^="Cookies"] { display: none !important; }
+kanga.exchange#$#body { overflow: auto !important; }
 gzdiz.gda.pl###acceptRodo
 gzdiz.gda.pl###acceptRodo ~ div.modal-backdrop
 bundesarchiv.de#$#.cookiebanner:not(body) { display: none !important; }
@@ -34167,6 +34170,7 @@ crocs.pl##.snrs-modal-wrapper
 estadiodeportes.mx##form[action="/api/suscribe"]
 estadiodeportes.mx##.googlenews-div
 estadiodeportes.mx##.whatsapp-div
+portafolio.co##.container__btngoogle
 theguardian.com###maincontent #sign-in-gate
 ranker.com##ul[data-testid="list-item-ul"] > div[class^="RelatedInline_"]:has(> div[style] > div[class^="NewsletterSubscription_"])
 ranker.com##div[class^="NewsletterSubscription_mainWrapper"]
@@ -34174,6 +34178,7 @@ oantagonista.com.br##.assine-newsletter
 substack.com##.newsletter-post > div[class*="subscribeDialog"] ~ div[class^="background-"]
 nashe.ru##.follow-popup
 nashe.ru##.news > div.social-additional
+kanga.exchange##section:has(> form > div[class*="RegisterForm"])
 bolsamania.com###newsleterNewUser
 interestingengineering.com##.t-bg-surface-zero:has(input[name="email"])
 interestingengineering.com##.t-w-full.t-flex.t-justify-center:has(> div[class^="SubscriptionInlineForm_newsletterContainer"])
@@ -35984,8 +35989,8 @@ wokularach.pl#%#//scriptlet('trusted-set-local-storage-item', 'modal_newsletter'
 wokularach.pl#$?#div[class^="sc-"] > div[style="display:contents"] > div[class^="sc-"]:has(> section[class^="sc-"] form label[for="newsletter"]) { visibility: hidden !important; height: 0 !important; }
 happymag.tv##.subscribe-home-footer
 blog.fabrichq.ai,blog.bitsrc.io,open.nytimes.com,labs.guard.io,thebolditalic.com,infosecwriteups.com,medium.datadriveninvestor.com,betterprogramming.pub,medium.com##div[role="dialog"] ~ div > div[style="bottom: 0px;"]
-eltiempo.com##.container__boton-whatsapp
-eltiempo.com##.canales-whatsapp
+portafolio.co,eltiempo.com##.container__boton-whatsapp
+portafolio.co,eltiempo.com##.canales-whatsapp
 descargaseriestv.com##.entry-content > p[style] > a[href="https://www.youtube.com/@rodrigocasper253/videos"]
 beincrypto.com##a[href^="https://t.me/BeInCryptoCommunity?utm_campaign"]
 thecollector.com##.CTA
@@ -41808,6 +41813,7 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+furunavi.jp##.footer-applink
 22.do##.detail-wrap > div.page-banner:has(> div.row a > img[src="/assets/images/mail/googleplay.png"])
 netkeiba.com##.DirmainArea01 > div.banner320:has(> a[href^="https://netkeiba.onelink.me/"])
 zolla.com##.isDownloadApp
@@ -45269,6 +45275,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+furunavi.jp###global-app-ad
 ifunny.co###App > div:has(> div[class] > div[class] > div[class] > section[class] > button[color="yellowBlack"])
 outlook.live.com###MAIL_SIDE_PANE > div > div[role="navigation"] + div:has(> button[data-testid="PersistentBannerTestId"])
 ctvnews.ca##.b-promo-medium-manual-custom
