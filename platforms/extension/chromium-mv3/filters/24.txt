@@ -1,8 +1,8 @@
-! Checksum: sDKgZnnbC66xt7b+/S+xWQ
+! Checksum: NEEP5fJUjXRTmG3Jc/8uNQ
 ! Title: AdGuard Quick Fixes filter
 ! Description: Filter to quickly resolve content filtering issues on popular websites without updating the extension.
-! Version: 2.0.7.49
-! TimeUpdated: 2025-02-05T09:41:53+00:00
+! Version: 2.0.7.50
+! TimeUpdated: 2025-02-05T10:39:40+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -330,7 +330,8 @@ rekidai-info.github.io#%#//scriptlet('trusted-suppress-native-method', 'Document
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192558
 vk.com,vk.ru###feed_rows > div[class="feed_row "]:has(div[class^="PostHeaderTitle "] > div.PostHeaderTitle__authorBlock span.PostHeaderTitle__authorName)
 vk.com,vk.ru#?##feed_rows > div:has(div[class] > *:matches-css(before, content: /[Реклама]|^•$/))
-vk.com,vk.ru#?##feed_rows > div[class^="feed_row"] > div[class] .PostHeaderSubtitle:contains(/[Реклама]/):upward(#feed_rows > div[class^="feed_row"])
+vk.com,vk.ru#?##feed_rows > div:has(div[class] > *:matches-css(after, content: /[Реклама]|^•$/))
+vk.com,vk.ru#?##feed_rows > div[class^="feed_row"]:has(> div[class] .PostHeaderSubtitle:contains(/[Реклама]/))
 vk.com,vk.ru###feed_rows > div[class^="feed_row"]:has(> div[class*="ads_block_data"])
 vk.com,vk.ru#?#.wall_posts > div.post:has(.PostHeaderSubtitle__item:contains(Реклама в сообществе))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183252
