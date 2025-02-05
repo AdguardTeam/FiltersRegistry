@@ -1,5 +1,5 @@
-! Checksum: l8RIKsn/tYc4b8/FlcxxHA
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1738701775-3600.patch
+! Checksum: 5OIz1+s0mtxyF9JW78+QFA
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1738723364-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.10.98
@@ -525,6 +525,9 @@ moeimg.net##.news_footer
 inutomo11.com##iframe[src^="http://inutomo11.com/nanj"]
 moeasia.net,syurabahazard.com###middlerss
 syurabahazard.com##.middlersstitle
+honwaka2ch.livedoor.biz##div[style^="width: 100%; height: 270px;"][style$="background: #fff;"]
+honwaka2ch.livedoor.biz##div[style^="width: 100%; height: 235px;"][style$="background: #fff;"]
+honwaka2ch.livedoor.biz#?#div[style^="font-weight: bold;text-align: left"]:contains(/ヘッドライン|おススメ/)
 po-kaki-to.com###text-5 div.site-Introduction
 po-kaki-to.com##.top-site-andander
 moeimg.net###page-pickup-link_frame
@@ -561,6 +564,7 @@ gfoodd.com##.box_group ~ div.singleh4
 gfoodd.com##.box_group ~ br
 gfoodd.com#?#.code-block > div.sponserdrink:contains(RSS)
 marasoku.info##.rss_ninja_title
+marasoku.info##iframe[src^="http://marasoku.info/rss_"]
 news4wide.net##.box-antenna
 /rss_$subdocument,domain=eegg.fun
 ||eegg.fun/rssline.html
@@ -643,6 +647,7 @@ pokemon-matome.net#$##wrap-main { padding-top:0 !important; }
 pokemon-matome.net##div[class^="basehtml"]
 warotanikki.com##.code-block
 ||tb.53kf.com/code/$script
+||s.net-public.com/js/b.js
 ||hayamimi-hobby.com/gen-rss/
 suresuta.jp,sikopedia.com,kisslog2.com###custom_html-6
 akankore.doorblog.jp,beelzeboulxxx.com,gossip1.net,kisslog2.com##.rss_wrapper
@@ -964,6 +969,7 @@ amazon.*###customer-survey_feature_div
 infranken.de###singlewidget_standalone
 unitedutilities.com##.c-recite-me
 acefitness.org##.qn-chat-prompt
+blamper.ru##div[data-module^="widgets/common/FakeChat/"]
 centr-hirurgii.ru,smclinic.ru###call-btn
 eldorado.ru###custom-livetex-fab
 esputnik.com##.intercom-lightweight-app
@@ -1019,6 +1025,7 @@ vinmec.com##.global-thread-create-cta
 ||wchat.freshchat.com/js/widget.js
 ||widget.info-*.ru/js/init.js?t=$script,third-party
 @@||widget.happyfoxchat.com^$domain=support.linksys.com
+@@||secure.livechatinc.com/customer/action/open_chat?$domain=kinguin.net
 @@||static.elfsight.com^$third-party,domain=cafemarta.ch|trestlebrewing.com|taube-rankweil.at|savearizonafund.com|avproedge.com|spiceandcurry.ca|keenetic.com.tr
 @@||code.jivo.ru/widget/$domain=coffee-tea-bravos.ru
 @@||components.justanswer.com^$domain=justanswer.co.uk|justanswer.es|justanswer.de|justanswer.jp
@@ -1031,6 +1038,7 @@ book24.ru##.fake-jivosite
 tech.hindustantimes.com#?#.article div[class]:has(> section.ProductAffilateWrapper)
 ixbt.com##div[id^="marketWidget"]
 ||go.pardot.com^$third-party
+kp.ru##.t-records > div[style^="padding-top:45px;padding-bottom:45px;background-color:#f3f3f3;"]
 3dnews.ru,irecommend.ru##.ymarket-affiliate-widget
 ||aflt.market.yandex.ru/widget$domain=~tehno-rating.ru
 ||dl.metabar.ru^$third-party
@@ -1044,7 +1052,6 @@ lisani.jp##.widget__uzou
 yomuno.jp###similar_articles
 newsee-media.com,saitama-np.co.jp,htb.co.jp,oricon.co.jp,maidonanews.jp##.uz-ny
 ||gacraft.jp^$third-party
-houyhnhnm.jp##.section-similer-post
 otonano-shumatsu.com##.popin-block
 news.audee.jp###popinBox
 yamakei-online.com##.ad-pop-nw3-nw4
@@ -1305,8 +1312,6 @@ getcomics.org##.wpfront-notification-bar-spacer
 insideclimatenews.org##.icn-donate-block
 insideclimatenews.org##.donate-cta
 charter97.org###donate-article
-novaramedia.com##.background-support-texture
-novaramedia.com##.support-section
 nonciclopedia.org,miraheze.org###siteNotice
 winstall.app##div[class^="donateCard_container__"]
 wbur.org##.section--takeover

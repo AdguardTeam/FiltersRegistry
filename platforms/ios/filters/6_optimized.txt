@@ -1,5 +1,5 @@
-! Checksum: ytML6sv4I3Q/SzVY6kBf5g
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1738680494-3600.patch
+! Checksum: nc409f1D42ov1OtLQh0m0g
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1738723375-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.45.79
@@ -1402,7 +1402,6 @@ wochenblitz.com##div[data-mobileadv-outer].mb-6 > a[target="_blank"]
 4p.de##article[class*="newspack_spnsrs_tax"]
 4p.de###h-partnerschaften
 notebooksbilliger.de###greenBanana
-mobiflip.de##.infinite-post.padding5px
 wunderweib.de##.bx-ada--top-slots
 wunderweib.de##.bx-ada--dmofooter
 motor-talk.de##.tef-widget__ad-slot
@@ -1436,6 +1435,7 @@ suchen.mobile.de##div[class][style^="min-height"]:has(> div#SRP_BILLBOARD_ADSENS
 winfuture.de###news_content > .button_box[target="_blank"]
 mydealz.de##div[id*="FuseZonePortal"]
 handelsblatt.com#$?#app-storyline-elements > app-storyline-element:has(> app-storyline-advertisement) { remove: true; }
+docfinder.at##.search-results > .search-result:has(> a > .top > .base-info > .sub > .advert)
 gutekueche.at##div[id^="gkf-adslot"]
 t-online.de##div:has(> div[data-commercial-format]:only-child)
 promobil.de##.va-sponsored
@@ -1472,7 +1472,6 @@ games.ch##.wog
 games.ch##.wog + ul
 mein-schoener-garten.de##.outbrain-wrapper-container
 mein-schoener-garten.de##.paragraph-wrapper--ParagraphGoogleDfp
-mein-schoener-garten.de##.paragraph-wrapper--ParagraphTeaser > div[class] > .teaser:has(> a[target="_blank"])
 wz.de##aside[data-park-portal-wrapper]
 wz.de##div[class]:has(> aside[data-park-portal-wrapper]:only-child)
 hifi.de##article:has(> a > div[class] > .portal-sidebarblock-preview__sponsored)
@@ -1903,6 +1902,7 @@ businessinsider.de##.superbanner-container
 gutekueche.at##div[id^="ad_cont_"]
 onvista.de##atf-ad-slot
 laenderdaten.info##.adtg
+laenderdaten.info##div[style^="min-height:90px;"][style*="padding:15px;"]
 fernsehserien.de##ins[id^="werbemittel"]
 smartphonevergleich.de,batterie.org###tip_top
 geekguide.de##.entry-content > #inArticle
@@ -2087,7 +2087,6 @@ giga.de##div[data-sdg-ad]
 mz.de##.fp-top-article-top-teaser
 bild.de###superbannerWrapper
 bild.de,rollingstone.de##div[id^="mrec"]
-mein-eigenheim.de##.htmlbanner
 wetter.com,winfuture.de,formel1.de##.OUTBRAIN
 praxistipps.focus.de##.FC__Container.min-height-250px-mu
 ratgeber.bunte.de,praxistipps.focus.de,chip.de##.Article__Ad
@@ -2576,6 +2575,7 @@ mein-mmo.de#?#.article:has(> section > .content > .mmo-custom-label-wrapper > sp
 woxikon.de#?#.synonyms-list-inner > div.synonyms-full-width:has(> div.ads-wrapper)
 finanzen.net#?#.page-content__item:has(> div[class^="fin-ob-"])
 macwelt.de,pcwelt.de#?#article.item:has(> .item-inner > .item-text > .item-text-inner > .item-eyebrow:contains(Anzeige))
+mux.de#?#body > section:has(> .container > div[style^="width:100%; height"][style*="text-align:center;"])
 zockify.de#?#div:has(> small.text-muted)
 chip.de#?#div[class]:has(> a[href*="chip.de/downloads/"]:only-child img[src*="hash"]:not([class], [data-src]))
 ratgeber.bunte.de#?#.Article > div[class]:has(>hr:first-child + aside[role="complementary"] + hr:last-child)
@@ -2822,7 +2822,6 @@ browsergames.spielen.de#@##gameimage
 kostenlose-online-rechner.de#@##advert1
 kostenlose-online-rechner.de#@##advert2
 rtl.de#@#.rtlde-medium-rectangle
-@@||doubleclick.net^$domain=video.sport1.de
 @@||lotto-bw.de^$jsinject
 -Bannerwerbung-
 -Werbebanner-
@@ -2879,6 +2878,7 @@ _Bannerwerbung.
 _werbebanner.
 _werbebanner/
 _werbung.php
+_woz_banner_vote.
 ###Ad_Win2day
 ###LxWerbeteaser
 ###SSpotIMPopSlider
@@ -2892,6 +2892,7 @@ _werbung.php
 ###ad-qm-sidebar-oben
 ###adcontentoben
 ###adliste
+###block-werbung
 ###gwerbung
 ###headerWerbung
 ###header_werbung
@@ -2935,14 +2936,12 @@ _werbung.php
 ###werbung-rectangle1
 ###werbung-rectangle2
 ###werbung-skyscraper
-###werbung1
 ###werbung2
 ###werbung792_2
 ###werbungWrapper
 ###werbung_cad
 ###werbung_oben
 ###werbung_rechts
-###werbung_right
 ###werbung_top
 ###werbung_wideskyscraper_screen
 ###werbungrechts
@@ -3264,7 +3263,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||ak-kurier.de/akkurier/www/pic/
 ||ak-kurier.de/akkurier/www/upload/
 ||amigafuture.de/images/oben/amigastore.png
-||apfeltalk.de/banner/
 ||areadvd.de/IOTAVX.jpg
 ||astronomie.de/uploads/tx_sfbanners/
 ||b2run.de/run/de/de/pics/partner/
@@ -3299,7 +3297,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||dubisthalle.de/wp-content/uploads/*_300x300_
 ||dubisthalle.de/wp-content/uploads/*_banner_
 ||egun.de/market/images/banner/
-||eintracht.com/fileadmin/Sponsoren/
 ||eisbaeren.de/assets/img/sponsorenbox_
 ||erogeschichten.com/b/
 ||erogeschichten.com/mdhpic/
@@ -3328,6 +3325,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||freenet.de/amazonService/search/
 ||freenet.de^*/mail/ads/
 ||freieporno.com^*/ssu.v2.js
+||fuechse.berlin^*/modul-hauptsponsoren/
 ||funkbasis.de/_static/ban-
 ||fussball.de^*/partner/
 ||gamezone.de/tsimg/topbanner/
@@ -3547,6 +3545,7 @@ inside-digital.de###INS_D_ROS_Parallax
 staedte-info.net###Layer2
 tips.at###Leaderboard_1_Superbanner_1_Billboard_1_Top_
 teltarif.de###LxShop
+mtb-news.de###MTB_M_ROS_Sticky
 bauexpertenforum.de,elektrikforen.de,megane-board.de,windows-7-forum.net###MidRectangle
 wiesbaden.de###SP-commercials
 teltarif.de###SpaceBefore
@@ -3554,6 +3553,7 @@ teltarif.de###SpaceRectangle
 teltarif.de###SpaceTgtLink
 1erforum.de,bauexpertenforum.de,dasheimwerkerforum.de,elektrikforen.de,fitness-foren.de,lpgforum.de,mazda-forum.info,megane-board.de,mercedes-forum.com,notebookforum.at,pkw-forum.de,skodacommunity.de,toyota-forum.de,vermieter-forum.com,windows-7-forum.net###TopRectangle
 bbv-net.de,stadtanzeiger-borken.de###WallpaperBanner
+6navi.ch###WelcomeBannerDiv
 neumarktaktuell.de###Werbung
 pokewiki.de,timeanddate.de###ad1
 pokewiki.de###ad2
@@ -3693,6 +3693,8 @@ juraforum.de###jf-stroer-sky
 juraforum.de###jf-stroer-superbanner
 forum.kinder.de###kinder\.de_sitebar_1
 forum.kinder.de###kinder\.de_sitebar_2
+klamm.de###klamm\.de_forum_1
+klamm.de###klamm\.de_forum_3
 klamm.de###klamm\.de_incontent_1
 wallstreet-online.de###kosocgen
 mein-wetter.com###labelpub
@@ -4120,6 +4122,7 @@ dtb.de##.footer-sponsor-section
 schalke04.de##.footer-sponsors
 bitch.ch##.footerBanner
 saechsische.de##.footer__partner
+rhein-neckar-loewen.de##.footer__slider
 haie.de##.footer__sponsors
 oefb.at##.footer_partner
 computerbase.de##.forum-teaser
@@ -4180,6 +4183,7 @@ gamepro.de,gamestar.de##.jad-placeholder
 computerbild.de##.jobbioTeaser
 suedostschweiz.ch##.js-audienzz
 eurocampings.de##.js-mock-banner
+lustmap.ch##.js_bns
 kauperts.de##.kca-wrapper
 kicker.de##.kick__ad-pos_wrapper
 kochbar.de##.ks-ad:not([data-adslot="karotte"])
@@ -4226,6 +4230,7 @@ fc-union-berlin.de##.module-footer-sponsors
 mopo.de##.mopo-ads-editor
 finanzen.net##.mrec-height-prefix
 clever-tanken.de##.mrec-news
+mtb-news.de##.mtbn-fotos-incontent__container--mobile
 mtb-news.de##.mtbnews-forum__in-thread
 mtb-news.de##.mtbnews-forum__mobile-top
 mtb-news.de##.mtbnews-mobile-sticky
@@ -4293,9 +4298,9 @@ maclife.de##.productbox
 coolibri.de##.promContainer
 tvspielfilm.de##.promo-box
 tvspielfilm.de##.promo-box-any-banner
+wegwerfemailadresse.com##.promobox
 stadt-bremerhaven.de##.psw-container
 europa-landmaschinen.de,suedtirolnews.it##.pub
-tchgdns.de##.pub-single-side
 mallorcazeitung.es##.publi_cabecera_270
 t-online.de##.py-16.bg-alpine.border-b.border-solid.border-whitelilac.md\:min-w-page
 lifechannel.ch##.pz_cont
@@ -4399,7 +4404,6 @@ golem.de##.tags
 anime2you.de,bitreporter.de,condor.cl,cyclingmagazine.de,elliniki-gnomi.eu,hansa-online.de,heimatreport.de,literaturwelt.com,oscar-am-freitag.de,pfalz-echo.de,pi-news.net,prad.de##.td-a-rec
 smartphonemag.de##.td-banner-wrap-full
 bauernzeitung.at,krautundrueben.de,lokalo.de,marktindex.ch##.td-header-rec-wrap
-radioschwaben.de##.tdi_29
 bestattungen.de##.tdp
 nzz.ch,themarket.ch,wort.lu##.teaser--sponsored
 kaufland.de##.teaser-orchestration__wrapper--online
@@ -4444,6 +4448,7 @@ heizsparer.de,solaranlage-ratgeber.de##.vidheight[style="min-height:450px;"]
 mobile.de##.vip-placeholder
 dogforum.de##.wcfYdLocation
 nydus.org,sbb.it##.werb
+kunststoffweb.de##.werbeplatzierung-container
 wetter.com##.werbung:not(.toolbar-wrapper)
 winfuture-forum.de##.wf_gcsi
 bikesport-emtb.de,radfahren.de,radsport-rennrad.de##.wide-banner
@@ -4523,6 +4528,7 @@ sportdeutschland.tv##app-top-banner
 ww3.cad.de##body > table[width="100%"][border="0"]:first-child
 ibooks.to##button[type="submit"]
 chefkoch.de##consent-for
+winfuture.de##div[align="center"][style="min-height: 320px;"]
 shop.rewe.de##div[class*="Product_productSpecialTile"]
 onlinehaendler-news.de##div[class*="adplacement_"]
 chartsurfer.de##div[class*="adszone-"]
@@ -4658,6 +4664,7 @@ oekotest.de##div[style="clear:both; display:block; min-height: 640px;"]
 wirtschaftslexikon24.com##div[style="float:left;clear:left;height:620px;width:180px;padding-top:15px;"]
 nydus.org##div[style="height:90px;overflow:hidden;text-align:center;"]
 digitalfernsehen.de##div[style="margin-bottom:10px"]
+winfuture.de##div[style="margin: 10px 0px; text-align: center; min-width: 300px; min-height: 250px;"]
 winfuture.de##div[style="min-width: 300px; min-height: 250px;"]
 quoka.de##div[style="width: 100%; height: 250px; overflow: hidden; text-align: center;"]
 quoka.de##div[style="width: 100%; height: 260px; overflow: hidden; text-align: center; padding-top: 10px;"]
