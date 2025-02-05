@@ -1,9 +1,9 @@
-! Checksum: VJY1y+fwCaHkfndrMVGq2w
-! Diff-Path: ../patches/14/14-s-1738770289-3600.patch
+! Checksum: dZwcP31rKPLU8JRr7r597A
+! Diff-Path: ../patches/14/14-s-1738777430-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.21.8
-! TimeUpdated: 2025-02-05T15:40:36+00:00
+! Version: 2.2.21.9
+! TimeUpdated: 2025-02-05T17:39:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,7 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+##.idxrcookies-block-user-nav::before
 ##.we-use-cookies
 ##.l-footer-cookie
 ##.box_cookie_allow
@@ -2473,6 +2474,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+greenstuffworld.com,kultura.com.pl#$#body.idxrcookies-block-user-nav { overflow: auto !important; }
+greenstuffworld.com,kultura.com.pl#$##idxrcookies { display: none !important; }
 ||cointracker.io/*/CookieConsentWrapper.
 storyboardthat.com##body #cookieConsentContainer
 heydude.pl,crocs.pl##.cookie-banner-consent
@@ -18211,8 +18214,8 @@ autohaus-reitermayer.de#@#.gdpr-banner
 authentication.nutmeg.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151487
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146883
-whyopencomputing.com,kultura.com.pl#@##idxrcookies
-whyopencomputing.com,kultura.com.pl#@##cookieModal
+kultura.com.pl#@##idxrcookies
+kultura.com.pl#@##cookieModal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146847
 @@||webticketing*.cinestar.de/app/scripts/provider/CookieConsent.js
 ! https://github.com/List-KR/List-KR/issues/656 - The plus buttons placing next to country name cannot be clicked.
