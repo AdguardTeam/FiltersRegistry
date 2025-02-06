@@ -1,9 +1,9 @@
-! Checksum: wSisLaLz17IrVPBoZ8oQcQ
-! Diff-Path: ../patches/237/237-s-1738789579-14400.patch
+! Checksum: uHU1QU9Weyl6jVq2sO+UHg
+! Diff-Path: ../patches/237/237-s-1738803961-14400.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.33.97
-! TimeUpdated: 2025-02-05T21:02:00+00:00
+! Version: 1.0.33.98
+! TimeUpdated: 2025-02-06T01:01:48+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -12,8 +12,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Wed, 05 Feb 2025, 20:33 UTC+01:00
-! OriginalVersion: 2025.2.5.1
+! Last modified: Wed, 05 Feb 2025, 22:29 UTC+01:00
+! OriginalVersion: 2025.2.5.2
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -22,7 +22,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: śro, 05 lut 2025, 20:33 UTC+01:00
+! Aktualizacja: śro, 05 lut 2025, 22:29 UTC+01:00
 !
 !
 ! Newslettery (nie popupy)
@@ -3455,6 +3455,7 @@ dts24.pl##.nav-btn
 duka.com,electro.pl,mediaexpert.pl##.is-scrollToTop
 durszlak.pl##.button-icon-goup
 dwutygodniksuwalski.pl,lilio.pl,lumex.pl,www.biedronka.pl##.arrow-top
+dziennik.pl##.the-scroll-up
 e-bliskoprzyrody.pl##.vlt-back-to-top
 e-dym.pl,walizkownia.pl###slidetop
 e-glamour.pl,elnino-parfum.pl##.js-scrollUp
@@ -4332,6 +4333,7 @@ zooplus.pl##div:not([class*="sidebar"]) > div[id*="tracker_banner-yt-channel-"].
 ###chaty-channel-facebook_messenger
 ##.btn-share.btn.btn-whatsapp
 ##a[aria-label="Udostępnij w WhatsApp"]
+##div[data-hook="social-sharing"] button[aria-label="Udostępnij na WhatsApp"]
 ~pl###chaty-channel-facebook_messenger:lang(pl)
 ~pl###fb-root:lang(pl)
 ~pl###whatsapp-chat-footer:lang(pl)
@@ -5545,6 +5547,8 @@ drzwipartnerkrakow.pl##.storefront-product-pagination > a
 dts24.pl,goldenmark.com,gwiazdybasketu.pl,news.mototribe.pl,strimeo.tv##.recommend-box
 duzekubki.pl###sweet-fixed-box
 dziennik.pl###close
+dziennik.pl###PromoButton
+dziennik.pl##.scroll-banner
 dziennik.pl##.switcher-button, #nextArticleWidget
 dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,e-izolacje.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gratka.pl,gs24.pl,i.pl,kurierlubelski.pl,motofakty.pl,naszahistoria.pl,naszemiasto.pl,nekrologi.net,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,regiodom.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,strefaedukacji.pl,stronakobiet.pl,stronakuchni.pl,stronapodrozy.pl,stronazdrowia.pl,telemagazyn.pl,to.com.pl,tygodnikits.pl,wspolczesna.pl##.atomsNavigationStickyReturnHome
 dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gratka.pl,gs24.pl,i.pl,kurierlubelski.pl,motofakty.pl,naszahistoria.pl,naszemiasto.pl,nekrologi.net,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,regiodom.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,strefaedukacji.pl,stronakobiet.pl,stronakuchni.pl,stronapodrozy.pl,stronazdrowia.pl,telemagazyn.pl,to.com.pl,tygodnikits.pl,wspolczesna.pl##a[id].atomsGalleryButtonsNavigation__right[title^="Przejdź na "]
@@ -6779,8 +6783,7 @@ zycie.pl##.right #multiple-versions, #premium-slide
 !
 !
 ! Filtry tymczasowe przed RTM
-zawojski.pl##body:not(.privacy-box-visible) .privacy-box
-zawojski.pl#@#.privacy-box
+!
 !
 !
 ! Filtry specjalne
