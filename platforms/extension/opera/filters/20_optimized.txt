@@ -1,5 +1,5 @@
-! Checksum: ijn08iEGj2GTuajsWU5A9g
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1738792071-3600.patch
+! Checksum: h7I+lPVEVOxeODvBoiQGpA
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1738809741-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.18.97
@@ -59,6 +59,7 @@ chitai-gorod.ru##.chg-app-smart
 m.hoysport.tv##.van-floating-bubble
 doktortakvimi.com,doctoralia.es,miodottore.it,znamylekar.cz,doctoralia.com.pt,doctoralia.com.mx,doctoralia.cl,doctoralia.com.br,doctoraliar.com,doctoralia.pe,doctoralia.co,znanylekarz.pl##.patient-app-banner-index
 money.udn.com##.open-on-app__link
+money.udn.com##.aside-btn-wrapper .aside-actvity
 m.inven.co.kr###invenAppSuggestion
 tractorsupply.com###tsc-app-banner
 darkreader.org##darkreader-backers-side
@@ -586,6 +587,7 @@ character.ai#%#//scriptlet('set-local-storage-item', 'MOBILE_APP_ANNOUNCEMENT_SE
 freeonlinegames.com###cwarn-box
 happymod.ru##.new-fixd-box
 happymod.ru##.fot-float-box
+biz.moneyforward.com##.app-fixed-navigation
 17track.net##.yq-app-download
 products.aspose.app##.mobile-buttons
 ali213.net##.appjctj
@@ -635,8 +637,6 @@ navitime.co.jp##.app_dl_banner_frame
 ganma.jp#%#//scriptlet('set-cookie', 'isAppClosed', '1')
 izi.travel##.app_message
 izi.travel##.share_browse_app
-bus-location.jp#$#object[name="AD"] { display: none !important; }
-bus-location.jp#$#div[data-role="header"] { margin-top: 0 !important; }
 uteka.ru##.app-qr-code-banner
 web.quizknock.com###header_iosapp_link
 bisnis.com##.wrapper__ads-download
@@ -679,7 +679,6 @@ picwish.com#?#.sticky > div[class^="lg"]:has(> a[href^="https://download.aoscdn.
 map.baidu.com###fis_elm__6
 map.baidu.com###fis_elm__12
 map.baidu.com#?#body > div[id]:has(> div#downloadnativepopupUlink)
-map.baidu.com#?##page-wrapper > div#common-bottombanner-widget-fis:has(> div.common-widget-bottom-banner-changeId > div.bottom-banner-float)
 m.economictimes.com###float_app_ET
 yay.space##.AppDownloadAds
 goo-net.com#$#.appBingWeb { display: none !important; }
@@ -792,6 +791,7 @@ ameba.jp##.FooterAmeba_AmebaApp
 eltiempo.es##div[style="min-height:250px;"]
 nieuwsblad.be##a[href="https://www.nieuwsblad.be/app"]
 michaelsan.livedoor.biz#?#.plugin-memo > div.side > a[href^="https://play.google.com/store/"]:upward(.plugin-memo)
+mcdonalds.co.jp##.apps-and-sns-banners
 pinterest.*##div[role="main"] div[data-test-id="floating-app-upsell"]
 amazon.co.jp###kcpApp_feature_div
 emailnator.com#%#//scriptlet('set-local-storage-item', 'announcement_1', '1')
@@ -977,7 +977,6 @@ travel.rakuten.co.jp##span[id="footerBannerAppDL"]
 travel.rakuten.co.jp###appDlBn
 hoyolab.com##.bbs-qr
 linkedin.com#$#.header-container { margin-top:0px!important; }
-wear.net,wear.jp###hdr_download
 blogtag.ameba.jp#?##app > aside[class^="sc-"] > div[class^="sc-"] > a[href^="https://ameblo.page.link"]:upward(2)
 oceans-nadia.com#$#div[class^="CommonModal_modalBack"] { display:none!important; }
 oceans-nadia.com#$#header { margin-top: 0px !important;}
@@ -1071,6 +1070,7 @@ benesse.ne.jp##.app_download_area
 listenradio.jp###fancybox-wrap
 ati.su##.apps-block
 ||audee.jp/js/smart.banner/
+homeworklib.com#?#.span4 > div.box:has(> a[href="https://www.homeworklib.com/links/homework-android-app"])
 jp-news.mercari.com##.mercari-app
 stolichki.ru#$#div[class^="secondMenu__wrapper"] { top: 0 !important; }
 hmetro.com.my,bharian.com.my,nst.com.my#%#//scriptlet('set-cookie', 'appDownloadBanner', '1')
@@ -1125,6 +1125,7 @@ portal.librus.pl##picture > img[src="https://portal.librus.pl/images/base/aplika
 ||portal.librus.pl/ad|
 reverso.net###home-badges
 ifunny.co#$#body { overflow-y: auto !important; }
+emlakkatilim.com.tr##div[id$="ApplicationNitification"]
 www-hindustantimes-com.cdn.ampproject.org,hindustantimes.com##.openAppButton
 m.gamer.com.tw,noin.shop,india.com##.open-app
 qushucheng.com,m.wanben.org,jingwuhotel.com##.appguide-wrap
@@ -1288,11 +1289,11 @@ ifeng.com##.openApp[onclick^="loadOpen.init(download"]
 roblox.com###app-bumper-main
 plus.nhk.jp,shufoo.net,gran-turismo.com,m.tv.naver.com,m.comic.naver.com,m.bombaytimes.com##.app_banner
 trendyol.com,tripadvisor.ru,prog-8.com,spice.eplus.jp,catalog.onliner.by,hket.com,fashion-headline.com,momoshop.com.tw,ticketjam.jp,kompas.com,sevenbank.co.jp,booth.pm,reverso.net,bangumi.org,msn.com,m.investing.com,m.spiegel.de,mavcsoport.hu,m.trendyol.com,autobild.de,infranken.de,m.douglas.de,focus.de###smartbanner
+abril.com.br##.magazine-read
 soundcloud.com##article.mobileApps
 wattpad.com###bottom-banner-container
 wattpad.com###announcements-container
 marca.com#$#.js-mobile-banner { display: none !important; }
-zargan.com###app-menu
 photo-capsule-puls.net,americanexpress.com,e-aidem.com##.appbanner
 journaldequebec.com,journaldemontreal.com,medizinfuchs.de###appbanner
 services.clp.com.hk,pikabu.ru,uol.com.br,m.netpincer.hu,m.yelp.com,opodo.de###smart-banner
@@ -1334,7 +1335,6 @@ fandom.com#$#body { margin-top: 0!important; }
 goodreads.com#$#html.withAppInstallationBanner .siteHeader { top: 0 !important; }
 goodreads.com#$#html[style="margin-top: 80px;"] { margin-top: 0 !important; }
 linkedin.com#$#.no-scroll { overflow:visible!important; }
-m.tokopedia.com#$#body { overflow: visible!important; }
 m.webtoons.com##._appDownloadPopup
 m.webtoons.com#$#body { overflow: visible !important; position: relative !important; }
 rtl2.de#$#body { overflow: auto !important; }
@@ -1360,7 +1360,6 @@ uslugi.yandex.ru##.DistributionCard-Container
 uslugi.yandex.ru##.MobAppStoreLinks
 auto.ru#$#.page_freeze { overflow: auto !important; position: static !important; }
 bookmate.ru##.book-cover div.store-links
-bookmate.ru##.app-banner
 fredmeyer.com#%#//scriptlet('trusted-set-local-storage-item', 'modal_boost_free_trial_p4w1', 'true')
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#%#//scriptlet('hide-in-shadow-dom', 'xpromo-viral-community')
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#shreddit-async-loader[paint-group="xpromo"][bundlename="app_selector"] { display: none !important; }
