@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 7nY+D8TjtoylD0c1jSkccw
-! Diff-Path: ../patches/2/2-s-1738849425-3600.patch
+! Checksum: RkifXHGCg0lrNITRG7Jw8Q
+! Diff-Path: ../patches/2/2-s-1738853058-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.70.67
-! TimeUpdated: 2025-02-06T13:31:42+00:00
+! Version: 2.3.70.68
+! TimeUpdated: 2025-02-06T14:31:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17076,6 +17076,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/197952
+winshell.org##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197592
 avdbapi.com##+js(no-fetch-if, /vast.js)
 ||ssl.p.jwpcdn.com/player/plugins/vast/v/*/vast.js$xmlhttprequest,redirect=noop.js,domain=avdbapi.com
@@ -43449,6 +43451,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+filespayouts.com###normal-box
+winshell.org##.content > center:has(> .adsbygoogle)
 summarizer.org###after-text-load-controls:has(> div[class^="ads_"])
 dikgames.com##div[class^="dikga-"]
 ||1024tera.com/directad/

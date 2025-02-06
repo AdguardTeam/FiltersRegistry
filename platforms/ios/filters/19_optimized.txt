@@ -1,9 +1,9 @@
-! Checksum: pgmYqGWDurxQw1VI6+M/4w
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1738838711-3600.patch
+! Checksum: EjHK6WRtkk+O8+1fc7+vnQ
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1738853063-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.49.97
-! TimeUpdated: 2025-02-06T10:40:42+00:00
+! Version: 2.0.49.98
+! TimeUpdated: 2025-02-06T14:40:07+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 [$path=/images]ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -84,6 +84,7 @@ m.dzen.ru##div[aria-label="Лента Дзена"] div + article[class*="--card-
 dzen.ru##div[class^="float-interview__float-"]
 [$path=/video]dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.rtb', 'undefined')
 [$path=/video]dzen.ru##div[class*="item-info__videoViewerItemInfo-"] + div:not([class])
+vk.com,vk.ru#%#//scriptlet('trusted-replace-xhr-response', '/banner:/g', '_banner:', 'feed', 'true')
 rambler.ua,rambler.ru#%#//scriptlet('set-cookie', '_blocker_hidden', '1')
 !#safari_cb_affinity(general)
 rambler.ua,rambler.ru#@#.ad
@@ -447,6 +448,8 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 @@||search-module.s3.us-east-2.amazonaws.com/pubs/trib/adblockdetect.js
 !#safari_cb_affinity
 armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwesterndaily.com.au,crookwellgazette.com.au,dailyadvertiser.com.au,dailyliberal.com.au,examiner.com.au,illawarramercury.com.au,newcastleherald.com.au,portnews.com.au,thecourier.com.au,thesenior.com.au#%#//scriptlet('set-cookie', 'dismissCheck', '1')
+androidworld.nl#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'adBlocker')
+androidworld.nl##div[class]:has(> div.adblock-detect)
 hilites.today#$#body { overflow: auto !important; }
 hilites.today#$##adBlockerPopup { display: none !important; }
 hilites.today#$#.modal-backdrop { display: none !important; }

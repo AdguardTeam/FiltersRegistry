@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: k1q7VF3z+DypbOqJsz1b4g
-! Diff-Path: ../patches/19/19-s-1738838706-3600.patch
+! Checksum: MhEX9bh/4Fr2QY6NC+5urA
+! Diff-Path: ../patches/19/19-s-1738853057-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.49.97
-! TimeUpdated: 2025-02-06T10:40:42+00:00
+! Version: 2.0.49.98
+! TimeUpdated: 2025-02-06T14:40:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -196,6 +196,7 @@ dzen.ru##:matches-path(/video)div[class*="item-info__videoViewerItemInfo-"] + di
 dzen.ru##:matches-path(/video)div[class^="video-view-sidebar"] div[class]:matches-attr("aria-label"=/[Рр]екламная карта/)
 dzen.ru##.viewer-layout__sidebar div[aria-label*="екламная карта"]
 !
+! Test. Ads in the feed
 ! END: VK group
 !   NOTE: VK group end ⬆️
 !   !SECTION: Anti-adblock - VK group
@@ -1682,6 +1683,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+androidworld.nl##+js(addEventListener-defuser, DOMContentLoaded, adBlocker)
+androidworld.nl##div[class]:has(> div.adblock-detect)
 hilites.today#$#body { overflow: auto !important; }
 hilites.today#$##adBlockerPopup { display: none !important; }
 hilites.today#$#.modal-backdrop { display: none !important; }
