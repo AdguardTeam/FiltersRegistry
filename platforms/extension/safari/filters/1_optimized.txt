@@ -1,9 +1,9 @@
-! Checksum: X6oPujysLkG4BtVL9S4iVA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1738943044-3600.patch
+! Checksum: o6hkNPj0vHvDlcov91z9pg
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1738946595-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.48
-! TimeUpdated: 2025-02-07T15:31:10+00:00
+! Version: 2.0.97.49
+! TimeUpdated: 2025-02-07T16:31:09+00:00
 ! Expires: 5 days (update frequency)
 ||yandex.ru/ads/adfox/
 .shop/tb/#$all
@@ -6277,6 +6277,10 @@ vost.pw,animevost.am,smotret-anime-365.ru,animevost.online,animevost.org,animero
 vost.pw,animevost.am,smotret-anime-365.ru,animevost.online,animevost.org,animerost.org,animevost.am,agorov.org##div[class^="headbg"] > a[target="_blank"]
 4pda.to##a[href*="//4pda.to/honor/?utm_"]
 ||4pda.*/ad/
+4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article > article:has(script)
+4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article:has(> *:not(div)[class] > iframe)
+4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] [style^="overflow: hidden; height:"] > *:has(iframe)
+4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] [style^="overflow: hidden; height:"] > *:has(script)
 4pda.ru,4pda.to##html:not([style]) tr[valign="top"] > td[width*="%"] + td > a[target="_blank"] > img[alt=""]
 rbc.ru##.js-rbcslider-slide .g-banner__news-footer:has(> div.js-rbcslider-multi-news > div.readmore > div.smi24__informer)
 rbc.ru##.main__inner > div.main__feed:has(> div.main__feed__link > div[class="fox-tail"])

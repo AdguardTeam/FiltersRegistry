@@ -1,9 +1,9 @@
-! Checksum: aBiMcOqObblkLrOg9ywEgg
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1738943034-3600.patch
+! Checksum: NrGFea7xLZgm8BFvQxk6hw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1738946582-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.48
-! TimeUpdated: 2025-02-07T15:31:10+00:00
+! Version: 2.0.97.49
+! TimeUpdated: 2025-02-07T16:31:09+00:00
 ! Expires: 10 days (update frequency)
 ||yandex.ru/ads/adfox/
 .shop/tb/#$all
@@ -6398,6 +6398,13 @@ vost.pw,animevost.am,smotret-anime-365.ru,animevost.online,animevost.org,animero
 [$domain=/^4pda\.to$/]#$#body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] { background: #e6e7e9 !important; }
 [$domain=/^4pda\.to$/]#$?#body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article:matches-css(height: /^(148(?:\.\d{1,3})?|149(?:\.\d{1,3})?|150(?:\.0{1,3})?)px$/) { remove: true; }
 [$domain=/^4pda\.to$/]#%#//scriptlet('spoof-css', 'body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article', 'height', '149px')
+4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article > article:has(script)
+[$domain=/^4pda\.to$/]#%#//scriptlet('spoof-css', 'body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article > article', 'display', 'block')
+4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article:has(> *:not(div)[class] > iframe)
+[$domain=/^4pda\.to$/]#%#//scriptlet('spoof-css', 'body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] > *:not(div)[class] article', 'display', 'block')
+[$domain=/^4pda\.to$/]#%#//scriptlet('spoof-css', 'body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] [style^="overflow: hidden; height:"] > *', 'display', 'block')
+4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] [style^="overflow: hidden; height:"] > *:has(iframe)
+4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] [style^="overflow: hidden; height:"] > *:has(script)
 4pda.ru,4pda.to##html:not([style]) tr[valign="top"] > td[width*="%"] + td > a[target="_blank"] > img[alt=""]
 rbc.ru##.js-rbcslider-slide .g-banner__news-footer:has(> div.js-rbcslider-multi-news > div.readmore > div.smi24__informer)
 rbc.ru##.main__inner > div.main__feed:has(> div.main__feed__link > div[class="fox-tail"])
