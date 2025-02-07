@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.64.41",
-			"timeUpdated": "2025-02-07T13:01:21+0000",
+			"version": "2.1.64.42",
+			"timeUpdated": "2025-02-07T17:01:17+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.64.40",
-			"timeUpdated": "2025-02-07T13:01:22+0000",
+			"version": "2.1.64.41",
+			"timeUpdated": "2025-02-07T17:01:18+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1022,8 +1022,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist-thailand/easylist-thailand/master/subscription/easylist-thailand.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.20",
-			"timeUpdated": "2025-01-29T17:02:23+0000",
+			"version": "2.0.0.21",
+			"timeUpdated": "2025-02-07T17:01:35+0000",
 			"deprecated": false,
 			"languages": [
 				"th"
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.57.72",
-			"timeUpdated": "2025-02-07T13:02:14+0000",
+			"version": "2.0.57.73",
+			"timeUpdated": "2025-02-07T17:02:18+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
