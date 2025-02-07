@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 471Z/vhlXIZsNJbJt5OJhg
-! Diff-Path: ../patches/2/2-s-1738928901-3600.patch
+! Checksum: lVbFnzz/aQeKXCwSbhsrlA
+! Diff-Path: ../patches/2/2-s-1738932288-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.70.80
-! TimeUpdated: 2025-02-07T11:31:59+00:00
+! Version: 2.3.70.81
+! TimeUpdated: 2025-02-07T12:31:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17787,10 +17787,10 @@ gearingcommander.com##+js(no-setTimeout-if, fnMaskAdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182040
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179916
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175439
-veev.to##.veevad-interstitial
+veev.to#@#.avb-active
 @@||veev.to^$generichide
 @@/ad-provider.js$xmlhttprequest,domain=veev.to
-veev.to##+js(set-constant, AdscoreInit, noopFunc)
+veev.to##+js(remove-node-text, script, veevad-interstitial)
 veev.to##+js(set-constant, _iab, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175266
 @@||rddywd.com/advertising.js$domain=herokuapp.com
@@ -43460,6 +43460,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+samfw.com##.my-1 > a[target="_blank"] > img
+samfw.com###download_section .col-lg-10 > a[target="_blank"][style]
+twitchmetrics.net##.list-group > div.container:has(> div[class^="franklyad"])
 kitap.name##div[class*="bg-gray"]:has(> ins.adsbygoogle)
 fark.com###sellwyld
 filespayouts.com###normal-box
@@ -63386,9 +63389,6 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197365
-! https://github.com/AdguardTeam/AdguardFilters/issues/197278
-! TODO: remove the rule when this issue https://github.com/AdguardTeam/DisableAMP/issues/110 is fixed
-! aglint-disable-next-line
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196967
 ! It's broken by any extension
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196780

@@ -1,9 +1,9 @@
-! Checksum: PRtjtaZTDXPilEdp6uW5dg
-! Diff-Path: ../patches/2/2-s-1738928917-3600.patch
+! Checksum: LaWPvokKWBncG2TBoZD8dw
+! Diff-Path: ../patches/2/2-s-1738932299-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.70.80
-! TimeUpdated: 2025-02-07T11:31:59+00:00
+! Version: 2.3.70.81
+! TimeUpdated: 2025-02-07T12:31:51+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17976,15 +17976,17 @@ gearingcommander.com#%#//scriptlet('prevent-setTimeout', 'fnMaskAdBlock')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182040
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179916
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175439
-veev.to##.veevad-interstitial
+veev.to#@#.avb-active
 @@||veev.to^$generichide
 @@/ad-provider.js$xmlhttprequest,domain=veev.to
-veev.to#%#//scriptlet('set-constant', 'AdscoreInit', 'noopFunc')
+veev.to$$script:contains(veevad-interstitial)
+veev.to#%#//scriptlet('remove-node-text', 'script', 'veevad-interstitial')
+veev.to#%#(()=>{window.AdscoreInit=function(ta,F){};})();
 veev.to#%#//scriptlet('prevent-element-src-loading', 'script', 'c.adsco.re')
 veev.to#%#//scriptlet('set-constant', '_iab', 'false')
 veev.to#%#(()=>{const t={apply:(t,n,e)=>{if(e[0]&&null===e[0].html?.detected&&"function"==typeof e[0].html?.instance?.start&&"function"==typeof e[0].env?.instance?.start&&"function"==typeof e[0].http?.instance?.start){const t=function(){Object.keys(this).forEach((t=>{"boolean"==typeof this[t]&&(this[t]=!1)}))};["html","env","http"].forEach((n=>{e[0][n].instance.start=t}))}return Reflect.apply(t,n,e)}};window.Object.keys=new Proxy(window.Object.keys,t)})();
 !+ NOT_PLATFORM(ext_ublock)
-veev.to#%#//scriptlet('abort-on-property-read', 'VEEVPop')
+veev.to#%#//scriptlet('set-constant', 'VEEVPop', 'emptyObj')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175266
 @@||rddywd.com/advertising.js$domain=herokuapp.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175371
@@ -43895,6 +43897,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+samfw.com##.my-1 > a[target="_blank"] > img
+samfw.com###download_section .col-lg-10 > a[target="_blank"][style]
+twitchmetrics.net##.list-group > div.container:has(> div[class^="franklyad"])
 kitap.name##div[class*="bg-gray"]:has(> ins.adsbygoogle)
 fark.com###sellwyld
 filespayouts.com###normal-box
@@ -63885,10 +63890,6 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197365
-! https://github.com/AdguardTeam/AdguardFilters/issues/197278
-! TODO: remove the rule when this issue https://github.com/AdguardTeam/DisableAMP/issues/110 is fixed
-! aglint-disable-next-line
-@@||onmanorama.com/*.amp.html$extension="Disable AMP"
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196967
 ! It's broken by any extension
 @@||tailwindcss.com^$extension
