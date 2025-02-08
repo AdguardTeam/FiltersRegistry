@@ -1,9 +1,9 @@
-! Checksum: zfy381jlZUHYMkAd205eug
-! Diff-Path: ../patches/237_optimized/237_optimized-s-1738947961-14400.patch
+! Checksum: Xlyf9qYJJKwiq0tRoRZKiw
+! Diff-Path: ../patches/237_optimized/237_optimized-s-1739019940-14400.patch
 ! Title: Polish Annoyances Filters (Optimized)
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.33.99
-! TimeUpdated: 2025-02-07T17:02:00+00:00
+! Version: 1.0.34.0
+! TimeUpdated: 2025-02-08T13:01:44+00:00
 ! Expires: 10 days (update frequency)
 ||4prm.pl/*/4p_newsletter.jpg
 ||a-ajurweda.pl/images/layout/ajurweda/newsletter_ajurweda.png
@@ -230,7 +230,7 @@ bilscy.info,ogrodniczy.com,sarenka.eu##.footer-newsletter-box
 bioenergiadlaregionu.eu##.pa-newsletter
 bioieko.pl,chinytolubie.pl,dietetycy.org.pl,effective-english.pl,miastons.pl,przewodnikmp.pl,socialpress.pl###fm_form_1
 biolindo.pl,ecco-verde.pl##.footer_newsletter--form
-bissole.pl##a[href="#newsletter"]
+bissole.pl,marketdino.pl##a[href="#newsletter"]
 bit-info.pl##.newsletters_block
 biurfan.pl###newsletter-wide
 biuronet.com##.bottom-subscription-form
@@ -1067,7 +1067,7 @@ ogloszenia.trojmiasto.pl##.let-me-know
 okazik.pl##.container:first-of-type > .row-wrap.row > .col-md-3:nth-of-type(2)
 okazje.info.pl###newsletterTab
 okazjum.pl##.newsletter-modal__reveal-button
-okna-pasywne.pl##div:not([class]):not([id]) > div[class*="NewsletterArticle"]:not([class*="content"])
+okna-pasywne.pl##div:not([class], [id]) > div[class*="NewsletterArticle"]:not([class*="content"])
 oknadrzwi.net##.widget_buildplus_core_newsletter
 oknonet.pl##div.lbox:nth-of-type(8)
 oknoplast.com.pl##.ivn-BlockNewsletter__content
@@ -1718,7 +1718,7 @@ zyxel.com###block-newsletter-footer
 ~activejet.pl,pl##.newsletterBox
 ~aurum-optics.pl,pl##.footer-newsletter
 ~automatykab2b.pl,~ekodrogeria.pl,~gazeta.pl,pl,~wyborcza.pl##.newsletter-box
-~budus.pl,~carrefour.pl,~olx.pl,pl###newsletter:not(.modal):not(input)
+~carrefour.pl,~olx.pl,pl###newsletter:not(.modal, input, :target)
 ~dietyodbrokula.pl,~ekodrogeria.pl,~mediaexpert.pl,~muzyczneradio.pl,pl##.newsletter-form
 ~drogeriaolmed.pl,pl##.newsletter-btn
 ~dron.pl,pl##.widget_wysija
@@ -1728,7 +1728,7 @@ zyxel.com###block-newsletter-footer
 ~pip.gov.pl,pl##.newsletter-content
 ~pl###box_newsletter:lang(pl)
 ~pl###menu_newsletter:lang(pl)
-~pl###newsletter:not(.modal):not(input):lang(pl)
+~pl###newsletter:not(.modal, input):lang(pl)
 ~pl##.block-newsletter:lang(pl)
 ~pl##.block_newsletter:lang(pl)
 pl###box-newsletter
@@ -2008,7 +2008,7 @@ akademia.nask.pl###newsletterall
 akademos.pl###myModal, .reveal-modal-bg
 akson.pl###contactPopup
 akson.pl###eventPopup
-albo24.pl##body > div:not([class]):not([id]) > div[class][style*="z-index"][style*="position"][style*="fixed"]
+albo24.pl##body > div:not([class], [id]) > div[class][style*="z-index"][style*="position"][style*="fixed"]
 aledobre.pl,mniammniam.com###universal-popup-wrapper
 aleleki.pl,florini.pl###fancybox-overlay
 alget.pl,kontaktowe.pl,polskiesolitery.pl###jOverlayContent, #jOverlay
@@ -2119,7 +2119,7 @@ bissole.pl,elbau.com.pl,laboosiedlce.pl,lovesimple.pl,luminapark.pl,modesta.com.
 bitdefender.pl###popup, .popup-overlay
 biuroprasowe.pl###global_overlay_cont, #global_overlay
 biznesoutfit.pl###formWrapper, #formOverlay
-biznesoutfit.pl##body > div[style*="position"][style*="fixed"]:not([id]):not([class])
+biznesoutfit.pl##body > div[style*="position"][style*="fixed"]:not([id], [class])
 black-friday.pl,cryptoprofit.pl,e-przepisykulinarne.pl,funfashion.pl,kucharenka.pl,kuchniawedwoje.pl,magazyninformacyjny.pl,wielkopolskamagazyn.pl,zatrzymujacczas.pl###ffbp, #ffbp-bg
 blackstarstudio.pl,powerflex.pl##.moOptinForm
 blizejprzedszkola.pl##.bp-modal-sm.bp-modal
@@ -2155,7 +2155,7 @@ cafago.com##.freePointWrap
 calzado.waw.pl###x13popup-container
 calzado.waw.pl,giftshop24.pl###x13popup-cover
 carrefour.pl##.snrs-modal-wrapper:has(a[href^="https://www.carrefour.pl/promocje/zakupy-bez-rejestracji"])
-casedrop.eu##div[class^="bonus-popup"]:not([class*=" "]):not([class*="timer"])
+casedrop.eu##div[class^="bonus-popup"]:not([class*=" "], [class*="timer"])
 casu.pl,dji-ars.pl,drmax.pl###freshmail-main-wrapper, #freshmail_backdrop
 cdn.ampproject.org,www.reddit.com##.XPromoPopup
 cebit.pl,nsix.pl,optima-demo.com.pl,optima-sklep.pl###cc-banner-iframe
@@ -2176,7 +2176,7 @@ chrzypsko.pl,metaltech.com.pl,vas.com.pl###dhtml_popup
 ciechocinek.biz,gniewkowo.eu,ki24.info,kolniak24.eu,lowiczanin.info,nizanskie.info,roztocze.net##.hejhej.hey-outer
 cieszanowrockfestiwal.pl,wantmore.pl##.et_bloom_trigger_bottom.et_bloom_popup
 citroen-shop.eu##.cp-popup, .cp-popup-overlay
-cleangang.pl,ekogram.pl,natural.pl,shop-dent.pl,stylion.pl,woliniusz.pl,zenox.pl##body > div:not([class]):not([id]):has(> .needsclick[class*="kl-private"])
+cleangang.pl,ekogram.pl,natural.pl,shop-dent.pl,stylion.pl,woliniusz.pl,zenox.pl##body > div:not([class], [id]):has(> .needsclick[class*="kl-private"])
 clickfashion.pl##.layer_cart_overlay
 clickfashion.pl,dzwignice.info,embryolisse.pl,lenovozone.pl,mohito.com,woblink.com,xlm.pl,zdrowie.pap.pl###newsletter-popup
 clinic4car.pl##.newsletter-popup-zone
@@ -2683,7 +2683,7 @@ protego.pl###newsletterInfo, body[data-news-modal="open"]::after
 pruszynski.com.pl###p_layer
 przegladpiaseczynski.pl##.tdc-footer-wrap
 przekroj.pl##.js-modal.modal__content--offset.modal__content
-przepisy.pl##.modal:not(#modalDownloadEbook):not(#modalResult), .modal-backdrop
+przepisy.pl##.modal:not(#modalDownloadEbook, #modalResult), .modal-backdrop
 przetargi.egospodarka.pl###js_popup_przetargi
 przewodnik-usa.pl##.mt-redirect.morningcatch
 przystan-psychologiczna.pl##.infowindow
@@ -3661,6 +3661,7 @@ malafabryczka.pl###button-up
 marbo-sport.pl##.upArrow
 marenaspa.pl###desktop-bottom-bar-arrow
 marfafashion.com,sklep.energylandia.pl,sklep.mpay.pl##.scroll-visible
+marketdino.pl##button.fixed:has(icon-arrow-up)
 marketing.org.pl###nav_down, #nav_up
 marki.pl###linktop
 maszynydlafarmera.pl##.topshow
@@ -5264,7 +5265,7 @@ ansin.pl,babyboom.net.pl,czystyszop.pl,elektro-met.pl,glossyme.eu,iexpert.pl,kid
 answear.com##div[class*="MobileWidget__appWidgetMobileContainer_"]
 antykwariatlibra.pl##.guy
 antyradio.pl,chillizet.pl,meloradio.pl,planeta.pl,radiozet.pl##.back-to-home
-antyweb.pl##header.header ~ div.wrapper > div[data-fetch-key*="PostProxy"] > div:not([id]):not([class]) > div.pb-12 ~ div.pb-12
+antyweb.pl##header.header ~ div.wrapper > div[data-fetch-key*="PostProxy"] > div:not([id], [class]) > div.pb-12 ~ div.pb-12
 apis-sklep.pl,hellomood.pl##.cursor
 apkmirror.com###bottom-slider.apkm-timed-slider
 apkpure.com###ad-aegon-side
@@ -5376,7 +5377,7 @@ burgerking.pl##.redirect-banner
 bursiak.pl,lionteam.pl,meblosfera.pl,network-interactive.pl,siecportali.pl,uzdrowiska-pgu.pl,wizja.net##.preloader
 bursztynowa.pl###loader
 busko.net.pl###upPrevSlide
-cantino.pl###Form > div[style]:not([id]):not([class]):nth-of-type(6)
+cantino.pl###Form > div[style]:not([id], [class]):nth-of-type(6)
 caritas.pl###floating-pomagam, .one_proc, #floating-icons
 caritaspoznan.pl##.footer
 carrefour.pl###snrs-corner-pop
@@ -5645,7 +5646,7 @@ helloangielski.pl###icegram_messages_container
 hellogadzet.pl##.newsletter_sidewidget
 hiperpharm.pl###side_widget
 hiperpharm.pl##.banner-underpage
-histmag.org###article > div[style*="fixed"]:not([id]):not([class])
+histmag.org###article > div[style*="fixed"]:not([id], [class])
 histmag.org##.print\:hidden
 histmag.org##div[evergreen-portal-container] > div > div[role="dialog"]
 historykon.pl##.erpProContainer
@@ -11262,7 +11263,7 @@ endo.pl,toysrus.pl###modalNL, .modal-backdrop
 epione.pl,royalpark.pl#$#.fancybox-lock body { overflow-y: auto !important }
 erecruiter.pl##.is-simple-popup.site-popup
 erecruiter.pl#$#body[style] { position: static !important; overflow-y: auto !important }
-erli.pl##body > div:not([id]):not([class]):has(div[click-tracking="pop-up 100 na start"])
+erli.pl##body > div:not([id], [class]):has(div[click-tracking="pop-up 100 na start"])
 erli.pl#$#body[class] { overflow-y: auto !important }
 esoleo.pl##.s-Popup
 esoleo.pl#$#html[style="overflow: hidden;"],body[style="overflow: hidden;"] { overflow-y: auto !important }
@@ -11308,7 +11309,6 @@ ideau.pl##.pum[data-popmake*="nowy-produkt"], .overlay
 idream.pl###modal-getresponse, .modal-backdrop
 ifirma.pl###reklama-overlay
 insert.com.pl#%#//scriptlet('ubo-aeld.js', 'DOMMouseScroll', 'preventDefault')
-instagram.com###react-root ~ div[class*=" "][class$=" "][role="presentation"]:has(a[href^="/accounts/"][href*="signup/"]):not(:has-text(Zaloguj się, aby wyświetlić posty))
 instagram.com#%#//scriptlet('ubo-set.js', '_sharedData.is_whitelisted_crawl_bot', 'true')
 instytutozonoterapii.pl##.popmake-overlay[data-popmake*="zapisz-sie-do-newslettera"]
 isostore.eu###toplayer_newsletter
@@ -11362,6 +11362,9 @@ lumarte.eu#$?#.ui-widget-overlay { remove: true; }
 lumarte.eu#$?#.ui-widget.ui-dialog { remove: true; }
 macris.com.pl#$#.noscroll { overflow-y: auto !important; position: relative !important }
 marchewkowepole.com###popup-modal, .modal-backdrop
+marketdino.pl#%#//scriptlet('ubo-set-cookie.js', 'newsletter_dismissed', 'true')
+marketdino.pl#$#.freeze { position: static !important; overflow-y: auto !important }
+marketdino.pl##div.fixed:has(.dialog .newsletter-content)
 marketerplus.pl#$#body.is-reveal-open { overflow-y: auto !important }
 marketerplus.pl##div.reveal-overlay:nth-of-type(4)
 maserati.pl###sgcboxWrapper, #sgcboxOverlay
@@ -11407,7 +11410,6 @@ newsweek.pl#$#.tp-modal-open { overflow-y: auto !important }
 newtech.com.pl###vq-popup-cnt
 niedziela.pl###exitIntentModal, .modal-backdrop
 niezlasztuka.net#%#//scriptlet('ubo-nostif.js', 'i()', '35000')
-nike.com#$#body[data-overlay*="Modal" i] { position: static !important }
 njumobile.pl#%#//scriptlet('ubo-aopr.js', 'window.onbeforeunload')
 north.pl###article-choose-modal, .modal-backdrop
 nowafarmacja.pl##.freshmail-modal, .modal-backdrop
@@ -11434,7 +11436,7 @@ opoczno.eu,royalpark.pl#$#html.fancybox-lock { overflow-y: auto !important; marg
 orlencharge.pl##.show.modal.fade, .show.modal-backdrop.fade
 orlencharge.pl#$#body.modal-open { overflow-y: auto !important }
 osehero.pl##.cookies-modal, .modal-backdrop
-otodom.pl###__next > div[class] + div:not([class]):not([id]):has(div[data-cy="modal"][role="dialog"] p:has-text(Zapisuj))
+otodom.pl###__next > div[class] + div:not([class], [id]):has(div[data-cy="modal"][role="dialog"] p:has-text(Zapisuj))
 ozogtomczykowski.pl###homeModal
 pakamera.pl##.fancybox-container:has(a[href*="sale"] img)
 pakamera.pl##.fancybox-overlay:has(.fancybox-type-html)
@@ -11605,11 +11607,11 @@ wiadomoscispozywcze.pl#$#html body.gr-body-popup-open { overflow-y: auto !import
 wificalling-volte.pl##.modal:has-text(Polub)
 winnicalidla.pl#%#//scriptlet('ubo-ra.js', 'style', 'html[style*="overflow"][style*="auto"]', 'stay')
 wishbone.pl##.theme-modal-wrapper, .theme-modal-overlay
-wokularach.pl###__next > div[style] > div:not([id]):not([class]):not([style]):has(form #newsletter-modal)
+wokularach.pl###__next > div[style] > div:not([id], [class], [style]):has(form #newsletter-modal)
 wokularach.pl#$#.blocked-scroll { overflow-y: auto !important }
 www.auchan.pl#%#//scriptlet('ubo-aeld.js', '/^(?:wheel|keydown)$/', '[native code]')
-www.auchan.pl##.v-dialog__content:has(> div.v-dialog > div:not([id]):not([class]) > button ~ div > picture:only-child)
-www.auchan.pl##.v-overlay:has(~ .v-dialog__content > div.v-dialog > div:not([id]):not([class]) > button ~ div > picture:only-child)
+www.auchan.pl##.v-dialog__content:has(> div.v-dialog > div:not([id], [class]) > button ~ div > picture:only-child)
+www.auchan.pl##.v-overlay:has(~ .v-dialog__content > div.v-dialog > div:not([id], [class]) > button ~ div > picture:only-child)
 www.facebook.com##body > div.uiLayer[style="opacity: 1; min-width: 40px;"]:has(> div:first-child:empty)
 www.microsoft.com###email-newsletter-dialog
 www.pkobp.pl#$#.locked-scroll { position: static !important; overflow-y: auto !important; padding-right: 0 !important }
