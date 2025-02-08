@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/6_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.84",
-			"timeUpdated": "2025-02-06T00:38:53+0000",
+			"version": "2.0.45.85",
+			"timeUpdated": "2025-02-08T13:39:01+0000",
 			"deprecated": false,
 			"languages": [
 				"de"

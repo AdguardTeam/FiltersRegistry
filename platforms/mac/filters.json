@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.45.84",
-			"timeUpdated": "2025-02-06T00:38:53+0000",
+			"version": "2.0.45.85",
+			"timeUpdated": "2025-02-08T13:39:01+0000",
 			"languages": [
 				"de"
 			]
