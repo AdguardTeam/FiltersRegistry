@@ -1,5 +1,5 @@
-! Checksum: 7YQlL2OkIeHrihkCHNzDrw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1738947993-14400.patch
+! Checksum: k74IkL8PnrlJ8sM1qke5yQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1738991151-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.16
@@ -59,7 +59,6 @@ bfmtv.com#$?#.fixed_title { top: 0 !important }
 /^.*/jquery\.smartbanner/.*$/$match-case
 /^.*/js/smartbanner\..*$/$match-case
 /^.*/smart-app-banner\..*$/$match-case
-/^.*/smartbanner/appbanner\.js.*$/$match-case
 fandom.com##.global-footer__section-fandom-apps
 fandom.com##.global-footer__section-fandom-stores
 www.youtube.com###teaser-carousel:has(img[src*="/youtube_kids_"])
@@ -122,7 +121,6 @@ softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ||solvusoft.com^$document
-exefiles.com##.row:has(a[href*="/recommended/"])
 coolrom.com.au,coolrom.com##.download_link
 !+ PLATFORM(windows, mac, android)
 103.224.212.249$network
@@ -937,6 +935,7 @@ coolrom.com.au,coolrom.com##.download_link
 194.63.143.61$network
 !+ PLATFORM(windows, mac, android)
 194.63.143.96$network
+||new-pressroom.com^$all
 !+ PLATFORM(windows, mac, android)
 37.48.80.112$network
 !+ PLATFORM(windows, mac, android)
@@ -10589,7 +10588,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##div[class*=share-article]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-share-article])
 ##div[class*=social-panel]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-social-panel])
 ##div[class*=social][class*=sharing]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
-##div[class*=social_slide]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=socials-share]
 ##div[class^=shareLinks]
 ##div[class^=social-like]
@@ -10726,8 +10724,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##.js-share-fb:not(html,body,:empty)
 ##.react-share__ShareButton:not(body,html,:empty)
-##button.btn-twitter-liveblog
-~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##button.btn-facebook-liveblog
 ##.uSocial-Share:not(body,html,:empty)
 ##[class*=socialshare i]:not(html,body,article,[class*=body i],[id*=body i])
 ~kjokkenskriveren.no##[class*=ShareButton i]:not(button,body,html,article,[class*=body i],[id*=body i])
@@ -10914,6 +10910,7 @@ wikia.org,fandom.com#$?#.wds-global-footer__header { pointer-events: none !impor
 fandom.com##.unified-search__layout__right-rail
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
+fandom.com#$?#.background-image { background-image: none !important }
 fandom.com#$?#:root { --theme-body-background-image: none !important }
 @@||wikia.nocookie.net^*/images/$image,badfilter
 fandom.com#$?#.page__right-rail:has(.sticky-modules-wrapper:last-of-type) { width: 210px !important }
@@ -11246,7 +11243,6 @@ $removeparam=affiliate_id
 $removeparam=affiliate_location_id
 $removeparam=cjdata
 $removeparam=click_id,domain=~bookings.beatthatflight.*
-$removeparam=cm_soc
 $removeparam=wtExtndSource
 $removeparam=CAID
 $removeparam=rfsn
@@ -11256,18 +11252,14 @@ $~ping,removeparam=lcid,domain=~rekono.si
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
-$removeparam=om_mmc
 $removeparam=trackingCode
 $removeparam=k_clickid
 $removeparam=CJURL
-$removeparam=irmpname
 $removeparam=cm_type
 Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=cj$/
 $removeparam=affil
 $removeparam=cjid
-$removeparam=irsharedid
-$removeparam=hvarAID
 $removeparam=sv_affiliate_id
 $removeparam=sv_campaign_id
 $document,removeparam=/^sv_tax.*$/
@@ -11389,6 +11381,7 @@ $removeparam=afCampaignId
 $removeparam=afCreativeId
 $removeparam=trk_contact
 $removeparam=trk_msg
+$removeparam=trk_module
 $removeparam=trk_sid
 $removeparam=mkwid
 $removeparam=pcrid
@@ -11402,6 +11395,8 @@ $removeparam=pk_medium
 $removeparam=pk_source
 $removeparam=pk_content
 $removeparam=pk_kwd
+$removeparam=au_advert_id
+$removeparam=au_car_id
 $removeparam=ads_adid
 $removeparam=ads_cmpid
 $removeparam=ads_creative
@@ -11637,11 +11632,7 @@ $removeparam=googleloc
 $removeparam=_sacat,domain=~ebay.*
 ||ebay.$removeparam=campid
 ||ebay.$removeparam=toolid
-$removeparam=crlp,domain=ebay.*
-$removeparam=MT_ID,domain=ebay.*
-$removeparam=geo_id,domain=ebay.*
 $removeparam=device,domain=ebay.*
-$removeparam=cmpgn,domain=ebay.*
 ||ebay.*/itm/$removeparam=LH_BIN
 ||ebay.$removeparam=mkpid
 ||ebay.$removeparam=emsid
@@ -11713,6 +11704,7 @@ $document,removeparam=gs_lp,domain=www.google.*|ipv6.google.com
 ||google.$document,removeparam=sca_esv
 $removeparam=/^udm=$/,domain=www.google.*|ipv6.google.com
 ||translate.goog^$removeparam=_x_tr_pto
+$document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ://www.google.$document,removeparam=ie,domain=www.google.*|ipv6.google.com
 ||www.google.$document,removeparam=fbs
 ||www.google.$document,removeparam=ictx
@@ -11794,7 +11786,6 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=sa
 ||baidu.com^$removeparam=params_ssrt
 ||baidu.com^$removeparam=t_kt
-||m.baidu.com^$removeparam=from
 ||baidu.com^$removeparam=vit
 ||baidu.com^$removeparam=lm
 ||baidu.com^$removeparam=od
@@ -11891,7 +11882,6 @@ $removeparam=user_ip
 ||sogou.com^$removeparam=htdbg
 ||sogou.com^$removeparam=interation
 ||sogou.com^$removeparam=interV
-||baike.sogou.com^$removeparam=ch
 ||sogou.com^$removeparam=fromTitle
 ||mp.weixin.qq.com^$removeparam=scene
 ||mp.weixin.qq.com^$removeparam=xtrack
@@ -11964,6 +11954,7 @@ $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moose
 ||bbc.$removeparam=at_campaign
 $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||newegg.com^$removeparam=nm_mc
+||target.com^$removeparam=clkid
 ||dell.com^$removeparam=dgc
 ||dell.com^$removeparam=VEN1
 ||dell.com^$removeparam=gacd
@@ -11989,7 +11980,6 @@ $removeparam=mktvar002,domain=autodesk.com
 $document,removeparam=/^refID=.*$/i,domain=allmodern.com|calphalon.com|priceline.com|questrade.com|wayfair.*|yankeecandle.com
 $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|anntaylor.com|asos.com|awd-it.*|barenecessities.com|barrons.com|beautyencounter.com|buckle.com|burpee.com|chacos.com|coursera.org|dxl.com|dyson.com|ebay.*|famousfootwear.com|finishline.com|freetaxusa.com|gap.com|gapcanada.ca|gucci.com|hanes.com|hotwire.com|hulu.com|hunterboots.com|jcrew.com|josbank.com|kobo.com|lanebryant.com|laroche-posay.us|loft.com|magazines.com|marketwatch.com|maurices.com|merrell.com|newbalance.com|nordstrom.com|officedepot.com|onehanesplace.com|online4baby.com|radissonhotelsamericas.com|ralphlauren.com|saksfifthavenue.com|saksoff5th.com|samash.com|samsclub.com|saucony.com|sharperimage.com|skinceuticals.com|thingsremembered.com|thrifty.*|timeformecatalog.com|verabradley.com|vivaterra.com|wine.com|yoox.com
 ||greenmangaming.com^$removeparam=/^tap_.*$/
-$removeparam=pt,domain=apple.com|icedrive.net
 ||kohls.com^$removeparam=kls_sbp
 ||kohls.com^$removeparam=pfm
 ||kohls.com^$removeparam=bdrecsId
@@ -12024,7 +12014,6 @@ $removeparam=fm,domain=flipkart.com|shopbop.com
 $document,removeparam=cId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com
 $document,removeparam=lId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com
 $document,removeparam=/^src=Linkfire$/,domain=apple.com|youtube.com
-$document,removeparam=ct,domain=apple.com|bumble.com|newsroom.co.nz
 ||music.apple.com^$removeparam=itsct
 ||music.apple.com^$removeparam=itscg
 ||apple.com^$removeparam=/^ign-.*$/
@@ -12071,6 +12060,7 @@ $removeparam=iid,domain=cnn.com
 ||lazada.$removeparam=laz_share_info
 ||lazada.$removeparam=laz_token
 ||lazada.$removeparam=exlaz
+||target.com^$removeparam=lnm
 ||target.com^$removeparam=lnk
 $removeparam=s,domain=greenhouse.io|mothership.sg|spreadprivacy.com|youku.com|nextdoor.com
 $document,removeparam=t,domain=rakuten.com|steamcdn-a.akamaihd.net|elprecio.es|adressa.no|tiktok.com|lookmovie211.xyz
@@ -12111,7 +12101,6 @@ $removeparam=ppref,domain=digidip.net
 ||dhgate.com^$removeparam=f
 ||zhihu.com^$removeparam=hybrid_search_source
 ||zhihu.com^$removeparam=hybrid_search_extra
-||theregister.com^$removeparam=td
 $removeparam=plink,domain=audible.*
 ||startpage.$removeparam=segment
 ||netflix.com^$removeparam=trackId
@@ -12404,7 +12393,6 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 fandom.com,wikia.org#$?#a:link { cursor: pointer !important }
 cursor_hover.$image
 ||nocookie.net/*_cursor_*.png^
-_Cursor1.png^
 tumblr.com#$#.custom-cursor { cursor: unset !important }
 tumblr.com#$#.custom-cursor a { cursor: pointer !important }
 tumblr.com,strategix.dk#$#body { cursor: unset !important }
