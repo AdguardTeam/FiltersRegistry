@@ -1,5 +1,5 @@
-! Checksum: k74IkL8PnrlJ8sM1qke5yQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1738991151-14400.patch
+! Checksum: a2UgpJ/hjH2puOzzZLbo8A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1739077547-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.16
@@ -54,6 +54,7 @@ video.az##.sidebar-right > .text-center > a[href*="/app"] > img
 wattpad.com###announcements-container
 wattpad.com###bottom-banner-container
 waze.com##.wz-downloadbar
+zargan.com###app-menu
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##span.hidden[class$="m:block"]
 bfmtv.com#$?#.fixed_title { top: 0 !important }
 /^.*/jquery\.smartbanner/.*$/$match-case
@@ -978,6 +979,7 @@ coolrom.com.au,coolrom.com##.download_link
 /page/bouncy.php?$all
 ||banquetunarmedgrater.com^$all
 ||curryfielddistribution.com^$all
+||femalepilesteering.com^$all
 ||nannyamplify.com^$all
 ||truthfulsensor.com^$all
 !+ PLATFORM(windows, mac, android)
@@ -986,6 +988,7 @@ coolrom.com.au,coolrom.com##.download_link
 !+ PLATFORM(windows, mac, android)
 103.174.102.240$network
 ||exs7oilq14cz6.click^$all
+||easydisplay.no^$document
 !+ PLATFORM(windows, mac, android)
 38.180.96.244$network
 ||aysesuretobea.com^$all
@@ -10623,9 +10626,11 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||social-plugins.line.me/widget/share?url=$subdocument
 ||static.addtoany.com/buttons^$image
 ||static.addtoany.com/menu^$script
+||static.mixi.jp/share_button.html^$subdocument,domain=~mixi.jp
 ||tumblr.com/share/$third-party
 ||twitter.com/share$third-party
 ||widgets.getpocket.com/v1/button?label=pocket$subdocument
+||ws.sharethis.com^$third-party
 ~allrecipes.com,~myrecipes.com##div[class*=sharebar]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-sharebar],[class*=hassharebar])
 ~baidu.com##.share-list:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ~digg.com##a[href*="://digg.com/submit?url="]
@@ -11302,7 +11307,6 @@ $removeparam=adj_adgroup
 $removeparam=ceneo_spo
 $removeparam=__s,document
 $removeparam=_kx
-$document,removeparam=/^affsrc=.*$/i
 $document,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
 $removeparam=atid
@@ -11364,6 +11368,7 @@ $removeparam=af_sub_siteid
 $removeparam=is_retargeting
 $document,removeparam=shortlink
 $document,removeparam=/^pid=.*_int$/
+$removeparam=deep_link_sub1
 $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
 $removeparam=tg_ref
@@ -11377,6 +11382,7 @@ $document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
 $removeparam=awinaffid
 $removeparam=iclid
+$removeparam=a_fid
 $removeparam=afCampaignId
 $removeparam=afCreativeId
 $removeparam=trk_contact
@@ -11579,6 +11585,7 @@ $removeparam=/^asc_.*$/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ||amazon.$document,removeparam=social_share
 ||amazon.$document,removeparam=starsLeft
 ||amazon.$document,removeparam=skipTwisterOG
+||amazon.$removeparam=ms3_c
 ||amazon.$document,removeparam=ccs_id
 ||amazon.$document,removeparam=source
 ||bing.com/?$removeparam=/^form=.*$/i
@@ -11790,6 +11797,7 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=lm
 ||baidu.com^$removeparam=od
 ||baidu.com^$removeparam=dyTabStr
+||baidu.com/search?$removeparam=ct
 ||baidu.com/search/index?$removeparam=ct
 ||baidu.com^$removeparam=asctag
 ||baidu.com^$removeparam=rq
@@ -12052,7 +12060,6 @@ $removeparam=organic_search_click
 $removeparam=pop,domain=etsy.com
 $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
-$removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
 $removeparam=iid,domain=cnn.com
 ||hao123.com^$removeparam=tn
@@ -12084,7 +12091,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||walmart.$removeparam=wl11
 ||walmart.$removeparam=wl12
 ||walmart.$removeparam=/^ath.*$/
-$removeparam=refdomain,domain=bestbuy.com
 $removeparam=recs_placement,domain=nordstrom.com
 $removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
@@ -12099,6 +12105,7 @@ $removeparam=deep_and_deferred
 ||lenovo.com^$removeparam=orgRef
 $removeparam=ppref,domain=digidip.net
 ||dhgate.com^$removeparam=f
+||cyberghostvpn.com^$removeparam=media_source
 ||zhihu.com^$removeparam=hybrid_search_source
 ||zhihu.com^$removeparam=hybrid_search_extra
 $removeparam=plink,domain=audible.*
@@ -12238,6 +12245,7 @@ $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com
 $removeparam=natb,domain=duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
 $removeparam=_1lr
 $removeparam=ymid
+ref=troyhunt.com$document,removeparam=ref
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
 ||bugs.co.kr^$removeparam=wl_ref
@@ -12254,7 +12262,6 @@ ref=spreadprivacy.com$removeparam=ref
 $removeparam=afSmartRedirect
 ||wsj.com^$removeparam=st
 ||linkedin.com/feed/update$removeparam=origin
-$document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||gitlab.$removeparam=ref_type
 ||google.$removeparam=fg
@@ -12279,7 +12286,6 @@ $document,removeparam=bpli,domain=blogger.com
 ||cimri.com^$document,removeparam=offerCount
 ||cimri.com^$document,removeparam=offerFiltered
 ||cimri.com^$document,removeparam=hasFavorite
-ref=blog.roboflow.com$document,removeparam=ref
 $document,removeparam=af_reengagement_window
 ||privatbank.ua^$removeparam=visit_id
 ||yandex.com/portal/set/any$removeparam=sk
@@ -12331,6 +12337,7 @@ $document,removeparam=af_xp
 ||urlshare.cn^$document,removeparam=src_scene
 ||urlshare.cn^$document,removeparam=cli_scene
 ||asos.com^$removeparam=ctaref
+||gumroad.com^$removeparam=recommended_by
 ref=words.filippo.io$document,removeparam=ref
 ||www.booking.com^$document,removeparam=aid
 ||www.booking.com^$document,removeparam=sid
