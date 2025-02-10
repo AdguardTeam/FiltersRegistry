@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: B+frQDxbrkto2KjOW3LiNw
-! Diff-Path: ../patches/2/2-s-1739166170-3600.patch
+! Checksum: ly302WBGkxFv83YKM7FPRQ
+! Diff-Path: ../patches/2/2-s-1739169789-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.71.0
-! TimeUpdated: 2025-02-10T05:31:31+00:00
+! Version: 2.3.71.1
+! TimeUpdated: 2025-02-10T06:31:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -41278,6 +41278,7 @@ vidbom.com##+js(abort-current-script, atob, removeCookie)
 ! update: 05.06.2020 (full rule)
 ! Blocking ads on old interface (big rule will be split for easier maintaining)
 ! Blocking ads based on property, works only with new design
+! Blocking ads based on property - sidebar
 ! Blocking ads based on property in watch section
 ! Blocking ads based on property when watching an marketplace item
 ! ! #if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
@@ -43539,7 +43540,8 @@ galwaybayfm.ie##div[data-dfp][data-slot][type="doubleclick"]
 galwaybayfm.ie##.w-full.relative:has(> span:first-child + div[data-slot]:last-child)
 boyfriendtv.com##+js(addEventListener-defuser, click, interstitial)
 tradingview.com##div[class^="container-"]:has(> div[class^="ad-"])
-snapinst.app###adOverlay
+snapinst.app#$#body { overflow: auto !important; }
+snapinst.app#$##adOverlay { display: none !important; }
 newshuta.in###SoumyaHelp-Ads
 newshuta.in###BR-Footer-Ads
 westword.com##div[inline-content-billboard]

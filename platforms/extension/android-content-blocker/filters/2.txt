@@ -1,8 +1,8 @@
-! Checksum: FQ0fxoAPOIgJlunP0UM2Ag
+! Checksum: VyCbHWicnwcEUR1E3ImWPA
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.71.0
-! TimeUpdated: 2025-02-10T05:31:31+00:00
+! Version: 2.3.71.1
+! TimeUpdated: 2025-02-10T06:31:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -38833,6 +38833,7 @@ foxsports.com##.permanentPubInfo
 ! update: 05.06.2020 (full rule)
 ! Blocking ads on old interface (big rule will be split for easier maintaining)
 ! Blocking ads based on property, works only with new design
+! Blocking ads based on property - sidebar
 ! Blocking ads based on property in watch section
 ! Blocking ads based on property when watching an marketplace item
 ! ! #if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android)
@@ -41039,7 +41040,8 @@ cheezburger.com##.chz-ad-wrap
 mui.com##span[data-ga-event-category="ad"]
 gotoquiz.com##div[data-code="AdSense"]
 galwaybayfm.ie##div[data-dfp][data-slot][type="doubleclick"]
-snapinst.app###adOverlay
+snapinst.app#$#body { overflow: auto !important; }
+snapinst.app#$##adOverlay { display: none !important; }
 newshuta.in###SoumyaHelp-Ads
 newshuta.in###BR-Footer-Ads
 westword.com##div[inline-content-billboard]
