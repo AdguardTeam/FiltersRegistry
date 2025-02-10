@@ -1,8 +1,8 @@
-! Checksum: VaHLJt4zmy9b5GkV4DzLSw
+! Checksum: at3XJn6lN4p7W0JcUmmPJQ
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.71.5
-! TimeUpdated: 2025-02-10T10:31:36+00:00
+! Version: 2.3.71.6
+! TimeUpdated: 2025-02-10T11:31:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16954,10 +16954,14 @@ uaclips.com,kzclip.com,ru-clip.com,ruclip.com###morev
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198276
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=unityassetpack.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198046
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ijubes.com|beeduballs.com|adenku.com|15.235.145.185|bestbookbuddies.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198028
+! fly.inc
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ubnem.com
 @@||ubnem.com^$generichide
 ||ubnem.com/728x250*.webp
@@ -29861,6 +29865,8 @@ smellyfisher.com##.providers
 bestmovie.it,treccani.it##.gmp
 forum.fibra.click##.FibraClickAds-fake-poststream-item
 open.online##a[rel="sponsored"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/198176
+nerdevil.it##.afxshop
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197648
 !+ PLATFORM(ext_android_cb)
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=deejay.it
@@ -40723,6 +40729,7 @@ quefaire.be##.gpt_box
 ##a[href^="https://html-load.com/contents/"][style="display:inline-block;"]
 ##a[href="javascript:void(window.open(clickTag))"] > div[id^="img_"]
 ##a[style="text-decoration:none;"] > div[style^="border: none; margin: 0px;"]
+##body > a[href^="https://html-load.com/contents/"][target="_top"]
 ##body > div[id^="img_"] > div[style$="height:280px;"][class*=" img_"]
 ##body > script + div + div[style="display:inline"] > a[target="_blank"][href^="https://html-load.com/contents/"]
 ##body > script + script + script + div + div[style="display:inline"] > div[class^="img_"][id^="img_"] > div[class^="img_"] > div[class^="img_"] > div[class*=" img_"] > a[href^="https://html-load.com/contents/"][target="_blank"][rel="nofollow"]
@@ -40761,6 +40768,7 @@ quefaire.be##.gpt_box
 ##html > body > a[target="_blank"][rel="noopener noreferrer"][href^="https://html-load.com/contents/"][href*="/0/"] > div[id^="img_"][class*=" img_"] > div[class^="img_"] > *
 ##html[lang*="-"] > body[style="width:100%;height:100%;margin:0;"] > div[class^="img_"][style="width:100%; height:100%;"]
 ##iframe[src*=".html-load.com/contents/"] + div[id^="img_"]:empty
+##iframe[src*=".html-load.com/contents/"][style="display:none"][aria-hidden="true"] + div:not([class]):not([id])
 ##iframe[src="javascript:false"] ~ div[style="display:inline"]
 ##img[height^="10"][src*=".html-load.com/contents/"]
 ##img[src*=".html-load.com/contents/"][style^="border-style:"]
@@ -40772,12 +40780,15 @@ quefaire.be##.gpt_box
 ##meta + title + script + div[id^="img_"]
 ##meta + title + script + script + div[id^="img_"]
 ##meta[charset="utf-8"] + meta[name="viewport"] + div[class^="img_"]
+##section[class^="img_"] > div[id^="img_"][class^="img_"][draggable="false"]
 ##script + style + div[class^="img_"]
 ##script[attributionsrc] + div[id^="img_"]
 ##script[name="scrbnr"] + div[class^="img_"]
 ##script[src*=".html-load.com/contents/"] + div[id^="img_"]:empty
 ##style + script[src*=".html-load.com/contents/"] + script + div[id^="img_"]
 ##video[class^="img_"][playsinline]
+##video[id^="img_"][muted]
+##video[poster*=".html-load.com/contents/"]
 @@||infinityfree.com^$generichide
 @@||smsonline.cloud^$generichide
 @@||wfmz.com^$generichide

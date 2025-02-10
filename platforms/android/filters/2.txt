@@ -1,9 +1,9 @@
-! Checksum: wKZEcF2VQUR2UxbqOBzy1A
-! Diff-Path: ../patches/2/2-s-1739184242-3600.patch
+! Checksum: 0aqb9kzsL/UPzgvlmwLHbA
+! Diff-Path: ../patches/2/2-s-1739187875-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.71.5
-! TimeUpdated: 2025-02-10T10:31:36+00:00
+! Version: 2.3.71.6
+! TimeUpdated: 2025-02-10T11:31:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17236,9 +17236,13 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198276
+unityassetpack.com$$script:contains(noteAlert)
+unityassetpack.com#%#//scriptlet('remove-node-text', 'script', 'noteAlert')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198046
 15.235.145.185,bestbookbuddies.com,radenku.com,beeduballs.com,ijubes.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198028
+! fly.inc
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ubnem.com
 @@||ubnem.com^$generichide
 ||ubnem.com/728x250*.webp
@@ -30178,6 +30182,8 @@ smellyfisher.com##.providers
 bestmovie.it,treccani.it##.gmp
 forum.fibra.click##.FibraClickAds-fake-poststream-item
 open.online##a[rel="sponsored"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/198176
+nerdevil.it##.afxshop
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197648
 deejay.it#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
 deejay.it#%#//scriptlet('prevent-element-src-loading', 'script', 'static.chartbeat.com')
@@ -44533,7 +44539,7 @@ myanimelist.net##div[style="margin: 0 0 20px;"]
 myanimelist.net##div[style="width:760px;"]
 bleepingcomputer.com##.bc_right_sidebar > .bc_guide:has(> ul > li > a.spon_res)
 smsonline.cloud##ins.adsbygoogle
-smsonline.cloud##aside[class^="css-"]:has(> ins.adsbygoogle:only-child)
+smsonline.cloud##aside[class^="css-"]:has(> p:first-child + ins.adsbygoogle:last-child)
 ptcgp.raenonx.cc##.grid:has(> div[tabindex] > div.absolute > div.flex > div[id^="nitro-"])
 ||icelz.to/lib.js
 realsporter.info##div[class]:not(.container):has(> center > [class^="ads"])

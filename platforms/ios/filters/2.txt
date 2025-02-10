@@ -1,9 +1,9 @@
-! Checksum: jxj1bzqTfCQHeMCpwGwM0w
-! Diff-Path: ../patches/2/2-s-1739184299-3600.patch
+! Checksum: CeQX3lkcfawZnjqNhdGhIQ
+! Diff-Path: ../patches/2/2-s-1739187904-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.71.5
-! TimeUpdated: 2025-02-10T10:31:36+00:00
+! Version: 2.3.71.6
+! TimeUpdated: 2025-02-10T11:31:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17333,11 +17333,16 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198276
+unityassetpack.com#%#//scriptlet('remove-node-text', 'script', 'noteAlert')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=unityassetpack.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198046
 15.235.145.185,bestbookbuddies.com,radenku.com,beeduballs.com,ijubes.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ijubes.com|beeduballs.com|adenku.com|15.235.145.185|bestbookbuddies.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198028
+! fly.inc
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ubnem.com
 @@||ubnem.com^$generichide
 ||ubnem.com/728x250*.webp
@@ -32469,6 +32474,8 @@ smellyfisher.com##.providers
 bestmovie.it,treccani.it##.gmp
 forum.fibra.click##.FibraClickAds-fake-poststream-item
 open.online##a[rel="sponsored"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/198176
+nerdevil.it##.afxshop
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197648
 deejay.it#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
 deejay.it#%#//scriptlet('prevent-element-src-loading', 'script', 'static.chartbeat.com')
@@ -46069,6 +46076,7 @@ kreuzwortraetsel.de,slashdot.org,sourceforge.net,lovelive-petitsoku.com,infinity
 ##a[href^="https://html-load.com/contents/"][style="display:inline-block;"]
 ##a[href="javascript:void(window.open(clickTag))"] > div[id^="img_"]
 ##a[style="text-decoration:none;"] > div[style^="border: none; margin: 0px;"]
+##body > a[href^="https://html-load.com/contents/"][target="_top"]
 ##body > div[id^="img_"] > div[style$="height:280px;"][class*=" img_"]
 ##body > div[id^="img_"]:has(+ amp-pixel + amp-analytics)
 ##body > div[id^="img_"]:has(+ amp-pixel + div[style^="bottom:0;right:0;width"])
@@ -46109,6 +46117,7 @@ kreuzwortraetsel.de,slashdot.org,sourceforge.net,lovelive-petitsoku.com,infinity
 ##html > body > a[target="_blank"][rel="noopener noreferrer"][href^="https://html-load.com/contents/"][href*="/0/"] > div[id^="img_"][class*=" img_"] > div[class^="img_"] > *
 ##html[lang*="-"] > body[style="width:100%;height:100%;margin:0;"] > div[class^="img_"][style="width:100%; height:100%;"]
 ##iframe[src*=".html-load.com/contents/"] + div[id^="img_"]:empty
+##iframe[src*=".html-load.com/contents/"][style="display:none"][aria-hidden="true"] + div:not([class]):not([id])
 ##iframe[src="javascript:false"] ~ div[style="display:inline"]
 ##img[height^="10"][src*=".html-load.com/contents/"]
 ##img[src*=".html-load.com/contents/"][style^="border-style:"]
@@ -46120,12 +46129,15 @@ kreuzwortraetsel.de,slashdot.org,sourceforge.net,lovelive-petitsoku.com,infinity
 ##meta + title + script + div[id^="img_"]
 ##meta + title + script + script + div[id^="img_"]
 ##meta[charset="utf-8"] + meta[name="viewport"] + div[class^="img_"]
+##section[class^="img_"] > div[id^="img_"][class^="img_"][draggable="false"]
 ##script + style + div[class^="img_"]
 ##script[attributionsrc] + div[id^="img_"]
 ##script[name="scrbnr"] + div[class^="img_"]
 ##script[src*=".html-load.com/contents/"] + div[id^="img_"]:empty
 ##style + script[src*=".html-load.com/contents/"] + script + div[id^="img_"]
 ##video[class^="img_"][playsinline]
+##video[id^="img_"][muted]
+##video[poster*=".html-load.com/contents/"]
 @@||infinityfree.com^$generichide
 @@||smsonline.cloud^$generichide
 @@||wfmz.com^$generichide
@@ -46990,7 +47002,7 @@ myanimelist.net##div[style="margin: 0 0 20px;"]
 myanimelist.net##div[style="width:760px;"]
 bleepingcomputer.com##.bc_right_sidebar > .bc_guide:has(> ul > li > a.spon_res)
 smsonline.cloud##ins.adsbygoogle
-smsonline.cloud##aside[class^="css-"]:has(> ins.adsbygoogle:only-child)
+smsonline.cloud##aside[class^="css-"]:has(> p:first-child + ins.adsbygoogle:last-child)
 ptcgp.raenonx.cc##.grid:has(> div[tabindex] > div.absolute > div.flex > div[id^="nitro-"])
 ||icelz.to/lib.js
 realsporter.info##div[class]:not(.container):has(> center > [class^="ads"])
