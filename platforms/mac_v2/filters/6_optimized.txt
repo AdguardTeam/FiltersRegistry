@@ -1,9 +1,9 @@
-! Checksum: 7yv4e/9jZbaMeauxImAW5Q
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1739155360-3600.patch
+! Checksum: m1RGdT0XU3dU1GgA8k4i0A
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1739181030-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.45.86
-! TimeUpdated: 2025-02-08T14:38:12+00:00
+! Version: 2.0.45.87
+! TimeUpdated: 2025-02-10T09:45:40+00:00
 ! Expires: 12 hours (update frequency)
 ||remp-campaign.golem.de^
 ||web-ads.10sq.net^
@@ -298,6 +298,8 @@ t-online.de#@#div[class^="Tsshopst"]
 essen-und-trinken.de#%#//scriptlet('prevent-setTimeout', 's.call(null)', '10')
 /^https:\/\/www\.essen-und-trinken\.de\/[a-z]{10,}\.js$/$script,~third-party,match-case
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
+traderepublic.community#%#//scriptlet('prevent-eval-if', 'adsbygoogle.js')
+traderepublic.community##body > script[src*="pagead2.googlesyndication.com"] + div[id][style*="display:"]
 ||cinemaxxl.de/js/adblock.js
 cinemaxxl.de#%#//scriptlet('set-constant', 'dnt_info', '')
 cinemaxxl.de#%#//scriptlet('set-constant', 'adblocker', 'false')
@@ -602,7 +604,7 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 dasheimwerkerforum.de##body > #fh-div
 dasheimwerkerforum.de##.p-body-sidebar > .block:has( [id*="_mpu_"])
 dasheimwerkerforum.de###fh-inside-bottom
-fachwerk.de##.js-replyNewMessageContainer > article:not([id^="js-post"])
+traderepublic.community,fachwerk.de##.js-replyNewMessageContainer > article:not([id^="js-post"])
 bauexpertenforum.de##.signatureAdBot
 aktionspreis.de##.mj-pf-widget:not(:has(> *))
 windowsarea.de###post-sidebar > .widget_saxon_text
