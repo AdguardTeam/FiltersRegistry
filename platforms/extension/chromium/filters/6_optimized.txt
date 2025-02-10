@@ -1,5 +1,5 @@
-! Checksum: rOunjBngN9trbsYStIw1ew
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1739068949-3600.patch
+! Checksum: xJ8uNYcHviK4m8927tRcWA
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1739155342-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.45.86
@@ -334,6 +334,7 @@ recuton.xyz#%#//scriptlet('prevent-fetch', 'imasdk.googleapis.com')
 sport1.de#$#body { overflow: auto !important; }
 file-upload.net#%#//scriptlet("set-constant", "start", "noopFunc")
 ||static.wlct-one.de^
+||s.d.adup-tech.com/ads/display.js$script,redirect=noopjs,domain=quermania.de,important
 quermania.de#%#//scriptlet("set-constant", "Werbeblocker", "noopFunc")
 agrarwetter.net###body_opacity_overlay
 agrarwetter.net#%#//scriptlet("prevent-setTimeout", "adBlock")
@@ -421,7 +422,6 @@ caravaning.de#%#//scriptlet("set-constant", "adblockActive", "false")
 willhaben.at#@#div[id^="advert"]
 @@||extrem-bodybuilding.de^$generichide
 bildungsspender.de#%#window.werbeblocker = true;
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js^$domain=mahjongspielen.de
 @@||gan.wavecdn.net/js/video_kostenlosspielen_net.js^$domain=kostenlosspielen.net
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js^$domain=games.cdn.famobi.com
 @@||trackertest.org/tracker.js^$domain=inside-handy.de
@@ -813,6 +813,7 @@ weltwoche.de##div[id^="werbung"]
 weltwoche.de##div[class^="werbung"]
 extreme.pcgameshardware.de,forum.pcgames.de###bannerWrap
 extreme.pcgameshardware.de,forum.pcgames.de##.rectangleWrap
+wienerin.at##.ad__article_billboard_container
 metal-hammer.de###article-content > .affiliate
 metal-hammer.de###content > .widgets_above_single_content
 jetzt.de##div[data-placement]
@@ -1383,6 +1384,8 @@ der-farang.com##.banner_item
 ||files.der-farang.com/files/*/*/bnr/$image
 derstandard.at,derstandard.de##.tile-ad
 gutekueche.at###ad_cont_superbanner
+quermania.de###seitenbanner
+quermania.de###wbg
 efahrer.chip.de##.ads-alignment
 efahrer.chip.de##.outbrain-reserved-space
 web.de,gmx.*##.co-content-container
@@ -1422,7 +1425,6 @@ mtb-news.de##div[class*="header__banner"]
 ||tichyseinblick.de/wp-content/uploads/*/Anzeigen-
 epochtimes.de##.etd-ad
 kostenlose-urteile.de##.advBlockTop
-kostenlose-urteile.de##.bigUniBoxPlaceholder
 industrie.de##.mr_content
 industrie.de##.asm_async_creative
 pons.com###pons-ad-leaderboard__container
@@ -1692,6 +1694,7 @@ hifi-forum.de,hifi.de##.ad-header-inner-wrap
 aktiencheck.de###banner_big
 infranken.de###plistasection
 forum.digitalfernsehen.de##.messageContent blockquote > div[id][style*="width:300px;height:250px"] + div:not([class]):not([id])
+rundschau-online.de,berliner-zeitung.de,express.de,mopo.de,rheinische-anzeigenblaetter.de##.dm_ad
 macwelt.de###sidebar > #ad_mpu + .box
 sport1.de##.s1-ad
 netdoktor.ch,netdoktor.de###header-ad-slot
@@ -2169,6 +2172,7 @@ wooco.de#@#.naMediaAd
 m.tvtoday.de#@#.banner-container
 islamische-zeitung.de#@#.sb-widget
 schogetten.de#@#.Werbung
+@@||ww251.smartadserver.com/ac?nwid=*&siteid=$domain=transfermarkt.de
 browsergames.spielen.de#@##gameimage
 kostenlose-online-rechner.de#@##advert1
 kostenlose-online-rechner.de#@##advert2
@@ -2187,7 +2191,6 @@ rtl.de#@#.rtlde-medium-rectangle
 .de/werbung/
 .net/werbung/
 .org/werbung/
-/_werbung/*
 /bannerwerbung-
 /bilder/ads/*
 /bilder/werbung_
@@ -2224,7 +2227,6 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbung90.
 /werbung_*?
 /Widgets/Werbung/*
-_Bannerwerbung.
 _werbebanner.
 _werbebanner/
 _werbung.php
@@ -2245,7 +2247,6 @@ _woz_banner_vote.
 ###block-werbung
 ###gwerbung
 ###headerWerbung
-###header_werbung
 ###kalaydo_ads
 ###nativendo-articlemiddle
 ###nativendo-articletop
@@ -2381,7 +2382,6 @@ _woz_banner_vote.
 ##a[href^="https://dpm.affaire18.com/click.php?dp="]
 ##a[href^="https://feed.solads.media/"]
 ##a[href^="https://marketing.net.brillen.de/"]
-##a[href^="https://media.datingpartner.com/click.php?dp="]
 ##a[href^="https://ofrbpu.smartbroker.de/"]
 ##a[href^="https://trk.imobtrk.com/"]
 ##a[href^="https://www.tipico.com/?affiliateId="]
@@ -2544,6 +2544,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||communicationads.net/tb.php
 ||datingpartner.com/medien/$third-party
 ||dragonbox.de/img/banner/$third-party
+||edgar.de/img/partner/$third-party
 ||eteleon.de/partner/$third-party,domain=~facebook.com
 ||faire.software/img/$third-party
 ||fastad.beepworld.de^
@@ -2554,7 +2555,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||imgur.com/0OkYj6J.png$domain=mmnews.de
 ||inv.lapippa.com^
 ||js.stroeermediabrands.de^$third-party
-||koketti.com/ib/
 ||lead-alliance.net/tb.php$third-party
 ||media*.s24.com^$third-party
 ||middleware.marktjagd.de^$third-party
@@ -2571,7 +2571,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||storage.googleapis.com/ba_utils/
 ||tdn.da-services.ch^
 ||trafico.prensaiberica.es^
-||treff-mich.org/bilder/$third-party
+||trainersuchportal.de/partnerwidget/$third-party
 ||view.autoscout24.de^$third-party
 ||viversum.de/partnerprogramm/$third-party
 ||wazazu.com/iframe/$third-party
@@ -2617,6 +2617,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||b2run.de/run/de/de/pics/partner/
 ||banner.click-tt.de^
 ||basic-tutorials.de/wp-content/uploads/793/165/assets/js/152.js
+||bbszene.de^*/banner/
 ||bitch.ch/images/Banner/
 ||bluray-disc.de/images/banner/
 ||boerse-social.com/media/Content/Partner/
@@ -2644,7 +2645,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||druckerchannel.de/script/dc/ofr_single.php
 ||dtb.de/fileadmin/user_upload/dtb.de/Sponsoren/
 ||dubisthalle.de/wp-content/uploads/*_300x300_
-||dubisthalle.de/wp-content/uploads/*_banner_
 ||egun.de/market/images/banner/
 ||eisbaeren.de/assets/img/sponsorenbox_
 ||erogeschichten.com/b/
@@ -2717,7 +2717,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||kitzanzeiger.at^*/sponsoren/
 ||klappeauf.de/images-banner/
 ||kochbar.de/moltenbundle/
-||kostenlose-urteile.de/www.kostenlose-urteile.de/RTAads.html
 ||krone.at/talk-ads/
 ||kunststoffweb.de/_g/_ads/
 ||lad.sumikai.com^
@@ -2851,6 +2850,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||ww4.cad.de^*.php?what=*:*&n=
 ||ww4.cad.de^*/axjs.php
 ||xdate.ch/cache/banner_
+||xmassagen.ch/wp-content/uploads/*/xmassagen.jpg
 ||zum.de/eduversum/
 /^https?:\/\/.*\/[a-z0-9A-Z_]{2,15}\.(php|jx|jsx|1ph|jsf|jz|jsm|j$)/$image,script,subdocument,domain=beeg-pornos.com|besterpornos.com|deinesexfilme.com|deutsche-sexfilme.net|deutschsex.com|deutschsex.mobi|einfachtitten.com|gutesexfilme.com|hd-pornos.info|hd-sexfilme.com|lesbenhd.com|meinyouporn.com|nurxxx.mobi|pornoaffe.com|pornoente.tv|pornofisch.com|pornohammer.com|pornohans.com|pornohirsch.net|pornojenny.com|pornoklinge.com|pornotom.com|pornotommy.com|pornozebra.com|reifporn.de|sexente.com|sexvideos-hd.com|tube8-pornos.com|xhamster-sexvideos.com|xnxx-porno.com
 /^https?:\/\/.*\/.*(sw[0-9a-z._-]|\.notify\.).*/$script,domain=hammerporno.xxx
@@ -2899,6 +2899,7 @@ $csp=script-src 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' stati
 ||sexei.net/go.html$popup
 nd-aktuell.de###Ads
 haufe.de###Ads_Billboard_container
+privatmarkt.ch###ContentFooterPartner
 druckerchannel.de###DCA_TOP
 druckkosten.de###DKGA_LEAD
 druckkosten.de###DKGA_SKY
@@ -2954,6 +2955,7 @@ dasoertliche.de###banner-right
 annos.de,chefkoch.de,dasoertliche.de,sexy-land.ch###banner-top
 testedich.ch,testedich.de###banner-top-all-viewports
 kriminalpolizei.de###banner-wrapper-right-v3
+altertuemliches.at###banner5
 all-in.de###banner6_container
 dreingau-zeitung.de,linguee.de###banner_top
 queer.de###banneroben
@@ -2974,6 +2976,8 @@ computerbild.de###billboard_btf_2Wrapper
 realtotal.de###block-3
 jungle.world###block-anzeige
 macgadget.de###block-anzeige2
+fachzeitungen.de###block-block-32
+fachzeitungen.de###block-block-5
 buecher-magazin.de,online-webradio.com###block-block-7
 duden.de###block-dudende-d-970x250-1billboard
 duden.de###block-leaderboard2ndslot
@@ -3167,7 +3171,6 @@ stuttgarter-zeitung.de###taboola-mhsd
 4kfilme.de###tdi_39
 giga.de,kino.de,watson.de###teaserheld-header
 tennisnet.com###tennisnetWidget
-eishockey-magazin.de###text-10
 tollabea.de###text-19
 computerschach.de,nachrichten.es,nh24.de,randombrick.de,tollabea.de###text-2
 nh24.de###text-26
@@ -3224,7 +3227,6 @@ netmoms.de,praxistipps.focus.de##.FC__Ad
 blick.de##.OAS_AD
 sexforum.ch##.Partnerbox
 simmentalzeitung.ch##.PrintMotifRotator
-kostenlose-urteile.de##.RTaktAds
 immoscout24.ch##.ResultListPage_adStyle_SPs8t
 sexforum.ch##.SideBannerbox
 de.rt.com##.TopBanner-root
@@ -3267,7 +3269,6 @@ persoenlich.com##.adslot-fireplace
 fitforfun.de,ibb-anzeiger.de,suchen.mobile.de,suedtiroltv.it##.adv
 oberberg-aktuell.de##.adv-indicator
 coincierge.de,fazemag.de,fuldainfo.de,maniac.de,oberberg-aktuell.de,pictures-magazin.de,sempre-audio.at,smarthomes.de##.adv-link
-kostenlose-urteile.de##.advBoxSegment
 blinker.de##.adv_widget
 countrymusicnews.de,eurogamer.de,ka-news.de,morningstar.de,suedkurier.de,weser-kurier.de##.advert
 4investors.de,abendblatt.de,apotheken-umschau.de,az.com.na,dpd.de,extremnews.com,finanzen.ch,heise.de,iplayapps.de,tarnkappe.info,wetteronline.de##.advertisement
@@ -3850,6 +3851,7 @@ porno-himmel.net##a[href^="//wixnm.com/"]
 flz.de##a[href^="/api/content/public/media/link?id="]
 nacktefoto.com##a[href^="/red/red.php?"]
 zensiert.net##a[href^="http://camgirly.net"]
+bbszene.de##a[href^="http://partners.webmasterplan.com/"]
 anderes-wort.de,bitreporter.de,fairytail-tube.org,onepiece-tube.com,picdumps.com##a[href^="https://amzn.to/"]
 googlewatchblog.de,schrift-generator.com##a[href^="https://amzn.to/"] > img
 ligaportal.at##a[href^="https://de.johnnybet.com/"]
@@ -3861,6 +3863,7 @@ blick.ch##a[href^="https://jackpot.onelink.me/"]
 metager.de##a[href^="https://metager.de/partner/r?"]
 biete6.ch##a[href^="https://mydirtyhobby.com/"][href*="?ats="]
 winfuture.de##a[href^="https://ndirect.ppro.de/click/"]
+bbszene.de##a[href^="https://neu.turbo-d.de/"]
 goal.com##a[href^="https://prf.hn/"]
 focus.de,pcwelt.de##a[href^="https://pvn.mediamarkt.de/"]
 schnittberichte.com##a[href^="https://pvn.mediamarkt.de/trck/eclick/"] > img[src^="https://www.schnittberichte.com/resources/images/mediamarkt_"]
