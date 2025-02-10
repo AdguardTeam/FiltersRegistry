@@ -1,8 +1,8 @@
-! Checksum: 3SwnnkphDLlZLdzdM6ln/g
+! Checksum: +QKJtynhKkWVXEuty1/dCA
 ! Title: KAD - Anti-Scam (Optimized)
 ! Description: Filter that protects against various types of scams in the Polish network, such as mass text messaging, fake online stores, etc.
-! Version: 2.0.67.24
-! TimeUpdated: 2025-02-10T17:01:44+00:00
+! Version: 2.0.67.25
+! TimeUpdated: 2025-02-10T21:01:52+00:00
 ! Expires: 5 days (update frequency)
 !#safari_cb_affinity(security)
 ||vorwerk.*/*/zamow-prezentacje/poznaj-kobold|$document,to=~przemysl-zamowienie-prezentacji.*|vorwerk.com|vorwerk.pl
@@ -58,6 +58,7 @@
 /userfiles/*.xml$document,to=aquatech.com.pl|bartodzieje.medycyna.net.pl|bip.wuozprzemysl.pl|ekobarc.pl|everest-sport.pl|gdziezjesc.info|ikuchnia.com.pl|jta.com.pl|kamart.com.pl|kieryk.pl|kppzp.pl|muzeum.kety.pl|pomerania.org.pl|radecznica.pl|rbmtechnik.pl|serwisnawigacji.pl|sjo.uni.lodz.pl|sunrest.com.pl|warszawa-pragapoludnie.sr.gov.pl|wobo.com.pl|wodnik-tour.com.pl
 /ym.html?email=*@$document,to=~to-moze-byc-phishing.*
 /zcvisitor/*?campaignid$document
+?zoneid=*&cost=0.$document
 ^s1=*&click_id=$document
 ||*.atthost24.pl/weryfikacja/$document,subdocument
 ||*.cal24.pl/weryfikacja/$document,subdocument
@@ -74,18 +75,19 @@
 /^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.top\/[a-z]{8}\/\?(?:cid=[0-9a-z]+&)?u=[0-9a-z]+&/$document,to=top
 /^https:\/\/[a-z]+\.com\/away\.php\?url=[%0-9A-z]{100,}$/$document
 /^https:\/\/[a-z]{2,3}\d\.biz\/go\/[0-9a-z]{15,18}$/$document,to=biz
-/^https?:\/\/([\w]{1,4}\.)?[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/\?utm_campaign=\w{40,}/$document,match-case,to=life|live|top|xyz
-/^https?:\/\/([\w]{1,4}\.)?[-0-9a-z]*prize[-0-9a-z]+\.li[fv]e\/\?u=[0-9a-z]+&o=[0-9a-z]+/$popup,domain=www.google.*
-/^https?:\/\/([\w]{1,4}\.)?[a-z]{3,}\d{0,3}[a-z]{3,}\.li[fv]e\/(?:\d{10}|[a-z]{8})\/\?/$popup,domain=life|live
-/^https?:\/\/([\w]{1,4}\.)?[a-z]{6}\.vip\/lucky\/[-a-z]+\/\?t=/$document,to=vip
-/^https?:\/\/([\w]{1,4}\.)?[a-z]{6}\.vip\/lucky\/[-a-z]+\/\?t=/$popup,domain=vip
-/^https?:\/\/([\w]{1,4}\.)?[a-z]{7,}\.li[fv]e\/[a-z]{8}\/\?/$popup,domain=life|live
-/^https?:\/\/([\w]{1,4}\.)?\d{6}\.xyz\/lucky\/[-a-z]+\/\?t=/$document,to=xyz
-/^https?:\/\/([\w]{1,4}\.)?\d{6}\.xyz\/lucky\/[-a-z]+\/\?t=/$popup,domain=xyz
-/^https?:\/\/([\w]{1,4}\.)?creativego[a-z0-9]{20}\.com/$document,to=com
-/^https?:\/\/([\w]{1,4}\.)?sms\.[0-9]+\.(pw|sbs)/$document,to=pw|sbs
-/^https?:\/\/([\w]{1,4}\.)?vinted-(pl|polska)-[a-z0-9]{2,6}\.[a-z0-9-]{3,25}\.[\w]{2,20}(\.\/|\/)/$document,match-case
-/^https?:\/\/([\w]{1,4}\.)?vjnted\.[0-9]+\.(xyz)/$document,to=xyz
+/^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/4\/\d{7}/$document
+/^https?:\/\/(\w{1,4}\.)?[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/\?utm_campaign=\w{40,}/$document,match-case,to=life|live|top|xyz
+/^https?:\/\/(\w{1,4}\.)?[-0-9a-z]*prize[-0-9a-z]+\.li[fv]e\/\?u=[0-9a-z]+&o=[0-9a-z]+/$popup,domain=www.google.*
+/^https?:\/\/(\w{1,4}\.)?[a-z]{3,}\d{0,3}[a-z]{3,}\.li[fv]e\/(?:\d{10}|[a-z]{8})\/\?/$popup,domain=life|live
+/^https?:\/\/(\w{1,4}\.)?[a-z]{6}\.vip\/lucky\/[-a-z]+\/\?t=/$document,to=vip
+/^https?:\/\/(\w{1,4}\.)?[a-z]{6}\.vip\/lucky\/[-a-z]+\/\?t=/$popup,domain=vip
+/^https?:\/\/(\w{1,4}\.)?[a-z]{7,}\.li[fv]e\/[a-z]{8}\/\?/$popup,domain=life|live
+/^https?:\/\/(\w{1,4}\.)?\d{6}\.xyz\/lucky\/[-a-z]+\/\?t=/$document,to=xyz
+/^https?:\/\/(\w{1,4}\.)?\d{6}\.xyz\/lucky\/[-a-z]+\/\?t=/$popup,domain=xyz
+/^https?:\/\/(\w{1,4}\.)?creativego[a-z0-9]{20}\.com/$document,to=com
+/^https?:\/\/(\w{1,4}\.)?sms\.[0-9]+\.(pw|sbs)/$document,to=pw|sbs
+/^https?:\/\/(\w{1,4}\.)?vinted-(pl|polska)-[a-z0-9]{2,6}\.[a-z0-9-]{3,25}\.\w{2,22}(\.\/|\/)/$document,match-case
+/^https?:\/\/(\w{1,4}\.)?vjnted\.[0-9]+\.(xyz)/$document,to=xyz
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{4,}\.[a-z]{2,11}\/(?:[0-9a-z]{6,8}\/)?\/?(?:article\d{4}\.doc)?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}/$document,subdocument,match-case
 /^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{4,}\.[a-z]{2,11}\/(?:[0-9a-z]{6,8}\/)?\/?(?:article\d{4}\.doc)?\?u=[0-9a-z]{7}&o=[0-9a-z]{7}/$document,subdocument,match-case
 /^https?:\/\/crypto0[0-9]+\.online/$document,important
