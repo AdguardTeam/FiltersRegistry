@@ -1,9 +1,9 @@
-! Checksum: DN42JONe/s8vBEsUwDXQEg
-! Diff-Path: ../patches/14/14-s-1739198649-3600.patch
+! Checksum: lDDaDCgcwII2RHKno0wiYg
+! Diff-Path: ../patches/14/14-s-1739202224-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.21.48
-! TimeUpdated: 2025-02-10T14:39:48+00:00
+! Version: 2.2.21.49
+! TimeUpdated: 2025-02-10T15:39:11+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1682,6 +1682,7 @@
 !
 ! SECTION: Cookies - General URL
 !
+/dock-privacy-settings.esm.js
 ||mobile-data.onetrust.io^
 ||app.enzuzo.com/scripts/cookiebar/
 /fs-cc.js
@@ -7606,7 +7607,6 @@ mustijamirri.fi#$#.privacy_headsup_overlay { display: none !important; }
 mustijamirri.fi#$##cookie_consent { display: none !important; }
 upm.com##.cookie-policy-opt-out
 vci.de##.c-cookie-consent-banner
-boschwiperblades.com,boschaftermarket.com,boschsecurity.com,boschcarservice.com,bosch.*,bosch-professional.com##dock-privacy-settings
 meta-preisvergleich.de###cookiewarnung
 vivaconagua.org###sccBanner
 thesafetysupplycompany.co.uk###lnCookieBar
@@ -13239,7 +13239,7 @@ adwokat-obrebski.pl##.ct-ultimate-gdpr-cookie-fullPanel-overlay
 pri.org###cta_prompt_bottom
 antoineonline.com###ctl00_overlay
 doodle.com###d-cookiesWarningAdsLayout
-emakin.com,blankensee.de,itw-swiss.ch,limakhotels.com,taliun.com,globaltvapp.net,ntgreekguy.com,ikbalthermal.com,sitemodify.com,wmespeakers.com###d-notification-bar
+regenauer.press,emakin.com,blankensee.de,itw-swiss.ch,limakhotels.com,taliun.com,globaltvapp.net,ntgreekguy.com,ikbalthermal.com,sitemodify.com,wmespeakers.com###d-notification-bar
 amazon.com.tr,amazon.ca,amazon.co.uk,amazon.de,amazon.es,amazon.fr,amazon.in,amazon.it###desktop-banner-stripe
 paradoxplaza.com###disablingDiv
 lamborghini.com,auction.fr###disclaimer-cookie
@@ -33734,6 +33734,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+gulfnews.com##.story-element ~ div[class]:has(> form > div > input[type="email"])
+labirint.ru##.b-gm-cnstrct
 booksamillion.com##.header-violator
 tanstack.com#%#//scriptlet('trusted-set-local-storage-item', 'showBytes', '{"value":false,"ttl":null}')
 gendai.media##main > div.max-w-screen-frau-lg:has(> section.text-earth > a[href="https://id.contentdata.co.jp/register_frausdgs"])
