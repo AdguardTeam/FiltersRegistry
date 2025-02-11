@@ -1,9 +1,9 @@
-! Checksum: DzEdHCbKjzkz+iGldErasw
-! Diff-Path: ../patches/21/21-s-1739216502-3600.patch
+! Checksum: HkkfGy58zUhkK/gOre9ihQ
+! Diff-Path: ../patches/21/21-s-1739274345-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.30.55
-! TimeUpdated: 2025-02-10T19:38:07+00:00
+! Version: 2.0.30.56
+! TimeUpdated: 2025-02-11T11:41:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3460,6 +3460,9 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+semrush.com##div[data-test="UvpTileTooltip"]
+semrush.com##div[layout="shifted"] a[data-test="Button"][href^="/signup/"]
+semrush.com##div[data-test="SummaryBanner"]
 barnesandnoble.com###rhf_header_element > .rhf-overline-carousal
 barnesandnoble.com###globalNavBanner
 barnesandnoble.com###globalSubBanner
@@ -8313,6 +8316,14 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198318
+filespayouts.com#%#//scriptlet('adjust-setTimeout', 'tick', '*', '0.001')
+! https://github.com/uBlockOrigin/uAssets/issues/27167
+kolnovel.org#%#//scriptlet('abort-current-inline-script', 'addEventListener', '/disable_|wccp/')
+kolnovel.org#%#//scriptlet('remove-attr', 'onmousedown|onselectstart', '#kol_content')
+kolnovel.org#$?#style[id^="wccp_pro_"] { remove: true; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/198352
+scribd.com#%#//scriptlet('set-constant', 'docManager.doDynamicBlurring', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197355
 ranoz.gg#%#//scriptlet('trusted-click-element', 'div[class^="page_box_wrapper"] a[aria-label="Download button"]:not([href])', '', '500')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197130

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Fm4XZYh40gkY+waQgsSEaA
-! Diff-Path: ../patches/21/21-s-1739216518-3600.patch
+! Checksum: 3P388Gz3dB7A2fKfGcKZOg
+! Diff-Path: ../patches/21/21-s-1739274369-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.30.55
-! TimeUpdated: 2025-02-10T19:38:07+00:00
+! Version: 2.0.30.56
+! TimeUpdated: 2025-02-11T11:41:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3431,6 +3431,9 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+semrush.com##div[data-test="UvpTileTooltip"]
+semrush.com##div[layout="shifted"] a[data-test="Button"][href^="/signup/"]
+semrush.com##div[data-test="SummaryBanner"]
 barnesandnoble.com###rhf_header_element > .rhf-overline-carousal
 barnesandnoble.com###globalNavBanner
 barnesandnoble.com###globalSubBanner
@@ -8270,6 +8273,14 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198318
+filespayouts.com##+js(adjust-setTimeout, tick, *, 0.001)
+! https://github.com/uBlockOrigin/uAssets/issues/27167
+kolnovel.org##+js(abort-current-script, addEventListener, /disable_|wccp/)
+kolnovel.org##+js(remove-attr, onmousedown|onselectstart, #kol_content)
+kolnovel.org#$?#style[id^="wccp_pro_"] { remove: true; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/198352
+scribd.com##+js(set-constant, docManager.doDynamicBlurring, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197355
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197130
 wp2hostt.com,blogmystt.com##+js(nano-setInterval-booster, countdown, *, 0.001)

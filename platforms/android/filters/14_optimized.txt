@@ -1,9 +1,9 @@
-! Checksum: C4Bl/77I64xWNEDM1XpM9w
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1739270610-3600.patch
+! Checksum: pjGg6MYwJGiHMVhrqO0hpQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1739274331-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.21.59
-! TimeUpdated: 2025-02-11T10:39:35+00:00
+! Version: 2.2.21.60
+! TimeUpdated: 2025-02-11T11:41:11+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -10782,7 +10782,6 @@ weather.com#%#//scriptlet("abort-on-property-read", "setNptTechAdblockerCookie")
 @@||securepubads.g.doubleclick.net/pagead/ppub_config$domain=weather.com
 @@||weather.com/daybreak-today/assets/peel1.ext.df9c55.js$domain=weather.com
 !#safari_cb_affinity
-aternos.org#$#.responsive-leaderboard { transform: rotate3d(1, 1, 0, 90deg) !important; }
 aternos.org#$#.placement { transform: rotate3d(1, 1, 0, 90deg) !important; }
 aternos.org#$#.header-link-exaroton-link { transform: rotate3d(1, 1, 0, 90deg) !important; }
 @@||aternos.org^$generichide
@@ -21153,6 +21152,9 @@ rasp.yandex.*##.TravelHotelsBanner
 tv.yandex.*##.recommended-ott
 360.yandex.ru##div[data-test-id="promotopline"]
 www.kinopoisk.ru##div[class^="trailer-promo"]
+semrush.com##div[data-test="UvpTileTooltip"]
+semrush.com##div[layout="shifted"] a[data-test="Button"][href^="/signup/"]
+semrush.com##div[data-test="SummaryBanner"]
 barnesandnoble.com###rhf_header_element > .rhf-overline-carousal
 barnesandnoble.com###globalNavBanner
 barnesandnoble.com###globalSubBanner
@@ -23098,6 +23100,11 @@ softpedia.com#$#iframe.swipebox-rightxd[id="relcontent"] { top: 60px!important; 
 !##############################
 !######### JS tweaks ##########
 !##############################
+filespayouts.com#%#//scriptlet('adjust-setTimeout', 'tick', '*', '0.001')
+kolnovel.org#%#//scriptlet('abort-current-inline-script', 'addEventListener', '/disable_|wccp/')
+kolnovel.org#%#//scriptlet('remove-attr', 'onmousedown|onselectstart', '#kol_content')
+kolnovel.org#$?#style[id^="wccp_pro_"] { remove: true; }
+scribd.com#%#//scriptlet('set-constant', 'docManager.doDynamicBlurring', 'noopFunc')
 ranoz.gg#%#//scriptlet('trusted-click-element', 'div[class^="page_box_wrapper"] a[aria-label="Download button"]:not([href])', '', '500')
 wp2hostt.com,blogmystt.com#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 wp2hostt.com,blogmystt.com#%#//scriptlet('adjust-setTimeout', 'nextPageForm', '*', '0.001')

@@ -1,9 +1,9 @@
-! Checksum: MIlj4hqVBLQ/hM6qb8p7qw
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1739241704-3600.patch
+! Checksum: Vq9II3S4BwV+lrX22dBpRQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1739274346-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.30.55
-! TimeUpdated: 2025-02-10T19:38:07+00:00
+! Version: 2.0.30.56
+! TimeUpdated: 2025-02-11T11:41:20+00:00
 ! Expires: 10 days (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -959,6 +959,9 @@ rasp.yandex.*##.TravelHotelsBanner
 tv.yandex.*##.recommended-ott
 360.yandex.ru##div[data-test-id="promotopline"]
 www.kinopoisk.ru##div[class^="trailer-promo"]
+semrush.com##div[data-test="UvpTileTooltip"]
+semrush.com##div[layout="shifted"] a[data-test="Button"][href^="/signup/"]
+semrush.com##div[data-test="SummaryBanner"]
 barnesandnoble.com###rhf_header_element > .rhf-overline-carousal
 barnesandnoble.com###globalNavBanner
 barnesandnoble.com###globalSubBanner
@@ -2898,6 +2901,11 @@ softpedia.com#$#iframe.swipebox-rightxd[id="relcontent"] { top: 60px!important; 
 !##############################
 !######### JS tweaks ##########
 !##############################
+filespayouts.com#%#//scriptlet('adjust-setTimeout', 'tick', '*', '0.001')
+kolnovel.org#%#//scriptlet('abort-current-inline-script', 'addEventListener', '/disable_|wccp/')
+kolnovel.org#%#//scriptlet('remove-attr', 'onmousedown|onselectstart', '#kol_content')
+kolnovel.org#$?#style[id^="wccp_pro_"] { remove: true; }
+scribd.com#%#//scriptlet('set-constant', 'docManager.doDynamicBlurring', 'noopFunc')
 ranoz.gg#%#//scriptlet('trusted-click-element', 'div[class^="page_box_wrapper"] a[aria-label="Download button"]:not([href])', '', '500')
 wp2hostt.com,blogmystt.com#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 wp2hostt.com,blogmystt.com#%#//scriptlet('adjust-setTimeout', 'nextPageForm', '*', '0.001')
