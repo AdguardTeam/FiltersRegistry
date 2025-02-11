@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/16_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.9",
-			"timeUpdated": "2025-02-10T12:39:38+0000",
+			"version": "2.0.50.10",
+			"timeUpdated": "2025-02-11T03:38:07+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
