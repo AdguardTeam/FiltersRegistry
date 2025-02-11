@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.71.25",
-			"timeUpdated": "2025-02-11T15:31:40+0000",
+			"version": "2.3.71.26",
+			"timeUpdated": "2025-02-11T16:31:46+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.62.1",
-			"timeUpdated": "2025-02-11T14:40:00+0000",
+			"version": "2.0.62.2",
+			"timeUpdated": "2025-02-11T16:39:57+0000",
 			"languages": [
 				"ja"
 			]
@@ -283,8 +283,8 @@
 				"ext_safari",
 				"ext_android_cb"
 			],
-			"version": "2.0.10.43",
-			"timeUpdated": "2025-02-11T11:41:17+0000",
+			"version": "2.0.10.44",
+			"timeUpdated": "2025-02-11T16:40:23+0000",
 			"languages": []
 		},
 		{
