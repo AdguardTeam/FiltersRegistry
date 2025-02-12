@@ -1,9 +1,9 @@
-! Checksum: oRncNRcy2urvPU+iU3e6bg
-! Diff-Path: ../patches/14/14-s-1739349907-3600.patch
+! Checksum: 6CsE7z7A1Z1TdUtNgLS+Aw
+! Diff-Path: ../patches/14/14-s-1739353850-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.21.73
-! TimeUpdated: 2025-02-12T08:40:11+00:00
+! Version: 2.2.21.74
+! TimeUpdated: 2025-02-12T09:46:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2479,6 +2479,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+mobile.de#%#//scriptlet('trusted-click-element', '.mde-consent-decline-btn','','300')
 atlasformen.pl#%#//scriptlet('trusted-click-element', 'dialog[data-cookie-wall-configure-dialog] button[data-save]', '', '500')
 zrzutka.pl,4fund.com#%#//scriptlet('set-cookie', 'cookies', '0')
 esim.sm##div[class^="freeprivacypolicy-"]
@@ -8775,7 +8776,6 @@ vandyke.com,fox-saying.com,pixnet.net###gdpr-cover
 casita.com##div[class*="styles_cookie-section__"]
 allegro.pl#$#body { overflow-y: auto !important; }
 allegro.pl#$#div[data-prototype-id="allegro.gdpr.consents"] { display: none !important; }
-mobile.de###mde-consent-modal-container
 typographus.de###cookiePopupBG
 theorg.com##._1s1RU
 sutterhealth.org,phonecopy.com###cookieAgreement
@@ -16598,6 +16598,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198330
+ghelamco.com#@##cookieModal
 ! https://swiss-sport.tv/video/f16f2091-6219-4346-b8cb-4e11a5a8663d
 @@||cookie-script.com^$domain=swiss-sport.tv
 swiss-sport.tv#@##cookiescript_injected
@@ -34204,6 +34206,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+hypebae.com###newsletter-popup-fullscreen
 thepioneerwoman.com###journey-inline
 atlasformen.pl##div[data-cb-zone] > div[data-cb-group]:has(> div[data-cb-layout] > div[data-cb-layout-grid] > div[data-cb-section] > section > a[href="/myaccount/newslettersloggedout.aspx"])
 snopes.com#%#//scriptlet('set-cookie-reload', 'newsletter_signup_promo', 'true')
