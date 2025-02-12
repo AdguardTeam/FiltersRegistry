@@ -1,8 +1,8 @@
-! Checksum: 8WCHYJjVHAYjXf8tXYDXOg
+! Checksum: 0ZhpQ3x43Cg1GrRrc1FitA
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.45.95
-! TimeUpdated: 2025-02-11T22:38:19+00:00
+! Version: 2.0.45.96
+! TimeUpdated: 2025-02-12T12:43:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1499,6 +1499,13 @@ teleboy.ch#@#.adWrapper
 ! can cause pause on video when ad video should be shown
 ! new version (both rules are working on their own)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198374
+! It looks like that PHPSESSID is checked on the server side
+! I guess that it works like that - if specific PHPSESSID was registered and few/several seconds passed (I suppose 10 seconds or so)
+! then it redirects to video content, otherwise it displays ads
+! So, as a workaround a PHPSESSID is set to 1 for every video
+! and it checks if the video content is available, if not, it tries again after 10 seconds,
+! if it's available, it redirects to the video content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190034
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189789
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183745

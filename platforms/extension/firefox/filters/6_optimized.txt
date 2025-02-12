@@ -1,9 +1,9 @@
-! Checksum: 10Y/4vEkqIq5iuKayQdYKw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1739328108-3600.patch
+! Checksum: 08jqReogtrt6wZTCP97RNQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1739364520-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.45.95
-! TimeUpdated: 2025-02-11T22:38:19+00:00
+! Version: 2.0.45.96
+! TimeUpdated: 2025-02-12T12:43:22+00:00
 ! Expires: 10 days (update frequency)
 ||remp-campaign.golem.de^
 ||web-ads.10sq.net^
@@ -983,6 +983,10 @@ geo.de,brigitte.de,kicker.de,desired.de,pcgames.de,t-online.de,vox.de,spieletipp
 fitforfun.de,plus.rtl.de#%#//scriptlet('trusted-replace-xhr-response', 'true', 'false', 'homadClientConfig-plusrtlde.json')
 fitforfun.de,brigitte.de#%#//scriptlet('trusted-replace-xhr-response', 'true', 'false', 'global_config.json')
 fitforfun.de,plus.rtl.de#%#//scriptlet('abort-on-stack-trace', 'Object.prototype.adReinsertion', 'createSdk')
+filstalwelle.de#$##mejsplayer:has(> video > source[src^="/video/content/a/"]) { display: none !important; }
+filstalwelle.de#%#//scriptlet('trusted-replace-node-text', 'div', 'WERBUNG', 'WERBUNG', 'Trying to skip ads...')
+filstalwelle.de#%#//scriptlet("trusted-replace-node-text", "script", "doPostRoll", "/\?PHPSESSID=.*?'/", "?PHPSESSID=1'")
+filstalwelle.de#%#//scriptlet("trusted-create-element", "head", "script", "", "(()=>{if(!location.pathname.includes('/video/video'))return;const e=async t=>{const o=await fetch(t);(await o.text()).match(/src=.content\//)?location.replace(t):setTimeout(e,1e4,t)};window.addEventListener('load',(()=>{const t=document.querySelector('body > :is(.mejs__video, #mejsplayer) ~ script:not([type], [src])'),o=t?.textContent.match(/\$\('#bodyTarget'\)\.load\('(.+?)'.+?\);/)?.[1];if(o){let t=location.href.replace(/videoin\.php\?video=.*/,o);t=t.replace(/PHPSESSID=.*/,'PHPSESSID=1'),e(t)}else{console.debug('Required part not found in the script.');}}))})();")
 promiflash.de#%#//scriptlet('set-constant', 'adHandler.service', 'emptyObj')
 promiflash.de#%#//scriptlet('set-constant', 'adHandler.service.destroy', 'noopFunc')
 promiflash.de#%#//scriptlet('set-constant', 'adHandler.service.request', 'noopFunc')
