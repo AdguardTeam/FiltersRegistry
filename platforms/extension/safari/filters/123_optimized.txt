@@ -1,9 +1,9 @@
-! Checksum: Atx6F8mWr1XdUPyS3/pj+Q
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1739322351-14400.patch
+! Checksum: XebjjFW1zyESwJAe3RC1hw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1739336742-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.36.73
-! TimeUpdated: 2025-02-12T01:01:27+00:00
+! Version: 2.1.36.74
+! TimeUpdated: 2025-02-12T05:01:23+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -share-bar/$~stylesheet
@@ -66,7 +66,6 @@
 /share_button?
 /share_sprite.png
 /share_view.js
-/share_weibo.png
 /shareaholic.js
 /shareArrow.png
 /sharebar.js
@@ -94,6 +93,7 @@
 /sns_naverband.png
 /social-footer.png
 /Social-Sidebar.js
+/social-widgets-
 /social2s.min.js
 /socialappsintegrator.
 /socialbar-sso.js
@@ -113,7 +113,6 @@
 /twitter_square.png
 /videojs-share.js
 /vk_button.png
-/weiboshare.html
 /whatsapp-button.js
 /whatsapp_icon.png
 /widget/share?
@@ -223,6 +222,7 @@ _social-bar/
 ###followus
 ###foot-social
 ###footer-facebook
+###footer-facebook-icon
 ###footer-fb
 ###footer-follow-us
 ###footer-instagram-icon
@@ -303,7 +303,6 @@ _social-bar/
 ###mvp-post-soc-wrap
 ###mvp-soc-mob-wrap
 ###mvp-top-nav-soc
-###newGigyaShareTop
 ###newSocialContainer
 ###panel-social
 ###pinterest-link
@@ -381,7 +380,6 @@ _social-bar/
 ###shareRecipe
 ###shareStrip
 ###shareTab
-###shareThis
 ###shareToolBottom
 ###shareTxt
 ###shareUrl
@@ -497,7 +495,6 @@ _social-bar/
 ###social2
 ###socialBadge
 ###socialBar
-###socialBookmarks
 ###socialButtonOnPage
 ###socialButtons
 ###socialContainer
@@ -544,6 +541,7 @@ _social-bar/
 ###social_media_icons
 ###social_media_widget
 ###social_panel
+###social_pi
 ###social_pinterest
 ###social_share
 ###social_share_wrapper
@@ -628,6 +626,8 @@ _social-bar/
 ##.ArticleView-bottomShares
 ##.ArticleView-shares
 ##.BtnShareGroup
+##.ButtonSharing
+##.ButtonsSharing
 ##.EntryShareButton
 ##.FacebookLike
 ##.FacebookShareButton
@@ -635,6 +635,7 @@ _social-bar/
 ##.FollowUs
 ##.Footer-groupSocials
 ##.Footer-links-social
+##.Footer-share
 ##.FooterSocial
 ##.FooterSocialMedia
 ##.Gallery-Share
@@ -642,6 +643,7 @@ _social-bar/
 ##.Header-socialIcons
 ##.LineShareButton
 ##.ListSocial
+##.NavigationSharingFooter
 ##.PinItButton
 ##.Share-buttons
 ##.Share-item
@@ -846,10 +848,10 @@ _social-bar/
 ##.b_social
 ##.badge-pinterest-share
 ##.banner-social
-##.bar-social
 ##.bc_social_icons
 ##.bctt-click-to-tweet
 ##.bd-FooterSocials-item
+##.bd-socialicon
 ##.bdaia-social-io
 ##.beSocialShare
 ##.beacon-social
@@ -968,7 +970,6 @@ _social-bar/
 ##.common_share
 ##.component-social
 ##.connect-with-us
-##.contSocial
 ##.content-footer-social
 ##.contentShareLeft
 ##.contentSocialBar
@@ -1377,6 +1378,7 @@ _social-bar/
 ##.header-follow-us
 ##.header-icon-instagram
 ##.header-main-socs
+##.header-menu__social
 ##.header-nav-social
 ##.header-nav-social-facebook
 ##.header-nav-social-instagram
@@ -1445,7 +1447,6 @@ _social-bar/
 ##.icon-delicious
 ##.icon-digg
 ##.icon-facebook-alt
-##.icon-facebook-box
 ##.icon-facebook-circle
 ##.icon-facebook-circled
 ##.icon-facebook-icon
@@ -1515,14 +1516,12 @@ _social-bar/
 ##.in_social
 ##.info-sns-list
 ##.info_share
-##.inline-share
 ##.inline-share-buttons
 ##.inline_socials
 ##.inner-header-social
 ##.inner-share-bar
 ##.inner-social
 ##.instagram-follow-button
-##.instagram-followers
 ##.instagram-hover
 ##.instagram-icon
 ##.instagram-link
@@ -1776,10 +1775,12 @@ _social-bar/
 ##.new-post__social
 ##.new-share
 ##.new-social
+##.newGigyaShare
 ##.news-detail-share
 ##.news-header-social
 ##.news-share
 ##.news-share-button-down
+##.news-sharing
 ##.news-social-container
 ##.news__share
 ##.ni-share
@@ -1877,6 +1878,7 @@ _social-bar/
 ##.post-share-icons
 ##.post-share-item
 ##.post-share-links
+##.post-share-menu-item
 ##.post-share-pinterest
 ##.post-share-twitter
 ##.post-share-whatsapp
@@ -1889,7 +1891,6 @@ _social-bar/
 ##.postShare
 ##.post__share
 ##.post_share_center
-##.postbit-social
 ##.postshare
 ##.powerkit_social_links_widget
 ##.pp-share-grid-item
@@ -1914,8 +1915,6 @@ _social-bar/
 ##.qw_social
 ##.r-footer--social
 ##.rambler-share
-##.rc_social
-##.rcom-social-site-footer
 ##.react-share__ShareButton
 ##.redes-sociais
 ##.redes-sociales
@@ -1962,6 +1961,7 @@ _social-bar/
 ##.scriptlesssocialsharing
 ##.sd-share
 ##.sd-share-icon
+##.sd-sharing
 ##.sd-social
 ##.sd-social-icon-text
 ##.sdc-site-share
@@ -2113,7 +2113,6 @@ _social-bar/
 ##.share-section
 ##.share-service-visible
 ##.share-set
-##.share-show-modal
 ##.share-side
 ##.share-single
 ##.share-sites-thumbs
@@ -2237,7 +2236,6 @@ _social-bar/
 ##.share_area
 ##.share_article
 ##.share_bar
-##.share_bar_wrapper
 ##.share_block
 ##.share_bottom
 ##.share_box
@@ -2419,6 +2417,7 @@ _social-bar/
 ##.single-post-social
 ##.single-share
 ##.single-share-box-container
+##.single-sharing-btns
 ##.single-sidebar-share
 ##.single-social-button
 ##.single-social-wrap
@@ -2556,8 +2555,10 @@ _social-bar/
 ##.social-icon-wrapper
 ##.social-icons-big
 ##.social-icons-container
+##.social-icons-desktop
 ##.social-icons-footer
 ##.social-icons-header
+##.social-icons-links
 ##.social-icons-list
 ##.social-icons-title
 ##.social-icons-top
@@ -2588,7 +2589,6 @@ _social-bar/
 ##.social-list-container
 ##.social-list-footer
 ##.social-list-icon
-##.social-main-footer
 ##.social-media-bar
 ##.social-media-footer
 ##.social-media-header
@@ -2636,6 +2636,7 @@ _social-bar/
 ##.social-share--column
 ##.social-share--desktop
 ##.social-share--linkedin
+##.social-share--sticky
 ##.social-share-bar
 ##.social-share-block
 ##.social-share-box
@@ -2701,6 +2702,7 @@ _social-bar/
 ##.social-widgets
 ##.social-wrap-outer
 ##.social-wrp
+##.socialBanner
 ##.socialBar
 ##.socialButtonArea
 ##.socialButtons
@@ -2804,7 +2806,6 @@ _social-bar/
 ##.socialinks
 ##.socialite-widget
 ##.socialite-widget-item
-##.socializeIt
 ##.socializer
 ##.sociallinks
 ##.sociallist
@@ -2909,7 +2910,6 @@ _social-bar/
 ##.the_champ_sharing_container
 ##.the_champ_sharing_ul
 ##.thread-share
-##.thread-share-bar-buttons
 ##.tk-footer-social-icons
 ##.tm-footer-social
 ##.tm-share-this
@@ -3000,7 +3000,6 @@ _social-bar/
 ##.ulSocialmedia
 ##.uptl_container-share
 ##.us_share_buttons
-##.user-share
 ##.ut2-social-link-block
 ##.vbseo_share
 ##.vc_container_social_button
@@ -3063,7 +3062,6 @@ _social-bar/
 ##.widget_dpsp_social_media_follow
 ##.widget_easy_facebook_page_plugin
 ##.widget_epcl_social
-##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook_likebox
 ##.widget_facebook_page_plugin_widget
 ##.widget_facebook_widget
@@ -3217,7 +3215,6 @@ _social-bar/
 ||buttons.github.io/buttons.js$third-party
 ||connect.ok.ru^$third-party
 ||facebook.com/plugins/facepile.php?$third-party
-||facebook.com/plugins/fan.php?$third-party
 ||facebook.com/plugins/follow.php$third-party
 ||facebook.com/plugins/like.php?$third-party
 ||facebook.com/plugins/like_box.php$third-party
@@ -3288,7 +3285,6 @@ _social-bar/
 ||xing-share.com^$third-party
 ||yandex.st/share/
 ||youtube.com/subscribe_embed?$third-party
-||youtube.com/subscribe_widget$third-party
 ||people.com.cn/img/2020fenxiang/
 iflscience.com###FollowOnGoogleNewsBtn
 rockmods.net###LinkList76
@@ -3298,6 +3294,7 @@ torrentsafe.com###addthisimage
 houstonpublicmedia.org###article-share
 scoop.co.nz###article-tools
 dailymail.co.uk###articleIconLinksContainer
+theepochtimes.com###article_top_right_share_btn
 bleedingcool.com###bc_sharing_is_caring
 skidrowreloaded.com###communication
 dailymail.co.uk,thisismoney.co.uk###dms-txt
@@ -3384,7 +3381,6 @@ thespectator.com##.article_set_wrap
 news18.com##.article_socials
 batman-news.com##.astra-widget-social-profiles
 dictionary.com##.atw-socials
-proprivacy.com##.author-social-icons
 adweek.com##.aw-social-share-container
 bnnbloomberg.ca,cp24.com,irishnews.com,thedailybeast.com##.b-share-bar
 beebom.com##.beebom-social-share
@@ -3426,6 +3422,7 @@ economist.com##.ds-actioned-link--share
 theverge.com##.duet--article--lede-share-tools-separator
 theverge.com,vox.com##.duet--article--share-buttons
 dailyboulder.com,echonewshub.com,jugomobile.com,thartribune.com,thegamepost.com,townflex.com##.e-shared-sec
+breakingdefense.com##.ea-share-count-wrap
 bdonline.co.uk,dailymail.co.uk,flightglobal.com,screendaily.com##.email
 cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
@@ -3837,6 +3834,7 @@ mingpao.com##.ssm
 ifeng.com##div[class^="index_share_box_"]
 dr.dk##.dre-sticky-share-band
 telegraaf.nl##.SocialButtons
+nieuwsblad.be##[class*="shareitemlist"]
 bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_"]
 apotti.fi#?#.post-footer:-abp-has(> .share)
 forssanlehti.fi#?#.herald-single-sticky:-abp-has(.herald-share)
@@ -3854,7 +3852,9 @@ wikihow.it###sf
 navigaweb.net###social3
 calciomercato.com##.cm-share
 iodonna.it##.eltdf-woo-social-share-holder
+alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
+alfredopedulla.com##.ig-banner
 libero.it,virgilio.it##.iol-share-menu
 libero.it##.iol-social
 ilsole24ore.com##.list-inline--tools
@@ -3877,6 +3877,7 @@ macitynet.it##.tds-button
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-footer-social
 sorrisi.com##.tvsc-social-share
+alfredopedulla.com##.tw-banner
 mymovies.it##.vota-pul-consiglio
 ilgiorno.it,ilrestodelcarlino.it,iltelegrafolivorno.it,lanazione.it,quotidiano.net##div[class^="SocialShare_"]
 ||imyfone.com/assets/js/media_share/
@@ -4126,6 +4127,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||yaplakal.com/html/static/$image,~third-party
 @@||yastatic.net/share2/share.js$script
 @@||docs.qq.com^$generichide
+@@||fontawesome.com^$generichide
 @@||github.com^$generichide
 @@||github.io^$generichide
 @@||ifttt.com^$generichide
