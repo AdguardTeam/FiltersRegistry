@@ -32,6 +32,14 @@ spletnik.ru#%#//scriptlet('set-local-storage-item', '/^_ym/', '$remove$')
 spletnik.ru#%#//scriptlet('set-local-storage-item', 'adrcid', '$remove$')
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198412
+act.hoyolab.com#%#//scriptlet('set-constant', 'Sentry', 'emptyObj')
+act.hoyolab.com#%#//scriptlet('set-constant', 'Sentry.init', 'noopFunc')
+act.hoyolab.com#%#//scriptlet('set-constant', 'Sentry.setTag', 'noopFunc')
+act.hoyolab.com#%#//scriptlet('set-constant', 'Sentry.setTags', 'noopFunc')
+act.hoyolab.com#%#//scriptlet('set-constant', 'Sentry.setUser', 'noopFunc')
+act.hoyolab.com#%#//scriptlet('set-constant', 'Sentry.setContext', 'noopFunc')
+act.hoyolab.com#%#//scriptlet('set-constant', 'Sentry.BrowserTracing', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197996
 tangiblewp.com#%#//scriptlet('set-constant', 'fathom', 'emptyObj')
 tangiblewp.com#%#//scriptlet('set-constant', 'fathom.trackEvent', 'noopFunc')
@@ -143223,6 +143231,10 @@ inapps.appsflyersdk.com^
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !#endif
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198412
+! TODO: change hint when this issue will be fixed - https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2855
+!+ PLATFORM(ios, ext_safari, ext_android_cb, ext_chromium, ext_ff, ext_opera)
+@@||webstatic.hoyoverse.com/dora/lib/sentry/*/sentry-vue.tracing.es5.min.js$domain=act.hoyolab.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196807
 !+ PLATFORM(ios, ext_safari)
 @@||ya.ru/clck/redir/*data=url%3Dhttps%253A%252F%252Fpassport.yandex.ru
