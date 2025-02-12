@@ -1,9 +1,9 @@
-! Checksum: laI4t491EjuvjkL8lTSYwA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1739367992-3600.patch
+! Checksum: DfTv1lp0eAOfPravZi3liw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1739396498-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.56
-! TimeUpdated: 2025-02-12T13:31:12+00:00
+! Version: 2.0.97.57
+! TimeUpdated: 2025-02-12T21:31:11+00:00
 ! Expires: 12 hours (update frequency)
 /nadavi-api/?p4g3=js/api/widget.js
 ||aj*.bid/*?vpaid=$xmlhttprequest
@@ -2289,7 +2289,8 @@ echo.msk.ru,kakprosto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototy
 ||echo.msk.ru^$replace=/AdvManager\.render/AdvManager._render/
 echo.msk.ru$$script[tag-content="DisplayAcceptableAdIfAdblocked"]
 otzovik.com$$script[wildcard="*function*blockId*"][min-length="1000"][max-length="2500"]
-shedevrum.ai#%#//scriptlet('json-prune', 'direct rtbAuctionInfo')
+shedevrum.ai#%#//scriptlet('set-constant', 'window.yaContextCb', 'emptyArr')
+shedevrum.ai##.flex.items-center.justify-center.relative.w-full:has(> div[id]:empty)
 ||ya.ru$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
 ||yandex.$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
 yandex.*#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
