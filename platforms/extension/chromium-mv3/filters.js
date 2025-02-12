@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.71.38",
-			"timeUpdated": "2025-02-12T14:31:37+0000",
+			"version": "2.3.71.39",
+			"timeUpdated": "2025-02-12T17:32:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.80.37",
-			"timeUpdated": "2025-02-12T16:40:09+0000",
+			"version": "2.0.80.38",
+			"timeUpdated": "2025-02-12T17:38:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -444,8 +444,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.45.98",
-			"timeUpdated": "2025-02-12T15:42:17+0000",
+			"version": "2.0.45.99",
+			"timeUpdated": "2025-02-12T17:38:36+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -519,8 +519,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.28.74",
-			"timeUpdated": "2025-02-12T13:41:22+0000",
+			"version": "2.0.28.75",
+			"timeUpdated": "2025-02-12T17:38:44+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.31",
-			"timeUpdated": "2025-02-12T16:40:50+0000",
+			"version": "2.0.56.32",
+			"timeUpdated": "2025-02-12T17:39:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -685,8 +685,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.38",
-			"timeUpdated": "2025-02-12T14:40:50+0000",
+			"version": "2.0.50.39",
+			"timeUpdated": "2025-02-12T17:39:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

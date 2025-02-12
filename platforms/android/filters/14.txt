@@ -1,9 +1,9 @@
-! Checksum: lD5mzKTrNNLfMiMS+YVlcg
-! Diff-Path: ../patches/14/14-s-1739378743-3600.patch
+! Checksum: o3swxjTAnUR9tdEWyvhO6w
+! Diff-Path: ../patches/14/14-s-1739382155-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.21.80
-! TimeUpdated: 2025-02-12T16:40:44+00:00
+! Version: 2.2.21.81
+! TimeUpdated: 2025-02-12T17:38:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2476,6 +2476,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+||zagreb.hr/cookie_folder/gd-cookie.js
 kahhve.com##.gizlilik-politikasi-modal
 mobile.de#%#//scriptlet('trusted-click-element', '.mde-consent-decline-btn','','300')
 atlasformen.pl#%#//scriptlet('trusted-click-element', 'dialog[data-cookie-wall-configure-dialog] button[data-save]', '', '500')
@@ -16651,6 +16652,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/uBlockOrigin/uAssets/issues/27140
+@@||consent.cookiebot.com/uc.js$domain=cosmo-hairshop.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198330
 ghelamco.com#@##cookieModal
 ! https://swiss-sport.tv/video/f16f2091-6219-4346-b8cb-4e11a5a8663d
@@ -33855,6 +33858,11 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+! sub
+mumsnet.com##div[x-show="$store.thread.newsletterCta.show()"]
+mumsnet.com#$#body { overflow: auto !important; }
+mumsnet.com#$#div[aria-labelledby="newsletter---daily-newsletter-heading"] { display: none !important; }
+mumsnet.com#$#.fixed.bottom-0:empty { display: none !important; }
 foxnews.com##.article-gating.gated-overlay.show-gate
 trovaprezzi.it##.newsletter_light_container
 hypebae.com###newsletter-popup-fullscreen
