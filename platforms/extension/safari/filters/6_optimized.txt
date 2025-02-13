@@ -1,9 +1,9 @@
-! Checksum: Lz1431HlDleE3m2GmL0VJg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1739472080-3600.patch
+! Checksum: UbH3LCZ1m2DTVswETyjXKg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1739475863-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.46.5
-! TimeUpdated: 2025-02-13T18:36:58+00:00
+! Version: 2.0.46.6
+! TimeUpdated: 2025-02-13T19:39:56+00:00
 ! Expires: 5 days (update frequency)
 ||remp-campaign.golem.de^
 ||web-ads.10sq.net^
@@ -738,7 +738,9 @@ lkz.de##.nfy-ar-ad
 lkz.de##.nfy-row-ad
 ||proaurum.de/sw.js
 ||obi.de/wrapper-sw.js
-chip.de#?#a[href*="chip.de/downloads/"]:has(img[src*="hash"]:not([class], [data-src]))
+chip.de##main > section.wrapper-safe:has(> .Downloads-Alternative[style="display: none !important;"]:only-child)
+chip.de##main > section.wrapper-safe:has(> h3:first-child + .Downloads-Alternative[style="display: none !important;"]:last-child)
+chip.de##a[href*="chip.de/downloads/"]:has(img[src*="hash"]:not([class], [data-src]))
 chip.de##a[href*="chip.de/downloads/"] img[src*="hash"]:not([class], [data-src])
 chip.de##li > a[href*="chip.de/downloads/"][class]:not([class*=" "]) img[src*="hash"]
 chip.de#?#li > a[href*="chip.de/downloads/"][class]:not([class*=" "]):has(img[src*="hash"])
