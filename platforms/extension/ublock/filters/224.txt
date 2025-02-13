@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 07rSzAayQrG55mS5NE53PA
-! Diff-Path: ../patches/224/224-s-1739443538-3600.patch
+! Checksum: L/cwt6ZCdpnK+1EgmVlkCw
+! Diff-Path: ../patches/224/224-s-1739447374-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.31.49
-! TimeUpdated: 2025-02-13T10:40:52+00:00
+! Version: 2.1.31.50
+! TimeUpdated: 2025-02-13T11:45:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -822,6 +822,12 @@ msn.cn##+js(json-prune, configs.*.properties.slideshowWCSettings.interstitialNat
 ! Removes ad placeholders in sliders
 ! Current path is "properties.componentConfigs.slideshowConfigs.slideshowSettings.interstitialNativeAds"
 ! Other rules probably can be removed, but keep them just in case for some time
+! https://github.com/AdguardTeam/AdguardFilters/issues/198422
+! Rule below is required in case if DNS filtering is enabled.
+! To play video website requires "cna" cookie (antiadblock/VPN message is displayed without this cookie)
+! which is set by "https://log.mmstat.com/eg.js" script, but it's blocked on DNS level, so we need to set cookie manually.
+! Original cookie value is the same as ETag value from "https://log.mmstat.com/eg.js" response, but it's not static.
+! So as a workaround we use hardcoded value from "https://g.alicdn.com/kplayer/kuplayer/4.5.26-xmedia/index.js" script.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34910
 goodav17.com##+js(abort-on-property-read, popunder)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132934
