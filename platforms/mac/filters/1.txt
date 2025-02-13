@@ -1,8 +1,8 @@
-! Checksum: sMtdPI1EuMpb0Ye0PbFzYQ
+! Checksum: EH+YRL7FXK9TurpfiZKukw
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.59
-! TimeUpdated: 2025-02-13T12:31:39+00:00
+! Version: 2.0.97.60
+! TimeUpdated: 2025-02-13T13:31:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5539,12 +5539,10 @@ shedevrum.ai##.flex.items-center.justify-center.relative.w-full:has(> div[id]:em
 ! START: Yandex
 !
 !
-||ya.ru$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
-||yandex.$script,xmlhttprequest,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
+! Add Yandex owned sites to `jsonprune` rule
+$script,xmlhttprequest,domain=ya.ru|yandex.*|shedevrum.ai,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "seatbid"]
 yandex.*#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
 $cookie=/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/,domain=yandex.*
-||static-mon.yandex.net/static/main.js$script,xmlhttprequest,replace=/"cookieName":.?"\w+"\,/"cookieName": "nonexisting"\,/
-||static-mon.yandex.net/static/main.js$script,xmlhttprequest,replace=/detect:{links:\[\]\,custom:\[\]\,iframes:\[\]}/detect:{}/
 ! ad on chrome://newtab
 !+ PLATFORM(windows, mac)
 ||yandex.ru/*/*?ntp-sandwich*content=chromenewtab&statPath=chromenewtab
