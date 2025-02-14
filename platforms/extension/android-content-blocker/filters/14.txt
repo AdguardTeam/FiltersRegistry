@@ -1,8 +1,8 @@
-! Checksum: dwkbVgbBxpnoP/xKQqOpgQ
+! Checksum: jXU6ImzxCfelsG6iVEhpxA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.3
-! TimeUpdated: 2025-02-14T13:41:24+00:00
+! Version: 2.2.22.4
+! TimeUpdated: 2025-02-14T14:39:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14358,6 +14358,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198583
+@@||sdk.privacy-center.org^$domain=bienpublic.com|lejsl.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/198582
+@@||api.usercentrics.eu^$domain=srf.ch
+@@||app.usercentrics.eu/*.js$script,domain=srf.ch
 ! https://github.com/uBlockOrigin/uAssets/issues/27140
 @@||consent.cookiebot.com/uc.js$domain=cosmo-hairshop.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198330
@@ -22804,6 +22809,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+t-online.de##.transition-opacity
+t-online.de##.z-overlay-content
 book-ye.com.ua##.free-del-wrapper
 conobas.net###pum-20494
 91porna.com###tip_modal
@@ -23051,7 +23058,7 @@ itselect.itmedia.co.jp##.footer-cv
 turbovpn.com##.container > div.daily-popup.show-daily-popup
 serienjunkies.de,come-on.de##div[class*="-dockInnerWrapperDocked"]
 ural-meridian.ru##div.mypopup-modal-container[data-options*="cookies_enabled"]
-igromania.ru##.knb-grid-container a[class^="YoutubeChannel_"]
+kanobu.ru,igromania.ru##.knb-grid-container a[class^="YoutubeChannel_"]
 goetheweb.jp##.p-magazine-latest-bottom
 finance.mail.ru,hi-tech.mail.ru##.rb--recommendation-link
 time.com##.jw-float-bar
@@ -37122,6 +37129,10 @@ turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-
 !
 !
 !
+etsy.com##.wt-animated--slide-from-bottom
+etsy.com##.chrome-footer__app-link
+etsy.com#$#div[data-web2app-prompt] { display: none !important; }
+etsy.com#$#.wt-body-no-scroll { overflow: auto !important; position: unset !important; }
 11st.co.kr#$##banner-gnb { display: none !important; }
 m.map.kakao.com###daumWrap > div.comm_layer
 search.yahoo.co.jp##div[class^="AddHome_"]#addhome
@@ -46083,7 +46094,7 @@ brighteon.social##.sticky-inner-wrapper > .brighteon-shop
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174055
 vas3k.blog##.post-footer > a[href="/donate/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172827
-igromania.ru##div[class^="AdFoxBannerFooter_footer"]
+kanobu.ru,igromania.ru##div[class^="AdFoxBannerFooter_footer"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172791
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172795
 dlupload.com##center > img[data-target="#signup-modal"]
@@ -50662,6 +50673,7 @@ freestreams-live.my###custom_html-9
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com
 litres.ru###call_support
 !
+||chatbot.akbank.com^
 vuzopedia.ru##.fullChatBlock
 ||amazonaws.com/cdn.ma-site.com/common/chatbots.js$domain=mastory.jp
 mastory.jp##.qualvaBtn
