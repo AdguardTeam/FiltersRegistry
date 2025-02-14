@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.21",
-			"timeUpdated": "2025-02-14T03:37:50+0000",
+			"version": "2.0.50.22",
+			"timeUpdated": "2025-02-14T04:38:52+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
