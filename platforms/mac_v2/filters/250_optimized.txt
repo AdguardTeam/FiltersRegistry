@@ -1,9 +1,9 @@
-! Checksum: S+bFuV+n+b1niWeZcEKD/Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1739509567-14400.patch
+! Checksum: +q4RajkI5wQfe9YSBRpgzQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1739595960-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.16.19
-! TimeUpdated: 2025-02-11T21:02:11+00:00
+! Version: 2.0.16.20
+! TimeUpdated: 2025-02-15T05:01:51+00:00
 ! Expires: 12 hours (update frequency)
 ###app-download
 ###smart-banner
@@ -116,7 +116,6 @@ drivereasy.com#?#.pakb-content ol:has-text(Download and install Driver Easy)
 drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
 drivereasy.com##.pakb-content img[sizes^="(max-width: 80"]
 drivereasy.com##.pakb-content img[sizes^="(max-width: 79"]
-windowsdispatch.com##strong
 windowsreport.com##div[class^=restoro-download] + section
 appuals.com##p + div > div:first-of-type
 softwaretested.com##.st-alternative
@@ -180,6 +179,7 @@ coolrom.com.au,coolrom.com##.download_link
 144.76.1.130$network
 !+ PLATFORM(windows, mac, android)
 195.201.92.254$network
+?bemobdata=$all
 ||bemobtracks.com^$document,popup,domain=~malware_redirection_trains.*
 ||bemobtrk.com^$document,popup,domain=~malware_redirection_trains.*
 ||bemobpath.com^$document,popup,domain=~malware_redirection_trains.*
@@ -9723,6 +9723,7 @@ coolrom.com.au,coolrom.com##.download_link
 95.181.172.204$network
 !+ PLATFORM(windows, mac, android)
 147.135.16.27$network
+apkfab.com##.tip-extension
 !+ PLATFORM(windows, mac, android)
 185.87.148.199$network
 !+ PLATFORM(windows, mac, android)
@@ -10632,7 +10633,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[href*="/social_plugins/share"]
 ##a[href*="://plus.google.com/share?url="]
 ##a[href*="addtoany.com/add_to/"]
-##a[href*="api.addthis.com"]:not([href*="/email/"])
 ##a[href*="plusone.google.com"]
 ##a[href*="telegram.me/share/url?"]
 ##a[href^="/sharer/sharer.php?"] > button[type=submit]
@@ -11088,12 +11088,14 @@ autoplius.lt#%#//scriptlet('ubo-ra.js', 'target', '[target="_blank"]', 'stay')
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 ##.et_pb_divider:not(html,body)
 ##div.dfd-spacer-module:empty
+###top_container_spacing:empty
 indiegogo.com#?#h3:has-text(/^\xA0$/):not(:has-text(/\S/))
 indiegogo.com#?#h2:has-text(/^\xA0$/):not(:has-text(/\S/))
 transfermarkt.com##.clearer
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
 pixiv.net##div[class*=" "]:empty:has(+ aside + aside)
+channel4.com###playerContrastOverlay
 netflix.com#$#div[class^=watch-video--][class*="-container "] { background-image: none !important }
 tv.nrk.no#$#:is(.episode-info-gradient,.tv-layout-fill) { background:unset!important }
 *#$?#.playkit-bottom-bar { background: none !important }
@@ -11123,7 +11125,6 @@ www.google.*,ipv6.google.com#?#.g:has-text(imdb.com › title) div[data-snf]:has
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
 tv.nu#?#a[title] span:has-text(IMDb)
 kissanime.*##.rating
-moviewatcher.is##img[alt="Movie rating"]:upward(2)
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 $removeparam=yclid
 $removeparam=gclid
@@ -11332,9 +11333,7 @@ Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=cj$/
 $removeparam=affil
 $removeparam=cjid
-$removeparam=sv_affiliate_id
 $removeparam=sv_campaign_id
-$document,removeparam=/^sv_tax.*$/
 $removeparam=LSNSUBSITE
 $removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
@@ -11522,7 +11521,6 @@ $removeparam=relatedposts_origin
 $removeparam=relatedposts_position
 ref=itsfoss.com$document,removeparam=ref
 ref=news.itsfoss.com$document,removeparam=ref
-$removeparam=b_campaign
 $removeparam=gad_source
 $removeparam=ga_vid
 $removeparam=ga_sid
@@ -11534,8 +11532,6 @@ $removeparam=ttd_tdid
 $removeparam=bsw_param
 $removeparam=google_push
 $removeparam=partneruserid
-$removeparam=ns__t
-$removeparam=sExtCookieId
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
@@ -11919,17 +11915,23 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
+||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
+||bilibili.com^$removeparam=/^playurl.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
+||bilibili.com^$removeparam=accept_quality
 ||bilibili.com^$removeparam=bbid
 ||bilibili.com^$removeparam=broadcast_type
 ||bilibili.com^$removeparam=bsource
 ||bilibili.com^$removeparam=hotRank
+||bilibili.com^$removeparam=p2p_type
+||bilibili.com^$removeparam=quality_description
 ||bilibili.com^$removeparam=seid
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
 ||bilibili.com^$removeparam=msource
 ||bilibili.com/bangumi$removeparam=theme
+||bilibili.com/audio/au*?$removeparam=type
 ^p=1^$removeparam=p,domain=bilibili.com
 ^t=0^$removeparam=t,domain=bilibili.com
 ||bilibili.com^$removeparam=-Arouter
@@ -11977,11 +11979,14 @@ $removeparam=user_ip
 ||mp.weixin.qq.com^$removeparam=version
 ||mp.weixin.qq.com^$removeparam=exportkey
 ||mp.weixin.qq.com^$removeparam=pass_ticket
+$removeparam=clicktime
 $removeparam=nettype
 ||mp.weixin.qq.com^$removeparam=abtest_cookie
 ||mp.weixin.qq.com^$removeparam=chksm
 ||mp.weixin.qq.com^$removeparam=count
+||mp.weixin.qq.com^$removeparam=enterid
 ||mp.weixin.qq.com^$removeparam=sessionid
+||mp.weixin.qq.com^$removeparam=subscene
 $removeparam=report_recomm_player
 ||mail.qq.com/cgi-bin/frame_html?$removeparam=r
 ||qq.com^$removeparam=ptag
@@ -12001,7 +12006,6 @@ $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
 $removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
-$removeparam=subid,domain=admitad.com|mintmobile.com|secretlab.*|webmasterplan.com
 $removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
@@ -12055,6 +12059,7 @@ $removeparam=cmp,domain=agentprovocateur.com|brooksbrothers.com|cbc.ca|hulu.com|
 $removeparam=cp,domain=converse.com|nike.com|nextdoor.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
 $removeparam=mid,domain=agentprovocateur.com|change.org|columbia.com|dxl.com|hanes.com|josbank.com|links.e.malwarebytes.com|onehanesplace.com|productshopper.*|columbiasportswear.*|saksfifthavenue.com|saksoff5th.com|sorel.com|lookmovie211.xyz|verabradley.com
 $removeparam=mktvar002,domain=autodesk.com
+$removeparam=/^pubname=.*$/i,domain=anntaylor.com|ashford.com|backcountry.com|bloomingdales.com|dermstore.com|express.com|famousfootwear.com|farmandfleet.com|gucci.com|hottopic.com|loft.com|naturalizer.com|samsclub.com
 $document,removeparam=/^refID=.*$/i,domain=allmodern.com|calphalon.com|priceline.com|questrade.com|wayfair.*|yankeecandle.com
 $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|anntaylor.com|asos.com|awd-it.*|barenecessities.com|barrons.com|beautyencounter.com|buckle.com|burpee.com|chacos.com|coursera.org|dxl.com|dyson.com|ebay.*|famousfootwear.com|finishline.com|freetaxusa.com|gap.com|gapcanada.ca|gucci.com|hanes.com|hotwire.com|hulu.com|hunterboots.com|jcrew.com|josbank.com|kobo.com|lanebryant.com|laroche-posay.us|loft.com|magazines.com|marketwatch.com|maurices.com|merrell.com|newbalance.com|nordstrom.com|officedepot.com|onehanesplace.com|online4baby.com|radissonhotelsamericas.com|ralphlauren.com|saksfifthavenue.com|saksoff5th.com|samash.com|samsclub.com|saucony.com|sharperimage.com|skinceuticals.com|thingsremembered.com|thrifty.*|timeformecatalog.com|verabradley.com|vivaterra.com|wine.com|yoox.com
 ||greenmangaming.com^$removeparam=/^tap_.*$/
@@ -12190,7 +12195,6 @@ $removeparam=xcreo
 $removeparam=rffrid
 $removeparam=ad_name
 ||greenhouse.io^$removeparam=/^lever-.*$/
-$removeparam=rcode,domain=kucoin.com
 ||deezer.com^$removeparam=deferredFl
 $removeparam=pr_prod_strat
 $removeparam=pr_rec_id
@@ -12408,7 +12412,6 @@ $document,removeparam=af_xp
 ||qzone.qq.com^$document,removeparam=g
 ||asos.com^$removeparam=ctaref
 ||gumroad.com^$removeparam=recommended_by
-ref=words.filippo.io$document,removeparam=ref
 ||www.booking.com^$document,removeparam=aid
 ||www.booking.com^$document,removeparam=sid
 ||www.booking.com^$document,removeparam=srpvid
@@ -12459,6 +12462,7 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 @@||youtube.com/videoplayback$removeparam=source
 @@||facebook.com^$removeparam=__s
 @@||bing.*/ws/redirect/$removeparam
+@@/unsub/?$removeparam
 @@||email-link.$removeparam
 @@||manage.kmail-lists.com/subscriptions^$removeparam
 @@||canon.*/supportproduct/gettabcontent$removeparam=referrer
@@ -12748,6 +12752,7 @@ docs.google.com###docs-presence
 ://go.microsoft.com/fwlink/?LinkID=219472^$all
 foodora.*#$#.page-wrapper.order-component { margin-top: 128px !important }
 foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
+/^https://[a-z]{8,25}\.com/v2[a-zA-Z0-9_-]{70,}$/$xmlhttprequest,ping,third-party,important
 34.110.179.148$network
 35.244.133.240$network
 [2600:1901:0:7ec2::1]$network
