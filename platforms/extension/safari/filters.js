@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.76.59",
-			"timeUpdated": "2025-02-14T18:39:36+0000",
+			"version": "2.0.76.60",
+			"timeUpdated": "2025-02-15T00:37:44+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -1657,8 +1657,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.31.56",
-			"timeUpdated": "2025-02-14T12:39:25+0000",
+			"version": "2.1.31.57",
+			"timeUpdated": "2025-02-15T00:37:58+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
