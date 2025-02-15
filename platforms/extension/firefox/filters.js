@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.76.60",
-			"timeUpdated": "2025-02-15T00:37:44+0000",
+			"version": "2.0.76.61",
+			"timeUpdated": "2025-02-15T06:38:02+0000",
 			"languages": [],
 			"tags": [
 				45,
