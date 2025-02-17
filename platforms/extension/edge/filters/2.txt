@@ -1,9 +1,9 @@
-! Checksum: ykKAjEluwormnwAo+g4Ycw
-! Diff-Path: ../patches/2/2-s-1739781825-3600.patch
+! Checksum: z3ZiYGhvWzqDoHHXGKKvUQ
+! Diff-Path: ../patches/2/2-s-1739785407-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.71.89
-! TimeUpdated: 2025-02-17T08:31:34+00:00
+! Version: 2.3.71.90
+! TimeUpdated: 2025-02-17T09:31:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,9 @@
 !
 !
 !
+||signamentswithd.com^$all
+||kdnvieos.my^$all
+||ufbcrgms.com^$all
 ||dsoftzfile.click^$all
 ||lkjpoisjnil.site^$all
 ||dtignite.com^
@@ -34076,7 +34079,8 @@ elektroda.pl#%#//scriptlet("abort-on-property-read", "disablePopup")
 ||elektroda.pl/js/modal.js
 ||elektroda.pl/js/first.js
 ||elektroda.pl/js/welcome.js
-elektroda.pl#?#.container > div > div[class] > section[class] > div[id^="div-gpt-ad-"]:only-child:upward(1)
+elektroda.pl##section[class] > [id]:has(> .text-center:only-child > div[class]:first-child + div[id^="div-gpt-ad-"]:last-child)
+elektroda.pl##.container > div > div[class] > section[class]:has(> div[id^="div-gpt-ad-"]:only-child)
 elektroda.pl###topbb
 elektroda.pl###WelcomeAdContainer
 elektroda.pl###WelcomeAdContainer + #overlay
@@ -34098,17 +34102,17 @@ elektroda.pl##a[href^="https://jlcpcb.com/"] > img
 elektroda.pl##a[href="https://sklep-elwron.pl/"] > img
 elektroda.pl##.text-center > section a[href]:not([href^="https://www.elektroda.pl/"]):not([href^="https://obrazki.elektroda.pl/"]) > img
 elektroda.pl##div:only-child > a[href]:not([href^="https://www.elektroda.pl/"]):not([href^="https://obrazki.elektroda.pl/"]):only-child > img + img[Width="300"]
-elektroda.pl#?#div:only-child > a[href]:not([href^="https://www.elektroda.pl/"]):not([href^="https://obrazki.elektroda.pl/"]):only-child > img:has(+ img[width="300"])
+elektroda.pl##div:only-child > a[href]:not([href^="https://www.elektroda.pl/"]):not([href^="https://obrazki.elektroda.pl/"]):only-child > img:has(+ img[Width="300"])
 elektroda.pl#?#.col-md-8 div a[href="https://czescidodrukarek.pl"] ~ form[action="https://czescidodrukarek.pl/szukaj"]:upward(1)
-elektroda.pl#?#.col-md-8 div[style*="micros"] > div[style] > form[action^="https://www.micros.com.pl/"]:upward(2)
+elektroda.pl##.col-md-8 div[style*="micros"]:has(> div[style] > form[action^="https://www.micros.com.pl/"])
 !+ NOT_OPTIMIZED
-elektroda.pl#?#.the-list > li[class]:not([class="clearfix"]):has(> a[href][target="_blank"][onclick*="Event"])
+elektroda.pl##.the-list > li[class]:not([class="clearfix"]):has(> a[href][target="_blank"][onclick*="Event"])
 !+ NOT_OPTIMIZED
-elektroda.pl#?#.col-md-8 div > form[action^="https://www.tme.eu/pl/katalog/"]:upward(1)
+elektroda.pl##.col-md-8 div:has(> form[action^="https://www.tme.eu/pl/katalog/"])
 !+ NOT_OPTIMIZED
-elektroda.pl#?#.the-content > div[class]:has(> div > a[href][target="_blank"][onclick*="'Patron', 'Click Button'"])
+elektroda.pl##.the-content > div[class]:has(> div > a[href][target="_blank"][onclick*="'Patron', 'Click Button'"])
 !+ NOT_OPTIMIZED
-elektroda.pl#?#.the-post-list > ul > li[class]:not([class="clearfix"]):has(>[id^="div-gpt-ad"])
+elektroda.pl##.the-post-list > ul > li[class]:not([class="clearfix"]):has(>[id^="div-gpt-ad"])
 !+ NOT_OPTIMIZED
 elektroda.pl##.sidebar-wrap > .row > .widgets > .boombox-content > a[href][target="_blank"][onclick*="'Navibox', 'Click', '"]
 !+ NOT_OPTIMIZED
@@ -34116,7 +34120,7 @@ elektroda.pl##a[href]:not([href^="https://www.elektroda.pl/"]) > picture > sourc
 elektroda.pl##.topic-box > div[class] > div > a[href]:not([href^="https://www.elektroda.pl/"])[target="_blank"] > img
 elektroda.pl##.topic-box > div[class] > .sec-b > a[href]:not([href^="https://www.elektroda.pl/"]) > img
 elektroda.pl##.position-relative > .sec-b > a[href]:not([href^="https://www.elektroda.pl/"]) > img
-elektroda.pl#?#.topic-lists > li[class] > .topic-box > .position-relative:has(> .sec-b > div[id^="div-gpt-ad"])
+elektroda.pl##.topic-lists > li[class] > .topic-box > .position-relative:has(> .sec-b > div[id^="div-gpt-ad"])
 elektroda.pl##.container a[class][href*="&utm_medium=banner"]:not([href^="https://www.elektroda.pl/"]):not([href^="https://obrazki.elektroda.pl/"]) > img
 elektroda.pl##.container > section > a[class][href]:not([href^="https://www.elektroda.pl/"]):not([href^="https://obrazki.elektroda.pl/"]) > img
 elektroda.pl##.container .topic-lists .topic-box > div > div > a[class][href]:not([href^="https://www.elektroda.pl/"]):not([href^="https://obrazki.elektroda.pl/"]) > img
@@ -42151,6 +42155,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+pbs.org##.home__logo-pond
+pbs.org##.home__ad
 reit-hentai.com##.code-block:not(:has(.wppsac-slick-slider-wrp))
 pahe.plus##form#link-view > a
 fap-nation.com##div[id^="ai_widget"]
@@ -60868,17 +60874,29 @@ unblocked.*##div[class="hidden-xs hidden-sm"] > div[class$="-bordered"]
 9to5mac.com##.author-affiliate-ad-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193227
 ! https://9to5mac.com/guides/security-bite/
+!+ NOT_OPTIMIZED
 9to5mac.com##:is(.post-content, .extended) > .wp-block-image > a[href^="https://mosyle.net/"] > img
+!+ NOT_OPTIMIZED
 9to5mac.com##.post-content > :is(hr.wp-block-separator, figure.img-border) + p:has(> a[href^="https://mosyle.net/"][target="_blank"][rel])
+!+ NOT_OPTIMIZED
 9to5mac.com##.post-content > hr.wp-block-separator:has(+ p > a[href^="https://mosyle.net/"][target="_blank"][rel])
+!+ NOT_OPTIMIZED
 9to5mac.com##.post-content > :is(hr.wp-block-separator, figure.img-border) + p:has(> a[href^="https://mosyle.net/"][target="_blank"][rel]) + hr.wp-block-separator
+!+ NOT_OPTIMIZED
 9to5mac.com##.article__content > .article__excerpt > p:has(> a[href^="https://mosyle.net/"][target="_blank"][rel])
+!+ NOT_OPTIMIZED
 9to5mac.com##.article__content > .article__excerpt > p:has(> a[href^="https://mosyle.net/"][target="_blank"][rel]) + hr.wp-block-separator
+!+ NOT_OPTIMIZED
 9to5mac.com##.article__content > .article__excerpt > hr.wp-block-separator:has(+ p > a[href^="https://mosyle.net/"][target="_blank"][rel])
+!+ NOT_OPTIMIZED
 9to5mac.com##.article__content > .article__excerpt > .extended > p:has(> a[href^="https://mosyle.net/"][target="_blank"][rel])
+!+ NOT_OPTIMIZED
 9to5mac.com##.article__content > .article__excerpt > .extended > p:has(> a[href^="https://mosyle.net/"][target="_blank"][rel]) + hr.wp-block-separator
+!+ NOT_OPTIMIZED
 9to5mac.com##.article__content > .article__excerpt > .extended > hr.wp-block-separator:has(+ p > a[href^="https://mosyle.net/"][target="_blank"][rel])
+!+ NOT_OPTIMIZED
 9to5mac.com#?##content > .container > p:has(> em:contains(Security Bite))
+!+ NOT_OPTIMIZED
 9to5mac.com###content > div.container > .wp-block-image:has(> a[href^="https://mosyle.net/"])
 !
 ! START: KickassTorrent
