@@ -1,9 +1,9 @@
-! Checksum: hXyJPPvEVON7/BYtleMyMg
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1739803343-3600.patch
+! Checksum: A/xyWa/DqmLao0bYPnTGuA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1739807067-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.17
-! TimeUpdated: 2025-02-17T14:38:36+00:00
+! Version: 2.2.22.18
+! TimeUpdated: 2025-02-17T15:39:21+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1422,6 +1422,10 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
 scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
+forum.nttgame.com#$#.current.blocker.jquery-modal:has(> div#modalCookie) { display: none !important; }
+forum.nttgame.com#$#body { overflow: auto !important; }
+nttgame.com#$##modalCookie { display: none !important; }
+nttgame.com#$##lean_overlay { display: none !important; }
 novabrasilfm.com.br###modal-politicas
 webmotors.com.br##footer + div[class^="_Container"]:has(a[data-qa="cookie-notice-institutional_privacy"])
 evroopt.by#%#//scriptlet('trusted-click-element', 'button[class*="cookies_wrapper_settings"]', '!cookie:ads')
@@ -2436,7 +2440,6 @@ elliberal.com.ar##.bannerCookie
 phase-6.de#%#//scriptlet('set-constant', 'gdrpCookieInfo', 'noopFunc')
 theoceancleanup.com#%#//scriptlet('trusted-set-cookie', 'toc_cookie_consent', 'strictly_necessary')
 vikacg.com##.arco-overlay-notification
-nttgame.com#%#//scriptlet('trusted-set-cookie', 'gnb-cookie-agree', 'agree')
 check24.es#%#//scriptlet('trusted-click-element', '.c24-cookie-consent-notice[style] a[class$="-cookie-consent-button-secondary"], .c24-cookie-consent-screen[style] a.c24-cookie-consent-button[onclick*="saveSelection"]')
 check24.de#%#//scriptlet('trusted-click-element', 'a[class$="-cookie-consent-button-secondary"], a[onclick*="giveMarketingConsent"]', '', '1500')
 mtb-news.de#%#//scriptlet('trusted-click-element', 'div[data-nosnippet="data-nosnippet"] a[href="https://www.mtb-news.de/"][rel="noopener noreferrer"][target="_self"]')
@@ -3968,7 +3971,7 @@ doka.guide$$div[class="cookie-notification"]
 ||std.wpcdn.pl/*/wpjslib-lite.js$domain=benchmark.pl
 pracodawcy.pracuj.pl#$#body { overflow-y: auto !important; }
 console.scaleway.com#$#body { overflow: auto !important; padding-right: 0 !important; }
-developer.confluent.io,nhl.com###onetrust-consent-sdk
+nttgame.com,developer.confluent.io,nhl.com###onetrust-consent-sdk
 worksmile.com##.cookies-component
 narzedzia.pl,oponeo.*,pneus-oponeo.be,banden-oponeo.be,centrumrowerowe.pl###consentsPolicyDialog
 tvtv.ca,tvtv.us##div[class^="MuiSnackbar-root"][role="presentation"]
