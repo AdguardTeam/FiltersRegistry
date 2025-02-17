@@ -1,9 +1,9 @@
-! Checksum: s1cEH8GbEdNUk1t/G6m7Pg
-! Diff-Path: ../patches/2/2-s-1739785420-3600.patch
+! Checksum: til5ICHHud5v52dOAwhzJg
+! Diff-Path: ../patches/2/2-s-1739789373-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.71.90
-! TimeUpdated: 2025-02-17T09:31:36+00:00
+! Version: 2.3.71.91
+! TimeUpdated: 2025-02-17T10:31:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15751,6 +15751,10 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198654
+kapang.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=kapang.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198385
 brisbanedevelopment.com#%#//scriptlet('prevent-setTimeout', 'placebo.height')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198236
@@ -15761,9 +15765,9 @@ unityassetpack.com#%#//scriptlet('remove-node-text', 'script', 'noteAlert')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=unityassetpack.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198046
-15.235.145.185,bestbookbuddies.com,radenku.com,beeduballs.com,ijubes.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
+girisheducation.in,tech-guidance.com,15.235.145.185,bestbookbuddies.com,radenku.com,beeduballs.com,ijubes.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ijubes.com|beeduballs.com|adenku.com|15.235.145.185|bestbookbuddies.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ijubes.com|beeduballs.com|adenku.com|15.235.145.185|bestbookbuddies.com|tech-guidance.com|girisheducation.in
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198028
 ! fly.inc
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ubnem.com
@@ -16161,9 +16165,10 @@ cfx-info.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 cfx-info.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=cfx-info.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/198650
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187854
-||cdn.btmessage.com^$domain=leagueofgraphs.com
-leagueofgraphs.com#%#//scriptlet('set-constant', '__bt_intrnl.aaDetectionResults.ab', 'false')
+||cdn.btmessage.com^$domain=leagueofgraphs.com|mobafire.com
+mobafire.com,leagueofgraphs.com#%#//scriptlet('set-constant', '__bt_intrnl.aaDetectionResults.ab', 'false')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188873
 ||drawize.com/Scripts/ads234.js
 drawize.com#%#//scriptlet('set-constant', 'recreateAds', 'noopFunc')
