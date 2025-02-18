@@ -1,9 +1,9 @@
-! Checksum: XfMdp8TEL0YXL4CYPwkmfQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1739904095-3600.patch
+! Checksum: 0YA6K2TqJr0mVbo3gq58Lw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1739907694-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.27
-! TimeUpdated: 2025-02-18T18:37:38+00:00
+! Version: 2.2.22.28
+! TimeUpdated: 2025-02-18T19:37:45+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1424,6 +1424,9 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
 scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
+twitter.com,x.com#$#html[style*="overflow"] { overflow: auto !important; }
+twitter.com,x.com#$##layers:has(div[role="dialog"] div[role="group"] a[href^="https://privacy.twitter.com"]) { display: none !important; }
+stema.de###cookie-consent-target
 sabah.comtr##.kvkk-info-box
 bed-and-breakfast.it###cookiePolicy_barra
 game.evroopt.by##section[class^="_cookies_"]
@@ -20790,6 +20793,7 @@ terabox.com##.coupon-Popup-box
 spiderum.com##spiderum-ads
 zerohedge.com##div[class^="PromoBanner_"]
 renosy.com##.floatBanner
+twitter.com,x.com##div[aria-label] > div[class]:only-child > div[class]:only-child > div[class]:not([class*=" "]):has(> div[style="display: none !important;"])
 wcostream.tv##td[Width="160"][height="900"][align="left"]
 okmusi.com##.footer-banner
 mrdeepfakes.com##.top-line > a.text-gold
@@ -24259,6 +24263,9 @@ vinmec.com##.global-thread-create-cta
 @@||static.elfsight.com^$third-party,domain=cafemarta.ch|trestlebrewing.com|taube-rankweil.at|savearizonafund.com|avproedge.com|spiceandcurry.ca|keenetic.com.tr
 @@||code.jivo.ru/widget/$domain=coffee-tea-bravos.ru
 @@||components.justanswer.com^$domain=justanswer.co.uk|justanswer.es|justanswer.de|justanswer.jp
+gall.dcinside.com##.dctrend_ranking
+gall.dcinside.com##.r_dcmedia
+||dctrend.ai/widget^$third-party
 fontech.startitup.sk##div[class^="fon-plista_widget_"]
 otv.co.jp##.o_recommend__together
 otv.co.jp##.o_recommend

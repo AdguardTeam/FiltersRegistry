@@ -1,8 +1,8 @@
-! Checksum: Lw+aUGtnk+z01XkXRQ9iFQ
+! Checksum: uLHc3TV6ZgZzNSZAL2u87g
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.27
-! TimeUpdated: 2025-02-18T18:37:38+00:00
+! Version: 2.2.22.28
+! TimeUpdated: 2025-02-18T19:37:45+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2479,6 +2479,9 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+twitter.com,x.com#$#html[style*="overflow"] { overflow: auto !important; }
+twitter.com,x.com#$##layers:has(div[role="dialog"] div[role="group"] a[href^="https://privacy.twitter.com"]) { display: none !important; }
+stema.de###cookie-consent-target
 sabah.comtr##.kvkk-info-box
 bed-and-breakfast.it###cookiePolicy_barra
 game.evroopt.by##section[class^="_cookies_"]
@@ -49056,6 +49059,7 @@ weedleteam.com##.kickstarter-visible
 renosy.com##.floatBanner
 inzynieria.com##.partners-top
 twitter.com,x.com##div[data-testid="primaryColumn"] nav[aria-live][role="navigation"] + div[class]:has(> div > div[role="status"] > div > div > a[href="/i/premium_sign_up"][style^="text-overflow:"])
+twitter.com,x.com##div[aria-label] > div[class]:only-child > div[class]:only-child > div[class]:not([class*=" "]):has(> div[style="display: none !important;"])
 wcostream.tv##td[width="160"][height="900"][align="left"]
 okmusi.com##.footer-banner
 mrdeepfakes.com##.top-line > a.text-gold
@@ -56754,6 +56758,9 @@ indoxxi.show##.tawkto-btn
 !
 !   SECTION: Widgets - Suggestion widgets
 !
+gall.dcinside.com##.dctrend_ranking
+gall.dcinside.com##.r_dcmedia
+||dctrend.ai/widget^$third-party
 fontech.startitup.sk##div[class^="fon-plista_widget_"]
 otv.co.jp##.o_recommend__together
 otv.co.jp##.o_recommend
