@@ -1,9 +1,9 @@
-! Checksum: EtkoeiMGKDSI1c8OxSeMlg
-! Diff-Path: ../patches/19/19-s-1739875336-3600.patch
+! Checksum: w7E34wN6wPAxoBzK+MXvEQ
+! Diff-Path: ../patches/19/19-s-1739879241-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.50.59
-! TimeUpdated: 2025-02-18T10:37:51+00:00
+! Version: 2.0.50.60
+! TimeUpdated: 2025-02-18T11:41:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4377,6 +4377,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
+cs.money#$#body { overflow: auto !important; }
+cs.money#$#.current.blocker.jquery-modal:has(> div#modal_see_also) { display: none !important; }
 t-online.de##.transition-opacity
 t-online.de##.z-overlay-content
 book-ye.com.ua##.free-del-wrapper
@@ -5400,11 +5402,9 @@ slickdeals.net##.welcomeToast
 byjus.com##.announcement-banner-wrap
 prepp.in#%#//scriptlet('trusted-set-cookie', 'ldCookie', 'closed')
 gocomics.com##.amu-container-alert
-uol.com.br,elperiodicoextremadura.com,laopiniondemalaga.es#$?#body > div.tp-modal:has(> div.tp-iframe-wrapper > iframe[id^="offer_"]) { display: none !important; }
-uol.com.br,elperiodicoextremadura.com,laopiniondemalaga.es#$#.tp-backdrop { display: none !important; }
-uol.com.br,elperiodicoextremadura.com,laopiniondemalaga.es#$#html { overflow: auto !important; touch-action: auto !important; }
-uol.com.br#$#html > body[class]:not([class^="amp-"]) { overflow: auto !important; touch-action: auto !important; height: auto !important; }
-uol.com.br#$#html > body[class^="amp-"] { overflow: auto !important; touch-action: auto !important; }
+elperiodicoextremadura.com,laopiniondemalaga.es#$?#body > div.tp-modal:has(> div.tp-iframe-wrapper > iframe[id^="offer_"]) { display: none !important; }
+elperiodicoextremadura.com,laopiniondemalaga.es#$#.tp-backdrop { display: none !important; }
+elperiodicoextremadura.com,laopiniondemalaga.es#$#html { overflow: auto !important; touch-action: auto !important; }
 elperiodicoextremadura.com,laopiniondemalaga.es#$#html > body[class] { overflow: auto !important; touch-action: auto !important; height: auto !important; }
 laopiniondemalaga.es###fmegaPiano
 ytv.co.jp##.delivery_bnr
@@ -6571,8 +6571,6 @@ angfa.jp##.footer__cv
 news.com.au##.vms-player.vms-sticky
 news.com.au##.vms-sticky-close
 ||pb-news.info/wp-content/themes/jnews/assets/*/remodal
-baumarkt.check24.de#$#body[style*="overflow"] { overflow: auto !important; }
-baumarkt.check24.de#$##app-points-campaign-desktop { display: none !important; }
 fitsmallbusiness.com##.fit-omv2-campaign-popup
 smallseotools.com###FITS_con
 fontanka.ru##div[data-sticky-id="bottomStickyElement"]
@@ -12910,6 +12908,9 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+daily.afisha.ru##.infinite-scroll-component > div[class^="SocialPlate_Container"]
+velo.outsideonline.com##.tm-o-toast:has(> .tm-o-toast__follow-button)
+social1.ne10.uol.com.br##.article-utilities-google-news
 redgol.cl##.whatsapp-link
 24chasa.bg##.newsletter-cont
 abc.es###sectionCintilloABC
