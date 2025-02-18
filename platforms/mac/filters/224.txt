@@ -1,8 +1,8 @@
-! Checksum: v5WkfXzz/uwbXgt5Q0wNcQ
+! Checksum: GC6RHYPcVUb0L0ZRd835LA
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.31.75
-! TimeUpdated: 2025-02-18T16:38:46+00:00
+! Version: 2.1.31.76
+! TimeUpdated: 2025-02-18T17:39:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -472,10 +472,16 @@ bde4.icu#%#//scriptlet("set-constant", "canRunAds", "true")
 yodu.org#$##byspider { display: none !important; }
 yodu.org#$#body[style] { overflow: auto !important; }
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,domain=yodu.org
+! https://github.com/AdguardTeam/AdguardFilters/issues/198844
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107446
+linovelib.com#$#:is(#volume-list, #TextContent) { display: block !important; }
+linovelib.com#$#.dag + div[class]:not([id]) { display: none !important; }
+linovelib.com#$##mlfy_main_text > div[class]:not([id]) { display: none !important; }
+linovelib.com#$#.adblock-tips { display: none !important; }
 linovelib.com#$##byspider { display: none !important; }
 linovelib.com#$#body[style] { overflow: auto !important; }
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,domain=linovelib.com,important
+linovelib.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'adBlock')
 linovelib.com#%#//scriptlet('set-constant', 'adblock', '0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164798
 ! https://github.com/uBlockOrigin/uAssets/issues/10953

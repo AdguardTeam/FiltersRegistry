@@ -1,9 +1,9 @@
-! Checksum: 1t8DfCIHvw+rCfP7PvJEQg
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1739871812-3600.patch
+! Checksum: hrLLY5jKDmojIzgZ3zNOTA
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1739900627-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.75
-! TimeUpdated: 2025-02-18T09:31:12+00:00
+! Version: 2.0.97.76
+! TimeUpdated: 2025-02-18T17:31:18+00:00
 ! Expires: 12 hours (update frequency)
 /nadavi-api/?p4g3=js/api/widget.js
 ||aj*.bid/*?vpaid=$xmlhttprequest
@@ -6734,6 +6734,7 @@ vk.com,vk.ru##div#left_ads
 vk.com,vk.ru##div[data-ad]
 !+ PLATFORM(windows, mac, android)
 feed$domain=vk.com|vk.ru,xmlhttprequest,replace=/banner:/bann_er:/
+vk.com,vk.ru#%#//scriptlet('trusted-replace-xhr-response', '/banner:/g', '_banner:', 'feed')
 ivi.ru###root > div.promo
 ||region.dfs.ivi.ru^$media,domain=ivi.ru
 otzovik.com##.produkt-cobtent div.product-nav-wrap + div[class] ~ div[class]:not([style]):not([class="bottom-row"])

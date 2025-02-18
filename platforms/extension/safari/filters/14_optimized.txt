@@ -1,9 +1,9 @@
-! Checksum: G6IrsGONB+rSkPktaIlLdw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1739896975-3600.patch
+! Checksum: 31O9f55Irph3tVXfJx+JIQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1739900607-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.25
-! TimeUpdated: 2025-02-18T16:38:30+00:00
+! Version: 2.2.22.26
+! TimeUpdated: 2025-02-18T17:39:15+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -9468,7 +9468,6 @@ m.dzen.ru##div[aria-label="Лента Дзена"] div + article[class*="--card-
 dzen.ru##div[class^="float-interview__float-"]
 [$path=/video]dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.rtb', 'undefined')
 [$path=/video]dzen.ru##div[class*="item-info__videoViewerItemInfo-"] + div:not([class])
-vk.com,vk.ru#%#//scriptlet('trusted-replace-xhr-response', '/banner:/g', '_banner:', 'feed', 'true')
 rambler.ua,rambler.ru#%#//scriptlet('set-cookie', '_blocker_hidden', '1')
 !#safari_cb_affinity(general)
 rambler.ua,rambler.ru#@#.ad
@@ -10912,8 +10911,8 @@ promote.telegram.org#@#.text-ad-links
 promote.telegram.org#@#.ads-header
 promote.telegram.org#@#.ads-content
 !#safari_cb_affinity
-aternos.org#$#.placement { transform: rotate3d(1, 1, 0, 90deg) !important; }
-aternos.org#$#.header-link-exaroton-link { transform: rotate3d(1, 1, 0, 90deg) !important; }
+aternos.org#$#.header-link-exaroton-link > div > div { transform: rotate3d(1, 1, 0, 90deg) !important; pointer-events: none !important; }
+aternos.org#$#.header-link-exaroton-link { background-color: unset !important; }
 @@||aternos.org^$generichide
 !#safari_cb_affinity(general)
 @@||securepubads.g.doubleclick.net/gampad/ads?pvsid=$domain=aternos.org
