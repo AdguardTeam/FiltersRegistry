@@ -1,9 +1,9 @@
-! Checksum: qr3VD/tX90pt/E+v9heNJw
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1739783211-14400.patch
+! Checksum: CC+XOD15+9lQE9g/y+Fj4w
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1739869657-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.20.50
-! TimeUpdated: 2025-02-17T09:01:52+00:00
+! Version: 2.0.20.51
+! TimeUpdated: 2025-02-18T09:01:58+00:00
 ! Expires: 10 days (update frequency)
 ||recoshopping.naver.com^
 ||ad-creative.pstatic.net^
@@ -502,6 +502,8 @@
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
+||biz.sbs.co.kr/ad/article/
+||wimg.heraldcorp.com/svc/banner/
 ||product.kyobobook.co.kr/api/gw/onk/ad/
 ||eyejokerdb.com/assets/banners/
 ||www.naver.com/nvhaproxy/*/lazy?*&target=PC-MEDIA-SHOPPING-TODAY
@@ -1294,6 +1296,8 @@
 ||loader.fmkorea.com/_loader/
 ||ssl.pstatic.net/tveta/libs/
 ||vclock.kr/inf0/hot.php^
+||xn--hy1bm2ltmr.com/img/banner/
+||xn--9i2bm5b28j1sr.com/img/banner/
 /^https:\/\/aniwolf\.com\/storage\/[A-Za-z0-9]+\./$domain=aniwolf.*
 ||hoduhodu.com/_next/image?url=https%3A*.hoduhodu.com%2Fbanner%2F%
 ||mzgtoon.com/_next/image?url=https%*.mzgtoon.com%2Fbanner%2F%
@@ -1514,6 +1518,17 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+ohmynews.com##.aside > div[style^="height:"]
+dealsite.co.kr##a[class^="main-banner"]
+m.humoruniv.com###read > div[style*="z-index"]:not([class],[id],[style="clear:both;"])
+m.humoruniv.com###read > div[id]:has(> p[class=""]:first-child + div[id*="_div"])
+m.humoruniv.com##body > #read_ok_desc_div ~ div[id][style^="min-height:"]
+m.humoruniv.com##body #comment div[id]:has(> div[id] > img[src^="/images/zdr.gif"])
+m.humoruniv.com###pnut_ad_bottom
+m.humoruniv.com##div[id][style^="min-height"]:empty
+m.humoruniv.com##body > span[id]:has(> div[class]:first-child > div[class]:only-child > table img + div > span[onclick])
+m.cgv.co.kr##.payAd
+m.megabox.co.kr##.login-easy
 edaily.co.kr###manyview_info
 edaily.co.kr##div[style][class^="boxshow_"]
 edaily.co.kr##.weekend_news
@@ -1562,6 +1577,7 @@ zod.kr##.app-main-banner
 isplus.com##.rightEnd > .section_inner > div[style]
 boardlife.co.kr##.promote-box
 dcinside.com##.trend-rank
+dcinside.com##iframe[src^="https://tm.interworksmedia.co.kr"]
 gall.dcinside.com##tr[data-type="icon_fnews"]
 gnu.kilho.net##div[id^="detect"]
 moneypin.biz##.flex > a[href][target="_blank"]
@@ -3084,6 +3100,7 @@ spotv120.com,spotv121.com,spotv122.com,spotv123.com,spotv124.com,spotv125.com,sp
 newtoki466.com,newtoki467.com,newtoki468.com,newtoki489.com,newtoki490.com,newtoki491.com,newtoki492.com,newtoki493.com,newtoki494.com,newtoki495.com,newtoki496.com,newtoki497.com,newtoki498.com#$#body { overflow: auto !important; }
 2cpu.co.kr#$#header .row[style] { margin-bottom: 35px !important; }
 sign.dcinside.com#$#.login_inputbox { width: 100% !important; }
+m.search.naver.com##li:matches-attr("/-doc-id$/"="*_nad-*")
 namu.wiki#?##app div[class*=" "] > div[class*=" "]:is(:has(div[id][class]:empty), :has(iframe[id^="google_ads_iframe_"])):matches-css(margin-bottom: /[0-9]{2,}/)
 news.tvchosun.com#?#.rnb > .rnb_cont:matches-css(height: 0px):matches-css(padding-top: 30px)
 humorpick.com#?#.item-list > .on:has(.ad-wrap-text)
