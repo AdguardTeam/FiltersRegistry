@@ -2,7 +2,7 @@
 	"groups": [
 		{
 			"groupId": 1,
-			"groupName": "Ad Blocking",
+			"groupName": "Ad blocking",
 			"displayNumber": 1
 		},
 		{
@@ -12,7 +12,7 @@
 		},
 		{
 			"groupId": 3,
-			"groupName": "Social Widgets",
+			"groupName": "Social widgets",
 			"displayNumber": 3
 		},
 		{
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.71.99",
-			"timeUpdated": "2025-02-18T11:31:45+0000",
+			"version": "2.3.72.0",
+			"timeUpdated": "2025-02-18T12:31:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.80.67",
-			"timeUpdated": "2025-02-18T11:41:09+0000",
+			"version": "2.0.80.68",
+			"timeUpdated": "2025-02-18T12:37:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.11.18",
-			"timeUpdated": "2025-02-18T10:37:13+0000",
+			"version": "2.1.11.19",
+			"timeUpdated": "2025-02-18T12:37:51+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.62.20",
-			"timeUpdated": "2025-02-18T11:41:24+0000",
+			"version": "2.0.62.21",
+			"timeUpdated": "2025-02-18T12:38:02+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.22.21",
-			"timeUpdated": "2025-02-18T11:41:46+0000",
+			"version": "2.2.22.22",
+			"timeUpdated": "2025-02-18T12:38:22+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.76.71",
-			"timeUpdated": "2025-02-18T09:38:29+0000",
+			"version": "2.0.76.72",
+			"timeUpdated": "2025-02-18T12:38:23+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/16_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.29",
-			"timeUpdated": "2025-02-18T09:38:33+0000",
+			"version": "2.0.50.30",
+			"timeUpdated": "2025-02-18T12:38:26+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.55",
-			"timeUpdated": "2025-02-18T11:41:53+0000",
+			"version": "2.0.56.56",
+			"timeUpdated": "2025-02-18T12:38:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.60",
-			"timeUpdated": "2025-02-18T11:41:55+0000",
+			"version": "2.0.50.61",
+			"timeUpdated": "2025-02-18T12:38:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -787,8 +787,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.30.75",
-			"timeUpdated": "2025-02-18T11:41:56+0000",
+			"version": "2.0.30.76",
+			"timeUpdated": "2025-02-18T12:38:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.31.71",
-			"timeUpdated": "2025-02-18T11:42:04+0000",
+			"version": "2.1.31.72",
+			"timeUpdated": "2025-02-18T12:38:38+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
