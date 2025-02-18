@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Tx0Dd5buve8aPVEYFwdzrw
-! Diff-Path: ../patches/224/224-s-1739800118-3600.patch
+! Checksum: i2P7sHzghGhNsPSssabGBA
+! Diff-Path: ../patches/224/224-s-1739871791-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.31.69
-! TimeUpdated: 2025-02-17T13:38:53+00:00
+! Version: 2.1.31.70
+! TimeUpdated: 2025-02-18T09:38:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -516,11 +516,13 @@ pansci.asia#@#.ad-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166247
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120356
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26883
+linetv.tw##+js(set-constant, google_tag_manager, {})
 linetv.tw##+js(no-xhr-if, pagead2.googlesyndication.com)
-linetv.tw##+js(no-fetch-if, pagead2.googlesyndication.com)
+linetv.tw##+js(no-fetch-if, /pagead2\.googlesyndication\.com|\/fbevents\.js/)
 linetv.tw##+js(set-constant, google.ima.AdError, noopFunc)
 linetv.tw##.aspect-ratio > img.object-cover + .aspect-ratio-content + div[class^="absolute inset-"][class*="bg-linetv"][class*="-emphasis"]
 ||itad.linetv.tw/api/v2/vmap?ad_id=$xmlhttprequest,redirect=noop.txt
+||connect.facebook.net/en_US/fbevents.js$script,redirect=noop.js,domain=linetv.tw
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,important,domain=linetv.tw
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=linetv.tw
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30495
@@ -4911,6 +4913,12 @@ newduba.cn###jq_youxi
 ||67.21.92.*.gif
 ||cnzz.trafficmanager.net^
 ||cupfox.app^$third-party
+||zavgrj.icu^
+||stogmos.com^
+||zooj.cn^$third-party
+||xkp.cc^$third-party
+||lclqbh.icu^
+||qnhi.cn^
 ||aegzoils.com^
 ||bxzlfr.icu^
 ||shudi8.com^

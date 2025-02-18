@@ -1,8 +1,8 @@
-! Checksum: g4M4cyhl6g+TuX6IrCIEIw
+! Checksum: Sa9nzUCCxuwHT/PL7Kyl7g
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.74
-! TimeUpdated: 2025-02-17T13:31:16+00:00
+! Version: 2.0.97.75
+! TimeUpdated: 2025-02-18T09:31:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4175,6 +4175,7 @@ http://w7.ru^$third-party
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||auraodin.com^
 ||ssp.rutube.ru^
 ||media-advcycle.imgsmail.ru^
 ||sdk.kokocads.com^$third-party
@@ -7730,6 +7731,11 @@ chehov-vid.ru,161.ru,prufy.ru,ysia.ru,5koleso.ru,ngs.ru,i38.ru,chita.ru,lenta.ru
 !
 !
 !
+vtomske.ru##.sidebar > div:has(> div.sidebar_block > div.i-smi2)
+vtomske.ru#?#.mb-20:has(> div.container-md > h2:contains(Смотрите также))
+||fayllar1.ru/player/*roll*.xml
+||fayllar1.ru/catfish/
+asilmedia.org##.Catfish
 fastpic.org#%#//scriptlet('abort-current-inline-script', 'addEventListener', 'adManager')
 fastpic.org#%#//scriptlet('abort-on-property-read', 'exoNoExternalUI38djdkjDDJsio96')
 ||fastpic.org/view/$script
@@ -18563,6 +18569,7 @@ vk.com,vk.ru###apps_ads_wrap
 vk.com,vk.ru###system_msg
 vk.com,vk.ru##div#left_ads
 vk.com,vk.ru##div[data-ad]
+!+ PLATFORM(windows, mac, android)
 feed$domain=vk.com|vk.ru,xmlhttprequest,replace=/banner:/bann_er:/
 ! vk.com,vk.ru#%#//scriptlet('trusted-replace-xhr-response', '/banner:/g', '_banner:', '.php', 'true')
 ! vk.com,vk.ru###feed_rows > div[class="feed_row "] > div[class^="feed_repost-"]:has(div[class="wall_marked_as_ads"])
