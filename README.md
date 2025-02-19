@@ -113,7 +113,13 @@ we follow these rules:
       e.g. `["ios", "ext_safari"]`. If you need to compile the filter for all platforms remove this property.
 
     > ⚠️ **Warning**:
-    > Both `platformsIncluded` and `platformsExcluded` should not be set in filter's metadata simultaneously.
+    >
+    > 1. Both `platformsIncluded` and `platformsExcluded` should not be set in filter's metadata simultaneously.
+    > 1. `deprecated` and `disabled` flags are not the same:
+    >    - If you want to leave the filter available but believe it is no longer relevant
+    >      and probably will be removed later, use the `deprecated` flag.
+    >    - If you want to remove the filter from the registry and stop building it,
+    >      use the `disabled` metadata flag with the `obsolete` tag.
 
     <details>
         <summary>Metadata example</summary>
