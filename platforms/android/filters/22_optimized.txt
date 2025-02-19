@@ -1,5 +1,5 @@
-! Checksum: 00FJ9KFwUowcsk8MxnTPAQ
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1739907685-3600.patch
+! Checksum: xr9iVPwHTiuXOq1UMwGfcg
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1739932858-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.11.11
@@ -27,7 +27,6 @@
 .jp/rss.htm$subdocument,~third-party
 .net/rss.htm$subdocument,~third-party
 .com/rss/$subdocument,~third-party
-||blog-rss.com^$third-party
 ||blog.livedoor.jp/plugin/ldblog_rss_plugin.js
 ||tanganrss.com^$third-party
 ||fukugan.com^$third-party
@@ -190,7 +189,6 @@ tousatu-ch.net###foot-in
 minkch.com##.click-drawing-container + div.yarpp-related-website
 minkch.com##.click-drawing-container + div.yarpp-related-website ~ li
 minkch.com###execphp-5
-tousatusin.com##footer div[id^="text-"]:has(div.ninja-recommend-block)
 umaumanews.com###st_custom_html_widget-3
 umaumanews.com###text-20
 comic.nan-net.com##.rssreader
@@ -296,6 +294,9 @@ jumpmatome2ch.biz##.rss02
 gameleaks.org###pc_text-57
 kannyu.blog.jp##.rssWrapper
 himasoku.com#?#.article-body-more > span[style]:contains(おすすめ記事)
+vipnews.jp#?#.article-body-more > div[class]:contains(おすすめ記事)
+vipnews.jp#?#.plugin-memo:has(> div.sidetitlebody > div.sidetitle:contains(/おすすめ記事|2ちゃんねるの最新ネタ！/))
+vipnews.jp#?#.article-body-more > div[style^="text-align:"]:has(> b > span:contains(以下人気記事もよく読まれております))
 inazumanews2.com##.link01
 inutomo11.com##.article-body-more > script ~ b
 inutomo11.com##.article-body-more > script ~ br
@@ -354,6 +355,7 @@ crx7601.com##.section2
 kotaro269.com###content-top-news
 geinoutopics-plus.blog.jp,ideal2ch.livedoor.biz,2chopmt.blog.jp##.rss-blogroll2
 ysokuhou.blog.jp##.name2
+ysokuhou.blog.jp##div[style="padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;"]
 xn--eckybzahmsm43ab5g5336c9iug.com##div[role="complementary"] > #custom_html-11
 netouyonews.net##div[id^="head_rss"]
 netouyonews.net##div[id^="mid_rss"]
@@ -557,6 +559,7 @@ pokemonbbs.com###rss_pc
 ikarishintou.com###rss_area
 ikarishintou.com##.RSScon
 uwakich.com##.links-navy1
+||basketballbbs.com/wp/wp-content/uploads/nbakijisita.rss
 ||kasegeru.blog.jp/iframe_kijisita.html
 gfoodd.com##.box_group ~ div.singleh4
 gfoodd.com##.box_group ~ br
@@ -564,6 +567,7 @@ gfoodd.com#?#.code-block > div.sponserdrink:contains(RSS)
 marasoku.info##.rss_ninja_title
 marasoku.info##iframe[src^="http://marasoku.info/rss_"]
 news4wide.net##.box-antenna
+vipnews.jp##.custom-rss-container
 /rss_$subdocument,domain=eegg.fun
 ||eegg.fun/rssline.html
 eegg.fun#?#.contents_main_area > div.innerframe:has(iframe[id^="frm_rss_"])
@@ -1000,6 +1004,7 @@ vinmec.com##.global-thread-create-cta
 ||plusinbound.hachidori.io/operators/js_chat.js
 ||s.9111s.ru/*/js/robot_chat/addQ_chat.js
 ||s.acquire.io/*/init.js
+||s.blamper.ru/js/app/widgets/common/FakeChat/
 ||my.salesforce.com/embeddedservice/*/esw.min.js
 ||salesforceliveagent.com^$domain=liquidweb.com|intimissimi.com
 ||salesiq.zoho.com/widget
@@ -1143,6 +1148,7 @@ sklum.com##.oct8ne-btn
 ||selcdn.net/chatBot.js
 ||service.force.com/embeddedservice/*/esw.min.js
 ||smartsuppchat.com/loader.js
+||studlancer.net/images/chat/studlancer_form.js
 @@||config.gorgias.chat^$domain=thefeed.com
 @@||client.crisp.chat^$domain=journey.cloud
 @@||service.force.com/embeddedservice/*/esw.min.js$domain=microchip.com|visible.com|playstation.com|cyberpowersystems.com|lego.com|support.sonos.com
@@ -1335,6 +1341,7 @@ inmediahk.net##section[role="main"] a[href="https://www.inmediahk.net/supportus"
 inmediahk.net##.banner-wrapper
 inmediahk.net##.donate-form
 novayagazeta.eu#?#main > header ~ div[class]:not([id]):has(> svg + div[class] a[href^="/donate?"])
+damninteresting.com##.plea
 grist.org##.wp-block-article-donation
 ||helpukrainewinwidget.org/cdn/widget.js
 scroll.in##.floating-contribute-block
