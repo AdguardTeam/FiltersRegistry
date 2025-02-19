@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: oLcjK2HEO3Hmu44/CXHwNg
-! Diff-Path: ../patches/2/2-s-1739954481-3600.patch
+! Checksum: QHmNjeiCQCuiUZCYI883UA
+! Diff-Path: ../patches/2/2-s-1739958151-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.72.10
-! TimeUpdated: 2025-02-19T08:31:29+00:00
+! Version: 2.3.72.11
+! TimeUpdated: 2025-02-19T09:31:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15149,6 +15149,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198911
+mastkhabre.com###adblock-overlay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198612
 vinomo.xyz##+js(json-prune, AffiliateAdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198654
@@ -37309,9 +37311,9 @@ gpucheck.com##+js(set-constant, myAdManager, {})
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175480
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159332
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148909
-jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top##+js(addEventListener-defuser, click, Set_Popup)
-jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top##+js(set-constant, Set_Popup, 2)
-jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top,hindimoviestv.com##+js(window.open-defuser, /^(?!.*(\/d\/)).*$/)
+boosteradx.online,jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top##+js(addEventListener-defuser, click, Set_Popup)
+boosteradx.online,jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top##+js(set-constant, Set_Popup, 2)
+boosteradx.online,jeansaispasplus.homes,moviesapi.club,vectorx.top,boltx.stream,bestx.stream,watchx.top,hindimoviestv.com##+js(window.open-defuser, /^(?!.*(\/d\/)).*$/)
 hindimoviestv.com##+js(abort-on-property-read, PopShow3)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148849
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148687
@@ -41591,6 +41593,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+stocktwits.com##div[class^="Primis_container_"]
+stocktwits.com##div[class*="_adClass_"]
+stocktwits.com##div[class*="_adClass_"] + p[class*="Disclosure_disclosure"]:has(> span > a[class*="_removeAdsLink_"])
 play.upns.live##+js(abort-current-script, EventTarget.prototype.addEventListener, Popunder)
 twitter.com,x.com##div[data-testid="eventHero"]:first-child
 twitter.com,x.com##div[data-testid="eventHero"]:first-child + div:last-child
@@ -58154,7 +58159,7 @@ thegamingwatcher.com#?##blip > div[style*="border-bottom:"]:has(> .adsbygoogle)
 whatismyipaddress.com#?#.fl-page-content > .fl-builder-content > .fl-row > .fl-row-content-wrap:has(#whatismyipaddress_billboard_mid)
 app.mobalytics.gg#?##container > div > aside > div[class] > div[class]:has(> div[class] > header > div > span:contains(/^Advertisement$/))
 apnews.com#$?#.Page-header-leaderboardAd { remove: true; }
-jeansaispasplus.homes,vidstreaming.xyz,boosterx.stream,filmcdn.top,moviesapi.club,vidlop.com,vectorx.top,mov18plus.cloud,forplayx.ink###video_player ~ div[id]:has(> div[style^="position:fixed;inset:0px;z-index"] > a[target="_blank"])
+boosteradx.online,jeansaispasplus.homes,vidstreaming.xyz,boosterx.stream,filmcdn.top,moviesapi.club,vidlop.com,vectorx.top,mov18plus.cloud,forplayx.ink###video_player ~ div[id]:has(> div[style^="position:fixed;inset:0px;z-index"] > a[target="_blank"])
 eporner.com#?#.mb:has(> .adnative-1x1)
 independent.co.uk#?##main > div:has(> div[data-mpu])
 reuters.com#?#div[class^="regular-article-layout__refinitiv_workspace"]:has(> div[class] > a img[class^="workspace-article-banner"])
@@ -59423,7 +59428,7 @@ toolslib.net#?#[class="col-lg-4 col-md-6 col-sm-6"]:has(.custom > div.custom-lab
 camwhores.tv#$?#body > div[style*="position"][style*="box-shadow"]:has(> a[href^="https://t.hrtyj.com/"]) { position: absolute!important; left: -3000px!important; }
 amazon.*#?#.s-widget > [data-cel-widget^="MAIN"] > [data-cel-widget^="tetris"] > div[id^="CardInstance"][class^="_tetris-"]:upward(3)
 amazon.in#?#.s-result-item div[class^="_multi-card-creative-desktop_Container_container__"][data-card-metrics-id]:has(> div[class^="_multi-card-creative-desktop_DesktopContainer_adLabelContainer__"])
-bleepingcomputer.com#?##ips_Posts > .post_block:has(div.apb)
+bleepingcomputer.com###ips_Posts > .post_block:has(div.apb)
 wolframclient.net#?#.post-content > div:has(ins.adsbygoogle)
 windows10gadgets.pro#?#.content-box > .row > .col-1-4:has(>.wrap-col > .item-content > .adsbygoogle)
 royalroadl.com#?#.portlet-body > h6.bold:contains(Advertisement)
@@ -59529,7 +59534,7 @@ kickass.love#?#td[width="100%"] > div:not([class]):not([id]) > style + div[id]:h
 kickassz.com#?#td[width="100%"] > style + div[id]:has(> div[id] > a[href="/k/?q=q"][target="_blank"])
 kickassz.com#?#.commentsLeftModule > style + div[id]:has(> div[id] > a[href="/k/?q=q"][target="_blank"])
 kickassz.com#?#td[width="100%"] > div:not([class]):not([id]) > style + div[id]:has(> div[id] > a[href="/k/?q=q"][target="_blank"])
-bleepingcomputer.com#?#.cz-post-comment-wrapp + .cz-related-article-wrapp:has(> .adsbygoogle)
+bleepingcomputer.com##.cz-post-comment-wrapp + .cz-related-article-wrapp:has(> .adsbygoogle)
 nsfwyoutube.com#?#.embed-container > h2:contains(Watch the Featured Video of the Day)
 vivatube.com#?#.container.mt15 > .c-title:has(> .c-normtitle-output:contains(Reklam))
 ccn.com#?#.theiaStickySidebar > #text-31:has(> .widget-title:contains(Advertisement))
@@ -60531,6 +60536,10 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 !
 !
 !
+!+ NOT_OPTIMIZED
+bleepingcomputer.com##ul#bc-home-news-main-wrap > li:has(> div > ul > li > a[rel="noopener sponsored"])
+!+ NOT_OPTIMIZED
+bleepingcomputer.com#?#ul#bc-home-news-main-wrap > li:contains(Sponsored)
 !+ NOT_OPTIMIZED
 tvline.com##div[data-component="featured-media"]
 !+ NOT_OPTIMIZED
