@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.72.13",
-			"timeUpdated": "2025-02-19T11:31:55+0000",
+			"version": "2.3.72.14",
+			"timeUpdated": "2025-02-19T12:31:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -493,8 +493,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/8.txt",
 			"trustLevel": "full",
-			"version": "2.0.7.70",
-			"timeUpdated": "2025-02-18T09:38:11+0000",
+			"version": "2.0.7.71",
+			"timeUpdated": "2025-02-19T12:38:55+0000",
 			"deprecated": false,
 			"languages": [
 				"nl"
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.42",
-			"timeUpdated": "2025-02-19T08:37:10+0000",
+			"version": "2.0.58.43",
+			"timeUpdated": "2025-02-19T12:39:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.22.37",
-			"timeUpdated": "2025-02-19T11:40:57+0000",
+			"version": "2.2.22.38",
+			"timeUpdated": "2025-02-19T12:39:13+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.76.75",
-			"timeUpdated": "2025-02-19T06:37:57+0000",
+			"version": "2.0.76.76",
+			"timeUpdated": "2025-02-19T12:39:14+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.33",
-			"timeUpdated": "2025-02-19T09:38:28+0000",
+			"version": "2.0.50.34",
+			"timeUpdated": "2025-02-19T12:39:17+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.66",
-			"timeUpdated": "2025-02-19T11:41:05+0000",
+			"version": "2.0.50.67",
+			"timeUpdated": "2025-02-19T12:39:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
