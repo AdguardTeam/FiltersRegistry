@@ -85,8 +85,12 @@ we follow these rules:
     - `timeAdded` — number, time when this filter was added to the registry; milliseconds since January 1, 1970;
       you can exec `new Date().getTime()` in the browser console to get the current time.
     - `homepage` — string, filter website or homepage.
-    - `deprecated` — optional, boolean, filter is deprecated and should not be used by the products,
-      but filter is still available, i.e. not removed.
+    - `deprecated` — optional, boolean, filter is *deprecated* but still available and being built as usual,
+      i.e. **not removed**. The flag shows that the filter list is no longer relevant
+      and should not be used by the products.
+      Final decision what to do with such filter is up to the product, e.g. simple hiding, disabling, or migration.
+    - `disabled` — optional, boolean, filter is disabled, i.e. *removed*, its building will be skipped
+      and it will not be available to download.
     - `expires` — string, filter's default expiration period.
       used as filter update interval if "Default" is chosen for according setting in AdGuard product.
     - `displayNumber` — number, this number is used when AdGuard sorts available filters (GUI).
@@ -108,7 +112,7 @@ we follow these rules:
     - `platformsExcluded` — string array, [the list of platforms][kb-hint-platforms] to skip while filter compiling,
       e.g. `["ios", "ext_safari"]`. If you need to compile the filter for all platforms remove this property.
 
-    > [!WARNING]
+    > ⚠️ **Warning**:
     > Both `platformsIncluded` and `platformsExcluded` should not be set in filter's metadata simultaneously.
 
     <details>
