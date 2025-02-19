@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.31",
-			"timeUpdated": "2025-02-18T21:37:28+0000",
+			"version": "2.0.50.32",
+			"timeUpdated": "2025-02-19T04:39:13+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
