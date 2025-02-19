@@ -90,7 +90,7 @@ we follow these rules:
       and should not be used by the products.
       Final decision what to do with such filter is up to the product, e.g. simple hiding, disabling, or migration.
     - `disabled` — optional, boolean, filter is disabled, i.e. *removed*, its building will be skipped
-      and it will not be available to download.
+      and it will not be available to download. If used, the `obsolete` [tag](#tags) should be used as well.
     - `expires` — string, filter's default expiration period.
       used as filter update interval if "Default" is chosen for according setting in AdGuard product.
     - `displayNumber` — number, this number is used when AdGuard sorts available filters (GUI).
