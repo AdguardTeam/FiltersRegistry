@@ -1,8 +1,8 @@
-! Checksum: VLlX0/my1fHNlXOOX4pkJw
+! Checksum: oJqeZ16k4aHtkWmX9h6etA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.38
-! TimeUpdated: 2025-02-19T12:39:13+00:00
+! Version: 2.2.22.39
+! TimeUpdated: 2025-02-19T13:37:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2433,6 +2433,9 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+sylabus.uj.edu.pl#$#body { overflow: auto !important; padding-right: 0 !important; }
+sylabus.uj.edu.pl#$#.modal-backdrop { display: none !important; }
+sylabus.uj.edu.pl#$#div[data-controller="cookie-consent-modal"] { display: none !important; }
 toomics.com###privacy-popup-msg
 belveb.by##.wrap-cookie
 twitter.com,x.com#$#html[style*="overflow"] { overflow: auto !important; }
@@ -14378,6 +14381,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198967
+sylabus.uj.edu.pl#@##cookieconsent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198921
 @@||cdn-cookieyes.com/client_data/*/script.js$domain=try.makevisible.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198915
@@ -22397,7 +22402,6 @@ promote.telegram.org#@#.ads-content
 ! script checks these elements even if rules changed
 ! .responsive-sky-scraper
 ! .header-link-exaroton
-aternos.org#$#.header-link-exaroton-link > div > div { transform: rotate3d(1, 1, 0, 90deg) !important; pointer-events: none !important; }
 @@||aternos.org^$generichide
 !#safari_cb_affinity(general)
 @@||securepubads.g.doubleclick.net/gampad/ads?pvsid=$domain=aternos.org
