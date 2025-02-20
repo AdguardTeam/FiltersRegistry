@@ -1,9 +1,9 @@
-! Checksum: RZgxmcBKsXUsyQEWMc6ZtA
-! Diff-Path: ../patches/18/18-s-1740041041-3600.patch
+! Checksum: DmS8Asx4zsE5rBUdz8JBtw
+! Diff-Path: ../patches/18/18-s-1740044626-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.56.72
-! TimeUpdated: 2025-02-20T08:39:42+00:00
+! Version: 2.0.56.73
+! TimeUpdated: 2025-02-20T09:39:01+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2480,6 +2480,8 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+bis.gov.lv#$#body { overflow: auto !important; }
+bis.gov.lv#$#body #cookie_warning { display: none !important; }
 ||check24.net/ajax/modal/cookie-wall/
 check24.net##div[data-modal="cookie-wall"]
 tinder.com##div[class^="Pos(f) Start(0) End(0)"][role="alertdialog"][aria-label]
@@ -2492,7 +2494,7 @@ belveb.by##.wrap-cookie
 twitter.com,x.com#$#html[style*="overflow"] { overflow: auto !important; }
 twitter.com,x.com#$##layers:has(div[role="dialog"] div[role="group"] a[href^="https://privacy.twitter.com"]) { display: none !important; }
 stema.de###cookie-consent-target
-sabah.comtr##.kvkk-info-box
+sabah.com.tr##.kvkk-info-box
 bed-and-breakfast.it###cookiePolicy_barra
 game.evroopt.by##section[class^="_cookies_"]
 xo.gr##div[id^="cookiescript"]
@@ -16679,6 +16681,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199003
+bis.gov.lv#@##cookie_warning
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198967
 sylabus.uj.edu.pl#@##cookieconsent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198921
