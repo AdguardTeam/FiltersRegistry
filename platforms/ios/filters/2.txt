@@ -1,9 +1,9 @@
-! Checksum: 6qDQH3aTvGoaE2mRrvf6cQ
-! Diff-Path: ../patches/2/2-s-1740062633-3600.patch
+! Checksum: ulgU8LIQiwPvDO7cUtAzYw
+! Diff-Path: ../patches/2/2-s-1740066406-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.72.34
-! TimeUpdated: 2025-02-20T14:31:30+00:00
+! Version: 2.3.72.35
+! TimeUpdated: 2025-02-20T15:32:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -44534,6 +44534,11 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+labgame.io,fc-lc.xyz###iframe_id
+labgame.io###box_728x90
+labgame.io#%#//scriptlet('remove-node-text', 'script', 'DName')
+||labgame.io/nt.js
+labgame.io#?#.sidebar > h5:contains(Advertisement)
 ukrupdate.com###custom-banner-ad-container
 kiplinger.com##.jwplayer__widthsetter
 sportingnews.com###video-player
@@ -44560,7 +44565,7 @@ twitter.com,x.com##div[data-testid="eventHero"]:first-child
 twitter.com,x.com##div[data-testid="eventHero"]:first-child + div:last-child
 m.40407.com##.bt_ad
 gulfnews.com##div[id$="-ad"]
-gulfnews.com###nav-bar > div[class]:has(> div > div#home-page-top-filler-ad)
+gulfnews.com###nav-bar > div[class]:has(> div > div[id$="-filler-ad"])
 velo.outsideonline.com##.o-ad--leaderboard
 velo.outsideonline.com#$#main.l-main { margin-top: 10px !important; }
 alive.com##div[class*="-PromoBanner"]
@@ -64591,6 +64596,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199051
+@@||gamezop.com^$domain=labgame.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198980
 @@||skiplinks.xyz/skipad.webp$domain=skiplinks.xyz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199018
