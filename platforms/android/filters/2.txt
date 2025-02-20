@@ -1,9 +1,9 @@
-! Checksum: o7jj6kOWfpZP4T1lwZHT3Q
-! Diff-Path: ../patches/2/2-s-1740037308-3600.patch
+! Checksum: c9rtsoAfNbjOAAHqFKlW/Q
+! Diff-Path: ../patches/2/2-s-1740041009-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.72.27
-! TimeUpdated: 2025-02-20T07:31:26+00:00
+! Version: 2.3.72.28
+! TimeUpdated: 2025-02-20T08:31:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -42041,6 +42041,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||selector.voltaxam.com/ads
 therepublic.com#$#.pum-overlay.auto_open { display: none !important; }
 therepublic.com#$#html { overflow: auto !important; }
 hypershort.com##main > center.linkcontain > button
@@ -62157,6 +62158,12 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199018
+earth.com#@##ad-container
+earth.com#@#[class^="s2nPlayer"]
+@@||embed.sendtonews.com/player*.php$domain=earth.com
+@@||mp.mmvideocdn.com/mini-player/prod/voltax_mp.js$domain=earth.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=earth.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198878
 !+ PLATFORM(windows, mac, android)
 @@||tickets.nickelodeonadventure.co.uk^$xmlhttprequest,elemhide,jsinject,extension
