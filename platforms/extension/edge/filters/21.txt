@@ -1,9 +1,9 @@
-! Checksum: sZsW5+12I3+isGvonMeLmA
-! Diff-Path: ../patches/21/21-s-1740044598-3600.patch
+! Checksum: LpwdZiSgFedaZmsgD+W6og
+! Diff-Path: ../patches/21/21-s-1740048158-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.30.81
-! TimeUpdated: 2025-02-20T09:39:03+00:00
+! Version: 2.0.30.82
+! TimeUpdated: 2025-02-20T10:38:45+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8337,6 +8337,9 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/198980
+skiplinks.xyz#%#//scriptlet('adjust-setTimeout', 'timer', '*', '0.001')
+skiplinks.xyz#%#(()=>{if(!location.href.includes("/download-"))return;document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll('#downloadpage > form[action][method="POST"] > input[value^="https://"]').forEach((e=>{const o=e.closest("form");var t,n;o&&(t=o,n=e.value,t.addEventListener("click",(e=>{e.preventDefault(),window.location.href=n})))}))}))})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198528
 policiesreview.com#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199020
