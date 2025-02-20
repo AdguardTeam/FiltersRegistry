@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: EO4l0u9cL3ONY62TYYf+tA
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1739950979-3600.patch
+! Checksum: j3Lq5ij7Sg4QqJEpogE9dw
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1740019248-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.30.79
@@ -272,6 +272,7 @@ kinometro.ru##.newsend-sots
 koko.by##.social
 mp.pl##.anchor-banners
 cnbc.com#$#.UniversalVideoPlayer-videoContainer { position: absolute !important; }
+cnbc.com##.UniversalVideoPlayer-videoContainer.customControls #jw-container
 cyclismactu.net###dailymotion-pip-large-viewport
 danas.hr##+js(remove-class, videoContent_player_fixed, .videoContent_player_fixed)
 femmeactuelle.fr###dailymotion-pip-large-viewport
@@ -360,6 +361,7 @@ leparisien.fr###dailymotion-pip-large-viewport
 avg.com,avast.com###offer-chrome
 ||point.widget.rakuten.co.jp^$third-party
 watch.impress.co.jp##.right.ad > aside.special
+news18.com##.jio_widgetAmp
 gamewith.jp##.to-btn--nps
 4900.co.jp##.fixedFooter
 csoonline.com##+js(set-cookie, aiia, true)
@@ -500,7 +502,6 @@ tvn24.pl##+js(json-prune, options.auto_play)
 ||cdn.viqeo.tv/js/vq_starter.js$domain=teleprogramma.pro|coop-land.ru|om1.ru|pravda.ru
 ownedcore.com###site-header > div > div[style="text-align:center;"] > a[rel="nofollow"][target="_blank"]
 sudya-dredd.ru##+js(abort-current-script, stopPrntScr)
-reedsy.com##.duplicate-content
 ||cdn.tinypass.com/api/tinypass.min.js$domain=seekingalpha.com
 investing.com##+js(remove-class, has-ads-free-promo-header, body)
 bfmtv.com#$#.video-js.vjs-pip-active { position: static!important; }
@@ -605,6 +606,7 @@ quora.com#?#.qu-zIndex--blocking_wall:not(:has(> div.q-box > div.q-box > div[cla
 cooking.nytimes.com#$#body[class*="mask_no-scroll"] { overflow: auto !important; }
 cooking.nytimes.com#$#div[class^="modal_modal-window-container"]:not(:has(div[class^="omaregiwall_c"] > button[class*="omaregiwall_close"])) { display: none !important; }
 banana.by###footer
+mobile.de##.private-selling-top-bar
 myapple.pl##body > .alert-announcement#announcement
 kievpravda.com##.person-of-day-sidebar
 youtube.com##.ytp-subscribe-card
@@ -678,6 +680,7 @@ comss.ru##img[style^="width:500px;height:30px;"]
 comss.ru##td[style="width:180px"] > div.block
 news.com.au##.footer-statements
 otzyv.ru##div[align="center"] > .aviasales
+vchaspik.ua##div[id="conteiner"][style="height: 410px;"]
 gismeteo.ru###soft-promo
 ||mts.ctc.ru/?nowrap=
 disqus.com##div[data-role="motd-alert"]
@@ -735,6 +738,7 @@ sportmail.ru##div[id^="notification"]
 ##.td_block_social_counter
 fitomarket.com.ua###socialLinksMain
 /wp-content/plugins/sociallocker-
+trickswire.com#$#.mts-cl-overlap-mode > .mts-cl-overlap-box { display: none!important; }
 trickswire.com#$#.mts-cl-overlap-mode > .mts-cl-blur-area { filter: none!important; }
 /pandalocker.$script,domain=lanka.ru
 animaunt.tv##.icon-bar > .fl-fl
@@ -756,7 +760,6 @@ solar.lowtechmagazine.com##.post-footer
 ||informer.rs/files/img/gde-da-gledate*.png
 dnevno.hr##a[href="https://www.dnevno.hr/wp-content/uploads/2024/08/imate-dnevno-vizual-1.jpg"]
 gazetadopovo.com.br##div[class^="style_button-sidebar-container"]
-i-fields.jp###wpp-social-icons
 girlsreport.net##.main-container > iframe[src*="rssfeed"]
 girlsreport.net##.article-sub-popular2
 girlsreport.net##.popularArticleWithImage:has(> div:only-child > a[onclick^="gtag('event'"])
@@ -790,7 +793,6 @@ dr-farfar.com##.widget_boombox_social
 xatakamovil.com##.menu-follow
 trashexpert.ru,bugun.uz##.tg_link
 mcafee.com##.stay-updated
-mcafee.com##.sidebar-socialicons
 radiosvoboda.org##.wsw__embed
 nato.int##.socialbar
 ||i.dailymail.co.uk/i/pix/2017/08/02/636x90_facebook_ad_sport.png
@@ -851,7 +853,6 @@ dailymail.co.uk##.dms-puff
 euroki.org##.filter_share
 vpnmentor.com##.follow-experts
 povarenok.ru##.header-socials
-habibs.com.br##.messenger-bot
 fotomac.com.tr##.share
 astar.bz,anistar.org,online-star.org##.share-soc
 appleinsider.ru,hi-news.ru##.sidebar-banner-telegram
@@ -1270,7 +1271,6 @@ blog.knowbe4.com##.blog-sidebar > div.row-fluid-wrapper:has(.widget-type-cta) + 
 op.gg###opgg-kit-house-image-banner
 qiita.com##article > div[class^="style-"]:has(> a[href^="https://help.qiita.com/"])
 gamespot.com##.js-where-to-buy
-voguescandinavia.com##div[class^="AdssetsAd_"]
 proson.gr##.ros
 fromcocoro.com###text-12
 x.com,twitter.com##div[aria-label="Trending"] > div div:has(>aside[aria-label="Subscribe to Premium"])
@@ -1342,7 +1342,6 @@ wco.tv,wcofun.net,wcofun.org##.saklasanabunu
 ddnavi.com##.biblio2023
 blog.eva.ua##.article-banner
 ||rule34.xxx/images/rule34_merch.jpg
-onepiece-tube.com##.home-tube-map
 gamer.ne.jp##.card-list__item:has(> div > div > span.card-list__ad)
 klerk.ru###__layout > div.h-full > footer ~ div > div.w-full.fixed
 artstation.com##support-artstation
@@ -1745,7 +1744,6 @@ dev.ua##main > div[class^="island d-none_"]
 aqcg.jp##.code-block
 ozon.ru##div[data-widget="banner"]
 asahi.com##.nZ_AH
-123telugu.com##img[onclick="track_ad_clicked(this)"]
 so.com###so-activity-entry
 xxxlutz.de#?#div[data-purpose="listing.productsContainer"] > div[class^="_"]:has(> div[class^="_"] > div[class^="_"] > span + img)
 yanmaga.jp##.episode-special-banner
@@ -2035,6 +2033,7 @@ social-dog.net##.link_box
 ||seolaboratory.jp/banner/
 gd.ru##a[href="/subscribe/"]
 ec.toranoana.jp##.toto-obi
+coolztricks.com###wpfront-notification-bar-spacer
 app.raindrop.io##.svSidebar > a[class^="upgrade-"]
 softwaretestinghelp.com##.widget_rp4wp_related_posts_widget + aside.widget
 support.mozilla.org###doc-contributors + section.sumo-page-section
@@ -2253,8 +2252,6 @@ v.youku.com##.fee-wrap-new
 digitalkamera.de###SidebarOptionalWrap > .widget-injection-points
 flickr.com##.sub-photo-submoola-banner-view
 gameinn.jp##a[href*="gameinn.jp/gameranking"] > img
-news.tennis365.net##.newsdetailcontent_body > b:has(> a[href^="https://bit.ly/"])
-news.tennis365.net##.newsdetailcontent_body > b:has(> a[href^="https://bit.ly/"]) + br
 news.tennis365.net##.text > p > b:has(> a[href^="https://bit.ly/"])
 news.tennis365.net##.text > p > b:has(> a[href^="https://bit.ly/"]) + br
 news.tennis365.net##.text > p > b:has(> a[href^="https://bit.ly/"]) + br ~ a[href^="https://bit.ly/"]
@@ -2592,6 +2589,7 @@ mag2.com##.sidebar_text_ad
 honeysanime.com##.side-gutter > a[target="_blank"][onclick]
 ||rakuten-static.com/1/grp/banner/js/create.js
 avito.ru##div[class^="create-promocode-banner"]
+avito.ru##div[class^="main-banner-root-"]
 finance.sina.com.cn###sina-pages-u
 ||rakuten.co.jp/sitemap/img/banner/
 ||jugem.jp/user_blog/ad/
@@ -2659,6 +2657,7 @@ hsreplay.net#$#.site-modal { display: none !important; }
 hsreplay.net#$#body { overflow: visible!important; }
 kadrovik.ua#$#body { background: none!important; }
 japan.zdnet.com##.ad-bnr-rect-btm
+r10.net###inlinemodform > ul > li.thread > a[href="/reklam/"]
 ||cdn.r10.net/r10/i/r10.gif
 wired.com##.ad--rail
 !+ NOT_OPTIMIZED
@@ -2738,6 +2737,7 @@ banki.ru##span[data-name="clip_top3debit"]
 banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.banki.ru/creditrating/"]
 banki.ru##div[data-test="news-all-markdown"] > section > a[href^="https://www.banki.ru/products/"]
 rbc.ru##.js-index-doscroll-pro
+rbc.ru#?#.js-index-central-column > div[data-publisher-index]:has(> div.js-index-doscroll div.content-cards-block__footer > div.content-cards-block__footer__right:contains(Реклама))
 rbc.ru##.fox-fallback[style="width: 300px; height: 600px;"]
 book.oricon.co.jp##a[href^="https://apay-up-banner.com?merchantId="] > img
 ||apay-up-banner.com^$image,third-party,domain=book.oricon.co.jp
