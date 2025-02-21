@@ -1,9 +1,9 @@
-! Checksum: qrf/dx4A+Ghxe9HZUACm0Q
-! Diff-Path: ../patches/21/21-s-1740131109-3600.patch
+! Checksum: qHX6ahtJdH7E2+Br3JPYmA
+! Diff-Path: ../patches/21/21-s-1740134717-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.30.84
-! TimeUpdated: 2025-02-21T09:40:35+00:00
+! Version: 2.0.30.85
+! TimeUpdated: 2025-02-21T10:39:49+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3477,6 +3477,8 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+journal.sovcombank.ru##astro-island:has( > div > div > div > span.bg-red + div > div.wysiwyg-markup > p > a[href*="utm_medium=referral"][target="_blank"])
+journal.sovcombank.ru##a[data-event^="bannerClick_"]
 jorudan.co.jp###js_bnr_right_block3_parent
 jorudan.co.jp##.com_bottom_banner
 jorudan.co.jp##.com_lp_frame
@@ -8354,6 +8356,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199072
+ziggame.com#%#//scriptlet('prevent-addEventListener', 'blur', 'counter')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198980
 skiplinks.xyz#%#//scriptlet('adjust-setTimeout', 'timer', '*', '0.001')
 skiplinks.xyz#%#(()=>{if(!location.href.includes("/download-"))return;document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll('#downloadpage > form[action][method="POST"] > input[value^="https://"]').forEach((e=>{const o=e.closest("form");var t,n;o&&(t=o,n=e.value,t.addEventListener("click",(e=>{e.preventDefault(),window.location.href=n})))}))}))})();
