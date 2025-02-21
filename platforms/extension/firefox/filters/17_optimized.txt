@@ -1,9 +1,9 @@
-! Checksum: UgzILEqnsG5qjV2ppis+nA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1739983326-3600.patch
+! Checksum: OVQNtiRV6vh27i0Y6bfXaA
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1740141958-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.50
-! TimeUpdated: 2025-02-19T16:38:05+00:00
+! Version: 2.0.10.51
+! TimeUpdated: 2025-02-21T12:39:55+00:00
 ! Expires: 10 days (update frequency)
 ?from=glia^$removeparam=from
 $removeparam=srsltid
@@ -1917,6 +1917,11 @@ $removeparam=s,domain=twitter.com|x.com
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+@@||bywiola.com^$removeparam=tagtag_uid
+@@||converti.se/click/$removeparam=wgexpiry
+@@||dashboard.wedare.pl^$removeparam
+@@||pl-pepper.digidip.net/visit$removeparam
+@@||tc.tradetracker.net/?*=ppr-pl-$removeparam
 @@||allegro.pl/affiliate?redirect_url=$removeparam=clickId
 @@||allegro.pl/affiliate?redirect_url=$removeparam=utm_source
 @@||allegro.pl/affiliate?redirect_url=$removeparam=utm_campaign
