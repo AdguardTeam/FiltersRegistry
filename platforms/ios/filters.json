@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.72.41",
-			"timeUpdated": "2025-02-21T02:31:26+0000",
+			"version": "2.3.72.42",
+			"timeUpdated": "2025-02-21T03:31:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
