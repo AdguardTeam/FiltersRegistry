@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: qOZmQmZkobzsKjhLjC9TtQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1740330366-14400.patch
+! Checksum: 0dvqV9IFBMeeDFfshO3AWg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1740373542-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.24
@@ -148,12 +148,12 @@ coolrom.com.au,coolrom.com##.download_link
 ||warehouse-ca.top^$all
 ||adventurouscomprehendhold.com^$all
 ||chamberssnorted.com^$all
+||cognatesyringe.com^$all
 ||commonjamknights.com^$all
 ||communicatedsuitcompartment.com^$all
 ||dogcollarfavourbluff.com^$all
 ||eyelashcatastrophe.com^$all
 ||grievetube.com^$all
-||parkingcombstrawberry.com^$all
 ||capaciousdrewreligion.com^$all
 ||conceivesaucerfalcon.com^$all
 ||containsreform.com^$all
@@ -179,6 +179,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||noisesperusemotel.com^$all
 ||apologiesoccursdepressed.com^$all
 ||chesssorrydescend.com^$all
+||dreadfullyemulateconservation.com^$all
 ||masqueradethousand.com^$all
 ||askewrefusaltrashy.com^$all
 ||deeplygumssandwich.com^$all
@@ -1732,6 +1733,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@||t.me^
 @@||lemondeinformatique.fr^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
+@@||siteadvisor.com^
 @@||virustotal.com^
 @@||sitecheck.sucuri.net^
 @@://global.sitesafety.trendmicro.com^
@@ -1780,12 +1782,14 @@ bloombergquint.com##+js(abort-on-property-read, getSelection)
 delfi.lt##+js(addEventListener-defuser, copy)
 ||www.15min.lt/naujiena^$csp=script-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 /secure-copy-content-protection-public.css^$stylesheet
+respublika.lt#$?#[class^=com_] { user-select: unset !important; -webkit-user-select: unset !important; -moz-user-select: unset !important }
 niskevesti.rs#$#:not(input):not(textarea)::selection { background-color: #B4D5FFA0 !important }
 jarloworks.com##+js(abort-current-script, show_alert)
 jarloworks.com#$#* { user-select:auto!important;-moz-user-select:auto!important;-wekbit-user-select:auto!important }
 dropgalaxy.*##+js(abort-current-script, document.onkeydown)
 ||jsdelivr.net/npm/disable-devtool$script
 dropgalaxy.*##+js(abort-current-script, isWesternEuropeanTimezone)
+respublika.lt#$?##news_comment_container { filter: none !important }
 autoplius.lt##+js(remove-attr, target, [target="_blank"], stay)
 ||collector.schibsted.io^$third-party
 ###preloader
@@ -1936,6 +1940,7 @@ $removeparam=rmmds
 $removeparam=msclkid
 $removeparam=ftag
 $removeparam=akmClientCountry
+$removeparam=hss_channel
 $removeparam=ns_mchannel
 $removeparam=ns_source
 $removeparam=ns_campaign
@@ -1982,6 +1987,7 @@ $document,removeparam=/^outputType=amp$/
 $removeparam=orig_referrer
 $removeparam=ncid
 $document,removeparam=/^ecid=.*$/i,domain=~account.microsoft.com
+$removeparam=adcid
 $removeparam=mkt_tok
 @@^mkt_unsubscribe=$removeparam=mkt_tok
 $removeparam=affname
@@ -2013,6 +2019,7 @@ $removeparam=recurring_goal_id
 $document,removeparam=/^affiliateID=.*$/i
 $removeparam=affiliate_id
 $removeparam=affiliate_location_id
+$removeparam=afn_sr
 $removeparam=cjdata
 $removeparam=click_id,domain=~bookings.beatthatflight.*
 $removeparam=o_sch
@@ -2100,6 +2107,7 @@ $document,removeparam=/^subid3=.*$/i
 $document,removeparam=/^subid4=.*$/i
 $document,removeparam=/^subid5=.*$/i
 $removeparam=tid1
+$removeparam=tid2
 $removeparam=avad
 $removeparam=__cn_tracker
 $document,removeparam=/^sfmc_.*$/
@@ -2226,6 +2234,7 @@ $removeparam=ttd_tdid
 $removeparam=bsw_param
 $removeparam=google_push
 $removeparam=partneruserid
+$removeparam=sExtCookieId
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
@@ -2329,6 +2338,7 @@ $removeparam=hvbmt
 $removeparam=cstrackid
 ||amazon.$removeparam=SubscriptionId
 ||amazon.$removeparam=hydadcr
+$removeparam=%2AVersion%2A,domain=amazon.*
 $removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
@@ -2571,8 +2581,10 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=frs
 ||baidu.com/link?$removeparam=eqid
 ||baidu.com/link?$removeparam=wd
+||map.baidu.com^$removeparam=compat
 ||map.baidu.com^$removeparam=da_src
 ||map.baidu.com^$removeparam=device_ratio
+||map.baidu.com^$removeparam=pcevaname
 ||map.baidu.com^$removeparam=ugc_type
 ||map.baidu.com^$removeparam=ugc_ver
 ||baidu.com^$removeparam=hl_tag
@@ -2738,7 +2750,6 @@ $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|a
 ||greenmangaming.com^$removeparam=/^tap_.*$/
 ||kohls.com^$removeparam=kls_sbp
 ||kohls.com^$removeparam=pfm
-||kohls.com^$removeparam=bdrecsId
 ||kohls.com^$removeparam=prdPV
 ||kochava.com^$removeparam=network_id
 ||kochava.com^$removeparam=device_id
@@ -2952,6 +2963,7 @@ $removeparam=embeds_referring_euri
 ||whitepages.com^$document,removeparam=wp_medium
 ||whitepages.com^$document,removeparam=wp_content
 ||whitepages.com^$document,removeparam=wp_term
+||sciencedirect.com/*?via%3D$removeparam=/^via%3D.*$/,document
 ||kahoot.it^$removeparam=refer_method
 ||open.substack.com^$removeparam=r,document
 ||euromaidanpress.com^$removeparam=swcfpc,document
