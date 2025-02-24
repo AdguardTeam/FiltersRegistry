@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9L00wIZBnzXOapTcNEqsmg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1740397908-3600.patch
+! Checksum: ER9/KDd30Zs0SNLhQpdaaA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1740401095-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.72.79
-! TimeUpdated: 2025-02-24T11:31:33+00:00
+! Version: 2.3.72.80
+! TimeUpdated: 2025-02-24T12:31:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -245,7 +245,6 @@
 ||ads.sibernetworks.com^$third-party
 ||ep.umobile.pl^
 ||cloudads.tv^$third-party
-||phone-analyzer.com^$document
 ||mbn-1.com^$third-party
 ||adsfirm.com^$third-party
 ||goldsurf24h.pl^$third-party
@@ -16817,7 +16816,6 @@ fctvlive.com##+js(abort-current-script, document.createElement, adsbygoogle.js)
 ! https://github.com/uBlockOrigin/uAssets/issues/19372
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190053
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$script,redirect=noop.js,domain=channel5.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/158932
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159342
 blog24.me##+js(no-xhr-if, czilladx.com)
 blog24.me##+js(abort-on-property-read, htmls)
@@ -21720,16 +21718,9 @@ pornbimbo.com##+js(set-constant, flashvars.protect_block, '')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48073
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34915
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30936
+! https://github.com/AdguardTeam/AdguardFilters/issues/158932
 channel4.com##+js(json-prune, adverts)
 channel4.com##+js(no-xhr-if, v.fwmrm.net/ad/)
-/^https?:\/\/cdn\.http\.anno\.channel4\.com\/m\/[\s\S]*?_[\s\S]*_\d+\.mp4/$object,domain=channel4.com,important
--ads-ingest-prod.*.amazonaws.com/*.mp4$~object,media,redirect=noop-1s.mp4,domain=channel4.com
-||cdn.http.anno.channel4.com/m/*.mp4$~object,media,redirect=noop-1s.mp4,important,domain=channel4.com
-@@||s-static.innovid.com/*/config/*.xml$object,domain=channel4.com
-@@||mssl.fwmrm.net/p/c4_live/*.swf$object,domain=channel4.com
-@@||v.fwmrm.net/ad/l/1?$object,domain=channel4.com
-@@||cdn.http.anno.channel4.com^$domain=channel4.com
-@@||ad-emea.doubleclick.net/ad/*$domain=channel4.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30931
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 @@||prgwonders.blogspot.com^$generichide
@@ -41616,6 +41607,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+channel4.com###freewheelContainer
 dpm.lol##.sticky > div[class*="314px"]
 hdaud.io##img[alt="turbo"]
 gelbooru.com##body main > div.mainBodyPadding > div[style="height: 250px !important; overflow: hidden; width: 100%; text-align:center;"]

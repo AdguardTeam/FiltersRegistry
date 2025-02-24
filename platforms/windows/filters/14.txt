@@ -1,9 +1,9 @@
-! Checksum: 5vqKILJwNOu/lN5vngd51A
-! Diff-Path: ../patches/14/14-s-1740397917-3600.patch
+! Checksum: Yz3kC16ggacbgZz5KXVbhQ
+! Diff-Path: ../patches/14/14-s-1740401151-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.78
-! TimeUpdated: 2025-02-24T11:47:30+00:00
+! Version: 2.2.22.79
+! TimeUpdated: 2025-02-24T12:38:41+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20987,6 +20987,8 @@ mail.yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
 ! Yandex.Search
 ! Main page under the search bar
 ya.ru##.body__content > aside.content__informers-bg + div[style]:has(> style)
+! the ad is on the right side, which is mostly non-reproducible
+[$path=/search]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Ya.extRenderQueue', 'undefined')
 !
 ! Yandex.TV
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
