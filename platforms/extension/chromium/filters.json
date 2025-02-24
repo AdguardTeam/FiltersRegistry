@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.11.39",
-			"timeUpdated": "2025-02-21T16:38:02+0000",
+			"version": "2.1.11.40",
+			"timeUpdated": "2025-02-24T01:37:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
