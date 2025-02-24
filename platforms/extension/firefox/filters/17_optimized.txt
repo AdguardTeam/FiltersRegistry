@@ -1,9 +1,9 @@
-! Checksum: OVQNtiRV6vh27i0Y6bfXaA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1740141958-3600.patch
+! Checksum: btSNUdeyBVuoY4WdIYR74A
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1740404721-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.51
-! TimeUpdated: 2025-02-21T12:39:55+00:00
+! Version: 2.0.10.52
+! TimeUpdated: 2025-02-24T13:38:50+00:00
 ! Expires: 10 days (update frequency)
 ?from=glia^$removeparam=from
 $removeparam=srsltid
@@ -1917,6 +1917,8 @@ $removeparam=s,domain=twitter.com|x.com
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+!+ PLATFORM(ext_ff, ext_opera, ext_chromium)
+@@||google.*/url?*%26srsltid%3D$removeparam=srsltid
 @@||bywiola.com^$removeparam=tagtag_uid
 @@||converti.se/click/$removeparam=wgexpiry
 @@||dashboard.wedare.pl^$removeparam
