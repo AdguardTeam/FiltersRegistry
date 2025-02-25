@@ -1,9 +1,9 @@
-! Checksum: bg/79q3/2jttoSNOhoBS7Q
-! Diff-Path: ../patches/2/2-s-1740494740-3600.patch
+! Checksum: VF60lwZqXRtmef37jmhc0g
+! Diff-Path: ../patches/2/2-s-1740501754-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.72.96
-! TimeUpdated: 2025-02-25T14:32:15+00:00
+! Version: 2.3.72.97
+! TimeUpdated: 2025-02-25T16:31:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25725,13 +25725,18 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199124
+pvpoke-re.com#%#//scriptlet('set-constant', 'browserMessage', 'noopFunc')
+pvpoke-re.com#%#//scriptlet('set-constant', 'myMessage', 'noopFunc')
+pvpoke-re.com##body > div[id][style*="position:fixed; z-index:"]
+||pvpoke-re.com/actpvpoke.min.js
 ! LinksFlame
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199153
 finance240.com#%#//scriptlet('prevent-fetch', 'googleads.g.doubleclick.net')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199006
-@@||googleads.g.doubleclick.net/pagead/interaction/$domain=ecosolardigest.com
+ecosolardigest.com#%#//scriptlet('prevent-fetch', 'doubleclick.net')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198999
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=cutyion.com
+cutyion.com#%#//scriptlet('prevent-fetch', 'googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199239
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=amigosporn.top
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199080
@@ -52502,6 +52507,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+tastingtable.com,islands.com,grunge.com,slashgear.com,grunge.com,svg.com##.partnership-header
+tastingtable.com,islands.com,grunge.com,slashgear.com,grunge.com,svg.com##.partnership-header + div.slide-key
+tastingtable.com,islands.com,grunge.com,slashgear.com,grunge.com,svg.com##.under-art > h2.section-header
 lewdzone.com##.row > div.col-md-12:has(> div.item > ins)
 lewdzone.com##.row > div.col-xs-6:has(> div.item > div.textwidget > ins)
 tactics.tools##.afm-wrap
@@ -71473,10 +71481,10 @@ forbes.com##.channel--ad
 ##body > div#dontfoid
 ##html > div[class][style^="pointer-events: none; position: absolute; top: 0px; left: 0px; width:"]
 ##html > div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: auto;"]
-/^https:\/\/[a-z-]{5,13}\.[a-z]{2,6}\/[a-z0-9]{1,20}\?[A-Za-z0-9]{15,22}=(?=.*[A-Z])[A-Za-z0-9%]{35,2000}$/$xmlhttprequest,third-party,match-case
+/^https:\/\/[a-z-]{5,13}\.[a-z]{2,6}\/[a-z0-9]{1,20}\?[A-Za-z0-9]{15,26}=(?=.*[A-Z])[A-Za-z0-9%]{35,2000}$/$xmlhttprequest,third-party,match-case
 ! #%#//scriptlet('abort-on-property-read', 'Adcash')
-pepperlivestream.online,pawastreams.pro,time4tv.site,en.tgo-tv.xyz,miztv.shop,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,nepu.to,capo4play.com,wawacity.cfd,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,streameast.*,thestreameast.*,anroll.net,anarchy-stream.com,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,compensationcoincide.net,embedstreams.me,closedjelly.net,sportsonline.*,dl-protect.link,cricstream.me,extreme-down.*,yts.mx,eztvx.to,claplivehdplay.ru,skidrowreloaded.com,olympicstreams.*,streambucket.net,modsfire.com,official.nbabite.com,forgepattern.net,sportsonline.*#%#//scriptlet('abort-on-property-read', 'Adcash')
-sanet.st,totalsportek.club,totalsportek.games,totalsportek.futbol,totalsportek.zip,totalsportek.racing,totalsportek.tel,totalsportek.dad,time4tv.site,buffsports.*,olympicstreams.*#%#//scriptlet('abort-current-inline-script', 'globalThis', 'adserverDomain')
+eurekaddl.lat,pepperlivestream.online,pawastreams.pro,time4tv.site,en.tgo-tv.xyz,miztv.shop,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,nepu.to,capo4play.com,wawacity.cfd,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,streameast.*,thestreameast.*,anroll.net,anarchy-stream.com,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,compensationcoincide.net,embedstreams.me,closedjelly.net,sportsonline.*,dl-protect.link,cricstream.me,extreme-down.*,yts.mx,eztvx.to,claplivehdplay.ru,skidrowreloaded.com,olympicstreams.*,streambucket.net,modsfire.com,official.nbabite.com,forgepattern.net,sportsonline.*#%#//scriptlet('abort-on-property-read', 'Adcash')
+eurekaddl.lat,sanet.st,totalsportek.club,totalsportek.games,totalsportek.futbol,totalsportek.zip,totalsportek.racing,totalsportek.tel,totalsportek.dad,time4tv.site,buffsports.*,olympicstreams.*#%#//scriptlet('abort-current-inline-script', 'globalThis', 'adserverDomain')
 vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,capo4play.com,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,compensationcoincide.net,embedstreams.me,closedjelly.net,sportsonline.*#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.hasAttribute', 'isActionAllowedOnElement')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198311
@@ -71572,7 +71580,7 @@ timesofindia.indiatimes.com##[data-contentprimestatus]
 !+ NOT_OPTIMIZED
 thehackernews.com##.dog_two
 !+ NOT_OPTIMIZED
-tastingtable.com,slashgear.com,islands.com,svg.com##.before-ad
+tastingtable.com,islands.com,grunge.com,slashgear.com,grunge.com,svg.com##.before-ad
 !+ NOT_OPTIMIZED
 youtubetranscript.com###video_col a[target="_blank"] > img
 !+ NOT_OPTIMIZED
@@ -80949,7 +80957,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 ://ad-api-
 ://ad1.
 ://adn.*/zone/$subdocument
-://ads.$~image,~xmlhttprequest,domain=~ads.8designers.com|~ads.ac.uk|~ads.adstream.com.ro|~ads.allegro.pl|~ads.am|~ads.amazon|~ads.apple.com|~ads.atmosphere.copernicus.eu|~ads.band|~ads.bestprints.biz|~ads.bikepump.com|~ads.brave.com|~ads.buscaempresas.co|~ads.business.bell.ca|~ads.cafebazaar.ir|~ads.chewy.com|~ads.colombiaonline.com|~ads.comeon.com|~ads.cvut.cz|~ads.doordash.com|~ads.dosocial.ge|~ads.dosocial.me|~ads.elevateplatform.co.uk|~ads.finance|~ads.fund|~ads.google.cn|~ads.google.com|~ads.gree.net|~ads.gurkerl.at|~ads.harvard.edu|~ads.instacart.com|~ads.jiosaavn.com|~ads.kaipoke.biz|~ads.kazakh-zerno.net|~ads.kifli.hu|~ads.knuspr.de|~ads.listonic.com|~ads.luarmor.net|~ads.magalu.com|~ads.mercadolivre.com.br|~ads.mgid.com|~ads.microsoft.com|~ads.midwayusa.com|~ads.mobilebet.com|~ads.mojagazetka.com|~ads.msstate.edu|~ads.mst.dk|~ads.mt|~ads.nc|~ads.nipr.ac.jp|~ads.olx.pl|~ads.pinterest.com|~ads.remix.es|~ads.rohlik.cz|~ads.rohlik.group|~ads.route.cc|~ads.safi-gmbh.ch|~ads.scotiabank.com|~ads.selfip.com|~ads.shopee.cn|~ads.shopee.co.th|~ads.shopee.com.br|~ads.shopee.com.mx|~ads.shopee.com.my|~ads.shopee.kr|~ads.shopee.ph|~ads.shopee.pl|~ads.shopee.sg|~ads.shopee.tw|~ads.shopee.vn|~ads.siriusxmmedia.com|~ads.smartnews.com|~ads.snapchat.com|~ads.socialtheater.com|~ads.spotify.com|~ads.studyplus.co.jp|~ads.taboola.com|~ads.tiktok.com|~ads.tuver.ru|~ads.twitter.com|~ads.typepad.jp|~ads.us.tiktok.com|~ads.viksaffiliates.com|~ads.vk.com|~ads.watson.ch|~ads.x.com|~ads.yandex|~reempresa.org
+://ads.$~image,~xmlhttprequest,domain=~ads.8designers.com|~ads.ac.uk|~ads.adstream.com.ro|~ads.allegro.pl|~ads.am|~ads.amazon|~ads.apple.com|~ads.atmosphere.copernicus.eu|~ads.band|~ads.bestprints.biz|~ads.bikepump.com|~ads.brave.com|~ads.buscaempresas.co|~ads.business.bell.ca|~ads.cafebazaar.ir|~ads.chewy.com|~ads.colombiaonline.com|~ads.comeon.com|~ads.cvut.cz|~ads.doordash.com|~ads.dosocial.ge|~ads.dosocial.me|~ads.elevateplatform.co.uk|~ads.finance|~ads.fund|~ads.google.cn|~ads.google.com|~ads.gree.net|~ads.gurkerl.at|~ads.harvard.edu|~ads.instacart.com|~ads.jiosaavn.com|~ads.kaipoke.biz|~ads.kazakh-zerno.net|~ads.kifli.hu|~ads.knuspr.de|~ads.listonic.com|~ads.luarmor.net|~ads.magalu.com|~ads.mercadolivre.com.br|~ads.mgid.com|~ads.microsoft.com|~ads.midwayusa.com|~ads.mobilebet.com|~ads.mojagazetka.com|~ads.msstate.edu|~ads.mst.dk|~ads.mt|~ads.nc|~ads.nipr.ac.jp|~ads.olx.pl|~ads.pinterest.com|~ads.realizeperformance.com|~ads.remix.es|~ads.rohlik.cz|~ads.rohlik.group|~ads.route.cc|~ads.safi-gmbh.ch|~ads.scotiabank.com|~ads.selfip.com|~ads.shopee.cn|~ads.shopee.co.th|~ads.shopee.com.br|~ads.shopee.com.mx|~ads.shopee.com.my|~ads.shopee.kr|~ads.shopee.ph|~ads.shopee.pl|~ads.shopee.sg|~ads.shopee.tw|~ads.shopee.vn|~ads.siriusxmmedia.com|~ads.smartnews.com|~ads.snapchat.com|~ads.socialtheater.com|~ads.spotify.com|~ads.studyplus.co.jp|~ads.taboola.com|~ads.tiktok.com|~ads.tuver.ru|~ads.twitter.com|~ads.typepad.jp|~ads.us.tiktok.com|~ads.viksaffiliates.com|~ads.vk.com|~ads.watson.ch|~ads.x.com|~ads.yandex|~reempresa.org
 ://ads2.
 ://adsbb.
 ://adserving.
@@ -134210,6 +134218,7 @@ reverso.net###rca
 businessgreen.com###rdm-below-header
 slideserve.com###readl
 shortwaveschedule.com###reclama_mijloc
+time.is###recover
 scoop.co.nz###rect
 dict.cc###recthome
 dict.cc###recthomebot
@@ -139669,6 +139678,7 @@ castanet.net##div[style*="width:640px;"]
 clover.fm##div[style*="width:975px; height:90px;"]
 filesharingtalk.com##div[style="background-color: white; border-width: 2px; border-style: dashed; border-color: white;"]
 askdifference.com##div[style="color: #aaa"]
+time.is##div[style="display:flex;justify-content:center;width:100%;margin-top:20px;height:250px"]
 aceshowbiz.com##div[style="display:inline-block;min-height:300px"]
 kimcartoon.li##div[style="font-size: 0; position: relative; text-align: center; margin: 10px auto; width: 300px; height: 250px; overflow: hidden;"]
 pixiv.net##div[style="font-size: 0px;"] a[target="premium_noads"]
@@ -141468,6 +141478,7 @@ hentaipaw.com##.max-w-\[720px\]
 peekvids.com##.mediaPlayerSponsored
 efukt.com##.media_below_container
 lesbianbliss.com,mywebcamsluts.com,transhero.com##.media_spot
+visitmama.com##.menu-item > a:not([href^="https://www.visitmama.com/"])
 ryuugames.com##.menu-item > a[href^="https://l.erodatalabs.com/s/"]
 camcam.cc##.menu-item-5880
 thehentai.net##.menu_tags
@@ -141701,7 +141712,7 @@ boundhub.com##.tab7le
 18porn.sex,18teensex.tv,429men.com,4kporn.xxx,4wank.com,alotporn.com,amateurporn.co,amateurporn.me,bigtitslust.com,camwhores.tv,danude.com,daporn.com,epicgfs.com,fapnow.xxx,fpo.xxx,freeporn8.com,fuqer.com,gayck.com,hentai-moon.com,heroero.com,hoes.tube,intporn.com,japaneseporn.xxx,jav.gl,javwind.com,jizzberry.com,mrdeepfakes.com,multi.xxx,onlyhentaistuff.com,pornchimp.com,porndr.com,pornmix.org,rare-videos.net,sextubespot.com,sortporn.com,tabootube.xxx,watchmygf.xxx,xcavy.com,xgroovy.com,xmateur.com,xxxshake.com##.table
 sxyprn.com##.tbd
 amateurvoyeurforum.com##.tborder[width="99%"][cellpadding="6"]
-fap-nation.org##.td-a-rec
+fap-nation.org,visitmama.com##.td-a-rec
 camwhores.tv##.tdn
 pronpic.org##.teaser
 onlytik.com##.temporary-real-extra-block
@@ -141961,7 +141972,7 @@ f95zone.to,pornhub.com,pornhubpremium.com,redtube.com##a[href^="https://ads.traf
 hentai2read.com##a[href^="https://arf.moe/"]
 imgsen.com##a[href^="https://besthotgayporn.com/"]
 imx.to##a[href^="https://camonster.com/"]
-f95zone.to##a[href^="https://candy.ai/"]
+f95zone.to,imagetwist.com##a[href^="https://candy.ai/"]
 hog.tv##a[href^="https://clickaine.com"]
 spankbang.com##a[href^="https://deliver.ptgncdn.com/"]
 seexh.com,valuexh.life,xhaccess.com,xhamster.com,xhamster.desi,xhamster2.com,xhamster3.com,xhamster42.desi,xhamsterporno.mx,xhbig.com,xhbranch5.com,xhchannel.com,xhchannel2.com,xhdate.world,xhlease.world,xhofficial.com,xhspot.com,xhtab4.com,xhtotal.com,xhtree.com,xhwide2.com,xhwide5.com##a[href^="https://flirtify.com/"]

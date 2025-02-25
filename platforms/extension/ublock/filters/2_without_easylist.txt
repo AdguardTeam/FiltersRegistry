@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0on7jzWz4ijiri0ogmtSWg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1740494731-3600.patch
+! Checksum: T7JY5jCrgAYiQ+Cw4FPNGg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1740501747-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.72.96
-! TimeUpdated: 2025-02-25T14:32:15+00:00
+! Version: 2.3.72.97
+! TimeUpdated: 2025-02-25T16:31:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25575,13 +25575,18 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199124
+pvpoke-re.com##+js(set-constant, browserMessage, noopFunc)
+pvpoke-re.com##+js(set-constant, myMessage, noopFunc)
+pvpoke-re.com##body > div[id][style*="position:fixed; z-index:"]
+||pvpoke-re.com/actpvpoke.min.js
 ! LinksFlame
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199153
 finance240.com##+js(no-fetch-if, googleads.g.doubleclick.net)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199006
-@@||googleads.g.doubleclick.net/pagead/interaction/$domain=ecosolardigest.com
+ecosolardigest.com##+js(no-fetch-if, doubleclick.net)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198999
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=cutyion.com
+cutyion.com##+js(no-fetch-if, googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199239
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=amigosporn.top
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199080
@@ -52042,6 +52047,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+tastingtable.com,islands.com,grunge.com,slashgear.com,grunge.com,svg.com##.partnership-header
+tastingtable.com,islands.com,grunge.com,slashgear.com,grunge.com,svg.com##.partnership-header + div.slide-key
+tastingtable.com,islands.com,grunge.com,slashgear.com,grunge.com,svg.com##.under-art > h2.section-header
 lewdzone.com##.row > div.col-md-12:has(> div.item > ins)
 lewdzone.com##.row > div.col-xs-6:has(> div.item > div.textwidget > ins)
 tactics.tools##.afm-wrap
@@ -70937,9 +70945,9 @@ forbes.com##.channel--ad
 ##body > div#dontfoid
 ##html > div[class][style^="pointer-events: none; position: absolute; top: 0px; left: 0px; width:"]
 ##html > div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: auto;"]
-/^https:\/\/[a-z-]{5,13}\.[a-z]{2,6}\/[a-z0-9]{1,20}\?[A-Za-z0-9]{15,22}=(?=.*[A-Z])[A-Za-z0-9%]{35,2000}$/$xmlhttprequest,third-party,match-case
-pepperlivestream.online,pawastreams.pro,time4tv.site,en.tgo-tv.xyz,miztv.shop,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,nepu.to,capo4play.com,wawacity.cfd,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,streameast.*,thestreameast.*,anroll.net,anarchy-stream.com,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,compensationcoincide.net,embedstreams.me,closedjelly.net,sportsonline.*,dl-protect.link,cricstream.me,extreme-down.*,yts.mx,eztvx.to,claplivehdplay.ru,skidrowreloaded.com,olympicstreams.*,streambucket.net,modsfire.com,official.nbabite.com,forgepattern.net,sportsonline.*##+js(abort-on-property-read, Adcash)
-sanet.st,totalsportek.club,totalsportek.games,totalsportek.futbol,totalsportek.zip,totalsportek.racing,totalsportek.tel,totalsportek.dad,time4tv.site,buffsports.*,olympicstreams.*##+js(abort-current-script, globalThis, adserverDomain)
+/^https:\/\/[a-z-]{5,13}\.[a-z]{2,6}\/[a-z0-9]{1,20}\?[A-Za-z0-9]{15,26}=(?=.*[A-Z])[A-Za-z0-9%]{35,2000}$/$xmlhttprequest,third-party,match-case
+eurekaddl.lat,pepperlivestream.online,pawastreams.pro,time4tv.site,en.tgo-tv.xyz,miztv.shop,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,nepu.to,capo4play.com,wawacity.cfd,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,streameast.*,thestreameast.*,anroll.net,anarchy-stream.com,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,compensationcoincide.net,embedstreams.me,closedjelly.net,sportsonline.*,dl-protect.link,cricstream.me,extreme-down.*,yts.mx,eztvx.to,claplivehdplay.ru,skidrowreloaded.com,olympicstreams.*,streambucket.net,modsfire.com,official.nbabite.com,forgepattern.net,sportsonline.*##+js(abort-on-property-read, Adcash)
+eurekaddl.lat,sanet.st,totalsportek.club,totalsportek.games,totalsportek.futbol,totalsportek.zip,totalsportek.racing,totalsportek.tel,totalsportek.dad,time4tv.site,buffsports.*,olympicstreams.*##+js(abort-current-script, globalThis, adserverDomain)
 vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,capo4play.com,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,compensationcoincide.net,embedstreams.me,closedjelly.net,sportsonline.*##+js(abort-on-stack-trace, Element.prototype.hasAttribute, isActionAllowedOnElement)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198311
@@ -71035,7 +71043,7 @@ timesofindia.indiatimes.com##[data-contentprimestatus]
 !+ NOT_OPTIMIZED
 thehackernews.com##.dog_two
 !+ NOT_OPTIMIZED
-tastingtable.com,slashgear.com,islands.com,svg.com##.before-ad
+tastingtable.com,islands.com,grunge.com,slashgear.com,grunge.com,svg.com##.before-ad
 !+ NOT_OPTIMIZED
 youtubetranscript.com###video_col a[target="_blank"] > img
 !+ NOT_OPTIMIZED
