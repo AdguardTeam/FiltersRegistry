@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: n9wIBHsMKhx3KORqvSiA0w
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1740462167-3600.patch
+! Checksum: wzDnB4dJPVtwLhPuD1nMXA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1740465713-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.87
-! TimeUpdated: 2025-02-25T05:38:37+00:00
+! Version: 2.2.22.88
+! TimeUpdated: 2025-02-25T06:37:31+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1404,6 +1404,8 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
 scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
+swiss.com.pl###consent_wrapper
+kolba.pl##main > section.bottom-0:has(button#banner-accept-all-cookies-btn)
 limanowa.in###notificationsPopup
 abacus.ai###homeVisitPopup
 dometrain.com###spopupCont
@@ -2163,8 +2165,8 @@ health.tvbs.com.tw##+js(set-cookie, cookie_accept, accept)
 przewodnik-katolicki.pl##.ciastka
 monzo.com##+js(set-cookie, cookies_accepted, false)
 monzo.com##+js(set-cookie, _cookies_banner_dismissed, true)
-talksport.com,wiwo.de#$?#div[id^="sp_message_container_"] { display: none !important; }
-talksport.com,wiwo.de##+js(remove-class, sp-message-open, html)
+wiwo.de#$?#div[id^="sp_message_container_"] { display: none !important; }
+wiwo.de##+js(remove-class, sp-message-open, html)
 infineon.com##.mi-consent-layer
 zdrowahuta.pl,wkatowicach.eu,zosolesnica.pl,olesnica.pl,metropoliagzm.pl,intracom.pl,sycow.pl###polityka-cookie
 iledefrance-mobilites.fr#$#html[class^="stopScroll"] { overflow: auto !important; }
@@ -13522,6 +13524,7 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+elnuevoherald.com###ymovrly
 irishtimes.com##.b-newsletter-block
 verdict.co.uk##.catfish
 manilatimes.net##.hp-newsletter-form
@@ -22009,6 +22012,7 @@ softpedia.com#$#iframe.swipebox-rightxd[id="relcontent"] { top: 60px!important; 
 !##############################
 !######### JS tweaks ##########
 !##############################
+talksport.com##+js(remove-class, pip-active, #featured-video-cta)
 ziggame.com##+js(addEventListener-defuser, blur, counter)
 skiplinks.xyz##+js(adjust-setTimeout, timer, *, 0.001)
 policiesreview.com##+js(nano-setInterval-booster, countdown, *, 0.001)
