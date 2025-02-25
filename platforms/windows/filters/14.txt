@@ -1,9 +1,9 @@
-! Checksum: 0wdCqCxrT0CFJOqP0tOZ5g
-! Diff-Path: ../patches/14/14-s-1740494744-3600.patch
+! Checksum: 3Coc7OUIApqYq1K7/p+5Pg
+! Diff-Path: ../patches/14/14-s-1740498289-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.22.95
-! TimeUpdated: 2025-02-25T14:40:43+00:00
+! Version: 2.2.22.96
+! TimeUpdated: 2025-02-25T15:40:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,7 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+###stoppage
 ##.cookie-alert ~ #exposeMaskOverlay
 ##.idxrcookies-block-user-nav::before
 ##.we-use-cookies
@@ -25314,7 +25315,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
-e.mail.ru#%#//scriptlet('trusted-click-element', '#octavius-popup-cloud-subscribe div[data-test-id="close"]')
+news.pts.org.tw##.promotion-mask
+e.mail.ru,octavius.mail.ru#%#//scriptlet('trusted-click-element', '#octavius-popup-cloud-subscribe div[data-test-id="close"]')
 web.de,3c.gmx.*##.ftd-box-promote
 psicologiaymente.com##main > div.fixed.bottom-0:has(> div > button > svg > path[d^="M19.41"])
 yodosha.co.jp##.banner-block
@@ -48572,6 +48574,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+zyuken.net#?#.index.sub > div.index > dt:has(> a:contains([PR]))
 books.com.tw##div[class^="flash_pic"]
 books.com.tw##div[class^="header_box"] > div.figure_img
 filepuma.com##.ad-gu-wrap
