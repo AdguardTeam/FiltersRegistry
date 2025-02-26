@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: yFZ6+AxwGmGLeRwLADw8IQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1740505340-3600.patch
+! Checksum: e4tuHJTjKictCBtHHiBFeA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1740537743-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.31.0
@@ -228,7 +228,6 @@ elle.com##+js(remove-class, glimmer-sticky, .content-lede-video.glimmer-sticky-c
 braziljournal.com##.rowsocial
 famitsu.com#?#.l-contents-block:has(> .heading > .heading__title:contains(特設・企画))
 famitsu.com#?#.row > .col-12:has(> .card > .ad-native-campaign)
-||coin-hive.com^$third-party
 ||coinhive.com^$third-party
 123telugu.com###text-16
 timesofisrael.com##+js(remove-class, vjs-pip-active, .video-js.vjs-pip-active)
@@ -324,6 +323,7 @@ capital.fr###dailymotion-pip-large-viewport
 stopcor.org##.videoOfDay
 so.toutiao.com##.s-side-list > div.result-content > div[id^="s-dom-"]
 tribuna.com##.dugout-video
+football-tribe.com##.dugout_video_cont
 ||embed.dugout.com^$script,third-party,domain=~sportowefakty.wp.pl|~ultra-soccer.jp
 gala.fr###dailymotion-pip-large-viewport
 turkishairlines.com#?##page_wrapper > section.nopadding:has(> div.middle-wrapper img[title^="Turkish Airlines"])
@@ -499,6 +499,7 @@ tvn24.pl##+js(json-prune, options.auto_play)
 ownedcore.com###site-header > div > div[style="text-align:center;"] > a[rel="nofollow"][target="_blank"]
 sudya-dredd.ru##+js(abort-current-script, stopPrntScr)
 sudya-dredd.ru#$?#body > style:contains(::selection) { remove: true; }
+reedsy.com##.duplicate-content
 ||cdn.tinypass.com/api/tinypass.min.js$domain=seekingalpha.com
 investing.com##+js(remove-class, has-ads-free-promo-header, body)
 bfmtv.com#$#.video-js.vjs-pip-active { position: static!important; }
@@ -580,7 +581,6 @@ applesfera.com###editorialRecommendedPosts
 ligainsider.de###popup_extra
 qyer.com##.advertising
 qyer.com##.q-footer-banner
-qyer.com##.qyer_layer_fix._jsbeforelogindiv
 tweakers.net##.relatedItProContent
 nextmgz.com,nextmag.com.tw##+js(set-constant, paywall, noopFunc)
 filehippo.com##a#avast-seal
@@ -624,7 +624,9 @@ neuhandeln.de##.entry-content > p > em
 pi-news.net##.widget_wysija
 gannikus.com###sidebar > #text-8
 pagalguy.com##.floater-bottom > .pg-card
+gmx.net###topper
 ||radioroks.ua^$domain=megatrack.top
+phys.org##.nwletter-box
 newtab.club##.section-icon-tabs
 wikipedia.org##.cnotice
 vk.com##.feed_friends_recomm
@@ -895,7 +897,6 @@ ya.ru,yandex.*#$#:matches-path(/search)button[type="button"][title="Нет, сп
 ya.ru,yandex.*#$#:matches-path(/search)div[class*="Distribution-SplashScreenModal"]:has(a[href^="https://yabs.yandex.ru/count/"]) { display: none !important; }
 ya.ru,yandex.*#$#:matches-path(/search)div[class*="Distribution-SplashScreenModal"]:has(a[href^="https://ya.ru/search/_crpd/"]) { display: none !important; }
 ya.ru,yandex.*#$#:matches-path(/search)div[class*="Distribution-SplashScreenModal"][outercrosstitle="Нет, спасибо"] { display: none !important; }
-ya.ru,yandex.*##:matches-path(/search)div.Root[id]:has(> button.Distribution-SplashScreenModalCloseButtonOuter)
 ya.ru,yandex.*#$#:matches-path(/search)body[style] { padding-right: 0 !important; overflow: auto !important; }
 ya.ru,yandex.*##:matches-path(/search).HeaderDesktopActions-Distribution
 ya.ru,yandex.*##.AliceFabPromo
@@ -1232,6 +1233,7 @@ nikkei.com##div[data-optimizely-selector="paywall-container"] div[data-optimizel
 kachimai.jp###js-footer-banner
 bakusai.com##.slick-slider
 vseinstrumenti.ru##div[data-behavior="header-info-line"]
+tproger.ru##.tp-lubok-top
 retty.me##.firstview-ad-section
 oneesports.gg##.article-footer-banner
 service.smt.docomo.ne.jp##.bnr_area
@@ -1304,6 +1306,7 @@ cloud.baidu.com##div[class*="width"][class$="-center"] a[href^="https://cloud.ba
 cloud.baidu.com##a[data-track-value="右侧banner"]
 livemint.com##div[id^="signInStoryBoxId"]
 gamespark.jp##.news-list > section.item--special
+afisha.ru###root > a
 goo-net.com##.custom-html-widget > div[class*="_bnr_"]
 eikaiwa.dmm.com##.banner-default
 eikaiwa.dmm.com##.banner-single-top
@@ -1425,6 +1428,7 @@ investorgain.com###right > div.sticky-xl-top
 banggood.com##.top-item
 auf1.tv#?#.w-full:has(> div.text-sm:contains(Werbung))
 kupujemprodajem.com##div[class^="Banner"]
+bookvoed.ru##div[class] > a[href^="/redirect/karusel/stat?"]:has(> img[alt="Новичкам везёт!"])
 eksmo.ru##.cheader__personal-offer
 investing.com##.relative > div.sticky:has(> div > a[href^="/ad-free-subscription?"])
 rocketleague.tracker.network##.app-promo-section
@@ -1806,6 +1810,7 @@ tuoitre.vn##.boxraovat_catedetail
 amazon.*##article[data-automation-id="hero-quick-promo"]
 llbean.ca###pc5
 atida.fr###top-info
+weather.yahoo.co.jp###rbnr > p[style="margin:0px 0px 20px 0px;text-align:center;"]
 bilibili.com##.video-page-special-card-small
 123pan.com##div[style="width:100%;position:fixed;bottom:25px"]
 getpocket.com#?##__next > aside:has(> div[class][style^="max-width:"] > div[class] > a[href^="https://getpocket.com/premium?"])
@@ -1987,7 +1992,6 @@ blognone.com###above_comments
 full-count.jp##.s-entry-ads
 pyimagesearch.com###pyi-source-code-block
 pyimagesearch.com###download-the-code
-financialsense.com##.pane-bundle-promo
 bookwalker.jp##.ad-new-member
 bookwalker.jp##.side-deals
 bookwalker.jp##.o-beginner-banner
@@ -2013,6 +2017,7 @@ cyberleninka.ru#?#.infoblock:has(> div[class="full"] > div.bibloid_serp)
 orefolder.jp##.sidebar > .widget_text
 downloadcrew.com##.downloadsAd
 rakuten-card.co.jp##.list-bnr-wrap
+qualtrics.com##ul[data-gatext="Banners"]
 energy.rakuten.co.jp##.bottom_slider_layout
 energy.rakuten.co.jp##.main_slider_layout
 altclick.ru##.marquiz-pops
@@ -2061,6 +2066,7 @@ plus.espn.com##.popup-container
 hvg.hu#?#.content ~ section.articlebox:has(> div.articleitem a[href^="https://hvg.hu/brandchannel/"])
 edureka.co##.cta-ads-block-inline
 business.tutsplus.com##.post__inarticle-ad-template-mobile
+uteka.ru##._advertising
 testbook.com##.signup-banner
 ebay.de###gh-topl a#gh-doodleS
 kinogo.*##.kreativ
@@ -2201,7 +2207,6 @@ theweathernetwork.com##.promo_service
 alexfilm.org#$#body { background: #000000!important; }
 iss.ink,anilib.one,anilib.moe,anilibria.iss.one,anilib.top,anilibria.tv##.main > div.content > a[target="_blank"] > img
 journalstar.com#?#section.block:has(> div.clearfix > div h3:contains(/Print|ads/))
-pesdb.net###friendly_sites
 protanki.tv#$#body { overflow: visible!important; }
 splice.com##a[data-qa="plugins-banner"]
 scdkey.com##body > div.main > ul.bg
@@ -2220,7 +2225,6 @@ badatel.net##div[id^="badat-"]
 femina.hu##div[data-miniapp-id]
 coolutils.com###bottomBanner
 drweb.ru###ShowIt
-lenta.ru##iframe[name="banner"]
 office.com##.m-alert.f-information
 music.youtube.com##ytmusic-mealbar-promo-renderer
 ||banner.consultant.ru^
@@ -2343,6 +2347,7 @@ clearvpn.com##.articleSideBanner
 xtech.nikkei.com##a[href^="https://info.nikkei.com/nxt/subscription/"]
 115.com##.feature-float
 115.com##.sharing-banner
+anonymouse.org###mouselayer
 saudgin.monster,lookmovie.foundation#?#body > .notifyjs-corner:has(a[href="/premium.html"][target="_blank"])
 dailyshincho.jp##.l-contents__sub > div.c-box-ad
 dailyshincho.jp#?#.l-contents__sub > section.l-contents__section:has(> ul.c-list-article--vertical span.c-text-note:contains(PR))
@@ -2378,6 +2383,7 @@ liga.net##a[href="https://www.liga.net/adfree"]
 m.yahoo.co.jp##a[class^="TimelineTargeting_TimelineTargeting__link__"]
 audioholics.com##+js(no-setTimeout-if, #sitemodal)
 abczdrowie.pl##.be-healthy
+urbandictionary.com##a[data-x-bind="merchAd"]
 ||img5.lalafo.com/i/banners
 lalafo.kg##+js(remove-class, with-branding, .main-layout)
 washingtonpost.com#$#body[style*="position: fixed"] { height: auto !important; width: auto !important; position: static !important; min-width: auto !important; }
@@ -2529,6 +2535,8 @@ baike.baidu.com##.BK-after-content-wrapper > ul[class][id] > li > a[onclick^="pa
 baike.baidu.com#?#.BK-after-content-wrapper > ul[class][id] > li:has(> a[onclick^="page.Mixedor.mixedOpen"][target="_blank"])
 www.yahoo.co.jp###CenterBanner
 www.yahoo.co.jp###TopLink
+cnyfertility.com##.banner
+cnyfertility.com##.post__banner--inside
 w3cschool.cn###rfbanner
 w3cschool.cn#$##topbanner { display: none !important; }
 lenta.ru#$#.scroll-to-site { display: none !important; }
@@ -2650,6 +2658,7 @@ sfd.pl##.topic-advertisments
 sfd.pl##.wallpaper-holder--upspaced
 caixinglobal.com#$#body { overflow: visible !important; }
 spiegel.de###spPlusBanner
+spiegel.de##.spiegel-eigenwerbung
 audycje.tokfm.pl##.app--podcasts_ad
 audycje.tokfm.pl##.oferta_promocyjna--lista_podcastow
 arzamas.academy##.b-promo
