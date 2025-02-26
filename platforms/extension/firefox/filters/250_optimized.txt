@@ -1,11 +1,12 @@
-! Checksum: U/p7QT/hizdxN+bfuv59OQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1740531962-14400.patch
+! Checksum: BuSDpu+dRywX3BKsYzCQFA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1740546371-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.25
 ! TimeUpdated: 2025-02-26T01:01:58+00:00
 ! Expires: 10 days (update frequency)
 ##.app-banner:not(html,body,:empty)
+##.app-btn:not(html,body,:empty)
 ##.app-download:not(html,body,section,.content)
 ##.download-app:not(html,body,:empty)
 ##.open-in-app:not(html,body,:empty)
@@ -97,7 +98,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||trkk4.com^$document,domain=~malware_redirection_trains.*
 ||hosting-redirect.com^$document,domain=~malware_redirection_trains.*
 ||yasir252.com^$all
-||xiaobaixitong.com^$all
 ||dabaicai.com^$all
 ||flash.cn^$all
 !+ NOT_OPTIMIZED
@@ -175,6 +175,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||banishafreshconjunction.com^$all
 ||clothmexican.com^$all
 ||doubtsuseless.com^$all
+||expensivelikeness.com^$all
 ||heelsteaching.com^$all
 ||hitchprivilege.com^$all
 ||imminenttuxedodope.com^$all
@@ -182,8 +183,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||apologiesoccursdepressed.com^$all
 ||chesssorrydescend.com^$all
 ||dreadfullyemulateconservation.com^$all
-||askewrefusaltrashy.com^$all
-||deeplygumssandwich.com^$all
 ||blondparcelcane.com^$all
 ||calculationtypicalscuffle.com^$all
 ||entreatyfungusgaily.com^$all
@@ -1613,6 +1612,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /jquery.snow.js
 /snow-fall.js
 /snow-falling.js
+/snow-storm^$script
 /snowfall-master.min.js
 /snowfall.jquery.
 /snowstorm.js
@@ -1647,6 +1647,7 @@ reports.adguard.com$badfilter
 @@||easylist.to/*.txt^
 @@||someonewhocares.org/hosts/
 @@||fanboy.co.nz/*.txt^
+thenews.com.pk##a[href$="/prayer-time"]
 yeniakit.com.tr##.info-bar > li:not([class], [title])
 bloombergquint.com#%#//scriptlet('ubo-acis.js', 'document.oncopy')
 bloombergquint.com#%#//scriptlet('ubo-aopr.js', 'getSelection')
@@ -1912,6 +1913,7 @@ $document,removeparam=/^source=cj$/
 $removeparam=affil
 $removeparam=cjid
 $removeparam=sv_campaign_id
+$document,removeparam=/^sv_tax.*$/
 $removeparam=LSNSUBSITE
 $removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
@@ -1940,6 +1942,7 @@ $removeparam=spReportId
 $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
+$removeparam=oly_anon_id
 $removeparam=s_cid
 $removeparam=ml_subscriber
 $removeparam=ml_subscriber_hash
@@ -2070,6 +2073,7 @@ $removeparam=gaa_at
 $removeparam=gaa_n
 $removeparam=gaa_ts
 $removeparam=gaa_sig
+$removeparam=amp_gsa
 $removeparam=vgo_ee
 $document,removeparam=/^amp;utm_.*$/
 $removeparam=sap-outbound-id
@@ -2085,6 +2089,7 @@ $removeparam=as_campaign
 $removeparam=as_camptype
 $removeparam=as_channel
 $removeparam=as_source
+$document,removeparam=/^source=igodigital$/
 $removeparam=qq-pf-to
 $removeparam=mibextid
 $document,removeparam=/^adppopup=[a-eg-zA-EG-Z0-9]/
@@ -2226,7 +2231,6 @@ $removeparam=/^asc_.*$/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ||amazon.$document,removeparam=starsLeft
 ||amazon.$document,removeparam=skipTwisterOG
 ||amazon.$removeparam=ms3_c
-||amazon.$document,removeparam=ccs_id
 ||amazon.$document,removeparam=source
 ||bing.com/?$removeparam=/^form=.*$/i
 ||bing.$removeparam=sp
@@ -2557,7 +2561,6 @@ $removeparam=report_recomm_player
 ||qq.com^$removeparam=ptag
 ||view.inews.qq.com^$removeparam=refer
 ||view.inews.qq.com^$removeparam=ft
-$removeparam=app,domain=tiktok.com|music.apple.*
 $removeparam=c,document,domain=announcements.bybit.com|appsflyer.com|farfetch.com|glami.cz|hepsiburada.com|norton.com|onelink.me|shopee.*|tiktok.com|instabox.io
 $document,removeparam=campaign,domain=1sol.io|bdsmx.tube|blue-tomato.com|bybit.com|coinpanel.com|discord.*|docs.google.com|docsend.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|mrgay.tube|outnorth.fi|peterhahn.*|reddit.app.link|runnode.com|scmp.com|shopee.*|sitepoint.com|sportler.com|t.me|twitter.com|ubereats.com|x.com|youtube.com
 $removeparam=/^pf_rd_.*$/,domain=shopbop.com|amazon.*|imdb.com|zappos.com|audible.*|6pm.com
@@ -2571,7 +2574,6 @@ $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybi
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
-$removeparam=sm12
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 ||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
@@ -2591,6 +2593,7 @@ $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|disc
 ||apple.com^$removeparam=fnode
 ||epidemicsound.com^$removeparam=_us
 ||epidemicsound.com^$removeparam=_usx
+||microsoft.com^$removeparam=headerid
 ||microsoft.com^$removeparam=destrt
 $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moosejaw.com|multitronic.fi|scandinavianphoto.fi|swamp.fi|ocado.com|ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 ||squarespace.com^$removeparam=subchannel
@@ -2652,7 +2655,6 @@ $removeparam=algo,document
 $removeparam=imp_id,document
 ||steampowered.com^$removeparam=ser
 $removeparam=sourceType,domain=vitaminshoppe.com|aliexpress.com
-$removeparam=ds_e_adid,domain=clickserve.dartsearch.net
 $removeparam=ds_e_target_id
 $removeparam=ds_url_v,domain=clickserve.dartsearch.net
 $removeparam=_ref,domain=fanatics.com|nhl.com
@@ -2696,7 +2698,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
-||dw.com^$removeparam=maca
 ||fiverr.com^$removeparam=bta
 ||fiverr.com^$removeparam=afp
 ||fiverr.com^$removeparam=cxd_token
@@ -2775,8 +2776,6 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=catId
 ||jcpenney.com^$removeparam=urlState
 ||jcpenney.com^$removeparam=productGridView
-||jcpenney.com^$removeparam=badge
-||jcpenney.com^$removeparam=selectedSKUId
 ||bandcamp.com^$removeparam=search_item_id
 ||bandcamp.com^$removeparam=search_item_type
 ||bandcamp.com^$removeparam=search_match_part
@@ -2794,7 +2793,6 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||bbc.$removeparam=at_link_id
 ||bbc.$removeparam=at_link_origin
 ||linkedin.com^$removeparam=updateEntityUrn
-$document,removeparam=helpref,domain=whatsapp.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|instagram.com
 ||nvidia.com^$removeparam=jso
 $removeparam=srsltid,document
 ||dl-protect.$removeparam=fn
@@ -2877,8 +2875,6 @@ $document,removeparam=af_reengagement_window
 ||affiliate.insider.com^$document,removeparam=platform
 ||affiliate.insider.com^$document,removeparam=postID
 ||affiliate.insider.com^$document,removeparam=postSlug
-$document,removeparam=_x_ns_sku_id,domain=temu.com
-$document,removeparam=_x_gmc_account,domain=temu.com
 $document,removeparam=_x_ads_creative_id,domain=temu.com
 $document,removeparam=_x_ns_device,domain=temu.com
 $document,removeparam=_x_ads_account,domain=temu.com
@@ -2977,7 +2973,7 @@ www.svt.se#$#div[class*=TextContent_textContent__] { font-family: "Segoe UI Bold
 @@||wikia.nocookie.net^*/images/$image,badfilter
 fandom.com,wikia.org#$?#a:link { cursor: pointer !important }
 cursor_hover.$image
-||nocookie.net/*_cursor_*.png^
+_Cursor1.png^
 tumblr.com#$#.custom-cursor { cursor: unset !important }
 tumblr.com#$#.custom-cursor a { cursor: pointer !important }
 tumblr.com,strategix.dk#$#body { cursor: unset !important }
