@@ -1,9 +1,9 @@
-! Checksum: s1WVdD9LBR9Cnmf1dPzK3g
-! Diff-Path: ../patches/3/3-s-1740548523-3600.patch
+! Checksum: 41RCApnmGuxeQCqUy0G02Q
+! Diff-Path: ../patches/3/3-s-1740573945-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.81.6
-! TimeUpdated: 2025-02-26T05:37:37+00:00
+! Version: 2.0.81.7
+! TimeUpdated: 2025-02-26T12:40:44+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -546,6 +546,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !
 !
 !
+||gcprivacy.com^
 ||domself.de^
 ||teraverseapp.com^
 ||pavoboxapp.com^
@@ -142078,6 +142079,13 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Bad:  ||example.com^$cookie=flat_r_mb (should be in cookies_specific.txt)
 !
 !
+! AdDefend
+$cookie=xdefccpm
+! Smartocto
+$cookie=_sotmsid
+$cookie=_sotmpid
+! ScorecardResearch
+$cookie=_scor_uid
 ! Shopify
 ! https://www.shopify.com/legal/cookies
 $cookie=_shopify_y
@@ -144442,6 +144450,9 @@ inapps.appsflyersdk.com^
 !
 ! For platforms which do not support $redirect rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199221
+elahmad.com#%#//scriptlet('prevent-fetch', 'pahtag.tech')
+elahmad.com##body > div[id^="ads"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199345
 @@||st-eu.dynamicyield.com/st$domain=amorelie.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199217
