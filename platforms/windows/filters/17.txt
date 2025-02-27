@@ -1,9 +1,9 @@
-! Checksum: EwWkmXnubtWkdfHelM/SCQ
-! Diff-Path: ../patches/17/17-s-1740664030-3600.patch
+! Checksum: yFOZcFC0nNcx6IhcVYa1rg
+! Diff-Path: ../patches/17/17-s-1740670957-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.57
-! TimeUpdated: 2025-02-27T13:42:25+00:00
+! Version: 2.0.10.58
+! TimeUpdated: 2025-02-27T15:38:09+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -390,6 +390,11 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! comic.k-manga.jp
+||comic.k-manga.jp^$removeparam=xuid
+||comic.k-manga.jp^$removeparam=ad
+||comic.k-manga.jp^$removeparam=adtype
+||comic.k-manga.jp^$removeparam=ad_flag
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197415
 ||sharepoint.com^$removeparam=referrerScenario
 ||sharepoint.com^$removeparam=referrer
@@ -2706,7 +2711,6 @@ $removeparam=s,domain=twitter.com|x.com
 ||daraz.*$removeparam=/spm=|scm=|from=|keyori=|sugg=|search=|mp=|c=|^abtest|^abbucket|pos=|themeID=|algArgs=|clickTrackInfo=|acm=|item_id=|version=|up_id=|pvid=/
 ! Bilibili
 ||bilibili.com^$removeparam=from_spmid
-||bilibili.com^$removeparam=from
 ||bilibili.com^$removeparam=msource
 ||bilibili.com^$removeparam=csource
 ||bilibili.com^$removeparam=source
