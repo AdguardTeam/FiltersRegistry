@@ -1,9 +1,9 @@
-! Checksum: 57oH3gnifh0o50BKCh8vyQ
-! Diff-Path: ../patches/2/2-s-1740631332-3600.patch
+! Checksum: 5uNg0OxR3akQ5t43k4muSA
+! Diff-Path: ../patches/2/2-s-1740635094-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.73.21
-! TimeUpdated: 2025-02-27T04:31:43+00:00
+! Version: 2.3.73.22
+! TimeUpdated: 2025-02-27T05:31:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -54662,8 +54662,8 @@ infinityfree.com#$?#html[lang][dir="ltr"] [id^="img_"][style]:has(iframe[framebo
 smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 ! Common rules, which partially hide banners
 ~dogdrip.net,~infinityfree.com,~slashdot.org,~smsonline.cloud##html[class^="img_"][amp4ads=""][i-amphtml-layout=""][i-amphtml-no-boilerplate=""][amp-version="2502032353000"]
-~dogdrip.net,~infinityfree.com,~slashdot.org,~smsonline.cloud##body[onclick="ExitApi.exit();"][style="cursor:pointer"]
-~dogdrip.net,~infinityfree.com,~slashdot.org,~smsonline.cloud##div[id^="img_"][style$="z-index:2147483647; flex-direction: row; justify-content: flex-end; display: flex;"]
+~dogdrip.net,~infinityfree.com,~slashdot.org,~smsonline.cloud#$?#body[onclick="ExitApi.exit();"][style="cursor:pointer"] { visibility: hidden !important; }
+~dogdrip.net,~infinityfree.com,~slashdot.org,~smsonline.cloud#$?#div[id^="img_"][style*="z-index:2147483647;"][style*="display: flex;"] { visibility: hidden !important; }
 ~dogdrip.net,~infinityfree.com,~slashdot.org,~smsonline.cloud#$?#a[href^="https://html-load.com/contents/"] { visibility: hidden !important; }
 ~dogdrip.net,~infinityfree.com,~slashdot.org,~smsonline.cloud#$?#body > a:first-child[target="_blank"][rel="noopener noreferrer"]:only-child:has(> div[id^="img_"][class^="img_"]) { visibility: hidden !important; }
 ~dogdrip.net,~infinityfree.com,~slashdot.org,~smsonline.cloud#$?#div[id^="img_"] > div[id^="img_"][style="margin: 0px; padding: 0px; display: block; position: fixed; left: 0px; bottom: 0px; width: 100%; z-index: 2147483647; transition: 0.3s ease-in-out;"] { visibility: hidden !important; }
@@ -54685,6 +54685,7 @@ choco0202.work,exawarosu.net,honyaku-channel.net,jisaka.com,kijolariat.net,kijyo
 ##a[style="text-decoration:none;"] > div[style^="border: none; margin: 0px;"]
 ##a[style^="background:transparent url"][style*=".html-load.com/contents/"]
 ##body > a[href^="https://html-load.com/contents/"][target="_top"]
+##body > div:not([class]):not([id]) > script + div[id^="img_"] > div[id^="img_"][visibility="visible"]
 ##body > div:not([class]):not([id]) > script + div[id^="img_"] > script + span[id^="img_"][style] > a[href^="https://html-load.com/contents/"]
 ##body > div[id^="img_"] > div[style$="height:280px;"][class*=" img_"]
 ##body > div[id^="img_"]:has(+ amp-pixel + amp-analytics)
@@ -54693,6 +54694,7 @@ choco0202.work,exawarosu.net,honyaku-channel.net,jisaka.com,kijolariat.net,kijyo
 ##body > script + script + script + div + div[style="display:inline"] > div[class^="img_"][id^="img_"] > div[class^="img_"] > div[class^="img_"] > div[class*=" img_"] > a[href^="https://html-load.com/contents/"][target="_blank"][rel="nofollow"]
 ##body > script[src]:first-child + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
 ##body > script[src]:first-child + script + div:not([id]):not([class]) > script + script[src] + script + div[id^="img_"]
+##body[onclick="ExitApi.exit();"][style="cursor:pointer"] > a[href="javascript:(function(){open(window.clickTag)})()"]
 ##canvas[id^="img_"][width]
 ##div[class^="img_"][id^="img_"][active_view_class_name]
 ##div[class^="img_"][style$="196px; position: absolute;"]
@@ -54709,7 +54711,6 @@ choco0202.work,exawarosu.net,honyaku-channel.net,jisaka.com,kijolariat.net,kijyo
 ##div[id^="img_"][style="cursor: pointer;"]
 ##div[id^="img_"][style="width: 300px;"]
 ##div[id^="img_"][style^="height: 250px; width: 300px;"]
-##div[id^="img_"][style^="margin"][style$="auto;"]
 ##div[id^="img_"][style^="width: 100%; height: 100px; position: fixed; bottom: 0; left: 0; z-index:"]
 ##div[id^="img_"][style^="width: 300px; height: 250px; left: 0px;"]
 ##div[id^="img_"][x-frame-height="53"]
@@ -54725,6 +54726,7 @@ choco0202.work,exawarosu.net,honyaku-channel.net,jisaka.com,kijolariat.net,kijyo
 ##div[style*="left: 0px; z-index: 1000000000"] > div > div[id^="img_"]
 ##div[x-frame-height="100"] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##div[x-frame-height$="50"] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
+##gwd-google-ad
 ##html > body > a[target="_blank"][rel="noopener noreferrer"][href^="https://html-load.com/contents/"][href*="/0/"] > div[id^="img_"][class*=" img_"] > div[class^="img_"] > *
 ##html[lang*="-"] > body[style="width:100%;height:100%;margin:0;"] > div[class^="img_"][style="width:100%; height:100%;"]
 ##iframe[src*=".html-load.com/contents/"] + div[id^="img_"]:empty
@@ -103023,6 +103025,7 @@ browsershots.org#@#.advert_area
 ||56rt2692.de^
 ||5707f9766c.com^
 ||574ae48fe5.com^
+||578297a5.b-cdn.net^
 ||578d72001a.com^
 ||579eede9ca.com^
 ||582155316e.com^
@@ -105531,6 +105534,7 @@ browsershots.org#@#.advert_area
 ||ayzylwqazaemj.top^
 ||azads.com^
 ||azawv.rocks^
+||azazyjjovmker.top^
 ||azbjjbwkeokvj.top^
 ||azcmcacuc.com^
 ||azenka.one^
@@ -105577,6 +105581,7 @@ browsershots.org#@#.advert_area
 ||b73uszzq3g9h.com^
 ||b76751e155.com^
 ||b7bf007bbe.com^
+||b7dff0913b.com^
 ||b8ce2eba60.com^
 ||b8pfulzbyj7h.com^
 ||b9f26bbf80.com^
@@ -106872,6 +106877,7 @@ browsershots.org#@#.advert_area
 ||burlyenthronebye.com^
 ||burntarcherydecompose.com^
 ||burntclear.com^
+||burnybdl.com^
 ||burydwellingchristmas.com^
 ||busedsoccage.shop^
 ||busherdebates.com^
@@ -107319,6 +107325,7 @@ browsershots.org#@#.advert_area
 ||ceilingbruiseslegend.com^
 ||cekgsyc.com^
 ||ceklcxte.com^
+||celai.site^
 ||celeb-ads.com^
 ||celebnewsuggestions.com^
 ||celebratedrighty.com^
@@ -109649,6 +109656,7 @@ browsershots.org#@#.advert_area
 ||dmiredindeed.com^
 ||dmiredindeed.info^
 ||dmm-video.online^
+||dmntft.com^
 ||dmphcubeiux.com^
 ||dmrtx.com^
 ||dmsktmld.com^
@@ -110048,7 +110056,9 @@ browsershots.org#@#.advert_area
 ||dwellerfosset.shop^
 ||dwellsew.com^
 ||dwetwdstom1020.com^
+||dwfbs38k9z6bu.cloudfront.net^
 ||dwfupceuqm.com^
+||dwhfqyafsct.com^
 ||dwhitdoedsrag.org^
 ||dwqjaehnk.com^
 ||dwvbfnqrbif.com^
@@ -110484,6 +110494,7 @@ browsershots.org#@#.advert_area
 ||eminent-hang.pro^
 ||emissionidiompolygon.com^
 ||emitmagnitude.com^
+||emittediodids.top^
 ||emjpbua.com^
 ||emjrwypl.xyz^
 ||emkarto.fun^
@@ -110862,6 +110873,7 @@ browsershots.org#@#.advert_area
 ||ewhareey.com^
 ||ewituhinlargeconsu.com^
 ||ewnkfnsajr.com^
+||ewouwamsubsouvy.net^
 ||ewqkrfjkqz.com^
 ||ewrgryxjaq.com^
 ||ewruuqe5p8ca.com^
@@ -113365,6 +113377,7 @@ browsershots.org#@#.advert_area
 ||heavespectaclescoefficient.com^
 ||heavyuniversecandy.com^
 ||hebenonwidegab.top^
+||hecathedralinth.org^
 ||hectorfeminine.com^
 ||hectorobedient.com^
 ||hedgehoghugsyou.com^
@@ -115173,6 +115186,7 @@ browsershots.org#@#.advert_area
 ||jssearch.net^
 ||jswww.net^
 ||jtckxssibwijpn.com^
+||jtclvwseqvejily.xyz^
 ||jtefxxesopqqw.com^
 ||jtegqwmjfxu.site^
 ||jtiasfkkg.xyz^
@@ -115389,6 +115403,7 @@ browsershots.org#@#.advert_area
 ||kenduktur.com^
 ||kennelbakerybasketball.com^
 ||kensecuryrentat.info^
+||kentishprided.com^
 ||kentorjose.com^
 ||kepnatick.com^
 ||ker2clk.com^
@@ -115693,6 +115708,7 @@ browsershots.org#@#.advert_area
 ||kvaaa.com^
 ||kvdmuxy.com^
 ||kviglxabhwwhf.xyz^
+||kvoiiedftqzyb.com^
 ||kvovs.xyz^
 ||kvtgl4who.com^
 ||kvum-bpelzw.icu^
@@ -116896,6 +116912,7 @@ browsershots.org#@#.advert_area
 ||masakeku.com^
 ||masaxe.xyz^
 ||masbpi.com^
+||masconbaiting.shop^
 ||masculineillness.com^
 ||masklink.org^
 ||masonopen.com^
@@ -117132,6 +117149,7 @@ browsershots.org#@#.advert_area
 ||meoneintheworldwho.org^
 ||meorzoi.xyz^
 ||meowpushnot.com^
+||mepkbonqzmuvl.xyz^
 ||mepuyu.xyz^
 ||merchenta.com^
 ||mercifulsurveysurpass.com^
@@ -119336,6 +119354,7 @@ browsershots.org#@#.advert_area
 ||oszlnxwqlc.com^
 ||otbackstage2.online^
 ||otbuzvqq8fm5.com^
+||otbydhpfhzbjd.today^
 ||otdalxhhiah.com^
 ||otekmnyfcv.com^
 ||otherofherlittle.info^
@@ -119830,6 +119849,7 @@ browsershots.org#@#.advert_area
 ||pawderstream.com^
 ||pawheatyous.com^
 ||pawhiqsi.com^
+||pawjfavraag.com^
 ||pawmaudwaterfront.com^
 ||pawscreationsurely.com^
 ||paxmedia.net^
@@ -120411,6 +120431,7 @@ browsershots.org#@#.advert_area
 ||plufdsb.com^
 ||pluffdoodah.com^
 ||plugerr.com^
+||plugmanhidel.top^
 ||plugs.co^
 ||plumagebenevolenttv.com^
 ||plumberwolves.com^
@@ -120823,6 +120844,7 @@ browsershots.org#@#.advert_area
 ||prevailinsolence.com^
 ||prevalentpotsrice.com^
 ||preventionhoot.com^
+||previous-trip.pro^
 ||prfctmney.com^
 ||prfwhite.com^
 ||prhdvhx.com^
@@ -122205,6 +122227,7 @@ browsershots.org#@#.advert_area
 ||remarkableflashseptember.com^
 ||remarkablycommunity.com^
 ||remarkedoneof.info^
+||remarkedoneoftheo.org^
 ||remarksnicermasterpiece.com^
 ||remaysky.com^
 ||remedyabruptness.com^
@@ -122621,6 +122644,7 @@ browsershots.org#@#.advert_area
 ||rnmd.net^
 ||rnnlfpaxjar.xyz^
 ||rnodydenknowl.org^
+||rnomqihksna.com^
 ||rnotraff.com^
 ||rnrycry.com^
 ||rnv.life^
@@ -123794,6 +123818,7 @@ browsershots.org#@#.advert_area
 ||shvnfhf.com^
 ||shydastidu.com^
 ||shyrepair.pro^
+||shyzvqpipc.com^
 ||si1ef.com^
 ||sialsizably.shop^
 ||siberiabecrush.com^
@@ -126203,6 +126228,7 @@ browsershots.org#@#.advert_area
 ||trapskating.com^
 ||trashdisguisedextension.com^
 ||trasupr.com^
+||trasyaircrew.top^
 ||tratbc.com^
 ||traumavirus.com^
 ||traveladvertising.com^
@@ -143142,7 +143168,6 @@ fixya.com##.fixya_primis_container
 whatismyipaddress.com##.fl-module-wipa-concerns
 whatismyipaddress.com##.fl-photo
 omniglot.com##.flex-container
-decrypt.co##.flex.flex-none.relative
 libhunt.com##.flex.mt-5.boxed
 ice.hockey##.flex_container_werbung
 recipes.timesofindia.com##.flipkartbanner
@@ -144063,6 +144088,7 @@ invezz.com,reviewparking.com##.mx-auto
 smallseotools.com##.mx-auto.d-block
 visortmo.com##.mx-auto.thumbnail.book
 theawesomer.com##.mxyptext
+decrypt.co##.my-10.xl\:flex.justify-center
 standardmedia.co.ke##.my-2
 radio.at,radio.de,radio.dk,radio.es,radio.fr,radio.it,radio.net,radio.pl,radio.pt,radio.se##.my-\[5px\].mx-auto.w-full.hidden.md\:flex.md\:min-h-\[90px\].lg\:min-h-\[250px\].items-center.justify-center
 cnet.com,healthline.com##.myFinance-ad-unit
