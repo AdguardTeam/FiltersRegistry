@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.65.53",
-			"timeUpdated": "2025-02-27T01:01:14+0000",
+			"version": "2.1.65.54",
+			"timeUpdated": "2025-02-27T05:01:15+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.65.52",
-			"timeUpdated": "2025-02-27T01:01:15+0000",
+			"version": "2.1.65.53",
+			"timeUpdated": "2025-02-27T05:01:16+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1046,8 +1046,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/hufilter/hufilter@gh-pages/hufilter-adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.3.49",
-			"timeUpdated": "2025-02-25T13:01:36+0000",
+			"version": "2.0.3.50",
+			"timeUpdated": "2025-02-27T05:01:31+0000",
 			"deprecated": false,
 			"languages": [
 				"hu"
@@ -1092,8 +1092,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.35.4",
-			"timeUpdated": "2025-02-26T13:01:51+0000",
+			"version": "2.0.35.5",
+			"timeUpdated": "2025-02-27T05:01:34+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1210,8 +1210,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.20.62",
-			"timeUpdated": "2025-02-25T09:02:16+0000",
+			"version": "2.0.20.63",
+			"timeUpdated": "2025-02-27T05:01:42+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.58.84",
-			"timeUpdated": "2025-02-27T01:02:00+0000",
+			"version": "2.0.58.85",
+			"timeUpdated": "2025-02-27T05:02:06+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
