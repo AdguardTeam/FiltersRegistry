@@ -1,9 +1,9 @@
-! Checksum: w6rG/hvLUhljHsPPDbMBwA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1740678390-3600.patch
+! Checksum: TLS3lSydBxVNSvmHrZXZSQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1740681732-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.23.26
-! TimeUpdated: 2025-02-27T17:41:51+00:00
+! Version: 2.2.23.27
+! TimeUpdated: 2025-02-27T18:38:06+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1578,6 +1578,9 @@ bunq.me#%#//scriptlet('set-local-storage-item', 'bunq:CookieConsentStore:isBanne
 lime-shop.com##.l-accept-cookies
 chase.co.uk#%#//scriptlet('trusted-click-element', 'div[data-state="open"] button.tw-bg-primary', '!cookie:CookieConsents')
 oxfam.org#%#//scriptlet('trusted-click-element', '.cookie-banner-button')
+wiesheu.de,synlab.cz#$##cookieman-modal { display: none !important; }
+wiesheu.de,synlab.cz#$#.modal-backdrop { display: none !important; }
+wiesheu.de,synlab.cz#$#body { overflow: auto !important; padding-right: 0 !important; }
 quiosque.pl,petertyson.*###gdprCookieBar
 serasa.com.br#%#//scriptlet('set-cookie', 'S_COOKIES_ACCEPTED', 'true')
 magazine-avantages.fr#%#//scriptlet('adjust-setTimeout', '/userConsentProcessEnded|"With"\]\(this===/', '*', '0.001')
@@ -5951,7 +5954,7 @@ promospro.de,allecodes.de###closeGdprContent
 prosieben.de,sat1.de,computerweekly.com###cmp-banner
 ran.de##cmp-banner
 sparwelt.de,asklepios.com,digi.com###cookie-acceptance
-xfilesaversa.it,biosuplementacja.pl,receiveasms.com,honda.com.tr,siteplus.com,topbattery.cz,keepinguptodate.com,benq.eu##div[id^="cookie-"]
+master-plus.com.ua,xfilesaversa.it,biosuplementacja.pl,receiveasms.com,honda.com.tr,siteplus.com,topbattery.cz,keepinguptodate.com,benq.eu##div[id^="cookie-"]
 qt.io###cookie-confirm
 ethplorer.io,ankarasigorta.com.tr,anadolusigorta.com.tr###cookie-notify
 account.xiaomi.com###cookie-usage-notify
@@ -10897,6 +10900,7 @@ api.flocktory.com
 ||accounts.google.com/gsi/client^$third-party,script,domain=dtf.ru|stackoverflow.com|vc.ru|pikabu.ru|nytimes.com|baltimoresun.com|rozetka.com.ua|estadao.com.br|medium.com|gzt.com|mercurynews.com|drukarnia.com.ua|diffchecker.com|kaystls.site|kaystls.site|overclock.net|nissanclub.com|crazygames.com|notion.so|usnews.com|nypost.com|etnownews.com|timesnownews.com|menshealth.com|themirror.com|cq.ru|voetbalzone.nl|perplexity.ai|lefigaro.fr|lifehacker.ru|app.notta.ai|vnexpress.net
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+master-plus.com.ua##.popup_alert
 cu.ntv.co.jp#%#//scriptlet('set-local-storage-item', 'tver_data', 'emptyObj')
 t-online.de##.transition-opacity
 t-online.de##.z-overlay-content
