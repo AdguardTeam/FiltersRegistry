@@ -1,9 +1,9 @@
-! Checksum: A+9F4hTGdzGradg2AcX0gA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1740681736-3600.patch
+! Checksum: yTBrL35iibrLgZpkvGf+ew
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1740688955-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.23.27
-! TimeUpdated: 2025-02-27T18:38:06+00:00
+! Version: 2.2.23.28
+! TimeUpdated: 2025-02-27T20:38:27+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1434,6 +1434,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
 scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
+startups.com.br###consent-box-lgpd
 stippl.io##.react-cookie-notice-container
 asustor.com###gdpr_wrap
 chat.mistral.ai#%#//scriptlet('trusted-click-element', 'body > div[role="dialog"][id^="radix-"] > button[class^="disabled"]')
@@ -11196,8 +11197,8 @@ api.flocktory.com
 /.*/$permissions=identity-credentials-get=(),document
 master-plus.com.ua##.popup_alert
 cu.ntv.co.jp#%#//scriptlet('set-local-storage-item', 'tver_data', 'emptyObj')
-t-online.de##.transition-opacity
-t-online.de##.z-overlay-content
+t-online.de##div[data-testid="Overlay.Backdrop"]
+t-online.de##.z-overlay-content:has(> section)
 karmakmarket.com##.whatsapp-fixed
 moneycontrol.com###techpop.modal:not(#style_important)
 moneycontrol.com##.modal-backdrop
@@ -14092,8 +14093,6 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_popups
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_ext
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
-[$path=#focus]t-online.de#@#.z-overlay-content
-[$path=#focus]t-online.de#@#.transition-opacity
 @@||fregat.com/wp-content/plugins/popup-maker/assets/js/site.min.js
 @@||sdk.iad-*.braze.com/api/v3/data/|$xmlhttprequest,domain=dairyqueen.com
 @@||sdk.iad-*.braze.com/api/v3/content_cards/sync|$xmlhttprequest,domain=dairyqueen.com

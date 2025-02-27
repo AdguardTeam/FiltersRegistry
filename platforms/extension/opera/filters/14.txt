@@ -1,9 +1,9 @@
-! Checksum: GIRaE02UdvX4+VZpzEuJYA
-! Diff-Path: ../patches/14/14-s-1740681731-3600.patch
+! Checksum: /Hb2qAcHYn7lrsWh9FU8pQ
+! Diff-Path: ../patches/14/14-s-1740688951-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.23.27
-! TimeUpdated: 2025-02-27T18:38:06+00:00
+! Version: 2.2.23.28
+! TimeUpdated: 2025-02-27T20:38:27+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2483,6 +2483,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+startups.com.br###consent-box-lgpd
 stippl.io##.react-cookie-notice-container
 asustor.com###gdpr_wrap
 chat.mistral.ai#%#//scriptlet('trusted-click-element', 'body > div[role="dialog"][id^="radix-"] > button[class^="disabled"]')
@@ -25265,8 +25266,9 @@ api.flocktory.com
 !
 master-plus.com.ua##.popup_alert
 cu.ntv.co.jp#%#//scriptlet('set-local-storage-item', 'tver_data', 'emptyObj')
-t-online.de##.transition-opacity
-t-online.de##.z-overlay-content
+! t-online.de##.transition-opacity - breaks audio button
+t-online.de##div[data-testid="Overlay.Backdrop"]
+t-online.de##.z-overlay-content:has(> section)
 karmakmarket.com##.whatsapp-fixed
 moneycontrol.com###techpop.modal:not(#style_important)
 moneycontrol.com##.modal-backdrop
@@ -32428,9 +32430,6 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 ! SECTION: Popups - Allowlist
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/199496
-[$path=#focus]t-online.de#@#.z-overlay-content
-[$path=#focus]t-online.de#@#.transition-opacity
 ! https://github.com/uBlockOrigin/uAssets/issues/26606
 ! TODO: remove when FireFox will support `permissions`
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193384

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 80y2+NORkB/UPIx5EiX69g
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1740681741-3600.patch
+! Checksum: 5eUeXOgpBJZ7/d44Okx2qw
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1740688958-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.51.22
-! TimeUpdated: 2025-02-27T18:38:13+00:00
+! Version: 2.0.51.23
+! TimeUpdated: 2025-02-27T20:38:35+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*##:matches-path(/images).AdvMastHead
@@ -1556,8 +1556,8 @@ api.flocktory.com
 /.*/$permissions=identity-credentials-get=(),document
 master-plus.com.ua##.popup_alert
 cu.ntv.co.jp##+js(set-local-storage-item, tver_data, emptyObj)
-t-online.de##.transition-opacity
-t-online.de##.z-overlay-content
+t-online.de##div[data-testid="Overlay.Backdrop"]
+t-online.de##.z-overlay-content:has(> section)
 karmakmarket.com##.whatsapp-fixed
 moneycontrol.com###techpop.modal:not(#style_important)
 moneycontrol.com##.modal-backdrop
@@ -4468,8 +4468,6 @@ unn.com.ua##body > .fancybox-opened + .fancybox-overlay
 metrolyrics.com###videoContainer
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_popups
-t-online.de#@#:matches-path(#focus).z-overlay-content
-t-online.de#@#:matches-path(#focus).transition-opacity
 !+ PLATFORM(ext_ff, ext_ublock)
 @@||inducks.org^$permissions=identity-credentials-get=()
 @@||fregat.com/wp-content/plugins/popup-maker/assets/js/site.min.js
