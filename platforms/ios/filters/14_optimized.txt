@@ -1,9 +1,9 @@
-! Checksum: hCwBhdkPlZycmK0JeXzlEQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1740645771-3600.patch
+! Checksum: zxTTmeSAlpcETbIDzeiKRA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1740649420-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.23.17
-! TimeUpdated: 2025-02-27T08:38:30+00:00
+! Version: 2.2.23.18
+! TimeUpdated: 2025-02-27T09:38:52+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -9568,6 +9568,7 @@ turbopages.org#%#//scriptlet('json-prune', '*.blockId')
 [$path=/sport]yandex.*#%#//scriptlet('json-prune', 'rtb seatbid')
 [$path=/q]yandex.*#%#//scriptlet('json-prune', 'direct rtb')
 www.kinopoisk.ru#%#//scriptlet('set-constant', 'Object.prototype.renderToNode', 'undefined')
+www.kinopoisk.ru##div[class*="-kinopoisk-media-container"][class*="media-container_height_"]
 www.kinopoisk.ru##div[class^="toaster-container"]
 www.kinopoisk.ru##div[class^="styles_adBlockWarningRoot"]
 auto.ru#%#//scriptlet('json-prune', 'ads')
@@ -10700,7 +10701,6 @@ whatismybrowser.com#@#.ads--square
 whatismybrowser.com#@#.ads--top
 whatismybrowser.com#@#.adFrame
 derwesten.de#@#.AdSense
-@@://xhamster.*.js?v=$script,~third-party
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=tomshw.it
 tapeantiads.com#@#.skyscraper.ad
 @@||portal.cdn.yollamedia.com/storage/tag/$domain=mahjong.com
@@ -11362,6 +11362,8 @@ api.flocktory.com
 ||accounts.google.com/gsi/client^$third-party,script,domain=dtf.ru|stackoverflow.com|vc.ru|pikabu.ru|nytimes.com|baltimoresun.com|rozetka.com.ua|estadao.com.br|medium.com|gzt.com|mercurynews.com|drukarnia.com.ua|diffchecker.com|kaystls.site|kaystls.site|overclock.net|nissanclub.com|crazygames.com|notion.so|usnews.com|nypost.com|etnownews.com|timesnownews.com|menshealth.com|themirror.com|cq.ru|voetbalzone.nl|perplexity.ai|lefigaro.fr|lifehacker.ru|app.notta.ai|vnexpress.net
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+t-online.de##.transition-opacity
+t-online.de##.z-overlay-content
 karmakmarket.com##.whatsapp-fixed
 moneycontrol.com###techpop.modal:not(#style_important)
 moneycontrol.com##.modal-backdrop
@@ -14347,6 +14349,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_apps
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(ios) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_ios { display: none !important; }
+[$path=#focus]t-online.de#@#.z-overlay-content
+[$path=#focus]t-online.de#@#.transition-opacity
 @@||fregat.com/wp-content/plugins/popup-maker/assets/js/site.min.js
 @@||sdk.iad-*.braze.com/api/v3/data/|$xmlhttprequest,domain=dairyqueen.com
 @@||sdk.iad-*.braze.com/api/v3/content_cards/sync|$xmlhttprequest,domain=dairyqueen.com
@@ -14568,6 +14572,7 @@ labs.google.com#@##google-hats-survey
 a2zapk.io,delfi.lt,ganyancanavari.com,turkcell.com.tr,a101.com.tr,news.mail.ru,realitatea.net,winnipegfreepress.com,tenorshare.com,gzt.com,haber.biz,sakshi.com,shiftdelete.net,community.oneplus.com,lnc.nc,superfilmes.ph,meduza.io,yenisafak.com,offidocs.com,onedio.com,hpplus.jp,fullfilmcibaba1.com,joom.com,nbc.com,maximum.ru,ch3plus.com,dropmefiles.com,rg.ru,reddit.com,life.ru#%#//scriptlet('set-constant', 'Notification.requestPermission', 'noopFunc')
 wallstreet-online.de,dni.ru#%#if (window.PushManager) { window.PushManager.prototype.subscribe = function () { return { then: function (func) { } }; }; }
 macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFunc")
+||notif.generation-nt.com^$domain=driverscloud.com
 myhomebook.de##div[class^="cleverpush-"]
 ||telegraf.rs/static/*/pushNotification.
 republicworld.com##.fixed.bottom-0
@@ -21636,6 +21641,9 @@ rasp.yandex.adult,rasp.yandex.ac.id,rasp.yandex.ae,rasp.yandex.al,rasp.yandex.ap
 tv.yandex.adult,tv.yandex.ac.id,tv.yandex.ae,tv.yandex.al,tv.yandex.app,tv.yandex.asia,tv.yandex.at,tv.yandex.az,tv.yandex.ba,tv.yandex.be,tv.yandex.by,tv.yandex.ca,tv.yandex.cc,tv.yandex.cl,tv.yandex.cloud,tv.yandex.club,tv.yandex.co,tv.yandex.co.il,tv.yandex.com,tv.yandex.com.bd,tv.yandex.com.cn,tv.yandex.com.np,tv.yandex.com.tr,tv.yandex.de,tv.yandex.dev,tv.yandex.ee,tv.yandex.es,tv.yandex.eu,tv.yandex.fi,tv.yandex.fm,tv.yandex.fr,tv.yandex.ge,tv.yandex.gr,tv.yandex.hu,tv.yandex.in,tv.yandex.io,tv.yandex.jp,tv.yandex.kg,tv.yandex.kr,tv.yandex.kz,tv.yandex.lt,tv.yandex.lv,tv.yandex.md,tv.yandex.me,tv.yandex.mobi,tv.yandex.net,tv.yandex.news,tv.yandex.nl,tv.yandex.org,tv.yandex.pk,tv.yandex.pl,tv.yandex.pro,tv.yandex.ro,tv.yandex.rs,tv.yandex.ru,tv.yandex.se,tv.yandex.site,tv.yandex.su,tv.yandex.tech,tv.yandex.ua,tv.yandex.uk,tv.yandex.us,tv.yandex.uz,tv.yandex.work##.recommended-ott
 360.yandex.ru##div[data-test-id="promotopline"]
 www.kinopoisk.ru##div[class^="trailer-promo"]
+iworld.com##.send_form
+iworld.com##.banner_sidebar__wrap
+iworld.com##div[onclick^="document.location='#popup'"]
 city-journal.org##.m_banner:not([id])
 newsbeast.gr##you-may-be-interested
 influence.co##.seo-cta

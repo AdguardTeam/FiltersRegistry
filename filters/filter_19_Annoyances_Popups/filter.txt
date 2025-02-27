@@ -89,6 +89,7 @@ turbopages.org#%#//scriptlet('json-prune', '*.blockId')
 !
 ! Kinopoisk
 www.kinopoisk.ru#%#//scriptlet('set-constant', 'Object.prototype.renderToNode', 'undefined')
+www.kinopoisk.ru##div[class*="-kinopoisk-media-container"][class*="media-container_height_"]
 www.kinopoisk.ru##div[class^="toaster-container"]
 www.kinopoisk.ru##div[class^="styles_adBlockWarningRoot"]
 !
@@ -3403,7 +3404,6 @@ whatismybrowser.com#@#.ads--top
 whatismybrowser.com#@#.adFrame
 ||jsdelivr.net/npm/ad-compass@latest/dist/ad-compass.umd.js
 derwesten.de#@#.AdSense
-@@://xhamster.*.js?v=$script,~third-party
 @@||pafvertizing.crazygames.com/rafvertizing-v7.js$domain=starblast.io
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js|$domain=textstudio.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=tomshw.it
@@ -4734,10 +4734,8 @@ api.flocktory.com
 !
 ! SECTION: Popups - Regular rules
 !
-! breaks https://github.com/AdguardTeam/AdguardFilters/issues/199496
-! t-online.de##.transition-opacity
-! t-online.de##.z-overlay-content
-!
+t-online.de##.transition-opacity
+t-online.de##.z-overlay-content
 karmakmarket.com##.whatsapp-fixed
 moneycontrol.com###techpop.modal:not(#style_important)
 moneycontrol.com##.modal-backdrop
@@ -12009,6 +12007,9 @@ adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_i
 !
 ! SECTION: Popups - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199496
+[$path=#focus]t-online.de#@#.z-overlay-content
+[$path=#focus]t-online.de#@#.transition-opacity
 ! https://github.com/uBlockOrigin/uAssets/issues/26606
 ! TODO: remove when FireFox will support `permissions`
 !+ PLATFORM(ext_ff, ext_ublock)
@@ -12518,6 +12519,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+||notif.generation-nt.com^$domain=driverscloud.com
 myhomebook.de##div[class^="cleverpush-"]
 ||telegraf.rs/static/*/pushNotification.
 republicworld.com##.fixed.bottom-0
