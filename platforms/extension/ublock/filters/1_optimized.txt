@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 8PFI2zS5ZqvhqvwdOiWxZA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1740652970-3600.patch
+! Checksum: 3ygoppI2WOSTp8QD3q5Exw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1740660309-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.89
-! TimeUpdated: 2025-02-27T10:31:13+00:00
+! Version: 2.0.97.90
+! TimeUpdated: 2025-02-27T12:31:20+00:00
 ! Expires: 5 days (update frequency)
 /nadavi-api/?p4g3=js/api/widget.js
 ||aj*.bid/*?vpaid=$xmlhttprequest
@@ -1916,6 +1916,7 @@ i.factor.ua,kriminal.tv,i.ua,lifedon.com.ua,football24.ua,vsetv.com,gorod.dp.ua,
 newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,internetua.com,okino.ua,orakul.com,ringside24.com,toneto.net#$?#head > iframe[name]:not([class]):not([id]):not([src]) { remove: true; }
 modsforwot.ru,helpsetup.ru,vargr.ru,trialkeys.ru##+js(abort-on-property-write, adregain_wall)
 modsforwot.ru,helpsetup.ru,vargr.ru,trialkeys.ru##+js(abort-on-property-read, ad_nodes)
+ritsatv.ru##+js(remove-node-text, script, script.onerror)
 howdyho.net#$##nevermind { display: block !important; }
 howdyho.net#$##rustrover { display: none !important; }
 cont.ws##+js(abort-on-property-read, Object.prototype.RenderMarks)
@@ -6365,7 +6366,7 @@ vost.pw,animevost.am,smotret-anime-365.ru,animevost.online,animevost.org,animero
 4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] [style^="overflow: hidden; height:"] > *:has(iframe)
 4pda.to##body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] [style^="overflow: hidden; height:"] > *:has(script)
 4pda.ru,4pda.to##html:not([style]) tr[valign="top"] > td[width*="%"] + td > a[target="_blank"] > img[alt=""]
-rbc.ru##.js-rbcslider-slide .g-banner__news-footer:has(> div.js-rbcslider-multi-news > div.readmore > div.smi24__informer)
+rbc.ru##.js-rbcslider-slide .g-banner__news-footer:has(> div.js-rbcslider-multi-news div[class*="_informer"])
 rbc.ru##.main__inner > div.main__feed:has(> div.main__feed__link > div[class="fox-tail"])
 rbc.ru##.item_promo-card
 rbc.ru##.js-index-central-column > div[data-publisher-index]:has(div[data-yandex-show-event] > div.showcase-collection__footer > p)

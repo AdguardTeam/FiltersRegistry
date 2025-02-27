@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: jV5BwcP9FJFPOu8Fk31RUQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1740645770-3600.patch
+! Checksum: krxxVPOvCIjmu/llMr4+dg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1740660313-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.62.49
-! TimeUpdated: 2025-02-27T08:38:10+00:00
+! Version: 2.0.62.50
+! TimeUpdated: 2025-02-27T12:39:49+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 ||ssdsp.smt.docomo.ne.jp^$third-party
@@ -427,7 +427,7 @@ $image,redirect-rule=32x32.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32.png,domain=exploader.net
 exploader.net##+js(remove-attr, href, a[style*="display:"][href^="https://al.dmm.co.jp"], stay)
 @@||daotag.com/tag/$script,domain=exploader.net
-iwb.jp##+js(no-setTimeout-if, getComputedStyle(a).height)
+iwb.jp##+js(addEventListener-defuser, load, iframe)
 kotobank.jp##+js(no-setTimeout-if, return)
 guitarmagazine.jp#$#.tp-backdrop { display: none !important; }
 guitarmagazine.jp#$#.tp-modal { display: none !important; }

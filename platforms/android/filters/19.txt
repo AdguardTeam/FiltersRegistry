@@ -1,9 +1,9 @@
-! Checksum: 4MbFGc5K0Xh6pu+EkreNaw
-! Diff-Path: ../patches/19/19-s-1740656681-3600.patch
+! Checksum: 8r5ppbumY2EppU4KeaSGUA
+! Diff-Path: ../patches/19/19-s-1740660275-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.51.16
-! TimeUpdated: 2025-02-27T11:40:25+00:00
+! Version: 2.0.51.17
+! TimeUpdated: 2025-02-27T12:40:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1733,6 +1733,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+btcut.io#%#//scriptlet('set-constant', 'Object.prototype.initUnblocker', 'noopFunc')
+btcut.io##.unblocker-container
 theframersforum.com##div[id^="phpbb-"]
 slam.nl##.svelte-176pwuq
 techaholic.gr$$script:contains(detect-message)
@@ -3208,6 +3210,8 @@ iqiyi.com##.black-screen[data-cupid="adblock-blackscreen"]
 @@||t7z.cupid.iqiyi.com/show2?e$domain=m.iqiyi.com
 !#safari_cb_affinity
 !
+!+ NOT_OPTIMIZED
+leekduck.com##body > div[style*="position: fixed; display: flex; align-items: center;"]
 !+ NOT_OPTIMIZED
 adacomi.com##.adblock_guide_box
 !+ NOT_OPTIMIZED
@@ -10935,6 +10939,8 @@ m.youtube.com#$#body[modal-open-body] { position: unset !important; }
 ! "Add to home screen in mobile Chrome"
 ||mail.ru/manifest.json
 ||m.lenta.ru/manifest.json
+! "Do you want to subscribe to reach more viewers?" popup
+x.com,twitter.com###layers[style="z-index: 1;"]:has(div[role="dialog"] a[href="/i/premium_sign_up"][style])
 ! Twitter login popup
 ! https://github.com/AdguardTeam/AdguardFilters/issues/112718#issuecomment-1069965416
 x.com,twitter.com#$?#div[data-testid="sheetDialog"] > :not(div[data-testid="IntentLoginSheet_Login_Sheet"]) div[aria-label=""] > img[class^="css-"][src$="/privacy_cover.png"]:upward(div[role="group"]) { display: none !important; }
@@ -13218,7 +13224,7 @@ business-standard.com##.whtsclick
 hola.com##.hm-container > div[class]:has(> div > div > form[name="hm-newsletter"])
 newsit.gr##main > div.content-block:has(> div > a[href^="https://news.google.com/publications/"])
 indianexpress.com##a[href^="http://www.indianexpress.com/my-express"] > img
-rbc.ru##.article__text > div.article__special_container:has(> p > strong a[href="https://t.me/rbcspb"])
+rbc.ru##.article__text > div.article__special_container:has(> p strong a[href="https://t.me/rbcspb"])
 mantan-web.jp###webpush-confirm-dialog
 citilink.ru##div[class^="app-catalog-"] > form[method="post"]:has(input[name="subscription_email"])
 123.ru###news

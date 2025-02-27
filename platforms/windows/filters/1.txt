@@ -1,9 +1,9 @@
-! Checksum: y7Y9Z8tHPsfcWjoLCdg1jA
-! Diff-Path: ../patches/1/1-s-1740652987-3600.patch
+! Checksum: XKL+C4q6mBJr5O94kwbmCQ
+! Diff-Path: ../patches/1/1-s-1740660323-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.97.89
-! TimeUpdated: 2025-02-27T10:31:13+00:00
+! Version: 2.0.97.90
+! TimeUpdated: 2025-02-27T12:31:20+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4408,6 +4408,9 @@ modsforwot.ru,helpsetup.ru,vargr.ru,trialkeys.ru#%#//scriptlet("abort-on-propert
 modsforwot.ru,helpsetup.ru,vargr.ru,trialkeys.ru#%#//scriptlet("abort-on-property-read", "ad_nodes")
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199584
+ritsatv.ru$$script:contains(script.onerror)
+ritsatv.ru#%#//scriptlet('remove-node-text', 'script', 'script.onerror')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196802
 howdyho.net#$##nevermind { display: block !important; }
 howdyho.net#$##rustrover { display: none !important; }
@@ -18101,7 +18104,7 @@ vost.pw,animevost.am,smotret-anime-365.ru,animevost.online,animevost.org,animero
 xn--90awu.xn--j1amh##a[href^="/component/banners/"]
 !
 ! autonews.ru,rbc.ru,rbcplus.ru,sportrbc.ru
-rbc.ru##.js-rbcslider-slide .g-banner__news-footer:has(> div.js-rbcslider-multi-news > div.readmore > div.smi24__informer)
+rbc.ru##.js-rbcslider-slide .g-banner__news-footer:has(> div.js-rbcslider-multi-news div[class*="_informer"])
 rbc.ru##.js-index-central-column > div[data-publisher-index]:has(a[href*="?erid="] ~ div.showcase-video__description)
 rbc.ru##.main__inner > div.main__feed:has(> div.main__feed__link > div[class="fox-tail"])
 rbc.ru##.item_promo-card
