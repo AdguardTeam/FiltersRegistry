@@ -1,8 +1,8 @@
-! Checksum: 3jMhDLgMhxh8mVKEOsjrVw
+! Checksum: fJm2DeBAUUN7ucgyT4MDJA
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.73.30
-! TimeUpdated: 2025-02-27T13:35:34+00:00
+! Version: 2.3.73.31
+! TimeUpdated: 2025-02-27T14:31:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25831,7 +25831,7 @@ watch.plex.tv#%#//scriptlet('prevent-fetch', '/doubleclick\.com/ method:HEAD', '
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196454
 @@||sshkit.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196379
-dongknows.com#%#//scriptlet("abort-current-inline-script", "eval", "String.fromCharCode")
+dongknows.com#%#//scriptlet('prevent-eval-if', '/{return decodeURIComponent\(atob/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
 @@||superpsx.com^$generichide
 superpsx.com#%#//scriptlet('prevent-element-src-loading', 'script', 'contextual.media.net/dmedianet.js')
@@ -27762,7 +27762,6 @@ canirunthegame.com##div[class^="blocker-"]
 canirunthegame.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153796
 rekidai-info.github.io#%#//scriptlet('trusted-create-element', 'body', 'iframe', 'src="https://www.google.com/recaptcha/api2/aframe"')
-rekidai-info.github.io#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^iframe/', 'abort')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com^$xmlhttprequest,domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_$script,domain=rekidai-info.github.io
@@ -31691,6 +31690,7 @@ hihihaha1.xyz,filmespi.online,playembedapi.site,abysscdn.com,playhydrax.com,hydr
 @@||iamcdn.net/players/*ads*.js$domain=hydrax.net|playhydrax.com
 !+ NOT_PLATFORM(ext_ublock)
 ||fadsanz.com/*.js$script,redirect=noopjs,important,domain=hydrax.net|playhydrax.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/199590
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48025
 @@||ads.remix.es/advertisement.js|
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48010
@@ -76950,6 +76950,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199602
+@@||animego.me^$~script,~stylesheet,~xmlhttprequest,~image,stealth=ip
 ! make.powerautomate.com - unable to show more executions in history
 @@||emea.api.flow.microsoft.com/providers/Microsoft.ProcessSimple/environments/$domain=make.powerautomate.com,stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199523

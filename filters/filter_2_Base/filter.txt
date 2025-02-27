@@ -26126,7 +26126,7 @@ watch.plex.tv#%#//scriptlet('prevent-fetch', '/doubleclick\.com/ method:HEAD', '
 !+ PLATFORM(ios, ext_android_cb)
 @@://www3.doubleclick.net^|$xmlhttprequest,domain=sshkit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196379
-dongknows.com#%#//scriptlet("abort-current-inline-script", "eval", "String.fromCharCode")
+dongknows.com#%#//scriptlet('prevent-eval-if', '/{return decodeURIComponent\(atob/')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dongknows.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
@@ -28802,7 +28802,6 @@ canirunthegame.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153796
 !#if (!ext_ublock)
 rekidai-info.github.io#%#//scriptlet('trusted-create-element', 'body', 'iframe', 'src="https://www.google.com/recaptcha/api2/aframe"')
-rekidai-info.github.io#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^iframe/', 'abort')
 !#endif
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com^$xmlhttprequest,domain=rekidai-info.github.io
@@ -33821,6 +33820,11 @@ hihihaha1.xyz,filmespi.online,playembedapi.site,abysscdn.com,playhydrax.com,hydr
 ||fadsanz.com/*.js$script,redirect=noopjs,important,domain=hydrax.net|playhydrax.com
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||fadsanz.com/*.js$domain=hydrax.net|playhydrax.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/199590
+!#if (adguard_app_ios || adguard_ext_android_cb)
+@@||boobausauhipsa.net^$domain=playhydrax.com|kissanime.com.ru
+@@||affluentarmyequator.com^$domain=playhydrax.com|kissanime.com.ru
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48025
 @@||ads.remix.es/advertisement.js|
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48010
@@ -82161,6 +82165,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199602
+@@||animego.me^$~script,~stylesheet,~xmlhttprequest,~image,stealth=ip
 ! make.powerautomate.com - unable to show more executions in history
 @@||emea.api.flow.microsoft.com/providers/Microsoft.ProcessSimple/environments/$domain=make.powerautomate.com,stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199523

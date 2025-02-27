@@ -1,9 +1,9 @@
-! Checksum: jPXCZDTbe/4nOcUoj39o4w
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1740664022-3600.patch
+! Checksum: mYMG2TJCPhV++lHPBlgvAQ
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1740667353-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.73.30
-! TimeUpdated: 2025-02-27T13:35:34+00:00
+! Version: 2.3.73.31
+! TimeUpdated: 2025-02-27T14:31:52+00:00
 ! Expires: 5 days (update frequency)
 ||pnwrs5xz.click^$all
 ||demand.supply^
@@ -7850,7 +7850,7 @@ watch.plex.tv#%#//scriptlet('prevent-fetch', '/doubleclick\.com/ method:HEAD', '
 @@||sshkit.com^$generichide
 !+ PLATFORM(ios, ext_android_cb)
 @@://www3.doubleclick.net^|$xmlhttprequest,domain=sshkit.com
-dongknows.com#%#//scriptlet("abort-current-inline-script", "eval", "String.fromCharCode")
+dongknows.com#%#//scriptlet('prevent-eval-if', '/{return decodeURIComponent\(atob/')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=dongknows.com
 @@||superpsx.com^$generichide
@@ -9272,7 +9272,6 @@ ontools.net#%#//scriptlet('prevent-fetch', '/google-analytics\.com|adblockanalyt
 @@||vatchus.com^$generichide
 canirunthegame.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 rekidai-info.github.io#%#//scriptlet('trusted-create-element', 'body', 'iframe', 'src="https://www.google.com/recaptcha/api2/aframe"')
-rekidai-info.github.io#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^iframe/', 'abort')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com^$xmlhttprequest,domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_$script,domain=rekidai-info.github.io
@@ -11524,6 +11523,8 @@ hihihaha1.xyz,filmespi.online,playembedapi.site,abysscdn.com,playhydrax.com,hydr
 hihihaha1.xyz,filmespi.online,playembedapi.site,abysscdn.com,playhydrax.com,hydrax.net#%#//scriptlet("set-constant", "isClick", "true")
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||fadsanz.com/*.js$domain=hydrax.net|playhydrax.com
+@@||boobausauhipsa.net^$domain=playhydrax.com|kissanime.com.ru
+@@||affluentarmyequator.com^$domain=playhydrax.com|kissanime.com.ru
 @@||ads.remix.es/advertisement.js|
 joblo.com#%#//scriptlet("abort-current-inline-script", "document.body.appendChild", "adb:function")
 !+ PLATFORM(ios, ext_android_cb, ext_safari)

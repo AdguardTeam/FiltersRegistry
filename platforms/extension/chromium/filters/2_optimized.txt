@@ -1,9 +1,9 @@
-! Checksum: x1nGxggv6ec75ekr3oudiQ
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1740663986-3600.patch
+! Checksum: SHlgkDvPHYityBCSoh8bmA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1740667318-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.73.30
-! TimeUpdated: 2025-02-27T13:35:34+00:00
+! Version: 2.3.73.31
+! TimeUpdated: 2025-02-27T14:31:52+00:00
 ! Expires: 10 days (update frequency)
 ||pnwrs5xz.click^$all
 ||demand.supply^
@@ -7636,7 +7636,7 @@ hrnytube.com###adbd
 hrnytube.com#%#//scriptlet('set-constant', 'cRAds', 'true')
 watch.plex.tv#%#//scriptlet('prevent-fetch', '/doubleclick\.com/ method:HEAD', '', 'opaque')
 @@||sshkit.com^$generichide
-dongknows.com#%#//scriptlet("abort-current-inline-script", "eval", "String.fromCharCode")
+dongknows.com#%#//scriptlet('prevent-eval-if', '/{return decodeURIComponent\(atob/')
 @@||superpsx.com^$generichide
 superpsx.com#%#//scriptlet('prevent-element-src-loading', 'script', 'contextual.media.net/dmedianet.js')
 superpsx.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'parseInt(0x')
@@ -8480,7 +8480,6 @@ ontools.net#%#//scriptlet('prevent-fetch', '/google-analytics\.com|adblockanalyt
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$redirect=googlesyndication-adsbygoogle,domain=themodellingnews.com,important
 canirunthegame.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 rekidai-info.github.io#%#//scriptlet('trusted-create-element', 'body', 'iframe', 'src="https://www.google.com/recaptcha/api2/aframe"')
-rekidai-info.github.io#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^iframe/', 'abort')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com^$xmlhttprequest,domain=rekidai-info.github.io
 @@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_$script,domain=rekidai-info.github.io
@@ -21521,6 +21520,7 @@ implbits.com#@#.banner_container
 @@||download.com/ad-
 !############### TEMPORARY ###############
 !#########################################
+@@||animego.me^$~script,~stylesheet,~xmlhttprequest,~image,stealth=ip
 @@||emea.api.flow.microsoft.com/providers/Microsoft.ProcessSimple/environments/$domain=make.powerautomate.com,stealth=referrer
 @@||api.schale.network^$stealth=referrer
 @@||auth.schale.network^$stealth=referrer
