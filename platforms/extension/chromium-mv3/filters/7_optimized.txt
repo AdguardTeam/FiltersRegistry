@@ -1,8 +1,8 @@
-! Checksum: rftY04WvRsobVhd85tyG5A
+! Checksum: /+480+aLHXHTn2odMAAR/w
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.62.56
-! TimeUpdated: 2025-02-28T14:40:49+00:00
+! Version: 2.0.62.57
+! TimeUpdated: 2025-02-28T15:40:19+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp
 ||ssdsp.smt.docomo.ne.jp^$third-party
@@ -1308,7 +1308,10 @@ bepal.net#$##sidebar { min-height: unset !important; }
 bepal.net##.article-wrapper > .article-box:has(> div[id^="logly-lift-"])
 ||img.bestcarweb.jp/banner/sompo-ad.png
 bestcarweb.jp##.sompo-ad-side-column
-yutorize.2-d.jp##aside[id^="sidebar-"]
+yutorize.2-d.jp###sidebar-left > p > a:has(> img.banner)
+yutorize.2-d.jp###sidebar-left:has(> section > p > a > img.banner)
+yutorize.2-d.jp###sidebar-right:has(> section > p.amazon)
+yutorize.2-d.jp##div[style="float:right;margin-left:8px"] > a > img
 aieroi.com###custom_html-6
 aieroi.com###custom_html-3
 ||aieroi.com*wp-content/uploads/*.webp
@@ -10744,7 +10747,7 @@ hamadasyuzou.co.jp#@#.ad_wrapper
 hamadasyuzou.co.jp#@#.ad_image
 asianoneta.blog.jp#@#.side_ad
 @@||couponad.marketplace.rakuten.co.jp/api/v1/userSearch/$~third-party
-lamire.jp#@#.ad-unit
+lamire.jp#@#.ad-unit:not(.textads)
 mognavi.jp#@#.side_ad
 @@||img.cf.47news.jp/public/bannerAd/$image
 miitus.jp#@#.new-ad-box
