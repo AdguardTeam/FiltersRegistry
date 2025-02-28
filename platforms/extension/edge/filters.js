@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.32.28",
-			"timeUpdated": "2025-02-27T23:38:21+0000",
+			"version": "2.1.32.29",
+			"timeUpdated": "2025-02-28T01:38:38+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
