@@ -1,9 +1,9 @@
-! Checksum: CNZSY8/L0DBuW9erepCvjg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1740791130-14400.patch
+! Checksum: 24pwf7nt+KEFUfq3Z4g7tg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1740805522-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.37.63
-! TimeUpdated: 2025-03-01T01:01:22+00:00
+! Version: 2.1.37.64
+! TimeUpdated: 2025-03-01T05:01:24+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -share-bar/$~stylesheet
@@ -123,6 +123,7 @@ _social-bar/
 ###ShareButton
 ###ShareItemBtn
 ###SocialMedia
+###SocialShare
 ###action-share
 ###actionsnshare
 ###adbl-social-icons
@@ -201,6 +202,7 @@ _social-bar/
 ###follow-buttons
 ###follow-footer
 ###follow-icons
+###follow-me
 ###follow-us-widget
 ###follow-widget
 ###followLinks
@@ -256,7 +258,6 @@ _social-bar/
 ###js-SocialWidget-Container
 ###js-Stay-Connected-Container-0
 ###js-share-links
-###large_share_wrapper
 ###linkShare
 ###linkedin_share
 ###main-social
@@ -541,6 +542,7 @@ _social-bar/
 ###socialbuttons
 ###socialcount
 ###socialfooter
+###socialicon
 ###socialicons
 ###sociallinks
 ###socialnav
@@ -571,6 +573,7 @@ _social-bar/
 ###twitter-feed
 ###twitter-follow
 ###twitter-module
+###twitter-panel
 ###twitter-share
 ###twitter-widget
 ###twitter2
@@ -837,7 +840,6 @@ _social-bar/
 ##.block-social-media
 ##.block-social-media-links
 ##.block-social-network
-##.block-social-share
 ##.block-socials
 ##.block_share
 ##.block_social
@@ -942,6 +944,7 @@ _social-bar/
 ##.contentSocialBar
 ##.counted-share-vertical
 ##.cp-follow-buttons
+##.cp-social-flyin
 ##.crafty-social-buttons
 ##.cresta-share-icon
 ##.crunchify-social
@@ -1104,7 +1107,6 @@ _social-bar/
 ##.fb-send-to-messenger
 ##.fb-share
 ##.fb-share-button
-##.fb-share-button-static
 ##.fb-share-container
 ##.fb-slider
 ##.fb-subscribe
@@ -1165,7 +1167,6 @@ _social-bar/
 ##.follow-us-button
 ##.follow-us-container
 ##.follow-us-icons
-##.follow-us-txt
 ##.follow-us-wrapper
 ##.follow-widget
 ##.followFooter
@@ -1787,6 +1788,7 @@ _social-bar/
 ##.pin-it
 ##.pin-it-button
 ##.pin-share
+##.pinButton
 ##.pin_share
 ##.pinit-btn
 ##.pinterest-btn
@@ -1847,10 +1849,8 @@ _social-bar/
 ##.post_share_center
 ##.postshare
 ##.powerkit_social_links_widget
-##.pp-share-grid-item
 ##.pp-social-icon
 ##.pp-social-icons
-##.pp-social-share-content
 ##.print-share
 ##.product-share
 ##.product-social-icon-wrapper
@@ -1923,6 +1923,7 @@ _social-bar/
 ##.section-post-intro-share
 ##.section-social
 ##.section_footer-social-links
+##.section_social
 ##.select-share
 ##.selectionSharer
 ##.selfPromo__box--social
@@ -2071,7 +2072,6 @@ _social-bar/
 ##.share-sites-thumbs
 ##.share-sm-icons
 ##.share-social
-##.share-social-bottom
 ##.share-social-icon
 ##.share-social-links
 ##.share-social-list
@@ -2162,6 +2162,7 @@ _social-bar/
 ##.shareTool
 ##.shareTop
 ##.shareTrig
+##.shareTwit
 ##.shareTwitter
 ##.shareWa
 ##.shareWidget
@@ -2385,7 +2386,6 @@ _social-bar/
 ##.site-footer__social-links
 ##.site-footer__social-list
 ##.site-footer__socials
-##.site-header-social
 ##.site-share-wrapper
 ##.site-social
 ##.site-social-networks
@@ -2584,6 +2584,7 @@ _social-bar/
 ##.social-sec
 ##.social-sendmail
 ##.social-separator
+##.social-services
 ##.social-share
 ##.social-share--column
 ##.social-share--desktop
@@ -2674,6 +2675,7 @@ _social-bar/
 ##.socialHubInnerDiv
 ##.socialHubWrapper
 ##.socialIconList
+##.socialIconsRect
 ##.socialIconsWrapper
 ##.socialIcons_link
 ##.socialInfo
@@ -2743,7 +2745,6 @@ _social-bar/
 ##.social_share_wrapper
 ##.social_shares
 ##.social_sharing
-##.social_single
 ##.social_toolbar
 ##.social_tools
 ##.social_top
@@ -3077,7 +3078,6 @@ _social-bar/
 ##.zr-social-button
 ##FACEBOOK-SHARE-BUTTON
 ##SHARE-BUTTON
-##SOCIAL-SHARING
 ##TWITTER-SHARE-BUTTON
 ##[data-target="share-review"]
 ##[data-testid="prism-share"]
@@ -3319,7 +3319,6 @@ alchetron.com##.alchetronShareCard
 asiaone.com##.ao-share-buttons
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
-investmentexecutive.com,just-food.com##.article-footer
 seattletimes.com,thecooldown.com##.article-share
 babylonbee.com,notthebee.com##.article-shareables
 cosmosmagazine.com,forbes.com,heise.de,phillyvoice.com##.article-sharing
@@ -3347,6 +3346,7 @@ androidpolice.com,givemesport.com##.btn-flipboard
 androidpolice.com,backyardboss.net,cbr.com,collider.com,dualshockers.com,gamerant.com,givemesport.com,howtogeek.com,makeuseof.com,movieweb.com,pocketnow.com,thegamer.com,thethings.com,thetravel.com,xda-developers.com##.btn-mail
 esportesdp.com.br,f1-news.eu,mainichi.jp##.btn-share
 junkmail.co.za##.btn-sm
+blogmarcosfrahm.com,thetyee.ca##.btn-social-icon
 agrimag.co.za,androidpolice.com,automart.co.za,givemesport.com##.btn-whatsapp
 koimoi.com##.btn-whatsup
 consumerreports.org##.btn__social
@@ -3403,7 +3403,6 @@ freesvg.org##.footer-social-big
 tribune.com.pk,voetbalkrant.com,wielerkrant.be##.footer-social-icons
 gastrojournal.ch,myanimelist.net##.footer-social-media
 popsci.com##.footer-socials-wrapper
-investmentexecutive.com##.footer-top
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
 pravda.com.ua##.footer_social
@@ -3411,6 +3410,7 @@ blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,alaskahighwaynews.ca,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,burnabynow.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,fitzhugh.ca,flamboroughtoday.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,mountainviewtoday.ca,newmarkettoday.ca,newwestrecord.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,ontarioflyers.ca,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,theorca.ca,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,tricitynews.com,vancouverisawesome.com,westernwheel.ca##.ft-social
 techloy.com,thepickool.com,wionews.com##.gh-post-page__share
 ghacks.net##.ghacks_share_widget
+avaaz.org##.global-footer-connect
 cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
 dailyartmagazine.com##.google-feed-row
@@ -3431,6 +3431,7 @@ inews.co.uk##.inews__post-share
 mainichi.jp##.inline-list
 winnipegfreepress.com##.interactive
 insideevs.com##.isBottomShare
+iphoneincanada.ca,teslanorth.com##.item--share
 moneycontrol.com##.join_follow
 euronews.com##.js-c-article-partage-commentaire-share
 buzzfeed.com##.js-inline-share-bar
@@ -3492,8 +3493,10 @@ cars.com##.sds-social-share
 kyivpost.com##.section-soc-icons
 onlinelibrary.wiley.com##.share-access__ctrl
 thedirect.com##.share-bar-2
+ny1.com##.share-bar-container
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
 ibtimes.co.in##.share-btn-wrp
+cknxnewstoday.ca##.share-buttons_buttons__V3uFu
 dailymail.co.uk,thisismoney.co.uk##.share-email
 dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
@@ -3524,7 +3527,6 @@ proofpoint.com##.sharethis_toolbox
 12tomatoes.com##.sharetocare-popup
 cjr.org##.sharing-buttons
 tribune.com.pk##.sidebar-social-icons
-investmentexecutive.com##.single-share-socials
 defector.com##.single_inner__pWuJ8
 nme.com,operawire.com##.site-footer-social
 news.sky.com,skysports.com##.site-share-wrapper
@@ -3713,6 +3715,7 @@ adblockplus.org###social-list
 gameloop.com##.Footer_follow__eMVb8
 gameloop.com##.Share_pc_share__RxDpq
 rawstory.com##.body-share-wrap
+globalnews.ca##.c-socialShare
 hindustantimes.com##.new__socialIcons
 merriam-webster.com##.social-link
 twitch.tv##.social-media-link
@@ -3922,6 +3925,8 @@ canalnet.tv##.the-single-body__share
 elpais.com##.w_rs
 ahaber.com.tr,aspor.com.tr##.pageTools
 trthaber.com##.social-links-container
+bigpara.hurriyet.com.tr##.socialIcons
+cumhuriyet.com.tr##.sosyal-medya
 gifyagusi.pl#@##fan-exit
 gifyagusi.pl#@##fanback
 facebook.com#@##fb_header
