@@ -1,9 +1,9 @@
-! Checksum: bPEmY7xlzcI4wFcNKS74Vg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1740647200-14400.patch
+! Checksum: Z9uJN+dgTZKUmVdLwD+Iwg
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1740820009-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.90
-! TimeUpdated: 2025-02-27T09:02:01+00:00
+! Version: 2.0.20.91
+! TimeUpdated: 2025-03-01T09:02:23+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -194,6 +194,7 @@ atl.nu,landlantbruk.se,land.se#@#.ad-unit:not(.text-ad):not(.textads)
 atl.nu,landlantbruk.se,land.se,di.se,expressen.se,dn.se###didomi-host
 aurumforum.se##.bottom-liner span:has-text(Annons):upward(2)
 aurumforum.se##.top-add
+autolife.se###Banners
 automation.se,verkstadstidningen.se,transportnytt.se,datormagazin.se##.a-wrap
 automobilly.com,nordicmanufacturing.net##.headerannons, .sidebarannonsseg, .footerannons
 automotorsport.se##a[href*="/partner/"]
@@ -678,7 +679,6 @@ gynning.net##.sponsored-notification:upward([id^="post-"])
 haaf.se##.stream-item:has(.adsbygoogle)
 haboportalen.se###dynamic_box_right
 haften.se##.loader
-hallakonsument.se##section[aria-label="Kakinformation"]
 hallbartbyggande.com##div[id^="hallb-"]
 hallbyhandboll.se,skiljebosk.nu##.cookiePush, .stickyFollow, .sponsorGroup__item
 halmstadsport.se##.gs_logo_area
@@ -920,7 +920,7 @@ ljudochbild.se#$#.thecontent, .entry-content { max-height: unset !important; ove
 ljudochbild.se#$#.wp-caption { display:initial!important }
 ljudochbild.se##:is(div[class^="col-md"][style*="border-radius"], .maincol):has(a[href*="/advertorial"])
 ljungbysporten.se##section.widget_media_image, a[target="_blank"]:not([href*="ljungbysporten.se"])
-ljuskultur.se,bettips.se,spelo.se,skogsaktuellt.se,maskinbladet.se,entreprenadaktuellt.se,ja.se,husbilhusvagn.se,klassiker.nu,mopedgaraget.se,vibilagare.se,caroftheyear.se,automobil.se,endurobloggen.se,riksettan.net,frillesasbandy.se,dh.se,djungeltrumman.se,skik.se,omni.se,campingsverige.se,eniro.se,restaurangvarlden.se,naringslivetvgl.se,dalarnasaffarer.se,stockholmsaffarer.se,jamtlandsaffarer.se,hallandsnaringsliv.se,sjuharadsnaringsliv.se,nyheteridag.se,alekuriren.se,omniekonomi.se,sverigesindustri.se,onkologiisverige.se,svenskalag.se,borasweekly.se##.banner
+ljuskultur.se,bettips.se,spelo.se,skogsaktuellt.se,entreprenadaktuellt.se,ja.se,husbilhusvagn.se,klassiker.nu,mopedgaraget.se,vibilagare.se,caroftheyear.se,automobil.se,endurobloggen.se,riksettan.net,frillesasbandy.se,dh.se,djungeltrumman.se,skik.se,omni.se,campingsverige.se,eniro.se,restaurangvarlden.se,naringslivetvgl.se,dalarnasaffarer.se,stockholmsaffarer.se,jamtlandsaffarer.se,hallandsnaringsliv.se,sjuharadsnaringsliv.se,nyheteridag.se,alekuriren.se,omniekonomi.se,sverigesindustri.se,onkologiisverige.se,svenskalag.se,borasweekly.se##.banner
 ljuskultur.se,hrnytt.se,aapl.se,inredningsarkitektur.se,inblick.se##.cookies
 lokalfotboll.se###topbar, .really_simple_image_widget:empty
 lokalfotboll.se##.widget-title:has-text(ANNONS:):upward(.really_simple_image_widget)
@@ -2661,7 +2661,6 @@ zeromagazine.nu##div[id^="ads"]
 ||accesslnk.com^
 ||activate.social^$third-party
 ||addrevenue.io^$third-party
-||addsleeper.com^$third-party
 ||addtoany.com^$third-party,domain=~ghgprotocol.org
 ||adeprimo.se^$third-party
 ||adfenix.com^$third-party
@@ -2787,7 +2786,6 @@ zeromagazine.nu##div[id^="ads"]
 ||ck.page^$third-party
 ||cmp.radioplay.se^
 ||cmp.setupcmp.com^$domain=se.azrhymes.com|dagensnamn.nu
-||cms.catena.media/js/cm-tracking
 ||cncptx.com^$third-party
 ||cncpt-central.com^$third-party
 ||cncpt.dk^$third-party
@@ -2933,7 +2931,6 @@ zeromagazine.nu##div[id^="ads"]
 ||gstatic.com/partners/badge$subdocument
 ||gtm.ekonomifakta.se^
 ||gtm.findroommate.dk^
-||guesssverige.com.se^
 ||guv-bounce.eniro.com^
 ||gymshark-sweden.com.se^
 ||g.ezodn.com/cmp/$domain=temadagar.se
@@ -2969,7 +2966,6 @@ zeromagazine.nu##div[id^="ads"]
 ||internetmedicin.se/log.php
 ||investerarbrevet.se^$third-party
 ||iphonecasinon.com^$third-party
-||isgprivacy.cbsi.com^$domain=nickelodeon.se
 ||jajja.com^$third-party
 ||jenkler.se^$domain=uex.se
 ||jitsu.com/p.js
@@ -3046,7 +3042,6 @@ zeromagazine.nu##div[id^="ads"]
 ||metalcentral.net/images/*banner
 ||metapic.se^$third-party
 ||metromode.se/widget/club/
-||mikz.com^$third-party
 ||missaffiliate.com^$third-party
 ||misssite.com/*/published-site-analytics.js
 ||mis.se/count/
@@ -3080,7 +3075,7 @@ zeromagazine.nu##div[id^="ads"]
 ||nyhetersto.se/webpushr-sw
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
-||onesignal.com^$domain=samnytt.se|battrestadsdel.se|beernews.se|ungdomsfotboll.se|rabattsok.se|1x2.se|cannabis.se|dackavisen.se|driva-eget.se|skogsaktuellt.se|maskinbladet.se|entreprenadaktuellt.se|ja.se|newsner.com|humorbibeln.se|sportbibeln.se|ettgottskratt.se|djurbibeln.se|finanstid.se|fokus.se|gasetten.se|fotbollsthlm.se|macken.xyz|naringslivetvgl.se|dalarnasaffarer.se|stockholmsaffarer.se|jamtlandsaffarer.se|hallandsnaringsliv.se|sjuharadsnaringsliv.se|netflixguiden.se|nyadagbladet.se|oskarshamns-nytt.se|swebbtv.se|thepattayanews.se|vaken.se|aktieskolan.se|fastighetsvarlden.se|mcparken.se|gaffa.se|alltomnorrtalje.se|morotsliv.com|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|skaneplus.se|mittforetag.com|studeravidare.se|thephuketexpress.se|ibnytt.se|garaget.org|marketmate.se|rakapuckar.com|svegot.se
+||onesignal.com^$domain=samnytt.se|battrestadsdel.se|beernews.se|ungdomsfotboll.se|rabattsok.se|1x2.se|cannabis.se|dackavisen.se|driva-eget.se|skogsaktuellt.se|entreprenadaktuellt.se|ja.se|newsner.com|humorbibeln.se|sportbibeln.se|ettgottskratt.se|djurbibeln.se|finanstid.se|fokus.se|gasetten.se|fotbollsthlm.se|macken.xyz|naringslivetvgl.se|dalarnasaffarer.se|stockholmsaffarer.se|jamtlandsaffarer.se|hallandsnaringsliv.se|sjuharadsnaringsliv.se|netflixguiden.se|nyadagbladet.se|oskarshamns-nytt.se|swebbtv.se|thepattayanews.se|vaken.se|aktieskolan.se|fastighetsvarlden.se|mcparken.se|gaffa.se|alltomnorrtalje.se|morotsliv.com|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|skaneplus.se|mittforetag.com|studeravidare.se|thephuketexpress.se|ibnytt.se|garaget.org|marketmate.se|rakapuckar.com|svegot.se
 ||onetrust.com^$third-party,domain=lantmannen.se
 ||online.bookvisit.com^$third-party,domain=campingsverige.se
 ||online.swedbank.se.swedd.$document
