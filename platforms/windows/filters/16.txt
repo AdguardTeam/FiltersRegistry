@@ -1,9 +1,9 @@
-! Checksum: CnJdOAhuM2IMQb+5b/LOcQ
-! Diff-Path: ../patches/16/16-s-1740904903-3600.patch
+! Checksum: wrLALLRkXivjYCxMIlVHrQ
+! Diff-Path: ../patches/16/16-s-1740930151-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.50.59
-! TimeUpdated: 2025-03-02T08:37:46+00:00
+! Version: 2.0.50.60
+! TimeUpdated: 2025-03-02T15:37:58+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -53,6 +53,8 @@
 ! Good: @@/adblocker/detect.js$domain=example.org
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199778
+@@||cutcaptcha.*/captcha/*.js$domain=filecrypt.cc|filecrypt.co
 ! https://github.com/uBlockOrigin/uAssets/issues/27208
 betaseries.com##.faceboxDisplay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198171
@@ -192,7 +194,7 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/1478420
-japscan.lol#%#//scriptlet('remove-node-text', 'script', '/const [A-Z]o[A-Z]o/')
+japscan.lol#%#//scriptlet('remove-node-text', 'script', '/const [A-Z][a-z][A-Z]o/')
 japscan.lol#@#div.container > [href]
 japscan.lol#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
 japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'onclick', 'let a=function(){};return false;')
