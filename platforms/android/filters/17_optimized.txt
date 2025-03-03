@@ -1,9 +1,9 @@
-! Checksum: 09IaEBJgudopj0QbC4RkWQ
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1740994912-3600.patch
+! Checksum: H+Fu9ySCDCOFLgtY4SOaYg
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1740998525-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.10.60
-! TimeUpdated: 2025-03-03T09:38:15+00:00
+! Version: 2.0.10.61
+! TimeUpdated: 2025-03-03T10:38:05+00:00
 ! Expires: 5 days (update frequency)
 ?from=glia^$removeparam=from
 $removeparam=srsltid
@@ -251,6 +251,15 @@ $removeparam=fb_action_types
 $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
+||engage.cloud.microsoft/main/*thread$removeparam=trk_user
+||engage.cloud.microsoft/main/*thread$removeparam=trk_thread_id
+||engage.cloud.microsoft/main/*thread$removeparam=trk_outlook_origin
+||engage.cloud.microsoft/main/*thread$removeparam=trk_notif_id
+||engage.cloud.microsoft/main/*thread$removeparam=trk_network
+||engage.cloud.microsoft/main/*thread$removeparam=trk_event
+||engage.cloud.microsoft/main/*thread$removeparam=trk_email_type
+||engage.cloud.microsoft/main/*thread$removeparam=trk_ecs_etag
+||engage.cloud.microsoft/main/*thread$removeparam=allow_app_redirect
 ||comic.k-manga.jp^$removeparam=xuid
 ||comic.k-manga.jp^$removeparam=ad
 ||comic.k-manga.jp^$removeparam=adtype
@@ -1716,7 +1725,6 @@ $removeparam=asc_refurl,domain=aboutamazon.com|amazon.*|amzn.to
 $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
 ||amazon.*$removeparam=isDramIntegrated
 ||amazon.*$removeparam=shoppingPortalEnabled
-||amazon.*$removeparam=ref_
 ||amazon.*/*dp/$removeparam=dib
 ||amazon.*/*dp/$removeparam=dib_tag
 ||amazon.*/*dp/$removeparam=keywords
