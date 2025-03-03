@@ -1,9 +1,9 @@
-! Checksum: dJF/XtWhAeu8ST2gyoaolg
-! Diff-Path: ../patches/14/14-s-1741030894-3600.patch
+! Checksum: peGbT2OxaiNybbIe6R/1xQ
+! Diff-Path: ../patches/14/14-s-1741034470-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.23.57
-! TimeUpdated: 2025-03-03T19:37:38+00:00
+! Version: 2.2.23.58
+! TimeUpdated: 2025-03-03T20:37:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1684,6 +1684,7 @@
 !
 ! SECTION: Cookies - General URL
 !
+||cookies.praguebest.cz^
 /gd-cookie.js
 ||consenttool.haendlerbund.de^
 ||cookie.marsus.digital^
@@ -2490,6 +2491,7 @@ scootertechno.com#$?#div[consent-skip-blocker] { remove: true; }
 !
 ! NOTE: Regular rules
 !
+hisense.com##app-gg-cookie-consent-management-banner
 luvvoice.com##.fixed.bottom-4
 epicdrama.eu#%#//scriptlet('set-cookie', 'cookies_popup', '0')
 store.insta360.com###CookieConsentBanner
@@ -3911,7 +3913,7 @@ remitly.com#%#//scriptlet('trusted-set-cookie', 'cookie_consent', '000')
 remitly.com#%#//scriptlet('trusted-set-local-storage-item', 'cookie_consent_date', '$now$')
 americanexpress.com#$##user-consent-management-granular-banner-overlay { display: none !important; }
 americanexpress.com#$#body { overflow: auto !important; }
-abinbevefes.ru###CybotCookiebotDialog
+gls-info.nl,abinbevefes.ru###CybotCookiebotDialog
 health.tvbs.com.tw#%#//scriptlet('set-cookie', 'cookie_accept', 'accept')
 scaleway.com#%#//scriptlet('trusted-click-element', '.sc-dGCmGc.fJEvkp', '!localStorage:gbFeaturesCache')
 przewodnik-katolicki.pl##.ciastka
@@ -16641,6 +16643,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199774
+@@||consent.cookiebot.com/uc.js$domain=gls-info.nl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199744
 allestoringen.be,allestoringen.nl,xn--allestrungen-9ib.at,xn--allestrungen-9ib.ch,xn--allestrungen-9ib.de,downdetector.ae,downdetector.ca,downdetector.co.nz,downdetector.co.uk,downdetector.co.za,downdetector.com.ar,downdetector.com.au,downdetector.com.br,downdetector.com.co,downdetector.com,downdetector.cz,downdetector.dk,downdetector.ec,downdetector.es,downdetector.fi,downdetector.fr,downdetector.gr,downdetector.hk,downdetector.hr,downdetector.hu,downdetector.id,downdetector.ie,downdetector.in,downdetector.it,downdetector.jp,downdetector.mx,downdetector.my,downdetector.no,downdetector.pe,downdetector.pk,downdetector.pl,downdetector.pt,downdetector.ro,downdetector.ru,downdetector.se,downdetector.sg,downdetector.sk,downdetector.web.tr#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199656
@@ -24394,10 +24398,10 @@ wholicab.com#@##adContent
 wp.pl#@#.ad_container
 wp.pl#@#.pub_300x250
 wp.pl#@#.text_ads
-wvgazettemail.com,ceogelisim.com#@#.ad-text
-wvgazettemail.com,ceogelisim.com#@#.adBlock
-wvgazettemail.com,ceogelisim.com#@#.adContent
-wvgazettemail.com,ceogelisim.com#@#.adSense
+wvgazettemail.com#@#.ad-text
+wvgazettemail.com#@#.adBlock
+wvgazettemail.com#@#.adContent
+wvgazettemail.com#@#.adSense
 @@.it/rcs_data-tracking/v*/distro/openx/gazzetta/openx_async.js$domain=gazzetta.it
 @@/ads/ads.js|$domain=nltimes.nl
 @@/advert.js$domain=remont-aud.net|spilcloud.com
