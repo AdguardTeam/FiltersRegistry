@@ -1,9 +1,9 @@
-! Checksum: PeVWTFyEE4uZKATzQ3MykQ
-! Diff-Path: ../patches/2/2-s-1741074097-3600.patch
+! Checksum: cAa+1OMka8UANORCqxltLQ
+! Diff-Path: ../patches/2/2-s-1741077827-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.73.88
-! TimeUpdated: 2025-03-04T07:31:46+00:00
+! Version: 2.3.73.89
+! TimeUpdated: 2025-03-04T08:31:37+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24385,6 +24385,9 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199790
+||api.adinplay.com^$domain=wormate.io,important
+wormate.io#%#(()=>{const a=function(a){"function"==typeof a&&a()};window.aiptag={adplayer:"",cmd:[]},window.aiptag.cmd.player=[],window.aiptag.cmd.display=[],window.aiptag.cmd.push=a,window.aiptag.cmd.player.push=a,window.aiptag.cmd.display.push=a,window.aipDisplayTag={display:function(){}},window.aipPlayer=function(a){a&&a.AIP_COMPLETE&&(this.startPreRoll=a.AIP_COMPLETE)}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199754
 netronline.com#%#//scriptlet('abort-current-inline-script', 'addEventListener', 'user-modal')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199907
@@ -30075,9 +30078,9 @@ call2friends.com#%#//scriptlet("abort-current-inline-script", "onload", "Adblock
 !@@.jpg$image,domain=financemonk.net|rtxkeeda.com|houseofblogger.com|dropgalaxy.com|djxmaza.in|miuiflash.com|thecubexguide.com
 !@@.png$image,domain=financemonk.net|rtxkeeda.com|houseofblogger.com|dropgalaxy.com|djxmaza.in|miuiflash.com|thecubexguide.com
 !
-jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com,smartfeecalculator.com#$#img#dlad { visibility: hidden !important; }
-jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com,smartfeecalculator.com#$#iframe[id^="google_ads_iframe_"] { height: 350px !important; }
-jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com,smartfeecalculator.com#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'window.open(adurl')
+rfiql.com,jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com,smartfeecalculator.com#$#img#dlad { visibility: hidden !important; }
+rfiql.com,jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com,smartfeecalculator.com#$#iframe[id^="google_ads_iframe_"] { height: 350px !important; }
+rfiql.com,jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com,smartfeecalculator.com#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'window.open(adurl')
 jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com#%#//scriptlet('prevent-eval-if', '/Proxy=new Proxy\(Proxy|window\[_0x/')
 jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'antiAdBlockerHandler')
 jytechs.in,miuiflash.com,djxmaza.in,thecubexguide.com#%#//scriptlet('prevent-xhr', '/adtrue\.com|eningspon\.com|freychang\.fun|orquideassp\.com|popunder/')
@@ -51732,6 +51735,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+babylonbee.com##.w-full:has(> a[href^="https://rdr.sendingdomains.com/"])
+wormate.io###results-view > div[id]:has(> .label:first-child + div[id]:last-child > #wormate-io_970x250)
 indiatimes.com##.ecom-widget
 indiatimes.com##.product-cont
 indiatimes.com##body .ads-textafter
@@ -68828,8 +68833,6 @@ xtits.com#?#.container > div.block-content > div.table:has(> div.spot-holder > d
 sharkz.io#?#.wrapper > .pure-g > div[class^="pure-u"] > .section:has(> .frontPageAdvertisementHeader)
 takemine.io#?##home > .container > .row > .col-xs-5:has(> .panel > .panel-body.text-center > div[id$="ads"])
 takemine.io#?#.modal-body > .text-center > #summary ~ .flex-row:has(> .col > .text-muted > small:contains(/^Advertisement$/))
-wormate.io#?#.line-center > .column-right:has(> div[id] > .label:contains(/^Advertisement:$/))
-wormate.io#?##game-cont > #results-view > div[id][style]:has(> .label:contains(/^Advertisement:$/))
 pngegg.com#$?#.list_ads { remove: true; }
 mangainn.net#?#.col-md-4 > .sidebar:has(> .text-back > span:contains(/^Sponsored Content$/))
 comicastle.org#?#.card > .card-body.text-center:has(> .adsbygoogle)
@@ -76055,6 +76058,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199978
+@@||happymh.com^$image,domain=hihimanga.com,stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199975
 @@||mgsearcher.com/api/$stealth=referrer
 @@||g-mh.online^$image,domain=bzmh.org,stealth=referrer
