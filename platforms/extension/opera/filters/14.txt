@@ -1,9 +1,9 @@
-! Checksum: A5jxyOAtQ2PWpynDmh9JKA
-! Diff-Path: ../patches/14/14-s-1741203698-3600.patch
+! Checksum: 2NgmtXZcvDtg8Z7ksr99zA
+! Diff-Path: ../patches/14/14-s-1741214630-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.23.87
-! TimeUpdated: 2025-03-05T19:37:42+00:00
+! Version: 2.2.23.88
+! TimeUpdated: 2025-03-05T22:39:46+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2489,6 +2489,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+mobisystems.com##div[class*="bottom-"]:has(> div > div > div > span#consent-learn-more)
 pngtree.com##body > div > div:has(> button[data-huejs="usescookies-accept"])
 ||cp.gutefrage.net^
 shop.tastycoffee.ru##.tc-cookies
@@ -22643,6 +22644,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+mobisystems.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 yularihappysmile.com###adblock-modal
 moto100.de#%#//scriptlet('prevent-setTimeout', 'Adblocker')
 retail.ru##.news__c1
@@ -56666,7 +56668,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !
 !   SECTION: Widgets - Marketing (specific)
 !
-||asus-brand-assistant.asus.com/brand-assistant.js
+asus.com#%#//scriptlet('hide-in-shadow-dom', '#brandAssistant-root')
 theporndude.vip,theporndude.com##.chat-widget
 pw.live##.sticky-call
 sanevv.com.ua###animate_btn_4
