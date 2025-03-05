@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.72",
-			"timeUpdated": "2025-03-05T22:39:51+0000",
+			"version": "2.0.50.73",
+			"timeUpdated": "2025-03-05T23:40:27+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
