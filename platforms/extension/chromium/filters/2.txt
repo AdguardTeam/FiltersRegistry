@@ -1,9 +1,9 @@
-! Checksum: HXmWCX7TZclCGiCOPNFQTQ
-! Diff-Path: ../patches/2/2-s-1741164062-3600.patch
+! Checksum: tM41BzhhuKz0OR0L4wGZGQ
+! Diff-Path: ../patches/2/2-s-1741167874-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.74.5
-! TimeUpdated: 2025-03-05T08:31:42+00:00
+! Version: 2.3.74.6
+! TimeUpdated: 2025-03-05T09:32:19+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||banner-iframe.com^
 ||pnwrs5xz.click^$all
 ||demand.supply^
 ||seeptoafuko.com^
@@ -27568,8 +27569,9 @@ fcportables.com##div[class^="popup"][class$="wrap"][id]
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=cbs.com|paramountplus.com|history.com
 @@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams$domain=cbs.com|paramountplus.com|history.com
 ||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams/*/time-events.json$important,domain=cbs.com|paramountplus.com|history.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/129547
-comohoy.com#%#//scriptlet("set-constant", "checkAdBlock", "noopFunc")
+! https://github.com/AdguardTeam/AdguardFilters/issues/200035
+comohoy.com##div[id^="anti-adblock-"]
+comohoy.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'getComputedStyle')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169369
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129563
 rakuten.tv#%#//scriptlet('prevent-xhr', '/springserve\.com|cdn\.spotxcdn\.com\/media\//')
@@ -50987,6 +50989,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+fow.lol###video-ad-content
+||static.escort.club/banners/
+escort.club##body > .info-sec:has(> .wrapper:only-child > .row:only-child > a[target="_blank"]:only-child)
 hentaidna.tv##a[href*=".labsda.com"]
 hentaidna.tv##.grid > div:has(> a[target="_blank"]:only-child)
 hentaidna.tv##.px-4 > .items-center:has(> a[target="_blank"]:only-child)
