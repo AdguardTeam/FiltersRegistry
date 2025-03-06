@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.71",
-			"timeUpdated": "2025-03-06T09:41:13+0000",
+			"version": "2.0.57.72",
+			"timeUpdated": "2025-03-06T10:40:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
