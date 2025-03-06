@@ -1,9 +1,9 @@
-! Checksum: Vc6qn5LhKYR069WMuaFKrQ
-! Diff-Path: ../patches/2/2-s-1741239709-3600.patch
+! Checksum: WBM99hT0A/GuR/ZOszt0eA
+! Diff-Path: ../patches/2/2-s-1741246977-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.74.20
-! TimeUpdated: 2025-03-06T05:31:38+00:00
+! Version: 2.3.74.21
+! TimeUpdated: 2025-03-06T07:31:41+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24634,7 +24634,8 @@ redvido.com#%#//scriptlet('abort-on-stack-trace', 'document.getElementById', 'on
 3dsfree.org#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193130
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192945
-sf.upns.xyz,showflix.upns.one,upns.online#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
+isekaitube.cfd,sf.upns.xyz,showflix.upns.one,upns.online#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=noopjs,domain=upns.online|sf.upns.xyz|showflix.upns.one|isekaitube.cfd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192841
 oromoyo.ai#%#//scriptlet('prevent-setTimeout', 'await', '5000')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192836
@@ -26296,6 +26297,8 @@ rewayatcafe.com###adb
 ! TODO: use redirect resource when it will be added - https://github.com/AdguardTeam/Scriptlets/issues/401
 southparkstudios.com#%#(()=>{const e=new Map,t=function(){},o=t;o.prototype.dispose=t,o.prototype.setNetwork=t,o.prototype.resize=t,o.prototype.setServer=t,o.prototype.setLogLevel=t,o.prototype.newContext=function(){return this},o.prototype.setParameter=t,o.prototype.addEventListener=function(t,o){t&&(console.debug(`Type: ${t}, callback: ${o}`),e.set(t,o))},o.prototype.removeEventListener=t,o.prototype.setProfile=t,o.prototype.setCapability=t,o.prototype.setVideoAsset=t,o.prototype.setSiteSection=t,o.prototype.addKeyValue=t,o.prototype.addTemporalSlot=t,o.prototype.registerCustomPlayer=t,o.prototype.setVideoDisplaySize=t,o.prototype.setContentVideoElement=t,o.prototype.registerVideoDisplayBase=t,o.prototype.submitRequest=function(){const t={type:tv.freewheel.SDK.EVENT_SLOT_ENDED},o=e.get("EVENT_SLOT_ENDED");o&&setTimeout((()=>{try{o(t)}catch(e){console.error(e)}}),1)},window.tv={freewheel:{SDK:{Ad:t,AdManager:o,AdListener:t,_instanceQueue:{},setLogLevel:t,EVENT_SLOT_ENDED:"EVENT_SLOT_ENDED"}}}})();
 southparkstudios.com#%#//scriptlet('prevent-fetch', 'imasdk.googleapis.com')
+southparkstudios.com#%#//scriptlet('google-ima3')
+@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=southparkstudios.com
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$script,redirect=noopjs,domain=southparkstudios.com
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=southparkstudios.com
 ! #abDetectorModal
@@ -51768,6 +51771,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+dorsetecho.co.uk##.mar-leaderboard--top
 deltiasgaming.com##.vidazoo-player-container
 get-to.link###hover-message
 ||newsbreak.com/api/ads?
@@ -83647,6 +83651,7 @@ _800x80_
 ###midrect_ad
 ###midstrip_ad
 ###mini-ad
+###mobile-ad-container
 ###mobile-adhesion
 ###mobile-ads-ad
 ###mobile-footer-ad-wrapper
@@ -131699,6 +131704,7 @@ asgg.php$domain=ghostbin.me|paste.fo
 ||rswebsols.com/wp-content/uploads/rsws-banners/
 ||s.radioreference.com/sm/$image
 ||s.yimg.com/zh/mrr/$image,domain=mail.yahoo.com
+||s3.amazonaws.com/runguides2/site_takeovers/$image,domain=runguides.com
 ||saabsunited.com/wp-content/uploads/*banner
 ||samba.org/banners/$image
 ||sasinator.realestate.com.au^

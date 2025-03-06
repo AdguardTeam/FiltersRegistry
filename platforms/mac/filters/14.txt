@@ -1,8 +1,8 @@
-! Checksum: 68P1i53ps2hKZesl0gUUMA
+! Checksum: On+s0ir5rOrmEVjUF53/Rw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.23.91
-! TimeUpdated: 2025-03-06T06:38:55+00:00
+! Version: 2.2.23.92
+! TimeUpdated: 2025-03-06T07:38:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2488,6 +2488,9 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+s3rl.link##.cm--bottom
+s3rl.link#%#//scriptlet('set-cookie', 'im_youtube', '1')
+djs3rl.com#%#//scriptlet('set-cookie', 'cc_youtube', '1')
 autoteilexxl.de#$#body { overflow: auto !important; }
 autoteilexxl.de#$#body .popup-choose-cookies { display: none !important; }
 deepl.com#%#//scriptlet('trusted-set-cookie', 'privacySettings', '%7B%22v%22%3A2.1%2C%22t%22%3A1741225078733%2C%22m%22%3A%22STRICT%22%2C%22consent%22%3A%5B%22NECESSARY%22%5D%7D')
@@ -16724,6 +16727,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/200117
+@@/assets/*/cookieconsent/cookie$domain=djs3rl.com|s3rl.link
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200109
 autoteilexxl.de#@#.popup-choose-cookies
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199737
