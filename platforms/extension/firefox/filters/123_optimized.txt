@@ -1,9 +1,9 @@
-! Checksum: LDKHC3j30IAWx5zSOULqgw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1741223147-14400.patch
+! Checksum: 1xejd7dVkpGC0mdXa2PGWw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1741237535-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.37.90
-! TimeUpdated: 2025-03-06T01:01:26+00:00
+! Version: 2.1.37.91
+! TimeUpdated: 2025-03-06T05:01:18+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -share-bar/$~stylesheet
@@ -376,6 +376,7 @@ _social_bookmark/
 ###share_div
 ###share_facebook
 ###share_google
+###share_icon
 ###share_linkedin
 ###share_links
 ###share_telegram
@@ -417,7 +418,6 @@ _social_bookmark/
 ###sidebar-social
 ###sidebar-twitter
 ###sidebar-youtube
-###sidebar_share
 ###sidebar_social_icons
 ###single-share
 ###site-share
@@ -470,6 +470,7 @@ _social_bookmark/
 ###social-vertical
 ###social-view
 ###social-widget
+###social-wrap
 ###social-wrapper
 ###social-youtube
 ###social-yt
@@ -511,6 +512,7 @@ _social_bookmark/
 ###social_btns
 ###social_facebook
 ###social_fb
+###social_fixed
 ###social_follow
 ###social_footer
 ###social_icons
@@ -609,7 +611,6 @@ _social_bookmark/
 ##.ButtonSharing
 ##.ButtonsSharing
 ##.DiggThisButton
-##.EntryShareButton
 ##.FacebookLike
 ##.FacebookShareButton
 ##.FollowButton
@@ -771,7 +772,6 @@ _social_bookmark/
 ##.article__shares
 ##.article__sharing
 ##.article__social
-##.article__social-share
 ##.article__socials
 ##.article_bottom_share
 ##.article_footer_share
@@ -786,6 +786,7 @@ _social_bookmark/
 ##.aspexifbsidebox
 ##.asset-inline-share-tools
 ##.at-share-btn
+##.atButtonPinterest
 ##.author-bio__social
 ##.author-card__social
 ##.author-follow-button
@@ -826,7 +827,6 @@ _social_bookmark/
 ##.big-share
 ##.bimber-microshare-item-share
 ##.bio-social
-##.bk-share-box-top
 ##.bl_socialbox
 ##.bloc-social
 ##.block-addtoany
@@ -900,6 +900,7 @@ _social_bookmark/
 ##.c-social-bar
 ##.c-social-container
 ##.c-social-share
+##.c-social-sharetool
 ##.c-social-sharing
 ##.c-social-wrap
 ##.c-socialSharebar_container
@@ -945,7 +946,6 @@ _social_bookmark/
 ##.cp-follow-buttons
 ##.cp-social-flyin
 ##.crafty-social-buttons
-##.cresta-share-icon
 ##.crunchify-social
 ##.cs-share
 ##.cs-single-post-share
@@ -1176,7 +1176,6 @@ _social_bookmark/
 ##.followYouTube
 ##.follow__list
 ##.followus_net
-##.foo-facebook
 ##.foot-share
 ##.foot-soc-fb
 ##.foot-soc-list
@@ -1331,7 +1330,6 @@ _social_bookmark/
 ##.header-facebook
 ##.header-follow-us
 ##.header-icon-instagram
-##.header-main-socs
 ##.header-menu__social
 ##.header-nav-social
 ##.header-nav-social-facebook
@@ -1378,6 +1376,7 @@ _social_bookmark/
 ##.hero-social
 ##.hola_share_player_btn
 ##.hola_share_player_btn_wrapper
+##.home__social
 ##.horizontal-share
 ##.horizontal.social
 ##.hp-tab-share
@@ -1410,7 +1409,7 @@ _social_bookmark/
 ##.icon-facebook-squared
 ##.icon-facebook-white
 ##.icon-facebook2
-##.icon-fb2
+##.icon-fb-small
 ##.icon-flickr
 ##.icon-flipboard
 ##.icon-footer-facebook
@@ -1572,6 +1571,7 @@ _social_bookmark/
 ##.lf-facebook
 ##.like-box-wrap
 ##.like-fb
+##.like-layer
 ##.like_block
 ##.like_buttons
 ##.likebtn
@@ -1656,6 +1656,9 @@ _social_bookmark/
 ##.menu-footer-social
 ##.menu-footer-social-container
 ##.menu-header-links-container
+##.menu-link-facebook
+##.menu-link-instagram
+##.menu-link-twitter
 ##.menu-section-social
 ##.menu-share
 ##.menu-social-container
@@ -1669,6 +1672,7 @@ _social_bookmark/
 ##.menu_social
 ##.messageShareButtons
 ##.meta-share
+##.meta-share-count
 ##.meta-share-wrapper
 ##.meta__social
 ##.mh-share-button
@@ -1916,6 +1920,7 @@ _social_bookmark/
 ##.sd-social
 ##.sd-social-icon-text
 ##.sdc-site-share
+##.search-and-share
 ##.search-social
 ##.secondaryNav-social
 ##.section-post-intro-share
@@ -2191,7 +2196,6 @@ _social_bookmark/
 ##.share_btn_white
 ##.share_btns
 ##.share_button
-##.share_button_container
 ##.share_buttons
 ##.share_buttons_container
 ##.share_con
@@ -2440,9 +2444,7 @@ _social_bookmark/
 ##.social-area
 ##.social-area-syncer
 ##.social-aside
-##.social-background
 ##.social-badge
-##.social-badges
 ##.social-banner
 ##.social-banners
 ##.social-bar-sticky
@@ -2610,6 +2612,7 @@ _social_bookmark/
 ##.social-share-link
 ##.social-share-links
 ##.social-share-list
+##.social-share-options
 ##.social-share-overlay
 ##.social-share-sticky
 ##.social-share-svg
@@ -2702,6 +2705,7 @@ _social_bookmark/
 ##.socialMediaIcons
 ##.socialMediaLinkContainer
 ##.socialMediaLinks
+##.socialMediaList
 ##.socialMediaModule
 ##.socialMediaShare
 ##.socialMedias
@@ -2741,6 +2745,7 @@ _social_bookmark/
 ##.social_links_wrapper
 ##.social_popup
 ##.social_row
+##.social_sec
 ##.social_section
 ##.social_share_buttons
 ##.social_share_left
@@ -2799,7 +2804,6 @@ _social_bookmark/
 ##.socialsharing
 ##.socialside
 ##.socialtab
-##.socialtags
 ##.socialtools
 ##.socialts
 ##.socialwidget
@@ -2972,9 +2976,7 @@ _social_bookmark/
 ##.us_share_buttons
 ##.ut2-social-link-block
 ##.vbseo_share
-##.vc_container_social_button
 ##.vc_share_link_container
-##.vc_social_button
 ##.vce-share-bar
 ##.vce-share-items
 ##.vertical-social
@@ -3042,7 +3044,6 @@ _social_bookmark/
 ##.widget_social_counter
 ##.widget_social_links
 ##.widget_social_networks
-##.widget_socialcounter
 ##.widget_socials
 ##.widget_sow-social-media-buttons
 ##.widget_synved_social_share
@@ -3266,6 +3267,7 @@ imgflip.com###findUs
 memuplay.com###fixed-share
 empoweringparents.com,geraligado.blog.br,tvmaze.com###follow
 openspeedtest.com###footBox2
+airandspaceforces.com###footer-social
 abebooks.com,atlasobscura.com###footer-social-list
 aimp.ru###footer_counter
 cybermap.kaspersky.com###footer_social_channels
@@ -3552,7 +3554,6 @@ rappler.com##.social-share__actions
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
 mmorpg.com##.social-web
-dailymail.co.uk##.socialContainer-1Yly1
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
 macrumors.com##.socialMedia--3i9tSnAb
 eetimes.com##.socialNav
@@ -3623,7 +3624,6 @@ dw.com##[data-tracking-name^="sharing-icons-"]
 mothership.sg##[height="73"]
 mothership.sg##[href="https://bit.ly/3KjTj94"]
 mothership.sg##[href="https://bit.ly/3qgqzHg"]
-webfail.com##[href^="http://twitter.com/intent/tweet"]
 theguardian.com##div > gu-island[name="ShareButton"]
 theatlantic.com##div[class^="ArticleShare_"]
 cnbc.com##div[class^="SocialShare-"]
@@ -3739,9 +3739,10 @@ berliner-zeitung.de##.share-panel_wrapper__3tHN9
 film-rezensionen.de##.sharing-block-wrap
 urlaubsguru.de##.smeShare
 presseportal.de##.story-sharing
+t3n.de##.tg-pockethinweis
+t3n.de##.tg-social-bottom
 watson.ch##.watson-sharebuttons
 handelsblatt.com##app-icon-link
-berliner-kurier.de##section[class^="article-top-panel_socials_"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 francebleu.fr##.ShareNetwork
@@ -3842,7 +3843,6 @@ estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
 apoia.se##.campaign-metrics-card__share
 jornaldenegocios.pt##.col_partilhas
-jovempan.com.br##.cta-model
 abril.com.br##.f-social
 poder360.com.br##.fixed-list
 steamverde.net##.focus-social
@@ -3873,12 +3873,10 @@ kinoland.biz##.page__share
 forklog.com##.post_bottom_socials_buttons_wrapper
 aif.ru##.sharing_item
 academic.ru##.smm
-teraz.sk##.articleActions
 ta3.com##.detail_text_socials
 sme.sk##.social-dialog-wrapper
 24ur.com##.flex.flex-row.items-center.justify-center.md\:justify-start.p-16.md\:p-0
 24ur.com##.w-full.md\:w-auto.h-full.flex.flex-row.items-center.justify-center.md\:justify-start.pt-16.md\:pt-0.border-t.md\:border-none.border-black\/10.dark\:border-white\/10
-emol.com###cuDetalle_cuBarraSocial_redesSociales
 bandaancha.eu###shBt
 milenio.com###share-icons-container
 excelsior.com.mx###social-bottom-node
