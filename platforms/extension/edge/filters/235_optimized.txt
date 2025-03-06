@@ -1,16 +1,16 @@
-! Checksum: Pg4oHx9X3DqSJHCgkDeIrg
-! Diff-Path: ../patches/235_optimized/235_optimized-s-1740920744-14400.patch
+! Checksum: K8WHHg7+H+5Xa9qACrHPWw
+! Diff-Path: ../patches/235_optimized/235_optimized-s-1741251994-14400.patch
 ! Title: Persian Blocker (Optimized)
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.40
-! TimeUpdated: 2025-03-02T13:01:37+00:00
+! Version: 2.0.5.41
+! TimeUpdated: 2025-03-06T09:02:08+00:00
 ! Expires: 10 days (update frequency)
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.site/"]
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.co/"]
 artmusics.top,musicpars3.ir,musicguitars.ir,subf2m.ir,zeemusic.ir,najiremix.ir,musichi.ir,likeemusic.ir,appiroid.ir,androidtime.com#%#//scriptlet('ubo-nowoif.js')
 /files/fa/adv^$image,~third-party,domain=ir|asriran.com|parsine.com|ana.press|niniban.com|vananews.com|barghnews.com|niniban.com|eghtesadonline.com|borna.news|seratnews.com|nabzebourse.com
 /files/adv^$image,~third-party,domain=ir|asrkhabar.com|bultannews.com|yektapress.com|roozno.com|fararu.com|iraneconomist.com|khordad.news
-/wp-content/uploads/*.gif^$image,~third-party,domain=ir|~ifixit.ir|bazdeh.org|charbzaban.com|chetor.com|dlfox.com|filmin.info|ghatar.com|itresan.com|konkur.info|learnparsi.com|movienama.com|netpaak.com|parsfootball.com|p30konkor.com|rozmusic.com|shanbemag.com|sakhtafzar.com|techrato.com|bazicenter.com|avalnews.com|gamefa.com|takskin.com|avapedia.com|honarfardi.com|graphiran.com|tasvirezendegi.com|par30dl.net|par30games.net|elmefarda.com|asbe-bokhar.com|binaopt.com|farachart.com|farsiro.com|techtik.com|androidtime.com|baarzesh.net|p30world.com|shahrebours.com|kamapress.com|kaliboys.com|fontchi.com|namnak.com
+/wp-content/uploads/*.gif^$image,~third-party,domain=ir|~ifixit.ir|bazdeh.org|charbzaban.com|chetor.com|dlfox.com|filmin.info|ghatar.com|itresan.com|konkur.info|learnparsi.com|movienama.com|netpaak.com|parsfootball.com|p30konkor.com|rozmusic.com|shanbemag.com|sakhtafzar.com|techrato.com|bazicenter.com|avalnews.com|gamefa.com|takskin.com|avapedia.com|honarfardi.com|graphiran.com|tasvirezendegi.com|par30dl.net|par30games.net|elmefarda.com|asbe-bokhar.com|binaopt.com|farachart.com|farsiro.com|techtik.com|androidtime.com|baarzesh.net|p30world.com|shahrebours.com|kamapress.com|kaliboys.com|fontchi.com|namnak.com|tejaratnews.com
 /images/advertise^$image,~third-party,domain=ir|bazimag.com|jahannews.com
 /wp-admin/admin-ajax.php?postviews_id=$xmlhttprequest,~third-party
 ##.zxc
@@ -1005,6 +1005,7 @@ gadgetnews.net##.ad-cell
 gadgetnews.net##.widget_text
 gadgetnews.net##.ads-post
 gadgetnews.net###ad14
+hellodigi.ir##div#sp-right > div.sp-column > div.sp-module:has(> h3.sp-module-title:has-text(حامیان ما))
 hadese24.ir##div.full-ad-box
 honarfardi.com##aside.sidebar .widget:has(a.external)
 harmonydl.us###ads
@@ -1689,6 +1690,8 @@ rond.ir##section.ads-section
 rastannews.ir##.all_ads
 ||rajanews.com/sites/default/files/superadmin/*.gif
 rajanews.com###block-block-22.ads
+safheeghtesad.ir##div.vw_d
+safheeghtesad.ir##div.home_middle4
 ||solahangs.com/popup.js^$script,~third-party
 shahrebours.com##div.shortcode-wrapper > p > a.backlink-into
 shahrebours.com#@#.box_ads
@@ -1736,8 +1739,8 @@ sclinic.ir#$?#style:has-text(@media print) { remove: true; }
 shanbemag.com##.qxsbniv
 ||cdn.sargarme.com/uploads/*.gif$image,~third-party
 sargarme.com##.ads2
-sariasan.com##.ush_image_2
-sariasan.com##.widget > h3:has-text(مطالب مفید):upward(.widget)
+||sariasan.com/upload/*.gif^$image,~third-party
+sariasan.com##div.top-banner
 ||sobhtazeh.news/rss-file.php^$xmlhttprequest
 ||sobhtazeh.news/player/vast.js^$script
 ||sobhtazeh.news/player/vastlink.js^$script
@@ -2092,11 +2095,7 @@ tgju.org#%#//scriptlet('ubo-rmnt.js', 'script', 'ad.setAttribute')
 tgju.org##ul.advertise
 tgju.org##div.bottom-left-ad
 tgju.org##div.bottom-right-ad
-tejaratnews.com##.tj-ad-box
-tejaratnews.com##.home-web-surfing
-tejaratnews.com##.full-width-tabligh
-tejaratnews.com##.tj-ad-wrapper
-tejaratnews.com##div.widget.aside-widget:nth-of-type(5) > .section-title--dotted.section-title > .section-title__h
+tejaratnews.com##div.tjads
 ||tebyan.net/Base/UserLog^
 ||tebyan.net/Home/UserLog^
 ||tebyan.net/home/Visit^
@@ -2298,8 +2297,7 @@ zohur12.ir##.sideads
 ||theforge.ir/intake/v2/rum/events^$xmlhttprequest,third-party,domain=zoomit.ir|zoomg.ir
 /ads^$xmlhttprequest,~third-party,domain=zoomit.ir|zoomg.ir
 /editorial/api/articles/*/visit^$xmlhttprequest,~third-party,domain=zoomit.ir|zoomg.ir
-zoomit.ir,zoomg.ir##div[class][Width="100%"][height="100%"][style]:empty:upward(3)
-zoomit.ir,zoomg.ir##div[class][Width="100%"][height="100%"][style]:empty:matches-css-after(animation: 1.6s linear 0.5s infinite normal none running waveKeyframe):upward(3)
+zoomit.ir,zoomg.ir##div[class^="sc-"]:has(> div[class^="sc-"][rowcount][columncount] > div[class^="sc-"][maxwidth][maxheight])
 zoomtech.org##div.zoomtech-banner
 ||excoino.com^$all
 ||irancloudmining.com^$all
