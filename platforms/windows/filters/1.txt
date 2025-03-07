@@ -1,9 +1,9 @@
-! Checksum: ISrbcoelUw6Ouj+KmUnPFw
-! Diff-Path: ../patches/1/1-s-1741182330-3600.patch
+! Checksum: O02WSCXZ2vfC+GPZ1qThTQ
+! Diff-Path: ../patches/1/1-s-1741361734-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.98.2
-! TimeUpdated: 2025-03-05T13:31:22+00:00
+! Version: 2.0.98.3
+! TimeUpdated: 2025-03-07T11:31:16+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5296,7 +5296,7 @@ game4you.top,monna2.top,apad2.top,games-pc.top,rustorka.com,rustorka.net,rustork
 /\/forum\/(?!login.php)/$removeheader=location,domain=game4you.top|games-pc.top|rustorka.com|rustorka.net|rustorkacom.lib|naylo.top|monna2.top|zannn.top|innal.top|apad2.top
 $cookie=opt_js,domain=game4you.top|games-pc.top|rustorka.com|rustorka.net|rustorkacom.lib|rustorka.top|naylo.top
 !
-rustorka.com##div[id^="dubik"]
+rustorka.com##div[id^="kukansd"]
 tapochek.net#%#//scriptlet("set-constant", "antiadblock", "undefined")
 !$cookie=/^u_count|^st\d+|adblock|gophp/,domain=naylo.top|rustorka.com|rustorka.net|rustorkacom.lib|tapochek.net
 ! tapochek.net - fixing first click
@@ -5673,6 +5673,7 @@ docviewer.yandex.*#%#//scriptlet('json-prune', 'seatbid rtbAuctionInfo')
 docviewer.yandex.*##div[class^="pages_"] > div[class][id]:has(> div[class] + div[style="position: absolute; display: none; visibility: hidden; width: 0px; height: 0px;"])
 !
 ! Yandex.Mail
+||mail.yandex.$replace=/"(RIGHT_COLUMN_SCROLLER|DIRECT_LINE_CLASS)":"[A-Za-z0-9_]+"\,//
 ||mail.yandex.*/*/*/*/*$replace=/.*"adIds":.*"imptrackers":.*//,xmlhttprequest,domain=mail.yandex.*
 mail.yandex.*##.ComposeDoneScreen-Ads
 mail.yandex.*##div[class*="disableAdsContainer"]
@@ -7728,6 +7729,7 @@ chehov-vid.ru,161.ru,prufy.ru,ysia.ru,5koleso.ru,ngs.ru,i38.ru,chita.ru,lenta.ru
 !
 !
 !
+softportal.com##div[style$="text-align: center;"] > span > a[rel="nofollow"]
 anilib.me##.page > div._container--indent > div[class$="_b"][style]
 ||bb.pln24.ru/roll/
 sex-doma.net##.player + div[style]:has(> iframe[height="100"])
@@ -17847,6 +17849,7 @@ ozon.ru##div[class] > div[data-widget="island"]:has(> div > div[data-widget="obj
 ozon.ru##div[data-widget="bannerCarousel"]
 !
 ! 2gis
+2gis.ru##div[style="position:relative;z-index:0;height:100%"] div:has(> header > a[href^="http://redirect.2gis.com/adv/"])
 2gis.ru##div[style="position: relative; z-index: 0; height: 100%;"] div:has(> header > a[href^="http://redirect.2gis.com/adv/"])
 2gis.ru##header:has(> span[style="display: none !important;"])
 2gis.ru##header[style="display: none !important;"] + div:not([class])
