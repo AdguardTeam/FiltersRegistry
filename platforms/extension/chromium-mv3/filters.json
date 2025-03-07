@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.66.0",
-			"timeUpdated": "2025-03-06T21:01:46+0000",
+			"version": "2.1.66.1",
+			"timeUpdated": "2025-03-07T01:01:17+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.65.99",
-			"timeUpdated": "2025-03-06T21:01:47+0000",
+			"version": "2.1.66.0",
+			"timeUpdated": "2025-03-07T01:01:18+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.59.31",
-			"timeUpdated": "2025-03-06T21:02:37+0000",
+			"version": "2.0.59.32",
+			"timeUpdated": "2025-03-07T01:02:06+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
