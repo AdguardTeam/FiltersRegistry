@@ -1,9 +1,9 @@
-! Checksum: bpxSeGbg7e83oDmDqWHcWA
-! Diff-Path: ../patches/18/18-s-1741365777-3600.patch
+! Checksum: 7yZlUlnNU0kJRigVshY6iw
+! Diff-Path: ../patches/18/18-s-1741376505-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.57.75
-! TimeUpdated: 2025-03-07T16:38:34+00:00
+! Version: 2.0.57.76
+! TimeUpdated: 2025-03-07T19:38:05+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2489,12 +2489,14 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+x.com#%#//scriptlet('trusted-set-cookie', 'd_prefs', 'MToxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw')
 tablesgenerator.com##.consent-dialog
 gamesnacks.com##body > div[jsowner]:has(> div > div[role="dialog"] a[href^="https://policies.google.com/privacy"])
 istikbal.com.tr##df-cookie-element
 autoersatzteile.de#$#div[class^="overlay"] { display: none !important; }
 autoersatzteile.de#$#.popup--cookies { display: none !important; }
 autoersatzteile.de#$#body { overflow: auto !important; }
+autoersatzteile.de#$##loader { display: none !important; }
 meqqe.jp##body > div > .MuiBox-root:has(> div[class] > a[href*="privacypolicy"])
 s3rl.link##.cm--bottom
 s3rl.link#%#//scriptlet('set-cookie', 'im_youtube', '1')
@@ -2572,8 +2574,6 @@ sylabus.uj.edu.pl#$#.modal-backdrop { display: none !important; }
 sylabus.uj.edu.pl#$#div[data-controller="cookie-consent-modal"] { display: none !important; }
 toomics.com###privacy-popup-msg
 belveb.by##.wrap-cookie
-twitter.com,x.com#$#html[style*="overflow"] { overflow: auto !important; }
-twitter.com,x.com#$##layers:has(div[role="dialog"] div[role="group"] a[href^="https://privacy.twitter.com"]) { display: none !important; }
 stema.de###cookie-consent-target
 sabah.com.tr##.kvkk-info-box
 bed-and-breakfast.it###cookiePolicy_barra
