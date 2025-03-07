@@ -1,8 +1,8 @@
-! Checksum: xJ3eRHyaS02x7ojb0it/1w
+! Checksum: MFiNBeCZLf+oB3HJjKPnWQ
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.50.77
-! TimeUpdated: 2025-03-07T11:41:28+00:00
+! Version: 2.0.50.78
+! TimeUpdated: 2025-03-07T16:38:33+00:00
 ! Expires: 5 days (update frequency)
 ||proxy.ads.canalplus-bo.net^
 ||7bd92.v.fwmrm.net^
@@ -251,7 +251,10 @@ prod-player.tf1.fr,tf1.fr,tf1info.fr#@#.carbon-ads
 !+ NOT_OPTIMIZED
 @@||ads.stickyadstv.com^|$xmlhttprequest,domain=tf1.fr|tf1info.fr
 !#safari_cb_affinity
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#$#body > iframe:not([src]) { position: absolute !important; left: -3000px !important; }
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#$#body > iframe:not([src]) { position: absolute !important; left: -3000px !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$##donation { display: none !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$##msg_ads { display: none !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$#body { overflow: auto !important; }
 rustica.fr#$#@media (min-width: 992px) { html > body.hasHabillage { padding-top: 0 !important; } }
 deco.fr,fourchette-et-bikini.fr#$#.site_content { margin-top: 0 !important; }
 caminteresse.fr#$#.sticky-wrapper { height: auto !important; }
@@ -264,9 +267,6 @@ numerama.com#$#.is-remaining-chicken { position: absolute !important; left: -999
 amomama.fr#$#header { top: 0 !important; }
 amomama.fr#$#.nb { padding-top: 0 !important; }
 dna.fr#$#body.ContentDetailComponent #p6GalleryWrapper.showed { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$##donation { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$##msg_ads { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$#body { overflow: auto !important; }
 journaldesfemmes.fr#$#@media (min-width: 768px) { body .layout.layout--offcanvas:not(#style_important) { margin-top: -200px !important; } }
 funradio.fr,rtl2.fr,rtl.fr#$#body .container-ads + *:not(#style_important) { padding-top: 0 !important; }
 funradio.fr,rtl2.fr,rtl.fr#$#body .container-ads + .tranche:not(#style_important) { padding-top: 50px !important; }
@@ -419,7 +419,6 @@ extreme-down.moe##.blockcontent > center > a[rel] > img
 letelegramme.fr##.tlg-ad-container
 letemps.ch##.adnz__placeholder
 rustica.fr###stickMe
-empire-streaming.*##iframe[src="/banner_ads"]
 cosmopolitan.fr##.Gallery-top-external
 lhebdoduvendredi.com##.b-lazy-ads
 systemed.fr##div[style="min-height: 250px;"]
@@ -579,6 +578,8 @@ onvasortir.com###pub_rectangle
 fr.tennistemple.com##.right > .box_nd > [id^="300x250"]
 replay.fr##.dfa
 lefigaro.fr##.fig-adgps
+empire-streaming.*,empire-stream.*##iframe[src="/banner_ads"]
+empire-streamz.fr,empire-streaming.*,empire-stream.*##.hover-ads-interval
 ||empire-streaming.*/serviceWorker.js
 /neads.$domain=~neads.io|~neads.co
 ||fmovies.*/sw.js

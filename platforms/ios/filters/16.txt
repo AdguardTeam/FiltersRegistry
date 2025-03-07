@@ -1,9 +1,9 @@
-! Checksum: wWPM0FA6q5GvNbg55d1aRA
-! Diff-Path: ../patches/16/16-s-1741360149-3600.patch
+! Checksum: leWWgwWvK/XJbetL5mz7vg
+! Diff-Path: ../patches/16/16-s-1741365814-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.50.77
-! TimeUpdated: 2025-03-07T11:41:28+00:00
+! Version: 2.0.50.78
+! TimeUpdated: 2025-03-07T16:38:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -185,10 +185,6 @@ france.tv#%#//scriptlet('prevent-fetch', 'fwmrm')
 lameteoagricole.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=lameteoagricole.net
-! https://github.com/uBlockOrigin/uAssets/issues/19339
-empire-anime.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
-empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net#%#//scriptlet('set-constant', 'navigator.brave', 'undefined')
-@@||e-player-stream.app/player/assets/js/ads.js?$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158428
 meteo-grenoble.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -212,6 +208,10 @@ xn--mto-bmab.fr#@#.topbanneradvertise
 empire-streaming.*#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=empire-streaming.app|empire-streaming.biz|empire-streaming.cc|empire-streaming.club|empire-streaming.co|empire-streaming.com|empire-streaming.com.bd|empire-streaming.com.np|empire-streaming.dev|empire-streaming.eu|empire-streaming.fr|empire-streaming.info|empire-streaming.life|empire-streaming.live|empire-streaming.my|empire-streaming.org|empire-streaming.store|empire-streaming.tv|empire-streaming.us|empire-streaming.xyz
+! https://github.com/uBlockOrigin/uAssets/issues/19339
+empire-anime.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
+empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net#%#//scriptlet('set-constant', 'navigator.brave', 'undefined')
+@@||e-player-stream.app/player/assets/js/ads.js?$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153700
 cosmopolitan.fr#@#.AdsBox
 ! https://github.com/uBlockOrigin/uAssets/issues/18431
@@ -230,7 +230,8 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/1478420
-japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "im'+'g")
+japscan.lol#%#//scriptlet('remove-node-text', 'script', '/const [0-9A-Za-z]{9}=/')
+japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "typeof lol")
 japscan.lol#@#div.container > [href]
 japscan.lol#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
 japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'onclick', 'let a=function(){};return false;')
@@ -770,15 +771,15 @@ occasions.decathlon.fr#%#//scriptlet('set-constant', 'FastClick.attach', 'noopFu
 lessentiel.lu,20min.ch#%#//scriptlet('adjust-setTimeout', 'setTimeoutIds_', '*', '0.001')
 lessentiel.lu,20min.ch#%#(()=>{window.TATM=window.TATM||{},TATM.init=()=>{},TATM.initAdUnits=()=>{},TATM.pageReady=()=>{},TATM.getVast=function(n){return new Promise((n=>{n()}))},TATM.push=function(n){if("function"==typeof n)try{n()}catch(n){console.debug(n)}};})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182538
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('trusted-create-element', 'body', 'iframe')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.pop', 'undefined')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.direct', 'undefined')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.isAdbActive', 'false')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.directHideAds', 'undefined')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.countpremium.film', '0')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.countpremium.serie', '0')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.countpremiumaccount.film', '0')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.countpremiumaccount.serie', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('trusted-create-element', 'body', 'iframe')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.isAdbActive', 'false')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.directHideAds', 'undefined')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremium.film', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremium.serie', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremiumMore.film', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremiumMore.serie', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremiumaccount.film', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremiumaccount.serie', '0')
 ! empire-anime.com
 empire-streaming.*,empire-anime.com#%#//scriptlet('set-constant', 'empire.mediaData.advisorDirect', '')
 empire-streaming.*,empire-anime.com#%#//scriptlet('set-constant', 'empire.mediaData.advisorMovie', '1')
@@ -791,14 +792,21 @@ empire-streaming.*,empire-anime.com#%#//scriptlet('set-constant', 'empire.mediaD
 empire-anime.com#%#(()=>{document.location.href.includes("/pop_advisor")&&AG_onLoad((function(){const e=new CustomEvent("visibilitychange"),t=t=>{Object.defineProperty(t.view.top.document,"hidden",{value:!0,writable:!0}),t.view.top.document.dispatchEvent(e),setTimeout((()=>{Object.defineProperty(t.view.top.document,"hidden",{value:!1,writable:!0}),t.view.top.document.dispatchEvent(e)}),100)},n=document.querySelector("button.btn-continu");n&&n.addEventListener("click",t)}));})();
 ! https://github.com/uBlockOrigin/uAssets/issues/19339
 e-player-stream.*#%#//scriptlet('set-constant', 'adsConfig', 'emptyArr')
-empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net#%#//scriptlet('prevent-window-open')
+empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.*#%#//scriptlet('prevent-window-open')
 ! https://github.com/uBlockOrigin/uAssets/issues/18840#issuecomment-1623546469
 e-player-stream.app#%#//scriptlet('set-constant', 'isSetupAccess', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153795
 [$path=/iframe_ad]empire-anime.com#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
 [$path=/iframe_ad]empire-streamz.fr#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
-[$path=/iframe_ad]empire-stream.net#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
+[$path=/iframe_ad]empire-stream.*#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
 [$path=/iframe_ad]empire-streaming.*#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
+! https://github.com/AdguardTeam/AdguardFilters/issues/182538
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#$#body > iframe:not([src]) { position: absolute !important; left: -3000px !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/137309
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$##donation { display: none !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$##msg_ads { display: none !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$#body { overflow: auto !important; }
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153700
 ! Fixes delay in the video player
 cosmopolitan.fr#%#//scriptlet('adjust-setTimeout', '/userConsentProcessEnded|\[0\]\+"With"/', '*', '0.001')
@@ -879,8 +887,6 @@ tf1info.fr#%#//scriptlet('set-constant', '__NEXT_DATA__.runtimeConfig.playerTF1.
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/182538
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#$#body > iframe:not([src]) { position: absolute !important; left: -3000px !important; }
 ! https://github.com/uBlockOrigin/uAssets/issues/22958
 rustica.fr#$#@media (min-width: 992px) { html > body.hasHabillage { padding-top: 0 !important; } }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172925
@@ -904,10 +910,6 @@ amomama.fr#$#header { top: 0 !important; }
 amomama.fr#$#.nb { padding-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139744
 dna.fr#$#body.ContentDetailComponent #p6GalleryWrapper.showed { display: none !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/137309
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$##donation { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$##msg_ads { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$#body { overflow: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/127367
 journaldesfemmes.fr#$#@media (min-width: 768px) { body .layout.layout--offcanvas:not(#style_important) { margin-top: -200px !important; } }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118970
@@ -1248,8 +1250,6 @@ rustica.fr###stickMe
 youwatch-serie.com##.buttonO
 youwatch-serie.com##.buttonrm
 youwatch-serie.com##body > #card
-empire-streaming.app,empire-streaming.biz,empire-streaming.cc,empire-streaming.club,empire-streaming.co,empire-streaming.com,empire-streaming.com.bd,empire-streaming.com.np,empire-streaming.dev,empire-streaming.eu,empire-streaming.fr,empire-streaming.info,empire-streaming.life,empire-streaming.live,empire-streaming.my,empire-streaming.org,empire-streaming.store,empire-streaming.tv,empire-streaming.us,empire-streaming.xyz##iframe[src="/banner_ads"]
-empire-streamz.fr,empire-stream.net,empire-streaming.app,empire-streaming.biz,empire-streaming.cc,empire-streaming.club,empire-streaming.co,empire-streaming.com,empire-streaming.com.bd,empire-streaming.com.np,empire-streaming.dev,empire-streaming.eu,empire-streaming.fr,empire-streaming.info,empire-streaming.life,empire-streaming.live,empire-streaming.my,empire-streaming.org,empire-streaming.store,empire-streaming.tv,empire-streaming.us,empire-streaming.xyz##.hide-ads
 cosmopolitan.fr##.Gallery-top-external
 lhebdoduvendredi.com##.b-lazy-ads
 systemed.fr##div[style="min-height: 250px;"]
@@ -1353,7 +1353,6 @@ techno-science.net###amazonLink
 paroles2chansons.lemonde.fr##div[style="min-height:280px;"]
 paroles2chansons.lemonde.fr##div[style="width:336px;height:600px;"]
 coflix.tv##ad-host
-empire-streaming.app,empire-streaming.biz,empire-streaming.cc,empire-streaming.club,empire-streaming.co,empire-streaming.com,empire-streaming.com.bd,empire-streaming.com.np,empire-streaming.dev,empire-streaming.eu,empire-streaming.fr,empire-streaming.info,empire-streaming.life,empire-streaming.live,empire-streaming.my,empire-streaming.org,empire-streaming.store,empire-streaming.tv,empire-streaming.us,empire-streaming.xyz##.direct-lads
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
 ||jobat.be^$subdocument,third-party
@@ -1681,9 +1680,14 @@ lefigaro.fr##.fig-adgps
 playerhd2.pw###micontenedor > div#total
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157906
 ! 20min.ch - video player is fixed by JS rule, so advertisement script can be blocked
+!
+! empire-stream
+empire-streaming.app,empire-streaming.biz,empire-streaming.cc,empire-streaming.club,empire-streaming.co,empire-streaming.com,empire-streaming.com.bd,empire-streaming.com.np,empire-streaming.dev,empire-streaming.eu,empire-streaming.fr,empire-streaming.info,empire-streaming.life,empire-streaming.live,empire-streaming.my,empire-streaming.org,empire-streaming.store,empire-streaming.tv,empire-streaming.us,empire-streaming.xyz,empire-stream.*##iframe[src="/banner_ads"]
+empire-streamz.fr,empire-streaming.app,empire-streaming.biz,empire-streaming.cc,empire-streaming.club,empire-streaming.co,empire-streaming.com,empire-streaming.com.bd,empire-streaming.com.np,empire-streaming.dev,empire-streaming.eu,empire-streaming.fr,empire-streaming.info,empire-streaming.life,empire-streaming.live,empire-streaming.my,empire-streaming.org,empire-streaming.store,empire-streaming.tv,empire-streaming.us,empire-streaming.xyz,empire-stream.*##.hover-ads-interval
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153795
 ! It's required to block service worker, otherwise extension does not inject some rules into iframes
 ||empire-streaming.*/serviceWorker.js
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133960
 ! TODO: remove when it will be fixed in Liste FR
 /neads.$domain=~neads.io|~neads.co

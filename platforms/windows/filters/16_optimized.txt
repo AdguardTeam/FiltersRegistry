@@ -1,9 +1,9 @@
-! Checksum: 8wO7SjLq7S6cpWkT2m9AGg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1741363216-3600.patch
+! Checksum: lsA87cN9lso1KUHAjjjNPQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1741365828-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.50.77
-! TimeUpdated: 2025-03-07T11:41:28+00:00
+! Version: 2.0.50.78
+! TimeUpdated: 2025-03-07T16:38:33+00:00
 ! Expires: 12 hours (update frequency)
 ||proxy.ads.canalplus-bo.net^
 ||7bd92.v.fwmrm.net^
@@ -77,13 +77,13 @@ darkino.*#%#//scriptlet('prevent-fetch', 'tag.min.js')
 surfsession.com##.ssm-dab
 france.tv#%#//scriptlet('prevent-fetch', 'fwmrm')
 lameteoagricole.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
-empire-anime.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
-empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net#%#//scriptlet('set-constant', 'navigator.brave', 'undefined')
 meteo-grenoble.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 cinefil.com#%#//scriptlet('set-constant', 'checkDiv', 'noopFunc')
 @@||rustica.fr/*.iads.js
 xn--mto-bmab.fr#@#.topbanneradvertise
 empire-streaming.*#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
+empire-anime.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
+empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net#%#//scriptlet('set-constant', 'navigator.brave', 'undefined')
 cosmopolitan.fr#@#.AdsBox
 ||parlons-basket.com/wp-content/themes/parlons-basket/js/detector.js
 malekal.com#%#//scriptlet('prevent-fetch', 'js.sddan.com')
@@ -94,7 +94,8 @@ ebookdz.com#%#//scriptlet('abort-on-property-read', 'ABDetector')
 ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ||ebookdz.com/forum/libab/script.js
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
-japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "im'+'g")
+japscan.lol#%#//scriptlet('remove-node-text', 'script', '/const [0-9A-Za-z]{9}=/')
+japscan.lol#%#//scriptlet("prevent-addEventListener", "load", "typeof lol")
 japscan.lol#@#div.container > [href]
 japscan.lol#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
 japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'onclick', 'let a=function(){};return false;')
@@ -256,26 +257,30 @@ occasions.decathlon.fr#%#//scriptlet('set-constant', 'FastClick', 'noopFunc')
 occasions.decathlon.fr#%#//scriptlet('set-constant', 'FastClick.attach', 'noopFunc')
 lessentiel.lu,20min.ch#%#//scriptlet('adjust-setTimeout', 'setTimeoutIds_', '*', '0.001')
 lessentiel.lu,20min.ch#%#(()=>{window.TATM=window.TATM||{},TATM.init=()=>{},TATM.initAdUnits=()=>{},TATM.pageReady=()=>{},TATM.getVast=function(n){return new Promise((n=>{n()}))},TATM.push=function(n){if("function"==typeof n)try{n()}catch(n){console.debug(n)}};})();
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('trusted-create-element', 'body', 'iframe')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.pop', 'undefined')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.direct', 'undefined')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.isAdbActive', 'false')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.directHideAds', 'undefined')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.countpremium.film', '0')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.countpremium.serie', '0')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.countpremiumaccount.film', '0')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#%#//scriptlet('set-constant', 'empire.countpremiumaccount.serie', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('trusted-create-element', 'body', 'iframe')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.isAdbActive', 'false')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.directHideAds', 'undefined')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremium.film', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremium.serie', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremiumMore.film', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremiumMore.serie', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremiumaccount.film', '0')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#%#//scriptlet('set-constant', 'empire.countpremiumaccount.serie', '0')
 empire-streaming.*,empire-anime.com#%#//scriptlet('set-constant', 'empire.mediaData.advisorDirect', '')
 empire-streaming.*,empire-anime.com#%#//scriptlet('set-constant', 'empire.mediaData.advisorMovie', '1')
 empire-streaming.*,empire-anime.com#%#//scriptlet('set-constant', 'empire.mediaData.advisorSerie', '1')
 empire-anime.com#%#(()=>{document.location.href.includes("/pop_advisor")&&AG_onLoad((function(){const e=new CustomEvent("visibilitychange"),t=t=>{Object.defineProperty(t.view.top.document,"hidden",{value:!0,writable:!0}),t.view.top.document.dispatchEvent(e),setTimeout((()=>{Object.defineProperty(t.view.top.document,"hidden",{value:!1,writable:!0}),t.view.top.document.dispatchEvent(e)}),100)},n=document.querySelector("button.btn-continu");n&&n.addEventListener("click",t)}));})();
 e-player-stream.*#%#//scriptlet('set-constant', 'adsConfig', 'emptyArr')
-empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net#%#//scriptlet('prevent-window-open')
+empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.*#%#//scriptlet('prevent-window-open')
 e-player-stream.app#%#//scriptlet('set-constant', 'isSetupAccess', 'true')
 [$path=/iframe_ad]empire-anime.com#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
 [$path=/iframe_ad]empire-streamz.fr#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
-[$path=/iframe_ad]empire-stream.net#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
+[$path=/iframe_ad]empire-stream.*#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
 [$path=/iframe_ad]empire-streaming.*#%#//scriptlet('set-constant', 'empire.data', 'emptyArr')
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#$#body > iframe:not([src]) { position: absolute !important; left: -3000px !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$##donation { display: none !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$##msg_ads { display: none !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$#body { overflow: auto !important; }
 cosmopolitan.fr#%#//scriptlet('adjust-setTimeout', '/userConsentProcessEnded|\[0\]\+"With"/', '*', '0.001')
 macg.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'interstitial')
 lexpress.fr#%#//scriptlet('set-cookie', 'q_pop_noel', 'true')
@@ -312,7 +317,6 @@ m6.fr,tf1.fr#%#//scriptlet('set-constant', 'tv.freewheel.SDK.Util.pingURLWithScr
 m6.fr,tf1.fr#%#//scriptlet('set-constant', 'tv.freewheel.SDK.Util.pingURLWithXMLHTTPRequest', 'trueFunc')
 m6.fr,tf1.fr#%#//scriptlet('set-constant', 'tv.freewheel.SDK.Util.sendAdRequestWithXMLHTTPRequest', 'trueFunc')
 tf1info.fr#%#//scriptlet('set-constant', '__NEXT_DATA__.runtimeConfig.playerTF1.ads.enable', 'false')
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#$#body > iframe:not([src]) { position: absolute !important; left: -3000px !important; }
 rustica.fr#$#@media (min-width: 992px) { html > body.hasHabillage { padding-top: 0 !important; } }
 deco.fr,fourchette-et-bikini.fr#$#.site_content { margin-top: 0 !important; }
 caminteresse.fr#$#.sticky-wrapper { height: auto !important; }
@@ -325,9 +329,6 @@ numerama.com#$#.is-remaining-chicken { position: absolute !important; left: -999
 amomama.fr#$#header { top: 0 !important; }
 amomama.fr#$#.nb { padding-top: 0 !important; }
 dna.fr#$#body.ContentDetailComponent #p6GalleryWrapper.showed { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$##donation { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$##msg_ads { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$#body { overflow: auto !important; }
 journaldesfemmes.fr#$#@media (min-width: 768px) { body .layout.layout--offcanvas:not(#style_important) { margin-top: -200px !important; } }
 funradio.fr,rtl2.fr,rtl.fr#$#body .container-ads + *:not(#style_important) { padding-top: 0 !important; }
 funradio.fr,rtl2.fr,rtl.fr#$#body .container-ads + .tranche:not(#style_important) { padding-top: 50px !important; }
@@ -539,7 +540,6 @@ extreme-down.moe##.blockcontent > center > a[rel] > img
 letelegramme.fr##.tlg-ad-container
 letemps.ch##.adnz__placeholder
 rustica.fr###stickMe
-empire-streaming.*##iframe[src="/banner_ads"]
 cosmopolitan.fr##.Gallery-top-external
 lhebdoduvendredi.com##.b-lazy-ads
 systemed.fr##div[style="min-height: 250px;"]
@@ -701,6 +701,8 @@ onvasortir.com###pub_rectangle
 fr.tennistemple.com##.right > .box_nd > [id^="300x250"]
 replay.fr##.dfa
 lefigaro.fr##.fig-adgps
+empire-streaming.*,empire-stream.*##iframe[src="/banner_ads"]
+empire-streamz.fr,empire-streaming.*,empire-stream.*##.hover-ads-interval
 ||empire-streaming.*/serviceWorker.js
 /neads.$domain=~neads.io|~neads.co
 ||fmovies.*/sw.js

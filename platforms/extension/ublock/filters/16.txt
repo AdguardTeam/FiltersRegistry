@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0r3X31wEy/vq0l700Br6VA
-! Diff-Path: ../patches/16/16-s-1741358590-3600.patch
+! Checksum: PHGh0QZlcX3KOWlHFJ57Lg
+! Diff-Path: ../patches/16/16-s-1741365806-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.50.77
-! TimeUpdated: 2025-03-07T11:41:28+00:00
+! Version: 2.0.50.78
+! TimeUpdated: 2025-03-07T16:38:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -158,10 +158,6 @@ surfsession.com##.ssm-dab
 france.tv##+js(no-fetch-if, fwmrm)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159263
 lameteoagricole.net##+js(no-fetch-if, pagead2.googlesyndication.com)
-! https://github.com/uBlockOrigin/uAssets/issues/19339
-empire-anime.com##+js(no-xhr-if, pagead2.googlesyndication.com)
-empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net##+js(set-constant, navigator.brave, undefined)
-@@||e-player-stream.app/player/assets/js/ads.js?$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158428
 meteo-grenoble.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157388
@@ -175,6 +171,10 @@ cinefil.com##+js(set-constant, checkDiv, noopFunc)
 xn--mto-bmab.fr#@#.topbanneradvertise
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153795
 empire-streaming.*##+js(no-xhr-if, pagead2.googlesyndication.com)
+! https://github.com/uBlockOrigin/uAssets/issues/19339
+empire-anime.com##+js(no-xhr-if, pagead2.googlesyndication.com)
+empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net##+js(set-constant, navigator.brave, undefined)
+@@||e-player-stream.app/player/assets/js/ads.js?$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153700
 cosmopolitan.fr#@#.AdsBox
 ! https://github.com/uBlockOrigin/uAssets/issues/18431
@@ -193,7 +193,8 @@ ebookdz.com##+js(no-xhr-if, pagead2.googlesyndication.com)
 monumentum.fr##+js(abort-current-script, document.getElementById, Blocking Ads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/1478420
-japscan.lol##+js(addEventListener-defuser, load, im'+'g)
+japscan.lol##+js(remove-node-text, script, /const [0-9A-Za-z]{9}=/)
+japscan.lol##+js(addEventListener-defuser, load, typeof lol)
 japscan.lol#@#div.container > [href]
 japscan.lol#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
 $script,xmlhttprequest,redirect-rule=noop.js,domain=japscan.lol
@@ -673,14 +674,14 @@ occasions.decathlon.fr##+js(set-constant, FastClick.attach, noopFunc)
 ! lessentiel.lu, 20min.ch - fixes video player
 lessentiel.lu,20min.ch##+js(adjust-setTimeout, setTimeoutIds_, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182538
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net##+js(set-constant, empire.pop, undefined)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net##+js(set-constant, empire.direct, undefined)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net##+js(set-constant, empire.isAdbActive, false)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net##+js(set-constant, empire.directHideAds, undefined)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net##+js(set-constant, empire.countpremium.film, 0)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net##+js(set-constant, empire.countpremium.serie, 0)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net##+js(set-constant, empire.countpremiumaccount.film, 0)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net##+js(set-constant, empire.countpremiumaccount.serie, 0)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.isAdbActive, false)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.directHideAds, undefined)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremium.film, 0)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremium.serie, 0)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumMore.film, 0)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumMore.serie, 0)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumaccount.film, 0)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumaccount.serie, 0)
 ! empire-anime.com
 empire-streaming.*,empire-anime.com##+js(set-constant, empire.mediaData.advisorDirect, '')
 empire-streaming.*,empire-anime.com##+js(set-constant, empire.mediaData.advisorMovie, 1)
@@ -692,10 +693,17 @@ empire-streaming.*,empire-anime.com##+js(set-constant, empire.mediaData.advisorS
 ! TODO: maybe find a better way to change "document.hidden" value
 ! https://github.com/uBlockOrigin/uAssets/issues/19339
 e-player-stream.*##+js(set-constant, adsConfig, [])
-empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.net##+js(window.open-defuser)
+empire-anime.com,empire-streamz.fr,empire-streaming.*,empire-stream.*##+js(window.open-defuser)
 ! https://github.com/uBlockOrigin/uAssets/issues/18840#issuecomment-1623546469
 e-player-stream.app##+js(set-constant, isSetupAccess, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153795
+! https://github.com/AdguardTeam/AdguardFilters/issues/182538
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*#$#body > iframe:not([src]) { position: absolute !important; left: -3000px !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/137309
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$##donation { display: none !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$##msg_ads { display: none !important; }
+empire-streamz.fr,empire-stream.*,empire-streaming.*#$#body { overflow: auto !important; }
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153700
 ! Fixes delay in the video player
 cosmopolitan.fr##+js(adjust-setTimeout, /userConsentProcessEnded|\[0\]\+"With"/, *, 0.001)
@@ -771,8 +779,6 @@ tf1info.fr##+js(set-constant, __NEXT_DATA__.runtimeConfig.playerTF1.ads.enable, 
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/182538
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.net#$#body > iframe:not([src]) { position: absolute !important; left: -3000px !important; }
 ! https://github.com/uBlockOrigin/uAssets/issues/22958
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172925
 deco.fr,fourchette-et-bikini.fr#$#.site_content { margin-top: 0 !important; }
@@ -794,10 +800,6 @@ amomama.fr#$#header { top: 0 !important; }
 amomama.fr#$#.nb { padding-top: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139744
 dna.fr#$#body.ContentDetailComponent #p6GalleryWrapper.showed { display: none !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/137309
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$##donation { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$##msg_ads { display: none !important; }
-empire-streamz.fr,empire-stream.net,empire-streaming.*#$#body { overflow: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/127367
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118970
 funradio.fr,rtl2.fr,rtl.fr#$#body .container-ads + *:not(#style_important) { padding-top: 0 !important; }
@@ -1138,8 +1140,6 @@ rustica.fr###stickMe
 youwatch-serie.com##.buttonO
 youwatch-serie.com##.buttonrm
 youwatch-serie.com##body > #card
-empire-streaming.*##iframe[src="/banner_ads"]
-empire-streamz.fr,empire-stream.net,empire-streaming.*##.hide-ads
 cosmopolitan.fr##.Gallery-top-external
 lhebdoduvendredi.com##.b-lazy-ads
 systemed.fr##div[style="min-height: 250px;"]
@@ -1244,7 +1244,6 @@ techno-science.net###amazonLink
 paroles2chansons.lemonde.fr##div[style="min-height:280px;"]
 paroles2chansons.lemonde.fr##div[style="width:336px;height:600px;"]
 coflix.tv##ad-host
-empire-streaming.*##.direct-lads
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
 ||jobat.be^$subdocument,third-party
@@ -1575,9 +1574,14 @@ lefigaro.fr##.fig-adgps
 playerhd2.pw###micontenedor > div#total
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157906
 ! 20min.ch - video player is fixed by JS rule, so advertisement script can be blocked
+!
+! empire-stream
+empire-streaming.*,empire-stream.*##iframe[src="/banner_ads"]
+empire-streamz.fr,empire-streaming.*,empire-stream.*##.hover-ads-interval
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153795
 ! It's required to block service worker, otherwise extension does not inject some rules into iframes
 ||empire-streaming.*/serviceWorker.js
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/133960
 ! TODO: remove when it will be fixed in Liste FR
 /neads.$domain=~neads.io|~neads.co
