@@ -1,5 +1,5 @@
-! Checksum: iH0Rk7hBSF0ObuHPaJjPjw
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1741430548-3600.patch
+! Checksum: 6CVxeYQDHPP6WNj84VHfqQ
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1741488178-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.11.28
@@ -309,7 +309,6 @@ jishin-yogen.com##.kiji_rss
 turbo-bee.com##.aspranker
 2chav.com#$##left[style^="position: fixed"] { position: static !important; }
 jumpmatome2ch.biz##.rss02
-gameleaks.org###pc_text-57
 kannyu.blog.jp##.rssWrapper
 himasoku.com#?#.article-body-more > span[style]:contains(おすすめ記事)
 vipnews.jp#?#.article-body-more > div[class]:contains(おすすめ記事)
@@ -715,8 +714,6 @@ world-best-news.doorblog.jp,news-channel.doorblog.jp,coolpan.net##.pickupList
 coolpan.net###rss_link3
 xn--r8jwklh769h2mc880dk1o431a.com##.headlinewra
 xn--r8jwklh769h2mc880dk1o431a.com##.etpickup
-gameleaks.org##.rss-table
-newsmana.com,gameleaks.org##.rss-widget
 moeimg.net###sp-pickup-link-frame
 moeimg.net##.post-single > div.entryblock.sp_only
 news.2chblog.jp##.sita-3
@@ -771,6 +768,7 @@ blog.livedoor.jp##.rsslist
 ||blog.livedoor.jp/diet2channel/$subdocument,~third-party
 blog.livedoor.jp###container > div[style^="width:1105px;height:270px;overflow:auto;background-color:#ffffff;"]
 blog.livedoor.jp##.sp_kizi_recommend
+||blog.livedoor.jp/kekkongo/$subdocument,~third-party
 ||blog.livedoor.jp/livejupiter2/rss_$subdocument
 ||blog.livedoor.jp/rock1963roll/pride_rss
 ||yumetsu.web.fc2.com/rss_$subdocument
@@ -837,7 +835,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||gubagootracking.com^$third-party
 ||cdn.gubagoo.io^$third-party
 ##gg-toolbar--specials
-||webchat.bebot.io^$third-party
 ||kwizbot.io^$third-party
 ||quotiq.ru^$third-party
 ||prod-live-chat.sprinklr.com^$third-party
@@ -974,6 +971,7 @@ amazon.co.jp#?#.a-ws-span8 > div.a-row:has(> div.a-column > div.a-section > div#
 ||engage.wixapps.net/chat-widget-server/
 my.rakuten.co.jp###survey-area
 ||questant.jp^$domain=gnavi.co.jp
+r.gnavi.co.jp##.questionnaire-term
 ||cdn.mindbehind.com/sdk/mindbehind-webchat.js
 amazon.*###customer-survey_feature_div
 infranken.de###singlewidget_standalone
@@ -1102,7 +1100,6 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 ||chatbot.com^$third-party
 ||cdn.carrotquest.app^$third-party
 ||continual.ly^$third-party
-||corover.mobi^$third-party
 ||collectcdn.com^$third-party
 ||config.gorgias.chat^$third-party
 ||purechat.com^$third-party
@@ -1178,7 +1175,6 @@ eiga.com##.area-unext
 hltv.org##.leftCol > aside > div.a-reset
 hltv.org##.mid-container > div[class]:has(> div.featured-matches-top-next-slider)
 ||thetruestory.news/widget-top.iife.js$domain=echofm.online|zona.media|thebell.io|agents.media
-agents.media##.site-footer__true-stories
 istories.media##.swiper-wrapper > div.swiper-slide:has(div[class^="TheTrueStory-module-"] > thetruestory-widget-top)
 telegram.hr##.offers-widget
 sakasaka10.blog.jp##.article-body-more > .t_b ~ br + br
@@ -1228,7 +1224,6 @@ t-online.de,welt.de##iframe[src^="https://widget.civey.com"]
 ||civey.com^$third-party
 ||compass.pressekompass.net/compasses^$third-party
 ||widgets.opinary.com^$third-party
-||app.mycountrytalks.org^$third-party
 ||nofluffjobs.com^$third-party
 ||cp-jobmacha-servicemacha-widgets.*.aliyuncs.com/chinapress-jobads-prod.js
 ||js.jebbit.com/companion/*/widget.js$third-party
@@ -1263,7 +1258,6 @@ svtv.org##.post-fullpage-support
 dailymaverick.co.za###ribbon-container
 huffpost.com##div[class*="-support-huffpost"]
 unian.ua##.support-post__btn
-agents.media##.single-post__donate-block
 istories.media##section[class^="MaterialDonationBanner-"]
 letsencrypt.org##.custom-dbox-popup
 vox.com#?##zephr-anchor > aside:has(> form > div[class] div[class] > .duet--cta--button > span:contains(Monthly))
@@ -1271,7 +1265,6 @@ rsf.org###block-rsf-bandeaux-alerte-block
 holod.media##.a-donate-block
 ghostery.com##.ds-notification-donate-container
 ipauniverse.com###splash-screen:has(.donate-button)
-agents.media##.single-post__donate-block
 pravmir.ru##div[id^="hh_donate_button_widget"]
 arxiv.org###support-ack
 thebell.io##app-adfox-top
@@ -1328,7 +1321,6 @@ gigazine.net###donation_wrapper
 getcomics.org##.wpfront-notification-bar-spacer
 insideclimatenews.org##.icn-donate-block
 insideclimatenews.org##.donate-cta
-agents.media##.single-post__donate-block
 charter97.org###donate-article
 nonciclopedia.org,miraheze.org###siteNotice
 winstall.app##div[class^="donateCard_container__"]
@@ -1342,6 +1334,7 @@ apkmody.io###fixed-donate
 ||static.fundraiseup.com$domain=gijn.org
 zn.ua##.content__news > div.news-support
 lyricstranslate.com###block-lyricstranslateblocks-91
+starfiles.co###support_alert
 doxa.team##.content-donation
 takiedela.ru##.b-post__help
 zona.media##.donate-banner
