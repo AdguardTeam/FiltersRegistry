@@ -1,9 +1,9 @@
-! Checksum: JgLOEINQkXemTCyewqs+lQ
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1741488148-3600.patch
+! Checksum: IFQnoOcmc0zgjzJ1y7w3AA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1741527749-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.31.30
-! TimeUpdated: 2025-03-07T20:40:06+00:00
+! Version: 2.0.31.31
+! TimeUpdated: 2025-03-09T13:38:40+00:00
 ! Expires: 5 days (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -206,7 +206,8 @@ sports.ru###media-promo-mount-point
 stopgame.ru##div[class^="_youtube-promo_"]
 genius.com##aside[class^="RecommendedSongs__"]
 forbes.ua##.c-post-subscribe
-x.com,twitter.com##section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="tweetText"] > a:is([href^="https://jp.cookie-food.com/"],[href^="https://jp.cookicway.com/"]))
+!+ NOT_PLATFORM(ext_ublock)
+x.com,twitter.com#?#section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="tweetText"] > a:contains(/jp\.cooki(?:e-food|cway)\.com/))
 x.com,twitter.com##section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="card.wrapper"] + a:contains(/bokepchudai[0-9A-z]+\.blogspot|jp\.cookie-food\.com|jp\.cookicway\.com|zennnews\.com/))
 posta.com.tr##.content-box > a[href^="https://flipboard.com/"]
 zeberka.pl,kozaczek.pl,papilot.pl#%#//scriptlet('set-constant', 'Object.prototype.stickyEnabled', 'false')
