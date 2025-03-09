@@ -1,9 +1,9 @@
-! Checksum: jut+udeP2WKMSriwHKneXQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1741424802-14400.patch
+! Checksum: BlG+G+eOkvSRvWjhkVEWbQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1741496767-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.20.98
-! TimeUpdated: 2025-03-08T09:02:16+00:00
+! Version: 2.0.20.99
+! TimeUpdated: 2025-03-09T05:01:48+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -258,7 +258,10 @@ boktugg.se##.elementor-section:has(.sponsor, .elementor-post.category-sponsrat)
 boktugg.se##[id^="boktu-"]
 boneo.se##.article-top-advt
 boneo.se##.slick-slide:has-text(/sponsra/i)
-booli.se###outer
+booli.se###outer, .property-page-ad-wrapper--active
+booli.se##.search-page__content .tag:has-text(Sponsrad):upward(li)
+booli.se##:is(#property-calculator, .sticky.top-24 li, .sticky.top-24 div:last-of-type:not([class])):has(.ad-label--bound)
+booli.se##:is(.article-teaser, .article-teaser-section__list-item):has(.article-teaser__sponsor)
 borasweekly.se##.article-item:has(.article-item--sponsored, .article-label--sponsored)
 borattforum.se##.meta-info-container:has(a[title*="Sponsrad artikel"])
 borskollen.se##img[src*="/borskollen_newsletter"]:upward(1)
@@ -3117,7 +3120,7 @@ zeromagazine.nu##div[id^="ads"]
 ||prisjakt.nu^$third-party,domain=~prisjakt.no|~pricespy.co.uk|~ledenicheur.fr|~prisjagt.dk|~pricespy.co.nz|~hintaopas.fi
 ||prismic.io/prismic-toolbar$domain=alltomarbetsmiljo.se
 ||privacypolicies.com^$domain=fl-net.se
-||privacy-center.org^$domain=180.se|agriaffaires.se|truckscorner.se|machineryzone.se|stegforhalsa.se|netdoktor.se|netdoktorpro.se|news55.se|hastnet.se|kvd.se|dagensps.se|realtid.se|kpwebben.se|sportbibeln.se
+||privacy-center.org^$domain=180.se|agriaffaires.se|truckscorner.se|machineryzone.se|stegforhalsa.se|netdoktor.se|netdoktorpro.se|news55.se|hastnet.se|kvd.se|dagensps.se|realtid.se|kpwebben.se|sportbibeln.se|booli.se
 ||privacy-mgmt.com^$domain=radio.se|dagenstv.com|kolla.tv|computersweden.se|woxikon.se|dagen.se|filmtopp.se|upday.com|gaffa.se|handbollskanalen.se|stayfriends.se
 ||proxyas.com^$third-party
 ||prylguiden.expressen.se^
