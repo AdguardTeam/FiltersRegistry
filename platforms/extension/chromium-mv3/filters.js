@@ -873,8 +873,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt",
 			"trustLevel": "high",
-			"version": "2.0.5.42",
-			"timeUpdated": "2025-03-03T13:01:17+0000",
+			"version": "2.0.5.43",
+			"timeUpdated": "2025-03-10T17:01:09+0000",
 			"deprecated": false,
 			"languages": [
 				"he"
@@ -898,8 +898,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.66.20",
-			"timeUpdated": "2025-03-10T13:01:17+0000",
+			"version": "2.1.66.21",
+			"timeUpdated": "2025-03-10T17:01:10+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -973,8 +973,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.66.19",
-			"timeUpdated": "2025-03-10T13:01:17+0000",
+			"version": "2.1.66.20",
+			"timeUpdated": "2025-03-10T17:01:11+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1259,8 +1259,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MasterKia/PersianBlocker/main/PersianBlocker.txt",
 			"trustLevel": "high",
-			"version": "2.0.5.44",
-			"timeUpdated": "2025-03-10T09:02:28+0000",
+			"version": "2.0.5.45",
+			"timeUpdated": "2025-03-10T17:01:40+0000",
 			"deprecated": false,
 			"languages": [
 				"fa",
@@ -1395,8 +1395,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.59.51",
-			"timeUpdated": "2025-03-10T13:02:17+0000",
+			"version": "2.0.59.52",
+			"timeUpdated": "2025-03-10T17:02:01+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
