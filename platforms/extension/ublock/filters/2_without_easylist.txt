@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 7SsuaBBVtktnr1l4Oi5vcg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1741599925-3600.patch
+! Checksum: xCBZKcZooEXCW1Qh5X50uA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1741603457-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.74.67
-! TimeUpdated: 2025-03-10T09:31:48+00:00
+! Version: 2.3.74.68
+! TimeUpdated: 2025-03-10T10:31:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24322,8 +24322,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/200433
 ! https://www.esportstales.com/rainbow-six-siege/most-picked-and-banned-operators
 esportstales.com##+js(addEventListener-defuser, DOMContentLoaded, detect)
+! https://github.com/AdguardTeam/AdguardFilters/issues/200185
+###adbd.overdiv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200161
 jam3h.net#@#.ad-unit:not(.textads)
 jam3h.net##+js(abort-current-script, EventTarget.prototype.addEventListener, getComputedStyle)
@@ -50897,6 +50900,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+farmersjournal.ie##.gadvertinlinestyling
+farmersjournal.ie##.ipad-configuration:has(>[id*=gpt-])
 eporner.com##.video-description + center
 sakuhentai.net##+js(window.open-defuser)
 cosplayporntube.com##.text-ad-video
@@ -50908,6 +50913,8 @@ cimanow.cc##main > a[id][target="_blank"]
 ||abeagle-public.buzzfeed.com/public/*Shield-script-
 ||js.intercomcdn.com/banner-modern.
 primewire.tf##tr:has(> td > div.spn-btns)
+anime4i.vip##.a--d-wrapper
+anime4i.vip##div[class^="container-ads-"]
 economist.com##.adComponent
 independent.co.uk###main > div[class]:has(> div > div > a[href^="https://tv.apple.com/"])
 samplette.io##div[id^="pw-"][id$="-leaderboard"]
@@ -69868,7 +69875,7 @@ forbes.com##.channel--ad
 ##html > div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: auto;"]
 /^https:\/\/[a-z-]{5,13}\.[a-z]{2,6}\/[a-z0-9]{1,20}\?[A-Za-z0-9]{15,26}=(?=.*[A-Z])[A-Za-z0-9%]{35,2000}$/$xmlhttprequest,third-party,match-case
 swipebreed.net,eurekaddl.lat,pepperlivestream.online,pawastreams.pro,time4tv.site,en.tgo-tv.xyz,miztv.shop,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,nepu.to,capo4play.com,wawacity.cfd,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,streameast.*,thestreameast.*,anroll.net,anarchy-stream.com,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,compensationcoincide.net,embedstreams.me,closedjelly.net,sportsonline.*,dl-protect.link,cricstream.me,extreme-down.*,yts.mx,eztvx.to,claplivehdplay.ru,skidrowreloaded.com,olympicstreams.*,streambucket.net,modsfire.com,official.nbabite.com,forgepattern.net,sportsonline.*##+js(abort-on-property-read, Adcash)
-swipebreed.net,eurekaddl.lat,sanet.st,totalsportek.club,totalsportek.games,totalsportek.futbol,totalsportek.zip,totalsportek.racing,totalsportek.tel,totalsportek.dad,time4tv.site,buffsports.*,olympicstreams.*##+js(abort-current-script, globalThis, adserverDomain)
+anime4i.vip,swipebreed.net,eurekaddl.lat,sanet.st,totalsportek.club,totalsportek.games,totalsportek.futbol,totalsportek.zip,totalsportek.racing,totalsportek.tel,totalsportek.dad,time4tv.site,buffsports.*,olympicstreams.*##+js(abort-current-script, globalThis, adserverDomain)
 vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,capo4play.com,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,compensationcoincide.net,embedstreams.me,closedjelly.net,sportsonline.*##+js(abort-on-stack-trace, Element.prototype.hasAttribute, isActionAllowedOnElement)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198311
