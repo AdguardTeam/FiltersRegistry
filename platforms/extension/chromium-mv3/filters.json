@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.98.5",
-			"timeUpdated": "2025-03-07T18:31:39+0000",
+			"version": "2.0.98.6",
+			"timeUpdated": "2025-03-10T08:31:07+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.74.65",
-			"timeUpdated": "2025-03-10T01:31:36+0000",
+			"version": "2.3.74.66",
+			"timeUpdated": "2025-03-10T08:31:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.81.59",
-			"timeUpdated": "2025-03-08T22:39:31+0000",
+			"version": "2.0.81.60",
+			"timeUpdated": "2025-03-10T08:37:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.11.98",
-			"timeUpdated": "2025-03-10T07:38:33+0000",
+			"version": "2.1.11.99",
+			"timeUpdated": "2025-03-10T08:37:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.62.77",
-			"timeUpdated": "2025-03-09T17:37:07+0000",
+			"version": "2.0.62.78",
+			"timeUpdated": "2025-03-10T08:37:21+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -663,8 +663,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.78",
-			"timeUpdated": "2025-03-10T05:37:37+0000",
+			"version": "2.0.57.79",
+			"timeUpdated": "2025-03-10T08:37:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -685,8 +685,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.66",
-			"timeUpdated": "2025-03-10T05:37:38+0000",
+			"version": "2.0.51.67",
+			"timeUpdated": "2025-03-10T08:37:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -729,8 +729,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.31.32",
-			"timeUpdated": "2025-03-09T17:37:36+0000",
+			"version": "2.0.31.33",
+			"timeUpdated": "2025-03-10T08:37:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -773,8 +773,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.6.29",
-			"timeUpdated": "2025-03-07T18:39:19+0000",
+			"version": "2.0.6.30",
+			"timeUpdated": "2025-03-10T08:37:52+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
