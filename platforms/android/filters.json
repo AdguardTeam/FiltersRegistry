@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/16_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.89",
-			"timeUpdated": "2025-03-11T09:38:00+0000",
+			"version": "2.0.50.90",
+			"timeUpdated": "2025-03-11T21:37:06+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
