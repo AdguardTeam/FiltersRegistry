@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.74.88",
-			"timeUpdated": "2025-03-11T18:31:35+0000",
+			"version": "2.3.74.89",
+			"timeUpdated": "2025-03-11T22:31:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.24.35",
-			"timeUpdated": "2025-03-11T19:37:20+0000",
+			"version": "2.2.24.36",
+			"timeUpdated": "2025-03-11T22:37:43+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -718,8 +718,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.80",
-			"timeUpdated": "2025-03-11T17:39:16+0000",
+			"version": "2.0.51.81",
+			"timeUpdated": "2025-03-11T22:37:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
