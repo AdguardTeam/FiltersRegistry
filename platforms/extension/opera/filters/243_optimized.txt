@@ -1,9 +1,9 @@
-! Checksum: fBKwvHrNuY8JcukzI06UUw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1741597633-14400.patch
+! Checksum: UYqY6wz+mmijazAScVXuYA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1741669543-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.0
-! TimeUpdated: 2025-03-10T09:02:34+00:00
+! Version: 2.0.21.1
+! TimeUpdated: 2025-03-11T05:01:44+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -809,6 +809,9 @@ kalmar.nu###rb-cookie
 kamrat.com###kadDiv, div[style="margin:25px 0;max-width:255px!important;"], #scrollAdj ~ *
 kamrat.com#%#//scriptlet('ubo-set.js', 'showAds', 'false')
 kamrat.com#%#//scriptlet('ubo-set.js', 'trap', 'noopFunc')
+kandisvarlden.com#$#html { -webkit-touch-callout:unset!important; -webkit-user-select:unset!important; -khtml-user-select:unset!important; -moz-user-select:unset!important; -ms-user-select:unset!important; user-select:unset!important; -webkit-tap-highlight-color:unset!important; }
+kandisvarlden.com#%#//scriptlet('ubo-acs.js', 'disableEnterKey')
+kandisvarlden.com#$#.unselectable { -moz-user-select:unset!important; -webkit-user-select:unset!important; cursor:unset!important; }
 kardemummagumman.se###custom_html-2
 karinrahm.se#$#.thb-page-transition-on { opacity:1!important }
 karlskogavaxer.se##.elementor-heading-title:has-text(/annons/i):upward(.elementor-column)
@@ -828,8 +831,8 @@ kingmagazine.se##.card-partner, .partner
 kingmagazine.se##.card-partner:upward(1)
 kingsizemag.se##div#video-overlay, div.sidebar_frame, #affiliates, #affiliates + .text, #popup-interstitial-overlay, .cu_banner, #interstitial-overlay, .kingsize-native
 kittad.se###header-top, div[data-hook="consent-banner-root"]
-klart.se##div[id^="sp_message_container"]
-klart.se###overlay, a[rel*="sponsored"], .-panorama-ad-wrapper
+klart.se##div[id^="sp_message_container"], #overlay, a[rel*="sponsored"], .-panorama-ad-wrapper
+klart.se##.ad-text:has-text(/annons/i):upward(.content-box-list__item)
 klendr.se##div[class^="ad-"]
 klimatnytt.se##div[id^="builderwidget"]:has(img[width="980"][height="120"])
 klimatnytt.se##.tm-cookie-banner
@@ -1071,6 +1074,7 @@ nyatider.nu##.elementor-popup-modal:has(a[href="/integritetspolicy"])
 nyatider.nu,autonytt.se##[href*="casino"][target]
 nyemissioner.se##.jet-listing-grid__item[data-post-id]:has-text(/sponsrad artikel/i)
 nyfiknainvesterare.se##article.post:has-text(/annons från/i)
+nyheter24.se##.uppercase:has-text(/annons/i):upward(1)
 nyheter24.se,alltforforaldrar.se,modette.se,devote.se,familjeliv.se,brollopstorget.se,blogg.se,rodeo.net,vimedbarn.se,loppi.se##article:has-text(/annons:/i)
 nyheter24.se,alltforforaldrar.se,modette.se,devote.se,familjeliv.se,brollopstorget.se,blogg.se,rodeo.net,vimedbarn.se,loppi.se##div[class^="panorama"], a[href^="/samarbete"], a[href*="annons"], a[href*="casino"], a[href*="kasino"], a[href*="spel"][href*="licens"], a[href*="utan"][href*="licens"], a[href*="extrapengar"], a[href*="matchfixning"], a[href*="upplevelser"], a[href*="-vegas"], a[href*="buda"][href*="auktion"], a[href*="investera"], a[href^="/artiklar/info/"], a[href*="/kampanj/"], a[href*="betting"]
 nyheteridag.se##article.teaser h2.fsize-24:has-text(/casino/i):upward(.teaser)
@@ -1253,7 +1257,7 @@ spelagratis.se##.sidebar-right, .ad_header + p
 spelhubben.se#$#html, .unselectable { -moz-user-select:initial!important; -webkit-user-select:initial!important; -webkit-touch-callout:initial!important; user-select:initial!important; -webkit-tap-highlight-color:initial!important; cursor:initial!important; }
 spelhubben.se#$##loadfade { animation:unset!important; -moz-animation:unset!important; -webkit-animation:unset!important; }
 spelhubben.se###slideout
-spelhubben.se,husbilsplats.se#%#//scriptlet('ubo-acs.js', 'document.oncontextmenu')
+spelhubben.se,husbilsplats.se,kandisvarlden.com#%#//scriptlet('ubo-acs.js', 'document.oncontextmenu')
 spelochfilm.se##a[href*="casino"]:upward(.mh-posts-stacked-wrap)
 spelochfilm.se##div.widget_text:has(a[href*="casino"], a[href*="casivo"])
 spelochfilm.se#$?#li.mh-slider-item:has(a[href*="casino"]) { remove: true; }
@@ -1292,7 +1296,7 @@ svartgul.se##li.embedded, footer li.long
 svartgul.se,eventeffect.se,executiveeffect.se,saleseffect.se###panorama
 svd.se##article:has(div[class^="NativeBarWrapper"])
 svd.se#$#body { visibility:visible!important; }
-svd.se###mega-ad-wrapper, #svd-top-ad, div[class*="advertory"], div[data-custom-ad-handled="true"], span[data-id="bottom-sticker-offer"], div[data-context-pageview*="native-svd"]
+svd.se###mega-ad-wrapper, #svd-top-ad, div[class*="advertory"], div[data-custom-ad-handled="true"], div[data-engage-entity-id="sales-banner-bottom-bar"], div[data-context-pageview*="native-svd"]
 svd.se,chef.se,vvsforum.se,elinstallatoren.se,arkitekten.se,natursidan.se,svenskfarmaci.se,da.se,frisor.se,revisionsvarlden.se##.Ad
 svenskadating.com##.pubhead, #bannermobile
 svenskafans.com##.h-52:has(iframe[srcdoc*="ad_div"])
@@ -2535,6 +2539,7 @@ zeromagazine.nu##div[id^="ads"]
 /uploads/annonser
 /uploads/bilder/Banner/*
 /uploads/bilder/Samarbetspartners
+/uploads/burst/js/burst.min.js
 /upload/puff/*$domain=bergsmannen.se|tidningenbyggmaterial.se|tidningendacksnack.se|taxiidag.se
 /usabilla$script
 /users/2401/*$image,domain=ng.se
