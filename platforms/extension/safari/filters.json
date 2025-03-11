@@ -493,8 +493,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/8_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.7.85",
-			"timeUpdated": "2025-03-07T18:38:50+0000",
+			"version": "2.0.7.86",
+			"timeUpdated": "2025-03-11T20:36:42+0000",
 			"deprecated": false,
 			"languages": [
 				"nl"
