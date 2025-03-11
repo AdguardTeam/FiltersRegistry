@@ -1,9 +1,9 @@
-! Checksum: uphCyor09F7B5N9KmnukOA
-! Diff-Path: ../patches/2/2-s-1741697125-3600.patch
+! Checksum: eiD2H9Rd5tdz1pc0mHsuKQ
+! Diff-Path: ../patches/2/2-s-1741700617-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.74.83
-! TimeUpdated: 2025-03-11T12:31:51+00:00
+! Version: 2.3.74.84
+! TimeUpdated: 2025-03-11T13:31:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -29940,7 +29940,7 @@ freex2line.online,cimanow.cc,cimanow.*#%#//scriptlet('set-constant', 'navigator.
 freex2line.online,cimanow.cc,cimanow.*#%#//scriptlet("set-constant", "zJSYdQ", "true")
 freex2line.online,cimanow.cc#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'MutationObserver')
 freex2line.online#$#a.downloadbtn { display: block !important; }
-freex2line.online#%#(()=>{if(!location.href.includes("?link=aHR0c"))return;const n=new URLSearchParams(location.search).get("link");if(n)try{const o=atob(n),c=decodeURIComponent(o);location.assign(c)}catch(n){console.debug("Error decoding link:",n)}})();
+freex2line.online#%#//scriptlet('trusted-click-element', '.InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."]')
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=nooptext,domain=cimanow.*|cnvids.com|cimanowtv.com|freex2line.online
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=cimanow.*|cnvids.com|freex2line.online
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99034
@@ -47928,13 +47928,14 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+mydramalist.com##div[class*="is-desktop-ads-"]
 dailyecho.co.uk##div[data-uses-js="dfp-top-ad-fixed"]
 movieapne.biz,watchapne.biz#%#//scriptlet('trusted-set-local-storage-item', 'adExpiryTime', '9000000000000')
 katestube.com#%#//scriptlet('prevent-window-open')
 manysex.com##.header__item
 hdzog.com,hdzog.tube##.video-page__content > div:not([class*="video"])
-hclips.com,manysex.com,hdzog.com,hdzog.tube##a[href^="https://rtr2perf1.com/"]
-hclips.com,manysex.com,hdzog.com,hdzog.tube##.nopop
+hotmovs.com,hclips.com,manysex.com,hdzog.com,hdzog.tube##a[href^="https://rtr2perf1.com/"]
+hotmovs.com,hclips.com,manysex.com,hdzog.com,hdzog.tube##.nopop
 abmilf.com##.wrapper > section:has(> div > div[style^="width"] > div.ad__title)
 liverpoolecho.co.uk##div[class*="BoxStyles_commercial"]
 liverpoolecho.co.uk##div[class^="Article_below-article-commercial-box"]
@@ -72435,6 +72436,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/199838
+@@||lgtwins.com^$stealth=dpi
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199794
 @@||samplette.io^$stealth=push
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200078
