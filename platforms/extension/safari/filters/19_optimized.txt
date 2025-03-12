@@ -1,9 +1,9 @@
-! Checksum: 8NII+96WjFfrpMcWefqVtg
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1741772646-3600.patch
+! Checksum: f1OsfuSJDcmLJK8med5NwQ
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1741779966-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.51.85
-! TimeUpdated: 2025-03-12T09:38:55+00:00
+! Version: 2.0.51.86
+! TimeUpdated: 2025-03-12T11:41:05+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 [$path=/images]ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -29,7 +29,7 @@ mail.yandex.adult,mail.yandex.ac.id,mail.yandex.ae,mail.yandex.al,mail.yandex.ap
 mail.yandex.adult,mail.yandex.ac.id,mail.yandex.ae,mail.yandex.al,mail.yandex.app,mail.yandex.asia,mail.yandex.at,mail.yandex.az,mail.yandex.ba,mail.yandex.be,mail.yandex.by,mail.yandex.ca,mail.yandex.cc,mail.yandex.cl,mail.yandex.cloud,mail.yandex.club,mail.yandex.co,mail.yandex.co.il,mail.yandex.com,mail.yandex.com.bd,mail.yandex.com.cn,mail.yandex.com.np,mail.yandex.com.tr,mail.yandex.de,mail.yandex.dev,mail.yandex.ee,mail.yandex.es,mail.yandex.eu,mail.yandex.fi,mail.yandex.fm,mail.yandex.fr,mail.yandex.ge,mail.yandex.gr,mail.yandex.hu,mail.yandex.in,mail.yandex.io,mail.yandex.jp,mail.yandex.kg,mail.yandex.kr,mail.yandex.kz,mail.yandex.lt,mail.yandex.lv,mail.yandex.md,mail.yandex.me,mail.yandex.mobi,mail.yandex.net,mail.yandex.news,mail.yandex.nl,mail.yandex.org,mail.yandex.pk,mail.yandex.pl,mail.yandex.pro,mail.yandex.ro,mail.yandex.rs,mail.yandex.ru,mail.yandex.se,mail.yandex.site,mail.yandex.su,mail.yandex.tech,mail.yandex.ua,mail.yandex.uk,mail.yandex.us,mail.yandex.uz,mail.yandex.work##.message-list-banner-portal + div[class][id]:has(> div:empty)
 mail.yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
 ya.ru##.body__content > aside.content__informers-bg + div[style]:has(> style)
-[$path=/search]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Ya.extRenderQueue', 'undefined')
+[$path=/search]ya.ru,yandex.*#%#//scriptlet('remove-node-text', 'script', '/^window\.Ya.*pcodeParams.*renderTo/')
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 tv.yandex.*#%#//scriptlet('json-prune', 'rtb')
 realty.ya.*#%#//scriptlet('json-prune', 'rtb direct')
@@ -447,6 +447,7 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 @@||search-module.s3.us-east-2.amazonaws.com/pubs/trib/adblockdetect.js
 !#safari_cb_affinity
 armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwesterndaily.com.au,crookwellgazette.com.au,dailyadvertiser.com.au,dailyliberal.com.au,examiner.com.au,illawarramercury.com.au,newcastleherald.com.au,portnews.com.au,thecourier.com.au,thesenior.com.au#%#//scriptlet('set-cookie', 'dismissCheck', '1')
+||64.176.85.4/bbs/include/javascript/adblock.js
 nikke.win#%#//scriptlet('prevent-fetch', '/doubleclick|google-analytics/')
 77qr.io#%#//scriptlet('prevent-setTimeout', 'ad_blocker_detector_modal')
 decrypt.day#%#//scriptlet('set-constant', 'Object.prototype.hasPremier', 'true')
@@ -7867,6 +7868,7 @@ f5.com##div[class*="-newsletter-signup-"]
 cuisineactuelle.fr,femmeactuelle.fr,gala.fr,yellowkorner.com##.popin-newsletter
 yellowkorner.com##.popin-modal-background
 banki24.by,nevnov.ru##.social-container
+news.milli.az,spektr.press,vbr.ru##.social-banner
 wired.com##div[class^="ConsumerMarketingUnitThemedWrapper"] .cm-footer a[href^="https://subscribe.wired.com/subscribe/"]
 loksado.com#%#//scriptlet("abort-current-inline-script", "DS_Popup_1")
 it-world.ru,skillbox.ru,codastory.com,interior.ru##.subscribe-popup

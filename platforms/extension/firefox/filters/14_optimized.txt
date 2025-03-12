@@ -1,9 +1,9 @@
-! Checksum: tRRQEpdKR3bpjVQRjD1h6A
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1741776245-3600.patch
+! Checksum: 0tAhAnM/AYgVi7gqUSzj+Q
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1741779954-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.24.44
-! TimeUpdated: 2025-03-12T10:39:16+00:00
+! Version: 2.2.24.45
+! TimeUpdated: 2025-03-12T11:40:57+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -9405,7 +9405,7 @@ mail.yandex.*##div[class^="RightColumn-m__root--"]
 mail.yandex.*##.message-list-banner-portal + div[class][id]:has(> div:empty)
 mail.yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
 ya.ru##.body__content > aside.content__informers-bg + div[style]:has(> style)
-[$path=/search]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Ya.extRenderQueue', 'undefined')
+[$path=/search]ya.ru,yandex.*#%#//scriptlet('remove-node-text', 'script', '/^window\.Ya.*pcodeParams.*renderTo/')
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 tv.yandex.*#%#//scriptlet('json-prune', 'rtb')
 realty.ya.*#%#//scriptlet('json-prune', 'rtb direct')
@@ -9758,6 +9758,7 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 @@||search-module.s3.us-east-2.amazonaws.com/pubs/trib/adblockdetect.js
 !#safari_cb_affinity
 armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwesterndaily.com.au,crookwellgazette.com.au,dailyadvertiser.com.au,dailyliberal.com.au,examiner.com.au,illawarramercury.com.au,newcastleherald.com.au,portnews.com.au,thecourier.com.au,thesenior.com.au#%#//scriptlet('set-cookie', 'dismissCheck', '1')
+||64.176.85.4/bbs/include/javascript/adblock.js
 nikke.win#%#//scriptlet('prevent-fetch', '/doubleclick|google-analytics/')
 77qr.io#%#//scriptlet('prevent-setTimeout', 'ad_blocker_detector_modal')
 decrypt.day#%#//scriptlet('set-constant', 'Object.prototype.hasPremier', 'true')
@@ -17040,6 +17041,7 @@ f5.com##div[class*="-newsletter-signup-"]
 cuisineactuelle.fr,femmeactuelle.fr,gala.fr,yellowkorner.com##.popin-newsletter
 yellowkorner.com##.popin-modal-background
 banki24.by,nevnov.ru##.social-container
+news.milli.az,spektr.press,vbr.ru##.social-banner
 wired.com##div[class^="ConsumerMarketingUnitThemedWrapper"] .cm-footer a[href^="https://subscribe.wired.com/subscribe/"]
 loksado.com#%#//scriptlet("abort-current-inline-script", "DS_Popup_1")
 it-world.ru,skillbox.ru,codastory.com,interior.ru##.subscribe-popup

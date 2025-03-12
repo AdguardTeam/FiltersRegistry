@@ -1,9 +1,9 @@
-! Checksum: PQI8rE9EqthvLiXUEEwQhw
-! Diff-Path: ../patches/19/19-s-1741772624-3600.patch
+! Checksum: Bn0Vnuz5Cf/dCQoeec9WLw
+! Diff-Path: ../patches/19/19-s-1741779944-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.51.85
-! TimeUpdated: 2025-03-12T09:38:55+00:00
+! Version: 2.0.51.86
+! TimeUpdated: 2025-03-12T11:41:05+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -69,7 +69,7 @@ mail.yandex.*#%#//scriptlet('json-prune', 'seatbid rtb')
 ! Main page under the search bar
 ya.ru##.body__content > aside.content__informers-bg + div[style]:has(> style)
 ! the ad is on the right side, which is mostly non-reproducible
-[$path=/search]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Ya.extRenderQueue', 'undefined')
+[$path=/search]ya.ru,yandex.*#%#//scriptlet('remove-node-text', 'script', '/^window\.Ya.*pcodeParams.*renderTo/')
 !
 ! Yandex.TV
 tv.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
@@ -1742,6 +1742,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+||64.176.85.4/bbs/include/javascript/adblock.js
 nikke.win#%#//scriptlet('prevent-fetch', '/doubleclick|google-analytics/')
 77qr.io#%#//scriptlet('prevent-setTimeout', 'ad_blocker_detector_modal')
 decrypt.day#%#//scriptlet('set-constant', 'Object.prototype.hasPremier', 'true')
@@ -17707,7 +17708,7 @@ ravensberger-matratzen.de###vonmaehlen-adobe-newsletter-popup
 kingcorso.com#$#.wd-promo-popup-wrapper { display: none!important; }
 kingcorso.com#$#html { overflow: visible!important; margin-right: 0!important; }
 banki24.by,nevnov.ru##.social-container
-spektr.press,vbr.ru##.social-banner
+news.milli.az,spektr.press,vbr.ru##.social-banner
 eapteka.ru##.main--subscription
 wired.com##div[class^="ConsumerMarketingUnitThemedWrapper"] .cm-footer a[href^="https://subscribe.wired.com/subscribe/"]
 fakty.com.ua###single-subscribe-news
