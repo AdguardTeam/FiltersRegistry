@@ -1,5 +1,5 @@
-! Checksum: yiEZAX6VczE1VIUZdYaJ8g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1741698385-14400.patch
+! Checksum: F9/FUBaLFHiYku46rerkLA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1741755936-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.35
@@ -7,6 +7,7 @@
 ! Expires: 5 days (update frequency)
 ##.app-banner:not(html,body,:empty)
 ##.app-btn:not(html,body,:empty)
+##.app-cta:not(html,body,:empty)
 ##.app-download:not(html,body,section,.content)
 ##.download-app:not(html,body,:empty)
 ##.open-in-app:not(html,body,:empty)
@@ -778,7 +779,6 @@ coolrom.com.au,coolrom.com##.download_link
 208.91.196.46$network
 /page/bouncy.php?$all
 ||banquetunarmedgrater.com^$all
-||femalepilesteering.com^$all
 ://trk.*.run/$document,domain=~very_likely_a_malware_redirection_train.*
 !+ PLATFORM(windows, mac, android)
 93.93.51.223$network
@@ -786,7 +786,6 @@ coolrom.com.au,coolrom.com##.download_link
 !+ PLATFORM(windows, mac, android)
 103.174.102.240$network
 ||exs7oilq14cz6.click^$all
-||easydisplay.no^$document
 !+ PLATFORM(windows, mac, android)
 38.180.96.244$network
 ||aysesuretobea.com^$all
@@ -1757,7 +1756,6 @@ alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /jquery.snow.js
 /let-it-snow.
-/snow-fall.js
 /snow-falling.js
 /snow-storm^$script
 /snowfall-master.min.js
@@ -1780,6 +1778,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||bitbucket.org^
 #@#html
 #@#body
+@@|https://raw.githubusercontent.com/DandelionSprout/adfilt/*
 @@||kaltura.com^
 @@.in-addr.arpa|
 ||filters.adtidy.org^$badfilter
@@ -1793,7 +1792,8 @@ reports.adguard.com$badfilter
 @@||gitlab.com/*/raw/main/*$~third-party
 @@||cdn.jsdelivr.net/gh/*@master$~third-party
 @@||easylist.to/*.txt^
-@@||someonewhocares.org/hosts/
+@@||void.gr/*/void-gr-filters.txt^
+@@||pgl.yoyo.org/adservers/serverlist.
 @@||fanboy.co.nz/*.txt^
 thenews.com.pk##a[href$="/prayer-time"]
 bloombergquint.com#%#//scriptlet('ubo-acis.js', 'document.oncopy')
@@ -2037,7 +2037,6 @@ $document,removeparam=/^ds_.*$/,domain=~clickserve.dartsearch.net
 $removeparam=adposition
 $removeparam=gbraid
 $removeparam=wbraid
-$removeparam=cvosrc
 $removeparam=recurring_goal_id
 $document,removeparam=/^affiliateID=.*$/i
 $removeparam=affiliate_id
@@ -2373,7 +2372,6 @@ $removeparam=hvbmt
 $removeparam=cstrackid
 ||amazon.$removeparam=hydadcr
 $removeparam=%2AVersion%2A,domain=amazon.*
-$removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
 ||amazon.*/stores/$removeparam=tag,document
@@ -2783,7 +2781,6 @@ $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|a
 ||kochava.com^$removeparam=device_id
 ||skyscanner.$removeparam=redirectedFrom
 ||skyscanner.$removeparam=previousCultureSource
-||fubo.tv^$removeparam=irad
 ||fiverr.com^$removeparam=pckg_id
 ||fiverr.com^$removeparam=context_type
 $removeparam=ssdcat,domain=norton.com|ask.com
@@ -2809,6 +2806,8 @@ $removeparam=xs,domain=skimresources.com|skimlinks.com|redirectingat.com
 $removeparam=imp_id,document
 ||steampowered.com^$removeparam=ser
 $removeparam=sourceType,domain=vitaminshoppe.com|aliexpress.com
+$removeparam=ds_e_adid,domain=clickserve.dartsearch.net
+$removeparam=ds_url_v,domain=clickserve.dartsearch.net
 ||xg4ken.com^$removeparam=prof
 ||xg4ken.com^$removeparam=kct
 ||xg4ken.com^$removeparam=kchid
@@ -2859,6 +2858,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||walmart.$removeparam=wl12
 ||walmart.$removeparam=/^ath.*$/
 $removeparam=recs_source
+$removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
 ||market.yandex.ru^$removeparam=cpc
 ||everesttech.net^$removeparam=/^ev_.*$/
@@ -2878,8 +2878,6 @@ $removeparam=plink,domain=audible.*
 ||netflix.com^$removeparam=trackIdEpisode
 ||netflix.com^$removeparam=dpRightClick
 ||adjust.com^$removeparam=adgroup
-$removeparam=xcreo
-||skimresources.com^$removeparam=xed
 $removeparam=rffrid
 $removeparam=ad_name
 ||deezer.com^$removeparam=deferredFl
@@ -2893,7 +2891,6 @@ $document,removeparam=refresh,domain=cnn.com|startribune.com
 ||emag.ro^$removeparam=recid
 ||emag.ro^$removeparam=scenario_ID
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
-||espn.com^$removeparam=ex_cid
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=mwv_rm
 ||comodo.com^$removeparam=track
@@ -2952,7 +2949,6 @@ $document,removeparam=helpref,domain=whatsapp.com|facebook.*|facebookwkhpilnemxj
 $removeparam=srsltid,document
 ||dl-protect.$removeparam=fn
 ||dl-protect.$removeparam=rl
-||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
 $removeparam=mobile_deeplink_data
 ||dzen.ru^$removeparam=yredirect
@@ -3109,7 +3105,6 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 @@||web.archive.org/*_/http$removeparam
 @@||img*.nga$removeparam=cmpid
 @@/aff_c?$removeparam=/^aff_id\d?=.*$/i
-@@||youtube.com/videoplayback$removeparam=source
 @@||facebook.com^$removeparam=__s
 @@||bing.*/ws/redirect/$removeparam
 @@/unsub/?$removeparam
