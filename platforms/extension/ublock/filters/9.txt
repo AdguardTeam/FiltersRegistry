@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: A0tWNRJ+dVY0fIgM/L5vkQ
-! Diff-Path: ../patches/9/9-s-1741794398-3600.patch
+! Checksum: sWI/dBrjnWhczAc7qeb15g
+! Diff-Path: ../patches/9/9-s-1741805374-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.29.21
-! TimeUpdated: 2025-03-12T15:39:43+00:00
+! Version: 2.0.29.22
+! TimeUpdated: 2025-03-12T18:41:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2186,6 +2186,12 @@ c5n.com,t13.cl,solowrestling.mundodeportivo.com,todojujuy.com,mendozapost.com,me
 !
 ! NOTE: Specific rules
 !
+capitalist.com.br##.ads-conteudo-responsivo
+hardware.com.br##div[class]:has(> #ramar_top_banner:only-child)
+hardware.com.br##div:has(> .incontent_ads_wrapper:only-child)
+hardware.com.br##div[id^="ramar_"]
+hardware.com.br##div[class^="ramar-"]
+hardware.com.br##.incontent_ads_wrapper
 animefire.plus##div[id^="main_pub_"]
 animefire.plus#?#.col-lg-4-5 > .divSection3:has(> div > h3:contains(Publicidade))
 animefire.plus##+js(abort-current-script, Node.prototype.insertBefore, popns)
@@ -5855,6 +5861,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_spanish
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/200326
+@@||go.trvdp.com/init/$domain=capitalist.com.br
+@@||stg.truvidplayer.com/p.php$domain=capitalist.com.br
+@@||s.trvdp.com/scripts/$domain=capitalist.com.br
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198804
 @@||amazonaws.com/*uol.com.br/publicidade-legal/json/ultimas.json$domain=uol.com.br
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199029
