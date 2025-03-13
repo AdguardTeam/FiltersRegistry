@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: QD4B/cMe+pA53EQJP1HDkg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1741755959-14400.patch
+! Checksum: qhT+KhJFKHIBWiyVQ14L1A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1741842363-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.35
@@ -108,6 +108,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||[2a02:1668:1034::2]^$document
 ||auslogics.com^$document
 ||trc.*.co^$document,domain=~malware_redirection_trains.*
+||agkn.com^$document
 /^(.*\.|.*//)?tkqlhce\.com/click-.*([?&][a-tv-z]{1,}(=[a-zA-Z0-9]{1,})?){1,}$/$document
 ||trkk4.com^$document,domain=~malware_redirection_trains.*
 ||hosting-redirect.com^$document,domain=~malware_redirection_trains.*
@@ -151,7 +152,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||sendslinksgopro.top^$all
 ||warehouse-ca.top^$all
 ||adventurouscomprehendhold.com^$all
-||chamberssnorted.com^$all
 ||cognatesyringe.com^$all
 ||commonjamknights.com^$all
 ||communicatedsuitcompartment.com^$all
@@ -172,7 +172,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||highrevenuenetwork.com^$all
 ||affordspoonsgray.com^$all
 ||ascertainmysticaladvertise.com^$all
-||banishafreshconjunction.com^$all
 ||clothmexican.com^$all
 ||expensivelikeness.com^$all
 ||noisesperusemotel.com^$all
@@ -188,6 +187,7 @@ coolrom.com.au,coolrom.com##.download_link
 ||incloseinterest.com^$all
 ||moleconcern.com^$all
 ||abruptcooperationbummer.com^$all
+||agencyrearrangepasture.com^$all
 ||botanysummarytables.com^$all
 ||hardnesscorkimmature.com^$all
 ||heartburnsurroundingcourtroom.com^$all
@@ -918,6 +918,7 @@ rule34.xxx###comment-list
 e621.net,e926.net###comments
 ###hot-network-questions
 ||arstechnica.$removeparam=comments-page
+/api/amediacomments/*
 /endscreen.js$script,domain=youtube.com|youtu.be|youtube-nocookie.com|35.190.94.206
 ||rumble.com/embedJS/u3/?request=related$xmlhttprequest
 ||ixigua.com/api/feedv2^
@@ -1043,6 +1044,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@||bitbucket.org^
 #@#html
 #@#body
+@@||network-auth.com^
 @@|https://raw.githubusercontent.com/DandelionSprout/adfilt/*
 @@||kaltura.com^
 @@.in-addr.arpa|
@@ -1142,7 +1144,6 @@ $removeparam=fb_action_types
 $removeparam=fb_source
 $removeparam=action_object_map
 $removeparam=_zucks_suid
-$removeparam=adfrom
 $removeparam=aiad_clid
 $removeparam=maf
 $removeparam=mindbox-message-key
@@ -1268,6 +1269,7 @@ $document,removeparam=/^aff_id\d?=.*$/i,domain=~affiliate.salestring.com
 $removeparam=twitchReferral
 $document,removeparam=elqTrackId,domain=~comcast.com|~comcastforbusiness.com
 $removeparam=tctx
+$removeparam=ad_medium
 $document,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
 $removeparam=ad_type
@@ -1495,7 +1497,6 @@ $removeparam=pk_kwd
 $removeparam=pk_keyword
 $removeparam=au_advert_id
 $removeparam=au_car_id
-$document,removeparam=/^source=rss$/
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -1508,7 +1509,6 @@ $removeparam=int_content
 $removeparam=int_campaign
 $removeparam=sudaref
 $removeparam=pm_source
-$removeparam=oref
 $removeparam=gaa_at
 $removeparam=gaa_n
 $removeparam=gaa_ts
@@ -1615,7 +1615,6 @@ $document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 ||amazon.$removeparam=sr
 ||amazon.$removeparam=creative
 $removeparam=creativeASIN
-||amazon.$removeparam=/^sc_i.*$/
 $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com|linkedin.com|lnkd.in
 ||amazon.$removeparam=/^__mk_*_.*$/
 ||amazon.$removeparam=ascsubtag
@@ -1653,7 +1652,6 @@ $removeparam=adgrpid
 $removeparam=hvbmt
 $removeparam=cstrackid
 ||amazon.$removeparam=hydadcr
-$removeparam=%2AVersion%2A,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
 ||amazon.*/stores/$removeparam=tag,document
@@ -1665,6 +1663,7 @@ $removeparam=%2AVersion%2A,domain=amazon.*
 ||amazon.*/dp/$removeparam=s,document
 ||gaming.amazon.com^$removeparam=redirectRoute
 ||amazon.$removeparam=sbo
+||www.amazon.$document,removeparam=/^[a-z_]{1,20}=[a-zA-Z0-9._-]{80,}$/
 ||www.amazon.$removeparam=sp_csd
 ||www.amazon.$removeparam=dib_tag
 ||amazon.$document,removeparam=social_share
@@ -1779,7 +1778,6 @@ $removeparam=uact,domain=www.google.*|ipv6.google.com
 ||googleadservices.com^$removeparam=ae
 ||googleadservices.com^$removeparam=agsac
 ||googleadservices.com^$removeparam=dct
-||googleadservices.com^$removeparam=dsh
 ||googleadservices.com^$removeparam=ms
 ||googleadservices.com^$removeparam=ohost
 ||www.google.*/search?$document,removeparam=sclient
@@ -2054,7 +2052,6 @@ $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryox
 ||surfshark.com^$removeparam=transaction_id
 $removeparam=PID,domain=1800getlens.com|ae.com|allmodern.com|applevacations.com|ashford.com|autoanything.com|autodesk.com|bedbathandbeyond.com|booksamillion.com|boscovs.com|buschgardens.com|cheapcaribbean.com|chicos.com|choicehotels.com|dermstore.com|ecampus.com|expedia.com|express.com|factoryoutletstore.com|farmandfleet.com|hammacher.com|hawaiianairlines.com|intuit.com|jockey.com|kennethcole.com|landsend.com|lenovo.com|lens.com|mcafee.com|overstock.com|perfumania.com|samsung.com|sears.com|sierra.com|soma.com|staples.com|teleflora.com|ulta.com|verizon.com|virginatlantic.com|vistaprint.com|walgreens.com|wayfair.com|whitehouseblackmarket.com|wwe.com|yahoo.com|zchocolat.com|media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=camp,domain=amazon.*|calvinklein.*|dickssportinggoods.com|dockers.com|dressbarn.com|lanebryant.com|levi.com|maurices.com|worldmarket.com|xg4ken.com
-$removeparam=cp,domain=converse.com|nike.com|nextdoor.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
 $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|anntaylor.com|asos.com|awd-it.*|barenecessities.com|barrons.com|beautyencounter.com|buckle.com|burpee.com|chacos.com|coursera.org|dxl.com|dyson.com|ebay.*|famousfootwear.com|finishline.com|freetaxusa.com|gap.com|gapcanada.ca|gucci.com|hanes.com|hotwire.com|hulu.com|hunterboots.com|jcrew.com|josbank.com|kobo.com|lanebryant.com|laroche-posay.us|loft.com|magazines.com|marketwatch.com|maurices.com|merrell.com|newbalance.com|nordstrom.com|officedepot.com|onehanesplace.com|online4baby.com|radissonhotelsamericas.com|ralphlauren.com|saksfifthavenue.com|saksoff5th.com|samash.com|samsclub.com|saucony.com|sharperimage.com|skinceuticals.com|thingsremembered.com|thrifty.*|timeformecatalog.com|verabradley.com|vivaterra.com|wine.com|yoox.com
 ||kohls.com^$removeparam=kls_sbp
 ||kohls.com^$removeparam=pfm
@@ -2218,6 +2215,7 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||bandcamp.com^$removeparam=search_match_part
 ||bandcamp.com^$removeparam=search_page_no
 ||bandcamp.com^$removeparam=search_rank
+||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
 ||onenote.com^$removeparam=fromAR
@@ -2284,9 +2282,6 @@ ref=404media.co$document,removeparam=ref
 ||xvideos.$document,removeparam=sxcaf
 $document,removeparam=iId,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||audible.$removeparam=source_code
-||audible.$removeparam=ipRedirectFrom
-||audible.$removeparam=ipRedirectOriginalURL
-$removeparam=csrc,domain=mcafee.com|vitacost.com
 $removeparam=csrcl2
 ||mcafee.com^$removeparam=cctype
 ||mcafee.com^$removeparam=ccstype
