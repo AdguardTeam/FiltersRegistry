@@ -50568,7 +50568,7 @@ kimcartoon.*#?#.title-list:has-text(/^Com{2}ents$/i) ~ div
 /commentsbutton.js$domain=nettavisen.no
 ! Title: 🎬 Stop Autoplay On Video Sites
 ! Expires: 7 days
-! OriginalVersion: 07February2025v1
+! OriginalVersion: 13March2025v1
 ! Description: Are you tired of having to turn oﬀ autoplay on YouTube, Vimeo, and other video sites every time you e.g. go to incognito mode? Do you work in classrooms/courserooms and don't want to accidentally show unfitting videos to your students/coursetakers? Are you worried of having to use specific extensions just for that purpose? Then this list is for you.
 ! Special thanks to https://github.com/llacb47 for waterproofing large parts of this list.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -50590,6 +50590,7 @@ vimeo.com##.pagination_holder
 vimeo.com##._16rrx
 !#if !ext_ublock
 ! (Has some problems due to https://github.com/AdguardTeam/FiltersCompiler/blob/master/src/main/utils/trust-levels/exclusions-high.txt)
+! (Also breaks Vimeo's upload page entirely.)
 !#endif
 ! ——— Rumble ———
 ||rumble.com/embedJS/u3/?request=related$xmlhttprequest
@@ -50611,7 +50612,8 @@ vimeo.com##._16rrx
 ! Gfycat
 ! YouTube Kids
 ! ——— Vimeo ———
-vimeo.com#%#//scriptlet('ubo-set.js', 'vimeo.clip_page_config.continuous_play_enabled', 'false')
+! (Breaks Vimeo's upload page entirely.)
+!!!vimeo.com##+js(set, vimeo.clip_page_config.continuous_play_enabled, false)
 ! ——— TED ———
 ted.com#%#//scriptlet('ubo-sid.js', 'd.period', '1000')
 ted.com##.css-1dg07lz:has-text(Up next)
