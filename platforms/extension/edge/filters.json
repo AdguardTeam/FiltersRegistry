@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.77.64",
-			"timeUpdated": "2025-03-12T18:41:21+0000",
+			"version": "2.0.77.65",
+			"timeUpdated": "2025-03-13T00:38:41+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -701,8 +701,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.10.68",
-			"timeUpdated": "2025-03-12T18:41:29+0000",
+			"version": "2.0.10.69",
+			"timeUpdated": "2025-03-13T00:38:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.32.96",
-			"timeUpdated": "2025-03-12T23:37:13+0000",
+			"version": "2.1.32.97",
+			"timeUpdated": "2025-03-13T00:38:55+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
