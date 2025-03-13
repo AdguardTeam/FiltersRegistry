@@ -79,8 +79,13 @@ const main = async () => {
 
             const filename = path.basename(file);
 
+            // Just for optimization, skip files that are not in the format of
+            // "{filterId}[_optimized|_without_easylist].txt"
             if (!/\d+(_optimized|_without_easylist)?\.txt/.test(filename)) {
-                console.log(`Skipped generating patch for: ${file}`);
+                // Skip printing logs for non ".txt" files as redundant.
+                if (fileHasTxtExtension) {
+                    console.log(`Skipped generating patch for: ${file}`);
+                }
 
                 return false;
             }
@@ -97,7 +102,10 @@ const main = async () => {
             const res = fileInFiltersFolder && fileHasTxtExtension && fileNotExcluded && fileIncluded;
 
             if (!res) {
-                console.log(`Skipped generating patch for: ${file}`);
+                // Skip printing logs for non ".txt" files as redundant.
+                if (fileHasTxtExtension) {
+                    console.log(`Skipped generating patch for: ${file}`);
+                }
             }
 
             return res;
