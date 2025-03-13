@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.98.12",
-			"timeUpdated": "2025-03-13T11:31:29+0000",
+			"version": "2.0.98.13",
+			"timeUpdated": "2025-03-13T18:31:14+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.75.14",
-			"timeUpdated": "2025-03-13T16:31:49+0000",
+			"version": "2.3.75.15",
+			"timeUpdated": "2025-03-13T18:31:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.81.81",
-			"timeUpdated": "2025-03-13T16:39:08+0000",
+			"version": "2.0.81.82",
+			"timeUpdated": "2025-03-13T18:36:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.12.15",
-			"timeUpdated": "2025-03-13T10:37:42+0000",
+			"version": "2.1.12.16",
+			"timeUpdated": "2025-03-13T18:36:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.16",
-			"timeUpdated": "2025-03-13T10:38:04+0000",
+			"version": "2.0.59.17",
+			"timeUpdated": "2025-03-13T18:37:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.24.60",
-			"timeUpdated": "2025-03-13T16:39:45+0000",
+			"version": "2.2.24.61",
+			"timeUpdated": "2025-03-13T18:37:18+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.77.68",
-			"timeUpdated": "2025-03-13T12:46:37+0000",
+			"version": "2.0.77.69",
+			"timeUpdated": "2025-03-13T18:37:19+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/16_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.96",
-			"timeUpdated": "2025-03-13T12:46:41+0000",
+			"version": "2.0.50.97",
+			"timeUpdated": "2025-03-13T18:37:25+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.14",
-			"timeUpdated": "2025-03-13T16:39:51+0000",
+			"version": "2.0.58.15",
+			"timeUpdated": "2025-03-13T18:37:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.95",
-			"timeUpdated": "2025-03-13T16:39:52+0000",
+			"version": "2.0.51.96",
+			"timeUpdated": "2025-03-13T18:37:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -765,8 +765,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.19.58",
-			"timeUpdated": "2025-03-13T11:42:54+0000",
+			"version": "2.0.19.59",
+			"timeUpdated": "2025-03-13T18:37:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -831,8 +831,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/23_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.6.31",
-			"timeUpdated": "2025-03-12T18:41:38+0000",
+			"version": "2.0.6.32",
+			"timeUpdated": "2025-03-13T18:37:32+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
