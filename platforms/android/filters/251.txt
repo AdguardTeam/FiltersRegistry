@@ -1,13 +1,13 @@
-! Checksum: 87ZiOuO1yYF+vhnAAzDgQA
-! Diff-Path: ../patches/251/251-s-1741698385-14400.patch
+! Checksum: jfr04VjJZaoVSJwmr6rAow
+! Diff-Path: ../patches/251/251-s-1741986378-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.8.51
-! TimeUpdated: 2025-03-11T13:02:17+00:00
+! Version: 2.0.8.52
+! TimeUpdated: 2025-03-14T21:02:41+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 11March2025v1
+! OriginalVersion: 14March2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1400,6 +1400,8 @@ $removeparam=tmt_data
 $removeparam=tmt_ufp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196848#issuecomment-2603988954
 $removeparam=24sata_ref
+! https://www•obs•no/sko/innleggssaler/2143596?v=Obs-7314244102028&matchtype=&device=m&adset_id=129607977775 (14/03/2025)
+$removeparam=adset_id
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -1692,7 +1694,7 @@ $removeparam=_sacat,domain=~ebay.*
 $removeparam=crlp,domain=ebay.*
 $removeparam=MT_ID,domain=ebay.*
 $removeparam=geo_id,domain=ebay.*
-$removeparam=device,domain=ebay.*
+$removeparam=device,domain=ebay.*|obs.no
 $removeparam=cmpgn,domain=ebay.*
 ! https://www•ebay•com/itm/265272975304?LH_BIN=1
 ||ebay.*/itm/$removeparam=LH_BIN
@@ -4028,6 +4030,8 @@ ref=dtf.ru$document,removeparam=ref
 ! https://www•qwant•com/?hti=0&s=0&q=john+madden&t=web (When using Qwant's Firefox extension as the default search engine; 09/03/2025)
 ||qwant.com^$removeparam=hti
 ||qwant.com^$removeparam=s
+! https://www•obs•no/sko/innleggssaler/2143596?v=Obs-7314244102028&matchtype=&device=m&adset_id=129607977775 (14/03/2025)
+||obs.no^$removeparam=matchtype
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
