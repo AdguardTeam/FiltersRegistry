@@ -1,5 +1,5 @@
-! Checksum: qIyZtE0I5/cWDooJRvtzOA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1741884276-3600.patch
+! Checksum: iFlAkf0e1LSOrUkUZQ+jRw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1741920067-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.46.46
@@ -648,6 +648,7 @@ spin.de#$##footer { position: relative !important; }
 schnittberichte.com#$#.bgwrapper { top: 0px !important; }
 kurier.de#$#html[data-layout] .grid { top: 0px !important; }
 aktiencheck.de#$#body > #main { top: 0px!important; }
+forum.digitalfernsehen.de#$#.messageContent blockquote > div[id][style*="width:300px;height:250px"] { position: absolute!important; left: -3000px!important; }
 woxikon.de#$#.ads-wrapper { position: absolute!important; left: -3000px!important; }
 freenet.de#$##frnBanner { height: 25px!important; min-height: 0px !important;}
 achgut.com#$#.column > .banner { position: absolute!important; left: -3000px!important; }
@@ -821,7 +822,6 @@ noz.de##.container-ob
 noz.de#$?#.outer-wrapper { remove: true; }
 popupplayer.radio.net##div[id^="RAD_"]
 radio.de,radio.net,radio.at##.hidden.md\:pt-8
-kreuzwortraetsel.de##.mta
 wiwo.de##app-advertisement
 wiwo.de##app-content-advertisement
 infranken.de#?#.listing-item:has( > article > .teaser-inner .post-topline:contains(Anzeige))
@@ -1864,7 +1864,6 @@ finanzen.at,finanzen.ch##.equalheights > .col-md-4.col-xs-12 .dynamic-content
 ffh.de###omsRectangleChannel
 moz.de,lr-online.de,swp.de##.swp-adbox
 wallstreet-online.de##div[id^="sban"]
-aerzteblatt.de##.anzeigenbox
 heise.de##.a-article-teaser--sponsored
 finanz-tools.de##.sidebar.nur_desktop
 buzer.de##.anz_unten
@@ -1907,6 +1906,7 @@ gabot.de##.banner-content
 mz.de,dbna.de###nativendo-artikel
 php.de##div[class^="ad_header"]
 ratgeber.bunte.de,focus.de,chip.de##.Article__Promo
+chip.de##a[title*="(Anzeige)"]
 wallstreet-online.de###nativendo-nachrichten
 spox.com##.dazn
 games.ch##.rect
@@ -1932,7 +1932,6 @@ twitterperlen.de,borncity.com###ai_widget-4
 focus.de##.tft_ads
 pcgames.de##.amazonAutoLink
 tichyseinblick.de##.adwidget_wrapper
-briefwahl-beantragen.de##.stadt-panel-right > .stadt-panel.stadt-formular-panel
 ||widgets.outbrain.com^$domain=spiegel.de|manager-magazin.de
 borkenerzeitung.de,bbv-net.de###WallpaperBanner
 pfalz-express.de###alternative_footer
@@ -1942,6 +1941,7 @@ pfalz-express.de###banner_unter_ticker
 unwetterzentrale.de###content > div[style*="width:336px;height:16px;"]
 kalender-365.de##.az
 spielkult.de##tr > td[Width="146"]
+spielkult.de##td[style^="width: 253"].auto-style154
 anpfiff.info##.content-col-r > div[style="min-height:250px;"]
 anpfiff.info##.content-col-r > div[style="min-height:250px;"] ~ hr.linie-seperator
 anpfiff.info##.content-col-r > div > div[style="min-height:250px;"]
@@ -2005,7 +2005,6 @@ winfuture.de###homepage_rectangle
 sueddeutsche.de###iqd_mainAd
 szbz.de,hardwareluxx.de,geliebte-katze.de###leaderboard
 seatforum.de###posts > ins[id^="AABI-"]
-gta-5-forum.de,computerbase.de,tuning-fans.de,usp-forum.de###posts > li[id^="yui-gen"]
 golem.de###pricehits
 hilfdirselbst.ch###r230
 hilfdirselbst.ch###r231
@@ -2372,6 +2371,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbebox/*
 /werbemittel/*
 /werbemittel_
+/werbenetz/*
 /werbepartner/*
 /werbung.$third-party
 /werbung.gif
@@ -2388,6 +2388,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /Widgets/Werbung/*
 _werbebanner.
 _werbung.php
+_werbung.pl
 ###Ad_Win2day
 ###LxWerbeteaser
 ###SSpotIMPopSlider
@@ -2795,7 +2796,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||dlvr.t-online.de/static/lisa/placement/
 ||drehscheibe-online.de/ds_cms/banner/
 ||druckerchannel.de/script/dc/ofr_single.php
-||dtb.de/fileadmin/user_upload/dtb.de/Sponsoren/
 ||dubisthalle.de/wp-content/uploads/*_300x300_
 ||dubisthalle.de/wp-content/uploads/*_banner_
 ||egofm.de/content/images/egoFMad/
@@ -2834,7 +2834,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||fussballn.de/images/design/anpfifffussballn.png
 ||fussballn.de/images/design/fussballn/hudson2.png
 ||fussballn.de/Images/Design/sportplatzmedia2.png
-||gamezone.de/tsimg/topbanner/
 ||gelbeseiten.de/webgs/js/detailseite_below.js
 ||gelbeseiten.de/webgs/js/trefferliste_below.js
 ||germancorrector.com/cnc/
@@ -2943,6 +2942,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||raidrush.net/js/wrpx.js
 ||realtotal.de/data/betrugstest-com.jpg
 ||redensarten-index.de/az/shwbnnr.php
+||res.ki.de^
 ||rot-weiss-erfurt.de/pictures/Banner-
 ||ruhrbarone.de^*/bang.gif
 ||ruw.de/js/layoutForAds.js
@@ -2954,6 +2954,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||schnittberichte.com/pics/blackillusions/
 ||schnittberichte.com/pics/werbung/
 ||script.webinstaller.$domain=chip.de
+||sensor-test.de/assets/Banner/
 ||sevac.com/images/bmain-
 ||sexforum.ch/ForumPics/BaPics/
 ||skipper-bootshandel.de/wp-content/uploads/*/BANNER-
@@ -3349,7 +3350,6 @@ ddl-warez.cc###tab-1 p:nth-of-type(1),#tab-1 p:nth-of-type(2),#tab-1 p:nth-of-ty
 stuttgarter-zeitung.de###taboola-mhsd
 4kfilme.de###tdi_39
 giga.de,kino.de,watson.de###teaserheld-header
-tennisnet.com###tennisnetWidget
 eishockey-magazin.de###text-10
 hockey-news.info###text-12
 computerschach.de,nachrichten.es,nh24.de,randombrick.de,tollabea.de###text-2
@@ -3484,8 +3484,8 @@ meerwasser-lexikon.de##.anzeigeInfo
 ariva.de##.anzeigeText
 motorsport-total.com##.anzeige_teas_rect
 motorsport-total.com##.anzeige_teas_rect_ax
-aerzteblatt.de##.anzeigenbox
 oefb.at##.app-foesvAdSpace
+arbeits-abc.de##.arbei-widget
 lokalmatador.de##.article-adbanner
 heise.de##.article-layout__header-wrbng
 computerbase.de##.article-view__rectangle
@@ -3651,7 +3651,6 @@ tvinfo.de##.floatLeft[style="padding:10px;"]
 deutschepornos.co,erotik-sexvideos.com,geilesexclips.com,gratis-sex-videos.net,gratisfickvideos.net,kostenlose-sexvideos.biz,sexfilmetube.net,sexkostenlos.biz,xhamsterdeutsch.xyz##.footer-dingens
 hottime.ch##.footer-grey
 ecrbs.redbulls.com,fussball.de##.footer-partner
-dtb.de##.footer-sponsor-section
 schalke04.de##.footer-sponsors
 bitch.ch##.footerBanner
 saechsische.de##.footer__partner
@@ -3831,12 +3830,14 @@ songtexte.com##.prmtnKeepHeight
 ariva.de##.prodo-shadow
 otto.de##.product.spa
 maclife.de##.productbox
+coolibri.de##.promContainer
 tvspielfilm.de##.promo-box
 tvspielfilm.de##.promo-box-any-banner
 wegwerfemailadresse.com##.promobox
 stadt-bremerhaven.de##.psw-container
 europa-landmaschinen.de,suedtirolnews.it##.pub
 tchgdns.de##.pub-single-side
+mallorcazeitung.es##.publi_mega
 mallorcamagazin.com##.publicidad
 t-online.de##.py-16.bg-alpine.border-b.border-solid.border-whitelilac.md\:min-w-page
 lifechannel.ch##.pz_cont
@@ -3851,6 +3852,7 @@ games.ch##.rect
 fussballdaten.de,i-fidelity.net,metal.de,modhoster.de,rheintaler.ch,telepolis.de##.rectangle
 trendyone.de##.rectangle-right
 radioguetersloh.de##.rectright
+escortboard.de##.ref-header-top-baner
 isnichwahr.de##.region-head-adbar-left
 1000ps.at##.reifen-winter
 drpornofilme.com##.resumecard
@@ -4370,6 +4372,7 @@ mopo.de##.slider-preview:has(.anzeige-label)
 finanzen.net##.snapshot__trading:has(.button-advertising-hint)
 sportscheck.com##.swiper-slide:has(div.c-product-tile__sponsored)
 wallstreet-online.de##.teaser:has(span.generalAdTag)
+fuersie.de##.teaser__item:has(.teaser__adtype)
 immobilienscout24.de##.touchpoint-space:has(div[data-testid="dsa-link"])
 notebooksbilliger.de##.vue-cherry:has(a[href*="/adnuntius"])
 connect.de##.wkTeaser:has(.promolabel)
@@ -4379,7 +4382,6 @@ expert.de##[data-key-id]:has([src^="//b.nl3.eu.criteo.com/rm?"])
 flaconi.de##[data-product-list-id]:has([data-badge-type="sponsored"])
 shop-apotheke.com##[data-qa-id="cross-sell-widget"] li:has(> [data-as-xsell-product-id])
 finanzen.net##article.page-content__item:has(img[alt="UBS"])
-imtest.de##article.type-post[data-post-id]:has(.sponsor-label)
 abendzeitung-muenchen.de##article[class^="teaser nummer-"]:has(span.specialfeature)
 travelbook.de##div.has-mark[style="min-width: 300px; min-height: 250px;"]
 hornoxe.com##div.post.hentry.ivycat-post:has(a[href^="https://www.amazon.de/"])
