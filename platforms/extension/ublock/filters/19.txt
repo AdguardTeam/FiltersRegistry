@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: rV27nD8pouYYFBkX4QDp8w
-! Diff-Path: ../patches/19/19-s-1741894900-3600.patch
+! Checksum: omFFRXRYWlB/6EFXz517YQ
+! Diff-Path: ../patches/19/19-s-1741941900-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.51.97
-! TimeUpdated: 2025-03-13T19:37:23+00:00
+! Version: 2.0.51.98
+! TimeUpdated: 2025-03-14T08:40:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -181,6 +181,8 @@ e.mail.ru,octavius.mail.ru##+js(remove-class, letter-list_top-line-adv-2pane|let
 mail.ru#?#body > div > style + div:has(> div > div.description:contains(/До[баба]вьт[ее] Mail в исключения/))
 news.mail.ru##body > div:has(> div[id] > div > div.title:contains(блокировщика рекламы))
 ! dzen.ru
+! Main page
+dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
 ! Ads in news
 dzen.ru##+js(json-prune, ssrData.exportResponse.feedData.adItems)
 dzen.ru##+js(json-prune, ssrData.exportResponse.ssrBanner)
@@ -1700,6 +1702,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+talkceltic.net###nindo-popup-portal
 ||64.176.85.4/bbs/include/javascript/adblock.js
 nikke.win##+js(no-fetch-if, /doubleclick|google-analytics/)
 77qr.io##+js(no-setTimeout-if, ad_blocker_detector_modal)
@@ -4332,6 +4335,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+dzen.ru##div[class^="dzen-desktop--interview-popup-"]
 sky.pro##.modal_darkBG__ZqnlK
 kusurinomadoguchi.com###page-banner
 kusurinomadoguchi.com##.balloon
@@ -9004,7 +9008,6 @@ thetechsutra.com#$#html { overflow: auto !important; }
 ||cdn.toontrack.com/wp-content/plugins/tt-popup/
 instagram.com##+js(set-constant, _sharedData.is_whitelisted_crawl_bot, true)
 silesion.pl###wpd-bubble-wrapper
-||obukhiv.info/site/assets/pwpc/pwpc-*.js
 101.ru##.hypotheses-poll
 digikitz.net#$#.promo-popup-wrapper { display: none!important; }
 digikitz.net#$#html { overflow: visible!important; }
