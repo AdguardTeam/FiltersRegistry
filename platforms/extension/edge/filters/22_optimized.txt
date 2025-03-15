@@ -1,5 +1,5 @@
-! Checksum: NgFmH262xTMcPRwen3KANQ
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1741920066-3600.patch
+! Checksum: gfSoXckdyzEkasNbQ6fG/A
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1742006169-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.11.30
@@ -21,6 +21,7 @@
 ||rcm.shinobi.jp^
 ||nullpoantenna.com/scripts/parts/blog/
 ||matomeantena.com/scripts/parts/blog/
+||rss.tc^$third-party
 /rss/rss.html$subdocument,~third-party
 .com/rss.htm$subdocument,~third-party
 .com/rss2.htm$subdocument,~third-party
@@ -268,7 +269,6 @@ burusoku-vip.com##.article-body-more > span[style="font-size: 18px;"] + b
 rutube.ru##section[aria-label="информационный баннер"]
 crx7601.com#?#.article-body-inner .twitter-tweet ~ b:has(+ .ninja-recommend-block)
 hmangamatome.net##.rssbox_midashi
-hmangamatome.net,sexytvcap.com,erodoujinjohoukan.com###toprss
 /wp-content/plugins/chaty/*$domain=krx18.com|canadaglobalinfo.com
 netouyonews.net,gameinn.jp##.wp-rss-template-container
 sugi69693.xyz###sidebar
@@ -295,7 +295,6 @@ nintendoevery.com,geektushin.com##.widget_rss
 uma-log.net###custom_html-8
 negisoku.com##.t_a > span
 negisoku.com##.article-body-more > p[style="color:gray;text-align:right;"]
-sexytvcap.com###bottomrss
 cavolump.com##div[class^="pickup"]
 parlourfullslotl.com##.RSSBlogroll
 nofootynolife.net##.entry_body > div[style$="#AAA;width: 400px;"]
@@ -799,6 +798,7 @@ blog.livedoor.jp##.rsstop
 blog.livedoor.jp##.tabmoji
 blog.livedoor.jp##.tabmoji2
 blog.livedoor.jp###rss3
+blog.livedoor.jp###content > div.banner1
 blog.livedoor.jp###container > div[style$="scrollbar-track-color:#ffffff;"]
 blog.livedoor.jp##.rss-sub
 blog.livedoor.jp###RSSbox
@@ -995,7 +995,6 @@ electron1ca.ru##.popup-phone-wrapper
 esputnik.com##.intercom-lightweight-app
 f.ua##.callback_buttons
 hdfcbank.com###chatTogglerDiv
-itstep.dp.ua##.block_to_call
 justanswer.com##.th-chat-window
 klaster.ua##.sonar_effect
 muzofond.fm##.feedback-main-container
@@ -1025,6 +1024,7 @@ vinmec.com##.global-thread-create-cta
 ||me-talk.ru/support/support.js$third-party
 ||media.reformal.ru/widgets/$third-party
 ||migranty.info/*/js/chat.*.min.js
+||mobitorg.phonet.com.ua/public/widget/call-catcher/
 ||my.zadarma.com/callbackWidget/js/main.min.js
 ||online.a1.by/js/button.js
 ||pg-chatn9.bjmantis.net/chat
@@ -1037,7 +1037,6 @@ vinmec.com##.global-thread-create-cta
 ||salesiq.zoho.com/widget
 ||sinoptik.ua/informers$third-party
 ||static.olark.com/jsclient/$third-party,domain=~fooda.com
-||support-widget.nakanohito.jp^$domain=jre-travel.com
 ||tforms.fcc-online.pl/public/widget.js
 ||tocplus*.com/chatLoader.do?
 ||uxfeedback-cdn.s3.yandex.net/_static/widget/widget.js
@@ -1269,12 +1268,14 @@ svtv.org##.post-fullpage-support
 dailymaverick.co.za###ribbon-container
 huffpost.com##div[class*="-support-huffpost"]
 unian.ua##.support-post__btn
+agents.media##.single-post__donate-block
 istories.media##section[class^="MaterialDonationBanner-"]
 letsencrypt.org##.custom-dbox-popup
 vox.com#?##zephr-anchor > aside:has(> form > div[class] div[class] > .duet--cta--button > span:contains(Monthly))
 rsf.org###block-rsf-bandeaux-alerte-block
 holod.media##.a-donate-block
 ghostery.com##.ds-notification-donate-container
+agents.media##.single-post__donate-block
 pravmir.ru##div[id^="hh_donate_button_widget"]
 arxiv.org##.bps-banner.forum
 arxiv.org###support-ack
@@ -1332,6 +1333,7 @@ gigazine.net###donation_wrapper
 getcomics.org##.wpfront-notification-bar-spacer
 insideclimatenews.org##.icn-donate-block
 insideclimatenews.org##.donate-cta
+agents.media##.single-post__donate-block
 charter97.org###donate-article
 nonciclopedia.org,miraheze.org###siteNotice
 winstall.app##div[class^="donateCard_container__"]
