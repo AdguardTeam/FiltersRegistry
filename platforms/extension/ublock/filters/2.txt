@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LZvYSHPKwDJoX7WeorUgcQ
-! Diff-Path: ../patches/2/2-s-1742031387-3600.patch
+! Checksum: WINrjHZ88JTFIbj2gjXNHw
+! Diff-Path: ../patches/2/2-s-1742034977-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.33
-! TimeUpdated: 2025-03-15T09:31:28+00:00
+! Version: 2.3.75.34
+! TimeUpdated: 2025-03-15T10:31:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21658,6 +21658,8 @@ gocmod.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 @@||sextb.date^$generichide
 sextb.date,sextb.net##+js(set-constant, Check_ADBL, falseFunc)
 sextb.date,sextb.net##+js(spoof-css, body .sextb_700, display, block)
+sextb.date,sextb.net##+js(spoof-css, .sextb_300, display, block)
+sextb.date,sextb.net#$#.sextb_300 { display: none !important; }
 sextb.date,sextb.net#$#body .sextb_700 { display: none !important; }
 sextb.date,sextb.net#$#body .sextb_728 { display: block !important; }
 sextb.date,sextb.net#$#body .sextb_728:not([id]) { position: absolute !important; left: -9999px !important; }
@@ -47065,6 +47067,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+formula1.com##div:has(> div[id^="div-gpt-ad-"]:only-child)
 akaihentai.com##.exc
 wago.io###stream-player
 apkmoddone.phongroblox.com###fakeDown
@@ -125484,11 +125487,9 @@ $script,third-party,xmlhttprequest,domain=govid.co
 @@||hwcdn.net^$domain=canyoublockit.com
 |http://$image,script,stylesheet,subdocument,third-party,xmlhttprequest,domain=canyoublockit.com
 |https://$image,script,stylesheet,subdocument,third-party,xmlhttprequest,domain=canyoublockit.com
-$script,stylesheet,third-party,xmlhttprequest,domain=up-4ever.net
+$script,third-party,xmlhttprequest,domain=up-4ever.net
 @@||ajax.googleapis.com^$script,domain=up-4ever.net
 @@||connect.facebook.net^$script,domain=up-4ever.net
-@@||fonts.googleapis.com^$stylesheet,domain=up-4ever.net
-@@||maxcdn.bootstrapcdn.com^$stylesheet,domain=up-4ever.net
 @@||up4ever.download^$domain=up-4ever.net
 $script,third-party,domain=hitomi.la|rule34hentai.net
 @@||ajax.googleapis.com^$script,domain=rule34hentai.net
