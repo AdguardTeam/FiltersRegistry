@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +iXZmS3ql9N5kaInJPj1ew
-! Diff-Path: ../patches/16/16-s-1742143014-3600.patch
+! Checksum: J/XeqgFlalm9+xsHsiHz5g
+! Diff-Path: ../patches/16/16-s-1742197031-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.51.9
-! TimeUpdated: 2025-03-16T16:32:20+00:00
+! Version: 2.0.51.10
+! TimeUpdated: 2025-03-17T07:32:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -673,12 +673,13 @@ occasions.decathlon.fr##+js(set-constant, FastClick.attach, noopFunc)
 ! lessentiel.lu, 20min.ch - fixes video player
 lessentiel.lu,20min.ch##+js(adjust-setTimeout, setTimeoutIds_, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182538
+empire-streaming.*##+js(remove-attr, href, .content-propose > a[href].btn-ad-iframe)
 empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.isAdbActive, false)
 empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.directHideAds, undefined)
 empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremium.film, 0)
 empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremium.serie, 0)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumMore.film, 0)
-empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumMore.serie, 0)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumMore.film.count, 0)
+empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumMore.serie.count, 0)
 empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumaccount.film, 0)
 empire-streaming.*,empire-anime.com,empire-streamz.fr,empire-stream.*##+js(set-constant, empire.countpremiumaccount.serie, 0)
 ! empire-anime.com
@@ -1658,6 +1659,10 @@ app.molotov.tv##+js(no-xhr-if, /ping?token=)
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/182538
+$popup,third-party,domain=empire-anime.com,badfilter
+! https://github.com/AdguardTeam/AdguardFilters/issues/200952
+$popup,domain=luluvdo.com,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200191
 $popup,domain=vidply.com,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200517
