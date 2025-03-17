@@ -670,8 +670,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/16_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.51.12",
-			"timeUpdated": "2025-03-17T14:32:38+0000",
+			"version": "2.0.51.13",
+			"timeUpdated": "2025-03-17T21:32:24+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
