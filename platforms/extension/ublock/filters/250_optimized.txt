@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: /SM711Cqs4x2Bq78IJRQ9g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1742159252-14400.patch
+! Checksum: 374bz1ZNjMzYBfV4V9689Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1742188001-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.41
@@ -36,7 +36,6 @@ zargan.com###app-menu
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##span.hidden[class$="m:block"]
 bfmtv.com###android_banner
 bfmtv.com#$?#.fixed_title { top: 0 !important }
-/^.*/jquery\.smartbanner/.*$/$match-case
 /^.*/js/smartbanner\..*$/$match-case
 /^.*/smart-app-banner\..*$/$match-case
 fandom.com##.global-footer__section-fandom-apps
@@ -64,6 +63,7 @@ linkedin.com#$?#body { overflow: auto !important; }
 @@://blog.*.top^$document
 @@://pyrofork.*.top^$document
 ||bid^$document
+.life/*/?*=*&*=*&*=*&*=*&*=$document
 .live/*/?*=*&*=*&*=*&*=*&*=$document
 .xyz/*/?*=*&*=*&*=*&*=*&*=$document
 /^.*\.(live|buzz)/.*&[a-z]{1,3}=[a-zA-Z0-9%]{250,}$/$document
@@ -104,6 +104,7 @@ coolrom.com.au,coolrom.com##.download_link
 /^.*\.(cloudfront\.net|xyz|pics)/[a-zA-Z0-9]{20,}/[a-zA-Z0-9]{25,}\+[a-zA-Z0-9+]{90,}$/$document,script,subdocument,image
 ||[2a02:1668:1034::2]^$document
 ||auslogics.com^$document
+||in-automate.brevo.com^
 ||agkn.com^$document
 /^(.*\.|.*//)?tkqlhce\.com/click-.*([?&][a-tv-z]{1,}(=[a-zA-Z0-9]{1,})?){1,}$/$document
 ||datingmap.top^$document
@@ -133,7 +134,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||haltedtrustworthypurpose.com^$all
 ||negateacted.com^$all
 ||analaxadulatory.com^$all
-||cowboysalty.com^$all
 ||gingerconnoisseur.com^$all
 ||inscribemutenessforced.com^$all
 ||expensivelikeness.com^$all
@@ -2599,6 +2599,7 @@ substack.com,microsoftsecurityinsights.com,chipstrat.com##div[class^=subscribe-]
 substack.com,microsoftsecurityinsights.com,chipstrat.com##.subscription-widget-wrap > .show-subscribe
 amazon.*##.nav-flyout.nav-signin-tt
 trello.com##.mod-warning.header-banner
+cdn.memberspace.com/*
 pinterest.*##div[data-test-id=giftWrap]
 quizlet.com##.LoginBottomBar
 quizlet.com#$#.SetPageTerm-largeSide { filter: none !important }
@@ -3190,6 +3191,9 @@ $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
+$removeparam=cx_testId
+$removeparam=cx_testVariant
+$removeparam=cx_artPos
 $removeparam=belboon
 $removeparam=channable
 $removeparam=int_source
@@ -3341,6 +3345,7 @@ $removeparam=hvtargid
 $removeparam=adgrpid
 $removeparam=hvbmt
 $removeparam=cstrackid
+||amazon.$removeparam=SubscriptionId
 ||amazon.$removeparam=hydadcr
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
@@ -3611,23 +3616,17 @@ wenku.baidu.com##+js(set-constant, history.replaceState, noopFunc)
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
-||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
-||bilibili.com^$removeparam=/^playurl.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
-||bilibili.com^$removeparam=accept_quality
 ||bilibili.com^$removeparam=broadcast_type
 ||bilibili.com^$removeparam=bsource
 ||bilibili.com^$removeparam=hotRank
-||bilibili.com^$removeparam=p2p_type
-||bilibili.com^$removeparam=quality_description
 ||bilibili.com^$removeparam=seid
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
 ||bilibili.com^$removeparam=refer_from
 ||bilibili.com^$removeparam=msource
 ||bilibili.com/bangumi$removeparam=theme
-||bilibili.com/audio/au*?$removeparam=type
 ^p=1^$removeparam=p,domain=bilibili.com
 ||bilibili.com^$removeparam=-Arouter
 ||b23.tv^$removeparam=/^share_.*$/
@@ -3650,6 +3649,8 @@ wenku.baidu.com##+js(set-constant, history.replaceState, noopFunc)
 ||iqiyi.com^$removeparam=stype
 ||iqiyi.com^$removeparam=source
 ||iqiyi.com^$removeparam=sr
+||iqiyi.com^$removeparam=ssra
+||iqiyi.com^$removeparam=ssrt
 ||sogou.com^$removeparam=_asf
 ||sogou.com^$removeparam=_ast
 ||sogou.com^$removeparam=lkt
@@ -3696,6 +3697,7 @@ $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
 $removeparam=u1,domain=linksynergy.com|shop-links.co
 $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.com|buzzfeednews.com|drop.com|flaticon.com|nordstrom.com|norton.com|philips.*|symbolab.com|yle.fi|dressmann.com
+$removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 ||son-video.com^$removeparam=ae
 ||fnac.$removeparam=Origin
@@ -3774,6 +3776,7 @@ $document,removeparam=cId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryox
 ||apple.com^$removeparam=/^ign-.*$/
 $removeparam=xcust
 $removeparam=xs,domain=skimresources.com|skimlinks.com|redirectingat.com
+$removeparam=algo,document
 $removeparam=imp_id,document
 ||steampowered.com^$removeparam=ser
 $removeparam=sourceType,domain=vitaminshoppe.com|aliexpress.com
@@ -4069,9 +4072,9 @@ buffalonews.com##+js(set-constant, lee_trkLinkSrc, noopFunc)
 @@||web.archive.org/*_/http$removeparam
 @@||img*.nga$removeparam=cmpid
 @@/aff_c?$removeparam=/^aff_id\d?=.*$/i
+@@||hitta.se^$removeparam=ad_id
 @@||facebook.com^$removeparam=__s
 @@||bing.*/ws/redirect/$removeparam
-@@/unsub/?$removeparam
 @@||email-link.$removeparam
 @@||manage.kmail-lists.com/subscriptions^$removeparam
 @@||urldefense.com^$removeparam
@@ -4113,7 +4116,6 @@ docs.google.com###docs-presence
 ://go.microsoft.com/fwlink/?LinkID=219472^$all
 foodora.*#$#.page-wrapper.order-component { margin-top: 128px !important }
 foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
-/^https://[a-z]{8,25}\.com/v2[a-zA-Z0-9_-]{70,}$/$xmlhttprequest,ping,third-party,important
 @@/favicon.ico|
 @@/favicon1.ico|
 @@://adtech.adserver.advertising.$third-party
