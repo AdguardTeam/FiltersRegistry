@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9C6YX7uhFYa/X0IFHt3hvA
-! Diff-Path: ../patches/19/19-s-1742197032-3600.patch
+! Checksum: Fx8OQG1DMwXniC1x+7d8mA
+! Diff-Path: ../patches/19/19-s-1742200675-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.52.11
-! TimeUpdated: 2025-03-17T07:32:26+00:00
+! Version: 2.0.52.12
+! TimeUpdated: 2025-03-17T08:32:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -88,6 +88,10 @@ www.kinopoisk.ru##div[class^="styles_adBlockWarningRoot"]
 ! auto.ru
 auto.ru##+js(json-prune, ads)
 auto.ru##+js(abort-on-property-read, Object.prototype.RenderMarks)
+!
+! shedevrum.ai
+shedevrum.ai##+js(set-constant, Object.prototype.isStickyAd, undefined)
+shedevrum.ai###app > div.z-\[12\].bg-white
 !
 ! END: Yandex
 !
@@ -12938,6 +12942,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+tanstack.com##.px-4:has(> div.rounded-md > form > div.grid > input[name="email_address"])
 anime-jl.com##.Mid > div[style]:has(> center > a[href="https://t.me/RivAnimation"])
 ntv.com.tr##.subscribe-widget-container
 cnnturk.com##figure[data-type="flipboard"]
