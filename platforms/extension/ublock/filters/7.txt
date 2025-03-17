@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: BK/HZVs1EdRXKuqUJEASsg
-! Diff-Path: ../patches/7/7-s-1742218641-3600.patch
+! Checksum: RAE89k43ueOc3TUVHBx2tA
+! Diff-Path: ../patches/7/7-s-1742222277-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.63.4
-! TimeUpdated: 2025-03-17T13:31:59+00:00
+! Version: 2.0.63.5
+! TimeUpdated: 2025-03-17T14:32:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1743,10 +1743,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-nicomanga.com##.owl-stage > div.owl-item:has(a[target="_blank"])
-ac-illust.com###ac-main-content > div.ac-my-2
 ascii2d.net#?#.item-box:has(> div.p-t-1 > h5:contains(広告))
-photo-ac.com##div[style^="min-height:"][class*="ac-m"]
 373news.com##.components-core-blocks-contents-ad-footer
 373news.com##.components-core-blocks-contents-ad-news-detail
 373news.com##.components-core-blocks-contents-ad-text-pr
@@ -2149,6 +2146,7 @@ korewaeroi.com##.postCta
 korewaeroi.com##div[style*="min-height: 250px;"]
 baseball.yahoo.co.jp##a[href^="https://pacificleague.com/setup/plan"] > img
 croissant-online.jp##.single-infeed
+||tsumanne.net/maniax2.js
 ||tsumanne.net/inoue.html
 ||tsumanne.net/dmm.js
 ||tsumanne.net/getchu.js
@@ -2820,6 +2818,10 @@ tbs.co.jp##.ad_pc_article_undertitle
 hon-hikidashi.jp##.article__contents > p:last-child:has(> .adsbygoogle)
 hon-hikidashi.jp##.sideCustomBlock__inr > .sideChoiceBlock:has(> .sideChoiceBlock__inr > .sideChoiceBlock__list > a.banner__link)
 famitsu.com##.article-body__contents > a.btn-deep-orange[href*="?"][target="_blank"][rel="nofollow noopener"]:has(~ div#art-toc)
+ac-illust.com,photo-ac.com,silhouette-ac.com##+js(set-constant, isGGSurvey, true)
+ac-illust.com,photo-ac.com,silhouette-ac.com##+js(set-constant, enable_dl_after_countdown, true)
+ac-illust.com,photo-ac.com##.ac-p-2.bg-light[style="min-height: 312px;"]
+ac-illust.com,photo-ac.com##.raksul-fixed-banner
 ac-illust.com##.container figure ~ div[class^="col-"]:has(> .bg-light [id^="div-gpt-ad"])
 ac-illust.com##.flux-all-footer.ac-z-index-999.position-fixed.bg-light.w-100[style]
 freebie-ac.jp##.flux-ads-display
@@ -11222,6 +11224,12 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 !
 !
 !
+! fix download
+@@||g.doubleclick.net/gampad/ads?$xmlhttprequest,domain=video-ac.com
+@@||g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=video-ac.com
+@@||g.doubleclick.net/tag/js/gpt.js$domain=video-ac.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=video-ac.com
+@@||safeframe.googlesyndication.com/safeframe/$domain=video-ac.com
 ! fix search
 @@||passnaviad.durasite.net/A-affiliate2/multiMobile?keywords=netApply_$domain=passnavi.obunsha.co.jp
 ! https://hoyme.jp/shindan/94283
