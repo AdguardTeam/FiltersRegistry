@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.75.54",
-			"timeUpdated": "2025-03-17T12:31:33+0000",
+			"version": "2.3.75.55",
+			"timeUpdated": "2025-03-17T13:31:28+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.12.28",
-			"timeUpdated": "2025-03-17T12:31:50+0000",
+			"version": "2.1.12.29",
+			"timeUpdated": "2025-03-17T13:31:47+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.63.3",
-			"timeUpdated": "2025-03-17T11:32:22+0000",
+			"version": "2.0.63.4",
+			"timeUpdated": "2025-03-17T13:31:59+0000",
 			"languages": [
 				"ja"
 			]
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.59.20",
-			"timeUpdated": "2025-03-15T16:32:04+0000",
+			"version": "2.0.59.21",
+			"timeUpdated": "2025-03-17T13:32:09+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.24.87",
-			"timeUpdated": "2025-03-17T12:32:26+0000",
+			"version": "2.2.24.88",
+			"timeUpdated": "2025-03-17T13:32:23+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.31.52",
-			"timeUpdated": "2025-03-17T08:32:35+0000",
+			"version": "2.0.31.53",
+			"timeUpdated": "2025-03-17T13:32:32+0000",
 			"languages": []
 		},
 		{
@@ -348,8 +348,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/22.txt",
-			"version": "2.0.11.30",
-			"timeUpdated": "2025-03-13T12:46:46+0000",
+			"version": "2.0.11.31",
+			"timeUpdated": "2025-03-17T13:32:32+0000",
 			"languages": []
 		},
 		{
