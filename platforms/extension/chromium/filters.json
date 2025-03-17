@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.75.46",
-			"timeUpdated": "2025-03-16T16:31:29+0000",
+			"version": "2.3.75.47",
+			"timeUpdated": "2025-03-17T01:31:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.12.23",
-			"timeUpdated": "2025-03-16T12:31:44+0000",
+			"version": "2.1.12.24",
+			"timeUpdated": "2025-03-17T01:31:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.24.77",
-			"timeUpdated": "2025-03-15T20:32:15+0000",
+			"version": "2.2.24.78",
+			"timeUpdated": "2025-03-17T01:32:14+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.25",
-			"timeUpdated": "2025-03-14T20:37:17+0000",
+			"version": "2.0.58.26",
+			"timeUpdated": "2025-03-17T01:32:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.52.8",
-			"timeUpdated": "2025-03-15T20:32:23+0000",
+			"version": "2.0.52.9",
+			"timeUpdated": "2025-03-17T01:32:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.33.14",
-			"timeUpdated": "2025-03-16T23:32:25+0000",
+			"version": "2.1.33.15",
+			"timeUpdated": "2025-03-17T01:32:29+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
