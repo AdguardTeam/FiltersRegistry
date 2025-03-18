@@ -1,9 +1,9 @@
-! Checksum: 3R84+NqrargU4yFWUCkPbg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1742259993-14400.patch
+! Checksum: Jw7ImNUl9u+D0WsDlfUk7g
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1742274387-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.38.50
-! TimeUpdated: 2025-03-18T01:01:29+00:00
+! Version: 2.1.38.51
+! TimeUpdated: 2025-03-18T05:01:27+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -share-bar/$~stylesheet
@@ -83,6 +83,7 @@
 /shareon.min.css
 /sharer.js
 /sharethis.js
+/shareTools.js
 /shariff.complete.js
 /shariff.min.js
 /silicon-counters.js
@@ -503,6 +504,7 @@ _social_bookmark/
 ###socialNetworks
 ###socialPopup
 ###socialShare
+###socialShareMenuBtn
 ###socialSharing
 ###socialTwitter
 ###socialWrap
@@ -826,7 +828,6 @@ _social_bookmark/
 ##.bd-FooterSocials-item
 ##.bd-socialicon
 ##.bdaia-social-io
-##.beSocialShare
 ##.beacon-social
 ##.better-social-counter
 ##.bi-share
@@ -917,6 +918,7 @@ _social_bookmark/
 ##.c-tools-share
 ##.cShareLink
 ##.c_facebook
+##.c_share
 ##.c_social-toolbar
 ##.caas-share-section
 ##.cactus-share-and-like
@@ -976,6 +978,7 @@ _social_bookmark/
 ##.d3-o-share-bar
 ##.dashicons-facebook
 ##.dashicons-twitter
+##.desktop-share
 ##.desktop-social
 ##.detail-share
 ##.detail-share-btIco
@@ -1062,6 +1065,7 @@ _social_bookmark/
 ##.et_social_twitter
 ##.expand-share
 ##.f-sns
+##.facebook-badge
 ##.facebook-banner
 ##.facebook-banner-wrapper
 ##.facebook-bg
@@ -1098,6 +1102,7 @@ _social_bookmark/
 ##.facebook_share
 ##.facebook_sm
 ##.facebook_widget
+##.facebookbox
 ##.facebooklike
 ##.facebookshare
 ##.facewrapper
@@ -1126,6 +1131,7 @@ _social_bookmark/
 ##.fb_like_and_share
 ##.fb_report_icon
 ##.fb_share
+##.fb_share_link
 ##.fb_social
 ##.fb_widget
 ##.fb_wrap
@@ -1182,6 +1188,7 @@ _social_bookmark/
 ##.follow-us-icons
 ##.follow-us-on-twitter
 ##.follow-us-wrapper
+##.follow-us__links
 ##.follow-widget
 ##.followFooter
 ##.followSocial
@@ -1632,7 +1639,6 @@ _social_bookmark/
 ##.m-footer-social
 ##.m-header--social-nav
 ##.m-header__social
-##.m-icon-tw
 ##.m-share
 ##.m-share-bar__link
 ##.m-sharebar
@@ -1755,6 +1761,7 @@ _social_bookmark/
 ##.new-share
 ##.new-social
 ##.newGigyaShare
+##.news-detail-share
 ##.news-header-social
 ##.news-share
 ##.news-share-button
@@ -1824,7 +1831,6 @@ _social_bookmark/
 ##.pinterest-share-btn
 ##.pinterest-share-button
 ##.pinterest-sharetool
-##.pinterest-wrapper
 ##.pinterest.share
 ##.pinterestShare
 ##.pinterest_btn
@@ -1978,6 +1984,7 @@ _social_bookmark/
 ##.share-bg
 ##.share-block
 ##.share-block-item
+##.share-blog
 ##.share-body
 ##.share-bottom
 ##.share-box-wrapper
@@ -2232,6 +2239,7 @@ _social_bookmark/
 ##.share_post
 ##.share_posts
 ##.share_row
+##.share_small
 ##.share_social
 ##.share_story
 ##.share_tb
@@ -2366,6 +2374,7 @@ _social_bookmark/
 ##.sideShare
 ##.side_sns
 ##.side_social
+##.sidebar-facebook
 ##.sidebar-share
 ##.sidebar-social
 ##.sidebar-socials
@@ -2565,6 +2574,7 @@ _social_bookmark/
 ##.social-media-sharing
 ##.social-media-twitter
 ##.social-media-widget
+##.social-media-widget-container
 ##.social-media-wrapper
 ##.social-menu-item
 ##.social-meta-item
@@ -2713,7 +2723,6 @@ _social_bookmark/
 ##.socialMediaContainer
 ##.socialMediaIcon
 ##.socialMediaIcons
-##.socialMediaLinkContainer
 ##.socialMediaLinks
 ##.socialMediaList
 ##.socialMediaShare
@@ -2733,13 +2742,13 @@ _social_bookmark/
 ##.socialWidget
 ##.socialWrap
 ##.socialWrapper
+##.social_b
 ##.social_bar
 ##.social_bookmark
 ##.social_bookmarks
 ##.social_bottom
 ##.social_fix
 ##.social_follow
-##.social_foot
 ##.social_footer
 ##.social_header
 ##.social_item
@@ -2793,6 +2802,7 @@ _social_bookmark/
 ##.socialmedia-article
 ##.socialmedia-buttons
 ##.socialmedia-container
+##.socialmedia-footer
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
@@ -2974,6 +2984,7 @@ _social_bookmark/
 ##.twitter_sm
 ##.twitter_widget
 ##.twitterbird
+##.twitterbox
 ##.twitterbtn
 ##.twitterbutton
 ##.twitterlink
@@ -3044,6 +3055,7 @@ _social_bookmark/
 ##.widget_better-social-counter
 ##.widget_boombox_social
 ##.widget_bs-likebox
+##.widget_custom-twitter-feeds-widget
 ##.widget_dpsp_social_media_follow
 ##.widget_easy_facebook_page_plugin
 ##.widget_epcl_social
@@ -3066,6 +3078,7 @@ _social_bookmark/
 ##.widget_tie-instagram-theme
 ##.widget_twitter
 ##.widget_twitter_timeline
+##.widget_vw_widget_social_counter
 ##.widget_wpcom_social_media_icons_widget
 ##.wp-block-social-links
 ##.wp-embed-share
@@ -3309,6 +3322,7 @@ salon.com###social_total
 nsctotal.com.br,pastebin.pl###socials
 motortrend.com###socialshare_title
 news.crunchbase.com###ss-sticky-bar
+jstage.jst.go.jp###sticky-sidebar-shareicons
 rfa.org###storytoptools
 osxdaily.com###subscribe_box
 thenewstack.io###tns-footer-bar
@@ -3424,7 +3438,6 @@ vt.edu##.follow-virginia-tech-icons
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
 meteoblue.com##.footer-options
 videogamer.com##.footer-social
-freesvg.org##.footer-social-big
 tribune.com.pk,voetbalkrant.com,wielerkrant.be##.footer-social-icons
 gastrojournal.ch,myanimelist.net##.footer-social-media
 popsci.com##.footer-socials-wrapper
@@ -3655,6 +3668,7 @@ theguardian.com##div > gu-island[name="ShareButton"]
 theatlantic.com##div[class^="ArticleShare_"]
 cnbc.com##div[class^="SocialShare-"]
 wired.com##div[class^="StickyBoxWrapper"]
+thisismoney.co.uk##div[class^="socialContainer-"]
 reuters.com##div[class^="social__container_"]
 abc.net.au##div[data-component="ShareUtility"]
 ea.com##ea-social-links
@@ -3756,9 +3770,9 @@ nn.de,nordbayern.de##.icon__social
 kicker.de##.kick__article__social
 ndr.de##.meta
 all-in.de##.nfy-social-line
+hansa-online.de##.printfriendly
 orf.at##.share-dialog
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
-film-rezensionen.de##.sharing-block-wrap
 bild.de##.sharingbar
 urlaubsguru.de##.smeShare
 presseportal.de##.story-sharing
@@ -3768,12 +3782,14 @@ watson.ch##.watson-sharebuttons
 handelsblatt.com##app-icon-link
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
+boursedirect.fr##.content-social
 lefigaro.fr##.fig-share-mobile-layer
 lefigaro.fr##.fig-sharebar
 gamekult.com##.gk__footer__social-bar
 gamekult.com##.gk__share
 gamekult.com##.gk__share__label
 lesnumeriques.com##.ln__m-shr
+autoplus.fr##.nl-social
 quechoisir.org##.qc-footer_social-media-links
 melty.fr##.share
 gameblog.fr##.social-button:not(.comment-button):not(.heart-button)
@@ -3834,7 +3850,6 @@ macitynet.it##.tds-button
 tuttomercatoweb.com##.telegram
 tg.la7.it##.tgla7-condividi
 fastweb.it##.tutplus-socials
-sorrisi.com##.tvsc-footer-social
 sorrisi.com##.tvsc-social-share
 mymovies.it##.vota-pul-consiglio
 virgilio.it##.vv-shr
@@ -3922,6 +3937,7 @@ elplural.com##.btn-whatsapp
 eleconomista.com.mx,huffingtonpost.es,listindiario.com,segre.com##.c-detail__share
 eleconomista.com.mx,listindiario.com##.c-footer__share
 adslzone.net##.comments-social-share
+ecologiaverde.com,el9nou.cat,elsaltodiario.com,lanacion.com.ar,laverdad.com,psicologia-online.com,qmusica.tv,revistafamilia.ec##.compartir
 dolarhoy.com##.compartir_redes
 elcolombiano.com##.contenedor-google-noticias
 13.cl##.cuerpo-share
@@ -3935,6 +3951,7 @@ milanuncios.com##.ma-AdDetailShare
 canalnet.tv##.main-video-single__socials
 genbeta.com,vidaextra.com##.menu-follow
 depor.com##.nav__story-social-network
+ecologiaverde.com##.open-compartir
 biobiochile.cl##.post-social-container
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,welife.es##.rrss
 elcomercio.pe,gestion.pe##.s-buttons
