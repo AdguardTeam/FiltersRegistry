@@ -1,9 +1,9 @@
-! Checksum: hFv4ZgjMRSAitGshYqwssw
-! Diff-Path: ../patches/2/2-s-1742308736-3600.patch
+! Checksum: 8v/jDZmB5DM7qBW4MtpqLA
+! Diff-Path: ../patches/2/2-s-1742315847-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.69
-! TimeUpdated: 2025-03-18T14:31:55+00:00
+! Version: 2.3.75.70
+! TimeUpdated: 2025-03-18T16:31:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19320,7 +19320,7 @@ nxbrew.net,nsw2u.*,tresdaos.com,galinhasamurai.com,tv.latinlucha.es,4horlover.co
 ! #%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'init();')
 djstar.in,lovingsiren.com,arzmatic.com,imperiofilmes.co,sexporncomic.com,spanish.visorsmr.com,gazzettarossonera.it,men4menporn.eu#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'init();')
 ! #%#//scriptlet('abort-current-inline-script', 'chp_ads_blocker_detector')
-moto-station.com,seirsanduk.com,branditechture.agency,team-octavi.com,azdly.com,mxcity.mx,softcobra.com,technorj.com,cizgifilmizle.info,kawaguchimaeda.com,herenscan.com,coursesdaddy.com#%#//scriptlet('abort-current-inline-script', 'chp_ads_blocker_detector')
+recipenp.com,moto-station.com,seirsanduk.com,branditechture.agency,team-octavi.com,azdly.com,mxcity.mx,softcobra.com,technorj.com,cizgifilmizle.info,kawaguchimaeda.com,herenscan.com,coursesdaddy.com#%#//scriptlet('abort-current-inline-script', 'chp_ads_blocker_detector')
 ! others
 ! #%#//scriptlet('abort-on-property-write', 'AdblockRegixFinder')
 ourcoincash.xyz,idrom.top,claimtrx.com,claimsatoshi.xyz#%#//scriptlet('abort-on-property-write', 'AdblockRegixFinder')
@@ -19612,6 +19612,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+!https://github.com/AdguardTeam/AdguardFilters/issues/201055
+interfans.org#%#//scriptlet('remove-node-text', 'script', 'adBlockAction')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200729
 smoothpre.com###adbd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200390
@@ -46351,9 +46353,14 @@ infinityfree.com#$?#html[lang][dir="ltr"] [id^="img_"][style]:has(iframe[framebo
 smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 ! Common rules, which partially hide banners
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##html[class^="img_"][amp4ads=""][i-amphtml-layout=""][i-amphtml-no-boilerplate=""][amp-version="2502032353000"]
+~dogdrip.net,~infinityfree.com,~smsonline.cloud##a[href^="https://07c225f3.online/contents/"]:not([href*="/95/"]):not([href*="/802/"])
+~dogdrip.net,~infinityfree.com,~smsonline.cloud##a[href^="https://html-load.com/contents/"]:not([href*="/95/"]):not([href*="/984/"])
 07c225f3.online,content-loader.com,css-load.com,html-load.com,img-load.com#$?#body:not(:has(> [id^="img_"][class^="img_"][style="width: auto;"]:only-child)) { filter: opacity(0) !important; pointer-events: none !important; }
 $~script,~subdocument,~xmlhttprequest,domain=07c225f3.online|content-loader.com|css-load.com|html-load.com|img-load.com
 @@/-1/*$domain=07c225f3.online|content-loader.com|css-load.com|html-load.com|img-load.com
+$script,subdocument,xmlhttprequest,domain=07c225f3.online|html-load.com
+@@/802/*$script,subdocument,xmlhttprequest,domain=07c225f3.online
+@@/984/*$script,subdocument,xmlhttprequest,domain=html-load.com
 ! END: Ad-Shield ad reinsertion
 !
 ! ExoClick
@@ -46593,10 +46600,15 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+ww2-weapons.com###sgpb-popup-dialog-main-div-wrapper
+ww2-weapons.com##.sgpb-popup-overlay
+ww2-weapons.com##[class*="warhist-"]
+ww2-weapons.com##[id*="media"]
 nsmb.com##.block_a_d
 nsmb.com###header-banner
 [$path=/vp]video4k.cc##.video-view-ads-control
 [$path=/vp]video4k.cc#%#//scriptlet('trusted-replace-node-text', 'script', 'setTimeout', '/10010/', '1')
+wired.com##div[class^="StickyHeroAdWrapper-"]
 /^https:\/\/mkvcinemas\.[a-z]+\/data\/cache\/min\/1\/[a-f0-9]{8}\.js/$script,domain=mkvcinemas.*
 mkvcinemas.*##.code-block:has(a[title="mkvAnime"])
 vipstand.*##button[data-openuri*="https://whouphesaussums.net/"]
@@ -99773,6 +99785,7 @@ browsershots.org#@#.advert_area
 ||garretdistort.com^
 ||garrisonparttimemount.com^
 ||gartaurdeeworsi.net^
+||garthsava.com^
 ||gasolinefax.com^
 ||gaspedtowelpitfall.com^
 ||gastphonol.top^
@@ -101186,6 +101199,7 @@ browsershots.org#@#.advert_area
 ||highrevenuenetwork.com^
 ||highwaycpmrevenue.com^
 ||higouckoavuck.net^
+||higrigake.com^
 ||hiidevelelastic.com^
 ||hiiona.com^
 ||hikestale.com^
@@ -103743,6 +103757,7 @@ browsershots.org#@#.advert_area
 ||lhbrkotf.xyz^
 ||lheadydedfearinglest.org^
 ||lhmos.com^
+||lhpigkujw.com^
 ||lhukudauwklhd.xyz^
 ||li.blogtrottr.com^
 ||liabilitygenerator.com^
@@ -105568,6 +105583,7 @@ browsershots.org#@#.advert_area
 ||nagnailmobcap.shop^
 ||nagrande.com^
 ||nagsmanasdics.shop^
+||naiantmucksy.com^
 ||naiglipu.xyz^
 ||naimoate.xyz^
 ||naipsouz.net^
@@ -107095,6 +107111,7 @@ browsershots.org#@#.advert_area
 ||oundaymitools.org^
 ||oundhertobeconsi.com^
 ||oungimuk.net^
+||oungirtuwhoo.net^
 ||ounobdlzzks.world^
 ||ounsissoadry.net^
 ||oupaumul.net^
@@ -107374,6 +107391,7 @@ browsershots.org#@#.advert_area
 ||paleogdeedful.top^
 ||paletteantler.com^
 ||palibs.tech^
+||palliondout.com^
 ||pallivermis.shop^
 ||palliwaklgz.com^
 ||pallorirony.com^
@@ -113737,6 +113755,7 @@ browsershots.org#@#.advert_area
 ||toscytheran.com^
 ||tosfeed.com^
 ||tossquicklypluck.com^
+||tostervar.shop^
 ||totalab.xyz^
 ||totaladblock.com^
 ||totaldrag.pro^
@@ -113836,6 +113855,7 @@ browsershots.org#@#.advert_area
 ||trackvol.com^
 ||trackvoluum.com^
 ||trackwilltrk.com^
+||trackzd.com^
 ||tracot.com^
 ||tractorfoolproofstandard.com^
 ||tradbypass.com^
@@ -115278,6 +115298,7 @@ browsershots.org#@#.advert_area
 ||vodlpsf.com^
 ||vodobyve.pro^
 ||vodsoamsoun.net^
+||vohainoaho.net^
 ||vohqpgsdn.xyz^
 ||voicebeddingtaint.com^
 ||voicedstart.com^
@@ -119284,6 +119305,7 @@ browsershots.org#@#.advert_area
 ||78b78ff8.xyz^
 ||79180284.xyz^
 ||79391192.xyz^
+||79582961.xyz^
 ||79893962.xyz^
 ||7fc8.site^
 ||80133082.xyz^
@@ -135560,7 +135582,7 @@ tripadvisor.com#?#.cAWGu:-abp-has(a:-abp-contains(Similar Sponsored Properties))
 tripadvisor.com#?#.tkvEM:-abp-contains(Sponsored)
 twitter.com,x.com#?#h2[role="heading"]:-abp-contains(/Promoted|Gesponsert|Promocionado|Sponsorisé|Sponsorizzato|Promowane|Promovido|Реклама|Uitgelicht|Sponsorlu|Promotert|Promoveret|Sponsrad|Mainostettu|Sponzorováno|Promovat|Ajánlott|Προωθημένο|Dipromosikan|Được quảng bá|推廣|推广|推薦|推荐|プロモーション|프로모션|ประชาสมพนธ|परचरत|বজঞপত|تشہیر شدہ|مروج|تبلیغی|מקודם/)
 vofomovies.info#?#a13:-abp-contains( Ad)
-bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^(Amazon|Best Buy|Booking\.com|eBay|eDreams|Lenovo US|Trip\.com|Tripadvisor|Walmart)$/))
+bing.com#?#li.b_algo:has(.rms_img[src*="id=ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F"]):has(.tptt:-abp-contains(/^([Aa]mazon(\.[acdefinps][aeglnorst]m?\.?[abjmtu]?[kprux]?)?|Best Buy|Booking\.com|eBay|eDreams|Lenovo US|Trip\.com|Tripadvisor|Walmart)$/))
 tripadvisor.*#?#.AaFRW:-abp-contains(Sponsored)
 modivo.*#?#.banner:-abp-contains(/Sponsorizzato|Sponsorowane|Sponsorizat|Sponzorováno|Szponzorált|Спонсорирани|Sponsored|Gesponsert/)
 modivo.*#?#.product:-abp-contains(/Sponsorizzato|Sponsorowane|Sponsorizat|Sponzorováno|Szponzorált|Спонсорирани|Sponsored|Gesponsert/)
