@@ -1,9 +1,9 @@
-! Checksum: 0jvXKfCOcZeRlEnd8OwvQw
-! Diff-Path: ../patches/2/2-s-1742423803-3600.patch
+! Checksum: gDypGfcTQq48PdPV+9VicQ
+! Diff-Path: ../patches/2/2-s-1742427394-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.87
-! TimeUpdated: 2025-03-19T22:31:29+00:00
+! Version: 2.3.75.88
+! TimeUpdated: 2025-03-19T23:31:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -47186,6 +47186,7 @@ youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', '
 ! youtube.com,youtubekids.com,youtube-nocookie.com#%#//scriptlet('trusted-replace-xhr-response', '/\"playerAds.*?\}\}\]\,/', '', '/player\?key=|watch\?[tv]=/')
 !youtube.com#%#//scriptlet('json-prune', 'playerResponse.playerConfig.ssapConfig playerConfig.ssapConfig')
 ! Exclude "get_drm_license" from "player" url because it breaks "Free with ads" movies
+youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.adSlots', 'playerResponse.streamingData.serverAbrStreamingUrl')
 youtube.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=|get_watch\?/')
 youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=|get_watch\?/')
 ! To obtain native "fetch" method YouTube creates an iframe with "sandbox" attribute in which extension cannot inject scriptlets, the rule below is a workaround to fix this
