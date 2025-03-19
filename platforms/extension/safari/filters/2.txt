@@ -1,9 +1,9 @@
-! Checksum: FuB3aCTCAJYKBB2azy1uHg
-! Diff-Path: ../patches/2/2-s-1742387867-3600.patch
+! Checksum: 4Z5FF89KqTsqMsgNW26cEw
+! Diff-Path: ../patches/2/2-s-1742395090-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.79
-! TimeUpdated: 2025-03-19T12:31:57+00:00
+! Version: 2.3.75.80
+! TimeUpdated: 2025-03-19T14:31:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -47504,6 +47504,7 @@ dogdrip.net#$?#html[lang="ko"] [id^="img_"][style]:has(iframe[frameborder="0"][s
 infinityfree.com#$?#html[lang][dir="ltr"] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 ! Common rules, which partially hide banners
+~dogdrip.net,~infinityfree.com,~smsonline.cloud##html[class^="img_"][amp4ads=""][i-amphtml-layout=""][i-amphtml-no-boilerplate=""][amp-version="2502032353000"]
 ! END: Ad-Shield ad reinsertion
 !
 ! ExoClick
@@ -47756,6 +47757,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+plotaroute.com###AdPanelRight
+plotaroute.com#$#body > #Page:has(+ #AdPanelRight) { right: 0 !important; }
 sfgate.com##main > div.f:has(> div.zone > div.package div[data-block-type="ad"])
 sfgate.com##.fdc > div.package:has(> div.s > div[data-block-type="ad"])
 mhwilds.kiranico.com##div[id="mhwilds.banner.top"]

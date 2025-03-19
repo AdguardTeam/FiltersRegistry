@@ -1,9 +1,9 @@
-! Checksum: NmMiKHGv8jf+ARqpMqiUpg
-! Diff-Path: ../patches/2/2-s-1742387879-3600.patch
+! Checksum: lG468PLWJuFUPZAzV6Yt5A
+! Diff-Path: ../patches/2/2-s-1742395101-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.79
-! TimeUpdated: 2025-03-19T12:31:57+00:00
+! Version: 2.3.75.80
+! TimeUpdated: 2025-03-19T14:31:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -48772,6 +48772,7 @@ dogdrip.net#$?#html[lang="ko"] [id^="img_"][style]:has(iframe[frameborder="0"][s
 infinityfree.com#$?#html[lang][dir="ltr"] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 ! Common rules, which partially hide banners
+~dogdrip.net,~infinityfree.com,~smsonline.cloud##html[class^="img_"][amp4ads=""][i-amphtml-layout=""][i-amphtml-no-boilerplate=""][amp-version="2502032353000"]
 ##a[target="_blank"][rel="noopener noreferrer"]:has(> div#container > div.img_container > img[src^="https://asset.ad-shield.cc"])
 ##body > a[href^="https://www.amazon."][href*="tag=adshield"][target="_blank"]
 ##body > a[href^="https://s.click.aliexpress.com"][target="_blank"][rel="noopener noreferrer"]
@@ -48790,6 +48791,7 @@ smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[framebo
 ##a[style^="background:transparent url"][style*=".html-load.com/contents/"]
 ##body > a[attributionsrc*=".html-load.com/contents/"]
 ##body > a[href^="https://html-load.com/contents/"][target="_top"]
+##body > a[target="_blank"][rel="noopener noreferrer"][href^="https://07c225f3.online/contents/"][href*="/0/"]
 ##body > a[target="_blank"][rel="noopener noreferrer"][href^="https://html-load.com/contents/"][href*="/0/"]
 ##body > div:not([class]):not([id]) > script + div[id^="img_"] > div[id^="img_"][visibility="visible"]
 ##body > div:not([class]):not([id]) > script + div[id^="img_"] > script + span[id^="img_"][style] > a[href^="https://html-load.com/contents/"]
@@ -48809,12 +48811,14 @@ smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[framebo
 ##body[class^="img_"][style$="running none;"]
 ##body[onclick="ExitApi.exit();"][style="cursor:pointer"] > a[href="javascript:(function(){open(window.clickTag)})()"]
 ##div[class^="img_"] > table[class^="img_"]
-##div[class^="img_"][id^="img_"][active_view_class_name]
 ##div[class^="img_"][onclick^="handleClick(event, 'https:"]
 ##div[class^="img_"][started="true"]
 ##div[class^="img_"][style$="196px; position: absolute;"]
+##div[class^="img_"][style="width:100%"]
 ##div[class^="img_"][style^="grid-template-areas:'product-image buy-box"]
 ##div[class^="img_"][style^="width: 410px"] > div[class^="img_"] > lima-video
+##div[class^="img_"][id^="img_"][active_view_class_name]
+##div[class^="img_"][id^="img_"][style^="width: 300px; height: 254px;"]
 ##div[id^="img_"] > div[id^="img_"][style="width: auto;"]
 ##div[id^="img_"] > div[style$="text-decoration:none;width:300px;"]
 ##div[id^="img_"] > div[style^="margin:0;padding:0;"]
@@ -48860,6 +48864,7 @@ smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[framebo
 ##div[style*="left: 0px; z-index: 1000000000"] > div > div[id^="img_"]
 ##div[style="display:inline"][class^="img_"] > div[style="display:flex;"]
 ##div[style^="position:absolute;left:0px;"] + div[class^="img_"]
+##div[style^="position:absolute;"] > div[id^="img_"]
 ##div[style^="transition-duration:0ms!important;margin:0px!important;padding:0px!important;border:none!important;position:absolute!important;top:0px!important;"]
 ##div[style] > div[style="position:absolute;display:none;"] + meta + meta + div[class^="img_"]
 ##div[style^="position:"][ontouchstart="fCidsp(event)"]
@@ -48893,6 +48898,7 @@ smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[framebo
 ##section[class^="img_"] > div[id^="img_"][class^="img_"][draggable="false"]
 ##script + style + div[class^="img_"]
 ##script[attributionsrc] + div[id^="img_"]
+##script[id^="img_"] + div[id^="img_"]
 ##script[name="scrbnr"] + div[class^="img_"]
 ##script[src*=".html-load.com/contents/"] + div[id^="img_"]:empty
 ##script[src*=".html-load.com/contents/"] + div[id^="img_"][style="width: auto;"]
@@ -49160,6 +49166,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+plotaroute.com###AdPanelRight
+plotaroute.com#$#body > #Page:has(+ #AdPanelRight) { right: 0 !important; }
 sfgate.com##main > div.f:has(> div.zone > div.package div[data-block-type="ad"])
 sfgate.com##.fdc > div.package:has(> div.s > div[data-block-type="ad"])
 mhwilds.kiranico.com##div[id="mhwilds.banner.top"]
