@@ -1,8 +1,8 @@
-! Checksum: i0opDXucsQ5oln2XLCSYtw
+! Checksum: J2f1EDrDsLCbj/dTr43Kwg
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.52.27
-! TimeUpdated: 2025-03-19T10:32:32+00:00
+! Version: 2.0.52.28
+! TimeUpdated: 2025-03-19T11:32:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -105,6 +105,7 @@ auto.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.RenderMarks')
 ! shedevrum.ai
 shedevrum.ai#%#//scriptlet('set-constant', 'Object.prototype.isStickyAd', 'undefined')
 shedevrum.ai###app > div.z-\[12\].bg-white
+@@||shedevrum.ai^$generichide
 !
 ! END: Yandex
 !
@@ -4432,6 +4433,8 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+novapost.com#%#//scriptlet('trusted-set-local-storage-item', 'lastDisplayedHolidayInfoDate', '$currentDate$')
+novapost.com#%#//scriptlet('set-session-storage-item', 'bannerClosed', 'true')
 ac-illust.com,photo-ac.com###bannerPresentationsModal
 dzen.ru##div[class^="dzen-desktop--interview-popup-"]
 sky.pro##.modal_darkBG__ZqnlK

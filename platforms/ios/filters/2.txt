@@ -1,9 +1,9 @@
-! Checksum: mILp/uPh3+F6QXqx69eKKQ
-! Diff-Path: ../patches/2/2-s-1742380629-3600.patch
+! Checksum: CpcIvjEqrylsCa9ncufMpA
+! Diff-Path: ../patches/2/2-s-1742384262-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.77
-! TimeUpdated: 2025-03-19T10:31:31+00:00
+! Version: 2.3.75.78
+! TimeUpdated: 2025-03-19T11:31:38+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19709,7 +19709,13 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
-!https://github.com/AdguardTeam/AdguardFilters/issues/201055
+! https://github.com/AdguardTeam/AdguardFilters/issues/201059
+skill4ltu.eu#%#//scriptlet('set-constant', '__VM_WPK_C_LR__i', 'emptyArr')
+skill4ltu.eu#%#//scriptlet('prevent-element-src-loading', 'script', '/hb\.vntsm\.com|pagead2\.googlesyndication\.com|amazon-adsystem\.com/')
+@@||c.amazon-adsystem.com/aax2/apstag.js?_=$domain=skill4ltu.eu
+@@||hb.vntsm.com/v4/live/vms/sites/skill4ltu.eu/index.js$domain=skill4ltu.eu
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=skill4ltu.eu
+! https://github.com/AdguardTeam/AdguardFilters/issues/201055
 interfans.org#%#//scriptlet('remove-node-text', 'script', 'adBlockAction')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||interfans.org^$generichide
@@ -48757,6 +48763,8 @@ kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,forsal.pl,economi
 kreuzwortraetsel.de,petitfute.com,tportal.hr,cool-style.com.tw,forsal.pl,economictimes.com,woxikon.de,mynet.com,gazetaprawna.pl,verkaufsoffener-sonntag.com,heureka.cz,modhub.us,missyusa.com,cruciverba.it,motscroises.fr,palabr.as,word-grabber.com,wort-suchen.de,issuya.com,pressian.com,pravda.com.ua,lamire.jp,picrew.me,mydaily.co.kr,badmouth1.com,taxguru.in,sportsrec.com,reportera.co.kr,tweaksforgeeks.com,fourfourtwo.co.kr,flatpanelshd.com,wfmz.com,videogamemods.com,dziennik.pl,inven.co.kr,eurointegration.com.ua,jin115.com,gloria.hr,etnews.com,carscoops.com,sportsseoul.com,onlinegdb.com,text-compare.com,winfuture.de,hoyme.jp,indiatimes.com,blog.esuteru.com,blog.livedoor.jp,itainews.com#%#//scriptlet('prevent-setTimeout', '/document\.querySelectorAll[\s\S]*?\.remove\(\)[\s\S]*?alert/')
 !
 !
+! Workaround for Firefox extension in the case when scriptlets are injected too late
+!
 ! Problematic sites
 quefaire.be###banner
 quefaire.be##.gpt_box
@@ -49152,6 +49160,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+mhwilds.kiranico.com##div[id="mhwilds.banner.top"]
 jestful.net###progress + a.abutton[target="_blank"]
 ||autoembed.cc/vast/
 ww2-weapons.com###sgpb-popup-dialog-main-div-wrapper
