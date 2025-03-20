@@ -210,6 +210,7 @@ export function expandWildcardsInAst(ast: AnyRule, wildcardDomains: WildcardDoma
     switch (ast.category) {
         case RuleCategory.Network:
             return expandWildcardsInNetworkRules(ast as NetworkRule, wildcardDomains);
+        // Expand only element hiding rules because other rules injected by engine
         case RuleCategory.Cosmetic:
             if (ast.separator.value === CosmeticRuleSeparator.ElementHiding
                 || ast.separator.value === CosmeticRuleSeparator.ElementHidingException
