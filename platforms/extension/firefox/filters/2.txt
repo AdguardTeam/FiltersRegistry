@@ -1,9 +1,9 @@
-! Checksum: NGKUaa6u/fC+yMltNSQJ2w
-! Diff-Path: ../patches/2/2-s-1742466998-3600.patch
+! Checksum: DraxbLdHZmBTWD7+jWi6uw
+! Diff-Path: ../patches/2/2-s-1742470615-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.95
-! TimeUpdated: 2025-03-20T10:31:31+00:00
+! Version: 2.3.75.96
+! TimeUpdated: 2025-03-20T11:31:37+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||hakurei.cdnbo.org^
 ||nkdccsiwixvzj.world^
 ||organicowner.com^
 ||woeful-trash.pro^
@@ -47304,6 +47305,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+4chan.org#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'initAdsDanbo')
+4chan.org##.danbo-slot
 justwatch.com##.offer-container:has(> span > a[target="_blank"] p.offer__footnote)
 asianetnews.com##.StickyAd
 game-maps.com##.ga-bot-map-on
@@ -71788,6 +71791,9 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/182808
+@@/file2/*==/*$xmlhttprequest,stealth=referrer,domain=megacloud.*
+@@||megacloud.*/embed-$stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200962
 @@||jfimv2.xyz/images$domain=klto9.com,stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200863
@@ -72130,8 +72136,6 @@ implbits.com#@#.banner_container
 @@||smartstore.naver.com^$stealth=useragent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182853
 @@||mixdrop.ps/e/$subdocument,stealth=referrer
-! https://github.com/AdguardTeam/AdguardFilters/issues/182808
-@@||megacloud.tv/embed-$stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182680
 @@||rymg.net^$image,stealth=referrer,domain=mangasehri.net
 @@/wp-content/uploads/WP-manga/*$image,stealth=referrer,domain=mangasehri.net
