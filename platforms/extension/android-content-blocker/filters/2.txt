@@ -1,8 +1,8 @@
-! Checksum: V65KnPSqgbs3snmrkOi7CQ
+! Checksum: rGPyoH34HQN8vAqy+iRAjQ
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.96
-! TimeUpdated: 2025-03-20T11:31:37+00:00
+! Version: 2.3.75.97
+! TimeUpdated: 2025-03-20T12:31:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28873,6 +28873,8 @@ auto.am##.azd-top
 ##.ainsyndication
 az##.makerekframe
 !
+||baki-xeber.com/informers/$third-party
+news.milli.az##iframe[src^="https://newstube.az/embed/"]
 kulis.az##div[class*="rek_"]
 musavat.com##.our-partners
 qafqazinfo.az###topbanner
@@ -29222,10 +29224,6 @@ weather.day.az#$##navigation-sticky-wrapper+header { margin-top: auto!important;
 day.az#$#div.b-topres { top: 0!important; }
 day.az#$#div#service { margin-top: 50px!important; }
 ! https://forum.adguard.com/index.php?threads/http-take-az.25344/
-! https://forum.adguard.com/index.php?threads/https-news-milli-az.25236/
-milli.az##.ad-text_line
-milli.az#$#header > .nav-holder2 { top: 0!important; }
-milli.az#$#header > .info-panel2 { margin-top: 43px!important; }
 ! https://forum.adguard.com/index.php?threads/http-feat-az.22519/
 ! https://forum.adguard.com/index.php?threads/3-missed-ads-1.22522/
 apa.az#$##pushmodal { display: none!important; }
@@ -43572,7 +43570,7 @@ gazettetimes.com,missoulian.com,kenoshanews.com,cumberlink.com,trib.com,dailypro
 !
 ! Multiple trusted-replace-xhr-response causes breakage on music.youtube.com when logged in
 ! Exclude "get_drm_license" from "player" url because it breaks "Free with ads" movies
-! To obtain native "fetch" method YouTube creates an iframe with "sandbox" attribute in which extension cannot inject scriptlets, the rule below is a workaround to fix this
+! To obtain native "fetch" and "Request" method YouTube creates an iframe with "sandbox" attribute in which extension cannot inject scriptlets, the rule below is a workaround to fix this
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1925290685
 ||googlevideo.com/initplayback?source=youtube&*&c=TVHTML5&oad=$xmlhttprequest,domain=youtube.com
 ! Fix SSAP ads
@@ -44554,7 +44552,7 @@ w1mp.com##.col-video > #model_widget
 ||w1mp.com/model-widget/model_widget.php?*campaignId
 omg.blog##.ad-async
 asianetnews.com##.site-banner
-asianetnews.com##.adsection
+asianetnews.com##body[id] .adsection
 asianetnews.com##div[class^="revive-ads"]
 lemonde.fr##.dfp__container
 ||whvx.net/ads.js

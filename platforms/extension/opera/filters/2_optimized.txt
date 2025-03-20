@@ -1,9 +1,9 @@
-! Checksum: A3e9D0A5NT7onAZ6Ao2Lzg
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1742470621-3600.patch
+! Checksum: EwUAS0A5tfDAc6YdT/3i9g
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1742474235-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.96
-! TimeUpdated: 2025-03-20T11:31:37+00:00
+! Version: 2.3.75.97
+! TimeUpdated: 2025-03-20T12:31:29+00:00
 ! Expires: 10 days (update frequency)
 ||hakurei.cdnbo.org^
 ||nkdccsiwixvzj.world^
@@ -9642,6 +9642,9 @@ adslgate.com##.skyscraper-banner-right
 .az/reklamexport_
 ##.ainsyndication
 az##.makerekframe
+metbuat.az##.scrool_news:has(> a[target="_blank"] > img)
+||baki-xeber.com/informers/$third-party
+news.milli.az##iframe[src^="https://newstube.az/embed/"]
 kulis.az##div[class*="rek_"]
 musavat.com##.our-partners
 musavat.com##.left-side > div.news-content:not(:has(> div > *))
@@ -9696,9 +9699,6 @@ qafqazinfo.az##div[id^="sag-banner-"]
 milli.az##.ad-back
 banker.az#%#//scriptlet('set-constant', 'td_ad_background_click_link', '')
 take.az#%#//scriptlet('set-constant', 'makePopunder', 'noopFunc')
-milli.az##.ad-text_line
-milli.az#$#header > .nav-holder2 { top: 0!important; }
-milli.az#$#header > .info-panel2 { margin-top: 43px!important; }
 feat.az#%#document.cookie="popunder=1; path=/;";
 ||prothomalo.com/static-*a0d$subdocument
 !+ NOT_OPTIMIZED
@@ -14848,7 +14848,7 @@ youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', '
 youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.adSlots', 'playerResponse.streamingData.serverAbrStreamingUrl')
 youtube.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=|get_watch\?/')
 youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=|get_watch\?/')
-www.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{const o=Reflect.apply(t,e,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch)}catch(t){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,t)})();
+www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.Request=window.Request)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
 m.youtube.com,youtubekids.com,youtube-nocookie.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots')
 ||googlevideo.com/initplayback?source=youtube&*&c=TVHTML5&oad=$xmlhttprequest,domain=youtube.com
 [$path=/tv]youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/https:\/\/www\.youtube\.com\/s\/player\/.*\/tv-player-ias\.vflset\/tv-player-ias\.js:/')
@@ -15689,6 +15689,7 @@ chaptercheats.com##.dt_ad
 chaptercheats.com##div[class^="adright"]
 chaptercheats.com##.mid_d
 omg.blog##.ad-async
+asianetnews.com##body[id] .adsection
 lemonde.fr##.dfp__container
 vox.com###content > div[class*=" "]:has(> div[class][data-concert*="_leaderboard"]:only-child)
 ||whvx.net/ads.js

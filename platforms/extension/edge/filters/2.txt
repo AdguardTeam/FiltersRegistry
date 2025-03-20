@@ -1,9 +1,9 @@
-! Checksum: AzQ8eFR6dzoLvEpE/0QtRA
-! Diff-Path: ../patches/2/2-s-1742470611-3600.patch
+! Checksum: /U28KF/S+U0Jrz6a+z8jMA
+! Diff-Path: ../patches/2/2-s-1742474222-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.75.96
-! TimeUpdated: 2025-03-20T11:31:37+00:00
+! Version: 2.3.75.97
+! TimeUpdated: 2025-03-20T12:31:29+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28792,6 +28792,9 @@ auto.am##.azd-top
 ##.ainsyndication
 az##.makerekframe
 !
+metbuat.az##.scrool_news:has(> a[target="_blank"] > img)
+||baki-xeber.com/informers/$third-party
+news.milli.az##iframe[src^="https://newstube.az/embed/"]
 kulis.az##div[class*="rek_"]
 musavat.com##.our-partners
 musavat.com##.left-side > div.news-content:not(:has(> div > *))
@@ -29151,10 +29154,6 @@ day.az#$#div.b-topres { top: 0!important; }
 day.az#$#div#service { margin-top: 50px!important; }
 ! https://forum.adguard.com/index.php?threads/http-take-az.25344/
 take.az#%#//scriptlet('set-constant', 'makePopunder', 'noopFunc')
-! https://forum.adguard.com/index.php?threads/https-news-milli-az.25236/
-milli.az##.ad-text_line
-milli.az#$#header > .nav-holder2 { top: 0!important; }
-milli.az#$#header > .info-panel2 { margin-top: 43px!important; }
 ! https://forum.adguard.com/index.php?threads/http-feat-az.22519/
 feat.az#%#document.cookie="popunder=1; path=/;";
 ! https://forum.adguard.com/index.php?threads/3-missed-ads-1.22522/
@@ -46177,8 +46176,8 @@ youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', '
 youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.adSlots', 'playerResponse.streamingData.serverAbrStreamingUrl')
 youtube.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=|get_watch\?/')
 youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=|get_watch\?/')
-! To obtain native "fetch" method YouTube creates an iframe with "sandbox" attribute in which extension cannot inject scriptlets, the rule below is a workaround to fix this
-www.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{const o=Reflect.apply(t,e,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch)}catch(t){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,t)})();
+! To obtain native "fetch" and "Request" method YouTube creates an iframe with "sandbox" attribute in which extension cannot inject scriptlets, the rule below is a workaround to fix this
+www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.Request=window.Request)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
 m.youtube.com,youtubekids.com,youtube-nocookie.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1925290685
 ||googlevideo.com/initplayback?source=youtube&*&c=TVHTML5&oad=$xmlhttprequest,domain=youtube.com
@@ -47593,7 +47592,7 @@ w1mp.com#?#.col-video div.title[style]:contains(Advertisement)
 omg.blog##.ad-async
 omg.blog###sidebar-wrapper > div[id^="enhancedtextwidget-"]:has(> .textwidget > div[id^="bsa-zone_"])
 asianetnews.com##.site-banner
-asianetnews.com##.adsection
+asianetnews.com##body[id] .adsection
 asianetnews.com##div[class^="revive-ads"]
 lemonde.fr##.dfp__container
 sitepoint.com##div[id^="ember"] > div.unit:has(> div[id^="bsa-zone_"])
