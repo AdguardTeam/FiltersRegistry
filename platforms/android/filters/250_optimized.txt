@@ -1,5 +1,5 @@
-! Checksum: OMXiC06+maqRdUvfjxxHuQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1742403996-14400.patch
+! Checksum: pTYTIywHJ7JkAp/xC4OjrQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1742447165-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.45
@@ -759,6 +759,7 @@ coolrom.com.au,coolrom.com##.download_link
 208.91.196.46$network
 /page/bouncy.php?$all
 ||banquetunarmedgrater.com^$all
+||garglingably.com^$all
 ||jsmcrptjmp.com^$all
 !+ PLATFORM(windows, mac, android)
 93.93.51.223$network
@@ -868,7 +869,6 @@ coolrom.com.au,coolrom.com##.download_link
 ||profitablecpm*.com^$all
 ||seenwage.com^$all
 ||shotgunchancecruel.com^$all
-||sterilityafar.com^$all
 ||transmittedidentify.com^$all
 ||wretchedclearance.com^$all
 !+ PLATFORM(windows, mac, android)
@@ -2953,7 +2953,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##div[class^=shareLinks]
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
-##span[class*=-social-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class*=share-icon]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 /images/share_icons/*
 /images/social-share/*
@@ -3100,6 +3099,7 @@ chronicle.com#$#html { overflow: auto !important; height: 100% !important }
 chronicle.com#$#.Page-body { overflow: auto !important; height: 100% !important }
 segmentfault.com#$#.modal-open { overflow: auto !important; padding-right: 0 !important; }
 segmentfault.com#$#.modal-open [style]:is([data-padding-right], [data-margin-right]) { padding-right: 0 !important; margin-right: 0 !important; }
+tumblr.com###glass-container > div[role=dialog]:has(p + p):has(a[href^="/auth/google?"])
 theepochtimes.com#$#body.single-post { overflow: unset !important }
 studocu.com#$#.page-content { filter: none !important; user-select: unset !important }
 studocu.com###document-wrapper > div:first-of-type:not([style])
@@ -3258,12 +3258,12 @@ alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 /wp-content/plugins/christmasify^
 /wp-content/plugins/snow-3d^
 daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
-/jquery.snow.js
 /let-it-snow.
 /snow-falling.js
 /snow-storm^$script
 /snowfall-master.min.js
 /snowfall.jquery.
+/snowstorm-min.js
 /snowstorm.js
 /wp-snow-effect^
 /christmas-snow.js
@@ -3362,7 +3362,6 @@ $removeparam=fb_action_ids
 $removeparam=fb_comment_id
 $removeparam=fb_action_types
 $removeparam=fb_source
-$removeparam=action_object_map
 $removeparam=_zucks_suid
 $removeparam=aiad_clid
 $removeparam=maf
@@ -3438,6 +3437,7 @@ $removeparam=smtyp
 $removeparam=tpcc
 $~xmlhttprequest,removeparam=mbid
 $removeparam=itid
+$removeparam=full_trSrc
 $document,removeparam=/^ICID=.*$/i,domain=~api.mapbox.com|~microsoft.com
 $document,removeparam=/^utm-.*$/
 $~subdocument,removeparam=aff,domain=~discoverbank.com|~discover.com
@@ -3579,7 +3579,6 @@ $removeparam=afflid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org
 $removeparam=affuid
-$removeparam=icid2
 $removeparam=refclickid
 $removeparam=ad_id,domain=~olx.ua
 $document,removeparam=/^affSource.*$/i
@@ -3666,11 +3665,13 @@ $removeparam=n_cid
 $removeparam=awid
 $removeparam=af_ad
 $removeparam=af_ad_id
+$removeparam=af_ad_type
 $removeparam=af_adset
 $removeparam=af_adset_id
 $removeparam=af_c_id
 $removeparam=af_channel
 $removeparam=af_click_lookback
+$removeparam=af_cost_model
 $removeparam=af_force_deeplink
 $removeparam=af_prt
 $removeparam=af_siteid
@@ -3884,7 +3885,6 @@ $removeparam=cstrackid
 ||amazon.$removeparam=hydadcr
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
-||amazon.*/stores/$removeparam=tag,document
 ||amazon.*/product/$removeparam=tag,document
 ||amazon.$removeparam=qu
 ||amazon.*/dp/$removeparam=rps,document
@@ -3964,7 +3964,6 @@ $removeparam=device,domain=ebay.*|obs.no
 ||ebay.$removeparam=segname
 ://www.ebay.$document,removeparam=/^itm[a-zA-Z0-9].*$/
 $removeparam=hc_ref
-$removeparam=hc_location
 $removeparam=sfnsn
 ?*__$~xmlhttprequest,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
@@ -4285,8 +4284,6 @@ $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|a
 ||kohls.com^$removeparam=prdPV
 ||kochava.com^$removeparam=network_id
 ||kochava.com^$removeparam=device_id
-||skyscanner.$removeparam=redirectedFrom
-||skyscanner.$removeparam=previousCultureSource
 $removeparam=context_referrer
 $removeparam=ref_ctx_id
 ||fiverr.com^$removeparam=pckg_id
@@ -4480,7 +4477,6 @@ $removeparam=pk_vid,document
 ||typeform.com^$removeparam=typeform-source
 $removeparam=_1lr
 $removeparam=ymid
-ref=troyhunt.com$document,removeparam=ref
 ||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
@@ -4674,6 +4670,7 @@ fandom.com##.notifications-box
 flipkart.com##div[style^=flex-grow] div:first-of-type + div.col
 ||ogp.me^$csp=upgrade-insecure-requests
 ||schema.org^$csp=upgrade-insecure-requests
+||detectportal.firefox.com^$csp=upgrade-insecure-requests
 @@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script
 google.*#@##google-hats-survey
 ||appboycdn.com^$third-party
