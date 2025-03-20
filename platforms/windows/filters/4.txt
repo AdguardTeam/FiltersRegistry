@@ -1,9 +1,9 @@
-! Checksum: sYMNhE33GzZDTUtmjAILtA
-! Diff-Path: ../patches/4/4-s-1742474263-3600.patch
+! Checksum: 78e1zVDkEV456DQKafEkMg
+! Diff-Path: ../patches/4/4-s-1742488754-3600.patch
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.12.53
-! TimeUpdated: 2025-03-20T12:31:45+00:00
+! Version: 2.1.12.54
+! TimeUpdated: 2025-03-20T16:31:58+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -585,8 +585,8 @@ m.timesofindia.com$$div[class="w100p fl text-center pdTop_2"]
 !-------------------
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196405
 ! Generic fix for openweb Comments widget, share button is inside "ShadowRoot"
-!+ PLATFORM(windows, mac, android)
 ||static-cdn.spot.im/production/conversation/tags/*/styles.css$replace=/(Menu__menuButtonWrapper--.*})/\$1 button[data-testid="ShareBtn"]\, div[data-spot-im-class="vote-links"] + span[class\\$="index__dot"] { display: none !important; }/
+||static-cdn.spot.im/production/social/tags/*/conversation/styles.css$replace=/(Menu__menuButtonWrapper--.*})/\$1 button[data-testid="ShareBtn"]\, div[data-spot-im-class="vote-links"] + span[class\\$="index__dot"] { display: none !important; }/
 !
 ||mp.lura.live/player/prod/v*/*/anvhtml5.css$replace=/(\.anv-splash-share \{)/\$1 display: none !important;/
 !-------------------------------------------------------------------------------!
@@ -677,6 +677,8 @@ esquire.com,dotesports.com,mashable.com,pcmag.com,onefootball.com,ign.com,israel
 !
 ! NOTE: Specific rules
 !
+tvinsider.com##.story-metadata > ul.social-icons
+vecherka-spb.ru##section > div[class^="_container_"]:has(> div[class^="_blockIcons_"])
 dramago.in##.wrap-content > div.text-center:has(> div.textwidget a[href="https://www.facebook.com/groups/dramago.in"])
 mistral.ai##aside > div:has(> div.flex > a[href^="https://www.facebook.com/sharer/"])
 asianetnews.com##.socialIcons
