@@ -334,8 +334,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.98.29",
-			"timeUpdated": "2025-03-20T21:31:19+0000",
+			"version": "2.0.98.30",
+			"timeUpdated": "2025-03-21T07:31:16+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.76.6",
-			"timeUpdated": "2025-03-21T01:31:30+0000",
+			"version": "2.3.76.7",
+			"timeUpdated": "2025-03-21T07:31:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.25.30",
-			"timeUpdated": "2025-03-21T06:32:19+0000",
+			"version": "2.2.25.31",
+			"timeUpdated": "2025-03-21T07:32:21+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -696,8 +696,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.64",
-			"timeUpdated": "2025-03-21T06:32:25+0000",
+			"version": "2.0.58.65",
+			"timeUpdated": "2025-03-21T07:32:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -718,8 +718,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.52.48",
-			"timeUpdated": "2025-03-20T20:32:28+0000",
+			"version": "2.0.52.49",
+			"timeUpdated": "2025-03-21T07:32:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -762,8 +762,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.31.66",
-			"timeUpdated": "2025-03-20T19:32:33+0000",
+			"version": "2.0.31.67",
+			"timeUpdated": "2025-03-21T07:32:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
