@@ -1,9 +1,9 @@
-! Checksum: uzk+ksnJU9JISJmFaHxtpw
-! Diff-Path: ../patches/14/14-s-1742542634-3600.patch
+! Checksum: bCPfms+jD0ERY0RhmlskNg
+! Diff-Path: ../patches/14/14-s-1742546255-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.25.31
-! TimeUpdated: 2025-03-21T07:32:21+00:00
+! Version: 2.2.25.32
+! TimeUpdated: 2025-03-21T08:32:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21270,6 +21270,9 @@ foodnetwork.co.uk#@#.cookie-message:not(html):not(body)
 [$path=/images]ya.ru,yandex.*#$?#.RelatedImages [style="max-width: 100%; max-height: 250px;"] { remove: true; }
 ! When open a specific image
 ya.ru,yandex.*#$?#div[class^="ImagesViewer-"][style^="height:"] { remove: true; }
+!
+! Yandex.Maps
+[$path=/maps]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.isStickyAd', 'undefined')
 !
 ! Yandex.Music
 music.yandex.adult,music.yandex.ac.id,music.yandex.ae,music.yandex.al,music.yandex.app,music.yandex.asia,music.yandex.at,music.yandex.az,music.yandex.ba,music.yandex.be,music.yandex.by,music.yandex.ca,music.yandex.cc,music.yandex.cl,music.yandex.cloud,music.yandex.club,music.yandex.co,music.yandex.co.il,music.yandex.com,music.yandex.com.bd,music.yandex.com.cn,music.yandex.com.np,music.yandex.com.tr,music.yandex.de,music.yandex.dev,music.yandex.ee,music.yandex.es,music.yandex.eu,music.yandex.fi,music.yandex.fm,music.yandex.fr,music.yandex.ge,music.yandex.gr,music.yandex.hu,music.yandex.in,music.yandex.io,music.yandex.jp,music.yandex.kg,music.yandex.kr,music.yandex.kz,music.yandex.lt,music.yandex.lv,music.yandex.md,music.yandex.me,music.yandex.mobi,music.yandex.net,music.yandex.news,music.yandex.nl,music.yandex.org,music.yandex.pk,music.yandex.pl,music.yandex.pro,music.yandex.ro,music.yandex.rs,music.yandex.ru,music.yandex.se,music.yandex.site,music.yandex.su,music.yandex.tech,music.yandex.ua,music.yandex.uk,music.yandex.us,music.yandex.uz,music.yandex.work##.notify > div.deco-tooltip_notify.notify_shown
@@ -50115,6 +50118,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+foreignpolicy.com##.home-region-promo-block
 skyeng.ru##ssm-articles-content-promo-slot
 minkou.jp##.mod-table1 > div.cv-mynaviArea
 skillbox.ru##div[data-area="article"] section[data-banner]:has(> div.row > div[class] > a.article-advert-banner__link)

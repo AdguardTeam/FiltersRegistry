@@ -1,9 +1,9 @@
-! Checksum: ljQu1QeGIneUJjSQVsKs4A
-! Diff-Path: ../patches/14/14-s-1742542605-3600.patch
+! Checksum: EMDgWds8mAvZWwdZxlNZsA
+! Diff-Path: ../patches/14/14-s-1742546234-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.25.31
-! TimeUpdated: 2025-03-21T07:32:21+00:00
+! Version: 2.2.25.32
+! TimeUpdated: 2025-03-21T08:32:32+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21019,6 +21019,9 @@ foodnetwork.co.uk#@#.cookie-message:not(html):not(body)
 ! TODO: remove this when the new MV2 extension is released, current version is 5.1.62
 !+ PLATFORM(ext_chromium)
 [$path=/images]ya.ru,yandex.*#%#//scriptlet('trusted-suppress-native-method', 'Array.prototype.splice', 'NaN')
+!
+! Yandex.Maps
+[$path=/maps]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.isStickyAd', 'undefined')
 !
 ! Yandex.Music
 music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
@@ -48858,6 +48861,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+foreignpolicy.com##.home-region-promo-block
 skyeng.ru##ssm-articles-content-promo-slot
 minkou.jp##.mod-table1 > div.cv-mynaviArea
 skillbox.ru##div[data-area="article"] section[data-banner]:has(> div.row > div[class] > a.article-advert-banner__link)
