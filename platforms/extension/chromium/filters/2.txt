@@ -1,9 +1,9 @@
-! Checksum: gSxQ/mi3IFZjDdHbdb8PIA
-! Diff-Path: ../patches/2/2-s-1742557073-3600.patch
+! Checksum: 9npt1YfMvkmNOjxNsQHC5w
+! Diff-Path: ../patches/2/2-s-1742560609-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.76.10
-! TimeUpdated: 2025-03-21T11:31:51+00:00
+! Version: 2.3.76.11
+! TimeUpdated: 2025-03-21T12:31:33+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||ogaku.site^
 ||waaz.wjebboljobvaj.top^
 ||hakurei.cdnbo.org^
 ||nkdccsiwixvzj.world^
@@ -46294,6 +46295,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+xtapes.to##a[href="https://streamwish.com/"] > img
 foxtel.com.au#%#//scriptlet('xml-prune', 'xpath(//*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"]/@start | //*[name()="Period"][.//*[name()="BaseURL" and contains(text(),"/adease/")]])', '', '.mpd')
 foxtel.com.au#%#//scriptlet('json-prune', 'adease adeaseBlob vmap')
 kyivindependent.com,nv.ua##body .nts-ad
@@ -50021,7 +50023,7 @@ shramikcard.in##.shrs_ads
 shramikcard.in,cookar.net,cookad.net##.shrs_re_adunit
 shramikcard.in,cookar.net,cookad.net##.shr_interstitial_container
 shramikcard.in,cookar.net,cookad.net##.shr_bottom_sticky_container
-h-flash.com##[id^="ads"]
+h-flash.com#$#[id^="ads"] { position: absolute !important; left: -9999px !important; }
 h-flash.com##body > a[target="_blank"][rel="nofollow,noopener"]
 ||imobileporn.com^$domain=h-flash.com
 ||h-flash.com/data/image/mcs/cb2fea9.gif
@@ -69183,6 +69185,7 @@ slogen.ru#@##ad_text:not(textarea)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/17181
 virgintrainseastcoast.com#@#.banner-top
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16741
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=ign.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16827
 @@||ads.aiir.net/rf/feed?callback=jQuery
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16767
@@ -70641,6 +70644,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/200500
+@@||web-cloud-new.foreks.com^$stealth=referrer,domain=prime.tebyatirim.com.tr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201075
 @@||apim.canadiantire.ca^$stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200848
