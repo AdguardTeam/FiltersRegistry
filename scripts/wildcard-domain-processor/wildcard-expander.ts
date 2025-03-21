@@ -211,6 +211,11 @@ export function expandWildcardsInAst(ast: AnyRule, wildcardDomains: WildcardDoma
         case RuleCategory.Network:
             return expandWildcardsInNetworkRules(ast as NetworkRule, wildcardDomains);
         case RuleCategory.Cosmetic:
+            // Expand only element hiding rules and exceptions since these kinds of rules
+            // are supported natively in Safari content blockers.
+            // And other cosmetic rule types, e.g. scriptlets in MV3
+            // https://github.com/AdguardTeam/FiltersRegistry/issues/1063,
+            // should not be expanded as they are to be applied by tswebextension where wildcards are not a problem.
             if (ast.separator.value === CosmeticRuleSeparator.ElementHiding
                 || ast.separator.value === CosmeticRuleSeparator.ElementHidingException
             ) {
