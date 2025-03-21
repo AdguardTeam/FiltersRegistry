@@ -37756,6 +37756,11 @@ delfi.lv#?#section > div[style]:has(> span:contains(/^Реклама$|^Reklāma$
 !---------------------------------------------------------------------
 !
 ! NOTE: Lithuanian
+! https://github.com/AdguardTeam/AdguardFilters/issues/201373
+kaipkada.lt###footer-slideup
+kaipkada.lt#%#//scriptlet('prevent-fetch', 'adsbygoogle')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=kaipkada.lt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192182
 15min.lt##div[class*=" "] > div[class*=" "] > img[src^="https://s1.15min.lt/static/cache/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153109
@@ -70333,7 +70338,9 @@ mail.yahoo.com##div[data-name="infinite-scroll-content"] > ul > li[data-test-id=
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56778
 !#if (adguard_app_windows || adguard_app_mac || adguard_app_android)
 !+ NOT_OPTIMIZED
-mail.yahoo.com#?#li:has(> div > a[href^="https://api.taboola.com/"])
+mail.yahoo.com#?#iframe[src^="https://gpt.mail.yahoo.net/sandbox"]
+!+ NOT_OPTIMIZED
+mail.yahoo.com#?#li:has(a[href^="https://api.taboola.com/"])
 !+ NOT_OPTIMIZED
 mail.yahoo.com#?#a[data-test-id^="taboola-ad-"]
 !+ NOT_OPTIMIZED

@@ -1,9 +1,9 @@
-! Checksum: sPRUyVZbFA2Yqt8Q+K1PJg
-! Diff-Path: ../patches/2/2-s-1742564188-3600.patch
+! Checksum: YU4rh+5LQnCzeFvDyADVuQ
+! Diff-Path: ../patches/2/2-s-1742567850-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.76.12
-! TimeUpdated: 2025-03-21T13:31:29+00:00
+! Version: 2.3.76.13
+! TimeUpdated: 2025-03-21T14:31:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -33968,6 +33968,9 @@ delfi.lv#?#section > div[style]:has(> span:contains(/^Реклама$|^Reklāma$
 !---------------------------------------------------------------------
 !
 ! NOTE: Lithuanian
+! https://github.com/AdguardTeam/AdguardFilters/issues/201373
+kaipkada.lt###footer-slideup
+kaipkada.lt#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192182
 15min.lt##div[class*=" "] > div[class*=" "] > img[src^="https://s1.15min.lt/static/cache/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153109
@@ -65720,7 +65723,9 @@ mail.yahoo.com##div[data-name="infinite-scroll-content"] > ul > li[data-test-id=
 ! https://github.com/AdguardTeam/AdguardFilters/issues/62629
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56778
 !+ NOT_OPTIMIZED
-mail.yahoo.com#?#li:has(> div > a[href^="https://api.taboola.com/"])
+mail.yahoo.com#?#iframe[src^="https://gpt.mail.yahoo.net/sandbox"]
+!+ NOT_OPTIMIZED
+mail.yahoo.com#?#li:has(a[href^="https://api.taboola.com/"])
 !+ NOT_OPTIMIZED
 mail.yahoo.com#?#a[data-test-id^="taboola-ad-"]
 !+ NOT_OPTIMIZED
