@@ -1,5 +1,5 @@
-! Checksum: 7pJepSx4WPA/pc8ZT/J7lw
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1742481416-3600.patch
+! Checksum: 1+YWzqtcm6CAge8Y8q60wg
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1742524570-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.11.35
@@ -74,8 +74,6 @@ tyoieronews.blog.jp##table[summary="画像RSS"]
 lamsect.jp##.antena
 lamsect.jp###main_line > div.content:has(> div[style] > script[src*="blogroll"])
 lamsect.jp###main_line > div.content:has(> div.cate > script[src*="google.com/jsapi"])
-morikinoko.com##div[class^="img_link"]
-morikinoko.com##.headline-wrap:has(> div.card-body > div.blogroll-wrap)
 syurabahazard.com##.kotei-link
 girlsreport.net###more > .top_link
 everydayissunday.livedoor.blog##.article-body span:has(> div[style="font-size: 16px; padding: 8px; border-radius: 5px; margin: 5px; border: 1px solid rgb(0, 0, 128); background-color: rgb(255, 255, 255); text-indent: 0px;"])
@@ -263,6 +261,7 @@ moeimg.net###side-2 li.widget-container:has(#side-img-rss_frame)
 ||gazounabi.com/atcl_bottom_
 switchsoku.com##.l-main > div.dividerBottom:first-child:has(> aside.widget-main)
 gamedaradara.doorblog.jp##div[id$="_rss"]
+gamedaradara.doorblog.jp#?#.article-body-inner b:has(+ div[id$="_rss"])
 ||rutube.ru/pangolin/api/web/yappy/$xmlhttprequest
 rutube.ru##section[aria-label="информационный баннер"]
 crx7601.com#?#.article-body-inner .twitter-tweet ~ b:has(+ .ninja-recommend-block)
@@ -311,7 +310,6 @@ jumpmatome2ch.biz##.rss02
 ge-soku.com##.mainbottom-widget
 kannyu.blog.jp##.rssWrapper
 himasoku.com#?#.article-body-more > span[style]:contains(おすすめ記事)
-vipnews.jp#?#.article-body-more > div[class]:contains(おすすめ記事)
 vipnews.jp#?#.plugin-memo:has(> div.sidetitlebody > div.sidetitle:contains(/おすすめ記事|2ちゃんねるの最新ネタ！/))
 vipnews.jp#?#.article-body-more > div[style^="text-align:"]:has(> b > span:contains(以下人気記事もよく読まれております))
 vipnews.jp##.article-body-more > b
@@ -589,6 +587,7 @@ gfoodd.com##.box_group ~ br
 gfoodd.com#?#.code-block > div.sponserdrink:contains(RSS)
 marasoku.info##.rss_ninja_title
 marasoku.info##iframe[src^="http://marasoku.info/rss_"]
+toychan.blog.jp,shouginews.blog.jp,hinomoto99.com,fireflyframer.blog.jp##.message-board-outer
 news4wide.net##.box-antenna
 vipnews.jp##.custom-rss-container
 /rss_$subdocument,domain=eegg.fun
@@ -745,7 +744,6 @@ tarosoku.com##div[class^="kijishita_rss"]
 rastaneko-blog.com,2chav.com##.plugin3_outline
 2chav.com##.kijinakakoteeei
 2chav.com##.kijinakakoteeei02
-yoshidakenkou.net###header-rss
 1000mg.jp##div[class$="rss"]
 worldrankingup.blog.2nt.com,youskbe.com,kyousoku.net,jiwasoku.com,irodorich.com,kemochan.com,anitubu.com,itaishinja.com##[id^="rss"]
 youskbe.com,gurum.biz,newtoku.jp##.blogroll
@@ -1123,6 +1121,7 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 ||widget.installchatbot.com^$third-party
 ||widget.moin.ai^$third-party
 ||widget.replain.cc^$third-party
+||widget.chatbullet.com^$third-party
 ||showtalk.jp^$third-party
 ||uhchat.net^$third-party
 shirainime.com,daemon-hentai.com,seirsanduk.us,sedsports.com,139.99.120.222,indoxxi.show,aniwatcher.com,mylivecricket.info,debrid-file.com,streamonsport.info,freestreams-live.my##iframe[src*="chatango.com"]
@@ -1184,7 +1183,6 @@ smartpress.by##.vidjet-template
 eiga.com##.area-unext
 ||cdn.vuukle.com/platform.js$domain=joblo.com
 hltv.org##.leftCol > aside > div.a-reset
-hltv.org##.mid-container > div[class]:has(> div.featured-matches-top-next-slider)
 ||thetruestory.news/widget-top.iife.js$domain=echofm.online|zona.media|thebell.io|agents.media
 agents.media##.site-footer__true-stories
 istories.media##.swiper-wrapper > div.swiper-slide:has(div[class^="TheTrueStory-module-"] > thetruestory-widget-top)
@@ -1287,6 +1285,7 @@ verstka.media##.wp-block-post:has(> a[href="http://verstkasupport.media/"])
 habr.com##.article-donation-block
 chicago.suntimes.com##.Page-header-banner
 meduza.io##.PopoverBanner-module-root
+ovd.info##.content div.popmechanic-js-form
 ||frontend.poool.fr/engage/
 kyivindependent.com##iframe[src^="https://frontend.poool.fr/"]
 verstka.media##.vm-single-post-content > p[class="has-background"][style="background-color:#47d4ff"]
@@ -1346,7 +1345,6 @@ cavalierdaily.com#$#body { overflow-y: auto !important; padding-right: 0 !import
 kcrw.com###cta-get-involved-large-news-cta
 comfycozygaming.com,jestful.net,anyipa.me,klto9.com,klz9.com,baominh.tech##div[id^="kofi-widget"]
 apkmody.io###fixed-donate
-||static.fundraiseup.com$domain=gijn.org
 zn.ua##.content__news > div.news-support
 lyricstranslate.com###block-lyricstranslateblocks-91
 starfiles.co###support_alert
