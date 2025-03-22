@@ -1,9 +1,9 @@
-! Checksum: WjoG+yZLT589EOhkXyOEfw
-! Diff-Path: ../patches/2/2-s-1742647005-3600.patch
+! Checksum: 9XThYoDQ0h4Jx8boL9Y32A
+! Diff-Path: ../patches/2/2-s-1742650584-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.76.21
-! TimeUpdated: 2025-03-22T12:31:30+00:00
+! Version: 2.3.76.22
+! TimeUpdated: 2025-03-22T13:31:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19542,7 +19542,12 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
 !
 ! NOTE: Regular rules
-!
+! https://github.com/AdguardTeam/AdguardFilters/issues/201324
+read.amazon.*#%#//scriptlet('set-constant', 'canRunAds', '1')
+read.amazon.*#%#//scriptlet('set-constant', 'ue_adb_chk', '1')
+$script,redirect-rule=prebid-ads,domain=read.amazon.*
+@@||read.amazon.co.jp/*/show_ad.js$script,~third-party
+@@||m.media-amazon.com/images/*/csm/showads.$domain=read.amazon.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201320
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173314
 poophd.video-src.com#%#//scriptlet('prevent-fetch', 'wpadmngr.com')
@@ -137121,7 +137126,6 @@ ooxxx.com##.video-ntv-wrapper
 pornhdtube.tv,recordbate.com##.video-overlay
 hotmovs.tube##.video-page > .block_label > div
 thegay.com##.video-page__content > .right
-xhtab2.com##.video-page__layout-ad
 senzuri.tube##.video-page__watchfull-special
 pornhd.com##.video-player-overlay
 peachurbate.com##.video-right-banner
@@ -137311,7 +137315,7 @@ imx.to##a[href^="https://camonster.com/"]
 f95zone.to,imagetwist.com##a[href^="https://candy.ai/"]
 hog.tv##a[href^="https://clickaine.com"]
 spankbang.com##a[href^="https://deliver.ptgncdn.com/"]
-seexh.com,valuexh.life,xhaccess.com,xhamster.com,xhamster.desi,xhamster2.com,xhamster3.com,xhamster42.desi,xhamsterporno.mx,xhbig.com,xhbranch5.com,xhchannel.com,xhchannel2.com,xhdate.world,xhlease.world,xhofficial.com,xhspot.com,xhtab4.com,xhtotal.com,xhtree.com,xhwide2.com,xhwide5.com##a[href^="https://flirtify.com/"]
+seexh.com,valuexh.life,xhaccess.com,xhamster.com,xhamster.desi,xhamster2.com,xhamster3.com,xhamster42.desi,xhamsterporno.mx,xhbig.com,xhbranch5.com,xhchannel.com,xhdate.world,xhlease.world,xhofficial.com,xhspot.com,xhtotal.com,xhtree.com,xhwide2.com,xhwide5.com##a[href^="https://flirtify.com/"]
 hitbdsm.com##a[href^="https://go.rabbitsreviews.com/"]
 instantfap.com##a[href^="https://go.redgifcams.com/"]
 sexhd.pics##a[href^="https://go.stripchat.com/"]
