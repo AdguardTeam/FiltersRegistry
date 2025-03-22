@@ -1,5 +1,5 @@
-! Checksum: OlvVy2g/tm6gaIvYOeBGmA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1742605650-14400.patch
+! Checksum: 3ToQ8Ke8mVapbbFSeuIchA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1742620011-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.46
@@ -17,6 +17,7 @@ adguard.com##.sidebar-download
 bilibili.com##.nav-link-item a[href$="app.bilibili.com"]
 ifeng.com##.openApp[onclick^="loadOpen.init(download"]
 imageban.ru##img[alt="Get it on Google Play"]
+ipaddressguide.com##img[alt="iptools apple app"]
 kurashiru.com##.footer-image-wrapper
 momondo.*#$##mobile-splash-popup { display: none!important }
 momondo.*#$##mui-header { display: block!important }
@@ -2873,7 +2874,6 @@ apkfab.com##.tip-extension
 ://ww27.$document,domain=~ww27.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww38.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|ufl.edu|oecd.org|bu.edu|wikidot.com|alternativenation.net
-||s.free.fr^$all
 !+ PLATFORM(windows, mac, android)
 212.27.60.108$network
 ||amazonaws.com^$all,badfilter
@@ -3554,9 +3554,11 @@ $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
 $removeparam=trackingCode
-$removeparam=CJAID
 $removeparam=CJPID,domain=~keyade.com
 $removeparam=irmpname
+$removeparam=REFERRAL_ID
+$removeparam=impradid
+$removeparam=impradname
 Ref=CJ^$document,removeparam=ref
 $removeparam=cjid
 $removeparam=sv_campaign_id
@@ -3711,6 +3713,12 @@ $removeparam=pk_kwd
 $removeparam=pk_keyword
 $removeparam=au_advert_id
 $removeparam=au_car_id
+$removeparam=ads_adid
+$removeparam=ads_cmpid
+$removeparam=ads_creative
+$removeparam=ads_matchtype
+$removeparam=ads_network
+$removeparam=ads_targetid
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -3874,6 +3882,7 @@ $removeparam=hvbmt
 $removeparam=cstrackid
 ||amazon.$removeparam=SubscriptionId
 ||amazon.$removeparam=hydadcr
+$removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
 ||amazon.*/product/$removeparam=tag,document
@@ -3958,7 +3967,6 @@ $removeparam=hc_ref
 $removeparam=sfnsn
 ?*__$~xmlhttprequest,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
-$removeparam=dti
 $removeparam=fref
 $removeparam=privacy_mutation_token
 $~xmlhttprequest,removeparam=/^refsrc=.*$/i
@@ -4018,6 +4026,7 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||www.google.$document,removeparam=tfu
 ||www.google.com/finance/?$removeparam=output
 ||www.google.com/finance/?$removeparam=source
+@@://www.google.com/maps?entry=$removeparam=utm_campaign
 ||tiktok.com^$removeparam=_r
 $removeparam=u_code
 $removeparam=is_from_webapp
@@ -4115,7 +4124,6 @@ $removeparam=aff_click_id
 ||wenku.baidu.com^$removeparam=sxts
 ||baidu.com^$removeparam=hl_tag
 ||zhidao.baidu.com^$removeparam=qbl
-||wenku.baidu.com/search?$removeparam=cc
 ||baike.baidu.com^$removeparam=lemmaFrom
 ||wenku.baidu.com^$removeparam=_wkts_
 wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
@@ -4194,8 +4202,10 @@ $removeparam=user_ip
 @@||mp.weixin.qq.com/mp/qrcode?$removeparam=scene
 ||mp.weixin.qq.com^$removeparam=xtrack
 ||mp.weixin.qq.com^$removeparam=key
+||mp.weixin.qq.com^$removeparam=ascene
 ||mp.weixin.qq.com^$removeparam=uin
 ||mp.weixin.qq.com^$removeparam=devicetype
+||mp.weixin.qq.com^$removeparam=version
 ||mp.weixin.qq.com^$removeparam=exportkey
 $removeparam=clicktime
 $removeparam=nettype
@@ -4267,7 +4277,6 @@ $removeparam=soc_src
 $removeparam=soc_trk
 ||as.com^$removeparam=omnil
 ||surfshark.com^$removeparam=transaction_id
-$removeparam=PID,domain=1800getlens.com|ae.com|allmodern.com|applevacations.com|ashford.com|autoanything.com|autodesk.com|bedbathandbeyond.com|booksamillion.com|boscovs.com|buschgardens.com|cheapcaribbean.com|chicos.com|choicehotels.com|dermstore.com|ecampus.com|expedia.com|express.com|factoryoutletstore.com|farmandfleet.com|hammacher.com|hawaiianairlines.com|intuit.com|jockey.com|kennethcole.com|landsend.com|lenovo.com|lens.com|mcafee.com|overstock.com|perfumania.com|samsung.com|sears.com|sierra.com|soma.com|staples.com|teleflora.com|ulta.com|verizon.com|virginatlantic.com|vistaprint.com|walgreens.com|wayfair.com|whitehouseblackmarket.com|wwe.com|yahoo.com|zchocolat.com|media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=camp,domain=amazon.*|calvinklein.*|dickssportinggoods.com|dockers.com|dressbarn.com|lanebryant.com|levi.com|maurices.com|worldmarket.com|xg4ken.com
 $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|anntaylor.com|asos.com|awd-it.*|barenecessities.com|barrons.com|beautyencounter.com|buckle.com|burpee.com|chacos.com|coursera.org|dxl.com|dyson.com|ebay.*|famousfootwear.com|finishline.com|freetaxusa.com|gap.com|gapcanada.ca|gucci.com|hanes.com|hotwire.com|hulu.com|hunterboots.com|jcrew.com|josbank.com|kobo.com|lanebryant.com|laroche-posay.us|loft.com|magazines.com|marketwatch.com|maurices.com|merrell.com|newbalance.com|nordstrom.com|officedepot.com|onehanesplace.com|online4baby.com|radissonhotelsamericas.com|ralphlauren.com|saksfifthavenue.com|saksoff5th.com|samash.com|samsclub.com|saucony.com|sharperimage.com|skinceuticals.com|thingsremembered.com|thrifty.*|timeformecatalog.com|verabradley.com|vivaterra.com|wine.com|yoox.com
 ||kohls.com^$removeparam=kls_sbp
@@ -4327,7 +4336,6 @@ $removeparam=wfr,domain=weidian.com|baidu.com
 $removeparam=organic_search_click
 $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
-||despegar.$removeparam=/^clt_.*$/
 ||hao123.com^$removeparam=tn
 ||lazada.$removeparam=dsource
 ||lazada.$removeparam=laz_share_info
@@ -4475,6 +4483,7 @@ $removeparam=pk_vid,document
 ||typeform.com^$removeparam=typeform-source
 $removeparam=_1lr
 $removeparam=ymid
+ref=troyhunt.com$document,removeparam=ref
 ||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
@@ -4509,6 +4518,11 @@ $removeparam=csrcl2
 ||mcafee.com^$removeparam=ccstype
 ||patreon.com/posts/$document,removeparam=token
 $document,removeparam=bpli,domain=blogger.com
+||cimri.com^$document,removeparam=platformName
+||cimri.com^$document,removeparam=offerSponsored
+||cimri.com^$document,removeparam=offerCount
+||cimri.com^$document,removeparam=offerFiltered
+||cimri.com^$document,removeparam=hasFavorite
 ref=blog.roboflow.com$document,removeparam=ref
 $document,removeparam=af_reengagement_window
 ||privatbank.ua^$removeparam=visit_id
