@@ -1,14 +1,14 @@
-! Checksum: +n+3igSYBEECzBl/AoE8ZQ
-! Diff-Path: ../patches/227/227-s-1742735239-14400.patch
+! Checksum: TuWFDs+hJ5BMtJkfirH72A
+! Diff-Path: ../patches/227/227-s-1742749628-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.20.94
-! TimeUpdated: 2025-03-23T13:01:42+00:00
+! Version: 2.0.20.95
+! TimeUpdated: 2025-03-23T17:01:40+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2025.0323.3
+! OriginalVersion: 2025.0323.5
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://list-kr-community.pages.dev/docs/
@@ -1685,6 +1685,8 @@ hankookilbo.com##div[class*="-ad-"]:not(data-el)
 mininote.co.kr##rs-fullwidth-wrap[style^="margin-top:"]
 mininote.co.kr##rs-module-wrap[id^="rev_slider_"]
 muko.kr##.xe-widget-wrapper > div[style]:has(a[href^="/ad"])
+banhub.xyz##div.fixed:has(> div.container)
+banhub.xyz##div.hidden[class*="xl:block"]
 m.gmarket.co.kr##.js-impressionable
 gmarket.co.kr###login-banner-box
 www.naver.com###shortcutArea .shortcut_item:has( > a[href*="veta.naver.com"] > i.ico_ad)
@@ -3385,6 +3387,7 @@ ponh.info#$?#div[data-mesh-id][data-testid] > div[id^="comp-"]:has(form[id][clas
 algumon.com#$?#.nav-mobile:matches-css(display: none) ~ .base > .main { width: calc(100% - 290px) !important; }
 5donews.co.kr#$?#.body > .content.xe_content:not(:has(article)) { width: auto !important; }
 mule.co.kr#$?#.section-lefttop-center:has(> .mule-today) { width: 100% !important; }
+banhub.xyz#$#html{ overflow: visible !important; }
 !
 ! DOMAIN-REFRESHER: START
 !
@@ -3521,6 +3524,7 @@ naver.com#%#//scriptlet('set-constant', 'getAdcrUrl', '')
 koreapas.com#%#//scriptlet('set-constant', 'random_imglink', 'noopFunc')
 imbc.com#%#//scriptlet('set-constant', 'vrixadsdk', 'undefined')
 kilho.net#%#//scriptlet('set-constant', 'hahaha', 'noopFunc')
+banhub.xyz#%#//scriptlet('remove-class', 'backdrop-blur-lg')
 !
 ! DOMAIN-REFRESHER: START
 !
