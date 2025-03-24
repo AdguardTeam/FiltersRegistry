@@ -1,9 +1,9 @@
-! Checksum: SnfGHWyYMeRxorae4qeuKQ
-! Diff-Path: ../patches/2/2-s-1742801802-3600.patch
+! Checksum: JmrtgSbRYm+D+gzl+lp/lg
+! Diff-Path: ../patches/2/2-s-1742805420-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.76.39
-! TimeUpdated: 2025-03-24T07:31:30+00:00
+! Version: 2.3.76.40
+! TimeUpdated: 2025-03-24T08:31:34+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19547,7 +19547,7 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! vogue.com - content gets removed in article
 vogue.com#$#.ad.ad-body.ad-slot.ad-content[style*="width: 1px"][style*="height: 1px"] { display: block !important; }
-||ads-static.conde.digital/production/cns/builds/vogue/v*.js$script,redirect=noopjs,important
+@@||ads-static.conde.digital/production/cns/builds/vogue/v*.js$domain=vogue.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201324
 read.amazon.*#%#//scriptlet('set-constant', 'canRunAds', '1')
 read.amazon.*,primevideo.com#%#//scriptlet('set-constant', 'ue_adb_chk', '1')
@@ -47330,6 +47330,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+businessinsider.com##body .ad-holder
+businessinsider.com##.right-rail-content-wrapper > .rail-container:has(> .ad-callout-wrapper:only-child)
+vogue.com##div[class^="UnifiedProductCardBody"]
+vogue.com#?#.body__inner-container > p:contains(Shop Vogue)
 pornid.xxx###sp-player
 pornid.xxx##.spots-horizontal-title
 read.amazon.*#%#//scriptlet('trusted-click-element', '.kw-ads-pagination-button:first-child, .kw-ads-pagination-button:first-child', '', '1000')
