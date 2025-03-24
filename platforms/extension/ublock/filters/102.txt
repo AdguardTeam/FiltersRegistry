@@ -1,16 +1,16 @@
 ![Adblock Plus 2.0]
-! Checksum: qgx0TNrvqUtK17gxUzNiIw
-! Diff-Path: ../patches/102/102-s-1742749611-14400.patch
+! Checksum: o4fYgZ+XwuWKZ8u6YEPHWQ
+! Diff-Path: ../patches/102/102-s-1742836033-14400.patch
 ! Title: ABPindo
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.7.58
-! TimeUpdated: 2025-03-23T17:01:12+00:00
+! Version: 2.0.7.59
+! TimeUpdated: 2025-03-24T17:01:18+00:00
 ! Expires: 5 days (update frequency)
 !
-! OriginalVersion: 202503231402
+! OriginalVersion: 202503241439
 ! Title: ABPindo
 ! Description: Filter tambahan untuk EasyList memblokir iklan berbahasa Indonesia dan Malaysia.
-! Last modified: 23 Mar 2025 14:02 UTC
+! Last modified: 24 Mar 2025 14:39 UTC
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/ABPindo/indonesianadblockrules/
 ! Licence: https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/LICENSE
@@ -585,28 +585,34 @@ iklan300x250.gif|
 *$popup,domain=bacakomik.co|info.mapsaddress.com|info.vebma.com|kiryuu.id|kiryuu.org|komikcastid.com|komikstation.co|mangakita.id|mangakita.net|wrt.my.id
 ! Miscellanous advertisement gifs
 .gif$image,domain=149.56.24.226|15.235.11.45|anime-indo.id|baladfilm.*|baladfilm.guru|baladfilm.skin|bgibola.com|bioskopkerenin.org|dunia21.club|dutafilm.cfd|kiryuu.org|komikcast.*|ld2tv.net|lk21.london|lk21official.biz|lk21official.live|lk21official.org|lk21tv.com|mangakita.id|movieajip.online|nomat.top|nontondrama.*|nontonfilmgratis.club|oploverz.*|oploverz.best|oploverz.co.in|oploverz.love|oploverz.tv|otakudesu.ltd|ragihospitalkukatpally.com|rbtv77.com|shinigami09.com
+! https://github.com/ABPindo/indonesianadblockrules/pull/660
+||blogger.googleusercontent.com^$image,domain=jurnalistekno.id
 ! *** abpindo:src/advert/scriptlet_ublock.txt ***
 onnano.tv##+js(abort-current-script, document.addEventListener, popup)
 doroni.me##+js(abort-current-script, getComputedStyle, , cpm)
 info.mapsaddress.com,info.vebma.com##+js(addEventListener-defuser, click, linkOpened)
 juraganfilm.ink##+js(abort-on-property-read, $.magnificPopup.open)
+3gpterbaru.com##+js(abort-on-property-read, LieDetector)
 cloud.majalahhewan.com,info.gambar.pro,info.mapsaddress.com,info.vebma.com,jenismac.com##+js(nano-setInterval-booster)
 mudah.my##+js(no-fetch-if, ads.google.com)
 cloud.majalahhewan.com,info.gambar.pro,info.mapsaddress.com,info.vebma.com,thejakartapost.com,tutorialsaya.com##+js(no-fetch-if, adsbygoogle)
 netq.me##+js(no-fetch-if, clarity.ms)
+jurnalistekno.id,tutwuri.id##+js(no-xhr-if, googlesyndication)
 bokepgemoy.com##+js(nobab)
 193.142.147.230,5.253.86.213,ainzscans.net,igobokep.cam,jenismac.com,siimanga.cyou##+js(noeval-if, /chp_?ad/)
 netq.me##+js(no-setTimeout-if, console)
-anichin.top,animekompi.vip,indobo.com,kimcilonly.site,kiryuu.id,kiryuu.org,komikcast02.com,njavtv.com,subindojav.cc##+js(window.open-defuser)
+anichin.top,animekompi.vip,indobo.com,jurnalistekno.id,kimcilonly.site,kiryuu.id,kiryuu.org,komikcast02.com,njavtv.com,subindojav.cc##+js(window.open-defuser)
 okezone.com##+js(remove-class, content-wrap)
 inews.id##+js(remove-class, content-wrap|wrap-all)
 sindonews.com##+js(remove-class, t480)
 tipsgaptek.com,tipskerja.com##+js(prevent-refresh)
+3gpterbaru.com,duniaseksi.com##+js(remove-node-text, script, /decodeURIComponent\(escape|fairAdblock/)
 almaftuchin.com##+js(remove-node-text, script, adblock)
 wisatalova.com##+js(remove-node-text, script, hargamenu)
 katadata.co.id##+js(remove-node-text, script, modalAdsPopup)
 gramedia.com##+js(remove-node-text, script, replaceState, condition, shope.ee)
 carisinyal.com##+js(remove-node-text, script, showModal)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$badfilter,domain=3gpterbaru.com|duniaseksi.com|jurnalistekno.id|kontenterabox.com|tutwuri.id
 ! *** abpindo:src/advert/allowlist.txt ***
 ! General Allowlist for Network Filters
 @@||1idsly.com^$generichide
