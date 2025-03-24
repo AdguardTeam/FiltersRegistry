@@ -1,10 +1,11 @@
-! Checksum: 0xLnYKOvXyA6P1f6PQv0Ng
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1742778377-14400.patch
+! Checksum: weks8ts3cQt809gJHO9r4w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1742792768-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.38.78
-! TimeUpdated: 2025-03-24T01:01:31+00:00
+! Version: 2.1.38.79
+! TimeUpdated: 2025-03-24T05:01:30+00:00
 ! Expires: 5 days (update frequency)
+-facebook-widget.
 -share-bar/$~stylesheet
 -share-buttons3/$~stylesheet
 -share-sprite-
@@ -19,6 +20,7 @@
 /accesspress-social-counter/*
 /addthis_widget.js
 /addtoany.min.js
+/ashare.js
 /common/sns/*
 /common/sns_
 /facebook-pagelike-widget/fb.js
@@ -106,7 +108,6 @@
 /tools/newSideShare/*
 /twitter-footer-
 /twitter-v2.png
-/twitter_follow.png
 /twitter_footer.png
 /twitterlib.js
 /videojs-share.js
@@ -214,6 +215,7 @@ _social_bookmark/
 ###follow-twitter
 ###follow-us-box
 ###follow-us-widget
+###followBox
 ###followUs
 ###follow_buttons
 ###follow_us
@@ -246,13 +248,11 @@ _social_bookmark/
 ###global-share
 ###globalSocialLinks
 ###header-facebook-social-link
-###header-share
 ###header-social
 ###header-social-icons
 ###header-social-links
 ###header-youtube-social-link
 ###headerSocial
-###headerSocialIcons
 ###highlight-share
 ###hshare
 ###iNavSocial
@@ -284,7 +284,6 @@ _social_bookmark/
 ###menu-social-menu-1
 ###menu-social-navigation
 ###menu-social-sidebar
-###menu-top-social
 ###menuSocial
 ###meteored_share
 ###mobile-share-bar
@@ -371,6 +370,7 @@ _social_bookmark/
 ###shareUrl
 ###share_bar
 ###share_block
+###share_bottom
 ###share_box
 ###share_button
 ###share_buttons
@@ -582,6 +582,7 @@ _social_bookmark/
 ###twitterShareButton
 ###twitter_btn
 ###twitter_content
+###twitter_follow
 ###twitter_link
 ###twitter_share
 ###twitter_timeline-2
@@ -708,7 +709,6 @@ _social_bookmark/
 ##.addtoany_list
 ##.addtoany_share_save
 ##.addtoany_share_save_container
-##.agencies-about-share
 ##.amp-facebook
 ##.amp-social-container
 ##.amp-wp-share
@@ -806,7 +806,6 @@ _social_bookmark/
 ##.b-socials
 ##.b_like
 ##.b_share
-##.badge-pinterest-share
 ##.banner-social
 ##.bc-author-socials
 ##.bc_social_icons
@@ -1097,6 +1096,7 @@ _social_bookmark/
 ##.facebookshare
 ##.facewrapper
 ##.fb-cont
+##.fb-fanpage
 ##.fb-follow-button
 ##.fb-footer
 ##.fb-like-box
@@ -1552,7 +1552,6 @@ _social_bookmark/
 ##.js-social-facebook
 ##.js-social-instagram
 ##.js-social-share
-##.js-social-share-list
 ##.js-social-twitter
 ##.js-socialise
 ##.js-socials
@@ -1649,7 +1648,10 @@ _social_bookmark/
 ##.mainShare
 ##.main__share
 ##.mashfs-popup-share
+##.mashicon-facebook
+##.mashicon-google
 ##.mashicon-reddit
+##.mashicon-twitter
 ##.mashsb-box
 ##.mashsb-container
 ##.masterSocialbutton
@@ -1733,7 +1735,6 @@ _social_bookmark/
 ##.nav-soc-but
 ##.nav-social
 ##.nav-social-links
-##.nav-social-wrap
 ##.navSocial
 ##.nav__social
 ##.nav_social
@@ -1885,7 +1886,6 @@ _social_bookmark/
 ##.redes_sociales
 ##.reseaux-sociaux
 ##.resp-sharing-button
-##.resultShare
 ##.right-social
 ##.rmp-sharing
 ##.rn_SocialBookmarkLink
@@ -2071,7 +2071,6 @@ _social_bookmark/
 ##.share-save
 ##.share-section
 ##.share-service-visible
-##.share-set
 ##.share-side
 ##.share-single
 ##.share-sites-thumbs
@@ -2381,7 +2380,6 @@ _social_bookmark/
 ##.site-footer__social-links
 ##.site-footer__social-list
 ##.site-footer__socials
-##.site-share-wrapper
 ##.site-social
 ##.site-social-icon
 ##.site-social-menu
@@ -2537,7 +2535,6 @@ _social_bookmark/
 ##.social-list-footer
 ##.social-list-icon
 ##.social-media-bar
-##.social-media-column
 ##.social-media-fixed
 ##.social-media-footer
 ##.social-media-header
@@ -2714,10 +2711,10 @@ _social_bookmark/
 ##.socialShare
 ##.socialShareLinks
 ##.socialSharing
+##.socialSideBar
 ##.socialTab
 ##.socialToolbar
 ##.socialTools
-##.socialUrl
 ##.socialWidget
 ##.socialWrap
 ##.socialWrapper
@@ -2804,6 +2801,7 @@ _social_bookmark/
 ##.socialsharing
 ##.socialside
 ##.socialtab
+##.socialtags
 ##.socialtools
 ##.socialts
 ##.socialwidget
@@ -2918,6 +2916,7 @@ _social_bookmark/
 ##.total-shares
 ##.totalShares
 ##.total_share
+##.tpcrn-shr-post
 ##.triggerShare
 ##.ts-share-bar
 ##.ts-social
@@ -3226,6 +3225,7 @@ _social_bookmark/
 ||linkedin.com/img/$third-party
 ||milotree.com^$third-party
 ||newsharecounts.com^$third-party
+||opensharecount.com^$third-party
 ||patreon.com/becomePatronButton.bundle.js$third-party
 ||pepper.com^$third-party
 ||pinterest.com/images/$third-party
@@ -3432,6 +3432,7 @@ cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
 alarabiya.net##.google-news-callout
 gadgets360.com##.gsocialbar
+archaeology.org##.header-share
 malaymail.com##.header-social-menu
 cgtn.com##.header-v3-shareicon
 cpac.ca##.header__multi__social
@@ -3464,7 +3465,6 @@ soundcloud.com##.listenDetails__login
 bitcoinmagazine.com,bringmethenews.com,dealbreaker.com,psmag.com,si.com,thespun.com,thestreet.com##.m-social
 consumerfinance.gov##.m-social-media
 insideevs.com##.m1-article-meta_share
-odditycentral.com##.mashsb-container
 themedialine.org##.mdl-share-tool-vertical
 amazon.jobs##.media-icons
 arabnews.com##.meta-area
@@ -3475,7 +3475,6 @@ washingtonian.com##.min-height-800
 travelandleisure.com##.mntl-footer__social
 boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
-denofgeek.com##.nav-social__items
 triblive.com##.navbar-right
 chess.com##.navigation-footer-platforms-component
 ncaa.com##.ncaa-share-hanger
@@ -3511,7 +3510,6 @@ outdoorlife.com,popsci.com,taskandpurpose.com,thedrive.com,twz.com##.recurrent-s
 sordum.org##.sbar_social_div
 oracle.com##.scl-icons
 cars.com##.sds-social-share
-kyivpost.com##.section-soc-icons
 onlinelibrary.wiley.com##.share-access__ctrl
 radiopaedia.org##.share-article-link
 thedirect.com##.share-bar-2
@@ -3531,7 +3529,6 @@ gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##
 thehackernews.com##.share-open-modal
 ig.com.br,med.stanford.edu##.share-page
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
-breachmedia.ca,news.itsfoss.com##.share-toggle
 dailymail.co.uk,thisismoney.co.uk##.share-twitter
 dailymail.co.uk,thisismoney.co.uk##.share-whatsapp
 audi-sport.net,overtake.gg##.shareButtons
@@ -3551,6 +3548,7 @@ defector.com##.single_inner__pWuJ8
 streetsblog.org##.single_sharingInner__3IoQO
 nme.com,operawire.com##.site-footer-social
 news.sky.com,skysports.com##.site-share-wrapper
+archaeology.org##.site-socials
 buyee.jp##.sns_list
 porngals4.com##.soc
 macrumors.com##.social--159R8SRB
@@ -3561,7 +3559,6 @@ fujitsu.com##.social-content
 bonappetit.com,cntraveler.com,them.us##.social-icons--share
 tmz.com##.social-item
 afro.com,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,theatlantavoice.com,washingtoncitypaper.com,washingtonmonthly.com##.social-links-menu
-denofgeek.com##.social-links__anchor--sharing
 blackamericaweb.com,cassiuslife.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
 toofab.com##.social-nav
 adrenaline.com.br,bossip.com,insidehpc.com,mundoconectado.com.br,sportsbusinessjournal.com##.social-networks
@@ -3732,6 +3729,7 @@ megaup.net##.socialsider
 arbys.com#?#[class^="linkBlocks_linkBlock__"]:-abp-has(> [class^="linkBlocks_socialLinkBlockList__"])
 relationshiphero.com#?#div:-abp-has(+ .socialIcons)
 viranomaisuutiset.fi#?#.wpb_wrapper.td_block_wrap:-abp-has(a[href^="https://whatsapp.com"])
+pctipp.ch###buttons-social
 rtde.tech##.ArticleView-rotatorBanners
 finanzfrage.net,gutefrage.net##.Bigfoot-socialLinks
 horizont.net##.SiteHeaderSticky_share
@@ -3761,6 +3759,7 @@ meteofrance.com###block-publicmenusocial
 boursedirect.fr##.content-social
 lefigaro.fr##.fig-share-mobile-layer
 lefigaro.fr##.fig-sharebar
+bfmtv.com##.footer_social_media
 gamekult.com##.gk__footer__social-bar
 gamekult.com##.gk__share
 gamekult.com##.gk__share__label
@@ -3884,7 +3883,6 @@ ria.ru##.article__aggr
 interfax.ru##.header__soc
 kinoland.biz##.page__share
 aif.ru##.sharing_item
-academic.ru##.smm
 sme.sk##.social-dialog-wrapper
 24ur.com##.flex.flex-row.items-center.justify-center.md\:justify-start.p-16.md\:p-0
 24ur.com##.w-full.md\:w-auto.h-full.flex.flex-row.items-center.justify-center.md\:justify-start.pt-16.md\:pt-0.border-t.md\:border-none.border-black\/10.dark\:border-white\/10
@@ -4071,5 +4069,4 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||github.com^$generichide
 @@||github.io^$generichide
 @@||ifttt.com^$generichide
-@@||namechk.com^$generichide
 @@||restream.io^$generichide

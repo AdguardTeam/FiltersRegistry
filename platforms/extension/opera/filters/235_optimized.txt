@@ -1,9 +1,9 @@
-! Checksum: grVetJkNnhSApm+zQC6lwA
-! Diff-Path: ../patches/235_optimized/235_optimized-s-1742432803-14400.patch
+! Checksum: /lJ/9RdDW22VziY3evXuhQ
+! Diff-Path: ../patches/235_optimized/235_optimized-s-1742792788-14400.patch
 ! Title: Persian Blocker (Optimized)
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.48
-! TimeUpdated: 2025-03-20T01:01:53+00:00
+! Version: 2.0.5.49
+! TimeUpdated: 2025-03-24T05:01:47+00:00
 ! Expires: 10 days (update frequency)
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.site/"]
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.co/"]
@@ -2303,6 +2303,11 @@ zohur12.ir##.sideads
 /editorial/api/articles/*/visit^$xmlhttprequest,~third-party,domain=zoomit.ir|zoomg.ir
 zoomit.ir,zoomg.ir,kojaro.com##div[class^="sc-"]:has(> div[class^="sc-"][rowcount][columncount] > div[class^="sc-"][maxwidth][maxheight])
 zoomtech.org##div.zoomtech-banner
+zoomit.ir#%#//scriptlet('ubo-href-sanitizer.js', 'a[variant="contained"][href^="https://api2.zoomit.ir/catalog/store-links/"][href*="/click?url=http"]', '?url')
+||api2.zoomit.ir/catalog/api/products/*/visit^$xmlhttprequest,~third-party,method=post
+zoomit.ir#$?#div#price div.bg-card:has(> div[role="button"] > div.relative div[variant="subhead"][font-weight="bold"][lineheight="1.6"]) { opacity: 0.5 !important; filter: blur(0.4px) !important; transition: border .3s ease, opacity .3s ease !important; }
+zoomit.ir#$?#div#price div.bg-card:has(> div[role="button"] > div.relative div[variant="subhead"][font-weight="bold"][lineheight="1.6"]):hover { opacity: 1 !important; filter: blur(0) !important; }
+zoomit.ir#$?#div#price div.bg-card:has(> div[role="button"] > div.relative div[variant="subhead"][font-weight="bold"][lineheight="1.6"]):active { opacity: 1 !important; filter: blur(0) !important; }
 ||excoino.com^$all
 ||irancloudmining.com^$all
 ||axotrade.com^$all
@@ -2357,6 +2362,7 @@ zoomtech.org##div.zoomtech-banner
 ||tinancefa.org^$all
 ||chancx.io^$all
 ||falixa.com^$all
+||izonekala.com^$all
 ||laxsson.com^$all
 ||tradergpt.ai^$all
 ||rubika.ir^$domain=~web.rubika.ir|~m.rubika.ir

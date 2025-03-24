@@ -1,9 +1,9 @@
-! Checksum: XtHhLQunRMuNk/da/5Eshg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1742634436-14400.patch
+! Checksum: N6Ecbq1k2e1cEqCKLL3I/A
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1742792784-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.11
-! TimeUpdated: 2025-03-22T09:02:27+00:00
+! Version: 2.0.21.12
+! TimeUpdated: 2025-03-24T05:01:53+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -940,7 +940,8 @@ lokalti.se##div.has-post-thumbnail.category-extramaterial:has(a[href*="laneforme
 lokalti.se##.e-loop-nothing-found-message:empty
 lokalti.se##:is(img[src$="a_top.png.webp"], a[href*="casino"]):upward(section.elementor-section)
 lovelylife.se##.elementor-image a[href]:not([href*="lovelylife.se"]) img
-luleahockeyforum.com##main > div:first-child:has(.banniere)
+luleahockeyforum.com###main-content > div[style^="height"]:first-child
+luleahockeyforum.com##.post:has(div[data-ad-text], #taboola-below-article-thumbnails)
 lundagard.se###bdCheckAlso.bdCheckAlsoShow, .topBanner, #sidebar .widget_media_image
 lundextra.se,huddingeextra.se,sundsvallextra.se,goteborgextra.se,sollentunaextra.se##.category-partners
 lundgiants.se#$##LoggaDiv { position:unset!important; }
@@ -1873,6 +1874,7 @@ zeromagazine.nu##div[id^="ads"]
 /SitesterSurvey*.$script
 /Smile_ElasticsuiteTracker/*$script
 /SponsorsList$script,domain=hockeyallsvenskan.se
+/TopAnnons$domain=tidningenattention.se
 /TopBanner$subdocument,domain=hitta.se
 /Toppbanner$domain=forvaltarforum.se
 /Vizzit/vizzit.$script
@@ -2803,6 +2805,7 @@ zeromagazine.nu##div[id^="ads"]
 ||cdn.livechatinc.com/tracking$domain=~box.co.uk
 ||cdn.pji.nu/g/sp.gif$important
 ||cdn.segment.com/v1/projects/$xmlhttprequest,redirect=noopjson,important,domain=dagen.se
+||cdn.stroeerdigitalgroup.de^
 ||cdn.svenskalag.se/img/sponsors$image
 ||centotag.io^$third-party
 ||cervera.se/t/t?
@@ -2822,7 +2825,7 @@ zeromagazine.nu##div[id^="ads"]
 ||connectio.s3.amazonaws.com/connect-retarget$script
 ||connect.facebook.net^$domain=friatider.se|fotosidan.se|ng.se|psykologiguiden.se|lektionsbanken.se|lajvo.se|kvinnatillkvinna.se|epochtimes.se|newsner.com|humorbibeln.se|sportbibeln.se|ettgottskratt.se|djurbibeln.se|sillyseason.se|loppi.se|kyrkanstidning.se|tn.se|experimentarkivet.se
 ||connect.nosto.com^*/behav-popup.$script
-||consentframework.com^$domain=luleahockeyforum.com|se.moyens.net
+||consentframework.com^$domain=luleahockeyforum.com
 ||consentmanager.net^$domain=allastudier.se|gbgfotboll.se|stff.se|svenskfotboll.se|coop.se|dagens.se|mobil.se|kamerabild.se|prevent.se|utsidan.se|inpress.com|studentum.se|utbildning.se|vision.se|byggnads.se|teksajten.se|thelocal.se
 ||consent.podplay.com^
 ||content.livesportmedia.eu^$third-party
@@ -3005,7 +3008,7 @@ zeromagazine.nu##div[id^="ads"]
 ||jst.ai^$third-party
 ||js.adsaga.se^$third-party
 ||js.evtr.nordiskemedier.dk^
-||js.monitor.azure.com^$domain=akademiskahus.se|energi.se|skanetrafiken.se|forex.se|stenafastigheter.se|transportforetagen.se
+||js.monitor.azure.com^$domain=akademiskahus.se|energi.se|skanetrafiken.se|forex.se|stenafastigheter.se|transportforetagen.se|lantmannen.se
 ||js.rating-widget.com/external
 ||juicer.io/api/page_views
 ||jwpcdn.com/player/plugins/inference/
