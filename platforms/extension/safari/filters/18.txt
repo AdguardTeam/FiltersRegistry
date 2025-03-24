@@ -1,9 +1,9 @@
-! Checksum: ULY0fb0sP6oYWqX7Q4a3XA
-! Diff-Path: ../patches/18/18-s-1742805430-3600.patch
+! Checksum: k+ITXUOzRjkfZwAxpJBs/g
+! Diff-Path: ../patches/18/18-s-1742816273-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.58.74
-! TimeUpdated: 2025-03-24T08:32:32+00:00
+! Version: 2.0.58.75
+! TimeUpdated: 2025-03-24T11:32:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2495,6 +2495,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+gutefrage.net#%#//scriptlet('trusted-click-element', 'astro-island[props*="Zustimmen und weiter mit Werbung"] > button', '', '500')
 otrium.*##div[data-testid="consent-manager-banner"]
 lesen.amazon.de###cookies-popover-overlay
 lesen.amazon.de##ion-toast
@@ -16732,6 +16733,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/201262
+@@||cp.gutefrage.net^$domain=gutefrage.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201256
 kenamobile.it#@##cookie-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201071
