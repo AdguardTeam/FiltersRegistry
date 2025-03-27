@@ -8,6 +8,10 @@ on:
       # as compiler does not use the updated config during the build.
       - "optimization_config.json"
   workflow_dispatch:
+  schedule:
+    # Runs every hour at 30 minutes past the hour (to exclude race condition
+    # with builds 3p filters)
+    - cron: "30 * * * *"
 
 env:
   BUILD_MODE: adguard
