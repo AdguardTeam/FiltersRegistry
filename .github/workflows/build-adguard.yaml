@@ -1,16 +1,11 @@
 name: Build AdGuard filters
 
 on:
-  pull_request:
-    paths-ignore:
-      # Do not trigger build on changes to the following files.
-      # It is needed to avoid pull request merge blocking
-      # as compiler does not use the updated config during the build.
-      - "optimization_config.json"
+  # For manual run builds
   workflow_dispatch:
+  # Runs every hour at 30 minutes past the hour (to exclude race condition
+  # with builds 3p filters)
   schedule:
-    # Runs every hour at 30 minutes past the hour (to exclude race condition
-    # with builds 3p filters)
     - cron: "30 * * * *"
 
 env:

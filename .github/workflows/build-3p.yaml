@@ -1,15 +1,10 @@
 name: Build Third-party filters
 
 on:
-  pull_request:
-    paths-ignore:
-      # Do not trigger build on changes to the following files.
-      # It is needed to avoid pull request merge blocking
-      # as compiler does not use the updated config during the build.
-      - "optimization_config.json"
+  # For manual run builds
   workflow_dispatch:
+  # Runs every 4 hours.
   schedule:
-    # Runs every 4 hours.
     - cron: "0 */4 * * *"
 
 env:
