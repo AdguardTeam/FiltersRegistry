@@ -189,6 +189,7 @@ export const TOP_LEVEL_DOMAIN_LIST = [
     'uk',
     'us',
     'uz',
+    'vote',
     'vip',
     'vn',
     'web.id',
