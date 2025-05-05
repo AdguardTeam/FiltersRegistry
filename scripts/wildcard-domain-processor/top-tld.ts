@@ -70,6 +70,7 @@ export const TOP_LEVEL_DOMAIN_LIST = [
     'com.uy',
     'com.vn',
     'cz',
+    'dad',
     'de',
     'desi',
     'dev',
