@@ -210,18 +210,27 @@ export function expandWildcardsInAst(ast: AnyRule, wildcardDomains: WildcardDoma
     switch (ast.category) {
         case RuleCategory.Network:
             return expandWildcardsInNetworkRules(ast as NetworkRule, wildcardDomains);
-        case RuleCategory.Cosmetic:
-            // Expand only element hiding rules and exceptions since these kinds of rules
-            // are supported natively in Safari content blockers.
-            // And other cosmetic rule types, e.g. scriptlets in MV3
-            // https://github.com/AdguardTeam/FiltersRegistry/issues/1063,
-            // should not be expanded as they are to be applied by tswebextension where wildcards are not a problem.
-            if (ast.separator.value === CosmeticRuleSeparator.ElementHiding
-                || ast.separator.value === CosmeticRuleSeparator.ElementHidingException
-            ) {
+        case RuleCategory.Cosmetic: {
+            /**
+             * Expand only element hiding rules and their exceptions since these kinds of rules
+             * are supported natively in Safari content blockers.
+             *
+             * Other cosmetic rules, e.g. scriptlets, are applied:
+             * - by Advanced Blocking in Safari browser;
+             * - by tswebextension in Browser extension MV3.
+             *
+             * In both cases wildcards are not a problem, that's why they are not expanded.
+             * @see {@link https://github.com/AdguardTeam/FiltersRegistry/issues/1063}
+             */
+            const shouldExpandCosmeticRule = ast.separator.value === CosmeticRuleSeparator.ElementHiding
+                || ast.separator.value === CosmeticRuleSeparator.ElementHidingException;
+
+            if (shouldExpandCosmeticRule) {
                 return expandWildcardsInCosmeticRules(ast as CosmeticRule, wildcardDomains);
             }
+
             return null;
+        }
         case RuleCategory.Comment:
         case RuleCategory.Empty:
         case RuleCategory.Invalid:

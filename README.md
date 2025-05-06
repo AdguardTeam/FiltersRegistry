@@ -477,6 +477,24 @@ More information on why this feature was needed can be found in [the related tas
     yarn expand-wildcard-domains platforms scripts/wildcard-domain-processor/wildcard_domains.json
     ```
 
+1. **How wildcard expansion works**
+
+    The wildcard expansion process uses the `expandWildcardsInAst` function to process rules
+    in the Abstract Syntax Tree (AST) format. The function handles different rule categories:
+
+    - **Network Rules** — all network rules with wildcard domains are expanded.
+
+    - **Cosmetic Rules** — only element hiding rules and their exceptions are expanded
+      since these are natively supported in Safari content blockers.
+      Other cosmetic rules (like scriptlets) are not expanded
+      because wildcards are not problematic and don't need expansion:
+
+        - They are applied by Advanced Blocking in Safari browser;
+        - They are applied by tswebextension in Browser extension MV3.
+
+    The expansion process replaces wildcard domains with their non-wildcard equivalents
+    based on the mapping provided in the wildcard domains file.
+
 [wildcard_domains.json]: ./scripts/wildcard-domain-processor/wildcard_domains.json
 
 ### CLI commands help
