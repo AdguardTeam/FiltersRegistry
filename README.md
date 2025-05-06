@@ -487,10 +487,10 @@ More information on why this feature was needed can be found in [the related tas
     - **Cosmetic Rules** — only element hiding rules and their exceptions are expanded
       since these are natively supported in Safari content blockers.
       Other cosmetic rules (like scriptlets) are not expanded
-      because wildcards are not problematic and don't need expansion:
+      because wildcards are not problematic and do not need expansion since they are applied by:
 
-        - They are applied by Advanced Blocking in Safari browser;
-        - They are applied by tswebextension in Browser extension MV3.
+        - Advanced Blocking in Safari browser;
+        - tswebextension in Browser extension MV3.
 
     The expansion process replaces wildcard domains with their non-wildcard equivalents
     based on the mapping provided in the wildcard domains file.
