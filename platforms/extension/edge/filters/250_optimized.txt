@@ -1,5 +1,5 @@
-! Checksum: YMBrzLurbB1YOLie+wD7Sw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1746780178-14400.patch
+! Checksum: vqv1PZEf5OHb+WabACGWhA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1746852103-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.89
@@ -14,6 +14,8 @@
 ##.app-cta:not(html,body,:empty)
 ##.app-download-wrap:not(html,body,:empty)
 ##.app-download:not(html,body,section,.content)
+##.app-nag-body:not(html,body,:empty)
+##.app-nag:not(html,body,:empty)
 ##.appBanner:not(html,body,:empty)
 ##.AppBanner:not(html,body,:empty)
 ##.appdownload:not(html,body,:empty)
@@ -157,6 +159,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||inquirygrid.com^$all
 /page/bouncy.php?$all
 ||banquetunarmedgrater.com^$all
+||correspondimpulsive.com^$all
 ||livejasmin.com/*&origin=$document
 ||exs7oilq14cz6.click^$all
 ||aysesuretobea.com^$all
@@ -961,6 +964,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ://ww18.$document,domain=~ww18.autotask.net|~ww18.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww19.$document,domain=~ww19.autotask.net|~ww19.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww20.$document,domain=~ww20.autotask.net|~ww20.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww22.$document,domain=~ww22.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww25.$document,domain=~ww25.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww26.$document,domain=~ww26.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww38.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
@@ -1672,6 +1676,7 @@ $document,removeparam=_ga,domain=~login.aliexpress.*
 $document,removeparam=guccounter
 $document,removeparam=guce_referrer
 $document,removeparam=guce_referrer_sig
+$document,removeparam=referringSource
 $document,removeparam=psf_variant
 $document,removeparam=bxid
 $document,removeparam=cndid
@@ -1979,6 +1984,7 @@ $removeparam=ircid
 $document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
 $removeparam=awinaffid
+$removeparam=cje
 $removeparam=iclid
 $removeparam=a_fid
 $removeparam=trk_contact
@@ -2570,6 +2576,8 @@ $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 ||paypal.com^$removeparam=calc
 ||youtube.com^$removeparam=ab_channel
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
+||tcgplayer.com^$removeparam=productLineName
+||tcgplayer.com^$removeparam=setName
 ||humblebundle.com^$removeparam=linkID
 ||humblebundle.com^$removeparam=mcID
 ||artstation.com^$removeparam=/^\d.*$/
@@ -3061,8 +3069,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||roblox.$removeparam=friendshipSourceType
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=__ysp
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
-||finn.no^$removeparam=alertType
-||finn.no^$removeparam=stored-id
 ||finn.no^$removeparam=nocache
 ||thehill.com^$removeparam=email
 ||thehill.com^$removeparam=emaila
