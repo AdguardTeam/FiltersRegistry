@@ -1,8 +1,8 @@
-! Checksum: IZNzoF0zUm6oNQKdI4iGkw
+! Checksum: t5bQCM5Yh1eOKoMTkFF7wA
 ! Title: Polish Anti-Annoying Special Supplement
 ! Description: Filters that block and hide RSS elements and remnants of hidden newsletters combined with social elements on Polish websites.
-! Version: 2.0.4.18
-! TimeUpdated: 2025-05-04T00:48:15+00:00
+! Version: 2.0.4.19
+! TimeUpdated: 2025-05-11T00:48:11+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 Polski Antyirytujący Dodatek Specjalny
@@ -10,8 +10,8 @@
 ! Codename: PASS
 ! Description: Filtry blokujące i ukrywające elementy RSS oraz resztki po ukrytych newsletterach złączonych z elementami społecznościowymi na polskojęzycznych stronach.
 ! Używanie listy „Polski Antyirytujący Dodatek Specjalny" jest jednoznaczne ze świadomością, co do jej zawartości (co blokuje itp.) a twórcy nie ponoszą odpowiedzialności za niewiedzę użytkownika.
-! Last modified: Sun, 04 May 2025, 01:07 UTC+02:00
-! OriginalVersion: 2025.5.0
+! Last modified: Sun, 11 May 2025, 01:07 UTC+02:00
+! OriginalVersion: 2025.5.1
 ! Expires: 7 days
 ! Support:
 !   Github => https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement/issues
@@ -19,7 +19,7 @@
 ! Original creator: RikoDev
 ! Current maintainer: Filters Heroes
 ! Homepage: https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement
-! Aktualizacja: nie, 04 maj 2025, 01:07 UTC+02:00
+! Aktualizacja: nie, 11 maj 2025, 01:07 UTC+02:00
 !
 !
 ! Ogólne filtry ukrywające
@@ -28,6 +28,7 @@
 ~google.co.uk,~google.com,~pl##a[href*="news.google.com/publications/"] img:lang(pl)
 ~google.pl,pl##.google-news
 ~google.pl,pl##.google-news-banner
+~pl##a[href*="/posts/get_list.rss"]:lang(pl)
 ~pl##footer a[href$="/rss.xml"]:lang(pl)
 ~pl##li > a > .icon-rss:lang(pl)
 eu,pl##.componentsNavigationFooterNewExpanded__socialMediaLink:is([href*="google.com/publications/"], [href*="msn.com/"])
@@ -45,6 +46,7 @@ pl##.rss:not(.block)
 pl##.s_rss[href*="/feed"]
 pl##.slide-rss-out-div
 pl##.top-bar .social a[href="/rss"]
+pl##a[href*="/posts/get_list.rss"]
 pl##a[href*="news.google.com/publications/"] img
 pl##footer .social a[href="/rss"]
 pl##footer a[href$="/rss.xml"]
@@ -87,23 +89,23 @@ anetaduk.com,bialogard.info,epremki.com,majkiit.github.io,olgasmile.com,omediach
 angela.pl##a[href="rss.php"]
 annopol.info,histmag.org,money.pl##a[href*="/rss"]
 antyfake.pl,biznesinfo.pl,cashless.pl,cooltura24.co.uk,domekiogrodek.pl,e-tlumacze.net,fxmag.pl,goniec.pl,green-news.pl,lelum.pl,pacjenci.pl,portalparentingowy.pl,rolnikinfo.pl,smakosze.pl,swiatgwiazd.pl,swiatzwierzat.pl,turysci.pl,wczestochowie.pl,yelp.pl,zpierwszegotloczenia.pl##a[href="/rss"]
-antyweb.pl#?#.post-content > p:last-of-type:-abp-has(a[href*="news.google.com/publications/"])
+antyweb.pl##.post-content > p:last-of-type:has(a[href*="news.google.com/publications/"])
 anyforum.pl,skyup.pl##.rs.sicon
 app.pharmasistant.pl,aptekarz.pl,aptekaszpitalna.pl,farmaceuta.pl,farmacja.edu.pl,farmacja.net,farmacja.pl,farmacja.tv,grupafarmacja.net,mgr.farm,receptura.pl,rx.edu.pl##.farmacja-google-news-cta
 astronomia24.com##a[href="news_rss.php"]
 aszdziennik.pl,dadhero.pl,innpoland.pl,klubzwierzaki.pl,mamadu.pl,natemat.pl,topnewsy.pl##.page-link[href*="news.google.com/publications/"]
 ataksja.org.pl###linkcat-34
 augustow24.pl##a[href="rss.xml"]
+auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl##.follow-us:has(> a[href*="news.google.com/publications/"]:only-of-type)
+auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl##.follow-us:has(> div > a[href*="news.google.com/publications/"]:only-of-type)
+auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl##.followUs:has(> a[href*="news.google.com/publications/"]:only-of-type)
+auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl##.followUs:has(> div > a[href*="news.google.com/publications/"]:only-of-type)
 auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl##.googleNewsBanner
 auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl##.ods-c-footer__social:has(> a[href]:is([href*="feed" i], [href*="rss" i], [href=".xml"]))
-auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl#?#.follow-us:-abp-has(> a[href*="news.google.com/publications/"]:only-of-type)
-auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl#?#.follow-us:-abp-has(> div > a[href*="news.google.com/publications/"]:only-of-type)
-auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl#?#.followUs:-abp-has(> a[href*="news.google.com/publications/"]:only-of-type)
-auto-swiat.pl,fakt.pl,komputerswiat.pl,medonet.pl,onet.pl,plejada.pl,przegladsportowy.pl#?#.followUs:-abp-has(> div > a[href*="news.google.com/publications/"]:only-of-type)
 autocentrum.pl##a[href="/rss/"]
 autoidea.pl###media
 autokult.pl,fitness.wp.pl,fotoblogia.pl,gadzetomania.pl,jejswiat.pl,kafeteria.pl,komorkomania.pl,medycyna24.pl,nowymarketing.pl,smaczneblogi.pl##.link-rss
-autokult.pl,fotoblogia.pl#?#.main-article.article > .insert:-abp-has(.html a[href*="bit.ly/"] img)
+autokult.pl,fotoblogia.pl##.main-article.article > .insert:has(.html a[href*="bit.ly/"] img)
 autor.pl##.rssocial-icons.rssocial-container
 axa.pl##.has-socials
 aztecas.eu##.stopka > div[class*="stopka2"] > a[href$="/feed/"]
@@ -141,8 +143,8 @@ bolesławiec.pl,chroberz.info,katedra.rzeszow.pl,przeclaw24.pl,tygodniknotecki.p
 bonavita.pl##.jumplist-rss
 bosch-do-it.com##.footerSocialText, .sprite_rss
 bosch-prasa.pl##.WitrynaBoxRssSubscribe
+businessinsider.com.pl##.follow-us:has(a[href*="news.google.com/publications/"])
 businessinsider.com.pl##a[href*="feed"] > .footer_social-links_icons
-businessinsider.com.pl#?#.follow-us:-abp-has(a[href*="news.google.com/publications/"])
 butyjana.pl###bjNewsletter
 bydgoszcz.com##a[href*="bydgoszcz.com/rss"]
 cad-akademia.pl,mergado.pl,niebezpiecznik.pl,nowiny.pl,p-programowanie.pl##.feed
@@ -174,13 +176,13 @@ deccoria.pl###google-news-button
 demagog.org.pl##.dg-social_icons a[href*="/feed"]
 developers.google.com##.devsite-footer-promos-list > li:has([href*="/feed"])
 dhl.com##.c-footer-social-container
-di.com.pl#?#li:-abp-has(a[href$="/rss.html"])
+di.com.pl##li:has(a[href$="/rss.html"])
 di.pk.edu.pl##.RssFeedIcon
 digitalassets.pl##.feed-link-wrap
 diver.net.pl###menumob > a[href*="feedburner."]
 diver.net.pl##.xpd-ele-1
+dlahandlu.pl,rynekaptek.pl,rynekseniora.pl,rynekzdrowia.pl,sadyogrody.pl##.box:has(> #socialBox)
 dlahandlu.pl,rynekaptek.pl,rynekseniora.pl,rynekzdrowia.pl,sadyogrody.pl##.footer-menu-list-link[href*="/rss"]
-dlahandlu.pl,rynekaptek.pl,rynekseniora.pl,rynekzdrowia.pl,sadyogrody.pl#?#.box:-abp-has(> #socialBox)
 dlapolski.pl##.dashicons-rss
 dns.pl##.follow-icon__rss
 dns.pl##.follow-links > li[class*="rss" i]
@@ -191,9 +193,9 @@ dw.com,e-petrol.pl,gram.pl,miastonowydwor.pl,mkm.szczecin.pl##a[href*="/rss/"]
 dzeta.com.pl,zssucha.pl###block-node-syndicate
 dziennik.com##.t-right.omega.g3
 dziennik.pl,forsal.pl,gazetaprawna.pl,infor.pl##.googleNewsBtn
+dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gratka.pl,gs24.pl,i.pl,kurierlubelski.pl,motofakty.pl,naszahistoria.pl,naszemiasto.pl,nekrologi.net,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,regiodom.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,strefaedukacji.pl,stronakobiet.pl,stronakuchni.pl,stronapodrozy.pl,stronazdrowia.pl,telemagazyn.pl,to.com.pl,tygodnikits.pl,wspolczesna.pl##.componentsArticlesBarArticleLinkWithLogo:has([href*="/jestesmy-na-google-news-sledz-portal-"])
 dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gratka.pl,gs24.pl,i.pl,kurierlubelski.pl,motofakty.pl,naszahistoria.pl,naszemiasto.pl,nekrologi.net,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,regiodom.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,strefaedukacji.pl,stronakobiet.pl,stronakuchni.pl,stronapodrozy.pl,stronazdrowia.pl,telemagazyn.pl,to.com.pl,tygodnikits.pl,wspolczesna.pl##footer a[href*="/rss"]
-dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gratka.pl,gs24.pl,i.pl,kurierlubelski.pl,motofakty.pl,naszahistoria.pl,naszemiasto.pl,nekrologi.net,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,regiodom.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,strefaedukacji.pl,stronakobiet.pl,stronakuchni.pl,stronapodrozy.pl,stronazdrowia.pl,telemagazyn.pl,to.com.pl,tygodnikits.pl,wspolczesna.pl#?#.componentsArticlesBarArticleLinkWithLogo:-abp-has([href*="/jestesmy-na-google-news-sledz-portal-"])
-dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gratka.pl,gs24.pl,i.pl,kurierlubelski.pl,motofakty.pl,naszahistoria.pl,naszemiasto.pl,nekrologi.net,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,regiodom.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,strefaedukacji.pl,stronakobiet.pl,stronakuchni.pl,stronapodrozy.pl,stronazdrowia.pl,telemagazyn.pl,to.com.pl,tygodnikits.pl,wspolczesna.pl#?#ul.componentsRecommendationsSelected__list--withPhoto > li.componentsRecommendationsSelected__item:-abp-has([href*="/jestesmy-na-google-news-sledz-portal-"])
+dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gratka.pl,gs24.pl,i.pl,kurierlubelski.pl,motofakty.pl,naszahistoria.pl,naszemiasto.pl,nekrologi.net,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,regiodom.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,strefaedukacji.pl,stronakobiet.pl,stronakuchni.pl,stronapodrozy.pl,stronazdrowia.pl,telemagazyn.pl,to.com.pl,tygodnikits.pl,wspolczesna.pl##ul.componentsRecommendationsSelected__list--withPhoto > li.componentsRecommendationsSelected__item:has([href*="/jestesmy-na-google-news-sledz-portal-"])
 dziennikwschodni.pl##.read-us-widget__social-item:nth-of-type(3)
 e-kolo.pl##img[src*="images/googlesmall.png"]
 e-kolo.pl##img[src*="images/googlesmall.png"] + a[href*="news.google.com/publications/"]
@@ -268,7 +270,7 @@ hardcorowo.pl,sadownictwo.com.pl###rssLink
 hdtv.com.pl,xboxforum.pl##.p-footer-rssLink
 helion.pl###social a[href*="rss"]
 hfc.com.pl##.rss-sprite
-histmag.org#?##article div[style*="auto"] > div[style*="bold"]:-abp-has(+ #calculatedSocials)
+histmag.org###article div[style*="auto"] > div[style*="bold"]:has(+ #calculatedSocials)
 horecanet.pl,petrolnet.pl##hr + div:has(a[href*="news.google.com/publications/"] img)
 hydro.com.pl##.btn-rss
 i-systems.pl,interia.pl##a[href*="/feed"]
@@ -286,7 +288,7 @@ instytutsprawobywatelskich.pl###site-header a[href*="/feed/"]
 intercyza-blog.pl###text-18
 interia.pl,pomponik.pl##.google-news-container
 interia.pl,pomponik.pl##.google-news-social-btn
-interia.pl,~poczta.interia.pl,pomponik.pl#?##react_component_article div[width="9"] div p:-abp-has(b:-abp-contains(Bądź na bieżąco) ~ a[href*="news.google.com/publications/"])
+interia.pl,~poczta.interia.pl,pomponik.pl#?##react_component_article div[width="9"] div p:has(b:has-text(Bądź na bieżąco) ~ a[href*="news.google.com/publications/"])
 interpretacje-podatkowe.org###hi
 intibs.pl##.social.custom > ul > li:nth-of-type(3)
 investors.pl###home-box-comments a.additional-link:first-of-type
@@ -314,7 +316,7 @@ knf.gov.pl##.footer-link[href*="/rss"]
 kochanamama.pl##.pmpIRss, .pmpB > div > div:first-of-type
 kodi.org.pl##.gk-icon-rss
 kolemsietoczy.pl###menu-sociale > li:nth-child(5)
-komorkomat.pl#?#.post-content p:-abp-has(a[href*="news.google.com/publications/"])
+komorkomat.pl##.post-content p:has(a[href*="news.google.com/publications/"])
 komputerswiat.pl##.ods-c-follow-us div:has(a[href*="news.google.com/publications/"]:only-of-type)
 komputerswiat.pl##.ods-c-footer__social
 korr.pl##a[href^="/?format=feed&type=rss"]
@@ -338,12 +340,12 @@ leclerc.rzeszow.pl##.foot_newsletter
 legionowo.pl##.icons-box a[href*="rss"]
 librus.pl##.zse-footer__social-link
 lifehacking.pl,wyborkierowcow.pl##.footer-social-wrap
+linuxiarze.pl##article[class*="post"] div:has(> a[href*="/feed"])
+linuxiarze.pl##article[class*="post"] div:has(> a[href*="/feed"]) + hr
+linuxiarze.pl##article[class*="post"] div:has(> a[href*="katalog."])
+linuxiarze.pl##article[class*="post"] div:has(> a[href*="katalog."]) + hr
 linuxiarze.pl##header a[href*="/feed/"]
 linuxiarze.pl##header a[href="https://linuxchannel.org"]
-linuxiarze.pl#?#article[class*="post"] div:-abp-has(> a[href*="/feed"])
-linuxiarze.pl#?#article[class*="post"] div:-abp-has(> a[href*="/feed"]) + hr
-linuxiarze.pl#?#article[class*="post"] div:-abp-has(> a[href*="katalog."])
-linuxiarze.pl#?#article[class*="post"] div:-abp-has(> a[href*="katalog."]) + hr
 linuxporady.pl###heatmapthemead-rss-social-icon
 listwy-dekoracyjne.pl###newsletter_block_social
 lookcam.com,pcfaq.pl###rss_icon
@@ -353,7 +355,7 @@ lovekrakow.pl##.header-top-nav-social-list a[href*="rss"]
 lubanski.eu##.rss-box > .posts-icon
 lubsport.pl##.footer-widget-section > .row > div:first-child > div:nth-child(2) > div:first-child > .widget-title
 lubsport.pl,politykabezpieczenstwa.pl##footer a[href*="/feed"]
-lukaszrokicki.pl#?##sidebar > ul > li:-abp-contains(Śledź nowości)
+lukaszrokicki.pl#?##sidebar > ul > li:has-text(Śledź nowości)
 madameedith.com##.top-social a[href*="feedburner."]
 magazynauto.pl##.social--list a[href*="/rss"]
 magazynkuchenny.com###social > li > a[href*="feed"]
@@ -368,8 +370,8 @@ mattomatti.com##a[href="rss"]
 media.netflix.com##.signup-for-blog
 media.pkobp.pl##.pko-menu__section > .pko-menu__social-icons > .pko-icon.pko-icon--rss
 media.poczta-polska.pl##.subscribe-section__rss
-medonet.pl#?#p.additional-article-bottom-text + .additional-article-bottom-text:-abp-has(> a[href*="news.google.com/publications/"])
-medonet.pl#?#p.additional-article-bottom-text:-abp-has(+ .additional-article-bottom-text a[href*="news.google.com/publications/"])
+medonet.pl##p.additional-article-bottom-text + .additional-article-bottom-text:has(> a[href*="news.google.com/publications/"])
+medonet.pl##p.additional-article-bottom-text:has(+ .additional-article-bottom-text a[href*="news.google.com/publications/"])
 megascena.pl###footer > #subscribe-out
 melagu.pl##.ty-footer-grid > div:first-of-type > div[class*="footer-"].span16
 mi-home.pl###newsletter_block_left
@@ -420,9 +422,9 @@ oiot.pl,tabletowo.pl###top-bar-message
 oknonawagrowiec.pl##.theiaStickySidebar > div[id^="penci-social-counter-"]
 oko.press##:is(.flex, li) > a[href*="news.google.com/publications/"]
 omediach.info###custom_html-5 > .panel-header
-onetech.pl#?#.elementor-column:first-child + .elementor-column:last-child div[data-element_type="widget"][data-widget_type*="heading"] div:-abp-contains(Dołącz do nas)
+onetech.pl#?#.elementor-column:first-child + .elementor-column:last-child div[data-element_type="widget"][data-widget_type*="heading"] div:has-text(Dołącz do nas)
 orlen.pl##.newsletterAndRss
-oszczedzarka.co.uk#?#.row > .engine-block.small-12.large-3 > center:has(img[src="/img/soc_3.png"])
+oszczedzarka.co.uk##.row > .engine-block.small-12.large-3 > center:has(img[src="/img/soc_3.png"])
 otososnowiec.pl,swietochlowiceonline.pl##a[href$="/feed/rss/"]
 ox.pl##.navIcons__displayIcons--close
 paczkow.pl##.rss-linkl
@@ -442,16 +444,16 @@ pl.coinmill.com###rsslink
 pl.msi.com##.shortcut__link[href*="/rss"]
 pl.wikipedia.org###feed-atom
 planszowkiwedwoje.pl###HTML7 > .title, a[href*="planszowki.blogspot.com/feeds/posts/default"]
-plejada.pl#?#article p.hyphenate:nth-child(-n+2):-abp-has(> a[href*="news.google.com/publications/"])
-plejada.pl#?#p.hyphenate:-abp-has(> a[href*="news.google.com/publications/"] > em:-abp-contains(Obserwuj))
-plejada.pl#?#p.narrow.hyphenate:-abp-contains(/^Bądź na bieżąco/):-abp-has(> a[href*="news.google.com/publications/"] > strong)
+plejada.pl##article p.hyphenate:nth-child(-n+2):has(> a[href*="news.google.com/publications/"])
+plejada.pl#?#p.hyphenate:has(> a[href*="news.google.com/publications/"] > em:has-text(Obserwuj))
+plejada.pl#?#p.narrow.hyphenate:has-text(/^Bądź na bieżąco/):has(> a[href*="news.google.com/publications/"] > strong)
 pless.pl##small > a[href="//www.pless.pl/rss.xml"]
 pm1kg.pl##.rss-tag-icon
 podkasty.info##.social > li:first-of-type
 policja.pl###social > li:first-of-type
 polsatnews.pl##.nav__item--rss, .container__layout.container__box:nth-of-type(3) > .section > .section__header
 polskikarting.pl##div#social-nav
-polsl.pl#?#.mainCenterColumnFilterName:-abp-has(> a[href^="/_layouts/listfeed.aspx"])
+polsl.pl##.mainCenterColumnFilterName:has(> a[href^="/_layouts/listfeed.aspx"])
 porozmawiajmyoit.pl##.buzz_rss
 portalautomatyki.pl,portalrolniczy.info##.ninjarss-_rss_css a[href^="/component/ninjarsssyndicator/"]
 portalmedialny.pl##.rss_subscription
@@ -487,7 +489,7 @@ radzymin.pl##.element--rss
 randomseed.pl##.footer-links > li > a[href*="index.xml"]
 rmf24.pl##.footer-rss
 rmf24.pl##a[href="#spolecznosc"]
-rmf24.pl#?#li:-abp-has(> div > a[href="/kanaly/rss"])
+rmf24.pl##li:has(> div > a[href="/kanaly/rss"])
 rmf.fm###new-footer-icon-rss
 rmf.fm##.new-footer-column:nth-of-type(6) > h3
 rocketpoland.com,zachodniopomorska.tv##.social
@@ -522,7 +524,7 @@ slodkastrona.com###Subscribe2
 slomski.us###text-4
 smaker.pl##.-share.-gn.btn--social
 smakidalmacji.pl##.rss-widget-feed
-smakosze.pl#?#button:-abp-has(span:-abp-contains(Obserwuj nas w))
+smakosze.pl#?#button:has(span:has-text(Obserwuj nas w))
 smartyou.pl##.social > .title
 sneakershop.pl###links_footer_3 > li > .footer_links_sub > li:nth-of-type(2)
 socialpress.pl##.follow_us.container-fluid
@@ -546,16 +548,16 @@ tajemnice-swiata.pl###mh_magazine_social-2
 tanie-loty.com.pl##.social-links > li:nth-of-type(6)
 teatrsyrena.pl##.footer-col1
 tecnoandroid.net##.footer-social-list > .social-link-rss
-tektorado.com#?#.content > section:-abp-has(> .facebook:-abp-has(~ #form_kontakt))
+tektorado.com##.content > section:has(> .facebook:has(~ #form_kontakt))
+telepolis.pl##.artykul-content div:has(> strong > a[href*="news.google.com/publications/"])
 telepolis.pl##.footer__socials a[href*="/rss"]
 telepolis.pl##.site-footer__top__socials a[href*="/rss"]
-telepolis.pl#?#.artykul-content div:-abp-has(> strong > a[href*="news.google.com/publications/"])
 telesmartfon.pl###meta-3 > ul > li:nth-child(n+2):nth-child(-n+3)
 telko.in##a[data-tip="Kanał RSS TELKO.in"]
 telpol.net.pl##a[href*="/rss,"]
 tesa.com##div.js-controller.module
 thenews.pl###ctl00_ctl00_ctl00_ContentPlaceHolder1_ContentPlaceHolder1_SecondColumn_A_ctl07_ContentDiv > ul > li:nth-of-type(3), span > a[href*="thenews.pl/rss"]
-tko.pl#?#.tdm-popup-modal-wrap:-abp-contains(Google News)
+tko.pl#?#.tdm-popup-modal-wrap:has-text(Google News)
 toiowo.eu###gk-rss
 trojmiejska.com##footer #easycontent_6 > .title_block
 trzynasty-schron.net##.dolneIkonki > li:first-of-type
@@ -602,8 +604,8 @@ wittamina.pl###text-5 a[href*="/feed"]
 wiwa.info.pl##td > span > a[href^="/?format=feed"]
 wnp.pl##a[href*="wnp.pl/rss/"]
 wolnemedia.net###bar-second > ul > li:nth-of-type(2)
+wolnemedia.net###menu-icon li:nth-of-type(2):has(a[href*="/kanaly-rss/"])
 wolnemedia.net##ul > a[href*="wolnemedia.net/kanaly-rss/"]
-wolnemedia.net#?##menu-icon li:nth-of-type(2):-abp-has(a[href*="/kanaly-rss/"])
 wp.pl##a[href*="//rss.wp.pl"]
 wprost.pl##.soc-buttons
 wroclaw.pl##.ck_mobile_social_icon_8
@@ -629,7 +631,7 @@ ztm.waw.pl###Banneryiztm > a[href*="ztm.waw.pl/"]:nth-of-type(-n+4):nth-of-type(
 zuch.media##.fw-footer-social > a:nth-of-type(4)
 zus.pl##.b-icon-before-large-rss
 zus.pl##a.social-link[href*="rss"]
-zxu.pl#?#.code-block:-abp-has(> a[href*="news.google.com/publications/"])
+zxu.pl##.code-block:has(> a[href*="news.google.com/publications/"])
 zyleta.info##.followupdate
 !
 !
