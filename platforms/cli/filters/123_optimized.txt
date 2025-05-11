@@ -1,9 +1,9 @@
-! Checksum: J/JOhZshUoq649aOf6Rbuw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1746924699-14400.patch
+! Checksum: E1Et//2DckOnrajQ7cNG5A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1746938525-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.41.18
-! TimeUpdated: 2025-05-11T00:47:47+00:00
+! Version: 2.1.41.19
+! TimeUpdated: 2025-05-11T04:37:59+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -26,6 +26,7 @@
 /bottom-facebook.png
 /common/sns/*
 /common/sns_
+/diggdigg-floating-bar.js
 /facebook-pagelike-widget/fb.js
 /facebook-side.png
 /facebook_footer.png
@@ -72,6 +73,7 @@
 /plugins/ultimate-social-deux/public/assets/js/min/us.script-min.js
 /prisna-social-counter.css
 /Resources/twitter-$~xmlhttprequest
+/share/count?
 /share/footer/*
 /share42.js
 /share_button?
@@ -95,6 +97,7 @@
 /sharer.js
 /sharethis.js
 /shareTools.js
+/Sharetw.png
 /shareTwitter.png
 /shariff.min.js
 /silicon-counters.js
@@ -1268,6 +1271,7 @@ _social-bar/
 ##.followSocial
 ##.followTwitter
 ##.followUsLinks
+##.follow__item
 ##.followus_net
 ##.followuson
 ##.foot-share
@@ -1336,6 +1340,7 @@ _social-bar/
 ##.footerShare
 ##.footerSocial
 ##.footerSocialIcons
+##.footerSocialShares
 ##.footerSocials
 ##.footer__bottom-social
 ##.footer__content-social
@@ -1580,6 +1585,7 @@ _social-bar/
 ##.ig-share-button
 ##.ig_social
 ##.ikonz-social
+##.image-share
 ##.image-social
 ##.img-social
 ##.in-social
@@ -1755,6 +1761,9 @@ _social-bar/
 ##.main-nav-social
 ##.mainVerticalArticleSharingLinks
 ##.main_search_social
+##.mashicon-facebook
+##.mashicon-google
+##.mashicon-twitter
 ##.mashsb-box
 ##.mashsb-container
 ##.masterSocialbutton
@@ -1913,6 +1922,7 @@ _social-bar/
 ##.pinButton
 ##.pin_share
 ##.pinit-btn
+##.pinit-button
 ##.pinterest-btn
 ##.pinterest-button
 ##.pinterest-icon
@@ -2452,6 +2462,7 @@ _social-bar/
 ##.sharing-element-facebook
 ##.sharing-element-twitter
 ##.sharing-facebook
+##.sharing-fb
 ##.sharing-info
 ##.sharing-item
 ##.sharing-link
@@ -2501,6 +2512,7 @@ _social-bar/
 ##.sidebar-share
 ##.sidebar-social
 ##.sidebar-socials
+##.sidebar-twitter
 ##.sidebar_social
 ##.simple-share
 ##.simple-social-icons
@@ -2514,6 +2526,7 @@ _social-bar/
 ##.single-sharing-btns
 ##.single-sidebar-share
 ##.single-social-button
+##.singleSocialShares
 ##.single__floating-share
 ##.single__share
 ##.single__social
@@ -2809,6 +2822,7 @@ _social-bar/
 ##.social.social-youtube
 ##.socialBanner
 ##.socialBar
+##.socialBottom
 ##.socialBtnList
 ##.socialButtons
 ##.socialButtonv1
@@ -3569,6 +3583,7 @@ agrimag.co.za,androidpolice.com,automart.co.za,givemesport.com##.btn-whatsapp
 koimoi.com##.btn-whatsup
 androidpolice.com##.btn-x
 consumerreports.org##.btn__social
+notateslaapp.com##.button-follow
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
 lawandcrime.com##.c-article-foot__site
@@ -3782,7 +3797,6 @@ buyee.jp##.sns_list
 firstpost.com##.so-ics
 macrumors.com##.social--159R8SRB
 getpocket.com,mirror.co.uk,themirror.com##.social-actions
-penntoday.upenn.edu##.social-anchor-group
 noticias.perfil.com,vaticannews.va##.social-btn
 rte.ie##.social-btn-container
 fujitsu.com##.social-content

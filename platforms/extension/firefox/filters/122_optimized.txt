@@ -1,9 +1,9 @@
-! Checksum: cS8/h212ZKTW7dNlaXfq0w
-! Diff-Path: ../patches/122_optimized/122_optimized-s-1746924711-14400.patch
+! Checksum: O+4J/upCmmCkjd1VDQNStw
+! Diff-Path: ../patches/122_optimized/122_optimized-s-1746938535-14400.patch
 ! Title: Fanboy's Annoyances (Optimized)
 ! Description: Removes in-page pop-ups and other annoyances. Includes Fanboy's Social Blocking & EasyList Cookie Lists.
-! Version: 2.1.46.97
-! TimeUpdated: 2025-05-11T00:47:46+00:00
+! Version: 2.1.46.98
+! TimeUpdated: 2025-05-11T04:37:58+00:00
 ! Expires: 10 days (update frequency)
 /1-popupally-pro-code.js
 /arscode-ninja-popups/*$~stylesheet
@@ -1250,7 +1250,6 @@ cbsnews.com#%#//scriptlet('ubo-rc.js', 'floating', '', 'stay')
 [$path=/\\/(search|tag)\\//]www.nicovideo.jp##.nicoadVideoItem
 [$path=/tag/]www.nicovideo.jp##.nicodicNicoadVideoList
 ufret.jp###full-screen-ad
-saisoncard.co.jp###modal-overlay:has(.form-area-content__img > [src$="/marketing01.jpg"])
 saisoncard.co.jp#$#body[style="overflow-y: hidden;"] { overflow-y: auto !important; }
 ||linker.ba^$third-party
 ||trustseal.e-rasaneh.ir^$third-party
@@ -1531,7 +1530,6 @@ cbsnews.com#%#//scriptlet('ubo-rc.js', 'floating', '', 'stay')
 [$path=/\\/(search|tag)\\//]www.nicovideo.jp##.nicoadVideoItem
 [$path=/tag/]www.nicovideo.jp##.nicodicNicoadVideoList
 ufret.jp###full-screen-ad
-saisoncard.co.jp###modal-overlay:has(.form-area-content__img > [src$="/marketing01.jpg"])
 saisoncard.co.jp#$#body[style="overflow-y: hidden;"] { overflow-y: auto !important; }
 -facebook-share.
 -facebook-widget.
@@ -1554,6 +1552,7 @@ saisoncard.co.jp#$#body[style="overflow-y: hidden;"] { overflow-y: auto !importa
 /bottom-facebook.png
 /common/sns/*
 /common/sns_
+/diggdigg-floating-bar.js
 /facebook-pagelike-widget/fb.js
 /facebook-side.png
 /facebook_footer.png
@@ -1600,6 +1599,7 @@ saisoncard.co.jp#$#body[style="overflow-y: hidden;"] { overflow-y: auto !importa
 /plugins/ultimate-social-deux/public/assets/js/min/us.script-min.js
 /prisna-social-counter.css
 /Resources/twitter-$~xmlhttprequest
+/share/count?
 /share/footer/*
 /share42.js
 /share_button?
@@ -1623,6 +1623,7 @@ saisoncard.co.jp#$#body[style="overflow-y: hidden;"] { overflow-y: auto !importa
 /sharer.js
 /sharethis.js
 /shareTools.js
+/Sharetw.png
 /shareTwitter.png
 /shariff.min.js
 /silicon-counters.js
@@ -2796,6 +2797,7 @@ _social-bar/
 ##.followSocial
 ##.followTwitter
 ##.followUsLinks
+##.follow__item
 ##.followus_net
 ##.followuson
 ##.foot-share
@@ -2864,6 +2866,7 @@ _social-bar/
 ##.footerShare
 ##.footerSocial
 ##.footerSocialIcons
+##.footerSocialShares
 ##.footerSocials
 ##.footer__bottom-social
 ##.footer__content-social
@@ -3108,6 +3111,7 @@ _social-bar/
 ##.ig-share-button
 ##.ig_social
 ##.ikonz-social
+##.image-share
 ##.image-social
 ##.img-social
 ##.in-social
@@ -3283,6 +3287,9 @@ _social-bar/
 ##.main-nav-social
 ##.mainVerticalArticleSharingLinks
 ##.main_search_social
+##.mashicon-facebook
+##.mashicon-google
+##.mashicon-twitter
 ##.mashsb-box
 ##.mashsb-container
 ##.masterSocialbutton
@@ -3441,6 +3448,7 @@ _social-bar/
 ##.pinButton
 ##.pin_share
 ##.pinit-btn
+##.pinit-button
 ##.pinterest-btn
 ##.pinterest-button
 ##.pinterest-icon
@@ -3980,6 +3988,7 @@ _social-bar/
 ##.sharing-element-facebook
 ##.sharing-element-twitter
 ##.sharing-facebook
+##.sharing-fb
 ##.sharing-info
 ##.sharing-item
 ##.sharing-link
@@ -4029,6 +4038,7 @@ _social-bar/
 ##.sidebar-share
 ##.sidebar-social
 ##.sidebar-socials
+##.sidebar-twitter
 ##.sidebar_social
 ##.simple-share
 ##.simple-social-icons
@@ -4042,6 +4052,7 @@ _social-bar/
 ##.single-sharing-btns
 ##.single-sidebar-share
 ##.single-social-button
+##.singleSocialShares
 ##.single__floating-share
 ##.single__share
 ##.single__social
@@ -4337,6 +4348,7 @@ _social-bar/
 ##.social.social-youtube
 ##.socialBanner
 ##.socialBar
+##.socialBottom
 ##.socialBtnList
 ##.socialButtons
 ##.socialButtonv1
@@ -5097,6 +5109,7 @@ agrimag.co.za,androidpolice.com,automart.co.za,givemesport.com##.btn-whatsapp
 koimoi.com##.btn-whatsup
 androidpolice.com##.btn-x
 consumerreports.org##.btn__social
+notateslaapp.com##.button-follow
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
 lawandcrime.com##.c-article-foot__site
@@ -5310,7 +5323,6 @@ buyee.jp##.sns_list
 firstpost.com##.so-ics
 macrumors.com##.social--159R8SRB
 getpocket.com,mirror.co.uk,themirror.com##.social-actions
-penntoday.upenn.edu##.social-anchor-group
 noticias.perfil.com,vaticannews.va##.social-btn
 rte.ie##.social-btn-container
 fujitsu.com##.social-content
@@ -5991,6 +6003,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 /cookie-banner/*
 /cookie-bar.min.js
 /cookie-check.js
+/cookie-consent-dialog.js
 /cookie-consent-min.js
 /cookie-consent.js
 /cookie-consent.min.js
@@ -6536,6 +6549,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ###cookie-warning-bar
 ###cookie-warning-container
 ###cookie.active
+###cookie.alert-warning
 ###cookie.p-4
 ###cookie.view
 ###cookie1
@@ -6769,6 +6783,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ###cookies-eu-banner
 ###cookies-eu-wrapper
 ###cookies-fancybox
+###cookies-fixed
 ###cookies-footer
 ###cookies-header
 ###cookies-info
@@ -7055,6 +7070,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ###lqd-gdpr
 ###machete_cookie_container
 ###mb_gdpr_warning
+###mensajeCookies
 ###message-cookie
 ###messageCookie
 ###message_cookie
@@ -7220,6 +7236,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ###uhfCookieAlert
 ###ukCookiePopup
 ###uo_cookie_banner
+###usercookieshow
 ###v-cookielaw
 ###vc-bar-cookie
 ###viewCookies
@@ -7431,6 +7448,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##.cookie-acceptance
 ##.cookie-advert
 ##.cookie-advice
+##.cookie-agree-wrapper
 ##.cookie-agreement-wrapper
 ##.cookie-alert-box
 ##.cookie-alert-container
@@ -7459,6 +7477,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##.cookie-consent-banner-overlay
 ##.cookie-consent-bottom-corner
 ##.cookie-consent-ctr
+##.cookie-consent-embed-overlay
 ##.cookie-consent-holder
 ##.cookie-consent-message
 ##.cookie-consent-notice
@@ -7697,6 +7716,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##.cookies-div
 ##.cookies-eu
 ##.cookies-hint
+##.cookies-holder
 ##.cookies-infobar
 ##.cookies-information
 ##.cookies-informer
@@ -7723,7 +7743,9 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##.cookies-sec
 ##.cookies-section
 ##.cookies-tip
+##.cookies-tooltip
 ##.cookies-top
+##.cookies-type
 ##.cookies-wrap
 ##.cookies-wrapper
 ##.cookies.bottom
@@ -7855,6 +7877,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##.gdpr-banner
 ##.gdpr-banner-wrapper
 ##.gdpr-bar
+##.gdpr-bg
 ##.gdpr-block
 ##.gdpr-consent
 ##.gdpr-consent-bar-box
@@ -7868,6 +7891,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##.gdpr-dialog
 ##.gdpr-disclaimer
 ##.gdpr-footer
+##.gdpr-header
 ##.gdpr-info
 ##.gdpr-message
 ##.gdpr-modal-overlay
@@ -7920,6 +7944,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##.informativo-lgpd
 ##.iparsys.cookies
 ##.is-active.cookie
+##.is-cookie-banner:not(body)
 ##.jb-cookie
 ##.jnews-cookie-law-policy
 ##.jqmOverlay
@@ -8328,6 +8353,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##div.cookie__disclaimer
 ##div.cookie_agree
 ##div.cookie_alarm
+##div.cookie_header
 ##div.cookie_msg
 ##div.cookiebanner
 ##div.cookieconsent
@@ -8342,12 +8368,14 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ##div.cookiesection
 ##div.cookieswindow
 ##div.eu-cookie
+##div.euconsent
 ##div.ezmob-footer
 ##div.gdpr-bottom
 ##div.grid-cookie
 ##div.i-cookie
 ##div.is-cookie
 ##div.is-cookies
+##div.pageCookie
 ##div.sqs-cookie-banner-v2
 ##div.w-cookie
 ##section.Cookie-notice
@@ -8513,7 +8541,6 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 ||truevaultcdn.com^$third-party
 ||truyoproductionuscdn.truyo.com^
 ||ucookie.app^$third-party
-||ucookie.com.tr^$third-party
 ||usercentrics.eu^$third-party
 ||webcache.datareporter.eu^
 ||websitepolicies.io^$third-party
@@ -8676,6 +8703,7 @@ private.com###disclaimer-dialog
 drupal.org###drupalorg-crosssite-gdpr
 petri.com###enlivy-kit-cookie-policy-container
 live.com,microsoft.com,office.com,skype.com,visualstudio.com,windows.com,xbox.com###epb
+every-tuesday.com###et-gdpr-popup
 nickfinder.com###europe_cookies_siht
 nextjs.org,vercel.com,wetransfer.com###fides-banner-container
 nytimes.com###fides-overlay
@@ -8688,7 +8716,6 @@ bonbon.hr,businesslive.co.za,dailydispatch.co.za,eid.hr,theherald.co.za,timesliv
 wallarm.com###gdpr_banner_container
 fawesome.tv###gdpr_cookie_info_bar-wr
 myedit.online###gdpr_notes
-maxmind.com###global-privacy-control-check
 btn-digital.com,nca.org.gh###growls-br
 afternic.com,godaddy.com,sucuri.net###gtm_privacy
 parafix.com###gui_cookie_policy
@@ -8815,6 +8842,7 @@ sendgb.com##.bounceInLeft
 bitrix24.com##.bx-main-cookie-policy-sidebar
 croda.com,frontgate.com,incotec.com,york.ac.uk##.c-cookie-banner
 asm.com,bastionhotels.com,bestwesternschipholairport.com##.c-cookie-bar
+resmed.com##.c-notifications-wrapper
 shein.com##.c-onetrust-backup
 recyclingproductnews.com##.card-cookie-notice
 pornone.com##.cbann
@@ -8918,6 +8946,7 @@ mobileshop.eu##.fixed-warning
 tomtom.com##.fixed.bottom-24
 bcgame.lu##.fixed.left-0.flex.w-full.items-center.border-b.border-solid.p-4.bottom-16.z-100.mb-sb.min-h-18.max-w-\[640px\].gap-x-4.border-third.bg-layer1.sm\:bottom-8.sm\:left-8.sm\:rounded-lg.sm\:border-none
 developer.arm.com##.fixedPolicyBox
+gemoo.com,imobie.com##.fixedbot
 babes.com,bangbros.com,bangbrosnetwork.com,brazzers.com,brazzersnetwork.com,deviante.com,digitalplayground.com,digitalplaygroundnetwork.com,fakehub.com,letsdoeit.com,men.com,milehighmedia.com,mofos.com,mofosnetwork.com,realitydudes.com,realitykings.com,seancody.com,sexyhub.com,spicevids.com,trueamateurs.com,tube8vip.com,twistys.com,twistysnetwork.com##.flex.md\:justify-between.flex-col.md\:flex-row.p-2.rounded-sm.border
 7datarecovery.com,cloudmounter.net,electronic.us,elmedia-video-player.com,eltima.com,ftp-mac.com,macdroid.app,net-usb.com##.float-message__wrap
 mql5.com##.float-vertical-panel
@@ -9127,6 +9156,7 @@ gitpod.io##div[data-analytics*="cookie"]
 betjets.co.za##div[data-cy^="cookiespolicybar-"]
 cammodels.com##div[data-fedmod="userpolicy"]
 editorx.com##div[data-hook="ccsu-banner-wrapper"]
+stripe.com##div[data-js-id="CookieSettingsNotification"]
 cam4.com,cam4.es,cam4.eu##div[data-name="CookieConsent"]
 pinnacle.com##div[data-test-id="Cookie-PolicyBanner"]
 athenegpt.ai,betterhelp.com,brilliant.org,elsevier.com,regain.us##div[data-testid="cookie-banner"]
@@ -9276,6 +9306,7 @@ argyle.com,artma-zaproszenia.pl,avif.io,claude.ai,getmerlin.in,olecams.com,video
 airlinkflightschool.com,apmoller.com,app.houseofcb.com,boostroyal.nl,predecessorgame.com,wimotic.fr##.bottom-6
 blog.smithsecurity.biz,boo.world,convex.dev,depot.dev,desenio.se,docs.earthly.dev,getmerlin.in,justo.ca,moises.ai,my.openbb.co,promobit.com.br,remnote.com,shuttle.rs,snead.app,stableaudio.com,thecycle.game,urlcast.io##.bottom-4
 haberturk.com##.bottom-14
+joom.com,labyrinthos.co,rshb.ru,travelbags.nl##.bottom
 161.97.70.5,acro.police.uk,aio.media,banggood.com,contabilizei.com.br,crocoblock.com,jfservice.ru,loans-hub.com,medcentr-tula.ru,militecbrasil.com.br,museum-brandhorst.de,nasha-set.ru,onetoyshop.ru,pebmed.com.br,prenota.sanita.toscana.it,profsvar.com,restauracjaverona.pl,royalprestige.com,signum.ai,uvex-safety-shop.de,xn--80aa3ak5a.xn--p1ai,xn--b1addckdrqixje4a.xn--p1ai,xn--f1awi.xn--p1ai,zlimovel.com.br##.modal-cookie
 aerored.es,biodramina.es,fisiocrem.es,franui.store##.modalcookies
 elisa.rekrytointi.com,fhstp.ac.at,gov.br,haanindustrial.com,ippies.nl,picniq.co.uk,shopriteholdings.co.za,sophianum.nl,tatasteelonbrand.com###cookie-container
@@ -13852,7 +13883,6 @@ setn.com##.privacy-area
 u-car.com.tw##.privacyforsite
 tvb.com##.tvb-cookies
 1hfkolomouc.cz###SklubCookiesContainer
-cd.cz###c22overlay
 feetransport.cz###cookieOptOutForm
 maxa.cz###modal-portal
 bistrono.cz###multiapp-home
@@ -13912,20 +13942,15 @@ vertaa.fi##div > .cg-57
 maccabi4u.co.il###ZA_CAMP_BANNER_CONTAINER
 ivory.co.il###removeBannerCookie
 cal-online.co.il###wc-using-cookies
-iroads.co.il##.CookiePolicyDisclaimer
 guidestar.org.il##.app-cookies-disclaimer-container
-israelpost.co.il##.cookie-agreement
 pelephone.co.il##.cookies-consent
-pais.co.il##.cookies_sec
 yad-mordechai.co.il##.eupopup-container
 colmobil.co.il##.popup-privacy
-iec.co.il##app-sticky-banner
 assuta.co.il##div[class^="CookieConsent_"]
 hyundaimotors.co.il##div[class^="StyledPopupPrivacyCookies-"]
 dutyfree.co.il##div[class^="cookieRestriction-module__root-"]
 dynamica.co.il##div[class^="cookiesPopup"]
 postalfinance.co.il##float-window-alert
-tase.co.il##tase-cookies-policy
 arukereso.hu###cookie-disclaimer
 telekom.hu###frame-modals
 gyakorikerdesek.hu###stialert
@@ -13952,6 +13977,7 @@ itpornit.com##.first-visit
 accademiadellacrusca.it##.info-privacy
 juzaphoto.com##.s_bluebox
 jp.ign.com###consent-wrapper
+juken-mikata.net###cookieAlt
 wind.yamano-music.co.jp###cookieBox
 tokyostarbank.co.jp###floatArea
 blog.livedoor.jp###gdpr-banner
@@ -14804,6 +14830,7 @@ concursolutions.com,forbes.com,formula1.com,fortune.com,proximus.be,proximustv.b
 ##.item-newsletter-article
 ##.jetpack_subscription_widget
 ##.jq-Newsletter
+##.js-newsletter-subscribe
 ##.js-newsletter-widget
 ##.l-footer__newsletter
 ##.m-brand-engagement
@@ -14818,6 +14845,7 @@ concursolutions.com,forbes.com,formula1.com,fortune.com,proximus.be,proximustv.b
 ##.mo-optin-form-lightbox
 ##.nav-newsletter
 ##.needsclick.mcforms-wrapper
+##.news-article__newsletter
 ##.news-letter-widget
 ##.newsletter--container
 ##.newsletter--dark
@@ -15145,6 +15173,7 @@ publicdomainreview.org##.exit-modal__shade
 freethink.com##.f-block--form-text
 bakeandbacon.com,eazypeazymealz.com,familystylefood.com,glutenfreepalate.com,helloadamsfamily.com,herwholesomekitchen.com,lanternlanedesigns.com,mallorynikolaus.com,mommyshomecooking.com,mylifewellloved.com,neighborfoodblog.com,splashoftaste.com,sweetteaandthyme.com,thedeliciousplate.com,thelittlehollythatcould.com,thesuburbanmom.com,tosimplyinspire.com,withspice.com##.fd-focus-visible-applied
 en.mercopress.com##.fixed-footer
+audfree.com##.foot-newsletter
 minitool.com##.footer-join-wrapper
 letsencrypt.org##.footer-newsletter-col
 atlasobscura.com,churchpop.com,hindustantimes.com,howsweeteats.com##.footer-subscribe
@@ -15236,6 +15265,7 @@ ibtimes.co.uk,ibtimes.com,latintimes.com,musictimes.com##.newsletter-in-article
 almanac.com##.newsletter-incontent
 forbes.com##.newsletter-inline-flex
 robbreport.com##.newsletter-link
+notateslaapp.com##.newsletter-mod
 dailymail.co.uk##.newsletter-modal-shopping
 apuntmedia.es,bloomberg.com,forward.com,jns.org,latimes.com,northernvirginiamag.com,sandiegouniontribune.com,tvinsider.com,wamu.org##.newsletter-module
 gobankingrates.com##.newsletter-module-optin--container
@@ -15309,7 +15339,9 @@ politico.com##.sign-up-21
 dzone.com##.signin-prompt
 addictivetips.com,additudemag.com,armytimes.com,biblegateway.com,biopharmadive.com,elie.net,fullfact.org,insidehook.com,moon.com,motorsportweek.com,mumbrella.com.au,reinsurancene.ws,tatemcrae.com,theafricareport.com,thecourier.co.uk,tripstodiscover.com,tubefilter.com##.signup
 pnas.org##.signup-ad
+shareable.net##.signup-area
 simonandschuster.com##.signup-background
+admonsters.com,autocar.co.uk,bookmundi.com##.signup-block
 xbiz.com##.signup-form
 additudemag.com##.signup-global
 tubefilter.com##.signupAfter
@@ -15345,6 +15377,7 @@ zookeys.pensoft.net##.subscribeForEmail
 pbs.org##.subscribe__form-wrapper
 drive.com.au##.subscribe_drive-subscribe-content__wrapper__H5Hu0
 topuniversities.com##.subscribe_news_letter
+brooklynfarmgirl.com,thewoksoflife.com##.subscribe_widget
 thefastmode.com##.subscribe_widget_item
 boredpanda.com,todayonline.com##.subscription-block
 cnevpost.com##.subscription-container
@@ -15430,12 +15463,12 @@ chron.com,sfgate.com##.col1span3:has-text(Newsletters)
 themirror.com##.factbox:has-text(Sign up)
 dexerto.com##.mb-16:has-text(Sign up)
 aarp.org##.recommendationSection:has-text(Newsletter)
-streetinsider.com##.right_pod:has-text(E-mail Address)
 axios.com##.sm\:my-10.xs\:my-6:has-text(Sign up for)
 polygon.com##[class]:has(> .duet--cta--newsletter)
 ew.com#?#.comp > strong:-abp-contains(newsletter)
 fastcompany.com#?#.pb-1.gap-4:-abp-contains(Sign up for)
 guitar.com#?#.w-full:-abp-contains(Mailing)
+notateslaapp.com#?#.mobile-only-on-col-ab:-abp-contains(Subscribe)
 notthebee.com#?#.bg-gray-50:-abp-contains(Want to stay informed)
 theatlantic.com##p.ArticleParagraph_root__4mszW > small:has-text(Sign up)
 slate.com##p.slate-paragraph > em:has-text(Sign up for)
@@ -15445,7 +15478,6 @@ vox.com#?#.duet--article--highlight:-abp-contains(Sign up here)
 codeburst.io,medium.com##[class][style="bottom: 0px;"]
 indaily.com.au,notthebee.com,nysun.com##.bottom-0.fixed
 ccm.net,commentcamarche.net,hugolescargot.com,journaldesfemmes.fr,journaldunet.com,linternaute.com##.nl-box
-add.org,brownstone.org,coincodecap.com,diarioelregionaldelzulia.com,homesteading.com,innotechtoday.com,jewishjournal.com,news.stonybrook.edu,pluggedingolf.com,shapeways.com,testfile.org,theglossarymagazine.com##.dialog-lightbox-widget
 altreconomia.it,coxautoinc.com,dezeen.com,discogs.com,sbs.com.au,soft112.com###newsletter-form
 edweek.org,francebleu.fr,telegraaf.nl##.NewsletterForm
 dailynewshungary.com,designersbrasileiros.com.br,fosspost.org,justrunlah.com,michaelwest.com.au,nanowerk.com,osxdaily.com,roadiscalling.com,upinthesky.nl##.ml-subscribe-form
@@ -15996,6 +16028,7 @@ doctorofcredit.com#@#.wpdiscuz-subscribe-bar
 ##.footer__download-app-container
 ##.gh-app-banner
 ##.gta-header-banner
+##.headerGetApp
 ##.installAppPopup-top
 ##.mobile-app-banner
 ##.smart-banner-download
@@ -16119,6 +16152,7 @@ m.bilibili.com##.m-video2-awaken-btn
 webnovel.com##.m_down_app_wrap
 discogs.com##.mobile-apps
 disk.yandex.com,disk.yandex.ru##.mobile-badges
+soundcloud.com##.mobileApps
 speedtest.net##.modal-overlay
 moovitapp.com##.moovit-banner
 m.bilibili.com##.mplayer-widescreen-callapp
@@ -16298,159 +16332,84 @@ mobi24.net#@#a[href^="http://www.mobi24.net/"]
 mobi24.net#@#a[href^="https://www.mobi24.net/"]
 /age-gate-public.js
 /age-gate.js
-/age-verification-pop-up.js
 /age-verification.js
-/age-verifier.min.js
 /agegate.js
-/agegatepopup.js
 /ageverification.js
-/api/disclaimerjs/?
-/content-warning-v2/js/cwv3.min.js
-/disclaim-element.js
-/disclaimer/disclaimerjs.php
-/disclaimerweb.js
 /dispensary-age-verification-public.js
-/elegant-age-verification.min.js
 /elfsight-age-verification.js
-/ets_ageverification/views/*
 /hulk_age_verifier.js
-/jquery.agegate.js
-/module.popup-age-confirmation.min.js
-/plugins/age-verification-popup-for-woocommerce/*
 ||editmysite.com/app/marketing/js/dist/lead$script,domain=blueandwhitebottleshop.com|weebly.com
-###agp__noPeekScreen
-###city-hive-sites-age-check
-###shopify-section-age-gate
 ###shopify-section-age-verification
-###verify-age-main
 ##.agl_wrapper
-##.ekm-age-verification
-##.show.age-check-wrapper
-fcutrecht.net###popup-overlay
 7games.bet.br,betao.bet.br##.content-manager.popup-holder-f-bc.popup-holder-bc
 imlive.com###Warning18
-webtoon.xyz###adult_modal
 dadcrush.com,daughterswap.com,familystrokes.com,fostertapes.com,freeusefantasy.com,mylf.com,pervdoctor.com,pervmom.com,pervz.com,shoplyfter.com,swappz.com,teamskeet.com###age-verification-container
 kellymadison.com,pornfidelity.com,teenfidelity.com###age-verification-modal
 pureplaymedia.com###agp__root
-hotbrazil.app.br###avisoMaioridade
-erhotica.it###banneradulti
 dads-banging-teens.com,home-xxx-videos.com,mature-chicks.com,pornbeauties.net,xnxx-deutsch.com,xxxgirls.cc###dclm_modal_content
 dads-banging-teens.com,home-xxx-videos.com,mature-chicks.com,pornbeauties.net,xnxx-deutsch.com,xxxgirls.cc###dclm_modal_screen
 absoluporn.com,bbcpie.com,cum4k.com,lubed.com,pornpros.com,spyfam.com###disclaimer
 woodmancastingx.com###disclaimerAjax
 woodmancastingx.com###disclaimerAjaxBackground
-animeworld.so###hentai-modal
-pornogratisdiario.com,videospornogratisx.net###html_edad
-bdsmsexcontact.nl,extreem.nl,gayplaats.nl,hete-profielen.nl,klapjesflirt.nl,maturewereld.nl,nieuweliefdes.nl,onenight-stand.be,sexdateafspraakje24.nl,sexklik.nl,xdirty.nl,xshemale.nl,zoekcougars.nl###importantnotification
-vssm.eu###jcdisclaimer
 amateursexteens.com,bitchstop.com,czasting.com,czechgfs.com,czechvr.com,czechvrcasting.com,czechvrfetish.com,lesbianpickups.com,mentalpass.com###modal
-tantralux.com###modal-plus-18
 jerkmate.com###modal-slot2
 jerkmate.com###overlay
-vssm.eu###popup
 moscarossa.biz###popup-maggiorenne
 moscarossa.biz###popup-maggiorenne-container
 todaygirls.co.uk###simplemodal-overlay
-dreamgf.ai###termsMessage
 todaygirls.co.uk###tosdisclaimer
-mangaworldadult.net###vm18-modal
 inflagranti.com###warning-page
 femdomempire.com,hookuphotshot.com,houseofyre.com,hussiepass.com,loveherboobs.com,loveherfeet.com,loveherfilms.com,newsensations.com,shelovesblack.com###warningpopup
-streamate.com##.PayPalAgeGate-root-0-2-2
 fansly.com##.active-modal
-xgirls.agency##.age-verification
-sexervaringendelen.nl##.agl_wrapper
 escortforumit.xxx,loyalfans.com##.cdk-overlay-backdrop
 escortforumit.xxx,loyalfans.com##.cdk-overlay-container
 loverfans.com##.fixed.top-0.left-0.overflow-y-hidden.w-screen.h-screen.z-50.flex.items-center.justify-center
-pornx.ai##.flex.w-screen.h-\[100dvh\].fixed.inset-0.z-50.overflow-x-auto.justify-center.\[--scale-enter\:100\%\].\[--scale-exit\:100\%\].\[--slide-enter\:0px\].\[--slide-exit\:80px\].sm\:\[--scale-enter\:100\%\].sm\:\[--scale-exit\:103\%\].sm\:\[--slide-enter\:0px\].sm\:\[--slide-exit\:0px\].items-center.sm\:items-center
 1escorts.net##.gray_overlay
 erothots.co##.is-18
 escortadvisorworldwide.com##.legal_popup
-hotbrazil.app.br##.modal
-animeworld.so,mangaworldadult.net,webtoon.xyz##.modal-backdrop
 fansly.com##.modal-wrapper
 rule34video.com##.popup
 rule34video.com##.popup_access
 1escorts.net##.revi2
 kink.com,kinkmen.com,kinktrans.com##.welcome-modal
-pornx.ai##.z-50.backdrop-saturate-150.w-screen.h-screen.fixed.inset-0.bg-\[\#000000ec\].backdrop-blur-\[15px\]
-fibwhisky.scot###POPUPS_ROOT
 drinkboem.com###age-check-prompt
 macandrews.store,marketliquors.co.za###age-verification
-blackbullliquorgreenwood.co.nz,blackbullporirua.co.nz,thirstyliquor.co.nz,thirstyliquorfranichst.co.nz,thirstyliquorislington.co.nz,thirstyliquorkaitaia.co.nz###age-verification-popup
-glengarrywines.co.nz###ageGateContent
 perelada.com###agePopup
-lesommelier.com###ageWrapper
 vanpur.com.pl###age_box
 buchananswhisky.com###age_gate
-gourmetencasa-tcm.com###agecontrol_box
 bodegasommos.com,buitralcremadefresascontequila.com###agl_wrapper
-leithbottleshop.co.uk###agp__root
-fibwhisky.scot###bgLayers_vfo8z
 mahou-sanmiguel.com###filtro
 fev.es###fondo_opacidad
 ordesano.com###itro_opaco
 ordesano.com###itro_popup
-tjinstoko.eu###language-check-popup
-glengarrywines.co.nz###mainScreen
 eliasi.co.il###popup18plus
 pernod-ricard.com###pr_age_gate
 behemothbrewing.co.nz,drinkboem.com,epicbeer.com,halfmoonwinestore.com.au,missionliquor.com,store.henryofpelham.com###prompt-background
 superbockgroup.com###sb-age-bg
 fev.es###splash
 jagermeister.com##.absolute.left-0.top-0.isolate.flex.h-fit.min-h-full.w-full.items-center.justify-center
-global-wines.sk##.age-check-popup
-global-wines.sk##.age-check-popup__overlay
-vinearts.ca##.age-gate
 litovel.cz##.age-gate-overlay
-spirits24.co.uk##.age-verification
-trulyhardseltzer.com##.ageGate
-monkey47.com##.agegate
-pointwineandspirits.com,redbluffcellars.com.au,thebeerdrop.com.au##.agp__wrapper
 whiskysite.nl##.apopup
 whiskysite.nl##.apopup-bg
 lacasera.es,onlinewarehouse.com,sanvalero.com,thinkcanna.co##.avwp-av
 lacasera.es,onlinewarehouse.com,sanvalero.com,thinkcanna.co##.avwp-av-overlay
 carlsberggroup.com,carlsbergpolska.pl,tuborg.com##.cbg_cp_root--hcpPp
 golanwines.co.il##.elementor-popup-modal
-pivoteka.sk##.js-restriction
 zubrowka.com##.m-AgeVerify
 eliasi.co.il##.modal-backdrop
-titanbev.com##.modal_pop
 gevoslijterij.nl##.modals-wrapper
 montaguwines.co.za##.overlay-verify
 montaguwines.co.za##.psag
-finewinedelivery.co.nz##.s-curtain
-finewinedelivery.co.nz##.s-popup
-crowncellarandco.com.au##.site-age-gate
-bentspokebrewing.com.au##.splash
-vineonline.co.nz##.vineonline-gate-popup-0-x-modalOverlay
-vineonline.co.nz##.vineonline-gate-popup-0-x-portalContainer
 holba.cz,zubr.cz##.vm--container
-risecannabis.com###age-verification
-vaperoyalty.com###vape-age-gate
-voopoo.com###warning-message
 vaporesso.com##.age-check
-caliva.com##.age_age__i5NS_
 st-group.com##.agegate
-goodvapes.com##.agp__wrapper
-onlinewarehouse.com##.avwp-av
-onlinewarehouse.com##.avwp-av-overlay
 24high.*##.checkAge
-vapeoutletonline.com##.js-verify-popup
 relxnow.com##.modal-backdrop
 tabakguru.de##.netzp-age-check
-shoptheking.us##.popup-wrap
-vapetyson.com##.section-pd-age-gate
 relxnow.com##age-modal
-hypnoticherb.com##mkp-age-verification-popup
 ||agechecker.net^$third-party
 ||av-northern-apps.com/js/agecheckerplus_
 ||lifteragecheck.com^$third-party
-||static.elfsight.com/apps/age-verification/
-||zooomyapps.com/age/ZooomyAgeVerify.js
 reddit.com#%#//scriptlet('ubo-rc.js', 'thumbnail-blur', '', 'stay')
 reddit.com#%#//scriptlet('ubo-set-cookie.js', 'over18', '1')
 beyblade.com#%#//scriptlet('ubo-set-cookie.js', 'underage', 'false', '', 'reload', '1')
@@ -16539,8 +16498,6 @@ blackbullliquor.co.nz#%#//scriptlet('ubo-set-cookie.js', 'visited', 'yes')
 saltairebrewery.com#%#//scriptlet('ubo-set-cookie.js', 'sb-over-18', 'true')
 sendsips.com,grandwinespirits.com,lukesliquors.com,peavinewineandspirit.com,napavalleybeverageco.com,107liquor.com,universalliquors.net,primosfinewine.com,mcswineandliquors.com,liquorjunction.com,interquestliquor.com,drinktuscany.com,liquorcave.com,bottlenbrew.com,creeksidebeer.com,prestobeer.com,swigthis.com,sidedoorliquors.com,destinationwineandliquor.com,liquorcity.com,myredcarpetliquors.com#%#//scriptlet('ubo-set-cookie.js', 'age_verification', '1')
 societyliquor.co.nz#%#//scriptlet('ubo-set-cookie.js', 'age_verification', 'yes')
-holidayhouseliquors.com###agePopUp
-pointwineandspirits.com##.agp__wrapper
 marketwinestore.com.au#%#//scriptlet('ubo-set-session-storage-item.js', 'notification', 'false')
 kenastonwine.com#%#//scriptlet('ubo-set-local-storage-item.js', 'agecheck', 'yes')
 drizly.com#%#//scriptlet('ubo-set-local-storage-item.js', 'ageCheckConfirmed', 'true')
@@ -16562,24 +16519,6 @@ iqos.com#%#//scriptlet('ubo-set-cookie.js', 'iqos-age-verified', 'yes')
 rvfhemp.com,vape.com,volcanoecigs.com#%#//scriptlet('ubo-set-cookie.js', 'isAnAdult', 'true')
 verilife.com#%#//scriptlet('ubo-set-cookie.js', 'popupShown', 'true')
 lnw.com#%#//scriptlet('ubo-set-session-storage-item.js', 'AgeRestrictionAccepted', 'true')
-blunthaven.com##.gminfoTechmodal
-blunthaven.com#$#body,html { overflow: auto !important; position: initial !important; }
-goodtimesoakland.com,theloosedozen.com.au###shopify-section-popup-age-verification
-goodtimesoakland.com,theloosedozen.com.au#$#body,html { overflow: auto !important; position: initial !important; }
-fogarty.wine##.age-confirm-overlay
-fogarty.wine#$#body,html { overflow: auto !important; position: initial !important; }
-theprisonerwinecompany.com###bloom-age-gate-foreground
-theprisonerwinecompany.com###bloom-age-gate-background
-theprisonerwinecompany.com#$#body,html { height: auto !important; overflow: auto !important }
-theliquorbros.com##.t4s-age_pp_wrapper
-theliquorbros.com#$#body,html { height: auto !important; overflow: auto !important }
-uptownspirits.com##.age-verification-popup
-uptownspirits.com#$#body,html { height: auto !important; overflow: auto !important }
-sipsy.com##.age-checker__restriction-wrapper
-sipsy.com#$#body,html { height: auto !important; overflow: auto !important }
-liquorlegends.co.nz###modal_home_pop
-liquorlegends.co.nz##.modal-backdrop
-liquorlegends.co.nz#$#body,html { height: auto !important; overflow: auto !important }
 whiskypedia.com.ar##.age-gate
 whiskypedia.com.ar##.age-gate-wrapper
 whiskypedia.com.ar#$#body,html { height: auto !important; overflow: auto !important }
