@@ -1,5 +1,5 @@
-! Checksum: RaEhwtDQdi8Der2Ap/Yj6Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1746938536-14400.patch
+! Checksum: emVHvL98w5NmO/yP4gezZA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1747024975-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.16.91
@@ -16,6 +16,7 @@
 ##.app-download:not(html,body,section,.content)
 ##.app-nag-body:not(html,body,:empty)
 ##.app-nag:not(html,body,:empty)
+##.app-teaser:not(html,body,:empty)
 ##.appBanner:not(html,body,:empty)
 ##.AppBanner:not(html,body,:empty)
 ##.appdownload:not(html,body,:empty)
@@ -105,6 +106,7 @@ linkedin.com#$?#body { overflow: auto !important; }
 ||fileplanet.com^$document,popup
 ||test-iq.org^$document
 windowsreport.com##.code-block
+appuals.com##.info.box
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_info_texts
@@ -115,6 +117,7 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.js-download_button_offer
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.primary_download
 2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-text
+drivereasy.com#?#.pakb-content ol:has-text(Download and install Driver Easy)
 drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
 drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 howtoremove.guide##[id*="newage"]
@@ -1794,6 +1797,7 @@ $document,removeparam=/^outputType=amp$/
 $removeparam=orig_referrer
 $removeparam=ncid
 $document,removeparam=/^ecid=.*$/i,domain=~account.microsoft.com
+$removeparam=adcid
 $removeparam=mkt_tok
 @@^mkt_unsubscribe=$removeparam=mkt_tok
 $removeparam=affname
@@ -1832,7 +1836,9 @@ $removeparam=o_sch
 $removeparam=o_xid
 $removeparam=wtExtndSource
 $removeparam=rfsn
+$removeparam=bctid
 $document,removeparam=trackid,domain=~nzpost.co.nz
+$removeparam=strackid
 $removeparam=afsrc
 $~ping,removeparam=lcid,domain=~rekono.si
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
@@ -2622,6 +2628,7 @@ $removeparam=sourceID,domain=gamestop.com|verizon.com
 ||ozon.ru^$removeparam=advert
 $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=ia-pkpmtrack
+||microcenter.com^$removeparam=rf
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
 $removeparam=CID,domain=burpee.com|chegg.com|express.com|farmandfleet.com|marvel.com|mcafee.com|overstock.com|pepboys.com|puritan.com|rosettastone.com|samsung.com|shutterfly.com|staples.com|teleflora.com|ulta.com|virginatlantic.com|vrbo.com|walgreens.com|media-cdn.costco.ca|media-cdn.costco.com
@@ -2780,6 +2787,7 @@ $removeparam=pr_rec_id
 $removeparam=pr_rec_pid
 $removeparam=pr_ref_pid
 $removeparam=pr_seq
+$document,removeparam=site,domain=affiliate.insider.com|alina.se
 $document,removeparam=refresh,domain=cnn.com|startribune.com
 ||tradingview.com^$removeparam=feature
 ||emag.ro^$removeparam=recid
@@ -2969,6 +2977,11 @@ $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46q
 $document,removeparam=af_reengagement_window
 ||privatbank.ua^$removeparam=visit_id
 ||yandex.com/portal/set/any$removeparam=sk
+||affiliate.insider.com^$document,removeparam=amazonTrackingID
+||affiliate.insider.com^$document,removeparam=h
+||affiliate.insider.com^$document,removeparam=platform
+||affiliate.insider.com^$document,removeparam=postID
+||affiliate.insider.com^$document,removeparam=postSlug
 $document,removeparam=_x_ns_sku_id,domain=temu.com
 $document,removeparam=_x_ads_channel,domain=temu.com
 $document,removeparam=_x_gmc_account,domain=temu.com
