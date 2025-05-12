@@ -669,8 +669,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.80.9",
-			"timeUpdated": "2025-05-11T18:08:39+0000",
+			"version": "2.0.80.10",
+			"timeUpdated": "2025-05-12T00:27:39+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -2059,8 +2059,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.36.78",
-			"timeUpdated": "2025-05-11T23:07:01+0000",
+			"version": "2.1.36.79",
+			"timeUpdated": "2025-05-12T00:27:47+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
