@@ -1,9 +1,9 @@
-! Checksum: ag86kHlq2CJdTtjcc9xUDA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1747017638-3600.patch
+! Checksum: 0N84RpwATpzdQ8fhAajiFQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1747055978-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.47.48
-! TimeUpdated: 2025-05-11T15:06:13+00:00
+! Version: 2.0.47.49
+! TimeUpdated: 2025-05-12T13:15:57+00:00
 ! Expires: 5 days (update frequency)
 ||addefend-platform.com^
 ||remp-campaign.golem.de^
@@ -497,6 +497,7 @@ chip.de#%#(()=>{const t={construct:(t,n,e)=>{const o=n[0],r=o?.toString();return
 !+ NOT_PLATFORM(ext_ff)
 chip.de#%#(()=>{document.addEventListener('DOMContentLoaded',()=>{const o=[];[...document.scripts].forEach((c=>{const n=c.innerText,t=/window\..*\["(.*)"]/;if(n.includes('"impr":')){const c=n.match(t)[1];o.push(c)}})),o.forEach((o=>{const c=document.querySelector(`.${o}`);c&&c.remove()}))})})();
 chip.de#%#//scriptlet('set-cookie', 'chipde-r2d2-view-state ', '1')
+giga.de#%#//scriptlet('abort-on-stack-trace', 'XMLHttpRequest.prototype.open', 'hd-main.js')
 giga.de,spiegel.de,welt.de,t-online.de#%#(()=>{window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,{apply:(a,b,c)=>{const d=b.urlCalled;return"string"!=typeof d||0===d.length?Reflect.apply(a,b,c):d.match(/\.damoh\./)?void 0:Reflect.apply(a,b,c)}})})();
 eispop.com#%#//scriptlet('set-constant', 'Object.prototype.AdOverlay', 'noopFunc')
 vip.de#%#//scriptlet('prevent-xhr', 'svonm')
@@ -2259,10 +2260,10 @@ svonm.com/www.watchbox.de/config.json$replace=/"enabled": true\,/"enabled": fals
 ||welt.de/homadConfigEnabled$replace=/"enabled":[\s\S]*true\,/"enabled": false\,/i,important
 ||amazonaws.com/www.t-online.de/config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=t-online.de
 ||amazonaws.com/www.t-online.de/config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=t-online.de,important
+||svonm.com/www.giga.de/config.json$replace=/"enabled": true/"enabled": false/,domain=giga.de
 ||amazonaws.com/www.giga.de/config.json$replace=/"enabled": true\,/"enabled": false\,/,important
 ||amazonaws.com/www.giga.de/config.json$replace=/"enabled": true\,/"enabled": false\,/
-||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=giga.de
-||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=giga.de,important
+||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$replace=/"enabled": true/"enabled": false/i,domain=giga.de
 ||cdn.videoplaza.tv/contrib/de-ipd/svm/homadConfigVideoplaza-rtl2.json$replace=/"enabled": true\,/"enabled": false\,/i
 ||cdn.videoplaza.tv/contrib/de-ipd/svm/homadConfigVideoplaza-rtl2.json$replace=/"enabled": true\,/"enabled": false\,/i,important
 ||damoh.rtl2.de^$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important

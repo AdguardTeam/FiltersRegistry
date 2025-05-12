@@ -1,9 +1,9 @@
-! Checksum: EYOKGaPLWlyLuuQkopzKuA
-! Diff-Path: ../patches/6/6-s-1746976200-3600.patch
+! Checksum: 7f+zjPjLJlrunk73SG5Eig
+! Diff-Path: ../patches/6/6-s-1747055977-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.47.48
-! TimeUpdated: 2025-05-11T15:06:13+00:00
+! Version: 2.0.47.49
+! TimeUpdated: 2025-05-12T13:15:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1042,6 +1042,7 @@ chip.de#%#(()=>{document.addEventListener('DOMContentLoaded',()=>{const o=[];[..
 chip.de#%#//scriptlet('set-cookie', 'chipde-r2d2-view-state ', '1')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135749
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135687
+giga.de#%#//scriptlet('abort-on-stack-trace', 'XMLHttpRequest.prototype.open', 'hd-main.js')
 giga.de,spiegel.de,welt.de,t-online.de#%#(()=>{window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,{apply:(a,b,c)=>{const d=b.urlCalled;return"string"!=typeof d||0===d.length?Reflect.apply(a,b,c):d.match(/\.damoh\./)?void 0:Reflect.apply(a,b,c)}})})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131890
 eispop.com#%#//scriptlet('set-constant', 'Object.prototype.AdOverlay', 'noopFunc')
@@ -5691,10 +5692,10 @@ svonm.com/www.watchbox.de/config.json$replace=/"enabled": true\,/"enabled": fals
 ! ||homad-global-configs.schneevonmorgen.com.s3.amazonaws.com/www.stern.de/config.json$replace=/"enabled": true\,/"enabled": false\,/i
 ! ||homad-global-configs.schneevonmorgen.com.s3.amazonaws.com/www.stern.de/config.json$replace=/"enabled": true\,/"enabled": false\,/i,important
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1812
+||svonm.com/www.giga.de/config.json$replace=/"enabled": true/"enabled": false/,domain=giga.de
 ||amazonaws.com/www.giga.de/config.json$replace=/"enabled": true\,/"enabled": false\,/,important
 ||amazonaws.com/www.giga.de/config.json$replace=/"enabled": true\,/"enabled": false\,/
-||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=giga.de
-||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$replace=/"enabled": true\,/"enabled": false\,/i,domain=giga.de,important
+||s3.amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$replace=/"enabled": true/"enabled": false/i,domain=giga.de
 !
 ||cdn.videoplaza.tv/contrib/de-ipd/svm/homadConfigVideoplaza-rtl2.json$replace=/"enabled": true\,/"enabled": false\,/i
 ||cdn.videoplaza.tv/contrib/de-ipd/svm/homadConfigVideoplaza-rtl2.json$replace=/"enabled": true\,/"enabled": false\,/i,important
