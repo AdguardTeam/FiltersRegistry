@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: hkW1KVampNUdugI+HIhNqg
-! Diff-Path: ../patches/13/13-s-1747041196-3600.patch
+! Checksum: OsrmSByIjn/D+kyn5X+QrA
+! Diff-Path: ../patches/13/13-s-1747044773-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.36
-! TimeUpdated: 2025-05-12T09:09:01+00:00
+! Version: 2.0.56.37
+! TimeUpdated: 2025-05-12T10:08:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1571,6 +1571,9 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+[$domain=/hdfilmcehennemi\d+.org/]##.ads-container
+||kultfilmler.net/adspop*.js
+||fullhdfilmizlede.net/banner/
 ||playertr*.pages.dev/pop.js
 /js/fc.js^$domain=star.com.tr|yirmidort.tv
 ||imgs.stargazete.com/folders/js/tmAds-star.js
@@ -1916,9 +1919,6 @@ izlekolik.org#$?##preRollBd { remove: true; }
 izlekolik.org##+js(remove-attr, data-front, #tv-spoox2)
 atarita.com###tdi_3
 atarita.com###tdi_31
-kultfilmler.com##+js(addEventListener-defuser, click, adLink)
-.mp4$media,redirect=noop-1s.mp4,domain=kultfilmler.com
-kultfilmler.com###countdown
 setfilmizleyin.com##.play-box-iframe > div[style]:has(> iframe[src^="https://sobreatsesuyp.com/"])
 setfilmizleyin.com##div[id^="epom-"]
 setfilmizleyin.com##.textreklam
@@ -2235,7 +2235,7 @@ pvpserverler.pro##a[href*="source=pvpserverlerpro"][target="_blank"]
 pvpserverler.pro##div[id^="bg_rek"]
 donanimhaber.com##.detay-gecis
 asyafanatiklerim.com##.fbox > a
-sinemax.cc##.moon_ayd
+sinema.sh##.moon_ayd
 ||cdn.habernnc.com/banner/
 nnchaber.com##.col-md-12 > div[style^="padding-top:"].row
 nnchaber.com##.col-lg-11 > div[style^="min-height:"].row
@@ -2762,7 +2762,6 @@ konyagazetesi.com.tr##img[src^="https://konyagazetesi.com.tr/writable/uploads/ad
 diziyou.co,sinemadelisi.com##.playerBottom
 diziyou.co,sinemadelisi.com##.playerTop
 ||filmsitesi.tv/wp-content/uploads/12.png
-||kultfilmler.com/kod*.js
 ||filmmakinesi*.com/ucurbeni/lazyload-ucurbeni.js
 muglayenigun.com##div[class^="kanews-banner"]
 muglayenigun.com##.row > div.widget_text
@@ -2948,7 +2947,6 @@ bilgileri.net##div[style="height: 300px;"]
 fragman-tv.com##div[style="min-height:260px"]
 fragman-tv.com##div[style="min-height:280px"]
 dogruhaber.com.tr##.local-ads-index
-kultfilmler.com##.mtsnb
 ||cdn.r10.net/*.webp$image
 sinemalar.com###roadblock
 ||nowtv.com.tr/vmap?*&player_skin=getir$xmlhttprequest,redirect=noop-vmap1.0.xml
@@ -5466,8 +5464,6 @@ sinemia.org,filmmodu.co#$#.plyr { display: block !important; }
 filmsezonu.com#$##konu { display: block !important; }
 filmizlesene.*#$#.vidcontainer { display: none !important; }
 filmizlesene.*#$##episode { height: unset !important; width: unset !important; position: unset !important; overflow: unset !important; }
-kultfilmler.com#$##cn-content { display: block!important; }
-kultfilmler.com#$##rk-content { display: none!important; }
 filmmoduu.com#$##filmoncereklam { display: none !important; }
 filmmoduu.com#$##episode { height: auto !important; width: auto !important; overflow: auto !important; position: unset !important;}
 tekparthdfilmizle.com#$##cn-content { display: block !important; }
