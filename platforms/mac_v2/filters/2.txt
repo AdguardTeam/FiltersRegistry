@@ -1,9 +1,9 @@
-! Checksum: Ii3Oam1tYid19VDHKhBirw
-! Diff-Path: ../patches/2/2-s-1747033939-3600.patch
+! Checksum: WdoRDoYO42qCnErr8Y/cCA
+! Diff-Path: ../patches/2/2-s-1747037637-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.83.6
-! TimeUpdated: 2025-05-12T07:07:48+00:00
+! Version: 2.3.83.7
+! TimeUpdated: 2025-05-12T08:09:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21497,6 +21497,10 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205099
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=girlgames.com
+girlgames.com#%#//scriptlet('google-ima3')
+girlgames.com#%#(()=>{window.GADS={init:function(n){n&&"function"==typeof n.onFinish&&n.onFinish()}};})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204889
 ! Note this exception makes sense only if other ad-scripts are already allowed on the site.
 @@||tpc.googlesyndication.com/pagead/js/*/elements/html/countdown_handler_fy2021.js$domain=safeframe.googlesyndication.com
@@ -42897,6 +42901,8 @@ truyenqqhot.com##div[id^="ads_"]
 !
 !
 !+ NOT_OPTIMIZED
+###top_google_ads
+!+ NOT_OPTIMIZED
 ##.adace-slideup-slot-wrap
 !+ NOT_OPTIMIZED
 ##.in_article_ad
@@ -48944,6 +48950,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||cdn.imgz.me/player/ifr/vod/jw-*/vast.js
+||cvt-*.*.tech/*/_*.xml?cp.host=$domain=rapidvid.net
 musicstax.com##div[style*="justify-content: center;"][style*="min-height:"]:has(> div[id^="snack-incontent-"])
 1337x.fyi,1337x.pro#%#//scriptlet('trusted-replace-node-text', 'script', 'window.open', '/window\.location\.replace\(urlRandom\);/g', '')
 ||1337x.$replace=/window\.location\.replace\(urlRandom\);//,document,to=1337x.fyi|1337x.pro
@@ -60028,7 +60036,7 @@ xxxdan.com###content > div.movie + div[class]
 reallifecamsex.xyz##.pm-ads-banner
 mat6tube.com,noodlemagazine.com##iframe[src^="//its.fusrv.com/"]
 noodlemagazine.com##div[style="width:900px;height:250px;margin:20px auto 0"]
-/vast.js$domain=noodlemagazine.com|mat6tube.com|gaystream.click|autoembed.cc|zpjid.com|gaystream.link
+/vast.js$domain=noodlemagazine.com|mat6tube.com|gaystream.click|autoembed.cc|zpjid.com|gaystream.link|rapidvid.net
 katfile.com###container > .style2 > a[href][target="_blank"] > img
 ||interracial.com/sw.js
 ||interracial.com/int354/script.php
@@ -134385,6 +134393,7 @@ ascii-code.com##.text-center.mb-3
 upi.com##.text-center.mt-5
 thegradcafe.com##.text-center.py-3
 whatismyisp.com##.text-gray-100
+coincarp.com##.text-native-ad
 mastercomfig.com##.text-start[style^="background:"]
 geeksforgeeks.org##.textBasedMannualAds_2
 putlockers.do##.textb
