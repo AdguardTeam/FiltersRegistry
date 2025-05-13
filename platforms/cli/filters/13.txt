@@ -1,9 +1,9 @@
-! Checksum: v+OCNxPK4j9GkimEh4bCrQ
-! Diff-Path: ../patches/13/13-s-1747134635-3600.patch
+! Checksum: Z4AAmvyJajIP6Bzg/a4n/A
+! Diff-Path: ../patches/13/13-s-1747138489-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.42
-! TimeUpdated: 2025-05-13T11:06:53+00:00
+! Version: 2.0.56.43
+! TimeUpdated: 2025-05-13T12:11:11+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -644,6 +644,8 @@ dizipal1.cloud,dizipal2.cloud,dizipal3.cloud,dizipal4.cloud,dizipal5.cloud,dizip
 ! Good: ##.adv
 ! Bad: example.org##.adv (should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/204675
+##.volestream-gorsel
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160823
 ##amp-img[width="728"][height="90"]
 ##body > div[class^="item"] > a[target="_blank"][style^="padding: 4px 1px;text-align: center;"]
@@ -5504,6 +5506,20 @@ hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/204675
+[$domain=/betnanotv\d+\.com/]##a[href="https://betnano.marketing/2025"]
+[$domain=/bahisnowtv\d+\.com/]##a[href="https://tinyurl.com/tvbnow"]
+[$domain=/joybet\d+\.cam/]##a[href="https://tv.joybet.biz"]
+[$domain=/betmoneytv\d+\.live/]##a[href="https://www.clickone.pw/BetmoneyTV"]
+[$domain=/restizle\d+\.com/]##a[href="https://cutt.ly/8etKGUii"]
+[$domain=/betmarinotv\d+\.site/]##a[href="https://t2m.io/guncel"]
+[$domain=/betratv\d+\.online/]##a[href="https://t.ly/betra"]
+[$domain=/sporplushd\d+\.live/]##a[href="https://bit.ly/3ge3zQU"]
+[$domain=/matadorbettv\d+\.com/]##a[href="https://cutt.ly/V7egAT5"]
+||matadorbettv*.com/Uploads/*_matadorbg.jpg
+||betmoneytv*.live/Uploads/*_bmtvpageskin.jpeg
+||bahisnowtv*.com/Uploads/*_Bahisnow_TV_Pageskin*.jpg
+||joybet114.cam/Uploads/*_pageskinsablon*.png
 ! canlimaclar*.sbs - frequently changed domains
 [$domain=/canlimaclar\d+\.sbs$/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 !

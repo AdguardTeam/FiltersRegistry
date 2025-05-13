@@ -1,9 +1,9 @@
-! Checksum: ZJGVLxqFaiXxwL2hsHbb1g
-! Diff-Path: ../patches/20/20-s-1747127522-3600.patch
+! Checksum: wm/iLP5PYrV3rj4TEsT8JQ
+! Diff-Path: ../patches/20/20-s-1747138488-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.20.84
-! TimeUpdated: 2025-05-13T09:08:18+00:00
+! Version: 2.0.20.85
+! TimeUpdated: 2025-05-13T12:11:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3663,7 +3663,10 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
-threads.com#%#//scriptlet('trusted-set-session-storage-item', 'barcelona_mobile_upsell_state', '1')
+[$path=/pogoda]yandex.*##div[class^="AppLeftPanelLinksClient_"]
+wap.xuanyge.org###appss
+wap.xuanyge.org##[onclick="goAppHtml();"]
+threads.com,threads.net#%#//scriptlet('trusted-set-session-storage-item', 'barcelona_mobile_upsell_state', '1')
 restaurantji.com###mobile_app
 wayfair.com#$#html[style*="overflow:"] { overflow: auto !important; }
 wayfair.com#$#div[data-rtl-id="appInstallPhoneLayout"] { display: none !important; }
@@ -3687,7 +3690,7 @@ mqihuan.bookresource.qq.com#?##r-authorSay > div.mt-12px:has(> a[class]:contains
 mqihuan.bookresource.qq.com##.auto-tr
 deviantart.com##body > aside:has(> h2 > div > button[aria-label="Close"])
 migros.com.tr##sm-mobile-app-popup
-threads.com#%#//scriptlet('trusted-click-element', 'div[class^="__fb-"] span + div > a[href^="https://applink.threads.com/?ct"] + div > div[role="button"]', '', '1000')
+threads.com,threads.net#%#//scriptlet('trusted-click-element', 'div[class^="__fb-"] span + div > a[href^="https://applink.threads.com/?ct"] + div > div[role="button"]', '', '1000')
 uhaul.com###nativeAppBanner
 airbnb.com##div[data-testid="app-install-container"]
 ww2.freshthyme.com##a[href="https://ww2.freshthyme.com/mythyme-loyalty"]
