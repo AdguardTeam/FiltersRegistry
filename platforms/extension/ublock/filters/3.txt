@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +yuZgVcERnbR0wWzuJxs1Q
-! Diff-Path: ../patches/3/3-s-1747113167-3600.patch
+! Checksum: ldSh9lVlsIIVEShN7q9P2w
+! Diff-Path: ../patches/3/3-s-1747124017-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.84.75
-! TimeUpdated: 2025-05-13T05:07:54+00:00
+! Version: 2.0.84.76
+! TimeUpdated: 2025-05-13T08:09:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37,6 +37,9 @@ spletnik.ru##+js(set-local-storage-item, /^_ym/, $remove$)
 spletnik.ru##+js(set-local-storage-item, adrcid, $remove$)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205194
+! Website requires "_gid" cookie, otherwise images are not loaded
+moegirl.org.cn##+js(set-cookie, _gid, 1, /, .moegirl.org.cn)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204583
 gio.com.au##+js(set-constant, webAnalytics, {})
 gio.com.au##+js(set-constant, webAnalytics.publish, noopFunc)
@@ -157953,11 +157956,8 @@ twitter.com%2Fscribe%2Fibis%3Ft%3D$image
 ! Bad:  example.org#@##cookie
 !
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/205107
-! https://github.com/AdguardTeam/AdguardFilters/issues/204341
-@@||cl-eu4.k5a.io/*.js$domain=itavisen.no
-! https://github.com/AdguardTeam/AdguardFilters/issues/201445
-@@||api.ip.sb/geoip$domain=tauri.localhost
+! https://github.com/AdguardTeam/AdguardFilters/issues/205194
+! Website requires "_gid" cookie, otherwise images are not loaded
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201854
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199403
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198595
@@ -159718,6 +159718,11 @@ d4?appid*type*
 !
 ! For platforms which do not support $redirect rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205107
+! https://github.com/AdguardTeam/AdguardFilters/issues/204341
+@@||cl-eu4.k5a.io/*.js$domain=itavisen.no
+! https://github.com/AdguardTeam/AdguardFilters/issues/201445
+@@||api.ip.sb/geoip$domain=tauri.localhost
 ! https://github.com/uBlockOrigin/uAssets/issues/28213
 @@||cdn.segment.com/analytics.js/*/analytics.min.js$script,domain=accounts-bc.com
 ! https://github.com/easylist/easylist/pull/10345
