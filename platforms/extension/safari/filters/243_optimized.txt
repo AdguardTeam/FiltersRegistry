@@ -1,9 +1,9 @@
-! Checksum: sfKIYVbe01bgUcCGVXiPxQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1747024981-14400.patch
+! Checksum: ugVNgRgFFJIZ6jk7xhZFUw
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1747111437-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.56
-! TimeUpdated: 2025-05-12T04:38:58+00:00
+! Version: 2.0.21.57
+! TimeUpdated: 2025-05-13T04:39:33+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -460,6 +460,7 @@ elektronikforumet.com##td > a[target="_blank"] img
 elevspel.se###cookie_wrapper, a[href*="medlem"] > div, .ryk-top
 elevspel.se##:is(div.Block, div[style^="display: table"], h1[itemprop="name"] ~ div:not([style="display:none;"]):not([class^="content"][class$="content"])):has(a[href*="medlem"], [onclick*="medlem"], .adsbygoogle)
 elle.se##section.c-native_banner:upward(2)
+elle.se#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*="/click"]', '?url')
 elprisetjustnu.se##.bg-sponsor
 elprisetjustnu.se##.power-card:has(.adsbygoogle)
 elprisetjustnu.se##:is(.container, .bg-light-yellow):has(.btn-sponsor)
@@ -646,7 +647,7 @@ fz.se,fssweden.se#%#//scriptlet('ubo-set.js', 'adblock', 'false')
 gaffa.se##a[href*="/annonser/"], a[href*="/sponsrat-"], div[id^="cncpt-"]
 gaffa.se##.article-overview__col:has(.gpt--loaded)
 gaffa.se##.link-list:has(a[href*="casino"])
-gais.se##.cookie--wrapper, .landing-page-main-partners, .hero-banner
+gais.se##.landing-page-main-partners, .hero-banner
 gamereactor.se###cookielawwarning, #eventad, [id^="sky"], [id^="ad_lead"], .external_div_bigVideoAd, #mpu, #leftToLogo, .itsanad, div[class^="ad_Bumper"], div[style="min-height: 600px; margin-bottom: 20px;"], div[id^="ad_"], div[class^="preAd_"], div[class^="ad_smartphbig"], .adMobileBig, div[class^="preMobileBig"], .external_div_videoAd, .ad_mobilebigwrap
 gamereactor.se#%#//scriptlet('ubo-set.js', 'adblockEnabled', 'falseFunc')
 gamereactor.se##.ad_interscroller:upward(.wrapper)
@@ -722,6 +723,7 @@ hemmafixbloggen.se##.post-item:has(.sponsor-summary)
 hemmanytt.se###sa_slider_shortcode
 hemmanytt.se##.annonsnotis + span + span + div.td-pb-row:has(a[href*="adtr.co"])
 hemnet.se##article[class^="ArticleCard"]:has-text(/sponsrad/i)
+hemnet.se##a[class^="ArticleCard"]:has-text(/sponsrad av/i)
 hemnet.se#$#body { overflow:unset!important }
 hemnet.se##div[class^="ArticleCard_"] small:has-text(/sponsrad/i):upward(article, li, a)
 hemnet.se##div[data-testid="living-cost-logos-section"]:has(span[aria-label="annons"])
@@ -2066,7 +2068,7 @@ zeromagazine.nu##div[id^="ads"]
 /cookiespolicynotificationbar$domain=svenskahousegruppen.se
 /cookies-and-content$script,domain=freedomtravel.se
 /cookies-and-content-security-policy$script,domain=cannabisifokus.se|futsalmagasinet.se|sd.se|cora.se|tfkriminalvard.se
-/cookie-consent$script,domain=minhembio.com|sjf.se|gais.se
+/cookie-consent$script,domain=minhembio.com|sjf.se
 /cookie-law-info$script,domain=startaochdriva.se|sverige.nu|conpot.se|firstclassmagazine.se|kvalitetsmagasinet.se|miljo-utveckling.se|techtidningen.se|vdtidningen.se|gullislastips.se|nyfiknainvesterare.se|discoveringtheplanet.com|bussmagasinet.se|torbjornstips.se|dinbyggare.se|aktieskolan.se|insikt24.se|sulkysport.se|bitzmagasin.se|battrestadsdel.se|automatos.se|80-talet.se|goteborgnyheter.se|elitepadel.se|vetenskaphalsa.se|rakapuckar.com|konstperspektiv.nu|56kilo.se|surveyors.se|maximumsports.se|rucksack.se|ingridochmaria.se|frihetsnytt.se|globalportalen.org|juligen.se|svenskbotanik.se|sakerhund.se|radiosol.se|norrkopingsguiden.se
 /cookie.min.js$domain=assistanskoll.se
 /cookie_consent.js$domain=djungeltrumman.se
@@ -3312,7 +3314,7 @@ zeromagazine.nu##div[id^="ads"]
 ||usefathom.com^$domain=fz.se|sweclockers.com
 ||usercentrics.eu/1.gif
 ||usercentrics.eu/uct?$image
-||usercentrics.eu^$domain=hemnet.se|kantarsifo.se|foretagarna.se|svenskhandel.se
+||usercentrics.eu^$domain=hemnet.se|kantarsifo.se|foretagarna.se|svenskhandel.se|gais.se
 ||userneeds.com^$third-party
 ||valentinosverige.com^
 ||vejaskor.com.se^
