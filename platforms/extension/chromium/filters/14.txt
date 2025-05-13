@@ -1,9 +1,9 @@
-! Checksum: C7SiIrIoKVT9l++rpTYHaQ
-! Diff-Path: ../patches/14/14-s-1747163418-3600.patch
+! Checksum: YiPstHlQX/C72wDBMt4vdw
+! Diff-Path: ../patches/14/14-s-1747167110-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.30.18
-! TimeUpdated: 2025-05-13T19:06:41+00:00
+! Version: 2.2.30.19
+! TimeUpdated: 2025-05-13T20:08:08+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2506,6 +2506,8 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+thenounproject.com##div[data-callback="accounts/hide-banner/CookiesBanner"]
+visionexpress.pl###bpr_cookie-alert
 thehalara.com###set_cookies_module
 cherryxtrfy.com##div[class^="cookies-policy"]
 flipsnack.com#%#//scriptlet('trusted-set-cookie', 'agree_cookie_policy_v', '{"v":2,"p":0,"a":0}')
@@ -2530,7 +2532,7 @@ unimedbauru.com.br###protegON-full-content-cookies
 remaker.ai##.remaker-container-footer-cookie
 helloclue.com###gatsby-focus-wrapper > section:has(> p[class*="CookieNotification"])
 longos.com##gg-cookies-consent-pop-up
-psoriaz.life,poisknews.ru##.cookie
+visionexpress.pl,psoriaz.life,poisknews.ru##.cookie
 wegmans.com##.component--cookie-banner
 vod3.pl#$#body { overflow: auto !important; }
 podarkus.ru##div[class^="style_cookies"]
@@ -9083,7 +9085,7 @@ xn----9sbmbgknu2ce4eva.xn--j1amh##.footer_cookie_alert
 matrixetf.finance##.bottom_Policy
 alixblog.com##.cookie-alert-overlay
 cifraclub.com.br###toastLgpd
-doordash.com,brilliant.org,teeai.co.uk,betterhelp.com,mote.com,ibood.com##div[data-testid="cookie-banner"]
+figma.com,doordash.com,brilliant.org,teeai.co.uk,betterhelp.com,mote.com,ibood.com##div[data-testid="cookie-banner"]
 ucsusa.org###block-cookienotice
 coddyschool.com##.collect-data
 kohl24.de###coe_cookies_container
@@ -23056,6 +23058,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+iphoned.nl##.adblock-detect
 abconsent.com,account.sirdata.io#%#//scriptlet('prevent-fetch', 'doubleclick.net')
 elektroda.de,elektroda.com,elektroda.pl#%#//scriptlet('prevent-setTimeout', 'adBlockElement')
 apps.dirittopratico.it##div[class^="apprise"]
@@ -24587,6 +24590,7 @@ uwaterloo.ca##div[aria-label="Ad Blocker Detected"]
 ! SECTION[id=general]: Anti-adblock - Common '!#safari_cb_affinity(general)' directive
 !#safari_cb_affinity(general)
 !
+@@||iphoned.nl/wp-content/themes/bigspark/scripts/ads-frontend.min.js
 @@||cdn.snigelweb.com/adengine/civitai.com/loader.js$domain=civitai.com
 facebook.com#@#.post-ads
 facebook.com#@#.AdBox
@@ -34456,6 +34460,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+blog.ui.com##form[action*="list-manage.com/subscribe"]
 anyasreviews.com###elementor-popup-modal-8672
 zdnet.com##.c-ShortcodeContent > p:has(> a[href="https://www.zdnet.com/newsletters/"])
 blick.de##.newsletter-widget-article
@@ -41704,7 +41709,7 @@ thedailybeast.com##.CheatNewsletter
 thetimes.co.uk##.ConversionPopup
 thedailybeast.com##.InlineNewsletter
 retailturkiye.com##.Mebulten
-clarin.com,i-d.vice.com,lepoint.fr,liveagent.com,theintercept.com##.Newsletter
+github.blog,clarin.com,i-d.vice.com,lepoint.fr,liveagent.com,theintercept.com##.Newsletter
 thedailybeast.com##.NewsletterSignup
 seattletimes.com##.NewsletterSignupBlock
 seattletimes.com##.NewsletterSignupInset
@@ -42502,6 +42507,13 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+scheels.com#?#.font-bold:contains(Download Our App)
+scheels.com##a[href*="/app"]
+scheels.com###pdp-items-list > li:has(> div[class]:only-child > a[href*="/app"]:only-child)
+cars.com##.global-footer-mobile-apps
+cars.com#?#.global-footer-heading:contains(Mobile App)
+cars.com##cars-app-banner
+eskisehir.net##a[href^="https://onelink.to"]
 thehalara.com###smart_banner_dom
 startpage.com##.privacy-extension-and-app-widget
 [$path=/metro]yandex.*##.metro-sidebar-view__mobile-share-container
