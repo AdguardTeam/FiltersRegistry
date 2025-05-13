@@ -1,8 +1,8 @@
 !
-! OriginalVersion: 25.5.65
+! OriginalVersion: 25.5.66
 ! Title: AdBlockID
 ! Description: Filter list that specifically removes adverts on Indonesian language websites.
-! Last modified: 13 May 2025 16:07 UTC
+! Last modified: 13 May 2025 16:58 UTC
 ! Expires: 1 days
 ! Homepage: https://github.com/realodix/AdBlockID
 .id^*/bnr/$domain=~kalbarprov.go.id
@@ -1473,10 +1473,11 @@ passatworld.ru#@##ad_global_below_navbar
 ||p.jwpcdn.com/*/vast.js$script
 /^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/(?:1|4)\/\d{7}/$document,subdocument,popup
 /\/assets\/jquery\/jquery-\d\.\d\.(?:\d\.)?min\.js\?(?:v=2)?&?type=(?:adult|mainstream)$/$~third-party,script
-/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$third-party,match-case,script,xmlhttprequest,to=top
 /\/t\/[0-9]{3}\/[0-9]{3}\/a[0-9]{4,9}\.js$/$script
 /^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$third-party,script,to=com
 /^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\/\d{6}\b/$third-party,match-case,xmlhttprequest,to=com
+/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$third-party,match-case,script,xmlhttprequest,to=top
+/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[A-Za-z]{10,16}\/[A-Za-z]{5,6}$/$third-party,popup,to=top
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$third-party,match-case,script,redirect=noopjs
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.com\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$third-party,subdocument,match-case,popup,xmlhttprequest,to=com
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.website\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$third-party,subdocument,match-case,popup,xmlhttprequest,to=website
@@ -1498,13 +1499,14 @@ passatworld.ru#@##ad_global_below_navbar
 /^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$third-party,script,to=com|net
 /^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$third-party,script,to=com|net
 /^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$third-party,xmlhttprequest,to=com|net
-/^https?:\/\/[a-z]{6,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$third-party,script,xmlhttprequest
+/^https?:\/\/[a-z0-9]{5,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$third-party,script,xmlhttprequest
+/^https?:\/\/[a-z]{8,15}\.(?:com|net)\/tag\.min\.js$/$third-party,script,redirect=noopjs,to=com|net
 /^https?:\/\/[a-z]{8,15}\.com\/$/$third-party,header=access-control-expose-headers:/x-directionpartner-id/,xmlhttprequest,to=com,method=head
 /^https?:\/\/[a-z]{8,15}\.xyz\/$/$third-party,header=access-control-expose-headers:/x-directionpartner-id/,xmlhttprequest,to=xyz,method=head
 /get/*?zoneid=$script
 /lv/esnk/*$third-party,script
 /pfe/current/*$third-party,script
-/[0-9a-f]{32}\/invoke\.js/$third-party,script,redirect-rule=noopjs
+/\/[0-9a-f]{32}\/invoke\.js/$third-party,script,redirect-rule=noopjs
 ||fnasmpygwa.com^
 -1024x154-$image,domain=lensanusantara.id
 -780-x-90-$image,domain=bogordaily.net
