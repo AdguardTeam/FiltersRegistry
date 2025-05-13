@@ -1,9 +1,9 @@
-! Checksum: 22LfPQOojaqpStwKenjNzg
-! Diff-Path: ../patches/14/14-s-1747149125-3600.patch
+! Checksum: 1tG7VxbufxPfvcm+ra9qSA
+! Diff-Path: ../patches/14/14-s-1747152758-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.30.14
-! TimeUpdated: 2025-05-13T15:07:24+00:00
+! Version: 2.2.30.15
+! TimeUpdated: 2025-05-13T16:08:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2506,6 +2506,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+flipsnack.com#%#//scriptlet('trusted-set-cookie', 'agree_cookie_policy_v', '{"v":2,"p":0,"a":0}')
 hs-rm.de##.in2-modal
 segurosunimed.com.br##unimed-cookie-consent
 emailoctopus.com#$##cookie-consent-modal { display: none !important; }
@@ -16985,6 +16986,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205280
+flipsnack.com#@##cookieNotification
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205197
 @@||usercentrics.eu^$domain=peri.lv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204867
@@ -49735,6 +49738,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+pan.quark.cn##.share-right-side-content > img
 gameflare.com##.game-promo > .own-game-promo
 apollo-news.net###article-content-container .payment-nav
 gamestar.de###home-plus-banner-top
