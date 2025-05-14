@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.99.26",
-			"timeUpdated": "2025-05-13T14:07:09+0000",
+			"version": "2.0.99.27",
+			"timeUpdated": "2025-05-14T11:06:17+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.83.46",
-			"timeUpdated": "2025-05-14T10:07:21+0000",
+			"version": "2.3.83.47",
+			"timeUpdated": "2025-05-14T11:06:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.84.83",
-			"timeUpdated": "2025-05-14T07:07:18+0000",
+			"version": "2.0.84.84",
+			"timeUpdated": "2025-05-14T11:06:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.30.28",
-			"timeUpdated": "2025-05-14T10:07:52+0000",
+			"version": "2.2.30.29",
+			"timeUpdated": "2025-05-14T11:06:58+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -703,8 +703,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.61.89",
-			"timeUpdated": "2025-05-14T10:07:57+0000",
+			"version": "2.0.61.90",
+			"timeUpdated": "2025-05-14T11:07:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -747,8 +747,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/safari/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.20.90",
-			"timeUpdated": "2025-05-14T10:07:58+0000",
+			"version": "2.0.20.91",
+			"timeUpdated": "2025-05-14T11:07:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
