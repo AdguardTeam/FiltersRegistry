@@ -1,9 +1,9 @@
-! Checksum: qCbUszv2StibRd5TAXLqVw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1747183961-14400.patch
+! Checksum: 31SGFhHZ+BijpOOK6xjVHQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1747197765-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.41.34
-! TimeUpdated: 2025-05-14T00:47:49+00:00
+! Version: 2.1.41.35
+! TimeUpdated: 2025-05-14T04:38:00+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -34,12 +34,14 @@
 /facebook_like_button.png
 /fb-like-pop.js
 /fb-pixel.js
+/fbshare.js
 /fbshare.png
 /floating-wpp.min.js
 /follow-twitter-
 /follow-twitter.
 /follow-us.$~stylesheet
 /follow_instagram.png
+/gm-button-social.min.js
 /highlight-and-share.js
 /icon_share_
 /icon_sns_
@@ -418,6 +420,7 @@ _social-bar/
 ###share_button
 ###share_buttons
 ###share_container
+###share_data
 ###share_div
 ###share_facebook
 ###share_google
@@ -1014,6 +1017,8 @@ _social-bar/
 ##.cff-share-link
 ##.cff-share-tooltip
 ##.ci-socials-ignited
+##.cmSocialMediaList
+##.cmSocialMediaListContainer
 ##.cmg-share-bar
 ##.cnbc-share-top
 ##.col-social
@@ -1052,6 +1057,7 @@ _social-bar/
 ##.custom-share-button
 ##.custom-sharing
 ##.custom-social
+##.custom_share
 ##.d-share
 ##.d3-o-share-bar
 ##.dashicons-facebook
@@ -1826,6 +1832,7 @@ _social-bar/
 ##.module--share
 ##.module-follow
 ##.module-social-share-icons
+##.module-twitter
 ##.mom-social-icons
 ##.mom-social-share
 ##.mom-socials-widget
@@ -2484,6 +2491,7 @@ _social-bar/
 ##.sharing-wrap
 ##.sharing-zone
 ##.sharingButton
+##.sharingLinks
 ##.sharingList
 ##.sharingPanel
 ##.sharing__list
@@ -2731,6 +2739,7 @@ _social-bar/
 ##.social-news-buttons
 ##.social-newsletter
 ##.social-newsletter-container
+##.social-overlay
 ##.social-pages
 ##.social-panel
 ##.social-plugins
@@ -3226,6 +3235,7 @@ _social-bar/
 ##.widget-social-facebook
 ##.widget-social-follower
 ##.widget-social-icons
+##.widget-social-links
 ##.widget-twitter-timeline
 ##.widget_FacebookLikeBox
 ##.widget_a2a_follow_widget
@@ -3501,6 +3511,7 @@ bleedingcool.com###google_follow
 analyticsinsight.net,dn.pt,newindianexpress.com,newsgram.com###header-social-follow
 medicalxpress.com,phys.org,techxplore.com###js-soc-panel
 digitaltrends.com###menu-2021-social
+notalwaysright.com###meta_share
 taylorfrancis.com###openShare
 mediaite.com###post-social
 auburnpub.com,azdailysun.com,beatricedailysun.com,billingsgazette.com,bismarcktribune.com,chippewa.com,columbustelegram.com,cumberlink.com,dailyjournalonline.com,democratherald.com,elkodaily.com,fremonttribune.com,gazettetimes.com,globegazette.com,hanfordsentinel.com,helenair.com,herald-review.com,jg-tc.com,journalstar.com,journaltimes.com,lacrossetribune.com,lebanon-express.com,lompocrecord.com,magicvalley.com,missoulanews.com,missoulian.com,mtstandard.com,muscatinejournal.com,napavalleyregister.com,nwitimes.com,pantagraph.com,poststar.com,qconline.com,qctimes.com,rapidcityjournal.com,ravallirepublic.com,santamariatimes.com,siouxcityjournal.com,stltoday.com,tdn.com,thesouthern.com,thetandd.com,theworldlink.com,trib.com,tucson.com,wcfcourier.com,winonadailynews.com,wiscnews.com###reaction-wrap
@@ -4041,6 +4052,7 @@ orf.at##.share-dialog
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
 bild.de##.sharingbar
 derfinanzinvestor.de,esg-aktien.de,inv3st.de,kapitalerhoehungen.de##.smIconsWrap
+deutsche-wirtschafts-nachrichten.de##.social-line
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
 watson.ch##.watson-sharebuttons
@@ -4131,8 +4143,6 @@ ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
 unionesarda.it##.socials-link
 fastweb.it##.tutplus-socials
-gruppovideomedia.it##.tv-share-icon
-gruppovideomedia.it##.tv-social-media
 sorrisi.com##.tvsc-social-share
 alfredopedulla.com##.tw-banner
 mymovies.it##.vota-pul-consiglio
@@ -4159,7 +4169,6 @@ forbes.pl##.articleSocials
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
 terrabrasilnoticias.com###block-18
 noticias.cancaonova.com###cn-post-mark
-vagas.com.br###compartilhar-vaga
 a12.com###gb-widget-6981
 noticias.cancaonova.com###redes
 noticias.cancaonova.com###share-widget-horizontal
@@ -4206,12 +4215,10 @@ sampi.net.br##.redesSociais
 bomdia.eu##.seguir-bom-dia
 bandab.com.br##.share-bb
 bemparana.com.br##.share-bp
-brasil247.com##.share-button-container
 dcmais.com.br##.share-ch
 sicnoticias.pt##.share-toggle-wrapper
 gov.br##.share__container
 slatual.com.br##.share_post_head_item_two
-pleno.news##.siga-redes
 cnnbrasil.com.br##.single-editorial__follow
 cnnbrasil.com.br##.single-sharer
 assinecarta.com.br,b3.com.br##.sociais
@@ -4280,10 +4287,6 @@ cmmedia.es,diariodecastillayleon.es,diariodeleon.es,diariodevalladolid.es,elcorr
 eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
 atlanticohoy.com,consumidorglobal.com##.c-mainarticle__share
 consumidorglobal.com##.c-mainfooter__social
-diez.hn##.canal-whatsapp
-encancha.cl##.cl-article-share
-encancha.cl##.cl-links-google-whatsapp
-encancha.cl##.cl-social-container
 adnradio.cl,cadenaser.com,caracol.com.co,los40.com,wradio.com.co##.cnt-interaccion
 adslzone.net##.comments-social-share
 ecologiaverde.com,el9nou.cat,elsaltodiario.com,infocatolica.com,lanacion.com.ar,laverdad.com,psicologia-online.com,qmusica.tv,revistafamilia.ec##.compartir
@@ -4299,7 +4302,6 @@ milenio.com##.google-news-follow
 dolarhoy.com##.header__redes
 tn.com.ar##.horizontal-share
 milenio.com##.info-networks
-laprensa.hn##.joinWhatsapp
 atlanticohoy.com,diario16plus.com,planetarealmadrid.com##.m-social-profile
 milanuncios.com##.ma-AdDetailShare
 perfil.com##.main-footer__redes
@@ -4316,7 +4318,6 @@ infobae.com##.second-saved-buttons
 as.com##.sh-bar
 infobae.com##.sharebar-buttons-container
 elconfidencialdigital.com##.sharrre-tools
-diez.hn##.social-buttons-text
 rtve.es##.socialBox
 clara.es##.socialmedia
 cyltv.es##.srrss

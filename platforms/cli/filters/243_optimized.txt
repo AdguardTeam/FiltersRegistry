@@ -1,9 +1,9 @@
-! Checksum: q2aFacZwlv/xDxF7sOBx8w
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1747111422-14400.patch
+! Checksum: B408RqlTntr2hx7YduuIcw
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1747197736-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.57
-! TimeUpdated: 2025-05-13T04:39:33+00:00
+! Version: 2.0.21.58
+! TimeUpdated: 2025-05-14T04:38:26+00:00
 ! Expires: 12 hours (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -630,6 +630,7 @@ frihetsnytt.se##a[href^="https://frihetsnytt.se/annonsera"]
 frihetsnytt.se##.td-block-title-wrap:has-text(/annons/i):upward(1)
 frihet.se##.CookieBar
 frilagt.se##.elementor-location-header section.elementor-element:first-child
+frilanstidningen.se##.bs-blog-post:has(a[href*="/sponsrad/"])
 friluftsframjandet.se##[id^="ad-"]
 funktionshinderpolitik.se##.topp-banner, .annons-mark
 funnygames.se,nyckelspel.se##.slot-container
@@ -1065,6 +1066,7 @@ news55.se##div.container:has(a[href="/author/news55-partner/"])
 newsner.com,humorbibeln.se,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibeln.se,nojeslivet.se###wsfb-container, .share-buttons, .ad-space, div[id^="ad-"]
 newsner.com,humorbibeln.se,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibeln.se,nojeslivet.se##.ssp_divider:has(.sponsored-bar)
 newsvoice.se##.sponsrad, .sponsradcol1, .newsv-widget, article[class*="sponsored"]
+newweather.se##.cookie-banner-mount-point
 nextconomy.se##.list-item:has(.news-spot-medium__ad-title)
 ng.se#$?##nativendo-mainfeed:upward(1) { remove: true; }
 ng.se##.secondary-sidebar > .panel-pane:last-child
@@ -1159,6 +1161,7 @@ pressbladet.se,svenskpress.se,foretagsbladet.se,gestrikemagasinet.se,cfanytt.se,
 pricerunner.se##p[class^="pr-"]:has-text(Sponsrat):upward(div[class$="Container-root"])
 pricerunner.se##span[class^="pr-"]:has-text(ANNONS):upward(a)
 prisjakt.nu##.pjra-relative, .outsider-ads, div[class^="AdPlacementWrapper"]
+proletaren.se##.brxe-div:empty
 proshop.se##.site-background-banner
 proshop.se#$#:is(body, .site-container-fullwidth) { background-image: none !important; }
 psykoterapicentrum.se##span[style="background-color: #FFFF00"]:has-text(/annons/i):upward(1)
@@ -1249,7 +1252,7 @@ skaneplus.se##center > small:has-text(ANNONS):upward(div[class*="cc-hide-on"])
 skaneplus.se##div[style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:50%"]:has(a:not([href*="skaneplus.se"]):not([href^="/"]) > img)
 skaneridsport.se##.sp-banner-block
 skanesport.se###black-studio-tinymce-3, .menu-item a[target="_blank"], .footer-widgets
-skargarden.se##article:has([title^="Annons"], a[href*="/annons"])
+skargarden.se##article:has([title^="Annons" i], a[href*="/annons"])
 skargarden.se###topbanner, #mittbanner, #topbannerm, #mittbannerm
 skargarden.se##.textwidget:has(.adtext)
 skellefteamedia.se###tdi_51, .td-content-more-articles-box
@@ -1333,7 +1336,7 @@ svenskahousegruppen.se###eprivacyModal, .modal-backdrop
 svenskalag.se##.cookie-overlay, .cookie-box, .overlay:empty
 svenskamagasinet.nu##legend:has-text(Annons)
 svenskamagasinet.nu##.et_pb_code_inner:has(.svm-target)
-svenskamagasinet.nu##.hip-popup, div[id^="svm-"]
+svenskamagasinet.nu##.hip-popup, div[id^="svm-"], .et_pb_image a[target]:not([href*="svenskamagasinet.nu"]):not([href^="/"])
 svenskamassan.se##.cookie-law
 svenskanomader.se###ajax-loading-screen
 svenskarnaochinternet.se,internetstiftelsen.se###newsletter-sliding
@@ -2336,7 +2339,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/ft-takeover-ads
 /plugins/ga-germanized/*
 /plugins/ga-in/*
-/plugins/gdpr-cookie-compliance$script,domain=goteborgsgolfaren.se|bfn.se
+/plugins/gdpr-cookie-compliance$script,domain=goteborgsgolfaren.se|bfn.se|frilanstidningen.se
 /plugins/genesis-simple-share$script
 /plugins/ginger/addon/analytics/*
 /plugins/google-analytics
@@ -2636,7 +2639,7 @@ zeromagazine.nu##div[id^="ads"]
 /wp-content/uploads/*svenskacasinoonline$image
 /wp-content/uploads/*unibet$image
 /wp-content/uploads/*/public/assets/js/advanced.js$script
-/wp-content\/uploads\/[0-9]+/$script,domain=skanesport.se|dackavisen.se|tidningenproffs.se|densistavilan.se|universitetslararen.se|alekuriren.se|branschaktuellt.se
+/wp-content\/uploads\/[0-9]+/$script,domain=skanesport.se|dackavisen.se|tidningenproffs.se|densistavilan.se|universitetslararen.se|alekuriren.se|branschaktuellt.se|svenskamagasinet.nu
 /wp-json/burst/*/track
 /wp-json/wpstatistics
 /wp-json/wp-statistics
@@ -3019,6 +3022,7 @@ zeromagazine.nu##div[id^="ads"]
 ||insplanet.com^$third-party
 ||instaforex.com^$third-party
 ||instiengage.com^$domain=stoppapressarna.se
+||interlaced.in^$third-party
 ||internetmedicin.se/log.php
 ||investerarbrevet.se^$third-party
 ||iphonecasinon.com^$third-party
