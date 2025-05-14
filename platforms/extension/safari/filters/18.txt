@@ -1,9 +1,9 @@
-! Checksum: sTmFQXVAH3/V3uyH9hvqFQ
-! Diff-Path: ../patches/18/18-s-1747239162-3600.patch
+! Checksum: jLtwLg1I7QeFV9s7BOl/6Q
+! Diff-Path: ../patches/18/18-s-1747249842-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.61.95
-! TimeUpdated: 2025-05-14T16:08:37+00:00
+! Version: 2.0.61.96
+! TimeUpdated: 2025-05-14T19:06:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2508,6 +2508,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+vide-greniers.org#%#//scriptlet('trusted-click-element', '.cmp-msg-accept, #accept-btn')
 tutu.ru##div[data-ti="disclaimer_wrapper"]
 helse-bergen.no,helseplattformen.no##div[class*="cookieconsent-banner"]
 oda.com##div[class^="styles_cookie-widget-wrapper"]
@@ -16938,6 +16939,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205039
+@@||cmp.inmobi.com^$domain=vide-greniers.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205280
 flipsnack.com#@##cookieNotification
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205197

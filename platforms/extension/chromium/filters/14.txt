@@ -1,9 +1,9 @@
-! Checksum: fSnSKY7GhuWQ8srS7l+LmQ
-! Diff-Path: ../patches/14/14-s-1747239151-3600.patch
+! Checksum: BWW17zWQjc5VhK17RXwTZA
+! Diff-Path: ../patches/14/14-s-1747249830-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.30.34
-! TimeUpdated: 2025-05-14T16:08:32+00:00
+! Version: 2.2.30.35
+! TimeUpdated: 2025-05-14T19:06:51+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2506,6 +2506,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+vide-greniers.org#%#//scriptlet('trusted-click-element', '.cmp-msg-accept, #accept-btn')
 tutu.ru##div[data-ti="disclaimer_wrapper"]
 helse-bergen.no,helseplattformen.no##div[class*="cookieconsent-banner"]
 oda.com##div[class^="styles_cookie-widget-wrapper"]
@@ -16929,6 +16930,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205039
+@@||cmp.inmobi.com^$domain=vide-greniers.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205280
 flipsnack.com#@##cookieNotification
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205197
@@ -24602,6 +24605,8 @@ uwaterloo.ca##div[aria-label="Ad Blocker Detected"]
 ! SECTION[id=general]: Anti-adblock - Common '!#safari_cb_affinity(general)' directive
 !#safari_cb_affinity(general)
 !
+vide-greniers.org#@#ins.adsbygoogle[data-ad-slot]
+vide-greniers.org#@#ins.adsbygoogle[data-ad-client]
 @@||iphoned.nl/wp-content/themes/bigspark/scripts/ads-frontend.min.js
 @@||cdn.snigelweb.com/adengine/civitai.com/loader.js$domain=civitai.com
 facebook.com#@#.post-ads
