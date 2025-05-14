@@ -1,9 +1,9 @@
-! Checksum: 7cRl1JBzByzxIGelkCtd6w
-! Diff-Path: ../patches/22/22-s-1747235482-3600.patch
+! Checksum: O6ajXYKGrH3wGJSVxPp31g
+! Diff-Path: ../patches/22/22-s-1747239160-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.11.72
-! TimeUpdated: 2025-05-14T15:07:40+00:00
+! Version: 2.0.11.73
+! TimeUpdated: 2025-05-14T16:08:40+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1399,8 +1399,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !   !SECTION: Widgets - Marketing (generic rules)
 !
 !   SECTION: Widgets - Marketing (third-party services)
-! make it domain specific, block if the widget is really annoying
-!||zopim.com^$third-party,domain=
 !
 ||webchat.bebot.io^$third-party
 ||kwizbot.io^$third-party
@@ -1537,7 +1535,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||netroxsc.ru^$third-party
 ||pinformer.sinoptik.ua^$third-party
 ||st.yagla.ru^$third-party
-||static.elfsight.com^$third-party
 ||widget.sender.mobi^$third-party,domain=~privat24.ua|~privatbank.ua
 ||cloud.lexprofit.$third-party
 ||partner-widget.vse-sdal.com^
@@ -1770,6 +1767,10 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 ||yangteacher.ru/reformal.js
 ||yastatic.net/*/chat/widget.js$domain=next24.ru|goodprice4you.ru
 ||yengec.zendesk.com/embeddable/
+! May cause issues with some sites
+! ||static.elfsight.com^$domain=
+! make it domain specific, block if the widget is really annoying
+! ||zopim.com^$third-party,domain=
 !   NOTE: Marketing (specific) end ⬆️
 !   !SECTION: Widgets - Marketing (specific)
 !
@@ -1785,11 +1786,6 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 @@||wchat.freshchat.com/js/widget.js$domain=livecrowd.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174036
 @@||secure.livechatinc.com/customer/action/open_chat?$domain=kinguin.net
-! https://github.com/AdguardTeam/AdguardFilters/issues/202755
-! https://github.com/AdguardTeam/AdguardFilters/issues/201505
-! https://github.com/AdguardTeam/AdguardFilters/issues/187963
-! https://github.com/AdguardTeam/AdguardFilters/issues/170804
-@@||static.elfsight.com^$third-party,domain=cafemarta.ch|trestlebrewing.com|taube-rankweil.at|savearizonafund.com|avproedge.com|spiceandcurry.ca|keenetic.com.tr|bigchicken.com|agirsaglam.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158945
 @@||widgets.trustedshops.com/reviews/tsSticker/tsSticker.js$domain=interpack.eu
 @@||widgets.trustedshops.com/reviews/tsSticker/css/light.theme.css$domain=interpack.eu

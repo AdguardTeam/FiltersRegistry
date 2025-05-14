@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: HH6l/kAnbsIMcscfKoB4lA
-! Diff-Path: ../patches/14/14-s-1747235486-3600.patch
+! Checksum: ZT+Cggo5KkNCs1RlWhQ/2g
+! Diff-Path: ../patches/14/14-s-1747239163-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.30.33
-! TimeUpdated: 2025-05-14T15:07:34+00:00
+! Version: 2.2.30.34
+! TimeUpdated: 2025-05-14T16:08:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -41011,7 +41011,7 @@ scientificamerican.com,itnews.com.au,kauppalehti.fi##.newsletter-subscribe-conta
 kudyznudy.cz,stern.de,about.ikea.com,ambito.com,elfinanciero.com.mx,erwinmueller.com,nextpit.com,nextpit.com.br,fivethirtyeight.com,sparwelt.de,androidpit.com.br##.newsletter-subscription
 lifehacker.ru,foodspring.de##.newsletter-subscription-form
 momox.de##.newsletter-trust-element-row
-digitalkamera.de,pcguru.hu,weser-kurier.de,newsday.com,nationalpost.com,latribune.fr,financialpost.com,lfpress.com,torontosun.com,montrealgazette.com,schoener-wohnen.de,essen-und-trinken.de,brigitte.de,chip.de,newsletter.co.uk,pcmag.com,portsmouth.co.uk,scotsman.com,sunderlandecho.com##.newsletter-widget
+freiepresse.de,digitalkamera.de,pcguru.hu,weser-kurier.de,newsday.com,nationalpost.com,latribune.fr,financialpost.com,lfpress.com,torontosun.com,montrealgazette.com,schoener-wohnen.de,essen-und-trinken.de,brigitte.de,chip.de,newsletter.co.uk,pcmag.com,portsmouth.co.uk,scotsman.com,sunderlandecho.com##.newsletter-widget
 upgradeguy.com,hindenburgresearch.com,l-iz.de,techrepublic.com,zielonyogrodek.pl##.newsletter-wrap
 designmodo.com##.newsletter-wrapper + div[style="clear:both;"] + .sidebar-divider
 infor.pl,sportstiger.com,theblock.co,gabot.de,geizkragen.de##.newsletterBox
@@ -57394,8 +57394,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 !   !SECTION: Widgets - Marketing (generic rules)
 !
 !   SECTION: Widgets - Marketing (third-party services)
-! make it domain specific, block if the widget is really annoying
-!||zopim.com^$third-party,domain=
 !
 ||webchat.bebot.io^$third-party
 ||kwizbot.io^$third-party
@@ -57532,7 +57530,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||netroxsc.ru^$third-party
 ||pinformer.sinoptik.ua^$third-party
 ||st.yagla.ru^$third-party
-||static.elfsight.com^$third-party
 ||widget.sender.mobi^$third-party,domain=~privat24.ua|~privatbank.ua
 ||cloud.lexprofit.$third-party
 ||partner-widget.vse-sdal.com^
@@ -57762,6 +57759,10 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 ||yangteacher.ru/reformal.js
 ||yastatic.net/*/chat/widget.js$domain=next24.ru|goodprice4you.ru
 ||yengec.zendesk.com/embeddable/
+! May cause issues with some sites
+! ||static.elfsight.com^$domain=
+! make it domain specific, block if the widget is really annoying
+! ||zopim.com^$third-party,domain=
 !   NOTE: Marketing (specific) end ⬆️
 !   !SECTION: Widgets - Marketing (specific)
 !
@@ -57777,11 +57778,6 @@ yuristznaet.ru##iframe[src^="http://form.cloudleadia.com/"]
 @@||wchat.freshchat.com/js/widget.js$domain=livecrowd.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174036
 @@||secure.livechatinc.com/customer/action/open_chat?$domain=kinguin.net
-! https://github.com/AdguardTeam/AdguardFilters/issues/202755
-! https://github.com/AdguardTeam/AdguardFilters/issues/201505
-! https://github.com/AdguardTeam/AdguardFilters/issues/187963
-! https://github.com/AdguardTeam/AdguardFilters/issues/170804
-@@||static.elfsight.com^$third-party,domain=cafemarta.ch|trestlebrewing.com|taube-rankweil.at|savearizonafund.com|avproedge.com|spiceandcurry.ca|keenetic.com.tr|bigchicken.com|agirsaglam.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158945
 @@||widgets.trustedshops.com/reviews/tsSticker/tsSticker.js$domain=interpack.eu
 @@||widgets.trustedshops.com/reviews/tsSticker/css/light.theme.css$domain=interpack.eu
