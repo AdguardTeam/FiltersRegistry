@@ -1,9 +1,9 @@
-! Checksum: kALhhNNSLrnmhJyIBtkHKw
-! Diff-Path: ../patches/14/14-s-1747231886-3600.patch
+! Checksum: a83mE9V9FbG/+0ggoCL2HQ
+! Diff-Path: ../patches/14/14-s-1747235483-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.30.32
-! TimeUpdated: 2025-05-14T14:07:37+00:00
+! Version: 2.2.30.33
+! TimeUpdated: 2025-05-14T15:07:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2508,6 +2508,7 @@ scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl
 !
 ! NOTE: Regular rules
 !
+tutu.ru##div[data-ti="disclaimer_wrapper"]
 helse-bergen.no,helseplattformen.no##div[class*="cookieconsent-banner"]
 oda.com##div[class^="styles_cookie-widget-wrapper"]
 raiffeisen.ru##.CookieDialog
@@ -34774,6 +34775,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+stlpr.org##iframe[src^="https://app.e2ma.net/app2/audience/signup/"]
 sourcegraph.com##.sidebar2_menu-bottom > div.sidebar2_card:has(> div.w-embed > div.hbspt-form)
 flatheadbeacon.com##.beacon-footer-newsletter-wrapper
 flatheadbeacon.com##.fbeacon_newsletter
@@ -55056,6 +55058,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205047
+5wip-file.ru#%#//scriptlet('adjust-setInterval', '.df-wrap')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204557
 datanodes.to#%#//scriptlet('adjust-setTimeout', '/downloadForm|seconds--/', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204724
@@ -59117,6 +59121,8 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+stlpr.org###nonintrusive-donate-ask
+stlpr.org##.alleg-donate-embed
 perito.media##.footer__swiper-row > div.footer-swiper:has(> div.footer-swiper__container a[href="https://perito.media/posts/perito-zapuskaet-patreon-i-boosty"])
 hrw.org###graphene--modal
 air-journal.fr##[class*="donation"]:not(a)
