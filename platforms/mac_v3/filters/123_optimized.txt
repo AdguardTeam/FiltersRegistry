@@ -1,9 +1,9 @@
-! Checksum: smDyKFf9kD+q+WckhStqRQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1747270352-14400.patch
+! Checksum: keE/AJ0IodLcJQ+zcfdIVw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1747284146-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.41.40
-! TimeUpdated: 2025-05-15T00:47:52+00:00
+! Version: 2.1.41.41
+! TimeUpdated: 2025-05-15T04:37:47+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -279,6 +279,7 @@ _social-bar/
 ###global-share
 ###globalSocialLinks
 ###header-facebook-social-link
+###header-share
 ###header-social
 ###header-social-icons
 ###header-social-links
@@ -412,6 +413,7 @@ _social-bar/
 ###shareTags
 ###shareThis
 ###shareToolBottom
+###shareTop
 ###shareTxt
 ###shareUrl
 ###share_bar
@@ -879,6 +881,7 @@ _social-bar/
 ##.b-sharelist
 ##.b-social-icons
 ##.b-social-share
+##.b-social-widget
 ##.b-socials
 ##.b_like
 ##.b_share
@@ -941,6 +944,7 @@ _social-bar/
 ##.box-share-group
 ##.box-social
 ##.box-social-icons
+##.box-social-share
 ##.boxSocial
 ##.box_social
 ##.boxsocial
@@ -1112,6 +1116,7 @@ _social-bar/
 ##.end-social
 ##.entry-aside-shares
 ##.entry-footer-share
+##.entry-meta-share
 ##.entry-meta-social
 ##.entry-share
 ##.entry-shares
@@ -1242,6 +1247,7 @@ _social-bar/
 ##.fi-social-youtube
 ##.fix-share
 ##.fixed-share
+##.fixed-share-bar
 ##.fixed-social
 ##.fl-social-icons
 ##.flare-button-icon
@@ -1519,6 +1525,7 @@ _social-bar/
 ##.icon--linkedin
 ##.icon--pinterest
 ##.icon--share
+##.icon--snapchat
 ##.icon--twitter
 ##.icon--youtube
 ##.icon-circle-facebook
@@ -1894,6 +1901,7 @@ _social-bar/
 ##.omc-social-small
 ##.open-share
 ##.open-share-toolbar
+##.openshare
 ##.os-social-bar
 ##.overlay-open-share
 ##.ow-social-icons
@@ -2084,6 +2092,7 @@ _social-bar/
 ##.share--aside
 ##.share--bottom
 ##.share--facebook
+##.share--item
 ##.share--twitter
 ##.share-a
 ##.share-action
@@ -2800,6 +2809,7 @@ _social-bar/
 ##.social-share_compact
 ##.social-sharer
 ##.social-shares
+##.social-sharing--article
 ##.social-sharing-bot
 ##.social-sharing-buttons
 ##.social-sharing-link
@@ -3538,6 +3548,7 @@ osxdaily.com###subscribe_box
 thenewstack.io###tns-footer-bar
 thenewstack.io###tns-post-body-sidebar-share
 reuters.com###toolbar-item-parent-share-12
+yardbarker.com###top-nav-soc
 tennis.com##.-sharebar
 nhl.com,petri.com##.-social
 ynet.co.il,ynetnews.com##.AccordionShareWrapper
@@ -3641,6 +3652,7 @@ cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
 arabnews.com##.entry-views
 thegatewaypundit.com,wersm.com##.essb_links
+yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
 techradar.com##.facebook-icon
 blogto.com##.facebook-round-control
@@ -3714,7 +3726,6 @@ euronews.com##.js-c-article-partage-commentaire-share
 buzzfeed.com##.js-inline-share-bar
 guide.michelin.com##.js-share-sticky
 myanimelist.net##.js-sns-icon-container
-aap.com.au##.js-sticky-top
 republicbharat.com,republicworld.com##.justify-start.flex.flex-wrap.pb-4.desktop\:pb-5.items-center.mt-3.desktop\:mt-0.desktop\:justify-start.svelte-9p22hr
 4sysops.com##.kleo-quick-contact-wrapper
 techcrawlr.com##.kt_simple_share_container
@@ -3722,6 +3733,7 @@ observervoice.com##.latest-tweets-widget
 axios.com##.leading-0
 mymodernmet.com##.lets-connect
 mymodernmet.com##.like-it-share-it
+mmoga.co.uk,mmoga.com,mmoga.de,mmoga.es,mmoga.fr,mmoga.se##.likeBtn
 cybernews.com##.links-bar
 corrosionpedia.com,exchangerates.org.uk,idownloadblog.com,kyivpost.com,thedrinksbusiness.com##.list-inline
 soundcloud.com##.listenDetails__login
@@ -3875,6 +3887,7 @@ natlawreview.com##.sticky__sidebar
 aetv.com,wccftech.com##.story-share
 wccftech.com##.story-share-bottom
 gadgets360.com##.story_social_share
+stuff.co.nz##.stuff-article-sharebar
 americasvoice.news##.styles_share__ktP_t
 todayonline.com##.subcription-two
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
@@ -4142,6 +4155,7 @@ la7.it##.socialBtn
 davinotti.com##.social__variant
 ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
+fcinternews.it,lalaziosiamonoi.it,sportitalia.com,torinogranata.it##.social_table
 unionesarda.it##.socials-link
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
@@ -4212,7 +4226,6 @@ fecatolica.com.br##.redes-sociais-footer
 ebc.com.br##.redes-sociais-header
 opoder.com.br##.redes-sociais-rodape
 fecatolica.com.br##.redes-sociais-topo
-sampi.net.br##.redesSociais
 bomdia.eu##.seguir-bom-dia
 bandab.com.br##.share-bb
 bemparana.com.br##.share-bp
@@ -4263,6 +4276,7 @@ forklog.com##.post_bottom_socials_buttons_wrapper
 aif.ru##.sharing_item
 academic.ru##.smm
 glas-javnosti.rs##.row.pt-4.pb-4
+teraz.sk##.articleActions
 sme.sk##.social-dialog-wrapper
 24ur.com##.flex.flex-row.items-center.justify-center.md\:justify-start.p-16.md\:p-0
 24ur.com##.w-full.md\:w-auto.h-full.flex.flex-row.items-center.justify-center.md\:justify-start.pt-16.md\:pt-0.border-t.md\:border-none.border-black\/10.dark\:border-white\/10
