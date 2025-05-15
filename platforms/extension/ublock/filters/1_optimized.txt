@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: wYplWSZIfLkjkB2zXjuwCw
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1747221062-3600.patch
+! Checksum: 8LkgOawWAHo7wj1a+Q6CMg
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1747276785-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.0.99.27
@@ -90,6 +90,7 @@
 sb.php?s=$script
 .com/jsonp.php?b=*&ref=
 .com/native.php?b=
+.pw/jsonp.php?b=
 http://*.ru/leftunit.pl?
 /kadam.base.min.js?
 ?sid=*&t=*&jsD=$xmlhttprequest,third-party
@@ -1327,6 +1328,7 @@ ucoz.ru/informer/
 ||advideo.ru^$third-party
 ||advmaker.net^$third-party
 ||advmaker.su^$third-party
+||advon.net^$third-party
 ||adwidgets.ru^$third-party
 ||adwolf.ru^$third-party
 ||afficent.com^
@@ -1542,6 +1544,7 @@ ucoz.ru/informer/
 ||mediatoday.ru^$third-party
 ||mediawayss.com^$third-party
 ||meendocash.com^$third-party
+||mercatos.ru^$third-party
 ||metaffiliation.com^$third-party
 ||metallicheckiy-portal.ru/imgrek/
 ||metaprofit.net^$third-party
@@ -1817,6 +1820,7 @@ ucoz.ru/informer/
 ||r.z3.fm^
 ||adv.topvideo.tj^
 ||vast.playmatic.video^
+||oba.rus-km.ru^
 ||dab.rus-km.ru^
 ||placeholder.treeum.net^
 ||api.rnet.plus^$third-party
@@ -2534,6 +2538,9 @@ stavka.tv#$#.PromoPopup { display: none !important; }
 stavka.tv#$#body[class] { overflow: auto !important; }
 zoneofgames.ru##+js(remove-attr, style, body[style^="padding-top:"])
 botanichka.ru#$#body.td-background-link { cursor: auto !important; }
+notepadonline.ru#$#.mob-mask { height: 100% !important; }
+notepadonline.ru#$#.sidebar { bottom: 0 !important; }
+notepadonline.ru#$#.editor { bottom: 0 !important; }
 torrent-soft.net#$#.wwide.pagebg { background: unset !important; padding-top: 0px !important; }
 championat.com#$#.page-sidebar > div.sticky-vertical { position: unset !important; }
 expertcen.ru#$#.light-line { height: 0 !important; }
@@ -2715,6 +2722,7 @@ itop-gear.ru#$#body { padding-top: 0!important; }
 chita.ru#$#body { margin-top: auto!important; padding-top: 0!important; }
 mirtankov.su#$#body { background: none!important; }
 kino-teatr.ru#$##all_body_block { background: none!important; }
+newkaliningrad.ru#$#body { background: none!important; }
 newkaliningrad.ru#$##page-wrapper { margin-top: auto!important; }
 gameguru.ru#$#body { padding-top: 0!important; background: none!important; }
 anti-malware.ru#$#body > header.navbar.container { margin-top: 0!important; }
@@ -2729,6 +2737,7 @@ mobiltelefon.ru#$#body { background-color: #f7f8f9!important; }
 mobiltelefon.ru#$##float_head {margin-top: 0px !important; }
 computerra.ru#$#body { background: transparent!important; }
 vk.com#$##ads_left { position: absolute; top: -2500px; }
+got.vg#$#body > #Page { margin-top: 60px!important; }
 37.1.207.65,new-rutor.org#$##main-wrapper { padding: 0 !important; }
 gazeta.ru#$#body { padding-top: 0!important; }
 thg.ru#$#body { background-image: none!important; background-color: #fffff8!important; }
@@ -3857,6 +3866,7 @@ incrypted.com##div[class^="incrypted"][class*="-banner"]
 igromania.ru,kanobu.ru##.ad-brending
 syzran-small.ru##.bancode
 vkusno.plus##.region-featured-bottom
+vkusno.plus###block-blokkoda24smi
 topnews.ru##div[class$="_articles_for_this"]
 game4you.top,games-pc.top,apad2.top#$#body > div#body_container { margin-top: 0px !important; }
 prozoro.net.ua##.bottom-news__heading
@@ -3912,6 +3922,7 @@ comss.ru#?#body > div.container:has(> div.row > div.col-sm-6 > div[style^="paddi
 rg.ru#?#div[class^="EditorialPageArticleAside_aside"] > div[class^="EditorialPageArticleAside_item"]:has(> div[id].page_article)
 infox.ru#?#.row div.stlt:contains(Реклама)
 infox.ru#?#body > div.wr_container:has(> div.container > div.partner_news_gor)
+vesti-ua.net#?##dle-speedbar > div.hblock:has(> ins.adsbygoogle)
 otzyvy.by#?#center > div[align="center"][style]:has(> div.direct)
 otzyvy.by#?##review_frm > table.form > tbody > tr:has(> td[align="center"] > center > table.blue)
 cnews.ru#?#.article-wrap > section.section_mainnews > div.container:has(> div.line_pattern > a[href^="https://market.cnews.ru/"])
@@ -4346,6 +4357,7 @@ torontovka.com##.header-partnership
 torontovka.com##tor-banner-block
 nsp.ru##app-topline-advertising
 ||admin.nsp.ru/storage/html_banners/
+novosti-n.org##div[data-adunit-type]
 1000.menu##.ads_enabled
 diakov.net##.stic
 ale07.ru##body > div.line_footer
@@ -4612,6 +4624,7 @@ zoneofgames.ru##div[id^="adv-"]
 cnews.ru##.google_bottom_line
 timeweb.com##.cm-represent
 gazeta.ru##a[href^="https://sber180.lenta.ru/"]
+||i.stranamam.ru/*/background.jpg
 ||vigvam.ru^$domain=stranamam.ru
 stranamam.ru###beta_place_122
 bb.lv##div[class*="bnr_place"]
@@ -5658,6 +5671,7 @@ veseloeradio.ru##.footer__banners-wrapper
 bezdna.su##.footer_advert
 objectiv.tv##.foreign_news
 reviewdetector.ru##.forumdesc > a > img[onmouseout="this.className='CImgBrNo'"]
+kinosklad.net##.frame_yt
 fex.net##.fs-table__ads-wrapper
 torrent-soft.net##.fullstory div[align="center"] > a[rel="nofollow"] > img
 torrent-games.net##.gboxx[style="height:450px;"]
@@ -5781,6 +5795,7 @@ onedio.ru##.scrollhelper
 mastergrad.com##.section-body > div[style^="margin-bottom: 15px;"]:not([class*="post "])
 diabethelp.org,diabetik.guru##.section-popular
 subscribe.ru##.sendsay_adv
+dv-gazeta.info##.sid_ad300x250
 grodnonews.by,cossa.ru,mos.news##.side-banner
 lifehacker.ru##.side-banner > div.widget_custom_html
 drive.ru##.side-dv
@@ -5955,6 +5970,7 @@ prikol.ru,zaycev.fm##div[class^="google-"]
 objectiv.tv##div[class^="l-banners"]
 avtovzglyad.ru##div[class^="okey-"]
 newsler.ru##div[class^="rec-"]
+amedia.online,vizyt.com##div[class^="rek"]
 remontka.pro##div[class^="remon-"]
 123ru.net##div[class^="s29Adv1"]
 prikol.ru##div[class^="sidebar-advert"]
@@ -6084,6 +6100,7 @@ webware.ru/*/clients/
 ||adultfriendfinder.com/go/page/js_im_box?$third-party
 ||advego.ru/i/b/$third-party
 ||afisha.cheb.ru/css/bg/*.gif?id=
+||afisha.cheb.ru/css/bg/*.gif?uid=
 ||alijournal.ru/wp-content/uploads/cashback640.gif
 ||allsoft.ru/ads/
 ||altapress.ru/img/_branding/
@@ -6156,6 +6173,7 @@ webware.ru/*/clients/
 ||f.mega-porno.tv^
 ||film-adult.com/templates/*/images/img/
 ||finam.ru/data/js/
+||fishki.net/informer/echo
 ||fonarevka.ru$domain=kerio-rus.ru
 ||footballhd.ru/templates/ball/images/rec/
 ||forum-treiderov.com/styles/partner/
