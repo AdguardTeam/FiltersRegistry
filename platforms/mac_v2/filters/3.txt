@@ -1,9 +1,9 @@
-! Checksum: xIgFcceYO2w/CeiCjg3DNQ
-! Diff-Path: ../patches/3/3-s-1747273198-3600.patch
+! Checksum: 8Cw/6WJm5w0mjpXvdN55TA
+! Diff-Path: ../patches/3/3-s-1747282359-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.84.86
-! TimeUpdated: 2025-05-15T01:35:19+00:00
+! Version: 2.0.84.87
+! TimeUpdated: 2025-05-15T04:08:29+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -152910,6 +152910,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+vnexpress.net#%#//scriptlet('set-local-storage-item', '/^fosp_/', '$remove$')
+vnexpress.net#%#//scriptlet('set-local-storage-item', 'orig_aid', '$remove$')
+||s1.trrsf.com/*/zaz-mod-stalker/
 ||notion.so/api/*/etClient|$method=post
 ||imdb.com/api/_ajax/metrics/
 ||t1.daumcdn.net/brunch/static/prod/*/production/B.CtrChecker.min.js
@@ -158923,6 +158926,14 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! vnexpress.net
+||vnexpress.net^$cookie=/^fosp_/
+||vnexpress.net^$cookie=orig_aid
+! terra.com.br
+||terra.com.br^$cookie=X-XAct-ID
+! healf.com
+||healf.com^$cookie=/^ig-/
+||healf.com^$cookie=/^ph_phc_/
 ! usetrmnl.com
 ||usetrmnl.com^$cookie=/^intercom-/
 ! galaxus.de
