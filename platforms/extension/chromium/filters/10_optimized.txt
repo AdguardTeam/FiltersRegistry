@@ -1,9 +1,9 @@
-! Checksum: 94n/ZKWugOkt8M1b833Osg
-! Diff-Path: ../patches/10_optimized/10_optimized-s-1746451135-3600.patch
+! Checksum: cvb2EVGlM9/915wtF24ysQ
+! Diff-Path: ../patches/10_optimized/10_optimized-s-1747347065-3600.patch
 ! Title: Filter unblocking search ads and self-promotion (Optimized)
 ! Description: Filter that unblocks search ads in Google, DuckDuckGo, Bing, or Yahoo and self-promotion on websites.
-! Version: 2.0.3.65
-! TimeUpdated: 2025-05-05T13:15:07+00:00
+! Version: 2.0.3.66
+! TimeUpdated: 2025-05-15T22:07:13+00:00
 ! Expires: 10 days (update frequency)
 !#safari_cb_affinity(general)
 bing.com#@#li[class="b_ans"][data-partnertag]:has(> div[class^="b_bza_"])
@@ -168,7 +168,7 @@ ebay.co.uk,ebay.com,ebay.com.au#@?#.mfe-lex:-abp-has(h2:-abp-contains(sponsored)
 ebay.de#@?#.srp-list > .s-item:has(> div > .s-item__info > a > div[style="display:flex;"] span[role="text"] > span:contains(A) ~ span:contains(N) ~ span:contains(Z))
 ebay.com,ebay.co.uk,ebay.com.au#@?#div[itemtype="https://schema.org/Product"] div[id^="merch_html_"]:has(> div[id] .mfe-header > h2.mfe-pull-left:contains(Sponsored))
 ebay.com,ebay.co.uk,ebay.com.au#@?#div[itemtype="https://schema.org/Product"] div[id^="merch_html_"]:has(> div[id] h2.mfe-card-group-title:contains(sponsored))
-ebay.*#@#.x-rx-slot
+ebay.*#@$#.x-rx-slot { position: absolute!important; left: -4000px!important;}
 ebay.*#@#.srp-river-answer[class*="CAROUSEL"]:not([class*="NAVIGATION"])
 aliexpress.com#@#.search-item-card-wrapper-list:has( > div:only-child > div:only-child > a + div[class*="multi"])
 [$path=/jobs]linkedin.com#@##ember33
