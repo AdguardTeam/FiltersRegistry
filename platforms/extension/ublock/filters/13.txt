@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: o0txzSJR3UkS2al12OcuOA
-! Diff-Path: ../patches/13/13-s-1747408312-3600.patch
+! Checksum: zIJCPNMgrNhrrH6YEowNtA
+! Diff-Path: ../patches/13/13-s-1747415485-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.56
-! TimeUpdated: 2025-05-16T15:07:37+00:00
+! Version: 2.0.56.57
+! TimeUpdated: 2025-05-16T17:06:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -516,7 +516,7 @@ osxinfo.net##+js(abort-current-script, $, !document.getElementById(btoa)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/49271
 turkdenizcileri.com,bilgalem.blogspot.com##+js(set-constant, koddostu_com_adblock_yok, null)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203121
-tekniknot.com##+js(abort-on-property-read, workfile)
+tekniknot.com##+js(abort-on-stack-trace, document.querySelector, window.onload)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/47184
 @@||veterinerhekimleri.com/wp-content/plugins/*/includes/adblock-detector/advertisement.js
 veterinerhekimleri.com##+js(set-constant, jQuery.adblock, false)
@@ -5512,7 +5512,9 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
 ! selcuksporthd*.com - frequently changed domains
 ||selcuksporthd*.com/dosya/*.gif
+||hdselcuksports*.top/cdn/r/
 [$domain=/selcuksporthd\d+\.com/]##a[href^="https://bit.ly/"]
+[$domain=/hdselcuksports\d+\.top/]##+js(window.open-defuser)
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204675
 [$domain=/betnanotv\d+\.com/]##a[href="https://betnano.marketing/2025"]

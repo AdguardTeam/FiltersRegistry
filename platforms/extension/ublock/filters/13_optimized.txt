@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 4o+024oGmTjqA0TL9dcXzw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1747408313-3600.patch
+! Checksum: ZxzzbnmebwZaG8adeAY6mg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1747415485-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.56
-! TimeUpdated: 2025-05-16T15:07:37+00:00
+! Version: 2.0.56.57
+! TimeUpdated: 2025-05-16T17:06:43+00:00
 ! Expires: 5 days (update frequency)
 ||statbest.in^
 ||movturs.click^
@@ -382,7 +382,7 @@ oyungibi.com##+js(set-constant, jQuery.adblock, false)
 @@||osxinfo.net/js/*/lifelockad.js
 osxinfo.net##+js(abort-current-script, $, !document.getElementById(btoa)
 turkdenizcileri.com,bilgalem.blogspot.com##+js(set-constant, koddostu_com_adblock_yok, null)
-tekniknot.com##+js(abort-on-property-read, workfile)
+tekniknot.com##+js(abort-on-stack-trace, document.querySelector, window.onload)
 @@||veterinerhekimleri.com/wp-content/plugins/*/includes/adblock-detector/advertisement.js
 veterinerhekimleri.com##+js(set-constant, jQuery.adblock, false)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=oyunlarskor.com
@@ -4986,7 +4986,9 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##div[id^="banner-placeholder-"]
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]###container > div[style*="z-index"][style*="position: sticky;"]
 ||selcuksporthd*.com/dosya/*.gif
+||hdselcuksports*.top/cdn/r/
 [$domain=/selcuksporthd\d+\.com/]##a[href^="https://bit.ly/"]
+[$domain=/hdselcuksports\d+\.top/]##+js(window.open-defuser)
 [$domain=/betnanotv\d+\.com/]##a[href="https://betnano.marketing/2025"]
 [$domain=/bahisnowtv\d+\.com/]##a[href="https://tinyurl.com/tvbnow"]
 [$domain=/joybet\d+\.cam/]##a[href="https://tv.joybet.biz"]
