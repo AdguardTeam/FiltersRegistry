@@ -1,10 +1,11 @@
-! Checksum: mNxHopS7oaSWW+VAoW/8Wg
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1747386723-3600.patch
+! Checksum: Jd/rkwLAK3y27CyJHyVM8A
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1747390306-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.83.77
-! TimeUpdated: 2025-05-16T09:07:15+00:00
+! Version: 2.3.83.78
+! TimeUpdated: 2025-05-16T10:07:17+00:00
 ! Expires: 12 hours (update frequency)
+||obnoljac.com^$all
 ||aucdn.net^
 ||s.dt6ycu.com^
 ||zipup.click^$all
@@ -4811,6 +4812,7 @@ genshinimpactcalculator.com#%#//scriptlet("set-constant", "nitroAds.loaded", "tr
 ephoto360.com#%#//scriptlet("abort-current-inline-script", "$", "Adblock")
 transfermarkt.*#@#.AD-POST
 #@#.ADV320_50_100
+client.falixnodes.net#%#//scriptlet('abort-current-inline-script', 'document.head', 'disableadblock')
 client.falixnodes.net#%#//scriptlet('abort-on-property-write', 'detectAdBlock')
 @@||client.falixnodes.net^$generichide
 client.falixnodes.net##div[id^="adngin-"]
@@ -5886,11 +5888,11 @@ beinmatch.*#%#//scriptlet("prevent-window-open", "!/home/")
 beinmatch.*#%#//scriptlet("abort-on-property-read", "S9tt")
 egyfalcons.com#%#//scriptlet("abort-current-inline-script", "document.createElement", "adblock")
 egyshare.cc#%#//scriptlet("remove-attr", "href", "a[href]#clickfakeplayer")
-freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('trusted-create-element', 'body', 'div', 'id="bait123" style="display: none;"', '0123456789')
+freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('trusted-create-element', 'body', 'div', 'id="abook" style="display: none;"', '0123456789')
 freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
 freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('prevent-fetch', 'securepubads.g.doubleclick.net')
-freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*$$script:contains(/\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML/)
-freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('remove-node-text', 'script', '/\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML/')
+freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*$$script:contains(/\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML|=Array\.prototype\.slice\.call\(arguments\)/)
+freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('remove-node-text', 'script', '/\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML|=Array\.prototype\.slice\.call\(arguments\)/')
 freex2line.online,cimanow.cc,cimanow.*#@#.ad-slot
 @@||flashtalking.com/oba/icon/consumer-privacy-logo.png$domain=cimanow.*|freex2line.online
 freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
@@ -5900,10 +5902,11 @@ freex2line.online,cimanow.cc#%#//scriptlet('abort-current-inline-script', 'docum
 cimanow.cc,freex2line.online#%#//scriptlet('abort-on-stack-trace', 'document.getElementsByTagName', '/freex2line\.online\/.*\.js/')
 cimanow.cc,freex2line.online#%#//scriptlet('abort-on-stack-trace', 'document.querySelector', '/freex2line\.online\/.*\.js/')
 freex2line.online#$#a.downloadbtn { display: block !important; }
-freex2line.online#%#//scriptlet('trusted-replace-node-text', 'script', 'realURL', '/delay\s+= \d+/', 'delay = 0')
+freex2line.online#%#//scriptlet('trusted-replace-node-text', 'script', 'performance.now', '>= delay', '>= -1')
 freex2line.online#%#//scriptlet('trusted-replace-node-text', 'script', 'countdown', '/seconds : \d+/', 'seconds : 0')
 freex2line.online#%#//scriptlet('adjust-setTimeout', '/btn|realURL|\.style.display|setAttribute|getElementById/', '*', '0.001')
-freex2line.online#%#//scriptlet('trusted-click-element', '.InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."]')
+freex2line.online#%#//scriptlet('trusted-click-element', '.InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."]:not([href*="?ad="])')
+freex2line.online#%#//scriptlet('set-attr', '.InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."][href*="?ad="][data-real-url^="https:/"]', 'href', '[data-real-url]')
 wifi4games.com#%#//scriptlet("prevent-window-open", "/include/redirect.php")
 wifi4games.com#%#//scriptlet('prevent-setTimeout', '/\!window\[[\s\S]*?String\.fromCharCode[\s\S]*?document\.createElement\("script"\)/')
 !+ NOT_OPTIMIZED
@@ -27396,6 +27399,7 @@ browsershots.org#@#.advert_area
 ||clearadnetwork.com^
 ||clearancejoinjavelin.com^
 ||clearonclick.com^
+||clearwatch.tv^
 ||clenchedfavouritemailman.com^
 ||clerrrep.com^
 ||cleverjump.org^
@@ -36081,6 +36085,7 @@ browsershots.org#@#.advert_area
 ||stratosbody.com^
 ||streakattempt.com^
 ||stream-all.com^
+||streamereasy.click^
 ||streampsh.top^
 ||streamsearchclub.com^
 ||streamtoclick.com^
@@ -38429,6 +38434,7 @@ browsershots.org#@#.advert_area
 ||bemobtrcks.com^$document
 ||blcdog.com^$document
 ||bobgames-prolister.com^$document
+||clearwatch.tv^$document
 ||cybkit.com^$document
 ||download-adblockgenius.com^$document
 ||dpuppers.com^$document
@@ -38473,6 +38479,7 @@ browsershots.org#@#.advert_area
 ||srvtrck.com^$document
 ||stake.com/*&clickId=$document
 ||stake.mba/?c=$document
+||streamereasy.click^$document
 ||suptraf.com^$document
 ||tatrck.com^$document
 ||tsyndicate.com^$document
@@ -38989,6 +38996,7 @@ browsershots.org#@#.advert_area
 ||cdn4ads.com^$popup
 ||chestgoingpunch.com^$popup
 ||choathaugla.net^$popup
+||clearwatch.tv^$popup
 ||concealmentmimic.com^$popup
 ||condles-temark.com^$popup
 ||cotrck.com^$popup
@@ -39094,6 +39102,7 @@ browsershots.org#@#.advert_area
 ||snuff-brownsprintcountry.com^$popup
 ||stethepsartopo.com^$popup
 ||stikroltiltoowi.net^$popup
+||streamereasy.click^$popup
 ||sudukrirga.net^$popup
 ||takabaubles.shop^$popup
 ||tiger-spotted.cyou^$popup
@@ -41713,6 +41722,7 @@ law.cornell.edu##.gfs
 ghacks.net##.ghacks-ad
 mql5.com##.giyamx4tr
 getcomics.org##.gjqry
+wjunction.com##.global-banner
 researchgate.net##.global-leaderboard-ad-container
 niagarafallsreview.ca,stcatharinesstandard.ca,therecord.com,thespec.com,thestar.com,wellandtribune.ca##.globalHeaderBillboard
 golf.com##.golf-ad

@@ -1,8 +1,8 @@
-! Checksum: OEflJRNoou9g05wnsOqAOQ
+! Checksum: Rv0hZVlCT+4dg8VndftoBA
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.83.77
-! TimeUpdated: 2025-05-16T09:07:15+00:00
+! Version: 2.3.83.78
+! TimeUpdated: 2025-05-16T10:07:17+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21,6 +21,7 @@
 !
 !
 !
+||obnoljac.com^$all
 ||aucdn.net^
 ||s.dt6ycu.com^
 ||zipup.click^$all
@@ -25554,6 +25555,7 @@ ephoto360.com#%#//scriptlet("abort-current-inline-script", "$", "Adblock")
 transfermarkt.ae,transfermarkt.at,transfermarkt.be,transfermarkt.ch,transfermarkt.co,transfermarkt.co.id,transfermarkt.co.in,transfermarkt.co.kr,transfermarkt.co.uk,transfermarkt.co.za,transfermarkt.com,transfermarkt.com.ar,transfermarkt.com.bd,transfermarkt.com.br,transfermarkt.com.np,transfermarkt.com.tr,transfermarkt.de,transfermarkt.es,transfermarkt.fr,transfermarkt.gr,transfermarkt.in,transfermarkt.it,transfermarkt.jp,transfermarkt.life,transfermarkt.mx,transfermarkt.my,transfermarkt.nl,transfermarkt.pe,transfermarkt.pk,transfermarkt.pl,transfermarkt.pro,transfermarkt.pt,transfermarkt.ro,transfermarkt.ru,transfermarkt.shop,transfermarkt.store,transfermarkt.uk,transfermarkt.us,transfermarkt.vip,transfermarkt.world#@#.AD-POST
 #@#.ADV320_50_100
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152983
+client.falixnodes.net#%#//scriptlet('abort-current-inline-script', 'document.head', 'disableadblock')
 client.falixnodes.net#%#//scriptlet('abort-on-property-write', 'detectAdBlock')
 @@||client.falixnodes.net^$generichide
 client.falixnodes.net##div[id^="adngin-"]
@@ -29493,10 +29495,10 @@ teamxnovel.com##.body-wrap > div[style^=" padding:50px "]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171857
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99417
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199845
-freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('trusted-create-element', 'body', 'div', 'id="bait123" style="display: none;"', '0123456789')
+freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('trusted-create-element', 'body', 'div', 'id="abook" style="display: none;"', '0123456789')
 freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
 freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('prevent-fetch', 'securepubads.g.doubleclick.net')
-freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('remove-node-text', 'script', '/\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML/')
+freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*#%#//scriptlet('remove-node-text', 'script', '/\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML|=Array\.prototype\.slice\.call\(arguments\)/')
 freex2line.online,cimanow.cc,cimanow.com.bd,cimanow.com.np,cimanow.fun,cimanow.net,cimanow.online,cimanow.store,cimanow.tv##body > a[target="_blank"]
 freex2line.online,cimanow.cc,cimanow.com.bd,cimanow.com.np,cimanow.fun,cimanow.net,cimanow.online,cimanow.store,cimanow.tv#@#.ad-slot
 @@||flashtalking.com/oba/icon/consumer-privacy-logo.png$domain=cimanow.cc|cimanow.com.bd|cimanow.com.np|cimanow.fun|cimanow.net|cimanow.online|cimanow.store|cimanow.tv|freex2line.online
@@ -29507,10 +29509,11 @@ freex2line.online,cimanow.cc#%#//scriptlet('abort-current-inline-script', 'docum
 cimanow.cc,freex2line.online#%#//scriptlet('abort-on-stack-trace', 'document.getElementsByTagName', '/freex2line\.online\/.*\.js/')
 cimanow.cc,freex2line.online#%#//scriptlet('abort-on-stack-trace', 'document.querySelector', '/freex2line\.online\/.*\.js/')
 freex2line.online#$#a.downloadbtn { display: block !important; }
-freex2line.online#%#//scriptlet('trusted-replace-node-text', 'script', 'realURL', '/delay\s+= \d+/', 'delay = 0')
+freex2line.online#%#//scriptlet('trusted-replace-node-text', 'script', 'performance.now', '>= delay', '>= -1')
 freex2line.online#%#//scriptlet('trusted-replace-node-text', 'script', 'countdown', '/seconds : \d+/', 'seconds : 0')
 freex2line.online#%#//scriptlet('adjust-setTimeout', '/btn|realURL|\.style.display|setAttribute|getElementById/', '*', '0.001')
-freex2line.online#%#//scriptlet('trusted-click-element', '.InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."]')
+freex2line.online#%#//scriptlet('trusted-click-element', '.InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."]:not([href*="?ad="])')
+freex2line.online#%#//scriptlet('set-attr', '.InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."][href*="?ad="][data-real-url^="https:/"]', 'href', '[data-real-url]')
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=nooptext,domain=cimanow.cc|cimanow.com.bd|cimanow.com.np|cimanow.fun|cimanow.net|cimanow.online|cimanow.store|cimanow.tv|cnvids.com|cimanowtv.com|freex2line.online
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99034
 alwafd.news##center > a[href="#"]
@@ -96352,6 +96355,7 @@ browsershots.org#@#.advert_area
 ||clearancejoinjavelin.com^
 ||clearancemadnessadvised.com^
 ||clearonclick.com^
+||clearwatch.tv^
 ||cleftmeter.com^
 ||clemencyexceptionpolar.com^
 ||clenchedfavouritemailman.com^
@@ -112827,6 +112831,7 @@ browsershots.org#@#.advert_area
 ||streakattempt.com^
 ||streakdancingmantle.com^
 ||stream-all.com^
+||streamereasy.click^
 ||streampsh.top^
 ||streamsearchclub.com^
 ||streamtoclick.com^
@@ -117328,6 +117333,7 @@ browsershots.org#@#.advert_area
 ||choogeet.net^$document
 ||choudairtu.net^$document
 ||cleanmypc.click^$document
+||clearwatch.tv^$document
 ||clixwells.com^$document
 ||closeupclear.top^$document
 ||cloudvideosa.com^$document
@@ -117768,6 +117774,7 @@ browsershots.org#@#.advert_area
 ||stake.com/*&clickId=$document
 ||stake.mba/?c=$document
 ||stellarmingle.store^$document
+||streamereasy.click^$document
 ||strtgic.com^$document
 ||stt6.cfd^$document
 ||stvwell.online^$document
@@ -120275,6 +120282,7 @@ browsershots.org#@#.advert_area
 ||clean-browsing.com^$popup
 ||cleanmypc.click^$popup
 ||cleantrafficrotate.com^$popup
+||clearwatch.tv^$popup
 ||cleftmeter.com^$popup
 ||clentrk.com^$popup
 ||clerkrevokesmiling.com^$popup
@@ -122456,6 +122464,7 @@ browsershots.org#@#.advert_area
 ||storader.com^$popup
 ||straitchangeless.com^$popup
 ||stream-all.com^$popup
+||streamereasy.click^$popup
 ||streamsearchclub.com^$popup
 ||streamyourvid.com^$popup
 ||strenuoustarget.com^$popup
@@ -130974,6 +130983,7 @@ ghacks.net##.ghacks-ad
 ghacks.net##.ghacks_ad_code
 mql5.com##.giyamx4tr
 getcomics.org##.gjqry
+wjunction.com##.global-banner
 researchgate.net##.global-leaderboard-ad-container
 niagarafallsreview.ca,stcatharinesstandard.ca,therecord.com,thespec.com,thestar.com,wellandtribune.ca##.globalHeaderBillboard
 goodmenproject.com##.gmp-instream-wrap
