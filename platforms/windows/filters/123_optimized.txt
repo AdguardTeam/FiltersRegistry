@@ -1,9 +1,9 @@
-! Checksum: Y4Uaok0xIuw6Mp4Sxji0dw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1747341692-14400.patch
+! Checksum: gOJ6xOXr95aF9dC0AdGvGA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1747385046-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.41.45
-! TimeUpdated: 2025-05-15T20:36:32+00:00
+! Version: 2.1.41.46
+! TimeUpdated: 2025-05-16T08:39:10+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -162,6 +162,7 @@ _social-bar/
 ###articlebottomsharinglinks
 ###aside-social-links-container
 ###bdshare
+###block-menu-menu-social
 ###block-menu-menu-social-links
 ###block-menu-menu-social-media-links
 ###block-social
@@ -266,6 +267,7 @@ _social-bar/
 ###footerSocialButtons
 ###footerSocialIcons
 ###footerSocialLinks
+###footer_block_social
 ###footer_social
 ###footer_social_facebook
 ###footer_social_icons
@@ -550,6 +552,7 @@ _social-bar/
 ###socialNetworks
 ###socialShare
 ###socialSharing
+###socialTop
 ###socialTwitter
 ###socialWrap
 ###social_bar
@@ -573,6 +576,7 @@ _social-bar/
 ###social_media
 ###social_media_container
 ###social_media_icons
+###social_media_links
 ###social_mobile
 ###social_panel
 ###social_pinterest
@@ -810,6 +814,7 @@ _social-bar/
 ##.article-footer-social
 ##.article-footer__share
 ##.article-full__share
+##.article-header-social
 ##.article-header__share
 ##.article-open_shere
 ##.article-pic-soc
@@ -1138,6 +1143,7 @@ _social-bar/
 ##.essb_links
 ##.essb_links_list
 ##.essb_share
+##.essbis-hover-overlay
 ##.et-extra-social-icons
 ##.et-social-google-plus
 ##.et-social-icon
@@ -1206,6 +1212,7 @@ _social-bar/
 ##.fb-like-box-wrapper
 ##.fb-like-buttons
 ##.fb-like-container
+##.fb-msg
 ##.fb-page-like
 ##.fb-recommend
 ##.fb-send-to-messenger
@@ -1383,6 +1390,7 @@ _social-bar/
 ##.footer__social-menu
 ##.footer__social-wrapper
 ##.footer__socialIcon
+##.footer__socialNetworkItem
 ##.footer__socialmedia
 ##.footer__socials
 ##.footer_fb
@@ -1396,6 +1404,7 @@ _social-bar/
 ##.footer_social_twitter
 ##.footer_social_wrapper
 ##.footer_socials
+##.footer_sprite_facebook
 ##.footernav-social
 ##.footernavigation__social
 ##.footersocial
@@ -1875,6 +1884,7 @@ _social-bar/
 ##.nc_socialPanel
 ##.ncpost-share-links
 ##.nectar-social
+##.new-footer-social
 ##.new-post__social
 ##.new-share
 ##.new-social
@@ -2483,6 +2493,7 @@ _social-bar/
 ##.sharing-buttons
 ##.sharing-container
 ##.sharing-element-facebook
+##.sharing-element-mail
 ##.sharing-element-twitter
 ##.sharing-facebook
 ##.sharing-fb
@@ -2537,6 +2548,7 @@ _social-bar/
 ##.sidebar-social
 ##.sidebar-socials
 ##.sidebar-twitter
+##.sidebar__share
 ##.sidebar_social
 ##.simple-share
 ##.simple-social-icons
@@ -2588,6 +2600,7 @@ _social-bar/
 ##.sns-wrapper
 ##.sns-yt
 ##.snsBox
+##.snsPalette
 ##.snsWrapper
 ##.sns_box
 ##.sns_follow
@@ -2970,6 +2983,7 @@ _social-bar/
 ##.sociallinks
 ##.sociallist
 ##.socialmedia-buttons
+##.socialmedia-container
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
@@ -3158,6 +3172,7 @@ _social-bar/
 ##.twitter_link
 ##.twitter_sm
 ##.twitter_widget
+##.twitterbird
 ##.twitterbtn
 ##.twitterbutton
 ##.twitterfeed
@@ -3559,6 +3574,7 @@ cnbc.com##.CNBCFooter-social
 miaminewtimes.com,westword.com##.ContentShareTools
 abc.net.au##.FixedHeader_shareBtn__yNush
 venturebeat.com##.Footer__social-icon
+i24news.tv##.Footer_social-network-links-wrapper__xN9Go
 meduza.io##.GeneralMaterial-module-share
 business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ultimahora.com##.Page-actions
@@ -3889,7 +3905,6 @@ aetv.com,wccftech.com##.story-share
 wccftech.com##.story-share-bottom
 gadgets360.com##.story_social_share
 stuff.co.nz##.stuff-article-sharebar
-americasvoice.news##.styles_share__ktP_t
 todayonline.com##.subcription-two
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
 hindustantimes.com##.subscribe-social
@@ -4041,6 +4056,7 @@ gameloop.com##.Share_pc_share__RxDpq
 rawstory.com##.body-share-wrap
 globalnews.ca##.c-socialShare
 hindustantimes.com##.new__socialIcons
+tweaktown.com##.sharedesktop
 merriam-webster.com##.social-link
 twitch.tv##.social-media-link
 tomshardware.com##.socialite-widget-ul
@@ -4113,6 +4129,7 @@ nu.nl##.app-follow-us
 achterhoeknieuwswinterswijk.nl##.css-hd-u-socials
 jumbosports.com##.footer-payment-social__social
 112markiezaten.nl##.nieuws_delen
+tweakers.net##.shareImage
 injazz.nl##.socialMedia-wrapper
 rtl.nl##[data-testid="social-links-container"]
 bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_"]
@@ -4202,8 +4219,6 @@ revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
 gazetadopovo.com.br##.c-social-networks
-slatual.com.br##.call_google_news
-slatual.com.br##.call_groups
 atribuna.com.br,ebc.com.br,engeplus.com.br,forbes.com.br##.compartilhamento
 bcb.gov.br,folhape.com.br,ocioso.com.br,opoder.com.br,portalperifacon.com,sampi.net.br##.compartilhar
 jovempan.com.br##.cta-model
@@ -4212,7 +4227,6 @@ abril.com.br##.f-social
 fastcompanybrasil.com##.fcbr_social_share
 poder360.com.br##.fixed-list
 steamverde.net##.focus-social
-slatual.com.br##.footer_social_itens
 folha.uol.com.br##.gallery-widget-carousel__info-share
 tviplayer.iol.pt##.icon-share
 opoder.com.br##.iconCompartilhe
@@ -4223,7 +4237,6 @@ canaltech.com.br##.mb-8.flex.flex-col.flex-wrap.justify-between.gap-3.tablet\:fl
 poder360.com.br##.navigation-menu__social-media
 noataque.com.br##.noticia-share
 oantagonista.com.br##.post-interna__content__compartilhamento
-slatual.com.br##.post_social_facebook
 fecatolica.com.br##.redes-sociais-footer
 ebc.com.br##.redes-sociais-header
 opoder.com.br##.redes-sociais-rodape
@@ -4234,7 +4247,6 @@ bemparana.com.br##.share-bp
 dcmais.com.br##.share-ch
 sicnoticias.pt##.share-toggle-wrapper
 gov.br##.share__container
-slatual.com.br##.share_post_head_item_two
 cnnbrasil.com.br##.single-editorial__follow
 cnnbrasil.com.br##.single-sharer
 assinecarta.com.br,b3.com.br##.sociais
@@ -4244,7 +4256,6 @@ publico.pt##.social-tools
 bnews.com.br##.social-wrap
 cnnbrasil.com.br##.social__footer
 rollingstone.com.br##.social_content_article
-slatual.com.br##.social_icons_menu
 tvi.iol.pt##.social_media_links
 meiobit.com##.socialfloating
 uol.com.br##.solar-header-columnist-socialmedia-content
@@ -4325,7 +4336,6 @@ perfil.com##.main-footer__redes
 canalnet.tv##.main-video-single__socials
 genbeta.com,vidaextra.com##.menu-follow
 depor.com##.nav__story-social-network
-parabrisas.perfil.com##.news__sharing
 ecologiaverde.com##.open-compartir
 vidaextra.com##.post-comments-shortcut
 qhubomedellin.com##.qh-social-icons-articulo
