@@ -1,9 +1,9 @@
-! Checksum: DwhNhtlJQgDI5Fjv7B9lOw
-! Diff-Path: ../patches/2/2-s-1747397750-3600.patch
+! Checksum: WfbF5m3oCx2g1OzvovZ7Bw
+! Diff-Path: ../patches/2/2-s-1747408323-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.83.79
-! TimeUpdated: 2025-05-16T12:10:59+00:00
+! Version: 2.3.83.80
+! TimeUpdated: 2025-05-16T15:07:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20490,6 +20490,10 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205520
+izarc.org#@#.ad-container
+izarc.org#@#.ad-unit:not(.textads)
+izarc.org#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle(')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205521
 hacksnation.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205102
@@ -38853,7 +38857,7 @@ open.fm##.Placeholder
 facet.wp.pl#?#.article div[class*=" "]:matches-property("/__reactInternalInstance/._currentElement._owner._instance.props.type"="adv")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/111616
 wiadomosci.wp.pl##body > #root > div[class]:empty
-tech.wp.pl,finanse.wp.pl,kobieta.wp.pl,wiadomosci.wp.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"]:first-child + div[class*=" "] + script:last-child)
+o2.pl,tech.wp.pl,finanse.wp.pl,kobieta.wp.pl,wiadomosci.wp.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"]:first-child + div[class*=" "] + script:last-child)
 facet.wp.pl,ipolska24.pl,wiadomosci.wp.pl,pysznosci.pl,open.fm,fotoblogia.pl,autokult.pl,money.pl,pudelek.pl##style + div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"] + div:last-child)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179793
 www.o2.pl,rozrywka.o2.pl##.w-full[class*="bg-"] > div[class*="w-"][class*="px"] > div[class][style="width:100%"]
@@ -47955,6 +47959,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+tempmail.ninja##.ads-container
+independent.co.uk###billboard-wrapper
 dltv.org##.paris
 dltv.org##.luanda
 dltv.org##.britain
@@ -47998,12 +48004,6 @@ babesource.tv##.spots
 babesource.tv##a[href^="https://babesource.tv/a/"]
 flatheadbeacon.com##.adver-row
 edumail.icu##a[title="ShockVPN"]
-op.gg##.z-ads
-op.gg##section[class*="md:"]:has(> .items-center > div[data-id$="leaderboard"])
-op.gg##div[class*="md:"]:has(> div[style^="min-width:"] > div[id^="div-gpt-ad"])
-op.gg##div[style^="display:"]:has(> div[data-id$="billboard"])
-op.gg##div[style^="display:"]:has(> div[data-id$="leaderboard"])
-op.gg##div[id^="ad-container"]
 tmail.io#$#.container > div[x-data].p-3 { width: 100% !important; }
 itijobalert.in,edukaroo.com##div[id*="-Ads"]
 milffox.com##.inp__wrapper
@@ -66737,6 +66737,13 @@ puzzle-minesweeper.com,puzzle-chess.com,puzzle-thermometers.com,puzzle-norinori.
 puzzle-minesweeper.com,puzzle-chess.com,puzzle-thermometers.com,puzzle-norinori.com,puzzle-slant.com,puzzle-lits.com,puzzle-galaxies.com,puzzle-tents.com,puzzle-battleships.com,puzzle-pipes.com,puzzle-hitori.com,puzzle-heyawake.com,puzzle-shingoki.com,puzzle-masyu.com,puzzle-stitches.com,puzzle-aquarium.com,puzzle-tapa.com,puzzle-star-battle.com,puzzle-kakurasu.com,puzzle-skyscrapers.com,puzzle-futoshiki.com,puzzle-words.com,puzzle-shakashaka.com,puzzle-kakuro.com,puzzle-jigsaw-sudoku.com,puzzle-killer-sudoku.com,puzzle-binairo.com,puzzle-nonograms.com,puzzle-loop.com,puzzle-sudoku.com,puzzle-light-up.com,puzzle-bridges.com,puzzle-shikaku.com,puzzle-nurikabe.com,puzzle-dominosa.com###bannerTopSpacer
 !
 ! op.gg
+op.gg##.z-ads
+op.gg##section[class*="md:"]:has(> .items-center > div[data-id$="leaderboard"])
+op.gg##div[class*="md:"]:has(> div[style^="min-width:"] > div[id^="div-gpt-ad"])
+op.gg##div[style^="display:"]:has(> div[data-id$="billboard"])
+op.gg##div[style^="display:"]:has(> div[data-id$="leaderboard"])
+op.gg##div[id^="ad-container"]
+op.gg##main > section[class*="md:"]:has(> .justify-between:first-child > strong:first-child + a[href*="?utm_source="][href*="&utm_campaign=banner_frame"]:last-child)
 op.gg##main > span[style^="display: flex; justify-content: center; align-items: center;"]
 op.gg##section:has(> div.min-h-\[250px\]):not(:has(> *:not(div.min-h-\[250px\])))
 valorant.op.gg##.rounded:has(> div.flex > div[id^="div-gpt-ad-"])
@@ -129739,6 +129746,7 @@ suffolknewsherald.com###story_one_by_one_group
 krunker.io###streamContainer
 web-capture.net###stw_ad
 arenaev.com,gsmarena.com###subHeader
+gsmarena.com###subHeader2
 macrotrends.net###subLeaderboardTag
 ebaumsworld.com###subheader_atf_wrapper
 streams.tv###sunGarden

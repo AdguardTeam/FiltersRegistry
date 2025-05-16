@@ -1,9 +1,9 @@
-! Checksum: 5eq5rnpBP6xZzRTi9owpzg
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1747397753-3600.patch
+! Checksum: p37LcUqEQ+/tZedRe5/TbA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1747408326-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.55
-! TimeUpdated: 2025-05-16T12:11:31+00:00
+! Version: 2.0.56.56
+! TimeUpdated: 2025-05-16T15:07:37+00:00
 ! Expires: 12 hours (update frequency)
 ||statbest.in^
 ||movturs.click^
@@ -248,6 +248,7 @@ gecmisi.com.tr#@#div[id^="aswift_"]
 @@||gecmisi.com.tr^$cookie=_ym_uid
 gecmisi.com.tr#%#//scriptlet('trusted-create-element', 'footer', 'iframe', 'src="about:srcdoc"')
 gecmisi.com.tr#%#(()=>{const o=Math.floor(1e5+9e5*Math.random()),a=`${Date.now()}${o}`;var t,e,m,$;t="_ym_uid",e=a,m="/",$=".gecmisi.com.tr",document.cookie=`${t}=${e};path=${m};domain=${$};`})();
+gecmisi.com.tr#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{const e=document.querySelector(".adsbygoogle:not(.adsbygoogle-noablate)"),t=document.createElement("div");t.textContent=".".repeat(3e3),e.appendChild(t)}));})();
 promy.pro#%#//scriptlet('set-constant', 'canRunAds', 'true')
 forumchess.com.tr#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 komputerdelisi.com#%#//scriptlet('abort-on-property-read', 'adblockmesaj')
@@ -1059,8 +1060,14 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+selcuksports.*##center > a[href][target="_blank"]
+||blogger.googleusercontent.com/img/$domain=selcuksports.*
+||selcuksportss.com/wp-content/uploads/*/banner*.gif
+selcuksportss.com##div[class^="button-container"]
+selcuksportss.com##.banner-container
+selcuksportss.com##.header-html-1
 ||trdiziizle.*/vast.js^
-taraftarium-24.com,selcuksports.cc,selcuk-sports.com#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
+taraftarium-24.com,selcuksports.*,selcuk-sports.com#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 fullhdfilmizlesene.de##.plalt-bn
 ||storage.fintables.com/media/uploads/ads/
 sondakika.com##div[style]:has(> div[id^="div-gpt-ad-"])
