@@ -1,9 +1,9 @@
-! Checksum: x9Jy4RLGBAuGhJShuFXVYw
-! Diff-Path: ../patches/2/2-s-1747359564-3600.patch
+! Checksum: 9k57wvGDIWy/2DkMKkA5Fg
+! Diff-Path: ../patches/2/2-s-1747372304-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.83.72
-! TimeUpdated: 2025-05-16T01:34:57+00:00
+! Version: 2.3.83.73
+! TimeUpdated: 2025-05-16T05:07:22+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20418,6 +20418,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205521
+hacksnation.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205102
 @@||miningblocks.club/pageScripts/adblockDetect.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205099
@@ -47617,9 +47619,10 @@ babesource.tv##a[href^="https://babesource.tv/a/"]
 flatheadbeacon.com##.adver-row
 edumail.icu##a[title="ShockVPN"]
 op.gg##.z-ads
+op.gg##section[class*="md:"]:has(> .items-center > div[data-id$="leaderboard"])
 op.gg##div[class*="md:"]:has(> div[style^="min-width:"] > div[id^="div-gpt-ad"])
-op.gg##div[style^="display:"]:has(> div[data-id="billboard"])
-op.gg##div[style^="display:"]:has(> div[data-id="leaderboard"])
+op.gg##div[style^="display:"]:has(> div[data-id$="billboard"])
+op.gg##div[style^="display:"]:has(> div[data-id$="leaderboard"])
 op.gg##div[id^="ad-container"]
 tmail.io#$#.container > div[x-data].p-3 { width: 100% !important; }
 itijobalert.in,edukaroo.com##div[id*="-Ads"]
