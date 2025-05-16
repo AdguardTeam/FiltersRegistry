@@ -1,5 +1,5 @@
-! Checksum: HzuF0gulS3dZHmhVQoh9oA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1747359559-3600.patch
+! Checksum: tnaNhl2ZqQPagFYWSTUj5g
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1747363224-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.0.99.28
@@ -70,6 +70,7 @@
 /sovetnik.webpartner.
 .com/inc/angular.js
 /static/foobar.js?p=*&b=
+://www.*.xyz/*?*&key=$popup,third-party
 /show/?block_id=
 /js/sjplugin.js
 .com/player/|$third-party
@@ -177,6 +178,7 @@ http://*.ru/leftunit.pl?
 /728x90ru.jpg
 /970x60.jpg
 /_banner_.gif
+/aamsz=*/acc_random=
 /abmw.asp?z=
 /acc_random=*/aamsz=
 /ad-local.
@@ -1038,6 +1040,7 @@ ucoz.ru/informer/
 ||goryachie-foto.net^$third-party
 ||newrrb.bid^$third-party
 ||ece8c2alhz.ru^$third-party
+||duper8flash.com^$third-party
 ||rluuva.com^$third-party
 ||ihfxao.com^$third-party
 ||flowpubdom.info^$third-party
@@ -1747,6 +1750,7 @@ ucoz.ru/informer/
 ||v.dlski.space^$third-party
 ||v.newsportal*.ru^$third-party
 ||vast.reyden-x.com^$third-party
+||viboom.ru^$third-party
 ||vidalak.com^$third-party
 ||video-play.ru^$third-party
 ||video.market-place.su^$third-party
@@ -1834,6 +1838,7 @@ ucoz.ru/informer/
 ||jsn.24smi.net^$third-party
 ||data.24smi.net^$third-party
 ||smi.today^$third-party
+||dw-informer-*.newsru.com^
 ||vi.bigmir.net^$third-party
 ||smi24.kz^$third-party
 ||banner.kaktus.media^
@@ -2801,6 +2806,7 @@ klops.ru#$#.section-news-with-banner > div.content { margin-left: auto!important
 mmo13.ru#$#body { background-image: none !important; padding-top: 0!important; }
 fb.ru,syl.ru#$#.adsbygoogle { transform: scale(0)!important; height: 0!important; }
 onlinetambov.ru#$#body { overflow: visible!important; }
+nim.ru#$##blog-header { margin-top: 0!important; }
 prophotos.ru#$#body { padding-top: 127px!important; background: #ffffff!important; }
 uralskweek.kz#$#.kmsbgw { margin: 0 auto 0 auto!important; }
 video-nvidia.com#$#.main-container { margin-top: 0!important; }
@@ -4723,6 +4729,7 @@ mc.bk55.ru##.right-col.bg-light-gray
 klops.ru##.supercover-banner-header
 ppt.ru##.underdoc-banner + div.sub-article-sect-header
 ||relax-fm.ru/api/outreach/vast/
+relax-fm.ru##.banner__wrapp_1070x200
 fotostrana.ru###footer-ads-banner-cont
 fotostrana.ru###pr-ads
 u-mama.ru##.topwide
@@ -4875,6 +4882,7 @@ versiya.info##div[data-block="Последние новости"]
 versiya.info##div[data-block="Похожие новости"]
 khersondaily.com##.banner-slider
 woman.ru,wday.ru##.creative
+mhealth.ru##.preview-section__ad
 avito.ru##div[class^="items-ads-"]
 kraj.by##.mainpage_banner
 avtonovostidnya.ru##div[id^="a_single"]
@@ -5253,6 +5261,7 @@ chelny-izvest.ru##div[name="checkWidthAd"]
 afisha.relax.by,mag.relax.by##.b-branding
 banki.ru##div[data-dfp-container]
 ||severpost.ru/img/matrix51/
+||severpost.ru/docs/banners/
 woman.ru##.placeholder__banner_margin
 liga.net##.banner-video
 webos-forums.ru###page-body > #p
@@ -5961,6 +5970,7 @@ drive.ru##.side-dv
 edu.ru##.side-navi__banner
 1tv.ru##.side-promo-place-right
 cartoonsub.com##.sideBar a[target="new"] > img
+feetch.com##.sidebar > div#text-3
 sadikionline.ru##.sidebar noindex > a > img
 roscontrol.com,nevnov.ru,study.ru,kanobu.ru,mmorpg.su##.sidebar-banner
 glavpost.com##.sidebar-banner-block
@@ -6111,6 +6121,7 @@ socratify.net##div[class^="b-adsense"]
 region15.ru##div[class^="bann"]
 nn.ru##div[class^="banner-cont"]
 rabota.by,saint-petersburg.ru##div[class^="banner-place-"]
+rusplt.ru##div[class^="bannerPlace"]
 ura.news##div[class^="bannerPosition"]
 wildroid.ru,novomoscow.ru,sintetiki.net,1ul.ru,khersonline.net##div[class^="banner_"]
 kvnews.ru##div[class^="banner__block"]
@@ -6351,6 +6362,7 @@ webware.ru/*/clients/
 ||gorodpavlodar.kz/images/kernab/
 ||hlamer.ru/content/stargate/
 ||hronika.info^$~third-party,xmlhttprequest
+||i.novgorod.ru/b/
 ||i.solo.rde.ru^$domain=pogodavtomske.ru
 ||illicium.web.money^$domain=topdb.ru
 ||images.letitbit.net/images/promo/$third-party
@@ -6370,10 +6382,12 @@ webware.ru/*/clients/
 ||kerch.com.ru/IMG/HotNews/kn_internet.png
 ||kiks.yandex.
 ||kineshemec.ru/bn/
+||kotlas-info.ru/sites/all/themes/newspro/images/advr/
 ||kwork.ru/images/partner/
 ||kwork.ru/js/kwork_widget.js$third-party
 ||l2on.net/img/sponsors/
 ||la2.mmotop.ru/images/88x31b_la2.png
+||lapti.tv/header.html$domain=kaban.tv
 ||lenmit.com^$third-party
 ||linux.org.ru/adv/
 ||litres.ru/static/widgets$domain=bookz.ru
