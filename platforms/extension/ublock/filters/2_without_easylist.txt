@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LaYuT2xvkr42S8gNtSDm+A
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1747426325-3600.patch
+! Checksum: wCe7wvXWo0yD9kDuSRd5wA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1747433482-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.83.83
-! TimeUpdated: 2025-05-16T20:07:21+00:00
+! Version: 2.3.83.84
+! TimeUpdated: 2025-05-16T22:06:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -29906,7 +29906,7 @@ teamxnovel.com##.body-wrap > div[style^=" padding:50px "]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99417
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199845
 freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*##+js(no-fetch-if, securepubads.g.doubleclick.net)
-freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*##+js(remove-node-text, script, /\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML|=Array\.prototype\.slice\.call\(arguments\)/)
+freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*##+js(remove-node-text, script, /\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML|=Array\.prototype\.slice\.call\(arguments\)|adBlockDetected/)
 freex2line.online,cimanow.cc,cimanow.*##body > a[target="_blank"]
 freex2line.online,cimanow.cc,cimanow.*#@#.ad-slot
 @@||flashtalking.com/oba/icon/consumer-privacy-logo.png$domain=cimanow.*|freex2line.online
@@ -29918,7 +29918,6 @@ cimanow.cc,freex2line.online##+js(abort-on-stack-trace, document.getElementsByTa
 cimanow.cc,freex2line.online##+js(abort-on-stack-trace, document.querySelector, /freex2line\.online\/.*\.js/)
 freex2line.online#$#a.downloadbtn { display: block !important; }
 freex2line.online##+js(adjust-setTimeout, /btn|realURL|\.style.display|setAttribute|getElementById/, *, 0.001)
-freex2line.online##+js(set-attr, .InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."][href*="?ad="][data-real-url^="https:/"], href, [data-real-url])
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=noop.txt,domain=cimanow.*|cnvids.com|cimanowtv.com|freex2line.online
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99034
 alwafd.news##center > a[href="#"]
@@ -34154,6 +34153,9 @@ smellyfisher.com##.providers
 bestmovie.it,treccani.it##.gmp
 forum.fibra.click##.FibraClickAds-fake-poststream-item
 open.online##a[rel="sponsored"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/205575
+autopareri.com##.ipsWidget[data-blockerrormessage]:has(> .ipsWidget_inner:only-child > div[data-aa-adunit]:only-child)
+autopareri.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203799
 tomshw.it##div[wire\:snapshot*="offer"]
 tomshw.it##div[wire\:id] > .relative:has(> .banner-vendor-link)

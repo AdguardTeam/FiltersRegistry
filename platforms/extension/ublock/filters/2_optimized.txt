@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9FIpnOYBhnFiZIGbHk7ahw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1747426324-3600.patch
+! Checksum: NJjOuBQ4OEBm3i4Nm+HoUw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1747433482-3600.patch
 ! Title: AdGuard Base filter + EasyList (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.83.83
-! TimeUpdated: 2025-05-16T20:07:21+00:00
+! Version: 2.3.83.84
+! TimeUpdated: 2025-05-16T22:06:52+00:00
 ! Expires: 5 days (update frequency)
 ||plush-abuse.com^$all
 ||obnoljac.com^$all
@@ -6369,7 +6369,7 @@ beinmatch.*##+js(abort-on-property-read, S9tt)
 egyfalcons.com##+js(abort-current-script, document.createElement, adblock)
 egyshare.cc##+js(remove-attr, href, a[href]#clickfakeplayer)
 freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*##+js(no-fetch-if, securepubads.g.doubleclick.net)
-freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*##+js(remove-node-text, script, /\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML|=Array\.prototype\.slice\.call\(arguments\)/)
+freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*##+js(remove-node-text, script, /\.__proto__\.constructor\.name|decompressFromUTF16|\)\.substr\(0|document\[_0x[\s\S]*?innerHTML|=Array\.prototype\.slice\.call\(arguments\)|adBlockDetected/)
 freex2line.online,cimanow.cc,cimanow.*#@#.ad-slot
 @@||flashtalking.com/oba/icon/consumer-privacy-logo.png$domain=cimanow.*|freex2line.online
 freex2line.online,cimanowtv.com,cnvids.com,cimanow.cc,cimanow.*##+js(no-fetch-if, pagead2.googlesyndication.com)
@@ -6380,7 +6380,6 @@ cimanow.cc,freex2line.online##+js(abort-on-stack-trace, document.getElementsByTa
 cimanow.cc,freex2line.online##+js(abort-on-stack-trace, document.querySelector, /freex2line\.online\/.*\.js/)
 freex2line.online#$#a.downloadbtn { display: block !important; }
 freex2line.online##+js(adjust-setTimeout, /btn|realURL|\.style.display|setAttribute|getElementById/, *, 0.001)
-freex2line.online##+js(set-attr, .InnerDownload > a#downloadbtn[href^="http"][href*="cimanow."][href*="?ad="][data-real-url^="https:/"], href, [data-real-url])
 wifi4games.com##+js(window.open-defuser, /include/redirect.php)
 wifi4games.com##+js(no-setTimeout-if, /\!window\[[\s\S]*?String\.fromCharCode[\s\S]*?document\.createElement\("script"\)/)
 !+ NOT_OPTIMIZED
@@ -7358,6 +7357,8 @@ subito.it##.dynamic-atf-container
 hwupgrade.it#$#body { padding-top: 0px !important; }
 bestmovie.it,treccani.it##.gmp
 forum.fibra.click##.FibraClickAds-fake-poststream-item
+autopareri.com##.ipsWidget[data-blockerrormessage]:has(> .ipsWidget_inner:only-child > div[data-aa-adunit]:only-child)
+autopareri.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 tomshw.it##div[wire\:snapshot*="offer"]
 tomshw.it##div[wire\:id] > .relative:has(> .banner-vendor-link)
 tomshw.it##+js(json-prune-fetch-response, components.[-].snapshot.[=]./www\.amazon\./, , livewire/update)
@@ -42776,7 +42777,6 @@ gamcore.com##li.d-md-block > a[rel]
 @@||sciencechannel.com^$generichide
 @@||sonichits.com^$generichide
 @@||soranews24.com^$generichide
-@@||spiegel.de^$generichide
 @@||thefreedictionary.com^$generichide
 @@||tlc.com^$generichide
 @@||yibada.com^$generichide
