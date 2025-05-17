@@ -459,7 +459,7 @@
         },
         {
             "domains": "freex2line.online",
-            "script": "(()=>{document.addEventListener(\"DOMContentLoaded\",(()=>{const t=document.querySelector(\".InnerDownload a#downloadbtn\"),e=document.querySelector('script[type=\"application/json\"]');if(!t||!e?.textContent)return;let n;try{n=JSON.parse(e.textContent)}catch(t){return void console.error(t)}const o=Object.values(n).find((t=>\"string\"==typeof t&&t.startsWith(\"https://\")&&t.includes(\"cimanow.cc\")&&t.includes(\"/watching/\")&&(t=>{try{return new URL(t),!0}catch{return!1}})(t)));o&&location.replace(o)}));})();"
+            "script": "(()=>{document.addEventListener(\"DOMContentLoaded\",(()=>{const t=document.querySelector(\".InnerDownload a#downloadbtn\"),e=document.querySelector('script[type=\"application/json\"]');if(!t||!e?.textContent)return;let n;try{n=JSON.parse(e.textContent)}catch(t){return void console.error(t)}if(!n)return;if(Array.isArray(n)&&(n=n.find((t=>t&&\"object\"==typeof t)),!n))return;const r=Object.values(n).map((t=>{if(\"string\"==typeof t&&t.startsWith(\"aHR0c\"))try{return atob(t)}catch{return t}return t})).find((t=>\"string\"==typeof t&&t.startsWith(\"https://\")&&t.includes(\"cimanow.cc\")&&t.includes(\"/watching/\")&&!t.includes(\"Adam\")&&(t=>{try{return new URL(t),!0}catch{return!1}})(t)));r&&location.replace(r)}));})();"
         },
         {
             "domains": "el7l.tv",
