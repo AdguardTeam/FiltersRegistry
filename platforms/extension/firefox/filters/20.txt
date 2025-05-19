@@ -1,9 +1,9 @@
-! Checksum: Gxn2c0pj6ECEbwCoGxIQHg
-! Diff-Path: ../patches/20/20-s-1747642439-3600.patch
+! Checksum: DPPOSMbtTxrZVCyAri/duw
+! Diff-Path: ../patches/20/20-s-1747653082-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.21.7
-! TimeUpdated: 2025-05-19T08:10:17+00:00
+! Version: 2.0.21.8
+! TimeUpdated: 2025-05-19T11:07:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -59,6 +59,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+saveonfoods.com##div[class^="SmartBanner"]
 apkdone.com###landing-notification-bar
 vinted.com#%#//scriptlet('set-cookie', 'app_banner', 'hidden')
 uxdesign.cc##a[href^="https://rsci.app.link/?%"]
@@ -3680,6 +3681,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+m.shopcider.com#%#//scriptlet('trusted-set-local-storage-item', 'cider-mobile-site-web2app-banner-hidden', '99999999999999')
+m.shopcider.com#%#//scriptlet('trusted-set-local-storage-item', 'cider-site-web2app-banner-hidden', '99999999999999')
+shoppersdrugmart.ca#$?##sdm-mobile-app-banner { remove: true; }
 shoprite.com##div[data-testid="smartBannerWrapper-testId"]
 carparts.com#$#.mobile-smart-banner { display: none !important; }
 carparts.com#$#.header-mfe { margin-top: 0 !important; }
