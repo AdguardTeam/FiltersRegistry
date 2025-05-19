@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zIJCPNMgrNhrrH6YEowNtA
-! Diff-Path: ../patches/13/13-s-1747415485-3600.patch
+! Checksum: l3sDpU9NNHr1Ma8mur93bw
+! Diff-Path: ../patches/13/13-s-1747618806-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.57
-! TimeUpdated: 2025-05-16T17:06:43+00:00
+! Version: 2.0.56.58
+! TimeUpdated: 2025-05-19T01:35:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1575,6 +1575,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+||boykot.co/sevap-kapisi-yatay.jpg
+boykot.co###mobileBanner
 selcuksports.*##center > a[href][target="_blank"]
 ||blogger.googleusercontent.com/img/$domain=selcuksports.*
 ||selcuksportss.com/wp-content/uploads/*/banner*.gif
@@ -5589,6 +5591,10 @@ dizilla.club###router-view > div > div > div[class]:has(> div:only-child > ad)
 ! aglint-disable-next-line invalid-modifiers
 ||googleusercontent.com/img/*/crt$domain=/selcuksportshd\d+\.xyz/
 ! TODO: remove "NOT_VALIDATE" hint when this issue is fixed - https://github.com/AdguardTeam/FiltersCompiler/issues/237
+!+ NOT_VALIDATE
+[$domain=/^main\.uxsyplayer[a-z0-9]+\.click$/]##+js(set-constant, document.referrer, '')
+!+ NOT_VALIDATE
+[$url=/^https?:\/\/(?:cinque|due|tre)\.(?=.*[0-9])[a-z0-9]{16}\.click\/.*\/player\.html/]##+js(set-constant, config.advertisement.enabled, false)
 [$domain=/^i\[a-z\]*\.strmrdr\[a-z0-9\]+\..*/]##+js(set-constant, adscfg.enabled, false)
 cinque.668a396e58bcbc27.click##+js(set-constant, config.advertisement.enabled, false)
 [$domain=/selcuksportshd\d+\.xyz/]##.banner
