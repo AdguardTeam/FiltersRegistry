@@ -24,10 +24,6 @@
 /^https?:\/\/[0-9a-f]{50,}\.s3\.amazonaws\.com\/[0-9a-f]{10}$/$3p,xhr
 ! Rule "/^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$3p,xhr" converted to: "/^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$third-party,xmlhttprequest"
 /^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$3p,xhr
-! Rule ".top/event|$3p,xhr" converted to: ".top/event|$third-party,xmlhttprequest"
-.top/event|$3p,xhr
-! Rule ".xyz/event|$3p,xhr" converted to: ".xyz/event|$third-party,xmlhttprequest"
-.xyz/event|$3p,xhr
 ! Rule "/^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$third-party,subdocument,match-case"
 /^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case
 ! Rule "/^https?:\/\/[a-z]{8,15}\.top\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr" converted to: "/^https?:\/\/[a-z]{8,15}\.top\/(?!api|available|team)[a-z]{4,}\.json$/$third-party,match-case,xmlhttprequest"
@@ -96,6 +92,12 @@ mekari.com##:matches-path(/blog) #banner_flex_ewa_v2_hr_after_content
 mekari.com##:matches-path(/blog) #banner_flex_ewa_v2_hr_before_h2_2
 ! Rule "sapx.id##:matches-path(/blog) .header-before-ad" converted to: "[$path=/blog]sapx.id##.header-before-ad"
 sapx.id##:matches-path(/blog) .header-before-ad
+! Rule "pinhome.id##:matches-path(/blog) [class^="analytics-right-side-banner-"]" converted to: "[$path=/blog]pinhome.id##[class^="analytics-right-side-banner-"]"
+pinhome.id##:matches-path(/blog) [class^="analytics-right-side-banner-"]
+! Rule "pinhome.id##:matches-path(/blog) [class^="style_stickyBannerDesktop_"]" converted to: "[$path=/blog]pinhome.id##[class^="style_stickyBannerDesktop_"]"
+pinhome.id##:matches-path(/blog) [class^="style_stickyBannerDesktop_"]
+! Rule "pinhome.id##:matches-path(/blog) [class^="style_stickyBannerMobile_"]" converted to: "[$path=/blog]pinhome.id##[class^="style_stickyBannerMobile_"]"
+pinhome.id##:matches-path(/blog) [class^="style_stickyBannerMobile_"]
 ! Rule "qwords.com##:matches-path(/blog) [href^="https://www.qwords.com/promotion/"]" converted to: "[$path=/blog]qwords.com##[href^="https://www.qwords.com/promotion/"]"
 qwords.com##:matches-path(/blog) [href^="https://www.qwords.com/promotion/"]
 ! Rule "megavision.net.id##:matches-path(/blog) a[href*="megavision.net.id/pricing"]:has(> img)" converted to: "[$path=/blog]megavision.net.id##a[href*="megavision.net.id/pricing"]:has(> img)"
@@ -114,8 +116,6 @@ alkitabonline.org##a[data-ref="AD"]:remove()
 alkitabonline.org##a[data-ref="YUEDUYE-AD"]:remove()
 ! Rule "koranperdjoeangan.com##.gmr-verytopbanner:remove()" converted to: "koranperdjoeangan.com#$?#.gmr-verytopbanner { remove: true; }"
 koranperdjoeangan.com##.gmr-verytopbanner:remove()
-! Rule "mitanews.co.id##a[href^="https://www.tokopedia.com/"]:has(> video):remove()" converted to: "mitanews.co.id#$?#a[href^="https://www.tokopedia.com/"]:has(> video) { remove: true; }"
-mitanews.co.id##a[href^="https://www.tokopedia.com/"]:has(> video):remove()
 ! Rule "intip24news.com##body.sticky-header:style(padding: unset!important;)" converted to: "intip24news.com#$#body.sticky-header { padding: unset!important; }"
 intip24news.com##body.sticky-header:style(padding: unset!important;)
 ! Rule "independennews.com##aside .widget:has(video[style="max-width: 100%; height: auto;"]):remove()" converted to: "independennews.com#$?#aside .widget:has(video[style="max-width: 100%; height: auto;"]) { remove: true; }"
@@ -682,20 +682,18 @@ kopajasubs.info##+js(aopr, adAdbLoad)
 filmboxoffice.web.id,neosubs.net##+js(aopr, anOptions)
 ! Rule "blurayufr.cam##+js(acis, chp_ads_blocker_detector)" converted to: "blurayufr.cam#%#//scriptlet('ubo-acis.js', 'chp_ads_blocker_detector')"
 blurayufr.cam##+js(acis, chp_ads_blocker_detector)
-! Rule "dramakore21.net,layardramaxxi.store##+js(noeval-if, /fairAdblock|chp_?adblock|adsbygoogle\.js/)" converted to: "dramakore21.net,layardramaxxi.store#%#//scriptlet('ubo-noeval-if.js', '/fairAdblock|chp_?adblock|adsbygoogle\.js/')"
-dramakore21.net,layardramaxxi.store##+js(noeval-if, /fairAdblock|chp_?adblock|adsbygoogle\.js/)
+! Rule "layardramaxxi.store##+js(noeval-if, /fairAdblock|chp_?adblock|adsbygoogle\.js/)" converted to: "layardramaxxi.store#%#//scriptlet('ubo-noeval-if.js', '/fairAdblock|chp_?adblock|adsbygoogle\.js/')"
+layardramaxxi.store##+js(noeval-if, /fairAdblock|chp_?adblock|adsbygoogle\.js/)
 ! Rule "||googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=noop.js,domain=anidraw.net" converted to: "||googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=noopjs,domain=anidraw.net"
 ||googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=noop.js,domain=anidraw.net
-! Rule "||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication_adsbygoogle.js,domain=auratail.com" converted to: "||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication-adsbygoogle,domain=auratail.com"
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication_adsbygoogle.js,domain=auratail.com
 ! Rule "gudangmovies21.chat,sattorrent.com##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "gudangmovies21.chat,sattorrent.com#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
 gudangmovies21.chat,sattorrent.com##+js(aopr, SGPB_POPUP_PARAMS)
-! Rule "anibatch.moe,animebatch.id,animekompi.top,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,layarkeren.pro,manganime.live,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sk212.xyz,sokuja.uk##+js(nowoif)" converted to: "anibatch.moe,animebatch.id,animekompi.top,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,layarkeren.pro,manganime.live,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sk212.xyz,sokuja.uk#%#//scriptlet('ubo-nowoif.js')"
-anibatch.moe,animebatch.id,animekompi.top,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,layarkeren.pro,manganime.live,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sk212.xyz,sokuja.uk##+js(nowoif)
+! Rule "anibatch.moe,animebatch.id,animekompi.top,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,layarkeren.pro,manganime.live,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sob.atkren.xyz,sokuja.uk##+js(nowoif)" converted to: "anibatch.moe,animebatch.id,animekompi.top,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,layarkeren.pro,manganime.live,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sob.atkren.xyz,sokuja.uk#%#//scriptlet('ubo-nowoif.js')"
+anibatch.moe,animebatch.id,animekompi.top,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,layarkeren.pro,manganime.live,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sob.atkren.xyz,sokuja.uk##+js(nowoif)
 ! Rule "godriveplayer.com##+js(nowoif)" converted to: "godriveplayer.com#%#//scriptlet('ubo-nowoif.js')"
 godriveplayer.com##+js(nowoif)
-! Rule "layarkeren.pro,sk212.xyz,sokuja.uk,wibudesu.co##+js(aopr, popup_custom_data)" converted to: "layarkeren.pro,sk212.xyz,sokuja.uk,wibudesu.co#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')"
-layarkeren.pro,sk212.xyz,sokuja.uk,wibudesu.co##+js(aopr, popup_custom_data)
+! Rule "layarkeren.pro,sob.atkren.xyz,sokuja.uk,wibudesu.co##+js(aopr, popup_custom_data)" converted to: "layarkeren.pro,sob.atkren.xyz,sokuja.uk,wibudesu.co#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')"
+layarkeren.pro,sob.atkren.xyz,sokuja.uk,wibudesu.co##+js(aopr, popup_custom_data)
 ! Rule "kusonime.com,melongmovie.ink##+js(aopr, app_url)" converted to: "kusonime.com,melongmovie.ink#%#//scriptlet('ubo-aopr.js', 'app_url')"
 kusonime.com,melongmovie.ink##+js(aopr, app_url)
 ! Rule "lendrive.web.id##+js(aopr, encodeURIComponent)" converted to: "lendrive.web.id#%#//scriptlet('ubo-aopr.js', 'encodeURIComponent')"
@@ -732,8 +730,8 @@ nekopoi.web.id##+js(aopr, document.oncopy)
 ||lk21static.xyz/iframe/content2.php$frame
 ! Rule "||d21.media/vid/$mp4" converted to: "||d21.media/vid/$redirect=noopmp4-1s,media"
 ||d21.media/vid/$mp4
-! Rule "nontondrama.wiki,studentxm.com,walstor.com##:matches-path(/links/?url=) body > .container-iframe" converted to: "[$path=/links/?url=]nontondrama.wiki,studentxm.com,walstor.com##body > .container-iframe"
-nontondrama.wiki,studentxm.com,walstor.com##:matches-path(/links/?url=) body > .container-iframe
+! Rule "nontondrama.wiki,reefmastercameras.com,walstor.com##:matches-path(/links/?url=) body > .container-iframe" converted to: "[$path=/links/?url=]nontondrama.wiki,reefmastercameras.com,walstor.com##body > .container-iframe"
+nontondrama.wiki,reefmastercameras.com,walstor.com##:matches-path(/links/?url=) body > .container-iframe
 ! Rule "||tolonglah.pages.dev$frame" converted to: "||tolonglah.pages.dev$subdocument"
 ||tolonglah.pages.dev$frame
 ! Rule "doroni.me,doronime.id##+js(set, showAds, true)" converted to: "doroni.me,doronime.id#%#//scriptlet('ubo-set.js', 'showAds', 'true')"
@@ -744,18 +742,18 @@ doroni.me,doronime.id##+js(set, showAds, true)
 ||juragan.film/asset/*.mp4$mp4
 ! Rule "dramaserial.id##+js(aopr, $.magnificPopup.open)" converted to: "dramaserial.id#%#//scriptlet('ubo-aopr.js', '$.magnificPopup.open')"
 dramaserial.id##+js(aopr, $.magnificPopup.open)
-! Rule "juragan.film##body:style(overflow: auto!important; position: unset!important;)" converted to: "juragan.film#$#body { overflow: auto!important; position: unset!important; }"
-juragan.film##body:style(overflow: auto!important; position: unset!important;)
+! Rule "juragan.film,juraganfilm.biz##body:style(overflow: auto!important; position: unset!important;)" converted to: "juragan.film,juraganfilm.biz#$#body { overflow: auto!important; position: unset!important; }"
+juragan.film,juraganfilm.biz##body:style(overflow: auto!important; position: unset!important;)
 ! Rule "oploverz.*##+js(abort-current-script, Promise, delete window)" converted to: "oploverz.*#%#//scriptlet('ubo-abort-current-script.js', 'Promise', 'delete window')"
 oploverz.*##+js(abort-current-script, Promise, delete window)
 ! Rule "oploverz.*##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "oploverz.*#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
 oploverz.*##+js(aopr, SGPB_POPUP_PARAMS)
 ! Rule "oploverz.*##+js(nowoif)" converted to: "oploverz.*#%#//scriptlet('ubo-nowoif.js')"
 oploverz.*##+js(nowoif)
-! Rule "45.11.57.126,45.11.57.235,45.11.57.250,oppa.biz,oppadrama.biz##+js(aopr, popup_custom_data)" converted to: "45.11.57.126,45.11.57.235,45.11.57.250,oppa.biz,oppadrama.biz#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')"
-45.11.57.126,45.11.57.235,45.11.57.250,oppa.biz,oppadrama.biz##+js(aopr, popup_custom_data)
-! Rule "film21save.com,filmkawan21.com,ngefim21indo.com,rebahan21.xyz,rebahin21.com.mx##+js(aopr, document.oncontextmenu)" converted to: "film21save.com,filmkawan21.com,ngefim21indo.com,rebahan21.xyz,rebahin21.com.mx#%#//scriptlet('ubo-aopr.js', 'document.oncontextmenu')"
-film21save.com,filmkawan21.com,ngefim21indo.com,rebahan21.xyz,rebahin21.com.mx##+js(aopr, document.oncontextmenu)
+! Rule "45.11.57.126,45.11.57.235,45.11.57.236,45.11.57.250,oppa.biz,oppadrama.biz##+js(aopr, popup_custom_data)" converted to: "45.11.57.126,45.11.57.235,45.11.57.236,45.11.57.250,oppa.biz,oppadrama.biz#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')"
+45.11.57.126,45.11.57.235,45.11.57.236,45.11.57.250,oppa.biz,oppadrama.biz##+js(aopr, popup_custom_data)
+! Rule "film21save.com,filmkawan21.com,ngefim21indo.com,rebahan21.net,rebahan21.org,rebahan21.xyz,rebahin21.com.mx##+js(aopr, document.oncontextmenu)" converted to: "film21save.com,filmkawan21.com,ngefim21indo.com,rebahan21.net,rebahan21.org,rebahan21.xyz,rebahin21.com.mx#%#//scriptlet('ubo-aopr.js', 'document.oncontextmenu')"
+film21save.com,filmkawan21.com,ngefim21indo.com,rebahan21.net,rebahan21.org,rebahan21.xyz,rebahin21.com.mx##+js(aopr, document.oncontextmenu)
 ! Rule "samehadaku.*##a[target="_blank"] ~ .naveps:style(display: inline !important;)" converted to: "samehadaku.*#$#a[target="_blank"] ~ .naveps { display: inline !important; }"
 samehadaku.*##a[target="_blank"] ~ .naveps:style(display: inline !important;)
 ! Rule "samehadaku.*##a[target="_blank"] ~ .pencenter:style(display: inline-block !important;)" converted to: "samehadaku.*#$#a[target="_blank"] ~ .pencenter { display: inline-block !important; }"
