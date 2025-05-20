@@ -1,9 +1,9 @@
-! Checksum: Ws5ediLEAfonzwC4w2pTIA
-! Diff-Path: ../patches/19/19-s-1747735923-3600.patch
+! Checksum: qPhA3nHG6wfL14jgOKJmAQ
+! Diff-Path: ../patches/19/19-s-1747739457-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.55.53
-! TimeUpdated: 2025-05-20T10:07:57+00:00
+! Version: 2.0.55.54
+! TimeUpdated: 2025-05-20T11:06:45+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1779,6 +1779,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+plantmaps.com#%#//scriptlet('prevent-setTimeout', '.offsetWidth&&0==')
 bgsi.gg#%#//scriptlet('prevent-setTimeout', 'fired')
 bgsi.gg##body > div[style*="backdrop-filter"]:not([id])
 yummy-anime.ru##div[class^="adfinity_"]
@@ -3329,6 +3330,7 @@ uwaterloo.ca##div[aria-label="Ad Blocker Detected"]
 ! SECTION[id=general]: Anti-adblock - Common '!#safari_cb_affinity(general)' directive
 !#safari_cb_affinity(general)
 !
+plantmaps.com#@#.ad-unit:not(.textads)
 vide-greniers.org#@#ins.adsbygoogle[data-ad-slot]
 vide-greniers.org#@#ins.adsbygoogle[data-ad-client]
 @@||iphoned.nl/wp-content/themes/bigspark/scripts/ads-frontend.min.js
@@ -4496,6 +4498,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+forbesindia.com##.carouseller
 moz.de##.u-section__header:has(> #umfrage)
 moz.de##.u-survey
 eikaiwa.dmm.com##.css-99g1pj
@@ -13216,6 +13219,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+cineplex.de###CineplexMCPApplication
 moz.de###ms-edgeAd
 moz.de##.u-newsletter
 news.mail.ru##.c3405583bc:has(button[data-logger="SubscribeButton"])

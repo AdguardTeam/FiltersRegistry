@@ -1,9 +1,9 @@
-! Checksum: 3pr1uwq/xG1W05T2eFUhtw
-! Diff-Path: ../patches/3/3-s-1747714399-3600.patch
+! Checksum: IUf/dutuF/I5Pm5rdDBAtQ
+! Diff-Path: ../patches/3/3-s-1747739433-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.85.11
-! TimeUpdated: 2025-05-20T04:08:57+00:00
+! Version: 2.0.85.12
+! TimeUpdated: 2025-05-20T11:06:24+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -172026,6 +172026,9 @@ $cookie=___nrbic
 $cookie=___nrbi
 $cookie=compass_uid
 ! Lotame / crwdcntrl.net
+$cookie=panoramaId
+$cookie=panoramaIdType
+$cookie=panoramaId_expiry
 $cookie=_cc_id
 ! prebid.org
 ! Full Device Identifier used to identify a device across different browsers and webviews on a single device
@@ -172114,8 +172117,6 @@ $cookie=Exitbee_source
 $cookie=Exitbee_nrPagesVisited
 ! MixPanel - Used to identify individual users
 $cookie=/mp_.*_mixpanel/
-! Used by Google Analytics for usage analysis. Used by Loggly for performance and error tracking.
-$cookie=logglytrackingsession
 ! Tracking
 $cookie=omni_visit_id
 ! Wired tracking
@@ -172321,8 +172322,6 @@ $cookie=UserMatchHistory
 $cookie=aam_uuid
 ! Used to identify LinkedIn Members off LinkedIn in the Designated Countries for advertising
 $cookie=lms_ads
-! Used to identify a LinkedIn Member for advertising through Google Ads
-$cookie=_guid
 !
 ! adxns.com
 ! Ads targeting cookie for AppNexus
@@ -172334,6 +172333,35 @@ $cookie=FCNEC
 ! Google - https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage
 ! Initial traffic source tracking using GTM
 $cookie=initialTrafficSource
+! Used to identify a LinkedIn Member for advertising through Google Ads
+$cookie=_guid
+! Used to register what ads have been displayed to the user.
+$cookie=__gads
+! Used by Google Analytics for usage analysis. Used by Loggly for performance and error tracking.
+$cookie=logglytrackingsession
+! Used to distinguish users and sessions for reporting on website use statistics
+$cookie=cfz_google-analytics_v4
+$cookie=cfzs_google-analytics_v4
+! This cookie enables experiments with advertisement efficiency across websites in the Google Ads network.
+! https://github.com/AdguardTeam/AdguardFilters/issues/169558
+$cookie=_gcl_au,domain=~nintendo.com
+! Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences.
+$cookie=_gcl_aw
+!
+! Google Optimize
+! Used for campaigns mapped to Google Ads Customer IDs.
+$cookie=_opt_awcid
+! Used for campaigns mapped to Google Ads Campaign IDs.
+$cookie=_opt_awmid
+! Used for campaigns mapped to Google Ads Ad Group IDs.
+$cookie=_opt_awgid
+! Used for campaigns mapped to Google Ads Criterion IDs.
+$cookie=_opt_awkid
+! Stores the last utm_campaign query parameter.
+$cookie=_opt_utmc
+! This cookie is created when running a redirect experiment. It stores the experiment ID, the variant ID and the referrer to the page that's being redirected.
+$cookie=_opt_expid
+!
 ! Used for advertising
 $cookie=__gpi
 ! Used to distinguish users.
@@ -172377,25 +172405,6 @@ $cookie=__utmc
 $cookie=__utmz
 ! Used to store visitor-level custom variable data.
 $cookie=__utmv
-! Used for campaigns mapped to Google Ads Customer IDs.
-$cookie=_opt_awcid
-! Used for campaigns mapped to Google Ads Campaign IDs.
-$cookie=_opt_awmid
-! Used for campaigns mapped to Google Ads Ad Group IDs.
-$cookie=_opt_awgid
-! Used for campaigns mapped to Google Ads Criterion IDs.
-$cookie=_opt_awkid
-! Stores the last utm_campaign query parameter.
-$cookie=_opt_utmc
-! This cookie is created when running a redirect experiment. It stores the experiment ID, the variant ID and the referrer to the page that's being redirected.
-$cookie=_opt_expid
-! Used to register what ads have been displayed to the user.
-$cookie=__gads
-! This cookie enables experiments with advertisement efficiency across websites in the Google Ads network.
-! https://github.com/AdguardTeam/AdguardFilters/issues/169558
-$cookie=_gcl_au,domain=~nintendo.com
-! Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences.
-$cookie=_gcl_aw
 ! https://policies.google.com/technologies/cookies/embedded?hl=en-US
 ! personalization and analytics
 ||google.$cookie=ANID
@@ -172765,9 +172774,6 @@ $cookie=mosb,domain=womenshealthmag.com|bicycling.com|bestproducts.com|caranddri
 ! newsbreak.com
 ||newsbreak.com^$cookie=nb_wuid
 ||newsbreak.com^$cookie=userId
-! babylonbee.com
-||babylonbee.com^$cookie=cfz_google-analytics_v4
-||babylonbee.com^$cookie=cfzs_google-analytics_v4
 ! softwarekeep.com
 ||softwarekeep.com^$cookie=_orig_referrer
 ! hindustantimes.com
