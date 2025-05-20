@@ -1,9 +1,9 @@
-! Checksum: +EiwuMRfovF/EqkEuCwICw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1747629877-14400.patch
+! Checksum: GdIhx23NJX5Nkt9g4nCMhg
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1747730671-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.65
-! TimeUpdated: 2025-05-19T04:40:33+00:00
+! Version: 2.0.21.66
+! TimeUpdated: 2025-05-20T08:40:34+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -757,7 +757,8 @@ horisontmagasin.se##.small:has-text(/Annons/i):upward(1)
 hotellorestaurang.se,citymark.today,byggfakta.today###bannnerContainer, #pop_overlay, .banner-s, div.featured
 hrnytt.se##article:has(.sponsored-article)
 hrnytt.se##.banner-box
-hrsvepet.se,cfosvepet.se##.cookie-banner, .desktopbanner, .mobilbanner-section
+hrsvepet.se,cfosvepet.se#$#body { overflow:unset!important; opacity:unset!important; }
+hrsvepet.se,cfosvepet.se##.cookie-banner, .desktopbanner, .mobilbanner-section, #takeover-banner
 hrsvepet.se,cfosvepet.se##:is(.recent-post-item, .w-dyn-item):has(a[href="#"]:not(.w-condition-invisible))
 humorbibeln.se,newsner.com,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibeln.se,nojeslivet.se##.inline-share-buttons
 hungrig.nu##.ui-widget-overlay, .ui-dialog
@@ -1186,7 +1187,7 @@ ratio.se###consent-portal
 ratsit.se##.promo
 ravarumarknaden.se###header > div > div.last, #block-4, #mvp-leader-wrap
 recepten.se,foreca.se###topBanner
-recept.se##div[class*="ad-wrapper"], button#cookiePreferences, .c-modal-backdrop--active
+recept.se##div[class*="ad-wrapper"], button#cookiePreferences, .c-modal-backdrop--active, div[data-cts-object-group="product_boxes"]
 rejsa.nu###adsblock, #adsblockfoot, .fpright, div[onclick*="window.open"]
 reseguiden.se##.adsbox-wrapper, .banner-xxl_panorama-container, .banner-top-container
 resesidan.se###media_image-6, #block-81, #media_image-7
@@ -1418,7 +1419,7 @@ tidningenbalans.se##p.uppercase:has-text(/i annonssamarbete med/i):upward(.flex.
 tidningencurie.se#$#body[style*="hidden"] { overflow:unset!important;position:unset!important;top:unset!important; }
 tidningencurie.se#%#//scriptlet('ubo-nostif.js', '.showModal')
 tidningencurie.se##.sv-vr-popup
-tidningenglobal.se,tidningensyre.se,landetsfria.nu,fempers.se##.revive-box
+tidningenglobal.se,tidningensyre.se,landetsfria.nu,fempers.se##.revive-box, .paloma-ad
 tidningennara.se##.cookie-bar
 tidningenproffs.se##div[id^="proff-"]
 tidningenridsport.se#$#.entry-content { display: initial !important; }
@@ -2304,7 +2305,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/bmb-dfp-plugin
 /plugins/borlabs-cookie$script,domain=digiteket.se
 /plugins/boxzilla$script,domain=dialasen.com|arbetaren.se
-/plugins/bravepopup$script,domain=matkasse.se|tidningenglobal.se|fempers.se
+/plugins/bravepopup$script,domain=matkasse.se|tidningenglobal.se|fempers.se|tidningensyre.se
 /plugins/bsa-plugin-pro-scripteo
 /plugins/bsa-pro-scripteo
 /plugins/cardoza-facebook-like-box
@@ -3037,7 +3038,7 @@ zeromagazine.nu##div[id^="ads"]
 ||jst.ai^$third-party
 ||js.adsaga.se^$third-party
 ||js.evtr.nordiskemedier.dk^
-||js.monitor.azure.com^$domain=akademiskahus.se|energi.se|skanetrafiken.se|forex.se|stenafastigheter.se|transportforetagen.se|lantmannen.se|stff.se|gbgfotboll.se|svenskfotboll.se|skk.se|objektvision.se|skogsindustrierna.se|svenskakyrkan.se
+||js.monitor.azure.com^$domain=akademiskahus.se|energi.se|skanetrafiken.se|forex.se|stenafastigheter.se|transportforetagen.se|lantmannen.se|stff.se|gbgfotboll.se|svenskfotboll.se|skk.se|objektvision.se|skogsindustrierna.se|svenskakyrkan.se|borsvarlden.com
 ||js.rating-widget.com/external
 ||juicer.io/api/page_views
 ||jwpcdn.com/player/plugins/inference/
