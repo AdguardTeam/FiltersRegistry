@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.84.37",
-			"timeUpdated": "2025-05-20T19:06:00+0000",
+			"version": "2.3.84.38",
+			"timeUpdated": "2025-05-20T20:07:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.14.78",
-			"timeUpdated": "2025-05-20T17:06:56+0000",
+			"version": "2.1.14.79",
+			"timeUpdated": "2025-05-20T20:07:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.66",
-			"timeUpdated": "2025-05-20T16:08:05+0000",
+			"version": "2.0.47.67",
+			"timeUpdated": "2025-05-20T20:07:46+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -552,8 +552,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/10.txt",
 			"trustLevel": "full",
-			"version": "2.0.3.66",
-			"timeUpdated": "2025-05-15T22:07:13+0000",
+			"version": "2.0.3.67",
+			"timeUpdated": "2025-05-20T20:07:51+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [],
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.91",
-			"timeUpdated": "2025-05-20T17:07:13+0000",
+			"version": "2.0.60.92",
+			"timeUpdated": "2025-05-20T20:07:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.74",
-			"timeUpdated": "2025-05-20T19:06:22+0000",
+			"version": "2.0.56.75",
+			"timeUpdated": "2025-05-20T20:07:54+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"

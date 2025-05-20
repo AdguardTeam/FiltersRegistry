@@ -1,9 +1,9 @@
-! Checksum: eQjGGSIu+Ouir3ic1ioBLA
-! Diff-Path: ../patches/10_optimized/10_optimized-s-1747347072-3600.patch
+! Checksum: pIhcL1FEIz/phAm1Bb0D1w
+! Diff-Path: ../patches/10_optimized/10_optimized-s-1747771902-3600.patch
 ! Title: Filter unblocking search ads and self-promotion (Optimized)
 ! Description: Filter that unblocks search ads in Google, DuckDuckGo, Bing, or Yahoo and self-promotion on websites.
-! Version: 2.0.3.66
-! TimeUpdated: 2025-05-15T22:07:13+00:00
+! Version: 2.0.3.67
+! TimeUpdated: 2025-05-20T20:07:51+00:00
 ! Expires: 10 days (update frequency)
 !#safari_cb_affinity(general)
 bing.com#@#li[class="b_ans"][data-partnertag]:has(> div[class^="b_bza_"])
@@ -147,6 +147,8 @@ amazon.*#@#div[data-csa-c-painter="ad-topper-desktop-card"]
 amazon.*#@#.sbv-ad-content-container
 amazon.*#@?#div[data-display-at]:has(> div[data-csa-c-painter="ad-topper-desktop-card"]:first-child + div[style="display: none !important;"]:last-child)
 amazon.*#@##desktop-dp-ilm_feature_div_01
+amazon.*#@#.s-main-slot > div.s-result-item:has(> .sg-col-inner:only-child > div[class*="widget=loom-"][class*="FEATURED"])
+amazon.*#@##search .s-main-slot > div.s-result-item[data-asin=""]:not(.a-section) .s-progressive-scroll-container span[data-action="s-progressive-scroll-link"]
 m.yelp.com#@#div[data-testid="suggested-search-bar"] ~ div[class*="border-color-"] > ol > li:has(> div[class*="sponsored-icon_"])
 m.yelp.com#@#div[data-testid="suggested-search-bar"] ~ div[class*="border-color-"] > ol > li:has(> div[class*="sponsored-icon_"]) + li[class]
 m.yelp.com#@#div[data-testid="suggested-search-bar"] ~ div[class*="border-color-"] > ol > li:has(> div[data-testid^="themed-ad-"])
