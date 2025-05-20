@@ -1,9 +1,9 @@
-! Checksum: z7y5dRCXjlxdui9Xebz/iQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1747721630-3600.patch
+! Checksum: pHdt14AO4pRt8WOwDckPVw
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1747725099-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.68
-! TimeUpdated: 2025-05-20T06:09:37+00:00
+! Version: 2.0.56.69
+! TimeUpdated: 2025-05-20T07:07:35+00:00
 ! Expires: 12 hours (update frequency)
 ||statbest.in^
 ||movturs.click^
@@ -5001,6 +5001,12 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+||hdselcuksports*.top/cdn/r/
+[$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('remove-node-text', 'script', 'show_popup')
+[$domain=/hdselcuksports\d+\.top/]$$script:contains(show_popup)
+[$domain=/hdselcuksports\d+\.top/]##.iframe_728
+[$domain=/hdselcuksports\d+\.top/]##.header_r
+[$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('prevent-window-open')
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##.betting-sites
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##div[id^="banner-placeholder-"]
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]###container > div[style*="z-index"][style*="position: sticky;"]
