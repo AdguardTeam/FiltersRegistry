@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.99.37",
-			"timeUpdated": "2025-05-19T17:06:12+0000",
+			"version": "2.0.99.38",
+			"timeUpdated": "2025-05-20T13:15:44+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.84.30",
-			"timeUpdated": "2025-05-20T12:10:56+0000",
+			"version": "2.3.84.31",
+			"timeUpdated": "2025-05-20T13:15:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.14.76",
-			"timeUpdated": "2025-05-20T11:06:26+0000",
+			"version": "2.1.14.77",
+			"timeUpdated": "2025-05-20T13:16:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.56.70",
-			"timeUpdated": "2025-05-20T12:11:25+0000",
+			"version": "2.0.56.71",
+			"timeUpdated": "2025-05-20T13:16:15+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -714,8 +714,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.21.12",
-			"timeUpdated": "2025-05-20T09:08:16+0000",
+			"version": "2.0.21.13",
+			"timeUpdated": "2025-05-20T13:16:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -780,8 +780,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.6.64",
-			"timeUpdated": "2025-05-19T15:07:45+0000",
+			"version": "2.0.6.65",
+			"timeUpdated": "2025-05-20T13:16:25+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"
