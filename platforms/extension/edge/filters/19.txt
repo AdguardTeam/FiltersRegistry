@@ -1,9 +1,9 @@
-! Checksum: K+gaKbvoaJMcNxeuCnoI4Q
-! Diff-Path: ../patches/19/19-s-1747725078-3600.patch
+! Checksum: DSNlB89LftEt4mUt32SRPw
+! Diff-Path: ../patches/19/19-s-1747735898-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.55.52
-! TimeUpdated: 2025-05-20T07:07:43+00:00
+! Version: 2.0.55.53
+! TimeUpdated: 2025-05-20T10:07:57+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4083,12 +4083,9 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com#$##abd-container { display: block !importan
 ! SECTION: Anti-adblock - Grouped rules for specific sites
 !
 ! chzzk.naver.com
-chzzk.naver.com##body > div[class^="popup_dimmed__"]:has(a[href^="https://help.naver.com/service/23946/contents/23806"])
 chzzk.naver.com#@#.banner_ad_wrapper
 chzzk.naver.com#@#.banner_ad
-chzzk.naver.com#%#//scriptlet('prevent-xhr', 'veta.naver.com/gfp')
-chzzk.naver.com#%#//scriptlet('prevent-xhr', 'veta.naver.com/call')
-chzzk.naver.com#%#//scriptlet('prevent-xhr', 'veta.naver.com/vas')
+chzzk.naver.com#%#//scriptlet('json-prune-fetch-response', 'ads advertiserDomains adDuplicationKeys', '', 'veta.naver.com/gfp')
 naver.com#%#//scriptlet('set-cookie', 'ba.uuid', '0', '/', 'naver.com')
 @@||ssl.pstatic.net/tveta/libs/glad/prod/$script,xmlhttprequest,domain=chzzk.naver.com
 @@||nam.veta.naver.com/vas$xmlhttprequest,domain=chzzk.naver.com
