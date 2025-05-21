@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SSMyHidXFRtR/gnZedhi0g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1747818680-3600.patch
+! Checksum: uESmNWsSvDhCJln2H8XoOQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1747822310-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.84.49
-! TimeUpdated: 2025-05-21T09:07:14+00:00
+! Version: 2.3.84.50
+! TimeUpdated: 2025-05-21T10:07:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -39443,6 +39443,10 @@ asilmedia.org###banner
 !
 ! NOTE: Vietnamese
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205622
+nhutgg.com##+js(set-constant, CheckAdsBlocked, noopFunc)
+nhutgg.com##+js(set-constant, checkDomain, noopFunc)
+!
 ||delivery.vtcnews.vn/dist/adsbyvtc_ver1.js
 24h.com.vn##.dcpd-eva
 24h.com.vn##.lady
@@ -46272,6 +46276,7 @@ safefileku.com#?#button#download + div:contains(advertisement)
 safefileku.com##+js(remove-attr, onclick, button#download)
 tickle.porn##.fp-ui-block
 tickle.porn##.fp-player > div[style^="inset"]:not([class])
+||adtng.com^$subdocument,redirect=noop.html,domain=porngames.com
 porngames.com##.maincontent div.contentbox:has(> div[style] > center > iframe[src^="https://a.adtng.com/"])
 porngames.com##.maincontent div.contentbox:has(> div[style] > center > table iframe[src^="https://a.adtng.com/"])
 myfxbook.com#$##popupAdModal { display: none !important; }
@@ -66419,6 +66424,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205617
+nareshalka.com#@##adModal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205390
 @@||wpnrtnmrewunrtok.xyz^$domain=camwhores.ru.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204824
