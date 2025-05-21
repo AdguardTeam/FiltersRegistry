@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-05-20 05:16:12 CEST
+! Last modified: 2025-05-21 05:38:58 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -1709,6 +1709,7 @@ zeromagazine.nu##div[id^="ads"]
 ##div.content_ad_top
 ##div.dfp-ads-container
 ##div.dfp-ads-container-middle
+##div.egmont-ads-ad
 ##div.elementor-widget-wp-widget-adrotate_widgets
 ##div.feed_ad
 ##div.flow_ad
@@ -3149,7 +3150,7 @@ zeromagazine.nu##div[id^="ads"]
 ||nyhetersto.se/webpushr-sw
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
-||onesignal.com^$domain=samnytt.se|battrestadsdel.se|beernews.se|ungdomsfotboll.se|rabattsok.se|1x2.se|cannabis.se|dackavisen.se|driva-eget.se|skogsaktuellt.se|entreprenadaktuellt.se|ja.se|newsner.com|humorbibeln.se|sportbibeln.se|matbibeln.se|ettgottskratt.se|djurbibeln.se|nojeslivet.se|finanstid.se|fokus.se|gasetten.se|fotbollsthlm.se|macken.xyz|naringslivetvgl.se|dalarnasaffarer.se|stockholmsaffarer.se|jamtlandsaffarer.se|hallandsnaringsliv.se|sjuharadsnaringsliv.se|netflixguiden.se|nyadagbladet.se|oskarshamns-nytt.se|swebbtv.se|vaken.se|aktieskolan.se|fastighetsvarlden.se|mcparken.se|gaffa.se|alltomnorrtalje.se|morotsliv.com|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|skaneplus.se|mittforetag.com|studeravidare.se|thephuketexpress.se|ibnytt.se|garaget.org|marketmate.se|rakapuckar.com|svegot.se|thepattayanewsse.com|svenskgolf.se|cafe.se|praktisktbatagande.se
+||onesignal.com^$domain=samnytt.se|battrestadsdel.se|beernews.se|ungdomsfotboll.se|rabattsok.se|1x2.se|cannabis.se|dackavisen.se|driva-eget.se|skogsaktuellt.se|entreprenadaktuellt.se|ja.se|newsner.com|humorbibeln.se|sportbibeln.se|matbibeln.se|ettgottskratt.se|djurbibeln.se|nojeslivet.se|finanstid.se|fokus.se|gasetten.se|fotbollsthlm.se|macken.xyz|naringslivetvgl.se|dalarnasaffarer.se|stockholmsaffarer.se|jamtlandsaffarer.se|hallandsnaringsliv.se|sjuharadsnaringsliv.se|netflixguiden.se|nyadagbladet.se|oskarshamns-nytt.se|swebbtv.se|vaken.se|aktieskolan.se|fastighetsvarlden.se|mcparken.se|gaffa.se|alltomnorrtalje.se|morotsliv.com|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|skaneplus.se|mittforetag.com|studeravidare.se|thephuketexpress.se|ibnytt.se|garaget.org|marketmate.se|rakapuckar.com|svegot.se|thepattayanewsse.com|svenskgolf.se|cafe.se|praktisktbatagande.se|classicmotor.se
 ||onetrust.com^$third-party,domain=lantmannen.se
 ||online.swedbank.se.swedd.$document
 ||onrender.com/tracker.js
@@ -3402,6 +3403,7 @@ zeromagazine.nu##div[id^="ads"]
 ||zoho.com/hub/js/WebsiteAutomation.js$third-party
 ||zummycloud.com^$third-party
 !#if env_chromium
+?adType$xmlhttprequest,removeparam=adType,domain=tv4play.se
 alekuriren.se,branschkoll.se,rocknytt.net,upphandling24.se,datormagazin.se,villalivet.se,polistidningen.se,densistavilan.se,classicmotor.se,tidningenhalsa.se,husohem.se,guiden.se,nyadagbladet.se,enkelteknik.se,vadhanderisverige.se,passioneffect.se,livsmedelsnyheter.se#%#//scriptlet('ubo-acs.js', 'advads')
 alekuriren.se,branschkoll.se,rocknytt.net,upphandling24.se,datormagazin.se,villalivet.se,polistidningen.se,densistavilan.se,classicmotor.se,tidningenhalsa.se,husohem.se,guiden.se,nyadagbladet.se,enkelteknik.se,vadhanderisverige.se,passioneffect.se,livsmedelsnyheter.se#%#//scriptlet('ubo-acs.js', 'advanced_ads')
 !#endif
@@ -3428,6 +3430,7 @@ temadagar.se,sanghafte.se,xn--gtboken-exa.se,ninjateknik.com$$script[tag-content
 di.se$$script[tag-content="Di.initAds"][max-length="262144"]
 woxikon.se$$script[tag-content="googletag"][max-length="262144"]
 woxikon.se$$script[tag-content="window._sp_"][max-length="262144"]
+tyda.se$$script[tag-content="error-report.com"][max-length="262144"]
 tv4play.se#$#:is(.infinite-scroll-component > div > div:first-child .swiper-slide > div[style] > div > div:first-child, div[data-testid="cdp-promo"] > div:first-child, .infinite-scroll-component div[style="width: 100%; height: 100%;"] > div[style="width: 100%;"] > div > div[class^="sc"]:first-child) { mask-image:unset!important; mask-size:unset!important; mask-composite:unset!important; }
 tv4play.se#$#.swiper-slide > div[style] > a > div { mask-image:unset!important; }
 !#endif
@@ -3445,7 +3448,6 @@ home2tiny.se#%#//scriptlet('ubo-aeld.js', '/mousewheel|DOMMouseScroll/', 'smooth
 veterinarmagazinet.se##.banner-spacer
 !#endif
 !#if env_mv3
-?adType$xmlhttprequest,removeparam=adType,domain=tv4play.se
 web-tools.se,bio-link.se#%#//scriptlet('ubo-rmnt.js', 'script', 'request_ads_to_display')
 kritiker.se##div.ui.page.dimmer:has(#adblocker)
 kritiker.se#$#body.dimmed { overflow:unset!important; }
