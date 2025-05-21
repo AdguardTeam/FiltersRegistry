@@ -1,0 +1,20 @@
+d1 2
+a2 2
+! Checksum: NgKlGdlN0G7uDke89CcCGg
+! Diff-Path: ../patches/251/251-s-1747831760-14400.patch
+d5 2
+a6 2
+! Version: 2.0.8.73
+! TimeUpdated: 2025-05-21T12:45:39+00:00
+d10 1
+a10 1
+! OriginalVersion: 21May2025v1
+a4191 7
+! Account login pages are likely also a place where you generally don't want error messages from false positive parameter removals
+! https://github.com/DandelionSprout/adfilt/issues/1051
+@@/login-redirect/*$removeparam
+@@/login?$removeparam=referrer
+! Post-payment processing pages are also places where you generally wouldn't want error messages from false positive parameter removals
+@@||secure.kps-payment.de^$removeparam
+@@/Netaxept.jsp?$removeparam
+d4201 4

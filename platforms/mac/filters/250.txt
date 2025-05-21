@@ -1,8 +1,8 @@
-! Checksum: DHIS93Fag+2/y4cfXKNcJQ
+! Checksum: Xl+X5JGCwRMoLdL8dp2Ppw
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.16.99
-! TimeUpdated: 2025-05-17T16:38:38+00:00
+! Version: 2.0.17.0
+! TimeUpdated: 2025-05-21T12:45:39+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -36990,7 +36990,7 @@ vumoo.to#?#div.col-lg-12:has-text(IMDb)
 watchseries.*##.imdb
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 15May2025v3
+! OriginalVersion: 21May2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -41176,6 +41176,13 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 @@||email-link.$removeparam
 !! https://manage•kmail-lists•com/subscriptions/unsubscribe?a=(...)&c=(...)&k=(...)&m=(...)&r=(...)
 @@||manage.kmail-lists.com/subscriptions^$removeparam
+! Account login pages are likely also a place where you generally don't want error messages from false positive parameter removals
+! https://github.com/DandelionSprout/adfilt/issues/1051
+@@/login-redirect/*$removeparam
+@@/login?$removeparam=referrer
+! Post-payment processing pages are also places where you generally wouldn't want error messages from false positive parameter removals
+@@||secure.kps-payment.de^$removeparam
+@@/Netaxept.jsp?$removeparam
 ! Fix driver download section
 @@||canon.*/supportproduct/gettabcontent$removeparam=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/89618
@@ -41185,10 +41192,6 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 @@||startpage.com/sp/qi$removeparam=sc
 ! Strangely prevents placeholders on flagpedia•net/index (24/11/2023)
 @@||flagpedia.net^$ping,xmlhttprequest,removeparam=gtm
-! Account login pages are likely also a place where you generally don't want error messages from false positive parameter removals
-! https://github.com/DandelionSprout/adfilt/issues/1051
-@@/login-redirect/*$removeparam
-@@/login?$removeparam=referrer
 ! https://new•reddit•com/r/uBlockOrigin/comments/1h1aaj7/ubo_on_firefox_android_is_causing_a_refresh_loop/ (thanks to stephhawk, who provided this rule)
 ! For when one really doesn't want to have a harder time with uBO's log error checker
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-750434

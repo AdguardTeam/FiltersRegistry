@@ -1,13 +1,13 @@
-! Checksum: 9BfOIaeMs1efXVC4MrNC9g
-! Diff-Path: ../patches/251/251-s-1747270334-14400.patch
+! Checksum: KMStYO2Fnf4O75/nQS5VhQ
+! Diff-Path: ../patches/251/251-s-1747831772-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.8.72
-! TimeUpdated: 2025-05-15T00:48:26+00:00
+! Version: 2.0.8.73
+! TimeUpdated: 2025-05-21T12:45:39+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 15May2025v3
+! OriginalVersion: 21May2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -4189,6 +4189,13 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 @@||email-link.$removeparam
 !! https://manage•kmail-lists•com/subscriptions/unsubscribe?a=(...)&c=(...)&k=(...)&m=(...)&r=(...)
 @@||manage.kmail-lists.com/subscriptions^$removeparam
+! Account login pages are likely also a place where you generally don't want error messages from false positive parameter removals
+! https://github.com/DandelionSprout/adfilt/issues/1051
+@@/login-redirect/*$removeparam
+@@/login?$removeparam=referrer
+! Post-payment processing pages are also places where you generally wouldn't want error messages from false positive parameter removals
+@@||secure.kps-payment.de^$removeparam
+@@/Netaxept.jsp?$removeparam
 ! Fix driver download section
 @@||canon.*/supportproduct/gettabcontent$removeparam=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/89618
@@ -4198,10 +4205,6 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 @@||startpage.com/sp/qi$removeparam=sc
 ! Strangely prevents placeholders on flagpedia•net/index (24/11/2023)
 @@||flagpedia.net^$ping,xmlhttprequest,removeparam=gtm
-! Account login pages are likely also a place where you generally don't want error messages from false positive parameter removals
-! https://github.com/DandelionSprout/adfilt/issues/1051
-@@/login-redirect/*$removeparam
-@@/login?$removeparam=referrer
 ! https://new•reddit•com/r/uBlockOrigin/comments/1h1aaj7/ubo_on_firefox_android_is_causing_a_refresh_loop/ (thanks to stephhawk, who provided this rule)
 ! For when one really doesn't want to have a harder time with uBO's log error checker
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-750434
