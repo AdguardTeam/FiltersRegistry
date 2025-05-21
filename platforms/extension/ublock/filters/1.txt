@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kXbMLpxT8S955z/ISP9MxQ
-! Diff-Path: ../patches/1/1-s-1747795242-3600.patch
+! Checksum: R//D59nUcK+Vl7c7G0tRlA
+! Diff-Path: ../patches/1/1-s-1747825836-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.99.40
-! TimeUpdated: 2025-05-21T02:36:06+00:00
+! Version: 2.0.99.41
+! TimeUpdated: 2025-05-21T11:06:04+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18009,6 +18009,9 @@ vost.pw,animevost.am,smotret-anime-365.ru,animevost.online,animevost.org,animero
 ||4pda.*/st/ztm?
 ||app.4pda.*/er/*/m2?_=
 ||4pda.*/ad/
+! Ad cards on the main page
+[$domain=/^4pda\.to$/]##article[itemid] ~ article:not([itemid]):has(> :not(div):only-child)
+[$domain=/^4pda\.to$/]##+js(spoof-css, article[itemid] ~ article:not([itemid]), display, block)
 [$domain=/^4pda\.to$/]##body > * > * > * > div[id][class]:has(> script + *:not(a):not(div))
 [$domain=/^4pda\.to$/]##+js(spoof-css, body > * > * > * > div[id][class], display, block)
 [$domain=/^4pda\.to$/]#$#body > * > * > * > *:not(div)[id][class] ~ *:not(div)[id][class] { background: #e6e7e9 !important; }

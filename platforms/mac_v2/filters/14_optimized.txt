@@ -1,9 +1,9 @@
-! Checksum: BpR4ChZ0fS9JXc6izjZiDQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1747822314-3600.patch
+! Checksum: uhcKcxh5siqRGLbJo5Qx/A
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1747825844-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.30.92
-! TimeUpdated: 2025-05-21T10:07:54+00:00
+! Version: 2.2.30.93
+! TimeUpdated: 2025-05-21T11:06:40+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1509,6 +1509,10 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$?#div[consent-skip-blocker] { remove: true; }
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+thefashionspot.com$$script:contains(consentKnown)
+thefashionspot.com#%#//scriptlet('remove-node-text', 'script', 'consentKnown')
+thefashionspot.com#%#//scriptlet('abort-on-property-read', '__cmpGdprAppliesGlobally')
+guard.io##.cookie-banner-component
 stinkyinkshop.co.uk#%#//scriptlet('trusted-set-cookie', 'cookiesConsent', '{"functionality_storage":"denied","security_storage":"denied","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied","analytics_storage":"denied","personalization":"denied"}')
 edmunds.com##.privacy-global-disclaimer
 101.ru##.cookies__section
@@ -22710,6 +22714,7 @@ tv.yandex.*##.recommended-ott
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { display: none !important; }
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
+controld.com##.css-9hjcxa
 veja.abril.com.br###sector-advertising-widget-wrapper
 folha.uol.com.br##aside > .c-estudio-folha
 folha.uol.com.br##aside .c-responsive-rotate-estudio-folha
