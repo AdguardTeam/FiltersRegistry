@@ -1,9 +1,9 @@
-! Checksum: ploKv/eqR0lZ6luXmlRu3A
-! Diff-Path: ../patches/16/16-s-1747916140-3600.patch
+! Checksum: Z38dDJvzWs9YGCJo+dORvw
+! Diff-Path: ../patches/16/16-s-1747923166-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.52.48
-! TimeUpdated: 2025-05-22T12:11:42+00:00
+! Version: 2.0.52.49
+! TimeUpdated: 2025-05-22T14:08:57+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -197,8 +197,9 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/1478420
-japscan.lol#%#//scriptlet('trusted-set-constant', 'pubadxtag', '{"divIds": ["bg-ssp-9017-238131528466", "bg-ssp-8018-1135227806618"]}')
-japscan.lol#%#//scriptlet("remove-node-text", "script", "/Y[a-z][a-z]?k[a-z]\d|OnNoYouNo")
+japscan.lol#%#//scriptlet('set-constant', 'pubadxtag.divIds', 'emptyArr')
+japscan.lol#%#//scriptlet('set-constant', 'pubadxtag', 'emptyObj')
+japscan.lol#%#//scriptlet("remove-node-text", "script", "/Y[a-z][a-z]?k[a-z]\d|OnNoYouNo/")
 /^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.lol
 @@||platform.pubadx.one/pubadx-ad.js$xmlhttprequest,domain=japscan.lol
 @@||static.cloudflareinsights.com/beacon.min.js$xmlhttprequest,domain=japscan.lol
