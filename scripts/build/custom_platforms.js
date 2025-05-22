@@ -533,6 +533,20 @@ const SAFARI_BASED_EXTENSION_PATTERNS = [
     ...JSONPRUNE_MODIFIER_PATTERNS,
 ];
 
+/**
+ * Pattern to detect entries which are not supported in uBlock Origin
+ * among them known to be `:matches-property` and generic style rules
+ *
+ * @example
+ * ```unsplash.com#?#.ripi6 > div:matches-property(/__reactFiber/.return.return.memoizedProps.ad)```
+ * @example
+ * ```##div[class="adsbygoogle"][id="ad-detector"] { display: block !important; }```
+ */
+const UBLOCK_BASED_EXTENSION_PATTERNS = [
+    ':matches-property\\(',
+    '^#.* ?\{ ?[a-z]'
+];
+
 module.exports = {
     'WINDOWS': {
         'platform': 'windows',
@@ -783,6 +797,8 @@ module.exports = {
                 ...REFERRERPOLICY_MODIFIER_PATTERNS,
                 ...JSONPRUNE_MODIFIER_PATTERNS,
                 ...UNBLOCKING_IMPORTANT_RULES_PATTERNS,
+                ...REMOVEHEADER_MODIFIER_PATTERNS,
+                ...UBLOCK_BASED_EXTENSION_PATTERNS,
             ],
             'ignoreRuleHints': false,
             'adbHeader': '![Adblock Plus 2.0]',
