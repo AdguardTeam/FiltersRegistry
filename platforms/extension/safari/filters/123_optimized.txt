@@ -1,9 +1,9 @@
-! Checksum: +HQlPv37zhh8pkQW924dpw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1747875128-14400.patch
+! Checksum: Hnp6sts+yGXXrockYy64Tw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1747888987-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.41.71
-! TimeUpdated: 2025-05-22T00:47:46+00:00
+! Version: 2.1.41.72
+! TimeUpdated: 2025-05-22T04:38:39+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -714,6 +714,7 @@ _social-bar/
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
 ##.PinItButton
 ##.PinterestButtonContainer
+##.RadSocialShare
 ##.Share-buttons
 ##.Share-item
 ##.ShareBar
@@ -1105,6 +1106,7 @@ _social-bar/
 ##.dashicons-facebook
 ##.dashicons-twitter
 ##.ddc-social-share
+##.desktop-share
 ##.desktop-social
 ##.detail-share
 ##.detail-social
@@ -1514,6 +1516,7 @@ _social-bar/
 ##.head-post-share
 ##.header-facebook
 ##.header-icon-instagram
+##.header-main-socs
 ##.header-nav-social
 ##.header-share
 ##.header-social-button
@@ -1587,6 +1590,7 @@ _social-bar/
 ##.icon-dailymotion
 ##.icon-delicious
 ##.icon-digg
+##.icon-facebook-alt
 ##.icon-facebook-circle
 ##.icon-facebook-circled
 ##.icon-facebook-icon
@@ -2544,6 +2548,7 @@ _social-bar/
 ##.sharify-btn-twitter
 ##.sharify-container
 ##.sharing--footer
+##.sharing-area
 ##.sharing-bar
 ##.sharing-block
 ##.sharing-bottom
@@ -2979,6 +2984,7 @@ _social-bar/
 ##.socialNav
 ##.socialNetworks
 ##.socialPanel
+##.socialPinterest
 ##.socialRight
 ##.socialSection
 ##.socialShare
@@ -3059,6 +3065,7 @@ _social-bar/
 ##.socialnav
 ##.socialno
 ##.socialplugins
+##.socialright
 ##.socials-bar
 ##.socials-footer
 ##.socials-round
@@ -3598,8 +3605,6 @@ bleedingcool.com###bc_sharing_is_caring
 skidrowreloaded.com###communication
 sputnikglobe.com###cta
 archaeologymag.com###custom_html-4
-asianews.it###det_article_share
-asianews.it###det_article_sharebottom
 dailymail.co.uk,thisismoney.co.uk###dms-txt
 imgflip.com###findUs
 memuplay.com###fixed-share
@@ -3631,7 +3636,6 @@ animenewsnetwork.com###social-bookmarks
 breitbart.com###social-follow-sidebar-widget
 coindesk.com###social-icons-box
 battlefordsnow.com,everythinggp.com,huskiefan.ca,larongenow.com,lethbridgenewsnow.com,meadowlakenow.com,nanaimonewsnow.com,northeastnow.com,panow.com,rdnewsnow.com,rocketfan.ca,royalsfan.ca,sasknow.com,vernonmatters.ca###social-share-icons
-asianews.it###social_top_nav
 salon.com###social_total
 nsctotal.com.br,pastebin.pl###socials
 motortrend.com###socialshare_title
@@ -3683,6 +3687,7 @@ firstpost.com##.art-soc-icons
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 f1oversteer.com##.article-follow
+ucsf.edu##.article-meta-share
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
 cosmosmagazine.com,forbes.com,heise.de,phillyvoice.com##.article-sharing
@@ -3700,6 +3705,7 @@ proprivacy.com##.author-social-icons
 adweek.com##.aw-social-share-container
 irishtimes.com,publimetro.com.mx##.b-footer__social-links-container
 bnnbloomberg.ca,cp24.com,ctvnews.ca,irishnews.com,thedailybeast.com##.b-share-bar
+dxomark.com##.banner
 beebom.com##.beebom-social-share
 gobankingrates.com##.between-share-and-author
 military.com##.block--addtoanyadv
@@ -3855,7 +3861,6 @@ sportsnet.ca##.micro_mail__dd_RW
 washingtonian.com##.min-height-800
 boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
-news.cn,xinhuanet.com##.more-con
 yardbarker.com##.msnfc
 denofgeek.com##.nav-social__items
 triblive.com##.navbar-right
@@ -3990,6 +3995,7 @@ ringsidenews.com##.social_label
 ciudad.com.ar,eltrecetv.com.ar,lithub.com,tn.com.ar##.social_links
 unn.ua##.social_root__H2cRW
 abplive.com,businesstoday.in,catracalivre.com.br,gamesindustry.biz,ilmeteo.it##.social_share
+outlookindia.com##.social_sharing_article
 kleinezeitung.at,meduniwien.ac.at,shipmag.it,today.rtl.lu##.socialbar
 videocardz.com##.socialbar-sidebar
 firstthings.com,mothership.sg,overclock3d.net,techtimes.com##.socials
@@ -4019,6 +4025,7 @@ xbiz.com##.tool-list
 daily.jstor.org##.top-bar-right
 thehackernews.com##.top-follow
 pastebin.com##.top-footer
+firstshowing.net##.topsoc
 rottentomatoes.com##.trending-bar__social-link
 advocate.com,slashdot.org##.tw
 apptrigger.com,motherjones.com##.tweet
@@ -4173,12 +4180,10 @@ pcgameshardware.de##.artSocialLinks
 finanznachrichten.de##.article--footer
 n-tv.de##.article__share-wrapper
 welt.de##.c-social-bar
-michaelsbund.de##.eapps-social-share-buttons
 auf1.tv##.flex.flex-row.w-80.justify-between.border-l-4.px-2.border-primary
 nn.de,nordbayern.de##.icon__social
 freiewelt.net##.jksocials
 kicker.de##.kick__article__social
-lebensmittelwarnung.de##.lmw-footer-nav--social
 ndr.de##.meta
 it-daily.net##.ns-buttons
 teltarif.de##.sbm
@@ -4191,6 +4196,8 @@ lt1.at##.social-listing
 info-direkt.eu##.static.lg\:fixed.top-40.left-\[4vw\].bg-white.border-orange.border
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
+t3n.de##.tg-pockethinweis
+t3n.de##.tg-social-bottom
 watson.ch##.watson-sharebuttons
 handelsblatt.com##app-icon-link
 focus.de##.socFbLikeShare
@@ -4480,6 +4487,7 @@ qhubomedellin.com##.qh-social-icons-articulo
 diarioelargentino.com##.redes-footer
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
 elcomercio.pe,gestion.pe##.s-buttons
+betano.com##.sb-footer__notes__socials
 infobae.com##.second-saved-buttons
 as.com##.sh-bar
 politico.mx##.share-bar-father
