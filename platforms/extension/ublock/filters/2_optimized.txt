@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PFPE6367unymjJjounQKUA
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1747991497-3600.patch
+! Checksum: cyeWBhWwcNqD7ii7zPyJfw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1747995081-3600.patch
 ! Title: AdGuard Base filter + EasyList (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.84.94
-! TimeUpdated: 2025-05-23T09:07:13+00:00
+! Version: 2.3.84.95
+! TimeUpdated: 2025-05-23T10:07:07+00:00
 ! Expires: 5 days (update frequency)
 ||granaryhills.com^
 ||undoneferocious.com^
@@ -8908,6 +8908,8 @@ play.tv3.ee##+js(set-constant, window.ima3ScriptLoadDate, 1)
 play.tv3.ee##+js(set-constant, window.fbEventsScriptLoadDate, 1)
 play.tv3.ee##+js(set-constant, window.dfpScriptLoadDate, 1)
 tv4play.se##+js(json-prune, ad.*)
+tv4play.se##+js(json-prune, playbackItem.isStitched)
+tv4play.se##+js(m3u-prune, /https:\/\/prism-ads-cdn\.a2d\.tv\//, .m3u8)
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
 @@||v.fwmrm.net/ad/g/1$domain=tv4play.se
 !+ NOT_OPTIMIZED
@@ -14663,6 +14665,8 @@ zacks.com##.inline_top_ad_commentary
 ||i.cdn.turner.com/ads/
 ||cdn.cnn.com/ads/
 lowendtalk.com##.Row > #Panel > div:not([class]):not([id]) > a[href] > img
+wcoanimesub.tv,wcoanimedub.tv##div[id^="sidebar_"] > div[style^="float:right;"]
+wcoanimesub.tv,wcoanimedub.tv##.video-page-main + div[style^="background:"] > div[style^="float:right;"]
 tvtropes.org##.outer_ads_by_salon_wrapper
 freehentaistream.com##.natundervid-title
 freehentaistream.com##iframe#natundervid
@@ -25621,6 +25625,7 @@ browsershots.org#@#.advert_area
 ||bsbxgphqrmbhy.com^
 ||bscz3136.com^
 ||bservr.com^
+||bsfoxmbspamhy.com^
 ||bshrdr.com^
 ||bssaly.com^
 ||btagmedia.com^
@@ -36950,6 +36955,7 @@ browsershots.org#@#.advert_area
 ||yflexibilitukydt.com^
 ||yfrnkmcdeurmk.top^
 ||yfueuktureukwo.org^
+||ygimeqcpvbtci.rocks^
 ||ygvecybawcjtwpp.com^
 ||yhbcii.com^
 ||yhmfmugyq.com^
