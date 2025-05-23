@@ -1,9 +1,9 @@
-! Checksum: 8AxisUjUtLuklyZ+sYjy/w
-! Diff-Path: ../patches/20/20-s-1747980823-3600.patch
+! Checksum: xBe+j2XxtFYyhopsbaPw8A
+! Diff-Path: ../patches/20/20-s-1747984305-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.21.18
-! TimeUpdated: 2025-05-23T06:09:48+00:00
+! Version: 2.0.21.19
+! TimeUpdated: 2025-05-23T07:07:55+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2265,8 +2265,6 @@ news24.com##.footer__app-links
 tvgo.orange.pl##.landing-page-download-app_buttons
 purepeople.com##.c-store-banner
 purepeople.com##.c-promo-app
-sukima.me##header > div.v-toolbar__content div[class="container"]
-sukima.me#$#header > div.v-toolbar__content { height: 52px!important; }
 pochta.ru##div[class^="TrackingInput__Banners-"]
 gallerix.ru##a[href^="https://flae.ru/rec/click.php?c="]
 gallerix.ru##.defs-closeadv
@@ -3687,6 +3685,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+sukima.me#%#//scriptlet('trusted-click-element', '.v-toolbar__content button[type="button"]', 'containsText:非表示', '5000')
 advanceautoparts.com#%#//scriptlet('trusted-set-session-storage-item', 'app-session-state', '{"mobileAppBannerDismissed":true}')
 meesho.com#%#//scriptlet('set-cookie', 'isDownloadCta', 'false')
 pickaboo.com##div[class^="ApplicationBanner"]
