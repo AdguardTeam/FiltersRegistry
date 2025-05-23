@@ -19161,6 +19161,18 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206073
+pokemon-project.com$$script:contains(closePlayer)
+pokemon-project.com#%#//scriptlet('remove-node-text', 'script', 'closePlayer')
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=pokemon-project.com
+@@||cdn.fuseplatform.net/publift/tags/*/fuse.js$domain=pokemon-project.com
+!#endif
+! https://github.com/AdguardTeam/AdguardFilters/issues/206071
+goodstream.one$$script:contains(showADBOverlay)
+goodstream.one#%#//scriptlet('remove-node-text', 'script', 'showADBOverlay')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+goodstream.one##body > footer + script + div[class][oncontextmenu]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206056
 ||meong.club/go/goblok.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206045
@@ -19565,11 +19577,6 @@ pfionline.com,girisheducation.in,tech-guidance.com,15.235.145.185,bestbookbuddie
 @@||dizok.com^$generichide
 @@||ubnem.com^$generichide
 ||ubnem.com/728x250*.webp
-! https://github.com/AdguardTeam/AdguardFilters/issues/197991
-pokemon-project.com#%#//scriptlet('google-ima3')
-pokemon-project.com#%#//scriptlet('set-constant', 'videojsAdPlayed', 'true')
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=pokemon-project.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197952
 wingeno.org,winshell.org#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -42682,6 +42689,7 @@ exsite.pl#%#window.ab = false;
 !
 ! NOTE: Romanian
 !
+mobilissimo.ro###emag_button
 observatornews.ro##.outstream-text
 cinemagia.ro##.netflix
 cinemagia.ro##.box-NetflixMovieList
@@ -105124,6 +105132,7 @@ browsershots.org#@#.advert_area
 ||bajavdafwafp.com^
 ||bajowsxpy.com^
 ||bakabok.com^
+||bakaevzrmcqdo.global^
 ||bakedairted.top^
 ||bakertangiblebehaved.com^
 ||bakld.com^
@@ -114481,6 +114490,7 @@ browsershots.org#@#.advert_area
 ||jqxbtyknlsjtjjp.com^
 ||jqyxtzjtoctnj.top^
 ||jravekvyeyybj.top^
+||jravekvyeyyvq.top^
 ||jrbbavbvqmbaz.top^
 ||jrbbavbvqmbzl.top^
 ||jrfngdrodrdop.icu^
@@ -118035,6 +118045,7 @@ browsershots.org#@#.advert_area
 ||ocoaksib.com^
 ||oconner.link^
 ||ocpammownf.com^
+||ocpjyfnbu.com^
 ||ocponcphaafb.com^
 ||ocrolwombhhy.com^
 ||octanmystes.com^
@@ -126397,6 +126408,7 @@ browsershots.org#@#.advert_area
 ||whouvoart.com^
 ||whowhipi.net^
 ||whugesto.net^
+||whukouglomoadsi.com^
 ||whulsaux.com^
 ||whustoargaukro.net^
 ||whutchey.com^
