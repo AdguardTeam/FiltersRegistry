@@ -1,14 +1,14 @@
-! Checksum: /QycUPhCgpw9RndgYZL6DA
-! Diff-Path: ../patches/243/243-s-1747975369-14400.patch
+! Checksum: /E8yT+neR3sH2gFfGd9wPA
+! Diff-Path: ../patches/243/243-s-1748061755-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.69
-! TimeUpdated: 2025-05-23T04:38:30+00:00
+! Version: 2.0.21.70
+! TimeUpdated: 2025-05-24T04:38:13+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-05-23 05:36:23 CEST
+! Last modified: 2025-05-24 05:08:32 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -129,7 +129,7 @@ aftonbladet.se##:is(main > section > div[class^="hyperion"], #main > section > d
 aftonbladet.se##[data-ad-subtype]:upward(1):matches-css(min-height:/[0-9]+/)
 aftonbladet.se,godare.se##div[style*="min-height:240px"]:has(iframe[src*="/widgets/ads/"])
 aftonbladet.se,godare.se##[data-test-tag="prisjakt-carousel"], a[href*="/brandstudio"], a[href*="/brand-studio"], div[class^="advertory-"]:not(.advertory-header-anchor)
-aftonbladet.se,godare.se,byggahus.se,expressen.se,elle.se,femina.se,svenskdam.se,galamagasin.se,rodeo.net,familjeliv.se,vitaestilo.se,veckorevyn.com#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*="/t?a="]', '?url')
+aftonbladet.se,godare.se,byggahus.se,expressen.se,elle.se,femina.se,svenskdam.se,galamagasin.se,rodeo.net,familjeliv.se,vitaestilo.se,veckorevyn.com,golflivet.se#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*="/t?a="]', '?url')
 aftonbladet.se,godare.se,omni.se,omniekonomi.se,svd.se#$#.sp-message-open body { overflow:initial!important; position:unset!important; margin-top:unset!important; }
 aftonbladet.se,stoppapressarna.se,langd.se,computersweden.se,thatsup.se,arbetaren.se,sjofartstidningen.se,restaurangvarlden.se,pressbladet.se,svenskpress.se,foretagsbladet.se,gestrikemagasinet.se,cfanytt.se,lasarnas.se,hembostad.nu,sportidrott.se,nojesmagasinet.nu,halsasverige.se,mandarinmedia.se,svenskmusik.nu,reklamedia.se,motormagasinet.nu,konstmagasinet.nu,allpressen.se,seniorpressen.se##.advert
 agriaffaires.se,truckscorner.se,machineryzone.se##.dp--mb, .dp--pave, .dp--ga, body#lg-annonces .right-container
@@ -180,7 +180,7 @@ alltommc.se#$#html.force--consent.show--consent { overflow-y:unset!important; }
 alltommc.se###cc--main, div[class*="dfp-ads-container"]
 alltomnorrtalje.se##aside.widget_text:has(a[href*="betting"], a[href*="casino"])
 alltomnorrtalje.se##.allto-widget, .allto-before-content, .allto-after-content, article[class*="sponsrad"], div[id^="allto-"]
-alltomsallskapsspel.se##.bannersRight
+alltomsallskapsspel.se##.bannersRight, a.img[target="_blank"]
 alpresor.se###toast-container
 altinget.se##a[href^="/sponsrade"]
 amelia.expressen.se##article p.uppercase.tracking-wide:has-text(Inlägget innehåller annonslänkar):upward(article)
@@ -225,8 +225,8 @@ barnistan.se,welma.se##.featured-teaser:has(a[onclick*="adClick"])
 barnistan.se,welma.se##.newsletter, a[onclick*="adClick"], .gpt-slot
 barnsemester.se##.puffLine, .d-flex > div[style*="min-height"], div[style="overflow-x: hidden;background-color:rgb(250,250,250);width:320px;min-height:200px;"], div[style="overflow-x: hidden;background-color:rgb(250,250,250);width:320px;min-height:320px;"]
 batliv.se##.add_div
-battregolf.se##article.elementor-post:has(a[href*="casino"], a[href*="bonus"], a[href*="betting"], a[href*="/noje/"])
-battregolf.se##.elementor-element[data-widget_type="image.default"], .aeywhae-single
+battregolf.se##article.elementor-post:has(a[href*="casino"], a[href*="bonus"], a[href*="betting"])
+battregolf.se##.aeywhae-single
 battrestadsdel.se###top-banner-mobile, .apd-text, .apds_main, .entry-priomaker, [class^="dls-"], .csmi
 battrestadsdel.se,flashback.se,leta.se###top-banner
 beernews.se##.cookie-consent-wrapper, #takeover-outer
@@ -685,7 +685,7 @@ godare.se##[id^="adPlacement"]:upward(1)
 golfguidenonline.se###citadela-infobar
 golfing.se##.c-partners__item
 golflivet.se##a[href*="/annonssamarbete/"], .deals_block_wrapper, .ai-close-fit
-golf.se##.partner-area
+golf.se##astro-island[props*="mainPartners"]
 goteborgfilmfestival.se##.text-gray.text-xs:has-text(Annons:):upward(1)
 goteborgsgolfaren.se##.sgpb-popup-overlay, #sgpb-popup-dialog-main-div-wrapper, .et_pb_gallery
 goteborg.com#$#body { overflow-y:initial!important }
@@ -1888,6 +1888,7 @@ zeromagazine.nu##div[id^="ads"]
 *$third-party,script,denyallow=jit.si|googleapis.com|telenor.se,domain=startaochdriva.se
 *$all,domain=jobba-hemifran.com|mogenromantik.com|flirtmatch.se|distansarbete.com
 *$all,domain=rentia.se|rentler.se|bostad24.se|hyrio.se|rentify.se|bostadsportal.se|bostadslistan.se
+*$subdocument,third-party,redirect=click2load.html,domain=alltomsallskapsspel.se
 *$ping,domain=fiskejournalen.se
 *$script,redirect-rule=noopjs,domain=elevspel.se
 -popup-analytics
@@ -2894,7 +2895,7 @@ zeromagazine.nu##div[id^="ads"]
 ||cookiepro.com^$domain=birthday.se|djurskyddet.se|havet.nu|upplysning.se
 ||cookietractor.com^$domain=innebandy.se|orientering.se|pluggakuten.se|munskankarna.se|burgerdudes.se|tidningenattention.se|fremia.se|sprintchallenge.se|fondbolagen.se
 ||cookie-script.com/analytics
-||cookie-script.com^$domain=axess.se|dagensjuridik.se|foodfolder.se|arkitektur.se|friluftsframjandet.se|bakasockerfritt.se|handelsradet.se|cirkulation.se|arkitekt.se|webb-tv.nu|eurocampings.se|transportforetagen.se
+||cookie-script.com^$domain=axess.se|dagensjuridik.se|foodfolder.se|arkitektur.se|friluftsframjandet.se|bakasockerfritt.se|handelsradet.se|cirkulation.se|arkitekt.se|webb-tv.nu|eurocampings.se|transportforetagen.se|usabil.nu
 ||covatic.io^$third-party
 ||createsend1.com^$third-party,~image
 ||createsend.com^$third-party
@@ -3312,6 +3313,7 @@ zeromagazine.nu##div[id^="ads"]
 ||storage.googleapis.com/didna$third-party
 ||storymedia.se^$third-party
 ||streamio.com/api/*/stats$xmlhttprequest
+||streamio.com/assets/a-dx$script
 ||suntana.se^$third-party
 ||svd.se/api/dr-edition-teasers
 ||svd.se/api/live-ads/

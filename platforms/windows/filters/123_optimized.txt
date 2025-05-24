@@ -1,9 +1,9 @@
-! Checksum: 1asOwEY/G4EmVUby6tIHlw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1748047947-14400.patch
+! Checksum: SCdGubdtRrm2HzcqcV4bKA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1748061761-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.41.83
-! TimeUpdated: 2025-05-24T00:47:36+00:00
+! Version: 2.1.41.84
+! TimeUpdated: 2025-05-24T04:37:42+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -162,7 +162,6 @@ _social-bar/
 ###articleShare
 ###article_share
 ###article_tools_share
-###articlebottomsharinglinks
 ###aside-social-links-container
 ###at4-share
 ###bdshare
@@ -176,7 +175,6 @@ _social-bar/
 ###block-socialmedialinks
 ###block-socialmedialinks-2
 ###block-socialmenu
-###block-socialsharingblock
 ###blog-follow-widget
 ###bottom-share
 ###btn-share-email
@@ -307,6 +305,10 @@ _social-bar/
 ###horizontalsocial
 ###hshare
 ###iNavSocial
+###iconSocialFacebook
+###iconSocialInstagram
+###iconSocialTwitter
+###iconSocialYoutube
 ###index-social
 ###instagram-link
 ###item_share
@@ -628,7 +630,6 @@ _social-bar/
 ###socialbox
 ###socialbuttons
 ###socialbuttonsbox
-###socialdiv
 ###socialfooter
 ###socialicons
 ###socialleft
@@ -701,7 +702,6 @@ _social-bar/
 ##.ArticleView-bottomShares
 ##.ArticleView-shares
 ##.BtnShareGroup
-##.Custom_Facebook_Page
 ##.FacebookLike
 ##.FacebookShareButton
 ##.FollowButton
@@ -1123,7 +1123,6 @@ _social-bar/
 ##.details-share
 ##.div-share
 ##.divFooterSocial
-##.div_share
 ##.dmSocialHub
 ##.dp-share
 ##.dpsp-network-btn
@@ -1175,6 +1174,7 @@ _social-bar/
 ##.entry-socials
 ##.entryShare
 ##.entry__share
+##.entry_share
 ##.entypo-share
 ##.entypo-social
 ##.epcl-share-container
@@ -1280,7 +1280,6 @@ _social-bar/
 ##.fbShareTrigger
 ##.fb_bar
 ##.fb_like_and_share
-##.fb_like_box
 ##.fb_report_icon
 ##.fb_share
 ##.fb_share_link
@@ -1370,6 +1369,7 @@ _social-bar/
 ##.footer-facebook
 ##.footer-facebook-icon
 ##.footer-fb
+##.footer-fb-icon
 ##.footer-follow
 ##.footer-follow-us
 ##.footer-followUs
@@ -1557,7 +1557,6 @@ _social-bar/
 ##.header__social-media
 ##.header__social-nav
 ##.header__socials
-##.header_sharing
 ##.header_sns
 ##.header_social
 ##.header_social_icon
@@ -1850,8 +1849,6 @@ _social-bar/
 ##.main-footer__socials
 ##.main-header__social
 ##.main-nav-social
-##.mainVerticalArticleSharingLinks
-##.main_search_social
 ##.mashicon-facebook
 ##.mashicon-google
 ##.mashicon-share
@@ -2141,6 +2138,7 @@ _social-bar/
 ##.scSocialIconsWidget
 ##.scriptlesssocialsharing
 ##.scroll-triggered-box
+##.sd-share
 ##.sd-share-icon
 ##.sd-sharing
 ##.sd-social
@@ -2457,6 +2455,7 @@ _social-bar/
 ##.share_icons
 ##.share_icons_container
 ##.share_inline_header
+##.share_items
 ##.share_line
 ##.share_link
 ##.share_linkedin
@@ -3303,7 +3302,6 @@ _social-bar/
 ##.utility-social
 ##.v-follow-share
 ##.vbseo_share
-##.vc_container_social_button
 ##.vc_share_link_container
 ##.vc_social_button
 ##.vc_social_icons
@@ -3694,6 +3692,7 @@ indiatoday.in##.Story_whatsapp_channel__6xdtB
 grammarly.com##._3fq8S-container
 pixivision.net##._floated-bottom-bar
 pixivision.net##._follow-us-card
+tableconvert.com##._share-wrapper
 tvline.com##._socialMedia_1y23u_1
 france24.com##.a-share-button
 tandfonline.com##.a2a_share_target
@@ -3749,6 +3748,7 @@ consumerreports.org##.btn__social
 notateslaapp.com##.button-follow
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
+nature.com##.c-article-extras-additional-links
 lawandcrime.com##.c-article-foot__site
 thenextweb.com##.c-engage
 lawandcrime.com##.c-header-social-item
@@ -3767,6 +3767,7 @@ dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
 economist.com##.css-11yt5xn
+techcommunity.microsoft.com##.custom_widget_MicrosoftFooter_social-share_yuh6w_138
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,catholicnewsagency.com##.donation-box
@@ -3910,7 +3911,6 @@ theroar.com.au##.pm-share-horizontal
 getcomics.org##.post-footer-shr
 discussingfilm.net,douglasnow.com##.post-share-bot
 discussingfilm.net,douglasnow.com,rockstarintel.com,watchinamerica.com##.post-share-float
-churchpop.com##.post-share-section
 tedium.co##.post-social
 foodandwaterwatch.org,medcitynews.com,publicbooks.org##.post-social-share
 cointelegraph.com##.post__socials-block
@@ -4321,7 +4321,6 @@ fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
 alfredopedulla.com##.tw-banner
 mymovies.it##.vota-pul-consiglio
-agendadigitale.eu,corrierecomunicazioni.it,economyup.it##a[href="#condivisioni"]
 ilgiorno.it,ilrestodelcarlino.it,iltelegrafolivorno.it,lanazione.it,quotidiano.net##div[class^="SocialShare_"]
 bizgate.nikkei.com##.c-single-sns
 seikatsusha-ddm.com##.p-under-sns
@@ -4345,10 +4344,7 @@ businesskorea.co.kr##.user-sns
 forbes.pl##.articleSocials
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
 terrabrasilnoticias.com###block-18
-noticias.cancaonova.com###cn-post-mark
 a12.com###gb-widget-6981
-noticias.cancaonova.com###redes
-noticias.cancaonova.com###share-widget-horizontal
 superesportes.com.br###shareitens
 bomdia.eu###social-menu
 tecnoblog.net###tb-banner-whatsapp
@@ -4359,14 +4355,11 @@ brasil247.com##.article__notif
 ub.edu.br##.bdt-social-share
 diariodolitoral.com.br##.bloco-compartilhar
 cnnbrasil.com.br##.blogger__social__midia
-fecatolica.com.br##.botoes-sociais-mat
-neofeed.com.br##.box-social-single
 independente.com.br##.box-whatsapp
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
-gazetadopovo.com.br##.c-social-networks
-atribuna.com.br,ebc.com.br,engeplus.com.br,forbes.com.br##.compartilhamento
+apoia.se##.campaign-metrics-card__share
 bcb.gov.br,folhape.com.br,ocioso.com.br,opoder.com.br,portalperifacon.com,sampi.net.br##.compartilhar
 jovempan.com.br##.cta-model
 ndmais.com.br##.cta-whatsapp
@@ -4377,7 +4370,6 @@ steamverde.net##.focus-social
 folha.uol.com.br##.gallery-widget-carousel__info-share
 azscore.com.br##.google-news__block
 tviplayer.iol.pt##.icon-share
-opoder.com.br##.iconCompartilhe
 diariodolitoral.com.br##.item-social-rodape
 uol.com.br##.jupiter-share
 brasil247.com##.links
@@ -4387,16 +4379,11 @@ poder360.com.br##.navigation-menu__social-media
 noataque.com.br##.noticia-share
 oantagonista.com.br##.post-interna__content__compartilhamento
 cbntotal.com.br##.post__content__share
-fecatolica.com.br##.redes-sociais-footer
-ebc.com.br##.redes-sociais-header
-opoder.com.br##.redes-sociais-rodape
-fecatolica.com.br##.redes-sociais-topo
 bomdia.eu##.seguir-bom-dia
 bandab.com.br##.share-bb
 bemparana.com.br##.share-bp
 dcmais.com.br##.share-ch
 sicnoticias.pt##.share-toggle-wrapper
-gov.br##.share__container
 cnnbrasil.com.br##.single-editorial__follow
 cnnbrasil.com.br##.single-sharer
 assinecarta.com.br,b3.com.br##.sociais
@@ -4409,18 +4396,14 @@ rollingstone.com.br##.social_content_article
 tvi.iol.pt##.social_media_links
 meiobit.com##.socialfloating
 uol.com.br##.solar-header-columnist-socialmedia-content
-rbatv.com.br##.surface-container
 terra.com.br##.t360-sharebar__wrapper
 tecmundo.com.br##.tec--didyouknow
 tecmundo.com.br##.tec--share__container
 dn.pt##.text-story-m_share__FrlMt
-sbtnews.sbt.com.br##.uiSocialMediaContainer
 a12.com##.wg-share-hrz
 ndmais.com.br##.whats-box
 dcmais.com.br##.whatsapp-ch
 metro1.com.br##.whatsapp-link-metropole
-gaudiumpress.org##.widget_gaudium_social_links_widget
-centroculturalfcsn.org.br##.widget_jms_widget_social_menu
 r7.com##[class*="article-fill-social-"]
 infomoney.com.br##[data-ds-element^="social-share-"]
 bcb.gov.br##barra-midias-sociais
@@ -4428,7 +4411,6 @@ fogaonet.com##div[class^="socialShare_"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]
 ||aventurasnahistoria.com.br/static/socialmedia/
 ||bnews.com.br/static/socialmedia/
-||hollywoodforevertv.com.br/static/socialmedia/
 inforesist.org###push_notificationBlock
 sibnet.ru###telegram_push
 rg.ru##.StoryContentMainShare_root__LRFwu
@@ -4514,7 +4496,6 @@ elliberal.com.ar##.links-social
 diariodemocracia.com##.list-social-media
 atlanticohoy.com,diario16plus.com,planetarealmadrid.com##.m-social-profile
 milanuncios.com##.ma-AdDetailShare
-perfil.com##.main-footer__redes
 canalnet.tv##.main-video-single__socials
 genbeta.com,vidaextra.com##.menu-follow
 debate.com.mx,show.news,tonica.la##.mod--googlenews
