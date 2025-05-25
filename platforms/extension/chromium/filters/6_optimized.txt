@@ -1,5 +1,5 @@
-! Checksum: 7OOt7/YwzRGMMuQwj36LDw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1748099433-3600.patch
+! Checksum: YJy38TxnuTdroXQD+1qWHw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1748141038-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.47.71
@@ -755,7 +755,6 @@ stylebook.de##.af-widget.is-style-advertisement-mark
 stylebook.de##section.fixed-bottom[data-type="sticky-bar"] > a[target="_blank"]
 myfanbase.de##div[id^="ad-"]
 freundin.de##li:has(> meta ~ div[class] > div[class] > .advtl-container)
-freundin.de##li:has(> meta + div[class] > div[class] > div[class] > .adv-container)
 mydealz.de##div[id*="AdSlotPortal"]
 blick.ch##[class*="slot-code-"]
 oeffentlicher-dienst.info##div[class^="fallback-"]
@@ -831,7 +830,6 @@ justetf.com##.sidebar > div:has(> div.hidden-sm-down > div.Ad_disclaimer)
 justetf.com##.wAd ~ tr[role="row"] ~ tr.info
 justetf.com##.wAd
 finanzen.net##.sticky__container--mrec-big
-finanzen.net##.news-container__text > p > i:has(> a[href*="finanzen.net/"][target="_blank"])
 aerotelegraph.com##.advert-inner
 kino.de##.teaserheld-header-wrapper
 kino.de#%#//scriptlet('remove-class', 'show-teaserheld-header', 'body')
@@ -1228,7 +1226,6 @@ eispop.com##.footer_partner_container_wrapper
 pornohirsch.net##.video > div[id][style^="background-image:"] + aside[id]
 pornohirsch.net###wrapper_content > div.cf + aside[id]
 paris360.de,portugal360.de###block-adsenseleaderboard
-firstname.de##.mod_footer_werbung
 firstname.de##iframe[src^="https://api.heise.de/svc/pvg-widget/"]
 immowelt.de##div[class^="BillboardBanner"]
 kurier.de,np-coburg.de,frankenpost.de##a[data-tags*="Advertorial"]
@@ -1631,6 +1628,7 @@ techstage.de##div[class^="heise-ad"]
 widget.namerobot.de##.nr-gpt
 raidrush.net###top_ga
 raidrush.net###foot_ga
+pcgames.de##.centerRectad
 focus.de#$##top-banner { max-height: 0px !important; min-height: 0px !important; }
 focus.de##div[class*="cls_slot_"]
 file-upload.net###dwdiv2-ads
@@ -2193,7 +2191,6 @@ ladies.de#?#.card-list > div.col-xs-12 > div.text-left:has(> div.sol-content)
 infranken.de#?#.listing > .listing-item:has(> article > div[class] > div[class] > .post-location > span:contains(ANZEIGE))
 infranken.de#?#.listing > .listing-item:has(> article > .teaser-inner > .post-content > .post-location:contains(ANZEIGE))
 dubisthalle.de#?#.sidebar-content > div[id^="custom_html"]:has(>.widget-title:contains(Werbung))
-deichstube.de#?#.id-g--oneCol > div[data-id-module="col-width-watcher"] > .id-Container--proBEEP:matches-css(before, content: Anzeige)
 deskmodder.de#?##page-body > .post.has-profile:not(.online):has(> .inner > .postbody > div[id^="post_content"] > .content > .adsbygoogle)
 amazon.de#?#div[class*="csm-placement-id-"]:has(> div[cel_widget_id^="adplacements"])
 schnittberichte.com#?#.wrapper__content .section__shopping:has(> .section__shopping--ulist)
@@ -2413,7 +2410,6 @@ _woz_banner_vote.
 ###WerbungUnten
 ###Werbung_Sky
 ###ad-qm-sidebar-oben
-###ad_lang
 ###ad_rechts
 ###adcontentoben
 ###adliste
@@ -2523,6 +2519,7 @@ _woz_banner_vote.
 ##.werb_textlink
 ##.werbebanner
 ##.werbeblock
+##.werbeboxBanner
 ##.werbeflaeche
 ##.werbehinweis
 ##.werbenbox
@@ -2642,6 +2639,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||adklick.net^$third-party
 ||adspirit.net^$third-party
 ||adsplash.de^$third-party
+||advolution.de^$third-party
 ||adworx.at^$third-party
 ||aff-handler.com^$third-party
 ||affilimatch.de^$third-party
@@ -2683,14 +2681,13 @@ wetter.com#@#div[id^="div-gpt-"]
 ||itrack.it^$third-party
 ||jojoad.com^$third-party
 ||localpoint.ch^$third-party
-||marketing-guerilla.de^$third-party
-||mega-ad.de^$third-party
 ||mirando.de^$third-party
 ||nativendo.de^$third-party
 ||neqty.net^$third-party
 ||netpoint-media.de^$third-party
 ||netwayer.de^
 ||nonstoppartner.net^$third-party
+||nwave.de^$third-party
 ||onlymega.com^$third-party
 ||payclick.it^$third-party
 ||playamedia.com^$third-party
@@ -2830,6 +2827,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||banner.click-tt.de^
 ||bayernwelle.de/cdn/uploads/banner-
 ||bbszene.de^*/banner/
+||beobachter-online.de^*/banner/
 ||berglouter.com/images/banners/
 ||bluray-disc.de/images/banner/
 ||boerse-social.com/media/Content/Partner/
@@ -3166,7 +3164,6 @@ privatmarkt.ch###ContentFooterPartner
 druckerchannel.de###DCA_TOP
 druckkosten.de###DKGA_LEAD
 druckkosten.de###DKGA_SKY
-eatsmarter.de###EAT_D_Index_Top_Wrapper
 inside-digital.de###INS_D_ROS_Parallax
 staedte-info.net###Layer2
 tips.at###Leaderboard_1_Superbanner_1_Billboard_1_Top_
@@ -4504,7 +4501,6 @@ wallstreet-online.de##.breakingNewsOfferteBox:has(span.offerteFlag)
 sportscheck.com##.c-product-tile:has(div.c-product-tile__sponsored)
 experten.de##.c-sidebar:has(> .widget-odd > div[class^="c-ad-exper-"])
 googlewatchblog.de##.card-content > center:has(ins.adsbygoogle)
-shop-apotheke.at##.cross-sell-horizontal-slider__item-wrapper:has([href^="https://api.sae.systems/rma/api/v"])
 feuerwehrmagazin.de##.excerpt-tile.cell.small-12.medium-6:has(.advertorials)
 obi.*##.find-brandshop-grid:has([data-ui-name="find-artikelkachel-gesponsert-marker"])
 prad.de##.first-list > li:has(a[href^="https://amzn.to/"])
