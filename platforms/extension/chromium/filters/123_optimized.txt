@@ -1,9 +1,9 @@
-! Checksum: DksFmH9PZY0HZTF3Yv1jrw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1748134332-14400.patch
+! Checksum: 2XQrQo8RRw4HEd7J4bJhxA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1748148212-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.41.89
-! TimeUpdated: 2025-05-25T00:48:01+00:00
+! Version: 2.1.41.90
+! TimeUpdated: 2025-05-25T04:39:12+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -175,6 +175,7 @@ _social-bar/
 ###block-socialmedialinks
 ###block-socialmedialinks-2
 ###block-socialmenu
+###block-socialsharingblock
 ###blog-follow-widget
 ###bottom-share
 ###btn-share-email
@@ -258,6 +259,7 @@ _social-bar/
 ###followFBSvg
 ###followTwitter
 ###followUs
+###follow_box
 ###follow_buttons
 ###follow_us
 ###followus
@@ -321,6 +323,7 @@ _social-bar/
 ###js-share
 ###js-share-links
 ###large_share_wrapper
+###likeThisPost
 ###linkedin_share
 ###mainShare
 ###menu-footer-social-links
@@ -659,7 +662,6 @@ _social-bar/
 ###top-share
 ###topSocial
 ###top_share
-###topsocial
 ###tronReddiShare
 ###twShare
 ###tweet-button
@@ -678,7 +680,6 @@ _social-bar/
 ###twitter_btn
 ###twitter_button
 ###twitter_content
-###twitter_follow
 ###twitter_link
 ###twitter_share
 ###twitter_timeline-2
@@ -738,7 +739,6 @@ _social-bar/
 ##.ShareRail
 ##.ShareThis
 ##.Shariff
-##.SharingContainer
 ##.SiteFooter__follow
 ##.Social-Media
 ##.Social-link
@@ -1596,7 +1596,6 @@ _social-bar/
 ##.icon-circle-youtube
 ##.icon-condividi
 ##.icon-connect
-##.icon-dailymotion
 ##.icon-delicious
 ##.icon-digg
 ##.icon-facebook-alt
@@ -1964,6 +1963,7 @@ _social-bar/
 ##.ns-social
 ##.nv-post-share
 ##.o-footer__social
+##.o-footer__socials
 ##.o-shareBooster__item
 ##.o-social-icon
 ##.oSocial
@@ -2008,6 +2008,7 @@ _social-bar/
 ##.pgevoke-header-row2-right-social
 ##.photo-share
 ##.pic-share
+##.picto_facebook
 ##.picto_twitter
 ##.pin-it
 ##.pin-it-button
@@ -2618,6 +2619,7 @@ _social-bar/
 ##.sideBarShare
 ##.sideShare
 ##.side_sns
+##.side_social
 ##.side_twitter
 ##.sidebar-facebook
 ##.sidebar-share
@@ -3005,6 +3007,7 @@ _social-bar/
 ##.socialSharing
 ##.socialSticky
 ##.socialTab
+##.socialToggle
 ##.socialToolbar
 ##.socialTools
 ##.socialTop
@@ -3109,6 +3112,7 @@ _social-bar/
 ##.ss-follow-network
 ##.ss-inline-share-content
 ##.ss-instagram
+##.ss-share
 ##.ss-share-network-content
 ##.ss-sharing-container
 ##.ss-social-button-wrapper
@@ -3374,6 +3378,7 @@ _social-bar/
 ##.widget_easy_facebook_page_plugin
 ##.widget_epcl_social
 ##.widget_essbsocialfollowerscounterwidget
+##.widget_facebook-like-box
 ##.widget_facebook_likebox
 ##.widget_follow
 ##.widget_follow_button_widget
@@ -3748,6 +3753,7 @@ consumerreports.org##.btn__social
 notateslaapp.com##.button-follow
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
+247wallst.com##.byline-social
 nature.com##.c-article-extras-additional-links
 lawandcrime.com##.c-article-foot__site
 thenextweb.com##.c-engage
@@ -3785,7 +3791,6 @@ yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
 techradar.com##.facebook-icon
 blogto.com##.facebook-round-control
-thefastmode.com##.facebook_plugin
 knowyourmeme.com##.fb-page-like-box
 eadaily.com##.feed
 lubuntu.me##.ff-social-icon
@@ -3805,6 +3810,7 @@ windowsreport.com##.follow-more-news
 metro.co.uk##.follow-promo
 alarabiya.net,ausgamers.com,cgtn.com,cloudwards.net,crypto.news,exitoina.perfil.com,magazine.artstation.com,mensxp.com,notateslaapp.com,republicworld.com,timeslive.co.za,trueachievements.com,truetrophies.com##.follow-us
 metroworldnews.com.br,publimetro.com.mx##.follow-us-wrap
+kentonline.co.uk##.followbox
 rbth.com##.follows-channel
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
 chinafile.com,derechadiario.com.ar##.footer-links
@@ -3941,7 +3947,6 @@ dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
 dailymail.co.uk,thisismoney.co.uk##.share-flipboard
 digitimes.com##.share-frame
-newsnow.co.uk##.share-highlight
 cgtn.com,citynews.ca##.share-icon
 mymodernmet.com##.share-it-side
 dailymail.co.uk,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
@@ -3985,7 +3990,6 @@ bonappetit.com,cntraveler.com,them.us##.social-icons--share
 tmz.com##.social-item
 afro.com,elsol.com.ar,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,theatlantavoice.com,washingtoncitypaper.com,washingtonmonthly.com##.social-links-menu
 denofgeek.com##.social-links__anchor--sharing
-civileats.com,cyberdaily.au,gamingbolt.com,petrobras.com.br##.social-media-container
 btvnovinite.bg,outlookindia.com,pgpf.org##.social-media-icons
 knowablemagazine.org,leouve.com.br,newskarnataka.com,ric.com.br,securityaffairs.com,ucl.ac.uk##.social-media-links
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
@@ -3998,7 +4002,6 @@ vinepair.com##.social-share-block
 iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
-arnnet.com.au,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
 trip101.com##.social-sharing-sidebar
 mirror.co.uk,themirror.com##.social-sites
 finebooksmagazine.com##.social-tools
@@ -4053,7 +4056,6 @@ advocate.com,slashdot.org##.tw
 apptrigger.com,motherjones.com##.tweet
 videocardz.com##.twitter-follow-button
 blogto.com##.twitter-round-control
-thefastmode.com##.twitter_plugin
 unsw.edu.au##.uds-social-follow
 news.sky.com##.ui-news-footer-social
 news.sky.com##.ui-news-footer-social-link
@@ -4226,7 +4228,6 @@ bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
 t3n.de##.tg-pockethinweis
 t3n.de##.tg-social-bottom
-watson.ch##.watson-sharebuttons
 handelsblatt.com##app-icon-link
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
@@ -4380,6 +4381,7 @@ poder360.com.br##.navigation-menu__social-media
 noataque.com.br##.noticia-share
 oantagonista.com.br##.post-interna__content__compartilhamento
 cbntotal.com.br##.post__content__share
+ebc.com.br##.redes-sociais-header
 bomdia.eu##.seguir-bom-dia
 bandab.com.br##.share-bb
 bemparana.com.br##.share-bp
@@ -4387,7 +4389,6 @@ dcmais.com.br##.share-ch
 sicnoticias.pt##.share-toggle-wrapper
 cnnbrasil.com.br##.single-editorial__follow
 cnnbrasil.com.br##.single-sharer
-assinecarta.com.br,b3.com.br##.sociais
 bnews.com.br##.social-icon-footer
 bnews.com.br##.social-itens
 publico.pt##.social-tools
@@ -4692,3 +4693,4 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||github.io^$generichide
 @@||ifttt.com^$generichide
 @@||restream.io^$generichide
+@@||switching.software^$generichide
