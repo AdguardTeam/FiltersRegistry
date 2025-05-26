@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ci0d2XeQwYwsLvxwgX7eeA
-! Diff-Path: ../patches/20/20-s-1748251721-3600.patch
+! Checksum: 5oHuFuCS2bv42K5xgrXCCg
+! Diff-Path: ../patches/20/20-s-1748254547-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.21.21
-! TimeUpdated: 2025-05-26T09:24:46+00:00
+! Version: 2.0.21.22
+! TimeUpdated: 2025-05-26T10:11:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -62,6 +62,8 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+bilibili.tv##.play-page-banner
+bilibili.tv##.bstar-header__actions > div.bstar-header__dropdown:has(> div > a.bstar-header__download-btn)
 korona.ru###__next > div[data-testid="Banner"]:has(> div > a[data-testid="Download"])
 kimbino.*##.affix
 op.gg##.items-center.gap-3.px-4:has(> .overflow-hidden ~ div a[href^="https://play.google.com/store/apps/details"])
@@ -3653,6 +3655,11 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+sukima.me#$#.v-toolbar__content > div.flex-column > div.row:has(> a[href="https://xenj9.app.goo.gl/REZd"]) { display: none !important; }
+sukima.me#$#.v-application--wrap > header { height: 102px !important; }
+sukima.me#$#.v-application--wrap > header.v-app-bar--is-scrolled { transform: translateY(-52px) !important; }
+sukima.me#$#.v-toolbar__content { height: auto !important; }
+sukima.me#$?#.v-main[class*="pt-content"] { margin-top: 105px !important; }
 meesho.com##+js(set-cookie, isDownloadCta, false)
 pickaboo.com##div[class^="ApplicationBanner"]
 gidadedektifi.com##div[class^="XDownloadApp_"]
