@@ -1,9 +1,9 @@
-! Checksum: HAuFj7j6CAf2uMrUWC0JAg
-! Diff-Path: ../patches/2/2-s-1748240062-3600.patch
+! Checksum: YO3mjUyKrx8rRNDiyih+VA
+! Diff-Path: ../patches/2/2-s-1748243569-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.85.55
-! TimeUpdated: 2025-05-26T06:09:40+00:00
+! Version: 2.3.85.56
+! TimeUpdated: 2025-05-26T07:08:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||edge.atmtd.com^$third-party
 ||granaryhills.com^
 ||undoneferocious.com^
 ||chief-border.com^
@@ -18920,6 +18921,9 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206196
+pormo.xyz,webseriessex.com#$##myTestAd { height: 1px !important; }
+pormo.xyz,webseriessex.com#%#//scriptlet('prevent-setTimeout', '.clientHeight')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206226
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=smoothpre.com
@@ -31516,6 +31520,9 @@ akaanseutu.fi##.omamainos-products
 ! and that argument is an empty object due to the prevent fetch rule
 mtv.fi#%#!function(){const r={apply:(r,o,e)=>(e[0]?.includes?.("{}")&&(e[0]="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<vmap:VMAP version=\"1.0\" xmlns:vmap=\"http://www.iab.net/videosuite/vmap\"><vmap:AdBreak timeOffset=\"start\" breakType=\"linear\" breakId=\"4f95e542-9da8-480e-8c2a-7ade1ffdcc3d\"><vmap:AdSource allowMultipleAds=\"true\" followRedirects=\"true\"><vmap:VASTAdData></vmap:VASTAdData></vmap:AdSource></vmap:AdBreak></vmap:VMAP>"),Reflect.apply(r,o,e))};window.DOMParser.prototype.parseFromString=new Proxy(window.DOMParser.prototype.parseFromString,r)}();
 mtv.fi#%#//scriptlet('trusted-replace-fetch-response', '/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/', '$1</VAST>', 'v.fwmrm.net/ad/')
+! https://github.com/AdguardTeam/AdguardFilters/issues/206215
+! We have generic redirect rule for "adnxs.com", but video does not load when request is redirected, so we need to block it
+||adnxs.com^$domain=iltalehti.fi,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167335
 iltalehti.fi##.telkku-ads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162636
@@ -96521,6 +96528,7 @@ browsershots.org#@#.advert_area
 ||7c3514356.com^
 ||7c5734761f.com^
 ||7ca78m3csgbrid7ge.com^
+||7d77f23c90.com^
 ||7ee4c0f141.com^
 ||7f3adt.com^
 ||7fc0966988.com^
@@ -104625,6 +104633,7 @@ browsershots.org#@#.advert_area
 ||fbpqvs.com^
 ||fc3ppv.xyz^
 ||fc5d7c4624.com^
+||fc9e63a7c3.com^
 ||fcb6adad17.com^
 ||fcc217ae84.com^
 ||fccinteractive.com^
@@ -110366,6 +110375,7 @@ browsershots.org#@#.advert_area
 ||medicalcandid.com^
 ||medicationneglectedshared.com^
 ||medievalbraneedlework.com^
+||mediocre-hire.pro^
 ||mediocrerope.pro^
 ||meditateenhancements.com^
 ||mediuln.com^
@@ -115729,6 +115739,7 @@ browsershots.org#@#.advert_area
 ||rwqovmoezrvrv.top^
 ||rwukupjis.com^
 ||rwuruwrufmp.com^
+||rwwmbymaezkla.top^
 ||rwyfudaqldbcoz.com^
 ||rxaknawcahtqi.xyz^
 ||rxcihltrqjvdeus.com^
@@ -118196,6 +118207,7 @@ browsershots.org#@#.advert_area
 ||tnctufo.com^
 ||tneca.com^
 ||tnpads.xyz^
+||tnupftuhrahco.com^
 ||toadcampaignruinous.com^
 ||toafuptoophol.com^
 ||toaglegi.com^
@@ -118836,6 +118848,7 @@ browsershots.org#@#.advert_area
 ||uduxztwig.com^
 ||udvlz.org^
 ||udzpel.com^
+||uedrrztkxmplx.xyz^
 ||uejntsxdffp.com^
 ||uel-uel-fie.com^
 ||uelllwrite.com^
@@ -119230,6 +119243,7 @@ browsershots.org#@#.advert_area
 ||uzbiajlzdylja.icu^
 ||uzdhsjuhrw.com^
 ||uzfcfxphvqyk.com^
+||uzoucmossocha.com^
 ||uzvcffe-aw.vip^
 ||v2cigs.com^
 ||v6rxv5coo5.com^

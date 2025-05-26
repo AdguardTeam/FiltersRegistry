@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: fPtaJVkQL5KxLDQ0fac6nA
-! Diff-Path: ../patches/2/2-s-1748240066-3600.patch
+! Checksum: xrVOyvfcYQEkxIyNJeR4Ag
+! Diff-Path: ../patches/2/2-s-1748243572-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.85.55
-! TimeUpdated: 2025-05-26T06:09:40+00:00
+! Version: 2.3.85.56
+! TimeUpdated: 2025-05-26T07:08:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||edge.atmtd.com^$third-party
 ||granaryhills.com^
 ||undoneferocious.com^
 ||chief-border.com^
@@ -18759,6 +18760,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206196
+pormo.xyz,webseriessex.com#$##myTestAd { height: 1px !important; }
+pormo.xyz,webseriessex.com##+js(no-setTimeout-if, .clientHeight)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206226
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=smoothpre.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206194
@@ -30336,6 +30340,9 @@ akaanseutu.fi##.omamainos-products
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180756
 ! Website validates VMAP using DOMParser, so the script below adds a valid VMAP if the argument is '{}'
 ! and that argument is an empty object due to the prevent fetch rule
+! https://github.com/AdguardTeam/AdguardFilters/issues/206215
+! We have generic redirect rule for "adnxs.com", but video does not load when request is redirected, so we need to block it
+||adnxs.com^$domain=iltalehti.fi,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167335
 iltalehti.fi##.telkku-ads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162636
@@ -88578,6 +88585,7 @@ browsershots.org#@#.advert_area
 ||7c3514356.com^
 ||7c5734761f.com^
 ||7ca78m3csgbrid7ge.com^
+||7d77f23c90.com^
 ||7ee4c0f141.com^
 ||7f3adt.com^
 ||7fc0966988.com^
@@ -96682,6 +96690,7 @@ browsershots.org#@#.advert_area
 ||fbpqvs.com^
 ||fc3ppv.xyz^
 ||fc5d7c4624.com^
+||fc9e63a7c3.com^
 ||fcb6adad17.com^
 ||fcc217ae84.com^
 ||fccinteractive.com^
@@ -102423,6 +102432,7 @@ browsershots.org#@#.advert_area
 ||medicalcandid.com^
 ||medicationneglectedshared.com^
 ||medievalbraneedlework.com^
+||mediocre-hire.pro^
 ||mediocrerope.pro^
 ||meditateenhancements.com^
 ||mediuln.com^
@@ -107786,6 +107796,7 @@ browsershots.org#@#.advert_area
 ||rwqovmoezrvrv.top^
 ||rwukupjis.com^
 ||rwuruwrufmp.com^
+||rwwmbymaezkla.top^
 ||rwyfudaqldbcoz.com^
 ||rxaknawcahtqi.xyz^
 ||rxcihltrqjvdeus.com^
@@ -110253,6 +110264,7 @@ browsershots.org#@#.advert_area
 ||tnctufo.com^
 ||tneca.com^
 ||tnpads.xyz^
+||tnupftuhrahco.com^
 ||toadcampaignruinous.com^
 ||toafuptoophol.com^
 ||toaglegi.com^
@@ -110893,6 +110905,7 @@ browsershots.org#@#.advert_area
 ||uduxztwig.com^
 ||udvlz.org^
 ||udzpel.com^
+||uedrrztkxmplx.xyz^
 ||uejntsxdffp.com^
 ||uel-uel-fie.com^
 ||uelllwrite.com^
@@ -111287,6 +111300,7 @@ browsershots.org#@#.advert_area
 ||uzbiajlzdylja.icu^
 ||uzdhsjuhrw.com^
 ||uzfcfxphvqyk.com^
+||uzoucmossocha.com^
 ||uzvcffe-aw.vip^
 ||v2cigs.com^
 ||v6rxv5coo5.com^
