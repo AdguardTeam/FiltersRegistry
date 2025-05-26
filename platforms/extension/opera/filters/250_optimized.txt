@@ -1,5 +1,5 @@
-! Checksum: IAIgoQFjmjxHu1nBwp7xfQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1748177351-14400.patch
+! Checksum: PHxzUwJTKZdLHWcXs9Xqew
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1748234664-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.5
@@ -111,7 +111,6 @@ linkedin.com#$?#body { overflow: auto !important; }
 .xyz/*/?*=*&*=*&*=*&*=*&*=$document
 ||ublock.org^$document
 ||fileplanet.com^$document,popup
-||test-iq.org^$document
 windowsreport.com##.code-block
 appuals.com##.info.box
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
@@ -162,6 +161,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||pomegranatestaff.com^$all
 ||rawwhirlwindrev.com^$all
 /^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
+/^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 ||auslogics.com^$document
 ||mediaget.com^$all
 ||totalwebshield.com^$all
@@ -949,7 +949,6 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
-/snowfall.min.js^
 /pureSnow.js^
 /frosmo.easy.js^
 /snowplow$script,domain=casamundo.se|hemnet.se
@@ -1212,7 +1211,6 @@ $removeparam=irpid
 $removeparam=iradtype
 $removeparam=irmptype
 $removeparam=mp_value1
-$removeparam=__twitter_impression
 $removeparam=email_work_card
 $removeparam=tracking_source
 $~image,removeparam=itok
@@ -1358,6 +1356,7 @@ $~ping,removeparam=lcid,domain=~rekono.si
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
+$removeparam=om_mmc
 $removeparam=trackingCode
 $removeparam=k_clickid
 $removeparam=affiliateCustomId
@@ -1650,6 +1649,7 @@ $removeparam=pv_ts
 $removeparam=bidswitch_ssp_id
 $removeparam=tgclid
 $removeparam=dlsi
+$removeparam=24sata_ref
 $removeparam=adset_id
 $removeparam=tw_source
 $removeparam=tw_adid
@@ -1884,7 +1884,6 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||ipv6.google.com^$document,removeparam=no_sw_cr
 ||ipv6.google.com^$document,removeparam=zx
 @@://www.google.*/maps^$removeparam=utm_campaign
-@@://ipv6.google.com/maps^$removeparam=utm_campaign
 ||tiktok.com^$removeparam=_r
 $removeparam=u_code
 $removeparam=is_copy_url
@@ -2011,7 +2010,6 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
-||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
 ||bilibili.com^$removeparam=bbid
@@ -2298,7 +2296,6 @@ $removeparam=deep_and_deferred
 ||lenovo.com^$removeparam=orgRef
 $removeparam=ppref,domain=digidip.net
 ||dhgate.com^$removeparam=f
-$removeparam=brand,domain=cyberghostvpn.com|privateinternetaccess.com
 ||zhihu.com^$removeparam=hybrid_search_source
 ||zhihu.com^$removeparam=hybrid_search_extra
 ||theregister.com^$removeparam=td
@@ -2563,21 +2560,18 @@ $document,removeparam=af_xp
 !+ NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
 ||windscribe.com^$document,removeparam=pcpid
-||carousell.$removeparam=t-id
-||carousell.$removeparam=t-referrer_browse_type
-||carousell.$removeparam=t-referrer_page_type
-||carousell.$removeparam=t-referrer_request_id
-||carousell.$removeparam=t-referrer_search_query
-||carousell.$removeparam=t-referrer_search_query_source
-||carousell.$removeparam=t-referrer_sort_by
-||carousell.$removeparam=t-tap_index
 ||qzone.qq.com^$document,removeparam=jumptoqzone
 ||qzone.qq.com^$document,removeparam=subtype
 ||qzone.qq.com^$document,removeparam=ciphertext
 ||qzone.qq.com^$document,removeparam=blog_photo
 ||qzone.qq.com^$document,removeparam=g
+||qzone.qq.com^$document,removeparam=res_uin
+||qzone.qq.com^$document,removeparam=cellid
+||qzone.qq.com^$document,removeparam=subid
+||qzone.qq.com^$document,removeparam=bp1
 ||qzone.qq.com^$document,removeparam=bp2
 ||qzone.qq.com^$document,removeparam=bp7
+||qzone.qq.com^$document,removeparam=g_f
 ||asos.com^$removeparam=ctaref
 ||gumroad.com^$removeparam=recommended_by
 $document,removeparam=s_campaign
@@ -2732,6 +2726,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 #@#.text_ad
 ##.text_ad:not(html,body,:empty)
 #@#.text_ads
+##.text_ads:not(html,body,:empty)
 #@#.textad
 ##.textad:not(html,body,:empty)
 #@#.textAd

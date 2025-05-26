@@ -1,9 +1,9 @@
-! Checksum: lEdIjjNru830mdMN49TcSg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1748220730-14400.patch
+! Checksum: L2LsMWWCaciQseRPTfBSaQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1748234663-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.41.95
-! TimeUpdated: 2025-05-26T00:47:47+00:00
+! Version: 2.1.41.96
+! TimeUpdated: 2025-05-26T04:39:38+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -206,6 +206,7 @@ _social-bar/
 ###facebookLike
 ###facebookLikeBox
 ###facebookLikeButton
+###facebookRecommend
 ###facebookShareButton
 ###facebookWidget
 ###facebookWrapper
@@ -275,6 +276,7 @@ _social-bar/
 ###footer-youtube
 ###footerConnect
 ###footerFollow
+###footerShare
 ###footerSocial
 ###footerSocialButtons
 ###footerSocialIcons
@@ -304,7 +306,6 @@ _social-bar/
 ###header-youtube-social-link
 ###headerSocial
 ###headersocial
-###horizontalsocial
 ###hshare
 ###iNavSocial
 ###iconSocialFacebook
@@ -964,7 +965,6 @@ _social-bar/
 ##.block-social-share
 ##.block-socialmedia
 ##.block-socials
-##.block_post_social
 ##.block_share
 ##.block_social
 ##.blog-post-share
@@ -1083,7 +1083,6 @@ _social-bar/
 ##.comments-share
 ##.comments__likes
 ##.common-social-link
-##.common_share
 ##.component-social
 ##.connect-with-us
 ##.contenedor_redes_sociales
@@ -1236,6 +1235,7 @@ _social-bar/
 ##.facebook-social
 ##.facebookOuter
 ##.facebookShare
+##.facebookThis
 ##.facebook_box
 ##.facebook_icn
 ##.facebook_icon
@@ -1297,7 +1297,6 @@ _social-bar/
 ##.fc-social-media-header
 ##.fi-social-facebook
 ##.fi-social-instagram
-##.fi-social-linkedin
 ##.fi-social-pinterest
 ##.fi-social-twitter
 ##.fi-social-youtube
@@ -1507,10 +1506,6 @@ _social-bar/
 ##.gridlove-soc-menu
 ##.gs-share
 ##.gt-social-menu
-##.gtm-clipboard-share-button
-##.gtm-email-share-button
-##.gtm-facebook-share-button
-##.gtm-twitter-share-button
 ##.gtm_footer_facebook
 ##.gtm_footer_instagram
 ##.gtm_footer_twitter
@@ -1676,7 +1671,6 @@ _social-bar/
 ##.in_social
 ##.index_sns
 ##.info-sns-list
-##.info__share
 ##.info_share
 ##.inline-share
 ##.inline-share-buttons
@@ -1702,6 +1696,7 @@ _social-bar/
 ##.ipsShareButton
 ##.ipsfocus_sFacebook
 ##.ipsfocus_sTwitter
+##.ipsfocus_social
 ##.is-social
 ##.ishare
 ##.isocial
@@ -1995,6 +1990,7 @@ _social-bar/
 ##.panel-share-networks
 ##.par-footer-social
 ##.parent-shareBox
+##.parler-icon
 ##.pathSocialIcons
 ##.pbtsharethisbutt
 ##.pen_social_networks
@@ -2147,6 +2143,7 @@ _social-bar/
 ##.sdc-site-share
 ##.search-social
 ##.secondaryNav-social
+##.section-follow
 ##.section-post-intro-share
 ##.section-sharebar
 ##.section-social
@@ -3231,6 +3228,7 @@ _social-bar/
 ##.tweet-btn
 ##.tweet-link-button
 ##.tweet-this
+##.tweetThis
 ##.tweet_btn
 ##.tweet_button
 ##.tweetbox
@@ -3266,7 +3264,6 @@ _social-bar/
 ##.twitterItem
 ##.twitterLink
 ##.twitterShare
-##.twitterShareButton
 ##.twitterWidget
 ##.twitter_btn
 ##.twitter_feed
@@ -3290,7 +3287,6 @@ _social-bar/
 ##.ty-social-link-block
 ##.typcn-social-twitter
 ##.uhf-social-links
-##.ui-share-page
 ##.ui-socials
 ##.uix_socialMedia
 ##.uix_socialMediaLinks
@@ -3456,7 +3452,6 @@ _social-bar/
 ##a[href^="http://twitthis.com/twit?url"]
 ##a[href^="http://www.addtoany.com/share_save"]
 ##a[href^="http://www.digg.com/submit?"]
-##a[href^="http://www.facebook.com/dialog/feed?"]
 ##a[href^="http://www.facebook.com/share.php"]
 ##a[href^="http://www.facebook.com/sharer.php"]
 ##a[href^="http://www.facebook.com/sharer/sharer.php"]
@@ -3724,6 +3719,7 @@ wnep.com##.article__sharing
 news.tvbs.com.tw##.article_community_box
 thespectator.com##.article_set_wrap
 news18.com##.article_socials
+news.artnet.com##.author-links
 secretchicago.com,secretldn.com##.author-share-buttons
 proprivacy.com##.author-social-icons
 adweek.com##.aw-social-share-container
@@ -3947,6 +3943,7 @@ dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
 dailymail.co.uk,thisismoney.co.uk##.share-flipboard
 digitimes.com##.share-frame
+news.artnet.com##.share-header
 cgtn.com,citynews.ca##.share-icon
 mymodernmet.com##.share-it-side
 dailymail.co.uk,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
@@ -3998,7 +3995,6 @@ churchpop.com,dersonntag.at,toofab.com##.social-nav
 melmagazine.com,thefrisc.com,worldcrunch.com##.social-navigation
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
 businessinsider.in##.social-panel-rgt
-draxe.com##.social-proof-wrapper
 vinepair.com##.social-share-block
 iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
@@ -4220,7 +4216,6 @@ freizeit.at##.share-gap
 berliner-zeitung.de##.share-panel_wrapper__3tHN9
 freizeit.at##.shareToggle
 bild.de##.sharingbar
-derfinanzinvestor.de,esg-aktien.de,inv3st.de,kapitalerhoehungen.de##.smIconsWrap
 deutsche-wirtschafts-nachrichten.de##.social-line
 lt1.at##.social-listing
 kurier.at##.socialmedia-nav
@@ -4277,7 +4272,6 @@ nu.nl##.app-follow-us
 tweakers.net##.shareImage
 rtl.nl##[data-testid="social-links-container"]
 bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_"]
-at5.nl##div[class^="footer_socials_"]
 apotti.fi#?#.post-footer:-abp-has(> .share)
 forssanlehti.fi#?#.herald-single-sticky:-abp-has(.herald-share)
 capital.gr##.controls
@@ -4319,6 +4313,7 @@ davinotti.com##.social__variant
 ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
 fcinternews.it,lalaziosiamonoi.it,sportitalia.com,torinogranata.it##.social_table
+cdt.ch##.socials-custom
 unionesarda.it##.socials-link
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
