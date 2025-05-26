@@ -1,15 +1,15 @@
-! Checksum: knjM/Sqa7pk6tUJe1YE4Ww
-! Diff-Path: ../patches/203/203-s-1747313393-14400.patch
+! Checksum: 5FBnbZmR3dPKncFY+dWl7Q
+! Diff-Path: ../patches/203/203-s-1748263809-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.3.90
-! TimeUpdated: 2025-05-15T12:44:54+00:00
+! Version: 2.0.3.91
+! TimeUpdated: 2025-05-26T12:45:02+00:00
 ! Expires: 12 hours (update frequency)
 !
-! Checksum: AQT7SL5c30hrx25oxvUTRw
-! OriginalVersion: 202505141716
+! Checksum: odYvflSd1Fot0XMU9RVxwg
+! OriginalVersion: 202505261018
 ! Title: Hufilter for AdGuard
-! Last modified: 14 May 2025 17:16 UTC
+! Last modified: 26 May 2025 10:18 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -1301,7 +1301,6 @@ ugytudjuk.hu#?#.row:-abp-has(.mainTopBnr)
 ||hirado.hu*/microsites/*wallpaper*.$image
 ||hirado.hu/Newsreel/*_bg_*.$image
 ||hircsarda.hu/ads/
-||hirdetes.ingatlan.com/banner/$image
 ||hirek.sk/banner/$image
 ||hosszupuskasub.com/css/*skin.jpg$image
 ||hrportal.hu/images/banner/$image
@@ -1444,7 +1443,6 @@ ugytudjuk.hu#?#.row:-abp-has(.mainTopBnr)
 ||stat.adultium.com^
 ||stats.badoostats.com^
 ||syndication.trafficreps.com^
-||szemezgeto*.ingatlan.com^
 ||up-banner.wavecdn.de^
 ||vid4u.org^
 ||wdtyl.xyz^
@@ -1822,6 +1820,10 @@ infostart.hu#?##sitemodal:-abp-has(.fb-button)
 /szechenyi_2020_infoblokk_float.png$image,domain=semmelweis.hu
 /wp-content/plugins/pressidium-cookie-consent$script,domain=tudatosvasarlo.hu
 /newsletter.js$script,domain=tudatosvasarlo.hu
+/cookieconsent.css$stylesheet,domain=bme.hu
+/eu_rrf.jpg$image,domain=bme.hu
+/szechenyilogo.css$stylesheet,domain=bme.hu
+/eu_cookie_compliance.min.js$script,domain=bme.hu|unideb.hu
 ||cmp.quantcast.com^$script,domain=agrarszektor.hu|autoszektor.hu|bpiautosok.hu|g7.hu|hazipatika.com|hellovidek.hu|hrportal.hu|magyarnarancs.hu|index.hu|pestisracok.hu|portfolio.hu|telex.hu|totalcar.hu|totalbike.hu|szeretlekmagyarorszag.hu|port.hu|player.hu|mandiner.hu|budapestkornyeke.hu|bacsmegye.hu|civishir.hu|baon.hu|bama.hu|beol.hu|boon.hu|delmagyar.hu|duol.hu|feol.hu|kisalfold.hu|haon.hu|heol.hu|szoljon.hu|kemma.hu|nool.hu|sonline.hu|szon.hu|teol.hu|vaol.hu|veol.hu|zaol.hu|twice.hu|sassy.hu|prohardver.hu|mobilarena.hu|itcafe.hu|gamepod.hu|logout.hu|hardverapro.hu|pcwplus.hu|gsplus.hu|myonlineradio.hu|blikk.hu|medicalonline.hu
 ||consent.cookiebot.com^$third-party,script,domain=agroinform.hu|ingatlan.com
 ||medinfo.ocdn.eu/hu/consent_v2/choice.js^$script,domain=egeszsegkalauz.hu
@@ -1846,6 +1848,7 @@ infostart.hu#?##sitemodal:-abp-has(.fb-button)
 ||*.hu/*wp-content/plugins/complianz-gdpr/*.js$script
 ||*.hu/*wp-content/plugins/complianz-gdpr/*.css$stylesheet
 ||cookielaw.org^$third-party
+||unideb.hu/*/szechenyi-2020-strukturalis-alap-logo.png$image
 ! This section file contains rules for bypassing anti-adblock protections.
 ! The rules in this section should be compatible with all popular adblockers (Adblock Plus, AdGuard, uBlock Origin).
 !-------------------------------------------------------------------------------!
@@ -2007,6 +2010,7 @@ prohardver.hu,fototrend.hu#$#main { background-image: none !important; }
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
+bme.hu,unideb.hu$$style[tag-content="eu-cookie-withdraw-banner"]
 egeszsegkalauz.hu$$script[tag-content="Quantcast Choice"]
 filmvilag.me$$script[tag-content="ShadowRoot"]
 gamer.hu$$script[tag-content="cli_cookiebar_"]
@@ -2054,6 +2058,8 @@ kektura.hu###cookie-consent-dialog
 ! https://github.com/hufilter/hufilter/issues/11
 filmvilag.me##[style]:has(.adslot_1)
 otpportalok.hu###pop_1:has(> .suti)
+bme.hu###floating-logo-container
+unideb.hu##.sendi-banner-block-container
 ! This section file contains rules for bypassing anti-adblock protections.
 ! The rules in this section should be AdGuard-specific, but cross-compatible rules are also allowed, if they are
 ! not working properly without the AdGuard-specific rules.
