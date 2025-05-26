@@ -1,14 +1,14 @@
-! Checksum: LuR88Zh+HL4Q6lX/5h1a6Q
-! Diff-Path: ../patches/243/243-s-1748148216-14400.patch
+! Checksum: rHAIOp5Kq4kKTrkfqO1p0g
+! Diff-Path: ../patches/243/243-s-1748249408-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.71
-! TimeUpdated: 2025-05-25T04:39:37+00:00
+! Version: 2.0.21.72
+! TimeUpdated: 2025-05-26T08:46:00+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-05-25 05:11:14 CEST
+! Last modified: 2025-05-26 10:38:14 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -316,7 +316,7 @@ byggahus.se#$#body.forum-logged-out .svartalistan-results-login-required { heigh
 byggahus.se#%#//scriptlet('ubo-aeld.js', '/adblockDetector|adsInserted|partnerExternalLinkClick/')
 byggahus.se#$#.bbImageWrapper--preview.active img { -webkit-filter:none!important; filter:none!important; transform:none!important; -webkit-transform:none!important; }
 byggahus.se##.block-ad, a[href^="/partner/"], .threadMatchedContent, #svartalistan-login-required-overlay
-byggahus.se,expressen.se,filmtopp.se,destination.se,spokbloggen.nu,folkhalsasverige.se,foretagsverige.se,forskningsverige.se,motorbibeln.se,hallbarhetsverige.se,tillvaxtsverige.se,grillbibeln.se,kampenmotcancer.se,bolagsfakta.se,affarsvarlden.se,affarerinorr.se,viivilla.se,dinordbok.se,motorbranschen.mrf.se##.ad-container
+byggahus.se,expressen.se,filmtopp.se,destination.se,spokbloggen.nu,folkhalsasverige.se,foretagsverige.se,forskningsverige.se,motorbibeln.se,hallbarhetsverige.se,tillvaxtsverige.se,grillbibeln.se,kampenmotcancer.se,bolagsfakta.se,affarsvarlden.se,affarerinorr.se,viivilla.se,dinordbok.se,motorbranschen.mrf.se,rakapuckar.com##.ad-container
 byggfaktadocu.se##.pop_box
 byggfakta.today,citymark.today,hotellorestaurang.se##.cookie_popup_box
 byggipedia.se##aside .textwidget:has-text(/sponsr|samarbetspartners/i)
@@ -1055,6 +1055,7 @@ motorsport4sale.com##aside.widget_text a[target="_blank"] img
 motorsportbladet.se##:is(article, li):has(a[href*="casino"], a[href*="kasino"])
 moviezine.se###secondary .bg-white:has(div[id^="moviezine_outsider"])
 moviezine.se###tilt-ad-top-stay-away
+moviezine.se##.container > .perfmatters-lazy-element:has(a[href*="casino"])
 moviezine.se##.md\:pb-4:has(.inner_advertisement)
 mygatemagazine.se##.textwidget:has-text(Annons)
 mykitchenstories.se##.elementor-heading-title:has-text(Annons):upward(section.elementor-top-section:not(.elementor-section-items-middle))
@@ -1194,7 +1195,7 @@ racemagazine.se###sidebar > .h-full:has(#asideAD)
 racemagazine.se##.landing-ad
 radiotreby.se##.mobileHide, .mobile-show
 radio-sveriges.se###original_taboola
-radio.se###always-visible-banner-desktop-banner
+radio.se###always-visible-banner-desktop-banner, #sticky-reklame-header
 radio.se#$#:is(a[data-testid="region-tag"], a[data-testid^="taglist-item"]) { background-image:none!important; background:rgb(2,114,140)!important; }
 raggningsboken.se,minip.nu,snapsvisor.eu##div[style^="min-height"]:has(.adsbygoogle)
 rakapuckar.com##.sidead_border
@@ -1480,7 +1481,7 @@ tv4play.se,tv4.se,fotbollskanalen.se,koket.se,embed.viaplay.com#%#//scriptlet('u
 tv4.se,skippo.se##.maxetise
 tv24.se##li[id^="infeed"], div.presented-by
 tvmatchen.nu##.bet365, .panorama-wrapper, .tvg-manager-box, .tv102945, .tv102987, #event_banner, .go-to-partner, .odds, #text-13
-tvsporten.nu##div[class*="odds_container"], .sidebar a[target]
+tvsporten.nu##div[class*="odds_container"], .sidebar a[target], .fixture-ad-wrapper
 tv.nu##a[href*="adform.net"], .ad-fullscreenWallpaper__container
 tv.nu###modal div[itemtype][itemscope] > div[class]:has(a[href*="doubleclick"])
 tv.nu###tv-schedule section:has-text(ANNONS)
@@ -2048,6 +2049,7 @@ zeromagazine.nu##div[id^="ads"]
 /bilder/sponsorer
 /bilder/*annons$domain=sfft.se
 /bitcsys/js/bit.js
+/blekinge.min.js$domain=rakapuckar.com
 /block/samarbetspartners$image
 /bloggerfy/tracker
 /blogpoststatistic/events
@@ -3005,7 +3007,7 @@ zeromagazine.nu##div[id^="ads"]
 ||google-analytics.com^$important,domain=aftonbladet.se|tradera.com|xxl.se
 ||gopeach.se^$third-party
 ||go.ezodn.com/hb/$domain=temadagar.se|wernamaten.se|sanghafte.se|xn--gtboken-exa.se|ninjateknik.com
-||gravito.net^$domain=hitta.se|gp.se|bohuslaningen.se|stromstadstidning.se|markposten.se|harrydaposten.se|partilletidning.se|sttidningen.se|molndalsposten.se|kungalvsposten.se|kungsbackaposten.se|alingsastidning.se|ttela.se|hallandsposten.se|hn.se|mellerudsnyheter.se
+||gravito.net^$domain=hitta.se|gp.se|bohuslaningen.se|stromstadstidning.se|markposten.se|harrydaposten.se|partilletidning.se|sttidningen.se|molndalsposten.se|kungalvsposten.se|kungsbackaposten.se|alingsastidning.se|ttela.se|hallandsposten.se|hn.se|mellerudsnyheter.se|moviezine.se
 ||grillbloggen.nu/media/com_rstbox/js/engagebox.js
 ||growthbook.io^$domain=allas.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se|motherhood.se|lokalguiden.se
 ||gstatic.com/partners/badge$subdocument
@@ -3040,7 +3042,7 @@ zeromagazine.nu##div[id^="ads"]
 ||inboxads.com^$third-party
 ||indol.se^$third-party
 ||ingest.analytics.nation.dev^
-||inmobi.com^$domain=alltomelbil.se|rikatillsammans.se|egoinas.se|moviezine.se|travelnews.se|varldenshaftigaste.se|merinfo.se|foreca.se|laget.se|byrum.se|sportlovin.se|receptfavoriter.se|forni.se|cornucopia.se|norrahalland.se|tittapavideon.se|motormagasinet.se|food-supply.se|dagenshandel.se|plastnet.se|habit.se|woodnet.se|foodnet.se|transportnet.se|processnet.se|packnet.se|verkstaderna.se|medtechmagazine.se|recyclingnet.se|rt-forum.se|uochd.se|lifesciencesweden.se|fri-kopenskap.se|cleannet.se|metal-supply.se|fashionnet.se|framtidensbygg.se|entreprenad.com|mykitchenstories.se|cancelculture.se|findit.se|brinkenbakar.se|foretagande.se|affarsvarlden.se|villalivet.se|branschaktuellt.se|nordic.ign.com|fragbite.se|lindasbakskola.se|jennysmatblogg.nu|filippoon.se|niiinis.se|eniro.se|vackertvader.se|klendr.se|zeinaskitchen.se|tvsporten.nu|frillesasbandy.se|skik.se|marketmate.se|svartgul.se|langd.se|babyhjalp.se|skyttesport.se|flashback.org|nyadagbladet.se|enkelteknik.se|alltomnorrtalje.se|sporttv.nu|nyteknik.se|lag-avtal.se|arbetarskydd.se|leta.se|poddtoppen.se|antidoping.se|garaget.org|newsner.com|humorbibeln.se|ettgottskratt.se|djurbibeln.se|ordparken.se|undertian.com|samnytt.se|motivation.se|nouw.com
+||inmobi.com^$domain=alltomelbil.se|rikatillsammans.se|egoinas.se|travelnews.se|varldenshaftigaste.se|merinfo.se|foreca.se|laget.se|byrum.se|sportlovin.se|receptfavoriter.se|forni.se|cornucopia.se|norrahalland.se|tittapavideon.se|motormagasinet.se|food-supply.se|dagenshandel.se|plastnet.se|habit.se|woodnet.se|foodnet.se|transportnet.se|processnet.se|packnet.se|verkstaderna.se|medtechmagazine.se|recyclingnet.se|rt-forum.se|uochd.se|lifesciencesweden.se|fri-kopenskap.se|cleannet.se|metal-supply.se|fashionnet.se|framtidensbygg.se|entreprenad.com|mykitchenstories.se|cancelculture.se|findit.se|brinkenbakar.se|foretagande.se|affarsvarlden.se|villalivet.se|branschaktuellt.se|nordic.ign.com|fragbite.se|lindasbakskola.se|jennysmatblogg.nu|filippoon.se|niiinis.se|eniro.se|vackertvader.se|klendr.se|zeinaskitchen.se|tvsporten.nu|frillesasbandy.se|skik.se|marketmate.se|svartgul.se|langd.se|babyhjalp.se|skyttesport.se|flashback.org|nyadagbladet.se|enkelteknik.se|alltomnorrtalje.se|sporttv.nu|nyteknik.se|lag-avtal.se|arbetarskydd.se|leta.se|poddtoppen.se|antidoping.se|garaget.org|newsner.com|humorbibeln.se|ettgottskratt.se|djurbibeln.se|ordparken.se|undertian.com|samnytt.se|motivation.se|nouw.com
 ||insertcoin.se^$third-party
 ||insights.tv4.a2d.tv^
 ||insplanet.com^$third-party
