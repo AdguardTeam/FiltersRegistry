@@ -1,8 +1,8 @@
-! Checksum: c6B4X/eDmqnZPqqKSSWnHg
+! Checksum: 0HRd0VicERezFV7VX15VCw
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.93
-! TimeUpdated: 2025-05-27T12:11:03+00:00
+! Version: 2.0.56.94
+! TimeUpdated: 2025-05-27T13:16:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5606,6 +5606,14 @@ canlimacizlemax437.top,canlimacizlemax438.top,canlimacizlemax439.top,canlimacizl
 [$domain=/sultansportv\d+\.com/]##body > a[target="_blank"]
 !
 ! START: Justin TV - frequently changed domains
+! https://github.com/AdguardTeam/AdguardFilters/issues/206338
+! Check the common rules from time to time, they may be obsolete
+##.skip-link ~ div#content .wpb_wrapper > a[target="_blank"] > img
+##.skip-link ~ div#content .wpb_wrapper > a[target="_blank"][style^="color:red; background-color:black;"]
+##.skip-link ~ div#main .wpb_wrapper > center > a[target="_blank"]
+##.skip-link ~ div#main div.wpb_raw_code > a[target="_blank"] > img
+! For players in iframes
+[$path=/channel.html?id=]#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 ! justintv.shop
 ! CASE 1
 ||blogger.googleusercontent.com/img/$domain=justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.*
@@ -5629,14 +5637,33 @@ justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,
 [$domain=/selcuksports\d+\.top/]##header > a[href="/"] + ul
 ! CASE 3 - probably fake
 */belge/$domain=arabsdna.com|sdvigpress.com
-arabsdna.com##.body-clickable
+aleastoria.com,arabsdna.com,arbwork.com##.splash
+aleastoria.com,arabsdna.com##.body-clickable
+||aleastoria.com/belgeler/
 ||arbwork.com/izin/
-arabsdna.com,arbwork.com##.splash
 jplangbroek.com##.wpb_wrapper > center > a[target="_blank"]
 justintvsh.baby,justinttvvamphd.cfd##header > a[target="_blank"]
 jplangbroek.com,hayrirsds24.cfd#$#.player-poster[data-poster].clickable { background-image: none !important; }
 jplangbroek.com,hayrirsds24.cfd#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 ||blogger.googleusercontent.com/img/$domain=jplangbroek.com|justintvsh.baby|justinttvvamphd.cfd
+justintvizle58.top,justintvizle59.top,justintvizle60.top,justintvizle61.top,justintvizle62.top,justintvizle63.top,justintvizle64.top,justintvizle65.top,justintvizle66.top,justintvizle67.top,justintvizle68.top,justintvizle69.top,justintvizle70.top,justintvizle71.top,justintvizle72.top,justintvizle73.top,justintvizle74.top,justintvizle75.top,justintvizle76.top,justintvizle77.top##div[class^="footer-"]
+justintvizle58.top,justintvizle59.top,justintvizle60.top,justintvizle61.top,justintvizle62.top,justintvizle63.top,justintvizle64.top,justintvizle65.top,justintvizle66.top,justintvizle67.top,justintvizle68.top,justintvizle69.top,justintvizle70.top,justintvizle71.top,justintvizle72.top,justintvizle73.top,justintvizle74.top,justintvizle75.top,justintvizle76.top,justintvizle77.top##header > a[href="/"] + ul
+! justintvizle430.top
+justintvizle430.top,justintvizle431.top,justintvizle432.top,justintvizle433.top,justintvizle434.top,justintvizle435.top,justintvizle436.top,justintvizle437.top,justintvizle438.top,justintvizle439.top,justintvizle440.top,justintvizle441.top,justintvizle442.top,justintvizle443.top,justintvizle444.top,justintvizle445.top,justintvizle446.top,justintvizle447.top,justintvizle448.top,justintvizle449.top#%#//scriptlet('remove-node-text', 'script', 'show_popup')
+justintvizle430.top,justintvizle431.top,justintvizle432.top,justintvizle433.top,justintvizle434.top,justintvizle435.top,justintvizle436.top,justintvizle437.top,justintvizle438.top,justintvizle439.top,justintvizle440.top,justintvizle441.top,justintvizle442.top,justintvizle443.top,justintvizle444.top,justintvizle445.top,justintvizle446.top,justintvizle447.top,justintvizle448.top,justintvizle449.top#%#//scriptlet('prevent-window-open')
+justintvizle430.top,justintvizle431.top,justintvizle432.top,justintvizle433.top,justintvizle434.top,justintvizle435.top,justintvizle436.top,justintvizle437.top,justintvizle438.top,justintvizle439.top,justintvizle440.top,justintvizle441.top,justintvizle442.top,justintvizle443.top,justintvizle444.top,justintvizle445.top,justintvizle446.top,justintvizle447.top,justintvizle448.top,justintvizle449.top##.header_r
+!
+selcuksports127.top,selcuksports128.top,selcuksports129.top,selcuksports130.top,selcuksports131.top,selcuksports132.top,selcuksports133.top,selcuksports134.top,selcuksports135.top,selcuksports136.top,selcuksports137.top,selcuksports138.top,selcuksports139.top,selcuksports140.top,selcuksports141.top,selcuksports142.top,selcuksports143.top,selcuksports144.top,selcuksports145.top,selcuksports146.top##div[class^="footer-"]
+selcuksports127.top,selcuksports128.top,selcuksports129.top,selcuksports130.top,selcuksports131.top,selcuksports132.top,selcuksports133.top,selcuksports134.top,selcuksports135.top,selcuksports136.top,selcuksports137.top,selcuksports138.top,selcuksports139.top,selcuksports140.top,selcuksports141.top,selcuksports142.top,selcuksports143.top,selcuksports144.top,selcuksports145.top,selcuksports146.top##header > a[href="/"] + ul
+! CASE 4 - justintv*.com
+[$domain=/justintv\d+\.com/]##.banner
+[$domain=/justintv\d+\.com/]##.container > aside.sidebar:has(> .banner)
+[$domain=/justintv\d+\.com/]##.footer
+[$domain=/justintv\d+\.com/]##.socials a:is(.meritroyal, .iptv, .streamradar)
+justintv200.com,justintv201.com,justintv202.com,justintv203.com,justintv204.com,justintv205.com,justintv206.com,justintv207.com,justintv208.com,justintv209.com,justintv210.com,justintv211.com,justintv212.com,justintv213.com,justintv214.com,justintv215.com,justintv216.com,justintv217.com,justintv218.com,justintv219.com##.banner
+justintv200.com,justintv201.com,justintv202.com,justintv203.com,justintv204.com,justintv205.com,justintv206.com,justintv207.com,justintv208.com,justintv209.com,justintv210.com,justintv211.com,justintv212.com,justintv213.com,justintv214.com,justintv215.com,justintv216.com,justintv217.com,justintv218.com,justintv219.com##.container > aside.sidebar:has(> .banner)
+justintv200.com,justintv201.com,justintv202.com,justintv203.com,justintv204.com,justintv205.com,justintv206.com,justintv207.com,justintv208.com,justintv209.com,justintv210.com,justintv211.com,justintv212.com,justintv213.com,justintv214.com,justintv215.com,justintv216.com,justintv217.com,justintv218.com,justintv219.com##.footer
+justintv200.com,justintv201.com,justintv202.com,justintv203.com,justintv204.com,justintv205.com,justintv206.com,justintv207.com,justintv208.com,justintv209.com,justintv210.com,justintv211.com,justintv212.com,justintv213.com,justintv214.com,justintv215.com,justintv216.com,justintv217.com,justintv218.com,justintv219.com##.socials a:is(.meritroyal, .iptv, .streamradar)
 ! END: Justin TV
 !
 ! onPopUnderLoaded / popURL

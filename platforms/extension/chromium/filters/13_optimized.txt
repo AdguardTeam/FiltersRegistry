@@ -1,9 +1,9 @@
-! Checksum: kmwXVmxYZuOdAhU0jgRfwQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1748348105-3600.patch
+! Checksum: IYXqm72X54SmfQtWEzxePg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1748352014-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.93
-! TimeUpdated: 2025-05-27T12:11:03+00:00
+! Version: 2.0.56.94
+! TimeUpdated: 2025-05-27T13:16:13+00:00
 ! Expires: 10 days (update frequency)
 ||trpartners.io^$popup
 ||ahatm8od.top^
@@ -5050,6 +5050,11 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 [$domain=/canlimaclar\d+\.sbs$/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 [$domain=/izlemac\d+\.sbs$/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 [$domain=/sultansportv\d+\.com/]##body > a[target="_blank"]
+##.skip-link ~ div#content .wpb_wrapper > a[target="_blank"] > img
+##.skip-link ~ div#content .wpb_wrapper > a[target="_blank"][style^="color:red; background-color:black;"]
+##.skip-link ~ div#main .wpb_wrapper > center > a[target="_blank"]
+##.skip-link ~ div#main div.wpb_raw_code > a[target="_blank"] > img
+[$path=/channel.html?id=]#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 ||blogger.googleusercontent.com/img/$domain=justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.*
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##div[class^="footer-"]
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##header > a[href="/"] + ul
@@ -5068,14 +5073,19 @@ justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,
 [$domain=/selcuksports\d+\.top/]##div[class^="footer-"]
 [$domain=/selcuksports\d+\.top/]##header > a[href="/"] + ul
 */belge/$domain=arabsdna.com|sdvigpress.com
-arabsdna.com##.body-clickable
+aleastoria.com,arabsdna.com,arbwork.com##.splash
+aleastoria.com,arabsdna.com##.body-clickable
+||aleastoria.com/belgeler/
 ||arbwork.com/izin/
-arabsdna.com,arbwork.com##.splash
 jplangbroek.com##.wpb_wrapper > center > a[target="_blank"]
 justintvsh.baby,justinttvvamphd.cfd##header > a[target="_blank"]
 jplangbroek.com,hayrirsds24.cfd#$#.player-poster[data-poster].clickable { background-image: none !important; }
 jplangbroek.com,hayrirsds24.cfd#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 ||blogger.googleusercontent.com/img/$domain=jplangbroek.com|justintvsh.baby|justinttvvamphd.cfd
+[$domain=/justintv\d+\.com/]##.banner
+[$domain=/justintv\d+\.com/]##.container > aside.sidebar:has(> .banner)
+[$domain=/justintv\d+\.com/]##.footer
+[$domain=/justintv\d+\.com/]##.socials a:is(.meritroyal, .iptv, .streamradar)
 hdfilmizleamk.net,indirmedenfilmizle.vip,birasyadizi.com,seyredeger.com,dizilost.com#%#//scriptlet('abort-on-property-write', 'onPopUnderLoaded')
 ||cdn.diziyou*.com/wp-content/*.gif
 [$domain=/dizilla\d*\.(club\|com\|nl)/]#%#//scriptlet('remove-attr', 'loading', 'iframe[loading="lazy"]')
