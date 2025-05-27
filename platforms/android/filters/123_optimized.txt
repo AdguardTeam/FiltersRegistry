@@ -1,11 +1,10 @@
-! Checksum: 4tn1WfJ0erpc6Aye73M3SQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1748307092-14400.patch
+! Checksum: LCLgrNUlN4JLRLjh26yfvQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1748321031-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.42.1
-! TimeUpdated: 2025-05-27T00:47:35+00:00
+! Version: 2.1.42.2
+! TimeUpdated: 2025-05-27T04:39:35+00:00
 ! Expires: 5 days (update frequency)
--facebook-share.
 -facebook-widget.
 -follow-icon-
 -share-bar/$~stylesheet
@@ -83,7 +82,6 @@
 /share_popup.js
 /share_sprite.png
 /share_view.js
-/share_wechat.png
 /share_weibo.png
 /shareaholic.js
 /sharebar.js
@@ -356,6 +354,7 @@ _social-bar/
 ###mvp-foot-soc
 ###mvp-nav-soc
 ###mvp-nav-soc-list
+###mvp-post-soc-wrap
 ###mvp-soc-mob-wrap
 ###mvp-top-nav-soc
 ###navbar-social
@@ -422,7 +421,6 @@ _social-bar/
 ###shareButton
 ###shareButton1
 ###shareButtons
-###shareData
 ###shareDropdown
 ###shareFloat
 ###shareHorizontal
@@ -605,7 +603,6 @@ _social-bar/
 ###social_fb
 ###social_follow
 ###social_footer
-###social_head
 ###social_icons
 ###social_instagram
 ###social_link
@@ -681,6 +678,7 @@ _social-bar/
 ###twitter_btn
 ###twitter_button
 ###twitter_content
+###twitter_follow
 ###twitter_link
 ###twitter_share
 ###twitter_timeline-2
@@ -855,7 +853,6 @@ _social-bar/
 ##.article-full__share
 ##.article-header-social
 ##.article-header__share
-##.article-open_shere
 ##.article-pic-soc
 ##.article-share
 ##.article-share__item
@@ -978,6 +975,7 @@ _social-bar/
 ##.bottom-footer__social
 ##.bottom-share
 ##.bottom-share-buttons
+##.bottom-share-wrapper
 ##.bottom-shares
 ##.bottom-social
 ##.bottom-socials
@@ -1150,7 +1148,6 @@ _social-bar/
 ##.el-icon-facebook
 ##.el-icon-twitter
 ##.elem-info__share
-##.element-share
 ##.elementor-social-icon
 ##.elementor-social-icons-wrapper
 ##.elementor-widget-facebook-page
@@ -1192,6 +1189,7 @@ _social-bar/
 ##.et-social-google-plus
 ##.et-social-icon
 ##.et-social-icons
+##.et-social-links
 ##.et_pb_social_media_follow
 ##.et_social_facebook
 ##.et_social_flyin
@@ -1774,7 +1772,6 @@ _social-bar/
 ##.large-share-button
 ##.layer_share_on
 ##.lazysocialbuttons
-##.leaf-social-inner
 ##.leftsharebtn
 ##.lf-facebook
 ##.like-fb
@@ -1898,6 +1895,7 @@ _social-bar/
 ##.mobileShare
 ##.mod-facebook
 ##.mod-follow
+##.mod-social-navigation
 ##.mod-twitter
 ##.mod_social
 ##.module--share
@@ -2517,6 +2515,7 @@ _social-bar/
 ##.sharelist
 ##.sharelist__item
 ##.sharelist__items
+##.sharelizers
 ##.sharenow-buttons
 ##.sharepage
 ##.sharepanel
@@ -3041,6 +3040,7 @@ _social-bar/
 ##.social_share_wrapper
 ##.social_shares
 ##.social_sharing
+##.social_sharing_module
 ##.social_sidebar
 ##.social_tabs
 ##.social_tools
@@ -3245,7 +3245,6 @@ _social-bar/
 ##.twitter-follow-box
 ##.twitter-followers
 ##.twitter-footer
-##.twitter-hashtag
 ##.twitter-share
 ##.twitter-share-btn
 ##.twitter-share-button
@@ -3332,7 +3331,6 @@ _social-bar/
 ##.voc-social
 ##.vrt-social-links
 ##.vs-social
-##.vs-social-link
 ##.vuukle-powerbar
 ##.w-share
 ##.w-sharing
@@ -3558,6 +3556,7 @@ _social-bar/
 ||flipboard.com/web/buttons/$third-party
 ||friends2follow.com^$subdocument,third-party
 ||fwcdn3.com^$third-party
+||getbutton.io/widget-send-button/$third-party
 ||google.com^*/fastbutton?$third-party
 ||gotchosen.com^$third-party
 ||graph.facebook.com/fql?q=SELECT$third-party
@@ -3591,6 +3590,7 @@ _social-bar/
 ||sharethis.com^$third-party
 ||sharpay.io^$third-party
 ||shpg.org^$third-party
+||simplesharebuttons.com^$third-party
 ||storeya.com/externalscript/$third-party
 ||trendemon.com^$third-party
 ||twitter.com/i/jot
@@ -3643,8 +3643,6 @@ notalwaysright.com###meta_share
 taylorfrancis.com###openShare
 mediaite.com###post-social
 auburnpub.com,azdailysun.com,beatricedailysun.com,billingsgazette.com,bismarcktribune.com,chippewa.com,columbustelegram.com,cumberlink.com,dailyjournalonline.com,democratherald.com,elkodaily.com,fremonttribune.com,gazettetimes.com,globegazette.com,hanfordsentinel.com,helenair.com,herald-review.com,jg-tc.com,journalstar.com,journaltimes.com,lacrossetribune.com,lebanon-express.com,lompocrecord.com,magicvalley.com,missoulanews.com,missoulian.com,mtstandard.com,muscatinejournal.com,napavalleyregister.com,nwitimes.com,pantagraph.com,poststar.com,qconline.com,qctimes.com,rapidcityjournal.com,ravallirepublic.com,santamariatimes.com,siouxcityjournal.com,stltoday.com,tdn.com,thesouthern.com,thetandd.com,theworldlink.com,trib.com,tucson.com,wcfcourier.com,winonadailynews.com,wiscnews.com###reaction-wrap
-redice.tv###s1
-redice.tv###s2
 bracketfights.com,ecuadoradio.ec,tiermaker.com###share-container
 aiseesoft.com###share-list
 journals.aps.org,theintercept.com###share-menu-button
@@ -3765,7 +3763,6 @@ stuff.co.nz##.comment-and-share
 goal.com##.component-share
 goal.com##.component-social-twitter
 bestreviews.com##.components-sharetool
-snipercentral.com##.connect-icons
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
@@ -3828,7 +3825,6 @@ ghacks.net##.ghacks_share_widget
 cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
 coinedition.com##.google-news-block
-japan.go.jp##.gov_sns
 gadgets360.com##.gsocialbar
 verdictum.in##.h-anchor
 israelnationalnews.com##.header-nav-addons-link
@@ -4015,7 +4011,6 @@ jetphotos.com##.social__link--share
 eurovisionworld.com##.social_a
 salon.com,snopes.com##.social_comments_app_wrapper
 ringsidenews.com##.social_holder
-commondreams.org,hollywoodforevertv.com.br,twenteinsite.nl##.social_icon
 moneycontrol.com##.social_icons_wrapper
 ringsidenews.com##.social_label
 ciudad.com.ar,eltrecetv.com.ar,lithub.com,tn.com.ar##.social_links
@@ -4351,7 +4346,6 @@ businesskorea.co.kr##.user-sns
 forbes.pl##.articleSocials
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
 terrabrasilnoticias.com###block-18
-a12.com###gb-widget-6981
 superesportes.com.br###shareitens
 bomdia.eu###social-menu
 tecnoblog.net###tb-banner-whatsapp
@@ -4407,7 +4401,6 @@ terra.com.br##.t360-sharebar__wrapper
 tecmundo.com.br##.tec--didyouknow
 tecmundo.com.br##.tec--share__container
 dn.pt##.text-story-m_share__FrlMt
-a12.com##.wg-share-hrz
 ndmais.com.br##.whats-box
 dcmais.com.br##.whatsapp-ch
 metro1.com.br##.whatsapp-link-metropole
@@ -4564,8 +4557,11 @@ orquideaonline.com##.wrap-footer-social
 comunicacio21.cat,cultura21.cat,espai.media,espailinia.cat,exterior.cat##.xxss
 autobild.es,businessinsider.es,computerhoy.com,hobbyconsolas.com,topgear.es##div[class^="share-bar_"]
 haberler.com##.googleNews
+diyanet.tv##.lobibox-notify-wrapper
+diyanet.tv##.navbar-sosyal
 trthaber.com##.social-links-container
 bigpara.hurriyet.com.tr##.socialIcons
+diyanet.tv##.sosyal-alt-ust
 cumhuriyet.com.tr##.sosyal-medya
 gifyagusi.pl#@##fan-exit
 gifyagusi.pl#@##fanback

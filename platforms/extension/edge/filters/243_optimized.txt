@@ -1,9 +1,9 @@
-! Checksum: BwGVa2hEQkzGfIjENY05+g
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1748249408-14400.patch
+! Checksum: KX1sRprABuX9V+QrgtEm1A
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1748321042-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.72
-! TimeUpdated: 2025-05-26T08:46:00+00:00
+! Version: 2.0.21.73
+! TimeUpdated: 2025-05-27T04:40:02+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -532,11 +532,9 @@ filatelisten.se##:is(a[target="_blank"]:not([href^="/"], [href*="filatelisten.se
 filmparadiset.se##a[href*="casino"], .custom-html-widget a[target="_blank"]
 filmparadiset.se##.widget_text:has(a[href*="casino"])
 filmparadiset.se,spiritsnews.se##.jnews-cookie-law-policy
-filmtipset.se###topslider-wrapper + .container > .sidebar, .sidebar a[target="_blank"], .sidebar a[href*="casino"], .sidebar a[href*="betting"], .sidebar a[href*="automater"]
-filmtipset.se##.postmeta em:has-text(/sponsrad/i):upward(.row.news)
-filmtipset.se##.row.news > div[style^="border"]:last-of-type
-filmtipset.se##:is(.news, a[href^="nyhet"]):has-text(/casino|kasino|poker/i)
-filmtipset.se##:is(.news, .outer):has(a[href*="casino"], a[href*="free-spins"])
+filmtipset.se##.outer.noprint
+filmtipset.se##.container > div[style="padding:10px"]:has(a[href*="casino"])
+filmtipset.se##:is(img[src="../images/sponsrade.png"], a[href="https://stodlinjen.se/"]):upward(.row)
 filmtopp.se#$#body { overflow:initial!important }
 filmtopp.se##.cooperation-banner__container, .takeover-desktop, .takeover-mobile, #discover-banner
 finanstid.se##a.td-post-category[href*="/category/annons/"]:upward(.td-category-pos-image)
