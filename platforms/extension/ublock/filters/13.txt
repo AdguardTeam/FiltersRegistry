@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: nW6efrqVaue9Q2Gnt9G78Q
-! Diff-Path: ../patches/13/13-s-1748355068-3600.patch
+! Checksum: obfpL2Q9CLiRyqNrKk/wZQ
+! Diff-Path: ../patches/13/13-s-1748365925-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.56.95
-! TimeUpdated: 2025-05-27T14:07:01+00:00
+! Version: 2.0.56.96
+! TimeUpdated: 2025-05-27T17:06:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -657,6 +657,8 @@ dizipal1.cloud,dizipal2.cloud,dizipal3.cloud,dizipal4.cloud,dizipal5.cloud,dizip
 ! Good: ##.adv
 ! Bad: example.org##.adv (should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/205916
+##div[data-player-url] > a[class="x-embed-link"][target="_blank"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204675
 ##.volestream-gorsel
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160823
@@ -1579,8 +1581,6 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
-[$domain=/canlimaclar\d+\.sbs/]##.x-embed-link
-[$domain=/macizlevip\d+\.shop/]##.x-embed-link
 memurlar.net##.content-items > a.click-tracker[targe]
 memurlar.net##aside > div[class^="widget-"]:has(> div[id^="theads-"])
 eurovizyon.co.uk##.article-text > p > a[rel="nofollow"]
@@ -1602,7 +1602,6 @@ sinema.*##+js(remove-node-text, script, pbrk)
 ||dizibox.live/r/
 evrensel.net##.affiliate
 evrensel.net#$##haberDiv { min-height: auto !important; }
-[$domain=/belestepe\d+\.shop/]##.x-embed-link
 /api.sportplus.watch\/v\d\.\d+\/\w+$/$xmlhttprequest,domain=sportplus.tv
 /js/pund*.js$domain=anizle.com|puffytr.com
 animeler.me##+js(abort-current-script, EventTarget.prototype.addEventListener, Popunder)
@@ -5541,7 +5540,6 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
 ! mactanmaca*.shop - frequently changed domains
 [$domain=/mactanmaca\d+\.shop/]##+js(set-cookie, reklamgosterimx, ok)
-[$domain=/mactanmaca\d+\.shop/]##.x-embed-link
 !
 ! canlimacizlemax*.com - frequently changed domains
 ||canlimacizlemax*/r/$image
