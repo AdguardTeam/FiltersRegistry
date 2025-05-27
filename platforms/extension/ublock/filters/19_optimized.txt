@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sMcWRqtnQ9mtqMrb8wNhIQ
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1748362384-3600.patch
+! Checksum: wpjL3b4pAenhrWh+wG5zKQ
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1748380263-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.55.94
-! TimeUpdated: 2025-05-27T16:09:03+00:00
+! Version: 2.0.55.95
+! TimeUpdated: 2025-05-27T21:07:08+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*##:matches-path(/images).AdvMastHead
@@ -84,6 +84,8 @@ dzen.ru##+js(json-prune, ssrData.exportResponse.feedData.adItems)
 dzen.ru##+js(set-constant, Object.prototype.ssrBanner, undefined)
 dzen.ru##+js(abort-on-stack-trace, Promise, initContext)
 dzen.ru#$?##LayoutTopMicroRoot div[style^="padding-top:"][style*="position: relative; height: 0;"] { remove: true; }
+sportsdzen.ru##div[class*="sports-button-ad"]
+sportsdzen.ru##div[class*="sport-match-rectangle-card__bookmakerOdds"]
 m.dzen.ru##div[aria-label="Лента Дзена"] div + article[class*="--card-rtb__"]
 dzen.ru##div[class^="float-interview__float-"]
 dzen.ru#?#:matches-path(/a/).zen-page div.feed__item article:matches-css(align-items: center)
@@ -914,6 +916,7 @@ motherjones.com##.mj-adblock-widget
 motherless.com###_mlabd
 motoroids.com##+js(no-setTimeout-if, .height() == 0)
 mrexcel.com##+js(set-constant, adblockDetector, noopFunc)
+smplace.com##.blockContainer
 goflix.sbs,multiup.io,multiup.org#$#.mfp-ready { display: none !important; }
 navcomic.com##body > div#document-header > aside.widget.widget_text
 nesoacademy.org#?#div[class^="jss"]:has(> ins.adsbygoogle)
@@ -945,7 +948,8 @@ poedb.tw##+js(abort-on-property-read, adBlockDetected)
 poedb.tw##+js(no-fetch-if, pagead2.googlesyndication.com)
 portfolio.hu##+js(abort-current-script, document.getElementById, adblock)
 postimees.ee##+js(no-setTimeout-if, adblockNotif)
-preguntandroid.com,iteramos.com##+js(set-constant, googlefc.getAdBlockerStatus, noopFunc)
+iteramos.com##a[href^="https://brightdata.grsm.io/ae-"] > img
+iteramos.com##+js(set-constant, googlefc.getAdBlockerStatus, noopFunc)
 prepostseo.com##.bg-dark
 profreehost.com##.amk_adContainer
 progarchives.com##div[id^="banner-"]
@@ -1086,7 +1090,6 @@ zinzinzibidi.com##.xl-rklm-container
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=noop.js,domain=computerbase.de
 ||palemoon.org/pagefunctions.js
 ||playrust.io/js/as.js
-||raw.senmanga.com/js/reader.js
 ||returnofreckoning.com/forum/styles/dawar/template/js/ror.js?
 ||rockstargame.su/adb_script*$~stylesheet,script
 ||s.yimg.com/*/bundle_basic_mail_affiliate_partner_$domain=mail.yahoo.com
@@ -2022,7 +2025,7 @@ menunedeli.ru##.mypopup-over
 menunedeli.ru##div[id^="modal_mypopup_"]
 igotoworld.com##+js(set-cookie-reload, closing-banner, 1)
 defkey.com#$##showRegisterPopupAfterSecs { remove: true; }
-dzen.ru##.trapPopupContainer
+sportsdzen.ru,dzen.ru##.trapPopupContainer
 philips.com.tr##+js(set-cookie, p-gc35, true)
 elarus.ru##.popup-right-angle
 elarus.ru#$#div[class^="mfp-"] { display: none !important; }
@@ -2379,7 +2382,7 @@ slobodenpecat.mk#$?#.banner-sticky_desktop { remove: true; }
 ||medibot-image.s3.ap-northeast-1.amazonaws.com/medibot_lp_
 oh-my-teeth.com###cta-sticky-banner
 debounce.io##.salesnotice
-dzen.ru###recommend-tech-snackbar
+sportsdzen.ru,dzen.ru###recommend-tech-snackbar
 ask.clip-studio.com##.fixedBanner
 vivre.*##+js(set-cookie, notification-newsletter-closed, true)
 investsocial.com###pb-wrapper
