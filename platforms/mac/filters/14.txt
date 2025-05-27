@@ -1,8 +1,8 @@
-! Checksum: /zmYn/k6QUtEKUj2dEvB6g
+! Checksum: jQfIydal3kI9Pa9A6itTWQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.31.43
-! TimeUpdated: 2025-05-26T21:06:41+00:00
+! Version: 2.2.31.44
+! TimeUpdated: 2025-05-27T01:35:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2508,6 +2508,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+iapples.nl##.shopify-pc__banner__dialog[style*="display: block"] ~ .main::after
 time.com###ketch-banner
 marca.com#%#//scriptlet('trusted-click-element', '.popup-cookies__container button[action-name="agreeAll"]')
 beta.lmarena.ai#%#//scriptlet('trusted-click-element', 'div[data-sentry-element="DialogFooter"] > button.bg-interactive-cta')
@@ -34690,6 +34691,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+olhardigital.com.br##.pbl-subs[data-newsletter]
 smartworld.it##.tw-social-promo
 t-j.ru##div[class^="_container_"] ~ div[class^="_container_"]:has(> div[data-disclaimer="true"] a[href="https://t.me/t_sportik"])
 asuracomic.net##.max-w-7xl.mx-auto.px-4.py-8.relative
@@ -42797,6 +42799,8 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+golove.ai##section[aria-label^="Notifications"] + .inset-0:has(> .w-full > .w-full #react-qrcode-logo)
+golove.ai#%#//scriptlet('trusted-set-local-storage-item', 'mobile_for_better_experience_last_shown', '$now$')
 bilibili.tv##.play-page-banner
 bilibili.tv##.bstar-header__actions > div.bstar-header__dropdown:has(> div > a.bstar-header__download-btn)
 korona.ru###__next > div[data-testid="Banner"]:has(> div > a[data-testid="Download"])
