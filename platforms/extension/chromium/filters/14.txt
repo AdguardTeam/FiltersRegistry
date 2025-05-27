@@ -1,9 +1,9 @@
-! Checksum: eMQiu5Wun1TXNmkoiIikBA
-! Diff-Path: ../patches/14/14-s-1748313611-3600.patch
+! Checksum: PCzcUSMjdMdbprfQ55J79w
+! Diff-Path: ../patches/14/14-s-1748322683-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.31.45
-! TimeUpdated: 2025-05-27T02:36:27+00:00
+! Version: 2.2.31.46
+! TimeUpdated: 2025-05-27T05:07:50+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2509,6 +2509,9 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+blutspendedienst.com#%#//scriptlet('trusted-click-element', '.cookiefirst-root button[data-cookiefirst-action="accept"]', '!cookie:cookiefirst-consent')
+plannedparenthood.org#$#.cookieBanner:not(body) { display: none !important; }
+plannedparenthood.org#$#body[style*="overflow: hidden;"] { overflow: auto !important; }
 iapples.nl##.shopify-pc__banner__dialog[style*="display: block"] ~ .main::after
 time.com###ketch-banner
 marca.com#%#//scriptlet('trusted-click-element', '.popup-cookies__container button[action-name="agreeAll"]')
@@ -16996,6 +16999,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206111
+plannedparenthood.org#@#.cookieBanner:not(body)
+plannedparenthood.org#@##cookieBanner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206255
 tiesas.lv#@##cookieConsent
 tiesas.lv#@#.cookie-wrapper
@@ -34778,7 +34784,7 @@ trailspace.com#$#body.fancybox-active { overflow: auto !important; }
 showbox.media##.follow_us
 pamukovasosyalmedya.com##.tarih > a[title="Google News"]
 comicbook.com##.comicbook-cta-newsletter-wrap
-chubbycable.com#%#//scriptlet('trusted-set-local-storage-item', 'cc-theme-popup-dismissed', '$now$')
+chubbycable.com,gardenersbasics.com#%#//scriptlet('trusted-set-local-storage-item', 'cc-theme-popup-dismissed', '$now$')
 passportnews.co.il#%#//scriptlet('set-local-storage-item', 'popup', 'true')
 passportnews.co.il###widget_newsletter_footer
 theverge.com###zephr-anchor > .duet--article--block-placement:has(> div[class] > a.duet--cta--button)
