@@ -1,9 +1,9 @@
-! Checksum: 7YBDND10uj889Hk9uLyFnQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1748321058-14400.patch
+! Checksum: TFRSjTVD3cbpQ5isSwxfDQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1748407410-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.73
-! TimeUpdated: 2025-05-27T04:40:02+00:00
+! Version: 2.0.21.74
+! TimeUpdated: 2025-05-28T04:39:07+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -862,7 +862,7 @@ kokaihop.se#$#body { overflow-y: auto !important; }
 kokaihop.se##.ads-wrapper-main, .InterstitialModal
 kokaihop.se#$?#.cookieBarWrapper { remove: true; }
 koket.se##div[class*="mosaic_item_wrapper"]:has(div[class*="sponsorLabel"])
-koket.se##[class*="list_item_sponsored"], [class*="promotion_bottom_holder_wrapper"], [class*="beverage-recommendation_wrapper"], [class*="list_item_wide_sponsored"], [class^="ad_position"]
+koket.se##[class*="list_item_sponsored"], [class*="promotion_bottom_holder_wrapper"], [class*="beverage-recommendation_wrapper"], [class*="list_item_wide_sponsored"], [class^="ad_position"], div[class^="wave_ad"]
 kolla.tv##div[style^="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 999;"]
 kollega.se##.block--gamw
 kolozzeum.com##td[width="305"], br + a[href*="/casino"]
@@ -1178,8 +1178,7 @@ rabattsok.se,prv.se###cookie-bar
 racemagazine.se##article + div.bg-white:has(.ad-inner)
 racemagazine.se###sidebar > .h-full:has(#asideAD)
 racemagazine.se##.landing-ad
-radiotreby.se##.mobileHide, .mobile-show
-radio-sveriges.se###original_taboola
+radio-sveriges.se###original_taboola, #optimize_experiment
 radio.se###always-visible-banner-desktop-banner, #sticky-reklame-header
 radio.se#$#:is(a[data-testid="region-tag"], a[data-testid^="taglist-item"]) { background-image:none!important; background:rgb(2,114,140)!important; }
 raggningsboken.se,minip.nu,snapsvisor.eu##div[style^="min-height"]:has(.adsbygoogle)
@@ -1463,7 +1462,7 @@ tv4play.se,tv4.se,fotbollskanalen.se,koket.se#%#//scriptlet('ubo-json-prune-fetc
 tv4play.se,tv4.se,fotbollskanalen.se,koket.se#$#.avod-web-player-pause { background-color:transparent!important; }
 tv4play.se,tv4.se,fotbollskanalen.se,koket.se##.visit-advertiser-link
 tv4play.se,tv4.se,fotbollskanalen.se,koket.se,embed.viaplay.com#%#//scriptlet('ubo-xml-prune.js', 'Ad', '', '/fwmrm.net\/ad\/g/')
-tv4.se,skippo.se##.maxetise
+tv4.se,skippo.se,koket.se##.maxetise
 tv24.se##li[id^="infeed"], div.presented-by
 tvmatchen.nu##.bet365, .panorama-wrapper, .tvg-manager-box, .tv102945, .tv102987, #event_banner, .go-to-partner, .odds, #text-13
 tvsporten.nu##div[class*="odds_container"], .sidebar a[target], .fixture-ad-wrapper
@@ -2159,6 +2158,7 @@ zeromagazine.nu##div[id^="ads"]
 /get.aspx?AdSlotID$script
 /glimr$script,domain=aftonbladet.se|blocket.se|godare.se
 /glimr-static$domain=~klart.se
+/googleAnalytics.js$domain=bio.se
 /googleanalytics.js$domain=fria.nu|stockholmsfria.se
 /google-analytics$domain=teknikveckan.se
 /google-analytics-for-wordpress$important,script,xmlhttprequest
@@ -2792,7 +2792,6 @@ zeromagazine.nu##div[id^="ads"]
 ||biddercore.io^$third-party
 ||bilweb.se^$third-party
 ||biowebb-data.*.amazonaws$important,third-party
-||bio.se/js/googleAnalytics.js
 ||bjuvsweek.se/images/*annons
 ||blocket.se^$third-party
 ||bloggportalen.se^*/blogstat.js
@@ -3170,7 +3169,7 @@ zeromagazine.nu##div[id^="ads"]
 ||prismic.io/prismic-toolbar$domain=alltomarbetsmiljo.se
 ||privacypolicies.com^$domain=fl-net.se
 ||privacy-center.org^$domain=180.se|agriaffaires.se|truckscorner.se|machineryzone.se|stegforhalsa.se|netdoktor.se|netdoktorpro.se|news55.se|hastnet.se|dagensps.se|realtid.se|sportbibeln.se|matbibeln.se|nojeslivet.se|booli.se|dh.se|fotbolltransfers.com
-||privacy-mgmt.com^$domain=radio.se|dagenstv.com|kolla.tv|computersweden.se|woxikon.se|dagen.se|filmtopp.se|upday.com|gaffa.se|handbollskanalen.se|stayfriends.se|spisa.nu
+||privacy-mgmt.com^$domain=radio.se|dagenstv.com|kolla.tv|computersweden.se|woxikon.se|dagen.se|filmtopp.se|upday.com|gaffa.se|handbollskanalen.se|stayfriends.se|spisa.nu|tv24.se
 ||proxyas.com^$third-party
 ||prylguiden.expressen.se^
 ||ptm.flowplayer.com^*/display$xmlhttprequest
