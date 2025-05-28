@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: HWMrsq18wbSbGo+hz1z1eg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1748412808-3600.patch
+! Checksum: L+NFjxFmrDDB0+jJKLXTjQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1748416282-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.85.97
-! TimeUpdated: 2025-05-28T06:09:04+00:00
+! Version: 2.3.85.98
+! TimeUpdated: 2025-05-28T07:07:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32336,6 +32336,11 @@ movie76.com##img[alt="ads"]
 !
 ! NOTE: Italian
 !
+gamesvillage.it##iframe[src^="https://adserver."]
+gamesvillage.it#$#body > .above_body { margin-top: 0 !important; }
+gamesvillage.it#$#html.pum-open-overlay { overflow-y: auto !important; }
+gamesvillage.it#$#div.pum-overlay[data-popmake*="test"] { display: none !important; }
+gamesvillage.it#$#html.pum-open.pum-open-overlay.pum-open-scrollable > body > :not([aria-modal=true]) { padding-right: 0 !important; }
 hdmotori.it##.adbox_placeholder
 everyeye.it###tksfmcont
 ilfattoquotidiano.it##.adv-pushbar
@@ -45852,6 +45857,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+wuxiabox.com##.chapter-content > div[align="center"] > div[class*=" "]:has(> div[id^="pf-"])
 wpde.com##div[class^="HomePageContainer-module_empty"]
 kyivpost.com##.sidebar-end > div.section-wrapper:has(> div.ad-wrapper-small)
 goodrx.com##button[data-qa="media-solution-button"]
