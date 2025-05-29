@@ -1,9 +1,9 @@
-! Checksum: i8zVt4HHQrl9sW3yXxW9uQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1748531508-3600.patch
+! Checksum: BjZUu62ARJyi6Y2K5lTVUw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1748535136-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.31.81
-! TimeUpdated: 2025-05-29T15:07:50+00:00
+! Version: 2.2.31.82
+! TimeUpdated: 2025-05-29T16:08:21+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1525,6 +1525,7 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$?#div[consent-skip-blocker] { remove: true; }
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+ups.com##.implicit-consent-message
 rule34.xxx###gdprconsent
 mirf.ru##.popup-accept-policy
 developers.google.com#$?#devsite-cookie-notification-bar { remove: true; }
@@ -22757,7 +22758,7 @@ instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/peop
 instagram.com#?#div[style*="opacity"] > div > div[class]:has(> div[class] > div[style] > div[style] > div[aria-labelledby] > div[class]:last-child > button)
 instagram.com##._aagw:empty
 ||elements.video/player.js$domain=forbes.com
-forbes.com##div[class][style="top: 25px;"]:has(+ div[data-testid="fbs-ad - rightRail"])
+forbes.com##div[class][style^="top:"]:has(+ div[data-testid="fbs-ad - rightRail"])
 pinion.jp##.wiki-style-right-side > div.poll-container
 heise.de##.article-content > .inread-cls-reduc
 travelandleisure.com##.mm-video-medianet-bytes
