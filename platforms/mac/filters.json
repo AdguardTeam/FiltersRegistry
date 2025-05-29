@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.86.21",
-			"timeUpdated": "2025-05-29T06:09:21+0000",
+			"version": "2.3.86.22",
+			"timeUpdated": "2025-05-29T07:07:21+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.15.10",
-			"timeUpdated": "2025-05-28T16:07:37+0000",
+			"version": "2.1.15.11",
+			"timeUpdated": "2025-05-29T07:07:34+0000",
 			"languages": []
 		},
 		{
@@ -158,8 +158,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.30.15",
-			"timeUpdated": "2025-05-28T20:07:29+0000",
+			"version": "2.0.30.16",
+			"timeUpdated": "2025-05-29T07:07:42+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.31.72",
-			"timeUpdated": "2025-05-29T06:09:49+0000",
+			"version": "2.2.31.73",
+			"timeUpdated": "2025-05-29T07:07:50+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.56.2",
-			"timeUpdated": "2025-05-29T06:09:55+0000",
+			"version": "2.0.56.3",
+			"timeUpdated": "2025-05-29T07:07:55+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.33.80",
-			"timeUpdated": "2025-05-29T02:36:54+0000",
+			"version": "2.0.33.81",
+			"timeUpdated": "2025-05-29T07:07:56+0000",
 			"languages": []
 		},
 		{
@@ -1120,8 +1120,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.37.89",
-			"timeUpdated": "2025-05-29T05:08:12+0000",
+			"version": "2.1.37.90",
+			"timeUpdated": "2025-05-29T07:08:00+0000",
 			"languages": [
 				"zh"
 			]
