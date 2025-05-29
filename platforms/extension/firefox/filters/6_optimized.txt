@@ -1,5 +1,5 @@
-! Checksum: 0/lLpjS4T+a9QbTMpfV4Ug
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1748466627-3600.patch
+! Checksum: Z3JzzXkK45metKLD1Ndxmg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1748486452-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.47.77
@@ -2490,6 +2490,7 @@ dejure.org###werbungrechtsfloat
 dejure.org##content > #mobildiv
 kachelmannwetter.com##.dkpw-billboard
 ||tag.partner.mairdumont.com^$third-party
+www-golem-de.cdn.ampproject.org##.iqampcenter
 wetter.com###localeInformationsWidget
 donnerwetter.de##.block.prepend-top > center > div[style="font-size: 60%; color: #aab5b5;"]
 ich-tanke.de##.box-partner
@@ -2643,7 +2644,6 @@ mittelbayerische.de#?#.container:has(> .OUTBRAIN)
 mittelbayerische.de#?#.container:has(> div[id^="traffective-ad"])
 autobild.de#?#.mainText > div:has(> .paragraph:only-child > br:only-child:empty)
 isteshaltbar.de#?##secondary > .inner:has(div[class*="-hpa-atf"])
-kino.de#?#.alice-teaser-list-item:has(> article > .alice-teaser-body > .alice-teaser-head > .alice-teaser-title > a[href*="/deals/"])
 t-online.de#?#main > div[class]:has(> div[class]:only-child > div[class][data-commercial-format])
 t-online.de#?#div[data-testid="Stages.Container"] > div:has(> span > div[data-testid="nativendo-container"])
 t-online.de#?#div[data-testid="StageLayout.StreamItem"]:has(> div[data-testid] > .afl-widget-root)
@@ -3113,6 +3113,7 @@ _woz_banner_vote.
 ###werbung_superbanner
 ###werbung_top
 ###werbung_wideskyscraper_screen
+###werbunglink
 ###werbungrechts1
 ###werbungrechtsfloat
 ###werbungsbox300
@@ -3383,7 +3384,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||communicationads.net/tb.php
 ||datingpartner.com/medien/$third-party
 ||dragonbox.de/img/banner/$third-party
-||exclusive-books.de/banner/
 ||faire.software/img/$third-party
 ||fantecio.com/ib/$third-party
 ||fastad.beepworld.de^
@@ -3417,7 +3417,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||starting6.de/dyn_banner/$third-party
 ||storage.googleapis.com/ba_utils/
 ||tdn.da-services.ch^
-||tipp-box.de/zufall/bann_
 ||trafico.prensaiberica.es^
 ||trainersuchportal.de/partnerwidget/$third-party
 ||treff-mich.org/bilder/$third-party
@@ -3426,6 +3425,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||wazazu.com/iframe/$third-party
 ||wazazu.com/js/pu_$third-party
 ||wazazu.com/pimage/bas/$third-party
+||wazazu.com/pimage/visit-x/$third-party
 ||web-ads.10sq.net^
 ||weekli.de/widget-loader?$third-party
 ||weekli.pub/widget-loader?
@@ -3435,7 +3435,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||widgets.cam-content.com^$third-party
 ||xn--immobilienmakler-mnchen-starnberg-8pd.de/banner/
 ||xup.to^$domain=raidrush.ws
-||ybbo.de/banner/
 ||yogsototh.bytecamp.net^$third-party
 ||adfarm1.adition.com^$popup,domain=web.de
 ||amateurseite.com^$popup,third-party
@@ -3697,6 +3696,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||sexforum.ch/ForumPics/BaPics/
 ||sexnews.ch/uploads/tx_sfbanners/
 ||shopanbieter.de/SponsorLogos/
+||somquery.sqrt-5041.de/tv/ad-wrapper
 ||speedtorrent.com/usenet/
 ||spielbox.de/images/banners/
 ||spiele-for-free.de/wp-content/uploads/*_1920x1200_$domain=spiele-for-free.de
@@ -4127,6 +4127,7 @@ stuttgarter-zeitung.de###taboola-mhsd
 giga.de,kino.de,watson.de###teaserheld-header
 tennisnet.com###tennisnetWidget
 eishockey-magazin.de###text-10
+hockey-news.info###text-12
 computerschach.de,nachrichten.es,nh24.de,randombrick.de,tollabea.de###text-2
 ebook-fieber.de###text-20
 nh24.de###text-26
@@ -4337,6 +4338,7 @@ keyforsteam.de##.blc-left
 keyforsteam.de##.blc-right
 haustec.de##.block-businessad
 suedostschweiz.ch##.block-np8-audienzz
+ak-kurier.de##.block-weather-link
 computerbase.de##.block1--banner
 computerbase.de##.block1--skyscraper
 blogprojekt.de##.blogp-startseite
@@ -4455,6 +4457,7 @@ rewe.de##.flagship-container
 kleinezeitung.at##.flex.justify-center.mx-auto.hidden.lg\:flex.lg\:mb-4.lg\:pb-4
 tvinfo.de##.floatLeft[style="padding:10px;"]
 deutschepornos.co,erotik-sexvideos.com,geilesexclips.com,gratis-sex-videos.net,gratisfickvideos.net,kostenlose-sexvideos.biz,sexfilmetube.net,sexkostenlos.biz,xhamsterdeutsch.xyz##.footer-dingens
+hottime.ch##.footer-grey
 ecrbs.redbulls.com,fussball.de##.footer-partner
 schalke04.de##.footer-sponsors
 saechsische.de##.footer__partner

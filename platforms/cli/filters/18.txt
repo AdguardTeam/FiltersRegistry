@@ -1,9 +1,9 @@
-! Checksum: s0hnsEhq/cxmeaR+WVE1yw
-! Diff-Path: ../patches/18/18-s-1748466618-3600.patch
+! Checksum: yuk4g91+uxaodeTXC8f0QA
+! Diff-Path: ../patches/18/18-s-1748486437-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.62.80
-! TimeUpdated: 2025-05-28T21:06:42+00:00
+! Version: 2.0.62.81
+! TimeUpdated: 2025-05-29T02:36:53+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13054,7 +13054,7 @@ tim.com.br##.tim-gcc-notification
 open.spotify.com#$#.Root > div > div[class][aria-live="polite"] { display: none!important; }
 open.spotify.com#$#.Root__top-container--has-notice-bar { padding-top: 0!important; }
 open.spotify.com#$#.Root__top-container--has-notice-bar .SearchInputBox--feedback-bar { top: 0!important; }
-liveexpert.org,jobs.dailymail.com,alniaciklar.com,templatemonster.com,steelradar.com,playson.com,zara.com,newpharma.fr,newpharma.be,newpharma.de,newpharma.nl,newpharma.at,apo24.ch,audemarspiguet.com,press.lv##.cookie-policy-popup
+liveexpert.org,jobs.dailymail.com,alniaciklar.com,templatemonster.com,steelradar.com,playson.com,zara.com,apo24.ch,audemarspiguet.com,press.lv##.cookie-policy-popup
 dm.hu##div[data-dmid="cookiebar"]
 scania.com##.c-cookie-message
 aboutyou.de,aboutyou.hu##div[data-test-id="CookieBanner"]
@@ -16006,6 +16006,7 @@ akku-maeser.at#%#//scriptlet('set-cookie-reload', 'cookies_confirmed_1', '1')
 !       will be done and products with new Scriptlets lib will be released
 blog.seznam.cz,kupi.cz#%#(()=>{let t;const e=new MutationObserver(((e,o)=>{const n=t?.querySelector('button[data-testid="button-agree"]');n&&(setTimeout((()=>{n.click()}),500),o.disconnect())})),o={apply:(o,n,c)=>{const a=Reflect.apply(o,n,c);return n.matches(".szn-cmp-dialog-container")&&(t=a),e.observe(a,{subtree:!0,childList:!0}),a}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,o)})();
 !
+newpharma.fr,newpharma.be,newpharma.de,newpharma.nl,newpharma.at#%#//scriptlet('trusted-click-element', 'button.js-cookie-policy-necessary-btn')
 nordbayern.de#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> span#cmpwelcomebtnyes > a')
 cmp.seznam.cz#%#//scriptlet('trusted-click-element', '.szn-cmp-dialog-container >>> button[data-testid="cw-button-agree-with-ads"]', '', '2000')
 speedtest.vodafone.de#%#//scriptlet('trusted-click-element', 'div[data-cy="modal-dialog"] .css-1kjdcue > .css-s9m06g > div[role="button"][style="cursor: pointer; display: inline;"]', '', '500')
@@ -17066,6 +17067,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206424
+newpharma.fr,newpharma.be,newpharma.de,newpharma.nl,newpharma.at#@#.cookie-policy:not(body):not(html)
+newpharma.fr,newpharma.be,newpharma.de,newpharma.nl,newpharma.at#@#.js-cookie-policy
+@@||newpharma.*/dist/v2_cookie_policy.$domain=newpharma.fr|newpharma.be|newpharma.de|newpharma.nl|newpharma.at
+@@||newpharma.net/*/cookie-policy/$domain=newpharma.fr|newpharma.be|newpharma.de|newpharma.nl|newpharma.at
 ! hna.de - not able to view comments
 @@||cdn.opencmp.net/tcf-v2/cmp-stub-latest.js$domain=hna.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206111
