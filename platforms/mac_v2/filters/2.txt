@@ -1,9 +1,9 @@
-! Checksum: 6/cqQH1WXsy+CgUgUer+Cg
-! Diff-Path: ../patches/2/2-s-1748600050-3600.patch
+! Checksum: wqh0w3WtmWsBX+uoUwLZJg
+! Diff-Path: ../patches/2/2-s-1748603495-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.86.49
-! TimeUpdated: 2025-05-30T10:07:24+00:00
+! Version: 2.3.86.50
+! TimeUpdated: 2025-05-30T11:06:37+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21909,7 +21909,13 @@ upfion.com,haxi.online,upfiles.app,upfiles-urls.com,falpus.com,fooak.com,plknu.c
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135504
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$redirect=googlesyndication-adsbygoogle,domain=t2bot.ru,important
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=t2bot.ru
+! https://github.com/AdguardTeam/AdguardFilters/issues/206562
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137878
+redketchup.io#%#//scriptlet('googletagservices-gpt')
+redketchup.io#%#//scriptlet('set-constant', 'googletag.cmd.push', 'noopFunc')
+redketchup.io#%#//scriptlet('prevent-setTimeout', '/googletag\.pubads|\/PreBid\.js/')
+redketchup.io#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
+redketchup.io#%#//scriptlet('trusted-replace-node-text', 'script', 'downloadTimeout', '/(this\..=.\..)\?\d0:0\)/', '$1?0:0)')
 redketchup.io#%#//scriptlet('adjust-setTimeout', '"hidden"!=document.visibilityState&&')
 redketchup.io#%#//scriptlet('prevent-element-src-loading', 'script', 'securepubads.g.doubleclick.net/tag/js/gpt.js')
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=noopjs,domain=redketchup.io,important
@@ -46444,7 +46450,6 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 !
 tube8.com,youporn.com##div:has(> ins.adsbytrafficjunky)
-tube8.com,youporn.com##.upgradeButtonContainer
 tubewolf.com##.network-links
 xbabe.com##a[href^="https://xbabe.com/go/"]
 ||cdn-fc.com/creatives/bar/
@@ -67042,65 +67047,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! ATTENTION: The rules in this section must be accompanied by a link of an issue, where the problem will be fixed
 ! or with clear description what to do next
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/206388
-! TODO: remove the following rules when the issue is resolved:
-!       https://gitlab.com/malware-filter/urlhaus-filter/-/issues/110
-||github.githubassets.com/assets/app_assets_modules_github_behaviors_ajax-error_ts-app_assets_modules_github_behaviors_include-d0d0a6-9dc4ed803189.js^$all,badfilter
-||github.githubassets.com/assets/app_assets_modules_github_behaviors_commenting_edit_ts-app_assets_modules_github_behaviors_ht-83c235-ce8979e4f922.js^$all,badfilter
-||github.githubassets.com/assets/app_assets_modules_github_behaviors_task-list_ts-app_assets_modules_github_sso_ts-ui_packages-900dde-c84fbefd392e.js^$all,badfilter
-||github.githubassets.com/assets/app_assets_modules_github_ref-selector_ts-351a8f8ec24b.js^$all,badfilter
-||github.githubassets.com/assets/app_assets_modules_github_settings_integrations-transfer_ts-app_assets_modules_github_setting-84b62a-8e65dc1f4363.js^$all,badfilter
-||github.githubassets.com/assets/app_assets_modules_github_sticky-scroll-into-view_ts-3e000c5d31a9.js^$all,badfilter
-||github.githubassets.com/assets/appearance-settings-99fa071d4285.js^$all,badfilter
-||github.githubassets.com/assets/behaviors-a4b59f1126fc.js^$all,badfilter
-||github.githubassets.com/assets/element-registry-759bd527e556.js^$all,badfilter
-||github.githubassets.com/assets/environment-d607485791a5.js^$all,badfilter
-||github.githubassets.com/assets/github-elements-2c6b561fd398.js^$all,badfilter
-||github.githubassets.com/assets/github-logo-55c5b9a1fe52.png^$all,badfilter
-||github.githubassets.com/assets/github-mark-57519b92ca4e.png^$all,badfilter
-||github.githubassets.com/assets/keyboard-shortcuts-dialog-da52b1ba42ce.js^$all,badfilter
-||github.githubassets.com/assets/notifications-global-7f3748c0d76b.js^$all,badfilter
-||github.githubassets.com/assets/octicons-react-cf2f2ab8dab4.js^$all,badfilter
-||github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg^$all,badfilter
-||github.githubassets.com/assets/primer-react-5c26f1a581a7.js^$all,badfilter
-||github.githubassets.com/assets/profile-97837a4e31a1.js^$all,badfilter
-||github.githubassets.com/assets/react-core-2d17b940397e.js^$all,badfilter
-||github.githubassets.com/assets/react-lib-80430c87778a.js^$all,badfilter
-||github.githubassets.com/assets/sessions-1e75b15ae60a.js^$all,badfilter
-||github.githubassets.com/assets/settings-6055a20e2833.js^$all,badfilter
-||github.githubassets.com/assets/signup-92ec28022238.js^$all,badfilter
-||github.githubassets.com/assets/ui_packages_document-metadata_document-metadata_ts-ui_packages_promise-with-resolvers-polyfil-40d47c-83bb4d2a9499.js^$all,badfilter
-||github.githubassets.com/assets/ui_packages_failbot_failbot_ts-3f3eb0fe798c.js^$all,badfilter
-||github.githubassets.com/assets/ui_packages_ui-commands_ui-commands_ts-392f523dd6f6.js^$all,badfilter
-||github.githubassets.com/assets/ui_packages_updatable-content_updatable-content_ts-f4e60782b52d.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_braintree_browser-detection_dist_browser-detection_js-node_modules_githu-bb80ec-72267f4e3ff9.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_color-convert_index_js-e3180fe3bcb3.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_delegated-events_dist_index_js-node_modules_github_catalyst_lib_index_js-ea8eaa-ae0dbe787ad8.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_delegated-events_dist_index_js-node_modules_github_memoize_dist_esm_inde-455471-db0dac70ef9e.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-b1c483-30bc59af3a76.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_fzy_js_index_js-node_modules_github_paste-markdown_dist_index_js-6c00013a3dc4.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_auto-complete-element_dist_index_js-node_modules_github_catalyst_-8e9f78-a90ac05d2469.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_catalyst_lib_index_js-node_modules_primer_live-region-element_dis-b2aea6-22827f205bdc.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_file-attachment-element_dist_index_js-node_modules_primer_view-co-63644b-8389d8c5493d.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_filter-input-element_dist_index_js-node_modules_github_remote-inp-3eebbd-0763620ad7bf.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_filter-input-element_dist_index_js-node_modules_github_remote-inp-d8c643-f5192902810f.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_markdown-toolbar-element_dist_index_js-ceef33f593fa.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_github_combobox-nav_dist-97536f-0a0158d4c78e.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_stacktrace-parser_dist_s-1d3d52-4be8ffe9a34a.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_virtualized-list_es_inde-5cfb7e-e6b0d3ff3d24.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_quote-selection_dist_index_js-node_modules_github_session-resume_-c1aa61-97c8ff49bc41.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_relative-time-element_dist_index_js-fd884d19bf73.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_remote-form_dist_index_js-node_modules_delegated-events_dist_inde-2ef075-049db99cb0f3.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_remote-form_dist_index_js-node_modules_delegated-events_dist_inde-893f9f-b6294cf703b7.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_remote-form_dist_index_js-node_modules_delegated-events_dist_inde-94fd67-e789af5a4655.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_selector-observer_dist_index_esm_js-f690fd9ae3d5.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_text-expander-element_dist_index_js-78748950cb0c.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js-a03ee12d659a.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_lit-html_lit-html_js-be8cb88f481b.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_morphdom_dist_morphdom-esm_js-0c08218c7d5f.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js-81211bd82278.js^$all,badfilter
-||github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_index_mjs-0dbb79f97f8f.js^$all,badfilter
-||github.githubassets.com/assets/wp-runtime-0441ffe6536b.js^$all,badfilter
+! Incorrect blocking in Phishing URL Blocklist
+! https://x.com/mekabuto/status/1926147501595283528
+! TODO: check 02.06.2025 and remove if fixed
+||sbisec.co.jp/etgate/^$all,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187875#issuecomment-2361917970
 ! Problem occurs only in Brave browser with MV3 extension
 ! TODO: remove it when this issue - https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2954 is fixed
@@ -90820,6 +90770,7 @@ browsershots.org#@#.advert_area
 ||22cbbac9cd.com^
 ||22lmsi1t5.de^
 ||22media.world^
+||22yy6.com^
 ||23hssicm9.de^
 ||24-sportnews.com^
 ||2443march2024.com^
@@ -95623,6 +95574,7 @@ browsershots.org#@#.advert_area
 ||cec41c3e84.com^
 ||ced2aad48e.com^
 ||ced843cd18.com^
+||cedeimprovise.com^
 ||cedricfaces.shop^
 ||cedrt6.pro^
 ||ceefsyqotuagk.com^
@@ -96077,6 +96029,7 @@ browsershots.org#@#.advert_area
 ||cleftmeter.com^
 ||clemencyexceptionpolar.com^
 ||clenchedfavouritemailman.com^
+||cleopatraadulatefrench.com^
 ||clerkrevokesmiling.com^
 ||clerrrep.com^
 ||clever-brother.com^
@@ -97478,6 +97431,7 @@ browsershots.org#@#.advert_area
 ||deliquencydeliquencyeyesight.com^
 ||deliriousglowing.com^
 ||deliriumalbumretreat.com^
+||deliriumswarthybeginner.com^
 ||deliv12.com^
 ||delivery.momentummedia.com.au^
 ||delivery45.com^
@@ -98959,6 +98913,7 @@ browsershots.org#@#.advert_area
 ||eoveukrnme.org^
 ||eoweridus.com^
 ||epacash.com^
+||epartoukfarepu.com^
 ||epaxialcyclize.shop^
 ||epededonemile.com^
 ||epersaonwhois.com^
@@ -101631,6 +101586,7 @@ browsershots.org#@#.advert_area
 ||healynutrive.com^
 ||heardaccumulatebeans.com^
 ||heardsoppy.com^
+||heart4man.net^
 ||heartachegrabbedlaunching.com^
 ||heartbreakslotserpent.com^
 ||hearthmint.com^
@@ -101641,6 +101597,7 @@ browsershots.org#@#.advert_area
 ||heautumncamet.com^
 ||heavenfull.com^
 ||heavenly-landscape.com^
+||hebenefitssheasht.com^
 ||hebhgyiqqgpkf.com^
 ||hecathedralinth.org^
 ||hectarbiddies.shop^
@@ -102215,6 +102172,7 @@ browsershots.org#@#.advert_area
 ||hunchnorthstarts.com^
 ||hunchsewingproxy.com^
 ||hundredpercentmargin.com^
+||hungerblackenunequal.com^
 ||hunter-hub.com^
 ||hunterlead.com^
 ||huntersaturateunbeaten.com^
@@ -103853,6 +103811,7 @@ browsershots.org#@#.advert_area
 ||knittedcourthouse.com^
 ||knivesprincessbitterness.com^
 ||knivessimulatorherein.com^
+||kniveyhagweed.com^
 ||knkkpmtdesg.com^
 ||knlqdtcbi.com^
 ||knockedcherries.com^
@@ -104999,6 +104958,7 @@ browsershots.org#@#.advert_area
 ||lzoasvofvzw.com^
 ||lzolanahk.com^
 ||lzoorgpta.com^
+||lztjczymishqn.com^
 ||lzukrobrykk.com^
 ||lzvwybvvyrqyk.top^
 ||lzxdx24yib.com^
@@ -106336,6 +106296,7 @@ browsershots.org#@#.advert_area
 ||negateacted.com^
 ||negationomitor.com^
 ||negationpompeypit.com^
+||neglectsquad.com^
 ||negligentpatentrefine.com^
 ||negotiaterealm.com^
 ||negxkj5ca.com^
@@ -106488,6 +106449,7 @@ browsershots.org#@#.advert_area
 ||niatkweaqip.com^
 ||nicatethebene.info^
 ||nice-mw.com^
+||nicecartrigezip.com^
 ||nicelocaldates.com^
 ||nicelyinformant.com^
 ||nicerisle.com^
@@ -108492,6 +108454,7 @@ browsershots.org#@#.advert_area
 ||pitchedsmirch.shop^
 ||piteevoo.com^
 ||pitmirkwryness.shop^
+||pitredamu.lat^
 ||pitshopsat.com^
 ||pittitepicarii.top^
 ||pityneedsdads.com^
@@ -108795,6 +108758,7 @@ browsershots.org#@#.advert_area
 ||portkingric.net^
 ||portoteamo.com^
 ||portswaving.com^
+||poseunprofessionalspecific.com^
 ||posewardenreligious.com^
 ||posf.xyz^
 ||poshenglandscarecrow.com^
@@ -110206,6 +110170,7 @@ browsershots.org#@#.advert_area
 ||reluctantlygracefulcabinet.com^
 ||reluctantlyjackpot.com^
 ||reluctantturpentine.com^
+||relwnriokscgt.com^
 ||remainderskins.com^
 ||remaininghurtful.com^
 ||remainmother.com^
@@ -110957,6 +110922,7 @@ browsershots.org#@#.advert_area
 ||sabergood.com^
 ||sabineembrew.com^
 ||sabonakapona.com^
+||sabotagesophisticatedfragile.com^
 ||sabreripier.shop^
 ||sabsbonos.com^
 ||sacaftdu.com^
@@ -111664,6 +111630,7 @@ browsershots.org#@#.advert_area
 ||silentinevitable.com^
 ||silkcaseplunge.com^
 ||silklanguish.com^
+||silky-horror.com^
 ||silldisappoint.com^
 ||sillyflowermachine.com^
 ||silpharapidly.com^
@@ -113527,6 +113494,7 @@ browsershots.org#@#.advert_area
 ||topeltof.com^
 ||tophaw.com^
 ||topiccorruption.com^
+||topincome.cc^
 ||topnews-24.com^
 ||topnewsfeeds.net^
 ||topnewsgo.com^
@@ -135892,6 +135860,7 @@ sexvid.xxx##.under_player_link
 upornia.com,upornia.tube##.underplayer > section
 thegay.com##.underplayer__info > div:not([class])
 videojav.com##.underplayer_banner
+redtube.com,tube8.com,you-porn.com,youporn.com##.upgradeButtonContainer
 tryindianporn.com##.uvk
 hentaiprn.com##.v-overlay
 javtiful.com##.v3sb-box
