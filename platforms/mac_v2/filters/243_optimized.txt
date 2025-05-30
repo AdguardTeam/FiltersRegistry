@@ -1,9 +1,9 @@
-! Checksum: ayiMxjZuwZZbA/pi2Cm2jQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1748493879-14400.patch
+! Checksum: 1OOKOyHcLyBv4srCvvWkSA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1748580239-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.75
-! TimeUpdated: 2025-05-29T04:40:14+00:00
+! Version: 2.0.21.76
+! TimeUpdated: 2025-05-30T04:39:25+00:00
 ! Expires: 12 hours (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -609,7 +609,7 @@ fotboll.com##:is(div.text-center, div.d-none):has(a[href*="/go/"][onclick], .fot
 fotboll.com,thelocal.se##.smartbanner
 fotosidan.se#%#//scriptlet('ubo-aeld.js', 'contextmenu', '', 'showCopyrightBox')
 fotosidan.se##.subArticlesponsored, div[style="width:300px;float:right;"], div[style="float:right;width:300px;"], #partner-box, .adbox-label, .banner-panorama-wmn
-fotosidan.se,merinfo.se,allsvenskan.se,tasteline.com,jaktojagare.se,chefstidningen.se,norpan.se,jaktjournalen.se,byggvarlden.se,omtanke.today,akademikern.se,socionomen.se,culturezone.se,lchfarkivet.se,stoppapressarna.se,metromode.se##.ads
+fotosidan.se,merinfo.se,allsvenskan.se,tasteline.com,jaktojagare.se,chefstidningen.se,norpan.se,jaktjournalen.se,byggvarlden.se,omtanke.today,akademikern.se,socionomen.se,culturezone.se,lchfarkivet.se,stoppapressarna.se,metromode.se,lesscarbs.se##.ads
 fragasyv.se##.header-adds
 fragbite.se##.category:has-text(/spons/i):upward(article)
 fragbite.se#$?#.messageHolder ~ div[id*="viralize"][class*="brand-showheroes"] { remove: true; }
@@ -909,8 +909,7 @@ lchfarkivet.se##.modal-wrapper, div#beskrivning[style="font-size: 10px; text-ali
 lektionsbanken.se###partners_inside, #partners_right, #partners_top
 lektionsbanken.se,runnersworld.se##.footer-newsletter
 lesscarbs.se##article:has(a[href*="/annonssamarbete/"])
-lesscarbs.se##.elementor-image > a:not([href*="https://lesscarbs.se"]), a[href*="/affiliates/"], div[id^="1"][style*="250px"]
-lesscarbs.se##.e-loop-item:has(div[data-eael-wrapper-link*="annonssamarbete"])
+lesscarbs.se##.elementor-widget-theme-post-content .wp-block-group:has(a[href*="/adtr.co"])
 lesscarbs.se#@#.category-annonssamarbete:not(body):not(html)
 leta.se###bookingcom-resor-wrapper, #aktuellaerbjudanden, #sky-left-wide, .topNavItem[href*="casino"], .topNavItem[href*="betting"], #bottom-splinks, #momondoBoxRightCol
 levandehistoria.se##div[class^="CookieBar"]
@@ -2079,7 +2078,7 @@ zeromagazine.nu##div[id^="ads"]
 /cookiespolicynotificationbar$domain=svenskahousegruppen.se
 /cookies-and-content$script,domain=freedomtravel.se
 /cookies-and-content-security-policy$script,domain=cannabisifokus.se|futsalmagasinet.se|sd.se|cora.se|tfkriminalvard.se|sportbilen.se|fisheco.se
-/cookie-consent$script,domain=minhembio.com|sjf.se
+/cookie-consent$script,domain=minhembio.com|sjf.se|turistmal.se
 /cookie-law-info$script,domain=startaochdriva.se|sverige.nu|conpot.se|firstclassmagazine.se|kvalitetsmagasinet.se|miljo-utveckling.se|techtidningen.se|vdtidningen.se|gullislastips.se|nyfiknainvesterare.se|discoveringtheplanet.com|bussmagasinet.se|torbjornstips.se|dinbyggare.se|aktieskolan.se|insikt24.se|sulkysport.se|bitzmagasin.se|battrestadsdel.se|automatos.se|80-talet.se|goteborgnyheter.se|elitepadel.se|vetenskaphalsa.se|rakapuckar.com|konstperspektiv.nu|56kilo.se|surveyors.se|maximumsports.se|rucksack.se|ingridochmaria.se|frihetsnytt.se|globalportalen.org|juligen.se|svenskbotanik.se|sakerhund.se|radiosol.se|norrkopingsguiden.se|mustangclubsweden.org|mallorcanyheter.com
 /cookie.min.js$domain=assistanskoll.se
 /cookie_consent.js$domain=djungeltrumman.se
@@ -2159,11 +2158,13 @@ zeromagazine.nu##div[id^="ads"]
 /get.aspx?AdSlotID$script
 /glimr$script,domain=aftonbladet.se|blocket.se|godare.se
 /glimr-static$domain=~klart.se
+/gmetrics$domain=reseguiden.se
 /googleanalytics.js$domain=fria.nu|stockholmsfria.se|bio.se
 /google-analytics$domain=teknikveckan.se
 /google-analytics-for-wordpress$important,script,xmlhttprequest
 /google-analytics-premium$important,script
 /google-gpt.js$domain=alekuriren.se
+/google-tag$domain=reseguiden.se
 /google-tag-manager$domain=hemnet.se
 /google-universal-analytics$script
 /gpAnalytics$script
@@ -3214,7 +3215,6 @@ zeromagazine.nu##div[id^="ads"]
 ||rek.ai^$third-party,domain=ng.se
 ||researchonline.se^$third-party
 ||reseguiden.se^$third-party
-||reseguiden.se^*/google-tag
 ||resources.blogblog.com^*/paging_dot.$image
 ||resultify.com^$third-party
 ||resultify.se^$third-party
@@ -3276,7 +3276,7 @@ zeromagazine.nu##div[id^="ads"]
 ||stackpathcdn.com^*/shrMain$script
 ||stadiumstage.com^$third-party
 ||stallet.se/scripts/bx-abd.js
-||static.fastcmp.com^$domain=lchfarkivet.se|stoppapressarna.se|alltomkungligt.se
+||static.fastcmp.com^$domain=lchfarkivet.se|stoppapressarna.se|alltomkungligt.se|lesscarbs.se
 ||static.hupso.com/share/js/counters.js
 ||static.sporthoj.com/js/ads/
 ||static.web-repository.com/scripts/common/hit.js
