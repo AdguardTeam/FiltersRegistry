@@ -1,9 +1,9 @@
-! Checksum: U2aOX3iUg7FMUNZXAhV20Q
-! Diff-Path: ../patches/4/4-s-1748614355-3600.patch
+! Checksum: 854z5yUb5Qy4xO0c23gP9Q
+! Diff-Path: ../patches/4/4-s-1748617914-3600.patch
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.15.21
-! TimeUpdated: 2025-05-30T14:07:12+00:00
+! Version: 2.1.15.22
+! TimeUpdated: 2025-05-30T15:07:04+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -653,7 +653,9 @@ esquire.com,dotesports.com,mashable.com,pcmag.com,onefootball.com,ign.com,israel
 !
 ! NOTE: Specific rules
 !
-otvet.mail.ru##div[class^="_slotwrapper"] > button:has(> div > span > svg > path[d^="M9.764"])
+deti.mail.ru##div[data-logger="socialWidgets"]
+otvet.mail.ru#?#div[class^="_ActionSheet__contentWrapper"] > div[class*="_ActionSheetItem"]:not(:has(> div[class^="_ActionSheetItem__container"] div[class^="_Sharing"] span:contains(Скопировать ссылку)))
+otvet.mail.ru#$#div[class^="_ActionSheet__contentWrapper"] > div[class^="_Separator"] { display: none !important; }
 virtamate.com##a[aria-label="Share"]
 subscribestar.com##.share_this-button
 luckypatchers.com##.widget_us_socials
@@ -2880,7 +2882,7 @@ kyocera.co.jp##.post_item02
 principal.cat##.ampliacio-noticia-compartir
 europafm.com##atres-widget[data-type="share"]
 europafm.com##.mainPlayer_wrapperShare
-revistacromos.com.co##.SocialMedia_share
+elespectador.com##.SocialMedia_share
 dmm-corp.com##div[class^="DetailInnerTop_snsShare_"]
 asahi.co.jp##.wrap_sblink
 asahi.co.jp###sblink
