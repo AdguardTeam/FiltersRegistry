@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: d/6uR/vZ56lenUjp7p2dpQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1748569165-3600.patch
+! Checksum: LlYnh1fiqQbxIRon2SqXzw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1748572868-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.86.40
-! TimeUpdated: 2025-05-30T01:34:48+00:00
+! Version: 2.3.86.41
+! TimeUpdated: 2025-05-30T02:36:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -45404,6 +45404,7 @@ _ad_content.
 !+ NOT_PLATFORM(ext_safari, ios)
 /tghr.js$script
 !
+/api/users/*&ev=$script
 /banner.go?spaceid=
 click?pid=*&sub2=Clickunder$all
 /aclib.js^$script
@@ -45855,6 +45856,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||streambolt.tv/js2/
+streambolt.tv##div[style*="z-index: 2147483647;"][style*="position: fixed;"]
+streambolt.tv##.video > div[style*="z-index:"]:not([class])
+streambolt.tv##+js(addEventListener-defuser, DOMContentLoaded, detect)
 thesextube.net##.bloglo-sidebar-inner > div[id^="custom_html-"]
 rule34.xxx##.content > span[data-nosnippet] > div[style^="min-height:"]
 ||manytoon.com/animation.mp4
