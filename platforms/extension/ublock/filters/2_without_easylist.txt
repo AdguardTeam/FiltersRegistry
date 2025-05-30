@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: KulQeP05S9IduIYATrj4Xw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1748585634-3600.patch
+! Checksum: RFM0F6au1Dsvjl7ZM5kDbg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1748589214-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.86.45
-! TimeUpdated: 2025-05-30T06:09:07+00:00
+! Version: 2.3.86.46
+! TimeUpdated: 2025-05-30T07:07:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18712,6 +18712,7 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206527
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206205
 ||sportingsurge.com/js/loader.js
 sportingsurge.com###zdn-adblock-overlay
@@ -18799,6 +18800,8 @@ vinstartheme.com##.AdBlocker
 androidadult.com##.adblock-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202740
 sampledrive.org###adblock-overlay
+sampledrive.org##body > div[id][style="display: block;"]:has(> div[id]:only-child > div[style*="margin: clamp"])
+sampledrive.org##+js(noeval-if, pagead2.googlesyndication.com)
 poplinks.sbs##+js(abort-on-property-write, checkAdsStatus)
 poplinks.sbs##+js(abort-current-script, document.createElement, AdBlock)
 shorttrick.in##+js(no-xhr-if, pagead2.googlesyndication.com)
@@ -35800,6 +35803,7 @@ histmag.org##.p-0[style^="text-align: center; background:"]
 histmag.org###content > div[style="display:flex;font-size:14px;margin-top:30px;margin-bottom:5px"]
 histmag.org###content > div[style="display:flex;font-size:14px;margin-top:30px;margin-bottom:5px"] + .py-8
 histmag.org###content > div[style="display:flex;font-size:14px;margin-top:30px;margin-bottom:5px"] + .py-8 + div[style="display:flex;font-size:14px;margin-top:10px;margin-bottom:30px"]
+histmag.org###article > .my-12:has(> .mx-4:only-child > .py-4:first-child + #our-bread + .py-4:last-child)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106921
 histmag.org#?##article > div.css-nil:has(> div:contains(REKLAMA))
 histmag.org#?##content > div > p:has(> div.css-nil > div:contains(REKLAMA))

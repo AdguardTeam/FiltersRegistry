@@ -1,8 +1,8 @@
-! Checksum: 66onEosHYjF/w1ZqT5wMkQ
+! Checksum: c3WV1kq9s9TikOVStHu0aQ
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.86.45
-! TimeUpdated: 2025-05-30T06:09:07+00:00
+! Version: 2.3.86.46
+! TimeUpdated: 2025-05-30T07:07:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18872,6 +18872,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206527
+mdbmax.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206205
 ||sportingsurge.com/js/loader.js
 sportingsurge.com###zdn-adblock-overlay
@@ -18965,6 +18967,8 @@ vinstartheme.com##.AdBlocker
 androidadult.com##.adblock-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202740
 sampledrive.org###adblock-overlay
+sampledrive.org##body > div[id][style="display: block;"]:has(> div[id]:only-child > div[style*="margin: clamp"])
+sampledrive.org#%#//scriptlet('prevent-eval-if', 'pagead2.googlesyndication.com')
 poplinks.sbs#%#//scriptlet('abort-on-property-write', 'checkAdsStatus')
 poplinks.sbs#%#//scriptlet('prevent-element-src-loading', 'script', 'cloudfront.net')
 poplinks.sbs#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'AdBlock')
@@ -35770,6 +35774,7 @@ histmag.org##.p-0[style^="text-align: center; background:"]
 histmag.org###content > div[style="display:flex;font-size:14px;margin-top:30px;margin-bottom:5px"]
 histmag.org###content > div[style="display:flex;font-size:14px;margin-top:30px;margin-bottom:5px"] + .py-8
 histmag.org###content > div[style="display:flex;font-size:14px;margin-top:30px;margin-bottom:5px"] + .py-8 + div[style="display:flex;font-size:14px;margin-top:10px;margin-bottom:30px"]
+histmag.org###article > .my-12:has(> .mx-4:only-child > .py-4:first-child + #our-bread + .py-4:last-child)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106921
 histmag.org#?##article > div.css-nil:has(> div:contains(REKLAMA))
 histmag.org#?##content > div > p:has(> div.css-nil > div:contains(REKLAMA))
@@ -94053,6 +94058,7 @@ browsershots.org#@#.advert_area
 ||bathepoliteness.com^
 ||batheunits.com^
 ||baticalfelixstown.org^
+||batomqsmoocc.com^
 ||battepush.com^
 ||battiesnarras.com^
 ||battleautomobile.com^
@@ -110319,6 +110325,7 @@ browsershots.org#@#.advert_area
 ||resultlinks.com^
 ||resultsz.com^
 ||resurrectionincomplete.com^
+||retagcoppet.top^
 ||retagro.com^
 ||retainedpotential.com^
 ||retaliatepoint.com^
@@ -110428,6 +110435,7 @@ browsershots.org#@#.advert_area
 ||rhoawnzfiaz.com^
 ||rhombicsomeday.com^
 ||rhrim.com^
+||rhtpbupf.com^
 ||rhubarbmasterpiece.com^
 ||rhudsplm.com^
 ||rhvdsplm.com^
@@ -127822,7 +127830,7 @@ animehub.ac###main-content > center
 slashdot.org###main-nav-badge-link
 proprivacy.com###main-popup
 w3big.com,w3schools.com###mainLeaderboard
-express.co.uk###mantis-recommender-placeholder
+express.co.uk,the-express.com###mantis-recommender-placeholder
 planefinder.net###map-ad-container
 themeforest.net###market-banner
 citynews.ca,citytv.com###master-leaderboard
@@ -129316,7 +129324,7 @@ bikepacking.com##.banner-sidebar
 livescores.biz##.banner-slot
 livescores.biz##.banner-slot-filled
 vedantu.com##.banner-text
-historydaily.org,israelnationalnews.com,pwinsider.com,spaceref.com,usahealthcareguide.com##.banner-top
+historydaily.org,israelnationalnews.com,metricool.com,pwinsider.com,spaceref.com,usahealthcareguide.com##.banner-top
 wpneon.com##.banner-week
 news.net##.banner-wr
 admonsters.com##.banner-wrap
