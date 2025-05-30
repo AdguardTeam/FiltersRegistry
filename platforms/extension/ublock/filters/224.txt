@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Xm16juKkiNIlFFGQy0YcCw
-! Diff-Path: ../patches/224/224-s-1748581943-3600.patch
+! Checksum: yAUCeG/Vv3j2uvf2Gtq+XQ
+! Diff-Path: ../patches/224/224-s-1748596318-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.37.96
-! TimeUpdated: 2025-05-30T05:08:30+00:00
+! Version: 2.1.37.97
+! TimeUpdated: 2025-05-30T09:07:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1184,6 +1184,7 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+vidhub.*##.pwd
 .gif|$third-party,domain=91xx133.cc
 91xx133.cc##main > div[id][class$=" block"][data-v-app]:has(a[href^="https://"][target="_blank"][title])
 91xx133.cc##div[id].is-multiline > .is-one-quarter-tablet:has(> .is-shadowless a[target="_blank"])
@@ -1536,11 +1537,10 @@ nodejs.cn###pagead
 gvm.com.tw##.promotion_ad
 gvm.com.tw##.promotion > .sp-txt
 huya.com##.room-sidebar #public-screen-ab
-vidhub1.cc,vidhub.me,vidhub.tv##div[class][style^="position:"] > img[onclick^="window.open"]
-vidhub1.cc,vidhub.me,vidhub.tv##div:is([class^="ad"], [class*="pwc"], [class^="ww"]):has(> div[class][style] > img[onclick^="window.open"])
-vidhub1.cc,vidhub.me,vidhub.tv##.adpwc
-vidhub1.cc,vidhub.me,vidhub.tv##.adwap
-vidhub1.cc,vidhub.me,vidhub.tv##div[class^="pro"][class*="nk"][style]
+[$domain=/^vidhub\d+\.(cc\|top)$/]##div[class][style*="position:"] > img[onclick^="window.open"]
+[$domain=/^vidhub\d+\.(cc\|top)$/]##.player-info div[class]:has(> div[class][style] > img[onclick^="window.open"]:first-child + span[style]:last-child)
+vidhub2.top,vidhub3.top,vidhub4.cc,vidhub.me,vidhub.tv##div[class][style*="position:"] > img[onclick^="window.open"]
+vidhub2.top,vidhub3.top,vidhub4.cc,vidhub.me,vidhub.tv##.player-info div[class]:has(> div[class][style] > img[onclick^="window.open"]:first-child + span[style]:last-child)
 technews.tw##.inside_AD
 tw100s.com##div[class="ui_adblock"]
 heho.com.tw##div[id^="heho-ml-"]
