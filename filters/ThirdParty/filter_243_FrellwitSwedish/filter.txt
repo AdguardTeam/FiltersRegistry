@@ -1,7 +1,7 @@
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-05-30 06:03:08 CEST
+! Last modified: 2025-05-31 07:48:07 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -17,7 +17,6 @@
 .com/annonsmaterial/
 .com/annons.$script,subdocument
 .com/misc/loada.js
-.html$subdocument,domain=flygtorget.se
 .js?cb$domain=hemmanytt.se
 .js?gcb$domain=hemmanytt.se
 .nu/annons/
@@ -550,9 +549,6 @@ findit.se#%#//scriptlet('ubo-set.js', 'testPrebid', 'noopFunc')
 findit.se##.banner-wrapper, .col-banner, .banner_middle
 firstclassmagazine.se###leader-wrap, #rpwe_widget-2, .side-widget .textwidget
 firstclassmagazine.se##.feat-cat:has-text(/annons/i):upward(a)
-firstfoto.se##article.status-publish:has-text(/annonssamarbete/i)
-firstfoto.se#$##master.cookie-consenting { margin-top:0!important; }
-firstfoto.se###penthouse-ads
 fisheco.se###page-section-2, #page-section-24, .add-special-banner, .g-single
 fiskesnack.com##.axd-widget, #widget_314
 flamman.se###scrollup
@@ -560,7 +556,8 @@ flashback.org###top-banner-container, #top-banner-wrapper
 flashback.org#%#//scriptlet('ubo-nostif.js', '#top-banner-container')
 flashscore.se##.boxOverContent--a, .otPlaceholder, .seoAdWrapper, .adsbackground-wrapper, .prematchOddsBonus__bonus, .prematchLink[target], .detailLeaderboardSkeleton
 flm.nu##.spons
-flygtorget.se###PreHeader
+flygtorget.se##header > div.mx-auto:has(img[alt$="ad logo"])
+flygtorget.se##header > div:first-child:has(img[alt*="banner"])
 fl-net.se##a[href*="casino"]:upward(p)
 fl-net.se###spopup
 fl-net.se##.thumbnail:has([data-revive-zoneid])
@@ -615,7 +612,7 @@ fotboll.com##:is(div.text-center, div.d-none):has(a[href*="/go/"][onclick], .fot
 fotboll.com,thelocal.se##.smartbanner
 fotosidan.se#%#//scriptlet('ubo-aeld.js', 'contextmenu', '', 'showCopyrightBox')
 fotosidan.se##.subArticlesponsored, div[style="width:300px;float:right;"], div[style="float:right;width:300px;"], #partner-box, .adbox-label, .banner-panorama-wmn
-fotosidan.se,merinfo.se,allsvenskan.se,tasteline.com,jaktojagare.se,chefstidningen.se,norpan.se,jaktjournalen.se,byggvarlden.se,omtanke.today,akademikern.se,socionomen.se,culturezone.se,lchfarkivet.se,stoppapressarna.se,metromode.se,lesscarbs.se##.ads
+fotosidan.se,merinfo.se,allsvenskan.se,tasteline.com,jaktojagare.se,chefstidningen.se,norpan.se,jaktjournalen.se,byggvarlden.se,omtanke.today,akademikern.se,socionomen.se,culturezone.se,lchfarkivet.se,stoppapressarna.se,metromode.se,lesscarbs.se,flygtorget.se##.ads
 fragasyv.se##.header-adds
 fragbite.se##.category:has-text(/spons/i):upward(article)
 fragbite.se#$?#.messageHolder ~ div[id*="viralize"][class*="brand-showheroes"] { remove: true; }
@@ -863,7 +860,7 @@ klimatnytt.se##.tm-cookie-banner
 knulla.se,kulturama.se###cookie-popup
 kobe.se###footer #block-7
 kobe.se##.post:has(a[href*="casino"])
-kodboken.se##.CookieConsent
+kodboken.se,flygtorget.se##.CookieConsent
 kokaihop.se#$#body { overflow-y: auto !important; }
 kokaihop.se##.ads-wrapper-main, .InterstitialModal
 kokaihop.se#$?#.cookieBarWrapper { remove: true; }
@@ -984,8 +981,6 @@ maklarvarlden.se##div[data-td-block-uid]:has(a[href*="/kategori/sponsra"])
 maklarvarlden.se##.hustle-popup, div[class$="-sponsrat"]
 maklarvarlden.se##.td_module_wrap:has(div[class$="-sponsrat"])
 mallorcanyheter.com##section[data-settings*="element_pack_wrapper"]:has(.a-single)
-maltermagasin.se##.mh-sidebar, .mh-header-columns
-maltermagasin.se##.widget_media_image:has-text(/annons/i)
 maringuiden.se##.banner_hoger, .google_ads_mg_frontpage, .footerComercialDiv
 marketmate.se##div[id^="marke-"]
 marketplace.se##.td-cpt-post:has(a[href*="/annons/"])
@@ -994,7 +989,6 @@ marknadschefer.se##.elementor-widget-heading:has-text(/Sponsra|annons/i)
 marknadschefer.se##.elementor-widget-heading:has-text(/Sponsra|annons/i) + .elementor-widget-post-block
 marsta.nu##.outsider, .panel--naringsliv
 matinspo.se##[id^="matin-"]
-matkanalen.se###sidebar .widget_text
 matmalin.se##div[id^="matma-"]
 matochpyssel.nu#$#.loading { opacity:1!important }
 matpriskollen.se###kd-preloader
@@ -2483,7 +2477,7 @@ zeromagazine.nu##div[id^="ads"]
 /qc_cmp$domain=reseguiden.se
 /questback.popup$script
 /rantekartan$subdocument,domain=expressen.se
-/raven$script,domain=mitti.se|travnet.se|nyheter24.se|tyda.se|devote.se|egoinas.se|hemtrevligt.se|alltforforaldrar.se|familjeliv.se|brollopstorget.se|blogg.se|nouw.com|lchfarkivet.se|fotbolltransfers.com|norrahalland.se|svenskgolf.se|vimedbarn.se|modette.se|vf.se|hjotidning.se|kt.se|kt-kuriren.se|sla.se|mariestadstidningen.se|filipstadstidning.se|fryksdalsbygden.se|nwt.se|arvikanyheter.se|nkp.se|saffletidningen.se|provinstidningen.se|dalslanningen.se|nlt.se|skaraborgsbygden.se|alltomnorrtalje.se|fragbite.se|ljudochbild.se|vk.se|folkbladet.nu|nordsverige.se|mellanbygden.nu|vasterbottningen.se|lokaltidningen.nu|svenskafans.com|sportlovin.se|innebandymagazinet.se|jaktjournalen.se|akaskidor.se|hockeysverige.se|kingmagazine.se|cafe.se|hockeynews.se|mmanytt.se|idrottensaffarer.se
+/raven$script,domain=mitti.se|travnet.se|nyheter24.se|tyda.se|devote.se|egoinas.se|hemtrevligt.se|alltforforaldrar.se|familjeliv.se|brollopstorget.se|blogg.se|nouw.com|lchfarkivet.se|fotbolltransfers.com|norrahalland.se|svenskgolf.se|vimedbarn.se|modette.se|vf.se|hjotidning.se|kt.se|kt-kuriren.se|sla.se|mariestadstidningen.se|filipstadstidning.se|fryksdalsbygden.se|nwt.se|arvikanyheter.se|nkp.se|saffletidningen.se|provinstidningen.se|dalslanningen.se|nlt.se|skaraborgsbygden.se|alltomnorrtalje.se|fragbite.se|ljudochbild.se|vk.se|folkbladet.nu|nordsverige.se|mellanbygden.nu|vasterbottningen.se|lokaltidningen.nu|svenskafans.com|sportlovin.se|innebandymagazinet.se|jaktjournalen.se|akaskidor.se|hockeysverige.se|kingmagazine.se|cafe.se|hockeynews.se|mmanytt.se|idrottensaffarer.se|veckorevyn.com
 /recommendations$xmlhttprequest,domain=expressen.se
 /registerhit?$image
 /reklamy$image,domain=poloniainfo.se
