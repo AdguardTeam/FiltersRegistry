@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5hTo2rDNfIeHeqJQvzrzRQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1748739323-14400.patch
+! Checksum: g/8gq3DB7Pir07FL8dAOBw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1748753252-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.42.30
-! TimeUpdated: 2025-06-01T00:51:06+00:00
+! Version: 2.1.42.31
+! TimeUpdated: 2025-06-01T04:42:56+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -117,6 +117,7 @@
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
+/socialbookmarks.js
 /socialite.js
 /socialite.min.js
 /socialsprites.
@@ -335,6 +336,7 @@ _social-bar/
 ###menu-item-facebook
 ###menu-item-social
 ###menu-item-twitter
+###menu-reseaux-sociaux
 ###menu-share
 ###menu-social
 ###menu-social-1
@@ -367,6 +369,7 @@ _social-bar/
 ###newSocialContainer
 ###page-share
 ###panel-social
+###partShare
 ###pinterest-link
 ###pinterest-share
 ###playerShare
@@ -572,6 +575,7 @@ _social-bar/
 ###socialButtonOnPage
 ###socialButtons
 ###socialConnect
+###socialConnects
 ###socialContainer
 ###socialFB
 ###socialFacebook
@@ -882,6 +886,7 @@ _social-bar/
 ##.article-social-sharing
 ##.article-social-wrapper
 ##.article-socials
+##.article-subline-share
 ##.article-title-share
 ##.articleShare
 ##.articleShareLinks
@@ -938,6 +943,7 @@ _social-bar/
 ##.b_like
 ##.b_share
 ##.badge-share
+##.banner-social
 ##.bc-author-socials
 ##.bc_social_icons
 ##.bctt-click-to-tweet
@@ -963,6 +969,7 @@ _social-bar/
 ##.block-ec_social
 ##.block-facebook
 ##.block-facebook-inner
+##.block-followus
 ##.block-sharebar
 ##.block-sharethis
 ##.block-shariff
@@ -1481,6 +1488,7 @@ _social-bar/
 ##.fusion-sharing-box
 ##.fusion-social-network-icon
 ##.fv-social
+##.fvfacebook_share
 ##.g1-socials-item
 ##.g1-socials-section
 ##.g_share
@@ -1489,6 +1497,7 @@ _social-bar/
 ##.gallery__share
 ##.gb-share
 ##.gd-social-share
+##.gdlr-social-share
 ##.generic_share
 ##.genericon-facebook
 ##.genericon-facebook-alt
@@ -2104,6 +2113,7 @@ _social-bar/
 ##.reseaux-sociaux-list
 ##.resp-sharing-button
 ##.right-social
+##.rightShare
 ##.rmp-sharing
 ##.rn_SocialBookmarkLink
 ##.rnsocial
@@ -2849,6 +2859,7 @@ _social-bar/
 ##.social-networks-link
 ##.social-networks-list
 ##.social-networks__item
+##.social-networks__wrapper
 ##.social-news-buttons
 ##.social-newsletter
 ##.social-newsletter-container
@@ -3006,7 +3017,6 @@ _social-bar/
 ##.socialNetworks
 ##.socialPanel
 ##.socialPinterest
-##.socialRight
 ##.socialSection
 ##.socialShare
 ##.socialShareIcon
@@ -3243,6 +3253,7 @@ _social-bar/
 ##.tweetThis
 ##.tweet_btn
 ##.tweet_button
+##.tweet_container
 ##.tweetbox
 ##.tweetbtn
 ##.tweeter
@@ -3275,6 +3286,7 @@ _social-bar/
 ##.twitterIcon
 ##.twitterItem
 ##.twitterLink
+##.twitterPanel
 ##.twitterShare
 ##.twitterWidget
 ##.twitter_btn
@@ -3311,9 +3323,9 @@ _social-bar/
 ##.usr-social
 ##.ut2-social-link-block
 ##.utility-social
-##.v-follow-share
 ##.vbseo_share
 ##.vc_share_link_container
+##.vc_social_button
 ##.vc_social_icons
 ##.vce-share-bar
 ##.vce-share-items
@@ -3775,7 +3787,6 @@ dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
 retire.ly##.cs-footer-social-links
-economist.com##.css-11yt5xn
 techcommunity.microsoft.com##.custom_widget_MicrosoftFooter_social-share_yuh6w_138
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
@@ -3830,13 +3841,14 @@ indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,alaskahighwaynews.ca,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,burnabynow.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,fitzhugh.ca,flamboroughtoday.com,griceconnect.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,mountainviewtoday.ca,newmarkettoday.ca,newwestrecord.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,ontarioflyers.ca,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,theorca.ca,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,tricitynews.com,vancouverisawesome.com,westernwheel.ca##.ft-social
+mlbtraderumors.com##.fv_sharing_round
 thegatewaypundit.com##.gb-button-wrapper
 ghacks.net##.ghacks_share_widget
 cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
 coinedition.com##.google-news-block
+alarabiya.net##.google-news-callout
 gadgets360.com##.gsocialbar
-verdictum.in##.h-anchor
 israelnationalnews.com##.header-nav-addons-link
 archaeology.org##.header-share
 malaymail.com##.header-social-menu
@@ -3868,7 +3880,6 @@ euronews.com##.js-c-article-partage-commentaire-share
 buzzfeed.com##.js-inline-share-bar
 guide.michelin.com##.js-share-sticky
 myanimelist.net##.js-sns-icon-container
-republicbharat.com,republicworld.com##.justify-start.flex.flex-wrap.pb-4.desktop\:pb-5.items-center.mt-3.desktop\:mt-0.desktop\:justify-start.svelte-9p22hr
 4sysops.com##.kleo-quick-contact-wrapper
 techcrawlr.com##.kt_simple_share_container
 observervoice.com##.latest-tweets-widget
@@ -3916,7 +3927,6 @@ sheknows.com,spy.com##.o-social-list__item
 support.microsoft.com##.ocArticleFooterShareContainer
 support.microsoft.com##.ocArticleFooterShareLinksWrapper
 omgubuntu.co.uk##.omg-socials
-newslaundry.com##.oxeRF
 opiumpulses.com##.page-footer-block-social-items
 theroar.com.au##.pm-share-horizontal
 getcomics.org##.post-footer-shr
@@ -3976,7 +3986,6 @@ streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
 12tomatoes.com##.sharetocare-popup
 welivesecurity.com##.sidebar-card-media
-news24online.com##.single_page-social-share
 streetsblog.org##.single_sharingInner__3IoQO
 nme.com,operawire.com,whoopsee.it##.site-footer-social
 news.sky.com,skysports.com##.site-share-wrapper
@@ -4017,7 +4026,6 @@ finebooksmagazine.com##.social-tools
 politico.com##.social-tools__list
 dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 newser.com##.socialButtons
-news9live.com##.socialIcon
 macrumors.com##.socialMedia--3i9tSnAb
 tech.hindustantimes.com##.socialWidgets
 jetphotos.com##.social__link--share
@@ -4459,7 +4467,6 @@ adn40.mx##.ListSiguenos-SocialStrip
 eleco.com.ar##.MainFooter_socialMedia__xCFDQ
 ejecentral.com.mx##.NavigationSocial
 elpais.com.uy##.Page-actions-wrapper
-3cat.cat,ccma.cat##.R-rightShare
 eleco.com.ar##.SocialMediaShare_socialContainer__hcB_7
 nmas.com.mx##.SocialShareButtons_share__Gnof2
 elcomercio.com##.adv-footer-social
@@ -4493,6 +4500,7 @@ qhubomedellin.com##.div_canal_telegram
 qhubomedellin.com##.div_canal_whatsapp
 qhubomedellin.com##.div_news_google
 eldiario.es,eldiarioar.com##.edi-social-buttons
+semana.com##.footer-google-news
 a24.com,diariodecuyo.com.ar,perfil.com##.footer-redes
 ara.cat,europapress.es##.footer-rrss
 heraldousa.com##.footer__social-ctn
@@ -4513,6 +4521,7 @@ clublibertaddigital.com,libertaddigital.com,libremercado.com##.links_social
 diariodemocracia.com##.list-social-media
 atlanticohoy.com,diario16plus.com,planetarealmadrid.com##.m-social-profile
 milanuncios.com##.ma-AdDetailShare
+perfil.com##.main-footer__redes
 canalnet.tv##.main-video-single__socials
 genbeta.com,vidaextra.com,xataka.com.mx##.menu-follow
 debate.com.mx,show.news,tonica.la##.mod--googlenews
