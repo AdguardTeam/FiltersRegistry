@@ -1,16 +1,16 @@
-! Checksum: q08hph+lyWDbpgak8b+/AA
-! Diff-Path: ../patches/244/244-s-1747600778-14400.patch
+! Checksum: 5rGoXVApV5AkGSYvU2oIrA
+! Diff-Path: ../patches/244/244-s-1748767378-14400.patch
 ! Title: YousList
 ! Description: Filter that blocks ads on Korean sites.
-! Version: 2.0.11.3
-! TimeUpdated: 2025-05-18T20:35:26+00:00
+! Version: 2.0.11.4
+! TimeUpdated: 2025-06-01T08:38:55+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Homepage: https://github.com/yous/YousList
 ! License: https://github.com/yous/YousList#license
 ! Title: YousList
 ! Expires: 1 days
-! OriginalVersion: 20250518
+! OriginalVersion: 20250601
 ! General element hiding rules
 ##amp-ad
 ##amp-embed.ad_cnt
@@ -1467,6 +1467,7 @@
 ||ilbe.com/myads/openX_passback*.html^$domain=ilbe.com
 ||ilikeview.com/aclk^
 ||imaeil.com/upload/ads/$domain=imaeil.com
+||image.ajunews.com/content/ads/$domain=ajunews.com
 ||image.cauly.co.kr/websdk/common/lasted/ads.js^
 ||image.cauly.co.kr/websdk/multi_mini_ads/ads.js^
 ||image.cauly.co.kr:15151/richad/partnerApp/
@@ -1688,6 +1689,7 @@
 ||m.asiatoday.co.kr/kn/ad/$domain=m.asiatoday.co.kr
 ||m.asiatoday.co.kr/kn/adop2.js^$domain=m.asiatoday.co.kr
 ||m.asiatoday.co.kr/kn/inbnet.html^$domain=m.asiatoday.co.kr
+||m.cartech.nate.com/images/banner/$domain=m.cartech.nate.com
 ||m.celuvmedia.com/ad/$domain=m.celuvmedia.com
 ||m.chosun.com/200.html^$domain=m.chosun.com
 ||m.chosun.com/biz_spo.html^$domain=m.biz.chosun.com
@@ -2456,10 +2458,12 @@ afbbs.afreecatv.com##div#div_video_ad_banner
 afreecatv.com##button.promotion_area_left
 afreecatv.com##button.promotion_area_right
 afreecatv.com##div.promotion_area
-ajunews.com##article.art_ad
-ajunews.com##article.art_ad_banner
-ajunews.com##div.asd_banner
-ajunews.com##div.banner_con
+ajunews.com##article[class^="atc_ad_"]
+ajunews.com##div#articleBody>div[style="height: 260px; margin: 10px 0px;"]
+ajunews.com##div#articleBody>div[style="height:260px;margin:10px 0 10px 0;;"]
+ajunews.com##div#articleBody>div[style="width:100%;height:480px;"]
+ajunews.com##div.view_banner
+ajunews.com##div[class^="atc_ad_"]
 akomnews.com##div.ad_pos
 akomnews.com##div.banner_wrap
 akomnews.com##div.com_ban
@@ -4686,6 +4690,8 @@ m.cafe.naver.com##div.area_sa
 m.cafe.naver.com##div.plug_game_ad
 m.cafe.naver.com##div.reserve_banner
 m.cafe.naver.com##li.ad_wrap
+m.cartech.nate.com##div[class^="page_content-ad-box__"]
+m.cartech.nate.com##img[src^="/images/banner/"]
 m.celuvmedia.com##div.ad_frame
 m.celuvmedia.com##img[src^="/ad/"]
 m.celuvmedia.com##section.main_bnr
@@ -4828,13 +4834,13 @@ m.edaily.co.kr##div.view_show01
 m.edaily.co.kr##div[class^="adTarget"]
 m.ekn.kr##div.view-read>div[style="float:right; margin-left:15px;"]
 m.ekn.kr##div.view_bottom_ad
-m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div#Article>div.View_btn~div[style]:not([class]):not([id])
-m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div#contentsBodyDiv>div[style="width:100%;margin-bottom:15px"]
-m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div#contentsBodyDiv>table[align="left"][width="100%"]>tbody>tr>td[style="height:300px;text-align:center;"]
-m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div#contentsBodyDiv>table[align="right"][style="margin-left:5px;"][width="200px"]
-m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div#popAdDiv
 m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div#rollingAdDiv
-m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##iframe[src*="/ad/googleAd_view.html"]
+m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div.mndAD
+m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div.rowAd
+m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div.view-layout-wrapper>section.adArea
+m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div.view-layout-wrapper>section.adSection
+m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##div.viewContent>section.adArea
+m.en.seoul.co.kr,m.eye.seoul.co.kr,m.go.seoul.co.kr,m.nownews.seoul.co.kr,m.seoul.co.kr,m.stv.seoul.co.kr##main>div.adBanner
 m.encar.com##div#ads
 m.encar.com##div.encar_ad
 m.enter.etoday.co.kr##article.row.banner
@@ -5385,11 +5391,6 @@ m.segye.com##div#wide_wrap>div[style="float:left; width:100%; height:50px; clear
 m.segye.com##div.subAdinfo
 m.segye.com##div.subAdnoline
 m.segye.com##section.tab.tab_reco
-m.seoul.co.kr##div.mncAD
-m.seoul.co.kr##div.rowAd
-m.seoul.co.kr##section.adArea>div.ad
-m.seoul.co.kr##section.articleBottomNews.adArea
-m.seoul.co.kr##section.articleBottomNews.adSection
 m.sisain.co.kr##div.ad_35
 m.sisain.co.kr##div.edit_inner_content>div.banner_box
 m.sisain.co.kr##div.float_banner
@@ -5437,8 +5438,10 @@ m.sports.naver.com##div#content>div[class*=" AdBanner_type_skeleton__"]
 m.sports.naver.com##div.home_ad_group
 m.sports.naver.com##div.main_grid_item>div[class*=" AdBanner_type_skeleton__"]
 m.sports.naver.com##div.main_grid_item>div[class*=" HeadlineNews_comp_headline__"][class*=" HeadlineNews_type_manual__"]
+m.sports.naver.com##div[class*=" AdBanner_comp_ad__"]
 m.sports.naver.com##div[class*=" BrandTrendStory_"]
 m.sports.naver.com##div[class*=" InlineBanner_comp_promotion__"]
+m.sports.naver.com##div[class^="AdDeDupBanner_comp_ad__"]
 m.sportschosun.com##aticle#cont>div.atl>div[style="padding:20px 10px;"]
 m.sportschosun.com##body>div[style="height:48px;width:100%;background-color:#f6f6f6;z-index:10;"]
 m.sportschosun.com##div#absdiv1
@@ -5641,6 +5644,7 @@ macworld.com##div.lazyload_ad
 macworld.com##div.sponsored-links
 mail.daum.net##div#daBannerWrapper
 mail.google.com##div[role="main"]>div.aKB
+mail.naver.com##div#content>div.smart_channel
 mainichi.jp##aside.ad.pr
 mainichi.jp##aside.ad.yads
 mainichi.jp##div.ad.img-left
@@ -5954,6 +5958,8 @@ neowin.net##div.header-banner-ads
 neowin.net##div.widget-ad
 net.hr##div.banner
 net.hr##div.banner_adsense
+new-m.pay.naver.com##div#p_pay_paid
+new.land.naver.com##div#land_panel_da
 newautopost.co.kr##div.floating-150-ad
 newautopost.co.kr##div.footer-floating-ad
 newautopost.co.kr##div.newautopost-gsm-video-ad
