@@ -1,5 +1,5 @@
-! Checksum: AWTQi2ljgfHo1+YxkjUjMg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1748794281-3600.patch
+! Checksum: J0gedR/e6H2i4Q5ON8hCxQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1748832201-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.52.62
@@ -83,7 +83,6 @@ lameteoagricole.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.co
 meteo-grenoble.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 cinefil.com#%#//scriptlet('set-constant', 'checkDiv', 'noopFunc')
 @@||rustica.fr/*.iads.js
-@@||gift.ibon.com.tw/*/pub.js
 xn--mto-bmab.fr#@#.topbanneradvertise
 empire-streaming.*#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 empire-anime.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
@@ -1418,7 +1417,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://adx.
 ://afflight.$third-party
 ://ar.ads.
-://ashot.$script
 ://banner.*click
 ://banner.*utm_
 ://banners2.$third-party
@@ -1635,7 +1633,6 @@ _werbebanner_
 &request_*&zoneid=$popup
 &subAffId=$popup
 &tid=*&ref=$popup
-&type=*&iframeDetected=$popup
 &url_bnm_redirect=$popup
 &utm_*=cpm&$popup
 &utm_ad=$popup
@@ -1775,6 +1772,7 @@ _build=iclick-$popup
 ||dolead.com^$third-party
 ||dorcelcash.com^$third-party
 ||e-mailit.com^$third-party
+||easy-rencontre.com^$third-party
 ||easysexe.com^$third-party
 ||ebuzzing.fr^$third-party
 ||echangedebannieres.fr^$third-party
@@ -1904,7 +1902,6 @@ _build=iclick-$popup
 ||wedoo.com^$third-party
 ||wendise.com^$third-party
 ||widespace.com^$third-party
-||xaddad.com^$third-party
 ||xcamz.xyz^$third-party
 ||xn--ae-tja.ch^$third-party
 ||xpicw.top^$third-party
@@ -2122,6 +2119,7 @@ _build=iclick-$popup
 ||damageddistance.com^
 ||damkong.top^
 ||dancemistake.com^
+||dasyuredenmark.com^
 ||datewithman.com^
 ||dauntonedder.com^
 ||dauntssquills.com^
@@ -2237,7 +2235,6 @@ _build=iclick-$popup
 ||go2yd.com^
 ||goavoafu.com^
 ||goeco.mobi^
-||gofimtaisa.net^
 ||goldscogger.top^
 ||gorrio.ru^
 ||goschenelect.com^
@@ -3002,7 +2999,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||tounet.com/button.php
 ||tounet.com/campagnes/files/banner_
 ||tripadvisor.*/partner/$third-party
-||tripleclicks.com^$subdocument
 ||tudou.com^$subdocument
 ||turk-dreamworld.com/images/sponsor/
 ||tuto.com/banner/$third-party
@@ -3297,6 +3293,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||permispratique.com/photo/*_habillage_
 ||petit-bulletin.fr/multimedia/fond/
 ||pharmnet-dz.com/img/pubs/
+||plancul-gratuit.*/disclamer.
 ||plx.tukif.com^
 ||porn.com^$xmlhttprequest
 ||pornburst.xxx/assets/js/head.
@@ -3346,7 +3343,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||tiplanet.org/forum/images/jarrety5.webp
 ||tiplanet.org/forum/images/navbar-sprite.gif
 ||tlemcen-electronic.com/forum/vf.gif
-||top-for-phone.fr/imgs/
 ||trovit.*/index.php/cod.get_premium/$xmlhttprequest
 ||trovitargentina.*/index.php/cod.get_premium/
 ||tukif.com/webcams/
@@ -3708,7 +3704,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.ad.banner
 ##.ad.billboard
 ##.ad.onlyMobile
-##.ad_skyscrap
 ##.ads-container
 ##.ads-foot
 ##.ads-footerBanner
@@ -3728,7 +3723,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.before-side-nav-ad
 ##.bg-adsense
 ##.big-leaderboard
-##.bireklam2
 ##.bloc-ads
 ##.bloc-pub
 ##.bloc-pub2
@@ -3741,6 +3735,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.block_pub
 ##.blockgrayad
 ##.blocpub
+##.blocpubbas
 ##.border_ads
 ##.bottom-advertising
 ##.bottom_ad_con
@@ -4121,7 +4116,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.underplayer_banner
 ##.ustreklam
 ##.vda-block
-##.vda-title
 ##.video-list-ads
 ##.video_reklama
 ##.view-publicites
@@ -4247,9 +4241,11 @@ blogspot.com###pageflip
 sante-dz.com###partners-container
 tiplanet.org###partnersWidget
 tube8.fr###pb_block
+terre.tv###point_part
 clicbienetre.com###popup
 aufeminin.com###precontent
 hellokids.com###preroll
+bobvoyeur.com###products-export
 egaliteetreconciliation.fr###produits_en_vente
 lacanausurfinfo.com###promo
 ouedkniss.com###promo-header
@@ -4321,7 +4317,6 @@ herault-tribune.com##.annonces-legales
 leboncoin.fr##.apn-na
 lejournaldelamaison.fr,mariefrance.fr##.article-context-produit
 causeur.fr##.asa_product_box
-katibin.fr,top-for-phone.fr##.background-cover
 codeur.com##.badge-project-urgent
 cnews.fr##.ban-bottom-desktop
 bdgest.com,bedetheque.com##.ban-top
@@ -4634,7 +4629,6 @@ ouest-france.fr##div[id^="pub_native"]
 ouest-france.fr##div[id^="pub_pave_article"]
 universfreebox.com##div[id^="publicite-"]
 zonebourse.com##div[id^="zpp"]
-impotsurlerevenu.org##div[style*="float:right;width:300px;"]
 cpasbien-support.com,cpasbien.do,extreme-down.party,fmovies.ec,fmoviesz-to.com,gktorrent.cz,hdss.yachts,lookmovie-official.live,lookmovie2-official.lol,moviesjoy.ad,oxtorrent3.com,sflix.ad,tinyzone.ad,ultimate-torrent1.com,wiflix.rent,www-yts.com,yggtorrent.cc##div[style*="opacity:"]
 superphysique.org##div[style*="text-align: center"][style*="width:250px"]
 judgehype.com##div[style*="width:300px;height:600px;"]
