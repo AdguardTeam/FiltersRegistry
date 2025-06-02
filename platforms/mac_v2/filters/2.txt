@@ -1,9 +1,9 @@
-! Checksum: fYqPMUw69wwXhmpwXsHrZQ
-! Diff-Path: ../patches/2/2-s-1748855528-3600.patch
+! Checksum: +BkJKO48zpaqSCu9V+l3Ng
+! Diff-Path: ../patches/2/2-s-1748859127-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.86.78
-! TimeUpdated: 2025-06-02T09:07:48+00:00
+! Version: 2.3.86.79
+! TimeUpdated: 2025-06-02T10:07:34+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18980,6 +18980,7 @@ poplinks.sbs#%#//scriptlet('prevent-element-src-loading', 'script', 'cloudfront.
 poplinks.sbs#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'AdBlock')
 shorttrick.in#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202765
+kio.ac#%#//scriptlet('prevent-element-src-loading', 'script', 'probableregret.com')
 kio.ac#@#ins.adsbygoogle[data-ad-slot]
 kio.ac#@#ins.adsbygoogle[data-ad-client]
 kio.ac#@#.adsbygoogle-noablate
@@ -29029,6 +29030,9 @@ extra.cz##[data-advert-container]
 rychlost.cz##.t-ban
 olympijskytym.cz##div.bg-texture:has(> div[class^="ad-"])
 impuls.cz##.r-main
+! https://github.com/AdguardTeam/AdguardFilters/issues/206129
+! Domains with the player changed frequently, no common parts in URLs
+##.ad-container > button.close-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201753
 ||storage.googleapis.com/pravda-ad-script/
 pravda.sk##.perex-adblock-warning
@@ -37916,7 +37920,7 @@ money.pl#$#body { overflow: visible!important; }
 ||o2.pl^$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,xmlhttprequest,other,~script
 www.wp.pl#$#body > #root { opacity: 1 !important; }
 www.wp.pl##.grid > div:not([class]):has(> div[class*=" "]:only-child > div[class*=" "]:first-child + div[class*=" "]:last-child > div:empty:first-child + img[src*="://v.wpimg.pl/"][alt][role="presentation"]:last-child)
-www.wp.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"][alt]:first-child + div:last-child)
+www.wp.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"][alt]:first-child + div:last-child:empty)
 wp.pl##[class^="_"]:has(> img[src*=".wp.pl"])
 wp.pl$$script:contains(/var wp_gaf_rv[\s\S]*?\n.*"spin".*"dfpConfig".*"slots?"/)
 pudelek.pl,abczdrowie.pl,pysznosci.pl,o2.pl,autokult.pl,jastrzabpost.pl,genialne.pl,polygamia.pl,money.pl,wp.pl#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*.slots')
@@ -46434,6 +46438,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+roshy.tv##div[class^="roshy-"]
+roshy.tv##.sidebar-content > div.shortcode_widget:has(div[class^="roshy-"])
 tor.link##.col-md-12:has(> a[target="_blank"] > .adbanner)
 wyqe.online$$script:contains(netpub.media)
 skysports.com##.ui-advert

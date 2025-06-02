@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 49ZgzfLIW40PB0lrPsbnyQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1748855523-3600.patch
+! Checksum: gFvosfhOt7Fwm3/2lYy26A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1748859120-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.86.78
-! TimeUpdated: 2025-06-02T09:07:48+00:00
+! Version: 2.3.86.79
+! TimeUpdated: 2025-06-02T10:07:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -29153,6 +29153,9 @@ extra.cz##[data-advert-container]
 rychlost.cz##.t-ban
 olympijskytym.cz##div.bg-texture:has(> div[class^="ad-"])
 impuls.cz##.r-main
+! https://github.com/AdguardTeam/AdguardFilters/issues/206129
+! Domains with the player changed frequently, no common parts in URLs
+##.ad-container > button.close-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201753
 ||storage.googleapis.com/pravda-ad-script/
 pravda.sk##.perex-adblock-warning
@@ -37860,7 +37863,7 @@ money.pl#$#body { overflow: visible!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61660
 www.wp.pl#$#body > #root { opacity: 1 !important; }
 www.wp.pl##.grid > div:not([class]):has(> div[class*=" "]:only-child > div[class*=" "]:first-child + div[class*=" "]:last-child > div:empty:first-child + img[src*="://v.wpimg.pl/"][alt][role="presentation"]:last-child)
-www.wp.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"][alt]:first-child + div:last-child)
+www.wp.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"][alt]:first-child + div:last-child:empty)
 wp.pl##[class^="_"]:has(> img[src*=".wp.pl"])
 ! turystyka.wp.pl,opinie.wp.pl,gry.wp.pl,moto.wp.pl,gwiazdy.wp.pl,tech.wp.pl,kobieta.wp.pl#?#div[class^="_"][class*=" _"]:has(>div[class]:first-child:empty+img[src*="://v.wpimg.pl/"][alt="WP"]:empty)
 turystyka.wp.pl#?#div:not([class]):not([id]) > div:not([class]):not([id]) > div[class*=" "] > div[class] > div:not([class]):not([id]):only-child > div:not([class]):not([id]):first-child > div[class]:only-child:upward(4)
@@ -45868,6 +45871,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+roshy.tv##div[class^="roshy-"]
+roshy.tv##.sidebar-content > div.shortcode_widget:has(div[class^="roshy-"])
 tor.link##.col-md-12:has(> a[target="_blank"] > .adbanner)
 skysports.com##.ui-advert
 skysports.com##.sdc-site-outbrain

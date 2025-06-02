@@ -1,9 +1,9 @@
-! Checksum: KXOtlz56TTw9EKOTgAnk9Q
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1748855526-3600.patch
+! Checksum: G2gW0xwdcOyt2TO/iBBB8w
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1748859124-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.86.78
-! TimeUpdated: 2025-06-02T09:07:48+00:00
+! Version: 2.3.86.79
+! TimeUpdated: 2025-06-02T10:07:34+00:00
 ! Expires: 5 days (update frequency)
 ||aweyqaqkrvjm.top^
 ||entertainlavish.com^
@@ -2831,10 +2831,13 @@ poplinks.sbs#%#//scriptlet('abort-on-property-write', 'checkAdsStatus')
 poplinks.sbs#%#//scriptlet('prevent-element-src-loading', 'script', 'cloudfront.net')
 poplinks.sbs#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'AdBlock')
 shorttrick.in#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
+kio.ac#%#//scriptlet('prevent-element-src-loading', 'script', 'probableregret.com')
 kio.ac#@#ins.adsbygoogle[data-ad-slot]
 kio.ac#@#ins.adsbygoogle[data-ad-client]
 kio.ac#@#.adsbygoogle-noablate
 kio.ac#@#.ad-slot
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||probableregret.com/*/*/*/$script,domain=kio.ac
 minorpatch.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=minorpatch.com
@@ -8813,6 +8816,7 @@ idos.cz##.r-main
 idos.cz##.advert-leader-board-container
 extra.cz##[data-advert-container]
 rychlost.cz##.t-ban
+##.ad-container > button.close-ad
 ||storage.googleapis.com/pravda-ad-script/
 pravda.sk##.perex-adblock-warning
 zdopravy.cz###container-ads
@@ -11333,7 +11337,7 @@ chamsko.pl##.main-banner
 @@||chamsko.pl/js/advertisement.js
 www.wp.pl#$#body > #root { opacity: 1 !important; }
 www.wp.pl##.grid > div:not([class]):has(> div[class*=" "]:only-child > div[class*=" "]:first-child + div[class*=" "]:last-child > div:empty:first-child + img[src*="://v.wpimg.pl/"][alt][role="presentation"]:last-child)
-www.wp.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"][alt]:first-child + div:last-child)
+www.wp.pl##div[class*=" "]:has(> img[src^="https://v.wpimg.pl/"][alt]:first-child + div:last-child:empty)
 pudelek.pl,abczdrowie.pl,pysznosci.pl,o2.pl,autokult.pl,jastrzabpost.pl,genialne.pl,polygamia.pl,money.pl,wp.pl#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*.slots')
 open.fm,dom.wp.pl,facet.wp.pl,film.wp.pl,finanse.wp.pl,gry.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,kuchnia.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,teleshow.wp.pl,turystyka.wp.pl,wawalove.wp.pl,wiadomosci.wp.pl,wroclaw.wp.pl##div[class*=" "]:has(> div[class]:first-child:empty + img[src*="://v.wpimg.pl/"][alt]:empty)
 jastrzabpost.pl,pysznosci.pl,genialne.pl,polygamia.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,fotoblogia.pl,gadzetomania.pl,komorkomania.pl,money.pl,parenting.pl,pudelek.pl,o2.pl,wp.pl#%#!function(){const r={apply:(r,o,e)=>(e[0]?.includes?.("</VAST>")&&(e[0]=""),Reflect.apply(r,o,e))};window.DOMParser.prototype.parseFromString=new Proxy(window.DOMParser.prototype.parseFromString,r)}();
@@ -14731,6 +14735,8 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com|zinchanmanga.com|yaoimangaonline.com|tututweak.app|mangaraw.ac|eromanga-show.com|hentai-one.com|hentaipaw.com|nukibooks.com|paipancon.com|jgvdata.com|youtubevanced.com
+roshy.tv##div[class^="roshy-"]
+roshy.tv##.sidebar-content > div.shortcode_widget:has(div[class^="roshy-"])
 tor.link##.col-md-12:has(> a[target="_blank"] > .adbanner)
 skysports.com##.ui-advert
 skysports.com##.sdc-site-outbrain
