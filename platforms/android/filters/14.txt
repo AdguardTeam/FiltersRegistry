@@ -1,9 +1,9 @@
-! Checksum: fUzQ7lQAhAIZcIU7UMltEQ
-! Diff-Path: ../patches/14/14-s-1748898674-3600.patch
+! Checksum: OIoUkYMwhmbntzk5CLXW3A
+! Diff-Path: ../patches/14/14-s-1748902271-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.32.19
-! TimeUpdated: 2025-06-02T21:07:36+00:00
+! Version: 2.2.32.20
+! TimeUpdated: 2025-06-02T22:07:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2508,6 +2508,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+lkz.de#%#//scriptlet('trusted-click-element', '#nfyc-plus-layer:not(.hidden) button[onclick="UC_UI.acceptAllConsents();"]', '', '1000')
 cam4.com##footer + div[class]:has(> div > div > a[href="/legal/cookies"])
 noon.com##div[class^="CookieConsentNotice_wrapper"]
 pdf-xchange.com##.cookie-fixed-hint
@@ -17096,6 +17097,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206765
+@@||usercentrics.eu^$domain=lkz.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206746
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206759
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206751
@@ -51014,6 +51017,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+lz.de###fb_werbeform
 visualcapitalist.com###block-8
 saechsische.de###piano-home-inline-saez
 dnn.de,landeszeitung.de#$#div[class^="PianoBanner"] { display: none !important }

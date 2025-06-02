@@ -1,9 +1,9 @@
-! Checksum: Dyyv5moTRYxEyj87ZNlGQA
-! Diff-Path: ../patches/18/18-s-1748898683-3600.patch
+! Checksum: F32vxax59sw9xOIoVDlYfA
+! Diff-Path: ../patches/18/18-s-1748902285-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.63.12
-! TimeUpdated: 2025-06-02T21:07:43+00:00
+! Version: 2.0.63.13
+! TimeUpdated: 2025-06-02T22:07:33+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2508,6 +2508,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+lkz.de#%#//scriptlet('trusted-click-element', '#nfyc-plus-layer:not(.hidden) button[onclick="UC_UI.acceptAllConsents();"]', '', '1000')
 cam4.com##footer + div[class]:has(> div > div > a[href="/legal/cookies"])
 noon.com##div[class^="CookieConsentNotice_wrapper"]
 pdf-xchange.com##.cookie-fixed-hint
@@ -17015,6 +17016,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206765
+@@||usercentrics.eu^$domain=lkz.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206746
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206759
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206751
