@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.0.99.63",
-			"timeUpdated": "2025-06-02T15:07:10+0000",
+			"version": "2.0.99.64",
+			"timeUpdated": "2025-06-02T17:07:22+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.85.74",
-			"timeUpdated": "2025-06-02T16:08:10+0000",
+			"version": "2.0.85.75",
+			"timeUpdated": "2025-06-02T17:07:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.47.86",
-			"timeUpdated": "2025-06-02T16:08:15+0000",
+			"version": "2.0.47.87",
+			"timeUpdated": "2025-06-02T17:07:58+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.32.16",
-			"timeUpdated": "2025-06-02T16:08:25+0000",
+			"version": "2.2.32.17",
+			"timeUpdated": "2025-06-02T17:08:18+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.10",
-			"timeUpdated": "2025-06-02T16:08:29+0000",
+			"version": "2.0.63.11",
+			"timeUpdated": "2025-06-02T17:08:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -772,8 +772,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.21.45",
-			"timeUpdated": "2025-06-02T14:07:44+0000",
+			"version": "2.0.21.46",
+			"timeUpdated": "2025-06-02T17:08:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
