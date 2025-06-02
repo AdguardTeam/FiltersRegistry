@@ -1,9 +1,9 @@
-! Checksum: 27BC8VAfSwuv0+lojv4JgQ
-! Diff-Path: ../patches/14/14-s-1748852068-3600.patch
+! Checksum: UvlJ/wVg51wARsNM+0A3Vw
+! Diff-Path: ../patches/14/14-s-1748855514-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.32.8
-! TimeUpdated: 2025-06-02T08:10:31+00:00
+! Version: 2.2.32.9
+! TimeUpdated: 2025-06-02T09:08:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2510,6 +2510,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+tomtom.com#%#//scriptlet('trusted-set-cookie', 'tt_settings', '{%22%2C%22advertising%22:false%2C%22social%22:false%2C%22analytical%22:false}')
 juedische-allgemeine.de##.ub-cmp
 upwr.edu.pl#$#.modal-backdrop { display: none !important; }
 upwr.edu.pl#$#.modal-open { overflow: auto !important; }
@@ -2568,7 +2569,6 @@ mineralwasser.com#%#//scriptlet('trusted-click-element', 'a[data-borlabs-cookie-
 app.trakt.tv##div[class^="trakt-cookie-"]
 lightinthebox.com##.cookie-prompt-bg
 cambridge.org#%#//scriptlet('set-local-storage-item', 'cookieMessageAccepted', 'true')
-tomtom.com###__next > div > div[role="banner"][class^="sc-"]:has(> div.cookie-panel-buttons)
 shopcider.com##.compliance-cookie-container
 discoup.com##.ch2
 cineplex.de#%#//scriptlet('trusted-click-element', '#CybotCookiebotDialogBodyButtonDecline', '!cookie:CookieConsent')
@@ -5149,7 +5149,6 @@ bluera.com##.blueOcean_GDPR
 parametric-architecture.com###elementor-popup-modal-61325
 nazdarbazar.cz##.cookie__container_2
 standard.sk##.standard-cookie
-tomtom.com#?#footer + div[class^="sc-"]:has(> div[class^="Box-sc"] + div.cookie-panel-buttons)
 gameleap.com##core-banner
 justjoin.it#?##__next > div.MuiBox-root ~ div.MuiBox-root ~ div:has(> button)
 feature.fm###__next > main > div.justify-center
@@ -7331,7 +7330,6 @@ startmail.com#?#.banner:has(a[href="/en/privacy/"])
 booth.pm##.agreement-banner
 tupperware.com.br##.vtex-cookies
 razer.com##tos-razer-cookies
-tomtom.com##div[data-component-name="Footer"] + div.fixed.bg-grey80
 nexto.pl###hookCookieMessage
 stepfordcountyrailway.co.uk,normalsozluk.com,alu.jp,lenovostore.gr,thephuketnews.com,dogruhaber.com.tr,central1.com,parklot.pl,ilkha.com,modoko.com.tr##.fixed-bottom
 sensormatic.com##.universalcookiedisclaimer
@@ -15074,7 +15072,6 @@ zwitserleven.nl##.top_cookiewall
 slideshare.net##.tos-update-banner
 jimdo.com##.tp-cookie-law
 telia.se##.tsAttention--Info--button
-tomtom.com##.tt-cookie-bar-module
 buderus.de##.tt-mybuderus-common-cookieNavBarWrapper + #tt-mybuderus-common-margin-top-helper
 buderus.de##.tt-mybuderus-common-cookieNavBarWrapper > .cookie-manager-portlet
 twitch.tv##.twilight-root .toast-manager__container
@@ -34677,6 +34674,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+tomtom.com##.components > div.relative:has(> div.tt-grid.static)
 saechsische.de##div[class^="BaseLayoutstyled"] > div[class^="ChainContainerstyled"]:has(> div > a[href^="/newsletter/"])
 volksstimme.de##.fp-register-banner
 kommersant.ru##.doc__text:has(> a[href^="https://t.me/"])
@@ -55674,9 +55672,10 @@ healthy4pepole.com#%#//scriptlet("adjust-setInterval", "counter", "*", "0.02")
 speedynews.xyz,xmod.in#%#//scriptlet("adjust-setInterval", "updatePercentage", "100", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122674
 blisseyhusband.in#%#//scriptlet("adjust-setInterval", "downloadButton", "", "0.02")
+! https://github.com/AdguardTeam/AdguardFilters/issues/206724
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122461
 anime-sanka.com#%#//scriptlet("adjust-setInterval", "decodeURIComponent(link)", "", "0.02")
-ouo.io#%#(()=>{if(location.href.includes("?s=http")){const a=location.href.split("?s=").slice(1);try{location.assign(a)}catch(a){}}})();
+ouo.io#%#(()=>{if(location.href.includes("?s=http")){const a=location.href.split("?s=").slice(1);try{location.assign(decodeURIComponent(a))}catch(a){}}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122250
 modyolo.com#%#//scriptlet("adjust-setTimeout", "#download-loading", "*", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122294
