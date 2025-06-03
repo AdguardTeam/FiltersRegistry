@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: SMv/H9x5VvmIyWA8t2o7wg
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1748877119-3600.patch
+! Checksum: J3fbF6z+rLtyA6PIGNQGTw
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1748918460-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.11.81
@@ -394,6 +394,7 @@ pokemon-goh.doorblog.jp##.article-body-inner > div.t_b + div[style="padding: 10p
 re-file.com#?#.frame:has(> script[src$="/blogroll.js"]) + br
 re-file.com#?#.frame > script[src$="/blogroll.js"]:upward(1)
 re-file.com#?#.page-title:contains(/話題の|ピックアップ/)
+re-file.com#?#.topWrap1Frame > div.frame > script[src$="/blogroll.js"]:upward(2)
 you1news.com##div[class^="article-bottom-rss"]
 inutomo11.com##.main-column-inner > br
 ||squallchannel.*/RSSbottom.html
@@ -901,7 +902,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||client.contents-search-windows.com^
 ||affilizz.com^$third-party
 ||mbp-japan.com/information/$script,third-party
-.az/livechat/
 /crm/site_button/loader_*.js$domain=~tvoe.live
 /Jetlink.js
 /widget/js/przv.js
@@ -1069,7 +1069,6 @@ network.mobile.rakuten.co.jp###rexSurveyEmbedded
 networkguru.ru##.tbForm_CallMe
 ozon.ru##div[data-widget="webFeedbackForm"]
 rakuten.co.jp###rexSurveyRoot
-romarg.ro###deskpro-container
 samsung.com##.chats
 cq.ru,samsungstore.ru##.feedback
 sddhelp.ru##.hi_help
@@ -1160,6 +1159,7 @@ mbs.jp##.common-wrap--ranking
 ||api.popin.cc^$third-party
 media.moneyforward.com##.mp-recommends
 media.moneyforward.com##.mp-popin-analytics
+media.moneyforward.com##.home-ranking
 otonanswer.jp##aside > div[style="min-height: 881px;"]
 bike-news.jp#$?#.swiper-slide[data-history^=photo_extra] { remove: true; }
 otonanswer.jp#$?#.swiper-slide[data-history^="photo_extra"] { remove: true; }
@@ -1184,6 +1184,7 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 ||tracker.tolvnow.com^$third-party
 ||synalio.com^$third-party
 ||chatbot.com^$third-party
+||cdn-chat.grattis.ru^$third-party
 ||cdn.carrotquest.app^$third-party
 ||continual.ly^$third-party
 ||corover.mobi^$third-party
@@ -1316,7 +1317,6 @@ t-online.de,welt.de##iframe[src^="https://widget.civey.com"]
 ||widgets.opinary.com^$third-party
 ||nofluffjobs.com^$third-party
 ||cp-jobmacha-servicemacha-widgets.*.aliyuncs.com/chinapress-jobads-prod.js
-||ziprecruiter.com/jobs-widget/$third-party
 ||js-seeker.newjobs.com^$domain=monster.com
 ||js.jebbit.com/companion/*/widget.js$third-party
 nextpit.de##.jobbioapp
@@ -1481,7 +1481,6 @@ inmediahk.net##.banner-wrapper
 inmediahk.net##.donate-form
 novayagazeta.eu#?#main > header ~ div[class]:not([id]):has(> svg + div[class] a[href^="/donate?"])
 damninteresting.com##.plea
-currentaffairs.org#?#.wp-block-image:has(> a[href$="/donate"])
 grist.org##.wp-block-article-donation
 ||helpukrainewinwidget.org/cdn/widget.js
 scroll.in##.floating-contribute-block
