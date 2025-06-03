@@ -1,9 +1,9 @@
-! Checksum: hyFqwr3KRFWYiEfpUreXmg
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1748945482-3600.patch
+! Checksum: sxkvj6bmboZ8skIi8hnG1w
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1748949086-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.86.95
-! TimeUpdated: 2025-06-03T10:07:16+00:00
+! Version: 2.3.86.96
+! TimeUpdated: 2025-06-03T11:06:54+00:00
 ! Expires: 10 days (update frequency)
 ||aweyqaqkrvjm.top^
 ||entertainlavish.com^
@@ -11466,9 +11466,10 @@ twitch.tv#$#.video-player--stream-display-ad_lower-third { height: 100% !importa
 dailystar.co.uk#$?#[data-testid="commercial-above-header-box-1"] { remove:true; }
 otomi-games.com#$?#.clean-grid-grid-post:has(> [id^="otomi-"] + .clean-grid-grid-post-details-full) { remove: true; }
 !##################
-||html-load.com^$script,redirect=noopjs,domain=lifehacker.jp
-lifehacker.jp#%#//scriptlet('remove-node-text', 'script', 'html-load.com')
 lifehacker.jp#%#!function(){var e=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").set;Object.defineProperty(Element.prototype,"innerHTML",{set:function(t){return t.includes("html-load.com")?e.call(this,""):e.call(this,t)}})}();
+lifehacker.jp#%#//scriptlet('remove-node-text', 'script', 'html-load.com')
+!+ NOT_PLATFORM(ios, ext_safari, ext_android_cb, ext_chromium_mv3, ext_ublock)
+||html-load.com^$script,redirect=noopjs,domain=lifehacker.jp
 /^https:\/\/www\.[0-9a-z-]{8,}\.xyz\/script\/[-.0-9A-Za-z]+\.[A-Za-z-]{2,30}\.js$/$script,third-party,match-case
 ||html-load.com/loader.min.js$domain=nikkansports.com|j-cast.com|picksandparlays.net|ranking.net|minkou.jp|aucfree.com|motor-talk.de
 huffpost.com#%#//scriptlet('prevent-addEventListener', 'abeagleEvent', 'init')
@@ -11587,7 +11588,6 @@ ryuugames.com##center > a[href^="https://folynexartho.pro/"]
 ryuugames.com##div[style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;"]
 kungfutv.net#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'detect')
 hentai420.com##.media-spot
-||s10.histais.com/js/15_as.js
 hentaicity.com##.leftnav_banner
 anysex.com##.headZ
 ||anysex.com/static/js/initsite.min.js

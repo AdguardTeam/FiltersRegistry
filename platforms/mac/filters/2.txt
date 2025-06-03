@@ -1,8 +1,8 @@
-! Checksum: qH2VSr9VFVdWOk+2Siqlsg
+! Checksum: 8IXor/p/1IfHwWjwi0BiFg
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.86.95
-! TimeUpdated: 2025-06-03T10:07:16+00:00
+! Version: 2.3.86.96
+! TimeUpdated: 2025-06-03T11:06:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -28449,8 +28449,6 @@ freex2line.online#%#//scriptlet('remove-node-text', 'script', '/throw new Error\
 freex2line.online#%#//scriptlet('prevent-setInterval', '=Date[')
 freex2line.online#%#//scriptlet('remove-attr', 'aria-label', 'main > section[aria-label]')
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=nooptext,domain=cimanow.*|cnvids.com|cimanowtv.com|freex2line.online
-cimanow.cc,freex2line.online#%#(()=>{const e={apply:(e,o,r)=>{if(o.matches("section"))throw new Error;return Reflect.apply(e,o,r)}};window.Node.prototype.removeChild=new Proxy(window.Node.prototype.removeChild,e)})();
-cimanow.cc,freex2line.online#%#(()=>{const e=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").set;Object.defineProperty(Element.prototype,"innerHTML",{set(t){if(""===t&&this.matches("section"))throw new Error;e.call(this,t)}})})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99034
 alwafd.news##center > a[href="#"]
 alwafd.news##.banner
@@ -46514,10 +46512,11 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 !##################
 !
 ! START: Ad-Shield ad reinsertion
-! TODO: Remove, when prevent-innerHTML is released: https://github.com/AdguardTeam/Scriptlets/issues/488 [06.03.2025]
-||html-load.com^$script,redirect=noopjs,domain=lifehacker.jp
-lifehacker.jp#%#//scriptlet('remove-node-text', 'script', 'html-load.com')
+! TODO: Replace, when prevent-innerHTML is released: https://github.com/AdguardTeam/Scriptlets/issues/488 [03.06.2025]
 lifehacker.jp#%#!function(){var e=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").set;Object.defineProperty(Element.prototype,"innerHTML",{set:function(t){return t.includes("html-load.com")?e.call(this,""):e.call(this,t)}})}();
+lifehacker.jp#%#//scriptlet('remove-node-text', 'script', 'html-load.com')
+!+ NOT_PLATFORM(ios, ext_safari, ext_android_cb, ext_chromium_mv3, ext_ublock)
+||html-load.com^$script,redirect=noopjs,domain=lifehacker.jp
 ! ad-shield.cc CNAME ex. https://www.47206262.xyz/script/jmty.jp.js
 /^https:\/\/www\.[0-9a-z-]{8,}\.xyz\/script\/[-.0-9A-Za-z]+\.[A-Za-z-]{2,30}\.js$/$script,third-party,match-case
 ! For all platforms including iOS
@@ -46864,7 +46863,6 @@ ryuugames.com##center > a[href^="https://folynexartho.pro/"]
 ryuugames.com##div[style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;"]
 kungfutv.net#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'detect')
 hentai420.com##.media-spot
-||s10.histais.com/js/15_as.js
 hentaicity.com##.leftnav_banner
 anysex.com##.headZ
 ||anysex.com/static/js/initsite.min.js
@@ -131527,6 +131525,7 @@ phpbb.com##.lynkorama
 theverge.com##.m-ad__btf_leaderboard_variable
 thestreet.com##.m-balloon-header
 politifact.com##.m-billboard
+fashionista.com##.m-fixedbottom-ad--container
 aol.com##.m-gam__container
 aol.com##.m-healthgrades
 bitcoinmagazine.com,thestreet.com##.m-in-content-ad-row

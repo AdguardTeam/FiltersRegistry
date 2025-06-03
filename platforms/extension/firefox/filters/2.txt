@@ -1,9 +1,9 @@
-! Checksum: +8WTqDbEBitqFiKM0njwyA
-! Diff-Path: ../patches/2/2-s-1748945489-3600.patch
+! Checksum: Lrpkj0AZ/R2llHrG9vr9cA
+! Diff-Path: ../patches/2/2-s-1748949094-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.86.95
-! TimeUpdated: 2025-06-03T10:07:16+00:00
+! Version: 2.3.86.96
+! TimeUpdated: 2025-06-03T11:06:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -47177,7 +47177,11 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 !##################
 !
 ! START: Ad-Shield ad reinsertion
-! TODO: Remove, when prevent-innerHTML is released: https://github.com/AdguardTeam/Scriptlets/issues/488 [06.03.2025]
+! TODO: Replace, when prevent-innerHTML is released: https://github.com/AdguardTeam/Scriptlets/issues/488 [03.06.2025]
+!+ NOT_PLATFORM(ios, ext_safari, ext_android_cb, ext_chromium_mv3, ext_ublock)
+||html-load.com^$script,redirect=noopjs,domain=lifehacker.jp
+!+ PLATFORM(ext_ff)
+lifehacker.jp#%#//scriptlet('trusted-replace-node-text', 'script', 'html-load.com', '/[\S\s]+html-load.com[\S\s]+/', '!function(){var e=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").set;Object.defineProperty(Element.prototype,"innerHTML",{set:function(t){return t.includes("html-load.com")?e.call(this,""):e.call(this,t)}})}();')
 ! ad-shield.cc CNAME ex. https://www.47206262.xyz/script/jmty.jp.js
 /^https:\/\/www\.[0-9a-z-]{8,}\.xyz\/script\/[-.0-9A-Za-z]+\.[A-Za-z-]{2,30}\.js$/$script,third-party,match-case
 ! For all platforms including iOS
@@ -47520,7 +47524,6 @@ ryuugames.com##center > a[href^="https://folynexartho.pro/"]
 ryuugames.com##div[style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;"]
 kungfutv.net#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'detect')
 hentai420.com##.media-spot
-||s10.histais.com/js/15_as.js
 hentaicity.com##.leftnav_banner
 anysex.com##.headZ
 ||anysex.com/static/js/initsite.min.js
@@ -131897,6 +131900,7 @@ phpbb.com##.lynkorama
 theverge.com##.m-ad__btf_leaderboard_variable
 thestreet.com##.m-balloon-header
 politifact.com##.m-billboard
+fashionista.com##.m-fixedbottom-ad--container
 aol.com##.m-gam__container
 aol.com##.m-healthgrades
 bitcoinmagazine.com,thestreet.com##.m-in-content-ad-row

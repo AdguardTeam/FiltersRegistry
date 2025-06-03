@@ -1,0 +1,18 @@
+d1 2
+a2 2
+! Checksum: Lrpkj0AZ/R2llHrG9vr9cA
+! Diff-Path: ../patches/2/2-s-1748949094-3600.patch
+d5 2
+a6 2
+! Version: 2.3.86.96
+! TimeUpdated: 2025-06-03T11:06:54+00:00
+d47180 1
+a47180 5
+! TODO: Replace, when prevent-innerHTML is released: https://github.com/AdguardTeam/Scriptlets/issues/488 [03.06.2025]
+!+ NOT_PLATFORM(ios, ext_safari, ext_android_cb, ext_chromium_mv3, ext_ublock)
+||html-load.com^$script,redirect=noopjs,domain=lifehacker.jp
+!+ PLATFORM(ext_ff)
+lifehacker.jp#%#//scriptlet('trusted-replace-node-text', 'script', 'html-load.com', '/[\S\s]+html-load.com[\S\s]+/', '!function(){var e=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").set;Object.defineProperty(Element.prototype,"innerHTML",{set:function(t){return t.includes("html-load.com")?e.call(this,""):e.call(this,t)}})}();')
+d47523 1
+a131899 1
+fashionista.com##.m-fixedbottom-ad--container
