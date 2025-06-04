@@ -1,14 +1,14 @@
-! Checksum: ZysfFDJ4NuoVF9N0OqoALQ
-! Diff-Path: ../patches/243/243-s-1748925907-14400.patch
+! Checksum: tlwODaAVu901EfCYBmZIew
+! Diff-Path: ../patches/243/243-s-1749012318-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.80
-! TimeUpdated: 2025-06-03T04:40:35+00:00
+! Version: 2.0.21.81
+! TimeUpdated: 2025-06-04T04:40:42+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-06-03 05:18:14 CEST
+! Last modified: 2025-06-04 05:14:00 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -291,7 +291,6 @@ brafiler.se###header-banner, #cboxOverlay, #colorbox, .adv-inner, #sidebar-banne
 brafiler.se##.rlt-top-pro:has(a[href*="casino"])
 branschaktuellt.se##.article__properties-breadcrumbs span:has-text(/Sponsrad|annons/i):upward(.article)
 branschaktuellt.se##.popup-signup, .takeover
-branschkoll.se##div[id^="brans-"], .widget-sponsored-post
 branschstegen.se##.container:has(a[href*="casino"])
 branschstegen.se##[class*="sponsored"], #watcherPop, .modal-backdrop
 breakit.se##div[class^="LivewrappedContainer_root"]
@@ -1333,7 +1332,7 @@ svartgul.se,eventeffect.se,executiveeffect.se,saleseffect.se###panorama
 svd.se##article:has(div[class^="NativeBarWrapper"])
 svd.se#$#body { visibility:visible!important; }
 svd.se###mega-ad-wrapper, #svd-top-ad, div[class*="advertory"], div[data-custom-ad-handled="true"], div[data-engage-entity-id="sales-banner-bottom-bar"], div[data-context-pageview*="native-svd"]
-svd.se,chef.se,vvsforum.se,elinstallatoren.se,arkitekten.se,natursidan.se,svenskfarmaci.se,da.se,frisor.se,revisionsvarlden.se##.Ad
+svd.se,chef.se,vvsforum.se,elinstallatoren.se,arkitekten.se,natursidan.se,svenskfarmaci.se,da.se,frisor.se,revisionsvarlden.se,branschkoll.se##.Ad
 svenskadating.com##.pubhead, #bannermobile
 svenskafans.com##.h-52:has(iframe[srcdoc*="ad_div"])
 svenskafans.com##.puff__ad-heading, ad-skyscraper__wrapper, iframe[title*="Bet 365"], iframe[srcdoc*="ad_div"]
@@ -1970,6 +1969,7 @@ zeromagazine.nu##div[id^="ads"]
 /ad_in_article$script,domain=affarsvarlden.se
 /affiliategallery$domain=allas.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se|motherhood.se
 /aftonbladet/crypt/?lpkey$all
+/agstatistics-$domain=mitti.se
 /ajax-hit-reg.php?
 /ajax/ads.php$domain=garaget.org
 /ajax/docu_stats.jsp
@@ -2069,6 +2069,7 @@ zeromagazine.nu##div[id^="ads"]
 /chartbeat_mab.js
 /clickperformance$domain=radio.se
 /clicktracking.siteseeker
+/click-$domain=mitti.se
 /closest-native$domain=expressen.se
 /cmpv2$domain=m3.se|pcforalla.se|macworld.se
 /cmp.js$domain=praktisktbatagande.se|hemtrevligt.se|vagabond.se|tidningenhalsa.se|utemagasinet.se|svenskgolf.se|sportfack.se|husohem.se|minhast.se|kalleanka.se|halge.se|bamse.se|akaskidor.se|husvagnochcamping.se|classicmotor.se|scandinavianretro.com
@@ -2669,6 +2670,7 @@ zeromagazine.nu##div[id^="ads"]
 /www/images/*$domain=elektronikforumet.com
 /xhr-ads.min.js
 /xhr/b/s$domain=skyscanner.se
+/youplay.$ping
 /zad.js$domain=nordic.ign.com
 /zdadkit$domain=nordic.ign.com
 /*banner-nyhetsbrev*.mp4
@@ -3127,8 +3129,6 @@ zeromagazine.nu##div[id^="ads"]
 ||missaffiliate.com^$third-party
 ||misssite.com/*/published-site-analytics.js
 ||mis.se/count/
-||mitti.se/agstatistics-
-||mitti.se/click-
 ||momondo.se/*gtm/
 ||mraffiliate.com^$third-party
 ||mtpc.se^$third-party
@@ -3346,7 +3346,7 @@ zeromagazine.nu##div[id^="ads"]
 ||t.fastcmp.com^
 ||t.fml.rip^$third-party
 ||ubembed.com^$third-party
-||ues.vk.se^*/events
+||ues.vk.se^
 ||ufinkln.com/offer?prod$popup
 ||umami.nordiskehandel.cloud^
 ||upsales.com^$third-party
@@ -3405,8 +3405,8 @@ zeromagazine.nu##div[id^="ads"]
 ||znaptag-tags-se.s3.amazonaws.com^$script
 ||zoho.com/hub/js/WebsiteAutomation.js$third-party
 ||zummycloud.com^$third-party
-alekuriren.se,branschkoll.se,rocknytt.net,upphandling24.se,datormagazin.se,villalivet.se,polistidningen.se,densistavilan.se,classicmotor.se,tidningenhalsa.se,husohem.se,guiden.se,nyadagbladet.se,enkelteknik.se,vadhanderisverige.se,passioneffect.se,livsmedelsnyheter.se$$script[tag-content="advanced_ads"][max-length="262144"]
-alekuriren.se,branschkoll.se,rocknytt.net,upphandling24.se,datormagazin.se,villalivet.se,polistidningen.se,densistavilan.se,classicmotor.se,tidningenhalsa.se,husohem.se,guiden.se,nyadagbladet.se,enkelteknik.se,vadhanderisverige.se,passioneffect.se,livsmedelsnyheter.se$$script[tag-content="advads"][max-length="262144"]
+alekuriren.se,rocknytt.net,upphandling24.se,datormagazin.se,villalivet.se,polistidningen.se,densistavilan.se,classicmotor.se,tidningenhalsa.se,husohem.se,guiden.se,nyadagbladet.se,enkelteknik.se,vadhanderisverige.se,passioneffect.se,livsmedelsnyheter.se$$script[tag-content="advanced_ads"][max-length="262144"]
+alekuriren.se,rocknytt.net,upphandling24.se,datormagazin.se,villalivet.se,polistidningen.se,densistavilan.se,classicmotor.se,tidningenhalsa.se,husohem.se,guiden.se,nyadagbladet.se,enkelteknik.se,vadhanderisverige.se,passioneffect.se,livsmedelsnyheter.se$$script[tag-content="advads"][max-length="262144"]
 temadagar.se,sanghafte.se,xn--gtboken-exa.se,ninjateknik.com$$script[tag-content="__ez"][max-length="262144"]
 di.se$$script[tag-content="Di.initAds"][max-length="262144"]
 woxikon.se$$script[tag-content="googletag"][max-length="262144"]
