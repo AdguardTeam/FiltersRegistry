@@ -1,9 +1,9 @@
-! Checksum: d1ww/ftpxF4eR71KgPHqrA
-! Diff-Path: ../patches/16/16-s-1748952938-3600.patch
+! Checksum: X4jEcMRxzNKMG/sxIAL/5A
+! Diff-Path: ../patches/16/16-s-1749017635-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.52.67
-! TimeUpdated: 2025-06-03T12:11:32+00:00
+! Version: 2.0.52.68
+! TimeUpdated: 2025-06-04T06:09:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -90,6 +90,10 @@ _adagency_$~xmlhttprequest
 /banner-ads$~xmlhttprequest
 /ad/*/728/*$~xmlhttprequest
 /ad/ads.$~xmlhttprequest
+! https://github.com/uBlockOrigin/uAssets/issues/28666
+lecrabeinfo.net#%#//scriptlet('set-constant', 'LCI.adNetwork', 'undefined')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||ads.sportslocalmedia.com/slm.prebid.lecrabeinfo.js$domain=lecrabeinfo.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196696
 magazine-avantages.fr#@#.AdsBox
 magazine-avantages.fr#$#body { overflow: auto !important; }
