@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.87.4",
-			"timeUpdated": "2025-06-03T23:06:43+0000",
+			"version": "2.3.87.5",
+			"timeUpdated": "2025-06-04T01:35:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.85.83",
-			"timeUpdated": "2025-06-03T18:09:24+0000",
+			"version": "2.0.85.84",
+			"timeUpdated": "2025-06-04T01:35:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.15.34",
-			"timeUpdated": "2025-06-03T20:07:22+0000",
+			"version": "2.1.15.35",
+			"timeUpdated": "2025-06-04T01:35:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.32.37",
-			"timeUpdated": "2025-06-03T23:07:08+0000",
+			"version": "2.2.32.38",
+			"timeUpdated": "2025-06-04T01:35:50+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.81.42",
-			"timeUpdated": "2025-06-03T22:07:46+0000",
+			"version": "2.0.81.43",
+			"timeUpdated": "2025-06-04T01:35:51+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.24",
-			"timeUpdated": "2025-06-03T20:07:39+0000",
+			"version": "2.0.63.25",
+			"timeUpdated": "2025-06-04T01:35:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.38.27",
-			"timeUpdated": "2025-06-04T00:26:54+0000",
+			"version": "2.1.38.28",
+			"timeUpdated": "2025-06-04T01:36:01+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
