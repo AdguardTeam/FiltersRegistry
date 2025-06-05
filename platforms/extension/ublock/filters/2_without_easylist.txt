@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 33sJG2Kn2BduZ6C+Yiiq+A
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1749125735-3600.patch
+! Checksum: /1hlbjTzrzX4i8EXmzl5BA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1749129621-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.87.32
-! TimeUpdated: 2025-06-05T12:10:59+00:00
+! Version: 2.3.87.33
+! TimeUpdated: 2025-06-05T13:15:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19540,6 +19540,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/207050
+wouterplanet.com##+js(no-fetch-if, /pagead2\.googlesyndication\.com|in\.getclicky\.com/)
+@@||wouterplanet.com/scripts/ads-front.min.js$domain=wouterplanet.com
 ! pc-builds.com anti-adb
 pc-builds.com##+js(remove-node-text, script, freestar)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206665
@@ -46660,6 +46663,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+wouterplanet.com###minigameplayer > .container > .panel:has(> .panel-body > ng-adsense)
 ||api.avrebo.net/api/v*/advert/
 ||live.avrebo.net/api/live/v*/web/live-channels?
 tripadvisor.co.uk##div[data-test-target="faq-json-ld"] + div[class] > div[class] > div[class] > div[class]:has(> div[class] > div[id^="slot:"])
