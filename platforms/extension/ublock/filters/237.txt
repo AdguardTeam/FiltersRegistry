@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: jtVuGoUzo16/dZM06iIpBw
-! Diff-Path: ../patches/237/237-s-1749142348-14400.patch
+! Checksum: hYiYMRkuvyrk/jaJqB+tjg
+! Diff-Path: ../patches/237/237-s-1749155891-14400.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.35.24
-! TimeUpdated: 2025-06-05T16:48:04+00:00
+! Version: 1.0.35.25
+! TimeUpdated: 2025-06-05T20:33:48+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -13,8 +13,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Thu, 05 Jun 2025, 17:40 UTC+02:00
-! OriginalVersion: 2025.6.5.2
+! Last modified: Thu, 05 Jun 2025, 21:33 UTC+02:00
+! OriginalVersion: 2025.6.5.3
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -23,7 +23,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: czw, 05 cze 2025, 17:40 UTC+02:00
+! Aktualizacja: czw, 05 cze 2025, 21:33 UTC+02:00
 !
 !
 ! Newslettery (nie popupy)
@@ -1359,6 +1359,9 @@ segway-polska.pl###email-alert-signup
 sekurak.pl##.widget_text.widget:nth-of-type(4)
 selene.pl##.blog-full-wrapper-newsletterin
 selgros.pl##.home-box3
+sellpy.pl##img[src*="/newsletter"]
+sellpy.pl##img[src*="/newsletter"] + div
+sellpy.pl##img[src*="/newsletter"] ~ form
 senetic.pl##.nwsBlock--redesign
 seniorplus.edu.pl###boczne_ikonki > a[href$="newsletter"]
 shop.albione.eu###newsletter-slide
@@ -5064,6 +5067,7 @@ sck.pl###popupTest
 screennetwork.pl##.button_info_box
 scyzoryki.net###widget_shop1
 seat.pl##div[id^="wb_drag_wrapper"]
+sellpy.pl###intercom_launcher
 selly.pl,x-lander.com###kayako-messenger
 semcore.pl###LeadboosterContainer, .proactiveChat
 semhub.pl##.no-text.arcu-message-button
@@ -5215,7 +5219,7 @@ wynagrodzenia.pl##.report-last-chance
 wzp.pl###rslider-write
 xn--usugi24-ojb.pl###zglos_awarie
 xtb.com##.js-xchat-btn-wrapper.xchat-btn-wrapper
-yesim.app##.IntercomLauncher_supportIcon__uDTAT
+yesim.app###intercomLauncher
 zabawkahurtownia.pl###becontact
 zabiegidavinci.pl##.contactwidget
 zaczytaj.pl##.box-contact
@@ -12287,6 +12291,7 @@ radio17.pl#@#footer.page-footer ~ .sidebar-container
 roland-gazeta.pl#$#.skontakt { animation: none !important }
 rossmann.pl##+js(set-cookie, isSmartBannerClosed, true)
 rynek-kolejowy.pl#$#.sledzNasContainer > .zawartoscBox { height: auto !important }
+sellpy.pl##+js(set-local-storage-item, appDownloadBannerDismissedAt, true)
 semmelrock.pl###sidebar_float_icons
 stooq.pl##table table table table table table table:has([id] b:has-text(Sonda))
 stooq.pl##table table table table table table table:has([id] b:has-text(Sonda)) + div + table
