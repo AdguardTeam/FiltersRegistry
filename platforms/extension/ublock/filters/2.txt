@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 2v2MSDLa23uwr+MqjVuDug
-! Diff-Path: ../patches/2/2-s-1749107579-3600.patch
+! Checksum: rSb4DneOGrQ6PN4mKYxFJA
+! Diff-Path: ../patches/2/2-s-1749111187-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.87.27
-! TimeUpdated: 2025-06-05T07:07:19+00:00
+! Version: 2.3.87.28
+! TimeUpdated: 2025-06-05T08:08:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -41547,7 +41547,6 @@ truyenqqhot.com##div[id^="ads_"]
 ##.banner_header
 ##.banners-middle
 ##.banners_block
-##.innerBanner
 ##.main_promo_image_container
 ##.menu-ads
 ##.reclamTable
@@ -46681,7 +46680,8 @@ tripadvisor.co.uk##div[data-test-target="faq-json-ld"] + div[class] > div[class]
 euronews.com##.c-article-content > h2::before
 almanac.com##.block:has(> .block__content:only-child > .text-content:only-child > .ad-wrapper:only-child)
 bugmenot.com###color-names
-theverge.com##.duet--layout--rail > div[class]:has(> div[style="display: none !important;"])
+theverge.com##.duet--layout--rail > div[class]:has(> div[class] > div[data-concert])
+theverge.com##div[class]:has(> div[data-concert])
 livemint.com##div[class^="storyPage_contentSec__"]:has(> div[class^="storyPage_storyblockAd"])
 livemint.com##div[class^="storyPage_storyblockAd"]
 evowars.io##div[id^="evowars-io_"]
@@ -47476,7 +47476,6 @@ allestoringen.be,allestoringen.nl,xn--allestrungen-9ib.at,xn--allestrungen-9ib.c
 khelnow.com##.nt-wp-ad-section
 khelnow.com##.MuiBox-root > div.MuiPaper-root:has(> div.MuiBox-root > a[href^="https://www.unibet.co.uk/"])
 khelnow.com##.infinite-scroll-component  div#component:has(> div.MuiPaper-root > iframe[title="kn-article-top-banner-ad"])
-theverge.com##div[class]:has(> div[data-concert])
 papergames.io##app-ad-banner
 nypost.com#?#.recirc--outbrain
 budgetlightforum.com##a[class$="-banner-link"]
@@ -50317,7 +50316,6 @@ bollywoodmdb.com#?#.p-4:has(> div:only-child > .text-center + div[id^="div-cyber
 chattanoogan.com##.displayphoto
 chattanoogan.com##.news-content > div.row.border
 thingiverse.com##div[class*="AdBanner_"]
-theverge.com#?#.duet--layout--river > div.border-b:has(> div > a + div > div:contains(/^AD$/))
 newhdxxx.com##.info + center
 newhdxxx.com##div[style^="margin: 30px 0;"]
 ||geo.azzureedge.xyz/ip$domain=streameast.app|streamcheck.link
@@ -53037,7 +53035,6 @@ globalfirepower.com##.contentStripInner[style="padding:25px 0px 25px 0px; text-a
 globalfirepower.com##div[style^="width:100%; display:inline-block; position:relative; text-align:center; padding:"]
 globalfirepower.com##.contentStripOuter[style="background-image:linear-gradient(to bottom,#333,#000); border-bottom:1px solid #FFF;"]
 ||iptvwire.com/wp-content/uploads/*-160-600
-theverge.com##.ad__athena_internal
 ||gamecopyworld.com/!_$subdocument
 proptiger.com##div[style^="position:relative;"][style*="height:100px;"]
 digitimes.com###bigsquare
@@ -58466,7 +58463,7 @@ cumilf.com##.visibility
 ||s3.amazonaws.com^$domain=game3rb.com
 srt.am##.text-center > center > a[target="_blank"] > img
 washingtonpost.com##main > aside.grid-item > div[style="height: 1250px;"]
-theverge.com,washingtonpost.com##.outbrain-wrapper
+washingtonpost.com##.outbrain-wrapper
 hentaitoday.com##.widget_random_banner_widget
 ||hentaitoday.com/wp-content/uploads/*.gif?v=
 hentai.cloud###footer_columns
@@ -63608,7 +63605,6 @@ lxax.com###parrot
 poro.gg#?#.porogg div.flex:has(> div#rich-media-placement)
 iplocation.net#?#.col_4_of_12 > .widget:contains(Advertisement)
 crazyporn.xxx#?#.item:has(> script[src^="/ai/"])
-theverge.com#?#.flex-auto:has(> div[data-concert])
 processlibrary.com#?#.bottom > .row:has(a[href="/free-system-check"])
 fix4dll.com#?#.sidebar .sidebar__block:has(a[onclick^="ym("])
 wikidll.com#?#.col-sm-8.mb-sm-3 > div[class]:has(~ .banner):contains(/Outbyte|unlimited number of scans/)
@@ -67541,8 +67537,6 @@ wikisource.org#@#img[width="240"][height="400"]
 microsoftsecurityinsights.com#@#iframe[width="100%"][height="90"]
 ! overwrite exception in EasyList
 ||ladsp.com/script-sf/$script,redirect=noop.js,domain=str.toyokeizai.net,important
-! https://github.com/AdguardTeam/AdguardFilters/issues/176930
-brillux.radio#@#.innerBanner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176561
 @@||adswizz.com^$domain=noz.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176040
@@ -97873,6 +97867,7 @@ browsershots.org#@#.advert_area
 ||fftwttdqtpcwd.com^
 ||fgbnnholonge.info^
 ||fgeivosgjk.com^
+||fgglmbniqymcrqr.com^
 ||fgjaelzvzxtdq.rocks^
 ||fgjyhsfpywrgw.com^
 ||fgk-jheepn.site^
@@ -101518,6 +101513,7 @@ browsershots.org#@#.advert_area
 ||jeqjawqyvboqj.top^
 ||jeqsuyzlpwjzy.rocks^
 ||jergocast.com^
+||jerjared.top^
 ||jeroud.com^
 ||jerseydisplayed.com^
 ||jerust.com^
@@ -102758,6 +102754,7 @@ browsershots.org#@#.advert_area
 ||libsjamdani.shop^
 ||licantrum.com^
 ||licenceconsiderably.com^
+||licensegunne.top^
 ||lichoutr.shop^
 ||lickingimprovementpropulsion.com^
 ||lidburger.com^
@@ -109319,6 +109316,7 @@ browsershots.org#@#.advert_area
 ||ruzotchaufu.xyz^
 ||rv-syzfedv.rocks^
 ||rvardsusyseinp.org^
+||rvcchbpedltxm.store^
 ||rvetreyu.net^
 ||rviqayltwu.love^
 ||rviqwckvfbjtay.com^
@@ -110128,6 +110126,7 @@ browsershots.org#@#.advert_area
 ||sindleasahel.shop^
 ||sing-tracker.com^
 ||singaporetradingchallengetracker1.com^
+||singeesaghachi.com^
 ||singelstodate.com^
 ||singledatetime.com^
 ||singlesgetmatched.com^
