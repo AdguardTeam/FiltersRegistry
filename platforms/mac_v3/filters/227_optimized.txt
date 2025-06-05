@@ -1,9 +1,9 @@
-! Checksum: NuRpZ8A5R9YGsSSzU2Sb2Q
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1749098707-14400.patch
+! Checksum: ODRUZzJg+GpKIMF/ZE9MlA
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1749127793-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.21.63
-! TimeUpdated: 2025-06-05T04:40:35+00:00
+! Version: 2.0.21.64
+! TimeUpdated: 2025-06-05T12:45:16+00:00
 ! Expires: 12 hours (update frequency)
 ||adgirl.yes24.com^
 ||ad.api.adwiser.kr^
@@ -508,6 +508,7 @@
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
+||pedia.watcha.com/api/contents/*/venus|
 ||betanews.net/data/beta/upload/save/banner/
 ||newsis.com/h_www/advertise/
 ||static.kbs.co.kr/advertisement/ad_config.json
@@ -3346,6 +3347,7 @@ algumon.com#$?#.nav-mobile:matches-css(display: none) ~ .base > .main { width: c
 mule.co.kr#$?#.section-lefttop-center:has(> .mule-today) { width: 100% !important; }
 banhub.xyz#$#html{ overflow: visible !important; }
 zzzz.lol#$?#.ent_wrapper.slide-vertical-effect .ent_news:not(:has(.ent_prefix:contains(ZZAPFLIX))) { remove: true; }
+pedia.watcha.com#?#div[class] > section[class*=" "]:has(> section > a h3 > p:contains( · AD))
 m.ruliweb.com#?#.TimelineHeaderMargin ~ div .infinite-scroll-component > div:has(span[style*="max-height:"]:contains(AD))
 www.naver.com#?#ul[class^="ContentHeaderView-"][role="tablist"] > li:has(> a:contains(쇼핑투데이))
 m.bunjang.co.kr#?#div[class^="sc-"] > div[class*=" "]:has(> a[href^="/products/"]):contains(AD)
@@ -3522,7 +3524,6 @@ t.hi098123.com#@#ins.adsbygoogle[data-ad-slot]
 @@||googletagmanager.com/gtag/js$domain=t.hi098123.com,script
 !#safari_cb_affinity
 t.hi098123.com#$#.tabad { top: -100px !important; }
-checkwhoiam.tistory.com#%#//scriptlet('prevent-setTimeout', 'adblock')
 ||shana.pe.kr/shana_check/script.js
 kilho.net###detect-alert
 vod.jtbc.co.kr#@#.ad-unit:not(.textads)
