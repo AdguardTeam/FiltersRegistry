@@ -1,9 +1,9 @@
-! Checksum: cJPxiyYf1ZIUCiOQzX5zFw
-! Diff-Path: ../patches/1/1-s-1749094338-3600.patch
+! Checksum: eg/ekmGAgC4iqM7j5P377A
+! Diff-Path: ../patches/1/1-s-1749114716-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.0.99.68
-! TimeUpdated: 2025-06-05T03:27:40+00:00
+! Version: 2.0.99.69
+! TimeUpdated: 2025-06-05T09:07:16+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1439,6 +1439,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||x-app639-cc.tod99shi.com^
 ||timing-js-menu.xyz^
 ||simplejsmenu.com^
 ||1astrjasr.ru^
@@ -10635,12 +10636,17 @@ cheb.ws##.ru360120
 skysmart.ru##.article-webinar-widget
 anti-malware.ru###main_second_ban
 anti-malware.ru##.blue
-trubobit.com###window-body > div.top-text
-trubobit.com##a[href="/ybrowser/download"]
-trubobit.com###formula
-trubobit.com###formula + p
-trubobit.com##a[href="/ybrowser/download"] + p
-||trubobit.com/files/news/image/offer
+||app.torbobit.net/api/ads/
+/custom_code/*.js$domain=torbobit.net
+torbobit.net##a[id^="__bgd_link"]
+torbobit.net##div[id^="wpdl_"] > a > img
+torbobit.net##a[href*="/weboffer/"] > img
+torbobit.net,trubobit.com###window-body > div.top-text
+torbobit.net,trubobit.com##a[href="/ybrowser/download"]
+torbobit.net,trubobit.com###formula
+torbobit.net,trubobit.com###formula + p
+torbobit.net,trubobit.com##a[href="/ybrowser/download"] + p
+/files/news/image/offer$domain=torbobit.net|trubobit.com
 trashbox.ru###div_branding_ears
 telesputnik.ru##a[href="https://www.megabitus.com/"]
 letidor.ru##.zalipuha

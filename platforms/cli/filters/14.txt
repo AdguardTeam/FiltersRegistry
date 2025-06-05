@@ -1,9 +1,9 @@
-! Checksum: swUPiPnY+2s4h7E7gUZWHA
-! Diff-Path: ../patches/14/14-s-1749107560-3600.patch
+! Checksum: 0zmT7ankMVrXjpFudBeWIQ
+! Diff-Path: ../patches/14/14-s-1749114709-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.32.54
-! TimeUpdated: 2025-06-05T07:07:55+00:00
+! Version: 2.2.32.55
+! TimeUpdated: 2025-06-05T09:08:07+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16936,8 +16936,9 @@ alternate.de#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206216
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178878
 mobil.nrw,liebscher-bracht.com#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector('button[data-testid="uc-accept-all-button"]');c&&(c.click(),o.disconnect())})),c={apply:(c,n,p)=>{const r=Reflect.apply(c,n,p);return!e&&n.matches("#usercentrics-root")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
+! https://github.com/AdguardTeam/AdguardFilters/issues/206742
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178161
-propertydesign.pl#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector("#cmpbox a.cmptxt_btn_yes");c&&(c.click(),o.disconnect())})),c={apply:(c,n,p)=>{const r=Reflect.apply(c,n,p);return!e&&n.matches("#cmpwrapper")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
+nn.de,propertydesign.pl#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector("#cmpbox a.cmptxt_btn_yes");c&&(c.click(),o.disconnect())})),c={apply:(c,n,p)=>{const r=Reflect.apply(c,n,p);return!e&&n.matches("#cmpwrapper")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/156057
 ! TODO: rewrite and move to top when https://github.com/AdguardTeam/Scriptlets/issues/284 is resolved
 voorkeuren.tvgids.nl#%#//scriptlet('trusted-click-element', '.v4vptQ ._-5rsyq .xEPIo4')
@@ -17093,6 +17094,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206661
+@@||cdn.privacy-mgmt.com/unified/$domain=fifetoday.co.uk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207024
 hastily.cc#@#.consent-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207001
@@ -24774,7 +24777,7 @@ zumvo.so##.top-message
 ||thehouseofportable.com/download/js.js$replace=/(!!\[\]\);if)\(!_0x[\s\S]*?\)/\$1(true)/
 ||thehouseofportable.com/download/js.js$replace=/(\('\?id=bcn[\s\S]*?else{var _0x[\s\S]*?)=await _0x[\s\S]*?\(\)/\$1=false/
 ||thelibertydaily.com/*/adtoniq/js/niqon.js
-||tinypass.com^$domain=thechive.com|independent.co.uk|scotsman.com|inquirer.com|pinknews.co.uk|insider.com|blick.ch|torontosun.com|montrealgazette.com|slate.com
+||tinypass.com^$domain=thechive.com|independent.co.uk|scotsman.com|inquirer.com|pinknews.co.uk|insider.com|torontosun.com|montrealgazette.com|slate.com
 ||tpc.googlesyndication.com/pagead/images/x_button_blue2.svg$image,redirect=1x1-transparent.gif,domain=diep.io
 ||tpc.googlesyndication.com/pagead/images/x_button_blue2.svg$image,redirect=1x1-transparent.gif,domain=tpc.googlesyndication.com
 ||tsn.ua/src/desktop/img/placeholders/
@@ -42946,6 +42949,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+vk.com###react_rootAnonymShortVideoStub
 patreon.com###main-app-navigation button:has(svg[data-tag="IconPhone"])
 budgey.de##t3-top-bar:has(> a[href="https://www.budgey.de/app"])
 noon.com##div[class^="AppInstallBanner_container"]
