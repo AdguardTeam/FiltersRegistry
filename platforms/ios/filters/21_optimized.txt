@@ -1,9 +1,9 @@
-! Checksum: ETTUfmH9jo2/BtPphokc3g
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1749118333-3600.patch
+! Checksum: FuPtdshExhlbUblEhVMKNA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1749121870-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.34.14
-! TimeUpdated: 2025-06-05T10:08:10+00:00
+! Version: 2.0.34.15
+! TimeUpdated: 2025-06-05T11:06:51+00:00
 ! Expires: 5 days (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -1028,6 +1028,8 @@ apteki.yandex.ru##div[data-qa="BannerSlider"]
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { display: none !important; }
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
+xnxx-ru.com,xnxx.com###header + div[style^="display"]:not(#content)
+avrebo.com##body > div.MuiModal-root
 ||senoval.cdn.sports.ru/star/*-teaser.*.js$domain=cyber.sports.ru
 cyber.sports.ru##.page-teaser
 lootbar.gg##.recommend
@@ -2663,9 +2665,12 @@ jorudan.co.jp##.com_lp_frame
 nijimiss.moe,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe#%#//scriptlet('json-prune', 'ads.[].imageUrl')
 metaratings.ru,metaratings.by,metarating.com.ua,meta-ratings.kz##div[class*="SportHome_bonusesCarousel__"]
 telecomasia.net,meta.reviews##.main-bonuses
+||iobit.com/tpl/images/summer/anniversary/
+||iobit.com/*/summer/*banner-home*.jpg
+iobit.com##.rabbit-banner
 iobit.com##div[class*="-mask"]
 iobit.com##div[class*="bottom"][class~="on"]
-iobit.com##div[class*="pop"]:has(> img[src*="pop"])
+iobit.com##div[class*="pop"]:has([onclick*="gtag"])
 iobit.com##div[class*="pop"][class*="bg"]
 iobit.com##.comm_popup
 iobit.com##.comm_bottom
