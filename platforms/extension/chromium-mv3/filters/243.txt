@@ -1,13 +1,13 @@
-! Checksum: Zzag/q3GLka3XWIXyG00mA
+! Checksum: HwhmBqKu73iQDyuT3LujkQ
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.82
-! TimeUpdated: 2025-06-05T04:40:46+00:00
+! Version: 2.0.21.83
+! TimeUpdated: 2025-06-06T12:45:34+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-06-05 05:36:13 CEST
+! Last modified: 2025-06-06 11:37:21 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -268,17 +268,10 @@ booli.se##:is(#property-calculator, .sticky.top-24 li, .sticky.top-24 div:last-o
 booli.se##:is(.article-teaser, .article-teaser-section__list-item):has(.article-teaser__sponsor)
 borasweekly.se##.article-item:has(.article-item--sponsored, .article-label--sponsored)
 borattforum.se##.meta-info-container:has(a[title*="Sponsrad artikel"])
-borskollen.se##img[src*="/borskollen_newsletter"]:upward(1)
-borskollen.se##.adlabel:upward(1)
-borskollen.se##.colorized:has-text(/annons/i):upward(a)
-borskollen.se##.elevated-button:has-text(/^Cookie/):upward(.container)
-borskollen.se##.label:has-text(/annons/i):upward(1)
-borskollen.se##.main > div[class^="jsx-"]:last-of-type:has(img[src*="borskollen_appen"])
-borskollen.se##.outer:has(img[src$="ad_label.png"])
-borskollen.se##.sponsored-chip:matches-css(display: block):upward(a)
-borskollen.se##.sponsored:upward(a)
-borskollen.se##.wrapper > div[class^="jsx-"] > .outer:has(a[href*="casino"])
-borskollen.se##[id^="borskollen_small"], [id^="borskollen_large"], .featured-link, .app-store-box, #borskollen_desktop-side, #borskollen_desktop-panorama, div[id^="borskollen_mobile-detaljsida"]
+borskollen.se##.banneritem:upward(1)
+borskollen.se##.cell.rp, .promobox, .app-store-box
+borskollen.se##.stodlinjen:upward(.outer)
+borskollen.se##:is(.flow-container, .wrapper):has(div[id*="panorama"])
 borssnack.di.se##.bn_advertisement__panorama, .bn_advertisement__container
 borsvarlden.com##article:has(.border-sponsored)
 borsvarlden.com##.label:has-text(/annons/i):upward(.highlighted-article-block)
@@ -493,7 +486,7 @@ espressomedia.se##div[id^="espre-"], .category-native
 espressomedia.se##.penci-block-vc:has([href*="casino"])
 etc.se##[data-controller="ad-container"], .bg-gradient-white
 etfmarknaden.se##.mvp-side-widget a[_blank\"]
-etn.se,uppsalanyheter.se,rotter.se##.banneritem
+etn.se,uppsalanyheter.se,rotter.se,borskollen.se##.banneritem
 etunawebben.se#%#//scriptlet('ubo-nostif.js', 'ad')
 europaportalen.se##.view-multiply-top, .frontpage-multiply-main, .right-column-multiply-container
 eventeffect.se###secondary > .widget:nth-child(2)
@@ -3095,6 +3088,7 @@ zeromagazine.nu##div[id^="ads"]
 ||lookaside.fbsbx.com/lookaside/crawler/
 ||look.ufinkln.com^
 ||look.utndln.com^$all
+||lorempixel.com^$third-party
 ||lwcdn.com/vendor/ima.min.js$script
 ||lystra.se^$third-party
 ||m1.analytics.sitevision-cloud.se^

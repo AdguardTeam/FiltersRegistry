@@ -905,8 +905,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.71.15",
-			"timeUpdated": "2025-06-06T08:38:46+0000",
+			"version": "2.1.71.16",
+			"timeUpdated": "2025-06-06T12:44:52+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -980,8 +980,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.71.14",
-			"timeUpdated": "2025-06-06T08:38:47+0000",
+			"version": "2.1.71.15",
+			"timeUpdated": "2025-06-06T12:44:53+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1053,8 +1053,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/hufilter/hufilter@gh-pages/hufilter-adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.3.98",
-			"timeUpdated": "2025-06-02T12:45:13+0000",
+			"version": "2.0.3.99",
+			"timeUpdated": "2025-06-06T12:45:07+0000",
 			"deprecated": false,
 			"languages": [
 				"hu"
@@ -1318,8 +1318,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.21.82",
-			"timeUpdated": "2025-06-05T04:40:46+0000",
+			"version": "2.0.21.83",
+			"timeUpdated": "2025-06-06T12:45:34+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.64.46",
-			"timeUpdated": "2025-06-06T08:39:29+0000",
+			"version": "2.0.64.47",
+			"timeUpdated": "2025-06-06T12:45:44+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1450,8 +1450,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.8.34",
-			"timeUpdated": "2025-06-06T00:48:34+0000",
+			"version": "2.0.8.35",
+			"timeUpdated": "2025-06-06T12:45:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1490,8 +1490,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.7.58",
-			"timeUpdated": "2025-06-05T20:34:08+0000",
+			"version": "2.0.7.59",
+			"timeUpdated": "2025-06-06T12:45:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
