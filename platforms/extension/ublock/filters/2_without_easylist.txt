@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ZyrTA1YCO2HqvDCfMfwrKg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1749219125-3600.patch
+! Checksum: QRvHF5eONFvKqJmnjahvAg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1749222634-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.87.58
-! TimeUpdated: 2025-06-06T14:07:17+00:00
+! Version: 2.3.87.59
+! TimeUpdated: 2025-06-06T15:06:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -42577,8 +42577,6 @@ footybite.to,givemenbastreams.com,nolive.me##+js(abort-current-script, setTimeou
 nolive.me##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135293
 pornstash.in##+js(abort-current-script, document.createElement, Popunder)
-! https://github.com/AdguardTeam/AdguardFilters/issues/135240
-onlyporn.tube,pornhits.com##+js(abort-on-property-read, AdManager)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135635
 btsow.beauty##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135340
@@ -46655,6 +46653,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+unknowncheats.me##hr + div[style]:has(> a[rel="sponsored noopener"])
+unknowncheats.me##hr + div[style]:has(> a[rel="sponsored noopener"]) + div[style]
+unknowncheats.me##tbody[id^="threadbits_forum_"] > tr:has(> td.alt2 > span[style="float:right"] > img[alt^="advert"])
 viprow.*##button[data-openuri][data-open="_blank"]
 comicsporn.net###portfolio-items > div:has(> div.tac > i.xxx-banner)
 ||animal-hentai.com/pud/pop*.js
@@ -46698,6 +46699,9 @@ stlmag.com##.c-broadstreet-ad
 ryuugames.com###block-39
 ryuugames.com##center > a[href^="https://folynexartho.pro/"]
 ryuugames.com##div[style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;"]
+gettranny.com##.header__content > a.header__hotlink
+gettranny.com,onlyporn.tube,pornhits.com##+js(abort-on-property-read, AdManager)
+gettranny.com##.wrapper:has(> h2:contains(Advertisement))
 kungfutv.net##+js(addEventListener-defuser, DOMContentLoaded, window.open)
 hentai420.com##.media-spot
 hentaicity.com##.leftnav_banner
@@ -47395,7 +47399,7 @@ katestube.com##+js(window.open-defuser)
 xmilf.com,manysex.com##.header__item
 hdzog.com,hdzog.tube##.video-page__content > div:not([class*="video"])
 hotmovs.com,hclips.com,manysex.com,hdzog.com,hdzog.tube##a[href^="https://rtr2perf1.com/"]
-xmilf.com,hotmovs.com,hclips.com,manysex.com,hdzog.com,hdzog.tube##.nopop
+gettranny.com,xmilf.com,hotmovs.com,hclips.com,manysex.com,hdzog.com,hdzog.tube##.nopop
 abmilf.com##.wrapper > section:has(> div > div[style^="width"] > div.ad__title)
 playhop.com#$#.google-sticky-adv-banner__desktop-wrapper { display: none !important; }
 playhop.com#$#.app__wrapper [style*="width: calc(100% - 300px);"] { width: 100% !important; }
@@ -48087,7 +48091,7 @@ sunderlandecho.com##.taboola-bottomfeed
 sunderlandecho.com##div[id^="leaderboard"]
 sunderlandecho.com###header a[href="http://www.shotstv.com"]
 sunderlandecho.com##section[data-testid^="section-ViafouraTrendingComments"]
-pornzog.com,pornl.com,vxxx.com,ooxxx.com,inporn.com,shemalez.com,vjav.com##.fah-btn
+gettranny.com,pornzog.com,pornl.com,vxxx.com,ooxxx.com,inporn.com,shemalez.com,vjav.com##.fah-btn
 voyeurhit.com##.video-tube-friends
 /xupload.js$domain=noxx.to
 jrelibrary.com,gotofap.tk,tempmaili.com,nairametrics.com##div[align="center"] > a[target="_blank"] > img
@@ -71450,6 +71454,7 @@ implbits.com#@#.banner_container
 !#########################################
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206986
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206614
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206413
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206400
