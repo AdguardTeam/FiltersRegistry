@@ -1,9 +1,9 @@
-! Checksum: E0x0hIhL/bS/fgF8HrJL3Q
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1749171157-14400.patch
+! Checksum: HdmmytggOKYqUkLvCNDFOA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1749185087-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.42.57
-! TimeUpdated: 2025-06-06T00:47:53+00:00
+! Version: 2.1.42.58
+! TimeUpdated: 2025-06-06T04:40:10+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -147,7 +147,6 @@ _social-bar/
 ###Followers1
 ###ShareButton
 ###ShareItemBtn
-###Side_Block_Facebook
 ###SocialContainer
 ###SocialMedia
 ###SocialShare
@@ -179,7 +178,6 @@ _social-bar/
 ###block-socialmenu
 ###block-socialsharingblock
 ###blog-follow-widget
-###bottom-share
 ###btn-share-email
 ###btn-share-fb
 ###btn-share-tele
@@ -692,6 +690,7 @@ _social-bar/
 ###twitter_timeline-2
 ###twitter_widget
 ###twitterbtn
+###twittericon
 ###v-share
 ###vbseo-likes
 ###vce_social_menu
@@ -1019,7 +1018,6 @@ _social-bar/
 ##.button_share
 ##.button_twitter
 ##.buttons-share
-##.bwc-footer__social
 ##.bx-footer__social-links
 ##.bx-header__social-links
 ##.bx-social-share
@@ -1251,6 +1249,7 @@ _social-bar/
 ##.facebook_like_box
 ##.facebook_logo
 ##.facebook_net
+##.facebook_new
 ##.facebook_share
 ##.facebook_sm
 ##.facebookbox
@@ -1966,6 +1965,7 @@ _social-bar/
 ##.news-share
 ##.news-share-button
 ##.news__share
+##.news_sns
 ##.nice-menu-menu-social-menu
 ##.node-share
 ##.node-social
@@ -2147,7 +2147,6 @@ _social-bar/
 ##.sb_share
 ##.sc--twitter
 ##.sc-button-share
-##.sc-social
 ##.sc-social-links
 ##.scShareBoxRow
 ##.scShareText
@@ -2155,7 +2154,6 @@ _social-bar/
 ##.scriptlesssocialsharing
 ##.scroll-triggered-box
 ##.sd-share
-##.sd-share-icon
 ##.sd-sharing
 ##.sd-social
 ##.sd-social-icon-text
@@ -2365,6 +2363,7 @@ _social-bar/
 ##.share-twitter
 ##.share-twitter-icon
 ##.share-vertical
+##.share-viber
 ##.share-video
 ##.share-weibo
 ##.share-whatsapp
@@ -2579,7 +2578,6 @@ _social-bar/
 ##.sharify-btn-reddit
 ##.sharify-btn-twitter
 ##.sharify-container
-##.sharing--footer
 ##.sharing-area
 ##.sharing-bar
 ##.sharing-block
@@ -2741,7 +2739,6 @@ _social-bar/
 ##.social-badge
 ##.social-badges
 ##.social-banner
-##.social-banners
 ##.social-bar-sticky
 ##.social-bar-widget
 ##.social-bar-wrapper
@@ -2934,6 +2931,7 @@ _social-bar/
 ##.social-sharing-bot
 ##.social-sharing-button
 ##.social-sharing-buttons
+##.social-sharing-item
 ##.social-sharing-link
 ##.social-sharing-top
 ##.social-sharing__link
@@ -3607,6 +3605,7 @@ _social-bar/
 ||po.st/static/$third-party
 ||reddit.com/api/info.json?$third-party
 ||reddit.com/static/$third-party
+||revinate.com^$third-party
 ||scoop.it^$third-party
 ||share.itraffic.su^$third-party
 ||shareaholic.com^$third-party
@@ -3794,6 +3793,7 @@ dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
 retire.ly##.cs-footer-social-links
+bloomberg.com##.css--social-wrapper-outer
 techcommunity.microsoft.com##.custom_widget_MicrosoftFooter_social-share_yuh6w_138
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
@@ -3852,7 +3852,6 @@ thegatewaypundit.com##.gb-button-wrapper
 ghacks.net##.ghacks_share_widget
 cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
-coinedition.com##.google-news-block
 alarabiya.net##.google-news-callout
 gadgets360.com##.gsocialbar
 israelnationalnews.com##.header-nav-addons-link
@@ -4326,9 +4325,10 @@ ilsole24ore.com##.list-inline--tools
 limesonline.com##.lms-socialbar
 ansa.it##.media-share
 andreagaleazzi.com##.mercatino-toggle
+robadadonne.it##.p-box-discussion_block__gnews
+robadadonne.it##.p-box-social_tools
 everyeye.it##.p-gnewsBanner
 everyeye.it##.p-telBut
-lifegate.it##.post__trends
 raiplay.it##.prefooter__social__list
 ohga.it##.share-item
 rainews.it##.share-toggler
@@ -4478,6 +4478,7 @@ elcomercio.com##.adv-footer-social
 heraldousa.com##.article-body__byline-menu-content-share
 heraldousa.com##.article-body__menu-content-share
 rpp.pe##.article__follow
+elespanol.com##.article__footer-nav
 eldiarioalerta.com##.author-net
 elfinanciero.com.mx##.b-footer__social-links-container
 estadiodeportivo.com##.boton-share
