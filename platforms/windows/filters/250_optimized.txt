@@ -1,5 +1,5 @@
-! Checksum: 5DXKWgwVmUPCCV8Xola2lQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1749228286-14400.patch
+! Checksum: YEQEiT39jV13mINIix7Gtw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1749271366-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.13
@@ -1802,6 +1802,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##span[class*=-social-share-]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class*=share-icon]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##span[class^=share_btn]
+##span[data-lnkd-debug]
 ##ul[class*=-share-buttons]
 /images/share_icons/*
 /images/social-share/*
@@ -1950,6 +1951,8 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.js-share-fb:not(html,body,:empty)
 ##.react-share__ShareButton:not(body,html,:empty)
 ##.mh-share-buttons:not(body,html,:empty)
+##button.btn-twitter-liveblog
+~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##button.btn-facebook-liveblog
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###article-share-facebook
 ###article-share-twitter
 ##.uSocial-Share:not(body,html,:empty)
@@ -2443,6 +2446,7 @@ $document,removeparam=ranEAID
 $document,removeparam=ranSiteID
 $document,removeparam=xtor
 $document,removeparam=SRC
+$document,removeparam=ectrans
 $document,removeparam=dartycid
 $document,removeparam=bbaid
 ||paypal.$document,removeparam=ppid
@@ -2664,7 +2668,6 @@ $document,removeparam=/^_s=afl_impact$/
 $document,removeparam=/^cid_.*$/
 $removeparam=cjReq
 $removeparam=ir_cid
-$removeparam=p_aid
 $document,removeparam=p_sid,domain=~wgv.de
 $removeparam=depth_1-utm_source
 $removeparam=cmp_id
@@ -2771,6 +2774,7 @@ $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
 $removeparam=dt_dapp
 $removeparam=dt_platform
+$removeparam=i_cid
 $removeparam=_gac
 $removeparam=af_medium
 $removeparam=af_source
@@ -2872,7 +2876,6 @@ $removeparam=vxii_pdid
 $removeparam=bsw_user_id
 $removeparam=bsw_custom_parameter
 $removeparam=partnerUserId
-$document,removeparam=taboola_hm
 $removeparam=adroll_fpc
 $removeparam=ad-session-id
 $removeparam=ga_cid
@@ -3151,15 +3154,10 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||www.google.$document,removeparam=dpr
 ||www.google.$document,removeparam=tfu
 ||ipv6.google.com^$document,removeparam=fbs
-||ipv6.google.com^$document,removeparam=ictx
-||ipv6.google.com^$document,removeparam=dpr
-||ipv6.google.com^$document,removeparam=tfu
 ||www.google.com/finance/?$removeparam=output
 ||www.google.com/finance/?$removeparam=source
 ||www.google.$document,removeparam=no_sw_cr
 ||www.google.$document,removeparam=zx
-||ipv6.google.com^$document,removeparam=no_sw_cr
-||ipv6.google.com^$document,removeparam=zx
 ||myaccount.google.com^$removeparam=source
 @@://www.google.*/maps^$removeparam=utm_campaign
 ||tiktok.com^$removeparam=_r
@@ -3265,6 +3263,7 @@ $removeparam=aff_click_id
 ||map.baidu.com^$removeparam=ugc_ver
 ||baidu.com^$removeparam=hl_tag
 ||zhidao.baidu.com^$removeparam=qbl
+||wenku.baidu.com/search?$removeparam=cc
 ||baike.baidu.com^$removeparam=lemmaFrom
 ||wenku.baidu.com^$removeparam=_wkts_
 wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
@@ -3327,8 +3326,6 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||sogou.com^$removeparam=lkt
 ||sogou.com^$removeparam=s_from
 ||sogou.com^$removeparam=sst0
-||sogou.com^$removeparam=sugsuv
-||sogou.com^$removeparam=sugtime
 ||sogou.com^$removeparam=sut
 ||sogou.com^$removeparam=w
 $removeparam=clickArea
@@ -3339,7 +3336,6 @@ $removeparam=user_ip
 ||sogou.com^$removeparam=htdbg
 ||sogou.com^$removeparam=interation
 ||sogou.com^$removeparam=interV
-||sogou.com^$removeparam=suguuid
 ||baike.sogou.com^$removeparam=ch
 ||sogou.com^$removeparam=fromTitle
 ||mp.weixin.qq.com^$removeparam=scene
@@ -3551,6 +3547,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
+$removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 ||fiverr.com^$removeparam=afp
 ||fiverr.com^$removeparam=cxd_token
 ||walmart.$removeparam=/^wl\d=.*$/
@@ -3693,6 +3690,9 @@ $removeparam=srsltid,document
 ||dl-protect.$removeparam=rl
 ||discoveryplus.com^$removeparam=_referrer
 ||search.yahoo.com^$removeparam=fr2
+$removeparam=%243p,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+$removeparam=%24deep_link,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+$removeparam=post_index,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
 $removeparam=link_source_user_id,domain=nextdoor.com
@@ -3970,6 +3970,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 #@#.adBlock
 ##.adBlock:not(html,body,:empty)
 #@#.ad-banners
+##.ad-banners:not(html,body,:empty)
 #@#.ad-below
 #@#.ad-display
 ##.ad-display:not(html,body,:empty)
@@ -4016,13 +4017,11 @@ flipkart.com##div[style^=flex-grow] div:first-of-type + div.col
 flipkart.com##footer section + div:last-of-type
 ###custom-css .vjs-loading-spinner
 ||ogp.me^$csp=upgrade-insecure-requests
-||www.facebook.com/2008/$csp=upgrade-insecure-requests
 ||detectportal.firefox.com^$csp=upgrade-insecure-requests
 @@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script
 google.*#@##google-hats-survey
 ||appboycdn.com^$third-party
 independent.co.uk,indy100.com##.notification-prompt
-qwant.com##div[class^=_][class*=" "]:last-of-type:has(>div>:is([href*="://chromewebstore."],[href*="://addons.mozilla.org/"]))
 /fakepage.html^$domain=superadblocktest.com|tracksong.github.io,important
 /ads.js^$domain=tracksong.github.io,important
 @@$xmlhttprequest,third-party,redirect-rule=nooptext:-1,method=head,domain=superadblocktest.com
