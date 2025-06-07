@@ -1,5 +1,5 @@
-! Checksum: b9y8AI94WZ08J+IAlWJZRQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1749177690-3600.patch
+! Checksum: zLK91V+ns/oqbNDdegFmiQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1749264033-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.2
@@ -21,7 +21,6 @@
 ||widget.marktjagd.de^
 ||cwi.re^$third-party
 ||a.zdg.de^
-||cockpit.symplr.de^$third-party
 ||afl-static-cdn.newbiz-prod.stroeerws.de^$third-party
 ||embed.contentverticals.de^$third-party
 ||ablyft.com^$third-party
@@ -1634,6 +1633,7 @@ gamestar.de###dfp-masthead
 tvspielfilm.de##.promo-box
 netzwelt.de##.ad-host
 n-tv.de##.extcontent--amazon
+gamestar.de##div[class^="sponsored-"]
 filmstarts.de##.main-banner
 la-palma24.info##.dvtopgadogle
 stuttgarter-zeitung.de##.trf-declaration-container
@@ -2298,6 +2298,7 @@ mobile.de#@#[data-ad-id]
 @@||api-v*.trbo.com/r.php$domain=blau.de
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=wetteronline.de,important
 heise.de#@#[data-ad-unit]
+@@||cdntrf.com/prebid/ingame.de/prebid_config.json$domain=ingame.de
 @@||cdntrf.com/lib/templates/index.js$domain=ingame.de
 @@||cdntrf.com/trfAdSetup.js$domain=ingame.de
 reidl.de#@#ins[data-revive-zoneid]
@@ -2416,7 +2417,6 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbegrafiken/*
 /werbemittel/*
 /werbemittel_
-/werbenetz/*
 /werbepartner.
 /werbepartner/*
 /werbeplakat.
@@ -2862,6 +2862,9 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||azurefd.net/endpoint/shipment/$domain=merkurist.de
 ||b2run.de/run/de/de/components/partner-links/
 ||b2run.de/run/de/de/pics/partner/
+||bankkaufmann.com/bilder/bacol.jpg
+||bankkaufmann.com/bilder/bkhfb.jpg
+||bankkaufmann.com/bilder/fkl.jpg
 ||banner.click-tt.de^
 ||bayernwelle.de/cdn/uploads/banner-
 ||bbszene.de^*/banner/
@@ -3110,6 +3113,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||suche.t-online.de/web/billiger?
 ||suche.t-online.de/web/ebay?
 ||suche.web.de/amazon?
+||suche6.ch/banner/
 ||sunshine.it/raika/
 ||surfmusik.de/anz1.gif
 ||svs1916.de/fileadmin/svs1916de/footer_Logos/
@@ -3633,6 +3637,7 @@ fitforfun.de,ibb-anzeiger.de,suchen.mobile.de,suedtiroltv.it##.adv
 oberberg-aktuell.de##.adv-indicator
 blinker.de##.adv_widget
 countrymusicnews.de,eurogamer.de,ka-news.de,morningstar.de,suedkurier.de,weser-kurier.de##.advert
+bankkaufmann.com##.advert_
 4investors.de,abendblatt.de,apotheken-umschau.de,az.com.na,dpd.de,extremnews.com,finanzen.ch,heise.de,iplayapps.de,tarnkappe.info,wetteronline.de##.advertisement
 kochrezepte.at##.advertisement_widget
 oefb.at,zeit.de##.advertising
@@ -3644,6 +3649,7 @@ rtl.de##.adwrapper--mobile
 pcgameshardware.de##.afBtn1
 pcgameshardware.de##.afBtn2
 fitbook.de,myhomebook.de,stylebook.de,techbook.de,travelbook.de##.affiliate-amex
+fitbook.de,myhomebook.de,stylebook.de,techbook.de,travelbook.de##.affiliate-mediamarkt
 pcgames.de##.affiliateBelowArticle
 nachbelichtet.com##.ai-track
 genialetricks.de,leckerschmecker.me,veggieboom.com##.ai-viewport-1
@@ -3704,6 +3710,7 @@ sims4ever.de##.bannerBox
 eishockeynews.de##.bannerContent
 moviejones.de##.bannerInfo
 erotikforum.at##.bannerWrapper
+bluray-disc.de##.banner_container
 apotheke-adhoc.de##.banner_container__mobile_billboard
 der-farang.com##.banner_item
 lerntippsammlung.de##.banner_rechts
@@ -3893,6 +3900,7 @@ tennis.de##.header-logo-second-display
 fcbayern.com##.header-presented-by
 taucher.net##.header-promo
 verlagshaus-jaumann.de##.header-right
+bankkaufmann.com##.headeradvert_
 kleinanzeigen-suedtirol.com##.highlight
 fremdwort.de##.hinweisad
 budapester.hu##.hirdetes
@@ -4120,6 +4128,7 @@ spiele-kostenlos-online.de##.skycraper
 11freunde.de,amazona.de,charivari.de,dialo.de,dynamo-dresden.de,fruchtportal.de,jetztspielen.de,ligaportal.at,rheintaler.ch,spielen.de##.skyscraper
 search.ch##.sl-banner
 aedt.de##.slide-box
+suche6.ch##.slideshow
 finanznachrichten.de##.smartbroker-logo
 finanznachrichten.de##.smartbroker1
 administrator.de##.snhb-ads
@@ -4708,6 +4717,7 @@ obi.*##[data-ae-slot="pdp_old_banner"]
 @@||improvedigital.com/pbw/headerlift.min.js$domain=jetztspielen.de
 @@||middleware.marktjagd.de/proxy/$domain=aktionspreis.de|angebote.focus.de|dasoertliche.de|donau-ries-aktuell.de|fressnapf.ch|infranken.de|maxizoo.ch|meinestadt.de|sparwelt.de
 @@||mmcomputer.de^*&BannerID=$subdocument
+@@||pbjs.adnz.co/prebid.js?$domain=finanzen.ch
 @@||rubiconproject.com/prebid/dynamic/18086.js$domain=4p.de|derwesten.de|futurezone.de|leckerschmecker.me|moin.de|morgenpost.de|news38.de|thueringen24.de|wmn.de
 @@||smartclip.net/?plc=$script,domain=spiele.rtl.de
 @@||smartclip.net/ads?$script,domain=spiele.rtl.de
