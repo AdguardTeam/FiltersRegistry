@@ -1,9 +1,9 @@
-! Checksum: w3wAO0BhhuRCNxHCjJxLXA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1749344006-14400.patch
+! Checksum: 116rV326sShvwmP4dC0B0A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1749357953-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.42.69
-! TimeUpdated: 2025-06-08T00:48:14+00:00
+! Version: 2.1.42.70
+! TimeUpdated: 2025-06-08T04:41:09+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -16,7 +16,6 @@
 -sharebar.
 -social-sidebar.
 -Social-Sidebar/
--social-slider/
 -sprite-social-
 .sharing.js
 /accesspress-social-counter/*
@@ -146,7 +145,6 @@ _social-bar/
 ###Followers1
 ###ShareButton
 ###ShareItemBtn
-###SocialContainer
 ###SocialMedia
 ###SocialShare
 ###Socialize
@@ -896,6 +894,7 @@ _social-bar/
 ##.article_footer_pinterest
 ##.article_header_share
 ##.article_share
+##.article_sharing
 ##.article_social
 ##.article_social_share
 ##.articlesharebox
@@ -952,6 +951,7 @@ _social-bar/
 ##.bi-share
 ##.bimber-microshare-item-share
 ##.bio-social
+##.bloc-share
 ##.bloc-social
 ##.bloc_float_share
 ##.block-addtoany
@@ -1074,7 +1074,6 @@ _social-bar/
 ##.cmSocialMediaList
 ##.cmSocialMediaListContainer
 ##.cmg-share-bar
-##.cnbc-share-top
 ##.col-social
 ##.column-social
 ##.comment-share
@@ -1082,7 +1081,6 @@ _social-bar/
 ##.comment-social
 ##.comment__share
 ##.comment_share
-##.comments-and-share
 ##.comments-share
 ##.comments__likes
 ##.common-social-link
@@ -1126,6 +1124,7 @@ _social-bar/
 ##.details-share
 ##.div-share
 ##.divFooterSocial
+##.divSocial
 ##.dmSocialHub
 ##.dp-share
 ##.dpsp-network-btn
@@ -1228,7 +1227,6 @@ _social-bar/
 ##.facebook-messenger-avatar
 ##.facebook-modal
 ##.facebook-page-plugin
-##.facebook-plain-control
 ##.facebook-popup
 ##.facebook-share-btn
 ##.facebook-share-button
@@ -1278,7 +1276,6 @@ _social-bar/
 ##.fb-xfbml-parse-ignore
 ##.fbBtn
 ##.fbLike
-##.fbLogo
 ##.fbShare
 ##.fbShareTrigger
 ##.fb_bar
@@ -1374,7 +1371,6 @@ _social-bar/
 ##.footer-fb-icon
 ##.footer-follow
 ##.footer-follow-us
-##.footer-followUs
 ##.footer-followus
 ##.footer-icon-facebook
 ##.footer-instagram
@@ -1752,6 +1748,7 @@ _social-bar/
 ##.js-share-toggle
 ##.js-share-twitter
 ##.js-shareButton
+##.js-social-bar
 ##.js-social-facebook
 ##.js-social-instagram
 ##.js-social-share
@@ -1922,6 +1919,8 @@ _social-bar/
 ##.module-twitter
 ##.mom-social-icons
 ##.mom-social-share
+##.mom-socials-widget
+##.momizat-social-icons
 ##.mvp-alp-soc-list
 ##.mvp-foot-soc-list
 ##.mvp-nav-soc-but
@@ -2077,7 +2076,6 @@ _social-bar/
 ##.post__share
 ##.post__share-container
 ##.post_share_center
-##.post_share_icons
 ##.postshare
 ##.powerkit_social_links_widget
 ##.pp-share-grid-item
@@ -2182,6 +2180,7 @@ _social-bar/
 ##.sh_facebook
 ##.share--aside
 ##.share--bottom
+##.share--column
 ##.share--facebook
 ##.share--item
 ##.share--twitter
@@ -2402,6 +2401,7 @@ _social-bar/
 ##.shareForm
 ##.shareHomeButtons
 ##.shareIcons
+##.shareItem-twitter
 ##.shareLeft
 ##.shareLink
 ##.shareLinks
@@ -2550,8 +2550,6 @@ _social-bar/
 ##.sharer
 ##.sharer-0
 ##.sharer-facebook
-##.sharer-icon
-##.sharer-linkedin
 ##.sharer-twitter
 ##.sharers
 ##.shares__item
@@ -3033,6 +3031,7 @@ _social-bar/
 ##.socialTools
 ##.socialTop
 ##.socialTwitter
+##.socialUrl
 ##.socialWidget
 ##.socialWrap
 ##.socialWrapper
@@ -3275,6 +3274,7 @@ _social-bar/
 ##.twitter-followers
 ##.twitter-footer
 ##.twitter-hashtag
+##.twitter-module
 ##.twitter-share
 ##.twitter-share-btn
 ##.twitter-share-button
@@ -3308,7 +3308,6 @@ _social-bar/
 ##.twitterbox
 ##.twitterbtn
 ##.twitterbutton
-##.twitterfeed
 ##.twitterfollow
 ##.twitterjo
 ##.twitterlink
@@ -3415,6 +3414,7 @@ _social-bar/
 ##.widget_social_links
 ##.widget_social_media
 ##.widget_social_networks
+##.widget_socialcountplus
 ##.widget_socialnetworklinks_widget
 ##.widget_socials
 ##.widget_socials_ignited
@@ -3538,6 +3538,7 @@ _social-bar/
 ##a[title="Suivez-nous sur Pinterest"]
 ##a[title="Suivez-nous sur Twitter"]
 ##amp-social-share
+##div[title="Partager sur Facebook"]
 ##div[title="Partager sur Twitter"]
 ##img[alt="Connect with us on Facebook"]
 ##img[alt="Connect with us on LinkedIn"]
@@ -3608,7 +3609,6 @@ _social-bar/
 ||reddit.com/api/info.json?$third-party
 ||reddit.com/static/$third-party
 ||revinate.com^$third-party
-||scoop.it^$third-party
 ||share.itraffic.su^$third-party
 ||shareaholic.com^$third-party
 ||sharedcount.com^$third-party
@@ -3756,6 +3756,7 @@ crash.net,ttnews.com##.block-better-social-sharing-buttons
 tastesbetterfromscratch.com##.block-follow-me
 iowagirleats.com,simplifylivelove.com,therecipecritic.com##.block-pinterest-cta
 studyfinds.org##.block-social-share
+thehustle.co##.blog-hustle-social-links
 9to5linux.com##.bm-social-top
 breitbart.com##.bnn-social-share
 bangkokpost.com##.boxnav--social
@@ -3815,7 +3816,6 @@ notesfrompoland.com##.et_social_inline
 yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
 techradar.com##.facebook-icon
-blogto.com##.facebook-round-control
 knowyourmeme.com##.fb-page-like-box
 eadaily.com##.feed
 lubuntu.me##.ff-social-icon
@@ -4077,7 +4077,6 @@ rottentomatoes.com##.trending-bar__social-link
 advocate.com,slashdot.org##.tw
 apptrigger.com,motherjones.com##.tweet
 videocardz.com##.twitter-follow-button
-blogto.com##.twitter-round-control
 unsw.edu.au##.uds-social-follow
 news.sky.com##.ui-news-footer-social
 news.sky.com##.ui-news-footer-social-link
@@ -4369,6 +4368,7 @@ knivesout.jp###Jtwitter
 srad.jp###article-bottom
 ntv.co.jp###sns
 news.j-wave.co.jp###snsLink
+vippers.jp##.article-sns
 kakakumag.com##.article-sns-btm
 oricon.co.jp##.block-sub-sns
 kakakumag.com##.hd-sns
@@ -4532,7 +4532,6 @@ km77.com##.js-share-block
 elliberal.com.ar##.links-social
 clublibertaddigital.com,libertaddigital.com,libremercado.com##.links_social
 diariodemocracia.com##.list-social-media
-atlanticohoy.com,diario16plus.com,planetarealmadrid.com##.m-social-profile
 milanuncios.com##.ma-AdDetailShare
 perfil.com##.main-footer__redes
 canalnet.tv##.main-video-single__socials
@@ -4570,7 +4569,6 @@ eldia.com##.social-nota-top
 rtve.es##.socialBox
 eldia.com##.social_profiles
 alianzademediosmx.org##.socialmedia-share
-cyltv.es##.srrss
 cnnespanol.cnn.com##.storyfull__social
 ellitoral.com##.styles_container-social-icons-top__hptal
 ellitoral.com##.styles_footer-social__MQ7I4
