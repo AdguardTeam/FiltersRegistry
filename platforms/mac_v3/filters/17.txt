@@ -1,9 +1,9 @@
-! Checksum: Ma11B//1ZSc9JYhLjXb3Ww
-! Diff-Path: ../patches/17/17-s-1749222642-3600.patch
+! Checksum: aw5nfOySdGLsNnoabvSnNw
+! Diff-Path: ../patches/17/17-s-1749420693-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.15
-! TimeUpdated: 2025-06-06T15:06:42+00:00
+! Version: 2.0.11.16
+! TimeUpdated: 2025-06-08T22:07:24+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -399,6 +399,11 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/206165
+*$removeparam=siteNo,domain=m-emart.ssg.com|emart.ssg.com
+*$removeparam=ckwhere,domain=m-emart.ssg.com|emart.ssg.com
+*$removeparam=appPopYn,domain=m-emart.ssg.com|emart.ssg.com
+*$removeparam=service_id,domain=m-emart.ssg.com|emart.ssg.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206718
 ||gettranny.com^$removeparam=campaign
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206757
