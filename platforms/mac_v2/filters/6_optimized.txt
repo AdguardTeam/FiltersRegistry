@@ -1,5 +1,5 @@
-! Checksum: c4DMLknY0XdezAGc4060YQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1749298423-3600.patch
+! Checksum: uL3+VHkFXVXF6llvcLemVg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1749350834-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.3
@@ -617,7 +617,6 @@ bild.de##.outstreamAd
 myhomebook.de,techbook.de,petbook.de,fitbook.de,bild.de,rollingstone.de,bz-berlin.de,weser-kurier.de###banner
 !+ NOT_PLATFORM(android, ios, ext_android_cb)
 giga.de#$#div[class*="ad--top"] { display: block !important; min-height: 40px !important; }
-||cluster-*.cdnjquery.com^$domain=woxikon.de|notebookcheck.com|dict.cc
 ||*snigelweb-com.videoplayerhub.com^$domain=tellows.de|woxikon.de|notebookcheck.com|dict.cc
 jungewelt.de,elektrikforum.de,bauexpertenforum.de,1erforum.de,avensis-forum.de,ford-forum.de,skodacommunity.de,toyota-forum.de,windows-7-forum.net##.Anzeige
 drwindows.de,wiesbadenaktuell.de,rauchmeldungen.de,simfans.de,wn.de,cosmopolitan.de,wallstreet-online.de,tierchenwelt.de,bielefeld.de##.anzeige
@@ -1493,6 +1492,7 @@ vodafone.de##body .gujAd.superbanner
 lovelybooks.de##div[class^="MoliAd__StyledAd-"]
 hermoney.de##.innerContentAdContainer
 zinsen-berechnen.de##div[class^="googlebox"]
+zinsen-berechnen.de###sidebar > div[style^="padding-top:"][style*="background:"] > div[style="height:600px;width:160px;"]
 sol.de##.module--posts-list > .is-support-box
 rheinische-anzeigenblaetter.de,all-in.de##.bannerslot-centered
 prad.de##div[data-tpl="Flat_box_horizontal_prad"]
@@ -1760,6 +1760,7 @@ paketda.de##.l-box > a[target="_blank"]
 finanzen.net##body .ad-hint
 finanzen.net##div[id^="fin-ob-box-ar_"]
 bitblokes.de###google_ad_2_amazon
+||stupidedia.org/skins/autodoc.gif
 kodi-tipps.de##.identitaet-box
 payback.de##div[data-ad-id]
 ||pagead2.googlesyndication.com$domain=promiflash.de,redirect=nooptext,important
@@ -2598,7 +2599,6 @@ _woz_banner_vote.
 ###werbung-banner
 ###werbung-skyscraper
 ###werbung1
-###werbung125_links
 ###werbung2
 ###werbung3
 ###werbungWrapper
@@ -2616,6 +2616,7 @@ _woz_banner_vote.
 ###werbungsky
 ##.Werbelabel
 ##.Werbung
+##.ad_mitte
 ##.ad_platzhalter
 ##.ads-anzeige
 ##.ads-artikel-contentAd-top
@@ -2915,7 +2916,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||viversum.de/partnerprogramm/$third-party
 ||wazazu.com/iframe/$third-party
 ||wazazu.com/js/pu_$third-party
-||wazazu.com/pimage/bas/$third-party
 ||wazazu.com/pimage/visit-x/$third-party
 ||web-ads.10sq.net^
 ||weekli.de/widget-loader?$third-party
@@ -3408,7 +3408,6 @@ macgadget.de###block-anzeige2
 hoerzu.de###block-block-218
 fachzeitungen.de###block-block-32
 fachzeitungen.de###block-block-5
-buecher-magazin.de,online-webradio.com###block-block-7
 duden.de###block-dudende-d-970x250-1billboard
 duden.de###block-leaderboard2ndslot
 duden.de###block-lexemleaderboardunten
@@ -3521,6 +3520,7 @@ lokalo.de###media_image-42
 dasoertliche.de###medium_rect
 wallstreet-online.de###mooTicker
 wallstreet-online.de###mooTickerContainerMobile
+gamereactor.de###mpu
 bild.de,finanzen.net###mrec
 mein-schoener-garten.de###msg_leaderboard_1_mobile_wrapper
 nwzonline.de###msn-ads-top
@@ -3686,6 +3686,7 @@ netmoms.de,praxistipps.focus.de##.FC__Ad
 swoodoo.com##.Flights-Results-FlightRightRail
 blick.de##.OAS_AD
 sexforum.ch##.Partnerbox
+sexforum.ch##.SideBannerbox
 de.rt.com##.TopBanner-root
 t-online.de,www-t--online-de.cdn.ampproject.org##.Tshlogobox
 via-ferrata.de##.YouTubeoetz
@@ -3839,7 +3840,6 @@ suedostschweiz.ch##.block-np8-audienzz
 ak-kurier.de##.block-weather-link
 computerbase.de##.block1--banner
 computerbase.de##.block1--skyscraper
-blogprojekt.de##.blogp-startseite
 oberberg-aktuell.de##.bnrad
 gesundheit.de,onmeda.de##.box--ad
 wetter.at##.box.contentBoard.default.highlights
@@ -4299,6 +4299,7 @@ helles-koepfchen.de##.topAdCol
 az.com.na,photovoltaikforum.com##.topBanner
 buffed.de,gamesaktuell.de,gamezone.de,pcgames.de,pcgameshardware.de,videogameszone.de##.topFrameEddie
 xrel.to##.top_news_adv
+boerse-online.de,sexforum.ch##.topbanner
 n-tv.de##.topbanner-mobile
 queer.de##.toplinks
 f95.de##.topsponlink
