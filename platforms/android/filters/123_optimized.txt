@@ -1,9 +1,9 @@
-! Checksum: Wwr0xeWEqYqEBZXpn4IrZw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1749430334-14400.patch
+! Checksum: 6CrdZBzwgVyZKLQN9emU/Q
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1749444354-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.42.75
-! TimeUpdated: 2025-06-09T00:48:03+00:00
+! Version: 2.1.42.76
+! TimeUpdated: 2025-06-09T04:41:51+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -179,6 +179,8 @@ _social-bar/
 ###btn-share-email
 ###btn-share-fb
 ###btn-share-tele
+###btnShareFacebook
+###btnShareTwitter
 ###cm-social-overlay
 ###connectWithUs
 ###content-share-top
@@ -355,7 +357,6 @@ _social-bar/
 ###mvp-fly-soc-wrap
 ###mvp-foot-soc
 ###mvp-nav-soc
-###mvp-nav-soc-list
 ###mvp-post-soc-wrap
 ###mvp-soc-mob-wrap
 ###mvp-top-nav-soc
@@ -484,7 +485,6 @@ _social-bar/
 ###sharer
 ###sharethis
 ###sharetop
-###sharewrapper
 ###sharing-bar
 ###sharing-box
 ###sharing-sidebar
@@ -753,7 +753,6 @@ _social-bar/
 ##.SocialLinks-linkContainer
 ##.SocialMediaLinks
 ##.SocialMediaShareButton
-##.SocialMedia_share
 ##.SocialRibbon
 ##.SocialRow
 ##.SocialSection
@@ -949,6 +948,7 @@ _social-bar/
 ##.bgShare.twiiter
 ##.bgShare.youtube
 ##.bi-share
+##.big-share
 ##.bimber-microshare-item-share
 ##.bio-social
 ##.bloc-share
@@ -1938,6 +1938,7 @@ _social-bar/
 ##.native-share-buttons
 ##.nav--social
 ##.nav-share
+##.nav-share-btn
 ##.nav-soc-but
 ##.nav-social
 ##.nav-social-links
@@ -2002,6 +2003,7 @@ _social-bar/
 ##.page-social
 ##.page_share
 ##.pane-social-links
+##.panel-follow-social
 ##.panel-share-networks
 ##.par-footer-social
 ##.parent-shareBox
@@ -2281,6 +2283,7 @@ _social-bar/
 ##.share-kit__twitter
 ##.share-kit__youtube
 ##.share-label
+##.share-launch
 ##.share-left
 ##.share-legend
 ##.share-line
@@ -2687,8 +2690,6 @@ _social-bar/
 ##.sns-fb
 ##.sns-link
 ##.sns-link-wrap
-##.sns-list__item--facebook
-##.sns-list__item--twitter
 ##.sns-section
 ##.sns-share
 ##.sns-share-area
@@ -3005,6 +3006,7 @@ _social-bar/
 ##.socialMedia
 ##.socialMedia-linkedin
 ##.socialMediaBlock
+##.socialMediaBox
 ##.socialMediaButtons
 ##.socialMediaContainer
 ##.socialMediaIcon
@@ -3793,7 +3795,6 @@ cri.cn##.cgr-info-nav
 stuff.co.nz##.comment-and-share
 goal.com##.component-share
 goal.com##.component-social-twitter
-bestreviews.com##.components-sharetool
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
@@ -4047,6 +4048,7 @@ kleinezeitung.at,meduniwien.ac.at,shipmag.it,today.rtl.lu##.socialbar
 videocardz.com##.socialbar-sidebar
 firstthings.com,mothership.sg,overclock3d.net,techtimes.com##.socials
 overclock3d.net##.socials-container
+phys.org##.socials-wrapper
 eatwell101.com##.socialsaveur
 nordest24.it,portalpuentealto.cl,upinthesky.nl,watchinamerica.com##.spc-social
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
@@ -4100,7 +4102,6 @@ comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-
 theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
 aspicyperspective.com,budgetbytes.com,butterwithasideofbread.com,downshiftology.com,handletheheat.com,therecipecritic.com##.wprm-call-to-action
-90min.com##.wrapperBase_1ietptp-o_O-wrapperDefault_dlcy9n
 worldcrunch.com##.ysi_share
 firstpost.com##.yt-ch
 sfgate.com##[aria-label="Share from Email"]
@@ -4257,6 +4258,7 @@ presseportal.de##.story-sharing
 t3n.de##.tg-pockethinweis
 t3n.de##.tg-social-bottom
 handelsblatt.com##app-icon-link
+berliner-kurier.de##section[class^="article-top-panel_socials_"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 radiofrance.fr##.ShareManager
@@ -4591,6 +4593,7 @@ euskalnews.com##.wp-block-wptelegram-widget-join-channel
 comunicacio21.cat,cultura21.cat,espai.media,espailinia.cat,exterior.cat##.xxss
 autobild.es,businessinsider.es,computerhoy.com,hobbyconsolas.com,topgear.es##div[class^="share-bar_"]
 autobild.es,businessinsider.es,computerhoy.com,hobbyconsolas.com,topgear.es##div[class^="social-list_"]
+15min.lt##.share--sticky
 diyanet.tv##.lobibox-notify-wrapper
 diyanet.tv##.navbar-sosyal
 trthaber.com##.social-links-container

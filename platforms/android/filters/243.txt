@@ -1,14 +1,14 @@
-! Checksum: I6LzMwhAMzQBiXqi00pGFg
-! Diff-Path: ../patches/243/243-s-1749357916-14400.patch
+! Checksum: lF6xEDiCQlTaNeaoBOs3Ag
+! Diff-Path: ../patches/243/243-s-1749444355-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.84
-! TimeUpdated: 2025-06-08T04:41:33+00:00
+! Version: 2.0.21.85
+! TimeUpdated: 2025-06-09T04:42:12+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-06-08 05:28:59 CEST
+! Last modified: 2025-06-09 05:02:40 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -1394,7 +1394,7 @@ tekniknytt.se##:is(.top-news, .big_article):has(img[src*="casino"], img[src*="su
 tekniksmart.se##.elementor-widget-container:has(a[href*="casino"])
 teknikveckan.se##.no-ad
 teknikveckan.se##.pill:has-text(/spons/i):upward(.grid-item, .pinned, .articleFlow-item)
-teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,driva-eget.se,ifokus.se,sv.picmix.com,ifragasatt.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se,aktiespararna.se,receptfavoriter.se,tyda.se,mittforetag.com,lajvo.se,magazin24.se,aktuellsakerhet.se,itmag.se##.ad
+teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,driva-eget.se,ifokus.se,sv.picmix.com,ifragasatt.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se,aktiespararna.se,receptfavoriter.se,tyda.se,mittforetag.com,lajvo.se,magazin24.se,aktuellsakerhet.se,itmag.se,affarerinorr.se##.ad
 teknologiexperten.se##.item:has(img[src*=".se-www"])
 telgenytt.se##.tn-ad, #popup
 temaarkiv.se##.md\:mt-\[100px\]:has(script[data-adfscript])
@@ -1410,6 +1410,7 @@ thelocal.se##.ad-container-section, .article-sponsored, div[data-hasbanner="yes"
 thelocal.se##.ra-widget-article-tag:has-text(/partner/i):upward(.ra-widget-panel)
 thepattayanewsse.com##a.td_single_image_bg:not([href*="thepattayanewsse.com"]), #tnp-modal, .desktop-contents
 thepattayanewsse.com##:is(.widget_media_image, .wp-block-image) a:not([href*="thepattayanewsse.com"])
+tidningenattention.se##.left-ad-column-wrapper
 tidningenbalans.se##div[style*="z-index: 999; background-color: rgba(0, 0, 0, 0.5)"], .bg-grey.hideOnPrint, .bg-adYellow, article[data-is-ad="true"]
 tidningenbalans.se##p.uppercase:has-text(/i annonssamarbete med/i):upward(.flex.overflow-hidden)
 tidningencurie.se#$#body[style*="hidden"] { overflow:unset!important;position:unset!important;top:unset!important; }
@@ -2492,7 +2493,6 @@ zeromagazine.nu##div[id^="ads"]
 /revive/www/images$image
 /rubiconproject_prebid
 /rum-reporter$domain=viivilla.se
-/samfalligheterna.se|$ping,xmlhttprequest
 /scripts/js3caf.js
 /scripts/leeads-
 /scripts/opt/view.analytics.js
@@ -2572,7 +2572,7 @@ zeromagazine.nu##div[id^="ads"]
 /toppbanner.js$domain=sydnarkenytt.se
 /toppbanner_snippet_js
 /torgen/banner.stat
-/trace$xmlhttprequest,domain=netflixguiden.se|radio.se
+/trace$xmlhttprequest,domain=netflixguiden.se|radio.se|downdetector.se
 /trackers/SessionCam-tag
 /tracker.php?do$image
 /tracker/socket$domain=swebbtv.se
@@ -3236,6 +3236,7 @@ zeromagazine.nu##div[id^="ads"]
 ||runtnc.net^
 ||r.stripe.com/b$ping
 ||sales.agriprim.com/Banners
+||samfalligheterna.se^$ping
 ||samnytt.se/ads/
 ||samnytt.se/b/$image
 ||sannsyn.com^$third-party

@@ -1,5 +1,5 @@
-! Checksum: bP087qJWMB3CtEs/+/pdRA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1749415202-14400.patch
+! Checksum: Jx/NccVWxGsO45uSdO7iTQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1749444384-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.15
@@ -74,6 +74,7 @@ bfmtv.com###android_banner
 bfmtv.com#$?#.fixed_title { top: 0 !important }
 /^.*/js/smartbanner\..*$/$match-case
 /^.*/smart-app-banner\..*$/$match-case
+/^.*/smartbanner/appbanner\.js.*$/$match-case
 fandom.com##.global-footer__section-fandom-apps
 fandom.com##.global-footer__section-fandom-stores
 www.youtube.com###teaser-carousel:has(img[src*="/youtube_kids_"])
@@ -877,7 +878,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 208.91.196.46$network
 /page/bouncy.php?$all
 ||banquetunarmedgrater.com^$all
-||correspondimpulsive.com^$all
 ||recyclehorridleading.com^$all
 ||jsmcrptjmp.com^$all
 !+ PLATFORM(windows, mac, android, cli)
@@ -1635,7 +1635,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ://ww18.$document,domain=~ww18.autotask.net|~ww18.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww19.$document,domain=~ww19.autotask.net|~ww19.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww20.$document,domain=~ww20.autotask.net|~ww20.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
-://ww22.$document,domain=~ww22.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww25.$document,domain=~ww25.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww26.$document,domain=~ww26.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
 ://ww30.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
@@ -1778,6 +1777,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##button[aria-controls=ShareContainer]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
+##button[title^="Del på "]
 ##button[title^="Share this "]
 ##div[button=share]
 ##div[class$=-sticky-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=post-with-stick])
@@ -2119,6 +2119,7 @@ smzdm.com##.qr-buy-container
 airchina.com.cn##[href$="ttp://www.airchina.com.cn/cn/client_download.shtml"]
 amap.com###amapAppDownload
 amap.com###to_lushu
+bthhotels.com##.app_head_box
 coolapk.com##.apk_topba_code
 ctrip.com##.service-notice-right
 ctrip.com##.set-phone.set-list > .nav-myctrip.person-text
@@ -2455,7 +2456,6 @@ $document,removeparam=_ga,domain=~login.aliexpress.*
 $document,removeparam=guccounter
 $document,removeparam=guce_referrer
 $document,removeparam=guce_referrer_sig
-$document,removeparam=referringSource
 $document,removeparam=source_location
 $document,removeparam=bxid
 $document,removeparam=cndid
@@ -2641,7 +2641,6 @@ $removeparam=sv_campaign_id
 $document,removeparam=/^sv_tax.*$/
 $document,removeparam=/^icid_.*$/
 $removeparam=LSNSUBSITE
-$removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
 $removeparam=afflid
 $removeparam=mclk
@@ -2776,7 +2775,6 @@ $removeparam=ircid
 $document,removeparam=/^src=rss$/
 $removeparam=amp_device_id
 $removeparam=awinaffid
-$removeparam=cje
 $removeparam=iclid
 $removeparam=a_fid
 $removeparam=trk_contact
@@ -3822,6 +3820,7 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=activity
 !+ NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
+||windscribe.com^$document,removeparam=pcpid
 ||qzone.qq.com^$document,removeparam=loginfrom
 ||qzone.qq.com^$document,removeparam=jumptoqzone
 ||qzone.qq.com^$document,removeparam=subtype
@@ -3887,6 +3886,7 @@ ref=dtf.ru$document,removeparam=ref
 ||www.rawstory.com^$removeparam=rsplus
 ||em.dynamicyield.com^$removeparam=tag_ids
 ||filestore.app^$document,removeparam=/^client_ip=$/
+$removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set.js', 'GSvars.addressTracking', 'false')
@@ -4265,8 +4265,5 @@ google.*#@##google-hats-survey
 independent.co.uk,indy100.com##.notification-prompt
 /fakepage.html^$domain=superadblocktest.com|tracksong.github.io,important
 /ads.js^$domain=tracksong.github.io,important
-@@$xmlhttprequest,third-party,redirect-rule=nooptext:-1,method=head,domain=superadblocktest.com
-@@||doubleclick.net^$xmlhttprequest,redirect-rule=nooptext,domain=superadblocktest.com
-@@||pagead2.googlesyndication.com^$xmlhttprequest,redirect-rule=noopjs,domain=superadblocktest.com
 corsproxy.io##canvas
 ##[id$=-exit-modal-bg]
