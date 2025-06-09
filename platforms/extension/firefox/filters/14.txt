@@ -1,9 +1,9 @@
-! Checksum: 9cj4+GJC3aybhvm7r3NOEQ
-! Diff-Path: ../patches/14/14-s-1749475247-3600.patch
+! Checksum: OT7Xm5rzctmDZybJIF6jCQ
+! Diff-Path: ../patches/14/14-s-1749481902-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.32.88
-! TimeUpdated: 2025-06-09T13:16:47+00:00
+! Version: 2.2.32.89
+! TimeUpdated: 2025-06-09T15:07:50+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2509,6 +2509,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+gx.games#%#//scriptlet('trusted-set-cookie', 'cookie-consent', '{%22version%22:2%2C%22marketing%22:false%2C%22necessary%22:true}')
 ||svgator.com/common/CookieSettingsInserter.js
 pkhex-web.github.io##.cc-isolation-container
 kolesa.ru##body > div[style*="z-index"]:has(> div[style] > a[href="https://www.kolesa.ru/policy"])
@@ -55681,10 +55682,6 @@ rockmods.net#$##go-link > .asbutton { display: inline-flex !important; }
 [$path=/p/rblink]rockmods.net#$#.separator > *:not(.blockLink) { display: none !important; }
 ! https://github.com/uBlockOrigin/uAssets/discussions/17361#discussioncomment-7210889
 aiimgvlog.fun#$#form[id] { display: block !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/97016
-00m.in#$##url { display: block !important; }
-00m.in#$##attention { display: none !important; }
-00m.in#$##h4title { display: none !important; }
 ! https://github.com/uBlockOrigin/uAssets/discussions/17361#discussioncomment-6862552
 cdrab.com,offerinfo.net#$##wpsafe-link { display: block !important; }
 cdrab.com,offerinfo.net#$##wpsafe-generate { display: block !important; }
@@ -56092,6 +56089,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/207241
+00m.in#%#//scriptlet('adjust-setInterval', 'show', '1000', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207093
 gyanitheme.com#%#//scriptlet('adjust-setTimeout', '/getElementById|gotoo/', '*', '0.02')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206610
