@@ -1,9 +1,9 @@
-! Checksum: /U/Y70DDt7GIob9Bx6KMlQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1749568283-3600.patch
+! Checksum: j6D/yuB58YTTd6YsCiUNrg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1749582601-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.33.5
-! TimeUpdated: 2025-06-10T15:07:40+00:00
+! Version: 2.2.33.6
+! TimeUpdated: 2025-06-10T19:06:22+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -8656,7 +8656,7 @@ computerbase.de#%#//scriptlet('trusted-set-cookie', 'OTAdditionalConsentString',
 computerbase.de#%#//scriptlet('trusted-set-cookie', 'OptanonAlertBoxClosed', '2025-01-01T00:00:00.000Z')
 vin-info.com#%#//scriptlet('remove-class', 'gdpr', 'body > div.overlay')
 foursquare.com#%#//scriptlet("set-constant", "fourSq.cookies.CookieBanner", "noopFunc")
-metro.co.uk#%#//scriptlet('trusted-click-element', 'div[data-project="mol-fe-cmp"] button[class*="level1PrimaryButton-"]')
+metro.co.uk#%#//scriptlet('trusted-click-element', 'div[data-project="mol-fe-cmp"] button[class*="level1PrimaryButton-"]:not([class*="reject"])')
 foxtons.co.uk#%#//scriptlet('set-cookie', 'cookie_preferences', '1')
 roompot.nl#%#//scriptlet('set-cookie', 'roompot_visited', 'true')
 consent.helpster.de,baseendpoint.stern.de,baseendpoint.urbia.de,cmptcf2.rheinpfalz.de,cmp-sp.paz-online.de,cmp-sp.ln-online.de,baseendpoint.schoener-wohnen.de,baseendpoint.gala.de,sourcepoint.rtl2.de,cmp-sp.sn-online.de,cmp-sp.goettinger-tageblatt.de,cmp-sp.ostsee-zeitung.de,cmp-sp.dnn.de,cmp-sp.sportbuzzer.de,cmp-sp.rnd.de,cmp-sp.haz.de#%#//scriptlet('trusted-click-element', 'button[title^="Zustimmen"], button[title^="Alle akzeptieren" i]')
@@ -15797,6 +15797,7 @@ labs.google.com#@##google-hats-survey
 lefigaro.fr,banki.ru,a2zapk.io,delfi.lt,ganyancanavari.com,turkcell.com.tr,a101.com.tr,news.mail.ru,realitatea.net,winnipegfreepress.com,tenorshare.com,gzt.com,haber.biz,sakshi.com,shiftdelete.net,community.oneplus.com,lnc.nc,superfilmes.ph,meduza.io,yenisafak.com,offidocs.com,onedio.com,hpplus.jp,fullfilmcibaba1.com,joom.com,nbc.com,maximum.ru,ch3plus.com,dropmefiles.com,rg.ru,reddit.com,life.ru#%#//scriptlet('set-constant', 'Notification.requestPermission', 'noopFunc')
 wallstreet-online.de,dni.ru#%#if (window.PushManager) { window.PushManager.prototype.subscribe = function () { return { then: function (func) { } }; }; }
 macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFunc")
+||cdn.gazetepencere.com/assets/bundle/webpush.js
 ||uol.com.br/mywebpush.js
 buienradar.nl#$#body { overflow: auto !important; }
 buienradar.nl#$#div[class^="onboard-"] { display: none !important; }
@@ -18684,7 +18685,7 @@ kralmuzik.com.tr,techbang.com##.google-news-wrapper
 blog.domclick.ru##form[data-e2e-id="blog-subscription-block"]
 aberdeennews.com##form[class^="gnt_"][aria-label*="newsletter: "]
 e360.yale.edu#%#//scriptlet("abort-on-property-write", "rightnow")
-out.com,billingsmix.com,mooseradio.com,newstalkkgvo.com,missoulacurrent.com,emergencemagazine.org,wyrk.com##.newsletter-overlay
+metro.co.uk,out.com,billingsmix.com,mooseradio.com,newstalkkgvo.com,missoulacurrent.com,emergencemagazine.org,wyrk.com##.newsletter-overlay
 aeon.co,psyche.co##.NLFormInsertFromCMS
 thewalrus.ca##.spu-container
 argumenti.ru#?#ul[class*="topanons"] > li:has(> a[href^="https://t.me/"])
@@ -23177,7 +23178,7 @@ investors.com##.market-promo
 forbesindia.com##.subscribe_now
 whosampled.com##.inline-banner
 moz.de###ms-headerbar[data-products]
-||news.google.com/swg^$domain=behindmlm.com|manapedia.jp
+||news.google.com/swg^$domain=behindmlm.com|manapedia.jp|gazetepencere.com
 eikaiwa.dmm.com##main div[style^="filter:"] > a[href^="https://eikaiwa.dmm.com/"]
 crunchyroll.com##section[class^="lowerBannerPanel_"]
 carparts.com##section[data-testid="membership-notif-bar"]
