@@ -1,9 +1,9 @@
-! Checksum: p+k3GnBeIfi9e9jtz2Z8gw
-! Diff-Path: ../patches/14/14-s-1749507094-3600.patch
+! Checksum: snTOOrLevFMEqwUXk3O3Fg
+! Diff-Path: ../patches/14/14-s-1749526410-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.32.93
-! TimeUpdated: 2025-06-09T22:07:47+00:00
+! Version: 2.2.32.94
+! TimeUpdated: 2025-06-10T03:29:41+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15292,9 +15292,10 @@ regio-guide.de#%#//scriptlet('trusted-click-element', '.consent-layer-modal #con
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184455
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181186
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180435
+! https://github.com/AdguardTeam/AdguardFilters/issues/207278
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176447
-||laroche-posay.ru/static/*/js/cookies-popup/
-laroche-posay.ru#$#body { overflow: auto !important; }
+laroche-posay.ru#@#.cookies-popup:not(#style_important)
+laroche-posay.ru#%#//scriptlet('trusted-set-cookie', 'selectedCookieGroups', '{"strictlyNecessaryCookies":"1","functionalCookies":"3"}')
 !
 ! Global Privacy Control with California IP
 aol.com,engadget.com,yahoo.com,techcrunch.com###consent-gpc-popUp
@@ -49356,6 +49357,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+olhardigital.com.br##div[data-banner]
 brainhub.eu##a.top-bar[target="_blank"]:has(> .top-bar-content-wr > .top-bar-cta-btn)
 devby.io##.global-incut
 thecode.media##.float-link

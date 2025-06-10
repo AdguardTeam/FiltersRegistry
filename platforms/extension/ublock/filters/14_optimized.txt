@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kSoJVY/kTejN6Vr9kVn6ww
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1749523357-3600.patch
+! Checksum: EyGnzP1Y2iVRa4+FFbRkqA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1749526422-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.32.93
-! TimeUpdated: 2025-06-09T22:07:47+00:00
+! Version: 2.2.32.94
+! TimeUpdated: 2025-06-10T03:29:41+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -6978,8 +6978,7 @@ regio-guide.de##+js(abort-on-stack-trace, DOMTokenList.prototype.add, openConsen
 all-inkl.com#$?##ai-hinweis { remove: true; }
 nttgame.com###modalCookie
 nttgame.com###lean_overlay
-||laroche-posay.ru/static/*/js/cookies-popup/
-laroche-posay.ru#$#body { overflow: auto !important; }
+laroche-posay.ru#@#.cookies-popup:not(#style_important)
 aol.com,engadget.com,yahoo.com,techcrunch.com###consent-gpc-popUp
 aida64russia.com,aida64.com.ua,aida64.de,aida64.hu,aida64.it,aida64.co.uk##+js(set-local-storage-item, set_cookie_functional, true)
 aida64russia.com,aida64.com.ua,aida64.de,aida64.hu,aida64.it,aida64.co.uk##+js(set-local-storage-item, set_cookie_stat, false)
@@ -22845,6 +22844,7 @@ apteki.yandex.ru##div[data-qa="BannerSlider"]
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { display: none !important; }
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
+olhardigital.com.br##div[data-banner]
 brainhub.eu##a.top-bar[target="_blank"]:has(> .top-bar-content-wr > .top-bar-cta-btn)
 devby.io##.global-incut
 thecode.media##.float-link

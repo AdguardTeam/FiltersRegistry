@@ -1,9 +1,9 @@
-! Checksum: /ksih92fwS4uvQPRVVQTCA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1749523372-3600.patch
+! Checksum: /PkwFA1NTvkP5Eo1E8O9aQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1749526433-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.32.93
-! TimeUpdated: 2025-06-09T22:07:47+00:00
+! Version: 2.2.32.94
+! TimeUpdated: 2025-06-10T03:29:41+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -7515,8 +7515,8 @@ regio-guide.de#%#//scriptlet('abort-on-stack-trace', 'DOMTokenList.prototype.add
 regio-guide.de#%#//scriptlet('trusted-click-element', '.consent-layer-modal #consent-layer-modal-nav ion-footer button.consent-layer__footer__button[aria-label="Weiter mit essenziellen Einstellungen"] > span')
 !+ NOT_OPTIMIZED
 ||shiftdelete.net^$referrerpolicy=origin
-||laroche-posay.ru/static/*/js/cookies-popup/
-laroche-posay.ru#$#body { overflow: auto !important; }
+laroche-posay.ru#@#.cookies-popup:not(#style_important)
+laroche-posay.ru#%#//scriptlet('trusted-set-cookie', 'selectedCookieGroups', '{"strictlyNecessaryCookies":"1","functionalCookies":"3"}')
 aol.com,engadget.com,yahoo.com,techcrunch.com###consent-gpc-popUp
 aida64russia.com,aida64.com.ua,aida64.de,aida64.hu,aida64.it,aida64.co.uk#%#//scriptlet('set-local-storage-item', 'set_cookie_functional', 'true')
 aida64russia.com,aida64.com.ua,aida64.de,aida64.hu,aida64.it,aida64.co.uk#%#//scriptlet('set-local-storage-item', 'set_cookie_stat', 'false')
@@ -23188,6 +23188,7 @@ apteki.yandex.ru##div[data-qa="BannerSlider"]
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { display: none !important; }
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
+olhardigital.com.br##div[data-banner]
 brainhub.eu##a.top-bar[target="_blank"]:has(> .top-bar-content-wr > .top-bar-cta-btn)
 devby.io##.global-incut
 thecode.media##.float-link
