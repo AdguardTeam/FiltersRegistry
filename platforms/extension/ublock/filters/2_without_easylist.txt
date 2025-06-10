@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: t4Hd+vPVNyyvGIdLhREPsQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1749529026-3600.patch
+! Checksum: VLAWJtyntlgtBqD/139zMg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1749532325-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.88.40
-! TimeUpdated: 2025-06-10T04:12:37+00:00
+! Version: 2.3.88.41
+! TimeUpdated: 2025-06-10T05:07:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -45478,6 +45478,9 @@ infinityfree.com#$?#html[lang][dir="ltr"] [id^="img_"][style]:has(iframe[framebo
 smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 ! Common rules, which partially hide banners
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##html[class^="img_"][amp4ads=""][i-amphtml-layout=""][i-amphtml-no-boilerplate=""][amp-version="2502032353000"]
+! aglint-disable-next-line unknown-hints-and-platforms
+!+ NOT_PLATFORM(ios, ext_android_cb, ext_safari, ext_chromium_mv3, windows, mac, cli, android)
+://html-load.com/loader.min.js
 /^https:\/\/(?:as(?:loader)?|loader)\.[-0-9A-Za-z]+.[-A-Za-z]{2,30}\/loader.min.js$/$script,~third-party
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##*:not(body) > a[href^="https://content-loader.com/content"]
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##*:not(body) > a[href^="https://html-load.com/content"]
@@ -45706,6 +45709,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+taxi69.com##.col-publi > div:has(> ins[data-zoneid])
 dirfxx.com##.animated-box
 getcomics.org##.menu > li:has(> a[href^="https://craveu.ai/"])
 stuff.tv##body .c-ad
