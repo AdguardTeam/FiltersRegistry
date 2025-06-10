@@ -1,9 +1,9 @@
-! Checksum: K0Efkyk+FebBe3nrbLYTZg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1749516747-14400.patch
+! Checksum: /1drsuC9ZGp6ATu1isg4Yg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1749530694-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.42.81
-! TimeUpdated: 2025-06-10T00:47:40+00:00
+! Version: 2.1.42.82
+! TimeUpdated: 2025-06-10T04:40:10+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -23,7 +23,6 @@
 /addtoany.min.js
 /common/sns/*
 /common/sns_
-/diggdigg-floating-bar.js
 /facebook-pagelike-widget/fb.js
 /facebook-side.png
 /facebook_footer.png
@@ -74,7 +73,6 @@
 /plugins/ultimate-social-deux/public/assets/js/min/us.script-min.js
 /prisna-social-counter.css
 /Resources/twitter-$~xmlhttprequest
-/share/count?
 /share/footer/*
 /share42.js
 /share_button?
@@ -502,6 +500,7 @@ _social-bar/
 ###sidebar-youtube
 ###sidebar_social
 ###sidebar_social_icons
+###siga-twitter
 ###single-share
 ###site-share
 ###site-social
@@ -870,6 +869,7 @@ _social-bar/
 ##.article-social-button
 ##.article-social-container
 ##.article-social-icons
+##.article-social-links
 ##.article-social-media
 ##.article-social-share
 ##.article-social-sharing
@@ -1035,7 +1035,6 @@ _social-bar/
 ##.c-icon--whatsapp
 ##.c-list--social
 ##.c-main-footer__social
-##.c-mainsocial
 ##.c-nav-social
 ##.c-navbar-primary__social
 ##.c-share
@@ -1126,6 +1125,7 @@ _social-bar/
 ##.divFooterSocial
 ##.divSocial
 ##.dmSocialHub
+##.don-share
 ##.dp-share
 ##.dpsp-network-btn
 ##.dpsp-networks-btns-share
@@ -2027,7 +2027,6 @@ _social-bar/
 ##.pinButton
 ##.pin_share
 ##.pinit-btn
-##.pinit-button
 ##.pinterest-btn
 ##.pinterest-button
 ##.pinterest-icon
@@ -3165,6 +3164,7 @@ _social-bar/
 ##.sticky-share
 ##.sticky-social
 ##.sticky-social-share
+##.sticky_social
 ##.stickysocial
 ##.stm-socials
 ##.stm-socials__icon
@@ -3713,7 +3713,6 @@ ynet.co.il,ynetnews.com##.SiteArticleSocialShareNew1280
 asahi.com##.SnsName
 asahi.com##.SnsUtilityArea
 cbssports.com##.SocialIconsBar
-suntimes.com,tageblatt.de##.SocialLink
 streetsblog.org##.SocialSharing_socialSharingItems__wdJu8
 indiatoday.in##.Story_whatsapp_channel__6xdtB
 grammarly.com##._3fq8S-container
@@ -4003,6 +4002,7 @@ news.sky.com,skysports.com##.site-share-wrapper
 archaeology.org##.site-socials
 buyee.jp##.sns_list
 firstpost.com##.so-ics
+porngals4.com##.soc
 macrumors.com##.social--159R8SRB
 getpocket.com,mirror.co.uk,themirror.com##.social-actions
 danmohlerarchive.com##.social-block
@@ -4018,7 +4018,6 @@ bonappetit.com,cntraveler.com,them.us##.social-icons--share
 tmz.com##.social-item
 afro.com,elsol.com.ar,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,theatlantavoice.com,washingtoncitypaper.com,washingtonmonthly.com##.social-links-menu
 denofgeek.com##.social-links__anchor--sharing
-btvnovinite.bg,outlookindia.com,pgpf.org##.social-media-icons
 defenseone.com,govexec.com,nextgov.com##.social-media-icons-container
 knowablemagazine.org,leouve.com.br,newskarnataka.com,ric.com.br,securityaffairs.com,ucl.ac.uk##.social-media-links
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
@@ -4225,7 +4224,6 @@ arbys.com#?#[class^="linkBlocks_linkBlock__"]:-abp-has(> [class^="linkBlocks_soc
 relationshiphero.com#?#div:-abp-has(+ .socialIcons)
 viranomaisuutiset.fi#?#.wpb_wrapper.td_block_wrap:-abp-has(a[href^="https://whatsapp.com"])
 berglouter.com##.pwebbox
-nova.bg##.subs-wrapper
 handwerk-magazin.de###custom_html-5
 weisseskreuz.bz.it###headerBar
 freiewelt.net###single-page-article > aside
@@ -4302,7 +4300,6 @@ news.cn##.pageShare
 people.com.cn##.section-common-share-wrap
 mingpao.com##.ssm
 ifeng.com##div[class^="index_share_box_"]
-jihlava.cz###volsocialhub
 idnes.cz,lidovky.cz,metro.cz##.artsum-social
 irozhlas.cz##.m-follow
 dr.dk##.dre-sticky-share-band
@@ -4385,9 +4382,7 @@ oricon.co.jp##.block-sub-sns
 kakakumag.com##.hd-sns
 knivesout.jp##.sharetxt
 srad.jp##.synd
-businesskorea.co.kr##.article-sns
 auction.co.kr##.sare-sns
-businesskorea.co.kr##.user-sns
 forbes.pl##.articleSocials
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
 terrabrasilnoticias.com###block-18
@@ -4514,8 +4509,6 @@ cmmedia.es,diariodecastillayleon.es,diariodeleon.es,diariodevalladolid.es,elcorr
 cope.es##.c-detail__social
 eleconomista.com.mx##.c-detail__toolbar__share
 eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
-atlanticohoy.com,consumidorglobal.com##.c-mainarticle__share
-consumidorglobal.com##.c-mainfooter__social
 adnradio.cl,cadenaser.com,caracol.com.co,los40.com,wradio.com.co,wradio.com.mx##.cnt-interaccion
 adslzone.net##.comments-social-share
 ecologiaverde.com,el9nou.cat,elsaltodiario.com,infocatolica.com,lanacion.com.ar,laverdad.com,psicologia-online.com,qmusica.tv,revistafamilia.ec##.compartir
@@ -4724,6 +4717,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@/wp-content/plugins/wordpress-social-login/*$~third-party
 @@/wp-content/plugins/wp-minify/min/?*,wp-content$stylesheet
 @@/wp-content/plugins/wp-rocket/*$image,~third-party
+@@||adguard.com/public/Adguard/Blog/Android/comparison/facebook_$image,domain=adguard.com
 @@||arcgis.com/apps/Nearby/app/components/Share/$~third-party
 @@||assets.msn.com/bundles/*/social-bar-$~third-party
 @@||cdn.flowplayer.com^*/share.min.js

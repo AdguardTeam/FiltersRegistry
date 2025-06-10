@@ -1,9 +1,9 @@
-! Checksum: 3pY2mFxDqLhKg05qmJlmvw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1749487490-14400.patch
+! Checksum: Bn1Cnx34BA4T2KHweUbGvQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1749530669-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.17.16
-! TimeUpdated: 2025-06-09T16:40:59+00:00
+! Version: 2.0.17.17
+! TimeUpdated: 2025-06-10T04:40:43+00:00
 ! Expires: 10 days (update frequency)
 ###app-download
 ###app-modal
@@ -27,6 +27,7 @@
 ##.download-app:not(html,body,:empty)
 ##.download_app:not(html,body,:empty)
 ##.downloadapp:not(html,body,:empty)
+##.getapp:not(html,body,:empty)
 ##.getTheApp:not(html,body,:empty)
 ##.go-to-app:not(html,body,:empty)
 ##.installAppPopup:not(html,body,:empty)
@@ -2389,6 +2390,7 @@ $removeparam=campaign_id,domain=~kochava.com|~unisportstore.*
 $removeparam=wmlspartner
 $removeparam=sscid
 $removeparam=rmmds
+$removeparam=utmid
 $removeparam=msclkid
 $removeparam=litb_from
 $removeparam=ggcid
@@ -2594,6 +2596,7 @@ $document,removeparam=/^subid5=.*$/i
 $removeparam=tid1
 $removeparam=tid2
 $removeparam=tid3
+$removeparam=tid4
 $removeparam=avad
 $removeparam=ckmc
 $removeparam=ckmsc
@@ -2669,6 +2672,7 @@ $removeparam=pk_medium
 $removeparam=pk_source
 $removeparam=pk_content
 $removeparam=pk_kwd
+$removeparam=pk_keyword
 $removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
@@ -3247,8 +3251,6 @@ $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
 ||paypal.com^$removeparam=calc
 ||youtube.com^$removeparam=ab_channel
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
-||tcgplayer.com^$removeparam=productLineName
-||tcgplayer.com^$removeparam=setName
 ||humblebundle.com^$removeparam=linkID
 ||humblebundle.com^$removeparam=mcID
 ||artstation.com^$removeparam=/^\d.*$/
@@ -3335,7 +3337,6 @@ $removeparam=fm,domain=flipkart.com|shopbop.com
 $document,removeparam=cId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com
 $document,removeparam=lId,domain=apple.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|youtube.com
 $document,removeparam=/^src=Linkfire$/,domain=apple.com|youtube.com
-$document,removeparam=ct,domain=apple.com|bumble.com|newsroom.co.nz
 ||music.apple.com^$removeparam=itsct
 ||music.apple.com^$removeparam=itscg
 ||apple.com^$removeparam=/^ign-.*$/
@@ -3688,7 +3689,6 @@ $document,removeparam=oc,domain=indeed.com
 $document,removeparam=sal,domain=indeed.com
 $document,removeparam=vjk,domain=indeed.com
 $document,removeparam=fvj,domain=indeed.com
-$document,removeparam=ttclid
 $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=.src
 ||login.yahoo.com^$document,removeparam=pspid
@@ -3696,6 +3696,7 @@ $document,removeparam=af_xp
 !+ NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
 ||windscribe.com^$document,removeparam=pcpid
+$document,removeparam=pk_cid
 ||qzone.qq.com^$document,removeparam=loginfrom
 ||qzone.qq.com^$document,removeparam=jumptoqzone
 ||qzone.qq.com^$document,removeparam=subtype
@@ -3882,6 +3883,7 @@ flipkart.com##footer section + div:last-of-type
 google.*#@##google-hats-survey
 ||appboycdn.com^$third-party
 independent.co.uk,indy100.com##.notification-prompt
+qwant.com##main > div:last-of-type:has(>div>a:is([href*="://chromewebstore."],[href*="://addons.mozilla."]):not([data-testid]))
 /fakepage.html^$domain=superadblocktest.com|tracksong.github.io,important
 /ads.js^$domain=tracksong.github.io,important
 corsproxy.io##canvas
