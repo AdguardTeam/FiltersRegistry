@@ -1,9 +1,9 @@
-! Checksum: U+/t/RIvmi7yKz/8+Zl1/Q
-! Diff-Path: ../patches/14/14-s-1749648059-3600.patch
+! Checksum: rZHyhQ2kLmZw/isK3hry1Q
+! Diff-Path: ../patches/14/14-s-1749654696-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.33.20
-! TimeUpdated: 2025-06-11T13:17:01+00:00
+! Version: 2.2.33.21
+! TimeUpdated: 2025-06-11T15:07:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2509,7 +2509,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
-nextcloud.com#%#//scriptlet('trusted-set-cookie', 'nc_cookie_banner', '{"essentials":true,"convenience":false,"statistics":{"matomo":false},"external_media":{"youtube":false,"vimeo":false,"openstreetmap":true}}')
+||nextcloud.com/*/nc_cookies.js
 buffaloamericas.com###cookie-policy-notification
 listaprzetargow.pl#%#//scriptlet('abort-current-inline-script', '$', 'js-cookie-consent')
 ||exist.ru/ts/CookiesConfirmer.js
@@ -17027,8 +17027,6 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/207383
-nextcloud.com#@##cookie_banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207307
 ecobaltiavide.lv#@#.popup-filter
 ecobaltiavide.lv#@#.cookies-popup:not(#style_important)
@@ -25688,6 +25686,7 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 !
 ! SECTION: Popups - Regular rules
 !
+desport.ru##div[class^="PopupProductComponent_"]
 /forms-akamai.smsbump.com$script,domain=edikted.com
 faceit.com###__next__modal_root__ > div[class^="style__Holder-"]:has(> div:contains(Sign in for the full experience))
 stuff.tv#%#//scriptlet('set-cookie', 'hustle-hide-module-1', '1')
@@ -42505,6 +42504,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+desport.ru#%#//scriptlet('trusted-set-local-storage-item', 'POPUP_KEY', 'closed')
 music.yandex.adult,music.yandex.ac.id,music.yandex.app,music.yandex.asia,music.yandex.at,music.yandex.az,music.yandex.ba,music.yandex.be,music.yandex.by,music.yandex.ca,music.yandex.cc,music.yandex.cl,music.yandex.cloud,music.yandex.club,music.yandex.cn,music.yandex.co,music.yandex.co.il,music.yandex.co.in,music.yandex.co.uk,music.yandex.co.za,music.yandex.com,music.yandex.com.bd,music.yandex.com.cn,music.yandex.com.np,music.yandex.com.pk,music.yandex.com.tr,music.yandex.com.ua,music.yandex.de,music.yandex.ee,music.yandex.es,music.yandex.eu,music.yandex.fi,music.yandex.fr,music.yandex.ge,music.yandex.hu,music.yandex.in,music.yandex.io,music.yandex.jp,music.yandex.kg,music.yandex.kz,music.yandex.link,music.yandex.lt,music.yandex.lv,music.yandex.md,music.yandex.mobi,music.yandex.my,music.yandex.net,music.yandex.news,music.yandex.one,music.yandex.org,music.yandex.org.in,music.yandex.pk,music.yandex.pl,music.yandex.pro,music.yandex.ru,music.yandex.site,music.yandex.sk,music.yandex.su,music.yandex.tech,music.yandex.ua,music.yandex.uk,music.yandex.us,music.yandex.uz,music.yandex.work,music.yandex.ws,music.yandex.xyz##div[class^="DeeplinkAndOnelinkContainer_root"]
 music.yandex.adult,music.yandex.ac.id,music.yandex.app,music.yandex.asia,music.yandex.at,music.yandex.az,music.yandex.ba,music.yandex.be,music.yandex.by,music.yandex.ca,music.yandex.cc,music.yandex.cl,music.yandex.cloud,music.yandex.club,music.yandex.cn,music.yandex.co,music.yandex.co.il,music.yandex.co.in,music.yandex.co.uk,music.yandex.co.za,music.yandex.com,music.yandex.com.bd,music.yandex.com.cn,music.yandex.com.np,music.yandex.com.pk,music.yandex.com.tr,music.yandex.com.ua,music.yandex.de,music.yandex.ee,music.yandex.es,music.yandex.eu,music.yandex.fi,music.yandex.fr,music.yandex.ge,music.yandex.hu,music.yandex.in,music.yandex.io,music.yandex.jp,music.yandex.kg,music.yandex.kz,music.yandex.link,music.yandex.lt,music.yandex.lv,music.yandex.md,music.yandex.mobi,music.yandex.my,music.yandex.net,music.yandex.news,music.yandex.one,music.yandex.org,music.yandex.org.in,music.yandex.pk,music.yandex.pl,music.yandex.pro,music.yandex.ru,music.yandex.site,music.yandex.sk,music.yandex.su,music.yandex.tech,music.yandex.ua,music.yandex.uk,music.yandex.us,music.yandex.uz,music.yandex.work,music.yandex.ws,music.yandex.xyz##section[aria-label^="Скачать приложение"]
 faceit.com##div[id^="content-grid-element"] > div[class^="styles__Holder-"]:has(> div[class^="styles__InnerHolder-"] > div[class^="styles__QRCodeAndTextHolder-"] span:contains(Scan the QR code to download app))
@@ -51979,7 +51979,7 @@ byjus.com#?#.sidebar > div.bgc-white:has(> div.relatedlinks-widget > div.widget-
 wikipedia.org#$#.frb-overlay-open { overflow: auto !important; }
 wikipedia.org#$#.cn-fundraising { display: none !important; }
 blog.ipleaders.in##.td-ss-main-sidebar
-xvideos.com###content > div.mobile-hide + div[class]:not([id*="video"])
+xv-ru.com,xvideos.com###content > div.mobile-hide + div[class]:not([id*="video"])
 natuyuki.com,umamusume-umapyoi.com,uzurea.net##.yyi-rinker-contents
 kotyanlife.info##.kattene
 content.techgig.com##.tg-clients-banners
