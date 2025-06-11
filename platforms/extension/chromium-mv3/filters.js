@@ -905,8 +905,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.71.42",
-			"timeUpdated": "2025-06-11T00:47:34+0000",
+			"version": "2.1.71.43",
+			"timeUpdated": "2025-06-11T04:40:44+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -980,8 +980,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.71.41",
-			"timeUpdated": "2025-06-11T00:47:34+0000",
+			"version": "2.1.71.42",
+			"timeUpdated": "2025-06-11T04:40:46+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1005,8 +1005,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.24.64",
-			"timeUpdated": "2025-06-11T00:47:40+0000",
+			"version": "2.0.24.65",
+			"timeUpdated": "2025-06-11T04:40:53+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1217,8 +1217,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.21.70",
-			"timeUpdated": "2025-06-10T20:36:53+0000",
+			"version": "2.0.21.71",
+			"timeUpdated": "2025-06-11T04:41:16+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1318,8 +1318,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.21.86",
-			"timeUpdated": "2025-06-10T04:40:35+0000",
+			"version": "2.0.21.87",
+			"timeUpdated": "2025-06-11T04:41:31+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.64.73",
-			"timeUpdated": "2025-06-11T00:48:20+0000",
+			"version": "2.0.64.74",
+			"timeUpdated": "2025-06-11T04:41:44+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
