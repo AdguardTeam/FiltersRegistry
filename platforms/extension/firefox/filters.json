@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.89.0",
-			"timeUpdated": "2025-06-12T18:08:38+0000",
+			"version": "2.3.89.1",
+			"timeUpdated": "2025-06-12T20:07:28+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.41",
-			"timeUpdated": "2025-06-12T18:08:49+0000",
+			"version": "2.0.86.42",
+			"timeUpdated": "2025-06-12T20:07:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.15.78",
-			"timeUpdated": "2025-06-12T18:08:51+0000",
+			"version": "2.1.15.79",
+			"timeUpdated": "2025-06-12T20:07:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.65.37",
-			"timeUpdated": "2025-06-12T18:08:56+0000",
+			"version": "2.0.65.38",
+			"timeUpdated": "2025-06-12T20:07:45+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.30.38",
-			"timeUpdated": "2025-06-12T18:08:58+0000",
+			"version": "2.0.30.39",
+			"timeUpdated": "2025-06-12T20:07:46+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.27",
-			"timeUpdated": "2025-06-12T18:09:00+0000",
+			"version": "2.0.57.28",
+			"timeUpdated": "2025-06-12T20:07:49+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
