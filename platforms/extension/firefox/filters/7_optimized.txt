@@ -1,9 +1,9 @@
-! Checksum: 1F3AyYawY/7u+M1VNW1Uog
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1749705094-3600.patch
+! Checksum: eBzMF0GeKDwrLkBdB5pYjg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1749730520-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.65.35
-! TimeUpdated: 2025-06-12T05:07:37+00:00
+! Version: 2.0.65.36
+! TimeUpdated: 2025-06-12T12:11:13+00:00
 ! Expires: 10 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||paradise1972.com^$all
@@ -605,8 +605,6 @@ gamemod.blog.fc2.com,helpsupport.blog.fc2.com#@#.AdContainer
 kledgeb.blogspot.com#$#body > div[style="visibility: hidden;"] { visibility: visible !important; }
 kledgeb.blogspot.com#%#//scriptlet("abort-current-inline-script", "document.getElementById", "_0x")
 @@||kledgeb.github.io/UbuntuKledgeb/JavaScript/GoogleAnalytics.js$domain=kledgeb.blogspot.com
-dropbooks.net#%#//scriptlet('prevent-setTimeout', 'stopAd')
-dropbooks.net#%#//scriptlet("set-constant", "canRunAds", "true")
 kledgeb.blogspot.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 blog-and-destroy.com#%#//scriptlet('prevent-addEventListener', 'load', 'adsCount')
 manga1001.*#%#//scriptlet('prevent-setTimeout', '_0x')
@@ -901,7 +899,6 @@ minigame.aeriagames.jp#%#//scriptlet('adjust-setTimeout', 'aeriaGamesAdCountDown
 asg.to#%#//scriptlet('prevent-window-open')
 380cc.cc#%#//scriptlet('remove-attr', 'onclick', 'span > a[onclick]')
 dl.520cc.cc#%#//scriptlet('prevent-window-open')
-sexpixbox.com#%#//scriptlet('prevent-setTimeout', 'affId', '2000')
 ponta.abstractpainting.work#%#//scriptlet('adjust-setTimeout', 'visibility', '4000')
 ponta.abstractpainting.work#%#//scriptlet('adjust-setTimeout', '[native code]', '2000', '0.3')
 ponta.abstractpainting.work#%#//scriptlet('adjust-setTimeout', '[native code]', '3000', '0.25')
@@ -1741,6 +1738,7 @@ lettuceclub.net###pro-message ~ div.section:has(> div[id^="logly-"])
 lettuceclub.net#?##pro-message ~ div.section:has(> div.w-full > h2:contains(PR))
 ||mx-timeline.nan-net.jp/system/timeline/timeline_ad.html
 mx-timeline.nan-net.jp##iframe[src="https://mx-timeline.nan-net.jp/system/timeline/timeline_ad.html"]
+dic.pixiv.net#$##footer.pb-\[196px\] { padding-bottom: 20px !important; }
 dic.pixiv.net##.h-\[90px\]
 dic.pixiv.net##div[data-header-id] > div.my-\[36px\].justify-center
 dic.pixiv.net##div[class*="h-["]:has(> div[id^="adsdk-"])
@@ -4018,7 +4016,8 @@ womanlife.online##.widget-below-comment-form
 womanlife.online##div[id^="woman-"]
 ||dialyblog.com/gooddeai/$document
 numan.tokyo##.sw-Ad
-newsweekjapan.jp###kakakucom
+||newsweekjapan.jp/api_kakakucom/
+newsweekjapan.jp##div[id$="kakakucom"]
 newsweekjapan.jp###taboola-below-article-thumbnails-desktop-1
 newsweekjapan.jp##.ad-teads-nw-box
 newsweekjapan.jp###nw-associate
@@ -6572,7 +6571,9 @@ sagatv.co.jp##table[style="border:none;text-align:center;"][width="660"]
 fpsjp.net###widget-container-footer
 climbing-net.com##.normal
 climbing-net.com##.txt-banner
+||nishinippon.co.jp/graphql/?operationName=ItemsShowKyujinBoxJobOffers
 ||nishinippon.co.jp/api/v2/job_offers/
+nishinippon.co.jp##section[aria-label$="の求人情報"]
 nishinippon.co.jp###jobOffer
 nishinippon.co.jp##.c-ad-side
 freegame-mugen.jp##div[class^="adArticle"]
@@ -6674,6 +6675,7 @@ mycaddie.jp###inc_yahoo_shopping
 zyuken.net,syosetu.org,erogamescape.org,erogamescape.dyndns.org,golfdigest.co.jp,nosweb.jp,freefielder.jp,finance.yahoo.co.jp,mycaddie.jp##div[id^="ad_"]
 woman.excite.co.jp###header_bnr
 woman.excite.co.jp##.Lymain div[style$="width:610px;"]
+mdpr.jp#$#.l-footer--withAdBottomOverlay { padding-bottom: unset !important; }
 mdpr.jp##div[class$="_adMovieFrame"]
 mdpr.jp##.p-tverRanking
 mdpr.jp##.p-topArticleList__item--ad
@@ -7140,7 +7142,7 @@ douga100ka.jp##.news_ad
 ||eroge-blog.jp/html/best_game.html
 city.eniwa.hokkaido.jp##.fixed-ad-wrap
 city.shizuoka.lg.jp###aside_banner
-fatego-matome.com,footcalcio.com,nakiny.com,gadgetrip.jp,avitter.net,pinkpanfan.com,vrc.wiki,yoshitechblog.com,gosunkugi.com###pc_text-2
+adult-live.com,fatego-matome.com,footcalcio.com,nakiny.com,gadgetrip.jp,avitter.net,pinkpanfan.com,vrc.wiki,yoshitechblog.com,gosunkugi.com###pc_text-2
 karatedo.co.jp,japohan.net,nakiny.com,pinkpanfan.com###pc_text-3
 kankorekore.2-d.jp,gadgetrip.jp,momoniji.com###pc_text-6
 psneolog.com###pc_text-74
@@ -9255,7 +9257,6 @@ iphone-mania.jp##.pr_single_txt
 iphone-mania.jp###jack_wrapper > div[id^="jack"]
 iphone-mania.jp##.single_pr_ad_all
 iphone-mania.jp##.app_banner > a:not([href^="https://iphone-mania.jp/"])
-||sexpixbox.com/fbwax/cute/coupon.html?affid=
 hosyusokuhou.jp##body .abox
 hamakei.com##.box.pr
 hamakei.com##.partner
