@@ -1,9 +1,9 @@
-! Checksum: qfPdiF7Qbmcjr55pK/nWkA
-! Diff-Path: ../patches/249_optimized/249_optimized-s-1749041370-14400.patch
+! Checksum: +G1xeA4gUi0YWo4YoAwgIw
+! Diff-Path: ../patches/249_optimized/249_optimized-s-1749760859-14400.patch
 ! Title: Dandelion Sprout's Nordic Filters (Optimized)
 ! Description: This list covers websites for Norway, Denmark, Iceland, Danish territories, and the Sami indigenous population.
-! Version: 2.0.8.12
-! TimeUpdated: 2025-06-04T12:45:37+00:00
+! Version: 2.0.8.13
+! TimeUpdated: 2025-06-12T20:37:00+00:00
 ! Expires: 10 days (update frequency)
 ###ad_superboard:not(html,body,:empty)
 ###ad_topp:not(html,body,:empty)
@@ -108,6 +108,8 @@ dn.no##[id^=dn_toppbanner]
 ehandel.*##.article-sponsored
 viralefilmer.no##.td_module_wrap:has(a[href*=automat])
 version2.dk,ing.dk,techmanagement.dk,radar.dk##div:not([class]) > .jobs-wrapper
+version2.dk,ing.dk,techmanagement.dk,radar.dk##div:has(> div.disclosure-text:has-text("Artiklen fortsætter efter annoncen"))
+version2.dk,ing.dk,techmanagement.dk,radar.dk##.in-content-article
 bilnorge.no,yrkesbil.no###nettboard_art1
 gunnarandreassen.com##a[href*=rizk]
 tvkampen.com,tvsporten.dk##.tvg-manager-tracking-event
@@ -608,6 +610,8 @@ jubii.dk##.mobiletakeover-background
 norskemagasinet.com##a[href*=freespin]
 fodbold-transfers.dk##.post-content > p:has(a[href*=casino])
 livescore.dk##div[style^="padding:5px; "]
+maritimedanmark.dk##.banner-hidden:has(>div[class*=banner-wrapper])
+maritimedanmark.dk##.banner-hidden:has([class*=ad-wrapper])
 bilnorge.no###artikkel300x250right
 viaplay.*##.interaction-block
 gamer.no##.feed--commercial
@@ -689,6 +693,9 @@ bt.dk##.ncpost-banner-container
 startsiden.no##div[class*=advertisement_]
 finndel.no###ads
 mittkongsvinger.no##.advertising
+gamer.no##[id$=-netboard]
+gamer.no##header ~ [class]:has(~ main):has([id*=-skyskraper-],[id*=toppbanner])
+gamer.no##div.mb-4.mt-3:not(.row)
 startsiden.no###stop-sticky-ad + h4
 mytastenor.com,mytastednk.com#$#.site-wrapper[data-state=panorama] { padding-top: 70px !important }
 gamer.no##header ~ div:has(div[data-unit*=banner])
@@ -1128,7 +1135,7 @@ norges.online###modaladv
 borsen.dk,borsen-dk.translate.goog##div[class*=col]:has(> .native-teaser)
 samferdselinfra.no##.banner-item
 skagafm.dk##.frontbanner
-twe.no##div[class$="=="][style*=margin-bottom]:has([aria-label^="YouTube, "],[aria-label^="TV 2 Play, "])
+twe.no##div[class$="=="][style*=margin-bottom]:has([aria-label^="YouTube, "],[aria-label^="TV 2 Play, "],[aria-label^="Movie Netflix -"])
 lokalavisen.dk##.custom-annoncer-wrapper
 itavisen.no##article[class*=annonse]
 keldan.is##.x-box-inner > .x-panel-noborder:not(.x-grid-panel)
@@ -1177,6 +1184,9 @@ kommunikationsforum.dk##.banner-top
 itavisen.no##.td-c-loop-ad
 baatplassen.no##.ipsWidget:has(> .adsbygoogle)
 installator.dk##.addon--ad
+kanalfrederikshavn.dk##div.top-banner-first
+kanalfrederikshavn.dk##.contentcontainer-column:has(.banner-bm-rec)
+kanalfrederikshavn.dk##.frame:first-of-type:not([class*=news]):has(.tx-dce-container)
 test.no##.ad-position-top
 tvkampen.com,tvsporten.dk##a.p-icon.partner
 norges.online##.modal-backdrop
@@ -1317,6 +1327,8 @@ norskebank.no###yui-main
 norskebank.no#$##header { height:unset!important }
 bankimistnorge.com##.container-right
 bankernorge.com##aside#sidebar
+lav-det-selv.dk##.forum-sidebar .d-none
+scm.dk##.banner-hidden
 1881.no,bygg.no,connery.dk,friflyt.no,golferen.no,jeger.no,kino.no,kristeligt-dagblad.dk,kystogfjord.no,landevei.no,mmm.dk,norsk-klatring.no,reavisa.no,skagensavis.dk,smakmagasinet.no,smartmeny.no,spilcomputer.dk,terrengsykkel.no,ut.no,utemagasinet.no,vglive.no##.ad:not(html,body,:empty)
 dagens.dk,dust2.dk,www-dust2-dk.translate.goog,kanalfrederikshavn.dk,videnskab.dk,politirapporten.dk,nyheder24.dk,tilbudsugen.dk,alletilbudsaviser.co.no,sedirekte.com,tilbudsuken.no,subjekt.no,tu.no,migogkbh.dk,vinavisen.dk,digi.no,insidetelecom.no,landbrugsavisen.dk,migogaarhus.dk,migogaalborg.dk##.banner:not(html,body,:empty)
 artige.no,latterkula.no,eikernytt.no,addpressure.no,startsidendin.no,teknologia.no,gunnarandreassen.com,butikkoversikten.no,iphoneluppen.dk,fodboldspilleren.dk,ni.dk,godtnoe.no,nyheder24.dk,finansleksikon.no,sporten.com,handballmagasinet.no,pappaportalen.no,leinstrand-il.no,migogkbh.dk##a[href*=casino]
@@ -1948,6 +1960,7 @@ tv2.no##.aside > .ad-container
 ##.nf-o-moduleblock-module:has(> .nf-o-annonse)
 ##div.nf-js-scrollable-item:not(:has(*))
 ##.component__pubble-banner:not(html,body,:empty)
+##.tx-dce-container:not(html,body,:empty)
 !+ NOT_OPTIMIZED
 ||samimag.no/wp-content/uploads/2019/11/Screenshot-2020-03-21-at-12.40.32.png^
 bt.dk##.article-container > .row > .sidebar
@@ -1989,9 +2002,6 @@ icelandreview.com##.mk-padding-divider
 kvf.fo##.panels-flexible-row-grein-rnd-13
 oyggjatidindi.com##.bottom_space
 talkmore.no##.spacer
-tnt-tv.no,tnt-tv.dk##.desktop_element.promo
-tnt-tv.no,tnt-tv.dk##.logos
-tnt-tv.no,tnt-tv.dk##.tabs_placeholder
 yrkesbil.no#?#td:has-text(/^\xA0$/):not(:has-text(/^.*\s.*$/)):not(:has(img))
 yrkesbil.no#?#tr:has-text(/^\xA0$/):not(:has-text(/^.*\s.*$/)):not(:has(img))
 foodora.no##.top-skinny-banner-container
@@ -2017,11 +2027,9 @@ dagsavisen.no##:is(p,h2):has(> br:only-of-type:empty)
 ||tv2.no/s/lab/2.5/p/img/tv2-background.svg$image
 @@||glow.posten.no/api/tracking/*$xmlhttprequest,~third-party
 @@||seher.no/reise$generichide
-@@||stillingledig.*.no^
 @@.isdownorblocked.com^$document
 @@||tv2.no/*/config/analytics.json$xmlhttprequest,~third-party
 @@||schibsted.com/autoTracker$domain=vg.no
-@@||mparticle.com^*/login$domain=discoveryplus.com
 @@||medlemskap.*.no^
 @@||bestill.help.no^$~third-party
 @@||ask.antalis.no^$~third-party
@@ -2030,20 +2038,15 @@ krom.is#@#.share-container
 @@/images/*youtube.jpg$domain=realityportalen.dk
 @@||api.instagram.com^$domain=samiteahter.org
 @@||cookieinformation.com^$domain=gulesider.no|degulesider.dk|krak.dk|altibox.no
-dagbladet.no,elbil24.no#@#.subscription-box
 ||ktg-content.cdn.prismic.io/api/*/documents/*(my.newsletter_popup.uid
 @@/obj/global/feature/tagCommander/$script,domain=billetlugen.dk|eventim.no
-lampegiganten.dk,lampegiganten.no#@#.newsletter-popup
 lampegiganten.dk,lampegiganten.no#@##newsletter-overlay
 @@/newsletter/newsletter_popup.gif^$domain=lampegiganten.dk|lampegiganten.no
 clasohlson.com#@#.cookie-bar:not(body):not(html)
 clasohlson.com#@##js-cookie-notification
 tikkio.com#@#.mfp-ready
 @@||vg.no^$generichide,badfilter
-@@_prebid_$domain=seher.no
-@@/images/ads-db/right-tower/vipps-sponsor-$domain=canariajournalen.no
 eyjar.net#@#.side_ads
-@@/adnetwork/*$domain=fla.de
 @@://billink*.blob.core.windows.net/*/annonser^
 @@||finn.no/user/ads.html^$popup
 check-in.dk#@#.home-ads
@@ -2060,8 +2063,6 @@ findbolig.nu#@#.advertLink
 @@://imasdk.googleapis.com/js/sdkloader/ima3.js^$domain=tv2.dk
 sosialurin.fo#@#.ads-banner
 telenor.no##.global-overlay-background
-@@/^https:\/\/www.gamer.no\/[0-9a-f]{32,40}$/$script,~third-party
-ekstrabladet.dk#@#body>div[id][style]
 @@||fe.adstate.net/assets/common/img/web_ad^$domain=aasavis.no|amta.no|an.no|ao.no|auraavis.no|austagderblad.no|avisenagder.no|ba.no|bygdebladet.no|bygdeposten.no|dalane-tidende.no|dt.no|eikerbladet.no|enebakkavis.no|f-b.no|finnmarkdagblad.no|finnmarken.no|firda.no|firdaposten.no|fremover.no|gbnett.no|gjengangeren.no|glomdalen.no|h-avis.no|ha-halden.no|hadeland.no|hardanger-folkeblad.no|helg.no|iharstad.no|indre.no|jarlsbergavis.no|jbl.no|kv.no|kvinnheringen.no|laagendalsposten.no|lierposten.no|lofotposten.no|lyngdalsavis.no|moss-avis.no|nidaros.no|noblad.no|nordhordland.no|nordlys.no|oa.no|oblad.no|op.no|ostlendingen.no|oyene.no|r-a.no|rablad.no|ranablad.no|rb.no|retten.no|rha.no|ringblad.no|ringsaker-blad.no|sa.no|sandeavis.no|sandnesposten.no|sb.no|smaalenene.no|sognavis.no|solabladet.no|solungavisa.no|strandbuen.no|svelviksposten.no|ta.no|tb.no|telen.no|tk.no|tvedestrandsposten.no|varingen.no|vestbyavis.no
 @@||fe.adstate.net/stream_file.php?type=ad_preview_image$domain=aasavis.no|amta.no|an.no|ao.no|auraavis.no|austagderblad.no|avisenagder.no|ba.no|bygdebladet.no|bygdeposten.no|dalane-tidende.no|dt.no|eikerbladet.no|enebakkavis.no|f-b.no|finnmarkdagblad.no|finnmarken.no|firda.no|firdaposten.no|fremover.no|gbnett.no|gjengangeren.no|glomdalen.no|h-avis.no|ha-halden.no|hadeland.no|hardanger-folkeblad.no|helg.no|iharstad.no|indre.no|jarlsbergavis.no|jbl.no|kv.no|kvinnheringen.no|laagendalsposten.no|lierposten.no|lofotposten.no|lyngdalsavis.no|moss-avis.no|nidaros.no|noblad.no|nordhordland.no|nordlys.no|oa.no|oblad.no|op.no|ostlendingen.no|oyene.no|r-a.no|rablad.no|ranablad.no|rb.no|retten.no|rha.no|ringblad.no|ringsaker-blad.no|sa.no|sandeavis.no|sandnesposten.no|sb.no|smaalenene.no|sognavis.no|solabladet.no|solungavisa.no|strandbuen.no|svelviksposten.no|ta.no|tb.no|telen.no|tk.no|tvedestrandsposten.no|varingen.no|vestbyavis.no
 @@||cmp.ekstrabladet.dk/get_site_data$xmlhttprequest,~third-party
@@ -2073,8 +2074,6 @@ ekstrabladet.dk#@#body>div[id][style]
 @@://haslundalsted.dk^$~third-party
 @@://mettelindberg.dk^$~third-party
 @@://nhn.dk^$~third-party
-@@||cookiebot.com^$domain=berlingske.dk
-bytt.no#@##cookiescript_injected
 spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-snow', 'false')
 ||widget.tippebannere.no^$subdocument,domain=~tipster.no
 ||tipster.no/embed$subdocument
@@ -2458,7 +2457,7 @@ triplx.dk##.aff-inner-col
 ||hokaskooutlet.co.no^$all,domain=~en-falsk-svindelbutikk.*
 ||hoka-sko.com^$all,domain=~en-falsk-svindelbutikk.*
 ||hoka-one-one.cc^$all,domain=~en-falsk-svindelbutikk.*
-||hokaoneone*$all,domain=~en-falsk-svindelbutikk.*
+/^(https?://)?hokaoneone[a-z0-9].*$/$all,domain=~en-falsk-svindelbutikk.*
 *norgeskosalg.$all,domain=~en-falsk-svindelbutikk.*
 *norge-salg.com^$all,domain=~en-falsk-svindelbutikk.*
 *norgesalg.com^$document,popup,domain=~en-falsk-svindelbutikk.*
