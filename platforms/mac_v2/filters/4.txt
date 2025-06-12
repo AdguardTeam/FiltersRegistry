@@ -1,9 +1,9 @@
-! Checksum: A450jP3mInt/1X6G7kbcjw
-! Diff-Path: ../patches/4/4-s-1749723153-3600.patch
+! Checksum: tgtGOZDysAQGVmVUodWuhQ
+! Diff-Path: ../patches/4/4-s-1749744762-3600.patch
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.15.76
-! TimeUpdated: 2025-06-12T10:07:54+00:00
+! Version: 2.1.15.77
+! TimeUpdated: 2025-06-12T16:08:21+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -673,6 +673,7 @@ esquire.com,dotesports.com,mashable.com,pcmag.com,onefootball.com,ign.com,israel
 !
 ! NOTE: Specific rules
 !
+net.hr##.se-article--share
 pocketcasts.com##button[label="share"]
 pocketcasts.com##div[data-testid="img-btn-share"]
 pocketcasts.com##span[role="button"][aria-label="Share Episode"]
@@ -3055,7 +3056,8 @@ thelocal.*##.article-single__social button.copy
 earth.jp##.snsContainer
 volleybox.net##a[onclick^="getShareDialog("]
 kyivindependent.com##.c-share__wrapper
-kp.ru##div[data-gtm="share"]
+kp.ru,kp.by,kp.kg,kp.kz##div[data-name] ~ div:has(> div:only-child > div[data-gtm="share"])
+kp.ru,kp.by,kp.kg,kp.kz##div[data-gtm="share"]
 kommersant.ru##.iconbox__item--share
 barefootuniverse.com##.cb-post-share
 esportsdriven.com##div[class^="SocialShare_"]
