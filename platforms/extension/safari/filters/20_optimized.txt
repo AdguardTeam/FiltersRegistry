@@ -1,5 +1,5 @@
-! Checksum: +pf/jeJqAQ6Vz7FhN9s+UA
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1749654698-3600.patch
+! Checksum: 4U34qQkijEKnXrocTEzgtA
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1749696079-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.21.72
@@ -95,7 +95,6 @@ scoopzapp.com##.flex:has(> button:only-child > img[src*="app"])
 bristol.ru##.first-order-modal
 raycast.com##div[class^="GlobalBanner"]
 imdb.com##.imdb-header__app-button
-doordash.com##a[data-testid="openAppButton"]
 t.shuqi.com##.ReaderFreeFixedGuideBtn
 easy.co.il##.qr-container
 easy.co.il##.open-app-button
@@ -266,6 +265,9 @@ getir.com#%#//scriptlet('set-cookie', 'hideSmartBanner', 'true')
 kijiji.ca##div[data-testid="MarketingBanner"]
 rentio.jp##.footer > div[class="border-top border-secondary"][style="background-color:#edf6fa;"]
 etsy.com#%#//scriptlet('set-cookie', 'web_signals_prompt_dismissed', 'true')
+bbcgoodfood.com#$#div[class^="tp-modal"][style="z-index: 300050; display: block;"] { display: none !important; }
+bbcgoodfood.com#$#div[class^="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
+bbcgoodfood.com#$#html > body.tp-modal-open { overflow: auto !important; }
 trip.com##.h5-install-banner
 mail.proton.me##.content-container > div[aria-label="Notification"]:has(> a[href*="webapp-mail-topbanner"])
 ljsilvers.com##.site-popup
@@ -395,6 +397,7 @@ jaya9.win#%#//scriptlet('remove-class', 'download-bar-height', 'header')
 jaya9.win#%#//scriptlet('remove-class', 'download-bar-height-body', 'div.body')
 news.sky.com##.ui-app-promo
 finance.sina.com.cn###pv_tag
+weathernews.jp##.adApp__img
 carsensor.net##.fixedAppBanner
 chirashi.delishkitchen.tv##div[class^="delish-chirashi-"][class$="-install-banner"]
 chirashi.kurashiru.com#%#//scriptlet('trusted-set-local-storage-item', 'latestWebToAppModalOpenedAt', '$currentDate$')
@@ -716,7 +719,6 @@ blockchair.com,www-y2mate.com##.extension
 plannedparenthood.org##div[data-module-name="Get birth control pills delivered to your door."]
 ||ulifestyle.com.hk/*/open-in-modal.js
 wallpaperscraft.com##div[class^="app-new_"]
-yay.space##div[class^="Home__app-download-"]
 4meee.com##.banner_container a[href^="https://4moon.onelink.me/"]
 ||static-web.stcn.com/static/images/aside-app-download.png
 soundcloud.com##.l-front-mobile-teaser
@@ -1242,8 +1244,6 @@ tfm.co.jp###super
 academia.edu#$#body { overflow: auto!important; }
 m.kuku.lu#?#table[width="100%"] > tbody > tr > td:has(> a[href^="https://play.google.com"])
 tapple.me#?##gatsby-focus-wrapper > div.py-10.pl-4.pr-16:has(> div > div > a.w-full[href^="https://go.onelink.me"])
-banco.bradesco#$#body.mobile div#topBar.headertopBar { display: none !important; }
-banco.bradesco#$#body.mobile div.holderFixed { top: 0px !important; }
 banco.bradesco#$#.comboSegmentos { top: 80px !important; }
 banco.bradesco#$##carousel-banner { margin-top: 100px; }
 mgronline.com##.app-container
@@ -1353,7 +1353,6 @@ n-tv.de##.teaser__appbanner
 tver.jp##a[class^="app-banner_container"]
 booking.com##div[data-item-id="gta_smart_banner"]
 livemint.com#$#.mobileAd { height: 0 !important; }
-m.zeelool.com,duzcerota.com##.app-area
 rei.com,ck101.com,av.movie,ettoday.net,portal.librus.pl###app-download
 portal.librus.pl##picture > img[src="https://portal.librus.pl/images/base/aplikacjamobilna.jpg"]
 ||portal.librus.pl/images/base/aplikacjamobilna.jpg
@@ -1435,6 +1434,7 @@ gu.sina.cn###__callup_bottom
 bing.com###bnp_hfly
 parcelsapp.com##.badges
 m.gamer.com.tw##div[class^="download-app_box"]
+zoom.us###ZoomWebBanner
 m.gamer.com.tw#$?#.dialogify { remove: true; }
 m.guancha.cn##.content_appstore
 m.guancha.cn##.downloadBtn-box
