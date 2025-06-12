@@ -1,9 +1,9 @@
-! Checksum: 09axRQYlHdp9T+zZbg8NMw
-! Diff-Path: ../patches/14/14-s-1749744738-3600.patch
+! Checksum: H+XCTSY2VcIL3pRGnZeq7A
+! Diff-Path: ../patches/14/14-s-1749748266-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.33.31
-! TimeUpdated: 2025-06-12T16:08:34+00:00
+! Version: 2.2.33.32
+! TimeUpdated: 2025-06-12T17:07:19+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,7 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+###cookiescript_injected_wrapper
 ##.woodmart-cookies-popup
 ###consent-box-lgpd
 ##.Cookie--bottom
@@ -4961,7 +4962,6 @@ unsplash.com##body > dialog:has(> a[href="/cookies#manage-consent"])
 ||consent.cookiebot.com/Framework/IAB/consent-sdk-*.js$important,domain=tfl.gov.uk
 ||consent.cookiebot.com/*/cc.js$important,domain=continente.pt|tfl.gov.uk
 m.21vek.by#%#//scriptlet('trusted-set-local-storage-item', 'partner-cookies', '{"value":{"isAnalyticsCookies":false,"isFunctionalCookies":false}}')
-lvportals.lv,bytt.no,regioactive.de,rual-travel.com,aktionspreis.de,kriptomat.io,uptodown.com,targeo.pl###cookiescript_injected_wrapper
 linkedin.com##section > div[class^="_wrapper"]:has(> div > div[class^="_messageWrapper_"] > div[class^="_message_"] > p a[href*="/settings/member-cookies"])
 ask4.com##.cookie-notice__background
 avaloniaui.net,dify.ai,bunq.com,framer.com##.--framer-cookie-banner-container
@@ -58539,6 +58539,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+9to5linux.com##.theiaStickySidebar > section:has(> div.kofi)
 istories.media##div[class^="MaterialDonationBanner-module--"]
 codastory.com##.article-support
 boykot.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'lastClosed')
