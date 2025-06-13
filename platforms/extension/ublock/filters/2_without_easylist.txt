@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bCZorOp6nlJ+az8q7y2iXw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1749795249-3600.patch
+! Checksum: bz4CEwO5+fNaJqZ1yOIXcA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1749798693-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.89.11
-! TimeUpdated: 2025-06-13T06:09:27+00:00
+! Version: 2.3.89.12
+! TimeUpdated: 2025-06-13T07:07:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19092,7 +19092,6 @@ starwarsaddicted.it,wuyong.fun,26g.me,myqqjd.com,poapan.xyz,javboys.com,idevicec
 ! chp_ads_blocker popups, that can be hidden
 ! generic
 ###chp_branding
-##a[id][href="https://toolkitspro.com"][rel="noopener noreferrer"]
 ##a[id][href="https://chpadblock.com/"][rel="noopener noreferrer"]
 ! specific
 thesextube.net###bloglo-scroll-top + div[id][class*=" "]
@@ -20162,7 +20161,7 @@ videzz.net##+js(set-constant, isAdBlockDetected, false)
 live.golato.io##+js(addEventListener-defuser, load, abDetectorPro)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202352
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181517
-decompiler.com##+js(abort-current-script, document.getElementById, AdBlock)
+decompiler.com##+js(set-constant, alim, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180134
 ! shrtfly
 airevue.net,veroan.com,amalot.net,carribo.net,stfly.biz,torovalley.net,blogesque.net,stfly.cc,bookbucketlyst.com##+js(abort-on-property-read, abwn)
@@ -20418,10 +20417,6 @@ poplinks.sbs,sampledrive.in##+js(abort-on-stack-trace, DOMTokenList.prototype.co
 ! Second part of the regexp ("break;case \$\.") is required to block popups/popunders, but two "abort-current-inline-script" cannot use the same property
 ! so it's necessary to use it in one scriptlet
 fmembed.cc,kerapoxy.cc,fmoonembed.*,embedme.*,filemoon.*,finfang.*,hellnaw.*,moonembed.*,z12z0vla.*##+js(abort-current-script, document.createElement, /\.onerror|break;case \$\./)
-! https://github.com/AdguardTeam/AdguardFilters/issues/175034
-! https://github.com/AdguardTeam/AdguardFilters/issues/174876
-/js/adb.js$domain=instload.com|twitload.com
-twitload.com,instload.com##+js(no-setTimeout-if, .check())
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174746
 arabic-for-nerds.com##+js(no-fetch-if, cookiebanner)
 arabic-for-nerds.com##+js(addEventListener-defuser, DOMContentLoaded, detect)
@@ -20531,8 +20526,6 @@ fireliker.com##+js(remove-node-text, script, Ad Blocker)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172359
 @@||dsharer.com/-ads-banner.js
 dsharer.com##+js(set-constant, showada, true)
-! https://github.com/AdguardTeam/AdguardFilters/issues/172095
-toolkitspro.com##+js(abort-current-script, EventTarget.prototype.addEventListener, adsbygoogle.js)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172282
 @@||drivemoe.com/-ads-banner.js
 drivemoe.com##+js(set-constant, showada, true)
@@ -20612,8 +20605,6 @@ pornbimbo.com##+js(set-constant, flashvars.protect_block_html, '')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170624
 ||osuskinner.com/check|$xmlhttprequest
 osuskinner.com##+js(no-xhr-if, s.nitropay.com)
-! https://github.com/AdguardTeam/AdguardFilters/issues/170753
-sportea.online##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170613
 mtvema.com,mtv.co.uk,mtv.de,mtv.it##+js(no-fetch-if, imasdk.googleapis.com)
 @@||mssl.fwmrm.net/libs/adm/*/AdManager.js$domain=mtvema.com|mtv.co.uk|mtv.de|mtv.it
@@ -20690,9 +20681,6 @@ freetvsports.xyz,poscishd.online##+js(no-fetch-if, pagead2.googlesyndication.com
 xszav1.com##+js(remove-node-text, script, ad blocker)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169386
 elektrotanya.com##+js(set-constant, canRunAds, true)
-! https://github.com/AdguardTeam/AdguardFilters/issues/169282
-chickenkarts.io##+js(set-constant, blockedAds, false)
-! https://github.com/AdguardTeam/AdguardFilters/issues/169297
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169259
 ! Ads reinjection
 autoscout24.*##+js(abort-on-property-read, Object.prototype.autoRecov)
@@ -20826,12 +20814,6 @@ dessi.io##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164205
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163765
 putangclan.com#@#.advert-wrapper
-! https://github.com/AdguardTeam/AdguardFilters/issues/163704
-govsfid.com##+js(set-constant, isBrave, noopFunc)
-govsfid.com##+js(set-constant, AdBDetected, noopFunc)
-@@||gplinks.in/track/js/$domain=govsfid.com
-@@||gplinks.in/track/data.php$domain=govsfid.com
-@@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=govsfid.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163705
 sankaku.app#$##anti-adblock { display: none !important; }
 sankaku.app#$#body { overflow: auto !important; }
@@ -45750,6 +45732,13 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+transtube.tv##.a-label
+transtube.tv##.banabpang
+transtube.tv##.card-section-promotion
+transtube.tv##.thumbarea:has(.a-label)
+transtube.tv##+js(abort-on-property-write, __spotSettings)
+||transtube.tv/sum.js
+||transtube.tv/*/vast/player.min.js
 bleepingcomputer.com##.bc_right_sidebar > div[align="center"] > a[target="_blank"] > img
 lsd.law##div[id^="phx-relay"] > div:has(> div[style] > div[data-fuse])
 tennismajors.com##.revenu

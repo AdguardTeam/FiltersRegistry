@@ -1,9 +1,9 @@
-! Checksum: DTctFAnF1z4DyCTeLL+EQQ
-! Diff-Path: ../patches/2/2-s-1749795234-3600.patch
+! Checksum: iS607htuRgpVhJ0fosafIg
+! Diff-Path: ../patches/2/2-s-1749798681-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.89.11
-! TimeUpdated: 2025-06-13T06:09:27+00:00
+! Version: 2.3.89.12
+! TimeUpdated: 2025-06-13T07:07:15+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19178,7 +19178,6 @@ starwarsaddicted.it,wuyong.fun,26g.me,myqqjd.com,poapan.xyz,javboys.com,idevicec
 ! chp_ads_blocker popups, that can be hidden
 ! generic
 ###chp_branding
-##a[id][href="https://toolkitspro.com"][rel="noopener noreferrer"]
 ##a[id][href="https://chpadblock.com/"][rel="noopener noreferrer"]
 ! specific
 thesextube.net###bloglo-scroll-top + div[id][class*=" "]
@@ -20308,7 +20307,7 @@ videzz.net#%#//scriptlet('set-constant', 'isAdBlockDetected', 'false')
 live.golato.io#%#//scriptlet("prevent-addEventListener", "load", "abDetectorPro")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202352
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181517
-decompiler.com#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'AdBlock')
+decompiler.com#%#//scriptlet('set-constant', 'alim', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180134
 ! shrtfly
 airevue.net,veroan.com,amalot.net,carribo.net,stfly.biz,torovalley.net,blogesque.net,stfly.cc,bookbucketlyst.com#%#//scriptlet('abort-on-property-read', 'abwn')
@@ -20585,10 +20584,6 @@ poplinks.sbs,sampledrive.in#%#//scriptlet('abort-on-stack-trace', 'DOMTokenList.
 ! Second part of the regexp ("break;case \$\.") is required to block popups/popunders, but two "abort-current-inline-script" cannot use the same property
 ! so it's necessary to use it in one scriptlet
 fmembed.cc,kerapoxy.cc,fmoonembed.*,embedme.*,filemoon.*,finfang.*,hellnaw.*,moonembed.*,z12z0vla.*#%#//scriptlet('abort-current-inline-script', 'document.createElement', '/\.onerror|break;case \$\./')
-! https://github.com/AdguardTeam/AdguardFilters/issues/175034
-! https://github.com/AdguardTeam/AdguardFilters/issues/174876
-/js/adb.js$domain=instload.com|twitload.com
-twitload.com,instload.com#%#//scriptlet('prevent-setTimeout', '.check()')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174746
 arabic-for-nerds.com#%#//scriptlet("prevent-fetch", "cookiebanner")
 arabic-for-nerds.com#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "detect")
@@ -20705,8 +20700,6 @@ fireliker.com#%#//scriptlet('remove-node-text', 'script', 'Ad Blocker')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172359
 @@||dsharer.com/-ads-banner.js
 dsharer.com#%#//scriptlet('set-constant', 'showada', 'true')
-! https://github.com/AdguardTeam/AdguardFilters/issues/172095
-toolkitspro.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'adsbygoogle.js')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172282
 @@||drivemoe.com/-ads-banner.js
 drivemoe.com#%#//scriptlet('set-constant', 'showada', 'true')
@@ -20787,8 +20780,6 @@ pornbimbo.com#%#//scriptlet("set-constant", "flashvars.protect_block_html", "")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170624
 ||osuskinner.com/check|$xmlhttprequest
 osuskinner.com#%#//scriptlet('prevent-xhr', 's.nitropay.com')
-! https://github.com/AdguardTeam/AdguardFilters/issues/170753
-sportea.online#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170613
 mtvema.com,mtv.co.uk,mtv.de,mtv.it#%#//scriptlet('prevent-fetch', 'imasdk.googleapis.com')
 mtvema.com,mtv.co.uk,mtv.de,mtv.it#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3_dai.js')
@@ -20868,9 +20859,6 @@ freetvsports.xyz,poscishd.online#%#//scriptlet('prevent-fetch', 'pagead2.googles
 xszav1.com#%#//scriptlet('remove-node-text', 'script', 'ad blocker')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169386
 elektrotanya.com#%#//scriptlet('set-constant', 'canRunAds', 'true')
-! https://github.com/AdguardTeam/AdguardFilters/issues/169282
-chickenkarts.io#%#//scriptlet('set-constant', 'blockedAds', 'false')
-! https://github.com/AdguardTeam/AdguardFilters/issues/169297
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169259
 ! Ads reinjection
 autoscout24.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.autoRecov')
@@ -21007,12 +20995,6 @@ dessi.io#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164205
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163765
 putangclan.com#@#.advert-wrapper
-! https://github.com/AdguardTeam/AdguardFilters/issues/163704
-govsfid.com#%#//scriptlet("set-constant", "isBrave", "noopFunc")
-govsfid.com#%#//scriptlet("set-constant", "AdBDetected", "noopFunc")
-@@||gplinks.in/track/js/$domain=govsfid.com
-@@||gplinks.in/track/data.php$domain=govsfid.com
-@@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=govsfid.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163705
 sankaku.app#$##anti-adblock { display: none !important; }
 sankaku.app#$#body { overflow: auto !important; }
@@ -46030,6 +46012,13 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+transtube.tv##.a-label
+transtube.tv##.banabpang
+transtube.tv##.card-section-promotion
+transtube.tv##.thumbarea:has(.a-label)
+transtube.tv#%#//scriptlet('abort-on-property-write', '__spotSettings')
+||transtube.tv/sum.js
+||transtube.tv/*/vast/player.min.js
 bleepingcomputer.com##.bc_right_sidebar > div[align="center"] > a[target="_blank"] > img
 lsd.law##div[id^="phx-relay"] > div:has(> div[style] > div[data-fuse])
 tennismajors.com##.revenu
@@ -91451,6 +91440,7 @@ browsershots.org#@#.advert_area
 ||ambra.com^
 ||ambuizeler.com^
 ||amdkmamc.com^
+||amdlucxrofi.com^
 ||amelatrina.com^
 ||amendableirritatingprotective.com^
 ||amendablesloppypayslips.com^
@@ -94738,6 +94728,7 @@ browsershots.org#@#.advert_area
 ||ciizxsdr.com^
 ||cijoorsairgusa.com^
 ||cijoyfhiacneg.online^
+||cikorloimlxct.website^
 ||ciksolre.net^
 ||ciksoophuxabsie.net^
 ||cilon.site^
@@ -97324,6 +97315,7 @@ browsershots.org#@#.advert_area
 ||dziamswamc.com^
 ||dzigzdbqkc.com^
 ||dzijggsdx.com^
+||dzjlyvcsggmls.online^
 ||dzkdyqyvadyqq.online^
 ||dzliege.com^
 ||dzoonztumkuq.com^
@@ -98024,6 +98016,7 @@ browsershots.org#@#.advert_area
 ||estimatedrick.com^
 ||estpeopleshouldth.org^
 ||esumedadele.info^
+||esusaryproced.com^
 ||etetxwdgqxufr.one^
 ||eteveredgove.info^
 ||etflpbk.com^
@@ -100983,6 +100976,7 @@ browsershots.org#@#.advert_area
 ||hj6y7jrhnysuchtjhw.info^
 ||hjalma.com^
 ||hjcpyuivygenx.rocks^
+||hjiqepnmicea.com^
 ||hjklq.com^
 ||hjmawbrxzq.space^
 ||hjoddysekhmji.site^
@@ -107110,6 +107104,7 @@ browsershots.org#@#.advert_area
 ||otwqvqla.com^
 ||oubqwkmhrcpat.fun^
 ||ouchruse.com^
+||oucouksirt.com^
 ||oudeemeewhaims.com^
 ||oudseroa.com^
 ||oudsutch.com^
@@ -109677,6 +109672,7 @@ browsershots.org#@#.advert_area
 ||reelnk.com^
 ||reenakun.com^
 ||reepsotograg.net^
+||reeqqkeamarmj.top^
 ||reeqqkeamawaq.top^
 ||reerupttuchis.shop^
 ||reeshlecampal.shop^

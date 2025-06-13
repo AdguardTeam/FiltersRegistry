@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wcwJ9Sd1auuxDd5ZRWANHQ
-! Diff-Path: ../patches/224/224-s-1749791508-3600.patch
+! Checksum: NWZP6Mefm5NgsK/yvZ7dfQ
+! Diff-Path: ../patches/224/224-s-1749798692-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.38.96
-! TimeUpdated: 2025-06-13T05:07:57+00:00
+! Version: 2.1.38.97
+! TimeUpdated: 2025-06-13T07:07:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -278,6 +278,11 @@
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/207465
+dqzboy.com#@#.ad-unit:not(.textads)
+dqzboy.com#$#.adblock-modal { display: none !important; }
+dqzboy.com#$#body.adblock-modal-active { overflow: auto !important; position: static !important; }
+dqzboy.com##+js(abort-current-script, EventTarget.prototype.addEventListener, window.getComputedStyle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206449
 mytvsuper.com##+js(googletagservices_gpt)
 ! https://playav.tv/ popup reinjection
@@ -1083,6 +1088,7 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+dqzboy.com##body > #popup[style^="position: fixed; bottom:"]
 star.ebc.net.tw##body .ad_box
 star.ebc.net.tw##.main_content > .inline_text.has_marker:has(> span > span > a[target="_blank"])
 mrmad.com.tw##div[id^="mrmadad-"][style]:has(> .adsbygoogle)
