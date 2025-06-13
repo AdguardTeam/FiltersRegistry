@@ -905,8 +905,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.71.57",
-			"timeUpdated": "2025-06-13T12:44:49+0000",
+			"version": "2.1.71.58",
+			"timeUpdated": "2025-06-13T16:39:22+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -955,8 +955,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/Latvian-List/adblock-latvian/master/lists/latvian-list.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.64",
-			"timeUpdated": "2025-05-06T12:45:05+0000",
+			"version": "2.0.0.65",
+			"timeUpdated": "2025-06-13T16:39:22+0000",
 			"deprecated": false,
 			"languages": [
 				"lv"
@@ -980,8 +980,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.71.56",
-			"timeUpdated": "2025-06-13T12:44:49+0000",
+			"version": "2.1.71.57",
+			"timeUpdated": "2025-06-13T16:39:23+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.64.88",
-			"timeUpdated": "2025-06-13T12:45:30+0000",
+			"version": "2.0.64.89",
+			"timeUpdated": "2025-06-13T16:40:11+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
