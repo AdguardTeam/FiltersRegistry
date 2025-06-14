@@ -1,5 +1,5 @@
-! Checksum: QZJx7coLjjguFQ0Q3zS0zA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1749845514-3600.patch
+! Checksum: mG43jbH7Dqq2ogHrZtG4aw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1749868827-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.15
@@ -860,6 +860,7 @@ nationalgeographic.de##div[id^="gpt--header--"]
 finanz-tools.de##.text_wb_top
 chip.de##.Boost
 chip.de,focus.de##div[data-hk]:has(> .Ad-Slot:only-child)
+focus.de#?#.Article-ReusableText:has(> blockquote > p:only-child:contains(Anzeige))
 ||autokostencheck.de/cd.autokostencheck.de/assets/cosmosdirekt/
 autokostencheck.de##iframe[src^="/cd.autokostencheck.de/assets/cosmosdirekt/"] + div.textlight[style^="margin-top"]
 fotocommunity.de##div[id^="p_ad"]
@@ -977,6 +978,8 @@ fachinformatiker.de##img[alt*="advertisement"]
 ||fachinformatiker.de/uploads/*Banner-
 winfuture.de#?#.showitxt > b:contains(Spartipp)
 winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink
+winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink + br
+winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink + br + br
 winfuture.de#%#setTimeout(function(){var el = document.querySelector(".showitxt"); if(el) { el.innerHTML = el.innerHTML.replace("(Anzeige)",""); }},3000);
 winfuture.de##a[href^="https://winfutu.re"] + br
 gameswirtschaft.de##div.wpb_text_column:has(> div.wpb_wrapper > div.aawp)
@@ -1555,7 +1558,6 @@ moviepilot.de###OUTBRAIN-TITLE
 freiepresse.de##.rgt
 filmstarts.de##.gd-col-left > section[class^="js-outbrain"]
 bussgeldkatalog.org##div[class^="azk-native"]
-n-tv.de##.space--showheroes
 mbpassion.de##.cb-post-footer-block.cb-post-large
 ||mbpassion.de//wp-*-content/banners^
 wetter.com##.toolbar-wrapper
@@ -2053,6 +2055,7 @@ heise.de,nzz.ch##.recommendations
 ||vodafone.de/csp/csp.php?b_id=$third-party
 idea.de##.mediumrectangle
 livenet.ch##.block-werbung
+livenet.ch##body > #pre-header
 krone.at##.kmm-article-box + .row > .c_label
 ||pfaffenhofen-today.de/images/banners/
 eurosport.de##div[class^="adtech_"]
@@ -2103,7 +2106,6 @@ sozialversicherung-kompetent.de,techbook.de,lr-online.de,stylebook.de,fitbook.de
 autobild.de,travelbook.de##a[href^="https://secure.adnxs.com"]
 haustechnikdialog.de##.webspot
 haustechnikdialog.de##.advertouter
-kochbar.de##.kb-ad-container
 radsport-news.com###LayoutBannerXXL
 winfuture.de,auto-motor-und-sport.de,java-forum.org##div[id^="div-gpt-ad"]
 familienbande24.de###content > .row > .col-xs-12.text-center[style="min-height:60px;"]
@@ -2264,7 +2266,6 @@ transfermarkt.de##div[id^="werbung_"]
 hl-live.de##div[width="828"][height="90"]
 frustfrei-lernen.de##span.contentlabel
 jumk.de,welt-zeit-uhr.de,rechneronline.de##div[style="font-size:10px;margin-top:1px"]
-||kopp-verlag.de/*banners^$third-party
 ||widgets.outbrain.com/outbrain.js$domain=chip.de
 ||durchblicker.at/iframes^$third-party
 wetter24.de###ads_placeholder
@@ -2336,6 +2337,7 @@ mopo.de#?#.js-marquee:has(> a[href*="campaign"][target="_blank"])
 winfuture.de#?#.topnews > div[style]:has(> .adsbygoogle)
 winfuture.de#?#.hp_latest > div:has(> div[id^="div-gpt-ad"]:only-child)
 spieleforum.de#?#.p-body-sidebar > .block:has(> div[id^="spieleforum.de_sitebar_"]:empty)
+weser-kurier.de#?#article:has(> a > picture > .commercial-content__indicator)
 praxistipps.focus.de#?#.wrapper-safe > div.fb:has(> div > div.Article__Ad)
 bild.de#?#.main-content > .block:has(> h2.block-title + div > .layout > .mtl[data-teaser-position])
 eltern.de,essen-und-trinken.de,stern.de#?#article:has(> .teaser__text-content > .ad-labels)
@@ -2599,6 +2601,7 @@ _werbe_layer.
 _werbebanner.
 _werbebanner/
 _werbung.php
+_Werbung260.
 _woz_banner_vote.
 ###Ad_Win2day
 ###LxWerbeteaser
@@ -2688,7 +2691,6 @@ _woz_banner_vote.
 ##.anzeigenwerbung
 ##.artikelinlinead
 ##.azk-native-responsive
-##.babbelMultilangAdBannerHorizontal
 ##.banner-werbung-rechts
 ##.bannerAnzeige
 ##.bannergroup_werbung
@@ -3043,7 +3045,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||code.bergsteigen.com^
 ||coincierge.de/wp-content/plugins/floating-banner/
 ||computerbase.de/creatives/
-||condor.cl/wp-content/uploads/*/BANNERWEB_
 ||costa-info.de/images/banner_home/
 ||cript.to^$domain=ibooks.to
 ||curt.de^*/gastrobanner/
@@ -3201,12 +3202,12 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||nonstopnews.de/bilder/Banner/
 ||nr-kurier.de/images/mankwetter.png
 ||nrhz.de/flyer/media/banner/
-||o-sport.de/assets/sponsors/
 ||oberberg-aktuell.de/Banner/
 ||obi.de/heyobi-includes/adserver/ad-controller/aec-bundle.js
 ||oefb.at/netzwerk/imagedownload/
 ||oeffentlichen-dienst.de/images/banners/
 ||oekoportal.de/sites/default/files/stromvergleich.png
+||offroad-cult.org/Main/refs/
 ||okey-online.com/prg/daten/datenbanken/banner
 ||omano.de/AdServer/
 ||onlinekorrektor.de/cnc/
@@ -4069,7 +4070,6 @@ verlagshaus-jaumann.de##.header-right
 bankkaufmann.com##.headeradvert_
 kleinanzeigen-suedtirol.com##.highlight
 fremdwort.de##.hinweisad
-budapester.hu##.hirdetes
 gebraucht-kaufen.de##.hitdb
 berlinmitkind.de##.hm_widget_banner
 b2run.de##.hmpartnersglobal
@@ -4665,11 +4665,14 @@ ak-kurier.de,nr-kurier.de,ww-kurier.de##img[name="banner"]
 darts1.de,premiumbesucher.de##img[width="120"]
 wirsiegen.de##img[width="140"][height="180"]
 heimspiel-online.de##img[width="150"][height="111"]
+mikanews.de##img[width="180"][height="120"]
 kultur-port.de,utvmagazin.de##img[width="200"][height="600"]
 basicthinking.de,buecher-magazin.de,eishockey-magazin.de,eishockey-online.com,fotoobjektiv.at,iplayapps.de,meinbezirk.at,nacktefoto.com,pi-news.net,radforum.de,radio-oldtimer.de,radioschwaben.de,radiotirol.it,silentworld.eu,suedtirol1.it,tarnkappe.info##img[width="300"]
+mikanews.de##img[width="300"][height="150"]
 arbeitsunrecht.de,boxen.de,fruchthandel.de,mygermantimes.com,pornofilm.zone,stadt-bremerhaven.de,via-ferrata.de,wirsiegen.de##img[width="300"][height="250"]
 finanzwelt.de##img[width="320"]
 persoblogger.de##img[width="370"]
+mikanews.de##img[width="400"][height="100"]
 ebook-land.cc,premiumbesucher.de,xnxx-deutsch.com##img[width="468"]
 nh24.de##img[width="533"]
 report24.news##img[width="600"][height="550"]
