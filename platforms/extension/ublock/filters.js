@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.89.78",
-			"timeUpdated": "2025-06-16T09:08:37+0000",
+			"version": "2.3.89.79",
+			"timeUpdated": "2025-06-16T10:07:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.86.50",
-			"timeUpdated": "2025-06-16T05:09:09+0000",
+			"version": "2.0.86.51",
+			"timeUpdated": "2025-06-16T10:07:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.33.52",
-			"timeUpdated": "2025-06-16T09:09:02+0000",
+			"version": "2.2.33.53",
+			"timeUpdated": "2025-06-16T10:08:12+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.82.88",
-			"timeUpdated": "2025-06-16T08:09:55+0000",
+			"version": "2.0.82.89",
+			"timeUpdated": "2025-06-16T10:08:13+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.99",
-			"timeUpdated": "2025-06-16T09:09:05+0000",
+			"version": "2.0.64.0",
+			"timeUpdated": "2025-06-16T10:08:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.34.55",
-			"timeUpdated": "2025-06-16T08:10:00+0000",
+			"version": "2.0.34.56",
+			"timeUpdated": "2025-06-16T10:08:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -816,8 +816,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.11.96",
-			"timeUpdated": "2025-06-12T18:09:10+0000",
+			"version": "2.0.11.97",
+			"timeUpdated": "2025-06-16T10:08:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
