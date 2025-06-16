@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: L5C+IDNgiJysMnYo7XgTXA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1750054458-3600.patch
+! Checksum: fWhlUMZbbZOO//wZfB3WGQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1750057992-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.89.75
-! TimeUpdated: 2025-06-16T06:09:55+00:00
+! Version: 2.3.89.76
+! TimeUpdated: 2025-06-16T07:08:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19384,6 +19384,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/207574
+assistouest.fr##+js(abort-current-script, EventTarget.prototype.addEventListener, window.adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207498
 teatmik.ee##+js(set-constant, adsbygoogle.loaded, true)
 teatmik.ee##+js(no-fetch-if, pagead2.googlesyndication.com)
@@ -45545,6 +45547,7 @@ m.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, playerRespon
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1925290685
 ||googlevideo.com/initplayback?source=youtube&*&c=TVHTML5&oad=$xmlhttprequest,domain=youtube.com
 ! Partial fix for buffering issue
+! Fix for case when JSON.stringify is not writable
 ! Fix SSAP ads
 www.youtube.com##+js(adjust-setTimeout, [native code], 17000, 0.001)
 ! Fix ads on https://www.youtube.com/shorts/
