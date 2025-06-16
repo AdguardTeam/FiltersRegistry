@@ -1,13 +1,13 @@
-! Checksum: w5sccuL1RkdgikjL4Gw0kQ
-! Diff-Path: ../patches/250/250-s-1749876292-14400.patch
+! Checksum: Es+nMbmqzAAZyhP0U/e+iw
+! Diff-Path: ../patches/250/250-s-1750092298-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.17.21
-! TimeUpdated: 2025-06-14T04:39:39+00:00
+! Version: 2.0.17.22
+! TimeUpdated: 2025-06-16T16:40:21+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 12June2025v1-Compilation
+! OriginalVersion: 14June2025v2-Compilation
 ! Expires: 18 hours
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -537,7 +537,7 @@ quora.com##.modal_bg
 linkedin.com#$?#html { overflow: auto !important; }
 linkedin.com#$?#body { overflow: auto !important; }
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 12June2025v1
+! OriginalVersion: 16June2025v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
@@ -27529,6 +27529,9 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||password-internal.com^$all
 ! Though not _inherently_ malware, at least 1 spambot on this repo had direct ties to that site
 ||eyestore.tebex.io^$document
+! https://github.com/DandelionSprout/adfilt/issues/1150
+http://secured21.*.com/|$all
+||docssa.online^$all
 ! ——— Standard malware that I stumbled upon on my own ———
 ! http://www•toorgle•net/results•php?q=fetishkitsch&security=666
 ||downloadprovider.me^$all
@@ -36533,7 +36536,7 @@ yeniasir.com.tr##.timer
 ||img.piri.net/*imsakiye.jpg^$domain=yenisafakCOM
 ||albayan.ae/res/img/prayertmbg.png^$~third-party
 ! Title: 🧗 Anti-'Functionality removal' List
-! OriginalVersion: 17May2025v1-Beta
+! OriginalVersion: 14June2025v1-Beta
 ! Expires: 9 days
 ! Description: This list aims to combat some sites' attempts to make it impossible to copy text, right-click on pages, open the F12 menu, create fake loading times, or who otherwise obstruct people from features that they should be perfectly in their rights to have access to.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -36594,6 +36597,8 @@ nettavisen.no###topover
 ##app-loading-screen
 ! 🇫🇴 EldingFO checkout
 ##.loading-mask:not(html,body)
+! 🇯🇵 sunflower•co•jp (14/06/2025)
+##div#loading
 ! Prevents Google from changing normal links in image searches to their tracking links whenever they're clicked on.
 ! I was only able to get this to work with the 2 links below the main image in the rightside drawer, and not on the main image itself. Trust me, I tried.
 ! Title: 🕳 Empty Padding Remover
@@ -36892,7 +36897,7 @@ vumoo.to#?#div.col-lg-12:has-text(IMDb)
 watchseries.*##.imdb
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 09June2025v1
+! OriginalVersion: 14June2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -38828,6 +38833,8 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||ipv6.google.com^$document,removeparam=zx
 ! https://myaccount•google•com/signinoptions/passkeys?source=marketing (27/05/2025)
 ||myaccount.google.com^$removeparam=source
+! https://translate•google•com/?hl=no&tab=TT&sl=ja&tl=en&op=translate (14/06/2025)
+||translate.google.com^$removeparam=/^tab=TT$/
 ! (https://github.com/DandelionSprout/adfilt/issues/1078 ...?)
 @@://www.google.*/maps^$removeparam=utm_campaign
 @@://ipv6.google.com/maps^$removeparam=utm_campaign
@@ -41793,8 +41800,9 @@ independent.co.uk,indy100.com##.notification-prompt
 !!!qwant.com##div[class^=_][class*=" "]:last-of-type:has(>div>:is([href*="://chromewebstore."],[href*="://addons.mozilla.org/"]))
 qwant.com##main > div:last-of-type:has(>div>a:is([href*="://chromewebstore."],[href*="://addons.mozilla."]):not([data-testid]))
 ! Because many people think such test sites are industry standard tools, which they're (unfortunately?) not.
-/fakepage.html^$domain=superadblocktest.com|tracksong.github.io,important
-/ads.js^$domain=tracksong.github.io,important
+/fakepage.html|$important
+/ads.js^$domain=tracksong.github.io|adblock.turtleneck.com,important
+/pagead.js^$domain=adblock.turtleneck.com,important
 @@$xmlhttprequest,third-party,redirect-rule=nooptext:-1,method=head,domain=superadblocktest.com
 @@||doubleclick.net^$xmlhttprequest,redirect-rule=nooptext,domain=superadblocktest.com
 @@||pagead2.googlesyndication.com^$xmlhttprequest,redirect-rule=noopjs,domain=superadblocktest.com

@@ -1,9 +1,9 @@
-! Checksum: IHP/ITj9Ug0u7ov0Hi9Xcw
-! Diff-Path: ../patches/247_optimized/247_optimized-s-1749343985-14400.patch
+! Checksum: gZXzu7BGMcXdi3kEp3UVMQ
+! Diff-Path: ../patches/247_optimized/247_optimized-s-1750092277-14400.patch
 ! Title: Polish Anti-Annoying Special Supplement (Optimized)
 ! Description: Filters that block and hide RSS elements and remnants of hidden newsletters combined with social elements on Polish websites.
-! Version: 2.0.4.22
-! TimeUpdated: 2025-06-08T00:48:51+00:00
+! Version: 2.0.4.23
+! TimeUpdated: 2025-06-16T16:40:15+00:00
 ! Expires: 10 days (update frequency)
 ~google.co.uk,~google.com,~google.de,~pl##.google-news-banner:lang(pl)
 ~google.co.uk,~google.com,~google.de,~pl##.google-news:lang(pl)
@@ -210,6 +210,8 @@ forum.unturned.pl##a[href="forums/-/index.rss"]
 forumrowerowe.org###elRSS
 forumsamochodowe.pl##.rsslink
 franchising.pl##.social-icons-googlenews
+francuskie.pl##.custom-html-widget.textwidget > b ~ div:has(> a[href*="news.google.com/"])
+francuskie.pl##.custom-html-widget.textwidget > b:has(~ div a[href*="news.google.com/"])
 fundacjawolnosci.org###menu-item-2756
 gagadget.com##.b-social__rss
 gazeo.pl##.rss-blue
@@ -681,4 +683,5 @@ www.lenovo.com#$#.footerForumsIcon:lang(pl) { background: #7f7f7f !important }
 zteshop.pl##.footer .newsletter:has(.social-media:matches-css(display: none)):has(form:matches-css(display: none))
 boop.pl#%#//scriptlet('ubo-ra.js', 'class', 'article ~ div p a.uppercase[class*="hover:"]')
 boop.pl#%#//scriptlet('ubo-ra.js', 'href', 'article ~ div p a[href*="gunuri"]')
-plejada.pl#%#//scriptlet('ubo-ra.js', 'href', 'detail.articleBody p:nth-last-child(-n+3) a[href*="news.google.com/"]')
+onet.pl#%#//scriptlet('ubo-ra.js', 'href', 'p[class*="BottomAdditionalText_container"] a[href*="/publications"]')
+plejada.pl#%#//scriptlet('ubo-ra.js', 'href', '.ods-c-gallery__item__description a[href*="/publications"]')
