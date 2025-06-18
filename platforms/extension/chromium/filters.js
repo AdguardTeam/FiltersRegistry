@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.61.60",
-			"timeUpdated": "2025-06-17T16:08:16+0000",
+			"version": "2.0.61.61",
+			"timeUpdated": "2025-06-18T13:54:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
