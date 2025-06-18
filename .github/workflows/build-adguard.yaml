@@ -48,3 +48,33 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: "master"
           message: "skip ci: auto-build ${{ env.BUILD_MODE }} filters"
+
+  notify:
+    name: Send Slack notification on failure
+    runs-on: ubuntu-latest
+    needs: build
+    # Run even if the build job failed, but only for our own repo
+    if:
+      ${{
+        always() &&
+        needs.build.result == 'failure' &&
+        github.repository == 'AdguardTeam/FiltersRegistry' &&
+        (
+          github.event_name == 'push' ||
+          github.event_name == 'schedule' ||
+          github.event_name == 'workflow_dispatch' ||
+          (
+            github.event_name == 'pull_request' &&
+            github.event.pull_request.head.repo.full_name == github.repository
+          )
+        )
+      }}
+    steps:
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: failure
+          fields: workflow,repo,message,commit,author,eventName,ref,job
+          job_name: Build AdGuard filters
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
