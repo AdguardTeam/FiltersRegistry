@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wy+IuO0gAPTfTNt1RSLzyg
-! Diff-Path: ../patches/9/9-s-1750101042-3600.patch
+! Checksum: +mhHPwhqtQpkdcXBjjQ26g
+! Diff-Path: ../patches/9/9-s-1750259538-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.30.43
-! TimeUpdated: 2025-06-16T19:06:30+00:00
+! Version: 2.0.30.44
+! TimeUpdated: 2025-06-18T15:07:38+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -110,7 +110,6 @@
 ||bn.imguol.com^$third-party
 ||box.zap.com.br^$third-party
 ||bpiexpressoimobiliario.pt^$subdocument,third-party
-||buxim.com^$third-party
 ||catho.com.br/parceiros/ad/$third-party
 ||cliquemidia.com^$third-party
 ||coguan.com^$third-party
@@ -154,7 +153,6 @@
 ||publicidad.net^
 ||publicidees.com^$third-party
 ||publipagos.com^
-||refblock.com^$third-party
 ||say.ac^$third-party
 ||seomaster.com.br^$third-party
 ||smartclip.net^$third-party
@@ -165,7 +163,6 @@
 ||todoanimes.com^$script,third-party
 ||urlcash.net^$third-party
 ||ver-pelis.net^$third-party
-||yestorrents.org^$third-party
 ||zebestof.com^$third-party
 !
 !
@@ -197,6 +194,8 @@
 !
 !
 !
+! https://github.com/uBlockOrigin/uAssets/issues/28879
+jornaldacidadeonline.com.br##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207002
 cuitonline.com##+js(no-fetch-if, method:HEAD)
 cuitonline.com###adBlockModalOverlay
@@ -813,9 +812,9 @@ manga-mx.com##+js(abort-on-property-write, adblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/70250
 ! https://github.com/AdguardTeam/AdguardFilters/issues/72794
 ! https://github.com/AdguardTeam/AdguardFilters/issues/72801
-elquintobeatle.com,empregoestagios.com,satcesc.com##+js(addEventListener-defuser, load, daadb_get_data)
-elquintobeatle.com,empregoestagios.com,satcesc.com##+js(set-constant, adsbygoogle.length, undefined)
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=elquintobeatle.com|empregoestagios.com|satcesc.com
+empregoestagios.com,satcesc.com##+js(addEventListener-defuser, load, daadb_get_data)
+empregoestagios.com,satcesc.com##+js(set-constant, adsbygoogle.length, undefined)
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=empregoestagios.com|satcesc.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69530
 ||atlantapictures.net/f10-1.js
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=noop.js,domain=xkekos.tv
@@ -1171,8 +1170,6 @@ clubedohardware.com.br##.caixa_topo
 @@||novelasd.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11255
 @@||nmn900.com/js/adsbygoogle.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/10879
-@@||tufutbolpro.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10730
 @@||atresplayer.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10733
@@ -2035,7 +2032,7 @@ http://adw.
 *$script,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|raincaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|x.com,_____,domain=anroll.net|monoschinos2.com|animeyt.es|leercapitulo.com|pelisflix2.green|darkmahou.org|comandotorrents.to|comandoplay.com|pelismax.one|seriesgod.cc|anime-jl.net|zonatmo.com|ferromotor.com|motoratrium.com|flavourecipes.com|loveteching.com|animefire.plus|animeflv.net|gratistorrent.com
 !
 ! ##body .ad
-xataka.com.br,solowrestling.com,europapress.es,trendencias.com,futuro.cl,solowrestling.mundodeportivo.com,meneame.net,3djuegos.com,meteoconsult.es,meuguia.tv,territoriosamsung.com,conjur.com.br,meups.com.br,elcorreogallego.es,3djuegos.lat,xatakandroid.com,nsctotal.com.br,noticiasdenavarra.com,informacion.es,applesfera.com,xatakamovil.com,espinof.com,mundoxiaomi.com,vidaextra.com,mediotiempo.com,elpais.com,olhardigital.com.br,atribuna.com.br,jovemnerd.com.br,laopiniondemurcia.es,larazon.es,dicio.com.br,band.uol.com.br,xataka.com,onyxplay.com,genbeta.com,vagalume.com.br,xatakandroid.com,abril.com.br##body .ad
+meupc.net,xataka.com.br,solowrestling.com,europapress.es,trendencias.com,futuro.cl,solowrestling.mundodeportivo.com,meneame.net,3djuegos.com,meteoconsult.es,meuguia.tv,territoriosamsung.com,conjur.com.br,meups.com.br,elcorreogallego.es,3djuegos.lat,xatakandroid.com,nsctotal.com.br,noticiasdenavarra.com,informacion.es,applesfera.com,xatakamovil.com,espinof.com,mundoxiaomi.com,vidaextra.com,mediotiempo.com,elpais.com,olhardigital.com.br,atribuna.com.br,jovemnerd.com.br,laopiniondemurcia.es,larazon.es,dicio.com.br,band.uol.com.br,xataka.com,onyxplay.com,genbeta.com,vagalume.com.br,xatakandroid.com,abril.com.br##body .ad
 ! ##.ads
 serviporno.com,solvetic.com,gamesfull.app,agazeta.com.br,lasexta.com,extra.ec,globo.com,amomeupet.org,cifras.com.br,gaz.com.br,placar.com.br,futebolinterior.com.br,tvhistoria.com.br,tribunapr.uol.com.br,diariodonordeste.verdesmares.com.br,sbt.com.br,link.estadao.com.br,atomixhq.*,jc.ne10.uol.com.br,internetpasoapaso.com,acidadeon.com,leouve.com.br,larazon.es,infoescola.com,cbn.globoradio.globo.com,maxitorrent.com,abril.com.br,odia.ig.com.br,especiais.g1.globo.com,tribunapr.com.br,novelasd.com,anime-tube.tv##.ads
 ! ##body .banner
@@ -2067,8 +2064,8 @@ compucalitv.tv##iframe[src*="/overroll/"]
 compucalitv.tv##+js(nano-setInterval-booster, start_preroll, *, 0.001)
 ricoysuave.com###block-42
 allcalidad.*##div[class^="main-pla"]
-cocina-chilena.com,cocina-boliviana.com,cocina-brasilena.com,receitas-brasil.com,recetas-chilenas.com,recetas-chinas.com,cocina-colombiana.com,cocina-cubana.com,cocina-ecuatoriana.com,recetas-ecuatorianas.com,recetas-francesas.com,recetas-guatemala.com,recetas-haitianas.com,recetas-indias.com,recetas-italia.com,recetas-japonesas.com,la-cocina-mexicana.com,recetas-nicaragua.com,comida-peruana.com,recetas-puertorico.com,recetas-dominicanas.com,cocina-uruguaya.com,recetas-venezolanas.com,recetas-arabes.com,recetas-sin-gluten.com,recetas-judias.com,recetaspizzas.com,recetas-simples.com,receta-vegetariana.com,recetas-veganas.com,recetasdiabetes.com,recetascostarica.com,recetassalvador.com,recetashonduras.com,recetaspanama.com,recetasparaguay.com,recetas-espana.com,recetas-argentinas.com#$#div.recipe_wrapper_all_right { float: left !important; width: auto !important; }
-cocina-chilena.com,cocina-boliviana.com,cocina-brasilena.com,receitas-brasil.com,recetas-chilenas.com,recetas-chinas.com,cocina-colombiana.com,cocina-cubana.com,cocina-ecuatoriana.com,recetas-ecuatorianas.com,recetas-francesas.com,recetas-guatemala.com,recetas-haitianas.com,recetas-indias.com,recetas-italia.com,recetas-japonesas.com,la-cocina-mexicana.com,recetas-nicaragua.com,comida-peruana.com,recetas-puertorico.com,recetas-dominicanas.com,cocina-uruguaya.com,recetas-venezolanas.com,recetas-arabes.com,recetas-sin-gluten.com,recetas-judias.com,recetaspizzas.com,recetas-simples.com,receta-vegetariana.com,recetas-veganas.com,recetasdiabetes.com,recetascostarica.com,recetassalvador.com,recetashonduras.com,recetaspanama.com,recetasparaguay.com,escolhasegura.com,recetas-espana.com,recetas-argentinas.com##.adsense
+cocina-chilena.com,cocina-boliviana.com,cocina-brasilena.com,recetas-chilenas.com,recetas-chinas.com,cocina-colombiana.com,cocina-cubana.com,cocina-ecuatoriana.com,recetas-ecuatorianas.com,recetas-francesas.com,recetas-guatemala.com,recetas-haitianas.com,recetas-indias.com,recetas-italia.com,recetas-japonesas.com,la-cocina-mexicana.com,recetas-nicaragua.com,comida-peruana.com,recetas-puertorico.com,recetas-dominicanas.com,cocina-uruguaya.com,recetas-venezolanas.com,recetas-arabes.com,recetas-sin-gluten.com,recetas-judias.com,recetaspizzas.com,recetas-simples.com,receta-vegetariana.com,recetas-veganas.com,recetasdiabetes.com,recetascostarica.com,recetassalvador.com,recetashonduras.com,recetaspanama.com,recetasparaguay.com,recetas-espana.com,recetas-argentinas.com#$#div.recipe_wrapper_all_right { float: left !important; width: auto !important; }
+cocina-chilena.com,cocina-boliviana.com,cocina-brasilena.com,recetas-chilenas.com,recetas-chinas.com,cocina-colombiana.com,cocina-cubana.com,cocina-ecuatoriana.com,recetas-ecuatorianas.com,recetas-francesas.com,recetas-guatemala.com,recetas-haitianas.com,recetas-indias.com,recetas-italia.com,recetas-japonesas.com,la-cocina-mexicana.com,recetas-nicaragua.com,comida-peruana.com,recetas-puertorico.com,recetas-dominicanas.com,cocina-uruguaya.com,recetas-venezolanas.com,recetas-arabes.com,recetas-sin-gluten.com,recetas-judias.com,recetaspizzas.com,recetas-simples.com,receta-vegetariana.com,recetas-veganas.com,recetasdiabetes.com,recetascostarica.com,recetassalvador.com,recetashonduras.com,recetaspanama.com,recetasparaguay.com,escolhasegura.com,recetas-espana.com,recetas-argentinas.com##.adsense
 buscape.com.br##div[class*="BannerVtex"]
 olhardigital.com.br##.under_OD
 puntodebreak.com##.selected-match-info
@@ -2443,7 +2440,6 @@ meuguia.tv##.divider:has(> .ad:only-child)
 okpeliz.com###directAds
 wuolah.com##div[class^="Aside"][class*="Ad"]
 bandaancha.eu##.adDsBlAt
-inteh.biz##div[id^="downpart"] > #block
 flooxernow.com,lasexta.com##div[id^="taboola-container-"]
 poder360.com.br##aside > .box-advertising
 ||impactoespananoticias.com/download/publicidades.video.*.mp4$media,redirect=noop-1s.mp4,domain=impactoespananoticias.com
@@ -3742,7 +3738,7 @@ lawebdelprogramador.com##.publi_robapaginas
 ||tribunaavila.com/uploads/advertisings/
 maxitorrent.com##.bgshadow
 maxitorrent.com##.boxintersitial
-soportugues.com.br,somatematica.com.br,sobiologia.com.br,sofisica.com.br,sohistoria.com.br,sogeografia.com.br,soq.com.br,soliteratura.com.br,pedagogia.com.br,sonutricao.com.br,solinguainglesa.com.br,soespanhol.com.br,soitaliano.com.br,sorusso.com.br,soxadrez.com.br,socontabilidade.com.br,soturismo.com.br###anuncioRodape
+soportugues.com.br,somatematica.com.br,sobiologia.com.br,sofisica.com.br,sohistoria.com.br,sogeografia.com.br,soliteratura.com.br,pedagogia.com.br,sonutricao.com.br,solinguainglesa.com.br,soespanhol.com.br,soitaliano.com.br,sorusso.com.br,soxadrez.com.br,socontabilidade.com.br,soturismo.com.br###anuncioRodape
 enmimaquinafunciona.com##.snippet-parragraph > a[style^="display: inline-block; float: left;"] > img
 enmimaquinafunciona.com##div[style="display: flex; justify-content: center; align-items: center;"] > a
 epocanegocios.globo.com##div[class^="container-adv"]
@@ -3998,7 +3994,6 @@ criptonizando.com##.adupee
 formulatv.com##.col-anu
 zdescargas.org##center > a[href][target="_blank"]
 gazetadopovo.com.br##div[class^="box-ads-header"]
-emedemujer.com##.box-intext-ad
 tecmundo.com.br##.tec--ad
 lectulandia.*###rightPromo
 lectulandia.*##.perfbtns2
@@ -4320,7 +4315,6 @@ vercanalestv1.com,tv-onlinehd.com###closeX1
 ||tv-onlinehd.com/publi/cerrar
 dn.pt##.t-pubbox-ct-1
 ||videoszoofiliahd.com/embed/bit.js
-/qvncc.tvcanales.cf\/js\/[_-a-zA-Z0-9]{5,}.js/$domain=tvcanales.cf
 publico.es,noticiasautomotivas.com.br,segredosdomundo.r7.com,blogdoiphone.com###custom_html-6
 genshinpro.com.br,noticiasautomotivas.com.br###custom_html-7
 blogdoiphone.com###text-html-widget-15
@@ -4392,7 +4386,7 @@ xrivonet.info##.sidebar > #HTML1 > .widget-content [style="font-weight:bold;"]
 ||capodeportes.net/extremotv/arriba.php
 ||capodeportes.net/extremotv/lateral.php
 capodeportes.net,latinoweb-tv.com##[id^="floatLayer"]
-tvplusgratis.com,xnalgas.com,televisiongratishd.com,tvcanales.cf###ventana-flotante
+tvplusgratis.com,xnalgas.com,televisiongratishd.com###ventana-flotante
 rojadirectaonlinetv.com,extremotvplay.com##.sidebar > .encabezados:nth-child(2)
 ||drylnk.com/apu.php?zoneid=
 desdesoria.es###publitop
@@ -4430,7 +4424,7 @@ anitube.biz###sombra
 anitube.biz###bannerMontado
 anitube.biz##a > img[alt^="banner-"]
 webcheats.com.br###bg_trasp
-peliculaonlinehd.com,tufutbolpro.com,webcheats.com.br##a[href^="http://bit.ly/"]
+peliculaonlinehd.com,webcheats.com.br##a[href^="http://bit.ly/"]
 webcheats.com.br##.node_529
 ||aovivonatv.com/tema/js/nowpobjs.js
 aovivonatv.com##body > section.gnBig
@@ -4538,7 +4532,7 @@ muyinteresante.es##.size_static.mega1
 muyinteresante.es###sidebar > [class^="roba"]
 ||i0.wp.com/autoblog.com.ar/wp-content/uploads/2015/03/*800x100*.gif?resize=800%2C100
 autoblog.com.ar##.ad-header-right
-blizzboygames.net,animeflv.net,espaebook.org,verestrenos.net,autoblog.com.ar##a[href^="http://bit.ly/"] > img
+blizzboygames.net,animeflv.net,espaebook.org,autoblog.com.ar##a[href^="http://bit.ly/"] > img
 ||erohentai.net/wp-content/themes/erohentai/biu_yi.js
 doramashd.com,bludvfilmes.com,megafilmestorrents.net,erohentai.net###floatLayer2
 erohentai.net###secondary > #text-2
@@ -4548,8 +4542,8 @@ popfilmeshd.net,pelisr.com###playerads
 latinohentai.vip,latinohentai.com##+js(remove-attr, href, a[href]#clickfakeplayer)
 latinohentai.vip,latinohentai.com##+js(window.open-defuser)
 latinohentai.vip,latinohentai.com##+js(abort-current-script, EventTarget.prototype.addEventListener, /Popunder|Popup/)
-latinohentai.com,popfilmeshd.net,pelisr.com,pepeliculas.com##.contadorads
-pepeliculas.com,latinohentai.com##.ads_player
+latinohentai.com,popfilmeshd.net,pelisr.com##.contadorads
+latinohentai.com##.ads_player
 redeszone.net,tabletzona.es,movilzona.es,adslzone.net,androidayuda.com,softzone.es,hardzone.es###GLOBAL_BD_TOP
 redeszone.net,tabletzona.es,movilzona.es,androidayuda.com,softzone.es,hardzone.es###NEWS_BODY
 androidayuda.com,softzone.es,hardzone.es##.news-item > div.visible-md.visible-lg
@@ -4575,7 +4569,6 @@ seriesypelis24.com##a[rel="nofollow"] > img
 musicaanime.info###contendor-right-publicidad
 musicaanime.info##body > div[style="z-index:3; display:block"]#players
 anime-latino.net###left > div.cto
-pepeliculas.com##.module_single_ads
 inkanime.com##iframe[height="105"][width="700"]
 anime-latino.net##iframe[name="Pub300"]
 windowsblogitalia.com##div[id^="ppsPopup"]
@@ -4597,11 +4590,6 @@ holadoctor.com##.banner_cubo_space
 canaldopet.ig.com.br,tempo.pt,lasestrellas.tv,auto10.com,abril.com.br##div[id^="ad_"]
 abril.com.br##.ad-sense
 abril.com.br##.widget-superbanner
-||mocosoft.com/cialis.jpg
-||mocosoft.com/cpiu.gif
-mocosoft.com##table[bgcolor="red"]
-||mocosoft.com/prope.jpg
-||youtube.com/v/^$domain=mocosoft.com
 programaswebfull.net##.topad
 marca.com##.content > iframe[src^="http://91.116.142.114"]
 ||91.116.142.114/iframe$domain=marca.com
@@ -5022,7 +5010,7 @@ vanguardia.com##.moduletable_pubtexto
 marca.com##.modulo_orbyt
 aeiou.pt##.mon_td_glb
 elcomercio.com##.mp_publiContenedor
-abola.pt,caras.pt,exameinformatica.pt,xl.pt##.mrec
+abola.pt,caras.pt,xl.pt##.mrec
 torrentazos.com##.mybanner
 infocoches.com##.navi_right
 clicrbs.com.br##.nivelA-tipo6
@@ -5189,7 +5177,6 @@ elpais.com.uy##div[style="width:300px;padding:4px;margin:8px;float:left;border:0
 peru.com##div[style="width:728px; height:90px; background-color:#000000; float:left"]
 aristeguinoticias.com##div[style="width:728px;height:90px;margin:0 auto;"]
 aristeguinoticias.com##div[style="width:728px;height:90px;margin:0 auto;padding: 0 0 5px 0;"]
-peliculas-flv.com##div[style^="position:fixed; left:50%; top:50%"]
 tomadivx.org##iframe[height="600"]
 tomadivx.org##iframe[width="130"]
 tomadivx.org##iframe[width="300"]
