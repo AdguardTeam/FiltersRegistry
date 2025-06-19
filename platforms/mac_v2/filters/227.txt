@@ -1,9 +1,9 @@
-! Checksum: XCYT9x5rweEzGPteQZIb3w
-! Diff-Path: ../patches/227/227-s-1750308316-14400.patch
+! Checksum: JHfmqob2NGO5V3Pc/kBS9w
+! Diff-Path: ../patches/227/227-s-1750351458-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.21.79
-! TimeUpdated: 2025-06-19T04:40:37+00:00
+! Version: 2.0.21.80
+! TimeUpdated: 2025-06-19T16:39:38+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: List-KR for AdGuard
@@ -1352,6 +1352,10 @@
 !
 ! DOMAIN-REFRESHER: START
 !
+||img.mingk.xyz/data/file/passfree/
+||mingk*.net/theme/BS4-Basic/js/pf-loader.js$domain=/^mingky[0-9]+\.net/
+||yasyadong.*/?_Action=adv&_Method$domain=yasyadong.*
+/https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=/tvwiki[0-9]+\.com/
 /^https:\/\/(www\.)?aniya24\.com\/wp-content\/uploads\/[0-9]+\/[0-9]+\/[a-z]+[0-9]+x[0-9]+\./$domain=aniya24.com
 ||aniya24.com/wp-content/uploads/*.gif
 ||sutom.org/wp-content/uploads/*.webp
@@ -1423,8 +1427,7 @@
 /^https:\/\/jusoyo[0-9]+\.(net|com)\/data\/apms\/background\//
 /^https:\/\/jusoyo[0-9]+\.(net|com)\/.+\.webp$/
 /^https:\/\/yadong[0-9]+\.net\/Uploads\/images\/\d{4}-\d{2}-\d{2}/
-||blogger.googleusercontent.com^$domain=yasyadong.com
-||i.imgur.com^$domain=yasyadong.com
+||i.imgur.com^$domain=yasyadong.*
 /^https:\/\/iabn[0-9]+\.net\//$domain=/^fxfx[0-9]+\.com/
 /^https:\/\/mkmk[0-9]+\.com\/img\/[a-z]+[0-9]+x[0-9]+\//
 /^https:\/\/mkmk[0-9]+\.com\/img\/[a-z0-9_-]+\.gif$/
@@ -1612,6 +1615,8 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+issuetory.co.kr##.code-block-6
+issuetory.co.kr##.entry-content.read-details > .code-block
 damoang.net###sidebar-site-menu > h3:has(> a[href="https://damoang.net/promotion"])
 damoang.net###sidebar-site-menu > h3:has(> a[href="https://damoang.net/promotion"]) + .line-top.mb-4
 qquing.net##.ad-actual
@@ -2848,6 +2853,7 @@ kio.ac##main > div:has(> div > div > a > img)
 !
 ! DOMAIN-REFRESHER: START
 !
+aniya24.com##.popup-container
 sutom.org##div[data-id="9429d5d"]
 sutom.org###sutom-pro
 blacktoon1.info##div[data-mesh-id="comp-m8jy31rninlineContent"]
@@ -3449,6 +3455,7 @@ banhub.xyz#$#html{ overflow: visible !important; }
 ! DOMAIN-REFRESHER: START
 !
 zzzz.lol#$?#.ent_wrapper.slide-vertical-effect .ent_news:not(:has(.ent_prefix:contains(ZZAPFLIX))) { remove: true; }
+aniya24.com#$?#div[class*="-player-wrapper"] > .play-media-control ~ div[class^="beeteam"][class*="-player-sub-element"] { remove: true; }
 !
 ! DOMAIN-REFRESHER: END
 pedia.watcha.com#?#div[class] > section[class*=" "]:has(> section > a h3 > p:contains( · AD))
