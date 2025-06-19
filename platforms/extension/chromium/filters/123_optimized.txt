@@ -1,9 +1,9 @@
-! Checksum: sh59dX6FbDoHXxPgzxG2NA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1750294306-14400.patch
+! Checksum: NwfTnIB1twrTYF1Y2Ni5Mg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1750308293-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.43.19
-! TimeUpdated: 2025-06-19T00:47:35+00:00
+! Version: 2.1.43.20
+! TimeUpdated: 2025-06-19T04:40:21+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -126,8 +126,6 @@
 /twitter-follow-
 /twitter-footer-
 /twitter-v2.png
-/twitter_follow.jpg
-/twitter_follow.png
 /twitter_footer.png
 /twitter_header.png
 /twitter_square.png
@@ -142,6 +140,7 @@
 _footer_twitter.
 _share_widget_
 _social-bar/
+_social_footer_
 /jquery.bpopup.$script,domain=telechargerunevideo.com
 ###FollowUs
 ###Followers1
@@ -193,6 +192,7 @@ _social-bar/
 ###desktop-share-wrapper
 ###details-share-icon-link
 ###divSideShare
+###divSocial
 ###dvTwitter
 ###embed-share
 ###et-post-share
@@ -203,6 +203,7 @@ _social-bar/
 ###facebook-fanbox
 ###facebook-like
 ###facebook-link
+###facebook-popup
 ###facebook-share
 ###facebook-widget
 ###facebookFan
@@ -463,6 +464,7 @@ _social-bar/
 ###share_linkedin
 ###share_links
 ###share_panel
+###share_social_sidebar
 ###share_telegram
 ###share_this
 ###share_to
@@ -536,7 +538,6 @@ _social-bar/
 ###social-link
 ###social-links
 ###social-links-container
-###social-media-bar
 ###social-media-footer
 ###social-media-header
 ###social-media-wrapper
@@ -899,6 +900,7 @@ _social-bar/
 ##.article__sharebar
 ##.article__sharing
 ##.article__social
+##.article__social-icons
 ##.article__social-links
 ##.article__socials
 ##.article_bottom_share
@@ -986,7 +988,6 @@ _social-bar/
 ##.block_social
 ##.blog-post-share
 ##.blog-share
-##.blog-share-container
 ##.blog-social
 ##.blog-social-icons
 ##.blog-social-item
@@ -1358,6 +1359,7 @@ _social-bar/
 ##.followTwitter
 ##.followUsLinks
 ##.follow__item
+##.follow__list
 ##.followus_net
 ##.followuson
 ##.foot-share
@@ -1531,7 +1533,6 @@ _social-bar/
 ##.gtm_footer_twitter
 ##.h-c-social
 ##.h-share
-##.h5ab-print-button-container
 ##.has-button-share
 ##.hatena-bookmark-button
 ##.hatena-btn-icon
@@ -1673,7 +1674,6 @@ _social-bar/
 ##.icon-social-twitter-circle
 ##.icon-social-youtube
 ##.icon-soundcloud
-##.icona-social
 ##.icone-social
 ##.iconfacebook
 ##.iconinstagram
@@ -1843,6 +1843,7 @@ _social-bar/
 ##.listing-share
 ##.lnkFacebook
 ##.locshare-share-button
+##.loggedout-follow-normal
 ##.logo-social
 ##.lsi-social-icons
 ##.lst-social
@@ -1850,7 +1851,6 @@ _social-bar/
 ##.lzd-follow-us-icon
 ##.m-footer-social
 ##.m-header--social-nav
-##.m-header__social
 ##.m-icon-facebook
 ##.m-icon-tw
 ##.m-share
@@ -1931,7 +1931,6 @@ _social-bar/
 ##.mod-follow
 ##.mod-social-navigation
 ##.mod-twitter
-##.mod_social
 ##.module--share
 ##.module-follow
 ##.module-social-share-icons
@@ -2494,6 +2493,7 @@ _social-bar/
 ##.share_content
 ##.share_count
 ##.share_digg
+##.share_entry
 ##.share_facebook
 ##.share_fb
 ##.share_hidden
@@ -2783,6 +2783,7 @@ _social-bar/
 ##.social-buttons-compact
 ##.social-buttons-container
 ##.social-buttons-footer
+##.social-buttons-module
 ##.social-buttons-twitter
 ##.social-buttons-wrapper
 ##.social-buttons__item
@@ -2866,7 +2867,6 @@ _social-bar/
 ##.social-media-column
 ##.social-media-footer
 ##.social-media-header
-##.social-media-horizontal
 ##.social-media-li
 ##.social-media-list-container
 ##.social-media-nav
@@ -3141,6 +3141,7 @@ _social-bar/
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
+##.socialnetworkbox
 ##.socialno
 ##.socialplugins
 ##.socialright
@@ -3250,7 +3251,6 @@ _social-bar/
 ##.the_champ_sharing_container
 ##.the_champ_sharing_ul
 ##.thim-author-social
-##.thirdShareBox
 ##.thread-share
 ##.thread-share-bar-buttons
 ##.tk-footer-social-icons
@@ -3327,7 +3327,6 @@ _social-bar/
 ##.twitter-wrap
 ##.twitter-wrapper
 ##.twitterBadge
-##.twitterBlock
 ##.twitterBox
 ##.twitterFeed
 ##.twitterFollow
@@ -3339,6 +3338,7 @@ _social-bar/
 ##.twitterWidget
 ##.twitter_btn
 ##.twitter_feed
+##.twitter_follow
 ##.twitter_footer
 ##.twitter_icn
 ##.twitter_icon
@@ -3733,7 +3733,6 @@ tennis.com##.-sharebar
 nhl.com,petri.com##.-social
 ynet.co.il,ynetnews.com##.AccordionShareWrapper
 newscientist.com##.ArticleHeader__SocialWrapper
-afar.com##.ArticlePage-actions-wrapper
 nordvpn.com##.BlogPost__social-block
 brighteon.com##.ButtonShare
 cnbc.com##.CNBCFooter-social
@@ -3875,6 +3874,7 @@ nypost.com##.floating-share-wrap
 sportskeeda.com##.follow-action
 thedirect.com##.follow-bar
 thehackernews.com##.follow-box
+brobible.com##.follow-buttons-block
 carscoops.com##.follow-carscoops-container
 windowsreport.com##.follow-more-news
 opendemocracy.net##.follow-od
@@ -3885,7 +3885,6 @@ srnnews.com##.followBox
 kentonline.co.uk##.followbox
 rbth.com##.follows-channel
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
-chinafile.com,derechadiario.com.ar##.footer-links
 avalanche.report,lawinen.report,valanghe.report##.footer-logo-share-follow
 trustedreviews.com##.footer-menu--icons
 meteoblue.com##.footer-options
@@ -4310,7 +4309,6 @@ autohaus.de##.social-list
 lt1.at##.social-listing
 unsertirol24.com##.social_ad_wrap
 kurier.at##.socialmedia-nav
-info-direkt.eu##.static.lg\:fixed.top-40.left-\[4vw\].bg-white.border-orange.border
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
 t3n.de##.tg-pockethinweis
@@ -4448,7 +4446,6 @@ betteranime.net##.anime-down-share
 brasil247.com##.article__notif
 ub.edu.br##.bdt-social-share
 diariodolitoral.com.br##.bloco-compartilhar
-cnnbrasil.com.br##.blogger__social__midia
 independente.com.br##.box-whatsapp
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
@@ -4468,7 +4465,6 @@ steamverde.net##.focus-social
 atoananet.com.br##.footer-redes-sociais
 brasil247.com##.footer__social
 folha.uol.com.br##.gallery-widget-carousel__info-share
-azscore.com.br##.google-news__block
 atoananet.com.br##.header-redes-sociais
 tviplayer.iol.pt##.icon-share
 diariodolitoral.com.br##.item-social-rodape
@@ -4518,7 +4514,6 @@ glas-javnosti.rs##.row.pt-4.pb-4
 sme.sk##.social-dialog-wrapper
 24ur.com##.flex.flex-row.items-center.justify-center.md\:justify-start.p-16.md\:p-0
 24ur.com##.w-full.md\:w-auto.h-full.flex.flex-row.items-center.justify-center.md\:justify-start.pt-16.md\:pt-0.border-t.md\:border-none.border-black\/10.dark\:border-white\/10
-derechadiario.com.ar###author_rrss
 emol.com###cuDetalle_cuBarraSocial_redesSociales
 binoticias.com###iconosRS
 bandaancha.eu###scBx
@@ -4570,7 +4565,6 @@ elnorte.com,mural.com.mx,reforma.com##.gr_contenedor_redes_del_footer
 dolarhoy.com##.header__redes
 tn.com.ar##.horizontal-share
 politico.mx##.icons_social_media
-milenio.com##.info-networks
 km77.com##.js-share-block
 clublibertaddigital.com,libertaddigital.com,libremercado.com##.links_social
 sprinforma.mx##.list-actions
@@ -4583,6 +4577,7 @@ depor.com##.nav__story-social-network
 noticiasargentinas.com##.news-follow
 tiempodesanjuan.com##.news-headline__share-buttons-wrapper
 debate.com.mx,rionegro.com.ar##.newsfull__share
+cronicabalear.es##.noticia-compartir
 pandrama.tv##.o_share
 ecologiaverde.com##.open-compartir
 vidaextra.com,xataka.com.mx##.post-comments-shortcut
@@ -4607,15 +4602,14 @@ alianzademediosmx.org##.socialmedia-share
 cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
 theobjective.com##.tno-share
+cronicabalear.es##.top-bar-rrss
 nationalgeographic.com.es##.top-share-article
 elmundo.es##.ue-c-article__share-tools
 abc.es##.voc-social-networks
 elpais.com##.w_rs
 larepublica.co##.whatsapp-btn
-derechadiario.com.ar##.whatsapp-cta-container
 oem.com.mx##.widget-footer-default_social__nk_MB
 oem.com.mx##.widget-social-default_share__tz2LV
-euskalnews.com##.wp-block-wptelegram-widget-join-channel
 autobild.es,businessinsider.es,computerhoy.com,hobbyconsolas.com,topgear.es##div[class^="share-bar_"]
 autobild.es,businessinsider.es,computerhoy.com,hobbyconsolas.com,topgear.es##div[class^="social-list_"]
 15min.lt##.share--sticky
