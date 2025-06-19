@@ -1,5 +1,5 @@
-! Checksum: 9vZR9hbCsntW/HfDOO7lDg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1750259543-3600.patch
+! Checksum: 0NzqJs/VQLBmu+g7peSBpQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1750300971-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.19
@@ -1597,6 +1597,7 @@ games.ch##.wog
 games.ch##.wog + ul
 mein-schoener-garten.de##.outbrain-wrapper-container
 mein-schoener-garten.de##.paragraph-wrapper--ParagraphGoogleDfp
+mein-schoener-garten.de##.paragraph-wrapper--ParagraphTeaser > div[class] > .teaser:has(> a[target="_blank"])
 wz.de##aside[data-park-portal-wrapper]
 wz.de##div[class]:has(> aside[data-park-portal-wrapper]:only-child)
 buffed.de##a[href*="/E-Commerce-Thema-"]
@@ -2864,6 +2865,7 @@ buffed.de,pcgameshardware.de,pcgameshardware.de#?#.articleTicker > .item.noImg:h
 op-online.de,kreiszeitung.de,wiesn.bayern,werra-rundschau.de,wasserburg24.de,wlz-online.de,volksfest-freising.de,soester-anzeiger.de,rosenheim24.de,oktoberfest.bayern,news.bayern,meine-anzeigenzeitung.de,mangfall24.de,lokalo24.de,leinetal24.de,innsalzach24.de,in-muenchen.de,hersfelder-zeitung.de,herbstfest-rosenheim.de,giessener-allgemeine.de,fehmarn24.de,brokser-heiratsmarkt.de,extratipp.com#?#.id-SiteMain > .id-g--oneCol:has(> div > div > div[data-id-advertdfpconf])
 sauerlandkurier.de,kurierverlag.de,kreisbote.de,ingame.de,hanauer.de,hallo-muenchen.de,dasgelbeblatt.de,costanachrichten.com,buzzfeed.de,az-online.de#?#.id-SiteMain > .id-g--oneCol:has(> div > div:only-child > div > div[data-id-advertdfpconf])
 chiemgau24.de#?#.id-SiteMain > .id-g--oneCol:has(> div > div > div > div[data-id-advertdfpconf])
+winfuture.de#?##news_content > b:contains(Großer Internet-Vergleichs-Rechner)
 motorsport-total.com#?#.info.col-xs-4 > .teaser_container > .block-height-250:has(.adsbygoogle)
 vorsprung-online.de#$?#.header-right-inner > .trending:contains(Anzeige) { visibility: hidden!important; }
 news.ch,wetter.ch#?#[id$="_Col_3_1"] div[style*="left;"][style*="12px;"]:has(> [style^="width"]>a.w-label)
@@ -3055,7 +3057,6 @@ rtl.de#@#.rtlde-medium-rectangle
 _Banner_Werbung_
 _bannerwerbung/
 _unten_ad.
-_werbe_layer.
 _werbebanner.
 _werbebanner/
 _werbung.php
@@ -3071,6 +3072,7 @@ _woz_banner_vote.
 ###WerbungUnten
 ###Werbung_Sky
 ###ad-qm-sidebar-oben
+###ad-rechts-sky
 ###ad_rechts
 ###adcontentoben
 ###adliste
@@ -3299,6 +3301,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||addefend.com^$third-party
 ||adklick.de^$third-party
 ||adklick.net^$third-party
+||ads4allweb.de^$third-party
 ||adspirit.net^$third-party
 ||adsplash.de^$third-party
 ||advolution.de^$third-party
@@ -3488,7 +3491,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||beobachter-online.de^*/banner/
 ||berglouter.com/images/banners/
 ||bluray-disc.de/images/banner/
-||boerse-social.com/media/Content/Partner/
 ||boerse.cx/img/panda_german.gif
 ||bolzano-bozen.it/images/banner/
 ||borncity.com/blog/wp-content/uploads/*/Amazon03b.jpg
@@ -3523,7 +3525,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||eintracht.com/fileadmin/Sponsoren/
 ||eisbaeren.de/assets/img/sponsorenbox_
 ||eisenbahn-kurier.de/images/banners/
-||eishockey-online.com/images/banners/
 ||erogeschichten.com/b/
 ||erogeschichten.com/mdhpic/
 ||erosclubs.ch/banners/
@@ -3558,6 +3559,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||freenet.de^*/mail/ads/
 ||freieporno.com^*/ssu.v2.js
 ||fruchtportal.de/banners/
+||fundresearch.de^*/partnercenter/
 ||funkbasis.de/_static/ban-
 ||fupa.net/static/js/fupa_ads-
 ||fussball.de^*/partner/
@@ -3618,6 +3620,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||kochbar.de/moltenbundle/
 ||kradblatt.de/wp-content/uploads/mediabanner/
 ||krone.at/talk-ads/
+||kulturmd.de/images/*_Banner_
 ||kunststoffweb.de/_g/_ads/
 ||lad.sumikai.com^
 ||ladies.de/sol
@@ -3931,6 +3934,7 @@ jungle.world###block-anzeige
 macgadget.de###block-anzeige2
 hoerzu.de###block-block-218
 fachzeitungen.de###block-block-32
+fachzeitungen.de###block-block-35
 fachzeitungen.de###block-block-5
 duden.de###block-dudende-d-970x250-1billboard
 duden.de###block-leaderboard2ndslot
@@ -4066,7 +4070,6 @@ pedelecforum.de###oc24-direkt
 autoexperience.de,flugzeugforum.de,gs-forum.eu,uhrforum.de,xbox-passion.de###oc24-div
 elektrikforen.de###oc24_container_top
 spox.com###oddsserve-csi-1
-yasni.de###offer
 planetradio.de###omsRectangleChannel
 onmeda.de###on-rectangle
 onmeda.de###on-sky
@@ -4081,6 +4084,8 @@ ladies.de###page-top-sol
 inside-digital.de###parallax
 moz.de,swp.de###parent-adbox-superbanner
 comback.ch,h-bw.de###partner
+efahrer.chip.de###partner-nav
+fundresearch.de###partnerCentersLogoBar
 pedelecforum.de###pedelecforum\.de_mpu_bot
 photovoltaikforum.com###pf_incontent_2
 extremnews.com###portlet-advertisement-right
@@ -4106,7 +4111,6 @@ rollertuningpage.de###rollertuningpage\.de_lb_1
 rollertuningpage.de###rollertuningpage\.de_sitebar_1
 rollertuningpage.de###rollertuningpage\.de_sitebar_2
 prisma.de###rp_rpd_bb
-fvnws.ch###rv_sponsors_slider
 myself.de###sb1Wrapper
 fitforfun.de###sc-outstream-wrapper
 finanzen100.de###section-partner
@@ -4543,7 +4547,6 @@ android-hilfe.de##.incontent-wrapper_big
 heise.de##.incontent3-cls-reduc
 bikemarkt.mtb-news.de##.incontent__container
 autoline.de,autoline24.at,autoline24.ch##.index-bns
-sparneuwagen.de##.infeedthingy
 lippe-news.de##.inline_wrapper
 blitzrechner.de##.inserter-5
 blitzrechner.de##.inserter[data-ai]
