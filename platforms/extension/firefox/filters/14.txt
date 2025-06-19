@@ -1,9 +1,9 @@
-! Checksum: 9StMqsQrVikXd+/vJuDwsA
-! Diff-Path: ../patches/14/14-s-1750324340-3600.patch
+! Checksum: Oe0Wwci592NxKBl9a+EQ6w
+! Diff-Path: ../patches/14/14-s-1750327907-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.33.82
-! TimeUpdated: 2025-06-19T09:08:30+00:00
+! Version: 2.2.33.83
+! TimeUpdated: 2025-06-19T10:07:56+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8653,7 +8653,7 @@ delta.com###gdpr-banner-blurred-background
 ||rabe-bike.de/uc/app/browser-ui/latest/loader.js
 starlingbank.com##div[class^="CookieModal-module--"]
 rifmelody.com,nationalgrid.co.uk,animecix.net,filmgezgini.com##cookie-notice
-mozemo.hr,cashify.eu,plurall.net,runna.com,vseti.app,identity.digital,import.io,frameright.io,ooux.com,sifugame.com,veed.io##div[fs-cc="banner"]
+app.gigsky.com,mozemo.hr,cashify.eu,plurall.net,runna.com,vseti.app,identity.digital,import.io,frameright.io,ooux.com,sifugame.com,veed.io##div[fs-cc="banner"]
 whitebit.com###__layout > div > main + div.ui-kit.is-dark
 uber.com##div[data-baseweb="toaster"]
 finishline.com###PrivacyPolicyBanner
@@ -17060,6 +17060,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/207823
+@@||cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js$domain=app.gigsky.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207737
 @@||nocibe.fr/public/CookieConsent.*.async.js$domain=nocibe.fr
 ! neotokyo.de - broken cart
@@ -22775,6 +22777,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+muvmag.com###afw-myModal
 thedarkblues.co.uk##.adblockerBox
 blackwidof.org#$##load-modal { display: none !important; }
 blackwidof.org#$#.modal-backdrop { display: none !important; }
@@ -25463,6 +25466,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+app.gigsky.com#%#//scriptlet('set-local-storage-item', 'hasViewedTour_homeScreenLoggedOut', '1')
 medium.com#%#//scriptlet('prevent-addEventListener', 'scroll', '[native code]')
 blog.platformatic.dev##.post-floating-bar.active
 windowslatest.com##.wl-floatbar
