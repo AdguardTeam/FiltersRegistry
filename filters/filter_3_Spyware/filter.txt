@@ -124,6 +124,9 @@ holtrenfrew.com#%#//scriptlet('set-constant', 'ometria', 'emptyObj')
 holtrenfrew.com#%#//scriptlet('set-constant', 'ometria.init', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170358
 foxnews.com#%#//scriptlet('set-local-storage-item', 'anon_fpid', '$remove$')
+! https://github.com/AdguardTeam/AdguardFilters/issues/169949
+! Fixes video player
+nbcsports.com#%#//scriptlet('prevent-element-src-loading', 'script', 'sb.scorecardresearch.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169625
 muratorplus.pl#%#//scriptlet('set-constant', 'GemiusPlayer', 'noopFunc')
 muratorplus.pl#%#//scriptlet('set-constant', 'GemiusPlayer.prototype.newProgram', 'noopFunc')
@@ -170770,6 +170773,7 @@ idle-girl.com###custom_html-74
 ||pdfcrowd.com/pls/api/event
 ||iptv-web.app/__/tracking.astro_astro_type_script_index_
 ||api.personaclick.com/push$xmlhttprequest
+||1001tracklists.com/ajax/add_count.php
 ||1password.co.jp/js/analytics.bundle.
 ||1password.com/gtag-
 ||1password.com/analytics.
@@ -178681,6 +178685,11 @@ abema.tv#%#//scriptlet('remove-node-text', 'script', 'NREUM')
 @@||js-agent.newrelic.com^$script,domain=abema.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169735
 @@||giraff.io^$domain=vs.lv
+! https://github.com/AdguardTeam/AdguardFilters/issues/169949
+! Fixes video player
+||sb.scorecardresearch.com/*/streamingtag_plugin_jwplayer.js$script,redirect=noopjs,domain=nbcsports.com
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+@@||sb.scorecardresearch.com/*/streamingtag_plugin_jwplayer.js$domain=nbcsports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169319
 @@||easyupload.io/cdn-cgi/zaraz/s.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169590

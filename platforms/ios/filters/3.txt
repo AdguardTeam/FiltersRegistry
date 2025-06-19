@@ -1,9 +1,9 @@
-! Checksum: nrmcJy+DR0UULtDfepkwHQ
-! Diff-Path: ../patches/3/3-s-1750324357-3600.patch
+! Checksum: AQF7HoYC3eLBd1n5ZW4i4A
+! Diff-Path: ../patches/3/3-s-1750331483-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.86.69
-! TimeUpdated: 2025-06-19T09:08:07+00:00
+! Version: 2.0.86.70
+! TimeUpdated: 2025-06-19T11:06:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -129,6 +129,9 @@ holtrenfrew.com#%#//scriptlet('set-constant', 'ometria', 'emptyObj')
 holtrenfrew.com#%#//scriptlet('set-constant', 'ometria.init', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170358
 foxnews.com#%#//scriptlet('set-local-storage-item', 'anon_fpid', '$remove$')
+! https://github.com/AdguardTeam/AdguardFilters/issues/169949
+! Fixes video player
+nbcsports.com#%#//scriptlet('prevent-element-src-loading', 'script', 'sb.scorecardresearch.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169625
 muratorplus.pl#%#//scriptlet('set-constant', 'GemiusPlayer', 'noopFunc')
 muratorplus.pl#%#//scriptlet('set-constant', 'GemiusPlayer.prototype.newProgram', 'noopFunc')
@@ -46520,6 +46523,7 @@ idle-girl.com###custom_html-74
 ||pdfcrowd.com/pls/api/event
 ||iptv-web.app/__/tracking.astro_astro_type_script_index_
 ||api.personaclick.com/push$xmlhttprequest
+||1001tracklists.com/ajax/add_count.php
 ||1password.co.jp/js/analytics.bundle.
 ||1password.com/gtag-
 ||1password.com/analytics.
@@ -53360,6 +53364,10 @@ abema.tv#%#//scriptlet('remove-node-text', 'script', 'NREUM')
 @@||js-agent.newrelic.com^$script,domain=abema.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169735
 @@||giraff.io^$domain=vs.lv
+! https://github.com/AdguardTeam/AdguardFilters/issues/169949
+! Fixes video player
+!+ PLATFORM(ios, ext_safari, ext_android_cb)
+@@||sb.scorecardresearch.com/*/streamingtag_plugin_jwplayer.js$domain=nbcsports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169319
 @@||easyupload.io/cdn-cgi/zaraz/s.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169590
