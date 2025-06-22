@@ -1,5 +1,5 @@
-! Checksum: 3PFrr92eOmrP+XMv4WLyCA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1750504227-3600.patch
+! Checksum: D9YL6z6U/BTZxaNuhdyX3A
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1750560489-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.22
@@ -434,7 +434,6 @@ caravaning.de#%#//scriptlet("set-constant", "adblockActive", "false")
 @@||imagesrv.adition.com/js/srp.js$domain=derstandard.at
 @@||adspirit.de^$domain=mathaeser.de
 @@||bravofly.de^$generichide
-@@||the-voice-of-germany.de^$generichide
 willhaben.at#@#div[id^="advert"]
 ||spiegel.de/xml/xml-*.json$replace=/"disable":\s"false"/"disable": "true"/,important
 @@||extrem-bodybuilding.de^$generichide
@@ -762,7 +761,6 @@ netzwelt.de##.ta-r
 leckerschmecker.me##.tag-anzeige
 wmn.de##.tag-sponsored
 sonyalphaforum.de##div[data-nbenhadv]
-sonyalphaforum.de###elPostFeed > form > article.cPost:has(> .ipsColumn > .ipsComment_content > .cPost_contentWrap > .ipsType_normal > p > a.ab-test-amazon)
 ||joyn.somquery.sqrt-*.de/v*/ad-pod/
 ||joyn.somquery.sqrt-*.de/v*/ad-pod/$script,xmlhttprequest,other,redirect=noopvast-3.0
 joyn.de#%#//scriptlet('prevent-fetch', '/joyn\.somquery\.sqrt-.*.\de\/v.\/ad-pod\//')
@@ -1005,7 +1003,6 @@ giga.de#%#//scriptlet('remove-class', 'show-teaserheld-header', 'body')
 delamar.de#%#//scriptlet('prevent-setTimeout', '#modal_livestream')
 krone.at#$#body .ad-container[data-nodeid] { display: block !important; }
 datenbanken-verstehen.de##div[class^="ad-block-"]:not(.ad-block-text)
-datenbanken-verstehen.de###ai_widget-46
 macwelt.de,pcwelt.de##.jwPlayer--floatingContainer
 auf1.tv#?#.w-full:has(> div.text-sm:contains(Bezahlte Anzeige))
 jungefreiheit.de##.elementor-shortcode > div > a[target="_blank"][onclick] > img
@@ -1067,6 +1064,7 @@ volksfreund.de#?#section:has(> .park-html:only-child > .weekli-widget)
 berliner-zeitung.de##div[data-component-type="ad-slot"] + div[data-component-type="ad-slot"] + div[data-component-type="section-separator"]
 sky.de#?#div[class^="site-component-vertical"]:has(> div[data-ad-format]:only-child)
 reviersport.de##.rs-ad-init
+tellows.at#?##singlecomments > li:not([id]):has( > .comment-body > div[id^="adngin-"])
 businessinsider.de##a[href^="https://www.businessinsider.de/sponsored"]
 bild.de##.article-text-link--ad
 berliner-kurier.de##div[data-testid^="ad-slot"] + div[data-testid^="separator"]
@@ -1187,7 +1185,6 @@ stuttgarter-nachrichten.de##div[data-b-title*="Superbanner"]
 homematic-forum.de###page-top-super
 focus.de###sidebar > div[id^="fwid"]
 mobile.de,focus.de##div[data-label="Anzeige"]
-ruhr24.de##div[id^="gptslot"]
 rp-online.de##div[id^="ir_rpd"]
 ||jenaer-nachrichten.de/images/banners/
 nw.de##.box-ad-middle
@@ -1734,6 +1731,7 @@ finanzen.net##div[id^="fin-ob-box-ar_"]
 bitblokes.de###google_ad_2_amazon
 ||stupidedia.org/skins/autodoc.gif
 kodi-tipps.de##.identitaet-box
+kodi-tipps.de##.entry-content > p > a[href="https://www.kodi-tipps.de/out/?id=cyberghost"]
 payback.de##div[data-ad-id]
 ||pagead2.googlesyndication.com$domain=promiflash.de,redirect=nooptext,important
 dubisthalle.de##.sidebar-content > .dbh-widget
@@ -2531,6 +2529,7 @@ _woz_banner_vote.
 ###bannerwerbung
 ###footerwerbung
 ###gwerbung
+###headerWerbung
 ###header_werbung
 ###nativendo-articlemiddle
 ###nativendo-articletop
@@ -3251,6 +3250,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 /^https?:\/\/[0-9a-z]{8,}\.com\/.*/$~media,~subdocument,third-party,domain=190.115.18.20|aniworld.to|bs.to|burningseries.nz|burningseries.se|burningseries.sx|burningseries.vc|kinoger.to|kinokiste.live|kinox.top|megakino.co|s.to|serien.cam|serienstream.to|streamcloud.movie|topstreamfilm.live
 /googleads.$domain=g.doubleclick.net|googlesyndication.com
 /pagead2.$domain=g.doubleclick.net|googlesyndication.com|imasdk.googleapis.com
+autobild.de##a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"]
 connextra.com##iframe[src^="https://ssl.connextra.com"]
 g.doubleclick.net###adunit
 |https:$domain=adfarm1.adition.com
@@ -4398,6 +4398,7 @@ wallstreet-online.de##a[onclick*="'tableAd'"]
 wallstreet-online.de##a[onclick*="tableAd"] + span
 shaz.ch##a[onclick^="__gaTracker('send', 'event', 'Ads'"]
 allround-pc.com,supermarktblog.com##a[rel*="sponsored"]
+anisearch.de,herz-fuer-tiere.de,schweizer-illustrierte.ch##a[rel="sponsored"]
 kfz-steuer.de##a[style="position:relative; float:left; width:698px; height:63px; padding-left:28px; padding-right:0px; padding-top:14px; border:1pt solid #DADADC; background:#FFFFFF display:inline;"]
 sportdeutschland.tv##app-top-banner
 ww3.cad.de##body > table[width="100%"][border="0"]:first-child
