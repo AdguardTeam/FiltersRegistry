@@ -1,5 +1,5 @@
-! Checksum: THiycXs9MPAf/huoCkyk/w
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1750560487-3600.patch
+! Checksum: HprJpeK6XMTYQmR3ZIvSSQ
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1750646886-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.0.5
@@ -465,6 +465,7 @@ ucoz.ru/informer/
 ###banner_head
 ###banner_title
 ###banner_top
+###banner_top2
 ###bannerlayer
 ###banners_bottom
 ###banners_left
@@ -1390,6 +1391,7 @@ ucoz.ru/informer/
 ||holm.ru^$third-party
 ||i.j2j.ru^
 ||iadvert.net^$third-party
+||idvd.su^$third-party
 ||images.stardock.com/store/
 ||img.labirint.ru/design/partner/banners_for_inst/$third-party
 ||imgg.dt00.net
@@ -1427,7 +1429,6 @@ ucoz.ru/informer/
 ||linkhelp.clients.google.com/tbproxy/lh/wm
 ||linkslot.ru^$third-party
 ||linkwithin.com^$third-party
-||linkwmr.ru^$third-party
 ||livesurf.ru^$third-party
 ||login.tracking101.com^
 ||loneday.com
@@ -2187,6 +2188,7 @@ game4you.top,monna2.top,apad2.top,games-pc.top,rustorka.com,rustorka.net,rustork
 @@/newad.js$~third-party,domain=game4you.top|games-pc.top|rustorka.com|rustorka.net|rustorkacom.lib|naylo.top|monna2.top|zannn.top|innal.top|apad2.top
 @@/jspopunder.js$~third-party,domain=game4you.top|games-pc.top|rustorka.com|rustorka.net|rustorkacom.lib|naylo.top|monna2.top|zannn.top|innal.top|apad2.top
 @@/pop_ad.js$~third-party,domain=game4you.top|games-pc.top|rustorka.com|rustorka.net|rustorkacom.lib|naylo.top|monna2.top|zannn.top|innal.top|apad2.top
+$cookie=opt_js,domain=game4you.top|games-pc.top|rustorka.com|rustorka.net|rustorkacom.lib|rustorka.top|naylo.top
 rustorka.com#%#//scriptlet('abort-on-stack-trace', 'document.createElement', 'ads_script')
 rustorka.com###debil
 rustorka.com#%#//scriptlet('prevent-setInterval', 'puk')
@@ -3668,7 +3670,6 @@ kino-teatr.ru##.page_content_block div[class="film_block"][style="background: no
 pravda.ru#?#.page > div.section:has(> div.middle > div.wide > div.special > div.staticFragment > div[id^="adfox_"])
 politonline.ru,pravda.ru##div[id^="div_sf_"]
 forum.antichat.club##.sam3Bannner2Uni
-aartyk.ru#?#.col > div.card-panel:has(> ins.adsbygoogle)
 petstory.ru,rtraveler.ru##div[class^="banner-"]
 rtraveler.ru##.traffic-networks
 uznayvse.ru##.iku_topadcategory
@@ -4148,7 +4149,6 @@ pickupforum.ru#?##ips_Posts > div.post_wrap:has(> div.post_body > div#slider_the
 meat-expert.ru#?#.ipsList_reset > li.ipsWidget:has(> div.banner-block)
 tourister.ru#?#.popularMaterialList > div.popularMaterialBlock:has(> div[id^="yandex_rtb"])
 briefly.ru#?#div[class*=" "][class*="_"]:has(> div[class*=" "][class*="_"]:contains(/реклам|Реклам/))
-the-satori.net#?#.code-block-label:contains(Реклама)
 htaccess.net.ru#?#noindex > div:has(> div[align="Right"]:contains(Реклам))
 novate.ru#?##left > div.bordered:has(> center > div[id^="yandex_rtb_"])
 gmt-max.net#?#div[class$="_col_title"]:contains(Рекомендуем)
@@ -4457,6 +4457,8 @@ v.calameo.com###ad-layout
 zakon.ru##.blogtbg
 profile.ru##.alm-btn-wrap
 newsru.co.il##.news-caption.links
+vibir.ru##.fpm_5_out
+vibir.ru##div[class^="fpm_5_modal"]
 holiday.by##.ya-banner
 holiday.by##.complementary
 ||iptv.online/_front/img/banner
@@ -6245,7 +6247,6 @@ sysadmins.me##noindex a[href^="https://customer.sipnet.ru/cabinet/register?"]
 pornomen.club,allbesta.cc,astromeridian.ru,imageban.ru,miped.ru,mnogabukaff.net,regionorel.ru,tivix.co,zserials.tv##noindex a[rel="nofollow"] > img
 kinobar.cc,mirknig.su##noindex center > a > img
 smotrisport.tv##section.mblock > div.leon_but_1
-newsland.com##span[class^="banner-place-"]
 sport.bigmir.net##span[data-bmm-title="sport MarketGidNews"]
 newstudio.tv##span[id^="pp_"] > a[target="_blank"] > var > img[alt]
 championat.com##span[title="Коэффициенты"]
@@ -6529,6 +6530,7 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||via-midgard.info/top/img.php
 ||video.penzainform.ru/v/adjax/*.mp4
 ||videochart.net/data$domain=free-news.su
+||videochart.net/vedro/*.mp4
 ||vk.com/ads_rotate.php
 ||voffka.com/js/pop*.js
 ||voffka.com/js/v.js
@@ -7060,7 +7062,6 @@ mail.rambler.ru##div[class^="Direct-root"]
 news.rambler.ru##div[style^="min-height: 600px;"] + div:has(> div:contains(Новости партнеров))
 news.rambler.ru##div[style^="min-height: 600px;"] + div:has(div.banner--native-partner_widget)
 news.rambler.ru##.adfox-billboard
-news.rambler.ru##.article__plista
 nova.rambler.ru##article[class^="DirectNew__item--"]
 nova.rambler.ru##article[class^="Direct__item--"]
 rambler.ru##div[class*="xmr"][style^="min-height:"]
@@ -7409,6 +7410,7 @@ tyczyn.pl#@##top_banner
 webceo.com#@#.affiliate
 vpngame.ru#@#.banner-top
 booking-feodosia.com#@#.node-ad
+@@||fishki.net/informer*hot^$domain=fishki.net
 videoconverterfactory.com#@#.bannerin
 britishairways.com#@##banner_2
 auto.am#@#.ad-title

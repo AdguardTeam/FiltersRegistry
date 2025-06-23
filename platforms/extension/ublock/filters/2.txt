@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qH4HA37uWTCpHPJA6B1nIQ
-! Diff-Path: ../patches/2/2-s-1750642836-3600.patch
+! Checksum: oI1LpkIuo8KZajTDFersJg
+! Diff-Path: ../patches/2/2-s-1750646877-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.91.10
-! TimeUpdated: 2025-06-23T01:36:00+00:00
+! Version: 2.3.91.11
+! TimeUpdated: 2025-06-23T02:43:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18927,6 +18927,15 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/207962
+panuvideo.com##+js(no-setTimeout-if, .clientHeight)
+panuvideo.com#$#body #myTestAd { height: 1px !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/207993
+/wp-content/plugins/lnw-ad-blocker-detector/*$script
+! https://github.com/AdguardTeam/AdguardFilters/issues/208036
+@@||friv.com/z/assets/scripts/$domain=friv.com
+friv.com##+js(addEventListener-defuser, DOMContentLoaded, determineVisibility)
+friv.com##+js(no-setTimeout-if, determineVisibility)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207883
 111.90.150.10##+js(addEventListener-defuser, load, detectAdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207726
@@ -86831,6 +86840,7 @@ browsershots.org#@#.advert_area
 ||17180d187e.com^
 ||171c856581.com^
 ||173726e958.com^
+||17c2791ec2.com^
 ||17co2k5a.de^
 ||17do048qm.de^
 ||181m2fscr.de^
@@ -87476,6 +87486,7 @@ browsershots.org#@#.advert_area
 ||97e7f92376.com^
 ||9862271b2d.com^
 ||9891a36e37.com^
+||98cbb83e14.com^
 ||990828ab3d.com^
 ||995be54914.com^
 ||9996777888.com^
@@ -101327,6 +101338,7 @@ browsershots.org#@#.advert_area
 ||kronosoolites.top^
 ||krxyfefbtwc.com^
 ||krzovyae.work^
+||ksdhoantjacf.com^
 ||ksehinkitw.hair^
 ||ksgycaobmweja.com^
 ||ksiabdgtqzbsq.top^
@@ -109866,6 +109878,7 @@ browsershots.org#@#.advert_area
 ||shvsrrpkgjcuk.life^
 ||shwfxrbsrifhx.online^
 ||shydastidu.com^
+||siafudecayer.shop^
 ||sialsizably.shop^
 ||sibajwpmux.com^
 ||siberiabecrush.com^
@@ -112354,6 +112367,7 @@ browsershots.org#@#.advert_area
 ||ttrk.io^
 ||tttcraukuyqff.one^
 ||ttuyudkg.com^
+||ttwaqcespxmrrhc.com^
 ||ttwmed.com^
 ||ttzmedia.com^
 ||tuaos.xyz^
@@ -115015,6 +115029,7 @@ browsershots.org#@#.advert_area
 ||ymehnthakutyfor.com^
 ||ymqlrkznenfcd.world^
 ||ymrxocxihgf.com^
+||ymvmsuqjukrrv.online^
 ||ynfwkifwmkqyr.store^
 ||ynklendr.online^
 ||ynpeahcvyvrbt.website^
@@ -115336,6 +115351,7 @@ browsershots.org#@#.advert_area
 ||zlinkd.com^
 ||zlinkm.com^
 ||zlinkp.com^
+||zlkuarhdhcuej.site^
 ||zltsqxio.com^
 ||zlviiaom.space^
 ||zlx.com.br^
