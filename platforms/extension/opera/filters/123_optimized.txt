@@ -1,9 +1,9 @@
-! Checksum: ineGS6XK0VjfUwf2ec8PdA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1750639942-14400.patch
+! Checksum: g22c7YKfNAZ4kXU13nFxAg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1750654028-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.43.43
-! TimeUpdated: 2025-06-23T00:47:50+00:00
+! Version: 2.1.43.44
+! TimeUpdated: 2025-06-23T04:42:39+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -56,7 +56,6 @@
 /needsharebutton.min.css
 /pandalocker.$script
 /pin_it_button.png
-/pinit-button.png
 /pinterest-footer-icon.svg
 /pinterest-for-woocommerce-save-button.min.js
 /pinterest-for-woocommerce-tracking.min.js
@@ -177,6 +176,7 @@ _social_footer_
 ###block-socialmenu
 ###block-socialsharingblock
 ###blog-follow-widget
+###blog-social
 ###bottom-social
 ###btn-share-email
 ###btn-share-fb
@@ -249,6 +249,7 @@ _social_footer_
 ###fcbk
 ###fdbk_tab
 ###fixed-share-btn
+###float_fb_plugin
 ###floatingSocialShare
 ###follow-box
 ###follow-buttons
@@ -303,7 +304,6 @@ _social_footer_
 ###header-social
 ###header-social-icons
 ###header-social-links
-###header-social-media
 ###header-socials
 ###header-youtube-social-link
 ###headerSocial
@@ -311,7 +311,6 @@ _social_footer_
 ###iNavSocial
 ###iconSocialFacebook
 ###iconSocialInstagram
-###iconSocialTwitter
 ###iconSocialYoutube
 ###index-social
 ###instagram-link
@@ -721,7 +720,6 @@ _social_footer_
 ##.Hero-Share-SocialLink
 ##.LineShareButton
 ##.ListSocial
-##.ModuleSocialIcons
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
 ##.NavigationSharingFooter
 ##.NavigationSharingHeader
@@ -1157,8 +1155,6 @@ _social_footer_
 ##.eg-footer-icon-vk
 ##.eg-footer-icon-youtube
 ##.ekit_social_media
-##.el-icon-facebook
-##.el-icon-twitter
 ##.elem-info__share
 ##.elementor-social-icon
 ##.elementor-social-icons-wrapper
@@ -1371,6 +1367,7 @@ _social_footer_
 ##.footer-bottom__social-links
 ##.footer-col-social
 ##.footer-connect
+##.footer-connect-links
 ##.footer-contact-social
 ##.footer-content-social
 ##.footer-facebook
@@ -1529,6 +1526,7 @@ _social_footer_
 ##.has-button-share
 ##.hatena-bookmark-button
 ##.hatena-btn-icon
+##.hd-social-icons
 ##.hdr-social
 ##.head-fb
 ##.head-post-share
@@ -2167,7 +2165,6 @@ _social_footer_
 ##.scShareText
 ##.scSocialIconsWidget
 ##.scriptlesssocialsharing
-##.sd-share
 ##.sd-sharing
 ##.sd-social
 ##.sd-social-icon-text
@@ -2480,6 +2477,7 @@ _social_footer_
 ##.share_btns
 ##.share_bubble
 ##.share_button
+##.share_button_container
 ##.share_buttons
 ##.share_buttons_container
 ##.share_center
@@ -2496,7 +2494,6 @@ _social_footer_
 ##.share_icon
 ##.share_icons
 ##.share_icons_container
-##.share_items
 ##.share_line
 ##.share_link
 ##.share_linkedin
@@ -3130,6 +3127,7 @@ _social_footer_
 ##.socialmedia-article
 ##.socialmedia-buttons
 ##.socialmedia-container
+##.socialmedia-menu
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
@@ -3430,7 +3428,6 @@ _social_footer_
 ##.widget_dpsp_social_media_follow
 ##.widget_easy_facebook_page_plugin
 ##.widget_epcl_social
-##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook-like-box
 ##.widget_facebook_likebox
 ##.widget_follow_button_widget
@@ -3995,7 +3992,6 @@ firstpost.com##.rhs-yt-ch-wrap
 crealitycloud.com##.right-share-box
 reviewjournal.com##.rj-story-social
 sordum.org##.sbar_social_div
-pornbox.com##.scene-data__prop
 oracle.com##.scl-icons
 kyivpost.com##.section-soc-icons
 sleepfoundation.org##.sh_space.share
@@ -4333,12 +4329,7 @@ gameblog.fr##.social-button:not(.comment-button):not(.heart-button)
 phonandroid.com##.social-networks
 francetvinfo.fr##.social-zone__wrapper
 ||lequipe.fr/_nuxt/Share.
-tportal.hr##.footer__social_media
-gloria.hr,jutarnji.hr##.item__social-jl
-jutarnji.hr##.item__wrap-social
 jutarnji.hr##.item_social_share
-telegram.hr##.social-circle-buttons
-tportal.hr##.t-share
 storm.mg###article_sns_inner
 ettoday.net###et_sticky_pc
 ettoday.net##.et_social_2
@@ -4436,7 +4427,6 @@ brasil247.com##.article__notif
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
-apoia.se##.campaign-metrics-card__share
 atribuna.com.br,ebc.com.br,engeplus.com.br,forbes.com.br##.compartilhamento
 estudokids.com.br,radiorock.com.br,uai.com.br##.compartilhe
 jovempan.com.br##.cta-model
@@ -4527,7 +4517,6 @@ adnradio.cl,cadenaser.com##.c-sn
 elplaneta.com##.c-social-icons
 adnradio.cl,cadenaser.com,caracol.com.co,los40.com,wradio.com.co,wradio.com.mx##.cnt-interaccion
 adslzone.net##.comments-social-share
-ecologiaverde.com,el9nou.cat,elsaltodiario.com,infocatolica.com,lanacion.com.ar,laverdad.com,psicologia-online.com,qmusica.tv,revistafamilia.ec##.compartir
 wapa.pe##.container_shared--internal
 elcolombiano.com##.contenedor-google-noticias
 eldiario.es,eldiarioar.com##.edi-social-buttons
@@ -4550,7 +4539,6 @@ noticiasargentinas.com##.news-follow
 debate.com.mx,rionegro.com.ar##.newsfull__share
 cronicabalear.es##.noticia-compartir
 pandrama.tv##.o_share
-ecologiaverde.com##.open-compartir
 vidaextra.com,xataka.com.mx##.post-comments-shortcut
 eldesmarque.com##.redesSociales
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
