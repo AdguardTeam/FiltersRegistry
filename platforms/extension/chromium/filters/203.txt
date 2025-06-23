@@ -1,15 +1,15 @@
-! Checksum: 6lr+YcCcVHBq/NWV7B3xOQ
-! Diff-Path: ../patches/203/203-s-1750121524-14400.patch
+! Checksum: Czxl0abqipuNzaPxfg8Qzw
+! Diff-Path: ../patches/203/203-s-1750682992-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.7
-! TimeUpdated: 2025-06-17T00:47:42+00:00
+! Version: 2.0.4.8
+! TimeUpdated: 2025-06-23T12:45:08+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: N5ha6GOWY8RogVi2bL7CdQ
-! OriginalVersion: 202506160907
+! Checksum: jol3Q3Erguq0ky0MfIey4g
+! OriginalVersion: 202506230934
 ! Title: Hufilter for AdGuard
-! Last modified: 16 Jun 2025 09:07 UTC
+! Last modified: 23 Jun 2025 09:34 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -874,7 +874,7 @@ offline.hu##.ads
 olcsobbat.hu##[class*="Advert"]
 olcsobbat.hu##[id*="hirdetes"]
 olcsobbat.hu###datasheetNavHelp
-online-filmek.ac,online-filmek.me###azidodpazarlod, #azidodpazarlod2
+online-filmek.ac,online-filmek.me##[id^="azidodpazarlod"]
 online-filmek.ac,online-filmek.me##.ad_mrg
 online-filmek.ac,online-filmek.me##.details-main-panel + span
 onlinecegjegyzek.hu##[class*="hirdetes"]
@@ -1573,6 +1573,7 @@ bpiautosok.hu###onesignal-slidedown-container
 bpiautosok.hu##.extpp-container
 budapestikozmuvek.hu###banner
 budapestpark.hu###cooker_container
+budapest.hu###cc--main
 calculat.org##.cookies
 cartourmagazin.hu###cadre_alert_cookies
 cartourmagazin.hu###pa-push-notification-subscription
@@ -2103,10 +2104,9 @@ pcworld.hu#%#//scriptlet('remove-class', 'have-ad', 'body')
 ! https://github.com/hufilter/hufilter/issues/15
 port.hu#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'window.ado.blocked')
 ! https://github.com/uBlockOrigin/uAssets/issues/25482
-online-filmek.ac#%#//scriptlet('prevent-fetch', 'api')
-online-filmek.ac#%#//scriptlet('prevent-fetch', 'ads')
 ! https://github.com/uBlockOrigin/uAssets/issues/28850
-online-filmek.ac#%#//scriptlet('prevent-fetch', 'mode:cors')
+! https://github.com/uBlockOrigin/uAssets/issues/28850#issuecomment-2995469159
+online-filmek.ac#%#//scriptlet('prevent-fetch', '.js')
 ! https://github.com/uBlockOrigin/uAssets/issues/27256#issuecomment-2670818969
 rubyvidhub.com#%#//scriptlet('remove-node-text', 'script', 'undefined')
 karpathir.com##[class^="k"][class*="-container"][class*="-2"][class$="-hide"]
