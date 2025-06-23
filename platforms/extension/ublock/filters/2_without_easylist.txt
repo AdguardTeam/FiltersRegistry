@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +xys220tBsaNMOIVs0sjTQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1750677075-3600.patch
+! Checksum: G5krePXfHwfpusYD9IB1EQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1750680925-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.91.19
-! TimeUpdated: 2025-06-23T11:06:44+00:00
+! Version: 2.3.91.20
+! TimeUpdated: 2025-06-23T12:10:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18927,6 +18927,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208014
+nontonx.com#$#body .adsbygoogle.ad-unit:not(#style_important) { display: block !important; }
+nontonx.com##+js(no-fetch-if, /cdn-cgi/rum?adsbygoogle&_=)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207608
 @@||seelen.io/jquery.ad.js$domain=seelen.io
 seelen.io##+js(no-fetch-if, pagead2.googlesyndication.com/pagead/js/adsbygoogle.js)
@@ -23741,9 +23744,8 @@ pipeflare.io#@#div[id^="amzn-assoc-ad"]
 @@||1bit.space/default/public/assets/*.js$~third-party
 @@||1bitspace.com/default/public/assets/*.js$~third-party
 1bit.space##+js(set-constant, adblock, false)
-! https://github.com/AdguardTeam/AdguardFilters/issues/68635
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=livemint.com,important
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=livemint.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/207949
+livemint.com##div[class^="adBlockerPopup_"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68616
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication.com/adsbygoogle.js,domain=mr9soft.com,important
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mr9soft.com
@@ -27026,8 +27028,6 @@ spaste.com##+js(set-constant, adBlockDetected, false)
 ||connect.cointent.com^$domain=allaboutjazz.com
 ! https://forum.adguard.com/index.php?threads/13801/
 @@||sharepirate.com^$generichide
-! https://forum.adguard.com/index.php?threads/13775/
-@@||livemint.com/_js/*ads
 ! https://forum.adguard.com/index.php?threads/13754/
 @@||multiup.org/pop.js
 @@||myadcash.com/video_landing/js/jquery.inview.min.js$domain=multiup.org
@@ -45089,7 +45089,7 @@ thetranny.com##ul.primary > li:has(> a[href*="tsyndicate.com"])
 ||wholevideos.com/js/vast-im.js
 ||wholevideos.com/img.php
 shemale.movie##.player-section__ad-b
-atworkdaily.com##.ad-backing
+athomedaily.com,atworkdaily.com##.ad-backing
 shemalesin.com##.pignu:has(span.is-av)
 24xxx.porn###under-player-promo
 ||bemyhole.cam^$domain=bemyhole.com
