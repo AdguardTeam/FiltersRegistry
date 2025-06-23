@@ -1,9 +1,9 @@
-! Checksum: PxGqWd9C+d/4KY+Lt/tXSg
-! Diff-Path: ../patches/2/2-s-1750662745-3600.patch
+! Checksum: YziKuP+sUVk/wk1vuBdVqw
+! Diff-Path: ../patches/2/2-s-1750666430-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.91.15
-! TimeUpdated: 2025-06-23T07:08:01+00:00
+! Version: 2.3.91.16
+! TimeUpdated: 2025-06-23T08:09:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21627,12 +21627,14 @@ lifesurance.info#%#//scriptlet('set-constant', 'showada', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157449
 emulatorgames.onl###cg > #button
 emulatorgames.onl#%#//scriptlet('set-constant', 'aiptag.adplayer', 'emptyObj')
+! https://github.com/AdguardTeam/AdguardFilters/issues/207937
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157392
+! "southpark.de" in the rule below is required for MV3 extension
+@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=southpark.*|southparkstudios.*|southpark.de
 ! TODO: use redirect resource when it will be added - https://github.com/AdguardTeam/Scriptlets/issues/401
 southpark.*,southparkstudios.*#%#(()=>{const e=new Map,t=function(){},o=t;o.prototype.dispose=t,o.prototype.setNetwork=t,o.prototype.resize=t,o.prototype.setServer=t,o.prototype.setLogLevel=t,o.prototype.newContext=function(){return this},o.prototype.setParameter=t,o.prototype.addEventListener=function(t,o){t&&(console.debug(`Type: ${t}, callback: ${o}`),e.set(t,o))},o.prototype.removeEventListener=t,o.prototype.setProfile=t,o.prototype.setCapability=t,o.prototype.setVideoAsset=t,o.prototype.setSiteSection=t,o.prototype.addKeyValue=t,o.prototype.addTemporalSlot=t,o.prototype.registerCustomPlayer=t,o.prototype.setVideoDisplaySize=t,o.prototype.setContentVideoElement=t,o.prototype.registerVideoDisplayBase=t,o.prototype.submitRequest=function(){const t={type:tv.freewheel.SDK.EVENT_SLOT_ENDED},o=e.get("EVENT_SLOT_ENDED");o&&setTimeout((()=>{try{o(t)}catch(e){console.error(e)}}),1)},window.tv={freewheel:{SDK:{Ad:t,AdManager:o,AdListener:t,_instanceQueue:{},setLogLevel:t,EVENT_SLOT_ENDED:"EVENT_SLOT_ENDED"}}}})();
 southpark.*,southparkstudios.*#%#//scriptlet('prevent-fetch', 'imasdk.googleapis.com')
 southpark.*,southparkstudios.*#%#//scriptlet('google-ima3')
-@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=southpark.*|southparkstudios.*
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
 @@||mssl.fwmrm.net/libs/adm/*/AdManager.js$domain=southpark.*|southparkstudios.*
 @@||imasdk.googleapis.com/pal/sdkloader/pal.js$domain=southpark.*|southparkstudios.*
@@ -46970,6 +46972,8 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 ! NOTE: Specific rules
 !
 !
+erothots1.com##.magic-sites > a:not([href="https://t.me/+A8WVFYmWOONjYTY0"])
+erothots1.com##a[href="https://simpshub.com/"]
 zeperfs.com##iframe[src^="iframe-tm.php?tag=28&page="]
 zeperfs.com##iframe[src^="iframe-tm.php?tag=16&page="]
 wionews.com##div[class^="ads_adsBlock_"]
@@ -66031,6 +66035,18 @@ artima.com,turbobit.net###topbanner
 turbobit.net##.download-top-aplayer
 turbobit.net##body > a#body-link
 turbobit.net##img[width="600"][height="80"]
+! torbobit
+||app.torbobit.net/api/ads/
+/custom_code/*.js$domain=torbobit.net
+torbobit.net##a[id^="__bgd_link"]
+torbobit.net##div[id^="wpdl_"] > a > img
+torbobit.net##a[href*="/weboffer/"] > img
+torbobit.net,trubobit.com###window-body > div.top-text
+torbobit.net,trubobit.com##a[href="/ybrowser/download"]
+torbobit.net,trubobit.com###formula
+torbobit.net,trubobit.com###formula + p
+torbobit.net,trubobit.com##a[href="/ybrowser/download"] + p
+/files/news/image/offer$domain=torbobit.net|trubobit.com
 !
 ! twitch.tv - streamer's ads
 twitch.tv##a[href^="https://ggbetpromo.com/"]
@@ -67271,6 +67287,9 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208059
+! Website is broken when blocked scripts are removed from the page,
+! so as a workaround, "redirect-rule" is used.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207977
 @@||rmbooru.org/data/image/$domain=rmbooru.org
 ! https://tokuzl.net/kamen-rider-geats-revice-movie-battle-royale.html
@@ -107545,6 +107564,7 @@ browsershots.org#@#.advert_area
 ||inpage-push.com^
 ||inpage-push.net^
 ||inpagepush.com^
+||inpushcarreta.top^
 ||inputwriter.com^
 ||inquiredcriticalprosecution.com^
 ||inquiredw.com^
@@ -108756,6 +108776,7 @@ browsershots.org#@#.advert_area
 ||king3rsc7ol9e3ge.com^
 ||kingads.mobi^
 ||kingbole.com^
+||kingdomecorch.top^
 ||kingfainted.com^
 ||kingrecommendation.com^
 ||kingtrck1.com^
@@ -110891,6 +110912,7 @@ browsershots.org#@#.advert_area
 ||mixpo.com^
 ||miyubhvqxopdx.store^
 ||mizytadpwfswa.world^
+||mjalrwpxdqcqpg.com^
 ||mjfcv.club^
 ||mjibyihlwjsww.com^
 ||mjmirkbsaf.com^
@@ -111448,6 +111470,7 @@ browsershots.org#@#.advert_area
 ||mzidpylu.com^
 ||mziso.xyz^
 ||mzol7lbm.com^
+||mzqzelmmcqlyp.store^
 ||mzwdiyfp.com^
 ||n0299.com^
 ||n0355.com^
@@ -112314,6 +112337,7 @@ browsershots.org#@#.advert_area
 ||obeyedortostr.cc^
 ||obeyroman.com^
 ||obeysatman.com^
+||obfkfdxpymlxr.website^
 ||obflgjaytofk.com^
 ||objective-wright-961fed.netlify.com^
 ||objectlesslatterdissolved.com^
@@ -115643,6 +115667,7 @@ browsershots.org#@#.advert_area
 ||rbmigxiog.com^
 ||rbnt.org^
 ||rboyqkyojrelk.top^
+||rboyqkyojrjbv.top^
 ||rboyqkyrwrvkq.top^
 ||rbp-gen1.site^
 ||rbqcg6g.de^
@@ -118204,6 +118229,7 @@ browsershots.org#@#.advert_area
 ||spymhuab.com^
 ||sqbjrevvtnqlz.space^
 ||sqdjorykqfqoc.icu^
+||sqdtdxefkjsgn.space^
 ||sqlick.com^
 ||sqllwkhisqxdhk.com^
 ||sqmwvjiqhvh.com^

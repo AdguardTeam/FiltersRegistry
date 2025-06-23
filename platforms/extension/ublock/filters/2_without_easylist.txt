@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0I3GU2DgoZsZujg4g4BgyQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1750662749-3600.patch
+! Checksum: CV2Kr2SmOrtyDYQgq9jnPg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1750666434-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.91.15
-! TimeUpdated: 2025-06-23T07:08:01+00:00
+! Version: 2.3.91.16
+! TimeUpdated: 2025-06-23T08:09:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20845,11 +20845,13 @@ lifesurance.info##+js(set-constant, showada, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157449
 emulatorgames.onl###cg > #button
 emulatorgames.onl##+js(set-constant, aiptag.adplayer, {})
+! https://github.com/AdguardTeam/AdguardFilters/issues/207937
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157392
+! "southpark.de" in the rule below is required for MV3 extension
+@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=southpark.*|southparkstudios.*|southpark.de
 ! TODO: use redirect resource when it will be added - https://github.com/AdguardTeam/Scriptlets/issues/401
 southpark.*,southparkstudios.*##+js(no-fetch-if, imasdk.googleapis.com)
 southpark.*,southparkstudios.*##+js(google-ima)
-@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=southpark.*|southparkstudios.*
 ||imasdk.googleapis.com/pal/sdkloader/pal.js$script,redirect=noop.js,domain=southpark.*|southparkstudios.*
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=southpark.*|southparkstudios.*
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_opera)
@@ -45024,6 +45026,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+erothots1.com##.magic-sites > a:not([href="https://t.me/+A8WVFYmWOONjYTY0"])
+erothots1.com##a[href="https://simpshub.com/"]
 zeperfs.com##iframe[src^="iframe-tm.php?tag=28&page="]
 zeperfs.com##iframe[src^="iframe-tm.php?tag=16&page="]
 wionews.com##div[class^="ads_adsBlock_"]
@@ -64138,6 +64142,18 @@ artima.com,turbobit.net###topbanner
 turbobit.net##.download-top-aplayer
 turbobit.net##body > a#body-link
 turbobit.net##img[width="600"][height="80"]
+! torbobit
+||app.torbobit.net/api/ads/
+/custom_code/*.js$domain=torbobit.net
+torbobit.net##a[id^="__bgd_link"]
+torbobit.net##div[id^="wpdl_"] > a > img
+torbobit.net##a[href*="/weboffer/"] > img
+torbobit.net,trubobit.com###window-body > div.top-text
+torbobit.net,trubobit.com##a[href="/ybrowser/download"]
+torbobit.net,trubobit.com###formula
+torbobit.net,trubobit.com###formula + p
+torbobit.net,trubobit.com##a[href="/ybrowser/download"] + p
+/files/news/image/offer$domain=torbobit.net|trubobit.com
 !
 ! twitch.tv - streamer's ads
 twitch.tv##a[href^="https://ggbetpromo.com/"]
@@ -65355,6 +65371,9 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208059
+! Website is broken when blocked scripts are removed from the page,
+! so as a workaround, "redirect-rule" is used.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207977
 @@||rmbooru.org/data/image/$domain=rmbooru.org
 ! https://tokuzl.net/kamen-rider-geats-revice-movie-battle-royale.html
