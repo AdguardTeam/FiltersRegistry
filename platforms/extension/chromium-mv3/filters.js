@@ -905,8 +905,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.72.8",
-			"timeUpdated": "2025-06-24T12:45:03+0000",
+			"version": "2.1.72.9",
+			"timeUpdated": "2025-06-24T16:39:44+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -980,8 +980,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.72.7",
-			"timeUpdated": "2025-06-24T12:45:06+0000",
+			"version": "2.1.72.8",
+			"timeUpdated": "2025-06-24T16:39:44+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1005,8 +1005,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.24.93",
-			"timeUpdated": "2025-06-24T04:40:41+0000",
+			"version": "2.0.24.94",
+			"timeUpdated": "2025-06-24T16:39:49+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1053,8 +1053,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/hufilter/hufilter@gh-pages/hufilter-adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.4.9",
-			"timeUpdated": "2025-06-24T00:47:45+0000",
+			"version": "2.0.4.10",
+			"timeUpdated": "2025-06-24T16:39:57+0000",
 			"deprecated": false,
 			"languages": [
 				"hu"
@@ -1217,8 +1217,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.21.80",
-			"timeUpdated": "2025-06-19T16:39:38+0000",
+			"version": "2.0.21.81",
+			"timeUpdated": "2025-06-24T16:40:09+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.65.39",
-			"timeUpdated": "2025-06-24T12:46:10+0000",
+			"version": "2.0.65.40",
+			"timeUpdated": "2025-06-24T16:40:32+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
