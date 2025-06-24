@@ -379,8 +379,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.49.5",
-			"timeUpdated": "2025-06-23T20:36:19+0000",
+			"version": "2.1.49.6",
+			"timeUpdated": "2025-06-24T00:47:25+0000",
 			"languages": []
 		},
 		{
@@ -426,8 +426,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.52.44",
-			"timeUpdated": "2025-06-23T04:42:26+0000",
+			"version": "2.1.52.45",
+			"timeUpdated": "2025-06-24T00:47:27+0000",
 			"languages": []
 		},
 		{
@@ -458,8 +458,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.72.2",
-			"timeUpdated": "2025-06-23T20:36:23+0000",
+			"version": "2.1.72.3",
+			"timeUpdated": "2025-06-24T00:47:28+0000",
 			"languages": []
 		},
 		{
@@ -502,8 +502,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.72.4",
-			"timeUpdated": "2025-06-23T20:36:24+0000",
+			"version": "2.1.72.5",
+			"timeUpdated": "2025-06-24T00:47:31+0000",
 			"languages": [
 				"it"
 			]
@@ -547,8 +547,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.72.3",
-			"timeUpdated": "2025-06-23T20:36:25+0000",
+			"version": "2.1.72.4",
+			"timeUpdated": "2025-06-24T00:47:32+0000",
 			"languages": [
 				"ar"
 			]
@@ -565,8 +565,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.72.2",
-			"timeUpdated": "2025-06-23T20:36:26+0000",
+			"version": "2.1.72.3",
+			"timeUpdated": "2025-06-24T00:47:34+0000",
 			"languages": []
 		},
 		{
@@ -645,8 +645,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.46.14",
-			"timeUpdated": "2025-06-23T20:36:30+0000",
+			"version": "2.1.46.15",
+			"timeUpdated": "2025-06-24T00:47:37+0000",
 			"languages": []
 		},
 		{
@@ -708,8 +708,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.49.33",
-			"timeUpdated": "2025-06-23T20:36:37+0000",
+			"version": "2.1.49.34",
+			"timeUpdated": "2025-06-24T00:47:43+0000",
 			"languages": []
 		},
 		{
@@ -724,8 +724,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.43.48",
-			"timeUpdated": "2025-06-23T20:36:38+0000",
+			"version": "2.1.43.49",
+			"timeUpdated": "2025-06-24T00:47:44+0000",
 			"languages": []
 		},
 		{
@@ -740,8 +740,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.43.77",
-			"timeUpdated": "2025-06-23T20:36:38+0000",
+			"version": "2.0.43.78",
+			"timeUpdated": "2025-06-24T00:47:45+0000",
 			"languages": []
 		},
 		{
@@ -800,8 +800,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/hufilter/hufilter@gh-pages/hufilter-adguard.txt",
-			"version": "2.0.4.8",
-			"timeUpdated": "2025-06-23T12:45:08+0000",
+			"version": "2.0.4.9",
+			"timeUpdated": "2025-06-24T00:47:45+0000",
 			"languages": [
 				"hu"
 			]
@@ -866,8 +866,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.72.3",
-			"timeUpdated": "2025-06-23T20:36:45+0000",
+			"version": "2.1.72.4",
+			"timeUpdated": "2025-06-24T00:47:47+0000",
 			"languages": []
 		},
 		{
@@ -940,8 +940,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.71.28",
-			"timeUpdated": "2025-06-23T20:36:47+0000",
+			"version": "2.1.71.29",
+			"timeUpdated": "2025-06-24T00:47:49+0000",
 			"languages": []
 		},
 		{
@@ -1138,8 +1138,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.12.68",
-			"timeUpdated": "2025-06-23T20:36:55+0000",
+			"version": "2.0.12.69",
+			"timeUpdated": "2025-06-24T00:47:55+0000",
 			"languages": []
 		},
 		{
@@ -1230,8 +1230,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.72.4",
-			"timeUpdated": "2025-06-23T20:36:57+0000",
+			"version": "2.1.72.5",
+			"timeUpdated": "2025-06-24T00:47:56+0000",
 			"languages": []
 		},
 		{
@@ -1357,8 +1357,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.9.16",
-			"timeUpdated": "2025-06-23T20:37:08+0000",
+			"version": "2.0.9.17",
+			"timeUpdated": "2025-06-24T00:48:04+0000",
 			"languages": []
 		},
 		{
@@ -1389,8 +1389,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.55.5",
-			"timeUpdated": "2025-06-23T20:37:11+0000",
+			"version": "2.1.55.6",
+			"timeUpdated": "2025-06-24T00:48:06+0000",
 			"languages": []
 		},
 		{
@@ -1465,8 +1465,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.68.10",
-			"timeUpdated": "2025-06-23T20:37:13+0000",
+			"version": "2.1.68.11",
+			"timeUpdated": "2025-06-24T00:48:08+0000",
 			"languages": []
 		},
 		{
@@ -1563,8 +1563,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.65.35",
-			"timeUpdated": "2025-06-23T20:37:22+0000",
+			"version": "2.0.65.36",
+			"timeUpdated": "2025-06-24T00:48:18+0000",
 			"languages": [
 				"hi"
 			]
@@ -1593,8 +1593,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
-			"version": "2.0.8.65",
-			"timeUpdated": "2025-06-23T12:45:43+0000",
+			"version": "2.0.8.66",
+			"timeUpdated": "2025-06-24T00:48:21+0000",
 			"languages": []
 		},
 		{
