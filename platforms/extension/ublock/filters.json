@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.91.41",
-			"timeUpdated": "2025-06-24T09:08:07+0000",
+			"version": "2.3.91.42",
+			"timeUpdated": "2025-06-24T10:07:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.83.75",
-			"timeUpdated": "2025-06-24T08:09:26+0000",
+			"version": "2.0.83.76",
+			"timeUpdated": "2025-06-24T10:07:45+0000",
 			"languages": [],
 			"tags": [
 				45,
