@@ -1,9 +1,9 @@
-! Checksum: Xdqu7KPJBb9U/WIe0+SCEQ
-! Diff-Path: ../patches/2/2-s-1750767343-3600.patch
+! Checksum: BPxpHGiO39FtEQAOA6JoNQ
+! Diff-Path: ../patches/2/2-s-1750771253-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.91.44
-! TimeUpdated: 2025-06-24T12:10:51+00:00
+! Version: 2.3.91.45
+! TimeUpdated: 2025-06-24T13:16:38+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22423,6 +22423,18 @@ br7news.co.il##.top-banner
 ||br7news.co.il/uploads/banner_images/
 ||campaignsb.i-in.co.il/banners/
 kikar.co.il##article[itemprop="itemListElement"]:has(a[href^="https://nltx.kikar.co.il/"][target="_blank"])
+! https://github.com/AdguardTeam/AdguardFilters/issues/182788
+/kikar\.co\.il\/a\/\d+\/\d+/$subdocument,domain=kikar.co.il
+kikar.co.il###__next > div.MuiBox-root > div.MuiContainer-maxWidthLg:has(> div > div > div > iframe[title^="Banner:"])
+kikar.co.il##div[class^="MuiBox-root css-"] > script[type="application/ld+json"] + div.MuiContainer-maxWidthLg > div[class^="MuiBox-root css-"]:has(> div[class^="MuiBox-root css-"] > div[class^="MuiBox-root css-"] > div[style="left: 160px; top: 104.68px;"] > iframe[title^="Banner:"])
+kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '300x600')
+kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '650x80')
+kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x60')
+kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x100')
+kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x200')
+kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x300')
+kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x600')
+kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '1530x1001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202877
 ||passportnews.co.il/system/ad_manager/
 ||media.passportnews.co.il/media/Modules/Banners/
@@ -22649,6 +22661,8 @@ mako.co.il#%#//scriptlet('set-constant', 'isBs', 'false')
 !
 ! NOTE: Hindi
 !
+hamropatro.com##.header-banner
+||hamropatro.com/images/rotating-ads/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205143
 asianetnews.com##div[class*="AdBox"i]
 asianetnews.com##div[class*="native-ad"]
@@ -22656,18 +22670,6 @@ asianetnews.com##.desktopAD
 asianetnews.com##.ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195078
 prothomalo.com##.bottom-space div[style^="height:"]:has(> iframe.row-widget)
-! https://github.com/AdguardTeam/AdguardFilters/issues/182788
-/kikar\.co\.il\/a\/\d+\/\d+/$subdocument,domain=kikar.co.il
-kikar.co.il###__next > div.MuiBox-root > div.MuiContainer-maxWidthLg:has(> div > div > div > iframe[title^="Banner:"])
-kikar.co.il##div[class^="MuiBox-root css-"] > script[type="application/ld+json"] + div.MuiContainer-maxWidthLg > div[class^="MuiBox-root css-"]:has(> div[class^="MuiBox-root css-"] > div[class^="MuiBox-root css-"] > div[style="left: 160px; top: 104.68px;"] > iframe[title^="Banner:"])
-kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '300x600')
-kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '650x80')
-kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x60')
-kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x100')
-kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x200')
-kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x300')
-kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '970x600')
-kikar.co.il#%#//scriptlet('trusted-prune-inbound-object', 'Object.entries', '*', '1530x1001')
 ! tejtime24.com
 tejtime24.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 tejtime24.com#%#//scriptlet('abort-on-property-write', 'checkAdBlock')
@@ -93568,6 +93570,7 @@ browsershots.org#@#.advert_area
 ||double-check.com^
 ||double.net^
 ||doubleadserve.com^
+||doublecabinet.com^
 ||doublemax.net^
 ||doublepimp.com^
 ||doublepimpssl.com^
@@ -94903,6 +94906,7 @@ browsershots.org#@#.advert_area
 ||exwuebnswyqdfvy.com^
 ||exxaygm.com^
 ||ey43.com^
+||eyaganyfyivhw.online^
 ||eyauknalyticafra.info^
 ||eybrgoggcjkyl.website^
 ||eyeballdisquietstronghold.com^
@@ -99497,6 +99501,7 @@ browsershots.org#@#.advert_area
 ||jrtbjai.com^
 ||jrtonirogeayb.com^
 ||jrtyi.club^
+||jrvrkzrjrmomb.top^
 ||jrvrkzrjrmoyy.top^
 ||jrvvpbggu.com^
 ||jrxccqmxg.com^
@@ -99649,6 +99654,7 @@ browsershots.org#@#.advert_area
 ||jyhlgpkn.com^
 ||jynginefoldy.shop^
 ||jynuvagjoxnin.space^
+||jyoyqnyjymgmz.top^
 ||jyozavobzrekb.top^
 ||jyozavobzrlkz.top^
 ||jyqekzzlmymab.top^
@@ -103235,6 +103241,7 @@ browsershots.org#@#.advert_area
 ||npvos.com^
 ||npykxfaypqrtf.love^
 ||nqgokpyktbkbm.space^
+||nqmtzldnhcree.store^
 ||nqn7la7.de^
 ||nqowmugodougu.com^
 ||nqrkzcd7ixwr.com^
@@ -103900,6 +103907,7 @@ browsershots.org#@#.advert_area
 ||onaugan.com^
 ||onautcatholi.xyz^
 ||onblixch.com^
+||onbmzifwioh.com^
 ||oncavst.com^
 ||oncesets.com^
 ||onclarck.com^
@@ -107939,6 +107947,7 @@ browsershots.org#@#.advert_area
 ||rvardsusyseinp.org^
 ||rvcchbpedltxm.store^
 ||rvetreyu.net^
+||rvhwyrqnxi.com^
 ||rviqayltwu.love^
 ||rviqwckvfbjtay.com^
 ||rvisofoseveralye.com^
@@ -113818,6 +113827,7 @@ browsershots.org#@#.advert_area
 ||y1zoxngxp.com^
 ||y8z5nv0slz06vj2k5vh6akv7dj2c8aj62zhj2v7zj8vp0zq7fj2gf4mv6zsb.me^
 ||yaamsptzttes.com^
+||yaangmfhbml.com^
 ||yabbymosette.top^
 ||yackedcuttage.com^
 ||yahdrctswmvax.space^
@@ -114222,6 +114232,7 @@ browsershots.org#@#.advert_area
 ||zfyodfktvkxqr.online^
 ||zgukxyhzquesk.love^
 ||zhaner.xyz^
+||zhnssqtigxgz.com^
 ||zhoyyibwywgev.one^
 ||zhsjutevzt.com^
 ||zhtiqbietjwhb.fun^
