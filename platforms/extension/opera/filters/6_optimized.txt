@@ -1,5 +1,5 @@
-! Checksum: XXULrfnZK8KpvkWiLP2g5Q
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1750691491-3600.patch
+! Checksum: 21nkpypui5vJm4zcsrbYMA
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1750732986-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.24
@@ -1673,6 +1673,7 @@ derstandard.at,derstandard.de##.tile-ad
 gutekueche.at###ad_cont_superbanner
 quermania.de###seitenbanner
 quermania.de###wbg
+alle-lkw.de##.splitter-banner
 efahrer.chip.de##.ads-alignment
 efahrer.chip.de##.outbrain-reserved-space
 web.de,gmx.*##.co-content-container
@@ -1785,7 +1786,6 @@ desired.de##body > div[id][class]:empty
 widget.namerobot.de##.nr-gpt
 raidrush.net###top_ga
 raidrush.net###foot_ga
-pcgames.de##.centerRectad
 focus.de#$##top-banner { max-height: 0px !important; min-height: 0px !important; }
 focus.de##div[class*="cls_slot_"]
 file-upload.net###dwdiv2-ads
@@ -1846,6 +1846,7 @@ ga.de##div[data-host="general-anzeiger-bonn.weekli.de"]
 heise.de##div[id^="wtma_teaser"]
 administrator.de##.ads-300x600-wrapper
 administrator.de##.snhb-ads
+willhaben.at##.apn-leaderboard-wrapper
 emtb-news.de,mtb-news.de,rennrad-news.de##.mtbnewsAdBillboardContainer
 emtb-news.de##.message[data-author="eMTB-News.de"]
 rennrad-news.de##.message[data-author="Rennrad-News.de"]
@@ -1872,6 +1873,7 @@ spiegel.de##div[data-component="AffiliateBox"]
 ecomento.de##.external-ad
 ecomento.de##.sidebar-ad-wrap
 faz.net##.ctn-PlaceholderBox-is-in-article-text-right
+bz-berlin.de##.bcode-publisher-asmi
 heise.de##.teaser_preisvergleich_top10
 manager-magazin.de,spiegel.de##div[data-advertisement]
 slashcam.de##.baga[style^="position:"]
@@ -2163,7 +2165,6 @@ winfuture.de###homepage_rectangle
 sueddeutsche.de###iqd_mainAd
 digitalfaq.com,szbz.de,hardwareluxx.de,geliebte-katze.de###leaderboard
 physio-deutschland.de###partners-right
-seatforum.de###posts > ins[id^="AABI-"]
 abnehmen.com###posts > li.postbitlegacy.postcontainer.old:not([id^="post_"])
 gta-5-forum.de,computerbase.de,usp-forum.de###posts > li[id^="yui-gen"]
 golem.de###pricehits
@@ -2558,11 +2559,13 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbung90.
 /werbung_*?
 /Widgets/Werbung/*
+/wrbg.js?
 _Banner_Werbung_
 _bannerwerbung/
 _unten_ad.
 _werbebanner.
 _werbebanner/
+_werbepartner.
 _werbung.php
 _Werbung260.
 _woz_banner_vote.
@@ -2613,6 +2616,7 @@ _woz_banner_vote.
 ###oms_gpt_skyscraper
 ###oms_gpt_superbanner
 ###p-rechts-werbung
+###qm_content_ad_anzeige
 ###reklame
 ###reklame-rechts-mitte
 ###startwerbung
@@ -2639,6 +2643,7 @@ _woz_banner_vote.
 ###werbung_top
 ###werbung_wideskyscraper_screen
 ###werbunglink
+###werbungrechts
 ###werbungrechts1
 ###werbungrechtsfloat
 ###werbungsbox300
@@ -2674,6 +2679,7 @@ _woz_banner_vote.
 ##.orbitsoft-ad
 ##.popup_werbung_oben_tom
 ##.reklame
+##.right-content-werbung
 ##.sidebar-werbung
 ##.sidebarwerbung
 ##.spielen_werbung_2
@@ -2807,7 +2813,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||ads4allweb.de^$third-party
 ||adspirit.net^$third-party
 ||adsplash.de^$third-party
-||advolution.de^$third-party
 ||aff-handler.com^$third-party
 ||affilimatch.de^$third-party
 ||alphaads.de^$third-party
@@ -2851,7 +2856,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||netpoint-media.de^$third-party
 ||netwayer.de^
 ||nonstoppartner.net^$third-party
-||nwave.de^$third-party
 ||onlymega.com^$third-party
 ||payclick.it^$third-party
 ||playamedia.com^$third-party
@@ -2922,7 +2926,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||middleware.marktjagd.de^$third-party
 ||modules.wikifolio.com/v2/de/autocontent/stock/*?partner=
 ||monsterdealz.de/images/$third-party
-||partner.zooplus.de^$third-party
 ||partners2.das-onlinespiel.de/client.js?pid=*&_=2.12.3|$script,domain=games.focus.de|spiele.bild.de|spiele.stern.de
 ||publisher.outtra.com^$third-party
 ||qvid2.b-cdn.net^
@@ -3808,6 +3811,7 @@ ariva.de##.anzeigeText
 lippe-news.de##.anzeige_content
 motorsport-total.com##.anzeige_teas_rect
 motorsport-total.com##.anzeige_teas_rect_ax
+willhaben.at##.apn-leaderboard-wrapper
 oefb.at##.app-foesvAdSpace
 lokalmatador.de##.article-adbanner
 heise.de##.article-layout__header-wrbng
@@ -4028,7 +4032,6 @@ helpster.de##.h5v-ad
 pornotim.com,xhammer.net##.happy-inside-player
 pornohut.info##.happy-player-beside
 ak-kurier.de##.hd-banner
-fkk24.de##.head-top-bannerplace
 blickpunkt-brandenburg.de,fruchtportal.de,katzeausdemsack.de,nh24.de,sunshine.it##.header-banner
 deine-tierwelt.de##.header-leaderboard-container
 tennis.de##.header-logo-second-display
@@ -4107,7 +4110,6 @@ hausgeraete-test.de,heimwerker-test.de,hifitest.de##.mediumRectangle
 fuersie.de,grazia-magazin.de,idee-fuer-mich.de,jolie.de,leben-und-erziehen.de,maedchen.de,ok-magazin.de,petra.de,vital.de##.mediumrectangle
 ligaportal.at##.medrec
 2ertalk.de,android-hilfe.de,grillsportverein.de,hardwareluxx.de,macuser.de,toyota-forum.de,usp-forum.de##.message--post:not([data-author])
-lite-magazin.de##.metaslider
 hallanzeiger.de##.mh-widget.s5214-widget
 autohaus.de##.mid-ad-section
 heise.de##.middle-ad-container
@@ -4250,7 +4252,6 @@ wallstreet-online.de##.shareInFocus
 wallstreet-online.de##.shareTodayBox
 merkurist.de##.shipment
 merkurist.de##.shipmentPremium
-merkurist.de##.shipmentSuper
 gentleman-blog.de##.shoepassion_content_banner
 gentleman-blog.de##.shoepassion_sidebar_banner
 buffed.de,gamesaktuell.de,gamezone.de,pcgames.de##.shopLinkFrameWrapper
@@ -4805,7 +4806,6 @@ handelszeitung.ch#?#.teaser-m-default:-abp-contains(Publireportage)
 hardwareluxx.de#?#.bg-gray-light:-abp-has(div.text-right:-abp-contains(Werbung))
 heise.de#?#p:-abp-contains(=== Anzeige / Sponsorenhinweis ===)
 heise.de#?#p:-abp-contains(=== Anzeige / Sponsorenhinweis ===) + p
-heise.de#?#p:-abp-contains(=== Anzeige / Sponsorenhinweis ===) + p + p
 knuspr.de#?#div[data-test="whisperer-product-wrapper"]:-abp-contains(Gesponsert)
 koeln.de#?#.gb-container:-abp-contains(Anzeige)
 kurier.at#?#.gridContainer:has-text(Sponsored Content)
@@ -4836,6 +4836,7 @@ finanzen.*##div[class^="ad-wrapper-"]
 holidaycheck.*##.campaign-teaser
 obi.*##[data-ae-slot="pdp_old_banner"]
 @@/iqadcontroller.$script,domain=manager-magazin.de
+@@||a.bf-ad.net/adengine/chip/adengine.js$xmlhttprequest,domain=chip.de
 @@||ad-ipd.sxp.smartclip.net/select?type=vast$xmlhttprequest,domain=toggo.de
 @@||adform.net/banners/$domain=rewe.de|telekom.de
 @@||adnxs-simple.com/mob?$xmlhttprequest,domain=sportbild.bild.de

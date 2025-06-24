@@ -1,9 +1,9 @@
-! Checksum: IOmJsJwdHvfiVhILSZlPgQ
-! Diff-Path: ../patches/14/14-s-1750729153-3600.patch
+! Checksum: pio9HEs70SGwkt3sIqvKeA
+! Diff-Path: ../patches/14/14-s-1750732987-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.34.25
-! TimeUpdated: 2025-06-24T01:35:25+00:00
+! Version: 2.2.34.26
+! TimeUpdated: 2025-06-24T02:39:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2512,6 +2512,8 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+duckduckgo.com#%#//scriptlet('set-cookie', 'dcm', '3')
+duckduckgo.com#%#//scriptlet('trusted-set-local-storage-item', 'aichatPromoDismissal', '{"firstDateShown":"1"}')
 bothub.chat#%#//scriptlet('set-cookie-reload', 'BOTHUB_COOKIE_CONFIRMED', '1')
 tello.com###footer_overlay:has(> #form_consent)
 ankersolix.com##div[class^="FeatureBar_root__"]
@@ -34382,6 +34384,10 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+tv8.md#$#div[aria-describedby="modal-modal-description"] { display: none !important; }
+tv8.md#$#body { overflow: auto !important; }
+gdh.digital##.publish-bar-sticky > .items-center:has(> .items-center > a[href^="https://news.google.com/publications/"])
+gdh.digital##main.relative > .relative:has(a[href="https://x.com/gundemedairhs"])
 deadline.com#$##piano-paywall { display: none !important; }
 deadline.com#%#//scriptlet('remove-class', 'a-article-nl-fade', '.pmc-paywall')
 handheldlegend.com#%#//scriptlet('set-local-storage-item', 'theme:popup-appeared', 'true')
@@ -42555,6 +42561,8 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+gdh.digital##img[alt="Download GDH App"]
+gdh.digital##.border[class^="max-w-"]:has(> .items-center > .flex-row > a[href^="https://play.google.com/"])
 masrawy.com##.masrawyApp
 hdfilmsitesi.me##.duyuru_kutusu
 wg-gesucht.de###homepage_center > div.wgg_panel:has(> div.row a[href^="https://play.google.com/store/"])
