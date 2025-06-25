@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Br4lT3iirCrm9ZQh6xxnaA
-! Diff-Path: ../patches/7/7-s-1750828366-3600.patch
+! Checksum: CgrwPDiQRMydLW2t0QzMYA
+! Diff-Path: ../patches/7/7-s-1750832079-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.65.61
-! TimeUpdated: 2025-06-25T05:08:45+00:00
+! Version: 2.0.65.62
+! TimeUpdated: 2025-06-25T06:10:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1802,10 +1802,10 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-h1g.jp#$#.mw-parser-output > div[style*="250px"]:has(> script[src]) { display: none !important; }
-h1g.jp#$#div[style^="height:"]:has(> .promotion_text) { display: none !important; }
+h1g.jp#$#.footer { padding-bottom: 110px !important; }
+h1g.jp##div[style="witdh:728px; height:90px;"]
 h1g.jp#$#.upper-menu { height: inherit !important; }
-h1g.jp#$#.footer > div[style]:has(> script[src^="https://js.ad-optima.com/"]) { display: none !important; }
+h1g.jp##div[style$="width:728px; height:400px; margin:auto;"]
 cartune.me##.text-center.min-h-\[250px\]
 auctions.yahoo.co.jp###auction_spn
 roboin.io##._169wog0
@@ -8149,7 +8149,7 @@ appbank.net##.entry-list-item-native-ad
 server-navi.info##.box_s
 server-navi.info##.boxp
 server-navi.info##table[width="180"]:nth-last-of-type(-n+2)
-dokuo666.blog98.fc2.com,newssokuhou666.blog.fc2.com##div[style*="width:300px; height:250px"]
+h1g.jp,dokuo666.blog98.fc2.com,newssokuhou666.blog.fc2.com##div[style*="width:300px; height:250px"]
 ||smashop.jp/img/sml/sml-dp.jpg
 smashop.jp###r1_advertisement
 smashop.jp##.ad_navigation_300_250
@@ -11423,6 +11423,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208191
+! QR code in the sidebar blocked
+@@||ad-drop.jp^$script,domain=h1g.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202622
 ! Website is broken when blocked scripts are removed from the page,
 ! so as a workaround, "redirect-rule" is used.
