@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: kBraML3Fd8itLLsj+uo8GQ
-! Diff-Path: ../patches/7/7-s-1750871491-3600.patch
+! Checksum: DsNO9aOcFnsq4ZFzYFgJ4Q
+! Diff-Path: ../patches/7/7-s-1750875189-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.65.65
-! TimeUpdated: 2025-06-25T17:07:24+00:00
+! Version: 2.0.65.66
+! TimeUpdated: 2025-06-25T18:09:04+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1802,12 +1802,12 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-dq-dic.h1g.jp###menubar > div[style*="width:"][align="center"]
-h1g.jp##.menubar > div[style*="width:"][align="center"]
-h1g.jp##.mainbody > div[style*="height:"][align="center"]
 mobilegadget.jp#?##main > .page_navi ~ .content > h3.plg3_header:contains(Sponsored Link)
 mobilegadget.jp###sidemenu > .sidemenu_body:has(> .plg_body > .plugin-freearea > .adsbygoogle)
-h1g.jp##div[style$="width:728px; height:90px; margin:auto;"]
+h1g.jp#$#div[style="margin-bottom:100px;"][align="center"] { margin-bottom: 10px !important; }
+h1g.jp###menubar > div[style^="width:330px; height:2"][style$="auto;"][align="center"]
+h1g.jp##div[style*="width:336px; height:280px"]
+h1g.jp##div[style*="width:728px; height:90px"]
 h1g.jp#$#.upper-menu > div[style="height: 90px!important;"] { height: auto !important; }
 h1g.jp#$#.footer { padding-bottom: 110px !important; }
 h1g.jp##div[style="witdh:728px; height:90px;"]
@@ -11433,6 +11433,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208209
 mobilegadget.jp#@#.header-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208191
+! bad design by the site
+h1g.jp#$#.mainbody > div[style="width:800px; height:400px; margin-top:30px;"] { height: 600px !important; }
 ! QR code in the sidebar blocked
 @@||edayo.ad-drop.jp/yie/ld/jsk$script,domain=h1g.jp
 @@||js.ad-drop.jp/t/$script,domain=h1g.jp
