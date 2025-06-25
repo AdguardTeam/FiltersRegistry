@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.91.59",
-			"timeUpdated": "2025-06-25T04:13:50+0000",
+			"version": "2.3.91.60",
+			"timeUpdated": "2025-06-25T05:08:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.65.60",
-			"timeUpdated": "2025-06-24T15:07:47+0000",
+			"version": "2.0.65.61",
+			"timeUpdated": "2025-06-25T05:08:45+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -563,8 +563,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.61.71",
-			"timeUpdated": "2025-06-24T16:08:14+0000",
+			"version": "2.0.61.72",
+			"timeUpdated": "2025-06-25T05:08:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.34.37",
-			"timeUpdated": "2025-06-24T19:06:39+0000",
+			"version": "2.2.34.38",
+			"timeUpdated": "2025-06-25T05:08:55+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.56",
-			"timeUpdated": "2025-06-24T19:06:42+0000",
+			"version": "2.0.64.57",
+			"timeUpdated": "2025-06-25T05:09:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -765,8 +765,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.21.96",
-			"timeUpdated": "2025-06-24T02:39:10+0000",
+			"version": "2.0.21.97",
+			"timeUpdated": "2025-06-25T05:09:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
