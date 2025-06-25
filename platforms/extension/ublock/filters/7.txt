@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: VbJ45KdBXP1vBZWfgSnNLA
-! Diff-Path: ../patches/7/7-s-1750839211-3600.patch
+! Checksum: f0Shf7HpHWjPA6t4kVvYGQ
+! Diff-Path: ../patches/7/7-s-1750853706-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.65.63
-! TimeUpdated: 2025-06-25T08:09:21+00:00
+! Version: 2.0.65.64
+! TimeUpdated: 2025-06-25T12:11:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1804,6 +1804,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 mobilegadget.jp#?##main > .page_navi ~ .content > h3.plg3_header:contains(Sponsored Link)
 mobilegadget.jp###sidemenu > .sidemenu_body:has(> .plg_body > .plugin-freearea > .adsbygoogle)
+h1g.jp##div[style$="width:728px; height:90px; margin:auto;"]
+h1g.jp#$#.upper-menu > div[style="height: 90px!important;"] { height: auto !important; }
 h1g.jp#$#.footer { padding-bottom: 110px !important; }
 h1g.jp##div[style="witdh:728px; height:90px;"]
 h1g.jp#$#.upper-menu { height: inherit !important; }
@@ -11429,7 +11431,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 mobilegadget.jp#@#.header-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208191
 ! QR code in the sidebar blocked
-@@||ad-drop.jp^$script,domain=h1g.jp
+@@||edayo.ad-drop.jp/yie/ld/jsk$script,domain=h1g.jp
+@@||js.ad-drop.jp/t/$script,domain=h1g.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202622
 ! Website is broken when blocked scripts are removed from the page,
 ! so as a workaround, "redirect-rule" is used.
