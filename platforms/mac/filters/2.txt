@@ -1,8 +1,8 @@
-! Checksum: kT2X8Kflj1Vog/IY4vMQSQ
+! Checksum: uEKX1ZAOFT2tHrLNzC00iA
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.91.71
-! TimeUpdated: 2025-06-25T16:07:55+00:00
+! Version: 2.3.91.72
+! TimeUpdated: 2025-06-25T17:07:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10124,6 +10124,8 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208228
+rlxoff.com#%#//scriptlet('prevent-addEventListener', 'load', 'detectAdBlock')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208169
 ! gplinks.co
 mhfragristack.in#$##myNextInst { display: block !important; }
@@ -10393,6 +10395,8 @@ skill4ltu.eu#%#//scriptlet('prevent-element-src-loading', 'script', '/hb\.vntsm\
 interfans.org#%#//scriptlet('remove-node-text', 'script', 'adBlockAction')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200729
 smoothpre.com###adbd
+! https://github.com/AdguardTeam/AdguardFilters/issues/200390
+tempinbox.xyz#%#//scriptlet('prevent-fetch', 'adsbygoogle')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200592
 ||bypass.link/nab.js
 bypass.link#%#//scriptlet('prevent-setTimeout', '].innerHTML')
@@ -10898,6 +10902,9 @@ luluvdoo.com,savefiles.com,rubyvidhub.com,streamruby.com##body > div[class][onco
 luluvdoo.com,savefiles.com,rubyvidhub.com,streamruby.com,lulustream.com,luluvdo.com#%#//scriptlet('abort-on-property-read', 'showADBOverlay')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185133
 fullboys.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+! https://github.com/AdguardTeam/AdguardFilters/issues/185022
+tempinbox.xyz#%#//scriptlet('prevent-setTimeout', 'enable_ad_block_detector')
+@@||tempinbox.xyz/storage/js/mnpw3.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184901
 techbloogs.com,tutwuri.id,lokerwfh.net#$#body { overflow: auto !important; }
 techbloogs.com,tutwuri.id,lokerwfh.net#$##adblock-warning { display: none !important; }
@@ -12660,6 +12667,8 @@ oneslidephotography.com,apasih.my.id,financekami.com#%#//scriptlet('prevent-fetc
 adslink.pw,jpopsingles.eu#$##all-good { display: none !important; }
 adslink.pw,jpopsingles.eu#$##no-blocking { display: block !important; }
 jpopsingles.eu#%#//scriptlet('set-constant', 'adblock.check', 'noopFunc')
+! https://github.com/AdguardTeam/AdguardFilters/issues/145830
+@@||tempinbox.xyz/storage/js/adex.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/145997
 bankvacency.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146014
@@ -14126,6 +14135,9 @@ instastory.net##div[class^="adp"]
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=games.miamiherald.com
 games.miamiherald.com#@#display-ad-component
 games.miamiherald.com#%#//scriptlet("adjust-setInterval", "game will", "", "0.02")
+! https://github.com/uBlockOrigin/uAssets/issues/10745
+pdfaid.com#%#//scriptlet("prevent-setTimeout", ".offsetHeight")
+pdfaid.com#@#.googleads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/104340
 strikeout.cc#%#//scriptlet("prevent-addEventListener", "error", "blockMsg")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/100820
@@ -16374,6 +16386,9 @@ yepi.com#%#//scriptlet("set-constant", "evitca_kcolbda", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33986
 gamekit.com#$#.ad.ads.adBanner { display: block!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34002
+! https://github.com/AdguardTeam/AdguardFilters/issues/33861
+namemc.com#%#//scriptlet("abort-current-inline-script", "navigator", "Object.defineProperties?Object.defineProperty:function")
+namemc.com$$script[tag-content="Object.defineProperties?Object.defineProperty:function"][max-length="120000"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33870
 @@||123link.biz/js/blockadblock.js
 123link.biz#%#//scriptlet("abort-on-property-read", "showAdsBlock")
@@ -66262,6 +66277,7 @@ _800x80_
 ###FooterAd
 ###FooterAdBlock
 ###FooterAdContainer
+###FreeStarVideoAdContainer
 ###GoogleAd
 ###GoogleAd1
 ###GoogleAd2
@@ -87766,6 +87782,7 @@ browsershots.org#@#.advert_area
 ||dazedarticulate.com^
 ||dazedengage.com^
 ||dazhantai.com^
+||dazzlingspot.pro^
 ||db0a4b4eb7.com^
 ||db33180b93.com^
 ||db72c26349.com^
@@ -94945,6 +94962,7 @@ browsershots.org#@#.advert_area
 ||kfjhd.com^
 ||kfmmfyrkrgipm.love^
 ||kfmsltodvutodo.xyz^
+||kfqbqnlirdcken.com^
 ||kfwolwopegike.love^
 ||kfxcbuhnempdct.com^
 ||kgdvs9ov3l2aasw4nuts.com^
@@ -99377,6 +99395,7 @@ browsershots.org#@#.advert_area
 ||osmosedshrined.top^
 ||ospartners.xyz^
 ||ospreyorceins.com^
+||ospuhdigocaxw.website^
 ||osrcidlas.com^
 ||osrdfoajcnwa.com^
 ||osrxzucira.com^
@@ -99598,6 +99617,7 @@ browsershots.org#@#.advert_area
 ||owithlerendu.com^
 ||owjunkrgwdc.com^
 ||owlerydominos.cam^
+||owlqrbfgvacps.website^
 ||owlunimmvn.com^
 ||owlxmtqarwrxi.store^
 ||owmacsridwu.com^
@@ -99919,6 +99939,7 @@ browsershots.org#@#.advert_area
 ||pay-click.ru^
 ||paybackmodified.com^
 ||payoffdonatecookery.com^
+||payoffkbar.top^
 ||payperppi.click^
 ||pazials.xyz^
 ||pazmfoxh.com^
@@ -102553,6 +102574,7 @@ browsershots.org#@#.advert_area
 ||rhythmxchange.com^
 ||riaoz.xyz^
 ||riazrk-oba.online^
+||ribsingougloul.com^
 ||ric-ric-rum.com^
 ||ricalsbuildf.com^
 ||ricarvort.com^
