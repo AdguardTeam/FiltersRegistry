@@ -1,5 +1,5 @@
-! Checksum: DRRQaz4Oyr60XktY1yelQg
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1750785136-3600.patch
+! Checksum: yMDeYwuEtGhA3ubxzRIrFA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1750819376-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.34.78
@@ -294,6 +294,7 @@ huffingtonpost.fr###dailymotion-pip-large-viewport
 dumskaya.net##.twitter-follow-button
 progorodnn.ru##div[class^="social-list-subscribe_socialListSubscribe"]
 chunichi.co.jp#?#.sub-container-wrp > div.l-container:has(> div[class] > div.l-column > div.wrp > a[href^="https://plus.chunichi.co.jp/"])
+chunichi.co.jp#?#.content-area > div.l-container > div.l-container:has(> div.cscmp-misc001)
 accuweather.com#%#//scriptlet('remove-class', 'cnx-float', '.cnx-content-wrapper.cnx-float')
 accuweather.com#%#//scriptlet('remove-attr', 'style', '.cnx-content-wrapper.cnx-float-transition')
 berliner-zeitung.de##div[class^="social-bar_wrapper_"]
@@ -497,7 +498,6 @@ adespresso.com##.banner-widget
 rarefilmm.com###simple-banner
 manchestereveningnews.co.uk##.top-sharebar
 itubego.com##.hero > section.container > div.container > div.bg-warning-dark
-viva.ua##.telegram-banner
 mir24.tv##a[href="https://t.me/mir24tv"][target="_blank"]
 ||mir24.tv/uploaded/resources/Telegramm_1200x90.jpg
 tomshardware.com##.van_vid_carousel
@@ -616,6 +616,7 @@ vk.com###narrow_column > #feed_filters > .apps_feedRightAppsBlock
 makeup.ru#%#//scriptlet("set-constant", "Makeup.subscribePopup", "undefined")
 ||player.anyclip.com^$domain=thewindowsclub.com
 pikabu.ru#?#div[class^="stories-feed_"] > article.story > div.story__main span.story__sponsor:upward(article.story)
+wyborcza.biz##.mcBan[data-campaign-id] > section.mod_swimmer[data-cta-category="plywak"]
 ||fb.ru/front/build/comments.js$domain=fb.ru
 auto-swiat.pl,przegladsportowy.onet.pl,komputerswiat.pl#%#//scriptlet("set-constant", "floatingPlayer.isFloatingEnabled", "false")
 komputerswiat.pl,businessinsider.com.pl,fakt.pl,plejada.pl,medonet.pl,onet.pl#%#//scriptlet("set-constant", "Object.prototype.isFloatingEnabled", "false")
@@ -1101,6 +1102,7 @@ k2s.cc##.section-question
 afisha.ru###root > div[style^="width: 100%; height: 120px; display: flex;"]
 kimbino.*#$#.brochure-secret-modal { display: none !important; }
 kimbino.*#$#html.modal-open { overflow: auto !important; }
+lsj.gr###siteNotice
 controld.com##.css-9hjcxa
 veja.abril.com.br###sector-advertising-widget-wrapper
 folha.uol.com.br##aside > .c-estudio-folha
@@ -1172,6 +1174,7 @@ qieyou.com##.pc-box-app
 tagesspiegel.de###piano-footerbar
 teenager365.to##.block-offer
 pudelek.pl##article div[data-scroll-observer^="paragraph"] ~ div:has(a[href^="https://vip.pudelek.pl/?"] img)
+znanierussia.ru##.banner-mobile
 znanierussia.ru##div[class^="banner-"][class$="-desktop"]
 wcostream.tv###headerPadstmOut center > a[href^="https://www.wcopremium.tv/wp-login.php"] > img
 beeline.ru##header > div > div[aria-hidden="false"]:has(> div > a[data-metric-name="headerMetric:handleTopBannerClick"])
@@ -2024,6 +2027,7 @@ searchenginejournal.com###nav_bar_g
 neg.by##.banners > div.side-neg-rek-wrap
 neg.by##.header-neg-rek
 pops.vn##img[alt^="banner under"]
+[$path=/corez]blog.livedoor.jp#?##ad
 hostlove.com##.job_r
 hostlove.com###book_right
 hostlove.com###yoru_right
@@ -2353,8 +2357,6 @@ prom.ua#%#//scriptlet('set-cookie', 'hide_mobile_international_delivery_popup', 
 coub.com#%#//scriptlet('remove-class', 'disable-scroll', 'body')
 coub.com##.unlogged-bottom-line
 coub.com##.timeline-right-block__login-banner
-bestdroidplayer.com##.ulp-overlay
-bestdroidplayer.com##.ulp-window-container
 docs.cntd.ru#?#.sheet div[class]:has(> div.demo-modal)
 tripmydream.com##.wind-banner-place
 biz.moneyforward.com###secondary > aside:not(.widget_search):not(.widget_categories)
@@ -2541,7 +2543,6 @@ winxdvd.com##div[style="position:fixed; bottom:220px; right:30px;"]
 filmsforaction.org##.PatreonCta
 smashingmagazine.com##div[id^="promo-article-end"]
 crisisgroup.org##.c-cta-block
-thenation.com##.indent.current-issue
 currentaffairs.org##.newest-issue
 currentaffairs.org##.featured-product
 businessinsider.com##.commerce-coupons-module
@@ -2709,7 +2710,6 @@ iobit.com##.rabbit-banner
 iobit.com##div[class*="-mask"]
 iobit.com##div[class*="pop"]:has([onclick*="gtag"])
 iobit.com##div[class*="pop"][class*="bg"]
-iobit.com##.comm_popup
 iobit.com##.comm_bottom
 iobit.com##div[class*="float-"]
 @@||googletagmanager.com/gtm.js?id=GTM-WMQ82P6$domain=excite.co.jp,badfilter
@@ -3408,6 +3408,8 @@ uzone.id#$#body { margin-top: 0!important; }
 cossa.ru,nevasport.ru#$#.main-wrapper { margin-top: 0 !important; }
 naver.com#$#body #NM_INT_RIGHT > div.column_fix_wrap { top: 0!important; }
 dota2.ru#$##dappo { padding-top: 0px!important; }
+1ink.cc#$##countingbtn { display: block!important; }
+1ink.cc#$##countingsec { display: none!important; }
 saechsische.de#$#body { overflow: visible!important; }
 focus.de#$##teaserRss { border-top: 0px !important; }
 nnmclub.to#$#select[id="fs"][name="f[]"][multiple="multiple"] { height: 250px !important; }
