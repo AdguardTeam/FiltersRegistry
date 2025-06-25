@@ -1,9 +1,9 @@
-! Checksum: 46ti+X9HnsUBwsw+iDfyNA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1750812785-14400.patch
+! Checksum: KQi/RJ5IskVGKBuQbjZvkA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1750826767-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.43.55
-! TimeUpdated: 2025-06-25T00:47:56+00:00
+! Version: 2.1.43.56
+! TimeUpdated: 2025-06-25T04:40:56+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -128,6 +128,7 @@
 /twitter-follow-
 /twitter-footer-
 /twitter-v2.png
+/twitter_follow.png
 /twitter_footer.png
 /twitter_header.png
 /twitter_square.png
@@ -212,7 +213,6 @@ _social_footer_
 ###facebookLike
 ###facebookLikeBox
 ###facebookLikeButton
-###facebookRecommend
 ###facebookShareButton
 ###facebookWidget
 ###facebook_like
@@ -261,8 +261,6 @@ _social_footer_
 ###follow-us-footer
 ###follow-us-widget
 ###followBox
-###followFB
-###followFBSvg
 ###followTwitter
 ###followUs
 ###follow_box
@@ -283,11 +281,11 @@ _social_footer_
 ###footer-youtube-icon
 ###footerConnect
 ###footerFollow
-###footerShare
 ###footerSocial
 ###footerSocialButtons
 ###footerSocialIcons
 ###footerSocialLinks
+###footer_block_social
 ###footer_social
 ###footer_social_facebook
 ###footer_social_icons
@@ -454,6 +452,7 @@ _social_footer_
 ###share_div
 ###share_facebook
 ###share_google
+###share_htn
 ###share_icon
 ###share_linkedin
 ###share_links
@@ -842,6 +841,8 @@ _social_footer_
 ##.apsc-icons-wrapper
 ##.apsc-twitter-icon
 ##.apss-social-share
+##.arqam-widget-counter
+##.arqam_counter-widget
 ##.arr--share
 ##.art-share
 ##.art-social
@@ -2561,6 +2562,7 @@ _social_footer_
 ##.sharelike
 ##.shareline
 ##.sharelink
+##.sharelinkcont
 ##.sharelinkedin
 ##.sharelinks
 ##.sharelist
@@ -2626,6 +2628,7 @@ _social_footer_
 ##.sharing-tool
 ##.sharing-tools
 ##.sharing-twitter
+##.sharing-widget
 ##.sharing-wrap
 ##.sharing-zone
 ##.sharingButton
@@ -2779,6 +2782,7 @@ _social_footer_
 ##.social-button-wrapper
 ##.social-buttons--content-before
 ##.social-buttons--follow
+##.social-buttons--uk
 ##.social-buttons-compact
 ##.social-buttons-container
 ##.social-buttons-module
@@ -2868,6 +2872,7 @@ _social_footer_
 ##.social-media-header
 ##.social-media-li
 ##.social-media-list-container
+##.social-media-module
 ##.social-media-nav
 ##.social-media-nav__sticky
 ##.social-media-share
@@ -3118,12 +3123,14 @@ _social_footer_
 ##.socialbtns
 ##.socialbutton
 ##.socialbuttons
+##.socialcont
 ##.socialcontainer
 ##.socialcount
 ##.socialfooter
 ##.socialheader
 ##.socialicon
 ##.socialicons
+##.socialink
 ##.socialinks
 ##.socialite-widget
 ##.socialite-widget-item
@@ -3224,6 +3231,7 @@ _social_footer_
 ##.td-post-sharing-bottom
 ##.td-post-sharing-style1
 ##.td-post-sharing-top
+##.td-share
 ##.td-social-icon-wrap
 ##.td-social-list
 ##.td-social-sharing
@@ -3775,7 +3783,6 @@ news.tvbs.com.tw##.article_community_box
 thespectator.com##.article_set_wrap
 news18.com##.article_socials
 dictionary.com##.atw-socials
-news.artnet.com##.author-links
 secretchicago.com,secretldn.com##.author-share-buttons
 proprivacy.com##.author-social-icons
 adweek.com##.aw-social-share-container
@@ -3907,6 +3914,7 @@ thelatinonewsletter.org##.grid.grid-cols-3.p-4.px-8.sm\:p-2.sm\:px-2.md\:grid-co
 ethanzuckerman.com##.group-1
 gadgets360.com##.gsocialbar
 atlanticcouncil.org##.gta-hover-share-container
+gmanetwork.com##.hdr-social-links
 israelnationalnews.com##.header-nav-addons-link
 archaeology.org##.header-share
 malaymail.com##.header-social-menu
@@ -4000,7 +4008,6 @@ dailymail.co.uk##.prevNextWrapper-1Vg7e
 thetruthaboutcars.com##.project-actions-header
 reason.com##.rcom-social-tools
 dermatologytimes.com,drive.com.au##.react-share__ShareButton
-newsukraine.rbc.ua##.read-in-socials
 firstpost.com##.rhs-yt-ch-wrap
 crealitycloud.com##.right-share-box
 reviewjournal.com##.rj-story-social
@@ -4022,7 +4029,6 @@ dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
 dailymail.co.uk,thisismoney.co.uk##.share-flipboard
 digitimes.com##.share-frame
-news.artnet.com##.share-header
 cgtn.com,citynews.ca##.share-icon
 cuttty.com##.share-icons-container
 mymodernmet.com##.share-it-side
@@ -4072,7 +4078,6 @@ tmz.com##.social-item
 denofgeek.com##.social-links__anchor--sharing
 defenseone.com,govexec.com,nextgov.com##.social-media-icons-container
 latv.com##.social-media-justification
-knowablemagazine.org,leouve.com.br,newskarnataka.com,ric.com.br,securityaffairs.com,ucl.ac.uk##.social-media-links
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
 churchpop.com,dersonntag.at,toofab.com##.social-nav
 eltecolote.org,melmagazine.com,thefrisc.com,worldcrunch.com##.social-navigation
@@ -4100,8 +4105,8 @@ audi-sport.net,eurogamer.net,metacritic.com,trustedreviews.com,woodworkforinvent
 moneycontrol.com##.social_icons_wrapper
 ringsidenews.com##.social_label
 ciudad.com.ar,eltrecetv.com.ar,lithub.com,tn.com.ar##.social_links
+dailysabah.com,gmanetwork.com,pnn.ps##.social_media
 unn.ua##.social_root__H2cRW
-abplive.com,businesstoday.in,catracalivre.com.br,gamesindustry.biz,ilmeteo.it##.social_share
 kleinezeitung.at,meduniwien.ac.at,shipmag.it,today.rtl.lu##.socialbar
 videocardz.com##.socialbar-sidebar
 cookingclassy.com##.socialoverlay
@@ -4124,6 +4129,7 @@ hindustantimes.com##.subscribe-social
 locals.com##.support-now
 targettrend.com##.sws_supernormalaction
 notthebee.com##.take-shareables
+thediplomat.com##.td-follow
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
 twitchy.com##.thm-sc
@@ -4406,7 +4412,6 @@ ilpost.it##.socialShareILPOST
 davinotti.com##.social__variant
 ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
-cdt.ch##.socials-custom
 macitynet.it##.tds-button
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
@@ -4436,6 +4441,7 @@ terrabrasilnoticias.com###block-18
 a12.com###gb-widget-6981
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
+xvideossexo.com###whatsapp
 metro1.com.br##.Layout__WhatsappButton-xs74wc-0
 iclnoticias.com.br##.alerts-call
 betteranime.net##.anime-down-share
