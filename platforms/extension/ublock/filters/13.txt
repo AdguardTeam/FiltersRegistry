@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 20JJV5iWtaeHuWXB9N1xDg
-! Diff-Path: ../patches/13/13-s-1750936293-3600.patch
+! Checksum: WAiOUxgvKOHu1UzqhW++pg
+! Diff-Path: ../patches/13/13-s-1750940127-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.57.49
-! TimeUpdated: 2025-06-26T11:07:19+00:00
+! Version: 2.0.57.50
+! TimeUpdated: 2025-06-26T12:11:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -890,12 +890,12 @@ dizikral.nl,puffytr.com,anizle.com,anizm.net,dizimore.com,dizirex.com,maxfilmizl
 ! isShow
 tekfullfilmizle5.com##+js(set-constant, isShow, true)
 ! initPu
-sinemakolix.com,erotikhoot.com,dizikral.live,eldermanga.com,promy.pro,diziyoutv.com,guneykoresinemasi.com,jetfilmizletv.net,dizimax2.com,yenierotikfilm.xyz,breakingbadizle.*,diziday1.com,zipfilmizle.com,bamfilmizle.com,sinemadafilm.com,filmmoduu.com,trfilm.net,dolufilm.org,turkifsaalemi.com##+js(abort-on-property-read, initPu)
+zerotiktok.com,filmzevkim.com,sinemakolix.com,erotikhoot.com,dizikral.live,eldermanga.com,promy.pro,diziyoutv.com,guneykoresinemasi.com,jetfilmizletv.net,dizimax2.com,yenierotikfilm.xyz,breakingbadizle.*,diziday1.com,zipfilmizle.com,bamfilmizle.com,sinemadafilm.com,filmmoduu.com,trfilm.net,dolufilm.org,turkifsaalemi.com##+js(abort-on-property-read, initPu)
 ! initAd
 fullfilmizlebaba.com,superfilmgeldi.biz,vkfilmizlet.*,supernaturalizle.com,sinemakolik.net,hdsinemax.com,diziyo.*,fullhdabifilm.com,bettercallsaulizle.com,superfilmgeldi.net,fullhdfilmizlett1.com,fullhdfilmizleabi.com,hdfreeizle.com,hdmixfilim.com,fullhdfilmizlepala.com##+js(abort-on-property-read, initAd)
 !
 720pfilmizleme1.com,720pfilmizletir.com,1080pfilmizletir.com,720pfilmizlesene.com,filmmakinesi1.*,filmizlemax.*,videoseyred.in,hdfilmcehennem.live##+js(addEventListener-defuser, click, checkTarget)
-filmizlehdizle.com,yabancidiziizlesene.*,1080hdfilmizle.com##+js(abort-on-property-read, initPop)
+hdfilmizlesen.com,filmizlehdizle.com,yabancidiziizlesene.*,1080hdfilmizle.com##+js(abort-on-property-read, initPop)
 shirl.club,altporno.xyz##+js(abort-on-property-read, oV1)
 ! END: Clickunders
 !
@@ -1505,6 +1505,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+tarzifilm.com##.block-ins-gad
+tarzifilm.com##.row > div.col-lg-7:has(> div.block-ins-gad)
 fivemturk.net##.swal2-container
 fivemturk.net##.p-body-inner > div[style^="width: 100%;"][style*="flex;"]
 ||i.hizliresim.com^$domain=servers-mc.net
@@ -1587,7 +1589,8 @@ sondakika.com##div[style]:has(> div[id^="div-gpt-ad-"])
 sondakika.com#$#.sidebox:has(> aside#SonDakika_AnaSayfa_300x250_Kutu1) { width: 0 !important; }
 sondakika.com##.news-row > div[style]:not(.news-item)
 sondakika.com###tb-inpage-general
-yabancidiziizle.me##.duzyazibar
+yabancidiziizle.*##.duzyazibar
+||panel.sinemax.cc/demo/prerollvid*.php
 ||player.filmizle.in/demo/prerollvid*.php
 r10.net#$#div[id^="fastadmodal"] { display: none !important; }
 [$domain=/hdfilmcehennemi\d+.org/]##.ads-container
@@ -3503,7 +3506,7 @@ cosmoturk.com##.midiBanners
 ||erosfilmizle.*/mostbet.mp4
 ||erosfilmizle.*/gif.gif
 fullhdfilmizlesene.*,diziyoutv.com,erosfilmizle.*,dizipal.org,dizimom.*,asyadiziizle.com,dizicaps.*,hdfilmizle.in,yabancidizilertv.*##.videoalt
-fullhdfilmizlesene.*,diziyoutv.com,erosfilmizle.*,dizipal.org,dizimom.*,asyadiziizle.com,dizicaps.*,hdfilmizle.in,yabancidizilertv.*##.videoust
+fullhdfilmizlesem.com,fullhdfilmizlesene.*,diziyoutv.com,erosfilmizle.*,dizipal.org,dizimom.*,asyadiziizle.com,dizicaps.*,hdfilmizle.in,yabancidizilertv.*##.videoust
 mengen.gen.tr##.slider3Widget
 memleketimbolu.com##.mansetyani
 ademyurt.com###alt > div.at
@@ -5979,6 +5982,8 @@ yandex.com.tr##.DirectInline
 ! END: Yandex
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208291
+! Rule $referrerpolicy is required for apps, because source of vast.js is not detected and due to this it's not blocked
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206302
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162640
 ! Apps remove source tag from the website and it breaks video player

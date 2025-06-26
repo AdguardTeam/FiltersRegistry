@@ -1,8 +1,8 @@
-! Checksum: KXCndTFuUGn8b5LyUPZkUg
+! Checksum: SpQdEOc7wpORYO99iX9elQ
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.57.49
-! TimeUpdated: 2025-06-26T11:07:19+00:00
+! Version: 2.0.57.50
+! TimeUpdated: 2025-06-26T12:11:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1244,6 +1244,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+tarzifilm.com##.block-ins-gad
 fivemturk.net##.swal2-container
 fivemturk.net##.p-body-inner > div[style^="width: 100%;"][style*="flex;"]
 ||i.hizliresim.com^$domain=servers-mc.net
@@ -1300,7 +1301,8 @@ fullhdfilmizlesene.*##.plalt-bn
 ||storage.fintables.com/media/uploads/ads/
 sondakika.com##.news-row > div[style]:not(.news-item)
 sondakika.com###tb-inpage-general
-yabancidiziizle.me##.duzyazibar
+yabancidiziizle.*##.duzyazibar
+||panel.sinemax.cc/demo/prerollvid*.php
 ||player.filmizle.in/demo/prerollvid*.php
 ||kultfilmler.net/adspop*.js
 ||fullhdfilmizlede.net/banner/
@@ -2969,7 +2971,7 @@ cosmoturk.com##.midiBanners
 ||erosfilmizle.*/mostbet.mp4
 ||erosfilmizle.*/gif.gif
 fullhdfilmizlesene.*,diziyoutv.com,erosfilmizle.*,dizipal.org,dizimom.*,asyadiziizle.com,dizicaps.*,hdfilmizle.in,yabancidizilertv.*##.videoalt
-fullhdfilmizlesene.*,diziyoutv.com,erosfilmizle.*,dizipal.org,dizimom.*,asyadiziizle.com,dizicaps.*,hdfilmizle.in,yabancidizilertv.*##.videoust
+fullhdfilmizlesem.com,fullhdfilmizlesene.*,diziyoutv.com,erosfilmizle.*,dizipal.org,dizimom.*,asyadiziizle.com,dizicaps.*,hdfilmizle.in,yabancidizilertv.*##.videoust
 mengen.gen.tr##.slider3Widget
 memleketimbolu.com##.mansetyani
 ademyurt.com###alt > div.at
@@ -5185,6 +5187,8 @@ yandex.com.tr##.DirectInline
 ! END: Yandex
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208291
+! Rule $referrerpolicy is required for apps, because source of vast.js is not detected and due to this it's not blocked
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206302
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162640
 ! Apps remove source tag from the website and it breaks video player
