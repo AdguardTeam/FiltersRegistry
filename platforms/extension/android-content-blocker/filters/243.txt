@@ -1,13 +1,13 @@
-! Checksum: 5K0UTzII65MW6s6tJHK7Hw
+! Checksum: 7ptE3lewbLbRBl2WDImogw
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.98
-! TimeUpdated: 2025-06-25T04:41:27+00:00
+! Version: 2.0.21.99
+! TimeUpdated: 2025-06-26T08:40:49+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-06-25 05:09:01 CEST
+! Last modified: 2025-06-26 07:13:08 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -301,7 +301,7 @@ elprisetjustnu.se##.bg-sponsor
 emocore.se###main > #home_start_div ~ .m_t.box:nth-last-child(-n+2)
 emocore.se###sticky-panorama-container, #mob-wrap
 energi.se##.advertisement--item
-eniro.se##a[target="_blank"][data-gmp-click]
+eniro.se##a[target="_blank"][data-gmp-click], #bottom-left-ad-wrapper, div[style="min-height: 250px; min-width: 300px;"]
 enterprisemagazine.se##.text-ads
 enterprisemagazine.se,driva-eget.se###ew-cookiebar-full, #ew-cookiebar-manage
 epochtimes.se##.fixed.bottom-0, a[target="_blank"][href*="utm_campaign"]
@@ -439,7 +439,7 @@ hemnet.se###ad_unit_placeholder, div[class^="Panorama_panoramaAd"], .listing__pa
 hemtrevligt.se##div[id^="hj-"], div[id^="ik-"], #banner-container
 hifitorget.se##.billboard_container, .billboard-style, a[href*="utm_"][target] img
 hippson.se##.my-8:empty
-hitta.se##a[data-trackimp][target], .hitta-map .integration-txt, .section-details--alb, [class*="dummyAd"], [class*="StyledAdSlot"], [data-bind*="Ad"], div[class^="GraphicAd_"], [class*="adContainer"], [id*="_panorama"], [id*="_skyscraper"], div[style="min-height: 250px;"], div[data-track="displayplacering-customer"], a[data-test="boostAdLink"], div[class^="style_bannerContainer"], [data-track="click-promotion-banner"], div[class*="adWrapper"], div[class*="hittaAdContainer"], div[class*="partnerBox"], a[class*="promotion"]
+hitta.se##a[data-trackimp][target], .hitta-map .integration-txt, .section-details--alb, [class*="dummyAd"], [class*="StyledAdSlot"], [data-bind*="Ad"], div[class^="GraphicAd_"], [class*="adContainer"], [id*="_panorama"], [id*="_skyscraper"], div[style="min-height: 250px;"], div[data-track="displayplacering-customer"], a[data-test="boostAdLink"], div[class^="style_bannerContainer"], [data-track="click-promotion-banner"], div[class*="adWrapper"], div[class*="hittaAdContainer"], div[class*="partnerBox"], a[class*="promotion"], div[class*="adsContainer"]
 hitta.se##[class^="styleManual_mainContentBox"] > div[style^="min-height"]:first-of-type
 hockeybladet.nu##.td_mod_wrap a img[data-permalink], a[data-wpel-link="external"][onclick], a.td-lazy-img[target], a[href*="casino"]
 hockeyettan.se##.club-ad-item, .banner-row
@@ -1508,6 +1508,8 @@ zeromagazine.nu##div[id^="ads"]
 /gtm-*.appspot.com
 /gtm.*.js?id=GTM
 /gtm.*/g/collect?
+/guv2$domain=eniro.se
+/guv-$domain=eniro.se
 /headerbidding.js
 /healthcare-puffar$domain=dh.se
 /helios/multiad_jquery
@@ -1830,6 +1832,7 @@ zeromagazine.nu##div[id^="ads"]
 /revive/www/images$image
 /rubiconproject_prebid
 /rum-reporter$domain=viivilla.se
+/scoop.js$domain=eniro.se
 /scripts/js3caf.js
 /scripts/leeads-
 /scripts/opt/view.analytics.js
@@ -2269,7 +2272,6 @@ zeromagazine.nu##div[id^="ads"]
 ||emg-services.net/public/scripts/bundles/emg-desktop
 ||emg-services.net/public/scripts/bundles/emg-dfp
 ||emotorsport.se/ans/$image
-||eniro.se/scoop.js
 ||episerver.net/*/epi-util/find.js
 ||epollstats.infotheme.net/js/fingerprint
 ||es.loppi.se^
@@ -2326,7 +2328,6 @@ zeromagazine.nu##div[id^="ads"]
 ||growthbook.io^$domain=allas.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se|motherhood.se|lokalguiden.se
 ||gstatic.com/partners/badge$subdocument
 ||gtm.findroommate.dk^
-||guv-bounce.eniro.com^
 ||gymshark-sweden.com.se^
 ||g.ezodn.com/cmp/$domain=temadagar.se
 ||hajper.com^$third-party
@@ -2697,7 +2698,6 @@ zeromagazine.nu##div[id^="ads"]
 ||woomio.com/assets/js/analytics
 ||workhaus.se^$third-party
 ||wurfl.io^$domain=vinochmatguiden.se
-||www3.doubleclick.net^$domain=fotbolltransfers.com
 ||www-kittad-se.filesusr.com^$subdocument
 ||yelp.se/sit_rep
 ||yieldwrapper.com^$third-party

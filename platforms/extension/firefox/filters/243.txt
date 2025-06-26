@@ -1,14 +1,14 @@
-! Checksum: PEYDQtqPwHMA1CkwwxLZTw
-! Diff-Path: ../patches/243/243-s-1750826746-14400.patch
+! Checksum: XyKPkyaA7hwsnxmdw6K4Rg
+! Diff-Path: ../patches/243/243-s-1750927497-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.98
-! TimeUpdated: 2025-06-25T04:41:27+00:00
+! Version: 2.0.21.99
+! TimeUpdated: 2025-06-26T08:40:49+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-06-25 05:09:01 CEST
+! Last modified: 2025-06-26 07:13:08 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -474,7 +474,8 @@ emocore.se###main > #home_start_div ~ .m_t.box:nth-last-child(-n+2)
 emocore.se###sticky-panorama-container, #mob-wrap
 energi.se##.advertisement--item
 eniro.se##article:has(#marketing)
-eniro.se##a[target="_blank"][data-gmp-click]
+eniro.se##a[target="_blank"][data-gmp-click], #bottom-left-ad-wrapper, div[style="min-height: 250px; min-width: 300px;"]
+eniro.se##div.empty\:hidden:has(#MapPage_top_left:empty)
 eniro.se##div.rounded-4xl:has(a[href$="/firma#marketing"])
 eniro.se##:is(.grid.place-items-center, div[style^="height"].items-center, div[style^="min-height"].items-center):has(div[id*="LeaderBoard"], div[id*="Leaderboard"], div[id^="LandingPage"])
 enkelteknik.se##.wpb_wrapper > .vc_row_inner:has(script[data-bid])
@@ -740,7 +741,8 @@ hifitorget.se##:is(.row[style^="min-height"], .row .h-100):has(.adsbygoogle, .bi
 hippson.se##.font-bold:has-text(SAMARBETE):upward(.rounded-xl)
 hippson.se##.my-8:empty
 hippson.se##:is(.rounded-xl, .main-article-container):has(a[href="/sponsrad-artikel"])
-hitta.se##a[data-trackimp][target], .hitta-map .integration-txt, .section-details--alb, [class*="dummyAd"], [class*="StyledAdSlot"], [data-bind*="Ad"], div[class^="GraphicAd_"], [class*="adContainer"], [id*="_panorama"], [id*="_skyscraper"], div[style="min-height: 250px;"], div[data-track="displayplacering-customer"], a[data-test="boostAdLink"], div[class^="style_bannerContainer"], [data-track="click-promotion-banner"], div[class*="adWrapper"], div[class*="hittaAdContainer"], div[class*="partnerBox"], a[class*="promotion"]
+hitta.se##a[data-trackimp][target], .hitta-map .integration-txt, .section-details--alb, [class*="dummyAd"], [class*="StyledAdSlot"], [data-bind*="Ad"], div[class^="GraphicAd_"], [class*="adContainer"], [id*="_panorama"], [id*="_skyscraper"], div[style="min-height: 250px;"], div[data-track="displayplacering-customer"], a[data-test="boostAdLink"], div[class^="style_bannerContainer"], [data-track="click-promotion-banner"], div[class*="adWrapper"], div[class*="hittaAdContainer"], div[class*="partnerBox"], a[class*="promotion"], div[class*="adsContainer"]
+hitta.se##div[id^="hitta_desktop"].placeholder:upward(span[style^="display"])
 hitta.se##div[id^="hitta_mobile_"].placeholder:upward(div[class^="height"], div[class^="style_breakout"])
 hitta.se##[class^="styleManual_mainContentBox"] > div[style^="min-height"]:first-of-type
 hockeybladet.nu##.td_mod_wrap a img[data-permalink], a[data-wpel-link="external"][onclick], a.td-lazy-img[target], a[href*="casino"]
@@ -2191,6 +2193,8 @@ zeromagazine.nu##div[id^="ads"]
 /gtm-*.appspot.com
 /gtm.*.js?id=GTM
 /gtm.*/g/collect?
+/guv2$domain=eniro.se
+/guv-$domain=eniro.se
 /headerbidding.js
 /healthcare-puffar$domain=dh.se
 /helios/multiad_jquery
@@ -2514,6 +2518,7 @@ zeromagazine.nu##div[id^="ads"]
 /revive/www/images$image
 /rubiconproject_prebid
 /rum-reporter$domain=viivilla.se
+/scoop.js$domain=eniro.se
 /scripts/js3caf.js
 /scripts/leeads-
 /scripts/opt/view.analytics.js
@@ -2959,7 +2964,6 @@ zeromagazine.nu##div[id^="ads"]
 ||emg-services.net/public/scripts/bundles/emg-desktop
 ||emg-services.net/public/scripts/bundles/emg-dfp
 ||emotorsport.se/ans/$image
-||eniro.se/scoop.js
 ||episerver.net/*/epi-util/find.js
 ||epollstats.infotheme.net/js/fingerprint
 ||es.loppi.se^
@@ -3018,7 +3022,6 @@ zeromagazine.nu##div[id^="ads"]
 ||growthbook.io^$domain=allas.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se|motherhood.se|lokalguiden.se
 ||gstatic.com/partners/badge$subdocument
 ||gtm.findroommate.dk^
-||guv-bounce.eniro.com^
 ||gymshark-sweden.com.se^
 ||g.ezodn.com/cmp/$domain=temadagar.se
 ||hajper.com^$third-party
@@ -3404,7 +3407,6 @@ zeromagazine.nu##div[id^="ads"]
 ||woomio.com/assets/js/analytics
 ||workhaus.se^$third-party
 ||wurfl.io^$domain=vinochmatguiden.se
-||www3.doubleclick.net^$domain=fotbolltransfers.com
 ||www-kittad-se.filesusr.com^$subdocument
 ||yelp.se/sit_rep
 ||yieldwrapper.com^$third-party
