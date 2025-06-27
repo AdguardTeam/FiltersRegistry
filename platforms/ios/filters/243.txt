@@ -1,14 +1,14 @@
-! Checksum: ZlNIHNrwkYMXIz4mPI51pg
-! Diff-Path: ../patches/243/243-s-1750927512-14400.patch
+! Checksum: g6Hv81KNvrqLptCyj34hAg
+! Diff-Path: ../patches/243/243-s-1751028621-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.21.99
-! TimeUpdated: 2025-06-26T08:40:49+00:00
+! Version: 2.0.22.0
+! TimeUpdated: 2025-06-27T12:45:51+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-06-26 07:13:08 CEST
+! Last modified: 2025-06-27 13:12:53 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -24,6 +24,7 @@
 .com/annonsmaterial/
 .com/annons.$script,subdocument
 .com/misc/loada.js
+.io/tracking/widgets/$script
 .js?cb$domain=hemmanytt.se
 .js?gcb$domain=hemmanytt.se
 .nu/annons/
@@ -296,7 +297,6 @@ bredband.se##.wcc-overlay, .wcc-consent-container
 bredband.se#$#.wcc-popup-overflow { overflow:unset!important; }
 brukshunden.se##.cm-ad
 bukefalos.se,thaisnack.se,rollspel.nu,husbilsklubben.se,friaordet.org,xn--lnforum-exa.se,ihusbil.se,ham.se##.u-bottomFixer
-bulletin.nu##div[class*="section-preview"]:has-text(/betalt samarbete/i):upward(4)
 bulletin.nu##[class^="newsletter-subscribe"], div[class^="cookie-message"], div[role="presentation"]
 bulletin.nu,inredningsarkitektur.se,fof.se,allas.se,elle.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se,motherhood.se,aftonbladet.se,lchfarkivet.se,kollega.se,folkofolk.se,skyscanner.se,dagensarena.se,bokadirekt.se,barometern.se,blt.se,bt.se,kristianstadsbladet.se,olandsbladet.se,smp.se,sydostran.se,trelleborgsallehanda.se,ut.se,ystadsallehanda.se,vaxjobladet.se,nsk.se,klt.nu,samnytt.se,sjofartstidningen.se,mytaste.se,matklubben.se,vivavinomat.se,aktuellsakerhet.se,skidspar.se#$#body { overflow:initial!important }
 businesstories.se#$?#.carousel-item:has(.sponsored) { remove: true; }
@@ -515,7 +515,7 @@ expressen.se#$#.tapet-popup-js-no-scroll, .tapet-no-scroll { overflow-y:initial!
 expressen.se##.teaser:has(a[href*="/annons"], a[href*="/brandstudio"], a[href*="/brand-studio"], a[href*="/kampanj."], a[href*="/lanapengar."], a[href*="/rabattkoder."], a[href*="/spel.expressen.se"], .vignette--svg + a[href*="teknikensvarld."], .teaser__bottom--ad-marker)
 expressen.se,di.se#%#//scriptlet('ubo-aeld.js', 'contextmenu', '.disabled')
 expressen.se,di.se,nsk.se,skd.se,nvp.se,nuiosteraker.se,barometern.se,blt.se,bt.se,kristianstadsbladet.se,olandsbladet.se,smp.se,sydostran.se,trelleborgsallehanda.se,ut.se,ystadsallehanda.se,corren.se,folkbladet.se,mvt.se,nt.se,vt.se,klt.nu,vimmerbytidning.se,kuriren.nu,nsd.se,norran.se,pt.se,ekuriren.se,strengnastidning.se,kkuriren.se,sn.se,eposten.se,unt.se,helagotland.se,folkbladet.nu,vasterastidning.se,mitti.se,thelocal.se,byrum.se,sverigespringer.se,recept.se,viivilla.se,automotorsport.se,babyhjalp.se,fragbite.se,ibnytt.se,realtid.se,cafe.se,kingmagazine.se,vaxjobladet.se,alekuriren.se,nyheter24.se,svenskgolf.se,golfing.se,familjeliv.se,praktisktbatagande.se,norrahalland.se,lokalti.se,lchfarkivet.se,alltforforaldrar.se,idrottensaffarer.se,vf.se,hjotidning.se,kt.se,kt-kuriren.se,sla.se,mariestadstidningen.se,filipstadstidning.se,fryksdalsbygden.se,nwt.se,arvikanyheter.se,nkp.se,saffletidningen.se,provinstidningen.se,dalslanningen.se,nlt.se,skaraborgsbygden.se#%#//scriptlet('ubo-json-prune.js', 'autoplay')
-extrakt.se,dialasen.com,ordmedzcxy.se,gamingtips.se,veckansnyheter.se,aftonkuriren.com,aventyrsresor.se###cmplz-cookiebanner-container
+extrakt.se,dialasen.com,ordmedzcxy.se,gamingtips.se,veckansnyheter.se,aftonkuriren.com,aventyrsresor.se,samtiden.nu###cmplz-cookiebanner-container
 familjehemmet.se###cookieNotice
 familjeliv.se##.familjeliv_nestle
 familjesidan.se##.cookies-wrapper
@@ -629,6 +629,7 @@ freeride.se,gamereactor.se,happyride.se,hockeyettan.se##.sponsor
 fria.nu,stockholmsfria.se##.holidAds:upward(1)
 fria.nu,stockholmsfria.se##[class*="annonser"], #cboxOverlay, #cboxWrapper, a[href*="banner"][target]
 frihetsnytt.se##a[href^="https://frihetsnytt.se/annonsera"]
+frihetsnytt.se##.tdm_block_inline_image:has(a[target])
 frihetsnytt.se##.td-block-title-wrap:has-text(/annons/i):upward(1)
 frihet.se##.CookieBar
 frilagt.se##.elementor-location-header section.elementor-element:first-child
@@ -1035,7 +1036,7 @@ modernalivet.se##.excerpt:has-text(/annons/i):upward(article)
 modernalivet.se##.modal-wrap, .slide-in-box, span[data-title-next*="casino"] + .post-wrap
 modernalivet.se##.sidebar-widget h3:has-text(/annons/i):upward(.sidebar-widget)
 modernpsykologi.se##.ads-container
-morotsliv.com##.et_bloom .et_bloom_flyin_center, a[href*="/?utm_medium=affiliate"], a.bigblue[target]
+morotsliv.com##.et_bloom .et_bloom_flyin_center, a[href*="/?utm_medium=affiliate"], a.bigblue[target], a[href^="https://go.adt"]
 motivation.se##.card:has(.sponsored)
 motivation.se##.sponsored-item, [class*="banner"], .outsider
 motormagasinet.se,dagenshandel.se,food-supply.se,plastnet.se,habit.se,woodnet.se,foodnet.se,transportnet.se,processnet.se,packnet.se,verkstaderna.se,medtechmagazine.se,recyclingnet.se,rt-forum.se,uochd.se,lifesciencesweden.se,fri-kopenskap.se,cleannet.se,framtidensbygg.se,entreprenad.com,metal-supply.se##.box-of-announcement, a[href*="campaign"][target="_blank"], div[class*="rotating-"], #bottombanner, #promoPopup, .modal-backdrop, .newsletterPopUp
