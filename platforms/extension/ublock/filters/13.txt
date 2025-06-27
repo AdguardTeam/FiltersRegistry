@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mVcBTAAUkWqxSQEh+NEEdg
-! Diff-Path: ../patches/13/13-s-1751019102-3600.patch
+! Checksum: XHEbv/n3ZlyO/DlOCtV3mQ
+! Diff-Path: ../patches/13/13-s-1751022647-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.57.58
-! TimeUpdated: 2025-06-27T10:07:37+00:00
+! Version: 2.0.57.59
+! TimeUpdated: 2025-06-27T11:06:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -889,7 +889,7 @@ filmgo1.com,dizikral.nl,puffytr.com,anizle.com,anizm.net,dizimore.com,dizirex.co
 ! isShow
 tekfullfilmizle5.com##+js(set-constant, isShow, true)
 ! initPu
-zerotiktok.com,filmzevkim.com,sinemakolix.com,erotikhoot.com,dizikral.live,eldermanga.com,promy.pro,diziyoutv.com,guneykoresinemasi.com,jetfilmizletv.net,dizimax2.com,yenierotikfilm.xyz,breakingbadizle.*,diziday1.com,zipfilmizle.com,bamfilmizle.com,sinemadafilm.com,filmmoduu.com,trfilm.net,dolufilm.org,turkifsaalemi.com##+js(abort-on-property-read, initPu)
+dipfilmizle.*,zerotiktok.com,filmzevkim.com,sinemakolix.com,erotikhoot.com,dizikral.live,eldermanga.com,promy.pro,diziyoutv.com,guneykoresinemasi.com,jetfilmizletv.net,dizimax2.com,yenierotikfilm.xyz,breakingbadizle.*,diziday1.com,zipfilmizle.com,bamfilmizle.com,sinemadafilm.com,filmmoduu.com,trfilm.net,dolufilm.org,turkifsaalemi.com##+js(abort-on-property-read, initPu)
 ! initAd
 fullfilmizlebaba.com,superfilmgeldi.biz,vkfilmizlet.*,supernaturalizle.com,sinemakolik.net,hdsinemax.com,diziyo.*,fullhdabifilm.com,bettercallsaulizle.com,superfilmgeldi.net,fullhdfilmizlett1.com,fullhdfilmizleabi.com,hdfreeizle.com,hdmixfilim.com,fullhdfilmizlepala.com##+js(abort-on-property-read, initAd)
 !
@@ -5454,6 +5454,11 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+!
+! dizibox*.com - frequently changed domains
+[$domain=/dizibox\d+.com/]##.body-clickable
+||dizibox*.com/wp-content/themes/diziplus/images/bg.webp
+||ssl.p.jwpcdn.com/player/*/vast.js
 !
 ! klasikfilmler*.cc - frequently changed domains
 [$domain=/klasikfilmler\d+\.cc/]##+js(addEventListener-defuser, DOMContentLoaded, videotutucu)
