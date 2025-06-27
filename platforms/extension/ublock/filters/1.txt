@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: UYupfDo8c51O8w90FfQP/A
-! Diff-Path: ../patches/1/1-s-1751048015-3600.patch
+! Checksum: EXEfQWyB5lIIR4u11cjrkQ
+! Diff-Path: ../patches/1/1-s-1751051431-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.0.21
-! TimeUpdated: 2025-06-27T18:08:24+00:00
+! Version: 2.1.0.22
+! TimeUpdated: 2025-06-27T19:05:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3804,14 +3804,6 @@ newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,
 ! NOTE: UA rules copied to Ukrainian filter
 ! TODO: Remove not multi lang rules with .ua tld after splitting the filter (look at the end of file)
 !
-! AdBlocksBuilder
-.com/resources/draw_script.js$third-party
-!
-! AdRegain
-modsforwot.ru,helpsetup.ru,vargr.ru,trialkeys.ru##+js(abort-on-property-write, adregain_wall)
-modsforwot.ru,helpsetup.ru,vargr.ru,trialkeys.ru##+js(abort-on-property-read, ad_nodes)
-!
-!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206755
 ||servermon.ru/assets/template_mon/js_src/script.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207006
@@ -4069,10 +4061,6 @@ poli-vsp.ru#@##adSense
 @@||imageban.ru/ads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43243
 @@/advertisement.js$domain=happy-hack.ru
-! https://github.com/AdguardTeam/AdguardFilters/issues/45323
-helpsetup.ru#$##solnisko111 { height: 1px!important; }
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,important,domain=helpsetup.ru
-||mc.yandex.ru/metrika/tag.js$script,redirect=noop.js,important,domain=helpsetup.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74166
 balticlivecam.com##+js(no-setTimeout-if, isAdsBlock, 5000)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51401
@@ -4127,8 +4115,6 @@ world-of-facts.com##body > #modal
 ||wp-r.github.io/aplacer/
 ! hevc-club.ucoz.net
 @@||ucoz.net/bnr/blocks/ads.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/37163
-helpsetup.ru##+js(abort-current-script, Math.random, advblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32503
 @@||yastatic.net/pcode/adfox/loader.js$domain=kanobu.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32245
@@ -4233,7 +4219,6 @@ video.khl.ru##+js(set-constant, Object.prototype.adblockers_detector, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15866
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15653
 ||cdn-library.su^$domain=nikopolnews.net
-! https://github.com/AdguardTeam/AdguardFilters/issues/15558
 ! https://github.com/AdguardTeam/AdguardFilters/issues/15489
 @@||howdyho.net/media/js/adsbygoogle.js
 !
@@ -5354,8 +5339,6 @@ tele.ru##+js(abort-current-script, String.fromCharCode, /substr/)
 sportbar.biz,sportbox.ws,goool7.ws,sport-24tv.ru##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/44512
 porno-incest.net##+js(window.open-defuser)
-! https://github.com/AdguardTeam/AdguardFilters/issues/43382
-moresisek.net##+js(abort-current-script, document.addEventListener, /asg_mixed_tabs/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43503
 porevos.ru##+js(abort-current-script, String.fromCharCode, /substr/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43054
@@ -5397,8 +5380,6 @@ sberometer.ru##+js(abort-current-script, document.addEventListener, place_rvn)
 spaces.im,spaces-blogs.com,strip2.me##+js(set-constant, mobiads_loader, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/11776
 economistua.com##+js(set-constant, onlyBodyClick, noopFunc)
-! https://github.com/AdguardTeam/AdguardFilters/issues/9168
-ruclip.com##+js(abort-current-script, atob, decodeURIComponent)
 ! https://forum.adguard.com/index.php?threads/23865/
 fainaidea.com##+js(abort-on-property-read, td_ad_background_click_link)
 ! https://forum.adguard.com/index.php?threads/33157/
@@ -6567,9 +6548,9 @@ www.kinopoisk.ru##div[class*="styles_height250__"]
 ! https://qlnomb.com/rncl17921ivl0mp03y8qh768uqv768kpy8hlb.php
 /^http(s?):\/\/[A-Za-z0-9]{6}\.[A-Za-z0-9]{3}\/[A-Za-z0-9]{30,}\.php$/$script,third-party,domain=rsute.ru|afn.by|hdvideobox.ru|samelectrik.ru|amazingfacts.ru|allkey.org|kg-portal.ru|xxxlmusic.com|smartpress.by|unews.pro|inzhener-info.ru|vklook.online|joyreactor.cc|solenka.info|discover24.ru
 ! new (01.06.2020)
-/^http(s?):\/\/[A-Za-z0-9]{6}\.[A-Za-z0-9]{3}\/[A-Za-z0-9-.]{6}\/[A-Za-z0-9-.\/]{25,}\.php$/$script,third-party,domain=solenka.info|kvmarvel.ru|crashplane.ru|ymkababy.ru|newsland.com|prozoro.net.ua|alau.kz|brjunetka.ru|tarifec.com|u-news.com.ua|zoobusiness.kiev.ua|b-online.ru|porosenka.net|dachnyuchastok.ru|gubka-bob.ru|film.ru|pg11.ru|pg12.ru|pg13.ru|pg21.ru|prochepetsk.ru|progorodnn.ru|progorodnsk.ru|progorodsamara.ru|samokat-dostavka.ru|lifedon.com.ua|clubhunters.ru|polytech-soft.com|max-vps.ru|unews.pro|vsplanet.net
+/^http(s?):\/\/[A-Za-z0-9]{6}\.[A-Za-z0-9]{3}\/[A-Za-z0-9-.]{6}\/[A-Za-z0-9-.\/]{25,}\.php$/$script,third-party,domain=solenka.info|kvmarvel.ru|crashplane.ru|ymkababy.ru|newsland.com|prozoro.net.ua|alau.kz|brjunetka.ru|tarifec.com|u-news.com.ua|b-online.ru|porosenka.net|dachnyuchastok.ru|gubka-bob.ru|film.ru|pg11.ru|pg12.ru|pg13.ru|pg21.ru|prochepetsk.ru|progorodnn.ru|progorodnsk.ru|progorodsamara.ru|samokat-dostavka.ru|lifedon.com.ua|clubhunters.ru|polytech-soft.com|max-vps.ru|unews.pro|vsplanet.net
 ! old
-/^http(s?):\/\/([A-Za-z0-9-.]+\/){5,}[A-Za-z0-9_-]+$/$script,third-party,domain=crashplane.ru|ymkababy.ru|newsland.com|prozoro.net.ua|alau.kz|brjunetka.ru|tarifec.com|u-news.com.ua|zoobusiness.kiev.ua|b-online.ru|beejournal.ru|porosenka.net|dachnyuchastok.ru|gubka-bob.ru|film.ru|pg11.ru|pg12.ru|pg13.ru|pg21.ru|prochepetsk.ru|progorodnn.ru|progorodnsk.ru|progorodsamara.ru|fixmaster74.ru|samokat-dostavka.ru|coronavirus-control.ru|lifedon.com.ua|fatelines.net|clubhunters.ru|made-box.ru|howto-news.info
+/^http(s?):\/\/([A-Za-z0-9-.]+\/){5,}[A-Za-z0-9_-]+$/$script,third-party,domain=crashplane.ru|ymkababy.ru|newsland.com|prozoro.net.ua|alau.kz|brjunetka.ru|tarifec.com|u-news.com.ua|b-online.ru|beejournal.ru|porosenka.net|dachnyuchastok.ru|gubka-bob.ru|film.ru|pg11.ru|pg12.ru|pg13.ru|pg21.ru|prochepetsk.ru|progorodnn.ru|progorodnsk.ru|progorodsamara.ru|fixmaster74.ru|samokat-dostavka.ru|coronavirus-control.ru|lifedon.com.ua|fatelines.net|clubhunters.ru|made-box.ru|howto-news.info
 !
 ! ads2.bid / AdProfex
 ! Sample links for creating a regexp rule: https://hfnuqljjnt.com/v2/165076/2ed93b3a09ce2700dadc8062cbe89624b5658c11.js
@@ -6801,11 +6782,11 @@ karelia.news,032.ua,0332.ua,0342.ua,0352.ua,0362.ua,0372.ua,0412.ua,0432.ua,0462
 0154.by,0312.ua,032.ua,0332.ua,0342.ua,0352.ua,0362.ua,0372.ua,0382.ua,0412.ua,04141.com.ua,0432.ua,04563.com.ua,04597.com.ua,04598.com.ua,0462.ua,0472.ua,048.ua,04868.com.ua,0512.com.ua,05136.com.ua,0522.ua,0532.ua,05366.com.ua,0542.ua,05447.com.ua,0552.ua,056.ua,0564.ua,0566.com.ua,0569.com.ua,057.ua,061.ua,06153.com.ua,0619.com.ua,06236.com.ua,06237.com.ua,06239.com.ua,06242.ua,06252.com.ua,06267.com.ua,06272.com.ua,06274.com.ua,06277.com.ua,0629.com.ua,0642.ua,06452.com.ua,1rnd.ru,3849.com.ua,44.ua,4594.com.ua,5692.com.ua,62.ua,6262.com.ua,6264.com.ua,65.media,7152.kz,7232.kz,8692.ru,city04.kz,city41.ru,citydomodedovo.ru,go31.ru,go61.ru,go7812.ru,gorod3466.ru,inaktau.kz,inalmaty.kz,inastana.kz,inatyrau.kz,inkaragandy.kz,inshymkent.kz,karelia.news,kaskelenec.kz,qapshagai-city.kz,uralskcity.kz##.br-wrapper
 0154.by,0312.ua,032.ua,0332.ua,0342.ua,0352.ua,0362.ua,0372.ua,0382.ua,0412.ua,04141.com.ua,0432.ua,04563.com.ua,04597.com.ua,04598.com.ua,0462.ua,0472.ua,048.ua,04868.com.ua,0512.com.ua,05136.com.ua,0522.ua,0532.ua,05366.com.ua,0542.ua,05447.com.ua,0552.ua,056.ua,0564.ua,0566.com.ua,0569.com.ua,057.ua,061.ua,06153.com.ua,0619.com.ua,06236.com.ua,06237.com.ua,06239.com.ua,06242.ua,06252.com.ua,06267.com.ua,06272.com.ua,06274.com.ua,06277.com.ua,0629.com.ua,0642.ua,06452.com.ua,1rnd.ru,3849.com.ua,44.ua,4594.com.ua,5692.com.ua,62.ua,6262.com.ua,6264.com.ua,65.media,7152.kz,7232.kz,city04.kz,city41.ru,citydomodedovo.ru,go31.ru,go61.ru,go7812.ru,gorod3466.ru,inaktau.kz,inalmaty.kz,inastana.kz,inatyrau.kz,inkaragandy.kz,inshymkent.kz,karelia.news,kaskelenec.kz,qapshagai-city.kz,uralskcity.kz##app-block-widget-banner
 ! rp5.ru
-rp5.ru,rp5.ua,rp5.by,rp5.kz,rp5.co.uk###content-wrapper > div[id="content"] ~ div[id]:not([id="mapa"])
-rp5.ru,rp5.ua,rp5.by,rp5.kz,rp5.co.uk#?##FheaderContent > div[id]:has(> div[id] > div[onclick*="https://txt.rp5.ru/responses/reClickAdvert.php"])
+rp5.ru,rp5.ua,rp5.by,rp5.kz###content-wrapper > div[id="content"] ~ div[id]:not([id="mapa"])
+rp5.ru,rp5.ua,rp5.by,rp5.kz#?##FheaderContent > div[id]:has(> div[id] > div[onclick*="https://txt.rp5.ru/responses/reClickAdvert.php"])
 rp5.kz,rp5.by,rp5.ru#$?##content-wrapper > div#content > div[id] + div[id] > div[id]:has(> div > div > div[style] > div.arrow-circle) { visibility: hidden !important; min-height: 20px !important; height: 20px !important; }
 !+ NOT_PLATFORM(ext_safari)
-rp5.ru,rp5.ua,rp5.by,rp5.kz,rp5.co.uk#?##FheaderContent > div[id]:has(> ins.adsbygoogle)
+rp5.ru,rp5.ua,rp5.by,rp5.kz#?##FheaderContent > div[id]:has(> ins.adsbygoogle)
 ! GisMeteo (+ mirror meteofor.com.ua)
 ! gismeteo (new design)
 gismeteo.*##.top-media-extender
@@ -10323,7 +10304,6 @@ goha.ru##.stretched > a[target="_blank"][rel="noreferrer noopener"]
 ||tengrinews.kz/ajax/getBanners
 igrozor.org###sideAdv
 novostroy.su##.newton-ad
-helpsetup.ru##center > div[class^="outline"]
 ||od-news.com/wp-content/uploads/*_baner
 /images/branding/*$domain=tourprom.ru|rodgor-vlg.ru|roem.ru|podfm.ru|myfin.by|meduza.io|bookmix.ru|fanfics.me|kv.by|gorod55.ru|law.ru
 android.inform.click##a[href^="https://rusvpn.com/"] > img
@@ -12111,7 +12091,6 @@ itop-gear.ru###fguru
 enovosty.com###first-banner
 fishki.net###fishki-branding
 fishki.net###fishkinet300x250
-helpsetup.ru###fixed1
 woman.ru###fixed_ad
 itbukva.com###fixedcontainer_zyx
 api.yadoma.tv###flash_layer
@@ -12520,7 +12499,6 @@ game-tournaments.com##.ablive
 pickpoint.ru###ablock
 cont.ws##.ablock_side
 rivne.media##main > .container > a[rel="nofollow"]
-helpsetup.ru##.abpp
 pg11.ru##.abs-container
 psychologos.ru##.ad-banners
 banki.ru##.ad-block-teaser
