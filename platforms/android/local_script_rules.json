@@ -991,7 +991,7 @@
         },
         {
             "domains": "www.youtube.com",
-            "script": "(()=>{if(Object.getOwnPropertyDescriptor(window.JSON,\"stringify\").writable)return;const e={apply:(e,t,r)=>{let c=Reflect.apply(e,t,r);try{3!==r.length||\"object\"!=typeof c||\"string\"!=typeof c.body||c.body.includes('\"clientScreen\":\"ADUNIT\"')||(c.body=c.body.replace('\"clientScreen\":\"WATCH\"','\"clientScreen\":\"ADUNIT\"'))}catch(e){console.trace(\"Error occurred:\",e)}return c}};window.Object.assign=new Proxy(window.Object.assign,e)})();"
+            "script": "(()=>{if(Object.getOwnPropertyDescriptor(window.JSON,\"stringify\").writable)return;const e={construct:(e,c,r)=>{try{const e=c[0],r=c[1]?.body;e?.includes(\"youtubei\")&&r?.includes('\"clientScreen\":\"WATCH\"')&&(c[1].body=r.replace('\"clientScreen\":\"WATCH\"','\"clientScreen\":\"ADUNIT\"'))}catch(e){console.trace(\"Error occurred:\",e)}return Reflect.construct(e,c,r)}};window.Request=new Proxy(window.Request,e)})();"
         },
         {
             "domains": "www.youtube.com",
