@@ -1,5 +1,5 @@
-! Checksum: hz081OfMRWrkuvcs7UtJvA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1750942227-14400.patch
+! Checksum: Osr31oeipvpdUXlfRZlGcg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1750999544-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.32
@@ -244,7 +244,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^172\.255\.6\.(\d\d?|(17?|2)[0-689]\d)$/$network
 ||bowlingunauthorized.com^$all
 ||connatedresspint.com^$all
-||cunningthong.com^$all
 ||embassygroceryobvious.com^$all
 ||essentiallyitemoutrageous.com^$all
 ||furyprosecutionkitchen.com^$all
@@ -317,6 +316,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 37.34.176.37$network
 ||auslogics.com^$document
+||in-automate.brevo.com^
 ||mediaget.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 23.111.31.137$network
@@ -2359,7 +2359,6 @@ www.microsoft.com##.card[data-bi-cn*=zombie i][data-bi-cn*=shoot i]
 ~pinterest.*##a[data-pin-do=buttonPin]
 ~pinterest.*##a[href*="pinterest.com/pin/find/?"]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
-~pinterest.*##a[href="/#pinterest"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
 ~pinterest.*##a[title="Share on Pinterest" i]
 ~pinterest.*##button[data-href*="pinterest.com/pin/create/button/"]
@@ -2677,7 +2676,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||soundofhope.org^
 @@||lemondeinformatique.fr^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
-@@||siteadvisor.com^
 @@||www.joesandbox.com^
 @@||virustotal.com^
 @@://safeweb.norton.com^
@@ -2977,7 +2975,6 @@ $removeparam=rmmds
 $removeparam=utmid
 $removeparam=msclkid
 $removeparam=litb_from
-$removeparam=ggcid
 $removeparam=ftag
 $document,removeparam=/^__xts__.*$/
 $removeparam=akmClientCountry
@@ -3266,6 +3263,12 @@ $removeparam=ig_mid
 $removeparam=asclid
 $removeparam=au_advert_id
 $removeparam=au_car_id
+$removeparam=ads_adid
+$removeparam=ads_cmpid
+$removeparam=ads_creative
+$removeparam=ads_matchtype
+$removeparam=ads_network
+$removeparam=ads_targetid
 ref=rss^$document,removeparam=ref
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
@@ -3773,6 +3776,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||iqiyi.com^$removeparam=r_source
 ||iqiyi.com^$removeparam=stype
 ||iqiyi.com^$removeparam=s_source
+||help.iqiyi.com^$removeparam=entry
 ||sogou.com^$removeparam=_asf
 ||sogou.com^$removeparam=_ast
 ||sogou.com^$removeparam=lkt
@@ -3849,6 +3853,7 @@ $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.c
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
+||thehackernews.com^$removeparam=_m
 ||apple.com^$removeparam=fnode
 ||epidemicsound.com^$removeparam=_us
 ||epidemicsound.com^$removeparam=_usx
@@ -4692,7 +4697,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 #@#.text_ads
 ##.text_ads:not(html,body,:empty)
 #@#.textad
-##.textad:not(html,body,:empty)
 #@#.textAd
 ##.textAd:not(html,body,:empty)
 @@/adblock-detection/prebid.js|

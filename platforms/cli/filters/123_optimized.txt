@@ -1,9 +1,9 @@
-! Checksum: JC9KqHMuzhUjB21xUfST9w
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1750985535-14400.patch
+! Checksum: 283+gjPbMmnBa9xIth/K9w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1750999515-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.43.67
-! TimeUpdated: 2025-06-27T00:47:57+00:00
+! Version: 2.1.43.68
+! TimeUpdated: 2025-06-27T04:40:42+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -628,7 +628,6 @@ _social_footer_
 ###socialbar
 ###socialbookmarks
 ###socialbox
-###socialbtns
 ###socialbuttons
 ###socialbuttonsbox
 ###socialdiv
@@ -646,6 +645,7 @@ _social_footer_
 ###socialsidebar
 ###socialslider
 ###socialtop
+###socialwrap
 ###sticky-share
 ###sticky-social
 ###stickySocial
@@ -723,8 +723,6 @@ _social_footer_
 ##.LineShareButton
 ##.ListSocial
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
-##.NavigationSharingFooter
-##.NavigationSharingHeader
 ##.PinItButton
 ##.PinterestButtonContainer
 ##.RadSocialShare
@@ -755,7 +753,6 @@ _social_footer_
 ##.SocialMediaLinks
 ##.SocialMediaShareButton
 ##.SocialRibbon
-##.SocialRow
 ##.SocialSection
 ##.SocialShare
 ##.SocialShare-root
@@ -887,6 +884,7 @@ _social_footer_
 ##.articleShareLinks
 ##.article__header__share
 ##.article__likes
+##.article__overlay-share
 ##.article__share
 ##.article__share-buttons
 ##.article__share-title
@@ -932,7 +930,6 @@ _social_footer_
 ##.b-footer_social
 ##.b-header__social
 ##.b-share
-##.b-share-button
 ##.b-sharelist
 ##.b-social-icons
 ##.b-social-share
@@ -1163,6 +1160,7 @@ _social_footer_
 ##.eg-footer-icon-youtube
 ##.ekit_social_media
 ##.elem-info__share
+##.element-share
 ##.elementor-social-icon
 ##.elementor-social-icons-wrapper
 ##.elementor-widget-facebook-page
@@ -1271,7 +1269,6 @@ _social_footer_
 ##.fb-follow-button
 ##.fb-footer
 ##.fb-like-box
-##.fb-like-box-outer
 ##.fb-like-box-wrapper
 ##.fb-like-buttons
 ##.fb-like-container
@@ -1281,6 +1278,7 @@ _social_footer_
 ##.fb-share
 ##.fb-share-button
 ##.fb-share-container
+##.fb-slider
 ##.fb-subscribe
 ##.fb-twitter
 ##.fb-widget
@@ -1301,7 +1299,6 @@ _social_footer_
 ##.fbbsb-button
 ##.fbbsb-buttons
 ##.fbbutton
-##.fblbForm
 ##.fblikebox
 ##.fblink
 ##.fbshare
@@ -1309,6 +1306,7 @@ _social_footer_
 ##.fi-social-facebook
 ##.fi-social-google-plus
 ##.fi-social-instagram
+##.fi-social-linkedin
 ##.fi-social-pinterest
 ##.fi-social-twitter
 ##.fi-social-youtube
@@ -1906,6 +1904,7 @@ _social_footer_
 ##.menu-social-menu-container
 ##.menu-social-navigation-container
 ##.menu_social
+##.menusocial
 ##.messageShareButtons
 ##.meta-share
 ##.meta-share-count
@@ -1985,6 +1984,7 @@ _social_footer_
 ##.news-share
 ##.news-share-button
 ##.news-share-button-down
+##.news-sharing
 ##.news-social-container
 ##.news__share
 ##.news_sns
@@ -1992,6 +1992,7 @@ _social_footer_
 ##.node-share
 ##.node-social
 ##.normal_social
+##.noticia-social-share
 ##.novashare-buttons-wrapper
 ##.ns-social
 ##.null-instagram-feed
@@ -2146,8 +2147,6 @@ _social_footer_
 ##.rrssb-buttons-container
 ##.rss-social
 ##.rt-social-buttons
-##.rui-footer-social
-##.rui-social
 ##.s-btns
 ##.s-f__social
 ##.s-facebook
@@ -2729,6 +2728,7 @@ _social_footer_
 ##.snsPalette
 ##.snsWrapper
 ##.sns_box
+##.sns_box_single
 ##.sns_follow
 ##.sns_right
 ##.sns_share
@@ -2966,7 +2966,6 @@ _social_footer_
 ##.social-sharer
 ##.social-shares
 ##.social-sharing-bot
-##.social-sharing-button
 ##.social-sharing-buttons
 ##.social-sharing-item
 ##.social-sharing-link
@@ -3061,6 +3060,7 @@ _social_footer_
 ##.socialPanel
 ##.socialSection
 ##.socialShare
+##.socialShareFooter
 ##.socialShareIcon
 ##.socialShareLinks
 ##.socialSharing
@@ -3248,7 +3248,6 @@ _social_footer_
 ##.tdm_block_socials
 ##.tds-social1
 ##.tgla7-share
-##.tha__socialItem
 ##.thb-social-links-container
 ##.thb-social-top
 ##.theChampSharing
@@ -3654,7 +3653,6 @@ _social_footer_
 ||sharethis.com^$third-party
 ||sharpay.io^$third-party
 ||shpg.org^$third-party
-||simplesharebuttons.com^$third-party
 ||spotify.com/follow/$third-party
 ||storeya.com/externalscript/$third-party
 ||trendemon.com^$third-party
@@ -3710,6 +3708,7 @@ analyticsinsight.net,biznews.com,dn.pt,newindianexpress.com,newsgram.com###heade
 medicalxpress.com,phys.org,techxplore.com###js-soc-panel
 digitaltrends.com###menu-2021-social
 taylorfrancis.com###openShare
+loveandlemons.com###pinthispage
 mediaite.com###post-social
 auburnpub.com,azdailysun.com,beatricedailysun.com,billingsgazette.com,bismarcktribune.com,chippewa.com,columbustelegram.com,cumberlink.com,dailyjournalonline.com,democratherald.com,elkodaily.com,fremonttribune.com,gazettetimes.com,globegazette.com,hanfordsentinel.com,helenair.com,herald-review.com,jg-tc.com,journalstar.com,journaltimes.com,lacrossetribune.com,lebanon-express.com,lompocrecord.com,magicvalley.com,missoulanews.com,missoulian.com,mtstandard.com,muscatinejournal.com,napavalleyregister.com,nwitimes.com,pantagraph.com,poststar.com,qconline.com,qctimes.com,rapidcityjournal.com,ravallirepublic.com,santamariatimes.com,siouxcityjournal.com,stltoday.com,tdn.com,thesouthern.com,thetandd.com,theworldlink.com,trib.com,tucson.com,wcfcourier.com,winonadailynews.com,wiscnews.com###reaction-wrap
 naturalnewsblogs.com###sab-social-wrapper
@@ -3744,6 +3743,7 @@ brighteon.com##.ButtonShare
 cnbc.com##.CNBCFooter-social
 abc.net.au##.FixedHeader_shareBtn__yNush
 venturebeat.com##.Footer__social-icon
+i24news.tv##.Footer_social-network-links-wrapper__xN9Go
 meduza.io##.GeneralMaterial-module-share
 business-standard.com##.MetaPost_flwggle__kFKIT
 rbth.com##.Popup-telegram
@@ -3778,7 +3778,6 @@ nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
 altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
 www.psu.edu##.article-top-social-share_content__OYcDe
-u.today##.article__gnews
 rt.com##.article__google-news
 armeniasputnik.am,noticiabrasil.net.br,spnfa.ir,sputnik-abkhazia.info,sputnik-georgia.com,sputnik-ossetia.com,sputnik.af,sputnik.az,sputnik.by,sputnik.kg,sputnik.kz,sputnik.tj,sputnikarabic.ae,sputnikglobe.com,sputniknews.africa,sputniknews.cn,sputniknews.com,sputniknews.com.tr,sputniknews.in,sputniknews.jp,sputniknews.lat,sputniknews.ru,sputniknews.uz,sputniknews.vn,sputniknewsbr.com.br,sputnikportal.rs##.article__news-services-subscribe
 wnep.com##.article__sharing
@@ -3795,6 +3794,7 @@ beebom.com##.beebom-social-share
 gobankingrates.com##.between-share-and-author
 thelatinonewsletter.org##.bh__byline_social_wrapper
 military.com##.block--addtoanyadv
+csis.org##.block--social-sharing
 tastesbetterfromscratch.com##.block-follow-me
 iowagirleats.com,simplifylivelove.com,therecipecritic.com##.block-pinterest-cta
 thehustle.co##.blog-hustle-social-links
@@ -3829,7 +3829,6 @@ theglobeandmail.com##.c-site-header__buttons
 mediaite.com##.c-youtube-subscribe
 yahoo.com##.caas-comment
 yahoo.com##.caas-content-contain-share
-u.today##.card__wrap
 laweekly.com##.cb-widget-social-media
 cgdirector.com##.cgd-social-wrapper
 cri.cn##.cgr-info-nav
@@ -4566,7 +4565,6 @@ infobae.com##.second-saved-buttons
 as.com##.sh-bar
 heraldodemexico.com.mx##.share-comp
 infobae.com##.sharebar-buttons-container
-elconfidencialdigital.com,estrelladigital.es,nuevatribuna.es##.sharrre-tools
 elcomercio.com##.single-layout__community-social
 eldia.com##.social-nota-top
 rtve.es##.socialBox
