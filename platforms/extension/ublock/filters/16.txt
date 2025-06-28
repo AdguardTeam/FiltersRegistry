@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: xS+MZZvtMCtGcMQIiqqi2g
-! Diff-Path: ../patches/16/16-s-1751087491-3600.patch
+! Checksum: EgK2ik3EBKqTEOe/sLmNbg
+! Diff-Path: ../patches/16/16-s-1751116621-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.53.24
-! TimeUpdated: 2025-06-28T05:07:31+00:00
+! Version: 2.0.53.25
+! TimeUpdated: 2025-06-28T13:12:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -302,8 +302,6 @@ varmatin.com#@#.AdSense
 varmatin.com##+js(set-constant, adblockdetected, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/91538
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=tirexo.work
-! https://github.com/easylist/listefr/issues/16
-@@||ddl-francais.com/adv/ads/popunder.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/86084
 !+ NOT_OPTIMIZED
 @@||wakanim.tv/*/advertisement?idepisode=
@@ -384,9 +382,6 @@ recreatisse.com##+js(abort-current-script, document.getElementById, adback)
 @@||systemed.fr/assets/js/advertisement-*.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/38153
 voyageforum.com##+js(no-setTimeout-if, adsbygoogle)
-! https://github.com/AdguardTeam/AdguardFilters/issues/35028
-!+ PLATFORM(ext_ff, ext_opera, ext_edge, ios, ext_android_cb, ext_safari, ext_ublock)
-@@||hdstreamvf.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34766
 jtrouver.com##+js(set-constant, google_jobrunner, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34483
@@ -630,10 +625,7 @@ marieclaire.fr##+js(adjust-setTimeout, /userConsentProcess|this===/, *, 0.001)
 sudouest.fr##+js(adjust-setTimeout, return t(), *, 0.001)
 ! https://github.com/uBlockOrigin/uAssets/issues/23806
 japscan.lol##+js(no-setTimeout-if, sessionStorage)
-! https://github.com/uBlockOrigin/uAssets/issues/23802
-seriescultes.store##+js(remove-attr, href, a[href]#clickfakeplayer)
 ! https://github.com/uBlockOrigin/uAssets/issues/23689
-1jour1film.homes##+js(remove-attr, href, a[href]#clickfakeplayer)
 player.melaniezettofrais.online##+js(addEventListener-defuser, click, Popup)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178842
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177510
@@ -691,8 +683,6 @@ cosmopolitan.fr##+js(adjust-setTimeout, /userConsentProcessEnded|\[0\]\+"With"/,
 macg.co##+js(addEventListener-defuser, DOMContentLoaded, interstitial)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138351
 lexpress.fr##+js(set-cookie, q_pop_noel, true)
-! https://github.com/AdguardTeam/AdguardFilters/issues/135943
-dl-protect.net,annuaire-telechargement.tel##+js(abort-on-stack-trace, document.createEvent, Object.trigger)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/125733
 japscan.me##+js(abort-current-script, JSON.parse, document.createElement('script'))
 japscan.me##+js(abort-current-script, document.createElement, document.documentElement).appendChild)
@@ -712,10 +702,6 @@ funradio.fr,rtl2.fr,rtl.fr##+js(set-constant, getAudioAdUrl, noopFunc)
 seriepourvous.com##+js(remove-attr, href, a[href]#clickfakeplayer)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/105459
 mapcustomizer.com##+js(remove-class, with-ad, div)
-! https://github.com/AdguardTeam/AdguardFilters/issues/95087
-dl-protect.info##+js(no-setInterval-if, var _0x)
-! https://github.com/easylist/listefr/issues/16
-ddl-francais.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/76272
 11anim.com##+js(abort-on-property-read, zoneSett)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/72800
@@ -803,13 +789,8 @@ ddaynormandy.forumgaming.fr#$##main-content > div[style*="visibility: visible !i
 journaldunet.com#$##jSidebarSticky { min-height: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/68512
 monpetitforfait.com#$#body > #main[style^="margin-top:"] { margin-top: 10px !important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/32566
-hdstreamvf.com#$#.TPlayer.on::after { display: none!important; }
-hdstreamvf.com#$##ads_player_inside { display: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30968
 actu17.fr#$#body.td-ad-background-link { cursor: auto!important; }
-! https://forum.adguard.com/index.php?threads/torrents9-cc.30101/
-torrents9.cc#$#a[href^="magnet:?"] { width: 100%!important; }
 ! https://forum.adguard.com/index.php?threads/www-malekal-com.29657/
 malekal.com#$#.adsbygoogle { height: 1px!important; visibility:hidden!important; }
 ! https://forum.adguard.com/index.php?threads/18388/
@@ -821,7 +802,6 @@ igen.fr#$##motherboard { top: 30px!important; }
 !------- Content filtering rules ------!
 !--------------------------------------!
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/110232
 !---------------------------------------------------------------------------!
 !-------------- General URL blocking rules ---------------------------------!
 !---------------------------------------------------------------------------!
@@ -1205,9 +1185,7 @@ universfreebox.com###free-mid-article-native
 meteofrance.com###block-bandeauadministrablepoi
 liberation.fr##div[class^="default__OutbrainWrapper-"]
 generation-nt.com###page-hp > div.pub.overflow-hidden
-dl-protect.net##a[href^="/geturl"] > img
-/main.js$~third-party,domain=wawacity.*|annuaire-telechargement.tel|dl-protect.net
-||annuaire-telechargement.tel/static/img/atdl1.png
+/main.js$~third-party,domain=wawacity.*
 cnews.fr##.ban-top-habillage
 cnews.fr##div[id^="block-dm-ads-"]
 aufeminin.com###af_partnerBlock_seeAlso
@@ -1317,7 +1295,6 @@ purepeople.com##.ad__holder
 vostfr.stream##.mvic-btn > a.btn-successful
 caradisiac.com###MegaBan
 caradisiac.com##.containerPub
-||dl-protect.info/assets/images/dl1.png
 liberation.fr##div[class^="StickyAd-"]
 torrent911.*,oxtorrent.*,bookys-ebooks.com###vpnvpn
 ||widget.publishub.optimhub.com/assets/widget/widget_mntzm.js$domain=closermag.fr
@@ -1329,8 +1306,6 @@ programme-television.org##div[id^="programme-televisionorg_"][id$="_ar"].cmi_pSt
 linternaute.com,commentcamarche.net##.ads--insertor-casper
 seriecenter.com##a[class^="ebooks_orange_72890"]
 letemps.ch##.ad-container
-dl-protect.info##.blkad
-||dl-protect.info/170921.js
 zustream.org###plyb
 zustream.org###contenedor > div[class] > a[target="_blank"]
 vf-serie.org,vf-film.org##.bnr
@@ -1350,7 +1325,6 @@ expressio.fr##.promoted-vcontainer
 neogeo-system.com##.inner a[onclick*="'shift'"][target="_blank"]
 ||11anim.com/ctag*.js
 ddaynormandy.forumgaming.fr###main-content a[onclick*="'shift'"][target="_blank"]
-channelstream.club###html3
 ||cdn.allsportsflix.top/scripts/nwm-fp.min.js
 lalanguefrancaise.com##div[style="min-height:260px;text-align:center;"]
 lalanguefrancaise.com##.custom-html-widget > div[style="min-height:250px;"]
@@ -1457,8 +1431,6 @@ programme-tv.net##.container-pave-haut-sidebar
 ||portail.free.fr/_/img/banhp/-1000x176-don.png
 tfarjo.cc,filmz.cc###asdfass
 tfarjo.cc,filmz.cc##.col-md-8 script + div:not([class]):not([id]) > div[style^="position:relative;"]:not([class]):not([id])
-torrents9.cc##.movie-detail > .row[style*="background-color:"][style*="margin-top:"]
-torrents9.cc##.movie-detail > .row a[target="_blank"][href^="/register"]
 yggtorrent.gg##.hadopi
 desinhibition.com##.espace-cam
 latribunedelart.com##.encart_colonne
@@ -2028,8 +2000,6 @@ gearjunkie.com#@#.tag-sponsored-content
 $script,third-party,domain=waaw.tv,badfilter
 ! https://github.com/uBlockOrigin/uAssets/issues/13586
 $script,third-party,domain=gamecopyworld.eu,badfilter
-! https://github.com/AdguardTeam/AdguardFilters/issues/120929
-$script,third-party,domain=ddl-francais.com,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120011
 $script,third-party,domain=vidhd.fun,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119411
@@ -2479,7 +2449,7 @@ kijiji.ca#@#div[data-ad-id]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/34266
 @@||hitfile.net/platform/js/lib/jquery.fake.document/foot.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/33814
-torrent9.bz,torrent9.cc,torrent9.ec,torrent9.nz,torrent9.ph,torrent9.uno,torrents9.cc,torrents9.org,torrents9.pe,torrents9.tv#@#.download-btn + .download-btn > a
+torrent9.bz,torrent9.cc,torrent9.ec,torrent9.nz,torrent9.ph,torrent9.uno,torrents9.org,torrents9.pe,torrents9.tv#@#.download-btn + .download-btn > a
 ! opensubtitles.org - broken search for Safari; info for other products
 @@||opensubtitles.org/*/search
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31812
