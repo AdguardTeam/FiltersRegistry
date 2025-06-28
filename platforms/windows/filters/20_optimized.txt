@@ -1,5 +1,5 @@
-! Checksum: dLj6ZgtqlNzuYMQI/oqM/Q
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1751062363-3600.patch
+! Checksum: DQBEfHzq+4gKkAEwYIuPwg
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1751078470-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.22.3
@@ -84,6 +84,7 @@ temporary-mail.net###mobile-app-banner
 terabox.com##.video-btn-download
 scheels.com#?#.font-bold:contains(Download Our App)
 scheels.com##a[href*="/app"]
+scheels.com###pdp-items-list > li:has(> div[class]:only-child > a[href*="/app"]:only-child)
 cars.com##.global-footer-mobile-apps
 cars.com#?#.global-footer-heading:contains(Mobile App)
 cars.com##cars-app-banner
@@ -329,6 +330,7 @@ perekrestok.ru#%#//scriptlet('trusted-click-element', 'button.app-banner-close',
 m.sonyunara.jp,magnit.ru##.install-app-banner
 navitime.co.jp###body-left > div.section:has(> a[href="https://www.navitime.co.jp/pcstorage/html/japan_travel/english/"])
 megamarket.ru##.header-entry-point__app > a
+sketch.pixiv.net##.stores > a > img
 msn.com##div[class^="weatherMobileUpsellContainer-"]
 digitimes.com.tw#%#//scriptlet('abort-current-inline-script', '$', 'apppromo')
 cultura.uol.com.br###homecampanha
@@ -378,6 +380,7 @@ just-eat.*##section[data-qa="download-app-section"]
 m.facebook.com##div[data-status-bar-color]:not(.vscroller) > div[data-is-pull-to-refresh-allowed="true"] + .fixed-container.bottom
 tagesspiegel.de##a[href*="tagesspiegel-app"]
 m.sporx.com#%#//scriptlet('set-constant', 'showPopupInts', 'noopFunc')
+homes.co.jp##.mod-smartAppBanner
 jp.investing.com#?#.flex-col > div.flex:has(> div.flex-1 > div > nav > ul[data-test="footer-mobile-links"])
 news18.com##div[class*="install_app"]
 ||myhome.nifty.com/cms_image/myhome/rent-banner/*/banner_rent_left_sidemenu_pc.png
@@ -656,6 +659,7 @@ mymo-ibank.com##.l-footer-aplcation
 skiddle.com##a[href^="https://bnc.lt/m/"] > img
 blog.terabox.com##.entry-content > div[style^="text-align:"]
 fikfap.com###root > .flex > .items-center.fixed
+m.news.nate.com###viewAppPOP
 cenoteka.rs#%#//scriptlet('set-cookie-reload', 'android_download_hide', '1')
 baike.baidu.com##.wgt-baikeapp-promote-container
 kavkazr.com##.banner__a
@@ -759,6 +763,7 @@ finance.sina.com.cn##a[class^="tab_related_app_"]
 fitatu.com##.regular__content > div.regular__banner
 fitatu.com##.product-page__section-container > aside.product-page__ad-container
 yapokupayu.ru##.popup-app-download
+bayshop.com##.logout-tab-box
 bookwalker.jp##.p-app-bnr
 kinarino.jp##.p-download-app
 ||kinarino.k-img.com/assets/webpage/download-app/
@@ -843,6 +848,7 @@ bisnis.com##.wrapper__ads-download
 runtrip.jp##.fixed_banner
 job.minnanokaigo.com##.grid-cols-app-bar
 goobike.com##.app_install
+homes.co.jp##.mod-appDownload
 ubook.reader.qq.com##.top-guide
 ubook.reader.qq.com##.writer-say
 bhaskar.com#%#//scriptlet('remove-attr', 'style', '#root > div[style^="--mobile-navbar-height:"]')
@@ -942,7 +948,6 @@ mangatoon.mobi##[class$="-download-bg"]
 seiga.nicovideo.jp##.mg_rightside_top_promotion > li > div[style^="overflow: hidden; background: url"]
 meetup.com##.z-modal.items-center > div[role="dialog"][draggable="false"][style="opacity: 1; transform: none; user-select: none; touch-action: pan-x;"]
 huashi6.com##.chuzhan-app-download
-xn--pckua2a7gp15o89zb.com##.p-appHeadBnr
 echofm.online#?#.support:has(> div[class^="sc-"] > div[class^="sc-"] > a[href^="https://apps.apple.com/ru/app/"])
 green-japan.com,magazine.tabelog.com##.link-to-app
 sp.nicovideo.jp##div[id$="BannerContainer"]
@@ -1188,7 +1193,6 @@ mc.163.com##.down-box
 abema.tv##.c-application-MobileAppContainer__floating-app-button
 abema.tv##.c-application-MobileAppContainer__footer
 abema.tv##.com-application-MobileHeaderBannerBase
-dictionary.goo.ne.jp#$#.appDlPc__inner { visibility: hidden !important; }
 m.hoyolab.com#%#//scriptlet('set-local-storage-item', 'closedAppHeader', '1')
 jp.stanby.com,theriver.jp##div[class^="app-banner"]
 kids-doctor.jp,ecosia.org,pierrotshop.jp##.cta
@@ -1509,7 +1513,6 @@ vimeo.com##.app_banner_container
 labirint.ru###custom_smartbanner
 labirint.ru##.smartbanner__height
 factor.ua##.b-app-banner
-decolar.com###incentiveAppBanner
 uol.com.br##.bannersmart
 aminoapps.com##.recommend-app
 ||instagram.com/static/images/appstore-install-badges^
