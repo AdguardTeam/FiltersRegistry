@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.92.66",
-			"timeUpdated": "2025-06-29T15:06:10+0000",
+			"version": "2.3.92.67",
+			"timeUpdated": "2025-06-29T17:06:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.87.14",
-			"timeUpdated": "2025-06-28T18:08:04+0000",
+			"version": "2.0.87.15",
+			"timeUpdated": "2025-06-29T17:06:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.34.87",
-			"timeUpdated": "2025-06-28T19:06:12+0000",
+			"version": "2.2.34.88",
+			"timeUpdated": "2025-06-29T17:06:44+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.84.38",
-			"timeUpdated": "2025-06-29T14:06:31+0000",
+			"version": "2.0.84.39",
+			"timeUpdated": "2025-06-29T17:06:46+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.84",
-			"timeUpdated": "2025-06-28T18:08:22+0000",
+			"version": "2.0.64.85",
+			"timeUpdated": "2025-06-29T17:06:51+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.57.81",
-			"timeUpdated": "2025-06-28T18:08:23+0000",
+			"version": "2.0.57.82",
+			"timeUpdated": "2025-06-29T17:06:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.39.86",
-			"timeUpdated": "2025-06-29T05:09:55+0000",
+			"version": "2.1.39.87",
+			"timeUpdated": "2025-06-29T17:06:58+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
