@@ -1,9 +1,9 @@
-! Checksum: 1CFnYcTLQEQWAVM+ORGF5Q
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1751186555-14400.patch
+! Checksum: L8fnEpNow9ahUSt7/wV8FA
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1751229637-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.21.84
-! TimeUpdated: 2025-06-29T08:38:08+00:00
+! Version: 2.0.21.85
+! TimeUpdated: 2025-06-29T20:36:03+00:00
 ! Expires: 10 days (update frequency)
 ||adgirl.yes24.com^
 ||ad.api.adwiser.kr^
@@ -1331,7 +1331,7 @@
 /^https:\/\/(www\.)?aniya24\.com\/wp-content\/uploads\/[0-9]+\/[0-9]+\/[a-z]+[0-9]+x[0-9]+\./$domain=aniya24.com
 ||aniya24.com/wp-content/uploads/*.gif
 ||sutom.org/wp-content/uploads/*.webp
-||nooo*.tv/theme/basic_player/img/banner/$domain=/nooo[0-9]+\.tv/
+||nooo*.tv/theme/basic_player/img/banner/
 ||blogger.googleusercontent.com/img/$domain=yasyadong.*
 .gif^$image,domain=itrulli.com
 ||365tvda.com/data/file/bojng/
@@ -1556,6 +1556,11 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+quasarzone.com##div[id^="venatusHumor"]
+quasarzone.com##.g123-wrapper
+quasarzone.com##.side-banner-list .point-logo
+thewordcracker.com##.entry-header .unique-container
+thewordcracker.com###right-sidebar
 issuetory.co.kr##.code-block-6
 issuetory.co.kr##.entry-content.read-details > .code-block
 damoang.net###sidebar-site-menu > h3:has(> a[href="https://damoang.net/promotion"])
@@ -2910,8 +2915,6 @@ theqoo.net##tr.notice:not([data-document_srl])
 [$domain=/^torrentgram\[0-9\]+\.com/]##.npia-board-gallery
 [$domain=/^torrentgram\[0-9\]+\.com/]###body_text > .at-main.at-col[style]
 [$domain=/^torrentbam\[0-9\]+\.com/]##a[href*="/ad/"][target="_blank"]
-[$domain=/^torrentbot\[0-9\]+\.com/]##a[href^="/go/"][target="_blank"]
-[$domain=/^torrentbot\[0-9\]+\.com/]##div[id^="ad_"]
 [$domain=/^ktxtorrent\[0-9\]+\.com/]##img[src*=".imgbox.com/"]
 [$domain=/^torrentsome\[0-9\]+\.com/]##a[href^="/go/"][target="_blank"]
 [$domain=/^torrentrj\[0-9\]+\.com/]##a[href^="/go/"][target="_blank"]
@@ -3637,4 +3640,4 @@ lover932.net,lover933.net,lover934.net,lover935.net,lover936.net,lover937.net,lo
 ||googletagservices.com/tag/js/gpt.js$script,redirect=googletagservices-gpt
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=~investing.com|~wcyb.com
 ||newspic.kr^$removeparam=cp
-tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', 'video')
+tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')

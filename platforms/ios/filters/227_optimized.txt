@@ -1,9 +1,9 @@
-! Checksum: Z/Z7NABa8r4egm1pRS+uHw
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1751186566-14400.patch
+! Checksum: 2yuLUVCYwPN3AwLQWU2sLw
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1751229648-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.21.84
-! TimeUpdated: 2025-06-29T08:38:08+00:00
+! Version: 2.0.21.85
+! TimeUpdated: 2025-06-29T20:36:03+00:00
 ! Expires: 1 day (update frequency)
 ||adgirl.yes24.com^
 ||ad.api.adwiser.kr^
@@ -1349,6 +1349,7 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /^https:\/\/(www\.)?aniya24\.com\/wp-content\/uploads\/[0-9]+\/[0-9]+\/[a-z]+[0-9]+x[0-9]+\./$domain=aniya24.com
 ||aniya24.com/wp-content/uploads/*.gif
 ||sutom.org/wp-content/uploads/*.webp
+||nooo*.tv/theme/basic_player/img/banner/
 ||blogger.googleusercontent.com/img/$domain=yasyadong.*
 .gif^$image,domain=itrulli.com
 ||365tvda.com/data/file/bojng/
@@ -1537,6 +1538,11 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+quasarzone.com##div[id^="venatusHumor"]
+quasarzone.com##.g123-wrapper
+quasarzone.com##.side-banner-list .point-logo
+thewordcracker.com##.entry-header .unique-container
+thewordcracker.com###right-sidebar
 issuetory.co.kr##.code-block-6
 issuetory.co.kr##.entry-content.read-details > .code-block
 damoang.net###sidebar-site-menu > h3:has(> a[href="https://damoang.net/promotion"])
@@ -3570,4 +3576,4 @@ hasha.in#%#//scriptlet('prevent-fetch', 'adManager.js')
 @@||js.wpadmngr.com/static/adManager.js$xmlhttprequest,domain=hasha.in
 ||fundingchoicesmessages.google.com^$domain=tv25.co
 lover932.net,lover933.net,lover934.net,lover935.net,lover936.net,lover937.net,lover938.net,lover939.net,lover940.net,lover941.net#%#//scriptlet('prevent-setTimeout', 'document[_0x')
-tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', 'video')
+tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
