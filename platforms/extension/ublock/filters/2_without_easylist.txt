@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: myWq8xjGJsrnIdAAulJ56w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1751271237-3600.patch
+! Checksum: aIHdzUsxfKdd0X5peXXLqA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1751274805-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.92.82
-! TimeUpdated: 2025-06-30T08:09:26+00:00
+! Version: 2.3.92.83
+! TimeUpdated: 2025-06-30T09:08:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9905,6 +9905,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208457
+rjnovels.blogspot.com##+js(abort-on-property-read, detectBlockers)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208228
 rlxoff.com##+js(addEventListener-defuser, load, detectAdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208169
@@ -30700,9 +30702,10 @@ inxxx.com##+js(abort-current-script, Symbol, egoTab)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167518
 xxx18.uno##+js(no-setTimeout-if, window[a0b(\'0x)
 xxx18.uno##+js(set-cookie-reload, hasShownPromo, true)
+! https://github.com/AdguardTeam/AdguardFilters/issues/208489
 ! https://github.com/AdguardTeam/AdguardFilters/issues/189969
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131500
-cookingchanneltv.com,discoveryplus.*,go.discovery.com,investigationdiscovery.com,go.tlc.com,sciencechannel.com##+js(json-prune, data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.*.ads.*.adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.*.ads.*.adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.*.timeOffset)
+cookingchanneltv.com,discoveryplus.*,go.discovery.com,investigationdiscovery.com,go.tlc.com,sciencechannel.com##+js(json-prune, data.attributes.ssaiInfo.forecastTimeline data.attributes.ssaiInfo.vendorAttributes.nonLinearAds data.attributes.ssaiInfo.vendorAttributes.videoView data.attributes.ssaiInfo.vendorAttributes.breaks.*.ads.*.adMetadata data.attributes.ssaiInfo.vendorAttributes.breaks.*.ads.*.adParameters data.attributes.ssaiInfo.vendorAttributes.breaks.*.*)
 cookingchanneltv.com,discoveryplus.*,go.discovery.com,investigationdiscovery.com,go.tlc.com,sciencechannel.com#@#+js(xml-prune, xpath(//*[name()="MPD"][.//*[name()="BaseURL" and contains(text()\,"dash_clear_fmp4") and contains(text()\,"/a/")]]/@mediaPresentationDuration | //*[name()="Period"][./*[name()="BaseURL" and contains(text()\,"dash_clear_fmp4") and contains(text()\,"/a/")]]), , .mpd)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/165997
 play.max.com##+js(json-prune, ssaiInfo fallback.ssaiInfo)
@@ -34681,6 +34684,7 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 ! START: Ad-Shield ad reinsertion
 ! TODO: Replace, when prevent-innerHTML is released: https://github.com/AdguardTeam/Scriptlets/issues/488 [03.06.2025]
 ! ad-shield.cc CNAME ex. https://www.47206262.xyz/script/jmty.jp.js
+/^https:\/\/www\.[0-9a-z-]{8,}\.com\/script\/(?=[0-9a-z]{0,29}[A-Z])[0-9A-Za-z]{10,30}\.js$/$script,third-party,match-case
 ://www.*.com/script/*.de.js|$script,third-party
 ://www.*.com/script/*.jp.js|$script,third-party
 /^https:\/\/www\.[0-9a-z-]{8,}\.xyz\/script\/[-.0-9A-Za-z]+\.[A-Za-z-]{2,30}\.js$/$script,third-party,match-case
