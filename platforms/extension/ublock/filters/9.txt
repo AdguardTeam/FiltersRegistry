@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: vte/oGDehmMu81CWP9WXsg
-! Diff-Path: ../patches/9/9-s-1751346852-3600.patch
+! Checksum: kqFUI0SIdW7t6smOkPbqew
+! Diff-Path: ../patches/9/9-s-1751353940-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.30.64
-! TimeUpdated: 2025-07-01T05:10:14+00:00
+! Version: 2.0.30.65
+! TimeUpdated: 2025-07-01T07:08:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -191,6 +191,14 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208565
+||guiavidaesaude.com/wp-settings/ads_anuncio.js
+guiavidaesaude.com##+js(addEventListener-defuser, DOMContentLoaded, /window\.getComputedStyle|adblock-/)
+! https://github.com/AdguardTeam/AdguardFilters/issues/208564
+fgtd.online##+js(set-cookie, unlock, 1)
+fgtd.online##+js(adjust-setTimeout, unlock, *, 0.001)
+fgtd.online##+js(nano-setInterval-booster, seconds, *, 0.001)
+fgtd.online##+js(no-fetch-if, popads.net)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208581
 ||eshentai.tv/app/eshentai/themes/assets/js/4dguard.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208409
@@ -1444,7 +1452,7 @@ forodecostarica.com##+js(no-setTimeout-if, adJsView)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177537
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177524
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161356
-meufinanceiro.org,investimentosfacil.online,fomedereceitas.online,blog.whatsappgb.top,infoinvest.org,receitastop.click,megacurioso.online,gastroponto.com##+js(set-local-storage-item, last_ads, yes)
+guiavidaesaude.com,saudeecomida.com,comidaefamilia.food,meufinanceiro.org,investimentosfacil.online,fomedereceitas.online,blog.whatsappgb.top,infoinvest.org,receitastop.click,megacurioso.online,gastroponto.com##+js(set-local-storage-item, last_ads, yes)
 financastop.online,modsimuladores.com,vejaideias.com.br,jogoscompleto.xyz##+js(adjust-setTimeout, /atualizar|hided/, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/161246
 1i1.in##+js(set-cookie, clicked_ads, 2)
@@ -1689,7 +1697,7 @@ pulzo.com#$##pulzo-header { position: static !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186165
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185949
 ! TODO: consider to add generic rule, something like #$##colunas #framed > #player.hided { display: block !important; } or similar
-meufinanceiro.org,investimentosfacil.online,fomedereceitas.online,financastop.online,blog.whatsappgb.top,infoinvest.org,receitastop.click#$#.hided { display: block !important; }
+guiavidaesaude.com,saudeecomida.com,comidaefamilia.food,meufinanceiro.org,investimentosfacil.online,fomedereceitas.online,financastop.online,blog.whatsappgb.top,infoinvest.org,receitastop.click#$#.hided { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177517
 elmueble.com#$#header { top: 0 !important; }
 elmueble.com#$#.admobile { display: none !important; }
@@ -1980,6 +1988,7 @@ c5n.com,t13.cl,solowrestling.mundodeportivo.com,todojujuy.com,mendozapost.com,me
 !
 ! NOTE: Specific rules
 !
+comidaefamilia.food##.content > .box > div[data-placement-id]
 eshentai.tv##+js(window.open-defuser)
 anroll.net##img[alt="gg-bet-anroll"]
 ||static.anroll.net/app-images/banner*
@@ -2044,7 +2053,7 @@ yelitzonpc.com##center > a[target="_blank"]
 misprogramaspc.com##.vn-green > a[target="_blank"]
 tecmundo.com.br##div[class^="styles_ads_"]
 gamestorrents.app##img[onclick*="click.ggpickaff"]
-muyinteresante.com##.banner
+guiavidaesaude.com,muyinteresante.com##.banner
 macmagazine.com.br###canvas-content > div.cnvs-block-section:has(> div.cnvs-block-section-outer div.ad-space)
 macmagazine.com.br##.cs-sidebar__inner > div.widget:has(> div.wp-block-group div.ad-space)
 macmagazine.com.br###bannertopoWrapper

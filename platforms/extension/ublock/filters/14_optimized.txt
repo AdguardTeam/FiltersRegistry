@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iIrOcwj21SUJgPbtAb+flA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1751341206-3600.patch
+! Checksum: cWzQUsLYg8SnD2fdtHT4uw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1751353936-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.35.10
-! TimeUpdated: 2025-07-01T03:36:16+00:00
+! Version: 2.2.35.11
+! TimeUpdated: 2025-07-01T07:08:18+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1509,6 +1509,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$?#div[consent-skip-blocker] { remove: true; }
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+animesgames.cc##.disclaimer:has(> p > a[href*="/politica-de-cookie"])
 estrid.com###onetrust-banner
 laprimafit.com###ck-overlay
 olimp.bet##div[class^="root--"] > div[class^="root--"]:has(> div[class^="text--"] > a[href*="cookie-politics"])
@@ -15979,6 +15980,9 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+esporno.net##.h-telegram
+esporno.net###tiktok
+opumo.com##.newsletter-popup-wrapper
 macpaw.com#$#.noscroll { overflow: auto !important; }
 macpaw.com#$##modal-overlay { display: none !important; }
 macpaw.com##+js(set-session-storage-item, gaming-modal-shown, true)
@@ -25934,6 +25938,7 @@ softpedia.com#$#iframe.swipebox-rightxd[id="relcontent"] { top: 60px!important; 
 !##############################
 !######### JS tweaks ##########
 !##############################
+uploadcloud.pro##+js(adjust-setTimeout, .show('drop'), *, 0.001)
 zetrrent.com##+js(nano-setInterval-booster, .html())-1, *, 0.001)
 safeframe.googlesyndication.com##+js(nano-setInterval-booster, ()=>{var c=Kb, 1000, 0.2)
 romsfun.com##+js(adjust-setTimeout, download, *, 0.001)

@@ -1,9 +1,9 @@
-! Checksum: vEgUjYdYLdjNPfrG4skiJQ
-! Diff-Path: ../patches/14/14-s-1751341203-3600.patch
+! Checksum: gmLGLYGrB4XJL5ktWz1SwA
+! Diff-Path: ../patches/14/14-s-1751353933-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.35.10
-! TimeUpdated: 2025-07-01T03:36:16+00:00
+! Version: 2.2.35.11
+! TimeUpdated: 2025-07-01T07:08:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2513,6 +2513,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+animesgames.cc##.disclaimer:has(> p > a[href*="/politica-de-cookie"])
 kabasakalonline.com#%#//scriptlet('trusted-click-element', '#customModal .gap-4.p-8 .border-rose-600.bg-rose-600', '!localStorage:cookie-consent')
 estrid.com###onetrust-banner
 laprimafit.com###ck-overlay
@@ -34851,6 +34852,9 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+esporno.net##.h-telegram
+esporno.net###tiktok
+opumo.com##.newsletter-popup-wrapper
 macpaw.com#$#.noscroll { overflow: auto !important; }
 macpaw.com#$##modal-overlay { display: none !important; }
 macpaw.com#%#//scriptlet('set-session-storage-item', 'gaming-modal-shown', 'true')
@@ -55222,6 +55226,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208570
+uploadcloud.pro#%#//scriptlet("adjust-setTimeout", ".show('drop')", "*", "0.001")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208461
 zetrrent.com#%#//scriptlet('adjust-setInterval', '.html())-1', '*', '0.001')
 ! https://blog.nicovideo.jp/niconews/236495.html
