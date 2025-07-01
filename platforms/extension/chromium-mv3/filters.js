@@ -905,8 +905,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.72.48",
-			"timeUpdated": "2025-07-01T16:39:40+0000",
+			"version": "2.1.72.49",
+			"timeUpdated": "2025-07-01T20:36:31+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -980,8 +980,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.72.47",
-			"timeUpdated": "2025-07-01T16:39:41+0000",
+			"version": "2.1.72.48",
+			"timeUpdated": "2025-07-01T20:36:31+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1242,8 +1242,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.11.65",
-			"timeUpdated": "2025-06-29T00:48:21+0000",
+			"version": "2.0.11.66",
+			"timeUpdated": "2025-07-01T20:36:58+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1345,8 +1345,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.14",
-			"timeUpdated": "2025-06-16T16:40:15+0000",
+			"version": "2.0.8.15",
+			"timeUpdated": "2025-07-01T20:37:06+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.65.79",
-			"timeUpdated": "2025-07-01T16:40:24+0000",
+			"version": "2.0.65.80",
+			"timeUpdated": "2025-07-01T20:37:13+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1490,8 +1490,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.7.82",
-			"timeUpdated": "2025-06-30T20:36:56+0000",
+			"version": "2.0.7.83",
+			"timeUpdated": "2025-07-01T20:37:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
