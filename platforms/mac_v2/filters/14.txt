@@ -1,9 +1,9 @@
-! Checksum: wS7ksGRtxfKjGg+gufIkLg
-! Diff-Path: ../patches/14/14-s-1751334050-3600.patch
+! Checksum: ooAxB91nIbubOAJGETqUvA
+! Diff-Path: ../patches/14/14-s-1751338331-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.35.8
-! TimeUpdated: 2025-07-01T01:36:42+00:00
+! Version: 2.2.35.9
+! TimeUpdated: 2025-07-01T02:47:49+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4429,7 +4429,7 @@ bellroy.com#$?#bellroy-cookie-dialog { remove: true; }
 bellroy.com#$#body { overflow-y: auto !important; }
 ||images.tcdn.com.br/files/*/modal-lgpd$script
 ||schoeck.com/Build/3134.7da4de8d.js
-rosbalt.ru,newia.ru,dns.pl,bel.ru#%#//scriptlet('set-cookie', 'cookie-accepted', 'true')
+mkset.ru,rosbalt.ru,newia.ru,dns.pl,bel.ru#%#//scriptlet('set-cookie', 'cookie-accepted', 'true')
 ||lahar.com.br^$third-party
 mydealz.de#%#//scriptlet('trusted-click-element', 'button[data-t="showCookiesSettings"]', '1200')
 mydealz.de#%#//scriptlet('trusted-click-element', 'button[data-t="rejectAll"]', '1200')
@@ -21971,6 +21971,7 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 !
 ! NOTE: Add without $third-party, so apps are blocking them too
 !
+||essayspin.com^
 ||golfcartlaws.com^
 ||thebigvan.com^
 ||yourlifedream.com^
@@ -26005,6 +26006,8 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+time.com##header.contents > .sticky:has(button[aria-label="Close Banner"])
+news.qq.com#%#//scriptlet('set-local-storage-item', 'refer_tips_never_show', 'true')
 irishtimes.com##.b-alert-bar
 gazette.com##.asset-paging-container
 reedsy.com##.reedsy-modal[data-key="modal-536"]
@@ -34642,6 +34645,11 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+dailycaller.com###newsletterInsert
+mkset.ru##.tg-banner_mobile
+mkset.ru##.matter-after > div:not([class]):has(> div[class^="Subscribe"])
+mkset.ru##.typo-class:has(> a[href="https://t.me/Mkset_bot"])
+time.com##section[aria-labelledby="newsletter"]
 donghuanosekai.com##a[href^="https://dnsk.link/"]
 irishtimes.com##.c-stack > li:has(> p > a[href^="https://www.whats"])
 lvz.de##div[data-testid="chain-container"]:has(> div > a[href^="/newsletter"])
@@ -42752,6 +42760,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+youdo.com##div[class^="MobileApp_wrapper"]
 msdmanuals.com##div[data-testid="marketing-block-container"]
 mangaraw.*##pwa-install
 [$domain=/^(www\.)?dizibay\d+\.net$/]##div[class*="mobile-app-"]
@@ -49916,6 +49925,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+sravni.ru##.calculator-incut
 donghuanosekai.com##video[alt="Patreon DNSK"]
 ||donghuanosekai.com/wp-content/uploads/*/MP4_PATREON
 foxford.ru##.embedded-banner-wrapper

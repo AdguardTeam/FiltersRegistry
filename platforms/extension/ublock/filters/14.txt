@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5KffTjlzquNi3IiONUUFhg
-! Diff-Path: ../patches/14/14-s-1751334042-3600.patch
+! Checksum: qUUZ0uj4MRGBh6El/1phfQ
+! Diff-Path: ../patches/14/14-s-1751338322-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.35.8
-! TimeUpdated: 2025-07-01T01:36:42+00:00
+! Version: 2.2.35.9
+! TimeUpdated: 2025-07-01T02:47:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4078,7 +4078,7 @@ bellroy.com#$?#bellroy-cookie-dialog { remove: true; }
 bellroy.com#$#body { overflow-y: auto !important; }
 ||images.tcdn.com.br/files/*/modal-lgpd$script
 ||schoeck.com/Build/3134.7da4de8d.js
-rosbalt.ru,newia.ru,dns.pl,bel.ru##+js(set-cookie, cookie-accepted, true)
+mkset.ru,rosbalt.ru,newia.ru,dns.pl,bel.ru##+js(set-cookie, cookie-accepted, true)
 ||lahar.com.br^$third-party
 ||kosik.cz/vue/*/CookieBarModal.
 ||cmp.*/*/consent-bundle-$domain=springer.com|nature.com|springernature.com
@@ -20972,6 +20972,7 @@ reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.Sid
 !
 ! NOTE: Add without $third-party, so apps are blocking them too
 !
+||essayspin.com^
 ||golfcartlaws.com^
 ||thebigvan.com^
 ||yourlifedream.com^
@@ -24955,6 +24956,8 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+time.com##header.contents > .sticky:has(button[aria-label="Close Banner"])
+news.qq.com##+js(set-local-storage-item, refer_tips_never_show, true)
 irishtimes.com##.b-alert-bar
 gazette.com##.asset-paging-container
 reedsy.com##.reedsy-modal[data-key="modal-536"]
@@ -33605,6 +33608,11 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+dailycaller.com###newsletterInsert
+mkset.ru##.tg-banner_mobile
+mkset.ru##.matter-after > div:not([class]):has(> div[class^="Subscribe"])
+mkset.ru##.typo-class:has(> a[href="https://t.me/Mkset_bot"])
+time.com##section[aria-labelledby="newsletter"]
 donghuanosekai.com##a[href^="https://dnsk.link/"]
 irishtimes.com##.c-stack > li:has(> p > a[href^="https://www.whats"])
 lvz.de##div[data-testid="chain-container"]:has(> div > a[href^="/newsletter"])
@@ -41664,6 +41672,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+youdo.com##div[class^="MobileApp_wrapper"]
 msdmanuals.com##div[data-testid="marketing-block-container"]
 mangaraw.*##pwa-install
 [$domain=/^(www\.)?dizibay\d+\.net$/]##div[class*="mobile-app-"]
@@ -45262,6 +45271,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+youdo.com##div[class^="toolbar_downloadAppWrapper"]
+youdo.com###MobileDownloadApp
 tntsports.co.uk##div[data-testid="organism-smart-banner"]
 console.yandex.cloud##+js(set-local-storage-item, cc_mobile_promotion_visited, true)
 console.yandex.cloud##.header-app-notifier
@@ -49497,6 +49508,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+sravni.ru##.calculator-incut
 donghuanosekai.com##video[alt="Patreon DNSK"]
 ||donghuanosekai.com/wp-content/uploads/*/MP4_PATREON
 foxford.ru##.embedded-banner-wrapper
