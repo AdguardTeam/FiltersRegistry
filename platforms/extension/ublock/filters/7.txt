@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: CukU0+w5iqsSp+NHRcCyCg
-! Diff-Path: ../patches/7/7-s-1751357654-3600.patch
+! Checksum: AIbKWofWVaFv7TbGP0QHsg
+! Diff-Path: ../patches/7/7-s-1751382703-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.65.82
-! TimeUpdated: 2025-07-01T08:09:40+00:00
+! Version: 2.0.65.83
+! TimeUpdated: 2025-07-01T15:07:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1795,6 +1795,10 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+karapaia.com##.ad-sticky-top
+karapaia.com##aside.front-section:has(> header.section-title__header + div.sldr > div > div[id^="logly-"])
+karapaia.com##aside[aria-label="広告"]
+karapaia.com##div[style="height: 90px; margin-top: 10px;"]
 med.myclimatejapan.com##.freespace
 torechart.com##a[id^="ads__"]
 torechart.com#$#.leftbox { width: auto !important; }
@@ -2177,6 +2181,8 @@ lettuceclub.net###pro-message ~ div.section:has(> div[id^="logly-"])
 lettuceclub.net#?##pro-message ~ div.section:has(> div.w-full > h2:contains(PR))
 ||mx-timeline.nan-net.jp/system/timeline/timeline_ad.html
 mx-timeline.nan-net.jp##iframe[src="https://mx-timeline.nan-net.jp/system/timeline/timeline_ad.html"]
+dic.pixiv.net##.d_header_not_spa
+dic.pixiv.net##aside > div.mt-\[32px\].h-\[240px\].screen3\:h-\[154px\]
 dic.pixiv.net#$##footer.pb-\[196px\] { padding-bottom: 20px !important; }
 dic.pixiv.net##.h-\[90px\]
 dic.pixiv.net##div[data-header-id] > div.my-\[36px\].justify-center
@@ -3914,13 +3920,11 @@ twilog.togetter.com###ad-overlay-box
 twilog.togetter.com###ad-right-bottom
 pref.shizuoka.jp##aside[id^="sad"]
 navitime.co.jp##.advertising-link
-||fc2.com/exchange.html
 ||fc2.com/s/e/t/setv/load_fc2live.js
 ||liberty-net.jp/bana/$third-party
 ||gyutto.com/af/$subdocument
 ||gyutto.com/data/af_banner_img/
 ||gyutto.jp/api/item_af.php/
-||h.fc2.com/img/160600_
 ||nyanko.org/js/recommend_fc2_live_ids.js
 ||nyanko.org/js/fc2contents_
 ||pr.getchu.com/banner/dlgetchu_127_254_a.gif$third-party
@@ -4011,7 +4015,6 @@ city.toyoake.lg.jp###FooterPane > div.ItemList_Standard
 pref.gunma.jp,city.ota.gunma.jp##.bl_main__add
 apowersoft.jp##.gg-bottom
 basketball-zine.com##.add-wrap
-easter.ne.jp##body > div[align="center"] > table[border="0"][cellpadding="1"][cellspacing="0"][width="700"]
 ||e-kodate.com/img/cm/
 e-kodate.com###sidenavi > div#part_b
 e-kodate.com###sidenavi > h3.mid
@@ -5912,7 +5915,7 @@ seijiyama.jp##.koukoku1
 seijiyama.jp##.koukoku2
 seijiyama.jp##.ranking_prbox
 aprico-media.com##.u-ta-center:not(.u-mt-10):not(#new_comment > .u-ta-center)
-friday.kodansha.co.jp,mx-timeline.nan-net.jp,er-animal.jp,kumanichi.com,rkb.jp##div[style$="min-height: 250px;"]
+bokete.jp,friday.kodansha.co.jp,mx-timeline.nan-net.jp,er-animal.jp,kumanichi.com,rkb.jp##div[style$="min-height: 250px;"]
 qoly.jp##div[style="height:90px; width:728px;"]
 er-animal.jp###pc_article_right_1
 ecodb.net##.hd2
@@ -6568,7 +6571,7 @@ bizspa.jp###innerAdsense
 bizspa.jp##.page-ad-wrap
 appllio.com##.ad-appllio-Bottom
 appllio.com##.ad-appllio-Title
-eroita.net,adacomi.com,mwed.jp,e-nenpi.com,egolf.jp##div[style^="min-height:250px"]
+bokete.jp,eroita.net,adacomi.com,mwed.jp,e-nenpi.com,egolf.jp##div[style^="min-height:250px"]
 merkmal-biz.jp##.box[style="min-height:900px"]
 lasisa.net##aside.box
 as-web.jp###imgUpperRectangle
@@ -8403,10 +8406,7 @@ sports.goo.ne.jp##div[style="margin: 1em 0 0; min-height: 90px; display: flex; j
 ||ctv.co.jp/adjust/$subdocument
 ||stv.jp/nnn/assets/$subdocument
 sakidori-ch.com##span[style="font-size:10px; color:#c0c0c0"]
-recipe-blog.jp###rightColumn > .menuBanner:first-child
 recipe-blog.jp##.ad-area-pc
-recipe-blog.jp##div[style="margin:0 auto; clear: both; padding:25px 0; text-align: center;"]
-recipe-blog.jp##div[id^="reb_"][style]
 shindanmaker.com###ad_common20 + hr
 shindanmaker.com##.ads_rect
 fashion-press.net##.advertisement_media
