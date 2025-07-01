@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mSp29oRSb5+iimvvqpalWg
-! Diff-Path: ../patches/3/3-s-1751357653-3600.patch
+! Checksum: xWbj35LaynYyLIuoEogtWw
+! Diff-Path: ../patches/3/3-s-1751368273-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.87.32
-! TimeUpdated: 2025-07-01T08:09:28+00:00
+! Version: 2.0.87.33
+! TimeUpdated: 2025-07-01T11:06:45+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -492,6 +492,9 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !
 !
 !
+||dashboard.heatmap.com^$third-party
+||cdn.listrakbi.com^$third-party
+||cdn.aimtell.com^$third-party
 ||upstackified.com^
 ||upstackdata.io^
 ||ana.uhyou.com^
@@ -884,7 +887,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ||events-ingestion.services.gorgias.com^
 ||accuratecoal.com^
 ||sdk-cdn.optimove.net^
-||datadome.co^$third-party
+||datadome.co^$third-party,domain=~paypal.com
 ||metrics.kmsmep.com^
 ||cs.zg-api.com^
 ||e.zg-api.com^
@@ -54555,6 +54558,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||inbound-analytics.pixlee.co^
+||connect.blockboardtech.com^
 ||analytics.macpaw.com^
 ||mtg.macpaw.com^
 ||demeter-tr-core-collect.trendyol.com^
@@ -161484,6 +161489,11 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||assets.pixlee.com/shopify/pixlee.shopify.v2.prod.js
+||knockaround.com/cdn/s/trekkie.storefront.
+||purpledotprice.com/api/*/track|
+||api.prod.bigsur.ai/nua?s=
+||api.prod.bigsur.ai/qr?s=
 ||assets.apollo.io/micro/website-tracker/
 allrecipes.com##+js(set-local-storage-item, /_fpi|_duid/, $remove$)
 ||banking.dkb.de/api/metrics/$xmlhttprequest
@@ -162858,7 +162868,6 @@ president.jp##.recommend
 ||carmazoon24-pu01.ihre-webseite.it/js/logger
 ||tracemyip.org/vLg/lgUrl.php
 ||minorasu.basf.co.jp/shared/scripts/vendor/google-analysis/
-||cdn.aimtell.com/trackpush/trackpush.min.js
 ||researchgate.net/track/
 ||pc.assets-cosme.net/js/ga.js
 ||pc.assets-cosme.net/js/general/pc/cmn-pf-nav-google-analytics.js
