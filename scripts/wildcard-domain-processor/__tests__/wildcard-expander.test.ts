@@ -2,7 +2,7 @@ import path from 'path';
 
 import { RuleParser } from '@adguard/agtree';
 import { expandWildcardDomainsInFilter, expandWildcardsInAst } from '../wildcard-expander';
-import { WildcardDomains } from '../wildcard-domains-updater';
+import { type AliveWildcardDomains } from '../wildcard-domains-updater';
 import { readFile } from '../file-utils';
 
 /**
@@ -11,7 +11,7 @@ import { readFile } from '../file-utils';
  * @param wildcardDomains - A map of wildcard domains to their non-wildcard equivalents.
  * @returns The updated rule string with expanded wildcards, or null if no valid domains are left.
  */
-export function expandWildcardsInRule(rule: string, wildcardDomains: WildcardDomains): string {
+export function expandWildcardsInRule(rule: string, wildcardDomains: AliveWildcardDomains): string {
     let ast = null;
     try {
         ast = RuleParser.parse(rule);

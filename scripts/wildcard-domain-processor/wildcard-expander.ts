@@ -15,7 +15,7 @@ import agtree, {
 } from '@adguard/agtree';
 
 import { findFilterFiles, readFile, writeFile } from './file-utils';
-import { WildcardDomains } from './wildcard-domains-updater';
+import { type AliveWildcardDomains } from './wildcard-domains-updater';
 import { DOMAIN_MODIFIERS } from './domain-extractor';
 import { utils } from './utils';
 import { updateContentChecksum } from '../checksum';
@@ -35,7 +35,7 @@ const EMPTY_RULE: EmptyRule = {
  */
 function expandWildcardsInNetworkRules(
     ast: NetworkRule,
-    wildcardDomains: WildcardDomains,
+    wildcardDomains: AliveWildcardDomains,
 ): NetworkRule | EmptyRule | null {
     if (!ast.modifiers) {
         return ast;
@@ -136,7 +136,7 @@ function expandWildcardsInNetworkRules(
  */
 function expandWildcardsInCosmeticRules(
     ast: CosmeticRule,
-    wildcardDomains: WildcardDomains,
+    wildcardDomains: AliveWildcardDomains,
 ): AnyRule | EmptyRule | null {
     const domains = ast.domains.children;
     const newPermittedDomains = new Map();
@@ -206,7 +206,7 @@ function expandWildcardsInCosmeticRules(
  * were eliminated.
  * @throws Will throw an error if the AST category is unsupported.
  */
-export function expandWildcardsInAst(ast: AnyRule, wildcardDomains: WildcardDomains): AnyRule | null {
+export function expandWildcardsInAst(ast: AnyRule, wildcardDomains: AliveWildcardDomains): AnyRule | null {
     switch (ast.category) {
         case RuleCategory.Network:
             return expandWildcardsInNetworkRules(ast as NetworkRule, wildcardDomains);
@@ -246,7 +246,7 @@ export function expandWildcardsInAst(ast: AnyRule, wildcardDomains: WildcardDoma
  * @param wildcardDomains - A map of wildcard domains to their non-wildcard equivalents.
  * @returns The patched filter content with expanded wildcards.
  */
-export function expandWildcardDomainsInFilter(filterContent: string, wildcardDomains: WildcardDomains): string {
+export function expandWildcardDomainsInFilter(filterContent: string, wildcardDomains: AliveWildcardDomains): string {
     const listAst = FilterListParser.parse(filterContent);
 
     if (!listAst.children || listAst.children.length === 0) {
