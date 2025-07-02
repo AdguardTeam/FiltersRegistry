@@ -431,6 +431,10 @@ More information on why this feature was needed can be found in [the related tas
 
 [#964]: https://github.com/AdguardTeam/FiltersRegistry/issues/964
 
+> If you need some new TLD to be replaced instead of wildcard,
+> add it to [TOP_LEVEL_DOMAIN_LIST in top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts)
+> and proceed with the following instructions.
+
 1. **Install dependencies**
 
     ```bash
@@ -442,16 +446,18 @@ More information on why this feature was needed can be found in [the related tas
     This command extracts wildcard domains from the filters, converts them to a list of domains,
     selects the alive domains, and saves the resulting map to a JSON file [wildcard_domains.json].
 
+    **Syntax**
+
     ```bash
     yarn update-wildcard-domains <filtersDir> <wildcardDomainsFile>
     ```
 
-    - **Arguments**:
+    where:
 
-        - `<filtersDir>` — directory containing the filter files.
-        - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
+    - `<filtersDir>` — directory containing the filter files.
+    - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
 
-    - **Example**:
+    **Usage**
 
     ```bash
     yarn update-wildcard-domains filters scripts/wildcard-domain-processor/wildcard_domains.json
@@ -462,16 +468,18 @@ More information on why this feature was needed can be found in [the related tas
     This command processes platform filters and expands wildcard domains
     based on the previously generated map in the file [wildcard_domains.json].
 
+    **Syntax**
+
     ```bash
     yarn expand-wildcard-domains <platformsDir> <wildcardDomainsFile>
     ```
 
-    - **Arguments**:
+    where:
 
-        - `<platformsDir>` — directory containing the platform files.
-        - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
+    - `<platformsDir>` — directory containing the platform files.
+    - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
 
-    - **Example**:
+    **Usage**
 
     ```bash
     yarn expand-wildcard-domains platforms scripts/wildcard-domain-processor/wildcard_domains.json
@@ -487,7 +495,7 @@ More information on why this feature was needed can be found in [the related tas
     - **Cosmetic Rules** — only element hiding rules and their exceptions are expanded
       since these are natively supported in Safari content blockers.
       Other cosmetic rules (like scriptlets) are not expanded
-    because wildcards are automatically handled by:
+      because wildcards are automatically handled by:
 
         - Advanced Blocking in Safari browser;
         - tswebextension in Browser extension MV3.
@@ -497,7 +505,7 @@ More information on why this feature was needed can be found in [the related tas
 
 [wildcard_domains.json]: ./scripts/wildcard-domain-processor/wildcard_domains.json
 
-### CLI commands help
+#### CLI commands help
 
 To see the help information for each command, you can use the `-h` option:
 
