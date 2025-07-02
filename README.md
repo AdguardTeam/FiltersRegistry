@@ -443,10 +443,16 @@ More information on why this feature was needed can be found in [the related tas
 
 1. **Update wildcard domains**
 
-    This command updates the list of wildcard domains by expanding entries like `domain.*` from
-    the filters using TLDs from [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts), checks
-    which of the resulting domains are alive, and saves them to [wildcard_domains.json] as
-    `domain.TLD` entries (e.g., `domain.work`).
+    This command updates the list of wildcard domains by expanding entries like `domain.*`
+    from the filters using TLDs from [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts),
+    checks which of the resulting domains are alive,
+    and saves them to `alive` property in [wildcard_domains.json] where:
+
+    - keys are wildcard domains, e.g., `domain.*`;
+    - values are arrays of checked domains, e.g., `['domain.com', 'domain.org']`.
+
+    There is also a list of dead domains found during the check,
+    and it is saved to `dead` property in [wildcard_domains.json].
 
     **Syntax**
 
