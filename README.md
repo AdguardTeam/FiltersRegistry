@@ -443,8 +443,8 @@ More information on why this feature was needed can be found in [the related tas
 
 1. **Update wildcard domains**
 
-    This command extracts wildcard domains from the filters, converts them to a list of domains,
-    selects the alive domains, and saves the resulting map to a JSON file [wildcard_domains.json].
+    This command expands wildcard domains from the filters using a list of TLDs from `top-tld.ts`,
+    checks which resulting domains are alive, and saves the result to [wildcard_domains.json].
 
     **Syntax**
 
