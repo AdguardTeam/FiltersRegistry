@@ -431,9 +431,9 @@ More information on why this feature was needed can be found in [the related tas
 
 [#964]: https://github.com/AdguardTeam/FiltersRegistry/issues/964
 
-> If you need some new TLD to be replaced instead of wildcard,
-> add it to [TOP_LEVEL_DOMAIN_LIST in top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts)
-> and proceed with the following instructions.
+> The list of supported top level domains (TLD) is limited by default. To add a new TLD,
+> update [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts) and follow
+> the instructions below.
 
 1. **Install dependencies**
 
@@ -443,8 +443,10 @@ More information on why this feature was needed can be found in [the related tas
 
 1. **Update wildcard domains**
 
-    This command expands wildcard domains from the filters using a list of TLDs from `top-tld.ts`,
-    checks which resulting domains are alive, and saves the result to [wildcard_domains.json].
+    This command updates the list of wildcard domains by expanding entries like `domain.*` from
+    the filters using TLDs from [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts), checks
+    which of the resulting domains are alive, and saves them to [wildcard_domains.json] as
+    `domain.TLD` entries (e.g., `domain.work`).
 
     **Syntax**
 
