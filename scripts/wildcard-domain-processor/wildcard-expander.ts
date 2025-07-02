@@ -215,11 +215,11 @@ export function expandWildcardsInAst(ast: AnyRule, wildcardDomains: WildcardDoma
              * Expand only element hiding rules and their exceptions since these kinds of rules
              * are supported natively in Safari content blockers.
              *
-             * Other cosmetic rules, e.g. scriptlets, are applied by:
+             * Other cosmetic rules, e.g. scriptlets, are automatically handled by:
              * - Advanced Blocking in Safari browser;
              * - tswebextension in Browser extension MV3.
              *
-             * In both cases wildcards are not a problem, that's why they are not expanded.
+             * In both cases wildcards are not expanded in filters.
              * @see {@link https://github.com/AdguardTeam/FiltersRegistry/issues/1063}
              */
             const shouldExpandCosmeticRule = ast.separator.value === CosmeticRuleSeparator.ElementHiding
