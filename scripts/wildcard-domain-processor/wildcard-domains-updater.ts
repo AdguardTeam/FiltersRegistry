@@ -48,12 +48,43 @@ function supplementWithTld(wildcardDomains: Set<string>): WildcardDomains {
 
 /**
  * Filters out dead domains from a list of domains.
+ *
  * @param domains - The list of domains to filter.
+ *
  * @returns A list of alive domains.
+ *
+ * @throws Error if dead domain finding fails after max retry attempts.
  */
 async function getAliveDomains(domains: string[]): Promise<string[]> {
-    const deadDomains = new Set(await findDeadDomains(domains));
-    return domains.filter((domain) => !deadDomains.has(domain));
+    const MAX_ATTEMPTS = 10;
+    const RETRY_DELAY_MS = 3000; // 3 seconds
+
+    let attempt = 0;
+
+    while (attempt < MAX_ATTEMPTS) {
+        try {
+            const deadDomains = new Set(await findDeadDomains(domains));
+            return domains.filter((domain) => !deadDomains.has(domain));
+        } catch (error) {
+            attempt += 1;
+
+            if (attempt >= MAX_ATTEMPTS) {
+                throw new Error(`Failed to find dead domains after ${MAX_ATTEMPTS} attempts: ${error}`);
+            }
+
+            console.log(`Error finding dead domains (attempt ${attempt}/${MAX_ATTEMPTS}) due to ${error}`);
+            console.log(`Retrying in ${RETRY_DELAY_MS / 1000} seconds`);
+
+            // Wait for the specified delay before retrying
+            await new Promise((resolve) => {
+                setTimeout(resolve, RETRY_DELAY_MS);
+            });
+        }
+    }
+
+    // This should never be reached due to the throw in the catch block,
+    // but TypeScript requires a return statement
+    throw new Error('Unexpected error in getAliveDomains');
 }
 
 /**
