@@ -33,6 +33,7 @@ export const TOP_LEVEL_DOMAIN_LIST = [
     'ch',
     'ci',
     'cl',
+    'click',
     'cloud',
     'club',
     'cn',
