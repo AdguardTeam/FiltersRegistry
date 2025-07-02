@@ -109,7 +109,15 @@ export const updateWildcardDomains = async (
     }
 
     const wildcardDomainsWithTld = supplementWithTld(wildcardDomains);
-    console.log('Totally found wildcard domains length:', Object.keys(wildcardDomainsWithTld).length);
+    const totalWildcardDomains = Object.keys(wildcardDomainsWithTld);
+
+    const possibleTldDomains = totalWildcardDomains.reduce((acc, key) => {
+        acc.push(...wildcardDomainsWithTld[key]);
+        return acc;
+    }, [] as string[]);
+
+    console.log('Totally found wildcard domains:', totalWildcardDomains.length);
+    console.log('Possible TLD domains to check:', possibleTldDomains.length);
 
     const oldJson = await getJson(wildcardDomainsJsonFilename);
 
