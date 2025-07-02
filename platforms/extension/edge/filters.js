@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.93.28",
-			"timeUpdated": "2025-07-02T06:09:38+0000",
+			"version": "2.3.93.29",
+			"timeUpdated": "2025-07-02T07:07:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.16.71",
-			"timeUpdated": "2025-07-02T06:09:51+0000",
+			"version": "2.1.16.72",
+			"timeUpdated": "2025-07-02T07:08:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.30.65",
-			"timeUpdated": "2025-07-01T07:08:12+0000",
+			"version": "2.0.30.66",
+			"timeUpdated": "2025-07-02T07:08:13+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.35.24",
-			"timeUpdated": "2025-07-02T06:10:04+0000",
+			"version": "2.2.35.25",
+			"timeUpdated": "2025-07-02T07:08:25+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.84.69",
-			"timeUpdated": "2025-07-02T04:14:16+0000",
+			"version": "2.0.84.70",
+			"timeUpdated": "2025-07-02T07:08:26+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.7",
-			"timeUpdated": "2025-07-02T06:10:09+0000",
+			"version": "2.0.58.8",
+			"timeUpdated": "2025-07-02T07:08:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -772,8 +772,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.22.14",
-			"timeUpdated": "2025-07-01T20:08:11+0000",
+			"version": "2.0.22.15",
+			"timeUpdated": "2025-07-02T07:08:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
