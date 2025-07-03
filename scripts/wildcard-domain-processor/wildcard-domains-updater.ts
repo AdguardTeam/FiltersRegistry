@@ -80,20 +80,20 @@ async function getAliveDomains(domains: string[]): Promise<string[]> {
     const MAX_ATTEMPTS = 10;
     const RETRY_DELAY_MS = 3000; // 3 seconds
 
-    let attempt = 0;
+    let attempts = 0;
 
-    while (attempt < MAX_ATTEMPTS) {
+    while (attempts < MAX_ATTEMPTS) {
         try {
             const deadDomains = new Set(await findDeadDomains(domains));
             return domains.filter((domain) => !deadDomains.has(domain));
         } catch (error) {
-            attempt += 1;
+            attempts += 1;
 
-            if (attempt >= MAX_ATTEMPTS) {
+            if (attempts >= MAX_ATTEMPTS) {
                 throw new Error(`Failed to find dead domains after ${MAX_ATTEMPTS} attempts: ${error}`);
             }
 
-            console.log(`Error finding dead domains (attempt ${attempt}/${MAX_ATTEMPTS}) due to ${error}`);
+            console.log(`Error finding dead domains (attempt ${attempts}/${MAX_ATTEMPTS}) due to ${error}`);
             console.log(`Retrying in ${RETRY_DELAY_MS / 1000} seconds`);
 
             // Wait for the specified delay before retrying
