@@ -1,9 +1,9 @@
-! Checksum: ZTsFbf9itJV1IXUHe7HDsA
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1751533959-3600.patch
+! Checksum: 3frrWCVTU1YZCXAt5dcihA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1751537519-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.93.55
-! TimeUpdated: 2025-07-03T09:08:16+00:00
+! Version: 2.3.93.56
+! TimeUpdated: 2025-07-03T10:07:24+00:00
 ! Expires: 5 days (update frequency)
 ||potwm.com^$third-party
 ||audiensi.com^$third-party
@@ -5390,9 +5390,15 @@ orbispatches.com#@#.ads_container:not(.text-ad)
 segurosdevida.site#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 newser.com###divAB
 newser.com##.whiteBack > div#lightbox
-/aot-content/assets/*/cb-ads/*$domain=asiaon.top|asiaontop.com
-@@||a.realsrv.com/ad-provider.js$xmlhttprequest,domain=asiaon.top|asiaontop.com
-@@||cse.google.com/adsense/search/async-ads.js$domain=asiaon.top|asiaontop.com
+/aot-content/assets/*/cb-ads/*$domain=asiaon.top
+asiaon.top#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com', 'true')
+asiaon.top#%#//scriptlet('prevent-fetch', '/pagead2\.googlesyndication\.com|realsrv\.com|\/async-ads\.js/')
+asiaon.top#%#//scriptlet('prevent-element-src-loading', 'img', 'pagead2.googlesyndication.com')
+asiaon.top#%#//scriptlet('prevent-element-src-loading', 'script', '/pagead2\.googlesyndication\.com|realsrv\.com|\/async-ads\.js/')
+@@||a.realsrv.com/ad-provider.js$domain=asiaon.top
+@@||cse.google.com/adsense/search/async-ads.js$domain=asiaon.top
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=asiaon.top
+@@||pagead2.googlesyndication.com/pagead/images/adchoices/en.png$domain=asiaon.top
 milfnut.net#%#//scriptlet("set-constant", "isadb", "false")
 wcoanimesub.tv#%#//scriptlet("set-constant", "isAdBlockActive", "false")
 wcoanimesub.tv#%#//scriptlet("prevent-setTimeout", "AdBlock")
@@ -13573,6 +13579,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com|zinchanmanga.com|yaoimangaonline.com|tututweak.app|mangaraw.ac|eromanga-show.com|hentai-one.com|hentaipaw.com|nukibooks.com|paipancon.com|jgvdata.com|youtubevanced.com
+pornditt.com##.primary > li:has(> a[href][target="_blank"])
 transvids.tv##.ribbonban
 transvids.tv##.footer-margin
 transvids.tv##.primary > li:has(> div > ul > li > a[href^="https://landing.transangelsnetwork.com/"])
@@ -18291,10 +18298,10 @@ mmtv01.xyz#%#//scriptlet('trusted-replace-node-text', 'script', 'openNewTab', '/
 7mm003.cc,7mmtv.sx#%#//scriptlet('trusted-click-element', 'div[id^="mvspan_"][id*="_s_k_i_p_b"]', '', '500')
 7mmtv.sx#%#//scriptlet('prevent-window-open')
 7mm003.cc,7mmtv.sx##body .set_height_250
-||check-host.net/images/*aeza*$image
-||check-host.net/images/*guar*$image
-check-host.net##div[class*="elative"]
-check-host.net#%#//scriptlet('trusted-set-cookie', 'closew_advertisments', 'privatealps,aeza-permnnt,alexhost,aeza-b,pp-juiaryt,pp-juiaryt2')
+/^https:\/\/check-host\.net\/images\/[a-z]+-(en|ru)\.png$/$domain=check-host.net
+check-host.net##div[class*="-f"]:has(> * > img[src*=".svg"])
+check-host.net##div[class*="ative"]
+check-host.net#%#//scriptlet('trusted-set-cookie', 'closer_advertisments', 'privatealps,aeza-permnnt,alexhost,aeza-b,pp-juiaryt,pp-juiaryt2')
 quora.com#?#.qu-pb--medium > .q-box.qu-borderAll:has(> .q-box > .qu-py--small > .q-box > div[id^="div-gpt-"])
 quora.com#?#.q-box[style^="box-sizing:"] > div.q-box:has(> span[data-nosnippet="true"] > div.q-box[style="display: none !important;"])
 it.quora.com#?#.q-box > div:has(> div.q-box > div[style="box-sizing: border-box; display: flex; flex: 1 1 0%;"] > div:contains(Annuncio))
@@ -33859,6 +33866,7 @@ browsershots.org#@#.advert_area
 ||dchqgrxioyyfmbk.com^
 ||dcjrrglrieycgj.com^
 ||dcmdquudzpmkc.store^
+||dcmyatony.shop^
 ||dcoranepgn.com^
 ||dcssptrack.com^
 ||dd1xbevqx.com^
@@ -37439,6 +37447,7 @@ browsershots.org#@#.advert_area
 ||kqdmpnqlefncp.site^
 ||kqdqqkflpf.com^
 ||kqejazglxkwta.space^
+||kqiuernncywj.xyz^
 ||kqmmlqbuwmksm.store^
 ||kqntarwfonstf.online^
 ||kra18.com^
@@ -37492,6 +37501,7 @@ browsershots.org#@#.advert_area
 ||kuskitedecius.shop^
 ||kuwhudsa.com^
 ||kvaaa.com^
+||kvbbwzqzogyb.top^
 ||kvbojuxkwvcfk.global^
 ||kvdqzsytlcxuf.space^
 ||kveyasqwqppaoki.com^
@@ -37798,6 +37808,7 @@ browsershots.org#@#.advert_area
 ||ljbzgjymlbqvg.top^
 ||ljfrwpidsewus.store^
 ||ljgvbbkzykzvz.top^
+||ljhdcdian.com^
 ||ljisbcyw.com^
 ||ljnulatbntogvd.com^
 ||ljoaqeqwbkyar.top^
@@ -37957,6 +37968,7 @@ browsershots.org#@#.advert_area
 ||lqtbsflvsaqiy.store^
 ||lqzoyqvbjkvav.top^
 ||lr-in.com^
+||lrhffbdwkplxf.website^
 ||lrhyuixtcgnpn.site^
 ||lrlodahrafsxi.store^
 ||lrvwxbifst.xyz^
@@ -38898,6 +38910,7 @@ browsershots.org#@#.advert_area
 ||nghlsfshnptix.tech^
 ||ngnyhgpm.com^
 ||ngshospicalada.com^
+||ngwgkhtdykzzz.online^
 ||nhcgucgrsnupg.online^
 ||nhvjkpujq.com^
 ||nhywupchagze.com^
@@ -43774,6 +43787,7 @@ browsershots.org#@#.advert_area
 ||waxapushlite.com^
 ||wayftertheyhadg.com^
 ||waywortlaten.top^
+||wazzeyrykwbz.top^
 ||wbamedia.com^
 ||wbdds.com^
 ||wbfkyjvspddnd.site^
