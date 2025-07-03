@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SU9IUJdh2zVtjgLqWgk3Bg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1751519637-3600.patch
+! Checksum: WE2P4GC4/UVG4XDLtPGG7A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1751523258-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.93.51
-! TimeUpdated: 2025-07-03T05:09:34+00:00
+! Version: 2.3.93.52
+! TimeUpdated: 2025-07-03T06:09:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9974,6 +9974,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208717
+historicaerials.com##+js(googletagservices_gpt)
+historicaerials.com##+js(abort-current-script, EventTarget.prototype.addEventListener, googletag.pubads)
+historicaerials.com#$#body { overflow: auto !important; }
+historicaerials.com#$##xcontent_container > div[id][style*="position: fixed"][style*="z-index:"]:has(> .modal-content > div > button[onclick="window.location.reload();"]) { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208641
 @@||choralia.net/anymanagerrecover.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208570
@@ -34770,6 +34775,7 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 ://www.*.com/script/*.jp.js|$script,third-party
 /^https:\/\/www\.[0-9a-z-]{8,}\.xyz\/script\/[-.0-9A-Za-z]+\.[A-Za-z-]{2,30}\.js$/$script,third-party,match-case
 ! For all platforms including iOS
+||loader.nyitvatartas24.hu^
 ||html-load.com/loader.min.js$domain=nikkansports.com|j-cast.com|picksandparlays.net|ranking.net|minkou.jp|aucfree.com|motor-talk.de
 ||ad-shield.cc^
 !
@@ -36361,6 +36367,8 @@ whoer.net##.main-ip-info__anonimity
 simpcity.su##.notices:has(a[href^="https://catflix.su/"])
 simpcity.su##.block-body > div.node:has(> div.node-body > div.node-main h3.node-title > a[href^="/link-forums/catflix"])
 simpcity.su##.block-body > div.node:has(> div.node-body > div.node-main h3.node-title > a[href^="/link-forums/catflix"]) ~ div.node
+rumble.com##div[class^="js-rac-"][data-zone-id]:has(> script[src^="//a.ads."])
+rumble.com##.main-and-sidebar > aside[class*="-sidebar"] > div[class^="js-rac-"][data-zone-id]:has(> script[src^="//a.ads."]) + div.border-bone-highlight:empty
 rumble.com##.homepage-section:has(> div.constrained > div.js-rac-desktop-container)
 rumble.com##.homepage-section:has(> div.constrained > div[data-js^="rac-rp_"])
 bdnews24.com##.adHome-area
