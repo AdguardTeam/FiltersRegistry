@@ -68,9 +68,22 @@ function supplementWithTld(wildcardDomains: Set<string>): AliveWildcardDomains {
 }
 
 /**
+ * Sleep for the specified number of milliseconds.
+ *
+ * @param ms The number of milliseconds to sleep.
+ *
+ * @returns A promise that resolves after the specified time.
+ */
+async function sleep(ms: number): Promise<void> {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
+
+/**
  * Filters out dead domains from a list of domains.
  *
- * @param domains - The list of domains to filter.
+ * @param domains The list of domains to filter.
  *
  * @returns A list of alive domains.
  *
@@ -97,9 +110,7 @@ async function getAliveDomains(domains: string[]): Promise<string[]> {
             console.log(`Retrying in ${RETRY_DELAY_MS / 1000} seconds`);
 
             // Wait for the specified delay before retrying
-            await new Promise((resolve) => {
-                setTimeout(resolve, RETRY_DELAY_MS);
-            });
+            await sleep(RETRY_DELAY_MS);
         }
     }
 
