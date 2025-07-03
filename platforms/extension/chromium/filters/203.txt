@@ -1,15 +1,15 @@
-! Checksum: nnprRnNXJxYBV+FbZk8Zmw
-! Diff-Path: ../patches/203/203-s-1751417530-14400.patch
+! Checksum: ISu2rGvscVHQfSreYkr1SQ
+! Diff-Path: ../patches/203/203-s-1751561084-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.14
-! TimeUpdated: 2025-07-02T00:47:47+00:00
+! Version: 2.0.4.15
+! TimeUpdated: 2025-07-03T16:40:18+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: f+iisvgxJl/lLRwPkhPvQQ
-! OriginalVersion: 202507011112
+! Checksum: dOchu8xmwldBMcCSMWVw1g
+! OriginalVersion: 202507031328
 ! Title: Hufilter for AdGuard
-! Last modified: 01 Jul 2025 11:12 UTC
+! Last modified: 03 Jul 2025 13:28 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -874,7 +874,7 @@ offline.hu##.ads
 olcsobbat.hu##[class*="Advert"]
 olcsobbat.hu##[id*="hirdetes"]
 olcsobbat.hu###datasheetNavHelp
-online-filmek.ac,online-filmek.me##[id^="azidodpazarlod"]
+online-filmek.ac,online-filmek.me###azidodetpazarlod
 online-filmek.ac,online-filmek.me##.ad_mrg
 online-filmek.ac,online-filmek.me##.details-main-panel + span
 onlinecegjegyzek.hu##[class*="hirdetes"]
@@ -1425,6 +1425,7 @@ ugytudjuk.hu#?#.row:-abp-has(.mainTopBnr)
 ||fourtwentytradingcompany.net^
 ||fruitflan.com^
 ||iofferphoto.com^
+||loader.nyitvatartas24.hu^
 ||loading-delivery2.com^
 ||media.netpositive.hu^
 ||netadclick.com^
@@ -2113,7 +2114,9 @@ port.hu#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'window.ad
 ! https://github.com/uBlockOrigin/uAssets/issues/25482
 ! https://github.com/uBlockOrigin/uAssets/issues/28850
 ! https://github.com/uBlockOrigin/uAssets/issues/28850#issuecomment-2995469159
+! https://github.com/hufilter/hufilter/issues/614
 online-filmek.ac#%#//scriptlet('prevent-fetch', '.js')
+online-filmek.ac#%#//scriptlet('prevent-fetch', 'mode:cors')
 ! https://github.com/uBlockOrigin/uAssets/issues/27256#issuecomment-2670818969
 rubyvidhub.com#%#//scriptlet('remove-node-text', 'script', 'undefined')
 karpathir.com##[class^="k"][class*="-container"][class*="-2"][class$="-hide"]
