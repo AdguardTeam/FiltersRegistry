@@ -8,6 +8,10 @@ import { utils } from './utils';
 import { TOP_LEVEL_DOMAIN_LIST } from './top-tld';
 import { findFilterFiles, readFile, writeFile } from './file-utils';
 
+const TIME_UPDATED_KEY = 'timeUpdated';
+const ALIVE_DOMAINS_KEY = 'alive';
+const DEAD_DOMAINS_KEY = 'dead';
+
 /**
  * Extracts wildcard domains from the content of a filter.
  * @param filterContent - The content of the filter.
@@ -25,17 +29,34 @@ function getWildcardDomains(filterContent: string): Set<string> {
 }
 
 /**
- * A map of wildcard domains with all possible TLDs.
+ * A map of alive wildcard domains with all possible TLDs.
  */
-export type WildcardDomains = Record<string, string[]>;
+export type AliveWildcardDomains = Record<string, string[]>;
+
+type WildcardDomains = {
+    /**
+     * Time in ISO string format when the data was updated last time.
+     */
+    [TIME_UPDATED_KEY]: string;
+
+    /**
+     * A map of alive wildcard domains with all possible TLDs.
+     */
+    [ALIVE_DOMAINS_KEY]: AliveWildcardDomains;
+
+    /**
+     * List of dead wildcard domains.
+     */
+    [DEAD_DOMAINS_KEY]: string[];
+};
 
 /**
  * Supplements the wildcard domains with all possible TLDs from the list.
  * @param wildcardDomains - The set of wildcard domains to supplement.
  * @returns A map of wildcard domains with all possible TLDs.
  */
-function supplementWithTld(wildcardDomains: Set<string>): WildcardDomains {
-    const wildcardDomainsWithTld: WildcardDomains = {};
+function supplementWithTld(wildcardDomains: Set<string>): AliveWildcardDomains {
+    const wildcardDomainsWithTld: AliveWildcardDomains = {};
     for (const wildcardDomain of wildcardDomains) {
         const baseWithoutWildcard = wildcardDomain.slice(0, -2);
         wildcardDomainsWithTld[wildcardDomain] = [];
@@ -47,13 +68,55 @@ function supplementWithTld(wildcardDomains: Set<string>): WildcardDomains {
 }
 
 /**
+ * Sleep for the specified number of milliseconds.
+ *
+ * @param ms The number of milliseconds to sleep.
+ *
+ * @returns A promise that resolves after the specified time.
+ */
+async function sleep(ms: number): Promise<void> {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
+
+/**
  * Filters out dead domains from a list of domains.
- * @param domains - The list of domains to filter.
+ *
+ * @param domains The list of domains to filter.
+ *
  * @returns A list of alive domains.
+ *
+ * @throws Error if dead domain finding fails after max retry attempts.
  */
 async function getAliveDomains(domains: string[]): Promise<string[]> {
-    const deadDomains = new Set(await findDeadDomains(domains));
-    return domains.filter((domain) => !deadDomains.has(domain));
+    const MAX_ATTEMPTS = 10;
+    const RETRY_DELAY_MS = 3000; // 3 seconds
+
+    let attempts = 0;
+
+    while (attempts < MAX_ATTEMPTS) {
+        try {
+            const deadDomains = new Set(await findDeadDomains(domains));
+            return domains.filter((domain) => !deadDomains.has(domain));
+        } catch (error) {
+            attempts += 1;
+
+            if (attempts >= MAX_ATTEMPTS) {
+                throw new Error(`Failed to find dead domains after ${MAX_ATTEMPTS} attempts: ${error}`);
+            }
+
+            console.log(`Error finding dead domains (attempt ${attempts}/${MAX_ATTEMPTS}) due to ${error}`);
+            console.log(`Retrying in ${RETRY_DELAY_MS / 1000} seconds`);
+
+            // Wait for the specified delay before retrying
+            await sleep(RETRY_DELAY_MS);
+        }
+    }
+
+    // This should never be reached due to the throw in the catch block,
+    // but TypeScript requires a return statement
+    throw new Error('Unexpected error in getAliveDomains');
 }
 
 /**
@@ -64,8 +127,8 @@ async function getAliveDomains(domains: string[]): Promise<string[]> {
  * @returns Parsed JSON.
  * @throws Error if the file cannot be read or parsed.
  */
-async function getJson(filename: string): Promise<WildcardDomains> {
-    let oldJson: WildcardDomains = {};
+async function getJson(filename: string): Promise<AliveWildcardDomains | WildcardDomains> {
+    let oldJson: AliveWildcardDomains | WildcardDomains = {};
     try {
         const filePath = path.resolve(__dirname, filename);
         const json = await readFile(filePath);
@@ -74,6 +137,33 @@ async function getJson(filename: string): Promise<WildcardDomains> {
     } catch (e) {
         throw new Error(`Error reading old JSON file: ${e}`);
     }
+}
+
+/**
+ * Checks whether obj has 'alive' key which is marker for a new format data.
+ *
+ * @param obj Object to check.
+ * @returns True if data is in new format.
+ */
+function isNewFormatData(obj: AliveWildcardDomains | WildcardDomains): obj is WildcardDomains {
+    return ALIVE_DOMAINS_KEY in obj;
+}
+
+/**
+ * Retrieves a valid data about previously collected alive wildcard domains.
+ *
+ * @param filepath Path to file.
+ *
+ * @returns Previously collected alive wildcard domains
+ */
+async function getOldValidData(filename: string): Promise<AliveWildcardDomains> {
+    const oldJson = await getJson(filename);
+
+    if (!isNewFormatData(oldJson)) {
+        throw new Error('Invalid format of data');
+    }
+
+    return oldJson[ALIVE_DOMAINS_KEY];
 }
 
 /**
@@ -109,14 +199,24 @@ export const updateWildcardDomains = async (
     }
 
     const wildcardDomainsWithTld = supplementWithTld(wildcardDomains);
-    console.log('Totally found wildcard domains length:', Object.keys(wildcardDomainsWithTld).length);
+    const totalWildcardDomains = Object.keys(wildcardDomainsWithTld);
 
-    const oldJson = await getJson(wildcardDomainsJsonFilename);
+    const possibleTldDomains = totalWildcardDomains.reduce((acc, key) => {
+        acc.push(...wildcardDomainsWithTld[key]);
+        return acc;
+    }, [] as string[]);
 
-    const newData = { ...oldJson };
+    console.log('Totally found wildcard domains:', totalWildcardDomains.length, ', check full list in log.txt');
+    console.log('Possible TLD domains to check:', possibleTldDomains.length);
+
+    await writeFile('log.txt', totalWildcardDomains.join('\n'));
+
+    const oldAliveData = await getOldValidData(wildcardDomainsJsonFilename);
+
+    const newAliveData = { ...oldAliveData };
 
     /**
-     * The number of domains to process in a single batch.
+     * The number of wildcard domains to process in a single batch.
      *
      * Needed to speed up the process.
      */
@@ -124,6 +224,7 @@ export const updateWildcardDomains = async (
 
     const entries = Object.entries(wildcardDomainsWithTld);
     const start = performance.now();
+    const timeUpdated = new Date().toISOString();
     console.log('Start finding dead domains');
     console.log(`Processing domains by batches of ${BATCH_SIZE} domains.`);
 
@@ -138,7 +239,7 @@ export const updateWildcardDomains = async (
 
             const aliveDomains = await getAliveDomains(value);
 
-            newData[key] = aliveDomains;
+            newAliveData[key] = aliveDomains;
 
             if (aliveDomains.length === 0) {
                 console.error(`Domain ${key} has no alive domains, consider removing rules with this domain.`);
@@ -149,9 +250,23 @@ export const updateWildcardDomains = async (
         await Promise.all(batchPromises);
     }
 
+    const deadWildcardDomains = totalWildcardDomains.filter((domain) => {
+        const aliveWildcardDomains = Object.keys(newAliveData);
+        return !aliveWildcardDomains.includes(domain);
+    });
+
+    const newData: WildcardDomains = {
+        [TIME_UPDATED_KEY]: timeUpdated,
+        [ALIVE_DOMAINS_KEY]: newAliveData,
+        [DEAD_DOMAINS_KEY]: deadWildcardDomains,
+    };
+
     await saveJson(wildcardDomainsJsonFilename, newData);
 
-    // TODO: Add removal of domains that should be removed from the list of wildcard domains
+    if (deadWildcardDomains.length > 0) {
+        console.log('Consider removing dead wildcard domains:\n', deadWildcardDomains.join('\n'));
+    }
+
     //  Currently, we only update lists of alive domains in the JSON file and do not remove them.
     const spentTimeSec = ((performance.now() - start) / 1000).toFixed(2);
     console.log('End finding dead domains. Spent time, seconds:', spentTimeSec);
