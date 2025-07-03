@@ -1,9 +1,9 @@
-! Checksum: Lp0a/qx6pPTXZYEAH2O4nQ
-! Diff-Path: ../patches/3/3-s-1751537519-3600.patch
+! Checksum: RKx5HNNShhKPx/BXKiLMeQ
+! Diff-Path: ../patches/3/3-s-1751541078-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.87.46
-! TimeUpdated: 2025-07-03T10:07:34+00:00
+! Version: 2.0.87.47
+! TimeUpdated: 2025-07-03T11:06:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -41509,6 +41509,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||cdn.instant.one^
 ||m.techpump.com^
 ||d1vg5xiq7qffdj.cloudfront.net^
 ||inbound-analytics.pixlee.co^
@@ -45240,6 +45241,8 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||shopify.com/*/assets/instant-pixel.js
+||shopify.com/*/assets/script_tag.js
 fintables.com#%#//scriptlet('set-local-storage-item', '/_mpq|_mixpanel/', '$remove$')
 ||picsman.ai/jrnl/
 ||firebaselogging-pa.googleapis.com^$domain=picsman.ai
@@ -46576,7 +46579,6 @@ device4game.ru##.tg-first-footer-widget
 ||st.mngbcn.com/scripts/tagmanager.js
 ||e1.ru/api/metrics/
 ||urldefense.proofpoint.com^*analytics_insight.min.js
-||cdn.livechatinc.com/tracking.js$domain=~kinguin.net
 ||uq.force.com/auraAnalytics^
 ||hurriyet.com.tr/banalytics.js
 president.jp##.recommend
@@ -52568,8 +52570,6 @@ larocheposay.co.kr#%#//scriptlet('set-constant', 'wptg_tagscript.exec', 'noopFun
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187876
 @@||cdn.clerk.io/clerk.js$domain=industrivarer.no
 ! Rule $referrerpolicy is required for apps, because source of "cdn.clerk.io/clerk.js" is not detected
-! https://github.com/AdguardTeam/AdguardFilters/issues/187569
-@@||cdn.livechatinc.com/tracking.js$domain=bitdefender.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187827
 @@||cdn.clerk.io/clerk.js$domain=garmont.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187278
@@ -52684,8 +52684,6 @@ kgm-actyon.co.kr#%#//scriptlet('set-constant', 'kakaoPixel', 'noopFunc')
 @@||api.cxense.com/segment/lookup?callback=$domain=tvaplus.ca
 ! https://x.com/namaedayo/status/1808059096412967251
 @@||pv.sohu.com/cityjson$domain=ems.com.cn
-! https://github.com/uBlockOrigin/uAssets/issues/24331
-@@||cdn.livechatinc.com/tracking.js$domain=freedompop.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182633
 jooble.org#%#//scriptlet('google-analytics')
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
