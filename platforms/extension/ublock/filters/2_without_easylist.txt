@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FODFKqGTJJ21PLJfxhQsCA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1751638337-3600.patch
+! Checksum: BxNXvTh35k8WLLDnFQLGdw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1751641860-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.93.84
-! TimeUpdated: 2025-07-04T14:07:12+00:00
+! Version: 2.3.93.85
+! TimeUpdated: 2025-07-04T15:06:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9976,6 +9976,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208817
+dongknows.com##+js(remove-node-text, script, js_var_nothing)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208717
 historicaerials.com##+js(googletagservices_gpt)
 historicaerials.com##+js(abort-current-script, EventTarget.prototype.addEventListener, googletag.pubads)
@@ -10373,8 +10375,6 @@ hrnytube.com##+js(set-constant, cRAds, true)
 watch.plex.tv##+js(no-fetch-if, /doubleclick\.com/ method:HEAD, , opaque)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196454
 @@||sshkit.com^$generichide
-! https://github.com/AdguardTeam/AdguardFilters/issues/196379
-dongknows.com##+js(noeval-if, /{return decodeURIComponent\(atob/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
 @@||superpsx.com^$generichide
 superpsx.com##+js(abort-current-script, EventTarget.prototype.addEventListener, parseInt(0x)
@@ -35034,6 +35034,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+dongknows.com##.dkt-abanner-top
 f95zone.to##.p-nav-list > li:has(> div > a[href^="https://f95zone.to/link-forums/"])
 f95zone.to##.p-nav-list > li:has(> div > a[href^="https://f95zone.to/link-forums/"]) ~ li
 f95zone.to##.block--category > div.block-container div.node:has(a[href^="/explore/"])

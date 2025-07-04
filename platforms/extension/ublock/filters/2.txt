@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: x/aIqNPxwQzU+wXr7vzFMg
-! Diff-Path: ../patches/2/2-s-1751638336-3600.patch
+! Checksum: TwZocN9/3GOt+AGSP6kUUA
+! Diff-Path: ../patches/2/2-s-1751641859-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.93.84
-! TimeUpdated: 2025-07-04T14:07:12+00:00
+! Version: 2.3.93.85
+! TimeUpdated: 2025-07-04T15:06:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9976,6 +9976,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208817
+dongknows.com##+js(remove-node-text, script, js_var_nothing)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208717
 historicaerials.com##+js(googletagservices_gpt)
 historicaerials.com##+js(abort-current-script, EventTarget.prototype.addEventListener, googletag.pubads)
@@ -10373,8 +10375,6 @@ hrnytube.com##+js(set-constant, cRAds, true)
 watch.plex.tv##+js(no-fetch-if, /doubleclick\.com/ method:HEAD, , opaque)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196454
 @@||sshkit.com^$generichide
-! https://github.com/AdguardTeam/AdguardFilters/issues/196379
-dongknows.com##+js(noeval-if, /{return decodeURIComponent\(atob/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
 @@||superpsx.com^$generichide
 superpsx.com##+js(abort-current-script, EventTarget.prototype.addEventListener, parseInt(0x)
@@ -35034,6 +35034,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+dongknows.com##.dkt-abanner-top
 f95zone.to##.p-nav-list > li:has(> div > a[href^="https://f95zone.to/link-forums/"])
 f95zone.to##.p-nav-list > li:has(> div > a[href^="https://f95zone.to/link-forums/"]) ~ li
 f95zone.to##.block--category > div.block-container div.node:has(a[href^="/explore/"])
@@ -75953,7 +75954,7 @@ fuse-box.info#@#.ads-row
 juicesky.com#@#.ads-title
 mastersclub.jp#@#.ads.widget
 getwallpapers.com,wallpaperaccess.com,wallpapercosmos.com,wallpaperset.com#@#.ads1
-jw.org#@#.adsBlock
+jw.org,smart-flash.jp#@#.adsBlock
 cars.mitula.ae#@#.adsList
 oogiri-chaya.com#@#.adsText
 bilinovel.com#@#.ads_ad_box
@@ -76027,6 +76028,7 @@ elektro.info.pl,mashingup.jp#@#.is-sponsored
 gizmodo.jp#@#.l-ad
 vukajlija.com#@#.large-advert
 realgfporn.com#@#.large-right-ad
+smart-flash.jp#@#.leftAds
 atea.com,ateadirect.com,knowyourmobile.com,nlk.org.np#@#.logo-ad
 insideevs.com#@#.m1-header-ad
 doda.jp,tubefilter.com#@#.mainAd
@@ -76045,6 +76047,7 @@ ebaumsworld.com#@#.promoAd
 galaopublicidade.com#@#.publicidade
 eneuro.org,jneurosci.org#@#.region-ad-top
 offmoto.com#@#.reklama
+smart-flash.jp#@#.rightAds
 msn.com#@#.serversidenativead
 audioholics.com,classy-online.jp#@#.side-ad
 ekitan.com,kissanadu.com#@#.sidebar-ad:not(.adsbygoogle)
@@ -82227,6 +82230,7 @@ browsershots.org#@#.advert_area
 ||copycatsoirees.top^
 ||copyrightmonastery.com^
 ||cor8ni3shwerex.com^
+||corapeacoat.com^
 ||cordclck.cc^
 ||cordinghology.info^
 ||core.dimatter.ai^
@@ -82257,6 +82261,7 @@ browsershots.org#@#.advert_area
 ||cosedluteo.com^
 ||coseraja.shop^
 ||cosetengarb.com^
+||coshafvl.com^
 ||cosignpresentlyarrangement.com^
 ||cosmeticsgenerosity.com^
 ||cosponsorgarnetmorphing.com^
@@ -82280,6 +82285,7 @@ browsershots.org#@#.advert_area
 ||countabledawdlerunaudited.com^
 ||countenancedrykeeper.com^
 ||countertrck.com^
+||coupeewoovy.com^
 ||couphaithuph.net^
 ||couplestupidity.com^
 ||coupsonu.net^
@@ -89727,6 +89733,7 @@ browsershots.org#@#.advert_area
 ||keochhhc.com^
 ||keomijxydnmcs.online^
 ||kepnatick.com^
+||keqzqtfpzpzll.site^
 ||ker2clk.com^
 ||keraclya.com^
 ||keratolascian.com^
@@ -90576,6 +90583,7 @@ browsershots.org#@#.advert_area
 ||lhqmmqmbqtezs.space^
 ||lhrjmbnkyj.com^
 ||lhuwawhcxtltx.space^
+||lhvduqlahiakt.site^
 ||lhwimdpdjajfx.rocks^
 ||lhxmrcyaqsvze.site^
 ||li.blogtrottr.com^
@@ -99747,6 +99755,7 @@ browsershots.org#@#.advert_area
 ||sweltering-development.com^
 ||sweptomphacy.shop^
 ||swesomepop.com^
+||swidprxaafwha.store^
 ||swiftbytes.store^
 ||swiftlybloodlesseconomic.com^
 ||swiftstreamhub.com^
@@ -102631,6 +102640,7 @@ browsershots.org#@#.advert_area
 ||whereres.com^
 ||wherevertogo.com^
 ||whesulsejortoag.net^
+||wheyaback.top^
 ||whgcbgdsrqixx.rocks^
 ||whichcandiedhandgrip.com^
 ||whilstrorty.com^
