@@ -1,5 +1,5 @@
-! Checksum: uUGekcLVk8xNtje19NU0rA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1751517981-14400.patch
+! Checksum: aoB26AyZREnZ79SeplzY7Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1751604308-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.38
@@ -138,7 +138,6 @@ softwaretested.com##.st-alternative
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ||testedforyou.net^$all
-azdll.net##.dllhelper-banner
 ||solvusoft.com^$document
 ||yopcgames.com^$document
 coolrom.com.au,coolrom.com##.download_link
@@ -3106,6 +3105,10 @@ $document,removeparam=referringSource
 $document,removeparam=source_location
 $document,removeparam=psf_variant
 $document,removeparam=bxid
+$document,removeparam=cndid
+$document,removeparam=hasha
+$document,removeparam=hashb
+$document,removeparam=hashc
 $document,removeparam=irgwc
 $document,removeparam=/^clickid=.*$/i,domain=~discover.*
 $document,removeparam=ito
@@ -3210,6 +3213,7 @@ $document,removeparam=campaignid
 $removeparam=loc,document,domain=bestbuy.*|shopping.google.com
 $removeparam=acampID
 $document,removeparam=cmt
+$removeparam=extcmp
 $removeparam=at_gd
 $document,removeparam=/^amp=$/,domain=~eurasiantimes.com|~cybersecuritynews.com
 $removeparam=_gl
@@ -3218,7 +3222,6 @@ $document,removeparam=/^outputType=amp$/
 $removeparam=orig_referrer
 $removeparam=ncid
 $document,removeparam=/^ecid=.*$/i,domain=~account.microsoft.com
-$removeparam=adcid
 $removeparam=mkt_tok
 @@^mkt_unsubscribe=$removeparam=mkt_tok
 $removeparam=affname
@@ -3321,8 +3324,6 @@ $removeparam=ldtag_cl
 $removeparam=vero_conv
 $removeparam=vero_id
 $removeparam=a_aid
-$removeparam=otracker
-$removeparam=otracker1
 $removeparam=ft_source
 $removeparam=ft_medium
 $removeparam=ref_source
@@ -3539,12 +3540,10 @@ $removeparam=partnerUserId
 $removeparam=adroll_fpc
 $removeparam=ad-session-id
 $removeparam=ga_cid
-$removeparam=tw_document_href
 $removeparam=hubspotUtk
 $removeparam=messagesUtk
 $removeparam=advUuid
 $document,removeparam=traceId
-$removeparam=p_user_id
 $removeparam=criteoId
 $removeparam=dspCookie
 $removeparam=_rand
@@ -3992,7 +3991,6 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 $removeparam=clickArea
 $removeparam=user_ip
 ||sogou.com^$removeparam=bh
-||sogou.com^$removeparam=entityid
 ||sogou.com^$removeparam=hintidx
 ||sogou.com^$removeparam=htdbg
 ||sogou.com^$removeparam=interation
@@ -4000,6 +3998,7 @@ $removeparam=user_ip
 ||baike.sogou.com^$removeparam=ch
 ||sogou.com^$removeparam=fromTitle
 ||mp.weixin.qq.com^$removeparam=scene
+@@||mp.weixin.qq.com/mp/qrcode?$removeparam=scene
 ||mp.weixin.qq.com^$removeparam=xtrack
 ||mp.weixin.qq.com^$removeparam=key
 ||mp.weixin.qq.com^$removeparam=ascene
@@ -4089,6 +4088,8 @@ $removeparam=sourceID,domain=gamestop.com|verizon.com
 ||ozon.ru^$removeparam=advert
 $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=ia-pkpmtrack
+||spartoo.$removeparam=sx
+||spartoo.$removeparam=track_id
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
 ||surfshark.com^$removeparam=transaction_id
@@ -4305,7 +4306,6 @@ $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
-$removeparam=sub,domain=allboner.com|twinkvideos.com
 ||fandom.com^$removeparam=so
 ||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
@@ -4405,7 +4405,6 @@ ref=spreadprivacy.com$removeparam=ref
 ||github.com^$removeparam=reference_location
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
-$document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
 ||linkedin.com/feed/update$removeparam=origin
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
@@ -4415,6 +4414,7 @@ $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||cdninstagram.com^$removeparam=_nc_sid
 ||adguard.info^$removeparam=nc
 $document,removeparam=jp_cmp,domain=chase.com
+$document,removeparam=orig_ref,domain=peacocktv.com
 ||researchgate.net^$document,removeparam=_tp
 $document,removeparam=share_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|sky.it
 ||xvideos.$document,removeparam=sxcaf
@@ -4461,7 +4461,6 @@ $document,removeparam=_p_rfs,domain=temu.com
 $document,removeparam=_x_ads_sub_channel,domain=temu.com
 $document,removeparam=_x_vst_scene,domain=temu.com
 $document,removeparam=refer_page_el_sn,domain=temu.com
-$document,removeparam=refccid,domain=bedbathandbeyond.com
 $document,removeparam=tk,domain=indeed.com
 $removeparam=from,domain=indeed.com
 $removeparam=advn,domain=indeed.com
@@ -4507,6 +4506,7 @@ $document,removeparam=pk_cid
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 $document,removeparam=entrypoint,domain=bing.com
+$document,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
 ||audible.$removeparam=/^ref/
