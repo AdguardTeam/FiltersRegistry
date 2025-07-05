@@ -1,4 +1,4 @@
-! Checksum: 4+BrIn3jOFJAxHJnOAYHfw
+! Checksum: qAImHAg2bD9NIh4kpArMlQ
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.53.32
@@ -102,7 +102,6 @@ japscan.lol#%#//scriptlet('trusted-set-constant', 'aclib', '{"isShowingPop": fal
 japscan.lol#%#//scriptlet('set-constant', 'aclib.runInPagePush', 'noopFunc')
 japscan.lol#%#//scriptlet("remove-node-text", "script", "/Y[a-z][a-z]?k[a-z]\d|YehMyOh|function nawNA/")
 /^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.lol
-@@||platform.pubadx.one/pubadx-ad.js$xmlhttprequest,domain=japscan.lol
 @@||acscdn.com^$script,third-party,domain=japscan.lol
 @@.shop/*/invoke.js$script,third-party,domain=japscan.lol,important
 japscan.lol#@#div.container > [href]
@@ -396,7 +395,6 @@ anime-sama.fr#?#.items-center > p.text-sm:contains(/^Cliquer sur une pub est le 
 turbo.fr#$##Banniere-Haute { min-height: 0 !important; visibility: hidden !important; }
 autoplus.fr###text-65
 autoplus.fr###text-51
-autoplus.fr###text-16
 filmoflix.ad,papadustream.*##.g-buttons
 lanouvellerepublique.fr##.dfp
 journaldesseniors.20minutes.fr##.ad
@@ -670,7 +668,6 @@ purepeople.com##.article-page-sticky
 caradisiac.com###MegaBan
 caradisiac.com##.containerPub
 liberation.fr##div[class^="StickyAd-"]
-torrent911.*,oxtorrent.*,bookys-ebooks.com###vpnvpn
 nouvelobs.com##.slice--ad
 forums.automobile-propre.com##.ipsDataItem a[href*="advertisement&ad="] > img
 programme-television.org##div[id^="programme-televisionorg_"][id$="_ar"].cmi_pSticky:empty
@@ -953,6 +950,7 @@ $script,third-party,domain=yts.mx,badfilter
 mobimart.it#@##ad_global_below_navbar
 @@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=gala.fr
 ||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=gala.fr
+||googletagmanager.com/gtm.js$script,redirect=googletagmanager-gtm,domain=gala.fr
 @@||content.uplynk.com/preplay/*/multiple.json*&ad.preroll$domain=fifa.com
 @@||google.com/recaptcha/api.js
 $popup,domain=mcloud.to,badfilter
@@ -1428,6 +1426,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://fr.*/ads?
 ://get.*&clickid=
 ://go.*&zoneid=
+://go.*?zoneid=
 ://link.*&siteid=$third-party
 ://msk.*/redir/
 ://pop.$script,subdocument,third-party,xmlhttprequest
@@ -2247,6 +2246,7 @@ _build=iclick-$popup
 ||datewithman.com^
 ||dauntonedder.com^
 ||dauntssquills.com^
+||dazzlingdelay.com^
 ||dazzlinggain.com^
 ||dbbupggdbamnvo.com^
 ||dearoughts.com^
@@ -2689,6 +2689,7 @@ _build=iclick-$popup
 ||slubdamine.top^
 ||smartoffer.site^
 ||smnyayzhv.com^
+||snailthreatenedinvited.com^
 ||snoozyhayride.com^
 ||sodhef.com^
 ||soknm.com^
@@ -2770,6 +2771,7 @@ _build=iclick-$popup
 ||vealedincite.com^
 ||veritabledate.com^
 ||videoadex.com^
+||videocdnmetrika31.com^
 ||vidox.net^
 ||viiadr.com^
 ||viipura.com^
@@ -3070,7 +3072,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||proxy.ads.canalplus-bo.net^
 ||proxy.vidazoo.com^
 ||pub.groupe-ldlc.com^
-||pushresponse.net^$subdocument,third-party
 ||r.kelkoo.com^$domain=toutvendre.fr
 ||ratehub.ca/widgets/$third-party
 ||recettes.de/images/logos/$third-party
@@ -3103,7 +3104,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||tripadvisor.*/partner/$third-party
 ||tudou.com^$subdocument
 ||turk-dreamworld.com/images/sponsor/
-||twenga.fr/publisher/$third-party
 ||ucoz.net/cgi/uutils.fcg?
 ||up-banner.wavecdn.net^
 ||upload.amatrys.com/images/jetm.jpg
@@ -3415,6 +3415,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||rencontresanslendemain.net/wp-content/uploads/*/banniere-
 ||rennes-infos-autrement.fr/wp-content/uploads/2022/02/une-
 ||roulettechat.fr^*/facebook-api-pub/
+||routiers.com/image/routiers/pub/
 ||ruedesjoueurs.com/images/articles-/promo/
 ||ruedesjoueurs.com/images/banners/
 ||ruedesjoueurs.com/images/campagnes/habillage/
@@ -3998,6 +3999,10 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pjsleads
 ##.placeholder-pub_dfp
 ##.player-adv
+##.player-screen-ads
+##.player-screen-ads-item
+##.player-screen-ads-list
+##.player-screen-ads-wrapper
 ##.player-sponsor-block
 ##.player__ads
 ##.pmd-ads-mobile
@@ -4117,7 +4122,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.publicite3
 ##.publicite4
 ##.publiciteHeader
-##.publicite_droite
 ##.publicite_droite_600
 ##.publicite_gauche
 ##.publicite_horizontale_well
@@ -4415,6 +4419,7 @@ bdgest.com,bedetheque.com##.ban-top
 cnews.fr##.ban-top-habillage
 pornovore.fr##.bandeau-vertical
 handroit.com##.bandeau_header
+syskb.com##.bandeaupub
 01net.com,1001jeux.fr,2conv.com,afrik-foot.com,afrik.com,afrikeco.com,expressio.fr,flvto.biz,glenatbd.com,hdnumerique.com,jizzbunker.com,journaldugeek.com,lautomarche.com,manga-news.com,medialot.fr,mesbagages.com,mob.org,orientation-chabab.com,photofiltres.fr,solutions-numeriques.com,telquel.ma,textnow.com,ventsdouest.com##.banner
 judgehype.com##.bannerATF_container
 2ememain.be##.bannerContainerLoading
