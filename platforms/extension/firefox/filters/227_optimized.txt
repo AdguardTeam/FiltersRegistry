@@ -1,9 +1,9 @@
-! Checksum: 1JkCbOL5VOqWoBQgRZoh0Q
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1751488876-14400.patch
+! Checksum: 8vNMC/qppMQjnMJhLSo62Q
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1751719752-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.21.89
-! TimeUpdated: 2025-07-02T20:36:31+00:00
+! Version: 2.0.21.90
+! TimeUpdated: 2025-07-05T12:44:52+00:00
 ! Expires: 10 days (update frequency)
 ||adgirl.yes24.com^
 ||ad.api.adwiser.kr^
@@ -509,6 +509,7 @@
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
+||cdn.lol.ps/static/prod/*/_app/immutable/assets/banner-
 ||platformgreat.kr/coupang_1.jpg
 ||maplescouter.com/ads/
 ||issuetory.co.kr/wp-content/boost-cache/static/4f167c936d.min.js
@@ -1557,6 +1558,10 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+lol.ps##main[style^="cursor: default;"][class="desktop:min-w-[1280px]"] > div[class^="modal-"]
+lol.ps##.overflow-x-hidden > div[class*="inset-x-0 top-[80px]"]
+lol.ps###banner-container
+lol.ps###AnyMindAvs
 tv.nate.com##iframe[src^="/adv/"]
 quasarzone.com##div[id^="venatusHumor"]
 quasarzone.com##.g123-wrapper
@@ -2988,6 +2993,8 @@ x86.co.kr#@#.download_ad
 @@||t1.daumcdn.net/adfit/static/kp.js$domain=pindirectshop.com|dongbanmall.com
 @@||dasibogo.net/wp-content/uploads/sites/23/2024/04/dasibogologo$domain=dasibogo.net
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
+lol.ps#$#div[class*="w-full min-w-[280px] pt-10"] > .p-4.pb-0 div[class*="max-w-[480px]"] { width: 100% !important; max-width: none !important; }
+lol.ps#$##summoner-name-header-container { width: 100% !important; }
 2798731938.zigcou.com#$#.relative > .z-0 { display: none !important; }
 2798731938.zigcou.com#$#.relative .post-contents > div[style] { height: auto !important; }
 lawtimes.co.kr#$#div[class*=" "]:has( + div[class*=" "] > div > a[target="_blank"][href^="https://"]) { width: 100% !important; }
