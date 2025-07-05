@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: xhf1i/3RAqHximuiiZktgA
-! Diff-Path: ../patches/7/7-s-1751713811-3600.patch
+! Checksum: /tgln6lnQmcJddD14x8hYA
+! Diff-Path: ../patches/7/7-s-1751721414-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.66.3
-! TimeUpdated: 2025-07-05T11:06:05+00:00
+! Version: 2.0.66.4
+! TimeUpdated: 2025-07-05T13:12:45+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1790,6 +1790,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+keyakizaka46matomerabo.com##.adsBox:has(> ins.adsbygoogle)
+ar-mag.jp##.js-ad-entame
 kojodan.jp###header_space
 baseballking.jp,volleyballking.jp##.entry-content > div.addArea
 baseballking.jp,volleyballking.jp##.entry-content-main > div.addArea
@@ -3595,6 +3597,7 @@ hoge5ch.info##.amazon_item
 meshinews.blog.jp,hoge5ch.info##.right-container > div.plugin-memo:last-child
 ||coneti.net/post_image/mt_20220623211055_jF696njUWbNW.jpg$third-party
 ||poginfo.ddo.jp/pogs/images/pr/
+times.abema.tv##.ad-side-sticky
 times.abema.tv##.u-lg-overflow-hidden[style="height: 200px;"]
 times.abema.tv#?#.c-article-footer-title:contains(/^関連(記事|動画)/)
 times.abema.tv##.article-tvbtn-under-ad
@@ -7415,9 +7418,9 @@ caloo.jp##div[id^="dfp-"]
 ||suzaka.ne.jp/ban/banner_rt.php
 ||suzaka.ne.jp/bb/
 hotfrog.jp##div.bg-white.text-center
-nichinichi-magazine.com,engineweb.jp,nosweb.jp,bbm-japan.com,basketball-zine.com,netkeizai.com,oceans.tokyo.jp,scawaiiweb.com,animageplus.jp,zaikai.jp,driver-web.jp,rollingstonejapan.com##body .addHead
-nichinichi-magazine.com,engineweb.jp,nosweb.jp,bbm-japan.com,orangepage.net,netkeizai.com,oceans.tokyo.jp,scawaiiweb.com,animageplus.jp,zaikai.jp,driver-web.jp,rollingstonejapan.com##.addSide
-tennisclassic.jp,engineweb.jp,rollingstonejapan.com,nosweb.jp,bbm-japan.com,netkeizai.com,oceans.tokyo.jp,zaikai.jp,driver-web.jp,cinema.ne.jp,animageplus.jp##.articleDetailAdd
+entamenext.com,nichinichi-magazine.com,engineweb.jp,nosweb.jp,bbm-japan.com,basketball-zine.com,netkeizai.com,oceans.tokyo.jp,scawaiiweb.com,animageplus.jp,zaikai.jp,driver-web.jp,rollingstonejapan.com##body .addHead
+entamenext.com,nichinichi-magazine.com,engineweb.jp,nosweb.jp,bbm-japan.com,orangepage.net,netkeizai.com,oceans.tokyo.jp,scawaiiweb.com,animageplus.jp,zaikai.jp,driver-web.jp,rollingstonejapan.com##.addSide
+entamenext.com,tennisclassic.jp,engineweb.jp,rollingstonejapan.com,nosweb.jp,bbm-japan.com,netkeizai.com,oceans.tokyo.jp,zaikai.jp,driver-web.jp,cinema.ne.jp,animageplus.jp##.articleDetailAdd
 heim.jp##.p-article__adTop
 news.yahoo.co.jp##.newsFeed_list > li >  div[id^="ad"]
 news.yahoo.co.jp##.nhSpBox3
@@ -10666,7 +10669,8 @@ loveh.org#?#.bigpickupin > a[href^="https://www.dmm.co.jp"]:upward(1)
 gahalog.2chblog.jp#?#.plugin-memo > div.side > center > div#verticalrank:upward(3)
 gossip1.net,namaxchang.com#?#.module--free > div > ins.adsbygoogle:upward(2)
 blog.esuteru.com#?##more > center:last-of-type:has(> a[href$="300x250.php"])
-crx7601.com#?#.plugin-memo > div.side > center > iframe[src*="//rcm-fe.amazon-adsystem.com"]:upward(3)
+crx7601.com##.plugin-memo:has(div.side > center > a[href^="https://amzn.to"][target="_blank"] > img)
+crx7601.com##.plugin-memo:has(> div.side > center > script[src$="adstir.js"])
 femimatsu.com#?#.-freeArea > div.adAmazon:upward(1)
 hdata.seesaa.net#?##links > div[align="center"]:has(> table[style])
 hdata.seesaa.net#?##links > div.sidetitle:contains(注目)
@@ -11378,7 +11382,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 !
 !
 ! temporally hidden for GTM
-ben54.jp#$#html[class^="loading"] { visibility: visible !important; }
+ar-mag.jp,ben54.jp#$#html[class^="loading"] { visibility: visible !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208209
 mobilegadget.jp#@#.header-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208191
