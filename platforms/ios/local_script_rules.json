@@ -538,6 +538,10 @@
             "script": "(()=>{if(window.self!==window.top)try{if(\"object\"==typeof localStorage)return}catch(a){delete window.localStorage,window.localStorage={setItem(){},getItem(){},removeItem(){},clear(){}}}})();"
         },
         {
+            "domains": "poki.com",
+            "script": "(()=>{let e=!1;const l={apply:async(e,l,o)=>{const r=o[0];return!1===r?.rewardAllowed&&(o[0].rewardAllowed=!0),Reflect.apply(e,l,o)}},o={apply:(o,r,t)=>{const n=t[0]?.pokiAdsCompleted;return!e&&n&&n[0]?.toString()?.includes(\"rewardAllowed\")&&(n[0]=new Proxy(n[0],l),e=!0),Reflect.apply(o,r,t)}};window.Object.keys=new Proxy(window.Object.keys,o)})();"
+        },
+        {
             "domains": "ign.com",
             "script": "(()=>{window.Pogo=window.Pogo||{},window.Pogo.cmd=[],window.Pogo.cmd.push=o=>{\"function\"==typeof o&&o()},window.Pogo.getVideoTag=(o,w)=>{w&&\"function\"==typeof w&&w()};})();"
         },
@@ -1072,10 +1076,6 @@
         {
             "domains": "chip.de",
             "script": "var originalUserAgent = navigator.userAgent; Object.defineProperty(navigator, 'userAgent', { get: function() { return originalUserAgent + ' Edge'; } });"
-        },
-        {
-            "domains": "winfuture.de",
-            "script": "setTimeout(function(){var el = document.querySelector(\".showitxt\"); if(el) { el.innerHTML = el.innerHTML.replace(\"(Anzeige)\",\"\"); }},3000);"
         },
         {
             "domains": "yahoo.co.jp",
