@@ -1,5 +1,5 @@
-! Checksum: +vt2Yo8qMihyNgUNRlCUxg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1751843473-3600.patch
+! Checksum: P5pnRdgt1cgZ9j6OVPs9XQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1751856426-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.53.37
@@ -686,6 +686,7 @@ lessentiel.lu###prime__inside-top
 lessentiel.lu##div[class^="ad_adContainer_"]
 cyclismactu.net##a[href^="https://media.unibet.fr/redirect.aspx"]
 menu.lu##div[data-advertisement]
+batimag.ch##div[id^="docu-slot"]
 sncf-connect.com##.WLS_gtmBannerWrapper
 sncf-connect.com###WL_side_banner
 lapresse.ca##.adsWrapper
@@ -815,6 +816,7 @@ onvasortir.com###pub_rectangle
 fr.tennistemple.com##.right > .box_nd > [id^="300x250"]
 replay.fr##.dfa
 empire-streaming.*,empire-stream.*##iframe[src="/banner_ads"]
+empire-streamz.fr,empire-streaming.*,empire-stream.*##.hover-ads-interval
 ||empire-streaming.*/serviceWorker.js
 /neads.$domain=~neads.io|~neads.co
 ||fmovies.*/sw.js
@@ -1670,6 +1672,7 @@ _ads_banner_
 _ads_desktop.
 _ads_one_
 _ads_view/
+_adsens_
 _adspromo.
 _adunit=
 _advertising_img.
@@ -2000,7 +2003,6 @@ _build=iclick-$popup
 ||shareaholic.com^$third-party
 ||sharemyads.com^$third-party
 ||smartclip.net^$~object,third-party
-||smartmovies.net^$third-party
 ||smartstream.tv^$third-party
 ||spacepush.ru^$third-party
 ||static-od.com^$third-party
@@ -2027,7 +2029,6 @@ _build=iclick-$popup
 ||vyking.io^$third-party
 ||wedoo.com^$third-party
 ||widespace.com^$third-party
-||widgetbooster.com^$third-party
 ||wiztube.xyz^$third-party
 ||wydpt.com^$third-party
 ||xcamz.xyz^$third-party
@@ -2243,7 +2244,6 @@ _build=iclick-$popup
 ||avvelwamqkwzr.top^
 ||avwjyvwqybow.top^
 ||avzwkkmzkabrb.top^
-||avzwkkmzkawyr.top^
 ||awavjblaaeyrj.top^
 ||awavjblaaezbb.top^
 ||awavjblrwelqw.top^
@@ -3098,6 +3098,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||b.clc2l.com^
 ||b.clictoload.com^
 ||bandeiracorp.biz/images/$third-party
+||banner-adz.com/view.php
 ||be.com/wp-content/uploads/$third-party
 ||belledesfleurs.com/ban/$third-party
 ||brsimg.com/pub/
@@ -3360,7 +3361,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||xcams.com/?dsclr=$popup
 ||youporn.com^*?utm_$popup
 ||zt-za.fr/redirect.$popup
-||0zz0.com/e/
 ||1001jeux.fr/bfb/
 ||1movies.*/site/$xmlhttprequest
 ||2ememain.be/lrp/api/complementary-listings?
@@ -3445,7 +3445,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||forumconstruire.com/letsgo/
 ||france-troc.com/includes/inc_bandeau.php?
 ||frandroid.com/plsbl/
-||free-proxy.cz/i/HMA/
 ||free-reseau.fr/images/ban_
 ||free-strip-games.com/swf/
 ||free.fr/webmails/pub/
@@ -4037,6 +4036,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.gutter-ads-container
 ##.hb__ad--header
 ##.head-pub
+##.header-add-wrapper
 ##.header-adds
 ##.header-blocked-ad
 ##.header-promo
@@ -4165,7 +4165,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pub-right
 ##.pub-text
 ##.pub-top
-##.pub0-if-commerciales
 ##.pub160x600
 ##.pub300
 ##.pub300250
@@ -4788,6 +4787,7 @@ exefiles.com##a[href*="/recommended/"]
 seneweb.com##a[href*="/xban/"]
 rtl.be##a[href*="://ad.doubleclick.net/"]
 jeuxetcompagnie.fr##a[href*="://www.ludeek.com/"] > img
+challenges.fr,nouvelobs.com##a[href*="?partnerlinkid="]
 welovebuzz.com##a[href*="_adw&"]
 jds.fr##a[href*="_clic.php?"]
 bleachmx.fr##a[href*="californiansmiles.com/products/"]

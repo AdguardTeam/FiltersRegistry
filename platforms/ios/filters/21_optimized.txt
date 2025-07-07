@@ -1,5 +1,5 @@
-! Checksum: sUx7/KkqIG4woUF1UXRjUg
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1751770158-3600.patch
+! Checksum: Tm86f2McdDNu4K6s16mW8g
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1751856427-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.35.22
@@ -673,6 +673,7 @@ cooking.nytimes.com#$#div[class^="modal_modal-window-container"]:not(:has(div[cl
 banana.by###footer
 myapple.pl##body > .alert-announcement#announcement
 yahoo.com#%#(function(){var a=new Date,b=a.getTime();document.cookie="ucs=lbit="+b})();
+nownews.com#$#body[style^="overflow: hidden;"] { overflow: visible!important; padding-right: 0!important; }
 kievpravda.com##.person-of-day-sidebar
 youtube.com###content > .style-scope > .ytd-compact-promoted-item-renderer
 youtube.com##.ytp-subscribe-card
@@ -798,7 +799,6 @@ my.mail.ru##.b-column-right__block-apps
 mail.ru##.m-pwa-custom-infobar
 mail.ru#?#body > div.tooltip:has(div.m-push-notifications__buttons)
 ||pogoda.mail.ru/*/ct-push-notifications/ct-push-notifications.xml.js
-mail.ru##.ph-balloon
 sport24.ru##div:has(> p + a[href^="https://sport24.ru/"])
 mail.ru,~e.mail.ru,~octavius.mail.ru##.js-promo-popup
 sportmail.ru##div[id^="notification"]
@@ -1101,7 +1101,6 @@ avtocod.ru##div[id^="mntg-banner"]
 avtocod.ru###free-book-form
 mirf.ru##.right-stub-price
 tripadvisor.*##a[href^="https://www.tripadvisor"][target="_blank"]:has(> section[aria-label])
-4travel.jp##.u_bottomFixedBanner
 play.esea.net##a[href="https://fce.gg/S53ESEAtakeover"]
 ||play.esea.net/images/takeover.png
 xnxx-ru.com,xnxx.com###header + div[style^="display"]:not(#content)
@@ -1523,7 +1522,6 @@ news.itsfoss.com###more-from-its-foss + ul
 4kdownload.com##.popup-discount--wrapper
 number.bunshun.jp##.ajax-3carrier-hidden:has(> a > span.pr-mark)
 baidu.com###con-ceiling-wrapper
-mail.proton.me##button[data-testid="cta:special-offer"]
 gizchina.gr###vw_widget_image_banner-9
 lista.mercadolivre.com.br##.ui-search-layout__item:has(.poly-component__ads-promotions)
 lista.mercadolivre.com.br##.ui-search-sidebar-placements__container
@@ -1593,7 +1591,6 @@ brasilparalelo.com.br##.new-ribbon
 northdata.*##.segments > div.ui[style="padding-bottom: 1.5em !important; padding-top: 1.5em !important"]
 ru.hexlet.io##.hexlet-blog-banner-wrapper
 millipiyangoonline.com##.freetext:has(div.bs-wrapper.play a[href="https://www.millipiyangoonline.com/account/register"])
-kentcdodds.com##main + div[class]:has(> div.w-full a[href="https://epicreact.dev"])
 banki.ru##div[data-gtm-view*="_news_page"][data-gtm-view*="view_widget"]
 handelsblatt.com###footer_banner_piano
 themeselection.com###thegem-template-13
@@ -2337,7 +2334,6 @@ sekai-kabuka.com#?#td[align="center"][class] > table > tbody > tr > td > div[sty
 kaspersky.ru##.kasbanner-banner
 transit.yahoo.co.jp###ad_sale
 hk.trip.com##.tcp-banner
-hk.trip.com##.fpc-bl-grid-3
 mainichi.jp###pi-sp-article-banner
 yahoo.co.jp###TBP
 bcs-express.ru##div[data-id="banner-open-account-horizontal"]
@@ -2450,7 +2446,6 @@ bookwalker.jp##.ad-new-member
 bookwalker.jp##.side-deals
 bookwalker.jp##.o-beginner-banner
 bookwalker.jp##.bnr-list-area
-ecuabet.com##div[name="asb-banners"]
 ryukyushimpo.jp##.topic-ticker_box-topics
 ranak.me##.news-feed__range > div.market
 videolan.org##.sponsors-carousel-wrapper
@@ -2707,7 +2702,6 @@ femina.hu##div[data-miniapp-id]
 coolutils.com###bottomBanner
 drweb.ru###ShowIt
 lenta.ru##iframe[name="banner"]
-||journalistenwatch.com/wp-content/uploads/2017/08/Boxerin-03.gif
 ||vkstorm.ru/banners/$third-party
 office.com##.m-alert.f-information
 music.youtube.com##ytmusic-mealbar-promo-renderer
@@ -2715,6 +2709,7 @@ music.youtube.com##ytmusic-mealbar-promo-renderer
 toto.rakuten.co.jp#?#.login-section2 > div.login-none-inner:has(> div.campaign)
 curseforge.com,toto.rakuten.co.jp,themeforest.net##.banner
 filmix.my,filmix.biz,filmix.ac,filmix.tech,filmix.zone##.remove-sda-wrap
+||softbesplatno.net/templates/FreeSoft/images/banner*.png
 zoon.ru###zoonHeader
 praxistipps.chip.de##.Article__Promo
 pdfdrive.com,armorgames.com##.premium-promo
@@ -3196,6 +3191,7 @@ pixiv.net##.premium-lead-new-t-info-home-top
 pixiv.net#?#section[class^="sc-"] > div[class^="sc-"]:has(+ div[class^="sc-"] > aside[class*="-0 "] > iframe[src^="https://imp.pixiv.net/premium_"][class^="sc-"])
 pixiv.net#?#section[class] aside[class*="-0 "] > iframe[src^="https://imp.pixiv.net/premium_"][class^="sc-"]:upward(1)
 elnortedecastilla.es#$#body { overflow: auto !important; }
+||widgets.hawk-assets.co.uk^$domain=techradar.com
 investors.com##.wrapper .broadcast-text
 imgur.com#?#.FastGrid > .Grid-column > div[style*="height:"]:has(> a[href] > .Post-item-container > .Post-item-meta > .Post-item-external-ad)
 mt.de###paywall-footer-slider
