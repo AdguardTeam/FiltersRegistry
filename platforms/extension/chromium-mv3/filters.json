@@ -905,8 +905,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.72.87",
-			"timeUpdated": "2025-07-08T08:40:23+0000",
+			"version": "2.1.72.88",
+			"timeUpdated": "2025-07-08T12:45:08+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -980,8 +980,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.72.86",
-			"timeUpdated": "2025-07-08T08:40:24+0000",
+			"version": "2.1.72.87",
+			"timeUpdated": "2025-07-08T12:45:10+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1078,8 +1078,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.2.60",
-			"timeUpdated": "2025-07-07T12:45:17+0000",
+			"version": "2.1.2.61",
+			"timeUpdated": "2025-07-08T12:45:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1099,8 +1099,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.37.50",
-			"timeUpdated": "2025-07-07T08:41:33+0000",
+			"version": "2.0.37.51",
+			"timeUpdated": "2025-07-08T12:45:34+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1217,8 +1217,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.21.99",
-			"timeUpdated": "2025-07-08T08:40:53+0000",
+			"version": "2.0.22.0",
+			"timeUpdated": "2025-07-08T12:45:42+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.66.18",
-			"timeUpdated": "2025-07-08T08:41:25+0000",
+			"version": "2.0.66.19",
+			"timeUpdated": "2025-07-08T12:46:12+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1450,8 +1450,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.8.93",
-			"timeUpdated": "2025-07-08T00:48:15+0000",
+			"version": "2.0.8.94",
+			"timeUpdated": "2025-07-08T12:46:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
