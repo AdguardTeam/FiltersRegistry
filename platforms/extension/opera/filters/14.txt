@@ -1,9 +1,9 @@
-! Checksum: 4CpbOTC6OFMWNfHMSsiJPw
-! Diff-Path: ../patches/14/14-s-1751976913-3600.patch
+! Checksum: CdwBpO07UJodLeIXDXupaQ
+! Diff-Path: ../patches/14/14-s-1751980901-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.35.78
-! TimeUpdated: 2025-07-08T12:11:28+00:00
+! Version: 2.2.35.79
+! TimeUpdated: 2025-07-08T13:17:33+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2515,6 +2515,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+sport-thieme.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button.uc-save-button')
 sneakerfreaker.com#%#//scriptlet('trusted-set-cookie', 'sfConsent', 'denied')
 crosig.hr##.cookieControlModalWrapper
 tickets.dtm.com#%#//scriptlet('trusted-set-cookie', 'egosys-cookie-preferences', '%7B%22performance%22%3Atrue%2C%22thirdParty%22%3Atrue%2C%22necessary%22%3Atrue%7D')
@@ -17061,6 +17062,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208831
+@@||cmp.usercentrics.eu^$domain=sport-thieme.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208938
 @@||sdk.privacy-center.org^$domain=rtbf.be
 ! conrad.* - not all options shown main page

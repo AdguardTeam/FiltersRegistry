@@ -1,9 +1,9 @@
-! Checksum: q+fKrL4OMFV9lwRIi8m0oA
-! Diff-Path: ../patches/18/18-s-1751955230-3600.patch
+! Checksum: CGPvGn1V0fLEXdeUbRuQOQ
+! Diff-Path: ../patches/18/18-s-1751980882-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.65.38
-! TimeUpdated: 2025-07-08T06:10:14+00:00
+! Version: 2.0.65.39
+! TimeUpdated: 2025-07-08T13:17:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2515,6 +2515,7 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+sport-thieme.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button.uc-save-button')
 sneakerfreaker.com#%#//scriptlet('trusted-set-cookie', 'sfConsent', 'denied')
 crosig.hr##.cookieControlModalWrapper
 tickets.dtm.com#%#//scriptlet('trusted-set-cookie', 'egosys-cookie-preferences', '%7B%22performance%22%3Atrue%2C%22thirdParty%22%3Atrue%2C%22necessary%22%3Atrue%7D')
@@ -17152,6 +17153,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208831
+@@||cmp.usercentrics.eu^$domain=sport-thieme.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208938
 @@||sdk.privacy-center.org^$domain=rtbf.be
 ! conrad.* - not all options shown main page
