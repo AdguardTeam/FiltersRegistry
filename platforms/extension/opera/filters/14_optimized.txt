@@ -1,9 +1,9 @@
-! Checksum: u3cjBkbI0gtMmqDyCxyMhA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1751955250-3600.patch
+! Checksum: YAHWA9YZmeqL5jt8Sf+iyQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1751962440-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.35.74
-! TimeUpdated: 2025-07-08T06:10:06+00:00
+! Version: 2.2.35.75
+! TimeUpdated: 2025-07-08T08:10:05+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -14871,7 +14871,8 @@ wk-partners.co.jp##.footer__fixed-cv-btn
 ||supersadovnik.ru/Content/scripts/bother.js
 bbc.com#$#.tp-modal { display: none !important; }
 bbc.com#$#.tp-backdrop { display: none !important; }
-bbc.com#$#body.tp-modal-open { overflow: auto !important; }
+bbc.com#%#//scriptlet('remove-class', 'tp-modal-open|tp-body-scroll-prevented', 'body')
+bbc.com#%#//scriptlet('remove-class', 'tp-scroll-prevented', 'html')
 24.hu##.fb-exit-popup-container
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##div[class^="subredditvars-"] > div[class^="_"] > div[class][style*="--Toaster-indicatorColor:"]
 blog.csdn.net#%#//scriptlet('set-cookie', 'unlogin_scroll_step', '1')
@@ -25569,14 +25570,14 @@ jorudan.co.jp##.com_lp_frame
 !+ NOT_PLATFORM(ext_ublock)
 nijimiss.moe,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe#%#//scriptlet('json-prune', 'ads.[].imageUrl')
 metaratings.ru,metaratings.by,metarating.com.ua,meta-ratings.kz##div[class*="SportHome_bonusesCarousel__"]
+iobit.com##.anvy__index
+iobit.com##div[class*="bottom"]:has([onclick*="gtag"])
 ||iobit.com/tpl/images/summer/anniversary/
-||iobit.com/*/summer/*banner-home*.jpg
+||iobit.com/tpl/images/20*/*banner
 iobit.com##.rabbit-banner
 iobit.com##div[class*="-mask"]
-iobit.com##div[class*="bottom"][class~="on"]
 iobit.com##div[class*="pop"]:has([onclick*="gtag"])
 iobit.com##div[class*="pop"][class*="bg"]
-iobit.com##.comm_bottom
 iobit.com##div[class*="float-"]
 @@||googletagmanager.com/gtm.js?id=GTM-WMQ82P6$domain=excite.co.jp,badfilter
 excite.co.jp###exCollaboration
