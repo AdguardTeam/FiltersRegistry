@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.3.94.92",
-			"timeUpdated": "2025-07-09T07:08:08+0000",
+			"version": "2.3.94.93",
+			"timeUpdated": "2025-07-09T08:09:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/9_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.30.78",
-			"timeUpdated": "2025-07-09T06:09:57+0000",
+			"version": "2.0.30.79",
+			"timeUpdated": "2025-07-09T08:09:31+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.35.90",
-			"timeUpdated": "2025-07-09T07:08:44+0000",
+			"version": "2.2.35.91",
+			"timeUpdated": "2025-07-09T08:09:42+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.85.52",
-			"timeUpdated": "2025-07-09T06:10:05+0000",
+			"version": "2.0.85.53",
+			"timeUpdated": "2025-07-09T08:09:43+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -703,8 +703,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.65.42",
-			"timeUpdated": "2025-07-09T04:16:27+0000",
+			"version": "2.0.65.43",
+			"timeUpdated": "2025-07-09T08:09:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -725,8 +725,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.38",
-			"timeUpdated": "2025-07-09T04:16:28+0000",
+			"version": "2.0.58.39",
+			"timeUpdated": "2025-07-09T08:09:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -747,8 +747,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.22.26",
-			"timeUpdated": "2025-07-09T00:27:40+0000",
+			"version": "2.0.22.27",
+			"timeUpdated": "2025-07-09T08:09:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

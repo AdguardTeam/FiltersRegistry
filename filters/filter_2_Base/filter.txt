@@ -10444,14 +10444,6 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! stevenuniverse.best
 stevenuniverse.best###adblock-popup
-! https://github.com/AdguardTeam/AdguardFilters/issues/208817
-dongknows.com$$script:contains(js_var_nothing)
-dongknows.com#%#//scriptlet('remove-node-text', 'script', 'js_var_nothing')
-!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
-dongknows.com#@#.topadbox
-dongknows.com#@#.oasads
-dongknows.com#@#.widget-sponsor
-!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208717
 historicaerials.com#%#//scriptlet('googletagservices-gpt')
 historicaerials.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'googletag.pubads')
@@ -10487,8 +10479,13 @@ ads.luarmor.net#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ads.luarmor.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208014
-nontonx.com###rules-nontonx
 ||raw.githubusercontent.com/*.txt?$domain=nontonx.com
+nontonx.com###rules-nontonx
+nontonx.com##body > div[style]:has(> div[style] > button[onclick="location.reload()"])
+||nontonx.com^$replace=/if \([a-zA-Z\d]+\(\)\) \{/if(!0){/,document
+nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'toString', '/if \([a-zA-Z\d]+\(\)\) \{/g', 'if(!0){')
+||nontonx.com^$replace=/!results\.bait \|\| !results\.rum \|\| !results\.recaptcha/!1/,document
+nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'toString', '/!results\.bait \|\| !results\.rum \|\| !results\.recaptcha/!1/g', '!1')
 ||nontonx.com^$replace=/if \(!.+\(\)\) return;//,document
 nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'toString', '/if \(!.+\(\)\) return;/g', '')
 ||nontonx.com^$replace=/if \(.\.. === null\) return;//,document
@@ -27403,6 +27400,8 @@ roweroweporady.pl#@#.ad_container
 @@||lib.wtg-ads.com/prebid/prebid_*.js$domain=tvn.pl
 !
 !
+gazetki.pl##.ad_d_small
+gazetki.pl##aside > div[style*="height:"]:has(> .ad_d_small)
 korektortekstu.pl##.container > .row> .col-md-12[style]:has(> .adsbygoogle)
 forexclub.pl###a_flex
 ||gapl.hit.gemius.pl^$domain=partner.ipla.tv,important
@@ -40115,6 +40114,7 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 ! NOTE: Specific rules
 !
 !
+dongknows.com##.dkt-amz-top
 ||limeiptv.to/static/*.gif$domain=1337x.to
 buffsports.io##a[role="button"][href="#"]
 hide.cx##.ContainerAreaLeftVertical > img
@@ -89922,6 +89922,7 @@ browsershots.org#@#.advert_area
 ||acoossz.top^
 ||acorncranberrycrayfish.com^
 ||acornedavolate.top^
+||acouasmamazia.top^
 ||acqpizkpo.com^
 ||acqtfeofpa.com^
 ||acquaintance213.fun^
@@ -91298,6 +91299,7 @@ browsershots.org#@#.advert_area
 ||anjmfijuiuxgul.com^
 ||ankdoier.com^
 ||ankolisiloam.com^
+||anlacecartful.shop^
 ||anlqrktcwmasw.space^
 ||anlytics.co^
 ||anmazwvszsqub.com^
@@ -91316,6 +91318,7 @@ browsershots.org#@#.advert_area
 ||annussleys.com^
 ||annxwustakf.com^
 ||annzaqakg.com^
+||anokyqqkambkn.top^
 ||anonymousads.com^
 ||anonymoustrunk.com^
 ||anopportunitytost.com^
@@ -92416,6 +92419,7 @@ browsershots.org#@#.advert_area
 ||barelydonkeysteed.com^
 ||bargainintake.com^
 ||bargedale.com^
+||barhopgifture.top^
 ||bariumdroger.top^
 ||barkanpickee.com^
 ||barlo.xyz^
@@ -93235,6 +93239,7 @@ browsershots.org#@#.advert_area
 ||boomouso.xyz^
 ||boomsshhcifdi.com^
 ||booneeptou.net^
+||boontortrix.shop^
 ||booseed.com^
 ||boost-next.co.jp^
 ||boostaubeehy.net^
@@ -94401,6 +94406,7 @@ browsershots.org#@#.advert_area
 ||chinaslauras.com^
 ||chinesskraigh.shop^
 ||chingbicched.top^
+||chinlescupcake.top^
 ||chiolxkuzji.com^
 ||chioursorspolia.com^
 ||chipleader.com^
@@ -102231,6 +102237,7 @@ browsershots.org#@#.advert_area
 ||jaahqjqnkzlpb.site^
 ||jaavnacsdw.com^
 ||jabafgnu.com^
+||jabslasa.shop^
 ||jabxsbaestpzo.space^
 ||jackalclenchedbedside.com^
 ||jackao.net^
@@ -105192,6 +105199,7 @@ browsershots.org#@#.advert_area
 ||mevarabon.com^
 ||mewgzllnsp.com^
 ||mewiththeb.com^
+||mewscornel.top^
 ||mfadsrvr.com^
 ||mfbvgcjkqpxup.xyz^
 ||mfcewkrob.com^
@@ -111261,6 +111269,7 @@ browsershots.org#@#.advert_area
 ||rqcmbaquc.com^
 ||rqeenaenswlwnyv.com^
 ||rqejawwjlazlv.top^
+||rqejawwjlovjq.top^
 ||rqgiwrjyicatp.site^
 ||rqigjxtwszork.store^
 ||rqmfspdplqzmxu.com^
@@ -112790,6 +112799,7 @@ browsershots.org#@#.advert_area
 ||spadelack.com^
 ||spaderonium.com^
 ||spadsync.com^
+||spaitlitter.shop^
 ||spaitopacate.shop^
 ||spaitwhitter.shop^
 ||spamimpunity.com^
@@ -113241,6 +113251,7 @@ browsershots.org#@#.advert_area
 ||streamsearchclub.com^
 ||streamtoclick.com^
 ||streamyourvid.com^
+||streckmatinal.shop^
 ||street-datetop.com^
 ||streetgrieveddishonour.com^
 ||streetmonumentemulate.com^
@@ -113528,6 +113539,7 @@ browsershots.org#@#.advert_area
 ||sweltering-development.com^
 ||sweptomphacy.shop^
 ||swesomepop.com^
+||swgvmflsg.com^
 ||swidprxaafwha.store^
 ||swiftbytes.store^
 ||swiftlybloodlesseconomic.com^
@@ -114102,6 +114114,7 @@ browsershots.org#@#.advert_area
 ||thoughtfulbill.pro^
 ||thoughtleadr.com^
 ||thoukouxou.net^
+||thounekoaw.net^
 ||thouprepositionsquall.com^
 ||thoupsuk.net^
 ||thousandinvoluntary.com^
@@ -115083,6 +115096,7 @@ browsershots.org#@#.advert_area
 ||uglawhigruzeehy.net^
 ||ugopkl.com^
 ||ugroocuw.net^
+||ugyokhycezstl.site^
 ||uhaadzwxo.com^
 ||uhalwxtwy.com^
 ||uhdokoq5ocmk.com^
@@ -116240,6 +116254,7 @@ browsershots.org#@#.advert_area
 ||vzeakntvvkc.one^
 ||vzhdsjjfnuquz.online^
 ||vzigttqgqx.com^
+||vzldnxgdbhyle.website^
 ||vzoahlod.com^
 ||vzoogvcarot.com^
 ||vzoqn.buzz^

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PTDZDDVV8UWFptUs34qe8w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1752045156-3600.patch
+! Checksum: eE/xV/wEdyPZRQ1cAL1KIQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1752048832-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.94.92
-! TimeUpdated: 2025-07-09T07:08:08+00:00
+! Version: 2.3.94.93
+! TimeUpdated: 2025-07-09T08:09:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10055,8 +10055,6 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! stevenuniverse.best
 stevenuniverse.best###adblock-popup
-! https://github.com/AdguardTeam/AdguardFilters/issues/208817
-dongknows.com##+js(remove-node-text, script, js_var_nothing)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208717
 historicaerials.com##+js(googletagservices_gpt)
 historicaerials.com##+js(abort-current-script, EventTarget.prototype.addEventListener, googletag.pubads)
@@ -10084,8 +10082,9 @@ radio.de,radio.net,radio.at#@#.ad-slot
 discover-sharm.com##.js-antiadblocker
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207996
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208014
-nontonx.com###rules-nontonx
 ||raw.githubusercontent.com/*.txt?$domain=nontonx.com
+nontonx.com###rules-nontonx
+nontonx.com##body > div[style]:has(> div[style] > button[onclick="location.reload()"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207608
 @@||seelen.io/jquery.ad.js$domain=seelen.io
 seelen.io##+js(no-fetch-if, pagead2.googlesyndication.com/pagead/js/adsbygoogle.js)
@@ -23857,6 +23856,8 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xmlhttprequest,redirect=noop.txt
 !
 !
+gazetki.pl##.ad_d_small
+gazetki.pl##aside > div[style*="height:"]:has(> .ad_d_small)
 korektortekstu.pl##.container > .row> .col-md-12[style]:has(> .adsbygoogle)
 forexclub.pl###a_flex
 ||gapl.hit.gemius.pl^$domain=partner.ipla.tv,important
@@ -35111,6 +35112,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+dongknows.com##.dkt-amz-top
 ||limeiptv.to/static/*.gif$domain=1337x.to
 buffsports.io##a[role="button"][href="#"]
 hide.cx##.ContainerAreaLeftVertical > img
