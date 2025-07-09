@@ -1,9 +1,9 @@
-! Checksum: 6nXWeOqLbfmjCAcls9jNvA
-! Diff-Path: ../patches/18/18-s-1752070257-3600.patch
+! Checksum: IJxwatxnBGVAxQaoRpIuNA
+! Diff-Path: ../patches/18/18-s-1752073889-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.65.46
-! TimeUpdated: 2025-07-09T14:07:18+00:00
+! Version: 2.0.65.47
+! TimeUpdated: 2025-07-09T15:07:43+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2515,6 +2515,9 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+alexela.ee,alexela.lv#%#//scriptlet('trusted-set-cookie', 'cookie-agreed', '2')
+alexela.ee,alexela.lv#%#//scriptlet('trusted-set-cookie', 'cookie-agreed-categories', '["required_cookies"]')
+alexela.ee,alexela.lv#%#//scriptlet('trusted-set-cookie', 'cookie-agreed-version', '1.0.0')
 nspk.ru##.modals-cookies
 d5render.com##.home-hero-section ~ div > div[style^="box-sizing:border-box; position:fixed; bottom:0; left:0; z-index:9999; width:100%; display:flex;"]
 geotastic.net#%#//scriptlet('set-local-storage-item', 'privacy-policy-accepted', 'true')
@@ -17073,6 +17076,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209052
+alexela.ee,alexela.lv#@#.c-cookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208986
 @@||assets.jimstatic.com/cookieControl.js.$domain=atlas-diamant.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208831
