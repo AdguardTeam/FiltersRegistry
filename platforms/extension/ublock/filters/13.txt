@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /5jh6bK1Z3NRnpNdHDNmzA
-! Diff-Path: ../patches/13/13-s-1752059471-3600.patch
+! Checksum: wDJeyQZq5KJX00k/th8C9A
+! Diff-Path: ../patches/13/13-s-1752063326-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.57.95
-! TimeUpdated: 2025-07-09T11:07:10+00:00
+! Version: 2.0.57.96
+! TimeUpdated: 2025-07-09T12:11:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1057,8 +1057,6 @@ mobile.donanimhaber.com##+js(set-session-storage-item, pageCount, 0)
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/207923
-ugurfilm9.com#$##header { margin-bottom: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201457
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197202
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182860
@@ -1536,8 +1534,6 @@ haberler.com##.new3card-reklam-container > .new3card-reklam:has(> .backupContent
 haberler.com##.new3detail-page-container > .new3detail-left:has(> article.tuhps:only-child > #taboola-below-article-widget)
 epikplayer.xyz###popup-overlay
 epikplayer.xyz##+js(addEventListener-defuser, , checkAndOpenPopup)
-||ugurfilm*.com/reklam*.js
-ugurfilm9.com##a[href="https://ucuncusinema.com/"]
 ||yenifilmizle.org/wp-content/uploads/*.mp4
 ensonhaber.com##.hmasthead
 ensonhaber.com##.bn-fw
@@ -5445,6 +5441,10 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+!
+! ugurfilm*.com - frequently changed domains
+[$domain=/ugurfilm\d+.com/]#$##header { margin-bottom: 0 !important; }
+[$domain=/ugurfilm\d+.com/]##div[style^="text-align: center;"] > a[target="_blank"] > img
 !
 ! dizibox*.com - frequently changed domains
 [$domain=/dizibox\d+.com/]##.body-clickable

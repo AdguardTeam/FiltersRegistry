@@ -1223,8 +1223,6 @@ mackolik.com,sahadan.com#%#setTimeout ("HideFloatAdBanner()", 1000);
 !------- CSS fixes --------------------!
 !--------------------------------------!
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/207923
-ugurfilm9.com#$##header { margin-bottom: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201457
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197202
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182860
@@ -1713,8 +1711,6 @@ epikplayer.xyz###popup-overlay
 epikplayer.xyz#%#//scriptlet('prevent-addEventListener', '', 'checkAndOpenPopup')
 hdfilmsitesi.me#%#//scriptlet('trusted-set-cookie', 'goggaAds', '1')
 hdfilmsitesi.me#%#//scriptlet('trusted-set-cookie', 'counter', '1')
-||ugurfilm*.com/reklam*.js
-ugurfilm9.com##a[href="https://ucuncusinema.com/"]
 ||yenifilmizle.org/wp-content/uploads/*.mp4
 ensonhaber.com##.hmasthead
 ensonhaber.com##.bn-fw
@@ -5627,24 +5623,32 @@ hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
+! ugurfilm*.com - frequently changed domains
+[$domain=/ugurfilm\d+.com/]#$##header { margin-bottom: 0 !important; }
+[$domain=/ugurfilm\d+.com/]##div[style^="text-align: center;"] > a[target="_blank"] > img
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
+ugurfilm9.com,ugurfilm10.com,ugurfilm11.com,ugurfilm12.com,ugurfilm13.com,ugurfilm14.com,ugurfilm15.com,ugurfilm16.com,ugurfilm17.com,ugurfilm18.com,ugurfilm19.com,ugurfilm20.com,ugurfilm21.com,ugurfilm22.com,ugurfilm23.com,ugurfilm24.com,ugurfilm25.com,ugurfilm26.com,ugurfilm27.com,ugurfilm28.com,ugurfilm29.com,ugurfilm30.com#$##header { margin-bottom: 0 !important; }
+ugurfilm9.com,ugurfilm10.com,ugurfilm11.com,ugurfilm12.com,ugurfilm13.com,ugurfilm14.com,ugurfilm15.com,ugurfilm16.com,ugurfilm17.com,ugurfilm18.com,ugurfilm19.com,ugurfilm20.com,ugurfilm21.com,ugurfilm22.com,ugurfilm23.com,ugurfilm24.com,ugurfilm25.com,ugurfilm26.com,ugurfilm27.com,ugurfilm28.com,ugurfilm29.com,ugurfilm30.com##div[style^="text-align: center;"] > a[target="_blank"] > img
+!#endif
+!
 ! dizibox*.com - frequently changed domains
 [$domain=/dizibox\d+.com/]##.body-clickable
 ||dizibox*.com/wp-content/themes/diziplus/images/bg.webp
 ! aglint-disable-next-line invalid-modifiers
 ||ssl.p.jwpcdn.com/player/*/vast.js$domain=/dizibox\d+\.com/
-!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || adguard_ext_chromium_mv3)
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
 dizibox6.com,dizibox7.com,dizibox8.com,dizibox9.com,dizibox10.com,dizibox11.com,dizibox12.com,dizibox13.com,dizibox14.com,dizibox15.com,dizibox16.com,dizibox17.com,dizibox18.com,dizibox19.com,dizibox20.com,dizibox21.com,dizibox22.com,dizibox23.com,dizibox24.com,dizibox25.com##.body-clickable
 !#endif
 !
 ! klasikfilmler*.cc - frequently changed domains
 [$domain=/klasikfilmler\d+\.cc/]#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'videotutucu')
-!#if (adguard_app_ios || adguard_ext_safari)
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
 klasikfilmler1.cc,klasikfilmler2.cc,klasikfilmler3.cc,klasikfilmler4.cc,klasikfilmler5.cc,klasikfilmler6.cc,klasikfilmler7.cc,klasikfilmler8.cc,klasikfilmler9.cc,klasikfilmler10.cc,klasikfilmler11.cc,klasikfilmler12.cc,klasikfilmler13.cc,klasikfilmler14.cc,klasikfilmler15.cc,klasikfilmler16.cc,klasikfilmler17.cc,klasikfilmler18.cc,klasikfilmler19.cc,klasikfilmler20.cc#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'videotutucu')
 !#endif
 !
 ! mactanmaca*.shop - frequently changed domains
 [$domain=/mactanmaca\d+\.shop/]#%#//scriptlet('set-cookie', 'reklamgosterimx', 'ok')
-!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || adguard_ext_chromium_mv3)
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
 mactanmaca546.shop,mactanmaca547.shop,mactanmaca548.shop,mactanmaca549.shop,mactanmaca550.shop,mactanmaca551.shop,mactanmaca552.shop,mactanmaca553.shop,mactanmaca554.shop,mactanmaca555.shop,mactanmaca556.shop,mactanmaca557.shop,mactanmaca558.shop,mactanmaca559.shop,mactanmaca560.shop,mactanmaca561.shop,mactanmaca562.shop,mactanmaca563.shop,mactanmaca564.shop,mactanmaca565.shop#%#//scriptlet('set-cookie', 'reklamgosterimx', 'ok')
 !#endif
 !
@@ -5654,7 +5658,7 @@ mactanmaca546.shop,mactanmaca547.shop,mactanmaca548.shop,mactanmaca549.shop,mact
 [$domain=/canlimacizlemax\d+\.top/]##.w100p
 [$domain=/canlimacizlemax\d+\.top/]##.iframe_728
 [$domain=/canlimacizlemax\d+\.top/]##div#stream_holder > iframe#video_reklam
-!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || adguard_ext_chromium_mv3)
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
 canlimacizlemax437.top,canlimacizlemax438.top,canlimacizlemax439.top,canlimacizlemax450.top,canlimacizlemax451.top,canlimacizlemax452.top,canlimacizlemax453.top,canlimacizlemax454.top,canlimacizlemax455.top,canlimacizlemax456.top,canlimacizlemax457.top,canlimacizlemax458.top,canlimacizlemax459.top,canlimacizlemax460.top,canlimacizlemax461.top,canlimacizlemax462.top,canlimacizlemax463.top,canlimacizlemax464.top,canlimacizlemax465.top,canlimacizlemax466.top##.header_r
 canlimacizlemax437.top,canlimacizlemax438.top,canlimacizlemax439.top,canlimacizlemax450.top,canlimacizlemax451.top,canlimacizlemax452.top,canlimacizlemax453.top,canlimacizlemax454.top,canlimacizlemax455.top,canlimacizlemax456.top,canlimacizlemax457.top,canlimacizlemax458.top,canlimacizlemax459.top,canlimacizlemax460.top,canlimacizlemax461.top,canlimacizlemax462.top,canlimacizlemax463.top,canlimacizlemax464.top,canlimacizlemax465.top,canlimacizlemax466.top##.w100p
 canlimacizlemax437.top,canlimacizlemax438.top,canlimacizlemax439.top,canlimacizlemax450.top,canlimacizlemax451.top,canlimacizlemax452.top,canlimacizlemax453.top,canlimacizlemax454.top,canlimacizlemax455.top,canlimacizlemax456.top,canlimacizlemax457.top,canlimacizlemax458.top,canlimacizlemax459.top,canlimacizlemax460.top,canlimacizlemax461.top,canlimacizlemax462.top,canlimacizlemax463.top,canlimacizlemax464.top,canlimacizlemax465.top,canlimacizlemax466.top##.iframe_728
@@ -5762,7 +5766,7 @@ justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,
 !
 [$domain=/selcuksports\d+\.top/]##div[class^="footer-"]
 [$domain=/selcuksports\d+\.top/]##header > a[href="/"] + ul
-!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || adguard_ext_chromium_mv3)
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
 ! justintvizle58.top
 justintvizle58.top,justintvizle59.top,justintvizle60.top,justintvizle61.top,justintvizle62.top,justintvizle63.top,justintvizle64.top,justintvizle65.top,justintvizle66.top,justintvizle67.top,justintvizle68.top,justintvizle69.top,justintvizle70.top,justintvizle71.top,justintvizle72.top,justintvizle73.top,justintvizle74.top,justintvizle75.top,justintvizle76.top,justintvizle77.top##div[class^="footer-"]
 justintvizle58.top,justintvizle59.top,justintvizle60.top,justintvizle61.top,justintvizle62.top,justintvizle63.top,justintvizle64.top,justintvizle65.top,justintvizle66.top,justintvizle67.top,justintvizle68.top,justintvizle69.top,justintvizle70.top,justintvizle71.top,justintvizle72.top,justintvizle73.top,justintvizle74.top,justintvizle75.top,justintvizle76.top,justintvizle77.top##header > a[href="/"] + ul
@@ -5796,7 +5800,7 @@ hayrirsds24.cfd#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 [$domain=/justintv\d+\.com/]##.container > aside.sidebar:has(> .banner)
 [$domain=/justintv\d+\.com/]##.footer
 [$domain=/justintv\d+\.com/]##.socials a:is(.meritroyal, .iptv, .streamradar)
-!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || adguard_ext_chromium_mv3)
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb)
 justintv200.com,justintv201.com,justintv202.com,justintv203.com,justintv204.com,justintv205.com,justintv206.com,justintv207.com,justintv208.com,justintv209.com,justintv210.com,justintv211.com,justintv212.com,justintv213.com,justintv214.com,justintv215.com,justintv216.com,justintv217.com,justintv218.com,justintv219.com##.banner
 justintv200.com,justintv201.com,justintv202.com,justintv203.com,justintv204.com,justintv205.com,justintv206.com,justintv207.com,justintv208.com,justintv209.com,justintv210.com,justintv211.com,justintv212.com,justintv213.com,justintv214.com,justintv215.com,justintv216.com,justintv217.com,justintv218.com,justintv219.com##.container > aside.sidebar:has(> .banner)
 justintv200.com,justintv201.com,justintv202.com,justintv203.com,justintv204.com,justintv205.com,justintv206.com,justintv207.com,justintv208.com,justintv209.com,justintv210.com,justintv211.com,justintv212.com,justintv213.com,justintv214.com,justintv215.com,justintv216.com,justintv217.com,justintv218.com,justintv219.com##.footer

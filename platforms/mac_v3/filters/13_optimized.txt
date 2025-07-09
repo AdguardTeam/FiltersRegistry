@@ -1,9 +1,9 @@
-! Checksum: rvo5cxvIRJ8TEY1iQFDDVg
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1752059482-3600.patch
+! Checksum: Q7hn3fstrd/87a5l6xydgA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1752063337-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.57.95
-! TimeUpdated: 2025-07-09T11:07:10+00:00
+! Version: 2.0.57.96
+! TimeUpdated: 2025-07-09T12:11:29+00:00
 ! Expires: 12 hours (update frequency)
 ||approximatedriver.com^
 ||aggravatingoil.com^$all
@@ -743,7 +743,6 @@ milligazete.com.tr#$?#div.slick-track > a[href^="/service/advertclick"] { remove
 mobile.donanimhaber.com#%#//scriptlet('set-session-storage-item', 'pageCount', '0')
 mobile.donanimhaber.com#%#if(window.sessionStorage) { window.sessionStorage.pageCount = 0; }
 mackolik.com,sahadan.com#%#setTimeout ("HideFloatAdBanner()", 1000);
-ugurfilm9.com#$##header { margin-bottom: 0 !important; }
 webdramaturkey.*#$#body > .container { margin-top: 0 !important; }
 dizikorea.*#$#.wrapper { margin-top: 0 !important; }
 diziyo.*#$##dt_contenedor { margin-top: 0 !important; }
@@ -1052,8 +1051,6 @@ epikplayer.xyz###popup-overlay
 epikplayer.xyz#%#//scriptlet('prevent-addEventListener', '', 'checkAndOpenPopup')
 hdfilmsitesi.me#%#//scriptlet('trusted-set-cookie', 'goggaAds', '1')
 hdfilmsitesi.me#%#//scriptlet('trusted-set-cookie', 'counter', '1')
-||ugurfilm*.com/reklam*.js
-ugurfilm9.com##a[href="https://ucuncusinema.com/"]
 ||yenifilmizle.org/wp-content/uploads/*.mp4
 ensonhaber.com##.hmasthead
 ensonhaber.com##.bn-fw
@@ -4965,6 +4962,8 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+[$domain=/ugurfilm\d+.com/]#$##header { margin-bottom: 0 !important; }
+[$domain=/ugurfilm\d+.com/]##div[style^="text-align: center;"] > a[target="_blank"] > img
 [$domain=/dizibox\d+.com/]##.body-clickable
 ||dizibox*.com/wp-content/themes/diziplus/images/bg.webp
 ||ssl.p.jwpcdn.com/player/*/vast.js$domain=/dizibox\d+\.com/
