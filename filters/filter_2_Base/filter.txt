@@ -10503,6 +10503,8 @@ ads.luarmor.net#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.
 ||raw.githubusercontent.com/*.txt?$domain=nontonx.com
 nontonx.com###rules-nontonx
 nontonx.com##body > div[style]:has(> div[style] > button[onclick="location.reload()"])
+||nontonx.com^$replace=/if \(Object\.values.*?return false;/return true;/,document
+nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'values', '/if \(Object\.values.*?return false;/g', 'return true;')
 ||nontonx.com^$replace=/if \([a-zA-Z\d]+\(\)\) \{/if(!0){/,document
 nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'toString', '/if \([a-zA-Z\d]+\(\)\) \{/g', 'if(!0){')
 ||nontonx.com^$replace=/!results\.bait \|\| !results\.rum \|\| !results\.recaptcha/!1/,document
@@ -10721,14 +10723,17 @@ poplinks.sbs#%#//scriptlet('prevent-element-src-loading', 'script', 'cloudfront.
 poplinks.sbs#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'AdBlock')
 shorttrick.in#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202765
-kio.ac#%#//scriptlet('prevent-fetch', 'probableregret.com')
-kio.ac#%#//scriptlet('prevent-element-src-loading', 'script', 'probableregret.com')
+kio.ac#%#//scriptlet('prevent-setTimeout', '/probableregret\.com|chokersmalicho\.com/')
+kio.ac#%#//scriptlet('prevent-fetch', '/probableregret\.com|chokersmalicho\.com/')
+kio.ac#%#//scriptlet('prevent-element-src-loading', 'script', '/probableregret\.com|chokersmalicho\.com/')
 kio.ac#@#ins.adsbygoogle[data-ad-slot]
 kio.ac#@#ins.adsbygoogle[data-ad-client]
 kio.ac#@#.adsbygoogle-noablate
 kio.ac#@#.ad-slot
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||chokersmalicho.com/*/*/*/$script,xmlhttprequest,domain=kio.ac
 @@||probableregret.com/*/*/*/$script,xmlhttprequest,domain=kio.ac
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202416
 minorpatch.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -27548,6 +27553,8 @@ bieganie.pl#?#.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/209100
+wiadomoscispozywcze.pl#@#[class^="ad-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207318
 jelonka.com#@#.ad-banner-2
 @@||static5.hsg.com.pl/adv-scroll-sidebar.js$domain=jelonka.com
@@ -34932,8 +34939,9 @@ edukaroo.com#%#//scriptlet('trusted-set-local-storage-item', 'firstClickTimestam
 savefiles.com#%#//scriptlet('prevent-window-open', 'get/?spot_id=')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204562
 ! droplink.co
-game5s.com,linkss.rcccn.in#$#[id^="droplink-step-"] { display: none !important; }
-game5s.com,linkss.rcccn.in#$#.submitBtn#go_d2 { display: inline-block !important; }
+carbikenation.com,game5s.com,linkss.rcccn.in#$#[id^="droplink-step-"] { display: none !important; }
+carbikenation.com,game5s.com,linkss.rcccn.in#$#.submitBtn#go_d[onclick="show()"] { display: none !important; }
+carbikenation.com,game5s.com,linkss.rcccn.in#$#.submitBtn#go_d2 { display: inline-block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204398
 ! Safari extension and iOS app doesn't support "$redirect" modifier, so as a workaround we use scriptlet to replace video ad URL with data URI with base64 encoded MP3
 ! Content is the same as "noopmp3-0.1s"
@@ -45794,7 +45802,7 @@ justswallows.net##a[title="For video ad companies"]
 crazyporn.xxx##.list-videos > div > div[class="item"]:empty
 pornburst.xxx##div[class$="-iframe mb-20 text-center"]
 pornburst.xxx,serviporno.com##.ntv-disclaimer
-porn300.net,tokyvideo.com,pornburst.xxx,serviporno.com###overlay-video
+kalporn.com,porn300.net,tokyvideo.com,pornburst.xxx,serviporno.com###overlay-video
 cuteasiangirl.net,matureclub.com##.videos-adv
 shemale.movie,matureclub.com##.player__banner
 cuteasiangirl.net,matureclub.com##.video-item--adv
@@ -91370,6 +91378,7 @@ browsershots.org#@#.advert_area
 ||anothereldestprogeny.com^
 ||anothermemory.pro^
 ||anothingfruit.org^
+||anqabbwmnzwyv.top^
 ||anquerafusser.com^
 ||ansionscor.com^
 ||ansuksar.com^
@@ -92697,6 +92706,7 @@ browsershots.org#@#.advert_area
 ||bemobtrk.com^
 ||bemocksmunched.com^
 ||bemolintrans.shop^
+||bempoughauguw.com^
 ||benamesspine.top^
 ||benchdropscommerce.com^
 ||benchsuited.com^
@@ -93435,6 +93445,7 @@ browsershots.org#@#.advert_area
 ||bracketauthorizedportray.com^
 ||bractepizzoa.com^
 ||braflipperstense.com^
+||bragunb.shop^
 ||braidrainhypocrite.com^
 ||braidsagria.com^
 ||brainient.com^
@@ -93687,6 +93698,7 @@ browsershots.org#@#.advert_area
 ||bumfeghijinks.top^
 ||bumidpuaraodp.today^
 ||bummalodenary.top^
+||bumstalabon.shop^
 ||bumxmomcu.com^
 ||bumzilxruqup.com^
 ||buncesacatra.shop^
@@ -97895,6 +97907,7 @@ browsershots.org#@#.advert_area
 ||erkteplkjs.com^
 ||erlfaabweilwi.website^
 ||erm5aranwt7hucs.com^
+||ermineemorae.shop^
 ||erniphiq.com^
 ||ernqssptnhq.com^
 ||ernstimpaint.top^
@@ -99132,6 +99145,7 @@ browsershots.org#@#.advert_area
 ||frmwpkwntbyau.store^
 ||frockherbal.com^
 ||frockinhale.top^
+||frocksscop.shop^
 ||frogeyeparaiba.top^
 ||frolnk.com^
 ||fromjoytohappiness.com^
@@ -99517,6 +99531,7 @@ browsershots.org#@#.advert_area
 ||gcitdhlfdtmis.com^
 ||gcocaxgrao.com^
 ||gcodcyrh.com^
+||gcofilfa.com^
 ||gcpusibqpnulkg.com^
 ||gcqbwsehx.com^
 ||gcsfesswhjdju.store^
@@ -99821,6 +99836,7 @@ browsershots.org#@#.advert_area
 ||gleampendulumtucker.com^
 ||glecmaim.net^
 ||gleedsodrobeel.net^
+||gleeful-fold.pro^
 ||gleefulcareless.com^
 ||gleegloo.net^
 ||gleegrossaulro.com^
@@ -105917,6 +105933,7 @@ browsershots.org#@#.advert_area
 ||mqszaiyafukar.online^
 ||mquoemywissvp.tech^
 ||mqwokyjqohty.com^
+||mqxregxtdn.xyz^
 ||mr2cnjuh34jb.com^
 ||mr3o.online^
 ||mraza2dosa.com^
@@ -110035,6 +110052,7 @@ browsershots.org#@#.advert_area
 ||qdmil.com^
 ||qdodqhbmmb.com^
 ||qdonrplvetexk.com^
+||qdsogzlxcrgtg.space^
 ||qdvkgjfculfmr.site^
 ||qdwagpwgnfq.com^
 ||qdwblduprvsxsl.com^
@@ -110281,9 +110299,11 @@ browsershots.org#@#.advert_area
 ||quackedchevage.top^
 ||quackupsilon.com^
 ||quagfa.com^
+||quaichczarian.top^
 ||quaighscavings.top^
 ||quaintmembershipprobably.com^
 ||quaizoa.xyz^
+||quakilyimmi.top^
 ||qualiclicks.com^
 ||qualificationsomehow.com^
 ||qualified-proof.pro^
@@ -111524,6 +111544,7 @@ browsershots.org#@#.advert_area
 ||rqtrk.eu^
 ||rqwdssuysk.com^
 ||rqwel.com^
+||rqwlvvkoqmkay.top^
 ||rqwlvvkoqmkma.top^
 ||rqwvvtsvnu.com^
 ||rqyebojzwaywq.top^
@@ -114467,6 +114488,7 @@ browsershots.org#@#.advert_area
 ||tightflirtsmeets.com^
 ||tigipurcyw.com^
 ||tigubsovouwo.com^
+||tihafhlhamsmo.space^
 ||tiktakz.xyz^
 ||tilajdrka.com^
 ||tilingsfp.top^
@@ -115743,6 +115765,7 @@ browsershots.org#@#.advert_area
 ||upuplets.com^
 ||upush.co^
 ||upwardsdecreasecommitment.com^
+||upwarptaal.shop^
 ||upzmuerwksotm.site^
 ||upznliourhwyz.fun^
 ||uqanmqsq.com^
@@ -116571,6 +116594,7 @@ browsershots.org#@#.advert_area
 ||w55c.net^
 ||waazgwojnfqx.life^
 ||wabbledrutter.top^
+||wabhuqdi.com^
 ||wacapousoth.top^
 ||wadauthy.net^
 ||waescyne.com^
