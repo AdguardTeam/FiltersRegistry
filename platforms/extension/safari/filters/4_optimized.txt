@@ -1,9 +1,9 @@
-! Checksum: ByexT0spNpy5H0jJuzsOQw
-! Diff-Path: ../patches/4_optimized/4_optimized-s-1752149730-3600.patch
+! Checksum: V87UMqGaLuIyUxmqGjWdQg
+! Diff-Path: ../patches/4_optimized/4_optimized-s-1752153669-3600.patch
 ! Title: AdGuard Social Media filter (Optimized)
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.16.95
-! TimeUpdated: 2025-07-10T12:11:19+00:00
+! Version: 2.1.16.96
+! TimeUpdated: 2025-07-10T13:16:59+00:00
 ! Expires: 5 days (update frequency)
 ||share-count.donreach.com^$third-party
 ||button-follow.zalo.me^$third-party
@@ -9214,6 +9214,10 @@ dooralei.ru#$#body { overflow: visible!important; }
 twgreatdaily.com#$#.body.modal-open { overflow: visible!important; }
 catalogmineralov.ru#$#body { overflow: visible!important; }
 1track.ru#$#body { overflow: visible!important; }
+lexlege.pl#%#//scriptlet('trusted-set-constant', 'gapi', '{"plusone": {}}')
+lexlege.pl#%#//scriptlet('set-constant', 'gapi.plusone.render', 'noopFunc')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||apis.google.com/js/plusone.js$domain=lexlege.pl
 cystore.com#@#a[href^="https://lin.ee/"]
 hn.cz#@#.article-sharing
 nationalgeographic.pt#@#.socialmedia
