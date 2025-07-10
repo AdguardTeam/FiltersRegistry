@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Wc+54Tn7Tg9Hjlsnu3B0MQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1752167569-3600.patch
+! Checksum: YeSyRUqY0KU2vtY4wd5lZA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1752171206-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.95.26
-! TimeUpdated: 2025-07-10T17:08:24+00:00
+! Version: 2.3.95.27
+! TimeUpdated: 2025-07-10T18:08:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -34969,10 +34969,12 @@ eztv.unblocked.sh##body > div[id][style*="position: fixed"][style*="z-index"][st
 !
 ! Spotify
 ||spotifycdn.com/audio/$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=open.spotify.com
-||media-us.amillionads.com/*.mp3$media,redirect=noop-1s.mp4,domain=spotify.com
+||media-us.amillionads.com/*.mp3$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/192282
+! Replace Spotify audio ads with base64 data URI dummy mp3
 ! Web version
 ||cf.adxcel.com^$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
-||audio-*.scdn.co/audio/$media,redirect=noop-1s.mp4,domain=spotify.com
+||audio-*.scdn.co/audio/$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
 ||creativeservice-production.scdn.co/mp3-ad/*.mp3$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
 ||audio-ak*-*.akamaized.net/audio/$media,~xmlhttprequest,redirect=noop-1s.mp4,domain=spotify.com
 ! App
