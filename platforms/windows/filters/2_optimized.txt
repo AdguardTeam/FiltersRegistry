@@ -1,9 +1,9 @@
-! Checksum: 54gpIyPE+ksBlNya40y8Lw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1752142321-3600.patch
+! Checksum: /+yOCeKDcL5b6HLBXtdwbA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1752145890-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.95.19
-! TimeUpdated: 2025-07-10T10:07:10+00:00
+! Version: 2.3.95.20
+! TimeUpdated: 2025-07-10T11:06:44+00:00
 ! Expires: 12 hours (update frequency)
 ||flimsy-beat.com^
 ||usheebainaut.com^
@@ -6729,7 +6729,6 @@ vvvvid.it#%#//scriptlet("set-constant", "vvvvid.models.PlayerObj.prototype.play7
 ||v.fwmrm.net/ad/g/1?*DiscoveryIntl_BrightcoveJ*&csid=VVVVID_ITALY_*vast$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=vvvvid.it
 @@||latin.it/banner.php
-@@||acea.it^$jsinject
 @@||calciomercato.com/promodisplay
 calciomercato.com$$script[tag-content="new FuckAdBlock"][max-length="30000"]
 buonissimo.it##.adv
@@ -7545,6 +7544,8 @@ wielkahistoria.pl##p[style="color:f2f3f3; font-size:14px; text-align:center; pad
 roland-gazeta.pl,obserwatorgospodarczy.pl##.bannergroup
 terrarium.com.pl#%#//scriptlet("set-constant", "canRunAds", "true")
 meczyki.pl#%#!function(){window.YLHH={bidder:{startAuction:function(){}}};}();
+!+ PLATFORM(windows, mac, android)
+@@||wfirma.pl/*/add/*?_=$xmlhttprequest,elemhide,jsinject,extension
 filman.cc#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/#kam-ban-player/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
 filman.cc$$iframe[src="javascript:window.location.replace"]
 filman.cc#%#//scriptlet("abort-current-inline-script", "decodeURIComponent", "removeCookie")
@@ -16878,6 +16879,7 @@ gearspace.com#@#a[onclick]
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 @@||googletagservices.com/tag/js/gpt.js$domain=scotsman.com,badfilter
 zol.com.cn#@##search_ad
+!+ PLATFORM(windows, mac, android)
 @@||connect.ubisoft.com/oauth/*?redirectUrl$jsinject
 @@||pub.pixels.ai/prebid_standard.js$domain=standard.co.uk
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=abcya.com
@@ -17370,7 +17372,6 @@ disk.yandex.*,yadi.sk#@#.content_ads
 !#safari_cb_affinity
 hakanbaysal.com#@#div[id^="crt-"][style]
 @@||imgtaxi.com/img-*.html
-@@||gls-group.eu/*/csomagkovetes$elemhide,jsinject
 ||ampproject.net^*/f.js$badfilter
 @@||securepubads.g.doubleclick.net/gampad/ads?gdfp_req=1$domain=forums.hardwarezone.com.sg
 resmim.net#@#.showads
@@ -17388,12 +17389,10 @@ datpiff.com#@#div > iframe
 secure.hulu.com#@#.ad-root
 rawstory.com#@#div[id^="div-gpt-ad"]
 optifine.net#@#.tableAds
-@@||netbk.co.jp^$jsinject
 @@||weblet.square-enix.com/banner.php^
 @@||code.jquery.com/*.min.js$domain=audioz.download
 @@||cdnjs.cloudflare.com/ajax/libs/*.min.js$domain=audioz.download
 uk.ign.com#@#.ad-wrapper
-@@||msn.com/spartan/dhp$jsinject
 @@||media.oadts.com/www/delivery/afv.php$domain=games.gamesplaza.com
 |https://$image,script,stylesheet,third-party,xmlhttprequest,domain=moviescouch.co|torrentfunk.com,badfilter
 @@||1337x.st/css/webfonts/oswald-*.$font
@@ -17579,6 +17578,7 @@ ma-bank.net#@#.ad_top
 @@||player.enetres.net/js/videojs-plugins/videojs-ads-contrib/videojs.ads.js
 zmorph3d.com#@#.b-header-banner
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=embed-zattoo.com
+!+ PLATFORM(windows, mac, android)
 @@||app.sendgrid.com^$elemhide,jsinject
 @@||imore.com/sites/imore.com/files/*/public/field/image/*/google-ad$image,domain=imore.com
 @@||googletagservices.com/tag/js/gpt_mobile.js$domain=www.vulture.com
@@ -17718,9 +17718,12 @@ petshop.ru#@#.advert-block
 !+ NOT_OPTIMIZED
 @@||lightningmaps.org/min/index.php?f=js/
 @@||yastatic.net/awaps-ad-sdk-js$domain=kinopoisk.ru|video.yandex.ru,script
+!+ PLATFORM(windows, mac, android)
 @@||sellercentral.amazon.com/hz/inventory/$elemhide,jsinject
 azerty.nl#@#img[width="728"][height="90"]
+!+ PLATFORM(windows, mac, android)
 @@||widgets.outbrain.com/nanoWidget/externals/obFrame/obFrame.htm$jsinject,elemhide
+!+ PLATFORM(windows, mac, android)
 @@||facebook.com/connect/xd_arbiter.php$jsinject,elemhide
 @@||static.opensubtitles.org/libs/js/common.js
 @@||static.opensubtitles.org/libs/js/urlshortener.js
@@ -17730,7 +17733,6 @@ mixesdb.com#@#iframe[width="100%"][height="120"]:not([src*="bandcamp.com"])
 @@||tagmanager.google.com^$document
 @@||img.chefkoch-cdn.de/gujAd.min.js
 @@||eloqua.com^$domain=forms.progress.com
-@@||my.bmi.ir^$elemhide,jsinject
 engadget.com#@#aside[role="banner"]
 klart.se#@#.advertisement
 @@||chatropolis.com:1588/*/amazing?sid=$document
@@ -17770,17 +17772,12 @@ newyorker.com#@#.ad-container
 @@||googletagmanager.com/gtm.js$domain=kfc.co.th
 @@||telize.com/geoip$document
 @@||offgamers.com/checkout/buyNow/$document,xmlhttprequest
-@@||teabox.com^$jsinject,elemhide
 @@||rad.msn.com/crossdomain.xml
 riflegear.com#@#.featuredAds
 multiup.org#@#.ADBAR
-@@||online.tivo.com^$elemhide,jsinject
-@@||bing.com/translator/dynamic/*/js/$elemhide,jsinject
-@@||talkgadget.google.com^$jsinject
 @@||techdays.ru/Banners/Redirect?bannerId=
 userscloud.com#@#a[href^="http://websitedhoome.com/"]
 @@||jsfiddle.net^$generichide
-@@||chromeweblab.com^$jsinject,elemhide
 xperiablog.net,burningangel.com#@#.header-ad
 marca.com#@#div[id^="div-gpt-ad-"]
 @@||img.informer.com/images/mac_banner_$domain=informer.com
@@ -17798,13 +17795,11 @@ ebay.co.uk,ebay.com,ebay.de#@#.adv
 oregonlive.com#@##adv_header
 @@||p.jwpcdn.com/*/skins/$third-party
 @@||faberlic.com/images/banners/
-@@||omegle.com^$jsinject
 onvasortir.com#@##my-smartadserver
 @@||ss.phncdn.com^$script,domain=redtube.com|redtube.net
 ionomusic.com#@#object[width="300"][height="300"]
 @@||amazon-adsystem.com^$domain=weather.com
 @@||tags.crwdcntrl.net^$domain=weather.com
-@@||keep.google.com^$jsinject
 @@||omtrdc.net^$domain=amazon.co.uk|amazon.com
 @@||bankofamerica.com^*?adx=
 @@/videos/*$domain=pornhub.com|pornhub.org|pornhub.net
@@ -17891,24 +17886,17 @@ sportsdirect.com#@#.ads:not(body)
 @@https://www.google.*/adwords$document,domain=google.ad|google.ae|google.al|google.am|google.as|google.at|google.az|google.ba|google.be|google.bf|google.bg|google.bi|google.bj|google.bs|google.bt|google.by|google.ca|google.cat|google.cd|google.cf|google.cg|google.ch|google.ci|google.cl|google.cm|google.cn|google.co.ao|google.co.bw|google.co.ck|google.co.cr|google.co.id|google.co.il|google.co.in|google.co.jp|google.co.ke|google.co.kr|google.co.ls|google.co.ma|google.co.mz|google.co.nz|google.co.th|google.co.tz|google.co.ug|google.co.uk|google.co.uz|google.co.ve|google.co.vi|google.co.za|google.co.zm|google.co.zw|google.com|google.com.af|google.com.ag|google.com.ai|google.com.ar|google.com.au|google.com.bd|google.com.bh|google.com.bn|google.com.bo|google.com.br|google.com.bz|google.com.co|google.com.cu|google.com.cy|google.com.do|google.com.ec|google.com.eg|google.com.et|google.com.fj|google.com.gh|google.com.gi|google.com.gt|google.com.hk|google.com.jm|google.com.kh|google.com.kw|google.com.lb|google.com.ly|google.com.mm|google.com.mt|google.com.mx|google.com.my|google.com.na|google.com.nf|google.com.ng|google.com.ni|google.com.np|google.com.om|google.com.pa|google.com.pe|google.com.pg|google.com.ph|google.com.pk|google.com.pr|google.com.py|google.com.qa|google.com.sa|google.com.sb|google.com.sg|google.com.sl|google.com.sv|google.com.tj|google.com.tr|google.com.tw|google.com.ua|google.com.uy|google.com.vc|google.com.vn|google.cv|google.cz|google.de|google.dj|google.dk|google.dm|google.dz|google.ee|google.es|google.fi|google.fm|google.fr|google.ga|google.ge|google.gg|google.gl|google.gm|google.gp|google.gr|google.gy|google.hn|google.hr|google.ht|google.hu|google.ie|google.im|google.iq|google.is|google.it|google.je|google.jo|google.kg|google.ki|google.kz|google.la|google.li|google.lk|google.lt|google.lu|google.lv|google.md|google.me|google.mg|google.mk|google.ml|google.mn|google.ms|google.mu|google.mv|google.mw|google.ne|google.nl|google.no|google.nr|google.nu|google.pl|google.pn|google.ps|google.pt|google.ro|google.rs|google.ru|google.rw|google.sc|google.se|google.sh|google.si|google.sk|google.sm|google.sn|google.so|google.sr|google.st|google.td|google.tg|google.tk|google.tl|google.tm|google.tn|google.to|google.tt|google.vg|google.vu|google.ws
 @@||cdn.turner.com/*.swf
 @@||money.cnn.com/*/ad_policy.xml
-@@||new.livestream.com^$jsinject
 @@||ramnode.com/images/
 @@||chartbeat.com/crossdomain.xml
 @@||chartbeat.com/swf/ChartbeatPDK.swf
 @@||tremormedia.com/crossdomain.xml
 @@doubleclick.net/ads/preferences/
-@@jamendo.com$jsinject
 @@||choice.microsoft.com/*/opt-out$urlblock
 @@||content.googleapis.com$document
 @@||kaspersky.com/advert/
 @@|ws://*$websocket,domain=flirt4free.com
 @@||image.mp3.zdn.vn/banner/
 @@||imagebam.com/gallery-organizer$document
-@@||id.vk.com/auth$jsinject
-@@||oauth.vk.com$document
-@@||accounts.google.com^$jsinject,generichide
-@@||facebook.com/dialog/oauth$document
-@@||static.softlayer.com^
 @@||tiles.mapbox.com^$document
 implbits.com#@#.banner_container
 @@||anti-virus4u.com/v/
@@ -17924,7 +17912,6 @@ implbits.com#@#.banner_container
 @@||yimg.com/*/*.css
 @@||yimg.com/*/css/
 @@||ytimg.com^*_banner$domain=youtube.com
-@@||feedly.com/i/^$jsinject
 @@||s1.wp.com^
 @@||adm.fwmrm.net^$domain=revision3.com
 @@||analogplanet.com^$elemhide
@@ -24253,6 +24240,7 @@ browsershots.org#@#.advert_area
 ||abkarcomped.top^
 ||ablefeijoa.top^
 ||ablemockful.shop^
+||ablenctionalle.info^
 ||ablepsyegbo.top^
 ||abluvdiscr.com^
 ||ablybeastssarcastic.com^
@@ -25191,6 +25179,7 @@ browsershots.org#@#.advert_area
 ||annfpioqvo.com^
 ||announceproposition.com^
 ||annual-spend.com^
+||annulwavered.shop^
 ||annussleys.com^
 ||anokyqqkambkn.top^
 ||anonymousads.com^
@@ -25288,6 +25277,7 @@ browsershots.org#@#.advert_area
 ||architectmalicemossy.com^
 ||architecturediscussdifferently.com^
 ||arcticattention.com^
+||ardebsunroyal.top^
 ||ardourunderneath.com^
 ||ardovbzwyo.com^
 ||ardrcirhi.com^
@@ -27534,6 +27524,7 @@ browsershots.org#@#.advert_area
 ||curvystudy.pro^
 ||curyrentattri.com^
 ||cusecwhitten.com^
+||cushingcombine.shop^
 ||cushoussie.net^
 ||cuspuledale.top^
 ||customads.co^
@@ -28463,6 +28454,7 @@ browsershots.org#@#.advert_area
 ||ehrydnmdoe.com^
 ||ehtkfjhrozkeu.website^
 ||ehvvdcht.com^
+||ehwtrxeivhora.site^
 ||eiaidoefd.com^
 ||eighthpowerfully.com^
 ||eikegolehem.com^
@@ -28717,6 +28709,7 @@ browsershots.org#@#.advert_area
 ||evasiondemandedlearning.com^
 ||evdqwqmidjmlyvy.xyz^
 ||evejartaal.com^
+||evelessmaculed.shop^
 ||evendisciplineseedlings.com^
 ||eventuryremov.com^
 ||evercrucial.com^
@@ -29247,6 +29240,7 @@ browsershots.org#@#.advert_area
 ||fpxpobaudkjzu.site^
 ||fpyf8.com^
 ||fqcsflsvlxvnk.store^
+||fqdqndubwixwk.website^
 ||fqkwn.com^
 ||fqyaiqjwiu.com^
 ||fqzxecinpjuws.space^
@@ -30092,6 +30086,7 @@ browsershots.org#@#.advert_area
 ||harshshirt.pro^
 ||hartattenuate.com^
 ||hashabimatka.top^
+||hasselswales.shop^
 ||hatablepuleyn.com^
 ||hatagashira.com^
 ||hatdiu.xyz^
@@ -30742,6 +30737,7 @@ browsershots.org#@#.advert_area
 ||increasinglycockroachpolicy.com^
 ||increasinglyirritationecstatic.com^
 ||increasinglypatientstared.com^
+||incredibleenhancementslightning.com^
 ||incrediblegrandfather.com^
 ||inctrialazor.shop^
 ||inctrimodi.top^
@@ -32375,6 +32371,7 @@ browsershots.org#@#.advert_area
 ||maipheeg.com^
 ||maiphoapaique.net^
 ||maithigloab.net^
+||majestic-oven.com^
 ||major.dvanadva.ru^
 ||majorcharacter.com^
 ||majoriklink.com^
@@ -32396,6 +32393,7 @@ browsershots.org#@#.advert_area
 ||mandatorycaptaincountless.com^
 ||mandatorypainter.com^
 ||mandjasgrozde.com^
+||mandsspartan.com^
 ||mangensaud.net^
 ||mangrao.club^
 ||manillayawny.shop^
@@ -33541,6 +33539,7 @@ browsershots.org#@#.advert_area
 ||objmadvsuerde.com^
 ||obkrwyfmsoajc.space^
 ||obligationdrummersculpture.com^
+||obliquecensortend.com^
 ||obmttutrfxpwes.com^
 ||obqj2.com^
 ||obqj5.com^
@@ -34840,6 +34839,7 @@ browsershots.org#@#.advert_area
 ||pshqumvrasdlspe.com^
 ||psigradinals.com^
 ||psilaurgi.net^
+||psipsustuwe.com^
 ||psitanoortucky.com^
 ||pskvxdhbnlocxk.com^
 ||psma02.com^
@@ -36079,6 +36079,7 @@ browsershots.org#@#.advert_area
 ||saptorge.com^
 ||saqohabe.com^
 ||sarcasticnotarycontrived.com^
+||sarcasticproject.pro^
 ||sarrowgrivois.com^
 ||sartolutus.com^
 ||sashaysfanums.top^
@@ -36372,6 +36373,7 @@ browsershots.org#@#.advert_area
 ||shoagloumtoamir.net^
 ||shobseerding.com^
 ||shocked-failure.com^
+||shocking-honey.com^
 ||shockingstrategynovelty.com^
 ||shoddy-music.pro^
 ||shoggedborage.top^
@@ -36418,6 +36420,7 @@ browsershots.org#@#.advert_area
 ||sidebiologyretirement.com^
 ||sidenoteproductionbond.com^
 ||sidfclwryxnr.com^
+||sievepalmful.com^
 ||signalsriels.shop^
 ||signamentswithd.com^
 ||signcalamity.com^
@@ -36426,6 +36429,7 @@ browsershots.org#@#.advert_area
 ||silentinevitable.com^
 ||silky-pen.pro^
 ||silky-term.pro^
+||sillinessrobnotoriety.com^
 ||sillyflowermachine.com^
 ||silpharapidly.com^
 ||siltystammel.top^
@@ -36546,6 +36550,7 @@ browsershots.org#@#.advert_area
 ||smliksmgy.com^
 ||smljmp.com^
 ||smlypotr.net^
+||smockedlaystow.top^
 ||smoggy-twist.pro^
 ||smooth-marriage.com^
 ||smotternumber.top^
@@ -36561,6 +36566,7 @@ browsershots.org#@#.advert_area
 ||snappypalps.shop^
 ||snarlingrequirement.com^
 ||sndvymfobhy.com^
+||sniffedteguima.shop^
 ||snipersex.com^
 ||snitchlapp.shop^
 ||snitzsauteur.shop^
@@ -36849,6 +36855,7 @@ browsershots.org#@#.advert_area
 ||steamjaws.com^
 ||stedallthrought.com^
 ||steegnow.com^
+||steehoavaidor.com^
 ||steepto.com^
 ||steerensout.net^
 ||steeringsunshine.com^
@@ -37136,6 +37143,7 @@ browsershots.org#@#.advert_area
 ||tartanecruels.shop^
 ||tartator.com^
 ||tarzanwackes.top^
+||tastedaftknowledge.com^
 ||tatgcqzkiolgg.com^
 ||tattepush.com^
 ||tatxbrshtjgfs.site^
@@ -37896,6 +37904,7 @@ browsershots.org#@#.advert_area
 ||ukankingwithea.com^
 ||ukcwmctnpfgkh.space^
 ||ukjrlrjypavpa.com^
+||uklitukydteamw.com^
 ||ukuleqasforsale.com^
 ||ukwupjioyzcit.space^
 ||ulbackgroundand.com^
@@ -38172,6 +38181,7 @@ browsershots.org#@#.advert_area
 ||vardsusyseinpo.com^
 ||variable-accident.pro^
 ||variablehour.com^
+||variatewakener.shop^
 ||varietyofdisplayformats.com^
 ||variouscreativeformats.com^
 ||variousformatscontent.com^
@@ -38354,6 +38364,7 @@ browsershots.org#@#.advert_area
 ||visiblemeasures.com^
 ||visitstats.com^
 ||visitweb.com^
+||visotqhah.com^
 ||vistoolr.net^
 ||vitchutoagravo.com^
 ||vitor304apt.com^
@@ -40064,6 +40075,7 @@ browsershots.org#@#.advert_area
 ||googleadsserving.cn^
 ||googlevads-cn.com^
 ||cdn.ftwpcn.com^
+||cdn.hamwo.cloud^
 ||cdn.rgrd.xyz^
 ||cdn.spnut.com^
 ||cdn.viowrel.com^
@@ -41221,6 +41233,7 @@ browsershots.org#@#.advert_area
 ||imgadult.com/ea2/
 ||imgdrive.net/anex/
 ||imgtaxi.com/ea/
+||immovlan.be/*/widget/cbc/
 ||immoweb.be/*/dpg/
 ||imp-adedge.i-mobile.co.jp^
 ||imp.pixiv.net^
