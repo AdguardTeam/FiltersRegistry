@@ -1,9 +1,9 @@
-! Checksum: pqao/dD/P6JhzeeZ3KEFvA
-! Diff-Path: ../patches/14/14-s-1752236333-3600.patch
+! Checksum: VmVSX+cuKQGyYQBT1RI6wA
+! Diff-Path: ../patches/14/14-s-1752246722-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.24
-! TimeUpdated: 2025-07-11T12:11:07+00:00
+! Version: 2.2.36.25
+! TimeUpdated: 2025-07-11T15:07:46+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21627,6 +21627,8 @@ shedevrum.ai###app > div.z-\[12\].bg-white
 ! END: Yandex
 !
 !
+! pikabu.ru
+pikabu.ru#%#//scriptlet('abort-current-inline-script', 'XMLHttpRequest', 'xhr.withCredentials')
 ! comedy-radio.ru
 comedy-radio.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
 ! relax-fm.ru
@@ -25978,6 +25980,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+eleman.net###popup_uye_girisleri
 bild.de##.promotion-banner
 mainichi.doda.jp##.profile-cards-list
 oita-press.co.jp##.FloatingBanner
@@ -34350,7 +34353,8 @@ starhit.ru,championat.com##.push-popup
 gadgets.ndtv.com,gadgets360.com###__notify
 gazetevatan.com###divPnot
 milliyet.com.tr###pushNotification
-eleman.net###pushnotification
+eleman.net#$##pushnotification { display: none !important; }
+eleman.net#$#body[style*="overflow:"] { position: static !important; overflow: auto !important; width: auto !important; }
 ||otr-online.ru/__banner.php?location=sp_notify_prompt
 ura.news###push_notifications
 tsn.ua##.push-message
