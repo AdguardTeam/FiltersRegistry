@@ -1,9 +1,9 @@
-! Checksum: 82GFgTjYfyFhA6QqNYVAxg
-! Diff-Path: ../patches/2/2-s-1752225180-3600.patch
+! Checksum: P4YKd6WW5NGmRigHP68OiA
+! Diff-Path: ../patches/2/2-s-1752228688-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.95.40
-! TimeUpdated: 2025-07-11T09:08:22+00:00
+! Version: 2.3.95.41
+! TimeUpdated: 2025-07-11T10:07:12+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10209,6 +10209,7 @@ ads.luarmor.net#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.
 ||raw.githubusercontent.com/*.txt?$domain=nontonx.com
 nontonx.com###rules-nontonx
 nontonx.com##body > div[style]:has(> div[style] > button[onclick="location.reload()"])
+nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'values', '/if \(!+Object\.values.*?return (Boolean\(false\)|!true);/g', 'return true;')
 nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'values', '/if \(Object\.values.*?return false;/g', 'return true;')
 nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'toString', '/if \([a-zA-Z\d]+\(\)\) \{/g', 'if(!0){')
 nontonx.com#%#//scriptlet('trusted-replace-node-text', 'script', 'toString', '/!results\.bait \|\| !results\.rum \|\| !results\.recaptcha/!1/g', '!1')
@@ -35339,7 +35340,7 @@ eztv.unblocked.sh##body > div[id][style*="position: fixed"][style*="z-index"][st
 ||media-us.amillionads.com/*.mp3$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192282
 ! Replace Spotify audio ads with base64 data URI dummy mp3
-spotify.com#%#//scriptlet('trusted-replace-fetch-response', '/https:\/\/[a-zA-Z0-9\-]+\.?(?:spotifycdn\.com|scdn\.co)\/audio\/[0-9a-f]{40}(?:\?[^\s"]*)?/', 'data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU2LjQwLjEwMQAAAAAAAAAAAAAA//tUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAAGAAADAABgYGBgYGBgYGBgYGBgYGBggICAgICAgICAgICAgICAgICgoKCgoKCgoKCgoKCgoKCgwMDAwMDAwMDAwMDAwMDAwMDg4ODg4ODg4ODg4ODg4ODg4P////////////////////8AAAAATGF2YzU2LjYwAAAAAAAAAAAAAAAAJAAAAAAAAAAAAwDNZKlY//sUZAAP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAETEFNRTMuOTkuNVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZB4P8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZDwP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZFoP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZHgP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZJYP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV', '-spclient.spotify.com/storage-resolve/files/audio/interactive')
+spotify.com#%#//scriptlet('trusted-replace-fetch-response', '/https:\/\/[a-zA-Z0-9\-]+\.?(?:spotifycdn\.com|scdn\.co)\/audio\/[0-9a-f]{40}(?:\?[^\s"]*)?/g', 'data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU2LjQwLjEwMQAAAAAAAAAAAAAA//tUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAAGAAADAABgYGBgYGBgYGBgYGBgYGBggICAgICAgICAgICAgICAgICgoKCgoKCgoKCgoKCgoKCgwMDAwMDAwMDAwMDAwMDAwMDg4ODg4ODg4ODg4ODg4ODg4P////////////////////8AAAAATGF2YzU2LjYwAAAAAAAAAAAAAAAAJAAAAAAAAAAAAwDNZKlY//sUZAAP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAETEFNRTMuOTkuNVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZB4P8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZDwP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZFoP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZHgP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sUZJYP8AAAaQAAAAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV', '-spclient.spotify.com/storage-resolve/files/audio/interactive')
 ! Web version
 ||cf.adxcel.com^$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
 ||audio-*.scdn.co/audio/$media,~xmlhttprequest,redirect=noopmp4-1s,domain=spotify.com
@@ -80664,6 +80665,7 @@ browsershots.org#@#.advert_area
 ||aorgqidmcrtyl.space^
 ||aortasneerer.top^
 ||aortismbutyric.com^
+||aoyfbknjgesvq.store^
 ||aozltbnbfwlww.xyz^
 ||ap3lorf0il.com^
 ||apartinept.com^
@@ -81118,6 +81120,7 @@ browsershots.org#@#.advert_area
 ||atmtaoda.com^
 ||atmyeducat.org^
 ||atodiler.com^
+||atollskebobs.shop^
 ||atomex.net^
 ||atonato.de^
 ||atonementelectronics.com^
@@ -81794,6 +81797,7 @@ browsershots.org#@#.advert_area
 ||bca10c62ca.com^
 ||bcaakxxuf.com^
 ||bcafchldfejnd.online^
+||bcayuytkwglcg.site^
 ||bcdwhmpcfrli.com^
 ||bcfakqknni.com^
 ||bcgzqzjkyjmfd.store^
@@ -82353,6 +82357,7 @@ browsershots.org#@#.advert_area
 ||blmibao.com^
 ||blmmlpjgcizzk.com^
 ||bloatingexpectantretinal.com^
+||blobberpyosis.shop^
 ||blobjkwzb.com^
 ||bloblohub.com^
 ||blobsurnameincessant.com^
@@ -82461,6 +82466,7 @@ browsershots.org#@#.advert_area
 ||bobgames-prolister.com^
 ||bobpiety.com^
 ||bobsleddomesticglandular.com^
+||bocageketones.shop^
 ||boccieroguy.shop^
 ||bocheskelly.com^
 ||bockouphourgait.net^
@@ -83709,6 +83715,7 @@ browsershots.org#@#.advert_area
 ||chieferror.pro^
 ||chieflyquantity.com^
 ||chiefrecovery.com^
+||chiefsbana.shop^
 ||chiffrerums.top^
 ||chiglees.com^
 ||chihuahuadoorstoppond.com^
@@ -86816,6 +86823,7 @@ browsershots.org#@#.advert_area
 ||eidoscruster.com^
 ||eighthpowerfully.com^
 ||eikegolehem.com^
+||eimujqcgcmdyt.com^
 ||einfmxudckhxd.xyz^
 ||eipvcuvqmkkwlqh.com^
 ||eirbrightscarletcl.com^
@@ -90463,6 +90471,7 @@ browsershots.org#@#.advert_area
 ||hockeycomposure.com^
 ||hockeyhavoc.com^
 ||hoctor-pharity.xyz^
+||hoddersputter.shop^
 ||hoealec.com^
 ||hoggetforfend.com^
 ||hoghookies.top^
@@ -93057,6 +93066,7 @@ browsershots.org#@#.advert_area
 ||kwtmhuvkpmcsog.com^
 ||kwtnhdrmbx.com^
 ||kwux-uudx.online^
+||kwvzqaagynzmg.top^
 ||kwxegvirgslwh.site^
 ||kxdxsbyomyuim.rocks^
 ||kxfimwhpd.com^
@@ -98411,6 +98421,7 @@ browsershots.org#@#.advert_area
 ||plumpobstructionmortal.com^
 ||plumsamnios.shop^
 ||plumsbusiness.com^
+||plumuletrinode.top^
 ||plundertentative.com^
 ||plush-abuse.com^
 ||plushlyottoman.shop^
@@ -101040,6 +101051,7 @@ browsershots.org#@#.advert_area
 ||rtjhbqzduzkmx.site^
 ||rtk.io^
 ||rtmark.net^
+||rtmpyennp.xyz^
 ||rtnews.pro^
 ||rtoxtykahsm.com^
 ||rtrgt2.com^
@@ -102490,6 +102502,7 @@ browsershots.org#@#.advert_area
 ||soshoord.com^
 ||sosignamentswithde.org^
 ||sotchoum.com^
+||soteraground.shop^
 ||sothiacalain.com^
 ||sotyolhnvfkjqbs.xyz^
 ||soujajuzauziby.com^
@@ -103553,6 +103566,7 @@ browsershots.org#@#.advert_area
 ||tdsafe.org^
 ||tdspa.top^
 ||tdzegpeatygun.tech^
+||teabowljowery.shop^
 ||teachingrespectfully.com^
 ||teachingwere.com^
 ||teachmewind.com^
@@ -106252,6 +106266,7 @@ browsershots.org#@#.advert_area
 ||weatherplllatform.com^
 ||weaveradrenaline.com^
 ||weavesquirk.top^
+||weayrvvwboymw.top^
 ||weayrvvwboyok.top^
 ||web-guardian.xyz^
 ||web-security.cloud^
