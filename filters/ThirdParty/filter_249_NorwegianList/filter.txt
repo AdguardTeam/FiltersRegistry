@@ -1,6 +1,6 @@
 !
 ! Title 🇬🇧: Dandelion Sprout's Nordic filters for tidier websites
-! Last modified: 09July2025v1
+! Last modified: 13July2025v1
 ! Expires: 18 hours
 ! Lisens / Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md
@@ -2405,6 +2405,10 @@ telenor.no##.global-overlay-background
 @@://nhn.dk^$~third-party
 ! ★★★ Caused by «AdGuard Cookie Notices filter» ★★★
 @@||glassoginterior.no/css/modules/consent.css^
+! ★★★ 🇳🇴：Forårsaket av «AdGuards spionvarefilter» ★★★
+! ★★★ 🇬🇧：Caused by «AdGuard Tracking Protection Filter» ★★★
+! https://github.com/AdguardTeam/AdguardFilters/issues/209205
+@@||tv2.no/*/snowplow/*$script
 ! 🇳🇴/🇩🇰：Anti-'CPU-massakrering'
 ! 🇮🇸：And-örgjörvislatrun
 ! 🇬🇧：Anti-'CPU slaughtering'
@@ -3774,6 +3778,7 @@ gamereactor.*#%#//scriptlet('ubo-set.js', 'adblockEnabled', 'noopFunc')
 gamereactor.*#%#//scriptlet('ubo-set.js', 'trackAdblock', 'noopFunc')
 gamereactor.*#%#//scriptlet('ubo-acis.js', 'AdsReloadConfig')
 !#if env_firefox
+gamereactor.*$$script[onError="adblockEnabled()"]
 !#endif
 ! Also fixed in "uBlock Filters - Privacy", but is added to this list as well, because it serves to remove AAAB notices on various pages (especially when "uBlock Filters" is turned on).
 ||googletagmanager.com/gtm.js^$domain=dk|bornholm.nu
