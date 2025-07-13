@@ -1,16 +1,16 @@
-! Checksum: unEBBs8TJGC4lfp5dUOyTg
+! Checksum: +fAQtVqiuD/pBrDgT3WlWw
 ! Title: KAD - Anti-Scam
 ! Description: Filter that protects against various types of scams in the Polish network, such as mass text messaging, fake online stores, etc.
-! Version: 2.0.72.56
-! TimeUpdated: 2025-07-13T16:38:59+00:00
+! Version: 2.0.72.57
+! TimeUpdated: 2025-07-13T20:36:06+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Do poprawnego działania listy wymagane jest rozszerzenie uBlock Origin 1.20.0+, uBlock Origin Legacy 1.16.4.20+ lub AdGuard AdBlocker 3.3.2+ albo aplikacja AdGuard dla Windows/macOS/Android, ograniczone wsparcie dla iOS (oparte o mechanizm "Safari nie może załadować strony, ponieważ url został zablokowany przez bloker treści").
 !
 ! Title: 🇵🇱 KAD - Przekręty
 ! Description: Filtry chroniące przed różnymi zagrożeniami w polskiej sieci, takimi jak wirusy, fałszywe sklepy i subskrypcje SMS. Dodatkowo zawierają one wpisy stworzone przez CERT Polska, legalniewsieci.pl, KNF i inne zespoły.
-! Last modified: Sun, 13 Jul 2025, 18:27 UTC+02:00
-! OriginalVersion: 2025.7.13.4
+! Last modified: Sun, 13 Jul 2025, 22:24 UTC+02:00
+! OriginalVersion: 2025.7.13.6
 ! Expires: 2 days
 ! License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ! Creator: azet12
@@ -36,13 +36,12 @@
 !#safari_cb_affinity
 !
 ! Przekręty
-||24.eu^$document,to=24.eu|~www.24.eu
-||c.pl^$document,to=c.pl|~www.c.pl
+||auto.pl^$document,to=auto.pl|~www.auto.pl
+||auto.pl^$subdocument,domain=auto.pl|~www.auto.pl
 ||fx.cinkciarz.pl^$document,to=~1200-osob-skarzy-sie-na-internetowy-kantor-w-prokuraturze.*|cinkciarz.pl
 ||getlnbank.$document
 ||kinomaniak.pl^$document,to=kinomaniak.pl
 ||lnpost.$document
-||x9.eu^$document,to=~www.x9.eu|x9.eu
 ||znany-lekarz.pl^$document
 .com/c/*?s1=$document,to=com
 .net/c/*?s1=$document,to=net
@@ -150,9 +149,8 @@
 !
 ! Natrętne lub wprowadzające w błąd reklamy/obrazy
 ##a[href^="/fb-login"]
-/^https?:\/\/[\w]+\.cloudfront\.net\/(?:build|current|latest|main|release|rel|revision|rev|v|version|ver)\/pl\/v/$document,important,domain=~asystent-pobierania-na-dobreprogramy-lub-softonic.*|cloudfront.net,to=cloudfront.net
+/^https?:\/\/[\w]+\.cloudfront\.net\/(?:build|current|latest|main|release|rel|revision|rev|v|version|ver)\/pl\/v/$document,domain=~asystent-pobierania-na-dobreprogramy-lub-softonic.*|cloudfront.net,to=cloudfront.net
 @@||blocked-site-hole-cert.pl^$domain=lista.cert.pl
-|http://a2g.me/$document,important,to=~zalecane-wymuszenie-https.*
 ||ekino-tv.pl/views/img/reklama_btn2.png$image
 ||uploadfile.pl/download.png$image
 ~pl##a[href*="whokeys.com/"]:lang(pl)
