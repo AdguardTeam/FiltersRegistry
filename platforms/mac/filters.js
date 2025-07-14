@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.96.10",
-			"timeUpdated": "2025-07-14T07:09:21+0000",
+			"version": "2.3.96.11",
+			"timeUpdated": "2025-07-14T08:09:52+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.17.5",
-			"timeUpdated": "2025-07-14T03:36:01+0000",
+			"version": "2.1.17.6",
+			"timeUpdated": "2025-07-14T08:10:04+0000",
 			"languages": []
 		},
 		{
@@ -143,8 +143,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/8.txt",
-			"version": "2.0.8.38",
-			"timeUpdated": "2025-07-08T06:09:54+0000",
+			"version": "2.0.8.39",
+			"timeUpdated": "2025-07-14T08:10:09+0000",
 			"languages": [
 				"nl"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.36.35",
-			"timeUpdated": "2025-07-14T07:09:51+0000",
+			"version": "2.2.36.36",
+			"timeUpdated": "2025-07-14T08:10:17+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.65.69",
-			"timeUpdated": "2025-07-14T07:09:56+0000",
+			"version": "2.0.65.70",
+			"timeUpdated": "2025-07-14T08:10:20+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.58.58",
-			"timeUpdated": "2025-07-14T06:11:11+0000",
+			"version": "2.0.58.59",
+			"timeUpdated": "2025-07-14T08:10:21+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.35.52",
-			"timeUpdated": "2025-07-14T07:09:57+0000",
+			"version": "2.0.35.53",
+			"timeUpdated": "2025-07-14T08:10:22+0000",
 			"languages": []
 		},
 		{
