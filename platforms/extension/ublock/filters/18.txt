@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: GfZURaigukZqqKQpc3towg
-! Diff-Path: ../patches/18/18-s-1752480848-3600.patch
+! Checksum: iE2P+dgyhUitolHqN/kmNw
+! Diff-Path: ../patches/18/18-s-1752484537-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.65.70
-! TimeUpdated: 2025-07-14T08:10:20+00:00
+! Version: 2.0.65.71
+! TimeUpdated: 2025-07-14T09:11:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2475,6 +2475,9 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+darksidebooks.com.br##.vtex-render__container-id-cookies-pop-up
+thesting.com#$#.c-cookie-bar { display: none !important; }
+thesting.com#$#body { overflow: auto !important; }
 rallyandrace.pl#$##cmpButton { position: absolute !important; left: -3000px !important; }
 anacrowneplaza-niigata.jp##.cookieCheck
 blog.domclick.ru##div[data-e2e-id="topline__cookie-alert"]
@@ -16188,6 +16191,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209313
+thesting.com#@#.c-cookie-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209189
 @@||scherdel.com/*/borlabs-cookie/$domain=scherdel.com
 scherdel.com#@##BorlabsCookieBox
@@ -16841,9 +16846,8 @@ thesprucecrafts.com#@##onetrust-consent-sdk
 tesup.com#@#.cookiebar:not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186717
 @@||healthsites.io/static/js/global/cookie-bar.*.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/186505
-@@||cdn.privacy-mgmt.com/mms/v2/get_site_data$domain=athlonsports.com
-@@||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js$domain=athlonsports.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/209304
+@@||cdn.privacy-mgmt.com^$domain=athlonsports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186451
 ps-schuhe.de#@#.cookie-permission-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186449

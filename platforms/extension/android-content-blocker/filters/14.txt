@@ -1,8 +1,8 @@
-! Checksum: PfDKThtbLt+U/lNi4fG0fQ
+! Checksum: gG76qQUaMnGgMrTKu8u9KQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.36
-! TimeUpdated: 2025-07-14T08:10:17+00:00
+! Version: 2.2.36.37
+! TimeUpdated: 2025-07-14T09:11:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2420,6 +2420,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+darksidebooks.com.br##.vtex-render__container-id-cookies-pop-up
 anacrowneplaza-niigata.jp##.cookieCheck
 blog.domclick.ru##div[data-e2e-id="topline__cookie-alert"]
 deps.dev##div[style^="left: calc("][style*=" top: calc("][style$="position: fixed;"]
@@ -11775,6 +11776,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209313
+thesting.com#@#.c-cookie-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209189
 @@||scherdel.com/*/borlabs-cookie/$domain=scherdel.com
 scherdel.com#@##BorlabsCookieBox
@@ -12449,9 +12452,8 @@ thesprucecrafts.com#@##onetrust-consent-sdk
 tesup.com#@#.cookiebar:not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186717
 @@||healthsites.io/static/js/global/cookie-bar.*.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/186505
-@@||cdn.privacy-mgmt.com/mms/v2/get_site_data$domain=athlonsports.com
-@@||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js$domain=athlonsports.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/209304
+@@||cdn.privacy-mgmt.com^$domain=athlonsports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186451
 ps-schuhe.de#@#.cookie-permission-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186449
@@ -26502,6 +26504,7 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 !
 ! SECTION: Subscriptions - Regular rules
 !
+darksidebooks.com.br##div[class*="newsletter--noBg"]
 blog.domclick.ru##form[data-e2e-id="blog-subscription-block"]
 git-tower.com##.signup--block
 47news.ru##.text-after-article

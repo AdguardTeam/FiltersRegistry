@@ -1,9 +1,9 @@
-! Checksum: AAYq0HBC7u1K/9vtjHC1Mg
-! Diff-Path: ../patches/18/18-s-1752480827-3600.patch
+! Checksum: i1jBwZKMs5cQfDYMPR7sUw
+! Diff-Path: ../patches/18/18-s-1752484512-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.65.70
-! TimeUpdated: 2025-07-14T08:10:20+00:00
+! Version: 2.0.65.71
+! TimeUpdated: 2025-07-14T09:11:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2516,6 +2516,9 @@ teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfil
 !
 ! NOTE: Regular rules
 !
+darksidebooks.com.br##.vtex-render__container-id-cookies-pop-up
+thesting.com#$#.c-cookie-bar { display: none !important; }
+thesting.com#$#body { overflow: auto !important; }
 rallyandrace.pl#$##cmpButton { position: absolute !important; left: -3000px !important; }
 scherdel.com#%#//scriptlet('trusted-set-cookie', 'borlabs-cookie', '%7B%22consents%22%3A%7B%22essential%22%3A%5B%22borlabs-cookie%22%2C%22wpml%22%5D%2C%22external-media%22%3A%5B%22maps%22%2C%22youtube%22%5D%7D%2C%22domainPath%22%3A%22scherdel.com%2F%22%2C%22expires%22%3A%22Fri%2C%2012%20Sep%202125%2003%3A25%3A36%20GMT%22%2C%22uid%22%3A%22%22%2C%22v3%22%3Atrue%2C%22version%22%3A2%7D', '', 'none', 'scherdel.com')
 anacrowneplaza-niigata.jp##.cookieCheck
@@ -17170,6 +17173,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209313
+thesting.com#@#.c-cookie-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209189
 @@||scherdel.com/*/borlabs-cookie/$domain=scherdel.com
 scherdel.com#@##BorlabsCookieBox
@@ -17827,9 +17832,8 @@ thesprucecrafts.com#@##onetrust-consent-sdk
 tesup.com#@#.cookiebar:not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186717
 @@||healthsites.io/static/js/global/cookie-bar.*.js
-! https://github.com/AdguardTeam/AdguardFilters/issues/186505
-@@||cdn.privacy-mgmt.com/mms/v2/get_site_data$domain=athlonsports.com
-@@||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js$domain=athlonsports.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/209304
+@@||cdn.privacy-mgmt.com^$domain=athlonsports.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186451
 ps-schuhe.de#@#.cookie-permission-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186449
