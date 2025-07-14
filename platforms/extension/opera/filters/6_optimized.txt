@@ -1,5 +1,5 @@
-! Checksum: ZqBxy454qVQ5JU4sAoFkFQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1752375167-3600.patch
+! Checksum: FiHoHMAClNLjN6s5tvtnzA
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1752461444-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.45
@@ -2027,7 +2027,6 @@ heise.de,nzz.ch##.recommendations
 ||vodafone.de/csp/csp.php?b_id=$third-party
 idea.de##.mediumrectangle
 livenet.ch##.block-werbung
-livenet.ch##body > #pre-header
 krone.at##.kmm-article-box + .row > .c_label
 ||pfaffenhofen-today.de/images/banners/
 eurosport.de##div[class^="adtech_"]
@@ -2132,6 +2131,7 @@ analog-forum.de##.wcfAdLocation:not(.wcfAdLocationSidebarTop)
 openthesaurus.de###content > div[style="margin-top:60px; text-align: center"]
 openthesaurus.de##.resultColumn > div[style="margin-top:20px; text-align: center"]
 geo.de##div[data-adtype]
+gala.de##.a-ad-banner-holder
 seo-portal.de,pi-news.net##.td-header-sp-recs
 tchgdns.de##.content-box.recommendation
 ||js.icony.com/api.js^
@@ -2308,7 +2308,6 @@ mopo.de#?#.js-marquee:has(> a[href*="campaign"][target="_blank"])
 winfuture.de#?#.topnews > div[style]:has(> .adsbygoogle)
 winfuture.de#?#.hp_latest > div:has(> div[id^="div-gpt-ad"]:only-child)
 spieleforum.de#?#.p-body-sidebar > .block:has(> div[id^="spieleforum.de_sitebar_"]:empty)
-weser-kurier.de#?#article:has(> a > picture > .commercial-content__indicator)
 praxistipps.focus.de#?#.wrapper-safe > div.fb:has(> div > div.Article__Ad)
 bild.de#?#.main-content > .block:has(> h2.block-title + div > .layout > .mtl[data-teaser-position])
 eltern.de,essen-und-trinken.de,stern.de#?#article:has(> .teaser__text-content > .ad-labels)
@@ -2548,6 +2547,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbegrafiken/*
 /werbemittel/*
 /werbemittel_
+/werbenetz/*
 /werbepartner.
 /werbepartner/*
 /werbeplakat.
@@ -2569,7 +2569,7 @@ _werbebanner.
 _werbebanner/
 _werbepartner.
 _werbung.php
-_Werbung260.
+_werbung.pl
 _woz_banner_vote.
 ###Ad_Win2day
 ###LxWerbeteaser
@@ -2894,6 +2894,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||amazonaws.com/display.tweenui.com/
 ||ayurvedazentrum-brandenburg.de/webbanner/
 ||b.big7.com^$third-party
+||banner.1und1.com^$third-party
 ||baygel.de/banner/
 ||belmediaverlag.com/gott-ch/$third-party
 ||bergfreunde-partner.de/banner/
@@ -2994,6 +2995,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||borncity.com/blog/wp-content/uploads/*/W10Tricks1.jpg
 ||buffed.de/tsimg/topbanner/
 ||chartsurfer.de/getthead.php?
+||cine4home.de^*/HKA-C4Hb.gif
 ||code.alpin.de^
 ||code.bergsteigen.com^
 ||coincierge.de/wp-content/plugins/floating-banner/
@@ -3148,7 +3150,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||oefb.at/netzwerk/imagedownload/
 ||oeffentlichen-dienst.de/images/banners/
 ||oekoportal.de/sites/default/files/stromvergleich.png
-||offroad-cult.org/Main/refs/
 ||okey-online.com/prg/daten/datenbanken/banner
 ||omano.de/AdServer/
 ||onlinekorrektor.de/cnc/
@@ -4011,8 +4012,6 @@ homeandsmart.de##.hs_anbieter_box_block
 computerwoche.de,tecchannel.de##.idgLeaderBoard
 heise.de##.img-ad
 emmikochteinfach.de,karrierebibel.de##.in-content
-android-hilfe.de##.incontent-wrapper
-android-hilfe.de##.incontent-wrapper_big
 heise.de##.incontent3-cls-reduc
 bikemarkt.mtb-news.de##.incontent__container
 autoline.de,autoline24.at,autoline24.ch##.index-bns
@@ -4096,7 +4095,6 @@ anibis.ch##.mui-style-lwlc47
 tutti.ch##.mui-style-z954cu
 finanznachrichten.de##.nadT
 ploetzblog.de##.nav-anzeige
-dersonntag.at##.news-detail-ads-container
 schwulissimo.de##.news-group-ad-container
 wallstreet-online.de##.newsFlagSlider
 pz-news.de,rheinpfalz.de,zvw.de##.nfy-banner
@@ -4584,7 +4582,6 @@ bz-berlin.de,fitbook.de,petbook.de,winfuture.de##div[style="min-width: 300px; mi
 quoka.de##div[style="width: 100%; height: 250px; overflow: hidden; text-align: center;"]
 quoka.de##div[style="width: 100%; height: 260px; overflow: hidden; text-align: center; padding-top: 10px;"]
 quoka.de##div[style="width: 100%; height: 90px; overflow: hidden; text-align: center;"]
-gutefrage.net##div[style="width:100%;height:252px;overflow:hidden"]
 winfuture.de##div[style="width:670px;height:280px;"]
 korrekturen.de##div[style="width:728px; height: 90px; text-align: center; background-color:#c0c0c0;"]
 livestreamde.com##div[style^="height:300px;"]
@@ -4649,6 +4646,7 @@ autobild.de###superbanner_rlWr
 focus.de###tfm_admanagerTeaser
 hamburg-magazin.de,kiel-magazin.de,luebeck-magazin.de##.ad__skyscraper--wrapper
 hamburg-magazin.de,kiel-magazin.de,luebeck-magazin.de##.ad__superbanner--wrapper
+ratehase.de##.adcolor
 focus.de##.adsBlock
 hamburg-magazin.de,kiel-magazin.de,luebeck-magazin.de##.article__ad__wrapper
 t-online.de##.css-1gm9xpz
@@ -4659,6 +4657,7 @@ jetzt.de,prosieben.de,transfermarkt.de,tvspielfilm.de##.plistaList > .itemLinkPE
 focus.de##.ps-trackingposition_OrangerButton
 focus.de##.ps-trackingposition_PDFkasten
 focus.de##.shoppingcartctn
+ratehase.de##.sidestickycon300x600
 businessinsider.de,bz-berlin.de,giga.de,myhomebook.de,sport1.de,sueddeutsche.de,t-online.de,transfermarkt.de##.trc-content-sponsored
 businessinsider.de,bz-berlin.de,fitbook.de,giga.de,jetzt.de,myhomebook.de,noizz.de,sport1.de,sportbild.bild.de,sueddeutsche.de,t-online.de,techbook.de,transfermarkt.de,travelbook.de,welt.de##.trc_related_container div[data-item-syndicated="true"]
 willhaben.at##[data-testid="top-ads-large"]
@@ -4765,7 +4764,6 @@ berlinstadtservice.de#?#.row.block03:-abp-has(p:-abp-contains(ANZEIGE))
 computerbild.de#?#article.gridArea__teaserM:-abp-has(div.teaserBlock__label:-abp-contains(Anzeige))
 finanzfluss.de#?#.component:-abp-has(div.disclaimer-text:-abp-contains(Anzeige))
 focus.de#?#article[id^="teaser-"][data-placement]:-abp-contains(Anzeige)
-games.ch#?#.col4:-abp-has(h3:-abp-contains(Unterstützt durch:))
 gamestar.de#?#.content-item-medium:-abp-has(data:-abp-contains(Anzeige))
 gamestar.de#?#.content-item-small:-abp-has(h3:-abp-contains(Anzeige))
 gamestar.de#?#.contentnewsitem-box .box-reload .news-list:-abp-has(span.media-heading:-abp-contains([Anzeige]))
@@ -4867,6 +4865,7 @@ obi.*##[data-ae-slot="pdp_old_banner"]
 @@||onvista.de^$generichide
 @@||pcwelt.de^$generichide
 @@||ran.de^$generichide
+@@||ratehase.de^$generichide
 @@||rollingstone.de^$generichide
 @@||spiele.bild.de^$generichide
 @@||sport.de^$generichide
