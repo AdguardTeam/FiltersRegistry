@@ -1,8 +1,8 @@
-! Checksum: PAlIESvAPb0wIGW5/R1p0g
+! Checksum: Up2Yp2esH7v+ShyIAwZXGw
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.96.8
-! TimeUpdated: 2025-07-14T05:11:24+00:00
+! Version: 2.3.96.9
+! TimeUpdated: 2025-07-14T06:10:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10481,12 +10481,6 @@ call-bomber.info#%#//scriptlet('trusted-set-constant', 'document.visibilityState
 call-bomber.info#%#//scriptlet('prevent-setTimeout', 'checkAds')
 call-bomber.info#%#//scriptlet('adjust-setTimeout', '', '*', '0.02')
 call-bomber.info#%#//scriptlet('adjust-setInterval', '', '*', '0.02')
-! https://github.com/AdguardTeam/AdguardFilters/issues/201832
-||zone.msn.com^$replace=/"adsFree\\":false/"adsFree\\":true/,document
-||zone.msn.com^$replace=/"preroll\\":true/"preroll\\":false/,document
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=zone.msn.com
-||cdn.jsdelivr.net/gh/magiclen/adblock-checker^$domain=zone.msn.com
-zone.msn.com#%#(()=>{const e={apply:(e,o,t)=>(null===t[0]&&(t[0]={isUserSubscriber:!0}),Reflect.apply(e,o,t))},o={apply:(o,t,n)=>{const r=n[0];return"function"==typeof r&&r.toString().includes("AdBlockDetector")&&(n[0]=()=>{}),"function"==typeof r&&r.toString().includes("Preroll Ad")&&(n[0]=new Proxy(n[0],e)),Reflect.apply(o,t,n)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,o)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201669
 dotacoach.gg#%#//scriptlet('prevent-element-src-loading', 'img', '&adslot=')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201585
@@ -15456,11 +15450,16 @@ myviptuto.com#$#body[style] { overflow: visible!important; }
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,domain=myviptuto.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77359
 leechall.com#$##adBanner { height: 25px !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/201832
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171226
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151304
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79665
 ! https://github.com/AdguardTeam/AdguardFilters/issues/56486
 ! Arkadium antiadblock
+||zone.msn.com^$replace=/"adsFree\\":false/"adsFree\\":true/,document
+||zone.msn.com^$replace=/"preroll\\":true/"preroll\\":false/,document
+||arkadium.com^$replace=/"adsFree\\":false/"adsFree\\":true/,document
+||arkadium.com^$replace=/"preroll\\":true/"preroll\\":false/,document
 bestforpuzzles.com,gamelab.com#%#//scriptlet('set-constant', '__INITIAL_STATE__.config.theme.ads.isAdBlockerEnabled', 'false')
 arkadium.com#@#display-ad-component
 arkadium.com#@#div[class^="Ad-adContainer"]
@@ -15474,7 +15473,8 @@ arkadium.com#%#//scriptlet('prevent-setTimeout', 'adsShown')
 arkadium.com#%#//scriptlet('adjust-setInterval', 'game will', '', '0.02')
 arkadium.com#%#//scriptlet('adjust-setTimeout', '[native code]', '*', '0.02')
 arkadium.com#%#//scriptlet('set-constant', '__INITIAL_STATE__.gameLists.gamesNoPrerollIds.indexOf', 'trueFunc')
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=arkadium.com,important
+zone.msn.com,arkadium.com#%#(()=>{const e={apply:(e,o,t)=>(null===t[0]&&(t[0]={isUserSubscriber:!0}),Reflect.apply(e,o,t))},o={apply:(o,t,n)=>{const r=n[0];return"function"==typeof r&&r.toString().includes("AdBlockDetector")&&(n[0]=()=>{}),"function"==typeof r&&r.toString().includes("Preroll Ad")&&(n[0]=new Proxy(n[0],e)),Reflect.apply(o,t,n)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,o)})();
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,important,domain=arkadium.com|zone.msn.com
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,important,domain=arkadium.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=arkadium.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=arkadium.com
@@ -24033,6 +24033,9 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xmlhttprequest,redirect=nooptext
 !
 !
+rallyandrace.pl##div[id^="oa-360-"]
+skyradar.pl##div[id^="crosscol-"] > .widget:has(> .widget-content > .adsbygoogle)
+skyradar.pl##div[id^="crosscol-"] > .widget:has(> .widget-content > center > .adsbygoogle)
 itreseller.pl##.bn-rklm-banner
 itreseller.pl##.bn-banner-header
 gazetki.pl##.ad_d_small
@@ -35910,6 +35913,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+itsfoss.com##.sidebar__section:has(> div[data-freestar-ad])
+europixhd-official.com#%#//scriptlet('prevent-addEventListener', 'click', '.pop')
+rumble.com##.js-ads-container
 /assets/jquery/*.js?type=adult^$script
 7mmtv.sx##.player_tv_pop
 mydramalist.com##.app-body > div[class]:not([data-component]):has(.htlad-header_top)
@@ -82865,6 +82871,7 @@ browsershots.org#@#.advert_area
 ||beeshooloap.net^
 ||beestark.com^
 ||beestraitstarvation.com^
+||beetledriest.cyou^
 ||beetlestaircaselobster.com^
 ||beevakum.net^
 ||befirstcdn.com^
@@ -85762,6 +85769,7 @@ browsershots.org#@#.advert_area
 ||cpyjcefu.com^
 ||cpykudhagov.com^
 ||cqaqwekgzvkek.tech^
+||cqkuxwnele.com^
 ||cqkzgchjtlllo.store^
 ||cqmgoxqbhsmgg.site^
 ||cqqmjkrcwuetz.store^
@@ -87170,6 +87178,7 @@ browsershots.org#@#.advert_area
 ||dogiemormon.shop^
 ||dogrotleer.com^
 ||dogt.xyz^
+||dogtiedaphne.qpon^
 ||dogwrite.com^
 ||dokkvnqunhiwt.website^
 ||dokondigit.quest^
@@ -87411,6 +87420,7 @@ browsershots.org#@#.advert_area
 ||dropdoneraining.com^
 ||dropletevaporateumpire.com^
 ||droppingprofessionmarine.com^
+||dropvieflanged.cfd^
 ||drossedinspoke.rest^
 ||drossesareca.com^
 ||drouthramed.top^
@@ -87774,6 +87784,7 @@ browsershots.org#@#.advert_area
 ||eceepsoograirtu.net^
 ||ecerpgqnohelf.com^
 ||echeawidened.shop^
+||echimysresends.world^
 ||echinusandaste.com^
 ||echoeshamauls.com^
 ||echopixelwave.net^
@@ -89529,6 +89540,7 @@ browsershots.org#@#.advert_area
 ||fouettbrauna.com^
 ||fougekukoosh.com^
 ||foughtdiamond.com^
+||foumaupoagroo.com^
 ||foundationhemispherebossy.com^
 ||foundationhorny.com^
 ||foundinggulfsaturate.com^
@@ -92921,6 +92933,7 @@ browsershots.org#@#.advert_area
 ||isolatedovercomepasted.com^
 ||isolatespokesman.com^
 ||isolationoranges.com^
+||isotriaintorts.world^
 ||isoualkcjushz.website^
 ||isozvtdtzqefl.website^
 ||isparkmedia.com^
@@ -93801,6 +93814,7 @@ browsershots.org#@#.advert_area
 ||kaiu-marketing.com^
 ||kaiwiscarps.shop^
 ||kajtzuddixmyt.site^
+||kakanoutport.world^
 ||kaksafoopee.com^
 ||kalauxet.com^
 ||kaleidoscopeadjacent.com^
@@ -95870,6 +95884,7 @@ browsershots.org#@#.advert_area
 ||marxistneeps.com^
 ||masakeku.com^
 ||masaridpenlite.top^
+||masarisaoife.help^
 ||masaxe.xyz^
 ||masbpi.com^
 ||masklink.org^
@@ -97087,6 +97102,7 @@ browsershots.org#@#.advert_area
 ||nameads.com^
 ||namel.net^
 ||nameoaj.xyz^
+||namercydippe.life^
 ||namjzoa.xyz^
 ||namol.xyz^
 ||nan0cns.com^
@@ -98639,6 +98655,7 @@ browsershots.org#@#.advert_area
 ||optad360.net^
 ||opticlygremio.com^
 ||optidownloader.com^
+||optimistic-mouth.pro^
 ||optimizepro.online^
 ||optimizesocial.com^
 ||optimizesrv.com^
@@ -100212,6 +100229,7 @@ browsershots.org#@#.advert_area
 ||potawe.com^
 ||potentiallypantsreseptivereseptive.com^
 ||pothutepu.com^
+||potlidtonka.cfd^
 ||potmqiirlfjdu.store^
 ||potsaglu.net^
 ||potshumiliationremnant.com^
@@ -100322,6 +100340,7 @@ browsershots.org#@#.advert_area
 ||prefleks.com^
 ||preformbiunial.com^
 ||pregmatookles.com^
+||prehendantlia.qpon^
 ||prehistoricprefecturedale.com^
 ||preloanflubs.com^
 ||premium4kflix.club^
@@ -102839,6 +102858,7 @@ browsershots.org#@#.advert_area
 ||rwqovmoezrvrv.top^
 ||rwsxhquiakqjt.store^
 ||rwukupjis.com^
+||rwulzuaqsafn.com^
 ||rwuruwrufmp.com^
 ||rwwmbymaezkla.top^
 ||rwwmbymaezzjy.top^
@@ -104518,6 +104538,7 @@ browsershots.org#@#.advert_area
 ||staltoumoaze.com^
 ||stammerail.com^
 ||stampsmindlessscrap.com^
+||stanjenhaji.qpon^
 ||stankyrich.com^
 ||stannicfeebly.shop^
 ||stapledsaur.top^
@@ -107083,6 +107104,7 @@ browsershots.org#@#.advert_area
 ||uqecqpnnzt.online^
 ||uqeqytrdnaf.com^
 ||uqjhvjshpleun.com^
+||uqmgqhhhutssb.online^
 ||uqohomcgxhtjr.space^
 ||uqojzdtzbonpz.online^
 ||uqqmj868.xyz^
@@ -107916,6 +107938,7 @@ browsershots.org#@#.advert_area
 ||vxtehkhkv.com^
 ||vxtgnbxrhqirjv.com^
 ||vxtozhkzlarln.site^
+||vxvzcjxkyanrs.website^
 ||vxwmkbtkhtpru.today^
 ||vxxojmkc.com^
 ||vydqpsqxl.com^
@@ -109224,6 +109247,7 @@ browsershots.org#@#.advert_area
 ||yellowblue.io^
 ||yellowprotection.com^
 ||yellowsignal.pro^
+||yemenicisohels.world^
 ||yemeniharmel.top^
 ||yeotcpytcq.xyz^
 ||yeptwbtalkfug.xyz^
