@@ -112,8 +112,10 @@
 /uploads/*.xml$doc,to=europartner.com.pl|zdrowiedlawszystkich.pl
 ! Rule "/userfiles/*.xml$doc,to=aquatech.com.pl|bartodzieje.medycyna.net.pl|bip.wuozprzemysl.pl|ekobarc.pl|everest-sport.pl|gdziezjesc.info|ikuchnia.com.pl|jta.com.pl|kamart.com.pl|kieryk.pl|kppzp.pl|muzeum.kety.pl|pomerania.org.pl|radecznica.pl|rbmtechnik.pl|serwisnawigacji.pl|sjo.uni.lodz.pl|sunrest.com.pl|warszawa-pragapoludnie.sr.gov.pl|wobo.com.pl|wodnik-tour.com.pl" converted to: "/userfiles/*.xml$document,to=aquatech.com.pl|bartodzieje.medycyna.net.pl|bip.wuozprzemysl.pl|ekobarc.pl|everest-sport.pl|gdziezjesc.info|ikuchnia.com.pl|jta.com.pl|kamart.com.pl|kieryk.pl|kppzp.pl|muzeum.kety.pl|pomerania.org.pl|radecznica.pl|rbmtechnik.pl|serwisnawigacji.pl|sjo.uni.lodz.pl|sunrest.com.pl|warszawa-pragapoludnie.sr.gov.pl|wobo.com.pl|wodnik-tour.com.pl"
 /userfiles/*.xml$doc,to=aquatech.com.pl|bartodzieje.medycyna.net.pl|bip.wuozprzemysl.pl|ekobarc.pl|everest-sport.pl|gdziezjesc.info|ikuchnia.com.pl|jta.com.pl|kamart.com.pl|kieryk.pl|kppzp.pl|muzeum.kety.pl|pomerania.org.pl|radecznica.pl|rbmtechnik.pl|serwisnawigacji.pl|sjo.uni.lodz.pl|sunrest.com.pl|warszawa-pragapoludnie.sr.gov.pl|wobo.com.pl|wodnik-tour.com.pl
-! Rule "/ym.html?email=*@$doc,to=~to-moze-byc-phishing.*" converted to: "/ym.html?email=*@$document,to=~to-moze-byc-phishing.*"
-/ym.html?email=*@$doc,to=~to-moze-byc-phishing.*
+! Rule "/ym.html?email=*@$doc,frame" converted to: "/ym.html?email=*@$document,subdocument"
+/ym.html?email=*@$doc,frame
+! Rule "/ym.html?email=*@$doc,important,reason="to-moze-byc-phishing"" converted to: "/ym.html?email=*@$document,important,reason="to-moze-byc-phishing""
+/ym.html?email=*@$doc,important,reason="to-moze-byc-phishing"
 ! Rule "/zcvisitor/*?campaignid$doc" converted to: "/zcvisitor/*?campaignid$document"
 /zcvisitor/*?campaignid$doc
 ! Rule "?zoneid=*&cost=0.$doc" converted to: "?zoneid=*&cost=0.$document"
@@ -136,8 +138,10 @@
 ||lds.xyz/*&sbtag=$doc,to=xyz
 ! Rule "||lds.xyz/*?sbtag=$doc,to=xyz" converted to: "||lds.xyz/*?sbtag=$document,to=xyz"
 ||lds.xyz/*?sbtag=$doc,to=xyz
-! Rule "||ostrowlubelski.pl/libs/$doc,frame,important,to=~przekierowania-z-google.*" converted to: "||ostrowlubelski.pl/libs/$document,subdocument,important,to=~przekierowania-z-google.*"
-||ostrowlubelski.pl/libs/$doc,frame,important,to=~przekierowania-z-google.*
+! Rule "||ostrowlubelski.pl/libs/$doc,frame" converted to: "||ostrowlubelski.pl/libs/$document,subdocument"
+||ostrowlubelski.pl/libs/$doc,frame
+! Rule "||ostrowlubelski.pl/libs/$doc,reason="Podejrzane przekierowania z wyników wyszukiwarek, zachowaj ostrożność",important" converted to: "||ostrowlubelski.pl/libs/$document,reason="Podejrzane przekierowania z wyników wyszukiwarek, zachowaj ostrożność",important"
+||ostrowlubelski.pl/libs/$doc,reason="Podejrzane przekierowania z wyników wyszukiwarek, zachowaj ostrożność",important
 ! Rule "/\/\?[0-9a-zA-Z]{32}&[0-9]{5}&(https?|undefined$)/$1p,script" converted to: "/\/\?[0-9a-zA-Z]{32}&[0-9]{5}&(https?|undefined$)/$~third-party,script"
 /\/\?[0-9a-zA-Z]{32}&[0-9]{5}&(https?|undefined$)/$1p,script
 ! Rule "/\/\?[0-9a-zA-Z]{32}&ver=[0-9]{1,3}\./$1p,script" converted to: "/\/\?[0-9a-zA-Z]{32}&ver=[0-9]{1,3}\./$~third-party,script"
@@ -182,16 +186,22 @@
 ||allegrolokalnie.$frame,domain=~allegro.com|~allegro.cz|~allegro.hu|~allegro.pl|~allegro.sk|~allegrolokalnie.pl|~czc.cz|~mall.cz|~mall.hr|~mall.hu|~mall.pl|~mall.sk|~mimovrste.com|~wedo.cz
 ! Rule "||chomikuj.$doc,to=~chomikuj.pl" converted to: "||chomikuj.$document,to=~chomikuj.pl"
 ||chomikuj.$doc,to=~chomikuj.pl
-! Rule "||czyjtonumer.net^$doc,to=czyjtonumer.net|~uwazaj-na-pakiet-premium.*" converted to: "||czyjtonumer.net^$document,to=czyjtonumer.net|~uwazaj-na-pakiet-premium.*"
-||czyjtonumer.net^$doc,to=czyjtonumer.net|~uwazaj-na-pakiet-premium.*
+! Rule "||czyjtonumer.net^$doc,to=czyjtonumer.net" converted to: "||czyjtonumer.net^$document,to=czyjtonumer.net"
+||czyjtonumer.net^$doc,to=czyjtonumer.net
+! Rule "||czyjtonumer.net^$doc,to=czyjtonumer.net,reason="Uwazaj na oferowany przez nich pakiet premium"" converted to: "||czyjtonumer.net^$document,to=czyjtonumer.net,reason="Uwazaj na oferowany przez nich pakiet premium""
+||czyjtonumer.net^$doc,to=czyjtonumer.net,reason="Uwazaj na oferowany przez nich pakiet premium"
 ! Rule "||ezalukaj*.$doc" converted to: "||ezalukaj*.$document"
 ||ezalukaj*.$doc
 ! Rule "||hosting*.online.pro^$doc" converted to: "||hosting*.online.pro^$document"
 ||hosting*.online.pro^$doc
-! Rule "||inpost.pl-*.$doc,to=~inpost.pl|~przekret-z-falszywym-kuriererm-dostawa.*" converted to: "||inpost.pl-*.$document,to=~inpost.pl|~przekret-z-falszywym-kuriererm-dostawa.*"
-||inpost.pl-*.$doc,to=~inpost.pl|~przekret-z-falszywym-kuriererm-dostawa.*
-! Rule "||inpost.pl.*.$doc,to=~inpost.pl|~przekret-z-falszywym-kuriererm-dostawa.*" converted to: "||inpost.pl.*.$document,to=~inpost.pl|~przekret-z-falszywym-kuriererm-dostawa.*"
-||inpost.pl.*.$doc,to=~inpost.pl|~przekret-z-falszywym-kuriererm-dostawa.*
+! Rule "||inpost.pl-*.$doc,to=~inpost.pl" converted to: "||inpost.pl-*.$document,to=~inpost.pl"
+||inpost.pl-*.$doc,to=~inpost.pl
+! Rule "||inpost.pl-*.$doc,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||inpost.pl-*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||inpost.pl-*.$doc,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||inpost.pl.*.$doc,to=~inpost.pl" converted to: "||inpost.pl.*.$document,to=~inpost.pl"
+||inpost.pl.*.$doc,to=~inpost.pl
+! Rule "||inpost.pl.*.$doc,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||inpost.pl.*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||inpost.pl.*.$doc,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
 ! Rule "||legalniewsieci.$doc,to=~legalniewsieci.pl" converted to: "||legalniewsieci.$document,to=~legalniewsieci.pl"
 ||legalniewsieci.$doc,to=~legalniewsieci.pl
 ! Rule "||mail.hodtd.com/*url=*swietne-ceny.com$doc,important,to=mail.hodtd.com" converted to: "||mail.hodtd.com/*url=*swietne-ceny.com$document,important,to=mail.hodtd.com"
@@ -200,10 +210,56 @@
 ||new1.*.*.com^$doc,to=com
 ! Rule "||new1.*.*.ir^$doc,to=ir" converted to: "||new1.*.*.ir^$document,to=ir"
 ||new1.*.*.ir^$doc,to=ir
-! Rule "||olx.pl-*.$doc,to=~olx.pl|~przekret-z-falszywym-kuriererm-dostawa.*" converted to: "||olx.pl-*.$document,to=~olx.pl|~przekret-z-falszywym-kuriererm-dostawa.*"
-||olx.pl-*.$doc,to=~olx.pl|~przekret-z-falszywym-kuriererm-dostawa.*
-! Rule "||olx.pl.*.$doc,to=~olx.pl|~przekret-z-falszywym-kuriererm-dostawa.*" converted to: "||olx.pl.*.$document,to=~olx.pl|~przekret-z-falszywym-kuriererm-dostawa.*"
-||olx.pl.*.$doc,to=~olx.pl|~przekret-z-falszywym-kuriererm-dostawa.*
+! Rule "||olx-deliver.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-deliver.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-deliver.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-delivers.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-delivers.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-delivers.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-delivery-*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-delivery-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-delivery-*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-delivery.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-delivery.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-delivery.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-dostava.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-dostava.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-dostava.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-dostawa.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-dostawa.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-oferta.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-oferta.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-oferta.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-offerta.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-offerta.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-offerta.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-pl-delivery.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-pl-delivery.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-delivery.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-pl-dostava.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-pl-dostava.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-dostava.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-pl-dostawa.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-pl-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-dostawa.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-pl-id-*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-pl-id-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-id-*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-pl-id.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-pl-id.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-id.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-poland.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-poland.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-poland.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-polands.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-polands.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-polands.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-przesylk*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-przesylk*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-przesylk*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-transfer.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-transfer.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-transfer.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx-zamowienie.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx-zamowienie.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-zamowienie.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx.pl-*.$doc,to=~olx.pl" converted to: "||olx.pl-*.$document,to=~olx.pl"
+||olx.pl-*.$doc,to=~olx.pl
+! Rule "||olx.pl-*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx.pl-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx.pl-*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olx.pl.*.$doc,to=~olx.pl" converted to: "||olx.pl.*.$document,to=~olx.pl"
+||olx.pl.*.$doc,to=~olx.pl
+! Rule "||olx.pl.*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olx.pl.*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx.pl.*.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olxdostawa.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olxdostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olxdostawa.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olxpl-dostawa.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olxpl-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olxpl-dostawa.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Rule "||olxpl-order.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important" converted to: "||olxpl-order.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olxpl-order.$doc,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
 ! Rule "||server*.nazwa.pl/weryfikacja/$doc,frame" converted to: "||server*.nazwa.pl/weryfikacja/$document,subdocument"
 ||server*.nazwa.pl/weryfikacja/$doc,frame
 ! Rule "||serwer*.home.pl/weryfikacja/$doc,frame" converted to: "||serwer*.home.pl/weryfikacja/$document,subdocument"
@@ -284,6 +340,62 @@ support.ublock.org#$#div.hero-unit > div.search-box--hero-unit::before { font-si
 ||vorwerk.*/*/zamow-prezentacje/poznaj-thermomix|$document,to=vorwerk.com|vorwerk.pl,reason="Przemyśl zamowienie prezentacji",important
 ! Error: "Unknown modifier: reason="1200 osób skarzy się na internetowy kantor w prokuraturze"" in the rule: "||fx.cinkciarz.pl^$document,reason="1200 osób skarzy się na internetowy kantor w prokuraturze",important"
 ||fx.cinkciarz.pl^$document,reason="1200 osób skarzy się na internetowy kantor w prokuraturze",important
+! Error: "Unknown modifier: reason="to-moze-byc-phishing"" in the rule: "/ym.html?email=*@$document,important,reason="to-moze-byc-phishing""
+/ym.html?email=*@$document,important,reason="to-moze-byc-phishing"
+! Error: "Unknown modifier: reason="Podejrzane przekierowania z wyników wyszukiwarek" in the rule: "||ostrowlubelski.pl/libs/$document,reason="Podejrzane przekierowania z wyników wyszukiwarek, zachowaj ostrożność",important"
+||ostrowlubelski.pl/libs/$document,reason="Podejrzane przekierowania z wyników wyszukiwarek, zachowaj ostrożność",important
+! Error: "Unknown modifier: reason="Uwazaj na oferowany przez nich pakiet premium"" in the rule: "||czyjtonumer.net^$document,to=czyjtonumer.net,reason="Uwazaj na oferowany przez nich pakiet premium""
+||czyjtonumer.net^$document,to=czyjtonumer.net,reason="Uwazaj na oferowany przez nich pakiet premium"
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||inpost.pl-*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||inpost.pl-*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||inpost.pl.*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||inpost.pl.*.$document,to=~inpost.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-deliver.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-deliver.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-delivers.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-delivers.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-delivery-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-delivery-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-delivery.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-delivery.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-dostava.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-dostava.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-oferta.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-oferta.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-offerta.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-offerta.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-pl-delivery.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-delivery.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-pl-dostava.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-dostava.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-pl-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-pl-id-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-id-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-pl-id.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-pl-id.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-poland.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-poland.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-polands.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-polands.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-przesylk*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-przesylk*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-transfer.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-transfer.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx-zamowienie.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx-zamowienie.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx.pl-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx.pl-*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olx.pl.*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olx.pl.*.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olxdostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olxdostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olxpl-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olxpl-dostawa.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
+! Error: "Unknown modifier: reason="Przekręt z fałszywym kuriererm lub paczką"" in the rule: "||olxpl-order.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important"
+||olxpl-order.$document,to=~olx.pl,reason="Przekręt z fałszywym kuriererm lub paczką",important
 ! Error: "Unknown modifier: reason="Szkoldiwy asystent pobierania na dobreprogramy lub np. softonic"" in the rule: "/^https?:\/\/[\w]+\.cloudfront\.net\/(?:build|current|latest|main|release|rel|revision|rev|v|version|ver)\/pl\/v/$document,important,reason="Szkoldiwy asystent pobierania na dobreprogramy lub np. softonic",domain=cloudfront.net,to=cloudfront.net"
 /^https?:\/\/[\w]+\.cloudfront\.net\/(?:build|current|latest|main|release|rel|revision|rev|v|version|ver)\/pl\/v/$document,important,reason="Szkoldiwy asystent pobierania na dobreprogramy lub np. softonic",domain=cloudfront.net,to=cloudfront.net
 ! Error: "Unknown modifier: ipaddress=37.1.209.213" in the rule: "$all,ipaddress=37.1.209.213"
