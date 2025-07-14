@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: hhYbsMtu7ao9nL98UPMsog
-! Diff-Path: ../patches/14/14-s-1752461447-3600.patch
+! Checksum: Awjm0jo6razTOxI5pJlhQA
+! Diff-Path: ../patches/14/14-s-1752467244-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.31
-! TimeUpdated: 2025-07-14T02:46:46+00:00
+! Version: 2.2.36.32
+! TimeUpdated: 2025-07-14T04:23:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16187,6 +16187,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209189
+@@||scherdel.com/*/borlabs-cookie/$domain=scherdel.com
+scherdel.com#@##BorlabsCookieBox
 ! https://github.com/AdguardTeam/AdguardFilters/pull/208713
 dolomitienergia.it#@#.cookies-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209083
@@ -49628,6 +49631,9 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+gq.com##div[data-testid="one-nav-row-grid"]:has(> div[data-testid="one-nav-row-content"] > div[data-testid="one-nav-area-container"] > div[component="banner"])
+gq.com##div[data-testid="RowWrapper"]:has(> .consumer-marketing-unit)
+gq.com##div[class^="InContentBarrierFloatingBar"]:has(> a[href^="https://www.gq.com/v2/offers/"])
 fshare.vn##.header_notice
 recorder.easeus.com##div[class^="button_box"]
 recorder.easeus.com##.silder_box_right > div[class^="right_silder_"]
