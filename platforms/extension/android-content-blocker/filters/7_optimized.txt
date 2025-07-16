@@ -1,8 +1,8 @@
-! Checksum: t+t6fPNhf3WPBfspOOMG2g
+! Checksum: 3TK7pBcxroSl1M1KSdyfRQ
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.66.38
-! TimeUpdated: 2025-07-16T15:07:44+00:00
+! Version: 2.0.66.39
+! TimeUpdated: 2025-07-16T16:08:28+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||ademon.net^
@@ -1047,7 +1047,7 @@ okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 hb-nippon.com###videoAds
 ar-mag.jp##.js-ad-entame
-kojodan.jp###header_space
+kojodan.jp##div[id^="div-gpt-"] > div[style^="display: flex; justify-content: center; align-items: center; text-align:center;height: 180px;background-image: linear-gradient"]
 baseballking.jp,volleyballking.jp##.entry-content > div.addArea
 baseballking.jp,volleyballking.jp##.entry-content-main > div.addArea
 baseballking.jp,volleyballking.jp##.entry-footer-ads
@@ -8807,6 +8807,14 @@ gtoys.blog.fc2.com###adright
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+kojodan.jp#@#div[id^="div-gpt-"]
+kojodan.jp#@#[id^="div-gpt-ad"]
+@@||g.doubleclick.net/tag/js/gpt.js$domain=kojodan.jp
+@@||g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=kojodan.jp
+@@||g.doubleclick.net/gampad/ads?$xmlhttprequest,domain=kojodan.jp
+@@||safeframe.googlesyndication.com^$subdocument,domain=kojodan.jp
+@@||tpc.googlesyndication.com/simgad/$xmlhttprequest,domain=kojodan.jp
+@@||tpc.googlesyndication.com/pagead/imgad?$xmlhttprequest,domain=kojodan.jp
 mobilegadget.jp#@#.header-ad
 @@||edayo.ad-drop.jp/yie/ld/jsk$script,domain=h1g.jp
 @@||js.ad-drop.jp/t/$script,domain=h1g.jp

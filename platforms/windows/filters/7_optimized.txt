@@ -1,9 +1,9 @@
-! Checksum: afOyeHBc+ygi1lSvbpiRMA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1752678759-3600.patch
+! Checksum: uwtG/OU8kWw6/ix0d8tCLw
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1752682391-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.66.38
-! TimeUpdated: 2025-07-16T15:07:44+00:00
+! Version: 2.0.66.39
+! TimeUpdated: 2025-07-16T16:08:28+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||centsbicloud.bond^$all
@@ -1394,7 +1394,8 @@ diskgarage.com##.inwrap:has(> ins.adsbygoogle)
 diskgarage.com##.two-col:has(> ins.adsbygoogle)
 keyakizaka46matomerabo.com##.adsBox:has(> ins.adsbygoogle)
 ar-mag.jp##.js-ad-entame
-kojodan.jp###header_space
+kojodan.jp#$##header_space { min-height: 0 !important; }
+kojodan.jp##div[id^="div-gpt-"] > div[style^="display: flex; justify-content: center; align-items: center; text-align:center;height: 180px;background-image: linear-gradient"]
 baseballking.jp,volleyballking.jp##.entry-content > div.addArea
 baseballking.jp,volleyballking.jp##.entry-content-main > div.addArea
 baseballking.jp,volleyballking.jp##.entry-footer-ads
@@ -10933,6 +10934,16 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+kojodan.jp#@#div[id^="div-gpt-"]
+kojodan.jp#@#[id^="div-gpt-ad"]
+kojodan.jp#%#//scriptlet('remove-attr', 'height', 'iframe[id^="google_ads_iframe"]')
+@@||g.doubleclick.net/tag/js/gpt.js$domain=kojodan.jp
+@@||g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=kojodan.jp
+@@||g.doubleclick.net/gampad/ads?$xmlhttprequest,domain=kojodan.jp
+@@||safeframe.googlesyndication.com^$subdocument,domain=kojodan.jp
+@@||tpc.googlesyndication.com/simgad/$xmlhttprequest,domain=kojodan.jp
+@@||tpc.googlesyndication.com/pagead/imgad?$xmlhttprequest,domain=kojodan.jp
+safeframe.googlesyndication.com#%#//scriptlet('href-sanitizer', 'a[href^="https://adclick.g.doubleclick.net/"][href*="adurl="]', '?adurl')
 ar-mag.jp,ben54.jp#$#html[class^="loading"] { visibility: visible !important; }
 mobilegadget.jp#@#.header-ad
 h1g.jp#$#.mainbody > div[style="width:800px; height:400px; margin-top:30px;"] { height: 600px !important; }

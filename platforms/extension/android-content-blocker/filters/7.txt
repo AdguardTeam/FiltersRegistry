@@ -1,8 +1,8 @@
-! Checksum: XqVoEfZlDlUeRQZPt6FtDQ
+! Checksum: wAKANn2mXsbwr7up0YmKjg
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.66.38
-! TimeUpdated: 2025-07-16T15:07:44+00:00
+! Version: 2.0.66.39
+! TimeUpdated: 2025-07-16T16:08:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1465,7 +1465,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 hb-nippon.com###videoAds
 ar-mag.jp##.js-ad-entame
-kojodan.jp###header_space
+kojodan.jp##div[id^="div-gpt-"] > div[style^="display: flex; justify-content: center; align-items: center; text-align:center;height: 180px;background-image: linear-gradient"]
 baseballking.jp,volleyballking.jp##.entry-content > div.addArea
 baseballking.jp,volleyballking.jp##.entry-content-main > div.addArea
 baseballking.jp,volleyballking.jp##.entry-footer-ads
@@ -9276,6 +9276,15 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! kojodan.jp
+kojodan.jp#@#div[id^="div-gpt-"]
+kojodan.jp#@#[id^="div-gpt-ad"]
+@@||g.doubleclick.net/tag/js/gpt.js$domain=kojodan.jp
+@@||g.doubleclick.net/pagead/managed/js/gpt/*/pubads_impl.js$domain=kojodan.jp
+@@||g.doubleclick.net/gampad/ads?$xmlhttprequest,domain=kojodan.jp
+@@||safeframe.googlesyndication.com^$subdocument,domain=kojodan.jp
+@@||tpc.googlesyndication.com/simgad/$xmlhttprequest,domain=kojodan.jp
+@@||tpc.googlesyndication.com/pagead/imgad?$xmlhttprequest,domain=kojodan.jp
 ! temporally hidden for GTM
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208209
 mobilegadget.jp#@#.header-ad
