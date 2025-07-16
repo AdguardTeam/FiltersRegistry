@@ -1,5 +1,5 @@
-! Checksum: OgEBtoPsxt5LFJ+2wDBm7g
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1752613817-3600.patch
+! Checksum: uUhtIGfwTJawcDbRXwPBhg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1752634114-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.53.44
@@ -364,7 +364,6 @@ dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
 south-park-tv.fr##.king-loading-ad
-south-park-tv.fr##.king-ads
 south-park-tv.fr##.ads-postpage
 ||epic-funseduction.com/js/popunder.js
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
@@ -438,7 +437,6 @@ lesechos.fr#?#span[shape="circle"] + span:contains(Publicité):upward(2)
 nouvelobs.com##body .dfp-slot:not(#style_important)
 nouvelobs.com##.advertising
 futura-sciences.com##div[class*="ad-parent"]
-player.melaniezettofrais.online##body > div[id]:not(#video_player)
 justarrived.lu##div[id^="laure-"]
 eurosport.fr##div[data-testid="ad-organism"]
 radio-canada.ca##div[class*="bg-gray"]:has(> div[class*=" "]:only-child > div[data-adtype])
@@ -1416,7 +1414,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://banners2.$third-party
 ://be.ads.
 ://block.*/rotator-$script
-://block.*/rotator/*.js|$script
 ://cdn.*/p/?zid=
 ://cdn.ad.
 ://cdn.ads.
@@ -1487,7 +1484,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?type=ads&
 ?ufuad=
 ?zoneid=*&ab=$script
-?zoneid=*&cid=$script
 ?zoneid=*&r=
 ?zoneid=*&serve=
 ?zones=*&blockcampaign=
@@ -1742,6 +1738,7 @@ _build=iclick-$popup
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
+||clic-diffusion.com^$third-party
 ||click2m.org^$third-party
 ||clickbank.net^$third-party
 ||clickiocdn*.com^$third-party
@@ -1777,7 +1774,6 @@ _build=iclick-$popup
 ||fancybar.net^$third-party
 ||fgn.me^$third-party
 ||findadvertise.com^$third-party
-||frtyi.com^$third-party
 ||frtyj.com^$third-party
 ||futureadlabs.com^$third-party
 ||gagner-une-console.com^$third-party
@@ -1791,7 +1787,6 @@ _build=iclick-$popup
 ||hentaiheroes.com^$third-party
 ||holyclock.com^$third-party
 ||hrtya.com^$third-party
-||illyx.com^$third-party
 ||imgsynd.com^$third-party
 ||impactify.it^$third-party
 ||infidelemessenger.com^$third-party
@@ -1882,7 +1877,6 @@ _build=iclick-$popup
 ||strpjmp.com^$third-party
 ||sunmedia.tv^$third-party
 ||svonm.com^$third-party
-||t4btv.com^$third-party
 ||tagsrvcs.com^$third-party
 ||tapub.fr^$third-party
 ||tdscd.com^$third-party
@@ -1994,6 +1988,7 @@ _build=iclick-$popup
 ||admirableinestimable.com^
 ||admiralugly.com^
 ||admiredexcrete.com^
+||admithelperbusy.com^
 ||admonishmenttub.com^
 ||adornmenttaunt.com^
 ||adornperpendicular.com^
@@ -2114,7 +2109,6 @@ _build=iclick-$popup
 ||beergeneralization.com^
 ||believeisabella.com^
 ||belleekbasions.com^
-||bellygratification.com^
 ||benchergodpapa.com^
 ||benzeinlune.com^
 ||berriesstring.com^
@@ -2772,7 +2766,6 @@ _build=iclick-$popup
 ||binance.org^$third-party
 ||browsealoud.com/plus/scripts/$script
 ||clgserv.pro^$third-party
-||cloud-miner.eu^$third-party
 ||cnhv.co^$third-party
 ||coin-have.com^$third-party
 ||coinblind.com^$third-party
@@ -3250,6 +3243,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||flemmix.*/voir/
 ||forexalgerie.com/img/pub/
 ||forumconstruire.com/img/letsgo/
+||forumconstruire.com/img/pubs/
 ||forumconstruire.com/letsgo/
 ||france-troc.com/includes/inc_bandeau.php?
 ||frandroid.com/plsbl/
@@ -3554,7 +3548,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pagelet_advertiser_panel
 ###partner-ads
 ###partner-ads2
-###pave3_ad
 ###pavePub
 ###pavepub
 ###pie_pub_google
@@ -3566,6 +3559,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###psreklama
 ###pub-300-250
 ###pub-300x250
+###pub-468x60
 ###pub-728x90
 ###pub-after-adownload
 ###pub-bottom
@@ -3928,6 +3922,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pagin_pub
 ##.panel-ads
 ##.parent_ad
+##.partner-asset-right-ad
 ##.pave-pub
 ##.pave_pub
 ##.pjsleads
@@ -4542,6 +4537,7 @@ ccm.net,commentcamarche.com,commentcamarche.net##[class$="_adsense"]
 amazon.fr##[class*="-advertising-"]
 amazon.fr##[class*="-sponsored-"]
 filecrypt.cc,filecrypt.co##[class*="adb"]
+leparisien.fr##[class*="ads-"]
 winamax.fr##[class][onclick]
 carrefour.fr##[class^="advertising-placeholder"]
 webstar-electro.com##[class^="banner"]
