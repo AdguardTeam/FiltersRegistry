@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FZ8eyOKIjYlgmqI5Jvcopw
-! Diff-Path: ../patches/14/14-s-1752650000-3600.patch
+! Checksum: DzbF0QfxI26RlCRlm135Ww
+! Diff-Path: ../patches/14/14-s-1752653608-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.59
-! TimeUpdated: 2025-07-16T07:09:15+00:00
+! Version: 2.2.36.60
+! TimeUpdated: 2025-07-16T08:09:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4193,7 +4193,9 @@ fotoplus.pl###consent-mode-container
 /js/cookiePlugin/*$domain=mazovia.pl|starachowice.eu
 grupoahora.net.br###termos-cookie
 livelo.com.br##.notifi
-hurt.com.pl##.cover
+hurt.com.pl#$#body { overflow: auto !important; }
+hurt.com.pl#$#.cover { display: none !important; }
+hurt.com.pl#$#.cookiePolicyBar { display: none !important; }
 zealy.io##body > .bg-tertiary:has(> .flex  > a[href="/consent-preferences"])
 ladies.de#$#html { overflow: auto !important; }
 ladies.de#$#div[id^="cookie-overlay"] { display: none !important; }
@@ -16204,6 +16206,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209456
+hurt.com.pl#@##cookiePolicyBar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209427
 allrecipes.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209389

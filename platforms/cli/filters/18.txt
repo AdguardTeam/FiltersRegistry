@@ -1,9 +1,9 @@
-! Checksum: 986hFxSvUIZUZumibhai/g
-! Diff-Path: ../patches/18/18-s-1752649984-3600.patch
+! Checksum: iQuq4fh6/Y6ZdnwU8t/Vjg
+! Diff-Path: ../patches/18/18-s-1752653591-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.65.91
-! TimeUpdated: 2025-07-16T07:09:18+00:00
+! Version: 2.0.65.92
+! TimeUpdated: 2025-07-16T08:09:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4579,7 +4579,9 @@ fotoplus.pl###consent-mode-container
 character.ai#%#//scriptlet('trusted-set-cookie', 'cookie_consent_v1', 'reject_all')
 grupoahora.net.br###termos-cookie
 livelo.com.br##.notifi
-hurt.com.pl##.cover
+hurt.com.pl#$#body { overflow: auto !important; }
+hurt.com.pl#$#.cover { display: none !important; }
+hurt.com.pl#$#.cookiePolicyBar { display: none !important; }
 wetter.com#%#//scriptlet('trusted-click-element', 'body.cmp-prevent-scroll button#cmp-btn-accept')
 zealy.io##body > .bg-tertiary:has(> .flex  > a[href="/consent-preferences"])
 ladies.de#$#html { overflow: auto !important; }
@@ -17171,6 +17173,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209456
+hurt.com.pl#@##cookiePolicyBar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209427
 allrecipes.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209389
