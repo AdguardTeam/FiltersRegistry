@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: evlav31jkLynlMaoEeeoDA
-! Diff-Path: ../patches/13/13-s-1752682380-3600.patch
+! Checksum: rHkeVF7G+CJIj4bPPRI2Eg
+! Diff-Path: ../patches/13/13-s-1752747149-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.1
-! TimeUpdated: 2025-07-16T16:08:34+00:00
+! Version: 2.0.58.2
+! TimeUpdated: 2025-07-17T10:08:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5592,8 +5592,11 @@ dizilla.club##.player > .flex:has(> div:only-child > img[alt*="ad"])
 dizilla.club###router-view > div > div > div[class]:has(> div:only-child > ad)
 !
 ! selcuksportshd*.xyz - frequently changed domains
-! aglint-disable-next-line invalid-modifiers
-||googleusercontent.com/img/*/crt$domain=/selcuksportshd\d+\.xyz/
+! ads in stream
+||video.twimg.com/ext_tw_video/*/pu/*/*.m4s$redirect=noop-1s.mp4,domain=ifra.strmrdrfronf.click|if.strmrdrfronf.click,media
+! 78 is source of an actual domain
+selcuksportshd78.is##.ps
+selcuksportshd78.is#$?#body { background-image: none !important; }
 ! TODO: remove "NOT_VALIDATE" hint when this issue is fixed - https://github.com/AdguardTeam/FiltersCompiler/issues/237
 !+ NOT_VALIDATE
 [$domain=/^main\.uxsyplayer[a-z0-9]+\.click$/]##+js(set-constant, document.referrer, '')
@@ -5601,6 +5604,7 @@ dizilla.club###router-view > div > div > div[class]:has(> div:only-child > ad)
 [$url=/^https?:\/\/(?:cinque|due|tre)\.(?=.*[0-9])[a-z0-9]{16}\.click\/.*\/player\.html/]##+js(set-constant, config.advertisement.enabled, false)
 [$domain=/^i\[a-z\]*\.strmrdr\[a-z0-9\]+\..*/]##+js(set-constant, adscfg.enabled, false)
 cinque.668a396e58bcbc27.click##+js(set-constant, config.advertisement.enabled, false)
+[$domain=/selcuksportshd\d+\.biz/]##.banner
 [$domain=/selcuksportshd\d+\.xyz/]##.banner
 [$domain=/selcuksportshd\d+\.xyz/]##.banners
 [$domain=/selcuksportshd\d+\.xyz/]##.container > aside.sidebar:has(> .banner)
@@ -5865,17 +5869,6 @@ macvar1056.live,macvar1057.live,macvar1058.live,macvar1059.live,macvar1060.live,
 [$domain=/golvar\d+\.sbs/]##.pageskin
 [$domain=/golvar\d+\.sbs/]##a[target="_blank"] > img
 [$domain=/golvar\d+\.sbs/]##.stream-ads
-! https://github.com/AdguardTeam/AdguardFilters/issues/77520
-! ads in stream
-||video.twimg.com/ext_tw_video/*/pu/*/*.m4s$redirect=noop-1s.mp4,domain=ifra.strmrdrfronf.click|if.strmrdrfronf.click,media
-! 78 is source of an actual domain
-selcuksportshd78.biz##.ps
-selcuksportshd78.biz#$?#body { background-image: none !important; }
-! aglint-disable invalid-modifiers
-!+ NOT_VALIDATE
-||blogger.googleusercontent.com/img/$domain=/selcuksportshd\d+.biz/
-[$domain=/selcuksportshd\d+\.biz/]##.banner
-! aglint-enable invalid-modifiers
 !
 ! sezonlukdizi*.com - frequently changed domains
 sezonlukdizi3.com,sezonlukdizi4.com,sezonlukdizi5.com,sezonlukdizi6.com,sezonlukdizi7.com,sezonlukdizi8.com,sezonlukdizi9.com,sezonlukdizi10.com,sezonlukdizi11.com,sezonlukdizi12.com,sezonlukdizi13.com,sezonlukdizi14.com,sezonlukdizi15.com,sezonlukdizi16.com,sezonlukdizi17.com,sezonlukdizi18.com,sezonlukdizi19.com,sezonlukdizi20.com,sezonlukdizi21.com,sezonlukdizi22.com,sezonlukdizi23.com,sezonlukdizi24.com,sezonlukdizi25.com,sezonlukdizi26.com,sezonlukdizi27.com,sezonlukdizi28.com,sezonlukdizi29.com,sezonlukdizi30.com###reklam-header
