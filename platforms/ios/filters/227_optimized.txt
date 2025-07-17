@@ -1,9 +1,9 @@
-! Checksum: 8v9VuMSAzZzGSj1PY079YQ
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1752583818-14400.patch
+! Checksum: bs/zRtKsCtSTqdljcD87Qg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1752741976-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.22.5
-! TimeUpdated: 2025-07-15T12:45:29+00:00
+! Version: 2.0.22.6
+! TimeUpdated: 2025-07-17T08:41:26+00:00
 ! Expires: 1 day (update frequency)
 ||adgirl.yes24.com^
 ||ad.api.adwiser.kr^
@@ -3599,3 +3599,4 @@ tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tv
 /https:\/\/tvwiki[0-9]+\.com\/AD\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
 /https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
+map.naver.com#%#"use strict"; window.MutationObserver = new Proxy(window.MutationObserver, { construct(Target, Args) { let Stringified = Args[0].toString(); if (Stringified.includes('cs:') && Stringified.includes('gl:') && Stringified.includes('ne:') && Stringified.includes('dg:')) { return Reflect.construct(Target, [() => {}]); } return Reflect.construct(Target, Args); } });

@@ -1,9 +1,9 @@
-! Checksum: 3PaMFL0td/0wlc8lQPeBqg
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1752583822-14400.patch
+! Checksum: L81zwqJUeOt40Fl08cIYaw
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1752741980-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.22.5
-! TimeUpdated: 2025-07-15T12:45:29+00:00
+! Version: 2.0.22.6
+! TimeUpdated: 2025-07-17T08:41:26+00:00
 ! Expires: 12 hours (update frequency)
 ||adgirl.yes24.com^
 ||ad.api.adwiser.kr^
@@ -3666,3 +3666,4 @@ meeco.kr$$script[tag-content="error-report.com"]
 kio.ac$$script[tag-content="K$()"]
 ||newspic.kr^$removeparam=cp
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
+map.naver.com#%#"use strict"; window.MutationObserver = new Proxy(window.MutationObserver, { construct(Target, Args) { let Stringified = Args[0].toString(); if (Stringified.includes('cs:') && Stringified.includes('gl:') && Stringified.includes('ne:') && Stringified.includes('dg:')) { return Reflect.construct(Target, [() => {}]); } return Reflect.construct(Target, Args); } });
