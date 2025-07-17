@@ -1,9 +1,9 @@
-! Checksum: BhMRYkWXeqA+3XgKaXuiPA
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1752641310-14400.patch
+! Checksum: JFFVKBVfvLFmvMk/w23wQg
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1752727743-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.17
-! TimeUpdated: 2025-07-16T04:44:20+00:00
+! Version: 2.0.22.18
+! TimeUpdated: 2025-07-17T04:44:42+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -546,6 +546,7 @@ flashback.org###top-banner-container, #top-banner-wrapper
 flashback.org#%#//scriptlet('ubo-nostif.js', '#top-banner-container')
 flashscore.se##.boxOverContent--a, .otPlaceholder, .seoAdWrapper, .adsbackground-wrapper, .prematchOddsBonus__bonus, .prematchLink[target], .detailLeaderboardSkeleton
 flm.nu##.spons
+flygtorget.se##.CookieConsent
 flygtorget.se##header > div.mx-auto:has(img[alt$="ad logo"])
 flygtorget.se##header > div:first-child:has(img[alt*="banner"])
 fl-net.se##a[href*="casino"]:upward(p)
@@ -788,7 +789,7 @@ industritorget.se###pnlCookie, .campaign-top, .campaigns-right
 inet.se#%#//scriptlet('ubo-set-cookie.js', 'allow-marketing-cookies', '0')
 inkopsradet.se##div[id^="inkop-"]
 innebandy.se##[class*="banner-container"], .sponsorsswipeblock
-inputmag.se,ordfrontmagasin.se,milansverige.se##.oc_cb_wrapper
+inputmag.se,milansverige.se##.oc_cb_wrapper
 inredningsarkitektur.se##.article:has-text(/sponsrad artikel/i)
 inredningsvis.se##a[target="_blank"] picture
 inredningsvis.se#%#//scriptlet('ubo-set-cookie.js', 'cmplz_banner-status', 'dismissed')
@@ -836,7 +837,7 @@ karriarlakare.se##.annons-label:upward(a)
 karriarlakare.se,livinguppsala.se,battrestadsdel.se,butikstrender.se,forskning.se,vardfokus.se,varvat.se,smaspararguiden.se,sjostadsbladet.se,tidningenridsport.se,vinliv.se,raa.se,svenskfilmdatabas.se,hockeybladet.nu,frihetsnytt.se###cookie-law-info-bar
 kartor.eniro.se##.e-banner
 kb.se,dansportalen.se,hh.se,vr.se,viss.nu,skogssallskapet.se,formas.se,rf.se,naturvetarna.se#$#body { overflow:unset!important; position:unset!important; }
-kb.se,dansportalen.se,hh.se,vr.se,viss.nu,tidningencurie.se##.sv-marketplace-sitevision-cookie-consent, .sv-cookie-consent-modal, .env-modal-dialog__backdrop, .env-modal-dialog__backdrop--in
+kb.se,dansportalen.se,hh.se,vr.se,viss.nu,tidningencurie.se,skogssallskapet.se,formas.se,naturvetarna.se##.sv-marketplace-sitevision-cookie-consent, .sv-cookie-consent-modal, .env-modal-dialog__backdrop, .env-modal-dialog__backdrop--in, .env-modal-dialog--show
 kiacarclub.se##.forumlist-main-inner > div[style]
 kiacarclub.se##.sidebar-block:has-text(/annons|sponsor/i)
 killsteal.se##a[href*="kasino"]
@@ -855,7 +856,6 @@ klimatnytt.se##.tm-cookie-banner
 knulla.se,kulturama.se###cookie-popup
 kobe.se###footer #block-7
 kobe.se##.post:has(a[href*="casino"])
-kodboken.se,flygtorget.se##.CookieConsent
 kokaihop.se#$#body { overflow-y: auto !important; }
 kokaihop.se##.ads-wrapper-main, .InterstitialModal
 kokaihop.se#$?#.cookieBarWrapper { remove: true; }
@@ -894,7 +894,7 @@ lajvo.se##.postCard:has-text(/bonusar|casino|betting|spelbranschen|spelupplevels
 lakartidningen.se##.screen-sm, .screen-md
 lakartidningen.se,canariajournalen.se,familjeliv.se,brollopstorget.se,rodeo.net##.advertisement
 landleyskok.se##.inpostbanner, .banner-leaderboard
-landsbygdsnatverket.se,greppa.nu,sbf.se,skaneridsport.se,ridsport.se,biljardforbundet.se,rfsisu.se,skidor.com##.sv-cookie-consent-banner
+landsbygdsnatverket.se,greppa.nu,sbf.se,skaneridsport.se,ridsport.se,biljardforbundet.se,rfsisu.se,skidor.com,rf.se##.sv-cookie-consent-banner
 landskronadirekt.com###companies-slider, #ads-nyhetsbanner
 langd.se##.single-entry__ads
 lantbruksnytt.se##article:has(.ads_text)
@@ -1241,7 +1241,6 @@ sillyseason.se##.sidebar-widget > .textwidget strong:has-text(casino):upward(li.
 sillyseason.se##:is(.sidebar-widget, .archive-list li):has(a[href*=".se/odds/"], a[href*="/betting/"], a[href*="kasino"], a[href*="/promomen/"])
 siriusbandy.se,vetlandabk.se##[id$="-ad"]
 sistersinlaw.se###annonser
-si.se,sweden.se###cookie-manager
 sjofartstidningen.se###newsletter-overlay, #newsletter-modal
 sjofart.ax##div[id^="sjofa-"]:empty
 sjofart.ax#$#section.huvudsektion { margin-top:unset!important }
@@ -1269,7 +1268,6 @@ skippo.se##a[href*="/sponsra"]
 skogen.se##.jobslider.up
 skogsforum.se##.masthead, .col-right, a[href^="https://goo.gl/"], a[href*="//bit.ly/"], a[target="_blank"][onclick], #ap1, .modal, .modal-backdrop, div[style^="height"]:empty
 skogsindustrierna.se###cookieOverlay
-skogssallskapet.se,formas.se,rf.se,naturvetarna.se##.env-modal-dialog--show, .env-modal-dialog__backdrop
 skolporten.se##.advertMod
 skolporten.se##.article-short:has(a[href*="/sponsrat-innehall"])
 skrattnet.se##.region-sidebar-second
@@ -2091,6 +2089,7 @@ zeromagazine.nu##div[id^="ads"]
 /cookies-and-content-security-policy$script,domain=cannabisifokus.se|futsalmagasinet.se|sd.se|cora.se|tfkriminalvard.se|sportbilen.se|fisheco.se|sparadkrona.se
 /cookie-consent$script,domain=minhembio.com|sjf.se|turistmal.se
 /cookie-law-info$script,domain=startaochdriva.se|sverige.nu|conpot.se|firstclassmagazine.se|kvalitetsmagasinet.se|miljo-utveckling.se|techtidningen.se|vdtidningen.se|gullislastips.se|nyfiknainvesterare.se|discoveringtheplanet.com|bussmagasinet.se|torbjornstips.se|dinbyggare.se|aktieskolan.se|insikt24.se|sulkysport.se|bitzmagasin.se|battrestadsdel.se|automatos.se|80-talet.se|goteborgnyheter.se|elitepadel.se|vetenskaphalsa.se|rakapuckar.com|konstperspektiv.nu|56kilo.se|surveyors.se|maximumsports.se|rucksack.se|ingridochmaria.se|frihetsnytt.se|globalportalen.org|juligen.se|svenskbotanik.se|sakerhund.se|radiosol.se|norrkopingsguiden.se|mustangclubsweden.org|mallorcanyheter.com
+/cookie-manager$script,domain=si.se|sweden.se
 /cookie.min.js$domain=assistanskoll.se
 /cookie_consent.js$domain=djungeltrumman.se
 /cookie_popup$script,domain=trafikradion.se
