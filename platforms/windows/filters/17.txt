@@ -1,9 +1,9 @@
-! Checksum: dCgWTpeF46FeyIz/u057Fw
-! Diff-Path: ../patches/17/17-s-1752689600-3600.patch
+! Checksum: vWzapwGU//Ff+mCwEveUQA
+! Diff-Path: ../patches/17/17-s-1752772359-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.42
-! TimeUpdated: 2025-07-16T18:09:20+00:00
+! Version: 2.0.11.43
+! TimeUpdated: 2025-07-17T17:08:17+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21,6 +21,18 @@
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
 !
+! MyTracker
+$removeparam=mt_click_id
+$removeparam=mt_network
+$removeparam=mt_campaign
+$removeparam=mt_adset
+$removeparam=mt_creative
+$removeparam=mt_medium
+$removeparam=mt_sub1
+$removeparam=mt_sub2
+$removeparam=mt_sub3
+$removeparam=mt_sub4
+$removeparam=mt_sub5
 ! AD Counter by live-revolution.co.jp
 $removeparam=adc_publisher
 $removeparam=adc_token
@@ -1303,9 +1315,6 @@ $removeparam=recom,domain=vk.com|vk.ru
 ! vkplay.ru
 ||vkplay.ru$removeparam=_1ld
 ||vkplay.ru$removeparam=_1lp
-||vkplay.ru^$removeparam=mt_adset
-||vkplay.ru^$removeparam=mt_sub1
-||vkplay.ru^$removeparam=mt_sub2
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166050
 ||incogni.com^$removeparam=transaction_id
