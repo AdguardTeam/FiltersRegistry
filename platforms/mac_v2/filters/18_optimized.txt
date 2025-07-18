@@ -1,9 +1,9 @@
-! Checksum: fzBxiFrWT223GFtDQkpaBQ
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1752833526-3600.patch
+! Checksum: 3g4IcdUkrP66doniJgLudw
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1752845006-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.66.6
-! TimeUpdated: 2025-07-18T10:07:58+00:00
+! Version: 2.0.66.7
+! TimeUpdated: 2025-07-18T13:19:06+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1608,7 +1608,8 @@ jusbrasil.com.br##div[class^="topbar-lgpd_root__"]
 sparkasse-minden-luebbecke.de#%#//scriptlet('trusted-click-element', '.if6_eprivacy a[data-form=".eprivacy_optin_decline"]', '!cookie:ePrivacyStatus_de', '5000')
 rmf.fm#%#//scriptlet('didomi-loader')
 ups.com##.implicit-consent-message
-rule34.xxx###gdprconsent
+rule34.xxx#%#//scriptlet('set-cookie', 'gdpr', '1')
+rule34.xxx#%#//scriptlet('set-cookie', 'gdpr-consent', '1')
 mirf.ru##.popup-accept-policy
 developers.google.com#$?#devsite-cookie-notification-bar { remove: true; }
 philips.pl#%#//scriptlet('set-constant', 'philips.tracking.consent.isAllowedFunctional', 'trueFunc')

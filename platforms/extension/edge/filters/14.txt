@@ -1,9 +1,9 @@
-! Checksum: OGXCogjOWcMmCvffVw/gKA
-! Diff-Path: ../patches/14/14-s-1752840939-3600.patch
+! Checksum: FO5S5HX+mBZDcNL7aafFmA
+! Diff-Path: ../patches/14/14-s-1752844979-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.86
-! TimeUpdated: 2025-07-18T12:11:48+00:00
+! Version: 2.2.36.87
+! TimeUpdated: 2025-07-18T13:18:59+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2690,7 +2690,8 @@ jusbrasil.com.br##div[class^="topbar-lgpd_root__"]
 sparkasse-minden-luebbecke.de#%#//scriptlet('trusted-click-element', '.if6_eprivacy a[data-form=".eprivacy_optin_decline"]', '!cookie:ePrivacyStatus_de', '5000')
 rmf.fm#%#//scriptlet('didomi-loader')
 ups.com##.implicit-consent-message
-rule34.xxx###gdprconsent
+rule34.xxx#%#//scriptlet('set-cookie', 'gdpr', '1')
+rule34.xxx#%#//scriptlet('set-cookie', 'gdpr-consent', '1')
 mirf.ru##.popup-accept-policy
 developers.google.com#$?#devsite-cookie-notification-bar { remove: true; }
 philips.pl#%#//scriptlet('set-constant', 'philips.tracking.consent.isAllowedFunctional', 'trueFunc')
@@ -34677,6 +34678,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+golflink.com##.Right-Newsletter-Popup
 artnewsjapan.com#%#//scriptlet('set-cookie', 'modalClosed', 'true')
 skillbox.ru##.stk-grid:has(> div.stk-grid-col > p[class] > a[href="https://t.me/skillbox_media_code"])
 russian.rt.com##div[data-popup-max]
