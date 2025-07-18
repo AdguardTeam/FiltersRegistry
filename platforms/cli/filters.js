@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.62.56",
-			"timeUpdated": "2025-07-18T01:36:49+0000",
+			"version": "2.0.62.57",
+			"timeUpdated": "2025-07-18T03:35:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
