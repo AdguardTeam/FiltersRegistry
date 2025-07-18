@@ -1,9 +1,9 @@
-! Checksum: ly1DrIR/w5KuIM9koSOZlA
-! Diff-Path: ../patches/14/14-s-1752851514-3600.patch
+! Checksum: KkFZwIq95k/5JA69RtgwyA
+! Diff-Path: ../patches/14/14-s-1752855223-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.89
-! TimeUpdated: 2025-07-18T15:07:29+00:00
+! Version: 2.2.36.90
+! TimeUpdated: 2025-07-18T16:09:20+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2520,8 +2520,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
-mytime.de#$?#.cookie-dialog { remove: true ; }
-mytime.de#$#body { position: static !important; }
+mytime.de#%#//scriptlet('trusted-set-cookie-reload', 'consent', '%5B%22required%22%2C%22statistics%22%2C%22marketing%22%2C%22personalization%22%2C%22external%22%2C%22youtube%22%2C%22google-maps%22%2C%22bonial%22%5D')
 trt1.com.tr##div[class*="cookies-info-wrapper"]
 creator.oculus.com#%#//scriptlet('trusted-click-element', 'body.hasCookieBanner div[data-testid="cookie-policy-dialog"] button[data-testid="cookie-policy-manage-dialog-accept-button"]')
 ||frontend.public.atl-paas.net/assets/js/jsm-cookie-consent-banner.*.js$domain=atlassian.net
@@ -17194,6 +17193,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209620
+@@||mytime.de/*/cookieconsent/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209456
 hurt.com.pl#@##cookiePolicyBar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209427
@@ -58669,6 +58670,7 @@ newsee-media.com,saitama-np.co.jp,htb.co.jp,oricon.co.jp,maidonanews.jp##.uz-ny
 ||gacraft.jp^$third-party
 houyhnhnm.jp##.section-similer-post
 ! popIn recommendations
+dime.jp##.sidebarRanking
 arukikata.co.jp##.popin
 iqossan.com###custom_html-44
 spread-sports.jp###text-3

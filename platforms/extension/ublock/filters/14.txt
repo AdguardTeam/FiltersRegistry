@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: YFz0EyDEYzCjvEAJxvG8Mw
-! Diff-Path: ../patches/14/14-s-1752851497-3600.patch
+! Checksum: a2nH0W5J1iFAlmfRzwKS9Q
+! Diff-Path: ../patches/14/14-s-1752855206-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.89
-! TimeUpdated: 2025-07-18T15:07:29+00:00
+! Version: 2.2.36.90
+! TimeUpdated: 2025-07-18T16:09:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2479,8 +2479,6 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
-mytime.de#$?#.cookie-dialog { remove: true ; }
-mytime.de#$#body { position: static !important; }
 trt1.com.tr##div[class*="cookies-info-wrapper"]
 ||frontend.public.atl-paas.net/assets/js/jsm-cookie-consent-banner.*.js$domain=atlassian.net
 manus.im##+js(set-local-storage-item, cookie_opt_in, 2)
@@ -16212,6 +16210,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209620
+@@||mytime.de/*/cookieconsent/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209456
 hurt.com.pl#@##cookiePolicyBar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209427
@@ -45433,6 +45433,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+goldengoose.com##.app-mobile-banner
 pkge.net#$#.plugin-banner { display: none !important; }
 pkge.net##+js(remove-class, has-plugin-banner, body)
 keirin.netkeiba.com##.HeadBnrBox
@@ -58104,6 +58105,7 @@ newsee-media.com,saitama-np.co.jp,htb.co.jp,oricon.co.jp,maidonanews.jp##.uz-ny
 ||gacraft.jp^$third-party
 houyhnhnm.jp##.section-similer-post
 ! popIn recommendations
+dime.jp##.sidebarRanking
 arukikata.co.jp##.popin
 iqossan.com###custom_html-44
 spread-sports.jp###text-3
