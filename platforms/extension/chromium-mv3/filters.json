@@ -905,8 +905,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.73.46",
-			"timeUpdated": "2025-07-18T04:44:26+0000",
+			"version": "2.1.73.47",
+			"timeUpdated": "2025-07-18T08:40:34+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -980,8 +980,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.73.45",
-			"timeUpdated": "2025-07-18T04:44:27+0000",
+			"version": "2.1.73.46",
+			"timeUpdated": "2025-07-18T08:40:35+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1005,8 +1005,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.49",
-			"timeUpdated": "2025-07-18T00:47:44+0000",
+			"version": "2.0.25.50",
+			"timeUpdated": "2025-07-18T08:40:41+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1099,8 +1099,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.37.72",
-			"timeUpdated": "2025-07-17T12:45:29+0000",
+			"version": "2.0.37.73",
+			"timeUpdated": "2025-07-18T08:40:53+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1217,8 +1217,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.22.6",
-			"timeUpdated": "2025-07-17T08:41:26+0000",
+			"version": "2.0.22.7",
+			"timeUpdated": "2025-07-18T08:40:58+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.66.77",
-			"timeUpdated": "2025-07-18T04:45:25+0000",
+			"version": "2.0.66.78",
+			"timeUpdated": "2025-07-18T08:41:23+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1470,8 +1470,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.4.69",
-			"timeUpdated": "2025-07-17T08:41:55+0000",
+			"version": "2.0.4.70",
+			"timeUpdated": "2025-07-18T08:41:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
