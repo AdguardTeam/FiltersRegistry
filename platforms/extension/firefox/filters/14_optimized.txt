@@ -1,9 +1,9 @@
-! Checksum: GVm2I2LoYhYGTb2pM8LMYQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1752837085-3600.patch
+! Checksum: ZswXPdK1vUui4FyO/Kw0TA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1752840942-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.85
-! TimeUpdated: 2025-07-18T11:07:31+00:00
+! Version: 2.2.36.86
+! TimeUpdated: 2025-07-18T12:11:48+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -18128,7 +18128,7 @@ minval.az,rsload.net,spot.uz,securitylab.ru##.telegram-block
 atptour.com##.atp_newsletter--content
 atptour.com##._lpSurveyEmbed
 ||news.atptour.com/*/newsletter-registration-form
-investing.com#%#//scriptlet('trusted-set-cookie', 'hide_promo_strip', '1')
+investing.com###promo-strip
 fastweb.it##.tuplus-newsletter
 news247.gr##.seo_promo
 news247.gr#?#.wrapper > div.global_footer__col:has(> a.newsletter_subscribe_footer)
@@ -25372,9 +25372,10 @@ heise.de##div[data-module-name="AdModule"]
 crunchyroll.com##.banner-wrapper
 vite.dev##div.VPDocAside > a.viteconf
 hindustantimes.com###pfloan
+investing.com#?#div[class^="article_"] > div > div.text-xs:contains(parti reklam)
 investing.com##div.preloaded_lightbox[aria-label="Modal Overlay Box"]
 investing.com##div[class*="promo-strip_proPromo"]
-investing.com#$#body { overflow: auto !important; }
+investing.com#$#body { overflow: auto !important; touch-action: auto !important; }
 investing.com#$#.relative ~ div[class^="fixed bottom-0 z-50"] { display: none !important; }
 investing.com#$#.relative ~ div[class^="overlay_overlay__"] { display: none !important; }
 buhgalteria.ru###article-post > div.text:has(> div.mobileimg > a[href="https://www.buhgalteria.ru/godovoy-otchet/"])
