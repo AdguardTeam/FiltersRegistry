@@ -1,9 +1,9 @@
-! Checksum: phLhbEiT+5Jtol/cuj5Ypg
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1752806960-3600.patch
+! Checksum: 5g8L3Wq+0Lc9IFmzaPczUQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1752822848-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.81
-! TimeUpdated: 2025-07-18T02:45:23+00:00
+! Version: 2.2.36.82
+! TimeUpdated: 2025-07-18T07:10:14+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -12789,6 +12789,7 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com#@#.ad
 web.de,gmx.net,gmx.at,gmx.ch,gmx.com#@#.ad-container
 @@||united.uimserv.net/*tagid$domain=web.de|gmx.net|gmx.at|gmx.ch|gmx.com
 !#safari_cb_affinity
+map.naver.com#%#"use strict"; window.MutationObserver = new Proxy(window.MutationObserver, { construct(Target, Args) { let Stringified = Args[0].toString(); if (Stringified.includes('cs:') && Stringified.includes('gl:') && Stringified.includes('ne:') && Stringified.includes('dg:')) { return Reflect.construct(Target, [() => {}]); } return Reflect.construct(Target, Args); } });
 chzzk.naver.com#@#.banner_ad_wrapper
 chzzk.naver.com#@#.banner_ad
 chzzk.naver.com#%#"use strict"; window.Function.prototype.apply = new Proxy(window.Function.prototype.apply, { apply(Target, ThisArg, Args) { let FunctionContext = ThisArg.toString(); if (FunctionContext.includes('veta') && FunctionContext.includes('http') && FunctionContext.includes('/gfp/') && FunctionContext.includes('().mark((')) { return Reflect.apply(Target, async () => false, []); } return Reflect.apply(Target, ThisArg, Args); } });

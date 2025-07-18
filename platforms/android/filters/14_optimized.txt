@@ -1,9 +1,9 @@
-! Checksum: USi/gtUO+lbIxdHhUy8TLA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1752806946-3600.patch
+! Checksum: vpwkzzKGumdBTdbGeZN/7g
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1752822838-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.36.81
-! TimeUpdated: 2025-07-18T02:45:23+00:00
+! Version: 2.2.36.82
+! TimeUpdated: 2025-07-18T07:10:14+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -12870,6 +12870,7 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com#@#.ad
 web.de,gmx.net,gmx.at,gmx.ch,gmx.com#@#.ad-container
 @@||united.uimserv.net/*tagid$domain=web.de|gmx.net|gmx.at|gmx.ch|gmx.com
 !#safari_cb_affinity
+map.naver.com#%#"use strict"; window.MutationObserver = new Proxy(window.MutationObserver, { construct(Target, Args) { let Stringified = Args[0].toString(); if (Stringified.includes('cs:') && Stringified.includes('gl:') && Stringified.includes('ne:') && Stringified.includes('dg:')) { return Reflect.construct(Target, [() => {}]); } return Reflect.construct(Target, Args); } });
 chzzk.naver.com#@#.banner_ad_wrapper
 chzzk.naver.com#@#.banner_ad
 chzzk.naver.com#%#"use strict"; window.Function.prototype.apply = new Proxy(window.Function.prototype.apply, { apply(Target, ThisArg, Args) { let FunctionContext = ThisArg.toString(); if (FunctionContext.includes('veta') && FunctionContext.includes('http') && FunctionContext.includes('/gfp/') && FunctionContext.includes('().mark((')) { return Reflect.apply(Target, async () => false, []); } return Reflect.apply(Target, ThisArg, Args); } });
@@ -23144,6 +23145,8 @@ honeysanime.com#$##wrap-app-notice { display: none !important; }
 !+ NOT_OPTIMIZED
 m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
+pkge.net#$#.plugin-banner { display: none !important; }
+pkge.net#%#//scriptlet('remove-class', 'has-plugin-banner', 'body')
 keirin.netkeiba.com##.HeadBnrBox
 vivi.tv##.c-addHome
 fishingjapan.jp##.common__adv_full
