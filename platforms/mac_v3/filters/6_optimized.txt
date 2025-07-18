@@ -1,9 +1,9 @@
-! Checksum: jgZ+Otir2hUZMBYuiyTNIA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1752806995-3600.patch
+! Checksum: fCuKnV6bHkYd5q4IM83RNQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1752851514-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.48.48
-! TimeUpdated: 2025-07-17T11:07:02+00:00
+! Version: 2.0.48.49
+! TimeUpdated: 2025-07-18T15:07:18+00:00
 ! Expires: 12 hours (update frequency)
 ||ad.dl.volksstimme.de^
 ||addefend-platform.com^
@@ -300,7 +300,7 @@ t-online.de#@#div[class^="Tsshopst"]
 essen-und-trinken.de#%#//scriptlet('prevent-setTimeout', 's.call(null)', '10')
 /^https:\/\/www\.essen-und-trinken\.de\/[a-z]{10,}\.js$/$script,~third-party,match-case
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
-tarnkappe.info#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'adblock-check-overlay')
+tarnkappe.info#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'checkingOverlay')
 karoqforum.de#%#//scriptlet('prevent-eval-if', 'adsbygoogle.js')
 /js/wb_ban.js$domain=cool-web.de|fun-seiten.de|web-spiele.de|gps-cache.de|photo-alben.de|wetter-vorhersage.de|coolsoftware.de|kryptografie.de
 @@/js/adbl_checkurl.js$domain=cool-web.de|fun-seiten.de|web-spiele.de|gps-cache.de|photo-alben.de|wetter-vorhersage.de|coolsoftware.de|kryptografie.de
@@ -1547,6 +1547,7 @@ mein-mmo.de##div[id^="dfp-"]
 ||adnxs-simple.com^$domain=bild.de,important
 spiegel.de,manager-magazin.de##section[data-area="block>adblock"]
 watson.ch##.watson-ad
+winfuture.de##a[href^="/news"][href*="123690"]
 winfuture.de##.hp_latest > div[style="display: none !important;"] + .clearfix
 nn.de##.modul--newsticker-more
 nn.de,nordbayern.de##div[style="min-height:290px"]:not([class]):not([id])
