@@ -2,58 +2,6 @@
 @@://ads.$popup,to=ads.idn.media|ads.idntimes.com|ads.kgmedia.id|ads.kontan.co.id|ads.panindai-ichilife.co.id
 ! @@://ads.$popup,to=ads.id is excluded by "://ads.$popup" in exclusions.txt
 @@://ads.$popup,to=ads.id
-! Rule "/^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/(?:1|4)\/\d{7}/$doc,frame,popup" converted to: "/^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/(?:1|4)\/\d{7}/$document,subdocument,popup"
-/^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/(?:1|4)\/\d{7}/$doc,frame,popup
-! Rule "/\/assets\/jquery\/jquery-\d\.\d\.(?:\d\.)?min\.js\?(?:v=2)?&?type=(?:adult|mainstream)$/$1p,script" converted to: "/\/assets\/jquery\/jquery-\d\.\d\.(?:\d\.)?min\.js\?(?:v=2)?&?type=(?:adult|mainstream)$/$~third-party,script"
-/\/assets\/jquery\/jquery-\d\.\d\.(?:\d\.)?min\.js\?(?:v=2)?&?type=(?:adult|mainstream)$/$1p,script
-! Rule "/^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-z]{2}\/){2,3}[0-9a-f]{32}\.js/$3p,script,xhr,redirect=noop.js,to=com" converted to: "/^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-z]{2}\/){2,3}[0-9a-f]{32}\.js/$third-party,script,xmlhttprequest,redirect=noopjs,to=com"
-/^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-z]{2}\/){2,3}[0-9a-f]{32}\.js/$3p,script,xhr,redirect=noop.js,to=com
-! Rule "/\.\d{1,2}\.[0-9a-f]{32}\.js$/$3p,script,from=txxx.com,to=js.txxx.tube" converted to: "/\.\d{1,2}\.[0-9a-f]{32}\.js$/$third-party,script,from=txxx.com,to=js.txxx.tube"
-/\.\d{1,2}\.[0-9a-f]{32}\.js$/$3p,script,from=txxx.com,to=js.txxx.tube
-! Rule "/\/[0-9a-f]{32}\.js\b/$3p,script,from=bembed.net|embedv.net|fslinks.org|listeamed.net|moflix-stream.*|v6embed.xyz|vgplayer.xyz|vid-guard.com,to=com" converted to: "/\/[0-9a-f]{32}\.js\b/$third-party,script,from=bembed.net|embedv.net|fslinks.org|listeamed.net|moflix-stream.*|v6embed.xyz|vgplayer.xyz|vid-guard.com,to=com"
-/\/[0-9a-f]{32}\.js\b/$3p,script,from=bembed.net|embedv.net|fslinks.org|listeamed.net|moflix-stream.*|v6embed.xyz|vgplayer.xyz|vid-guard.com,to=com
-! Rule "/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$3p,script,to=com" converted to: "/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$third-party,script,to=com"
-/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$3p,script,to=com
-! Rule "/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\/\d{6}\b/$3p,match-case,xhr,to=com" converted to: "/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\/\d{6}\b/$third-party,match-case,xmlhttprequest,to=com"
-/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\/\d{6}\b/$3p,match-case,xhr,to=com
-! Rule "/^https?:\/\/[0-9a-z]{13,14}\.cloudfront\.net\/\?[a-z]{3,5}=\d{6,7}$/$3p,script,xhr" converted to: "/^https?:\/\/[0-9a-z]{13,14}\.cloudfront\.net\/\?[a-z]{3,5}=\d{6,7}$/$third-party,script,xmlhttprequest"
-/^https?:\/\/[0-9a-z]{13,14}\.cloudfront\.net\/\?[a-z]{3,5}=\d{6,7}$/$3p,script,xhr
-! Rule "/^https?:\/\/[0-9a-f]{50,}\.s3\.amazonaws\.com\/[0-9a-f]{10}$/$3p,xhr" converted to: "/^https?:\/\/[0-9a-f]{50,}\.s3\.amazonaws\.com\/[0-9a-f]{10}$/$third-party,xmlhttprequest"
-/^https?:\/\/[0-9a-f]{50,}\.s3\.amazonaws\.com\/[0-9a-f]{10}$/$3p,xhr
-! Rule "/^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$3p,match-case,xhr" converted to: "/^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$third-party,match-case,xmlhttprequest"
-/^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$3p,match-case,xhr
-! Rule "/^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$third-party,subdocument,match-case"
-/^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.top\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr" converted to: "/^https?:\/\/[a-z]{8,15}\.top\/(?!api|available|team)[a-z]{4,}\.json$/$third-party,match-case,xmlhttprequest"
-/^https?:\/\/[a-z]{8,15}\.top\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr
-! Rule "/^https?:\/\/[a-z]{8,15}\.top\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,css,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.top\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$third-party,stylesheet,match-case"
-/^https?:\/\/[a-z]{8,15}\.top\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,css,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.top\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,image,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.top\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$third-party,image,match-case"
-/^https?:\/\/[a-z]{8,15}\.top\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,image,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$third-party,subdocument,match-case"
-/^https?:\/\/[a-z]{8,15}\.xyz(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz\/(?!api|available|team)[a-z]{4,}\.json$/$third-party,match-case,xmlhttprequest"
-/^https?:\/\/[a-z]{8,15}\.xyz\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,css,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$third-party,stylesheet,match-case"
-/^https?:\/\/[a-z]{8,15}\.xyz\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,css,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,image,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$third-party,image,match-case"
-/^https?:\/\/[a-z]{8,15}\.xyz\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,image,match-case
-! Rule "/^https?:\/\/[-a-z]{6,}\.(?:com?|info|pro|xyz)\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$3p,match-case,script,xhr,to=co|com|info|pro|xyz" converted to: "/^https?:\/\/[-a-z]{6,}\.(?:com?|info|pro|xyz)\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$third-party,match-case,script,xmlhttprequest,to=co|com|info|pro|xyz"
-/^https?:\/\/[-a-z]{6,}\.(?:com?|info|pro|xyz)\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$3p,match-case,script,xhr,to=co|com|info|pro|xyz
-! Rule "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$3p,script,to=com|net" converted to: "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$third-party,script,to=com|net"
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$3p,script,to=com|net
-! Rule "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$3p,script,to=com|net" converted to: "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$third-party,script,to=com|net"
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$3p,script,to=com|net
-! Rule "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$3p,xhr,to=com|net" converted to: "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$third-party,xmlhttprequest,to=com|net"
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$3p,xhr,to=com|net
-! Rule "/^https?:\/\/[a-z0-9]{5,15}\.(?:com|net)\/tag\.min\.js$/$3p,script,redirect=noopjs,to=com|net" converted to: "/^https?:\/\/[a-z0-9]{5,15}\.(?:com|net)\/tag\.min\.js$/$third-party,script,redirect=noopjs,to=com|net"
-/^https?:\/\/[a-z0-9]{5,15}\.(?:com|net)\/tag\.min\.js$/$3p,script,redirect=noopjs,to=com|net
-! Rule "/^https?:\/\/[a-z0-9]{5,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$3p,script,xhr" converted to: "/^https?:\/\/[a-z0-9]{5,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$third-party,script,xmlhttprequest"
-/^https?:\/\/[a-z0-9]{5,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$3p,script,xhr
-! Rule "/^https?:\/\/[a-z]{8,15}\.com\/$/$3p,header=access-control-expose-headers:/x-directionpartner-id/,xhr,to=com,method=head" converted to: "/^https?:\/\/[a-z]{8,15}\.com\/$/$third-party,header=access-control-expose-headers:/x-directionpartner-id/,xmlhttprequest,to=com,method=head"
-/^https?:\/\/[a-z]{8,15}\.com\/$/$3p,header=access-control-expose-headers:/x-directionpartner-id/,xhr,to=com,method=head
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz\/$/$3p,header=access-control-expose-headers:/x-directionpartner-id/,xhr,to=xyz,method=head" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz\/$/$third-party,header=access-control-expose-headers:/x-directionpartner-id/,xmlhttprequest,to=xyz,method=head"
-/^https?:\/\/[a-z]{8,15}\.xyz\/$/$3p,header=access-control-expose-headers:/x-directionpartner-id/,xhr,to=xyz,method=head
 ! Rule "||vakawi.xyz^$3p,script" converted to: "||vakawi.xyz^$third-party,script"
 ||vakawi.xyz^$3p,script
 ! Rule "||ads.sorot.co^$1p" converted to: "||ads.sorot.co^$~third-party"
@@ -1026,10 +974,6 @@ azhan.co,mediahiburan.my##+js(acis, disableSelection, reEnable)
 mediahiburan.my##+js(acis, document.oncontextmenu)
 ! Rule "ohmymedia.cc###mvp-site-main:style(margin-top: 0!important;)" converted to: "ohmymedia.cc#$##mvp-site-main { margin-top: 0!important; }"
 ohmymedia.cc###mvp-site-main:style(margin-top: 0!important;)
-! Error: "Unknown modifier: from=txxx.com" in the rule: "/\.\d{1,2}\.[0-9a-f]{32}\.js$/$third-party,script,from=txxx.com,to=js.txxx.tube"
-/\.\d{1,2}\.[0-9a-f]{32}\.js$/$third-party,script,from=txxx.com,to=js.txxx.tube
-! Error: "Unknown modifier: from=bembed.net|embedv.net|fslinks.org|listeamed.net|moflix-stream.*|v6embed.xyz|vgplayer.xyz|vid-guard.com" in the rule: "/\/[0-9a-f]{32}\.js\b/$third-party,script,from=bembed.net|embedv.net|fslinks.org|listeamed.net|moflix-stream.*|v6embed.xyz|vgplayer.xyz|vid-guard.com,to=com"
-/\/[0-9a-f]{32}\.js\b/$third-party,script,from=bembed.net|embedv.net|fslinks.org|listeamed.net|moflix-stream.*|v6embed.xyz|vgplayer.xyz|vid-guard.com,to=com
 ! Error: Invalid selector: '+js(prevent-fetch, pagead2.googlesyndication.com)' -- '+js(prevent-fetch, pagead2.googlesyndication.com)' is not a valid selector in rule:
 0.0.realodix##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! Error: "Unknown pseudo-class ':remove-class' in selector: 'html:remove-class(cdk-global-scrollblock)'" in the rule: "duniagames.co.id##html:remove-class(cdk-global-scrollblock)"
