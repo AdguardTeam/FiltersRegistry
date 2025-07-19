@@ -1,9 +1,9 @@
-! Checksum: ljS6mexEmG5nl8gog2nbnA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1752886357-14400.patch
+! Checksum: BG8cs6f8RLzHEue2CJ2AKQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1752900402-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.44.93
-! TimeUpdated: 2025-07-19T00:47:48+00:00
+! Version: 2.1.44.94
+! TimeUpdated: 2025-07-19T04:41:40+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -139,7 +139,6 @@
 /ya-share.js
 _footer_twitter.
 _social-bar/
-_social_footer_
 /jquery.bpopup.$script,domain=telechargerunevideo.com
 ###FollowUs
 ###Followers1
@@ -152,6 +151,7 @@ _social_footer_
 ###adbl-social-icons
 ###addThis
 ###addsSocial
+###amp-social-share
 ###article-footer-social-share
 ###article-header-share
 ###article-social
@@ -259,8 +259,10 @@ _social_footer_
 ###foot-social
 ###footSocial
 ###footer-facebook
+###footer-facebook-icon
 ###footer-fb
 ###footer-follow-us
+###footer-instagram-icon
 ###footer-share
 ###footer-social
 ###footer-social-link
@@ -444,7 +446,6 @@ _social_footer_
 ###share_icons
 ###share_linkedin
 ###share_links
-###share_social_sidebar
 ###share_telegram
 ###share_this
 ###share_to
@@ -513,6 +514,7 @@ _social_footer_
 ###social-facebook
 ###social-fb
 ###social-float
+###social-floating
 ###social-follow
 ###social-foot
 ###social-footer
@@ -888,7 +890,6 @@ _social_footer_
 ##.article__sharebar
 ##.article__sharing
 ##.article__social
-##.article__social-icons
 ##.article__social-links
 ##.article__socials
 ##.article_bottom_share
@@ -1101,6 +1102,7 @@ _social_footer_
 ##.custom-social-share
 ##.d-share
 ##.d3-o-share-bar
+##.dark-social
 ##.dashicons-facebook
 ##.dashicons-twitter
 ##.ddc-social-share
@@ -2004,6 +2006,7 @@ _social_footer_
 ##.page-share-button
 ##.page-social
 ##.page_share
+##.pane-share-widgets
 ##.pane-social-links
 ##.panel-share-networks
 ##.par-footer-social
@@ -2160,7 +2163,6 @@ _social_footer_
 ##.sdc-site-share
 ##.search-social
 ##.secondaryNav-social
-##.section-follow
 ##.section-post-intro-share
 ##.section-social
 ##.section_footer-social-links
@@ -2190,6 +2192,7 @@ _social_footer_
 ##.share-additional
 ##.share-addthis
 ##.share-alt
+##.share-and-comments
 ##.share-area
 ##.share-art
 ##.share-article
@@ -2217,6 +2220,7 @@ _social_footer_
 ##.share-btns
 ##.share-button--email
 ##.share-button--facebook
+##.share-button--linkedin
 ##.share-button--twitter
 ##.share-button-group
 ##.share-button-list
@@ -2335,6 +2339,7 @@ _social_footer_
 ##.share-social
 ##.share-social-bottom
 ##.share-social-box
+##.share-social-icon
 ##.share-social-link
 ##.share-social-links
 ##.share-social-list
@@ -2432,7 +2437,6 @@ _social_footer_
 ##.shareTrig
 ##.shareTwitter
 ##.shareVideo
-##.shareWa
 ##.shareWidget
 ##.shareWrap
 ##.share__button
@@ -2453,7 +2457,6 @@ _social_footer_
 ##.share_area_item
 ##.share_article
 ##.share_bar
-##.share_bar_wrapper
 ##.share_blk
 ##.share_block
 ##.share_bottom
@@ -2884,6 +2887,7 @@ _social_footer_
 ##.social-print
 ##.social-profile-icons
 ##.social-profiles
+##.social-profiles-list
 ##.social-profiles-nav
 ##.social-profiles-widget
 ##.social-promo
@@ -3117,7 +3121,6 @@ _social_footer_
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
-##.socialnetworkbox
 ##.socialno
 ##.socialplugins
 ##.socialright
@@ -3180,6 +3183,7 @@ _social_footer_
 ##.sticky-social-buttons
 ##.sticky-social-share
 ##.sticky_social
+##.stickyshare
 ##.stickysocial
 ##.stm-socials
 ##.stm-socials__icon
@@ -3962,8 +3966,6 @@ support.microsoft.com##.ocArticleFooterShareContainer
 support.microsoft.com##.ocArticleFooterShareLinksWrapper
 omgubuntu.co.uk##.omg-socials
 latimes.com##.page-actions
-hackread.com##.pk-share-buttons-wrap
-hackread.com##.pk-social-links-wrap
 theroar.com.au##.pm-share-horizontal
 getcomics.org##.post-footer-shr
 androidheadlines.com,bukvy.org,digitalinformationworld.com,douglasnow.com,earthsky.org,gidhaur.com,san.com,watchinamerica.com##.post-share
@@ -4052,6 +4054,7 @@ iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
 arnnet.com.au,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
+rappler.com##.social-share__actions
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
 mmorpg.com##.social-web
@@ -4122,6 +4125,7 @@ comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-
 theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
 aspicyperspective.com,budgetbytes.com,butterwithasideofbread.com,downshiftology.com,handletheheat.com,therecipecritic.com##.wprm-call-to-action
+news.am##.youtube-subscriber
 firstpost.com##.yt-ch
 wdwmagic.com##.zocial
 sfgate.com##[aria-label="Share from Email"]
@@ -4307,6 +4311,7 @@ dr.dk##.dre-sticky-share-band
 telegraaf.nl##.SocialButtons
 nu.nl##.app-follow-us
 bnnvara.nl##.bxCyLF
+geenstijl.nl##.h-11.p-3.border-l.border-slate-300.transition-colors.fill-slate-300.hover\:fill-brand.dark\:fill-black.dark\:hover\:fill-brand.dark\:border-black
 bnnvara.nl##.kuTaUW
 sporza.be##[class*="_share_"]
 rtl.nl##[data-testid="social-links-container"]
@@ -4321,7 +4326,6 @@ centrometeoitaliano.it,leggo.it###box-social
 navigaweb.net###like
 navigaweb.net###social3
 dissapore.com##._social-share
-domusweb.it##.c-sidebar--social
 calciomercato.com##.cm-share
 open.online##.container-meta-social
 iodonna.it##.eltdf-woo-social-share-holder
@@ -4460,8 +4464,6 @@ de10.com.mx,dedinero.com.mx,elgrafico.mx##.botonGoogleNews
 biobiochile.cl##.botones-google-news-wsp
 mvsnoticias.com,radioformula.com.mx,sipse.com,sumedico.com,tribuna.com.mx##.btn-seguinos-gnews
 elplural.com##.btn-whatsapp
-antojasai.com##.btn.bg-slate-50.w-12.h-12.rounded-full.text-xl.hover\:bg-slate-100.hover\:text-slate-800.dark\:bg-slate-800.dark\:hover\:bg-slate-700.dark\:hover\:text-slate-300
-antojasai.com##.btn.bg-slate-50.w-8.h-8.rounded-full.hover\:bg-slate-100.hover\:text-slate-800.dark\:bg-slate-800.dark\:hover\:bg-slate-700.dark\:hover\:text-slate-300
 eleconomista.com.mx##.c-detail__author__share
 cmmedia.es,diariodecastillayleon.es,diariodeleon.es,diariodevalladolid.es,elcorreodeburgos.com,eldebate.com,eleconomista.com.mx,heraldodiariodesoria.es,huffingtonpost.es,listindiario.com,segre.com##.c-detail__share
 eleconomista.com.mx##.c-detail__toolbar__share
