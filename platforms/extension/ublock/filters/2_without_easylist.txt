@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: i/E6MQ48rn+woGSzTPrvUg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1753085697-3600.patch
+! Checksum: JMJRw3XZSToXfTmfhz0I/w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1753089322-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.97.75
-! TimeUpdated: 2025-07-21T08:10:26+00:00
+! Version: 2.3.97.76
+! TimeUpdated: 2025-07-21T09:10:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10102,6 +10102,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209773
+easyocrconverter.com##+js(no-fetch-if, www3.doubleclick.net)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209681
 tcheats.com##+js(abort-current-script, $, /checkAds|AdBlock/)
 tcheats.com#$#ins.adsbygoogle[data-ad-slot] { position: absolute !important; left: -3000px !important; }
@@ -35209,6 +35211,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+manga-hen.com##.place-content-center
+pantieshub.net##+js(addEventListener-defuser, play, openPopunder)
 ||reebr.com^$subdocument,redirect=noop.html,domain=xrule34.com
 xrule34.com##.region-content > .block:has(> .content:only-child > iframe[src^="https://go.reebr.com/"])
 mitaku.net###secondary > .widget_media_image > .wp-block-image > a:not([href*="mitaku.net"]) > img
