@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +5+z69f4WZ9aEvA7D+zdgQ
-! Diff-Path: ../patches/1/1-s-1753092771-3600.patch
+! Checksum: crWOMY1kmK+/zP18Cm6aZw
+! Diff-Path: ../patches/1/1-s-1753110720-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.0.74
-! TimeUpdated: 2025-07-21T10:07:56+00:00
+! Version: 2.1.0.75
+! TimeUpdated: 2025-07-21T15:07:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3828,7 +3828,7 @@ positiverecords.ru#@#.ad-google
 ! pikabu.ru
 pikabu.ru##+js(abort-on-property-read, Object.prototype.shouldShowStickyAd)
 pikabu.ru##+js(abort-on-property-write, Ya)
-pikabu.ru##+js(remove-node-text, script, /xhr\.setRequestHeader\(h[a-zA-Z0-9]?a?_?[a-zA-Z0-9]{1\,3}[a-zA-Z0-9]?[a-zA-Z0-9]?[rp]/)
+pikabu.ru##+js(remove-node-text, script, /xhr\.setRequestHeader\(h[a-zA-Z0-9]?a?[a-zA-Z0-9]{1\,3}[a-zA-Z0-9]?[a-zA-Z0-9_]?[rp]/)
 ! sports.ru
 sports.ru##+js(json-prune, direct rtbAuctionInfo)
 sports.ru##+js(set-constant, Ya.adfoxCode.create, noopFunc)
@@ -6846,6 +6846,7 @@ glavbukh.ru,chehov-vid.ru,161.ru,prufy.ru,ysia.ru,5koleso.ru,ngs.ru,i38.ru,chita
 !
 !
 !
+avtodor-tr.ru##+js(no-setTimeout-if, modal_for_pages_)
 fontanka.ru##a[href^="https://www.fontanka.ru/longreads/75736061/"]
 bes.media##div[class^="ad-wrapper"]
 bes.media##.adArticleSection

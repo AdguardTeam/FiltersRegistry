@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.0.74",
-			"timeUpdated": "2025-07-21T10:07:56+0000",
+			"version": "2.1.0.75",
+			"timeUpdated": "2025-07-21T15:07:33+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.97.81",
-			"timeUpdated": "2025-07-21T14:08:01+0000",
+			"version": "2.3.97.82",
+			"timeUpdated": "2025-07-21T15:07:42+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.17.39",
-			"timeUpdated": "2025-07-21T12:12:00+0000",
+			"version": "2.1.17.40",
+			"timeUpdated": "2025-07-21T15:07:55+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.37.5",
-			"timeUpdated": "2025-07-21T13:19:24+0000",
+			"version": "2.2.37.6",
+			"timeUpdated": "2025-07-21T15:08:08+0000",
 			"languages": []
 		},
 		{
@@ -263,8 +263,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/16.txt",
-			"version": "2.0.53.50",
-			"timeUpdated": "2025-07-21T02:49:57+0000",
+			"version": "2.0.53.51",
+			"timeUpdated": "2025-07-21T15:08:11+0000",
 			"languages": [
 				"fr"
 			]
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.58.95",
-			"timeUpdated": "2025-07-21T13:19:31+0000",
+			"version": "2.0.58.96",
+			"timeUpdated": "2025-07-21T15:08:13+0000",
 			"languages": []
 		},
 		{
@@ -1120,8 +1120,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.40.79",
-			"timeUpdated": "2025-07-21T10:08:58+0000",
+			"version": "2.1.40.80",
+			"timeUpdated": "2025-07-21T15:08:16+0000",
 			"languages": [
 				"zh"
 			]
