@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 8GH7qDNVib4+dwb9Mo61fA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1753066434-3600.patch
+! Checksum: 8F2nwF4VXUo4TJeTdvtc+g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1753069293-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.97.69
-! TimeUpdated: 2025-07-21T02:49:31+00:00
+! Version: 2.3.97.70
+! TimeUpdated: 2025-07-21T03:36:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||lanky-bar.com^
 ||montmena.top^
 ||redetaailshilet.com^
 ||usheebainaut.com^
@@ -10101,6 +10102,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209734
+chaturflix.cam##+js(no-setTimeout-if, googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209631
 hacksnation.com#@#.ad-unit:not(.textads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209668
@@ -30682,7 +30685,7 @@ cutynow.com,exnion.com,vikingf1le.us.to,exe-urls.com,evernia.site,worldsports.me
 !
 ! ad script wpadmngr.com
 mmsbee42.com,mmsmasala.com,watchfun.my,mangaforfree.com,pornhoarder.tv,krx18.com,khatrimazafull.*,javsek.net,rahim-soft.com,dodz.pro,y2tube.pro,doooood.co,nuuuppp.*,fuxnxx.com,pornxp.org,pornxp.com,sukkisukki.com,hitomi.la,amateurblog.tv,idolsblog.tv,latinblog.tv,silverblog.tv,xblog.tv,ilikecomix.com,edoujin.net,porncomixonline.net,monoschinos2.com,idolsblog.tv,zetporn.com,javtiful.com,torlock.com,javhub.net,kisscos.net,javfor.tv,highporn.net,kissanimex.com##+js(abort-current-script, EventTarget.prototype.addEventListener, 0x)
-omegascans.org##+js(abort-current-script, Date.prototype.toISOString, wpadmngr.com)
+chaturflix.cam,omegascans.org##+js(abort-current-script, Date.prototype.toISOString, wpadmngr.com)
 !
 ! __aaZoneid
 vide0.net,do7go.com,dooodster.com,ds2play.com,doods.pro,dooood.com,xxxtik.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws,forums.socialmediagirls.com,veporno.net,javhd.icu##+js(abort-on-property-read, __aaZoneid)
@@ -35203,6 +35206,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+||flixbaba.net/utilsminhill.js
+euobserver.com#$#.mxeqxb { display: none !important; }
+euobserver.com#$#._11d7t56 { display: none !important; }
+euobserver.com#$##root > div > div[style^="padding-top:"] > div[style*="top:"] { top: 0 !important; }
 abstream.to##+js(window.open-defuser)
 ||abstream.to/fidel.js^
 golflink.com##div[data-targeting]
