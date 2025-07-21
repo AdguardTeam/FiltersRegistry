@@ -2,72 +2,20 @@
 @@://ads.$popup,to=ads.idn.media|ads.idntimes.com|ads.kgmedia.id|ads.kontan.co.id|ads.panindai-ichilife.co.id
 ! @@://ads.$popup,to=ads.id is excluded by "://ads.$popup" in exclusions.txt
 @@://ads.$popup,to=ads.id
-! Rule "/^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/(?:1|4)\/\d{7}/$doc,frame,popup" converted to: "/^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/(?:1|4)\/\d{7}/$document,subdocument,popup"
-/^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/(?:1|4)\/\d{7}/$doc,frame,popup
-! Rule "/\/assets\/jquery\/jquery-\d\.\d\.(?:\d\.)?min\.js\?(?:v=2)?&?type=(?:adult|mainstream)$/$1p,script" converted to: "/\/assets\/jquery\/jquery-\d\.\d\.(?:\d\.)?min\.js\?(?:v=2)?&?type=(?:adult|mainstream)$/$~third-party,script"
-/\/assets\/jquery\/jquery-\d\.\d\.(?:\d\.)?min\.js\?(?:v=2)?&?type=(?:adult|mainstream)$/$1p,script
-! Rule "/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$3p,script,to=com" converted to: "/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$third-party,script,to=com"
-/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\.js$/$3p,script,to=com
-! Rule "/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\/\d{6}\b/$3p,match-case,xhr,to=com" converted to: "/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\/\d{6}\b/$third-party,match-case,xmlhttprequest,to=com"
-/^https:\/\/[0-9a-f]{10}\.[0-9a-f]{10}\.com\/[0-9a-f]{32}\/\d{6}\b/$3p,match-case,xhr,to=com
-! Rule "/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$3p,match-case,script,xhr,to=top" converted to: "/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$third-party,match-case,script,xmlhttprequest,to=top"
-/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[a-z]{10,16}\/[a-z]{5,6}(?:\?d=\d)?$/$3p,match-case,script,xhr,to=top
-! Rule "/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[A-Za-z]{10,16}\/[A-Za-z]{5,6}$/$3p,popup,to=top" converted to: "/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[A-Za-z]{10,16}\/[A-Za-z]{5,6}$/$third-party,popup,to=top"
-/^https:\/\/[a-z]{3,5}\.[a-z]{10,14}\.top\/[A-Za-z]{10,16}\/[A-Za-z]{5,6}$/$3p,popup,to=top
-! Rule "/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$3p,match-case,script,redirect=noop.js" converted to: "/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$third-party,match-case,script,redirect=noopjs"
-/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$3p,match-case,script,redirect=noop.js
-! Rule "/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.com\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$3p,frame,match-case,popup,xhr,to=com" converted to: "/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.com\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$third-party,subdocument,match-case,popup,xmlhttprequest,to=com"
-/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.com\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$3p,frame,match-case,popup,xhr,to=com
-! Rule "/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.website\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$3p,frame,match-case,popup,xhr,to=website" converted to: "/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.website\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$third-party,subdocument,match-case,popup,xmlhttprequest,to=website"
-/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.website\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$3p,frame,match-case,popup,xhr,to=website
-! Rule "/^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-z]{2}\/){2,3}[0-9a-f]{32}\.js/$3p,script,xhr,redirect=noop.js,to=com" converted to: "/^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-z]{2}\/){2,3}[0-9a-f]{32}\.js/$third-party,script,xmlhttprequest,redirect=noopjs,to=com"
-/^https?:\/\/(?:www\.|[0-9a-z]{7,10}\.)?[-0-9a-z]{5,}\.com\/\/?(?:[0-9a-z]{2}\/){2,3}[0-9a-f]{32}\.js/$3p,script,xhr,redirect=noop.js,to=com
-! Rule "/^https?:\/\/[0-9a-z]{13,14}\.cloudfront\.net\/\?[a-z]{3,5}=\d{6,7}$/$3p,script,xhr" converted to: "/^https?:\/\/[0-9a-z]{13,14}\.cloudfront\.net\/\?[a-z]{3,5}=\d{6,7}$/$third-party,script,xmlhttprequest"
-/^https?:\/\/[0-9a-z]{13,14}\.cloudfront\.net\/\?[a-z]{3,5}=\d{6,7}$/$3p,script,xhr
-! Rule "/^https?:\/\/[0-9a-f]{50,}\.s3\.amazonaws\.com\/[0-9a-f]{10}$/$3p,xhr" converted to: "/^https?:\/\/[0-9a-f]{50,}\.s3\.amazonaws\.com\/[0-9a-f]{10}$/$third-party,xmlhttprequest"
-/^https?:\/\/[0-9a-f]{50,}\.s3\.amazonaws\.com\/[0-9a-f]{10}$/$3p,xhr
-! Rule "/^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$3p,xhr" converted to: "/^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$third-party,xmlhttprequest"
-/^https?:\/\/s3\.us-east-1\.amazonaws\.com\/[0-9a-f]{50,}\/[0-9a-f]{10}$/$3p,xhr
-! Rule "/^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$third-party,subdocument,match-case"
-/^https?:\/\/[a-z]{8,15}\.top(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.top\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr" converted to: "/^https?:\/\/[a-z]{8,15}\.top\/(?!api|available|team)[a-z]{4,}\.json$/$third-party,match-case,xmlhttprequest"
-/^https?:\/\/[a-z]{8,15}\.top\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr
-! Rule "/^https?:\/\/[a-z]{8,15}\.top\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,css,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.top\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$third-party,stylesheet,match-case"
-/^https?:\/\/[a-z]{8,15}\.top\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,css,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.top\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,image,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.top\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$third-party,image,match-case"
-/^https?:\/\/[a-z]{8,15}\.top\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,image,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$third-party,subdocument,match-case"
-/^https?:\/\/[a-z]{8,15}\.xyz(\/(?:\d{1,5}|0NaN|articles?|browse|index|movie|news|pages?|static|view|web|wiki)){1,4}(?:\.html|\/)$/$3p,frame,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz\/(?!api|available|team)[a-z]{4,}\.json$/$third-party,match-case,xmlhttprequest"
-/^https?:\/\/[a-z]{8,15}\.xyz\/(?!api|available|team)[a-z]{4,}\.json$/$3p,match-case,xhr
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,css,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$third-party,stylesheet,match-case"
-/^https?:\/\/[a-z]{8,15}\.xyz\/[-a-z]{4,}\.css\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,css,match-case
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,image,match-case" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$third-party,image,match-case"
-/^https?:\/\/[a-z]{8,15}\.xyz\/[a-z]{4,}\.png\?aHR0c[\/0-9a-zA-Z]{33,}=?=?$/$3p,image,match-case
-! Rule "/^https?:\/\/[-a-z]{6,}\.(?:com?|info|pro|xyz)\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$3p,match-case,script,xhr,to=co|com|info|pro|xyz" converted to: "/^https?:\/\/[-a-z]{6,}\.(?:com?|info|pro|xyz)\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$third-party,match-case,script,xmlhttprequest,to=co|com|info|pro|xyz"
-/^https?:\/\/[-a-z]{6,}\.(?:com?|info|pro|xyz)\/[a-d][-\.\/_A-Za-z][DHWXm][-\.\/_A-Za-z][59FVZ][-\.\/_A-Za-z][6swyz][-\.\/_A-Za-z][-\/_0-9a-zA-Z][-\.\/_A-Za-z][-\/_0-9a-zA-Z]{22,162}$/$3p,match-case,script,xhr,to=co|com|info|pro|xyz
-! Rule "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$3p,script,to=com|net" converted to: "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$third-party,script,to=com|net"
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/400\/\d{7}(?:\?v=\d+)?$/$3p,script,to=com|net
-! Rule "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$3p,script,to=com|net" converted to: "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$third-party,script,to=com|net"
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/401\/\d{7}(?:\?v=\d+)?$/$3p,script,to=com|net
-! Rule "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$3p,xhr,to=com|net" converted to: "/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$third-party,xmlhttprequest,to=com|net"
-/^https?:\/\/[-a-z]{8,15}\.(?:com|net)\/500\/\d{7}\?/$3p,xhr,to=com|net
-! Rule "/^https?:\/\/[a-z0-9]{5,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$3p,script,xhr" converted to: "/^https?:\/\/[a-z0-9]{5,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$third-party,script,xmlhttprequest"
-/^https?:\/\/[a-z0-9]{5,15}\.[a-z]{2,3}\/5\/\d{6,7}(?:\?_=\d+|\/\??)?$/$3p,script,xhr
-! Rule "/^https?:\/\/[a-z]{8,15}\.(?:com|net)\/tag\.min\.js$/$3p,script,redirect=noopjs,to=com|net" converted to: "/^https?:\/\/[a-z]{8,15}\.(?:com|net)\/tag\.min\.js$/$third-party,script,redirect=noopjs,to=com|net"
-/^https?:\/\/[a-z]{8,15}\.(?:com|net)\/tag\.min\.js$/$3p,script,redirect=noopjs,to=com|net
-! Rule "/^https?:\/\/[a-z]{8,15}\.com\/$/$3p,header=access-control-expose-headers:/x-directionpartner-id/,xhr,to=com,method=head" converted to: "/^https?:\/\/[a-z]{8,15}\.com\/$/$third-party,header=access-control-expose-headers:/x-directionpartner-id/,xmlhttprequest,to=com,method=head"
-/^https?:\/\/[a-z]{8,15}\.com\/$/$3p,header=access-control-expose-headers:/x-directionpartner-id/,xhr,to=com,method=head
-! Rule "/^https?:\/\/[a-z]{8,15}\.xyz\/$/$3p,header=access-control-expose-headers:/x-directionpartner-id/,xhr,to=xyz,method=head" converted to: "/^https?:\/\/[a-z]{8,15}\.xyz\/$/$third-party,header=access-control-expose-headers:/x-directionpartner-id/,xmlhttprequest,to=xyz,method=head"
-/^https?:\/\/[a-z]{8,15}\.xyz\/$/$3p,header=access-control-expose-headers:/x-directionpartner-id/,xhr,to=xyz,method=head
+! Rule "||vakawi.xyz^$3p,script" converted to: "||vakawi.xyz^$third-party,script"
+||vakawi.xyz^$3p,script
 ! Rule "||ads.sorot.co^$1p" converted to: "||ads.sorot.co^$~third-party"
 ||ads.sorot.co^$1p
 ! Rule "||kotakgame.com/includea/bannermidloadmore.php$frame" converted to: "||kotakgame.com/includea/bannermidloadmore.php$subdocument"
 ||kotakgame.com/includea/bannermidloadmore.php$frame
 ! Rule "||safelinku.com/728x20.$3p,image" converted to: "||safelinku.com/728x20.$third-party,image"
 ||safelinku.com/728x20.$3p,image
+! Rule "||aiprodev.com/files/banner/$3p" converted to: "||aiprodev.com/files/banner/$third-party"
+||aiprodev.com/files/banner/$3p
 ! Rule "||collaborator.pro/images/referral/$3p" converted to: "||collaborator.pro/images/referral/$third-party"
 ||collaborator.pro/images/referral/$3p
+! Rule "||fbs.partners/banner/$3p,domain=~indofbs-invest.com" converted to: "||fbs.partners/banner/$third-party,domain=~indofbs-invest.com"
+||fbs.partners/banner/$3p,domain=~indofbs-invest.com
 ! Rule "||gnfi.net/gnfi/uploads/banners/$3p" converted to: "||gnfi.net/gnfi/uploads/banners/$third-party"
 ||gnfi.net/gnfi/uploads/banners/$3p
 ! Rule "||ib.pictures/img/ibbanner/$3p" converted to: "||ib.pictures/img/ibbanner/$third-party"
@@ -84,10 +32,12 @@
 ||seedbacklink.com^*/badge-$3p,image
 ! Rule "||sugeng.id^*/banner-$3p" converted to: "||sugeng.id^*/banner-$third-party"
 ||sugeng.id^*/banner-$3p
-! Rule "||triv.co.id/images/banner/$3p" converted to: "||triv.co.id/images/banner/$third-party"
-||triv.co.id/images/banner/$3p
+! Rule "||triv.co.id^*/banner/$3p" converted to: "||triv.co.id^*/banner/$third-party"
+||triv.co.id^*/banner/$3p
 ! Rule "||oketheme.com/members/file/get/path/.banners.$3p,image" converted to: "||oketheme.com/members/file/get/path/.banners.$third-party,image"
 ||oketheme.com/members/file/get/path/.banners.$3p,image
+! Rule "||tirto.id/embed/affiliate/$frame" converted to: "||tirto.id/embed/affiliate/$subdocument"
+||tirto.id/embed/affiliate/$frame
 ! Rule "tuntasonline.id###block-bannervideo:remove()" converted to: "tuntasonline.id#$?##block-bannervideo { remove: true; }"
 tuntasonline.id###block-bannervideo:remove()
 ! Rule "reaksimedia.com###main-ads:remove()" converted to: "reaksimedia.com#$?##main-ads { remove: true; }"
@@ -108,24 +58,34 @@ mekari.com##:matches-path(/blog) #banner_businessgrowth_before_h2_3
 mekari.com##:matches-path(/blog) #banner_flex_ewa_v2_hr_after_content
 ! Rule "mekari.com##:matches-path(/blog) #banner_flex_ewa_v2_hr_before_h2_2" converted to: "[$path=/blog]mekari.com###banner_flex_ewa_v2_hr_before_h2_2"
 mekari.com##:matches-path(/blog) #banner_flex_ewa_v2_hr_before_h2_2
-! Rule "dropshipaja.com##:matches-path(/blog) .code-block" converted to: "[$path=/blog]dropshipaja.com##.code-block"
-dropshipaja.com##:matches-path(/blog) .code-block
+! Rule "linktown.co.id##:matches-path(/blog) .brus-banners" converted to: "[$path=/blog]linktown.co.id##.brus-banners"
+linktown.co.id##:matches-path(/blog) .brus-banners
+! Rule "mitra10.com##:matches-path(/blog) .gtm_mitra10_cta_banner_header" converted to: "[$path=/blog]mitra10.com##.gtm_mitra10_cta_banner_header"
+mitra10.com##:matches-path(/blog) .gtm_mitra10_cta_banner_header
 ! Rule "sapx.id##:matches-path(/blog) .header-before-ad" converted to: "[$path=/blog]sapx.id##.header-before-ad"
 sapx.id##:matches-path(/blog) .header-before-ad
+! Rule "qwords.com##:matches-path(/blog) .promo-ad-article" converted to: "[$path=/blog]qwords.com##.promo-ad-article"
+qwords.com##:matches-path(/blog) .promo-ad-article
+! Rule "qwords.com##:matches-path(/blog) .promo-image" converted to: "[$path=/blog]qwords.com##.promo-image"
+qwords.com##:matches-path(/blog) .promo-image
 ! Rule "pinhome.id##:matches-path(/blog) [class^="analytics-right-side-banner-"]" converted to: "[$path=/blog]pinhome.id##[class^="analytics-right-side-banner-"]"
 pinhome.id##:matches-path(/blog) [class^="analytics-right-side-banner-"]
 ! Rule "pinhome.id##:matches-path(/blog) [class^="style_stickyBannerDesktop_"]" converted to: "[$path=/blog]pinhome.id##[class^="style_stickyBannerDesktop_"]"
 pinhome.id##:matches-path(/blog) [class^="style_stickyBannerDesktop_"]
 ! Rule "pinhome.id##:matches-path(/blog) [class^="style_stickyBannerMobile_"]" converted to: "[$path=/blog]pinhome.id##[class^="style_stickyBannerMobile_"]"
 pinhome.id##:matches-path(/blog) [class^="style_stickyBannerMobile_"]
-! Rule "qwords.com##:matches-path(/blog) [href^="https://www.qwords.com/promotion/"]" converted to: "[$path=/blog]qwords.com##[href^="https://www.qwords.com/promotion/"]"
-qwords.com##:matches-path(/blog) [href^="https://www.qwords.com/promotion/"]
 ! Rule "megavision.net.id##:matches-path(/blog) a[href*="megavision.net.id/pricing"]:has(> img)" converted to: "[$path=/blog]megavision.net.id##a[href*="megavision.net.id/pricing"]:has(> img)"
 megavision.net.id##:matches-path(/blog) a[href*="megavision.net.id/pricing"]:has(> img)
 ! Rule "megavision.net.id##:matches-path(/blog) a[href*="megavision.net.id/subscribe-internet/"]:has(> img)" converted to: "[$path=/blog]megavision.net.id##a[href*="megavision.net.id/subscribe-internet/"]:has(> img)"
 megavision.net.id##:matches-path(/blog) a[href*="megavision.net.id/subscribe-internet/"]:has(> img)
-! Rule "danacita.co.id##:matches-path(/blog) img[alt*="banner" i]" converted to: "[$path=/blog]danacita.co.id##img[alt*="banner" i]"
-danacita.co.id##:matches-path(/blog) img[alt*="banner" i]
+! Rule "utas.co,zalora.co.id,zenius.net##:matches-path(/blog) a[href*="utm_campaign="]:has(> img)" converted to: "[$path=/blog]utas.co,zalora.co.id,zenius.net##a[href*="utm_campaign="]:has(> img)"
+utas.co,zalora.co.id,zenius.net##:matches-path(/blog) a[href*="utm_campaign="]:has(> img)
+! Rule "toffeedev.com##:matches-path(/blog) a[href^="https://marketing.toffeedev.com/"]:has(img)" converted to: "[$path=/blog]toffeedev.com##a[href^="https://marketing.toffeedev.com/"]:has(img)"
+toffeedev.com##:matches-path(/blog) a[href^="https://marketing.toffeedev.com/"]:has(img)
+! Rule "caroline.id,danacita.co.id##:matches-path(/blog) img[alt*="banner" i]" converted to: "[$path=/blog]caroline.id,danacita.co.id##img[alt*="banner" i]"
+caroline.id,danacita.co.id##:matches-path(/blog) img[alt*="banner" i]
+! Rule "favo.id##:matches-path(/blogs) .banners" converted to: "[$path=/blogs]favo.id##.banners"
+favo.id##:matches-path(/blogs) .banners
 ! Rule "auksi.co.id##:matches-path(/detail-artikel) .ads-link" converted to: "[$path=/detail-artikel]auksi.co.id##.ads-link"
 auksi.co.id##:matches-path(/detail-artikel) .ads-link
 ! Rule "cekaja.com##:matches-path(/info) a[href^="https://www.cekaja.com/promo/"]" converted to: "[$path=/info]cekaja.com##a[href^="https://www.cekaja.com/promo/"]"
@@ -138,16 +98,24 @@ alkitabonline.org##a[data-ref="AD"]:remove()
 alkitabonline.org##a[data-ref="YUEDUYE-AD"]:remove()
 ! Rule "koranperdjoeangan.com##.gmr-verytopbanner:remove()" converted to: "koranperdjoeangan.com#$?#.gmr-verytopbanner { remove: true; }"
 koranperdjoeangan.com##.gmr-verytopbanner:remove()
+! Rule "dropshipaja.com##:matches-path(/blog) .code-block" converted to: "[$path=/blog]dropshipaja.com##.code-block"
+dropshipaja.com##:matches-path(/blog) .code-block
+! Rule "deepublishstore.com##:matches-path(/blog) .code-block:has(> a > img)" converted to: "[$path=/blog]deepublishstore.com##.code-block:has(> a > img)"
+deepublishstore.com##:matches-path(/blog) .code-block:has(> a > img)
 ! Rule "intip24news.com##body.sticky-header:style(padding: unset!important;)" converted to: "intip24news.com#$#body.sticky-header { padding: unset!important; }"
 intip24news.com##body.sticky-header:style(padding: unset!important;)
 ! Rule "deadlinews.co##.textwidget > center > video:remove()" converted to: "deadlinews.co#$?#.textwidget > center > video { remove: true; }"
 deadlinews.co##.textwidget > center > video:remove()
 ! Rule "katasiber.id##.widget > figure > video:remove()" converted to: "katasiber.id#$?#.widget > figure > video { remove: true; }"
 katasiber.id##.widget > figure > video:remove()
+! Rule "bhinneka.com,dewaweb.com##:matches-path(/blog) .widget:has(a[href*="/promo/"])" converted to: "[$path=/blog]bhinneka.com,dewaweb.com##.widget:has(a[href*="/promo/"])"
+bhinneka.com,dewaweb.com##:matches-path(/blog) .widget:has(a[href*="/promo/"])
+! Rule "saburomedia.com##aside .mg-widget.widget_media_video:remove()" converted to: "saburomedia.com#$?#aside .mg-widget.widget_media_video { remove: true; }"
+saburomedia.com##aside .mg-widget.widget_media_video:remove()
+! Rule "kitalulus.com##:matches-path(/blog) .widget:has(img[style="max-width: 100%; height: auto;"])" converted to: "[$path=/blog]kitalulus.com##.widget:has(img[style="max-width: 100%; height: auto;"])"
+kitalulus.com##:matches-path(/blog) .widget:has(img[style="max-width: 100%; height: auto;"])
 ! Rule "independennews.com##aside .widget:has(video[style="max-width: 100%; height: auto;"]):remove()" converted to: "independennews.com#$?#aside .widget:has(video[style="max-width: 100%; height: auto;"]) { remove: true; }"
 independennews.com##aside .widget:has(video[style="max-width: 100%; height: auto;"]):remove()
-! Rule "id.theasianparent.com##.bottom-sticky.only-mobile.layer-bsa-bn:style(min-height: 0 !important;)" converted to: "id.theasianparent.com#$#.bottom-sticky.only-mobile.layer-bsa-bn { min-height: 0 !important; }"
-id.theasianparent.com##.bottom-sticky.only-mobile.layer-bsa-bn:style(min-height: 0 !important;)
 ! Rule "publicholidays.co.id##.phgviewportconditional:has(> .phg-ad):style(min-height: 10px!important;)" converted to: "publicholidays.co.id#$?#.phgviewportconditional:has(> .phg-ad) { min-height: 10px!important; }"
 publicholidays.co.id##.phgviewportconditional:has(> .phg-ad):style(min-height: 10px!important;)
 ! Rule "semuanyabola.com##+js(acis, document.getElementById, adsanityAdBlock)" converted to: "semuanyabola.com#%#//scriptlet('ubo-acis.js', 'document.getElementById', 'adsanityAdBlock')"
@@ -168,6 +136,8 @@ anakteknik.co.id,howdy.id,obengplus.com##+js(no-fetch-if, pagead2.googlesyndicat
 wendycode.com##+js(no-setTimeout-if, _0x, 2000)
 ! Rule "gurusiana.id##+js(set, detectAdBlock, noopFunc)" converted to: "gurusiana.id#%#//scriptlet('ubo-set.js', 'detectAdBlock', 'noopFunc')"
 gurusiana.id##+js(set, detectAdBlock, noopFunc)
+! Rule "jagokata.com##+js(set-local-storage-item, ignoreadblock, true)" converted to: "jagokata.com#%#//scriptlet('ubo-set-local-storage-item.js', 'ignoreadblock', 'true')"
+jagokata.com##+js(set-local-storage-item, ignoreadblock, true)
 ! Rule "downloadtanku.org##+js(noeval-if, adbEnableForPage)" converted to: "downloadtanku.org#%#//scriptlet('ubo-noeval-if.js', 'adbEnableForPage')"
 downloadtanku.org##+js(noeval-if, adbEnableForPage)
 ! Rule "otakdewasa.id##+js(aopw, ai_front)" converted to: "otakdewasa.id#%#//scriptlet('ubo-aopw.js', 'ai_front')"
@@ -188,16 +158,12 @@ proberita.com##body:style(overflow: auto !important;)
 ||googletagmanager.com/gtag/js$script,redirect-rule=googletagmanager_gtm.js,domain=harianmerdeka.id
 ! Rule "||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect-rule=google-ima.js,domain=visionplus.id" converted to: "||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect-rule=google-ima3,domain=visionplus.id"
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect-rule=google-ima.js,domain=visionplus.id
-! Rule "||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication_adsbygoogle.js,domain=duniakode.com|harianmerdeka.id|herdamedia.com|indokontraktor.com|kersabaca.com|masdhika.com|serieswans.com|shinryu2.blogspot.com|yukinoshita.web.id" converted to: "||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication-adsbygoogle,domain=duniakode.com|harianmerdeka.id|herdamedia.com|indokontraktor.com|kersabaca.com|masdhika.com|serieswans.com|shinryu2.blogspot.com|yukinoshita.web.id"
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication_adsbygoogle.js,domain=duniakode.com|harianmerdeka.id|herdamedia.com|indokontraktor.com|kersabaca.com|masdhika.com|serieswans.com|shinryu2.blogspot.com|yukinoshita.web.id
-! Rule "@@||nontonx.com/cdn-cgi/rum?$1p,xhr" converted to: "@@||nontonx.com/cdn-cgi/rum?$~third-party,xmlhttprequest"
-@@||nontonx.com/cdn-cgi/rum?$1p,xhr
+! Rule "||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication_adsbygoogle.js,domain=duniakode.com|harianmerdeka.id|herdamedia.com|indokontraktor.com|kersabaca.com|laptophia.com|masdhika.com|serieswans.com|shinryu2.blogspot.com|trivusi.web.id|yukinoshita.web.id" converted to: "||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication-adsbygoogle,domain=duniakode.com|harianmerdeka.id|herdamedia.com|indokontraktor.com|kersabaca.com|laptophia.com|masdhika.com|serieswans.com|shinryu2.blogspot.com|trivusi.web.id|yukinoshita.web.id"
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect-rule=googlesyndication_adsbygoogle.js,domain=duniakode.com|harianmerdeka.id|herdamedia.com|indokontraktor.com|kersabaca.com|laptophia.com|masdhika.com|serieswans.com|shinryu2.blogspot.com|trivusi.web.id|yukinoshita.web.id
 ! Rule "@@||deras.id^$ghide" converted to: "@@||deras.id^$generichide"
 @@||deras.id^$ghide
 ! Rule "@@||jurnalfaktual.id^$ghide" converted to: "@@||jurnalfaktual.id^$generichide"
 @@||jurnalfaktual.id^$ghide
-! Rule "@@||nontonx.com^$ghide" converted to: "@@||nontonx.com^$generichide"
-@@||nontonx.com^$ghide
 ! Rule "@@||surgatekno.com^$ghide" converted to: "@@||surgatekno.com^$generichide"
 @@||surgatekno.com^$ghide
 ! Rule "/px.gif?$image,redirect-rule=1x1.gif" converted to: "/px.gif?$image,redirect-rule=1x1-transparent.gif"
@@ -206,32 +172,66 @@ proberita.com##body:style(overflow: auto !important;)
 *#*/ad/$image,redirect-rule=1x1.gif
 ! Rule "/images/ads.$image,redirect-rule=1x1.gif" converted to: "/images/ads.$image,redirect-rule=1x1-transparent.gif"
 /images/ads.$image,redirect-rule=1x1.gif
-! Rule "@@||gratis-iklan.com^$ghide" converted to: "@@||gratis-iklan.com^$generichide"
-@@||gratis-iklan.com^$ghide
-! Rule "@@||id.seedbacklink.com^$ghide" converted to: "@@||id.seedbacklink.com^$generichide"
-@@||id.seedbacklink.com^$ghide
-! Rule "@@||iklandisini.com^$ghide" converted to: "@@||iklandisini.com^$generichide"
-@@||iklandisini.com^$ghide
-! Rule "@@||iklangratis.id^$ghide" converted to: "@@||iklangratis.id^$generichide"
-@@||iklangratis.id^$ghide
-! Rule "@@||iklangratistanpadaftar.com^$ghide" converted to: "@@||iklangratistanpadaftar.com^$generichide"
-@@||iklangratistanpadaftar.com^$ghide
-! Rule "@@||pusatpemasanganiklan.com^$ghide" converted to: "@@||pusatpemasanganiklan.com^$generichide"
-@@||pusatpemasanganiklan.com^$ghide
 ! Rule "@@/wp-content/uploads/*$1p,image,domain=adstarsmedia.co.id|agency-iklan.com|ageniklanjawapos.com|bertravel.com|bluecreative.co.id|id.seedbacklink.com|matari-ad.com|merchant.id|winstarlink.com" converted to: "@@/wp-content/uploads/*$~third-party,image,domain=adstarsmedia.co.id|agency-iklan.com|ageniklanjawapos.com|bertravel.com|bluecreative.co.id|id.seedbacklink.com|matari-ad.com|merchant.id|winstarlink.com"
 @@/wp-content/uploads/*$1p,image,domain=adstarsmedia.co.id|agency-iklan.com|ageniklanjawapos.com|bertravel.com|bluecreative.co.id|id.seedbacklink.com|matari-ad.com|merchant.id|winstarlink.com
 ! Rule "@@||gosocial.co.id/assets/img/service/$1p,image" converted to: "@@||gosocial.co.id/assets/img/service/$~third-party,image"
 @@||gosocial.co.id/assets/img/service/$1p,image
-! Rule "@@||iklandisini.com/banner_ads/$1p" converted to: "@@||iklandisini.com/banner_ads/$~third-party"
-@@||iklandisini.com/banner_ads/$1p
 ! Rule "@@||iklanku.shopee.co.id/img/$1p,image" converted to: "@@||iklanku.shopee.co.id/img/$~third-party,image"
 @@||iklanku.shopee.co.id/img/$1p,image
-! Rule "@@||pasangiklan.com/pi_b/img/$1p,image" converted to: "@@||pasangiklan.com/pi_b/img/$~third-party,image"
-@@||pasangiklan.com/pi_b/img/$1p,image
+! Rule "@@||kreatifmedia.co/kreatifmedia/assets/images/banner-iklan/$1p" converted to: "@@||kreatifmedia.co/kreatifmedia/assets/images/banner-iklan/$~third-party"
+@@||kreatifmedia.co/kreatifmedia/assets/images/banner-iklan/$1p
 ! Rule "@@||tokopedia.net/img/topads/$1p,image" converted to: "@@||tokopedia.net/img/topads/$~third-party,image"
 @@||tokopedia.net/img/topads/$1p,image
 ! Rule "@@||doubleclick.net^$xhr,redirect-rule=noop.txt,domain=kumparan.com" converted to: "@@||doubleclick.net^$xmlhttprequest,redirect-rule=nooptext,domain=kumparan.com"
 @@||doubleclick.net^$xhr,redirect-rule=noop.txt,domain=kumparan.com
+! Rule "@@||bintangiklan.org/images/$1p" converted to: "@@||bintangiklan.org/images/$~third-party"
+@@||bintangiklan.org/images/$1p
+! Rule "@@||bintangiklan.org^$ghide" converted to: "@@||bintangiklan.org^$generichide"
+@@||bintangiklan.org^$ghide
+! Rule "@@||gratis-iklan.com^$ghide" converted to: "@@||gratis-iklan.com^$generichide"
+@@||gratis-iklan.com^$ghide
+! Rule "@@||iklan-kolom.com^$ghide" converted to: "@@||iklan-kolom.com^$generichide"
+@@||iklan-kolom.com^$ghide
+! Rule "@@||iklanbaris.gratis^$ghide" converted to: "@@||iklanbaris.gratis^$generichide"
+@@||iklanbaris.gratis^$ghide
+! Rule "@@||iklangratis.id^$ghide" converted to: "@@||iklangratis.id^$generichide"
+@@||iklangratis.id^$ghide
+! Rule "@@||iklangratistanpadaftar.com^$ghide" converted to: "@@||iklangratistanpadaftar.com^$generichide"
+@@||iklangratistanpadaftar.com^$ghide
+! Rule "@@||iklankompas.com/images/$1p" converted to: "@@||iklankompas.com/images/$~third-party"
+@@||iklankompas.com/images/$1p
+! Rule "@@||iklankompas.com^$ghide" converted to: "@@||iklankompas.com^$generichide"
+@@||iklankompas.com^$ghide
+! Rule "@@||iklanmania.com/images/$1p" converted to: "@@||iklanmania.com/images/$~third-party"
+@@||iklanmania.com/images/$1p
+! Rule "@@||iklanmania.com^$ghide" converted to: "@@||iklanmania.com^$generichide"
+@@||iklanmania.com^$ghide
+! Rule "@@||iklanug.id/images/$1p" converted to: "@@||iklanug.id/images/$~third-party"
+@@||iklanug.id/images/$1p
+! Rule "@@||iklanug.id^$ghide" converted to: "@@||iklanug.id^$generichide"
+@@||iklanug.id^$ghide
+! Rule "@@||iklanvip.org/images/$1p" converted to: "@@||iklanvip.org/images/$~third-party"
+@@||iklanvip.org/images/$1p
+! Rule "@@||iklanvip.org^$ghide" converted to: "@@||iklanvip.org^$generichide"
+@@||iklanvip.org^$ghide
+! Rule "@@||pasangiklanmurah.info/images/$1p" converted to: "@@||pasangiklanmurah.info/images/$~third-party"
+@@||pasangiklanmurah.info/images/$1p
+! Rule "@@||pasangiklanmurah.info^$ghide" converted to: "@@||pasangiklanmurah.info^$generichide"
+@@||pasangiklanmurah.info^$ghide
+! Rule "@@||portaliklan.info/images/$1p" converted to: "@@||portaliklan.info/images/$~third-party"
+@@||portaliklan.info/images/$1p
+! Rule "@@||portaliklan.info^$ghide" converted to: "@@||portaliklan.info^$generichide"
+@@||portaliklan.info^$ghide
+! Rule "@@||pusatiklan.info/images/$1p" converted to: "@@||pusatiklan.info/images/$~third-party"
+@@||pusatiklan.info/images/$1p
+! Rule "@@||pusatiklan.info^$ghide" converted to: "@@||pusatiklan.info^$generichide"
+@@||pusatiklan.info^$ghide
+! Rule "@@||pusatpemasanganiklan.com^$ghide" converted to: "@@||pusatpemasanganiklan.com^$generichide"
+@@||pusatpemasanganiklan.com^$ghide
+! Rule "@@||rajaiklan.org/images/$1p" converted to: "@@||rajaiklan.org/images/$~third-party"
+@@||rajaiklan.org/images/$1p
+! Rule "@@||rajaiklan.org^$ghide" converted to: "@@||rajaiklan.org^$generichide"
+@@||rajaiklan.org^$ghide
 ! Rule "||wpfc.ml/b.gif$image,redirect=1x1.gif,domain=pinterpolitik.com" converted to: "||wpfc.ml/b.gif$image,redirect=1x1-transparent.gif,domain=pinterpolitik.com"
 ||wpfc.ml/b.gif$image,redirect=1x1.gif,domain=pinterpolitik.com
 ! Rule "||googletagmanager.com/gtm.js$script,redirect=googletagmanager_gtm.js,domain=orami.co.id" converted to: "||googletagmanager.com/gtm.js$script,redirect=googletagmanager-gtm,domain=orami.co.id"
@@ -322,8 +322,16 @@ droidlime.com###mvp-site-main:style(margin-top: 0px!important;)
 pramborsfm.com##.master.has-top-ads .header:style(top: 0!important;)
 ! Rule "republika.co.id##header:style(position: inherit !important)" converted to: "republika.co.id#$#header { position: inherit !important }"
 republika.co.id##header:style(position: inherit !important)
-! Rule "ruangguru.com##+js(aeld, DOMContentLoaded, popupPromo)" converted to: "ruangguru.com#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'popupPromo')"
-ruangguru.com##+js(aeld, DOMContentLoaded, popupPromo)
+! Rule "brainacademy.id##:matches-path(/blog) .side-banner-desktop" converted to: "[$path=/blog]brainacademy.id##.side-banner-desktop"
+brainacademy.id##:matches-path(/blog) .side-banner-desktop
+! Rule "brainacademy.id##:matches-path(/blog) .side-banner-mobile" converted to: "[$path=/blog]brainacademy.id##.side-banner-mobile"
+brainacademy.id##:matches-path(/blog) .side-banner-mobile
+! Rule "brainacademy.id,english-academy.id,ruangguru.com,ruangkerja.id,schoters.com##+js(aeld, DOMContentLoaded, popupPromo)" converted to: "brainacademy.id,english-academy.id,ruangguru.com,ruangkerja.id,schoters.com#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'popupPromo')"
+brainacademy.id,english-academy.id,ruangguru.com,ruangkerja.id,schoters.com##+js(aeld, DOMContentLoaded, popupPromo)
+! Rule "kalananti.id##:matches-path(/blog) .fade.show" converted to: "[$path=/blog]kalananti.id##.fade.show"
+kalananti.id##:matches-path(/blog) .fade.show
+! Rule "kalananti.id##:matches-path(/blog) body:style(overflow: auto!important; position: unset!important;)" converted to: "[$path=/blog]kalananti.id#$#body { overflow: auto!important; position: unset!important; }"
+kalananti.id##:matches-path(/blog) body:style(overflow: auto!important; position: unset!important;)
 ! Rule "tempo.co##+js(rc, pad-apps, body)" converted to: "tempo.co#%#//scriptlet('ubo-rc.js', 'pad-apps', 'body')"
 tempo.co##+js(rc, pad-apps, body)
 ! Rule "indonesiana.id##nav#startnads.starttop:style(margin-top: unset!important;)" converted to: "indonesiana.id#$#nav#startnads.starttop { margin-top: unset!important; }"
@@ -336,26 +344,30 @@ tempo.co##body.pad-apps:style(padding-top: 0!important;)
 okestream.com,okestream365.xyz##+js(rc, flowbox, body)
 ! Rule "nobartvgratis.com##body:style(overflow: auto!important; position: unset!important;)" converted to: "nobartvgratis.com#$#body { overflow: auto!important; position: unset!important; }"
 nobartvgratis.com##body:style(overflow: auto!important; position: unset!important;)
-! Rule "fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##:matches-path(/id) div:matches-css(position: fixed):has(> img)" converted to: "[$path=/id]fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##div:matches-css(position: fixed):has(> img)"
-fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##:matches-path(/id) div:matches-css(position: fixed):has(> img)
-! Rule "fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##:matches-path(/id) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))" converted to: "[$path=/id]fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))"
-fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##:matches-path(/id) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))
-! Rule "fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##:matches-path(/id) iframe + div:matches-css(position: absolute):has(> img)" converted to: "[$path=/id]fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##iframe + div:matches-css(position: absolute):has(> img)"
-fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##:matches-path(/id) iframe + div:matches-css(position: absolute):has(> img)
-! Rule "fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##:matches-path(/id) img:style(width: auto!important;)" converted to: "[$path=/id]fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*#$#img { width: auto!important; }"
-fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##:matches-path(/id) img:style(width: auto!important;)
-! Rule "fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##*:style(scrollbar-width: thin!important;)" converted to: "fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*#$#* { scrollbar-width: thin!important; }"
-fctv77.*,nwiwsgreaterrfakifood.shop,rbsports77.*,rbtv77.*##*:style(scrollbar-width: thin!important;)
-! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##*:has-text(/rbtv77/i):style(scrollbar-width: thin!important;)" converted to: "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/#$?#*:has-text(/rbtv77/i) { scrollbar-width: thin!important; }"
-/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##*:has-text(/rbtv77/i):style(scrollbar-width: thin!important;)
-! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/rbtv77/i) div:matches-css(position: fixed):has(> img)" converted to: "[$path=/id]/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##body:has-text(/rbtv77/i) div:matches-css(position: fixed):has(> img)"
-/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/rbtv77/i) div:matches-css(position: fixed):has(> img)
-! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/rbtv77/i) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))" converted to: "[$path=/id]/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##body:has-text(/rbtv77/i) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))"
-/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/rbtv77/i) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))
-! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/rbtv77/i) iframe + div:matches-css(position: absolute):has(> img)" converted to: "[$path=/id]/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##body:has-text(/rbtv77/i) iframe + div:matches-css(position: absolute):has(> img)"
-/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/rbtv77/i) iframe + div:matches-css(position: absolute):has(> img)
-! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/rbtv77/i) img:style(width: auto!important;)" converted to: "[$path=/id]/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/#$?#body:has-text(/rbtv77/i) img { width: auto!important; }"
-/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/rbtv77/i) img:style(width: auto!important;)
+! Rule "fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##*:style(scrollbar-width: thin!important;)" converted to: "fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*#$#* { scrollbar-width: thin!important; }"
+fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##*:style(scrollbar-width: thin!important;)
+! Rule "fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##:matches-path(/id) div:matches-css(position: fixed):has(> img)" converted to: "[$path=/id]fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##div:matches-css(position: fixed):has(> img)"
+fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##:matches-path(/id) div:matches-css(position: fixed):has(> img)
+! Rule "fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##:matches-path(/id) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))" converted to: "[$path=/id]fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))"
+fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##:matches-path(/id) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))
+! Rule "fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##:matches-path(/id) iframe + div:matches-css(position: absolute):has(> img)" converted to: "[$path=/id]fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##iframe + div:matches-css(position: absolute):has(> img)"
+fctv77.*,rbsports77.*,rbtv33.*,rbtv77.*,rbtvplus01.*##:matches-path(/id) iframe + div:matches-css(position: absolute):has(> img)
+! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##*:has-text(/(rbtv|superabbit)77/i):style(scrollbar-width: thin!important;)" converted to: "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/#$?#*:has-text(/(rbtv|superabbit)77/i) { scrollbar-width: thin!important; }"
+/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##*:has-text(/(rbtv|superabbit)77/i):style(scrollbar-width: thin!important;)
+! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/(rbtv|superabbit)77/i) div:matches-css(position: fixed):has(> img)" converted to: "[$path=/id]/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##body:has-text(/(rbtv|superabbit)77/i) div:matches-css(position: fixed):has(> img)"
+/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/(rbtv|superabbit)77/i) div:matches-css(position: fixed):has(> img)
+! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/(rbtv|superabbit)77/i) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))" converted to: "[$path=/id]/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##body:has-text(/(rbtv|superabbit)77/i) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))"
+/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/(rbtv|superabbit)77/i) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))
+! Rule "/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/(rbtv|superabbit)77/i) iframe + div:matches-css(position: absolute):has(> img)" converted to: "[$path=/id]/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##body:has-text(/(rbtv|superabbit)77/i) iframe + div:matches-css(position: absolute):has(> img)"
+/^[a-z0-9]{5,}\.(?=.*[a-z])(?=.*[0-9])[a-z0-9]{17,}\.(cfd|sbs|shop)$/##:matches-path(/id) body:has-text(/(rbtv|superabbit)77/i) iframe + div:matches-css(position: absolute):has(> img)
+! Rule "enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##*:style(scrollbar-width: thin!important;)" converted to: "enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop#$#* { scrollbar-width: thin!important; }"
+enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##*:style(scrollbar-width: thin!important;)
+! Rule "enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##:matches-path(/id) div:matches-css(position: fixed):has(> img)" converted to: "[$path=/id]enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##div:matches-css(position: fixed):has(> img)"
+enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##:matches-path(/id) div:matches-css(position: fixed):has(> img)
+! Rule "enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##:matches-path(/id) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))" converted to: "[$path=/id]enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))"
+enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##:matches-path(/id) div:matches-css(position: relative):has(> img + div:matches-css(position: absolute))
+! Rule "enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##:matches-path(/id) iframe + div:matches-css(position: absolute):has(> img)" converted to: "[$path=/id]enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##iframe + div:matches-css(position: absolute):has(> img)"
+enfoladyzjklcright.shop,nwiwsgreaterrfakifood.shop##:matches-path(/id) iframe + div:matches-css(position: absolute):has(> img)
 ! Rule "apabeda.com,membedakan.com##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "apabeda.com,membedakan.com#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
 apabeda.com,membedakan.com##+js(aopr, SGPB_POPUP_PARAMS)
 ! Rule "apabeda.com,membedakan.com##+js(window.open-defuser)" converted to: "apabeda.com,membedakan.com#%#//scriptlet('ubo-window.open-defuser.js')"
@@ -366,14 +378,28 @@ mediabumn.com###mvp-site-main:style(margin-top: 0!important;)
 eksposisi.com###single-content:style(margin-top: 150px!important;)
 ! Rule "theiconomics.com##.archive .wp-page:style(margin-top: 150px!important;)" converted to: "theiconomics.com#$#.archive .wp-page { margin-top: 150px!important; }"
 theiconomics.com##.archive .wp-page:style(margin-top: 150px!important;)
-! Rule "id.theasianparent.com##.baseLayout .bottom-sticky.layer-bsa-bn-ca:style(min-height: 10px!important;)" converted to: "id.theasianparent.com#$#.baseLayout .bottom-sticky.layer-bsa-bn-ca { min-height: 10px!important; }"
-id.theasianparent.com##.baseLayout .bottom-sticky.layer-bsa-bn-ca:style(min-height: 10px!important;)
 ! Rule "theiconomics.com##.home .bkmodule:style(margin-top: 100px!important;)" converted to: "theiconomics.com#$#.home .bkmodule { margin-top: 100px!important; }"
 theiconomics.com##.home .bkmodule:style(margin-top: 100px!important;)
+! Rule "kendarimerdeka.com##.mvp-main-box:style(height: initial!important;)" converted to: "kendarimerdeka.com#$#.mvp-main-box { height: initial!important; }"
+kendarimerdeka.com##.mvp-main-box:style(height: initial!important;)
 ! Rule "theiconomics.com##.single-post .code-block + .single-page:style(margin-top: 100px!important;)" converted to: "theiconomics.com#$#.single-post .code-block + .single-page { margin-top: 100px!important; }"
 theiconomics.com##.single-post .code-block + .single-page:style(margin-top: 100px!important;)
 ! Rule "glints.com##body:style(margin-top: 0!important;)" converted to: "glints.com#$#body { margin-top: 0!important; }"
 glints.com##body:style(margin-top: 0!important;)
+! Rule "||bloggerhub.id/wp-content/uploads/$3p" converted to: "||bloggerhub.id/wp-content/uploads/$third-party"
+||bloggerhub.id/wp-content/uploads/$3p
+! Rule "||brtnetwork.id/wp-content/uploads/$3p" converted to: "||brtnetwork.id/wp-content/uploads/$third-party"
+||brtnetwork.id/wp-content/uploads/$3p
+! Rule "||casakreatif.com/wp-content/uploads/$3p" converted to: "||casakreatif.com/wp-content/uploads/$third-party"
+||casakreatif.com/wp-content/uploads/$3p
+! Rule "id.theasianparent.com##.bottom-sticky.only-mobile.layer-bsa-bn:style(min-height: 0 !important;)" converted to: "id.theasianparent.com#$#.bottom-sticky.only-mobile.layer-bsa-bn { min-height: 0 !important; }"
+id.theasianparent.com##.bottom-sticky.only-mobile.layer-bsa-bn:style(min-height: 0 !important;)
+! Rule "id.theasianparent.com##*:style(user-select:text!important;)" converted to: "id.theasianparent.com#$#* { user-select:text!important; }"
+id.theasianparent.com##*:style(user-select:text!important;)
+! Rule "id.theasianparent.com##+js(aopr, document.onselectstart)" converted to: "id.theasianparent.com#%#//scriptlet('ubo-aopr.js', 'document.onselectstart')"
+id.theasianparent.com##+js(aopr, document.onselectstart)
+! Rule "id.theasianparent.com##.baseLayout .bottom-sticky.layer-bsa-bn-ca:style(min-height: 10px!important;)" converted to: "id.theasianparent.com#$#.baseLayout .bottom-sticky.layer-bsa-bn-ca { min-height: 10px!important; }"
+id.theasianparent.com##.baseLayout .bottom-sticky.layer-bsa-bn-ca:style(min-height: 10px!important;)
 ! Rule "||imgbob.site/images/banner/$3p" converted to: "||imgbob.site/images/banner/$third-party"
 ||imgbob.site/images/banner/$3p
 ! Rule "/agrihajrian/hs/*/adv$3p,redirect=noop-1s.mp4" converted to: "/agrihajrian/hs/*/adv$third-party,redirect=noopmp4-1s"
@@ -406,32 +432,32 @@ crotpedia.net##+js(noeval-if, ads)
 siikomik.com##+js(aopw, ai_front)
 ! Rule "@@||mangalist.org/url/lib/$1p,script" converted to: "@@||mangalist.org/url/lib/$~third-party,script"
 @@||mangalist.org/url/lib/$1p,script
-! Rule "idlixvip.asia##body[class*="-style-"] > *:style(filter: none !important;)" converted to: "idlixvip.asia#$#body[class*="-style-"] > * { filter: none !important; }"
-idlixvip.asia##body[class*="-style-"] > *:style(filter: none !important;)
-! Rule "klikmanga.com,komikstation.co##+js(aeld, /^(?:load|click)$/, popMagic)" converted to: "klikmanga.com,komikstation.co#%#//scriptlet('ubo-aeld.js', '/^(?:load|click)$/', 'popMagic')"
-klikmanga.com,komikstation.co##+js(aeld, /^(?:load|click)$/, popMagic)
-! Rule "anibatch.moe,animebatch.id,animekompi.top,gudangkomik.com,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,kyumik.com,layarkeren.pro,mangakita.id,manganime.live,ngomik.net,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sektedoujin.cc,so.batkren.xyz,sob.atkren.xyz,sokuja.uk##+js(nowoif)" converted to: "anibatch.moe,animebatch.id,animekompi.top,gudangkomik.com,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,kyumik.com,layarkeren.pro,mangakita.id,manganime.live,ngomik.net,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sektedoujin.cc,so.batkren.xyz,sob.atkren.xyz,sokuja.uk#%#//scriptlet('ubo-nowoif.js')"
-anibatch.moe,animebatch.id,animekompi.top,gudangkomik.com,kawanfilm21.lat,kazefuri.cloud,kazefuri.info,kazesub.com,kyumik.com,layarkeren.pro,mangakita.id,manganime.live,ngomik.net,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sektedoujin.cc,so.batkren.xyz,sob.atkren.xyz,sokuja.uk##+js(nowoif)
+! Rule "idlixku.com##body[class*="-style-"] > *:style(filter: none !important;)" converted to: "idlixku.com#$#body[class*="-style-"] > * { filter: none !important; }"
+idlixku.com##body[class*="-style-"] > *:style(filter: none !important;)
+! Rule "klikmanga.com,komikstation.org##+js(aeld, /^(?:load|click)$/, popMagic)" converted to: "klikmanga.com,komikstation.org#%#//scriptlet('ubo-aeld.js', '/^(?:load|click)$/', 'popMagic')"
+klikmanga.com,komikstation.org##+js(aeld, /^(?:load|click)$/, popMagic)
+! Rule "anibatch.moe,animebatch.id,animekompi.run,gudangkomik.com,kawanfilm21.co,kazefuri.cloud,kazefuri.info,kazesub.com,kyumik.com,layarkeren.pro,mangakita.id,manganime.live,ngomik.net,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sektedoujin.cc,so.batkren.xyz,sob.atkren.xyz,sob4t.xyz,sokuja.uk##+js(nowoif)" converted to: "anibatch.moe,animebatch.id,animekompi.run,gudangkomik.com,kawanfilm21.co,kazefuri.cloud,kazefuri.info,kazesub.com,kyumik.com,layarkeren.pro,mangakita.id,manganime.live,ngomik.net,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sektedoujin.cc,so.batkren.xyz,sob.atkren.xyz,sob4t.xyz,sokuja.uk#%#//scriptlet('ubo-nowoif.js')"
+anibatch.moe,animebatch.id,animekompi.run,gudangkomik.com,kawanfilm21.co,kazefuri.cloud,kazefuri.info,kazesub.com,kyumik.com,layarkeren.pro,mangakita.id,manganime.live,ngomik.net,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sektedoujin.cc,so.batkren.xyz,sob.atkren.xyz,sob4t.xyz,sokuja.uk##+js(nowoif)
 ! Rule "godriveplayer.com##+js(nowoif)" converted to: "godriveplayer.com#%#//scriptlet('ubo-nowoif.js')"
 godriveplayer.com##+js(nowoif)
-! Rule "144.126.131.54,layarkeren.pro,mangakita.id,so.batkren.xyz,sob.atkren.xyz,sokuja.uk,wibudesu.co##+js(aopr, popup_custom_data)" converted to: "144.126.131.54,layarkeren.pro,mangakita.id,so.batkren.xyz,sob.atkren.xyz,sokuja.uk,wibudesu.co#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')"
-144.126.131.54,layarkeren.pro,mangakita.id,so.batkren.xyz,sob.atkren.xyz,sokuja.uk,wibudesu.co##+js(aopr, popup_custom_data)
+! Rule "layarkeren.pro,mangakita.id,russsmithlaw.com,so.batkren.xyz,sob.atkren.xyz,sob4t.xyz,sokuja.uk,wibudesu.co##+js(aopr, popup_custom_data)" converted to: "layarkeren.pro,mangakita.id,russsmithlaw.com,so.batkren.xyz,sob.atkren.xyz,sob4t.xyz,sokuja.uk,wibudesu.co#%#//scriptlet('ubo-aopr.js', 'popup_custom_data')"
+layarkeren.pro,mangakita.id,russsmithlaw.com,so.batkren.xyz,sob.atkren.xyz,sob4t.xyz,sokuja.uk,wibudesu.co##+js(aopr, popup_custom_data)
 ! Rule "gudangmovies21.chat,sattorrent.com,soulscans.my.id##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "gudangmovies21.chat,sattorrent.com,soulscans.my.id#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
 gudangmovies21.chat,sattorrent.com,soulscans.my.id##+js(aopr, SGPB_POPUP_PARAMS)
-! Rule "komikstation.co,ngomik.net##+js(acis, JSON.parse, break;case $.)" converted to: "komikstation.co,ngomik.net#%#//scriptlet('ubo-acis.js', 'JSON.parse', 'break;case $.')"
-komikstation.co,ngomik.net##+js(acis, JSON.parse, break;case $.)
+! Rule "komikstation.org,ngomik.net##+js(acis, JSON.parse, break;case $.)" converted to: "komikstation.org,ngomik.net#%#//scriptlet('ubo-acis.js', 'JSON.parse', 'break;case $.')"
+komikstation.org,ngomik.net##+js(acis, JSON.parse, break;case $.)
 ! Rule "komikzoid.id,sektekomik.xyz##+js(ra, oncontextmenu|ondragstart|onkeydown|onmousedown|onselectstart|style, body)" converted to: "komikzoid.id,sektekomik.xyz#%#//scriptlet('ubo-ra.js', 'oncontextmenu|ondragstart|onkeydown|onmousedown|onselectstart|style', 'body')"
 komikzoid.id,sektekomik.xyz##+js(ra, oncontextmenu|ondragstart|onkeydown|onmousedown|onselectstart|style, body)
-! Rule "mangahentai.me,running-advice.com##*:style(user-select:text!important;)" converted to: "mangahentai.me,running-advice.com#$#* { user-select:text!important; }"
-mangahentai.me,running-advice.com##*:style(user-select:text!important;)
+! Rule "dutamovie21.wiki,mangahentai.me##*:style(user-select:text!important;)" converted to: "dutamovie21.wiki,mangahentai.me#$#* { user-select:text!important; }"
+dutamovie21.wiki,mangahentai.me##*:style(user-select:text!important;)
 ! Rule "otakudesu.cloud##+js(acis, document.oncontextmenu)" converted to: "otakudesu.cloud#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')"
 otakudesu.cloud##+js(acis, document.oncontextmenu)
 ! Rule "mangacanblog.com##+js(aeld, /^(?:contextmenu|selectstart)$/)" converted to: "mangacanblog.com#%#//scriptlet('ubo-aeld.js', '/^(?:contextmenu|selectstart)$/')"
 mangacanblog.com##+js(aeld, /^(?:contextmenu|selectstart)$/)
 ! Rule "anichin.mov##+js(aeld, /copy|keydown/)" converted to: "anichin.mov#%#//scriptlet('ubo-aeld.js', '/copy|keydown/')"
 anichin.mov##+js(aeld, /copy|keydown/)
-! Rule "ainzscans.net,anichin.mov,dojing.net,ikiru.wtf,komik18.xyz,komikdewasa.art,komikdewasa.mom,komikindo2.link,komiksin.id,komikstation.co,kumapoi.info,kuroshireader.com,kyumik.com,mangakita.id,mangasusuku.com,mangatale.co,mangatoon.cc,mangayaro.id,manhwadesu.host,mihentai.com,ngomik.net,noromax.my.id,rawkuma.com,running-advice.com,sektedoujin.cc,siikomik.com,softkomik.com,soulscans.my.id,tenshi.id,yuramanga.my.id##+js(aeld, contextmenu)" converted to: "ainzscans.net,anichin.mov,dojing.net,ikiru.wtf,komik18.xyz,komikdewasa.art,komikdewasa.mom,komikindo2.link,komiksin.id,komikstation.co,kumapoi.info,kuroshireader.com,kyumik.com,mangakita.id,mangasusuku.com,mangatale.co,mangatoon.cc,mangayaro.id,manhwadesu.host,mihentai.com,ngomik.net,noromax.my.id,rawkuma.com,running-advice.com,sektedoujin.cc,siikomik.com,softkomik.com,soulscans.my.id,tenshi.id,yuramanga.my.id#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
-ainzscans.net,anichin.mov,dojing.net,ikiru.wtf,komik18.xyz,komikdewasa.art,komikdewasa.mom,komikindo2.link,komiksin.id,komikstation.co,kumapoi.info,kuroshireader.com,kyumik.com,mangakita.id,mangasusuku.com,mangatale.co,mangatoon.cc,mangayaro.id,manhwadesu.host,mihentai.com,ngomik.net,noromax.my.id,rawkuma.com,running-advice.com,sektedoujin.cc,siikomik.com,softkomik.com,soulscans.my.id,tenshi.id,yuramanga.my.id##+js(aeld, contextmenu)
+! Rule "ainzscans.net,anichin.mov,dojing.net,dutamovie21.wiki,ikiru.wtf,komik18.xyz,komikdewasa.art,komikdewasa.mom,komikindo3.link,komiksin.id,komikstation.org,komiktap.info,kumapoi.info,kuroshireader.com,kyumik.com,mangakita.id,mangasusuku.com,mangatale.co,mangatoon.cc,mangayaro.id,manhwadesu.host,mihentai.com,ngomik.net,noromax.my.id,rawkuma.com,sektedoujin.cc,siikomik.com,softkomik.com,soulscans.my.id,tenshi.id,yuramanga.my.id##+js(aeld, contextmenu)" converted to: "ainzscans.net,anichin.mov,dojing.net,dutamovie21.wiki,ikiru.wtf,komik18.xyz,komikdewasa.art,komikdewasa.mom,komikindo3.link,komiksin.id,komikstation.org,komiktap.info,kumapoi.info,kuroshireader.com,kyumik.com,mangakita.id,mangasusuku.com,mangatale.co,mangatoon.cc,mangayaro.id,manhwadesu.host,mihentai.com,ngomik.net,noromax.my.id,rawkuma.com,sektedoujin.cc,siikomik.com,softkomik.com,soulscans.my.id,tenshi.id,yuramanga.my.id#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
+ainzscans.net,anichin.mov,dojing.net,dutamovie21.wiki,ikiru.wtf,komik18.xyz,komikdewasa.art,komikdewasa.mom,komikindo3.link,komiksin.id,komikstation.org,komiktap.info,kumapoi.info,kuroshireader.com,kyumik.com,mangakita.id,mangasusuku.com,mangatale.co,mangatoon.cc,mangayaro.id,manhwadesu.host,mihentai.com,ngomik.net,noromax.my.id,rawkuma.com,sektedoujin.cc,siikomik.com,softkomik.com,soulscans.my.id,tenshi.id,yuramanga.my.id##+js(aeld, contextmenu)
 ! Rule "kusonime.com##+js(aeld, keydown)" converted to: "kusonime.com#%#//scriptlet('ubo-aeld.js', 'keydown')"
 kusonime.com##+js(aeld, keydown)
 ! Rule "kusonime.com,mangahentai.me,tooncubus-read.my.id,tooncubus.top##+js(aopr, document.oncontextmenu)" converted to: "kusonime.com,mangahentai.me,tooncubus-read.my.id,tooncubus.top#%#//scriptlet('ubo-aopr.js', 'document.oncontextmenu')"
@@ -448,8 +474,6 @@ animebatch.id,nimegami.id##+js(aopr, go_url)
 alqanime.net##+js(aopr, ouo_token)
 ! Rule "keinime.web.id##+js(aopr, protected_links)" converted to: "keinime.web.id#%#//scriptlet('ubo-aopr.js', 'protected_links')"
 keinime.web.id##+js(aopr, protected_links)
-! Rule "||lk21static.buzz/assets/$mp4" converted to: "||lk21static.buzz/assets/$redirect=noopmp4-1s,media"
-||lk21static.buzz/assets/$mp4
 ! Rule "||lk21static.xyz/assets/$mp4" converted to: "||lk21static.xyz/assets/$redirect=noopmp4-1s,media"
 ||lk21static.xyz/assets/$mp4
 ! Rule "||lk21static.buzz/iframe/content2.php$frame" converted to: "||lk21static.buzz/iframe/content2.php$subdocument"
@@ -458,20 +482,16 @@ keinime.web.id##+js(aopr, protected_links)
 ||lk21static.xyz/iframe/content2.php$frame
 ! Rule "||d21.media/vid/$mp4" converted to: "||d21.media/vid/$redirect=noopmp4-1s,media"
 ||d21.media/vid/$mp4
-! Rule "nontondrama.wiki,thegmannews.com##:matches-path(/links/?url=) body > .container-iframe" converted to: "[$path=/links/?url=]nontondrama.wiki,thegmannews.com##body > .container-iframe"
-nontondrama.wiki,thegmannews.com##:matches-path(/links/?url=) body > .container-iframe
+! Rule "nontondrama.wiki,thegmannews.com,whitefencebb.com##:matches-path(/links/?url=) body > .container-iframe" converted to: "[$path=/links/?url=]nontondrama.wiki,thegmannews.com,whitefencebb.com##body > .container-iframe"
+nontondrama.wiki,thegmannews.com,whitefencebb.com##:matches-path(/links/?url=) body > .container-iframe
 ! Rule "||tolonglah.pages.dev$frame" converted to: "||tolonglah.pages.dev$subdocument"
 ||tolonglah.pages.dev$frame
 ! Rule "doroni.me,doronime.id##+js(set, showAds, true)" converted to: "doroni.me,doronime.id#%#//scriptlet('ubo-set.js', 'showAds', 'true')"
 doroni.me,doronime.id##+js(set, showAds, true)
-! Rule "||bk21.net/*.mp4$mp4" converted to: "||bk21.net/*.mp4$redirect=noopmp4-1s,media"
-||bk21.net/*.mp4$mp4
-! Rule "||juragan.film/asset/*.mp4$mp4" converted to: "||juragan.film/asset/*.mp4$redirect=noopmp4-1s,media"
-||juragan.film/asset/*.mp4$mp4
 ! Rule "dramaserial.id##+js(aopr, $.magnificPopup.open)" converted to: "dramaserial.id#%#//scriptlet('ubo-aopr.js', '$.magnificPopup.open')"
 dramaserial.id##+js(aopr, $.magnificPopup.open)
-! Rule "juragan.film##body:style(overflow: auto!important; position: unset!important;)" converted to: "juragan.film#$#body { overflow: auto!important; position: unset!important; }"
-juragan.film##body:style(overflow: auto!important; position: unset!important;)
+! Rule "juragan.*##body:style(overflow: auto!important; position: unset!important;)" converted to: "juragan.*#$#body { overflow: auto!important; position: unset!important; }"
+juragan.*##body:style(overflow: auto!important; position: unset!important;)
 ! Rule "oploverz.*##+js(abort-current-script, Promise, delete window)" converted to: "oploverz.*#%#//scriptlet('ubo-abort-current-script.js', 'Promise', 'delete window')"
 oploverz.*##+js(abort-current-script, Promise, delete window)
 ! Rule "oploverz.*##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "oploverz.*#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
@@ -488,10 +508,14 @@ samehadaku.*##a[target="_blank"] ~ .naveps:style(display: inline !important;)
 samehadaku.*##a[target="_blank"] ~ .pencenter:style(display: inline-block !important;)
 ! Rule "samehadaku.*##+js(aeld, contextmenu)" converted to: "samehadaku.*#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
 samehadaku.*##+js(aeld, contextmenu)
-! Rule "kiryuu.cc,kiryuu01.com##+js(aeld, contextmenu)" converted to: "kiryuu.cc,kiryuu01.com#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
-kiryuu.cc,kiryuu01.com##+js(aeld, contextmenu)
-! Rule "kiryuu.cc,kiryuu01.com##+js(nowoif)" converted to: "kiryuu.cc,kiryuu01.com#%#//scriptlet('ubo-nowoif.js')"
-kiryuu.cc,kiryuu01.com##+js(nowoif)
+! Rule "/kiryuu0\d+\.com/##+js(aeld, contextmenu)" converted to: "/kiryuu0\d+\.com/#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
+/kiryuu0\d+\.com/##+js(aeld, contextmenu)
+! Rule "/kiryuu0\d+\.com/##+js(nowoif)" converted to: "/kiryuu0\d+\.com/#%#//scriptlet('ubo-nowoif.js')"
+/kiryuu0\d+\.com/##+js(nowoif)
+! Rule "kiryuu.cc##+js(aeld, contextmenu)" converted to: "kiryuu.cc#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
+kiryuu.cc##+js(aeld, contextmenu)
+! Rule "kiryuu.cc##+js(nowoif)" converted to: "kiryuu.cc#%#//scriptlet('ubo-nowoif.js')"
+kiryuu.cc##+js(nowoif)
 ! Rule "mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id##*:style(user-select:text!important;)" converted to: "mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id#$#* { user-select:text!important; }"
 mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id##*:style(user-select:text!important;)
 ! Rule "mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id##+js(aeld, contextmenu)" converted to: "mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
@@ -500,10 +524,10 @@ mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id##+js(aeld, contextme
 mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id##+js(aopr, document.oncontextmenu)
 ! Rule "mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id##+js(nowoif)" converted to: "mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id#%#//scriptlet('ubo-nowoif.js')"
 mangaku.bio,mangaku.co,mangaku.in,mangaku.lat,mangaku.my.id##+js(nowoif)
-! Rule "manhwaindo.cx,manhwaland.asia,manhwaland.baby##+js(aeld, contextmenu)" converted to: "manhwaindo.cx,manhwaland.asia,manhwaland.baby#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
-manhwaindo.cx,manhwaland.asia,manhwaland.baby##+js(aeld, contextmenu)
-! Rule "manhwaindo.cx,manhwaland.baby##+js(nowoif)" converted to: "manhwaindo.cx,manhwaland.baby#%#//scriptlet('ubo-nowoif.js')"
-manhwaindo.cx,manhwaland.baby##+js(nowoif)
+! Rule "manhwaindo.com,manhwaland.asia,manhwaland.baby##+js(aeld, contextmenu)" converted to: "manhwaindo.com,manhwaland.asia,manhwaland.baby#%#//scriptlet('ubo-aeld.js', 'contextmenu')"
+manhwaindo.com,manhwaland.asia,manhwaland.baby##+js(aeld, contextmenu)
+! Rule "manhwaindo.com,manhwaland.baby##+js(nowoif)" converted to: "manhwaindo.com,manhwaland.baby#%#//scriptlet('ubo-nowoif.js')"
+manhwaindo.com,manhwaland.baby##+js(nowoif)
 ! Rule "onepieceberwarna.com##*:style(user-select:text!important;)" converted to: "onepieceberwarna.com#$#* { user-select:text!important; }"
 onepieceberwarna.com##*:style(user-select:text!important;)
 ! Rule "onepieceberwarna.com##+js(acis, disableSelection, reEnable)" converted to: "onepieceberwarna.com#%#//scriptlet('ubo-acis.js', 'disableSelection', 'reEnable')"
@@ -538,14 +562,14 @@ teropongmedia.id##body:style(overflow: auto!important; position: unset!important
 lokerjakarta.id##html.hustle-no-scroll:style(overflow: auto!important; position: unset!important;)
 ! Rule "batampos.co.id,papuaterkini.com,papuatoday.com##+js(acis, SGPopup)" converted to: "batampos.co.id,papuaterkini.com,papuatoday.com#%#//scriptlet('ubo-acis.js', 'SGPopup')"
 batampos.co.id,papuaterkini.com,papuatoday.com##+js(acis, SGPopup)
-! Rule "bangsaku.co,detaknews.co.id,kitalulus.com,prokaltim.com,serialmovieislami.com,suarakumandang.com,ulasan.co,wacana.org,wahdah.or.id,wartajurnalis.com,wartanesia.id##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "bangsaku.co,detaknews.co.id,kitalulus.com,prokaltim.com,serialmovieislami.com,suarakumandang.com,ulasan.co,wacana.org,wahdah.or.id,wartajurnalis.com,wartanesia.id#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
-bangsaku.co,detaknews.co.id,kitalulus.com,prokaltim.com,serialmovieislami.com,suarakumandang.com,ulasan.co,wacana.org,wahdah.or.id,wartajurnalis.com,wartanesia.id##+js(aopr, SGPB_POPUP_PARAMS)
+! Rule "bangsaku.co,derapjuang.id,detaknews.co.id,embaranmedia.com,harianpilar.com,kitalulus.com,prokaltim.com,serialmovieislami.com,suarakumandang.com,topkonstruksi.com,tvpapua.com,ulasan.co,wacana.org,wahdah.or.id,wartajurnalis.com,wartanesia.id##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "bangsaku.co,derapjuang.id,detaknews.co.id,embaranmedia.com,harianpilar.com,kitalulus.com,prokaltim.com,serialmovieislami.com,suarakumandang.com,topkonstruksi.com,tvpapua.com,ulasan.co,wacana.org,wahdah.or.id,wartajurnalis.com,wartanesia.id#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
+bangsaku.co,derapjuang.id,detaknews.co.id,embaranmedia.com,harianpilar.com,kitalulus.com,prokaltim.com,serialmovieislami.com,suarakumandang.com,topkonstruksi.com,tvpapua.com,ulasan.co,wacana.org,wahdah.or.id,wartajurnalis.com,wartanesia.id##+js(aopr, SGPB_POPUP_PARAMS)
 ! Rule "harianlenteraindonesia.co.id,taxacademy.id##+js(aopr, window.pum_popups)" converted to: "harianlenteraindonesia.co.id,taxacademy.id#%#//scriptlet('ubo-aopr.js', 'window.pum_popups')"
 harianlenteraindonesia.co.id,taxacademy.id##+js(aopr, window.pum_popups)
 ! Rule "99updates.id##.modal-open:style(overflow: auto!important; position: unset!important;)" converted to: "99updates.id#$#.modal-open { overflow: auto!important; position: unset!important; }"
 99updates.id##.modal-open:style(overflow: auto!important; position: unset!important;)
-! Rule "affmotor.com,alkitabonline.org,bacaterus.com,bankiir.id,biayatarif.com,brainacademy.id,brainly.co.id,carisinyal.com,emitennews.com,empatdio.com,gadgetized.net,gamefinity.id,gammafisblog.com,gen987fm.com,hellosehat.com,iuwashplus.or.id,jagobengkel.com,kucinglucu.net,ladiestory.id,maenhp.org,oolean.id,pakaiatm.com,pakaibanking.com,paylaterin.com,pelindo.co.id,persis.or.id,pilihprofesi.com,prosesbayar.com,teknisitv.id,tuliskan.id,versusbeda.com##body:style(overflow: auto!important; position: unset!important;)" converted to: "affmotor.com,alkitabonline.org,bacaterus.com,bankiir.id,biayatarif.com,brainacademy.id,brainly.co.id,carisinyal.com,emitennews.com,empatdio.com,gadgetized.net,gamefinity.id,gammafisblog.com,gen987fm.com,hellosehat.com,iuwashplus.or.id,jagobengkel.com,kucinglucu.net,ladiestory.id,maenhp.org,oolean.id,pakaiatm.com,pakaibanking.com,paylaterin.com,pelindo.co.id,persis.or.id,pilihprofesi.com,prosesbayar.com,teknisitv.id,tuliskan.id,versusbeda.com#$#body { overflow: auto!important; position: unset!important; }"
-affmotor.com,alkitabonline.org,bacaterus.com,bankiir.id,biayatarif.com,brainacademy.id,brainly.co.id,carisinyal.com,emitennews.com,empatdio.com,gadgetized.net,gamefinity.id,gammafisblog.com,gen987fm.com,hellosehat.com,iuwashplus.or.id,jagobengkel.com,kucinglucu.net,ladiestory.id,maenhp.org,oolean.id,pakaiatm.com,pakaibanking.com,paylaterin.com,pelindo.co.id,persis.or.id,pilihprofesi.com,prosesbayar.com,teknisitv.id,tuliskan.id,versusbeda.com##body:style(overflow: auto!important; position: unset!important;)
+! Rule "affmotor.com,alkitabonline.org,bacaterus.com,bankiir.id,beritaja.com,biayatarif.com,brainly.co.id,carisinyal.com,emitennews.com,empatdio.com,gadgetized.net,gamefinity.id,gammafisblog.com,gen987fm.com,hellosehat.com,iuwashplus.or.id,jagobengkel.com,kucinglucu.net,ladiestory.id,lenteratoday.com,maenhp.org,oolean.id,pakaiatm.com,pakaibanking.com,paylaterin.com,pelindo.co.id,persis.or.id,pilihprofesi.com,prosesbayar.com,teknisitv.id,tuliskan.id,versusbeda.com##body:style(overflow: auto!important; position: unset!important;)" converted to: "affmotor.com,alkitabonline.org,bacaterus.com,bankiir.id,beritaja.com,biayatarif.com,brainly.co.id,carisinyal.com,emitennews.com,empatdio.com,gadgetized.net,gamefinity.id,gammafisblog.com,gen987fm.com,hellosehat.com,iuwashplus.or.id,jagobengkel.com,kucinglucu.net,ladiestory.id,lenteratoday.com,maenhp.org,oolean.id,pakaiatm.com,pakaibanking.com,paylaterin.com,pelindo.co.id,persis.or.id,pilihprofesi.com,prosesbayar.com,teknisitv.id,tuliskan.id,versusbeda.com#$#body { overflow: auto!important; position: unset!important; }"
+affmotor.com,alkitabonline.org,bacaterus.com,bankiir.id,beritaja.com,biayatarif.com,brainly.co.id,carisinyal.com,emitennews.com,empatdio.com,gadgetized.net,gamefinity.id,gammafisblog.com,gen987fm.com,hellosehat.com,iuwashplus.or.id,jagobengkel.com,kucinglucu.net,ladiestory.id,lenteratoday.com,maenhp.org,oolean.id,pakaiatm.com,pakaibanking.com,paylaterin.com,pelindo.co.id,persis.or.id,pilihprofesi.com,prosesbayar.com,teknisitv.id,tuliskan.id,versusbeda.com##body:style(overflow: auto!important; position: unset!important;)
 ! Rule "ketik.co.id##html:style(scrollbar-width: unset!important;)" converted to: "ketik.co.id#$#html { scrollbar-width: unset!important; }"
 ketik.co.id##html:style(scrollbar-width: unset!important;)
 ! Rule "duniagames.co.id##+js(rc, cdk-global-scrollblock, html)" converted to: "duniagames.co.id#%#//scriptlet('ubo-rc.js', 'cdk-global-scrollblock', 'html')"
@@ -570,8 +594,8 @@ bahankain.com##+js(ra, onmousedown|onselectstart|unselectable, .post-info)
 blog-dnz.com,kucinglucu.net,kucingpersia.co.id,pakguru.co.id,r3ndy.com,radiokucing.com,ridertua.com,tepat.id##+js(aeld, contextmenu)
 ! Rule "gentra.co.id,mercon.id##+js(aopr, $, document.oncontextmenu)" converted to: "gentra.co.id,mercon.id#%#//scriptlet('ubo-aopr.js', '$', 'document.oncontextmenu')"
 gentra.co.id,mercon.id##+js(aopr, $, document.oncontextmenu)
-! Rule "gap.web.id,guru-id.com,infoastronomy.org,metrokendari.com,noveltoon.mobi,penakatolik.com,portal-islam.id,rukim.id,wowkeren.com##+js(aopr, document.oncontextmenu)" converted to: "gap.web.id,guru-id.com,infoastronomy.org,metrokendari.com,noveltoon.mobi,penakatolik.com,portal-islam.id,rukim.id,wowkeren.com#%#//scriptlet('ubo-aopr.js', 'document.oncontextmenu')"
-gap.web.id,guru-id.com,infoastronomy.org,metrokendari.com,noveltoon.mobi,penakatolik.com,portal-islam.id,rukim.id,wowkeren.com##+js(aopr, document.oncontextmenu)
+! Rule "bahasakita.com,gap.web.id,guru-id.com,infoastronomy.org,metrokendari.com,noveltoon.mobi,penakatolik.com,portal-islam.id,rukim.id,wowkeren.com##+js(aopr, document.oncontextmenu)" converted to: "bahasakita.com,gap.web.id,guru-id.com,infoastronomy.org,metrokendari.com,noveltoon.mobi,penakatolik.com,portal-islam.id,rukim.id,wowkeren.com#%#//scriptlet('ubo-aopr.js', 'document.oncontextmenu')"
+bahasakita.com,gap.web.id,guru-id.com,infoastronomy.org,metrokendari.com,noveltoon.mobi,penakatolik.com,portal-islam.id,rukim.id,wowkeren.com##+js(aopr, document.oncontextmenu)
 ! Rule "r3ndy.com##+js(aopr, document.onmousedown)" converted to: "r3ndy.com#%#//scriptlet('ubo-aopr.js', 'document.onmousedown')"
 r3ndy.com##+js(aopr, document.onmousedown)
 ! Rule "gendis.id##+js(aopr, nocontextmenu)" converted to: "gendis.id#%#//scriptlet('ubo-aopr.js', 'nocontextmenu')"
@@ -584,18 +608,18 @@ safahad.my.id##+js(rmnt, script, contextmenu)
 dialeksis.com##*::selection:style(color:#212121!important; background:#fde69a!important;)
 ! Rule "gentra.co.id,pakguru.co.id,ridertua.com##*::selection:style(color:white!important; background:#0078d7!important;)" converted to: "gentra.co.id,pakguru.co.id,ridertua.com#$#*::selection { color:white!important; background:#0078d7!important; }"
 gentra.co.id,pakguru.co.id,ridertua.com##*::selection:style(color:white!important; background:#0078d7!important;)
-! Rule "balipost.com,chordindonesia.com,chordtela.com,dailysocial.id,datadikdasmen.com,dialeksis.com,gap.web.id,gendis.id,historia.id,hukum-hukum.com,id.theasianparent.com,idblanter.com,igniel.com,kostatv.id,kucingmania.net,kucingpersia.co.id,lirikterjemahan.id,malukuterkini.com,maribelajarcoding.com,metrokendari.com,mistertekno.com,ngulikode.com,noveltoon.mobi,openkerja.id,penakatolik.com,ridertua.com,safahad.my.id,satupiston.com,tepat.id,tomtekno.com,wendycode.com##*:style(user-select:text!important;)" converted to: "balipost.com,chordindonesia.com,chordtela.com,dailysocial.id,datadikdasmen.com,dialeksis.com,gap.web.id,gendis.id,historia.id,hukum-hukum.com,id.theasianparent.com,idblanter.com,igniel.com,kostatv.id,kucingmania.net,kucingpersia.co.id,lirikterjemahan.id,malukuterkini.com,maribelajarcoding.com,metrokendari.com,mistertekno.com,ngulikode.com,noveltoon.mobi,openkerja.id,penakatolik.com,ridertua.com,safahad.my.id,satupiston.com,tepat.id,tomtekno.com,wendycode.com#$#* { user-select:text!important; }"
-balipost.com,chordindonesia.com,chordtela.com,dailysocial.id,datadikdasmen.com,dialeksis.com,gap.web.id,gendis.id,historia.id,hukum-hukum.com,id.theasianparent.com,idblanter.com,igniel.com,kostatv.id,kucingmania.net,kucingpersia.co.id,lirikterjemahan.id,malukuterkini.com,maribelajarcoding.com,metrokendari.com,mistertekno.com,ngulikode.com,noveltoon.mobi,openkerja.id,penakatolik.com,ridertua.com,safahad.my.id,satupiston.com,tepat.id,tomtekno.com,wendycode.com##*:style(user-select:text!important;)
-! Rule "metrokendari.com,rukim.id##+js(acis, disableSelection, reEnable)" converted to: "metrokendari.com,rukim.id#%#//scriptlet('ubo-acis.js', 'disableSelection', 'reEnable')"
-metrokendari.com,rukim.id##+js(acis, disableSelection, reEnable)
+! Rule "bahasakita.com,balipost.com,chordindonesia.com,chordtela.com,dailysocial.id,datadikdasmen.com,dialeksis.com,gap.web.id,gendis.id,historia.id,hukum-hukum.com,idblanter.com,igniel.com,infosawit.com,kostatv.id,kucingmania.net,kucingpersia.co.id,lirikterjemahan.id,malukuterkini.com,maribelajarcoding.com,metrokendari.com,mistertekno.com,ngulikode.com,noveltoon.mobi,openkerja.id,penakatolik.com,ridertua.com,safahad.my.id,satupiston.com,tepat.id,tomtekno.com,wendycode.com##*:style(user-select:text!important;)" converted to: "bahasakita.com,balipost.com,chordindonesia.com,chordtela.com,dailysocial.id,datadikdasmen.com,dialeksis.com,gap.web.id,gendis.id,historia.id,hukum-hukum.com,idblanter.com,igniel.com,infosawit.com,kostatv.id,kucingmania.net,kucingpersia.co.id,lirikterjemahan.id,malukuterkini.com,maribelajarcoding.com,metrokendari.com,mistertekno.com,ngulikode.com,noveltoon.mobi,openkerja.id,penakatolik.com,ridertua.com,safahad.my.id,satupiston.com,tepat.id,tomtekno.com,wendycode.com#$#* { user-select:text!important; }"
+bahasakita.com,balipost.com,chordindonesia.com,chordtela.com,dailysocial.id,datadikdasmen.com,dialeksis.com,gap.web.id,gendis.id,historia.id,hukum-hukum.com,idblanter.com,igniel.com,infosawit.com,kostatv.id,kucingmania.net,kucingpersia.co.id,lirikterjemahan.id,malukuterkini.com,maribelajarcoding.com,metrokendari.com,mistertekno.com,ngulikode.com,noveltoon.mobi,openkerja.id,penakatolik.com,ridertua.com,safahad.my.id,satupiston.com,tepat.id,tomtekno.com,wendycode.com##*:style(user-select:text!important;)
+! Rule "bahasakita.com,metrokendari.com,rukim.id##+js(acis, disableSelection, reEnable)" converted to: "bahasakita.com,metrokendari.com,rukim.id#%#//scriptlet('ubo-acis.js', 'disableSelection', 'reEnable')"
+bahasakita.com,metrokendari.com,rukim.id##+js(acis, disableSelection, reEnable)
 ! Rule "unja.ac.id##+js(acis, disableselect, reEnable)" converted to: "unja.ac.id#%#//scriptlet('ubo-acis.js', 'disableselect', 'reEnable')"
 unja.ac.id##+js(acis, disableselect, reEnable)
 ! Rule "pakguru.co.id##+js(aopr, $, disableSelection)" converted to: "pakguru.co.id#%#//scriptlet('ubo-aopr.js', '$', 'disableSelection')"
 pakguru.co.id##+js(aopr, $, disableSelection)
 ! Rule "infoastronomy.org##+js(aopr, document.onmousedown)" converted to: "infoastronomy.org#%#//scriptlet('ubo-aopr.js', 'document.onmousedown')"
 infoastronomy.org##+js(aopr, document.onmousedown)
-! Rule "dailysocial.id,id.theasianparent.com,infoastronomy.org,noveltoon.mobi,portal-islam.id##+js(aopr, document.onselectstart)" converted to: "dailysocial.id,id.theasianparent.com,infoastronomy.org,noveltoon.mobi,portal-islam.id#%#//scriptlet('ubo-aopr.js', 'document.onselectstart')"
-dailysocial.id,id.theasianparent.com,infoastronomy.org,noveltoon.mobi,portal-islam.id##+js(aopr, document.onselectstart)
+! Rule "dailysocial.id,infoastronomy.org,noveltoon.mobi,portal-islam.id##+js(aopr, document.onselectstart)" converted to: "dailysocial.id,infoastronomy.org,noveltoon.mobi,portal-islam.id#%#//scriptlet('ubo-aopr.js', 'document.onselectstart')"
+dailysocial.id,infoastronomy.org,noveltoon.mobi,portal-islam.id##+js(aopr, document.onselectstart)
 ! Rule "mercon.id##style:has-text(::selection):remove()" converted to: "mercon.id#$?#style:has-text(::selection) { remove: true; }"
 mercon.id##style:has-text(::selection):remove()
 ! Rule "keepo.me,kelasexcel.id,mercon.id,radiokucing.com,ridertua.com,tepat.id##+js(aeld, /copy|keydown/)" converted to: "keepo.me,kelasexcel.id,mercon.id,radiokucing.com,ridertua.com,tepat.id#%#//scriptlet('ubo-aeld.js', '/copy|keydown/')"
@@ -856,18 +880,14 @@ _usafelink.$3p,script
 /xmithzyl/safelink/*$3p,script
 ! Rule "linkerload.com##+js(acis, addEventListener, google_ad_client)" converted to: "linkerload.com#%#//scriptlet('ubo-acis.js', 'addEventListener', 'google_ad_client')"
 linkerload.com##+js(acis, addEventListener, google_ad_client)
-! Rule "mangindo.xyz##+js(aopr, adBlockDetected)" converted to: "mangindo.xyz#%#//scriptlet('ubo-aopr.js', 'adBlockDetected')"
-mangindo.xyz##+js(aopr, adBlockDetected)
 ! Rule "dz4link.com,linkpoi.me##+js(aopr, app_vars.force_disable_adblock)" converted to: "dz4link.com,linkpoi.me#%#//scriptlet('ubo-aopr.js', 'app_vars.force_disable_adblock')"
 dz4link.com,linkpoi.me##+js(aopr, app_vars.force_disable_adblock)
 ! Rule "linkpoi.me##+js(aopr, disableItToContinue)" converted to: "linkpoi.me#%#//scriptlet('ubo-aopr.js', 'disableItToContinue')"
 linkpoi.me##+js(aopr, disableItToContinue)
 ! Rule "menjelajahi.com,saungfirmware.id##+js(aopr, short_url_app_vars.force_disable_adblock)" converted to: "menjelajahi.com,saungfirmware.id#%#//scriptlet('ubo-aopr.js', 'short_url_app_vars.force_disable_adblock')"
 menjelajahi.com,saungfirmware.id##+js(aopr, short_url_app_vars.force_disable_adblock)
-! Rule "mangindo.xyz##+js(aopr, window.adikAds)" converted to: "mangindo.xyz#%#//scriptlet('ubo-aopr.js', 'window.adikAds')"
-mangindo.xyz##+js(aopr, window.adikAds)
-! Rule "tempatwisata.pro,vebma.com##+js(no-fetch-if, pagead2.googlesyndication.com)" converted to: "tempatwisata.pro,vebma.com#%#//scriptlet('ubo-no-fetch-if.js', 'pagead2.googlesyndication.com')"
-tempatwisata.pro,vebma.com##+js(no-fetch-if, pagead2.googlesyndication.com)
+! Rule "bukutafsirmimpi.xyz,cekresi.me,tempatwisata.pro,vebma.com##+js(no-fetch-if, pagead2.googlesyndication.com)" converted to: "bukutafsirmimpi.xyz,cekresi.me,tempatwisata.pro,vebma.com#%#//scriptlet('ubo-no-fetch-if.js', 'pagead2.googlesyndication.com')"
+bukutafsirmimpi.xyz,cekresi.me,tempatwisata.pro,vebma.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! Rule "lifesurance.info##+js(set, showada, true)" converted to: "lifesurance.info#%#//scriptlet('ubo-set.js', 'showada', 'true')"
 lifesurance.info##+js(set, showada, true)
 ! Rule "||adligature.com^$redirect=noop.js,domain=tempatwisata.pro" converted to: "||adligature.com^$redirect=noopjs,domain=tempatwisata.pro"
@@ -884,10 +904,10 @@ jurnalistekno.id##body:style(overflow: auto !important;)
 besargaji.com,dapat.link,khaddavi.net,link2unlock.com,lokerwfh.net,meong.club,techbloogs.com,tutwuri.id##+js(nowoif)
 ! Rule "besargaji.com,khaddavi.net,lokerwfh.net,techbloogs.com,tutwuri.id##+js(adjust-setInterval)" converted to: "besargaji.com,khaddavi.net,lokerwfh.net,techbloogs.com,tutwuri.id#%#//scriptlet('ubo-adjust-setInterval.js')"
 besargaji.com,khaddavi.net,lokerwfh.net,techbloogs.com,tutwuri.id##+js(adjust-setInterval)
-! Rule "tempatwisata.pro##+js(adjust-setInterval, /counter|Wait/, *, 0.001)" converted to: "tempatwisata.pro#%#//scriptlet('ubo-adjust-setInterval.js', '/counter|Wait/', '*', '0.001')"
-tempatwisata.pro##+js(adjust-setInterval, /counter|Wait/, *, 0.001)
-! Rule "tempatwisata.pro##+js(aeld, blur, counter)" converted to: "tempatwisata.pro#%#//scriptlet('ubo-aeld.js', 'blur', 'counter')"
-tempatwisata.pro##+js(aeld, blur, counter)
+! Rule "cekresi.me,tempatwisata.pro##+js(adjust-setInterval, /counter|Wait/, *, 0.001)" converted to: "cekresi.me,tempatwisata.pro#%#//scriptlet('ubo-adjust-setInterval.js', '/counter|Wait/', '*', '0.001')"
+cekresi.me,tempatwisata.pro##+js(adjust-setInterval, /counter|Wait/, *, 0.001)
+! Rule "cekresi.me,tempatwisata.pro##+js(aeld, blur, counter)" converted to: "cekresi.me,tempatwisata.pro#%#//scriptlet('ubo-aeld.js', 'blur', 'counter')"
+cekresi.me,tempatwisata.pro##+js(aeld, blur, counter)
 ! Rule "dapat.link,saungfirmware.id,savetub.com,semruwet.com##+js(set, blurred, false)" converted to: "dapat.link,saungfirmware.id,savetub.com,semruwet.com#%#//scriptlet('ubo-set.js', 'blurred', 'false')"
 dapat.link,saungfirmware.id,savetub.com,semruwet.com##+js(set, blurred, false)
 ! Rule "@@/abdiusu/project-safelink-viomagz/*/safelink-ViomagzV3.2-2tombol$3p,script" converted to: "@@/abdiusu/project-safelink-viomagz/*/safelink-ViomagzV3.2-2tombol$third-party,script"
@@ -916,16 +936,14 @@ alpinecorporate.com##+js(adjust-setInterval, counter, *, 0.001)
 alpinecorporate.com##+js(set, blurred, false)
 ! Rule "alpinecorporate.com##.adsbox.doubleclick.ad-placement:style(display: block !important;)" converted to: "alpinecorporate.com#$#.adsbox.doubleclick.ad-placement { display: block !important; }"
 alpinecorporate.com##.adsbox.doubleclick.ad-placement:style(display: block !important;)
-! Rule "||nokephub.com/wp-content/uploads/$mp4" converted to: "||nokephub.com/wp-content/uploads/$redirect=noopmp4-1s,media"
-||nokephub.com/wp-content/uploads/$mp4
 ! Rule "indoporntv.*##video:style(cursor: auto!important;)" converted to: "indoporntv.*#$#video { cursor: auto!important; }"
 indoporntv.*##video:style(cursor: auto!important;)
 ! Rule "pasarbokep.com##+js(aopr, adsBlocked)" converted to: "pasarbokep.com#%#//scriptlet('ubo-aopr.js', 'adsBlocked')"
 pasarbokep.com##+js(aopr, adsBlocked)
 ! Rule "pasarbokep.com,sangetods.*##+js(no-fetch-if, pagead2.googlesyndication.com)" converted to: "pasarbokep.com,sangetods.*#%#//scriptlet('ubo-no-fetch-if.js', 'pagead2.googlesyndication.com')"
 pasarbokep.com,sangetods.*##+js(no-fetch-if, pagead2.googlesyndication.com)
-! Rule "3gpterbaru.com,lk21semi.*,minioppai.org##+js(acis, chp_ads_blocker_detector)" converted to: "3gpterbaru.com,lk21semi.*,minioppai.org#%#//scriptlet('ubo-acis.js', 'chp_ads_blocker_detector')"
-3gpterbaru.com,lk21semi.*,minioppai.org##+js(acis, chp_ads_blocker_detector)
+! Rule "asalunik.com,lk21semi.*,minioppai.org##+js(acis, chp_ads_blocker_detector)" converted to: "asalunik.com,lk21semi.*,minioppai.org#%#//scriptlet('ubo-acis.js', 'chp_ads_blocker_detector')"
+asalunik.com,lk21semi.*,minioppai.org##+js(acis, chp_ads_blocker_detector)
 ! Rule "bokepgemoy.*,kontenterabox.com##+js(aost, document.createElement, adsBlocked)" converted to: "bokepgemoy.*,kontenterabox.com#%#//scriptlet('ubo-aost.js', 'document.createElement', 'adsBlocked')"
 bokepgemoy.*,kontenterabox.com##+js(aost, document.createElement, adsBlocked)
 ! Rule "fantasiku.com,igobokep.*,kawai.vip##+js(noeval-if, /fairAdblock|chp_?adblock|adsbygoogle\.js/)" converted to: "fantasiku.com,igobokep.*,kawai.vip#%#//scriptlet('ubo-noeval-if.js', '/fairAdblock|chp_?adblock|adsbygoogle\.js/')"
@@ -942,12 +960,14 @@ kimcilonlyofc.com##+js(nostif, /showModal\(\)|chooseAction\(\)/)
 pejuhin.link,pejuhinxxx.click##body:style(overflow: auto!important; position: unset!important;)
 ! Rule "kawai.vip,pusatporn18.com##+js(aeld, /^(?:load|click)$/, popMagic)" converted to: "kawai.vip,pusatporn18.com#%#//scriptlet('ubo-aeld.js', '/^(?:load|click)$/', 'popMagic')"
 kawai.vip,pusatporn18.com##+js(aeld, /^(?:load|click)$/, popMagic)
-! Rule "dicrotin.com,dicrotin.info##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "dicrotin.com,dicrotin.info#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
-dicrotin.com,dicrotin.info##+js(aopr, SGPB_POPUP_PARAMS)
+! Rule "dicrotin.*,nokephub.*##+js(aopr, SGPB_POPUP_PARAMS)" converted to: "dicrotin.*,nokephub.*#%#//scriptlet('ubo-aopr.js', 'SGPB_POPUP_PARAMS')"
+dicrotin.*,nokephub.*##+js(aopr, SGPB_POPUP_PARAMS)
 ! Rule "bokepvir.*,javsubindo.*##+js(aopr, window.pum_popups)" converted to: "bokepvir.*,javsubindo.*#%#//scriptlet('ubo-aopr.js', 'window.pum_popups')"
 bokepvir.*,javsubindo.*##+js(aopr, window.pum_popups)
-! Rule "agenbokep.*,bandarbokep.*,bokepindo.*,doooood.co,duniabokep.*,erocafe.net,gocrot.org,hencop.com,indobokepin.*,javindo.*,javsubindo.*,javxxi-a.site,kimcilonlyofc.com,malayporntube.net,melayuboleh.me,minioppai.org,myhdjav.me,ngentub.cc,nontonbokep.*,sibokepjepang.*,sintube.icu##+js(nowoif)" converted to: "agenbokep.*,bandarbokep.*,bokepindo.*,doooood.co,duniabokep.*,erocafe.net,gocrot.org,hencop.com,indobokepin.*,javindo.*,javsubindo.*,javxxi-a.site,kimcilonlyofc.com,malayporntube.net,melayuboleh.me,minioppai.org,myhdjav.me,ngentub.cc,nontonbokep.*,sibokepjepang.*,sintube.icu#%#//scriptlet('ubo-nowoif.js')"
-agenbokep.*,bandarbokep.*,bokepindo.*,doooood.co,duniabokep.*,erocafe.net,gocrot.org,hencop.com,indobokepin.*,javindo.*,javsubindo.*,javxxi-a.site,kimcilonlyofc.com,malayporntube.net,melayuboleh.me,minioppai.org,myhdjav.me,ngentub.cc,nontonbokep.*,sibokepjepang.*,sintube.icu##+js(nowoif)
+! Rule "agenbokep.*,bandarbokep.*,bokepindo.*,doooood.co,duniabokep.*,erocafe.net,gocrot.org,hencop.com,indobokepin.*,javindo.*,javsubindo.*,javxxi-a.site,kimcilonlyofc.com,malayporntube.net,melayuboleh.me,minioppai.org,myhdjav.me,ngentub.cc,nontonbokep.*,sibokepjepang.*##+js(nowoif)" converted to: "agenbokep.*,bandarbokep.*,bokepindo.*,doooood.co,duniabokep.*,erocafe.net,gocrot.org,hencop.com,indobokepin.*,javindo.*,javsubindo.*,javxxi-a.site,kimcilonlyofc.com,malayporntube.net,melayuboleh.me,minioppai.org,myhdjav.me,ngentub.cc,nontonbokep.*,sibokepjepang.*#%#//scriptlet('ubo-nowoif.js')"
+agenbokep.*,bandarbokep.*,bokepindo.*,doooood.co,duniabokep.*,erocafe.net,gocrot.org,hencop.com,indobokepin.*,javindo.*,javsubindo.*,javxxi-a.site,kimcilonlyofc.com,malayporntube.net,melayuboleh.me,minioppai.org,myhdjav.me,ngentub.cc,nontonbokep.*,sibokepjepang.*##+js(nowoif)
+! Rule "kingbokep.*##*:style(user-select:text!important;)" converted to: "kingbokep.*#$#* { user-select:text!important; }"
+kingbokep.*##*:style(user-select:text!important;)
 ! Rule "erocafe.net##+js(aopr, document.onselectstart)" converted to: "erocafe.net#%#//scriptlet('ubo-aopr.js', 'document.onselectstart')"
 erocafe.net##+js(aopr, document.onselectstart)
 ! Rule "erocafe.net##+js(aopr, protected_links)" converted to: "erocafe.net#%#//scriptlet('ubo-aopr.js', 'protected_links')"
@@ -988,8 +1008,6 @@ kisahdunia.com##+js(aost, DOMTokenList.prototype.contains, manageBodyClasses)
 azhan.co,mediahiburan.my##+js(acis, disableSelection, reEnable)
 ! Rule "mediahiburan.my##+js(acis, document.oncontextmenu)" converted to: "mediahiburan.my#%#//scriptlet('ubo-acis.js', 'document.oncontextmenu')"
 mediahiburan.my##+js(acis, document.oncontextmenu)
-! Rule "mediaonemarketing.com.sg##+js(aopr, window.pum_popups)" converted to: "mediaonemarketing.com.sg#%#//scriptlet('ubo-aopr.js', 'window.pum_popups')"
-mediaonemarketing.com.sg##+js(aopr, window.pum_popups)
 ! Rule "ohmymedia.cc###mvp-site-main:style(margin-top: 0!important;)" converted to: "ohmymedia.cc#$##mvp-site-main { margin-top: 0!important; }"
 ohmymedia.cc###mvp-site-main:style(margin-top: 0!important;)
 ! Error: Invalid selector: '+js(prevent-fetch, pagead2.googlesyndication.com)' -- '+js(prevent-fetch, pagead2.googlesyndication.com)' is not a valid selector in rule:

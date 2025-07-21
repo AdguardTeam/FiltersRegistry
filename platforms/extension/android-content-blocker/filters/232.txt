@@ -1,16 +1,16 @@
-! Checksum: EGoYtc49Kvs0SZop70RNqw
+! Checksum: Dxa72BBocIPbYJVxZIn8qA
 ! Title: KAD - Anti-Scam
 ! Description: Filter that protects against various types of scams in the Polish network, such as mass text messaging, fake online stores, etc.
-! Version: 2.0.71.71
-! TimeUpdated: 2025-06-20T08:40:00+00:00
+! Version: 2.0.72.80
+! TimeUpdated: 2025-07-21T08:43:50+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Do poprawnego działania listy wymagane jest rozszerzenie uBlock Origin 1.20.0+, uBlock Origin Legacy 1.16.4.20+ lub AdGuard AdBlocker 3.3.2+ albo aplikacja AdGuard dla Windows/macOS/Android, ograniczone wsparcie dla iOS (oparte o mechanizm "Safari nie może załadować strony, ponieważ url został zablokowany przez bloker treści").
 !
 ! Title: 🇵🇱 KAD - Przekręty
 ! Description: Filtry chroniące przed różnymi zagrożeniami w polskiej sieci, takimi jak wirusy, fałszywe sklepy i subskrypcje SMS. Dodatkowo zawierają one wpisy stworzone przez CERT Polska, legalniewsieci.pl, KNF i inne zespoły.
-! Last modified: Fri, 20 Jun 2025, 10:31 UTC+02:00
-! OriginalVersion: 2025.6.20.0
+! Last modified: Mon, 21 Jul 2025, 10:36 UTC+02:00
+! OriginalVersion: 2025.7.21.0
 ! Expires: 2 days
 ! License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ! Creator: azet12
@@ -25,8 +25,8 @@
 !#safari_cb_affinity(security)
 ! Podejrzane i/lub strony połączone z innymi oszustwami
 ||ublock.org^$document
-||vorwerk.*/*/zamow-prezentacje/poznaj-kobold|$document,to=~przemysl-zamowienie-prezentacji.*|vorwerk.com|vorwerk.pl
-||vorwerk.*/*/zamow-prezentacje/poznaj-thermomix|$document,to=~przemysl-zamowienie-prezentacji.*|vorwerk.com|vorwerk.pl
+||vorwerk.*/*/zamow-prezentacje/poznaj-kobold|$document,to=vorwerk.com|vorwerk.pl
+||vorwerk.*/*/zamow-prezentacje/poznaj-thermomix|$document,to=vorwerk.com|vorwerk.pl
 !
 ! Przekierowują do innych stron z przekrętami
 ||bmscooperation.com^$document
@@ -36,13 +36,12 @@
 !#safari_cb_affinity
 !
 ! Przekręty
-||24.eu^$document,to=24.eu|~www.24.eu
-||c.pl^$document,to=c.pl|~www.c.pl
-||fx.cinkciarz.pl^$document,to=~1200-osob-skarzy-sie-na-internetowy-kantor-w-prokuraturze.*|cinkciarz.pl
+||auto.pl^$document,to=auto.pl|~www.auto.pl
+||auto.pl^$subdocument,domain=auto.pl|~www.auto.pl
+||fx.cinkciarz.pl^$document,to=cinkciarz.pl
 ||getlnbank.$document
 ||kinomaniak.pl^$document,to=kinomaniak.pl
 ||lnpost.$document
-||x9.eu^$document,to=~www.x9.eu|x9.eu
 ||znany-lekarz.pl^$document
 .com/c/*?s1=$document,to=com
 .net/c/*?s1=$document,to=net
@@ -84,7 +83,7 @@
 /upload/*.xml$document,to=miniraj.pl
 /uploads/*.xml$document,to=europartner.com.pl|zdrowiedlawszystkich.pl
 /userfiles/*.xml$document,to=aquatech.com.pl|bartodzieje.medycyna.net.pl|bip.wuozprzemysl.pl|ekobarc.pl|everest-sport.pl|gdziezjesc.info|ikuchnia.com.pl|jta.com.pl|kamart.com.pl|kieryk.pl|kppzp.pl|muzeum.kety.pl|pomerania.org.pl|radecznica.pl|rbmtechnik.pl|serwisnawigacji.pl|sjo.uni.lodz.pl|sunrest.com.pl|warszawa-pragapoludnie.sr.gov.pl|wobo.com.pl|wodnik-tour.com.pl
-/ym.html?email=*@$document,to=~to-moze-byc-phishing.*
+/ym.html?email=*@$document,subdocument
 /zcvisitor/*?campaignid$document
 ?zoneid=*&cost=0.$document
 ^s1=*&click_id=$document
@@ -96,7 +95,7 @@
 ||c*.tmweb.ru/weryfikacja/$document,subdocument
 ||lds.xyz/*&sbtag=$document,to=xyz
 ||lds.xyz/*?sbtag=$document,to=xyz
-||ostrowlubelski.pl/libs/$document,subdocument,important,to=~przekierowania-z-google.*
+||ostrowlubelski.pl/libs/$document,subdocument
 /\/\?[0-9a-zA-Z]{32}&[0-9]{5}&(https?|undefined$)/$~third-party,script
 /\/\?[0-9a-zA-Z]{32}&ver=[0-9]{1,3}\./$~third-party,script
 /^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/\?utm_campaign=\w{40,}/$document,match-case,to=life|live|top|xyz
@@ -125,17 +124,17 @@
 ||allegrolokalnie.$document,to=~allegro.com|~allegro.cz|~allegro.hu|~allegro.pl|~allegro.sk|~allegrolokalnie.pl|~czc.cz|~mall.cz|~mall.hr|~mall.hu|~mall.pl|~mall.sk|~mimovrste.com|~wedo.cz
 ||allegrolokalnie.$subdocument,domain=~allegro.com|~allegro.cz|~allegro.hu|~allegro.pl|~allegro.sk|~allegrolokalnie.pl|~czc.cz|~mall.cz|~mall.hr|~mall.hu|~mall.pl|~mall.sk|~mimovrste.com|~wedo.cz
 ||chomikuj.$document,to=~chomikuj.pl
-||czyjtonumer.net^$document,to=czyjtonumer.net|~uwazaj-na-pakiet-premium.*
+||czyjtonumer.net^$document,to=czyjtonumer.net
 ||ezalukaj*.$document
 ||hosting*.online.pro^$document
-||inpost.pl-*.$document,to=~inpost.pl|~przekret-z-falszywym-kuriererm-dostawa.*
-||inpost.pl.*.$document,to=~inpost.pl|~przekret-z-falszywym-kuriererm-dostawa.*
+||inpost.pl-*.$document,to=~inpost.pl
+||inpost.pl.*.$document,to=~inpost.pl
 ||legalniewsieci.$document,to=~legalniewsieci.pl
 ||mail.hodtd.com/*url=*swietne-ceny.com$document,important,to=mail.hodtd.com
 ||new1.*.*.com^$document,to=com
 ||new1.*.*.ir^$document,to=ir
-||olx.pl-*.$document,to=~olx.pl|~przekret-z-falszywym-kuriererm-dostawa.*
-||olx.pl.*.$document,to=~olx.pl|~przekret-z-falszywym-kuriererm-dostawa.*
+||olx.pl-*.$document,to=~olx.pl
+||olx.pl.*.$document,to=~olx.pl
 ||server*.nazwa.pl/weryfikacja/$document,subdocument
 ||serwer*.home.pl/weryfikacja/$document,subdocument
 ||serwer*.lh.pl/weryfikacja/$document,subdocument
@@ -150,9 +149,8 @@
 !
 ! Natrętne lub wprowadzające w błąd reklamy/obrazy
 ##a[href^="/fb-login"]
-/^https?:\/\/[\w]+\.cloudfront\.net\/(?:build|current|latest|main|release|rel|revision|rev|v|version|ver)\/pl\/v/$document,important,domain=~asystent-pobierania-na-dobreprogramy-lub-softonic.*|cloudfront.net,to=cloudfront.net
+/^https?:\/\/[\w]+\.cloudfront\.net\/(?:build|current|latest|main|release|rel|revision|rev|v|version|ver)\/pl\/v/$document,domain=~asystent-pobierania-na-dobreprogramy-lub-softonic.*|cloudfront.net,to=cloudfront.net
 @@||blocked-site-hole-cert.pl^$domain=lista.cert.pl
-|http://a2g.me/$document,important,to=~zalecane-wymuszenie-https.*
 ||ekino-tv.pl/views/img/reklama_btn2.png$image
 ||uploadfile.pl/download.png$image
 ~pl##a[href*="whokeys.com/"]:lang(pl)

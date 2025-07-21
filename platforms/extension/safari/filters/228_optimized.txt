@@ -1,9 +1,9 @@
-! Checksum: VuLBD97z4ZqmY/hI3Zed/Q
-! Diff-Path: ../patches/228_optimized/228_optimized-s-1750380743-14400.patch
+! Checksum: IqWxGFyk+ot/XIj1XJskqg
+! Diff-Path: ../patches/228_optimized/228_optimized-s-1751935933-14400.patch
 ! Title: xinggsf (Optimized)
 ! Description: Blocks ads on the Chinese video platforms (MangoTV, DouYu and others).
-! Version: 2.0.3.25
-! TimeUpdated: 2025-06-20T00:47:56+00:00
+! Version: 2.0.3.27
+! TimeUpdated: 2025-07-08T00:47:51+00:00
 ! Expires: 5 days (update frequency)
 @@||bdstatic.com/static/common/widget/ui/admanager/$script,domain=image.baidu.com
 ||cpro.$domain=~baidu.com
@@ -94,7 +94,7 @@ wwads.cn
 ##[id$="-ad"]
 *##div.a_mu,div.a_h,div.ad_pic,div.wp.a_f,div.wp.a_t,div.a_pb,div.a_pt,div.a_pr,div.a_cn,#ggPar,#preAdContent
 ~google.com,~mediafire.com##.ads
-www.google.com.*,www.google.ae,www.google.ai,www.google.al,www.google.am,www.google.app,www.google.at,www.google.az,www.google.ba,www.google.be,www.google.bg,www.google.biz,www.google.by,www.google.ca,www.google.cc,www.google.ch,www.google.ci,www.google.cl,www.google.cn,www.google.co,www.google.co.id,www.google.co.il,www.google.co.in,www.google.co.jp,www.google.co.ke,www.google.co.kr,www.google.co.nz,www.google.co.th,www.google.co.uk,www.google.co.za,www.google.com,www.google.com.ar,www.google.com.au,www.google.com.bd,www.google.com.br,www.google.com.co,www.google.com.hk,www.google.com.mx,www.google.com.my,www.google.com.ng,www.google.com.np,www.google.com.pe,www.google.com.ph,www.google.com.pk,www.google.com.sa,www.google.com.sg,www.google.com.tr,www.google.com.tw,www.google.com.ua,www.google.com.uy,www.google.com.vn,www.google.cz,www.google.de,www.google.dev,www.google.dk,www.google.dz,www.google.edu.vn,www.google.ee,www.google.es,www.google.eu,www.google.fi,www.google.fm,www.google.fr,www.google.fun,www.google.ga,www.google.ge,www.google.gg,www.google.gr,www.google.hk,www.google.hr,www.google.hu,www.google.id,www.google.ie,www.google.in,www.google.info,www.google.io,www.google.ir,www.google.is,www.google.it,www.google.jp,www.google.kg,www.google.kr,www.google.kz,www.google.lk,www.google.lt,www.google.lv,www.google.ma,www.google.md,www.google.me,www.google.mk,www.google.ml,www.google.mn,www.google.mx,www.google.my,www.google.net,www.google.news,www.google.ng,www.google.nl,www.google.no,www.google.one,www.google.or.id,www.google.org,www.google.org.tw,www.google.pe,www.google.ph,www.google.pk,www.google.pl,www.google.pt,www.google.ro,www.google.rs,www.google.ru,www.google.sa,www.google.se,www.google.sg,www.google.sh,www.google.shop,www.google.si,www.google.site,www.google.sk,www.google.store,www.google.tk,www.google.tn,www.google.to,www.google.tv,www.google.tw,www.google.ua,www.google.uk,www.google.us,www.google.uz,www.google.vn,www.google.website,www.google.ws##.VEELad
+www.google.com.*,www.google.*##.VEELad
 ||com/ads
 *_350_330.$image
 */html/click/
@@ -119,7 +119,7 @@ pageMediaControl*$script
 */adSide.$script,xmlhttprequest
 */adwidget$script
 */gg.$script
-||go.$domain=kickass.cd|thepiratebay.asia|thepiratebay.blog|thepiratebay.by|thepiratebay.cc|thepiratebay.cloud|thepiratebay.com|thepiratebay.com.bd|thepiratebay.com.np|thepiratebay.digital|thepiratebay.dk|thepiratebay.ee|thepiratebay.es|thepiratebay.fm|thepiratebay.fun|thepiratebay.gr|thepiratebay.hu|thepiratebay.icu|thepiratebay.info|thepiratebay.is|thepiratebay.me|thepiratebay.mobi|thepiratebay.net|thepiratebay.nl|thepiratebay.org|thepiratebay.pe|thepiratebay.se|thepiratebay.sh|thepiratebay.si|thepiratebay.to|thepiratebay.vip|thepiratebay.website|thepiratebay.xyz|btsow.co|btsow.com|btsow.com.bd|btsow.com.np|btsow.icu|btsow.one|btsow.online|btsow.pw|btsow.top|btsow.vip|btsow.work
+||go.$domain=kickass.cd|thepiratebay.*|btsow.*
 */index_banner_
 @@||static.realme.net/v1/knowledge/images/banner.jpg$image
 */images/banner$domain=~ipo.chinairn.com|~www.shuame.com|~exp.qq.com
@@ -1208,7 +1208,7 @@ news.qq.com#%#//scriptlet('ubo-set.js', 'SSPAd.prototype.loadAd', 'noopFunc')
 ||v.qq.com/cache/wuji/object^$script
 bilibili.com##.ad-report, .ad-floor
 bilibili.com##.gg-floor-module,#slide_ad,a[href^="//cm.bilibili.com"]
-||api.bilibili.com/x/web-show/res/locs?$~script
+||api.bilibili.com/x/*/res/locs?$~script
 ||hdslb.com/bfs/cm/cm-sdk/static/js/pc.js^$script
 ||hdslb.com/bfs/seed/jinkela/short/user-fingerprint/$script
 acfun.cn##.pause-display-container,#ad-comment,#ad-player-view
@@ -1284,7 +1284,7 @@ jads.co
 |https://tellme.pw/go/jav$popup
 btsow.pics##a[href^="https://tellme.pw/go/jav"]
 ||cdn.aiqingyu1314.com/age/statics/js/notice.js^$script
-||toutiaoimg.com/origin/$image,domain=agedm.me
+||toutiaoimg.com/origin/137370002e7fbe11b296a$image
 ||dd-static.jd.com^$image,domain=subaibai.com
 dandanzan.*,nnyy.in,nunuyy5.com#$#video { max-height:100%!important }
 yatu.tv##.dplayer-web-fullscreen-fix #tburl,#loadtop,[id^=myas],#myds1,#daohang

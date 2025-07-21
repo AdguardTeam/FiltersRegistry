@@ -1,9 +1,9 @@
-! Checksum: KWOVZl5d2vcOGxNjRgdPkw
-! Diff-Path: ../patches/236/236-s-1750365690-14400.patch
+! Checksum: i6TK40jWZcHBDKN4U710rg
+! Diff-Path: ../patches/236/236-s-1752784915-14400.patch
 ! Title: road-block light
 ! Description: Romanian ad blocking filter subscription.
-! Version: 2.0.3.8
-! TimeUpdated: 2025-06-19T20:37:10+00:00
+! Version: 2.0.3.12
+! TimeUpdated: 2025-07-17T20:37:35+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ROU: Romanian Ad (ROad) Block List Light
@@ -1451,6 +1451,10 @@ catalog-az.ro##.small:has-text(Publicitate)
 catalog-az.ro##.tall-ads
 catalog-az.ro##.long-ad
 kimbino.ro##.ad
+observatornews.ro##.outstream-text:has(.banner)
+tvonline123.com#@##ads-container
+tvonline123.com##.video-container:has([href*="?key="])
+acasatv.protv.ro##[id]:has(script)
 ! Title: Romanian specific uBO filters
 ! Expires: 3 days
 ! Issue tracker: https://github.com/tcptomato/ROad-Block/issues
@@ -1515,7 +1519,7 @@ clujust.ro#%#//scriptlet('ubo-rmnt.js', 'script', 'ai_adb')
 lovendal.ro#%#//scriptlet('ubo-noeval-if.js', 'ads')
 ! https://github.com/uBlockOrigin/uAssets/issues/23860
 ||sapi.emag.*/recommendations/*zones=adss$xmlhttprequest,~third-party
-emag.bg,emag.by,emag.co.uk,emag.com,emag.com.bd,emag.com.np,emag.de,emag.es,emag.fr,emag.hu,emag.is,emag.md,emag.media,emag.net,emag.network,emag.news,emag.online,emag.org.uk,emag.pl,emag.pro,emag.ro,emag.ru,emag.site,emag.uk,emag.us,emag.world,emag.xyz##.container:has([data-tracking-alias^="sponsored_products"])
+emag.*##.container:has([data-tracking-alias^="sponsored_products"])
 ! image background
 gsp.ro#%#//scriptlet('ubo-rmnt.js', 'script', 'maxbet')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183110
@@ -1526,3 +1530,7 @@ business24.ro##div.banner-container
 ! stream player anti-adblock
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,method=get,domain=tvonline123.com
 ! video player anti-adb
+! https://github.com/tcptomato/ROad-Block/issues/558
+canale-tv.com#%#//scriptlet('ubo-nowoif.js', '_blank', '10')
+canale-tv.com#%#//scriptlet('ubo-nostif.js', 'location')
+canale-tv.com#%#//scriptlet('ubo-nosiif.js', 'tool')

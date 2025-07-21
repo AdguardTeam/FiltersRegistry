@@ -1,15 +1,15 @@
-! Checksum: lDFIkEto5wfJ76QLJTTzJQ
-! Diff-Path: ../patches/203/203-s-1750121540-14400.patch
+! Checksum: if7IKBNZb9UOXtS1+Jr7Gg
+! Diff-Path: ../patches/203/203-s-1752670223-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.7
-! TimeUpdated: 2025-06-17T00:47:42+00:00
+! Version: 2.0.4.16
+! TimeUpdated: 2025-07-16T12:45:24+00:00
 ! Expires: 5 days (update frequency)
 !
-! Checksum: N5ha6GOWY8RogVi2bL7CdQ
-! OriginalVersion: 202506160907
+! Checksum: wkTEYPH/FxN6NDPVrtDCpw
+! OriginalVersion: 202507160923
 ! Title: Hufilter for AdGuard
-! Last modified: 16 Jun 2025 09:07 UTC
+! Last modified: 16 Jul 2025 09:23 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -874,7 +874,7 @@ offline.hu##.ads
 olcsobbat.hu##[class*="Advert"]
 olcsobbat.hu##[id*="hirdetes"]
 olcsobbat.hu###datasheetNavHelp
-online-filmek.ac,online-filmek.me###azidodpazarlod, #azidodpazarlod2
+online-filmek.ac,online-filmek.me###azidodetpazarlod
 online-filmek.ac,online-filmek.me##.ad_mrg
 online-filmek.ac,online-filmek.me##.details-main-panel + span
 onlinecegjegyzek.hu##[class*="hirdetes"]
@@ -1425,6 +1425,7 @@ ugytudjuk.hu#?#.row:-abp-has(.mainTopBnr)
 ||fourtwentytradingcompany.net^
 ||fruitflan.com^
 ||iofferphoto.com^
+||loader.nyitvatartas24.hu^
 ||loading-delivery2.com^
 ||media.netpositive.hu^
 ||netadclick.com^
@@ -1507,7 +1508,7 @@ hu###cookie-window
 hu###cookiebar
 hu###EUCookiev2
 hu##.cookie-box
-hu##.cookie-modal
+hu,~onlinepenztarca.hu##.cookie-modal
 hu##.cookie-notification
 hu##.eu-cookie-compliance-banner
 hu###cookies-policy
@@ -1518,6 +1519,8 @@ hu###szechenyi2020-wrapper
 hu###szechenyi
 hu###szechenyi-toggle
 hu###szechenyi_2020_logo
+hu###szechenyi-banner
+hu##.szechenyi2020-top-infoblokk
 hu##.sz2020-logo
 ! hu###qc-cmp2-container
 !-------------------------------------------------------------------------------!
@@ -1573,6 +1576,7 @@ bpiautosok.hu###onesignal-slidedown-container
 bpiautosok.hu##.extpp-container
 budapestikozmuvek.hu###banner
 budapestpark.hu###cooker_container
+budapest.hu###cc--main
 calculat.org##.cookies
 cartourmagazin.hu###cadre_alert_cookies
 cartourmagazin.hu###pa-push-notification-subscription
@@ -1647,6 +1651,7 @@ iho.hu##.social-icon
 iho.hu##.newsletter-box
 ! adbook nagger
 iho.hu##.article-text > p
+index.hu###partner-site-popup
 infostart.hu##.am_targetvideo_container
 infostart.hu##.flyout
 infostart.hu##.notification-popup
@@ -2008,6 +2013,11 @@ videa.hu,videaloop.hu##.top-video-container-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139139
 @@||pro.hit.gemius.pl/gstream.js$script,domain=embed.rtl.hu
 greendex.hu#@#.heateor_sss_sharing_container
+! https://github.com/AdguardTeam/AdguardFilters/issues/208487#issuecomment-3019789994
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=hu.iqos.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/208590
+@@||kollegium-neriszentfulop.chemin-neuf.hu/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js$domain=kollegium-neriszentfulop.chemin-neuf.hu
+@@||kollegium-neriszentfulop.chemin-neuf.hu/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css$domain=kollegium-neriszentfulop.chemin-neuf.hu
 ! This section file contains rules for blocking advertisements.
 ! The rules in this section should be AdGuard-specific, but cross-compatible rules are also allowed, if they are
 ! not working properly without the AdGuard-specific rules.
@@ -2037,6 +2047,7 @@ prohardver.hu,mobilarena.hu,itcafe.hu,gamepod.hu,logout.hu,hardverapro.hu##div:h
 !-------------------------------------------------------------------------------!
 ! https://github.com/hufilter/hufilter/issues/8
 blikk.hu#%#//scriptlet('set-cookie', 'isLeavingPopUpReady', '3')
+onlinepenztarca.hu#%#//scriptlet('set-local-storage-item', 'felhasznalo_cookie_preferencia', '0')
 ! https://github.com/hufilter/hufilter/issues/520
 fizz.hu#%#//scriptlet('set-cookie', 'cookie.consent.finished', '1')
 fizz.hu#%#//scriptlet('set-cookie', 'gdpr_level', '1')
@@ -2065,7 +2076,6 @@ myonlineradio.hu#$#.cover-slider-cont { display: block !important; }
 noizz.hu#$#.leavingPopupLayer { display: none !important; }
 noizz.hu#$#body { overflow: auto !important; }
 ! https://github.com/hufilter/hufilter/issues/212
-totalcar.hu,totalbike.hu,divany.hu##body > section:not(.site-header):not(#toreskar):last-of-type
 traffihunter.hu##.ooono_promo
 vezess.hu##.m-fbPopup
 mandiner.hu##.modal-backdrop
@@ -2104,9 +2114,10 @@ pcworld.hu#%#//scriptlet('remove-class', 'have-ad', 'body')
 ! https://github.com/hufilter/hufilter/issues/15
 port.hu#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'window.ado.blocked')
 ! https://github.com/uBlockOrigin/uAssets/issues/25482
-online-filmek.ac#%#//scriptlet('prevent-fetch', 'api')
-online-filmek.ac#%#//scriptlet('prevent-fetch', 'ads')
 ! https://github.com/uBlockOrigin/uAssets/issues/28850
+! https://github.com/uBlockOrigin/uAssets/issues/28850#issuecomment-2995469159
+! https://github.com/hufilter/hufilter/issues/614
+online-filmek.ac#%#//scriptlet('prevent-fetch', '.js')
 online-filmek.ac#%#//scriptlet('prevent-fetch', 'mode:cors')
 ! https://github.com/uBlockOrigin/uAssets/issues/27256#issuecomment-2670818969
 rubyvidhub.com#%#//scriptlet('remove-node-text', 'script', 'undefined')

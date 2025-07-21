@@ -1,9 +1,9 @@
-! Checksum: DpiYWPi7q0eWmSxSeU0DOw
-! Diff-Path: ../patches/8/8-s-1750259555-3600.patch
+! Checksum: J2dnn6Ca++dfJW46mBCXPg
+! Diff-Path: ../patches/8/8-s-1752740040-3600.patch
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.8.32
-! TimeUpdated: 2025-06-18T15:07:37+00:00
+! Version: 2.0.8.44
+! TimeUpdated: 2025-07-17T08:09:42+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1565,18 +1565,22 @@ vakantieplaats.nl#@#.topAds
 @@||content.hwigroup.net/images^$domain=hardware.info
 hardware.info,tweakers.net#@#.AdBar
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209339
+radio10.nl#%#//scriptlet('prevent-setTimeout', 'throw i(r+"err",[o,a,e],d,c),e}finally{i(', '50')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203606
 forum.fok.nl#%#//scriptlet('prevent-setTimeout', 'ckad')
 forum.fok.nl#@##advertentie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202820
 autotrader.nl#%#//scriptlet('abort-on-property-read', 'Object.prototype.autoRecov')
 autotrader.nl$$script[tag-content="Flags."][min-length="10000"][max-length="300000"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/208455
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197442
+kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl#%#//scriptlet('prevent-xhr', 'assets.prod.webx.talpa.digital/ad/view/')
 !+ NOT_OPTIMIZED
-538.nl,hartvannederland.nl#@##topbanner_ad
+vandaaginside.nl,538.nl,hartvannederland.nl#@##topbanner_ad
 !+ NOT_OPTIMIZED
-@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl|538.nl
+@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl|538.nl|vandaaginside.nl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178088
 topkleurplaat.nl#%#//scriptlet('prevent-setTimeout', '.height() === 0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177923
@@ -1602,12 +1606,15 @@ tweakers.net#%#//scriptlet('prevent-fetch', '/a[ab]\.tweakers\.nl/')
 ||tweakers.net/*/build/frontpage.*.js$replace=/this\.forceBannerBlockMessage\(\)/(()=>{})/
 ||tweakers.net/*/build/frontpage.*.js$replace=/(detail:{adblockDetected:)[\s\S]*?(}|\,)/\$1!1\$2/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/99141
+@@||assets.prod.webx.talpa.digital/ad/view/$domain=kijk.nl
+kijk.nl#@##topbanner_ad
 @@/prebid/ad.gif?user=*&adId=$domain=kijk.nl
 @@||ads-talpa.adhese.com/json/$domain=kijk.nl
 kijk.nl#$#body .pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: initial !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167987
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=goplay.be
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160901
+||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be,redirect=noopjs
 @@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams$domain=goplay.be
 ||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams/*/time-events.json$important,domain=goplay.be
 goplay.be#%#//scriptlet('xml-prune', 'Period[id*="-ad-"]', '', '.mpd')
@@ -1615,6 +1622,7 @@ goplay.be#%#//scriptlet('xml-prune', 'Period[id*="-ad-"]', '', '.mpd')
 goplay.be#%#//scriptlet('prevent-fetch', 'pubads.g.doubleclick.net/gampad/ads')
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$script,domain=goplay.be
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=noopjs,domain=goplay.be
+@@||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74633
 ||goplay.be/js/sourcepoint/msg?v=
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69783
@@ -1749,6 +1757,12 @@ omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -40
 ! Good: example.org###rek; ||example.com/ads/
 ! Bad: example.org#@##banner_ad (for instance, should be in allowlist.txt or in antiadblock.txt)
 !
+panorama.nl##.bg-reserved:has(div[data-aa-adunit])
+panorama.nl#?#div[data-aa-adunit]:upward(1)
+panorama.nl##.showheroes-unit
+pepper.com##div[id$="AdSlotPortal"]
+funda.nl##div[role="complementary"]:has(> div > div[id^="div-gpt-ad-"])
+telegraaf.nl###ad_10
 geenstijl.nl#%#//scriptlet('google-ima3')
 geenstijl.nl#%#//scriptlet('prevent-element-src-loading', 'script', 'instream/html5/ima3.js')
 geenstijl.nl#%#//scriptlet('adjust-setTimeout', 'function () { [native code] }', '6000', '0.001')
@@ -2019,6 +2033,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/208467
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197520
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177361
 marktnet.nl#@#.ad-description

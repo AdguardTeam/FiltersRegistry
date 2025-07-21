@@ -1,9 +1,9 @@
-! Checksum: p1AZrdJm+DvUFh87QZMZmQ
-! Diff-Path: ../patches/17/17-s-1750339240-3600.patch
+! Checksum: vWzapwGU//Ff+mCwEveUQA
+! Diff-Path: ../patches/17/17-s-1752772359-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.26
-! TimeUpdated: 2025-06-19T13:16:12+00:00
+! Version: 2.0.11.43
+! TimeUpdated: 2025-07-17T17:08:17+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21,6 +21,21 @@
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
 !
+! MyTracker
+$removeparam=mt_click_id
+$removeparam=mt_network
+$removeparam=mt_campaign
+$removeparam=mt_adset
+$removeparam=mt_creative
+$removeparam=mt_medium
+$removeparam=mt_sub1
+$removeparam=mt_sub2
+$removeparam=mt_sub3
+$removeparam=mt_sub4
+$removeparam=mt_sub5
+! AD Counter by live-revolution.co.jp
+$removeparam=adc_publisher
+$removeparam=adc_token
 ! https://kb.triplewhale.com/en/articles/5740620-klaviyo-integration#h_d0fb8c7039
 $removeparam=tw_medium
 $removeparam=tw_profile_id
@@ -114,8 +129,6 @@ $removeparam=sms_uph
 $removeparam=ttclid
 ! spot.im
 $removeparam=spot_im_redirect_source
-! WordPress Visitor Statistics plugin
-$cookie=_wp_visitor
 ! tracker.my.com
 $removeparam=mt_link_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164394
@@ -320,6 +333,9 @@ $removeparam=dpg_content
 ! AdmitAd tracking
 $removeparam=admitad_uid
 ! adjust.com tracking
+$removeparam=adj_campaign
+$removeparam=adj_t
+$removeparam=adj_creative
 $removeparam=gps_adid
 $removeparam=unicorn_click_id
 $removeparam=adjust_creative
@@ -399,6 +415,41 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209358
+||alia-cloudflare.com/launcher/$removeparam=url,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=is_mobile,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=timezone,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=ip_address,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=user_agent,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=new_session,xmlhttprequest
+! https://github.com/AdguardTeam/AdguardFilters/issues/209120
+||operanewsapp.com^$removeparam=from
+||operanewsapp.com^$removeparam=request_id
+||operanewsapp.com^$removeparam=share_from
+! https://github.com/AdguardTeam/AdguardFilters/issues/209002
+||sprinklr.com/api/livechat/event/$removeparam=cursor
+! hepsiburada.com
+||hepsiburada.com^$removeparam=wt_pc
+! akakce.com
+! u = UTM here
+||akakce.com/r/?c=$removeparam=u
+! https://github.com/AdguardTeam/AdguardFilters/issues/208654
+||domclick.ru^$removeparam=from
+! buydomains.com
+||buydomains.com/lander/*?domain=$removeparam
+! DuckDuckGo ads/shopping
+||duckduckgo.com/y.js$removeparam=ad_provider
+||duckduckgo.com/y.js$removeparam=ad_domain
+||duckduckgo.com/y.js$removeparam=click_metadata
+||duckduckgo.com/y.js$removeparam=vqd
+||duckduckgo.com/y.js$removeparam=iurl
+! https://github.com/AdguardTeam/AdguardFilters/issues/208130#issuecomment-3042351235
+! Removing "bing_market" parameter causes that search results are not localized
+! and results are displayed for "All regions"
+! ||duckduckgo.com/d.js?q=$script,removeparam=bing_market
+! ||duckduckgo.com/d.js?q=$script,removeparam=host_region
+! https://github.com/AdguardTeam/AdguardFilters/issues/208058
+||olybet.lv^$removeparam=ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207414#issuecomment-2969009233
 ||provereno.media^$removeparam=tg_rhash
 ! https://weathernews.jp/?fm=header
@@ -898,8 +949,6 @@ $removeparam=sub_rt,domain=comemo.nikkei.com|diehardtales.com|greenplanet.kaneka
 ||vodafone.com.tr^$removeparam=tracking_cid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187868
 ||juicy-ai.com^$removeparam=ref
-! https://github.com/AdguardTeam/AdguardFilters/issues/187873
-||angelgf.com^$removeparam=via
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187865
 ||slushy.com^$removeparam=af
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187853
@@ -966,8 +1015,6 @@ ref=producthunt^$removeparam=ref
 ||news.yahoo.co.jp^$removeparam=date
 ||news.yahoo.co.jp^$removeparam=ctg
 ||news.yahoo.co.jp^$removeparam=bt
-! lumosvpn.com promo
-||lumosvpn.com/?cep=$removeparam
 ! https://github.com/AdguardTeam/AdguardFilters/issues/184386
 ||shop.adidas.jp^$removeparam=source_caller
 ||shop.adidas.jp^$removeparam=shortlink
@@ -1143,8 +1190,6 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ||controld.com^$removeparam=cid
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-8455734
 ?ref=upstract.com^$removeparam=ref
-! https://github.com/AdguardTeam/AdguardFilters/issues/172125
-||prothomalo.com^$cookie=uuid_v2
 ! Wargaming tracking
 ||track.wargaming-aff.com/click?pid=$removeparam=ref_id
 ||trck.wargaming.net^$removeparam
@@ -1253,9 +1298,6 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ||bizhint.jp^$removeparam=trcd
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166582
 ||teknosa.com^$removeparam=adj_adgroup
-||teknosa.com^$removeparam=adj_campaign
-||teknosa.com^$removeparam=adj_creative
-||teknosa.com^$removeparam=adj_t
 ||teknosa.com^$removeparam=adp_cid
 ||teknosa.com^$removeparam=adp_oid
 ||teknosa.com^$removeparam=shopId
@@ -1273,9 +1315,6 @@ $removeparam=recom,domain=vk.com|vk.ru
 ! vkplay.ru
 ||vkplay.ru$removeparam=_1ld
 ||vkplay.ru$removeparam=_1lp
-||vkplay.ru^$removeparam=mt_adset
-||vkplay.ru^$removeparam=mt_sub1
-||vkplay.ru^$removeparam=mt_sub2
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166050
 ||incogni.com^$removeparam=transaction_id
@@ -1618,8 +1657,6 @@ $removeparam=newsstand,domain=sportalkorea.com
 ||bild.de^$removeparam=t_ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152218
 ||simplelogin.io^$removeparam=slref
-! https://github.com/AdguardTeam/AdguardFilters/issues/152313
-||applesfera.com^$cookie=NID
 ! https://github.com/AdguardTeam/AdguardFilters/issues/151756
 ||pravda.com.ua^$removeparam=pageviewCount
 ! https://github.com/AdguardTeam/AdguardFilters/pull/152161
@@ -1683,7 +1720,6 @@ $removeparam=phone_code,domain=shein.co.uk|shein.com
 $removeparam=ici,domain=shein.co.uk|shein.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148579
 ||nesine.com^$removeparam=adj_adgroup
-||nesine.com^$removeparam=adj_creative
 ||nesine.com^$removeparam=adjust_t
 ||nesine.com^$removeparam=glid
 ||nesine.com^$removeparam=rlid
@@ -1852,9 +1888,6 @@ $removeparam=ici,domain=shein.co.uk|shein.com
 ||cinematoday.jp^$removeparam=g_clk
 ! affiliate links on h7-game.com (nsfw)
 $removeparam=afid,domain=123chat.jp|kanochat.jp|live.fc2.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/136734
-||investing.com^$cookie=smd
-||investing.com^$cookie=udid
 ! https://github.com/AdguardTeam/AdguardFilters/pull/137576
 ||basketballking.jp^$removeparam=cx_art
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136987
@@ -2067,9 +2100,6 @@ $removeparam=clid,domain=adguard-vpn.*|adguardvpn-help.*
 ||mirtesen.ru^$removeparam=ad
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2381922
 $removeparam=oref,domain=defenseone.com|govexec.com|nextgov.com|route-fifty.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/123160
-||whistleout.com.au^$cookie=ARRAffinity
-||whistleout.com.au^$cookie=ARRAffinitySameSite
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123340
 ||rac.co.uk^$removeparam=cid
 ! https://github.com/AdguardTeam/AdguardFilters/pull/122979
@@ -2079,9 +2109,6 @@ $removeparam=oref,domain=defenseone.com|govexec.com|nextgov.com|route-fifty.com
 ||toomics.com^$removeparam=subpid
 ||toomics.com^$removeparam=channel
 ||toomics.com^$removeparam=gen
-! get-express-vpns.com
-||get-express-vpns.com^$removeparam=sxid
-||get-express-vpns.com^$removeparam=ttorigin
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123349
 ||zavvi.com^$removeparam=affil
 ||zavvi.com^$removeparam=sv_campaign_id
@@ -2324,9 +2351,7 @@ $removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||adj.st^$removeparam=adjust_deeplink
 ||adj.st^$removeparam=pt
 ||adj.st^$removeparam=pd
-||adj.st^$removeparam=adj_campaign
 ||adj.st^$removeparam=adj_adgroup
-||adj.st^$removeparam=adj_creative
 ||adj.st^$removeparam=adj_adnomia_click_id
 ||adj.st^$removeparam=pfx
 ||adj.st^$removeparam=adj_deeplink
@@ -2666,8 +2691,10 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ||www.ebay.$removeparam=campid
 ||ebay.*/itm$removeparam=customid
 ||ebay.*/itm$removeparam=toolid
-||ebay.*/itm$removeparam=var
+||ebay.*/itm$removeparam=_skw
 ||ebay.*/str$removeparam=_trksid
+! https://github.com/AdguardTeam/AdguardFilters/issues/208605
+! ||ebay.*/itm$removeparam=var
 ! https://github.com/uBlockOrigin/uAssets/issues/25247
 ! ||www.ebay.$removeparam=_trksid
 !
@@ -2685,8 +2712,6 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148958
 ! Breaks navigation and removes chosen seller id on the item's page
 ! ||amazon.*$removeparam=smid
-! Broken redirect to Amazon from stores
-! ||amazon.*$removeparam=ascsubtag
 !
 ! ||amazon.*$removeparam=sr - breaks automatic jump to review details
 ! ||amazon.*$removeparam=s - breaks URLs which includes it to sort
@@ -2695,6 +2720,7 @@ $removeparam=asc_campaign,domain=aboutamazon.com|amazon.*|amzn.to
 $removeparam=asc_refurl,domain=aboutamazon.com|amazon.*|amzn.to
 $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
 !
+||amazon.*$removeparam=ascsubtag
 ||amazon.*$removeparam=isDramIntegrated
 ||amazon.*$removeparam=shoppingPortalEnabled
 ||amazon.*/*dp/$removeparam=dib
@@ -2917,6 +2943,11 @@ $removeparam=s,domain=twitter.com|x.com
 ||weibo.*^$removeparam=weibo_id
 ||weibo.*^$removeparam=dt_dapp
 ! Iqiyi
+||iqiyi.com^$removeparam=r_area
+||iqiyi.com^$removeparam=recArea
+||iqiyi.com^$removeparam=block
+||iqiyi.com^$removeparam=eventId
+||iqiyi.com^$removeparam=event_id
 ||iqiyi.com^$removeparam=vfrm
 ||iqiyi.com^$removeparam=vfrmblk
 ||iqiyi.com^$removeparam=vfrmrst

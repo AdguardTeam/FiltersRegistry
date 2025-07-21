@@ -431,6 +431,10 @@ More information on why this feature was needed can be found in [the related tas
 
 [#964]: https://github.com/AdguardTeam/FiltersRegistry/issues/964
 
+> The list of supported top level domains (TLD) is limited by default. To add a new TLD,
+> update [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts) and follow
+> the instructions below.
+
 1. **Install dependencies**
 
     ```bash
@@ -439,19 +443,29 @@ More information on why this feature was needed can be found in [the related tas
 
 1. **Update wildcard domains**
 
-    This command extracts wildcard domains from the filters, converts them to a list of domains,
-    selects the alive domains, and saves the resulting map to a JSON file [wildcard_domains.json].
+    This command updates the list of wildcard domains by expanding entries like `domain.*`
+    from the filters using TLDs from [top-tld.ts](./scripts/wildcard-domain-processor/top-tld.ts),
+    checks which of the resulting domains are alive,
+    and saves them to `alive` property in [wildcard_domains.json] where:
+
+    - keys are wildcard domains, e.g., `domain.*`;
+    - values are arrays of checked domains, e.g., `['domain.com', 'domain.org']`.
+
+    There is also a list of dead domains found during the check,
+    and it is saved to `dead` property in [wildcard_domains.json].
+
+    **Syntax**
 
     ```bash
     yarn update-wildcard-domains <filtersDir> <wildcardDomainsFile>
     ```
 
-    - **Arguments**:
+    where:
 
-        - `<filtersDir>` — directory containing the filter files.
-        - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
+    - `<filtersDir>` — directory containing the filter files.
+    - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
 
-    - **Example**:
+    **Usage**
 
     ```bash
     yarn update-wildcard-domains filters scripts/wildcard-domain-processor/wildcard_domains.json
@@ -459,27 +473,47 @@ More information on why this feature was needed can be found in [the related tas
 
 1. **Expand wildcard domains**
 
-    This command processes platform filters and expands wildcard domains
-    based on the previously generated map in the file [wildcard_domains.json].
+    This command processes platform-specific filters and replaces wildcard domains with actual
+    live domains based on the map in the file [wildcard_domains.json].
+
+    **Syntax**
 
     ```bash
     yarn expand-wildcard-domains <platformsDir> <wildcardDomainsFile>
     ```
 
-    - **Arguments**:
+    where:
 
-        - `<platformsDir>` — directory containing the platform files.
-        - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
+    - `<platformsDir>` — directory containing the platform files.
+    - `<wildcardDomainsFile>` — filename for the wildcard domains JSON.
 
-    - **Example**:
+    **Usage**
 
     ```bash
     yarn expand-wildcard-domains platforms scripts/wildcard-domain-processor/wildcard_domains.json
     ```
 
+1. **How wildcard expansion works**
+
+    The wildcard expansion process uses the `expandWildcardsInAst` function to process rules
+    in the Abstract Syntax Tree (AST) format. The function handles different rule categories:
+
+    - **Network Rules** — all network rules with wildcard domains are expanded.
+
+    - **Cosmetic Rules** — only element hiding rules and their exceptions are expanded
+      since these are natively supported in Safari content blockers.
+      Other cosmetic rules (like scriptlets) are not expanded
+      because wildcards are automatically handled by:
+
+        - Advanced Blocking in Safari browser;
+        - tswebextension in Browser extension MV3.
+
+    The expansion process replaces wildcard domains with their non-wildcard equivalents
+    based on the mapping provided in the wildcard domains file.
+
 [wildcard_domains.json]: ./scripts/wildcard-domain-processor/wildcard_domains.json
 
-### CLI commands help
+#### CLI commands help
 
 To see the help information for each command, you can use the `-h` option:
 

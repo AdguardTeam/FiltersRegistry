@@ -1,14 +1,13 @@
-! Checksum: 5048d1Na7sYCWQ+S034lQA
-! Diff-Path: ../patches/249/249-s-1750092262-14400.patch
+! Checksum: z6IWksBWGW9WFvK/bp27Vg
+! Diff-Path: ../patches/249/249-s-1752396179-14400.patch
 ! Title: Dandelion Sprout's Nordic Filters
 ! Description: This list covers websites for Norway, Denmark, Iceland, Danish territories, and the Sami indigenous population.
-! Version: 2.0.8.14
-! TimeUpdated: 2025-06-16T16:40:15+00:00
+! Version: 2.0.8.18
+! TimeUpdated: 2025-07-13T08:38:51+00:00
 ! Expires: 10 days (update frequency)
 !
-! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
 ! Title 🇬🇧: Dandelion Sprout's Nordic filters for tidier websites
-! Last modified: 15June2025v1
+! Last modified: 13July2025v1
 ! Expires: 18 hours
 ! Lisens / Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md
@@ -1152,7 +1151,7 @@ norges.online###modaladv
 borsen.dk,borsen-dk.translate.goog##div[class*=col]:has(> .native-teaser)
 samferdselinfra.no##.banner-item
 skagafm.dk##.frontbanner
-twe.no##div[class$="=="][style*=margin-bottom]:has([aria-label^="YouTube, "],[aria-label^="TV 2 Play, "],[aria-label^="Movie Netflix -"])
+twe.no##div[class$="=="][style*=margin-bottom]:has([aria-label=YouTube],[aria-label^="TV 2 Play"],[aria-label^="Movie Netflix -"])
 lokalavisen.dk##.custom-annoncer-wrapper
 itavisen.no##article[class*=annonse]
 keldan.is##.x-box-inner > .x-panel-noborder:not(.x-grid-panel)
@@ -1346,6 +1345,8 @@ bankimistnorge.com##.container-right
 bankernorge.com##aside#sidebar
 lav-det-selv.dk##.forum-sidebar .d-none
 scm.dk##.banner-hidden
+seoghoer.dk##div[data-type=ad]
+tiendeo.*##.text-center.justify-center.items-center
 ! — — — — — — — — —
 ! 🇳🇴：Oppføringer for minst 3 nettsteder
 ! 🇬🇧：Entries for at least 3 websites
@@ -2198,6 +2199,8 @@ tv2.no##.aside > .ad-container
 ##.component__pubble-banner:not(html,body,:empty)
 ! https://www•kanalfrederikshavn•dk/vis/nyhed/oslo-faergernes-skaebne-i-frederikshavn-afgoeres-foerst-efter-sommerferien
 ##.tx-dce-container:not(html,body,:empty)
+! seoghoerDK (01/07/2025)
+##section[data-aller-id^=strossleabb]
 ! — — — — — — —
 ! 🇳🇴：Oppføringer med spesielle omstendigheter
 ! 🇬🇧：Entries with special circumstances
@@ -2380,6 +2383,10 @@ telenor.no##.global-overlay-background
 @@://nhn.dk^$~third-party
 ! ★★★ Caused by «AdGuard Cookie Notices filter» ★★★
 @@||glassoginterior.no/css/modules/consent.css^
+! ★★★ 🇳🇴：Forårsaket av «AdGuards spionvarefilter» ★★★
+! ★★★ 🇬🇧：Caused by «AdGuard Tracking Protection Filter» ★★★
+! https://github.com/AdguardTeam/AdguardFilters/issues/209205
+@@||tv2.no/*/snowplow/*$script
 ! 🇳🇴/🇩🇰：Anti-'CPU-massakrering'
 ! 🇮🇸：And-örgjörvislatrun
 ! 🇬🇧：Anti-'CPU slaughtering'
@@ -3204,6 +3211,67 @@ triplx.dk##.aff-inner-col
 ||informationer.nu^$document,domain=~the-site-was-stolen-by-a-casino-scammer.*
 ||cphspaogwellness.dk^$document,domain=~the-site-was-stolen-by-a-casino-scammer.*
 ||webavisen.gl^$document,domain=~the-site-was-stolen-by-a-casino-scammer.*
+! 🇬🇧：Various postal credential fraud syndicates
+||norgeposten.today^$all
+||norwayposten.today^$all
+||pakkeposten.today^$all
+||post-dk.cfd^$all
+||post-nord-levering.$all
+||post-nord-receiving.$all
+||posten-nno.$all
+||posten-track.today^$all
+||posten-tracker.today^$all
+||posten-tracks.$all
+||postendk.lol^$all
+||postendsk.lat^$all
+||postenn-no.$all
+||postennorge.today^$all
+||postennorway.today^$all
+||postenpakke.today^$all
+||postenserve.today^$all
+||postenserves.today^$all
+||postenspor.today^$all
+||postentrack.today^$all
+||postentracks.today^$all
+||postnord-24.site^$all
+||postnord-all.$all
+||postnord-confirmation.$all
+||postnord-delay.$all
+||postnord-eco.buzz^$all
+||postnord-eco.cfd^$all
+||postnord-eco.sbs^$all
+||postnord-eco.xyz^$all
+||postnord-order-$all
+||postnord-paket.$all
+||postnord-pay.$all
+||postnord-post.$all
+||postnord-se-delivery.$all
+||postnord-step.$all
+||postnord-step1.$all
+||postnord-tk.$all
+||postnord-tracks.$all
+||postnord-update.help^$all
+||postnorde-swe.$all
+||postnordexpress.$all
+||postnordexpressdelivery-$all
+||postnordse.asia^$all
+||postnordspara.$all
+||postnorg-dk*$all
+||sporposten.today^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||43.100.125.58^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||43.159.140.215^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||43.162.119.45^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||47.76.132.29^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||109.230.237.116^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||147.93.63.211^$all
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||154.223.16.232^$all
 ! 🇬🇧：Copied over from DNS-BH Malware Domains and verified to actually be malicious (as that list has a whole lot of false positives)
 ||desidert.no^
 ||brigitteheilmann.dk^

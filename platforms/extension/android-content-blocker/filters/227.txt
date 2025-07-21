@@ -1,13 +1,13 @@
-! Checksum: 9kfwx7LbV1prznSMkDMi4A
+! Checksum: tyY1JTi8wQkMBsvm2kBh+A
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.21.80
-! TimeUpdated: 2025-06-19T16:39:38+00:00
+! Version: 2.0.22.11
+! TimeUpdated: 2025-07-21T08:43:44+00:00
 ! Expires: 1 day (update frequency)
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2025.0619.3
+! OriginalVersion: 2025.0721.1
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://list-kr-community.pages.dev/docs/
@@ -533,6 +533,11 @@
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
 !
+||t1.daumcdn.net/top/daum/op/chanel/
+||t1.daumcdn.net/top/daum/op/smartfarm/
+||cdn.lol.ps/static/prod/*/_app/immutable/assets/banner-
+||platformgreat.kr/coupang_1.jpg
+||maplescouter.com/ads/
 ||issuetory.co.kr/wp-content/boost-cache/static/4f167c936d.min.js
 ||pedia.watcha.com/api/contents/*/venus|
 ||betanews.net/data/beta/upload/save/banner/
@@ -1354,6 +1359,7 @@
 /^https:\/\/(www\.)?aniya24\.com\/wp-content\/uploads\/[0-9]+\/[0-9]+\/[a-z]+[0-9]+x[0-9]+\./$domain=aniya24.com
 ||aniya24.com/wp-content/uploads/*.gif
 ||sutom.org/wp-content/uploads/*.webp
+||nooo*.tv/theme/basic_player/img/banner/
 ||blogger.googleusercontent.com/img/$domain=yasyadong.*
 .gif^$image,domain=itrulli.com
 ||365tvda.com/data/file/bojng/
@@ -1495,7 +1501,7 @@
 /^https:\/\/(www\.)?race[0-9]+\.xyz\/images\/spon\//
 /^https:\/\/dc\.filesbest\.xyz\/uploadfile\/images\/[a-z0-9]+\.gif$/
 /^https:\/\/torrentwiz[0-9]+\.com\/data\/editor\/\d{4}\//
-/^https:\/\/torrentbot[0-9]+\.com\/uploadfile\/up[a-z0-9]+\.gif$/
+/^https:\/\/torrentbot[0-9]+\.[a-z]+\/uploadfile\/up[a-z0-9]+\.gif$/
 ||filetender.com/mobon.html|
 /^https:\/\/(www\.)?filetender\.com\/images\/\d{3,}(X|x)\d{3,}-\d{4}/
 ||filetender.com/images/*.gif
@@ -1573,6 +1579,21 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+damoang.net##div[data-testid="board-ads-banner"]
+damoang.net##.ad-container
+m.daum.net##div[style*="/top/daum/op/chanel/"].imgdeco_below
+www.daum.net##div[aria-hidden="true"].imgdeco_below
+ppomppu.co.kr##div[align="center"] > #header_box ~ div[style*="min-height:100px;"]
+lol.ps##main[style^="cursor: default;"][class="desktop:min-w-[1280px]"] > div[class^="modal-"]
+lol.ps##.overflow-x-hidden > div[class*="inset-x-0 top-[80px]"]
+lol.ps###banner-container
+lol.ps###AnyMindAvs
+tv.nate.com##iframe[src^="/adv/"]
+quasarzone.com##div[id^="venatusHumor"]
+quasarzone.com##.g123-wrapper
+quasarzone.com##.side-banner-list .point-logo
+thewordcracker.com##.entry-header .unique-container
+thewordcracker.com###right-sidebar
 issuetory.co.kr##.code-block-6
 issuetory.co.kr##.entry-content.read-details > .code-block
 qquing.net##.ad-actual
@@ -1743,10 +1764,12 @@ search.danawa.com##li[style][id^="ad"]
 quasarzone.com##div[id^="bidrich_"][style*=" "]
 mobile.missyusa.com##.div_banner
 app.dcinside.com,m.dcinside.com##*[class^="adv-group"]
+app.dcinside.com,m.dcinside.com##li.adv-inner
 url.kr##form[method="post"] > #maskLayer
 m.tinnews.co.kr##.bn
 etoland.co.kr###m_main_attendance_wrap ~ a[href^="../../plugin/mobile/board.php?bo_table=market_"]
 m.fmkorea.com##div[id^="fmad_"] + div[style^="height:"][class]
+fmkorea.com##div.fmad_wrapper
 etoland.co.kr##article[class^="etoad-"]
 biz.newdaily.co.kr##div[itemprop="articleBody"] > div[style^="margin:"].clearfix
 newdaily.co.kr##div[style*=";height:"][data-ad]

@@ -1,11 +1,24 @@
 ![Adblock Plus 2.0]
-! Checksum: wGaOSdJCuCHtwRD2/vk3Tw
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1750339226-3600.patch
+! Checksum: I06llwQZpMenfYgmO9/hyg
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1752772342-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.26
-! TimeUpdated: 2025-06-19T13:16:12+00:00
+! Version: 2.0.11.43
+! TimeUpdated: 2025-07-17T17:08:17+00:00
 ! Expires: 5 days (update frequency)
+$removeparam=mt_click_id
+$removeparam=mt_network
+$removeparam=mt_campaign
+$removeparam=mt_adset
+$removeparam=mt_creative
+$removeparam=mt_medium
+$removeparam=mt_sub1
+$removeparam=mt_sub2
+$removeparam=mt_sub3
+$removeparam=mt_sub4
+$removeparam=mt_sub5
+$removeparam=adc_publisher
+$removeparam=adc_token
 $removeparam=tw_medium
 $removeparam=tw_profile_id
 $removeparam=tw_source
@@ -204,6 +217,9 @@ $removeparam=dpg_campaign
 $removeparam=dpg_medium
 $removeparam=dpg_content
 $removeparam=admitad_uid
+$removeparam=adj_campaign
+$removeparam=adj_t
+$removeparam=adj_creative
 $removeparam=gps_adid
 $removeparam=unicorn_click_id
 $removeparam=adjust_creative
@@ -258,6 +274,26 @@ $removeparam=fb_action_types
 $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
+||alia-cloudflare.com/launcher/$removeparam=url,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=is_mobile,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=timezone,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=ip_address,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=user_agent,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=new_session,xmlhttprequest
+||operanewsapp.com^$removeparam=from
+||operanewsapp.com^$removeparam=request_id
+||operanewsapp.com^$removeparam=share_from
+||sprinklr.com/api/livechat/event/$removeparam=cursor
+||hepsiburada.com^$removeparam=wt_pc
+||akakce.com/r/?c=$removeparam=u
+||domclick.ru^$removeparam=from
+||buydomains.com/lander/*?domain=$removeparam
+||duckduckgo.com/y.js$removeparam=ad_provider
+||duckduckgo.com/y.js$removeparam=ad_domain
+||duckduckgo.com/y.js$removeparam=click_metadata
+||duckduckgo.com/y.js$removeparam=vqd
+||duckduckgo.com/y.js$removeparam=iurl
+||olybet.lv^$removeparam=ref
 ||provereno.media^$removeparam=tg_rhash
 ||weathernews.jp^$removeparam=fm
 ||grok.com^$removeparam=referrer
@@ -608,7 +644,6 @@ $removeparam=sub_rt,domain=comemo.nikkei.com|diehardtales.com|greenplanet.kaneka
 ||getidol.com^$removeparam=ref
 ||vodafone.com.tr^$removeparam=tracking_cid
 ||juicy-ai.com^$removeparam=ref
-||angelgf.com^$removeparam=via
 ||slushy.com^$removeparam=af
 ||deepmode.com^$removeparam=fpr
 ||candy.ai^$removeparam=cid
@@ -655,7 +690,6 @@ ref=producthunt^$removeparam=ref
 ||news.yahoo.co.jp^$removeparam=date
 ||news.yahoo.co.jp^$removeparam=ctg
 ||news.yahoo.co.jp^$removeparam=bt
-||lumosvpn.com/?cep=$removeparam
 ||shop.adidas.jp^$removeparam=source_caller
 ||shop.adidas.jp^$removeparam=shortlink
 ||daohang.qq.com^$removeparam=fr
@@ -852,9 +886,6 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ||hd.kinopoisk.ru^$removeparam=from_block
 ||bizhint.jp^$removeparam=trcd
 ||teknosa.com^$removeparam=adj_adgroup
-||teknosa.com^$removeparam=adj_campaign
-||teknosa.com^$removeparam=adj_creative
-||teknosa.com^$removeparam=adj_t
 ||teknosa.com^$removeparam=adp_cid
 ||teknosa.com^$removeparam=adp_oid
 ||teknosa.com^$removeparam=shopId
@@ -865,9 +896,6 @@ $removeparam=trackcode,domain=vk.com|vk.ru
 $removeparam=recom,domain=vk.com|vk.ru
 ||vkplay.ru$removeparam=_1ld
 ||vkplay.ru$removeparam=_1lp
-||vkplay.ru^$removeparam=mt_adset
-||vkplay.ru^$removeparam=mt_sub1
-||vkplay.ru^$removeparam=mt_sub2
 ||incogni.com^$removeparam=transaction_id
 ||incogni.com^$removeparam=offer_id
 ||incogni.com^$removeparam=affiliate_id
@@ -1146,7 +1174,6 @@ $removeparam=src_tab_page_id,domain=shein.co.uk|shein.com
 $removeparam=phone_code,domain=shein.co.uk|shein.com
 $removeparam=ici,domain=shein.co.uk|shein.com
 ||nesine.com^$removeparam=adj_adgroup
-||nesine.com^$removeparam=adj_creative
 ||nesine.com^$removeparam=adjust_t
 ||nesine.com^$removeparam=glid
 ||nesine.com^$removeparam=rlid
@@ -1411,8 +1438,6 @@ $removeparam=oref,domain=defenseone.com|govexec.com|nextgov.com|route-fifty.com
 ||toomics.com^$removeparam=subpid
 ||toomics.com^$removeparam=channel
 ||toomics.com^$removeparam=gen
-||get-express-vpns.com^$removeparam=sxid
-||get-express-vpns.com^$removeparam=ttorigin
 ||zavvi.com^$removeparam=affil
 ||zavvi.com^$removeparam=sv_campaign_id
 ||mkaff.com/landings/$removeparam
@@ -1582,9 +1607,7 @@ $removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||adj.st^$removeparam=adjust_deeplink
 ||adj.st^$removeparam=pt
 ||adj.st^$removeparam=pd
-||adj.st^$removeparam=adj_campaign
 ||adj.st^$removeparam=adj_adgroup
-||adj.st^$removeparam=adj_creative
 ||adj.st^$removeparam=adj_adnomia_click_id
 ||adj.st^$removeparam=pfx
 ||adj.st^$removeparam=adj_deeplink
@@ -1836,11 +1859,12 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ||www.ebay.$removeparam=campid
 ||ebay.*/itm$removeparam=customid
 ||ebay.*/itm$removeparam=toolid
-||ebay.*/itm$removeparam=var
+||ebay.*/itm$removeparam=_skw
 ||ebay.*/str$removeparam=_trksid
 $removeparam=asc_campaign,domain=aboutamazon.com|amazon.*|amzn.to
 $removeparam=asc_refurl,domain=aboutamazon.com|amazon.*|amzn.to
 $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
+||amazon.*$removeparam=ascsubtag
 ||amazon.*$removeparam=isDramIntegrated
 ||amazon.*$removeparam=shoppingPortalEnabled
 ||amazon.*/*dp/$removeparam=dib
@@ -2032,6 +2056,11 @@ $removeparam=s,domain=twitter.com|x.com
 ||bilibili.com^$removeparam=vd_source
 ||weibo.*^$removeparam=weibo_id
 ||weibo.*^$removeparam=dt_dapp
+||iqiyi.com^$removeparam=r_area
+||iqiyi.com^$removeparam=recArea
+||iqiyi.com^$removeparam=block
+||iqiyi.com^$removeparam=eventId
+||iqiyi.com^$removeparam=event_id
 ||iqiyi.com^$removeparam=vfrm
 ||iqiyi.com^$removeparam=vfrmblk
 ||iqiyi.com^$removeparam=vfrmrst

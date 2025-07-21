@@ -1,9 +1,9 @@
-! Checksum: 9j+sErLSBGAKHhSvYfSq7Q
-! Diff-Path: ../patches/8_optimized/8_optimized-s-1750259527-3600.patch
+! Checksum: HOglaOCZYWXKMW4Ut9sCuw
+! Diff-Path: ../patches/8_optimized/8_optimized-s-1752740025-3600.patch
 ! Title: AdGuard Dutch filter (Optimized)
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.8.32
-! TimeUpdated: 2025-06-18T15:07:37+00:00
+! Version: 2.0.8.44
+! TimeUpdated: 2025-07-17T08:09:42+00:00
 ! Expires: 10 days (update frequency)
 -reclameplaatjes/
 /adbron.
@@ -1526,13 +1526,15 @@ vakantieplaats.nl#@#.topAds
 @@||tweakers.net/i^$image
 @@||content.hwigroup.net/images^$domain=hardware.info
 hardware.info,tweakers.net#@#.AdBar
+radio10.nl#%#//scriptlet('prevent-setTimeout', 'throw i(r+"err",[o,a,e],d,c),e}finally{i(', '50')
 forum.fok.nl#%#//scriptlet('prevent-setTimeout', 'ckad')
 forum.fok.nl#@##advertentie
 autotrader.nl#%#//scriptlet('abort-on-property-read', 'Object.prototype.autoRecov')
+kijk.nl,hartvannederland.nl,538.nl,vandaaginside.nl#%#//scriptlet('prevent-xhr', 'assets.prod.webx.talpa.digital/ad/view/')
 !+ NOT_OPTIMIZED
-538.nl,hartvannederland.nl#@##topbanner_ad
+vandaaginside.nl,538.nl,hartvannederland.nl#@##topbanner_ad
 !+ NOT_OPTIMIZED
-@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl|538.nl
+@@||assets.prod.webx.talpa.digital/ad/view/$domain=hartvannederland.nl|538.nl|vandaaginside.nl
 topkleurplaat.nl#%#//scriptlet('prevent-setTimeout', '.height() === 0')
 filmvandaag.nl#%#//scriptlet('prevent-fetch', 'securepubads.g.doubleclick.net')
 @@||looopings.nl/*.js$script,~third-party
@@ -1548,16 +1550,20 @@ tweakers.net#$#.widebnr { display: block !important; min-height: 2px !important;
 tweakers.net#%#//scriptlet('prevent-fetch', '/a[ab]\.tweakers\.nl/')
 !+ NOT_PLATFORM(windows, mac, android, ext_chromium)
 @@||aa.tweakers.nl/json$domain=tweakers.net
+@@||assets.prod.webx.talpa.digital/ad/view/$domain=kijk.nl
+kijk.nl#@##topbanner_ad
 @@/prebid/ad.gif?user=*&adId=$domain=kijk.nl
 @@||ads-talpa.adhese.com/json/$domain=kijk.nl
 kijk.nl#$#body .pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: initial !important; }
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=goplay.be
+||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be,redirect=noopjs
 @@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams$domain=goplay.be
 ||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams/*/time-events.json$important,domain=goplay.be
 goplay.be#%#//scriptlet('xml-prune', 'Period[id*="-ad-"]', '', '.mpd')
 goplay.be#%#//scriptlet('prevent-fetch', 'pubads.g.doubleclick.net/gampad/ads')
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$script,domain=goplay.be
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=noopjs,domain=goplay.be
+@@||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be
 ||goplay.be/js/sourcepoint/msg?v=
 vier.be#@#.googleAd
 hardware.info#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
@@ -1591,6 +1597,12 @@ gpblog.com#$#aside[class^="Ad_"] { position: absolute !important; left: -3000px 
 omroepbrabant.nl#$#.ad-banner-container { position: absolute!important; left: -3000px!important; }
 handbalstartpunt.nl#$##advertentie-top { height: 0!important; }
 omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -4000px!important; }
+panorama.nl##.bg-reserved:has(div[data-aa-adunit])
+panorama.nl#?#div[data-aa-adunit]:upward(1)
+panorama.nl##.showheroes-unit
+pepper.com##div[id$="AdSlotPortal"]
+funda.nl##div[role="complementary"]:has(> div > div[id^="div-gpt-ad-"])
+telegraaf.nl###ad_10
 geenstijl.nl#%#//scriptlet('google-ima3')
 geenstijl.nl#%#//scriptlet('prevent-element-src-loading', 'script', 'instream/html5/ima3.js')
 geenstijl.nl#%#//scriptlet('adjust-setTimeout', 'function () { [native code] }', '6000', '0.001')

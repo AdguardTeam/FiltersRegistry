@@ -1,9 +1,9 @@
-! Checksum: ZnsHz3osIoc0SxQMYzlrwQ
-! Diff-Path: ../patches/10/10-s-1750317079-3600.patch
+! Checksum: 62Y7si3OdGDTZwHkYGRmZw
+! Diff-Path: ../patches/10/10-s-1751544935-3600.patch
 ! Title: Filter unblocking search ads and self-promotion
 ! Description: Filter that unblocks search ads in Google, DuckDuckGo, Bing, or Yahoo and self-promotion on websites.
-! Version: 2.0.3.68
-! TimeUpdated: 2025-06-19T07:07:39+00:00
+! Version: 2.0.3.70
+! TimeUpdated: 2025-07-03T12:11:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -157,6 +157,8 @@ ya.ru,yandex.*#@#div[class^="serp-list"] > div.serp-item:has(> div[data-bem*="or
 ! Amazon
 amazon.*#@#div[id^="dp-ads-"]
 amazon.*#@##px-profile_feature_div
+amazon.*#@#div[data-cel-widget="softlines-btf-substitute-zone-container-T3_feature_div"]
+amazon.*#@#div[id="softlines-mobile-btf-discovery-zone-T3_feature_div"] .softlines-zone-content > div[id^="sims-simsContainer_feature_div"]
 amazon.in,amazon.fr,amazon.co.uk,amazon.de#@#.s-result-list > li[id^="result_"][style*="display: block;"]
 amazon.de#@#div[data-cel-widget="desktop-rhf_SponsoredProductsRemoteRHFSearchEXPSubsK2ClickPagination"]
 amazon.com,amazon.de#@##huc-first-upsell-row
@@ -289,6 +291,13 @@ duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@#
 duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@##ads
 duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@#.js-results-ads
 duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@#.results--ads
+!
+! DuckDuckGo
+! Main page
+duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@#div[data-react-module-id="products-0"]
+! Shopping section
+duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@#main > div > section:first-child > ol:has(> li > a[href^="https://links.duckduckgo.com/m.js?"][href*="click_metadata"])
+duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duckduckgo.com#@#div:first-child + div > span + div:has(> h2 > span > span)
 ! Ecosia search
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181371
 ecosia.org#@#div[data-test-id="mainline-result-ad"]

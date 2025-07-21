@@ -1,9 +1,9 @@
-! Checksum: zXW+mDI5IwqGldYmfdbl7g
-! Diff-Path: ../patches/212_optimized/212_optimized-s-1750409076-14400.patch
+! Checksum: sWQ8mVBdK0i0UHweriElxw
+! Diff-Path: ../patches/212_optimized/212_optimized-s-1753087708-14400.patch
 ! Title: RU AdList: Counters (Optimized)
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.71.7
-! TimeUpdated: 2025-06-20T08:39:47+00:00
+! Version: 2.1.72.88
+! TimeUpdated: 2025-07-21T08:43:26+00:00
 ! Expires: 12 hours (update frequency)
 @@/m/counter$~third-party,xmlhttprequest,domain=dtf.ru|vc.ru
 @@||alcogolizm.com/addons/counter/$script,stylesheet,domain=alcogolizm.com
@@ -414,7 +414,6 @@ _pagespeed_beacon?
 ||d3qxef4rp70elm.cloudfront.net^
 ||d7d3cf2e81d293050033-3dfc0615b0fd7b49143049256703bfce.ssl.cf1.rackcdn.com^
 ||data.giraff.io/track/$third-party,domain=~5-tv.ru|~vse42.ru
-||datadome.co^$third-party
 ||dataxpand.com^$third-party
 ||dc.services.visualstudio.com^*/track
 ||demandbase.com^$third-party
@@ -456,7 +455,6 @@ _pagespeed_beacon?
 ||feedsportal.com/c/
 ||fghtem.com^$third-party
 ||fitanalytics.com^$third-party
-||flagcounter.com^$third-party,domain=~websdr.space
 ||flashb.id^$third-party
 ||fleshlight-russia.com/fbl.gif
 ||flixfacts.com^$third-party
@@ -659,6 +657,7 @@ _pagespeed_beacon?
 ||mozilla.net^*/webtrends/
 ||mpianalytics.com^$third-party
 ||mrgcdn.ru/uploads/mstatic/js/utm_
+||mrgr.me^$third-party
 ||msecnd.net/scripts/a/ai.0.js
 ||mtp.spaces.im^
 ||mtp.spaces.ru^
@@ -1037,6 +1036,7 @@ _pagespeed_beacon?
 ||ya-dro.ru^$third-party
 ||yadro.ru^$third-party
 ||yandex-metrica.ru^$third-party
+||yandex.ru/ads/zen_audit
 ||yandex.ru/setud/adlook/
 ||yapfiles.ru/action/track/
 ||yast.rutube.ru^
@@ -1192,7 +1192,7 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||yandex-sport.naydex.net/$script,redirect=empty
 ||yastatic.net/naydex/yandex-mail/$redirect=nooptext,script
 ||yastatic.net/yandex-video-player-iframe-api-bundles-stable/*?adsdk-try=$redirect=nooptext
-ya.*#$?##search-result > [class*="__card"]:has(> div > span:has-text(Реклама)) { display: none !important }
+ya.*#$?##search-result > [class*="__card"]:has(> div > span:has-text(/^Промо$|^Реклама$/)) { display: none !important }
 yandex.*#$?##search-result > [class*="__card"]:has(> div .AdvLabel) { display: none !important }
 yandex.*#$?#.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-channel-info"][class$="subtitle-text"]:has-text(промо)) { display: none !important }
 @@||an.yandex.ru/jserr/1|$domain=dzen.ru|yandex.by|yandex.kz|yandex.ru|yandex.uz
@@ -1206,6 +1206,7 @@ yandex.*#$?#.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-c
 @@||static-mon.yandex.net/static/main.js?pid=$xmlhttprequest,domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||yandex.ru/ads/page/*target-ref=*afisha.yandex.$xmlhttprequest,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
 @@||yandex.ru/ads/page/*target-ref=*pogoda$xmlhttprequest,domain=yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
+@@||yandex.ru/ads/system/context.js?|$script,domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||yandex.ru/ads/system/context.js|$domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 @@||yandex.ru/ads/system/header-bidding.js|$xmlhttprequest,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
 @@||yastatic.net/daas/atom.js|$domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
@@ -1271,6 +1272,7 @@ $removeparam=amp;utm_term
 $removeparam=asb,domain=ozon.ru
 $removeparam=asb2,domain=ozon.ru
 $removeparam=at_campaign,domain=bbc.com
+$removeparam=at_gd
 $removeparam=at_medium,domain=bbc.com
 $removeparam=avtc,domain=ozon.ru
 $removeparam=avte,domain=ozon.ru
@@ -1330,7 +1332,7 @@ $removeparam=rf,domain=mail.ru|sportmail.ru
 $removeparam=rtclick
 $removeparam=searchid,domain=kufar.by
 $removeparam=short_domain,domain=torbobit.net|tourbobit.com|tourbobit.net|turbobeet.net|turbobi.pw|turbobif.com|turbobit.net|turbobita.net|turbobits.cc|turbobits.net|turboobit.com
-$removeparam=sid,domain=nnmclub.ro|nnmclub.to|rutor.in
+$removeparam=sid,domain=nnm-club.me|nnmclub.ro|nnmclub.to|rutor.in
 $removeparam=source_ve_path,domain=youtube.com
 $removeparam=stid,domain=dzen.ru
 $removeparam=traffic_source
@@ -1361,7 +1363,6 @@ $removeparam=yaclid
 $removeparam=yclid
 $removeparam=yredirect
 $removeparam=ysclid
-$~third-party,removeparam=/cdom/i,domain=3dnews.kz|3dnews.ru
 .html?spm=$document,removeparam=spm,domain=aliexpress.*
 .ru/?spm=$document,removeparam=spm,domain=aliexpress.*
 /*=tabbar$document,removeparam=from,domain=ya.ru|yandex.*
@@ -1429,7 +1430,7 @@ utm_$document,removeparam=ig_rid,domain=instagram.com
 ||ykt.ru^$document,removeparam=/news_interesting|news_plus|news_popular|news_recent|promo_inner/,domain=ykt.ru
 ||youtube.com/embed/$subdocument,removeparam=iv_load_policy
 ||youtube.com/embed/$subdocument,removeparam=rel
-@@/forum\/(login|torrent)\.php\?(logout|mode)\=/$removeparam,domain=nnmclub.ro|nnmclub.to
+@@/forum\/(login|torrent)\.php\?(logout|mode)\=/$removeparam,domain=nnm-club.me|nnmclub.ro|nnmclub.to
 @@|https://www.sravni.ru/$subdocument,removeparam=utm_campaign
 @@|https://www.sravni.ru/$subdocument,removeparam=utm_content
 @@|https://www.sravni.ru/$subdocument,removeparam=utm_medium
