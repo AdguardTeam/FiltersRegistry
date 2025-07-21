@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wRAgc+/cvsh8Ugwoff+P1w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1753078492-3600.patch
+! Checksum: pphbSeiiJtZBVyVLru/RTA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1753082147-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.97.73
-! TimeUpdated: 2025-07-21T06:10:15+00:00
+! Version: 2.3.97.74
+! TimeUpdated: 2025-07-21T07:11:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10102,6 +10102,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209681
+tcheats.com##+js(abort-current-script, $, /checkAds|AdBlock/)
+tcheats.com#$#ins.adsbygoogle[data-ad-slot] { position: absolute !important; left: -3000px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209734
 chaturflix.cam##+js(no-setTimeout-if, googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209631
@@ -35206,6 +35209,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+mitaku.net###secondary > .widget_media_image > .wp-block-image > a:not([href*="mitaku.net"]) > img
 ||flixbaba.net/utilsminhill.js
 euobserver.com#$#.mxeqxb { display: none !important; }
 euobserver.com#$#._11d7t56 { display: none !important; }
