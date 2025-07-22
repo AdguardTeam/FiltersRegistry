@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: aIto8sYSCftOuRSMX2nWNA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1753073390-14400.patch
+! Checksum: phzxEJLEUYyq/e+NAdEVDQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1753159742-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.51
@@ -306,6 +306,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||rashcolonizeexpand.com^$all
 ||scarcehepatitis.com^$all
 ||seenwage.com^$all
+||slowlyfocuseddose.com^$all
 ||sneakyadministration.com^$all
 ||sultrymomentarily.com^$all
 ||verbassistance.com^$all
@@ -2344,7 +2345,6 @@ dev.mysql.com##.login-callout
 investing.com###PromoteSignUpPopUp
 context.reverso.net###register-popup-bottom
 ||comment.youmaker.com^$domain=theepochtimes.com
-||viafoura.co^$domain=nottinghampost.com|liverpoolecho.co.uk
 thejournal.ie,city-countyobserver.com###comments
 indiatimes.com##div[class$="cmtwrapper "]
 ghacks.net###comments
@@ -2795,8 +2795,10 @@ $removeparam=sscid
 $removeparam=rmmds
 $removeparam=msclkid
 $removeparam=litb_from
+$removeparam=ggntk
+$removeparam=ggplm
+$removeparam=ggtgt
 $removeparam=ftag
-$document,removeparam=/^__xts__.*$/
 $removeparam=akmClientCountry
 $removeparam=hss_channel
 $removeparam=ns_mchannel
@@ -2855,7 +2857,6 @@ $removeparam=mkt_tok
 $removeparam=affname
 $removeparam=MID,domain=~media-cdn.costco.*|~community.arubanetworks.com
 $removeparam=srnd
-=adservice$removeparam=coid,domain=~radioreference.com|~finanzonline.bmf.gv.at
 $removeparam=action_type_map
 $document,removeparam=/^bsft_.*$/
 $document,removeparam=/^dpg_.*$/
@@ -3092,7 +3093,6 @@ $removeparam=pk_source
 $removeparam=pk_content
 $removeparam=pk_kwd
 $removeparam=ig_mid
-$removeparam=asclid
 $removeparam=au_advert_id
 $removeparam=au_car_id
 $removeparam=ads_adid
@@ -3382,6 +3382,7 @@ $removeparam=lst,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhb
 $removeparam=privacy_mutation_token
 $~xmlhttprequest,removeparam=/^refsrc=.*$/i
 $removeparam=_rdr
+$removeparam=m_entstream_source
 $removeparam=referral_code,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=referral_story_type,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=_nc_cat,domain=~instagram.com
@@ -3502,6 +3503,7 @@ $removeparam=spm,domain=~twitcasting.tv
 $removeparam=tracelog
 $removeparam=aff_click_id
 ||aliexpress.$removeparam=gatewayAdapt
+||aliexpress.$removeparam=pdp_pi
 ||aliexpress.$removeparam=pdp_npi
 ||aliexpress.$removeparam=curPageLogUid
 ||alibaba.com^$removeparam=categoryIds
@@ -3681,6 +3683,7 @@ $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.c
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
+$removeparam=hpt,domain=cnn.com
 ||paypal.com^$removeparam=calc
 ||youtube.com^$removeparam=ab_channel
 $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
@@ -3709,7 +3712,6 @@ $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moose
 ||bbc.$removeparam=at_campaign
 $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||gog.com^$removeparam=pp
-||newegg.com^$removeparam=quicklink
 ||newegg.com^$removeparam=nm_mc
 $removeparam=bsencid
 ||target.com^$removeparam=clkid
@@ -3816,12 +3818,10 @@ $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||apple.com^$removeparam=mttnsubad
 $removeparam=wfr,domain=weidian.com|baidu.com
 $removeparam=organic_search_click
-$removeparam=pop,domain=etsy.com
 $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
-$removeparam=share_time,domain=etsy.com
 $removeparam=iid,domain=cnn.com
 ||hao123.com^$removeparam=tn
 ||lazada.$removeparam=dsource
@@ -3972,11 +3972,6 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=productGridView
 ||jcpenney.com^$removeparam=badge
 ||jcpenney.com^$removeparam=selectedSKUId
-||bandcamp.com^$removeparam=search_item_id
-||bandcamp.com^$removeparam=search_item_type
-||bandcamp.com^$removeparam=search_match_part
-||bandcamp.com^$removeparam=search_page_no
-||bandcamp.com^$removeparam=search_rank
 ||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
@@ -4060,6 +4055,7 @@ $removeparam=login_source,document,domain=theathletic.com|nytimes.com
 $removeparam=afSmartRedirect
 ||wsj.com^$removeparam=st
 $removeparam=adt_ei
+$document,removeparam=icmp,domain=fortnite.com|lego.com|ho-mobile.it
 ||linkedin.com/feed/update$removeparam=origin
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
