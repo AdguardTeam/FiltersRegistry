@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.0.78",
-			"timeUpdated": "2025-07-22T10:07:37+0000",
+			"version": "2.1.0.79",
+			"timeUpdated": "2025-07-22T15:07:01+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.98.5",
-			"timeUpdated": "2025-07-22T14:08:18+0000",
+			"version": "2.3.98.6",
+			"timeUpdated": "2025-07-22T15:07:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.66.66",
-			"timeUpdated": "2025-07-22T12:11:36+0000",
+			"version": "2.0.66.67",
+			"timeUpdated": "2025-07-22T15:07:28+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.62.69",
-			"timeUpdated": "2025-07-22T06:10:21+0000",
+			"version": "2.0.62.70",
+			"timeUpdated": "2025-07-22T15:07:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.37.20",
-			"timeUpdated": "2025-07-22T13:19:30+0000",
+			"version": "2.2.37.21",
+			"timeUpdated": "2025-07-22T15:07:36+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.4",
-			"timeUpdated": "2025-07-22T12:11:53+0000",
+			"version": "2.0.59.5",
+			"timeUpdated": "2025-07-22T15:07:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
