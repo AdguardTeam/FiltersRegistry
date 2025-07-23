@@ -1,9 +1,9 @@
-! Checksum: bcgkz6t3QS0HpaSmMjDZeQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1753283581-3600.patch
+! Checksum: NW92ZcNpA2izFFm4owH4aQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1753287232-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.66.76
-! TimeUpdated: 2025-07-23T15:08:29+00:00
+! Version: 2.0.66.77
+! TimeUpdated: 2025-07-23T16:08:57+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||centsbicloud.bond^$all
@@ -436,7 +436,7 @@ best-hit.tv,h178.com,jukenbbs.com,j-baseball.club,j-basketball.club##body div[cl
 @@||j-rugby.club^$generichide
 @@||j-volleyball.club^$generichide
 @@||jukenbbs.com^$generichide
-shukatsubbs.com,localch.net,best-hit.tv,h178.com,j-baseball.club,j-basketball.club,j-rugby.club,j-volleyball.club,jukenbbs.com#%#//scriptlet('prevent-addEventListener', 'load', 'delayCheckAdBlock')
+shukatsubbs.com,localch.net,best-hit.tv,h178.com,j-baseball.club,j-basketball.club,j-rugby.club,j-volleyball.club,jukenbbs.com#%#//scriptlet('prevent-addEventListener', 'load', 'delayCheckA')
 ||pixnest.pipio.site/adblock.js
 pixnest.pipio.site#%#//scriptlet('abort-on-property-write', 'checkAdIframe')
 lv73.net##div[id^="ad-blocker-"]
@@ -847,8 +847,6 @@ kyukyoku-matome.com##.widget_pc_ad
 ##.t_b ~ div > a[href^="https://www.amazon.co.jp"]
 ##.textwidget a[href^="https://pcmax.jp/lp/?ad_id="] > img
 ##.widget_custom_html > .custom-html-widget > a[href^="https://www.e-nls.com/access.php"]
-!+ PLATFORM(windows, mac, android)
-##html > body .csw-content-container > div.ise-ad:not(#style_important1):not(#style_important2)
 itest.bbspink.com#$#.footer-with-ad { padding-bottom: 10px !important; }
 akibablog.blog.jp#%#//scriptlet('abort-current-inline-script', 'document.write', 'sitejack')
 kasegeru.blog.jp#%#//scriptlet('remove-node-text', '#text', '/スポンサードリンク：?|楽天広告：/')

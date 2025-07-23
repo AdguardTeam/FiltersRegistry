@@ -1,9 +1,9 @@
-! Checksum: JpM7FIXylKPdCF6Ae4X7eA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1753283545-3600.patch
+! Checksum: zdzi/Slhj/sy1GPzdo2+ZQ
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1753287193-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.0.82
-! TimeUpdated: 2025-07-23T15:08:02+00:00
+! Version: 2.1.0.83
+! TimeUpdated: 2025-07-23T16:08:21+00:00
 ! Expires: 5 days (update frequency)
 /code/video-steam/?id=*&vast=
 /nadavi-api/?p4g3=js/api/widget.js
@@ -1832,6 +1832,8 @@ torlook.in#%#//scriptlet("set-constant", "adBlockFunction", "noopFunc")
 positiverecords.ru#%#//scriptlet('abort-current-inline-script', '$', '.height()')
 positiverecords.ru#@#.ad-google
 ||tests24.su^$cookie=/^ai/
+pikabu.ru#%#//scriptlet('set-constant', 'Object.prototype.renderRtbBlock', 'noopFunc')
+pikabu.ru#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'noopFunc')
 pikabu.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.shouldShowStickyAd')
 pikabu.ru#%#//scriptlet('abort-on-property-write', 'Ya')
 pikabu.ru$$script:contains(/\.getPropertyPriority.*=requestAnimationFrame/)
@@ -6749,6 +6751,7 @@ pornolab-zerkalo.appspot.com,pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net#
 ||oconner.biz:8041/js/lib.js$script,redirect=noopjs,important,~websocket
 ||redtram.com/n4p/$redirect=nooptext,important,~websocket
 ||info.zonasearch.com/ad/admulti*.json
+mail.ru##div[id$="-branding-top-sticky"]
 mail.ru##div[article-item-type="contentroll"]
 mail.ru##div[data-testid="grid-header"] > div.toolbar
 mail.ru##.skeleton + a[href^="https://r.mail.ru/redir/"]

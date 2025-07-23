@@ -1,9 +1,9 @@
-! Checksum: 1FHVr+YTjvIE7d/QmLDI3A
-! Diff-Path: ../patches/1/1-s-1753283572-3600.patch
+! Checksum: LX246UZy/Rh0vLIAh+NfEw
+! Diff-Path: ../patches/1/1-s-1753287222-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.0.82
-! TimeUpdated: 2025-07-23T15:08:02+00:00
+! Version: 2.1.0.83
+! TimeUpdated: 2025-07-23T16:08:21+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3832,6 +3832,8 @@ positiverecords.ru#@#.ad-google
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167304
 ||tests24.su^$cookie=/^ai/
 ! pikabu.ru
+pikabu.ru#%#//scriptlet('set-constant', 'Object.prototype.renderRtbBlock', 'noopFunc')
+pikabu.ru#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'noopFunc')
 pikabu.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.shouldShowStickyAd')
 pikabu.ru#%#//scriptlet('abort-on-property-write', 'Ya')
 pikabu.ru$$script:contains(/\.getPropertyPriority.*=requestAnimationFrame/)
@@ -17266,6 +17268,7 @@ pornolab-zerkalo.appspot.com,pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net#
 !
 !
 ! START: mail.ru
+mail.ru##div[id$="-branding-top-sticky"]
 mail.ru##div[article-item-type="contentroll"]
 mail.ru##div[data-testid="grid-header"] > div.toolbar
 mail.ru##.skeleton + a[href^="https://r.mail.ru/redir/"]
