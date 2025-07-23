@@ -923,7 +923,7 @@
 				"name": "ภาษาเฉพาะ"
 			},
 			"tr": {
-				"name": "Dile Özgü"
+				"name": "Dile özgü"
 			},
 			"uk": {
 				"name": "Для певної мови"
@@ -1406,7 +1406,7 @@
 				"description": "De meest uitgebreide lijst van verschillende online statistieken en web analyse tools. Als u wilt dat uw acties op het internet niet worden gevolgd, gebruik dan dit filter."
 			},
 			"no": {
-				"name": "AdGuards spionvarefilter",
+				"name": "AdGuards sporingsbeskyttelsesfilter",
 				"description": "Den mest omfattende listen over ulike tellere og analyseverktøy på nettet. Hvis du ikke vil at dine handlinger på Internett skal spores, bruk dette filteret."
 			},
 			"pl": {
