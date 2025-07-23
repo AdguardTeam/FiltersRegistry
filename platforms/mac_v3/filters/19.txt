@@ -1,9 +1,9 @@
-! Checksum: cB1bOwJEovRn6ypf3Nh8kw
-! Diff-Path: ../patches/19/19-s-1753272936-3600.patch
+! Checksum: z+nR9CrkGQMkWf2RLa/MLA
+! Diff-Path: ../patches/19/19-s-1753283576-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.59.12
-! TimeUpdated: 2025-07-23T12:11:36+00:00
+! Version: 2.0.59.13
+! TimeUpdated: 2025-07-23T15:08:42+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -210,8 +210,7 @@ news.mail.ru##body > div:has(> div[id] > div > div.title:contains(блокиро
 ! Main page
 dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
 ! Ads in news
-dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.protect', 'undefined')
-dzen.ru##div[class^="content"][class*="placeholder_"]
+dzen.ru##div[class*="-desktop-"][class*="-placeholder__"]
 dzen.ru###top-banner
 dzen.ru##div[class^="content--article-item__rightAdWrapper"]
 dzen.ru##div[data-testid="bottom-ad"]
@@ -9942,7 +9941,7 @@ talk.sonymobile.com##.ui-widget[aria-label="Feedback for community"]
 kickz4u.ru##.giftd-ribbon_aligner
 kickz4u.ru###thanksBannerFixed
 proball.ru##.widgets_email
-hentaienglish.com,kolejedolnoslaskie.pl,gogoanime.cool##.ays-pb-modals
+hentaienglish.com,kolejedolnoslaskie.pl##.ays-pb-modals
 forum.duolingo.com##body > div.ReactModalPortal:not(:empty):has(img[src$="/images/duo_wave.svg"])
 m.timesofindia.com##.newsletter_overlay
 realadmin.ru###contactable
@@ -13140,6 +13139,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+remanga.org#%#//scriptlet('set-cookie', 'promo-toast-tg', 'true')
 sai-zen-sen.jp##article[id^="comic-"] > footer:has(a[href="https://twitter.com/twi_yon"])
 chilevision.cl##.siguenos
 antalyahurses.com##main.content > div[x-show="isVisible"]:has(> ul > li > .join-whatsapp-link)

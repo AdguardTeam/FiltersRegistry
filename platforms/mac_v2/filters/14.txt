@@ -1,9 +1,9 @@
-! Checksum: wqlSPO4gZjeMZec0xJaomg
-! Diff-Path: ../patches/14/14-s-1753279976-3600.patch
+! Checksum: 8TYe4FeOLUiW6EDmKkDM1w
+! Diff-Path: ../patches/14/14-s-1753283572-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.37.32
-! TimeUpdated: 2025-07-23T14:08:37+00:00
+! Version: 2.2.37.33
+! TimeUpdated: 2025-07-23T15:08:38+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2522,6 +2522,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+remanga.org#%#//scriptlet('set-cookie', 'cookie-accepted', 'true')
 hartmann24.com.ua#$##cookies-modal { display: none !important; }
 hartmann24.com.ua#$#.backdrop { display: none !important; }
 hartmann24.com.ua#$#body { overflow: auto !important; }
@@ -21867,8 +21868,7 @@ news.mail.ru##body > div:has(> div[id] > div > div.title:contains(блокиро
 ! Main page
 dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
 ! Ads in news
-dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.protect', 'undefined')
-dzen.ru##div[class^="content"][class*="placeholder_"]
+dzen.ru##div[class*="-desktop-"][class*="-placeholder__"]
 dzen.ru###top-banner
 dzen.ru##div[class^="content--article-item__rightAdWrapper"]
 dzen.ru##div[data-testid="bottom-ad"]
@@ -31599,7 +31599,7 @@ talk.sonymobile.com##.ui-widget[aria-label="Feedback for community"]
 kickz4u.ru##.giftd-ribbon_aligner
 kickz4u.ru###thanksBannerFixed
 proball.ru##.widgets_email
-hentaienglish.com,kolejedolnoslaskie.pl,gogoanime.cool##.ays-pb-modals
+hentaienglish.com,kolejedolnoslaskie.pl##.ays-pb-modals
 forum.duolingo.com##body > div.ReactModalPortal:not(:empty):has(img[src$="/images/duo_wave.svg"])
 m.timesofindia.com##.newsletter_overlay
 realadmin.ru###contactable
@@ -34797,6 +34797,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+remanga.org#%#//scriptlet('set-cookie', 'promo-toast-tg', 'true')
 sai-zen-sen.jp##article[id^="comic-"] > footer:has(a[href="https://twitter.com/twi_yon"])
 chilevision.cl##.siguenos
 antalyahurses.com##main.content > div[x-show="isVisible"]:has(> ul > li > .join-whatsapp-link)
@@ -50167,6 +50168,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+remanga.org##button[data-sentry-source-file="reader-ad.tsx"]
 paranormal-ch.com##.right-column-inner > div.plugin-memo
 sai-zen-sen.jp##article[id^="comic-"] > aside:has(a[href="http://www.amazon.co.jp/o/ASIN/4065402654/seikaisha-22"])
 duden.de##.internal-banner-ad
