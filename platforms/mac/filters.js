@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.3.98.26",
-			"timeUpdated": "2025-07-23T11:07:00+0000",
+			"version": "2.3.98.27",
+			"timeUpdated": "2025-07-23T12:11:07+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.66.72",
-			"timeUpdated": "2025-07-23T11:07:22+0000",
+			"version": "2.0.66.73",
+			"timeUpdated": "2025-07-23T12:11:23+0000",
 			"languages": [
 				"ja"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.37.30",
-			"timeUpdated": "2025-07-23T11:07:37+0000",
+			"version": "2.2.37.31",
+			"timeUpdated": "2025-07-23T12:11:31+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.59.11",
-			"timeUpdated": "2025-07-23T11:07:45+0000",
+			"version": "2.0.59.12",
+			"timeUpdated": "2025-07-23T12:11:36+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.35.81",
-			"timeUpdated": "2025-07-23T11:07:46+0000",
+			"version": "2.0.35.82",
+			"timeUpdated": "2025-07-23T12:11:36+0000",
 			"languages": []
 		},
 		{
@@ -1630,7 +1630,7 @@
 			"homepage": "https://github.com/uBlockOrigin/uAssets",
 			"expires": 432000,
 			"displayNumber": 2,
-			"groupId": 7,
+			"groupId": 2,
 			"subscriptionUrl": "https://ublockorigin.github.io/uAssetsCDN/filters/lan-block.txt",
 			"platformsExcluded": [
 				"ext_chromium_mv3"
