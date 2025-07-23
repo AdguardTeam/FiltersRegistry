@@ -1,9 +1,9 @@
-! Checksum: Dk7/3w+v1GsWhP81VjJXhA
-! Diff-Path: ../patches/14/14-s-1753262098-3600.patch
+! Checksum: Oaqg6byNIKym9k1NaN7GNQ
+! Diff-Path: ../patches/14/14-s-1753265543-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.37.28
-! TimeUpdated: 2025-07-23T09:10:49+00:00
+! Version: 2.2.37.29
+! TimeUpdated: 2025-07-23T10:08:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2525,6 +2525,10 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+hartmann24.com.ua#$##cookies-modal { display: none !important; }
+hartmann24.com.ua#$#.backdrop { display: none !important; }
+hartmann24.com.ua#$#body { overflow: auto !important; }
+hartmann24.com.ua#%#//scriptlet('remove-class', 'modal-opened', 'html')
 allwidgets.ru##.lkdm_cookies_widget_shadow
 developer.honor.com##.termsOfCookies
 sberhealth.ru##.cguixmd
@@ -17158,6 +17162,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209917
+hartmann24.com.ua#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209585
 healthy.kaiserpermanente.org#@#.consent_container:not(body,html,:empty)
 ! eurogamer.de - videos not playing
@@ -23776,6 +23782,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+simptown.su##.juice_ban
 asobicreate.net##div[class^="popup"][class$="wrap"]
 aram.zone#%#//scriptlet('prevent-element-src-loading', 'img', 'nitropay.com')
 aram.zone#%#//scriptlet('abort-on-stack-trace', 'CanvasRenderingContext2D.prototype.drawImage', '.onload')

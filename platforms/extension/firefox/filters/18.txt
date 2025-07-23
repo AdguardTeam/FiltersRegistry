@@ -1,9 +1,9 @@
-! Checksum: MaRU6NTo27EKLaUH0ZXIpw
-! Diff-Path: ../patches/18/18-s-1753262086-3600.patch
+! Checksum: Qlyjw8vqskY6yU/sr7c4LA
+! Diff-Path: ../patches/18/18-s-1753265531-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.66.36
-! TimeUpdated: 2025-07-23T09:10:56+00:00
+! Version: 2.0.66.37
+! TimeUpdated: 2025-07-23T10:08:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2522,6 +2522,10 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+hartmann24.com.ua#$##cookies-modal { display: none !important; }
+hartmann24.com.ua#$#.backdrop { display: none !important; }
+hartmann24.com.ua#$#body { overflow: auto !important; }
+hartmann24.com.ua#%#//scriptlet('remove-class', 'modal-opened', 'html')
 allwidgets.ru##.lkdm_cookies_widget_shadow
 developer.honor.com##.termsOfCookies
 sberhealth.ru##.cguixmd
@@ -17175,6 +17179,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209917
+hartmann24.com.ua#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209585
 healthy.kaiserpermanente.org#@#.consent_container:not(body,html,:empty)
 ! eurogamer.de - videos not playing
