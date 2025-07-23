@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.98.32",
-			"timeUpdated": "2025-07-23T17:08:48+0000",
+			"version": "2.3.98.33",
+			"timeUpdated": "2025-07-23T18:08:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.88.44",
-			"timeUpdated": "2025-07-23T17:08:59+0000",
+			"version": "2.0.88.45",
+			"timeUpdated": "2025-07-23T18:08:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -708,8 +708,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.11.44",
-			"timeUpdated": "2025-07-22T10:08:28+0000",
+			"version": "2.0.11.45",
+			"timeUpdated": "2025-07-23T18:09:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
