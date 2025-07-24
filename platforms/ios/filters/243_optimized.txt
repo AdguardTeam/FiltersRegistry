@@ -1,9 +1,9 @@
-! Checksum: han3WZEautFQMVMyC2461g
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1753246162-14400.patch
+! Checksum: rlWJVH4gTK2OE3900XyFpA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1753346787-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.24
-! TimeUpdated: 2025-07-23T04:45:11+00:00
+! Version: 2.0.22.25
+! TimeUpdated: 2025-07-24T08:42:04+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -1876,8 +1876,6 @@ zeromagazine.nu##div[id^="ads"]
 ##[class*="advads_ad_widget"]:not(body):not(html)
 ##[id^="adace_ads"]
 *$third-party,script,denyallow=gstatic.com,domain=karlskogavaxer.se|molndalvaxer.se
-*$all,domain=jobba-hemifran.com|mogenromantik.com|flirtmatch.se|distansarbete.com
-*$all,domain=rentia.se|rentler.se|bostad24.se|hyrio.se|rentify.se|bostadsportal.se|bostadslistan.se
 *$ping,domain=fiskejournalen.se
 -popup-analytics
 -samarbete$image,domain=hockeyettan.se
@@ -1935,6 +1933,7 @@ zeromagazine.nu##div[id^="ads"]
 /adobe/se/target-main-at.js
 /adpage$domain=hotellorestaurang.se|byggfakta.today|citymark.today
 /ads.article.js
+/adsCountdown$domain=tv.nu
 /adsaga.
 /adsense.index.js$domain=husvagn.se|husbil.se
 /adsm.macro$script
@@ -2699,6 +2698,7 @@ zeromagazine.nu##div[id^="ads"]
 /?template=prisjakt$domain=ljudochbild.se
 /?trafikkalla$image,domain=bloggplatsen.se
 /_adsmodern/*$image
+/_glimr$domain=tv.nu
 /_graphics/annons
 /_papers_media/banners
 /_sites_media/*/uploads/Banners
@@ -2759,11 +2759,9 @@ zeromagazine.nu##div[id^="ads"]
 ||aftonbladet.se.*.$document
 ||ajs-assets.ftstatic.com/ftUtils.js
 ||akademiskahus.se/AddThis?$script
-||alkemi.com.se^
 ||allaaktier.se/ads/
 ||allastudier.se/TrackingSearch
 ||allastudier.se/search-sponsor
-||alphalete.com.se^
 ||amazonaws.com/adn-tag
 ||amazonaws.com/adsfallback/
 ||amazonaws.com/metapic-cdn/*/metapic.
@@ -2810,7 +2808,6 @@ zeromagazine.nu##div[id^="ads"]
 ||barnebys.sh/js/btag
 ||bcm.interactives.dk/script/
 ||bellmetric.net^$third-party
-||best-prizes-now.$all
 ||bettingstugan.se^$third-party
 ||bettingutansvensklicens.co^$third-party
 ||biddercore.io^$third-party
@@ -2864,7 +2861,6 @@ zeromagazine.nu##div[id^="ads"]
 ||cdn.ungpd.com^$domain=odla.nu
 ||centotag.io^$third-party
 ||cervera.se/t/t?
-||championsverige.com.se^
 ||cision.com^$badfilter
 ||cision.com^$third-party
 ||ck.page^$third-party
@@ -2938,9 +2934,7 @@ zeromagazine.nu##div[id^="ads"]
 ||destination.se^$third-party
 ||detfriasverige.circle.so^$ping
 ||didomi.nwtmedia.se^
-||digitaliseringsinitiativet.se^
 ||digitaloceanspaces.com/ethical.min.js
-||dinbilgaranti.se^
 ||directory.cookieyes.com/api/v1/ip
 ||diu127fbe6pn6.cloudfront.net^*/ga-universal.html
 ||doktor-se.onelink.me^$image
@@ -2984,11 +2978,9 @@ zeromagazine.nu##div[id^="ads"]
 ||fml-x.com^$third-party
 ||fodertipset.se/cookie-info
 ||folkspel.se^$third-party
-||footjoygolfskorrea.com.se^
 ||forms.hsforms.com^*/counters.$image
 ||forum.odla.nu/js/bonnier.js
 ||fotboll.com/*casino$image
-||fraagesport.com^
 ||freewheel-mtgx-tv.akamaized.net^$media
 ||freyanews.com^*/tracker$script
 ||fritiden.se/js/cookiealert-standalone.js
@@ -3007,12 +2999,12 @@ zeromagazine.nu##div[id^="ads"]
 ||google-analytics.com^$important,domain=aftonbladet.se|tradera.com|xxl.se
 ||gopeach.se^$third-party
 ||go.ezodn.com/hb/$domain=temadagar.se|wernamaten.se|sanghafte.se|xn--gtboken-exa.se|ninjateknik.com
+||go.qasa.se^$ping
 ||gravito.net^$domain=hitta.se|gp.se|bohuslaningen.se|stromstadstidning.se|markposten.se|harrydaposten.se|partilletidning.se|sttidningen.se|molndalsposten.se|kungalvsposten.se|kungsbackaposten.se|alingsastidning.se|ttela.se|hallandsposten.se|hn.se|mellerudsnyheter.se|moviezine.se
 ||grillbloggen.nu/media/com_rstbox/js/engagebox.js
 ||growthbook.io^$domain=allas.se|elle.se|femina.se|hant.se|mabra.com|residencemagazine.se|svenskdam.se|motherhood.se|lokalguiden.se
 ||gstatic.com/partners/badge$subdocument
 ||gtm.findroommate.dk^
-||gymshark-sweden.com.se^
 ||g.ezodn.com/cmp/$domain=temadagar.se
 ||hajper.com^$third-party
 ||happygreen.se^$third-party
@@ -3076,7 +3068,6 @@ zeromagazine.nu##div[id^="ads"]
 ||kritiker.se/js/gdpr.js
 ||kundvisaren.se^$third-party
 ||kvikr.se/ads/
-||kyrkavgift.se^
 ||laget.se^*/retarget.js
 ||lajvo.se/addImpression
 ||lanapengar.expressen.se^
@@ -3097,13 +3088,12 @@ zeromagazine.nu##div[id^="ads"]
 ||liveagent.se/scripts/track
 ||live-tag.creatopy.net^$third-party
 ||load.lite.lchfarkivet.se^$script
+||logger.tv.nu^
 ||logsnag.com^$third-party
 ||logs.sesamy.com/events
 ||lok.se/pic/sponsor/
-||longchampstockholm.com.se^
 ||lookaside.fbsbx.com/lookaside/crawler/
 ||look.ufinkln.com^
-||look.utndln.com^$all
 ||lorempixel.com^$third-party
 ||lwcdn.com/vendor/ima.min.js$script
 ||lystra.se^$third-party
@@ -3233,8 +3223,6 @@ zeromagazine.nu##div[id^="ads"]
 ||riedta.com^$third-party
 ||routy.app^$third-party
 ||royapp.com^$third-party
-||rpofsweden.com^
-||rpofsweden.se^
 ||rudderstack.com^$third-party
 ||rum.cronitor.io/script.js
 ||runtnc.net^
@@ -3310,7 +3298,6 @@ zeromagazine.nu##div[id^="ads"]
 ||svd.se/api/live-ads/
 ||svenskalag.se/img/sponsors
 ||sv.picmix.com/sw.js
-||s.arclk.net/tr?$all
 ||tally.so^$domain=tranakampsport.se
 ||tc.hometogo.net^$image
 ||telemetry.bambuser.io^
@@ -3320,7 +3307,6 @@ zeromagazine.nu##div[id^="ads"]
 ||top100ruokablogit.com^$third-party
 ||topbar.svenskelitfotboll.se/top-bar-script
 ||topblogarea.se/tracker
-||toppmarkensverige.com^
 ||tourn.co^$third-party
 ||tourn.se^$third-party
 ||tracing.yelp.com^
@@ -3355,8 +3341,6 @@ zeromagazine.nu##div[id^="ads"]
 ||usercentrics.eu/uct?$image
 ||usercentrics.eu^$domain=hemnet.se|kantarsifo.se|foretagarna.se|svenskhandel.se|gais.se|matpriskollen.se
 ||userneeds.com^$third-party
-||valentinosverige.com^
-||viagogo.se^
 ||vietnamportalen.se/404.html
 ||vietnamportalen.se/bilder/*annons
 ||vietnamportalen.se/bilder/*banner
