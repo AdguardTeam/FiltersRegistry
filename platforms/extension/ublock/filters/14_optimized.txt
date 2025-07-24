@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: EufL3f1NDvzSY3IMFwFMXA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1753359359-3600.patch
+! Checksum: UnpRLquuJpgOnTwjQOxjFw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1753363422-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.37.41
-! TimeUpdated: 2025-07-24T12:11:54+00:00
+! Version: 2.2.37.42
+! TimeUpdated: 2025-07-24T13:19:26+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -9804,6 +9804,8 @@ auto.ru##+js(abort-on-property-read, Object.prototype.RenderMarks)
 shedevrum.ai##+js(set-constant, Object.prototype.isStickyAd, undefined)
 shedevrum.ai###app > div.z-\[12\].bg-white
 @@||shedevrum.ai^$generichide
+pikabu.ru##.b-page-story__bf-comments > div.story:not(:has(*))
+/pikabu.ru\/ajax\/[\w\d]+\?[\w\d]+=[\w\d-]+$/$xmlhttprequest,domain=pikabu.ru
 pikabu.ru##+js(abort-current-script, XMLHttpRequest, xhr.withCredentials)
 comedy-radio.ru##+js(abort-on-property-read, Object.prototype.renderDirect)
 relax-fm.ru##+js(abort-on-property-read, Object.prototype.renderDirect)
@@ -10967,7 +10969,6 @@ graphicget.com,udemy-downloader.com#$#.modal-backdrop { display: none !important
 graphicget.com,udemy-downloader.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 graphicget.com,udemy-downloader.com##+js(no-fetch-if, google-analytics.com)
 suche.web.de###abp
-pikabu.ru##.awarning-wrapper
 xenvn.com##+js(addEventListener-defuser, load, XV.ad_block)
 ||es.memedroid.com/js/ads*.js
 mysb555.com##+js(addEventListener-defuser, DOMContentLoaded, adsBlocked)
@@ -11302,7 +11303,6 @@ birgun.net,free-reseau.fr,penize.cz,smartcockpit.com###adblocker
 phillymag.com###blocker-text
 macapp.org.cn,picmix.com##+js(abort-on-property-read, adBlockDetected)
 picmix.com##+js(abort-current-script, document.getElementById, .style.display)
-pikabu.ru##section[data-role="adb-warning"]
 pixiz.com##+js(abort-current-script, document.getElementById, flex)
 pln-pskov.ru###check_ad_block
 poedb.tw##+js(abort-on-property-read, adBlockDetected)
@@ -12762,11 +12762,8 @@ app.any.run##+js(set-local-storage-item, not_first_open, true)
 nerdwallet.com###contextual-reg-modal-container
 thestar.com.my##.freeModal
 diepresse.com###abocontainer-f
-pikabu.ru##iframe[src^="https://autofill.yandex.ru/"]
 ||autofill.yandex.ru^$domain=ru.hexlet.io|rnk.ru|ig-store.ru|fishki.net|glavbukh.ru
 ||id.vk.com/floating_one_tap_auth$domain=pikabu.ru
-pikabu.ru##div[data-test-id="floatingOneTap"]
-pikabu.ru##.popup-button-promo
 appmaster.io##.powered
 isitdownorjustme.net##.kadence-conversion-popup
 sitechecker.pro##app-general-banner
@@ -13022,7 +13019,7 @@ ilfattoalimentare.it###frm-mltchnl__popup-container
 1800petmeds.com##+js(set-local-storage-item, emailLightBox, false)
 practicum.yandex.ru##section[id^="proposal"]
 ionos.fr##div[id^="bio_ep_reworked"]
-pikabu.ru#?#.overlay:has(> div.popup a.top-story-popup)
+pikabu.ru##.popup_bottom-widget
 apowersoft.jp##.rec-promotion
 apowersoft.jp##.win-mask
 okazurand.net##.product-detail-purchase--floating
@@ -19594,7 +19591,6 @@ openculture.com##.new_subscription_block
 cleananddelicious.com,javcc.com,analogictips.com,1000projects.org,hostdime.com,whatobuy.in,blog.alexa.com###text-6
 atlantea.news,blog.alexa.com##.awac-wrapper
 wikihow.com###hp_newsletter
-pikabu.ru##.email-block
 ryte.com###adNewSkyscraper
 forklog.com##div[class^="subscribe_blk"]
 eksmo.ru,jbl.com##.mail-form
@@ -20956,8 +20952,6 @@ tokyostarbank.co.jp##+js(set-cookie, app-dl-banner, true)
 tokubai.co.jp##.track_hakari_once
 letgo.com#?#section[class^="_"] > div[class^="_"]:has(> a[href^="https://letgo.onelink.me/"])
 shonenjumpplus.com#$#div[class^="smartapp-"] { display: none !important; }
-pikabu.ru##.header__app-link-wrapper
-pikabu.ru##.appstore-link
 histrf.ru#$#.min-h-screen { margin-top: 0 !important; }
 histrf.ru#$#header { top: 0 !important; }
 pdf2go.com##.extension-container
@@ -21037,7 +21031,6 @@ lingvanex.com##.modal-app-overlay
 thuisbezorgd.nl,takeaway.com,just-eat.ch,lieferando.at,lieferando.de,just-eat.fr,pyszne.pl,just-eat.dk,just-eat.no##div[data-selector-id="app-banner"]
 apkmody.fun,apkmody.io###body-fixed-footer
 hesaplama.net##aside > div > a[href^="https://play.google.com/store/apps/"]
-pikabu.ru#$#body { overflow: auto !important; }
 dzen.ru##div[class^="news-site--web2app-advert-qr-banner__"]
 topperlearning.com,xiaohongshu.com##.open-app-btn
 rakuten.com.tw##.appBnFooter
@@ -21380,7 +21373,7 @@ m.bunjang.co.kr##+js(set-cookie, _bun_hide_lm, 0)
 minfin.com.ua,magnit.ru,practicum.yandex.ru,spb.napopravku.ru,spark-interfax.ru##.mobile-app-banner
 dns-shop.ru,style.rbc.ru,autodaily.ru,skyticket.jp,tabletki.ua,autonews.ru##.app-link
 delishkitchen.tv#$#aside[class^="footer-app-banner-wrap"] { margin: 1em 0 0 !important; visibility: hidden !important; height: 0 !important; }
-ciw.news,infranken.de,babelli.de,kidsna.com,live.leisu.com,rausgegangen.de,flowwow.com,theolognion.com,recipe-blog.jp,retty.me,haber.doviz.com,nuum.ru,vinmec.com,coinmarketcap.com,pass.auone.jp,pikabu.ru,makuake.com,low-ya.com,ticketjam.jp,douglas.de,substack.com,mapion.co.jp,amebaownd.com,prospektangebote.de,montecarlo.ru,autoscout24.de,stackoverflow.com,77onlineshop.de,nicovideo.jp,inpost.pl,vivre.eu,thequestion.ru,mysterycircus.jp,globo.com,delishkitchen.tv##.app-banner
+ciw.news,infranken.de,babelli.de,kidsna.com,live.leisu.com,rausgegangen.de,flowwow.com,theolognion.com,recipe-blog.jp,retty.me,haber.doviz.com,nuum.ru,vinmec.com,coinmarketcap.com,pass.auone.jp,makuake.com,low-ya.com,ticketjam.jp,douglas.de,substack.com,mapion.co.jp,amebaownd.com,prospektangebote.de,montecarlo.ru,autoscout24.de,stackoverflow.com,77onlineshop.de,nicovideo.jp,inpost.pl,vivre.eu,thequestion.ru,mysterycircus.jp,globo.com,delishkitchen.tv##.app-banner
 imdb.com,nana-music.com##.footer__app
 kikkoman.co.jp##.application-banner
 napbizblog.jp##.napbizapp
@@ -21684,7 +21677,7 @@ m24.ru###AndroidMobileAppBanner
 zargan.com###app-menu
 photo-capsule-puls.net,americanexpress.com,e-aidem.com##.appbanner
 journaldequebec.com,journaldemontreal.com,medizinfuchs.de###appbanner
-services.clp.com.hk,pikabu.ru,uol.com.br,m.netpincer.hu,m.yelp.com,opodo.de###smart-banner
+services.clp.com.hk,uol.com.br,m.netpincer.hu,m.yelp.com,opodo.de###smart-banner
 zona.plus,zona.mobi###zona-android
 goobike.com,boylove.cc,music.line.me,miui.com##.app_download
 oilprice.com,m.qidian.com##.app_download_ad
@@ -23366,7 +23359,6 @@ howdyho.net##.special-ripple
 vk.com###narrow_column > #feed_filters > .apps_feedRightAppsBlock
 makeup.ru##+js(set-constant, Makeup.subscribePopup, undefined)
 ||player.anyclip.com^$domain=thewindowsclub.com
-pikabu.ru#?#div[class^="stories-feed_"] > article.story > div.story__main span.story__sponsor:upward(article.story)
 wyborcza.biz##.mcBan[data-campaign-id] > section.mod_swimmer[data-cta-category="plywak"]
 ||fb.ru/front/build/comments.js$domain=fb.ru
 auto-swiat.pl,przegladsportowy.onet.pl,komputerswiat.pl##+js(set-constant, floatingPlayer.isFloatingEnabled, false)
@@ -24187,7 +24179,6 @@ asuracomic.net##body > .bg-gradient-to-br:has(> .relative > .items-center > butt
 ||mangatilkisi.com/wp-content/uploads/2024/12/MangaTilkisi-reklamsiz-okuma.webp
 streamlabs.com###ultra_banner
 thecode.media##div[class^="lazyblock-banner"]
-pikabu.ru##.header-right-menu > a[data-promo-id]
 onet.pl##section[class^="Body_content_"] #pianoInfo:has(> .tp-container-inner > iframe[src*="&displayMode=inline&widget=template"])
 olx.com.br##nav[aria-label="Carrossel de banners"]
 uyamaresort.com###block-25
@@ -25685,7 +25676,6 @@ washingtonpost.com#$##__next { position: static !important; }
 washingtonpost.com#$#div[data-qa="overlay-background"] { display: none !important; }
 wjunction.com##.p-body-content > div > div[style^="text-align:"] > a[target="_self"] > img
 ||cdn.tinypass.com/api/tinypass.min.js$domain=digiday.com
-||special.pikabu.ru/*/embed/
 mapion.co.jp###mmail_lp_banner
 heise.de##a-sticky-footer[data-component="StickyFooter"].group-open > *
 warau.jp##div[id^="warau-"] > div > a[target="_blank"] > img

@@ -1,9 +1,9 @@
-! Checksum: v4Wj7pc7Iqn1t7E9KAo4Hw
-! Diff-Path: ../patches/1/1-s-1753359341-3600.patch
+! Checksum: dZpJ68f7h1KFBbWp43C6Eg
+! Diff-Path: ../patches/1/1-s-1753363393-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.0.85
-! TimeUpdated: 2025-07-24T12:11:08+00:00
+! Version: 2.1.0.86
+! TimeUpdated: 2025-07-24T13:18:37+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3827,9 +3827,6 @@ positiverecords.ru#@#.ad-google
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167304
 ||tests24.su^$cookie=/^ai/
 ! pikabu.ru
-pikabu.ru#%#//scriptlet('set-constant', 'Object.prototype.renderRtbBlock', 'noopFunc')
-pikabu.ru#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'noopFunc')
-pikabu.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.shouldShowStickyAd')
 pikabu.ru#%#//scriptlet('abort-on-property-write', 'Ya')
 pikabu.ru$$script:contains(/\.getPropertyPriority.*=requestAnimationFrame/)
 pikabu.ru#%#//scriptlet('remove-node-text', 'script', '/xhr\.setRequestHeader\(h[a-zA-Z0-9_]?a?[a-zA-Z0-9]{1,3}_?[a-zA-Z0-9]?[a-zA-Z0-9_]?[rp]/')
@@ -6120,9 +6117,6 @@ zab.ru#$#body { background: #E6E6E6!important; margin-top: 0!important; }
 hdtennis.ru#$##outer-wrap { padding: 40px 30px!important; }
 ! my-hit.org - удаление отступа сверху
 my-hit.org#$#.navbar-default { margin-bottom: 20px!important; }
-! https://github.com/AdguardTeam/AdguardFilters/issues/13998
-pikabu.ru#$##branding_ad_comment { position: absolute!important; left: -3000px!important; }
-pikabu.ru#$##branding_ad_footer { position: absolute!important; left: -3000px!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/57755
 fastpic.ru#$#.justify-content-center > div.col[id] { max-width: max-content !important; }
 fastpic.ru#$##bright { display: none!important; }
@@ -16777,25 +16771,10 @@ ozon.ru##div[data-widget="bannerCarousel"]
 2gis.*##._1xza2sg
 !
 ! pikabu.ru
-pikabu.ru##.stories-feed__container > article:has(a.story__sponsor)
-pikabu.ru##.b-page-story__bf-cmments > header.story__header + div.story__user
-pikabu.ru#?#.stories-feed__container > article.story:has(> div.story__main a[href^="/information/specials"])
-pikabu.ru#?#.stories-feed__container > article:has(> div.story__placeholder)
-pikabu.ru#?#aside > div.sidebar-block:has(> :not(div):not(a):not(script)[id])
-pikabu.ru#?#aside > div.sidebar-block:has(> div.button_add)
 pikabu.ru##.comments__adv
 pikabu.ru##.popup_animation
-pikabu.ru##.stories-feed__container > article:not([data-context-actions="duplicate_report"]):not([data-page]):not([data-author-name])
 [$path=/^\/$|\/\?|best/]pikabu.ru##article[data-author-name="specials"]
-pikabu.ru##article[data-ad-type]
-pikabu.ru##.ads-placeholder_centered
-pikabu.ru##a[class="sidebar-menu__item"][href^="http://ads.adfox.ru/"]
-pikabu.ru##.feed_ad_wrapper
-pikabu.ru##.sidebar > aside > div > div.story__gag_relative > div[id] > div[class*=" "][id]
 pikabu.ru##.sidebar-block_placeholder
-pikabu.ru##body #branding_ad_header
-pikabu.ru##div[id^="yandex_ad_"]
-||cs.pikabu.ru/css/ad_branding_*.css
 ! drive2.ru
 drive2.ru##.x-box:has(> div.c-dv-sns)
 drive2.com,drive2.ru##.c-index-alt div[id^="adfox_"]

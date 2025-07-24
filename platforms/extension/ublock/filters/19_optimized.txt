@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: rQ4gBKBSVWXUNsSYaWW4OA
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1753359359-3600.patch
+! Checksum: yS5Z956kMUz6Q1TWSyFUNQ
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1753363423-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.59.19
-! TimeUpdated: 2025-07-24T12:12:01+00:00
+! Version: 2.0.59.20
+! TimeUpdated: 2025-07-24T13:19:31+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*##:matches-path(/images).AdvMastHead
@@ -36,6 +36,8 @@ auto.ru##+js(abort-on-property-read, Object.prototype.RenderMarks)
 shedevrum.ai##+js(set-constant, Object.prototype.isStickyAd, undefined)
 shedevrum.ai###app > div.z-\[12\].bg-white
 @@||shedevrum.ai^$generichide
+pikabu.ru##.b-page-story__bf-comments > div.story:not(:has(*))
+/pikabu.ru\/ajax\/[\w\d]+\?[\w\d]+=[\w\d-]+$/$xmlhttprequest,domain=pikabu.ru
 pikabu.ru##+js(abort-current-script, XMLHttpRequest, xhr.withCredentials)
 comedy-radio.ru##+js(abort-on-property-read, Object.prototype.renderDirect)
 relax-fm.ru##+js(abort-on-property-read, Object.prototype.renderDirect)
@@ -1199,7 +1201,6 @@ graphicget.com,udemy-downloader.com#$#.modal-backdrop { display: none !important
 graphicget.com,udemy-downloader.com#$#body { overflow: auto !important; padding-right: 0 !important; }
 graphicget.com,udemy-downloader.com##+js(no-fetch-if, google-analytics.com)
 suche.web.de###abp
-pikabu.ru##.awarning-wrapper
 xenvn.com##+js(addEventListener-defuser, load, XV.ad_block)
 ||es.memedroid.com/js/ads*.js
 mysb555.com##+js(addEventListener-defuser, DOMContentLoaded, adsBlocked)
@@ -1534,7 +1535,6 @@ birgun.net,free-reseau.fr,penize.cz,smartcockpit.com###adblocker
 phillymag.com###blocker-text
 macapp.org.cn,picmix.com##+js(abort-on-property-read, adBlockDetected)
 picmix.com##+js(abort-current-script, document.getElementById, .style.display)
-pikabu.ru##section[data-role="adb-warning"]
 pixiz.com##+js(abort-current-script, document.getElementById, flex)
 pln-pskov.ru###check_ad_block
 poedb.tw##+js(abort-on-property-read, adBlockDetected)
@@ -2995,11 +2995,8 @@ app.any.run##+js(set-local-storage-item, not_first_open, true)
 nerdwallet.com###contextual-reg-modal-container
 thestar.com.my##.freeModal
 diepresse.com###abocontainer-f
-pikabu.ru##iframe[src^="https://autofill.yandex.ru/"]
 ||autofill.yandex.ru^$domain=ru.hexlet.io|rnk.ru|ig-store.ru|fishki.net|glavbukh.ru
 ||id.vk.com/floating_one_tap_auth$domain=pikabu.ru
-pikabu.ru##div[data-test-id="floatingOneTap"]
-pikabu.ru##.popup-button-promo
 appmaster.io##.powered
 isitdownorjustme.net##.kadence-conversion-popup
 sitechecker.pro##app-general-banner
@@ -3255,7 +3252,7 @@ ilfattoalimentare.it###frm-mltchnl__popup-container
 1800petmeds.com##+js(set-local-storage-item, emailLightBox, false)
 practicum.yandex.ru##section[id^="proposal"]
 ionos.fr##div[id^="bio_ep_reworked"]
-pikabu.ru#?#.overlay:has(> div.popup a.top-story-popup)
+pikabu.ru##.popup_bottom-widget
 apowersoft.jp##.rec-promotion
 apowersoft.jp##.win-mask
 okazurand.net##.product-detail-purchase--floating
@@ -9832,7 +9829,6 @@ openculture.com##.new_subscription_block
 cleananddelicious.com,javcc.com,analogictips.com,1000projects.org,hostdime.com,whatobuy.in,blog.alexa.com###text-6
 atlantea.news,blog.alexa.com##.awac-wrapper
 wikihow.com###hp_newsletter
-pikabu.ru##.email-block
 ryte.com###adNewSkyscraper
 forklog.com##div[class^="subscribe_blk"]
 eksmo.ru,jbl.com##.mail-form
