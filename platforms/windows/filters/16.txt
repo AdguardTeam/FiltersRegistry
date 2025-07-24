@@ -1,9 +1,9 @@
-! Checksum: h0V00c16ZIU8PJflgbzMSw
-! Diff-Path: ../patches/16/16-s-1753334183-3600.patch
+! Checksum: V9gqGRKsTfMdJk3agvcg9A
+! Diff-Path: ../patches/16/16-s-1753355497-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.53.55
-! TimeUpdated: 2025-07-24T05:12:09+00:00
+! Version: 2.0.53.56
+! TimeUpdated: 2025-07-24T11:07:21+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20,6 +20,7 @@
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
 !
+||lopfly.com^
 ||heliumads.com^
 ||proxy.ads.canalplus-bo.net^
 ||7bd92.v.fwmrm.net^
@@ -855,6 +856,13 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+hentaivost.fr#%#//scriptlet('remove-node-text', 'script', '__ADX_slot_id')
+hentaivost.fr$$script:contains(__ADX_slot_id)
+hentaivost.fr##.navbar-nav > li[id^="nav-menu-item-"] > a:not([href^="https://hentaivost.fr/"])
+||hentaivost.fr/detect.js
+||gupload.xyz/data/head/script.php
+||gupload.xyz/vast/
+zone-telechargement.al##.body-clickable
 qwant.com#%#//scriptlet('json-prune', 'data.result.items.sidebar.[-].type.[=].advertiser_ads', 'data.search_id')
 qwant.com##.is-sidebar > div[class*=" "]:has(img[data-testid="advertiserAdsImage"])
 gamekult.com##.gk__sidebar__list  > li:has(> .g2__a-dc)
