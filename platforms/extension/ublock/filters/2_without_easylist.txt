@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 7+VvtwoHut5pH+FvXFZzhQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1753355484-3600.patch
+! Checksum: g4XDqD9jt70FSUvPbbrmRg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1753359361-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.3.98.50
-! TimeUpdated: 2025-07-24T11:06:52+00:00
+! Version: 2.3.98.51
+! TimeUpdated: 2025-07-24T12:11:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||conde.digital^
 ||demoaccount.site^
 ||js.rev.iq^$third-party
 ||popular-tea.com^
@@ -28372,6 +28373,9 @@ a1.ro##.ima-ad-container
 ! NOTE: Serbian
 !
 filmoviplex.com##a[target="_blank"] > img[style="max-width: 100%;"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/209883
+! TODO: remove after the issue is fixed in Dandelion Sprout's Serbo-Croatian List
+n1info.rs##.ad-loading-placeholder
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206847
 olx.ba##+js(set-constant, googletag.destroySlots, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203493
@@ -36294,7 +36298,6 @@ ww2-weapons.com##[id*="media"]
 nsmb.com##.block_a_d
 nsmb.com###header-banner
 video4k.cc##:matches-path(/vp).video-view-ads-control
-wired.com##div[class^="StickyHeroAdWrapper-"]
 /^https:\/\/mkvcinemas\.[a-z]+\/data\/cache\/min\/1\/[a-f0-9]{8}\.js/$script,domain=mkvcinemas.*
 mkvcinemas.*##.code-block:has(a[title="mkvAnime"])
 vipstand.*##.h-100.position-absolute
@@ -40954,7 +40957,7 @@ papahd.club##.entry button[onclick*="document.location"]:not([onclick*="http://p
 lyrics-letra.com##div[class^="pub"]
 urbharat.xyz,djxmaza.in##.box-main > div.box:first-child
 djxmaza.in##.box-main > div.box + div.box > *:not(center):not(script)
-vanityfair.com##div[class^="StickyHeroAdWrapper"]
+pitchfork.com,wired.com,vanityfair.com##div[class^="StickyHeroAdWrapper"]
 mydaddy.cc###ovrl_ad
 hqporner.com##.uvb_wrapper
 tubewolf.com##[id^="TA"][id*="-Native-"]
@@ -55173,6 +55176,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209999
+@@||connatix.com^$domain=accuweather.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209553
 @@||vague.style/wp-content/uploads/*.jpg$image,domain=vague.style
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208160

@@ -1,8 +1,8 @@
-! Checksum: Ezs4u4zUyRdbqAOAVS2UxQ
+! Checksum: LMH+QHGiAzI1RUBqjP/PxQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.37.40
-! TimeUpdated: 2025-07-24T11:07:18+00:00
+! Version: 2.2.37.41
+! TimeUpdated: 2025-07-24T12:11:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4918,7 +4918,7 @@ drogi.gddkia.gov.pl###c_popek
 systemtbsmart.pl,sklep.lak-auto.pl,waterpikpolska.pl,malachowski.pl,belement.net###poscookielaw
 nerogiardini.it,ottry.com,vutbr.cz,ujep.cz,muni.cz,sklep.kfd.pl,portaldrazeb.cz,stobklub.cz,eurotrucksimulator2.com,fio.cz,unica.esse3.cineca.it,americantrucksimulator.com,shop.bauerfitness.com,doshisha.ac.jp,milanreports.com,cheater.ninja,apetilo.com,assyst.app,turbopizza.cz,rsd.cz###cc_div
 eberry.cz##.c-cookie-consent-bar
-newyorker.com,self.com,gq.com,vanityfair.com,vogue.com,allure.com,teenvogue.com,pitchfork.com##div[data-testid="message-banner"]
+newyorker.com,self.com,gq.com,vanityfair.com,vogue.com,allure.com,teenvogue.com##div[data-testid="message-banner"]
 jove.com##.css-ad08s1
 kwork.com,kwork.ru##.info-cookie-uses
 knihy.90.cz##.square
@@ -11799,6 +11799,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209214
+! Broken video
+@@||privacy.condenastdigital.com/fides.js$domain=pitchfork.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209917
 hartmann24.com.ua#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209585
@@ -16514,6 +16517,7 @@ mail.yandex.*##div[class^="RightColumn-m__root--"]
 ! Yandex.Q
 !
 ! Kinopoisk
+www.kinopoisk.ru##div[class^="toaster-container"]
 hd.kinopoisk.ru##div[data-tid="AdBlockWarning"]
 www.kinopoisk.ru##div[class*="-kinopoisk-media-container"][class*="media-container_height_"]
 www.kinopoisk.ru##div[class^="styles_adBlockWarningRoot"]
@@ -36501,7 +36505,7 @@ sravni.ru##div[class^="special-offers-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160093
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158912
 ! player.cnevids.com
-||player.cnevids.com/interlude/$domain=glamour.com|gqjapan.jp|wired.it|wired.com|vogue.de|gq.com|revistagq.com|gqmagazine.fr|gq-magazin.de|gqitalia.it|gqindia.com|gq.com.tw|gq.com.mx|gq-magazine.co.uk|gq.ru|arstechnica.com
+||player.cnevids.com/interlude/$domain=glamour.com|gqjapan.jp|wired.it|wired.com|vogue.de|gq.com|revistagq.com|gqmagazine.fr|gq-magazin.de|gqitalia.it|gqindia.com|gq.com.tw|gq.com.mx|gq-magazine.co.uk|gq.ru|arstechnica.com|pitchfork.com
 ||player.cnevids.com/interlude/gq*&rightRail=true$domain=gq.com.mx
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158891
 ||img-global.cpcdn.com/promotional_banners
@@ -39076,6 +39080,9 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##shreddit-async-loader[bundlename="feed_announcement"]
+pitchfork.com##.body__inner-container > div.disclaimer
+pitchfork.com##.body__inner-container > div.disclaimer + div[data-testid="ProductEmbedWrapper"]
 the-ans.jp##a[id^="c2_click_textlink_"]
 nc.ox-tv.co.jp##.container_banner.shadow
 htc.com###header > .free-shipping-block
