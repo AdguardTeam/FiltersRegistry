@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: AhN4teaakgJOpIez0cmwKg
-! Diff-Path: ../patches/14/14-s-1753363422-3600.patch
+! Checksum: dMxGPOjTS2Ee2wijH3UetQ
+! Diff-Path: ../patches/14/14-s-1753366366-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.37.42
-! TimeUpdated: 2025-07-24T13:19:26+00:00
+! Version: 2.2.37.43
+! TimeUpdated: 2025-07-24T14:08:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2481,6 +2481,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+midasbuy.com##div[data-component-id="cookie"]
 konsolowe.info##+js(set-cookie, personalize, 0)
 cgtn.com##.cg-tools-dialog
 radio.cgtn.com##.policy-dialog
@@ -16234,6 +16235,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209727
+vertriebssysteme.diebayerische.de#@##overlay
+vertriebssysteme.diebayerische.de#@$##overlay-content { display: none!important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209214
 ! Broken video
 @@||privacy.condenastdigital.com/fides.js$domain=pitchfork.com
@@ -25082,6 +25086,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+midasbuy.com##div[class^="PatFacePopWrapper_visa-card-"]
 investorgain.com##+js(set-cookie, flashcard, 1)
 eleman.net###popup_uye_girisleri
 bild.de##.promotion-banner
