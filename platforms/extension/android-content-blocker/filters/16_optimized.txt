@@ -1,8 +1,8 @@
-! Checksum: Ke3bZvwUGisK1iUqMUiy0A
+! Checksum: xRWCcw5yo9AFGjJhr68/Yw
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.53.56
-! TimeUpdated: 2025-07-24T11:07:21+00:00
+! Version: 2.0.53.57
+! TimeUpdated: 2025-07-24T23:07:50+00:00
 ! Expires: 5 days (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -100,16 +100,26 @@ cosmopolitan.fr#@#.AdsBox
 ||parlons-basket.com/wp-content/themes/parlons-basket/js/detector.js
 ebookdz.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
 ||ebookdz.com/forum/libab/script.js
-/^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.lol
-@@||acscdn.com^$script,third-party,domain=japscan.lol
-@@.shop/*/invoke.js$script,third-party,domain=japscan.lol,important
-japscan.lol#@#div.container > [href]
-@@$image,domain=japscan.lol
-@@||japscan.lol^$image,xmlhttprequest,script,~third-party
-japscan.lol#@#.tangoai
-japscan.lol#@#[class^="copine"]
-@@||japscan.lol^$generichide
-@@||googletagmanager.com/gtag/js$domain=japscan.lol
+japscan.*#@#div.container > [href]
+@@||japscan.$image,xmlhttprequest,script,~third-party
+japscan.*#@#.tangoai
+japscan.*#@#[class^="copine"]
+@@||japscan.$generichide
+/^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.*
+@@||platform.pubadx.one/pubadx-ad.js$xmlhttprequest,domain=japscan.*
+@@||static.cloudflareinsights.com/beacon.min.js$xmlhttprequest,domain=japscan.*
+@@||acscdn.com^$script,third-party,domain=japscan.*
+@@.shop/*/invoke.js$script,third-party,domain=japscan.*,important
+@@$image,domain=japscan.*
+@@||googletagmanager.com/gtag/js$domain=japscan.*
+@@||githack.com^$script,domain=japscan.*
+@@||statically.io^$script,domain=japscan.*
+@@||netlify.app^$script,domain=japscan.*
+@@||iili.io^$xmlhttprequest,domain=japscan.*
+@@||imageshack.com^$xmlhttprequest,domain=japscan.*
+@@||drive.google.com^$xmlhttprequest,domain=japscan.*
+@@||postimg.cc^$xmlhttprequest,domain=japscan.*
+@@||i.ibb.co^$xmlhttprequest,domain=japscan.*
 trustmyscience.com##.adb-border
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=signal-arnaques.com
@@ -607,13 +617,12 @@ pisos.com#@#div[data-ad-id]
 @@||4hu.tv/static/adScript.js$domain=4hu.tv
 ||candy.ai^$popup,third-party,badfilter
 ||web2.$subdocument,domain=0calc.com|0calc.es|0calc.fr|0calc.in|0calc.ru|0rechner.de,badfilter
-@@||bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js$domain=japscan.lol
 @@||redirector.googlevideo.com/videoplayback*dclk_video_ads$xmlhttprequest,domain=vix.com
 $script,third-party,domain=igg-games.com,badfilter
 @@||ads.jauns.lv/www/$image,~third-party
 $script,third-party,domain=vidsrc.in|vidsrc.me|vidsrc.net|vidsrc.pm|vidsrc.xyz,badfilter
 $subdocument,third-party,domain=vidsrc.in|vidsrc.me|vidsrc.net|vidsrc.pm|vidsrc.xyz,badfilter
-japscan.lol#@##dlinkc
+japscan.*#@##dlinkc
 intheblackmedia.com#@#a[href^="https://plarium.com/"]
 $script,third-party,domain=vtbe.to|vtube.network,badfilter
 $third-party,xmlhttprequest,domain=vtbe.to|vtube.network,badfilter

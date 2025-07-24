@@ -1,8 +1,8 @@
-! Checksum: qZ/Kj1CD6vizlfv9UOWJ/A
+! Checksum: 6G/xXZKax35YhGaEjJbLqQ
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.53.56
-! TimeUpdated: 2025-07-24T11:07:21+00:00
+! Version: 2.0.53.57
+! TimeUpdated: 2025-07-24T23:07:50+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -209,32 +209,47 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/1478420
-japscan.lol#%#//scriptlet('trusted-set-constant', 'aclib', '{"isShowingPop": false}')
-japscan.lol#%#//scriptlet('set-constant', 'aclib.runInPagePush', 'noopFunc')
-japscan.lol#%#//scriptlet("remove-node-text", "script", "/Y[a-z][a-z]?k[a-z]\d|'\|\|typeof [0-9A-z]+!==_0x|function nawNA/")
-/^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.lol
-@@||platform.pubadx.one/pubadx-ad.js$xmlhttprequest,domain=japscan.lol
-@@||static.cloudflareinsights.com/beacon.min.js$xmlhttprequest,domain=japscan.lol
-@@||acscdn.com^$script,third-party,domain=japscan.lol
-@@.shop/*/invoke.js$script,third-party,domain=japscan.lol,important
-japscan.lol#@#div.container > [href]
-japscan.lol#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
-japscan.lol#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'onclick', 'let a=function(){};return false;')
-japscan.lol#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
-@@$image,domain=japscan.lol
-@@||japscan.lol^$image,xmlhttprequest,script,~third-party
-japscan.lol#@#.tangoai
-japscan.lol#@#[class^="copine"]
-@@||japscan.lol^$generichide
-@@||googletagmanager.com/gtag/js$domain=japscan.lol
-@@||githack.com^$script,domain=japscan.lol
-@@||statically.io^$script,domain=japscan.lol
-@@||netlify.app^$script,domain=japscan.lol
-@@||iili.io^$xmlhttprequest,domain=japscan.lol
-@@||imageshack.com^$xmlhttprequest,domain=japscan.lol
-@@||drive.google.com^$xmlhttprequest,domain=japscan.lol
-@@||postimg.cc^$xmlhttprequest,domain=japscan.lol
-@@||i.ibb.co^$xmlhttprequest,domain=japscan.lol
+japscan.*#%#//scriptlet('trusted-set-constant', 'aclib', '{"isShowingPop": false}')
+japscan.*#%#//scriptlet('set-constant', 'aclib.runInPagePush', 'noopFunc')
+japscan.*#%#//scriptlet("remove-node-text", "script", "/Y[a-z][a-z]?k[a-z]\d|'\s*\|\|\s*typeof\s*[0-9A-z]+\s*!==\s*_0x|function nawNA/")
+japscan.*#@#div.container > [href]
+japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
+japscan.*#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'onclick', 'let a=function(){};return false;')
+japscan.*#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
+@@||japscan.$image,xmlhttprequest,script,~third-party
+japscan.*#@#.tangoai
+japscan.*#@#[class^="copine"]
+@@||japscan.$generichide
+/^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.lol|japscan.si
+@@||platform.pubadx.one/pubadx-ad.js$xmlhttprequest,domain=japscan.lol|japscan.si
+@@||static.cloudflareinsights.com/beacon.min.js$xmlhttprequest,domain=japscan.lol|japscan.si
+@@||acscdn.com^$script,third-party,domain=japscan.lol|japscan.si
+@@.shop/*/invoke.js$script,third-party,domain=japscan.lol|japscan.si,important
+@@$image,domain=japscan.lol|japscan.si
+@@||googletagmanager.com/gtag/js$domain=japscan.lol|japscan.si
+@@||githack.com^$script,domain=japscan.lol|japscan.si
+@@||statically.io^$script,domain=japscan.lol|japscan.si
+@@||netlify.app^$script,domain=japscan.lol|japscan.si
+@@||iili.io^$xmlhttprequest,domain=japscan.lol|japscan.si
+@@||imageshack.com^$xmlhttprequest,domain=japscan.lol|japscan.si
+@@||drive.google.com^$xmlhttprequest,domain=japscan.lol|japscan.si
+@@||postimg.cc^$xmlhttprequest,domain=japscan.lol|japscan.si
+@@||i.ibb.co^$xmlhttprequest,domain=japscan.lol|japscan.si
+/^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.*
+@@||platform.pubadx.one/pubadx-ad.js$xmlhttprequest,domain=japscan.*
+@@||static.cloudflareinsights.com/beacon.min.js$xmlhttprequest,domain=japscan.*
+@@||acscdn.com^$script,third-party,domain=japscan.*
+@@.shop/*/invoke.js$script,third-party,domain=japscan.*,important
+@@$image,domain=japscan.*
+@@||googletagmanager.com/gtag/js$domain=japscan.*
+@@||githack.com^$script,domain=japscan.*
+@@||statically.io^$script,domain=japscan.*
+@@||netlify.app^$script,domain=japscan.*
+@@||iili.io^$xmlhttprequest,domain=japscan.*
+@@||imageshack.com^$xmlhttprequest,domain=japscan.*
+@@||drive.google.com^$xmlhttprequest,domain=japscan.*
+@@||postimg.cc^$xmlhttprequest,domain=japscan.*
+@@||i.ibb.co^$xmlhttprequest,domain=japscan.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147701
 trustmyscience.com##.adb-border
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146165
@@ -626,7 +641,7 @@ marieclaire.fr#%#//scriptlet('adjust-setTimeout', '/userConsentProcess|this===/'
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181954
 sudouest.fr#%#//scriptlet('adjust-setTimeout', 'return t()', '*', '0.001')
 ! https://github.com/uBlockOrigin/uAssets/issues/23806
-japscan.lol#%#//scriptlet('prevent-setTimeout', 'sessionStorage')
+japscan.*#%#//scriptlet('prevent-setTimeout', 'sessionStorage')
 ! https://github.com/uBlockOrigin/uAssets/issues/23689
 player.melaniezettofrais.online#%#//scriptlet('prevent-addEventListener', 'click', 'Popup')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178842
@@ -636,7 +651,7 @@ justarrived.lu#%#//scriptlet('set-constant', 'advanced_ads_ready', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172432
 magicmaman.com#%#//scriptlet('adjust-setTimeout', 'userConsentProcessEnded', '*', '0.001')
 ! https://github.com/uBlockOrigin/uAssets/issues/22307
-japscan.lol#%#//scriptlet('prevent-window-open')
+japscan.*#%#//scriptlet('prevent-window-open')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/170646
 jeune-gay.fr#%#//scriptlet('prevent-setTimeout', 'randno', '25')
 jeune-gay.fr#%#//scriptlet('set-cookie', 'p_view', 'true')
@@ -972,7 +987,7 @@ cookomix.com##.AdMB
 h2-mobile.fr#?##main-container .blog__content:has(> .title-wrap--pr > h3:contains(Annonces))
 h2-mobile.fr###main-container .blog__content:has(> .col-md-4 > div[id^="optidigital-adslot-"])
 cosmopolitan.fr##.External
-||japscan.lol^$csp=sandbox allow-forms allow-same-origin allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-top-navigation
+||japscan.*$csp=sandbox allow-forms allow-same-origin allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-top-navigation
 femina.fr##.p-aside
 femina.fr##.p-inread
 femina.fr##.p-pave
@@ -1741,9 +1756,6 @@ pisos.com#@#div[data-ad-id]
 ||candy.ai^$popup,third-party,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/181173
 ||web2.$subdocument,domain=0calc.com|0calc.es|0calc.fr|0calc.in|0calc.ru|0rechner.de,badfilter
-! https://github.com/uBlockOrigin/uAssets/issues/23806
-@@||ko-fi.com/cdn/scripts/overlay-widget.js$domain=japscan.lol
-@@||bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js$domain=japscan.lol
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179457
 @@||redirector.googlevideo.com/videoplayback*dclk_video_ads$xmlhttprequest,domain=vix.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179466
@@ -1754,7 +1766,7 @@ $script,third-party,domain=igg-games.com,badfilter
 $script,third-party,domain=vidsrc.in|vidsrc.me|vidsrc.net|vidsrc.pm|vidsrc.xyz,badfilter
 $subdocument,third-party,domain=vidsrc.in|vidsrc.me|vidsrc.net|vidsrc.pm|vidsrc.xyz,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178483
-japscan.lol#@##dlinkc
+japscan.*#@##dlinkc
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177714
 intheblackmedia.com#@#a[href^="https://plarium.com/"]
 ! vtbe.to - incorrect blocking, video player is broken

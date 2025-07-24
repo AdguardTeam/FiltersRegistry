@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: hMO4WEiKG00uxduoXaifaw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1753355482-3600.patch
+! Checksum: phF/wH8IIKu+/vppWka3ZQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1753398693-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.53.56
-! TimeUpdated: 2025-07-24T11:07:21+00:00
+! Version: 2.0.53.57
+! TimeUpdated: 2025-07-24T23:07:50+00:00
 ! Expires: 5 days (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -108,15 +108,27 @@ ebookdz.com##+js(abort-on-property-read, ABDetector)
 ebookdz.com##+js(no-xhr-if, pagead2.googlesyndication.com)
 ||ebookdz.com/forum/libab/script.js
 monumentum.fr##+js(abort-current-script, document.getElementById, Blocking Ads)
-japscan.lol#@#div.container > [href]
-japscan.lol#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
-$script,xmlhttprequest,redirect-rule=noop.js,domain=japscan.lol
-@@$image,domain=japscan.lol
-@@||japscan.lol^$image,xmlhttprequest,script,~third-party
-japscan.lol#@#.tangoai
-japscan.lol#@#[class^="copine"]
-@@||japscan.lol^$generichide
-@@||googletagmanager.com/gtag/js$domain=japscan.lol
+japscan.*#@#div.container > [href]
+japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
+@@||japscan.$image,xmlhttprequest,script,~third-party
+japscan.*#@#.tangoai
+japscan.*#@#[class^="copine"]
+@@||japscan.$generichide
+/^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.*
+@@||platform.pubadx.one/pubadx-ad.js$xmlhttprequest,domain=japscan.*
+@@||static.cloudflareinsights.com/beacon.min.js$xmlhttprequest,domain=japscan.*
+@@||acscdn.com^$script,third-party,domain=japscan.*
+$script,xmlhttprequest,redirect-rule=noop.js,domain=japscan.*
+@@$image,domain=japscan.*
+@@||googletagmanager.com/gtag/js$domain=japscan.*
+@@||githack.com^$script,domain=japscan.*
+@@||statically.io^$script,domain=japscan.*
+@@||netlify.app^$script,domain=japscan.*
+@@||iili.io^$xmlhttprequest,domain=japscan.*
+@@||imageshack.com^$xmlhttprequest,domain=japscan.*
+@@||drive.google.com^$xmlhttprequest,domain=japscan.*
+@@||postimg.cc^$xmlhttprequest,domain=japscan.*
+@@||i.ibb.co^$xmlhttprequest,domain=japscan.*
 trustmyscience.com##.adb-border
 signal-arnaques.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 lemanip.com#$#body { overflow: auto !important; }
@@ -249,11 +261,11 @@ $script,redirect-rule=noop.js,domain=tf1info.fr
 marieclaire.fr##+js(adjust-setTimeout, /userConsentProcess|this===/, *, 0.001)
 1jour1film.cyou##+js(remove-attr, href, a[href]#clickfakeplayer)
 sudouest.fr##+js(adjust-setTimeout, return t(), *, 0.001)
-japscan.lol##+js(no-setTimeout-if, sessionStorage)
+japscan.*##+js(no-setTimeout-if, sessionStorage)
 player.melaniezettofrais.online##+js(addEventListener-defuser, click, Popup)
 justarrived.lu##+js(set-constant, advanced_ads_ready, noopFunc)
 magicmaman.com##+js(adjust-setTimeout, userConsentProcessEnded, *, 0.001)
-japscan.lol##+js(window.open-defuser)
+japscan.*##+js(window.open-defuser)
 jeune-gay.fr##+js(no-setTimeout-if, randno, 25)
 jeune-gay.fr##+js(set-cookie, p_view, true)
 occasions.decathlon.fr##+js(set-constant, FastClick, noopFunc)
@@ -441,7 +453,7 @@ cookomix.com##.AdMB
 ||voirdrama.org/rotateva.php
 h2-mobile.fr###main-container .blog__content:has(> .col-md-4 > div[id^="optidigital-adslot-"])
 cosmopolitan.fr##.External
-||japscan.lol^$csp=sandbox allow-forms allow-same-origin allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-top-navigation
+||japscan.*$csp=sandbox allow-forms allow-same-origin allow-scripts allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-top-navigation
 femina.fr##.p-aside
 femina.fr##.p-inread
 femina.fr##.p-pave
@@ -779,13 +791,12 @@ pisos.com#@#div[data-ad-id]
 @@||4hu.tv/static/adScript.js$domain=4hu.tv
 ||candy.ai^$popup,third-party,badfilter
 ||web2.$subdocument,domain=0calc.com|0calc.es|0calc.fr|0calc.in|0calc.ru|0rechner.de,badfilter
-@@||bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js$domain=japscan.lol
 @@||redirector.googlevideo.com/videoplayback*dclk_video_ads$xmlhttprequest,domain=vix.com
 $script,third-party,domain=igg-games.com,badfilter
 @@||ads.jauns.lv/www/$image,~third-party
 $script,third-party,domain=vidsrc.in|vidsrc.me|vidsrc.net|vidsrc.pm|vidsrc.xyz,badfilter
 $subdocument,third-party,domain=vidsrc.in|vidsrc.me|vidsrc.net|vidsrc.pm|vidsrc.xyz,badfilter
-japscan.lol#@##dlinkc
+japscan.*#@##dlinkc
 intheblackmedia.com#@#a[href^="https://plarium.com/"]
 $script,third-party,domain=vtbe.to|vtube.network,badfilter
 $third-party,xmlhttprequest,domain=vtbe.to|vtube.network,badfilter
