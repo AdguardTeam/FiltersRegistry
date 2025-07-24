@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: o8SfBgcsxrt5vhVWOswsFg
-! Diff-Path: ../patches/13/13-s-1753251247-3600.patch
+! Checksum: EJvXDPP4UljSkAdNR0kY9w
+! Diff-Path: ../patches/13/13-s-1753348459-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.15
-! TimeUpdated: 2025-07-23T06:10:18+00:00
+! Version: 2.0.58.16
+! TimeUpdated: 2025-07-24T09:10:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5503,7 +5503,9 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
 ! izlemac*.sbs - frequently changed domains
 ! Random numbers
-[$domain=/izlemac\d+\.sbs$/]##+js(set-constant, adscfg.enabled, false)
+[$domain=/izlemac\d+\.sbs/]##+js(set-constant, adscfg.enabled, false)
+[$domain=/izlemac\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
+||izlemac*.sbs/wp-content/uploads/*.gif
 !
 ! sultansportv*.com - frequently changed domains
 ! Randomized of too fast changing
@@ -5554,20 +5556,25 @@ channelbein33.blogspot.com##body > script + marquee[bgcolor="black"][onmouseover
 justintvgiris.blogspot.com,sportboss-macizlesbs.blogspot.com,taraftarium402.blogspot.com,macicanliizle.sbs,taraftarium24canli-macizlesene.blogspot.com,taraftarium24hdgiris1.blogspot.com,selcukspor-taraftarium24canliizle1.blogspot.com,taraftariumxx.cfd##+js(set-constant, puShown, true)
 justintvgiris.blogspot.com,sportboss-macizlesbs.blogspot.com,taraftarium402.blogspot.com,macicanliizle.sbs,taraftarium24canli-macizlesene.blogspot.com,taraftarium24hdgiris1.blogspot.com,selcukspor-taraftarium24canliizle1.blogspot.com##.contentReklam
 justintvgiris.blogspot.com,sportboss-macizlesbs.blogspot.com,taraftarium402.blogspot.com,macicanliizle.sbs,taraftarium24canli-macizlesene.blogspot.com,taraftarium24hdgiris1.blogspot.com,selcukspor-taraftarium24canliizle1.blogspot.com##.topNav > div.buttons
-*/belge/$domain=arabsdna.com|sdvigpress.com
-aleastoria.com,arabsdna.com,arbwork.com##.splash
-aleastoria.com,arabsdna.com##.body-clickable
 ||aleastoria.com/belgeler/
 ||arbwork.com/izin/
 justintvsh.baby,justinttvvamphd.cfd##header > a[target="_blank"]
 hayrirsds24.cfd#$#.player-poster[data-poster].clickable { background-image: none !important; }
 hayrirsds24.cfd##+js(set-constant, window.config.adv.enabled, 0)
 ||blogger.googleusercontent.com/img/$domain=justintvsh.baby|justinttvvamphd.cfd
+! https://github.com/AdguardTeam/AdguardFilters/issues/209991
+##body > a.body-clickable.justintvizle
+###amans.splash.splash-at
+/.com\/belge\/[\w\d]+\.(gif|png)/$image
 ! CASE 4 - justintv*.com
 [$domain=/justintv\d+\.com/]##.banner
 [$domain=/justintv\d+\.com/]##.container > aside.sidebar:has(> .banner)
 [$domain=/justintv\d+\.com/]##.footer
 [$domain=/justintv\d+\.com/]##.socials a:is(.meritroyal, .iptv, .streamradar)
+! CASE 5 - justintv*.top
+||justintv*.top/assets/img/*.gif
+[$domain=/justintv\d+\.top/]##div[style="margin: 10px; text-align: center;"]
+[$domain=/justintv\d+\.top/]##div[class^="reklam-"]
 ! END: Justin TV
 !
 ! onPopUnderLoaded / popURL
