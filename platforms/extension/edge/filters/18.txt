@@ -1,9 +1,9 @@
-! Checksum: 0HaWz46kRpHe4UudwyJqyA
-! Diff-Path: ../patches/18/18-s-1753328388-3600.patch
+! Checksum: VCM0bhVew94GL86J0Y58ig
+! Diff-Path: ../patches/18/18-s-1753331126-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.66.42
-! TimeUpdated: 2025-07-24T03:36:04+00:00
+! Version: 2.0.66.43
+! TimeUpdated: 2025-07-24T04:21:36+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2522,6 +2522,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+konsolowe.info#%#//scriptlet('set-cookie', 'personalize', '0')
 cgtn.com##.cg-tools-dialog
 radio.cgtn.com##.policy-dialog
 remanga.org#%#//scriptlet('set-cookie', 'cookie-accepted', 'true')
@@ -17031,8 +17032,10 @@ bing.com#%#(()=>{if(!location.pathname.includes("/search"))return;const t={attri
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202188
 alternate.de#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector("button.uc-deny-button");c&&(c.click(),o.disconnect())})),c={apply:(c,n,p)=>{const r=Reflect.apply(c,n,p);return!e&&n.matches("#usercentrics-cmp-ui")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206216
+mobil.nrw#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector('button[data-testid="uc-accept-all-button"]');c&&(c.click(),o.disconnect())})),c={apply:(c,n,p)=>{const r=Reflect.apply(c,n,p);return!e&&n.matches("#usercentrics-root")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
+! https://github.com/AdguardTeam/AdguardFilters/issues/209942
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178878
-mobil.nrw,liebscher-bracht.com#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector('button[data-testid="uc-accept-all-button"]');c&&(c.click(),o.disconnect())})),c={apply:(c,n,p)=>{const r=Reflect.apply(c,n,p);return!e&&n.matches("#usercentrics-root")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
+liebscher-bracht.com#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector('button#accept');c&&(c.click(),o.disconnect())})),c={apply:(c,n,p)=>{const r=Reflect.apply(c,n,p);return!e&&n.matches("#usercentrics-cmp-ui")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206742
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178161
 nn.de,propertydesign.pl#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector("#cmpbox a.cmptxt_btn_yes");c&&(c.click(),o.disconnect())})),c={apply:(c,n,p)=>{const r=Reflect.apply(c,n,p);return!e&&n.matches("#cmpwrapper")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
