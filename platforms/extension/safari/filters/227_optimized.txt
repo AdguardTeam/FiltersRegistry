@@ -1,9 +1,9 @@
-! Checksum: YgQdR6Ps/f4dOkoQgGmXzw
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1753289177-14400.patch
+! Checksum: oO0mdpEfXnZFn1FnXFgN7g
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1753332528-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.22.14
-! TimeUpdated: 2025-07-23T16:41:46+00:00
+! Version: 2.0.22.15
+! TimeUpdated: 2025-07-24T04:44:34+00:00
 ! Expires: 1 day (update frequency)
 ||adgirl.yes24.com^
 ||ad.api.adwiser.kr^
@@ -3265,6 +3265,7 @@ opworlds18.com,opworlds19.com,opworlds20.com,opworlds21.com,opworlds22.com,opwor
 spochak.com#?#table .basic-info-alert:has(a[href="/marble/"])
 avsee.*#?#.widget-side-box > .main-box:has(img[src^="/imgs/"])
 zzzz.lol#?#.widget-side .widget-title:has(+ div a[href^="/bbs/link.php?bo_table="][target="_blank"])
+coupang.com#$?##product-list > li:has([data-adsplatform]) { remove: true; }
 m.fmkorea.com#$?#.bd.bd_mobile:not(:has(*)):has(~ #spot form[action][method].search) { remove: true; }
 m.fmkorea.com#$?#*.bd.bd_mobile:not(:has(#bd_capture ~ #comment)):has(form[action="./"]:matches-css(height: auto)) { remove: true; }
 search.daum.net#$?#body.nate aside#mAside > div[disp-attr]:has(> .wing_nate) + div[disp-attr] { margin-top: 0px !important; }
@@ -3282,7 +3283,6 @@ kyobobook.co.kr#$?#.banner_control_inner li[data-target="#75"].banner_group_item
 kyobobook.co.kr#$?#.welcome_banner_inner li.swiper-slide:has(img[src*="image.kyobobook.co.kr/newimages/adcenter/"]) { remove: true; }
 enuri.com#$?#.trendpickup__container > .trendtab-cont:has(p.badge--ad) { remove: true; }
 enuri.com#$?#.trendtabs__list > li[data-adv_yn="Y"] { remove: true; }
-coupang.com#$?#li.search-product__ad-badge { remove: true; }
 search.shopping.naver.com#$?##content div[class^="basicList_list_"] div:has(div[class^="adProduct_item_"]):has(~ div) { height: 1px !important; visibility: hidden !important; }
 bbs.ruliweb.com#$?##board_top > div > .top_best.best_list:has(+ .col div[id^="ad_"]) { width: 100% !important; }
 browse.auction.co.kr#$?#div[module-design-id] ~ div > .component:has(div:has(.text--smiledelivery_slogan)) .section--component_title { margin-top: 0px !important; }
