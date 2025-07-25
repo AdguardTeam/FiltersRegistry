@@ -1,9 +1,9 @@
-! Checksum: v8rVqJG9oEbBaSAGzAFvew
-! Diff-Path: ../patches/3/3-s-1753463592-3600.patch
+! Checksum: lVW83FGU+Ppj2cQv01Qr9A
+! Diff-Path: ../patches/3/3-s-1753481503-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.88.58
-! TimeUpdated: 2025-07-25T17:08:23+00:00
+! Version: 2.0.88.59
+! TimeUpdated: 2025-07-25T22:07:01+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -175904,12 +175904,15 @@ link.gmapp*.net$image
 ! fortunately, extensions can see them (Gmail puts the real URL in the location.hash part of the src)
 !
 ! Generic rules
+! Movable Ink
+/o.gif?mi_u=$image
+%2Fo.gif%3Fmi_u%3D$image
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209171
 /pixel?c=$image
 %2Fpixel%3Fc%3D$image
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208906
-.com/q/*~~/$image,~third-party
-.com%2Fq%2F*~~%2F$image,~third-party
+.com/q/*~~/$image
+.com%2Fq%2F*~~%2F$image
 ! Customer.io
 .com/e/o/$image
 .com%2Fe%2Fo%2F$image
@@ -175922,6 +175925,9 @@ link.gmapp*.net$image
 /CI0/0$image
 %2FCI0%2F0$image
 !
+! Yandex
+feedback.send.yandex.ru/px/$image
+feedback.send.yandex.ru%2Fpx%2F$image
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209977
 cl.mos.jp/q/$image
 cl.mos.jp%2Fq%2F$image
