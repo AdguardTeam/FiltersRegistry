@@ -1,9 +1,9 @@
-! Checksum: beH1OeQyPmqlUs0ooFKWKg
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1753366374-3600.patch
+! Checksum: zUkJ+AxpoUUEES0Uzj213Q
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1753463586-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.46
-! TimeUpdated: 2025-07-24T14:08:45+00:00
+! Version: 2.0.11.47
+! TimeUpdated: 2025-07-25T17:08:52+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=mt_click_id
 $removeparam=mt_network
@@ -1460,6 +1460,11 @@ $removeparam=clickTrackInfo,domain=lazada.com.ph|lazada.vn
 ||trk.mail.ru^$subdocument,removeparam=mt_click_id
 $removeparam=/utm_partner_id|frommail/,domain=mail.ru|sportmail.ru
 ||pulse.mail.ru^$removeparam=/^(udid|DeviceID|ver|appbuild|vendor|model|device_name|device_type|instanceid|device_year|connection_class|appsflyerid)/
+||checklink.mail.ru^$removeparam=android_id
+||checklink.mail.ru^$removeparam=advertising_id
+||checklink.mail.ru^$removeparam=advertising_tracking_enabled
+||checklink.mail.ru^$removeparam=autogen_token
+||checklink.mail.ru^$removeparam=email
 ||use.typekit.net^$font,removeparam=~/^(primer|subset_id)=/,domain=~fonts.adobe.com
 ||p.typekit.net^$stylesheet,removeparam
 ||qcplay.co.jp/?shortlink=*&c=$removeparam=c

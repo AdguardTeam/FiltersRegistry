@@ -1,9 +1,9 @@
-! Checksum: nCkK+R7vBpSYrwPIYrQHXw
-! Diff-Path: ../patches/17/17-s-1753366349-3600.patch
+! Checksum: Sp+5BAmW3R3Mg49WRQp/zw
+! Diff-Path: ../patches/17/17-s-1753463558-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.46
-! TimeUpdated: 2025-07-24T14:08:45+00:00
+! Version: 2.0.11.47
+! TimeUpdated: 2025-07-25T17:08:52+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2134,10 +2134,17 @@ $removeparam=clickTrackInfo,domain=lazada.com.ph|lazada.vn
 ||trib.al$removeparam=h
 ||trib.al$removeparam=__tn__
 ||trib.al$removeparam=c[0]
+!
 ! Mail.Ru
 ||trk.mail.ru^$subdocument,removeparam=mt_click_id
 $removeparam=/utm_partner_id|frommail/,domain=mail.ru|sportmail.ru
 ||pulse.mail.ru^$removeparam=/^(udid|DeviceID|ver|appbuild|vendor|model|device_name|device_type|instanceid|device_year|connection_class|appsflyerid)/
+||checklink.mail.ru^$removeparam=android_id
+||checklink.mail.ru^$removeparam=advertising_id
+||checklink.mail.ru^$removeparam=advertising_tracking_enabled
+||checklink.mail.ru^$removeparam=autogen_token
+||checklink.mail.ru^$removeparam=email
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120891
 ! Removing "primer", "subset_id" parameters causes that some fonts are displaying incorrectly - https://github.com/AdguardTeam/AdguardFilters/issues/126288
 ! another one https://github.com/AdguardTeam/AdguardFilters/issues/126333, https://github.com/AdguardTeam/AdguardFilters/issues/134475
