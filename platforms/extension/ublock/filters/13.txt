@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 4+bWFeyBjGCXDR9rHP1lVg
-! Diff-Path: ../patches/13/13-s-1753438345-3600.patch
+! Checksum: SszieXHhhfc040S9gR5KfA
+! Diff-Path: ../patches/13/13-s-1753456318-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.23
-! TimeUpdated: 2025-07-25T10:08:06+00:00
+! Version: 2.0.58.24
+! TimeUpdated: 2025-07-25T15:07:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2109,8 +2109,6 @@ beinsports.com.tr##.ad-fixture-standing-masthead-banner
 cumhuriyet.com.tr###sticky-player
 cumhuriyet.com.tr##.col-md-12.mb20[style^="width:100%; aspect-ratio:"]
 sikayetvar.com##.promo-banner
-hentaizm.fun##.pa-container
-hentaizm.fun#?##leftC > .filmborder:has(> .filmcontent > .tam > a:contains(Sponsor Reklam))
 haberkibris.com#$?#.mansetSlider li:has(img[src*="//haberkibris.com/banner2/"]) { remove: true; }
 haberkibris.com##.mainCenter > div[style*="margin-right:"]
 basarisiralamalari.com#?#.owl-stage > div.owl-item:has(> div.ads)
@@ -2376,7 +2374,7 @@ tafdi3.com,tafdi4.com##div[class^="vid"][class*="-ads"]
 nedir.org##.empower
 nedir.org##.mobil[style^="min-width:300px;min-height:"]
 ||birgun.net/api/OfficialAds/
-airporthaber2.com,tvnota.com,bayburtmanset.com,kartalgazetesi.com,sehirmedya.com,bursahayat.com.tr,yozgatcamlik.com##.banner
+ekoltv.com.tr,airporthaber2.com,tvnota.com,bayburtmanset.com,kartalgazetesi.com,sehirmedya.com,bursahayat.com.tr,yozgatcamlik.com##.banner
 turkiyegazetesi.com.tr###dfp-detail-kare-container
 turkiyegazetesi.com.tr##div[class^="dfp-"]
 ||hdfilmcehennemi.life/red3.jpg$image,redirect=1x1.gif
@@ -5445,6 +5443,11 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+!
+! hentaizm*.online - frequently changed domains
+[$domain=/hentaizm\d+.online/]##.pa-container
+[$domain=/hentaizm\d+.online/]#?##leftC > .filmborder:has(> .filmcontent > .tam > a:contains(Sponsor Reklam))
+[$domain=/hentaizm\d+.online/]##+js(abort-on-property-read, popns)
 !
 ! ugurfilm*.com - frequently changed domains
 [$domain=/ugurfilm\d+.com/]#$##header { margin-bottom: 0 !important; }
