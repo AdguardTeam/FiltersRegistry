@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.3.99.6",
-			"timeUpdated": "2025-07-26T19:05:55+0000",
+			"version": "2.3.99.7",
+			"timeUpdated": "2025-07-26T20:06:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.87.61",
-			"timeUpdated": "2025-07-26T18:09:03+0000",
+			"version": "2.0.87.62",
+			"timeUpdated": "2025-07-26T20:07:16+0000",
 			"languages": [],
 			"tags": [
 				45,
