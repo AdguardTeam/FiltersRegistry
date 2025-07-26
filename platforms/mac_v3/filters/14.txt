@@ -1,9 +1,9 @@
-! Checksum: TQ8ZA5KNauFSefJs9fi+5g
-! Diff-Path: ../patches/14/14-s-1753474309-3600.patch
+! Checksum: YMoKxqWYCEiylnSlh78ZMg
+! Diff-Path: ../patches/14/14-s-1753549877-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.37.57
-! TimeUpdated: 2025-07-25T20:07:49+00:00
+! Version: 2.2.37.58
+! TimeUpdated: 2025-07-26T17:07:04+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2522,6 +2522,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+lv1871.de##div[data-borlabs-cookie-content]
 v-tagile.ru###info-collect-warning
 web.lmarena.ai#%#//scriptlet('set-local-storage-item', 'd-ua', 'false')
 velobike.ru#%#//scriptlet('set-cookie', 't_cookiesConsentGiven', 'true')
@@ -17226,6 +17227,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209724
+@@||lv1871.de/app/cache/borlabs-cookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209727
 vertriebssysteme.diebayerische.de#@##overlay
 vertriebssysteme.diebayerische.de#@$##overlay-content { display: none!important; }

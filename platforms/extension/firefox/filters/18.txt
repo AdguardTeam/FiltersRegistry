@@ -1,9 +1,9 @@
-! Checksum: QKiHuZ4mqc0DdgWM6e/8rA
-! Diff-Path: ../patches/18/18-s-1753463566-3600.patch
+! Checksum: 4PfSbfaUcoASlb78JGIlTw
+! Diff-Path: ../patches/18/18-s-1753549861-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.66.57
-! TimeUpdated: 2025-07-25T17:08:53+00:00
+! Version: 2.0.66.58
+! TimeUpdated: 2025-07-26T17:07:11+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2522,6 +2522,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+lv1871.de##div[data-borlabs-cookie-content]
 v-tagile.ru###info-collect-warning
 web.lmarena.ai#%#//scriptlet('set-local-storage-item', 'd-ua', 'false')
 velobike.ru#%#//scriptlet('set-cookie', 't_cookiesConsentGiven', 'true')
@@ -17194,6 +17195,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/209724
+@@||lv1871.de/app/cache/borlabs-cookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209727
 vertriebssysteme.diebayerische.de#@##overlay
 vertriebssysteme.diebayerische.de#@$##overlay-content { display: none!important; }
