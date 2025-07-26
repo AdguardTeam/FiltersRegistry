@@ -1,9 +1,9 @@
-! Checksum: 1kc9rl3UBu6ra/QD8WEs8w
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1753491156-14400.patch
+! Checksum: jdQcSTUOTVtD7+mymzIcbg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1753505280-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.45.34
-! TimeUpdated: 2025-07-26T00:47:46+00:00
+! Version: 2.1.45.35
+! TimeUpdated: 2025-07-26T04:43:17+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -112,6 +112,7 @@
 /Social-Sidebar.js
 /social2s.min.js
 /social_bookmarks/*
+/social_header.png
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
@@ -128,6 +129,7 @@
 /twitter_footer.png
 /twitter_square.png
 /videojs-share.js
+/vk_button.png
 /weiboshare.html
 /whatsapp-button.js
 /whatsapp_icon.png
@@ -566,6 +568,7 @@ _social_footer_
 ###socialFollow
 ###socialFooter
 ###socialGoogle
+###socialHeader
 ###socialHolder
 ###socialIcons
 ###socialInstagram
@@ -835,6 +838,7 @@ _social_footer_
 ##.apsc-icons-wrapper
 ##.apsc-twitter-icon
 ##.apss-social-share
+##.arr--share
 ##.art-share
 ##.art-social
 ##.artShare
@@ -1605,6 +1609,7 @@ _social_footer_
 ##.icon-facebook-squared
 ##.icon-facebook-white
 ##.icon-facebook2
+##.icon-fb-white
 ##.icon-fb2
 ##.icon-flickr
 ##.icon-flipboard
@@ -1651,6 +1656,7 @@ _social_footer_
 ##.icon-social-twitter-circle
 ##.icon-social-youtube
 ##.icon-soundcloud
+##.icon-tw-white
 ##.icone-social
 ##.iconfacebook
 ##.iconinstagram
@@ -1876,6 +1882,9 @@ _social_footer_
 ##.menu-footer-social
 ##.menu-footer-social-container
 ##.menu-header-links-container
+##.menu-link-facebook
+##.menu-link-instagram
+##.menu-link-twitter
 ##.menu-name-menu-social-links
 ##.menu-reseaux-sociaux-container
 ##.menu-section-social
@@ -1986,6 +1995,7 @@ _social_footer_
 ##.o_footer_social_media
 ##.ob-ShareBar-share
 ##.oceanwp-about-me-social
+##.oi_soc_header
 ##.omc-social-small
 ##.open-share
 ##.open-share-toolbar
@@ -2327,7 +2337,6 @@ _social_footer_
 ##.share-pinterest-icon
 ##.share-platform
 ##.share-popup
-##.share-position
 ##.share-post
 ##.share-post-box
 ##.share-reddit
@@ -2369,6 +2378,7 @@ _social_footer_
 ##.share-tools--secondary
 ##.share-tools-buttons-top
 ##.share-tools-container
+##.share-tools-wrapper
 ##.share-topic
 ##.share-tw
 ##.share-twitter
@@ -2518,6 +2528,7 @@ _social_footer_
 ##.share_w
 ##.share_wa
 ##.share_widget
+##.share_widgets
 ##.share_wrap
 ##.share_wrapper
 ##.sharea
@@ -2769,7 +2780,6 @@ _social_footer_
 ##.social-button-wrapper
 ##.social-buttons--content-before
 ##.social-buttons--follow
-##.social-buttons--uk
 ##.social-buttons-compact
 ##.social-buttons-container
 ##.social-buttons-module
@@ -2853,7 +2863,6 @@ _social_footer_
 ##.social-media-header
 ##.social-media-li
 ##.social-media-list-container
-##.social-media-module
 ##.social-media-nav
 ##.social-media-nav__sticky
 ##.social-media-outer
@@ -3020,6 +3029,7 @@ _social_footer_
 ##.socialLinks
 ##.socialLinksContainer
 ##.socialList
+##.socialLnk
 ##.socialLogo
 ##.socialLogos
 ##.socialMedia
@@ -3087,7 +3097,6 @@ _social_footer_
 ##.social_share_wrapper
 ##.social_shares
 ##.social_sharing
-##.social_sharing_module
 ##.social_toolbar
 ##.social_tools
 ##.social_top
@@ -3112,7 +3121,6 @@ _social_footer_
 ##.socialheader
 ##.socialicon
 ##.socialicons
-##.socialink
 ##.socialinks
 ##.socialite-widget
 ##.socialite-widget-item
@@ -3324,6 +3332,7 @@ _social_footer_
 ##.twitter_link
 ##.twitter_social
 ##.twitter_widget
+##.twitterbird
 ##.twitterbox
 ##.twitterbtn
 ##.twitterbutton
@@ -3688,6 +3697,7 @@ eporner.com###footsocbuttons
 tasteofhome.com###gch-social-icons
 birdsandblooms.com,familyhandyman.com,rd.com,thehealthy.com###gch-social-share-container
 bleedingcool.com###google_follow
+analyticsinsight.net,biznews.com,dn.pt,newindianexpress.com,newsgram.com###header-social-follow
 medicalxpress.com,phys.org,techxplore.com###js-soc-panel
 digitaltrends.com###menu-2021-social
 taylorfrancis.com###openShare
@@ -3752,7 +3762,6 @@ france24.com##.a-share-button
 tandfonline.com##.a2a_share_target
 forexlive.com##.action-icon-list__wrapper
 planetizen.com##.addtoany_list
-gatewayhispanic.com##.aiovg-social
 alchetron.com##.alchetronShareCard
 asiaone.com##.ao-share-buttons
 storyboard18.com##.ar_share
@@ -3777,6 +3786,7 @@ thespectator.com##.article_set_wrap
 news18.com##.article_socials
 attitude.co.uk##.at-article__social
 dictionary.com##.atw-socials
+thejournal.ie##.author-contact-social-container-redesign
 secretchicago.com,secretldn.com##.author-share-buttons
 adweek.com##.aw-social-share-container
 bnnbloomberg.ca,cp24.com,ctvnews.ca,irishnews.com,thedailybeast.com##.b-share-bar
@@ -3787,7 +3797,6 @@ military.com##.block--addtoanyadv
 csis.org##.block--social-sharing
 crash.net,ttnews.com##.block-better-social-sharing-buttons
 tastesbetterfromscratch.com##.block-follow-me
-iowagirleats.com,simplifylivelove.com,therecipecritic.com##.block-pinterest-cta
 carnewschina.com##.block_social_media__content
 thehustle.co##.blog-hustle-social-links
 9to5linux.com##.bm-social-top
@@ -3939,6 +3948,7 @@ morningstar.com##.mdc-social-share
 amazon.jobs##.media-icons
 arabnews.com##.meta-area
 smashingmagazine.com##.meta-box--share
+thejournal.ie##.metadata-csp-comments-share-container
 businessinsider.com##.mi-logo-social-container
 sportsnet.ca##.micro_mail__dd_RW
 boxofficemojo.com##.mojo-fb-logo
@@ -4054,7 +4064,6 @@ arnnet.com.au,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky
 rappler.com##.social-share__actions
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
-mmorpg.com##.social-web
 macrumors.com##.socialMedia--3i9tSnAb
 ruwix.com##.socialShareLinks
 jetphotos.com##.social__link--share
@@ -4116,10 +4125,10 @@ indiatoday.in##.whtspp_share
 androidheadlines.com##.widget-ahcount
 fandom.com##.wikia-bar-anon
 destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
+hsph.harvard.edu##.wp-block-hsph-sharing
 comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-sharing-buttons
 theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
-aspicyperspective.com,budgetbytes.com,butterwithasideofbread.com,downshiftology.com,handletheheat.com,therecipecritic.com##.wprm-call-to-action
 news.am##.youtube-subscriber
 worldcrunch.com##.ysi_share
 firstpost.com##.yt-ch
@@ -4425,7 +4434,9 @@ brasil247.com##.sub-header__social
 terra.com.br##.t360-sharebar__wrapper
 tecmundo.com.br##.tec--didyouknow
 tecmundo.com.br##.tec--share__container
+dn.pt##.text-story-m_share__FrlMt
 a12.com##.wg-share-hrz
+ndmais.com.br##.whats-box
 r7.com##[class*="article-fill-social-"]
 infomoney.com.br##[data-ds-element^="social-share-"]
 bcb.gov.br##barra-midias-sociais
@@ -4481,6 +4492,7 @@ dolarhoy.com##.header__redes
 tn.com.ar##.horizontal-share
 politico.mx##.icons_social_media
 milenio.com##.info-networks
+clublibertaddigital.com,libertaddigital.com,libremercado.com##.links_social
 milanuncios.com##.ma-AdDetailShare
 canalnet.tv##.main-video-single__socials
 genbeta.com,vidaextra.com,xataka.com.mx##.menu-follow
