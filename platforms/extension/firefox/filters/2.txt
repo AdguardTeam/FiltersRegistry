@@ -1,9 +1,9 @@
-! Checksum: 1MldwoMNNowQLQa3bfsWOQ
-! Diff-Path: ../patches/2/2-s-1753632694-3600.patch
+! Checksum: pTW3ba3a3De1/Iluj4QzJg
+! Diff-Path: ../patches/2/2-s-1753636202-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.3.99.27
-! TimeUpdated: 2025-07-27T16:07:20+00:00
+! Version: 2.3.99.28
+! TimeUpdated: 2025-07-27T17:06:04+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36339,8 +36339,6 @@ youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', '
 youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.adSlots', 'playerResponse.streamingData.serverAbrStreamingUrl')
 youtube.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=|get_watch\?/')
 youtube.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=/')
-! To obtain native "fetch" and "Request" method YouTube creates an iframe with "sandbox" attribute in which extension cannot inject scriptlets, the rule below is a workaround to fix this
-www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.Request=window.Request)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
 m.youtube.com,youtubekids.com,youtube-nocookie.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots')
 ||www.youtube.com/s/player/*/base.js$script,xmlhttprequest,replace=/if\(\!U\|\|\!U\.adPlacements&&\!U\.adSlots\)/if(!U||0)/
 !+ PLATFORM(ext_ff)
@@ -36351,10 +36349,13 @@ www.youtube.com#%#//scriptlet('trusted-create-element', 'head', 'script', '', '(
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1925290685
 ||googlevideo.com/initplayback?source=youtube&*&c=TVHTML5&oad=$xmlhttprequest,domain=youtube.com
 [$path=/tv]youtube.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/https:\/\/www\.youtube\.com\/s\/player\/.*\/tv-player-ias\.vflset\/tv-player-ias\.js:/')
+! To obtain native "fetch" and "Request" method YouTube creates an iframe with "sandbox" attribute in which extension cannot inject scriptlets, the rule below is a workaround to fix this
+www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.Request=window.Request)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
 ! Partial fix for buffering issue
+www.youtube.com#%#//scriptlet('trusted-replace-outbound-text', 'JSON.stringify', 'isWebNativeShareAvailable":true}}', 'isWebNativeShareAvailable":true},"clientScreen":"ADUNIT"}')
 www.youtube.com#%#//scriptlet('trusted-replace-outbound-text', 'JSON.stringify', '"clientScreen":"WATCH"', '"clientScreen":"ADUNIT"')
 ! Fix for case when JSON.stringify is not writable
-www.youtube.com#%#(()=>{if(Object.getOwnPropertyDescriptor(window.JSON,"stringify").writable)return;const e={construct:(e,c,r)=>{try{const e=c[0],r=c[1]?.body;e?.includes("youtubei")&&r?.includes('"clientScreen":"WATCH"')&&(c[1].body=r.replace('"clientScreen":"WATCH"','"clientScreen":"ADUNIT"'))}catch(e){console.trace("Error occurred:",e)}return Reflect.construct(e,c,r)}};window.Request=new Proxy(window.Request,e)})();
+www.youtube.com#%#(()=>{const e={construct:(e,t,c)=>{try{const n=t[0];let r=t[1]?.body;if(!n?.includes("youtubei")||!r)return Reflect.construct(e,t,c);if(r.includes('"clientScreen":"WATCH"'))console.log("Intercepted YouTube request:",n),t[1].body=r.replace('"clientScreen":"WATCH"','"clientScreen":"ADUNIT"');else{const n=JSON.parse(r);if(!n.context?.client)return Reflect.construct(e,t,c);n.context.client.clientScreen="ADUNIT",r=JSON.stringify(n),t[1].body=r}}catch(e){console.trace("Error occurred:",e)}return Reflect.construct(e,t,c)}};window.Request=new Proxy(window.Request,e)})();
 ! Fix SSAP ads
 www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
@@ -82124,6 +82125,7 @@ browsershots.org#@#.advert_area
 ||articlepawn.com^
 ||artistictastesn.org^
 ||artlesscontagionseated.com^
+||artlyhapu.click^
 ||artoomanyrelati.com^
 ||artwareshambu.com^
 ||aruminmustnt.top^
@@ -84436,6 +84438,7 @@ browsershots.org#@#.advert_area
 ||calmlytraditionalfreelance.com^
 ||calomelsiti.com^
 ||calquesswiped.help^
+||calsmythic.com^
 ||caltertangintin.com^
 ||calvali.com^
 ||calvussalters.top^
@@ -87265,6 +87268,7 @@ browsershots.org#@#.advert_area
 ||dodgyfactoidprecut.com^
 ||dodgyresources.com^
 ||dodunkmucopus.top^
+||doegjumbos.com^
 ||doffsdennet.com^
 ||doflygonan.com^
 ||dofrhyluyqtex.online^
@@ -88114,6 +88118,7 @@ browsershots.org#@#.advert_area
 ||ekwawttppsobwgr.xyz^
 ||ekxyrwvoegb.xyz^
 ||eladove.com^
+||elapseddeistic.qpon^
 ||elapsejollyinsolence.com^
 ||elapsespalled.com^
 ||elasticad.net^
@@ -88168,6 +88173,7 @@ browsershots.org#@#.advert_area
 ||elpex.site^
 ||elpfulinotahere.com^
 ||elsaidthecharit.com^
+||elsapreplot.com^
 ||elspoors.cyou^
 ||eltontry.com^
 ||eluatedawreak.top^
@@ -90622,6 +90628,7 @@ browsershots.org#@#.advert_area
 ||gonairoomsoo.xyz^
 ||gondmemhoolpdd.xyz^
 ||gonerilinstr.com^
+||gonofseech.world^
 ||gonreommon.com^
 ||gonyextant.shop^
 ||gonystrunnel.cfd^
@@ -97751,6 +97758,7 @@ browsershots.org#@#.advert_area
 ||oavbmdnayxhnq.store^
 ||oavurognaurd.net^
 ||oawcqaqaykn.com^
+||oaxntxan.com^
 ||obakkaqbwcnlh.global^
 ||obarnedearie.shop^
 ||obcswpfk.xyz^
@@ -98720,6 +98728,7 @@ browsershots.org#@#.advert_area
 ||overavesofefineg.org^
 ||overbidsettingunderfeed.com^
 ||overboardbilingual.com^
+||overbyreruns.com^
 ||overcooked-construction.com^
 ||overcookedlog.pro^
 ||overcrowdsillyturret.com^
@@ -99284,6 +99293,7 @@ browsershots.org#@#.advert_area
 ||persianindiansgenerator.com^
 ||persismchamois.com^
 ||persistarcticthese.com^
+||perslanated.rest^
 ||persona3.tech^
 ||personalskillsex.org^
 ||personantaeus.top^
@@ -103086,6 +103096,7 @@ browsershots.org#@#.advert_area
 ||serestkaraite.world^
 ||sergeigagor.top^
 ||seriatenoddles.shop^
+||seriolacollery.cyou^
 ||seriousdates.net^
 ||sermonsbleeder.top^
 ||sermosollar.rest^
@@ -103188,6 +103199,7 @@ browsershots.org#@#.advert_area
 ||shabbynovel.pro^
 ||shabtiqueur.rest^
 ||shackapple.com^
+||shackedtabby.digital^
 ||shackerbiddie.life^
 ||shadowjav182.fun^
 ||shadytourdisgusted.com^
@@ -106984,6 +106996,7 @@ browsershots.org#@#.advert_area
 ||vbeeeleyevroz.top^
 ||vbeeeleyevrqq.top^
 ||vbgykvkzzjjyj.top^
+||vbiqnqbmlwbie.site^
 ||vbjscvdspd.com^
 ||vbmjlevwwvqvz.top^
 ||vbmjlevwwvqzm.top^
@@ -109266,6 +109279,7 @@ browsershots.org#@#.advert_area
 ||yldbt.com^
 ||yldmgrimg.net^
 ||yldzflxzytteu.website^
+||ylfwczberbmbi.store^
 ||ylih6ftygq7.com^
 ||ylinlhlzcumqe.online^
 ||yllaris.com^
@@ -109352,6 +109366,7 @@ browsershots.org#@#.advert_area
 ||yoxkmkrrfses.com^
 ||yoxwrdiw.com^
 ||yoyadsdom.com^
+||yozxgwnjsbspo.website^
 ||ype7.com^
 ||ypedyumnpafvy.xyz^
 ||ypersonalrecome.com^
