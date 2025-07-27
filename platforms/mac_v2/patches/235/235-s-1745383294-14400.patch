@@ -1,0 +1,247 @@
+d1 2
+a2 2
+! Checksum: lUkbTPy+nL5UHrE9vKuHOQ
+! Diff-Path: ../patches/235/235-s-1753605845-14400.patch
+d5 2
+a6 2
+! Version: 2.0.5.57
+! TimeUpdated: 2025-07-27T08:39:40+00:00
+d9 73
+a81 21
+! Title: ☀️ PersianBlockerNG ☀️
+! Last modified: %timestamp%
+! Expires: 5 days
+! Description: Filters to block ads, trackers and annoyances in Persian websites
+! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
+! Homepage: https://codeberg.org/KhodeKiaa/PersianBlocker
+!
+! GitHub issues: https://codeberg.org/KhodeKiaa/PersianBlocker/issues
+! GitHub pull requests: https://codeberg.org/KhodeKiaa/PersianBlocker/pulls
+! Ads:
+! Title: PersianBlockerAds
+! Last modified: %timestamp%
+! Expires: 5 days
+! Description: Filters to block ads in Persian websites
+! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
+! Homepage: https://codeberg.org/KhodeKiaa/PersianBlocker
+!
+! GitHub issues: https://codeberg.org/KhodeKiaa/PersianBlocker/issues
+! GitHub pull requests: https://codeberg.org/KhodeKiaa/PersianBlocker/pulls
+! General !
+! ==VVV== !
+d83 148
+a230 2
+||adverge.ir^
+||yektanet.com^
+d232 30
+d263 43
+a305 1
+||kaprila.com^
+d307 20
+a326 3
+||chavosh.org^
+! blogfa.com (e.g. daylight.blogfa.com)
+||blogfa.com/a^$script
+d328 192
+a519 15
+! namayesh.com, film.tebyan.net
+@@||player.tavoos.net/jwplayer.js^$script
+@@||cdn.tavoos.net/services/smoothie/loader-mobile.js^$script
+@@||cdn.tavoos.net/services/sticky/loader.min.js^$script
+@@||cdn.tavoos.net/assets^$image,font
+@@||tavoos.net/tavoos_contents^$image
+@@||player.tavoos.net/tavoos-player.css^$stylesheet
+@@||player.tavoos.net/jwplayer.core.controls.js^$script
+@@||player.tavoos.net/jwplayer.core.controls.html5.js
+@@||player.tavoos.net/provider.hlsjs.js^$script
+@@||player.tavoos.net/assets^$image,font
+! Specific !
+! ===VV=== !
+! abadis.ir
+||abadis.ir/libs/async/ads.min.js^
+d521 48
+a568 30
+! dlfox.com
+||dlfox.com/wp-content/uploads/*.gif^
+||isarclinic.com^$image,domain=dlfox.com
+||cdkeyshare.ir^$image,domain=dlfox.com
+dlfox.com##.textwidget > a[href="www.dlfox.com"]:has(> img[alt="dlfox"])
+dlfox.com##.ads_area_small_banner p:has(> a[target="_blank"] > img[alt])
+dlfox.com##.home_mid_ads
+dlfox.com##.ADS_wrapper
+dlfox.com##.single_post_banner
+dlfox.com##.banner_small_dlbox_b
+! download.ir
+||download.ir/wp-content/uploads/*.gif^
+! zoomit.ir
+! Header Ads:
+zoomit.ir##div[class^="__className"]> div[class] > div[class]:has(> div[rowcount="1"][columncount="1"] > div[class] > a[target="_blank"][rel="sponsored"])
+! Sidebar Ads:
+zoomit.ir##div[class][flexdirection="column"][gap][flexwrap][justifycontent="flex-end"] > div[class][spacing]:has(> div[class][rowcount][columncount] > div[class] > a[target="_blank"][rel="sponsored"])
+! In-post Ads:
+zoomit.ir##div[class][flexdirection][gap][flexwrap][justifycontent]:has(> div[class][spacing] > div[class][rowcount="1"][columncount] > div[class] > a[target="_blank"][style][href^="https://b2n.ir/"] > img[alt][data-code][loading="lazy"][decoding="async"][data-nimg][style])
+! mali3.com
+||mali3.com/wp-content/uploads/*.gif^
+mali3.com##.sidebar-area:has(> a[href] > img[width="330"][height="150"][alt=""])
+mali3.com##.code-block:has(> a[target="_blank"][rel] > img[alt][width="800"][height="100"])
+! web.rubika.ir
+web.rubika.ir##rb-chat-ads-container
+! web.eitaa.com
+web.eitaa.com##.ads-active
+! web.shad.ir
+web.shad.ir##rb-chat-ads-container
+! aparat.com
+d570 158
+a727 37
+! nazriyab.app
+nazriyab.app##.header-ex
+! sheypoor.com
+sheypoor.com##button[data-test-id^="link-to-https://www.sheypoor.com/banner/"]
+! telewebion.com
+||adengine.telewebion.com^
+! digikala.com
+! Ads in search results:
+www.digikala.com#$#article > .items-center .mr-auto > .mr-1 > svg[style$="fill: var(--color-ad);"] .text-neutral-500::after { content: ' 🚫 (تبلیغ) 🚫 ' !important; color: red !important; font-weight: bold !important;  font-size: large !important; }
+! Ads in https://www.digikala.com/incredible-offers/ results:
+www.digikala.com#$?#div[class^="product-list_ProductList__item__"][data-product-index] > .block > .h-full[data-testid="product-card"] > article > .items-center:has(> .ml-1 > img[src="/statics/img/svg/productCard/topBadge/PromotedIncredibleOffer.svg"])::after { content: ' 🚫 (تبلیغ) 🚫 ' !important; color: red !important; font-weight: bold !important; }
+! jobinja.ir
+jobinja.ir#$#body { cursor: unset !important; }
+jobinja.ir##.c-forceToLogin__overlay
+jobinja.ir##.c-forceToLogin__message
+jobinja.ir#$#.c-forceToLogin__content { filter: none !important; -webkit-filter: none !important; opacity:1 !important; }
+! divar.ir
+||api.divar.ir/v8/ad-auction^
+||a-banners.divarcdn.com/ssp/ads^
+divar.ir##.kt-inset-banner
+! farsroid.com
+farsroid.com##.site-top-nav > .grid-row > li > a[rel="dofollow"][target="_blank"]
+farsroid.com##.farsroid-ads
+farsroid.com##.single-text-ads
+farsroid.com##.labeled-dw-ads
+farsroid.com##.ads-download
+farsroid.com##.ads-dashed-banner
+! alef.ir
+alef.ir##a[href="https://www.yektanet.com/"][target="_blank"]
+alef.ir##a[href="https://panel.triboon.net/"][target="_blank"]
+! virgool.io
+||virgool.io/api2/app/posts/*/ad^
+! setare.com
+setare.com##.chavosh-ad-box
+! beytoote.com
+||adsc.beytoote.com^
+||storage.beytoote.com/images/adsbeytoote^
+d729 211
+a939 40
+beytoote.com##div[class*="pcfadv"]
+! tgju.org
+||static.tgju.org/advertisement^
+tgju.org##.bottom-right-ad
+! ninisite.com
+ninisite.com###forum-native-ad
+! tabnak.ir
+||cdn.tabnak.ir/files/fa/adv^
+! footballitarin.com
+! https://github.com/MasterKia/PersianBlocker/issues/307
+||blogger.googleusercontent.com/img^$domain=footballitarin.com
+||footballitarin.com/agahi^
+! aparat.com
+! https://github.com/MasterKia/PersianBlocker/issues/304#issuecomment-3044430691
+! Under the video:
+aparat.com##.banner-ads
+! In the corner:
+aparat.com##.promote-puls
+! Trackers:
+! Title: PersianBlockerTrackers
+! Last modified: %timestamp%
+! Expires: 7 days
+! Description: Filters to block trackers in Persian websites
+! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
+! Homepage: https://codeberg.org/KhodeKiaa/PersianBlocker
+!
+! GitHub issues: https://codeberg.org/KhodeKiaa/PersianBlocker/issues
+! GitHub pull requests: https://codeberg.org/KhodeKiaa/PersianBlocker/pulls
+! General !
+! ==VVV== !
+||metrix.ir^
+||intrack.ir^
+! trustseal.e-rasaneh.ir (e.g. zoomit.ir)
+||trustseal.e-rasaneh.ir/Trustseal^$method=post
+! sentry.sabaidea.cloud (e.g. aparat.com)
+||sentry.sabaidea.cloud^
+! Google Account Login (e.g. gama.ir)
+! Specific !
+! ===VV=== !
+! digikala.com
+d941 1856
+a2796 4
+||dgka.me^$removeparam=promo_name
+||dgka.me^$removeparam=promo_position
+||dgka.me^$removeparam=promo_creative
+||dgka.me^$removeparam=bCode
+d2798 12
+d2811 875
+a3685 64
+||sentry.theforge.ir^
+! aparat.com
+||aparat.com/external/romeo^
+||aparat.com/gogol^
+! telewebion.com
+||hadeseh.telewebion.com^
+||data.telewebion.com/broker/api/v1/message/page-view^
+! alaatv.com
+||sentry.alaatv.com^
+! divar.ir
+||api.divar.ir/v8/actionlog^
+||api.divar.ir/v1/client-exporter/send-report^
+||sentry.divar.cloud^
+! jobvision.ir
+||candidatelogapi.jobvision.ir/api/v1/JobPostActionLog/AddToQueue^
+! ninisite.com
+||stc.ninisite.com/s/atv^
+! footballitarin.com
+||inmobi.com^$domain=footballitarin.com
+! aparat.com
+! https://github.com/MasterKia/PersianBlocker/issues/304#issuecomment-3044430691
+aparat.com#%#//scriptlet('ubo-set-local-storage-item.js', 'videoPlayedCount', '$remove$')
+aparat.com#%#//scriptlet('ubo-set-session-storage-item.js', 'videoWatchCount', '$remove$')
+! zarebin.ir
+||zarebin.ir/platform/api/supervisor/v1/events/^
+||sentry.mci.dev^
+! Annoyances (Disabled):
+! !#include PersianBlockerAnnoyances.txt
+! Video Censorship:
+! Title: PersianBlockerCensor
+! Last modified: %timestamp%
+! Expires: 7 days
+! Description: Filters to block video censorship in Persian websites
+! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
+! Homepage: https://codeberg.org/KhodeKiaa/PersianBlocker
+!
+! GitHub issues: https://codeberg.org/KhodeKiaa/PersianBlocker/issues
+! GitHub pull requests: https://codeberg.org/KhodeKiaa/PersianBlocker/pulls
+! General !
+! ==VVV== !
+! Specific !
+! ===VV=== !
+! doostihaa.com: "نسخه اول دوبله فارسی سانسور شده"
+! zardfilm.in: "تابع قوانین و مقررات"
+! cooldl.net: upera.tv download links
+! soft98.ir: Hostile behavior against users with content blockers
+! google.com
+www.google.com#$#a[href]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"]) > h3::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+www.google.com#$#a[href]:where([href*="soft98.ir/"]) > h3::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
+! bing.com
+www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::before { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; font-size: large !important; }
+www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="soft98.ir/"])::before { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; font-size: large !important; }
+! duckduckgo.com
+duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
+! search.brave.com
+search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
+! zarebin.ir
+zarebin.ir#$#a[href][class^="!text-link"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+zarebin.ir#$#a[href][class^="!text-link"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
+! Half-Price (NimBaha) Sites:
+! Malware and Phishing:
+! Mobile (Firefox Android, Cromite, AdGuard for Android, AdGuard for iOS, AdGuard for Safari, Samsung Internet)
