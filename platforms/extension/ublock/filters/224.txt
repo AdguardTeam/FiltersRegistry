@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: EZdULxdSkcodNuk7psr0yw
-! Diff-Path: ../patches/224/224-s-1753683357-3600.patch
+! Checksum: vdcJgDBKn7LbVyOp1FOp5A
+! Diff-Path: ../patches/224/224-s-1753712001-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.41.11
-! TimeUpdated: 2025-07-28T06:12:05+00:00
+! Version: 2.1.41.12
+! TimeUpdated: 2025-07-28T14:09:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1238,7 +1238,6 @@ m.mobile01.com##.u-gapNextV--lg.u-height280
 damon624.pixnet.net##.article-content-inner > p:has(> span > a[href] > ins.adsbygoogle)
 ||static.huaren.live/ads/
 huaren.live##.action-ad
-huaren.live##+js(set-constant, ConFig.config.ads, {})
 wiki.mbalib.com###ad-fold
 wiki.mbalib.com##div[id^="p-ad-"]
 wiki.mbalib.com##.tool-bar > a[target="_blank"]
@@ -2816,6 +2815,10 @@ netfly.*,netfly.tv##.player-box > div.player-tt-rmm
 netfly.*,netfly.tv##.module-tg-box
 netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] > img
 netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] + span.tt-icon-close
+! https://github.com/AdguardTeam/AdguardFilters/issues/210237
+huaren.live##+js(set-constant, ConFig.config.ads, {})
+! TODO: remove hints when this issue is resolved - https://github.com/AdguardTeam/Scriptlets/issues/517
+!+ NOT_PLATFORM(windows, mac, android)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177520
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204700
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202922

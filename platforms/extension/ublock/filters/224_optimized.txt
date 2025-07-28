@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 3f+04y/87WadBKD9JoY7wQ
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1753683357-3600.patch
+! Checksum: tNBEaiCjKmMe9G2f3rxMtg
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1753712001-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.41.11
-! TimeUpdated: 2025-07-28T06:12:05+00:00
+! Version: 2.1.41.12
+! TimeUpdated: 2025-07-28T14:09:36+00:00
 ! Expires: 5 days (update frequency)
 ||tw-726620180914.*.run.app^
 ||au.adhacker.online^$third-party
@@ -835,7 +835,6 @@ m.mobile01.com##.u-gapNextV--lg.u-height280
 damon624.pixnet.net##.article-content-inner > p:has(> span > a[href] > ins.adsbygoogle)
 ||static.huaren.live/ads/
 huaren.live##.action-ad
-huaren.live##+js(set-constant, ConFig.config.ads, {})
 wiki.mbalib.com###ad-fold
 wiki.mbalib.com##div[id^="p-ad-"]
 wiki.mbalib.com##.tool-bar > a[target="_blank"]
@@ -2364,6 +2363,8 @@ netfly.*,netfly.tv##.player-box > div.player-tt-rmm
 netfly.*,netfly.tv##.module-tg-box
 netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] > img
 netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] + span.tt-icon-close
+huaren.live##+js(set-constant, ConFig.config.ads, {})
+!+ NOT_PLATFORM(windows, mac, android)
 bilibili.com#$?#.feed-card:has(> div.bili-feed-card > div.shortcut-bg:empty ~ div.bili-video-card[style*="display: none !important;"]) { remove: true; }
 bilibili.com##.bili-feed-card:has(> div.bili-video-card[style*="display: none !important;"])
 search.bilibili.com##.video-list > div:has(> .bili-video-card > .bili-video-card__wrap > .bili-video-card__info > .bili-video-card__info--right > .ad-feedback-entry)
