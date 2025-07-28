@@ -1,9 +1,9 @@
-! Checksum: Mm77hwlyUVqp80fyTIAJ/A
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1753643455-3600.patch
+! Checksum: nd0jwiR062mgLAZO4u8kDQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1753686943-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.26
-! TimeUpdated: 2025-07-27T19:06:47+00:00
+! Version: 2.0.58.27
+! TimeUpdated: 2025-07-28T07:11:36+00:00
 ! Expires: 12 hours (update frequency)
 ||azelvid.com^
 ||polatads.com^
@@ -5402,12 +5402,14 @@ sportradar25.com,sportradar26.com,sportradar27.com,sportradar28.com,sportradar29
 [$domain=/papazsports\d+\.pro/]##.header-banner
 mail.yandex.com.tr##.mail-DirectLine
 yandex.com.tr##.DirectInline
-hdfilmsitesi.*#%#//scriptlet('trusted-replace-node-text', 'script', 'window.lazyLoadOptions', 'window.lazyLoadOptions = ', 'ilk_part_getir();window.lazyLoadOptions =')
+hdfilmsitesi.*#%#//scriptlet('adjust-setTimeout', 'ifrld', '*', '0.001')
 hdfilmsitesi.*#$##ifrld { display: block !important; }
 hdfilmsitesi.*#$#body { background-image: none !important; }
 hdfilmsitesi.*#$#div[style^="position: absolute; z-index: 1999999;"] { display: none !important; }
 hdfilmsitesi.*#$#.duyuru_kutusu { display: none !important; }
 hdfilmsitesi.*#$#.pageskin .oblong { margin-top: 0 !important; }
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
+hdfilmsitesi.*#%#(()=>{window.addEventListener("load",(()=>{"function"==typeof window.ilk_part_getir&&window.ilk_part_getir()}));})();
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 ||hdfilmsitesi.me/?vr_set=1
 ||cehennemstream.xyz^$referrerpolicy=origin
