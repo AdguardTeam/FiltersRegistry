@@ -1,9 +1,9 @@
-! Checksum: 34VsVVzKopKYMT9k0ube6A
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1753783913-3600.patch
+! Checksum: 0IKtfXRxVQ+ykmvcSQJMog
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1753787448-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.37.84
-! TimeUpdated: 2025-07-29T10:08:26+00:00
+! Version: 2.2.37.85
+! TimeUpdated: 2025-07-29T11:07:21+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1557,7 +1557,7 @@ flysas.com#%#//scriptlet('trusted-click-element', '#deny-consent-button', '!cook
 huk-autoservice.de#%#//scriptlet('trusted-click-element', '#modal-cookie-consent button[data-value="cookie-accept-necessary"]', '!cookie:huk_cookieconsent', '1000')
 cbsnews.com#%#//scriptlet('trusted-click-element', '#ketch-banner-buttons-container-compact > button#ketch-banner-button-primary')
 event-metro.jp###cookieAllow
-barclays.de#%#//scriptlet('trusted-set-cookie', 'bcConsent', '{"Statistik":false,"Personalisierung":false}', '', 'none', 'barclays.de')
+barclays.de#%#//scriptlet('trusted-set-cookie', 'bcConsent', '{"Statistik":false,"Personalisierung":false}', '', '/', 'barclays.de')
 grizzlysms.com##.notification-used-cookies
 postnews.ru#%#//scriptlet('set-cookie', 'legacy', 'disabled')
 shop.hbo.com#%#//scriptlet('trusted-set-local-storage-item', '_ketch_consent_v1_', 'eyJhbmFseXRpY3MiOnsic3RhdHVzIjoiZGVuaWVkIiwiY2Fub25pY2FsUHVycG9zZXMiOlsiYW5hbHl0aWNzIl19LCJlc3NlbnRpYWxfc2VydmljZXMiOnsic3RhdHVzIjoiZ3JhbnRlZCIsImNhbm9uaWNhbFB1cnBvc2VzIjpbImVzc2VudGlhbF9zZXJ2aWNlcyJdfSwidGFyZ2V0ZWRfYWR2ZXJ0aXNpbmciOnsic3RhdHVzIjoiZGVuaWVkIiwiY2Fub25pY2FsUHVycG9zZXMiOlsibWFpbF9ta3RnIiwiYmVoYXZpb3JhbF9hZHZlcnRpc2luZyIsImVtYWlsX21rdGciLCJzbXNfbWt0ZyJdfX0=')
@@ -27206,9 +27206,6 @@ pling.com#%#//scriptlet('adjust-setTimeout', 'Download', '*', '0.001')
 app.trangchu.news#%#//scriptlet("set-constant", "count", "0")
 fansonlinehub.com,teralink.me,teraearn.com,terashare.me,hotmediahub.com,terabox.fun#%#//scriptlet('adjust-setTimeout', 'value', '*', '0.001')
 fansonlinehub.com,teralink.me,teraearn.com,terashare.me,hotmediahub.com,terabox.fun#%#//scriptlet('adjust-setInterval', 'clearInterval', '*', '0.001')
-hotmediahub.com#%#(async()=>{if(location.href.includes("?slid="))try{const t=new URLSearchParams(location.search).get("slid");if(!t||!t.length)return;const a=await fetch(`https://hotmediahub.com/shorturl/getoriginurl?&surl_key=${t}`),i=await a.json();i?.data?.origin_url&&i.data.origin_url.startsWith("http")&&location.assign(i.data.origin_url)}catch(t){console.debug(t)}})();
-terabox.fun#%#(async()=>{if(location.href.includes("/slmiddlepage/"))try{const t=location.href.split("/").at(-1);if(!t.length)return;const a=await fetch(`https://terabox.fun/api/shortlink/getoriginurl?&encrypt_surl_key=${t}`),i=await a.json();i?.data?.origin_url&&i.data.origin_url.startsWith("http")&&location.assign(i.data.origin_url)}catch(t){console.debug(t)}})();
-terabox.fun#%#(async()=>{if(location.href.includes("/sl/"))try{const t=location.href.split("/").at(-1);if(!t.length)return;const a=await fetch(`https://terabox.fun/shorturl/getoriginurl?&surl_key=${t}`),i=await a.json();i?.data?.origin_url&&i.data.origin_url.startsWith("http")&&location.assign(i.data.origin_url)}catch(t){console.debug(t)}})();
 covemarkets.com#%#//scriptlet('adjust-setInterval', 'wait', '*', '0.02')
 finclub.in,financeyogi.net#%#//scriptlet('adjust-setInterval', 'count', '*', '0.02')
 androjungle.com#%#//scriptlet('adjust-setInterval', 'download', '*', '0.02')
