@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iujSjrG4v9Bmfyq1lYP2ow
-! Diff-Path: ../patches/13/13-s-1753773243-3600.patch
+! Checksum: f7apJWbESDqeLcWGzVHZCQ
+! Diff-Path: ../patches/13/13-s-1753780470-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.31
-! TimeUpdated: 2025-07-29T07:10:16+00:00
+! Version: 2.0.58.32
+! TimeUpdated: 2025-07-29T09:10:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1493,6 +1493,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+||uaefal.com/dosyalar/
 justintvnews.com##.backdrop-blur-sm
 justintvnews.com##.promo-card-legendary
 justintvnews.com##.banner-card-compact
@@ -5451,6 +5452,20 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+!
+! beintvcanliizle*.com - frequently changed domains
+||beintvcanliizle*.com/Uploads/*_canli-bein-izle-sides-2-130523.png
+||beintvcanliizle*.com/Uploads/*.gif
+[$domain=/beintvcanliizle\d+.com/]#$#body { overflow: auto !important; background: none !important; }
+[$domain=/beintvcanliizle\d+.com/]#$#div[id^="modal"] { display: none !important; }
+[$domain=/beintvcanliizle\d+.com/]#$#.modal-backdrop { display: none !important; }
+[$domain=/beintvcanliizle\d+.com/]##div[style="position:fixed;height:100%;z-index:1;width:100%"]
+[$domain=/beintvcanliizle\d+.com/]##+js(set-constant, window.config.adv.enabled, 0)
+!
+! canlikolik*.my - frequently changed domains
+||canlikolik*.my/wp-content/uploads/*/betadonis-arka-plan-scaled.webp
+||canlikolik*.my/wp-content/uploads/*.gif
+canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlikolik5.my,canlikolik6.my,canlikolik7.my,canlikolik8.my,canlikolik9.my,canlikolik10.my,canlikolik11.my,canlikolik12.my,canlikolik13.my,canlikolik14.my,canlikolik15.my,canlikolik16.my,canlikolik17.my,canlikolik18.my,canlikolik19.my,canlikolik20.my##.bgBanner
 !
 ! hentaizm*.online - frequently changed domains
 [$domain=/hentaizm\d+.online/]##.pa-container
