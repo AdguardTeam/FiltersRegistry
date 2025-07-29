@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: CRFA5CXcVwzmyvdN0+3n0A
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1753750461-14400.patch
+! Checksum: tUmTgLJ5f1aHtUpobRdx+A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1753764649-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.45.52
-! TimeUpdated: 2025-07-29T00:49:23+00:00
+! Version: 2.1.45.53
+! TimeUpdated: 2025-07-29T04:46:04+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -129,6 +129,7 @@
 /twitter-footer-
 /twitter-v2.png
 /twitter_footer.png
+/twitter_header.jpg
 /twitter_square.png
 /videojs-share.js
 /vk_button.png
@@ -161,6 +162,7 @@ _social_footer_
 ###article-social-bar
 ###article-social-share
 ###articleShare
+###article_bottom_fb_fanspage_like
 ###article_share
 ###article_tools_share
 ###aside-social-links-container
@@ -428,6 +430,7 @@ _social_footer_
 ###shareLink
 ###shareLinks
 ###shareMenu
+###shareOverlay
 ###sharePage
 ###sharePageControl
 ###sharePinterest
@@ -452,6 +455,7 @@ _social_footer_
 ###share_icons
 ###share_linkedin
 ###share_links
+###share_now
 ###share_telegram
 ###share_this
 ###share_to
@@ -529,6 +533,7 @@ _social_footer_
 ###social-link
 ###social-links
 ###social-links-container
+###social-media-bar
 ###social-media-footer
 ###social-media-header
 ###social-media-share
@@ -751,6 +756,7 @@ _social_footer_
 ##.SocialLinks
 ##.SocialLinks--footer
 ##.SocialLinks-linkContainer
+##.SocialList
 ##.SocialMediaLinks
 ##.SocialMediaShareButton
 ##.SocialRibbon
@@ -764,6 +770,7 @@ _social_footer_
 ##.Socials-root
 ##.StlyeSocial
 ##.Twitter-icon
+##.TwitterArea
 ##.TwitterButton
 ##.TwitterShareButton
 ##._socialsScr
@@ -1077,6 +1084,7 @@ _social_footer_
 ##.comment-social
 ##.comment__share
 ##.comment_share
+##.comment_share_toggle
 ##.comments__likes
 ##.common-social-link
 ##.component-social
@@ -1116,6 +1124,7 @@ _social_footer_
 ##.detailShare
 ##.detail__social
 ##.details-share
+##.deu_share_top_container
 ##.div-share
 ##.divFooterSocial
 ##.dmSocialHub
@@ -1237,7 +1246,6 @@ _social_footer_
 ##.facebook_logo
 ##.facebook_net
 ##.facebook_share
-##.facebookbox
 ##.facebooklike
 ##.facebookshare
 ##.facewrapper
@@ -1279,13 +1287,11 @@ _social_footer_
 ##.fbbutton
 ##.fblikebox
 ##.fblink
-##.fbpromo
 ##.fbshare
 ##.fbsmallshare
 ##.ff-icon-share
 ##.ff-share-wrapper
 ##.fi-social-facebook
-##.fi-social-google-plus
 ##.fi-social-instagram
 ##.fi-social-linkedin
 ##.fi-social-pinterest
@@ -1453,7 +1459,6 @@ _social_footer_
 ##.footersociallinks
 ##.footsocial
 ##.fshare
-##.ftnd-footer-follow
 ##.ftop-social
 ##.ftr-social
 ##.ftr-social-links
@@ -1699,11 +1704,13 @@ _social_footer_
 ##.instagram_share
 ##.instagramicon
 ##.ion-social-facebook
+##.ion-social-google
 ##.ion-social-linkedin
 ##.ion-social-twitter
 ##.ipsShareButton
 ##.ipsfocus_sFacebook
 ##.ipsfocus_sTwitter
+##.ipsfocus_social
 ##.is-social
 ##.ishare
 ##.isocial
@@ -2557,7 +2564,6 @@ _social_footer_
 ##.shared-counts-icon-label
 ##.shared-counts-label
 ##.shared-counts-wrap
-##.shared_block
 ##.sharedaddy
 ##.sharefacebook
 ##.sharefb
@@ -2652,7 +2658,6 @@ _social_footer_
 ##.sharings_box
 ##.sharrre
 ##.sharrre-container
-##.sharrre_widget
 ##.show-share
 ##.showShareMore
 ##.shr-bookmarks
@@ -2741,7 +2746,6 @@ _social_footer_
 ##.soc-btns
 ##.socButtons
 ##.socFbLikeShare
-##.socFbShare
 ##.soc_btn
 ##.soc_sharing
 ##.soc_square
@@ -2836,6 +2840,7 @@ _social_footer_
 ##.social-icons-list
 ##.social-icons-title
 ##.social-icons-top
+##.social-icons-v2
 ##.social-icons-widget
 ##.social-icons-wrap
 ##.social-icons-wrapper
@@ -3150,7 +3155,6 @@ _social_footer_
 ##.socials-widget
 ##.socials-wrap
 ##.socials_box
-##.socials_buttons
 ##.socials_widget
 ##.socialshare
 ##.socialshare-wrapper
@@ -3217,7 +3221,6 @@ _social_footer_
 ##.sub_sns
 ##.subfooter-social
 ##.subscribe-follow
-##.svp-share
 ##.synved-social-button
 ##.tags-share
 ##.tags-share-box
@@ -3501,7 +3504,6 @@ _social_footer_
 ##SHARE-BUTTON
 ##SOCIAL-SHARING
 ##TWITTER-SHARE-BUTTON
-##[data-target="#social-share"]
 ##[data-target="share-review"]
 ##[data-testid="prism-share"]
 ##[data-tracking-zone="share"]
@@ -3665,7 +3667,6 @@ _social_footer_
 ||vkontakte.ru/widget_like.php$third-party
 ||w.uptolike.com^$third-party
 ||widget.weibo.com^$third-party
-||widget.whatshelp.io^$third-party
 ||widgets.getpocket.com^$third-party
 ||widgets.wp.com/likes/$third-party
 ||wykop.pl/dataprovider/diggerwidget/$third-party
@@ -3768,7 +3769,6 @@ forexlive.com##.action-icon-list__wrapper
 planetizen.com##.addtoany_list
 alchetron.com##.alchetronShareCard
 asiaone.com##.ao-share-buttons
-storyboard18.com##.ar_share
 firstpost.com##.art-soc-icons
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
@@ -3816,7 +3816,6 @@ agrimag.co.za,androidpolice.com,automart.co.za,givemesport.com##.btn-whatsapp
 koimoi.com##.btn-whatsup
 androidpolice.com##.btn-x
 consumerreports.org##.btn__social
-bu.edu##.bu-sharing
 notateslaapp.com##.button-follow
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
@@ -4034,7 +4033,6 @@ streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
 12tomatoes.com##.sharetocare-popup
 thekitchenmagpie.com##.sharing-cta
-firstpost.com##.shr-ic
 streetsblog.org##.single_sharingInner__3IoQO
 news.sky.com,skysports.com##.site-share-wrapper
 archaeology.org##.site-socials
@@ -4141,6 +4139,7 @@ worldcrunch.com##.ysi_share
 firstpost.com##.yt-ch
 wdwmagic.com##.zocial
 sfgate.com##[aria-label="Share from Email"]
+footwearnews.com,indiewire.com##[class^="_socialMedia_"]
 news.sky.com##[data-component-name="sdc-article-strapline"]
 lifehacker.com##[data-ga-element="social-link"]
 cnet.com##[data-meta="footer-section-social"]
@@ -4252,6 +4251,7 @@ megaup.net##.socialsider
 arbys.com#?#[class^="linkBlocks_linkBlock__"]:-abp-has(> [class^="linkBlocks_socialLinkBlockList__"])
 relationshiphero.com#?#div:-abp-has(+ .socialIcons)
 viranomaisuutiset.fi#?#.wpb_wrapper.td_block_wrap:-abp-has(a[href^="https://whatsapp.com"])
+pctipp.ch###buttons-social
 freiewelt.net###single-page-article > aside
 freiewelt.net###socials-fokus
 finanzfrage.net,gutefrage.net##.Bigfoot-socialLinks
@@ -4395,6 +4395,7 @@ a12.com###gb-widget-6981
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
 xvideossexo.com###whatsapp
+iclnoticias.com.br##.alerts-call
 betteranime.net##.anime-down-share
 brasil247.com##.article__notif
 independente.com.br##.box-whatsapp
