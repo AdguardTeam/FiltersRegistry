@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: hRNRwiRufXyGBjv6Y6UgAQ
-! Diff-Path: ../patches/13/13-s-1753795423-3600.patch
+! Checksum: 2fNjrrKEzOUVOMwhfKh8bg
+! Diff-Path: ../patches/13/13-s-1753805558-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.36
-! TimeUpdated: 2025-07-29T13:20:00+00:00
+! Version: 2.0.58.37
+! TimeUpdated: 2025-07-29T16:08:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1521,7 +1521,7 @@ trhaber.com##.adm
 ||atomsportv*.top/assets/img/*.gif
 ||otobet-1king-dizibox.pages.dev/preroll.xml
 filmmodu.nl#$#nav.navbar { margin-top: 0 !important; top: 0 !important; }
-/keskin.js$domain=golgebahcesi.com
+/keskin.js$domain=golgebahcesi.com|ragnarscans.com
 tenshimanga.com##+js(abort-on-property-read, initPu)
 fotomac.com.tr##.currency-view
 ||bosssports*.com/boss-sports/*-banner.gif
@@ -5965,13 +5965,19 @@ realfilmizle6.com,realfilmizle7.com,realfilmizle8.com,realfilmizle9.com,realfilm
 /rek/*$domain=realfilmizle6.com|realfilmizle7.com|realfilmizle8.com|realfilmizle9.com|realfilmizle10.com|realfilmizle11.com|realfilmizle12.com|realfilmizle13.com|realfilmizle14.com|realfilmizle15.com|realfilmizle16.com|realfilmizle17.com|realfilmizle18.com|realfilmizle19.com|realfilmizle20.com|realfilmizle21.com|realfilmizle22.com|realfilmizle23.com|realfilmizle24.com|realfilmizle25.com|realfilmizle26.com|realfilmizle27.com|realfilmizle28.com|realfilmizle29.com|realfilmizle30.com
 /maintabs$script,domain=realfilmizle6.com|realfilmizle7.com|realfilmizle8.com|realfilmizle9.com|realfilmizle10.com|realfilmizle11.com|realfilmizle12.com|realfilmizle13.com|realfilmizle14.com|realfilmizle15.com|realfilmizle16.com|realfilmizle17.com|realfilmizle18.com|realfilmizle19.com|realfilmizle20.com|realfilmizle21.com|realfilmizle22.com|realfilmizle23.com|realfilmizle24.com|realfilmizle25.com|realfilmizle26.com|realfilmizle27.com|realfilmizle28.com|realfilmizle29.com|realfilmizle30.com
 !
-! inattv*.xyz - frequently changed domains
+! inattv - frequently changed domains
+! CASE 1 - inattv*.xyz
 [$domain=/inattv\d+\.xyz/]##.ads-container
 [$domain=/inattv\d+\.xyz/]##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
 ! aglint-disable invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/inattv\d+\.xyz/
 ! aglint-enable invalid-modifiers
+!
+! CASE 2 - inattvcom*.xyz
+||inattvcom*.xyz/*.gif
+[$domain=/inattvcom\d+\.xyz/]##a[href="https://t.me/blankpremium"]
+[$domain=/inattvcom\d+\.xyz/]##+js(set-constant, window.config.adv.enabled, 0)
 !
 ! trgoals*.xyz - frequently changed domains
 ! trgoals*.xyz - frequently changed domains
