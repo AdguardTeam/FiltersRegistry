@@ -1,9 +1,9 @@
-! Checksum: pb07TKf+VJXHyhOJSkopqg
-! Diff-Path: ../patches/18/18-s-1753873844-3600.patch
+! Checksum: FuELkupltp5VC6vXLa0Xww
+! Diff-Path: ../patches/18/18-s-1753881833-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.66.84
-! TimeUpdated: 2025-07-30T11:07:09+00:00
+! Version: 2.0.66.85
+! TimeUpdated: 2025-07-30T13:20:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2521,6 +2521,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+combi.de#%#//scriptlet('trusted-set-cookie-reload', 'consent', '%5B%22required%22%5D')
 check24.*#%#//scriptlet('trusted-set-cookie-reload', 'c24consent', 'f')
 101internet.ru##div[class^="Cookies_"]
 mir-telecom.ru###cookiesAgree
@@ -9887,8 +9888,6 @@ oberpfaelzer-seenland.de#$#html.cookieBar-Overlay-open { overflow: visible !impo
 oberpfaelzer-seenland.de#$#html.cookieBar-Overlay-open body { overflow: visible !important; }
 wilderkaiser.info##.mw-dsgvo-cookie-slidebar_01
 bumm.de,e-guest.de###nextlevelsCookieBox
-combi.de#$#body { overflow: auto !important; }
-combi.de#$#.modal--cookie-notice { display: none !important; }
 raeer.com###RaeerGoogleCookiesBox
 fashionunited.de##.MuiSnackbar-anchorOriginBottomLeft
 stoffmeile.de,stoff4you.de###dxCookieConsentContainer
@@ -17165,6 +17164,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/210395
+@@||combi.de/*/cookieconsent/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209724
 @@||lv1871.de/app/cache/borlabs-cookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209727

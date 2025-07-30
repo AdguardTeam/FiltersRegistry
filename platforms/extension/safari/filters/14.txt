@@ -1,9 +1,9 @@
-! Checksum: 7dViIS1rPBKHpjSc6uD3kQ
-! Diff-Path: ../patches/14/14-s-1753877732-3600.patch
+! Checksum: eruwGwPeODNnLLdVcWhp+A
+! Diff-Path: ../patches/14/14-s-1753881841-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.37.99
-! TimeUpdated: 2025-07-30T12:11:50+00:00
+! Version: 2.2.38.0
+! TimeUpdated: 2025-07-30T13:20:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2523,6 +2523,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+combi.de#%#//scriptlet('trusted-set-cookie-reload', 'consent', '%5B%22required%22%5D')
 check24.*#%#//scriptlet('trusted-set-cookie-reload', 'c24consent', 'f')
 101internet.ru##div[class^="Cookies_"]
 mir-telecom.ru###cookiesAgree
@@ -9888,8 +9889,6 @@ oberpfaelzer-seenland.de#$#html.cookieBar-Overlay-open { overflow: visible !impo
 oberpfaelzer-seenland.de#$#html.cookieBar-Overlay-open body { overflow: visible !important; }
 wilderkaiser.info##.mw-dsgvo-cookie-slidebar_01
 bumm.de,e-guest.de###nextlevelsCookieBox
-combi.de#$#body { overflow: auto !important; }
-combi.de#$#.modal--cookie-notice { display: none !important; }
 raeer.com###RaeerGoogleCookiesBox
 fashionunited.de##.MuiSnackbar-anchorOriginBottomLeft
 stoffmeile.de,stoff4you.de###dxCookieConsentContainer
@@ -17176,6 +17175,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/210395
+@@||combi.de/*/cookieconsent/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209724
 @@||lv1871.de/app/cache/borlabs-cookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209727
