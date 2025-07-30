@@ -1,9 +1,9 @@
-! Checksum: qGY8vRCMmAc+klfC+fvaGg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1753764634-14400.patch
+! Checksum: JxB6i6TG7udA8vveZ+upfw
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1753850977-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.30
-! TimeUpdated: 2025-07-29T04:46:37+00:00
+! Version: 2.0.22.31
+! TimeUpdated: 2025-07-30T04:45:47+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -677,6 +677,8 @@ goteborgsgolfaren.se##.sgpb-popup-overlay, #sgpb-popup-dialog-main-div-wrapper, 
 goteborg.com#$#body { overflow-y:initial!important }
 goteborg.com##.cookie-popup, .overlay
 grandtech.se##aside#secondary:has(.adsbygoogle)
+gratis.se##.article-summary:has(a[href*="casino"])
+gratis.se##.article-summary:has-text(/spelmarknad|casino/i)
 grillbaronen.se##a[href*="/click."], #block-2, #block-4, #custom_html-3, #custom_html-8
 grillbaronen.se##.post:has(a[href*="casino"], a[href*="kasino"], a[href*="betting"])
 guldkanalen.se##div.grid_container[style*="height:240px;"]
@@ -2899,6 +2901,7 @@ $third-party,script,denyallow=gstatic.com,domain=karlskogavaxer.se|molndalvaxer.
 ||consentframework.com^$domain=luleahockeyforum.com
 ||consentmanager.net^$domain=allastudier.se|gbgfotboll.se|stff.se|svenskfotboll.se|coop.se|dagens.se|prevent.se|utsidan.se|studentum.se|utbildning.se|vision.se|teksajten.se|thelocal.se
 ||consent.podplay.com^
+||consent.trustarc.com^$domain=alltomibd.se
 ||content.livesportmedia.eu^$third-party
 ||converdiant.com^$third-party
 ||convertbox.com^$third-party
@@ -3040,6 +3043,7 @@ $third-party,script,denyallow=gstatic.com,domain=karlskogavaxer.se|molndalvaxer.
 ||herokuapp.com/visit?$image
 ||hittahem.se^$third-party
 ||hockeynews.se/images/sveacasino.jpg
+||hq.volomedia.com^$domain=gratis.se
 ||humorbrevet.se/externa_bilder
 ||hu-manity.co^$domain=densistavilan.se
 ||iconosquare.com^$third-party
@@ -3173,7 +3177,7 @@ $third-party,script,denyallow=gstatic.com,domain=karlskogavaxer.se|molndalvaxer.
 ||nyhetersto.se/webpushr-sw
 ||oas.*.se/om/$script
 ||obj.fotosidan.se/obj/pa/$image
-||onesignal.com^$domain=samnytt.se|battrestadsdel.se|beernews.se|ungdomsfotboll.se|rabattsok.se|1x2.se|cannabis.se|dackavisen.se|driva-eget.se|skogsaktuellt.se|entreprenadaktuellt.se|ja.se|newsner.com|humorbibeln.se|sportbibeln.se|matbibeln.se|ettgottskratt.se|djurbibeln.se|nojeslivet.se|finanstid.se|fokus.se|gasetten.se|fotbollsthlm.se|macken.xyz|naringslivetvgl.se|dalarnasaffarer.se|stockholmsaffarer.se|jamtlandsaffarer.se|hallandsnaringsliv.se|sjuharadsnaringsliv.se|netflixguiden.se|nyadagbladet.se|oskarshamns-nytt.se|swebbtv.se|vaken.se|aktieskolan.se|fastighetsvarlden.se|mcparken.se|gaffa.se|alltomnorrtalje.se|morotsliv.com|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|skaneplus.se|mittforetag.com|studeravidare.se|thephuketexpress.se|ibnytt.se|garaget.org|marketmate.se|rakapuckar.com|svegot.se|thepattayanewsse.com|svenskgolf.se|cafe.se|praktisktbatagande.se|classicmotor.se
+||onesignal.com^$domain=samnytt.se|battrestadsdel.se|beernews.se|ungdomsfotboll.se|rabattsok.se|1x2.se|cannabis.se|dackavisen.se|driva-eget.se|skogsaktuellt.se|entreprenadaktuellt.se|ja.se|newsner.com|humorbibeln.se|sportbibeln.se|matbibeln.se|ettgottskratt.se|djurbibeln.se|nojeslivet.se|finanstid.se|fokus.se|gasetten.se|fotbollsthlm.se|macken.xyz|naringslivetvgl.se|dalarnasaffarer.se|stockholmsaffarer.se|jamtlandsaffarer.se|hallandsnaringsliv.se|sjuharadsnaringsliv.se|netflixguiden.se|nyadagbladet.se|oskarshamns-nytt.se|swebbtv.se|vaken.se|aktieskolan.se|fastighetsvarlden.se|mcparken.se|gaffa.se|alltomnorrtalje.se|morotsliv.com|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|skaneplus.se|mittforetag.com|studeravidare.se|thephuketexpress.se|ibnytt.se|garaget.org|marketmate.se|rakapuckar.com|svegot.se|thepattayanewsse.com|svenskgolf.se|cafe.se|praktisktbatagande.se|classicmotor.se|vagabond.se
 ||onetrust.com^$third-party,domain=lantmannen.se
 ||onrender.com/tracker.js
 ||open-analytics.se^$third-party
@@ -3263,6 +3267,7 @@ $third-party,script,denyallow=gstatic.com,domain=karlskogavaxer.se|molndalvaxer.
 ||schibsted.com/pulse$domain=aftonbladet.se
 ||scout.data.funkedigital.de/liteblower.js
 ||script.e-space.se^$third-party
+||script.unseald.com/antenna
 ||sdkconfig.pulse.m10s.io^$domain=blocket.se
 ||sdkconfig.pulse.schibsted.io/js/config.json$xmlhttprequest,redirect=noopjson,domain=tv.nu
 ||sdkconfig.pulse.schibsted.io^$domain=aftonbladet.se|omni.se|omniekonomi.se|svd.se|prisjakt.nu|bytbil.com|godare.se|klart.se
