@@ -1,9 +1,9 @@
-! Checksum: GUdldq7ium++2pVnfrpKmQ
-! Diff-Path: ../patches/3/3-s-1753846834-3600.patch
+! Checksum: qu9HRWNctGykrmDMwJ6L1A
+! Diff-Path: ../patches/3/3-s-1753852672-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.88.79
-! TimeUpdated: 2025-07-30T03:36:31+00:00
+! Version: 2.0.88.80
+! TimeUpdated: 2025-07-30T05:13:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -106122,6 +106122,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+hpplus.jp#%#//scriptlet('set-local-storage-item', 'fw_se', '$remove$')
+hpplus.jp#%#//scriptlet('set-local-storage-item', 'fw_uid', '$remove$')
+||keirin.netkeiba.com/ndtracker/
 revistaoeste.com##.content-aside__taboola
 ||collector.appconsent.io/t2.gif?a=
 dogdrip.net#%#//scriptlet('href-sanitizer', 'a[href^="/link.php?url="]', '?url')
@@ -112279,6 +112282,9 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! hpplus.jp
+||hpplus.jp^$cookie=fw_se
+||hpplus.jp^$cookie=fw_uid
 ! idnes.cz
 ||idnes.cz^$cookie=adtrack-lib-criteo
 ||idnes.cz^$cookie=_mmid
