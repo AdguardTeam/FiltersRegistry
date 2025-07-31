@@ -5,12 +5,12 @@ import { fileURLToPath } from 'url';
 import { compile } from '@adguard/filters-compiler';
 
 // Import local modules
-import customPlatformsConfig from './custom_platforms';
-import { formatDate } from '../utils/strings';
+import customPlatformsConfig from './custom_platforms.js';
+import { formatDate } from '../utils/strings.js';
 import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
-} from './constants';
+} from './constants.js';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

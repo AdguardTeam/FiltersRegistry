@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import compiler from '@adguard/filters-compiler';
 import { PATCH_EXTENSION } from '@adguard/diff-builder';
 
-import { FOLDER_WITH_NEW_FILTERS } from '../build/constants';
+import { FOLDER_WITH_NEW_FILTERS } from '../build/constants.js';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
