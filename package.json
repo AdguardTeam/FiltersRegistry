@@ -12,11 +12,11 @@
         "lint:types": "tsc --noEmit --project tsconfig.json",
         "lint:md": "markdownlint **/*.md",
         "test": "jest .",
-        "build": "node scripts/build/build.js",
+        "build": "node -r @swc-node/register scripts/build/build.js",
         "build:patches": "node scripts/build/patches.js",
         "validate": "yarn validate:platforms && yarn validate:locales",
-        "validate:platforms": "node scripts/validation/validate_platforms.js",
-        "validate:locales": "node scripts/validation/validate_locales.js",
+        "validate:platforms": "node -r @swc-node/register scripts/validation/validate_platforms.js",
+        "validate:locales": "node -r @swc-node/register scripts/validation/validate_locales.js",
         "update-wildcard-domains": "node -r @swc-node/register scripts/wildcard-domain-processor update-wildcard-domains",
         "expand-wildcard-domains": "node -r @swc-node/register scripts/wildcard-domain-processor expand-wildcard-domains",
         "compress": "node scripts/repository/compress.js"
@@ -25,7 +25,7 @@
         "node": ">=22"
     },
     "dependencies": {
-        "@adguard/agtree": "^3.2.2",
+        "@adguard/agtree": "^1.1.8",
         "@adguard/dead-domains-linter": "^1.0.22",
         "@adguard/diff-builder": "1.1.2",
         "@adguard/filters-compiler": "3.0.2",

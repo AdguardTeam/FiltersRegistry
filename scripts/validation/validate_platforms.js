@@ -5,11 +5,10 @@ import { fileURLToPath } from 'url';
 import compiler from '@adguard/filters-compiler';
 import { PATCH_EXTENSION } from '@adguard/diff-builder';
 
-import { FOLDER_WITH_NEW_FILTERS } from '../build/constants.js';
+import { FOLDER_WITH_NEW_FILTERS } from '../build/constants';
 
-// Emulate __dirname in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 const FILTERS_REQUIRED_AMOUNT = 80;
 
@@ -20,7 +19,7 @@ if (!platforms) {
     platforms = '../../platforms';
 }
 
-const platformsPath = path.join(__dirname, platforms);
+const platformsPath = path.join(dirname, platforms);
 
 const validationResult = compiler.validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
 if (!validationResult) {
