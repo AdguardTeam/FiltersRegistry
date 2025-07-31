@@ -1,9 +1,9 @@
-! Checksum: IjtjAYdIauvDF3pIY6LdoQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1753923132-14400.patch
+! Checksum: PVEoRdPSZxY8ExRI6qALLQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1753937362-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.45.64
-! TimeUpdated: 2025-07-31T00:47:52+00:00
+! Version: 2.1.45.65
+! TimeUpdated: 2025-07-31T04:45:06+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -38,7 +38,6 @@
 /follow-twitter.
 /follow-us.$~stylesheet
 /follow_instagram.png
-/gfx/socials/*
 /gm-button-social.min.js
 /highlight-and-share.js
 /icon_share_
@@ -405,7 +404,6 @@ _social_footer_
 ###share-wrapper
 ###share-youtube
 ###share42
-###shareActions
 ###shareArticle
 ###shareBar
 ###shareBarBottom
@@ -420,7 +418,6 @@ _social_footer_
 ###shareButtons
 ###shareDropdown
 ###shareFloat
-###shareHorizontal
 ###shareIcons
 ###shareId
 ###shareImg
@@ -450,7 +447,6 @@ _social_footer_
 ###share_facebook
 ###share_google
 ###share_icon
-###share_icons
 ###share_linkedin
 ###share_links
 ###share_now
@@ -531,6 +527,8 @@ _social_footer_
 ###social-link
 ###social-links
 ###social-links-container
+###social-links-facebook
+###social-links-twitter
 ###social-media-bar
 ###social-media-footer
 ###social-media-header
@@ -642,7 +640,6 @@ _social_footer_
 ###socialdiv
 ###socialfooter
 ###socialicons
-###socialleft
 ###sociallinks
 ###socialnav
 ###socialnet
@@ -1018,6 +1015,7 @@ _social_footer_
 ##.button-social
 ##.button-twitter
 ##.button__share
+##.button_pinterest
 ##.button_share
 ##.button_twitter
 ##.buttons-share
@@ -1394,6 +1392,7 @@ _social_footer_
 ##.footer-social-n
 ##.footer-social-ul
 ##.footer-socialIcons
+##.footer-sociallink
 ##.footer-sociallinks
 ##.footer-socialmedia
 ##.footer-socialmediaIcon
@@ -1685,7 +1684,6 @@ _social_footer_
 ##.info-sns-list
 ##.info_share
 ##.inline-share
-##.inline-share-buttons
 ##.inline_socials
 ##.inner-header-social
 ##.inner-social
@@ -1960,6 +1958,7 @@ _social_footer_
 ##.nav-soc-but
 ##.nav-social
 ##.nav-social-links
+##.nav-social-media-links
 ##.navSocial
 ##.nav__share
 ##.nav__social
@@ -2506,7 +2505,6 @@ _social_footer_
 ##.share_icons
 ##.share_icons_container
 ##.share_img_main
-##.share_index
 ##.share_items
 ##.share_line
 ##.share_link
@@ -2702,11 +2700,11 @@ _social_footer_
 ##.site-footer__social-list
 ##.site-footer__socials
 ##.site-header__social-links
-##.site-nav-social
 ##.site-social
 ##.site-social-icon
 ##.site-social-menu
 ##.sitewide-social-media
+##.slide_likebox
 ##.smshare
 ##.sn-share
 ##.snapchat-share-button
@@ -2887,7 +2885,6 @@ _social_footer_
 ##.social-networking
 ##.social-networks-container
 ##.social-networks-footer
-##.social-networks-links
 ##.social-networks-list
 ##.social-networks__item
 ##.social-news-buttons
@@ -3011,7 +3008,6 @@ _social_footer_
 ##.socialContacts
 ##.socialContainer
 ##.socialContainerWrap
-##.socialCount
 ##.socialEl
 ##.socialFacebook
 ##.socialFixed
@@ -3188,7 +3184,6 @@ _social_footer_
 ##.sscb-twitter
 ##.ssto-share-buttons
 ##.st-custom-button
-##.st-social-block
 ##.st-social__share
 ##.st_sharethis
 ##.st_sharethis_custom
@@ -3220,6 +3215,7 @@ _social_footer_
 ##.tags-share
 ##.tags-share-box
 ##.tasti-social-top
+##.tbr-social
 ##.td-icon-facebook
 ##.td-icon-instagram
 ##.td-icon-twitter
@@ -3362,7 +3358,6 @@ _social_footer_
 ##.ut2-social-link-block
 ##.utility-social
 ##.vbseo_share
-##.vc_box_social_colored
 ##.vc_container_social_button
 ##.vc_share_link_container
 ##.vc_social_button
@@ -3571,7 +3566,6 @@ _social_footer_
 ##a[title="Suivez-nous sur Pinterest"]
 ##a[title="Suivez-nous sur Twitter"]
 ##amp-social-share
-##div[title="Partager sur Twitter"]
 ##img[alt="Connect with us on Facebook"]
 ##img[alt="Connect with us on LinkedIn"]
 ##img[alt="Connect with us on Twitter"]
@@ -3611,7 +3605,6 @@ _social_footer_
 ||flipboard.com/web/buttons/$third-party
 ||friends2follow.com^$subdocument,third-party
 ||fwcdn3.com^$third-party
-||getbutton.io/widget-send-button/$third-party
 ||getsocial.io^*/gs_async.js$third-party
 ||google.com^*/fastbutton?$third-party
 ||gotchosen.com^$third-party
@@ -3713,7 +3706,6 @@ animenewsnetwork.com###social-bookmarks
 breitbart.com###social-follow-sidebar-widget
 coindesk.com###social-icons-box
 battlefordsnow.com,everythinggp.com,huskiefan.ca,larongenow.com,lethbridgenewsnow.com,meadowlakenow.com,nanaimonewsnow.com,northeastnow.com,panow.com,rdnewsnow.com,rocketfan.ca,royalsfan.ca,sasknow.com,vernonmatters.ca###social-share-icons
-ruwix.com###socialLinx
 asianews.it###social_top_nav
 salon.com###social_total
 nsctotal.com.br,pastebin.pl###socials
@@ -3765,6 +3757,7 @@ firstpost.com##.art-soc-icons
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 f1oversteer.com##.article-follow
+infoworld.com##.article-hero__social
 neowin.net,seattletimes.com,thecooldown.com##.article-share
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
@@ -4055,12 +4048,10 @@ draxe.com##.social-proof-wrapper
 iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
-arnnet.com.au,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
 rappler.com##.social-share__actions
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
 macrumors.com##.socialMedia--3i9tSnAb
-ruwix.com##.socialShareLinks
 jetphotos.com##.social__link--share
 salon.com,snopes.com##.social_comments_app_wrapper
 ringsidenews.com##.social_holder
@@ -4263,7 +4254,6 @@ freiewelt.net##.jksocials
 kicker.de##.kick__article__social
 lebensmittelwarnung.de##.lmw-footer-nav--social
 ndr.de##.meta
-laut.de##.module-share
 it-daily.net##.ns-buttons
 teltarif.de##.sbm
 orf.at##.share-dialog
@@ -4388,7 +4378,6 @@ superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
 xvideossexo.com###whatsapp
 iclnoticias.com.br##.alerts-call
-betteranime.net##.anime-down-share
 brasil247.com##.article__notif
 independente.com.br##.box-whatsapp
 revistaforum.com.br##.btn-seguinos-gnews
