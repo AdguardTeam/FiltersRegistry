@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: An43HN5Gt/cmatLgRsNz5w
-! Diff-Path: ../patches/7/7-s-1753971197-3600.patch
+! Checksum: hhVzo/OgZfn9njulFQw6Ew
+! Diff-Path: ../patches/7/7-s-1753974751-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.67.14
-! TimeUpdated: 2025-07-31T14:08:59+00:00
+! Version: 2.0.67.15
+! TimeUpdated: 2025-07-31T15:08:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1529,6 +1529,7 @@ jikayosha.jp#$#.wym-v2022__header.is-scroll-up ~ .wym-v2022__footer-fixed.is-pc-
 /wp-content/uploads/2024/09/fanza_ad$image
 !
 ! Malware/Phishing
+://visa.*.top/web/$document
 .com/yz.php|$xmlhttprequest,~third-party
 ://icloud-*.cn/$document
 .icu/*.jp/|$document
@@ -1798,6 +1799,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+||apwidget.dailyportalz.jp/rankings/all.json
+dailyportalz.jp###amazon-ranking-widget-article-bottom
 kawasaki-create.com##.text-gray-400:has(+ div.my-4 > ins.adsbygoogle)
 doorblog.jp##.plugin-memo:has(> div.side > div[class^="amastep0"])
 jumpmatome2ch.biz##.side_ama
@@ -10417,7 +10420,7 @@ cocokara-next.com#?#.txtBox > p:has(> ins.adsbygoogle)
 bannerkoubou.com#?#body > div.container-fluid:has(> div.row > div.adsense-photoeditor-header-wrapper)
 bannerkoubou.com#?#main > div.row:has(> div[id] > script[src^="//ads.themoneytizer.com/"])
 matomeantena.com##.main-box > ul.list > li:has(> span.text > a[href^="https://bit.ly/"])
-matomeantena.com###latest-feeds > ul.list-group > li.list-group-item:has(a[href^="https://bit.ly/"])
+matomeantena.com###latest-feeds > ul.list-group > li.list-group-item:is(:has(a[href^="https://bit.ly/"]),:has(a[href^="http://bit.ly/"]))
 coordisnap.com#?#.post-loop-wrap:has(> div[id^="div-gpt-"])
 cinema.ne.jp#?#.sticky-height > section.article-list:contains(SPONSORD)
 casabrutus.com#?#.swiper-slide > div.adunitContainer:upward(1)
