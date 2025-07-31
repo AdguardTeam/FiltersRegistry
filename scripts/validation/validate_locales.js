@@ -1,5 +1,11 @@
-const path = require('path');
-const compiler = require('adguard-filters-compiler');
+// Import built-in and external modules using ES module syntax
+import path from 'path';
+import { fileURLToPath } from 'url';
+import compiler from '@adguard/filters-compiler';
+
+// Emulate __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const LOCALES_DIR_PATH = '../../locales';
 

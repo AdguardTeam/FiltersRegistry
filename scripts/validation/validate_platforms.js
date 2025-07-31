@@ -1,9 +1,15 @@
-const path = require('path');
-const fs = require('fs');
-const compiler = require('adguard-filters-compiler');
-const { PATCH_EXTENSION } = require('@adguard/diff-builder');
+// Import built-in and external modules using ES module syntax
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import compiler from '@adguard/filters-compiler';
+import { PATCH_EXTENSION } from '@adguard/diff-builder';
 
-const { FOLDER_WITH_NEW_FILTERS } = require('../build/constants');
+import { FOLDER_WITH_NEW_FILTERS } from '../build/constants.js';
+
+// Emulate __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const FILTERS_REQUIRED_AMOUNT = 80;
 
