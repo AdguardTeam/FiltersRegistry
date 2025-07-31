@@ -1,9 +1,9 @@
-! Checksum: V/50h+u+gZPerDScL/QN+A
-! Diff-Path: ../patches/2/2-s-1753949647-3600.patch
+! Checksum: TaANJ1ACvmYF1nngGDUMXw
+! Diff-Path: ../patches/2/2-s-1753953255-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.0.14
-! TimeUpdated: 2025-07-31T08:10:01+00:00
+! Version: 2.4.0.15
+! TimeUpdated: 2025-07-31T09:10:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36362,7 +36362,8 @@ _clickunder&pb=$popup
 ! Clickadu
 ! ex. https://kaqppajmofte.com/en/owh/avw?spfrctux=ude&qdsp=jzub&dce=808204&jvkcce=391260&iilmwn=auge&id=1971897
 /^https:\/\/[a-z]{8,12}\.com\/en\/(?:[a-z]{2,10}\/){0,2}[a-z]{2,}\?(?:[a-z]+=[^&=?\s]*?&)*?id=[12]\d{6}/$script,third-party,match-case
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
+!+ NOT_VALIDATE PLATFORM(ios, ext_android_cb, ext_safari)
+/^https:\/\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]+\.com\/en\/([a-z][a-z]+\/)?([a-z][a-z]+\/)?[a-z][a-z]+\?([a-z]+=[^&=? ]*&)*id=[12][0-9][0-9][0-9][0-9][0-9][0-9]/$script,third-party,match-case
 ?zoneid=*&ab=1|$script,third-party
 /get/*?zoneid=*&jp=$script
 ! https://github.com/AdguardTeam/AdguardFilters/pull/83787
@@ -37230,6 +37231,7 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 ! NOTE: Specific rules
 !
 !
+kaotic.com#%#//scriptlet('abort-current-inline-script', 'navigator', 'window.open')
 pstream.*##img[alt="ad banner"]
 pstream.*##.bg-buttons-purple:has(> button[aria-label="Dismiss ad"])
 ||linkinbio.fun/iframes/ssmmgirlsbanner.html
@@ -55229,7 +55231,10 @@ hulu.com#%#//scriptlet('json-prune', 'breaks custom_breaks_data pause_ads')
 hulu.com#%#//scriptlet('set-constant', 'Object.prototype.isAdPeriod', 'falseFunc')
 hulu.com#%#//scriptlet("set-constant", "Object.prototype._parseVAST", "noopFunc")
 hulu.com#%#//scriptlet("set-constant", "Object.prototype.createAdBlocker", "noopFunc")
-! aglint-disable-next-line invalid-modifiers
+! aglint-disable invalid-modifiers
+!+ NOT_VALIDATE
+/manifest.mpd$xmlprune=/MPD/Period[contains(@id\,'ad-')],domain=hulu.com
+! aglint-enable invalid-modifiers
 !
 ! fc.lc / fc-lc.xyz
 fitdynamos.com###content a[target="_blank"] > img[style]
@@ -68589,6 +68594,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /wp-bannerize.$script,stylesheet
 /wp-bannerize/*$script,stylesheet
 /wp-content/ads/*$~xmlhttprequest
+/wp-content/cache/min/1/advert/popads/*$script
 /wp-content/mbp-banner/*$image
 /wp-content/plugins/amazon-auto-links/*$script,stylesheet
 /wp-content/plugins/amazon-product-in-a-post-plugin/*
@@ -84538,6 +84544,7 @@ browsershots.org#@#.advert_area
 ||acalraiz.xyz^
 ||acam-2.com^
 ||acanthaswonk.shop^
+||acarusrustred.com^
 ||accanfkinrt.com^
 ||accbhebkemaj.com^
 ||accecmtrk.com^
@@ -86300,6 +86307,7 @@ browsershots.org#@#.advert_area
 ||aqusrpypahg.com^
 ||aqxme-eorex.site^
 ||aqyenveskagti.online^
+||aqyiphswufdxr.store^
 ||arabitmanred.shop^
 ||arabybraw.digital^
 ||araftaiccmkks.com^
@@ -86606,6 +86614,7 @@ browsershots.org#@#.advert_area
 ||ateaudiblydriving.com^
 ||atebatogless.help^
 ||atechnycaudal.cyou^
+||atechnyraptus.world^
 ||ateetersnots.cyou^
 ||atefpurga.top^
 ||atemoyaalbino.world^
@@ -90440,6 +90449,7 @@ browsershots.org#@#.advert_area
 ||crashspots.top^
 ||craterpermission.com^
 ||craterwhsle.com^
+||cratonsloamed.rest^
 ||cravozbkgiurd.store^
 ||crawlcoxed.com^
 ||crawlinglandnameless.com^
@@ -91289,6 +91299,7 @@ browsershots.org#@#.advert_area
 ||deniedsolesummer.com^
 ||denierswildest.top^
 ||denknowledc.org^
+||dennissumacs.life^
 ||denotemylemonade.com^
 ||denoughtanot.info^
 ||denoughtanoth.com^
@@ -95474,6 +95485,7 @@ browsershots.org#@#.advert_area
 ||griksoud.net^
 ||grillcheekunfinished.com^
 ||grillessimaba.click^
+||grilleyarkee.rest^
 ||grillymujiks.shop^
 ||grimfulataxic.cfd^
 ||grimlycask.com^
@@ -100473,6 +100485,7 @@ browsershots.org#@#.advert_area
 ||mansfieldspurtvan.com^
 ||mansudee.net^
 ||manteelclanned.com^
+||mantoidcommode.rest^
 ||mantonofftake.top^
 ||manualchaosmartial.com^
 ||manualpeasantconnoisseur.com^
@@ -103289,6 +103302,7 @@ browsershots.org#@#.advert_area
 ||op02.biz^
 ||op3xdork.xyz^
 ||opaiwithsay.click^
+||opaledpollen.help^
 ||opawqdpgacmw.xyz^
 ||opclauncheran.com^
 ||opclck.com^
@@ -105034,6 +105048,7 @@ browsershots.org#@#.advert_area
 ||preclknu.com^
 ||precmd.com^
 ||preconysemipro.com^
+||precureokrug.cfd^
 ||predictfurioushindrance.com^
 ||predictiondexchange.com^
 ||predictiondisplay.com^
@@ -107665,6 +107680,7 @@ browsershots.org#@#.advert_area
 ||ryenetworkconvicted.com^
 ||ryeweaver.com^
 ||rygdzlvrladuc.store^
+||ryhiuxqxohoiv.website^
 ||ryiciyxfnjaof.store^
 ||ryifzfdxgoatd.online^
 ||ryllae.com^
@@ -108735,6 +108751,7 @@ browsershots.org#@#.advert_area
 ||slakerrebulk.cyou^
 ||slakinggules.top^
 ||slakybogie.cfd^
+||slammedloftygauze.com^
 ||slantdecline.com^
 ||slaqandsan.xyz^
 ||slashstar.net^
@@ -110171,6 +110188,7 @@ browsershots.org#@#.advert_area
 ||tcdypeptz.com^
 ||tchkbztoaxeqh.space^
 ||tchwicrim.world^
+||tciksbhxmffiwlt.com^
 ||tcloaksandtheirc.org^
 ||tcloaksandtheirclean.com^
 ||tcpcharms.com^
@@ -113116,6 +113134,7 @@ browsershots.org#@#.advert_area
 ||watch-now.club^
 ||watchcpm.com^
 ||watchetifuters.cloud^
+||watchful-development.pro^
 ||watchheeddandy.com^
 ||watchingthat.com^
 ||watchingthat.net^
