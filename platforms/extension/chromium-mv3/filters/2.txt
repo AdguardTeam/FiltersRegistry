@@ -1,8 +1,8 @@
-! Checksum: VyP7W7tyXWKCD4R4hO1UKg
+! Checksum: EaJtGbKH15vrs7mQ9uEn3w
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.0.33
-! TimeUpdated: 2025-08-01T03:42:49+00:00
+! Version: 2.4.0.34
+! TimeUpdated: 2025-08-01T04:29:21+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10181,6 +10181,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/210493
+gaystream.pro#%#//scriptlet('set-constant', 'PlayerConfig.trusted', 'true')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210113
 sms-receive-online.com#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'adb-mask')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210265
@@ -35621,6 +35623,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+gaystream.pro#%#//scriptlet('prevent-addEventListener', 'click', '[native code]', 'elements', 'document')
+gaystream.pro#%#//scriptlet('prevent-window-open')
+gaystream.pro##body > div[class]:empty
 peacocktv.com#%#//scriptlet('json-prune', 'avails dashAvailabilityStartTime hlsAnchorMediaSequenceNumber nextToken nonLinearAvails')
 ||cdn.peacocktv.com/pck-vod/*/tracking/
 telugubulletin.com#%#//scriptlet('adjust-setTimeout', 'window.location.href', '15000')
@@ -39898,7 +39903,6 @@ fulltaboo.tv###content > aside.widget-area
 luxuretv.com###ltvModal
 ||cdn.bidfluence.com/forge.js
 contactform7.com,ducumon.click###custom_html-5
-robots.net##body .adsense
 ||assets.easyodds.com/widgets/embed.js
 sportsmole.co.uk##div[style="width:620px;margin:12px auto;text-align:center"]
 sportsmole.co.uk##div[style="font-size:small;margin:auto;text-align:center;line-height:1rem;height:0px;color:#8492a6;position:relative;top:-10px;"]
@@ -46909,7 +46913,7 @@ cam4.com##div[class^="Directory__adds_"]
 ||rtyznd.com/get/*?zoneid=$script
 scotchwhisky.com##.adcore
 pcmag.com##aside[class^="zmgad-"]
-tel-no.com,pdfforge.org##.adsense
+torquenews.com,robots.net,tel-no.com,pdfforge.org##body .adsense
 playhub.com##span[class^="ad-title-"]
 sciencenews.org##section[class^="ad-block-leaderboard__wrapper"]
 woozworld.com###ads_iframe
@@ -54513,7 +54517,7 @@ filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,anime4i.com,cuttyy.
 /\/[A-Z]{1,3}\/[-0-9a-z]{5,}\.com\/\d{1,3}\/\d+$/$script,~third-party,match-case,domain=bflix.to
 /\/[A-Z]{1,3}\/[-0-9a-z]{5,}\.com\/(?:[0-9a-f]{2}\/){3}[0-9a-f]{32}\.js$/$script,~third-party,match-case,domain=mcloud.to|vizcloud.*|vizcloud2.*|bflix.to
 !+ PLATFORM(ext_chromium_mv3)
-/\/[a-f0-9]{32}\.js(?:$|\?)/$script,xmlhttprequest,third-party,domain=tokyomotion.net|rarbg-official.to|jmanga.app|daftporn.com|85po.com|9tsu.tv|blogspot.comg|hqq.tv|javboys.com|javboys.upn.one|niraw.com|tiqu.cc|123av.com|123av.ws|1av.to|akuma.moe|fetchfile.me|gogoanime.by|gogoanime.onl|haho.moe|hianime.to|jav.com.se|jav.re|xfantazy.com|myxxgirl.com|nnyy.in|sexiezpix.com|hentai4.me|javhdporn.net|javseen.tv|njav.com|javhd.today|javhdz.today|av01.media|hianime.to
+/\/[a-f0-9]{32}\.js(?:$|\?)/$script,xmlhttprequest,third-party,domain=tokyomotion.net|rarbg-official.to|jmanga.app|daftporn.com|85po.com|9tsu.tv|blogspot.comg|hqq.tv|javboys.com|javboys.upn.one|niraw.com|tiqu.cc|123av.com|123av.ws|1av.to|akuma.moe|fetchfile.me|gogoanime.by|gogoanime.onl|haho.moe|hianime.to|jav.com.se|jav.re|xfantazy.com|myxxgirl.com|nnyy.in|sexiezpix.com|hentai4.me|javhdporn.net|javseen.tv|njav.com|javhd.today|javhdz.today|av01.media|hianime.to|gaystream.pro
 ! https://github.com/AdguardTeam/AdguardFilters/issues/54684
 ! New popads script - blocking popads script casues requests to "undefined" and in some cases website doesn't load correctly
 |https://undefined/|$script,redirect=noopjs
@@ -93779,6 +93783,7 @@ browsershots.org#@#.advert_area
 ||kqzyfj.com^
 ||kra18.com^
 ||kraftsregears.top^
+||kraftsunmixed.click^
 ||kragreparel.top^
 ||krankenwagenmotor.com^
 ||kreanlmiba.com^
@@ -98603,6 +98608,7 @@ browsershots.org#@#.advert_area
 ||owvhheaq.com^
 ||owvobdogd.com^
 ||owwmbcdlguyke.store^
+||owxxcdgbhhcb.com^
 ||oxado.com^
 ||oxamateborrel.shop^
 ||oxbbzxqfnv.com^
@@ -100899,6 +100905,7 @@ browsershots.org#@#.advert_area
 ||qqeadugfccgya.space^
 ||qqgjvgudcntvw.online^
 ||qqgspelswxiok.website^
+||qqjxklfhoosftj.com^
 ||qqkyhkfakl.xyz^
 ||qqobcemksiob.com^
 ||qqqdsrjovklsr.today^
@@ -106170,6 +106177,7 @@ browsershots.org#@#.advert_area
 ||ttgmjfgldgv9ed10.com^
 ||ttguipcjxxdja.com^
 ||ttgusdjqnudcp.site^
+||ttikombrmmygx.store^
 ||ttlhwufpaqwkw.site^
 ||ttmfaxiuifrfb.xyz^
 ||ttoc8ok.com^
