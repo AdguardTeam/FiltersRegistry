@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 /* eslint-disable no-await-in-loop */
-const fs = require('fs');
-const path = require('path');
-const { DiffBuilder } = require('@adguard/diff-builder');
+import fs from 'fs';
+import path from 'path';
+import { DiffBuilder } from '@adguard/diff-builder';
 
-const {
+import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
-} = require('./constants');
-const { findFiles } = require('../utils/find_files');
+} from './constants.js';
+import { findFiles } from '../utils/find_files.js';
 
 /**
  * Parse command-cli parameters -t|--time, -r|--resolution, -i|--include and -s|--skip
