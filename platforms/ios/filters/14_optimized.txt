@@ -1,9 +1,9 @@
-! Checksum: fEXCYhDQ6qm7PuC3HNgHqg
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1754046658-3600.patch
+! Checksum: 5DP1TudoHwIVPJwwoZB4rQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1754050526-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.38.23
-! TimeUpdated: 2025-08-01T11:07:15+00:00
+! Version: 2.2.38.24
+! TimeUpdated: 2025-08-01T12:11:40+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1553,6 +1553,7 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$?#div[consent-skip-blocker] { remove: true; }
 kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+motointegrator.de#%#//scriptlet('trusted-set-cookie', 'GDPR', 'R')
 dunyakatilim.com.tr##body .footer-cookie-policy
 .co/geoconsent?$domain=geotargetly.com
 ashild.no##.cookie-shadow
@@ -5202,8 +5203,6 @@ berlin-international.de##.bau__cookiebanner
 krankenhaus.de,aknw.de#$#body { overflow: auto!important; }
 sozialversicherung.at##.consent-background-overlay
 visiontechusa.com###toast
-motointegrator.de#$##fancybox-overlay { display: none !important; }
-motointegrator.de#?##fancybox-wrap:has(div#fancybox-content > div[style] > div.gdpr-modal)
 fau.de,fau.eu##.show-cookie-box
 sber-bank.by##.CookiesMessageBlock
 deutscher-fenstershop.de###rule_assept
@@ -16470,6 +16469,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_apps
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(ios) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_ios { display: none !important; }
+@@||pinterest.com^$permissions=identity-credentials-get=()
 tb.pro,thundermail.com#@##mc_embed_signup
 @@||fregat.com/wp-content/plugins/popup-maker/assets/js/site.min.js
 @@||ttk-com.ru/wp-content/plugins/popup-maker/assets/js/site.min.js

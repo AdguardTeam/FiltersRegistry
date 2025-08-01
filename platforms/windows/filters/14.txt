@@ -1,9 +1,9 @@
-! Checksum: 4zuegaXf1Z+96LHh8NFsBA
-! Diff-Path: ../patches/14/14-s-1754046666-3600.patch
+! Checksum: +tRaN7WY6fReptiwfUaKCg
+! Diff-Path: ../patches/14/14-s-1754050534-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.38.23
-! TimeUpdated: 2025-08-01T11:07:15+00:00
+! Version: 2.2.38.24
+! TimeUpdated: 2025-08-01T12:11:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2521,6 +2521,7 @@ kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-w
 !
 ! NOTE: Regular rules
 !
+motointegrator.de#%#//scriptlet('trusted-set-cookie', 'GDPR', 'R')
 dunyakatilim.com.tr##body .footer-cookie-policy
 .co/geoconsent?$domain=geotargetly.com
 ashild.no##.cookie-shadow
@@ -8171,8 +8172,6 @@ mubi.pl##div[aria-label="Cookie Agreement"]
 england.de###apccookies
 futuregames.se##.cookies-pwrap
 officebase.info,ergonbike.com##.ch-cookie-consent
-motointegrator.de#$##fancybox-overlay { display: none !important; }
-motointegrator.de#?##fancybox-wrap:has(div#fancybox-content > div[style] > div.gdpr-modal)
 fau.de,fau.eu##.show-cookie-box
 projectfastos.top,techtracker.in,loukoala.blogspot.com###vtrick-pro-cookie-ify
 sber-bank.by##.CookiesMessageBlock
@@ -33503,6 +33502,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !
 ! SECTION: Popups - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/210526
+@@||pinterest.com^$permissions=identity-credentials-get=()
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205224
 @@||cdn-hainf.nitrocdn.com/*/assets/static/optimized/$domain=motionhealth.com.au
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204882
