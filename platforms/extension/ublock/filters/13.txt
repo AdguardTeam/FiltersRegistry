@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: UjyuFl9E4xIMZIU8am9KBw
-! Diff-Path: ../patches/13/13-s-1754046655-3600.patch
+! Checksum: LjmjQytEZ1O7WTlY1el0Yg
+! Diff-Path: ../patches/13/13-s-1754054552-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.43
-! TimeUpdated: 2025-08-01T11:07:10+00:00
+! Version: 2.0.58.44
+! TimeUpdated: 2025-08-01T13:18:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1493,6 +1493,8 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+arenasportshd.com##.bahis-siteleri
+arenasportshd.com##div[class*="banner"]
 selcukflix.com##.poster > .flex-col.gap-4.items-center
 htspor.com##.overflow-hidden.relative.w-full:has(div[id^="masthead-banner-"])
 *$script,denyallow=golgebahcesi.com|cdnjs.cloudflare.com|cdn.jsdelivr.net,domain=golgebahcesi.com
@@ -5457,6 +5459,10 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+!
+! macizlevip*.shop - frequently changed domains
+||macizlevip*.shop//wp-content/uploads/*.gif
+[$domain=/macizlevip\d+\.shop/]##+js(set-constant, config.advertisement.enabled, false)
 !
 ! canlimacizle-hd*.com - frequently changed domains
 ||canlimacizle-hd*.com/wp-content/uploads/*.gif
