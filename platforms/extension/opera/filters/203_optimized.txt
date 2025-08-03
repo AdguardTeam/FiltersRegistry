@@ -1,9 +1,9 @@
-! Checksum: CUJOuT6PjrTIVZ6XrvP6Sw
-! Diff-Path: ../patches/203_optimized/203_optimized-s-1753937372-14400.patch
+! Checksum: RlQmBhY/5rvQfdqqkG1DQg
+! Diff-Path: ../patches/203_optimized/203_optimized-s-1754225369-14400.patch
 ! Title: Hungarian filter (Optimized)
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.17
-! TimeUpdated: 2025-07-31T04:45:07+00:00
+! Version: 2.0.4.18
+! TimeUpdated: 2025-08-03T12:45:15+00:00
 ! Expires: 10 days (update frequency)
 ##.ad__main
 ##.adblokk
@@ -1941,8 +1941,7 @@ myonlineradio.hu#%#//scriptlet('set-constant', 'ENABLE_PAGE_LEVEL_ADS', 'true')
 $cookie=adblock,domain=myonlineradio.hu
 pcworld.hu#%#//scriptlet('remove-class', 'have-ad', 'body')
 port.hu#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'window.ado.blocked')
-online-filmek.ac#%#//scriptlet('prevent-fetch', '.js')
-online-filmek.ac#%#//scriptlet('prevent-fetch', 'mode:cors')
+online-filmek.ac,online-filmek.me#%#//scriptlet("abort-current-inline-script", "fetch", "'mode'")
 rubyvidhub.com#%#//scriptlet('remove-node-text', 'script', 'undefined')
 karpathir.com##[class^="k"][class*="-container"][class*="-2"][class$="-hide"]
 ||galaxypush.com/css/styles.min.css^$redirect=noopcss,domain=online-filmek.ac|online-filmek.me,important

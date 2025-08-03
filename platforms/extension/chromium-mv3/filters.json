@@ -905,8 +905,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.74.30",
-			"timeUpdated": "2025-08-01T08:41:41+0000",
+			"version": "2.1.74.31",
+			"timeUpdated": "2025-08-03T12:45:02+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -980,8 +980,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.74.29",
-			"timeUpdated": "2025-08-01T08:41:42+0000",
+			"version": "2.1.74.30",
+			"timeUpdated": "2025-08-03T12:45:02+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1005,8 +1005,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.25.75",
-			"timeUpdated": "2025-07-31T08:42:11+0000",
+			"version": "2.0.25.76",
+			"timeUpdated": "2025-08-03T12:45:07+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1053,8 +1053,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/hufilter/hufilter@gh-pages/hufilter-adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.4.17",
-			"timeUpdated": "2025-07-31T04:45:07+0000",
+			"version": "2.0.4.18",
+			"timeUpdated": "2025-08-03T12:45:15+0000",
 			"deprecated": false,
 			"languages": [
 				"hu"
@@ -1078,8 +1078,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.3.1",
-			"timeUpdated": "2025-08-01T00:50:59+0000",
+			"version": "2.1.3.2",
+			"timeUpdated": "2025-08-03T12:45:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1099,8 +1099,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.37.99",
-			"timeUpdated": "2025-08-01T08:41:57+0000",
+			"version": "2.0.38.0",
+			"timeUpdated": "2025-08-03T12:45:19+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1242,8 +1242,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.11.79",
-			"timeUpdated": "2025-07-31T16:41:53+0000",
+			"version": "2.0.11.80",
+			"timeUpdated": "2025-08-03T12:45:31+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1318,8 +1318,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.22.32",
-			"timeUpdated": "2025-07-31T04:45:32+0000",
+			"version": "2.0.22.33",
+			"timeUpdated": "2025-08-03T12:45:37+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1402,8 +1402,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.67.61",
-			"timeUpdated": "2025-08-01T08:42:29+0000",
+			"version": "2.0.67.62",
+			"timeUpdated": "2025-08-03T12:45:48+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1450,8 +1450,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.9.40",
-			"timeUpdated": "2025-08-01T00:51:33+0000",
+			"version": "2.0.9.41",
+			"timeUpdated": "2025-08-03T12:45:51+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1470,8 +1470,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.4.84",
-			"timeUpdated": "2025-08-01T08:42:33+0000",
+			"version": "2.0.4.85",
+			"timeUpdated": "2025-08-03T12:45:51+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
