@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.0.84",
-			"timeUpdated": "2025-08-03T06:09:08+0000",
+			"version": "2.4.0.85",
+			"timeUpdated": "2025-08-03T07:07:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
