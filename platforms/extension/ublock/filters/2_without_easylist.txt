@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: YhfwX0pC7Jx11vtFkhsoBg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1754309790-3600.patch
+! Checksum: NdODE50FjYoeQ7Eb9TIuSA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1754313887-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.1.14
-! TimeUpdated: 2025-08-04T12:11:49+00:00
+! Version: 2.4.1.15
+! TimeUpdated: 2025-08-04T13:20:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10179,10 +10179,10 @@ embed.wcostream.com#@#.ad-unit:not(.textads)
 ! https://www.reddit.com/r/Piracy/comments/1lieoqd/how_to_bypass_these_adblocker_blockers/
 app.fileszero.com,viralharami.com,wstream.cloud##+js(abort-current-script, document.addEventListener, destroyContent)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209552
-olamovies.cam##+js(set-constant, adsbygoogle, {})
-olamovies.cam##+js(no-setTimeout-if, window['getComputedStyle'])
-olamovies.cam##+js(no-xhr-if, pagead2.googlesyndication.com)
-olamovies.cam#$#div.Ad-Container[id^="adblock-bait-element-"] { display: block !important; }
+olamovies.*##+js(set-constant, adsbygoogle, {})
+olamovies.*##+js(no-setTimeout-if, window['getComputedStyle'])
+olamovies.*##+js(no-xhr-if, pagead2.googlesyndication.com)
+olamovies.*#$#div.Ad-Container[id^="adblock-bait-element-"] { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209773
 easyocrconverter.com##+js(no-fetch-if, www3.doubleclick.net)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209681
@@ -21018,6 +21018,7 @@ mako.co.il##+js(set-constant, isBs, false)
 !
 ! NOTE: Hindi
 !
+sportswordz.com,raftarsamachar.in##div[class^="pro_ad"]
 ap7am.com##.pr-pvt
 ap7am.com##.pr-2
 ap7am.com##.pr-1
@@ -31563,7 +31564,8 @@ hentaiworld.tv##+js(window.open-defuser, hyenadata)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135825
 trailerhg.xyz,turboplayers.xyz,javggvideo.xyz,turtleviplay.xyz,findjav.com,stbturbo.xyz,emturbovid.com##+js(no-setTimeout-if, window.open)
 trailerhg.xyz,turboplayers.xyz,javggvideo.xyz,turtleviplay.xyz,findjav.com,stbturbo.xyz,emturbovid.com##+js(set-constant, premium, undefined)
-! https://github.com/AdguardTeam/AdguardFilters/issues/135902
+! TODO: remove hints when this issue is resolved - https://github.com/AdguardTeam/Scriptlets/issues/517
+!+ NOT_PLATFORM(windows, mac, android)
 mega4upload.com##+js(remove-attr, onclick, #direct_link > a[onclick])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135953
 igg-games.com##+js(set-constant, advanced_ads_ready, noopFunc)
