@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.1.13",
-			"timeUpdated": "2025-08-04T11:07:31+0000",
+			"version": "2.4.1.14",
+			"timeUpdated": "2025-08-04T12:11:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.89.2",
-			"timeUpdated": "2025-08-04T11:07:39+0000",
+			"version": "2.0.89.3",
+			"timeUpdated": "2025-08-04T12:11:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.46",
-			"timeUpdated": "2025-08-04T07:14:05+0000",
+			"version": "2.0.58.47",
+			"timeUpdated": "2025-08-04T12:12:14+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -650,8 +650,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.11.55",
-			"timeUpdated": "2025-08-04T11:08:08+0000",
+			"version": "2.0.11.56",
+			"timeUpdated": "2025-08-04T12:12:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.10",
-			"timeUpdated": "2025-08-04T11:08:08+0000",
+			"version": "2.0.67.11",
+			"timeUpdated": "2025-08-04T12:12:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1192,8 +1192,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.41.45",
-			"timeUpdated": "2025-08-04T11:08:15+0000",
+			"version": "2.1.41.46",
+			"timeUpdated": "2025-08-04T12:12:35+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
