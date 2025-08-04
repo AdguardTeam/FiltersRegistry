@@ -1,9 +1,9 @@
-! Checksum: SCJTLaLHzcsC5pW/1tNMqA
-! Diff-Path: ../patches/14/14-s-1754313874-3600.patch
+! Checksum: wW2BTosUblBFm/J5lcT2bA
+! Diff-Path: ../patches/14/14-s-1754316810-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.38.38
-! TimeUpdated: 2025-08-04T13:20:48+00:00
+! Version: 2.2.38.39
+! TimeUpdated: 2025-08-04T14:09:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4448,7 +4448,8 @@ gglot.com###tsu-cookie-consent-popup
 voguescandinavia.com##div[class^="cookieNotification_"]
 thoughtco.com#$#body #onetrust-consent-sdk { display: none !important; }
 thoughtco.com#$#html:has(>body>div#onetrust-consent-sdk.show-banner) { overflow-y: auto !important; }
-figma.com##div[aria-label="Cookie Consent"]
+figma.com##div[role="alertdialog"][aria-label*="ookie"]
+figma.com##div[aria-label="쿠키 사용 동의"]
 zenmarket.jp###gdpr-terms-warning
 kuper.ru##div[class^="CookiesConcent_root"]
 fsbot.xyz#$##askcookie { display: none !important; }
@@ -46742,6 +46743,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+homes.co.jp##aside[aria-label="LIFULL HOME'S 無料アプリでもっと便利に"]
 clickpetroleoegas.com.br##.cursor-pointer.rounded-full:has(> a[href="https://clickpetroleoegas.com.br/aplicativo"])
 m.aiscore.com###appLink
 idaprikol.ru###App > div:has(> div:empty + div a[href^="https://idp.onelink.me/"])
