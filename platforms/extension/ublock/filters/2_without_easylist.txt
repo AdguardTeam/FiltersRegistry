@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: dl7pVUNmrAOum7NlJCLQ/Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1754295240-3600.patch
+! Checksum: SMapGHf8YHxskrwU3Lbi+g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1754298989-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.1.10
-! TimeUpdated: 2025-08-04T08:09:48+00:00
+! Version: 2.4.1.11
+! TimeUpdated: 2025-08-04T09:12:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10092,6 +10092,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/210548
+!+ NOT_PLATFORM(windows, mac, android)
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,domain=urlgd.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210493
 gaystream.pro##+js(set-constant, PlayerConfig.trusted, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210113
@@ -13919,7 +13922,8 @@ wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com##+js(set-constant, isAdBlockActive, false)
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com##+js(abort-current-script, EventTarget.prototype.addEventListener, window.location.replace("/inc/embed/embed.html"))
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com##+js(remove-node-text, script, window.location.replace("/inc/embed/embed.html"))
-@@||platform.pubadx.one/pubadx-ad.js$domain=embed.wcostream.com
+||platform.pubadx.one/pubadx-ad.js$script,redirect=noop.js,domain=embed.wcostream.com
+@@||embed.wcostream.com/inc/embed/*.js$domain=embed.wcostream.com
 @@/inc/embed/*ads.js$domain=wcostream.org|watchanimesub.net|wco.tv|wcostream.net|wcostream.com|wcoforever.tv
 @@/inc/embed/suv4.js$domain=wcostream.org|watchanimesub.net|wco.tv|wcostream.net|wcostream.com|wcoforever.tv
 @@||embed.watchanimesub.net/inc/embed/kampyle.js
@@ -31425,7 +31429,7 @@ wsj.com,edition.cnn.com##+js(set-constant, apstag, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/142480
 ! https://github.com/AdguardTeam/AdguardFilters/issues/142387
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138817
-ok.co.uk,dailystar.co.uk,manchestereveningnews.co.uk,dailypost.co.uk,dailyrecord.co.uk,oxfordshirelive.co.uk,liverpoolecho.co.uk,bristolpost.co.uk,nottinghampost.com,aberdeenlive.news,edinburghlive.co.uk,bedfordshirelive.co.uk,glasgowlive.co.uk,mirror.co.uk##+js(set-constant, chameleonVideo.adDisabledRequested, true)
+corkbeo.ie,ok.co.uk,dailystar.co.uk,manchestereveningnews.co.uk,dailypost.co.uk,dailyrecord.co.uk,oxfordshirelive.co.uk,liverpoolecho.co.uk,bristolpost.co.uk,nottinghampost.com,aberdeenlive.news,edinburghlive.co.uk,bedfordshirelive.co.uk,glasgowlive.co.uk,mirror.co.uk##+js(set-constant, chameleonVideo.adDisabledRequested, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138802
 eticket.gsc.com.my##+js(set-constant, googletag, {})
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139049
@@ -41115,7 +41119,7 @@ videosection.com##.shadow .player__video-wrapper::before
 jav.land,picyield.com###clck_ntv
 anycodes.com##.sls_pop
 minecraftforum.net###nav-free-minecraft-server-hosting
-nottinghampost.com,birminghammail.co.uk,football.london##.topbox-cls-placeholder
+corkbeo.ie,nottinghampost.com,birminghammail.co.uk,football.london##.topbox-cls-placeholder
 siasat.com###text-html-widget-188
 daftsex.net##.videos > div:not([id])
 sexodi.com###video_reklamy
