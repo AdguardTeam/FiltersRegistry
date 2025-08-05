@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { compile } from '@adguard/filters-compiler';
-
 import customPlatformsConfig from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import {
@@ -10,8 +9,8 @@ import {
     FOLDER_WITH_OLD_FILTERS,
 } from './constants.js';
 
-const filename = fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Parse command-cli parameters -i|--include and -s|--skip
@@ -46,16 +45,16 @@ args.forEach((val) => {
 /**
  * Set all relative paths needed for compiler
  */
-const filtersDir = path.join(dirname, '../../filters');
-const logPath = path.join(dirname, '../../log.txt');
-const platformsPath = path.join(dirname, '../..', FOLDER_WITH_NEW_FILTERS);
-const copyPlatformsPath = path.join(dirname, '../..', FOLDER_WITH_OLD_FILTERS);
+const filtersDir = path.join(__dirname, '../../filters');
+const logPath = path.join(__dirname, '../../log.txt');
+const platformsPath = path.join(__dirname, '../..', FOLDER_WITH_NEW_FILTERS);
+const copyPlatformsPath = path.join(__dirname, '../..', FOLDER_WITH_OLD_FILTERS);
 
 const reportPath = rawReportPath !== ''
     // report-adguard.txt OR report-third-party.txt
-    ? path.join(dirname, '../..', rawReportPath)
+    ? path.join(__dirname, '../..', rawReportPath)
     // report_partial_DD-MM-YYYY_HH-MM-SS.txt
-    : path.join(dirname, '../..', `report_partial_${formatDate(new Date())}.txt`);
+    : path.join(__dirname, '../..', `report_partial_${formatDate(new Date())}.txt`);
 
 /**
  * Compiler entry point.

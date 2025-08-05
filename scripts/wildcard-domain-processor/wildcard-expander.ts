@@ -10,13 +10,9 @@ import {
     NetworkRule,
     RuleCategory,
 } from '@adguard/agtree';
-
 import { PIPE_MODIFIER_SEPARATOR, NEGATION_MARKER } from '@adguard/agtree/utils';
-
 import { FilterListGenerator, RuleGenerator } from '@adguard/agtree/generator';
-
-import { FilterListParser, DomainListParser } from '@adguard/agtree/parser';
-
+import { FilterListParser, DomainListParser, defaultParserOptions } from '@adguard/agtree/parser';
 import { findFilterFiles, readFile, writeFile } from './file-utils.js';
 import { type AliveWildcardDomains } from './wildcard-domains-updater.js';
 import { DOMAIN_MODIFIERS } from './domain-extractor.js';
@@ -60,7 +56,12 @@ function expandWildcardsInNetworkRules(
 
         let domainList;
         try {
-            domainList = DomainListParser.parse(modifier.value.value, {}, modifier.start, PIPE_MODIFIER_SEPARATOR);
+            domainList = DomainListParser.parse(
+                modifier.value.value,
+                defaultParserOptions,
+                modifier.start,
+                PIPE_MODIFIER_SEPARATOR,
+            );
         } catch (e) {
             // eslint-disable-next-line no-console
             console.log(`Can not parse domains in the rule: ${ast.raws?.text}, because of error ${e}`);

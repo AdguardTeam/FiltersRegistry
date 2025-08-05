@@ -6,8 +6,9 @@ import {
     RuleParser,
     type CosmeticRule,
     type NetworkRule,
+    NetworkRuleType,
 } from '@adguard/agtree';
-
+import { defaultParserOptions } from '@adguard/agtree/parser';
 import { PIPE_MODIFIER_SEPARATOR } from '@adguard/agtree/utils';
 import { utils } from './utils.js';
 
@@ -30,7 +31,12 @@ export function extractModifierDomains(modifier: Modifier): {
         return [];
     }
 
-    const domains = DomainListParser.parse(modifier.value.value, {}, modifier.start, PIPE_MODIFIER_SEPARATOR);
+    const domains = DomainListParser.parse(
+        modifier.value.value,
+        defaultParserOptions,
+        modifier.start,
+        PIPE_MODIFIER_SEPARATOR,
+    );
     return domains.children.map((domain) => {
         return {
             domain: domain.value,
@@ -95,7 +101,7 @@ function extractNetworkRuleDomains(ast: NetworkRule): string[] {
 export function extractRuleDomains(ast: AnyRule): string[] {
     switch (ast.category) {
         case RuleCategory.Network:
-            if ('pattern' in ast && 'exception' in ast) {
+            if (ast.type === NetworkRuleType.NetworkRule) {
                 return extractNetworkRuleDomains(ast);
             }
             return [];

@@ -2,8 +2,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { validateLocales } from '@adguard/filters-compiler';
 
-const filename = fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const LOCALES_DIR_PATH = '../../locales';
 
@@ -25,7 +25,7 @@ const REQUIRED_LOCALES = [
     'pt_PT',
 ];
 
-const localesDirPath = path.join(dirname, LOCALES_DIR_PATH);
+const localesDirPath = path.join(__dirname, LOCALES_DIR_PATH);
 const localesValidation = validateLocales(localesDirPath, REQUIRED_LOCALES);
 
 if (!localesValidation.ok) {

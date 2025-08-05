@@ -3,7 +3,6 @@
 import fs from 'fs';
 import path from 'path';
 import { DiffBuilder } from '@adguard/diff-builder';
-
 import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,

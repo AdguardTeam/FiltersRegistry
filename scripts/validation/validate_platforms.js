@@ -6,8 +6,8 @@ import { PATCH_EXTENSION } from '@adguard/diff-builder';
 
 import { FOLDER_WITH_NEW_FILTERS } from '../build/constants.js';
 
-const filename = fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const FILTERS_REQUIRED_AMOUNT = 80;
 
@@ -18,7 +18,7 @@ if (!platforms) {
     platforms = '../../platforms';
 }
 
-const platformsPath = path.join(dirname, platforms);
+const platformsPath = path.join(__dirname, platforms);
 
 const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
 if (!validationResult) {

@@ -2,7 +2,6 @@
 import { Command } from 'commander';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 import { updateWildcardDomains } from './wildcard-domains-updater.js';
 import { expandWildcardDomains } from './wildcard-expander.js';
 
@@ -34,8 +33,10 @@ program
         }
     });
 
+const __filename = fileURLToPath(import.meta.url);
+
 // Only run the command-line interface if the script is executed directly
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+if (process.argv[1] === __filename) {
     program.parse(process.argv);
 }
 

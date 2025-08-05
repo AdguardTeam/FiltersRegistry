@@ -12,17 +12,17 @@
         "lint:types": "tsc --noEmit --project tsconfig.json",
         "lint:md": "markdownlint **/*.md",
         "test": "vitest run",
-        "build": "node -r @swc-node/register scripts/build/build.js",
+        "build": "tsx scripts/build/build.js",
         "build:patches": "node scripts/build/patches.js",
         "validate": "yarn validate:platforms && yarn validate:locales",
-        "validate:platforms": "node -r @swc-node/register scripts/validation/validate_platforms.js",
-        "validate:locales": "node -r @swc-node/register scripts/validation/validate_locales.js",
+        "validate:platforms": "tsx scripts/validation/validate_platforms.js",
+        "validate:locales": "tsx scripts/validation/validate_locales.js",
         "update-wildcard-domains": "tsx scripts/wildcard-domain-processor update-wildcard-domains",
         "expand-wildcard-domains": "tsx scripts/wildcard-domain-processor expand-wildcard-domains",
-        "compress": "node scripts/repository/compress.js"
+        "compress": "tsx scripts/repository/compress.js"
     },
     "engines": {
-        "node": ">=22"
+        "node": ">=20"
     },
     "dependencies": {
         "@adguard/agtree": "^3.2.2",
@@ -34,8 +34,6 @@
         "zod": "3"
     },
     "devDependencies": {
-        "@swc-node/register": "^1.10.0",
-        "@swc/core": "^1.6.5",
         "@types/crypto-js": "^4.2.2",
         "@types/node": "^20.14.9",
         "@typescript-eslint/eslint-plugin": "^7.14.1",
