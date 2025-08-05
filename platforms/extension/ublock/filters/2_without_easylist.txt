@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 2U3HwsW+ywHsDBNXqb1v8Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1754381618-3600.patch
+! Checksum: NOHjtUp8eol5I72PtfvG+w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1754385299-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.1.34
-! TimeUpdated: 2025-08-05T08:09:25+00:00
+! Version: 2.4.1.35
+! TimeUpdated: 2025-08-05T09:10:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10163,6 +10163,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/210747
+toweroffantasy.info##+js(set-constant, nitroAds.abp, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210730
 readallcomics.com##.jconfirm-box-container:has(.jconfirm-buttons > .btn-blue.refresh)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210548
@@ -19213,7 +19215,6 @@ mob.hr##.side_banner
 idnes.cz##.r-head
 idnes.cz##.r-head + div.r-body
 heureka.cz##div[class^="c-premium-gam"]
-@@||titulky.com/exitpop.js
 @@||vlm-ads.aimatch.com/vlm/jserver/$domain=titulky.com
 titulky.com#$##head > div[style^="margin: auto; width: "] { max-height: 20px !important; }
 titulky.com##a[href="/internetova-reklama/"]
@@ -19268,9 +19269,13 @@ zdopravy.cz##body .otherAds
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204872
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203518
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194647
+titulky.com##.bnx
+||titulky.com/myban/
+||titulky.com/mybanal/ads-section.js
 titulky.com##+js(set-constant, noadb, 1)
 titulky.com##+js(set-constant, showFairUser, true)
 @@||titulky.com/ads/*.js$domain=titulky.com
+@@||titulky.com/exitpop*.js$domain=titulky.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194536
 info.cz##.i-ads-wrap
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194095

@@ -1,9 +1,9 @@
-! Checksum: I4JNI/1hPJ6O77WraXe/iQ
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1754381621-3600.patch
+! Checksum: 9NCLNMqi4APm4yLq/GNvIA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1754385303-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.1.34
-! TimeUpdated: 2025-08-05T08:09:25+00:00
+! Version: 2.4.1.35
+! TimeUpdated: 2025-08-05T09:10:46+00:00
 ! Expires: 5 days (update frequency)
 ||flustered-beer.com^
 ||carbonads.com^$third-party
@@ -2455,6 +2455,7 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 #@#.ads_banner
 ##.stickyads:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"], [data-freestar-ad="123"]):not(:empty)
 ##.ads_banner:not([style^="width: 32px"], [style^="width: 33px"], [style*="left: -43px"], [style*="-3"][style*="important"][style*="display: block;"], [style*="position: fixed"][style*="-188"], [style*="!important;"][style*="width:"][style*="height:"][style*="position"][style*="left:"][style*="top:"][style*="display"]):not(:empty)
+toweroffantasy.info#%#//scriptlet('set-constant', 'nitroAds.abp', 'true')
 readallcomics.com##.jconfirm-box-container:has(.jconfirm-buttons > .btn-blue.refresh)
 readallcomics.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 urlgd.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
@@ -7813,9 +7814,14 @@ extra.cz##[data-advert-container]
 pravda.sk##.perex-adblock-warning
 zdopravy.cz###container-ads
 zdopravy.cz##body .otherAds
-titulky.com#%#//scriptlet('trusted-replace-node-text', 'script', 'noadbl', '/let( +)noadbl( *)=( *)0( *);/', 'let noadbl=1;')
+titulky.com##.bnx
+||titulky.com/myban/
+||titulky.com/mybanal/ads-section.js
+titulky.com#%#//scriptlet('trusted-replace-node-text', 'script', 'noadbl', '/let( +)noadbl( *)=( *)(0|1)( *)\*?( *)(false( *))?;/', 'let noadbl=1;')
+titulky.com#%#//scriptlet('trusted-replace-node-text', 'script', '$.get', ':noadbl', ':1')
 titulky.com#%#//scriptlet('set-constant', 'noadb', '1')
 titulky.com#%#//scriptlet('set-constant', 'showFairUser', 'true')
+@@||titulky.com/exitpop*.js$domain=titulky.com
 !+ PLATFORM(ios, ext_android_cb)
 @@||titulky.com/ads/titulky-ads-banner.js$domain=titulky.com
 serialyzadara.cz#%#//scriptlet('remove-attr', 'href', 'a[href][id^="clickfakeplayer"]')
@@ -31880,6 +31886,7 @@ browsershots.org#@#.advert_area
 ||babyboomboomads.com^
 ||babyish-uncle.pro^
 ||babyniceshark.com^
+||babzbvhowzvfa.site^
 ||bacaobrember.rest^
 ||baccarat212.com^
 ||bacchuscobweb.help^
@@ -33492,6 +33499,7 @@ browsershots.org#@#.advert_area
 ||cipledecline.buzz^
 ||cipohailed.shop^
 ||ciqvaiywqpkpk.club^
+||circledincisal.shop^
 ||circlejavgg124.fun^
 ||circutoilcups.help^
 ||circutscirl.shop^
@@ -34259,6 +34267,7 @@ browsershots.org#@#.advert_area
 ||cynebotbehap.shop^
 ||cynicinition.digital^
 ||cypdftjnywwium.com^
+||cypqiwuoqpbnbs.com^
 ||cypreopenly.click^
 ||cysegreglo.pro^
 ||cyuvgnlcvsha.com^
@@ -35497,6 +35506,7 @@ browsershots.org#@#.advert_area
 ||eoqkqoxkerwcc.com^
 ||eoqwhtabgqphfn.com^
 ||eoredi.com^
+||eosinicgabbros.help^
 ||eotaioa.xyz^
 ||eoweridus.com^
 ||epaulebeardie.com^
@@ -36920,6 +36930,7 @@ browsershots.org#@#.advert_area
 ||goodandsoundcontent.com^
 ||goodcaesarjonas.com^
 ||goodnesstamper.com^
+||goodnightpawnmossy.com^
 ||googleapi.club^
 ||googletagservices.com^
 ||googulcopihue.world^
@@ -39371,6 +39382,7 @@ browsershots.org#@#.advert_area
 ||leezeept.com^
 ||leftishyellows.help^
 ||legalsofafalter.com^
+||legendpuppily.life^
 ||legerikath.com^
 ||legersplaints.world^
 ||legginjowly.help^
@@ -39633,6 +39645,7 @@ browsershots.org#@#.advert_area
 ||localedgemedia.com^
 ||localglobaldates.com^
 ||localsnaughty.com^
+||lochytqmcl.com^
 ||lockdownoncomingdistinctly.com^
 ||locked-link.com^
 ||lockerdomecdn.com^
@@ -39706,6 +39719,7 @@ browsershots.org#@#.advert_area
 ||louderpregnantshabby.com^
 ||loudgeason.click^
 ||loulouly.net^
+||loululant.cfd^
 ||loungyserger.com^
 ||lourdoueisienne.website^
 ||louroroabee.com^
@@ -39776,6 +39790,7 @@ browsershots.org#@#.advert_area
 ||luciuspushedsensible.com^
 ||luckackaftout.net^
 ||luckenmutated.life^
+||luckilydetest.com^
 ||luckilygelatine.com^
 ||luckyads.pro^
 ||luckybasket.pro^
@@ -41527,6 +41542,7 @@ browsershots.org#@#.advert_area
 ||olgeckbicrdms.com^
 ||olgtqmiuicc.com^
 ||olivedinflats.space^
+||oliviashared.cfd^
 ||ollnlqyvkaka.top^
 ||ologysabot.help^
 ||olopruy.com^
@@ -42525,6 +42541,7 @@ browsershots.org#@#.advert_area
 ||plowerswamped.world^
 ||plowh.com^
 ||plqbxvnjxq92.com^
+||plqkvjblzoszn.space^
 ||plrixeqx.com^
 ||plrjs.org^
 ||pltamaxr.com^
@@ -44532,6 +44549,7 @@ browsershots.org#@#.advert_area
 ||schoolhangoverearlier.com^
 ||schoschwa.qpon^
 ||schutecahnite.qpon^
+||sciathsurma.cfd^
 ||scientific-doubt.com^
 ||scijvseki.com^
 ||scissorlymph.world^
@@ -45457,6 +45475,7 @@ browsershots.org#@#.advert_area
 ||stanjenhaji.qpon^
 ||stankyrich.com^
 ||staplesquisler.shop^
+||stapplegreylag.cfd^
 ||star-clicks.com^
 ||starchy-choice.pro^
 ||stardomcoit.com^
@@ -45803,6 +45822,7 @@ browsershots.org#@#.advert_area
 ||sympathizecrewfrugality.com^
 ||synaxarhavior.help^
 ||synaxesbouffe.world^
+||syncedquarle.rest^
 ||syndenizen.shop^
 ||syndicatedsearch.goog^
 ||synoecycuraris.cyou^
