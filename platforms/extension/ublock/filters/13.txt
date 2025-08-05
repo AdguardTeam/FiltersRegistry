@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wsqwL48k3oe7RQ2k6Kbiew
-! Diff-Path: ../patches/13/13-s-1754374537-3600.patch
+! Checksum: vz1oa6MmF4eREHGQeFTtsA
+! Diff-Path: ../patches/13/13-s-1754381615-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.50
-! TimeUpdated: 2025-08-05T06:11:38+00:00
+! Version: 2.0.58.51
+! TimeUpdated: 2025-08-05T08:09:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5450,6 +5450,14 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+!
+! goley90canlitv*.site - frequently changed domains
+||goley90canlitv*.site/wp-content/uploads/*.gif
+[$domain=/goley90canlitv\d+\.site/]##.pageskin
+[$domain=/goley90canlitv\d+\.site/]##header > a[href^="https://goley90canlitv"][href$=".site/"] + ul
+[$domain=/goley90canlitv\d+\.site/]##.footer-links
+[$domain=/goley90canlitv\d+\.site/]##.watermark
+[$domain=/goley90canlitv\d+\.site/]##+js(set-constant, window.advertisement.states.activate, false)
 !
 ! macizlevip*.shop - frequently changed domains
 ||macizlevip*.shop//wp-content/uploads/*.gif
