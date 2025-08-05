@@ -1,9 +1,9 @@
-! Checksum: qRVp6SK+P9jGSfXj/sKtBw
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1754355145-14400.patch
+! Checksum: f7LYXbMNqL+wJ6zCL8nKlQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1754369482-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.74.37
-! TimeUpdated: 2025-08-05T00:47:35+00:00
+! Version: 2.1.74.38
+! TimeUpdated: 2025-08-05T04:45:56+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -426,6 +426,7 @@ _board_ad.
 _display_ad_
 _domain=ads.
 _event_pub.
+_flash_ad_
 _id=*&nads=
 _iframe728x90.
 _isab.
@@ -719,7 +720,6 @@ _build=iclick-$popup
 ||plurielmediacenter.com^$third-party
 ||popupmaker.com^$third-party
 ||pornme.pm^$third-party
-||pubinteractive.ca^$third-party
 ||publy.net^$third-party
 ||pubstack.io^$third-party
 ||purlive.com^$~image,third-party
@@ -826,7 +826,6 @@ _build=iclick-$popup
 ||actianmachogo.top^
 ||actiondenepeninsula.com^
 ||actionrtb.com^
-||adaptationfirework.com^
 ||adaptationwrite.com^
 ||adeclc.com^
 ||adepticily.com^
@@ -1548,6 +1547,7 @@ _build=iclick-$popup
 ||soleynekelchyn.shop^
 ||solipedvagas.com^
 ||sparelli.com^
+||specificationfingertip.com^
 ||splendlddate.com^
 ||srdymhfopxz.com^
 ||starsx.fr^
@@ -1610,7 +1610,6 @@ _build=iclick-$popup
 ||vendedshoaled.shop^
 ||veritabledate.com^
 ||videoadex.com^
-||videocdnmetrika31.com^
 ||vidox.net^
 ||viiadr.com^
 ||viipura.com^
@@ -1791,6 +1790,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||api.gamerprices.com/compare/$third-party
 ||apycdn.com^*/banner/
 ||arc.io/widget$third-party
+||assurland.com/widgets/$third-party
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$third-party
 ||awin1.com/awclick.php?
@@ -2467,6 +2467,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###partner-ads
 ###partner-ads2
 ###pavePub
+###pavepub
 ###pie_pub_google
 ###player-option-fake
 ###playerPub
@@ -2566,7 +2567,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###sponsored-container
 ###sponsoredProducts
 ###stickyDFP
-###stop_ad
 ###tab-ad
 ###ticker_ad
 ###top_pub
@@ -2601,7 +2601,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.block-gc-ad
 ##.block-pub
 ##.block_pub
-##.blockgrayad
 ##.blocpub
 ##.bottom-advertising
 ##.bottompub
@@ -3041,6 +3040,7 @@ statistiks.fr##.adz
 permaculteurs.com##.aff
 leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
+madagascar-tribune.com##.annonce
 centre-presse.fr,lamontagne.fr,larep.fr,le-pays.fr,leberry.fr,lechorepublicain.fr,lejdc.fr,lepopulaire.fr,lyonne.fr##.annonce_prompteur
 autojournal.fr,autoplus.fr##.annonces-container
 autojournal.fr,autoplus.fr##.annonces-container-sidebar
@@ -3317,7 +3317,6 @@ lesnumeriques.com##a[href^="/publicite/"]
 edcom.fr##a[href^="/regie"]
 skitour.fr##a[href^="divers/a/out.php?"]
 lefigaro.fr##a[href^="http://www.ticketac.com/?utm_source="]
-hentaifr.net##a[href^="https://ahegao.fr"]
 hentaifr.net##a[href^="https://drmanga.net"]
 condor.dz##a[href^="https://e-faciliti.dz/"]
 appsystem.fr##a[href^="https://shop.appsystem.fr/"] > img
@@ -3421,6 +3420,7 @@ cdiscount.com#?#li[data-sku]:-abp-has(.c-sponsoredMentions)
 delhaize.be#?#.product-item:-abp-contains(Sponsorisé)
 distrowatch.com#?#.News1:-abp-has(td:-abp-contains(Sponsored))
 igen.fr,macg.co,watchgeneration.fr#?#article:-abp-has(h2:-abp-contains(/📣|📌/))
+jeuxvideo.com#?#.anchorMiddleOne:-abp-has(.badge:-abp-contains(Sponsorisé))
 jeuxvideo.com#?#.card:-abp-has(.badge:-abp-contains(Sponsorisé))
 latribune.fr#?#.article-wrapper:-abp-has(.subheading:-abp-contains(Partenaire))
 latribune.fr#?#.homepage-section.supplement-section:-abp-has(span:-abp-contains(Partenaires))
@@ -3443,6 +3443,7 @@ zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|Publicité/))
 @@|blob:$popup,domain=caf.fr|cerise-prim.fr|particulier.edf.fr
 @@||aluson-eclairage.fr^*-120x60-$image,~third-party
 @@||francesurfinfo.com/affiliation/
+@@||gpsfront.aliexpress.com/queryGpsProductAjax.do?*&imageSize=$script,~third-party
 @@||koifaire.com/upload/*/300x250-$image,~third-party
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,third-party,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,third-party
