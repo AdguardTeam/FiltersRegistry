@@ -96,7 +96,7 @@ export function extractRuleDomains(ast: AnyRule): string[] {
     switch (ast.category) {
         case RuleCategory.Network:
             if ('pattern' in ast && 'exception' in ast) {
-                return extractNetworkRuleDomains(ast as NetworkRule);
+                return extractNetworkRuleDomains(ast);
             }
             return [];
         case RuleCategory.Cosmetic:
