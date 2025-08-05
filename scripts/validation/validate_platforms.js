@@ -1,4 +1,3 @@
-// Import built-in and external modules using ES module syntax
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';

@@ -1,10 +1,8 @@
-// Import built-in and external modules using ES module syntax
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { compile } from '@adguard/filters-compiler';
 
-// Import local modules
 import customPlatformsConfig from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import {

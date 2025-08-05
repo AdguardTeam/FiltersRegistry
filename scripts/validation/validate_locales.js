@@ -1,4 +1,3 @@
-// Import built-in and external modules using ES module syntax
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { validateLocales } from '@adguard/filters-compiler';

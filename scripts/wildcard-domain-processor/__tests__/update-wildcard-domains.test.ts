@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { getDomains } from '../domain-extractor.js';
 
 describe('getDomains', () => {

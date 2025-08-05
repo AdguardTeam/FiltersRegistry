@@ -11,7 +11,7 @@ import {
     RuleCategory,
 } from '@adguard/agtree';
 
-import { PIPE_MODIFIER_SEPARATOR } from '@adguard/agtree/utils';
+import { PIPE_MODIFIER_SEPARATOR, NEGATION_MARKER } from '@adguard/agtree/utils';
 
 import { FilterListGenerator, RuleGenerator } from '@adguard/agtree/generator';
 
@@ -22,6 +22,8 @@ import { type AliveWildcardDomains } from './wildcard-domains-updater.js';
 import { DOMAIN_MODIFIERS } from './domain-extractor.js';
 import { utils } from './utils.js';
 import { updateContentChecksum } from '../checksum/index.js';
+
+const EMPTY = '';
 
 const EMPTY_RULE: EmptyRule = {
     syntax: AdblockSyntax.Adg,
@@ -119,11 +121,11 @@ function expandWildcardsInNetworkRules(
         };
 
         domainList.children = newDomains;
-        if (!domainList?.raw) {
-            return EMPTY_RULE;
-        }
-        newDomainsModifier.value!.value = domainList.raw;
 
+        newDomainsModifier.value!.value = domainList.children
+            .map((item) => `${item.exception ? NEGATION_MARKER : EMPTY}${item.value}`)
+            .join(PIPE_MODIFIER_SEPARATOR);
+            
         newModifiers.push(newDomainsModifier);
     }
 
