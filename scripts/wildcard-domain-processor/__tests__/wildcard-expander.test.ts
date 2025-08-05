@@ -1,9 +1,9 @@
 import path from 'path';
 
-import { RuleParser } from '@adguard/agtree';
-import { expandWildcardDomainsInFilter, expandWildcardsInAst } from '../wildcard-expander';
-import { type AliveWildcardDomains } from '../wildcard-domains-updater';
-import { readFile } from '../file-utils';
+import { RuleGenerator, RuleParser } from '@adguard/agtree';
+import { expandWildcardDomainsInFilter, expandWildcardsInAst } from '../wildcard-expander.js';
+import { type AliveWildcardDomains } from '../wildcard-domains-updater.js';
+import { readFile } from '../file-utils.js';
 
 /**
  * Expands wildcards in a rule string.
@@ -30,7 +30,7 @@ export function expandWildcardsInRule(rule: string, wildcardDomains: AliveWildca
         return rule;
     }
 
-    return RuleParser.generate(astWithExpandedWildcards);
+    return RuleGenerator.generate(astWithExpandedWildcards);
 }
 
 describe('platforms-patcher', () => {

@@ -1,7 +1,6 @@
-import MD5 from 'crypto-js/md5';
-import Base64 from 'crypto-js/enc-base64';
+import CryptoJS from 'crypto-js';
 
-import { splitByLines } from '../utils/splitter';
+import { splitByLines } from '../utils/splitter.js';
 
 const CHECKSUM_TAG = 'Checksum';
 
@@ -36,7 +35,7 @@ function normalizeContent(content: string): string {
  */
 function calculateChecksumMD5(content: string): string {
     content = normalizeContent(content);
-    const checksum = Base64.stringify(MD5(content));
+    const checksum = CryptoJS.MD5(content).toString(CryptoJS.enc.Base64);
 
     return checksum.trim().replace(/=+$/g, '');
 }

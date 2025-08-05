@@ -17,18 +17,19 @@
         "validate": "yarn validate:platforms && yarn validate:locales",
         "validate:platforms": "node -r @swc-node/register scripts/validation/validate_platforms.js",
         "validate:locales": "node -r @swc-node/register scripts/validation/validate_locales.js",
-        "update-wildcard-domains": "node -r @swc-node/register scripts/wildcard-domain-processor update-wildcard-domains",
-        "expand-wildcard-domains": "node -r @swc-node/register scripts/wildcard-domain-processor expand-wildcard-domains",
+        "update-wildcard-domains": "tsx scripts/wildcard-domain-processor update-wildcard-domains",
+        "expand-wildcard-domains": "tsx scripts/wildcard-domain-processor expand-wildcard-domains",
         "compress": "node scripts/repository/compress.js"
     },
     "engines": {
         "node": ">=22"
     },
     "dependencies": {
-        "@adguard/agtree": "^1.1.8",
+        "@adguard/agtree": "^3.2.2",
         "@adguard/dead-domains-linter": "^1.0.22",
         "@adguard/diff-builder": "1.1.2",
         "@adguard/filters-compiler": "3.0.2",
+        "add": "^2.0.6",
         "crypto-js": "^4.2.0",
         "zod": "3"
     },
@@ -52,6 +53,7 @@
         "tldts": "^6.1.30",
         "ts-jest": "^29.1.5",
         "ts-node": "^10.9.2",
+        "tsx": "^4.20.3",
         "typescript": "^5.5.2"
     }
 }

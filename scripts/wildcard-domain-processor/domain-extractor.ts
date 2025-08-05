@@ -1,11 +1,15 @@
-import agtree, {
+import {
     AnyRule,
     DomainListParser,
     Modifier,
     RuleCategory,
     RuleParser,
+    type CosmeticRule,
+    type NetworkRule,
 } from '@adguard/agtree';
-import { utils } from './utils';
+
+import { PIPE_MODIFIER_SEPARATOR } from '@adguard/agtree/utils';
+import { utils } from './utils.js';
 
 /**
  * A list of network rule modifiers that are to be scanned for dead domains.
@@ -26,7 +30,7 @@ export function extractModifierDomains(modifier: Modifier): {
         return [];
     }
 
-    const domains = DomainListParser.parse(modifier.value.value, agtree.PIPE_MODIFIER_SEPARATOR);
+    const domains = DomainListParser.parse(modifier.value.value, {}, modifier.start, PIPE_MODIFIER_SEPARATOR);
     return domains.children.map((domain) => {
         return {
             domain: domain.value,
@@ -41,7 +45,7 @@ export function extractModifierDomains(modifier: Modifier): {
  * @param ast The AST of a cosmetic rule to extract domains from.
  * @returns The list of all domains that are used by this rule.
  */
-function extractCosmeticRuleDomains(ast: agtree.CosmeticRule): string[] {
+function extractCosmeticRuleDomains(ast: CosmeticRule): string[] {
     if (!ast.domains || ast.domains.children.length === 0) {
         return [];
     }
@@ -59,7 +63,7 @@ function extractCosmeticRuleDomains(ast: agtree.CosmeticRule): string[] {
  * @param ast The AST of a network rule to extract domains from.
  * @returns The list of all domains that are used by this rule.
  */
-function extractNetworkRuleDomains(ast: agtree.NetworkRule): string[] {
+function extractNetworkRuleDomains(ast: NetworkRule): string[] {
     const domains: string[] = [];
 
     if (!ast.modifiers) {
@@ -70,7 +74,7 @@ function extractNetworkRuleDomains(ast: agtree.NetworkRule): string[] {
     for (let i = 0; i < ast.modifiers.children.length; i += 1) {
         const modifier = ast.modifiers.children[i];
 
-        if (DOMAIN_MODIFIERS.includes(modifier.modifier.value)) {
+        if (DOMAIN_MODIFIERS.includes(modifier.name.value)) {
             const modifierDomains = extractModifierDomains(modifier)
                 .map((domain) => domain.domain);
 
@@ -91,7 +95,10 @@ function extractNetworkRuleDomains(ast: agtree.NetworkRule): string[] {
 export function extractRuleDomains(ast: AnyRule): string[] {
     switch (ast.category) {
         case RuleCategory.Network:
-            return extractNetworkRuleDomains(ast);
+            if ('pattern' in ast && 'exception' in ast) {
+                return extractNetworkRuleDomains(ast as NetworkRule);
+            }
+            return [];
         case RuleCategory.Cosmetic:
             return extractCosmeticRuleDomains(ast);
         default:

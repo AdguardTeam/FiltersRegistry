@@ -3,10 +3,10 @@ import * as path from 'path';
 // There is no type definition available for the following import.
 // @ts-ignore
 import { findDeadDomains } from '@adguard/dead-domains-linter/src/urlfilter';
-import { getDomains } from './domain-extractor';
-import { utils } from './utils';
-import { TOP_LEVEL_DOMAIN_LIST } from './top-tld';
-import { findFilterFiles, readFile, writeFile } from './file-utils';
+import { getDomains } from './domain-extractor.js';
+import { utils } from './utils.js';
+import { TOP_LEVEL_DOMAIN_LIST } from './top-tld.js';
+import { findFilterFiles, readFile, writeFile } from './file-utils.js';
 
 const TIME_UPDATED_KEY = 'timeUpdated';
 const ALIVE_DOMAINS_KEY = 'alive';
@@ -22,8 +22,8 @@ function getWildcardDomains(filterContent: string): Set<string> {
     const wildcardDomains = new Set<string>();
     for (const rule of rules) {
         const domains = getDomains(rule);
-        const wildcardDomainsList = domains.filter((domain) => utils.isWildcardDomain(domain));
-        wildcardDomainsList.forEach((domain) => wildcardDomains.add(domain));
+        const wildcardDomainsList = domains.filter((domain: string) => utils.isWildcardDomain(domain));
+        wildcardDomainsList.forEach((domain: string) => wildcardDomains.add(domain));
     }
     return wildcardDomains;
 }
