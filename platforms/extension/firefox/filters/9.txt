@@ -1,9 +1,9 @@
-! Checksum: 19BokHBcFu/KiZGNuueXvQ
-! Diff-Path: ../patches/9/9-s-1754371131-3600.patch
+! Checksum: csg7QlFQNH2hKukPL7IjGA
+! Diff-Path: ../patches/9/9-s-1754396195-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.31.20
-! TimeUpdated: 2025-08-05T05:14:55+00:00
+! Version: 2.0.31.21
+! TimeUpdated: 2025-08-05T12:12:38+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,7 @@
 ! https://forum.adguard.com/index.php?threads/ivoox-com-podcasts-issues.29530/
 ! ||addevweb.com^$third-party
 !
+||jogoforte.com^
 ||publyads.jstag.space^
 ||crummydevioussucculent.com^$all
 ||cibersexo.net^$third-party
@@ -243,6 +244,7 @@ redecanaistv.*,redecanais.*##.pm-section-highlighted > div[style]:not([class])
 ! https://github.com/uBlockOrigin/uAssets/issues/27939
 redecanaistv.*,redecanais.*##.swal2-popup
 redecanaistv.*,redecanais.*##div[style*="z-index:2147483647"]
+redecanaistv.*,redecanais.*#%#//scriptlet('remove-attr', 'href', 'a[href]#clickfakeplayer')
 redecanaistv.*,redecanais.*#%#//scriptlet('set-cookie', 'modalVisited', 'true')
 redecanaistv.*,redecanais.*#%#//scriptlet('set-cookie', 'adsCompleted', '1')
 redecanaistv.*,redecanais.*#%#//scriptlet('set-session-storage-item', 'finalReloadDone', '1')
@@ -1456,8 +1458,6 @@ brjogostorrents.com#%#//scriptlet('abort-on-property-read', 'popunder')
 pobreflix.do#%#//scriptlet('remove-attr', 'href', 'a[href]#clickfakeplayer')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186250
 clickjogos.com.br#%#//scriptlet('set-constant', 'ShowRewards', 'noopFunc')
-! https://github.com/AdguardTeam/AdguardFilters/issues/186166
-redecanais.in#%#//scriptlet('remove-attr', 'href', 'a[href]#clickfakeplayer')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187722
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186078
 gamesperu2021.blogspot.com#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', 'window.open')
