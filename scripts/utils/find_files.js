@@ -1,6 +1,6 @@
 /* eslint-disable no-await-in-loop */
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 /**
  * Recursively finds files in a directory that match the provided filter.
@@ -10,7 +10,7 @@ const path = require('path');
  *
  * @returns An array of file paths that match the filter.
  */
-const findFiles = async (dir, filter) => {
+export const findFiles = async (dir, filter) => {
     const files = await fs.promises.readdir(dir);
     let fileList = [];
 
@@ -21,7 +21,6 @@ const findFiles = async (dir, filter) => {
 
         if (stat.isDirectory()) {
             const foundFiles = await findFiles(filePath, filter);
-            // Use concat but not push with spread to prevent stack overflow.
             fileList = fileList.concat(foundFiles);
         } else if (filter(filePath)) {
             fileList = fileList.concat([filePath]);
@@ -29,8 +28,4 @@ const findFiles = async (dir, filter) => {
     }
 
     return fileList;
-};
-
-module.exports = {
-    findFiles,
 };
