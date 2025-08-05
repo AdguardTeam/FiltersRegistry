@@ -1,7 +1,7 @@
 // Import built-in and external modules using ES module syntax
 import path from 'path';
 import { fileURLToPath } from 'url';
-import compiler from '@adguard/filters-compiler';
+import { validateLocales } from '@adguard/filters-compiler';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -27,7 +27,7 @@ const REQUIRED_LOCALES = [
 ];
 
 const localesDirPath = path.join(dirname, LOCALES_DIR_PATH);
-const localesValidation = compiler.validateLocales(localesDirPath, REQUIRED_LOCALES);
+const localesValidation = validateLocales(localesDirPath, REQUIRED_LOCALES);
 
 if (!localesValidation.ok) {
     throw new Error('Invalid locales messages');

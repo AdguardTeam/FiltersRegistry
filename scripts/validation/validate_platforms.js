@@ -2,7 +2,7 @@
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
-import compiler from '@adguard/filters-compiler';
+import { validateJSONSchema } from '@adguard/filters-compiler';
 import { PATCH_EXTENSION } from '@adguard/diff-builder';
 
 import { FOLDER_WITH_NEW_FILTERS } from '../build/constants.js';
@@ -21,7 +21,7 @@ if (!platforms) {
 
 const platformsPath = path.join(dirname, platforms);
 
-const validationResult = compiler.validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
+const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
 if (!validationResult) {
     throw new Error('Invalid filters json');
 }
