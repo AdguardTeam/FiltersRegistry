@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { RuleParser } from '@adguard/agtree/parser';
 import { RuleGenerator } from '@adguard/agtree/generator';
+import path from 'path';
 import { expandWildcardDomainsInFilter, expandWildcardsInAst } from '../wildcard-expander.js';
 import { type AliveWildcardDomains } from '../wildcard-domains-updater.js';
 import { readFile } from '../file-utils.js';
-import path from 'path';
 
 /**
  * Expands wildcards in a rule string.
@@ -16,7 +16,6 @@ export function expandWildcardsInRule(rule: string, wildcardDomains: AliveWildca
     let ast = null;
     try {
         ast = RuleParser.parse(rule);
-        console.log(ast)
     } catch (e) {
         // eslint-disable-next-line no-console
         console.debug(`Was unable to parse rule: ${rule}, because of: ${e}`);

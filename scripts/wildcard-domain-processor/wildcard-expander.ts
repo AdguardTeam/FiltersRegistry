@@ -125,7 +125,7 @@ function expandWildcardsInNetworkRules(
         newDomainsModifier.value!.value = domainList.children
             .map((item) => `${item.exception ? NEGATION_MARKER : EMPTY}${item.value}`)
             .join(PIPE_MODIFIER_SEPARATOR);
-            
+
         newModifiers.push(newDomainsModifier);
     }
 
