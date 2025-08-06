@@ -1,9 +1,9 @@
-! Checksum: DlUmEY+J9SjMHHCNuxOLxQ
-! Diff-Path: ../patches/14/14-s-1754489651-3600.patch
+! Checksum: Wc+B2kSnw1qikpLxE/RccQ
+! Diff-Path: ../patches/14/14-s-1754493168-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.38.72
-! TimeUpdated: 2025-08-06T14:10:38+00:00
+! Version: 2.2.38.73
+! TimeUpdated: 2025-08-06T15:09:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2524,6 +2524,8 @@ entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,g
 !
 ! NOTE: Regular rules
 !
+enginemailer.com##.SecCookieBar
+southalltravel.co.uk##.overlayer-gogoleconsent
 hvr-amazon.my.site.com#%#//scriptlet('trusted-set-cookie', 'apex__cookiePreferences', 'Operational')
 gonift.com###privacy-compliance-banner
 app.gnosispay.com#%#//scriptlet('set-cookie', 'cookie_consent', 'no')
@@ -5299,7 +5301,6 @@ pccomponentes.*#%#//scriptlet('set-cookie', 'accept_cookie', '1')
 stpetecatalyst.com#%#//scriptlet('trusted-set-cookie', 'newsletter_popup_dismissed', '1')
 ||saldaodainformatica.com.br/modules/cookiesplus/
 theasianparent.com##.cookie-acceptance-popup
-||std.wpcdn.pl/wpjslib6/wpjslib-sgap.js$domain=easygo.pl
 chessolympiad2024.fide.com,inps.it#%#//scriptlet('trusted-set-cookie', 'cc_cookie', '{"level":["tecnici","analytics"],"revision":0,"data":null,"rfc_cookie":false}')
 ||ferroflex.ch/typo3temp/assets/compressed/cookieman-theme.min-
 login.plurall.net##div[class^="PrivacyFooter_privacy"]
@@ -7252,6 +7253,7 @@ gigasport.at,gigasport.de,gigasport.ch#$#body { overflow: scroll !important; ove
 gigasport.at,gigasport.de,gigasport.ch#$#.tao_cookie_popup_advanced { display: none !important; }
 studentenwerk-dresden.de#$##cookieconsent { display: none !important; }
 studentenwerk-dresden.de#$#body { margin-right: 0 !important; overflow: auto !important; }
+||std.wpcdn.pl/*/wpjslib-*.js$domain=benchmark.pl|easygo.pl|nocowanie.pl
 ||wp.pl^$script,domain=dobregry.pl|nauka.rocks
 image-line.com#$#.cookie-banner-wrapper { display: none !important; }
 image-line.com#$#body.cookie-consent-shown { overflow: auto !important; }
@@ -7484,7 +7486,6 @@ privacy.samsung.com#$#div[class^='cookie-'] { display: none !important; }
 doka.guide$$div[class="cookie-notification"]
 callisto.sds.com##div[aria-describedby="cookie-notification-message"]
 ||vitalpoint.cz/static*/cookie/
-||std.wpcdn.pl/*/wpjslib-lite.js$domain=benchmark.pl
 taste-institute.com##app-pop-up-cookies
 pracodawcy.pracuj.pl#$#body { overflow-y: auto !important; }
 pracodawcy.pracuj.pl#$##__next > div[class] > div[class] > div[data-library="@grupa-pracuj/cookie-agreements"] { display: none !important; }
@@ -30081,8 +30082,6 @@ faceit.com##authenticate-prompt
 techeyesonline.com###banner-mail
 telia.lt##div.js-sticky-lead-container[style="z-index: 1040"]
 benguturk.com#%#//scriptlet("set-cookie", "popup_kapali", "true")
-gaana.com##.popupbg1
-gaana.com##.popupbg1 ~ div.overlay
 redhat.com##.subscribe-sidebar
 bandt.com.au#$#.modal-backdrop { display: none !important; }
 bandt.com.au#$##myModal { display: none !important; }
@@ -35018,6 +35017,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+designcompass.org##body > div[id^="elementor-popup"]:has(> div.dialog-widget-content div.mailpoet_form_popup_overlay)
 thegearhunt.com###sign-up
 macitynet.it##.tdc-row:has(.tdn_block_newsletter_subscribe)
 macitynet.it##.vc_row_inner:has(a[href^="https://news.google.com/publications/"])
@@ -46206,7 +46206,6 @@ wiwo.de##.c-sticky-footer__block > a[href="https://auswahl.wiwo.de/relaunch/app/
 ganganonline.com##.gn_top_foot_app
 ganganonline.com##body > [style^="position: fixed; z-index: 1000;"]:not([class]):not([id])
 boston.com##.content-toaster--mobile-app
-gaana.com###smsbanner
 ||m.autohome.com.cn/news/cdn_20180706/view/ah/nsee.html
 allo.ua##.bg-fade
 weathernews.jp###app_link
@@ -46922,6 +46921,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+gaana.com##.appAdBottomBox
+gaana.com##.appAdTopBox
 x.com##main > div[class] > div[class] > div[style^="background-color:"]:has(> a[href^="https://apps.apple.com/app/"])
 pikabu.ru##.header__app-link-wrapper
 ubie.app###appRoot div[class*="AppInstall"]
@@ -51303,6 +51304,8 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+gaana.com##.gaanalyricsRenewBanner
+designcompass.org##div[data-elementor-type="single-post"] > div.elementor-element:has(> div.e-con-inner a[href^="https://designcompass.org/membership/"])
 devblogs.microsoft.com##.container-evo > div.alert-banner:has(> div.email-banner a[href*="free-github-copilot"])
 avito.ru##div[data-marker="top-notification/reward-banners/overhead-rewards"]
 asmr18.fans##.home-h:has(> a:not([href^="https://asmr18.fans"]))
@@ -54936,11 +54939,6 @@ pharma.mynavi.jp##.pr
 climbing-net.com##.ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/106326
 thecode.media##.pr-b
-! https://github.com/AdguardTeam/AdguardFilters/issues/104530
-gaana.com##body .advert:not(#style_important)
-gaana.com#$##app > main.wrapper { padding-right: 0 !important; }
-gaana.com#$##app > footer.footer { margin-right: 0 !important; }
-gaana.com#$#section#scoll_headerInfo.active { width: 100% !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/105971
 sp.m.jiji.com##.spView > div.banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/103566
