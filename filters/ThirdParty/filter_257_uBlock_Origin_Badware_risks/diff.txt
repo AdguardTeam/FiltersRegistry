@@ -3982,6 +3982,10 @@ www.cambe.pr.gov.br##+js(noeval-if, tigervip2)
 /^https:\/\/telegram-[a-z]{2}\.[a-z]{2,3}\//$doc,to=~gov|~edu|~com|~net|~org|~telegram.org
 ! Rule "/^https:\/\/telegram-[a-z]{3,4}\.com\//$doc,to=com|~telegram.org" converted to: "/^https:\/\/telegram-[a-z]{3,4}\.com\//$document,to=com|~telegram.org"
 /^https:\/\/telegram-[a-z]{3,4}\.com\//$doc,to=com|~telegram.org
+! Rule "/^https?:\/\/web\.t(el)?gram[a-z][a-z][a-z]?\.top\//$doc,to=top" converted to: "/^https?:\/\/web\.t(el)?gram[a-z][a-z][a-z]?\.top\//$document,to=top"
+/^https?:\/\/web\.t(el)?gram[a-z][a-z][a-z]?\.top\//$doc,to=top
+! Rule "||web.*.top^$doc,to=top,ipaddress=206.119.188.100" converted to: "||web.*.top^$document,to=top,ipaddress=206.119.188.100"
+||web.*.top^$doc,to=top,ipaddress=206.119.188.100
 ! Rule "/^https:\/\/usps\.[-a-z]{6,}\.(?:com|top)\/(?:address\.html|information|verify)\b/$doc,to=com|top|~usps.com" converted to: "/^https:\/\/usps\.[-a-z]{6,}\.(?:com|top)\/(?:address\.html|information|verify)\b/$document,to=com|top|~usps.com"
 /^https:\/\/usps\.[-a-z]{6,}\.(?:com|top)\/(?:address\.html|information|verify)\b/$doc,to=com|top|~usps.com
 ! Rule ".top/pg?do=$doc,to=top" converted to: ".top/pg?do=$document,to=top"
@@ -4966,6 +4970,8 @@ weightlossdiet.top#%#//scriptlet('ubo-acs.js', 'open', 'executeCode')
 /\/wap\/api\/(?:activity\/)?[a-zA-Z]+![-_a-zA-Z]+\.action\?/$xmlhttprequest,~third-party,strict1p,match-case
 ! Error: "Unknown modifier:  X-Requested-With" in the rule: "/api/webapi/login|$xmlhttprequest,third-party,to=online|vip,method=post,header=access-control-allow-headers:Origin, X-Requested-With, Content-Type, Accept, Authorization"
 /api/webapi/login|$xmlhttprequest,third-party,to=online|vip,method=post,header=access-control-allow-headers:Origin, X-Requested-With, Content-Type, Accept, Authorization
+! Error: "Unknown modifier: ipaddress=206.119.188.100" in the rule: "||web.*.top^$document,to=top,ipaddress=206.119.188.100"
+||web.*.top^$document,to=top,ipaddress=206.119.188.100
 ! Error: "Unknown modifier: from=com|ru|su" in the rule: "/^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.com\/[a-zA-Z0-9]{50,}$/$xmlhttprequest,third-party,method=get,to=com|~google.com|~microsoft.com,from=com|ru|su"
 /^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.com\/[a-zA-Z0-9]{50,}$/$xmlhttprequest,third-party,method=get,to=com|~google.com|~microsoft.com,from=com|ru|su
 ! Error: "Unknown modifier: from=com|ru|su" in the rule: "/^https:\/\/[a-z0-9]{50,}\.[a-z0-9]{4,11}\.ru\/[a-zA-Z0-9]{50,}$/$xmlhttprequest,third-party,method=get,to=ru,from=com|ru|su"

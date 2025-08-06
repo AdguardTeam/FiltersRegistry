@@ -1,5 +1,5 @@
-! Checksum: p4BcQBe7bt8/J4htgUiEJA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1754369478-14400.patch
+! Checksum: pyzZCyVZC3MuVPP1WV5V5w
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1754455802-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.57
@@ -1889,6 +1889,7 @@ context.reverso.net###blocked-results-banner
 linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea:has(.cGuestTeaser):not(:has(.ipsComposeArea_editor))
 ||subs.youmaker.com^$third-party
 ##.paywall-gradient:not(html, body)
+nijie.info##.twit-button
 zapytaj.onet.pl##.know-better-answer
 instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
 spanishdict.com##.ReactModal__Overlay:has(video[src$="/bloom2.mp4"])
@@ -2035,6 +2036,7 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
+/pureSnow.js^
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
 /snowplow$script,domain=casamundo.se|hemnet.se
@@ -2053,6 +2055,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /snowstorm.js
 /christmas-snow.js
 ##foxfield-xmas
+@@||bannedbook.org^
 @@||epochtimes.com^
 @@||ntdtv.com^
 @@||renminbao.com^
@@ -2180,9 +2183,10 @@ play.max.com##div[class^=ProtectionLayer]
 ~imdb.com##.ratingsBlockIMDb:not(html,body,:empty)
 bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 rakuten.tv##a[href*=".imdb.com/title/"]
-playpilot.com##.ratings
 www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
+tv.nu#?#a[title] span:has-text(IMDb)
+tv.nu##a[title] span:has(path[d^="M9.465 "])
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 $removeparam=yclid
 $removeparam=gclid
@@ -2291,8 +2295,6 @@ $document,removeparam=guce_referrer_sig
 $document,removeparam=source_location
 $document,removeparam=psf_variant
 $document,removeparam=bxid
-$document,removeparam=cndid
-$document,removeparam=hasha
 $document,removeparam=hashb
 $document,removeparam=hashc
 $document,removeparam=irgwc
@@ -2694,6 +2696,7 @@ $document,removeparam=/^adppopup=[a-eg-zA-EG-Z0-9]/
 $removeparam=relatedposts_hit
 $removeparam=relatedposts_origin
 $removeparam=relatedposts_position
+ref=itsfoss.com$document,removeparam=ref
 ref=news.itsfoss.com$document,removeparam=ref
 $removeparam=b_campaign
 $removeparam=gad_source
@@ -2813,6 +2816,9 @@ $removeparam=geniuslink
 ||amazon.$removeparam=field-lbr_brands_browse-bin
 ||amazon.$removeparam=maas
 ||amazon.$removeparam=refinements
+||amazon.$removeparam=qsid
+||amazon.$removeparam=sres
+||amazon.$removeparam=srpt
 $removeparam=hvadid
 $removeparam=hvpos
 $removeparam=hvnetw
@@ -3298,7 +3304,6 @@ $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|a
 $removeparam=pt,domain=apple.com|icedrive.net
 ||kohls.com^$removeparam=kls_sbp
 ||kohls.com^$removeparam=pfm
-||kohls.com^$removeparam=bdrecsId
 ||kohls.com^$removeparam=prdPV
 $removeparam=site_id,domain=taskrabbit.com|kochava.com
 ||kochava.com^$removeparam=network_id
@@ -3496,7 +3501,6 @@ $removeparam=nl,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62
 $removeparam=regi_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=segment_id,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
 $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
-||redirect.appmetrica.yandex.com^$removeparam=c
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
@@ -3544,9 +3548,7 @@ $removeparam=srsltid,document
 ||malwarebytes.com^$removeparam=x-affid
 ||malwarebytes.com^$removeparam=ADDITIONAL_AFFID
 $removeparam=x-wts
-$removeparam=%243p,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=%24deep_link,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
-$removeparam=post_index,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=auto_token,domain=nextdoor.com
 $removeparam=mobile_deeplink_data
 $removeparam=link_source_user_id,domain=nextdoor.com
@@ -3629,6 +3631,7 @@ $document,removeparam=intc,domain=citi.com
 $document,removeparam=selectedCCIndex,domain=citi.com
 $document,removeparam=aoOfferParams,domain=citi.com
 $removeparam=ProspectID,domain=citi.com
+$removeparam=BT_VanityDomain,domain=citi.com
 ||patreon.com/posts/$document,removeparam=token
 $document,removeparam=bpli,domain=blogger.com
 $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
@@ -3715,7 +3718,6 @@ $document,removeparam=af_xp
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 $document,removeparam=entrypoint,domain=bing.com
 $document,removeparam=cnt,domain=lastampa.it|ilsecoloxix.it|huffingtonpost.*|themeditelegraph.com|ilgusto.it|italian.tech
-$document,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
 ref=producthunt$document,removeparam=ref
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId

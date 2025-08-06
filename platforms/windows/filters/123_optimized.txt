@@ -1,9 +1,9 @@
-! Checksum: pxfHkLMwZdpe78ZSbcfrUg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1754441548-14400.patch
+! Checksum: gkQxaWNIUAPXzD2TM7KN5w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1754455826-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.45.87
-! TimeUpdated: 2025-08-06T00:47:49+00:00
+! Version: 2.1.45.88
+! TimeUpdated: 2025-08-06T04:45:31+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -135,6 +135,7 @@
 /whatsapp_icon.png
 /widget/share?
 /widgets/socials/*
+/widgets/twitter/*
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
@@ -176,6 +177,7 @@ _social_footer_
 ###block-socialmenu
 ###block-socialsharingblock
 ###blog-follow-widget
+###bottom-share
 ###btn-share-email
 ###btn-share-fb
 ###btn-share-tele
@@ -493,7 +495,6 @@ _social_footer_
 ###single-share
 ###site-share
 ###site-social
-###sm_follow_us
 ###sm_share
 ###smthemes_share
 ###sns-btn
@@ -762,7 +763,6 @@ _social_footer_
 ##.TwitterArea
 ##.TwitterButton
 ##.TwitterShareButton
-##._socialsScr
 ##.a-icon-share-email
 ##.a-icon-share-facebook
 ##.a-icon-share-pinterest
@@ -900,6 +900,7 @@ _social_footer_
 ##.article_social
 ##.article_social_wrap
 ##.articlesharebox
+##.aside-socials
 ##.asocial-area
 ##.aspexifblikebox
 ##.aspexifbsidebox
@@ -960,6 +961,7 @@ _social_footer_
 ##.bloc_float_share
 ##.block-addtoany
 ##.block-facebook
+##.block-facebook-inner
 ##.block-sharebar
 ##.block-sharethis
 ##.block-shariff
@@ -1329,7 +1331,6 @@ _social_footer_
 ##.follow-us-on-twitter
 ##.follow-us-panel
 ##.follow-us-twitter
-##.follow-us-txt
 ##.follow-us-widget
 ##.follow-us-wrapper
 ##.follow-widget
@@ -1469,6 +1470,7 @@ _social_footer_
 ##.g1-socials-item
 ##.g1-socials-section
 ##.g_share
+##.gab_social_widget
 ##.gallery-share
 ##.gallery-social
 ##.gallery__share
@@ -1596,6 +1598,7 @@ _social_footer_
 ##.icon-circle-youtube
 ##.icon-commu_share
 ##.icon-connect
+##.icon-dailymotion
 ##.icon-delicious
 ##.icon-digg
 ##.icon-facebook-alt
@@ -1889,7 +1892,6 @@ _social_footer_
 ##.menu-link-facebook
 ##.menu-link-instagram
 ##.menu-link-twitter
-##.menu-name-menu-social-links
 ##.menu-reseaux-sociaux-container
 ##.menu-section-social
 ##.menu-share
@@ -1923,6 +1925,7 @@ _social_footer_
 ##.mobileShare
 ##.mod-facebook
 ##.mod-follow
+##.mod-social-navigation
 ##.mod-twitter
 ##.modSocialbar
 ##.module--share
@@ -2027,6 +2030,7 @@ _social_footer_
 ##.pathSocialIcons
 ##.pbtsharethisbutt
 ##.pen_social_networks
+##.penci-social-counter
 ##.penci-social-share-footer
 ##.penci-social__content
 ##.penci-social__item
@@ -2102,7 +2106,6 @@ _social_footer_
 ##.prettySocial
 ##.pri-share
 ##.print-share
-##.product-info-social
 ##.product-share
 ##.product-social-icon-wrapper
 ##.pswp__button--share
@@ -2270,7 +2273,6 @@ _social_footer_
 ##.share-facebook-long
 ##.share-fb
 ##.share-fbmessenger
-##.share-feed
 ##.share-filled
 ##.share-flat
 ##.share-flipboard
@@ -2537,6 +2539,7 @@ _social_footer_
 ##.share_widgets
 ##.share_wrap
 ##.share_wrapper
+##.sharea
 ##.shareaholic-canvas
 ##.shareall
 ##.sharebar
@@ -2781,6 +2784,7 @@ _social_footer_
 ##.social-buttons--content-before
 ##.social-buttons--follow
 ##.social-buttons--uk
+##.social-buttons-bottom
 ##.social-buttons-compact
 ##.social-buttons-container
 ##.social-buttons-twitter
@@ -3366,7 +3370,6 @@ _social_footer_
 ##.vf-share-button
 ##.vf-share-icon
 ##.vf-share-option
-##.video--share
 ##.video-share
 ##.video-share-b
 ##.videoShare
@@ -3719,6 +3722,7 @@ cnbc.com##.CNBCFooter-social
 abc.net.au##.FixedHeader_shareBtn__yNush
 venturebeat.com##.Footer__social-icon
 meduza.io##.GeneralMaterial-module-share
+bdnews24.com##.HeaderTopSocialIcon
 business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
 ask.com,smarter.com##.PartialSocialLinks
@@ -3830,7 +3834,6 @@ euractiv.com##.ea-social
 bdonline.co.uk,dailymail.co.uk,flightglobal.com,screendaily.com##.email
 cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
-wideopencountry.com##.entry-social
 arabnews.com##.entry-views
 thegatewaypundit.com,wersm.com##.essb_links
 yardbarker.com##.expanded.button
@@ -3904,6 +3907,7 @@ iherb.com##.iherb-pdp-share
 dailymail.co.uk##.image_strapline_slant_wocc
 inews.co.uk##.inews__post-share
 mainichi.jp##.inline-list
+winnipegfreepress.com##.interactive
 insideevs.com##.isBottomShare
 thelondoneconomic.com##.jeg_share_top_container
 moneycontrol.com##.join_follow
@@ -3964,6 +3968,7 @@ cointelegraph.com##.post__socials-block
 pravda.com.ua##.post_social_item
 lifestyleasia.com##.pre-footer_instagram
 dailymail.co.uk##.prevNextWrapper-1Vg7e
+inspiredtaste.net##.profile-icons
 reason.com##.rcom-social-tools
 dermatologytimes.com,drive.com.au##.react-share__ShareButton
 firstpost.com##.rhs-yt-ch-wrap
@@ -3992,6 +3997,7 @@ dailymail.co.uk,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zap
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 thenewstack.io##.share-media
 thehackernews.com##.share-open-modal
+bdnews24.com##.share-option
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 uh.edu##.share-this-story
 breachmedia.ca,news.itsfoss.com##.share-toggle
