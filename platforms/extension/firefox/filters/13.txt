@@ -1,9 +1,9 @@
-! Checksum: VAgAGy7tPXlCR5/hae+7QQ
-! Diff-Path: ../patches/13/13-s-1754500423-3600.patch
+! Checksum: tol9KqQaz4oY/KF4sEtrkw
+! Diff-Path: ../patches/13/13-s-1754504010-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.65
-! TimeUpdated: 2025-08-06T17:09:52+00:00
+! Version: 2.0.58.66
+! TimeUpdated: 2025-08-06T18:09:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5629,7 +5629,7 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ! mactanmaca*.shop - frequently changed domains
 ||mactanmaca*.shop//wp-content/*.gif
 ! aglint-disable-next-line invalid-modifiers
-||video.twimg.com/amplify_video/*.m3u8?variant_version=*&tag=$domain=/mactanmaca\d+\.shop/
+[$domain=/mactanmaca\d+\.shop/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 [$domain=/mactanmaca\d+\.shop/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 [$domain=/mactanmaca\d+\.shop/]#%#//scriptlet('set-cookie', 'reklamgosterimx', 'ok')
 !
