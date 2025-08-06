@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: yPemHmLzM/MKEwZS1/D3Og
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1754464505-3600.patch
+! Checksum: EOKUsPydqfE2hwuWqm2aLA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1754468025-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.1.57
-! TimeUpdated: 2025-08-06T07:10:49+00:00
+! Version: 2.4.1.58
+! TimeUpdated: 2025-08-06T08:09:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -30852,6 +30852,12 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/210808
+! Fixes video player
+wunderground.com##+js(set-constant, __Helios.video, {})
+wunderground.com##+js(set-constant, __Helios.createAdTag, noopFunc)
+wunderground.com##+js(set-constant, __Helios.video.requestVideoBids, noopFunc)
+wunderground.com##+js(set-constant, __Helios.modules.videoTag.createAdTag, noopFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208865
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202695
 ign.com##+js(google-ima)
