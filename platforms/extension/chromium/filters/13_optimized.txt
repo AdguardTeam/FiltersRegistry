@@ -1,9 +1,9 @@
-! Checksum: ShNQDqXLcSl8vSNBZjIcMw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1754504002-3600.patch
+! Checksum: 7yaeZzYgP7kD5r+DKAFHkQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1754507508-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.66
-! TimeUpdated: 2025-08-06T18:09:47+00:00
+! Version: 2.0.58.67
+! TimeUpdated: 2025-08-06T19:08:15+00:00
 ! Expires: 10 days (update frequency)
 ||azelvid.com^
 ||polatads.com^
@@ -1305,7 +1305,7 @@ gazeteipekyol.com##.prospeed_demo_banner
 mackolik.com##div[class^="mpu"]
 ||digiturkburada.com.tr/images/digiturk-internet-banner-ns.png$third-party
 cioupdate.com.tr##a[target="_blank"] > img[alt]
-1000kitap.com##section.dr.w-full.min-h-100vh > div.relative:has(span:contains(Reklam))
+1000kitap.com#?#section.dr.w-full.min-h-100vh > div.relative:has(span:contains(Reklam))
 uludagsozluk.com##div[class^="adulu_col-"]
 webtekno.com##.content-body__detail > p > a[href^="https://turk.net/gigafiber"]
 webtekno.com##.content-body__detail > p:has(> a.box-link ~ strong)
@@ -4977,6 +4977,7 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+[$domain=/canlimaclar\d+\.sbs/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 ||goblintvizle*.live/Uploads/*_bckg.jpg
 [$domain=/goblintvizle\d+\.live/]##div[style="position:fixed;height:100%;z-index:1;width:100%"]
 [$domain=/goblintvizle\d+\.live/]##.livecontainer > div.vertical-gap a[target="_blank"] > img

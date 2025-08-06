@@ -1,8 +1,8 @@
-! Checksum: 5Ui42qO8yT+mTPRdhL8/Ng
+! Checksum: C3+vJtI3/cMvtPLLzyV/bg
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.59.82
-! TimeUpdated: 2025-08-06T18:09:56+00:00
+! Version: 2.0.59.83
+! TimeUpdated: 2025-08-06T19:08:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -206,7 +206,7 @@ news.mail.ru,e.mail.ru,octavius.mail.ru#%#//scriptlet('abort-on-stack-trace', 'P
 e.mail.ru,octavius.mail.ru#%#//scriptlet('remove-class', 'scrollable_top-line-adv-2pane|scrollable_top-line-adv-2pane_high-block|scrollable_top-line-adv-2pane_pony-mode', '.scrollable')
 e.mail.ru,octavius.mail.ru#%#//scriptlet('remove-class', 'letter-list_top-line-adv-2pane|letter-list_top-line-adv-2pane_pony-mode|letter-list_topline-touch-adv|letter-list_top-line-adv-2pane_high-block', '.letter-list')
 mail.ru#?#body > div > style + div:has(> div > div.description:contains(/До[баба]вьт[ее] Mail в исключения/))
-news.mail.ru##body > div:has(> div[id] > div > div.title:contains(блокировщика рекламы))
+news.mail.ru#?#body > div:has(> div[id] > div > div.title:contains(блокировщика рекламы))
 ! dzen.ru
 ! Main page
 dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.addByDimensionObserver', 'noopFunc')
@@ -4558,7 +4558,7 @@ rocket-boys.co.jp#$#body[style^="position:"] { position: static !important; top:
 ||forum.uipath.com/discourse-interstitial/my_interstitials.json
 desport.ru##div[class^="PopupProductComponent_"]
 /forms-akamai.smsbump.com$script,domain=edikted.com
-faceit.com###__next__modal_root__ > div[class^="style__Holder-"]:has(> div:contains(Sign in for the full experience))
+faceit.com#?##__next__modal_root__ > div[class^="style__Holder-"]:has(> div:contains(Sign in for the full experience))
 stuff.tv#%#//scriptlet('set-cookie', 'hustle-hide-module-1', '1')
 nps.gov###touchpoints-survey
 heyrooted.com##div[id^="alia-root-"]:has(> [id^="alia-popup"])
@@ -4974,7 +4974,7 @@ menunedeli.ru##.mypopup-over
 menunedeli.ru##div[id^="modal_mypopup_"]
 stopgame.ru#%#//scriptlet('trusted-set-local-storage-item', 'stalcraft_promo_shown', 'true')
 igotoworld.com#%#//scriptlet('set-cookie-reload', 'closing-banner', '1')
-defkey.com#$##showRegisterPopupAfterSecs { remove: true; }
+defkey.com#$?##showRegisterPopupAfterSecs { remove: true; }
 sportsdzen.ru,dzen.ru##.trapPopupContainer
 adbeat.com#$##forced_signup { display: none !important; }
 adbeat.com#$#.modal-backdrop { display: none !important; }
@@ -5024,7 +5024,7 @@ slevomat.cz#$#.message-overlay--leave { display: none !important; }
 support.reddithelp.com##.lt-article-vote-feedback-container
 archive.org##psa-banners
 store.shopping.yahoo.co.jp###smlmdl
-store.shopping.yahoo.co.jp##div[class^="styles_buttons"] > div.Tip:has(> div.Tip__contents p.Tip__title:contains(ギフト機能が追加されました))
+store.shopping.yahoo.co.jp#?#div[class^="styles_buttons"] > div.Tip:has(> div.Tip__contents p.Tip__title:contains(ギフト機能が追加されました))
 avrebo.com#$?#body > div.MuiDialog-root:has(> div.MuiDialog-container img[src^="/images/recruit/"]) { display: none !important; }
 avrebo.com#$#body { overflow: auto !important; }
 xrite.com###sticky-footer[style*="fixed"]
@@ -13160,6 +13160,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+intentionalacademia.substack.com#$?#div[class*="contentBlockContainer-"][style="scroll-margin-top: 48px;"]:has(button[data-href*="substack.com/subscribe?"]) { remove: true; }
 ||newneek.co^$cookie=article_read_count
 jpl.nasa.gov##div[itemprop="articleBody"] > div.BaseGrid + div.BaseGrid:has(> div.relative > div.BlockNewsletterSignup)
 designcompass.org##body > div[id^="elementor-popup"]:has(> div.dialog-widget-content div.mailpoet_form_popup_overlay)

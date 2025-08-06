@@ -1,9 +1,9 @@
-! Checksum: tol9KqQaz4oY/KF4sEtrkw
-! Diff-Path: ../patches/13/13-s-1754504010-3600.patch
+! Checksum: 1GlQH09nKDHS9q7Tc1JRIg
+! Diff-Path: ../patches/13/13-s-1754507515-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.66
-! TimeUpdated: 2025-08-06T18:09:47+00:00
+! Version: 2.0.58.67
+! TimeUpdated: 2025-08-06T19:08:15+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1832,7 +1832,7 @@ gazeteipekyol.com##.prospeed_demo_banner
 mackolik.com##div[class^="mpu"]
 ||digiturkburada.com.tr/images/digiturk-internet-banner-ns.png$third-party
 cioupdate.com.tr##a[target="_blank"] > img[alt]
-1000kitap.com##section.dr.w-full.min-h-100vh > div.relative:has(span:contains(Reklam))
+1000kitap.com#?#section.dr.w-full.min-h-100vh > div.relative:has(span:contains(Reklam))
 uludagsozluk.com##div[class^="adulu_col-"]
 webtekno.com##.content-body__detail > p > a[href^="https://turk.net/gigafiber"]
 webtekno.com##.content-body__detail > p:has(> a.box-link ~ strong)
@@ -5504,6 +5504,9 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+!
+! canlimaclar*.sbs - frequently changed domains
+[$domain=/canlimaclar\d+\.sbs/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 !
 ! goblintvizle*.live - frequently changed domains
 ||goblintvizle*.live/Uploads/*_bckg.jpg

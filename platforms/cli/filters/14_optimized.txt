@@ -1,9 +1,9 @@
-! Checksum: KYKvaqcO5XpsMcFyM0Y7sA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1754503998-3600.patch
+! Checksum: 1BHDfiIWiY1UPgwiWUk2SQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1754507505-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.38.76
-! TimeUpdated: 2025-08-06T18:09:51+00:00
+! Version: 2.2.38.77
+! TimeUpdated: 2025-08-06T19:08:20+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -10848,6 +10848,7 @@ e.mail.ru,octavius.mail.ru#%#//scriptlet('prevent-setTimeout', 'adman_')
 news.mail.ru,e.mail.ru,octavius.mail.ru#%#//scriptlet('abort-on-stack-trace', 'Promise', 'onSlotRender')
 e.mail.ru,octavius.mail.ru#%#//scriptlet('remove-class', 'scrollable_top-line-adv-2pane|scrollable_top-line-adv-2pane_high-block|scrollable_top-line-adv-2pane_pony-mode', '.scrollable')
 e.mail.ru,octavius.mail.ru#%#//scriptlet('remove-class', 'letter-list_top-line-adv-2pane|letter-list_top-line-adv-2pane_pony-mode|letter-list_topline-touch-adv|letter-list_top-line-adv-2pane_high-block', '.letter-list')
+news.mail.ru#?#body > div:has(> div[id] > div > div.title:contains(блокировщика рекламы))
 dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.addByDimensionObserver', 'noopFunc')
 dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
 dzen.ru##div[class*="-desktop-"][class*="-placeholder__"]
@@ -12704,7 +12705,7 @@ rocket-boys.co.jp#$#body[style^="position:"] { position: static !important; top:
 ||forum.uipath.com/discourse-interstitial/my_interstitials.json
 desport.ru##div[class^="PopupProductComponent_"]
 /forms-akamai.smsbump.com$script,domain=edikted.com
-faceit.com###__next__modal_root__ > div[class^="style__Holder-"]:has(> div:contains(Sign in for the full experience))
+faceit.com#?##__next__modal_root__ > div[class^="style__Holder-"]:has(> div:contains(Sign in for the full experience))
 stuff.tv#%#//scriptlet('set-cookie', 'hustle-hide-module-1', '1')
 nps.gov###touchpoints-survey
 fxstreet.com###tracking-gtm-global-alert
@@ -13044,7 +13045,7 @@ menunedeli.ru##.mypopup-over
 menunedeli.ru##div[id^="modal_mypopup_"]
 stopgame.ru#%#//scriptlet('trusted-set-local-storage-item', 'stalcraft_promo_shown', 'true')
 igotoworld.com#%#//scriptlet('set-cookie-reload', 'closing-banner', '1')
-defkey.com#$##showRegisterPopupAfterSecs { remove: true; }
+defkey.com#$?##showRegisterPopupAfterSecs { remove: true; }
 sportsdzen.ru,dzen.ru##.trapPopupContainer
 philips.com.tr#%#//scriptlet('set-cookie', 'p-gc35', 'true')
 elarus.ru##.popup-right-angle
@@ -13081,6 +13082,7 @@ scaler.com##div[class^="exit-intent_modal_main_container"]
 slevomat.cz#$#body { overflow: auto !important; padding-right: 0 !important; }
 slevomat.cz#$#.message-overlay--leave { display: none !important; }
 support.reddithelp.com##.lt-article-vote-feedback-container
+store.shopping.yahoo.co.jp#?#div[class^="styles_buttons"] > div.Tip:has(> div.Tip__contents p.Tip__title:contains(ギフト機能が追加されました))
 avrebo.com#$?#body > div.MuiDialog-root:has(> div.MuiDialog-container img[src^="/images/recruit/"]) { display: none !important; }
 avrebo.com#$#body { overflow: auto !important; }
 xrite.com###sticky-footer[style*="fixed"]
@@ -16627,6 +16629,7 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+intentionalacademia.substack.com#$?#div[class*="contentBlockContainer-"][style="scroll-margin-top: 48px;"]:has(button[data-href*="substack.com/subscribe?"]) { remove: true; }
 ||newneek.co^$cookie=article_read_count
 jpl.nasa.gov##div[itemprop="articleBody"] > div.BaseGrid + div.BaseGrid:has(> div.relative > div.BlockNewsletterSignup)
 designcompass.org##body > div[id^="elementor-popup"]:has(> div.dialog-widget-content div.mailpoet_form_popup_overlay)
@@ -20847,6 +20850,7 @@ sapo.pt###bsu-v4-appbanner-ctn
 desport.ru#%#//scriptlet('trusted-set-local-storage-item', 'POPUP_KEY', 'closed')
 music.yandex.*##div[class^="DeeplinkAndOnelinkContainer_root"]
 music.yandex.*##section[aria-label^="Скачать приложение"]
+faceit.com#?#div[id^="content-grid-element"] > div[class^="styles__Holder-"]:has(> div[class^="styles__InnerHolder-"] > div[class^="styles__QRCodeAndTextHolder-"] span:contains(Scan the QR code to download app))
 iscihaber.net##.theiaStickySidebar a[href="http://iscihaber.site/app.php"]
 m.yelp.com##div[class^="overlay-color-"]:has(> div[class^="overlay-wrapper"] > a[href*="app"])
 vk.com###react_rootAnonymShortVideoStub
@@ -20906,7 +20910,7 @@ ntv.com.tr##.article-app-widget
 x.com##article[data-testid="tweet"] div[data-testid="card.wrapper"]:has(> div[data-testid="card.layoutLarge.media"] > a[href="https://itunes.apple.com/app/id6670324846"])
 dhgate.com###J_appBanner
 espncricinfo.com##.ds-bottom-14.ds-right-0
-espncricinfo.com##button:has(> span:contains(Get App))
+espncricinfo.com#?#button:has(> span:contains(Get App))
 gigabaito.com##.app_bottom_banner
 gigabaito.com##.app_cv_footer
 comss.ru##a[href="https://www.rustore.ru/catalog/app/ru.comss.dns.app"]
@@ -20989,7 +20993,7 @@ m.map.kakao.com###daumWrap > div.comm_layer
 kitco.com##img[alt*="AppStore"]
 kitco.com##img[alt*="GooglePlay"]
 kitco.com##img[alt*="QR Code"]
-1024terabox.com,terabox.com,terabox.app##.action-bar > div.action-bar-view:has(> div.btn-text:contains(View on Mobile))
+1024terabox.com,terabox.com,terabox.app#?#.action-bar > div.action-bar-view:has(> div.btn-text:contains(View on Mobile))
 1024terabox.com,terabox.com,terabox.app##.share-base > div.btns-box:has(> div.operation-block > div#openNaBtn)
 1024terabox.com,terabox.com,terabox.app###openNaMessageBar > div.right > div.btn
 1024terabox.com,terabox.com,terabox.app##.to-app-container
@@ -21013,12 +21017,13 @@ business-standard.com#%#//scriptlet('set-cookie', 'popupShown', 'true')
 mybook.ru#?#div[class] + div[class]:has(> div[class] + p[class]:contains(мобильного приложения))
 zillow.com###local-app-upsell
 tubitv.com#%#//scriptlet('trusted-set-local-storage-item', 'isAppDownloadBannerDismissed', 'true')
-citilink.ru##div[class*="app-catalog-"] > div[class*="app-catalog-"]:has(> div[class*="app-catalog-"] > div[class*="app-catalog-"] > span:contains(Скачайте приложение))
+citilink.ru#?#div[class*="app-catalog-"] > div[class*="app-catalog-"]:has(> div[class*="app-catalog-"] > div[class*="app-catalog-"] > span:contains(Скачайте приложение))
 noticiasaominuto.com##.mb-8 > div.flex:has(> div.flex > a[href^="https://play.google.com/store/apps/"])
 autodoc.de##.app-block-wrap
 aliexpress.ru##div[class^="PseudoSmartBanner_"]
 informer.rs##.apps-box
 copilot.microsoft.com###app > .relative[style*="opacity"]:has( .flex > button[title][aria-label])
+foxford.ru#?#.fox-Paper + div[class^="Spacer__Root-"]:has(> div[class^="styled__Root-"] div.fox-Text:contains(мобильное приложение))
 animego.ong##.b-dwnapp
 m.tuttur.com#%#//scriptlet('trusted-set-local-storage-item', 'SmartBannerShowedDate', '$now$')
 dns-shop.ru#%#//scriptlet('set-cookie', 'app_suggest-opened', '1')
@@ -21095,6 +21100,7 @@ hindustantimes.com##div[class^="OpenAppCTA_openAppButton_"]
 patreon.com##nav div[class^="sc-"]:has(> button[type="button"] div[class^="sc-"] > span[class^="sc-"] > svg[data-tag="IconPhone"])
 duckduckgo.com##.footer section > div[class]:has(> a[href^="https://duckduckgo.com/windows"])
 embed-player.newsoveraudio.com#$?##embed-audio-player-listen-on-noa { display: none !important; }
+xhamster.com#?#body > #svadilfari-content-root ~ div[class^="popup-"]:has(div[class^="contentInner-"] p:contains(app))
 i879.com###app-footerbnr
 millipiyangoonline.com##.freetext:has( > .tab-container a[href="/uygulamayi-indir"])
 patreon.com#%#//scriptlet('set-local-storage-item', 'desktopAppBannerDismissed', 'true')
@@ -21133,6 +21139,7 @@ downdetector.*##.app-promo-card:not(#style_important)
 developer.baidu.com##a[class^="articel_detail_block-item__"][data-track-value$="banner"]
 economia.uol.com.br##.campaign-container
 deccanherald.com##.story-cards > div:has(a[href="https://play.google.com/store/apps/details?id=com.tpml.dh"])
+medal.tv#?#div[class^="sc-"]:has(> div[class^="sc-"] > div[class^="sc-"] > span:contains(Also available on Android and Windows))
 mobalytics.gg#$##container > div[class^="m-"] > main[class^="m-"] > div[class^="m-"] + div > div[class^="m-"] + div[class^="m-"] { padding-top: 0px !important; }
 mobalytics.gg#?#div[class^="m-"]:has(> div[class^="m-"] > div[class^="m-"] > button[class^="m-"][style^="background-color:"] > span[class^="m-"])
 g2a.com##main > div[class^="PageBlock_page-block"]:has(> section a[href^="https://www.g2a.com/mobile-app"] > img.bqci-image)
@@ -22741,6 +22748,7 @@ ign.com##div[data-cy="playlist-view-trigger"]
 blog.jetbrains.com##.jb-download-button
 blog.jetbrains.com##.banner
 evrimagaci.org##.inarticle-feed
+luciferdonghua.in#?#.wrapper > div.announ:contains(No one like ads)
 cyberleninka.ru###content > div.viewer-similars
 kakuchopurei.com##.live-news-widget-wrap
 rockpapershotgun.com##.poll_wrapper
@@ -22895,7 +22903,7 @@ genius.com##aside[class^="RecommendedSongs__"]
 forbes.ua##.c-post-subscribe
 !+ NOT_PLATFORM(ext_ublock)
 x.com,twitter.com#?#section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="tweetText"] > a:contains(/jp\.cooki(?:e-food|cway)\.com/))
-x.com,twitter.com##section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="card.wrapper"] + a:contains(/bokepchudai[0-9A-z]+\.blogspot|jp\.cookie-food\.com|jp\.cookicway\.com|zennnews\.com/))
+x.com,twitter.com#?#section[aria-labelledby^="accessible-list"] div[style^="transform"]:has(div[data-testid="card.wrapper"] + a:contains(/bokepchudai[0-9A-z]+\.blogspot|jp\.cookie-food\.com|jp\.cookicway\.com|zennnews\.com/))
 posta.com.tr##.content-box > a[href^="https://flipboard.com/"]
 zeberka.pl,kozaczek.pl,papilot.pl#%#//scriptlet('set-constant', 'Object.prototype.stickyEnabled', 'false')
 new.qq.com##div[data-beacon-expo][dt-eid="em_content_card"]
@@ -24311,7 +24319,7 @@ avito.ru##div[data-marker="standard-banner"]
 x.com,twitter.com##aside[role="complementary"]:has(> a[href="/i/premium_sign_up"])
 antiwar.com##.sidebar > section[id^="text-"]:has(> div.textwidget > p.small > a[href="https://www.antiwar.com/advertise/"])
 infor.pl##.boxLinkPlacement:has(.adsTextTop)
-infor.pl##aside > .bestsellers:has(> div[style]:contains(/^Autopromocja$/))
+infor.pl#?#aside > .bestsellers:has(> div[style]:contains(/^Autopromocja$/))
 rapidseedbox.com##.entry-content > h4.wp-block-heading[style="background-color:#b0f2b6"]
 tproger.ru##.tp-layout-default__aside-right-widget--jobs
 tproger.ru##.tp-ui-infinite-scroll > div.tp-widget-card:has(div.tp-widget-jobs-wrapper)
@@ -28550,7 +28558,7 @@ ovd.info##.content div.popmechanic-js-form
 ||frontend.poool.fr/engage/
 la-croix.com,kyivindependent.com##iframe[src^="https://frontend.poool.fr/"]
 verstka.media##.vm-single-post-content > p[class="has-background"][style="background-color:#47d4ff"]
-novayagazeta.ru###article-body div[class]:has(> div[class] > p[class]:contains(Поддержите))
+novayagazeta.ru#?##article-body div[class]:has(> div[class] > p[class]:contains(Поддержите))
 novayagazeta.ru##div[id^="materialBlock"] > div[style="height: 100px;"]
 annas-archive.org##.js-fundraiser-banner
 hechingerreport.org##.newspack-lightbox-placement-top
