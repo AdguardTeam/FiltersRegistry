@@ -1,9 +1,9 @@
-! Checksum: +oV8r/+i1/Wz91go135WXA
-! Diff-Path: ../patches/235_optimized/235_optimized-s-1754470081-14400.patch
+! Checksum: q4je13ztrWGdabEF7HjuAg
+! Diff-Path: ../patches/235_optimized/235_optimized-s-1754498792-14400.patch
 ! Title: Persian Blocker (Optimized)
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.70
-! TimeUpdated: 2025-08-06T08:43:18+00:00
+! Version: 2.0.5.71
+! TimeUpdated: 2025-08-06T16:42:19+00:00
 ! Expires: 10 days (update frequency)
 ||adverge.ir^
 ||yektanet.com^
@@ -91,6 +91,7 @@ ninisite.com###forum-native-ad
 ||footballitarin.com/agahi^
 aparat.com##.banner-ads
 aparat.com##.promote-puls
+soft98.ir,~forum.soft98.ir#$#img[src^="https://img.soft98.ir/"] { clip-path: circle(0) !important; }
 soft98.ir,~forum.soft98.ir#$#html::before { content: ' ⚠️ این وبسایت توسط جامعهٔ PersianBlocker یک وبسایت ضدکاربر تشخیص داده شده است؛ یعنی با جلوگیری از استفاده از افزونه‌های ضدتبلیغات، آزادی شماره صفرم شما (هر کاربر باید آزادی اینکه چه چیز را ببیند یا نبیند داشته باشد) را محدود کرده است. پیشنهاد می‌شود از وبسایت‌های جایگزین استفاده کنید. PersianBlocker 🄯 ⚠️ ' !important; color: #1E88E5 !important; font-weight: bold !important; font-size: x-large !important; overflow: visible !important; z-index: 856985698569 !important; position: absolute !important; background-color: white !important; border: 8px solid red !important; border-radius: 12px !important; padding: 1em !important; top: 0px !important; display: block !important; width: 100% !important; }
 ||par30games.net/wp-content/uploads/*.gif^
 par30games.net##.top-large-ads
@@ -136,15 +137,20 @@ aparat.com#%#//scriptlet('ubo-set-session-storage-item.js', 'videoWatchCount', '
 ||sentry.mci.dev^
 ||new-sentry.digikala.com^
 ||accounts.pod.ir/js/fingerprint2.min.js^
-www.google.com#$#a[href]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"]) > h3::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+www.google.com#$#a[href]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"]) > h3::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+www.google.com#$#a[href]:where([href*="filmazon.my/"]) > h3::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 www.google.com#$#a[href]:where([href*="soft98.ir/"]) > h3::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
-www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::before { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; font-size: large !important; }
+www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"])::before { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; font-size: large !important; }
+www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="filmazon.my/"])::before { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="soft98.ir/"])::before { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; font-size: large !important; }
-duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="filmazon.my/"])::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
-search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="filmazon.my/"])::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
-zarebin.ir#$#a[href][class^="!text-link"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+zarebin.ir#$#a[href][class^="!text-link"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+zarebin.ir#$#a[href][class^="!text-link"]:where([href*="filmazon.my/"])::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 zarebin.ir#$#a[href][class^="!text-link"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
 www.google.com#$#a[href]:where([href*="par30games.net/"]) > h3::after { content: ' 💰 (نیم بها) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="par30games.net/"])::before { content: ' 💰 (نیم بها) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }

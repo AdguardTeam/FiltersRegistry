@@ -1,9 +1,9 @@
-! Checksum: 9ZtvkHennooU0CQ8qu6HwQ
-! Diff-Path: ../patches/235/235-s-1754470105-14400.patch
+! Checksum: FrAISytcRggnznmXyqxojA
+! Diff-Path: ../patches/235/235-s-1754498811-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.70
-! TimeUpdated: 2025-08-06T08:43:18+00:00
+! Version: 2.0.5.71
+! TimeUpdated: 2025-08-06T16:42:19+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ☀️ PersianBlockerNG ☀️
@@ -163,6 +163,7 @@ aparat.com##.promote-puls
 ! soft98.ir
 ! https://github.com/uBlockOrigin/uAssets/issues/14480
 ! https://github.com/MasterKia/PersianBlocker/issues/40
+soft98.ir,~forum.soft98.ir#$#img[src^="https://img.soft98.ir/"] { clip-path: circle(0) !important; }
 soft98.ir,~forum.soft98.ir#$#html::before { content: ' ⚠️ این وبسایت توسط جامعهٔ PersianBlocker یک وبسایت ضدکاربر تشخیص داده شده است؛ یعنی با جلوگیری از استفاده از افزونه‌های ضدتبلیغات، آزادی شماره صفرم شما (هر کاربر باید آزادی اینکه چه چیز را ببیند یا نبیند داشته باشد) را محدود کرده است. پیشنهاد می‌شود از وبسایت‌های جایگزین استفاده کنید. PersianBlocker 🄯 ⚠️ ' !important; color: #1E88E5 !important; font-weight: bold !important; font-size: x-large !important; overflow: visible !important; z-index: 856985698569 !important; position: absolute !important; background-color: white !important; border: 8px solid red !important; border-radius: 12px !important; padding: 1em !important; top: 0px !important; display: block !important; width: 100% !important; }
 ! par30games.net
 ||par30games.net/wp-content/uploads/*.gif^
@@ -268,24 +269,31 @@ aparat.com#%#//scriptlet('ubo-set-session-storage-item.js', 'videoWatchCount', '
 ! ==VVV== !
 ! Specific !
 ! ===VV=== !
+! cooldl.net, hexdl.com, modernfilm.ir, vipofilm.com, upmedia.movie: upera.tv or upera.shop download links
 ! doostihaa.com: "نسخه اول دوبله فارسی سانسور شده"
 ! zardfilm.in: "تابع قوانین و مقررات"
-! cooldl.net: upera.tv download links
+! gapfilm.ir: "فعالیت‌های سایت گپ فیلم تابع قوانین و مقررات جمهوری اسلامی ایران است"
+! filmazon.my: https://filmazon.my/subscription
 ! soft98.ir: Hostile behavior against users with content blockers
-! google.com
-www.google.com#$#a[href]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"]) > h3::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+! google.com:
+www.google.com#$#a[href]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"]) > h3::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+www.google.com#$#a[href]:where([href*="filmazon.my/"]) > h3::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 www.google.com#$#a[href]:where([href*="soft98.ir/"]) > h3::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
-! bing.com
-www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::before { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; font-size: large !important; }
+! bing.com:
+www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"])::before { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; font-size: large !important; }
+www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="filmazon.my/"])::before { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="soft98.ir/"])::before { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; font-size: large !important; }
-! duckduckgo.com
-duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+! duckduckgo.com:
+duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="filmazon.my/"])::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
-! search.brave.com
-search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+! search.brave.com:
+search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="filmazon.my/"])::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
-! zarebin.ir
-zarebin.ir#$#a[href][class^="!text-link"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+! zarebin.ir:
+zarebin.ir#$#a[href][class^="!text-link"]:where([href*="doostihaa.com/"], [href*="zardfilm.in/"], [href*="cooldl.net/"], [href*="dlrozaneh.ir/"], [href*="gapfilm.ir/"], [href*="hexdl.com/"], [href*="modernfilm.ir/"], [href*="vipofilm.com/"], [href*="upmedia.movie/"], [href*="filimo.com/"])::after { content: ' 🔞 (سانسور شده) 🔞 ' !important; color: red !important; font-weight: bold !important; }
+zarebin.ir#$#a[href][class^="!text-link"]:where([href*="filmazon.my/"])::after { content: ' 💰 (اشتراکی) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 zarebin.ir#$#a[href][class^="!text-link"]:where([href*="soft98.ir/"])::after { content: ' ⚠️ ضد کاربر | Anti-User ⚠️ ' !important; color: red !important; font-weight: bold !important; }
 ! Half-Price (نیم بها) Sites:
 ! Title: PersianBlockerHalfPrice
@@ -301,17 +309,17 @@ zarebin.ir#$#a[href][class^="!text-link"]:where([href*="soft98.ir/"])::after { c
 ! ==VVV== !
 ! Specific !
 ! ===VV=== !
-! Reference: linkirani.ir
+! Reference: https://linkirani.ir/
 ! par30games.net: https://l2i.ir/EKBLZN
-! google.com
+! google.com:
 www.google.com#$#a[href]:where([href*="par30games.net/"]) > h3::after { content: ' 💰 (نیم بها) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
-! bing.com
+! bing.com:
 www.bing.com#$#a[href][href*="&mediaurl="][target="_blank"][title][href^="/images/search?view=detail"]:where([href*="par30games.net/"])::before { content: ' 💰 (نیم بها) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
-! duckduckgo.com
+! duckduckgo.com:
 duckduckgo.com#$#a[href][data-testid="result-title-a"]:where([href*="par30games.net/"])::after { content: ' 💰 (نیم بها) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
-! search.brave.com
+! search.brave.com:
 search.brave.com#$#a[href][class$="heading-serpresult"]:where([href*="par30games.net/"])::after { content: ' 💰 (نیم بها) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
-! zarebin.ir
+! zarebin.ir:
 zarebin.ir#$#a[href][class^="!text-link"]:where([href*="par30games.net/"])::after { content: ' 💰 (نیم بها) 💰 ' !important; color: yellow !important; font-weight: bold !important; text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px  1px 0 black, 1px  1px 0 black; }
 ! Malware and Phishing:
 ! Mobile (Firefox Android, Cromite, AdGuard for Android, AdGuard for iOS, AdGuard for Safari, Samsung Internet)
