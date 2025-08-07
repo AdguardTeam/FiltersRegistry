@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XZfVuNxvkxvZxpouHOlxpA
-! Diff-Path: ../patches/7/7-s-1754507530-3600.patch
+! Checksum: vo1tHR7W2QxZPvYORT5XiQ
+! Diff-Path: ../patches/7/7-s-1754573048-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.67.42
-! TimeUpdated: 2025-08-06T19:08:11+00:00
+! Version: 2.0.67.43
+! TimeUpdated: 2025-08-07T13:20:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1798,7 +1798,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-lovecp-books.com##.promotionArea
+lovecp-books.com##iframe[id^="ac"]
 erogif-eden.com##a[rel="sponsored"]
 indiegamekoryaku.com##div[style="border: 2px solid #f0c040; padding: 12px; background: #fffce6; margin: 20px 0; border-radius: 6px;"]
 indiegamekoryaku.com###imobile-interstitial
@@ -5202,7 +5202,12 @@ moez-m.com###top2_left
 moez-m.com##.entry-body > center > table[width="430"]:not([cellspacing])
 moez-m.com##.solinkimag
 ||ota-goods.info^$third-party
+figsoku.net##+js(href-sanitizer, a[href^="https://al.dmm.com/?lurl="], ?lurl)
+figsoku.net##+js(href-sanitizer, a[href^="https://affiliate.suruga-ya.jp/modules/af/af_jump.php?"], ?goods_url)
+figsoku.net##+js(href-sanitizer, a[href*="hb.afl.rakuten.co.jp/hgc/"][href*="/?pc="], ?pc)
+figsoku.net##+js(href-sanitizer, a[href*="ck.jp.ap.valuecommerce.com/servlet/referral?"][href*="&vc_url="], ?vc_url)
 figsoku.net##+js(abort-current-script, document.createElement, randomad)
+##.pluginWrap[style^="width: 240px; height: 16px; "]
 figsoku.net###randomad2
 figsoku.net##.pluginWrap:has(> div.textwidget > div.sum)
 figsoku.net##.pluginWrap[style="width: 245px; height: 4px; position: relative;"]
