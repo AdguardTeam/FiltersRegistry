@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.2.54",
-			"timeUpdated": "2025-08-10T08:08:13+0000",
+			"version": "2.4.2.55",
+			"timeUpdated": "2025-08-10T09:07:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.41.59",
-			"timeUpdated": "2025-08-10T01:36:24+0000",
+			"version": "2.1.41.60",
+			"timeUpdated": "2025-08-10T09:07:54+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
