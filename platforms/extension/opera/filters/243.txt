@@ -1,14 +1,14 @@
-! Checksum: VIywDUudY4NLvW8YMZk/tg
-! Diff-Path: ../patches/243/243-s-1754714726-14400.patch
+! Checksum: DQ0dQ5fxj1kKAoPqi047pA
+! Diff-Path: ../patches/243/243-s-1754801344-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.39
-! TimeUpdated: 2025-08-09T04:41:16+00:00
+! Version: 2.0.22.40
+! TimeUpdated: 2025-08-10T04:44:56+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-08-09 05:33:50 CEST
+! Last modified: 2025-08-10 04:55:40 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -191,6 +191,7 @@ altinget.se##a[href^="/sponsrade"]
 amelia.expressen.se##article p.uppercase.tracking-wide:has-text(Inlägget innehåller annonslänkar):upward(article)
 amelia.expressen.se##.max-w-\[980px\]:has(.slick-slider a[target="_blank"])
 analytics$domain=corren.se|folkbladet.se|mvt.se|nt.se|vt.se|vimmerbytidning.se|kuriren.nu|nsd.se|norran.se|pt.se|ekuriren.se|strengnastidning.se|kkuriren.se|sn.se|eposten.se|unt.se|helagotland.se|fastighetsvarlden.se
+annonsbanner$image,domain=kiacarclub.se
 arbetaren.se##.text-sm:has-text(/annons/i):upward(.border-b, a[target])
 arbetet.se##.Container:not(.ContentItem-content):has([data-controller="ad"])
 arbetet.se##.Teaser--native, .o-native, [data-controller="ad"], div[id^="consent-"]
@@ -560,7 +561,8 @@ fiskesnack.com##.axd-widget, #widget_314
 flamman.se###scrollup
 flashback.org###top-banner-container, #top-banner-wrapper
 flashback.org#%#//scriptlet('ubo-nostif.js', '#top-banner-container')
-flashscore.se##.boxOverContent--a, .otPlaceholder, .seoAdWrapper, .adsbackground-wrapper, .prematchOddsBonus__bonus, .prematchLink[target], .detailLeaderboardSkeleton
+flashscore.se##span[class^="wcl-overline"] div:has-text(Annons):upward(article[class^="wcl-article"])
+flashscore.se##.boxOverContent--a, .otPlaceholder, .seoAdWrapper, .adsbackground-wrapper, .prematchOddsBonus__bonus, .prematchLink[target], .detailLeaderboardSkeleton, .ui-media__placeholder:empty
 flm.nu##.spons
 flygtorget.se##.CookieConsent
 flygtorget.se##header > div.mx-auto:has(img[alt$="ad logo"])
@@ -1494,7 +1496,7 @@ tv4play.se,tv4.se,fotbollskanalen.se,koket.se,embed.viaplay.com#%#//scriptlet('u
 tv4.se,skippo.se,koket.se##.maxetise
 tv24.se##li[id^="infeed"], div.presented-by
 tvmatchen.nu##.bet365, .panorama-wrapper, .tvg-manager-box, .tv102945, .tv102987, #event_banner, .go-to-partner, .odds, #text-13, .left-skyscraper-wrapper, .right-skyscraper-wrapper, .sticky-top-wrapper
-tvsporten.nu##div[class*="odds_container"], .sidebar a[target], .fixture-ad-wrapper, #tower-1
+tvsporten.nu##div[class*="odds_container"], .sidebar a[target], .fixture-ad-wrapper, #tower-1, div[class*="-ads"]
 tv.nu##a[href*="adform.net"], .ad-fullscreenWallpaper__container
 tv.nu###modal div[itemtype][itemscope] > div[class]:has(a[href*="doubleclick"])
 tv.nu###tv-schedule section:has-text(ANNONS)

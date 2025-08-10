@@ -1,9 +1,9 @@
-! Checksum: /zt3DBsYnZ8kBCkuwwbg5g
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1754787194-14400.patch
+! Checksum: m/qBRUGAascdzvZuxHattw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1754801327-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.46.11
-! TimeUpdated: 2025-08-10T00:48:54+00:00
+! Version: 2.1.46.12
+! TimeUpdated: 2025-08-10T04:44:34+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -78,6 +78,7 @@
 /share/footer/*
 /share42.js
 /share_button?
+/share_count.js
 /share_popup.js
 /share_sprite.png
 /share_view.js
@@ -115,6 +116,7 @@
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
+/socialbookmarks.js
 /socialite.js
 /socialite.min.js
 /socialsprites.
@@ -169,6 +171,7 @@ _social_footer_
 ###block-menu-menu-social-media-links
 ###block-menu-menu-social-menu
 ###block-social
+###block-socialfooter
 ###block-sociallinks
 ###block-socialmedia
 ###block-socialmedialinks
@@ -309,7 +312,6 @@ _social_footer_
 ###js-share
 ###js-share-links
 ###large_share_wrapper
-###likeThisPost
 ###linkedin_share
 ###mainShare
 ###main_socials
@@ -581,8 +583,10 @@ _social_footer_
 ###socialShare
 ###socialSharing
 ###socialTwitter
+###socialWidgets
 ###socialWrap
 ###socialYouTube
+###social_bar
 ###social_bkm_wrap_top
 ###social_block
 ###social_bookmark
@@ -732,7 +736,7 @@ _social_footer_
 ##.ShareThisBlock
 ##.ShareThis_Title
 ##.Shariff
-##.Sharing-list
+##.SharingContainer
 ##.SiteFooter__follow
 ##.Social-Media
 ##.Social-link
@@ -1332,7 +1336,6 @@ _social_footer_
 ##.follow-us-on-twitter
 ##.follow-us-panel
 ##.follow-us-twitter
-##.follow-us-widget
 ##.follow-us-wrapper
 ##.follow-widget
 ##.followSocial
@@ -1343,7 +1346,6 @@ _social_footer_
 ##.followus_net
 ##.followuson
 ##.foot-share
-##.foot-soc-fb
 ##.foot-soc-list
 ##.foot-soc-twit
 ##.foot-social
@@ -1561,7 +1563,6 @@ _social_footer_
 ##.headersocials
 ##.headsocial
 ##.heateorSssSharingRound
-##.heateorSsspSharing
 ##.heateor_sss_sharing_container
 ##.heateor_sss_sharing_ul
 ##.heateor_sssp_sharing_container
@@ -1929,6 +1930,7 @@ _social_footer_
 ##.mobile-share-buttons-spacer
 ##.mobile-social
 ##.mobileShare
+##.mobilesocial
 ##.mod-facebook
 ##.mod-follow
 ##.mod-social-navigation
@@ -2420,6 +2422,7 @@ _social_footer_
 ##.shareArticle
 ##.shareBar
 ##.shareBlock
+##.shareBottom
 ##.shareBox
 ##.shareBtm
 ##.shareBtn
@@ -3332,11 +3335,9 @@ _social_footer_
 ##.twitter_btn
 ##.twitter_feed
 ##.twitter_follow
-##.twitter_follow_button
 ##.twitter_icn
 ##.twitter_icon
 ##.twitter_link
-##.twitter_social
 ##.twitter_widget
 ##.twitterbird
 ##.twitterbox
@@ -3349,7 +3350,6 @@ _social_footer_
 ##.twittershare
 ##.twshare
 ##.twtr
-##.twtr-widget
 ##.ty-social-link
 ##.ty-social-link-block
 ##.typcn-social-twitter
@@ -3600,6 +3600,7 @@ _social_footer_
 ||facebook.com/plugins/like_box.php$third-party
 ||facebook.com/plugins/page.php?$third-party
 ||facebook.com/plugins/share_button.php?$third-party
+||facebook.com/widgets/like.php?$third-party
 ||facebook.com^*/plugins/like.php?$third-party
 ||facebook.com^*/plugins/page.php?$third-party
 ||facebook.com^*/plugins/share_button.php?$third-party
@@ -3639,7 +3640,6 @@ _social_footer_
 ||po.st/static/$third-party
 ||reddit.com/api/info.json?$third-party
 ||reddit.com/static/$third-party
-||revinate.com^$third-party
 ||share.itraffic.su^$third-party
 ||shareaholic.com^$third-party
 ||sharedcount.com^$third-party
@@ -3656,7 +3656,6 @@ _social_footer_
 ||vk.com/widget_community_messages.php?$third-party
 ||vk.com/widget_like.php$third-party
 ||vkontakte.ru/js/api/$third-party,domain=~arudex.com|~tapclap.com|~ugo.ru|~vk.com
-||vkontakte.ru/widget_like.php$third-party
 ||w.uptolike.com^$third-party
 ||widget.weibo.com^$third-party
 ||widgets.getpocket.com^$third-party
@@ -3747,6 +3746,7 @@ cbssports.com##.SocialIconsBar
 worldathletics.org##.SocialShare_root__3h83X
 streetsblog.org##.SocialSharing_socialSharingItems__wdJu8
 indiatoday.in##.Story_whatsapp_channel__6xdtB
+grammarly.com##._3fq8S-container
 pixivision.net##._floated-bottom-bar
 pixivision.net##._follow-us-card
 tableconvert.com##._share-wrapper
@@ -3831,7 +3831,6 @@ overwolf.com##.creator-social
 bloomberg.com##.css--social-wrapper-outer
 kcrw.com##.cta-wrapper
 drugs.com##.ddc-footer-column-social
-newsonjapan.com##.detailed-social-media-icons
 dailymail.co.uk##.dms-puff
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,catholicnewsagency.com##.donation-box
 economist.com##.ds-actioned-link--share
@@ -4214,7 +4213,6 @@ androidpolice.com,creditoagricola.pt,electricfencing.co.uk,esradiocastillayleon.
 cp24.com,epochtimes.com.br,epochtimes.it,lagaceta.com.ar,n-tv.de,progressive.org,toyokeizai.net##.tools
 archifacile.fr,atomic-robo.com,autobelle.it,bollywoodhungama.com,canavesenews.it,chnetwork.org,classicreload.com,donnahay.com.au,fotografidigitali.it,gamingonlinux.com,joburg.org.za,lavoro.gov.it,ledpros.ca,meteovista.be,meteovista.fr,meteovista.pl,navigaweb.net,nexto.pl,phoronix.com,rasom.it,sfr.fr,telesatellite.com,ucl.ac.uk,weeronline.nl,whtop.com,zookeys.pensoft.net###social
 applesfera.com,espinof.com,genbeta.com,vidaextra.com,vitonica.com,xatakahome.com,xatakamovil.com,xatakandroid.com##.masthead-nav-social
-directoalpaladar.com,poprosa.com,trendencias.com##.head-nav-social
 ansalatina.com,disroot.org,onpulson.de,rand.org,sportwebsicilia.it##.social-button
 allears.net,canadaradiostations.com,canli-radyo-dinle.com,cgtnturk.com,crimeonline.com,dezeen.com,diarioprimeralinea.com.ar,eandt.theiet.org,elfinanciero.com.mx,elheraldo.hn,emisoras-puertorico.com,emisorascolombianas.co,fivebooks.com,fmradiofree.com,fmuna.com.ar,foxsports.com.mx,informer.com,internetradio-horen.de,internetradio-schweiz.ch,laprensa.hn,open.online,opencritic.com,politicalflare.com,proteste.org.br,radio-ao-vivo.com,radio-australia.org,radio-belgie.be,radio-danmark.dk,radio-dominicana.com,radio-ecuador.org,radio-en-ligne.fr,radio-en-vivo.mx,radio-espana.es,radio-hk.com,radio-hrvatska.com,radio-italiane.it,radio-korea.com,radio-maroc.org,radio-nederland.nl,radio-norge.org,radio-osterreich.at,radio-philippines.com,radio-polska.pl,radio-singapore.com,radio-south-africa.co.za,radio-stations.co.nz,radio-suomi.com,radio-sveriges.se,radio-thai.com,radio-ua.com,radio-uk.co.uk,radioindia.in,radioindonesia.org,radiojapan.org,radiomalaysia.org,radios-argentinas.org,radios-bolivia.com,radios-chilenas.com,radios-guatemala.com,radios-online.pt,radios-uruguay.com,radios-venezuela.com,radiosdelperu.pe,radiotaiwan.tw,rai.it,redvoicemedia.com,religionnews.com,tarreo.com,thecollegefix.com,upcomingvinyl.com##.social-buttons
 n1info.ba,n1info.hr,n1info.rs,n1info.si,nova.rs##.uc-social-bar-wrapper
