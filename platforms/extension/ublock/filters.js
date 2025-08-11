@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.1.4",
-			"timeUpdated": "2025-08-11T10:07:45+0000",
+			"version": "2.1.1.5",
+			"timeUpdated": "2025-08-11T14:07:47+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.2.83",
-			"timeUpdated": "2025-08-11T13:18:34+0000",
+			"version": "2.4.2.84",
+			"timeUpdated": "2025-08-11T14:07:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.58",
-			"timeUpdated": "2025-08-11T13:18:46+0000",
+			"version": "2.0.67.59",
+			"timeUpdated": "2025-08-11T14:08:16+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.39.19",
-			"timeUpdated": "2025-08-11T13:18:56+0000",
+			"version": "2.2.39.20",
+			"timeUpdated": "2025-08-11T14:08:30+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.89.52",
-			"timeUpdated": "2025-08-11T13:18:57+0000",
+			"version": "2.0.89.53",
+			"timeUpdated": "2025-08-11T14:08:31+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.64",
-			"timeUpdated": "2025-08-11T13:19:00+0000",
+			"version": "2.0.67.65",
+			"timeUpdated": "2025-08-11T14:08:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.9",
-			"timeUpdated": "2025-08-11T11:07:40+0000",
+			"version": "2.0.60.10",
+			"timeUpdated": "2025-08-11T14:08:36+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
