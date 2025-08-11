@@ -1,5 +1,5 @@
-! Checksum: 9iRhYEWjPvdInapFTwGYIw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1754801362-14400.patch
+! Checksum: qhBuQlV0DmEmOPLQLFskgQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1754887815-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.61
@@ -33,6 +33,7 @@
 ##.mobileApp:not(html,body,:empty)
 ##.open-in-app:not(html,body,:empty)
 ##.OpenInAppButton:not(html,body,:empty)
+##.popup-app:not(html,body,:empty)
 ##.smart-banner:not(html,body,:empty)
 ##.smartbanner:not(html,body,:empty)
 ##amp-app-banner
@@ -47,6 +48,7 @@
 ##div[id*=smartbanner i]
 ##smart-banner
 ~macgamestore.com##.get-the-app:not(html,body,:empty)
+autoblog.com###toaster_autoblog-app
 bilibili.com##.nav-link-item a[href$="app.bilibili.com"]
 ifeng.com##.openApp[onclick^="loadOpen.init(download"]
 imageban.ru##img[alt="Get it on Google Play"]
@@ -941,7 +943,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||hitchprivilege.com^$all
 ||apologiesoccursdepressed.com^$all
 ||delayeddisputecommotion.com^$all
-||governmentlevityintroduction.com^$all
 ||daytimereductionactually.com^$all
 ||heartburnsurroundingcourtroom.com^$all
 ||isabellaentire.com^$all
@@ -1027,7 +1028,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||botanysummarytables.com^$all
 ||compiledonatevanity.com^$all
 ||complexionbootydistinction.com^$all
-||concealtraveller.com^$all
 ||conjuremachinery.com^$all
 ||cpmrevenuegate.com^$all
 ||demiseskill.com^$all
@@ -1037,6 +1037,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||fastwavehilltop.com^$all
 ||filletfiguredconstrain.com^$all
 ||furyprosecutionkitchen.com^$all
+||highrevenuenetwork.com^$all
 ||invadedisheartentrail.com^$all
 ||listenerhooter.com^$all
 ||nannyirrationalacquainted.com^$all
@@ -1362,7 +1363,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 [2a14:2d81:0:27::1]$network
 !+ PLATFORM(windows, mac, android, cli)
 2a14:2d81:0:27::1$network
-||amt3.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 139.45.195.9$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -2203,6 +2203,7 @@ autoplius.lt#%#//scriptlet('ubo-ra.js', 'target', '[target="_blank"]', 'stay')
 ##.elementor-spacer:not(html, body)
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 ##.et_pb_divider:not(html,body)
+##div.dfd-spacer-module:empty
 transfermarkt.com##.clearer
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
@@ -2817,8 +2818,6 @@ $removeparam=bidswitch_ssp_id
 $removeparam=tgclid
 $removeparam=dlsi
 $removeparam=adset_id
-$removeparam=affid2
-$removeparam=oid2
 $removeparam=tw_source
 $removeparam=tw_adid
 $removeparam=retailerSlug
@@ -2864,6 +2863,7 @@ $removeparam=geniuslink
 ||amazon.$removeparam=visitId
 ||amazon.$removeparam=field-lbr_brands_browse-bin
 ||amazon.$removeparam=maas
+||amazon.$removeparam=/^aa_.*$/
 ||amazon.$removeparam=refinements
 ||amazon.$removeparam=qsid
 ||amazon.$removeparam=sres
@@ -3796,14 +3796,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
 .com/*/status/$document,removeparam=t,domain=twitter.com|x.com
 ||qwant.com^$removeparam=hti
-/offer/pre/*$removeparam=lpid
-/offer/pre/*$removeparam=source_id
-/offer/pre/*$removeparam=sub_id
-/offer/pre/*$removeparam=req_id
-/offer/pre/*$removeparam=oid
-/offer/pre/*$removeparam=device_type
-/offer/pre/*$removeparam=country_name
-/offer/pre/*$removeparam=uid
 ||finn.no^$removeparam=nocache
 ||instagram.com^$document,removeparam=entry_point
 !+ NOT_OPTIMIZED
@@ -4171,6 +4163,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 ##.text_ad:not(html,body,:empty)
 #@#.text_ads
 #@#.textad
+##.textad:not(html,body,:empty)
 #@#.textAd
 ##.textAd:not(html,body,:empty)
 @@/adblock-detection/prebid.js|

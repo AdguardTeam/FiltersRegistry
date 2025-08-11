@@ -1,9 +1,9 @@
-! Checksum: hb95b2JCYrH2IpkUrzUolA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1754873546-14400.patch
+! Checksum: 9oqO8Qy0s2JV4Lsv37atqg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1754887790-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.46.16
-! TimeUpdated: 2025-08-11T00:47:52+00:00
+! Version: 2.1.46.17
+! TimeUpdated: 2025-08-11T04:45:18+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -220,6 +220,7 @@ _social_footer_
 ###facebook_share
 ###facebookbtn
 ###facebooklike
+###facebooklikebox-2
 ###facebookpopup-fan-exit
 ###facebookpopup-fanback
 ###facebooktrend
@@ -362,7 +363,6 @@ _social_footer_
 ###post-share-icons
 ###post-social
 ###post_info_share
-###reseaux-sociaux
 ###rs_facebook
 ###rs_youtube
 ###rsociaux
@@ -877,6 +877,7 @@ _social_footer_
 ##.articleShare
 ##.articleShareLinks
 ##.articleSocial
+##.articleSocialLinks
 ##.article__details__share
 ##.article__header__share
 ##.article__likes
@@ -984,7 +985,6 @@ _social_footer_
 ##.blog_post_share
 ##.blvs-share-button
 ##.bookmark-share
-##.boton_twitter
 ##.bottom-footer__social
 ##.bottom-share
 ##.bottom-share-buttons
@@ -1013,6 +1013,9 @@ _social_footer_
 ##.button-pinterest
 ##.button-share
 ##.button-share-facebook
+##.button-share__bar
+##.button-share__media
+##.button-share__media--mail
 ##.button-social
 ##.button-twitter
 ##.button__share
@@ -1071,9 +1074,9 @@ _social_footer_
 ##.cd-fb-like-widget
 ##.cff-share-container
 ##.cff-share-tooltip
+##.checkout-share
 ##.ci-socials-ignited
 ##.cmg-share-bar
-##.cnt_followers
 ##.col-sharing
 ##.col-social
 ##.column-social
@@ -1129,6 +1132,7 @@ _social_footer_
 ##.dmSocialHub
 ##.docked-sharebar-docking-container
 ##.dp-share
+##.dpArticleShare
 ##.dpsp-network-btn
 ##.dpsp-networks-btns-share
 ##.dpsp-networks-btns-sidebar
@@ -1273,6 +1277,7 @@ _social_footer_
 ##.fbBtn
 ##.fbLike
 ##.fbShare
+##.fbShareButton
 ##.fbShareTrigger
 ##.fb_bar
 ##.fb_like_and_share
@@ -1570,7 +1575,6 @@ _social_footer_
 ##.herald-share-content
 ##.herald-soc-nav
 ##.hero-social
-##.hh-social-links
 ##.hideshare-wrap
 ##.hola_share_player_btn
 ##.hola_share_player_btn_wrapper
@@ -2098,6 +2102,7 @@ _social_footer_
 ##.post-share-widget
 ##.post-sharing
 ##.post-social
+##.post-social-buttons
 ##.post-social-pin
 ##.post-social-wrapper
 ##.post-socials
@@ -2455,6 +2460,7 @@ _social_footer_
 ##.sharePanel
 ##.sharePinterest
 ##.sharePost
+##.sharePrint
 ##.shareRow
 ##.shareSide
 ##.shareSocial
@@ -2689,6 +2695,7 @@ _social_footer_
 ##.simple-social-icons
 ##.simplesocialbuttons
 ##.simplesocialbuttons_inline
+##.single-item-share
 ##.single-post-meta-data__social-sharing
 ##.single-post-share
 ##.single-post-sharing-button
@@ -2907,6 +2914,7 @@ _social_footer_
 ##.social-overlay
 ##.social-pages
 ##.social-panel
+##.social-pin
 ##.social-plugins
 ##.social-pod
 ##.social-popover
@@ -3126,6 +3134,7 @@ _social_footer_
 ##.socialbtns
 ##.socialbutton
 ##.socialbuttons
+##.socialbx
 ##.socialcont
 ##.socialcontainer
 ##.socialcount
@@ -3212,6 +3221,7 @@ _social_footer_
 ##.story__share
 ##.story__social
 ##.stripe-social
+##.subShare
 ##.sub_jeu_social_facebook
 ##.sub_jeu_social_twitter
 ##.sub_sns
@@ -3453,6 +3463,7 @@ _social_footer_
 ##.widget_socials_ignited
 ##.widget_sow-social-media-buttons
 ##.widget_synved_social_follow
+##.widget_tie-instagram-theme
 ##.widget_twitter
 ##.widget_twitter_timeline
 ##.widget_vw_widget_social_counter
@@ -3778,7 +3789,6 @@ wnep.com##.article__sharing
 news.tvbs.com.tw##.article_community_box
 thespectator.com##.article_set_wrap
 news18.com##.article_socials
-attitude.co.uk##.at-article__social
 dictionary.com##.atw-socials
 thejournal.ie##.author-contact-social-container-redesign
 secretchicago.com,secretldn.com##.author-share-buttons
@@ -3845,6 +3855,7 @@ arabnews.com##.entry-views
 thegatewaypundit.com,wersm.com##.essb_links
 yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
+trueachievements.com##.fa-reddit
 techradar.com##.facebook-icon
 moparinsiders.com##.facebook-widget
 knowyourmeme.com##.fb-page-like-box
@@ -4053,7 +4064,6 @@ churchpop.com,dersonntag.at,toofab.com##.social-nav
 eltecolote.org,melmagazine.com,thefrisc.com,worldcrunch.com##.social-navigation
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
 businessinsider.in##.social-panel-rgt
-draxe.com##.social-proof-wrapper
 iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
@@ -4071,7 +4081,6 @@ moneycontrol.com##.social_icons_wrapper
 ringsidenews.com##.social_label
 ciudad.com.ar,eltrecetv.com.ar,lithub.com,tn.com.ar##.social_links
 dailysabah.com,gmanetwork.com,pnn.ps##.social_media
-unn.ua##.social_root__H2cRW
 abplive.com,businesstoday.in,catracalivre.com.br,gamesindustry.biz,ilmeteo.it##.social_share
 videocardz.com##.socialbar-sidebar
 firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.socials
@@ -4472,6 +4481,8 @@ milenio.com###share-icons-container
 excelsior.com.mx###social-bottom-node
 europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
+lasexta.com##.L6-channel-news__list
+lasexta.com##.L6-social-share
 adn40.mx##.ListSiguenos-SocialStrip
 elpais.com.uy##.Page-actions-wrapper
 elcomercio.com##.adv-footer-social
@@ -4523,7 +4534,6 @@ eldiario.es,eldiarioar.com##.sn-buttons
 elcomercio.com##.social-communities
 cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
-theobjective.com##.tno-share
 nationalgeographic.com.es##.top-share-article
 abc.es##.voc-social-networks
 elpais.com##.w_rs

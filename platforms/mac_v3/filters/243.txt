@@ -1,14 +1,14 @@
-! Checksum: qPB8QS8vm4kGrUQvsGqu+A
-! Diff-Path: ../patches/243/243-s-1754801362-14400.patch
+! Checksum: ZQXS6UFUHJwYvMPyHfjY3Q
+! Diff-Path: ../patches/243/243-s-1754887815-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.40
-! TimeUpdated: 2025-08-10T04:44:56+00:00
+! Version: 2.0.22.41
+! TimeUpdated: 2025-08-11T04:45:46+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-08-10 04:55:40 CEST
+! Last modified: 2025-08-11 05:26:23 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -277,10 +277,11 @@ booli.se##:is(.article-teaser, .article-teaser-section__list-item):has(.article-
 borasweekly.se##.article-item:has(.article-item--sponsored, .article-label--sponsored)
 borattforum.se##.meta-info-container:has(a[title*="Sponsrad artikel"])
 borskollen.se##.banneritem:upward(1)
-borskollen.se##.cell.rp, .promobox, .app-store-box
+borskollen.se##.cell.rp, .promobox, .app-store-box, div[id^="borskollen_desktop"]
 borskollen.se##.stodlinjen:upward(.outer)
 borskollen.se##:is(.flow-container, .wrapper):has(div[id*="panorama"])
 borsvarlden.com##article:has(.border-sponsored)
+borsvarlden.com##.big-block.article:has(img[alt="ANNONS" i])
 borsvarlden.com##.label:has-text(/annons/i):upward(.highlighted-article-block)
 borsvarlden.com##.sponsored-articles-container, .nav-sep-blink, .annons-label, .index-side-banner-wrapper, .index-top-banners-wrapper, .fullwidthbanner-container, .banner-wrapper
 bostadspolitik.se##.sidebar-banner
@@ -598,7 +599,7 @@ forvaltarforum.se##.ticker-title:has-text(/partner/i)
 forvaltarforum.se##.ticker-title:has-text(/partner/i) + .mh-section
 forvaltarforum.se#$?#:is(.topwidget, .video-banner) { remove: true; }
 fotbolldirekt.se,hockeysverige.se,innebandymagazinet.se,motivation.se,fiskejournalen.se,alba.nu,padeldirekt.se,formeldirekt.se,dagensopinion.se,golfing.se##.annons
-fotbolldirekt.se,innebandymagazinet.se,padeldirekt.se,formeldirekt.se##.Odds_Widget_Ad, .c-partners, div[class*="_panorama"], div[class*="_insider"], .LiveWrapped-mobile_in_article, div[class*="LiveWrapped-desktop"]
+fotbolldirekt.se,innebandymagazinet.se,padeldirekt.se,formeldirekt.se##.Odds_Widget_Ad, .c-partners, div[class*="_panorama"], div[class*="_insider"], .LiveWrapped-mobile_in_article, div[class*="LiveWrapped-desktop"], .endast-desktop, .endast-mobil
 fotbolldirekt.se,innebandymagazinet.se,padeldirekt.se,formeldirekt.se##.article-row:has(.h-background--sponsored)
 fotbolldirekt.se,innebandymagazinet.se,padeldirekt.se,formeldirekt.se##.text-center:has(div[data-ad-unit-id])
 fotbolldirekt.se,innebandymagazinet.se,padeldirekt.se,formeldirekt.se##:is(.c-featured-article, li.post):has(a[href*="/sponsrat"])
@@ -958,7 +959,7 @@ livsmedelsverket.se#$#.lock-scroll { overflow:unset!important }
 ljudochbild.se#$##MoreLink_content-container { height:unset!important; }
 ljudochbild.se###MoreLink_fade-out-div
 ljudochbild.se##.Annonsinnehåll:upward(.maincol)
-ljudochbild.se##.adremark, .coofad, .hidead, .phoneads, .pricecomp, .offerz, .type-articleadvertorial, .adblock, .lbplussinfo, .popup-overlayx, a[href*="/advertorial"], a[href*="/advertorial"] + .textbox, .prisjakt, #stickleft, #stickright, .adbox, .mainbanner
+ljudochbild.se##.adremark, .coofad, .hidead, .phoneads, .pricecomp, .offerz, .type-articleadvertorial, .adblock, .lbplussinfo, .popup-overlayx, a[href*="/advertorial"], a[href*="/advertorial"] + .textbox, .prisjakt, #stickleft, #stickright, .adbox, .mainbanner, .egenannonse
 ljudochbild.se#$#.thecontent, .entry-content { max-height: unset !important; overflow: initial !important; height: unset !important; }
 ljudochbild.se#$#.wp-caption { display:initial!important }
 ljudochbild.se##:is(div[class^="col-md"][style*="border-radius"], .maincol):has(a[href*="/advertorial"])
@@ -2258,7 +2259,6 @@ zeromagazine.nu##div[id^="ads"]
 /js/adLocker.
 /js/annons.js
 /js/byside_webcare
-/js/external.php$domain=hockeysnack.com
 /js/fullpageads.js
 /js/iepngfix_tilebg
 /js/improve_digital_ads
