@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: YCebczdQKfZZAFfpxtj0XQ
-! Diff-Path: ../patches/13/13-s-1754907118-3600.patch
+! Checksum: Kc7796EIv9rmlqQcki05kQ
+! Diff-Path: ../patches/13/13-s-1754910687-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.74
-! TimeUpdated: 2025-08-11T10:08:10+00:00
+! Version: 2.0.58.75
+! TimeUpdated: 2025-08-11T11:07:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -633,6 +633,9 @@ r10.net##+js(abort-on-property-write, rInt)
 ! Good: ##.adv
 ! Bad: example.org##.adv (should be in specific.txt)
 !
+! Sport streaming sites
+##.ads_single_font
+##body > div#hellobar.hellobar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210145
 ! hdfilmcehennemi3.com
 ##body > div.body-clickable:empty
@@ -5887,17 +5890,9 @@ webteizle.info,webteizle1.info,webteizle2.info,webteizle3.info,webteizle4.info,w
 [$domain=/^webteizle\d+\.info/]#$#body #site { margin-top: 0px !important; }
 [$domain=/^webteizle\d+\.info/]##+js(set-constant, isShow, true)
 !
-! dizi.life - frequently changed domains
-||dcdlplayer8a06f4.xyz/c.gif
-||dizi*.life/assets/img/bg.jpg
-||dizi*.life/assets/img/*.gif
-[$domain=/(^\|.+\.)dizi\d+\.life/]###sticky-footer
-[$domain=/(^\|.+\.)dizi\d+\.life/]##.article__content > a[href][target="_blank"]
-[$domain=/(^\|.+\.)dizi\d+\.life/]##a[href^="https://csvera.com/"]
-[$domain=/(^\|.+\.)dizi\d+\.life/]##.banner-container
-dizi1.life,dizi2.life,dizi3.life,dizi4.life,dizi5.life,dizi6.life,dizi7.life,dizi8.life,dizi9.life,dizi10.life###sticky-footer
-dizi1.life,dizi2.life,dizi3.life,dizi4.life,dizi5.life,dizi6.life,dizi7.life,dizi8.life,dizi9.life,dizi10.life##.article__content > a[href][target="_blank"]
-dizi1.life,dizi2.life,dizi3.life,dizi4.life,dizi5.life,dizi6.life,dizi7.life,dizi8.life,dizi9.life,dizi10.life##a[href^="https://csvera.com/"]
+! dizi*.life - frequently changed domains
+||dizi*.life/assets/images/*.gif
+[$domain=/dizi\d+\.life/]##.banner-container
 !
 ! dizigom - frequently changed domains
 ||play.dizigom*.*/*640x360.
@@ -6039,7 +6034,6 @@ realfilmizle6.com,realfilmizle7.com,realfilmizle8.com,realfilmizle9.com,realfilm
 !
 ! trgoals*.xyz - frequently changed domains
 ! trgoals*.xyz - frequently changed domains
-[$domain=/^trgoals\d+\.xyz$/]##.hellobar
 [$domain=/^trgoals\d+\.xyz$/]##.main-content > marquee
 [$domain=/^trgoals\d+\.xyz$/]##.ads-container
 [$domain=/^trgoals\d+\.xyz$/]##.rnd-qwert

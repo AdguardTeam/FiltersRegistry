@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: rurfiuM5xuc4a2kHpcknfw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1754907118-3600.patch
+! Checksum: WWhrz32Sd6savWlpNiwjjA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1754910687-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.74
-! TimeUpdated: 2025-08-11T10:08:10+00:00
+! Version: 2.0.58.75
+! TimeUpdated: 2025-08-11T11:07:27+00:00
 ! Expires: 5 days (update frequency)
 ||azelvid.com^
 ||polatads.com^
@@ -438,6 +438,8 @@ baho.com.tr#$#.adsmd { height: 1px!important; }
 @@||static.origins.web.tv/scripts/ads.js
 r10.net##+js(abort-on-property-read, rTargets)
 r10.net##+js(abort-on-property-write, rInt)
+##.ads_single_font
+##body > div#hellobar.hellobar
 ##body > div.body-clickable:empty
 ##div[data-player-url] > a[class="x-embed-link"][target="_blank"]
 ##.volestream-gorsel
@@ -5290,16 +5292,8 @@ webteizle.info,webteizle1.info,webteizle2.info,webteizle3.info,webteizle4.info,w
 [$domain=/^webteizle\d+\.info/]#$#body { background-image: none !important; }
 [$domain=/^webteizle\d+\.info/]#$#body #site { margin-top: 0px !important; }
 [$domain=/^webteizle\d+\.info/]##+js(set-constant, isShow, true)
-||dcdlplayer8a06f4.xyz/c.gif
-||dizi*.life/assets/img/bg.jpg
-||dizi*.life/assets/img/*.gif
-[$domain=/(^\|.+\.)dizi\d+\.life/]###sticky-footer
-[$domain=/(^\|.+\.)dizi\d+\.life/]##.article__content > a[href][target="_blank"]
-[$domain=/(^\|.+\.)dizi\d+\.life/]##a[href^="https://csvera.com/"]
-[$domain=/(^\|.+\.)dizi\d+\.life/]##.banner-container
-dizi1.life,dizi2.life,dizi3.life,dizi4.life,dizi5.life,dizi6.life,dizi7.life,dizi8.life,dizi9.life,dizi10.life###sticky-footer
-dizi1.life,dizi2.life,dizi3.life,dizi4.life,dizi5.life,dizi6.life,dizi7.life,dizi8.life,dizi9.life,dizi10.life##.article__content > a[href][target="_blank"]
-dizi1.life,dizi2.life,dizi3.life,dizi4.life,dizi5.life,dizi6.life,dizi7.life,dizi8.life,dizi9.life,dizi10.life##a[href^="https://csvera.com/"]
+||dizi*.life/assets/images/*.gif
+[$domain=/dizi\d+\.life/]##.banner-container
 ||play.dizigom*.*/*640x360.
 ||play.dizigom*.*/vast/*.php
 ||play.dizigom*.*/vast.js
@@ -5396,7 +5390,6 @@ realfilmizle6.com,realfilmizle7.com,realfilmizle8.com,realfilmizle9.com,realfilm
 ||inattvcom*.xyz/*.gif
 [$domain=/inattvcom\d+\.xyz/]##a[href="https://t.me/blankpremium"]
 [$domain=/inattvcom\d+\.xyz/]##+js(set-constant, window.config.adv.enabled, 0)
-[$domain=/^trgoals\d+\.xyz$/]##.hellobar
 [$domain=/^trgoals\d+\.xyz$/]##.main-content > marquee
 [$domain=/^trgoals\d+\.xyz$/]##.ads-container
 [$domain=/^trgoals\d+\.xyz$/]##.rnd-qwert
