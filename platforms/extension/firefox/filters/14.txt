@@ -1,9 +1,9 @@
-! Checksum: NE5TKiUP++kqbu/1rivuxg
-! Diff-Path: ../patches/14/14-s-1754928758-3600.patch
+! Checksum: H7hnfW6mzlA/0HXDgiTEfw
+! Diff-Path: ../patches/14/14-s-1754935980-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.39.22
-! TimeUpdated: 2025-08-11T16:08:53+00:00
+! Version: 2.2.39.23
+! TimeUpdated: 2025-08-11T18:09:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4622,7 +4622,7 @@ pixelgun3d.com##.my_cookie_alert
 targikielce.pl#$##cookieInfoContainer { display: none !important; }
 targikielce.pl#$#html > body.overflow-hidden { overflow: auto !important; }
 kleinezeitung.at###footerCookieConfigurationDidomi
-futurezone.at#%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button')
+hbvl.be,futurezone.at#%#//scriptlet('trusted-click-element', '#didomi-notice-agree-button')
 futurezone.at#%#//scriptlet('trusted-click-element', 'div[data-iframe="YouTube"] .noConsent-content > button')
 futurezone.at#%#//scriptlet('trusted-click-element', 'div[data-twitter] .noConsent-content > button')
 flightconnections.com##div[class*=z-index-top]
@@ -17258,6 +17258,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/210631
+@@||sdk.privacy-center.org*/loader.js$domain=hbvl.be
+@@||sdk.privacy-center.org/sdk/$domain=hbvl.be
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211021
 user.huami.com#@#.gdpr-container:not(#style_important)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210977
@@ -49861,6 +49864,9 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+||interactief.hbvl.be/optiext/optiextension.dll
+hbvl.be##div[id^="webshop-hbvl-widget"]
+hbvl.be##div[class]:has(> .html-embed_htmlEmbed__3Oi55:only-child)
 chromeunboxed.com##.CUPctaBlock
 ichiba-smp.faq.rakuten.net##.sp_banner
 pogdesign.co.uk##a[href^="https://www.pogdesign.co.uk/cat/go/"]
