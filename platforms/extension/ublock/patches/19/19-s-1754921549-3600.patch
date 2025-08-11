@@ -1,0 +1,79 @@
+d2 2
+a3 2
+! Checksum: 7veEBouVs13txjvcEbGQSw
+! Diff-Path: ../patches/19/19-s-1754925110-3600.patch
+d6 2
+a7 2
+! Version: 2.0.60.11
+! TimeUpdated: 2025-08-11T15:08:06+00:00
+d326 76
+a401 68
+! ! SECTION: Anti-adblock - Admiral
+! ! Blocked in Annoyances Popups filter according to the policy:
+! ! https://adguard.com/kb/general/ad-filtering/filter-policy/
+! ! Popups that encourage users to disable ad blocker and violate user’s privacy
+! /htdocs/js/admiral/init.js
+! ! Used only as a bait
+! ! Exceptions are also required because these requests can be blocked by other rules
+! !#safari_cb_affinity(general)
+! ||succeedscene.com^$badfilter
+! @@||succeedscene.com^$script,third-party
+! ! If succeedscene.com must be blocked:
+! ! ||succeedscene.com^$important,domain=example.com
+! !#safari_cb_affinity
+! ! https://github.com/AdguardTeam/AdguardFilters/pull/142877
+! /^https:\/\/[0-9a-z]{7,25}\.com\/v2(?:\/0\/)?(?=[0-9a-z_-]{0,84}[A-Z])(?=[a-zA-Z_-]{0,84}[0-9])[0-9a-zA-Z_-]{54,85}(#\?v=[0-9a-f]{32})?$/$ping,script,xmlhttprequest,third-party,match-case
+! ! can be closed
+! ! check for embedded videos
+! ! In the case when video player is broken
+! ! cannot be closed (! check for embedded videos)
+! ! bait - Admiral overlay
+! ##body div.bOvWNQ
+! ! https://github.com/AdguardTeam/AdguardFilters/issues/204353
+! ||storage.googleapis.com/ta3-ad-script/
+! ! Common rule [27.05.2025]
+! /ModalEngage|$third-party,script
+! !
+! ! https://github.com/AdguardTeam/AdguardFilters/issues/176079
+! !+ PLATFORM(ios)
+! ! https://github.com/AdguardTeam/AdguardFilters/issues/153163
+! !+ NOT_OPTIMIZED
+! mlive.com,cbr.com##body > div:not([style],[id]) > style + div[class]
+! !+ NOT_OPTIMIZED
+! digitalmusicnews.com##body > div#cb-outer-container ~ div:not([class]):not([id])
+! !+ NOT_OPTIMIZED
+! cbssports.com,visualcapitalist.com,news8000.com,kxly.com,thethings.com,gamerant.com,koamnewsnow.com,gfinityesports.com,dualshockers.com,insider-gaming.com,pocketnow.com,howtogeek.com,ktvz.com,247sports.com,movieweb.com,givemesport.com,xda-developers.com,collider.com,pocket-lint.com,hotcars.com,topspeed.com,thegamer.com,makeuseof.com,screenrant.com,androidpolice.com,cbr.com,epicstream.com,digitalmusicnews.com##body > script ~ div:not([class]):not([id]) > style + div[class]
+! !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+! momtastic.com,pwinsider.com,comingsoon.net,hfboards.com,onmsft.com##body > iframe ~ div:not([class]):not([id]) > style + div[class]
+! playstationlifestyle.net##body > footer ~ div:not([class]):not([id]):not([style])
+! siliconera.com##body > script ~ div:not([class]):not([id]) > style + div[class]
+! !#endif
+! !
+! !#safari_cb_affinity(general)
+! digitaltrends.com#@#.pub_300x250
+! digitaltrends.com#@#.pub_300x250m
+! digitaltrends.com#@#.pub_728x90
+! digitaltrends.com#@#.text-ad
+! digitaltrends.com#@#.text-ad-links
+! digitaltrends.com#@#.text-ads
+! digitaltrends.com#@#.textAd
+! digitaltrends.com#@#.text_ad
+! digitaltrends.com#@#.text_ads
+! digitaltrends.com#@#.text_ads_2
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.leftad
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.leftAd
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.googlead
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.googleAd
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.ad-BANNER
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.AdBar
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.ADBAR
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.ad-300-250
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.adbox1
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.adsense-ad
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.box_ad
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.gemini-ad
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.HomeAds
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.InArticleAd
+! reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#@#.SidebarAd
+! !#safari_cb_affinity
+d404 1357
