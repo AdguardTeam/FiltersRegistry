@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: q20p8jwlo5bqQ9YHo43M4g
-! Diff-Path: ../patches/224/224-s-1754896462-3600.patch
+! Checksum: wMJN1iZv34LnmheJOI+4OQ
+! Diff-Path: ../patches/224/224-s-1754900058-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.41.67
-! TimeUpdated: 2025-08-11T07:10:45+00:00
+! Version: 2.1.41.68
+! TimeUpdated: 2025-08-11T08:10:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2773,7 +2773,9 @@ wap.yushuwu.cloud##+js(addEventListener-defuser, touchend, clientheight)
 8727ck.cc,8726ck.cc##.stui-vodlist > li:has(> div.stui-vodlist__box > a[href][target="_blank"])
 !
 ! iqiyi.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/210114
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190766
+||iqiyi.com/*/ad/*/feature_feed_ad?
 ||mesh.if.iqiyi.com/portal/*/recommend?$xmlhttprequest,removeparam=ad
 ||mesh.if.iqiyi.com/portal/*/recommend?$xmlhttprequest,removeparam=adExt
 ||mesh.if.iqiyi.com/portal/lw/search/$xmlhttprequest,removeparam=ad
@@ -2783,7 +2785,7 @@ iqiyi.com###middle_banner_ad_bk
 iqiyi.com##.search-item-box:has(> a > div > div[class^="ad_adContent"])
 iqiyi.com##div[class^="list_list__"] > div[style*="margin-bottom:"] > div[style*="margin-right:"]:has(> div > div[style*="background-image:"] div > div[class^="video-list-item_"] > div[class^="video-list-item_"] > a[href*="&creative_id="][href*="&impress_id="])
 iqiyi.com##div[class^="list_list__"] > div[style*="margin-bottom:"] > div[style*="margin-right:"]:has(> div > div[style*="background-image:"] div > div[class^="video-list-item_"] > div[class^="video-list-item_"] > a > div[class^="video-list-item_"] > div[class*="video-list-item_"] > img[src*="/ADS/"])
-iqiyi.com##+js(json-prune, data.template.tabs.*.blocks.*.data.data.videos.*.ad)
+iqiyi.com##+js(json-prune, items.*.video.*.data.[-].ad.adScene data.template.tabs.*.blocks.*.data.data.*.videos.feature_ad data.template.tabs.*.blocks.*.data.data.videos.*.ad)
 !
 ! Online books
 ! Example of an ad script: https://729081de.bi25.cc/js/hfee22.js?v=1.3
