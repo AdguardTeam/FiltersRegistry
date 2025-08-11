@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ig9nJf2Ao8Hs793StfFmFw
-! Diff-Path: ../patches/14/14-s-1754910687-3600.patch
+! Checksum: SASMevbEpP1ZYzlHmzthww
+! Diff-Path: ../patches/14/14-s-1754918574-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.39.18
-! TimeUpdated: 2025-08-11T11:07:34+00:00
+! Version: 2.2.39.19
+! TimeUpdated: 2025-08-11T13:18:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16290,6 +16290,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211021
+user.huami.com#@#.gdpr-container:not(#style_important)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210977
 @@||app.usercentrics.eu/browser-ui/$domain=meineschufa.de
 @@||api.usercentrics.eu/settings/$domain=meineschufa.de
@@ -45676,6 +45678,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+tiktok.com##div[class^="css-"][class*="-DivModalContainer"]:has(div[class*="DivGuideBtnContainer"] button[data-e2e="middle-cta-confirm-btn"])
 x.com##div[class^="css-"]:has(> div[class^="css-"][style] > a[href^="https://apps.apple.com/app/apple-store/id333903271?"])
 fril.jp##.mainVisual__wrap--only_sp
 verizon.com##+js(set-cookie, SMARTBANNER_EXITED, TRUE)
@@ -55192,6 +55195,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211065
+modapk48.com,felizmodapk.com##+js(nano-setInterval-booster, waitTime, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210732
 fikfak.net##+js(nano-setInterval-booster, show_download_links, *, 0.001)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210680
