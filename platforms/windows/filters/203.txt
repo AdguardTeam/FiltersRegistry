@@ -1,15 +1,15 @@
-! Checksum: mi1FO1C/qM0AZ/tYH6ODqQ
-! Diff-Path: ../patches/203/203-s-1754225398-14400.patch
+! Checksum: hKmrL69USK60e1+XZelsjw
+! Diff-Path: ../patches/203/203-s-1754916633-14400.patch
 ! Title: Hungarian filter
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.18
-! TimeUpdated: 2025-08-03T12:45:15+00:00
+! Version: 2.0.4.19
+! TimeUpdated: 2025-08-11T12:45:29+00:00
 ! Expires: 12 hours (update frequency)
 !
-! Checksum: FdeWD9Z9fFzV54fsKU/QZg
-! OriginalVersion: 202508011423
+! Checksum: 6lk/BC+zviafFawjMXAhqQ
+! OriginalVersion: 202508111220
 ! Title: Hufilter for AdGuard
-! Last modified: 01 Aug 2025 14:23 UTC
+! Last modified: 11 Aug 2025 12:20 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -345,9 +345,10 @@ e-cars.hu##[class="td-a-rec td-a-rec-id-header  tdi_53 td_block_template_1"]
 ecoline.hu##[class^="ads"]
 ecoline.hu##[id*="_ad"]
 economx.hu##.hirdetes-block
+eduline.hu##.ad-with-picture-group
+eduline.hu##[class*="Advert"]
 eduline.hu##[class*="ad_"]
 eduline.hu##[class*="ads"]
-eduline.hu##[class*="Advert"]
 eduline.hu##[id*="_ad"]
 eduline.hu##[id*="ad_"]
 egeszsegkalauz.hu##.detailRightAds
@@ -1236,6 +1237,7 @@ ugytudjuk.hu#?#.row:-abp-has(.mainTopBnr)
 ! https://github.com/hufilter/hufilter/issues/172
 /dl/cnt/20[^0]\d-\d{2}/\d{4}//$image,domain=prohardver.hu|mobilarena.hu|itcafe.hu|gamepod.hu|logout.hu|hardverapro.hu
 ||3monkey.lol/vilagunk_640.html$domain=vilagunk.hu
+||abo-widget.xyz^$domain=eduline.hu
 ||aghtag.tech/libs/projectagora.min.js^$script,domain=gyakorikerdesek.hu|hoxa.hu
 ||floweryoperation.com/v2/0/$domain=karpathir.com
 !-------------------------------------------------------------------------------!
@@ -1440,6 +1442,7 @@ ugytudjuk.hu#?#.row:-abp-has(.mainTopBnr)
 ||sher.*.hu^
 ||smartcj.com^
 ||stat.adultium.com^
+||static.hvgrt.hu^
 ||stats.badoostats.com^
 ||syndication.trafficreps.com^
 ||up-banner.wavecdn.de^
@@ -1857,7 +1860,7 @@ infostart.hu#?##sitemodal:-abp-has(.fb-button)
 ||medinfo.ocdn.eu/hu/consent_v2/choice.js^$script,domain=egeszsegkalauz.hu
 ||quantcast.mgr.consensu.org^$script,domain=agrarszektor.hu|autoszektor.hu|bpiautosok.hu|g7.hu|hazipatika.com|hellovidek.hu|hrportal.hu|magyarnarancs.hu|index.hu|pestisracok.hu|portfolio.hu|telex.hu|totalcar.hu|totalbike.hu|szeretlekmagyarorszag.hu|port.hu|player.hu|mandiner.hu|budapestkornyeke.hu|bacsmegye.hu|civishir.hu|baon.hu|bama.hu|beol.hu|boon.hu|delmagyar.hu|duol.hu|feol.hu|kisalfold.hu|haon.hu|heol.hu|szoljon.hu|kemma.hu|nool.hu|sonline.hu|szon.hu|teol.hu|vaol.hu|veol.hu|zaol.hu|twice.hu|sassy.hu|pcwplus.hu|gsplus.hu|myonlineradio.hu|blikk.hu
 ||static.quantcast.mgr.consensu.org/v30/cmpui-popup.js^$script,domain=szeretlekmagyarorszag.hu
-||cmp.inmobi.com^$third-party,script,domain=telex.hu|origo.hu|atlatszo.hu|rtl.hu|videa.hu|myonlineradio.hu|hvg.hu|femina.hu|prohardver.hu|itcafe.hu|mobilarena.hu|gamepod.hu|logout.hu|fototrend.hu|hardverapro.hu|vg.hu|portfolio.hu|noizz.hu|economx.hu|budapestkornyeke.hu|bpiautosok.hu|magyarnemzet.hu|blikk.hu|nepszava.hu|magyarnarancs.hu|hirtv.hu|pestisracok.hu|autoszektor.hu|penzcentrum.hu|index.hu|media1.hu|g7.hu|444.hu|life.hu|wmn.hu|hirstart.hu|cafeblog.hu|nosalty.hu|hazipatika.com|startlap.hu|nlc.hu|mindmegette.hu|koponyeg.hu|kisalfold.hu|kekvillogo.hu|indavideo.hu|szabadfold.hu|figyelo.hu|astronet.hu|automotor.hu|lakaskultura.hu|likebalaton.hu|napidoktor.hu|travelo.hu|dietaesfitnesz.hu|vitorlazasmagazin.hu|videkize.hu|tvmusor.hu|borsonline.hu|ripost.hu|metropol.hu|ingatlanbazar.hu|freemail.hu|radio1gong.hu|hirfm.hu|greendex.hu|pcguru.hu
+||cmp.inmobi.com^$third-party,script,domain=telex.hu|origo.hu|atlatszo.hu|rtl.hu|videa.hu|myonlineradio.hu|hvg.hu|femina.hu|prohardver.hu|itcafe.hu|mobilarena.hu|gamepod.hu|logout.hu|fototrend.hu|hardverapro.hu|vg.hu|portfolio.hu|noizz.hu|economx.hu|budapestkornyeke.hu|bpiautosok.hu|magyarnemzet.hu|blikk.hu|nepszava.hu|magyarnarancs.hu|hirtv.hu|pestisracok.hu|autoszektor.hu|penzcentrum.hu|index.hu|media1.hu|g7.hu|444.hu|life.hu|wmn.hu|hirstart.hu|cafeblog.hu|nosalty.hu|hazipatika.com|startlap.hu|nlc.hu|mindmegette.hu|koponyeg.hu|kisalfold.hu|kekvillogo.hu|indavideo.hu|szabadfold.hu|figyelo.hu|astronet.hu|automotor.hu|lakaskultura.hu|likebalaton.hu|napidoktor.hu|travelo.hu|dietaesfitnesz.hu|vitorlazasmagazin.hu|videkize.hu|tvmusor.hu|borsonline.hu|ripost.hu|metropol.hu|ingatlanbazar.hu|freemail.hu|radio1gong.hu|hirfm.hu|greendex.hu|pcguru.hu|eduline.hu
 ||optimonk.com^$third-party,domain=mandiner.hu
 ||widget.moneycdn.com/hitelintezo/moneycheckwidget.min.js$script,domain=ingatlan.com
 !-------------------------------------------------------------------------------!
