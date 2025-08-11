@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: vM8H0vZkwcdaW0pDR+eSGQ
-! Diff-Path: ../patches/14/14-s-1754903653-3600.patch
+! Checksum: hR7Yj8OyWDOhs8SthoCASw
+! Diff-Path: ../patches/14/14-s-1754907119-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.39.16
-! TimeUpdated: 2025-08-11T09:10:26+00:00
+! Version: 2.2.39.17
+! TimeUpdated: 2025-08-11T10:08:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2483,6 +2483,7 @@ entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,g
 !
 ! NOTE: Regular rules
 !
+||cmp.bonniernews.se^
 vitaexpress.ru##.info-processing-personal-data-container
 hitech-gamer.com##.modal-backdrop
 ||global.ketchcdn.com/web/v*/config/*/boot.js$domain=debrox.com
@@ -2539,7 +2540,9 @@ v-tagile.ru###info-collect-warning
 web.lmarena.ai##+js(set-local-storage-item, d-ua, false)
 whoosh.bike,velobike.ru##+js(set-cookie, t_cookiesConsentGiven, true)
 qeepl.com##div[role="dialog"][i18n="consent-dialog"]
-cnn.com##body > div[style^="background-color:"][style*="position: fixed; min-width: 100%; min-height: 100%; inset: 0px; z-index: 999999;"]:has(> div > p > a[href="/privacy"])
+cnn.com##+js(addEventListener-defuser, /oneTrustBlocked|readystatechange/, /browser-blocked|UserConsent\.ackTerms/)
+cnn.com#$#body[style*="overflow:"][style*="position:"] { overflow: auto !important; position: static !important; }
+cnn.com#$#body > div[style^="background-color:"][style*="position: fixed; min-width: 100%; min-height: 100%; inset: 0px; z-index: 999999;"]:has(> div > p > a[href="/privacy"]) { display: none !important; }
 terviseportaal.ee##div[data-name="card"]:has(> div[data-testid="cookie-consent"])
 cloudpillo.de##.bg-cp-black[x-show*="cookieBanner"]
 midasbuy.com##div[data-component-id="cookie"]
@@ -4892,7 +4895,6 @@ justjoin.it#?##__next > div.MuiBox-root ~ div.MuiBox-root ~ div:has(> button)
 feature.fm###__next > main > div.justify-center
 interbus.es##.aviso-de-cookies
 cnn.com###onetrust-consent-sdk:not([style])
-cnn.com##+js(addEventListener-defuser, oneTrustBlocked, browser-blocked)
 a1.si#$##p_p_id_adia_a_INSTANCE_cookieConstentPortlet_ { display: none !important; }
 a1.si#$#.modal-backdrop { display: none !important; }
 a1.si#$#body { overflow: auto !important; }
@@ -32360,6 +32362,7 @@ kurashiru.com#$#html.dly-modal-active { overflow: auto !important; }
 !
 ! SECTION: Popups - Mobile sites only
 !
+aspor.com.tr##.drop-news
 fishingjapan.jp##.common__adv_full
 lootbar.gg##.c-nav-install
 news.yahoo.com###add-shortcut
@@ -45670,6 +45673,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+x.com##div[class^="css-"]:has(> div[class^="css-"][style] > a[href^="https://apps.apple.com/app/apple-store/id333903271?"])
+fril.jp##.mainVisual__wrap--only_sp
 verizon.com##+js(set-cookie, SMARTBANNER_EXITED, TRUE)
 borsaningundemi.com###promoPopup
 gaana.com##.appAdBottomBox
