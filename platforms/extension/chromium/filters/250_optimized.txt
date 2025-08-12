@@ -1,5 +1,5 @@
-! Checksum: 2MORHeGMo8REbuQtlk0ZUQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1754887788-14400.patch
+! Checksum: /xYMxpITMTBuvcX+DXgb/A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1754973898-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.61
@@ -26,6 +26,7 @@
 ##.download-app:not(html,body,:empty)
 ##.download_app:not(html,body,:empty)
 ##.downloadapp:not(html,body,:empty)
+##.getapp:not(html,body,:empty)
 ##.go-to-app:not(html,body,:empty)
 ##.installAppPopup:not(html,body,:empty)
 ##.mobile-app-links:not(html,body,:empty)
@@ -426,7 +427,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||46.101.81.149^$all
 ||accomplishedpersuadedprinter.com^$all
-||alarmenvious.com^$all
 ||armsgross.com^$all
 ||asthmanotchcave.com^$all
 ||billboardwring.com^$all
@@ -1200,6 +1200,7 @@ chronicle.com#$#.Page-body { overflow: auto !important; height: 100% !important 
 segmentfault.com#$#.modal-open { overflow: auto !important; padding-right: 0 !important; }
 segmentfault.com#$#.modal-open [style]:is([data-padding-right], [data-margin-right]) { padding-right: 0 !important; margin-right: 0 !important; }
 ||assets.tumblr.com/pop/js/modern/async-login-wall$script,domain=www.tumblr.com
+||tumblr.com^$removeparam=/^source=login_/
 theepochtimes.com#$#body.single-post { overflow: unset !important }
 studocu.com#$#.page-content { filter: none !important; user-select: unset !important }
 studocu.com###document-wrapper > div:first-of-type:not([style])
@@ -1307,7 +1308,6 @@ smzdm.com##.qr-buy-container
 amap.com###amapAppDownload
 amap.com###to_lushu
 bilibili.com##.mobile-link-l
-bthhotels.com##.app_head_box
 coolapk.com##.apk_topba_code
 ctrip.com##.service-notice-right
 ctrip.com##.set-phone.set-list > .nav-myctrip.person-text
@@ -1641,6 +1641,7 @@ $document,removeparam=hashb
 $document,removeparam=hashc
 $document,removeparam=irgwc
 $document,removeparam=/^clickid=.*$/i,domain=~discover.*
+$document,removeparam=ito
 $document,removeparam=c[0]
 $document,removeparam=rlz
 $document,removeparam=pcampaignid
@@ -1989,6 +1990,7 @@ $removeparam=ads_creative
 $removeparam=ads_matchtype
 $removeparam=ads_network
 $removeparam=ads_targetid
+ref=rss^$document,removeparam=ref
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -2094,7 +2096,6 @@ $removeparam=3rdpcid
 $removeparam=tp_uid
 $removeparam=ft_section
 $removeparam=correlator
-$removeparam=ap_id
 $removeparam=ucf_user_id
 $removeparam=yandexuid
 $removeparam=google_nid
@@ -2392,6 +2393,7 @@ $removeparam=aff_trace_key
 ||aliexpress.$removeparam=cv
 $removeparam=spm,domain=~twitcasting.tv
 $removeparam=tracelog
+$removeparam=cardId,document,domain=alibaba.com
 $removeparam=aff_click_id
 ||aliexpress.$removeparam=gatewayAdapt
 ||aliexpress.$removeparam=pdp_pi
@@ -2446,7 +2448,6 @@ $removeparam=aff_click_id
 ||map.baidu.com^$removeparam=pcevaname
 ||map.baidu.com^$removeparam=ugc_type
 ||map.baidu.com^$removeparam=ugc_ver
-||wenku.baidu.com^$removeparam=rec_flag
 ||baidu.com^$removeparam=hl_tag
 ||zhidao.baidu.com^$removeparam=qbl
 ||baike.baidu.com^$removeparam=lemmaFrom
@@ -2622,6 +2623,8 @@ $removeparam=sourceID,domain=gamestop.com|verizon.com
 ||malwarebytes.com^$removeparam=ADDITIONAL_x-source
 ||ozon.ru^$removeparam=advert
 $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+$removeparam=soc_src
+$removeparam=soc_trk
 $removeparam=ia-pkpmtrack
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
@@ -2636,6 +2639,8 @@ $removeparam=cmp,domain=agentprovocateur.com|brooksbrothers.com|cbc.ca|hulu.com|
 $removeparam=cp,domain=converse.com|nike.com|nextdoor.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
 $removeparam=mktvar002,domain=autodesk.com
 $removeparam=/^pubname=.*$/i,domain=anntaylor.com|ashford.com|backcountry.com|bloomingdales.com|dermstore.com|express.com|famousfootwear.com|farmandfleet.com|gucci.com|hottopic.com|loft.com|naturalizer.com|samsclub.com
+$removeparam=/^publisher=.*$/i,domain=asos.com|bose.*|dell.com|josbank.com|metmuseum.org|riteaid.com|shutterfly.com|tous.com|untilgone.com
+$removeparam=/^publisherId=.*$/i,domain=blissworld.com|burkesoutlet.com|dell.com|kipling-usa.com|lensrentals.com|petsupplies.com|phonesoap.com
 $document,removeparam=/^refID=.*$/i,domain=allmodern.com|calphalon.com|priceline.com|questrade.com|wayfair.*|yankeecandle.com
 $document,removeparam=/^siteid=.*$/i,domain=agentprovocateur.com|amerimark.com|anntaylor.com|asos.com|awd-it.*|barenecessities.com|barrons.com|beautyencounter.com|buckle.com|burpee.com|chacos.com|coursera.org|dxl.com|dyson.com|ebay.*|famousfootwear.com|finishline.com|freetaxusa.com|gap.com|gapcanada.ca|gucci.com|hanes.com|hotwire.com|hulu.com|hunterboots.com|jcrew.com|josbank.com|kobo.com|lanebryant.com|laroche-posay.us|loft.com|magazines.com|marketwatch.com|maurices.com|merrell.com|newbalance.com|nordstrom.com|officedepot.com|onehanesplace.com|online4baby.com|radissonhotelsamericas.com|ralphlauren.com|saksfifthavenue.com|saksoff5th.com|samash.com|samsclub.com|saucony.com|sharperimage.com|skinceuticals.com|thingsremembered.com|thrifty.*|timeformecatalog.com|verabradley.com|vivaterra.com|wine.com|yoox.com
 $removeparam=pt,domain=apple.com|icedrive.net
@@ -2743,12 +2748,10 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||walmart.$removeparam=wl12
 ||walmart.$removeparam=/^ath.*$/
 $removeparam=refdomain,domain=bestbuy.com
-$removeparam=recs_placement,domain=nordstrom.com
-$removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
-$removeparam=recs_seed,domain=nordstrom.com
 $removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
+||banggood.com^$removeparam=custlinkid
 ||market.yandex.ru^$removeparam=cpc
 ||everesttech.net^$removeparam=/^ev_.*$/
 ||kelkoogroup.net^$removeparam=custom1
@@ -3207,7 +3210,6 @@ youtube.com##ytd-miniplayer[has-playlist-data][active]
 youtube.com##ytd-miniplayer[has-playlist-data][closed] ~ * .ytp-miniplayer-button
 @@://googleadservices.com^|$badfilter
 $third-party,denyallow=microsoft.com,domain=store.rg-adguard.net
-||h5data.talkingdata.net^$third-party
 fandom.com##.notifications-box
 flipkart.com##div[style^=flex-grow] div:first-of-type + div.col
 flipkart.com##footer section + div:last-of-type
@@ -3217,6 +3219,7 @@ valdemarsro.dk##a[href$="ttps://www.valdemarsro.dk/valdemarsro-premium/"]
 valdemarsro.dk##.kogebog-side
 valdemarsro.dk###recipe-intro p:last-of-type
 ||ogp.me^$csp=upgrade-insecure-requests
+||schema.org^$csp=upgrade-insecure-requests
 ||detectportal.firefox.com^$csp=upgrade-insecure-requests
 @@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script
 google.*#@##google-hats-survey
