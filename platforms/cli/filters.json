@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.1.9",
-			"timeUpdated": "2025-08-12T08:08:53+0000",
+			"version": "2.1.1.10",
+			"timeUpdated": "2025-08-12T10:07:24+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.3.3",
-			"timeUpdated": "2025-08-12T09:08:22+0000",
+			"version": "2.4.3.4",
+			"timeUpdated": "2025-08-12T10:07:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.89.40",
-			"timeUpdated": "2025-08-12T07:08:13+0000",
+			"version": "2.0.89.41",
+			"timeUpdated": "2025-08-12T10:07:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.58.81",
-			"timeUpdated": "2025-08-12T08:09:19+0000",
+			"version": "2.0.58.82",
+			"timeUpdated": "2025-08-12T10:07:49+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.39.31",
-			"timeUpdated": "2025-08-12T09:08:43+0000",
+			"version": "2.2.39.32",
+			"timeUpdated": "2025-08-12T10:07:54+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.89.63",
-			"timeUpdated": "2025-08-12T09:08:44+0000",
+			"version": "2.0.89.64",
+			"timeUpdated": "2025-08-12T10:07:55+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.73",
-			"timeUpdated": "2025-08-12T09:08:47+0000",
+			"version": "2.0.67.74",
+			"timeUpdated": "2025-08-12T10:07:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.36.41",
-			"timeUpdated": "2025-08-12T07:08:36+0000",
+			"version": "2.0.36.42",
+			"timeUpdated": "2025-08-12T10:07:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
