@@ -1,9 +1,9 @@
-! Checksum: XDWf+vU9jv71fFNQ+sc+BA
-! Diff-Path: ../patches/1/1-s-1754966561-3600.patch
+! Checksum: OoHpGa9wdN7w8cw2vIPPYQ
+! Diff-Path: ../patches/1/1-s-1754986398-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.1.8
-! TimeUpdated: 2025-08-12T02:37:34+00:00
+! Version: 2.1.1.9
+! TimeUpdated: 2025-08-12T08:08:53+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7074,10 +7074,8 @@ radio1.ru##div[class^="adblock"]
 radio1.ru##div[data-set]:has(> div[class^="ads"])
 radio1.ru##div[class^="right_blok"]:has(a[href][target="blank"] img[src^="https://multi-admin.ru/media_banner/"])
 ||multi-admin.ru/media_banner/$domain=radio1.ru
-iptvx.one##a[href^="https://go.iptvx.one/"]
-iptvx.one###formatted-banner
-iptvx.one##.widgb
-||iptvx.one/imgz/cblng1.gif
+iptvx.one,epgx.club###formatted-banner
+.gif|$domain=iptvx.one|epgx.club
 securitylab.ru##.webinar-banner
 petstory.ru##div[onclick*="swapBanners"]
 fishki.net###rutube-block
@@ -18051,6 +18049,8 @@ player.ex.co#@##ad-container
 ! Good: example.org#@#.ad
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211176
+iptvx.one,epgx.club#@#.adver
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210797
 @@/wp-content/themes/*/match-center.php?*.gif$subdocument
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208182
