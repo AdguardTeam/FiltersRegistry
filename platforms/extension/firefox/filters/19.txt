@@ -1,9 +1,9 @@
-! Checksum: dBC/8UQWNc65j4ylUYZH9w
-! Diff-Path: ../patches/19/19-s-1754989938-3600.patch
+! Checksum: KeOIcGdlsfMOmT3K8zUlJA
+! Diff-Path: ../patches/19/19-s-1755000898-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.60.17
-! TimeUpdated: 2025-08-12T09:08:48+00:00
+! Version: 2.0.60.18
+! TimeUpdated: 2025-08-12T12:11:21+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -535,6 +535,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"]
+global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"] + div[data-dismissable-layer]
 on4t.com#@#.google-ad
 livacha.com##div[href="/p/adv-enable"]
 ||a.orbsrv.com/ad-provider.js$domain=xvideos.com,redirect=noopjs
@@ -3161,6 +3163,9 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+global.novelpia.com#$#body { overflow: auto !important; pointer-events: auto !important; }
+global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] { display: none !important; }
+global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] + div[data-dismissable-layer][role="dialog"] { display: none !important; }
 youtube.com##tp-yt-paper-dialog:has(> .ytd-popup-container > #options.ytd-checkbox-survey-renderer)
 rutube.ru###communicationBanner
 behance.net##div[class*="Project-followsAppreciationsOverlay"]
@@ -3803,7 +3808,7 @@ jaya9.win#$#html.overflow-y-hidden { overflow: auto !important; }
 jaya9.win#$#.v-dialog__content { display: none !important; }
 jaya9.win#$#.v-overlay { display: none !important; }
 otvfoco.com.br###modalPushArticle
-thebradery.com,gardenoflife.com,fas-bee.com,australiangeographic.com.au,yes.fit##.needsclick
+drinkag1.com,thebradery.com,gardenoflife.com,fas-bee.com,australiangeographic.com.au,yes.fit##.needsclick
 ishachoku.com##.fix-ad
 jpsk.jp###footer-popup
 doubleblindmag.com##div:not([class]):has(> div.needsclick div[aria-label="FLYOUT Form"])

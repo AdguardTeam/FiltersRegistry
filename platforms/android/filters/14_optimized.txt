@@ -1,9 +1,9 @@
-! Checksum: +gjUt0nodswiI9HbLqfw+g
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1754997021-3600.patch
+! Checksum: z/+TOxk81DERRcOFQvItng
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1755000886-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.39.33
-! TimeUpdated: 2025-08-12T11:06:57+00:00
+! Version: 2.2.39.34
+! TimeUpdated: 2025-08-12T12:11:16+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1563,7 +1563,7 @@ hitech-gamer.com##.modal-backdrop
 ku.de#%#//scriptlet('trusted-set-cookie', 'in2cookiemodal-selection', '[%22essential%22]')
 tsb.co.uk#%#//scriptlet('trusted-set-cookie', 'CONSENTMGR', 'consent:false%7Cts:1754870425809')
 tarnkappe.info#%#//scriptlet('trusted-click-element', 'div[data-embed-consent-provider] label, div[data-embed-consent-provider] button.is-link')
-||global.ketchcdn.com/web/v*/config/*/boot.js$domain=debrox.com
+||global.ketchcdn.com/web/v*/config/*/boot.js$domain=debrox.com|drinkag1.com
 mega.ru#%#//scriptlet('set-cookie', 'consent_cookie_settings', 'true')
 support.digitalplayground.com#%#//scriptlet('trusted-set-cookie', 'acceptedCookies', '%7B%22essential%22%3Atrue%2C%22functional%22%3Afalse%7D')
 gazobezopasnost.gazprom.ru##.message-consent
@@ -10951,6 +10951,8 @@ scitechdaily.com,thewindowsclub.com#@#.ad-space
 @@||search-module.s3.us-east-2.amazonaws.com/pubs/trib/adblockdetect.js
 !#safari_cb_affinity
 armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwesterndaily.com.au,crookwellgazette.com.au,dailyadvertiser.com.au,dailyliberal.com.au,examiner.com.au,illawarramercury.com.au,newcastleherald.com.au,portnews.com.au,thecourier.com.au,thesenior.com.au#%#//scriptlet('set-cookie', 'dismissCheck', '1')
+global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"]
+global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"] + div[data-dismissable-layer]
 on4t.com#@#.google-ad
 livacha.com##div[href="/p/adv-enable"]
 ||a.orbsrv.com/ad-provider.js$domain=xvideos.com,redirect=noopjs
@@ -12287,6 +12289,9 @@ aol.com#@#.adwrap
 ||accounts.google.com/gsi/iframe/select?client_id=$domain=reddit.com
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+global.novelpia.com#$#body { overflow: auto !important; pointer-events: auto !important; }
+global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] { display: none !important; }
+global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] + div[data-dismissable-layer][role="dialog"] { display: none !important; }
 youtube.com##tp-yt-paper-dialog:has(> .ytd-popup-container > #options.ytd-checkbox-survey-renderer)
 rutube.ru###communicationBanner
 behance.net##div[class*="Project-followsAppreciationsOverlay"]
@@ -12800,7 +12805,7 @@ open.spotify.com##div[data-testid="signup-bar"]
 thewitnesshk.com###elementor-popup-modal-54616
 teb.com.tr#%#//scriptlet('set-cookie-reload', 'MarifetBanner', 'true')
 otvfoco.com.br###modalPushArticle
-thebradery.com,gardenoflife.com,fas-bee.com,australiangeographic.com.au,yes.fit##.needsclick
+drinkag1.com,thebradery.com,gardenoflife.com,fas-bee.com,australiangeographic.com.au,yes.fit##.needsclick
 ishachoku.com##.fix-ad
 jpsk.jp###footer-popup
 doubleblindmag.com###page div.websitesignup
@@ -24316,6 +24321,8 @@ apteki.yandex.ru##div[data-qa="BannerSlider"]
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { display: none !important; }
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
+wildberries.ru#$#div[class*="subscriptionPopupOverlay-"] { display: none !important; }
+wildberries.ru#%#//scriptlet('remove-attr', 'style', 'body[style^="overflow:"]')
 bankrotstvo.info##.timer-banner
 ||interactief.hbvl.be/optiext/optiextension.dll
 hbvl.be##div[id^="webshop-hbvl-widget"]

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 8LrkvzxkFbdVcXHU6DMTDA
-! Diff-Path: ../patches/14/14-s-1754997039-3600.patch
+! Checksum: 3xm4vlB/Au1CwIXP+b+aUw
+! Diff-Path: ../patches/14/14-s-1755000906-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.39.33
-! TimeUpdated: 2025-08-12T11:06:57+00:00
+! Version: 2.2.39.34
+! TimeUpdated: 2025-08-12T12:11:16+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2495,7 +2495,7 @@ trip.com##.ibu-cookie-banner
 ||cmp.bonniernews.se^
 vitaexpress.ru##.info-processing-personal-data-container
 hitech-gamer.com##.modal-backdrop
-||global.ketchcdn.com/web/v*/config/*/boot.js$domain=debrox.com
+||global.ketchcdn.com/web/v*/config/*/boot.js$domain=debrox.com|drinkag1.com
 mega.ru##+js(set-cookie, consent_cookie_settings, true)
 gazobezopasnost.gazprom.ru##.message-consent
 cwc.utah.gov##+js(set-cookie, wp-disclamer-popup, allow)
@@ -21244,6 +21244,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"]
+global.novelpia.com##div[data-state="open"][style="pointer-events: auto;"] + div[data-dismissable-layer]
 on4t.com#@#.google-ad
 livacha.com##div[href="/p/adv-enable"]
 ||a.orbsrv.com/ad-provider.js$domain=xvideos.com,redirect=noop.js,script
@@ -23823,6 +23825,9 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+global.novelpia.com#$#body { overflow: auto !important; pointer-events: auto !important; }
+global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] { display: none !important; }
+global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] + div[data-dismissable-layer][role="dialog"] { display: none !important; }
 youtube.com##tp-yt-paper-dialog:has(> .ytd-popup-container > #options.ytd-checkbox-survey-renderer)
 rutube.ru###communicationBanner
 behance.net##div[class*="Project-followsAppreciationsOverlay"]
@@ -24428,7 +24433,7 @@ jaya9.win#$#html.overflow-y-hidden { overflow: auto !important; }
 jaya9.win#$#.v-dialog__content { display: none !important; }
 jaya9.win#$#.v-overlay { display: none !important; }
 otvfoco.com.br###modalPushArticle
-thebradery.com,gardenoflife.com,fas-bee.com,australiangeographic.com.au,yes.fit##.needsclick
+drinkag1.com,thebradery.com,gardenoflife.com,fas-bee.com,australiangeographic.com.au,yes.fit##.needsclick
 ishachoku.com##.fix-ad
 jpsk.jp###footer-popup
 doubleblindmag.com##div:not([class]):has(> div.needsclick div[aria-label="FLYOUT Form"])
@@ -48632,6 +48637,8 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+wildberries.ru#$#div[class*="subscriptionPopupOverlay-"] { display: none !important; }
+wildberries.ru##+js(remove-attr, style, body[style^="overflow:"])
 bankrotstvo.info##.timer-banner
 ||interactief.hbvl.be/optiext/optiextension.dll
 hbvl.be##div[id^="webshop-hbvl-widget"]
