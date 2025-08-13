@@ -1,9 +1,9 @@
-! Checksum: hHePxxb5SvXt6L3O0BKdrg
-! Diff-Path: ../patches/2/2-s-1755087303-3600.patch
+! Checksum: CGXkYLWs21wgfTUELgc+yw
+! Diff-Path: ../patches/2/2-s-1755091309-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.3.30
-! TimeUpdated: 2025-08-13T12:10:51+00:00
+! Version: 2.4.3.31
+! TimeUpdated: 2025-08-13T13:17:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9378,8 +9378,10 @@
 ||content-settings.com^$third-party
 ||config-factory.com^$third-party
 ! Common rules for 'www3.doubleclick.net' bait
-!+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_safari)
+!#safari_cb_affinity(privacy)
+!+ PLATFORM(ios, ext_android_cb, ext_safari, ext_chromium_mv3, ext_chromium, ext_opera)
 @@://www3.doubleclick.net^|$xmlhttprequest
+!#safari_cb_affinity
 ! Common rules for 'static.ads-twitter.com/uwt.js' bait
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||static.ads-twitter.com/uwt.js$xmlhttprequest
@@ -10501,7 +10503,6 @@ hacksnation.com#@#.ad-unit:not(.textads)
 hydrogen.lat#%#//scriptlet('prevent-fetch', 'method:HEAD mode:no-cors')
 hydrogen.lat#%#//scriptlet('prevent-addEventListener', 'load', '&&')
 @@||acscdn.com/script/aclib.js$domain=hydrogen.lat
-@@||marketingplatform.google.com/about/enterprise/$domain=hydrogen.lat
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209721
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=playerp2p.com
@@ -10785,8 +10786,6 @@ minorpatch.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=minorpatch.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202712
 classace.io#%#//scriptlet('prevent-fetch', 'doubleclick.net')
-!+ PLATFORM(ios, ext_safari, ext_android_cb)
-@@||www3.doubleclick.net^$domain=classace.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202536
 xmalay1.net#%#//scriptlet('abort-current-inline-script', 'document.querySelector', 'isAdBlockActive')
 @@||xmalay1.net/nativeads-v2.js$script,domain=xmalay1.net
@@ -10925,8 +10924,6 @@ jam3h.net#@#.ad-unit:not(.textads)
 jam3h.net#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'getComputedStyle')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200141
 missavtv.com#%#//scriptlet('prevent-fetch', 'www3.doubleclick.net')
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||www3.doubleclick.net^$domain=missavtv.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200093
 get-to.link###genesis-modal
 get-to.link#%#//scriptlet('prevent-element-src-loading', 'script', 'prebid.revbid.net')
@@ -11121,8 +11118,6 @@ watch.plex.tv#%#//scriptlet('prevent-fetch', '/doubleclick\.com/ method:HEAD', '
 @@://doubleclick.com/|$xmlhttprequest,domain=watch.plex.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196454
 @@||sshkit.com^$generichide
-!+ PLATFORM(ios, ext_android_cb)
-@@://www3.doubleclick.net^|$xmlhttprequest,domain=sshkit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
 @@||superpsx.com^$generichide
 superpsx.com#%#//scriptlet('prevent-element-src-loading', 'script', 'contextual.media.net/dmedianet.js')
@@ -15582,7 +15577,6 @@ hentaihaven.xxx#%#//scriptlet('trusted-create-element', '.related-reading-wrap i
 hentaihaven.xxx#%#//scriptlet('prevent-fetch', '/ads-twitter\.com|pagead|googleads|doubleclick/', '', 'opaque')
 @@||google.com/pagead/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||googleads.github.io/|$xmlhttprequest,domain=hentaihaven.xxx
-@@||www3.doubleclick.net/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||pagead2.googlesyndication.com/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=hentaihaven.xxx
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94598

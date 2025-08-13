@@ -1,8 +1,8 @@
-! Checksum: LRx4svk1J0/qGjeh0FtkDQ
+! Checksum: 9z98euXseQw5xWuVZDeBDQ
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.3.30
-! TimeUpdated: 2025-08-13T12:10:51+00:00
+! Version: 2.4.3.31
+! TimeUpdated: 2025-08-13T13:17:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9220,8 +9220,10 @@
 ||content-settings.com^$third-party
 ||config-factory.com^$third-party
 ! Common rules for 'www3.doubleclick.net' bait
-!+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_safari)
+!#safari_cb_affinity(privacy)
+!+ PLATFORM(ios, ext_android_cb, ext_safari, ext_chromium_mv3, ext_chromium, ext_opera)
 @@://www3.doubleclick.net^|$xmlhttprequest
+!#safari_cb_affinity
 ! Common rules for 'static.ads-twitter.com/uwt.js' bait
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||static.ads-twitter.com/uwt.js$xmlhttprequest
@@ -10064,7 +10066,6 @@ tcheats.com#@#ins.adsbygoogle[data-ad-slot]
 hacksnation.com#@#.ad-unit:not(.textads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209668
 @@||acscdn.com/script/aclib.js$domain=hydrogen.lat
-@@||marketingplatform.google.com/about/enterprise/$domain=hydrogen.lat
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209721
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=playerp2p.com
@@ -10250,8 +10251,6 @@ kio.ac#@#.ad-slot
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=minorpatch.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202712
-!+ PLATFORM(ios, ext_safari, ext_android_cb)
-@@||www3.doubleclick.net^$domain=classace.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202536
 @@||xmalay1.net/nativeads-v2.js$script,domain=xmalay1.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202266
@@ -10351,8 +10350,6 @@ esportstales.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200161
 jam3h.net#@#.ad-unit:not(.textads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200141
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||www3.doubleclick.net^$domain=missavtv.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200093
 get-to.link###genesis-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199164
@@ -10498,8 +10495,6 @@ hrnytube.com###adbd
 @@://doubleclick.com/|$xmlhttprequest,domain=watch.plex.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196454
 @@||sshkit.com^$generichide
-!+ PLATFORM(ios, ext_android_cb)
-@@://www3.doubleclick.net^|$xmlhttprequest,domain=sshkit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196200
 @@||superpsx.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196232
@@ -13788,7 +13783,6 @@ beatsnoop.com###levelmaxblock
 ! Rule $referrerpolicy is required for apps, because source of ima3.js is not detected and due to this it's not redirected
 @@||google.com/pagead/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||googleads.github.io/|$xmlhttprequest,domain=hentaihaven.xxx
-@@||www3.doubleclick.net/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||pagead2.googlesyndication.com/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=hentaihaven.xxx
 ! https://github.com/AdguardTeam/AdguardFilters/issues/94598

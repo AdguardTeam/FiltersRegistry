@@ -1,9 +1,9 @@
-! Checksum: czmLNJbQbXgNgo1X5LC7EQ
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1755087298-3600.patch
+! Checksum: kaJPeHWm1+lrTzQwPPPTxg
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1755091302-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.3.30
-! TimeUpdated: 2025-08-13T12:10:51+00:00
+! Version: 2.4.3.31
+! TimeUpdated: 2025-08-13T13:17:28+00:00
 ! Expires: 5 days (update frequency)
 ||gjxmcla.pro^
 ||adactive.cz^
@@ -1916,8 +1916,10 @@
 ||site-config.com^$third-party
 ||content-settings.com^$third-party
 ||config-factory.com^$third-party
-!+ NOT_OPTIMIZED PLATFORM(ios, ext_android_cb, ext_safari)
+!#safari_cb_affinity(privacy)
+!+ PLATFORM(ios, ext_android_cb, ext_safari, ext_chromium_mv3, ext_chromium, ext_opera)
 @@://www3.doubleclick.net^|$xmlhttprequest
+!#safari_cb_affinity
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||static.ads-twitter.com/uwt.js$xmlhttprequest
 @@/assets/js/advertisement.js$~third-party
@@ -2406,7 +2408,6 @@ hacksnation.com#@#.ad-unit:not(.textads)
 hydrogen.lat#%#//scriptlet('prevent-fetch', 'method:HEAD mode:no-cors')
 hydrogen.lat#%#//scriptlet('prevent-addEventListener', 'load', '&&')
 @@||acscdn.com/script/aclib.js$domain=hydrogen.lat
-@@||marketingplatform.google.com/about/enterprise/$domain=hydrogen.lat
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=playerp2p.com
 idlixku.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'bait')
@@ -2587,8 +2588,6 @@ minorpatch.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=minorpatch.com
 classace.io#%#//scriptlet('prevent-fetch', 'doubleclick.net')
-!+ PLATFORM(ios, ext_safari, ext_android_cb)
-@@||www3.doubleclick.net^$domain=classace.io
 xmalay1.net#%#//scriptlet('abort-current-inline-script', 'document.querySelector', 'isAdBlockActive')
 @@||xmalay1.net/nativeads-v2.js$script,domain=xmalay1.net
 business-standard.com#%#//scriptlet('prevent-fetch', 'www3.doubleclick.net')
@@ -2683,8 +2682,6 @@ esportstales.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_
 jam3h.net#@#.ad-unit:not(.textads)
 jam3h.net#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', 'getComputedStyle')
 missavtv.com#%#//scriptlet('prevent-fetch', 'www3.doubleclick.net')
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||www3.doubleclick.net^$domain=missavtv.com
 get-to.link###genesis-modal
 get-to.link#%#//scriptlet('prevent-element-src-loading', 'script', 'prebid.revbid.net')
 crdroid.net#%#//scriptlet('set-constant', 'AdBlockChecker', 'noopFunc')
@@ -5103,7 +5100,6 @@ hentaihaven.xxx#%#//scriptlet('trusted-create-element', '.related-reading-wrap i
 hentaihaven.xxx#%#//scriptlet('prevent-fetch', '/ads-twitter\.com|pagead|googleads|doubleclick/', '', 'opaque')
 @@||google.com/pagead/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||googleads.github.io/|$xmlhttprequest,domain=hentaihaven.xxx
-@@||www3.doubleclick.net/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||pagead2.googlesyndication.com/|$xmlhttprequest,domain=hentaihaven.xxx
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=hentaihaven.xxx
 eviltranslator.xyz#%#//scriptlet("abort-current-inline-script", "document.createElement", "adsbygoogle.js")

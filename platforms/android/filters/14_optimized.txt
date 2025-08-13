@@ -1,9 +1,9 @@
-! Checksum: z/BgeLYIxPg3OiYuvwMFgQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1755087281-3600.patch
+! Checksum: SWHPHqsSk9NP1cSLmo1hQQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1755091275-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.39.43
-! TimeUpdated: 2025-08-13T12:11:12+00:00
+! Version: 2.2.39.44
+! TimeUpdated: 2025-08-13T13:17:49+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -11767,7 +11767,6 @@ pushsquare.com#@#.for-desktop
 pushsquare.com#@#.masthead
 boingboing.net#@#.ad-unit:not(.textads)
 boingboing.net#@#.ad_unit
-@@||www3.doubleclick.net^$domain=pokeos.com
 @@||kickasssubtitles.com/js/fuckadblock.js
 morgenpost.de#@#.AdSense
 @@||morgenpost.de/static/*/admanager.js
@@ -12290,6 +12289,8 @@ aol.com#@#.adwrap
 ||accounts.google.com/gsi/iframe/select?client_id=$domain=reddit.com
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+iqos.ru$$script:contains(new PopupAuth)
+iqos.ru#%#//scriptlet('remove-node-text', 'script', 'new PopupAuth')
 global.novelpia.com#$#body { overflow: auto !important; pointer-events: auto !important; }
 global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] { display: none !important; }
 global.novelpia.com#$#div[class^="fixed inset-0 bg-black"] + div[data-dismissable-layer][role="dialog"] { display: none !important; }
@@ -22425,6 +22426,10 @@ honeysanime.com#$##wrap-app-notice { display: none !important; }
 !+ NOT_OPTIMIZED
 m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
+moovitapp.com#$#body { overflow: auto !important; }
+moovitapp.com#$#.blur-backdrop { display: none !important; }
+moovitapp.com#$#.mobile-banner { display: none !important; }
+moovitapp.com##.poi-banner
 paratic.com##.andrAppFrame
 indeed.com#%#//scriptlet('trusted-set-cookie', '_MAGUA_ClsdPgs', 'hpClassic')
 turkuvazradyolar.com#$#html { margin-top: 0 !important; }

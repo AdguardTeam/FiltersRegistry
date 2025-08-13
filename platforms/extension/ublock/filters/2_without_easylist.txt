@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: UraXEnvv55wfUfSMCwsp7A
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755087301-3600.patch
+! Checksum: qxdaBe/6FKj9DytzBIo87w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755091306-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.3.30
-! TimeUpdated: 2025-08-13T12:10:51+00:00
+! Version: 2.4.3.31
+! TimeUpdated: 2025-08-13T13:17:28+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9383,7 +9383,10 @@
 ||content-settings.com^$third-party
 ||config-factory.com^$third-party
 ! Common rules for 'www3.doubleclick.net' bait
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_chromium, ext_opera)
 ://www3.doubleclick.net^|$xmlhttprequest,redirect=noop.json
+!#safari_cb_affinity(privacy)
+!#safari_cb_affinity
 ! Common rules for 'static.ads-twitter.com/uwt.js' bait
 ||static.ads-twitter.com/uwt.js$xmlhttprequest,redirect=noop.js
 !
