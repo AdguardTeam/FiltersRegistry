@@ -1,9 +1,9 @@
-! Checksum: AN4xw6di0HSuswM+Vhd4ig
-! Diff-Path: ../patches/224/224-s-1755065684-3600.patch
+! Checksum: yXxWplJhU+IX4Vaf+RzT2w
+! Diff-Path: ../patches/224/224-s-1755069172-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.41.82
-! TimeUpdated: 2025-08-13T06:10:55+00:00
+! Version: 2.1.41.83
+! TimeUpdated: 2025-08-13T07:09:15+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1066,6 +1066,7 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+right.com.cn##.wp > .a_t:has(> table > tbody > tr > td > .adsbygoogle)
 /^https:\/\/m\.2shuqu\.net\/static\/[a-z0-9]+\/[a-z0-9]+\.js/$script,domain=m.2shuqu.net
 ||gl.ali213.net/images/jsq_gl.jpg
 /youziks\.com\/[0-9]+\.js/$domain=youziks.com,script
@@ -3001,6 +3002,11 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Good: ||example.org/video-links$replace=/vast":/vast_":/
 ! Bad:  ||example.org/video-links (should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211243
+! https://github.com/AdguardTeam/CoreLibs/issues/2003
+! TODO: Remove when CoreLibs issue is fixed
+!+ PLATFORM(windows, mac, android)
+||cdn.dingxiang-inc.com/ctu-group/constid-js/index.js$replace=/(^\/\*!.*?\*\/)/\$1try{const t=document.head\,e=document.createElement("style");e.type="text\/css"\,e.textContent=".wp > .a_t:has(> table > tbody > tr > td > .adsbygoogle) { display: none !important; }"\,t.appendChild(e)}catch(t){};/,domain=right.com.cn
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158639
 ||yfsp.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/
 ||iyf.tv/app/*.js$replace=/this\.shouldSkipAds\|\|/!0||/

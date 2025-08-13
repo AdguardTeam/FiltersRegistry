@@ -1,9 +1,9 @@
-! Checksum: ovWnuxSxWf2RucFYV0s9cA
-! Diff-Path: ../patches/224/224-s-1755065678-3600.patch
+! Checksum: HJpWC96BMdbo5qM9sIKB9Q
+! Diff-Path: ../patches/224/224-s-1755069168-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.41.82
-! TimeUpdated: 2025-08-13T06:10:55+00:00
+! Version: 2.1.41.83
+! TimeUpdated: 2025-08-13T07:09:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1158,6 +1158,7 @@ $script,xmlhttprequest,third-party,domain=00ksw.com|01zww.com|0biquge.com|114zw.
 !
 ! NOTE: Specific rules
 !
+right.com.cn##.wp > .a_t:has(> table > tbody > tr > td > .adsbygoogle)
 /^https:\/\/m\.2shuqu\.net\/static\/[a-z0-9]+\/[a-z0-9]+\.js/$script,domain=m.2shuqu.net
 ||gl.ali213.net/images/jsq_gl.jpg
 /youziks\.com\/[0-9]+\.js/$domain=youziks.com,script
@@ -3081,6 +3082,9 @@ adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_i
 !
 ! Bad:  ||example.org/video-links (should be in specific.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211243
+! https://github.com/AdguardTeam/CoreLibs/issues/2003
+! TODO: Remove when CoreLibs issue is fixed
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158639
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114470
 ! https://github.com/AdguardTeam/AdguardFilters/issues/87176
