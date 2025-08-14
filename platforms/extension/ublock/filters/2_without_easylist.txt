@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 3EaXpvKJW562tdqrgTCJlg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755162807-3600.patch
+! Checksum: 3Eg3T2JXlkYqr85razg5Ug
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755166329-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.3.51
-! TimeUpdated: 2025-08-14T09:08:58+00:00
+! Version: 2.4.3.52
+! TimeUpdated: 2025-08-14T10:07:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10198,6 +10198,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211322
+@@||101soundboards.com^$generichide
+101soundboards.com#$##downloadModal { display: none !important; }
+101soundboards.com#$#.modal-backdrop { display: none !important; }
+101soundboards.com#$#body { overflow: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211222
 mahfda.com##+js(set-constant, __aab_init, true)
 mahfda.com#$##aab-overlay { display: none !important; }
@@ -35420,6 +35425,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+fileq.games##+js(nano-setInterval-booster, countdown, 1000, 0.001)
+fileq.games##+js(remove-class, hidden, button[class^="download-button-"])
+fileq.games#$#button._button-now { display: none !important; }
 softonic.com###pdp-bundle.sponsored
 ||rv-assets.softonic.com/publishers/
 ||geo.dailymotion.com^$domain=wol.gg

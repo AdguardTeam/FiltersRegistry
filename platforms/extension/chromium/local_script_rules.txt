@@ -83,7 +83,7 @@ ok.ru#%#//scriptlet('set-constant', 'Object.prototype.obfuscateParams', 'undefin
 vk.com#%#//scriptlet('prevent-fetch', '/(\.com|\.ru)$/ method:HEAD')
 forums.overclockers.ru#%#//scriptlet('set-constant', 'chkA', 'noopFunc')
 ~forums.overclockers.ru,overclockers.ru#%#//scriptlet("abort-on-property-read", "cardinals")
-rustorka.com#%#//scriptlet('prevent-setTimeout', 'tick')
+rustorka.com#%#//scriptlet("prevent-setTimeout", "document['head")
 tapochek.net#%#//scriptlet("set-constant", "window.b0", "null")
 monna2.top#%#//scriptlet('abort-on-property-write', 'tatus')
 monna2.top#%#//scriptlet('prevent-setTimeout', '/tick/')
@@ -4138,6 +4138,8 @@ www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
 www.youtube.com#%#(()=>{const e={construct:(e,t,c)=>{try{const n=t[0];let r=t[1]?.body;if(!n?.includes("youtubei")||!r)return Reflect.construct(e,t,c);if((r.includes('"contentPlaybackContext"')||r.includes('"adSignalsInfo"'))&&(!r.includes('"params":"yAEB')||!r.includes('"clientScreen":"ADUNIT"'))){const n=JSON.parse(r);if(!n.context?.client)return Reflect.construct(e,t,c);n.context.client.clientScreen="ADUNIT",n.playbackContext&&(n.params=`yAEB${n.params?n.params:""}`),n.playerRequest&&(n.playerRequest.params=`yAEB${n.playerRequest.params?n.playerRequest.params:""}`),r=JSON.stringify(n),t[1].body=r}}catch(e){console.trace("Error occurred:",e)}return Reflect.construct(e,t,c)}};window.Request=new Proxy(window.Request,e)})();
 www.youtube.com#%#(()=>{window.JSON.parse=new Proxy(JSON.parse,{apply(r,e,t){const n=Reflect.apply(r,e,t);if(!location.pathname.startsWith("/shorts/"))return n;const a=n?.entries;return a&&Array.isArray(a)&&(n.entries=n.entries.filter((r=>{if(!r?.command?.reelWatchEndpoint?.adClientParams?.isAd)return r}))),n}});})();
+fileq.games#%#//scriptlet('adjust-setInterval', 'countdown', '1000', '0.001')
+fileq.games#%#//scriptlet('remove-class', 'hidden', 'button[class^="download-button-"]')
 gamedrive.org#%#//scriptlet('prevent-addEventListener', '', 'window.open')
 gamedrive.org#%#//scriptlet('prevent-window-open')
 jsfiddle.net#%#//scriptlet('prevent-setTimeout', 'typeof ethicalads')
@@ -6134,8 +6136,7 @@ elpais.com#%#//scriptlet('trusted-click-element', '#pmConsentWall .pmConsentWall
 kabasakalonline.com#%#//scriptlet('trusted-click-element', '#customModal .gap-4.p-8 .border-rose-600.bg-rose-600', '!localStorage:cookie-consent')
 rencredit.ru#%#//scriptlet('set-cookie-reload', 'BITRIX_ATT_IDS', '3420')
 tumblr.com#%#//scriptlet('trusted-click-element', '.cmp__dialog button.is-primary', '!cookie:euconsent-v2-noniab')
-duckduckgo.com#%#//scriptlet('set-cookie', 'dcm', '3')
-duckduckgo.com#%#//scriptlet('trusted-set-local-storage-item', 'aichatPromoDismissal', '{"firstDateShown":"1"}')
+duckduckgo.com#%#//scriptlet('set-local-storage-item', 'duckaiHasAgreedToTerms', 'true')
 bothub.chat#%#//scriptlet('set-cookie-reload', 'BOTHUB_COOKIE_CONFIRMED', '1')
 foliosociety.com#%#//scriptlet('trusted-set-local-storage-item', 'ngStorage-/usa/-_prv_settings', '{"0":false,"1":false,"2":false,"3":false}')
 capcut.com#%#//scriptlet('trusted-click-element', '.box-XEvL3g  > .btns-Lo66iv > button:first-child', '!cookie:COOKIE_CONSENT_PROMPT_CONFIG')
@@ -10298,8 +10299,7 @@ elpais.com#%#//scriptlet('trusted-click-element', '#pmConsentWall .pmConsentWall
 kabasakalonline.com#%#//scriptlet('trusted-click-element', '#customModal .gap-4.p-8 .border-rose-600.bg-rose-600', '!localStorage:cookie-consent')
 rencredit.ru#%#//scriptlet('set-cookie-reload', 'BITRIX_ATT_IDS', '3420')
 tumblr.com#%#//scriptlet('trusted-click-element', '.cmp__dialog button.is-primary', '!cookie:euconsent-v2-noniab')
-duckduckgo.com#%#//scriptlet('set-cookie', 'dcm', '3')
-duckduckgo.com#%#//scriptlet('trusted-set-local-storage-item', 'aichatPromoDismissal', '{"firstDateShown":"1"}')
+duckduckgo.com#%#//scriptlet('set-local-storage-item', 'duckaiHasAgreedToTerms', 'true')
 bothub.chat#%#//scriptlet('set-cookie-reload', 'BOTHUB_COOKIE_CONFIRMED', '1')
 foliosociety.com#%#//scriptlet('trusted-set-local-storage-item', 'ngStorage-/usa/-_prv_settings', '{"0":false,"1":false,"2":false,"3":false}')
 capcut.com#%#//scriptlet('trusted-click-element', '.box-XEvL3g  > .btns-Lo66iv > button:first-child', '!cookie:COOKIE_CONSENT_PROMPT_CONFIG')
