@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: aSe2K/JfmZhi1LevKG4FAA
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1755173773-3600.patch
+! Checksum: FpIZP0Zq+nV8oIg/utI+Hg
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1755180691-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.60.34
-! TimeUpdated: 2025-08-14T12:12:28+00:00
+! Version: 2.0.60.35
+! TimeUpdated: 2025-08-14T14:07:42+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*##:matches-path(/images).AdvMastHead
@@ -91,9 +91,11 @@ dzen.ru##+js(json-prune, ssrData.exportResponse.feedData.adItems)
 dzen.ru##+js(set-constant, Object.prototype.ssrBanner, undefined)
 dzen.ru##+js(abort-on-stack-trace, Promise, initContext)
 dzen.ru#$?##LayoutTopMicroRoot div[style^="padding-top:"][style*="position: relative; height: 0;"] { remove: true; }
+dzen.ru##div[class^="dzen-desktop--"][class*="__topContent-"] > div[class^="dzen-desktop--top-sidebar-desktop-"] > article[style]
+dzen.ru##div[class^="dzen-desktop--feed__itemWrap-"] div[class^="dzen-desktop--"][class*="__cardWrapper-"] ~ article:has([class*="__adBox-"])
+m.dzen.ru##div[aria-label="Лента Дзена"] div + article[class*="--card-rtb__"]
 sportsdzen.ru##div[class*="sports-button-ad"]
 sportsdzen.ru##div[class*="sport-match-rectangle-card__bookmakerOdds"]
-m.dzen.ru##div[aria-label="Лента Дзена"] div + article[class*="--card-rtb__"]
 dzen.ru##div[class^="float-interview__float-"]
 dzen.ru##:matches-path(/video)div[class*="item-info__videoViewerItemInfo-"] + div:not([class])
 dzen.ru##:matches-path(/pogoda)div[data-bem*="segment-details"] > article.card ~ div[class]
