@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.3.60",
-			"timeUpdated": "2025-08-14T18:08:51+0000",
+			"version": "2.4.3.61",
+			"timeUpdated": "2025-08-14T19:06:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -650,8 +650,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.11.62",
-			"timeUpdated": "2025-08-14T11:07:10+0000",
+			"version": "2.0.11.63",
+			"timeUpdated": "2025-08-14T19:07:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
