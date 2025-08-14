@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: xq4b3pDBmtb4SKGI1/1H1g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755159188-3600.patch
+! Checksum: 3EaXpvKJW562tdqrgTCJlg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755162807-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.3.50
-! TimeUpdated: 2025-08-14T08:09:06+00:00
+! Version: 2.4.3.51
+! TimeUpdated: 2025-08-14T09:08:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32059,8 +32059,6 @@ player.glomex.com##+js(set-constant, Object.prototype._getSalesHouseConfiguratio
 ! Fixing incorrect blocking (for example, Songfacts button)
 ! https://github.com/abpvn/abpvn/issues/306
 xnxx-sex-videos.com##+js(no-setTimeout-if, /out.php)
-! https://github.com/AdguardTeam/AdguardFilters/issues/99798
-softonic.com##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107015
 av01.tv##+js(window.open-defuser)
 av01.tv##+js(remove-attr, onclick, a[href^="/video/"][onclick^="setTimeout"])
@@ -35422,6 +35420,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 ! NOTE: Specific rules
 !
 !
+softonic.com###pdp-bundle.sponsored
+||rv-assets.softonic.com/publishers/
 ||geo.dailymotion.com^$domain=wol.gg
 gamedrive.org##+js(addEventListener-defuser, , window.open)
 gamedrive.org##+js(window.open-defuser)
@@ -55411,6 +55411,8 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211239#issuecomment-3187447834
+|http*://*?$popup,third-party,domain=forums.socialmediagirls.com|pornhub.com|redtube.com|tube8.com|youporn.com|youporngay.com,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211262
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=tunegenie.com
 ! https://mainstream.whatfinger.com/ - broken images
