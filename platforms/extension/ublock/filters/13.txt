@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LQcgrVi5v+C0k3aEocDbwQ
-! Diff-Path: ../patches/13/13-s-1755159186-3600.patch
+! Checksum: EzW3JsFOWMM1hEdjkHu9QA
+! Diff-Path: ../patches/13/13-s-1755169860-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.91
-! TimeUpdated: 2025-08-14T08:09:22+00:00
+! Version: 2.0.58.92
+! TimeUpdated: 2025-08-14T11:07:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1492,6 +1492,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+sporx.com##div[style^="float:left; width:300px; min-height:250px;"]
 aspor.com.tr##.currency-view
 webtekno.com##.sidebar-block:has(.sidebar-trend a.sidebar-trend__item__link[href^="https://s.mdznconnect.com/"])
 nufusu.com##div[class^="pure"] > div[class^="pure"]:has(> div.ortala > ins.adsbygoogle)
@@ -5489,16 +5490,28 @@ oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
 ! rotabettv*.com - frequently changed domains
+[$domain=/rotabettv\d+\.com/]##body > a[href^="https://"][target="_blank"]
 !
 ! betisttv*.live - frequently changed domains
+[$domain=/betist\d+tv\.live/]##body > div[style="position:fixed;height:100%;z-index:1;width:100%"]
+[$domain=/betist\d+tv\.live/]#$#body { background-image: none !important; }
 !
 ! portobettv*.com - frequently changed domains
+[$domain=/portobettv\d+\.com/]#$#body { background-image: none !important; }
+[$domain=/portobettv\d+\.com/]##.full-width-banner
 ||portobettv*.com/assets/img/banners/
 !
 ! betivotv*.com - frequently changed domains
 ||betivotv*.com/Uploads/*.gif
+[$domain=/betivotv\d+\.com/]##+js(set-constant, config.adv.enabled, false)
+[$domain=/betivotv\d+\.com/]#$#body { background-image: none !important; }
+[$domain=/betivotv\d+\.com/]##.vertical-gap:has(> .col-lg-12 > a[href^="https://"][target="_blank"])
+[$domain=/betivotv\d+\.com/]##body > div[style="position:fixed;height:100%;z-index:1;width:100%"]
 !
 ! milanotv*.shop - frequently changed domains
+[$domain=/milanotv\d+\.shop/]#$#body { background-image: none !important; }
+[$domain=/milanotv\d+\.shop/]##.vertical-gap:has(> .col-lg-12 > a[href^="https://"][target="_blank"])
+[$domain=/milanotv\d+\.shop/]##body > div[style="position:fixed;height:100%;z-index:1;width:100%"]
 !
 ! canlimaclar*.sbs - frequently changed domains
 [$domain=/canlimaclar\d+\.sbs/]##+js(set-constant, config.advertisement.enabled, false)
@@ -5587,6 +5600,8 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 [$domain=/hdselcuksports\d+\.top/]##+js(window.open-defuser)
 !
 ! sporcafe*.xyz - frequently changed domains
+[$domain=/^(www\.)?sporcafe\d+\.xyz$/]##.pageskin-clickable
+||sporcafe*.xyz/assets/uploads/$image
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##.top-text-banner
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##[id^="betting-sites"]
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##div[class^="banner-"]

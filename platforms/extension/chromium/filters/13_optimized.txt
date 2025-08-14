@@ -1,9 +1,9 @@
-! Checksum: IvwDxz/4AAfX7AdcGkOBOA
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1755159170-3600.patch
+! Checksum: dVlv8KC/qLg8WOTnyXsuSQ
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1755169841-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.91
-! TimeUpdated: 2025-08-14T08:09:22+00:00
+! Version: 2.0.58.92
+! TimeUpdated: 2025-08-14T11:07:00+00:00
 ! Expires: 10 days (update frequency)
 ||azelvid.com^
 ||polatads.com^
@@ -1001,6 +1001,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+sporx.com##div[style^="float:left; width:300px; min-height:250px;"]
 aspor.com.tr##.currency-view
 webtekno.com##.sidebar-block:has(.sidebar-trend a.sidebar-trend__item__link[href^="https://s.mdznconnect.com/"])
 nufusu.com##div[class^="pure"] > div[class^="pure"]:has(> div.ortala > ins.adsbygoogle)
@@ -5002,8 +5003,20 @@ hdfilmcehennem.live#$##reki1 { display: none!important; }
 hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
+[$domain=/rotabettv\d+\.com/]##body > a[href^="https://"][target="_blank"]
+[$domain=/betist\d+tv\.live/]##body > div[style="position:fixed;height:100%;z-index:1;width:100%"]
+[$domain=/betist\d+tv\.live/]#$#body { background-image: none !important; }
+[$domain=/portobettv\d+\.com/]#$#body { background-image: none !important; }
+[$domain=/portobettv\d+\.com/]##.full-width-banner
 ||portobettv*.com/assets/img/banners/
 ||betivotv*.com/Uploads/*.gif
+[$domain=/betivotv\d+\.com/]#%#//scriptlet('set-constant', 'config.adv.enabled', 'false')
+[$domain=/betivotv\d+\.com/]#$#body { background-image: none !important; }
+[$domain=/betivotv\d+\.com/]##.vertical-gap:has(> .col-lg-12 > a[href^="https://"][target="_blank"])
+[$domain=/betivotv\d+\.com/]##body > div[style="position:fixed;height:100%;z-index:1;width:100%"]
+[$domain=/milanotv\d+\.shop/]#$#body { background-image: none !important; }
+[$domain=/milanotv\d+\.shop/]##.vertical-gap:has(> .col-lg-12 > a[href^="https://"][target="_blank"])
+[$domain=/milanotv\d+\.shop/]##body > div[style="position:fixed;height:100%;z-index:1;width:100%"]
 [$domain=/canlimaclar\d+\.sbs/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 ||goblintvizle*.live/Uploads/*_bckg.jpg
 [$domain=/goblintvizle\d+\.live/]##div[style="position:fixed;height:100%;z-index:1;width:100%"]
@@ -5059,6 +5072,8 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 [$domain=/hdselcuksports\d+\.top/]##.iframe_728
 [$domain=/hdselcuksports\d+\.top/]##.header_r
 [$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('prevent-window-open')
+[$domain=/^(www\.)?sporcafe\d+\.xyz$/]##.pageskin-clickable
+||sporcafe*.xyz/assets/uploads/$image
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##.top-text-banner
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##[id^="betting-sites"]
 [$domain=/^(www\.)?sporcafe\d+\.xyz$/]##div[class^="banner-"]
