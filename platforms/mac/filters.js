@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.3.69",
-			"timeUpdated": "2025-08-15T03:31:48+0000",
+			"version": "2.4.3.70",
+			"timeUpdated": "2025-08-15T04:13:37+0000",
 			"languages": []
 		},
 		{
@@ -158,8 +158,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.31.41",
-			"timeUpdated": "2025-08-14T05:08:48+0000",
+			"version": "2.0.31.42",
+			"timeUpdated": "2025-08-15T04:13:52+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -216,8 +216,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.58.92",
-			"timeUpdated": "2025-08-14T11:07:00+0000",
+			"version": "2.0.58.93",
+			"timeUpdated": "2025-08-15T04:13:54+0000",
 			"languages": [
 				"tr"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.39.60",
-			"timeUpdated": "2025-08-15T03:32:09+0000",
+			"version": "2.2.39.61",
+			"timeUpdated": "2025-08-15T04:13:59+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.89.96",
-			"timeUpdated": "2025-08-15T02:41:07+0000",
+			"version": "2.0.89.97",
+			"timeUpdated": "2025-08-15T04:14:00+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.60.36",
-			"timeUpdated": "2025-08-14T15:07:50+0000",
+			"version": "2.0.60.37",
+			"timeUpdated": "2025-08-15T04:14:04+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.36.49",
-			"timeUpdated": "2025-08-14T15:07:50+0000",
+			"version": "2.0.36.50",
+			"timeUpdated": "2025-08-15T04:14:04+0000",
 			"languages": []
 		},
 		{
