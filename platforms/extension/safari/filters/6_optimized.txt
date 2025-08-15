@@ -1,5 +1,5 @@
-! Checksum: NlmoeScKxwIQ1v0fvV+b2g
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1755152008-3600.patch
+! Checksum: 4G0B61NpHCI5M4nUvv/1Yw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1755225897-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.87
@@ -21,6 +21,7 @@
 ||widget.marktjagd.de^
 ||cwi.re^$third-party
 ||a.zdg.de^
+||cockpit.symplr.de^$third-party
 ||afl-static-cdn.newbiz-prod.stroeerws.de^$third-party
 ||embed.contentverticals.de^$third-party
 ||ablyft.com^$third-party
@@ -828,7 +829,6 @@ bild.de##section[data-block-id="bild-deals"]
 der-farang.com##a[href^="http"]:not([href*="der-farang.com"]) > img
 der-farang.com##.page_section_contained > hr
 play3.de##.container:has(> .row:only-child > .ad:only-child)
-play3.de##div[class^="col-"]:has(> .play3-outbrain:only-child)
 ga.de###park-main > section[data-cy="module"]:has(> header[data-cy="section-header-raw"] > div span.is-ad)
 ga.de###park-main > section[data-cy="section"]:has(> div[data-cy="section-weekli-header"])
 ga.de##div[data-cy="content-grid-col-1"]:has(aside[data-cy="portal"] > div[id^="ir_rpd"])
@@ -2073,6 +2073,7 @@ mopo.de##a[href*="advertorial"]
 stern.de##.stern-gutscheinbox
 focus.de##.ps-trackingposition_OrangerButton
 focus.de##.adsBlock
+t-online.de##.Tadbl
 buffed.de,pcgameshardware.de,pcgames.de##.affiliateBelowArticle
 wallstreet-online.de###nativendo-nachrichten-unterhalb
 wetteronline.de###leftcontainer > #topcontainer
@@ -2199,6 +2200,7 @@ digitalfaq.com,szbz.de,hardwareluxx.de,geliebte-katze.de###leaderboard
 physio-deutschland.de###partners-right
 seatforum.de###posts > ins[id^="AABI-"]
 abnehmen.com###posts > li.postbitlegacy.postcontainer.old:not([id^="post_"])
+seatforum.de###posts > li:not([id]).postcontainer
 golem.de###pricehits
 hilfdirselbst.ch###r230
 hilfdirselbst.ch###r231
@@ -2562,7 +2564,6 @@ rtl.de#@#.rtlde-medium-rectangle
 /bilder/ads/*
 /esel.js
 /grafik/ads/*
-/hier_werben.
 /images/werbung.
 /images/werbung/*
 /img/werbung/*
@@ -2602,13 +2603,11 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbung90.
 /werbung_*?
 /Widgets/Werbung/*
-/zzz/init.php?$script
 _Banner_Werbung_
 _bannerwerbung/
 _werbe_layer.
 _werbebanner.
 _werbebanner/
-_werbepartner.
 _werbung.php
 _werbung.pl
 _Werbung260.
@@ -3182,6 +3181,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||mygully.com/f.php
 ||nachrichtenamort.de/cms/wp-content/images/ANZ_
 ||nacktefoto.com/los-gif/
+||namibia-forum.ch/images/gsdu/
 ||neumarkt-tv.de/wp-content/uploads/*/bestercasinomentor-original.jpg
 ||nius.de/adsense.js
 ||nnz-online.de/_daten/banner/
@@ -3257,7 +3257,6 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||suche.t-online.de/web/billiger?
 ||suche.t-online.de/web/ebay?
 ||suche.web.de/amazon?
-||suedtirol.de/upload/Banner/
 ||sunshine.it/raika/
 ||surfmusik.de/anz1.gif
 ||svs1916.de/fileadmin/svs1916de/footer_Logos/
@@ -3274,6 +3273,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||tvinfo.de/info/TWIAGO/
 ||uhrforum.de/styles/uhrforum/anzeigen/
 ||ukraine-nachrichten.de/img/wb/
+||unmoralische.de/bilder/am-banner.gif
 ||utopix.net/utopia_de/js/loader.js
 ||vfl-bochum.de^*/Partner/
 ||vfl.de^*_sponsoren_
@@ -3574,6 +3574,7 @@ news.de###news_content_1
 news.de###news_content_2
 news.de###news_content_3
 news.de###news_header
+namibia-forum.ch###nfad-inner
 madchensex.com###nrad
 nydus.org###nyba
 nydus.org###nydus_org_970x300_billboard_responsive
@@ -3668,6 +3669,7 @@ stuttgarter-zeitung.de###taboola-mhsd
 giga.de,kino.de,watson.de###teaserheld-header
 tennisnet.com###tennisnetWidget
 eishockey-magazin.de###text-10
+tollabea.de###text-19
 computerschach.de,nachrichten.es,nh24.de,randombrick.de,tollabea.de###text-2
 nh24.de###text-26
 bitcoinnews.ch,nh24.de###text-28
@@ -4097,7 +4099,6 @@ hallanzeiger.de##.mh-widget.s5214-widget
 autohaus.de##.mid-ad-section
 heise.de##.middle-ad-container
 mt.de##.min-280.mr
-schweizer-illustrierte.ch##.ministage-channel-sponsor-paragraph
 polizei.news,reiseziele.ch##.mobile-billboard-box
 gartenflora.de##.mobile-interscroller
 gelbeseiten.de##.mod-RechteWerbespalteStartseite
@@ -4445,6 +4446,7 @@ beeg-pornos.com,deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.
 wallstreet-online.de##a[onclick*="'tableAd'"]
 wallstreet-online.de##a[onclick*="tableAd"] + span
 allround-pc.com,supermarktblog.com##a[rel*="sponsored"]
+anisearch.de,herz-fuer-tiere.de,schweizer-illustrierte.ch##a[rel="sponsored"]
 kfz-steuer.de##a[style="position:relative; float:left; width:698px; height:63px; padding-left:28px; padding-right:0px; padding-top:14px; border:1pt solid #DADADC; background:#FFFFFF display:inline;"]
 sportdeutschland.tv##app-top-banner
 mobile.de##article[data-testid="srp-top-ad"]
@@ -4600,6 +4602,7 @@ oekotest.de##div[style="clear:both; display:block; min-height: 300px;"]
 oekotest.de##div[style="clear:both; display:block; min-height: 640px;"]
 wirtschaftslexikon24.com##div[style="float:left;clear:left;height:620px;width:180px;padding-top:15px;"]
 pixelio.de##div[style="float:right; width: 300px; height: 250px"]
+n-mag.org##div[style="height: 280px; margin: 5px 0 5px 0;"]
 nydus.org##div[style="height:90px;overflow:hidden;text-align:center;"]
 digitalfernsehen.de##div[style="margin-bottom:10px"]
 winfuture.de##div[style="margin: 10px 0px; text-align: center; min-width: 300px; min-height: 250px;"]
