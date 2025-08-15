@@ -1,9 +1,9 @@
-! Checksum: IPFeeq/1Esg3/wj1DwmpJQ
-! Diff-Path: ../patches/2/2-s-1755245604-3600.patch
+! Checksum: 2qosSe7fmkzIJHcProDbbQ
+! Diff-Path: ../patches/2/2-s-1755249099-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.3.74
-! TimeUpdated: 2025-08-15T08:09:22+00:00
+! Version: 2.4.3.75
+! TimeUpdated: 2025-08-15T09:07:27+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36148,6 +36148,7 @@ youtubekids.com,youtube-nocookie.com,youtube.com#%#//scriptlet('set-constant', '
 !/youtubei/v*/get_watch?$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtubekids.com|youtube-nocookie.com|youtube.com
 /youtubei/v*/player?$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtubekids.com|youtube-nocookie.com|youtube.com
 .com/playlist?list=$jsonprune=\$..[adPlacements\, adSlots\, playerAds],domain=youtubekids.com|youtube-nocookie.com|youtube.com
+/youtubei/v*/reel/reel_watch$jsonprune=\$.entries[?(has "\$..command.reelWatchEndpoint.adClientParams.isAd")],domain=youtube.com
 ||www.youtube.com/s/player/*/base.js$script,xmlhttprequest,replace=/if\(\!U\|\|\!U\.adPlacements&&\!U\.adSlots\)/if(!U||0)/
 !+ NOT_PLATFORM(ext_ff)
 www.youtube.com#%#(()=>{const t={apply:(t,o,n)=>{const e=n[0];return"function"==typeof e&&e.toString().includes("onAbnormalityDetected")&&(n[0]=function(){}),Reflect.apply(t,o,n)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,t)})();
@@ -36164,7 +36165,7 @@ www.youtube.com#%#//scriptlet('trusted-replace-outbound-text', 'JSON.stringify',
 www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
 ! Fix ads with a specfic Google account and for case when JSON.stringify is not writable
-www.youtube.com#%#(()=>{const e={construct:(e,t,c)=>{try{const n=t[0];let r=t[1]?.body;if(!n?.includes("youtubei")||!r)return Reflect.construct(e,t,c);if((r.includes('"contentPlaybackContext"')||r.includes('"adSignalsInfo"'))&&(!r.includes('"params":"yAEB')||!r.includes('"clientScreen":"ADUNIT"'))){const n=JSON.parse(r);if(!n.context?.client)return Reflect.construct(e,t,c);n.context.client.clientScreen="ADUNIT",n.playbackContext&&(n.params=`yAEB${n.params?n.params:""}`),n.playerRequest&&(n.playerRequest.params=`yAEB${n.playerRequest.params?n.playerRequest.params:""}`),r=JSON.stringify(n),t[1].body=r}}catch(e){console.trace("Error occurred:",e)}return Reflect.construct(e,t,c)}};window.Request=new Proxy(window.Request,e)})();
+www.youtube.com#%#(()=>{const e={construct:(e,t,c)=>{try{const n=t[0];let r=t[1]?.body;if(!n?.includes("youtubei")||location.href.includes("/shorts/")||!r)return Reflect.construct(e,t,c);if((r.includes('"contentPlaybackContext"')||r.includes('"adSignalsInfo"'))&&(!r.includes('"params":"yAEB')||!r.includes('"clientScreen":"ADUNIT"'))){const n=JSON.parse(r);if(!n.context?.client)return Reflect.construct(e,t,c);n.context.client.clientScreen="ADUNIT",n.playbackContext&&(n.params=`yAEB${n.params?n.params:""}`),n.playerRequest&&(n.playerRequest.params=`yAEB${n.playerRequest.params?n.playerRequest.params:""}`),r=JSON.stringify(n),t[1].body=r}}catch(e){console.trace("Error occurred:",e)}return Reflect.construct(e,t,c)}};window.Request=new Proxy(window.Request,e)})();
 ! Fix ads on https://www.youtube.com/shorts/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1991263854
 ! TODO: use scriptlet when this issue will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/183
@@ -54699,9 +54700,9 @@ charismanews.com#$##headerAreaWrap { height: 180px !important; }
 ! Make sure that https://check-host.net/about/api is not broken
 /^https:\/\/check-host\.net\/images\/[a-z]+-(en|ru)\.png$/$domain=check-host.net
 check-host.net##div[class*="-f"]:has(> * > img[src*=".svg"])
-check-host.net##div[class*="ative"]
-check-host.net#%#//scriptlet('trusted-set-cookie', 'closer_advertisments', 'privatealps,alexhost,pp-liaryt2,pp-liaryt,u1host-rep,waic-b')
+check-host.net#%#//scriptlet('trusted-set-cookie', 'closet_advertisments', 'privatealps,alexhost,pp-liaryt2,pp-liaryt,u1host-rep,waic-b')
 check-host.net###amain > div:has(a[href*="pq.hosting"])
+||check-host.net/images/*.png?
 !
 ! quora.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149846
@@ -78853,6 +78854,7 @@ _800x80_
 ##.happy-under-player
 ##.mntl-leaderboard-header
 ##.mntl-leaderboard-spacer
+##.listing-page-ad
 ##.shopee-search-user-brief
 ##a[href*="&maxads="]
 ##a[href*=".cfm?domain="][href*="&fp="]
@@ -81298,6 +81300,7 @@ browsershots.org#@#.advert_area
 ||afi-thor.com^
 ||afiliapub.click^
 ||afilliatetraff.com^
+||afipyuvipmmuo.store^
 ||afjynymrbgkh.com^
 ||afkwa.com^
 ||aflamecheetul.shop^
@@ -82174,6 +82177,7 @@ browsershots.org#@#.advert_area
 ||aprioriobstant.cyou^
 ||apritvun.com^
 ||apromoweb.com^
+||apronmemorableidentify.com^
 ||apstrfanba.com^
 ||apsubowahous.net^
 ||aptoticwrecked.shop^
@@ -84379,6 +84383,7 @@ browsershots.org#@#.advert_area
 ||buram.xyz^
 ||buranwattle.com^
 ||burbarkholpen.com^
+||burbotssourly.cfd^
 ||bureautrickle.com^
 ||bureauxcope.casa^
 ||burgea.com^
@@ -87516,6 +87521,7 @@ browsershots.org#@#.advert_area
 ||downright-soup.com^
 ||downrightshepherdmodeling.com^
 ||downstairsnegotiatebarren.com^
+||downwardsuperioraching.com^
 ||dowseawald.top^
 ||doxbgawth.xyz^
 ||doyensagonied.click^
@@ -88614,6 +88620,7 @@ browsershots.org#@#.advert_area
 ||escapedfoldy.click^
 ||escardeicers.shop^
 ||escgjyxnxbktf.one^
+||eschelspatha.shop^
 ||eschemicalco.org^
 ||escortlist.pro^
 ||escribedas.com^
@@ -96690,6 +96697,7 @@ browsershots.org#@#.advert_area
 ||mysearchhotdatings.com^
 ||mysoidaggress.qpon^
 ||mysterious-sink.pro^
+||mystesschlep.help^
 ||mysticmatebiting.com^
 ||mysticomen.com^
 ||mysweet-flirts-hubs.com^
@@ -97576,6 +97584,7 @@ browsershots.org#@#.advert_area
 ||oackurtodreecm.net^
 ||oadehibut.xyz^
 ||oaeauyefrqavz.website^
+||oaevgrhpiytej.website^
 ||oaglcwdhjcopy.website^
 ||oagreess.net^
 ||oahvmrbvqsuey.online^
@@ -99272,6 +99281,7 @@ browsershots.org#@#.advert_area
 ||pipeschannels.com^
 ||pipqgicbrxhwl.website^
 ||pipsol.net^
+||piratedstoory.qpon^
 ||pirnerdallack.rest^
 ||pirnxbdjowuoi.online^
 ||pirogfatcake.rest^
@@ -101189,6 +101199,7 @@ browsershots.org#@#.advert_area
 ||recedechatprotestant.com^
 ||recederatom.top^
 ||receiverchinese.com^
+||recentlylamentharmful.com^
 ||recentrecentboomsettlement.com^
 ||receptiongrimoddly.com^
 ||receptivity.io^
@@ -102368,6 +102379,7 @@ browsershots.org#@#.advert_area
 ||sataranestage.cfd^
 ||satellitefetidtelegraph.com^
 ||satienoalibied.shop^
+||satinedpsywar.help^
 ||satisfaction399.fun^
 ||satisfaction423.fun^
 ||satisfactorymetalrub.com^
@@ -103936,6 +103948,7 @@ browsershots.org#@#.advert_area
 ||statsmobi.com^
 ||staughaukuchooy.net^
 ||staujesordulse.com^
+||stauphirgitoase.com^
 ||staupsoaksy.net^
 ||staurtakroa.net^
 ||stautsoarsoaw.net^
@@ -105569,6 +105582,7 @@ browsershots.org#@#.advert_area
 ||trhdcukvcpz.com^
 ||tri.media^
 ||trialsgroove.com^
+||triangularmouse.com^
 ||tribalfusion.com^
 ||tribseaming.shop^
 ||tributeparticle.com^
@@ -105827,6 +105841,7 @@ browsershots.org#@#.advert_area
 ||tusherysperate.shop^
 ||tushnubias.digital^
 ||tuskardowers.help^
+||tuskfaxtroops.com^
 ||tusno.com^
 ||tussorepeatery.com^
 ||tutelaepreux.shop^
@@ -106455,6 +106470,7 @@ browsershots.org#@#.advert_area
 ||urbopjwdk.com^
 ||ureaswirble.click^
 ||urechar.com^
+||uremiamailer.cfd^
 ||urenabagpipe.cfd^
 ||urencenes.com^
 ||urewsawanincrea.com^
@@ -106485,6 +106501,7 @@ browsershots.org#@#.advert_area
 ||uruevehood.shop^
 ||uruswan.com^
 ||urwvphdnwhdzl.site^
+||urwythrs.com^
 ||uryjspwauhjwk.site^
 ||urzcyhlstxlwyn.com^
 ||us4post.com^
