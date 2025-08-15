@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: S6YokP3aIGvv3ET0eAu1Fw
-! Diff-Path: ../patches/7/7-s-1755256275-3600.patch
+! Checksum: t1p2wl5lXZBDsgMStEjgIw
+! Diff-Path: ../patches/7/7-s-1755260084-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.67.69
-! TimeUpdated: 2025-08-15T11:06:55+00:00
+! Version: 2.0.67.70
+! TimeUpdated: 2025-08-15T12:10:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -318,7 +318,7 @@
 ||maio.jp^
 ||media-rep.com^
 ||mediad.co.jp^
-||mediba.jp^
+||mediba.jp^$third-party
 ||moba8.net^
 ||static.mopo.jp^$third-party
 ||myiads.com^
@@ -1701,6 +1701,7 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 .com/ae/login.php?openid.pape.max_auth_age=0&openid.return_to=%$document
 !
 /^https?:\/\/(?:j[ap]|qq)\d{7,8}\.[a-z]{7,8}\.[a-z]{2,8}\//$document,to=agency|art|asia|auction|bar|beauty|beer|best|biz|business|cam|cards|click|cloud|coupons|digital|diy|fashion|food|forum|gay|guru|info|life|live|living|link|ltd|my|property|pw|rocks|run|sbs|shop|store|studio|tattoo|tech|today|top|uno|work,match-case
+://smbc.$document,to=cn|com|top
 ://smbccard*.$document,to=club
 ://smdc-$document,to=cn|fit|pl
 ://smbc-$document,to=club|cn|fit|link|shop|top
@@ -1799,6 +1800,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+domani.shogakukan.co.jp##div[style="min-height:225px; margin-bottom:30px;"]
 yomotto.jp##.main-ads-wrap
 altema.jp##.pr-icon-box:has(+ .olipa)
 altema.jp##.olipa
@@ -4397,7 +4399,7 @@ city.isehara.kanagawa.jp##div[id^="bnAdvertisement"]
 ||city.isehara.kanagawa.jp/banner/
 city.fukaya.saitama.jp##.bannerRMod
 asahi.com##.contents[style^="--color-ctx-category:var("] > div.border-gray-300 > section.section-container.overflow-scroll
-asahi.com##div[id*="_rect"]
+asahi.com##div[id*="_rect0"]
 asahi.com##.p-ad__container
 asahi.com###ytplayer1-ad
 asahi.com##.p-ad-area
@@ -10928,7 +10930,7 @@ w.grapps.me#?#.main-contents > div.sp-only:has(> script[src^="//j.microad.net"])
 yoi.shueisha.co.jp#?#main > section.section:has(> div.section-container > div.OUTBRAIN)
 webcg.net#?#.type-1 > li:has(> div[id^="div-gpt-"])
 onihimechan.com#?##sub .sidewrapper:has(> .sidetitlebody > .sidetitle:contains(スポンサードリンク))
-domani.shogakukan.co.jp#?#.textwidget:has(> div[id^="div-gpt-ad"])
+domani.shogakukan.co.jp##.textwidget:has(> div[id^="div-gpt-ad"])
 kijomatomelog.com#?#.sub_right > .sidewrapper:has(> .sidetitlebody > .sidetitle:contains(スポンサードリンク))
 asahi.com#?#.p-kurashi__list > div.p-kurashi__listItem:has(> div[id^="div-gpt-ad-"])
 hinode.pics#?##right_wrap > div.right_plugin_wrap:has(> div.right_plugin_body > div[style] > ins.adsbygoogle)
