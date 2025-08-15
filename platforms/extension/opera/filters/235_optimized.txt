@@ -1,9 +1,9 @@
-! Checksum: 6L6o3RIh+NFGxz1rxb9GMQ
-! Diff-Path: ../patches/235_optimized/235_optimized-s-1755161149-14400.patch
+! Checksum: MqGiOVjDjmzqcHpmnqd/CQ
+! Diff-Path: ../patches/235_optimized/235_optimized-s-1755233152-14400.patch
 ! Title: Persian Blocker (Optimized)
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.79
-! TimeUpdated: 2025-08-14T08:41:31+00:00
+! Version: 2.0.5.80
+! TimeUpdated: 2025-08-15T04:41:37+00:00
 ! Expires: 10 days (update frequency)
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.site/"]
 ~arongroups.site,~arongroups.co##a[href^="https://arongroups.co/"]
@@ -925,15 +925,6 @@ farnet.io#%#//scriptlet('ubo-acis.js', 'eif')
 farnet.io##.eif:not(:has(a[href*="farnet.io"]))
 farnet.io##.content-column:not(> .archive-title:has-text(رپرتاژ تبلیغاتی)) .item-inner:has(a[href*="/pr/"])
 farnet.io###site-footer .col-sm-4:has(a[rel="noopener"][target="_blank"])
-farsroid.com#%#//scriptlet('ubo-rmnt.js', 'script', 'ads_app_name')
-farsroid.com#%#//scriptlet('ubo-nowoif.js')
-farsroid.com#$#div.labeled-dw-ads { position: absolute !important; top: -10000px !important; }
-farsroid.com#$#div.site-middle-banners { position: absolute !important; top: -10000px !important; }
-farsroid.com#$#div.single-text-ads { position: absolute !important; top: -10000px !important; }
-farsroid.com#$#div.cas { position: absolute !important; top: -10000px !important; }
-farsroid.com#$?#p:has(> a[href="https://www.farsroid.com/download-imo-android/"] > img) { position: absolute !important; top: -10000px !important; }
-farsroid.com#$#li.ads-download { position: absolute !important; top: -10000px !important; }
-farsroid.com##nav.site-top-nav > ul.grid-row > li:has(> a[rel="dofollow"])
 ||analysis.faradars.org
 ||api.farsnews.ir/log^$xmlhttprequest,~third-party
 farsnews.ir##div[class^="not-first"] a[rel^="sponsored"]
@@ -2267,17 +2258,6 @@ zibamoon.com##div[id^="BehinAva"]
 zibamoon.com##.DetailArea > .AdAreaDetail
 zibamoon.com##.LeftSide > .TableOfContent > div[style="text-align:center;"]:has-text(صفحات مرتبط):upward(.TableOfContent)
 zohur12.ir##.sideads
-||analytics.zoomit.ir^
-||theforge.ir/intake/v2/rum/events^$xmlhttprequest,third-party,domain=zoomit.ir|zoomg.ir
-/ads^$xmlhttprequest,~third-party,domain=zoomit.ir|zoomg.ir|kojaro.com
-/editorial/api/articles/*/visit^$xmlhttprequest,~third-party,domain=zoomit.ir|zoomg.ir
-zoomit.ir,zoomg.ir,kojaro.com##div[class^="sc-"]:has(> div[class^="sc-"][rowcount][columncount] > div[class^="sc-"][maxwidth][maxheight])
-zoomtech.org##div.zoomtech-banner
-zoomit.ir#%#//scriptlet('ubo-href-sanitizer.js', 'a[variant="contained"][href^="https://api2.zoomit.ir/catalog/store-links/"][href*="/click?url=http"]', '?url')
-||api2.zoomit.ir/catalog/api/products/*/visit^$xmlhttprequest,~third-party,method=post
-zoomit.ir#$?#div#price div.bg-card:has(> div[role="button"] > div.relative div[variant="subhead"][font-weight="bold"][lineheight="1.6"]) { opacity: 0.5 !important; filter: blur(0.4px) !important; transition: border .3s ease, opacity .3s ease !important; }
-zoomit.ir#$?#div#price div.bg-card:has(> div[role="button"] > div.relative div[variant="subhead"][font-weight="bold"][lineheight="1.6"]):hover { opacity: 1 !important; filter: blur(0) !important; }
-zoomit.ir#$?#div#price div.bg-card:has(> div[role="button"] > div.relative div[variant="subhead"][font-weight="bold"][lineheight="1.6"]):active { opacity: 1 !important; filter: blur(0) !important; }
 ||excoino.com^$all
 ||irancloudmining.com^$all
 ||axotrade.com^$all
@@ -3157,6 +3137,8 @@ downloadha.com##.ads
 varzesh3.com##.adbox
 varzesh3.com##[data-ad]
 ||biz.varzesh3.com/vast^
+||faraazin.ir/api/setting/banners^
+faraazin.ir#@#.ads-title
 ||metrix.ir^
 ||intrack.ir^
 ||affilio.ir^
@@ -3171,6 +3153,7 @@ varzesh3.com##[data-ad]
 ||dgka.me^$removeparam=bCode
 ||sentry.theforge.ir^
 ||analytics.zoomit.ir^
+zoomit.ir#%#//scriptlet('ubo-href-sanitizer.js', 'a[variant="contained"][href^="https://api2.zoomit.ir/catalog/store-links/"][href*="/click?url=http"]', '?url')
 ||zoomg.ir/editorial/api/articles/*/visit^
 ||aparat.com/external/romeo^
 ||aparat.com/gogol^
