@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: xDh1/xtffPb02IFS3jzx8A
-! Diff-Path: ../patches/13/13-s-1755252706-3600.patch
+! Checksum: EUxUJRQmEAoIlRIyWFtMVg
+! Diff-Path: ../patches/13/13-s-1755331964-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.94
-! TimeUpdated: 2025-08-15T10:07:50+00:00
+! Version: 2.0.58.95
+! TimeUpdated: 2025-08-16T08:08:45+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1432,7 +1432,7 @@ itemci.com#$#body { background: none !important; }
 !
 ! Images hosting. Used for advertising on many sites
 !+ NOT_OPTIMIZED
-://i.hizliresim.com^$domain=filmgo1.com|sinefilmgo.org|mnfilmizle.com|diziplus.*|sinemangoo.org|sexfilmleriizle.com|ajans32.com|haber32.com.tr|technopat.net|ertehaber.com|duzcetv.com|unyenethaber.com|haberant.com|medya32.com|malatyamegahaber.com|erotikfilmtube.com|birasyadizi.com|asyadiziizle.com|dizicaps.*|hdfilmizleamk.*|muglayenigun.com|sinetiktok.com|filmzevkim.com|justintvnews.com
+://i.hizliresim.com^$domain=filmgo1.com|sinefilmgo.org|mnfilmizle.com|mnfilmizle1.com|diziplus.*|sinemangoo.org|sexfilmleriizle.com|ajans32.com|haber32.com.tr|technopat.net|ertehaber.com|duzcetv.com|unyenethaber.com|haberant.com|medya32.com|malatyamegahaber.com|erotikfilmtube.com|birasyadizi.com|asyadiziizle.com|dizicaps.*|hdfilmizleamk.*|muglayenigun.com|sinetiktok.com|filmzevkim.com|justintvnews.com
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/5969
 /images/banner/*$domain=yalovagazetesi.com|haber46.com.tr|cukurovaexpres.com|karamangundem.com|tercihiniyap.net|alanyapostasi.com.tr|pratikhaber.com|sonhaber.eu
@@ -1598,8 +1598,10 @@ fivemturk.net##.swal2-container
 fivemturk.net##.p-body-inner > div[style^="width: 100%;"][style*="flex;"]
 ||i.hizliresim.com^$domain=servers-mc.net
 servers-mc.net###popup
-mnfilmizle.com#$##rk-content { display: none !important; }
-mnfilmizle.com#$##cn-content { display: block !important; }
+mnfilmizle.com,mnfilmizle1.com#$##rk-content { display: none !important; }
+mnfilmizle.com,mnfilmizle1.com#$##cn-content { display: block !important; }
+mnfilmizle.com,mnfilmizle1.com#$#body::before { background: unset !important; }
+mnfilmizle.com,mnfilmizle1.com##.arakaplan-reklam-link
 forum.donanimarsivi.com##img[src*="amd-banner"]
 ahaber.com.tr##.adControl > *
 ahaber.com.tr##.newsGroupFrame > .container > .row > .col:has(> .advert)
@@ -5576,6 +5578,8 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ! ugurfilm*.com - frequently changed domains
 [$domain=/ugurfilm\d+.com/]#$##header { margin-bottom: 0 !important; }
 [$domain=/ugurfilm\d+.com/]##div[style^="text-align: center;"] > a[target="_blank"] > img
+[$domain=/ugurfilm\d+.com/]##.film-tab ~ a[target="_blank"] > img
+||ugurfilm*.com/wp-content/uploads/bahsine
 !
 ! dizibox*.com - frequently changed domains
 [$domain=/dizibox\d+.com/]##.body-clickable
