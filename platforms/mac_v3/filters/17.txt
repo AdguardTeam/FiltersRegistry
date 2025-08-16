@@ -1,9 +1,9 @@
-! Checksum: e8g5DchHyxsdsOx9oWJmPw
-! Diff-Path: ../patches/17/17-s-1755198664-3600.patch
+! Checksum: r/H0pYPVqnOU3vk+NbVKcg
+! Diff-Path: ../patches/17/17-s-1755327067-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.63
-! TimeUpdated: 2025-08-14T19:07:18+00:00
+! Version: 2.0.11.64
+! TimeUpdated: 2025-08-16T06:42:03+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21,6 +21,9 @@
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
 !
+! LOGLY
+! https://cancam.jp/special_2507_blendberry?from=logly&loclid=C0gjn999xa9fLuhhGNaVi0gpDDc
+$removeparam=loclid
 ! Yahoo JP
 ! https://ads-help.yahoo-net.jp/s/article/H000055044
 $removeparam=line_uid
@@ -418,6 +421,8 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://cancam.jp/archives/1637786?from=slide_home2
+||cancam.jp^$removeparam=from
 ! fnnews.com
 ||fnnews.com^$removeparam=jd
 ||fnnews.com^$removeparam=dc_data

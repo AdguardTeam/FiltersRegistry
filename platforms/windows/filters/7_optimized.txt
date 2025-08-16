@@ -1,9 +1,9 @@
-! Checksum: 27Wrl5uWbFeFa4dP2vBg0w
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1755274339-3600.patch
+! Checksum: BNiaJ7xdNj82Y/VdLwxfkg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1755327071-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.67.71
-! TimeUpdated: 2025-08-15T16:07:59+00:00
+! Version: 2.0.67.72
+! TimeUpdated: 2025-08-16T06:31:01+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||live-lr.cc^$document
@@ -1170,12 +1170,10 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 ://icloud-*.cn/$document
 .icu/*.jp/|$document
 .icu/verify|$document
-/^https:\/\/[a-z]{6,10}\.com\/category\/(?=[0-9a-z]{0,15}[A-Z])[0-9A-Za-z]{16}\?$/$document
-/^https:\/\/[a-z]{6,10}\.com\/detail\/(?=[0-9a-z]{0,19}[A-Z])[0-9A-Za-z]{18,20}\?$/$document
+/^https:\/\/[a-z]{6,10}\.(?:com|top)\/category\/(?=[0-9a-z]{0,15}[A-Z])[0-9A-Za-z]{16}\?$/$document
+/^https:\/\/[a-z]{6,10}\.(?:com|top)\/detail\/(?=[0-9a-z]{0,19}[A-Z])[0-9A-Za-z]{18,20}\?$/$document
 .top/v1/check|$document
 .com/cash/driect/client/anti/3210000^$document
-.com/index/client/ops/ib/3210000^$document
-/wdsoscosmsosmx.jp/*$document
 ://etc-*.cn/Rfuncc1$document
 /landers/*.php?lp_key=$document
 /apk/app-release.apk|$document
@@ -1315,6 +1313,7 @@ n.lat/login|$document
 /member/sendMail.php?direct_user_cd=*&direct_password=$document
 |http://*/j/mmenu.php$document
 .com/index/category?category_id=*&coll_id=$document
+.top/index/detail.html?sno=$document
 .com/index/detail.html?sno=$document
 /?phone=(050)-$document
 ^phone=050-$document
@@ -1337,6 +1336,7 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 ://eki*.*.com/Personal/member/Login/index.php?oneTimeAccessID=$document
 .com/ae/login.php?openid.pape.max_auth_age=0&openid.return_to=%$document
 /^https?:\/\/(?:j[ap]|qq)\d{7,8}\.[a-z]{7,8}\.[a-z]{2,8}\//$document,domain=agency|art|asia|auction|bar|beauty|beer|best|biz|business|cam|cards|click|cloud|coupons|digital|diy|fashion|food|forum|gay|guru|info|life|live|living|link|ltd|my|property|pw|rocks|run|sbs|shop|store|studio|tattoo|tech|today|top|uno|work,match-case
+/product_details?id=$document,domain=click
 ://smbc.$document,domain=cn|com|top
 ://smbccard*.$document,domain=club
 ://smdc-$document,domain=cn|fit|pl
@@ -1392,6 +1392,8 @@ city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,c
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+cancam.jp###home-feature
+cancam.jp##.todays-topics article:has(> div[id^="logly"])
 tuberecipe.com##.amazon-AffiliateBanner
 domani.shogakukan.co.jp##div[style="min-height:225px; margin-bottom:30px;"]
 yomotto.jp##.main-ads-wrap
@@ -2392,6 +2394,7 @@ sasatto.jp##.l-secondary > div.l-widget:has(> div[class^="rectangle"])
 toyokeizai.net##.special-articles > div.special-articles__item:has(> div[id^="div-gpt-ad-pc-"])
 otv.co.jp##.list_ad
 otv.co.jp##.o_aside__pure__ad
+otonano-shumatsu.com##.sompo-ad-side-column-section
 otonano-shumatsu.com##.container > div[style]:has(> div.adv-bb)
 otonano-shumatsu.com##.logly-block
 wealthadvisor.co.jp##.bottom_prarea
@@ -5998,7 +6001,6 @@ hikak.com,shindans.com##.a11 > div.a21
 100nuki.com##div[style^="margin:20px 0;padding:10px;background-color:#fea;background-image"]
 zebrack-comic.shueisha.co.jp##div[class^="Fluct_shadow"]
 rensai.jp##.amazon_wrap
-cancam.jp##div[id^="div-gpt-ad-"]
 detailtext-aucfan.com,aucfan.com,aucview.com##div[class*="adBnrBox"]
 unityroom.com##.bl_adunit
 unityroom.com##.pg_section_ads_double
