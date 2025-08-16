@@ -1,9 +1,9 @@
-! Checksum: 7aYUFgqML0yINOm0hJFEpQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1755305539-14400.patch
+! Checksum: 4n8Cnw3JRlYU8H8QmI7qpg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1755319425-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.46.46
-! TimeUpdated: 2025-08-16T00:47:50+00:00
+! Version: 2.1.46.47
+! TimeUpdated: 2025-08-16T04:39:20+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -529,7 +529,6 @@ _social_footer_
 ###social-media-bar
 ###social-media-footer
 ###social-media-header
-###social-media-share
 ###social-media-wrapper
 ###social-nav
 ###social-nav-holder
@@ -565,6 +564,7 @@ _social_footer_
 ###socialButtonOnPage
 ###socialButtons
 ###socialConnect
+###socialConnects
 ###socialContainer
 ###socialFacebook
 ###socialFollow
@@ -786,6 +786,7 @@ _social_footer_
 ##.adSocial
 ##.add-this
 ##.addsSocialItem
+##.addthis-container
 ##.addthis-smartlayers
 ##.addthis-smartlayers-desktop
 ##.addthis:not(body)
@@ -918,6 +919,7 @@ _social_footer_
 ##.author-social
 ##.author-social__share
 ##.author-socials
+##.authorSocial
 ##.author_social
 ##.author_socials
 ##.av-share-box
@@ -1371,11 +1373,13 @@ _social_footer_
 ##.footer-col-social
 ##.footer-connect
 ##.footer-contact-social
+##.footer-contacts__socials
 ##.footer-content-social
 ##.footer-facebook
 ##.footer-facebook-icon
 ##.footer-fb
 ##.footer-follow
+##.footer-follow-text
 ##.footer-follow-us
 ##.footer-followUs
 ##.footer-followus
@@ -1479,7 +1483,6 @@ _social_footer_
 ##.fusion-sharing-box
 ##.fusion-social-network-icon
 ##.fv-social
-##.fvfacebook_share
 ##.g1-socials-item
 ##.g1-socials-section
 ##.g_share
@@ -1743,6 +1746,7 @@ _social_footer_
 ##.jetpack-social-navigation
 ##.jetpack-social-widget-item
 ##.jetpack_widget_social_icons
+##.jj_sl_facebook
 ##.js-Share
 ##.js-fb-share
 ##.js-icon-facebook
@@ -2182,7 +2186,6 @@ _social_footer_
 ##.save-share
 ##.sb-social
 ##.sb-social-counter
-##.sbSocialData
 ##.sb_share
 ##.sc--twitter
 ##.sc-button-share
@@ -3214,7 +3217,6 @@ _social_footer_
 ##.stick-share
 ##.sticky-share
 ##.sticky-social
-##.sticky-social-buttons
 ##.sticky-social-share
 ##.stickyshare
 ##.stickysocial
@@ -3492,6 +3494,7 @@ _social_footer_
 ##.wrapper_social
 ##.wsite-social
 ##.wsite-social-item
+##.x-entry-share
 ##.x-social-global
 ##.xenfocus-social
 ##.xs_social_counter_widget
@@ -3517,7 +3520,6 @@ _social_footer_
 ##[data-testid="prism-share"]
 ##[data-xtclick^="social::"]
 ##[eapps-link="share"]
-##a[data-share="popup"]
 ##a[href^="fb-messenger://share/?"]
 ##a[href^="fb-messenger://share?link="]
 ##a[href^="http://pinterest.com/pin/create/"]
@@ -3756,6 +3758,7 @@ business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
 ask.com,smarter.com##.PartialSocialLinks
 rbth.com##.Popup-telegram
+sfstandard.com##.PopupSharer_container__Nhcrt
 whatcar.com##.ReviewSocialSection_reviewSocialSection__qzV0o
 abc.net.au##.ShareBanner_container__OX63I
 ynet.co.il,ynetnews.com##.SiteArticleSocialShareNew1280
@@ -3764,6 +3767,7 @@ asahi.com##.SnsUtilityArea
 cbssports.com##.SocialIconsBar
 worldathletics.org##.SocialShare_root__3h83X
 streetsblog.org##.SocialSharing_socialSharingItems__wdJu8
+sfstandard.com##.StickySharer_list__Lirqs
 indiatoday.in##.Story_whatsapp_channel__6xdtB
 grammarly.com##._3fq8S-container
 pixivision.net##._floated-bottom-bar
@@ -3830,7 +3834,6 @@ nature.com##.c-article-extras-additional-links
 lawandcrime.com##.c-article-foot__site
 thenextweb.com##.c-engage
 lawandcrime.com##.c-header-social-item
-united24media.com##.c-post__props
 euroweeklynews.com,thisisfutbol.com,videocelts.com##.c-post__social
 kyivindependent.com##.c-share__wrapper
 theglobeandmail.com##.c-site-header__buttons
@@ -3903,7 +3906,6 @@ indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,alaskahighwaynews.ca,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,burnabynow.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,fitzhugh.ca,flamboroughtoday.com,griceconnect.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,mountainviewtoday.ca,newmarkettoday.ca,newwestrecord.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,ontarioflyers.ca,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,theorca.ca,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,tricitynews.com,vancouverisawesome.com,westernwheel.ca##.ft-social
-mlbtraderumors.com##.fv_sharing_round
 techloy.com,thepickool.com,therage.co,wionews.com##.gh-post-page__share
 ghacks.net##.ghacks_share_widget
 avaaz.org##.global-footer-connect
@@ -4065,6 +4067,7 @@ vinepair.com##.social-footer-row
 digitimes.com##.social-frame
 firstpost.com##.social-ic-wrap
 brasil247.com,estadao.com.br,india.com,news18.com,recipetineats.com,wionews.com##.social-icon
+bonappetit.com,cntraveler.com,them.us##.social-icons--share
 tmz.com##.social-item
 denofgeek.com##.social-links__anchor--sharing
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
@@ -4105,6 +4108,8 @@ targettrend.com##.sws_supernormalaction
 gamingbolt.com##.tag-social-media
 notthebee.com##.take-shareables
 thediplomat.com##.td-follow
+areavip.com.br,heritagedaily.com,jewishpress.com,schengen.news,techgenyz.com,thenewsglobe.net##.td-post-sharing
+heritagedaily.com##.tdm_block_socials
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
 twitchy.com##.thm-sc
@@ -4197,6 +4202,7 @@ techissuestoday.com##.mar-b-6:has-text(Follow Us)
 jacobin.com##.po-fr__heading:has-text(Share this article)
 lifenews.com##.post_style_zk > p:has-text(Please subscribe)
 newsroom.ucla.edu##.promo-card-muted:has-text(RSS feed)
+heritagedaily.com##.tds-button:has-text(FOLLOW ON GOOGLE NEWS)
 twitch.tv##.tw-balloon:has-text(Share To)
 ruwix.com##.widget-title:has-text(Share this page!)
 archaeologymag.com##.widget_custom_html:has-text(Follow us)

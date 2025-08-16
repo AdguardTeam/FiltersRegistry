@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 76OrnHgHvmj5mme+cBbQHA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1755233158-14400.patch
+! Checksum: uk+7dMGHVEYm9G9e7VMt2g
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1755319439-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.62
@@ -131,7 +131,6 @@ ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-o
 drivereasy.com#?#.pakb-content ol:has-text(Download and install Driver Easy)
 drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
 drivereasy.com#?#.pakb-content div.info.note:has-text(drivereasy.com)
-drivereasy.com##.pakb-content img[sizes^="(max-width: 80"]
 drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 howtoremove.guide##[id*="newage"]
 windowsreport.com##div[class^=restoro-download] + section
@@ -200,6 +199,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||69.49.231.244^$document
 ||37.34.176.37^$document
 ||auslogics.com^$document
+||in-automate.brevo.com^
 ||23.111.31.137^$document
 ||23.111.88.207^$document
 ||45.90.58.90^$document
@@ -274,12 +274,14 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||193.143.1.217^$all
 ||208.91.189.203^$all
 ||aboveaveragefinallycast.com^$all
+||acceleratehallucinate.com^$all
 ||commonjamknights.com^$all
 ||discreetisabella.com^$all
 ||fellowshiplyricsceasless.com^$all
 ||grievetube.com^$all
 ||migrationoctavian.com^$all
 ||kettledroopingcontinuation.com^$all
+||numbirritablemajor.com^$all
 ||percentscalespoorly.com^$all
 ||delicioustightbronze.com^$all
 ||entertainlavish.com^$all
@@ -532,7 +534,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||95.211.229.247^$all
 ||agdosortione.com^$all
 ||chetopenimette.com^$all
-||habiculpize.com^$all
 ||88.208.22.1^$all
 ||reflectingproject.com^$all
 ||188.72.219.35^$all
@@ -1111,7 +1112,6 @@ linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea
 ||subs.youmaker.com^$third-party
 ##.paywall-gradient:not(html, body)
 nijie.info##.twit-button
-zapytaj.onet.pl##.know-better-answer
 instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
 spanishdict.com##.ReactModal__Overlay:has(video[src$="/bloom2.mp4"])
 zeit.de#$?#.paragraph--faded { overflow: visible !important }
@@ -1142,8 +1142,8 @@ fm.to##.blockOverlay.blockUI
 dev.mysql.com##.login-callout
 investing.com###PromoteSignUpPopUp
 context.reverso.net###register-popup-bottom
+vg.no###comments
 ||comment.youmaker.com^$domain=theepochtimes.com
-thejournal.ie,city-countyobserver.com###comments
 indiatimes.com##div[class$="cmtwrapper "]
 ghacks.net###comments
 color-hex.com##.txtgray
@@ -1664,6 +1664,8 @@ $document,removeparam=/^adjust.*$/,domain=~adj.st
 $document,removeparam=elq,domain=~comcast.com|~comcastforbusiness.com
 $document,removeparam=elqaid,domain=~comcast.com|~comcastforbusiness.com
 $document,removeparam=elqat
+$document,removeparam=elqcst
+$document,removeparam=elqcsid
 $document,removeparam=/^ga_.*$/
 $document,removeparam=_hsenc
 $removeparam=_hsmi
@@ -1716,6 +1718,7 @@ $removeparam=cm_type
 Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=pepperjam$/
 $document,removeparam=/^source=cj$/
+$document,removeparam=/^source=awin$/i
 $removeparam=affil
 $removeparam=cjid
 $removeparam=irsharedid
@@ -1734,7 +1737,6 @@ $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org
 $removeparam=exactag_uk
 $removeparam=affuid
-$removeparam=icid2
 $removeparam=refclickid
 $removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
@@ -1972,6 +1974,7 @@ $document,removeparam=traceId
 $removeparam=criteoId
 $removeparam=dspCookie
 $removeparam=_rand
+$removeparam=ttd_id
 $removeparam=dsp_uid
 $removeparam=cs_xi
 $removeparam=mt_exuid
@@ -2138,6 +2141,7 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 ||bing.com/search?$removeparam=FPIG
 $removeparam=_trkparms
 $removeparam=_from
+$removeparam=amdata,domain=ebay.*
 $removeparam=hash,domain=ebay.*
 ||ebay.$removeparam=mkevt
 ||ebay.$removeparam=mkcid
@@ -2335,7 +2339,6 @@ $removeparam=aff_click_id
 ||baidu.com^$removeparam=logid
 ||baidu.com^$removeparam=pageFrom
 ||baidu.com^$removeparam=srcp
-||baidu.com^$removeparam=ivk_sa
 ||baidu.com^$removeparam=sfrom
 ||haokan.baidu.com/v?$removeparam=pd
 ||baike.baidu.com/tashuo/browse/content?$removeparam=lemmaId
@@ -2992,8 +2995,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||em.dynamicyield.com^$removeparam=tag_ids
 ||l.clips4sale.com^$removeparam=a
 ||l.clips4sale.com^$removeparam=o
-||avaaz.org^$removeparam=copy
-||avaaz.org^$removeparam=share_location
 ||substack.com^$removeparam=r
 ||substack.com^$removeparam=triedRedirect
 ||firefox.com^$removeparam=redirect_source
@@ -3129,5 +3130,4 @@ independent.co.uk,indy100.com##.notification-prompt
 |https://adblock.*/js/pagead.js|$~third-party
 ##[id$=-exit-modal-bg]
 www.google.*,ipv6.google.com###m-x-content div[class]:first-of-type:not([class*=" "]):has(> [data-rl])
-://discord.com/api/v*/bogo-promotions^
 ://discord.com/api/v*/premium-marketing^
