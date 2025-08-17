@@ -1,14 +1,14 @@
-! Checksum: rvPggPuFIAF/KNgomOcNgg
-! Diff-Path: ../patches/243/243-s-1755319432-14400.patch
+! Checksum: lJ4WCKKQAcYBh0WdhyArAg
+! Diff-Path: ../patches/243/243-s-1755406034-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.47
-! TimeUpdated: 2025-08-16T04:39:46+00:00
+! Version: 2.0.22.48
+! TimeUpdated: 2025-08-17T04:42:54+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-08-16 05:24:04 CEST
+! Last modified: 2025-08-17 05:52:09 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -626,7 +626,9 @@ fotosidan.se##.subArticlesponsored, div[style="width:300px;float:right;"], div[s
 fotosidan.se,merinfo.se,allsvenskan.se,tasteline.com,jaktojagare.se,chefstidningen.se,norpan.se,jaktjournalen.se,byggvarlden.se,omtanke.today,akademikern.se,socionomen.se,culturezone.se,lchfarkivet.se,stoppapressarna.se,metromode.se,lesscarbs.se,flygtorget.se##.ads
 fragasyv.se##.header-adds
 fragbite.se##.category:has-text(/spons/i):upward(article)
+fragbite.se#$?#.forumObject div[id*="viralize"] { remove: true; }
 fragbite.se#$?#.messageHolder ~ div[id*="viralize"][class*="brand-showheroes"] { remove: true; }
+fragbite.se##.module:has(a[href*="casino"])
 fragbite.se##.tn, .zooKeeper, #scraper, .subHeadSponsors
 framtid.se###siteflash, #customer-link-container
 fraser.nu##div[aria-label="Annonser"]
@@ -1043,7 +1045,7 @@ mmanytt.se##.tablepress:has(a[href*="expekt"])
 mobilanyheter.net##a[href*="rocketpot.io"], a[href*="casino"], a[href*="betting"], .a-wrap
 mobilanyheter.net#%#//scriptlet('ubo-set.js', 'ai_run_scripts', 'noopFunc')
 mobil.se,kamerabild.se##article:has(a[href*="/partner"], a[href*="casino"])
-mobil.se,kamerabild.se##a[href*="/partner"], iframe[name^="PJWidget"]
+mobil.se,kamerabild.se##a[href*="/partner"], iframe[name^="PJWidget"], .google-ad
 mobil.se,kamerabild.se##.markupbox:has(a[href*="casino"], .holidAds)
 modernalivet.se#$#body.modal-active { overflow:unset!important }
 modernalivet.se##.excerpt:has-text(/annons/i):upward(article)
@@ -1095,6 +1097,7 @@ nordfront.se##span:not(.post-content):has-text(/annons/i):upward(.post)
 nordfront.se###campaign_area
 nordichardware.se##.pspy_info, [class^="prisjakt-"]
 nordichardware.se##.su-label:has-text(/sponsra/i):upward(.wpb_text_column, .td_block_text_with_title)
+nordichardware.se##.td-block-title:has-text(/sponsrat/i):upward(.td_block_wrap)
 nordichardware.se##.td-excerpt:has-text(/sponsra/i):upward(.meta-info-container)
 nordichardware.se##:is(.td-big-grid-post, .td_block_inner):has(a[href*="/sponsrat/"], a[href$="/sponsor/"])
 nordiskradio.se###cookieWindow
@@ -1337,6 +1340,7 @@ sportsnews.se,xn--sporthnt-5za.se###secondary:has(a[href*="casino"])
 sportsnews.se,xn--sporthnt-5za.se,killsteal.se,samnytt.se,samnytt.nu,obsid.se,senses.se,teknologiexperten.se,sverige.nu,enterprisemagazine.se,haboportalen.se,bike.se,xn--lgenhet-5wa.nu,samtiden.nu##a[href*="casino"]
 sporttv.nu##a[onclick*="bannerClick"], #linkus, .details-bet-banner
 sporttv.nu#$?#.progams-list-xs .text-center:has(.banner) { remove: true; }
+sporttv.nu##.text-center:has(.banner_tag)
 sporttv.nu##.visible-xs:has(a[href*="betting"], a[href*="casino"])
 stallet.se##.pnlAdTop
 startaochdriva.se##.banner-right, .banner-left, .wpb_single_image a[target="_blank"], .tdm-popup-modal-wrap
@@ -1500,7 +1504,7 @@ tv4play.se,tv4.se,fotbollskanalen.se,koket.se##.visit-advertiser-link
 tv4play.se,tv4.se,fotbollskanalen.se,koket.se,embed.viaplay.com#%#//scriptlet('ubo-xml-prune.js', 'Ad', '', '/fwmrm.net\/ad\/g/')
 tv4.se,skippo.se,koket.se##.maxetise
 tv24.se##li[id^="infeed"], div.presented-by
-tvmatchen.nu##.bet365, .panorama-wrapper, .tvg-manager-box, .tv102945, .tv102987, #event_banner, .go-to-partner, .odds, #text-13, .left-skyscraper-wrapper, .right-skyscraper-wrapper, .sticky-top-wrapper
+tvmatchen.nu##.bet365, .panorama-wrapper, .tvg-manager-box, .tv102945, .tv102987, #event_banner, .go-to-partner, .odds, #text-13, .left-skyscraper-wrapper, .right-skyscraper-wrapper, .sticky-top-wrapper, div[class*="-ads"]
 tvsporten.nu##div[class*="odds_container"], .sidebar a[target], .fixture-ad-wrapper, #tower-1, div[class*="-ads"]
 tv.nu##a[href*="adform.net"], .ad-fullscreenWallpaper__container
 tv.nu###modal div[itemtype][itemscope] > div[class]:has(a[href*="doubleclick"])
@@ -2163,6 +2167,7 @@ zeromagazine.nu##div[id^="ads"]
 /eu-cookie-law$script,domain=matsaklart.se|lyckasmedbakning.nu|dikko.nu
 /eu_cookie_compliance$script,domain=industrinyheter.se|dagensnaringsliv.se|infrastrukturnyheter.se|sportochfritidsnyheter.se|inredningsnyheter.se|byggnyheter.se|dagensfastigheter.se|stockholmsbyggnyheter.se|energinyheter.se|vindkraftsnyheter.se|solenerginyheter.se|jarnvagsnyheter.se|transportochlogistik.se|metallerochgruvor.se|papperochmassa.se|miningmetalnews.com|visitskane.com|ergo.nu|ki.se|sxk.se|europaportalen.se
 /eu_cookie_notice$domain=yelp.se
+/event-odds-banner$domain=tvmatchen.nu
 /event-tracker$domain=corren.se|folkbladet.se|mvt.se|nt.se|vt.se|vimmerbytidning.se|kuriren.nu|nsd.se|norran.se|pt.se|ekuriren.se|strengnastidning.se|kkuriren.se|sn.se|eposten.se|unt.se|helagotland.se|fastighetsvarlden.se
 /exposure$xmlhttprequest,domain=lokalguiden.se
 /expressen/crypt/?lpkey$all
@@ -2774,6 +2779,7 @@ zeromagazine.nu##div[id^="ads"]
 @@||nuthymia-llc.kit.com/*/index.js$domain=nickwignall.com
 @@||pages.upsales.com^
 @@||v.fwmrm.net/ad/g/$xmlhttprequest,domain=tv4play.se|tv4.se|fotbollskanalen.se|koket.se|embed.viaplay.com
+_banner.php?$domain=tvmatchen.nu
 ||123on.com/images/pixel
 ||123on.com/logs
 ||123on.com/static/videojs.pulse
