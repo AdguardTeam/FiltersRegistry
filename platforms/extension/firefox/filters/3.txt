@@ -1,9 +1,9 @@
-! Checksum: gNIGtV8KX0zzT515kQHZNA
-! Diff-Path: ../patches/3/3-s-1755491109-3600.patch
+! Checksum: YPowtW/K+gIRtKbbm9Hegw
+! Diff-Path: ../patches/3/3-s-1755497698-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.89.65
-! TimeUpdated: 2025-08-18T04:20:58+00:00
+! Version: 2.0.89.66
+! TimeUpdated: 2025-08-18T06:10:40+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -544,6 +544,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !
 !
 !
+||collects.lightinthebox.com^
+||rtg.rubiconredirect.com^
 ||beacon.gtv-pub.com^
 ||analytics-api.gemcommerce.com^
 ||slgnt.eu^
@@ -64092,6 +64094,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||count.shein.com^
 ||analytics.cosmopolitanmag.com.tr^
 ||clck.edadeal.ru^
 ||analytics-cdn.levante-emv.com^
@@ -103308,6 +103311,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||scripts.rubiconredirect.com/scripts/vk_lightinthebox.js
+||gateway.shein.com/events/
 ||solarwinds.com/ra-$script
 ||data.qiota.com/api/event
 ||20minutes.fr/js/piano-*.js
@@ -111469,6 +111474,9 @@ d4?appid*type*
 !
 ! For platforms which do not support $redirect rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211344
+@@||cdn.clerk.io/clerk.js$domain=fjellandhandel.no
+@@||api.clerk.io/v*/log/click?$domain=fjellandhandel.no
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210994
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210998
 @@||s.yimg.com/ss/analytics3.js$domain=sports.yahoo.com

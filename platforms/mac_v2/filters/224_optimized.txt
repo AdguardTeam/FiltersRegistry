@@ -1,9 +1,9 @@
-! Checksum: /FdSkqLKpOVakguGeVvulQ
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1755485381-3600.patch
+! Checksum: j4lvJXFw+wFlfl6pVp8m4A
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1755497718-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.42.2
-! TimeUpdated: 2025-08-18T02:45:39+00:00
+! Version: 2.1.42.3
+! TimeUpdated: 2025-08-18T06:11:22+00:00
 ! Expires: 12 hours (update frequency)
 ||dkaktsb.icu^
 ||tw-726620180914.*.run.app^
@@ -2423,6 +2423,8 @@ huaren.live#%#//scriptlet('set-constant', 'ConFig.config.ads', 'emptyObj')
 ||huaren.live/player/$replace=/let ConFig/var ConFig/,document
 !+ PLATFORM(windows, mac, android)
 /gmu-download.oss-$image,redirect-rule=1x1-transparent.gif,domain=voflix.vip
+||api.bilibili.com/x/web-interface/wbi/index/top/feed/rcmd$jsonprune=\$.data.item[?(has "\$..business_info.ad_desc")]
+bilibili.com#%#//scriptlet('json-prune-fetch-response', 'data.item.[-].business_info.ad_desc', '', '/feed/rcmd')
 bilibili.com#$?#.feed-card:has(> div.bili-feed-card > div.shortcut-bg:empty ~ div.bili-video-card[style*="display: none !important;"]) { remove: true; }
 bilibili.com##.bili-feed-card:has(> div.bili-video-card[style*="display: none !important;"])
 search.bilibili.com##.video-list > div:has(> .bili-video-card > .bili-video-card__wrap > .bili-video-card__info > .bili-video-card__info--right > .ad-feedback-entry)
