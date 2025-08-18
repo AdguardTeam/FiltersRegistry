@@ -1,9 +1,9 @@
-! Checksum: h4O9L1NI/Y0OQpIBu1PB8g
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1755478345-14400.patch
+! Checksum: /6be6wJDTF+JQFfWJpin0A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1755492510-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.46.57
-! TimeUpdated: 2025-08-18T00:48:02+00:00
+! Version: 2.1.46.58
+! TimeUpdated: 2025-08-18T04:44:16+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -335,6 +335,7 @@ _social_footer_
 ###menu-social-1
 ###menu-social-2
 ###menu-social-buttons
+###menu-social-header
 ###menu-social-icons
 ###menu-social-icons-menu
 ###menu-social-items
@@ -654,7 +655,6 @@ _social_footer_
 ###surveyshare-buttons
 ###svgFacebook
 ###svgTwitter
-###svgYoutube
 ###tab-share
 ###table_shareus
 ###top-bar-social
@@ -667,6 +667,7 @@ _social_footer_
 ###twShare
 ###tweet-button
 ###twitter-2
+###twitter-badge
 ###twitter-box
 ###twitter-button
 ###twitter-feed
@@ -885,6 +886,7 @@ _social_footer_
 ##.articleSocial
 ##.articleSocialLinks
 ##.article__details__share
+##.article__footer-share-title
 ##.article__header__share
 ##.article__likes
 ##.article__share
@@ -998,6 +1000,7 @@ _social_footer_
 ##.bottom-shares
 ##.bottom-social
 ##.bottom-socials
+##.bottomStormShareSec
 ##.bottom_share
 ##.bottom_social
 ##.box-app-phone-share
@@ -1222,6 +1225,7 @@ _social_footer_
 ##.expand-share
 ##.f-sns
 ##.f1-social-networks
+##.facebook-badge
 ##.facebook-banner
 ##.facebook-banner-wrapper
 ##.facebook-bg
@@ -1632,6 +1636,7 @@ _social_footer_
 ##.icon-facebook-squared
 ##.icon-facebook-white
 ##.icon-facebook2
+##.icon-fb-small
 ##.icon-fb-white
 ##.icon-fb2
 ##.icon-flickr
@@ -2043,7 +2048,6 @@ _social_footer_
 ##.page-share-button
 ##.page-social
 ##.page_share
-##.pane-share-widgets
 ##.pane-sharethis
 ##.pane-social-links
 ##.panel-follow-social
@@ -2064,6 +2068,7 @@ _social_footer_
 ##.pgevoke-contentarea-socialbuttons
 ##.pgevoke-header-row2-right-social
 ##.photo-share
+##.photoListSocialShare
 ##.pic-share
 ##.pin-it
 ##.pin-it-button
@@ -2172,6 +2177,7 @@ _social_footer_
 ##.s-linkedin
 ##.s-pinterest
 ##.s-share
+##.s-share-button
 ##.s-social
 ##.s-social-item
 ##.s-social-share
@@ -2235,7 +2241,6 @@ _social_footer_
 ##.share-additional
 ##.share-addthis
 ##.share-alt
-##.share-and-comments
 ##.share-area
 ##.share-art
 ##.share-article
@@ -2265,8 +2270,6 @@ _social_footer_
 ##.share-btn-lnks
 ##.share-btns
 ##.share-button--email
-##.share-button--facebook
-##.share-button--linkedin
 ##.share-button--twitter
 ##.share-button-group
 ##.share-button-list
@@ -2899,7 +2902,6 @@ _social_footer_
 ##.social-media-list-container
 ##.social-media-nav
 ##.social-media-nav__sticky
-##.social-media-service-module
 ##.social-media-share
 ##.social-media-share-buttons
 ##.social-media-share-links
@@ -2933,8 +2935,6 @@ _social_footer_
 ##.social-print
 ##.social-profile-icons
 ##.social-profiles
-##.social-profiles-list
-##.social-profiles-nav
 ##.social-profiles-widget
 ##.social-promo
 ##.social-prompt
@@ -3379,7 +3379,6 @@ _social_footer_
 ##.uix_socialMedia
 ##.uix_socialMediaLinks
 ##.ul-social
-##.ulSocial
 ##.uptl_container-share
 ##.us_share
 ##.us_share_buttons
@@ -3428,7 +3427,6 @@ _social_footer_
 ##.w2bslikebox
 ##.wb-share
 ##.wc_social_plugin_wrapper
-##.wc_ss_btns
 ##.wds-is-follow-us
 ##.web_widget_socialBar
 ##.whatsapp-share
@@ -3490,6 +3488,7 @@ _social_footer_
 ##.wplogout-float-social-wrapper
 ##.wplogout-social-wrapper
 ##.wpusb-btn
+##.wpusb-square-plus
 ##.wrap-social
 ##.wrap__sns
 ##.wrapper-share
@@ -3853,7 +3852,6 @@ carnegieendowment.org##.controls
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 c-sharpcorner.com##.cotent-share-icon
 overwolf.com##.creator-social
-bloomberg.com##.css--social-wrapper-outer
 kcrw.com##.cta-wrapper
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
@@ -4039,7 +4037,6 @@ thehackernews.com##.share-open-modal
 bdnews24.com##.share-option
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 forward.com##.share-post
-uh.edu##.share-this-story
 breachmedia.ca,news.itsfoss.com##.share-toggle
 apkpure.com##.share-toolbox
 dailymail.co.uk,thisismoney.co.uk##.share-twitter
@@ -4077,6 +4074,7 @@ firstpost.com##.social-ic-wrap
 brasil247.com,estadao.com.br,india.com,news18.com,recipetineats.com,theshovel.com.au,wionews.com##.social-icon
 bonappetit.com,cntraveler.com,them.us##.social-icons--share
 tmz.com##.social-item
+afro.com,elsol.com.ar,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,theatlantavoice.com,washingtoncitypaper.com,washingtonmonthly.com##.social-links-menu
 denofgeek.com##.social-links__anchor--sharing
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
 churchpop.com,dersonntag.at,toofab.com##.social-nav
@@ -4087,7 +4085,6 @@ iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
 arnnet.com.au,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky-menu__wrapper
-rappler.com##.social-share__actions
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
@@ -4358,7 +4355,6 @@ idnes.cz,lidovky.cz,metro.cz##.artsum-social
 dr.dk##.dre-sticky-share-band
 telegraaf.nl##.SocialButtons
 nu.nl##.app-follow-us
-geenstijl.nl##.h-11.p-3.border-l.border-slate-300.transition-colors.fill-slate-300.hover\:fill-brand.dark\:fill-black.dark\:hover\:fill-brand.dark\:border-black
 dewereldmorgen.be##.icon_social
 rtl.nl##[data-testid="social-links-container"]
 bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_"]
@@ -4385,7 +4381,6 @@ donnamoderna.com##.dm20-lory-share-panel
 iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
-livesicilia.it,perizona.it##.google_news
 alfredopedulla.com##.ig-banner
 libero.it,virgilio.it##.iol-share-menu
 libero.it##.iol-social
@@ -4427,7 +4422,6 @@ news.j-wave.co.jp###snsLink
 kakakumag.com##.article-sns-btm
 oricon.co.jp##.block-sub-sns
 kakakumag.com##.hd-sns
-woman-calendar.jp##.sns-area
 srad.jp##.synd
 auction.co.kr##.sare-sns
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
@@ -4551,6 +4545,7 @@ vidaextra.com,xataka.com.mx##.post-comments-shortcut
 biobiochile.cl##.post-social-container
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
 elcomercio.pe,gestion.pe##.s-buttons
+betano.com##.sb-footer__notes__socials
 infobae.com##.second-saved-buttons
 as.com##.sh-bar
 infobae.com##.sharebar-buttons-container
@@ -4561,7 +4556,6 @@ cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
 nationalgeographic.com.es##.top-share-article
 elmundo.es##.ue-c-article__share-tools
-abc.es##.voc-social-networks
 elpais.com##.w_rs
 autobild.es,businessinsider.es,computerhoy.com,hobbyconsolas.com,topgear.es##div[class^="share-bar_"]
 autobild.es,businessinsider.es,computerhoy.com,hobbyconsolas.com,topgear.es##div[class^="social-list_"]

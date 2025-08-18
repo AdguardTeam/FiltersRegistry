@@ -1,9 +1,9 @@
-! Checksum: WyT8OYuCdW/Mb3rXIzBlLQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1755406046-14400.patch
+! Checksum: NxMf2uaH3Lpa16xas9rn1g
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1755492533-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.48
-! TimeUpdated: 2025-08-17T04:42:54+00:00
+! Version: 2.0.22.49
+! TimeUpdated: 2025-08-18T04:44:40+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -202,7 +202,7 @@ automation.se,verkstadstidningen.se,transportnytt.se,datormagazin.se,cykelmagasi
 automotorsport.se##a[href*="/partner/"]
 autonytt.se###main > .col-links
 autonytt.se##.label:has-text(/sponsrad/i):upward(a)
-autonytt.se##.sidebar_content:has(a[href*="casino"])
+autonytt.se##:is(.sidebar_content, .article_widget_preview):has(a[href*="casino"])
 autonytt.se,sv.picmix.com,tekniknytt.se##.leaderboard
 autopower.se##.startsidancontainer > .row > .col:has(.adsbygoogle)
 avanza.se#@#a[title="LeoVegas"]
@@ -610,6 +610,7 @@ fotboll.com##:is(div.text-center, div.d-none):has(a[href*="/go/"][onclick], .fot
 fotboll.com,thelocal.se##.smartbanner
 fotosidan.se#%#//scriptlet('ubo-aeld.js', 'contextmenu', '', 'showCopyrightBox')
 fotosidan.se##.subArticlesponsored, div[style="width:300px;float:right;"], div[style="float:right;width:300px;"], #partner-box, .adbox-label, .banner-panorama-wmn
+fotosidan.se##.subArticle:has(.sponsored-wrapper)
 fotosidan.se,merinfo.se,allsvenskan.se,tasteline.com,jaktojagare.se,chefstidningen.se,norpan.se,jaktjournalen.se,byggvarlden.se,omtanke.today,akademikern.se,socionomen.se,culturezone.se,lchfarkivet.se,stoppapressarna.se,metromode.se,lesscarbs.se,flygtorget.se##.ads
 fragasyv.se##.header-adds
 fragbite.se##.category:has-text(/spons/i):upward(article)
@@ -757,7 +758,7 @@ hockeynews.se##.h-\[152px\]:has(iframe)
 hockeynews.se##.items-center:has(a[target="_blank"])
 hockeynews.se##.text-center:has-text(ANNONS):upward(1)
 hockeysverige.se##div[style*="min-height"]:has(.annons)
-hockeysverige.se##.Odds_Widget_Ad, div[class*="_panorama"], .category-sponsrade:not(body), div[class*="_in_article"], div[class*="desktop_sidebar"], div[class*="mobile_square"], figure a[target="_blank"] img
+hockeysverige.se##.Odds_Widget_Ad, div[class*="_panorama"], .category-sponsrade:not(body), div[class*="_in_article"], div[class*="desktop_sidebar"], div[class*="mobile_square"], figure a[target="_blank"] img, #seo-text-wrapper
 hojen.nu###sidebar .block.smaller:has(a[target="0"])
 homeq.se##div[class^="AdPlaceholder"]
 horisontmagasin.se##.custom-html-widget a[href]:not([href^="/"]):not([href*="horisontmagasin.se"]) img
@@ -833,6 +834,7 @@ juligen.se##.juligen-ads-box-widget
 kalender.se##.day-nav ~ a:not([href*="kalender.se"]), a:not([href*="kalender.se"]) img, div[style^="height:340px"], div[style^="height:110px"]
 kalender.se##.shadow-sm.items-center:has(#above-main-calendar, #below-main-calendar)
 kalmar.nu###rb-cookie
+kampsportnews.se##.widget_media_image:has(a[href]:not([href^="/"]):not([href*="kampsportnews.se"]))
 kamrat.com###kadDiv, div[style="margin:25px 0;max-width:255px!important;"], #scrollAdj ~ *
 kamrat.com#%#//scriptlet('ubo-set.js', 'showAds', 'false')
 kamrat.com#%#//scriptlet('ubo-set.js', 'trap', 'noopFunc')
@@ -1207,6 +1209,7 @@ rikatillsammans.se##div[class^="livewrapped-ad"], .tag-reklam
 riktighockey.se###custom_html-2
 rockbladet.se##:is(body > aside:first-child, .mh-sidebar > .mh-widget, .mh-sidebar-2 > .mh-widget):has(.g)
 rocknytt.net##[data-widget_type*="bnnrwidgets"], a[href*="/annons/"], div[data-widget_type="image.default"] a[target="_blank"], div[data-pid^="ad"], .essb-mobile-sharebottom
+runnersworld.se##.content-wrapper > .container:has(.post-card-sponsored)
 runnersworld.se##.post-card-sponsored, .modal-plus, .modal-backdrop
 runnersworld.se,motormagasinet.se,dagenshandel.se,food-supply.se,plastnet.se,habit.se,woodnet.se,foodnet.se,transportnet.se,processnet.se,packnet.se,verkstaderna.se,medtechmagazine.se,recyclingnet.se,rt-forum.se,uochd.se,lifesciencesweden.se,fri-kopenskap.se,cleannet.se,metal-supply.se,framtidensbygg.se,entreprenad.com,branschstegen.se,skogsforum.se,bio.se,svenskahousegruppen.se,hembygd.se#$#.modal-open { overflow:initial!important }
 runnersworld.se,utsidan.se,driva-eget.se,foretagande.se,revisionsvarlden.se,travelnews.se,mittforetag.com##.sponsored
@@ -1349,8 +1352,8 @@ svd.se###mega-ad-wrapper, #svd-top-ad, div[class*="advertory"], div[data-custom-
 svd.se,chef.se,vvsforum.se,elinstallatoren.se,arkitekten.se,natursidan.se,svenskfarmaci.se,da.se,frisor.se,revisionsvarlden.se,branschkoll.se##.Ad
 svenskadating.com##.pubhead, #bannermobile
 svenskaevenemang.com##td[width="130"]:has(a[href*="annons"])
-svenskafans.com##.h-52:has(iframe[srcdoc*="ad_div"])
 svenskafans.com##.puff__ad-heading, ad-skyscraper__wrapper, iframe[title*="Bet 365"], iframe[srcdoc*="ad_div"]
+svenskafans.com##:is(.h-52, .h-40):has(iframe[srcdoc*="ad_div"])
 svenskafans.com##:is(.min-h-80, .w-64.absolute):has(div[id^="svenskafans_"])
 svenskahousegruppen.se###eprivacyModal, .modal-backdrop
 svenskalag.se##.cookie-overlay, .overlay:empty
@@ -2227,7 +2230,7 @@ zeromagazine.nu##div[id^="ads"]
 /images/banner$domain=sporttv.nu
 /images/site/annonser
 /images/sponsor$domain=sporttv.nu
-/images/*casino$domain=festivalinfo.se
+/images/*casino$domain=festivalinfo.se|hockeynews.se
 /imatrics$domain=vk.se|folkbladet.nu|nordsverige.se|mellanbygden.nu|vasterbottningen.se|lokaltidningen.nu
 /img/allalanse$image,domain=ekonominyheter.se
 /img/banklan/*$image,domain=ekonominyheter.se
@@ -2480,6 +2483,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/wf-cookie-consent$script,domain=spelochfilm.se
 /plugins/woocommerce-google-adwords
 /plugins/wordpress-stats-manager-pro
+/plugins/wpconsent-cookies-banner$script,domain=kampsportnews.se
 /plugins/wplinktrade
 /plugins/wpx-bannerize$script
 /plugins/wp-adsense
@@ -3051,7 +3055,6 @@ _banner.php?$domain=tvmatchen.nu
 ||heroaffiliates.com^$third-party
 ||herokuapp.com/visit?$image
 ||hittahem.se^$third-party
-||hockeynews.se/images/sveacasino.jpg
 ||hq.volomedia.com^$domain=gratis.se
 ||humorbrevet.se/externa_bilder
 ||hu-manity.co^$domain=densistavilan.se
