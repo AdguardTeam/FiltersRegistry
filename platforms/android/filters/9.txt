@@ -1,9 +1,9 @@
-! Checksum: 5hFOmsYpGVlGBG/F+Dipog
-! Diff-Path: ../patches/9/9-s-1755292214-3600.patch
+! Checksum: sZgVagFibMbz86Jz2NlXcw
+! Diff-Path: ../patches/9/9-s-1755511917-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.31.47
-! TimeUpdated: 2025-08-15T21:06:38+00:00
+! Version: 2.0.31.48
+! TimeUpdated: 2025-08-18T10:08:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -252,8 +252,8 @@ mitele.es#$#html { overflow: auto !important; }
 mitele.es#$#body { overflow: auto !important; }
 mitele.es#$#div[class^="adsInfo__fullOpacity-"] { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200089
-elcorreogallego.es###_an_cmp
-elcorreogallego.es#%#//scriptlet('set-constant', '_an.ABMode', 'undefined')
+laopiniondezamora.es,elcorreogallego.es##body > div[id^="_"]:has(> div[class$="_pp"]:only-child > div[class$="_pp__modal"]:only-child a[href*="/data/ab-info/ab-info.html"])
+laopiniondezamora.es,elcorreogallego.es#%#//scriptlet('set-constant', '_an.ABMode', 'undefined')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210312
 redecanaistv.*,redecanais.*##.pm-section-highlighted > div[style]:not([class])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202441
@@ -1466,7 +1466,7 @@ estacio.br#%#//scriptlet('set-cookie', 'modal_promo', '1')
 multipaste.org#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', 'excludeDomains')
 multipaste.org#%#(()=>{window.addEventListener("load",(()=>{document.querySelectorAll('.count > li > a[href*="/#!"]').forEach((t=>{const e=(t=>{let e=t;for(let t=0;t<10;t++)try{e=atob(e)}catch(t){break}return decodeURIComponent(e)})(t.href.split("/#!")[1]);(t=>{let e=t;try{e=new URL(t)}catch(t){return!1}return"http:"===e.protocol||"https:"===e.protocol})(e)&&t.setAttribute("href",e)}))}));})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191026
-gourlpro.com#%#!function(){if(window.location.href.includes(".php?")&&window.location.href.includes("=")){const o=location.href.split("=");if(o&&o[1]){let t=o[1];for(let o=0;o<10;o++)try{t=atob(t)}catch(o){const n=decodeURIComponent(t);let c=!1;try{new URL(n),c=!0}catch(o){c=!1}if(c){location.assign(n);break}}}}}();
+gourlcero.com,gourlpro.com#%#!function(){if(window.location.href.includes(".php?")&&window.location.href.includes("=")){const o=location.href.split("=");if(o&&o[1]){let t=o[1];for(let o=0;o<10;o++)try{t=atob(t)}catch(o){const n=decodeURIComponent(t);let c=!1;try{new URL(n),c=!0}catch(o){c=!1}if(c){location.assign(n);break}}}}}();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200997
 pelismart.tv#%#//scriptlet('href-sanitizer', '.download-links a[href^="https://unlock.uberxviral.com/#"]', '[href]', 'base64decode')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198257
@@ -1966,6 +1966,8 @@ c5n.com,t13.cl,solowrestling.mundodeportivo.com,todojujuy.com,mendozapost.com,me
 !
 ! NOTE: Specific rules
 !
+veo-hentai.com#%#//scriptlet('abort-on-property-read', 'PopunderData')
+||veo-hentai.com/wp-content/plugins/veohentai/popunder-unificado.js
 animalpolitico.com##div[id^="na"]:has(> iframe[id^="google_ads"])
 elfinanciero.com.mx##.b-ads-block
 excelsior.com.mx##.banner-content-ads
@@ -2131,7 +2133,7 @@ nationalgeographicbrasil.com,nationalgeographic.es##div[id^="gpt--header--"]
 nationalgeographic.pt#$#@media only screen and (min-width: 1080px) { .add990x90 { display: none !important; } }
 nationalgeographic.pt#$#@media only screen and (min-width: 1080px) { .page-content { margin-top: 120px !important; } }
 yelitzonpc.com##center > a[target="_blank"]
-misprogramaspc.com##.vn-green > a[target="_blank"]
+megahentaihd.com,misprogramaspc.com##.vn-green > a[target="_blank"]
 tecmundo.com.br##div[class^="styles_ads_"]
 gamestorrents.app##img[onclick*="click.ggpickaff"]
 guiavidaesaude.com,muyinteresante.com##.banner
@@ -2354,7 +2356,7 @@ olympuscomic.com##.flex > div:has(> div[ad-placement]:only-child)
 jornaldeangola.ao##a[href^="https://www.standardbank.co.ao/"] > img
 jornaldeangola.ao##ja-root > section:has(> div.relative > tag-sec-publicidade)
 americatv.com.ar##div[class^="banner-ad-"]
-sport.es,elperiodico.com#%#//scriptlet('trusted-replace-node-text', 'script', 'module.enablePrebidLoad', '!(module.disableAds === "yes") && !false;', '!1')
+laopiniondezamora.es,sport.es,elperiodico.com#%#//scriptlet('trusted-replace-node-text', 'script', 'module.enablePrebidLoad', '!(module.disableAds === "yes") && !false;', '!1')
 jornaldeangola.ao##tag-sec-publicidade ~ div > owl-carousel-o
 jornaldeangola.ao##tag-sec-publicidade
 comandoplay.com##.movie-image > a#buttonposter[rel]
