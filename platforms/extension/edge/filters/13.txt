@@ -1,9 +1,9 @@
-! Checksum: o7RCzBtirMDKDYgN8hfj7Q
-! Diff-Path: ../patches/13/13-s-1755331952-3600.patch
+! Checksum: soxhE4wToKPTsnYR35lwPg
+! Diff-Path: ../patches/13/13-s-1755501189-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.58.95
-! TimeUpdated: 2025-08-16T08:08:45+00:00
+! Version: 2.0.58.96
+! TimeUpdated: 2025-08-18T07:09:34+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5762,6 +5762,8 @@ hdfilmizleamk.net,birasyadizi.com,seyredeger.com#%#//scriptlet('abort-on-propert
 ! diziyou*.com - frequently changed domains
 ! https://t.me/diziyoucom
 ||diziyou*.com/wp-content/*.gif
+! https://github.com/AdguardTeam/AdguardFilters/issues/211520
+[$domain=/diziyou\d+\.com/]#%#//scriptlet('set-constant', 'player.vroll', 'noopFunc')
 !
 ! dizilla.*(club|com|nl)  - frequently changed domains
 [$domain=/dizilla\d*\.(club\|com\|nl)/]#%#//scriptlet('remove-attr', 'loading', 'iframe[loading="lazy"]')
