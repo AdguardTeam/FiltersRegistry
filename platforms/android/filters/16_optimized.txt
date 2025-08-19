@@ -1,5 +1,5 @@
-! Checksum: kRcqj9htqbSHOrKJjF8aqA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1755497679-3600.patch
+! Checksum: TQglwt6ZEhkmN8KUVnG9fA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1755571239-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.53.94
@@ -1419,7 +1419,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /similarClickAds|
 /skipad.
 /static.ads-
-/sw.*.js?promo=
 /syndication.*&idzone=
 /trackads.
 /twitter-ads.
@@ -1598,6 +1597,7 @@ _display_ad_
 _domain=ads.
 _event_pub.
 _flash_ad_
+_fr/ads/
 _id=*&nads=
 _iframe728x90.
 _isab.
@@ -1957,6 +1957,7 @@ _build=iclick-$popup
 ||newstat.net^$third-party
 ||static-dscn.net^$third-party
 ||virtuagirl.com^$third-party
+||virtuaguyhd.com^$third-party
 ||0w1rqq69fi0e.com^
 ||1clic1don.fr^
 ||3692022.com^
@@ -1973,8 +1974,10 @@ _build=iclick-$popup
 ||abkajbvlymqmb.top^
 ||ablebodiedsweatisolated.com^
 ||abnetraiment.top^
+||abnormalrebel.com^
 ||abominableexhibition.com^
 ||aboveaveragefinallycast.com^
+||aboveboardcomplicate.com^
 ||absorbingelsewheredisobey.com^
 ||academicencircle.com^
 ||accedemotorcycle.com^
@@ -2003,6 +2006,7 @@ _build=iclick-$popup
 ||adsrealpublic.ru^
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
+||advancingtheirs.com^
 ||advantageroughplay.com^
 ||adviseforty.com^
 ||affluentmirth.com^
@@ -2196,7 +2200,6 @@ _build=iclick-$popup
 ||cerumenpintid.com^
 ||cgqhtithixi.com^
 ||chaomemoria.top^
-||chartactiveuncertain.com^
 ||chearequoiter.top^
 ||chirmsseaman.shop^
 ||chirpscacur.com^
@@ -2904,6 +2907,7 @@ _build=iclick-$popup
 ||sellersfloush.com^
 ||semena.cz^
 ||semenaonline.cz^
+||semenaonline.sk^
 ||serconius.com^
 ||sereendipit.com^
 ||sersh.com^
@@ -3177,7 +3181,6 @@ _build=iclick-$popup
 ||max-adserv.com^$popup,third-party
 ||mellowads.com^$popup,third-party
 ||monetizze.com.br^$popup,third-party
-||mozime.com^$popup
 ||multiupload.com^$popup,third-party
 ||mybestclick.net^$popup,third-party
 ||o000oo.com^$popup
@@ -3185,6 +3188,7 @@ _build=iclick-$popup
 ||porncrash.com^$popup,third-party
 ||redlightcenter.com^$popup,third-party
 ||revsharecash.com^$popup,third-party
+||schjmp.com^$popup
 ||sersh.com^$popup,third-party
 ||slutroulette.com^$popup,third-party
 ||stripchat.com^$popup,third-party
@@ -3514,6 +3518,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||1movies.*/site/$xmlhttprequest
 ||2ememain.be/lrp/api/complementary-listings?
 ||abellalist.com^$media,script
+||abidjan.net/public/img/logo/partenaire/
 ||ad.mailo.com^
 ||adn.porndig.com^
 ||adproxy.tf1.fr^
@@ -3782,6 +3787,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###bloc-pub
 ###blocPub_CARRE_PUB
 ###bloc_pub
+###block-fcbloc-publicite
 ###block-gc-ad-bloc-centre-1
 ###block-gc-ad-bloc-centre-2
 ###block-gc-ad-bloc-droite-1
@@ -3948,7 +3954,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pubVideo
 ###pub_1
 ###pub_300x250
-###pub_300x250-1
 ###pub_300x250-2
 ###pub_468x60
 ###pub_728x90
@@ -4404,6 +4409,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pubsidebar
 ##.pubtexte
 ##.pubwrapper
+##.purple-ad
 ##.quickads_table
 ##.r-pub--banniere
 ##.r-pub--inread
@@ -4428,7 +4434,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.section-ads-center
 ##.shareaholic-canvas
 ##.shopperAds
-##.show-pub
 ##.side-pub
 ##.side_slide_pub
 ##.sidebar-adv
@@ -4926,6 +4931,7 @@ free-reseau.fr##a[href*="&tag=freereseaufr-"]
 3dnatives.com,audiofanzine.com,lesimprimantes3d.fr##a[href*="&utm_"]
 1001ebooks.com,1337x.st,1337x.to,amairgil.cz,blablastream.com,blablastream.space,cocostream.rip,cpasbien.fun,cpasfini.me,extreme-down.party,film01stream.com,film01stream.ws,filmzenstream.cloud,gogoflix.cyou,hds.quest,hdss.at,hdss.yachts,mistergeek.net,oxtorrent.ac,papystreaming.black,papystreaming.stream,sokrostream.tube,streamonsport.club,streampourvous.lol,supervideo.cc,topsddns.net,vfcomplet.vip,vfserie.win,voirfilms.live,voirfilmstreaming.tv,voirseries.rip,wiflix-nouvelle-adresse.site,x1337x.eu,x1337x.ws,yggtorrent.support,zt-za.fr##a[href*=".php"]
 7-up.net,abidjan.net,algerie-eco.com,algerie-focus.com,algerie360.com,bigbike-magazine.com,bismirabbika.com,brain-magazine.fr,cnetfrance.fr,doukkalia.press.ma,grimper.com,igen.fr,internetparsatellite.net,kiteboarder-mag.com,ktotv.com,lebonfap.com,letagparfait.com,macg.co,montagnes-magazine.com,mubawab.ma,nintendo-master.com,niveales.com,portail.free.fr,public.fr,radego.over-blog.com,skieur.com,skimagazine.fr,snowsurf.com,streaming-one.com,supmag.fr,tahiti-infos.com,telecharger-jeuxpc.fr,trekmag.com,unleashed.fr,upload.ac,vakarm.net,watchgeneration.fr,widermag.com,windmag.com##a[href*="//bit.ly/"]
+abidjan.net,algerie-focus.com,algerie360.com,bc.vc,bismirabbika.com,extratorrents.ch,gum-gum-streaming.com,igen.fr,instinct-voyageur.fr,israelmagazine.co.il,jeux.com,journaldumusulman.fr,lnc.nc,macg.co,orientation-chabab.com,proxylistpro.com,tendancehotellerie.fr,watchgeneration.fr##a[href*="//goo.gl/"]
 amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 tube8.fr##a[href*="/_xa/ads?"]
 1337x.cz,cpasbien-support.com,cpasbien4.com,mega-torrent6.com,nextorrent4.com,nortorrent4.com,nortorrent6.com,oxtorrent2.com,oxtorrent5.com,rantop.cc,torrent-p2p.my,torrent-site.com,ultimate-torrent1.com,yggtorrent3.com,yggtorrents.top,zetorrents1.com,zktorrent.support,zktorrent3.com,zktorrent5.com,zone-torrent2.com##a[href*="/adsby/"]
