@@ -1,9 +1,9 @@
-! Checksum: 4dvA1MkhzONJ8PbJPNr/CQ
-! Diff-Path: ../patches/3/3-s-1755627175-3600.patch
+! Checksum: rM/5+ggvPSgkTA+XfCyWSA
+! Diff-Path: ../patches/3/3-s-1755630627-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.89.81
-! TimeUpdated: 2025-08-19T18:08:57+00:00
+! Version: 2.0.89.82
+! TimeUpdated: 2025-08-19T19:06:07+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -546,6 +546,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !
 !
 !
+||ub-analytics.com^
 ||t.usermaven.com^
 ||onetag.co.kr^
 ||indicative.com^$third-party
@@ -67076,6 +67077,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||sta-events.swishapps.ai^
+||pro-1w-dataaggregator.onelouder.com^
 ||mllog.jd.com^
 ||count.shein.com^
 ||analytics.cosmopolitanmag.com.tr^
@@ -109189,6 +109192,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Bad:  ||example.com^$cookie=flat_r_mb (should be in cookies_specific.txt)
 !
 !
+! unbounce analytics cookies
+$cookie=ubpv
+$cookie=ubvt
+$cookie=ubvs
 ! Twilio Inc. (formerly Segment)
 ||outdoorsy.com^$cookie=odc-s
 ||outdoorsy.com^$cookie=odc-e
@@ -109670,6 +109677,8 @@ $cookie=__gpi
 $cookie=_gid
 ! Used to distinguish users.
 $cookie=_ga
+! Used to distinguish users.
+$cookie=__ga_uid
 ! Used to throttle request rate.
 $cookie=/^_gat_tracker\d+/
 ! ---
@@ -109768,7 +109777,7 @@ $cookie=/^_v__chartbeat/
 $cookie=_cb_svref
 !
 ! mparticle.com
-$cookie=/^mprtcl-v4_/
+$cookie=/^mprtcl-v4/
 $cookie=/^mprtcl-prodv4_/
 !
 ! Adobe - https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-analytics.html
