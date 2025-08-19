@@ -1,9 +1,9 @@
-! Checksum: 8RzlbJJ0v23aIfCTkraWZA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1755564739-14400.patch
+! Checksum: DxK69xlZX6DUb9ZoiEBJWg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1755578531-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.46.63
-! TimeUpdated: 2025-08-19T00:47:57+00:00
+! Version: 2.1.46.64
+! TimeUpdated: 2025-08-19T04:37:49+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -34,6 +34,7 @@
 /fb-pixel.js
 /fb-traffic-pop.css
 /fb-traffic-pop.min.js
+/fbshare.jpg
 /fbshare.js
 /fbshare.png
 /floating-wpp.min.js
@@ -66,6 +67,7 @@
 /plugins/facebook-page-promoter-$~stylesheet
 /plugins/mashsharer/assets/js/mashsb.min.js
 /plugins/pinterest-pin-it-button-on-image-hover-and-post/js/pinit.js
+/plugins/slick-social-share-buttons/*
 /plugins/sociable-re/images/*
 /plugins/sociable/*$~stylesheet
 /plugins/social-media-widget/*$image
@@ -194,6 +196,9 @@ _social_footer_
 ###crestashareicon
 ###crestashareiconincontent
 ###custom-tweet-button
+###dcssb-facebook
+###dcssb-plusone
+###dcssb-twitter
 ###details-share-icon-link
 ###divSideShare
 ###divSocial
@@ -516,7 +521,6 @@ _social_footer_
 ###social-facebook
 ###social-fb
 ###social-float
-###social-floating
 ###social-follow
 ###social-foot
 ###social-footer
@@ -1233,6 +1237,7 @@ _social_footer_
 ##.facebook-box
 ##.facebook-fans
 ##.facebook-follow
+##.facebook-follow-button
 ##.facebook-footer
 ##.facebook-hover
 ##.facebook-image
@@ -1618,6 +1623,7 @@ _social_footer_
 ##.icon-circle-twitter
 ##.icon-circle-youtube
 ##.icon-commu_share
+##.icon-condividi
 ##.icon-connect
 ##.icon-dailymotion
 ##.icon-delicious
@@ -2006,7 +2012,6 @@ _social_footer_
 ##.news-header-social
 ##.news-share
 ##.news-share-button
-##.news-sharing
 ##.news__share
 ##.newsletter__social-links
 ##.nice-menu-menu-social-menu
@@ -2293,7 +2298,6 @@ _social_footer_
 ##.share-data
 ##.share-desktop
 ##.share-dropdown
-##.share-element
 ##.share-elements
 ##.share-email
 ##.share-entry
@@ -2386,7 +2390,6 @@ _social_footer_
 ##.share-social
 ##.share-social-bottom
 ##.share-social-box
-##.share-social-icon
 ##.share-social-link
 ##.share-social-links
 ##.share-social-list
@@ -2530,6 +2533,7 @@ _social_footer_
 ##.share_email_article
 ##.share_facebook
 ##.share_fb
+##.share_google
 ##.share_group
 ##.share_hidden
 ##.share_horizontal
@@ -2696,6 +2700,7 @@ _social_footer_
 ##.sideBarShare
 ##.sideShare
 ##.side_sns
+##.side_social
 ##.side_twitter
 ##.sidebar-facebook
 ##.sidebar-share
@@ -2834,7 +2839,6 @@ _social_footer_
 ##.social-cta
 ##.social-ext
 ##.social-fixed
-##.social-float
 ##.social-follow
 ##.social-follow-bar
 ##.social-foot
@@ -3213,6 +3217,7 @@ _social_footer_
 ##.sscb-pinterest
 ##.ssto-share-buttons
 ##.st-custom-button
+##.st-social-block
 ##.st-social__share
 ##.st_sharethis
 ##.st_sharethis_custom
@@ -3335,7 +3340,6 @@ _social_footer_
 ##.twitter-follow-box
 ##.twitter-footer
 ##.twitter-hashtag
-##.twitter-inner
 ##.twitter-share
 ##.twitter-share-btn
 ##.twitter-share-button
@@ -3444,6 +3448,7 @@ _social_footer_
 ##.widget-social
 ##.widget-social-b
 ##.widget-social-icons
+##.widget-social-links
 ##.widget_FacebookLikeBox
 ##.widget_a2a_follow_widget
 ##.widget_add_to_any_subscribe_widget
@@ -3686,7 +3691,6 @@ _social_footer_
 ||xing-share.com^$third-party
 ||yandex.st/share/
 ||youtube.com/subscribe_embed?$third-party
-||youtube.com/subscribe_widget$third-party
 ||people.com.cn/img/2020fenxiang/
 iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
@@ -3761,7 +3765,6 @@ business-standard.com##.MetaPost_flwggle__kFKIT
 ask.com,smarter.com##.PartialSocialLinks
 rbth.com##.Popup-telegram
 sfstandard.com##.PopupSharer_container__Nhcrt
-whatcar.com##.ReviewSocialSection_reviewSocialSection__qzV0o
 abc.net.au##.ShareBanner_container__OX63I
 ynet.co.il,ynetnews.com##.SiteArticleSocialShareNew1280
 asahi.com##.SnsName
@@ -4157,7 +4160,6 @@ comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-
 theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
 freepressjournal.in##.wrap_cont
-news.am##.youtube-subscriber
 worldcrunch.com##.ysi_share
 firstpost.com##.yt-ch
 wdwmagic.com##.zocial
