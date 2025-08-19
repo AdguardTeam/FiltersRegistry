@@ -1,9 +1,9 @@
-! Checksum: QA4cb0oNN/QFZViEr639gg
-! Diff-Path: ../patches/14/14-s-1755587462-3600.patch
+! Checksum: 1WemfDLCSveoQ08Mz0QN1Q
+! Diff-Path: ../patches/14/14-s-1755591181-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.39.93
-! TimeUpdated: 2025-08-19T07:07:31+00:00
+! Version: 2.2.39.94
+! TimeUpdated: 2025-08-19T08:09:31+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2526,6 +2526,9 @@ entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,g
 !
 ! NOTE: Regular rules
 !
+shipmentlink.com#$##modal_cookie_alert { display: none !important; }
+shipmentlink.com#$#div[class*="-backdrop"] { display: none !important; }
+shipmentlink.com#$#body.modal-open { overflow: auto !important; padding-right: 0 !important; }
 shop.tricolor.ru##.is-dock-cookie-policy
 wellness.shionogi.co.jp,dani-allergy.jp##.js-cookie-panel
 deutscheoperberlin.de###consent-manager-bg
@@ -2557,7 +2560,7 @@ hitech-gamer.com##.modal-backdrop
 ku.de#%#//scriptlet('trusted-set-cookie', 'in2cookiemodal-selection', '[%22essential%22]')
 tsb.co.uk#%#//scriptlet('trusted-set-cookie', 'CONSENTMGR', 'consent:false%7Cts:1754870425809')
 tarnkappe.info#%#//scriptlet('trusted-click-element', 'div[data-embed-consent-provider] label, div[data-embed-consent-provider] button.is-link')
-||global.ketchcdn.com/web/v*/config/*/boot.js$domain=debrox.com|drinkag1.com
+||global.ketchcdn.com/web/v*/config/*/boot.js$domain=debrox.com|drinkag1.com|newsweek.com
 mega.ru#%#//scriptlet('set-cookie', 'consent_cookie_settings', 'true')
 support.digitalplayground.com#%#//scriptlet('trusted-set-cookie', 'acceptedCookies', '%7B%22essential%22%3Atrue%2C%22functional%22%3Afalse%7D')
 gazobezopasnost.gazprom.ru##.message-consent
@@ -12429,7 +12432,7 @@ hervis.de,hervis.ro##.w18lara_tgplugin_consent_bodyback
 hervis.de,hervis.ro,xxxlutz.de###w18lara_tgplugin_consent
 olhares.com###divmensagemcookie1
 ctwant.com##.m-GDPR
-sakasu.com.tr###cerezPolitikasi
+yenikonya.com.tr,sakasu.com.tr###cerezPolitikasi
 sirmagrup.com###stm_gdpr_popup-main
 nestleprofessional.com.tr##.pane-cookie-disclaimer
 yapimerkezi.com.tr###div_cerez
@@ -49579,6 +49582,7 @@ mobalytics.gg##picture > source[media][srcset^="https://cdn.mobalytics.gg/assets
 code.visualstudio.com##.updates-banner
 mvideo.ru##mvid-banners-container
 deepl.com##div[data-testid="write-advertisement-banner"]
+asuracomic.net##body > #header-ads + .w-full:has(> .relative > .mx-auto > .absolute  > button[aria-label="Close promotion"])
 asuracomic.net##body > div > a[href="/subscription"] > img
 asuracomic.net##body > .bg-gradient-to-br:has(> .relative > .items-center > button)
 mangatilkisi.com##.code-block-3
