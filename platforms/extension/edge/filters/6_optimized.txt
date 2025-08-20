@@ -1,5 +1,5 @@
-! Checksum: JqIKDU39xMw4JKpXu7P2Jw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1755645059-3600.patch
+! Checksum: TQ1WQp5X8kh8STfi+0Vn4Q
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1755657612-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.48.95
@@ -526,7 +526,6 @@ willhaben.at#@#div[id^="advert"]
 @@||extrem-bodybuilding.de^$generichide
 bildungsspender.de#%#window.werbeblocker = true;
 @@||bildungsspender.de/banner/ads/adserver/click/ad.js
-@@||adition.com^$domain=motorsport-total.com
 @@||gan.wavecdn.net/js/video_kostenlosspielen_net.js^$domain=kostenlosspielen.net
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js^$domain=games.cdn.famobi.com
 @@||chinamobilemag.de^$generichide
@@ -1131,6 +1130,9 @@ giga.de#%#//scriptlet('remove-class', 'show-teaserheld-header', 'body')
 delamar.de#%#//scriptlet('prevent-setTimeout', '#modal_livestream')
 krone.at#$#body .ad-container[data-nodeid] { display: block !important; }
 datenbanken-verstehen.de##div[class^="ad-block-"]:not(.ad-block-text)
+datenbanken-verstehen.de###ai_widget-46
+datenbanken-verstehen.de###ai_widget-38
+datenbanken-verstehen.de###ai_widget-91
 macwelt.de,pcwelt.de##.jwPlayer--floatingContainer
 auf1.tv#?#.w-full:has(> div.text-sm:contains(Bezahlte Anzeige))
 jungefreiheit.de##.elementor-shortcode > div > a[target="_blank"][onclick] > img
@@ -2064,8 +2066,6 @@ pfalz-express.de###banner_unter_ticker
 unwetterzentrale.de###content > div[style*="width:336px;height:16px;"]
 kalender-365.de##.az
 spielkult.de##tr > td[Width="146"]
-anpfiff.info##.content-col-r > div[style="min-height:250px;"]
-anpfiff.info##.content-col-r > div[style="min-height:250px;"] ~ hr.linie-seperator
 anpfiff.info##.content-col-r > div > div[style="min-height:250px;"]
 anpfiff.info##div[id^="divAdv"]
 brueckenkopf-online.com##.cols > div.g-3
@@ -2519,6 +2519,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbebanner-
 /werbebanner.
 /werbebanner/*
+/werbebanner2.
 /werbebanner_
 /werbebox/*
 /werbegrafiken/*
@@ -2630,7 +2631,6 @@ _woz_banner_vote.
 ###werbungsky
 ##.Werbelabel
 ##.Werbung
-##.ad_mitte
 ##.ad_platzhalter
 ##.ads-anzeige
 ##.ads_bueroklammer
@@ -2673,7 +2673,6 @@ _woz_banner_vote.
 ##.werbehinweis
 ##.werbemainneu
 ##.werbenbox
-##.werbepause
 ##.werbung
 ##.werbung-1
 ##.werbung-box
@@ -3188,6 +3187,7 @@ $stylesheet,subdocument,third-party,xmlhttprequest,domain=canna-power.to|canna.t
 ||stereo.de^*/banner/
 ||steuertipps.de/scripts/google-ad/
 ||suche.1und1.de/amazon?
+||suche.gmx.at/amazon?
 ||suche.gmx.net/amazon?
 ||suche.t-online.de/web/amazon?
 ||suche.t-online.de/web/billiger?
@@ -3327,6 +3327,7 @@ kreuzwort-raetsel.net###ad_ic_2
 1und1.de,gmx.net,web.de###adc2
 webwiki.de###addmeright
 webwiki.de###addmetop
+web.de###ads
 radiobielefeld.de###adsd_skyscraper
 voucherwonderland.com###adup1
 voucherwonderland.com###adup5
@@ -3609,6 +3610,7 @@ stuttgarter-zeitung.de###taboola-mhsd
 giga.de,kino.de,watson.de###teaserheld-header
 tennisnet.com###tennisnetWidget
 eishockey-magazin.de###text-10
+hockey-news.info###text-12
 tollabea.de###text-19
 computerschach.de,nachrichten.es,nh24.de,randombrick.de,tollabea.de###text-2
 nh24.de###text-26
@@ -3861,6 +3863,7 @@ tech-review.de,wallstreet-online.de,watson.de,wn.de##.commercial
 fotomagazin.de##.commercial-post-container
 celleheute.de##.comp-ku8lxchu
 coincierge.de##.compar_tbl_body_plugin
+nordschleswiger.dk##.component-code-snippet
 ak-kurier.de,nr-kurier.de,ww-kurier.de##.container-banner
 1000ps.at,1000ps.de##.container-billboard
 mt.de##.container.margin-bottom-40.fullwidth-container-mobile.min-280
@@ -3988,7 +3991,6 @@ sueddeutsche.de##.iqad
 saechsische.de##.iqadtile-wrapper
 faz.net,sueddeutsche.de,tagesspiegel.de,zeit.de##.iqdcontainer
 welt.de##.is-commercial
-islamische-zeitung.de##.islam-widget
 it-daily.net##.itd-ad-sidebar
 kleinanzeigen.de##.j-liberty-wrapper
 gamepro.de,gamestar.de##.jad-placeholder
@@ -4089,6 +4091,7 @@ oz-online.de##.ox
 happysex.ch##.p-banner-landscape-container
 6navi.ch##.p-banners-withborder
 emtb-news.de##.p-header
+kultur.bz.it##.page-banner
 finanzen.ch##.page-layout__ad-header-bottom
 eltern.de##.page__ad-element
 finanztreff.de##.paid-news-container
@@ -4743,6 +4746,7 @@ travelbook.de##div.has-mark[style="min-width: 300px; min-height: 250px;"]
 hornoxe.com##div.post.hentry.ivycat-post:has(a[href^="https://www.amazon.de/"])
 nydus.org##div.ui-tabs:has(#nydus_org_300x600_desktop_1)
 nydus.org##div:has(> #nydus_org_970x300_billboard_responsive)
+bauernzeitung.ch##div:has(> .advert)
 mobile.de##div[class*="KnOLI W0RYj"]:has(#SRP_BILLBOARD-container)
 onvista.de##div[class="col col--md-3 col--sm-4 col--lg-4 col--xl-4"]:has(small[class="mt-1 block text-sm"])
 onvista.de##div[class="col col--md-3 col--sm-4 col--lg-4 col--xl-4"]:has(span[class="mt-1 block"])
@@ -4792,7 +4796,6 @@ onvista.de#?#div[class="col col--md-3 col--sm-4 col--lg-4 col--xl-4"]:-abp-conta
 onvista.de#?#div[class="col py-0"]:-abp-contains(Werbung)
 onvista.de#?#div[class="flex justify-between mb-4 border-b-1 border-b-grey-100 pb-2 dark:border-b-grey-700"]:-abp-contains(Werbung)
 prad.de#?#.pd-teaser:has(div.teaser-subtitle:has-text(Anzeige))
-produktion.de#?#.postlist-item:-abp-has(.label:-abp-contains(Gesponsert))
 shop-apotheke.at#?#[data-qa-id="result-list-entry"]:-abp-contains(Gesponsert)
 t-online.de#?#.afl-widget-root:has(span:-abp-contains(Beliebt bei t-online))
 tag24.de#?#article.article-tile:-abp-has(span.article-tile__badge2:-abp-contains(ANZEIGE))
