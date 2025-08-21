@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FfKQF4Pk9KhIyxmRE+HyMQ
-! Diff-Path: ../patches/7/7-s-1755692130-3600.patch
+! Checksum: mybE2muiU1qw+eSBlkR1Wg
+! Diff-Path: ../patches/7/7-s-1755774661-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.67.88
-! TimeUpdated: 2025-08-20T12:11:07+00:00
+! Version: 2.0.67.89
+! TimeUpdated: 2025-08-21T11:06:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1522,6 +1522,7 @@ jikayosha.jp#$#.wym-v2022__header.is-scroll-up ~ .wym-v2022__footer-fixed.is-pc-
 /wp-content/uploads/2024/09/fanza_ad$image
 !
 ! Malware/Phishing
+://www.jabank.org.*.com/$document
 ://pocketcard-*.cn/netservice/login/$document
 .shop/*%F0%9D%9A%8C%F0%9D%9A%98.%F0%9D%9A%93%F0%9D%9A%99/$document
 /open/?apiName=$xmlhttprequest,~third-party
@@ -1596,7 +1597,7 @@ jikayosha.jp#$#.wym-v2022__header.is-scroll-up ~ .wym-v2022__footer-fixed.is-pc-
 /?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=sign-in&path=home&ref_=nav_Account&signIn=1&useRedirectOnSuccess=1|$document,domain=cn|com
 ://kuroneko*.cc/jp$document
 ://kuroneko*.top/jp$document
--co-jp-*.com/reg/login$document
+-co-jp-*.com/$document
 _co_jp.*.php$document,domain=cc|com
 -go-jp.com/$document
 ||web.core.windows.net/merrx01*/index.html$document
@@ -1802,6 +1803,11 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+dasyutu.com,numpre7.com##.escape_ad
+dasyutu.com,numpre7.com##.escape_ad + hr
+dasyutu.com,numpre7.com,think-meteor.com##aside > h2.font_m:has(+ div.side_box1 ins.adsbygoogle)
+numpre7.com###eg-clear-ad1
+numpre7.com##.dnrk > div[style="margin:5px;text-align:center;"]
 city.muroran.lg.jp###p-topAdsense
 batspi.com##div[style="width:calc(100% - 240px);height:300px;overflow:hidden;"]
 wiki.fc2.com#$##menu1 > div#plg_free_2:has(> div > div[style^="margin-top:"]) { height: 0 !important; }
@@ -8130,13 +8136,17 @@ socom.yokohama##.dspace-block
 socom.yokohama##div[style*="min-height"][style*="height: auto"]
 socom.yokohama###text-html-widget-2
 invitation4you.link##.bannerbox
-invitation4you.link##.sidebarr
+invitation4you.link##.sidebarl a[href^="https://al.dmm.co.jp/"]
+invitation4you.link##.sidebarr a[href^="https://adult.contents.fc2.com/aff.php"]
+invitation4you.link##div[class^="sidebar"] > .center
 2ch-n.net,lifeantenna.com,2ch-2.net##.adnet-item
 sexywars.pink##.left_main > a
 sexywars.pink##.sample_block
 sp.oshaburi.net##[id^="dmm_"]
 1geki.jp##span[style="font-size:10px;color:#aaa;display:block;text-align:right;padding-right:5%;"]
 dateplus.red##div[style="text-align:center"]
+||pixelarchivenow.com/image/$third-party
+bishatti.com###right div[style^="text-align:"] > a[rel="sponsored"]
 bishatti.com###link
 bishatti.com###new
 kumapon.jp###side-kp-bnr-area1
@@ -8789,7 +8799,7 @@ ryusoku.com##.article-footer-amazon
 ryusoku.com###primary > div[style^="width:700px;"]
 pcrecommend.com,ryusoku.com##div[style^="height:250px"]
 ||chixi.jp/img.php?filename=b_
-||pics.dmm.co.jp/digital/$domain=chat.shalove.net|urapic.com|roshutu-shuuti.net|i-bbs.sijex.net|opantsu.fun|m.erosoku.biz|yaruo18book.com|2ji.pink|yaruobook.com
+||pics.dmm.co.jp/digital/$domain=chat.shalove.net|urapic.com|roshutu-shuuti.net|i-bbs.sijex.net|opantsu.fun|m.erosoku.biz|yaruo18book.com|2ji.pink|yaruobook.com|bishatti.com|erotopi.com
 /PrintAd?$domain=3751chat.com|chat.shalove.net|chat.luvul.net|skypemeet.net
 aiacademy.jp,front-row.jp###floating-banner
 front-row.jp##.after-btn-fb-nice-ad-pc
