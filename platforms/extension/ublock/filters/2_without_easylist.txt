@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: s9Z2rS8Pw2Q1JaTqsVyagg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755793051-3600.patch
+! Checksum: vn5CWnQDYsTnaFC7VhC4hg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755800032-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.5.2
-! TimeUpdated: 2025-08-21T16:12:57+00:00
+! Version: 2.4.5.3
+! TimeUpdated: 2025-08-21T18:08:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9113,6 +9113,7 @@
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||micro.rubiconproject.com^
 ||promo.evvnt.com^
 ||id-msp.newsbreak.com
 ||msp.newsbreak.com^
@@ -10486,8 +10487,9 @@ poplinks.sbs##+js(abort-on-property-write, checkAdsStatus)
 poplinks.sbs##+js(abort-current-script, document.createElement, AdBlock)
 shorttrick.in##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202765
-kio.ac##+js(no-setTimeout-if, /\.com\/[a-zA-Z\d]{1\,20}\/\d+$|=performance\.now\(\);await fetch\(/)
-kio.ac##+js(no-fetch-if, /\.com\/[a-zA-Z\d]{1\,20}\/\d+$/)
+kio.ac##+js(no-setTimeout-if, /\.com\/[a-zA-Z\d]{1\,20}\/\d+$|=performance\.now\(\);await fetch\(|globalThis\.atob.*await fetch\(/)
+kio.ac##+js(no-fetch-if, /\.com\/[a-zA-Z\d]{1\,20}\/\d+$|pagead2\.googlesyndication\.com/)
+kio.ac#$#.min-h-4 > ins.adsbygoogle { position: absolute !important; left: -9999px  !important; }
 kio.ac#@#ins.adsbygoogle[data-ad-slot]
 kio.ac#@#ins.adsbygoogle[data-ad-client]
 kio.ac#@#.adsbygoogle-noablate
