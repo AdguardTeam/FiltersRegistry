@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 4wmoZ+CZUjurNHmO9ItWMw
-! Diff-Path: ../patches/13/13-s-1755764029-3600.patch
+! Checksum: ROCoEmLR4UoIFJ1T3kcK7A
+! Diff-Path: ../patches/13/13-s-1755771111-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.0
-! TimeUpdated: 2025-08-21T08:09:41+00:00
+! Version: 2.0.59.1
+! TimeUpdated: 2025-08-21T10:07:42+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -900,7 +900,7 @@ tekfullfilmizle5.com##+js(set-constant, isShow, true)
 ! initPu
 canlimacizlene.blogspot.com,filmjr2.org,balfilmizle2.org,erotizmvadisi.com,dipfilmizle.*,zerotiktok.com,filmzevkim.com,sinemakolix.com,erotikhoot.com,eldermanga.com,promy.pro,diziyoutv.com,guneykoresinemasi.com,jetfilmizletv.net,dizimax2.com,yenierotikfilm.xyz,breakingbadizle.*,diziday1.com,zipfilmizle.com,bamfilmizle.com,sinemadafilm.com,filmmoduu.com,trfilm.net,dolufilm.org,turkifsaalemi.com##+js(abort-on-property-read, initPu)
 ! initAd
-fullfilmizlebaba.com,superfilmgeldi.biz,vkfilmizlet.*,supernaturalizle.com,sinemakolik.net,diziyo.*,fullhdabifilm.com,bettercallsaulizle.com,superfilmgeldi.net,fullhdfilmizlett1.com,fullhdfilmizleabi.com,hdfreeizle.com,hdmixfilim.com,fullhdfilmizlepala.com##+js(abort-on-property-read, initAd)
+fullfilmizlebaba.com,superfilmgeldi.biz,vkfilmizlet.*,supernaturalizle.com,sinemakolik.net,diziyo.*,bettercallsaulizle.com,superfilmgeldi.net,fullhdfilmizlett1.com,fullhdfilmizleabi.com,hdfreeizle.com,hdmixfilim.com,fullhdfilmizlepala.com##+js(abort-on-property-read, initAd)
 !
 720pfilmizleme1.com,720pfilmizletir.com,1080pfilmizletir.com,720pfilmizlesene.com,filmmakinesi1.*,filmizlemax.*,videoseyred.in,hdfilmcehennem.live##+js(addEventListener-defuser, click, checkTarget)
 hdfilmizlesen.com,filmizlehdizle.com,yabancidiziizlesene.*,1080hdfilmizle.com##+js(abort-on-property-read, initPop)
@@ -1001,7 +1001,7 @@ eksisozluk.com##+js(remove-attr, placeholder, input[id="search-textbox"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119187
 dizirix.net##+js(addEventListener-defuser, click, showPop)
 ! popup
-mixizle.com,fullhdabifilm.com,hdmixfilim.com##+js(abort-on-property-write, yeniSekmeAdresi)
+mixizle.com,hdmixfilim.com##+js(abort-on-property-write, yeniSekmeAdresi)
 ! https://github.com/uBlockOrigin/uAssets/issues/12600
 diziyou.co##+js(abort-on-property-read, initDizi)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108261
@@ -1492,6 +1492,12 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+fullhdabifilmizlet.com##.footer-sticky
+fullhdabifilmizlet.com##.background-ad
+||fullfilmcibaba.nl/reklabanner.js
+||fullfilmcibaba.nl/babavast.php
+||babafilmizlet.com/reklapop.js
+||fullfilmizletr.online/wp-content/uploads/*.mp4
 ||filmmakinesi.de/uploads/malker/*.mp4
 ||hdfilmcehennemi.*/ads/$domain=hdfilmcehennemi.*
 hdfilmcehennemi.*##+js(set-constant, isFirstLoad, false)
@@ -2095,8 +2101,6 @@ yeppuu.com##footer > p
 ||hdfilmtime.net/337.js
 ||fullhdfilmizlebaba.com/ft14.js
 ||fullhdfilmizlebaba.com/s-m6.js
-fullhdabifilm.com##div[id^="filmciday"]
-fullhdabifilm.com###wrap > script[type] ~ a[href][title]
 turkanime.co#?#.row > div[class^="col-"]:has(> div.panel > div#sponsored)
 ||sinebaz.com/ads
 fullfilmizle.pro##a[href^="https://tinyurl.com/"]
@@ -2345,7 +2349,6 @@ plastikciyiz.biz##.smaller
 dizicaps.*##.footerleft > a:not([href*="dizicaps.org"])
 ||resmim.net^$image,domain=asyadiziizle.com
 dizifon.com###f-uyari > a
-fullhdabifilm.com##.footer-info > a[href="https://fullhdabifilm.com/iletisim/"] ~ *:not(script)
 sportlemone.top,sportlemon.net##tbody tr#between_links
 sportlemone.top,sportlemon.net##.container-fluid > .row > .col-md-3
 ||dizipal*.com/vast*.xml
@@ -2643,7 +2646,7 @@ inattvgiris.pro,fullprogramlarindir.net##center > a[target="_blank"]
 ||cosmomedya.com/addserver/banners/
 cosmoturk.com##.rightBanners
 t24.com.tr##._3amny
-/maintabs$script,domain=fullhdfilmizlett1.com|fullhdabifilm.com
+/maintabs$script,domain=fullhdfilmizlett1.com
 turkiyegazetesi.com.tr##.next-news-ads
 airlinehaber.com##.kanews-banner > a[target="_blank"] > img
 airlinehaber.com##.kanews-banner:not(.kanews-banner-widget)
@@ -5458,8 +5461,9 @@ fulltimehdfilmizle.*#$#div#rk-content.center { display: none !important; }
 fulltimehdfilmizle.*#$##cn-content { display: block !important; }
 fullhdizle.*#$##reki { display: block !important; }
 fullhdizle.*#$##rekmine { display: none !important; }
+fullfilmizletr.online#$##reki2 { display: none !important; }
 fullhdfilmizle.vip#$##rekmine2 { display: none !important; }
-fullhdfilmizle.vip#$##kendisi { display: block !important; }
+fullfilmizletr.online,fullhdfilmizle.vip#$##kendisi { display: block !important; }
 hdfilmcanavari.org#$##film { display: block !important; }
 hdfilmcanavari.org#$##filmoncereklam { display: none !important; }
 dizicaps.*#$#.play-that-video { display: none !important; }
