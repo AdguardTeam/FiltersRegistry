@@ -1,9 +1,9 @@
-! Checksum: AICzSMKQvGLZOAgI2hm08g
-! Diff-Path: ../patches/19/19-s-1755774639-3600.patch
+! Checksum: uhfcATqEp9nzqcGJs+SSGg
+! Diff-Path: ../patches/19/19-s-1755782314-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.60.75
-! TimeUpdated: 2025-08-21T11:07:13+00:00
+! Version: 2.0.60.76
+! TimeUpdated: 2025-08-21T13:15:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1822,7 +1822,6 @@ zkillboard.com###adsensetop
 ||getgreenshot.org/js/vendor/blockadblock.js
 ||getpaidstock.com/cookie.js
 ||glamour.de/*/jquery.adblockerlayer.js?^
-||golem.de/staticrl/scripts/amain.js.php
 ||good-surf.ru/*script/script.js
 ||googleads.g.doubleclick.net/pagead/$redirect=nooptext,important,domain=maxedtech.com
 ||googleads.g.doubleclick.net/pagead/ads$subdocument,redirect=noopframe,domain=thehouseofportable.com
@@ -1964,7 +1963,6 @@ iqiyi.com##div[adid]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/14731
 ! m.iqiyi.com#%#//scriptlet("set-constant", "QiyiPlayerLoader.Package.ad.adPlayerId", "") - doesn't work probably due to scriptlet bug
 sports.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.adPlayerId", "")
-www.iqiyi.com#%#//scriptlet('set-constant', 'QiyiPlayerProphetData.a.data', 'emptyObj')
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.parseXML", "noopFunc")
 www.iqiyi.com#%#//scriptlet("set-constant", "Object.prototype.blackscreenDuration", "1")
 www.iqiyi.com#%#//scriptlet('trusted-replace-node-text', 'script', 'window.QiyiPlayerProphetData', '/(QiyiPlayerProphetData=.*?"a":.*?")data(":{)/', '$1no_ads$2')
@@ -1975,6 +1973,8 @@ m.iqiyi.com#%#!function(){const s={apply:(c,e,n)=>(n[0]?.adSlots&&(n[0].adSlots=
 ||cupid.iqiyi.com/mixer?$jsonprune=\$..[adSlots]
 ||iqiyi.com/show2?e=$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important,domain=iqiyi.com
 ||data.video.iqiyi.com/videos/other/*$xmlhttprequest,~third-party,badfilter
+!+ PLATFORM(windows, mac, android)
+www.iqiyi.com#%#//scriptlet('set-constant', 'QiyiPlayerProphetData.a.data', 'emptyObj')
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
 iqiyi.com##.black-screen[data-cupid="adblock-blackscreen"]
 !#safari_cb_affinity(general)
@@ -2355,7 +2355,6 @@ wvgazettemail.com#@#.adSense
 @@||global.ssl.fastly.net/js/prebid-1-min.js$domain=spanishdict.com
 @@||globalnews.ca/ads.js
 @@||gohofstra.com/common/templates/dfp/dfp-
-@@||golem.de/bannertest/iqdigital/dist/show_ad.js
 @@||google-analytics.com/analytics.js$domain=webupd8.org
 @@||googleads.g.doubleclick.net/pagead/$domain=maxedtech.com
 @@||googleads.g.doubleclick.net/pagead/ads$domain=next-episode.net
@@ -7420,7 +7419,6 @@ littletravelsociety.de#$#html.pum-open-overlay { overflow: visible !important; }
 littletravelsociety.de#$#html.pum-open-overlay > body > #wrap_all { padding-right: 0 !important; }
 /entd/static/*/newsletter-layer.chunk.*.js$domain=mona.de|wenz.de|albamoda.de|mia-moda.de
 delamar.de#%#//scriptlet('set-cookie', 'wp-dl-nrxt', '1')
-golem.de###nl-banner
 mainichi.jp###pi-pc-all-footerfix
 mainichi.jp##div[id^="pi-"][id$="-article-slidein"]
 mainichi.jp###pi-sp-all-popup
@@ -11954,6 +11952,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+golem.de##.go-newsletter-box-container
 gidadedektifi.net##div[class^="XSubscribeBox"]
 ||teneriffa-news.com/popup.js
 amarujala.com###subscribe_brand_lovers
@@ -12888,7 +12887,6 @@ forbes.ru##.tRQHu
 laiguana.tv##.tdi_275
 novayagazeta.ru###krik
 ||camelbak.com/on/*/default/EmailPreferences-GetEmailModal$domain=camelbak.com
-golem.de##.htmlinline
 sports.ru##.structured-body-wrapper > a[href^="https://t.me/"]
 theglobeandmail.com###zephr-zone-footer
 disgustingmen.com##.widget-area .widget_custom_html:has(> .custom-html-widget a[href="https://telegram.me/disgustingmen"])
@@ -14803,7 +14801,7 @@ technologynetworks.com##p ~ div > .featuredVendors
 technologynetworks.com##.base_subscribe_footer
 price.ua##.media-subscription-block
 uazmi.net##.button-banner
-wirtualnemedia.pl,gizmodo.com.au,kotaku.com.au,lifehacker.com.au,aeroxplorer.com,fitforfun.de,golem.de##.subscribe-newsletter
+wirtualnemedia.pl,gizmodo.com.au,kotaku.com.au,lifehacker.com.au,aeroxplorer.com,fitforfun.de##.subscribe-newsletter
 tomshardware.com,marieclaire.com,windowscentral.com,androidcentral.com,imore.com###newsletter-slice
 playground.ru##.float-teaser
 newsroom.paypal-corp.com##.wd_yellow-background.mt-3
@@ -19328,7 +19326,6 @@ geekwire.com###newsletter-subscribe-sidebar
 boxerdergisi.com.tr###MobileNewsLetterFormContainer
 newatlas.com###NewsletterSubscribe
 androidauthority.com###aa-subscribe-widget-wrap
-golem.de###abo-clip
 simplemost.com###alo_easymail_widget_form
 tanke-guenstig.de###article-66 > .ce_form
 theregister.co.uk###article_newsletter_signup
@@ -20006,7 +20003,6 @@ ilfont.it##body div.popup-overlay-newsletter
 ||erdbeerlounge.de/app/themes/erdbeerlounge/assets/img/whatsapp/v4/$image
 ||erdbeerlounge.de/app/themes/erdbeerlounge/component/social/whatsapp.js
 ||gadgetsnow.com/newsletter_js.cms$other,script,domain=m.gadgetsnow.com
-||golem.de/microsite
 ||ipepostman.com^$third-party
 ||maclife.de/sites/all/modules/custom/tec_socialmedia/images/whatsapp/banner/
 ||mailerlite.com^$third-party,domain=~howtosucceed.at|~riavrn.ru|~masterborn.com|~hrpowermentor.com|~labmuffin.com

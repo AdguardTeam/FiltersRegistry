@@ -1,9 +1,9 @@
-! Checksum: 5Ias4ezzSSCXHsFipFdwkw
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1755744035-3600.patch
+! Checksum: jZaDTyQeFATJYIyNCjuEzQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1755782341-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.36.67
-! TimeUpdated: 2025-08-20T13:15:53+00:00
+! Version: 2.0.36.68
+! TimeUpdated: 2025-08-21T13:15:11+00:00
 ! Expires: 5 days (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -347,7 +347,7 @@ b1tv.ro##.video-js.dj-is-floating
 theweathernetwork.com#$#body[style*="overflow"] { overflow-y: visible !important; }
 theweathernetwork.com#%#//scriptlet('remove-class', 'jw-flag-floating', '.news-article-body .jwplayer.jw-flag-floating')
 porn5f.com##.top_slider
-golem.de##a[href^="https://hits.golem.de"]
+golem.de##.go-newsletter-box-container
 gitee.com##.register-guide
 lpgenerator.ru##.blog__content__entriesList__entryFull_footer
 bing.com##.moduleCont > a[data-h^="ID=HpApp"]
@@ -2874,7 +2874,6 @@ menshealth.de##article strong > a[matomo-tracking-link="true"]
 tactiq.io##div:has( > img[src*="-promo"])
 cpt.com.br##.banner-relacionado
 ||s3.amazonaws.com/knowt.com/images/radb$image,domain=knowt.com
-golem.de##.remp-banner
 megamarket.ru##.page-catalog-details__banners
 reports.adguard.*##.flash-wrapper-wrap
 sueddeutsche.de###ma-bo-container
@@ -3044,7 +3043,8 @@ cloud.mail.ru##div[data-qa-modal="aside-promo-modal"]
 sueddeutsche.de##div[data-hydration-component-name="JobOffers"]
 live.fc2.com##.m-lbxLst-bnr
 apkmirror.com###bottom-slider
-golem.de##.career-widget
+golem.de##article .go-teaser-block
+golem.de##.go-teaser-block:has(> .go-label--career)
 movie-tsutaya.tsite.jp##.banner-detail
 movie-tsutaya.tsite.jp##.adv-promotion-price
 agrinews.co.jp###ad
@@ -3129,9 +3129,7 @@ rakuten-bank.co.jp###floating-bnr-area
 toretoku.jp##.saleBnr
 toretoku.jp##.saleFixedBnr
 stern.de##.sis-HeaderBanner
-golem.de#?#.list-articles > li:has(> a[href*="/news/werbung"])
-~forum.golem.de,golem.de#$?#li[style="display: none !important;"] + li { border-top: none !important; }
-golem.de#?#.list-tickers > li:has(> div > a[href*="/news/werbung"])
+golem.de##.go-pc-teaser--highlight
 cityheaven.net###widget_recruit
 cityheaven.net###widget_recruitmens
 baike.baidu.com##.BK-after-content-wrapper > div[class][id] > a[onclick^="page.Mixedor.mixedOpen"][target="_blank"]
@@ -3292,10 +3290,6 @@ nero.com###fancybox-overlay
 flipkart.com##div[data-id][style] > div[data-tkid^="en_"]
 flipkart.com#?#div[style] > div[class*="col-"] > div[class] > div[data-id][style]:has(> div[data-tkid^="en_"])
 flipkart.com#?#div[class^="css-"] > div:has(> div[dir]:contains(/^AD$/))
-golem.de##.media__teaser-list > li[style="min-height:4em; padding-left:0;"]:not([class]):not([id])
-golem.de##.section-gpure
-golem.de##a[href^="https://ads.golem.de"]
-golem.de###seminars
 flightconnections.com##.join-flc
 horecatrends.pl##body > .container > .box-1
 hwsw.hu##.news-feed-other > div > article.ab-news
