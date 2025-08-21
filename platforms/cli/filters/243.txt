@@ -1,14 +1,14 @@
-! Checksum: jpBzAACvlTL1PiJMgqVyzQ
-! Diff-Path: ../patches/243/243-s-1755708198-14400.patch
+! Checksum: BLa795TtoCDlkRPBiA9ZwQ
+! Diff-Path: ../patches/243/243-s-1755751309-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.52
-! TimeUpdated: 2025-08-20T16:39:14+00:00
+! Version: 2.0.22.53
+! TimeUpdated: 2025-08-21T04:38:00+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-08-20 18:19:51 CEST
+! Last modified: 2025-08-21 05:13:36 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -191,7 +191,7 @@ altinget.se##a[href^="/sponsrade"]
 amelia.expressen.se##article p.uppercase.tracking-wide:has-text(Inlägget innehåller annonslänkar):upward(article)
 amelia.expressen.se##.max-w-\[980px\]:has(.slick-slider a[target="_blank"])
 analytics$domain=corren.se|folkbladet.se|mvt.se|nt.se|vt.se|vimmerbytidning.se|kuriren.nu|nsd.se|norran.se|pt.se|ekuriren.se|strengnastidning.se|kkuriren.se|sn.se|eposten.se|unt.se|helagotland.se|fastighetsvarlden.se
-annonsbanner$image,domain=kiacarclub.se
+annonsbanner$image,domain=kiacarclub.se|hyundaiforum.se
 annons$image,domain=kiacarclub.se
 arbetaren.se##.text-sm:has-text(/annons/i):upward(.border-b, a[target])
 arbetet.se##.Container:not(.ContentItem-content):has([data-controller="ad"])
@@ -228,7 +228,7 @@ bandyfeber.com##article:has(a[href*="/annons-"])
 bandyfeber.com##.slide-entry-excerpt:has-text(/annons:/i):upward(.avia-content-slider)
 bandyfeber.com##.widget_sp_image, a[title^="ANNONS"], .inner_sidebar .widget_text, .entry-content a[href*="utm_campaign"]
 banners$image,domain=travsport.se|gavletravet.se
-banner$image,domain=golfbladet.se|kiacarclub.se
+banner$image,domain=golfbladet.se|kiacarclub.se|hyundaiforum.se
 baraenkakatill.se##.post-item__tag:has-text(/spons/i):upward(li.post-item)
 barnistan.se,welma.se##.featured-teaser:has(a[onclick*="adClick"])
 barnistan.se,welma.se##.newsletter, a[onclick*="adClick"], .gpt-slot
@@ -790,7 +790,7 @@ husbilsskolan.se##.elementor-image a[target="_blank"]
 husvagnochcamping.se##div[id^="husvagnochcamping-"], .ast-below-header-bar, #hollistay
 husvagn.se,husbil.se##.articleintroduction strong:has-text(/samarbete/i):upward(li.item)
 husvagn.se,husbil.se##.ui-top-adversite, #optin-cover, #optin
-hyundaiforum.se##.sidebar-block:has(.adsbygoogle)
+hyundaiforum.se##.sidebar-block:has(.adsbygoogle, a[title*="Annons"])
 ibnytt.se##.col-md-4 .widget:has(a[href*="spelbonus"])
 ibnytt.se##:is(a[href*="casino"], a[href*="speltips"]):upward(.widget)
 ibnytt.se##:is(.article-list li, .post):has(a[href*="betting"], a[href*="casino"])
@@ -1368,7 +1368,6 @@ svenskaevenemang.com##td[width="130"]:has(a[href*="annons"])
 svenskafans.com##.puff__ad-heading, ad-skyscraper__wrapper, iframe[title*="Bet 365"], iframe[srcdoc*="ad_div"]
 svenskafans.com##:is(.h-52, .h-40):has(iframe[srcdoc*="ad_div"])
 svenskafans.com##:is(.min-h-80, .w-64.absolute):has(div[id^="svenskafans_"])
-svenskahousegruppen.se###eprivacyModal, .modal-backdrop
 svenskalag.se##.cookie-overlay, .overlay:empty
 svenskamagasinet.nu##legend:has-text(Annons)
 svenskamagasinet.nu##.et_pb_code_inner:has(.svm-target)
@@ -2123,7 +2122,6 @@ zeromagazine.nu##div[id^="ads"]
 /cookiepolicy$script,domain=superstart.se
 /cookiesCon.js$domain=sydnarkenytt.se
 /cookiesjsr$domain=naringsliv.ax
-/cookiespolicynotificationbar$domain=svenskahousegruppen.se
 /cookies-and-content$script,domain=freedomtravel.se
 /cookies-and-content-security-policy$script,domain=cannabisifokus.se|futsalmagasinet.se|sd.se|cora.se|tfkriminalvard.se|sportbilen.se|fisheco.se|sparadkrona.se
 /cookie-consent$script,domain=minhembio.com|sjf.se|turistmal.se
@@ -2596,6 +2594,7 @@ zeromagazine.nu##div[id^="ads"]
 /sounds/chimes.mp3$domain=skaneplus.se
 /sparkles$domain=juligen.se
 /spec/adsm.macro.
+/spelbolag-$xmlhttprequest,domain=travnet.se
 /splash-redirector$domain=tvmatchen.nu
 /sponsoredLink.js$domain=fotbolltransfers.com
 /sponsored_articles$domain=fastighetssverige.se
@@ -3060,6 +3059,7 @@ _banner.php?$domain=tvmatchen.nu
 ||googletagmanager.com^$important,domain=tradera.com|xxl.se|prisjakt.nu
 ||google-analytics.com^$important,domain=aftonbladet.se|tradera.com|xxl.se
 ||gopeach.se^$third-party
+||go.affiliationcloud.com^$third-party
 ||go.ezodn.com/hb/$domain=temadagar.se|wernamaten.se|sanghafte.se|xn--gtboken-exa.se|ninjateknik.com
 ||go.qasa.se^$ping
 ||gravito.net^$domain=hitta.se|gp.se|bohuslaningen.se|stromstadstidning.se|markposten.se|harrydaposten.se|partilletidning.se|sttidningen.se|molndalsposten.se|kungalvsposten.se|kungsbackaposten.se|alingsastidning.se|ttela.se|hallandsposten.se|hn.se|mellerudsnyheter.se|moviezine.se
@@ -3389,7 +3389,7 @@ _banner.php?$domain=tvmatchen.nu
 ||track.yetric.net^
 ||tradehouse.media^$third-party
 ||travellink.se/marketing-channel
-||travnet.se/sulkysport$subdocument
+||travnet.se/till/$xmlhttprequest
 ||travtjansten.se^$third-party
 ||trckr*.nordiskemedier.dk^
 ||tripadvisor.se/PVLog
