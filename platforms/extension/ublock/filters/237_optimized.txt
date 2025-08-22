@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: VKZQ1Jnsg7vWLQ1czFBuTA
-! Diff-Path: ../patches/237_optimized/237_optimized-s-1755881052-14400.patch
+! Checksum: CUEeSO8WA7US34kevJ07JQ
+! Diff-Path: ../patches/237_optimized/237_optimized-s-1755895223-14400.patch
 ! Title: Polish Annoyances Filters (Optimized)
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.36.7
-! TimeUpdated: 2025-08-22T16:39:35+00:00
+! Version: 1.0.36.8
+! TimeUpdated: 2025-08-22T20:36:05+00:00
 ! Expires: 5 days (update frequency)
 ||app*.salesmanago.pl/cf/*/zapis_na_newsletter_$subdocument
 ||bee.pl/System/Files/*/theme/*zapisz-sie*.jpg
@@ -904,6 +904,7 @@ maciej.je##p:nth-of-type(47)
 magnapolonia.org##.tnp-subscription
 magnatfarby.pl##.sn-newsletter--homepage
 magusz.com.pl##a[href="#collapse_newsletter"]
+mailerlite.com##footer > div:only-child > div:first-child > div:last-child > :nth-child(-n+3)
 majsterkowo.pl,moj-kawalek-podlogi.pl,spirulina.pl,tato.net,techformator.pl,zatorland.pl###text-9
 makita.sklep.pl##.ModulNewsletterDol
 mam-serce.org##div.uk-section.uk-section-default:nth-of-type(10)
@@ -1356,6 +1357,7 @@ samorzad.pap.pl##.block-newsletter-block
 sandecja.org##.newsletter_bg
 scandinavian-clinic.pl###footer .footer-sidebar4
 scanner.com.pl##div.span3.top-in:nth-of-type(3)
+scentre.pl##.ui-comp-newsletter
 sck.com.pl,sck.pl###ms-newsletter-box
 scyzoryki.net,zielonysklep.com###footer_newsletters
 sdk.waw.pl##.mod_acymailing
@@ -2534,6 +2536,8 @@ m.czesciauto24.pl##.cps_app
 madameedith.com,programistanaswoim.pl##.spu-bg:has(~ .spu-box .fb-page)
 madameedith.com,programistanaswoim.pl##.spu-box:has(.fb-page)
 magicznabielizna.pl###dog-bg
+mailerlite.com##div[style*="background"]:not([id], [class]):empty
+mailerlite.com##iframe[src*="assets.mailerlite.com/jsonp/"][src*="/forms/"][src*="/content"]
 maldrew.com.pl##.modal-dialog
 malopolska.pl###newsletter-popover
 mamachemik.pl##.sfsi_outr_div
@@ -4502,8 +4506,8 @@ bechtle.com##.communication-box
 bekerpolska.pl##a.buttonizer-button[href*="javascript"]:nth-child(4)
 bershka.com##chat
 bezpieczny.pl###call_phone
-biedronka.pl##.social-media a[href*="m.me"]
-biedronka.pl##.social-media a[href*="wa.me"]
+biedronka.pl##.social-icons a[href]:is([href*="/send"], [href*="messege"], [href*="wa.me/"], [href*="m.me/"])
+biedronka.pl##.social-media a[href*=".me"]:is([href*="wa.me"], [href*="m.me"])
 biedronka.pl##.widget-smartsection .footer-links ~ a[href*=".me"]:is([href*="wa.me"], [href*="m.me"])
 bigbaddice.pl##.icon-social-whatsapp
 bike-parts-honda.pl###fleche_popin_contact
@@ -5887,6 +5891,7 @@ m.trojmiasto.pl###floating_more_news[class*="--fixed"]
 m.zalando.pl#?#div > x-wrapper-re-1-12:has(div:has-text(Przejdź do aplikacji))
 m.zapytaj.onet.pl##.onet-bar.bottom
 maciej.je##.related-posts
+mailerlite.com##.promo-banner-container
 makeup.pl##.banner-about-app-popup
 mall.pl##.flt-bnr
 mamabezrecepty.pl##footer > .tips
@@ -11231,14 +11236,7 @@ a2mobile.pl##.z-40.inset-0.fixed.dark\:bg-opacity-80.bg-opacity-50.bg-gray-900, 
 abcsurf.pl,agroarm.pl,allepaznokcie.pl,asnew.pl,belleparis.pl,biomak.eu,catom.pl,center-camp.pl,e-belka.pl,epiekarnia.com,fantoma.pl,faxtel.com.pl,goshico.com,greckikiosk.pl,infloris.pl,justmeble.pl,kokonhome.pl,lachlach.pl,makarfish.pl,mencare.pl,pclider.pl,poltechparts.pl,reefshop.pl,saabix.pl,sandisk-store.pl,sauna-czapka.pl,sklep-kajkosz.pl,sklep.art-magazyn.eu,sklep.mmagro.pl,sport2002.pl,sushi-sklep.pl##.mask + .modal
 abcsurf.pl,agroarm.pl,allepaznokcie.pl,asnew.pl,belleparis.pl,biomak.eu,catom.pl,center-camp.pl,e-belka.pl,epiekarnia.com,fantoma.pl,faxtel.com.pl,goshico.com,greckikiosk.pl,infloris.pl,justmeble.pl,kokonhome.pl,lachlach.pl,makarfish.pl,mencare.pl,pclider.pl,poltechparts.pl,reefshop.pl,saabix.pl,sandisk-store.pl,sauna-czapka.pl,sklep-kajkosz.pl,sklep.art-magazyn.eu,sklep.mmagro.pl,sport2002.pl,sushi-sklep.pl##.mask:has(+ .modal)
 abrakadabra.sklep.pl,ilily.pl,sekrecik.pl,trojansport.pl###myWorning, .modal-backdrop
-action.com##+js(remove-class, is-locked, html, stay)
 action.com##+js(set-local-storage-item, newsletterPopupCount, 1)
-action.com##.is-locked .scroll-bar
-action.com#$#.is-locked body { position: static !important; overflow-y: scroll !important }
-action.com,aluprof.eu,cateromarket.pl,ekai.pl,jezykiobce.pl##.newsletter-popup
-action.com,bonarka.com.pl,hejto.pl,pl.tommy.com#$#.ReactModal__Body--open { overflow-y: auto !important }
-action.com,czytamyetykiety.pl,hejto.pl,megogo.net,newtech.com.pl,pl.tommy.com#$#body.overflow-hidden, html.overflow-hidden { overflow-y: auto !important }
-action.com,mulan.pl,pasmanteria.eu,shipgratis.eu,urwisydwa.sklep.pl,wetro.pl#$#body[style*="padding"] { padding-right: 0 !important }
 addnature.pl,bikester.pl##.cyc-dialog:has(.nlPopup)
 addnature.pl,bikester.pl#$#.no-overflow { overflow-y: auto !important }
 agatabielen.com##.remodal-overlay
@@ -11317,8 +11315,8 @@ beitadmin.pl,drzwi-cal.pl,mbmeganarzedzia.pl,medonetmarket.pl,otodom.pl,parkmani
 belvederehotel.pl##+js(abort-on-property-read, pf_queen.push)
 beta.netia.pl##.popup-beta
 beta.netia.pl#$#body[style="hidden"] { overflow-y: auto !important }
-bezokularow.pl#$#body.gr-body-popup-open { overflow-y: auto !important }
-bezokularow.pl##div[data-gr="popup-container"]
+bezokularow.pl#$#body.gr-body-popup-open[style] { overflow-y: auto !important }
+bezokularow.pl,scentre.pl,wiadomoscispozywcze.pl##div[data-gr="popup-container"]
 bikemia.com#$#.fancybox-lock { overflow-y: auto !important }
 bikemia.com,epione.pl,fifishop.pl,gromada.pl,mspdion.org.pl,royalpark.pl,swiece-zaplonowe.pl#$#.fancybox-margin { margin-right: 0 !important }
 bilety24.pl,moliera2.com,quiosque.pl###newsletter-popup, .modal-backdrop
@@ -11332,6 +11330,7 @@ blog-daneosobowe.pl##+js(no-setTimeout-if, i(), 5000)
 bonami.pl#$#.blurred { filter: none !important }
 bonami.pl##.overlayPan
 bonarka.com.pl##.ReactModalPortal:has(form input[type="email"])
+bonarka.com.pl,hejto.pl,pl.tommy.com#$#.ReactModal__Body--open { overflow-y: auto !important }
 bonprix.pl###newsletter-subscribe, .modal-backdrop
 bookbook.pl,darmarsklep.pl,sklep.polmarkus.com.pl###WebPushAddSubscription, .modal-backdrop
 botland.com.pl###blockcart-modal, .modal-backdrop
@@ -11342,6 +11341,7 @@ bryk.pl###last-chance-modal, .modal-backdrop
 carrefour.pl#$#body[style] { overflow-y: auto !important; padding-right: 0 !important }
 carrefour.pl##div[class*="jss"][role="dialog"]:has(> div > div > div > img[src="/cms//default/images/welcome/welcome-discount.jpg"])
 cateromarket.pl#$#.show-newsletter-popup { overflow-y: auto !important }
+cateromarket.pl,ekai.pl,jezykiobce.pl,luprof.eu##.newsletter-popup
 ceneo.pl#$#.noscroll { position: static !important; overflow-y: auto !important; padding-right: 0 !important }
 chcemybycrodzicami.pl#$#body.ex-modal-open #page { filter: none !important }
 chcemybycrodzicami.pl##div#ouibounce-modal
@@ -11357,6 +11357,7 @@ confronter.pl###cfModal, .modal-backdrop
 confronter.pl,lalorraine.pl,mypersonaltrainer.pl,sw-rita.pl,wishbone.pl#$#html { overflow-y: auto !important }
 cyberdefence24.pl,defence24.com,defence24.pl,energetyka24.com,kidsworld.pl,ncez.pl,politykazdrowotna.com,space24.pl###newsletter-modal
 czytamyetykiety.pl###ebook-popup.ebook-popup
+czytamyetykiety.pl,hejto.pl,megogo.net,newtech.com.pl,pl.tommy.com#$#body.overflow-hidden, html.overflow-hidden { overflow-y: auto !important }
 dajar.pl##+js(set-cookie, AdvertPopupDisplayed, true)
 deccoria.pl#$#.dc-layout--modal-active { overflow-y: auto !important; touch-action: unset !important }
 deccoria.pl#$#.dc-layout--modal-active { overflow-y: auto !important; touch-action: unset !important; padding-right: 0 !important }
@@ -11533,6 +11534,7 @@ mrgugu.com#$#body.is-scroll-disabled, html.is-scroll-disabled { overflow-y: auto
 mrgugu.com##div > span[role="button"][style]:empty:has(~ #welcomeDialog)
 mspdion.org.pl,termyszaflary.com##.fancybox-overlay
 mulan.pl,opakowania24.eu,pakomat.pl,urwisydwa.sklep.pl,wetro.pl#$#html.prevent-scroll { overflow-y: auto !important }
+mulan.pl,pasmanteria.eu,shipgratis.eu,urwisydwa.sklep.pl,wetro.pl#$#body[style*="padding"] { padding-right: 0 !important }
 multinor.no#$#.filter-blur { filter: none !important }
 multinor.no#$#.noScroll { position: static !important; overflow-y: auto !important }
 multinor.no##body > div.moduletable
@@ -11603,6 +11605,10 @@ pepper.pl##+js(set-local-storage-item, guestBpnModalSeen, true)
 pepper.pl##.zIndex--modal[class^="popover"][class*="bottom"]:has(.oreo-message-emoticon)
 pewex.pl###popupStart
 pewex.pl#$#body, html { overflow-y: auto !important; margin-right: 0 !important }
+pixelnerd.pl##+js(remove-attr, style, html[style*="padding-bottom"], stay)
+pixelnerd.pl#$#html.swg-disable-scroll[class], html.swg-disable-scroll[class] body { overflow-y: auto !important }
+pixelnerd.pl#$#html[style*="padding-botom:"] { padding-bottom: 0 !important }
+pixelnerd.pl##swg-popup-background, .swg-dialog
 pixlr.com##body > div[id^="modal-"]:has(> div.announce > div.content > div#after-content)
 pl.aleteia.org##.fancybox-overlay:has(.mouse-leave)
 pl.blogpascher.com##+js(no-setTimeout-if, document.location)
@@ -11672,6 +11678,7 @@ rylko.com###modal-newsletter
 rzetelnafirma.pl##+js(no-setTimeout-if, setPopup)
 samochod.porowneo.pl###modalContainer
 samochod.porowneo.pl#$#.noScroll { position: static !important }
+scentre.pl,wiadomoscispozywcze.pl#$#body.gr-body-popup-open[class] { overflow-y: auto !important }
 secure.avaaz.org#$#.page-petition--inactive { overflow-y: auto !important }
 secure.avaaz.org##.signup-petition-modal-wrapper
 sferis.pl##+js(abort-current-script, $, promoNewsletter)
@@ -11751,8 +11758,6 @@ weathermap.netatmo.com##first-use-slider
 westwing.pl#$#body[style*="top"][style*="position"] { position: static !important }
 westwing.pl##div[data-component-name="Overlay"] > .qa-overlay:has(.qa-sign-up-overlay__content)
 westwingnow.pl##+js(no-setTimeout-if, showOverlay)
-wiadomoscispozywcze.pl##body > div[data-gr="popup-container"]
-wiadomoscispozywcze.pl#$#html body.gr-body-popup-open { overflow-y: auto !important }
 wificalling-volte.pl##.modal:has-text(Polub)
 winnicalidla.pl##+js(remove-attr, style, html[style*="overflow"][style*="auto"], stay)
 wishbone.pl##.theme-modal-wrapper, .theme-modal-overlay
@@ -11831,9 +11836,9 @@ bezpiecznystrazak.pl##+js(remove-attr, autoplay, video[autoplay], asap)
 bezpiecznystrazak.pl##+js(remove-attr, autoplay, video[autoplay], complete)
 businessinsider.com.pl,fakt.pl,medonet.pl,onet.pl,plejada.pl,~poczta.onet.pl##+js(set-constant, Object.prototype.isFloatingEnabled, false)
 dziennikzachodni.pl,echodnia.eu,naszemiasto.pl,nowiny24.pl,nto.pl##+js(addEventListener-defuser, scroll, xlinkEvent)
+elle.pl,glamour.pl,gotujmy.pl,ilewazy.pl,kobieta.pl,mamotoja.pl,mojegotowanie.pl,mojpieknyogrod.pl,national-geographic.pl,party.pl,polki.pl,przyslijprzepis.pl,story.pl,viva.pl,wizaz.pl##.ediplayer-ui-floating > .ediplayer-main > .ediplayer-aspect-container > .ediplayer-aspect-padding
+elle.pl,glamour.pl,gotujmy.pl,ilewazy.pl,kobieta.pl,mamotoja.pl,mojegotowanie.pl,mojpieknyogrod.pl,national-geographic.pl,party.pl,polki.pl,przyslijprzepis.pl,story.pl,viva.pl,wizaz.pl#$#.ediplayer-ui-floating:not(.ediplayer-ui-fullscreen) .ediplayer-container { position: static !important; width: 100% !important }
 elle.pl,glamour.pl,gotujmy.pl,ilewazy.pl,kobieta.pl,mamotoja.pl,mojegotowanie.pl,mojpieknyogrod.pl,national-geographic.pl,party.pl,polki.pl,przyslijprzepis.pl,viva.pl,wizaz.pl##+js(addEventListener-defuser, scroll, d.stopPropagation)
-elle.pl,glamour.pl,gotujmy.pl,ilewazy.pl,kobieta.pl,mamotoja.pl,mojegotowanie.pl,mojpieknyogrod.pl,national-geographic.pl,party.pl,polki.pl,przyslijprzepis.pl,viva.pl,wizaz.pl##.ediplayer-ui-floating > .ediplayer-main > .ediplayer-aspect-container > .ediplayer-aspect-padding
-elle.pl,glamour.pl,gotujmy.pl,ilewazy.pl,kobieta.pl,mamotoja.pl,mojegotowanie.pl,mojpieknyogrod.pl,national-geographic.pl,party.pl,polki.pl,przyslijprzepis.pl,viva.pl,wizaz.pl#$#.ediplayer-ui-floating:not(.ediplayer-ui-fullscreen) .ediplayer-container { position: static !important; width: 100% !important }
 eurosport.tvn24.pl##+js(no-requestAnimationFrame-if, toggleFloatingClass)
 forsal.pl##+js(set-constant, parseFloat, noopFunc)
 gamerweb.pl#$#.zox-video-embed-wrap .zox-vid-fixed { position: relative !important }
