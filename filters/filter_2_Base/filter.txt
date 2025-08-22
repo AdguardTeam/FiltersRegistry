@@ -791,6 +791,14 @@
 ! We include rules from AdGuard's cname-tracker repo here, and add some additional rules,
 ! which will be used during the optimization by /optimizeDomainBlockingRules option.
 !
+! TODO: Check for CNAME ad servers
+! Don't add monetag.com here
+||amaerodactylon.com^
+||cdn.aucey.com^
+||zk1w.com^
+||g4nd.com^
+||2ddq.com^
+!
 ! https://github.com/AdguardTeam/FiltersRegistry/pull/937
 ! To fix the issue with the CNAME trackers, add problematic domains here:
 ! https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/exclusions.txt
@@ -10636,6 +10644,10 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211964
+vectorizer.kiwi#%#//scriptlet("trusted-replace-node-text", "script", "messageHTML", "if (typeof adsbygoogle === 'undefined')", "if (typeof adsbygoogle !== 'undefined')")
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=vectorizer.kiwi
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211954
 streamecho.top#$#body { overflow: auto !important; }
 streamecho.top#$##adLockScreen { display: none !important; }
@@ -74648,6 +74660,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /view/ad/*$subdocument
 /view_banner.php$image
 /virtuagirlhd.$image
+/watchnew?key=$subdocument,third-party
 /waWQiOjE*=eyJ.js^$third-party
 /web/ads/*$image
 /web_ads/*$image
@@ -97036,6 +97049,7 @@ browsershots.org#@#.advert_area
 ||dailyhealthvita.com^
 ||dainouluph.net^
 ||daintyinternetcable.com^
+||daipheefona.com^
 ||dairabibb.life^
 ||dairamasooka.click^
 ||daiwazumoawhy.net^
@@ -109245,6 +109259,7 @@ browsershots.org#@#.advert_area
 ||oilcontainsdisaster.com^
 ||oileddipper.cyou^
 ||oilmvlnrgpdw.com^
+||oilstrgqtqne.com^
 ||oilycoat.com^
 ||oilyishbabbage.cfd^
 ||oinkedbowls.com^
@@ -117870,6 +117885,7 @@ browsershots.org#@#.advert_area
 ||tvprocessing.com^
 ||tvqvugxsojzgi.site^
 ||tvrqlfdtfxtsh.space^
+||tvwxwboysflvt.website^
 ||tvxzuiiddkbqy.online^
 ||tvybcxdxyi.com^
 ||twaglurtuh.xyz^
@@ -118531,6 +118547,7 @@ browsershots.org#@#.advert_area
 ||upzmuerwksotm.site^
 ||upznliourhwyz.fun^
 ||uqbcz.today^
+||uqbqarpuytxzd.site^
 ||uqdqljuukwa.xyz^
 ||uqecqpnnzt.online^
 ||uqkcroib.com^
@@ -121018,6 +121035,7 @@ browsershots.org#@#.advert_area
 ||xylenesoaker.shop^
 ||xylinalehuas.world^
 ||xylitecessant.qpon^
+||xylonleagued.rest^
 ||xylzwamxxshgw.click^
 ||xympumihvhkkv.online^
 ||xyntqqrtdrjzk.online^

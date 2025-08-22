@@ -1,9 +1,9 @@
-! Checksum: 0ZFGD8q88v4xgQVbrmeSJQ
-! Diff-Path: ../patches/2/2-s-1755871869-3600.patch
+! Checksum: 0TzEGNwBORmWK7k9/3V7kw
+! Diff-Path: ../patches/2/2-s-1755875466-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.5.23
-! TimeUpdated: 2025-08-22T14:06:56+00:00
+! Version: 2.4.5.24
+! TimeUpdated: 2025-08-22T15:06:56+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -748,6 +748,14 @@
 ! This section contains the list of the rules are against CNAME disguised advertising networks.
 ! We include rules from AdGuard's cname-tracker repo here, and add some additional rules,
 ! which will be used during the optimization by /optimizeDomainBlockingRules option.
+!
+! TODO: Check for CNAME ad servers
+! Don't add monetag.com here
+||amaerodactylon.com^
+||cdn.aucey.com^
+||zk1w.com^
+||g4nd.com^
+||2ddq.com^
 !
 ! https://github.com/AdguardTeam/FiltersRegistry/pull/937
 ! To fix the issue with the CNAME trackers, add problematic domains here:
@@ -10340,6 +10348,8 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211964
+vectorizer.kiwi#%#//scriptlet("trusted-replace-node-text", "script", "messageHTML", "if (typeof adsbygoogle === 'undefined')", "if (typeof adsbygoogle !== 'undefined')")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211954
 streamecho.top#$#body { overflow: auto !important; }
 streamecho.top#$##adLockScreen { display: none !important; }
@@ -63794,6 +63804,7 @@ kliuki.bg###container > div[style="float:left;"] > div[style]
 /view/ad/*$subdocument
 /view_banner.php$image
 /virtuagirlhd.$image
+/watchnew?key=$subdocument,third-party
 /waWQiOjE*=eyJ.js^$third-party
 /web/ads/*$image
 /web_ads/*$image
@@ -86182,6 +86193,7 @@ browsershots.org#@#.advert_area
 ||dailyhealthvita.com^
 ||dainouluph.net^
 ||daintyinternetcable.com^
+||daipheefona.com^
 ||dairabibb.life^
 ||dairamasooka.click^
 ||daiwazumoawhy.net^
@@ -98391,6 +98403,7 @@ browsershots.org#@#.advert_area
 ||oilcontainsdisaster.com^
 ||oileddipper.cyou^
 ||oilmvlnrgpdw.com^
+||oilstrgqtqne.com^
 ||oilycoat.com^
 ||oilyishbabbage.cfd^
 ||oinkedbowls.com^
@@ -107016,6 +107029,7 @@ browsershots.org#@#.advert_area
 ||tvprocessing.com^
 ||tvqvugxsojzgi.site^
 ||tvrqlfdtfxtsh.space^
+||tvwxwboysflvt.website^
 ||tvxzuiiddkbqy.online^
 ||tvybcxdxyi.com^
 ||twaglurtuh.xyz^
@@ -107677,6 +107691,7 @@ browsershots.org#@#.advert_area
 ||upzmuerwksotm.site^
 ||upznliourhwyz.fun^
 ||uqbcz.today^
+||uqbqarpuytxzd.site^
 ||uqdqljuukwa.xyz^
 ||uqecqpnnzt.online^
 ||uqkcroib.com^
@@ -110164,6 +110179,7 @@ browsershots.org#@#.advert_area
 ||xylenesoaker.shop^
 ||xylinalehuas.world^
 ||xylitecessant.qpon^
+||xylonleagued.rest^
 ||xylzwamxxshgw.click^
 ||xympumihvhkkv.online^
 ||xyntqqrtdrjzk.online^

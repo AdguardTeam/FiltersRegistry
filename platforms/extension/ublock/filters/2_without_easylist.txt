@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: trMZ0lgkDraUMLjJKsXHqw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755871882-3600.patch
+! Checksum: rOQm7mHtnkRtLDsdXs+5SA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1755875478-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.5.23
-! TimeUpdated: 2025-08-22T14:06:56+00:00
+! Version: 2.4.5.24
+! TimeUpdated: 2025-08-22T15:06:56+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -749,6 +749,14 @@
 ! This section contains the list of the rules are against CNAME disguised advertising networks.
 ! We include rules from AdGuard's cname-tracker repo here, and add some additional rules,
 ! which will be used during the optimization by /optimizeDomainBlockingRules option.
+!
+! TODO: Check for CNAME ad servers
+! Don't add monetag.com here
+||amaerodactylon.com^
+||cdn.aucey.com^
+||zk1w.com^
+||g4nd.com^
+||2ddq.com^
 !
 ! https://github.com/AdguardTeam/FiltersRegistry/pull/937
 ! To fix the issue with the CNAME trackers, add problematic domains here:
@@ -10246,6 +10254,7 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211964
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211954
 streamecho.top#$#body { overflow: auto !important; }
 streamecho.top#$##adLockScreen { display: none !important; }
