@@ -35360,6 +35360,16 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211922
+! TODO: remove hints when this issue is resolved and new scriptlets library is added for apps - https://github.com/AdguardTeam/Scriptlets/issues/517
+!#if (adguard_app_windows || adguard_app_android || adguard_app_mac || adguard_ext_firefox)
+||workora.space^$replace=/let seconds = \d+;/let seconds = 0;/,document
+||workora.space^$replace=/(function playContent\(\) \{[\s\S]*?adMessage[\s\S]*?\})/\$1;playContent();/,document
+!#endif
+!#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_firefox)
+workora.space#%#//scriptlet('trusted-replace-node-text', 'script', 'playContent', '/let seconds = \d+;/', 'let seconds = 0;')
+workora.space#%#//scriptlet('trusted-replace-node-text', 'script', 'playContent', '/(function playContent\(\) \{[\s\S]*?adMessage[\s\S]*?\})/', '$1;playContent();')
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211507
 fullboys.com#%#//scriptlet('trusted-replace-node-text', 'script', 'full-video', 'timeLeftfull > 0', 'false')
 fullboys.com#%#//scriptlet('trusted-replace-node-text', 'script', 'full-video', '/timefull == \d/', 'true')
@@ -40633,6 +40643,8 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+workora.space##.post-body > .container > .video-container:has(> .ad-offer)
+||primewire.tf/a/a.js
 foobar2000.org##.navad
 foobar2000.org##.db_linkstyle[onclick]
 furaffinity.net###c-videoAd--outer
@@ -59632,10 +59644,10 @@ forbes.com##.channel--ad
 ##html > div[style="position: fixed; inset: 0px; z-index: 2147483647; pointer-events: auto;"]
 /^https:\/\/[a-z-]{5,13}\.[a-z]{2,6}\/[a-z0-9]{1,20}\?[A-Za-z0-9]{15,26}=(?=.*[A-Z])[A-Za-z0-9%]{35,2000}$/$xmlhttprequest,third-party,match-case
 ! #%#//scriptlet('abort-on-property-read', 'Adcash')
-worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,flixrave.me,anime4i.com,cuttyy.com,daddylive.*,zavalise.com,wooflix.tv,yassflix.net,swipebreed.net,eurekaddl.lat,pawastreams.pro,en.tgo-tv.xyz,miztv.shop,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,nepu.to,capo4play.com,wawacity.cfd,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,streameast.*,thestreameast.*,anroll.net,anarchy-stream.com,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,sportsonline.*,dl-protect.link,cricstreams.re,extreme-down.*,yts.mx,eztvx.to,skidrowreloaded.com,olympicstreams.*,streambucket.net,modsfire.com,official.nbabite.com,sportsonline.*#%#//scriptlet('abort-on-property-read', 'Adcash')
+primewire.tf,worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,flixrave.me,anime4i.com,cuttyy.com,daddylive.*,zavalise.com,wooflix.tv,yassflix.net,swipebreed.net,eurekaddl.lat,pawastreams.pro,en.tgo-tv.xyz,miztv.shop,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,nepu.to,capo4play.com,wawacity.cfd,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,streameast.*,thestreameast.*,anroll.net,anarchy-stream.com,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,sportsonline.*,dl-protect.link,cricstreams.re,extreme-down.*,yts.mx,eztvx.to,skidrowreloaded.com,olympicstreams.*,streambucket.net,modsfire.com,official.nbabite.com,sportsonline.*#%#//scriptlet('abort-on-property-read', 'Adcash')
 builddiamond.net,playdede.link,audioz.download,wavewalt.me,ricstream.me,anime4i.vip,vipleague.*,swipebreed.net,eurekaddl.lat,sanet.st,totalsportek.club,totalsportek.games,totalsportek.futbol,totalsportek.zip,totalsportek.racing,totalsportek.tel,totalsportek.dad,buffsports.*,olympicstreams.*#%#//scriptlet('abort-current-inline-script', 'globalThis', 'adserverDomain')
-worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,anime4i.com,cuttyy.com,puffytr.com,anizle.com,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,capo4play.com,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,sportsonline.*#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.hasAttribute', 'isActionAllowedOnElement')
-worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,anime4i.com,cuttyy.com,puffytr.com,anizm.net,anizle.com#%#//scriptlet('abort-on-property-read', 'aclib')
+primewire.tf,worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,anime4i.com,cuttyy.com,puffytr.com,anizle.com,vidlink.pro,knaben.xyz,powstream.*,rojadirectaenvivo.pl,ext.to,capo4play.com,1337x.to,zone-telechargement.*,kickassanime.mx,redecanais.in,freckledine.net,buffstreams.app,sanet.lc,1stream.eu,sportsonline.*#%#//scriptlet('abort-on-stack-trace', 'Element.prototype.hasAttribute', 'isActionAllowedOnElement')
+primewire.tf,worldsports.st,filecrypt.cc,veplay.top,colegialasdeverdad.*,crackstreams.cx,anime4i.com,cuttyy.com,puffytr.com,anizm.net,anizle.com#%#//scriptlet('abort-on-property-read', 'aclib')
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154277
 !+ NOT_PLATFORM(ext_ublock)
@@ -95023,6 +95035,7 @@ browsershots.org#@#.advert_area
 ||carvyre.com^
 ||casalemedia.com^
 ||casavidevelin.cfd^
+||casavijackleg.world^
 ||cascansycon.life^
 ||casefulautist.shop^
 ||casefulbalafo.cyou^
@@ -95120,6 +95133,7 @@ browsershots.org#@#.advert_area
 ||cbzuwizxndge.com^
 ||cc-dt.com^
 ||cc33b86bbf.com^
+||cc93bb0aee.com^
 ||ccc9c93083.com^
 ||cccc5a2b7f.com^
 ||ccdd7a795c.com^
@@ -95656,6 +95670,7 @@ browsershots.org#@#.advert_area
 ||cineekungoung.net^
 ||cinema1266.fun^
 ||cinesartar.cfd^
+||cingulairacund.help^
 ||cinurannakong.life^
 ||cinvetica.com^
 ||cipledecline.buzz^
@@ -97798,6 +97813,7 @@ browsershots.org#@#.advert_area
 ||dlhwyaetguynl.space^
 ||dllmqxzriqgnz.online^
 ||dlmonitize.com^
+||dlqbioenjjwsv.store^
 ||dlrectdates.com^
 ||dlssuizl.art^
 ||dltyhqaadt.com^
@@ -99711,6 +99727,7 @@ browsershots.org#@#.advert_area
 ||fausulaichoabee.net^
 ||fautealcippe.shop^
 ||fautepicene.cyou^
+||fauyntrhfdiwq.website^
 ||favepcykueo.com^
 ||fawnersomehow.qpon^
 ||fawninghaviors.cyou^
@@ -107160,6 +107177,7 @@ browsershots.org#@#.advert_area
 ||mignished-sility.com^
 ||migranticon.com^
 ||migrantspiteconnecting.com^
+||mihkazfzizm.com^
 ||miigbxonhjgnr.top^
 ||mikeinfo.rest^
 ||mikeybecroak.life^
@@ -110761,6 +110779,7 @@ browsershots.org#@#.advert_area
 ||pkhxhihfathkc.store^
 ||pkmqndveyxjud.site^
 ||pknkqmkdrfe.com^
+||pkojjkxagiej.com^
 ||pkqkuaguyyxjr.online^
 ||pkqyyycfrfwfx.com^
 ||pkrbkxkclcuif.online^
@@ -113183,6 +113202,7 @@ browsershots.org#@#.advert_area
 ||rgavvimsecmbo.life^
 ||rgbkmubapsgza.space^
 ||rgcmgtxmsogao.store^
+||rgenmissile.digital^
 ||rgezwfnbpigkd.site^
 ||rghptoxhai.com^
 ||rgjlzlgxohjyg.site^
@@ -115154,6 +115174,7 @@ browsershots.org#@#.advert_area
 ||snoutcaffeinecrowded.com^
 ||snoutcapacity.com^
 ||snouterpagan.rest^
+||snoutochrana.digital^
 ||snowdayonline.xyz^
 ||snowkinarm.cfd^
 ||snowldupes.digital^
