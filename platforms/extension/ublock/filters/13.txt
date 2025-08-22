@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: eOa/MeXfvrzs5PIK7j8oFg
-! Diff-Path: ../patches/13/13-s-1755839494-3600.patch
+! Checksum: u9a6FipSdRx8ik+ys844Iw
+! Diff-Path: ../patches/13/13-s-1755850381-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.4
-! TimeUpdated: 2025-08-22T05:07:33+00:00
+! Version: 2.0.59.5
+! TimeUpdated: 2025-08-22T08:09:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1493,6 +1493,11 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+aydinlik.com.tr#$?#.swiper-wrapper > a[title="Sinpaş Yapı Tasarruf Sandığı"] > img { display: none !important; }
+aydinlik.com.tr#$?#.swiper-wrapper > a[title="Sinpaş Yapı Tasarruf Sandığı"] > img + div.swiper-lazy-preloader { display: none !important; }
+aydinlik.com.tr##+js(remove-attr, href, div[class^="swiper-"] > a[href^="https://www.sinpasyts.com/"])
+aydinlik.com.tr##+js(remove-attr, href, .swiper-pagination > a[href="null"])
+yenisafak.com##.swiper-wrapper > div.swiper-slide:has(a[href^="https://www.sinpasyts.com/"])
 cizgivedizi.com###overlay
 cizgivedizi.com##img[alt^="Banner "]
 cizgivedizi.com##+js(remove-node-text, script, /lastAdTime|openPopup/)
