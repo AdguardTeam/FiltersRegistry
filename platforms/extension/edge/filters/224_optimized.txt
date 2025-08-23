@@ -1,9 +1,9 @@
-! Checksum: sv/t6aXtNwoM+geICVMZmw
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1755916675-3600.patch
+! Checksum: uYdfEx36SxCMzzCYkj0nxA
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1755925820-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.42.42
-! TimeUpdated: 2025-08-23T02:34:21+00:00
+! Version: 2.1.42.43
+! TimeUpdated: 2025-08-23T05:06:57+00:00
 ! Expires: 10 days (update frequency)
 ||vernaellac.com^
 ||dkaktsb.icu^
@@ -2425,7 +2425,6 @@ huaren.live#%#//scriptlet('set-constant', 'ConFig.config.ads', 'emptyObj')
 huaren.live#%#//scriptlet('trusted-replace-node-text', 'script', 'ConFig', 'let ConFig', 'var ConFig')
 bilibili.com#?#.recommended-container_floor-aside .container > div[class$="feed-card"]:has(div[style$="56.25%;"] > div[class]:matches-css(before, content: /AdGuard/))
 bilibili.com##.feed-card:has(> div.bili-feed-card > div > div > div.bili-video-card__no-interest + a[target="_blank"]:not([href^="https://www.bilibili.com/"]))
-bilibili.com#%#//scriptlet('json-prune-fetch-response', 'data.item.[-].business_info.ad_desc', '', '/feed/rcmd')
 bilibili.com#$?#.feed-card:has(> div.bili-feed-card > div.shortcut-bg:empty ~ div.bili-video-card[style*="display: none !important;"]) { remove: true; }
 bilibili.com##.bili-feed-card:has(> div.bili-video-card[style*="display: none !important;"])
 search.bilibili.com##.video-list > div:has(> .bili-video-card > .bili-video-card__wrap > .bili-video-card__info > .bili-video-card__info--right > .ad-feedback-entry)
@@ -2436,6 +2435,8 @@ bilibili.com##.floor-single-card:has(.floor-skeleton):not(:has(> div.bili-video-
 bilibili.com#$?#.ex-card-common:has(.gg-icon) { remove: true; }
 bilibili.com#$?#.van-slide > .item:has(.bypb-icon) { remove: true; }
 ||api.live.bilibili.com/*/Banner
+!+ NOT_PLATFORM(ext_ublock)
+bilibili.com#%#//scriptlet('json-prune-fetch-response', 'data.item.[-].business_info.ad_desc', '', '/feed/rcmd')
 bilibili.com##.bili-video-card.is-rcmd:has(> div.bili-video-card__wrap .bili-video-card__stats--icon > path[d*="M16.9122 1.50323C17.4366 1.48358 17.99745 1.54938 18.4701 1.8207C18.9423 2.09168 19.28085"])
 bilibili.com#$?#.container > .feed-card:has(> .bili-video-card.is-rcmd > div.bili-video-card__wrap .bili-video-card__stats--icon > path[d*="M16.9122 1.50323C17.4366 1.48358 17.99745 1.54938 18.4701 1.8207C18.9423 2.09168 19.28085"]) { remove: true; }
 nivod2.com,nivod2.tv,nivod4.com,nivod5.com#$?#.img-list > .img-item:has(> a[href*=".ad_click"]) { remove: true; }
