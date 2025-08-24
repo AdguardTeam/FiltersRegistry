@@ -1,9 +1,9 @@
-! Checksum: s8wXJtSxGhfCS47mMPvNNw
-! Diff-Path: ../patches/14/14-s-1755900625-3600.patch
+! Checksum: bJtmzb5KKAX4xPeqjEzsWw
+! Diff-Path: ../patches/14/14-s-1756066267-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.40.52
-! TimeUpdated: 2025-08-22T22:06:49+00:00
+! Version: 2.2.40.53
+! TimeUpdated: 2025-08-24T20:07:21+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24,6 +24,8 @@
 !#######################################################
 ! SECTION: Cookies - General element hiding
 !
+##.cookieadmin_cookie_modal
+##.cookieadmin_law_container
 ##div[data-testid="cookies-dialog"]
 ##.cookie-confirmation-banner
 ###pi_tracking_opt_in_div
@@ -1698,6 +1700,8 @@
 !
 ! SECTION: Cookies - General URL
 !
+/wp-content/plugins/cookieadmin/assets/*
+/wp-content/plugins/cookieadmin-pro/assets/*
 ||sp.api.no^
 ||cmp.bonniernews.se^
 ||cdn.sypher.eu/consent/
@@ -41986,6 +41990,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+trip.com##div[class^="tcp-h5-install-pop__"]
 eskisehir.net##.widget-advert
 eskisehir.net##.bik-iframe-box
 jagran.com##div[class^="AdFreeBottomLoginModal_"]
