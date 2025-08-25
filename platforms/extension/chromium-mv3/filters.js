@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.5.81",
-			"timeUpdated": "2025-08-25T00:26:36+0000",
+			"version": "2.4.5.82",
+			"timeUpdated": "2025-08-25T01:35:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
