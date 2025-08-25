@@ -1,9 +1,9 @@
-! Checksum: yvili7OgK3ijrTcM9JHjhw
-! Diff-Path: ../patches/18/18-s-1756102460-3600.patch
+! Checksum: Asq9dXW+zLmR3GoGnDjEXg
+! Diff-Path: ../patches/18/18-s-1756109640-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.68.58
-! TimeUpdated: 2025-08-25T06:10:34+00:00
+! Version: 2.0.68.59
+! TimeUpdated: 2025-08-25T08:10:08+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2531,6 +2531,7 @@ entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,g
 !
 ! NOTE: Regular rules
 !
+bundesfinanzministerium.de##.bhh-cookie-banner
 misterworker.com#%#//scriptlet('trusted-set-cookie', 'mw_cookieconsent', '{"status":"accepted","acceptedList":["strict"],"allCookiesAccepted":false}')
 uteka.ru#%#//scriptlet('set-cookie-reload', 'uteka_app_accept_cookie_policy_hidden', 'true', '/', 'uteka.ru')
 city.tonami.lg.jp##.sitecookie
@@ -4539,8 +4540,8 @@ pixiv.net##div[data-theme] > div > span:has(> div > div > p > span + a[href^="ht
 aranypiac.hu#%#//scriptlet('trusted-click-element', 'button.cookie-alert__btn-set', '', '1500')
 gglot.com###tsu-cookie-consent-popup
 voguescandinavia.com##div[class^="cookieNotification_"]
-thoughtco.com#$#body #onetrust-consent-sdk { display: none !important; }
-thoughtco.com#$#html:has(>body>div#onetrust-consent-sdk.show-banner) { overflow-y: auto !important; }
+www-thoughtco-com.translate.goog,thoughtco.com#$#body #onetrust-consent-sdk { display: none !important; }
+www-thoughtco-com.translate.goog,thoughtco.com#$#html:has(>body>div#onetrust-consent-sdk.show-banner) { overflow-y: auto !important; }
 figma.com##div[role="alertdialog"][aria-label*="ookie"]
 figma.com##div[aria-label="쿠키 사용 동의"]
 zenmarket.jp###gdpr-terms-warning
@@ -17264,6 +17265,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211799
+@@||adblockplus.org/img/cookie-notice.svg$domain=adblockplus.org
 ! blatribune.fr broken video
 @@||sdk.privacy-center.org/*/loader.js?target=www.latribune.fr$domain=latribune.fr
 @@||sdk.privacy-center.org/sdk/$domain=latribune.fr
@@ -18112,8 +18115,8 @@ traum-ferienwohnungen.de#@##cookie-notification
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183417
 aranypiac.hu#@#.cookie-alert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183409
-thoughtco.com#@##onetrust-consent-sdk
-@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=thoughtco.com
+thoughtco.com,www-thoughtco-com.translate.goog#@##onetrust-consent-sdk
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=thoughtco.com|www-thoughtco-com.translate.goog
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183288
 groentenenfruitwebshop.be#@##cookie-law-info-bar
 ! thueringer-energienetze.com - unable to use Google Maps

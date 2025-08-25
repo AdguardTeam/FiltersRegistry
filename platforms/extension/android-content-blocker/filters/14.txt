@@ -1,8 +1,8 @@
-! Checksum: OPgFz36nfa1UNkfv/GodXw
+! Checksum: Dx0vj4RnwFkiN5/fj42uyA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.40.59
-! TimeUpdated: 2025-08-25T07:08:03+00:00
+! Version: 2.2.40.60
+! TimeUpdated: 2025-08-25T08:10:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2434,6 +2434,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+bundesfinanzministerium.de##.bhh-cookie-banner
 city.tonami.lg.jp##.sitecookie
 finance.ozon.ru##.biscuits
 sparks.travel##.ss-cookie-modal-container
@@ -11871,6 +11872,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/211799
+@@||adblockplus.org/img/cookie-notice.svg$domain=adblockplus.org
 ! blatribune.fr broken video
 @@||sdk.privacy-center.org/*/loader.js?target=www.latribune.fr$domain=latribune.fr
 @@||sdk.privacy-center.org/sdk/$domain=latribune.fr
@@ -12741,8 +12744,8 @@ traum-ferienwohnungen.de#@##cookie-notification
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183417
 aranypiac.hu#@#.cookie-alert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183409
-thoughtco.com#@##onetrust-consent-sdk
-@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=thoughtco.com
+thoughtco.com,www-thoughtco-com.translate.goog#@##onetrust-consent-sdk
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=thoughtco.com|www-thoughtco-com.translate.goog
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183288
 groentenenfruitwebshop.be#@##cookie-law-info-bar
 ! thueringer-energienetze.com - unable to use Google Maps
@@ -25353,6 +25356,8 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 !
 ! SECTION: Subscriptions - Regular rules
 !
+dgl.ru##.sub-form-block
+dgl.ru##.main-sub-wrap
 golem.de##.go-newsletter-box-container
 gidadedektifi.net##div[class^="XSubscribeBox"]
 ||teneriffa-news.com/popup.js
@@ -25498,7 +25503,7 @@ gdh.digital##.publish-bar-sticky ~ div.w-full > div.my-4 > div.overflow-visible 
 news.itsfoss.com##.kg-cta-card
 bhol.co.il###share_sectoin
 xn--h1alcedd.xn--d1aqf.xn--p1ai###telegram-block
-urban-media.ru##.social-subscribe
+kulturologia.ru,urban-media.ru##.social-subscribe
 urban-media.ru##.main-soc
 3dvf.com##div[data-id="4c98a5f"]
 antalyahurses.com###newsletterPopup
