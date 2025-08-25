@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PaJuiADzBVt4sO26DbBhoQ
-! Diff-Path: ../patches/14/14-s-1756113126-3600.patch
+! Checksum: /6OTwht6JLu2bzVlKVZ9uA
+! Diff-Path: ../patches/14/14-s-1756116720-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.40.61
-! TimeUpdated: 2025-08-25T09:08:23+00:00
+! Version: 2.2.40.62
+! TimeUpdated: 2025-08-25T10:08:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2489,6 +2489,7 @@ entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,g
 !
 ! NOTE: Regular rules
 !
+ctc.ru##div[data-cy="cookie-concent"]
 bundesfinanzministerium.de##.bhh-cookie-banner
 uteka.ru##+js(set-cookie-reload, uteka_app_accept_cookie_policy_hidden, true, /, uteka.ru)
 city.tonami.lg.jp##.sitecookie
@@ -20927,11 +20928,8 @@ turbopages.org##+js(json-prune, *.blockId)
 !
 ! Kinopoisk
 www.kinopoisk.ru##+js(set-constant, Object.prototype.renderToNode, undefined)
-kinopoisk.ru##+js(set-cookie, kdetect, 1)
-www.kinopoisk.ru##div[class^="toaster-container"]
-hd.kinopoisk.ru##div[data-tid="AdBlockWarning"]
-www.kinopoisk.ru##div[class*="-kinopoisk-media-container"][class*="media-container_height_"]
-www.kinopoisk.ru##div[class^="styles_adBlockWarningRoot"]
+hd.kinopoisk.ru##.ReactModalPortal > div[class*=" styles_fixed__"]:has(> div > a[href$="/yandex-in-adblock.html"])
+kinopoisk.ru##div[class*="_adBlockWarningRoot__"]
 !
 ! auto.ru
 auto.ru##+js(json-prune, ads)
@@ -44219,9 +44217,6 @@ bookmate.ru##.app-banner
 ! END: Yandex
 !
 !
-fredmeyer.com#$?#.kds-Modal-overlay--afterOpen { display: none !important; }
-fredmeyer.com#$?#body { overflow: auto !important; }
-fredmeyer.com#$?#html { overflow: auto !important; }
 !
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##[id^="xpromo-"]
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#shreddit-async-loader[paint-group="xpromo"][bundlename="app_selector"] { display: none !important; }

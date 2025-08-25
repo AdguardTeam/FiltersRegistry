@@ -1,9 +1,9 @@
-! Checksum: Gr+RXRUOWzjXgbRu16XlDg
-! Diff-Path: ../patches/3/3-s-1756109655-3600.patch
+! Checksum: 6xrARbtPhFkmzRv7f2Wlcw
+! Diff-Path: ../patches/3/3-s-1756116727-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.90.21
-! TimeUpdated: 2025-08-25T08:09:39+00:00
+! Version: 2.0.90.22
+! TimeUpdated: 2025-08-25T10:07:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -56425,6 +56425,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||magic.prism.gg^
 ||c.bazu.cc^
 ||sherlock-events-sampler.ebay.com^
 ||ads.mozilla.org^
@@ -56480,7 +56481,6 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ||analytics.webanalytics.op.europa.eu^
 ||aem-kakao-collector.onkakao.net^
 ||slc.commerce.naver.com^
-||a.klaviyo.com^
 ||nlog.shinhan.com^
 ||cdn.js.fpaudience.com^
 ||lg3.media.net^
@@ -59397,6 +59397,9 @@ charlestownwyllie.oaklawnnonantum.com^
 ||t133.sun-sentinel.com^
 ||x446.orlandosentinel.com^
 !
+! Klaviyo - don't block subdomains of a.klaviyo.com by DNS
+|a.klaviyo.com^
+!
 ! Hisense Smart TV
 ||api-*.hismarttv.com^
 ||auth-*.hismarttv.com^
@@ -60255,6 +60258,7 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+://a.klaviyo.com^
 misterworker.com##.custom_text_home:has(> #mw-clerk-sliderhp)
 ||trip.com/bee/collect
 ||ssl.pstatic.net/static.news/mnews/resources/*/js/generated/statistics_jquery.js
@@ -66481,6 +66485,7 @@ dlsdk.appsflyer.com^
 !
 ! NOTE: Regular rules
 !
+||logs.dradis.netflix.com^
 ||analytics-stg.samsungknox.com^
 ||event.flareflow.tv^
 ||api.deeplink.dev^

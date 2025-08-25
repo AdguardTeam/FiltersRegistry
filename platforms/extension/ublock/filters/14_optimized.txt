@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sKTbjSVx0Th6mHjcbagwWA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1756113126-3600.patch
+! Checksum: 1M/BDA5dbahAh24swOsNnw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1756116720-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.40.61
-! TimeUpdated: 2025-08-25T09:08:23+00:00
+! Version: 2.2.40.62
+! TimeUpdated: 2025-08-25T10:08:07+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1527,6 +1527,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$?#div[consent-skip-blocker] { remove: true; }
 entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+ctc.ru##div[data-cy="cookie-concent"]
 bundesfinanzministerium.de##.bhh-cookie-banner
 uteka.ru##+js(set-cookie-reload, uteka_app_accept_cookie_policy_hidden, true, /, uteka.ru)
 city.tonami.lg.jp##.sitecookie
@@ -9832,11 +9833,8 @@ tv.yandex.*##+js(json-prune, rtb)
 realty.ya.*##+js(json-prune, rtb direct)
 turbopages.org##+js(json-prune, *.blockId)
 www.kinopoisk.ru##+js(set-constant, Object.prototype.renderToNode, undefined)
-kinopoisk.ru##+js(set-cookie, kdetect, 1)
-www.kinopoisk.ru##div[class^="toaster-container"]
-hd.kinopoisk.ru##div[data-tid="AdBlockWarning"]
-www.kinopoisk.ru##div[class*="-kinopoisk-media-container"][class*="media-container_height_"]
-www.kinopoisk.ru##div[class^="styles_adBlockWarningRoot"]
+hd.kinopoisk.ru##.ReactModalPortal > div[class*=" styles_fixed__"]:has(> div > a[href$="/yandex-in-adblock.html"])
+kinopoisk.ru##div[class*="_adBlockWarningRoot__"]
 auto.ru##+js(json-prune, ads)
 auto.ru##+js(abort-on-property-read, Object.prototype.RenderMarks)
 shedevrum.ai##+js(set-constant, Object.prototype.isStickyAd, undefined)
@@ -20980,9 +20978,6 @@ uslugi.yandex.ru##.MobAppStoreLinks
 yandex.*##:matches-path(/pogoda)div[class^="App"][class*="Promo"]
 auto.ru#$#.page_freeze { overflow: auto !important; position: static !important; }
 bookmate.ru##.book-cover div.store-links
-fredmeyer.com#$?#.kds-Modal-overlay--afterOpen { display: none !important; }
-fredmeyer.com#$?#body { overflow: auto !important; }
-fredmeyer.com#$?#html { overflow: auto !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##[id^="xpromo-"]
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#$#body:not([style^="overflow:"]):not([class="rpl-scroll-lock"]) { pointer-events: auto !important; overflow: auto !important; }
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion#?##nsfw-qr-dialog:contains(Scan this QR code to download the app now)
