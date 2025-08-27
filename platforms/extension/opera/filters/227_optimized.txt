@@ -1,9 +1,9 @@
-! Checksum: YR1AxGh2BDMkvEmLFLLfjQ
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1756299000-14400.patch
+! Checksum: pDEUnp/RWZuHZs7gtVIWbg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1756312993-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.22.65
-! TimeUpdated: 2025-08-27T12:45:18+00:00
+! Version: 2.0.22.66
+! TimeUpdated: 2025-08-27T16:38:44+00:00
 ! Expires: 10 days (update frequency)
 ||image.cauly.co.kr^
 ||bridgelabs.kr^
@@ -3401,6 +3401,7 @@ m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', '_boom')
 m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.?(jpg|gif)/')
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
+m.place.naver.com#%#//scriptlet('json-prune', '[].data.poiRecommendations.recommendations.[].items.[-].adClickLog.clickUrl')
 platformgreat.kr#%#//scriptlet('set-constant', 'commonTrailer', 'undefined')
 kilho.net#%#//scriptlet('abort-current-inline-script', 'jQuery', '.adsbygoogle')
 mplay.mk.co.kr#%#//scriptlet('prevent-xhr', 'ad.smartmediarep.com/NetInsight/video/smr', 'length:300')
