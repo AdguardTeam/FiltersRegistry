@@ -1,9 +1,9 @@
-! Checksum: q8ZaCcLNJ9o28vDAP5b0vQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1756307488-3600.patch
+! Checksum: gpPOCVfveeW7oPKOG+e2Nw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1756321811-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.49.13
-! TimeUpdated: 2025-08-27T15:07:27+00:00
+! Version: 2.0.49.14
+! TimeUpdated: 2025-08-27T19:06:15+00:00
 ! Expires: 10 days (update frequency)
 ||remp-campaign.golem.de^
 ||ad.dl.volksstimme.de^
@@ -787,6 +787,8 @@ urbia.de,essen-und-trinken.de#@#.playerAd
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 pornohexen.com#@##adsbox
 tarnkappe.info#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'checkingOverlay')
+!+ PLATFORM(ios, ext_android_cb, ext_ff)
+@@||cdntrf.com/tarnkappe-info.js$domain=tarnkappe.info
 karoqforum.de#%#//scriptlet('prevent-eval-if', 'adsbygoogle.js')
 /js/wb_ban.js$domain=cool-web.de|fun-seiten.de|web-spiele.de|gps-cache.de|photo-alben.de|wetter-vorhersage.de|coolsoftware.de|kryptografie.de
 kryptografie.de,coolsoftware.de,wetter-vorhersage.de,photo-alben.de,gps-cache.de,web-spiele.de,fun-seiten.de,cool-web.de#%#//scriptlet("set-constant", "checkButtonLoaded", "noopFunc")
@@ -1143,6 +1145,7 @@ finanzen.net,mainfranken24.de,jetzt.de,derwesten.de,eurosport.de,ingenieur.de,he
 stern.de,monopol-magazin.de,krone.at,cleverdialer.de,sueddeutsche.de,geo.de,northdata.de,losungencodycross.com,spieletipps.de,heise.de,netdoktor.de,aachener-zeitung.de,wissen.de##.ad-container
 winfuture.de,netzwelt.de,quoka.de,farmeramania.de,bravofly.de,computerbild.de,digitalfernsehen.de,hl-live.de,chinamobilemag.de,focus.de,pcwelt.de##.adsbygoogle
 it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpool.de,fnweb.de,laborjournal.de,deraktionaer.tv,food-tiger.de,morgenweb.de##.billboard
+tarnkappe.info##.content > div[style]:has(> a[href^="https://sc.tarnkappe.info"])
 t-online.de##div[class]:has(> .z-commercial-nativendo:only-child)
 chip.de##div[id^="Linksbox-placement-"]
 lvz.de##div[data-vars-event-label*="gesponsert"]

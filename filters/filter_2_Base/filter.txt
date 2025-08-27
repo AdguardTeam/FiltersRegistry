@@ -14954,7 +14954,8 @@ fastssh.com#%#//scriptlet('prevent-fetch', '/pagead2\.googlesyndication\.com|www
 fastssh.com#@#.ad-box:not(#ad-banner):not(:empty)
 fastssh.com#@#.ad-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132661
-teamkong.tk#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
+! https://github.com/AdguardTeam/AdguardFilters/issues/212269
+teamkong.tk#%#//scriptlet('abort-current-inline-script', 'jQuery', '#zdn-adblock-overlay')
 ! https://github.com/uBlockOrigin/uAssets/issues/14345
 ||ad-delivery.net/px.gif?$image,redirect=1x1-transparent.gif,domain=explorecams.com,important
 @@||ad-delivery.net/px.gif?$domain=explorecams.com
@@ -16215,6 +16216,11 @@ streamta.*#@#.google-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210238
 embed.wcostream.com###announcement
 embed.wcostream.com##.announcement-backdrop
+||embed.wcostream.com^$replace=/if \(closeBtn\.disabled\) return;//,subdocument,document
+||embed.wcostream.com^$replace=/hideAll\(\);/hideAll();try{if(typeof doClose==="function"){doClose();}}catch(e){};/,subdocument,document
+||embed.wcostream.com^$replace=/const MAX_CLOSES = \d+;/const MAX_CLOSES = 0;/,subdocument,document
+embed.wcostream.com#%#//scriptlet('trusted-replace-node-text', 'script', 'MAX_CLOSES', 'if (closeBtn.disabled) return;', '')
+embed.wcostream.com#%#//scriptlet('trusted-replace-node-text', 'script', 'MAX_CLOSES', '/hideAll\(\);/g', 'hideAll();try{if(typeof doClose==="function"){doClose();}}catch(e){};')
 embed.wcostream.com#%#//scriptlet('trusted-replace-node-text', 'script', 'MAX_CLOSES', '/const MAX_CLOSES = \d+;/', 'const MAX_CLOSES = 0;')
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com#$#.ad-unit.ad-banner.adsbox { display: block !important; }
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com#$##wrapfabtest { height: 1px !important; }
@@ -65695,6 +65701,8 @@ implbits.com#@#.banner_container
 !#########################################
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212270
+@@||embed.wcostream.com^$subdocument,stealth=referrer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212149
 @@||lamoda.ru^$stealth=1p-cookie
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211844
@@ -100751,6 +100759,7 @@ browsershots.org#@#.advert_area
 ||fpcrnsgskjtfm.website^
 ||fpdbkwpnd.com^
 ||fpdtilvopjnvi.space^
+||fpfpybbmnmwwx.space^
 ||fpgedsewst.com^
 ||fpgswbwrimkwhw.com^
 ||fphycqwimelhk.online^
@@ -100948,6 +100957,7 @@ browsershots.org#@#.advert_area
 ||fuelsenvied.world^
 ||fueunubabrncq.site^
 ||fuffitgazella.world^
+||fufflevelleda.life^
 ||fugitiveautomaticallybottled.com^
 ||fugsslosher.com^
 ||fuguingstokes.life^
@@ -102069,6 +102079,7 @@ browsershots.org#@#.advert_area
 ||grelotsorghos.help^
 ||grene.site^
 ||grepeiros.com^
+||grergoomsoo.net^
 ||greroaso.com^
 ||grersomp.xyz^
 ||gretseemudseevo.net^
@@ -105908,6 +105919,7 @@ browsershots.org#@#.advert_area
 ||kwlyljlammlbq.top^
 ||kwmbgyoruvsaa.store^
 ||kwrbryjcespcp.online^
+||kwskrfpqjbkpi.com^
 ||kwtnhdrmbx.com^
 ||kwux-uudx.online^
 ||kwvzqaagynjnj.top^
@@ -107570,6 +107582,7 @@ browsershots.org#@#.advert_area
 ||mckbbaaatyhfm.fun^
 ||mckensecuryr.info^
 ||mcocayxlebnuv.space^
+||mcoitoqc.xyz^
 ||mcoxwaajhri.com^
 ||mcppsh.com^
 ||mcpuwpsh.com^
@@ -110135,6 +110148,7 @@ browsershots.org#@#.advert_area
 ||onameketathar.com^
 ||onatallcolumn.com^
 ||onaugan.com^
+||onbfqhjqgifas.website^
 ||oncavst.com^
 ||oncesets.com^
 ||onclarck.com^
@@ -110283,6 +110297,7 @@ browsershots.org#@#.advert_area
 ||oowkzpjo-o.click^
 ||ooxehfqrodgqm.website^
 ||ooyejpjenphbo.online^
+||ooyfrflmyqbpt.online^
 ||oozespawns.help^
 ||op00.biz^
 ||op01.biz^
@@ -110317,6 +110332,7 @@ browsershots.org#@#.advert_area
 ||ophoacit.com^
 ||ophryshoking.click^
 ||opleshouldthink.com^
+||opnobbohq.com^
 ||opnycaqxzsaql.store^
 ||opoduchadmir.com^
 ||oponixa.com^
@@ -110806,6 +110822,7 @@ browsershots.org#@#.advert_area
 ||oyoakyallvggw.top^
 ||oyoakyallvoka.top^
 ||oyovpsltjgvzd.site^
+||oyqbnnbwwvabg.top^
 ||oyqbnnbwwvayw.top^
 ||oysterbywordwishful.com^
 ||oyuqmyebotcls.site^
@@ -114390,6 +114407,7 @@ browsershots.org#@#.advert_area
 ||rkomf.com^
 ||rlcdn.com^
 ||rldwideorgan.org^
+||rlffkhoxxwucy.website^
 ||rlgybjefafbjp.online^
 ||rliuumrtkzzpg.space^
 ||rlogcejfsgtar.site^
@@ -120597,6 +120615,7 @@ browsershots.org#@#.advert_area
 ||vqqaelqkkzjvz.top^
 ||vqqaelqkkzjzm.top^
 ||vqqjqbkzclwav.website^
+||vqrozzojjvloy.top^
 ||vqrozzojjvlqj.top^
 ||vquhshiqyqudr.space^
 ||vqvmmgaqlmlj.top^
