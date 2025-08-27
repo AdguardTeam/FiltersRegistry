@@ -1,14 +1,14 @@
-! Checksum: efNOxWBg5lS260wLjvmK4g
-! Diff-Path: ../patches/243/243-s-1756183561-14400.patch
+! Checksum: E/XdY6v652MgdOY81WvrFg
+! Diff-Path: ../patches/243/243-s-1756269718-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.58
-! TimeUpdated: 2025-08-26T04:38:09+00:00
+! Version: 2.0.22.59
+! TimeUpdated: 2025-08-27T04:38:01+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-08-26 05:34:59 CEST
+! Last modified: 2025-08-27 04:49:21 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -262,6 +262,7 @@ bio-link.se,web-tools.se,evertiq.se,alandsradio.ax###cc-main
 birthday.se##.datax
 bjuvsweek.se##.carouselbanner-wrp
 blocket.se##.placement_panorama, .blocket-placement, div[style="height: 240px;"], [class*="offering-info-box"], [data-id="placement_panorama"], div[class*="BannerLink"], div[class*="GamBannerContainer"]
+bodennytt.se###secondary .widget:has(a[target="_blank"], a[href*="track.ad"])
 bohuslaningen.se,stromstadstidning.se,markposten.se,harrydaposten.se,partilletidning.se,sttidningen.se,molndalsposten.se,kungalvsposten.se,kungsbackaposten.se,alingsastidning.se,ttela.se,gp.se,hallandsposten.se,hn.se,mellerudsnyheter.se##.c-ad__panorama, .c-ad__insider, #outsiderTop, div[data-k5a-pos^="panorama"], .c-article__strossle--bottom, .outsider-ad-column
 bokadirekt.se##a:not([href*="bokadirekt.se"]):not([href^="/"]) img
 bokadirekt.se##.ReactModalPortal:has(a[href="/articles/cookies"])
@@ -1006,7 +1007,8 @@ maklarvarlden.se##.td_module_wrap:has(div[class$="-sponsrat"])
 mallorcanyheter.com##section[data-settings*="element_pack_wrapper"]:has(.a-single)
 maringuiden.se##.banner_hoger, .google_ads_mg_frontpage, .footerComercialDiv
 marketmate.se##div[id^="marke-"]
-marketplace.se##.td-cpt-post:has(a[href*="/annons/"])
+marketplace.se##div[id^="feature_"]
+marketplace.se##:is(.td-cpt-post, .flex-post):has(a[href*="/annons"])
 marknadschefer.se##.elementor-column:has(.ekit-sticky)
 marknadschefer.se##.elementor-widget-heading:has-text(/Sponsra|annons/i)
 marknadschefer.se##.elementor-widget-heading:has-text(/Sponsra|annons/i) + .elementor-widget-post-block
@@ -1319,7 +1321,7 @@ so-rummet.se##.article-list:has(.sponsrad-over)
 so-rummet.se##.block-rr
 so-rummet.se##.link-list-item:has(img[src*="sponsrad"])
 so-rummet.se##.view-header > h3:has-text(/annonser/i):upward(.view-nya-lankar-front)
-spanaren.se,horisontmagasin.se,shoegazing.se,ekonomifokus.se##.textwidget a[target*="blank"] img
+spanaren.se,horisontmagasin.se,shoegazing.se,ekonomifokus.se,surfzone.se##.textwidget a[target*="blank"] img
 spanienforum.se##a:not([href^="/"], [href*="spanienforum.se"]) img[src*="/media/"]
 spanienforum.se##.secondaryContent:has(a:not([href^="/"], [href*="spanienforum.se"]))
 spelagratis.se##.sidebar-right, .ad_header + p
@@ -1786,6 +1788,8 @@ zeromagazine.nu##div[id^="ads"]
 ##div.panorama-banner
 ##div.partnership-ads
 ##div.phpbb-ads-center
+##div.portrait-ad
+##div.postcard-ad
 ##div.prebid-ad-slot
 ##div.sb-egmont-plugin
 ##div.schibsted-info-sticky
@@ -2391,7 +2395,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/cm-pop-up-banners
 /plugins/cm-takeover-ad
 /plugins/complianz-gdpr$script,domain=iconmagazine.se|signprint.se|vilaser.se|arjeplognytt.se|tidningenglobal.se|tidningensyre.se|landetsfria.nu|fempers.se|brollopsmagasinet.se|megafonen.se|kyrka.se|tlnt.se|sjofartstidningen.se|pensionarsliv.se|aktuellsakerhet.se|maklarvarlden.se|sjomannen.se|home2tiny.se|marketplace.se|livsmedelsnyheter.se|dovastidning.se|vgrfokus.se|samefolket.se|cirkusvenues.se|surfzone.se|magasinetkonkret.se|samerna.se|affarsstaden.se|economy.se|livsmedelifokus.se|bodennytt.se|dialasen.com|aftonkuriren.com|samtiden.nu|alltomhallbarhet.se|luleapride.se
-/plugins/consent-magic-pro$script,domain=namnmarkning.se|bluum.se|gobokhandeln.se
+/plugins/consent-magic-pro$script,domain=namnmarkning.se|gobokhandeln.se
 /plugins/content-hub-wp-plugin/assets/js/hub-time-spent
 /plugins/convertplug
 /plugins/convertpro
@@ -2474,7 +2478,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/quick-adsense
 /plugins/r9-analytics
 /plugins/random-banner
-/plugins/real-cookie-banner$domain=bebisvarlden.se
+/plugins/real-cookie-banner$domain=bebisvarlden.se|bluum.se
 /plugins/sandviks-weblog$script,domain=bebisvarlden.se
 /plugins/sassy-social-share/*$script,domain=~nova.rs
 /plugins/sea-short-stats
