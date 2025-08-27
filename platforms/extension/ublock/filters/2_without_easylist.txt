@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wPz3VM4AVgWnoVfS68cbmg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1756265115-3600.patch
+! Checksum: t/fFDE5UaNOOObLddLnG4w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1756267935-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.6.32
-! TimeUpdated: 2025-08-27T03:21:00+00:00
+! Version: 2.4.6.33
+! TimeUpdated: 2025-08-27T04:07:45+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10516,6 +10516,7 @@ poplinks.sbs##+js(abort-on-property-write, checkAdsStatus)
 poplinks.sbs##+js(abort-current-script, document.createElement, AdBlock)
 shorttrick.in##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202765
+kio.ac##+js(no-setTimeout-if, /[A-Za-z]+\(\)\.then\(\(\) *=> *[a-z]+\( *[a-z]+ *\\, *\!0\)\)/, 500)
 kio.ac##+js(no-setTimeout-if, /\.com\/[a-zA-Z\d]{1\,20}\/\d+$|=performance\.now\(\);await fetch\(|globalThis\.atob.*await fetch\(/)
 kio.ac##+js(no-fetch-if, /\.com\/[a-zA-Z\d]{1\,20}\/\d+$|pagead2\.googlesyndication\.com/)
 kio.ac#$#.min-h-4 > ins.adsbygoogle { position: absolute !important; left: -9999px  !important; }
@@ -35547,6 +35548,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+kio.ac##.outline-border.shrink-0 > .min-h-4
 comick.io#?#.py-16:contains(ADVERTISEMENT)
 cinemadeck.com##.columns-1:has(> a[href="https://babymaker.sellpass.io/"])
 watch.spencerdevs.xyz##a[href="https://zaccounts.io"]
