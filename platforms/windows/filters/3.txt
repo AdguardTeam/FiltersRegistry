@@ -1,9 +1,9 @@
-! Checksum: 4EJzZDc1wKv3zqT5egEGCw
-! Diff-Path: ../patches/3/3-s-1756325561-3600.patch
+! Checksum: IuXL8GSyXb0/jLAFCuY2NQ
+! Diff-Path: ../patches/3/3-s-1756329041-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.90.47
-! TimeUpdated: 2025-08-27T20:07:54+00:00
+! Version: 2.0.90.48
+! TimeUpdated: 2025-08-27T21:06:25+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -69193,6 +69193,9 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||st.sooplive.co.kr^
+||collector1.sooplive.co.kr^
+||exlogcollector.sooplive.co.kr^
 ||snowflake.qq.com^
 ||d2fuc4clr7gvcn.cloudfront.net^
 ||analytics.edaily.co.kr^
@@ -110794,6 +110797,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||res.sooplive.co.kr/script/player/service-maintenance.js
+||ssl.pstatic.net/static.news/mnews/resources/*/js/generated/aside.statistics.js
 ||api.livere.org/api/v1/clients/*/visitor
 ||ssl.pstatic.net/t.static.blog/mylog/versioning//common/js/nilForNtm-
 ||ssl.pstatic.net/t.static.blog/mylog/versioning/NtmBaLog-
@@ -117157,6 +117162,13 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212045
+||sooplive.co.kr^$cookie=_au
+||sooplive.co.kr^$cookie=_ausa
+||sooplive.co.kr^$cookie=_ausb
+||sooplive.co.kr^$cookie=_au3rd
+||sooplive.co.kr^$cookie=AbroadChk
+||sooplive.co.kr^$cookie=AbroadVod
 ! miyoushe.com tracking
 $cookie=DEVICEFP,domain=mihoyo.com|hoyoverse.com
 $cookie=DEVICEFP_SEED_ID,domain=mihoyo.com|hoyoverse.com
@@ -118694,7 +118706,6 @@ d4?appid*type*
 ||sensors.snappea.com^
 ||analytics.snaptube.app^
 ||px.ucweb.com^
-||collector1.sooplive.co.kr^
 ||adtima-static.zadn.vn^
 ||akstat.io^
 ||chartbeat.net^
