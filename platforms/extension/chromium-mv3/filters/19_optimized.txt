@@ -1,8 +1,8 @@
-! Checksum: AkHVSoemqwQ5zWrzwvOLUQ
+! Checksum: 4T+4sVg4I2njycQ8//dCXg
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.61.16
-! TimeUpdated: 2025-08-28T05:07:57+00:00
+! Version: 2.0.61.17
+! TimeUpdated: 2025-08-28T09:08:21+00:00
 ! Expires: 10 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 [$path=/images]ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -39,6 +39,8 @@ turbopages.org#%#//scriptlet('json-prune', '*.blockId')
 [$path=/sport]yandex.*#%#//scriptlet('json-prune', 'rtb seatbid')
 [$path=/q]yandex.*#%#//scriptlet('json-prune', 'direct rtb')
 www.kinopoisk.ru#%#//scriptlet('set-constant', 'Object.prototype.renderToNode', 'undefined')
+www.kinopoisk.ru##div[class^="styles_fixed_"][class*="styles_"][data-tid]
+www.kinopoisk.ru##div[class^="toaster-container"]
 hd.kinopoisk.ru##.ReactModalPortal > div[class*=" styles_fixed__"]:has(> div > a[href$="/yandex-in-adblock.html"])
 kinopoisk.ru##div[class*="_adBlockWarningRoot__"]
 auto.ru#%#//scriptlet('json-prune', 'ads')
@@ -1497,6 +1499,7 @@ aol.com#@#.adwrap
 ||accounts.google.com/gsi/iframe/select?client_id=$domain=reddit.com
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+watch.corsflix.*#%#//scriptlet('set-local-storage-item', 'disclaimer-read', 'true')
 rgshows.me###event-popup
 fntv.watch#%#//scriptlet('set-local-storage-item', 'popupBlockerEnabled', 'false')
 fntv.watch#%#//scriptlet('set-local-storage-item', 'newVersion', 'true')

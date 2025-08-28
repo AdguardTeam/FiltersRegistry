@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 57jVD8M8ePu1JXhuT1Qpng
-! Diff-Path: ../patches/19/19-s-1756357909-3600.patch
+! Checksum: ebYWYTvOPvuisQx995EdTA
+! Diff-Path: ../patches/19/19-s-1756372336-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.61.16
-! TimeUpdated: 2025-08-28T05:07:57+00:00
+! Version: 2.0.61.17
+! TimeUpdated: 2025-08-28T09:08:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -92,6 +92,8 @@ turbopages.org##+js(json-prune, *.blockId)
 !
 ! Kinopoisk
 www.kinopoisk.ru##+js(set-constant, Object.prototype.renderToNode, undefined)
+www.kinopoisk.ru##div[class^="styles_fixed_"][class*="styles_"][data-tid]
+www.kinopoisk.ru##div[class^="toaster-container"]
 hd.kinopoisk.ru##.ReactModalPortal > div[class*=" styles_fixed__"]:has(> div > a[href$="/yandex-in-adblock.html"])
 kinopoisk.ru##div[class*="_adBlockWarningRoot__"]
 !
@@ -3053,6 +3055,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+watch.corsflix.*##+js(set-local-storage-item, disclaimer-read, true)
 rgshows.me###event-popup
 fntv.watch##+js(set-local-storage-item, popupBlockerEnabled, false)
 fntv.watch##+js(set-local-storage-item, newVersion, true)
