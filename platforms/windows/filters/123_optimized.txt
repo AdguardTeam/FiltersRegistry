@@ -1,9 +1,9 @@
-! Checksum: DNkcHxGRzUI94CKh1F7ikg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1756342359-14400.patch
+! Checksum: RpsKvciv083yyB4cdQ0pLg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1756356112-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.47.15
-! TimeUpdated: 2025-08-28T00:47:48+00:00
+! Version: 2.1.47.16
+! TimeUpdated: 2025-08-28T04:36:59+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -128,7 +128,6 @@
 /twitter-footer-
 /twitter-v2.png
 /twitter_footer.png
-/twitter_header.jpg
 /twitter_square.png
 /videojs-share.js
 /vk_button.png
@@ -212,6 +211,7 @@ _social_footer_
 ###facebook-popup
 ###facebook-share
 ###facebook-widget
+###facebookBox
 ###facebookFan
 ###facebookIcon
 ###facebookLike
@@ -222,7 +222,6 @@ _social_footer_
 ###facebook_like
 ###facebook_link
 ###facebook_overlay
-###facebook_plugin
 ###facebook_share
 ###facebookbtn
 ###facebooklike
@@ -426,7 +425,6 @@ _social_footer_
 ###shareLink
 ###shareLinks
 ###shareMenu
-###shareOverlay
 ###sharePage
 ###sharePageControl
 ###sharePinterest
@@ -560,7 +558,6 @@ _social_footer_
 ###social-yt
 ###social2
 ###socialBar
-###socialButton
 ###socialButtonOnPage
 ###socialButtons
 ###socialConnect
@@ -764,7 +761,6 @@ _social_footer_
 ##.Socials-root
 ##.StlyeSocial
 ##.Twitter-icon
-##.TwitterArea
 ##.TwitterButton
 ##.TwitterShareButton
 ##.a-icon-share-email
@@ -1137,7 +1133,6 @@ _social_footer_
 ##.detailShare
 ##.detail__social
 ##.details-share
-##.deu_share_top_container
 ##.div-share
 ##.divFooterSocial
 ##.dmSocialHub
@@ -1613,7 +1608,6 @@ _social_footer_
 ##.icon-circle-instagram
 ##.icon-circle-twitter
 ##.icon-circle-youtube
-##.icon-commu_share
 ##.icon-condividi
 ##.icon-connect
 ##.icon-dailymotion
@@ -1729,7 +1723,6 @@ _social_footer_
 ##.ipsShareButton
 ##.ipsfocus_sFacebook
 ##.ipsfocus_sTwitter
-##.ipsfocus_social
 ##.is-social
 ##.ishare
 ##.isocial
@@ -2193,7 +2186,6 @@ _social_footer_
 ##.sdc-site-share
 ##.search-social
 ##.secondaryNav-social
-##.section-follow
 ##.section-post-intro-share
 ##.section-social
 ##.section_footer-social-links
@@ -2323,7 +2315,6 @@ _social_footer_
 ##.share-link-facebook
 ##.share-link-twitter
 ##.share-linkedin
-##.share-links-footer
 ##.share-list
 ##.share-list-container
 ##.share-mail
@@ -2602,6 +2593,7 @@ _social_footer_
 ##.sharethis-button
 ##.sharethis-buttons
 ##.sharethis-container
+##.sharethis-hor
 ##.sharethis-inline-reaction-buttons
 ##.sharethis-inline-share-buttons
 ##.sharethis-wrapper
@@ -2719,7 +2711,6 @@ _social_footer_
 ##.sitewide-footer--social-nav
 ##.sitewide-social-media
 ##.slide_likebox
-##.smshare
 ##.sn-share
 ##.snapchat-share-button
 ##.sns-bar
@@ -3715,7 +3706,6 @@ nsctotal.com.br,pastebin.pl###socials
 motortrend.com###socialshare_title
 news.crunchbase.com###ss-sticky-bar
 jstage.jst.go.jp###sticky-sidebar-shareicons
-travelandtourworld.com###sticky-social-icons-container
 rfa.org###storytoptools
 techdirt.com###subscribe
 osxdaily.com###subscribe_box
@@ -3851,7 +3841,6 @@ techradar.com##.facebook-icon
 knowyourmeme.com##.fb-page-like-box
 dailymail.co.uk##.fbmessenger
 eadaily.com##.feed
-blogspot.com##.feed-share
 lubuntu.me##.ff-social-icon
 onegreenplanet.org##.fixed-ad
 blogs.amd.com##.fixed.icon-bar
@@ -3870,7 +3859,6 @@ metoffice.gov.uk##.follow-icons
 windowsreport.com##.follow-more-news
 metro.co.uk##.follow-promo
 alarabiya.net,ausgamers.com,cgtn.com,cloudwards.net,crypto.news,exitoina.perfil.com,magazine.artstation.com,mensxp.com,notateslaapp.com,republicworld.com,timeslive.co.za,trueachievements.com,truetrophies.com##.follow-us
-watchers.news##.follow-us-button
 rbth.com##.follows-channel
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
 trustedreviews.com##.footer-menu--icons
@@ -4164,9 +4152,11 @@ theatlantic.com##div[class^="ArticleShare_"]
 cnbc.com##div[class^="SocialShare-"]
 wired.com##div[class^="StickyBoxWrapper"]
 newsday.com##div[class^="share-tools"]
+thisismoney.co.uk##div[class^="socialContainer-"]
 technologyreview.com##div[class^="socialList_"]
 reuters.com##div[class^="social__container_"]
 abc.net.au##div[data-component="ShareUtility"]
+haaretz.com##div[data-test="shareBar"]
 contacto.lu,wort.lu##div[data-testid="article-social-shares"]
 thebanker.com##div[data-trackable-section="social-networks-widget"]
 rumble.com##div[data-type="share"]
@@ -4268,7 +4258,6 @@ arbys.com#?#[class^="linkBlocks_linkBlock__"]:-abp-has(> [class^="linkBlocks_soc
 relationshiphero.com#?#div:-abp-has(+ .socialIcons)
 viranomaisuutiset.fi#?#.wpb_wrapper.td_block_wrap:-abp-has(a[href^="https://whatsapp.com"])
 nova.bg##.subs-wrapper
-pctipp.ch###buttons-social
 freiewelt.net###single-page-article > aside
 freiewelt.net###socials-fokus
 finanzfrage.net,gutefrage.net##.Bigfoot-socialLinks

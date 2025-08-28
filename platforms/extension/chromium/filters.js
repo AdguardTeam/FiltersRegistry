@@ -866,8 +866,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.52.74",
-			"timeUpdated": "2025-08-28T00:47:28+0000",
+			"version": "2.1.52.75",
+			"timeUpdated": "2025-08-28T04:36:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -939,8 +939,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.54.20",
-			"timeUpdated": "2025-08-28T00:47:31+0000",
+			"version": "2.1.54.21",
+			"timeUpdated": "2025-08-28T04:36:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -991,8 +991,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.75.71",
-			"timeUpdated": "2025-08-28T00:47:32+0000",
+			"version": "2.1.75.72",
+			"timeUpdated": "2025-08-28T04:36:45+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1063,8 +1063,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.75.73",
-			"timeUpdated": "2025-08-28T00:47:34+0000",
+			"version": "2.1.75.74",
+			"timeUpdated": "2025-08-28T04:36:46+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -1138,8 +1138,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.75.72",
-			"timeUpdated": "2025-08-28T00:47:36+0000",
+			"version": "2.1.75.73",
+			"timeUpdated": "2025-08-28T04:36:47+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1166,8 +1166,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.75.71",
-			"timeUpdated": "2025-08-28T00:47:37+0000",
+			"version": "2.1.75.72",
+			"timeUpdated": "2025-08-28T04:36:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1216,8 +1216,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.49.81",
-			"timeUpdated": "2025-08-28T00:47:41+0000",
+			"version": "2.1.49.82",
+			"timeUpdated": "2025-08-28T04:36:51+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1313,8 +1313,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.53.2",
-			"timeUpdated": "2025-08-28T00:47:47+0000",
+			"version": "2.1.53.3",
+			"timeUpdated": "2025-08-28T04:36:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1337,8 +1337,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.47.15",
-			"timeUpdated": "2025-08-28T00:47:48+0000",
+			"version": "2.1.47.16",
+			"timeUpdated": "2025-08-28T04:36:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1361,8 +1361,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.47.46",
-			"timeUpdated": "2025-08-28T00:47:49+0000",
+			"version": "2.0.47.47",
+			"timeUpdated": "2025-08-28T04:36:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1483,8 +1483,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.75.72",
-			"timeUpdated": "2025-08-28T00:47:52+0000",
+			"version": "2.1.75.73",
+			"timeUpdated": "2025-08-28T04:37:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1527,8 +1527,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.74.97",
-			"timeUpdated": "2025-08-28T00:47:53+0000",
+			"version": "2.1.74.98",
+			"timeUpdated": "2025-08-28T04:37:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1548,8 +1548,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.38.54",
-			"timeUpdated": "2025-08-27T12:45:11+0000",
+			"version": "2.0.38.55",
+			"timeUpdated": "2025-08-28T04:37:03+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1717,8 +1717,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.16.37",
-			"timeUpdated": "2025-08-28T00:47:58+0000",
+			"version": "2.0.16.38",
+			"timeUpdated": "2025-08-28T04:37:08+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1791,8 +1791,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.75.73",
-			"timeUpdated": "2025-08-28T00:48:00+0000",
+			"version": "2.1.75.74",
+			"timeUpdated": "2025-08-28T04:37:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1990,8 +1990,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.12.85",
-			"timeUpdated": "2025-08-28T00:48:09+0000",
+			"version": "2.0.12.86",
+			"timeUpdated": "2025-08-28T04:37:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2014,8 +2014,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.58.74",
-			"timeUpdated": "2025-08-28T00:48:11+0000",
+			"version": "2.1.58.75",
+			"timeUpdated": "2025-08-28T04:37:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2034,8 +2034,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.22.59",
-			"timeUpdated": "2025-08-27T04:38:01+0000",
+			"version": "2.0.22.60",
+			"timeUpdated": "2025-08-28T04:37:23+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -2088,8 +2088,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.71.79",
-			"timeUpdated": "2025-08-28T00:48:13+0000",
+			"version": "2.1.71.80",
+			"timeUpdated": "2025-08-28T04:37:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2242,8 +2242,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.69.4",
-			"timeUpdated": "2025-08-28T00:48:23+0000",
+			"version": "2.0.69.5",
+			"timeUpdated": "2025-08-28T04:37:33+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
