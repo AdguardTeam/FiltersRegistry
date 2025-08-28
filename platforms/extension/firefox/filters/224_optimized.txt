@@ -1,9 +1,9 @@
-! Checksum: b6jS6BtEq30gPSqNSjfNFg
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1756401028-3600.patch
+! Checksum: ZB7eXhnj7+miEQcQwRQ3ag
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1756408226-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.42.84
-! TimeUpdated: 2025-08-28T17:06:55+00:00
+! Version: 2.1.42.85
+! TimeUpdated: 2025-08-28T19:06:50+00:00
 ! Expires: 10 days (update frequency)
 ||vernaellac.com^
 ||dkaktsb.icu^
@@ -2455,6 +2455,7 @@ netfly.*,netfly.tv##div[class*="tt-"] > a[target="_blank"] + span.tt-icon-close
 huaren.live#%#//scriptlet('set-constant', 'ConFig.config.ads', 'emptyObj')
 !+ NOT_PLATFORM(windows, mac, android)
 huaren.live#%#//scriptlet('trusted-replace-node-text', 'script', 'ConFig', 'let ConFig', 'var ConFig')
+bilibili.com##.container > .bili-feed-card:has(> div.bili-video-card  div.bili-video-card__info--no-interest + h3 > a[target="_blank"]:not([href^="https://www.bilibili.com/"]))
 bilibili.com#?#.recommended-container_floor-aside .container > div[class$="feed-card"]:has(div[style$="56.25%;"] > div[class]:matches-css(before, content: /AdGuard/))
 bilibili.com##.feed-card:has(> div.bili-feed-card > div > div > div.bili-video-card__no-interest + a[target="_blank"]:not([href^="https://www.bilibili.com/"]))
 bilibili.com#$?#.feed-card:has(> div.bili-feed-card > div.shortcut-bg:empty ~ div.bili-video-card[style*="display: none !important;"]) { remove: true; }
