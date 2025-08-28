@@ -1,5 +1,5 @@
-! Checksum: DcjQxux8BmVX2gzgsKFdhg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1756314671-3600.patch
+! Checksum: Xxj3UZKc5Dl0Tn+rUAlARg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1756348739-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.54.9
@@ -1049,7 +1049,6 @@ blocket.se#@#a[href*="?ad_id="]
 dubizzle.com#@#div[data-ad-id]
 serieslatinoamerica.tv#@#a[href*="/redirect?tid="]
 @@||ajax.cloudflare.com/cdn-cgi/scripts/*/cloudflare-static/mirage2.min.js$domain=extreme-down.tv
-@@||aliexpress.com^$popup,domain=forum.hardware.fr
 $subdocument,third-party,domain=alltube.tv,badfilter
 @@||vidsrc.me/*.js$~third-party
 $image,third-party,domain=vidsrc.me,badfilter
@@ -1603,6 +1602,7 @@ _pub.gif
 _publicite.
 _publicite_
 _smads_
+_smartclick.js
 _square_ads.
 _werbebanner_
 /wp-content/banners/*$third-party
@@ -1749,7 +1749,6 @@ _build=iclick-$popup
 ||best-deals-products.com^$third-party
 ||bestcontentwork.top^$third-party
 ||betterbannerscloud.com^$third-party
-||bionestraff.pro^$third-party
 ||broadcast.pm^$third-party
 ||calexito.com^$third-party
 ||camsoda.com^$third-party
@@ -2218,6 +2217,7 @@ _build=iclick-$popup
 ||ckdxbragemqum.com^
 ||classisclawers.com^
 ||clawersatonic.shop^
+||climbingsmuggle.com^
 ||cliv2508.com^
 ||cloramed.shop^
 ||clottedpowerlessmade.com^
@@ -2302,6 +2302,7 @@ _build=iclick-$popup
 ||detectdinner.com^
 ||developlibeled.shop^
 ||devourstrilium.com^
+||dibrachndoderm.com^
 ||dicesstipo.com^
 ||didspack.com^
 ||difficultfog.com^
@@ -2470,7 +2471,6 @@ _build=iclick-$popup
 ||fuzeeretells.com^
 ||fznpq.com^
 ||g9qnk89pd5ic.com^
-||gagepicaras.com^
 ||gambieralgedi.shop^
 ||gamecarwash.com^
 ||gangavahusky.com^
@@ -3376,7 +3376,6 @@ _build=iclick-$popup
 ||oopt.fr^$popup,third-party
 ||passion.com^$popup
 ||porncrash.com^$popup,third-party
-||redlightcenter.com^$popup,third-party
 ||revsharecash.com^$popup,third-party
 ||schjmp.com^$popup
 ||sersh.com^$popup,third-party
@@ -3917,6 +3916,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||tiplanet.org/forum/images/navbar-sprite.gif
 ||tlemcen-electronic.com/forum/vf.gif
 ||top-for-phone.fr/imgs/
+||toutcash.com/images/bandeau-
 ||trovit.*/index.php/cod.get_premium/$xmlhttprequest
 ||trovitargentina.*/index.php/cod.get_premium/
 ||trucsweb.com^*/ban_$image
@@ -3931,7 +3931,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||viamichelin.*/img/partners/
 ||vidmoly.to/static/vastAD.js
 ||vosfemmes.com^$script,subdocument
-||vulgarisation-informatique.com/upload/partenariat/
 ||weshrak.com^*/imp.php?
 ||weshrak.com^*/pub.php?
 ||wiflix-*/voir/
@@ -4155,7 +4154,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub_728x90
 ###pub_728x90-1
 ###pub_728x90-2
-###pub_banner
 ###pub_banniere_basse
 ###pub_banniere_haute
 ###pub_bas
@@ -4737,6 +4735,7 @@ clubpoker.net###bannerTopWrapper
 lacanausurfinfo.com###banner_footer
 tirage-gagnant.com###banner_promo
 cowcotland.com###bannertop
+toutcash.com###banniere_top
 tetesaclaques.tv###bigBox
 gratuiciel.com,logitheque.com###bloc-droite-bas-250-250
 ouest-france.fr###bloc_partenaires_sport
@@ -4851,7 +4850,6 @@ rtl.be###w-leaderboard
 pons.com###widget_difusion
 wix.com###wixFooter
 wix.com###wixfooter
-frequence-radio.com###wrap_pub_listing
 cnews.fr###wrapper-banner
 casatv.ca###wrapperbanner
 lequipe.fr##.AmPlaceholder
@@ -5065,6 +5063,7 @@ auto-utilitaire.com,mobilealgerie.com##.td-header-sp-recs
 lexpress.fr##.teads__block
 ecranlarge.com##.top-banner
 jeretiens.net##.top-bar
+meilleurmobile.com##.topListingSp
 lefigaro.fr##.tvm-reagir__pub
 topito.com##.type-shopping
 autonews.fr##.uptogo
@@ -5109,7 +5108,6 @@ toutvendre.fr##[href*=".kelkoogroup.net/"]
 filecrypt.cc,filecrypt.co##[href^="javascript:"]
 fnac.com##[id$="-sponsored_products-0"]
 voyageforum.com##[id*="billboardArround"]
-comarketing-news.fr##[id^="comar-"]
 3dnatives.com##[id^="dnati-"]
 jeuxvideomoinschers.fr,tahiti-infos.com##[id^="pub_"]
 moneyvox.fr##[mam-campaign="Ban"]
@@ -5250,7 +5248,6 @@ auchan.fr##article.product-thumbnail:has(.product-thumbnail__sponsored)
 cdiscount.com#?#.o-block:-abp-has(.o-block__content:-abp-has(.c-sponsoredMentions))
 cdiscount.com#?#li:-abp-has(.prdtBlocInline:-abp-has(.c-sponsoredMentions))
 cdiscount.com#?#li[data-sku]:-abp-has(.c-sponsoredMentions)
-delhaize.be#?#.product-item:-abp-contains(Sponsorisé)
 distrowatch.com#?#.News1:-abp-has(td:-abp-contains(Sponsored))
 gameblog.fr#?#.highlight-item:-abp-has(.word-wrapper:-abp-contains(sponso))
 gameblog.fr#?#.item.full.gameblog:-abp-has(.post-details:-abp-contains(sponsorisé))
