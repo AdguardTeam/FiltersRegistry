@@ -1,9 +1,9 @@
-! Checksum: YuIZhAxao24DzxLgy3XcXA
-! Diff-Path: ../patches/227/227-s-1756342336-14400.patch
+! Checksum: BZIazY5ZHBeHh9kOSsuEWQ
+! Diff-Path: ../patches/227/227-s-1756370597-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.22.68
-! TimeUpdated: 2025-08-28T00:47:59+00:00
+! Version: 2.0.22.69
+! TimeUpdated: 2025-08-28T08:38:45+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: List-KR for AdGuard
@@ -543,6 +543,7 @@
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
 !
+||static.sooplive.co.kr/asset/service/da/AdParameter.js
 ||prod.danawa.com/list/ajax/getAdSmartProductList.ajax.php
 ||img.danawa.com/ui_category/topBanner/
 ||ssl.pstatic.net/t.static.blog/mylog/versioning/SspAdPost-
@@ -2591,7 +2592,7 @@ edufindkorea.com###body_wrap > #body_main > div[style]:nth-child(2)
 junggi.co.kr##img[src^="/data/__banner/"]
 junggi.co.kr##img[src^="/image/banner/"]
 danawa.com##.main__grid.main__grid--line .main__grid__right
-dpg.danawa.com##div[id*="-ad-"]
+kookje.co.kr,dpg.danawa.com##div[id*="-ad-"]
 maxmovie.com,dcnewsj.joins.com,news.heraldcorp.com,biz.chosun.com,place.naver.com,styleup.gameangel.com,wowtv.co.kr,news.naver.com##div[id*="_ad_"]
 thelec.kr##div[onclick^="wcs.event("]
 m.starnewskorea.com###content > div[style^="background:"][class]
@@ -3513,7 +3514,7 @@ m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html',
 ! m.fmkorea.com
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 !
-m.place.naver.com#%#//scriptlet('json-prune', '[].data.poiRecommendations.recommendations.[].items.[-].adClickLog.clickUrl')
+pcmap.place.naver.com,m.place.naver.com#%#//scriptlet('json-prune', '[].data.poiRecommendations.recommendations.[].items.[-].adClickLog.clickUrl')
 platformgreat.kr#%#//scriptlet('set-constant', 'commonTrailer', 'undefined')
 kilho.net#%#//scriptlet('abort-current-inline-script', 'jQuery', '.adsbygoogle')
 mplay.mk.co.kr#%#//scriptlet('prevent-xhr', 'ad.smartmediarep.com/NetInsight/video/smr', 'length:300')
