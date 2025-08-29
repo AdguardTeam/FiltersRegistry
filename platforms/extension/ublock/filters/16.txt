@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: uaG9fii55IrxPei6/rcV7Q
-! Diff-Path: ../patches/16/16-s-1756314660-3600.patch
+! Checksum: Wg22Jdwnfv4Uk42tdUE2Sw
+! Diff-Path: ../patches/16/16-s-1756444275-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.9
-! TimeUpdated: 2025-08-27T17:07:01+00:00
+! Version: 2.0.54.10
+! TimeUpdated: 2025-08-29T05:07:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -151,6 +151,9 @@ air-journal.fr##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! systemed.fr
 systemed.fr##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169025
+cyclismactu.net##div[id^="messageTOP"]
+cyclismactu.net##+js(no-setTimeout-if, isAdblock)
+cyclismactu.net##+js(addEventListener-defuser, DOMContentLoaded, isAdblock)
 cyclismactu.net##+js(addEventListener-defuser, load, isAdblock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168555
 rmcbfmplay.com##+js(no-fetch-if, /www3\.doubleclick\.net|tagger\.opecloud\.com|fwmrm\.net/, emptyArr)
@@ -815,6 +818,8 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+cyclismactu.net#$#.stickySidePClong { min-height: auto !important; }
+cyclismactu.net#$#div[id^="ad-slot"] { display: none !important; }
 latribune.fr##div[id*="-ban"]
 bebesetmamans.20minutes.fr##.bannerdesktop
 bebesetmamans.20minutes.fr##.custombannerads

@@ -1,9 +1,9 @@
-! Checksum: nKTiFYpv+4UEkvMbDMpvGA
-! Diff-Path: ../patches/16/16-s-1756314656-3600.patch
+! Checksum: tq9+ps81dVerQBMxtdpAvg
+! Diff-Path: ../patches/16/16-s-1756444273-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.9
-! TimeUpdated: 2025-08-27T17:07:01+00:00
+! Version: 2.0.54.10
+! TimeUpdated: 2025-08-29T05:07:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -169,7 +169,12 @@ systemed.fr#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=systemed.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169025
+cyclismactu.net##div[id^="messageTOP"]
+cyclismactu.net#%#//scriptlet('prevent-setTimeout', 'isAdblock')
+cyclismactu.net#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'isAdblock')
 cyclismactu.net#%#//scriptlet('prevent-addEventListener', 'load', 'isAdblock')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=cyclismactu.net
 ! https://github.com/AdguardTeam/AdguardFilters/issues/168555
 rmcbfmplay.com#%#//scriptlet('prevent-fetch', '/www3\.doubleclick\.net|tagger\.opecloud\.com|fwmrm\.net/', 'emptyArr')
 !#safari_cb_affinity(general,privacy)
@@ -926,6 +931,8 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+cyclismactu.net#$#.stickySidePClong { min-height: auto !important; }
+cyclismactu.net#$#div[id^="ad-slot"] { display: none !important; }
 latribune.fr##div[id*="-ban"]
 bebesetmamans.20minutes.fr##.bannerdesktop
 bebesetmamans.20minutes.fr##.custombannerads
