@@ -1,9 +1,9 @@
-! Checksum: vWgDTERdE5Smp5OIqOkNlw
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1756455180-3600.patch
+! Checksum: aNP+LsEmsekX03A03hPl5w
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1756465838-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.19
-! TimeUpdated: 2025-08-29T08:09:01+00:00
+! Version: 2.0.59.20
+! TimeUpdated: 2025-08-29T11:06:40+00:00
 ! Expires: 12 hours (update frequency)
 ||azelvid.com^
 ||polatads.com^
@@ -666,6 +666,9 @@ fullfilmizlebaba.com,superfilmgeldi.biz,vkfilmizlet.*,supernaturalizle.com,sinem
 hdfilmizlesen.com,filmizlehdizle.com,yabancidiziizlesene.*,1080hdfilmizle.com#%#//scriptlet("abort-on-property-read", "initPop")
 shirl.club,altporno.xyz#%#//scriptlet("abort-on-property-read", "oV1")
 agarz.com#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,c){if(!/RTCPeerConnection[\s\S]*?new MouseEvent\("click"/.test(a.toString()))return b(a,c)};})();
+sporx.com#%#//scriptlet('set-constant', 'Object.prototype.isAdMonetizationDisabled', 'true')
+!+ NOT_PLATFORM(ext_ff)
+sporx.com#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{"function"==typeof load_3rdparties&&load_3rdparties()}));})();
 hdfilmizlesen.com#%#//scriptlet('trusted-replace-node-text', 'script', 'ads_start', 'ads_start:0', 'ads_start:5')
 dizigom1.tv#%#//scriptlet('prevent-setTimeout', '/img[\s\S]*?\.gif/')
 dizigom1.tv#%#//scriptlet('abort-current-inline-script', 'document.write', '_blank')
@@ -1011,6 +1014,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 /service/advertchannels?$domain=kocaelifikir.com|anayurtgazetesi.com|medyaankara.com|ozgunkocaeli.com.tr|urfanatik.com|dirilispostasi.com|turkuazgazetesi.net|yenialanya.com|bugunkocaeli.com.tr|cagdaskocaeli.com.tr|mansetaydin.com|enkocaeli.com|kocaelikoz.com|kocaelibarisgazetesi.com|seskocaeli.com|sigortahaber.com
 /service/advertchannels?$xmlhttprequest,redirect=nooptext,domain=mardinhaber.com.tr|gidahatti.com|bolugundem.com
 dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdaskocaeli.com.tr,mansetaydin.com,seskocaeli.com,kocaelibarisgazetesi.com,kocaelikoz.com,enkocaeli.com##.block-pano > div.us
+||cdn.sporx.com/_js/prbd_*.js
 kamudanhaber.net#$?#div[id^="ad_"] { remove: true; }
 yesilkartforum.com##div[data-widget-area="header"] > a[href]:has(> img[class^="reklam"])
 ||haberantalya.com/images/money/
@@ -5560,6 +5564,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_turkish
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+@@||cdn.membrana.media/video/$domain=sporx.com
+@@||cdn.membrana.media/spx/ym.js$domain=sporx.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=sporx.com
+||cdn.membrana.media/pub_scripts/common/videojs/videojs.ima.mod.min.js$script,redirect=google-ima3,domain=sporx.com
 agendazdsp.blogspot.com,agendazd.blogspot.com#@#div[id^="floatLayer"]
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=memurlar.net
 roketdizi.*#@#div[id^="gpt_ad_"]

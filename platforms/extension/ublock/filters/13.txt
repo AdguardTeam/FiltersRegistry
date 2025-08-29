@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iGYKzLhDNiHFX3r96PWjgA
-! Diff-Path: ../patches/13/13-s-1756455173-3600.patch
+! Checksum: 27PgzWh0liIRnwrqk0Xw0g
+! Diff-Path: ../patches/13/13-s-1756465831-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.19
-! TimeUpdated: 2025-08-29T08:09:01+00:00
+! Version: 2.0.59.20
+! TimeUpdated: 2025-08-29T11:06:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -909,6 +909,9 @@ shirl.club,altporno.xyz##+js(abort-on-property-read, oV1)
 ! END: Clickunders
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212391
+sporx.com##+js(set-constant, Object.prototype.isAdMonetizationDisabled, true)
+!+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208289
 ! https://github.com/AdguardTeam/AdguardFilters/issues/177389
 dizigom1.tv##+js(no-setTimeout-if, /img[\s\S]*?\.gif/)
@@ -1493,6 +1496,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+||cdn.sporx.com/_js/prbd_*.js
 kamudanhaber.net#$?#div[id^="ad_"] { remove: true; }
 yesilkartforum.com##div[data-widget-area="header"] > a[href]:has(> img[class^="reklam"])
 ||haberantalya.com/images/money/
@@ -6224,6 +6228,11 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_turkish
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212391
+@@||cdn.membrana.media/video/$domain=sporx.com
+@@||cdn.membrana.media/spx/ym.js$domain=sporx.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=sporx.com
+||cdn.membrana.media/pub_scripts/common/videojs/videojs.ima.mod.min.js$script,redirect=google-ima.js,domain=sporx.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211568
 agendazdsp.blogspot.com,agendazd.blogspot.com#@#div[id^="floatLayer"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210814
