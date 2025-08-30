@@ -1,9 +1,9 @@
-! Checksum: TRcgmR8Sn1DaG9Py7GX7vg
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1756537838-3600.patch
+! Checksum: WeZvfUhGMMEjDd8uM10H8Q
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1756541509-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.68.16
-! TimeUpdated: 2025-08-30T07:06:37+00:00
+! Version: 2.0.68.17
+! TimeUpdated: 2025-08-30T08:07:51+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||lucky-website.com^$all
@@ -1425,6 +1425,9 @@ city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,c
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+copysoku.com###ad_rs + div[align="center"]
+copysoku.com##a[href^="https://fam-ad.com/ad/p/r"]
+matometa-antenna.com##ins.box
 nwknews.jp##div[class^="article-body"] > div[class="t_h"] > div:has(> b > span[style="font-size: 125%;"])
 nwknews.jp##div[class^="article-body"] > div[class="t_h"] > div:has(> b > span[style="font-size: 125%;"]) + div > iframe[src^="https://richlink.blogsys.jp/embed/"]
 ||burusoku-vip.com/js/common.js
@@ -1735,7 +1738,7 @@ okinilove.com##a[href^="https://fuzoku.sod.co.jp/danin-recruit?utm_"][target="_b
 okinilove.com##div[class$="_outline"]:has(> div > div.plugin-freearea > center > div.sample_block)
 okinilove.com##div[class$="_outline"]:has(> div > div.plugin-freearea > script[src^="https://adm.shinobi.jp"])
 manabitimes.jp##.min-h-\[280px\]
-||richlink.blogsys.jp/embed/f5c8e32e-0d80-3de4-9874-bb994a143d82$domain=nwknews.jp
+||richlink.blogsys.jp^$domain=nwknews.jp
 nwknews.jp##div[class^="article-body"] > span[style="font-size: medium;"] > div:not([class])
 nwknews.jp##.kijinakakoukoku
 nwknews.jp##div[class^="article-body"] > div.t_h > b > span[style="font-size: 125%;"]
@@ -10592,7 +10595,7 @@ maidonanews.jp#$?#.module-list-articles__item[style="padding:0px"] { remove: tru
 maidonanews.jp#?#.module-ad:has(> div.module-ad__item > div[id^="mn"])
 games.app-liv.jp#?#.special_newarticle_list > li:has(> div.adsbygoogle_area)
 myoji-yurai.net#?#.spSideNone:has(> li > div.app_icon)
-sutekinakijo.com,crx7601.com#?#.plugin-memo:has(> div.side > div.AMvertical)
+copysoku.com,sutekinakijo.com,crx7601.com##.plugin-memo:has(> div.side > div.AMvertical)
 pref.shimane.lg.jp#?##wrapper > .box-content > .inner > .box-other.t1:has(> .title:contains(企業広告))
 northwood.blog.fc2.com#?##menu2Block > div.menuBlockBase:has(> div.menuBlockBody a[href^="https://click.linksynergy.com/"])
 coron.tech#?#.col-sm-4 > [id]:first-child:has(> ins.adsbygoogle)
@@ -11128,6 +11131,8 @@ itest.5ch.net##.ranking > div[style^="height: 320px;"]
 itest.5ch.net,itest.bbspink.com##.res_ad
 itest.5ch.net,itest.bbspink.com##div[class^="sproutad_"]
 itest.5ch.net,itest.bbspink.com##[class*="js-ads-content-top_"]
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+||googlevideo.com/videoplayback/*/source/dclk_video_ads?*&ctier=L&$domain=sports.tv.rakuten.co.jp
 automaton-media.com#$?##custom-background-css { remove: true; }
 ||automaton-media.com/wp-content/uploads/*_automaton_banner.jpg
 service.webgoto.net##a[href^="https://www.amazon.co.jp"][target="_blank"]
