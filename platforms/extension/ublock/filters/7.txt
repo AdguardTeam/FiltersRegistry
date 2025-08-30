@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: RJuaS6rSmnZRmNIyvMQbrQ
-! Diff-Path: ../patches/7/7-s-1756483942-3600.patch
+! Checksum: 8swXTDdq03C5lKrICUgglg
+! Diff-Path: ../patches/7/7-s-1756537840-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.68.15
-! TimeUpdated: 2025-08-29T16:08:03+00:00
+! Version: 2.0.68.16
+! TimeUpdated: 2025-08-30T07:06:37+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1024,8 +1024,10 @@ kyukyoku-matome.com##.widget_pc_ad
 !-------JS----------
 !-------------------
 !
-! https://itest.bbspink.com/
-itest.bbspink.com#$#.footer-with-ad { padding-bottom: 10px !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/211472
+sports.tv.rakuten.co.jp##+js(json-prune, ads)
+sports.tv.rakuten.co.jp##+js(json-prune, result.ad_info)
+sports.tv.rakuten.co.jp##+js(json-prune, result.paths.[].ad_info)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180461
 akibablog.blog.jp##+js(abort-current-script, document.write, sitejack)
 ! Leftover
@@ -1154,6 +1156,8 @@ cmnw.jp##+js(set-constant, sec, 0)
 !-------CSS---------
 !-------------------
 !
+! https://itest.bbspink.com/
+itest.bbspink.com#$#.footer-with-ad { padding-bottom: 10px !important; }
 ! https://github.com/tofukko/filter/issues/96
 nlab.itmedia.co.jp#$##globalHeader { min-height: 0 !important; margin: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/112640
@@ -12056,3 +12060,7 @@ arukikata.co.jp#@#.ad_btn
 25news.jp,xn--0et88ccz6awh1a.biz#@#.has-ad
 cotoro.net,favoriteslibrary-books.com,hakenreco.com,shellbys.com,tipstour.net#@#.bottom_ad
 920ryu.blog.fc2.com#@##scroll_ad
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/212358
+!+ NOT_OPTIMIZED
+@@||h1g.jp/img/ad/ad_heigu.html$~third-party

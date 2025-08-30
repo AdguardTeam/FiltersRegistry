@@ -1,9 +1,9 @@
-! Checksum: dewdBUpXIJHmOyb9MrMh/Q
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1756483917-3600.patch
+! Checksum: OjveHSPd4M43cljheGVBjg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1756537827-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.68.15
-! TimeUpdated: 2025-08-29T16:08:03+00:00
+! Version: 2.0.68.16
+! TimeUpdated: 2025-08-30T07:06:37+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||lucky-website.com^$all
@@ -835,7 +835,9 @@ kyukyoku-matome.com##.widget_pc_ad
 ##.t_b ~ div > a[href^="https://www.amazon.co.jp"]
 ##.textwidget a[href^="https://pcmax.jp/lp/?ad_id="] > img
 ##.widget_custom_html > .custom-html-widget > a[href^="https://www.e-nls.com/access.php"]
-itest.bbspink.com#$#.footer-with-ad { padding-bottom: 10px !important; }
+sports.tv.rakuten.co.jp#%#//scriptlet('json-prune', 'ads')
+sports.tv.rakuten.co.jp#%#//scriptlet('json-prune', 'result.ad_info')
+sports.tv.rakuten.co.jp#%#//scriptlet('json-prune', 'result.paths.[].ad_info')
 akibablog.blog.jp#%#//scriptlet('abort-current-inline-script', 'document.write', 'sitejack')
 kasegeru.blog.jp#%#//scriptlet('remove-node-text', '#text', '/スポンサードリンク：?|楽天広告：/')
 blog.livedoor.jp#%#//scriptlet('remove-node-text', 'script', 'selectRandomProduct')
@@ -903,6 +905,7 @@ ponta.abstractpainting.work#%#//scriptlet('set-constant', 'NEXT_DELAY', '0')
 dotti2.jp,pochitto2.jp#%#//scriptlet("set-constant", "sec", "0")
 gotouchi.jp#%#//scriptlet("set-constant", "sec", "0")
 cmnw.jp#%#//scriptlet("set-constant", "sec", "0")
+itest.bbspink.com#$#.footer-with-ad { padding-bottom: 10px !important; }
 nlab.itmedia.co.jp#$##globalHeader { min-height: 0 !important; margin: 0 !important; }
 eromovie-s.com#$#.movie-watch { display: block !important; }
 2game.info#$#.sponsored-loop300x250 { position: absolute !important; left: -4000px !important; }
@@ -11416,3 +11419,5 @@ arukikata.co.jp#@#.ad_btn
 25news.jp,xn--0et88ccz6awh1a.biz#@#.has-ad
 cotoro.net,favoriteslibrary-books.com,hakenreco.com,shellbys.com,tipstour.net#@#.bottom_ad
 920ryu.blog.fc2.com#@##scroll_ad
+!+ NOT_OPTIMIZED
+@@||h1g.jp/img/ad/ad_heigu.html$~third-party

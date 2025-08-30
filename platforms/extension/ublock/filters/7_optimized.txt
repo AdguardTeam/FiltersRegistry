@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XpIcX+2WefhjsGmfgSDZZw
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1756483943-3600.patch
+! Checksum: ukuhAN00ns9GfvjkKtXdnQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1756537840-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.68.15
-! TimeUpdated: 2025-08-29T16:08:03+00:00
+! Version: 2.0.68.16
+! TimeUpdated: 2025-08-30T07:06:37+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||lucky-website.com^$all
@@ -833,7 +833,9 @@ kyukyoku-matome.com##.widget_pc_ad
 *##._popIn_recommend_article_ad_reserved
 *##div[id^="active_overlay"]
 *##div[id^="JP_"][style]
-itest.bbspink.com#$#.footer-with-ad { padding-bottom: 10px !important; }
+sports.tv.rakuten.co.jp##+js(json-prune, ads)
+sports.tv.rakuten.co.jp##+js(json-prune, result.ad_info)
+sports.tv.rakuten.co.jp##+js(json-prune, result.paths.[].ad_info)
 akibablog.blog.jp##+js(abort-current-script, document.write, sitejack)
 kasegeru.blog.jp##+js(remove-node-text, #text, /スポンサードリンク：?|楽天広告：/)
 blog.livedoor.jp##+js(remove-node-text, script, selectRandomProduct)
@@ -898,6 +900,7 @@ ponta.abstractpainting.work##+js(set-constant, NEXT_DELAY, 0)
 dotti2.jp,pochitto2.jp##+js(set-constant, sec, 0)
 gotouchi.jp##+js(set-constant, sec, 0)
 cmnw.jp##+js(set-constant, sec, 0)
+itest.bbspink.com#$#.footer-with-ad { padding-bottom: 10px !important; }
 nlab.itmedia.co.jp#$##globalHeader { min-height: 0 !important; margin: 0 !important; }
 eromovie-s.com#$#.movie-watch { display: block !important; }
 2game.info#$#.sponsored-loop300x250 { position: absolute !important; left: -4000px !important; }
@@ -11418,3 +11421,5 @@ arukikata.co.jp#@#.ad_btn
 25news.jp,xn--0et88ccz6awh1a.biz#@#.has-ad
 cotoro.net,favoriteslibrary-books.com,hakenreco.com,shellbys.com,tipstour.net#@#.bottom_ad
 920ryu.blog.fc2.com#@##scroll_ad
+!+ NOT_OPTIMIZED
+@@||h1g.jp/img/ad/ad_heigu.html$~third-party
