@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: z0p4Hjw+gBGdJE06chMZgw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1756601550-14400.patch
+! Checksum: fKELkDVTBm0wFovxQENXuQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1756615255-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.47.33
-! TimeUpdated: 2025-08-31T00:47:54+00:00
+! Version: 2.1.47.34
+! TimeUpdated: 2025-08-31T04:36:17+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -130,6 +130,7 @@
 /twitter-follow-
 /twitter-footer-
 /twitter-v2.png
+/twitter_follow.png
 /twitter_footer.png
 /twitter_square.png
 /videojs-share.js
@@ -202,7 +203,6 @@ _social_footer_
 ###dcssb-twitter
 ###details-share-icon-link
 ###divSideShare
-###divSocial
 ###embed-share
 ###et-post-share
 ###et-social-icons
@@ -560,6 +560,7 @@ _social_footer_
 ###social-yt
 ###social2
 ###socialBar
+###socialButton
 ###socialButtonOnPage
 ###socialButtons
 ###socialConnect
@@ -583,6 +584,7 @@ _social_footer_
 ###socialNetworks
 ###socialShare
 ###socialSharing
+###socialTop
 ###socialTwitter
 ###socialWidgets
 ###socialWrap
@@ -906,6 +908,7 @@ _social_footer_
 ##.article_social
 ##.article_social_wrap
 ##.articlesharebox
+##.aside-social
 ##.aside-socials
 ##.asocial-area
 ##.aspexifblikebox
@@ -1134,6 +1137,7 @@ _social_footer_
 ##.details-share
 ##.div-share
 ##.divFooterSocial
+##.div_share
 ##.dmSocialHub
 ##.document-share
 ##.dp-share
@@ -1521,10 +1525,6 @@ _social_footer_
 ##.gridlove-share-wrapper
 ##.gridlove-soc-menu
 ##.gs-share
-##.gtm-clipboard-share-button
-##.gtm-email-share-button
-##.gtm-facebook-share-button
-##.gtm-twitter-share-button
 ##.gtm_footer_facebook
 ##.gtm_footer_instagram
 ##.gtm_footer_twitter
@@ -1604,7 +1604,6 @@ _social_footer_
 ##.icon--linkedin
 ##.icon--pinterest
 ##.icon--share
-##.icon--snapchat
 ##.icon--twitter
 ##.icon--youtube
 ##.icon-circle-facebook
@@ -1725,6 +1724,7 @@ _social_footer_
 ##.ipsShareButton
 ##.ipsfocus_sFacebook
 ##.ipsfocus_sTwitter
+##.ipsfocus_social
 ##.is-social
 ##.ishare
 ##.isocial
@@ -1891,7 +1891,6 @@ _social_footer_
 ##.media-share-button
 ##.mediaShare
 ##.mejs-share-button
-##.menu--footer-social
 ##.menu--social-media
 ##.menu-article-share
 ##.menu-footer-social
@@ -2240,6 +2239,7 @@ _social_footer_
 ##.share-body
 ##.share-bottom
 ##.share-box-wrapper
+##.share-bsky
 ##.share-btn
 ##.share-btn-container
 ##.share-btns
@@ -2268,6 +2268,7 @@ _social_footer_
 ##.share-data
 ##.share-desktop
 ##.share-dropdown
+##.share-element
 ##.share-elements
 ##.share-email
 ##.share-entry
@@ -2491,7 +2492,6 @@ _social_footer_
 ##.share_btns
 ##.share_bubble
 ##.share_button
-##.share_button_container
 ##.share_buttons
 ##.share_buttons_container
 ##.share_center
@@ -2815,6 +2815,8 @@ _social_footer_
 ##.social-fixed
 ##.social-follow
 ##.social-follow-bar
+##.social-follow-item
+##.social-follow-list
 ##.social-foot
 ##.social-footer
 ##.social-footer-block
@@ -2822,6 +2824,7 @@ _social_footer_
 ##.social-footer-wrap
 ##.social-head
 ##.social-header
+##.social-height
 ##.social-home
 ##.social-horizontal
 ##.social-icon-ar
@@ -2874,7 +2877,6 @@ _social_footer_
 ##.social-list-icon
 ##.social-main-footer
 ##.social-media-bar
-##.social-media-column
 ##.social-media-footer
 ##.social-media-header
 ##.social-media-li
@@ -3455,6 +3457,7 @@ _social_footer_
 ##.widget_twitter_timeline
 ##.widget_vw_widget_social_counter
 ##.widget_wpcom_social_media_icons_widget
+##.widget_wpgrade_social_links
 ##.wp-block-ione-share-button
 ##.wp-block-social-links
 ##.wp-embed-share
@@ -3622,6 +3625,7 @@ _social_footer_
 ||line-apps.com^*/thirdparty/$third-party
 ||line.me/js/line-button.js?$third-party
 ||linkedin.com/countserv/$third-party
+||meebo.com^$third-party
 ||messengerpeople.com^$third-party
 ||milotree.com^$third-party
 ||newsharecounts.com^$third-party
@@ -3882,6 +3886,7 @@ indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,alaskahighwaynews.ca,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,burnabynow.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,fitzhugh.ca,flamboroughtoday.com,griceconnect.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,mountainviewtoday.ca,newmarkettoday.ca,newwestrecord.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,ontarioflyers.ca,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,theorca.ca,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,tricitynews.com,vancouverisawesome.com,westernwheel.ca##.ft-social
+clinicaltrialsarena.com,just-food.com##.gdm-article-actions
 techloy.com,thepickool.com,therage.co,wionews.com##.gh-post-page__share
 ghacks.net##.ghacks_share_widget
 avaaz.org##.global-footer-connect
@@ -4074,6 +4079,7 @@ arnnet.com.au,csoonline.com,infoworld.com,networkworld.com##.social-share-sticky
 edition.cnn.com##.social-share_labelled-list__share-links
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
+mmorpg.com##.social-web
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
 macrumors.com##.socialMedia--3i9tSnAb
 jetphotos.com##.social__link--share
