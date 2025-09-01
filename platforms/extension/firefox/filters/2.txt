@@ -1,9 +1,9 @@
-! Checksum: RpT3QFn6sle8rh2fAoA3bg
-! Diff-Path: ../patches/2/2-s-1756743091-3600.patch
+! Checksum: mE4OrUPtzoiyRxnV9bkj8w
+! Diff-Path: ../patches/2/2-s-1756746651-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.7.64
-! TimeUpdated: 2025-09-01T16:07:36+00:00
+! Version: 2.4.7.65
+! TimeUpdated: 2025-09-01T17:06:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -31725,9 +31725,12 @@ mangakita.net,westmanga.*#%#//scriptlet('set-constant', 'puShown1', 'true')
 primevideo.com#%#//scriptlet('json-prune', 'cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints')
 ! when applied to every page it breaks ability to open next page in search (at least on amazon.de)
 [$path=/gp/video]amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('json-prune', 'cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints')
-!+ NOT_PLATFORM(ext_ublock)
-primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[@value="Ad"]] | //*[name()="Period"]/@start)', '[value="Ad"]', '.mpd')
+primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]] | /*[name()="MPD"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]]/@mediaPresentationDuration | /*[name()="MPD"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]]/*[name()="Period"]/@start)', '', '.mpd')
+primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[@value="Draper"]] | /*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"]/@start)', '[value="Draper"]', '.mpd')
+primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[@value="Ad"]] | /*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"]/@start)', '[value="Ad"]', '.mpd')
 ! aglint-disable invalid-modifiers
+/GetPlaybackResources?$xmlhttprequest,removeparam=deviceAdInsertionTypeOverride,domain=amazon.com|amazon.co.jp|amazon.de|amazon.co.uk|primevideo.com
+primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#((e,t)=>{const p={apply:(p,o,n)=>{if(n[0]&&n[1]&&n[1].includes(t)){const t=new URL(n[1]);t.searchParams.delete(e),n[1]=t.href.replace("%2CCuepointPlaylist","")}return Reflect.apply(p,o,n)}};window.XMLHttpRequest.prototype.open=new Proxy(window.XMLHttpRequest.prototype.open,p)})("deviceAdInsertionTypeOverride","/GetPlaybackResources?");
 ! aglint-enable invalid-modifiers
 !
 ! .top adservers ex. https://zarb.zyzqkbkeyqrre.top/kwlorzavwmoaw/bkyjry?d=0
@@ -88693,6 +88696,7 @@ browsershots.org#@#.advert_area
 ||drjsialuvitqq.space^
 ||drkness.net^
 ||drleez.xyz^
+||drnlqidntldkj.com^
 ||drnniuaxhvpgz.website^
 ||drofcalvous.life^
 ||droguesonghai.shop^
@@ -95983,6 +95987,7 @@ browsershots.org#@#.advert_area
 ||keestrobbing.rest^
 ||keetouchut.net^
 ||keewoach.net^
+||kefzihvrg.com^
 ||kegnodreewy.com^
 ||kehalim.com^
 ||keiyhkxkjetgl.site^
@@ -99336,6 +99341,7 @@ browsershots.org#@#.advert_area
 ||muuxrbdsheuhg.space^
 ||muvdibasgsedy.store^
 ||muvuleqt.cyou^
+||muwhaiseem.net^
 ||muxieboupdbbg.space^
 ||muyusaitcze.com^
 ||muzarabeponym.website^
@@ -105420,6 +105426,7 @@ browsershots.org#@#.advert_area
 ||rlcdn.com^
 ||rldwideorgan.org^
 ||rlffkhoxxwucy.website^
+||rlgjhoighzfpf.site^
 ||rlgybjefafbjp.online^
 ||rliuumrtkzzpg.space^
 ||rlogcejfsgtar.site^
@@ -112048,6 +112055,7 @@ browsershots.org#@#.advert_area
 ||vxxydbvjhgbkpg.xyz^
 ||vyapkxdj.com^
 ||vyargtzwkkasg.website^
+||vybxbtbdbks.com^
 ||vyebzzqlojerz.top^
 ||vyfrxuytzn.com^
 ||vygwmjgwwjalq.top^
@@ -123937,6 +123945,7 @@ browsershots.org#@#.advert_area
 ||tubeoffline.com/vpn.php
 ||tubeoffline.com/vpn2.php
 ||tubeoffline.com/vpnimg/
+||turbobit.net/fd1/js/brinpopup.js
 ||turbobit.net/pus/
 ||turkmenportal.com/images/uploads/banners/
 ||twitter.com/*/videoads/
@@ -131743,6 +131752,7 @@ pixiv.net##iframe[height="520"][name="expandedFooter"]
 yourbittorrent.com##iframe[src]
 realgearonline.com##iframe[src^="http://www.adpeepshosted.com/"]
 linkedin.com##iframe[title="Advertisement"]
+linkedin.com##iframe[title="advertisement"]
 pixiv.net##iframe[width="300"][height="250"]
 premiumtimesng.com##img[alt$=" Ad"]
 f1technical.net##img[alt="Amazon"]
