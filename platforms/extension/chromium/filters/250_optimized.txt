@@ -1,5 +1,5 @@
-! Checksum: RUjvTFnXOKRrHtIyMtdqJA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1756615237-14400.patch
+! Checksum: u7hL8YvZd82G48Rvj9zfrw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1756701906-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.73
@@ -141,6 +141,7 @@ appuals.com##p + div > div:first-of-type
 windll.com##.download-block
 windll.com##.dll > p
 softwaretested.com##.st-alternative
+processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ||solvusoft.com^$document
 ||gamesgx.net^$document
@@ -374,6 +375,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||entertainlavish.com^$all
 ||esteemcountryside.com^$all
 ||inscribemutenessforced.com^$all
+||earningskingdeliberately.com^$all
 ||campusexcessively.com^$all
 ||hitchprivilege.com^$all
 ||apologiesoccursdepressed.com^$all
@@ -1406,7 +1408,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 #@#html
 #@#body
 @@||network-auth.com^
-@@|https://raw.githubusercontent.com/DandelionSprout/adfilt/*
 @@||kaltura.com^
 @@.dna.ip-only.net^
 ||filters.adtidy.org^$badfilter
@@ -1781,6 +1782,7 @@ $removeparam=o_sch
 $removeparam=o_xid
 $removeparam=wtExtndSource
 $removeparam=rfsn
+$removeparam=bclid
 $document,removeparam=trackid,domain=~nzpost.co.nz
 $removeparam=afsrc
 $document,removeparam=lcid,domain=~rekono.si
@@ -1917,7 +1919,6 @@ $removeparam=af_adset_id
 $removeparam=af_c_id
 $removeparam=af_channel
 $removeparam=af_click_lookback
-$removeparam=af_cost_model
 $removeparam=af_force_deeplink
 $removeparam=af_keywords
 $removeparam=af_prt
@@ -1965,6 +1966,7 @@ $document,removeparam=/^mtm_.*$/
 $removeparam=pk_campaign
 $removeparam=pk_medium
 $removeparam=pk_source
+$removeparam=pk_content
 $removeparam=pk_kwd
 $removeparam=ig_mid
 $removeparam=au_advert_id
@@ -2462,15 +2464,11 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
 ||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
-||bilibili.com^$removeparam=/^playurl.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
-||bilibili.com^$removeparam=accept_quality
 ||bilibili.com^$removeparam=bbid
 ||bilibili.com^$removeparam=broadcast_type
 ||bilibili.com^$removeparam=bsource
 ||bilibili.com^$removeparam=hotRank
-||bilibili.com^$removeparam=p2p_type
-||bilibili.com^$removeparam=quality_description
 ||bilibili.com^$removeparam=seid
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
@@ -2498,7 +2496,6 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||iqiyi.com^$removeparam=r_area
 ||iqiyi.com^$removeparam=r_source
 ||iqiyi.com^$removeparam=stype
-||iqiyi.com^$removeparam=source
 ||sogou.com^$removeparam=_asf
 ||sogou.com^$removeparam=_ast
 ||sogou.com^$removeparam=lkt
@@ -2610,6 +2607,8 @@ $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryox
 $removeparam=soc_src
 $removeparam=soc_trk
 $removeparam=ia-pkpmtrack
+||spartoo.$removeparam=sx
+||spartoo.$removeparam=track_id
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
 $removeparam=CID,domain=burpee.com|chegg.com|express.com|farmandfleet.com|marvel.com|mcafee.com|overstock.com|pepboys.com|puritan.com|rosettastone.com|samsung.com|shutterfly.com|staples.com|teleflora.com|ulta.com|virginatlantic.com|vrbo.com|walgreens.com|media-cdn.costco.ca|media-cdn.costco.com
@@ -2738,7 +2737,6 @@ $removeparam=recs_placement,domain=nordstrom.com
 $removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
 $removeparam=recs_seed,domain=nordstrom.com
-$removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
 ||banggood.com^$removeparam=custlinkid
 ||market.yandex.ru^$removeparam=cpc
@@ -2761,6 +2759,7 @@ $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
 $removeparam=adp,domain=shein.com
+$removeparam=loid,domain=reddit.app.link
 $document,removeparam=feature,domain=reddit.app.link
 $removeparam=mweb_loid,domain=reddit.app.link
 $removeparam=mweb_loid_created,domain=reddit.app.link
@@ -3009,10 +3008,6 @@ $document,removeparam=af_xp
 ||qzone.qq.com^$document,removeparam=ciphertext
 ||qzone.qq.com^$document,removeparam=blog_photo
 ||qzone.qq.com^$document,removeparam=g
-||qzone.qq.com^$document,removeparam=res_uin
-||qzone.qq.com^$document,removeparam=cellid
-||qzone.qq.com^$document,removeparam=subid
-||qzone.qq.com^$document,removeparam=bp1
 ||qzone.qq.com^$document,removeparam=bp2
 ||qzone.qq.com^$document,removeparam=bp7
 ||qzone.qq.com^$document,removeparam=g_f
