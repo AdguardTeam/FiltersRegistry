@@ -1,8 +1,8 @@
-! Checksum: NoJX6Y+9HkAma26q9hG8hw
+! Checksum: Kz3BcGLCQMEcMJPdYafWdw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.41.38
-! TimeUpdated: 2025-08-31T20:06:57+00:00
+! Version: 2.2.41.39
+! TimeUpdated: 2025-09-01T00:30:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2529,6 +2529,8 @@ entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,g
 !
 ! NOTE: Regular rules
 !
+splav.ru#%#//scriptlet('set-cookie', 'cookieNotificationDismissed', 'true')
+pitchfork.com#%#//scriptlet('trusted-click-element', '#fides-banner-container .fides-accept-all-button', '!cookie:fides_consent', '', 'reloadAfterClick:200')
 glowbug.bandcamp.com#%#//scriptlet('trusted-set-cookie', 'cookie_preferences', '%7B%22allow%22%3A%5B%5D%7D')
 /ajax/info/cookie_banner/*$domain=biokord.com
 koszulenamiare.pl##.ciacho-wrap-container
@@ -49364,6 +49366,8 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+escharts.com##.x-cloak-hidden[x-on\:show-team-demo-banner\.window]
+escharts.com##.x-cloak-hidden[x-data*="side-banner_team"]
 anglers.jp##.custom_campaign_pr
 360doc.com##.clear360doc > .vipact
 uaa.com###popup_box
