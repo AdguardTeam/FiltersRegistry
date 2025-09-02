@@ -1,9 +1,9 @@
-! Checksum: +gq/jO/k+95udY+9StdXFQ
-! Diff-Path: ../patches/14/14-s-1756811443-3600.patch
+! Checksum: Y2313K0a3F3W9qBdMs9BLA
+! Diff-Path: ../patches/14/14-s-1756819147-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.41.61
-! TimeUpdated: 2025-09-02T11:06:51+00:00
+! Version: 2.2.41.62
+! TimeUpdated: 2025-09-02T13:15:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2534,6 +2534,8 @@ entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,g
 !
 ! NOTE: Regular rules
 !
+ikar.aero##.notification-panel-wrapper > div.notification-panel:has(> div > a[href="/legal/privacy-policy#cookie"])
+rac.co.uk###ensPrivacyBlock
 severstal-avia.ru##.cbar
 flyone.eu#%#//scriptlet('set-cookie', 'termsAgreed', 'true', '/', 'flyone.eu')
 ||nordstar.ru/bitrix/*/r52.acceptcookies/
@@ -45849,8 +45851,6 @@ appticker.de#%#(function(){var b=window.setTimeout;window.setTimeout=function(a,
 svyaznoy.ru#%#//scriptlet('remove-class', 'android-banner-on-page')
 ebay.*###gh-appBanner
 m.avito.ru##div[data-marker="main-container"] > div[data-scroll-blocker="true"]
-flash.pt,vodafone.ua#$#div.smartbanner { display: none !important; }
-flash.pt,vodafone.ua#$#.smartbanner-show { margin-top: 0 !important; }
 imgur.io,imgur.com#$#div[class^="SeeImgurOIA-"] { display: none !important; }
 imgur.io,imgur.com#$#body { overflow-y: auto !important; }
 c.mi.com#$#.xm-header.app-down .top { top: 0 !important; }
@@ -46707,8 +46707,8 @@ wear.jp###newwearAppBanner
 wear.jp##a[href="/sp/app/download.html"]
 wear.jp#$#.bg-white > div.sticky.z-header { top: 0 !important; }
 wear.jp##.xl\:mx-auto > div.pt-\[30px\]
-nola-novel.com,cecile.co.jp#$#.smartbanner { display: none !important; }
-nola-novel.com,cecile.co.jp#$#.smartbanner-show { margin-top: 0 !important; }
+simplemobile.com,nola-novel.com,cecile.co.jp,flash.pt,vodafone.ua#$#.smartbanner { display: none !important; }
+simplemobile.com,nola-novel.com,cecile.co.jp,flash.pt,vodafone.ua#$#.smartbanner-show { margin-top: 0 !important; }
 cartune.me##a[href="https://cartune.me/appinstall"]
 premium.sbs.co.kr,cartune.me##a[href="/appinstall"]
 news.ifeng.com##div[class^="index_bottom_box_"]
@@ -50739,6 +50739,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+hermitcraft.com###HermitCraftContainer > section > #ShopNotice
 sosyalbilgiler.biz##.notice--primary[data-notice-id="46"]
 uralairlines.ru##.promo-code-popup
 ||kasegeru.blog.jp/blogframe/contents/content_bestbuy$subdocument
