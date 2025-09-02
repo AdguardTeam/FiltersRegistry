@@ -1592,6 +1592,11 @@ fitforfun.de,plus.rtl.de#%#//scriptlet('trusted-replace-xhr-response', 'true', '
 fitforfun.de,brigitte.de#%#//scriptlet('trusted-replace-xhr-response', 'true', 'false', 'global_config.json')
 fitforfun.de,plus.rtl.de#%#//scriptlet('abort-on-stack-trace', 'Object.prototype.adReinsertion', 'createSdk')
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212667
+!+ NOT_PLATFORM(ext_ff)
+player.motorsport-magazin.com#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{"function"==typeof initPage&&initPage()}));})();
+!+ PLATFORM(ext_ff)
+player.motorsport-magazin.com#%#//scriptlet('trusted-create-element', 'head', 'script', '', '(()=>{document.addEventListener("DOMContentLoaded",(()=>{"function"==typeof initPage&&initPage()}));})();')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198374
 ! It looks like that PHPSESSID is checked on the server side
 ! I guess that it works like that - if specific PHPSESSID was registered and few/several seconds passed (I suppose 10 seconds or so)
@@ -6593,8 +6598,10 @@ urlaubspartner.net#@##werbung
 @@||baumberger.shop/cache/style_*_responsive_ad_header.css$~third-party
 @@||baumberger.shop/cache/javascript_*_responsive_ad_footer.js$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/80803
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=player.motorsport-magazin.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,important,domain=player.motorsport-magazin.com
 @@||cdn.jsdelivr.net/combine/npm/video.js*/dist/video-js.min.css*/videojs-contrib-ads*/dist/videojs.ads.min.css$domain=player.motorsport-magazin.com
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=player.motorsport-magazin.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79974
 saechsische.de#@?#article,div:-abp-has( > div > .article-section--nad > span:-abp-contains(Anzeige))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74986

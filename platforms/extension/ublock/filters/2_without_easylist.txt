@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +r69f7Aj6fqixumHu0RdVg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1756800830-3600.patch
+! Checksum: 6fFn15gI5NMkraf2Er7oQw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1756804324-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.7.80
-! TimeUpdated: 2025-09-02T08:09:33+00:00
+! Version: 2.4.7.81
+! TimeUpdated: 2025-09-02T09:07:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,7 @@
 !
 !
 !
+||droplink.digital^$all
 ||revenuecpmgate.com^
 ||jszxpgqtwmdkv.site^
 ||openads.aira.cz^
@@ -36158,7 +36159,8 @@ sleazyneasy.com#?#div.heading:has(> h2:contains(/^AD$/))
 sleazyneasy.com##.bottom-content
 sleazyneasy.com##.items-container > div.items-box:has(> span.ad-title)
 ||cdn.wylin.ai/now-ai-chars/assets/fe-assets/index.min.js
-scrolller.com##.popup--sticky:not(:has(div.login_popup_box))
+scrolller.com##.popup--sticky:has(img[class^="HeaderImage_"][src*="-ads.png"])
+scrolller.com##.popup--sticky:not(:has(:is(div.login_popup_box, button[class^="PrimaryCloseButton_"])))
 sammobile.com###home-intro-ad
 sammobile.com##.desktop-leaderboard-ad-wrapper
 sammobile.com##.header-top[data-nosnippet]
