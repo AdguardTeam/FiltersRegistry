@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.7.89",
-			"timeUpdated": "2025-09-02T17:06:11+0000",
+			"version": "2.4.7.90",
+			"timeUpdated": "2025-09-02T18:08:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.90.76",
-			"timeUpdated": "2025-09-02T12:11:14+0000",
+			"version": "2.0.90.77",
+			"timeUpdated": "2025-09-02T18:08:19+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.18.97",
-			"timeUpdated": "2025-09-02T09:07:51+0000",
+			"version": "2.1.18.98",
+			"timeUpdated": "2025-09-02T18:08:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.23",
-			"timeUpdated": "2025-09-02T09:07:55+0000",
+			"version": "2.0.49.24",
+			"timeUpdated": "2025-09-02T18:08:25+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.68.25",
-			"timeUpdated": "2025-09-02T17:06:24+0000",
+			"version": "2.0.68.26",
+			"timeUpdated": "2025-09-02T18:08:27+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.29",
-			"timeUpdated": "2025-09-02T16:08:02+0000",
+			"version": "2.0.59.30",
+			"timeUpdated": "2025-09-02T18:08:32+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.92.8",
-			"timeUpdated": "2025-09-02T16:08:08+0000",
+			"version": "2.0.92.9",
+			"timeUpdated": "2025-09-02T18:08:38+0000",
 			"languages": [],
 			"tags": [
 				45,
