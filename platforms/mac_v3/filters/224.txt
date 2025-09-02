@@ -1,9 +1,9 @@
-! Checksum: YqSUFYqnvdrXR9fWJm3MhQ
-! Diff-Path: ../patches/224/224-s-1756780808-3600.patch
+! Checksum: kKtSkjbJTM9OZGcCBdNN0A
+! Diff-Path: ../patches/224/224-s-1756797100-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.43.12
-! TimeUpdated: 2025-09-02T02:36:09+00:00
+! Version: 2.1.43.13
+! TimeUpdated: 2025-09-02T07:07:46+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1068,6 +1068,7 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+xx.knit.bid##.clickadu-container
 360doc.com##iframe[src*="360doc.com/ad/"]
 uaa.com#%#//scriptlet('prevent-element-src-loading', 'script', 'aliyuncs.com')
 *$third-party,domain=440012.xyz
@@ -2855,7 +2856,7 @@ iqiyi.com###middle_banner_ad_bk
 iqiyi.com##.search-item-box:has(> a > div > div[class^="ad_adContent"])
 iqiyi.com##div[class^="list_list__"] > div[style*="margin-bottom:"] > div[style*="margin-right:"]:has(> div > div[style*="background-image:"] div > div[class^="video-list-item_"] > div[class^="video-list-item_"] > a[href*="&creative_id="][href*="&impress_id="])
 iqiyi.com##div[class^="list_list__"] > div[style*="margin-bottom:"] > div[style*="margin-right:"]:has(> div > div[style*="background-image:"] div > div[class^="video-list-item_"] > div[class^="video-list-item_"] > a > div[class^="video-list-item_"] > div[class*="video-list-item_"] > img[src*="/ADS/"])
-iqiyi.com#%#//scriptlet('json-prune', 'items.*.video.*.data.[-].ad.adScene data.template.tabs.*.blocks.*.data.data.*.videos.feature_ad data.template.tabs.*.blocks.*.data.data.videos.*.ad')
+iqiyi.com#%#//scriptlet('json-prune', 'data.[-].ad.adScene items.*.video.*.data.[-].ad.adScene data.template.tabs.*.blocks.*.data.data.*.videos.feature_ad data.template.tabs.*.blocks.*.data.data.videos.*.ad')
 iqiyi.com#%#(()=>{let e=!1;window.qyMesh=window.qyMesh||{},window.qyMesh=new Proxy(window.qyMesh,{get:function(a,t,d){return!e&&a?.preload?.Page_recommend_1?.response?.items&&(a.preload.Page_recommend_1.response.items.forEach((e=>{e.extData?.dataExtAd&&(e.extData.dataExtAd={}),e.video&&e.video.forEach((e=>{e.adverts&&(e.adverts=[]),e.data&&(e.data=e.data.filter((e=>!e.ad)))}))})),e=!0),Reflect.get(a,t,d)}})})();
 !
 ! Online books
