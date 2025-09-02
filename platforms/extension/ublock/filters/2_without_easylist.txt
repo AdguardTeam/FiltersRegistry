@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 6fFn15gI5NMkraf2Er7oQw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1756804324-3600.patch
+! Checksum: 1NCZWolAG06wm3o7NYb0KA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1756807895-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.7.81
-! TimeUpdated: 2025-09-02T09:07:41+00:00
+! Version: 2.4.7.82
+! TimeUpdated: 2025-09-02T10:07:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10147,6 +10147,14 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212580
+sklinker.in#$#body { overflow: auto !important; }
+sklinker.in#$##modalpop { display: none !important; }
+sklinker.in#$##overlaypop { display: none !important; }
+sklinker.in##+js(abort-current-script, $, Adblock)
+sklinker.in##+js(abort-current-script, EventTarget.prototype.addEventListener, document.body.innerHTML)
+goldengoalsfinance.com###AdbModel
+goldengoalsfinance.com##+js(abort-current-script, document.createElement, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212565
 bdstream.site##+js(no-setTimeout-if, .offsetWidth||"none"===)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212575
@@ -35474,6 +35482,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+apkcombo.com##.ad-pss
+goldengoalsfinance.com##div[class^="pro_ad_"]
 softonic.*##div[data-meta="placeholder-slot"]
 self.com##.promo-box
 onlineconverter.com##div[class^="d"] > div[class^="d"]:has(> ins.adsbygoogle)
