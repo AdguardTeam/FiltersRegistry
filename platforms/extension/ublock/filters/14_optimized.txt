@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: bRUu4aAapydz8pHrmVoGVw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1756819144-3600.patch
+! Checksum: jURnzaw4RB6dXiHVOohiKg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1756825872-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.41.62
-! TimeUpdated: 2025-09-02T13:15:14+00:00
+! Version: 2.2.41.63
+! TimeUpdated: 2025-09-02T15:07:23+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1534,6 +1534,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$?#div[consent-skip-blocker] { remove: true; }
 entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+indexbox.io##.cookie_block_header
 ikar.aero##.notification-panel-wrapper > div.notification-panel:has(> div > a[href="/legal/privacy-policy#cookie"])
 rac.co.uk###ensPrivacyBlock
 severstal-avia.ru##.cbar
@@ -11341,6 +11342,7 @@ aol.com#@#.adwrap
 ||accounts.google.com/gsi/client^$third-party,script,domain=dtf.ru|stackoverflow.com|vc.ru|pikabu.ru|nytimes.com|baltimoresun.com|rozetka.com.ua|estadao.com.br|medium.com|gzt.com|mercurynews.com|drukarnia.com.ua|diffchecker.com|kaystls.site|kaystls.site|overclock.net|nissanclub.com|crazygames.com|notion.so|usnews.com|nypost.com|etnownews.com|timesnownews.com|menshealth.com|themirror.com|cq.ru|voetbalzone.nl|perplexity.ai|lefigaro.fr|lifehacker.ru|app.notta.ai|vnexpress.net
 ||accounts.google.com/gsi/iframe/select?client_id=$domain=reddit.com
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
+indexbox.io##div[id^="modal-start"]
 ||rtp.pt/common/js/validation_popup/validation-popup.js
 aspor.com.tr##.drop-news
 independentespanol.com##.sticky div[class="video-hero-wrapper"][style^="height:"]
@@ -21348,6 +21350,9 @@ honeysanime.com#$##header-line-2 { margin-top: -60px !important; }
 honeysanime.com#$##wrap-app-notice { display: none !important; }
 !+ NOT_OPTIMIZED
 m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
+x.com#$#div[role="group"] > div[style]:not([class]):has(> div[class] > div[class] > a[href^="https://apps.apple.com/app/apple-store/"]) { display: none !important; }
+x.com#$#div[role="group"] > div[data-testid="mask"] { display: none !important; }
+x.com#$#html[style] { overflow: auto !important; position: static !important; }
 olimp.bet#$##header { top: 0 !important; }
 olimp.bet#$##subheader { top: 3rem !important; }
 olimp.bet#$##app-download-banner { display: none !important; }
