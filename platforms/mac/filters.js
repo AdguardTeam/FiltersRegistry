@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.1.54",
-			"timeUpdated": "2025-09-02T21:06:16+0000",
+			"version": "2.1.1.55",
+			"timeUpdated": "2025-09-03T07:06:49+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.8.2",
-			"timeUpdated": "2025-09-03T06:09:12+0000",
+			"version": "2.4.8.3",
+			"timeUpdated": "2025-09-03T07:06:59+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.19.0",
-			"timeUpdated": "2025-09-03T05:07:11+0000",
+			"version": "2.1.19.1",
+			"timeUpdated": "2025-09-03T07:07:07+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.41.71",
-			"timeUpdated": "2025-09-03T06:09:44+0000",
+			"version": "2.2.41.72",
+			"timeUpdated": "2025-09-03T07:07:21+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.69.32",
-			"timeUpdated": "2025-09-03T06:09:51+0000",
+			"version": "2.0.69.33",
+			"timeUpdated": "2025-09-03T07:07:24+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.61.48",
-			"timeUpdated": "2025-09-03T06:09:53+0000",
+			"version": "2.0.61.49",
+			"timeUpdated": "2025-09-03T07:07:25+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.37.12",
-			"timeUpdated": "2025-09-02T13:15:20+0000",
+			"version": "2.0.37.13",
+			"timeUpdated": "2025-09-03T07:07:26+0000",
 			"languages": []
 		},
 		{
