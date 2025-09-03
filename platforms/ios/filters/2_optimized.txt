@@ -1,9 +1,9 @@
-! Checksum: ga98UkFXpOmElXhyPpRHHw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1756883473-3600.patch
+! Checksum: udcvhWdpSmm7rmQ1s7BYDw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1756887170-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.8.3
-! TimeUpdated: 2025-09-03T07:06:59+00:00
+! Version: 2.4.8.4
+! TimeUpdated: 2025-09-03T08:08:33+00:00
 ! Expires: 5 days (update frequency)
 ||sosalkebab.com^$all
 ||droplink.digital^$all
@@ -5406,10 +5406,8 @@ mac2sell.net#%#//scriptlet('prevent-fetch', 'doubleclick.net')
 !+ PLATFORM(ios, ext_android_cb)
 @@||mmacore.tv^$generichide
 streamta.*#@#.google-ad
-embed.wcostream.com#%#(()=>{if(!location.href.includes("://embed.wcostream.com/inc/embed/index.php?file="))return;const e=`/inc/embed/video-js.php${location.search}`;location.href=e})();
-embed.wcostream.com#%#//scriptlet('trusted-replace-node-text', 'script', 'MAX_CLOSES', 'if (closeBtn.disabled) return;', '')
-embed.wcostream.com#%#//scriptlet('trusted-replace-node-text', 'script', 'MAX_CLOSES', '/hideAll\(\);/g', 'hideAll();try{if(typeof doClose==="function"){doClose();}}catch(e){};')
-embed.wcostream.com#%#//scriptlet('trusted-replace-node-text', 'script', 'MAX_CLOSES', '/const MAX_CLOSES = \d+;/', 'const MAX_CLOSES = 0;')
+embed.wcostream.com#%#(()=>{if(!location.href.includes("://embed.wcostream.com/inc/embed/index.php?file=")||navigator.userAgent.toLowerCase().includes("firefox"))return;const e=`/inc/embed/video-js.php${location.search}`;location.href=e})();
+embed.wcostream.com#%#//scriptlet('prevent-fetch', 'pubadx-ad.js')
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com#$#.ad-unit.ad-banner.adsbox { display: block !important; }
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com#%#//scriptlet("prevent-setTimeout", "AdBlock")
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com#%#//scriptlet("set-constant", "isAdBlockActive", "false")
@@ -5419,8 +5417,9 @@ wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com
 @@||embed.wcostream.com/inc/embed/*.js$domain=embed.wcostream.com
 @@/inc/embed/*ads.js$domain=wcostream.org|watchanimesub.net|wco.tv|wcostream.net|wcostream.com|wcoforever.tv
 @@/inc/embed/suv4.js$domain=wcostream.org|watchanimesub.net|wco.tv|wcostream.net|wcostream.com|wcoforever.tv
-embed.wcostream.com#$##announcement { display: none !important; }
-embed.wcostream.com#$#.announcement-backdrop { display: none !important; }
+@@||embed.wcostream.com^$generichide
+embed.wcostream.com#$##announcement { display: block !important; }
+embed.wcostream.com#$#.announcement-backdrop { display: block !important; }
 @@||wco.tv^$generichide
 @@||platform.pubadx.one/pubadx-ad.js$domain=embed.wcostream.com
 quotes.net#%#//scriptlet("set-constant", "canRunAds", "true")
@@ -6294,9 +6293,15 @@ falkirkherald.co.uk#@#.textAd
 falkirkherald.co.uk#@#.text_ad
 falkirkherald.co.uk#@#.text_ads
 m.hindustantimes.com#%#//scriptlet("prevent-addEventListener", "DOMContentLoaded", "checkAdBlocker")
-hindustantimes.com#%#//scriptlet("abort-current-inline-script", "$", "areAdsBlocked")
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=hindustantimes.com
+hindustantimes.com#%#//scriptlet('prevent-setTimeout', 'checkAdBlocker')
+hindustantimes.com#$#body { overflow: auto !important; }
+hindustantimes.com#$#.adBlockerPopup { display: none !important; }
+hindustantimes.com#@#.adHeight270
+hindustantimes.com#@#.right-top-ad
+hindustantimes.com#@#div[class^="adHeight"]
+hindustantimes.com#$#.adHeight270 { position: absolute !important; left: -9999px !important; }
+hindustantimes.com#$#.right-top-ad { position: absolute !important; left: -9999px !important; }
+hindustantimes.com#$#div[class^="adHeight"] { position: absolute !important; left: -9999px !important; }
 paraphrasing-tool.com#%#//scriptlet("abort-current-inline-script", "angular", "/whiteListRequestMessage|canRunAds/")
 3dtuning.com#%#//scriptlet('prevent-fetch', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 @@||3dtuning.com^$generichide
@@ -13616,6 +13621,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com|zinchanmanga.com|yaoimangaonline.com|tututweak.app|mangaraw.ac|eromanga-show.com|hentai-one.com|hentaipaw.com|nukibooks.com|paipancon.com|jgvdata.com|youtubevanced.com|pandamtl.com|mangaplus.shueisha.tv|shueisharaw.tv
+hindustantimes.com#$#body[style^="padding-top:"] {  padding-top: 0px !important; }
 businesstimes.com.sg##.body-content > .relative > div:has(> .sticky[data-component="component-container"] > .relative > .ad-placeholder)
 businesstimes.com.sg###homepage-breakingnews-section > .stories > div:has(> .sticky > .ad-placeholder)
 techxplore.com##.article-sidebar-banner
@@ -32483,6 +32489,7 @@ browsershots.org#@#.advert_area
 ||bhgtubjtfggfa.website^
 ||bhhjjdqcwfrpv.space^
 ||bhketuklhhavv.website^
+||bhklwrocp.com^
 ||bhpwqtiudzqnz.vip^
 ||bhshm.com^
 ||bhtetuteajo.com^
@@ -34110,6 +34117,7 @@ browsershots.org#@#.advert_area
 ||corymbtidal.cfd^
 ||corymburubu.cfd^
 ||coseyselsa.help^
+||cosmopolitanprawn.com^
 ||cosmosbungos.cyou^
 ||cosmudlewqo.com^
 ||cosponsorgarnetmorphing.com^
@@ -35434,6 +35442,7 @@ browsershots.org#@#.advert_area
 ||ednewsbd.com^
 ||ednpbchfqjfqx.store^
 ||edoanguine.world^
+||edtcaklcytabd.com^
 ||edttwm.com^
 ||eduseio.com^
 ||edvfwlacluo.com^
@@ -42702,6 +42711,7 @@ browsershots.org#@#.advert_area
 ||political-effort.com^
 ||politicallyartisticsocks.com^
 ||politicallyhoistawesome.com^
+||polityyearlinggullible.com^
 ||polkaedleafboy.shop^
 ||pollingramblefunctions.com^
 ||pollpublicly.com^
@@ -43159,6 +43169,7 @@ browsershots.org#@#.advert_area
 ||pubslipids.digital^
 ||pubtm.com^
 ||pubtrky.com^
+||pubxeumpifbtj.online^
 ||pucequaffs.world^
 ||puddingupheaps.com^
 ||pudgygob.world^
@@ -47615,6 +47626,7 @@ browsershots.org#@#.advert_area
 ||vufknbumggpop.xyz^
 ||vughscautel.cfd^
 ||vugnubier.com^
+||vuhaulroaft.net^
 ||vukuckilexy.net^
 ||vulcandamie.cyou^
 ||vulgarsrackety.shop^

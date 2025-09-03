@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: TXIO9KKq0GrLs2rmQVZUsw
-! Diff-Path: ../patches/2/2-s-1756883469-3600.patch
+! Checksum: pVgv020GGCzP8nUGK6kiFQ
+! Diff-Path: ../patches/2/2-s-1756887166-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.8.3
-! TimeUpdated: 2025-09-03T07:06:59+00:00
+! Version: 2.4.8.4
+! TimeUpdated: 2025-09-03T08:08:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -14044,6 +14044,7 @@ mmacore.tv#$#.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/98491
 streamta.*#@#.google-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210238
+embed.wcostream.com##+js(no-fetch-if, pubadx-ad.js)
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com#$#.ad-unit.ad-banner.adsbox { display: block !important; }
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com#$##wrapfabtest { height: 1px !important; }
 wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com##+js(no-setTimeout-if, AdBlock)
@@ -14056,6 +14057,7 @@ wcoforever.tv,wcostream.org,watchanimesub.net,wco.tv,wcostream.net,wcostream.com
 @@/inc/embed/suv4.js$domain=wcostream.org|watchanimesub.net|wco.tv|wcostream.net|wcostream.com|wcoforever.tv
 @@||embed.watchanimesub.net/inc/embed/kampyle.js
 @@||embed.watchanimesub.net/inc/embed/ads.js
+@@||embed.wcostream.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/97271
 @@||static.stands4.com/app_common/js/prebid-ads.js
 quotes.net##+js(set-constant, canRunAds, true)
@@ -14938,8 +14940,6 @@ iptv4best.com##.adace-popup
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66841
 kickassanime.*##+js(set-constant, appData.ftg, true)
 kickassanime.*##+js(set-constant, ifmax, true)
-! https://github.com/AdguardTeam/AdguardFilters/issues/66676
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=hindustantimes.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66628
 kisscartoon.nz##+js(set-constant, check_adblock, true)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66560
@@ -15731,10 +15731,11 @@ megaup.net#$?#div[id*="ScriptRootC"] > div[id*="PreloadC"] { remove: true; }
 falkirkherald.co.uk#$#.pub_300x25.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/71351
 m.hindustantimes.com##+js(addEventListener-defuser, DOMContentLoaded, checkAdBlocker)
+! https://github.com/AdguardTeam/AdguardFilters/issues/212737
 ! https://github.com/AdguardTeam/AdguardFilters/issues/42081
-hindustantimes.com##+js(abort-current-script, $, areAdsBlocked)
-!+ NOT_PLATFORM(windows, mac, android, ext_chromium, ext_ff, ext_opera)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=hindustantimes.com
+hindustantimes.com##+js(no-setTimeout-if, checkAdBlocker)
+hindustantimes.com#$#body { overflow: auto !important; }
+hindustantimes.com#$#.adBlockerPopup { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41916
 @@||paraphrasing-tool.com/js/wp-banners.js
 paraphrasing-tool.com##+js(abort-current-script, angular, /whiteListRequestMessage|canRunAds/)
@@ -35486,6 +35487,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+hindustantimes.com#$#body[style^="padding-top:"] {  padding-top: 0px !important; }
 businesstimes.com.sg##.body-content > .relative > div:has(> .sticky[data-component="component-container"] > .relative > .ad-placeholder)
 businesstimes.com.sg###homepage-breakingnews-section > .stories > div:has(> .sticky > .ad-placeholder)
 techxplore.com##.article-sidebar-banner
@@ -81051,6 +81053,7 @@ browsershots.org#@#.advert_area
 ||bhjmacgkyiiux.website^
 ||bhketuklhhavv.website^
 ||bhkfnroleqcjhm.xyz^
+||bhklwrocp.com^
 ||bhkyvtbdvmtrk.site^
 ||bhlph.com^
 ||bhnnop.com^
@@ -83936,6 +83939,7 @@ browsershots.org#@#.advert_area
 ||cosetengarb.com^
 ||coseyselsa.help^
 ||cosmeticsgenerosity.com^
+||cosmopolitanprawn.com^
 ||cosmosbungos.cyou^
 ||cosmudlewqo.com^
 ||cosponsorgarnetmorphing.com^
@@ -86366,6 +86370,7 @@ browsershots.org#@#.advert_area
 ||edprivatedqualize.org^
 ||edpwikvvdmetv.store^
 ||edralintheirbrights.com^
+||edtcaklcytabd.com^
 ||edtheparllase.com^
 ||edttmar.com^
 ||edttwm.com^
@@ -100127,6 +100132,7 @@ browsershots.org#@#.advert_area
 ||politicallyartisticsocks.com^
 ||politicallyhoistawesome.com^
 ||politicalspare.pro^
+||polityyearlinggullible.com^
 ||polkaedleafboy.shop^
 ||pollingramblefunctions.com^
 ||pollpublicly.com^
@@ -100918,6 +100924,7 @@ browsershots.org#@#.advert_area
 ||pubslipids.digital^
 ||pubtm.com^
 ||pubtrky.com^
+||pubxeumpifbtj.online^
 ||puccoonramule.world^
 ||pucequaffs.world^
 ||puddingupheaps.com^
@@ -109391,6 +109398,7 @@ browsershots.org#@#.advert_area
 ||vufqinbxihvvf.buzz^
 ||vughscautel.cfd^
 ||vugnubier.com^
+||vuhaulroaft.net^
 ||vuidccfq.life^
 ||vujfreafh.com^
 ||vukrlistntcrl.online^
