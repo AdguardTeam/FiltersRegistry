@@ -1,5 +1,5 @@
-! Checksum: Fnzng3NJx1sF0McqTUoUkw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1756843882-3600.patch
+! Checksum: 79pSaevJPmZqZNiVvKEnuQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1756866887-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.54.22
@@ -397,7 +397,6 @@ la-croix.com##.gam
 ||la-croix.com/assets/build/templates/components/advertising/
 vide-greniers.org##.agw-container
 nationalgeographic.fr##div[id^="gpt--header--"]
-bookys-ebooks.com##div[class="bys-container"] > div[class*="bys-bg"] > div[class]:has(> .dl_bg)
 campingcarlesite.com##div[id^="fancybox-"]
 observalgerie.com#%#//scriptlet('abort-current-inline-script', 'fetch', 'Uint8Array')
 fsmirror93.lol###ad-banner
@@ -646,6 +645,7 @@ lefigaro.fr##.fig-sticky-bottom-subscription-banner
 zeste.ca##.isPub
 zeste.ca##.wrapper-pub
 charentelibre.fr,sudouest.fr,techno-science.net##.pub
+coflix.tv##ad-host
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
 ||jobat.be^$subdocument,third-party
@@ -1505,6 +1505,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?*.popcash.
 ?468&60&
 ?728&90&
+?ad_domain=
 ?ad_sub=
 ?ADFassetID=
 ?adRef=
@@ -1701,7 +1702,6 @@ _werbebanner_
 ?pubid=*&subid=$popup,third-party
 _build=iclick-$popup
 ||club^*&zoneid=$popup
-||online^*&zoneid=$popup
 ||shop^*&zoneid=$popup
 ||shop^*?scontext_r=$popup
 ||shop^*cuid/?
@@ -1777,6 +1777,7 @@ _build=iclick-$popup
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
+||click-fr.com^$third-party
 ||click2m.org^$third-party
 ||clickbank.net^$third-party
 ||clickiocdn*.com^$third-party
@@ -1803,7 +1804,6 @@ _build=iclick-$popup
 ||easyrencontre.com^$third-party
 ||easysexe.com^$third-party
 ||ebuzzing.fr^$third-party
-||ebzfbiueubria.com^$third-party
 ||echangedebannieres.fr^$third-party
 ||edintorni.net^$third-party
 ||egnatius-ear.com^$third-party
@@ -1813,7 +1813,6 @@ _build=iclick-$popup
 ||ezstatic.com^$third-party
 ||fancybar.net^$third-party
 ||fgn.me^$third-party
-||flinteractive.fr^$third-party
 ||frtyi.com^$third-party
 ||frtyj.com^$third-party
 ||futureadlabs.com^$third-party
@@ -1869,6 +1868,7 @@ _build=iclick-$popup
 ||mrmserve.com^$third-party
 ||multilinkhost.com^$third-party
 ||myservdir.com^$third-party
+||myspot.fr^$third-party
 ||mytemplatestorage.com^$third-party
 ||myxpass.com^$third-party
 ||nend.net^$third-party
@@ -1974,7 +1974,6 @@ _build=iclick-$popup
 ||abberantbeefy.com^
 ||abberantdiscussion.com^
 ||abdicatehorrified.com^
-||abeenrvwyajw.top^
 ||abistonfrau.com^
 ||abjmkkowboyow.top^
 ||abjmkkowbozmj.top^
@@ -2029,7 +2028,6 @@ _build=iclick-$popup
 ||aikanefogon.com^
 ||ailcloister.com^
 ||airdateanimist.top^
-||airlinervegetarian.com^
 ||aitarsou.com^
 ||aj2178.online^
 ||akhlamesouchy.com^
@@ -2057,6 +2055,7 @@ _build=iclick-$popup
 ||ansariecaroche.top^
 ||antiqueunhinge.com^
 ||antwiseuprears.cyou^
+||anyonemost.com^
 ||apartgamble.com^
 ||aphizoguntaken.click^
 ||apialesholler.shop^
@@ -2157,7 +2156,6 @@ _build=iclick-$popup
 ||bubblyzucchini.com^
 ||bulbusscabish.shop^
 ||bulgejambee.shop^
-||buoyantanlagen.shop^
 ||burboltolid.top^
 ||burkhahemoid.com^
 ||burniecrepes.com^
@@ -2165,7 +2163,6 @@ _build=iclick-$popup
 ||byardskilpot.com^
 ||bytde.com^
 ||ca2686564a.com^
-||cabiainichts.shop^
 ||cafenehkikki.com^
 ||cameradiminishunkind.com^
 ||campusexcessively.com^
@@ -2873,7 +2870,6 @@ _build=iclick-$popup
 ||qrkwvoomrbeaz.top^
 ||qtoeofqazggu.com^
 ||qtpwgglrohgp.com^
-||queresspurdie.com^
 ||questionfly.com^
 ||quiaunrack.top^
 ||qwpenncp.com^
@@ -2900,7 +2896,6 @@ _build=iclick-$popup
 ||rbqlbolklreqy.top^
 ||rbrotator.ru^
 ||rbzqarqzovvov.top^
-||reacheffect.com^
 ||reasulty.com^
 ||reatushaithal.com^
 ||rebakebelage.com^
@@ -3410,6 +3405,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||cloudfront.net^*tid=$script
 ||comdotcdn.com/hiqqu/files/widgets/
 ||crichd.*/temp/cast4u.
+||csstatic.com/banners/
 ||ctb.intersport.fr^
 ||ctrip.com/?TypeID=$third-party
 ||e-media-concept.com/medias/
@@ -3702,6 +3698,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||batiactu.com/images/pub/
 ||batiactu.com/sites/all/libraries/bati/cronjobs/specials.js
 ||batiactu.com^*/partenaire/
+||batiment.nc/pubs/
 ||bdgest.com/habillages/
 ||bdgest.com/prepub/
 ||bedetheque.com/javascript/campagne?
@@ -4500,6 +4497,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pubVideo
 ##.pub_160x600
 ##.pub_300_250
+##.pub_728
 ##.pub_728_90
 ##.pub_article
 ##.pub_banner
@@ -4620,6 +4618,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.standard_adv_link
 ##.sticky-ad-holder
 ##.structure_wrapper-ad
+##.subimageAd
 ##.tableAds
 ##.tag-adverline
 ##.tag-sponsored-content
@@ -4723,6 +4722,7 @@ auchan.fr###cms-slot-disclaimerSlot
 tukif.com###co_sponsor
 signification-prenom.com###colpub > #bloc_forum
 orange.fr###commercial-links
+oujdacity.net###common-top-widget
 journaldunet.com###ctn_infeed
 papvacances.fr###details-services
 maxifoot.fr###ep300z
