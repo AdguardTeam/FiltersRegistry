@@ -1,14 +1,14 @@
-! Checksum: PQHU6bymhVS4BXIoPOYotg
-! Diff-Path: ../patches/243/243-s-1756788141-14400.patch
+! Checksum: 7ZgwXKveNmeDcJcWnZHJAw
+! Diff-Path: ../patches/243/243-s-1756874459-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.65
-! TimeUpdated: 2025-09-02T04:38:24+00:00
+! Version: 2.0.22.66
+! TimeUpdated: 2025-09-03T04:37:05+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-09-02 05:27:07 CEST
+! Last modified: 2025-09-03 05:06:30 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -319,7 +319,7 @@ byggahus.se#%#//scriptlet('ubo-aeld.js', '/adblockDetector|adsInserted|partnerEx
 byggahus.se#$#.bbImageWrapper--preview.active img { -webkit-filter:none!important; filter:none!important; transform:none!important; -webkit-transform:none!important; }
 byggahus.se##.block-ad, a[href^="/partner/"], .threadMatchedContent, #svartalistan-login-required-overlay
 byggahus.se,expressen.se,filmtopp.se,destination.se,spokbloggen.nu,folkhalsasverige.se,foretagsverige.se,forskningsverige.se,motorbibeln.se,hallbarhetsverige.se,tillvaxtsverige.se,grillbibeln.se,kampenmotcancer.se,bolagsfakta.se,affarsvarlden.se,affarerinorr.se,dinordbok.se,motorbranschen.mrf.se,rakapuckar.com##.ad-container
-byggfaktadocu.se##.pop_box
+byggfaktadocu.se##.pop_box, .contact-supplier.show
 byggfakta.today,citymark.today,hotellorestaurang.se##.cookie_popup_box
 byggipedia.se##aside .textwidget:has-text(/sponsr|samarbetspartners/i)
 byggipedia.se#$#* { user-select: auto !important; }
@@ -1000,6 +1000,7 @@ magazin24.se##.ad-pad
 magazin24.se#$?#.special_ad_video { remove: true; }
 magazin24.se##.widget_custom_html:has(.ad-pad, a[href*="casino"], a[href*="filmtopp.se"])
 maipenrai.se##.cWidgetContainer > ul > li:first-child, div[style*="border: 1px solid"] a[target="_blank"], div[data-role="sidebarAd"], a[href*="&ad="]
+maipenrai.se##:is(li.ipsDataItem, .ipsSpacer_both):has(a > img)
 maklarvarlden.se##article:has(.sponsored-inlist)
 maklarvarlden.se##div[data-td-block-uid]:has(a[href*="/kategori/sponsra"])
 maklarvarlden.se##.hustle-popup, div[class$="-sponsrat"]
@@ -1183,7 +1184,8 @@ podtail.se##aside a[href*="utm_campaign"]
 podtail.se##.item-list__item:has-text(/annons från/i)
 pokerforum.nu##.ipsBox:has(div[onclick="changeSubTab(\"casino\")"])
 pomu.se##[class^="Banner"]
-poolforum.se##div.adfit, .cookie_notice, div[style^="width:100%;max-width: 728px;"] > div[align="center"], div[style^="width:100%;max-width: 728px;"] > br
+poolforum.se##div.adfit, div[style^="width:100%;max-width: 728px;"] > div[align="center"], div[style^="width:100%;max-width: 728px;"] > br
+poolforum.se,varmepumpsforum.com##.cookie_notice
 popularastronomi.se##a.gofollow[data-track]:not([href*="www.popularastronomi.se"])
 pressbladet.se,svenskpress.se,foretagsbladet.se,gestrikemagasinet.se,cfanytt.se,lasarnas.se,hembostad.nu,sportidrott.se,nojesmagasinet.nu,halsasverige.se,mandarinmedia.se,svenskmusik.nu,reklamedia.se,motormagasinet.nu,konstmagasinet.nu,allpressen.se,seniorpressen.se##.isax
 pressbladet.se,svenskpress.se,foretagsbladet.se,gestrikemagasinet.se,cfanytt.se,lasarnas.se,hembostad.nu,sportidrott.se,nojesmagasinet.nu,halsasverige.se,mandarinmedia.se,svenskmusik.nu,reklamedia.se,motormagasinet.nu,konstmagasinet.nu,allpressen.se,seniorpressen.se,biblioteksbladet.se###cookiebar
@@ -1540,7 +1542,7 @@ utm_$document,removeparam=/^utm_/,domain=tv.nu|booli.se|expressen.se|aftonbladet
 utslappsratt.se,heleneholmsif.se,trafikskola.se,melodifestivalklubben.se,morotsliv.com,nyadagbladet.se#%#//scriptlet('ubo-set.js', 'em_track_user', 'false')
 utslappsratt.se,heleneholmsif.se,trafikskola.se,melodifestivalklubben.se,morotsliv.com,nyadagbladet.se#%#//scriptlet('ubo-set.js', 'exactmetrics_frontend', 'undefined')
 vackertvader.se##div[class^="ad-300x250"], div[class^="ad_300x250"]
-vackertvader.se,ledarsidorna.se,verkstadstidningen.se,svenskverkstad.se,macken.xyz##.cc-window
+vackertvader.se,ledarsidorna.se,verkstadstidningen.se,svenskverkstad.se,macken.xyz,ipo.se##.cc-window
 vadvivet.se##.intro-popup, div[class*="subscribeDialog"], div[class^="_background"][style*="opacity"]
 vagabond.se##.latest-article-native, .blurb--partner
 vardegrunden.se,lagboken.se##.cookie-notice
@@ -2203,7 +2205,6 @@ zeromagazine.nu##div[id^="ads"]
 /firehose/batch
 /flex-mag/js/dfp.js
 /footer/ad|
-/foretagarna.usercentrics.js$domain=foretagarna.se
 /forumannons.$subdocument,image,script
 /forum/assets/google-tag-manager
 /forum/images/_banners
@@ -2626,6 +2627,7 @@ zeromagazine.nu##div[id^="ads"]
 /sponsored_articles$domain=fastighetssverige.se
 /sponsorloggor$domain=swehockey.se
 /sponsors$domain=sdhl.se|storvretaibk.se|obosdamallsvenskan.se|elitettan.se
+/sponsor$image,domain=matradion.se
 /sponsrade$xmlhttprequest,domain=hockeysverige.se
 /spotlight-ad_$image
 /ss_foundation/combined_li_tracking
@@ -2672,7 +2674,7 @@ zeromagazine.nu##div[id^="ads"]
 /tracking/cts.js
 /tracking/fpc.js
 /tracking_scripts$domain=osterbottenstidning.fi|sydin.fi|vasabladet.fi
-/track$ping,xmlhttprequest,domain=epochtimes.se|dagen.se|vinliv.se
+/track$ping,xmlhttprequest,domain=epochtimes.se|dagen.se|vinliv.se|maipenrai.se
 /track-view$domain=aftonbladet.se|godare.se
 /track.js$domain=destination.se|sistaminuten.se
 /track/view?webInteractiveId$image

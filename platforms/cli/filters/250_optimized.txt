@@ -1,5 +1,5 @@
-! Checksum: a60Zfwig7z5CM7VYUODMAQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1756788142-14400.patch
+! Checksum: JIvM3Q1nYklNw/7bocIjhQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1756874460-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.73
@@ -19,6 +19,7 @@
 ##.app-download:not(html,body,section,.content)
 ##.app-nag-body:not(html,body,:empty)
 ##.app-nag:not(html,body,:empty)
+##.app-teaser:not(html,body,:empty)
 ##.appBanner:not(html,body,:empty)
 ##.AppBanner:not(html,body,:empty)
 ##.appdownload:not(html,body,:empty)
@@ -1016,6 +1017,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 172.240.41.96$network
 !+ PLATFORM(windows, mac, android, cli)
 139.45.197.106$network
+||eyestore.tebex.io^$document
 !+ PLATFORM(windows, mac, android, cli)
 43.128.142.70$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -1036,9 +1038,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||compiledonatevanity.com^$all
 ||complexionbootydistinction.com^$all
 ||cpmrevenuegate.com^$all
-||demiseskill.com^$all
 ||densubmarinesubdued.com^$all
-||difficultyanthonymode.com^$all
 ||filletfiguredconstrain.com^$all
 ||furyprosecutionkitchen.com^$all
 ||highrevenuenetwork.com^$all
@@ -1489,7 +1489,6 @@ drvhub.net##.driver-item__install
 ||androidweblog.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
 ||ytechb.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
 $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|ufl.edu|oecd.org|bu.edu|wikidot.com|alternativenation.net
-||s.free.fr^$all
 !+ PLATFORM(windows, mac, android, cli)
 212.27.60.108$network
 ||amazonaws.com^$all,badfilter
@@ -1541,7 +1540,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||flash.cn^$all
 ||crentgate.com^$all
 ||curryfielddistribution.com^$all
-||d13nu0oomnx5ti.cloudfront.net^$all
 ||ghastlyejection.com^$all
 ||redirekted.com^$all
 /^172\.255\.6\.(\d{1,2}|2.*|1[0-689].*|17[0-689])\$/$network
@@ -1944,7 +1942,6 @@ linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea
 ##.paywall-gradient:not(html, body)
 nijie.info##.twit-button
 instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
-spanishdict.com##.ReactModal__Overlay:has(video[src$="/bloom2.mp4"])
 community.spiceworks.com#%#//scriptlet('ubo-cookie-remover.js', 'visit_count')
 ||glassdoor.com^*/gd-user-hardsell-overlay.
 ##.tmblr-iframe--follow-teaser
@@ -2339,7 +2336,10 @@ $document,removeparam=guce_referrer_sig
 $document,removeparam=source_location
 $document,removeparam=psf_variant
 $document,removeparam=bxid
+$document,removeparam=cndid
+$document,removeparam=hasha
 $document,removeparam=hashb
+$document,removeparam=hashc
 $document,removeparam=irgwc
 $document,removeparam=/^clickid=.*$/i,domain=~discover.*
 $document,removeparam=ito
@@ -2481,7 +2481,6 @@ $removeparam=cvosrc
 $removeparam=ads_params
 $document,removeparam=/^affiliateID=.*$/i
 $removeparam=affiliate_id
-$removeparam=afn_sr
 $removeparam=cjdata
 $removeparam=click_id,domain=~bookings.beatthatflight.*
 $removeparam=cm_soc
@@ -2580,6 +2579,7 @@ $removeparam=_kx
 $document,removeparam=/^affsrc=.*$/i
 $document,removeparam=/^aff_sub\d?=.*$/
 $removeparam=afftrack
+$removeparam=atid
 $document,removeparam=/^clickref\d?=.*$/
 $removeparam=cuid,domain=~dynamicyield.com
 $removeparam=data1,domain=~web3.cmvm.pt
@@ -2599,6 +2599,7 @@ $document,removeparam=/^subid3=.*$/i
 $document,removeparam=/^subid4=.*$/i
 $document,removeparam=/^subid5=.*$/i
 $removeparam=tid1
+$removeparam=tid2
 $removeparam=tid3
 $removeparam=tid4
 $removeparam=avad
@@ -2687,6 +2688,7 @@ $removeparam=ads_creative
 $removeparam=ads_matchtype
 $removeparam=ads_network
 $removeparam=ads_targetid
+$document,removeparam=/^from=rss$/
 ref=rss^$document,removeparam=ref
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
@@ -2701,8 +2703,6 @@ $removeparam=int_content
 $removeparam=int_campaign
 $removeparam=sudaref
 $removeparam=pm_source
-$removeparam=pm_medium
-$removeparam=pm_campaign
 $removeparam=oref
 $removeparam=gaa_at
 $removeparam=gaa_n
@@ -3015,6 +3015,7 @@ $removeparam=uact,domain=www.google.*|ipv6.google.com
 ||google.$removeparam=prds
 ||googleadservices.com^$removeparam=ae
 ||googleadservices.com^$removeparam=agsac
+||googleadservices.com^$removeparam=cit
 ||googleadservices.com^$removeparam=dct
 ||googleadservices.com^$removeparam=ms
 ||googleadservices.com^$removeparam=ohost
