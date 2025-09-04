@@ -1,9 +1,9 @@
-! Checksum: UQkeml4hJCDeG9rNFp5RaQ
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1756874456-14400.patch
+! Checksum: d3FBBPHSk38tY57wNHkU7g
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1756960866-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.66
-! TimeUpdated: 2025-09-03T04:37:05+00:00
+! Version: 2.0.22.67
+! TimeUpdated: 2025-09-04T04:37:16+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -95,7 +95,6 @@
 99.teknikveckan.se##.page-gutter.left, .page-gutter.right, [id^="bbPrisjakt"]
 180.se##[class*="top-ad-"]
 2000tv.se###bannerbox
-Mobile-banner$image,domain=bokadirekt.se
 Samarbetspartners$image,domain=svensksegling.se
 Video-Ad-$media,third-party
 accentmagasin.se#$#body.modal-open { overflow:unset!important; position:unset!important; }
@@ -403,7 +402,6 @@ dental24.se##.fp_banners, .cypress-popup_newsletter, .cypress-ads, .cypress-insp
 dental24.se##.post-box:has(.sponsored)
 designbase.se#$#html,body { overflow:unset!important; }
 designbase.se##.banner-hidden, .z-newsletter-modal, .z-newsletter-popup
-desktop-banner$image,domain=bokadirekt.se
 destination.se,sistaminuten.se#%#//scriptlet('ubo-set-cookie.js', 'CM_cookieConsent', '0')
 digitalavykort.se##.rightdiv p:has-text(/casino|kasino|lån|betting|odds|lotto/i)
 digitalfotoforalla.se,iform.se,pctidningen.se,varldenshistoria.se,illvet.se##.scroll-message, .gallery-banner, .horseshoe, [data-ad-type], .bcm-banner, .default-banner-size, .bp-ads
@@ -426,8 +424,9 @@ discoveringtheplanet.com#%#//scriptlet('ubo-acs.js', 'document.ondragstart')
 discoveringtheplanet.com##.widget-title:has-text(/annons/i) + .textwidget
 di.se##.di_panorama-wrapper, .site-header__panorama, .di_panorama__isAdLabel, .discount-box, .campaign-ad-box, .di_start__teaser-placeholder, .di_teaser-flak-planbokskoll, .di_teaser-flak-container--native, .native-box, .bandit-box__teaser--native, a[href*="/brandstudio"], .service-box, .brand-studio-box, .native-article, .listing-box-native
 di.se##.market-start-top + div:not(.market-container__wrapper)
+djungeltrumman.se##div[align="center"] > a[href*="casino"]:upward(2)
 djungeltrumman.se###sponsored-posts, #right-banners, .banner-wrapper, .top-banner-label, .banner-label
-djungeltrumman.se#$?#.label-sponsored:upward(#latest-slider a) { remove: true; }
+djungeltrumman.se##.item:has(a[href*="casino"])
 djungeltrumman.se##.post:has(.label-sponsored)
 dn.se#$#body { position:unset!important;overflow-y:scroll!important; }
 dn.se##.article--native, .teaser-card--native, .ds-teaser--native, #dnse-popup, .bad, .campaign-holder
@@ -1125,6 +1124,7 @@ nyheter.swebbtv.se##.wp-block-image a[target]:not([href*="nyheter.swebbtv.se"]),
 nyhetsbyranjarva.se##div[style="display: flex; justify-content: center; flex-direction: column; align-items: center;"]
 nyhetsbyranjarva.se,nyan.ax,tv-kanal.se,golfguidenonline.se,rockbladet.se,vildmarken.se,nyhetersto.se,dagenslogistik.se,turismnytt.se,radiosol.se,cora.se,travelandtourworld.se,mallorcanyheter.com,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,it-hallbarhet.se,fisheco.se,opusmagasin.se##.g
 nyteknik.se,lag-avtal.se,arbetarskydd.se##article:has(a[href*="/sponsrad"])
+nyteknik.se,lag-avtal.se,arbetarskydd.se##.kicker:has-text(ANNONS):upward(article)
 obosdamallsvenskan.se,elitettan.se##.iframe-section-container:has(iframe[src*="bannerflow"])
 obosdamallsvenskan.se,elitettan.se##.linked-image-section:has(a[target="_blank"])
 obosdamallsvenskan.se,elitettan.se##.rmss_ap-top-ad + .rmss_t-ap-grid-stripe:has(a[href*="svenskaspel"])
@@ -1924,6 +1924,7 @@ zeromagazine.nu##div[id^="ads"]
 *$subdocument,third-party,redirect=click2load.html,domain=alltomsallskapsspel.se
 *$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net
 *$script,redirect-rule=noopjs,domain=elevspel.se
+-banner$image,domain=bokadirekt.se
 -popup-analytics
 -samarbete$image,domain=hockeyettan.se
 -tracking.js$domain=aftonbladet.se|godare.se|svd.se
