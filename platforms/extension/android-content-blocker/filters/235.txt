@@ -1,12 +1,12 @@
-! Checksum: A41H9JyxNhE7YIgxRLbc2g
+! Checksum: owAcqhUV2kW5wWNfq4mtDg
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.90
-! TimeUpdated: 2025-09-04T12:45:22+00:00
+! Version: 2.0.5.91
+! TimeUpdated: 2025-09-04T20:35:07+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ☀️ PersianBlockerNG ☀️
-! Last modified: 2025-08-06 23:10:49 +0330
+! Last modified: Thu, 4 Sep 2025 23:38:35 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads, trackers and annoyances in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -14,7 +14,24 @@
 !
 ! GitHub issues: https://codeberg.org/KhodeKiaa/PersianBlocker/issues
 ! GitHub pull requests: https://codeberg.org/KhodeKiaa/PersianBlocker/pulls
-! Include the old list for now:
+! لیستی برای برگرداندن آزادی کاربران، چون هر کاربر این آزادی را دارد که چه چیزی وارد مرورگرش می‌شود و چه چیزی وارد نمی‌شود !
+! فَروَهَر یا فرِّ کیانی، نماد فناناپذیری:
+!                              ████                          !
+!                             ████                           !
+!                             ████                           !
+!                       ███   ████                           !
+!                       ██████████                           !
+!                       ██████████                           !
+!████████████████████████████████████████████████████████████!
+!████████████████████████████████████████████████████████████!
+! ███████████████████████████████ ██████████████████████████ !
+!   ██████████████████████████████████████████████████████   !
+!        ████████████████████████████████████████████        !
+!                       ██████████████                       !
+!                   ██ ██ ██████████ ██ ██                   !
+!                   ████ ████████████ ████                   !
+!                        ████████████                        !
+! Include the old list for now, will be removed in the future:
 ! Title: PersianBlocker
 ! Description: سرانجام، یک لیست بهینه و گسترده برای مسدودسازی تبلیغ ها و ردیاب ها در سایت های پارسی زبان!
 ! Expires: 5d
@@ -298,7 +315,9 @@ niloblog.com##bloglinksblock
 ||sabaidea.cloud^
 ||seyedrezabazyar.com/codetools/files/close-right-click.js
 ! >> T <<
-||trustseal.e-rasaneh.ir^$domain=~anaj.ir|~salamatnews.com
+! 2025-09-04, commented:
+!!||trustseal.e-rasaneh.ir^$domain=~anaj.ir|~salamatnews.com
+!!trustseal.e-rasaneh.ir##^responseheader(set-cookie)
 ||triboon.net^
 @@||tamasha.com/embed^$subdocument,third-party
 ||tamasha.com/dist/*/js/ads_tracker.min.js^$script
@@ -1249,15 +1268,6 @@ khabarfarsi.com###block-block-120
 ||images.kojaro.com/*.gif^$image,~third-party
 ||kojaro.com/kojaro/ui/js/banner.js^$script,~third-party
 kojaro.com##div.mobileBanner
-! https://github.com/AdguardTeam/AdguardFilters/issues/33437
-! https://github.com/AdguardTeam/AdguardFilters/issues/101735
-! https://github.com/MasterKia/PersianBlocker/issues/41
-khabaronline.ir###header-ad
-khabaronline.ir##.ads
-khabaronline.ir##[href^="/redirect/ads/"]
-khabaronline.ir##.bg-gray-links.box
-khabaronline.ir#@##ads-container
-khabaronline.ir###ads-container > .list-thumbs.title-only.list.box
 koolakmag.ir##.widget_custom_html.widget.container-wrapper.widget_text
 ||khabarpu.com/js/getscript.js^
 khabarpu.com##.inline_ads
@@ -2284,7 +2294,7 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 !------------------------^ Afghanistan sites ^-----------------------!
 ! Ads:
 ! Title: PersianBlockerAds
-! Last modified: 2025-09-04 13:17:06 +0330
+! Last modified: Thu, 4 Sep 2025 23:38:35 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -2305,6 +2315,7 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 ||pushe.co^
 ||sanjagh.com^
 ||najva.com^
+||sorenad.com^
 ||adexo.ir^
 ! (e.g. sharghdaily.com):
 ||adexofiles.ir^
@@ -2326,9 +2337,9 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 @@||player.tavoos.net/jwplayer.core.controls.html5.js
 @@||player.tavoos.net/provider.hlsjs.js^$script
 @@||player.tavoos.net/assets^$image,font
-! rokna.net
+! rokna.net:
 ||binoads.ir^
-! par30games.net
+! par30games.net:
 ||yektabanner.com^
 ! These news websites all have a common advertisment format:
 ! cdn.sharghdaily.com/servev2/, cdn.donya-e-eqtesad.com/servev2/, cdn.fararu.com/servev2/, etc
@@ -2336,6 +2347,8 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 ! donya-e-eqtesad.com, rokna.net:
 ##.zxc
 ##.zxc-padding-custom
+! ronveis.ir:
+||mihanstore.net/partner^
 !!! Specific !!!
 !!! ===VV=== !!!
 ! abadis.ir
@@ -2351,11 +2364,13 @@ dlfox.com##.single_post_banner
 dlfox.com##.banner_small_dlbox_b
 ! download.ir
 ||download.ir/wp-content/uploads/*.gif^
-! zoomit.ir, zoomg.ir
+! zoomit.ir, zoomg.ir, pedal.ir, filmzi.tv/filmzi.com
+! https://github.com/MasterKia/PersianBlocker/issues/310
 ! https://github.com/MasterKia/PersianBlocker/issues/330
-/ads/api^$domain=zoomit.ir|zoomg.ir
+/ads/api^$domain=zoomit.ir|zoomg.ir|pedal.ir|filmzi.tv|filmzi.com
 ! Header ads:
 ! Other ads:
+! All ads:
 ! mali3.com
 ||mali3.com/wp-content/uploads/*.gif^
 ! web.rubika.ir
@@ -2467,10 +2482,17 @@ iranianuk.com##.banners_container
 ! wikihoghoogh.net
 wikihoghoogh.net###siteNotice
 ! avaz-kurd.ir, power-music.ir
-avaz-kurd.ir, power-music.ir##.btn-app
+avaz-kurd.ir,power-music.ir##.btn-app
+! ronvevis.ir
+ronevis.ir##.posts-ads
+! khabaronline.ir:
+! https://github.com/AdguardTeam/AdguardFilters/issues/33437
+! https://github.com/AdguardTeam/AdguardFilters/issues/101735
+! https://github.com/MasterKia/PersianBlocker/issues/41
+khabaronline.ir##.cyt-ads-block
 ! Trackers:
 ! Title: PersianBlockerTrackers
-! Last modified: 2025-08-24 17:46:19 +0330
+! Last modified: Thu, 4 Sep 2025 23:38:35 +0330
 ! Expires: 7 days
 ! Description: Filters to block trackers in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -2533,7 +2555,7 @@ avaz-kurd.ir, power-music.ir##.btn-app
 ! !#include PersianBlockerAnnoyances.txt
 ! Video Censorship:
 ! Title: PersianBlockerCensor
-! Last modified: 2025-09-01 09:58:24 +0330
+! Last modified: Thu, 4 Sep 2025 23:38:35 +0330
 ! Expires: 7 days
 ! Description: Filters to block video censorship in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -2558,7 +2580,7 @@ avaz-kurd.ir, power-music.ir##.btn-app
 ! zarebin.ir:
 ! Half-Price (نیم بها) Sites:
 ! Title: PersianBlockerHalfPrice
-! Last modified: 2025-08-06 16:39:58 +0330
+! Last modified: Thu, 4 Sep 2025 23:38:35 +0330
 ! Expires: 7 days
 ! Description: Filters to indicate half-price (نیم بها) Persian websites in search results
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -2582,7 +2604,7 @@ avaz-kurd.ir, power-music.ir##.btn-app
 ||alast.group^
 ! Mobile (Firefox Android, Cromite, AdGuard for Android, AdGuard for iOS, AdGuard for Safari, Samsung Internet)
 ! Title: PersianBlockerMobile
-! Last modified: 2025-08-24 17:25:08 +0330
+! Last modified: 2025-09-04 22:40:40 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads in Persian websites on mobile browsers
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
