@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: iEiAIMRbaHP7bID564Wd8w
-! Diff-Path: ../patches/1/1-s-1756962663-3600.patch
+! Checksum: YlKu0K0XgagrJwywLZru6A
+! Diff-Path: ../patches/1/1-s-1756966448-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.1.58
-! TimeUpdated: 2025-09-04T05:06:41+00:00
+! Version: 2.1.1.59
+! TimeUpdated: 2025-09-04T06:09:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5285,6 +5285,8 @@ generationiron.com##+js(set-constant, td_ad_background_click_link, undefined)
 nnmclub.to##+js(addEventListener-defuser, click, _blank)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/32589
 nnmclub.to##+js(abort-on-property-write, sc_adv_out)
+! https://github.com/AdguardTeam/AdguardFilters/issues/212465
+strip2.*##+js(no-setTimeout-if, mobiads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31743
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135835
 strip2.in,spaces.im,modsanandroid.ru##+js(abort-on-property-read, MobiAds)
@@ -17673,6 +17675,7 @@ kp.ru,kp.by,kp.kg,kp.kz###adwrap
 kp.ru,kp.by,kp.kg,kp.kz#?#div[data-gtm-el="content-body"] ~ div > div:has(> div.smi24__informer)
 !
 ! spaces.ru/spcs.me/ - PC
+.js?__=$script,third-party,domain=strip2.co|strip2.in|strip2.club
 spaces.im,spcs.*,strip2.in##div > div:has(> a[title="Отключить рекламу"])
 /resources/js/sticker.js$domain=spaces.im|spcs.*|strip2.in
 spaces.im,spcs.*,strip2.in###siteContent > div.relative ~ div[class]:has(> table[style] > tbody > tr > td[class] > div[class] > a[title="Отключить рекламу"])

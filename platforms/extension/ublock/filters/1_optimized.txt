@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 68dBdvNm7yh9k93GiyM83A
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1756962664-3600.patch
+! Checksum: Rti7H8Ww/WfsoYsGNcpPDg
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1756966450-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.1.58
-! TimeUpdated: 2025-09-04T05:06:41+00:00
+! Version: 2.1.1.59
+! TimeUpdated: 2025-09-04T06:09:22+00:00
 ! Expires: 5 days (update frequency)
 /code/video-steam/?id=*&vast=
 /nadavi-api/?p4g3=js/api/widget.js
@@ -2322,6 +2322,7 @@ windowspro.ru##+js(abort-current-script, document.createElement, browserDetect)
 generationiron.com##+js(set-constant, td_ad_background_click_link, undefined)
 nnmclub.to##+js(addEventListener-defuser, click, _blank)
 nnmclub.to##+js(abort-on-property-write, sc_adv_out)
+strip2.*##+js(no-setTimeout-if, mobiads)
 strip2.in,spaces.im,modsanandroid.ru##+js(abort-on-property-read, MobiAds)
 7days.ru##+js(abort-on-property-write, __AABStatus)
 vesti.uz##+js(abort-current-script, document.createElement, rtIsWebSocket)
@@ -6826,6 +6827,7 @@ kp.ru##.kpad
 kp.ru,kp.by,kp.kg,kp.kz##div[data-name]
 kp.ru,kp.by,kp.kg,kp.kz###adwrap
 kp.ru,kp.by,kp.kg,kp.kz#?#div[data-gtm-el="content-body"] ~ div > div:has(> div.smi24__informer)
+.js?__=$script,third-party,domain=strip2.co|strip2.in|strip2.club
 spaces.im,spcs.*,strip2.in##div > div:has(> a[title="Отключить рекламу"])
 /resources/js/sticker.js$domain=spaces.im|spcs.*|strip2.in
 spaces.im,spcs.*,strip2.in###main_content_block > div.content_wrap > div[id="page_rightbar"] > div.widgets-group ~ div[class]:has(> div.widgets-group > a[target="_blank"][rel="noopener"])
