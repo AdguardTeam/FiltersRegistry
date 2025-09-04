@@ -1,9 +1,9 @@
-! Checksum: 9Fu8IvPvzzGNIlWNexZomA
-! Diff-Path: ../patches/14/14-s-1756980697-3600.patch
+! Checksum: AmjexljSLZl59geGsHtyyQ
+! Diff-Path: ../patches/14/14-s-1756984195-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.41.88
-! TimeUpdated: 2025-09-04T10:08:00+00:00
+! Version: 2.2.41.89
+! TimeUpdated: 2025-09-04T11:06:31+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21972,6 +21972,8 @@ foodnetwork.co.uk#@#.cookie-message:not(html):not(body)
 music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 !
 ! Yandex.Pogoda
+[$path=/pogoda|hava/]yandex.*#%#//scriptlet('abort-on-property-write', 'ctxScript')
+[$path=/pogoda]dzen.ru###money-ecom
 [$path=/pogoda]dzen.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderData')
 [$path=/pogoda]dzen.ru##.adv-ecom
 [$path=/pogoda|hava/]yandex.*#%#//scriptlet('prevent-eval-if', 'Id":"R-I')
@@ -21983,9 +21985,6 @@ music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 !
 ! Yandex.Video
 [$path=/video]ya.ru,yandex.*#%#//scriptlet('json-prune', 'rtb seatbid')
-! TODO: remove after releasing new AdGuard 2.0 for Safari
-! Breaks Yandex Mail in Safari due to a bug
-!+ NOT_PLATFORM(ext_safari)
 [$path=/video]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'throwFunc')
 !
 ! Yandex.Afisha
@@ -56340,6 +56339,7 @@ twgreatdaily.com$$script[tag-content="indexOf|css|fn|this|attr|unselectable|cons
 ! SECTION: Widgets (sougo RSS) - Blogroll
 !
 ! NOTE: Blogroll generic
+||gamelog.apexlegends-leaksnews.com/api/widget/$third-party
 ||re.trigs-sockets.com^
 ||feedgrabbr.com^$third-party
 ||rss.solty.biz^
