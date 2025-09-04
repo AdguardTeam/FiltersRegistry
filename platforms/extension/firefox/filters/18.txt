@@ -1,9 +1,9 @@
-! Checksum: Z+QwWyi9EInWD0VK1ixzsw
-! Diff-Path: ../patches/18/18-s-1756980710-3600.patch
+! Checksum: KIwQqcxp91zltvbbhWNSjA
+! Diff-Path: ../patches/18/18-s-1757002297-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.69.41
-! TimeUpdated: 2025-09-04T10:08:05+00:00
+! Version: 2.0.69.42
+! TimeUpdated: 2025-09-04T16:07:57+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2531,6 +2531,8 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+cronosnewdawn.com#%#//scriptlet('trusted-set-cookie', 'cookie_consent_level', '%7B%22strictly-necessary%22%3Atrue%2C%22functionality%22%3Afalse%2C%22tracking%22%3Afalse%2C%22targeting%22%3Afalse%2C%22undefined%22%3Afalse%7D')
+cronosnewdawn.com#%#//scriptlet('trusted-set-cookie', 'cookie_consent_user_accepted', 'true')
 nrk.no##nrkno-cookie-banner
 uzairways.com##.notifyCookies
 siirthaberci.com##body > div[style^="padding: 0 1rem;"]
@@ -17378,6 +17380,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212824
+@@||cronosnewdawn.com/js/cookie-consent.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212779
 @@||cache.consentframework.com/js/*/stub$domain=gizmodo.com
 @@||cache.consentframework.com/js/*/cmp$domain=gizmodo.com
