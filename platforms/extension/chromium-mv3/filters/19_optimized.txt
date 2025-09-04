@@ -1,8 +1,8 @@
-! Checksum: 3I6IgVk/Ay1A0oS1CeAOVg
+! Checksum: yw2OHF0kYBGwtJx12IHsNg
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.61.61
-! TimeUpdated: 2025-09-04T11:06:35+00:00
+! Version: 2.0.61.62
+! TimeUpdated: 2025-09-04T15:07:47+00:00
 ! Expires: 10 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 [$path=/images]ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -94,7 +94,8 @@ news.mail.ru,e.mail.ru,octavius.mail.ru#%#//scriptlet('abort-on-stack-trace', 'P
 e.mail.ru,octavius.mail.ru#%#//scriptlet('remove-class', 'scrollable_top-line-adv-2pane|scrollable_top-line-adv-2pane_high-block|scrollable_top-line-adv-2pane_pony-mode', '.scrollable')
 e.mail.ru,octavius.mail.ru#%#//scriptlet('remove-class', 'letter-list_top-line-adv-2pane|letter-list_top-line-adv-2pane_pony-mode|letter-list_topline-touch-adv|letter-list_top-line-adv-2pane_high-block', '.letter-list')
 news.mail.ru#?#body > div:has(> div[id] > div > div.title:contains(блокировщика рекламы))
-dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.addByDimensionObserver', 'noopFunc')
+dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.initAdvManager', 'undefined')
+dzen.ru##div[class^="dzen-layout--desktop-page-layout__root-"] > div > div[data-appid^="dzen-desktop@"] div + div > div[style*="padding-top:"][style*="position:"]
 dzen.ru##div[aria-label="Лента Дзена"] article:has(> div[data-ad-type="direct"])
 dzen.ru##div[class*="-desktop-"][class*="-placeholder__"]
 dzen.ru###top-banner
@@ -102,9 +103,6 @@ dzen.ru##div[class^="content--article-item__rightAdWrapper"]
 dzen.ru##div[data-testid="bottom-ad"]
 dzen.ru##div[class*="__advertItem "]
 dzen.ru##.news-page-layout__content > div.news-page-layout__rubricator + div[id][class]:has(div[class*="-redesign-placeholder__"])
-dzen.ru#%#//scriptlet('json-prune', 'ssrData.exportResponse.feedData.adItems')
-dzen.ru#%#//scriptlet('set-constant', 'Object.prototype.ssrBanner', 'undefined')
-dzen.ru#%#//scriptlet('abort-on-stack-trace', 'Promise', 'initContext')
 dzen.ru#$?##LayoutTopMicroRoot div[style^="padding-top:"][style*="position: relative; height: 0;"] { remove: true; }
 dzen.ru##div[class^="dzen-desktop--"][class*="__topContent-"] > div[class^="dzen-desktop--top-sidebar-desktop-"] > article[style]
 dzen.ru##div[class^="dzen-desktop--feed__itemWrap-"] div[class^="dzen-desktop--"][class*="__cardWrapper-"] ~ article:has([class*="__adBox-"])
@@ -197,7 +195,7 @@ simptown.su##.juice_ban
 aram.zone#%#//scriptlet('prevent-element-src-loading', 'img', 'nitropay.com')
 aram.zone#%#//scriptlet('abort-on-stack-trace', 'CanvasRenderingContext2D.prototype.drawImage', '.onload')
 yuuki.me##div[id^="yuukips-ad-block-notification-banner"]
-dongknows.com#%#//scriptlet('prevent-addEventListener', 'load', 'rejectMethod')
+#%#//scriptlet('prevent-eval-if', 'js_var_adBaitAnimation')
 ||pmur.org/scripts/LeParisien_abChoice.js
 ashemaletube.com##.adblock.tac
 madarascans.com#@#.ad-slot
@@ -4236,7 +4234,6 @@ razer.com#$#.modal-backdrop { display: none !important; }
 razer.com#$#body { overflow: visible !important; padding-right: 0 !important; }
 executive-shaving.co.uk#$#body { overflow: visible!important; }
 item.rakuten.co.jp##.exT_sdtext > label[for="modal"]
-dongknows.com##.opt-in-hound-opt-in-pop-up-overlay
 699pic.com##.springtime-pop
 699pic.com##.springtime-floatLink
 699pic.com##.winpopbg
