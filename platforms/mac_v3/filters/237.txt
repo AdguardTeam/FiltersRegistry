@@ -1,9 +1,9 @@
-! Checksum: erT0tRxaqu1SIWEj1a7vXw
-! Diff-Path: ../patches/237/237-s-1757076594-14400.patch
+! Checksum: /R9gVL5k8Q/Mfwnzc5gNUQ
+! Diff-Path: ../patches/237/237-s-1757090542-14400.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.36.23
-! TimeUpdated: 2025-09-05T12:45:15+00:00
+! Version: 1.0.36.24
+! TimeUpdated: 2025-09-05T16:37:42+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -12,8 +12,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Fri, 05 Sep 2025, 14:13 UTC+02:00
-! OriginalVersion: 2025.9.5.0
+! Last modified: Fri, 05 Sep 2025, 18:12 UTC+02:00
+! OriginalVersion: 2025.9.5.1
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -22,7 +22,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: pią, 05 wrz 2025, 14:13 UTC+02:00
+! Aktualizacja: pią, 05 wrz 2025, 18:12 UTC+02:00
 !
 !
 ! Newslettery (nie popupy)
@@ -1607,6 +1607,7 @@ tsintegracje.com##.contNewsletter
 tucholanin.pl###sidebar-bottom > ul.widget-container:first-of-type
 tuolawa.pl##footer#app-footer > div > div:first-child > div > div > div:nth-child(3) > *
 tustolica.pl###menumini > li:nth-of-type(3)
+tvn24.pl##.newsletters-group-with-background
 tvn.pl##.btn-newsletter, .footer-col:nth-of-type(4) > .footer-heading:nth-of-type(2)
 tvndiscoverytalents.pl##.c-sign-newsletter
 tvokazje.pl###newsletter_block_popup, .newsletter-image-short
@@ -11934,6 +11935,7 @@ topplant.pl###pum-2168
 tpa-group.pl###PopupModal, .modal-backdrop
 truphone.com#$#.blur-out { filter: none !important }
 ttv.pl###specialPopupModal
+tvn24.pl#%#//scriptlet('ubo-aeld.js', 'nuvi:allEnded')
 tvokazje.pl###tvo-newsletter-popup-new-year, .modal-backdrop
 twojekwiaty.pl###exitPopup
 ubraniadooddania.pl###popup-dialog, .modal-backdrop
@@ -12115,14 +12117,11 @@ sportowefakty.wp.pl#$##randomplayer[class*="fixed"], #randomplayer[class*="fixed
 store.steampowered.com#$#[class^="broadcast_embeddable_broadcast_floating"] { position: static !important }
 store.steampowered.com##div[data-featuretarget="broadcast-embed"] div:matches-css(position: fixed)
 topagrar.pl#%#//scriptlet('ubo-aeld.js', 'scroll', '[native code]')
+wzielonej.pl#$##the-sticky-video.video-is-sticky { visibility: hidden !important }
 tvn.pl#%#//scriptlet('ubo-json-prune.js', 'playlist.options.auto_play_when_visible')
 tvn.pl,tvn24.pl#%#//scriptlet('ubo-json-prune.js', 'options.auto_play')
-wzielonej.pl#$##the-sticky-video.video-is-sticky { visibility: hidden !important }
 !
 !
-! permissions=autoplay=()|unsized-media=()
-|http*://*.*$document,domain=~0.0.0.0|~127.0.0.1|~[::1]|~[::]|~local|~localhost|~stooq.com|~stooq.pl,permissions=autoplay=()
-||dailymotion.com^$permissions=autoplay=()|unsized-media=()
 infozdrowie24.pl#$#.miniplayer { position: absolute !important; transition: unset !important; }
 infozdrowie24.pl#$#.normplayer { transition: unset !important; }
 !
@@ -12132,8 +12131,7 @@ polishannoyancefilters.netlify.app###pafadguard
 !
 !
 ! Codename: Contact Widgets - Supplement
-orange.pl#$#iframe#OPLWCI[style*="fixed"][style*="z-index"][style*="height: 110px"] { visibility: hidden !important }
-orange.pl#$#iframe#OPLWCI[style*="fixed"][style*="z-index"][style*="height: 238px"] { visibility: hidden !important }
+orange.pl#$#iframe#OPLWCI[style*="fixed"][style*="z-index"][style]:is([style*="height: 110px"], [style*="height: 238px"]) { visibility: hidden !important }
 !
 ! Filtry specjalne
 polishannoyancefilters.netlify.app###pafadguard
@@ -12369,8 +12367,6 @@ tabletowo.pl#$#.bwswitch { position: absolute !important }
 tablety.pl#$#.image-ticker-news { left: 0 !important }
 teatr.bedzin.pl#$#html.intro-is-opened, html.intro-is-opened body.intro-is-opened { overflow-y: auto !important }
 teletoonplus.pl#$#.drizzle_l { z-index: 0 !important }
-tvn.pl#%#//scriptlet('ubo-json-prune.js', 'playlist.options.auto_play_when_visible')
-tvn.pl,tvn24.pl#%#//scriptlet('ubo-json-prune.js', 'options.auto_play')
 tysol.pl#$#.section_name.uppercase { font-size: 18pt !important }
 urzadskarbowy.gov.pl#%#//scriptlet('ubo-set-session-storage-item.js', 'smartBannerVisible', 'false')
 vod.tvp.pl#$##siteServiceDetal.playerOpened .playerContainer { margin-top: 30px !important }
@@ -12390,11 +12386,10 @@ zapytaj.onet.pl##.profile-actions > .music
 znaki.edu.pl#%#//scriptlet('ubo-aeld.js', 'keydown', 'ssc_keydown')
 znaki.edu.pl#%#//scriptlet('ubo-aeld.js', 'wheel', 'ssc_wheel')
 znanylekarz.pl#%#//scriptlet('ubo-set-local-storage-item.js', 'banner.wasFullPageBannerDisplayed', 'true')
+tvn.pl#%#//scriptlet('ubo-json-prune.js', 'playlist.options.auto_play_when_visible')
+tvn.pl,tvn24.pl#%#//scriptlet('ubo-json-prune.js', 'options.auto_play')
 karachan.org#%#//scriptlet('ubo-acis.js', 'setInterval', 'Math.random')
 komputerswiat.pl#$##ks_breaking_news { position: absolute !important; left: -3000px !important }
-! permissions=autoplay=()|unsized-media=()
-|http*://*.*$document,domain=~0.0.0.0|~127.0.0.1|~[::1]|~[::]|~local|~localhost|~stooq.com|~stooq.pl,permissions=autoplay=()
-||dailymotion.com^$permissions=autoplay=()|unsized-media=()
 cs-harnas.pl,gearbest.com,jaguar.pl,kwit.pl,progrupa.com,przeswietl.pl,seniorka-z-plecakiem.pl,sparta.com.pl,start.me#$#body { scrollbar-color: #C1C1C1 #F1F1F1 !important; scrollbar-width: auto !important }
 czestochowskie24.pl,farmacja.net#$#body, div { scrollbar-color: #C1C1C1 #F1F1F1 !important; scrollbar-width: auto !important }
 youtube.com#$##guide-inner-content { scrollbar-color: #C1C1C1 #F1F1F1 !important; scrollbar-width: auto !important }
