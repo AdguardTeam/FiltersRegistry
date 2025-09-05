@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: a48lcYoOCQcnzETQRXAkrg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1757018366-14400.patch
+! Checksum: Ai0UaucXSlfuCKXsjt2+yg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1757047275-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.76
@@ -579,7 +579,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||185.53.178.54^$all
 .to/popconsole.php|
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
-###ppsPopupBgOverlay
 ###rail-share-bar
 ###share-buttons
 ###share_bar
@@ -1130,6 +1129,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 @@://safeweb.norton.com^
 @@||sitecheck.sucuri.net^
 @@||safebrowsing.google.com^
+@@://www.fortiguard.com^
 @@://wikipedia.org^
 @@://github.com^|
 @@||bitbucket.org^
@@ -1427,6 +1427,7 @@ $removeparam=LSNPUBID
 $removeparam=admitad_uid
 $removeparam=traffic_type
 $removeparam=traffic_id
+$removeparam=dcmp
 $removeparam=clickOrigin
 $removeparam=clickSR
 $removeparam=istCompanyId
@@ -1909,9 +1910,6 @@ $removeparam=geniuslink
 ||amazon.$removeparam=maas
 ||amazon.$removeparam=/^aa_.*$/
 ||amazon.$removeparam=refinements
-||amazon.$removeparam=qsid
-||amazon.$removeparam=sres
-||amazon.$removeparam=srpt
 $removeparam=hvadid
 $removeparam=hvpos
 $removeparam=hvnetw
@@ -2375,6 +2373,7 @@ $removeparam=soc_trk
 $removeparam=ia-pkpmtrack
 ||spartoo.$removeparam=sx
 ||spartoo.$removeparam=track_id
+||microcenter.com^$removeparam=rf
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
 $removeparam=CID,domain=burpee.com|chegg.com|express.com|farmandfleet.com|marvel.com|mcafee.com|overstock.com|pepboys.com|puritan.com|rosettastone.com|samsung.com|shutterfly.com|staples.com|teleflora.com|ulta.com|virginatlantic.com|vrbo.com|walgreens.com|media-cdn.costco.ca|media-cdn.costco.com
@@ -2696,6 +2695,7 @@ $removeparam=afSmartRedirect
 ||wsj.com^$removeparam=st
 $removeparam=adt_ei
 ||linkedin.com/feed/update$removeparam=origin
+$document,removeparam=plcmt,domain=grafana.com
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||gitlab.$removeparam=ref_type
@@ -2874,6 +2874,7 @@ buffalonews.com##+js(set-constant, lee_trkLinkSrc, noopFunc)
 @@||youtube.com/videoplayback$removeparam=source
 @@||facebook.com^$removeparam=__s
 @@||bing.*/ws/redirect/$removeparam
+@@/unsub/?$removeparam
 @@||email-link.$removeparam
 @@||manage.kmail-lists.com/subscriptions^$removeparam
 @@/login-redirect/*$removeparam
