@@ -1,14 +1,14 @@
-! Checksum: YTcYtiEr2ReuF1Zam4Yx5Q
-! Diff-Path: ../patches/227/227-s-1757047271-14400.patch
+! Checksum: tf9cYZl36FQBRQAh51FZEw
+! Diff-Path: ../patches/227/227-s-1757076576-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.22.85
-! TimeUpdated: 2025-09-05T04:36:52+00:00
+! Version: 2.0.22.86
+! TimeUpdated: 2025-09-05T12:45:05+00:00
 ! Expires: 1 day (update frequency)
 !
 ! Title: List-KR for AdGuard
 ! Description: List-KR for AdGuard. Maintained by the adblock community and AdGuard.
-! OriginalVersion: 2025.0904.1
+! OriginalVersion: 2025.0905.2
 ! Expires: 1 day
 ! Homepage: https://github.com/List-KR/List-KR
 ! Support: https://list-kr-community.pages.dev/docs/
@@ -3506,6 +3506,7 @@ m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html',
 ! m.fmkorea.com
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 !
+map.naver.com#%#//scriptlet('json-prune-xhr-response', 'layers.[-].metadata.name.{=}.POI_Ads', '', '/PCWeb_Real.json')
 pcmap.place.naver.com,m.place.naver.com#%#//scriptlet('json-prune', '[].data.poiRecommendations.recommendations.[].items.[-].adClickLog.clickUrl')
 platformgreat.kr#%#//scriptlet('set-constant', 'commonTrailer', 'undefined')
 kilho.net#%#//scriptlet('abort-current-inline-script', 'jQuery', '.adsbygoogle')
@@ -3644,7 +3645,7 @@ t.hi098123.com#@#ins.adsbygoogle[data-ad-slot]
 !#safari_cb_affinity
 t.hi098123.com#$#.tabad { top: -100px !important; }
 !
-chzzkban.xyz#%#//scriptlet('prevent-requestAnimationFrame', 'window.getComputedStyle(')
+chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle')
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mylocation.co.kr
 @@||mylocation.co.kr^$generichide
