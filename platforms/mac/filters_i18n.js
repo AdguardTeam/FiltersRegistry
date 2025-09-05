@@ -139,7 +139,7 @@
 				"name": "الخصوصية"
 			},
 			"be": {
-				"name": "Антытрэкінг"
+				"name": "Прыватнасць"
 			},
 			"bg": {
 				"name": "Поверителност"
@@ -809,7 +809,7 @@
 				"name": "حسب اللغة"
 			},
 			"be": {
-				"name": "Моўныя"
+				"name": "На пэўнай мове"
 			},
 			"bg": {
 				"name": "Специфични за езика"
@@ -3083,7 +3083,7 @@
 			},
 			"be": {
 				"name": "Турэцкі фільтр",
-				"description": "Турецкий фильтр AdGuard. Фильтр, позволяющий убрать рекламу с сайтов на турецком языке."
+				"description": "Фільтр, які прызначаны для выдалення рэкламы на вэб-сайтах на турэцкай мове."
 			},
 			"bg": {
 				"name": "Турски филтър",
@@ -3438,7 +3438,7 @@
 				"description": "الفلتر يتكون من عدة فلاتر أخرى (مرشح قاعد ادجوارد وفلتر الوسائط الاجتماعية وفلتر حماية التتبع وفلتر إعلانات الجوال و القائمة السهلة و الخصوصية السهلة) وتبسيطه على وجه التحديد ليكون متوافقًا بشكل أفضل مع حظر الإعلانات على مستوى دنس"
 			},
 			"be": {
-				"name": "DNS фільтр",
+				"name": "Фільтр AdGuard DNS",
 				"description": "Фільтр, складзены з некалькіх фільтраў (Базавы фільтр AdGuard, Фільтр сацыяльных сетак, Фільтр лічыльнікаў і сістэм аналітыкі, Фільтр мабільнай рэкламы, EasyList і EasyPrivacy), і адмыслова спрошчаны, каб быць лепш сумяшчальным з блакаваннем рэкламы на роўні DNS."
 			},
 			"bg": {
@@ -3794,7 +3794,7 @@
 				"description": "فلتر يعزز الخصوصية عن طريق إزالة معلمات التتبع من عناوين URL."
 			},
 			"be": {
-				"name": "Фільтр асочвання па URL",
+				"name": "Фільтр адсочвання па URL-адрасе AdGuard",
 				"description": "Фільтр, які прыбірае параметры асочвання з URL, тым самым паляпшаючы прыватнасць."
 			},
 			"bg": {
@@ -5396,7 +5396,7 @@
 				"description": "قائمة تصفية إضافية لمواقع الويب باللغة البلغارية."
 			},
 			"be": {
-				"name": "Балгарскі спіс",
+				"name": "Bulgarian list",
 				"description": "Дадатковы спіс фільтраў для вэб-сайтаў на балгарскай мове."
 			},
 			"bg": {
@@ -5574,7 +5574,7 @@
 				"description": "قائمة تصفية إضافية لمواقع الويب باللغة الصينية. تم تضمينه بالفعل في فلتر AdGuard الصيني."
 			},
 			"be": {
-				"name": "EasyList Кітай",
+				"name": "EasyList China",
 				"description": "Дадатковы спіс фільтраў для вэб-сайтаў на кітайскай мове. Ужо ўключаны ў фільтр AdGuard для кітайскай мовы."
 			},
 			"bg": {
@@ -5930,7 +5930,7 @@
 				"description": "قائمة تصفية إضافية لمواقع الويب باللغة الهولندية. تم تضمينه بالفعل في فلتر AdGuard Dutch."
 			},
 			"be": {
-				"name": "EasyList Нідэрланды",
+				"name": "EasyList Dutch",
 				"description": "Дадатковы спіс фільтраў для вэб-сайтаў на галандскай мове. Ужо ўключаны ў фільтр AdGuard для галандскай мовы."
 			},
 			"bg": {
@@ -6108,7 +6108,7 @@
 				"description": "قائمة تصفية إضافية لمواقع الويب باللغة الألمانية. تم تضمينه بالفعل في فلتر AdGuard الألماني."
 			},
 			"be": {
-				"name": "EasyList Германія",
+				"name": "EasyList Germany",
 				"description": "Дадатковы спіс фільтраў для вэб-сайтаў на нямецкай мове. Ужо ўключаны ў фільтр AdGuard для нямецкай мовы."
 			},
 			"bg": {
@@ -6286,7 +6286,7 @@
 				"description": "قائمة تصفية إضافية لمواقع الويب باللغة العبرية."
 			},
 			"be": {
-				"name": "EasyList на іўрыце",
+				"name": "EasyList Hebrew",
 				"description": "Дадатковы спіс фільтраў для вэб-сайтаў на мове іўрыт."
 			},
 			"bg": {
@@ -6464,7 +6464,7 @@
 				"description": "قائمة تصفية إضافية لمواقع الويب باللغة الإيطالية."
 			},
 			"be": {
-				"name": "EasyList Італія",
+				"name": "EasyList Italy",
 				"description": "Дадатковы спіс фільтраў для вэб-сайтаў на італьянскай мове."
 			},
 			"bg": {
@@ -6820,7 +6820,7 @@
 				"description": "قائمة تصفية إضافية لمواقع الويب باللغة اللاتفية."
 			},
 			"be": {
-				"name": "Латвійскі спіс",
+				"name": "Latvian List",
 				"description": "Дадатковы спіс фільтраў для вэб-сайтаў на латышскай мове."
 			},
 			"bg": {
@@ -8244,7 +8244,7 @@
 				"description": "قائمة تصفية إضافية لمواقع الويب باللغة اليونانية."
 			},
 			"be": {
-				"name": "Грэцкі фільтр AdBlock",
+				"name": "Greek AdBlock Filter",
 				"description": "Дадатковы спіс фільтраў для вэб-сайтаў на грэчаскай мове."
 			},
 			"bg": {
@@ -8601,7 +8601,7 @@
 			},
 			"be": {
 				"name": "Fanboy's Social Blocking List",
-				"description": "Хавае і блакіруе сацыяльнае змесціва, сацыяльныя віджэты, сацыяльныя скрыпты і значкі сацыяльных сетак. Ужо ўключаны ў Fanboy's Annoyances list."
+				"description": "Хавае і блакіруе сацыяльнае змесціва, сацыяльныя віджэты, сацыяльныя сцэнарыі і значкі сацыяльных сетак. Ужо ўключаны ў Fanboy's Annoyances list."
 			},
 			"bg": {
 				"name": "Fanboy's Social Blocking List",
@@ -8956,7 +8956,7 @@
 				"description": "عامل التصفية الذي يمنع الإعلانات على المواقع التايلاندية."
 			},
 			"be": {
-				"name": "Тайскія рэкламныя фільтры",
+				"name": "EasyList Thailand",
 				"description": "Фільтр, які блакуе рэкламу на тайскіх сайтах."
 			},
 			"bg": {
@@ -9134,7 +9134,7 @@
 				"description": "هوفيلتر. قائمة الفلاتر التي تزيل على وجه التحديد الإعلانات من مواقع الويب باللغة المجرية."
 			},
 			"be": {
-				"name": "Вугорскі фільтр",
+				"name": "Hungarian filter",
 				"description": "Фільтр, што блакуе рэкламу на сайтах на вугорскай мове."
 			},
 			"bg": {
@@ -12338,7 +12338,7 @@
 				"description": "EasyList الصينية + فلتر AdGuard الصيني. قائمة فلترات تقوم بحجب الإعلانات فى المواقع باللغة الصينية."
 			},
 			"be": {
-				"name": "Кітайскі фільтр",
+				"name": "Кітайскі фільтр AdGuard",
 				"description": "EasyList China + Кітайскі фільтр AdGuard. Фільтр, што дазваляе прыбраць рэкламу з сайтаў на кітайскай мове."
 			},
 			"bg": {
@@ -14753,7 +14753,7 @@
 			},
 			"nl": {
 				"name": "Poolse Ergernissen Filters",
-				"description": "Filter lijst dat pop-up's verbergt en blokkeert, widgets, nieuwsbrieven, push meldingen, pijlen, getagde interne links die niks met het onderwerp te maken hebben, en andere irriterende elementen. Poolse Sociale Filters zijn hierin inbegrepen."
+				"description": "Filterlijst dat pop-up's verbergt en blokkeert, widgets, nieuwsbrieven, push-meldingen, pijlen, getagde interne links die niks met het onderwerp te maken hebben, en andere irriterende elementen. Poolse GDPR-cookies zijn hierin inbegrepen."
 			},
 			"no": {
 				"name": "Polish Annoyances Filters",
@@ -17876,7 +17876,7 @@
 				"description": "Liste til blokering af utroværdige websteder."
 			},
 			"de": {
-				"name": "DurableNapkins Sperrliste für Betrugsversuche",
+				"name": "Scam Blocklist by DurableNapkin",
 				"description": "Liste zum Sperren nicht vertrauenswürdiger Websites."
 			},
 			"el": {
