@@ -1,9 +1,9 @@
-! Checksum: diMs+QpO4124z0bEVA7dKw
-! Diff-Path: ../patches/14/14-s-1757160808-3600.patch
+! Checksum: sshqAIeqByFHZ4WvhY/qNg
+! Diff-Path: ../patches/14/14-s-1757164396-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.42.4
-! TimeUpdated: 2025-09-06T12:09:43+00:00
+! Version: 2.2.42.5
+! TimeUpdated: 2025-09-06T13:09:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5835,7 +5835,7 @@ account.samsung.com##eu-cookie-action-bar
 v3.account.samsung.com#$#body[style] { overflow: auto !important; padding-right: 0 !important; }
 v3.account.samsung.com#$?#body > .MuiDrawer-root:has(>.MuiModal-backdrop[style^="opacity: 1; transition: opacity 225ms cubic-bezier"] ~ .MuiPaper-root[style^="transform: none; transition: transform 225ms cubic-bezier"]) { display: none !important; }
 v3.account.samsung.com#%#//scriptlet('set-cookie', 'sa_enable', 'off')
-rlptoday.de,gutefrage.net#%#//scriptlet('trusted-click-element', '#cmpbntyestxt')
+bildderfrau.de,rlptoday.de,gutefrage.net#%#//scriptlet('trusted-click-element', '#cmpbntyestxt')
 cursorinfo.co.il#%#//scriptlet('remove-attr', 'style', 'html,body')
 cursorinfo.co.il#$##cmp-iframe { display: none !important; }
 att.com###gpc-banner-container
@@ -17407,6 +17407,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! bildderfrau.de - broken video in article
+@@||b.delivery.consentmanager.net/delivery/cmp.php$domain=bildderfrau.de
+@@||cdn.consentmanager.net/delivery/$domain=bildderfrau.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212824
 @@||cronosnewdawn.com/js/cookie-consent.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212779
@@ -42376,7 +42379,6 @@ startpage.com##.privacy-extension-and-app-widget
 [$path=/metro]yandex.*##.metro-sidebar-view__mobile-share-container
 uslugi.yandex.ru#%#//scriptlet('trusted-click-element', 'button.MobAppDistributionSlidingPanel-Close')
 tokopedia.com#$#body > div:has(> div[data-unify="Overlay"] + div > article[data-unify="Modal"] img[src^="https://p16-assets-sg.tokopedia-static.net/"][src$="/zeus/kratos/a79a26a0.png"]) { display: none !important; }
-tokopedia.com#$#body { overflow: auto !important; }
 books.yandex.ru##div[class^="app-offer-banner_container"]
 autotrader.com###hpSmartBanner
 autotrader.com##.app-store-bar
