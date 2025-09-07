@@ -1,9 +1,9 @@
-! Checksum: P7c1KINKDYFxKYrSIOd76g
-! Diff-Path: ../patches/18/18-s-1757261440-3600.patch
+! Checksum: t56eT6vb3/WGhzyb6KDGKQ
+! Diff-Path: ../patches/18/18-s-1757264970-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.69.55
-! TimeUpdated: 2025-09-07T16:07:11+00:00
+! Version: 2.0.69.56
+! TimeUpdated: 2025-09-07T17:06:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2532,6 +2532,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+sporteurope.tv#%#//scriptlet('trusted-click-element', 'ngb-modal-window app-consent-wall button.btn-primary', '', '', 'reloadAfterClick')
 gpiaaf.gov.pt#%#//scriptlet('set-cookie', 'WarningsAndPolicyAccepted', 'true')
 ardplus.de##main + div[style*="position: fixed; bottom: 0px;"]
 adm.gov.it##.cookie-bar-widget
@@ -17427,6 +17428,12 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212977
+@@||web.cmp.usercentrics.eu/tcf/stub.js$domain=sporteurope.tv
+@@||web.cmp.usercentrics.eu/ui/$domain=sporteurope.tv,script
+@@||api.service.cmp.usercentrics.eu/latest/core/$domain=sporteurope.tv
+@@||web.cmp.usercentrics.eu/cdcs/v/*/index.html$domain=sporteurope.tv
+@@||api.service.cmp.usercentrics.eu/latest/1/cmp/$domain=sporteurope.tv
 ! https://github.com/easylist/easylist/pull/22329
 gpiaaf.gov.pt#@#.CookieBanner:not(body):not(html)
 gpiaaf.gov.pt#@##cookie-banner
