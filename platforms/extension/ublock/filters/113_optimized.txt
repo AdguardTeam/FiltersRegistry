@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: KErRY4YGktcsqHB5CyjJhA
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1757206374-14400.patch
+! Checksum: PZaF98fpUNt+5wgYL8HKRg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1757220023-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.76.31
-! TimeUpdated: 2025-09-07T00:47:51+00:00
+! Version: 2.1.76.32
+! TimeUpdated: 2025-09-07T04:35:41+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -248,6 +248,7 @@
 /simple/ads.js
 /skipad.
 /static.ads-
+/sw.*.js?promo=
 /syndication.*&idzone=
 /trackads.
 /twitter-ads.
@@ -417,6 +418,7 @@ _alenty.js
 _banner-300x150.
 _banner.*?partner=
 _banner_pub.
+_bannerad2_
 _banniere-300.
 _banniere-728.
 _bnrrotator_
@@ -510,7 +512,6 @@ _werbebanner_
 /s2iurl.php?$popup
 /splash.*?idzone=$popup
 /syndication.*&idzone=$popup
-://go.*?zoneid=$popup
 ://landing.*/?ats=$popup,third-party
 ://syndication.$popup,third-party
 ://xml.*/click?$popup
@@ -728,6 +729,7 @@ _build=iclick-$popup
 ||secureanalytic.com^$third-party
 ||shareaholic.com^$third-party
 ||sharemyads.com^$third-party
+||slutroulette.com^$third-party
 ||smartclip.net^$~object,third-party
 ||smartmovies.net^$third-party
 ||smartstream.tv^$third-party
@@ -928,7 +930,6 @@ _build=iclick-$popup
 ||bestcontentcost.top^
 ||bestfreecounterstat.com^
 ||betulinherl.shop^
-||bhabhiporn.pro^
 ||bharsilked.com^
 ||bibsquants.com^
 ||bidgetramet.shop^
@@ -1235,7 +1236,6 @@ _build=iclick-$popup
 ||grumpkali.com^
 ||grwtyolb.org^
 ||gsurl.in^
-||gsurl.me^
 ||gsznojgkyw.com^
 ||guindetrucked.com^
 ||gumdropolena.com^
@@ -1715,6 +1715,7 @@ _build=iclick-$popup
 ||shurgeetripoli.com^
 ||silimbompom.com^
 ||similesgleby.com^
+||siperuplit.com^
 ||skatistlollard.com^
 ||sklatepretil.com^
 ||skullysmarter.com^
@@ -2027,7 +2028,6 @@ _build=iclick-$popup
 ||hk6vdj4z.click^$popup
 ||iqoption.com^$popup
 ||jewhouca.net^$popup
-||klclick.com^$popup
 ||livepartners.com^$popup,third-party
 ||max-adserv.com^$popup,third-party
 ||monetizze.com.br^$popup,third-party
@@ -2442,6 +2442,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||2ememain.be/lrp/api/complementary-listings?
 ||abellalist.com^$media,script
 ||abidjan.net/public/img/logo/partenaire/
+||abritel.fr^*/partner/
 ||ad.mailo.com^
 ||adn.porndig.com^
 ||adproxy.tf1.fr^
@@ -2515,7 +2516,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||expomaroc.ma/pub/
 ||fiches-auto.fr/_carre_300_
 ||file-upload.net/include/$subdocument
-||files.macg.co/macgupload/
 ||firebasestorage.googleapis.com^$domain=avito.ma
 ||forexalgerie.com/img/pub/
 ||forumconstruire.com/img/letsgo/
@@ -2872,7 +2872,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###reklama3
 ###reklamarkaplan
 ###right-side-ad
-###right_pub
 ###rightrail-ad-2
 ###sagreklam
 ###shopper-widget-wrapper
@@ -2937,7 +2936,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.containerAds
 ##.contenedorAds
 ##.content-side-ad
-##.content_slide_pub
 ##.coreads-wrapper
 ##.coreads_habillage
 ##.creatividad
@@ -2946,6 +2944,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.desktop-ff-ads__main
 ##.dfp-ads
 ##.div_ads
+##.dp-ad-chrome
 ##.drt-sponsor-block
 ##.drt-sponsor-data
 ##.e3lan-below_header
@@ -3350,7 +3349,6 @@ matchendirect.fr###tux_centrale
 flaticon.com###unicorn
 sibnet.ru###vjs-overlayclip-container-box
 rtl.be###w-leaderboard
-pons.com###widget_difusion
 turbo.fr###widget_shopper
 wix.com###wixFooter
 wix.com###wixfooter
@@ -3783,8 +3781,8 @@ zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|Publicité/))
 @@||cdn.ay.gy/static/image/$image,~third-party
 @@||francesurfinfo.com/affiliation/
 @@||koifaire.com/upload/*/300x250-$image,~third-party
-@@||malakoffmederic.com/entreprise/*/affiliation/
 @@||media*.musique.woopic.com^*/400x250/$image,domain=musique.orange.fr
+@@||mozfr.org/custom/img/*_300x250.png
 @@||partner.skiset.com/js/partnerIntegration.js$script
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,third-party,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,third-party
