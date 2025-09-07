@@ -1,14 +1,14 @@
-! Checksum: CoUodGfD2SP/09mKxj98xw
-! Diff-Path: ../patches/243/243-s-1757133688-14400.patch
+! Checksum: 7GVUzDw/p0Qi1RibLu666w
+! Diff-Path: ../patches/243/243-s-1757249344-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.69
-! TimeUpdated: 2025-09-06T04:37:06+00:00
+! Version: 2.0.22.70
+! TimeUpdated: 2025-09-07T12:44:54+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-09-06 04:14:15 CEST
+! Last modified: 2025-09-07 13:25:07 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -120,12 +120,15 @@ affarsstaden.se##main > .elementor > section.elementor-section:last-child:has(a[
 affarsvarlden.se##article.article-list-item:has(a[href*="/native/"])
 affarsvarlden.se##.cookies-wrap, .Modal, .article-list-item--native, .advert-notice-box, .native-popup, .takeover-wrap, .native-notice-box, .darwin--content
 aftonbladet.se##article[class^="article-wrapper"] ~ div[class^="hyperion"]:has(a[href*="/t?a="], a[href*="/click"], a[href^="http"][nofollow], a[href^="http"][rel*="nofollow"], iframe[src*="pricerunner"], iframe[src*="/ads/"])
+aftonbladet.se##article[class^="article-wrapper"] strong:has-text(/annons:/i):upward(1)
 aftonbladet.se##aside > div[class^="hyperion"]:has(a[href*="/rabattkod"], a[href*="casino"], a[href*="/brandstudio"], a[href*="/brand-studio"])
+aftonbladet.se##body.default section[class^="twocolumnlayout-main"] > div[class^="hyperion"]:has(a[href*="/speltips/"])
 aftonbladet.se##main > section > div:first-child:matches-css(box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 24px 0px)
 aftonbladet.se##section[class*="layout-main"] > div[class^="hyperion-css"]:has(a[href*="/produkt/"]:not(a[href^="/"]), a[href*="/varumarken/"]:not(a[href^="/"]), a[href*="/prisjakt.nu"])
 aftonbladet.se###superright-side, a[href*="/casinoguide"], [id^="adPlacement"], a[href*="/rabattkod"][data-test-tag="internal-link"], #takeover-container, div[class^="stickylogin"]
 aftonbladet.se##:is(main > section a[data-test-tag="internal-link"], #main > section a[data-test-tag="internal-link"], main > section a[href*="godare.se"], #main > section a[href*="godare.se"], main > aside a[data-test-tag="internal-link"]):has-text(innehåller annonslänkar)
 aftonbladet.se##:is(main > section > div[class^="hyperion"], #main > section > div[class^="hyperion"]):has(a[href*="/brandstudio"], a[href*="/brand-studio"], a[href*="/rabattkod/"], a[href*="/casinoguide/"], iframe[src*="compricer"])
+[$path=/sportbladet$/]aftonbladet.se##section[class^="twocolumnlayout-main"] > div[class^="hyperion"]:has(a[href*="/speltips/"])
 aftonbladet.se##[data-ad-subtype]:upward(1):matches-css(min-height:/[0-9]+/)
 aftonbladet.se,godare.se##div[style*="min-height:240px"]:has(iframe[src*="/widgets/ads/"])
 aftonbladet.se,godare.se##[data-test-tag="prisjakt-carousel"], a[href*="/brandstudio"], a[href*="/brand-studio"], div[class^="advertory-"]:not(.advertory-header-anchor)
@@ -3287,6 +3290,7 @@ _banner.php?$domain=tvmatchen.nu
 ||privacy-mgmt.com^$domain=radio.se|dagenstv.com|kolla.tv|computersweden.se|woxikon.se|dagen.se|filmtopp.se|gaffa.se|handbollskanalen.se|spisa.nu|tv24.se|homeq.se|prisjakt.nu
 ||proxyas.com^$third-party
 ||prylguiden.expressen.se^
+||psi3.aftonbladet.se/ab.js
 ||ptm.flowplayer.com^*/display$xmlhttprequest
 ||ptm.flowplayer.com^*/ping$xmlhttprequest
 ||ptm.flowplayer.com^*/view$xmlhttprequest
