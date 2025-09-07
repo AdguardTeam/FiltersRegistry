@@ -1,9 +1,9 @@
-! Checksum: k9iSmmY0SnIUadRzbHK2dg
-! Diff-Path: ../patches/14/14-s-1757247243-3600.patch
+! Checksum: yJuwfI8kO4zyLu4Czmswqw
+! Diff-Path: ../patches/14/14-s-1757261452-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.42.8
-! TimeUpdated: 2025-09-07T12:10:14+00:00
+! Version: 2.2.42.9
+! TimeUpdated: 2025-09-07T16:07:07+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2532,6 +2532,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+gpiaaf.gov.pt#%#//scriptlet('set-cookie', 'WarningsAndPolicyAccepted', 'true')
 ardplus.de##main + div[style*="position: fixed; bottom: 0px;"]
 adm.gov.it##.cookie-bar-widget
 ediusworld.com##.vm-bgpr-wrapper
@@ -17388,6 +17389,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/easylist/easylist/pull/22329
+gpiaaf.gov.pt#@#.CookieBanner:not(body):not(html)
+gpiaaf.gov.pt#@##cookie-banner
 ! bildderfrau.de - broken video in article
 @@||b.delivery.consentmanager.net/delivery/cmp.php$domain=bildderfrau.de
 @@||cdn.consentmanager.net/delivery/$domain=bildderfrau.de

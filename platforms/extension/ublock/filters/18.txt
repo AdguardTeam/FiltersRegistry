@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PTR44UswXGIrhfM9+LSyCA
-! Diff-Path: ../patches/18/18-s-1757247254-3600.patch
+! Checksum: +ZdI6y8dFXHBWr9hPByJ1A
+! Diff-Path: ../patches/18/18-s-1757261463-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.69.54
-! TimeUpdated: 2025-09-07T12:10:21+00:00
+! Version: 2.0.69.55
+! TimeUpdated: 2025-09-07T16:07:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2487,6 +2487,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+gpiaaf.gov.pt##+js(set-cookie, WarningsAndPolicyAccepted, true)
 ardplus.de##main + div[style*="position: fixed; bottom: 0px;"]
 adm.gov.it##.cookie-bar-widget
 ediusworld.com##.vm-bgpr-wrapper
@@ -16398,6 +16399,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/easylist/easylist/pull/22329
+gpiaaf.gov.pt#@#.CookieBanner:not(body):not(html)
+gpiaaf.gov.pt#@##cookie-banner
 ! bildderfrau.de - broken video in article
 @@||b.delivery.consentmanager.net/delivery/cmp.php$domain=bildderfrau.de
 @@||cdn.consentmanager.net/delivery/$domain=bildderfrau.de
