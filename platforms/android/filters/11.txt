@@ -1,9 +1,9 @@
-! Checksum: YvJHiqvKDu8Q3yrWlOdxSQ
-! Diff-Path: ../patches/11/11-s-1757340719-3600.patch
+! Checksum: qBWJp57J1kJyizEbiVcSGA
+! Diff-Path: ../patches/11/11-s-1757355154-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.64.13
-! TimeUpdated: 2025-09-08T14:08:01+00:00
+! Version: 2.0.64.14
+! TimeUpdated: 2025-09-08T18:08:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,8 @@
 !
 ! ||mobileapptracking.com^ - don't block this domain with all subdomains. https://forum.adguard.com/index.php?threads/23917/
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212569
+||*.libaishuo.com^$third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171494
 ||adx-open-service.youku.com^
 ||ad.youku.com^
@@ -2608,6 +2610,8 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+m.99.com.cn##.detail-renxin > div .dtl-video-nr .xc-con
+m.99.com.cn##div:has(> iframe[src*="libaishuo.com"]:only-child)
 starhit.ru##.in-content-recomendations-adv
 tvguia.es###ad-swipe
 tvguia.es###ad-swipe + br
