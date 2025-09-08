@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wHbiv/5xflfCxRqueokQXA
-! Diff-Path: ../patches/18/18-s-1757322767-3600.patch
+! Checksum: KVFQNET8hx4iJYfnRJ2odQ
+! Diff-Path: ../patches/18/18-s-1757326311-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.69.63
-! TimeUpdated: 2025-09-08T09:08:46+00:00
+! Version: 2.0.69.64
+! TimeUpdated: 2025-09-08T10:07:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2490,6 +2490,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+buero-bedarf-thueringen.de##+js(abort-on-property-write, openCookieConsentDialog)
 bloknot-volgograd.ru##body > div[style*="fixed"]:has(> p > a[href="/bloknot/privacy-policy.php"])
 nearme.jp#@#+js(set-local-storage-item, @hidePrivacyPopup, true)
 plerdy.com##.row_cookie-bubble
@@ -17887,9 +17888,12 @@ allecco.pl#@#.cookies-info:not(html):not(body)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164435
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=breitbart.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164166
+! https://github.com/AdguardTeam/AdguardFilters/issues/213020
+! https://github.com/AdguardTeam/AdguardFilters/issues/213019
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164144
 metro.tv,discoverychannel.pl,tlcpolska.pl,tvnstyle.pl,tvn7.pl,tvnturbo.pl,tvnfabula.pl,hgtv.pl,foodnetwork.pl,travelchanneltv.pl,ttv.pl#@##onetrust-consent-sdk
-@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=discoverychannel.pl|tlcpolska.pl|tvnstyle.pl|tvn7.pl|tvnturbo.pl|tvnfabula.pl|hgtv.pl|foodnetwork.pl|travelchanneltv.pl|ttv.pl|metro.tv
+@@||cdn.cookielaw.org/consent/*.json$domain=tvn.pl|discoverychannel.pl|tlcpolska.pl|tvnstyle.pl|tvn7.pl|tvnturbo.pl|tvnfabula.pl|hgtv.pl|foodnetwork.pl|travelchanneltv.pl|ttv.pl|metro.tv
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=tvn.pl|discoverychannel.pl|tlcpolska.pl|tvnstyle.pl|tvn7.pl|tvnturbo.pl|tvnfabula.pl|hgtv.pl|foodnetwork.pl|travelchanneltv.pl|ttv.pl|metro.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163791
 @@||cdnjs.cloudflare.com/ajax/libs/cookieconsent*/cookieconsent.min.$domain=pixysos.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163776
