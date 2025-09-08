@@ -1,5 +1,5 @@
-! Checksum: Y8g7VQH4eTfL4ncSILiB3w
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1757220037-14400.patch
+! Checksum: WE0JgAVxGKxCBLEQq9YGZA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1757306544-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
 ! Version: 2.1.47.42
@@ -9,6 +9,7 @@
 -facebook-widget.
 -follow-icon-
 -share-bar/$~stylesheet
+-share-buttons2.
 -share-buttons3/$~stylesheet
 -share-sprite-
 -share-sprite.
@@ -84,6 +85,7 @@
 /share_popup.js
 /share_sprite.png
 /share_view.js
+/share_wechat.png
 /share_weibo.png
 /shareaholic.js
 /sharebar.js
@@ -279,7 +281,6 @@ _social_footer_
 ###footer-social-link
 ###footer-socials
 ###footer-twitter
-###footer-twitter-icon
 ###footer-youtube
 ###footer-youtube-icon
 ###footerConnect
@@ -630,6 +631,7 @@ _social_footer_
 ###social_widget
 ###social_widget-4
 ###socialbar
+###socialblock
 ###socialbookmarks
 ###socialbox
 ###socialbuttons
@@ -901,10 +903,10 @@ _social_footer_
 ##.article_footer_pinterest
 ##.article_header_share
 ##.article_share
+##.article_sharing
 ##.article_social
 ##.articlesharebox
 ##.aside-social
-##.aside-socials
 ##.asocial-area
 ##.aspexifblikebox
 ##.aspexifbsidebox
@@ -931,8 +933,6 @@ _social_footer_
 ##.b-footer_social
 ##.b-header__social
 ##.b-share
-##.b-share-button
-##.b-sharebar
 ##.b-sharelist
 ##.b-social-icons
 ##.b-social-share
@@ -950,7 +950,6 @@ _social_footer_
 ##.bdaia-social-io
 ##.beSocialShare
 ##.beacon-social
-##.below-article-share-block
 ##.better-social-counter
 ##.bg-share
 ##.bgShare.fb
@@ -1042,6 +1041,7 @@ _social_footer_
 ##.c-footer__social-list
 ##.c-footer__social-list-item
 ##.c-footer__social-media
+##.c-footer__socials-list
 ##.c-global-header__social
 ##.c-header__social
 ##.c-list--social
@@ -1209,6 +1209,7 @@ _social_footer_
 ##.et-social-google-plus
 ##.et-social-icon
 ##.et-social-icons
+##.et-social-links
 ##.et_pb_social_media_follow
 ##.et_social_facebook
 ##.et_social_flyin
@@ -1882,7 +1883,6 @@ _social_footer_
 ##.mashsb-container
 ##.masterSocialbutton
 ##.masthead-social
-##.material-icons-share
 ##.mb-social
 ##.mc-share-toggle
 ##.md-social-toolbar-circle
@@ -1898,6 +1898,7 @@ _social_footer_
 ##.menu-footer-social
 ##.menu-footer-social-container
 ##.menu-header-links-container
+##.menu-reseaux-sociaux-container
 ##.menu-section-social
 ##.menu-share
 ##.menu-social-container
@@ -2337,6 +2338,7 @@ _social_footer_
 ##.share-network-tumblr
 ##.share-network-twitter
 ##.share-network-whatsapp
+##.share-new
 ##.share-on
 ##.share-on-title
 ##.share-open-button
@@ -2347,6 +2349,7 @@ _social_footer_
 ##.share-pinterest-icon
 ##.share-platform
 ##.share-popup
+##.share-position
 ##.share-post
 ##.share-post-box
 ##.share-reddit
@@ -2489,6 +2492,7 @@ _social_footer_
 ##.share_btns
 ##.share_bubble
 ##.share_button
+##.share_button_container
 ##.share_buttons
 ##.share_buttons_container
 ##.share_center
@@ -2884,7 +2888,6 @@ _social_footer_
 ##.social-media-sharing
 ##.social-media-twitter
 ##.social-media-widget
-##.social-media-widget-container
 ##.social-media-wrapper
 ##.social-menu-item
 ##.social-methods
@@ -3398,7 +3401,6 @@ _social_footer_
 ##.vuukle-powerbar
 ##.w-share
 ##.w-sharing
-##.w-sharing-icon
 ##.w-sharing-item
 ##.w-social
 ##.w-socials
@@ -3739,7 +3741,6 @@ abc.net.au##.FixedHeader_shareBtn__yNush
 venturebeat.com##.Footer__social-icon
 indianexpress.com##.G-folow-button
 meduza.io##.GeneralMaterial-module-share
-bdnews24.com##.HeaderTopSocialIcon
 apnews.com##.Infobox
 kivitv.com##.MailToLink
 business-standard.com##.MetaPost_flwggle__kFKIT
@@ -3813,7 +3814,6 @@ agrimag.co.za,androidpolice.com,automart.co.za,givemesport.com##.btn-whatsapp
 koimoi.com##.btn-whatsup
 androidpolice.com##.btn-x
 consumerreports.org##.btn__social
-notateslaapp.com##.button-follow
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
 lawandcrime.com##.c-article-foot__site
@@ -4019,14 +4019,12 @@ dailymail.co.uk,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zap
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 thenewstack.io##.share-media
 thehackernews.com##.share-open-modal
-bdnews24.com##.share-option
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 breachmedia.ca,news.itsfoss.com##.share-toggle
 apkpure.com##.share-toolbox
 dailymail.co.uk,thisismoney.co.uk##.share-twitter
 dailymail.co.uk,thisismoney.co.uk##.share-whatsapp
 windowsreport.com##.shareMobile
-goodmenproject.com##.share_count_holder
 cbsnews.com##.sharebar
 mirror.co.uk,themirror.com##.sharebar-icon
 thehackernews.com##.sharebelow-twitter
@@ -4063,6 +4061,7 @@ bonappetit.com,cntraveler.com,them.us##.social-icons--share
 tmz.com##.social-item
 afro.com,elsol.com.ar,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,theatlantavoice.com,washingtoncitypaper.com,washingtonmonthly.com##.social-links-menu
 denofgeek.com##.social-links__anchor--sharing
+defenseone.com,govexec.com,nextgov.com##.social-media-icons-container
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
 eltecolote.org,melmagazine.com,thefrisc.com,worldcrunch.com##.social-navigation
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
@@ -4488,7 +4487,6 @@ lasexta.com##.L6-social-share
 adn40.mx##.ListSiguenos-SocialStrip
 elpais.com.uy##.Page-actions-wrapper
 rpp.pe##.article__follow
-elespanol.com##.article__footer-nav
 elfinanciero.com.mx##.b-footer__social-links-container
 estadiodeportivo.com##.boton-share
 de10.com.mx,dedinero.com.mx,elgrafico.mx##.botonGoogleNews
@@ -4665,7 +4663,6 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||arcgis.com/apps/Nearby/app/components/Share/$~third-party
 @@||assets.msn.com/bundles/*/social-bar-$~third-party
 @@||cdn.flowplayer.com^*/share.min.js
-@@||commonsensemedia.org/ajax/review/$~third-party,xmlhttprequest
 @@||gen.jut.su/jcdn/minify?charset=*/videojs-share.$script,stylesheet,domain=jut.su
 @@||iconfinder.com/data/icons/$~third-party
 @@||instagram.com/p/$subdocument,third-party
@@ -4684,3 +4681,4 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||github.com^$generichide
 @@||github.io^$generichide
 @@||ifttt.com^$generichide
+@@||restream.io^$generichide
