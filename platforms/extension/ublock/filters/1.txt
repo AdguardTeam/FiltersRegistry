@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SQMU7hIjBhTplGqrFjVBZw
-! Diff-Path: ../patches/1/1-s-1757193026-3600.patch
+! Checksum: +NnRGM3yhmdgaIytn822sw
+! Diff-Path: ../patches/1/1-s-1757351449-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.1.65
-! TimeUpdated: 2025-09-06T21:06:03+00:00
+! Version: 2.1.1.66
+! TimeUpdated: 2025-09-08T17:06:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3750,6 +3750,7 @@ newsyou.info,4mama.ua,autoua.net,censor.net,eurointegration.com.ua,gagadget.com,
 ! NOTE: UA rules copied to Ukrainian filter
 ! TODO: Remove not multi lang rules with .ua tld after splitting the filter (look at the end of file)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213035
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212306
 blitzfoxhub.com##+js(remove-node-text, script, detect-modal)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206755
@@ -7998,8 +7999,6 @@ poiskvps.ru##noindex > div[align="center"]
 poiskvps.ru###ASponsorTable
 poiskvps.ru###SubMainDiv > div > div[align="left"] > div[style^="background-color:"] > table
 spektr.press##.js__random-banners
-new.dtf.ru#?#.view > div.rotator:has(> div.ALMGcspq)
-new.dtf.ru##.ALMGcspq
 knigavuhe.org##.-adfb
 esoligorsk.by#?#.aside-right > div.moduletable_seti:has(> div.custom_seti > div[id^="yandex_rtb"])
 webznam.ru###alfaweb
@@ -17708,6 +17707,8 @@ adme.media##div[data-test-id="article-content"] > div[class*=" "]:not([tabindex]
 adme.media#?#div[data-test-id="article-bottom-recommended"] > div > div > div[style="position:relative"] > div > div:has(div:empty + div:empty + div:empty)
 !
 ! Start: vc.ru, dtf.ru, spark.ru
+dtf.ru##.content-list > div.content ~ div[style]:has(> div.skeleton-content)
+dtf.ru##div[style*="layout-sidebar-banner-"]
 vc.ru##.entry > div[class]:has(> a[href^="https://booster.osnova.io/a/redirect"])
 vc.ru##.content-list > div:has(> div.skeleton-content)
 vc.ru#?#.content-list > div.rotator:has(> div[class] > div[class] > a[href="/plus/Close%20Ad"])
@@ -17750,6 +17751,8 @@ dtf.ru##.kinopoisk-article-header
 dtf.ru##.kinopoisk-site-header
 dtf.ru##.daily-promo-unit
 spark.ru##.jobs--layout
+new.dtf.ru#?#.view > div.rotator:has(> div.ALMGcspq)
+new.dtf.ru##.ALMGcspq
 ! End: vc.ru, dtf.ru, spark.ru
 !
 ! pb.wtf
