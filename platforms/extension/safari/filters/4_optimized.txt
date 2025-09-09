@@ -1,9 +1,9 @@
-! Checksum: OWJ9xl//rCDhMnWwj2hI7g
-! Diff-Path: ../patches/4_optimized/4_optimized-s-1757381950-3600.patch
+! Checksum: l8xeUCJYRYBuU6sSr7tTPw
+! Diff-Path: ../patches/4_optimized/4_optimized-s-1757385498-3600.patch
 ! Title: AdGuard Social Media filter (Optimized)
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.19.19
-! TimeUpdated: 2025-09-09T01:34:48+00:00
+! Version: 2.1.19.20
+! TimeUpdated: 2025-09-09T02:34:04+00:00
 ! Expires: 5 days (update frequency)
 ||share-count.donreach.com^$third-party
 ||button-follow.zalo.me^$third-party
@@ -330,6 +330,7 @@ esquire.com,dotesports.com,mashable.com,pcmag.com,onefootball.com,ign.com,israel
 esquire.com,dotesports.com,mashable.com,pcmag.com,onefootball.com,ign.com,israelnationalnews.com,lifehacker.com,cgmagonline.com,gizmodo.com,gamerevolution.com,metro.co.uk,thurrott.com,stereogum.com,ign.com,newsweek.com,dailymail.co.uk,comingsoon.net,timesofisrael.com,nypost.com,9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,electrek.co#%#//scriptlet('remove-in-shadow-dom', 'div[data-spot-im-class="vote-links"] + span[class$="index__dot"]')
 2ality.com,smarttubeapp.github.io,videogameschronicle.com,troyhunt.com,disqus.com##.comment__share > *
 antirez.com,comicbook.com,alexp.pl,2ality.com,smarttubeapp.github.io,videogameschronicle.com,troyhunt.com,disqus.com###thread-share-bar
+seventeen.com##main .text-under-lede ~ div[class*=" "] > div:has(div[aria-label="Share article"])
 techbook.de##section[data-type="rich-text"]:has(> .wp-block-buttons > .wp-block-button > a.wp-block-button__link[href="https://www.instagram.com/techbook.de/"])
 techbook.de##section[data-type="headline"]:has(> #h3-techbook-folgen)
 patronite.pl##.blog__post--share
@@ -2704,7 +2705,6 @@ thanhnien.vn##.box-social-top
 rus.delfi.lv##.telegram-info-block
 m.baomoi.com##a[title="Chia sẻ qua Facebook"]
 vietnamnet.vn##.share-social__link:not(.bookmark)
-zexy.net###topShare
 abola.pt###btnPartilha
 cmjornal.pt##li[data-target="#share"]
 jornaldenegocios.pt##li[class^="share_"]
@@ -3335,7 +3335,6 @@ thephoblographer.com##.nebotheme-share-buttons
 miniwebtool.com###share-result > p
 afisha.ru##button[data-test="BUTTON SHARE-BUTTON"]
 followfollow.com##.c-post__sharer
-moex.com##.new-moex-socials
 www-nbcnews-com.cdn.ampproject.org,nbcnews.com##.ShareTools
 newsian.co.kr##.sns:not(.bookmark)
 suomenmaa.fi##.social-meta
@@ -3878,7 +3877,6 @@ muscleandstrength.com##.at-resp-share-element
 p-bandai.jp##.snsShareBtn
 prog-8.com##.document-review-text > div[style="text-align: center;"]
 tenki.jp##.social-box-large
-trek.zone##.news-social > a[onclick^="sharerJs"]
 freetone.org##.ft-share
 rg.ru##div[class^="ShareInContent"]
 jstage.jst.go.jp###socialmedia-share-plugins
@@ -4962,6 +4960,7 @@ phonemore.com##.share_content
 allacronyms.com##li[title="Share on Facebook"]
 ltn.com.tw##a[class^="share"]
 ||cache.ltn.com.tw/js/c.js
+moovijob.com##main div.justify-content-center > div.justify-content-lg-between
 sadeempc.com##.sidebar-content > #text-3
 techdim.com,coolztricks.com,janefriedman.com##.wplogout-social-wrapper
 einrichtungsbeispiele.de###socialSharingSpace
@@ -6140,6 +6139,7 @@ ura.news,rbc.ua##.publication-social
 comments.ua##.wrapper-social
 wgospodarce.pl##.meta__share-list
 disboards.com##div[data-widget-key="shareThisPage"]
+atvavrupa.tv,atv.com.tr##.share-media
 onet.pl##div[class][data-run-module^="embeddedapp/main.sharethis_"][data-gtm-social]
 bolasport.com,motorplus-online.com,gridoto.com##.read_content--share
 mthai.com##.fb-widgets
@@ -6155,6 +6155,7 @@ m.mersinhaber.com##.share-box-mobile-wrapper
 versus.com##div[class^="Rating__socialButtons"]
 greatist.com##.button-wrapper.pinterest
 gotrip.hk##.single-share-bar
+kayserihaber38.com##.haberPaylas
 embed.radio.co###socialAnchor
 faz.net##.js-sharebuttons[data-services*="twitter"]
 faz.net##.js-layer-sharing-open
@@ -6265,7 +6266,6 @@ zingat.com##.custom-addthis
 investmentwatchblog.com##.wpsr-buttons
 gp.by##.social-block-top
 zeflix.online,zetfix-online.net,hdi.zetfix.online,animeonline.cc,rg-mechanics.cc##.yx-share
-dubznetwork.com,cryptocurrencytopnews.com##.dp-social-media-share-wrap
 oyunceviri.net##.widget_jnews_facebook_page
 mumbaimirror.indiatimes.com,timesofindia.indiatimes.com##.videoshare
 gadgetsnow.com,timesofindia.indiatimes.com##.scl-wdgt
@@ -6497,6 +6497,7 @@ auto.mail.ru##.sharelist__items
 gqmiddleeast.com,baynews9.com,ny1.com##.share-bar-container
 au.ru##.au-item-page-reactions-shares
 emarat-news.ae,psdly.com,forumusa.com,kriptofoni.com,digitalreport.com.tr,ozguneshaber.com,uzmanposta.com,techgistafrica.com,burdurgazetesi.com,listelist.com,turunculevye.com,theleaflet.in,ekonomist.com.tr,oyunceviri.net,gazeteyolculuk.net,nasiloluyo.com##.jeg_share_button
+hurriyet.com.tr##.bs-sticky-item > .bs-social-box-wrapper
 hb-nippon.com,jsports.co.jp,jod.jsports.co.jp,uverworld.jp,gorilla.clinic,jujutsukaisen.jp,donnaglamour.it,newsmondo.it##.shareBox
 km.ru##.km-shares-counter
 truetrophies.com,trueachievements.com##*[onclick^="oShare.Go("]
@@ -7451,7 +7452,6 @@ habr.com#?#.tm-company-widgets > section.tm-block > header:contains(ВКонта
 psychologies.ru#?#[class*="side-title"]:contains(Psychologies приглашает)
 sp.nicovideo.jp#?#.siteWide-Sheet_Contents > div.siteWide-SheetContent:contains(共有)
 weathernews.jp#?##main > section.block:has(> div#sharing)
-shikimori-anime.com##.infoWrap > div.infoInner:has(> div.infoCont > div.twTimelineWrap)
 dailystorm.ru#?#div[class^="_"]:has(> div[class^="_"] > div[data-type="share"])
 nicovideo.jp#?#.siteWide-Sheet_Contents > div.siteWide-SheetContent:has(> span > span.siteWide-ShareIcon)
 jinjibu.jp#?#.colored > p:contains(share)
@@ -9261,7 +9261,6 @@ hardreset.info#$#body { overflow: visible!important; }
 lvnews.org.ua,tenews.org.ua#$##ourSocial { display: none!important; }
 lvnews.org.ua,tenews.org.ua#$#body { overflow: visible!important; }
 4mama.ua#$#body > div { filter: none !important; }
-autonaminuty.org#$#html { overflow: visible!important; }
 dynamo.kiev.ua#$#body { overflow: visible!important; }
 deccoria.pl#$#html.dc-modal-is-locked > body.dc-layout--modal-active[style="padding-right: 17px;"] > .dc-modal-wrapper.dc-modal-is-opened > .dc-modal--site-facebook-like { display: none!important; }
 smaker.pl#$#body.scrollingDisabled > #overlay { display: none!important; }

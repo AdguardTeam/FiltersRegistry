@@ -1,9 +1,9 @@
-! Checksum: vVQz21hO6PkeYo+HOWfmQA
-! Diff-Path: ../patches/6/6-s-1757381966-3600.patch
+! Checksum: 2+7TZfRDwwItNGVYRyvVQw
+! Diff-Path: ../patches/6/6-s-1757385513-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.49.39
-! TimeUpdated: 2025-09-09T01:34:54+00:00
+! Version: 2.0.49.40
+! TimeUpdated: 2025-09-09T02:34:07+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -374,6 +374,7 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211443
 pornohexen.com#@##adsbox
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209484
+tarnkappe.info#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'checkAdblocker')
 tarnkappe.info#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'checkingOverlay')
 ||cdntrf.com/tarnkappe-info.js$redirect=noopjs
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201926
@@ -1460,6 +1461,7 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+tarnkappe.info##.container .is-one-third:has(a[href^="https://"][target="_blank"])
 ||techbook.de/wp-json/gutenberg/v1/html/embed/
 4p.de##.wp-block-column:has(> .wp-block-newspack-blocks-homepage-articles:only-child > div:only-child > article[class*="newspack_spnsrs_tax"]:only-child)
 otz.de#%#//scriptlet('trusted-replace-fetch-response', '/ads\.julephosting\.de/g', 'cdn.julephosting.de', '/-episode\.json/')
