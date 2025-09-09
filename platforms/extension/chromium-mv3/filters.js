@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.9.52",
-			"timeUpdated": "2025-09-09T13:15:22+0000",
+			"version": "2.4.9.53",
+			"timeUpdated": "2025-09-09T14:06:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.19.22",
-			"timeUpdated": "2025-09-09T13:15:33+0000",
+			"version": "2.1.19.23",
+			"timeUpdated": "2025-09-09T14:06:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.74",
-			"timeUpdated": "2025-09-09T09:08:01+0000",
+			"version": "2.0.69.75",
+			"timeUpdated": "2025-09-09T14:07:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -793,29 +793,6 @@
 				11
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/23.txt"
-		},
-		{
-			"filterId": 24,
-			"name": "AdGuard Quick Fixes filter",
-			"description": "Filter to quickly resolve content filtering issues on popular websites without updating the extension.",
-			"timeAdded": "2024-08-27T08:25:05+0000",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 1,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/24.txt",
-			"platformsIncluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "full",
-			"version": "2.0.7.90",
-			"timeUpdated": "2025-06-10T17:07:04+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				10
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/24.txt"
 		},
 		{
 			"filterId": 103,
