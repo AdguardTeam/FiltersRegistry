@@ -1,9 +1,9 @@
-! Checksum: YEQa+UcAxjCGZvGk3HAAzQ
-! Diff-Path: ../patches/2/2-s-1757398427-3600.patch
+! Checksum: 0I5RRLMWekmw/s0zFoMkcA
+! Diff-Path: ../patches/2/2-s-1757401855-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.9.45
-! TimeUpdated: 2025-09-09T06:09:49+00:00
+! Version: 2.4.9.46
+! TimeUpdated: 2025-09-09T07:07:03+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19933,7 +19933,10 @@ xtv.cz#%#//scriptlet("prevent-setTimeout", "pgblck")
 kosicednes.sk##[data-banner-type]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77609
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213068
-citroen-club.cz#%#//scriptlet('set-constant', 'detectAdFilteringXraveCompatible', 'noopPromiseResolve')
+renault-club.cz#@#div[data-ad]
+renault-club.cz#%#//scriptlet('remove-attr', 'class', 'body > div#obalovydiv')
+renault-club.cz#$##obalovydiv { display: block !important; }
+renault-club.cz,citroen-club.cz#%#//scriptlet('set-constant', 'detectAdFilteringXraveCompatible', 'noopPromiseResolve')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/76233
 @@||refi-reklama.razitko.cz^$domain=refi-reklama.razitko.cz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75868
@@ -25351,8 +25354,6 @@ gramwzielone.pl##a[href^="https://pl.goodwe.com/"]
 gramwzielone.pl#?#div.right-column > section.gwz-box:has(> div > a > div:contains(Reklama))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138309
 cashless.pl#?#.container > div.text-xs:contains(/^Reklama/)
-! https://github.com/AdguardTeam/AdguardFilters/issues/138337
-moviesroom.pl##.popup-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/138100
 se.pl,poradnikzdrowie.pl###hook_box_topboard
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137685
@@ -25380,8 +25381,6 @@ dobreprogramy.pl##div.Rap[class*=" "]
 dobreprogramy.pl#?#div[role="list"] > div[role="listitem"]:has(> div > div > div > span:contains(REKLAMA))
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137379
 promoklocki.pl#?#header > div.mb-2:has(> a[href] > img.banner-top)
-! https://github.com/AdguardTeam/AdguardFilters/issues/137299
-moviesroom.pl##a[href^="https://bit.ly/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/137185
 propertynews.pl##.sad
 propertynews.pl##.sad-billboard
@@ -25447,10 +25446,14 @@ autofakty.pl##.post_baner_top
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134539
 wroclawskiportal.pl##.bdaia-e3-container > a[target="_blank"] > img
 wroclawskiportal.pl##.bdaia-ad-container
+! https://github.com/AdguardTeam/AdguardFilters/issues/213063
+moviesroom.pl##.mx-auto > .relative > img[alt]
+! https://github.com/AdguardTeam/AdguardFilters/issues/137299
+moviesroom.pl##a[href^="https://bit.ly/"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134124
-moviesroom.pl###hook_after_title
 moviesroom.pl##a[href^="https://gde-default.hit.gemius.pl/"] > img
-moviesroom.pl#?#.sidebar > div:not([class], [id]):has(> .basic-slider)
+! https://github.com/AdguardTeam/AdguardFilters/issues/127590
+moviesroom.pl#$#body { overflow: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134406
 fm.tuba.pl##div[class*="bg-[url(/assets/tuba-logo-ads.png)]"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134110
@@ -25642,9 +25645,6 @@ tustolica.pl##.slot
 tustolica.pl##.s-label
 tustolica.pl##.sep-huge
 tustolica.pl#?#.colB > div.s-link-img > a[target="_blank"] > img:upward(2)
-! https://github.com/AdguardTeam/AdguardFilters/issues/127590
-moviesroom.pl#$#body { overflow: auto !important; }
-moviesroom.pl##a[href^="https://kloti.pl"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/127609
 esanok.pl##.sidebar-blok.reklama
 esanok.pl##.con-post > .row > .post-entry > .row > .col-md-6 > div[style^="width: 300px; height: 260px; background-color:"]
@@ -26870,6 +26870,12 @@ pomponik.pl##body .ad-container:not(#style_important)
 pomponik.pl##body .ad-rectangle:not(#style_important)
 pomponik.pl##.box.ad
 pomponik.pl###feed_grupa.ad
+! https://github.com/AdguardTeam/AdguardFilters/issues/213061
+sport.interia.pl#$##portal-container[style*="sitebranding"] > .ids-page { padding-top: 120px !important; }
+sport.interia.pl#$##portal-container[style*="sitebranding"] > .ids-container-wrapper:has(> .container > .ids-scoreboard-carousel__container) { padding-top: 120px !important; }
+kobieta.interia.pl#$##portal-container[style*="sitebranding"] > #service-widget-bar { padding-top: 100px !important; }
+kobieta.interia.pl#$##portal-container[style*="sitebranding"] > #service-widget-bar::before { display: none !important; }
+biznes.interia.pl#$##portal-container[style*="sitebranding"] > .ids-wrapper-container-wrapper:has(> .padding-horizontal > .wrapper-gap-vertical > .ids-breadcrumb) { padding-top: 120px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192965
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191859
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182414
@@ -27456,15 +27462,17 @@ naekranie.pl##.interia-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/150857
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36012
 /pl/_ajax/ablck.php|$~third-party,xmlhttprequest
-/js/html2canvas.min.js$domain=wpu24.pl|ddwloclawek.pl|ddtorun.pl|gostyn24.pl|gorlice24.pl|mojakruszwica.pl|expresskaszubski.pl|gniewkowo.eu|iszczecinek.pl|mielec.pl|grudziadz365.pl|esopot.pl|lowiczanin.info|gwarek.com.pl|tyna.info.pl|tusochaczew.pl|myglogow.pl|plonskwsieci.pl|spotradomsko.pl|portalsremski.pl|ekstrasierpc.pl|ki24.info|uniejow.net.pl|e-krajna.pl|gwio.pl|faktypilskie.pl|swiecie24.pl
-esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'arePiratesOnBoard', 'false')
-esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'isAdBlockerEnabled', 'false')
-ostrowiecka.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'adInitializer', 'undefined')
+/js/html2canvas.min.js$domain=wpu24.pl|ddwloclawek.pl|ddtorun.pl|gostyn24.pl|gorlice24.pl|mojakruszwica.pl|expresskaszubski.pl|gniewkowo.eu|iszczecinek.pl|mielec.pl|grudziadz365.pl|esopot.pl|lowiczanin.info|gwarek.com.pl|tyna.info.pl|tusochaczew.pl|myglogow.pl|plonskwsieci.pl|spotradomsko.pl|portalsremski.pl|ekstrasierpc.pl|ki24.info|uniejow.net.pl|e-krajna.pl|gwio.pl|faktypilskie.pl|swiecie24.pl|rzeszow.pl
+rzeszow.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'arePiratesOnBoard', 'false')
+rzeszow.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'isAdBlockerEnabled', 'false')
+rzeszow.pl,ostrowiecka.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'adInitializer', 'undefined')
+rzeszow.pl##.news-slot-center
 wpu24.pl,ddwloclawek.pl,ddtorun.pl##.TOPNewsB
 wpu24.pl,ddwloclawek.pl,ddtorun.pl##.topLayer
 wpu24.pl,ddwloclawek.pl,ddtorun.pl##baner
 wpu24.pl,ddwloclawek.pl,ddtorun.pl##.banner--toplayer
-/pl/js/new-system.js$domain=ostrowiecka.pl
+/pl/js/questpass-$domain=rzeszow.pl
+/pl/js/new-system.js$domain=ostrowiecka.pl|rzeszow.pl
 /js/adInitializer.js$domain=ddwloclawek.pl|ddtorun.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120932
 mamazone.pl#?#.row div[class][style*="border-bottom"][style*="max-height:"] > div[style]:contains(REKLAM):upward(1)
@@ -81436,6 +81444,7 @@ browsershots.org#@#.advert_area
 ||anodoswieldy.digital^
 ||anograrechaos.shop^
 ||anokyqqkambak.top^
+||anokyqqkamzkq.top^
 ||anomiterechal.world^
 ||anonymousads.com^
 ||anoocauzad.net^
@@ -84187,6 +84196,7 @@ browsershots.org#@#.advert_area
 ||bthythvdrdbud.space^
 ||btiosxrukb.com^
 ||btixtaodva.com^
+||btkovrnejjrnb.com^
 ||btleajmkfevym.store^
 ||btprmnav.com^
 ||btrem.site^
@@ -85198,6 +85208,7 @@ browsershots.org#@#.advert_area
 ||cheesydrinks.com^
 ||cheesyreinsplanets.com^
 ||cheetieaha.com^
+||cheexatauss.net^
 ||cheftoondiligord.site^
 ||chegreacetla.cfd^
 ||chekendumpoke.shop^
@@ -86342,6 +86353,7 @@ browsershots.org#@#.advert_area
 ||cqaqwekgzvkek.tech^
 ||cqcpazetvhaso.website^
 ||cqhqxnvjujhgix.com^
+||cqigsrbandjga.store^
 ||cqjgztejpzvkd.space^
 ||cqkikfffmcqbl.online^
 ||cqkzgchjtlllo.store^
@@ -93001,6 +93013,7 @@ browsershots.org#@#.advert_area
 ||helmpa.xyz^
 ||helmsuction.com^
 ||helpcoy.cfd^
+||helpedpalisse.cfd^
 ||hem41xm47.com^
 ||hematalmuffs.qpon^
 ||hemathematica.org^
@@ -94436,6 +94449,7 @@ browsershots.org#@#.advert_area
 ||inksgurjun.top^
 ||inktad.com^
 ||inkvm.com^
+||inlacesmilchig.help^
 ||inlakedosage.qpon^
 ||inliketankert.rest^
 ||inlugiar.com^
@@ -96930,6 +96944,7 @@ browsershots.org#@#.advert_area
 ||left-world.com^
 ||leftcandle.com^
 ||leftishyellows.help^
+||leftsarabist.life^
 ||legendpuppily.life^
 ||legerikath.com^
 ||legersplaints.world^
@@ -99289,6 +99304,7 @@ browsershots.org#@#.advert_area
 ||msvwfupknauql.store^
 ||msxbrcnnbel.xyz^
 ||msxmzbzmugbfm.store^
+||msxxcxrktbrdn.site^
 ||msyezrek.com^
 ||mszddprapuziw.vip^
 ||mtaeeslwsfxjw.club^
@@ -106053,6 +106069,7 @@ browsershots.org#@#.advert_area
 ||rpts.org^
 ||rptzikhuyzsgy.website^
 ||rpxorephfxdvm.site^
+||rqejawwjlomjw.top^
 ||rqejawwjlovlj.top^
 ||rqelulyegh.com^
 ||rqgiwrjyicatp.site^
@@ -114364,6 +114381,7 @@ browsershots.org#@#.advert_area
 ||xqldkphq.com^
 ||xqnoxoqtbfwjp.site^
 ||xqsfsvngpzsns.store^
+||xqtoisaowmys.net^
 ||xqvenulmbseas.space^
 ||xqwcchybybnro.com^
 ||xqwjahdlami.com^

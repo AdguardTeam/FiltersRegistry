@@ -1,9 +1,9 @@
-! Checksum: xgLXMTzIyBTruxy0KotEaw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1757398438-3600.patch
+! Checksum: tpM7JN2CrEmg0v+Qpe7fmw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1757401866-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.9.45
-! TimeUpdated: 2025-09-09T06:09:49+00:00
+! Version: 2.4.9.46
+! TimeUpdated: 2025-09-09T07:07:03+00:00
 ! Expires: 5 days (update frequency)
 ||adblock1.static-cloudflare.workers.dev^
 ||sosalkebab.com^$all
@@ -7267,12 +7267,15 @@ xtv.cz#%#//scriptlet("prevent-setTimeout", "pgblck")
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=xtv.cz
 @@||go.eu.bbelements.com/bb/bb_one2n.js$domain=xtv.cz
 @@||bbcdn.go.eu.bbelements.com/bb/bb_one2n.*.js$domain=xtv.cz
-citroen-club.cz#%#//scriptlet('set-constant', 'detectAdFilteringXraveCompatible', 'noopPromiseResolve')
-citroen-club.cz#@#.adunit
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=citroen-club.cz
-@@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_fy$script,domain=citroen-club.cz
+renault-club.cz#@#div[data-ad]
+renault-club.cz#%#//scriptlet('remove-attr', 'class', 'body > div#obalovydiv')
+renault-club.cz#$##obalovydiv { display: block !important; }
+renault-club.cz,citroen-club.cz#%#//scriptlet('set-constant', 'detectAdFilteringXraveCompatible', 'noopPromiseResolve')
+renault-club.cz,citroen-club.cz#@#.adunit
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=citroen-club.cz|renault-club.cz
+@@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_fy$script,domain=citroen-club.cz|renault-club.cz
 !#safari_cb_affinity(privacy)
-@@||ad.doubleclick.net/ad/test.png$image,domain=citroen-club.cz
+@@||ad.doubleclick.net/ad/test.png$image,domain=citroen-club.cz|renault-club.cz
 !#safari_cb_affinity
 garaz.cz##div[data-e2e="mol-advert"]
 toyota-club.eu#%#//scriptlet('remove-attr', 'class', 'body > div#obalovydiv')
@@ -8714,6 +8717,7 @@ tarnowska.tv#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=tarnowska.tv
 comparic.pl##a[href^="https://j2t.com/"]
 autofakty.pl#@#.widget_text.widget, .entry
+moviesroom.pl##.mx-auto > .relative > img[alt]
 pb.pl##.n2pb-ad-container
 jugomobile.com#@#.adbanner
 jugomobile.com#%#//scriptlet("prevent-setTimeout", "siteAccessPopup()")
@@ -9026,6 +9030,11 @@ pomponik.pl##body .ad-container:not(#style_important)
 pomponik.pl##body .ad-rectangle:not(#style_important)
 pomponik.pl##.box.ad
 pomponik.pl###feed_grupa.ad
+sport.interia.pl#$##portal-container[style*="sitebranding"] > .ids-page { padding-top: 120px !important; }
+sport.interia.pl#$##portal-container[style*="sitebranding"] > .ids-container-wrapper:has(> .container > .ids-scoreboard-carousel__container) { padding-top: 120px !important; }
+kobieta.interia.pl#$##portal-container[style*="sitebranding"] > #service-widget-bar { padding-top: 100px !important; }
+kobieta.interia.pl#$##portal-container[style*="sitebranding"] > #service-widget-bar::before { display: none !important; }
+biznes.interia.pl#$##portal-container[style*="sitebranding"] > .ids-wrapper-container-wrapper:has(> .padding-horizontal > .wrapper-gap-vertical > .ids-breadcrumb) { padding-top: 120px !important; }
 interia.pl##.ids-ads-base
 interia.pl###ad-adsearch
 interia.pl###ad-dol_srodek
@@ -9218,10 +9227,13 @@ naekranie.pl##.interia-ad
 @@||xboxforum.pl^$generichide
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 xboxforum.pl##.adsbygoogle
-/js/html2canvas.min.js$domain=wpu24.pl|ddwloclawek.pl|ddtorun.pl|gostyn24.pl|gorlice24.pl|mojakruszwica.pl|expresskaszubski.pl|gniewkowo.eu|iszczecinek.pl|mielec.pl|grudziadz365.pl|esopot.pl|lowiczanin.info|gwarek.com.pl|tyna.info.pl|tusochaczew.pl|myglogow.pl|plonskwsieci.pl|spotradomsko.pl|portalsremski.pl|ekstrasierpc.pl|ki24.info|uniejow.net.pl|e-krajna.pl|gwio.pl|faktypilskie.pl|swiecie24.pl
-esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'arePiratesOnBoard', 'false')
-esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'isAdBlockerEnabled', 'false')
-ostrowiecka.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'adInitializer', 'undefined')
+/js/html2canvas.min.js$domain=wpu24.pl|ddwloclawek.pl|ddtorun.pl|gostyn24.pl|gorlice24.pl|mojakruszwica.pl|expresskaszubski.pl|gniewkowo.eu|iszczecinek.pl|mielec.pl|grudziadz365.pl|esopot.pl|lowiczanin.info|gwarek.com.pl|tyna.info.pl|tusochaczew.pl|myglogow.pl|plonskwsieci.pl|spotradomsko.pl|portalsremski.pl|ekstrasierpc.pl|ki24.info|uniejow.net.pl|e-krajna.pl|gwio.pl|faktypilskie.pl|swiecie24.pl|rzeszow.pl
+rzeszow.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'arePiratesOnBoard', 'false')
+rzeszow.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'isAdBlockerEnabled', 'false')
+rzeszow.pl,ostrowiecka.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl#%#//scriptlet('set-constant', 'adInitializer', 'undefined')
+rzeszow.pl##.news-slot-center
+/pl/js/questpass-$domain=rzeszow.pl
+/pl/js/new-system.js$domain=ostrowiecka.pl|rzeszow.pl
 !+ NOT_OPTIMIZED
 wylecz.to#?#.row div[class][style*="border-bottom"][style*="max-height:"] > div[style]:contains(REKLAM):upward(1)
 vorek.pl#%#//scriptlet('prevent-setTimeout', '.offsetHeight')
@@ -30456,6 +30468,7 @@ browsershots.org#@#.advert_area
 ||annuarybeeper.click^
 ||annulusagt.com^
 ||anodoswieldy.digital^
+||anokyqqkamzkq.top^
 ||anomiterechal.world^
 ||anoocauzad.net^
 ||anopiaaplysia.click^
@@ -31912,6 +31925,7 @@ browsershots.org#@#.advert_area
 ||bthythvdrdbud.space^
 ||btiosxrukb.com^
 ||btixtaodva.com^
+||btkovrnejjrnb.com^
 ||bttphsqvrunfw.store^
 ||bttrack.com^
 ||btuhgfmw.com^
@@ -32433,6 +32447,7 @@ browsershots.org#@#.advert_area
 ||cheestalto.net^
 ||cheesydrinks.com^
 ||cheetieaha.com^
+||cheexatauss.net^
 ||cheftoondiligord.site^
 ||chegreacetla.cfd^
 ||chekendumpoke.shop^
@@ -33037,6 +33052,7 @@ browsershots.org#@#.advert_area
 ||cpxinteractive.com^
 ||cqcpazetvhaso.website^
 ||cqhqxnvjujhgix.com^
+||cqigsrbandjga.store^
 ||cqjgztejpzvkd.space^
 ||cqkikfffmcqbl.online^
 ||cqmgoxqbhsmgg.site^
@@ -36403,6 +36419,7 @@ browsershots.org#@#.advert_area
 ||helmethomicidal.com^
 ||helmsuction.com^
 ||helpcoy.cfd^
+||helpedpalisse.cfd^
 ||hematalmuffs.qpon^
 ||hemiambunbear.world^
 ||heminrammer.life^
@@ -37126,6 +37143,7 @@ browsershots.org#@#.advert_area
 ||inkornesto.com^
 ||inktad.com^
 ||inkvm.com^
+||inlacesmilchig.help^
 ||inlugiar.com^
 ||inmanebsskir.com^
 ||inmeatsbummers.life^
@@ -38330,6 +38348,7 @@ browsershots.org#@#.advert_area
 ||leevesheeham.net^
 ||leezeept.com^
 ||leftcandle.com^
+||leftsarabist.life^
 ||legerikath.com^
 ||leghairy.net^
 ||legitfizzed.shop^
@@ -39493,6 +39512,7 @@ browsershots.org#@#.advert_area
 ||mspdfibsvyvbo.com^
 ||msrehcmpeme.com^
 ||msrvt.net^
+||msxxcxrktbrdn.site^
 ||msyezrek.com^
 ||mtburn.com^
 ||mtdzxyfhzn.com^
@@ -42887,6 +42907,7 @@ browsershots.org#@#.advert_area
 ||rprsikjn.com^
 ||rpts.org^
 ||rpxorephfxdvm.site^
+||rqejawwjlomjw.top^
 ||rqelulyegh.com^
 ||rqtrk.eu^
 ||rqwlvvkoqmzmk.top^
@@ -46969,6 +46990,7 @@ browsershots.org#@#.advert_area
 ||xpxqagsqezhgk.website^
 ||xqfpgwarzkecj.website^
 ||xqkqqtzljvwaj.space^
+||xqtoisaowmys.net^
 ||xqvenulmbseas.space^
 ||xqwjahdlami.com^
 ||xqwrdegbmdfrv.top^
