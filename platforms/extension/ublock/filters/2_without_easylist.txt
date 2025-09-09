@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5y9QoklqOiLCcogP0y0kxg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1757391156-3600.patch
+! Checksum: XBLdoSYNZS4QZdPmIHyE0A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1757394694-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.9.43
-! TimeUpdated: 2025-09-09T04:08:08+00:00
+! Version: 2.4.9.44
+! TimeUpdated: 2025-09-09T05:07:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10212,6 +10212,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213076
+nfl.com##+js(no-fetch-if, imasdk.googleapis.com/js/sdkloader/ima3.js)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212929
 sportie.app##+js(abort-current-script, document.onreadystatechange, function(_0x)
 ! https://github.com/AdguardTeam/AdGuardSDNSFilter/issues/1953
@@ -12360,9 +12362,6 @@ ontools.net##+js(no-fetch-if, /google-analytics\.com|adblockanalytics\.com/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154005
 canirunthegame.com##div[class^="blocker-"]
 canirunthegame.com##+js(no-fetch-if, pagead2.googlesyndication.com)
-! https://github.com/AdguardTeam/AdguardFilters/issues/153796
-!+ NOT_OPTIMIZED
-@@||pagead2.googlesyndication.com^$xmlhttprequest,domain=rekidai-info.github.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153643
 reidoplacar.com##+js(no-setTimeout-if, .innerHTML)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153644
@@ -35537,7 +35536,7 @@ hentai-id.tv###floatLayer2
 ! ##.sponsor
 shooshtime.com,thothub.org,animefurry.com,hentai420.com,xporn.tv,leak.xxx,jizzoncam.com,pornhits.com,shemalesin.com,porntrex.video,maturetubehere.com,hentai-moon.com,pornxpert.com,crazyporn.xxx,heavyfetish.com,scatkings.com,grahamcluley.com,4kporn.xxx,hairyerotica.com,gettubetv.com,ufile.io,lesbian8.com,zedporn.com,bigtitslust.com,fpo.xxx,fontyukle.net,porno90.online,pornchimp.com,lolhentai.net,vikiporn.com,its.porn,swiftbysundell.com,uiporn.com,heroero.com,camwhores.tv,heroero.com,magnetfox.com,sexwebvideo.com,pornfapr.com,alphaporno.com##.sponsor
 ! ##.spot:not(#style_important)
-homo.xxx,ok.porn,pornhat.*,okxxx3.com,okxxx2.com,okxxx1.com,ok.xxx,perfektdamen.*,perfectgirls.*,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,w1mp.com,riverporn.pro,sexpester.com,w4nkr.com,pornwhite.com,gaygo.tv,sextaped.com,ratedgross.com,sleazyneasy.com,litecoin-faucet.com,3prn.com,motherporno.com,pornomovies.com,camhub.tv,max.porn,feetporno.com,familyporn.tv,freehardcore.com,moviesand.com,momvids.com,hdzog.com,pornbimbo.com##.spot:not(#style_important)
+cremz.com,homo.xxx,ok.porn,pornhat.*,okxxx3.com,okxxx2.com,okxxx1.com,ok.xxx,perfektdamen.*,perfectgirls.*,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,w1mp.com,riverporn.pro,sexpester.com,w4nkr.com,pornwhite.com,gaygo.tv,sextaped.com,ratedgross.com,sleazyneasy.com,litecoin-faucet.com,3prn.com,motherporno.com,pornomovies.com,camhub.tv,max.porn,feetporno.com,familyporn.tv,freehardcore.com,moviesand.com,momvids.com,hdzog.com,pornbimbo.com##.spot:not(#style_important)
 ! ##.advertisement
 cargurus.com,hotdeals.com,ashemaletv.com,ipaomtk.com,faceitstats.com,ichgcp.net,cinestaan.com,operanews.com,tasteofhome.com,readersdigest.ca,gramfile.com,outlookindia.com,cnbctv18.com,internationalnewsandviews.com,additudemag.com,motoroctane.com,serverhunter.com,rogerebert.com,blavity.com,nuvid.*,discordemoji.com,soft112.com,perfectgirls.net,indaily.com.au,8tracks.com,digiday-com.cdn.ampproject.org,mathopenref.com##.advertisement
 ! ##.ad-container
@@ -35581,6 +35580,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+||cremz.com/poco.js
+cremz.com##.block-inner
+cremz.com##a[href^="https://www.cremz.com/link/"]
 pornoxo.com##+js(abort-on-stack-trace, document.getElementById, loadBannerContent)
 pornoxo.com##+js(abort-current-script, $, Popunder)
 pornoxo.com##.site-center-wrapper > div[style]:not([class]):has(> a.blinker)
@@ -38442,7 +38444,7 @@ livestreams.click,mylivestream.pro###openLinks
 livestreams.click##div[id^="iframe-container-"]
 namify.tech##.suggestion-rows .suggestion__namify-partner
 namify.tech##[class*="gtm-banner-"]
-pusvid.com,kissjav.com,hentai4k.com,viralxxxporn.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.asside-link
+cremz.com,pusvid.com,kissjav.com,hentai4k.com,viralxxxporn.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.asside-link
 pusvid.com,kissjav.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.link-offer
 ||melban7.top^$domain=wcup.one
 ||afrikalyrics.com/images/download-vantaart-
