@@ -1,9 +1,9 @@
-! Checksum: apM0JMJ6Rceaa2jF1sfh5A
-! Diff-Path: ../patches/14/14-s-1757427071-3600.patch
+! Checksum: hnnyd/h1yadP+mOgc969aQ
+! Diff-Path: ../patches/14/14-s-1757430734-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.42.37
-! TimeUpdated: 2025-09-09T14:07:02+00:00
+! Version: 2.2.42.38
+! TimeUpdated: 2025-09-09T15:08:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17392,6 +17392,7 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! Never loads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212989
 @@||cdn.cookielaw.org/consent/$domain=ryobitools.eu
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212977
@@ -34352,6 +34353,9 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+gorenje.com#$#body { overflow: auto !important; padding-right: 0 !important; }
+gorenje.com#$#.popup-subscription { display: none !important; }
+gorenje.com#$#.modal-open > div.modal-backdrop { display: none !important; }
 e-xecutive.ru##.modal
 blog.stackademic.com##div[class^="jj jk"] > div[class="o q"]:has(> div[class^="er jo"] img[alt="Promotion image"])
 opencritic.com##app-navbar > .ribbon:has(> .container > .d-flex > span > a[href^="https://discord.gg/"])
@@ -50875,6 +50879,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+||img.cityheaven.net/img/banner/seamless_login_unlinked_banner.png
 deepl.com##div[data-testid="ai-labs-banner"]
 topmanhuas.org##a.metaslider_image_link[href="https://taurus.topmanhuas.org/quitar-anuncios/"]
 radiotimes.com##main .page-builder__image > .image > a[href*="src=radiotimes-webbannernew"]
