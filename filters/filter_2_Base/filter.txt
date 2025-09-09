@@ -14426,10 +14426,6 @@ garoetpos.com,ketubanjiwa.com##div[id][class^="popup"][class$="wrap"][style]
 garoetpos.com,ketubanjiwa.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143402
 @@||request-global.czilladx.com/serve/popunder.php$domain=faucetcrypto.net
-! https://github.com/AdguardTeam/AdguardFilters/issues/143146
-@@||browserleaks.com/img/9.gif$domain=browserleaks.com
-@@||browserleaks.com^$generichide
-browserleaks.com##.adsbygoogle
 ! https://github.com/AdguardTeam/AdguardFilters/issues/142554
 photooxy.com##.i-said-no-thing-can-stop-me-warning
 photooxy.com#%#//scriptlet('abort-on-property-read', 'blockAdBlock')
@@ -23180,12 +23176,16 @@ xtv.cz#%#//scriptlet("prevent-setTimeout", "pgblck")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77726
 kosicednes.sk##[data-banner-type]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/77609
-renault-club.cz#%#//scriptlet('remove-attr', 'class', 'body > div#obalovydiv')
-renault-club.cz#@#.reklama
-||google-analytics.com/analytics.js$script,redirect=noopjs,important,domain=renault-club.cz
+! https://github.com/AdguardTeam/AdguardFilters/issues/213068
+citroen-club.cz#%#//scriptlet('set-constant', 'detectAdFilteringXraveCompatible', 'noopPromiseResolve')
+!#if (adguard_app_ios || adguard_ext_android_cb || adguard_ext_safari)
+citroen-club.cz#@#.adunit
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=citroen-club.cz
+@@||pagead2.googlesyndication.com/pagead/managed/js/adsense/*/show_ads_impl_fy$script,domain=citroen-club.cz
 !#safari_cb_affinity(privacy)
-@@||google-analytics.com/analytics.js$domain=renault-club.cz
+@@||ad.doubleclick.net/ad/test.png$image,domain=citroen-club.cz
 !#safari_cb_affinity
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/76233
 @@||refi-reklama.razitko.cz^$domain=refi-reklama.razitko.cz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/75868
@@ -40796,6 +40796,7 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+filemirage.com#%#//scriptlet('trusted-replace-node-text', 'script', 'window.open(', '/if *\(!1 *=== *[a-z]+ * \|\| *void *0 *=== *[a-z]+\.count *\)/', 'if (false)')
 vgtimes.com##.adfshift
 vgtimes.com##.banner_in_news
 ||radiotimes.com/stitcher-assets/radiotimes/ad-manager.js
@@ -90554,6 +90555,7 @@ browsershots.org#@#.advert_area
 ||aajhkzdwbmloi.today^
 ||aalfpjfmmv.com^
 ||aalhjtdrhzqgu.site^
+||aarcpcukxe.net^
 ||aarghclothy.com^
 ||aaronbema.qpon^
 ||aasssaa.com^
@@ -100523,6 +100525,7 @@ browsershots.org#@#.advert_area
 ||evictabongo.click^
 ||evidencestunundermine.com^
 ||evil-candle.pro^
+||evilerkirtled.click^
 ||evilexchanged.com^
 ||evilstrike.pro^
 ||evnhigkzgp.club^
@@ -110148,6 +110151,7 @@ browsershots.org#@#.advert_area
 ||mskpwqlppxham.life^
 ||mslhvnakjrwgl.store^
 ||msourcecargo.com^
+||mspdfibsvyvbo.com^
 ||msqwborynxnqd.online^
 ||msrbojniwlloa.online^
 ||msrehcmpeme.com^
@@ -120562,6 +120566,7 @@ browsershots.org#@#.advert_area
 ||thikoowoult.net^
 ||thikraik.net^
 ||thilushouph.net^
+||thimaihaptique.net^
 ||thimblehaltedbounce.com^
 ||thimblewakon.click^
 ||thinkerbarbas.qpon^
@@ -126303,6 +126308,7 @@ browsershots.org#@#.advert_area
 ||zqpbuczqykxcb.space^
 ||zqqiynddnpjtf.space^
 ||zqraicojravzn.xyz^
+||zqswaomjynrud.online^
 ||zqvee2re50mr.com^
 ||zqvvzrlevbmbw.top^
 ||zqvvzrlevbzvb.top^
@@ -139653,7 +139659,6 @@ royalroad.com##.dKKumhSnWiFq75vPUVtmTanQ
 standard.co.uk##.dXaqls
 vogue.com.au##.dYmYok
 timesofindia.indiatimes.com##.d_jsH.mPws3
-androidauthority.com##.d_um
 counter.dev,lindaikejisblog.com##.da
 engadget.com##.da-container
 hackernoon.com##.dabytag
@@ -143832,14 +143837,12 @@ costco.com##.col-xs-12:has([data-bi-placement^="Criteo_Product_Display"])
 psprices.com##.creative:has-text(remove advertising)
 infinitestart.com##.cs-sidebar__inner > .widget:has(> ins.adsbygoogle)
 alphacoders.com##.css-grid-content:has(> .in-thumb-ad-css-grid)
-androidauthority.com##.d_3i:has-text(Latest deals)
 dollargeneral.com##.dg-product-card:has(.dg-product-card__sponsored[style="display: block;"])
 limetorrents.lol##.downloadareabig:has([title^="Anâ€Œonâ€Œymous Download"])
 tripsonabbeyroad.com##.e-con-inner:has(tp-cascoon)
 bitcoinsensus.com##.e-con-inner:has-text(Our Favourite Trading Platforms)
 wsj.com##.e1ewmsuz20:has(> .uds-ad-container)
 wsj.com##.e1vnmyci0:has(> .adWrapper)
-androidauthority.com##.e_4j:has-text(See all deals)
 protrumpnews.com##.enhanced-text-widget:has(span.pre-announcement)
 upfivedown.com##.entry > hr.wp-block-separator:has(+ .has-text-align-center)
 morrisons.com##.featured-items:has(.js-productCarouselFops)
@@ -143968,6 +143971,7 @@ petco.com##[class*="rmn-banner"]:has([class*="SponsoredText"])
 popularmechanics.com##[class] > :has(> #article-marketplace-horizontal)
 popularmechanics.com##[class] > :has(> #gpt-ad-vertical-bottom)
 independent.co.uk,standard.co.uk,the-independent.com##[class] > :has(> [data-mpu])
+androidauthority.com##[class] > [class] > [class]:has(div[data-ad-type="leaderboard_atf"])
 brisbanetimes.com.au,smh.com.au,theage.com.au,watoday.com.au##[class] > [class]:has(> [data-testid="ad"])
 avclub.com,jalopnik.com,kotaku.com,theonion.com,theroot.com##[class] > div:has(> [is="bulbs-dfp"])
 fortune.com##[class]:has(> #Leaderboard0)
