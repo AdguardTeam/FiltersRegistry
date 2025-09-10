@@ -1,8 +1,8 @@
-! Checksum: evEItJATfvUFIYquS5TTUw
+! Checksum: VeHMKmrNpTff9NWBrDDX9w
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.42.45
-! TimeUpdated: 2025-09-10T06:09:46+00:00
+! Version: 2.2.42.46
+! TimeUpdated: 2025-09-10T09:08:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2440,7 +2440,6 @@ flysmartavia.com##.cookies-policy-wrapper
 bandcamp.com##page-footer[is-legacy-cookie-control-automatic]
 insert.com.pl##.privacyAndCookiePolicy_wrapper
 transfernow.net##div[class^="custom_cmp_wrapper"]
-komoot.com##.page > div > div#banner_portal_container ~ dialog
 plerdy.com##.row_cookie-bubble
 ardplus.de##main + div[style*="position: fixed; bottom: 0px;"]
 adm.gov.it##.cookie-bar-widget
@@ -11913,6 +11912,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213120
+@@||cdn.cookielaw.org/consent/*.json$domain=southparkstudios.com.br|southpark.lat|southparkstudios.com|southpark.de
 ! Never loads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212989
 @@||cdn.cookielaw.org/consent/$domain=ryobitools.eu

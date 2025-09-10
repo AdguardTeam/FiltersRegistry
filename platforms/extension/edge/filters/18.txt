@@ -1,9 +1,9 @@
-! Checksum: Loq+sC4VJh5iAsZFmZwehg
-! Diff-Path: ../patches/18/18-s-1757448773-3600.patch
+! Checksum: 4s46BhpylzJAMV5TX+PT0g
+! Diff-Path: ../patches/18/18-s-1757495514-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.69.77
-! TimeUpdated: 2025-09-09T20:09:04+00:00
+! Version: 2.0.69.78
+! TimeUpdated: 2025-09-10T09:08:15+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2546,7 +2546,7 @@ patronite.pl#%#//scriptlet('trusted-set-local-storage-item', 'patronite-gdpr', '
 transfernow.net##div[class^="custom_cmp_wrapper"]
 cbs.com#%#//scriptlet('trusted-click-element', '#ketch-banner-button-secondary')
 mediathekviewweb.de#%#//scriptlet('trusted-click-element', 'dialog.w-full button', 'containsText:Ablehnen')
-komoot.com##.page > div > div#banner_portal_container ~ dialog
+komoot.com#%#//scriptlet('set-local-storage-item', 'komoot_gdpr_data', 'emptyObj')
 buero-bedarf-thueringen.de#%#//scriptlet('abort-on-property-write', 'openCookieConsentDialog')
 bloknot-volgograd.ru##body > div[style*="fixed"]:has(> p > a[href="/bloknot/privacy-policy.php"])
 nearme.jp#%#//scriptlet('set-local-storage-item', '@hidePrivacyPopup', 'true')
@@ -16496,7 +16496,6 @@ fortune.com#%#//scriptlet('trusted-click-element', '#truste-consent-buttons > bu
 numerama.com#%#//scriptlet('trusted-click-element', '.embed-consent-overlay-accept-button', '', '500')
 edit.chromium.org#%#//scriptlet('hide-in-shadow-dom', 'cookie-bar')
 telerama.fr#%#//scriptlet('trusted-click-element', 'button[data-gdpr-expression="acceptAll"]')
-komoot.com,komoot.de#%#//scriptlet('trusted-set-local-storage-item', 'kmt_config_web', '{"gdpr_ga":false,"gdpr_exp":false}')
 cmp.focus.de,spcmp.woxikon.de#%#//scriptlet('trusted-click-element', 'button[title="Akzeptieren"]')
 dom.ru#%#//scriptlet('set-cookie', 'cookieAccepted', 'true')
 bettertires.com,leibniz.com#%#//scriptlet('set-cookie', 'consent', '1')
@@ -17365,6 +17364,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213120
+@@||cdn.cookielaw.org/consent/*.json$domain=southparkstudios.com.br|southpark.lat|southparkstudios.com|southpark.de
 ! Never loads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212989
 @@||cdn.cookielaw.org/consent/$domain=ryobitools.eu

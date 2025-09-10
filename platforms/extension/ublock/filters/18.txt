@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qMmIRdCobx4YYhi64gE8Yw
-! Diff-Path: ../patches/18/18-s-1757448786-3600.patch
+! Checksum: ZB4pTL0U5zS76N0voA7i2Q
+! Diff-Path: ../patches/18/18-s-1757495527-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.69.77
-! TimeUpdated: 2025-09-09T20:09:04+00:00
+! Version: 2.0.69.78
+! TimeUpdated: 2025-09-10T09:08:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2496,7 +2496,7 @@ flysmartavia.com##.cookies-policy-wrapper
 bandcamp.com##page-footer[is-legacy-cookie-control-automatic]
 insert.com.pl##.privacyAndCookiePolicy_wrapper
 transfernow.net##div[class^="custom_cmp_wrapper"]
-komoot.com##.page > div > div#banner_portal_container ~ dialog
+komoot.com##+js(set-local-storage-item, komoot_gdpr_data, emptyObj)
 buero-bedarf-thueringen.de##+js(abort-on-property-write, openCookieConsentDialog)
 bloknot-volgograd.ru##body > div[style*="fixed"]:has(> p > a[href="/bloknot/privacy-policy.php"])
 nearme.jp#@#+js(set-local-storage-item, @hidePrivacyPopup, true)
@@ -16411,6 +16411,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213120
+@@||cdn.cookielaw.org/consent/*.json$domain=southparkstudios.com.br|southpark.lat|southparkstudios.com|southpark.de
 ! Never loads
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212989
 @@||cdn.cookielaw.org/consent/$domain=ryobitools.eu
