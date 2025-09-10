@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: WzmFiLRoavkaWxw2uz6LPg
-! Diff-Path: ../patches/16/16-s-1757481096-3600.patch
+! Checksum: U5UiPtr96RffeOoupGG3ZQ
+! Diff-Path: ../patches/16/16-s-1757506501-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.30
-! TimeUpdated: 2025-09-10T05:07:45+00:00
+! Version: 2.0.54.31
+! TimeUpdated: 2025-09-10T12:11:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -607,6 +607,12 @@ $script,redirect-rule=noop.js,domain=tf1info.fr
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213146
+! Fixes loading video player and delay in video playback start
+! Apps cannot inject script into iframe with "about:blank" src, so a workaround is required
+!+ NOT_PLATFORM(windows, mac, android)
+supersoluce.com##+js(adjust-setTimeout, event_listener_timeout, *, 0.001)
+!+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191055
 ! Fix video player loading delay
 marieclaire.fr##+js(adjust-setTimeout, /userConsentProcess|this===/, *, 0.001)
@@ -1145,7 +1151,7 @@ programme-television.org##.content_right > div.p-sticky
 programme-television.org##div[class*="placeholder"]
 lalibre.be##iframe[src^="//immobox.logic-immo.be/logic_immo_be/widget/"]
 igen.fr,trustmyscience.com##div[data-hbdbrk-parent="true"]
-francoischarron.com,mariefrance.fr,lephoceen.fr,closermag.fr,igen.fr,trustmyscience.com##body .ads:not(#style_important)
+supersoluce.com,francoischarron.com,mariefrance.fr,lephoceen.fr,closermag.fr,igen.fr,trustmyscience.com##body .ads:not(#style_important)
 lcd-compare.com##.page-head-ad
 blog-rct.com##body .code-block
 neko-sama.fr##a[href^="https://buqkrzbrucz.com/"]
@@ -1589,6 +1595,10 @@ app.molotov.tv##+js(no-xhr-if, /ping?token=)
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212996
+@@||lastampa.it/embed/$subdocument,domain=lastampa.it
+! https://github.com/AdguardTeam/AdguardFilters/issues/213146
+@@||sonar.viously.com/*/js$domain=supersoluce.com
 ! listeamed.net - incorrect blocking, video player is broken
 $popup,domain=listeamed.net,badfilter
 $third-party,xmlhttprequest,domain=listeamed.net,badfilter

@@ -1,8 +1,8 @@
-! Checksum: QxQkT1CRXGYIYtteqp0ffg
+! Checksum: eZ5ordZjYvalOd6/zv9Yyg
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.30
-! TimeUpdated: 2025-09-10T05:07:45+00:00
+! Version: 2.0.54.31
+! TimeUpdated: 2025-09-10T12:11:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -588,6 +588,9 @@ prod-player.tf1.fr,tf1.fr,tf1info.fr#@#.carbon-ads
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213146
+! Fixes loading video player and delay in video playback start
+! Apps cannot inject script into iframe with "about:blank" src, so a workaround is required
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191055
 ! Fix video player loading delay
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186121
@@ -925,7 +928,7 @@ programme-television.org##.content_right > div.p-sticky
 programme-television.org##div[class*="placeholder"]
 lalibre.be##iframe[src^="//immobox.logic-immo.be/logic_immo_be/widget/"]
 igen.fr,trustmyscience.com##div[data-hbdbrk-parent="true"]
-francoischarron.com,mariefrance.fr,lephoceen.fr,closermag.fr,igen.fr,trustmyscience.com##body .ads:not(#style_important)
+supersoluce.com,francoischarron.com,mariefrance.fr,lephoceen.fr,closermag.fr,igen.fr,trustmyscience.com##body .ads:not(#style_important)
 lcd-compare.com##.page-head-ad
 blog-rct.com##body .code-block
 neko-sama.fr##a[href^="https://buqkrzbrucz.com/"]
@@ -1367,6 +1370,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/212996
+@@||lastampa.it/embed/$subdocument,domain=lastampa.it
+! https://github.com/AdguardTeam/AdguardFilters/issues/213146
+@@||sonar.viously.com/*/js$domain=supersoluce.com
 ! listeamed.net - incorrect blocking, video player is broken
 $popup,domain=listeamed.net,badfilter
 $third-party,xmlhttprequest,domain=listeamed.net,badfilter

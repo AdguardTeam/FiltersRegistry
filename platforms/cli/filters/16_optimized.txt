@@ -1,9 +1,9 @@
-! Checksum: PhDgKyZ1lbKQ5ItHl7rkmA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1757481076-3600.patch
+! Checksum: fM8jKGjqJ8Lxb4EdJPU+bw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1757506480-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.30
-! TimeUpdated: 2025-09-10T05:07:45+00:00
+! Version: 2.0.54.31
+! TimeUpdated: 2025-09-10T12:11:10+00:00
 ! Expires: 12 hours (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -260,6 +260,10 @@ $script,redirect-rule=noopjs,domain=tf1info.fr
 @@||ads.stickyadstv.com^|$xmlhttprequest,domain=tf1.fr|tf1info.fr
 !#safari_cb_affinity
 ##.rwad-with-placeholder
+!+ NOT_PLATFORM(windows, mac, android)
+supersoluce.com#%#//scriptlet('adjust-setTimeout', 'event_listener_timeout', '*', '0.001')
+!+ NOT_PLATFORM(ext_ff)
+supersoluce.com#%#(()=>{window.addEventListener("load",(()=>{document.querySelector(".vsly-player")&&(()=>{const e=document.createElement("script");e.id="xieg6Sie",e.src="https://cdn.viously.com/js/sdk/boot.js",document.head.appendChild(e)})()}));})();
 marieclaire.fr#%#//scriptlet('adjust-setTimeout', '/userConsentProcess|this===/', '*', '0.001')
 1jour1film.cyou#%#//scriptlet('remove-attr', 'href', 'a[href]#clickfakeplayer')
 sudouest.fr#%#//scriptlet('adjust-setTimeout', 'return t()', '*', '0.001')
@@ -603,7 +607,7 @@ lacoccinelle.net##.thisis728
 euractiv.fr##.ea-gat-slot-wrapper
 programme-television.org##.content_right > div.p-sticky
 programme-television.org##div[class*="placeholder"]
-francoischarron.com,mariefrance.fr,lephoceen.fr,closermag.fr,igen.fr,trustmyscience.com##body .ads:not(#style_important)
+supersoluce.com,francoischarron.com,mariefrance.fr,lephoceen.fr,closermag.fr,igen.fr,trustmyscience.com##body .ads:not(#style_important)
 lcd-compare.com##.page-head-ad
 blog-rct.com##body .code-block
 capital.fr##img[width="300"][height="250"]
@@ -765,6 +769,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !+ NOT_PLATFORM(ext_ff)
 ||prod-player.tf1.fr/*/Player/Player.js$script,xmlhttprequest,other,replace=/_prerolls:!(0|1)\,_midrolls:!(0|1)/enable:!1\,_prerolls:!1\,_midrolls:!1/
 app.molotov.tv#%#//scriptlet('prevent-xhr', '/ping?token=')
+@@||lastampa.it/embed/$subdocument,domain=lastampa.it
+@@||sonar.viously.com/*/js$domain=supersoluce.com
 $popup,domain=listeamed.net,badfilter
 $third-party,xmlhttprequest,domain=listeamed.net,badfilter
 $third-party,xmlhttprequest,domain=mivalyo.com,badfilter
