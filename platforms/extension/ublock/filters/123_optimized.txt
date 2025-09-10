@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: lzRb69b/pu1VOpqwTx0LIg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1757465556-14400.patch
+! Checksum: 6tJO/OAc9hbMFY0HHhLu4w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1757479267-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.47.52
-! TimeUpdated: 2025-09-10T00:47:48+00:00
+! Version: 2.1.47.53
+! TimeUpdated: 2025-09-10T04:36:27+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -19,6 +19,7 @@
 -sharebar.
 -social-sidebar.
 -Social-Sidebar/
+-social-slider/
 -sprite-social-
 .sharing.js
 /accesspress-social-counter/*
@@ -228,7 +229,6 @@ _social_footer_
 ###facebook_share
 ###facebookbtn
 ###facebooklike
-###facebooklikebox-2
 ###facebookpopup-fan-exit
 ###facebookpopup-fanback
 ###facebooktrend
@@ -314,6 +314,7 @@ _social_footer_
 ###iNavSocial
 ###index-social
 ###instagram-link
+###je_socialicons
 ###js-Social-Share-0
 ###js-SocialWidget-Container
 ###js-Stay-Connected-Container-0
@@ -440,6 +441,7 @@ _social_footer_
 ###shareUrl
 ###share_bar
 ###share_block
+###share_bottom
 ###share_box
 ###share_button
 ###share_buttons
@@ -878,6 +880,7 @@ _social_footer_
 ##.article-social-container
 ##.article-social-icons
 ##.article-social-media
+##.article-social-section
 ##.article-social-share
 ##.article-social-sharing
 ##.article-social-wrapper
@@ -966,7 +969,6 @@ _social_footer_
 ##.bloc_float_share
 ##.block-addtoany
 ##.block-facebook
-##.block-facebook-inner
 ##.block-fb-social
 ##.block-sharebar
 ##.block-sharethis
@@ -1017,9 +1019,6 @@ _social_footer_
 ##.button-pinterest
 ##.button-share
 ##.button-share-facebook
-##.button-share__bar
-##.button-share__media
-##.button-share__media--mail
 ##.button-social
 ##.button-twitter
 ##.button__share
@@ -1079,7 +1078,6 @@ _social_footer_
 ##.cd-fb-like-widget
 ##.cff-share-container
 ##.cff-share-tooltip
-##.checkout-share
 ##.ci-socials-ignited
 ##.circle-share
 ##.cmg-share-bar
@@ -1141,7 +1139,6 @@ _social_footer_
 ##.dmSocialHub
 ##.document-share
 ##.dp-share
-##.dpArticleShare
 ##.dpsp-network-btn
 ##.dpsp-networks-btns-share
 ##.dpsp-networks-btns-sidebar
@@ -1304,6 +1301,7 @@ _social_footer_
 ##.fbbsb-buttons
 ##.fbbutton
 ##.fbcirclebtn
+##.fblbForm
 ##.fblikebox
 ##.fblink
 ##.fbshare
@@ -1802,6 +1800,7 @@ _social_footer_
 ##.lazysocialbuttons
 ##.leftsharebtn
 ##.leftside-socialshare
+##.lets-social-count-wrap
 ##.lf-facebook
 ##.lien-facebook
 ##.like-box-wrap
@@ -1812,6 +1811,7 @@ _social_footer_
 ##.like_block_rendered
 ##.like_box_widget_facbook
 ##.like_buttons
+##.like_widget
 ##.likebtn
 ##.likebutton
 ##.likes-block_left
@@ -1879,6 +1879,9 @@ _social_footer_
 ##.main_search_social
 ##.main_share_panel
 ##.mashfs-popup-share
+##.mashicon-facebook
+##.mashicon-google
+##.mashicon-twitter
 ##.mashsb-box
 ##.mashsb-container
 ##.masterSocialbutton
@@ -1986,6 +1989,7 @@ _social_footer_
 ##.news-header-social
 ##.news-share
 ##.news-share-button
+##.news-sharing
 ##.news__share
 ##.newsletter__social-links
 ##.nice-menu-menu-social-menu
@@ -2096,7 +2100,6 @@ _social_footer_
 ##.post-share__sticky-wrapper
 ##.post-sharing
 ##.post-social
-##.post-social-buttons
 ##.post-social-pin
 ##.post-social-wrapper
 ##.post-socials
@@ -2682,7 +2685,6 @@ _social_footer_
 ##.simple-social-icons
 ##.simplesocialbuttons
 ##.simplesocialbuttons_inline
-##.single-item-share
 ##.single-post-meta-data__social-sharing
 ##.single-post-share
 ##.single-post-sharing-button
@@ -2696,8 +2698,6 @@ _social_footer_
 ##.single__floating-share
 ##.single__share
 ##.single__social
-##.single_post_share_icon_post
-##.single_post_share_icons
 ##.single_share
 ##.single_social
 ##.site-follow-us
@@ -2937,6 +2937,7 @@ _social_footer_
 ##.social-share-btns
 ##.social-share-button
 ##.social-share-buttons
+##.social-share-circle
 ##.social-share-container
 ##.social-share-count
 ##.social-share-expand
@@ -3091,6 +3092,7 @@ _social_footer_
 ##.social_foot
 ##.social_footer
 ##.social_header
+##.social_icons_wrap
 ##.social_item
 ##.social_layer
 ##.social_like
@@ -3146,6 +3148,7 @@ _social_footer_
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
+##.socialnetworkbox
 ##.socialno
 ##.socialplugins
 ##.socialright
@@ -3212,7 +3215,6 @@ _social_footer_
 ##.story__share
 ##.story__social
 ##.stripe-social
-##.subShare
 ##.sub_jeu_social_facebook
 ##.sub_jeu_social_twitter
 ##.sub_sns
@@ -3311,6 +3313,7 @@ _social_footer_
 ##.twitter-follow
 ##.twitter-follow-box
 ##.twitter-footer
+##.twitter-ft
 ##.twitter-module
 ##.twitter-share
 ##.twitter-share-btn
@@ -3405,6 +3408,7 @@ _social_footer_
 ##.w-socials
 ##.w-socials-list
 ##.w2bslikebox
+##.wa-share-btn-container
 ##.wb-share
 ##.wc_social_plugin_wrapper
 ##.wds-is-follow-us
@@ -3858,6 +3862,7 @@ kslnewsradio.com,structurae.net##.fa-instagram
 trueachievements.com##.fa-reddit
 techradar.com##.facebook-icon
 knowyourmeme.com##.fb-page-like-box
+bearingarms.com,hotair.com,redstate.com##.fb-social
 dailymail.co.uk##.fbmessenger
 eadaily.com##.feed
 lubuntu.me##.ff-social-icon
@@ -3946,7 +3951,6 @@ soundcloud.com##.listenDetails__login
 bitcoinmagazine.com,bringmethenews.com,dealbreaker.com,lamag.com,psmag.com,si.com,thespun.com,thestreet.com##.m-social
 thestreet.com##.m-social--pinterest-pin-it
 consumerfinance.gov##.m-social-media
-insideevs.com,motor1.uol.com.br##.m1-article-meta_share
 morningstar.com##.mdc-social-share
 amazon.jobs##.media-icons
 theshovel.com.au##.menu-social-menu-container
@@ -4123,6 +4127,7 @@ thehackernews.com##.top-follow
 pastebin.com##.top-footer
 rottentomatoes.com##.trending-bar__social-link
 advocate.com,slashdot.org##.tw
+bearingarms.com,hotair.com,redstate.com##.tw-social
 apptrigger.com,motherjones.com##.tweet
 videocardz.com##.twitter-follow-button
 unsw.edu.au##.uds-social-follow
@@ -4439,8 +4444,6 @@ atribuna.com.br,ebc.com.br,engeplus.com.br,forbes.com.br##.compartilhamento
 jovempan.com.br##.cta-model
 ndmais.com.br##.cta-whatsapp
 em.com.br##.edm-bottom-social
-em.com.br##.edm-right
-em.com.br##.edm-social-networks
 abril.com.br##.f-social
 fastcompanybrasil.com##.fcbr_social_share
 poder360.com.br##.fixed-list
