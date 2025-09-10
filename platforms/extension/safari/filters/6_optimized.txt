@@ -1,5 +1,5 @@
-! Checksum: 1+FINSYD0LnLleI9NmzDzA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1757468326-3600.patch
+! Checksum: 2ttXgzth8C/mi1GCpmcMUA
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1757471712-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.49.42
@@ -586,7 +586,6 @@ caravaning.de#%#//scriptlet("set-constant", "adblockActive", "false")
 @@||imagesrv.adition.com/js/srp.js$domain=derstandard.at
 @@||adspirit.de^$domain=mathaeser.de
 @@||bravofly.de^$generichide
-@@||the-voice-of-germany.de^$generichide
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 @@||20min.ch^$generichide
 willhaben.at#@#div[id^="advert"]
@@ -757,6 +756,7 @@ forum.golem.de##.list-comments > li:has(> div[style])
 chip.de##.js_download_button > a[href^="https://x.chip.de/intern/dl/?url="][href*="&pageLayout=withinstaller|"]
 !+ PLATFORM(ios, ext_safari)
 wetter.de##.ligatus-content-forecast-reco-container
+wetter.de##.no-ads-passback
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 urlaubspartner.net##.werbung
 epochtimes.de##div[id^="div-gpt-ad"]
@@ -1139,6 +1139,7 @@ promiflash.de###desktopTop
 promiflash.de##.hidden.sm\:flex:has(> div.hidden.sm\:block)
 rp-online.de##div.floated
 fernsehserien.de##.sky-anzeige
+hardwareluxx.de##div[style="height:200px;width:100%;"]:empty
 hardwareluxx.de##html a[target="_blank"][href*="banner"]
 11880.com##.box-entry-detail--ad
 11880.com##div[id^="responsive-bhvr--ad-sidebar-"]
@@ -2004,6 +2005,7 @@ fondsweb.com##.f-ad-billboard-container
 fondsweb.com##.fw--advertisement-header
 pornoente.tv##aside[id^="special"]
 ||chatntr.com^$domain=hd-pornos.net|pornoente.tv
+laborjournal.de##.bb_top
 gamereactor.de##.colthin > div[style="min-height: 600px; margin-bottom: 20px;"]
 blick.ch##a[href^="https://jackpot.onelink.me"]
 stuttgarter-nachrichten.de##div[data-layout-desktop="w4-"][data-layout-mobile="w0-"]
@@ -2156,7 +2158,6 @@ merkurist.de#$#div[sparticle-impression] { visibility: hidden !important; }
 pcgames.de##.amazonAutoLink
 tichyseinblick.de##.adwidget_wrapper
 freizeitpartnerweb.de,outdoorpartner.net,urlaubspartner.net##.ad.text-uppercase
-outdoorpartner.net##[style="padding-top:20px;"] > span[style="font-size:9px;color:#aaa;"]
 freizeitpartnerweb.de,outdoorpartner.net,urlaubspartner.net##.row > div[class="visible-lg-block col-lg-4 text-center"] > span[style="font-size:9px;color:#aaa;"]
 ||widgets.outbrain.com^$domain=spiegel.de|manager-magazin.de|fnp.de
 borkenerzeitung.de,bbv-net.de###WallpaperBanner
@@ -2595,6 +2596,7 @@ rtl.de#@#.rtlde-medium-rectangle
 .at/werbung/
 .com/de/ad/
 .de/ads/$~xmlhttprequest
+.de/ads?
 .de/ads_
 .de/werb/
 .de/werbung/
@@ -2606,6 +2608,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /bilder/ads/*
 /esel.js
 /grafik/ads/*
+/hier_werben.
 /images/werbung.
 /images/werbung/*
 /img/werbung/*
@@ -2651,6 +2654,7 @@ _bannerwerbung/
 _werbe_layer.
 _werbebanner.
 _werbebanner/
+_werbepartner.
 _werbung.php
 _werbung.pl
 _woz_banner_vote.
@@ -3247,6 +3251,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||oeffentlichen-dienst.de/images/banners/
 ||oekoportal.de/sites/default/files/stromvergleich.png
 ||okey-online.com/prg/daten/datenbanken/banner
+||oktoberfestportal.de/pics_banner/
 ||omano.de/AdServer/
 ||onlinekorrektor.de/cnc/
 ||onlinewahn.de/sky.js
@@ -3296,7 +3301,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||sexforum.ch/ForumPics/BaPics/
 ||sexnews.ch/uploads/tx_sfbanners/
 ||shopanbieter.de/SponsorLogos/
-||somquery.sqrt-5041.de/tv/ad-wrapper
 ||speedtorrent.com/usenet/
 ||spiele-for-free.de/wp-content/uploads/*_1920x1200_$domain=spiele-for-free.de
 ||spreeblick.com/wp-content/themes/*/hosteurope.gif
@@ -3312,7 +3316,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||suche.t-online.de/web/billiger?
 ||suche.t-online.de/web/ebay?
 ||suche.web.de/amazon?
-||sunshine.it/raika/
 ||surfmusik.de/anz1.gif
 ||svs1916.de/fileadmin/_processed_/*_Footer_
 ||svs1916.de/fileadmin/svs1916de/footer_Logos/
@@ -3338,6 +3341,8 @@ wetter.com#@#div[id^="div-gpt-"]
 ||wcm.at/images/attingo.gif
 ||websingles.at/pages/site/de/images/logos/
 ||webwiki.de/images/seobility_
+||webwork-magazin.net/wp-content/uploads/*/sul-banner-
+||webwork-magazin.net/wp-content/uploads/*/webdesign-printdesign.gif
 ||wetter.at/mowis/cpc_teaser/
 ||wetteronline.de/mdr/p_adplace/
 ||windowspro.de/sites/windowspro.de/files/advagg_js/js__yS7CyIP-Nk7K6Xt2G3mkGWAXfGOwTiI0wwdn0GmIwwM__EoiDJPZdpk85X0xGBYAHn0PN-HgV1AgHgvavV0KhvYU__TMlUvrl4Tp-Amoh5neqH3DnP3Q9BotH6wQFrQU0fNjo.js
@@ -3521,6 +3526,7 @@ kleinanzeigen.de###brws_banner-supersize
 formel1.de###bs-container
 kleinanzeigen.de###btf-billboard
 steuern.de###c11507
+vsport.at###c17
 caraworld.de###caraworld\.de_Banner_1
 urnerwochenblatt.ch###carouselInserate
 sexei.net###catfad
@@ -3713,6 +3719,7 @@ digitalkamera.de,h-bw.de###sponsoren
 bafoeg-rechner.de,studis-online.de###ston-footer-ad
 raidrush.net###stpd_close
 1000ps.at,1000ps.ch,1000ps.de,bild.de,bz-berlin.de,ffn.de,firmenwissen.de,fitbook.de,fussballdaten.de,golem.de,myhomebook.de,petbook.de,stylebook.de,techbook.de,travelbook.de###superbanner
+chilloutzone.net###superreplacement
 suche.t-online.de###tMRM_billiger
 ddl-warez.cc###tab-1 p:nth-of-type(1),#tab-1 p:nth-of-type(2),#tab-1 p:nth-of-type(3),#tab-1 p:nth-of-type(4)
 stuttgarter-zeitung.de###taboola-mhsd
@@ -3916,6 +3923,7 @@ lokalkompass.de##.bannerslot-centered
 1200grad.com##.banneruntermenu
 msh-online.de,nnz-online.de##.bannerwrapper
 stimme.de##.bb-wrap
+laborjournal.de##.bb_top
 hifi.de##.bestlist-item__shop
 bunte.de##.bfa-ad-slot
 boersennews.de##.bg-smartbroker-dark
@@ -4501,7 +4509,6 @@ falk.de##a[href^="https://www.awin1.com/awclick.php"]
 falk.de##a[href^="https://www.booking.com/searchresults.html?aid="]
 stadt-bremerhaven.de##a[href^="https://www.communicationads.net/tc.php?"]
 pi-news.net##a[href^="https://www.fincabayano.net/"]
-sunshine.it##a[href^="https://www.raiffeisen.it/"]
 areadvd.de##a[href^="https://www.teufel.de/sales?partner_id="]
 pornoente.tv,pornohirsch.net,pornolisa.com,pornotanja.com##a[href^="https://www.tik-tok-dates.com/"]
 pcwelt.de##a[href^="https://www.tkqlhce.com/click-"]

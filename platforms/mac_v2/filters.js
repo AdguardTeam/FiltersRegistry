@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.9.64",
-			"timeUpdated": "2025-09-10T01:34:39+0000",
+			"version": "2.4.9.65",
+			"timeUpdated": "2025-09-10T02:30:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.92.95",
-			"timeUpdated": "2025-09-10T01:35:01+0000",
+			"version": "2.0.92.96",
+			"timeUpdated": "2025-09-10T02:31:19+0000",
 			"languages": [],
 			"tags": [
 				45,
