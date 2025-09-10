@@ -1,9 +1,9 @@
-! Checksum: PV8SujvWjO4ZS4QspCu/xw
-! Diff-Path: ../patches/3/3-s-1757468339-3600.patch
+! Checksum: mdew45SXXn7iG2LP+PyWZg
+! Diff-Path: ../patches/3/3-s-1757477561-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.91.13
-! TimeUpdated: 2025-09-10T01:34:46+00:00
+! Version: 2.0.91.14
+! TimeUpdated: 2025-09-10T04:08:00+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -68140,6 +68140,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||logstash-*.radio-canada.ca^
 ||leo.hepsiburada.com^
 ||usage.trackjs.com^
 ||dlt-beacon.dynatrace-managed.com^
@@ -109545,6 +109546,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||services.radio-canada.ca/metrik/
+||ici.radio-canada.ca/v*/tele/trace/
+ici.radio-canada.ca#%#//scriptlet('set-local-storage-item', 'RC_PLAYER_USER_ID', '$remove$')
 ||client.px-cloud.net/*/main.min.js?ver=
 ||google.com/ccm/collect?
 ||hawk.techradar.com/js/*/analytics-library-entry-getCustomTrackingId.js
