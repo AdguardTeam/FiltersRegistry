@@ -1,5 +1,5 @@
-! Checksum: sXDh7g2cFaqKlzxgY8LrPQ
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1757513490-3600.patch
+! Checksum: 46GP1EWgMIMluQCgte4NmA
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1757558270-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.1.71
@@ -598,7 +598,6 @@ ucoz.ru/informer/
 ~cheb.ru,~forum.zarulem.ws,~na-svyazi.ru##.rekl
 ##.rightrecl
 ##.rkl
-##.s_adv
 ##.skyad
 ##.sp_search
 ##.sp_search2
@@ -1011,6 +1010,7 @@ ucoz.ru/informer/
 ||yourclk.com^$third-party
 ||cdnkimg.com^$third-party
 ||ndroip.com^$third-party
+||murqyi.com^$third-party
 ||clx.ru^$third-party
 ||pdvacde.com^$third-party
 ||rkft2sdl8b.ru^$third-party
@@ -1262,7 +1262,6 @@ ucoz.ru/informer/
 ||brdmin.com^$third-party
 ||breedac.com^$third-party
 ||buzzoola.com^$third-party
-||bvf.ru/upchk/
 ||bw95vpjda.ru^$third-party
 ||camadmin.ru^
 ||cashprom.ru^
@@ -1465,7 +1464,6 @@ ucoz.ru/informer/
 ||perfmelab.com^$third-party
 ||phoenix-widget.com^$third-party
 ||photoshop-master.org/rotator/$third-party
-||placeoff.ru^$third-party
 ||pokrutim.ru^$third-party
 ||popunder.$third-party
 ||prcy-info.ru/informer.php?
@@ -1550,7 +1548,6 @@ ucoz.ru/informer/
 ||tizerbank.com^$third-party
 ||tizerlady.*/init.js$third-party
 ||tizermy.net^
-||tle.ru^$third-party
 ||tm-core.net^
 ||todaymix.ru^$third-party
 ||top-shop.ru^$third-party
@@ -2060,6 +2057,7 @@ kino.mail.ru##button[class*="adv-marker"] + div.text
 @@||ad.mail.ru/i*.gif$domain=kino.mail.ru
 @@||kino.mail.ru^$generichide
 ||auto.mail.ru/-/*/js/cmpld/auto/*/*.js$replace=/mimic_\d+_\d+\s*\&\&\s*mimic_\d+_\d+\(.*\)//
+||auto.mail.ru/sw-mobile.js
 mmminigames.mail.ru#%#//scriptlet('remove-node-text', 'script', 'mimicBottomClass')
 minigames.mail.ru$$script[tag-content="yandexSlot ="]
 minigames.mail.ru#%#//scriptlet("abort-current-inline-script", "$", "advBlock")
@@ -2092,7 +2090,6 @@ overclockers.ru$$script[tag-content="enable_page_level_ads"]
 ||forums.overclockers.ru$replace=/(script.onerror = function\(\)\{)/\$1return;/,important
 forums.overclockers.ru#%#//scriptlet('set-constant', 'chkA', 'noopFunc')
 ~forums.overclockers.ru,overclockers.ru#%#//scriptlet("abort-on-property-read", "cardinals")
-||overclockers.ru/static/js/app-pip.js|$script,redirect=noopjs,important
 forums.overclockers.ru#@##yandex_ad_1
 game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,naylo.top,zannn.top,innal.top$$script:contains(/function ads_|_0x.*'write'/)
 game4you.top,monna2.top,apad2.top,rustorka.com,rustorka.net,rustorkacom.lib,naylo.top,zannn.top,innal.top$$body > div:contains(/color: #333.*margin: auto; position:relative; text-align: left;/)
@@ -2675,6 +2672,7 @@ vk.com#$##ads_left { position: absolute; top: -2500px; }
 got.vg#$#body > #Page { margin-top: 60px!important; }
 37.1.207.65,new-rutor.org#$##main-wrapper { padding: 0 !important; }
 roem.ru#$#body { padding-top: 0!important; background-image: none!important; }
+cyberforum.ru#$#body > div[style^="min-width: 900px;"] { margin: 0px auto 0px auto!important; }
 gazeta.ru#$#body { padding-top: 0!important; }
 thg.ru#$#body { background-image: none!important; background-color: #fffff8!important; }
 fatalgame.com#$##rexpage {background: transparent!important;}
@@ -2996,6 +2994,7 @@ videomin.ws#?##sidebar > div.sidebar-content:has(> div.top > div.fix:contains(Р
 riatomsk.ru##div[class*="banner"]
 baby.ru##.comment-row.grid
 ||img.championat.ru/brand/
+malls.ru##.content__leftcol > div[align="center"]:has(> div[id^="yandex_rtb"])
 newtambov.ru##div[class*="contentRightStretchBanner"]
 avtodor-tr.ru#%#//scriptlet('prevent-setTimeout', 'modal_for_pages_')
 fontanka.ru##a[href^="https://www.fontanka.ru/longreads/75736061/"]
@@ -3695,7 +3694,6 @@ iguides.ru##.i-box-ads
 ||officelife.media/upload/iblock/fec/$image
 ||yastatic.net/vas-bundles/
 kino-teatr.ru#?#.content_block:has(> div.block_okkko)
-cursorinfo.co.il##div[data-dest="placeholder"]
 ||cdn.botanichka.ru/pics/brand/
 /jquery.li.js$domain=cc-fan.tv|cn-fan.tv|fox-fan.tv|nf-fan.tv
 apteka.ru##.EshopBannersGrid
@@ -4879,6 +4877,7 @@ irecommend.ru##.adfox_block
 ||112ua.tv/img/banner-new/
 glavred.info##.article__bottom > div.my-3.w-100
 glavred.info##.main-partners
+rusfootball.info###podarok_wrapper
 gidonline.fun###s-side
 theoryandpractice.ru##a[href^="http://kampus.team/"] > img
 worldclassmag.com##.b-banner__right
@@ -5070,7 +5069,6 @@ cadelta.ru,zaxid.net##[class^="adv-"]
 diletant.media##.sidebar-banner-wrap
 kurufin.ru##.left_bl > div[class="floating fixed"]
 medialeaks.ru###billboard-atf
-medialeaks.ru##p.material > a[href^="https://medialeaks.ru/rabota_po_lubvi/"]
 sportarena.com###sidebar > div.widget_text
 ria.ru##.banner__content
 track24.ru,prostoprosport.ru##.advertising
@@ -5590,7 +5588,6 @@ kun.uz##.adv-wrapper
 aex.ru,tele.ru,consmed.ru##.adv-youdo
 aif.ru##.adv_content
 turizm.ru##.adversing_block
-film.ru##.adverts-banner
 slovarozhegova.ru##.advlinks
 noi.md##.adw
 politeka.net,xt.ht##.ai-placement
@@ -6664,7 +6661,6 @@ mirtesen.aif.ru,mirtesen.profile.ru,mirtesen.sovsport.ru,mirtesen.spletnik.ru,mi
 ||rutracker.org/misc/*-240x400
 ||rutrk.org/iframe/
 ||rutrk.org/bn/
-||static.t-ru.org/templates/v1/images/vpn/vpn_button_
 /^(?!.*(brave\.com|google\.com|gstatic\.com|googleapis\.com|recaptcha\.net|ytimg\.com|dmca\.com|:\/\/static.)).*$/$third-party,script,_____,domain=rutracker.appspot.com|rutracker.lib|rutracker.net|rutracker.org
 /^https:\/\/rutrk.org(?!.*(\/logo\/)).*$/$domain=rutracker.appspot.com|rutracker.lib|rutracker.net|rutracker.org
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##.dl-btn-text-ad
@@ -6777,7 +6773,6 @@ otvet.mail.ru##div[class*="adv-slot-"]
 otvet.mail.ru##div[class^="wrapper_"] > div[class*="block_bordered_"] > div:empty
 pulse.mail.ru##div[data-card-template-id="promo-widget-card-template"]
 mail.ru#?#.pulse-lenta div[class*="_"] > div > div[class*=" "]:has(> div[class] > a[href*="mail.ru/redir/"][target="_blank"])
-pulse.mail.ru#?#.aside-right > div.aside-right_item:has(> div.aside-right_sticky-container > div.adv)
 pets.mail.ru##div[data-name="top ad"]
 pets.mail.ru##div[data-name="bottom ad"]
 realty.mail.ru##div[id^="trg-b-"]
