@@ -1,9 +1,9 @@
-! Checksum: 9OGbM9KCA+5GCbKOCT9uLA
-! Diff-Path: ../patches/14/14-s-1757558239-3600.patch
+! Checksum: Bx5dPiXknlxyOxwggz468w
+! Diff-Path: ../patches/14/14-s-1757563894-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.42.55
-! TimeUpdated: 2025-09-11T02:33:35+00:00
+! Version: 2.2.42.56
+! TimeUpdated: 2025-09-11T04:08:05+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2537,6 +2537,8 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+voelkner.de#%#//scriptlet('trusted-click-element', '#js_reveal_cookie_content button[data-cookie_consent="0"]')
+heytap.com##div[class^="cookieconsent_wrapper"]
 360.ru##dialog[aria-label="cookie-agreement"]
 av.ru##.av-cookie-banner
 platanitos.com###policy-notice
@@ -17370,6 +17372,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213157
+@@||cdn.privacy-mgmt.com/wrapperMessagingWithoutDetection.js$domain=transfermarkt.com.tr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213120
 @@||cdn.cookielaw.org/consent/*.json$domain=southparkstudios.com.br|southpark.lat|southparkstudios.com|southpark.de
 ! Never loads
