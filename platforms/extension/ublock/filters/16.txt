@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: G1ShF8rowegkSBWiQOF0pA
-! Diff-Path: ../patches/16/16-s-1757589031-3600.patch
+! Checksum: YA3Jp7OgLgQg8dKloD1JNw
+! Diff-Path: ../patches/16/16-s-1757592898-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.34
-! TimeUpdated: 2025-09-11T11:06:45+00:00
+! Version: 2.0.54.35
+! TimeUpdated: 2025-09-11T12:11:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -612,7 +612,6 @@ $script,redirect-rule=noop.js,domain=tf1info.fr
 ! Apps cannot inject script into iframe with "about:blank" src, so a workaround is required
 !+ NOT_PLATFORM(windows, mac, android)
 supersoluce.com##+js(adjust-setTimeout, event_listener_timeout, *, 0.001)
-!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191055
 ! Fix video player loading delay
 marieclaire.fr##+js(adjust-setTimeout, /userConsentProcess|this===/, *, 0.001)
@@ -824,6 +823,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+supersoluce.com##div[data-hbdbrk-parent]
 actugaming.net##.h-content > .placeholder-wrap
 ici.radio-canada.ca##.adbox-cls
 hdnumerique.com###heroPub1

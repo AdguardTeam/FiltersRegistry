@@ -1,8 +1,8 @@
-! Checksum: y1hvZMeVxAXfUsC3NDYmpQ
+! Checksum: HtFmOczyPZzScSlEhekgqA
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.34
-! TimeUpdated: 2025-09-11T11:06:45+00:00
+! Version: 2.0.54.35
+! TimeUpdated: 2025-09-11T12:11:11+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -647,6 +647,9 @@ tf1info.fr#%#//scriptlet('prevent-element-src-loading', 'script', '/hubvisor\.io
 ! Apps cannot inject script into iframe with "about:blank" src, so a workaround is required
 !+ NOT_PLATFORM(windows, mac, android)
 supersoluce.com#%#//scriptlet('adjust-setTimeout', 'event_listener_timeout', '*', '0.001')
+@@||flashb.id/universal/*.js$domain=supersoluce.com
+@@||flashb.id/assets/js/hbdbrk_*_m.js$domain=supersoluce.com
+@@||srv.flashb.id/cfg/$domain=supersoluce.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191055
 ! Fix video player loading delay
 marieclaire.fr#%#//scriptlet('adjust-setTimeout', '/userConsentProcess|this===/', '*', '0.001')
@@ -875,6 +878,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+supersoluce.com##div[data-hbdbrk-parent]
 actugaming.net##.h-content > .placeholder-wrap
 ici.radio-canada.ca##.adbox-cls
 hdnumerique.com###heroPub1
