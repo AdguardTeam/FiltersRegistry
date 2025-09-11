@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.9.96",
-			"timeUpdated": "2025-09-11T13:12:03+0000",
+			"version": "2.4.9.97",
+			"timeUpdated": "2025-09-11T14:06:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.91.21",
-			"timeUpdated": "2025-09-11T10:06:59+0000",
+			"version": "2.0.91.22",
+			"timeUpdated": "2025-09-11T14:06:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.19.26",
-			"timeUpdated": "2025-09-11T11:06:22+0000",
+			"version": "2.1.19.27",
+			"timeUpdated": "2025-09-11T14:06:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.43",
-			"timeUpdated": "2025-09-10T15:07:21+0000",
+			"version": "2.0.49.44",
+			"timeUpdated": "2025-09-11T14:07:01+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.22",
-			"timeUpdated": "2025-09-11T12:11:03+0000",
+			"version": "2.0.64.23",
+			"timeUpdated": "2025-09-11T14:07:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.93.13",
-			"timeUpdated": "2025-09-11T12:11:10+0000",
+			"version": "2.0.93.14",
+			"timeUpdated": "2025-09-11T14:07:14+0000",
 			"languages": [],
 			"tags": [
 				45,
