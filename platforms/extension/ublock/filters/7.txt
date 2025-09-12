@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: nuJrC+iZOG6fdicwzpZE0w
-! Diff-Path: ../patches/7/7-s-1757693522-3600.patch
+! Checksum: xh0xiwO2+AbRVgZQ8XQpEw
+! Diff-Path: ../patches/7/7-s-1757697043-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.68.39
-! TimeUpdated: 2025-09-12T16:07:48+00:00
+! Version: 2.0.68.40
+! TimeUpdated: 2025-09-12T17:06:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -248,7 +248,7 @@
 ||polymorphicads.jp^$third-party
 ||lamp-shade.net^
 ||neofield.click^$third-party
-||r-ad.ne.jp^$third-party
+||tm.r-ad.ne.jp^$third-party
 ||spreadlink.net^$third-party
 ||seedapp-creative.s3.amazonaws.com^
 ||admane.jp^$third-party
@@ -1742,7 +1742,7 @@ _ap/signin*?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=
 /index.php?main_page=product_info&products_id=$document,to=asia|baby|bar|beauty|best|biz|bond|buzz|cam|casa|cfd|click|cloud|club|cyou|fashion|fit|forum|fun|gay|homes|icu|ink|lat|life|live|ltd|makeup|me|mom|monster|my|one|online|pics|pro|qpon|quest|rest|ru.com|run|sa.com|sbs|shop|site|skin|space|store|tokyo|top|website|wiki|work|xyz|yachts|yoga|za.com
 /\.(?:club|cn|icu|top|pro|site|work)\/Personal\/member\/Login\/index\.php\?oneTimeAccessID=/$document,to=club|cn|icu|top|pro|site|work
 ! https://github.com/AdguardTeam/FiltersCompiler/issues/254
-/^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$document,match-case,to=art|baby|biz|blog|buzz|cc|cfd|click|cloud|club|cyou|eu|fit|fun|hair|homes|info|ink|lat|life|live|lol|me|mom|my|one|online|pics|sbs|shop|site|skin|space|store|top|world|xyz
+/^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$document,match-case,to=art|baby|biz|blog|buzz|cc|cfd|click|cloud|club|cyou|eu|fit|fun|hair|homes|info|ink|lat|life|live|lol|me|mom|my|one|online|pics|quest|sbs|shop|site|skin|space|store|top|world|xyz
 /^https?:\/\/(?!www)[a-z]{3,5}\.[0-9a-z]{4,10}\.[a-z]{2,6}\/[a-z]{3,15}\/(?=[a-z]{0,9}[0-9A-Z])[0-9A-z]{10}\.html$/$document,match-case,to=art|baby|biz|blog|buzz|cc|cfd|click|cloud|club|cyou|eu|fit|fun|hair|homes|info|ink|lat|life|lol|me|mom|my|one|online|pics|sbs|shop|site|skin|space|store|top|world|xyz|~livedoor.biz|~livedoor.blog
 !
 /^https:\/\/[a-z]{4,8}\.[a-z]{7,10}\.shop\/product\/\d{4,7}$/$document,match-case
@@ -7969,6 +7969,7 @@ nlab.itmedia.co.jp,mysterynavi.com##.admsg
 nlab.itmedia.co.jp##.bannar
 nlab.itmedia.co.jp##.headerbannar
 ||gamewith.jp/*_jack_ad/images/
+gamewith.jp###article-body > div.gdb-game-article_lazy-img-wrap > div.c-thumb-placeholder:has(> a.review_amazon_ranking_box)
 gamewith.jp##.collaboration-jack-header-wrap
 gamewith.jp##+js(remove-class, is-collaboration-jack, body)
 gamewith.jp##.browsi-atf
@@ -12032,17 +12033,18 @@ hs-exp.jp##ins.adsbygoogle
 @@||dietnavi.com^*/img/ad/$image,domain=dietnavi.com
 !
 ! unbreak ad sites
+@@||img.gpoint.co.jp/www/gpark/game/game/300x250.png$~third-party
 @@||chobirich.com/*_300x250_$image,~third-party
 @@||pointi.jp^$generichide
 nikke-jp.com#@#.ad_content
 point-g.rakuten.co.jp#@#.searchAd
 netmile.co.jp#@#.ad-txt
 @@||a8.net/svt/bgt$image,domain=chance.com|chobirich.com|dietnavi.com|ecnavi.jp|gamefactory.jp|gendama.jp|hiroba.dpoint.docomo.ne.jp|lifemedia.jp|moppy.jp|netmile.co.jp|point-g.rakuten.co.jp|point.i2i.jp|pointi.jp|pointtown.com|ponta.t-mall.tsite.jp|warau.jp|yomipo.yomiuri.co.jp
-@@||accesstrade.net^$image,domain=chance.com|chobirich.com|dietnavi.com|ecnavi.jp|gendama.jp|hapitas.jp|hiroba.dpoint.docomo.ne.jp|lifemedia.jp|moppy.jp|point.i2i.jp|pointi.jp|pointtown.com|ponta.gamefactory.jp|t-mall.cmnw.jp|t-mall.tsite.jp|warau.jp|yomipo.yomiuri.co.jp
+@@||accesstrade.net^$image,domain=chance.com|chobirich.com|dietnavi.com|ecnavi.jp|gendama.jp|gpoint.co.jp|hapitas.jp|hiroba.dpoint.docomo.ne.jp|lifemedia.jp|moppy.jp|point.i2i.jp|pointi.jp|pointtown.com|ponta.gamefactory.jp|t-mall.cmnw.jp|t-mall.tsite.jp|warau.jp|yomipo.yomiuri.co.jp
 @@||ad-track.jp^$image,domain=chobirich.com|dietnavi.com|gendama.jp|moppy.jp|pointi.jp|t-mall.cmnw.jp|t-mall.tsite.jp|warau.jp
 @@||advack.net/p/?ad=$image,domain=warau.jp
 @@||aeonshop.com/assets/file/pages/img/AD/$image,domain=point.i2i.jp
-@@||af-110.com/banner/$image,domain=chance.com|chobirich.com|dietnavi.com|ecnavi.jp|gendama.jp|lifemedia.jp|moppy.jp|netmile.co.jp|point.i2i.jp|pointi.jp|pointtown.com|ponta.gamefactory.jp|warau.jp|yomipo.yomiuri.co.jp
+@@||af-110.com/banner/$image,domain=chance.com|chobirich.com|dietnavi.com|ecnavi.jp|gendama.jp|gpoint.co.jp|lifemedia.jp|moppy.jp|netmile.co.jp|point.i2i.jp|pointi.jp|pointtown.com|ponta.gamefactory.jp|warau.jp|yomipo.yomiuri.co.jp
 @@||aff.i-mobile.co.jp/display_data.ashx?$image,domain=chobirich.com
 @@||aff.valuecommerce.ne.jp/ad/displayBanner/$image,domain=gendama.jp
 @@||affiliate-b.com/upload_image/$domain=ponta.gamefactory.jp|warau.jp
@@ -12063,7 +12065,7 @@ netmile.co.jp#@#.ad-txt
 @@||ecnavi.jp/global/img/bc_ecnavi_games_300x250.gif
 @@||gpoint.co.jp/images/gpark/bnr/300_250_$~third-party
 @@||gpoint.co.jp/images/*_300x250.$~third-party
-@@||j-a-net.jp^$image,domain=chance.com|chobirich.com|ecnavi.jp|gendama.jp|hapitas.jp|lifemedia.jp|moppy.jp|netmile.co.jp|point.i2i.jp|pointi.jp|pointtown.com|ponta.gamefactory.jp|t-mall.cmnw.jp|t-mall.tsite.jp|warau.jp|yomipo.yomiuri.co.jp
+@@||j-a-net.jp^$image,domain=chance.com|chobirich.com|ecnavi.jp|gendama.jp|gpoint.co.jp|hapitas.jp|lifemedia.jp|moppy.jp|netmile.co.jp|point.i2i.jp|pointi.jp|pointtown.com|ponta.gamefactory.jp|t-mall.cmnw.jp|t-mall.tsite.jp|warau.jp|yomipo.yomiuri.co.jp
 @@||jal.co.jp/affiliate/$image,domain=warau.jp
 @@||linksynergy.com/fs$image,domain=chance.com|warau.jp
 @@||moppy.jp/pub/global/pc/banner/gacha/468x60.jpg$~third-party
@@ -12077,8 +12079,8 @@ netmile.co.jp#@#.ad-txt
 @@||smart-c.jp/i?$image,domain=gendama.jp|moppy.jp
 @@||storage.aeonshop.com/assets/file/pages/img/AD/$domain=moppy.jp
 @@||tcs-asp.net/imagesender$image,domain=chobirich.com|dietnavi.com|gendama.jp|lifemedia.jp|moppy.jp|ponta.gamefactory.jp|warau.jp
-@@||trafficgate.net/t/b/$image,domain=chobirich.com|ecnavi.jp|gendama.jp|hapitas.jp|lifemedia.jp|moppy.jp|point-g.rakuten.co.jp|pointi.jp|pointtown.com|ponta.gamefactory.jp|t-mall.tsite.jp|warau.jp|yomipo.yomiuri.co.jp
-@@||valuecommerce.com^$image,domain=chobirich.com|dietnavi.com|ecnavi.jp|gendama.jp|hapitas.jp|hiroba.dpoint.docomo.ne.jp|lifemedia.jp|moppy.jp|netmile.co.jp|point.i2i.jp|pointi.jp|ponta.gamefactory.jp|t-mall.tsite.jp|yomipo.yomiuri.co.jp|warau.jp
+@@||trafficgate.net/t/b/$image,domain=chobirich.com|ecnavi.jp|gendama.jp|gpoint.co.jp|hapitas.jp|lifemedia.jp|moppy.jp|point-g.rakuten.co.jp|pointi.jp|pointtown.com|ponta.gamefactory.jp|t-mall.tsite.jp|warau.jp|yomipo.yomiuri.co.jp
+@@||valuecommerce.com^$image,domain=chobirich.com|dietnavi.com|ecnavi.jp|gendama.jp|gpoint.co.jp|hapitas.jp|hiroba.dpoint.docomo.ne.jp|lifemedia.jp|moppy.jp|netmile.co.jp|point.i2i.jp|pointi.jp|ponta.gamefactory.jp|t-mall.tsite.jp|yomipo.yomiuri.co.jp|warau.jp
 @@||virusbuster.jp/aff/banner/$image,domain=chobirich.com|point.i2i.jp
 @@||wellness.nichirei.co.jp/img/ad/$domain=t-mall.tsite.jp
 @@||wowma.net/market/linkshare/$image,domain=chobirich.com|gendama.jp|moppy.jp|point.i2i.jp|t-mall.tsite.jp
