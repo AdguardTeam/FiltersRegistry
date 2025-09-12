@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: u5Fh+qN1/kmWrvQuumFEGg
-! Diff-Path: ../patches/14/14-s-1757661062-3600.patch
+! Checksum: 57uaS4NhwyER3r5atlIZbA
+! Diff-Path: ../patches/14/14-s-1757668315-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.42.73
-! TimeUpdated: 2025-09-12T07:07:18+00:00
+! Version: 2.2.42.74
+! TimeUpdated: 2025-09-12T09:08:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2491,6 +2491,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+reddit.com###data-protection-consent-dialog
 cleverbuy.de#$#html.no-scroll { overflow: auto !important; position: static !important; }
 cleverbuy.de#$#.modal-backdrop { display: none !important; }
 cleverbuy.de#$#.offcanvas { display: none !important; }
@@ -16423,6 +16424,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213277
+@@||sdk.privacy-center.org/*/loader.js$domain=orange.fr
+@@||sdk.privacy-center.org/sdk/$domain=orange.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213218
 @@||rosdomofon.com/_nuxt/CookiesPopUp.$domain=rosdomofon.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213257
