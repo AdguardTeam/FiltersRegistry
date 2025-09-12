@@ -1,9 +1,9 @@
-! Checksum: lA4ig3iVWgo3nH9UwhcD2w
-! Diff-Path: ../patches/18/18-s-1757647115-3600.patch
+! Checksum: 5hYrsVohZ4g0Jl+lcN7zew
+! Diff-Path: ../patches/18/18-s-1757650305-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.69.92
-! TimeUpdated: 2025-09-12T03:14:47+00:00
+! Version: 2.0.69.93
+! TimeUpdated: 2025-09-12T04:07:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2538,6 +2538,11 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+cleverbuy.de#$#html.no-scroll { overflow: auto !important; position: static !important; }
+cleverbuy.de#$#.modal-backdrop { display: none !important; }
+cleverbuy.de#$#.offcanvas { display: none !important; }
+rosdomofon.com##.cookies__modal
+||cdn.eurowag.com/cookies/
 windowslatest.com##.fluentform.fluentform_wrapper_4
 grepow.com##.aj-privacy-footer
 magentacloud.de#%#//scriptlet('trusted-click-element', '#promptLayerContent #rejectAll', '!cookie:CONSENTMGR')
@@ -17450,6 +17455,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213218
+@@||rosdomofon.com/_nuxt/CookiesPopUp.$domain=rosdomofon.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213257
 @@||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js$domain=supla.fi
 @@||cdn.privacy-mgmt.com/mms/v2/get_site_data$domain=supla.fi
