@@ -1,9 +1,9 @@
-! Checksum: nH3EdYSml3jBF/I/i00/xg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1757479272-14400.patch
+! Checksum: BNPgQbE1id7P+YyZTaf1ig
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1757681413-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.73
-! TimeUpdated: 2025-09-10T04:36:54+00:00
+! Version: 2.0.22.74
+! TimeUpdated: 2025-09-12T12:45:34+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -252,6 +252,7 @@ bio-link.se,web-tools.se,evertiq.se,alandsradio.ax###cc-main
 birthday.se##.datax
 bjuvsweek.se##.carouselbanner-wrp
 blocket.se##.placement_panorama, .blocket-placement, div[style="height: 240px;"], [class*="offering-info-box"], [data-id="placement_panorama"], div[class*="BannerLink"], div[class*="GamBannerContainer"]
+bobattre.se##img[alt*="banner"]
 bodennytt.se###secondary .widget:has(a[target="_blank"], a[href*="track.ad"])
 bohuslaningen.se,stromstadstidning.se,markposten.se,harrydaposten.se,partilletidning.se,sttidningen.se,molndalsposten.se,kungalvsposten.se,kungsbackaposten.se,alingsastidning.se,ttela.se,gp.se,hallandsposten.se,hn.se,mellerudsnyheter.se##.c-ad__panorama, .c-ad__insider, #outsiderTop, div[data-k5a-pos^="panorama"], .c-article__strossle--bottom, .outsider-ad-column
 bokadirekt.se##a:not([href*="bokadirekt.se"]):not([href^="/"]) img
@@ -648,7 +649,7 @@ futsalmagasinet.se,newsvoice.se,obsid.se##aside.widget:has(a[href*="casino"])
 fz.se##.article-facebook
 fz.se##.card:has(.article-sponsored, a[href*="/sponsrat"])
 fz.se##.fp-carousel .fpci-kicker:has-text(/^sponsr/i):upward(.fpc-item)
-fz.se,fssweden.se#%#//scriptlet('ubo-set.js', 'adblock', 'false')
+fz.se,fssweden.se,tinyurl.se#%#//scriptlet('ubo-set.js', 'adblock', 'false')
 gaffa.se##a[href*="/annonser/"], a[href*="/sponsrat-"], div[id^="cncpt-"]
 gaffa.se##.article-overview__col:has(.gpt--loaded)
 gaffa.se##.link-list:has(a[href*="casino"])
@@ -815,8 +816,10 @@ internetmedicin.se##[itemtype="https://schema.org/WPAdBlock"]
 internetodontologi.se,prv.se##.overlay
 internetodontologi.se,skrattsajten.com,norpan.se#%#//scriptlet('ubo-rmnt.js', 'script', 'e.preventDefault')
 investeramera.se##a[href^="https://go."], a[href*="/go/"], img[width="320"][height="320"]
+investeramera.se##main > .section:has(a[href*="spelcash"])
 investeramera.se###dialog-locked
 investeramera.se##.post-single-content p em:has-text(Annons:)
+investeramera.se##.rounded-lg:has(a[href^="https://go."], a[href*="/go/"])
 ipo.se##.tag-sponsrad
 itseniorerna.se###astroid-preloader
 itseniorerna.se###redim-cookiehint-modal
@@ -1074,6 +1077,7 @@ naringslivetvgl.se,dalarnasaffarer.se,stockholmsaffarer.se,jamtlandsaffarer.se,h
 naringslivetvgl.se,dalarnasaffarer.se,stockholmsaffarer.se,jamtlandsaffarer.se,hallandsnaringsliv.se,sjuharadsnaringsliv.se##.list-article__item-inscription:has-text(/sponsrat innehåll/i):upward(.list-article__item)
 naringslivetvgl.se,dalarnasaffarer.se,stockholmsaffarer.se,jamtlandsaffarer.se,hallandsnaringsliv.se,sjuharadsnaringsliv.se##:is(.slick-slide, .article-item__line-bottom):has(.sponsored-badge)
 naringslivetvgl.se,dalarnasaffarer.se,stockholmsaffarer.se,jamtlandsaffarer.se,hallandsnaringsliv.se,sjuharadsnaringsliv.se,onkologiisverige.se,borasweekly.se##.cookies-popup
+naringsliv.ax#%#//scriptlet('ubo-nostif.js', 'popup')
 naringsliv.ax##.banner-block
 naturvetarna.se##.Advertisement
 netdoktor.se,netdoktorpro.se##.article-list__item:has(.bam-ad-slot, .article-list__item__box--sponsored, b-a-d)
@@ -1372,7 +1376,7 @@ svenskafans.com##:is(.h-52, .h-40):has(iframe[srcdoc*="ad_div"])
 svenskafans.com##:is(.min-h-80, .w-64.absolute):has(div[id^="svenskafans_"])
 svenskalag.se##.cookie-overlay, .overlay:empty
 svenskamagasinet.nu##legend:has-text(Annons)
-svenskamagasinet.nu##.et_pb_code_inner:has(.svm-target)
+svenskamagasinet.nu##.et_pb_code:has(.svm-target)
 svenskamagasinet.nu##.hip-popup, div[id^="svm-"], .et_pb_image a[target]:not([href*="svenskamagasinet.nu"]):not([href^="/"])
 svenskanomader.se###ajax-loading-screen
 svenskarnaochinternet.se,internetstiftelsen.se###newsletter-sliding
@@ -1474,7 +1478,6 @@ tidningensyre.se,landetsfria.nu,fempers.se,tidningenglobal.se#%#//scriptlet('ubo
 tidningen.djurskyddet.se##.ai-track
 tidningen.se##.sidebar .widget_widget_code, .casino
 tillnyktrad.se,triartplay.se##.cookie-consent
-tinyurl.se#%#//scriptlet('ubo-set.js', 'adblock', 'false')
 tlnt.se##div[id^="ad-block"]
 tlnt.se##h2.elementor-heading-title:has-text(/annons/i):upward(.e-con-boxed[data-settings^="{\"background"])
 tobaksfakta.se,dagenslogistik.se#$#.pum-open { overflow:auto!important }
@@ -1601,9 +1604,6 @@ vm-fotboll.se##a[href*="/go/"][target], .category-kampanjer, div[id^="vm-fotboll
 vm-fotboll.se##.fusion-text:has-text(Online casino)
 voister.se##div[class*="articles_campaign"]:upward(.col-sm-12)
 voister.se##.ot-sdk-show-settings
-vokabel.se##.column:has(.adsbygoogle)
-vokabel.se##.hero-body > .container > div[style^="min-height: 300px"], .column:empty
-vokabel.se#$#.hero[style^="height"] { height:unset!important; }
 voodoofilm.org##.card-header:has-text(Annons):upward(.card)
 voodoofilm.org##.content-news:has(span[id*="Sponsored"])
 voodoofilm.org##.page-panorama
@@ -3424,6 +3424,7 @@ _banner.php?$domain=tvmatchen.nu
 ||viralize.tv/t-bid
 ||viralize.tv^$domain=tyda.se
 ||visbymaklarna.se^$third-party
+||vk.com^$domain=ungdomar.se
 ||vovve.net/i/sponsorer
 ||voyager-widgets.aftonbladet.se/widgets/sports
 ||walls.io^$domain=svensktgolfforum.se
