@@ -1,9 +1,9 @@
-! Checksum: KW5vFkF2n5UialKKU9zKlg
-! Diff-Path: ../patches/235/235-s-1757752810-14400.patch
+! Checksum: PX94EuqMCEAcyHC8Bwvy9w
+! Diff-Path: ../patches/235/235-s-1757767727-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.96
-! TimeUpdated: 2025-09-13T08:36:15+00:00
+! Version: 2.0.5.97
+! TimeUpdated: 2025-09-13T12:44:48+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ☀️ PersianBlockerNG ☀️
@@ -455,8 +455,6 @@ anaj.ir,salamatnews.com#%#//scriptlet('ubo-set.js', 'document.referrer', 'undefi
 ||toshare.io/dl/download.php^$script,third-party
 ! ^ Used by barato.ir, dailymobile.ir
 ! >> U <<
-||useinsider.com^$third-party
-! ^ Used by Sheypoor.com
 ||uptrendsdata.com^$third-party
 ! ^ Used by aftabir.com
 ! >> V <<
@@ -2183,10 +2181,6 @@ shomavaeghtesad.com##.zxc
 shomavaeghtesad.com##.adv
 shomavaeghtesad.com#$#.column_1 { width: 70% !important; }
 shomavaeghtesad.com#$#.column_2 { width: 30% !important; }
-||sentry.mielse.com^
-||sheypoor.com/banner/tapsell/image^$image,~third-party
-sheypoor.com##main.mainV2 div:has(> section > a > div > div > span:has-text(تبلیغات))
-sheypoor.com##main.mainV2 div:has(> section > div > div > h2 > p:has-text(/^Ad$/))
 shereno.com##.b_box
 shereno.com##.widget:has(.widget_title:has-text(پیوند))
 ! https://github.com/MasterKia/PersianBlocker/issues/37
@@ -3565,7 +3559,7 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 !------------------------^ Afghanistan sites ^-----------------------!
 ! Ads:
 ! Title: PersianBlockerAds
-! Last modified: Sat, 13 Sep 2025 11:10:23 +0330
+! Last modified: Sat, 13 Sep 2025 13:55:47 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -3782,9 +3776,11 @@ khabaronline.ir##.cyt-ads-block
 ! namnak.com
 namnak.com##.namank-ad
 namnak.com###implant-ad-container
+! offerdaily.ir
+offerdaily.ir#%#//scriptlet('ubo-href-sanitizer.js', 'a[href^="https://offerdaily.ir/index.php?do=go&url="]', '?url -base64')
 ! Trackers:
 ! Title: PersianBlockerTrackers
-! Last modified: Thu, 4 Sep 2025 23:38:35 +0330
+! Last modified: Sat, 13 Sep 2025 13:50:15 +0330
 ! Expires: 7 days
 ! Description: Filters to block trackers in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -3797,6 +3793,8 @@ namnak.com###implant-ad-container
 ||metrix.ir^
 ||intrack.ir^
 ||affilio.ir^
+||usermap.net^
+||analyticsdaily.ir^
 ! trustseal.e-rasaneh.ir (e.g. zoomit.ir)
 ||trustseal.e-rasaneh.ir/Trustseal^$method=post
 ! aparat.com
