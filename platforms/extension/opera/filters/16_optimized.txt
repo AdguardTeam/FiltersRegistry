@@ -1,5 +1,5 @@
-! Checksum: khVzdy2yuC66DDhtKL6DIQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1757813921-3600.patch
+! Checksum: S0simpn46jEsFUqY6XM3zg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1757817498-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.54.37
@@ -202,6 +202,7 @@ silo57.ca,7jours.ca,pesesurstart.com,billie.ca,journaldequebec.com,journaldemont
 silo57.ca,7jours.ca,pesesurstart.com,billie.ca,journaldequebec.com,journaldemontreal.com,guideauto.tv,guideautoweb.com#@#.AdSense
 lesacdechips.com#$#.popup-adblocker { display: none !important; }
 lesacdechips.com#$#body { overflow: visible !important; }
+@@||espacesoignant.com/templates/css/adblocker.blogads.css
 hack-life.net#%#//scriptlet("set-constant", "adBlockDetected", "false")
 recreatisse.com#%#//scriptlet("abort-current-inline-script", "document.getElementById", "adback")
 voyageforum.com#%#//scriptlet("prevent-setTimeout", "adsbygoogle")
@@ -219,6 +220,7 @@ sante.journaldesfemmes.fr,linternaute.com#$#.AdBox.Ligatus.pub_300x250.pub_300x2
 ||cdn.adsafeprotected.com/iasPET.*.js$script,redirect=noopjs,important,domain=linternaute.com|sante.journaldesfemmes.fr
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,important,domain=linternaute.com|sante.journaldesfemmes.fr
 @@||googletagmanager.com/gtm.js$domain=linternaute.com|sante.journaldesfemmes.fr
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=linternaute.com|p.ccmbg.com
 rtl.be#%#//scriptlet('set-constant', 'bAdBlocker', 'false')
 !+ NOT_OPTIMIZED
 @@||service.videoplaza.tv/proxy/pulse-sdk-html5^$domain=rtl.be
@@ -408,8 +410,6 @@ numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
-south-park-tv.fr##.king-loading-ad
-south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 lejdd.fr##.outbrain-container
 diverto.tv##div[data-atoms="Ad"]
@@ -1465,7 +1465,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://cdn.ads.
 ://clk.*/click?
 ://creative.*/widgets/*&campaignId=*&creativeId=$third-party
-://crm4d.$third-party
 ://dc.ads.
 ://engine.*&subid=
 ://fr.*/ads?
@@ -1794,6 +1793,7 @@ _build=iclick-$popup
 ||dm.gg^$third-party
 ||dolead.com^$third-party
 ||dorcelcash.com^$third-party
+||dx-tv.com^$third-party
 ||e-mailit.com^$third-party
 ||easy-rencontre.com^$third-party
 ||easysexe.com^$third-party
@@ -1986,6 +1986,7 @@ _build=iclick-$popup
 ||accordancespotted.com^
 ||accountresponsesergeant.com^
 ||accuratevotingorthodox.com^
+||aceyearling.com^
 ||achyrepeatitchy.com^
 ||acidprolific.com^
 ||acoponposeur.com^
@@ -2019,7 +2020,6 @@ _build=iclick-$popup
 ||agitationselfservice.com^
 ||aifuwgcygccfp.com^
 ||aikanefogon.com^
-||ailcloister.com^
 ||aitarsou.com^
 ||aj2178.online^
 ||akhlamesouchy.com^
@@ -2047,7 +2047,6 @@ _build=iclick-$popup
 ||antiqueunhinge.com^
 ||anuralicelike.shop^
 ||anyonemost.com^
-||apartgamble.com^
 ||aphizoguntaken.click^
 ||apialesholler.shop^
 ||apl373.me^
@@ -2281,6 +2280,7 @@ _build=iclick-$popup
 ||eddnxllt.com^
 ||ediva.gr^
 ||educandrelock.com^
+||eedsiwhussiy.net^
 ||efcybuvko.com^
 ||egalitysarking.com^
 ||ejoorep.com^
@@ -2293,7 +2293,6 @@ _build=iclick-$popup
 ||embercascademaple.com^
 ||emittedstratal.com^
 ||emptionunpray.com^
-||encourageshock.com^
 ||encouragingthread.com^
 ||endballbemires.com^
 ||endocrineweb.com^
@@ -2502,6 +2501,7 @@ _build=iclick-$popup
 ||jvnpnyqoxoqx.com^
 ||jzleekzkrwveb.top^
 ||kadam.net^
+||kaijoareharoa.net^
 ||keglerboughed.com^
 ||kernh41.com^
 ||khamtimunsee.com^
@@ -2939,7 +2939,6 @@ _build=iclick-$popup
 ||tiuquasi.shop^
 ||tjfot.com^
 ||toastertenline.com^
-||todoapk.net^
 ||toedtenders.top^
 ||togaefaffy.com^
 ||tojinr.com^
@@ -3168,7 +3167,6 @@ _build=iclick-$popup
 ||jewhouca.net^$popup
 ||klclick.com^$popup
 ||livepartners.com^$popup,third-party
-||max-adserv.com^$popup,third-party
 ||monetizze.com.br^$popup,third-party
 ||multiupload.com^$popup,third-party
 ||mybestclick.net^$popup,third-party
@@ -3226,7 +3224,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
 ||analystprep.com/img/$third-party
 ||api.gamerprices.com/compare/$third-party
-||apycdn.com^*/banner/
 ||arc.io/widget$third-party
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$third-party
@@ -3326,6 +3323,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||noogle.fr/banner/
 ||nospartenaires.com/visuel$third-party
 ||nouslibertins.com^$image,third-party
+||nowlifestyle.com/7minbanners/
 ||offer.alibaba.com^$subdocument
 ||partenaires.feerik.com^$third-party
 ||philatelistes.net/liens/cptr/
@@ -3371,7 +3369,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||torah-box.com/upl/ban/
 ||tounet.com/button.php
 ||tripadvisor.*/partner/$third-party
-||tudou.com^$subdocument
 ||turk-dreamworld.com/images/sponsor/
 ||tuto.com/banner/$third-party
 ||ucoz.net/cgi/uutils.fcg?
@@ -4164,6 +4161,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.fig-ad
 ##.fix_reklama
 ##.fixedAd
+##.flayr-ad
 ##.footer-pub
 ##.footerpubright
 ##.frame-ads-left
@@ -4323,6 +4321,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pubContainer
 ##.pubContent
 ##.pubGoodDeals
+##.pubHabillage
 ##.pubHead
 ##.pubHeader
 ##.pubHeading
@@ -4334,6 +4333,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pubText
 ##.pubTitle
 ##.pubTop
+##.pubTopContainer
 ##.pubVideo
 ##.pub_160x600
 ##.pub_300_250
@@ -4533,6 +4533,7 @@ akeo.fr###amazon
 macbidouille.com###arch
 lenouveleconomiste.fr###b_top
 commentcamarche.com,commentcamarche.net###ba_right
+meilleurmobile.com###backgrounddiv
 manga-news.com###ban970250
 degrouptest.com###bandeauFooter
 manga-news.com###bangeante
@@ -5062,7 +5063,6 @@ cdiscount.com#?#li:-abp-has(.prdtBlocInline:-abp-has(.c-sponsoredMentions))
 cdiscount.com#?#li[data-sku]:-abp-has(.c-sponsoredMentions)
 delhaize.be#?#.product-item:-abp-contains(Sponsorisé)
 distrowatch.com#?#.News1:-abp-has(td:-abp-contains(Sponsored))
-jeuxvideo.com#?#.anchorMiddleOne:-abp-has(.badge:-abp-contains(Sponsorisé))
 jeuxvideo.com#?#.card:-abp-has(.badge:-abp-contains(Sponsorisé))
 latribune.fr#?#.article-wrapper:-abp-has(.subheading:-abp-contains(Partenaire))
 latribune.fr#?#.homepage-section.supplement-section:-abp-has(span:-abp-contains(Partenaires))
