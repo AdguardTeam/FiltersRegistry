@@ -1,9 +1,9 @@
-! Checksum: c7K+xDQnSDkl7Fkd7py5Sg
-! Diff-Path: ../patches/237/237-s-1757824828-14400.patch
+! Checksum: pVxesJOgr8uQyh4vXFqLnQ
+! Diff-Path: ../patches/237/237-s-1757867966-14400.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.36.32
-! TimeUpdated: 2025-09-14T04:36:26+00:00
+! Version: 1.0.36.33
+! TimeUpdated: 2025-09-14T16:35:27+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -12,8 +12,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Sun, 14 Sep 2025, 02:15 UTC+00:00
-! OriginalVersion: 2025.9.14.0
+! Last modified: Sun, 14 Sep 2025, 17:32 UTC+02:00
+! OriginalVersion: 2025.9.14.1
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -22,7 +22,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: nie, 14 wrz 2025, 02:15 UTC+00:00
+! Aktualizacja: nie, 14 wrz 2025, 17:32 UTC+02:00
 !
 !
 ! Newslettery (nie popupy)
@@ -12200,6 +12200,8 @@ polishannoyancefilters.netlify.app###pafadguard
 ! Codename: Other Elements - Supplement
 ||mokrenosy.pl/*/avada-nicescroll.js$script
 ||rootblog.pl/wp-json/csco/v1/more-nextpost/$redirect=nooptext,xmlhttprequest
+!poligamia.pl,www.dobreprogramy.pl###komentarze div[id^="komentarz-"] div[id^="komentarz-"]:has(p:has-text(/^Komentarz ukryty$/)):style(opacity: 0.3 !important)
+!poligamia.pl,www.dobreprogramy.pl###komentarze div[id^="komentarz-"]:has(p:has-text(/^Komentarz ukryty$/)):not(:has(div[id^="komentarz-"])):style(opacity: 0.3 !important)
 !rj.metropoliaztm.pl,rj.transportgzm.pl##table[style] tr span[style*="font"]:remove-attr(style)
 *#$?#.buttonHomepage { remove: true; }
 *#$?#.containerHomepage { remove: true; }
@@ -12333,8 +12335,6 @@ pl##body.smartbanner #smartbanner
 pl#$#html[data-smartbanner-original-margin-top^="0"][style] { margin-top: 0 !important }
 plus.pl#%#//scriptlet('ubo-set-cookie.js', 'isIplusClosed', 'true')
 [$path=/login/login.html]poczta.o2.pl,poczta.wp.pl#$?#body > style:last-child:has-text(/\._[a-z0-9]{12}/) { remove: true; }
-poligamia.pl,www.dobreprogramy.pl#$?##komentarze div[id^="komentarz-"] div[id^="komentarz-"]:has(p:has-text(/^Komentarz ukryty$/)) { opacity: 0.3 !important }
-poligamia.pl,www.dobreprogramy.pl#$?##komentarze div[id^="komentarz-"]:has(p:has-text(/^Komentarz ukryty$/)):not(:has(div[id^="komentarz-"])) { opacity: 0.3 !important }
 polsatnews.pl#$?#.series__item { remove: true; }
 posnania.eu##.customScroll__bar
 proline.pl#$#blockquote { transform: unset !important; rotate: unset !important }
