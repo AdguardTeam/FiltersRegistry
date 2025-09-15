@@ -109568,6 +109568,10 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||app.qualified.com/*/sentry/
+||app.qualified.com/*/visitor_events
+huntress.com#%#//scriptlet('set-local-storage-item', 'builderVisitorId', '$remove$')
+huntress.com#%#//scriptlet('set-local-storage-item', 'snowplowOutQueue_cf', '$remove$')
 notion.so#%#//scriptlet('prevent-fetch', 'http-inputs-notion.splunkcloud.com')
 ||cdn.super.com/remote-event-registry.json
 ||reservationday.com/metrics/
@@ -116056,6 +116060,8 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213403
+||huntress.com^$cookie=/^_sp_id/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212878
 ||soundcloud.com^$cookie=sc_anonymous_id
 ||soundcloud.com^$cookie=sc_tracking_anonymous_id
@@ -118073,6 +118079,8 @@ d4?appid*type*
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !#endif
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213403
+@@||huntress.com/assets/snowplow.tracker-*.js$domain=huntress.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212990
 @@||criteo.com/delivery/retailmedia$domain=plazavea.com.pe
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212788
