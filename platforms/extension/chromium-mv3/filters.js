@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.76.73",
-			"timeUpdated": "2025-09-15T08:38:24+0000",
+			"version": "2.1.76.74",
+			"timeUpdated": "2025-09-15T12:45:05+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.76.72",
-			"timeUpdated": "2025-09-15T08:38:24+0000",
+			"version": "2.1.76.73",
+			"timeUpdated": "2025-09-15T12:45:05+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.26.4",
-			"timeUpdated": "2025-09-13T20:32:37+0000",
+			"version": "2.0.26.5",
+			"timeUpdated": "2025-09-15T12:45:11+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1055,8 +1055,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.3.72",
-			"timeUpdated": "2025-09-15T00:48:03+0000",
+			"version": "2.1.3.73",
+			"timeUpdated": "2025-09-15T12:45:20+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1076,8 +1076,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.38.89",
-			"timeUpdated": "2025-09-15T04:37:31+0000",
+			"version": "2.0.38.90",
+			"timeUpdated": "2025-09-15T12:45:21+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1194,8 +1194,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/List-KR/List-KR@latest/filter-AdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.22.94",
-			"timeUpdated": "2025-09-15T08:38:46+0000",
+			"version": "2.0.22.95",
+			"timeUpdated": "2025-09-15T12:45:28+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.70.4",
-			"timeUpdated": "2025-09-15T08:39:08+0000",
+			"version": "2.0.70.5",
+			"timeUpdated": "2025-09-15T12:45:50+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1427,8 +1427,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.10.22",
-			"timeUpdated": "2025-09-15T00:48:43+0000",
+			"version": "2.0.10.23",
+			"timeUpdated": "2025-09-15T12:45:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
