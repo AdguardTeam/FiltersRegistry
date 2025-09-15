@@ -557,6 +557,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !
 !
 !
+||partnerlinks.io^
 ||hlstatus.com^
 ||pixel-img.com^
 ||pixel.prb-team.com^
@@ -68153,6 +68154,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||stats.pronouns.page^
 ||ad-bls-tracking.lemino.docomo.ne.jp^
 ||bdvmetricas.banvenez.com.ve^
 ||ek-tracker.ekitan.com^
@@ -109569,6 +109571,11 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||parchment.com/wp-content/themes/wp-parchment/assets/utm-tags.min.js
+||try.elevenlabs.io/pr/js
+||elevenlabs.io/hog/
+flo.com.tr#%#//scriptlet('set-local-storage-item', '__anon_id', '$remove$')
+||market.samm.com/0/sendEventV2
 ezviz.ru#%#//scriptlet('set-local-storage-item', 'userUuid', '$remove$')
 ||c.sberlead.ru/clickstream.bundle.js
 ||app.qualified.com/*/sentry/
@@ -112720,7 +112727,7 @@ the-ans.jp##.side-reccomend
 ||at.cbsi.com/*/event?
 ||sprocket.bz/trackers/
 ||maillist-manage.com/wa/ActionLogger?
-/app/Eclog/js/cid.generate.js$domain=softland.co.kr|animegoods.co.kr|rabbits.kr
+/app/Eclog/js/cid.generate.js$domain=softland.co.kr|animegoods.co.kr|rabbits.kr|cafe24.com
 ||push.soft-com.biz/api/ui/metrics
 ||image.cauly.co.kr/script/caulytracker_async.js
 ||gate.upclick.com/btn/visitor.min.js
@@ -115694,7 +115701,7 @@ $cookie=cfz_google-analytics_v4
 $cookie=cfzs_google-analytics_v4
 ! This cookie enables experiments with advertisement efficiency across websites in the Google Ads network.
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169558
-$cookie=_gcl_au,domain=~nintendo.com
+$cookie=_gcl_au,domain=~nintendo.com|~musinsa.com
 ! Used to track visitors on multiple websites, in order to present relevant advertisement based on the visitor's preferences.
 $cookie=_gcl_aw
 !
@@ -116003,7 +116010,7 @@ $cookie=/^amplitude_id_/
 !
 ! DataDog
 ! DataDog cookie used to provide web performance analytics
-$cookie=_dd_s
+$cookie=_dd_s,domain=~musinsa.com
 !
 ! sophi.io
 ! Analytics
@@ -116063,6 +116070,8 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213391
+||flo.com.tr^$cookie=bunsar_visitor_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213403
 ||huntress.com^$cookie=/^_sp_id/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212878
@@ -118082,6 +118091,15 @@ d4?appid*type*
 !@@||mc.yandex.ru/metrika/watch.js$domain=
 !#endif
 !
+! musinsa.com - adding an item into the cart doesn't work (a type of anti-adblock)
+musinsa.com#%#//scriptlet('trusted-suppress-native-method', 'CookieStore.prototype.set', '_dd_s', 'prevent', 'datadog')
+musinsa.com#%#//scriptlet('trusted-suppress-native-method', 'Date.prototype.toUTCString', 'undefined', 'abort', 'datadog')
+musinsa.com#%#//scriptlet('set-cookie', '_dd_s', '0', '/', 'musinsa.com')
+musinsa.com#%#//scriptlet('set-cookie', '_ga', '0', '/', 'musinsa.com')
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+@@||googletagmanager.com/gtm.js$script,domain=musinsa.com
+@@||googletagmanager.com/gtag/destination$script,domain=musinsa.com
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213403
 @@||huntress.com/assets/snowplow.tracker-*.js$domain=huntress.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212990

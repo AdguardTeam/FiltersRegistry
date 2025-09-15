@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: eTuqm0mR3/t5evezRNzBsw
-! Diff-Path: ../patches/3/3-s-1757913130-3600.patch
+! Checksum: BJbJD56AjCUVAYtSs02ZEQ
+! Diff-Path: ../patches/3/3-s-1757916925-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.91.34
-! TimeUpdated: 2025-09-15T05:07:46+00:00
+! Version: 2.0.91.35
+! TimeUpdated: 2025-09-15T06:10:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -492,6 +492,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !
 !
 !
+||partnerlinks.io^
 ||hlstatus.com^
 ||pixel-img.com^
 ||pixel.prb-team.com^
@@ -68081,6 +68082,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||stats.pronouns.page^
 ||ad-bls-tracking.lemino.docomo.ne.jp^
 ||bdvmetricas.banvenez.com.ve^
 ||ek-tracker.ekitan.com^
@@ -109484,6 +109486,11 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||parchment.com/wp-content/themes/wp-parchment/assets/utm-tags.min.js
+||try.elevenlabs.io/pr/js
+||elevenlabs.io/hog/
+flo.com.tr##+js(set-local-storage-item, __anon_id, $remove$)
+||market.samm.com/0/sendEventV2
 ezviz.ru##+js(set-local-storage-item, userUuid, $remove$)
 ||c.sberlead.ru/clickstream.bundle.js
 ||app.qualified.com/*/sentry/
@@ -112629,7 +112636,7 @@ the-ans.jp##.side-reccomend
 ||at.cbsi.com/*/event?
 ||sprocket.bz/trackers/
 ||maillist-manage.com/wa/ActionLogger?
-/app/Eclog/js/cid.generate.js$domain=softland.co.kr|animegoods.co.kr|rabbits.kr
+/app/Eclog/js/cid.generate.js$domain=softland.co.kr|animegoods.co.kr|rabbits.kr|cafe24.com
 ||push.soft-com.biz/api/ui/metrics
 ||image.cauly.co.kr/script/caulytracker_async.js
 ||gate.upclick.com/btn/visitor.min.js
@@ -115472,6 +115479,7 @@ twitter.com%2Fscribe%2Fibis%3Ft%3D$image
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213391
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213403
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212878
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212676
@@ -116921,6 +116929,9 @@ d4?appid*type*
 !
 ! For platforms which do not support $redirect rules
 !
+! musinsa.com - adding an item into the cart doesn't work (a type of anti-adblock)
+musinsa.com##+js(set-cookie, _dd_s, 0, /, musinsa.com)
+musinsa.com##+js(set-cookie, _ga, 0, /, musinsa.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213403
 @@||huntress.com/assets/snowplow.tracker-*.js$domain=huntress.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212990
