@@ -1,9 +1,9 @@
-! Checksum: 3DhLVl/rYmuGr7J/gJqxCg
-! Diff-Path: ../patches/2/2-s-1757920333-3600.patch
+! Checksum: aYjfwXYcYkpM/f7s8mfRdg
+! Diff-Path: ../patches/2/2-s-1757924016-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.10.86
-! TimeUpdated: 2025-09-15T07:08:08+00:00
+! Version: 2.4.10.87
+! TimeUpdated: 2025-09-15T08:09:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -33741,8 +33741,10 @@ shortit.pw#%#//scriptlet("prevent-window-open")
 webcamsbabe.com#%#//scriptlet("set-constant", "bcs_popup_show_bongacams_pop", "true")
 ! vidup.io - popup
 vidup.io#%#(function(){var c=document.addEventListener;document.addEventListener=function(a,b,d,e){"click"!=a&&-1==b.toString().indexOf('.hi()')&&c(a,b,d,e)}.bind(document);})();
-! https://forum.adguard.com/index.php?threads/19490/
-katfile.com#%#//scriptlet('prevent-window-open')
+! https://github.com/AdguardTeam/AdguardFilters/issues/213306
+katfile.cloud,katfile.com#%#//scriptlet('prevent-window-open')
+katfile.cloud,katfile.com#%#//scriptlet('trusted-replace-node-text', 'script', 'adEnable', '/if\(adEnable\)/g', 'if(!0)')
+katfile.cloud,katfile.com#%#//scriptlet('trusted-replace-node-text', 'script', 'download_click', '/if \(download_click == false\)/g', 'if(!1)')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16854
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16855
 ! https://github.com/AdguardTeam/AdguardFilters/issues/16856
@@ -38264,8 +38266,8 @@ meawfy.com##.info-section > a[target="_blank"]
 ||meawfy.com/static/images/others/mobile-2.gif
 ||meawfy.com/static/images/others/desktop-2.gif
 upornia.*##.video__wrapper > section[style]
-katfile.com#%#//scriptlet('prevent-addEventListener', 'load', 'Notification.permission')
-katfile.com##div[style="position: fixed; inset: 0px; display: flex; z-index: 99999; flex-direction: column; justify-content: center; align-items: center;"]
+katfile.cloud,katfile.com#%#//scriptlet('prevent-addEventListener', 'load', 'Notification.permission')
+katfile.cloud,katfile.com##div[style="position: fixed; inset: 0px; display: flex; z-index: 99999; flex-direction: column; justify-content: center; align-items: center;"]
 downforeveryoneorjustme.com##.rounded-t-md:has(> a[rel="sponsored"])
 ||vidlink.pro/api/adcash
 nmac.to#%#//scriptlet("set-constant", "advanced_ads_ready", "noopFunc")
@@ -39703,6 +39705,7 @@ mindbodygreen.com###article-leaderboard-ad
 investing.com##div[class*="ad_"]
 thetimes.co.uk##article > div[class^="tc-view"]:has(> div > div#ad-header)
 th.gl##.pointer-events-auto.shrink-0.border:has(> a[href="https://www.th.gl/support-me"])
+th.gl##.pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"]))
 scienceabc.com##.desk-header-ad
 backbook.me##br + br ~ *
 forbes.com##.fbs-ad-wrapper
@@ -42822,7 +42825,6 @@ zimlive.com##img[Width="300"][height="400"]
 speedynews.xyz##div[id^="speedynews_"]
 /plugins/wp-evolve-gpt/*$domain=gamerevolution.com
 gamerevolution.com##.pb-in-article-content
-katfile.com##a[href^="https://accounts.binance.com/"]
 fosspost.org###media_image-5
 subdl.com##.airpods
 ||syndication.realsrv.com/splash.php?$removeparam
@@ -45174,7 +45176,7 @@ jawcloud.co##.jwbanner
 coursedown.com##.sidebar > #custom_html-2
 ||coursedown.com/wp-content/uploads/*/banner-728.png
 hentaihand.com##main > div.row.mx-auto
-katfile.com,jav.guru,analyticsinsight.net,rlsbb.ru,slutsounds.com,theboobsblog.com##p > a[target="_blank"] > img
+katfile.cloud,katfile.com,jav.guru,analyticsinsight.net,rlsbb.ru,slutsounds.com,theboobsblog.com##p > a[target="_blank"] > img
 coursewikia.com##.custom-infeed-wrap-article
 coursewikia.com##.gt-section-ad
 freesexyindians.com##.grid-sidebar-extra
@@ -47430,7 +47432,6 @@ xxxdan.com###content > div.movie + div[class]
 mat6tube.com,noodlemagazine.com##iframe[src^="//its.fusrv.com/"]
 noodlemagazine.com##div[style="width:900px;height:250px;margin:20px auto 0"]
 /vast.js$domain=noodlemagazine.com|mat6tube.com|gaystream.click|zpjid.com|gaystream.link|rapidvid.net|vidrame.pro
-katfile.com###container > .style2 > a[href][target="_blank"] > img
 ||interracial.com/sw.js
 ||interracial.com/int354/script.php
 stun:35.224.227.218^
@@ -60282,6 +60283,8 @@ implbits.com#@#.banner_container
 !#########################################
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213137
+@@||stre4mplay.one^$stealth=useragent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213419
 @@||newkso.ru/*.php$stealth=searchqueries|referrer
 @@||zorroplay.xyz/*.php$stealth=referrer
@@ -83483,6 +83486,7 @@ browsershots.org#@#.advert_area
 ||bigstoreminigames.space^
 ||bihcddfenx.com^
 ||bihunekus.com^
+||biijyuaeuzssw.online^
 ||biirmjnw.icu^
 ||bijftayirl.com^
 ||bikechokedattic.com^
@@ -84592,6 +84596,7 @@ browsershots.org#@#.advert_area
 ||bwtcilgll.com^
 ||bwttasdajpduj.site^
 ||bwwardgyspxvy.site^
+||bwxupcpflagcl.store^
 ||bwywyammvghos.space^
 ||bxacmsvmxb.com^
 ||bxbkh.love^
@@ -98275,6 +98280,7 @@ browsershots.org#@#.advert_area
 ||louxoxo.com^
 ||louzensp.com^
 ||lovable-scale.com^
+||lovableerror.com^
 ||lovableprofile.com^
 ||lovableswing.pro^
 ||lovableteas.qpon^
@@ -98844,6 +98850,7 @@ browsershots.org#@#.advert_area
 ||mandilpreacts.qpon^
 ||mandjasgrozde.com^
 ||mandomzincke.life^
+||manettidrone.shop^
 ||manfredjackets.life^
 ||mangensaud.net^
 ||mangerolympicssnort.com^
@@ -101551,6 +101558,7 @@ browsershots.org#@#.advert_area
 ||obumlnwrmmewj.site^
 ||obuqhpqiqfgoe.love^
 ||obvdcylwtpaaa.tech^
+||obvious-initiative.pro^
 ||obviousestate.com^
 ||obviouspeh.qpon^
 ||obviousruin.pro^
@@ -103582,6 +103590,7 @@ browsershots.org#@#.advert_area
 ||pingueperca.cfd^
 ||piningruelle.shop^
 ||pinionyite.world^
+||pink-high.pro^
 ||pinkedligulin.cfd^
 ||pinklabel.com^
 ||pinkleo.pro^
@@ -111282,6 +111291,7 @@ browsershots.org#@#.advert_area
 ||ulnaemusica.help^
 ||ulnariacrewer.shop^
 ||ulnhz.site^
+||ulokbfgrpym.com^
 ||uloqimodopvweyn.com^
 ||ulpanimarcos.com^
 ||ultaxvuxpgryi.site^

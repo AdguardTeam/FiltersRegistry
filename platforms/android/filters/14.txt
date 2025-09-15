@@ -1,9 +1,9 @@
-! Checksum: +7H5qrxIfogYIr5/td0+Gg
-! Diff-Path: ../patches/14/14-s-1757920323-3600.patch
+! Checksum: o3X9wqrsh13v5FHqjYMCMQ
+! Diff-Path: ../patches/14/14-s-1757924004-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.42.87
-! TimeUpdated: 2025-09-15T07:08:34+00:00
+! Version: 2.2.42.88
+! TimeUpdated: 2025-09-15T08:09:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2538,6 +2538,8 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+motorena.cz##.fworks_consent_bar
+uni.lodz.pl###om-cookie-consent
 ezviz.ru###thermsModal
 nnwszkolne.compensa.pl##div[class^="CookieBannerstyles__BannerWrapper-"]
 zaufanatrzeciastrona.pl#%#//scriptlet('trusted-click-element', '.embed-privacy-input-wrapper > input[id^="embed-privacy-store-youtube-"]', '', '1000')
@@ -34050,6 +34052,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+katfile.cloud,katfile.com#%#//scriptlet('abort-current-inline-script', '$', 'kModal')
 ezviz.ru#%#//scriptlet('set-local-storage-item', 'spmodalhidden', '1')
 taurus.topmanhuas.org##.discord-banner
 beincrypto.com##div[class*="NewslettersCard-"]
@@ -57048,7 +57051,7 @@ goodssh.com#%#//scriptlet("set-constant", "counter", "-1")
 ! newsjizz.in - skip timer
 a2zupload.com#%#//scriptlet("adjust-setInterval", "download", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45486
-katfile.com#%#//scriptlet("adjust-setTimeout", "#freebtn", "", "0.02")
+katfile.cloud,katfile.com#%#//scriptlet("adjust-setTimeout", "#freebtn", "", "0.02")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43273
 !+ PLATFORM(windows, mac, android)
 coolrom.com.au#%#(function(){var c=window.setTimeout;window.setTimeout=function(f,g){return g===1e3&&/download\(\)/.test(f.toString())&&(g*=0.01),c.apply(this,arguments)}.bind(window)})();
