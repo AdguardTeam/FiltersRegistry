@@ -1,9 +1,9 @@
-! Checksum: 7dbqxFz7SfdJEb/fgqVIZw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1757949110-3600.patch
+! Checksum: FrKy2CM7y9PbjmauICvF9Q
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1757952751-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.10.94
-! TimeUpdated: 2025-09-15T15:07:12+00:00
+! Version: 2.4.10.95
+! TimeUpdated: 2025-09-15T16:07:57+00:00
 ! Expires: 12 hours (update frequency)
 ||adtscriptshark.com^
 ||protect-myphone.com^$all
@@ -4132,6 +4132,8 @@ btcbunch.com#%#//scriptlet("abort-on-property-write", "TestAd")
 dailymotion.com#@#.ad_box
 dailymotion.com#$#body .ad_box { display: block !important; }
 dailymotion.com#%#//scriptlet('prevent-setTimeout', 'adBlockerDetection')
+dailymotion.com#%#//scriptlet('set-constant', '__NATIVEADS_CANARY__', 'true')
+@@||dailymotion.com/nativeads.js$domain=dailymotion.com
 ninja.io#%#//scriptlet("set-constant", "App.AdblockDetected", "false")
 games.word.tips#@#display-ad-component
 3dzip.org#$#body { overflow: auto !important; }
@@ -10980,6 +10982,7 @@ tvnz.co.nz##.ad-on-pause
 investorgain.com##.mainLeaderboard
 ||dbloader.leboncoin.info^
 leboncoin.fr#%#//scriptlet('abort-current-inline-script', 'btoa', 'HTMLIFrameElement_contentWindow')
+tz.de#%#//scriptlet('abort-on-stack-trace', 'globalThis', 'loader.min.js')
 tz.de#%#//scriptlet('prevent-setTimeout', '[native code]', '500')
 newsinlevels.com,laleggepertutti.it#%#//scriptlet('set-constant', 'navigator.onLine', 'false')
 gazetaprawna.pl$$script[src="html-load.com/loader.min.js"]
@@ -11004,7 +11007,7 @@ kreuzwortraetsel.de,dziennik.pl,tportal.hr,cool-style.com.tw,forsal.pl,woxikon.d
 thesaurus.net#%#//scriptlet('prevent-setTimeout', 'loader.min.js')
 mlbpark.donga.com,tweaksforgeeks.com#%#//scriptlet('remove-node-text', 'script', 'KCgpPT57bGV0IGU')
 tenasia.hankyung.com#%#//scriptlet('trusted-create-element', 'head', 'link', 'rel="stylesheet" https://hkstatic.hankyung.com/css/rel/tenasia/w/common.css"')
-ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e="loader.min.js",t={includes:String.prototype.includes,filter:Array.prototype.filter},l=()=>(new Error).stack,n={construct:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&o[0]&&t.includes.call(o[0],"adshield")&&(o[0]=["(function(){})();"]),Reflect.construct(n,o,r)}};window.Blob=new Proxy(window.Blob,n);const o={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&t.includes.call(r[0],"new Error")&&(r[0]=()=>{}),Reflect.apply(n,o,r)}};window.setTimeout=new Proxy(window.setTimeout,o);const r={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&o?.includes?.("setTimeout")&&(o=t.filter.call(o,(e=>!t.includes.call(e,"setTimeout")))),Reflect.apply(n,o,r)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,r)})();
+tz.de,ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e="loader.min.js",t={includes:String.prototype.includes,filter:Array.prototype.filter},l=()=>(new Error).stack,n={construct:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&o[0]&&t.includes.call(o[0],"adshield")&&(o[0]=["(function(){})();"]),Reflect.construct(n,o,r)}};window.Blob=new Proxy(window.Blob,n);const o={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&t.includes.call(r[0],"new Error")&&(r[0]=()=>{}),Reflect.apply(n,o,r)}};window.setTimeout=new Proxy(window.setTimeout,o);const r={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&o?.includes?.("setTimeout")&&(o=t.filter.call(o,(e=>!t.includes.call(e,"setTimeout")))),Reflect.apply(n,o,r)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,r)})();
 ||07c225f3.online/loader.min.js$replace=/;(const .=new Blob\(\[.\])/;return;\$1/,domain=etoday.co.kr
 letemsvetemapplem.eu,webdesignledger.com#$#body { overflow: auto !important; }
 letemsvetemapplem.eu,webdesignledger.com#%#(()=>{const e={apply:(e,l,o)=>"link"===o[0]||"style"===o[0]?[]:Reflect.apply(e,l,o)};window.document.querySelectorAll=new Proxy(window.document.querySelectorAll,e)})();
@@ -27044,6 +27047,7 @@ browsershots.org#@#.advert_area
 ||bqbgwwvnmjnj.top^
 ||bqblxvdkjtatv.store^
 ||bqbvgjnyqqvva.top^
+||bqgnnzbamgbbj.top^
 ||bqgwxqoqjqvbz.online^
 ||bqogqcbbr.com^
 ||bqqyomzoqvqko.top^
@@ -28052,6 +28056,7 @@ browsershots.org#@#.advert_area
 ||cobwebhauntedallot.com^
 ||cocashstealer.com^
 ||cockerwigher.click^
+||cockleswhose.help^
 ||cockpiteconomicspayroll.com^
 ||cockysnailleather.com^
 ||cocoaeeliest.com^
@@ -34054,6 +34059,7 @@ browsershots.org#@#.advert_area
 ||lvlhmjerf.buzz^
 ||lvmllngjayavj.top^
 ||lvoaglwvomnma.top^
+||lvojjaymeoyyk.top^
 ||lvubwrnhxktlo.online^
 ||lvvbqeaqvrvlq.top^
 ||lvxboteyfacvqon.net^
@@ -35867,6 +35873,7 @@ browsershots.org#@#.advert_area
 ||ossrhydonr.com^
 ||ossshucklean.com^
 ||ossuarysilique.com^
+||osurcaodjku.com^
 ||osyjxstsi.xyz^
 ||otbydhpfhzbjd.today^
 ||otfygdzebcjme.space^
@@ -37531,6 +37538,7 @@ browsershots.org#@#.advert_area
 ||rboyqkyojrbbj.top^
 ||rbp-gen1.site^
 ||rbqcg6g.de^
+||rbsfckgfwpgnr.site^
 ||rbsifiqnyrhfd.space^
 ||rbtfit.com^
 ||rbtget.com^
@@ -38104,6 +38112,7 @@ browsershots.org#@#.advert_area
 ||rrqwarwrewojy.top^
 ||rrvbalbmn.com^
 ||rs-stripe.com^
+||rsfywjkbnms.com^
 ||rsityexcellojapanelm.org^
 ||rsonalrecomef.org^
 ||rspwhikhuvovbf.com^
@@ -40647,6 +40656,7 @@ browsershots.org#@#.advert_area
 ||uxibgyftvdzyr.site^
 ||uxiwkfanp.com^
 ||uxnjizwmojek.com^
+||uxpprdoqvkxma.space^
 ||uydyqlnebqlwe.global^
 ||uyenydjup.com^
 ||uygchsdcsfwkd.online^
@@ -40759,6 +40769,7 @@ browsershots.org#@#.advert_area
 ||vckeyscqjreer.icu^
 ||vcmedia.com^
 ||vcommission.com^
+||vcpawsbq.net^
 ||vcpsvblj.com^
 ||vcsxmwpxo.com^
 ||vdanllxaejxef.store^

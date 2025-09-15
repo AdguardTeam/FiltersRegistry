@@ -1,9 +1,9 @@
-! Checksum: hvybmQg9ZCBBAmvkj5Lc3Q
-! Diff-Path: ../patches/2/2-s-1757949087-3600.patch
+! Checksum: MfpeIGvr/l1jMFOsyOVGHg
+! Diff-Path: ../patches/2/2-s-1757952728-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.10.94
-! TimeUpdated: 2025-09-15T15:07:12+00:00
+! Version: 2.4.10.95
+! TimeUpdated: 2025-09-15T16:07:57+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13988,6 +13988,8 @@ ricettafitness.com#$?#body > p > span:contains(adblock) { display: none !importa
 dailymotion.com#@#.ad_box
 dailymotion.com#$#body .ad_box { display: block !important; }
 dailymotion.com#%#//scriptlet('prevent-setTimeout', 'adBlockerDetection')
+dailymotion.com#%#//scriptlet('set-constant', '__NATIVEADS_CANARY__', 'true')
+@@||dailymotion.com/nativeads.js$domain=dailymotion.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/113963
 ninja.io#%#//scriptlet("set-constant", "App.AdblockDetected", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/113969
@@ -35762,6 +35764,7 @@ gamingbible.com##.floating-video-player_container__u4D9_
 investorgain.com##.mainLeaderboard
 ||dbloader.leboncoin.info^
 leboncoin.fr#%#//scriptlet('abort-current-inline-script', 'btoa', 'HTMLIFrameElement_contentWindow')
+tz.de#%#//scriptlet('abort-on-stack-trace', 'globalThis', 'loader.min.js')
 tz.de#%#//scriptlet('prevent-setTimeout', '[native code]', '500')
 newsinlevels.com,laleggepertutti.it#%#//scriptlet('set-constant', 'navigator.onLine', 'false')
 lacuarta.com#%#//scriptlet('abort-current-inline-script', 'console.log', 'carga de script')
@@ -35782,7 +35785,7 @@ thesaurus.net#%#//scriptlet('prevent-setTimeout', 'loader.min.js')
 mlbpark.donga.com,tweaksforgeeks.com#%#//scriptlet('remove-node-text', 'script', 'KCgpPT57bGV0IGU')
 ! Stylesheet is loaded by html-load.com script, so we need to add it manually
 tenasia.hankyung.com#%#//scriptlet('trusted-create-element', 'head', 'link', 'rel="stylesheet" https://hkstatic.hankyung.com/css/rel/tenasia/w/common.css"')
-ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e="loader.min.js",t={includes:String.prototype.includes,filter:Array.prototype.filter},l=()=>(new Error).stack,n={construct:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&o[0]&&t.includes.call(o[0],"adshield")&&(o[0]=["(function(){})();"]),Reflect.construct(n,o,r)}};window.Blob=new Proxy(window.Blob,n);const o={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&t.includes.call(r[0],"new Error")&&(r[0]=()=>{}),Reflect.apply(n,o,r)}};window.setTimeout=new Proxy(window.setTimeout,o);const r={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&o?.includes?.("setTimeout")&&(o=t.filter.call(o,(e=>!t.includes.call(e,"setTimeout")))),Reflect.apply(n,o,r)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,r)})();
+tz.de,ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e="loader.min.js",t={includes:String.prototype.includes,filter:Array.prototype.filter},l=()=>(new Error).stack,n={construct:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&o[0]&&t.includes.call(o[0],"adshield")&&(o[0]=["(function(){})();"]),Reflect.construct(n,o,r)}};window.Blob=new Proxy(window.Blob,n);const o={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&t.includes.call(r[0],"new Error")&&(r[0]=()=>{}),Reflect.apply(n,o,r)}};window.setTimeout=new Proxy(window.setTimeout,o);const r={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&o?.includes?.("setTimeout")&&(o=t.filter.call(o,(e=>!t.includes.call(e,"setTimeout")))),Reflect.apply(n,o,r)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,r)})();
 ! Workaround also for iOS, where we cannot apply url blocking rule
 ! Related to https://github.com/AdguardTeam/FiltersCompiler/issues/226
 ! After implementation, we could add any rules for AdGuard for iOS only with Advanced Protection
@@ -84137,6 +84140,7 @@ browsershots.org#@#.advert_area
 ||bqblxvdkjtatv.store^
 ||bqbvgjnyqqvva.top^
 ||bqdpbmtvmkmov.site^
+||bqgnnzbamgbbj.top^
 ||bqgnnzbamgbyo.top^
 ||bqgwxqoqjqvbz.online^
 ||bqogqcbbr.com^
@@ -86072,6 +86076,7 @@ browsershots.org#@#.advert_area
 ||cocashstealer.com^
 ||cockerwigher.click^
 ||cockishclocked.rest^
+||cockleswhose.help^
 ||cockpiteconomicspayroll.com^
 ||cocksargus.cyou^
 ||cockysnailleather.com^
@@ -98587,6 +98592,7 @@ browsershots.org#@#.advert_area
 ||lvoaglwvomnma.top^
 ||lvoaglwvomnyz.top^
 ||lvojjaymeoybq.top^
+||lvojjaymeoyyk.top^
 ||lvualvjfekioz.space^
 ||lvubwrnhxktlo.online^
 ||lvvbqeaqvrmvy.top^
@@ -102441,6 +102447,7 @@ browsershots.org#@#.advert_area
 ||ostoasheth.net^
 ||ostyakmooning.cyou^
 ||osumpdfciiptn.online^
+||osurcaodjku.com^
 ||osyjxstsi.xyz^
 ||otalktohershallilov.com^
 ||otariestitrant.life^
@@ -105961,6 +105968,7 @@ browsershots.org#@#.advert_area
 ||rbqlbokvoraev.top^
 ||rbrightscarletcloaksan.org^
 ||rbrstyvmhfgnv.online^
+||rbsfckgfwpgnr.site^
 ||rbsifiqnyrhfd.space^
 ||rbtfit.com^
 ||rbtget.com^
@@ -107167,6 +107175,7 @@ browsershots.org#@#.advert_area
 ||rscilnmkkfbl.com^
 ||rsdqfowwquvk.com^
 ||rseducationinin.com^
+||rsfywjkbnms.com^
 ||rsityexcellojapanelm.org^
 ||rskdtqfdolvzb.site^
 ||rsmewl.digital^
@@ -112040,6 +112049,7 @@ browsershots.org#@#.advert_area
 ||uxiwkfanp.com^
 ||uxnjizwmojek.com^
 ||uxnrnsfybjmxgw.com^
+||uxpprdoqvkxma.space^
 ||uxqudtzzbkhfq.website^
 ||uxsusukztegrf.store^
 ||uxwinyafloqfy.store^
@@ -112259,6 +112269,7 @@ browsershots.org#@#.advert_area
 ||vclouds.com^
 ||vcmedia.com^
 ||vcommission.com^
+||vcpawsbq.net^
 ||vcpsvblj.com^
 ||vcqdsnjbtxclz.space^
 ||vcrefgytlcafrqi.com^
