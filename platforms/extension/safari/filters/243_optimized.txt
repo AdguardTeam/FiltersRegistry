@@ -1,9 +1,9 @@
-! Checksum: XUKutaf/yWR/vizrLD8Ukg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1757824853-14400.patch
+! Checksum: gOQ/by0kNDmzWz74o9lWYQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1757911326-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.76
-! TimeUpdated: 2025-09-14T04:36:29+00:00
+! Version: 2.0.22.77
+! TimeUpdated: 2025-09-15T04:37:53+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -1368,6 +1368,7 @@ svd.se#$#body { visibility:visible!important; }
 svd.se###mega-ad-wrapper, #svd-top-ad, div[class*="advertory"], div[data-custom-ad-handled="true"], div[data-engage-entity-id="sales-banner-bottom-bar"], div[data-context-pageview*="native-svd"]
 svd.se,chef.se,vvsforum.se,elinstallatoren.se,arkitekten.se,natursidan.se,svenskfarmaci.se,da.se,frisor.se,revisionsvarlden.se,branschkoll.se##.Ad
 svenskadating.com##.pubhead, #bannermobile
+svenskaevenemang.com##a[href*="?annonsId"], #annonslager
 svenskaevenemang.com##td[width="130"]:has(a[href*="annons"])
 svenskafans.com##.puff__ad-heading, ad-skyscraper__wrapper, iframe[title*="Bet 365"], iframe[srcdoc*="ad_div"]
 svenskafans.com##:is(.h-52, .h-40):has(iframe[srcdoc*="ad_div"])
@@ -1464,7 +1465,7 @@ tidningencurie.se#$#body[style*="hidden"] { overflow:unset!important;position:un
 tidningencurie.se#%#//scriptlet('ubo-nostif.js', '.showModal')
 tidningencurie.se##.sv-vr-popup
 tidningenglobal.se,tidningensyre.se,landetsfria.nu,fempers.se##.revive-box, .paloma-ad
-tidningenmikroskop.se##.widget_block:has(a[href^="https://addrevenue.io"])
+tidningenmikroskop.se##:is(.widget_block, .code-block):has(a[href^="https://addrevenue.io"])
 tidningennara.se##.cookie-bar
 tidningenproffs.se##div[id^="proff-"]
 tidningenridsport.se#$#.entry-content { display: initial !important; }
@@ -2082,6 +2083,7 @@ zeromagazine.nu##div[id^="ads"]
 /bilder/annonser/*
 /bilder/betalannonser
 /bilder/logotyper/partners
+/bilder/samarbeten$domain=hojen.nu
 /bilder/sponsorer
 /bilder/*annons$domain=sfft.se
 /bitcsys/js/bit.js
@@ -2581,6 +2583,7 @@ zeromagazine.nu##div[id^="ads"]
 /scripts/leeads-
 /scripts/opt/view.analytics.js
 /seenthis-hub$script
+/sentry$script,domain=sv.bab.la
 /sentry-browser$domain=hd.se|sydsvenskan.se|allehanda.se|tidningenangermanland.se|arbetarbladet.se|avestatidning.com|bblat.se|dalademokraten.se|fagersta-posten.se|gd.se|lt.se|ltz.se|na.se|norrteljetidning.se|nynashamnsposten.se|op.se|salaallehanda.com|st.nu|tidningenharjedalen.se|vlt.se|falkopingstidning.se|jp.se|skaraborgslanstidning.se|skovdenyheter.se|smalandsdagblad.se|smalanningen.se|smt.se|tranastidning.se|vastgotabladet.se|vetlandaposten.se|vn.se|bandypuls.se|ljusdalsposten.se|ljusnan.se|soderhamnskuriren.se|ht.se|moratidning.se|borlangetidning.se|falukuriren.se|sodran.se|nyaludvikatidning.se|skd.se|nvp.se|nuiosteraker.se|hbl.fi|vastranyland.fi|bbl.fi|vaxjobladet.se|nsk.se|klt.nu|ystadsallehanda.se|trelleborgsallehanda.se|kristianstadsbladet.se|folkracepuls.se|barometern.se|blt.se|bt.se|olandsbladet.se|smp.se|sydostran.se|ut.se
 /serve.php$domain=nordiskskog.se
 /se-ads-microservice
@@ -2873,7 +2876,6 @@ _banner.php?$domain=tvmatchen.nu
 ||assets.zubitracker.io^
 ||asset.schwarz/track$domain=lidl.se
 ||atl.nu/api/mnews
-||atmtd.com^$third-party
 ||auction-release.mlpapi.com/site/LoadPluginSite
 ||aventyret.se^$third-party
 ||aweber.com^$third-party
@@ -3012,7 +3014,6 @@ _banner.php?$domain=tvmatchen.nu
 ||digitaloceanspaces.com/ethical.min.js
 ||directory.cookieyes.com/api/v1/ip
 ||diu127fbe6pn6.cloudfront.net^*/ga-universal.html
-||doktor-se.onelink.me^$image
 ||driftt.com^$third-party
 ||drift.com^$third-party
 ||dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.$script
