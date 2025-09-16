@@ -1,9 +1,9 @@
-! Checksum: 61iaUzncWlmPM2P34qhX5g
-! Diff-Path: ../patches/14/14-s-1758003199-3600.patch
+! Checksum: oJNnMDfBG8BVBSKOje06ZA
+! Diff-Path: ../patches/14/14-s-1758006722-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.43.2
-! TimeUpdated: 2025-09-16T06:09:39+00:00
+! Version: 2.2.43.3
+! TimeUpdated: 2025-09-16T07:08:20+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2538,6 +2538,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+sketchengine.eu###SkE_CC
 technikplanet.de,berlet.de#%#//scriptlet('trusted-set-cookie-reload', 'custom-cookies-declined', '2081189624')
 koffer-to-go.de#%#//scriptlet('trusted-set-cookie', 'cooco', '{"functionality_storage":"granted","analytics_storage":"denied","media_storage":"denied","ad_storage":"denied","ad_personalization":"denied","ad_user_data":"denied"}')
 luckyduckgames.com##.lgcookieslaw-banner-bottom
@@ -46049,6 +46050,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+spb.napopravku.ru#$#html { overflow: auto !important; }
+spb.napopravku.ru#$#.bottom-sheet-banner { display: none !important; }
+spb.napopravku.ru#$#div[banner-id]:has(> .hidable-fixed-banner__container > .mobile-app-banner-adguard-fix) { display: none !important; }
 aviasales.*#%#//scriptlet('set-cookie', 'mobile_app_redirect', '1')
 flo.com.tr##.fancybox-container
 platanitos.com###install-app-banner
@@ -50482,6 +50486,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+spiritfit.ru#%#//scriptlet('set-session-storage-item', 'bn_promocode', '1')
 analyticsvidhya.com##.free-course-blog-card
 antyweb.pl#?#.wrapper > div > div > .my-4:has(> .container span:contains(Reklama))
 banki.ru###lightbox-container > div[style^="font-size: initial; word-break: initial; margin:"]
