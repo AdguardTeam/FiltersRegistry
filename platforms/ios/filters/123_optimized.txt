@@ -1,9 +1,9 @@
-! Checksum: AUPKlWwtLuLnX9EeStp/fw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1757983978-14400.patch
+! Checksum: 7PGcI82xiHLLr4ULNhLECg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1757997694-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.47.78
-! TimeUpdated: 2025-09-16T00:47:54+00:00
+! Version: 2.1.47.79
+! TimeUpdated: 2025-09-16T04:36:45+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -216,6 +216,7 @@ _social_footer_
 ###facebook-widget
 ###facebookBox
 ###facebookFan
+###facebookFans
 ###facebookIcon
 ###facebookLike
 ###facebookLikeBox
@@ -601,7 +602,6 @@ _social_footer_
 ###social_bottom
 ###social_box
 ###social_btns
-###social_cont
 ###social_facebook
 ###social_fb
 ###social_fixed
@@ -911,6 +911,7 @@ _social_footer_
 ##.article_socials
 ##.articlesharebox
 ##.aside-social
+##.aside-socials
 ##.asocial-area
 ##.aspexifblikebox
 ##.aspexifbsidebox
@@ -1242,7 +1243,6 @@ _social_footer_
 ##.facebook-share-btn
 ##.facebook-share-button
 ##.facebook-share-link
-##.facebook-sharer
 ##.facebook-sidebar
 ##.facebook-social
 ##.facebookOuter
@@ -1581,7 +1581,6 @@ _social_footer_
 ##.herald-share-content
 ##.herald-soc-nav
 ##.hero-social
-##.hideSocial
 ##.hideshare-wrap
 ##.hola_share_player_btn
 ##.hola_share_player_btn_wrapper
@@ -1959,9 +1958,11 @@ _social_footer_
 ##.mvp-soc-mob-list
 ##.mvp-soc-mob-pin
 ##.mvp_facebook_widget
+##.mvp_social_widget
 ##.native-share
 ##.native-share-buttons
 ##.nav--social
+##.nav-footer-social
 ##.nav-share
 ##.nav-soc-but
 ##.nav-social
@@ -2139,6 +2140,7 @@ _social_footer_
 ##.rcom-social-site-footer
 ##.react-share__ShareButton
 ##.react_share_icons
+##.reddit-share-button
 ##.redes-sociais
 ##.redes-sociales
 ##.redes_sociales
@@ -2470,7 +2472,6 @@ _social_footer_
 ##.shareTwitter
 ##.shareVideo
 ##.shareWidget
-##.shareWidth1
 ##.shareWrap
 ##.share__button
 ##.share__button-container
@@ -2757,6 +2758,7 @@ _social_footer_
 ##.soc-btns
 ##.socButtons
 ##.socFbLikeShare
+##.socFbShare
 ##.soc_btn
 ##.soc_sharing
 ##.soc_square
@@ -2774,6 +2776,7 @@ _social_footer_
 ##.social--share
 ##.social--top
 ##.social--twitter
+##.social--vertical
 ##.social-action
 ##.social-addthis
 ##.social-apps
@@ -3220,6 +3223,7 @@ _social_footer_
 ##.sticky_social
 ##.stickysocial
 ##.story-share
+##.story-share-buttons
 ##.story-tool-share
 ##.story__share
 ##.story__social
@@ -3287,7 +3291,6 @@ _social_footer_
 ##.topSocial
 ##.top_share
 ##.top_social
-##.top_social_icons
 ##.topbar-social
 ##.topbar-socials
 ##.topbar__social-media
@@ -3317,6 +3320,7 @@ _social_footer_
 ##.twitter-btn
 ##.twitter-btn-icon
 ##.twitter-custom
+##.twitter-div
 ##.twitter-feed
 ##.twitter-follow
 ##.twitter-follow-box
@@ -4037,6 +4041,7 @@ gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##
 thenewstack.io##.share-media
 thehackernews.com##.share-open-modal
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
+forward.com##.share-post
 financemagnates.com##.share-this-article__wrapper
 breachmedia.ca,news.itsfoss.com##.share-toggle
 apkpure.com##.share-toolbox
@@ -4080,6 +4085,7 @@ tmz.com##.social-item
 afro.com,elsol.com.ar,hongkongfp.com,investigatemidwest.org,lafocusnews.com,ourweekly.com,theatlantavoice.com,washingtoncitypaper.com,washingtonmonthly.com##.social-links-menu
 denofgeek.com##.social-links__anchor--sharing
 defenseone.com,govexec.com,nextgov.com##.social-media-icons-container
+ojornalextra.com.br##.social-media-share-wrapper
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
 eltecolote.org,melmagazine.com,thefrisc.com,worldcrunch.com##.social-navigation
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
@@ -4124,11 +4130,8 @@ dcrainmaker.com,msmagazine.com##.swp_floating_horizontal_wrapper
 targettrend.com##.sws_supernormalaction
 notthebee.com##.take-shareables
 thediplomat.com##.td-follow
-areavip.com.br,heritagedaily.com,jewishpress.com,schengen.news,techgenyz.com,thenewsglobe.net##.td-post-sharing
-heritagedaily.com##.tdm_block_socials
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
-decrypt.co##.text-neutral-700
 chinadaily.com.cn##.three-right
 xbiz.com##.tool-list
 decrypt.co##.top-20.sticky
@@ -4425,7 +4428,6 @@ hdblog.it,hdmotori.it##.social_links
 macitynet.it##.tds-button
 tg.la7.it##.tgla7-condividi
 fastweb.it##.tutplus-socials
-sorrisi.com##.tvsc-footer-social
 sorrisi.com##.tvsc-social-share
 alfredopedulla.com##.tw-banner
 mymovies.it##.vota-pul-consiglio
@@ -4480,6 +4482,7 @@ noataque.com.br##.noticia-share
 oantagonista.com.br##.post-interna__content__compartilhamento
 ebc.com.br##.redes-sociais-header
 rtp.pt##.rmp-sharing
+ojornalextra.com.br##.share-card
 sicnoticias.pt##.share-toggle-wrapper
 jornaldenegocios.pt##.shareModal
 cnnbrasil.com.br##.single-editorial__follow
@@ -4521,8 +4524,6 @@ excelsior.com.mx###social-bottom-node
 forocoches.com###social-networks
 europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
-lasexta.com##.L6-channel-news__list
-lasexta.com##.L6-social-share
 adn40.mx##.ListSiguenos-SocialStrip
 elpais.com.uy##.Page-actions-wrapper
 rpp.pe##.article__follow

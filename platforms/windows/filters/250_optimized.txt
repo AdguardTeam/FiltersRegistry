@@ -1,5 +1,5 @@
-! Checksum: Hgs1Ua6JkiBQNyO1pzwGoA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1757911344-14400.patch
+! Checksum: hTvvjZ/fwY8cMNF+GjFhQQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1757997706-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.81
@@ -843,7 +843,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||grievetube.com^$all
 ||migrationoctavian.com^$all
 ||kettledroopingcontinuation.com^$all
-||numbirritablemajor.com^$all
 ||odourtaste.com^$all
 ||percentscalespoorly.com^$all
 ||delicioustightbronze.com^$all
@@ -873,6 +872,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||seenwage.com^$all
 ||spiceoptimistic.com^$all
 ||uncertainbill.com^$all
+||verbassistance.com^$all
 ||wayfarerorthodox.com^$all
 ||wretchedclearance.com^$all
 !+ PLATFORM(windows, mac, android, cli)
@@ -1338,6 +1338,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 !+ PLATFORM(windows, mac, android, cli)
 2a01:4f8:e0:19cb::1$network
 ||cant3am.com^$all
+||eln3ax.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 95.211.229.247$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -1583,6 +1584,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##div[class^=shareLinks]
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
+##div[id^=btnShare i]
 ##div[id^=dpsp-]
 ##h2[class*=share-links]
 ##share-grid
@@ -1944,6 +1946,7 @@ fandom.com##.unified-search__layout__right-rail
 ||vignette.wikia.nocookie.net/*/images/c/cd^$important
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
+||wikia.com/*/images/*/Wiki-background^$domain=wikia.org|fandom.com
 fandom.com#$?#:root { --theme-body-background-image: none !important }
 @@||wikia.nocookie.net^*/images/$image,badfilter
 fandom.com#$?#.page__right-rail:has(.sticky-modules-wrapper:last-of-type) { width: 210px !important }
@@ -1967,6 +1970,7 @@ spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-sn
 /frosmo.easy.js^
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
+/plugins/christmas-panda^
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 /snow.js|$script
 /wp-content/plugins/christmasify^
@@ -2080,6 +2084,7 @@ autoplius.lt#%#//scriptlet('ubo-ra.js', 'target', '[target="_blank"]', 'stay')
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 ##.et_pb_divider:not(html,body)
 ##div.dfd-spacer-module:empty
+###top_container_spacing:empty
 transfermarkt.com##.clearer
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
@@ -2117,7 +2122,6 @@ www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-
 tv.nu#?#a[title] span:has-text(IMDb)
 tv.nu##a[title] span:has(path[d^="M9.465 "])
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
-vg.no###comments
 ||comment.youmaker.com^$domain=theepochtimes.com
 ||viafoura.co^$domain=nottinghampost.com|liverpoolecho.co.uk
 indiatimes.com##div[class$="cmtwrapper "]
@@ -2601,6 +2605,9 @@ $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
+$removeparam=cx_testId
+$removeparam=cx_testVariant
+$removeparam=cx_artPos
 $removeparam=channable
 $removeparam=int_source
 $removeparam=int_medium
@@ -2731,6 +2738,7 @@ $removeparam=offer_id,domain=catch.com.au|surfshark.com
 $document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 ||amazon.$removeparam=th
 ||amazon.$removeparam=linkCode
+$removeparam=dchild
 ||amazon.$~xmlhttprequest,removeparam=qid
 ||amazon.$removeparam=sr
 ||amazon.$removeparam=creative
@@ -2836,7 +2844,6 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 $removeparam=_trkparms
 $removeparam=_from
 $removeparam=sacat
-$removeparam=amdata,domain=ebay.*
 $removeparam=hash,domain=ebay.*
 ||ebay.$removeparam=mkevt
 ||ebay.$removeparam=mkcid
@@ -3163,7 +3170,6 @@ $document,removeparam=channel,domain=1sol.io|amazon.*|bybit.com|coinpanel.com|do
 $removeparam=fr,domain=baidu.com|thegay.com|todayonline.com|hclips.com|search.yahoo.com
 $removeparam=promo,domain=thegay.com|hammacher.com|upornia.com|hclips.com
 $removeparam=sref,domain=bloomberg.com|go.skimresources.com|go.skimlinks.com|go.redirectingat.com
-$removeparam=ctc,domain=avantlink.com
 $removeparam=pid,document,domain=123inkjets.com|appsflyer.com|bergfreunde.*|bybit.com|dobrytextil.cz|farfetch.com|fifa.com|glami.cz|hepsiburada.com|neeva.com|onelink.me|play.google.com|samsclub.com|shopee.*|th.bing.com|tiktok.com
 $removeparam=subid,domain=admitad.com|mintmobile.com|secretlab.*|webmasterplan.com
 $removeparam=tracking,domain=affiliatefuture.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|gtomega.*|malwarebytes.com|messenger.com
