@@ -1,9 +1,9 @@
-! Checksum: 2wtI/fAeAd6oRoXP2kSL+Q
-! Diff-Path: ../patches/21/21-s-1758024923-3600.patch
+! Checksum: pmVya54WgJoDC2uMNClKkQ
+! Diff-Path: ../patches/21/21-s-1758028676-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.37.42
-! TimeUpdated: 2025-09-16T12:11:52+00:00
+! Version: 2.0.37.43
+! TimeUpdated: 2025-09-16T13:14:19+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8402,6 +8402,9 @@ eiga.com##.header-pure-banner
 !##############################
 ! SECTION: Tweaks - CSS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213540
+asd.homes#$##clickme + a#btn[style*="display: none;"] { display: table !important; }
+asd.homes#$##clickme:has(+ a#btn[style*="display: none;"]) { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210222
 odiadance.com#$##btn6 { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209271
@@ -8846,6 +8849,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213540
+asd.homes#%#//scriptlet('trusted-replace-node-text', 'script', 'downloadbtn', '/seconds: \d+/g', 'seconds: 0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213170
 financewada.com,utkarshonlinetest.com,techbezzie.com#%#//scriptlet('adjust-setInterval', '/time--|timeto--/', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212580

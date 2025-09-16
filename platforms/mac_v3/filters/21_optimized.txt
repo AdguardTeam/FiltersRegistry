@@ -1,9 +1,9 @@
-! Checksum: yBoazlCYVOQpKsqKeXWunw
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1758024948-3600.patch
+! Checksum: LNXwQNXrza3OTkwXKFVw6w
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1758028709-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.37.42
-! TimeUpdated: 2025-09-16T12:11:52+00:00
+! Version: 2.0.37.43
+! TimeUpdated: 2025-09-16T13:14:19+00:00
 ! Expires: 12 hours (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -3497,6 +3497,8 @@ eiga.com##.header-pure-banner
 !##############################
 !######### CSS tweaks #########
 !##############################
+asd.homes#$##clickme + a#btn[style*="display: none;"] { display: table !important; }
+asd.homes#$##clickme:has(+ a#btn[style*="display: none;"]) { display: none !important; }
 odiadance.com#$##btn6 { display: block !important; }
 @@||starfilx.in/wp-content/plugins/wccp-pro/$domain=starfilx.in
 lzmods.com,iseekgames.com#%#//scriptlet('trusted-click-element', '.wfl_button')
@@ -3603,6 +3605,7 @@ softpedia.com#$#iframe.swipebox-rightxd[id="relcontent"] { top: 60px!important; 
 !##############################
 !######### JS tweaks ##########
 !##############################
+asd.homes#%#//scriptlet('trusted-replace-node-text', 'script', 'downloadbtn', '/seconds: \d+/g', 'seconds: 0')
 financewada.com,utkarshonlinetest.com,techbezzie.com#%#//scriptlet('adjust-setInterval', '/time--|timeto--/', '*', '0.001')
 goldengoalsfinance.com#%#//scriptlet('adjust-setInterval', '/timeLeft|counter/', '*', '0.001')
 sporx.com#%#//scriptlet('set-constant', 'Object.prototype.isStickyModeTemporarilyDisabled', 'true')
