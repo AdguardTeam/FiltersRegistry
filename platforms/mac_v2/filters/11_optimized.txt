@@ -1,9 +1,9 @@
-! Checksum: 4FrU0K2nxtf/b7oFYuxuog
-! Diff-Path: ../patches/11_optimized/11_optimized-s-1758021040-3600.patch
+! Checksum: HecQTh2ldaVS/Xt1Flq8UQ
+! Diff-Path: ../patches/11_optimized/11_optimized-s-1758096759-3600.patch
 ! Title: AdGuard Mobile Ads filter (Optimized)
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.64.36
-! TimeUpdated: 2025-09-16T11:06:36+00:00
+! Version: 2.0.64.37
+! TimeUpdated: 2025-09-17T08:08:47+00:00
 ! Expires: 12 hours (update frequency)
 ||*.libaishuo.com^$third-party
 ||adx-open-service.youku.com^
@@ -1077,6 +1077,9 @@ m.proporn.com#%#//scriptlet("set-cookie", "no_postitial_content", "1")
 timesnownews.com#%#//scriptlet('hide-in-shadow-dom', '.aftAd')
 pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('set-constant', 'abp1', '0')
 ||pornhub.com^$cookie=views
+pornhub.com#%#//scriptlet('remove-cookie', 'views')
+pornhub.com#%#//scriptlet('adjust-setTimeout', 'continueToVideoUrl', '*', '0.001')
+pornhub.com#%#//scriptlet('abort-current-inline-script', 'JSON.parse', '/interstitial?viewkey=')
 tech.hindustantimes.com#%#//scriptlet('hide-in-shadow-dom', '.ampAds')
 healthshots.com#%#//scriptlet('hide-in-shadow-dom', 'div[class^="storyBlock"]:not(.trackWidget), .storyAd')
 m.viptube.com#%#//scriptlet("set-constant", "player.postitialTimeout", "0")

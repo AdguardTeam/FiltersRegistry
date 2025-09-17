@@ -1,9 +1,9 @@
-! Checksum: FY2b0pEukRD8pT8x60Ne3w
-! Diff-Path: ../patches/11/11-s-1758021013-3600.patch
+! Checksum: Yt2GCjNHaibCIKUJ+hK17A
+! Diff-Path: ../patches/11/11-s-1758096734-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.64.36
-! TimeUpdated: 2025-09-16T11:06:36+00:00
+! Version: 2.0.64.37
+! TimeUpdated: 2025-09-17T08:08:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1285,8 +1285,12 @@ m.proporn.com#%#//scriptlet("set-cookie", "no_postitial_content", "1")
 timesnownews.com#%#//scriptlet('hide-in-shadow-dom', '.aftAd')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134894
 pornhub.com,pornhub.org,pornhub.net#%#//scriptlet('set-constant', 'abp1', '0')
+! https://github.com/AdguardTeam/AdguardFilters/issues/213603
 ! https://forum.adguard.com/index.php?threads/12443/
 ||pornhub.com^$cookie=views
+pornhub.com#%#//scriptlet('remove-cookie', 'views')
+pornhub.com#%#//scriptlet('adjust-setTimeout', 'continueToVideoUrl', '*', '0.001')
+pornhub.com#%#//scriptlet('abort-current-inline-script', 'JSON.parse', '/interstitial?viewkey=')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/130689
 tech.hindustantimes.com#%#//scriptlet('hide-in-shadow-dom', '.ampAds')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129754
