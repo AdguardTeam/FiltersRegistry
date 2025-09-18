@@ -1,9 +1,9 @@
-! Checksum: NtVwyd5lOxqfH9p2IPo1dw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1758168734-3600.patch
+! Checksum: fts1IVYbRS+L1+RPvWSxhw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1758172272-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.43.29
-! TimeUpdated: 2025-09-18T04:08:24+00:00
+! Version: 2.2.43.30
+! TimeUpdated: 2025-09-18T05:07:34+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -8352,7 +8352,7 @@ zdnet.com#%#//scriptlet('trusted-set-cookie', 'OptanonConsent', 'groups=C0001%3A
 help.snapchat.com#%#//scriptlet('prevent-addEventListener', 'wheel', 'preventDefault()')
 sudameapteek.ee#%#//scriptlet('set-cookie', 'gdpr_cookie_token', '1')
 sii.org.pl,ruhr24.de,thomas-philipps.de,fraenkische-rezepte.de,parkerlebnis.de,moin.de,futurezone.de,derwesten.de#%#//scriptlet('trusted-click-element', '.cmpboxbtnspan > a.cmpboxbtnyes')
-infranken.de#%#//scriptlet('trusted-click-element', 'body > div[id][class]:first-child >>> div[id][class][aria-labelledby^="cmpboxheadline"] .cmpboxbtnspan a.cmpboxbtnyes')
+security-insider.de,infranken.de#%#//scriptlet('trusted-click-element', 'body > div[id][class]:first-child >>> div[id][class][aria-labelledby^="cmpboxheadline"] .cmpboxbtnspan a.cmpboxbtnyes')
 wow-xxx-videos.com,xv-ru.com,xvideos.com#%#//scriptlet('trusted-click-element', 'span#disclaimer-reject_cookies')
 crtm.es#%#//scriptlet('set-cookie', 'crtmcookiesCPersonalizacion', '1')
 crtm.es#%#//scriptlet('set-cookie', 'crtmcookiesCPublicitarias', '1')
@@ -12515,6 +12515,7 @@ aol.com#@#.adwrap
 ||accounts.google.com/gsi/iframe/select?client_id=$domain=reddit.com
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+msn.com#%#//scriptlet('inject-css-in-shadow-dom', '.dialog[data-t*="personalizeCexp_CoachMarkContainer"] { display: none !important; }')
 codziennypoznan.pl##header > div[data-elementor-type="jet_header"] > section[data-settings*="jet_parallax_layout_animation_prop"]
 india.com##.PreferredSources-content
 cifrus.ru##.overlay-widget
@@ -16556,6 +16557,9 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+security-insider.de##.inf-col-12.inf-tab-ls-col-6:has(> div > #inf-box__form_newsletter)
+security-insider.de##section[data-infinity-id^="newsletter/"]
+zena.aktualne.cz##.e-articles-show-google-news-follow
 vgtimes.com,vgtimes.ru##.tg_ad
 focus-entmt.com##.relative.bg-lighter-gray:has(> #newsletter)
 kotaku.com##.post-bottom > div.mt-10
