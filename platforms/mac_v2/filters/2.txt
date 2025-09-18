@@ -1,9 +1,9 @@
-! Checksum: vXdM3Pn74u3B7GU82a3vig
-! Diff-Path: ../patches/2/2-s-1758176046-3600.patch
+! Checksum: hgWyUoUzDUeHsROSrh4/QQ
+! Diff-Path: ../patches/2/2-s-1758179543-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.11.57
-! TimeUpdated: 2025-09-18T06:09:24+00:00
+! Version: 2.4.11.58
+! TimeUpdated: 2025-09-18T07:07:45+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10384,6 +10384,10 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 ! NOTE: Regular rules
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213645
+owlzo.com#@##ad_unit
+@@||owlzo.com/gpt_ads-public.js$domain=owlzo.com
+owlzo.com#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213477
 ||pzfans.com/static/js/adblock-detector.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213538
@@ -36417,6 +36421,7 @@ www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
 ! Fix ads with a specfic Google account and for case when JSON.stringify is not writable
 www.youtube.com#%#(()=>{const e={construct:(e,t,c)=>{try{const n=t[0];let r=t[1]?.body;if(!n?.includes("youtubei")||location.href.includes("/shorts/")||!r)return Reflect.construct(e,t,c);if((r.includes('"contentPlaybackContext"')||r.includes('"adSignalsInfo"'))&&(!r.includes('"params":"yAEB')||!r.includes('"clientScreen":"ADUNIT"'))){const n=JSON.parse(r);if(!n.context?.client)return Reflect.construct(e,t,c);n.context.client.clientScreen="ADUNIT",n.playbackContext&&(n.params=`yAEB${n.params?n.params:""}`),n.playerRequest&&(n.playerRequest.params=`yAEB${n.playerRequest.params?n.playerRequest.params:""}`),r=JSON.stringify(n),t[1].body=r}}catch(e){console.trace("Error occurred:",e)}return Reflect.construct(e,t,c)}};window.Request=new Proxy(window.Request,e)})();
+www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{if(location.href.includes("/shorts/"))return Reflect.apply(e,t,n);try{let a=n[0];if(a&&(a.includes('"contentPlaybackContext"')||a.includes('"adSignalsInfo"'))&&(!a.includes('"params":"yAEB')||!a.includes('"clientScreen":"ADUNIT"'))){const r=JSON.parse(a);if(!r.context?.client)return Reflect.apply(e,t,n);r.context.client.clientScreen="ADUNIT",r.playbackContext&&(r.params=`yAEB${r.params?r.params:""}`),r.playerRequest&&(r.playerRequest.params=`yAEB${r.playerRequest.params?r.playerRequest.params:""}`),a=JSON.stringify(r),n[0]=a}}catch(e){}return Reflect.apply(e,t,n)}};window.TextEncoder.prototype.encode=new Proxy(window.TextEncoder.prototype.encode,e)})();
 www.youtube.com#%#(()=>{const e={apply:(e,r,t)=>{if(location.href.includes("/shorts/"))return Reflect.apply(e,r,t);try{const a=t[0];if(!a?.context?.client)return Reflect.apply(e,r,t);a.context.client.clientScreen="ADUNIT",a.playbackContext&&(a.params=`yAEB${a.params?a.params:""}`),a.playerRequest&&(a.playerRequest.params=`yAEB${a.playerRequest.params?a.playerRequest.params:""}`),t[0]=a}catch(e){console.trace("Error occurred:",e)}return Reflect.apply(e,r,t)}};window.JSON.stringify=new Proxy(window.JSON.stringify,e)})();
 ! Fix ads on https://www.youtube.com/shorts/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1991263854
@@ -82055,6 +82060,7 @@ browsershots.org#@#.advert_area
 ||akouptishoa.net^
 ||akqpfvmbvrqjf.online^
 ||akqqnwlzvbjvq.top^
+||akqqnwlzvzboy.top^
 ||akravaguity.click^
 ||aksvougxccpvg.online^
 ||aksxpzjcwbrwu.website^
@@ -84460,6 +84466,7 @@ browsershots.org#@#.advert_area
 ||bgmovoyzmyzv.top^
 ||bgqehgved.com^
 ||bgrguptkxtous.online^
+||bgtcoxaxwotqac.com^
 ||bgtee.com^
 ||bgvnctdwrlsrx.website^
 ||bgwafghjtwywv.online^
@@ -88835,6 +88842,7 @@ browsershots.org#@#.advert_area
 ||denoughtanot.info^
 ||denoughtanoth.com^
 ||dense-thing.pro^
+||densenimsonic.qpon^
 ||densestress.pro^
 ||densubmarinesubdued.com^
 ||denswordyogurt.com^
@@ -96961,6 +96969,7 @@ browsershots.org#@#.advert_area
 ||jdfxtlykcmrly.online^
 ||jdhxvjrildzjt.site^
 ||jdlqivqfhiyjz.site^
+||jdmlolpf.com^
 ||jdohegxjytnit.space^
 ||jdoixvuubfghrt.com^
 ||jdoqocy.com^
@@ -97125,6 +97134,7 @@ browsershots.org#@#.advert_area
 ||jingleshoncho.com^
 ||jinklecarted.help^
 ||jinnylevis.digital^
+||jinupfolds.cfd^
 ||jipperwinned.world^
 ||jipvtxdxtrnsh.website^
 ||jiqiv.com^
@@ -97541,6 +97551,7 @@ browsershots.org#@#.advert_area
 ||jutepolitei.cfd^
 ||juttiedpulka.cfd^
 ||juturnadormer.help^
+||jutvmmrgcxkybq.net^
 ||juuwgmpfxmocd.com^
 ||juvbjcorcemn.com^
 ||juvenilesoftlysoda.com^
@@ -98481,6 +98492,7 @@ browsershots.org#@#.advert_area
 ||kvkgjploikopm.com^
 ||kvmaekkoql.com^
 ||kvobmcyslpxwy.online^
+||kvoltomolbbxg.store^
 ||kvozsayiewspf.rocks^
 ||kvpjjewuoappu.store^
 ||kvqtxphjipbki.website^
@@ -108310,6 +108322,7 @@ browsershots.org#@#.advert_area
 ||rjrsirnojnkxod.com^
 ||rjubseameyqj.xyz^
 ||rjw4obbw.com^
+||rjwwqkrmymvea.top^
 ||rjwwqkrmyvzyw.top^
 ||rjwwqkwzkvayq.top^
 ||rjxczvecqiipf.site^
@@ -109785,6 +109798,7 @@ browsershots.org#@#.advert_area
 ||shipsmotorw.xyz^
 ||shipwreckclassmate.com^
 ||shirdaizoongo.net^
+||shirkyoops.click^
 ||shirtsamends.help^
 ||shistsoblata.digital^
 ||shiswashisco.com^
@@ -114337,6 +114351,7 @@ browsershots.org#@#.advert_area
 ||weownthetraffic.com^
 ||wererxrzmp.com^
 ||wesicuros.com^
+||weskitstoiler.help^
 ||wesmallproclaim.com^
 ||westcoa.com^
 ||wet-ambition.pro^
@@ -114835,6 +114850,7 @@ browsershots.org#@#.advert_area
 ||wpfly-sbpkrd.icu^
 ||wpfqfuvqerds.com^
 ||wphsaukshz.com^
+||wpiagwas.com^
 ||wpjalkjzkceh.com^
 ||wpjugqasgblow.space^
 ||wpmpdpovgmnru.website^
@@ -114911,6 +114927,7 @@ browsershots.org#@#.advert_area
 ||wsssaunhzztxj.store^
 ||wssxudxjuemps.com^
 ||wstep4.biz^
+||wstohshlvmiqd.space^
 ||wsvmoidbtppok.online^
 ||wswoubndrdlkc.global^
 ||wswspyyjkqlxrn.net^
