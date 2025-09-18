@@ -1,9 +1,9 @@
-! Checksum: h/+AlDhqoA2NLIwBFgn7ow
-! Diff-Path: ../patches/18/18-s-1758155303-3600.patch
+! Checksum: 6XSf+kz7LTI7SukCPMCOXA
+! Diff-Path: ../patches/18/18-s-1758165687-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.70.32
-! TimeUpdated: 2025-09-18T00:24:45+00:00
+! Version: 2.0.70.33
+! TimeUpdated: 2025-09-18T03:17:57+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2540,6 +2540,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+emanuelberg.com#%#//scriptlet('trusted-set-cookie', 'accepted_cookies_types_2', '%7B%22preferences%22%3Afalse%2C%22statistics%22%3Afalse%2C%22marketing%22%3Afalse%7D')
 ordrepsy.qc.ca#$#body.ordrepsy.cookies-banner-visible { overflow: auto !important; }
 enerji-dunyasi.com###cerezOnayKutusu
 digtrace.net##.fixed.bottom-0:has(> .animate-slide-up > p > a[href="/privacy"])
@@ -17464,6 +17465,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213651
+oponyexpress.pl#@#body #cookie-policy
+! https://github.com/AdguardTeam/AdguardFilters/issues/213653
+emanuelberg.com#@##notice-cookie-block
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213607
 fabrykarowerow.com#@#.js-cookies
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213608

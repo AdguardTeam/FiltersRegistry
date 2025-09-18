@@ -1,9 +1,9 @@
-! Checksum: 1wTOQdsJlutk363GeZv0Tw
-! Diff-Path: ../patches/14/14-s-1758162987-3600.patch
+! Checksum: kffa+26KdMJa8/s4TGBsPg
+! Diff-Path: ../patches/14/14-s-1758165703-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.43.27
-! TimeUpdated: 2025-09-18T02:32:11+00:00
+! Version: 2.2.43.28
+! TimeUpdated: 2025-09-18T03:17:50+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2541,6 +2541,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+emanuelberg.com#%#//scriptlet('trusted-set-cookie', 'accepted_cookies_types_2', '%7B%22preferences%22%3Afalse%2C%22statistics%22%3Afalse%2C%22marketing%22%3Afalse%7D')
 ordrepsy.qc.ca#$#body.ordrepsy.cookies-banner-visible { overflow: auto !important; }
 enerji-dunyasi.com###cerezOnayKutusu
 digtrace.net##.fixed.bottom-0:has(> .animate-slide-up > p > a[href="/privacy"])
@@ -17496,6 +17497,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213651
+oponyexpress.pl#@#body #cookie-policy
+! https://github.com/AdguardTeam/AdguardFilters/issues/213653
+emanuelberg.com#@##notice-cookie-block
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213607
 fabrykarowerow.com#@#.js-cookies
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213608
