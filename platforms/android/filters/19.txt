@@ -1,9 +1,9 @@
-! Checksum: 1zoMfaRuN7kJB36bSciC9A
-! Diff-Path: ../patches/19/19-s-1758262404-3600.patch
+! Checksum: /WgDfAO04P8DtLM0BX3bHA
+! Diff-Path: ../patches/19/19-s-1758280213-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.62.39
-! TimeUpdated: 2025-09-19T06:09:59+00:00
+! Version: 2.0.62.40
+! TimeUpdated: 2025-09-19T11:06:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3164,6 +3164,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+tri247.com##body > div[style*="z-index:"]:has(> div[style*="cursor:"] > img[alt="Progressier logo"])
 ag.mos.ru#%#//scriptlet('set-session-storage-item', 'ag-forced-auth-modal-displayed', 'true')
 msn.com#%#//scriptlet('inject-css-in-shadow-dom', '.dialog[data-t*="personalizeCexp_CoachMarkContainer"] { display: none !important; }')
 codziennypoznan.pl##header > div[data-elementor-type="jet_header"] > section[data-settings*="jet_parallax_layout_animation_prop"]
@@ -10007,6 +10008,9 @@ www.kinopoisk.ru#$#body[class*="styles_body"] { overflow: auto !important; }
 ! Tegna Inc.
 myfoxzone.com,wtol.com,5newsonline.com,fox61.com,wthr.com,wqad.com,fox43.com,10tv.com,localmemphis.com,newswest9.com,weareiowa.com,krem.com,kcentv.com,cbs19.tv,kiiitv.com,12newsnow.com,cbs8.com,kvue.com,wbir.com,wltx.com,wgrz.com,newscentermaine.com,whas11.com,ktvb.com,13wmaz.com,firstcoastnews.com,wnep.com,wtsp.com,wfaa.com,kgw.com,king5.com,wcnc.com,kens5.com,ksdk.com,khou.com,wusa9.com,abc10.com,wwltv.com,11alive.com,wfmynews2.com,thv11.com,9news.com,wkyc.com,wzzm13.com,kare11.com,13newsnow.com,12news.com#$?#div[data-module="grid"] > dialog[data-name="exitInterstitial"] { remove: true; }
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213716
+!+ PLATFORM(windows, mac, android)
+tri247.com#?#body > div[style*="z-index:"]:has(> div[style*="cursor:"] > img[alt="Progressier logo"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175941
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169531#issuecomment-1877526044
 ||smetrics.telegraph.co.uk^

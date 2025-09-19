@@ -1,9 +1,9 @@
-! Checksum: xkfK6EAzXWE0BUrTAfFkzw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1758276753-3600.patch
+! Checksum: 6TFY2pZ5+jccOHUR2pe+jw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1758280246-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.43.45
-! TimeUpdated: 2025-09-19T10:08:24+00:00
+! Version: 2.2.43.46
+! TimeUpdated: 2025-09-19T11:06:41+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -12513,6 +12513,7 @@ aol.com#@#.adwrap
 ||accounts.google.com/gsi/iframe/select?client_id=$domain=reddit.com
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 /.*/$permissions=identity-credentials-get=(),document
+tri247.com##body > div[style*="z-index:"]:has(> div[style*="cursor:"] > img[alt="Progressier logo"])
 ag.mos.ru#%#//scriptlet('set-session-storage-item', 'ag-forced-auth-modal-displayed', 'true')
 msn.com#%#//scriptlet('inject-css-in-shadow-dom', '.dialog[data-t*="personalizeCexp_CoachMarkContainer"] { display: none !important; }')
 codziennypoznan.pl##header > div[data-elementor-type="jet_header"] > section[data-settings*="jet_parallax_layout_animation_prop"]
@@ -15737,6 +15738,8 @@ www.kinopoisk.ru#$#.ReactModalPortal > div.ReactModal__Overlay:has(> div.ReactMo
 www.kinopoisk.ru#$#.ReactModalPortal > div.ReactModal__Overlay:has(> div.ReactModal__Content > div[data-tid="fb14777c"]) { display: none !important; }
 www.kinopoisk.ru#$#body[class*="styles_body"] { overflow: auto !important; }
 myfoxzone.com,wtol.com,5newsonline.com,fox61.com,wthr.com,wqad.com,fox43.com,10tv.com,localmemphis.com,newswest9.com,weareiowa.com,krem.com,kcentv.com,cbs19.tv,kiiitv.com,12newsnow.com,cbs8.com,kvue.com,wbir.com,wltx.com,wgrz.com,newscentermaine.com,whas11.com,ktvb.com,13wmaz.com,firstcoastnews.com,wnep.com,wtsp.com,wfaa.com,kgw.com,king5.com,wcnc.com,kens5.com,ksdk.com,khou.com,wusa9.com,abc10.com,wwltv.com,11alive.com,wfmynews2.com,thv11.com,9news.com,wkyc.com,wzzm13.com,kare11.com,13newsnow.com,12news.com#$?#div[data-module="grid"] > dialog[data-name="exitInterstitial"] { remove: true; }
+!+ PLATFORM(windows, mac, android)
+tri247.com#?#body > div[style*="z-index:"]:has(> div[style*="cursor:"] > img[alt="Progressier logo"])
 ||smetrics.telegraph.co.uk^
 abema.tv#$#.body--prevent-scroll { overflow: auto !important; }
 abema.tv#$#.com-onboarding-OnboardingModalContainerView--enter-done { display: none !important; }
@@ -20936,7 +20939,8 @@ idealo.de##section[class^="android-app-banner"]
 mi.com##.top-drainage
 vodafone.com.tr##header > div[class^="Blockstyle__Block"]:has(> div[class^="Blockstyle__ContentWrapper"] a[href^="vfss://app/ESHOP/"])
 ||amazonaws.com/mobligo_smart_banner.js
-tri247.com##.gb-container > .gb-container:has(> .progressier-install-button)
+tri247.com##.nav--mobile > .gb-container > .progressier-install-button
+tri247.com##.gb-container > .gb-container:has(> .progressier-install-button:only-child)
 tver.jp##div[class^="Episode_companionAd__"]
 examine.com##body > section.z-1000.sm\:hidden
 nearme.jp#%#//scriptlet('set-cookie-reload', 'DISPLAY_DOWNLOAD_APP_BANNER', 'false')
