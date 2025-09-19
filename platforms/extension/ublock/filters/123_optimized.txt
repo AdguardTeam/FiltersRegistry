@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: K+k45RVQrLFWwwq6GLEXyA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1758243156-14400.patch
+! Checksum: 7BdkC5mUL50/VrmjO7YohA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1758256907-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.47.96
-! TimeUpdated: 2025-09-19T00:47:53+00:00
+! Version: 2.1.47.97
+! TimeUpdated: 2025-09-19T04:37:01+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -114,6 +114,7 @@
 /sme-facebook-likebox-sidebar/*
 /sns_naverband.png
 /social-footer.jpg
+/social-footer.png
 /Social-Sidebar.js
 /social-twit.png
 /social2s.min.js
@@ -202,6 +203,7 @@ _social_footer_
 ###dcssb-facebook
 ###dcssb-plusone
 ###dcssb-twitter
+###desktop-share-wrapper
 ###details-share-icon-link
 ###divSideShare
 ###embed-share
@@ -486,7 +488,6 @@ _social_footer_
 ###sharer
 ###sharethis
 ###sharevideo
-###sharewrapper
 ###sharing-bar
 ###sharing-button
 ###sharing-buttons
@@ -873,7 +874,6 @@ _social_footer_
 ##.article-sharing
 ##.article-soc
 ##.article-social
-##.article-social-bar
 ##.article-social-btn
 ##.article-social-button
 ##.article-social-container
@@ -989,7 +989,6 @@ _social_footer_
 ##.block_social
 ##.blog-post-share
 ##.blog-share
-##.blog-share-container
 ##.blog-social
 ##.blog-social-icons
 ##.blog-social-item
@@ -1169,6 +1168,8 @@ _social_footer_
 ##.eg-footer-icon-vk
 ##.eg-footer-icon-youtube
 ##.ekit_social_media
+##.el-icon-facebook
+##.el-icon-twitter
 ##.elem-info__share
 ##.element-share-block
 ##.element-socials
@@ -1191,7 +1192,6 @@ _social_footer_
 ##.entry-socials
 ##.entryShare
 ##.entry__share
-##.entry_share
 ##.entypo-share
 ##.entypo-social
 ##.epcl-share-container
@@ -1364,7 +1364,6 @@ _social_footer_
 ##.follow__list
 ##.followus_net
 ##.followuson
-##.foo-facebook
 ##.foo_social
 ##.foot-share
 ##.foot-soc-fb
@@ -2145,6 +2144,7 @@ _social_footer_
 ##.redes-sociais
 ##.redes-sociales
 ##.redes_sociales
+##.region-social
 ##.reseaux-sociaux
 ##.reseaux-sociaux-list
 ##.resp-sharing-button
@@ -2164,7 +2164,6 @@ _social_footer_
 ##.s-linkedin
 ##.s-pinterest
 ##.s-share
-##.s-share-button
 ##.s-social
 ##.s-social-item
 ##.s-social-share
@@ -2183,6 +2182,7 @@ _social_footer_
 ##.sb_share
 ##.sc--twitter
 ##.sc-button-share
+##.sc-social
 ##.sc-social-links
 ##.scShareBoxRow
 ##.scShareText
@@ -2399,7 +2399,6 @@ _social_footer_
 ##.share-tools--secondary
 ##.share-tools-buttons-top
 ##.share-tools-container
-##.share-tools-wrapper
 ##.share-topic
 ##.share-tw
 ##.share-twitter
@@ -2513,7 +2512,6 @@ _social_footer_
 ##.share_email_article
 ##.share_facebook
 ##.share_fb
-##.share_google
 ##.share_group
 ##.share_hidden
 ##.share_horizontal
@@ -2720,7 +2718,6 @@ _social_footer_
 ##.siteFooter_socialCon
 ##.siteFooter_socialHeader
 ##.siteFooter_socialItem
-##.sitewide-footer--social-nav
 ##.sitewide-social-media
 ##.slide_likebox
 ##.sn-share
@@ -2883,10 +2880,12 @@ _social_footer_
 ##.social-main-footer
 ##.social-media-bar
 ##.social-media-buttons-footer
+##.social-media-fixed
 ##.social-media-footer
 ##.social-media-header
 ##.social-media-li
 ##.social-media-list-container
+##.social-media-module
 ##.social-media-nav
 ##.social-media-nav__sticky
 ##.social-media-pages
@@ -3165,7 +3164,6 @@ _social_footer_
 ##.socials-widget
 ##.socials-wrap
 ##.socials_box
-##.socials_buttons
 ##.socials_widget
 ##.socialshare
 ##.socialshare-wrapper
@@ -3444,7 +3442,6 @@ _social_footer_
 ##.widget_epcl_social
 ##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook_likebox
-##.widget_facebook_page_plugin_widget
 ##.widget_follow_button_widget
 ##.widget_g1_socials
 ##.widget_jnews_social
@@ -3726,7 +3723,6 @@ motortrend.com###socialshare_title
 news.crunchbase.com###ss-sticky-bar
 jstage.jst.go.jp###sticky-sidebar-shareicons
 rfa.org###storytoptools
-techdirt.com###subscribe
 osxdaily.com###subscribe_box
 thenewstack.io###tns-footer-bar
 thenewstack.io###tns-post-body-sidebar-share
@@ -3822,9 +3818,11 @@ consumerreports.org##.btn__social
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
 askmen.com##.byline__social
+nature.com##.c-article-extras-additional-links
 lawandcrime.com##.c-article-foot__site
 thenextweb.com##.c-engage
 lawandcrime.com##.c-header-social-item
+dev.to##.c-link--icon-alone
 euroweeklynews.com,thisisfutbol.com,videocelts.com##.c-post__social
 kyivindependent.com##.c-share__wrapper
 theglobeandmail.com##.c-site-header__buttons
@@ -3961,7 +3959,6 @@ arabnews.com##.meta-area
 smashingmagazine.com##.meta-box--share
 businessinsider.com##.mi-logo-social-container
 sportsnet.ca##.micro_mail__dd_RW
-washingtonian.com##.min-height-800
 boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
 yardbarker.com##.msnfc
@@ -3994,6 +3991,7 @@ getcomics.org##.post-footer-shr
 androidheadlines.com,bukvy.org,digitalinformationworld.com,douglasnow.com,earthsky.org,energy-reporters.com,gidhaur.com,san.com,watchinamerica.com##.post-share
 discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
 foodandwaterwatch.org,medcitynews.com,publicbooks.org##.post-social-share
+eurointegration.com.ua##.post__social
 cointelegraph.com##.post__socials-block
 pravda.com.ua##.post_social_item
 tweaktown.com##.pr-p7.fsvgs
@@ -4297,7 +4295,6 @@ megaup.net##.socialsider
 arbys.com#?#[class^="linkBlocks_linkBlock__"]:-abp-has(> [class^="linkBlocks_socialLinkBlockList__"])
 relationshiphero.com#?#div:-abp-has(+ .socialIcons)
 viranomaisuutiset.fi#?#.wpb_wrapper.td_block_wrap:-abp-has(a[href^="https://whatsapp.com"])
-nova.bg##.subs-wrapper
 pctipp.ch###buttons-social
 freiewelt.net###single-page-article > aside
 freiewelt.net###socials-fokus
@@ -4359,6 +4356,7 @@ jutarnji.hr##.item_social_share
 storm.mg###article_sns_inner
 ettoday.net###et_sticky_pc
 ettoday.net##.et_social_2
+rti.org.tw##.fbIcon
 news.cn##.pageShare
 people.com.cn##.section-common-share-wrap
 mingpao.com##.ssm
