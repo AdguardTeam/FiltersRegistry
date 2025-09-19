@@ -1,9 +1,9 @@
-! Checksum: z8+xCfsgcu/kvJIF6it5CA
-! Diff-Path: ../patches/18/18-s-1758204705-3600.patch
+! Checksum: dFgj+Y247PfpoIleyDP6zQ
+! Diff-Path: ../patches/18/18-s-1758258714-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.70.43
-! TimeUpdated: 2025-09-18T14:08:09+00:00
+! Version: 2.0.70.44
+! TimeUpdated: 2025-09-19T05:08:17+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2540,6 +2540,15 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+regiojet.pl#%#//scriptlet('set-cookie', 'functional', 'false')
+regiojet.pl#%#//scriptlet('set-cookie', 'marketing', 'false')
+regiojet.pl#%#//scriptlet('set-cookie', 'performance', 'false')
+regiojet.pl#%#//scriptlet('set-cookie', 'personalization', 'false')
+regiojet.pl#%#//scriptlet('set-cookie', 'userData', 'false')
+regiojet.pl#%#//scriptlet('set-cookie', 'required', 'true')
+ro.kruk.eu#%#//scriptlet('trusted-click-element', '.ch2-dialog-actions > button.ch2-deny-all-btn')
+e-kruk.pl,pl.kruk.eu#%#//scriptlet('trusted-set-cookie', 'klaro', '%7B%22functional%22%3Atrue%2C%22analytics%22%3Afalse%2C%22marketing%22%3Afalse%2C%22others%22%3Afalse%7D')
+es.kruk.eu#%#//scriptlet('set-cookie', 'CookieAgreement', '0')
 phys.org##.grecaptcha-badge
 emanuelberg.com#%#//scriptlet('trusted-set-cookie', 'accepted_cookies_types_2', '%7B%22preferences%22%3Afalse%2C%22statistics%22%3Afalse%2C%22marketing%22%3Afalse%7D')
 ordrepsy.qc.ca#$#body.ordrepsy.cookies-banner-visible { overflow: auto !important; }
@@ -3135,7 +3144,7 @@ unimedbauru.com.br###protegON-full-content-cookies
 remaker.ai##.remaker-container-footer-cookie
 helloclue.com###gatsby-focus-wrapper > section:has(> p[class*="CookieNotification"])
 longos.com##gg-cookies-consent-pop-up
-kamrti.com,gorenje-ru.ru,italiadomani.gov.it,msvsphere-os.ru,sms-activate.page,u-mama.ru,visionexpress.pl,psoriaz.life,poisknews.ru##.cookie
+investcapital.com.mt,kamrti.com,gorenje-ru.ru,italiadomani.gov.it,msvsphere-os.ru,sms-activate.page,u-mama.ru,visionexpress.pl,psoriaz.life,poisknews.ru##.cookie
 wegmans.com##.component--cookie-banner
 vod3.pl#$#body { overflow: auto !important; }
 podarkus.ru##div[class^="style_cookies"]
@@ -17424,6 +17433,12 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213703
+e-kruk.pl,pl.kruk.eu#@#.cookie-notice:not(body):not(html)
+@@||cdn.cookiehub.eu/c2/*.$domain=ro.kruk.eu
+! https://github.com/AdguardTeam/AdguardFilters/issues/213704
+es.kruk.eu#@##cookie_accept
+es.kruk.eu#@##cookie_agreement
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213650
 pancernik.eu#@#.shop_index > div.consents
 pancernik.eu#@##shoper-foot ~ div.consents
