@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: va9997GDlPzLXKudY/j0uQ
-! Diff-Path: ../patches/19/19-s-1758280239-3600.patch
+! Checksum: ktS2Ofs8XmFzFOTHbmZ/eA
+! Diff-Path: ../patches/19/19-s-1758284135-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.62.40
-! TimeUpdated: 2025-09-19T11:06:47+00:00
+! Version: 2.0.62.41
+! TimeUpdated: 2025-09-19T12:11:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -174,6 +174,7 @@ razlozhi.ru#$#body > div[style*="background: url("][style*="/default/bg.png"] > 
 razlozhi.ru#$#body > div[style*="background: url("][style*="/default/bg.png"] > div[style^="top:"] ~ div[class]:not([style]) { left: 100% !important; }
 !
 ! drive2.ru
+drive2.ru##+js(abort-on-property-read, Object.prototype.yaContextCb)
 drive2.ru##+js(abort-on-property-read, Object.prototype.AdChosen)
 drive2.ru##.js-page > div[class*=" "] > div[data-track]
 drive2.ru##.js-page > div[class*=" "] > div[itemscope] ~ div[class]:not([id], [data-role], :last-child):has(div:empty + script)
@@ -3058,6 +3059,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+mein-schoener-garten.de##div[class*="dockInnerWrapperDocked"]
 tri247.com##body > div[style*="z-index:"]:has(> div[style*="cursor:"] > img[alt="Progressier logo"])
 ag.mos.ru##+js(set-session-storage-item, ag-forced-auth-modal-displayed, true)
 codziennypoznan.pl##header > div[data-elementor-type="jet_header"] > section[data-settings*="jet_parallax_layout_animation_prop"]
