@@ -1,9 +1,9 @@
-! Checksum: PlCHwBgRz37Ea9vgFxoBkg
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1758271351-14400.patch
+! Checksum: /NFwydHENMo+cyLdHjR/kw
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1758343242-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.81
-! TimeUpdated: 2025-09-19T08:38:24+00:00
+! Version: 2.0.22.82
+! TimeUpdated: 2025-09-20T04:36:37+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -105,6 +105,7 @@ affarsstaden.se##a[href^="mailto:annons"]
 affarsstaden.se##a[target="_blank"]:has-text(/casino/i):upward(div[id].sidebar-box)
 affarsstaden.se##main > .elementor > section.elementor-section:last-child:has(a[href*="casino"])
 affarsvarlden.se##article.article-list-item:has(a[href*="/native/"])
+affarsvarlden.se##.article-tag-header:has-text(/Annons/i):upward(.frontpage-mixed-articles__item, .sidebar-news__list_li)
 affarsvarlden.se##.cookies-wrap, .Modal, .article-list-item--native, .advert-notice-box, .native-popup, .takeover-wrap, .native-notice-box, .darwin--content
 aftonbladet.se##article[class^="article-wrapper"] ~ div[class^="hyperion"]:has(a[href*="/t?a="], a[href*="/click"], a[href^="http"][nofollow], a[href^="http"][rel*="nofollow"], iframe[src*="pricerunner"], iframe[src*="/ads/"])
 aftonbladet.se##article[class^="article-wrapper"] strong:has-text(/annons:/i):upward(1)
@@ -307,7 +308,7 @@ byggahus.se#$#body.forum-logged-out .svartalistan-results-login-required { heigh
 byggahus.se#%#//scriptlet('ubo-aeld.js', '/adblockDetector|adsInserted|partnerExternalLinkClick/')
 byggahus.se#$#.bbImageWrapper--preview.active img { -webkit-filter:none!important; filter:none!important; transform:none!important; -webkit-transform:none!important; }
 byggahus.se##.block-ad, a[href^="/partner/"], .threadMatchedContent, #svartalistan-login-required-overlay
-byggahus.se,expressen.se,filmtopp.se,destination.se,spokbloggen.nu,folkhalsasverige.se,foretagsverige.se,forskningsverige.se,motorbibeln.se,hallbarhetsverige.se,tillvaxtsverige.se,grillbibeln.se,kampenmotcancer.se,bolagsfakta.se,affarsvarlden.se,affarerinorr.se,dinordbok.se,motorbranschen.mrf.se,rakapuckar.com##.ad-container
+byggahus.se,expressen.se,filmtopp.se,destination.se,folkhalsasverige.se,foretagsverige.se,forskningsverige.se,motorbibeln.se,hallbarhetsverige.se,tillvaxtsverige.se,grillbibeln.se,kampenmotcancer.se,bolagsfakta.se,affarsvarlden.se,affarerinorr.se,dinordbok.se,motorbranschen.mrf.se,rakapuckar.com##.ad-container
 byggfaktadocu.se##.pop_box, .contact-supplier.show
 byggfakta.today,citymark.today,hotellorestaurang.se##.cookie_popup_box
 byggipedia.se##aside .textwidget:has-text(/sponsr|samarbetspartners/i)
@@ -1248,6 +1249,7 @@ sanghafte.se##.wp-show-posts-entry-summary:has-text(/annons|reklam/i):upward(.po
 sanghafte.se##:is(aside.widget_text_widget_startpage_only, .entry-content .has-post-thumbnail):has(a[href*="casino"], a[href*="kasino"], a[href*="betting"])
 sbf.se,skaneridsport.se##.hiq-partners-banner
 schack.se##.schac-widget
+schafertidningen.se##.gutentor-element-image-link[target="_blank"]
 schoolido.se##.so-cookie__area
 sdhl.se,ssl.se,storvretaibk.se##.rmss_module-block-linked_image, a[href*="svenskaspel.se"]
 selectAdvertiserElement$domain=bebisvarlden.se
@@ -1342,7 +1344,7 @@ sporthalsa.se##.header_top, #media_image-2, #text-6, article[class*="veckans-pro
 sportlovin.se##div[style*="min-height"]:has(div[id^="sportlovin_"])
 sportnik.com##.index-footer-section:has(.make-money-partners)
 sportpanelen.se###mvp-side-wrap .homepage-widget:has(a[href*="utanlicens"])
-sportpanelen.se,sportnyheter.nu,sporthalsa.se,sport24.nu##.textwidget:has(a[href*="casino"])
+sportpanelen.se,sportnyheter.nu,sporthalsa.se,sport24.nu,golfbladet.se##.textwidget:has(a[href*="casino"])
 sportsnews.se,xn--sporthnt-5za.se###secondary:has(a[href*="casino"])
 sportsnews.se,xn--sporthnt-5za.se,killsteal.se,samnytt.se,samnytt.nu,obsid.se,senses.se,teknologiexperten.se,sverige.nu,enterprisemagazine.se,haboportalen.se,bike.se,xn--lgenhet-5wa.nu,samtiden.nu##a[href*="casino"]
 sporttv.nu##a[onclick*="bannerClick"], #linkus, .details-bet-banner
@@ -1854,6 +1856,7 @@ zeromagazine.nu##div[id^="ads"]
 ##.adrotate-group:not(body):not(html)
 ##.adtoma_container:not(body):not(html)
 ##.adtrue-holder:not(body):not(html)
+##.advertisement_above_footer:not(body):not(html)
 ##.ad-inside-single-article:not(body):not(html)
 ##.ad-rotator:not(body):not(html)
 ##.ad-single-news:not(body):not(html)
@@ -2073,7 +2076,7 @@ zeromagazine.nu##div[id^="ads"]
 /a?callback=pfmod.saveadsettings
 /bannerAd.js$domain=objektvision.se
 /bannersidor/*
-/banners$domain=magasinetparagraf.se|sporttv.nu|cykla.se|vatternrundan.se|dagenstv.com|sydkusten.es|pellesoft.se|dykarna.nu|varmepumpsforum.com|poolforum.se|classiccars.se|borsvarlden.com|nitroz.se|skargardenfinland.com
+/banners$domain=magasinetparagraf.se|sporttv.nu|cykla.se|vatternrundan.se|dagenstv.com|sydkusten.es|pellesoft.se|dykarna.nu|varmepumpsforum.com|poolforum.se|classiccars.se|borsvarlden.com|nitroz.se|skargardenfinland.com|da.se
 /banners/annons
 /banners/scripts/adx.js
 /banners/*casino$image
