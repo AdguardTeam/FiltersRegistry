@@ -1,9 +1,9 @@
-! Checksum: NMpWmyXhIk9v+xG1wy7o5Q
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1758395382-3600.patch
+! Checksum: 09kqrmCH9qejlzUPPsmuuw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1758399045-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.12.15
-! TimeUpdated: 2025-09-20T19:05:33+00:00
+! Version: 2.4.12.16
+! TimeUpdated: 2025-09-20T20:06:25+00:00
 ! Expires: 10 days (update frequency)
 ||talkativeend.com^
 ||adtscriptshark.com^
@@ -3042,13 +3042,14 @@ doods.to,veev.to#@#.avb-active
 @@||veev.to^$generichide
 @@/ad-provider.js$xmlhttprequest,domain=veev.to|doods.to
 doods.to,veev.to#%#//scriptlet('remove-node-text', 'script', 'veevad-interstitial')
+doods.to,veev.to#%#//scriptlet('abort-current-inline-script', 'Object.create', 'veevad-interstitial')
 doods.to,veev.to#%#(()=>{const e={apply:(e,p,t)=>(!0===t[0]&&(t[0]=!1),Reflect.apply(e,p,t))},p={apply:(p,t,a)=>("__updateState"===a[1]&&a[2]&&a[2].value&&(a[2].value=new Proxy(a[2].value,e)),Reflect.apply(p,t,a))};window.Object.defineProperty=new Proxy(window.Object.defineProperty,p)})();
 doods.to,veev.to#%#(()=>{const e={apply:(e,t,n)=>{const o=n[0];if(o&&o.status.includes("success"))for(const e in n[0])"1"===n[0][e]?n[0][e]="0":1===n[0][e]&&(n[0][e]=0);return Reflect.apply(e,t,n)}},t=["adblockEnabled","=!!parseInt(","disable_adb"],n={apply:(n,o,s)=>{const p=s[0];return"function"==typeof p&&t.some((e=>p.toString().includes(e)))&&(s[0]=new Proxy(s[0],e)),Reflect.apply(n,o,s)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,n)})();
 doods.to,veev.to#%#//scriptlet('prevent-element-src-loading', 'script', 'c.adsco.re')
 doods.to,veev.to#%#//scriptlet('set-constant', '_iab', 'false')
 doods.to,veev.to#%#(()=>{const t={apply:(t,n,e)=>{if(e[0]&&null===e[0].html?.detected&&"function"==typeof e[0].html?.instance?.start&&"function"==typeof e[0].env?.instance?.start&&"function"==typeof e[0].http?.instance?.start){const t=function(){Object.keys(this).forEach((t=>{"boolean"==typeof this[t]&&(this[t]=!1)}))};["html","env","http"].forEach((n=>{e[0][n].instance.start=t}))}return Reflect.apply(t,n,e)}};window.Object.keys=new Proxy(window.Object.keys,t)})();
-!+ NOT_PLATFORM(ext_ublock)
 doods.to,veev.to#%#//scriptlet('set-constant', 'VEEVPop', 'emptyObj')
+doods.to,veev.to#%#//scriptlet('prevent-window-open', '!/(doods|veev)\.to/')
 myabandonware.com#%#//scriptlet('set-constant', 'j321', 'true')
 myabandonware.com#%#//scriptlet('abort-on-stack-trace', 'XMLHttpRequest', 'putPb')
 @@||myabandonware.com/wp-content/plugins/wp-banners/js/wp-banners.js
@@ -4725,12 +4726,13 @@ camarchive.tv#%#//scriptlet("set-constant", "canads", "true")
 ||metro.co.uk/base/metro-ab-*/$stylesheet,script
 @@||fuckadblock.sitexw.fr^$generichide
 megafile.io#%#//scriptlet("set-constant", "replaceContentWithAdBlockerContent", "noopFunc")
-watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*#%#//scriptlet("abort-current-inline-script", "document.createElement", "adblock")
-watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*#%#//scriptlet("prevent-setInterval", "adblock", "700")
+tapepops.com,watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*,streamtape.com#%#//scriptlet("abort-current-inline-script", "document.createElement", "adblock")
+tapepops.com,watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*,streamtape.com#%#//scriptlet("prevent-setInterval", "adblock", "700")
 @@||watchadsontape.com/prebid.min.js
-watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*#@#.skyscraper.ad
-watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*#@#.google-ad
-watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*#%#//scriptlet("set-constant", "googleAd", "true")
+tapepops.com,watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*,streamtape.com#@#.skyscraper.ad
+tapepops.com,watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*,streamtape.com#@#.google-ad
+tapepops.com,watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*,streamtape.com#%#//scriptlet("set-constant", "googleAd", "true")
+tapepops.com,watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,strtape.cloud,adblockeronstape.me,streamadblockplus.com,shavetape.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,stape.fun,strcloud.link,streamtape.*,streamtape.com#%#(()=>{const e=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").set,t=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").get;Object.defineProperty(Element.prototype,"innerHTML",{get(){return t.call(this)},set(t){if(t.includes("disable your adblocker"))throw new Error;e.call(this,t)}})})();
 freecoursesonline.me#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 techadvisor.com,techadvisor.co.uk#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
 gtamaxprofit.com#%#//scriptlet("abort-current-inline-script", "$", "AdBlock")
@@ -4831,6 +4833,7 @@ dsvplay.com,dvdgayonline.com,gaypornhdfree,dood.re#%#//scriptlet("set-constant",
 dsvplay.com,vide0.net,do7go.com,dooodster.com,dood.sh,dood.li,d000d.com,d0000d.com,do0od.com,ds2play.com,doods.pro,dooood.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws#%#//scriptlet("abort-current-inline-script", "document.getElementsByClassName", "allow adblock")
 dsvplay.com,vide0.net,do7go.com,dooodster.com,dood.sh,dood.li,d000d.com,d0000d.com,do0od.com,ds2play.com,doods.pro,dooood.com,dvdgayonline.com,fxggxt.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws#%#//scriptlet("set-constant", "googleAd", "true")
 dsvplay.com,vide0.net,do7go.com,dooodster.com,dood.sh,dood.li,d000d.com,d0000d.com,do0od.com,ds2play.com,doods.pro,dooood.com,dvdgayonline.com,fxggxt.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws#%#//scriptlet("set-constant", "xPoPAdS", "false")
+dsvplay.com,vide0.net,do7go.com,dooodster.com,dood.sh,dood.li,d000d.com,d0000d.com,do0od.com,ds2play.com,doods.pro,dooood.com,dvdgayonline.com,fxggxt.com,dood.yt,dood.re,dood.wf,dood.la,dood.pm,dood.so,dood.to,dood.watch,dood.ws#%#(()=>{const e=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").set,t=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").get;Object.defineProperty(Element.prototype,"innerHTML",{get(){return t.call(this)},set(t){if(t.includes("allow adblock"))throw new Error;e.call(this,t)}})})();
 !+ NOT_OPTIMIZED
 @@||i.doodcdn.io/ads/ad.js
 !+ NOT_OPTIMIZED
@@ -10334,8 +10337,8 @@ sbs.com.au#%#//scriptlet('prevent-xhr', '/redirector\.googlevideo\.com\/videopla
 sbs.com.au#%#//scriptlet("json-prune", "ads breaks cuepoints times")
 timesnownews.com#%#//scriptlet("json-prune", "ads breaks")
 rosefile.net#%#//scriptlet("prevent-window-open")
-watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,strtape.cloud,streamtape.*#%#//scriptlet('trusted-click-element', '.play-overlay, .play-overlay, .play-overlay')
-watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,adblocktape.*,streamtapeadblockuser.*,strtapewithadblock.*,stapewithadblock.monster,adblockeronstape.me,streamadblockplus.com,shavetape.*,streamtapeadblock.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,tubeload.co,stape.fun,streamtape.*,strcloud.link#%#//scriptlet("prevent-window-open")
+tapepops.com,watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,strtape.cloud,streamtape.*#%#//scriptlet('trusted-click-element', '.play-overlay, .play-overlay, .play-overlay')
+tapepops.com,watchadsontape.com,advertisertape.com,tapeadvertisement.com,adblockplustape.xyz,tapelovesads.org,gettapeads.com,tapeadsenjoyer.com,noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,adblocktape.*,streamtapeadblockuser.*,strtapewithadblock.*,stapewithadblock.monster,adblockeronstape.me,streamadblockplus.com,shavetape.*,streamtapeadblock.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,tubeload.co,stape.fun,streamtape.*,strcloud.link#%#//scriptlet("prevent-window-open")
 noblocktape.com,antiadtape.com,tapewithadblock.org,streamadblocker.*,adblocktape.*,streamtapeadblockuser.*,stapewithadblock.monster,adblockeronstape.me,streamadblockplus.com,shavetape.*,streamtapeadblock.*,adblockstrtape.link,adblockstrtech.link,adblockstreamtape.*,tubeload.co,stape.fun,strcloud.link#%#//scriptlet('trusted-click-element', '.play-overlay', '', '500')
 usingenglish.com#%#//scriptlet('remove-class', 'hasad', '.content')
 zetporn.com#%#//scriptlet('prevent-window-open')
@@ -29166,6 +29169,7 @@ browsershots.org#@#.advert_area
 ||dieingpeyotes.life^
 ||diettrappeddestruction.com^
 ||differlookingmanor.com^
+||difficultmatecomrade.com^
 ||difficultyanthonymode.com^
 ||difficultypoiseapparel.com^
 ||diffusedpassionquaking.com^
@@ -31454,6 +31458,7 @@ browsershots.org#@#.advert_area
 ||gridehornyidentifier.com^
 ||grievedvicerecord.com^
 ||griftedhindoo.com^
+||griftswhereas.cfd^
 ||grikenullary.world^
 ||griksoud.net^
 ||grilaussaighi.net^
@@ -32089,6 +32094,7 @@ browsershots.org#@#.advert_area
 ||hsnskx.care^
 ||hsoqywhckjlcmjn.com^
 ||hsutwdglfiefqiy.com^
+||hszitmwllttjk.space^
 ||htaospdsuqiwm.online^
 ||htdvt.com^
 ||htgtmurkqiq.com^
@@ -40245,6 +40251,7 @@ browsershots.org#@#.advert_area
 ||tutvp.com^
 ||tvcbvfwdj.net^
 ||tvkfxtoydfqtf.online^
+||tvlhvswh.com^
 ||tvnyutbfvrjen.website^
 ||tvoiioftvfzzc.buzz^
 ||tvsvmmik.com^
@@ -41387,6 +41394,7 @@ browsershots.org#@#.advert_area
 ||wgbtsixsjhkyln.com^
 ||wgbvmabknyngq.top^
 ||wgchrrammzv.com^
+||wgcjpruezksws.online^
 ||wgexsktozbmrx.online^
 ||wgfqteto.com^
 ||wgknjngzmakak.top^
@@ -41554,6 +41562,7 @@ browsershots.org#@#.advert_area
 ||wjzrzwyvzbbvw.top^
 ||wkaahnvxrhsdn.net^
 ||wkaahnvxrhsdn.xyz^
+||wkamvkfx.com^
 ||wkamwqeoqobww.top^
 ||wkdjprbtixvnx.website^
 ||wkeihyox.com^
@@ -42152,6 +42161,7 @@ browsershots.org#@#.advert_area
 ||ympgpaldtpie.com^
 ||ymrghezhbhfie.website^
 ||ymrhukgr.com^
+||ymuzuvrb.com^
 ||ymvcapbwcgsqw.space^
 ||ynbgjroxqcyrr.site^
 ||ynbsakxipni.net^
