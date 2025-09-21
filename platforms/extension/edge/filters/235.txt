@@ -1,9 +1,9 @@
-! Checksum: wFA27Hj+6m2cRQvcpxVWtw
-! Diff-Path: ../patches/235/235-s-1757925782-14400.patch
+! Checksum: Oh32w7Cs3dQNSpfP18Rvww
+! Diff-Path: ../patches/235/235-s-1758472814-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.5.98
-! TimeUpdated: 2025-09-15T08:38:54+00:00
+! Version: 2.0.5.99
+! TimeUpdated: 2025-09-21T16:36:26+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ☀️ PersianBlockerNG ☀️
@@ -1130,9 +1130,6 @@ filmino.me##.flex-ad-body
 20file.org##article > .box > a[href*="salampnu.com"]
 20file.org##.adrightPanel
 filmha.top##.abvertise > .container > a:not(a[href="https://t.me/filmha_top"])
-! https://github.com/MasterKia/PersianBlocker/issues/107
-||analytics.football360.ir^
-||football360.ir/api/advertisements^
 ! https://github.com/MasterKia/PersianBlocker/issues/42
 farachart.com##div.sidebar > div.widget:has(> div.widget-head > h3:has-text(تبلیغات))
 farachart.com##div.g:has(> div.g-col > span[style]:has-text(تبلیغات)):has( div.post-link-box1)
@@ -3447,7 +3444,7 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 !------------------------^ Afghanistan sites ^-----------------------!
 ! Ads:
 ! Title: PersianBlockerAds
-! Last modified: Sat, 13 Sep 2025 13:55:47 +0330
+! Last modified: Sun, 21 Sep 2025 16:28:37 +0330
 ! Expires: 5 days
 ! Description: Filters to block ads in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -3502,6 +3499,9 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 ##.zxc-padding-custom
 ! ronveis.ir:
 ||mihanstore.net/partner^
+! football360.ir:
+||napi.arvancloud.ir/vod/channels/*/ads^
+||arvanvads.ir^
 !!! Specific !!!
 !!! ===VV=== !!!
 ! abadis.ir
@@ -3666,9 +3666,13 @@ namnak.com##.namank-ad
 namnak.com###implant-ad-container
 ! offerdaily.ir
 offerdaily.ir#%#//scriptlet('ubo-href-sanitizer.js', 'a[href^="https://offerdaily.ir/index.php?do=go&url="]', '?url -base64')
+! football360.ir
+! https://github.com/MasterKia/PersianBlocker/issues/107
+||football360.ir/api/advertisements^
+football360.ir##section[class^="style_adsSection"]
 ! Trackers:
 ! Title: PersianBlockerTrackers
-! Last modified: Sat, 13 Sep 2025 13:50:15 +0330
+! Last modified: Sun, 21 Sep 2025 16:31:22 +0330
 ! Expires: 7 days
 ! Description: Filters to block trackers in Persian websites
 ! License: https://codeberg.org/KhodeKiaa/PersianBlocker/src/branch/main/LICENSE
@@ -3683,37 +3687,37 @@ offerdaily.ir#%#//scriptlet('ubo-href-sanitizer.js', 'a[href^="https://offerdail
 ||affilio.ir^
 ||usermap.net^
 ||analyticsdaily.ir^
-! trustseal.e-rasaneh.ir (e.g. zoomit.ir)
+! trustseal.e-rasaneh.ir (e.g. zoomit.ir):
 ||trustseal.e-rasaneh.ir/Trustseal^$method=post
-! aparat.com
+! aparat.com:
 ||sentry.sabaidea.cloud^
-! Google Account Login (e.g. gama.ir)
-! rokna.net
+! Google Account Login (e.g. gama.ir):
+! rokna.net:
 ||bl9.ir^
 ||analyt.ir^
 ! Specific !
 ! ===VV=== !
-! digikala.com
+! digikala.com:
 ||tracker.digikala.com^
 ||dgka.me^$removeparam=promo_name
 ||dgka.me^$removeparam=promo_position
 ||dgka.me^$removeparam=promo_creative
 ||dgka.me^$removeparam=bCode
-! zoomit.ir, zoomg.ir
+! zoomit.ir, zoomg.ir:
 ||sentry.theforge.ir^
-! zoomit.ir
+! zoomit.ir:
 ||analytics.zoomit.ir^
 ! zoomit.ir/product/
 zoomit.ir#%#//scriptlet('ubo-href-sanitizer.js', 'a[variant="contained"][href^="https://api2.zoomit.ir/catalog/store-links/"][href*="/click?url=http"]', '?url')
-! zoomg.ir
+! zoomg.ir:
 ||zoomg.ir/editorial/api/articles/*/visit^
-! aparat.com
+! aparat.com:
 ||aparat.com/external/romeo^
 ||aparat.com/gogol^
-! telewebion.com
+! telewebion.com:
 ||hadeseh.telewebion.com^
 ||data.telewebion.com/broker/api/v1/message/page-view^
-! alaatv.com
+! alaatv.com:
 alaatv.com#%#//scriptlet('ubo-set.js', 'Metrix', '{}')
 alaatv.com#%#//scriptlet('ubo-set.js', 'Metrix.deauthorizeUser', 'noopFunc')
 alaatv.com#%#//scriptlet('ubo-set.js', 'Metrix.init', 'noopFunc')
@@ -3721,27 +3725,29 @@ alaatv.com#%#//scriptlet('ubo-set.js', 'zebline', '{}')
 alaatv.com#%#//scriptlet('ubo-set.js', 'zebline.event', '{}')
 alaatv.com#%#//scriptlet('ubo-set.js', 'zebline.event.track', 'noopFunc')
 ||sentry.alaatv.com^
-! divar.ir
+! divar.ir:
 ||api.divar.ir/v8/actionlog^
 ||api.divar.ir/v1/client-exporter/send-report^
 ||sentry.divar.cloud^
-! jobvision.ir
+! jobvision.ir:
 ||candidatelogapi.jobvision.ir/api/v1/JobPostActionLog/AddToQueue^
-! ninisite.com
+! ninisite.com:
 ||stc.ninisite.com/s/atv^
-! footballitarin.com
+! footballitarin.com:
 ||inmobi.com^$domain=footballitarin.com
-! aparat.com
+! aparat.com:
 ! https://github.com/MasterKia/PersianBlocker/issues/304#issuecomment-3044430691
 aparat.com#%#//scriptlet('ubo-set-local-storage-item.js', 'videoPlayedCount', '$remove$')
 aparat.com#%#//scriptlet('ubo-set-session-storage-item.js', 'videoWatchCount', '$remove$')
-! zarebin.ir
+! zarebin.ir:
 ||zarebin.ir/platform/api/supervisor/v1/events/^
 ||sentry.mci.dev^
-! digikala.com
+! digikala.com:
 ||new-sentry.digikala.com^
-! pod.ir
+! pod.ir:
 ||accounts.pod.ir/js/fingerprint2.min.js^
+! football360.ir:
+||analytics.football360.ir^
 ! Annoyances (Disabled, please use manually - غیرفعال، لطفا به صورت دستی استفاده کنید):
 ! !#include PersianBlockerAnnoyances.txt
 ! Video Censorship:
