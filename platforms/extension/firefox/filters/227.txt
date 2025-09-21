@@ -1,9 +1,9 @@
-! Checksum: x1GONT8Q6yr/HJq/21JKFw
-! Diff-Path: ../patches/227/227-s-1758213776-14400.patch
+! Checksum: N0Yd3n5d1CXVUlBgtuKdxQ
+! Diff-Path: ../patches/227/227-s-1758487101-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.22.97
-! TimeUpdated: 2025-09-18T16:38:22+00:00
+! Version: 2.0.22.98
+! TimeUpdated: 2025-09-21T20:34:22+00:00
 ! Expires: 10 days (update frequency)
 !
 ||mman.kr^
@@ -1223,6 +1223,7 @@
 ||daumcdn.net/tistory/927313/skin/images/book_300_poster.png
 ||img.peterpanz.com/images/banner/adimUpload/
 ||cdn.011st.com/browsing/banner/$domain=login.11st.co.kr
+||cdn.011st.com/browsing/space/banner/$domain=login.11st.co.kr
 ||recipe1.ezmember.co.kr/cache/shop/$domain=10000recipe.com
 ||webapi2.edaily.co.kr/BoardMgnt/popup|
 /^https:\/\/image\.edaily\.co\.kr\/images\/content\/[A-z0-9]+640x100\./$domain=edaily.co.kr
@@ -3671,9 +3672,8 @@ klauncher.kr#%#//scriptlet('prevent-addEventListener', 'load', '_0x')
 ||tistory1.daumcdn.net/tistory/3827361/skin/images/script3.js$domain=devjit.tistory.com
 hub.weirdhost.xyz#%#//scriptlet('prevent-fetch', 'adblockanalytics.com')
 hub.weirdhost.xyz#%#//scriptlet('prevent-fetch', 'adsbygoogle.js')
-srank.kr#%#//scriptlet('prevent-fetch', 'doubleclick.net')
-@@://www3.doubleclick.net^|$xmlhttprequest,domain=srank.kr
 @@||adservice.google.com^|$xmlhttprequest,domain=klauncher.kr
+||www3.doubleclick.net^$script,redirect=noopjs,domain=srank.kr
 chmodi.tistory.com##.floatdiv
 svrforum.com##body > div[class][style*="box-shadow:"]
 luckyquiz3.blogspot.com#%#//scriptlet('prevent-xhr', 'adsbygoogle')
