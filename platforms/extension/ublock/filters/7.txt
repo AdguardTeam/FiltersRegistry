@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Qi4mRXcI3GDLrukcmUkTFA
-! Diff-Path: ../patches/7/7-s-1758370464-3600.patch
+! Checksum: /PLEghIMn/+VXRHRsWABsQ
+! Diff-Path: ../patches/7/7-s-1758435178-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.68.62
-! TimeUpdated: 2025-09-20T12:10:06+00:00
+! Version: 2.0.68.63
+! TimeUpdated: 2025-09-21T06:09:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1645,6 +1645,7 @@ n.lat/login|$document
 ://*.*.xyz/jp.html^$document
 .net/funccode.php|$document
 .com/funccode.php|$document
+.co.jp.*.com/login|$document
 /index.php?signin=openid.pape.max_auth_age0&openid.return_to=https%3A%2F%2Fwww.offfffff.co.jp%2F$document
 ://www.eki.*.*.com/$document
 ://www.etc.*.*.com/$document
@@ -1710,7 +1711,6 @@ _co_jp.*.php$document,to=cc|com
 /signim/index.php?*&openid_return_to=https%3A%2F%2Fwww.amazon.co.jp$document,to=cn|com|sbs|top|xyz
 ://visa-*/pay-with-featured/$document,to=cn|com
 ://eki-*.*/Perosnal_member/$document,to=cn|com
-://*.*.co.jp.*.com/$document,to=com
 .co.jp.*.*/$document,to=cn|cyou
 -co-jp-*.*/$document,to=cfd|com|sbs|site
 -co-jp.*.*/$document,to=cfd|com|sbs|site
@@ -1815,6 +1815,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+imas-db.jp##.pr_text_area
+imas-db.jp##.d-flex.justify-content-center.mx-2.my-3.bg-body-secondary.rounded-1.position-relative.p-1.pt-4
 momoniji.com##div.sp[style]
 www.yahoo.co.jp##+js(href-sanitizer, a[href^="https://app.adjust.com/"], ?redirect)
 gamewith.jp##._area > a[href*=".onelink.me/"]
@@ -4629,7 +4631,6 @@ anime.eiga.com###bnrTwoColumnArea
 waifu2x.net##div[style="width: 90%;height:120px"]
 dousyoko.net##.banner_ws1
 t.livepocket.jp##div[style$="height:90px; text-align:center"]
-xfolio.jp##.card--recommend6__list:not([show-index])
 ||xfolio.jp/lu_assets/ad.$script
 tv-happening.com##.pickup-header
 tv-happening.com##a[href^="https://mauvecyan.com"]
