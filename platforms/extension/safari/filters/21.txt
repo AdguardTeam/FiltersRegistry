@@ -1,9 +1,9 @@
-! Checksum: suNbqkyafXDT0NR/VobUYw
-! Diff-Path: ../patches/21/21-s-1758528819-3600.patch
+! Checksum: 5eV4k5kiPHHFBl8BAhD4EQ
+! Diff-Path: ../patches/21/21-s-1758535969-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.37.57
-! TimeUpdated: 2025-09-22T08:10:05+00:00
+! Version: 2.0.37.58
+! TimeUpdated: 2025-09-22T10:09:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -8396,6 +8396,8 @@ eiga.com##.header-pure-banner
 !##############################
 ! SECTION: Tweaks - CSS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213725
+tamilprint51.online#$##content > #message { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213540
 asd.homes#$##clickme + a#btn[style*="display: none;"] { display: table !important; }
 asd.homes#$##clickme:has(+ a#btn[style*="display: none;"]) { display: none !important; }
@@ -8846,7 +8848,7 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213796
 crystal-launcher.pl#%#//scriptlet('adjust-setTimeout', 'timerCount', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213725
-tamilprint51.online#%#//scriptlet('adjust-setTimeout', 'countdown', '*', '0.001')
+tamilprint51.online#%#//scriptlet('adjust-setTimeout', '/countdown|pleaseWaitDiv/', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213540
 asd.homes#%#//scriptlet('trusted-replace-node-text', 'script', 'downloadbtn', '/seconds: \d+/g', 'seconds: 0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213170
