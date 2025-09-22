@@ -1,8 +1,8 @@
-! Checksum: lpZELYChlVZBD4q+F4G1Eg
+! Checksum: qKZJsDFt86u3j2j8cZ8l7w
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.43.71
-! TimeUpdated: 2025-09-22T14:08:06+00:00
+! Version: 2.2.43.72
+! TimeUpdated: 2025-09-22T15:08:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2601,7 +2601,7 @@ mpsv.cz#%#//scriptlet('set-cookie', 'gcc_analytics', 'denied')
 mpsv.cz#%#//scriptlet('set-cookie', 'gcc_necessary', 'allow')
 mpsv.cz#%#//scriptlet('set-cookie', 'gcc_personalization', 'denied')
 migros.com.tr#%#//scriptlet('trusted-set-cookie', 'cookieSettings', '%7B%22indicatorSeen%22%3Atrue%2C%22analyseCookies%22%3Afalse%2C%22marketingCookies%22%3Afalse%2C%22systemCookies%22%3Afalse%7D')
-migros.com.tr#%#//scriptlet('trusted-set-local-storage-item', 'efl-saved-consent', '{"categories":{"essential":true,"functional":false,"marketing":false,"other":false}}')
+m.n11.com,migros.com.tr#%#//scriptlet('trusted-set-local-storage-item', 'efl-saved-consent', '{"categories":{"essential":true,"functional":false,"marketing":false,"other":false}}')
 agenziavista.it#%#//scriptlet('set-cookie', 'gdpr', '1')
 loescher.it###cookieChoice
 reservationday.com###cd-outer-hab
@@ -17527,6 +17527,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213926
+@@||bundles.efilli.com/m.n11.com.prod.js$domain=m.n11.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213898
 bundesimmobilien.de#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213755
@@ -34017,6 +34019,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+thedailybeast.com##.newsletter-unit
 deondernemer.nl##div[data-name="DoNewsLetterEmbed"]
 deondernemer.nl##div[data-block-type="SHOWCASE_LIST"]
 creative.com#%#//scriptlet('set-cookie', 'takeover', 'true')
