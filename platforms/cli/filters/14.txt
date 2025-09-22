@@ -1,9 +1,9 @@
-! Checksum: tOyVOvKWXgT5/3usu5+Y/A
-! Diff-Path: ../patches/14/14-s-1758511645-3600.patch
+! Checksum: oAAg1eugPOAb55q6IpLjiA
+! Diff-Path: ../patches/14/14-s-1758514327-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.43.62
-! TimeUpdated: 2025-09-22T03:24:04+00:00
+! Version: 2.2.43.63
+! TimeUpdated: 2025-09-22T04:08:42+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5348,7 +5348,7 @@ ably.com##.ui-cookie-message
 coinbureau.com##div[class*="CookieDiv"]
 comnet.com.tr#%#//scriptlet('set-local-storage-item', 'cookieСonsent', 'true')
 joom.ru##div[class^="disclaimer___"]
-wero-wallet.eu,globalis.se,dimensione.com#%#//scriptlet('trusted-click-element', 'button#CybotCookiebotDialogBodyButtonDecline')
+steiledema.boxnow.gr,wero-wallet.eu,globalis.se,dimensione.com#%#//scriptlet('trusted-click-element', 'button#CybotCookiebotDialogBodyButtonDecline')
 thueringer-energienetze.com#%#//scriptlet('trusted-click-element', 'a#CybotCookiebotDialogBodyButtonDecline')
 thueringer-energienetze.com###CybotCookiebotDialogBodyUnderlay
 ldz.lv#$#.sliding-popup-bottom { display: none !important; }
@@ -17506,6 +17506,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213755
+@@||consent.cookiebot.com/uc.js$domain=steiledema.boxnow.gr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213703
 e-kruk.pl,pl.kruk.eu#@#.cookie-notice:not(body):not(html)
 @@||cdn.cookiehub.eu/c2/*.$domain=ro.kruk.eu
