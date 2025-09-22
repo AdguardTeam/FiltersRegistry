@@ -1,16 +1,16 @@
-! Checksum: o/ZVZCtXWiQYiHipvZbk2g
+! Checksum: LK4r7jZbVPT4oOZgKibj7w
 ! Title: KAD - Anti-Scam
 ! Description: Filter that protects against various types of scams in the Polish network, such as mass text messaging, fake online stores, etc.
-! Version: 2.0.74.99
-! TimeUpdated: 2025-09-22T16:39:04+00:00
+! Version: 2.0.75.0
+! TimeUpdated: 2025-09-22T20:35:37+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Do poprawnego działania listy wymagane jest rozszerzenie uBlock Origin 1.20.0+, uBlock Origin Legacy 1.16.4.20+ lub AdGuard AdBlocker 3.3.2+ albo aplikacja AdGuard dla Windows/macOS/Android, ograniczone wsparcie dla iOS (oparte o mechanizm "Safari nie może załadować strony, ponieważ url został zablokowany przez bloker treści").
 !
 ! Title: 🇵🇱 KAD - Przekręty
 ! Description: Filtry chroniące przed różnymi zagrożeniami w polskiej sieci, takimi jak wirusy, fałszywe sklepy i subskrypcje SMS. Dodatkowo zawierają one wpisy stworzone przez CERT Polska, legalniewsieci.pl, KNF i inne zespoły.
-! Last modified: Mon, 22 Sep 2025, 18:28 UTC+02:00
-! OriginalVersion: 2025.9.22.2
+! Last modified: Mon, 22 Sep 2025, 22:23 UTC+02:00
+! OriginalVersion: 2025.9.22.4
 ! Expires: 2 days
 ! License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ! Creator: azet12
@@ -24,12 +24,18 @@
 !
 !#safari_cb_affinity(security)
 ! Podejrzane i/lub strony połączone z innymi oszustwami
+||emedyczny.com/*/cisnieniomierz-ekg-smart-pulsoksymetr-pulsometr-cardio-one$document,subdocument,important
+||emedyczny.com/*/smartwatche$document,subdocument,important
+||emedyczny.com/*/zegarki-kardiowatch$document,subdocument,important
 ||ublock.org^$document
 ||vorwerk.*/*/zamow-prezentacje/poznaj-kobold|$document,to=vorwerk.com|vorwerk.pl
 ||vorwerk.*/*/zamow-prezentacje/poznaj-thermomix|$document,to=vorwerk.com|vorwerk.pl
 !
 ! Przekierowują do innych stron z przekrętami
 ||bmscooperation.com^$document
+||emedyczny.pl/*/cisnieniomierz-ekg-smart-pulsoksymetr-pulsometr-cardio-one$document,subdocument,important
+||emedyczny.pl/*/smartwatche$document,subdocument,important
+||emedyczny.pl/*/zegarki-kardiowatch$document,subdocument,important
 ||exe.io^$document
 !
 ! Szybko wygaszające
@@ -155,6 +161,7 @@
 ||uploadfile.pl/download.png$image
 ~pl##a[href*="whokeys.com/"]:lang(pl)
 download.komputerswiat.pl##div[id] > .big.dl_button.download_link:not([href*="//files-download.playpc.pl/"])
+emedyczny.com,emedyczny.pl##a[href*="/zegarki-kardiowatch" i], a[href*="/smartwatche" i], a[href*="/cisnieniomierz-ekg-smart-pulsoksymetr-pulsometr-cardio-one" i]
 pl##a[href*="whokeys.com/"]
 speedtest.com.pl,speedtest.pl##a[href*="przyspiesz.pl/"]
 !
