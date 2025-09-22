@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: W30RrXutfgOVGtC7e0YoaQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1758547147-3600.patch
+! Checksum: Uebo0RKu15ILYnVqUEX7Bw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1758550324-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.12.55
-! TimeUpdated: 2025-09-22T13:14:37+00:00
+! Version: 2.4.12.56
+! TimeUpdated: 2025-09-22T14:07:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10275,8 +10275,6 @@ xcandid.top#@#.adslot_1
 xcandid.top#@#.adunit
 xcandid.top#@#.ad_slot
 xcandid.top#@#.ad_unit
-! Liste FR
-xcandid.top#@#.ad-container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213725
 ||tamilprint51.online/ads/adblocker
 tamilprint51.online##+js(no-fetch-if, pagead2.googlesyndication.com)
@@ -10591,7 +10589,7 @@ poplinks.sbs##+js(abort-on-property-write, checkAdsStatus)
 poplinks.sbs##+js(abort-current-script, document.createElement, AdBlock)
 shorttrick.in##+js(no-xhr-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202765
-kio.ac#$#.min-h-4 > ins.adsbygoogle { position: absolute !important; left: -9999px  !important; }
+kio.ac#$?#.outline-border.shrink-0 > .min-h-4:has(> .adsbygoogle) { remove: true; }
 kio.ac#@#ins.adsbygoogle[data-ad-slot]
 kio.ac#@#ins.adsbygoogle[data-ad-client]
 kio.ac#@#.adsbygoogle-noablate
@@ -20173,6 +20171,8 @@ lidovky.cz###main > table[id][class*=" "]
 lidovky.cz##div[style="height: 1500px"] div[id][class*=" "] a[target="_blank"] > img
 lidovky.cz##div[id^="fix-block-"] div[id][class*=" "] a[target="_blank"] > img
 ||1gr.cz/*/uni/paticka.js$domain=lidovky.cz
+! https://github.com/AdguardTeam/AdguardFilters/issues/213911
+!+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201583
 idnes.cz##body .r-main.s_branding_fotogalerie
 idnes.cz###space-c-add > div[id][class*=" "]
@@ -35934,7 +35934,6 @@ salix.pages.dev,willow.arlen.icu##.relative:has(> a[href="/partners/submit"])
 ||lit.link/scripts/geniee-ad-inline.js
 justwatch.com##.sponsored-recommendation
 justwatch.com##.title-list-grid > *:has([class^="sponsored-recommendation"])
-kio.ac##.outline-border.shrink-0 > .min-h-4
 comick.io#?#.py-16:contains(ADVERTISEMENT)
 cinemadeck.com##.columns-1:has(> a[href="https://babymaker.sellpass.io/"])
 watch.spencerdevs.xyz##a[href="https://zaccounts.io"]
@@ -43273,6 +43272,7 @@ techgeekbuzz.com###custom_html-21
 techgeekbuzz.com###block-7
 hentaihorizon.com,contactform7.com,techgeekbuzz.com###block-5
 ||player.globalsun.io/player/videojs-contrib-ads/dist/videojs.ads.min.js
+photopea.com##.app > div[style^="padding: 10px"][style*="overflow: hidden; z-index:"]:has(> a + img)
 photopea.com##div[style^="padding-top: 10px; overflow: hidden; padding-left:"] > img
 photopea.com##div[style^="padding-top: 10px; overflow: hidden; padding-left:"] > a[target="_blank"] > img
 ||skylinewebcams.com/as.php
