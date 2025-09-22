@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: USoXaOGrAN9GrsZj2w14tQ
-! Diff-Path: ../patches/7/7-s-1758535975-3600.patch
+! Checksum: 1nZoiIIgsrBo9ZZArH10SA
+! Diff-Path: ../patches/7/7-s-1758547149-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.68.68
-! TimeUpdated: 2025-09-22T10:08:41+00:00
+! Version: 2.0.68.69
+! TimeUpdated: 2025-09-22T13:14:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -446,6 +446,9 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213877
+himachat.jp##+js(no-fetch-if, /adm\.shinobi\.jp\/st\/t\.js/ method:HEAD mode:no-cors)
+||adm.shinobi.jp/st/t.js$xmlhttprequest,redirect=noop.txt,domain=himachat.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210437
 pretravel.kawasaki-create.com##+js(remove-node-text, script, detectAdBlocker)
 ! anti-adb
@@ -1817,6 +1820,14 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+himachat.jp##.imobile_bottomfix
+himachat.jp##div[style="text-align:center;min-height:140px;"]
+himachat.jp##div[style="width:90%;height:600px;background:#fff;text-align:center;color:#aaa;"]
+||himachat.jp/AdBanner_nin.html
+||himachat.jp/AdRectangle2.html
+nan-net.com##.bbs-info
+nan-net.com##div[style="min-height:100px; margin:0; text-align:center;"]
+yume751.com##.generate-columns-container > div.post
 comix.fyi##div[id^="ad-banner-"]
 comix.fyi###main-content .grid > div[id^="ad-"]
 nandemo-uketori.com##.main-column-inner > center
