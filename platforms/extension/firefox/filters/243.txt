@@ -1,14 +1,14 @@
-! Checksum: TLHG7sFH8oOn7NQVKM/Ldg
-! Diff-Path: ../patches/243/243-s-1758429638-14400.patch
+! Checksum: bUEQoLW0DAHBEleo8ulQsQ
+! Diff-Path: ../patches/243/243-s-1758516061-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.83
-! TimeUpdated: 2025-09-21T04:36:59+00:00
+! Version: 2.0.22.84
+! TimeUpdated: 2025-09-22T04:37:12+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-09-21 04:50:01 CEST
+! Last modified: 2025-09-22 05:00:35 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -1006,6 +1006,7 @@ magasinetparagraf.se###large_banner
 magazin24.se##.ad-pad
 magazin24.se#$?#.special_ad_video { remove: true; }
 magazin24.se##.widget_custom_html:has(.ad-pad, a[href*="casino"], a[href*="filmtopp.se"])
+magazin24.se##.widget_text:has(.dagens-lunch, .widg-ad)
 maipenrai.se##.cWidgetContainer > ul > li:first-child, div[style*="border: 1px solid"] a[target="_blank"], div[data-role="sidebarAd"], a[href*="&ad="]
 maipenrai.se##:is(li.ipsDataItem, .ipsSpacer_both):has(a > img)
 maklarvarlden.se##article:has(.sponsored-inlist)
@@ -1426,7 +1427,7 @@ sweclockers.com##div[class^="card-info"]:has-text(/spons/i):upward(.card)
 sweclockers.com###prisjakt-popular, .ad:not(.adPanorama), .adForumSticker, .dark-mode__sponsor
 sweclockers.com##.bbSize:has-text(Sponsormeddelande):upward(.bbRelatedBox)
 swedroid.se#$?#a[target="_blank"]:upward(li.Notice) { remove: true; }
-swedroid.se##div[id$="_ad"], div[id$="_ad_mobile"], .externalTopMobile, #externalTopMobile, #nativendo-mainfeed + aside > .article, .article-footer > h3, .article-footer > .aeChart, #newExternal, div[onclick*="prisjakt.nu/produkt"], a[href*="prisjakt.nu/produkt"]
+swedroid.se##div[id$="_ad"], div[id$="_ad_mobile"], .externalTopMobile, #externalTopMobile, #nativendo-mainfeed + aside > .article, .article-footer > h3, .article-footer > .aeChart, #newExternal, div[onclick*="prisjakt.nu/produkt"], a[href*="prisjakt.nu/produkt"], .article-footer a[href*="/vb/"][target]
 swedroid.se#%#//scriptlet('ubo-set.js', 'checkAdsBlocked', 'noopFunc')
 swedroid.se##.mostReadMobile:has-text(/annons/i)
 swedroid.se##.puff:has(script[src*="lwadm.com"], .pjSidebar, div[onclick*="prisjakt.nu/produkt"])
@@ -2065,7 +2066,7 @@ zeromagazine.nu##div[id^="ads"]
 /antiblock$domain=vmj.se|viseniorer.se|danskaspraket.se|digitalavykort.se
 /apester-javascript-sdk.min.js
 /api/a/b$domain=borskollen.se
-/api/event$domain=feber.se|tjock.se
+/api/event$domain=feber.se|tjock.se|fastighetsvarlden.se
 /api/exposure$domain=svenskverkstad.se
 /api/partners$domain=familjehemsbanken.se
 /api/sponsors$domain=aikhockey.se|almtuna.com|bikkarlskoga.se|bjorkloven.com|brynas.se|difhockey.se|frolundahockey.com|farjestadbk.se|hockeyallsvenskan.se|hv71.se|ikoskarshamn.se|kalmarhockey.com|leksandsif.se|luleahockey.se|malmoredhawks.com|modohockey.se|moraik.se|nybrovikings.com|orebrohockey.se|roglebk.se|shl.se|skellefteaaik.se|sodertaljesk.se|taif.nu|timraik.se|vaxjolakers.se|vik.se|ostersundik.com
@@ -2692,6 +2693,7 @@ zeromagazine.nu##div[id^="ads"]
 /trackers/SessionCam-tag
 /tracker.php?do$image
 /tracker/socket$domain=swebbtv.se
+/tracking$xmlhttprequest,domain=thefork.se
 /tracking.php?aid=
 /tracking/cts.js
 /tracking/fpc.js
@@ -3065,7 +3067,7 @@ _banner.php?$domain=tvmatchen.nu
 ||eu-north-1.amazonaws.com/*images/*Banner
 ||eu.sentryapi.top^$domain=brollopsguiden.se
 ||events.forzasys.com/get.min.js
-||evidon.com^$third-party,domain=fasting.nu|migranmonstret.se
+||evidon.com^$third-party,domain=fasting.nu|migranmonstret.se|thefork.se
 ||execute-api.eu-west-1.amazonaws.com/live/analytics
 ||existenz.se/img/o/
 ||exitintel.com^$third-party
