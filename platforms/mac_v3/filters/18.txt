@@ -1,9 +1,9 @@
-! Checksum: XQfNmjBihTWo5GyMJov9Ww
-! Diff-Path: ../patches/18/18-s-1758553922-3600.patch
+! Checksum: g1x2etu6Qwv2gD+/rAeGEw
+! Diff-Path: ../patches/18/18-s-1758604321-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.70.66
-! TimeUpdated: 2025-09-22T15:08:13+00:00
+! Version: 2.0.70.67
+! TimeUpdated: 2025-09-23T05:08:05+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2541,6 +2541,13 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+arabunu.com#%#//scriptlet('set-local-storage-item', 'CookiePolicy', 'false')
+dvbsklep.pl,sklep.telmor.pl#%#//scriptlet('set-local-storage-item', 'user_consents', 'emptyArr')
+dvbsklep.pl,sklep.telmor.pl#%#//scriptlet('set-local-storage-item', 'show_consent_modal', '1')
+ladymakeup.com,ladymakeup.pl#$##CookieConsentForm { display: none !important; }
+ladymakeup.com,ladymakeup.pl#$#.modal-backdrop { display: none !important; }
+ladymakeup.com,ladymakeup.pl#$#.modal-open { overflow: auto !important; }
+/cookies/melindres/dist/*$domain=televes.com
 police.uk###js-consent-banner
 giga.chat##div[class^="GDPRBanner_"]
 bundesimmobilien.de#$#.cookie-banner:not(body):not(html) { display: none !important; }
@@ -12316,7 +12323,7 @@ aukey.com,bikopek.com##.fixed-cookie
 louie.com.br,devmedia.com.br,jacotei.com.br##.termos-politica
 zoom.com.br,buscape.com.br##div[class^="PrivacyPolicy"]
 molotov.tv##.eRnhI
-haloursynow.pl,bvpraevention.de,avolta.de,halle-entdecken.de###myModal
+haber365.com,haloursynow.pl,bvpraevention.de,avolta.de,halle-entdecken.de###myModal
 nebenan.de###main > .c-layout > .c-layout-wrap + article[class^="index-module_root__"]
 wehkamp.nl###header > aside.bg-light.full-width.full-height.z-higher.position-fixed.is-opaque
 rapidtables.org,rapidtables.com##body > #banner
@@ -14010,7 +14017,7 @@ dress-for-less.de###DFLCookieConsent
 shahid.mbc.net###DGPR
 dnslytics.com###EU_Cookie_Message
 nokaut.pl###GDPRModal
-computerlab.pl,hitech.com.pl,smalltronic.pl###InfoCookie
+hollex.pl,computerlab.pl,hitech.com.pl,smalltronic.pl###InfoCookie
 gazetevatan.com###KisiselVerilerinKorunmasi
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion###SHORTCUT_FOCUSABLE_DIV > div > div[class][aria-hidden] + div > div[class] > form
 docinsider.de###__cookiemsg
@@ -17528,6 +17535,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213966
+! https://github.com/AdguardTeam/AdguardFilters/issues/213965
+dvbsklep.pl,sklep.telmor.pl#@#.shop_index > div.consents
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213926
 @@||bundles.efilli.com/m.n11.com.prod.js$domain=m.n11.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213898
