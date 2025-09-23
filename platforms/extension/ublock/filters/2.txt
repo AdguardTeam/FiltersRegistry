@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Tc0mpkdcNDym8br5awSWNQ
-! Diff-Path: ../patches/2/2-s-1758608011-3600.patch
+! Checksum: MmSbcUHBkBofV6LNzJsPbA
+! Diff-Path: ../patches/2/2-s-1758611562-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.12.72
-! TimeUpdated: 2025-09-23T06:09:26+00:00
+! Version: 2.4.12.73
+! TimeUpdated: 2025-09-23T07:08:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35666,7 +35666,7 @@ www.youtube.com##+js(adjust-setTimeout, [native code], 17000, 0.001)
 ! Fix ads with a specfic Google account and for case when JSON.stringify is not writable
 ! Fix ads on https://www.youtube.com/shorts/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1991263854
-! TODO: use scriptlet when this issue will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/183
+youtube.com##+js(json-prune, entries.[-].command.reelWatchEndpoint.adClientParams.isAd)
 ! This one may be unnecessary:
 ||youtube.com/get_video_info?*=adunit&$important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/81610
@@ -35771,6 +35771,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+xnxx.*##+js(addEventListener-defuser, DOMContentLoaded, /dyn\.ads|loadAdsDelayed/)
 ||transtxxx.com/static/tf/videos.*.json
 transtxxx.com##a[href^="https://candyai.gg/"]
 transtxxx.com##+js(json-prune, video.channel)
@@ -83845,6 +83846,7 @@ browsershots.org#@#.advert_area
 ||cndarpylsmffo.store^
 ||cnesnnavxumlh.online^
 ||cnfxflakkwavih.xyz^
+||cnkepcgukmrc.com^
 ||cnkupkiuvkcq.xyz^
 ||cnmnb.online^
 ||cnnected.org^
@@ -86101,6 +86103,7 @@ browsershots.org#@#.advert_area
 ||dlfvgndsdfsn.com^
 ||dlhdcawqeawfb.space^
 ||dlhwyaetguynl.space^
+||dlkqngolb.net^
 ||dllmqxzriqgnz.online^
 ||dlmonitize.com^
 ||dlqbioenjjwsv.store^
@@ -94146,6 +94149,7 @@ browsershots.org#@#.advert_area
 ||jhmjhgef.xyz^
 ||jhncmokruwmhd.website^
 ||jhpgrmboknxjyy.xyz^
+||jhqieljrzibnr.store^
 ||jhrgblwrqlkwn.com^
 ||jhtvtevkod.com^
 ||jhu8u9.pro^
@@ -95292,6 +95296,7 @@ browsershots.org#@#.advert_area
 ||knkkpmtdesg.com^
 ||knkvixlevwpdc.website^
 ||knmdcrgyufqzn.website^
+||knobblyerikite.help^
 ||knobby-weight.pro^
 ||knobbyaward.pro^
 ||knobwarriors.com^
@@ -96185,6 +96190,7 @@ browsershots.org#@#.advert_area
 ||lfstmedia.com^
 ||lfvpksanpg.com^
 ||lfwbvrlzqwevp.online^
+||lfxgbzxkfqhiy.space^
 ||lfygfjsfv.com^
 ||lfyynlsebgxsc.com^
 ||lfzibowrxoftr.online^
@@ -103535,6 +103541,7 @@ browsershots.org#@#.advert_area
 ||ptiweersoowhaih.net^
 ||ptiwhoopses.com^
 ||ptlucrangwlvs.website^
+||ptlufbanslsse.website^
 ||ptlwm.com^
 ||ptlwmstc.com^
 ||ptmnd.com^
@@ -104808,6 +104815,7 @@ browsershots.org#@#.advert_area
 ||rblpzclousuzr.online^
 ||rbmbmbrmnhq.com^
 ||rboyqkyojrbbj.top^
+||rboyqkyojrbkw.top^
 ||rboyqkyojrjkq.top^
 ||rboyqkyrwrvkq.top^
 ||rbp-gen1.site^
@@ -109402,6 +109410,7 @@ browsershots.org#@#.advert_area
 ||tmqlnshv.com^
 ||tmrjmp.com^
 ||tmrzeizggpilm.store^
+||tmtawsytrt.com^
 ||tnaczwecikco.online^
 ||tneca.com^
 ||tnfjlukzibewa.space^
@@ -109979,6 +109988,7 @@ browsershots.org#@#.advert_area
 ||tungateoptics.help^
 ||tunhoofdustrag.shop^
 ||tunitytostara.org^
+||tunkatrampot.com^
 ||tunneljig.shop^
 ||tunobwjyfcoad.online^
 ||tunosrxqt.xyz^

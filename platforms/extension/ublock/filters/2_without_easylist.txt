@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: TRNFqmjd+LRtSjWzhlSenQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1758608012-3600.patch
+! Checksum: vruj5CNR0oOCHEjnz6Pl/w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1758611563-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.12.72
-! TimeUpdated: 2025-09-23T06:09:26+00:00
+! Version: 2.4.12.73
+! TimeUpdated: 2025-09-23T07:08:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35666,7 +35666,7 @@ www.youtube.com##+js(adjust-setTimeout, [native code], 17000, 0.001)
 ! Fix ads with a specfic Google account and for case when JSON.stringify is not writable
 ! Fix ads on https://www.youtube.com/shorts/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1991263854
-! TODO: use scriptlet when this issue will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/183
+youtube.com##+js(json-prune, entries.[-].command.reelWatchEndpoint.adClientParams.isAd)
 ! This one may be unnecessary:
 ||youtube.com/get_video_info?*=adunit&$important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/81610
@@ -35771,6 +35771,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+xnxx.*##+js(addEventListener-defuser, DOMContentLoaded, /dyn\.ads|loadAdsDelayed/)
 ||transtxxx.com/static/tf/videos.*.json
 transtxxx.com##a[href^="https://candyai.gg/"]
 transtxxx.com##+js(json-prune, video.channel)

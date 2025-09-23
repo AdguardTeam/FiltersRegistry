@@ -1,9 +1,9 @@
-! Checksum: z9MNTbVGEbkKb0BoMIngDQ
-! Diff-Path: ../patches/2/2-s-1758608009-3600.patch
+! Checksum: RxQ6vV8pBNea1QlZ+uOcVg
+! Diff-Path: ../patches/2/2-s-1758611559-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.12.72
-! TimeUpdated: 2025-09-23T06:09:26+00:00
+! Version: 2.4.12.73
+! TimeUpdated: 2025-09-23T07:08:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37744,8 +37744,7 @@ www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{if(location.href.includes("/sho
 www.youtube.com#%#(()=>{const e={apply:(e,r,t)=>{if(location.href.includes("/shorts/"))return Reflect.apply(e,r,t);try{const a=t[0];if(!a?.context?.client)return Reflect.apply(e,r,t);a.context.client.clientScreen="ADUNIT",a.playbackContext&&(a.params=`yAEB${a.params?a.params:""}`),a.playerRequest&&(a.playerRequest.params=`yAEB${a.playerRequest.params?a.playerRequest.params:""}`),t[0]=a}catch(e){console.trace("Error occurred:",e)}return Reflect.apply(e,r,t)}};window.JSON.stringify=new Proxy(window.JSON.stringify,e)})();
 ! Fix ads on https://www.youtube.com/shorts/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172033#issuecomment-1991263854
-! TODO: use scriptlet when this issue will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/183
-m.youtube.com,www.youtube.com#%#(()=>{window.JSON.parse=new Proxy(JSON.parse,{apply(r,e,t){const n=Reflect.apply(r,e,t);if(!location.pathname.startsWith("/shorts/"))return n;const a=n?.entries;return a&&Array.isArray(a)&&(n.entries=n.entries.filter((r=>{if(!r?.command?.reelWatchEndpoint?.adClientParams?.isAd)return r}))),n}});})();
+youtube.com#%#//scriptlet('json-prune', 'entries.[-].command.reelWatchEndpoint.adClientParams.isAd')
 ! This one may be unnecessary:
 ||youtube.com/get_video_info?*=adunit&$important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/81610
@@ -37866,6 +37865,7 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+xnxx.*#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '/dyn\.ads|loadAdsDelayed/')
 ||transtxxx.com/static/tf/videos.*.json
 transtxxx.com##a[href^="https://candyai.gg/"]
 transtxxx.com#%#//scriptlet('json-prune', 'video.channel')
@@ -91048,6 +91048,7 @@ browsershots.org#@#.advert_area
 ||cndarpylsmffo.store^
 ||cnesnnavxumlh.online^
 ||cnfxflakkwavih.xyz^
+||cnkepcgukmrc.com^
 ||cnkupkiuvkcq.xyz^
 ||cnmnb.online^
 ||cnnected.org^
@@ -93304,6 +93305,7 @@ browsershots.org#@#.advert_area
 ||dlfvgndsdfsn.com^
 ||dlhdcawqeawfb.space^
 ||dlhwyaetguynl.space^
+||dlkqngolb.net^
 ||dllmqxzriqgnz.online^
 ||dlmonitize.com^
 ||dlqbioenjjwsv.store^
@@ -101349,6 +101351,7 @@ browsershots.org#@#.advert_area
 ||jhmjhgef.xyz^
 ||jhncmokruwmhd.website^
 ||jhpgrmboknxjyy.xyz^
+||jhqieljrzibnr.store^
 ||jhrgblwrqlkwn.com^
 ||jhtvtevkod.com^
 ||jhu8u9.pro^
@@ -102495,6 +102498,7 @@ browsershots.org#@#.advert_area
 ||knkkpmtdesg.com^
 ||knkvixlevwpdc.website^
 ||knmdcrgyufqzn.website^
+||knobblyerikite.help^
 ||knobby-weight.pro^
 ||knobbyaward.pro^
 ||knobwarriors.com^
@@ -103388,6 +103392,7 @@ browsershots.org#@#.advert_area
 ||lfstmedia.com^
 ||lfvpksanpg.com^
 ||lfwbvrlzqwevp.online^
+||lfxgbzxkfqhiy.space^
 ||lfygfjsfv.com^
 ||lfyynlsebgxsc.com^
 ||lfzibowrxoftr.online^
@@ -110738,6 +110743,7 @@ browsershots.org#@#.advert_area
 ||ptiweersoowhaih.net^
 ||ptiwhoopses.com^
 ||ptlucrangwlvs.website^
+||ptlufbanslsse.website^
 ||ptlwm.com^
 ||ptlwmstc.com^
 ||ptmnd.com^
@@ -112011,6 +112017,7 @@ browsershots.org#@#.advert_area
 ||rblpzclousuzr.online^
 ||rbmbmbrmnhq.com^
 ||rboyqkyojrbbj.top^
+||rboyqkyojrbkw.top^
 ||rboyqkyojrjkq.top^
 ||rboyqkyrwrvkq.top^
 ||rbp-gen1.site^
@@ -116605,6 +116612,7 @@ browsershots.org#@#.advert_area
 ||tmqlnshv.com^
 ||tmrjmp.com^
 ||tmrzeizggpilm.store^
+||tmtawsytrt.com^
 ||tnaczwecikco.online^
 ||tneca.com^
 ||tnfjlukzibewa.space^
@@ -117182,6 +117190,7 @@ browsershots.org#@#.advert_area
 ||tungateoptics.help^
 ||tunhoofdustrag.shop^
 ||tunitytostara.org^
+||tunkatrampot.com^
 ||tunneljig.shop^
 ||tunobwjyfcoad.online^
 ||tunosrxqt.xyz^

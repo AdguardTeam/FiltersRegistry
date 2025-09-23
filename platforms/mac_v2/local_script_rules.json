@@ -1046,10 +1046,6 @@
             "script": "(()=>{const e={apply:(e,r,t)=>{if(location.href.includes(\"/shorts/\"))return Reflect.apply(e,r,t);try{const a=t[0];if(!a?.context?.client)return Reflect.apply(e,r,t);a.context.client.clientScreen=\"ADUNIT\",a.playbackContext&&(a.params=`yAEB${a.params?a.params:\"\"}`),a.playerRequest&&(a.playerRequest.params=`yAEB${a.playerRequest.params?a.playerRequest.params:\"\"}`),t[0]=a}catch(e){console.trace(\"Error occurred:\",e)}return Reflect.apply(e,r,t)}};window.JSON.stringify=new Proxy(window.JSON.stringify,e)})();"
         },
         {
-            "domains": "m.youtube.com,www.youtube.com",
-            "script": "(()=>{window.JSON.parse=new Proxy(JSON.parse,{apply(r,e,t){const n=Reflect.apply(r,e,t);if(!location.pathname.startsWith(\"/shorts/\"))return n;const a=n?.entries;return a&&Array.isArray(a)&&(n.entries=n.entries.filter((r=>{if(!r?.command?.reelWatchEndpoint?.adClientParams?.isAd)return r}))),n}});})();"
-        },
-        {
             "domains": "dl.surf",
             "script": "(()=>{const t=\"/file/\";if(!location.pathname.includes(t))return;const e=(new Date).toISOString(),n=location.pathname.split(t)[1];document.cookie=`adsRedirect_${n}=${e}; path=/;`})();"
         },
