@@ -1,8 +1,8 @@
-! Checksum: UZ3hvlLCpSrDTl4sbAabZg
+! Checksum: lhUrnFE6vvl1KGDaaedngQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.43.90
-! TimeUpdated: 2025-09-24T13:14:13+00:00
+! Version: 2.2.43.91
+! TimeUpdated: 2025-09-24T14:07:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2540,6 +2540,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+emea.mizuno.com#%#//scriptlet('trusted-set-cookie', 'cookies-accepted', '{"functionalCookie":true,"marketingCookie":false,"socialCookie":false}')
 alipay.com#%#//scriptlet('set-cookie', 'cookie_config', 'emptyObj', '/', 'alipay.com')
 verbatim.com,verbatim-europe.com#%#//scriptlet('trusted-set-cookie-reload', 'VERBATIM-COOKIE-CONSENT', '{"essential":true,"functional":false,"performance":false,"targeting":false}')
 nexoc-store.de#$#body.no-consent-chosen::before { display: none !important; }
@@ -17544,6 +17545,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214084
+emea.mizuno.com#@#.cookie-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213965
 dvbsklep.pl,sklep.telmor.pl#@#.shop_index > div.consents

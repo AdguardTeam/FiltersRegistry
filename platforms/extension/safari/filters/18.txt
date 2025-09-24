@@ -1,9 +1,9 @@
-! Checksum: KJ5jzeGPCr3M7snoy4pifQ
-! Diff-Path: ../patches/18/18-s-1758719876-3600.patch
+! Checksum: Gg2XeGQcC6yoenZrFUQU3A
+! Diff-Path: ../patches/18/18-s-1758723081-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.70.80
-! TimeUpdated: 2025-09-24T13:14:17+00:00
+! Version: 2.0.70.81
+! TimeUpdated: 2025-09-24T14:07:26+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2542,6 +2542,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+emea.mizuno.com#%#//scriptlet('trusted-set-cookie', 'cookies-accepted', '{"functionalCookie":true,"marketingCookie":false,"socialCookie":false}')
 alipay.com#%#//scriptlet('set-cookie', 'cookie_config', 'emptyObj', '/', 'alipay.com')
 verbatim.com,verbatim-europe.com#%#//scriptlet('trusted-set-cookie-reload', 'VERBATIM-COOKIE-CONSENT', '{"essential":true,"functional":false,"performance":false,"targeting":false}')
 nexoc-store.de#$#body.no-consent-chosen::before { display: none !important; }
@@ -17480,6 +17481,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214084
+emea.mizuno.com#@#.cookie-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213966
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213965
 dvbsklep.pl,sklep.telmor.pl#@#.shop_index > div.consents
