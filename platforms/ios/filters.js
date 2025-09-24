@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.13.7",
-			"timeUpdated": "2025-09-24T17:06:38+0000",
+			"version": "2.4.13.8",
+			"timeUpdated": "2025-09-24T18:09:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.94.73",
-			"timeUpdated": "2025-09-24T16:08:56+0000",
+			"version": "2.0.94.74",
+			"timeUpdated": "2025-09-24T18:09:48+0000",
 			"languages": [],
 			"tags": [
 				45,
