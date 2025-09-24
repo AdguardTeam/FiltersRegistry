@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: gu4bPaYPCY8HOHbKVIbOGw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1758687138-3600.patch
+! Checksum: 2uqbpfnFGub0ErhSWY7gpQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1758690739-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.12.94
-! TimeUpdated: 2025-09-24T04:07:45+00:00
+! Version: 2.4.12.95
+! TimeUpdated: 2025-09-24T05:07:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35776,6 +35776,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+greekherald.com.au##.adsanity-ad-text
+greekherald.com.au##.wpb_wrapper:has(> .td-fix-index > .adsanity-ad-text)
+scegliauto.com###container > table[width]:has(> tbody > tr > td > ins.adsbygoogle)
+scegliauto.com###container > table[width][style^="height: 286px;"]
 javfilms.com##+js(set-cookie, popupcookie, 1)
 javfilms.com##+js(remove-attr, href, a[href^="get/"].setpopupcookie.videoplayerstartbtn)
 anybunny.casa##.excitement
@@ -56033,6 +56037,10 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/213821
+@@||vms-players.minutemediaservices.com/voltax_player_embed_mount.js$domain=theplayerstribune.com
+@@||mp.mmvideocdn.com/mini-player/$domain=theplayerstribune.com
+@@||vms-videos.minutemediaservices.com^$xmlhttprequest,domain=theplayerstribune.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213560
 dmax.de##+js(remove-class, block-user, .block-user)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213267
