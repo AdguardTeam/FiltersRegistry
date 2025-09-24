@@ -1,9 +1,9 @@
-! Checksum: 8KFzdycBfh4A5kH6f5r83Q
-! Diff-Path: ../patches/257/257-s-1758616956-14400.patch
+! Checksum: hhdP3GBBuCn5w9po5lrODQ
+! Diff-Path: ../patches/257/257-s-1758688881-14400.patch
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.9.3
-! TimeUpdated: 2025-09-23T08:39:02+00:00
+! Version: 2.0.9.4
+! TimeUpdated: 2025-09-24T04:37:50+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -5011,7 +5011,7 @@ cracksmid.com##div[style=""] > center > center
 !+ NOT_OPTIMIZED
 ||azureedge.net/*/flscn.js
 !+ NOT_OPTIMIZED
-||ondigitalocean.app/text_tel.js
+/text_tel.js$domain=app|dev|fit
 ! https://github.com/uBlockOrigin/uAssets/issues/29718
 !+ NOT_OPTIMIZED
 ! [excluded by #%#//scriptlet] z13.web.core.windows.net#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'fullscreenEnabled')
@@ -9859,13 +9859,11 @@ uploadfox.net###ad-gs-05
 ! https://urlscan.io/result/01988455-c1dc-758e-ad77-aed867027098/
 ! https://urlscan.io/result/01989b3c-4c33-716c-a270-179fa905579f/
 !+ NOT_OPTIMIZED
-/?jsc=*&f=*&t=$xmlhttprequest,redirect=nooptext
+/?js*&f=*&t=$xmlhttprequest,redirect=nooptext
 !+ NOT_OPTIMIZED
 /submit.php?i=*&t=$xmlhttprequest
 !+ NOT_OPTIMIZED
-://api.*.com/?rt=$document
-!+ NOT_OPTIMIZED
-://api.*.com/?zrt=$document
+/^https:\/\/api\.[a-z]{20,}\.com\/\?[a-z]{2,3}=[0-9a-f]{32}$/$document,match-case
 ! https://github.com/uBlockOrigin/uAssets/issues/29515
 ! https://www.virustotal.com/gui/url/fc99f6b3ef99669275b4b798eb2bc46cdc4f5f7e09b84e57ba1a2238db3b4795
 ! https://www.virustotal.com/gui/url/b7860c134e76d01fdffdd560436243825a99938f227c62a43f9bf8d1861da9e4
@@ -10130,3 +10128,10 @@ uploadfox.net###ad-gs-05
 ||bitchat.live^$all
 !+ NOT_OPTIMIZED
 ||myhuaweicloud.com/app/Bitchat_*.apk$all
+! https://www.reddit.com/r/CryptoScams/comments/1nmmlla/scam_alert_fake_upbit_sites_targeting_crypto/
+! https://www.virustotal.com/gui/url/0db497e9253e0414fb8c66c6498cf51c72b9a2d9cfb5a1d27ae8aece2977d4a6
+! https://www.virustotal.com/gui/url/a24806e65d73dabf84b1f733bc0351bb0f803bb5fe2b6ee1afc1dc0f77b71867
+!+ NOT_OPTIMIZED
+||upa1bit.$all
+!+ NOT_OPTIMIZED
+||upbitbr.$all
