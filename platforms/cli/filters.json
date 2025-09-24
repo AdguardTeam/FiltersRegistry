@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.13.1",
-			"timeUpdated": "2025-09-24T11:06:13+0000",
+			"version": "2.4.13.2",
+			"timeUpdated": "2025-09-24T12:11:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.19.77",
-			"timeUpdated": "2025-09-24T10:08:13+0000",
+			"version": "2.1.19.78",
+			"timeUpdated": "2025-09-24T12:11:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.67",
-			"timeUpdated": "2025-09-24T11:06:37+0000",
+			"version": "2.0.59.68",
+			"timeUpdated": "2025-09-24T12:11:47+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.43.88",
-			"timeUpdated": "2025-09-24T11:06:43+0000",
+			"version": "2.2.43.89",
+			"timeUpdated": "2025-09-24T12:11:52+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.94.70",
-			"timeUpdated": "2025-09-24T10:08:40+0000",
+			"version": "2.0.94.71",
+			"timeUpdated": "2025-09-24T12:11:54+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.37.64",
-			"timeUpdated": "2025-09-24T11:06:50+0000",
+			"version": "2.0.37.65",
+			"timeUpdated": "2025-09-24T12:11:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.44.64",
-			"timeUpdated": "2025-09-24T09:08:32+0000",
+			"version": "2.1.44.65",
+			"timeUpdated": "2025-09-24T12:12:04+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

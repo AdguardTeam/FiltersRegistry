@@ -1,9 +1,9 @@
-! Checksum: 7uR+HctaFrX6M+DRIkLdfw
-! Diff-Path: ../patches/13/13-s-1758712214-3600.patch
+! Checksum: xa5PuUFATH+w5irosR4JLQ
+! Diff-Path: ../patches/13/13-s-1758716124-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.67
-! TimeUpdated: 2025-09-24T11:06:37+00:00
+! Version: 2.0.59.68
+! TimeUpdated: 2025-09-24T12:11:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5599,8 +5599,10 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
 ! betivotv*.com - frequently changed domains
 ||betivotv*.com/Uploads/*.gif
-[$domain=/betivotv\d+\.com/]#%#//scriptlet('set-constant', 'config.adv.enabled', 'false')
+[$domain=/betivotv\d+\.com/]#%#//scriptlet('set-constant', 'config.adv.enabled', '0')
 [$domain=/betivotv\d+\.com/]#$#body { background-image: none !important; }
+[$domain=/betivotv\d+\.com/]##ul[data-nav-mobile="#nk-nav-mobile"] > li:has(> a[href^="https://bit.ly/"])
+[$domain=/betivotv\d+\.com/]##ul[data-nav-mobile="#nk-nav-mobile"] > li:has(> a[href^="https://tinyurl.com/"]:not([href$="-Telegram"]):not([href$="-Twitter"]):not([href$="-instagram"]))
 [$domain=/betivotv\d+\.com/]##.vertical-gap:has(> .col-lg-12 > a[href^="https://"][target="_blank"])
 [$domain=/betivotv\d+\.com/]##body > div[style="position:fixed;height:100%;z-index:1;width:100%"]
 !
