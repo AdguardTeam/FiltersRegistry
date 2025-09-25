@@ -1,6 +1,6 @@
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 11September2025v3-Compilation
+! OriginalVersion: 24September2025v1-Compilation
 ! Expires: 18 hours
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -12628,6 +12628,9 @@ drvhub.net##.driver-item__install
 ||gitcoin-fund.$all,domain=~blatant_scammers_who_have_no_actual_relations_with_github_whatsoever.*
 /^https://gitcoin-[a-z]{1,}\.com/?$/$all,domain=~blatant_scammers_who_have_no_actual_relations_with_github_whatsoever.*
 /^https://[a-z]{1,}-gitcoin\.com/?$/$all,domain=~blatant_scammers_who_have_no_actual_relations_with_github_whatsoever.*
+||paradlgm.com^$all
+/^http.*\.com//?secureproxy(\.php)?\?e=(ping|/)[a-z_]{0,}$/$all
+|https://undefined/
 ! https://news•ycombinator•com/item?id=45308596
 ||gitcoin-developers.$all,domain=~blatant_scammers_who_have_no_actual_relations_with_github_whatsoever.*
 ||github-foundation.$all,domain=~blatant_scammers_who_have_no_actual_relations_with_github_whatsoever.*
@@ -31701,7 +31704,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 !#if !env_safari
 !#if !adguard_app_ios
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 19September2025v2
+! OriginalVersion: 24September2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -35392,7 +35395,7 @@ $removeparam=afSmartRedirect
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6305974
 $removeparam=repost,domain=nbcnews.com|sacurrent.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6306026
-||wsj.com^$removeparam=st
+!!!||wsj.com^$removeparam=st (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-14492064)
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6306076
 ||uslecce.it^$removeparam=et
 ! https://www•skinnytaste•com/burger-recipes/?adt_ei=*|EMAIL|*
@@ -37900,3 +37903,12 @@ teknikproffset.*##.seg-promotion-wrapper
 ! Very red warning colouring when being about to incorrectly upload Anti-Malware List generated files to the Nordic Filters folder, or the other way around
 github.com#$?#.clearfix:has(h1:has-text(/^Uploading files .* versions Anti-Malware List$/)):has(div.js-filename:has-text(/^NordicFilters.*$/)) { background-color:red!important }
 github.com#$?#.clearfix:has(h1:has-text(/^Uploading files .*NorwegianExperimentalList .*$/)):has(div.js-filename:has-text(/^AntiMalware.*$/)) { background-color:red!important }
+! You all know those constant popups that   a   l o t   of websites show whenever the mouse cursor goes outside the page window area? I think I've found a fix for it, and I have solid confidence in that fix thus far. (24/09/2025)
+!#if !env_mobile
+!#if !adguard_ext_android
+!#if !adguard_ext_ios
+!+ NOT_OPTIMIZED
+*#%#//scriptlet('ubo-acs.js', 'addEventListener', 'mouseleave')
+!#endif
+!#endif
+!#endif
