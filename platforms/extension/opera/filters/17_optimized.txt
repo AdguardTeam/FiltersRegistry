@@ -1,9 +1,9 @@
-! Checksum: xOD2TDbQ67lLZP24qcMiRA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1758514342-3600.patch
+! Checksum: 4Ej14FI8cgV969/N6w23TA
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1758770665-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.86
-! TimeUpdated: 2025-09-22T04:08:46+00:00
+! Version: 2.0.11.87
+! TimeUpdated: 2025-09-25T03:21:02+00:00
 ! Expires: 10 days (update frequency)
 $removeparam=loclid
 $removeparam=line_uid
@@ -222,6 +222,7 @@ $removeparam=dpg_campaign
 $removeparam=dpg_medium
 $removeparam=dpg_content
 $removeparam=admitad_uid
+$removeparam=adj_label
 $removeparam=adj_campaign
 $removeparam=adj_t
 $removeparam=adj_creative
@@ -2175,6 +2176,7 @@ $removeparam=s,domain=twitter.com|x.com
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+@@||adj.st^$removeparam=adj_t
 @@||passport.jlcpcb.com^$removeparam=from
 @@||yandex.go.link^$removeparam=adj_t
 @@||em.dynamicyield.com^$removeparam=cuid

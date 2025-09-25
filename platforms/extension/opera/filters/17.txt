@@ -1,9 +1,9 @@
-! Checksum: +CIV/CNnz9vqLBsYS14fdA
-! Diff-Path: ../patches/17/17-s-1758514342-3600.patch
+! Checksum: 6ux6t/JxwNBLTsqvMUS2qg
+! Diff-Path: ../patches/17/17-s-1758770665-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.86
-! TimeUpdated: 2025-09-22T04:08:46+00:00
+! Version: 2.0.11.87
+! TimeUpdated: 2025-09-25T03:21:02+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -343,6 +343,7 @@ $removeparam=dpg_content
 ! AdmitAd tracking
 $removeparam=admitad_uid
 ! adjust.com tracking
+$removeparam=adj_label
 $removeparam=adj_campaign
 $removeparam=adj_t
 $removeparam=adj_creative
@@ -3120,6 +3121,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214119
+@@||adj.st^$removeparam=adj_t
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213210
 @@||passport.jlcpcb.com^$removeparam=from
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211078
