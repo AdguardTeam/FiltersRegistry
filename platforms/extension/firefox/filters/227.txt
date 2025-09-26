@@ -1,9 +1,9 @@
-! Checksum: 6ksd4htjqRbaUjNnAbt/tg
-! Diff-Path: ../patches/227/227-s-1758847991-14400.patch
+! Checksum: +zQ4XqFvjihO1zzngozzDQ
+! Diff-Path: ../patches/227/227-s-1758890964-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.1
-! TimeUpdated: 2025-09-26T00:49:22+00:00
+! Version: 2.0.23.2
+! TimeUpdated: 2025-09-26T12:45:20+00:00
 ! Expires: 10 days (update frequency)
 !
 ||mman.kr^
@@ -3405,6 +3405,7 @@ zzzz.lol#?#.widget-side .widget-title:has(+ div a[href^="/bbs/link.php?bo_table=
 ! aglint-disable-next-line
 !
 ! DOMAIN-REFRESHER: END
+chzzk.naver.com#$?#.webplayer-internal-core-shadow > .wpc-pos-abs { remove: true; }
 m.fmkorea.com#$?#.bd.bd_mobile:not(:has(*)):has(~ #spot form[action][method].search) { remove: true; }
 m.fmkorea.com#$?#*.bd.bd_mobile:not(:has(#bd_capture ~ #comment)):has(form[action="./"]:matches-css(height: auto)) { remove: true; }
 search.daum.net#$?#body.nate aside#mAside > div[disp-attr]:has(> .wing_nate) + div[disp-attr] { margin-top: 0px !important; }
@@ -3516,6 +3517,8 @@ m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', '_boom
 m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.?(jpg|gif)/')
 ! m.fmkorea.com
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
+! chzzk.naver.com
+chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'content.playerAdDisplayResponse', '', 'api.chzzk.naver.com/service/t/')
 !
 heye.kr#%#//scriptlet('prevent-window-open', 'pandalive.co.kr/evt/')
 newneek.co#%#//scriptlet('prevent-xhr', 'api-v2.adrop.io/request')
