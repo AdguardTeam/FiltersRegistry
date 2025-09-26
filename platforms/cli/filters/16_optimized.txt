@@ -1,5 +1,5 @@
-! Checksum: VAe/J/T9dFj31aWhI8XryA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1758767888-3600.patch
+! Checksum: muxt1eCbgpLKY8ToeDH01w
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1758854211-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.54.44
@@ -401,6 +401,9 @@ numerama.com##.opti-kyd[data-gtm-bic]
 dexerto.fr##div[class*="bg-custom-ad-background"]
 dexerto.fr###player-wrapper:empty
 dexerto.fr###player-wrapper:has(> script[data-publisher-targeting*="vidazoo_instream"])
+south-park-tv.fr##.king-loading-ad
+south-park-tv.fr##.king-ads
+south-park-tv.fr##.ads-postpage
 judgehype.com##.block-content-right:has(> div > a[href="https://judgehype.com/abonnement"])
 lejdd.fr##.outbrain-container
 diverto.tv##div[data-atoms="Ad"]
@@ -1475,6 +1478,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://ad.*/embed.
 ://ad.*?pid=
 ://adg.*/pub/
+://adlik.
 ://adscdn.
 ://adspaces.
 ://adss.
@@ -1740,6 +1744,7 @@ _build=iclick-$popup
 ||adleadevent.com^$third-party
 ||admark.fr^$third-party
 ||admediaking.com^$third-party
+||admitlead.ru^$third-party
 ||admuncher.com^$third-party
 ||admysports.com^$third-party
 ||adnxtr.com^$third-party
@@ -1771,12 +1776,12 @@ _build=iclick-$popup
 ||adwise.bg^$third-party
 ||affilae.com^$third-party
 ||affiliatable.io^$third-party
-||affiliatehub.co.in^$third-party
 ||affility.com^$third-party
 ||afilio.com.br^$third-party
 ||appsha1.cointraffic.io^
 ||apypxl.com^$third-party
 ||aquaplatform.com^$third-party
+||arabyads.com^$third-party
 ||askmecca.com^$third-party
 ||atedra.com^$third-party
 ||bazardux.com^$third-party
@@ -2130,6 +2135,7 @@ _build=iclick-$popup
 ||brunettemattersrefused.com^
 ||bubblyzucchini.com^
 ||bulbusscabish.shop^
+||bullyhempbacked.com^
 ||burkhahemoid.com^
 ||burniecrepes.com^
 ||bushibousy.click^
@@ -2234,6 +2240,7 @@ _build=iclick-$popup
 ||dpuplet.net^
 ||dq95d35.com^
 ||draffyunsheer.com^
+||dragonblogger.com^
 ||draweesoutkiss.com^
 ||druqkstwwvg.com^
 ||duchessefit.com^
@@ -2288,6 +2295,7 @@ _build=iclick-$popup
 ||eymwxhqck.com^
 ||fabricforrel.com^
 ||fadedsnow.com^
+||fagarauvitic.com^
 ||fairfeeling.com^
 ||falseframe.com^
 ||famitaa.com^
@@ -2449,7 +2457,6 @@ _build=iclick-$popup
 ||leedsneurite.com^
 ||lend-rb.bid^
 ||lettenfluoric.com^
-||lexintaria.com^
 ||lgxdwxzgfxvy.com^
 ||liasingmyxopod.com^
 ||licertle.co^
@@ -2663,6 +2670,7 @@ _build=iclick-$popup
 ||reicezenana.com^
 ||renaissanto.com^
 ||retinaesprent.com^
+||retingexylogen.com^
 ||riamiavid.com^
 ||rizarhankul.shop^
 ||rkvldurquedh.com^
@@ -2763,7 +2771,6 @@ _build=iclick-$popup
 ||tetabesl.info^
 ||tfpipnwengia.com^
 ||thewhizproducts.com^
-||threepi.de^
 ||thymeycimnel.com^
 ||tiepinshazings.com^
 ||timaariraconiansta.org^
@@ -2921,7 +2928,6 @@ _build=iclick-$popup
 ||anrdoezrs.net^$popup,third-party
 ||badoink.com^$popup,third-party
 ||bestcontentcost.top^$popup
-||bestentrypoint.com^$popup
 ||boonsex.com^$popup,third-party
 ||brightonclick.com^$popup,third-party
 ||buysellads.com^$popup,third-party
@@ -3127,6 +3133,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||promo.japanhdv.com^
 ||proxy.ads.canalplus-bo.net^
 ||proxy.vidazoo.com^
+||pub-algeriatenders.s3.eu-central-1.amazonaws.com^
 ||pub.groupe-ldlc.com^
 ||r.kelkoo.com^$domain=toutvendre.fr
 ||ratehub.ca/widgets/$third-party
@@ -3777,6 +3784,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub_pave3
 ###pub_pave_article
 ###pub_plop-1
+###pub_rectangle
 ###pub_right
 ###pub_square
 ###pub_top
@@ -4032,6 +4040,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.mod-ad-top-2
 ##.mod-advertisement
 ##.modAd
+##.modalPub
 ##.module-pub
 ##.module_sponsored
 ##.mom-ads-wrap
@@ -4156,7 +4165,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pub_mobile_une
 ##.pub_open
 ##.pub_pave
-##.pub_prod
 ##.pub_sky
 ##.pub_skyscraper
 ##.pub_slot
@@ -4226,6 +4234,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.section-ads-center
 ##.shareaholic-canvas
 ##.shopperAds
+##.show-pub
 ##.side-pub
 ##.side_slide_pub
 ##.sidebar-adv
@@ -4237,6 +4246,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.site-inner-ads
 ##.site-pub-interstitiel
 ##.site-pub-skin
+##.site-pub-top
 ##.skin_outer_ad
 ##.smiliar_ads
 ##.special-banner
@@ -4729,6 +4739,7 @@ amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 tube8.fr##a[href*="/_xa/ads?"]
 1337x.cz,cpasbien-support.com,cpasbien4.com,mega-torrent6.com,nextorrent4.com,nortorrent4.com,nortorrent6.com,oxtorrent2.com,oxtorrent5.com,rantop.cc,torrent-p2p.my,torrent-site.com,ultimate-torrent1.com,yggtorrent3.com,yggtorrents.top,zetorrents1.com,zktorrent.support,zktorrent3.com,zktorrent5.com,zone-torrent2.com##a[href*="/adsby/"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
+igen.fr,macg.co,watchgeneration.fr##a[href*="/publicite/"]
 exefiles.com##a[href*="/recommended/"]
 1001ebooks.ws##a[href*="/telebooks.html"]
 seneweb.com##a[href*="/xban/"]
