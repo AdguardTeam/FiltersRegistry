@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: YlgJe6/aQQ/r8/kHh7rjyg
-! Diff-Path: ../patches/3/3-s-1758863518-3600.patch
+! Checksum: A69RHYxAQrCWKZEo9pMguw
+! Diff-Path: ../patches/3/3-s-1758870749-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.91.99
-! TimeUpdated: 2025-09-26T05:07:46+00:00
+! Version: 2.0.92.0
+! TimeUpdated: 2025-09-26T07:08:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -73449,6 +73449,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||cloudmetrics.xenforo.com^
+||api-analytics.pelikan.sk^
 ||analytics.streamingworld.xyz^
 ||stats.bouyguestelecom.fr^
 ||analytics-cdn.sport.es^
@@ -115534,6 +115536,7 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+pelikan.*##+js(set-local-storage-item, PAPVisitorId, $remove$)
 iflscience.com##+js(set-local-storage-item, SPOTIM_DEVICE_UUID_V2, $remove$)
 bloomberg.com##+js(set-local-storage-item, /statsig|youboraDeviceUUID/, $remove$)
 ||teltarif.de/cgi-bin/jswarn
@@ -121586,6 +121589,7 @@ twitter.com%2Fscribe%2Fibis%3Ft%3D$image
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! pelikan.sk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213694
 ! hostadvice.com
 ! azrhymes.com
