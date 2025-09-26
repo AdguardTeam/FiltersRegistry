@@ -1,9 +1,9 @@
-! Checksum: XoZIuXtBed+wDtsyKrYOiA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1758775310-14400.patch
+! Checksum: Dt1UlVDlg19IQKxIoWm12A
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1758848016-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.0
-! TimeUpdated: 2025-09-25T04:37:21+00:00
+! Version: 2.0.23.1
+! TimeUpdated: 2025-09-26T00:49:22+00:00
 ! Expires: 12 hours (update frequency)
 ||mman.kr^
 ||admize.io^
@@ -3538,6 +3538,8 @@ t.hi098123.com#@#ins.adsbygoogle[data-ad-slot]
 @@||googletagmanager.com/gtag/js$domain=t.hi098123.com,script
 !#safari_cb_affinity
 t.hi098123.com#$#.tabad { top: -100px !important; }
+dcinside.com#%#//scriptlet('remove-cookie', 'gaejuki_ad')
+dcinside.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '_ad=')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle')
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 ||shana.pe.kr/shana_check/scp*.js$script
@@ -3639,6 +3641,7 @@ lover932.net,lover933.net,lover934.net,lover935.net,lover936.net,lover937.net,lo
 ||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=~wcyb.com
 ||googletagservices.com/tag/js/gpt.js$script,redirect=googletagservices-gpt
 ||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=~investing.com|~wcyb.com
+heye.kr$$script:contains(/window\.open\([^)]*\);\s*\w+\.focus/)
 m.humoruniv.com$$script:contains(/run[\s\S]*?data[\s\S]*?OnClick[\s\S]*?ad\d_/)
 meeco.kr$$script[tag-content="error-report.com"]
 kio.ac$$script[tag-content="K$()"]
