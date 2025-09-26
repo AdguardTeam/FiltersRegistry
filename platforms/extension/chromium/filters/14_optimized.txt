@@ -1,9 +1,9 @@
-! Checksum: nUkTb7AW17n4Za787NMnbw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1758888908-3600.patch
+! Checksum: e3DrYUu5maQExqfT/d0tDw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1758892646-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.14
-! TimeUpdated: 2025-09-26T12:11:31+00:00
+! Version: 2.2.44.15
+! TimeUpdated: 2025-09-26T13:13:50+00:00
 ! Expires: 10 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -23863,11 +23863,8 @@ yandex.*##main[class="body__wrapper"] form ~ div > div[style^="--height-ratio:"]
 [$path=/search]ya.ru,yandex.*##.serp-item:has(> div[data-state-id] > article > div[class*="-"] span[id*="-PriceDisclaimer"])
 ya.ru,yandex.*##.DistributionLinkBro
 ya.ru,yandex.*##.Distribution-Popup
-ya.ru,yandex.*#$#div[class*="Distribution-SplashScreenModal"]:has(span.Distribution-AgeRestriction) { display: none !important; }
+ya.ru,yandex.*#$#div[class*="Distribution-SplashScreenModal"]:has(div.Distribution-Actions > a.Distribution-ButtonOk ) { display: none !important; }
 [$path=/search]ya.ru,yandex.*#$#button[type="button"][title="Нет, спасибо"] { display: none !important; }
-[$path=/search]ya.ru,yandex.*#$#div[class*="Distribution-SplashScreenModal"]:has(a[href^="https://yabs.yandex.ru/count/"]) { display: none !important; }
-[$path=/search]ya.ru,yandex.*#$#div[class*="Distribution-SplashScreenModal"]:has(a[href^="https://ya.ru/search/_crpd/"]) { display: none !important; }
-[$path=/search]ya.ru,yandex.*#$#div[class*="Distribution-SplashScreenModal"][outercrosstitle="Нет, спасибо"] { display: none !important; }
 [$path=/search]ya.ru,yandex.*##div.Root[id]:has(> button.Distribution-SplashScreenModalCloseButtonOuter)
 [$path=/search]ya.ru,yandex.*#$#body[style] { padding-right: 0 !important; overflow: auto !important; }
 [$path=/search]ya.ru,yandex.*##.HeaderDesktopActions-Distribution
