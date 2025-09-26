@@ -1,9 +1,9 @@
-! Checksum: ODc3yN59rE1SxCjWR9O+LQ
-! Diff-Path: ../patches/14/14-s-1758881504-3600.patch
+! Checksum: zo6zJbA4/Eacgt6oaX2Ewg
+! Diff-Path: ../patches/14/14-s-1758888907-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.13
-! TimeUpdated: 2025-09-26T10:08:13+00:00
+! Version: 2.2.44.14
+! TimeUpdated: 2025-09-26T12:11:31+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4333,7 +4333,7 @@ airport.wroclaw.pl##body .cookies__overlay
 naturehills.com,perryellis.com,saatva.com,biglifejournal.com###polaris-consent-widgets
 movistar.es###cookies-bar-component
 tallink.com#$##cms-web-consent-root { display: none !important; }
-tallink.com#$#body { overflow: auto !important; }
+tallink.com#$#html > body:not(#style_important) { overflow: auto !important; padding-right: 0 !important; }
 topin.cz#%#//scriptlet('trusted-set-cookie', '_GTM_Consent', '{"ad_storage":"denied","analytics_storage":"denied","functionality_storage":"granted","personalization_storage":"denied","security_storage":"granted"}')
 superchat.de##footer + div.fixed[class*="bottom"][style*="z-index"]
 abel-falisse.be#$##cookie-consent-popup { display: none !important; }
@@ -46219,6 +46219,8 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214203
+eurogamer.net##.recommendation
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212570#issuecomment-3248718051
 india.com#%#//scriptlet('trusted-click-element', '#PreferredSources .close-btn')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213018

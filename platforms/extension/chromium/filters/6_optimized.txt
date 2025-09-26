@@ -1,9 +1,9 @@
-! Checksum: zq9Bu6jV/5eI+HhRWHylyg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1758854216-3600.patch
+! Checksum: 7n0CToUNZefMZNRdaRd+Ow
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1758888910-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.49.62
-! TimeUpdated: 2025-09-25T20:07:47+00:00
+! Version: 2.0.49.63
+! TimeUpdated: 2025-09-26T12:11:18+00:00
 ! Expires: 10 days (update frequency)
 ||ads.goldbach-germany.de^
 ||remp-campaign.golem.de^
@@ -494,7 +494,7 @@ chip.de#%#(()=>{const t={construct:(t,n,e)=>{const o=n[0],r=o?.toString();return
 !+ NOT_PLATFORM(ext_ff)
 chip.de#%#(()=>{document.addEventListener('DOMContentLoaded',()=>{const o=[];[...document.scripts].forEach((c=>{const n=c.innerText,t=/window\..*\["(.*)"]/;if(n.includes('"impr":')){const c=n.match(t)[1];o.push(c)}})),o.forEach((o=>{const c=document.querySelector(`.${o}`);c&&c.remove()}))})})();
 chip.de#%#//scriptlet('set-cookie', 'chipde-r2d2-view-state ', '1')
-giga.de#%#//scriptlet('abort-on-stack-trace', 'XMLHttpRequest.prototype.open', 'hd-main.js')
+giga.de#%#//scriptlet('abort-on-stack-trace', 'document.dispatchEvent', 'requestAds')
 giga.de,spiegel.de,welt.de,t-online.de#%#(()=>{window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,{apply:(a,b,c)=>{const d=b.urlCalled;return"string"!=typeof d||0===d.length?Reflect.apply(a,b,c):d.match(/\.damoh\./)?void 0:Reflect.apply(a,b,c)}})})();
 eispop.com#%#//scriptlet('set-constant', 'Object.prototype.AdOverlay', 'noopFunc')
 vip.de#%#//scriptlet('prevent-xhr', 'svonm')
