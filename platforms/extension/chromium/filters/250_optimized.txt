@@ -1,5 +1,5 @@
-! Checksum: Hh1JuC7/IXniv01AG61jwA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1758861652-14400.patch
+! Checksum: e9LXBOE1S5ANOontdeZmxA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1758948022-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.95
@@ -890,6 +890,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||social-plugins.line.me/widget/share?url=$subdocument
 ||static.addtoany.com/buttons^$image
 ||static.addtoany.com/menu^$script
+||static.mixi.jp/share_button.html^$subdocument,domain=~mixi.jp
 ||tumblr.com/share/$third-party
 ||twitter.com/share$third-party
 ||widgets.getpocket.com/v1/button?label=pocket$subdocument
@@ -1380,7 +1381,6 @@ www.youtube.com##head:has(meta[property$=":video:url"]) + body div[class$=-gradi
 ##div[class^=ytp-gradient-]
 www.youtube.com#$#.ytp-time-display > span { font-weight: 800 !important; text-shadow: black 0 0 3px !important }
 twe.no#$#div[style*=overlayFadeTo] { --overlayFadeTo: none !important }
-play.tv2.no##div[data-testid=player-controls]::before
 ~imdb.com##.imdb:not(html,body,:empty)
 ~imdb.com##.imdb-rating:not(html,body,:empty)
 ~imdb.com##.btn[href*=".imdb.com"]
@@ -2071,6 +2071,7 @@ $removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
 ||amazon.*/product/$removeparam=tag,document
+||amazon.*/artists/$removeparam=tag,document
 ||amazon.$removeparam=qu
 ||amazon.*/dp/$removeparam=rps,document
 ||amazon.$removeparam=content-id
@@ -2746,6 +2747,11 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=productGridView
 ||jcpenney.com^$removeparam=badge
 ||jcpenney.com^$removeparam=selectedSKUId
+||bandcamp.com^$removeparam=search_item_id
+||bandcamp.com^$removeparam=search_item_type
+||bandcamp.com^$removeparam=search_match_part
+||bandcamp.com^$removeparam=search_page_no
+||bandcamp.com^$removeparam=search_rank
 ||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
@@ -2778,9 +2784,6 @@ $removeparam=link_source_user_id,domain=nextdoor.com
 $removeparam=is,domain=nextdoor.com
 $removeparam=mar,domain=nextdoor.com
 ||dzen.ru^$removeparam=yredirect
-||verizon.com^$removeparam=campaignGroup
-||verizon.com^$removeparam=campaignName
-||verizon.com^$removeparam=campaignSource
 ||youtube.com^$removeparam=embeds_euri
 ||youtube.com^$removeparam=source_ve_path
 ^ref=hackernoon.com^$removeparam=ref
