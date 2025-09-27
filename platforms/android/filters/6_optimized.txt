@@ -1,5 +1,5 @@
-! Checksum: fx9j6VbAOT5d1OckcMpBjA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1758913809-3600.patch
+! Checksum: Mv726b24wEEskrk9zheMSg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1758940452-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.49.64
@@ -883,8 +883,8 @@ serienjunkies.de##div[class^="id-TBeep"]
 kupujemprodajem.com##div[class^="Banner"][class*="_banner"]
 ||kupujemprodajem.com/static/images/banners/
 fachinformatiker.de##img[alt*="advertisement"]
+winfuture.de#?#.showitxt > b:contains(Spartipp)
 winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink
-||api.app.dfbplay.tv/*/Adverts/
 winfuture.de##a[href^="https://winfutu.re"] + br
 gameswirtschaft.de##div.wpb_text_column:has(> div.wpb_wrapper > div.aawp)
 noz.de##.container-ob
@@ -894,6 +894,7 @@ radio.de,radio.net,radio.at##.hidden.md\:pt-8
 kreuzwortraetsel.de##.mta
 wiwo.de##app-advertisement
 wiwo.de##app-content-advertisement
+infranken.de#?#.listing-item:has( > article > .teaser-inner .post-topline:contains(Anzeige))
 heise.de#?#span[class^="right"]:contains(Anzeige)
 stern.de#$?#.d-md-revert.ad-container { display: none !important; }
 stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent:last-child)
@@ -1716,7 +1717,6 @@ focus.de#$##top-banner { max-height: 0px !important; min-height: 0px !important;
 focus.de##div[class*="cls_slot_"]
 file-upload.net###dwdiv2-ads
 ||file-upload.net/include/mitte-orig.php
-xmedia-recode.de##.box_banner
 wetter.com###aug-index > div.app-layout.pb--
 focus.de##.articleContent > .textPDF
 focus.de##.articleContent > .textBlock > h2:empty
@@ -1848,6 +1848,7 @@ chip.de##.Downloads .Subchapter .Download-Buttons ~ .ButtonAuswahl + div > div[i
 hifi-forum.de###widget_ad
 impulse.de,tichyseinblick.de##div[id^="Ads_"]
 kachelmannwetter.com###meteosafe
+||pi-news.net/wp-content/uploads/*/*_banner.jpg
 web.de,gmx.net##div[data-adservice-slot]
 duden.de###block-lexemleaderboardunten
 fondsweb.com##.f-ad-leaderboard-container
@@ -1977,6 +1978,7 @@ mz.de###nativendo-artikel
 php.de##div[class^="ad_header"]
 ratgeber.bunte.de,focus.de,chip.de##.Article__Promo
 chip.de##a[title*="(Anzeige)"]
+medien-studieren.net,medienstudienfuehrer.de##.singlebanner
 wallstreet-online.de###nativendo-nachrichten
 spox.com##.dazn
 games.ch##.rect
@@ -2316,6 +2318,7 @@ formel1.de#?##right_column > div.teaser_container:has(div.OUTBRAIN)
 rtde.site#?#.Section-root:has(> div.Section-container > div.Section-block > div[id^="adfox_"])
 deutschlandkurier.de#?#.vc_column > div.wpb_wrapper > div.td_block_wrap:has(> div.td-fix-index:contains(Anzeige))
 ww-kurier.de#?#.uk-width-1-4 > div.uk-panel:has(> div.uk-text-center > a.ads-link)
+ww-kurier.de,ak-kurier.de#?#.uk-article > div:has(> p.rubric-ads)
 win-10-forum.de#?#.fh-sidebar > div.block-container:has(> div.fh-sidebar-top)
 ||android-hilfe.de^$replace=/<head\/><link/<head><link/,document
 ||videos.giga.de/homad/giga-ssl.json$replace=/"enabled":true\,/"enabled":false\,/i
@@ -2580,7 +2583,6 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbebanner_
 /werbebox/*
 /werbegrafiken/*
-/werbemanager2/*
 /werbemittel/*
 /werbemittel_
 /werbepartner.
@@ -2604,12 +2606,10 @@ _werbebanner.
 _werbebanner/
 _werbepartner.
 _werbung.php
-_werbung.pl
 _woz_banner_vote.
 ?popup:msp_$popup,third-party
 ###Ad_Win2day
 ###LxWerbeteaser
-###ParentDivForWerbPostbit
 ###SSpotIMPopSlider
 ###WerbungLinks
 ###WerbungOben
@@ -2739,7 +2739,6 @@ _woz_banner_vote.
 ##.werbung-box
 ##.werbung-container
 ##.werbung-content
-##.werbung-inline
 ##.werbung-label
 ##.werbung-leiste
 ##.werbung-rechts
@@ -3892,7 +3891,6 @@ schiene.de##.box.w300.h250.mb40
 liveticker.com##.boxOverContent
 pcwelt.de##.box[data-ga-event-label="Angebote für PC-WELT Leser"]
 pcwelt.de##.box[data-ga-event-label="Für Sie empfohlen"]
-xmedia-recode.de##.box_banner-container
 offroadforen.de##.boxesBottom
 offroadforen.de##.boxgenericBox41
 msxfaq.de##.boxjob
@@ -3906,7 +3904,6 @@ lounge.fm##.buy
 eventelevator.de##.bwdfb-widget
 bravo.de,cosmopolitan.de,happinez.de,lecker.de,liebenswert-magazin.de,maennersache.de,praxisvita.de,selbst.de,wunderweib.de##.bx-ada
 t3n.de,welt.de##.c-ad-container
-rockantenne.at##.c-image--center
 rockantenne.bayern,rockantenne.de,rockantenne.hamburg##.c-image--left
 finanznachrichten.de##.c-sban1
 finanznachrichten.de##.c-sban2
@@ -4452,7 +4449,6 @@ schnittberichte.com##a[href^="https://pvn.mediamarkt.de/trck/eclick/"] > img[src
 schnittberichte.com##a[href^="https://pvn.saturn.de/trck/eclick/"] > img[src^="https://www.schnittberichte.com/resources/images/saturn_"]
 metager.de##a[href^="https://r.search.yahoo.com/"]
 emuenzen.de##a[href^="https://rover.ebay.com/"]
-wallstreet-online.de##a[href^="https://smartbroker.de/"][href*="/?utm_"]
 report24.news##a[href^="https://tentorium.tv/"]
 bildschirmarbeiter.com,bitreporter.de,chip.de,emok.tv,naruto-tube.org,nickles.de,onepiece-tube.com,pcgamesdatabase.de,pcwelt.de,pi-news.net,ruhrbarone.de,schule-studium.de,wiiunews.at##a[href^="https://www.amazon."][href*="tag="]
 uepo.de##a[href^="https://www.amazon."][href*="tag="] > img
@@ -4469,7 +4465,6 @@ beeg-pornos.com,deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.
 wallstreet-online.de##a[onclick*="'tableAd'"]
 wallstreet-online.de##a[onclick*="tableAd"] + span
 allround-pc.com,supermarktblog.com##a[rel*="sponsored"]
-computerbase.de##a[rel*="sponsored"] > img[alt="Anzeige"]
 sporteurope.tv##app-top-banner
 otto.de##article[data-origin="sponsored"]
 mobile.de##article[data-testid="srp-top-ad"]
@@ -4527,7 +4522,6 @@ finanzfluss.de##div[data-cy="sustainability-section-ad"]
 apfelpage.de##div[data-embed-provider="rcm-eu-amazon-adsystem-com"]
 de.motor1.com##div[data-entrypoint="heycar-search-widget"]
 t-online.de##div[data-external-sdi-mark="banner-placeholder"]
-kleinanzeigen.de##div[data-liberty-ad-loaded="true"]
 kleinanzeigen.de##div[data-liberty-position-name="home-billboard"]
 heise.de##div[data-module-name="AdModule"]
 otto.de##div[data-module-type="SHOPPROMO_LARGE"]
@@ -4641,6 +4635,7 @@ bz-berlin.de,fitbook.de,petbook.de,winfuture.de##div[style="min-width: 300px; mi
 quoka.de##div[style="width: 100%; height: 250px; overflow: hidden; text-align: center;"]
 quoka.de##div[style="width: 100%; height: 260px; overflow: hidden; text-align: center; padding-top: 10px;"]
 quoka.de##div[style="width: 100%; height: 90px; overflow: hidden; text-align: center;"]
+strafbuch.de##div[style="width: 468px;height: 60px;overflow: hidden;float: right"]
 winfuture.de##div[style="width:670px;height:280px;"]
 korrekturen.de##div[style="width:728px; height: 90px; text-align: center; background-color:#c0c0c0;"]
 livestreamde.com##div[style^="height:300px;"]
