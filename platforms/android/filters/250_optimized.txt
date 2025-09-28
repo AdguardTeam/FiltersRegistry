@@ -1,5 +1,5 @@
-! Checksum: 9aKBjQREJk7q+G0y+UDWFw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1758948016-14400.patch
+! Checksum: Py+ojgm+fliIX8ZXtnYQsg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1759034420-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.95
@@ -861,6 +861,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||mapdevelopcleverness.com^$all
 ||nervousbelievable.com^$all
 ||profitablecpm*.com^$all
+||rewindonto.com^$all
 ||scarcehepatitis.com^$all
 ||seenwage.com^$all
 ||staunchtownsegg.com^$all
@@ -1515,6 +1516,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.ssba:not(html,body,:empty)
 ##.ssk-group:not(html,body,:empty)
 ##.swp_social_panel:not(html,body,:empty)
+##.wpusb:not(html,body,:empty)
 ##[class*=share-toolbar]:not(html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-share-toolbar])
 ##[class*=social_share]:not(article,html,body,[class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##[data-flip-widget=shareflip]:not(html,body,:empty)
@@ -2024,7 +2026,6 @@ reports.adguard.com$badfilter
 @@||github.githubassets.com/assets/vendors-node_modules_morphdom_dist_morphdom-esm_js-$script,xmlhttprequest
 @@||github.githubassets.com/assets/vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js-$script,xmlhttprequest
 @@||github.githubassets.com/assets/vendors-node_modules_primer_behaviors_dist_esm_index_mjs-$script,xmlhttprequest
-@@||github.githubassets.com/assets/keyboard-shortcuts-$script,xmlhttprequest
 @@||github.githubassets.com/assets/octicons-react-$script,xmlhttprequest
 @@||github.githubassets.com/assets/react-core-$script,xmlhttprequest
 @@||github.githubassets.com/assets/react-lib-$script,xmlhttprequest
@@ -2077,7 +2078,6 @@ autoplius.lt#%#//scriptlet('ubo-ra.js', 'target', '[target="_blank"]', 'stay')
 ##.elementor-spacer:not(html, body)
 ~schengenvisainfo.com##.vc_empty_space:not(html, body)
 ##.et_pb_divider:not(html,body)
-###top_container_spacing:empty
 transfermarkt.com##.clearer
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
@@ -2112,6 +2112,8 @@ rakuten.tv##a[href*=".imdb.com/title/"]
 www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
 www.google.*,ipv6.google.com#?#.g:has-text(imdb.com › title) div[data-snf]:has(g-bubble)
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
+tv.nu#?#a[title] span:has-text(IMDb)
+tv.nu##a[title] span:has(path[d^="M9.465 "])
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 ||comment.youmaker.com^$domain=theepochtimes.com
 ||viafoura.co^$domain=nottinghampost.com|liverpoolecho.co.uk
@@ -2125,7 +2127,6 @@ e621.net,e926.net###comments
 ###hot-network-questions
 www.pixiv.net##div[data-ga4-label*=comment i]
 ||disqus.com^$domain=rawstory.com
-||disquscdn.com^$domain=rawstory.com
 $removeparam=yclid
 $removeparam=gclid
 $removeparam=fbclid
@@ -2170,6 +2171,7 @@ $removeparam=cjevent
 $removeparam=cx_click
 $removeparam=emcs_t
 $removeparam=ems_dl
+$removeparam=external_click_id
 $removeparam=iclid
 $removeparam=ir_adid
 $removeparam=ir_campaignid
@@ -2464,7 +2466,6 @@ $removeparam=_branch_referrer
 $removeparam=vc_lpp
 $removeparam=aff_track
 $removeparam=cj_aid
-$removeparam=cj_cid
 $removeparam=cj_pid
 $removeparam=adj_campaign
 $removeparam=adj_adgroup
@@ -2517,6 +2518,7 @@ $document,removeparam=/^source=webgains$/
 $removeparam=sClickID
 $removeparam=paid
 $removeparam=pacid
+$removeparam=pa-partnerid
 $removeparam=adtype
 $removeparam=n_cid
 $removeparam=awid
@@ -2614,6 +2616,7 @@ $removeparam=gaa_ts
 $removeparam=gaa_sig
 $removeparam=amp_gsa
 $removeparam=vgo_ee
+ref=prisjakt^$document,removeparam=ref
 $document,removeparam=/^amp;utm_.*$/
 $removeparam=sap-outbound-id
 $removeparam=analyticsCorrelationId
@@ -3191,6 +3194,8 @@ $removeparam=tag,domain=argos.co.uk|habitat.co.uk|tv2.no|support.github.com
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
 ||apple.com^$removeparam=fnode
+||epidemicsound.com^$removeparam=_us
+||epidemicsound.com^$removeparam=_usx
 ||microsoft.com^$removeparam=headerid
 ||babbel.com^$removeparam=bsc
 ||babbel.com^$removeparam=btp
@@ -3364,10 +3369,6 @@ $removeparam=ppref,domain=digidip.net
 $removeparam=plink,domain=audible.*
 ||startpage.$removeparam=segment
 ||netflix.com^$removeparam=trackId
-||netflix.com^$removeparam=trackIdJaw
-||netflix.com^$removeparam=trackIdTrailer
-||netflix.com^$removeparam=trackIdEpisode
-||netflix.com^$removeparam=dpRightClick
 $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
@@ -3451,6 +3452,7 @@ $removeparam=ueid,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|d
 $removeparam=qo,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com|search.ask.com
 $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch.com|directhit.com|faqtoids.com|findthedish.com|informationvine.com|internetcorkboard.com|life123.com|ohdeal.com|questionsanswered.net|reference.com|shop411.com|shopping.net|simpli.com|smarter.com|symptomfind.com
 ||baike.com^$removeparam=search_id
+||qvc.com^$removeparam=qq
 ||jcpenney.com^$removeparam=deptId
 ||jcpenney.com^$removeparam=catId
 ||jcpenney.com^$removeparam=urlState
