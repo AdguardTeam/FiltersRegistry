@@ -1,17 +1,17 @@
 ![Adblock Plus 2.0]
-! Checksum: IqbJyOLFvpvJiWzX40gMyg
-! Diff-Path: ../patches/118/118-s-1759034441-14400.patch
+! Checksum: LJGEvfC1PfsuD3F3SMedOg
+! Diff-Path: ../patches/118/118-s-1759048805-14400.patch
 ! Title: EasyPrivacy
 ! Description: Privacy protection supplement for EasyList.
-! Version: 2.1.51.3
-! TimeUpdated: 2025-09-28T04:36:22+00:00
+! Version: 2.1.51.4
+! TimeUpdated: 2025-09-28T08:35:40+00:00
 ! Expires: 5 days (update frequency)
 !
-! OriginalVersion: 202509280433
+! OriginalVersion: 202509280821
 ! Title: EasyPrivacy
-! Last modified: 28 Sep 2025 04:33 UTC
+! Last modified: 28 Sep 2025 08:21 UTC
 ! Expires: 4 days (update frequency)
-! Commit: 0861a315c6b28c9bd60c4b992491422ae7002f31
+! Commit: cbe76d0ef80c523de003dd93ccc0f9b3ac14a3bc
 ! *** easylist:template_header.txt ***
 !
 ! Please report any unblocked adverts or problems
@@ -15779,11 +15779,11 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||youtube-nocookie.com/robots.txt?
 ||youtube-nocookie.com/youtubei/v1/log_event?
 ||youtube.com/api/stats/ads?
-! ||youtube.com/api/stats/atr?ns=
-! ||youtube.com/api/stats/qoe?fmt=
+||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=
+||youtube.com/api/stats/qoe?*page&ns=yt&fexp=v1%*&event=streamingstats&
 ||youtube.com/get_video?
 ||youtube.com/pcs/activeview?
-! ||youtube.com/ptracking?html5=1&
+||youtube.com/ptracking?html5=1&video_id=*&cpn=*&ei=*&ptk=youtube_*&pltype=content
 ||youtube.com/set_awesome?
 ||youtube.com/youtubei/v1/log_event?
 ||youtube.googleapis.com/youtubei/v1/log_event?
@@ -16181,6 +16181,13 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||googletagmanager.com/gtm.js$domain=nexon.com,important
 ||nakanohito.jp^*/bi.js$domain=nexon.com,important
 ! #endif
+! Youtube
+||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=$badfilter
+||youtube.com/api/stats/qoe?*page&ns=yt&fexp=v1%*&event=streamingstats&$badfilter
+||youtube.com/ptracking?html5=1&video_id=*&cpn=*&ei=*&ptk=youtube_*&pltype=content$badfilter
+||youtube.com/api/stats/atr?ns=*&ver=2&cmt=1.*&fs=0&*&euri&lact=$xmlhttprequest,method=post
+||youtube.com/api/stats/qoe?*page&ns=yt&fexp=v1%*&event=streamingstats&$xmlhttprequest,method=post
+||youtube.com/ptracking?html5=1&video_id=*&cpn=*&ei=*&ptk=youtube_*&pltype=content$xmlhttprequest,method=get
 ! -----------------Individual cname tracking systems-----------------!
 ! *** easylist:easyprivacy/easyprivacy_specific_cname_dataunlocker.txt ***
 ! easyprivacy_specific_cname_dataunlocker.txt
