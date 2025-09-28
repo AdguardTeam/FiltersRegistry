@@ -1,9 +1,9 @@
-! Checksum: AAcHodl8FXO9ekAfOCE03g
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1758903128-3600.patch
+! Checksum: 8jBaNlcZjSEzJUAFiXbzAg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1759068586-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.72
-! TimeUpdated: 2025-09-26T16:08:16+00:00
+! Version: 2.0.59.73
+! TimeUpdated: 2025-09-28T14:06:05+00:00
 ! Expires: 10 days (update frequency)
 ||reklam.ibrahimyurttapan.com.tr^
 ||reklam.arailetisim.com^
@@ -5366,19 +5366,11 @@ fullhdizle.*,filmizlehdfilm.com,filmizletv.*,fullfilmizle.*,fullhdfilmizle.*,ful
 [$domain=/mackeyfi\d+\.sbs$/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 [$domain=/mackeyfi\d+.sbs/]##a[href="https://bty.bio/reklam"]
 x.ag2m2.cfd#?##oframeplayerjs > pjsdiv[style^="position:"]:has(> pjsdiv > pjsdiv > center:contains(Padişahbet'ten))
-[$domain=/dizipal\d+.com/]##.fixed-footer
-[$domain=/^dizipal\d+\.com/]##.adv
-[$domain=/dizipal\d+.com/]##body > div[align="center"][class="bb"] ~ br
 ||dizipal*.com/wp-content/uploads/*.gif
 [$domain=/dplayer\d+.site/]##pjsdiv[id*="betzulabanner"]
-[$domain=/dizipal\d+.com/]##.duzyazibar
-[$domain=/dizipal\d+.com/]##center > a[href][target="_blank"]
-[$domain=/dizipal\d+.com/]##a[href^="https://heylink.me/"]
-[$domain=/dizipal\d+.com/]##a[target="_blank"][rel="nofollow"]
-[$domain=/dizipal\d+.com/]##header-o > .px-5:has(> a[target="_blank"])
-[$domain=/dizipal\d+.com/]##.alert
-[$domain=/dizipal\d+.com/]##.rounded.m-auto .bg-black > a[href][target="_blank"]
-[$domain=/dizipal\d+.com/]###mPlayerFds
+[$domain=/^dizipal\d+\.com/]##.containerAds
+[$domain=/^dizipal\d+\.com/]##body > div[align="center"][class="bb"] ~ br
+[$domain=/^dizipal\d+\.com/]##a[target="_blank"][rel="nofollow"]
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/^dizipal\d+\.com$/
 [$domain=/(\d+)?dizipal(\d+)?\.com/]#%#//scriptlet('trusted-replace-node-text', 'script', 'playAdd', '/manageAds\(video_urls\[activeItem\]\, video_seconds\[activeItem\]\, ad_urls\[activeItem]\,true\);/', 'playVideo();')
