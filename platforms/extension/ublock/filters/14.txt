@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qfUzWBar0OvjgNySctX+Sw
-! Diff-Path: ../patches/14/14-s-1759068592-3600.patch
+! Checksum: knsDxLtSPrtDigZW2I6Qsw
+! Diff-Path: ../patches/14/14-s-1759113557-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.19
-! TimeUpdated: 2025-09-28T14:06:10+00:00
+! Version: 2.2.44.20
+! TimeUpdated: 2025-09-29T02:35:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2492,6 +2492,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+electro24.pl##+js(set-local-storage-item, show_consent_modal, 1)
 gdp.de##+js(set-local-storage-item, gdpr_null, )
 alohabrowser.app,alohabrowser.com##.cookies-open-modal
 ||cookie-consent-tracking-app.codeblocks.sk^
@@ -16497,6 +16498,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214361
+electro24.pl#@##shoper-foot ~ div.consents
+electro24.pl#@#.shop_index > div.consents
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214164
 @@||cdn.cookielaw.org/opt-out/otCCPAiab.js$domain=usmagazine.com
 @@||cdn.cookielaw.org/consent/*.json$domain=usmagazine.com
