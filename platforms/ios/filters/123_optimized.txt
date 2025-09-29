@@ -1,9 +1,9 @@
-! Checksum: VMy6175LaAfksxZPLQNvBA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1759107132-14400.patch
+! Checksum: v6uOOYbGz6OVoL150v4d/A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1759120908-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.48.42
-! TimeUpdated: 2025-09-29T00:47:49+00:00
+! Version: 2.1.48.43
+! TimeUpdated: 2025-09-29T04:37:28+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -162,7 +162,6 @@ _social_footer_
 ###addThis
 ###addsSocial
 ###addthis_sharing_toolbox
-###amp-social-share
 ###article-footer-social-share
 ###article-header-share
 ###article-social
@@ -457,6 +456,7 @@ _social_footer_
 ###share_facebook
 ###share_google
 ###share_icon
+###share_it
 ###share_linkedin
 ###share_links
 ###share_now
@@ -800,7 +800,6 @@ _social_footer_
 ##.addthis-container
 ##.addthis-smartlayers
 ##.addthis-smartlayers-desktop
-##.addthis-wrapper
 ##.addthis:not(body)
 ##.addthis_32x32_style
 ##.addthis_button
@@ -955,6 +954,7 @@ _social_footer_
 ##.bd-FooterSocials-item
 ##.bd-socialicon
 ##.bdaia-social-io
+##.bdaia-social-links
 ##.beSocialShare
 ##.beacon-social
 ##.better-social-counter
@@ -1165,8 +1165,6 @@ _social_footer_
 ##.el-icon-facebook
 ##.el-icon-twitter
 ##.elem-info__share
-##.element-share-block
-##.element-socials
 ##.elementor-social-icon
 ##.elementor-social-icons-wrapper
 ##.elementor-widget-facebook-page
@@ -1380,6 +1378,7 @@ _social_footer_
 ##.footer-fb
 ##.footer-follow
 ##.footer-follow-us
+##.footer-followUs
 ##.footer-followus
 ##.footer-icon-facebook
 ##.footer-instagram
@@ -1567,7 +1566,6 @@ _social_footer_
 ##.header__social-list
 ##.header__social-media
 ##.header__social-nav
-##.header__socialMedia
 ##.header__socials
 ##.header_sharing
 ##.header_sns
@@ -1674,6 +1672,7 @@ _social_footer_
 ##.icon-social-twitter-circle
 ##.icon-social-youtube
 ##.icon-soundcloud
+##.icona-social
 ##.icone-social
 ##.iconfacebook
 ##.iconinstagram
@@ -1692,7 +1691,6 @@ _social_footer_
 ##.in-social
 ##.in_icon
 ##.in_social
-##.in_socials
 ##.index_sns
 ##.info-sns-list
 ##.info__share
@@ -2007,6 +2005,7 @@ _social_footer_
 ##.null-instagram-feed
 ##.nv-post-share
 ##.o-footer__social
+##.o-footer__socials
 ##.o-shareBooster__item
 ##.o-social-icon
 ##.oSocial
@@ -2067,7 +2066,6 @@ _social_footer_
 ##.pinterest-share-button
 ##.pinterest-sharetool
 ##.pinterest.share
-##.pinterest1
 ##.pinterestButton
 ##.pinterestShare
 ##.pinterest_btn
@@ -2243,7 +2241,6 @@ _social_footer_
 ##.share-bar-item-desktop
 ##.share-bar__item
 ##.share-bar__link
-##.share-bar__list
 ##.share-bg
 ##.share-block
 ##.share-block-item
@@ -2536,7 +2533,6 @@ _social_footer_
 ##.share_ok
 ##.share_panel
 ##.share_pinterest
-##.share_post
 ##.share_row
 ##.share_small
 ##.share_social
@@ -2722,10 +2718,6 @@ _social_footer_
 ##.site-share-wrapper
 ##.site-social
 ##.site-social-menu
-##.siteFooter_social
-##.siteFooter_socialCon
-##.siteFooter_socialHeader
-##.siteFooter_socialItem
 ##.sitewide-social-media
 ##.sn-share
 ##.snapchat-share-button
@@ -2983,7 +2975,6 @@ _social_footer_
 ##.social-share_compact
 ##.social-sharer
 ##.social-shares
-##.social-sharing-btn
 ##.social-sharing-button
 ##.social-sharing-buttons
 ##.social-sharing-link
@@ -3189,6 +3180,7 @@ _social_footer_
 ##.socshare
 ##.sow-social-media-button
 ##.ss-facebook
+##.ss-follow-network
 ##.ss-inline-share-content
 ##.ss-instagram
 ##.ss-share
@@ -3374,6 +3366,7 @@ _social_footer_
 ##.uix_socialMedia
 ##.uix_socialMediaLinks
 ##.ul-social
+##.ulSocial
 ##.uptl_container-share
 ##.us_share
 ##.us_share_buttons
@@ -3786,7 +3779,6 @@ alchetron.com##.alchetronShareCard
 cbn.com##.analytics-cta
 asiaone.com##.ao-share-buttons
 firstpost.com##.art-soc-icons
-wxyz.com##.article-action
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 mymodernmet.com##.article-share-container
@@ -3833,6 +3825,7 @@ agrimag.co.za,androidpolice.com,automart.co.za,givemesport.com##.btn-whatsapp
 koimoi.com##.btn-whatsup
 androidpolice.com##.btn-x
 consumerreports.org##.btn__social
+notateslaapp.com##.button-follow
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
 askmen.com##.byline__social
@@ -4016,7 +4009,6 @@ pravda.com.ua##.post_social_item
 koi.security##.post_sticky-social
 lifestyleasia.com##.pre-footer_instagram
 dailymail.co.uk##.prevNextWrapper-1Vg7e
-sports.ndtv.com##.pst_scl
 reason.com##.rcom-social-tools
 dermatologytimes.com,drive.com.au##.react-share__ShareButton
 newsukraine.rbc.ua##.read-in-socials
@@ -4092,7 +4084,6 @@ civileats.com,cyberdaily.au,gamingbolt.com,petrobras.com.br##.social-media-conta
 defenseone.com,govexec.com,nextgov.com##.social-media-icons-container
 ojornalextra.com.br##.social-media-share-wrapper
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,blackamericaweb.com,cassiuslife.com,catholicnewsagency.com,gosunoob.com,joblo.com,mycleo.tv,tvone.tv,ultiworld.com##.social-menu
-eltecolote.org,melmagazine.com,thefrisc.com,worldcrunch.com##.social-navigation
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
 businessinsider.in##.social-panel-rgt
 iflscience.com##.social-share-elements
@@ -4176,7 +4167,6 @@ comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-
 publichealthpolicyjournal.com,theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
 freepressjournal.in##.wrap_cont
-worldcrunch.com##.ysi_share
 firstpost.com##.yt-ch
 wdwmagic.com##.zocial
 securityweek.com##.zox-post-soc-list
@@ -4192,7 +4182,6 @@ cnet.com##[data-meta="footer-section-social"] + ul
 nytimes.com##[data-testid="social-group"]
 dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
-thinkglobalhealth.org##button.hover\:bg-accent-social-button
 player.amperwavepodcasting.com,stockx.com##button[aria-label="Share"]
 theguardian.com##div > gu-island[name="ShareButton"]
 theatlantic.com##div[class^="ArticleShare_"]

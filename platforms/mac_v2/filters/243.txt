@@ -1,14 +1,14 @@
-! Checksum: tLgDn6hx6ug06hUhVd8iRg
-! Diff-Path: ../patches/243/243-s-1759034450-14400.patch
+! Checksum: YTa9pVf5Zk4HtqMtfvQMpg
+! Diff-Path: ../patches/243/243-s-1759120912-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.88
-! TimeUpdated: 2025-09-28T04:36:49+00:00
+! Version: 2.0.22.89
+! TimeUpdated: 2025-09-29T04:37:55+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-09-28 04:42:25 CEST
+! Last modified: 2025-09-29 04:54:49 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -614,6 +614,7 @@ fotbollskanalen.se##:is(.sponsored, .theme-news_sponsored_container):upward(.the
 fotbollsresultat.com##.fusion-flex-container:has(a[href*="casino"])
 fotbollsthlm.se###app-banner
 fotbollsthlm.se##.fotbollsthlm-image-container:has(.fotbollsthlm-ad-link)
+fotbolltransfers.com##a article:has-text(Annons)
 fotbolltransfers.com##div[class^="ad"], a[href^="https://ads."], .header_sponsored, .fresnel-greaterThanOrEqual-panorama, .fresnel-lessThan-panorama, a[rel*="sponsored"]
 fotbolltransfers.com##div[style^="min-height"]:has(div[id^="fotbolltransfers_mpu"], div[id^="fotbolltransfers_mobil"])
 fotbolltransfers.com##img[src*="/images/annonser/"]:upward(1)
@@ -768,8 +769,11 @@ hitta.se##[class^="styleManual_mainContentBox"] > div[style^="min-height"]:first
 hockeybladet.nu##.td_mod_wrap a img[data-permalink], a[data-wpel-link="external"][onclick], a.td-lazy-img[target], a[href*="casino"]
 hockeybladet.nu##.vc_row_inner:has-text(casino)
 hockeyettan.se##.club-ad-item, .banner-row
+hockeynews.se##article .bg-blue:has(sesamy-paywall-wizard)
+hockeynews.se##article .bg-gradient-to-t.to-transparent
 hockeynews.se##a.bg-yellow\/30:has-text(/spons/i):upward(1)
 hockeynews.se##a[rel*="sponsored"]
+hockeynews.se#$#div[class^="paywall"].hidden { display:unset!important; }
 hockeynews.se#$#html.overflow-hidden { overflow:unset!important; }
 hockeynews.se##.fixed.z-50:has(a[href="/plus"])
 hockeynews.se##.h-\[152px\]:has(iframe)
@@ -3136,6 +3140,7 @@ _banner.php?$domain=tvmatchen.nu
 ||heroaffiliates.com^$third-party
 ||herokuapp.com/visit?$image
 ||hittahem.se^$third-party
+||holid.io^$third-party
 ||hq.volomedia.com^$domain=gratis.se
 ||humorbrevet.se/externa_bilder
 ||hu-manity.co^$domain=densistavilan.se
