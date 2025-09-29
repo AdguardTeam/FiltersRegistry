@@ -1,9 +1,9 @@
-! Checksum: KjsQm4urUzFQPJP+mIp13g
-! Diff-Path: ../patches/13/13-s-1759137156-3600.patch
+! Checksum: m+YlxtSaktvvvzhJaYQ4QQ
+! Diff-Path: ../patches/13/13-s-1759148145-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.75
-! TimeUpdated: 2025-09-29T09:08:37+00:00
+! Version: 2.0.59.76
+! TimeUpdated: 2025-09-29T12:11:28+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5711,10 +5711,12 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 !
 !
 ! hdselcuksports*.com - frequently changed domains
-||hdselcuksports*.top/cdn/r/
+||hdselcuksports*.top/cdn/r/$image
 ! breaks video player
 ! [$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('remove-node-text', 'script', 'show_popup')
 ! [$domain=/hdselcuksports\d+\.top/]$$script:contains(show_popup)
+[$domain=/hdselcuksports\d+\.top/]###video_reklam
+[$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('set-constant', 'puShown', 'true')
 [$domain=/hdselcuksports\d+\.top/]##.iframe_728
 [$domain=/hdselcuksports\d+\.top/]##.header_r
 [$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('prevent-window-open')
@@ -5736,7 +5738,6 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 !
 ! selcuksporthd*.com - frequently changed domains
 ||selcuksporthd*.com/dosya/*.gif
-||hdselcuksports*.top/cdn/r/
 [$domain=/selcuksporthd\d+\.com/]##a[href^="https://bit.ly/"]
 [$domain=/hdselcuksports\d+\.top/]#%#//scriptlet('prevent-window-open')
 !
