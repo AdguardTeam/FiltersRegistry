@@ -1,13 +1,13 @@
-! Checksum: dMzY8bHMmb1DAlvksexQxA
-! Diff-Path: ../patches/251/251-s-1758775281-14400.patch
+! Checksum: NAA5mcdxND6bKzPE6p9XwA
+! Diff-Path: ../patches/251/251-s-1759135477-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.0
-! TimeUpdated: 2025-09-25T04:37:42+00:00
+! Version: 2.0.9.1
+! TimeUpdated: 2025-09-29T08:41:17+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 24September2025v1
+! OriginalVersion: 29September2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1686,7 +1686,8 @@ $removeparam=/^asc_.*$/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ||bing.com/?$removeparam=/^form=.*$/i
 ! https://www•bing•com/search?q=hello&sp=-1&pq=hello&sk=&sc=8-5&qs=n (04/03/2021)
 ||bing.$removeparam=sp
-$removeparam=sc,document,domain=bing.com|qvc.com|startpage.com
+! (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-14533757)
+$removeparam=sc,document,domain=bing.com|qvc.com
 $removeparam=sk,domain=aliexpress.*|bing.com
 ||bing.$removeparam=qs
 ! https://www•bing•com/search?PC=U531&q=hello&FORM=ANNTA1 (05/03/2021)
