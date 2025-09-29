@@ -1,9 +1,9 @@
-! Checksum: FPP7JTnHIepdPMEgckNBrg
-! Diff-Path: ../patches/224/224-s-1759122722-3600.patch
+! Checksum: gbKdK581v4J9E4ey6BIEfA
+! Diff-Path: ../patches/224/224-s-1759155429-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.44.92
-! TimeUpdated: 2025-09-29T05:08:14+00:00
+! Version: 2.1.44.93
+! TimeUpdated: 2025-09-29T14:08:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1176,6 +1176,11 @@ $script,xmlhttprequest,third-party,domain=00ksw.com|01zww.com|0biquge.com|114zw.
 !
 ! NOTE: Specific rules
 !
+csqaq.com##div[class^="bg_left_click_"]
+csqaq.com##div[class^="bg_right_click_"]
+csqaq.com##div[class^="ant-pro-card banner"]
+csqaq.com##div[class^="ant-pro-card adv_card"]
+csqaq.com#$#main ~ div[class^="bg___"][style*="background-image: url"] { background-image: none !important; }
 ||litv.tv/library/comscore/
 litv.tv#%#//scriptlet('trusted-replace-fetch-response', '"PlayAds":true', '"PlayAds":false', 'api/get-urls')
 uaa.com#%#//scriptlet('trusted-set-local-storage-item', 'lastShowTime', '9999999999999')
