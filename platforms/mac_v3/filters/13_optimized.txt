@@ -1,9 +1,9 @@
-! Checksum: lauKf93bzoyBdYMroyLyzQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1759129965-3600.patch
+! Checksum: 6DJnra/3m15kWtOryI45Sg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1759137152-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.74
-! TimeUpdated: 2025-09-29T07:08:32+00:00
+! Version: 2.0.59.75
+! TimeUpdated: 2025-09-29T09:08:37+00:00
 ! Expires: 12 hours (update frequency)
 ||reklam.ibrahimyurttapan.com.tr^
 ||reklam.arailetisim.com^
@@ -1278,7 +1278,7 @@ cizgivedizi.com#%#//scriptlet('trusted-set-local-storage-item', 'lastPopupTime',
 ||boykot.co/sevap-kapisi-yatay.jpg
 boykot.co###mobileBanner
 selcuksports.*##center > a[href][target="_blank"]
-||selcuksportss.com/wp-content/uploads/*/banner*.gif
+||selcuksportss.com/*.gif
 selcuksportss.com##div[class^="button-container"]
 selcuksportss.com##.banner-container
 selcuksportss.com##.header-html-1
@@ -4922,7 +4922,7 @@ arabalar.com.tr##div[class^="advert"]
 orduulak.com##div[class^="advertise"]
 yeniasya.com.tr##div[class^="banner area-"]
 turizmprojedergisi.com,doviz.com,gundemkibris.com,ulasimonline.com##div[class^="banner"]
-canlidizi6.com,oyunskor.com##div[class^="banner-"]
+movieswatch.store,canlidizi6.com,oyunskor.com##div[class^="banner-"]
 fanatik.com.tr##div[class^="banner_300x"]
 mavikocaeli.com.tr##div[class^="buyuk-banner"]
 haber7.com##div[class^="col-md-"] > div.ads
@@ -5298,6 +5298,10 @@ dizilla40.com,dizilla.club###router-view > div > div > div[class]:has(> div:only
 selcuksportshd.is##.page-overlay
 selcuksportshd.is#$?#body { background-image: none !important; }
 !+ NOT_VALIDATE
+||hizliresims.com/*.gif$domain=/selcuksportshd\d+\.(xyz\|click)/
+!+ NOT_VALIDATE
+||placehold.co^$domain=/selcuksportshd\d+\.(xyz\|click)/
+!+ NOT_VALIDATE
 ||googleusercontent.com/img/*/crt$domain=/selcuksportshd[a-z0-9-]+\.(xyz\|click)/
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/selcuksportshd\d+.biz/
@@ -5310,6 +5314,8 @@ selcuksportshd.is#$?#body { background-image: none !important; }
 [$domain=/^i\[a-z\]*\.strmrdr\[a-z0-9\]+\..*/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 cinque.668a396e58bcbc27.click#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 [$domain=/selcuksportshd\d+\.biz/]##.banner
+!+ NOT_VALIDATE
+[$domain=/selcuksportshd\d+\.(xyz\|click)/]##img[id^="top-ads-"]
 !+ NOT_VALIDATE
 [$domain=/selcuksportshd[a-z0-9-]+\.(xyz\|click)/]##.banner
 !+ NOT_VALIDATE
