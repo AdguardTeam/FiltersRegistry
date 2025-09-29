@@ -1,9 +1,9 @@
-! Checksum: f6Wxv7vdP2LH9zhIF9jAnA
-! Diff-Path: ../patches/257_optimized/257_optimized-s-1759150178-14400.patch
+! Checksum: C94+m+lz0g3RTUVNiDIhnA
+! Diff-Path: ../patches/257_optimized/257_optimized-s-1759163961-14400.patch
 ! Title: uBlock Origin – Badware risks (Optimized)
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.9.14
-! TimeUpdated: 2025-09-29T12:46:13+00:00
+! Version: 2.0.9.15
+! TimeUpdated: 2025-09-29T16:35:58+00:00
 ! Expires: 12 hours (update frequency)
 !+ NOT_OPTIMIZED
 ||01net.com/telecharger/$document
@@ -8238,7 +8238,9 @@ uploadfox.net###ad-gs-05
 !+ NOT_OPTIMIZED
 /submit.php?i=*&t=$xmlhttprequest
 !+ NOT_OPTIMIZED
-/^https:\/\/api\.[a-z]{20,}\.com\/\?[a-z]{2,3}=[0-9a-f]{32}$/$document,match-case
+/^https:\/\/api\.[a-z]{2,}\.[a-z]{2,}\/\?[a-z]{2,3}=[0-9a-f]{32}$/$document,match-case
+!+ NOT_OPTIMIZED
+://api.*/?zrs=$document
 !+ NOT_OPTIMIZED
 ||webnotif.online^$all
 !+ NOT_OPTIMIZED
@@ -8499,3 +8501,9 @@ uploadfox.net###ad-gs-05
 ||seloriva.net^$document
 !+ NOT_OPTIMIZED
 ||client.*-blockfi.com^$all
+!+ NOT_OPTIMIZED
+||v2-app-lido-finance.cc^$all
+!+ NOT_OPTIMIZED
+||app.v2lido.bond^$all
+!+ NOT_OPTIMIZED
+||app-lido-finance-v2.com^$all

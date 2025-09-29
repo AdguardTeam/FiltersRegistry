@@ -1,9 +1,9 @@
-! Checksum: QKkrjfB7gZqNru/8DrGmGw
-! Diff-Path: ../patches/257/257-s-1759150216-14400.patch
+! Checksum: SgPLJqlp5/6vIgFviNPbEQ
+! Diff-Path: ../patches/257/257-s-1759163993-14400.patch
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.9.14
-! TimeUpdated: 2025-09-29T12:46:13+00:00
+! Version: 2.0.9.15
+! TimeUpdated: 2025-09-29T16:35:58+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -9696,7 +9696,9 @@ uploadfox.net###ad-gs-05
 !+ NOT_OPTIMIZED
 /submit.php?i=*&t=$xmlhttprequest
 !+ NOT_OPTIMIZED
-/^https:\/\/api\.[a-z]{20,}\.com\/\?[a-z]{2,3}=[0-9a-f]{32}$/$document,match-case
+/^https:\/\/api\.[a-z]{2,}\.[a-z]{2,}\/\?[a-z]{2,3}=[0-9a-f]{32}$/$document,match-case
+!+ NOT_OPTIMIZED
+://api.*/?zrs=$document
 ! https://github.com/uBlockOrigin/uAssets/issues/29515
 ! https://www.virustotal.com/gui/url/fc99f6b3ef99669275b4b798eb2bc46cdc4f5f7e09b84e57ba1a2238db3b4795
 ! https://www.virustotal.com/gui/url/b7860c134e76d01fdffdd560436243825a99938f227c62a43f9bf8d1861da9e4
@@ -10001,3 +10003,10 @@ uploadfox.net###ad-gs-05
 ! https://www.virustotal.com/gui/url/4ccf93ccfee5d80e50c41befffe6a3cebd0993a9408b8956139de9df59bf2ad0
 !+ NOT_OPTIMIZED
 ||client.*-blockfi.com^$all
+! https://github.com/uBlockOrigin/uAssets/issues/30216
+!+ NOT_OPTIMIZED
+||v2-app-lido-finance.cc^$all
+!+ NOT_OPTIMIZED
+||app.v2lido.bond^$all
+!+ NOT_OPTIMIZED
+||app-lido-finance-v2.com^$all
