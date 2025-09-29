@@ -1,9 +1,9 @@
-! Checksum: 3qrJUtlmRN3ZfRj1JDUWnQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1759129931-3600.patch
+! Checksum: 9ZGEvovNKPRu0QLmQCMyeA
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1759151924-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.68.85
-! TimeUpdated: 2025-09-29T07:08:22+00:00
+! Version: 2.0.68.86
+! TimeUpdated: 2025-09-29T13:15:10+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||zzlles.com^$document
@@ -1171,6 +1171,8 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 /wp-content/plugins/amazonjs/*
 /wp-content/themes/CashLINESystem/js/modal.$script
 /wp-content/uploads/2024/09/fanza_ad$image
+://www.smbc-*.top/$document
+://www.smbc.co.jp.*.icu/$document
 .com/www.*.co.jp/login/$document
 .com/www.*.com/login/$document
 -co-jp.net/login|$document
@@ -1381,8 +1383,8 @@ _co_jp.*.php$document,domain=cc|com
 /mart/*.html?zenid=$document,domain=cfd|fun|shop|space|top|xyz
 /^https?:\/\/([-0-9a-z]{3,}\.)?[a-z]{6,}\.[a-z]{3,7}\/product\/\d{6,}(\.html)?$/$document,domain=baby|cam|casa|fun|online|org|top|website|yoga
 /^https:\/\/[a-z]{5,8}\.[a-z]{4,10}\.[a-z]{2,6}\/item\/m\d{10,11}$/$document,domain=shop
-/^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$document,match-case,domain=art|baby|biz|blog|boats|buzz|cards|cc|cfd|click|cloud|club|cyou|eu|fit|fun|hair|homes|info|ink|lat|life|live|lol|me|mom|my|one|online|pics|quest|sbs|shop|site|skin|space|store|today|top|world|xyz
-/^https?:\/\/(?!www)[a-z]{3,5}\.[0-9a-z]{4,10}\.[a-z]{2,6}\/[a-z]{3,15}\/(?=[a-z]{0,9}[0-9A-Z])[0-9A-z]{10}\.html$/$document,match-case,domain=art|baby|biz|blog|buzz|cc|cfd|click|cloud|club|cyou|eu|fit|fun|hair|homes|info|ink|lat|life|lol|me|mom|my|one|online|pics|sbs|shop|site|skin|space|store|today|top|world|xyz|~livedoor.biz|~livedoor.blog
+/^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9a-z]{10}|\d{8})\.html$/$document,match-case,domain=art|autos|baby|biz|blog|boats|buzz|cards|cc|cfd|click|cloud|club|cyou|eu|fit|fun|hair|homes|info|ink|lat|life|live|lol|me|mom|my|one|online|pics|quest|sbs|shop|site|skin|space|store|today|top|world|xyz
+/^https?:\/\/(?!www)[a-z]{3,5}\.[0-9a-z]{4,10}\.[a-z]{2,6}\/[a-z]{3,15}\/(?=[a-z]{0,9}[0-9A-Z])[0-9A-z]{10}\.html$/$document,match-case,domain=art|autos|baby|biz|blog|boats|buzz|cards|cc|cfd|click|cloud|club|cyou|eu|fit|fun|hair|homes|info|ink|lat|life|live|lol|me|mom|my|one|online|pics|quest|sbs|shop|site|skin|space|store|today|top|world|xyz|~livedoor.biz|~livedoor.blog
 /?AC=*&IC=$document,domain=com|fun|online|site
 .asp?AC=*&IC=$document,domain=com|fun|online|site
 /ap/signin/openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.co.jp$document,domain=cn|top|xyz
@@ -1786,7 +1788,7 @@ businessinsider.jp##div[class^="article_pArticle_Embed"]:has(> aside.araklet)
 twihub.net###tweets > div.col-span-full
 twihub.net##div[id^="banner-"]
 tsumanne.net##object[data^="https://creative.rmhfrtnd.com/"]
-tsumanne.net##object[data^="/inoue.html"]
+tsumanne.net##object[data$=".php"]
 it.in-jpn.com##body > a[rel*="sponsored"]
 oninet.ne.jp##a[href^="https://hb.afl.rakuten.co.jp/hsc/"]
 oninet.ne.jp##a[href^="https://hb.afl.rakuten.co.jp/hsc/"] ~ img[src="qr-rakuten-travel-logo.png"]
@@ -2276,16 +2278,14 @@ korewaeroi.com##.postCta
 korewaeroi.com##div[style*="min-height: 250px;"]
 baseball.yahoo.co.jp##a[href^="https://pacificleague.com/setup/plan"] > img
 croissant-online.jp##.single-infeed
+||tsumanne.net/*.php$object
 ||tsumanne.net/dlsite.html
 ||tsumanne.net/dmm.html
-||tsumanne.net/mfro.php
 ||tsumanne.net/bance.html
 ||tsumanne.net/maniax2.js
 ||tsumanne.net/inoue
 ||tsumanne.net/dmm.js
 ||tsumanne.net/getchu.js
-||tsumanne.net/imobile.php
-tsumanne.net##.thre > object[data="/imobile.php"]
 best-hit.tv,j-basketball.club,j-baseball.club##a[style^="box-sizing:border-box;"]
 xn--gck1f423k.xn--1bvt37a.tools##div[class^="amazonHomeAd_"]
 xn--gck1f423k.xn--1bvt37a.tools##.fresnel-greaterThanOrEqual-maxContent
@@ -8710,6 +8710,7 @@ recipe.rakuten.co.jp##.ranking_recommend_recipe
 recipe.rakuten.co.jp##.section_common_banner
 recipe.rakuten.co.jp##div[id^="rdn-adspot"]
 manga.okiba.*##.amazon-ranking-outer
+matomedane.jp##.adv-placeholder
 matomedane.jp###footeradv
 matomedane.jp##.pc_header_bottom_adv
 tokubai.co.jp##.dfp_tag
