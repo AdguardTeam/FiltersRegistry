@@ -1,9 +1,9 @@
-! Checksum: qBrUyYIGu+HqNUNt7qUmkA
-! Diff-Path: ../patches/14/14-s-1759230659-3600.patch
+! Checksum: AX4MH+aga/DbuhIF6frJAg
+! Diff-Path: ../patches/14/14-s-1759234560-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.43
-! TimeUpdated: 2025-09-30T11:07:06+00:00
+! Version: 2.2.44.44
+! TimeUpdated: 2025-09-30T12:12:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22963,6 +22963,9 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+slate.com#%#//scriptlet('prevent-element-src-loading', 'script', '/npttech\.com\/advertising\.js|cdn\.taboola\.com|adlightning\.com/')
+slate.com#%#(()=>{const e={apply:(e,t,l)=>{try{const e=(new Error).stack;if(e?.includes?.("initAdBlockDetection")&&4===l[0]?.length)return Promise.resolve()}catch(e){}return Reflect.apply(e,t,l)}};window.Promise.allSettled=new Proxy(window.Promise.allSettled,e)})();
+slate.com#$?#dialog.blocker-intercept { remove: true; }
 cybermania.ws#%#//scriptlet('prevent-eval-if', 'decodeURIComponent(atob')
 cybermania.ws##body > div[id][style]:not(#topside, #content)
 ecosia.org##div[data-test-id="ad-block-notice-modal"]
@@ -24572,6 +24575,7 @@ puhekupla.com#@#.googlead
 quizlet.com#@#.ad-placement
 signupgenius.com#@#.ad-placement
 signupgenius.com#@#.adholder2
+slate.com#@#.gpt-ad
 slate.com#@#.ad-container
 symbolab.com#@#.googleAdsense
 t-hsn.com#@#.ad-head
