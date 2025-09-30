@@ -1,5 +1,5 @@
-! Checksum: tPs0RMgrR/b/WOPTnvse3A
-! Diff-Path: ../patches/4_optimized/4_optimized-s-1759148149-3600.patch
+! Checksum: KT1JUZsErX6ckbf8SeqvDA
+! Diff-Path: ../patches/4_optimized/4_optimized-s-1759199795-3600.patch
 ! Title: AdGuard Social Media filter (Optimized)
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
 ! Version: 2.1.19.96
@@ -25,7 +25,6 @@
 ||getbutton.io^$third-party
 ||getbtn.com^$third-party
 ||snapwidget.com^$third-party
-||widget.instodom.com^$third-party
 ||mediabuttons.ru^$third-party
 ||tgwidget.com^$third-party
 ||share.itraffic.su^$third-party
@@ -669,6 +668,7 @@ dailymail.co.uk##.email
 ja-town.com##.sns_btn_
 formulatv.com##.btnsoc
 cxtvenvivo.com##div[class*="media-"] > div[class*="text-"]:has(> div > a[href^="https://www.facebook.com/sharer/"])
+br7news.co.il##.call
 tunagazete.com##.block-pano
 n1info.hr##div[data-testid="follow-us-bar-wrapper"]
 net.hr##.se-article--share
@@ -707,7 +707,6 @@ hindustantimes.com##div[class^="shareNentryPoints_"]
 glassrpske.com##.tags
 dailymail.co.uk##.socialShareContainer > ul > li:not(:is(.email,.copyToClipboard))
 dailymail.co.uk##div[class^="commentAction"] > div[class^="container"] > button:not(:has(> span[class^="copy"]))
-jayco.com##.row > div.col-12:has(> div.addthis_inline_share_toolbox)
 india.com##.social-icon
 m.twitch.tv##div[class*=" secondaryContent--"] > div[class^="Layout-sc-"]:has(> button path[d*="l5-5 5 5z"])
 diverto.tv##.pa_footer_article > div.flex:has(a[href^="https://twitter.com/intent/tweet?"])
@@ -1276,6 +1275,7 @@ sport-express.ru##.ls-social-block
 btvnovinite.bg##.left-inner-content div.tape-wrap:has(> a[onclick*="shareButton"])
 hobbyconsolas.com##div[class^="share-bar"]
 mediafire.com###shareButtonMobile
+united-untied.com##.item_detail_sns
 futuro.cl##.ssd
 c5n.com##.news-headline__info-wrapper
 fishki.net##.popover-wrap:has(button[aria-label="Поделиться"])
@@ -1286,6 +1286,7 @@ sumaity.com##.p-building-share
 yahoo.com##button[data-ylk*="share"]
 chil-chil.net##.c-save > li:has(> a[data-target="#m-sns_share"])
 finance.ua##.fua-social-sharing-block
+thesportstak.com##.items-center > div.ml-auto:has(> svg.cursor-pointer > circle[cx="18"])
 thesportstak.com##.items-center > div.items-center:has(> svg[width="47"] > g[id^="Social"])
 thesportstak.com##.flex > p:has(> svg > circle[cx="18"])
 t13.cl#$#.cuerpo-share { visibility: hidden !important; }
@@ -5370,7 +5371,6 @@ trthaber.com,babyclub.de##.social-links-container
 edaily.co.kr##.reporter_sns
 trafficnews.jp##.social-buzz-link
 bbc.com##div[class*="TagShareWrapper"]
-kriminal.net.ua###widget_wrapper_28
 youpouch.com##.hatena-btn
 cakes.mu,youpouch.com##.tweet-btn
 kocaelidenge.com##.block-pano > div.as
@@ -6463,7 +6463,6 @@ dreamtv.com.tr##section.social
 ovninavi.com,theplaylist.net,grandprix247.com,info-war.gr,whitemad.pl,sanatatak.com,comicbooks.world,digitalmusicnews.com,scotsman.com,kochfreunde.com##.cb-social-sharing
 tvmovieflix.com###slideleft
 jpopasia.com,atlasobscura.com##.btn-facebook
-wetterauer-zeitung.de##.id-Actionbox-items > li:not(.id-Actionbox-items-el--comments):not(.id-Actionbox-items-el--authors)
 optc-ww.channel.or.jp,d-navi004.com###snsbox
 ogretmensitemiz.com##a[href="javascript:void(0);"][onclick^="shareFacebook"]
 amarujala.com##.floating-share-iconsDv
@@ -6961,6 +6960,7 @@ bo.de##.share-inner-wrp > li:not(.print)
 shop.zweirad-stadler.de###social-header
 ||getsocial.io/widget/$third-party
 aa.com.tr##body #socialmobilicon
+m.eonline.com###whatsapp-share
 vol.at##.vodl-region-article__social-share-bar
 /tema/facebook.gif$domain=abamedya.com
 calorizator.ru###social_group
@@ -7291,7 +7291,6 @@ bolshoyvopros.ru##div[class^="likes"]
 travelask.ru##div[class^="post-shares"]
 mumbrella.com.au##div[class^="social "]
 mobiltelefon.ru##div[class^="social_like_btns"]
-ndtv.com##div[class^="st_sharebar"]
 handelsblatt.com##div[class^="vhb-share-social"]
 msn.com##div[data-aop="sharingtoolbar_social"]
 uol.com.br##div[data-share-buttons]
@@ -7379,6 +7378,7 @@ asahi.com#?##SubInner > div.Section:has(> div.PlainMod > span.SnsName)
 news.hostlove.com#?##main > aside.buttons:has(> .fb_iframe_widget:first-child)
 tv.dmm.com#?#div[role="button"]:has(> div[class] > svg[aria-label="share"])
 mobileproxy.space#?#span > h4:contains(Поделитесь статьёй)
+deltahost.ua#?#.row > div.col-md-6:has(> div.row > div.col-12 > div.heateor_sss_sharing_container)
 jetro.go.jp#?#ul > li:has(> a[onclick*="twitter.com/intent/tweet?"])
 konest.com#?#article > div#d_subtitle:has(> h5.bold:contains(この情報を共有))
 konest.com#?#article > div#d_subtitle:has(> h5.bold:contains(この情報を共有)) + div#btn
@@ -9354,6 +9354,7 @@ noklapja.hu#$#.blurry { filter: none !important; }
 noklapja.hu#$#.m-fbPopup { display: none !important; }
 don24.ru###__fstrk-social-widget
 ||penzcentrum.hu/assets/js/bioep.min.js
+taftcoffee.com###wa-chat-btn-root
 webursa.com,bursahakimiyet.com.tr,yenidonem.com.tr##.floating-wpp
 opencritic.com##app-facebook-modal
 banglatech24.com##.extra-cls
@@ -9466,6 +9467,7 @@ medonet.pl##body.withFPU::before
 hardreset.info#$#body { overflow: visible!important; }
 lvnews.org.ua,tenews.org.ua#$##ourSocial { display: none!important; }
 lvnews.org.ua,tenews.org.ua#$#body { overflow: visible!important; }
+autonaminuty.org#$#html { overflow: visible!important; }
 dynamo.kiev.ua#$#body { overflow: visible!important; }
 deccoria.pl#$#html.dc-modal-is-locked > body.dc-layout--modal-active[style="padding-right: 17px;"] { overflow: visible!important; padding-right: 0!important; }
 deccoria.pl#$#html.dc-modal-is-locked > body.dc-layout--modal-active[style="padding-right: 17px;"] > .dc-modal-wrapper.dc-modal-is-opened > .dc-modal--site-facebook-like { display: none!important; }
@@ -9802,7 +9804,6 @@ radiojavan.com#@##socialize
 ghacks.net#@#.synved-social-button
 barstoolsports.com#@#.socialwrap
 clashofclans.com#@#.icon-reddit
-@@||mercury.landmarkglobal.com/tracking/track.php
 benetton.com#@#.icon-instagram
 bie-dro.de#@#.header-social
 @@/engine/classes/min/index.php?*/social-likes.min.js$~third-party
