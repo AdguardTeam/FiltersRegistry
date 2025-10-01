@@ -1,9 +1,9 @@
-! Checksum: a01rjguR37ILwMO24cAAZw
-! Diff-Path: ../patches/14/14-s-1759317027-3600.patch
+! Checksum: ZBSCCY4CAiLeNJ/vzx+o3g
+! Diff-Path: ../patches/14/14-s-1759320927-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.56
-! TimeUpdated: 2025-10-01T11:06:49+00:00
+! Version: 2.2.44.57
+! TimeUpdated: 2025-10-01T12:11:53+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2664,7 +2664,7 @@ motorena.cz##.fworks_consent_bar
 uni.lodz.pl###om-cookie-consent
 ezviz.ru###thermsModal
 nnwszkolne.compensa.pl##div[class^="CookieBannerstyles__BannerWrapper-"]
-zaufanatrzeciastrona.pl#%#//scriptlet('trusted-click-element', '.embed-privacy-input-wrapper > input[id^="embed-privacy-store-youtube-"]', '', '1000')
+zaufanatrzeciastrona.pl#%#//scriptlet('trusted-click-element', '.embed-privacy-overlay:not([style="display: none;"]) .embed-privacy-input-wrapper > input[id^="embed-privacy-store-"][data-embed-provider]', '', '500')
 mpsv.cz#%#//scriptlet('set-cookie', 'gcc_analytics', 'denied')
 mpsv.cz#%#//scriptlet('set-cookie', 'gcc_necessary', 'allow')
 mpsv.cz#%#//scriptlet('set-cookie', 'gcc_personalization', 'denied')
@@ -55125,6 +55125,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214587
+nexusmods.com#%#//scriptlet('adjust-setInterval', 'remaining--;')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214159
 arahcloud.com#%#//scriptlet('adjust-setInterval', 'downloadTime', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213838
