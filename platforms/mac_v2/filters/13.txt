@@ -1,9 +1,9 @@
-! Checksum: 2TDPkZwu1lESInZ8L/QDow
-! Diff-Path: ../patches/13/13-s-1759155431-3600.patch
+! Checksum: /tZnuieCtAQC5iUUYY0jPg
+! Diff-Path: ../patches/13/13-s-1759306429-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.59.77
-! TimeUpdated: 2025-09-29T14:07:41+00:00
+! Version: 2.0.59.78
+! TimeUpdated: 2025-10-01T08:09:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5821,12 +5821,13 @@ justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,
 [$domain=/justintvizle\d+\.top/]##header > a[href="/"] + ul
 [$domain=/justintvizle\d+\.top/]##.header_r
 !
-[$domain=/selcuksports\d+\.top/]##.ads-img
-[$domain=/selcuksports\d+\.top/]##div[class^="reklam-"]
-[$domain=/selcuksports\d+\.top/]##footer div[style^="position: absolute; top: 0; left: 0;"][style*="z-index: 9999;"]
-[$domain=/selcuksports\d+\.top/]##body > div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
-[$domain=/selcuksports\d+\.top/]##div[class^="footer-"]
-[$domain=/selcuksports\d+\.top/]##header > a[href="/"] + ul
+! aglint-disable invalid-modifiers
+!+ NOT_VALIDATE
+||hizliresims.com/*.gif$domain=/selcuksports\d+\.com/
+!+ NOT_VALIDATE
+||placehold.co^$domain=/selcuksports\d+\.com/
+! aglint-enable invalid-modifiers
+[$domain=/selcuksports\d+\.com/]##img[id^="top-ads-"]
 ! CASE 3 - probably fake
 pressedfur.com##.player > a[href][target="_blank"]
 ||blogger.googleusercontent.com/img/*.gif$domain=taraftariummdeneme.blogspot.com
@@ -5897,10 +5898,8 @@ selcuksportshd.is#$?#body { background-image: none !important; }
 ! aglint-disable invalid-modifiers
 !+ NOT_VALIDATE
 ||hizliresims.com/*.gif$domain=/selcuksportshd\d+\.(xyz\|click)/
-! aglint-disable invalid-modifiers
 !+ NOT_VALIDATE
 ||placehold.co^$domain=/selcuksportshd\d+\.(xyz\|click)/
-! aglint-disable invalid-modifiers
 !+ NOT_VALIDATE
 ||googleusercontent.com/img/*/crt$domain=/selcuksportshd[a-z0-9-]+\.(xyz\|click)/
 !+ NOT_VALIDATE
