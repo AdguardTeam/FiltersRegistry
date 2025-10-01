@@ -1,9 +1,9 @@
-! Checksum: aFONesBLNu6EZYn8peizCg
-! Diff-Path: ../patches/14/14-s-1759309924-3600.patch
+! Checksum: 8Z6QpYiGgf6i2kajq2x2mg
+! Diff-Path: ../patches/14/14-s-1759313503-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.54
-! TimeUpdated: 2025-10-01T09:08:33+00:00
+! Version: 2.2.44.55
+! TimeUpdated: 2025-10-01T10:08:14+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2541,6 +2541,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+altogetherfuneral.com##main > div:has(> p > a[href="/privacy"])
 russkiymir.ru##.cookie-w
 whitepages.com#%#//scriptlet('trusted-set-cookie', 'OptanonConsent', 'groups=C0004%3A0%2CC0001%3A1%2CC0002%3A1%2CC0003%3A1')
 whitepages.com#%#//scriptlet('trusted-set-cookie', 'OptanonAlertBoxClosed', '$currentDate$')
@@ -25278,6 +25279,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+qiita.com##div[data-testid="popup-qiita-conference"]
 applegadgetsbd.com#%#//scriptlet('prevent-setTimeout', '_()', '3000')
 aixdownloader.com##.fixed.right-0.bottom-4
 lenta.ru##.yandex-games
@@ -33117,6 +33119,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+bartek.com.pl##.weblayer--box-web-push-subscription
 medicalxpress.com###subscribeToWebPush
 dhakatribune.com###firebase-subscriber
 evrensel.net##.os-notify-container
@@ -34030,6 +34033,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+bartek.com.pl##.exponea-banner-backdrop
+bartek.com.pl##.exponea-subscription-dialog
 anthropic.com##div[class^="NewsletterEngineering"]
 technetbooks.com###HTML1
 chubbycable.com###cartx-wrap
@@ -46208,6 +46213,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+web.nhk#%#//scriptlet('trusted-set-cookie', '__bx_plusAppBanner', 'closed')
 openweathermap.org###banner_android
 mixch.tv##.modal.show:has(.move-app-title)
 mixch.tv##.modal-backdrop.show
