@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.14.88",
-			"timeUpdated": "2025-10-02T07:07:22+0000",
+			"version": "2.4.14.89",
+			"timeUpdated": "2025-10-02T08:09:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.92.27",
-			"timeUpdated": "2025-10-02T07:07:29+0000",
+			"version": "2.0.92.28",
+			"timeUpdated": "2025-10-02T08:09:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.44.67",
-			"timeUpdated": "2025-10-02T07:07:43+0000",
+			"version": "2.2.44.68",
+			"timeUpdated": "2025-10-02T08:09:33+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.95.64",
-			"timeUpdated": "2025-10-02T07:07:44+0000",
+			"version": "2.0.95.65",
+			"timeUpdated": "2025-10-02T08:09:34+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -703,8 +703,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.71.36",
-			"timeUpdated": "2025-10-02T07:07:47+0000",
+			"version": "2.0.71.37",
+			"timeUpdated": "2025-10-02T08:09:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -725,8 +725,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.62.91",
-			"timeUpdated": "2025-10-02T07:07:48+0000",
+			"version": "2.0.62.92",
+			"timeUpdated": "2025-10-02T08:09:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1664,8 +1664,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.45.10",
-			"timeUpdated": "2025-10-02T07:07:51+0000",
+			"version": "2.1.45.11",
+			"timeUpdated": "2025-10-02T08:09:46+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
