@@ -1,20 +1,20 @@
-! Checksum: x0XK10CPx+MI5DObAo5BkQ
+! Checksum: Q2n6xopDtGhDfjBf9Q5l/Q
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.71.31
-! TimeUpdated: 2025-10-01T19:06:33+00:00
+! Version: 2.0.71.32
+! TimeUpdated: 2025-10-02T02:31:56+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
 !#######################################################
 ##.cookies-modal
-##.wtm-cookies
 ##.cookieadmin_cookie_modal
 ##.cookieadmin_law_container
 ##div[data-testid="cookies-dialog"]
 ###pi_tracking_opt_in_div
 ###data-controller-stripe
 ###name-ga-cookie-accept-bar
+##aside[class="gdpr-wrapper top"]
 ###cookiescript_injected_wrapper
 ##.woodmart-cookies-popup
 ###consent-box-lgpd
@@ -230,6 +230,7 @@
 ##.cp-info-bar-container
 ##.gpm-cookie-accepted
 ###privacy-consent
+###domCookieWarning:not(html):not(body)
 ##.gdprPopup
 ##div[class^="app_gdpr"]
 ###gdpr_box
@@ -486,7 +487,6 @@
 ###cookie_policy_popup
 ###cookie_popup
 ###cookie_prompt
-###cookie_shout
 ###cookie_str
 ###cookie_warn
 ###cookie_warning
@@ -1244,6 +1244,7 @@
 /cookies_policy.js
 /Cookies_Pro/*
 /cookiesdisclaimer.
+/CookieSettingsManager?
 /cookiespolicy.
 /cookiesPopup.
 /cookiewarning.
@@ -1271,6 +1272,7 @@
 /plugins/CookieInfo/*
 /plugins/EuCookie/*
 /rbicookiepolicy.
+/SetCookieBanner.
 /TWCCookies/*
 /uk-cookie-consent/*
 /warnCookies.
@@ -1286,6 +1288,7 @@ _cookiebar_
 _cookieNotice.
 _cookies_disclosure/
 _eu_cookie_
+||cookie.pearshealthcyber.com^
 ||delivery.consentmanager.net^
 ||confirmic.com^$third-party
 ||gdpr.privacymanager.io^$third-party
@@ -1508,6 +1511,7 @@ profile.tarkov.com##.bsg-ac-cookie-agreement
 gamermarkt.com###fccm_alert
 order.maxburgers.com##consent-banner
 tvtoya.pl,betard.pl,101internet.ru##div[class^="Cookies_"]
+mir-telecom.ru###cookiesAgree
 scmp.com##div[data-qa="GDPRBanner-Container"]
 ||codicesconto.com/assets/js/cookie.min.js
 grizzlysms.com##.notification-used-cookies
@@ -1526,7 +1530,6 @@ vsk.ru##vsk-cookies-panel
 insurance.mts.ru##div[class^="CookiesPopup_"]
 workspace.ru##.footer-cookies-consent
 bes.media##.ck__modal
-||azs.teboil.ru/local/templates/teboil/js/cookie.js
 rvca.com###site-cb-footer
 trtspor.com.tr##div[class^="cookies-info_cookies-info-wrapper__"]
 trt1.com.tr##div[class*="cookies-info-wrapper"]
@@ -1537,7 +1540,6 @@ tp.edu.sg##.cmp-t-and-c-cookie-bar
 darksidebooks.com.br##.vtex-render__container-id-cookies-pop-up
 diavgeia.gov.gr,anacrowneplaza-niigata.jp##.cookieCheck
 domclick.ru##div[data-e2e-id="topline__cookie-alert"]
-deps.dev##div[style^="left: calc("][style*=" top: calc("][style$="position: fixed;"]
 ||4chanarchives.com/js/silktide-consent-manager.js
 sber.ru##div[data-testid="cookie_banner"]
 d5render.com##.home-hero-section ~ div > div[style^="box-sizing:border-box; position:fixed; bottom:0; left:0; z-index:9999; width:100%; display:flex;"]
@@ -1686,7 +1688,7 @@ servicepipe.ru,ionos.com##.tw-fixed.tw-bottom-0
 rumble.com###js-client-storage-consent__popup
 civilim.com,slazenger.com.tr###ucookie-container
 zakzak.co.jp###consent-wrapper
-search.fenrir-inc.com,sleipnirstart.com###agreement
+tzar.ru,search.fenrir-inc.com,sleipnirstart.com###agreement
 vercel.com###fides-overlay
 dasreda.ru##div[data-qa="Cookie-notice-agreement"]
 amcharts.com###amcharts-utils-consent
@@ -1803,7 +1805,6 @@ utkonos.ru,lenta.com##lu-cookie-agree
 mironetcz.*,mironet.*###cookiesDialog
 lime-shop.com##.l-accept-cookies
 lamoda.by##section[class^="_notifyForm_"]
-villaplus.com###CookieAccptLayer
 zegarkiblonie.com,watchesofmayfair.com.hk,watchesofmayfair.com.au,watchesofmayfair.com,quiosque.pl,petertyson.*###gdprCookieBar
 gotrendier.com.co,gotrendier.mx##body .cookies-warning-banner
 indd.adobe.com##.ga-consent-banner
@@ -2163,7 +2164,6 @@ istories.media##div[class*="cookieConsentBanner"]
 widilo.it##.widilo-cookie-rules
 ssstc.com,teamgroupinc.com##.privacyArea
 bitget.com##.micro-cookie-dialog
-events.ultraceofficial.com##body > div > div[tabindex] > div.vi-fixed
 fashiontechnews.zozo.com##div[class^="style-module--consent--"]
 corp.zozo.com##.m-box-policy
 dragonbox.de,roughradical.com.pl##div[id^="lgcookieslaw"]
@@ -2336,7 +2336,6 @@ archnet.org,solana.com##div[class*="CookieConsent_"]
 myniacin.com##.nx-popup
 mvmnext.hu##.cookiepanel_overlay
 mgfimoveis.com.br###ucke
-surfguru.com.br###aceitar_cookies
 ||honda.com.br/*/custom/home_notification/js/notification.js
 suny.edu##.noCookieModal
 ||news.samsung.com/*/wp-content/plugins/btr_gdpr_cookie/public/bgc_script.js
@@ -2349,6 +2348,7 @@ imgw.pl###imgw-pop-box-cookie
 outletmoto.com###aviso_cookie
 verizon.com,eventbrite.*,auburntigers.com,patreon.com,gofundme.com,mountathletics.com,goxavier.com###transcend-consent-manager
 iamgujarat.com,eisamay.com,samayam.com,vijaykarnataka.com,indiatimes.com,eisamay.com,maharashtratimes.com,navbharattimes.indiatimes.com##.top-header-gdpr
+augenaufmedienanalyse.de,euronet.pl##.eu-cookies-bar-cookies-bar-wrap
 obligacjeskarbowe.pl###cookieNotSet
 geeksforgeeks.org##.gfg_cookie__container
 ||ga.de/assets/consent/consent-page.js
@@ -2357,7 +2357,6 @@ vava.cars##vc-cookies-notification
 bybit.com##div[class^="style_gdpr-cookie-notice"]
 itau.com.br,hipercard.com.br##.marco-civil-banner
 utas.edu.au,totalizator.pl,traseo.pl,wakanim.tv,novavax.com,serumshop.ru,kartoteka.by,bigo.tv##.privacy-popup
-bigo.tv##.bottom_loadapp
 ||sync.transcend.io/consent-manager/$domain=anaconda.com
 postemobile.it###pm15_cookie_info
 coinbureau.com##div[class*="CookieDiv"]
@@ -3387,6 +3386,7 @@ taisei-techsolu.jp##.gdpr-area
 sbermarket.ru##div[class^="CookiesConcent_"]
 thaiticketmajor.com##.privacy-policy-bar
 coches.net##.mt-SharedCmp
+haustechnikdialog.de###ctl00_ctl01_privacy
 telecine.com.br##div[data-testid="banner"]
 interspace.ne.jp,mamastar.jp###personalInfo
 petalmaps.com##.privacy-dialog
@@ -3409,6 +3409,7 @@ ashaindia.ru##body div#cookie_notification.show
 brf.be###cookieDashboard
 hyperbook.pl,eazymut.pl###cookie-change-button
 ||consent.prointernet.com/consent.js
+softwarenetz.de###grayout[onclick="cookieCancel();"]
 thaiza.com##.ck-acpt-container
 realt.by##.gdpr-confirmation
 focustaiwan.tw###jsGDPR
@@ -3473,6 +3474,7 @@ alljapanesepass.com,javhd.com##.jcookie
 ubs.com##.privacysettings__banner
 ubs.com##.lightbox__container
 abc.net.au##div[data-component="CookieBanner"]
+compete.playstation.com###cookie-monster-header
 restate.ru##.cow
 culture.ru##.Rv1DR
 ||teltarif.de/scripts/qm/config-de.js
@@ -3601,7 +3603,6 @@ fotostrana.ru##.footer-cookie-agreement
 pokemonmasters-game.com##.c-agree-cookie
 /_js/consent_check.php$domain=sporx.com|superfb.com
 warthunder.com,warthunder.ru##.wt-cb
-||citroen-club.it/forum/java/cookie.js
 shakeshack.com###block-privacymessageblock
 flickr.com##.cookie-banner-reg
 rinna.co.jp,teac.jp##.accept_cookie
@@ -3624,7 +3625,6 @@ hertz.*##div[id^="light-box-"]
 ||asus.com/js/*/alert-info.js
 ag.mos.ru,eapteka.ru##.cookie-informer
 freemaths.fr,inclusiscore.org,topchretien.com###rgpd
-kartalhaber.com##div[style^="position:fixed; left:0; right:0; bottom:0; background-color:"]
 petalmail.com###bannerBox
 highlight-led.de###PrivacyCategoryAlert
 industryarena.com###consent-cookie
@@ -3651,6 +3651,7 @@ figma.com,doordash.com,brilliant.org,teeai.co.uk,betterhelp.com,mote.com,ibood.c
 ucsusa.org###block-cookienotice
 myswooop.de###cookie_consent_banner
 shiksha.com##.cokkie-lyr
+skipol.pl###ustawaCookie
 superesportes.com.br###bannerLGPD
 eboa.satfilm.pl,are.waw.pl##.ui-notificationbar.top
 lenstip.com###id01.w3-modal
@@ -4016,9 +4017,9 @@ lego.com##div[class^="AgeGatestyles__CookieDisclaimer-"]
 soziales-studieren.de,studieren-berufsbegleitend.de,medien-studieren.net,bwl-studieren.com,ingenieurwesen-studieren.de,wegweiser-duales-studium.de,gesundheit-studieren.com,das-richtige-studieren.de###cookie-settings-wrapper
 tsv1860.de###cookieacceptlayer
 ||widgets.tourismusnetz.com/tn-cookie-widget.js
+dontpad.com,myownconference.pl##.cookie-body
 miraeassetmf.co.in##.mangeingCookies
 odyseusz.msz.gov.pl###CookiesPolicyBox
-bnpparibas.pl###kg_cookie_content
 embl.org##.vf-banner--notice[data-vf-js-banner-cookie-name]
 knx.org,dauphin.de,dauphin-group.com,trendoffice.com,kliniken-heidenheim.de##.cookie-bar-wrapper
 /onetrust/consent/*$domain=mag2.com
@@ -4106,6 +4107,7 @@ ajbell.co.uk,solresor.se,fahrrad-xxl.de##.modal-overlay
 ||moneysavingexpert.com/cookie-consent-v*/msmCookieConsent.js
 ||jimstatic.com/ckies.js
 flashfootball.com,wyniki.pl,livesport.cz,flashscoreusa.com,flashfussball.de,eredmenyek.com,flashscore.*,horseracing24.com,darts24.com,handball24.com,volleyball24.com,motorsport24.com,golflive24.com,baseball24.com,cricket24.com,icehockey24.com,basketball24.com,tennis24.com,diretta.it,livescore.in,soccer24.com,soccerstand.com,livesport.com,scoreboard.com##.otPlaceholder
+icq.com##div[data-block="cookie"]
 serpstat.com##.gdpr-tab
 ||cdn.efilli.com/efl.js
 ||production-cmp.isgprivacy.cbsi.com/cps/shamanNotifier.js$domain=last.fm|cbs.com
@@ -5428,7 +5430,6 @@ allfinanz-dvag.de#@##cookie-overlay
 hastily.cc#@#.consent-container
 @@||consent.cookiebot.com/uc.js$domain=berlingske.dk
 modelmania.eu#@##cookieModal
-@@||hvcgroep.nl/themes/custom/hvcgroep_theme/assets/cookie-consent.json
 @@||usercentrics.eu^$domain=lkz.de
 @@||delivery.consentmanager.net/delivery/cmp.php$domain=nrz.de|braunschweiger-zeitung.de|waz.de|thueringer-allgemeine.de|weser-kurier.de
 newpharma.fr,newpharma.be,newpharma.de,newpharma.nl,newpharma.at#@#.cookie-policy:not(body):not(html)
@@ -5603,6 +5604,8 @@ jobs.nike.com#@#.cookie-content
 ogrodinfo.pl#@##cookie-law-info-bar
 kendrion.com#@#.cc-window[aria-label="cookieconsent"]
 kendrion.com#@#.cc-floating
+@@||privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js$domain=kabeleinsdoku.de|kabeleinsdoku.at
+@@||api.usercentrics.eu/settings/*/latest$domain=kabeleinsdoku.de|kabeleinsdoku.at
 @@||app.usercentrics.eu/browser-sdk/$domain=kabeleinsdoku.de|kabeleinsdoku.at
 hgtv.com#@##onetrust-consent-sdk
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=hgtv.com
@@ -7081,7 +7084,6 @@ fressnapf.de#@##cookie-banner
 fressnapf.de#@#.cookie-banner:not(body):not(html)
 idp.funktionstjanster.se#@#.cookieContainer
 idp.funktionstjanster.se#@##cookieinfo
-@@||assets.digitalocean.com/cookieConsent/$script,stylesheet
 kokaihop.se#@#.cookiePolicy:not(body):not(html)
 trixie.de#@#.cookie_accept
 @@||collector.appconsent.io/hello$domain=journaldesfemmes.fr|linternaute.com
@@ -7279,7 +7281,6 @@ nomanssky.com#@##cookie-law-info-bar
 mindigtv.hu#@#.cookie-box
 @@||adb.arcadeitalia.net/core/include_3rd/jquery.cookiesdirective.min.js
 penny.hu#@##cookie-message
-@@||headfonia.com/wp-content/plugins/creare-eu-cookie-law-banner/js/eu-cookie-law.js
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 woolworth.de#@##cookieModal
 @@||ebok.vectra.pl/*components/layout/cookie-bar/cookie-bar.component.

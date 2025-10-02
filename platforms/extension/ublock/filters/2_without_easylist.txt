@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: CpZoSc7/8tfFvjqlJb/zAg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1759369122-3600.patch
+! Checksum: izij0m8jg9NIvruw224QuA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1759372534-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.14.82
-! TimeUpdated: 2025-10-02T01:34:24+00:00
+! Version: 2.4.14.83
+! TimeUpdated: 2025-10-02T02:31:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35829,6 +35829,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+spankbang.com##.play_cover > .absolute:has(> span > a[href][target="_blank"])
+spankbang.com###main_video_player > span:has(> a[href][target="_blank"])
+spankbang.com##.ad_button
+||spankbang.com/api/*?ad_zone=
 indianexpress.com###taboola-right-article-personalisation
 indianexpress.com##.ad-spacer
 ||freesoft.net/sponsored/
@@ -54105,6 +54109,12 @@ circleofcricket.com#$#.modal-backdrop { display: none !important; }
 circleofcricket.com#$##myModal { display: none !important; }
 circleofcricket.com##div.container-full.add:has(> a[href]:first-child)
 ||circleofcricket.com/assets/adv/
+!
+! https://github.com/AdguardTeam/AdguardFilters/issues/214618
+||assets.sb-cd.com/static/common/js/bjssu_$domain=spankbang.com
+spankbang.com##+js(set-constant, BJSShowUnder, {})
+spankbang.com##+js(set-constant, BJSShowUnder.bindTo, noopFunc)
+spankbang.com##+js(set-constant, BJSShowUnder.add, noopFunc)
 !
 ! https://github.com/uBlockOrigin/uAssets/issues/23691
 !
