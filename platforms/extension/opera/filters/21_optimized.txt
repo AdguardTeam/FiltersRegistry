@@ -1,9 +1,9 @@
-! Checksum: qW1wle5GL4vzY4ga/TM48g
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1759385574-3600.patch
+! Checksum: E/pXjlMB2GM63s1BOMWH4g
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1759389083-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.37.84
-! TimeUpdated: 2025-10-02T06:09:27+00:00
+! Version: 2.0.37.85
+! TimeUpdated: 2025-10-02T07:07:48+00:00
 ! Expires: 10 days (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -1065,6 +1065,8 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+stay.rakuten.co.jp##a[href^="https://network.mobile.rakuten.co.jp/campaign/"]
+stay.rakuten.co.jp##a[href="/campaign/mobile/app/?l-id=pr-banner"]
 nexusmods.com##free-trial-banner
 buttersc.one,invillage-outvillage.com,misskey.gamelore.fun,misskey.systems,mivatter.com,msk.kitazawa.me,oekakiskey.com,side.misskey.productions,sushi.ski,voskey.icalo.net,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe#%#//scriptlet('json-prune', 'ads.[].imageUrl')
 buttersc.one,invillage-outvillage.com,misskey.gamelore.fun,misskey.systems,mivatter.com,msk.kitazawa.me,oekakiskey.com,side.misskey.productions,sushi.ski,voskey.icalo.net,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe##.xF6dY
@@ -3664,6 +3666,8 @@ softpedia.com#$#iframe.swipebox-rightxd[id="relcontent"] { top: 60px!important; 
 !##############################
 !######### JS tweaks ##########
 !##############################
+okpeliz.com#%#//scriptlet('adjust-setTimeout', '/countdown|progressLine/', '*', '0.001')
+okpeliz.com#%#//scriptlet('adjust-setInterval', '/countdown|progressLine/', '*', '0.001')
 nexusmods.com#%#//scriptlet('adjust-setInterval', 'remaining--;')
 arahcloud.com#%#//scriptlet('adjust-setInterval', 'downloadTime', '*', '0.001')
 topshare.in,tempmaile.me#%#//scriptlet('adjust-setInterval', 'count', '*', '0.001')

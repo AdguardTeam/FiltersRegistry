@@ -1,9 +1,9 @@
-! Checksum: EXD3oRICcL2YeHBHVcj7WA
-! Diff-Path: ../patches/21/21-s-1759385587-3600.patch
+! Checksum: 0BNbun4hbcQpCJlhi+1lSA
+! Diff-Path: ../patches/21/21-s-1759389100-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.37.84
-! TimeUpdated: 2025-10-02T06:09:27+00:00
+! Version: 2.0.37.85
+! TimeUpdated: 2025-10-02T07:07:48+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3536,6 +3536,8 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+stay.rakuten.co.jp##a[href^="https://network.mobile.rakuten.co.jp/campaign/"]
+stay.rakuten.co.jp##a[href="/campaign/mobile/app/?l-id=pr-banner"]
 nexusmods.com##free-trial-banner
 buttersc.one,invillage-outvillage.com,misskey.gamelore.fun,misskey.systems,mivatter.com,msk.kitazawa.me,oekakiskey.com,side.misskey.productions,sushi.ski,voskey.icalo.net,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe#%#//scriptlet('json-prune', 'ads.[].imageUrl')
 buttersc.one,invillage-outvillage.com,misskey.gamelore.fun,misskey.systems,mivatter.com,msk.kitazawa.me,oekakiskey.com,side.misskey.productions,sushi.ski,voskey.icalo.net,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe##.xF6dY
@@ -8892,6 +8894,9 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214632
+okpeliz.com#%#//scriptlet('adjust-setTimeout', '/countdown|progressLine/', '*', '0.001')
+okpeliz.com#%#//scriptlet('adjust-setInterval', '/countdown|progressLine/', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214587
 nexusmods.com#%#//scriptlet('adjust-setInterval', 'remaining--;')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214159
