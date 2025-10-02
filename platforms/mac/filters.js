@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.14.84",
-			"timeUpdated": "2025-10-02T03:16:18+0000",
+			"version": "2.4.14.85",
+			"timeUpdated": "2025-10-02T04:07:39+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.92.24",
-			"timeUpdated": "2025-10-02T02:31:39+0000",
+			"version": "2.0.92.25",
+			"timeUpdated": "2025-10-02T04:07:47+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.49.70",
-			"timeUpdated": "2025-10-02T03:16:30+0000",
+			"version": "2.0.49.71",
+			"timeUpdated": "2025-10-02T04:07:54+0000",
 			"languages": [
 				"de"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.44.64",
-			"timeUpdated": "2025-10-02T03:16:41+0000",
+			"version": "2.2.44.65",
+			"timeUpdated": "2025-10-02T04:08:10+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.95.62",
-			"timeUpdated": "2025-10-02T02:31:54+0000",
+			"version": "2.0.95.63",
+			"timeUpdated": "2025-10-02T04:08:11+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.71.33",
-			"timeUpdated": "2025-10-02T03:16:46+0000",
+			"version": "2.0.71.34",
+			"timeUpdated": "2025-10-02T04:08:15+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.62.89",
-			"timeUpdated": "2025-10-01T17:06:58+0000",
+			"version": "2.0.62.90",
+			"timeUpdated": "2025-10-02T04:08:17+0000",
 			"languages": []
 		},
 		{
