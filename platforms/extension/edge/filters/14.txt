@@ -1,9 +1,9 @@
-! Checksum: 25ojjEsDe9Rn0ZB+ReJ8gw
-! Diff-Path: ../patches/14/14-s-1759396275-3600.patch
+! Checksum: tkPU6PFXrteuJVImMZzhYQ
+! Diff-Path: ../patches/14/14-s-1759399884-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.69
-! TimeUpdated: 2025-10-02T09:07:49+00:00
+! Version: 2.2.44.70
+! TimeUpdated: 2025-10-02T10:07:45+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1702,6 +1702,7 @@
 !
 ! SECTION: Cookies - General URL
 !
+/gd-cookie2.js
 /modules/cookiesplus/views/js/cookiesplus-front.js
 /wp-content/plugins/cookieadmin/assets/*
 /wp-content/plugins/cookieadmin-pro/assets/*
@@ -4978,7 +4979,7 @@ iasp.ws#$#.lbOuterWrapper { display: none !important; }
 iasp.ws#$#body { overflow: auto !important; }
 freikirche-hamm.de#$#.cc-window { display: none !important; }
 freikirche-hamm.de#$#body { overflow: auto !important; filter: none !important; pointer-events: auto !important; }
-vkmag.com,winfuture.de,billiger.de,dw.com#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> #cmpbntyestxt')
+play3.de,vkmag.com,winfuture.de,billiger.de,dw.com#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> #cmpbntyestxt')
 ufi.org###cookies-prompt
 mtp.pl#%#//scriptlet('trusted-set-cookie-reload', 'cookieOptions', '{"analitics":false,"marketing":false}')
 mtp.pl#%#//scriptlet('set-cookie', 'cookieVers', '1')
@@ -5165,7 +5166,7 @@ helix-pflanzen.de###cconsent-modal.ccm--visible
 eurogamer.pt#%#//scriptlet('trusted-click-element', '.message-component > button[title="Manage Cookie Settings"]')
 eurogamer.pt#%#//scriptlet('trusted-click-element', '.message-component > button[title="Reject All"]')
 miles-mobility.com##div[data-testid="cookie-consent"]
-curator.pro,midas.app,asiaon.top,svgcreator.com,luvvoice.com,prmira.ru,docs.roadrunner.dev,newsnn.ru,dust.tt,tagilcity.ru##.fixed.bottom-4
+rackgenius.com,curator.pro,midas.app,asiaon.top,svgcreator.com,luvvoice.com,prmira.ru,docs.roadrunner.dev,newsnn.ru,dust.tt,tagilcity.ru##.fixed.bottom-4
 sklep-internet.pl#%#//scriptlet('trusted-set-cookie', 'cookies_message_bar_hidden', 'true')
 oklink.com##.cookieTips
 burgerking.pl##div[data-testid="footer"] > div[class^="styles__Container-"]:has(> div[class^="styles__ButtonsContainer-"] > button[data-testid="close-cookies-button"])
@@ -17531,6 +17532,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! play3.de - broken youtube embeds
+@@||delivery.consentmanager.net/delivery/cmp.php$domain=play3.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214513
 arena.com.tr#@#.cookieNotice:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214293
@@ -32674,8 +32677,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 @@||pinterest.com^$permissions=identity-credentials-get=()
 ! https://github.com/AdguardTeam/AdguardFilters/issues/205224
 @@||cdn-hainf.nitrocdn.com/*/assets/static/optimized/$domain=motionhealth.com.au
-! https://github.com/AdguardTeam/AdguardFilters/issues/204882
-@@||tennislegend.fr/wp-content/plugins/thrive-leads/js/frontend.min.js$domain=tennislegend.fr
+! https://github.com/AdguardTeam/AdguardFilters/issues/214649
+!+ NOT_OPTIMIZED
+@@||tennislegend.fr/wp-content/plugins/thrive-leads/js/frontend.min.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202059
 tb.pro,thundermail.com#@##mc_embed_signup
 ! https://github.com/uBlockOrigin/uAssets/issues/26606
