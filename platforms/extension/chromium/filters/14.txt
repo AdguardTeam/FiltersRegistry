@@ -1,9 +1,9 @@
-! Checksum: Q5ETzppbTFqCqvt+Al/xvg
-! Diff-Path: ../patches/14/14-s-1759493696-3600.patch
+! Checksum: W1FbUmEkrUL5YeHmavhgUw
+! Diff-Path: ../patches/14/14-s-1759497343-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.86
-! TimeUpdated: 2025-10-03T12:11:22+00:00
+! Version: 2.2.44.87
+! TimeUpdated: 2025-10-03T13:12:16+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2543,6 +2543,8 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+hut.de###c-cookie-banner
+spankbang.com#%#//scriptlet('trusted-click-element', '#cookie-consent button[\@click="$store.entryFlowStore.setEssentialCookies()"]')
 cultpix.com##.cookie__popup
 befunky.com##.toast--cookie-banner
 trusteeglobal.*##div[class^="style_general-modal"]
@@ -17539,6 +17541,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214618
+spankbang.com#@##cookie-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214735
 ! play3.de - broken youtube embeds
 @@||delivery.consentmanager.net/delivery/cmp.php$domain=play3.de
