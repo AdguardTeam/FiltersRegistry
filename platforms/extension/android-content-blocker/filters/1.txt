@@ -1,8 +1,8 @@
-! Checksum: B1Pk9faKqgi2oOjq9FX5jg
+! Checksum: JQABNyYEt9p7Retb8NpX8w
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.2.15
-! TimeUpdated: 2025-10-03T15:06:25+00:00
+! Version: 2.1.2.16
+! TimeUpdated: 2025-10-03T16:07:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3713,11 +3713,9 @@ cdntvpotok.com##.player-button
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213035
 dtf.ru#@#.ad.banner
 ! TODO: remove when this issues will be fixed - https://github.com/AdguardTeam/Scriptlets/issues/514
+@@||s3.wi-fi.ru/mtt/configs/sites/dtf.js$domain=dtf.ru
 @@||yandex.ru/ads/system/context.js$domain=dtf.ru
 @@||ssp.rambler.ru/capirs_async.js$domain=dtf.ru
-dtf.ru#@#.rotator
-dtf.ru#@#.supbar--top
-dtf.ru#@#div[style*="layout-sidebar-banner-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212306
 blitzfoxhub.com#@#.ad-slot
 blitzfoxhub.com#@#.ad-250
@@ -15723,12 +15721,13 @@ adme.media##div[data-test-id="article-content"] > div[class*=" "]:not([tabindex]
 ! ads in the recommended feed - articles
 !
 ! Start: vc.ru, dtf.ru, spark.ru
-vc.ru,dtf.ru##div[style*="layout-sidebar-banner-"]
+||api.dtf.ru/*/distribution?place=
+vc.ru##div[style*="layout-sidebar-banner-"]
 vc.ru##.entry-rotator
 vc.ru##.dstr-fl
-vc.ru,dtf.ru##.supbar--top
+vc.ru##.supbar--top
 dtf.ru,vc.ru##.propaganda
-dtf.ru,vc.ru##.rotator
+vc.ru##.rotator
 dtf.ru##div.subsite-header > div.subsite-header__cover > a.subsite-branding
 dtf.ru##.post-branding-top
 dtf.ru##.post-branding-bottom
@@ -15759,6 +15758,10 @@ dtf.ru##.kinopoisk-site-header
 dtf.ru##.daily-promo-unit
 spark.ru##.jobs--layout
 new.dtf.ru##.ALMGcspq
+! baits
+dtf.ru##.supbar--top > div[style] > *
+dtf.ru##.rotator > div[style] > *
+dtf.ru##div[style*="layout-sidebar-banner-"] > div
 ! End: vc.ru, dtf.ru, spark.ru
 !
 ! pb.wtf
