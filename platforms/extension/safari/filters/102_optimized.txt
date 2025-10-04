@@ -1,9 +1,9 @@
-! Checksum: phdgHEOL6CtX8Vn9hqe8KQ
-! Diff-Path: ../patches/102_optimized/102_optimized-s-1759509691-14400.patch
+! Checksum: iVTZzNL/B0/csCcCV3nimw
+! Diff-Path: ../patches/102_optimized/102_optimized-s-1759596035-14400.patch
 ! Title: ABPindo (Optimized)
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.8.88
-! TimeUpdated: 2025-10-03T16:37:08+00:00
+! Version: 2.0.8.89
+! TimeUpdated: 2025-10-04T16:35:59+00:00
 ! Expires: 5 days (update frequency)
 ||188affiliates.com^$third-party
 ||accesstrade.co.id^$third-party
@@ -269,7 +269,7 @@ _iklan_|$image
 ||anoboy.media/img/*.gif
 ||anoboy.watch/img/*.gif$image,domain=anoboy.watch
 ||api.flygame.io/sdk/widget/id_jpnn.1540.js$script,domain=m.jpnn.com
-||api.streamapi.info/uploads/adsbaru*$xmlhttprequest
+||api.streamapi.info/uploads/ad*.xml$xmlhttprequest,domain=api.streamapi.info
 ||api.winnetnews.com/api/*/banner/
 ||armylookfashion.com/728.swf
 ||awsubs.*/wp-content/themes/*/btn_close.gif$image
@@ -550,6 +550,7 @@ layardrama21.*#@#.idmuvi-topbanner-aftermenu
 ###iklan-kanan-postingan
 ###iklan-kiri
 ###iklan-newsfeed
+###iklan-overlay
 ###iklan-paralax
 ###iklan-pos
 ###iklan-rekanan1
@@ -893,6 +894,7 @@ layardrama21.*#@#.idmuvi-topbanner-aftermenu
 ##.warning_iklan
 ##.widget_iklan_atas
 ##.wrapper-iklan-sidebar-artikel
+##[href^="https://promosi."]
 ##div[aria-label="Iklan"]
 ##img[data-ai-hint="advertisement banner"]
 ###ad-link.visible
@@ -1911,7 +1913,9 @@ nontondrama.*##[href^="https://yukclick.me/dunia21"]
 oploverz.*###teaser1
 oploverz.*###teaser2
 oploverz.*###teaser3
+oploverz.*##.bg-opacity-70.bg-black.rounded-lg
 oploverz.*##.kln
+oploverz.*##div[class^="fixed"]
 otakudesu.*###overplay
 cloud.majalahhewan.com,info.mapsaddress.com,info.vebma.com##p:has( > a[href="#downloadnow"])
 herworld.co.id##p:nth-of-type(2)
@@ -1922,6 +1926,7 @@ samehadaku.*##.ads
 samehadaku.*##.adsrow
 samehadaku.*##.kln
 samehadaku.*##[href^="https://t.ly/"]
+samehadaku.*##div[class*="player-iklan"]
 samehadaku.*##img[style="width: 50%; height: 70px;"]
 jpnn.com##section.leaderboard
 shinigami.*##.bg-base-card:has(img[alt*="-ad-"])
