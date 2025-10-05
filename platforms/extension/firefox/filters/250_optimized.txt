@@ -1,5 +1,5 @@
-! Checksum: hpD3Ka80Ru4bSjnMYQgumA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1759552790-14400.patch
+! Checksum: 8t4SWRMDbJdVkEXXJriVyg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1759639176-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.17.99
@@ -46,6 +46,7 @@ windll.com##.dll > p
 softwaretested.com##.st-alternative
 ||outbyte.com^$document
 ||solvusoft.com^$document
+exefiles.com##.row:has(a[href*="/recommended/"])
 ||roms-download.com^$document
 ||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
@@ -586,6 +587,8 @@ www.tumblr.com##div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a[
 ||172.240.41.97^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||172.240.41.129^$all
+||bartcons.com^$all
+||onclckstr.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||62.122.168.42^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -706,7 +709,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ||185.53.178.53^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||185.53.178.54^$all
-.to/popconsole.php|
 ||xiaobaixitong.com^$all
 ||dabaicai.com^$all
 ||flash.cn^$all
@@ -1273,7 +1275,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@://safeweb.norton.com^
 @@||sitecheck.sucuri.net^
 @@||safebrowsing.google.com^
-@@://www.fortiguard.com^
 @@://wikipedia.org^
 @@://github.com^|
 @@||bitbucket.org^
@@ -1719,6 +1720,7 @@ $removeparam=LSID
 $removeparam=affuid
 $removeparam=icid2
 $removeparam=refclickid
+$removeparam=irclid
 $removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
 $document,removeparam=/^affSource.*$/i
@@ -1843,7 +1845,6 @@ $document,removeparam=/^sub_id\d=.*$/
 $removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
-$removeparam=i_cid
 $removeparam=waad
 $removeparam=_gac
 $removeparam=af_medium
@@ -2506,7 +2507,6 @@ $removeparam=sourceID,domain=gamestop.com|verizon.com
 ||ozon.ru^$removeparam=advert
 $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=ia-pkpmtrack
-||microcenter.com^$removeparam=rf
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
 $removeparam=CID,domain=burpee.com|chegg.com|express.com|farmandfleet.com|marvel.com|mcafee.com|overstock.com|pepboys.com|puritan.com|rosettastone.com|samsung.com|shutterfly.com|staples.com|teleflora.com|ulta.com|virginatlantic.com|vrbo.com|walgreens.com|media-cdn.costco.ca|media-cdn.costco.com
@@ -2993,7 +2993,6 @@ buffalonews.com#%#//scriptlet('ubo-set.js', 'lee_trkLinkSrc', 'noopFunc')
 @@||hitta.se^$removeparam=ad_id
 @@||facebook.com^$removeparam=__s
 @@||bing.*/ws/redirect/$removeparam
-@@/unsub/?$removeparam
 @@||email-link.$removeparam
 @@||manage.kmail-lists.com/subscriptions^$removeparam
 @@/login-redirect/*$removeparam
