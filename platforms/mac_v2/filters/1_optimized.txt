@@ -1,5 +1,5 @@
-! Checksum: s23V3HELXkQ79Ny3EFDWCg
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1759612188-3600.patch
+! Checksum: XXfrD1U69hZ47OI46O+MrA
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1759632013-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.2.19
@@ -19,6 +19,7 @@
 /confirm/ad?uuid$xmlhttprequest
 /confirm/block?uuid=$xmlhttprequest
 /json/?*=*%2C690%$xmlhttprequest,third-party
+/point/?method=video_link&xl=$xmlhttprequest
 .xyz/vendor/lib/$third-party,script
 /L?tag=*&ad=$all
 /L?tag=*_clickunder&$all
@@ -69,7 +70,6 @@
 /sovetnik.webpartner.
 .com/inc/angular.js
 .top/inc/angular.js
-/static/foobar.js?p=*&b=
 /show/?block_id=
 /js/sjplugin.js
 .com/player/|$third-party
@@ -143,7 +143,6 @@ http://*.ru/leftunit.pl?
 .net/rtr/9
 .netmng.
 .nuffnang.*.js
-.org/clk.js|
 .org/rtr/
 .php?zoneid=*&loc=
 .ru/baner/
@@ -1146,6 +1145,7 @@ ucoz.ru/informer/
 ||admediator.ru^$third-party
 ||cdn.hunteryvely.com^$third-party
 ||skwstat.ru^$third-party
+||kinoaction.ru^$third-party
 ||onemontay.ru^$third-party
 ||xyz0k4gfs.xyz^$third-party
 ||kipyn.com^$third-party
@@ -1170,7 +1170,6 @@ ucoz.ru/informer/
 ||468.vologdainfo.ru^
 ||7offers.ru^$third-party
 ||87.242.91.*/adfox/
-||87.242.91.*/prepareCode?
 ||a.jurnalu.ru^
 ||a.kubik3.ru^
 ||a24help.ru^$third-party
@@ -2524,7 +2523,6 @@ cybersport.ru#$#.page-layout > main { padding-top: 0 !important; }
 101kofemashina.ru#$#body { background-image: none!important; padding-top: 0!important;}
 culture.ru#$#div > div[style^="background: rgb"] > a[href][target="_blank"] { display: none !important; }
 culture.ru#$##header { top: 0 !important; }
-study.ru#$#.top-banner { display: none !important; }
 study.ru#$##header { height: 94px !important; }
 study.ru#$#.header-inner { height: 94px !important; }
 dzen.ru#$#body { overflow: auto !important; }
@@ -2936,9 +2934,7 @@ meteofor.com.ua,gismeteo.by,gismeteo.com,gismeteo.kz,gismeteo.ru,gismeteo.ua##no
 gismeteo.com##.section-media
 meteofor.com.ua,gismeteo.ru##.content-column:not(.column1) section.section-rss
 gismeteo.ru,gismeteo.kz##.top-media-placeholder
-gismeteo.ua,gismeteo.kz,gismeteo.by,gismeteo.ru##.__frame_sm > div.__frame > div.media_middle
 gismeteo.ru##.flexbox > div.right_col_1 > div.wrap_small.__frame > div:not([class^="weather_now"])
-gismeteo.ua,gismeteo.kz,gismeteo.by##.media_frame
 ||static.hdrezka.ac/i/*ggbet*.gif
 3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##.b-player > div[style^="height: 160px;"]
 3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-sex-city.net,hdrezka.ag,hdrezka.club,hdrezka.cm,hdrezka.co,hdrezka.in,hdrezka.kim,hdrezka.me,hdrezka.name,hdrezka.pl,hdrezka.rest,hdrezka.sh,hdrezka.site,hdrezka.today,hdrezka.tv,hdrezka.vip,hdrezka.website,hdrezka19139.org,hdrezka1twwpb.org,hdrezka2tepnm.org,hdrezka2vmmty.org,hdrezka720dhh.org,hdrezka8bdhtq.org,hdrezka9bsbhq.org,hdrezka9fmskj.org,hdrezkaonline.com,hdrezkayou.com,hello-rezka.tv,kinopub.me,kvk.pub,omnirezka.tv,punisher-hdrezka.net,rezka-ua.in,rezka-ua.org,rezka-ua.tv,rezka.fi,rezka.si,rezka.space,rezkery.com,rezkify.com,standby-rezka.tv,rezka.ag##div[style="height: 250px; overflow: hidden;"]
@@ -5870,6 +5866,7 @@ furfur.me##.banner-centering-wrap
 shedevrum.ai,eaomedia.ru,amurmedia.ru,stavropol.media,ulanmedia.ru,nakhodka.media,ussurmedia.ru,sevastopolmedia.ru,footballua.tv,dp.ru,vctr.media,buro247.ru,afisha.ngs.ru,newsvl.ru##.banner-container
 penzavzglyad.ru##.banner-dummy
 fintolk.pro,klops.ru##.banner-header
+unipack.ru##.banner-imp
 unipack.ru##.banner-imp ~ noindex
 championat.ru,championat.com,maximonline.ru##.banner-placeholder
 нашбийск.рф##.banner-src
@@ -5887,7 +5884,6 @@ vseprosport.ru##.banner_link
 turizm.ru##.banner_mini
 wincore.ru##.bannerbottompost
 metalinfo.ru##.bannerimage
-marathonbet.com##.banners-component
 privetsochi.ru##.banners-topic-banner
 ua-independent.com##.bannerwrap
 blizko.ru,pulscen.ru##.barmen-item
@@ -6101,7 +6097,6 @@ felomena.com##.sliding-parent1 > div.yesshow
 mobiset.ru##.smw2
 gramota.ru##.social_plate > p[align="center"]
 viva-tv.ru##.sp_block
-wp-kama.ru##.spads
 newkaliningrad.ru##.pr-side-240
 reibert.info##.sponsorBanner
 ykt.ru##.static-adv
@@ -6392,7 +6387,6 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||3dtoday.ru/upload/mediakit/*.gif
 ||4k-kino.net/kl/4k.php?q=
 ||4pna.com/banner/
-||5tv5.ru/tgr.gif
 ||abc-people.com/bann_
 ||abc-people.com/banners/
 ||aces.gg/templates/DefaultT/img/distr.jpg
@@ -6461,6 +6455,9 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||dizelyator.ru/templates/default/js/shaitan_functions.js
 ||dnepr.news/adv/
 ||don24.ru/js/banners.min.js
+||driver.ru/Static/Images/bf.jpg
+||driver.ru/Static/Images/c99.jpg
+||driver.ru/Static/Images/cm99.jpg
 ||dumskaya.net/banner/
 ||dvizhok.su/assets/images/banner/
 ||dwg.ru/imgnew/
@@ -6545,7 +6542,6 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||peterburg.ru/*banner
 ||photo-monster.ru/*/rotor.js
 ||photo-monster.ru/images/fantastish.png
-||photobucket.com/albums/*/alexcheban/livejournal/*_Commercial/$domain=~photobucket.com
 ||phpbbguru.net/images/guru^
 ||pics.kinokadr.ru/images/b/
 ||ping-admin.ru/*/b/
