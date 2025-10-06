@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JWTdl79YAavw+LaBSy4WSw
-! Diff-Path: ../patches/1/1-s-1759756704-3600.patch
+! Checksum: ufNFUA25ItrJqmniPm0O5w
+! Diff-Path: ../patches/1/1-s-1759763513-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.2.22
-! TimeUpdated: 2025-10-06T13:14:10+00:00
+! Version: 2.1.2.23
+! TimeUpdated: 2025-10-06T15:07:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6811,6 +6811,7 @@ glavbukh.ru,chehov-vid.ru,161.ru,prufy.ru,ysia.ru,5koleso.ru,ngs.ru,i38.ru,chita
 !
 !
 !
+vidal.ru##.products-table > tbody > tr[class] ~ tr:not([class])
 99px.ru##div[role^="advertizing"]
 tass.ru##div[class^="DesktopLayout_top"]
 tass.ru##div[class*="CardsGrid_ad_"]
@@ -17478,7 +17479,6 @@ woman.rambler.ru##.article__read-also
 woman.rambler.ru##div[class*="traffic-blocks"][class*="intresting"]
 !
 ||cpa-elements.rambler.ru/promo-gallery/sdk.js
-finance.rambler.ru##aside[class]:has(> div > div.banner--native-partner_widget)
 finance.rambler.ru##div[id^="rambler-promo-gallery-"] ~ div[class]:not([id])
 finance.rambler.ru##.finance__partners
 finance.rambler.ru,auto.rambler.ru,news.rambler.ru,sport.rambler.ru,weekend.rambler.ru##.article__read-also
@@ -17540,9 +17540,14 @@ weekend.rambler.ru##div[id^="ban_240x400"]
 !
 ! leftovers
 rambler.ru##div[class*="xmr"][style^="min-height:"]
+rambler.ru##:matches-path(/\/(dom|pro)/)div[style^="order:"][style*="-1"]
+rambler.ru##:matches-path(/\/(dom|pro|eco)/)div[class]:has(> div[id^="adfox-"])
+rambler.ru##:matches-path(/dom)rambler-info-banner
+weekend.rambler.ru##rambler-info-banner
+sport.rambler.ru,finance.rambler.ru##aside[class]:has(> div > div.banner--native-partner_widget)
+family.rambler.ru,life.rambler.ru,weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru##div[style^="order:"][style*="-1"]
+family.rambler.ru,life.rambler.ru,weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru##div[class]:has(> div[id^="adfox-"])
 weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,weather.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru##div[class*="banner-"]
-weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru##div[style^="order:"][style*="-1"]
-weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru##div[class]:has(> div[id^="adfox-"])
 weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru##div[data-index] > div[class]:has(> div > div[data-rnet])
 weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru#$?#script + div[class] > div[class]:has(> div[class^="banner-"]) { min-height: 0 !important; }
 weather.rambler.ru##div[data-block="seo"]
