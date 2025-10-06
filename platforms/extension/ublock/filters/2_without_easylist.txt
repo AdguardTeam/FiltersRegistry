@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mb2n9jWouJHF48EwCjRHNA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1759749036-3600.patch
+! Checksum: OFkEb3b3tsth9io7h3IC6Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1759752941-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.15.88
-! TimeUpdated: 2025-10-06T11:06:20+00:00
+! Version: 2.4.15.89
+! TimeUpdated: 2025-10-06T12:11:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35547,6 +35547,7 @@ dogdrip.net#$?#html[lang="ko"] [id^="img_"][style]:has(iframe[frameborder="0"][s
 infinityfree.com#$?#html[lang][dir="ltr"] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]) { clip-path: circle(0) !important; }
 ! Common rules, which partially hide banners
+.html-load.com/players/*/-1/70/$xmlhttprequest
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##*:not(body) > a[href^="https://content-loader.com/player"]
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##*:not(body) > a[href^="https://html-load.com/player"]
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##*:not(body) > a[href^="https://07c225f3.online/player"]
@@ -35808,6 +35809,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+quizlet.com##.SetPageEmbeddedAd-wrapper
+quizlet.com##.SetPage > div:has(> div.TimeAndVisibilityAd)
+adn.com##.adn-single-chain:has(> div.adn-single-chain__children > div.rev-content-widget)
 zerohedge.com#$#.smrt-leaderboard-container { display: none !important; }
 zerohedge.com#$#.container > div[class^="Page_"] { padding-top: 80px !important; }
 techfinancials.co.za##.post-content > p > a[href*="/?utm_source="] > img
