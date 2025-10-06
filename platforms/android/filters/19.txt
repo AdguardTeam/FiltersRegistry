@@ -1,9 +1,9 @@
-! Checksum: QCyTuTepfsrr+rcrWzidRA
-! Diff-Path: ../patches/19/19-s-1759738384-3600.patch
+! Checksum: Yn1zstmXBpmKvIuvly3F1w
+! Diff-Path: ../patches/19/19-s-1759741900-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.63.5
-! TimeUpdated: 2025-10-06T08:09:45+00:00
+! Version: 2.0.63.6
+! TimeUpdated: 2025-10-06T09:08:26+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -526,6 +526,10 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+civitai.com##a[href="/pricing"] > img[alt*="disabling adblock"]
+civitai.com##.mantine-ScrollArea-viewport > div > .gap-3 > .gap-2:has(> a[href="/pricing"] > img[alt*="disabling adblock"])
+civitai.com#%#//scriptlet('prevent-fetch', 'server.megabrain.co')
+civitai.com#%#//scriptlet('prevent-element-src-loading', 'script', 'cdn.snigelweb.com/adengine')
 yummyani.me##div[class*="adfinity_block_"]
 antalyahurses.com,haberantalya.com,afyonturkeligazetesi.com##div[x-data^="adblockBanner"]
 neoseeker.com###right_content > div[style^="height:250px;width:290px;"]
@@ -3184,6 +3188,8 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+100.com.tw#$#.van-overflow-hidden { overflow: auto !important; }
+100.com.tw#$#.evaluation-normal { display: none !important; }
 aspor.com.tr##.modal-closing-btn
 townwork.net#%#//scriptlet('set-cookie', 'isLightProfileBannerSerpsClosed', '1')
 instagram.com#%#//scriptlet('set-session-storage-item', 'loggedOutCTAIsShown', '1')
@@ -12052,6 +12058,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+electrive.com##.newsletter-bar
+electrive.com##.site-newsletter
 experte.com,experte.de,digitale.co##.fixed.bottom-0
 titan-army.com#%#//scriptlet('set-session-storage-item', 'ecomsend_pp_window_normal211873', 'true')
 titan-army.com#%#//scriptlet('set-session-storage-item', 'ecomsend_pp_already_show211873', 'true')

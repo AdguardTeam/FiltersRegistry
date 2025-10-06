@@ -1,9 +1,9 @@
-! Checksum: YnI99JJ6vjGXlZnEna1bGg
-! Diff-Path: ../patches/14/14-s-1759738418-3600.patch
+! Checksum: uN1vxfkATuxRN8tw2L649A
+! Diff-Path: ../patches/14/14-s-1759741930-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.44.95
-! TimeUpdated: 2025-10-06T08:09:39+00:00
+! Version: 2.2.44.96
+! TimeUpdated: 2025-10-06T09:08:21+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17632,6 +17632,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214936
+! https://github.com/AdguardTeam/AdguardFilters/issues/214935
+@@||bargainbirdfood.co.uk/static/*/Amasty_GdprFrontendUi/js/$domain=bargainbirdfood.co.uk|gardenbird.co.uk
+! https://github.com/AdguardTeam/AdguardFilters/issues/214934
+@@||lovegardenbirds.co.uk/static/*/Amasty_GdprFrontendUi/
 ! https://github.com/uBlockOrigin/uAssets/issues/30286
 @@||usercentrics.eu^$domain=oeamtc.at
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214901
@@ -22760,6 +22765,10 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
 !
+civitai.com##a[href="/pricing"] > img[alt*="disabling adblock"]
+civitai.com##.mantine-ScrollArea-viewport > div > .gap-3 > .gap-2:has(> a[href="/pricing"] > img[alt*="disabling adblock"])
+civitai.com#%#//scriptlet('prevent-fetch', 'server.megabrain.co')
+civitai.com#%#//scriptlet('prevent-element-src-loading', 'script', 'cdn.snigelweb.com/adengine')
 yummyani.me##div[class*="adfinity_block_"]
 antalyahurses.com,haberantalya.com,afyonturkeligazetesi.com##div[x-data^="adblockBanner"]
 neoseeker.com###right_content > div[style^="height:250px;width:290px;"]
@@ -25418,6 +25427,8 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 ! SECTION: Popups - Regular rules
 !
+100.com.tw#$#.van-overflow-hidden { overflow: auto !important; }
+100.com.tw#$#.evaluation-normal { display: none !important; }
 aspor.com.tr##.modal-closing-btn
 townwork.net#%#//scriptlet('set-cookie', 'isLightProfileBannerSerpsClosed', '1')
 instagram.com#%#//scriptlet('set-session-storage-item', 'loggedOutCTAIsShown', '1')
@@ -34183,6 +34194,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+electrive.com##.newsletter-bar
+electrive.com##.site-newsletter
 experte.com,experte.de,digitale.co##.fixed.bottom-0
 titan-army.com#%#//scriptlet('set-session-storage-item', 'ecomsend_pp_window_normal211873', 'true')
 titan-army.com#%#//scriptlet('set-session-storage-item', 'ecomsend_pp_already_show211873', 'true')

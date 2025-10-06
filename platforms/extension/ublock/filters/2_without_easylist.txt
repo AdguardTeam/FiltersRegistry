@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0YqCrZ49CXS6uDId/dYFAw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1759738413-3600.patch
+! Checksum: dw4VR0Y1qmjQvS+n2NizhQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1759741926-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.15.85
-! TimeUpdated: 2025-10-06T08:09:08+00:00
+! Version: 2.4.15.86
+! TimeUpdated: 2025-10-06T09:07:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10268,6 +10268,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/214875
+circle-sports.com##+js(no-setTimeout-if, ad.offsetHeight)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214889
 iphonechecker.herokuapp.com##+js(no-setTimeout-if, "hidden"===r.visibility)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214891
@@ -35842,6 +35844,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+electrive.com#$#body.is-active-fireplace { padding-top: 0 !important; }
 experte.com,experte.de,digitale.co##promotion
 ||thehealthsite.com/loadad/
 thehealthsite.com##.margin-top
