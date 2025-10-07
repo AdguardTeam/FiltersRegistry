@@ -1,8 +1,8 @@
-! Checksum: BxAmY1Brm9jFFPhbGPA5xA
+! Checksum: llGvKPZyknIxRFKzORNCmw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.45.13
-! TimeUpdated: 2025-10-07T12:11:59+00:00
+! Version: 2.2.45.14
+! TimeUpdated: 2025-10-07T13:14:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10588,7 +10588,7 @@ pastebin.com###float-box-1
 aza.org,amc.com###gdpr-bar
 exceedlms.com,kalenderwoche.de,hostinger.*,box.com,thelayoff.com,narcity.com###gdpr-consent
 sky.de###gdpr-cookieNotice
-haal.fashion,bondhushava.com,kishoralo.com,lexpress.mu###gdpr-policy
+bigganchinta.com,haal.fashion,bondhushava.com,kishoralo.com,lexpress.mu###gdpr-policy
 sport.ro,stirileprotv.ro###gdpr-section
 web.tv###gdpr-warning
 cylance.com###gdpr-wrp
@@ -19331,13 +19331,6 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 ##.gs-subscribe
 ##.td-more-articles-box
 !
-! Federated Credential Management popup
-! "Sign in with your Google account"
-! desktop
-###credential_picker_container
-! mobile
-###credential_picker_iframe
-!
 /wp-content/plugins/ays-facebook-popup-likebox/*
 .ru/?iam=$script
 /cdn-cgi/pe/bag2?r[]=*mailget.net
@@ -19441,17 +19434,23 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 !
 !
 !
+! Federated Credential Management popup
+! "Sign in with your Google account"
 ! Google Chrome may render the popup as a floating element which is not a part of the page
 ! that is why cosmetic rule `###credential_picker_container` does not work
 ! https://developer.mozilla.org/en-US/docs/Web/API/FedCM_API
 ! Warning: check, if auth using Google is not broken
 ||accounts.google.com/gsi/client^$third-party,script,domain=dtf.ru|stackoverflow.com|vc.ru|pikabu.ru|nytimes.com|baltimoresun.com|rozetka.com.ua|estadao.com.br|medium.com|gzt.com|mercurynews.com|drukarnia.com.ua|diffchecker.com|kaystls.site|kaystls.site|overclock.net|nissanclub.com|crazygames.com|notion.so|usnews.com|nypost.com|etnownews.com|timesnownews.com|menshealth.com|themirror.com|cq.ru|voetbalzone.nl|perplexity.ai|lefigaro.fr|lifehacker.ru|app.notta.ai|vnexpress.net
 ||accounts.google.com/gsi/iframe/select?client_id=$domain=reddit.com
-! For FireFox (incl. apps)
+! For non-Chromium (incl. apps)
+###credential_picker_container
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
+! mobile
+###credential_picker_iframe
 ! TODO: remove "/.*/" part when this issue - https://github.com/AdguardTeam/FiltersCompiler/issues/229 will be fixed
 ! TODO: remove document modifier when this issue is fixed - https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2954
 /.*/$permissions=identity-credentials-get=(),document
+!
 ! Edge login with Microsoft
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js$script,domain=newsweek.com|popularmechanics.com
 !
