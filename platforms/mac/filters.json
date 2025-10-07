@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.16.10",
-			"timeUpdated": "2025-10-07T09:07:46+0000",
+			"version": "2.4.16.11",
+			"timeUpdated": "2025-10-07T10:07:32+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.20.25",
-			"timeUpdated": "2025-10-07T07:08:10+0000",
+			"version": "2.1.20.26",
+			"timeUpdated": "2025-10-07T10:07:43+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.69.6",
-			"timeUpdated": "2025-10-07T09:08:00+0000",
+			"version": "2.0.69.7",
+			"timeUpdated": "2025-10-07T10:07:50+0000",
 			"languages": [
 				"ja"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.45.10",
-			"timeUpdated": "2025-10-07T09:08:11+0000",
+			"version": "2.2.45.11",
+			"timeUpdated": "2025-10-07T10:08:06+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.96.24",
-			"timeUpdated": "2025-10-07T08:09:30+0000",
+			"version": "2.0.96.25",
+			"timeUpdated": "2025-10-07T10:08:07+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.71.72",
-			"timeUpdated": "2025-10-07T09:08:17+0000",
+			"version": "2.0.71.73",
+			"timeUpdated": "2025-10-07T10:08:11+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.63.10",
-			"timeUpdated": "2025-10-07T06:09:49+0000",
+			"version": "2.0.63.11",
+			"timeUpdated": "2025-10-07T10:08:13+0000",
 			"languages": []
 		},
 		{
