@@ -1,14 +1,14 @@
-! Checksum: ILhhN4mdf8rppZ0/cudukw
-! Diff-Path: ../patches/243/243-s-1759812052-14400.patch
+! Checksum: 2GkTpXmHAOpYJtcWL1w3vA
+! Diff-Path: ../patches/243/243-s-1759898474-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.22.96
-! TimeUpdated: 2025-10-07T04:36:50+00:00
+! Version: 2.0.22.97
+! TimeUpdated: 2025-10-08T04:37:09+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-10-07 04:09:53 CEST
+! Last modified: 2025-10-08 04:40:08 CEST
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -244,7 +244,7 @@ battrestadsdel.se###top-banner-mobile, .apd-text, .apds_main, .entry-priomaker, 
 battrestadsdel.se,flashback.se,leta.se###top-banner
 bebisvarlden.se##.tdc-row:has(a[href*="/annons"])
 beernews.se##.cookie-consent-wrapper, #takeover-outer
-bergsmannen.se,tidningenbyggmaterial.se,taxiidag.se,tidningendacksnack.se##.ann-puff, .headerLinks, .cookiesInfo
+bergsmannen.se,tidningenbyggmaterial.se,taxiidag.se,tidningendacksnack.se##.ann-puff, .headerLinks, .cookiesInfo, #newsletterSubLink
 besoksliv.se##a[href*="sponsrat-innehall"], div[class$="-promotion"]
 bestchampagne.se##aside.section-sm
 bestchampagne.se#$#div[style="opacity:0"] { opacity:unset!important; }
@@ -1089,8 +1089,9 @@ motorsportbladet.se##:is(article, li):has(a[href*="casino"], a[href*="kasino"])
 motorsportivarmland.nu##table[width="690"] > tbody > tr > td[height="0"] .Boxen > tbody:has(img[src*="/Spons/"])
 motorsportivarmland.nu##td[width="153"]:has(img[src*="/Annons"])
 moviezine.se###secondary .bg-white:has(div[id^="moviezine_outsider"])
-moviezine.se###tilt-ad-top-stay-away
+moviezine.se###tilt-ad-top-stay-away, #front-page-gtm
 moviezine.se##.container > .perfmatters-lazy-element:has(a[href*="casino"])
+moviezine.se##.listing-container:has(a.block[href*="/advertorial/"])
 moviezine.se##.md\:pb-4:has(.inner_advertisement)
 mygatemagazine.se##.textwidget:has-text(Annons)
 mykitchenstories.se##.elementor-heading-title:has-text(Annons):upward(section.elementor-top-section:not(.elementor-section-items-middle))
@@ -1963,7 +1964,6 @@ zeromagazine.nu##div[id^="ads"]
 ##[class*="advads_ad_widget"]:not(body):not(html)
 ##[id^="adace_ads"]
 &autoplay$subdocument,removeparam=autoplay,domain=di.se|expressen.se
-*$third-party,script,denyallow=gstatic.com,domain=karlskogavaxer.se|molndalvaxer.se
 *$subdocument,third-party,redirect=click2load.html,domain=alltomsallskapsspel.se
 *$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net
 *$script,redirect-rule=noopjs,domain=elevspel.se
