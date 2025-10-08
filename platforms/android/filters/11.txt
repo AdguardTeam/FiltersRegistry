@@ -1,9 +1,9 @@
-! Checksum: vh6UVeBcpHv7EiXSh+/VQA
-! Diff-Path: ../patches/11/11-s-1759857023-3600.patch
+! Checksum: Mrb1mrh6K8Mf5fIUL9Q/IQ
+! Diff-Path: ../patches/11/11-s-1759925748-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.64.86
-! TimeUpdated: 2025-10-07T17:06:55+00:00
+! Version: 2.0.64.87
+! TimeUpdated: 2025-10-08T12:12:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -156,6 +156,8 @@
 ||startup.mobile.webvisor.com^
 ||startup-mobile.ap.yandex-net.ru^
 !
+||datafinder-beacon.starii-rover.com^
+||ads-bridge.pixocial.com^
 ||freewheel-jitt.sanoma.fi^
 ||nelonenmedia-pmd-ads-*.nm-stream.nelonenmedia.fi^
 ||parrot-flow.com^
@@ -2590,6 +2592,9 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+yabancidiziio.com##a[href^="https://cutt.ly/"]
+yabancidiziio.com##.fixed:has(> a[href^="https://shorteleven.online/"])
+yabancidiziio.com###router-view > div:not([class]) > div.flex:has(> div[class] > div.w-full > ad)
 ksta.de##.dm-grid ~ .fixed:has(> #sticky-label)
 anime2you.de##.wam-banner
 anime2you.de###adbreak
