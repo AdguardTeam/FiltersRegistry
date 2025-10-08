@@ -1,9 +1,9 @@
-! Checksum: Ghlcuwb8LMZdAS9+3gFgGQ
-! Diff-Path: ../patches/227/227-s-1759351165-14400.patch
+! Checksum: 56MDP9hn9lAZVIjMdm5aPg
+! Diff-Path: ../patches/227/227-s-1759927776-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.3
-! TimeUpdated: 2025-10-01T20:35:42+00:00
+! Version: 2.0.23.4
+! TimeUpdated: 2025-10-08T12:45:37+00:00
 ! Expires: 10 days (update frequency)
 !
 ||mman.kr^
@@ -3657,8 +3657,9 @@ t.hi098123.com#@#ins.adsbygoogle[data-ad-slot]
 !#safari_cb_affinity
 t.hi098123.com#$#.tabad { top: -100px !important; }
 ! dcinside.com
-dcinside.com#%#//scriptlet('remove-cookie', 'gaejuki_ad')
-dcinside.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '_ad=')
+dcinside.com#%#//scriptlet('prevent-setTimeout', 'addc.dcinside.com')
+dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
+dcinside.com#%#//scriptlet('abort-current-inline-script', 'setTimeout', 'ajax/naverad')
 !
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle')
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')

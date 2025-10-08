@@ -1,9 +1,9 @@
-! Checksum: XpwdlVYFoYyTAETUy0XHXg
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1759351191-14400.patch
+! Checksum: Qpdou65BkEnOadhAyqLVFQ
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1759927809-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.3
-! TimeUpdated: 2025-10-01T20:35:42+00:00
+! Version: 2.0.23.4
+! TimeUpdated: 2025-10-08T12:45:37+00:00
 ! Expires: 12 hours (update frequency)
 ||mman.kr^
 ||admize.io^
@@ -3542,8 +3542,9 @@ t.hi098123.com#@#ins.adsbygoogle[data-ad-slot]
 @@||googletagmanager.com/gtag/js$domain=t.hi098123.com,script
 !#safari_cb_affinity
 t.hi098123.com#$#.tabad { top: -100px !important; }
-dcinside.com#%#//scriptlet('remove-cookie', 'gaejuki_ad')
-dcinside.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '_ad=')
+dcinside.com#%#//scriptlet('prevent-setTimeout', 'addc.dcinside.com')
+dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
+dcinside.com#%#//scriptlet('abort-current-inline-script', 'setTimeout', 'ajax/naverad')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle')
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 ||shana.pe.kr/shana_check/scp*.js$script
