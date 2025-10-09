@@ -1,9 +1,9 @@
-! Checksum: 0WLYtHst8XX6OoygHu+0WA
-! Diff-Path: ../patches/18/18-s-1759990429-3600.patch
+! Checksum: Y/wEPNDHA6obKAnx3qcZkg
+! Diff-Path: ../patches/18/18-s-1759993911-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.71.89
-! TimeUpdated: 2025-10-09T06:09:57+00:00
+! Version: 2.0.71.90
+! TimeUpdated: 2025-10-09T07:08:05+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2542,6 +2542,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+marunouchi.com##body > .fixed.bottom-10:has(> .px-24:only-child > p > a[href$="/kiyaku/"])
 polyus.cinema-grad.com##.cookie-warning-popup
 cometogether.live###__next > div[class^="css-"] > div[class^="css-"]:has(button[data-test="reject-cookie-button"])
 deckhouse.ru##.toastify-bottom
@@ -17628,6 +17629,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215157
+@@||marunouchi.com/_nuxt/CookieBanner.
 ! https://x.com/scn21/status/1975568803984728530
 @@||xfolio.jp/lu_assets/cookie-popup.$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214290
