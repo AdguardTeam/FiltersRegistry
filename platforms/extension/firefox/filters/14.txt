@@ -1,9 +1,9 @@
-! Checksum: QBNkhkMcxTV26A4AAsST1A
-! Diff-Path: ../patches/14/14-s-1759986697-3600.patch
+! Checksum: xJ6xr3887bGusz/Ymy1utQ
+! Diff-Path: ../patches/14/14-s-1759990411-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.45.29
-! TimeUpdated: 2025-10-09T05:08:08+00:00
+! Version: 2.2.45.30
+! TimeUpdated: 2025-10-09T06:09:52+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2541,6 +2541,7 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+polyus.cinema-grad.com##.cookie-warning-popup
 cometogether.live###__next > div[class^="css-"] > div[class^="css-"]:has(button[data-test="reject-cookie-button"])
 deckhouse.ru##.toastify-bottom
 chesnok.media##.terms
@@ -34194,6 +34195,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+express.co.uk##.whatsapp-group
 axios.com#%#//scriptlet('set-cookie', '_pc_bypass_subwall', 'true')
 fi.google.com#%#//scriptlet('set-local-storage-item', 'newsletter_prompt', 'true')
 phys.org##.ads
@@ -46394,7 +46396,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
-m.yelp.*##div[class]:has(> div[class^="overlay-wrapper"] > a[aria-label="Download the Yelp app"])
+m.yelp.*##div[class]:has(> div[class^="overlay-wrapper"] > a[data-testid="pitch-link"][href^="https://www.yelp.com/search?"])
 fashionnova.com##.footer > div.fixed.bottom-0:has(> div.relative a[href^="https://play.google.com/store/apps/details?id=co.tapcart.app.npQt0DXZpj"])
 ficbook.net##.android-smart-banner
 tripadvisor.com##div[class]:has(> a[href^="https://tripadvisor.onelink.me/"][href*="?pid=mobilewebsite"])
