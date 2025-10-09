@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: VBUcWDV1jE+CO20xFgl13Q
-! Diff-Path: ../patches/20/20-s-1759990423-3600.patch
+! Checksum: hBJzKALTbld41f33/rQedQ
+! Diff-Path: ../patches/20/20-s-1759997617-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.23.99
-! TimeUpdated: 2025-10-09T06:09:58+00:00
+! Version: 2.0.24.0
+! TimeUpdated: 2025-10-09T08:09:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -30,7 +30,7 @@
 ###app-follow-banner
 ##amp-app-banner
 ##.smartbanner--ios
-##div[class^="smartbanner"][class$="-android"]
+##div[class^="smartbanner"][class*="-android"]
 ###smartbanner.ios
 ###smartbanner.windows
 ##head[prefix~="medium-com:"] ~ body .js-openInAppButton
@@ -3725,6 +3725,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+online.enerjisa.com.tr#$#html { margin-top: 0 !important; }
 m.yelp.*##div[class]:has(> div[class^="overlay-wrapper"] > a[data-testid="pitch-link"][href^="https://www.yelp.com/search?"])
 fashionnova.com##.footer > div.fixed.bottom-0:has(> div.relative a[href^="https://play.google.com/store/apps/details?id=co.tapcart.app.npQt0DXZpj"])
 ficbook.net##.android-smart-banner
