@@ -1,5 +1,5 @@
-! Checksum: kVAdYbGTtFT+/Nlnzf6eYg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1759941746-14400.patch
+! Checksum: ntk/Xn4T/WpG0Rf9z1D5+g
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1759984838-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.1
@@ -34,6 +34,7 @@ drivereasy.com#?#.pakb-content p:has-text(Driver Easy)
 drivereasy.com#?#.pakb-content div.info.note:has-text(drivereasy.com)
 drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 howtoremove.guide##[id*="newage"]
+howtoremove.guide##.wp-block-table:has(.banner)
 sensorstechforum.com##tr:has([href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"])
 sensorstechforum.com##center:has([href$="ttps://www.enigmasoftware.com/spyhunter5-eula/"])
 sensorstechforum.com##[href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"]
@@ -49,7 +50,6 @@ softwaretested.com##.st-alternative
 exefiles.com##.row:has(a[href*="/recommended/"])
 ||freeroms.com^$document
 ||roms-download.com^$document
-||gamesgx.net^$document
 coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
@@ -59,7 +59,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||199.59.243.222^$document
-||githu.com^$document,domain=~you-were-likely-looking-for-github.com
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||54.209.22.226^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -281,7 +280,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||heartburnsurroundingcourtroom.com^$all
 ||antonyexpected.com^$all
 ||beergeneralization.com^$all
-||mapdevelopcleverness.com^$all
 ||highcpmrevenue*.com^$all
 ||profitablecpm*.com^$all
 ||rewindonto.com^$all
@@ -1277,7 +1275,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||renminbao.com^
 @@||secretchina.com^
 @@||soundofhope.org^
-@@||tuidang.org^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||lgrecommends.lgappstv.com^
 @@||www.joesandbox.com^
@@ -1652,6 +1649,7 @@ $removeparam=mkt_tok
 $removeparam=affname
 $removeparam=MID,domain=~media-cdn.costco.*|~community.arubanetworks.com
 $removeparam=srnd
+$removeparam=as_src
 $removeparam=action_type_map
 $document,removeparam=/^bsft_.*$/
 $document,removeparam=/^dpg_.*$/
@@ -1726,6 +1724,7 @@ $removeparam=afflid
 $removeparam=mclk
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org
+$removeparam=exactag_uk
 $removeparam=LSID
 $removeparam=affuid
 $removeparam=icid2
@@ -1870,6 +1869,8 @@ $removeparam=amp_device_id
 $removeparam=awinaffid
 $removeparam=iclid
 $removeparam=a_fid
+$removeparam=afCampaignId
+$removeparam=afCreativeId
 $removeparam=trk_contact
 $removeparam=trk_msg
 $removeparam=trk_module
@@ -1887,6 +1888,7 @@ $removeparam=pk_source
 $removeparam=pk_content
 $removeparam=pk_kwd
 $removeparam=ig_mid
+$removeparam=asclid
 $removeparam=au_advert_id
 $removeparam=au_car_id
 $document,removeparam=/^from=rss$/
@@ -1992,7 +1994,6 @@ $removeparam=3rdpcid
 $removeparam=tp_uid
 $removeparam=ft_section
 $removeparam=correlator
-$removeparam=ap_id
 $removeparam=ucf_user_id
 $removeparam=yandexuid
 $removeparam=google_nid
@@ -2298,7 +2299,6 @@ $removeparam=aff_click_id
 ||aliexpress.$removeparam=gatewayAdapt
 ||aliexpress.$removeparam=pdp_npi
 ||aliexpress.$removeparam=curPageLogUid
-||alibaba.com^$removeparam=categoryIds
 ||baidu.com^$removeparam=/^rsv.*$/
 ||baidu.com/s?$removeparam=f
 ||baidu.com^$removeparam=for
@@ -2628,6 +2628,7 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
 $removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+||reuters.com^$removeparam=edition-redirect
 ||fiverr.com^$removeparam=bta
 ||fiverr.com^$removeparam=afp
 ||fiverr.com^$removeparam=cxd_token
@@ -2984,6 +2985,7 @@ ref=dtf.ru$document,removeparam=ref
 ||substack.com^$removeparam=triedRedirect
 ||firefox.com^$removeparam=redirect_source
 $removeparam=source,domain=search.brave.com|search.brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd.onion
+$removeparam=/^ref=futuretools\.io$/
 ||blu-ray.com^$removeparam=tid
 ||blu-ray.com^$removeparam=c
 ||blu-ray.com^$removeparam=retailerid
