@@ -1,9 +1,9 @@
-! Checksum: 1hjye7IDjkXJh3GPajIAeA
-! Diff-Path: ../patches/18/18-s-1760001125-3600.patch
+! Checksum: j8DqCxcHU4kQOhnTfgOXmg
+! Diff-Path: ../patches/18/18-s-1760004706-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.71.91
-! TimeUpdated: 2025-10-09T09:08:35+00:00
+! Version: 2.0.71.92
+! TimeUpdated: 2025-10-09T10:08:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2390,6 +2390,8 @@ phpconference.com,turkishminute.com,gemeinde.ramsau.at,die-gesunde-wahrheit.de,g
 effektivgesund.de,tps-performance.de,jawnylublin.pl,pcelite.pl,fanklockow.pl,blu-ray-rezensionen.net,kieruneknorwegia.pl,jpgames.de,europassitalian.com,philosophia-perennis.com#%#//scriptlet('set-constant', 'realCookieBanner.others.isPreventPreDecision', 'true')
 ! viel-unterwegs.de,ahorn-camp.de,mmo-sankar.de,der-windows-papst.de#@%#//scriptlet("set-constant", "realCookieBanner", "undefined")
 /\/wp-content\/[a-f0-9]{32}.js/$domain=tecsafe.de|viel-unterwegs.de|ahorn-camp.de|mmo-sankar.de|der-windows-papst.de|audiovision.de|indibit.de|technikshavo.de|emojiszumkopieren.de|wagenheber24.de|fcportables.com|noobguides.de|vampster.com|geekguide.de
+! other
+halloprag.de#%#//scriptlet('set-constant', 'webpackChunkrealCookieBanner_', 'undefined')
 !
 clevis.de#%#//scriptlet('trusted-click-element', 'dialog a[href="#"][id$="-ext-0-255"]')
 !
@@ -11834,8 +11836,8 @@ foxford.ru###cc_container
 newsaktuell.de,presseportal.de###nacc-overlay
 solgar.com.tr###footkvkk
 pushgaming.com##.use-cookies
-alumatex.pl#$#html.pum-open-overlay { overflow: auto !important; }
-alumatex.pl#$#.pum-overlay[data-popmake*="rodo"] { display: none !important; }
+easyprotect.pl,alumatex.pl#$#html.pum-open-overlay { overflow-y: auto !important; }
+easyprotect.pl,alumatex.pl#$#.pum-overlay[data-popmake*="rodo"] { display: none !important; }
 kingston.com##.nofication-widget
 heimkino.org,pfannen.org##.orakelAdvice
 gurmeninyeri.com,marjin.com.tr,mismarsanalmarket.com,temin.com.tr,kocakbaklava.com.tr,kocak.com.tr,aksesuarix.com##.cerez-mesaji
@@ -17595,6 +17597,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/uBlockOrigin/uAssets/issues/30347
+@@||cdn.cookielaw.org/consent/*.json$domain=safeway.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215157
 @@||marunouchi.com/_nuxt/CookieBanner.
 ! https://x.com/scn21/status/1975568803984728530

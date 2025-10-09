@@ -1,9 +1,9 @@
-! Checksum: 6dlr25aEEgnnIcw0vqzYHA
-! Diff-Path: ../patches/14/14-s-1760001144-3600.patch
+! Checksum: 2LN1xa23753DEOODf/mR/g
+! Diff-Path: ../patches/14/14-s-1760004728-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.45.33
-! TimeUpdated: 2025-10-09T09:08:30+00:00
+! Version: 2.2.45.34
+! TimeUpdated: 2025-10-09T10:08:18+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2390,6 +2390,8 @@ phpconference.com,turkishminute.com,gemeinde.ramsau.at,die-gesunde-wahrheit.de,g
 effektivgesund.de,tps-performance.de,jawnylublin.pl,pcelite.pl,fanklockow.pl,blu-ray-rezensionen.net,kieruneknorwegia.pl,jpgames.de,europassitalian.com,philosophia-perennis.com#%#//scriptlet('set-constant', 'realCookieBanner.others.isPreventPreDecision', 'true')
 ! viel-unterwegs.de,ahorn-camp.de,mmo-sankar.de,der-windows-papst.de#@%#//scriptlet("set-constant", "realCookieBanner", "undefined")
 /\/wp-content\/[a-f0-9]{32}.js/$domain=tecsafe.de|viel-unterwegs.de|ahorn-camp.de|mmo-sankar.de|der-windows-papst.de|audiovision.de|indibit.de|technikshavo.de|emojiszumkopieren.de|wagenheber24.de|fcportables.com|noobguides.de|vampster.com|geekguide.de
+! other
+halloprag.de#%#//scriptlet('set-constant', 'webpackChunkrealCookieBanner_', 'undefined')
 !
 clevis.de#%#//scriptlet('trusted-click-element', 'dialog a[href="#"][id$="-ext-0-255"]')
 !
@@ -11840,8 +11842,8 @@ foxford.ru###cc_container
 newsaktuell.de,presseportal.de###nacc-overlay
 solgar.com.tr###footkvkk
 pushgaming.com##.use-cookies
-alumatex.pl#$#html.pum-open-overlay { overflow: auto !important; }
-alumatex.pl#$#.pum-overlay[data-popmake*="rodo"] { display: none !important; }
+easyprotect.pl,alumatex.pl#$#html.pum-open-overlay { overflow-y: auto !important; }
+easyprotect.pl,alumatex.pl#$#.pum-overlay[data-popmake*="rodo"] { display: none !important; }
 kingston.com##.nofication-widget
 heimkino.org,pfannen.org##.orakelAdvice
 gurmeninyeri.com,marjin.com.tr,mismarsanalmarket.com,temin.com.tr,kocakbaklava.com.tr,kocak.com.tr,aksesuarix.com##.cerez-mesaji
@@ -17631,6 +17633,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/uBlockOrigin/uAssets/issues/30347
+@@||cdn.cookielaw.org/consent/*.json$domain=safeway.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215157
 @@||marunouchi.com/_nuxt/CookieBanner.
 ! https://x.com/scn21/status/1975568803984728530
