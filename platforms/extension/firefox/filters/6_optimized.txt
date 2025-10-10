@@ -1,5 +1,5 @@
-! Checksum: z91iW6DTX1omRHDufKwcQA
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1760026385-3600.patch
+! Checksum: /u+L7kPjjxjGObJmcf6QlQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1760063849-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.49.81
@@ -1113,7 +1113,6 @@ chip.de#?#li > a[href*="chip.de/downloads/"][class]:not([class*=" "]):has(img[sr
 forum.golem.de##.list-comments > li:has(> div[style])
 ||chip.de/*.php*&$~third-party,script
 chip.de##.js_download_button > a[href^="https://x.chip.de/intern/dl/?url="][href*="&pageLayout=withinstaller|"]
-wetter.de##.no-ads-passback
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
 urlaubspartner.net##.werbung
 epochtimes.de##div[id^="div-gpt-ad"]
@@ -1684,6 +1683,10 @@ reviersport.de##.rs-ad-init
 tellows.at#?##singlecomments > li:not([id]):has( > .comment-body > div[id^="adngin-"])
 businessinsider.de##a[href^="https://www.businessinsider.de/sponsored"]
 bild.de##.article-text-link--ad
+berliner-kurier.de##div[data-testid="article-billboard-advertisement"]
+berliner-kurier.de##div[class^="traffective_"]
+berliner-kurier.de##div[class^="outbrain_"]
+berliner-kurier.de##div[data-placeholder*="Anzeige"]
 berliner-kurier.de##div[data-testid^="ad-slot"] + div[data-testid^="separator"]
 livestreamde.com##div[style="height:300px; margin-bottom: 20px !important;"]
 woxikon.de##.ads-sticky-container
@@ -2703,6 +2706,7 @@ mein-mmo.de#?#.article:has(> section > .content > .mmo-custom-label-wrapper > sp
 woxikon.de#?#.synonyms-list-inner > div.synonyms-full-width:has(> div.ads-wrapper)
 finanzen.net#?#.page-content__item:has(> div[class^="fin-ob-"])
 macwelt.de,pcwelt.de#?#article.item:has(> .item-inner > .item-text > .item-text-inner > .item-eyebrow:contains(Anzeige))
+mux.de#?#body > section:has(> .container > div[style^="width:100%; height"][style*="text-align:center;"])
 zockify.de#?#div:has(> small.text-muted)
 chip.de#?#div[class]:has(> a[href*="chip.de/downloads/"]:only-child img[src*="hash"]:not([class], [data-src]))
 ratgeber.bunte.de#?#.Article > div[class]:has(>hr:first-child + aside[role="complementary"] + hr:last-child)
@@ -3082,9 +3086,9 @@ rtl.de#@#.rtlde-medium-rectangle
 /bannerwerbung-
 /bilder/ads/*
 /bilder/werbung_
+/cms/werbung/*
 /esel.js
 /grafik/ads/*
-/hier_werben.
 /images/werbung.
 /images/werbung/*
 /img/werbung/*
@@ -3188,6 +3192,7 @@ _woz_banner_vote.
 ###werbeblock
 ###werbebox
 ###werbeflaeche
+###werbekasten
 ###werbeslot-artikel
 ###werbeslot-sidebar
 ###werbung
@@ -3359,8 +3364,10 @@ wetter.com#@#div[id^="div-gpt-"]
 ||adalizer.com^$third-party
 ||adcocktail.com^$third-party
 ||addefend.com^$third-party
+||adiceltic.de^$third-party
 ||adklick.de^$third-party
 ||adklick.net^$third-party
+||ads4allweb.de^$third-party
 ||adspirit.net^$third-party
 ||adsplash.de^$third-party
 ||aff-handler.com^$third-party
@@ -3470,11 +3477,13 @@ wetter.com#@#div[id^="div-gpt-"]
 ||js.stroeermediabrands.de^$third-party
 ||klasse2000.de/fileadmin/user_upload/webbanner/$third-party
 ||koketti.com/ib/
+||lcmmedia.de/kamp/
 ||lustgate.org/images/cbanner/$third-party
 ||media*.s24.com^$third-party
 ||middleware.marktjagd.de^$third-party
 ||modules.wikifolio.com/v2/de/autocontent/stock/*?partner=
 ||monsterdealz.de/images/$third-party
+||netzis.de/Banner/$third-party
 ||partners2.das-onlinespiel.de/client.js?pid=*&_=2.12.3|$script,domain=games.focus.de|spiele.bild.de|spiele.stern.de
 ||phonepublisher.com/banner.do?
 ||publisher.outtra.com^$third-party
@@ -3801,8 +3810,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||wcm.at/images/attingo.gif
 ||websingles.at/pages/site/de/images/logos/
 ||webwiki.de/images/seobility_
-||webwork-magazin.net/wp-content/uploads/*/sul-banner-
-||webwork-magazin.net/wp-content/uploads/*/webdesign-printdesign.gif
 ||werne-plus.de/wp-content/uploads/*/Anzeige_
 ||wetter.at/mowis/cpc_teaser/
 ||wetteronline.de/mdr/p_adplace/
@@ -3988,7 +3995,6 @@ kleinanzeigen.de###brws_banner-supersize
 formel1.de###bs-container
 kleinanzeigen.de###btf-billboard
 steuern.de###c11507
-vsport.at###c17
 urnerwochenblatt.ch###carouselInserate
 sexei.net###catfad
 beeg-pornos.com,deinesexfilme.com,einfachtitten.com,gutesexfilme.com,halloporno.net,hd-pornos.info,hd-sexfilme.com,hdpornos.net,herzporno.com,lesbenhd.com,meinyouporn.com,milffabrik.com,nursexfilme.com,pornhub-sexfilme.net,pornoaffe.net,pornodavid.com,pornoente.tv,pornofelix.com,pornofisch.com,pornohammer.com,pornohans.com,pornohelm.com,pornohirsch.net,pornojenny.com,pornoklinge.com,pornoleon.com,pornolisa.com,pornoritze.com,pornoschlange.com,pornosusi.com,pornotanja.com,pornotom.com,pornotommy.com,pornovideos-hd.com,pornozebra.com,sexente.com,sexfilme-gratis.com,sexvideos-gratis.com,sexvideos-hd.com,tube8-pornos.com,xhamster-sexfilme.com,xnxx-porno.com,xnxx-pornos.xxx,xnxx-sexfilme.com###chatins_frame
@@ -4051,6 +4057,7 @@ amazon.de###heroQuickPromo_feature_div
 kleinanzeigen.de###home-billboard
 winfuture.de###homepage_rectangle
 finanzfluss.de###in-search-invesco-01-25
+familienkost.de###incontent_2
 bz-berlin.de###inpage
 golem.de###iqadtile5
 ariva.de,handelsblatt.com###iqd_mainAd
@@ -4065,7 +4072,6 @@ tellows.de###lb_header
 anrufer.info,bergsteiger.de,hardwareluxx.de,pocketnavigation.de,skiinfo.com,skiinfo.de,videoaktiv.de###leaderboard
 bauexpertenforum.de###leaderboardBelowNav
 frankenpost.de,insuedthueringen.de,kurier.de,np-coburg.de###leaderboard_1
-koelner.de###leaderboard_nav
 anime-loads.org###leaderwidget
 autouncle.de###left-banner-container
 mydealz.de###leftSideAdSlotPortal
@@ -4222,8 +4228,6 @@ kleinanzeigen.de###vip-billboard
 kleinanzeigen.de###vip_pro-billboard
 games.ch###wallpaper
 spielesnacks.de###wallpaper-link
-koelner.de###wallpaper_left
-koelner.de###wallpaper_right
 astronews.com###wcontent
 bayer04.de###web-trekk-pageupdate
 weltwoche.ch###werbungTop
@@ -4244,7 +4248,6 @@ finanznachrichten.de##.Ad_SmartAd
 elektrikforen.de,jungewelt.de,vermieter-forum.com##.Anzeige
 praxistipps.chip.de,praxistipps.focus.de##.Article__Ad
 praxistipps.chip.de,praxistipps.focus.de##.Article__Promo
-focus.de##.BlockItem--Article--Advertisement
 mactechnews.de##.Content_1-minheight
 mactechnews.de##.Content_3-minheight
 netmoms.de,praxistipps.focus.de##.FC__Ad
