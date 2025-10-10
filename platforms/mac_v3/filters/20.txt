@@ -1,9 +1,9 @@
-! Checksum: jeghHI4jDXTXccTTfA9JJw
-! Diff-Path: ../patches/20/20-s-1760098557-3600.patch
+! Checksum: o6oHgdRrSB981FG0M97LTA
+! Diff-Path: ../patches/20/20-s-1760112761-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.24.4
-! TimeUpdated: 2025-10-10T12:11:49+00:00
+! Version: 2.0.24.5
+! TimeUpdated: 2025-10-10T16:08:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -59,6 +59,10 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+baitoru.com##li:has(> a[href*="adj.st"]:only-child)
+baitoru.com##li:has(> a[href^="https://spot-baitoru.go.link"]:only-child > img[src*="appdl"])
+baitoru.com##a[href^="https://spot-baitoru.go.link"] > img[src*="appdl"]
+baitoru.com##a[href*="adj.st"]
 milliyet.com.tr##.redirectPopup
 bikemap.net##div[class^="app-qr-code_container"]
 temp-mail.lol#%#//scriptlet('trusted-set-local-storage-item', 'app-install-promotion', '{"hasSeenBefore":true,"alreadyInstalled":true}')
@@ -855,7 +859,8 @@ genius.com#$?#.android_interstitial { remove: true; }
 u.gg##.builds-page-promo
 kundeavisogtilbud.no##.page-promotion-item
 kundeavisogtilbud.no##.mobile-app-banner-small
-mypolacy.de##div[class*="appBanner"]
+townwork.net,mypolacy.de##div[class*="appBanner"]
+townwork.net##div[class*="bannerWrapper"]:has(> a[href^="https://app.adjust.com"])
 kayak.*##mobile-app-promo-header
 hellobacsi.com##a[href="https://hellobacsivn.page.link/app"]
 clubd.co.jp##.dc-coordinate-slide > a[href="https://yappli.plus/dcollection_your-personal-stylist"]
