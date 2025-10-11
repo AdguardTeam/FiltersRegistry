@@ -1,9 +1,9 @@
-! Checksum: bHX6JehumfTSruwQ4qExjw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1760143926-14400.patch
+! Checksum: VTRuRdmIFplJVsPRVeO+Xg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1760157605-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.49.14
-! TimeUpdated: 2025-10-11T00:47:44+00:00
+! Version: 2.1.49.15
+! TimeUpdated: 2025-10-11T04:35:47+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -137,7 +137,6 @@
 /whatsapp_icon.png
 /widget/share?
 /widgets/socials/*
-/widgets/twitter/*
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
@@ -367,6 +366,7 @@ _social-bar/
 ###post-share-icons
 ###post-social
 ###post_info_share
+###reseaux-sociaux
 ###reseaux_sociaux
 ###rightSocial
 ###rsociaux
@@ -439,7 +439,6 @@ _social-bar/
 ###shareUrl
 ###share_bar
 ###share_block
-###share_bottom
 ###share_box
 ###share_button
 ###share_buttons
@@ -623,7 +622,6 @@ _social-bar/
 ###social_sharing
 ###social_side_links
 ###social_sidebar
-###social_snapchat
 ###social_top
 ###social_tw
 ###social_twitter
@@ -875,6 +873,7 @@ _social-bar/
 ##.articleShare
 ##.articleShareLinks
 ##.articleSocialLinks
+##.article__details__share
 ##.article__header__share
 ##.article__likes
 ##.article__share
@@ -889,7 +888,6 @@ _social-bar/
 ##.article__social-links
 ##.article__socials
 ##.article_bottom_share
-##.article_facebook
 ##.article_footer_pinterest
 ##.article_header_share
 ##.article_share
@@ -956,7 +954,6 @@ _social-bar/
 ##.bloc-social
 ##.bloc_float_share
 ##.block-addtoany
-##.block-fb-social
 ##.block-sharebar
 ##.block-sharethis
 ##.block-shariff
@@ -1256,7 +1253,6 @@ _social-bar/
 ##.fb-share
 ##.fb-share-button
 ##.fb-share-container
-##.fb-social-likebox-plugin
 ##.fb-subscribe
 ##.fb-twitter
 ##.fb-widget
@@ -1280,7 +1276,6 @@ _social-bar/
 ##.fbbsb-buttons
 ##.fbbutton
 ##.fblikebox
-##.fbliketop
 ##.fblink
 ##.fbshare
 ##.fbsmallshare
@@ -1789,7 +1784,6 @@ _social-bar/
 ##.like_block
 ##.like_block_rendered
 ##.like_buttons
-##.like_widget
 ##.likebtn
 ##.likebutton
 ##.likes-block_left
@@ -1916,6 +1910,7 @@ _social-bar/
 ##.mod-facebook
 ##.mod-follow
 ##.mod-social
+##.mod-social-navigation
 ##.mod-twitter
 ##.module--share
 ##.module-follow
@@ -2375,6 +2370,7 @@ _social-bar/
 ##.share-tools
 ##.share-tools--secondary
 ##.share-tools-buttons-top
+##.share-tools-wrapper
 ##.share-topic
 ##.share-tw
 ##.share-twitter
@@ -2692,6 +2688,7 @@ _social-bar/
 ##.site-social
 ##.site-social-menu
 ##.sitewide-social-media
+##.sm-page-widget-sociallinks
 ##.sn-share
 ##.snapchat-share-button
 ##.sns-bar
@@ -2875,6 +2872,7 @@ _social-bar/
 ##.social-networking
 ##.social-networks-container
 ##.social-networks-footer
+##.social-networks-link
 ##.social-networks-links
 ##.social-networks-list
 ##.social-networks__item
@@ -2916,11 +2914,9 @@ _social-bar/
 ##.social-share-btns
 ##.social-share-button
 ##.social-share-buttons
-##.social-share-circle
 ##.social-share-container
 ##.social-share-expand
 ##.social-share-facebook
-##.social-share-footer
 ##.social-share-google
 ##.social-share-group
 ##.social-share-icons
@@ -2983,7 +2979,6 @@ _social-bar/
 ##.social.social-facebook
 ##.social.social-twitter
 ##.social.social-youtube
-##.socialActions
 ##.socialBanner
 ##.socialBar
 ##.socialBtnList
@@ -3662,7 +3657,6 @@ aimp.ru###footer_counter
 cybermap.kaspersky.com###footer_social_channels
 eporner.com###footsocbuttons
 tasteofhome.com###gch-social-icons
-birdsandblooms.com,familyhandyman.com,rd.com,thehealthy.com###gch-social-share-container
 bleedingcool.com###google_follow
 wccftech.com###google_preferred_source_box
 gamereactor.eu###grnation
@@ -3681,6 +3675,7 @@ aiseesoft.com###share-list
 journals.aps.org,theintercept.com###share-menu-button
 theintercept.com###share-menu-top-button
 androidpolice.com###sharingButtonPopup
+engineeringnews.co.za,miningweekly.com,polity.org.za###sidebar_items_container
 jacobin.com###site-header-share
 coingape.com###social-ad-new
 animenewsnetwork.com###social-bookmarks
@@ -3803,7 +3798,6 @@ yahoo.com##.caas-comment
 yahoo.com##.caas-content-contain-share
 cgdirector.com##.cgd-social-wrapper
 wabetainfo.com##.channel_card
-thecinemaholic.com##.cinemaholic-share
 audacy.com##.component--share
 goal.com##.component-share
 goal.com##.component-social-twitter
@@ -3812,8 +3806,6 @@ financemagnates.com##.contact-widget__sticky
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
-bloomberg.com##.css--social-wrapper-outer
-kcrw.com##.cta-wrapper
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,catholicnewsagency.com##.donation-box
@@ -4069,6 +4061,7 @@ bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
 audacy.com##.station-footer__social
 atlantablackstar.com##.stay-social
 deutschland.de##.sticky-bar
+allafrica.com##.sticky-panel-container
 healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar
 aetv.com,wccftech.com##.story-share
@@ -4078,7 +4071,6 @@ gadgets360.com##.story_social_share
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
 hindustantimes.com##.subscribe-social
 locals.com##.support-now
-dcrainmaker.com,msmagazine.com##.swp_floating_horizontal_wrapper
 targettrend.com##.sws_supernormalaction
 notthebee.com##.take-shareables
 thediplomat.com##.td-follow
@@ -4124,6 +4116,7 @@ publichealthpolicyjournal.com,theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
 freepressjournal.in##.wrap_cont
 firstpost.com##.yt-ch
+blog.youtube##.yt-social__list
 wdwmagic.com##.zocial
 securityweek.com##.zox-post-soc-list
 retbit.com##.zox-post-soc-scroll-out
@@ -4361,6 +4354,7 @@ everyeye.it##.p-telBut
 raiplay.it##.prefooter__social__list
 ohga.it##.share-item
 rainews.it##.share-toggler
+aresdifesa.it##.single56__share
 tuttotek.it##.soc-media-sharing
 meteogiuliacci.it##.social-b
 andreagaleazzi.com##.social-bookmarks
@@ -4437,7 +4431,6 @@ cnnbrasil.com.br##.social__footer
 tvi.iol.pt##.social_media_links
 meiobit.com##.socialfloating
 uol.com.br##.solar-header-columnist-socialmedia-content
-brasil247.com##.sub-header__social
 terra.com.br##.t360-sharebar__wrapper
 tecmundo.com.br##.tec--didyouknow
 tecmundo.com.br##.tec--share__container
