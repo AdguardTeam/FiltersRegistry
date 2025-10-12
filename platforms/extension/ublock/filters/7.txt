@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: OoQySjBtDbLK1tr/ajB54g
-! Diff-Path: ../patches/7/7-s-1760163162-3600.patch
+! Checksum: 8BVzSyJ/7vRajeZtVZLaHA
+! Diff-Path: ../patches/7/7-s-1760271245-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.69.17
-! TimeUpdated: 2025-10-11T06:08:54+00:00
+! Version: 2.0.69.18
+! TimeUpdated: 2025-10-12T12:10:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -27,6 +27,8 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 !
+||widget-api.dmm.co.jp^
+||widget-api.dmm.com^
 ||pic-stash.com^$third-party
 ||zzlles.com^$document
 ||im.c.yimg.jp^$third-party
@@ -1827,6 +1829,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+woman.excite.co.jp##.min-h-122.justify-center.py-16
+||storage.googleapis.com/static-pcolle/parts/
 sportsseoulweb.jp##.m-adArea
 kasegeru.blog.jp##.promo-box
 shiba-teire.com##.sidebar > div.widget_custom_html
@@ -2216,6 +2220,7 @@ fx.minkabu.jp##.footer-overlay
 genic-web.com##.article-advertisement
 genic-web.com##li[class^="list-article-"][class$="-advertisement"]
 mag.minkabu.jp###yahoo-ad1
+itf.minkabu.jp##.justify-around > div.min-w-75.min-h-62\.5
 itf.minkabu.jp##.max-w-187\.5 > div.min-w-182
 itf.minkabu.jp##.mb-8[x-on\:click="showAdModal = true"]
 itf.minkabu.jp##div[data-footer-ad-target="adOverlay"]
@@ -2631,7 +2636,7 @@ city.ibaraki-koga.lg.jp##.adv-area-wrapper
 police.pref.fukuoka.jp##.ad-banner-font
 police.pref.fukuoka.jp##.ad-small-font
 kyodemo.net###blist > nav.panel > div[style^="border-bottom:1px solid"][style*="text-align:"]
-newsphere.jp##div[style="height: 250px;"]
+gamesink.net,newsphere.jp##div[style="height: 250px;"]
 minna-antenna.com##.adup
 minna-antenna.com##.addown
 mangakl.top##.theiaStickySidebar > .ai-sticky-widget
@@ -5707,9 +5712,9 @@ erodouga-onaking.com,danchitsuma.bishojo-oppai.com,etude000.com,anianierosuki.wo
 ||dmm.co.jp/images/affiliate_banner/$third-party
 kanjitisiki.com##.menu-ads
 ||xvideo-jp.com^$subdocument,~third-party
-xvideo-jp.com###fanzatv_area
-xvideo-jp.com##.my-\[11px\] > div.flex-wrap.w-full.pt-6.pb-9.shadow-gray-300
-xvideo-jp.com##.p-dmmad
+||muryouav.avximg.com/2020-09/$domain=xvideo-jp.com
+xvideo-jp.com#$#footer.bottom-\[100px\] { bottom: 0 !important; }
+xvideo-jp.com##.p-articleDMM__sale
 topics.or.jp###_popIn_recommend_text
 ckworks.jp##div[class^="google_adsense"]
 ckworks.jp##.listItemGoodsAd
@@ -6310,12 +6315,11 @@ jugem.jp##.top-ad__wrapper--center
 wellmethod.jp##div[id^="facemask_"]
 4thsight.xyz##.ggle-ad
 seijiyama.jp###ad-two-center
+hotokami.jp##.gam-wrapper
 hotokami.jp##.max-w-\[300px\].pb-0\.5
 hotokami.jp##div[style^="min-height: 2"]
 hotokami.jp##.shitennoji-banner-js
-hotokami.jp##.shitennoji-big-banner
 1studyz.com,hotokami.jp##div[class*="adsense"]
-hotokami.jp##.top_recent_article[style="display:block;"]
 infraexpert.com##td[width="948"][height="167"]
 infraexpert.com##table[height="300"]
 weblio.jp##.ad-blank
@@ -6790,7 +6794,7 @@ i-bbs.sijex.net##font[color="#FF0033"] > center > div[align="center"]
 ||happy-nightwork.com/recruit/afl_pro2$image,domain=i-bbs.sijex.net
 ||biglobe.ne.jp/~kouaiu/eroamime.gif
 ||biglobe.ne.jp/~kouaiu/APPLE468_60.GIF
-||e-nls.com^$domain=i-bbs.sijex.net|moetataiken.com|pwrtube.com
+||e-nls.com^$domain=i-bbs.sijex.net|moetataiken.com|pwrtube.com|youskbe.com
 ||ebook-assets.dmm.co.jp^$domain=i-bbs.sijex.net|opantsu.fun
 i-bbs.sijex.net##center > b > a[href^="http://track.bannerbridge.net/click.php"][target="_blank"]
 i-bbs.sijex.net##center > table[cellpadding="5"][bgcolor="#d3d3d3"]
@@ -6922,6 +6926,7 @@ kininaru-geinou-m.blog.jp,7-24blog.com,2monkeys.jp,hobbylog.jp##.right-container
 newero1.blog.fc2.com,newota.blog.fc2.com,newresu1.blog.fc2.com,newyaku.blog.fc2.com###sub-ad
 newmofu.doorblog.jp,newpuru.doorblog.jp,newero1.blog.fc2.com,newota.blog.fc2.com,newresu1.blog.fc2.com,newyaku.blog.fc2.com##.pompass
 ||digimart.net/common/img/*_728px90px.png
+digimart.net##.adBnrBtmBlock
 digimart.net##div[class^="adBlock"]
 digimart.net##.adBnrList
 digimart.net##.addBadge
@@ -7369,8 +7374,6 @@ kagua.biz##.yahoobtn
 mycaddie.jp###inc_rakuten_shopping
 mycaddie.jp###inc_yahoo_shopping
 zyuken.net,syosetu.org,erogamescape.org,erogamescape.dyndns.org,golfdigest.co.jp,nosweb.jp,freefielder.jp,finance.yahoo.co.jp,mycaddie.jp##div[id^="ad_"]
-woman.excite.co.jp###header_bnr
-woman.excite.co.jp##.Lymain div[style$="width:610px;"]
 mdpr.jp#$#.l-footer--withAdBottomOverlay { padding-bottom: unset !important; }
 mdpr.jp##div[class$="_adMovieFrame"]
 mdpr.jp##.p-tverRanking
@@ -8531,6 +8534,9 @@ bs-asahi.co.jp##.srb-text
 fril.jp##.googleAdsense-box
 fril.jp##.googleAdsense-head-pc
 25jigen.jp##.single-bottom-ad
+gamesink.net##.center_col_w > div.panel-orig:has(> div > table.none-border td[width="8%"] > a[href] > button.btn-app)
+gamesink.net##.center_col_w > div.panel-orig[style="height: 300px;"]
+gamesink.net##.resp_ad
 gamesink.net##.hidden-xs[style="text-align: center;margin-bottom: 10px;height: 255px;"]
 gamesink.net###footer_ov_ad
 gamesink.net##div.hidden-xs[style="text-align: center;"]
@@ -8863,7 +8869,7 @@ naming-dic.com##.ad-posi2
 kanjitisiki.com##.category-ue:first-child
 pulpxstyle.com##.add_main
 pulpxstyle.com##.add_post_sidebar
-gentosha-go.com,zekamashi.net##div[id^="JP_"]
+news.careerconnection.jp,gentosha-go.com,zekamashi.net##div[id^="JP_"]
 zekamashi.net##.article_wrap > p:has(> span[style="color: #ff0000;"])
 zekamashi.net##.article_wrap > p > span.red.b
 zekamashi.net##.article_wrap > ul:has(> li > a[href^="https://amzn.to"])
