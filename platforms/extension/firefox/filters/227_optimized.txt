@@ -1,10 +1,11 @@
-! Checksum: NZGecsI3FjQgZsPxMYUZWQ
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1760028264-14400.patch
+! Checksum: g5OvcdqX3tT+HFgoXZJzPQ
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1760301506-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.5
-! TimeUpdated: 2025-10-09T16:40:17+00:00
+! Version: 2.0.23.6
+! TimeUpdated: 2025-10-12T20:34:24+00:00
 ! Expires: 10 days (update frequency)
+||digitalcamp.co.kr^$third-party
 ||mman.kr^
 ||admize.io^
 ||adguru.kr^$third-party
@@ -521,6 +522,7 @@
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
+||cdn.zigcou.com/static/*.webp$domain=2798731938.zigcou.com
 ||news.sbs.co.kr/js/news-player/player.adInfoUrlList.js
 ||11st.co.kr/js/ver/*/powerLink.js
 ||ssl.pstatic.net/t.static.blog/mylog/versioning//js/post/ssp/SspAdContentCallerFor
@@ -1589,6 +1591,7 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+search.naver.com##ul > li[data-slog-content][data-slog-visible]:has(div[id^="view_type_guide_"] button > svg[width="36"] path[d^="M13.596 10.988c0"])
 maplescouter.com##.gap-2 > div[class="min-w-[440px]"]
 maplescouter.com##div[class=""] > .flex-col > .justify-center:has(> div[class$="h-[100px]"])
 search.naver.com##.book_list_wrap li[data-ad="true"]
@@ -3541,7 +3544,9 @@ dcinside.com#%#//scriptlet('remove-cookie', 'gaejuki_ad')
 dcinside.com#%#//scriptlet('prevent-setTimeout', 'addc.dcinside.com')
 dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
 dcinside.com#%#//scriptlet('abort-current-inline-script', 'setTimeout', 'ajax/naverad')
-chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle')
+chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
+chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
+chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 ||shana.pe.kr/shana_check/scp*.js$script
 remiz.co.kr#%#//scriptlet('spoof-css', '.adsbygoogle', 'display', 'block')

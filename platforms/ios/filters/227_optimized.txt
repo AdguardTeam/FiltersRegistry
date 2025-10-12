@@ -1,10 +1,11 @@
-! Checksum: 8Qsu9YLyMQczb7M9S8POMA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1760028277-14400.patch
+! Checksum: zyPsMInhtLhaM5hKnrPCkg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1760301519-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.5
-! TimeUpdated: 2025-10-09T16:40:17+00:00
+! Version: 2.0.23.6
+! TimeUpdated: 2025-10-12T20:34:24+00:00
 ! Expires: 1 day (update frequency)
+||digitalcamp.co.kr^$third-party
 ||mman.kr^
 ||admize.io^
 ||adguru.kr^$third-party
@@ -541,6 +542,7 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 /ad-manager.min.js
+||cdn.zigcou.com/static/*.webp$domain=2798731938.zigcou.com
 ||news.sbs.co.kr/js/news-player/player.adInfoUrlList.js
 ||11st.co.kr/js/ver/*/powerLink.js
 ||ssl.pstatic.net/t.static.blog/mylog/versioning//js/post/ssp/SspAdContentCallerFor
@@ -1569,6 +1571,7 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+search.naver.com##ul > li[data-slog-content][data-slog-visible]:has(div[id^="view_type_guide_"] button > svg[width="36"] path[d^="M13.596 10.988c0"])
 maplescouter.com##.gap-2 > div[class="min-w-[440px]"]
 maplescouter.com##div[class=""] > .flex-col > .justify-center:has(> div[class$="h-[100px]"])
 search.naver.com##.book_list_wrap li[data-ad="true"]
@@ -3548,7 +3551,9 @@ dcinside.com#%#//scriptlet('remove-cookie', 'gaejuki_ad')
 dcinside.com#%#//scriptlet('prevent-setTimeout', 'addc.dcinside.com')
 dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
 dcinside.com#%#//scriptlet('abort-current-inline-script', 'setTimeout', 'ajax/naverad')
-chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle')
+chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
+chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
+chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mylocation.co.kr
 @@||mylocation.co.kr^$generichide
@@ -3664,4 +3669,5 @@ tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tv
 tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tvwiki28.com,tvwiki29.com,tvwiki30.com,tvwiki31.com,tvwiki32.com,tvwiki33.com,tvwiki34.com##ul[class^="banner"]
 /https:\/\/tvwiki[0-9]+\.com\/AD\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
 /https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
+||hoohootv*.*/static/bnner/$domain=hoohootv310.xyz|hoohootv311.xyz|hoohootv312.xyz|hoohootv313.xyz|hoohootv314.xyz|hoohootv315.xyz|hoohootv316.xyz|hoohootv317.xyz|hoohootv318.xyz|hoohootv319.xyz|hoohootv320.xyz|hoohootv321.xyz
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
