@@ -1,9 +1,9 @@
-! Checksum: 081H/Yw61hk8A1WeWyJRMA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1760230323-14400.patch
+! Checksum: E4ZY0FDNlJI53QIaXRGVVQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1760243980-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.49.20
-! TimeUpdated: 2025-10-12T00:47:56+00:00
+! Version: 2.1.49.21
+! TimeUpdated: 2025-10-12T04:35:53+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -39,6 +39,7 @@
 /follow-twitter-
 /follow-twitter.
 /follow-us.$~stylesheet
+/follow-widget.js
 /follow_instagram.png
 /gfx/socials/*
 /highlight-and-share.js
@@ -203,9 +204,9 @@ _social-bar/
 ###facebookFans
 ###facebookIcon
 ###facebookLike
+###facebookLikeBox
 ###facebookLikeButton
 ###facebookShareButton
-###facebookTab
 ###facebookWidget
 ###facebook_like
 ###facebook_link
@@ -362,7 +363,6 @@ _social-bar/
 ###pinterest-link
 ###pinterest-share
 ###popup-social
-###popup_social
 ###post-share-icons
 ###post-social
 ###post_info_share
@@ -484,9 +484,7 @@ _social-bar/
 ###sharing-bar
 ###sharing-buttons
 ###sharing-sidebar
-###sharingBlock
 ###sharing_buttons
-###sharing_tools
 ###sharingfooter
 ###show-sharing-buttons
 ###shr-btns
@@ -958,7 +956,6 @@ _social-bar/
 ##.block-sharethis
 ##.block-shariff
 ##.block-social
-##.block-social-header
 ##.block-social-media
 ##.block-social-media-links
 ##.block-social-network
@@ -1065,6 +1062,7 @@ _social-bar/
 ##.cff-share-tooltip
 ##.ci-socials-ignited
 ##.circle-share
+##.cl-social
 ##.cmg-share-bar
 ##.col-sharing
 ##.col-social
@@ -1195,6 +1193,8 @@ _social-bar/
 ##.et_social_pinterest
 ##.et_social_sidebar_networks
 ##.et_social_twitter
+##.eut-social-share-facebook
+##.eut-social-share-twitter
 ##.expand-share
 ##.f-sns
 ##.f1-social-networks
@@ -1259,7 +1259,6 @@ _social-bar/
 ##.fb-xfbml-parse-ignore
 ##.fbBtn
 ##.fbLike
-##.fbLikeBox
 ##.fbShare
 ##.fbShareButton
 ##.fbShareTrigger
@@ -1290,6 +1289,7 @@ _social-bar/
 ##.fi-social-youtube
 ##.fix-share
 ##.fixed-share
+##.fixed-share-bar
 ##.fixed-soc-icon
 ##.fixed-social
 ##.fl-social-icons
@@ -1311,6 +1311,7 @@ _social-bar/
 ##.follow-instagram
 ##.follow-link-facebook
 ##.follow-link-twitter
+##.follow-link-wrapper
 ##.follow-linkedin
 ##.follow-pinterest
 ##.follow-share
@@ -1834,7 +1835,6 @@ _social-bar/
 ##.m-icon-youtube
 ##.m-share
 ##.m-share-bar__link
-##.m-sharebar
 ##.m-sharing
 ##.m-sns
 ##.m-social-bar
@@ -2269,7 +2269,6 @@ _social-bar/
 ##.share-icon-container
 ##.share-icon-list
 ##.share-icon-small
-##.share-icons-bottom
 ##.share-icons-box
 ##.share-icons-list
 ##.share-icons-sticky-box
@@ -2391,6 +2390,7 @@ _social-bar/
 ##.shareAction
 ##.shareArea
 ##.shareArticle
+##.shareArtigo
 ##.shareBar
 ##.shareBlock
 ##.shareBox
@@ -2428,7 +2428,6 @@ _social-bar/
 ##.sharePost
 ##.sharePrint
 ##.shareRow
-##.shareSelector
 ##.shareSide
 ##.shareSocial
 ##.shareSocialArticle
@@ -2781,7 +2780,7 @@ _social-bar/
 ##.social-count
 ##.social-counter
 ##.social-counter-widget
-##.social-counters
+##.social-counter-wrap
 ##.social-cta
 ##.social-ext
 ##.social-fixed
@@ -2790,7 +2789,6 @@ _social-bar/
 ##.social-follow-bar
 ##.social-follow-item
 ##.social-follow-items
-##.social-follow-list
 ##.social-foot
 ##.social-footer
 ##.social-footer-block
@@ -2942,6 +2940,7 @@ _social-bar/
 ##.social-share_compact
 ##.social-sharer
 ##.social-shares
+##.social-sharing--article
 ##.social-sharing-bot
 ##.social-sharing-button
 ##.social-sharing-buttons
@@ -3295,7 +3294,6 @@ _social-bar/
 ##.twitter-tweet-button
 ##.twitter-wrap
 ##.twitter-wrapper
-##.twitterBlock
 ##.twitterBox
 ##.twitterFollow
 ##.twitterIcon
@@ -3345,7 +3343,6 @@ _social-bar/
 ##.vc_social_icons
 ##.vce-share-bar
 ##.vce-share-items
-##.vertical-share-widget
 ##.vertical-social
 ##.vf-share-bar
 ##.vf-share-bar-vertical
@@ -3608,6 +3605,7 @@ _social-bar/
 ||po.st/static/$third-party
 ||reddit.com/api/info.json?$third-party
 ||reddit.com/static/$third-party
+||scoop.it^$third-party
 ||share.itraffic.su^$third-party
 ||shareaholic.com^$third-party
 ||sharedcount.com^$third-party
@@ -3900,7 +3898,6 @@ myanimelist.net##.js-sns-icon-container
 itnwwe.com##.kadence-column_09a01f-df
 4sysops.com##.kleo-quick-contact-wrapper
 axios.com##.leading-0
-cpr.org##.legacy-social-list
 mymodernmet.com##.lets-connect
 mymodernmet.com##.like-it-share-it
 independente.com.br,lagaceta.com.ar,road.cc,wheelsage.org##.links
@@ -4017,7 +4014,6 @@ archaeology.org##.site-socials
 buyee.jp##.sns_list
 firstpost.com##.so-ics
 macrumors.com##.social--159R8SRB
-freepressjournal.in##.social-account
 getpocket.com,mirror.co.uk,themirror.com##.social-actions
 noticias.perfil.com,vaticannews.va##.social-btn
 rte.ie##.social-btn-container
@@ -4107,14 +4103,12 @@ business-standard.com##.whtsclick
 indiatoday.in##.whtspp_share
 androidheadlines.com##.widget-ahcount
 mediapost.com##.widget-waypoint
-madinamerica.com##.widget_a2a_share_save_widget
 factkeepers.com##.widget_monarchwidget
 fandom.com##.wikia-bar-anon
 destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
 comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-sharing-buttons
 publichealthpolicyjournal.com,theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
-freepressjournal.in##.wrap_cont
 firstpost.com##.yt-ch
 blog.youtube##.yt-social__list
 nypost.com##.zephrModal
@@ -4513,6 +4507,7 @@ cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
 nationalgeographic.com.es##.top-share-article
 elmundo.es##.ue-c-article__share-tools
+abc.es##.voc-social-networks
 elpais.com##.w_rs
 noticiasrcn.com##.whatsapp-button
 autobild.es,businessinsider.es,computerhoy.com,hobbyconsolas.com,topgear.es##div[class^="share-bar_"]
