@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.17.33",
-			"timeUpdated": "2025-10-12T12:09:42+0000",
+			"version": "2.4.17.34",
+			"timeUpdated": "2025-10-12T13:09:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -701,8 +701,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.11.90",
-			"timeUpdated": "2025-10-07T12:12:04+0000",
+			"version": "2.0.11.91",
+			"timeUpdated": "2025-10-12T13:10:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
