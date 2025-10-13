@@ -1,9 +1,9 @@
-! Checksum: RJE9puPnXAlDqRp5FmaWGA
-! Diff-Path: ../patches/237/237-s-1760359786-14400.patch
+! Checksum: 9e1Mn+I1cVmKcaS4VgZUbw
+! Diff-Path: ../patches/237/237-s-1760387957-14400.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.36.61
-! TimeUpdated: 2025-10-13T12:45:41+00:00
+! Version: 1.0.36.62
+! TimeUpdated: 2025-10-13T20:35:23+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -12,8 +12,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Mon, 13 Oct 2025, 13:09 UTC+02:00
-! OriginalVersion: 2025.10.13.0
+! Last modified: Mon, 13 Oct 2025, 21:33 UTC+02:00
+! OriginalVersion: 2025.10.13.5
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -22,7 +22,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: pon, 13 paź 2025, 13:09 UTC+02:00
+! Aktualizacja: pon, 13 paź 2025, 21:33 UTC+02:00
 !
 !
 ! Newslettery (nie popupy)
@@ -3946,6 +3946,7 @@ pl.ccm.net###jGoTop
 pl.chili.com###returnTop
 pl.factcool.com##button.fcicon-return
 pl.hisense.com###pageNavCorner_top
+pl.pons.com##.back-to-top-button-bottom
 pl.promocodie.com##.mgotop
 pl.trip.com##.mod-back-top-block
 planetasportu.com,slodkiehobby.pl##.right > .return
@@ -6869,8 +6870,8 @@ polishannoyancefilters.netlify.app###pafdetect
 !@ Required: Do poprawnego działania wymagana jest lista EasyList Cookie List (EasyList - Cookie Notices) wraz z EasyList (Ads) lub AdGuard Base (w produktach AdGuard)!
 !@ Collaborators: MajkiIT, F4z, xxcriticxx, blocker999, hawkeye116477, krystian3w
 !@ Homepage: https://www.certyficate.it/
-!@ Version: 2025.10.12.0
-!@ Last modified: Sun, 12 Oct 2025, 20:19 UTC+00:00
+!@ Version: 2025.10.13.0
+!@ Last modified: Mon, 13 Oct 2025, 19:27 UTC+00:00
 !@ Expires: 2 days
 !@ Support:
 !@   Email => errorsfilters@certyficate.it
@@ -6882,7 +6883,7 @@ polishannoyancefilters.netlify.app###pafdetect
 !@ Copyright © 2025 Certyficate IT
 !@ Copyright © 2025 Filters Heroes
 !@ Najnowsza wersja zawsze na: https://www.certyficate.it/adblock/
-!@ v.2025.10.12.0 aktualizacja: nie, 12 paź 2025, 20:19 UTC+00:00
+!@ v.2025.10.13.0 aktualizacja: pon, 13 paź 2025, 19:27 UTC+00:00
 !@
 !@
 !@ Specyficzne filtry ukrywające
@@ -8826,7 +8827,7 @@ mojabudowa.pl###cookie_regulamin
 mojavon.pl##.mpp-container > .mpp-popup
 moje-dzialdowo.pl##footer ~ .v-dialog
 mojehobby.pl###_message-footer-close.message-footer-panel:has(a[onclick^="AcceptAllCookies("])
-mojeppk.pl###root #main ~ div[class*=" "]:has(> div > div > img[src*="Cookies."])
+mojeppk.pl###main > div[class]:not([id]):has(> div[class]:not([id]) > div[class]:not([id]) > img[src*="Cookies."])
 mojeuslugi.pl##.footer ~ div.text-center.fixed
 mokka.pl#?##__next > div[class]:first-of-type:has(a[href*="/dokumenty/"]:has-text(prywatności))
 molnlycke.pl##.footer .tinymce > p:nth-of-type(2):has(> a[href*="/cookie-policy/"] ~ a[href*="/policies/"])
@@ -13081,6 +13082,7 @@ quadgraphics.pl#$#.blur { filter: none !important; pointer-events: auto !importa
 quadgraphics.pl##.rodo-information-popup, .fixed-layer-information
 r.pl##div[class*="r-consent-"][class*="modal"]
 r.pl,wanapix.pl#$#html[style*="overflow"] { overflow-y: auto !important }
+rachunek.mojeppk.pl#%#//scriptlet('ubo-set-local-storage-item.js', 'cookie_consent', 'true')
 radio17.pl#%#//scriptlet('ubo-aeld.js', '/^(?:wheel|keydown)$/', '[native code]')
 radio17.pl##.v-dialog__content:has(button[data-cy="gdpr-accept"])
 radio17.pl##.v-overlay
@@ -13255,6 +13257,7 @@ wroclaw.pl#%#//scriptlet('ubo-set-cookie.js', 'iRodoInfo', '1')
 wsensie.pl,wsensie.tv###policy
 wsensie.pl,wsensie.tv#$#.policy-open section { filter: none !important }
 www.google.com,www.google.pl##div[class][role="dialog"] > #cnsp:has(> div[class][aria-live="polite"]):upward(2)
+www.mojeppk.pl#%#//scriptlet('ubo-set-cookie.js', 'hasSeenCookies', 'true')
 www.pekao.com.pl##.reveal-overlay:has(#gdpr-popup)
 www.pekao.com.pl#$#body.is-reveal-open { overflow-y: auto !important; width: unset !important }
 www.thomas-krenn.com##div[id*="CookiePolicy"], div[data-toggle*="CookiePolicy"]
