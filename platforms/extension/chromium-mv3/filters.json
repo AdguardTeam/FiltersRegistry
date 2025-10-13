@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.17.51",
-			"timeUpdated": "2025-10-13T06:10:28+0000",
+			"version": "2.4.17.52",
+			"timeUpdated": "2025-10-13T07:08:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.92.77",
-			"timeUpdated": "2025-10-13T06:10:36+0000",
+			"version": "2.0.92.78",
+			"timeUpdated": "2025-10-13T07:08:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.84",
-			"timeUpdated": "2025-10-12T15:05:59+0000",
+			"version": "2.0.49.85",
+			"timeUpdated": "2025-10-13T07:08:26+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.92",
-			"timeUpdated": "2025-10-12T12:10:07+0000",
+			"version": "2.0.64.93",
+			"timeUpdated": "2025-10-13T07:08:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -670,8 +670,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.13",
-			"timeUpdated": "2025-10-13T06:10:59+0000",
+			"version": "2.0.72.14",
+			"timeUpdated": "2025-10-13T07:08:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -736,8 +736,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.38.0",
-			"timeUpdated": "2025-10-10T15:07:32+0000",
+			"version": "2.0.38.1",
+			"timeUpdated": "2025-10-13T07:08:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

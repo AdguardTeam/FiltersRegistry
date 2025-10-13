@@ -1,9 +1,9 @@
-! Checksum: rFPS7fmYfgxAAsvS1/qyMA
-! Diff-Path: ../patches/14/14-s-1760336077-3600.patch
+! Checksum: xgSjEVviY0hoYeb5Tc6+AQ
+! Diff-Path: ../patches/14/14-s-1760339545-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.45.59
-! TimeUpdated: 2025-10-13T06:10:53+00:00
+! Version: 2.2.45.60
+! TimeUpdated: 2025-10-13T07:08:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2545,6 +2545,9 @@ accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,ae
 !
 ! NOTE: Regular rules
 !
+qr.finedinemenu.com#%#//scriptlet('trusted-set-cookie', 'fd_m_c_c_a_t', '%22accept_only_necessary%22', '', '/', 'qr.finedinemenu.com')
+link.com##div[class^="CookieSettingsNotification_CookieBanner"]
+support.link.com##.LinkSupportSite-CookieBanner-container
 textologia.ru###footerdn_cookies
 novakid.*,novakidschool.com#$#.no-scroll { overflow: auto !important; }
 novakid.*,novakidschool.com#$#.gdpr-alert__overlay { display: none !important; }
@@ -2702,12 +2705,12 @@ kant.ru##div[class^="styles_cookiesModal__"]
 rki.de#%#//scriptlet('trusted-click-element', '.rejectAll','','300')
 vodafone.de#%#//scriptlet('trusted-click-element', '#consent-banner a[aria-label="Alle ablehnen"] > button','','300')
 koleso.ru##div[class^="BlockCookies_wrapper"]
-regiojet.pl#%#//scriptlet('set-cookie', 'functional', 'false')
-regiojet.pl#%#//scriptlet('set-cookie', 'marketing', 'false')
-regiojet.pl#%#//scriptlet('set-cookie', 'performance', 'false')
-regiojet.pl#%#//scriptlet('set-cookie', 'personalization', 'false')
-regiojet.pl#%#//scriptlet('set-cookie', 'userData', 'false')
-regiojet.pl#%#//scriptlet('set-cookie', 'required', 'true')
+regiojet.*#%#//scriptlet('set-cookie', 'functional', 'false')
+regiojet.*#%#//scriptlet('set-cookie', 'marketing', 'false')
+regiojet.*#%#//scriptlet('set-cookie', 'performance', 'false')
+regiojet.*#%#//scriptlet('set-cookie', 'personalization', 'false')
+regiojet.*#%#//scriptlet('set-cookie', 'userData', 'false')
+regiojet.*#%#//scriptlet('set-cookie', 'required', 'true')
 ro.kruk.eu#%#//scriptlet('trusted-click-element', '.ch2-dialog-actions > button.ch2-deny-all-btn')
 e-kruk.pl,pl.kruk.eu#%#//scriptlet('trusted-set-cookie', 'klaro', '%7B%22functional%22%3Atrue%2C%22analytics%22%3Afalse%2C%22marketing%22%3Afalse%2C%22others%22%3Afalse%7D')
 es.kruk.eu#%#//scriptlet('set-cookie', 'CookieAgreement', '0')
@@ -2760,7 +2763,7 @@ grepow.com##.aj-privacy-footer
 magentacloud.de#%#//scriptlet('trusted-click-element', '#promptLayerContent #rejectAll', '!cookie:CONSENTMGR')
 tver.jp#%#//scriptlet('trusted-click-element', 'div[class*="TermsModal_actions"] > button[class*="Button_primary"]')
 fbk.info##.fixed.bottom-8
-voelkner.de#%#//scriptlet('trusted-click-element', '#js_reveal_cookie_content button[data-cookie_consent="0"]')
+voelkner.de#%#//scriptlet('trusted-click-element', '#js_reveal_cookie_content button[data-cookie_consent="0"]', '', '2000')
 heytap.com##div[class^="cookieconsent_wrapper"]
 360.ru##dialog[aria-label="cookie-agreement"]
 av.ru##.av-cookie-banner
@@ -4101,8 +4104,6 @@ adidas.*#%#//scriptlet('trusted-click-element', 'button.affirm')
 adidas.*#%#//scriptlet('trusted-click-element', '#glass-gdpr-default-consent-accept-button')
 ads.nipr.ac.jp#%#//scriptlet('trusted-set-local-storage-item', 'cookie-consent', 'true')
 ads.nipr.ac.jp###ads-cookie-consent
-ames-tools.co.uk#$#.wt-cli-cookie-bar-container { display: none !important; }
-ames-tools.co.uk#$#.cli-barmodal-open { overflow: auto !important; }
 blocket.se##div[class^="SchibstedBanner__Wrapper"]
 bio-hoflieferant.de#$#.modal-backdrop { display: none !important; }
 bio-hoflieferant.de#$#body { overflow: auto !important; padding-right: 0 !important; }
@@ -5551,8 +5552,6 @@ nutri-plus.de,bresser.*,shop.wenko.de,ersatzteilshop.de,easyfitfood.com,dosenmat
 nutri-plus.de,bresser.*,shop.wenko.de,ersatzteilshop.de,easyfitfood.com,dosenmatrosen.de,par71.de#$#.acris-cookie-consent { display: none !important; }
 nutri-plus.de,bresser.*,shop.wenko.de,ersatzteilshop.de,easyfitfood.com,dosenmatrosen.de,par71.de#$##ccAcivateModal { display: none !important; }
 nutri-plus.de,bresser.*,shop.wenko.de,ersatzteilshop.de,easyfitfood.com,dosenmatrosen.de,par71.de#$#.modal-backdrop { display: none !important; }
-flickr.org#$#.wt-cli-cookie-bar-container { display: none !important; }
-flickr.org#$#.cli-barmodal-open { overflow: auto !important; }
 developer.x.com,developer.twitter.com##.u12-data-protection-notice__item
 delfi.ee#%#//scriptlet('trusted-set-cookie', 'server_consent', '%7B%22functional%22%3A%7B%22consent%22%3Atrue%7D%2C%22analytical%22%3A%7B%22consent%22%3Afalse%7D%2C%22personalization%22%3A%7B%22consent%22%3Afalse%7D%2C%22geolocation%22%3A%7B%22consent%22%3Afalse%7D%2C%22ads%22%3A%7B%22consent%22%3Afalse%7D%7D')
 delfi.ee#%#//scriptlet('trusted-set-cookie', 'consent', '%7B%22functional%22%3A%7B%22consent%22%3Atrue%7D%2C%22analytical%22%3A%7B%22consent%22%3Afalse%7D%2C%22personalization%22%3A%7B%22consent%22%3Afalse%7D%2C%22geolocation%22%3A%7B%22consent%22%3Afalse%7D%2C%22ads%22%3A%7B%22consent%22%3Afalse%7D%7D')
@@ -7741,7 +7740,7 @@ playngo.com##.deobxn
 bbc.com#?#header[role="banner"] > div > div:has(> div  > div > h2)
 ||sportrar.tv/js/cookiepop.js
 artnews.com,rollingstone.com,dirt.com,deadline.com,variety.com,billboard.com,indiewire.com###pmc_toupp_notice
-navigator-tmn.ru,my.nintendo.com##div[class^="Cookie"]
+regiojethotels.com,regiojethotels.at,studentagency.cz,dovolena.cz,jazykovepobyty.cz,navigator-tmn.ru,my.nintendo.com##div[class^="Cookie"]
 scherzo.es###pdcc-modal-bg
 dyzurnet.pl#$?#.modal:has(> .cookies-modal) { display: none !important; }
 dyzurnet.pl#$?#.modal:has(> .cookies-modal) + .modal-backdrop { display: none !important; }
@@ -10229,8 +10228,6 @@ stickerapp.*#$#.cookie-consent-v2 { display: none !important; }
 stickerapp.*#$#body { overflow: auto !important; padding-right: 0 !important; }
 news.gamebase.com.tw,richards.com.br##.cookieAgree
 mizuno.com.br##div[class^="vitrio-Cookiesbar_"]
-coffeeness.de#$#.wt-cli-cookie-bar-container { display: none !important; }
-coffeeness.de#$#.cli-barmodal-open { overflow: visible !important; }
 nestoria.de###wrap-cookies-gdpr
 pictrs.com###alert-cookie-hint
 heimkinoraum.de##div[id^="mod_cookie"]
@@ -10875,8 +10872,8 @@ demo.yubico.com##.MuiSnackbarContent-root[role="alert"]
 fujifilmshop.com###consident
 trucksmerchant.com,powerzone.com,proddigital.com.br,coachdaveacademy.com,saferpass.com,getspace.us,medyascope.tv##.elementor-popup-modal
 celikhalat.com.tr,ditas.com.tr##.cerez_politikasi
-businessaccountingbasics.co.uk,krotosaudio.com,textmaster.com#$#.wt-cli-cookie-bar-container { display: none !important; }
-businessaccountingbasics.co.uk,krotosaudio.com,textmaster.com#$#.cli-barmodal-open { overflow: visible !important; }
+warzywa.pl,coffeeness.de,flickr.org,ames-tools.co.uk,businessaccountingbasics.co.uk,krotosaudio.com,textmaster.com#$#.wt-cli-cookie-bar-container { display: none !important; }
+warzywa.pl,coffeeness.de,flickr.org,ames-tools.co.uk,businessaccountingbasics.co.uk,krotosaudio.com,textmaster.com#$#.cli-barmodal-open { overflow: visible !important; }
 sputniknews.ru#$##gdpr { display: none !important; }
 sputniknews.ru#$#body { overflow: auto !important; }
 ||bahn.de/media/view/tms/utag.js
@@ -18194,7 +18191,7 @@ jobs.nike.com#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193239
 @@||cdn.privacy-mgmt.com/unified/*.js$domain=iltalehti.fi
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193191
-ogrodinfo.pl#@##cookie-law-info-bar
+warzywa.pl,ogrodinfo.pl#@##cookie-law-info-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193033
 kendrion.com#@#.cc-window[aria-label="cookieconsent"]
 kendrion.com#@#.cc-floating
@@ -21826,7 +21823,9 @@ astra-bier.de#@##accept_cookies
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48579
 bitburger-braugruppe.de#@##cookie-accept
 bitburger-braugruppe.de#@##cookie-layer
+! https://github.com/AdguardTeam/AdguardFilters/issues/215348
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48796
+@@||voelkner.de/min/?b=themes/voelkner/css/*/cookie_consent.css$domain=voelkner.de
 voelkner.de#@##cookie_consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/48790
 digitalo.de#@##cookie_consent
@@ -50226,6 +50225,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+voelkner.de##.promotion_campaign
 potensic.com##.header > .report
 farodevigo.es###mid_news iframe
 androidcentral.com###article-body > div.mb-6:has(> div[class] > p.infoDisclaimer > a[href="https://google.com/preferences/source?q="])
