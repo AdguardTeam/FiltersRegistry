@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.17.57",
-			"timeUpdated": "2025-10-13T12:11:00+0000",
+			"version": "2.4.17.58",
+			"timeUpdated": "2025-10-13T13:15:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.49.86",
-			"timeUpdated": "2025-10-13T09:08:40+0000",
+			"version": "2.0.49.87",
+			"timeUpdated": "2025-10-13T13:15:48+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.94",
-			"timeUpdated": "2025-10-13T11:06:37+0000",
+			"version": "2.0.64.95",
+			"timeUpdated": "2025-10-13T13:15:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.45.65",
-			"timeUpdated": "2025-10-13T12:11:29+0000",
+			"version": "2.2.45.66",
+			"timeUpdated": "2025-10-13T13:16:04+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.96.97",
-			"timeUpdated": "2025-10-13T10:08:56+0000",
+			"version": "2.0.96.98",
+			"timeUpdated": "2025-10-13T13:16:06+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.36",
-			"timeUpdated": "2025-10-13T11:06:49+0000",
+			"version": "2.0.63.37",
+			"timeUpdated": "2025-10-13T13:16:11+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.38.2",
-			"timeUpdated": "2025-10-13T12:11:36+0000",
+			"version": "2.0.38.3",
+			"timeUpdated": "2025-10-13T13:16:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

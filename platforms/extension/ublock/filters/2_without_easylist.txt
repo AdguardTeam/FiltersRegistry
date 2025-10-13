@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: EVghqx3OutZ+vzBGAsIT3Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1760357719-3600.patch
+! Checksum: qMRzgH862qDoOAaAGlSV0g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1760361598-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.17.57
-! TimeUpdated: 2025-10-13T12:11:00+00:00
+! Version: 2.4.17.58
+! TimeUpdated: 2025-10-13T13:15:32+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12842,10 +12842,8 @@ playok.com##+js(abort-on-property-read, abask)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144086
 ! https://github.com/AdguardTeam/AdguardFilters/issues/144071
 sbchill.com##+js(set-constant, isadb, false)
-! https://github.com/AdguardTeam/AdguardFilters/issues/143809
-bstlar.com#@#.ad-placement
-bstlar.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
-bstlar.com#$#body > [id].adsbox { display: block !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/215358
+@@||bstlar.com^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157933
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143676
 bhojpuritop.in,amritadrino.com##+js(no-fetch-if, pagead2.googlesyndication.com)
@@ -35826,6 +35824,10 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+traderie.com##div[height="600px"][width="300px"]
+traderie.com##div[height="600px"][width="160px"]
+traderie.com##div[height="90px"]
+traderie.com##div[height="250px"][width="300px"]
 ||fanmtl.com/*/js/ad/*.js
 ||awxcdn.com/adc-assets/bundles/prebid-*.js
 theyeshivaworld.com##.e-con-boxed .elementor-widget-container > .container:has(> a[target="_blank"])
