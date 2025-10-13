@@ -1,9 +1,9 @@
-! Checksum: q4xH9/KDIeA8/96z+/2g/w
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1760243981-14400.patch
+! Checksum: dBrEwDU40n4SEYcm3vB/iw
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1760330483-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.0
-! TimeUpdated: 2025-10-12T04:36:11+00:00
+! Version: 2.0.23.1
+! TimeUpdated: 2025-10-13T04:37:54+00:00
 ! Expires: 12 hours (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -300,7 +300,7 @@ brukshunden.se##.article-content:has(.bgcolor-ad-card)
 brukshunden.se##.cm-ad, .bgcolor-ad-card
 bukefalos.se,thaisnack.se,rollspel.nu,husbilsklubben.se,friaordet.org,xn--lnforum-exa.se,ihusbil.se,ham.se##.u-bottomFixer
 bulletin.nu##[class^="newsletter-subscribe"], div[class^="cookie-message"], div[role="presentation"]
-bulletin.nu,inredningsarkitektur.se,fof.se,allas.se,elle.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se,motherhood.se,aftonbladet.se,lchfarkivet.se,kollega.se,folkofolk.se,skyscanner.se,dagensarena.se,bokadirekt.se,samnytt.se,sjofartstidningen.se,mytaste.se,matklubben.se,vivavinomat.se,aktuellsakerhet.se,skidspar.se,hellofresh.se,goteborgco.se#$#body { overflow:initial!important }
+bulletin.nu,inredningsarkitektur.se,fof.se,allas.se,elle.se,femina.se,hant.se,mabra.com,residencemagazine.se,svenskdam.se,motherhood.se,aftonbladet.se,lchfarkivet.se,kollega.se,folkofolk.se,dagensarena.se,bokadirekt.se,samnytt.se,sjofartstidningen.se,mytaste.se,matklubben.se,vivavinomat.se,aktuellsakerhet.se,skidspar.se,hellofresh.se,goteborgco.se#$#body { overflow:initial!important }
 bussmagasinet.se###page > div:not(.left):not(.right)
 bussmagasinet.se###titlebanner
 bussmagasinet.se,byggteknikforlaget.se,dialasen.com,torbjornstips.se,backpacking.se,kanadaresa.se,usa.se,sporthalsa.se,ravarumarknaden.se,livetsgoda.se,opulens.se,radiotreby.se,nyadagbladet.se,fiskemagasinet.se##.textwidget a[target="_blank"]
@@ -870,7 +870,7 @@ karriarlakare.se##a[target][onclick], #cliSettingsPopup
 karriarlakare.se##.annons-label:upward(a)
 karriarlakare.se,livinguppsala.se,battrestadsdel.se,butikstrender.se,forskning.se,vardfokus.se,varvat.se,smaspararguiden.se,sjostadsbladet.se,tidningenridsport.se,vinliv.se,raa.se,svenskfilmdatabas.se,hockeybladet.nu,frihetsnytt.se,ingridochmaria.se###cookie-law-info-bar
 kattannonser.se#%#//scriptlet('ubo-noeval-if.js', 'adbEnableForPage')
-kb.se,dansportalen.se,hh.se,vr.se,viss.nu,skogssallskapet.se,formas.se,rf.se,naturvetarna.se#$#body { overflow:unset!important; position:unset!important; }
+kb.se,dansportalen.se,hh.se,vr.se,viss.nu,skogssallskapet.se,formas.se,rf.se,naturvetarna.se,skyscanner.se#$#body { overflow:unset!important; position:unset!important; }
 kb.se,dansportalen.se,hh.se,vr.se,viss.nu,tidningencurie.se,skogssallskapet.se,formas.se,naturvetarna.se##.sv-marketplace-sitevision-cookie-consent, .sv-cookie-consent-modal, .env-modal-dialog__backdrop, .env-modal-dialog__backdrop--in, .env-modal-dialog--show
 kiacarclub.se##.forumlist-main-inner > div[style]
 kiacarclub.se##.sidebar-block:has-text(/annons|sponsor/i)
@@ -1331,7 +1331,7 @@ skolporten.se##.article-short:has(a[href*="/sponsrat-innehall"])
 skrattnet.se##.region-sidebar-second
 skrattsajten.com,norpan.se##.cookieScript
 skyltat.se##.sidebar
-skyscanner.se###modal-container, div[data-testid="advert-card-gam"]
+skyscanner.se##div[data-testid="advert-card-gam"]
 skyttesport.se##.main-partners, .cooperation-partners
 snowmobile.se##div[itemtype="https://schema.org/WPAdBlock"], .bs-wrap-gdpr-law
 snowmobile.se,tobaksfakta.se,dagenslogistik.se,magasinetkonkret.se,skaneplus.se,battrestadsdel.se,a-traktorer.se##.pum-overlay
@@ -1570,7 +1570,7 @@ vagabond.se##.latest-article-native, .blurb--partner
 vardegrunden.se,lagboken.se##.cookie-notice
 vardegrunden.se,sportstravelnews.se###loader
 varden.se##app-native-puff, .header-top-banners
-varden.se##.carousel-slide:has(.sponsored-label)
+varden.se##:is(.keen-slider__slide, app-blog-puff):has(.sponsored-label)
 vardfokus.se##div[style*="rgba(0, 0, 0, 0.5)"]:has(div[onclick])
 vardfokus.se,tidningenridsport.se##.cli-modal-backdrop
 vardpraktikan.se###nyhetsbrev
@@ -2709,6 +2709,7 @@ zeromagazine.nu##div[id^="ads"]
 /tracking/cts.js
 /tracking/fpc.js
 /tracking_scripts$domain=osterbottenstidning.fi|sydin.fi|vasabladet.fi
+/trackolding$domain=skyscanner.se
 /track$ping,xmlhttprequest,domain=epochtimes.se|dagen.se|vinliv.se|maipenrai.se
 /track-view$domain=aftonbladet.se|godare.se
 /track.js$domain=destination.se|sistaminuten.se
