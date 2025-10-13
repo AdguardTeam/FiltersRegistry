@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.17.52",
-			"timeUpdated": "2025-10-13T07:08:14+0000",
+			"version": "2.4.17.53",
+			"timeUpdated": "2025-10-13T08:09:38+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -587,8 +587,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.59.89",
-			"timeUpdated": "2025-10-10T07:07:59+0000",
+			"version": "2.0.59.90",
+			"timeUpdated": "2025-10-13T08:09:58+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.45.60",
-			"timeUpdated": "2025-10-13T07:08:36+0000",
+			"version": "2.2.45.61",
+			"timeUpdated": "2025-10-13T08:10:04+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.96.95",
-			"timeUpdated": "2025-10-13T06:10:54+0000",
+			"version": "2.0.96.96",
+			"timeUpdated": "2025-10-13T08:10:05+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -721,8 +721,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.14",
-			"timeUpdated": "2025-10-13T07:08:41+0000",
+			"version": "2.0.72.15",
+			"timeUpdated": "2025-10-13T08:10:08+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.63.33",
-			"timeUpdated": "2025-10-13T06:10:59+0000",
+			"version": "2.0.63.34",
+			"timeUpdated": "2025-10-13T08:10:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1682,8 +1682,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.45.69",
-			"timeUpdated": "2025-10-13T06:11:05+0000",
+			"version": "2.1.45.70",
+			"timeUpdated": "2025-10-13T08:10:13+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
