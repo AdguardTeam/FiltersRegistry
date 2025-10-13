@@ -1,5 +1,5 @@
-! Checksum: 0rIXwnfkzhrfjkVxNZZpQg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1760236732-3600.patch
+! Checksum: OAhG2PONjkX1M4Rcf20eIA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1760323263-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.54.57
@@ -1520,6 +1520,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 =WebAdsLinks&
 ?468&60&
 ?728&90&
+?ad_domain=
 ?ad_sub=
 ?ADFassetID=
 ?adnet=
@@ -1639,6 +1640,7 @@ _publicitaire/
 _publicite.
 _publicite_
 _smads_
+_smartclick.js
 _square_ads.
 _werbebanner_
 /wp-content/banners/*$third-party
@@ -1790,6 +1792,7 @@ _build=iclick-$popup
 ||cclpub.com^$third-party
 ||cdn3.net^$third-party
 ||cfgr2.com^$third-party
+||charmix.com^$third-party
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
@@ -2128,6 +2131,7 @@ _build=iclick-$popup
 ||brujoshooch.shop^
 ||brunettemattersrefused.com^
 ||bubblyzucchini.com^
+||bucketychevied.com^
 ||bullyhempbacked.com^
 ||burkhahemoid.com^
 ||burniecrepes.com^
@@ -2153,7 +2157,6 @@ _build=iclick-$popup
 ||ccgcg.com^
 ||cemantical4.com^
 ||centalkochab.com^
-||certifiedblob.com^
 ||cgqhtithixi.com^
 ||chambulwacs.com^
 ||changarreviver.com^
@@ -2314,6 +2317,7 @@ _build=iclick-$popup
 ||geoidcaccia.com^
 ||gestyy.com^
 ||gigboost.me^
+||giguenestle.com^
 ||ginnelhangle.com^
 ||giosany.com^
 ||girlingunguyed.com^
@@ -2436,6 +2440,7 @@ _build=iclick-$popup
 ||licertle.co^
 ||limbecculvers.com^
 ||lippenscomate.top^
+||litrefloored.com^
 ||littlegirlies.org^
 ||liveislive.bid^
 ||livepartners.com^
@@ -2644,6 +2649,7 @@ _build=iclick-$popup
 ||repealsyapping.shop^
 ||reseatmihrab.com^
 ||resentproduces.com^
+||resr.ru^
 ||retinaesprent.com^
 ||rezrboabevlvy.top^
 ||riamiavid.com^
@@ -2955,7 +2961,6 @@ _build=iclick-$popup
 ||weborama.fr^$popup,third-party
 ||yesmessenger.com^$popup,third-party
 ||yggtorrent.com^$popup
-||zaful.com^$popup,third-party
 $csp=default-src 'self' 'unsafe-inline' data: *.bootstrapcdn.com *.cloudatacdn.com *.cloudflare.com *.doodcdn.co *.doodcdn.com *.doodcdn.io *.google.com *.googleapis.com *.gstatic.com *.hcaptcha.com *.jquery.com *.jwpcdn.com *.plyr.io *.recaptcha.net *.tapecontent.net *.veev.to *.veevcdn.co *.video-delivery.net *.youtube.com *.zencdn.net,domain=adblockeronstreamtape.xyz|adblockplustape.com|adblockplustape.xyz|adblockstreamtape.art|adblockstreamtape.site|adblockstrtape.link|d0000d.com|d000d.com|do0od.com|do7go.com|dood.la|dood.li|dood.pm|dood.re|dood.sh|dood.so|dood.to|dood.watch|dood.wf|dood.work|dood.ws|dood.yt|doods.pro|d-s.io|doodstream.co|doodstream.com|doodstream.me|dooodster.com|dooood.com|gettapeads.com|noblocktape.com|shavetape.cash|stapadblockuser.xyz|stapewithadblock.monster|strcloud.club|strcloud.link|streamadblocker.xyz|streamadblockplus.com|streamadblockplus.xyz|streamta.pe|streamtape.cc|streamtape.com|streamtape.net|streamtape.to|streamtape.xyz|streamtapeadblock.art|strtape.cloud|strtape.site|strtape.tech|strtapeadblock.club|strtapeadblock.me|tapenoads.com|tapepops.com|tapewithadblock.org|veev.to|vidply.com|watchadsontape.com
 $csp=worker-src 'none',domain=atk-exotics.com|atkebony.com|centrum-dramy.pl|chemikino.ru|coinfaucet.eu|crictime.com|crictime.is|deltabit.co|descargas2020.com|domnuleprimar.ro|fileone.tv|filmovix.com|filmovix.org|firstonetv.live|genashowalter.com|hdvid.tv|lewd.ninja|nahnoji.cz|novator.az|ovid.tv|peliculas24.me|powvideo.net|salon.com|shush.se|sickrage.ca|studio100.it|tapemovie.com|theappguruz.com|onion.pet|onion.ly|thepiratebay.org|tubetitties.com|vidoza.co|void.cat
 $websocket,domain=ceesty.com|centrum-dramy.pl|chemikino.ru|clkmein.com|corneey.com|datpiff.com|deltabit.co|descargas2020.com|destyy.com|djs.sk|dp-stream.com|festyy.com|firstonetv.live|ithepiratebay.com|kinovibe.co|lewd.ninja|nahnoji.cz|netiap.com|onion.ly|onion.pet|pblv-plusbellelavie.fr|peliculas24.me|primewire.li|primewire.tf|reactor.cc|rednubes.de|salon.com|sh.st|shorte.st|shrink-service.it|sickrage.ca|tubetitties.com|vidoza.co|vidshare.tv|void.cat|xvideosharing.com
@@ -3083,8 +3088,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||mangatown.com^*/banners/
 ||maxannu.com^$image,third-party
 ||mdhcdn.com^*/banner_
+||mediafire.com/file/*.exe|$subdocument
 ||mega-p2p.net^$image,third-party
-||meilleurdusexe.com/images/pub/
 ||meilleurduweb.com/images/pub/
 ||membersrule.com/getimg.php$third-party
 ||mini-jeux.com/jeuday.js$third-party
@@ -3146,6 +3151,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||up-banner.wavecdn.net^
 ||vachvoi.cc/picture/files/
 ||vegemiam.fr/wp-content/uploads/$third-party
+||vendezvotrevoiture.fr^$subdocument,third-party
 ||vidazoo.com/aggregate?
 ||vultr.com/?ref=$third-party
 ||vuplus-support.org/custom_files/banner.gif
@@ -3434,6 +3440,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||pagesjaunes-dz.com/pub/
 ||pagesjaunes.fr/js/pj_ad.js
 ||partenaire.leparticulier.fr^
+||passionlachasse.com/publi
 ||pcgamestorrents.com/wp-content/uploads/20*.gif
 ||permispratique.com/photo/*_habillage_
 ||petit-bulletin.fr/multimedia/fond/
@@ -3621,7 +3628,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###gpt-ad-habillage
 ###gpt-ad-inread
 ###gpt-leaderboard-top
-###haut_site_pub
 ###head-pub
 ###head_pub
 ###header-promo
@@ -3643,6 +3649,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###j_ads
 ###js-MobileAd-insert
 ###keep-ads
+###large-banner-ad
 ###leaderboard.ads
 ###left_slide_pub
 ###lht-space-ad
@@ -3657,7 +3664,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pagelet_advertiser_panel
 ###partner-ads
 ###partner-ads2
-###pave1_ad
 ###pavePub
 ###pavepub
 ###pie_pub_google
@@ -4049,7 +4055,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pub-728
 ##.pub-728-90
 ##.pub-728x90
-##.pub-970
 ##.pub-970x90
 ##.pub-Adtech
 ##.pub-after-download
@@ -4433,7 +4438,6 @@ fipradio.fr,francemusique.fr,girlsgogames.fr,jeu.fr,lesoir.be,lestrepublicain.co
 ccm.net,commentcamarche.com,commentcamarche.net,latribune.fr,traildesforts.com##.advertising
 statistiks.fr##.adz
 permaculteurs.com##.aff
-pix-geeks.com,voiturego.com,zebulon.fr##.afxshop
 leparking-moto.fr##.alter
 amazon.fr##.amzn-safe-frame-container
 madagascar-tribune.com##.annonce
