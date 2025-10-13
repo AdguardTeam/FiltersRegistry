@@ -1,9 +1,9 @@
-! Checksum: BGQKi202eo47H6vs5wKWCA
-! Diff-Path: ../patches/3/3-s-1760299889-3600.patch
+! Checksum: cCpwtbliWh3aQGP1dtN6xw
+! Diff-Path: ../patches/3/3-s-1760319562-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.92.75
-! TimeUpdated: 2025-10-12T20:07:20+00:00
+! Version: 2.0.92.76
+! TimeUpdated: 2025-10-13T01:35:18+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -108061,6 +108061,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+novakid.*,novakidschool.com#%#//scriptlet('set-local-storage-item', 'ftr', '$remove$')
+||school.novakidschool.com/api/*/metrics
 ||dbrand.com/cvg/log?
 ||dbrand.com/cvg/track?
 ||dbrand.com/cvg/static/pixels/
@@ -114631,6 +114633,9 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! novakidschool.com
+||novakid.$cookie=ftr
+||novakidschool.com^$cookie=ftr
 ! purevpn.de
 ||purevpn.$cookie=/^intercom-/
 ! fashionnova.com
