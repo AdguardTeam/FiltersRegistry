@@ -1,13 +1,13 @@
-! Checksum: 0/DHAND2byX2CvnDTiig0w
-! Diff-Path: ../patches/250/250-s-1760373755-14400.patch
+! Checksum: efqVn10GLLpZPNqAv/XRlg
+! Diff-Path: ../patches/250/250-s-1760403102-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.18.3
-! TimeUpdated: 2025-10-13T16:39:05+00:00
+! Version: 2.0.18.4
+! TimeUpdated: 2025-10-14T00:48:13+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 11October2025v1-Compilation
+! OriginalVersion: 13October2025v1-Compilation
 ! Expires: 18 hours
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -14905,7 +14905,7 @@ nettavisen.no###topover
 ! Prevents Google from changing normal links in image searches to their tracking links whenever they're clicked on.
 ! I was only able to get this to work with the 2 links below the main image in the rightside drawer, and not on the main image itself. Trust me, I tried.
 ! Title: 🕳 Empty Padding Remover
-! OriginalVersion: 27August2025v1-Beta
+! OriginalVersion: 13October2025v1-Beta
 ! Expires: 4 days
 ! Description: Are you tired of having to scroll so much on websites, or you want to keep your eyes on more text and content at once? Or perhaps you're tired ot very large shadows on video sites when moving the mouse? If so, this list will help you a little extra bit with that.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -14974,6 +14974,7 @@ dyrevennene.no##.td-footer-wrapper
 replacementdocs.com#?#.forumheader3:not(:has(img)):not(:has-text(/\S/)):not(:has(input))
 transfermarkt.com##.clearer
 sat24.com###headermenu
+eeconomy.gr#$#.bgnav { max-height:40px!important }
 ! https://www•feltet•dk/nyheder/dansker_enig_i_kritik_svaert_ved_at_se_hvad_de_har_at_goere_her/
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 ! For listings with 2 or more related/size notices
@@ -15277,7 +15278,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 05October2025v1
+! OriginalVersion: 13October2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -15289,7 +15290,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ! - This list can not bypass tracker redirects through third-party domains. This can be done by strict-blocking said domain and using the ability to view parameters on the strict-block page or tools to bypass it.
 ! - This list can not remove anything after the # in URLs. This is impossible in uBlock Origin and AdGuard.
 ! - This list can not remove parameters added using https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState
-! - Despite several attempts, this list can not remove trailing $'s.
+! - Despite several attempts, this list can not remove trailing ?'s.
 ! - As of 15/03/2024, this list did not work properly in Brave Browser, due to Brave missing several critical features this list uses. Please use this list only with uBlock Origin or AdGuard. User statements have however ticked in in mid-2025 that the breakage is smaller or gone.
 ! 🗺️ ——— General remove rules ——— 🗺️ !
 ! From AdGuard CoreLibs (11/11/2020)
@@ -19497,6 +19498,15 @@ $removeparam=/^ref=underfl0w\.com$/
 ||downloads.sourceforge.net^$removeparam=r
 ! https://github.com/AdguardTeam/AdguardFilters/commit/6bf3cccabe4516ca895d61f0cd6401a59e2c4683
 $document,removeparam=loclid
+! https://story•snapchat•com/p/a9868981-ac8a-4c7c-bdd3-bbd94c7cd46a/3298970858393600?timestamp=0&share_id=7TRPgdxQm4I&locale=nb-NO (03/10/2025)
+||snapchat.com^$removeparam=share_id
+||snapchat.com^$removeparam=/^timestamp=0$/
+! https://art•ngfiles•com/images/7074000/7074061_2473390_feitphikz_untitled-7074061•a6e40df658d48d6035c8a73e0144432c•webp?f1759264692
+||ngfiles.com^$removeparam=/^f\d{4,}=$/
+! https://github.com/DandelionSprout/adfilt/issues/1182
+||carrefoursa.com^$removeparam=v
+! https://www•carrefoursa•com/carrefour-domates-salcasi-830-g-teneke-p-30261401?has-promotion (14/10/2025)
+$removeparam=/^has-promotion=$/
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
@@ -19506,9 +19516,6 @@ $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 ! https://www•ikea•com/no/no/images/products/friheten-hjornesovesofa-med-oppbevaring-skiftebo-mork-gra__0175610_pe328883_s5•jpg?f=xl
 ||ikea.com/*/images/products^$removeparam=f
-! https://story•snapchat•com/p/a9868981-ac8a-4c7c-bdd3-bbd94c7cd46a/3298970858393600?timestamp=0&share_id=7TRPgdxQm4I&locale=nb-NO (03/10/2025)
-||snapchat.com^$removeparam=share_id
-||snapchat.com^$removeparam=/^timestamp=0$/
 ! 🤖 + ——— + Scriptlets + ——— + 🤖 !
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1352038
 actionewz.com,animemojo.com,comicbookmovie.com,fearhq.com,gamefragger.com,mtvuutiset.fi,sffgazette.com,theringreport.com,toonado.com#%#//scriptlet('ubo-set.js', 'GSvars.addressTracking', 'false')
@@ -20443,6 +20450,6 @@ github.com#$?#.clearfix:has(h1:has-text(/^Uploading files .* versions Anti-Malwa
 github.com#$?#.clearfix:has(h1:has-text(/^Uploading files .*NorwegianExperimentalList .*$/)):has(div.js-filename:has-text(/^AntiMalware.*$/)) { background-color:red!important }
 ! You all know those constant popups that   a   l o t   of websites show whenever the mouse cursor goes outside the page window area? I think I've found a fix for it, and I have solid confidence in that fix thus far. (24/09/2025)
 !+ NOT_OPTIMIZED
-*,~google.*#%#//scriptlet('ubo-acs.js', 'addEventListener', 'mouseleave')
+*,~google.*,~eeconomy.gr#%#//scriptlet('ubo-acs.js', 'addEventListener', 'mouseleave')
 ! Discord ads for Perplexity Aİ; intended to be a temporary entry until https://github.com/AdguardTeam/AdguardFilters/issues/214541 has been handled
 &client_ad_session_id=

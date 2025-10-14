@@ -1,13 +1,13 @@
-! Checksum: gAKJAa1WdyGTHmLg2VEeWw
-! Diff-Path: ../patches/251/251-s-1759725632-14400.patch
+! Checksum: ieJCBsB8FXstbzvP4EY1ZQ
+! Diff-Path: ../patches/251/251-s-1760403114-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.3
-! TimeUpdated: 2025-10-06T04:36:58+00:00
+! Version: 2.0.9.4
+! TimeUpdated: 2025-10-14T00:48:14+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 05October2025v1
+! OriginalVersion: 13October2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -19,7 +19,7 @@
 ! - This list can not bypass tracker redirects through third-party domains. This can be done by strict-blocking said domain and using the ability to view parameters on the strict-block page or tools to bypass it.
 ! - This list can not remove anything after the # in URLs. This is impossible in uBlock Origin and AdGuard.
 ! - This list can not remove parameters added using https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState
-! - Despite several attempts, this list can not remove trailing $'s.
+! - Despite several attempts, this list can not remove trailing ?'s.
 ! - As of 15/03/2024, this list did not work properly in Brave Browser, due to Brave missing several critical features this list uses. Please use this list only with uBlock Origin or AdGuard. User statements have however ticked in in mid-2025 that the breakage is smaller or gone.
 ! 🗺️ ——— General remove rules ——— 🗺️ !
 ! From AdGuard CoreLibs (11/11/2020)
@@ -4226,6 +4226,15 @@ $removeparam=/^ref=underfl0w\.com$/
 ||downloads.sourceforge.net^$removeparam=r
 ! https://github.com/AdguardTeam/AdguardFilters/commit/6bf3cccabe4516ca895d61f0cd6401a59e2c4683
 $document,removeparam=loclid
+! https://story•snapchat•com/p/a9868981-ac8a-4c7c-bdd3-bbd94c7cd46a/3298970858393600?timestamp=0&share_id=7TRPgdxQm4I&locale=nb-NO (03/10/2025)
+||snapchat.com^$removeparam=share_id
+||snapchat.com^$removeparam=/^timestamp=0$/
+! https://art•ngfiles•com/images/7074000/7074061_2473390_feitphikz_untitled-7074061•a6e40df658d48d6035c8a73e0144432c•webp?f1759264692
+||ngfiles.com^$removeparam=/^f\d{4,}=$/
+! https://github.com/DandelionSprout/adfilt/issues/1182
+||carrefoursa.com^$removeparam=v
+! https://www•carrefoursa•com/carrefour-domates-salcasi-830-g-teneke-p-30261401?has-promotion (14/10/2025)
+$removeparam=/^has-promotion=$/
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
@@ -4235,9 +4244,6 @@ $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 ! https://www•ikea•com/no/no/images/products/friheten-hjornesovesofa-med-oppbevaring-skiftebo-mork-gra__0175610_pe328883_s5•jpg?f=xl
 ||ikea.com/*/images/products^$removeparam=f
-! https://story•snapchat•com/p/a9868981-ac8a-4c7c-bdd3-bbd94c7cd46a/3298970858393600?timestamp=0&share_id=7TRPgdxQm4I&locale=nb-NO (03/10/2025)
-||snapchat.com^$removeparam=share_id
-||snapchat.com^$removeparam=/^timestamp=0$/
 ! 🤖 + ——— + Scriptlets + ——— + 🤖 !
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1352038
 ! https://buffalonews•com/news/#tracking-source=main-nav

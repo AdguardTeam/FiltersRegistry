@@ -1,9 +1,9 @@
-! Checksum: b0OPjJa2BBgouRu7c7feKA
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1759725615-14400.patch
+! Checksum: 9ttfHmSDuWGumRA8UFvF/A
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1760403094-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.3
-! TimeUpdated: 2025-10-06T04:36:58+00:00
+! Version: 2.0.9.4
+! TimeUpdated: 2025-10-14T00:48:14+00:00
 ! Expires: 5 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -2829,13 +2829,16 @@ $removeparam=/^ref=underfl0w\.com$/
 ||blu-ray.com^$removeparam=retailerid
 ||downloads.sourceforge.net^$removeparam=r
 $document,removeparam=loclid
+||snapchat.com^$removeparam=share_id
+||snapchat.com^$removeparam=/^timestamp=0$/
+||ngfiles.com^$removeparam=/^f\d{4,}=$/
+||carrefoursa.com^$removeparam=v
+$removeparam=/^has-promotion=$/
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 ||ikea.com/*/images/products^$removeparam=f
-||snapchat.com^$removeparam=share_id
-||snapchat.com^$removeparam=/^timestamp=0$/
 @@mailinglist$removeparam=/^utm_.*$/i
 @@||web.archive.org/*_/http$removeparam
 @@||img*.nga$removeparam=cmpid
