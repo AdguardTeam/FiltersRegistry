@@ -1,9 +1,9 @@
-! Checksum: k+7vxe0zbn5Q0S3OFJro6w
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1760403128-14400.patch
+! Checksum: g3I5Qj97mDV4dSE/qzapNQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1760416861-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.49.32
-! TimeUpdated: 2025-10-14T00:47:41+00:00
+! Version: 2.1.49.33
+! TimeUpdated: 2025-10-14T04:36:49+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -255,8 +255,6 @@ _social-bar/
 ###followTwitter
 ###followUs
 ###follow_buttons
-###follow_facebook
-###follow_twitter
 ###follow_us
 ###followus
 ###foot-social
@@ -417,6 +415,7 @@ _social-bar/
 ###shareButton
 ###shareButton1
 ###shareButtons
+###shareData
 ###shareDropdown
 ###shareFloat
 ###shareIcons
@@ -582,6 +581,7 @@ _social-bar/
 ###socialPopup
 ###socialShare
 ###socialSharing
+###socialSiteSites
 ###socialTabs
 ###socialTwitter
 ###socialWidgets
@@ -870,7 +870,6 @@ _social-bar/
 ##.article-title-share
 ##.articleShare
 ##.articleShareLinks
-##.articleSocialLinks
 ##.article__details__share
 ##.article__header__share
 ##.article__likes
@@ -948,6 +947,7 @@ _social-bar/
 ##.big-share
 ##.bimber-microshare-item-share
 ##.bio-social
+##.bk-share-box-top
 ##.bloc-social
 ##.bloc_float_share
 ##.block-addtoany
@@ -1076,6 +1076,7 @@ _social-bar/
 ##.component-social
 ##.component-social-share
 ##.connect-with-us
+##.contSocial
 ##.cont_social
 ##.contenedor_redes_sociales
 ##.content-footer-social
@@ -1262,6 +1263,7 @@ _social-bar/
 ##.fbShareTrigger
 ##.fb_bar
 ##.fb_like_and_share
+##.fb_like_box
 ##.fb_report_icon
 ##.fb_share
 ##.fb_share_button
@@ -1711,6 +1713,7 @@ _social-bar/
 ##.j-twitter
 ##.janrainShareCountContainer
 ##.janrainSocialBar
+##.janrainSocialPlaceholder
 ##.jeg_author_socials
 ##.jeg_share_button
 ##.jeg_share_top_container
@@ -2478,6 +2481,7 @@ _social-bar/
 ##.share_entry
 ##.share_facebook
 ##.share_fb
+##.share_google
 ##.share_group
 ##.share_hidden
 ##.share_horizontal
@@ -2759,6 +2763,7 @@ _social-bar/
 ##.social-button-wrapper
 ##.social-buttons--content-before
 ##.social-buttons--follow
+##.social-buttons--uk
 ##.social-buttons-compact
 ##.social-buttons-container
 ##.social-buttons-twitter
@@ -2909,6 +2914,7 @@ _social-bar/
 ##.social-share-container
 ##.social-share-expand
 ##.social-share-facebook
+##.social-share-footer
 ##.social-share-google
 ##.social-share-group
 ##.social-share-icons
@@ -3097,7 +3103,6 @@ _social-bar/
 ##.socialheader
 ##.socialicon
 ##.socialicons
-##.socialink
 ##.socialinks
 ##.socialite-widget
 ##.socialite-widget-item
@@ -3359,6 +3364,7 @@ _social-bar/
 ##.vlog-social-icons
 ##.voc-social
 ##.vs-social
+##.vshare
 ##.vuukle-powerbar
 ##.w-share
 ##.w-sharing
@@ -3775,7 +3781,6 @@ consumerreports.org##.btn__social
 notateslaapp.com##.button-follow
 healthline.com##.button-wrapper
 cyclingnews.com,livescience.com##.buttons-social
-askmen.com##.byline__social
 nature.com##.c-article-extras-additional-links
 lawandcrime.com##.c-article-foot__site
 thenextweb.com##.c-engage
@@ -3794,7 +3799,6 @@ audacy.com##.component--share
 goal.com##.component-share
 goal.com##.component-social-twitter
 allafrica.com,dailysignal.com##.connect
-financemagnates.com##.contact-widget__sticky
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
@@ -3809,7 +3813,6 @@ breakingdefense.com##.ea-share-count-wrap
 bdonline.co.uk,dailymail.co.uk,flightglobal.com,screendaily.com##.email
 cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
-alizila.com##.entry-meta__social
 arabnews.com##.entry-views
 thegatewaypundit.com,wersm.com##.essb_links
 yardbarker.com##.expanded.button
@@ -3881,6 +3884,7 @@ iherb.com##.iherb-pdp-share
 dailymail.co.uk##.image_strapline_slant_wocc
 inews.co.uk##.inews__post-share
 mainichi.jp##.inline-list
+winnipegfreepress.com##.interactive
 insideevs.com##.isBottomShare
 thelondoneconomic.com##.jeg_share_top_container
 moneycontrol.com##.join_follow
@@ -3980,7 +3984,6 @@ fintech.tv,war.ukraine.ua##.share-news
 thehackernews.com##.share-open-modal
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 forward.com##.share-post
-financemagnates.com##.share-this-article__wrapper
 breachmedia.ca,news.itsfoss.com##.share-toggle
 dailymail.co.uk,thisismoney.co.uk##.share-twitter
 dailymail.co.uk,thisismoney.co.uk##.share-whatsapp
@@ -4067,6 +4070,7 @@ techgaged.com##.techg-after-content-2
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
 chinadaily.com.cn##.three-right
+adnkronos.com,stuff.co.nz##.tik4-sharing
 xbiz.com##.tool-list
 daily.jstor.org##.top-bar-right
 thehackernews.com##.top-follow
@@ -4136,6 +4140,7 @@ discord.me##li.menu-link.d-xl-inline-block
 cyprus-mail.com##social-share-links
 galaxystore.samsung.com##span[class^="SnsPlugin_items_"]
 gmx.net##ui-social
+jagranjosh.com##ul[class^="Details_Social_"]
 dailymail.co.uk,thisismoney.co.uk##ul[class^="linksHolder-"]
 abc.net.au##.Button_root__UZ8td:has-text(Share)
 foxnews.com##.article-meta-lower:has(.article-social)
@@ -4184,6 +4189,7 @@ bulawayo24.com,canalarte1.uol.com.br,canavesenews.it,cleartechnology.nl,dbknews.
 almanar.com.lb,animeworld.so,bergamonews.it,combinationsmag.com,deraktionaer.de,fantasymagazine.it,heidi.news,letemps.ch,liberta.it,ndmais.com.br,overwolf.com,portswigger.net,tastecooking.com,thetruthaboutcars.com,tirto.id##.share-button
 apkpure.com,azoai.com,azobuild.com,azocleantech.com,azolifesciences.com,azom.com,azomining.com,azonano.com,azooptics.com,azoquantum.com,azorobotics.com,azosensors.com,calcioefinanza.it,christianpost.com,crealitycloud.com,libreriascolastica.it,libreriauniversitaria.it,news-medical.net,proteste.org.br,scientificamerican.com,tiscali.it##.share-box
 agenziacasaclima.it,anandtech.com,bdonline.co.uk,buzzfil.com,cadenaazul.com,catapult.co,clubic.com,dailymail.co.uk,filmgo.org,flightglobal.com,gameranx.com,habrahabr.ru,iexprofs.nl,ifun.de,ilfoglio.it,iphone-ticker.de,lci.tf1.fr,lesoir.be,lounge.fm,ludokado.com,mf24.pl,miningjournal.net,peoplesweather.com,programme-tv.net,rfm.fr,richersounds.com,screendaily.com,shortlist.com,teleticino.ch,todomercadoweb.es,tripstodiscover.com,trt.net.tr,trueachievements.com,truesteamachievements.com,tuttomercatoweb.com,webnews.it,yoink.com##.twitter
+dailyboulder.com,echonewshub.com,jugomobile.com,myelectricsparks.com,statestories.com,thartribune.com,ubitennis.com##.t-shared-sec
 50statesoflie.media,addictivetips.com,ambito.com,anews.com.tr,animeworld.so,animeworld.tv,antenneac.de,antenneduesseldorf.de,antennemuenster.de,antenneniederrhein.de,antenneunna.de,archivebate.com,az.nl,bazar.it,brocabrac.fr,candidat.news,carscoops.com,cracked.com,dacast.com,ecodibergamo.it,einbecker-morgenpost.de,ezalenyeg.hu,fastweb.it,forward.com,grunehummel.com,hellwegradio.de,hirtv.hu,holylandherald.com,hot.co.uk,hot.com,hpdetijd.nl,instant-gaming.com,intellinews.com,ipwatchdog.com,iranpress.com,jagranjosh.com,kyivpost.com,laprovinciadicomo.it,laprovinciaunicatv.it,lavirgule.news,letterboxd.com,levinaigre.net,liferadio.at,lippewelle.de,mechanisatiemarkt.nl,meisterurian.io,mob.org,news894.de,newsbit.nl,ots.at,ouest-france.fr,pleno.news,polskikompas.com,prinspetfoods.nl,radio901.de,radioberg.de,radiobochum.de,radiobonn.de,radioduisburg.de,radioemscherlippe.de,radioenneperuhr.de,radioerft.de,radioessen.de,radioeuskirchen.de,radiohagen.de,radioherne.de,radiokiepenkerl.de,radiokoeln.de,radiokw.de,radioleverkusen.de,radiolina.it,radiomk.de,radiomuelheim.de,radioneandertal.de,radiooberhausen.de,radiorsg.de,radiorst.de,radiorur.de,radiosauerland.de,radiosiegen.de,radiovest.de,radiowmw.de,radiowuppertal.de,recyclingproductnews.com,rt.com,salon.com,scamadviser.com,screenweek.it,secoloditalia.it,shadowwatch.us,sportwebsicilia.it,thejc.com,thetruthaboutcars.com,truthgate.us,tuttotech.net,u24.gov.ua,videolina.it,warfareinsider.us,webcafe.bg,welleniederrhein.de,wng.org##.socials
 hdblog.it,hdmotori.it,time.is,tudocelular.com##.social_buttons
 atletiekkrant.be,autosportkrant.be,basketbalkrant.be,handbalkrant.be,hockeykrant.be,nsctotal.com.br,pinetools.com,sport-planet.eu,tenniskrant.be,voetbalkrant.com,volleybalkrant.be,vrouwenvoetbalkrant.be,walfoot.be,wielerkrant.be###social-icons
@@ -4323,6 +4329,7 @@ consigli.it##.box-canale-telegram
 calciomercato.com##.cm-share
 consigli.it##.company-social
 nordest24.it##.component-follow-us
+donnamoderna.com##.dm20-lory-share-panel
 iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
@@ -4448,6 +4455,7 @@ adn40.mx##.ListSiguenos-SocialStrip
 elpais.com.uy##.Page-actions-wrapper
 rpp.pe##.article__follow
 elfinanciero.com.mx##.b-footer__social-links-container
+13.cl##.banner-google-news
 estadiodeportivo.com##.boton-share
 de10.com.mx,dedinero.com.mx,elgrafico.mx##.botonGoogleNews
 biobiochile.cl##.botones-google-news-wsp
@@ -4464,6 +4472,7 @@ adslzone.net##.comments-social-share
 wapa.pe##.container_shared--internal
 elcolombiano.com##.contenedor-google-noticias
 highxtar.com,motor.elpais.com##.content__compartir
+13.cl##.cuerpo-share
 eldiario.es,eldiarioar.com##.edi-social-buttons
 elperiodico.com,sport.es##.ft-mol-rrss-column
 milenio.com##.google-news-follow
