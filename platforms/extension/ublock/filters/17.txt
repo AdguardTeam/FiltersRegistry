@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: CIYtpAJ5n0Fo3Y7O+8HIyA
-! Diff-Path: ../patches/17/17-s-1760353826-3600.patch
+! Checksum: CtKW+DRZx9VdA5WTIgMzCw
+! Diff-Path: ../patches/17/17-s-1760444160-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.94
-! TimeUpdated: 2025-10-13T11:06:48+00:00
+! Version: 2.0.11.95
+! TimeUpdated: 2025-10-14T12:12:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2847,6 +2847,9 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148958
 ! Breaks navigation and removes chosen seller id on the item's page
 ! ||amazon.*$removeparam=smid
+! Adjusted rules:
+! https://github.com/AdguardTeam/AdguardFilters/issues/215435
+! ||amazon.$removeparam=c
 !
 ! ||amazon.*$removeparam=sr - breaks automatic jump to review details
 ! ||amazon.*$removeparam=s - breaks URLs which includes it to sort
@@ -2865,7 +2868,7 @@ $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
 ||amazon.*$removeparam=adgrpid
 ||amazon.*$removeparam=AssociateTag
 ||amazon.*/gp/buyagain$removeparam=ats
-||amazon.*$removeparam=c
+||amazon.*/dp/$removeparam=c
 ||amazon.*$removeparam=camp
 ||amazon.*$removeparam=creative
 ||amazon.*$removeparam=creativeASIN

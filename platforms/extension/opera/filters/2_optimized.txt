@@ -1,9 +1,9 @@
-! Checksum: 3HPpOFdPHy8TJa63yFFCIQ
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1760440246-3600.patch
+! Checksum: +WlHz2CjUXQJBMGk3dfZSA
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1760444154-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.17.80
-! TimeUpdated: 2025-10-14T11:06:27+00:00
+! Version: 2.4.17.81
+! TimeUpdated: 2025-10-14T12:11:30+00:00
 ! Expires: 10 days (update frequency)
 ||sharebang.com^
 ||prebid.scope3.com^
@@ -11473,9 +11473,9 @@ www.youtube.com#%#(()=>{const t={apply:(t,o,n)=>{const e=n[0];return"function"==
 www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.Request=window.Request)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
 www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
-www.youtube.com#%#(()=>{const t={construct:(t,e,c)=>{try{const n=e[0];let o=e[1]?.body;if(!n?.includes("youtubei")||location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||!o)return Reflect.construct(t,e,c);if(o.includes('"contentPlaybackContext"')||o.includes('"adSignalsInfo"')){const n=JSON.parse(o);if(!n.context?.client)return Reflect.construct(t,e,c);n.playbackContext&&(n.playbackContext.adPlaybackContext={pyv:!0}),n.playerRequest&&(n.playerRequest.playbackContext.adPlaybackContext={pyv:!0}),o=JSON.stringify(n),e[1].body=o}}catch(t){}return Reflect.construct(t,e,c)}};window.Request=new Proxy(window.Request,t)})();
-www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv"))return Reflect.apply(e,t,n);try{let o=n[0];if(o&&(o.includes('"contentPlaybackContext"')||o.includes('"adSignalsInfo"'))){const c=JSON.parse(o);if(!c.context?.client)return Reflect.apply(e,t,n);c.playbackContext&&(c.playbackContext.adPlaybackContext={pyv:!0}),c.playerRequest&&(c.playerRequest.playbackContext.adPlaybackContext={pyv:!0}),o=JSON.stringify(c),n[0]=o}}catch(e){}return Reflect.apply(e,t,n)}};window.TextEncoder.prototype.encode=new Proxy(window.TextEncoder.prototype.encode,e)})();
-www.youtube.com#%#(()=>{const t={apply:(t,e,a)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv"))return Reflect.apply(t,e,a);try{const n=a[0];if(!n?.context?.client)return Reflect.apply(t,e,a);n.playbackContext&&(n.playbackContext.adPlaybackContext={pyv:!0}),n.playerRequest&&(n.playerRequest.playbackContext.adPlaybackContext={pyv:!0}),a[0]=n}catch(t){}return Reflect.apply(t,e,a)}};window.JSON.stringify=new Proxy(window.JSON.stringify,t)})();
+www.youtube.com#%#(()=>{const t={construct:(t,e,c)=>{try{const n=e[0];let o=e[1]?.body;if(!n?.includes("youtubei")||location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||!o)return Reflect.construct(t,e,c);if(o.includes('"contentPlaybackContext"')||o.includes('"adSignalsInfo"')){const n=JSON.parse(o);if(!n.context?.client)return Reflect.construct(t,e,c);n.playbackContext&&(n.playbackContext.adPlaybackContext={pyv:!0}),n.playerRequest&&(n.playerRequest.playbackContext.adPlaybackContext={pyv:!0}),o=JSON.stringify(n),e[1].body=o}}catch(t){}return Reflect.construct(t,e,c)}};window.Request=new Proxy(window.Request,t)})();
+www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,n);try{let o=n[0];if(o&&(o.includes('"contentPlaybackContext"')||o.includes('"adSignalsInfo"'))){const c=JSON.parse(o);if(!c.context?.client)return Reflect.apply(e,t,n);c.playbackContext&&(c.playbackContext.adPlaybackContext={pyv:!0}),c.playerRequest&&(c.playerRequest.playbackContext.adPlaybackContext={pyv:!0}),o=JSON.stringify(c),n[0]=o}}catch(e){}return Reflect.apply(e,t,n)}};window.TextEncoder.prototype.encode=new Proxy(window.TextEncoder.prototype.encode,e)})();
+www.youtube.com#%#(()=>{const t={apply:(t,e,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(t,e,n);try{const a=n[0];if(!a?.context?.client)return Reflect.apply(t,e,n);a.playbackContext&&(a.playbackContext.adPlaybackContext={pyv:!0}),a.playerRequest&&(a.playerRequest.playbackContext.adPlaybackContext={pyv:!0}),n[0]=a}catch(t){}return Reflect.apply(t,e,n)}};window.JSON.stringify=new Proxy(window.JSON.stringify,t)})();
 !+ NOT_PLATFORM(ext_safari)
 youtube.com#%#//scriptlet('json-prune', 'entries.[-].command.reelWatchEndpoint.adClientParams.isAd')
 !+ NOT_OPTIMIZED
@@ -25930,6 +25930,7 @@ browsershots.org#@#.advert_area
 ||anybodyroutinefickle.com^
 ||anymind360.com^
 ||anyonegoal.com^
+||anysad.pro^
 ||anytimebananarecoil.com^
 ||anywaypossible.com^
 ||anzaxffpetu.com^
@@ -28852,6 +28853,7 @@ browsershots.org#@#.advert_area
 ||dammeesquire.cyou^
 ||dammywealth.com^
 ||damnifycurry.life^
+||damoselbuzz.shop^
 ||dampedvisored.com^
 ||danaitebijous.world^
 ||dandyleapt.com^
@@ -29159,6 +29161,7 @@ browsershots.org#@#.advert_area
 ||dguchqdysy.com^
 ||dgxdftuoicarr.site^
 ||dgxmvglp.com^
+||dharupal.com^
 ||dhbbfvljzjouy.website^
 ||dhbuznztkqdqx.site^
 ||dhgyjypihnuyq.com^
@@ -32843,6 +32846,7 @@ browsershots.org#@#.advert_area
 ||izitrckr.com^
 ||izkivydhiqfjx.store^
 ||izoga.xyz^
+||izooksujeng.net^
 ||izumicaninus.click^
 ||j6mn99mr0m2n.com^
 ||ja2n2u30a6rgyd.com^
@@ -37459,6 +37463,7 @@ browsershots.org#@#.advert_area
 ||qdjnsifcrdpprxx.com^
 ||qdlwwtkahhs.com^
 ||qdpobnxzupwoj.store^
+||qdvdesuqdanwc.store^
 ||qedtonlets.digital^
 ||qeefxyltwpruv.website^
 ||qefflytwwfe.com^
@@ -39060,6 +39065,7 @@ browsershots.org#@#.advert_area
 ||sizzledoutfort.com^
 ||sizzpalamae.rest^
 ||sjgtsqnmrqswz.space^
+||sjkigukddtknz.store^
 ||sjosepaqwwcbh.site^
 ||sjoukeexedral.com^
 ||sjqgmtyxlrjlc.top^
@@ -39501,6 +39507,7 @@ browsershots.org#@#.advert_area
 ||staggereddam.com^
 ||staggeredravehospitality.com^
 ||stagloatsaird.net^
+||staindumpexists.com^
 ||stained-normal.pro^
 ||staininhibitfaraway.com^
 ||staipseegnauw.com^
@@ -40928,6 +40935,7 @@ browsershots.org#@#.advert_area
 ||unnervesuede.cyou^
 ||unnjrucbnhyijmu.com^
 ||unntvrpwfzluf.store^
+||unpackelasticlens.com^
 ||unpacksminas.world^
 ||unpanchamon.com^
 ||unpetalchalder.cfd^
@@ -41849,6 +41857,7 @@ browsershots.org#@#.advert_area
 ||wgudvecmihgqy.site^
 ||wgutvwmkwmphq.com^
 ||wgvqa.club^
+||wgwcubhr.com^
 ||wgzaprexwmzki.site^
 ||whackedburdon.com^
 ||whackypokomo.cfd^
@@ -42612,6 +42621,7 @@ browsershots.org#@#.advert_area
 ||yhbcii.com^
 ||yhcyyokvksgne.website^
 ||yhettexs.net^
+||yhidnrforbqby.online^
 ||yhktexeofaxhk.com^
 ||yhmqcuzbgzuix.space^
 ||yhsegbkmhvrgx.space^
