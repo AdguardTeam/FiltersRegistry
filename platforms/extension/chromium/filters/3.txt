@@ -1,9 +1,9 @@
-! Checksum: 45+Rtlk0U4Cb8CFido8qzg
-! Diff-Path: ../patches/3/3-s-1760523120-3600.patch
+! Checksum: SW6G75OIdVKNj3UdlevD4g
+! Diff-Path: ../patches/3/3-s-1760526637-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.92.92
-! TimeUpdated: 2025-10-15T10:08:16+00:00
+! Version: 2.0.92.93
+! TimeUpdated: 2025-10-15T11:06:41+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18,6 +18,9 @@
 ! Bad: example.org###rek (should be in specific.txt)
 !
 !
+! Youtube
+!+ NOT_PLATFORM(ext_chromium_mv3)
+www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
 ! Ad-Shield
 ! Prevent Ad-Shield tracking script - Only tracking ad block traffic. NOT Ad-Shield advertisement or protection.
 slobodnadalmacija.hr,meconomynews.com,brandbrief.co.kr,motorgraph.com#%#//scriptlet('abort-current-inline-script', 'atob', 'eval(decodeURIComponent(escape(window.atob("KCgpPT5')
@@ -551,6 +554,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !
 !
 !
+||wurflcloud.com^
+||tvspix.com^
 ||events.stylux.io^
 ||*-sdk.rum.aliyuncs.com^
 ||digitalcamp.co.kr^$third-party
