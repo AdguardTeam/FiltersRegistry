@@ -1,9 +1,9 @@
-! Checksum: 4AwG1Te4XsSIP1DqausYAQ
-! Diff-Path: ../patches/18/18-s-1760562637-3600.patch
+! Checksum: 7DP1bXQUh7BR29PTi6aKYA
+! Diff-Path: ../patches/18/18-s-1760569827-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.72.37
-! TimeUpdated: 2025-10-15T21:07:07+00:00
+! Version: 2.0.72.38
+! TimeUpdated: 2025-10-15T23:06:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2546,6 +2546,8 @@ greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.
 !
 ! NOTE: Regular rules
 !
+fos-lighting.eu#%#//scriptlet('set-cookie', 'noAds', '1')
+fos-lighting.eu#%#//scriptlet('set-cookie', 'savedCookie', '1')
 avinor.no#%#//scriptlet('trusted-click-element', '.cookie-banner--open button[data-variant="primary"] + [data-variant="primary"]', '!cookie:avi-gpdr-marketing', '500')
 parking.spb.ru##main + div.bottom-4
 mm.ru##.cookie-accept-popup-wrapper
@@ -17623,6 +17625,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215559
+fos-lighting.eu#@##cookieAlert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215554
 avinor.no#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215381

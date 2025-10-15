@@ -1,9 +1,9 @@
-! Checksum: qvtpmMqKLviCqAVL+/oUNA
-! Diff-Path: ../patches/14/14-s-1760562621-3600.patch
+! Checksum: dKZ+rrK/+mSgz3eJ1JT2sw
+! Diff-Path: ../patches/14/14-s-1760569811-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.46.0
-! TimeUpdated: 2025-10-15T21:07:00+00:00
+! Version: 2.2.46.1
+! TimeUpdated: 2025-10-15T23:06:53+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2543,6 +2543,8 @@ greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.
 !
 ! NOTE: Regular rules
 !
+fos-lighting.eu#%#//scriptlet('set-cookie', 'noAds', '1')
+fos-lighting.eu#%#//scriptlet('set-cookie', 'savedCookie', '1')
 avinor.no#%#//scriptlet('trusted-click-element', '.cookie-banner--open button[data-variant="primary"] + [data-variant="primary"]', '!cookie:avi-gpdr-marketing', '500')
 parking.spb.ru##main + div.bottom-4
 mm.ru##.cookie-accept-popup-wrapper
@@ -17599,6 +17601,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215559
+fos-lighting.eu#@##cookieAlert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215554
 avinor.no#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215381
