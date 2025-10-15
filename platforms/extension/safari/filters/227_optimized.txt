@@ -1,9 +1,9 @@
-! Checksum: CAEvA4q8cxg88vUtlwYkJg
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1760517880-14400.patch
+! Checksum: SIv2Tcqx/Ua6H9RMh0/frg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1760560816-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.9
-! TimeUpdated: 2025-10-15T08:40:48+00:00
+! Version: 2.0.23.10
+! TimeUpdated: 2025-10-15T20:36:21+00:00
 ! Expires: 1 day (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -3538,6 +3538,7 @@ m.dcinside.com#%#//scriptlet('prevent-addEventListener', 'pageshow', '/\.persist
 m.dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
 gall.dcinside.com#%#//scriptlet('abort-on-property-read', 'blockedState')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
+dcinside.com#$?##gaejukimg { remove: true; }
 chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')

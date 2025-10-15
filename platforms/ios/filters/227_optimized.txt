@@ -1,9 +1,9 @@
-! Checksum: pWmUogsuDXizX89Co+DIfg
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1760517887-14400.patch
+! Checksum: TIDEYBtHLWb5+UBNZ2CZNw
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1760560823-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.9
-! TimeUpdated: 2025-10-15T08:40:48+00:00
+! Version: 2.0.23.10
+! TimeUpdated: 2025-10-15T20:36:21+00:00
 ! Expires: 1 day (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -3551,6 +3551,7 @@ m.dcinside.com#%#//scriptlet('prevent-addEventListener', 'pageshow', '/\.persist
 m.dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
 gall.dcinside.com#%#//scriptlet('abort-on-property-read', 'blockedState')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
+dcinside.com#$?##gaejukimg { remove: true; }
 chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
@@ -3671,5 +3672,6 @@ tvwiki22.com,tvwiki23.com,tvwiki24.com,tvwiki25.com,tvwiki26.com,tvwiki27.com,tv
 /https:\/\/tvwiki[0-9]+\.com\/AD\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
 /https:\/\/tvwiki[0-9]+\.com\/data\/banner\//$domain=tvwiki22.com|tvwiki23.com|tvwiki24.com|tvwiki25.com|tvwiki26.com|tvwiki27.com|tvwiki28.com|tvwiki29.com|tvwiki30.com|tvwiki31.com|tvwiki32.com|tvwiki33.com|tvwiki34.com
 ||hoohootv*.*/static/bnner/$domain=hoohootv310.xyz|hoohootv311.xyz|hoohootv312.xyz|hoohootv313.xyz|hoohootv314.xyz|hoohootv315.xyz|hoohootv316.xyz|hoohootv317.xyz|hoohootv318.xyz|hoohootv319.xyz|hoohootv320.xyz|hoohootv321.xyz
+/https:\/\/tvwiki[0-9]+\.net\/data\/banner\//$domain=tvwiki1.net|tvwiki2.net|tvwiki3.net|tvwiki4.net|tvwiki5.net|tvwiki6.net|tvwiki7.net|tvwiki8.net|tvwiki9.net|tvwiki10.net|tvwiki11.net|tvwiki12.net|tvwiki13.net|tvwiki14.net|tvwiki15.net
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
 2798731938.zigcou.com#%#//scriptlet('trusted-replace-node-text', 'script', '{"props":{"pageProps":{"initialState":{', '"isClicked":false', '"isClicked":true')

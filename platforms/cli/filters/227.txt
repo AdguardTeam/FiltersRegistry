@@ -1,9 +1,9 @@
-! Checksum: 0Bo9Gu8JY4Taey360JsK/A
-! Diff-Path: ../patches/227/227-s-1760517864-14400.patch
+! Checksum: 8XPoHEzyTAbZdYvpWXahKw
+! Diff-Path: ../patches/227/227-s-1760560800-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.9
-! TimeUpdated: 2025-10-15T08:40:48+00:00
+! Version: 2.0.23.10
+! TimeUpdated: 2025-10-15T20:36:21+00:00
 ! Expires: 12 hours (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -1373,6 +1373,7 @@
 !
 ! DOMAIN-REFRESHER: START
 !
+/^https:\/\/tvwiki[0-9]+\.net\/data\/banner\//$domain=/tvwiki[0-9]+\.net/
 ||wdwd*.com/data/banner/
 ||static.tzstatic.top/z/*.gif
 ||ddal.xyz/project/mc/js/nuevo.min.js
@@ -3666,6 +3667,7 @@ m.dcinside.com#%#//scriptlet('prevent-addEventListener', 'pageshow', '/\.persist
 m.dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
 gall.dcinside.com#%#//scriptlet('abort-on-property-read', 'blockedState')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
+dcinside.com#$?##gaejukimg { remove: true; }
 ! chzzkban.xyz
 chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
