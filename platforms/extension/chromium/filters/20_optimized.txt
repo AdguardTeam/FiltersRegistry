@@ -1,5 +1,5 @@
-! Checksum: WeUwgAZLtlNk/xnGPFXv6g
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1760458309-3600.patch
+! Checksum: bmhiDBGyqqMIe7vZi7nCRg
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1760495941-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
 ! Version: 2.0.24.7
@@ -134,6 +134,7 @@ cloud.mail.ru##div[class^="ErrorPage__downloadAppContainer--"]
 nur.kz##.js-branding-top
 holidaycheck.de##.hc-footer__app-promo
 singlecare.com##.stickyAppPromoBanner
+goodrx.com##div[data-qa="smart-banner"]
 substack.com#?#.pencraft > button:contains(/^Get (the )?app$/)
 shoebacca.com##div[id^="smsbump-form"]:has(div[aria-label="Shoebacca subscribe offer"])
 golove.ai#%#//scriptlet('trusted-set-local-storage-item', 'mobile_for_better_experience_last_shown', '$now$')
@@ -345,6 +346,9 @@ getir.com#%#//scriptlet('set-cookie', 'hideSmartBanner', 'true')
 kijiji.ca##div[data-testid="MarketingBanner"]
 rentio.jp##.footer > div[class="border-top border-secondary"][style="background-color:#edf6fa;"]
 etsy.com#%#//scriptlet('set-cookie', 'web_signals_prompt_dismissed', 'true')
+bbcgoodfood.com#$#div[class^="tp-modal"][style="z-index: 300050; display: block;"] { display: none !important; }
+bbcgoodfood.com#$#div[class^="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
+bbcgoodfood.com#$#html > body.tp-modal-open { overflow: auto !important; }
 trip.com##.h5-install-banner
 mail.proton.me##.content-container > div[aria-label="Notification"]:has(> a[href*="webapp-mail-topbanner"])
 ljsilvers.com##.site-popup
@@ -1327,7 +1331,6 @@ niutrans.com##.diaBox
 radiokp.ru##.dummy-app-store-radio-block
 radiokp.ru##.dummy-google-play-radio-block
 rudaw.net##.smallMobileImage
-||carservice.r10s.jp/img/top/sidebar-app-
 myoji-kamon.net,myoji-yurai.net###app_ad
 boomplay.com,speedtest.vn##.appStore
 wordreference.com##a[title$=" App"]
