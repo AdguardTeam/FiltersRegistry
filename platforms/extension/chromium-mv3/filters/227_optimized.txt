@@ -1,8 +1,8 @@
-! Checksum: MsIvp06nLVhrZ1fKb3dubg
+! Checksum: 7JnzNx8gUyYJlOklpard0g
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.8
-! TimeUpdated: 2025-10-15T00:48:05+00:00
+! Version: 2.0.23.9
+! TimeUpdated: 2025-10-15T08:40:48+00:00
 ! Expires: 10 days (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -3540,15 +3540,16 @@ t.hi098123.com#@#ins.adsbygoogle[data-ad-slot]
 @@||googletagmanager.com/gtag/js$domain=t.hi098123.com,script
 !#safari_cb_affinity
 t.hi098123.com#$#.tabad { top: -100px !important; }
-dcinside.com#%#//scriptlet('abort-current-inline-script', 'EventTarget.prototype.addEventListener', '_ad=')
-dcinside.com#%#//scriptlet('remove-cookie', 'gaejuki_ad')
-dcinside.com#%#//scriptlet('prevent-setTimeout', 'addc.dcinside.com')
-dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
-dcinside.com#%#//scriptlet('abort-current-inline-script', 'setTimeout', 'ajax/naverad')
-dcinside.com#%#//scriptlet('abort-on-property-read', 'blockedState')
+||dcinside.com^$cookie=gaejuki_ad
+m.dcinside.com#%#//scriptlet('prevent-setTimeout', 'addc.dcinside.com')
+m.dcinside.com#%#//scriptlet('prevent-addEventListener', 'pageshow', '/\.persisted *&& *interval_Ad *&& *clearInterval\( *interval_Ad *\)/')
+m.dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
+gall.dcinside.com#%#//scriptlet('abort-on-property-read', 'blockedState')
+gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
 chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
+erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 ||shana.pe.kr/shana_check/scp*.js$script
 remiz.co.kr#%#//scriptlet('spoof-css', '.adsbygoogle', 'display', 'block')
