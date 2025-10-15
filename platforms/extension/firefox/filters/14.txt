@@ -1,9 +1,9 @@
-! Checksum: lsIIJqXNm91irc7Sl+IzGQ
-! Diff-Path: ../patches/14/14-s-1760559111-3600.patch
+! Checksum: ZGhRa8e6SEkuMwLPqlIa7g
+! Diff-Path: ../patches/14/14-s-1760562626-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.45.99
-! TimeUpdated: 2025-10-15T20:08:18+00:00
+! Version: 2.2.46.0
+! TimeUpdated: 2025-10-15T21:07:00+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2543,6 +2543,7 @@ greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.
 !
 ! NOTE: Regular rules
 !
+avinor.no#%#//scriptlet('trusted-click-element', '.cookie-banner--open button[data-variant="primary"] + [data-variant="primary"]', '!cookie:avi-gpdr-marketing', '500')
 parking.spb.ru##main + div.bottom-4
 mm.ru##.cookie-accept-popup-wrapper
 thegamebusiness.com#%#//scriptlet('set-local-storage-item', 'SUBSTACK_USER_HID_COOKIE_BANNER_4150086', 'true')
@@ -17640,6 +17641,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215554
+avinor.no#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215381
 lessentiel.lu#@##onetrust-consent-sdk
 @@||cdn.cookielaw.org/consent/$domain=lessentiel.lu
