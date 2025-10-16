@@ -1,9 +1,9 @@
-! Checksum: KU17kAvg35vPj6HiSFAyXw
-! Diff-Path: ../patches/227/227-s-1760560823-14400.patch
+! Checksum: IdyWlic3g1SLopu8niJk7Q
+! Diff-Path: ../patches/227/227-s-1760589696-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.10
-! TimeUpdated: 2025-10-15T20:36:21+00:00
+! Version: 2.0.23.11
+! TimeUpdated: 2025-10-16T04:37:25+00:00
 ! Expires: 1 day (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -3667,10 +3667,11 @@ t.hi098123.com#$#.tabad { top: -100px !important; }
 ! dcinside.com
 m.dcinside.com#%#//scriptlet('prevent-setTimeout', 'addc.dcinside.com')
 m.dcinside.com#%#//scriptlet('prevent-addEventListener', 'pageshow', '/\.persisted *&& *interval_Ad *&& *clearInterval\( *interval_Ad *\)/')
+m.dcinside.com#%#//scriptlet('prevent-fetch', 'addc.dcinside.com', 'emptyStr', 'basic')
 m.dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$remove$')
-gall.dcinside.com#%#//scriptlet('abort-on-property-read', 'blockedState')
+gall.dcinside.com#%#//scriptlet('set-constant', 'blockedState', '', '', '', 'true')
+gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/background:[\s\S]+setTimeout\( *\( *\) *=> *[A-Za-z0-9]+\.remove\( *\)[\s\S]+Math\.random\( *\) *< *percent *\/ *100/')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
-dcinside.com#$?##gaejukimg { remove: true; }
 ! chzzkban.xyz
 chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
