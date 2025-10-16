@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: KSd05EfQQE97BFWxplJYCw
-! Diff-Path: ../patches/224/224-s-1760631143-3600.patch
+! Checksum: zPKi0eVZgG/u8Wprakq79w
+! Diff-Path: ../patches/224/224-s-1760634651-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.45.89
-! TimeUpdated: 2025-10-16T16:08:47+00:00
+! Version: 2.1.45.90
+! TimeUpdated: 2025-10-16T17:07:19+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2848,7 +2848,12 @@ csdn.net###footerRightAds
 /^(https|ws|wss):\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/([a-z]{1,3}\/){0,1}\d+\?[a-z]+=[a-z0-9]+($|&)/$script,websocket,third-party
 /^https:\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/bug\?i=\d+$/
 /^https:\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/[a-z]{1,3}\/\d+\?is_not=/$all
-! Specific rules to avoid redirects on tap
+! https://www.hytfgm.com/detail/141222.html
+/hm/*&r=*&t=*&p=*&sign=$script,websocket
+/^https:\/\/([a-z]+\.){2}\w{2,3}\/\d{4}\/\d{2}\/\d{10,}\.txt$/$third-party,xmlhttprequest,match-case
+##body > [style^="display: block; width: 100%; height:"]:empty
+##body > [style^="display: block; width: 100%; height:"]:empty ~ :not(div)[style^="display: block; z-index: "]
+! Specific rules to avoid redirects on tap with very similar scripts
 enhuku.com##+js(set-constant, adObj, noopFunc)
 m.13xsw.com,wap.yushuwu.cloud##+js(addEventListener-defuser, touchend, clientheight)
 !

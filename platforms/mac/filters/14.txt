@@ -1,8 +1,8 @@
-! Checksum: pMOPS5Aarget6pFBu0RU8Q
+! Checksum: Zom1MFusX8YysShF0pc8OQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.46.14
-! TimeUpdated: 2025-10-16T15:07:29+00:00
+! Version: 2.2.46.15
+! TimeUpdated: 2025-10-16T17:07:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2543,6 +2543,7 @@ homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.c
 !
 ! NOTE: Regular rules
 !
+epaper.wittich.de#%#//scriptlet('trusted-set-local-storage-item', 'DM_prefs', '{"cookie_hint":true,"accept_cookies":false,"_childs":[],"_type":1}')
 ford-moessbauer-waldershof.de#%#//scriptlet('trusted-click-element', '#cookie-consent-modal #consent-reject', '!cookie:Consent', '1500')
 context.news,doppelherz.de#%#//scriptlet('set-cookie', 'cookieConsent', 'false')
 vegvesen.no,shuttle.rs,free.navalny.com,tv-in-diretta.it,energydashboard.co.uk,oekolandbau.de,augenheilkunde.de#%#//scriptlet('set-cookie', 'CookieConsent', 'false')
@@ -16612,6 +16613,7 @@ m.standaard.be##.gdpr-dialog
 akku-maeser.at#%#//scriptlet('set-cookie-reload', 'cookies_confirmed_1', '1')
 ! TODO: replace by the scriptlet when https://github.com/AdguardTeam/Scriptlets/issues/423
 !       will be done and products with new Scriptlets lib will be released
+joyn.de#%#(()=>{let t,e=!1;const o=new MutationObserver(((e,o)=>{const c=t?.querySelector('cmp-button[variant="primary"]');c&&(c.click(),o.disconnect())})),c={apply:(c,n,a)=>{const r=Reflect.apply(c,n,a);return!e&&n.matches("cmp-dialog")&&(e=!0,t=r),o.observe(r,{subtree:!0,childList:!0}),r}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,c)})();
 blog.seznam.cz,kupi.cz#%#(()=>{let t;const e=new MutationObserver(((e,o)=>{const n=t?.querySelector('button[data-testid="button-agree"]');n&&(setTimeout((()=>{n.click()}),500),o.disconnect())})),o={apply:(o,n,c)=>{const a=Reflect.apply(o,n,c);return n.matches(".szn-cmp-dialog-container")&&(t=a),e.observe(a,{subtree:!0,childList:!0}),a}};window.Element.prototype.attachShadow=new Proxy(window.Element.prototype.attachShadow,o)})();
 !
 atlas-diamant.de#%#//scriptlet('set-cookie', 'ckies_cookielaw', 'allow')
