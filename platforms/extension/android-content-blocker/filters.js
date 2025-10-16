@@ -841,8 +841,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.55.46",
-			"timeUpdated": "2025-10-16T08:39:52+0000",
+			"version": "2.1.55.47",
+			"timeUpdated": "2025-10-16T08:50:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1191,8 +1191,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.52.12",
-			"timeUpdated": "2025-10-16T08:40:09+0000",
+			"version": "2.1.52.13",
+			"timeUpdated": "2025-10-16T08:50:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1288,8 +1288,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.55.74",
-			"timeUpdated": "2025-10-16T08:40:16+0000",
+			"version": "2.1.55.75",
+			"timeUpdated": "2025-10-16T08:50:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1312,8 +1312,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.49.46",
-			"timeUpdated": "2025-10-16T08:40:17+0000",
+			"version": "2.1.49.47",
+			"timeUpdated": "2025-10-16T08:50:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1502,8 +1502,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.77.69",
-			"timeUpdated": "2025-10-16T08:40:25+0000",
+			"version": "2.1.77.70",
+			"timeUpdated": "2025-10-16T08:50:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1989,8 +1989,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.61.46",
-			"timeUpdated": "2025-10-16T08:40:54+0000",
+			"version": "2.1.61.47",
+			"timeUpdated": "2025-10-16T08:51:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
