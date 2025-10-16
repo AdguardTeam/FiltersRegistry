@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0gxHuleG6U2AHD6b8hufgQ
-! Diff-Path: ../patches/14/14-s-1760602410-3600.patch
+! Checksum: exaYPF74jbQvs0Rm5r7xvg
+! Diff-Path: ../patches/14/14-s-1760605938-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.46.7
-! TimeUpdated: 2025-10-16T08:09:41+00:00
+! Version: 2.2.46.8
+! TimeUpdated: 2025-10-16T09:08:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2494,6 +2494,8 @@ greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.
 !
 ! NOTE: Regular rules
 !
+context.news,doppelherz.de##+js(set-cookie, cookieConsent, false)
+vegvesen.no,shuttle.rs,free.navalny.com,tv-in-diretta.it,energydashboard.co.uk,oekolandbau.de,augenheilkunde.de##+js(set-cookie, CookieConsent, false)
 acb.com.vn###wrapper > div[style^="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index:"]
 fos-lighting.eu##+js(set-cookie, noAds, 1)
 fos-lighting.eu##+js(set-cookie, savedCookie, 1)
@@ -8253,8 +8255,8 @@ nextrp.ru##.modalAcceptCookies
 open.ru##div[data-react-class="CookiesAgreement"]
 nahodka-magazin.ru##.cookies_message_container
 taisei-techsolu.jp##.gdpr-area
-erzgebirge-gedachtgemacht.de,erzgebirgskreis.de##.fnn-cookiemanager
-/fnn_cookiemanager/*/fnn-cookiemanager.js$domain=erzgebirgskreis.de|erzgebirge-gedachtgemacht.de
+dachmarke-erzgebirge.de,erzgebirge-gedachtgemacht.de,erzgebirgskreis.de##.fnn-cookiemanager
+/fnn_cookiemanager/*/fnn-cookiemanager.js$domain=erzgebirgskreis.de|erzgebirge-gedachtgemacht.de|dachmarke-erzgebirge.de
 sbermarket.ru##div[class^="CookiesConcent_"]
 thaiticketmajor.com##.privacy-policy-bar
 flixclassic.pl#$#.app-gdpr { display: none !important; }
@@ -15933,7 +15935,6 @@ schnellladepark.app##+js(set-cookie, CookiesAkzeptiert, yes)
 come-on.de#$?#.cmp-modal-open { overflow: auto !important; }
 fostertravel.pl##+js(set-cookie, ft_rodo_info, accepted)
 zamekgrodno.pl,sztolnie.pl##+js(set-constant, _ckyConfig, undefined)
-context.news,doppelherz.de##+js(set-cookie, cookieConsent, false)
 odido.nl##+js(abort-current-script, jQuery, #cookiePopup)
 teknokutu.com,i-kolobrzeg.pl##+js(set-cookie-reload, cookieConsent, accepted)
 app.erevie.pl##+js(set-cookie, cookies-accept, 1)
@@ -16390,7 +16391,6 @@ coolmath.com##+js(set-cookie, GDPR_Reject, true)
 johnlewis.com##+js(set-cookie, JOHNLEWIS_ENSIGHTEN_PRIVACY_Functional, 1)
 newrelic.com##+js(set-cookie, newrelic-gdpr-consent, false)
 reebok.*##+js(set-cookie, notice_preferences, 1)
-shuttle.rs,free.navalny.com,tv-in-diretta.it,energydashboard.co.uk,oekolandbau.de,augenheilkunde.de##+js(set-cookie, CookieConsent, false)
 hyojito.co.jp,bonus.com.tr##+js(set-cookie, cookie-agreement, 1)
 eurosportplayer.com##+js(set-cookie, cookie-banner.accepted, true)
 clipchamp.com##+js(set-cookie, acceptCookies, false)
@@ -33065,6 +33065,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+uranusgeneralstore.com###smile-ui-container
 nypost.com##.wp-block-nyp-editor-universal-promo
 dreamies.de###noreg-info
 financialexpress.com##.article_follow_us
@@ -45201,11 +45202,11 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+fanfictionero.com,fic.fan,ficbook.net##.android-smart-banner
 livesoccertv.com##div[style]:has(> a[href^="https://play.google.com/store/apps/details?id=com.livesoccertv"])
 online.enerjisa.com.tr#$#html { margin-top: 0 !important; }
 m.yelp.*##div[class]:has(> div[class^="overlay-wrapper"] > a[data-testid="pitch-link"][href^="https://www.yelp.com/search?"])
 fashionnova.com##.footer > div.fixed.bottom-0:has(> div.relative a[href^="https://play.google.com/store/apps/details?id=co.tapcart.app.npQt0DXZpj"])
-fanfictionero.com,ficbook.net##.android-smart-banner
 tripadvisor.com##div[class]:has(> a[href^="https://tripadvisor.onelink.me/"][href*="?pid=mobilewebsite"])
 joom.com##div[class^="disclaimer___"] + div > div[class^="wrapper___"] > div[class^="banner___"]
 x.com##div[data-testid="primaryColumn"] > div[aria-label] > div > div:has(> a[href^="https://apps.apple.com/app/apple-store/id333903271"])
@@ -50051,7 +50052,7 @@ znanierussia.ru##div[class^="banner-"][class$="-desktop"]
 wcostream.tv###headerPadstmOut center > a[href^="https://www.wcopremium.tv/wp-login.php"] > img
 beeline.ru##header > div > div[aria-hidden="false"]:has(> div > a[data-metric-name="headerMetric:handleTopBannerClick"])
 citilink.ru##+js(set-cookie, header_banner_hidden, true)
-fanfictionero.com,ficbook.net##.primary-box-with-button
+fanfictionero.com,fic.fan,ficbook.net##.primary-box-with-button
 github.blog##.post__content > aside:has(> p > a[href="https://git-merge.com/"])
 crxsoso.com##.right > div.hover-animate
 mir24.tv##div[class^="SidebarWidgets_"] > div[class^="Banner_"]:has(> a[href="/about/advertising"])
