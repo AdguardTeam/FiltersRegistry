@@ -1,9 +1,9 @@
-! Checksum: yEKYAKSM0P99DiVpY53/Lw
-! Diff-Path: ../patches/2/2-s-1760595223-3600.patch
+! Checksum: RATj23ay/wOOy22a9JGbDw
+! Diff-Path: ../patches/2/2-s-1760598702-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.18.23
-! TimeUpdated: 2025-10-16T06:09:46+00:00
+! Version: 2.4.18.24
+! TimeUpdated: 2025-10-16T07:07:49+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10330,6 +10330,9 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215573
+convert.guru#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=convert.guru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215562
 asd.homes#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '_0x')
 asd.homes#$#body > .ad-container { display: block !important; }
@@ -33903,6 +33906,7 @@ vidbom.com#%#//scriptlet("abort-current-inline-script", "atob", "removeCookie")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164633
 instagram.com#%#!function(){new MutationObserver((function(){document.querySelectorAll("article > div[class] > div[class]").forEach((function(e){Object.keys(e).forEach((function(c){if(c.includes("__reactEvents")||c.includes("__reactProps")){c=e[c];try{c.children?.props?.adFragmentKey?.items&&e.parentNode.remove()}catch(c){}}}))}))})).observe(document,{childList:!0,subtree:!0});}();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/153636
+pinterest.*#%#//scriptlet('json-prune', 'resource_response.data.[-].ad_data')
 ! Blocking ads based on property
 pinterest.*#%#(()=>{let e=0;const i=[];new MutationObserver((function(){document.querySelectorAll("div[role='list'] > div[role='listitem']:not([style*='display: none']) div[data-test-id='pinWrapper'], div[role='list'] > div[role='listitem']:not([style*='display: none']) div[data-test-id='pinWrapper'] > div[data-test-id]").forEach((s=>{Object.keys(s).forEach((t=>{if(t.includes("__reactProps")){const r=s[t];try{if(r?.children?.props?.children?.props?.pinKey?.adDestinationUrl||r?.children[1]?.props?.children[1]?.props?.children?.props?.pinKey?.adDestinationUrl||r?.children[0]?.props?.children[1]?.props?.children[1]?.props?.children?.props?.pinKey?.adDestinationUrl){const t=s.closest("div[role='list'] > div[role='listitem']:not([style*='display: none'])");if(!t)return;t.style="display: none !important;",e++;const r=t.querySelector('div[data-test-id="pinrep-footer"] > div[class] > div[class] > div[class]:last-child > div[class] > a[aria-label][href][rel] > div[class] > div[class] > div[class]');r&&(i.push(["Ad blocked based on property ["+e+"] -> "+r.innerText]),console.table(i))}}catch(e){console.error(e)}}}))}))})).observe(document,{childList:!0,subtree:!0})})();
 ! https://forum.adguard.com/index.php?threads/mac-adguard-2-4-3-718-facebook-sponsored-ads-are-not-blocked.37861
@@ -93468,6 +93472,7 @@ browsershots.org#@#.advert_area
 ||gtprmwvtduybm.online^
 ||gtrem.site^
 ||gtrlhbeizihyy.site^
+||gtrnxmkt.net^
 ||gttaints.com^
 ||gtthvpzlnmueh.store^
 ||gttpqreoakted.space^
@@ -99943,6 +99948,7 @@ browsershots.org#@#.advert_area
 ||menacing-profit.pro^
 ||menacingresource.pro^
 ||menagetownmen.life^
+||menderstooks.help^
 ||menews.org^
 ||menfolknihal.click^
 ||mengozia.xyz^
@@ -104163,6 +104169,7 @@ browsershots.org#@#.advert_area
 ||paahccjazxefd.website^
 ||paajfnsrnl.com^
 ||paappfga.com^
+||pabbhjvefvqic.website^
 ||pabjriyhlvedc.vip^
 ||paceaskhari.com^
 ||pacekami.com^
@@ -105459,6 +105466,7 @@ browsershots.org#@#.advert_area
 ||pnlgtgdkpyvdy.space^
 ||pnouting.com^
 ||pnperf.com^
+||pnpihksv.com^
 ||pnrbvdqxrqlfp.club^
 ||pnsmbazkcydwd.site^
 ||pnsqsv.com^
@@ -108682,6 +108690,7 @@ browsershots.org#@#.advert_area
 ||rezonedaurang.rest^
 ||rezrboarmmeaw.top^
 ||rezrboarmmemj.top^
+||rezrboarmmjma.top^
 ||rezrboarmmqmv.top^
 ||rfaoqpthoguh.com^
 ||rfarxhoikoda.xyz^
@@ -114390,6 +114399,7 @@ browsershots.org#@#.advert_area
 ||ujdsaljmviudi.space^
 ||ujdtnsgiagbxx.click^
 ||ujducdplaicwa.store^
+||ujdvvfrqujgfl.space^
 ||ujekrtaxqxy.com^
 ||ujnfkyefpvheo.site^
 ||ujooagoi.com^
@@ -115686,6 +115696,7 @@ browsershots.org#@#.advert_area
 ||vivianheats.life^
 ||vixensfigurae.cyou^
 ||vixentycckwtz.buzz^
+||vixytejdvhehx.com^
 ||vizardkeith.cyou^
 ||vizierspavan.com^
 ||vizoalygrenn.com^
@@ -116875,6 +116886,7 @@ browsershots.org#@#.advert_area
 ||wjljwqbzjlkkr.top^
 ||wjljwqbzjloqz.top^
 ||wjmepiytpjiki.website^
+||wjmghujaluysu.online^
 ||wjmgjvgjvmzyn.top^
 ||wjoknteqd.com^
 ||wjqpyvulryxtg.site^
