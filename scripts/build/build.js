@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { compile } from '@adguard/filters-compiler';
-import customPlatformsConfig from './custom_platforms.js';
+import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
 import { formatDate } from '../utils/strings.js';
 import {
     FOLDER_WITH_NEW_FILTERS,
@@ -82,7 +82,7 @@ const buildFilters = async () => {
         platformsPath,
         includedFilterIDs,
         excludedFilterIDs,
-        customPlatformsConfig,
+        CUSTOM_PLATFORMS_CONFIG,
     );
 
     // For the very first run, we should copy the built platforms into
