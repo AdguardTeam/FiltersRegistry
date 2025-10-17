@@ -1,13 +1,13 @@
-! Checksum: x/yGQNVXrN5fz68KErjIRA
-! Diff-Path: ../patches/251/251-s-1753966255-14400.patch
+! Checksum: GVq0/j95G3k5RnmnYVUnYw
+! Diff-Path: ../patches/251/251-s-1760589703-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.8.88
-! TimeUpdated: 2025-07-31T12:46:30+00:00
+! Version: 2.0.9.5
+! TimeUpdated: 2025-10-16T04:37:48+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 31July2025v1
+! OriginalVersion: 16October2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -16,11 +16,11 @@
 ! Special thanks to https://github.com/git-101-collab for providing a 3-digit amount of new entries to this list, and to https://github.com/iam-py-test for volunteering to speed up the addition of user-submitted entries.
 ! Compatible with rule 2 of https://xkcd.com/2235/
 ! Important notes:
-! - this list can not bypass tracker redirects through third-party domains. This can be done by strict-blocking said domain and using the ability to view parameters on the strict-block page or tools to bypass it.
-! - this list can not remove anything after the # in URLs. This is impossible in uBlock Origin and AdGuard.
-! - this list can not remove parameters added using https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState
-! - despite several attempts to, this list can not remove trailing $'s.
-! - As of 15/03/2024, this list does not work properly in Brave Browser, due to Brave missing several critical features this list uses. Please use this list only with uBlock Origin or AdGuard.
+! - This list can not bypass tracker redirects through third-party domains. This can be done by strict-blocking said domain and using the ability to view parameters on the strict-block page or tools to bypass it.
+! - This list can not remove anything after the # in URLs. This is impossible in uBlock Origin and AdGuard.
+! - This list can not remove parameters added using https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState
+! - Despite several attempts, this list can not remove trailing ?'s.
+! - As of 15/03/2024, this list did not work properly in Brave Browser, due to Brave missing several critical features this list uses. Please use this list only with uBlock Origin or AdGuard. User statements have however ticked in in mid-2025 that the breakage is smaller or gone.
 ! 🗺️ ——— General remove rules ——— 🗺️ !
 ! From AdGuard CoreLibs (11/11/2020)
 $removeparam=yclid
@@ -1471,6 +1471,17 @@ $removeparam=uls_trackid
 $removeparam=gad_campaignid
 ! https://www•vitusapotek•no/mage-og-tarm/halsbrann/pepcidduo-tyggetab-%7C-vitusapotek/p/006859?source=googleps&keyword=&device=m (16/06/2025)
 $removeparam=/^source=googleps$/
+! https://tromfy•com/nb/collections/alle-2?page=5&phcursor=eyJhbGciOiJIUzI1NiJ9•eyJzayI6InByb2R1Y3RfbGluZV9pdGVtc19jb3VudCIsInN2Ijo1MSwiZCI6ImYiLCJ1aWQiOjQ1NDE4ODA5ODUyMjUxLCJsIjoyNCwibyI6MCwiciI6IkNEUCIsInYiOjEsInAiOjV9•yhWrtaOthAhUuAzw517BTzDk2RQ0Li8oz32sKo8Vs1g (04/08/2025)
+$removeparam=phcursor
+! https://github.com/AdguardTeam/AdguardFilters/commit/1612d3f26f3007f86d11a61030a4f467660e6189
+$document,removeparam=line_uid
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-14044758
+$removeparam=duckai
+! The outcomes of various external links on winstallAPP
+$removeparam=/^ref=winstall$/
+! https://media•discordapp•net/attachments/1216338582243905546/1428095127590666331/9c95cdb4-f4a8-f011-bbd2-7ced8d93a186•png?ex=68f140bb&is=68efef3b&hm=9823d3f5245ed3e57643b13299cbad886826744b3d46123f30cdf558e3cc9311&=&format=webp&quality=lossless (16/10/2025)
+!+ NOT_OPTIMIZED
+$document,image,removeparam=/^=$/
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -1490,7 +1501,8 @@ $removeparam=ref,document,domain=404media.co|abebooks.com|accounts.binance.com|a
 $removeparam=tid,domain=clickbank.net|comixology.*|gap.com|gapcanada.ca|mintmobile.com|nhl.com|zulily.com
 ! https://addons•thunderbird•net/en-GB/thunderbird/addon/mailbox-alert/?src=cb-dl-users
 ! https://twitter•com/hashtag/mlpg5?src=hashtag_click (23/04/2021)
-$removeparam=src,document,domain=3cx.com|adafruit.com|ashford.com|bluejeans.com|bose.*|brave.com|buyzero.de|cytron.io|digikey.*|elastix.org|engadget.com|hallmark.com|hinta.fi|investors.com|kennethcole.com|kipling-usa.com|kubii.*|melopero.com|mozilla.org|msn.com|neeva.com|newbalance.com|nexo.io|officestationery.co.uk|okdo.com|raspipc.es|reichelt.*|tandfonline.com|thepihut.com|thunderbird.net|tiendatec.es|tokopedia.com|twitter.com|udemy.com|viking-direct.co.uk|webmd.com|welectron.com|wondershare.*|wuzhuiso.com|x.com|yahoo.com|tumblr.com|aliexpress.*
+! (yahooCOM; known to break the adding of Yahoo Mail accounts to Gmail/Outlook)
+$removeparam=src,document,domain=3cx.com|adafruit.com|ashford.com|bluejeans.com|bose.*|brave.com|buyzero.de|cytron.io|digikey.*|elastix.org|engadget.com|hallmark.com|hinta.fi|investors.com|kennethcole.com|kipling-usa.com|kubii.*|melopero.com|mozilla.org|msn.com|neeva.com|newbalance.com|nexo.io|officestationery.co.uk|okdo.com|raspipc.es|reichelt.*|tandfonline.com|thepihut.com|thunderbird.net|tiendatec.es|tokopedia.com|twitter.com|udemy.com|viking-direct.co.uk|webmd.com|welectron.com|wondershare.*|wuzhuiso.com|x.com|tumblr.com|aliexpress.*
 ! https://github.com/DandelionSprout/adfilt/pull/474
 ! https://user•qzone•qq•com/1250252459?source=aiostar (01/02/2022)
 $document,removeparam=source,denyallow=googlevideo.com,domain=1sol.io|about.gitlab.com|ashford.com|asos.com|att.com|awd-it.*|bankofamerica.com|barenecessities.com|bedbathandbeyond.com|betterprogramming.pub|blavity.com|blog.getadblock.com|blogs.oracle.com|bluemountain.com|boscovs.com|boxboat.com|britishcornershop.co.uk|brownells.*|burkesoutlet.com|bybit.com|choicehotels.com|chollometro.com|cmswire.com|coinpanel.com|contabo.com|cyberghostvpn.com|despegar.*|directv.com|discord.*|docs.google.com|docsend.com|drinkhint.com|educba.com|edx.org|eonline.com|escentual.com|eventbrite.*|fiverr.com|fool.com|forms.gle|gethotspotshield.com|gleam.io|goodcrypto.app|googleusercontent.com|greenhouse.io|greenvoice.fr|hammacher.com|hanes.com|hbomax.com|hobbyhall.fi|hotspotshield.com|hottopic.com|housing.com|hp.com|ilgusto.it|instagram.com|italian.tech|itnext.io|jacquielawson.com|jobs.deepl.com|just-eat.co.uk|kasta.io|ladbible.com|lastampa.it|learn.microsoft.com|medium.com|microsoftedgewelcome.microsoft.com|monster.fi|nautica.com|netflix.com|ngx.me|nortonsafe.search.ask.com|nytimes.com|onehanesplace.com|outnorth.fi|paypal.com|petsupplies.com|phonesoap.com|privatehomeclips.com|propublica.org|quizlet.com|remppatori.fi|repubblica.it|riteaid.com|runnode.com|search.brave.com|seekingalpha.com|sonos.com|spiceworks.com|squarespace.com|startpage.com|studio.co.uk|subscribe.gq.com|t.me|tcgplayer.com|theathletic.com|thedailybeast.com|themeditelegraph.com|tiktok.com|tokopedia.com|tommybahama.com|torrid.com|tous.com|tradingview.com|trendmicro.com|tumblr.com|twitter.com|user.qzone.qq.com|vimeo.com|webhint.io|wilsonsleather.com|wired.com|x.com|xd.wayin.com|ylighting.com|youtube.com|yubo.live
@@ -1503,7 +1515,7 @@ $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|
 ! (Exceptions: mail•qq•com, highFI, phpBB forums, flipkartCOM, various other sites)
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*
 ! No particular example (Zoom can't be added; see https://github.com/DandelionSprout/adfilt/issues/665)
-$removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|nextdns.io|tvtropes.org|yandex.com
+$removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|nextdns.io|tvtropes.org|yandex.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559915 and https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559864 (eBay can't be added; see https://github.com/DandelionSprout/adfilt/pull/514)
 $removeparam=keyword,domain=bindright.com|lendgo.com|reddit.app.link
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1707764
@@ -1677,7 +1689,8 @@ $removeparam=/^asc_.*$/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ||bing.com/?$removeparam=/^form=.*$/i
 ! https://www•bing•com/search?q=hello&sp=-1&pq=hello&sk=&sc=8-5&qs=n (04/03/2021)
 ||bing.$removeparam=sp
-$removeparam=sc,document,domain=bing.com|qvc.com|startpage.com
+! (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-14533757)
+$removeparam=sc,document,domain=bing.com|qvc.com
 $removeparam=sk,domain=aliexpress.*|bing.com
 ||bing.$removeparam=qs
 ! https://www•bing•com/search?PC=U531&q=hello&FORM=ANNTA1 (05/03/2021)
@@ -2584,7 +2597,7 @@ $removeparam=rank,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x
 ||malwarebytes.com^$removeparam=x-source
 ||malwarebytes.com^$removeparam=ADDITIONAL_x-source
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1159362
-$removeparam=did,domain=columbiasportswear.*|aws
+$removeparam=did,domain=columbiasportswear.*|aws|aws.amazon.*
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1169570
 ||ozon.ru^$removeparam=advert
 ||mediamarket.$removeparam=rbtc
@@ -3673,7 +3686,7 @@ $removeparam=afSmartRedirect
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6305974
 $removeparam=repost,domain=nbcnews.com|sacurrent.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6306026
-||wsj.com^$removeparam=st
+!!!||wsj.com^$removeparam=st (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-14492064)
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6306076
 ||uslecce.it^$removeparam=et
 ! https://www•skinnytaste•com/burger-recipes/?adt_ei=*|EMAIL|*
@@ -4180,6 +4193,51 @@ ref=dtf.ru$document,removeparam=ref
 ! https://edtibbetts•substack•com/p/iowa-republicans-want-political-bias?r=p9e96&triedRedirect=true (29/07/2025)
 ||substack.com^$removeparam=r
 ||substack.com^$removeparam=triedRedirect
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-14008771
+||firefox.com^$removeparam=redirect_source
+! https://search•brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd•onion/images?q=john+madden&source=web (21/08/2025)
+$removeparam=source,domain=search.brave.com|search.brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd.onion
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-14180038
+$removeparam=/^featured_on=pythonbytes$/
+$removeparam=/^ref=brianlovin\.com$/
+$removeparam=/^ref=buyoncesoftware$/
+$removeparam=/^ref=blog\.codinghorror\.com$/
+$removeparam=/^ref=connortumbleson\.com$/
+$removeparam=/^ref=dailydev$/
+$removeparam=/^ref=dzombak\.com$/
+$removeparam=/^ref=forourposterity\.com$/
+$removeparam=/^ref=futuretools\.io$/
+$removeparam=/^ref=gamingcreative\.co$/
+$removeparam=/^ref=ghuntley\.com$/
+$removeparam=/^ref=haxrob\.net$/
+$removeparam=/^ref=issylong\.com$/
+$removeparam=/^ref=martysweet\.co\.uk$/
+$removeparam=/^ref=blog\.min\.io$/
+$removeparam=/^ref=blog\.pragmaticengineer\.com$/
+$removeparam=/^ref=devblog\.qnx\.com$/
+$removeparam=/^ref=runtime\.news$/
+$removeparam=/^ref=blog\.skyvern\.com$/
+$removeparam=/^ref=spyglass\.org$/
+$removeparam=/^ref=thediff\.co$/
+$removeparam=/^ref=underfl0w\.com$/
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-14324027
+||blu-ray.com^$removeparam=tid
+||blu-ray.com^$removeparam=c
+||blu-ray.com^$removeparam=retailerid
+! https://downloads•sourceforge•net/project/gpredict/Gpredict/2•3•37/gpredict-win32-2•3•37•zip?ts=gAAAAABozKvSN0HK_QmMrVq5ScixE4T3EgfSUV9gobgRBkSZgqcCjDkVK_Q0cK92cImRLRna-VoSZ3CWDwgCBArnmMqrdMXcYg%3D%3D&use_mirror=altushost-swe&r=https%3A%2F%2Fsourceforge•net%2Fprojects%2Fgpredict%2Ffiles%2FGpredict%2F (19/09/2025)
+!!! ||downloads.sourceforge.net^$removeparam=ts (https://github.com/DandelionSprout/adfilt/issues/1154#issuecomment-3312737919)
+||downloads.sourceforge.net^$removeparam=r
+! https://github.com/AdguardTeam/AdguardFilters/commit/6bf3cccabe4516ca895d61f0cd6401a59e2c4683
+$document,removeparam=loclid
+! https://story•snapchat•com/p/a9868981-ac8a-4c7c-bdd3-bbd94c7cd46a/3298970858393600?timestamp=0&share_id=7TRPgdxQm4I&locale=nb-NO (03/10/2025)
+||snapchat.com^$removeparam=share_id
+||snapchat.com^$removeparam=/^timestamp=0$/
+! https://art•ngfiles•com/images/7074000/7074061_2473390_feitphikz_untitled-7074061•a6e40df658d48d6035c8a73e0144432c•webp?f1759264692
+||ngfiles.com^$removeparam=/^f\d{4,}=$/
+! https://github.com/DandelionSprout/adfilt/issues/1182
+||carrefoursa.com^$removeparam=v
+! https://www•carrefoursa•com/carrefour-domates-salcasi-830-g-teneke-p-30261401?has-promotion (14/10/2025)
+$removeparam=/^has-promotion=$/
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
