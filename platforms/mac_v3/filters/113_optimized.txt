@@ -1,9 +1,9 @@
-! Checksum: fT1EqBSMpXZ0ZaIuWQ05Og
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1760633023-14400.patch
+! Checksum: NAmEld9tZOrihvyhZtxczQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1760719383-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.78.45
-! TimeUpdated: 2025-10-16T16:39:01+00:00
+! Version: 2.1.78.46
+! TimeUpdated: 2025-10-17T16:38:14+00:00
 ! Expires: 12 hours (update frequency)
 &ad_count=
 &ad_unit_
@@ -323,6 +323,7 @@
 =GetAdHtml&
 =popunder&
 =publicite&
+=sponsored_links_
 =videoAd&
 =WebAdsLinks&
 ?468&60&
@@ -413,7 +414,6 @@ _ads_banner_
 _ads_desktop.
 _ads_one_
 _ads_view/
-_adsens_
 _adsfullsite&
 _adspromo.
 _adstyle.
@@ -562,6 +562,7 @@ _build=iclick-$popup
 ||adsenseguard.com^$third-party
 ||adserver.pm^$third-party
 ||adsgarden.com^$third-party
+||adsixmedia.fr^$third-party
 ||adskom.com^$third-party
 ||adsmmgp.com^$third-party
 ||adspsp.com^$third-party
@@ -626,7 +627,6 @@ _build=iclick-$popup
 ||dorcelcash.com^$third-party
 ||dreamstore.ch^$third-party
 ||e-mailit.com^$third-party
-||easy-rencontre.com^$third-party
 ||easysexe.com^$third-party
 ||ebuzzing.fr^$third-party
 ||ebzfbiueubria.com^$third-party
@@ -723,7 +723,6 @@ _build=iclick-$popup
 ||purlive.com^$~image,third-party
 ||pwspace.com^$third-party
 ||pxltgr.com^$third-party
-||pxt-networks.com^$third-party
 ||recoco.it^$third-party
 ||rederditium.com^$third-party
 ||regie24h00.com^$third-party
@@ -736,6 +735,7 @@ _build=iclick-$popup
 ||shareaholic.com^$third-party
 ||sharemyads.com^$third-party
 ||smartclip.net^$~object,third-party
+||smartmovies.net^$third-party
 ||smartstream.tv^$third-party
 ||spacepush.ru^$third-party
 ||static-od.com^$third-party
@@ -764,7 +764,6 @@ _build=iclick-$popup
 ||wedoo.com^$third-party
 ||wendise.com^$third-party
 ||widespace.com^$third-party
-||wiztube.xyz^$third-party
 ||xcamz.xyz^$third-party
 ||xn--ae-tja.ch^$third-party
 ||xpicw.top^$third-party
@@ -834,6 +833,7 @@ _build=iclick-$popup
 ||admiralugly.com^
 ||admiredexcrete.com^
 ||admithelperbusy.com^
+||adornmenttaunt.com^
 ||adslop.com^
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
@@ -2199,7 +2199,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||cdn.tirage-gagnant.com/js/dynamic-ban-
 ||centerblog.net/cadre-*?zoneid=
 ||centerblog.net/cu.js
-||choisir-ses-lunettes.com^*/bannieres/
 ||clubpoker.net/medias/images/club-poker/habillages/
 ||coco.gg/chat/bigban
 ||cowcotland.com/images/habillage/$image
@@ -2240,7 +2239,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||geny.com/web/images/genybet/
 ||goal.*/uploads/promotion/
 ||goal.com^$subdocument,~third-party
-||guardiana.net/img/boutons/
 ||hackforums.net/uploads/mam/$image
 ||handroit.com/upl/slideshows/
 ||hdss.*/voir/
@@ -2301,7 +2299,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||nestoria.fr/jsp/include/banners/
 ||nextwarez.com/wp-content/uploads/*-300x250.
 ||niooz.fr^$subdocument
-||notube.net/*sw.js
 ||openstreetmap.org/assets/banners/
 ||pagesjaunes-dz.com/pub/
 ||pagesjaunes.fr/js/pj_ad.js
@@ -2311,7 +2308,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||permispratique.com/photo/*_habillage_
 ||petit-bulletin.fr/multimedia/fond/
 ||pharmnet-dz.com/img/pubs/
-||plancul-gratuit.*/disclamer.
 ||plx.tukif.com^
 ||porn.com^$xmlhttprequest
 ||pornburst.xxx/assets/js/head.
@@ -2509,6 +2505,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub-droite
 ###pub-footer
 ###pub-haut
+###pub-haut-adblock
 ###pub-head
 ###pub-header
 ###pub-left
@@ -2592,7 +2589,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###sagreklam
 ###shopper-widget-wrapper
 ###sideBar_pub2
-###sidebar_pub_top
 ###sitePubTop
 ###skin_container_sidebar_ad
 ###skin_td_sidebar_ad
@@ -2604,6 +2600,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###stickyDFP
 ###tab-ad
 ###ticker_ad
+###top_pub
 ###topleftad
 ###user18div
 ###vertical-ad
@@ -2622,6 +2619,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.article__ads
 ##.ban_pub
 ##.bandeauClosePub
+##.bandeau_pub
 ##.banner-ad-link
 ##.banner-leaderboard
 ##.before-side-nav-ad
@@ -2717,6 +2715,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.mobile-ads__main
 ##.mobile_ad
 ##.mobile_adhesion
+##.mod-ad-middle
 ##.modAd
 ##.module-pub
 ##.mom-ads-wrap
@@ -2789,7 +2788,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pubContainer
 ##.pubContent
 ##.pubGoodDeals
-##.pubHead
 ##.pubHeader
 ##.pubLeft
 ##.pubMobile
@@ -2835,6 +2833,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.publicite3
 ##.publicite4
 ##.publiciteHeader
+##.publicite_droite_600
+##.publicite_gauche
 ##.publicite_horizontale_well
 ##.publicite_mobile
 ##.publicite_mobile_cache
@@ -2882,7 +2882,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.sponsoredPrisma
 ##.sponsored_banner
 ##.sponsorfooter
-##.squareadboxext
 ##.srcPubZone
 ##.stackcommerce-widget
 ##.standard_adv_link
@@ -2893,6 +2892,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.text_pub
 ##.titrePub
 ##.top-banner-pub
+##.top-publicite
 ##.topPub
 ##.tradingCenterAd
 ##.txt-top-publicity
@@ -3148,6 +3148,7 @@ howtofix.guide##.eds-animate
 maison-et-domotique.com##.elementor-widget-heading
 xboxygen.com##.eneba
 manga-news.com##.external-link
+solvusoft.com##.fileviewpro
 orientation-chabab.com##.footer
 gameblog.fr##.footer__partners
 tukif.com##.footer_partner_container_wrapper
@@ -3388,7 +3389,6 @@ lessentiel.lu##div[class^="ContentPage_insideFullTopPlaceholder"]
 une-recette.com##div[class^="banniere"]
 gamekult.com##div[class^="gk__ads"]
 une-recette.com##div[class^="milieubanniere"]
-la-tendinite.fr##div[class^="snp-"]
 mahjong.fr##div[class^="sub_jeu_160"]
 mahjong.fr##div[class^="sub_jeu_300"]
 mahjong.fr##div[class^="sub_jeu_72890"]

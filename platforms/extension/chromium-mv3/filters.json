@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.78.47",
-			"timeUpdated": "2025-10-16T16:39:00+0000",
+			"version": "2.1.78.48",
+			"timeUpdated": "2025-10-17T16:38:12+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.78.46",
-			"timeUpdated": "2025-10-16T16:39:00+0000",
+			"version": "2.1.78.47",
+			"timeUpdated": "2025-10-17T16:38:13+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.26.25",
-			"timeUpdated": "2025-10-15T16:37:14+0000",
+			"version": "2.0.26.26",
+			"timeUpdated": "2025-10-17T16:38:18+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1055,8 +1055,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.4.26",
-			"timeUpdated": "2025-10-16T12:45:47+0000",
+			"version": "2.1.4.27",
+			"timeUpdated": "2025-10-17T16:38:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1076,8 +1076,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.39.50",
-			"timeUpdated": "2025-10-16T08:40:25+0000",
+			"version": "2.0.39.51",
+			"timeUpdated": "2025-10-17T16:38:31+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1295,8 +1295,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.4",
-			"timeUpdated": "2025-10-15T04:37:18+0000",
+			"version": "2.0.23.5",
+			"timeUpdated": "2025-10-17T16:38:49+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1322,8 +1322,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.29",
-			"timeUpdated": "2025-10-16T04:37:42+0000",
+			"version": "2.0.8.30",
+			"timeUpdated": "2025-10-17T16:38:51+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.71.78",
-			"timeUpdated": "2025-10-16T16:39:53+0000",
+			"version": "2.0.71.79",
+			"timeUpdated": "2025-10-17T16:38:59+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1427,8 +1427,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.10.81",
-			"timeUpdated": "2025-10-16T12:46:26+0000",
+			"version": "2.0.10.82",
+			"timeUpdated": "2025-10-17T16:39:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1447,8 +1447,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt",
 			"trustLevel": "low",
-			"version": "2.0.5.58",
-			"timeUpdated": "2025-10-16T08:41:12+0000",
+			"version": "2.0.5.59",
+			"timeUpdated": "2025-10-17T16:39:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1467,8 +1467,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.9.42",
-			"timeUpdated": "2025-10-16T08:41:12+0000",
+			"version": "2.0.9.43",
+			"timeUpdated": "2025-10-17T16:39:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
