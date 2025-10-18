@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.18.78",
-			"timeUpdated": "2025-10-18T13:10:18+0000",
+			"version": "2.4.18.79",
+			"timeUpdated": "2025-10-18T14:06:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.97.58",
-			"timeUpdated": "2025-10-18T13:10:42+0000",
+			"version": "2.0.97.59",
+			"timeUpdated": "2025-10-18T14:06:29+0000",
 			"languages": [],
 			"tags": [
 				45,
