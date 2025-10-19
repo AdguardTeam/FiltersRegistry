@@ -1,5 +1,5 @@
-! Checksum: Yp4X3Be+ehH/76mdl+A0tw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1760762386-14400.patch
+! Checksum: M+O+pHEn0ZPbl7NIHpAxoA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1760878116-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.7
@@ -18,6 +18,7 @@ www.google.*,ipv6.google.com##.g:has(cite:has-text(.it › )):has(a[href*="-"][h
 !+ PLATFORM(windows, mac, android, cli)
 138.68.252.54$network
 ||fileplanet.com^$document,popup
+||henrypp.org^$document,domain=~stolen_by_casino_spammers.*
 windowsreport.com##.code-block
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
@@ -1358,7 +1359,6 @@ drvhub.net##.driver-item__install
 ||explorads.com^$all
 ||mainexpclkdir.com^$all
 ||mobuppsrtb.com^$all
-||nexrtb.com^$all
 [2a00:8860:10d:1::2:b01]$network
 !+ PLATFORM(windows, mac, android, cli)
 103.67.200.64$network
@@ -1537,7 +1537,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[href*="plusone.google.com"]
 ##a[href*="telegram.me/share/url?"]
 ##a[href^="/sharer/sharer.php?"] > button[type=submit]
-##a[href^="javascript:sendSns('"]
 ##a[id*=share-][id*=-button]
 ##a[id^=share_btn]
 ##a[onclick*="plus.google.com/share?"]
@@ -1727,6 +1726,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##.twitterbtn:not(html,body)
 ##div[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-social-share i],[class*=slide i])
 ##a[class*=social-share]:not([preload],[class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=has-social-share i],[class*=slide i])
+##.js-share-fb:not(html,body,:empty)
 ##.react-share__ShareButton:not(body,html,:empty)
 ##.mh-share-buttons:not(body,html,:empty)
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion###article-share-facebook
@@ -2327,7 +2327,6 @@ $removeparam=wdorigin
 $document,removeparam=/^aff_id\d?=.*$/i,domain=~affiliate.salestring.com
 $document,removeparam=elqTrackId,domain=~comcast.com|~comcastforbusiness.com
 $removeparam=tctx
-$removeparam=ad_medium
 $document,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
 $removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.com.br|~subito.it|~truckscorner.fr|~willhaben.at
@@ -2443,7 +2442,6 @@ $removeparam=affuid
 $removeparam=icid2
 $removeparam=refclickid
 $removeparam=irclid
-$removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.ua
 $document,removeparam=/^affSource.*$/i
 $document,removeparam=/^_s=afl_impact$/
@@ -2571,6 +2569,8 @@ $removeparam=af_campaign
 $removeparam=aftr
 $removeparam=aftr_source
 $removeparam=ko_click_id
+$removeparam=nrtv_cid
+$removeparam=nrtv_as_src
 $removeparam=trk_ref
 $removeparam=ircid
 $document,removeparam=/^src=rss$/
@@ -2600,7 +2600,6 @@ $removeparam=ig_mid
 $removeparam=asclid
 $removeparam=au_advert_id
 $removeparam=au_car_id
-$document,removeparam=/^from=rss$/
 ref=rss^$document,removeparam=ref
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
@@ -2677,6 +2676,7 @@ $removeparam=dspCookie
 $removeparam=_rand
 $removeparam=ttd_id
 $removeparam=dsp_uid
+$removeparam=mt_exuid
 $removeparam=pn_id
 $removeparam=adsafe_url
 $removeparam=mt_uuid
@@ -2716,7 +2716,6 @@ $removeparam=tw_adid
 $removeparam=retailerSlug
 $removeparam=uls_trackid
 $removeparam=gad_campaignid
-$removeparam=phcursor
 $removeparam=duckai
 !+ NOT_OPTIMIZED
 $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net
@@ -2795,7 +2794,6 @@ $removeparam=returnFromLogin,domain=amazon.*
 ||gaming.amazon.com^$removeparam=redirectRoute
 ||amazon.$removeparam=sbo
 $removeparam=/^asc_.*$/,document,domain=amazon.*|aboutamazon.com|amzn.to
-||www.amazon.$document,removeparam=/^[a-z_]{1,20}=[a-zA-Z0-9._-]{80,}$/
 ||www.amazon.$removeparam=sp_csd
 ||www.amazon.$removeparam=dib_tag
 ||amazon.$document,removeparam=social_share
@@ -3203,7 +3201,6 @@ $removeparam=ad,domain=24hshop.fi|adlibris.com|data-systems.fi|e-ville.com|moose
 ||bbc.$removeparam=at_campaign
 $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||gog.com^$removeparam=pp
-||newegg.com^$removeparam=quicklink
 ||newegg.com^$removeparam=nm_mc
 $removeparam=bsencid
 ||target.com^$removeparam=clkid
@@ -3346,10 +3343,7 @@ $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=wl12
 ||walmart.$removeparam=/^ath.*$/
 $removeparam=refdomain,domain=bestbuy.com
-$removeparam=recs_placement,domain=nordstrom.com
-$removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
-$removeparam=recs_seed,domain=nordstrom.com
 $removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
 ||banggood.com^$removeparam=custlinkid
@@ -3529,7 +3523,6 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 ||businessinsider.com^$document,removeparam=r
 ||businessinsider.com^$removeparam=op,document
 ref=spreadprivacy.com$removeparam=ref
-$removeparam=caniuse_source,document
 ||github.com^$removeparam=reference_location
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
@@ -3564,8 +3557,6 @@ $removeparam=ProspectID,domain=citi.com
 ||patreon.com/posts/$document,removeparam=token
 $document,removeparam=bpli,domain=blogger.com
 $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
-||trendyol.com^$document,removeparam=link_userID
-||trendyol.com^$document,removeparam=link_contentid
 ||n11.com^$document,removeparam=adj_t
 ||cimri.com^$document,removeparam=platformName
 ||cimri.com^$document,removeparam=offerSponsored
@@ -3594,8 +3585,6 @@ $document,removeparam=_p_rfs,domain=temu.com
 $document,removeparam=_x_ads_sub_channel,domain=temu.com
 $document,removeparam=_x_vst_scene,domain=temu.com
 $document,removeparam=refer_page_el_sn,domain=temu.com
-$document,removeparam=refccid,domain=bedbathandbeyond.com
-$document,removeparam=searchidx,domain=bedbathandbeyond.com
 $document,removeparam=tk,domain=indeed.com
 $removeparam=from,domain=indeed.com
 $removeparam=advn,domain=indeed.com
