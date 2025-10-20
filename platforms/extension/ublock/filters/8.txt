@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: DdAxcILImFYnkfgBUq0PTQ
-! Diff-Path: ../patches/8/8-s-1760688835-3600.patch
+! Checksum: ATsVmHWzPQM9tMWMxZ3wPA
+! Diff-Path: ../patches/8/8-s-1760933748-3600.patch
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.8.70
-! TimeUpdated: 2025-10-17T08:09:51+00:00
+! Version: 2.0.8.71
+! TimeUpdated: 2025-10-20T04:11:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1623,18 +1623,20 @@ kijk.nl#@##topbanner_ad
 @@/prebid/ad.gif?user=*&adId=$domain=kijk.nl
 @@||ads-talpa.adhese.com/json/$domain=kijk.nl
 kijk.nl#$#body .pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: initial !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/215774
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167987
-||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=goplay.be
+||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=goplay.be|play.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160901
-||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be,redirect=noop.js
-@@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams$domain=goplay.be
-||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams/*/time-events.json$important,domain=goplay.be
-goplay.be##+js(xml-prune, Period[id*="-ad-"], , .mpd)
+||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be|play.tv,redirect=noop.js
+@@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams$domain=goplay.be|play.tv
+||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams/*/time-events.json$important,domain=goplay.be|play.tv
+||dai.google.com/ondemand/dash/content/*/time-events.json$domain=goplay.be|play.tv
+play.tv,goplay.be##+js(xml-prune, Period[id*="-ad-"], , .mpd)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118874
-goplay.be##+js(no-fetch-if, pubads.g.doubleclick.net/gampad/ads)
-@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$script,domain=goplay.be
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=noop.js,domain=goplay.be
-@@||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be
+play.tv,goplay.be##+js(no-fetch-if, pubads.g.doubleclick.net/gampad/ads)
+@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$script,domain=goplay.be|play.tv
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=noop.js,domain=goplay.be|play.tv
+@@||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be|play.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74633
 ||goplay.be/js/sourcepoint/msg?v=
 ! https://github.com/AdguardTeam/AdguardFilters/issues/69783
