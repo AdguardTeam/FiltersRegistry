@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.19.24",
-			"timeUpdated": "2025-10-20T12:11:15+0000",
+			"version": "2.4.19.25",
+			"timeUpdated": "2025-10-20T13:14:36+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.69.35",
-			"timeUpdated": "2025-10-20T11:07:01+0000",
+			"version": "2.0.69.36",
+			"timeUpdated": "2025-10-20T13:14:50+0000",
 			"languages": [
 				"ja"
 			]
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.65.7",
-			"timeUpdated": "2025-10-20T08:09:44+0000",
+			"version": "2.0.65.8",
+			"timeUpdated": "2025-10-20T13:14:53+0000",
 			"languages": []
 		},
 		{
@@ -216,8 +216,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.59.97",
-			"timeUpdated": "2025-10-20T11:07:07+0000",
+			"version": "2.0.59.98",
+			"timeUpdated": "2025-10-20T13:14:54+0000",
 			"languages": [
 				"tr"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.46.40",
-			"timeUpdated": "2025-10-20T12:11:37+0000",
+			"version": "2.2.46.41",
+			"timeUpdated": "2025-10-20T13:14:59+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.97.81",
-			"timeUpdated": "2025-10-20T10:08:33+0000",
+			"version": "2.0.97.82",
+			"timeUpdated": "2025-10-20T13:15:00+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.63.77",
-			"timeUpdated": "2025-10-20T12:11:42+0000",
+			"version": "2.0.63.78",
+			"timeUpdated": "2025-10-20T13:15:04+0000",
 			"languages": []
 		},
 		{
