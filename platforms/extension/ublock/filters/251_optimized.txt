@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: M0UHKYuejsgJdSm4L2gP3Q
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1760892056-14400.patch
+! Checksum: VCNvFK0bsgJlh4xhgLklCQ
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1760921549-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.7
-! TimeUpdated: 2025-10-19T16:37:13+00:00
+! Version: 2.0.9.8
+! TimeUpdated: 2025-10-20T00:48:37+00:00
 ! Expires: 5 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -1348,6 +1348,12 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||translate.google.com^$removeparam=/^tab=TT$/
 ||www.google.$document,removeparam=sstk
 ||ipv6.google.com^$document,removeparam=sstk
+://www.google.$removeparam=/^num=\d{2,}$/
+://ipv6.google.com^$removeparam=/^num=\d{2,}$/
+://www.google.$removeparam=aep
+://ipv6.google.com^$removeparam=aep
+://www.google.$removeparam=ntc
+://ipv6.google.com^$removeparam=ntc
 @@://www.google.*/maps^$removeparam=utm_campaign
 @@://ipv6.google.com/maps^$removeparam=utm_campaign
 ||tiktok.com^$removeparam=_r
