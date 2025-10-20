@@ -1,9 +1,9 @@
-! Checksum: mVqdS+nhFQY26Xv0iRQqVg
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1760944352-3600.patch
+! Checksum: QNXZBuPycFdfnKhf+akUzg
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1760948028-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.19.19
-! TimeUpdated: 2025-10-20T07:08:13+00:00
+! Version: 2.4.19.20
+! TimeUpdated: 2025-10-20T08:09:20+00:00
 ! Expires: 5 days (update frequency)
 ||sharebang.com^
 ||prebid.scope3.com^
@@ -2902,9 +2902,9 @@ avdbapi.com#%#//scriptlet('prevent-fetch', '/vast.js')
 gleaks.pro#%#//scriptlet('remove-node-text', 'script', 'fuckAdBlock')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 gleaks.pro#@##google-ads
-api.ytapi.cc#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+ytapi.cc#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=api.ytapi.cc
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=ytapi.cc
 in91vip.win#%#//scriptlet('trusted-replace-node-text', 'script', 'detectAdsenseBlock', '/if \(isAdsenseBlocked\)/', 'if (!isAdsenseBlocked)')
 in91vip.win#@#iframe[width="728"][height="90"]
 @@||a.magsrv.com^$domain=in91vip.win
@@ -9367,6 +9367,8 @@ roweroweporady.pl#@#.ad_container
 ||cdn.questvert.pl/publishers/*/qpscript.js
 !+ PLATFORM(ios, ext_android_cb)
 @@||lib.wtg-ads.com/prebid/prebid_*.js$domain=tvn.pl
+sport1.pl##.wp-block-image:has(> figure > a:is([target="_blank"], [rel="sponsored"]) > img)
+sport1.pl##.entry-content > .wp-block-buttons > .wp-block-button > a.wp-block-button__link:not([href])
 sadeczanin.info##article.mt-2 > a[target="_blank"] > article > img
 fronda.pl##article > div[style="max-width:750px;max-height:422px"]
 trans.info##div.w-full:has(> div.leading-xs)
@@ -9423,6 +9425,7 @@ defence24.pl#?#main > section.block:has(> div > a > span > figure > figcaption:c
 widzewtomy.net##.banner-height
 tko.pl##div[id^="nol24-"]
 jastrzebieonline.pl##div[class^="ad_"]
+||pl.ua^$badfilter
 odleglosci.pl#@##Banner728x90
 odleglosci.pl#%#//scriptlet('prevent-element-src-loading', 'script', 'cmp.inmobi.com')
 odleglosci.pl#%#//scriptlet('prevent-setTimeout', 'mka_od_06_t')
@@ -13753,6 +13756,9 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com|zinchanmanga.com|yaoimangaonline.com|tututweak.app|mangaraw.ac|eromanga-show.com|hentai-one.com|hentaipaw.com|nukibooks.com|paipancon.com|jgvdata.com|youtubevanced.com|pandamtl.com|mangaplus.shueisha.tv|shueisharaw.tv
+forbes.com##div[class]:has(> script[id^="article-"][id*="connatix-"])
+forbes.com##div[class]:has(> fbs-ad)
+miniwebtool.com###chrome-extension-prompt
 imagebam.com#%#//scriptlet('set-cookie', '__bamrxm1_p', '1')
 imagebam.com##div[style="display: inline-block;width:300px;height:250px"]
 zerohedge.com##div[class*="AxosPromoCalc_axosWidget"]
@@ -13854,7 +13860,6 @@ freightwaves.com##div[class*="fw-ad-id"]
 ||e-embed.mangadex.org/stable/embed/external/ads.html
 mangadex.org##iframe[src*="/embed/external/ads.html"]
 mangadex.org##.md-content .justify-center > a[target="_blank"] > img
-ipvoid.com##.banner-wrap
 quizlet.com##.SetPageEmbeddedAd-wrapper
 quizlet.com##.SetPage > div:has(> div.TimeAndVisibilityAd)
 adn.com##.adn-single-chain:has(> div.adn-single-chain__children > div.rev-content-widget)
@@ -15744,7 +15749,7 @@ bunkr.sk#%#//scriptlet('prevent-setTimeout', ';return!_0x')
 tvseries.in#%#//scriptlet('prevent-window-open', 'forooqso.tv')
 allegiantair.com##a[data-hook="header-merchandise-banner_link"]
 convertio.co##.softobar-container
-imagebam.com,ezplayer.me,datavaults.co,clickapi.net,y2down.cc,themezon.net,serverguidez.com,streamup.ws,vidlink.pro,cdn.hentaianimezone.com,themezon.net,galaxyporn.net,teknoasian.com,downloadyoutubesubtitles.com,alex71.com,kecapku.com,vidfast.pro,pornharlot.net,meong.club,hianimez.*,travelironguide.com,kreditexperte.online,shortnest.com,vikingf1le.us.to,mixzdrive.com,get.linkbulks.com,play.upns.live,dropzy.io,dayuploads.com,filespayouts.com,ranoz.gg,zovo.ink,manhwahentai.me,filespayout.com,1movielinkbd.com,ytmp3.la,swiftuploads.com,techbloogs.com,oii.la,englismovies.pro,tpi.li,go.cloutgist.com,brbeast.com,vidsrc2.*,tutwuri.id,lokerwfh.net,insmyst.com,iir.la,tvi.la,cosplay18.pics,hianime.*,mobiletvshows.site,movies4u.*,x-x-x.tube,pornx.to,4khd.com,dlhd.*,kissanime.*,vidsrc.*,pahe.*#%#//scriptlet('prevent-window-open')
+ytapi.cc,mygomp3.com,imagebam.com,ezplayer.me,datavaults.co,clickapi.net,y2down.cc,themezon.net,serverguidez.com,streamup.ws,vidlink.pro,cdn.hentaianimezone.com,themezon.net,galaxyporn.net,teknoasian.com,downloadyoutubesubtitles.com,alex71.com,kecapku.com,vidfast.pro,pornharlot.net,meong.club,hianimez.*,travelironguide.com,kreditexperte.online,shortnest.com,vikingf1le.us.to,mixzdrive.com,get.linkbulks.com,play.upns.live,dropzy.io,dayuploads.com,filespayouts.com,ranoz.gg,zovo.ink,manhwahentai.me,filespayout.com,1movielinkbd.com,ytmp3.la,swiftuploads.com,techbloogs.com,oii.la,englismovies.pro,tpi.li,go.cloutgist.com,brbeast.com,vidsrc2.*,tutwuri.id,lokerwfh.net,insmyst.com,iir.la,tvi.la,cosplay18.pics,hianime.*,mobiletvshows.site,movies4u.*,x-x-x.tube,pornx.to,4khd.com,dlhd.*,kissanime.*,vidsrc.*,pahe.*#%#//scriptlet('prevent-window-open')
 [$path=/search]startpage.com#?##main > div[class^="css-"]:has(> div[class^="css-"] > p[class^="css-"]:contains(/Annoncer|Anzeigen|Ads|Anuncios|Publicités|Advertenties|Annonser|Reklamy|Anúncios/))
 [$path=/search]startpage.com#?#.main-results-container > div.shopping-header > div[class^="css-"] > div[class^="css-"] > div.information-container + div[class^="css-"]:has(> span:contains(/Sponsoreret|Gesponsert|Sponsored|Patrocinad|Sponsorisé|Gesponsord|Sponset|Sponsorowane|Sponsrad/))
 intro-hd.net##.sidebar_master > .widget:has(> div[id^="intro-"] > .adsbygoogle)
@@ -16969,6 +16974,7 @@ photopea.com##div[style^="padding-top: 10px; overflow: hidden; padding-left:"] >
 naughtymachinima.com##iframe[src^="https://chaturbate.com/"]
 ||gn-web-assets.api.bbc.com/ngas/*/dotcom-ads.js
 timesofisrael.com##.crm-post-module
+timesofisrael.com,ipvoid.com,mp4compress.com,changenow.io##.banner-wrap
 xmilf.com##.videoplayer + section > #und_ban
 xmilf.com##.videoplayer + section > #und_ban + h4
 in-porn.com,sextu.com,mrgay.tube,xmilf.com,blackporn.tube,bdsmx.tube,inporn.com##[style="display:flex !important"] > div > div:not(:last-child)
@@ -31809,6 +31815,7 @@ browsershots.org#@#.advert_area
 ||amusingbase.com^
 ||amusinghump.com^
 ||amvbwlerkyejb.top^
+||amwgisnagixqe.store^
 ||amwjroqdaffedh.com^
 ||amxvtyhhyciw.com^
 ||amylo.site^
@@ -34773,6 +34780,7 @@ browsershots.org#@#.advert_area
 ||deksoarguph.net^
 ||delaybagelblur.com^
 ||delayeddisputecommotion.com^
+||delectable-gate.pro^
 ||delectableliving.pro^
 ||delectabletown.com^
 ||deleteorlo.com^
@@ -35521,6 +35529,7 @@ browsershots.org#@#.advert_area
 ||ecpuajgbudjk.com^
 ||ecrilwzjkwqul.space^
 ||ecstasycluttergnat.com^
+||ecudcejxxmnpv.store^
 ||ecuryrentattribut.org^
 ||ecxjncetxiila.space^
 ||eczemabebusy.cyou^
@@ -36732,6 +36741,7 @@ browsershots.org#@#.advert_area
 ||fvkobfbmfdjhp.website^
 ||fvlhshpmjnrck.website^
 ||fvrpgjewjakqo.site^
+||fvuhjhguxtytn.space^
 ||fvvpekpy.com^
 ||fvwirerewj.com^
 ||fwfjuynldpajj.com^
@@ -37803,6 +37813,7 @@ browsershots.org#@#.advert_area
 ||hlinit.com^
 ||hlkwshtzpeuma.space^
 ||hlmiq.com^
+||hlnylqalpqei.com^
 ||hlserve.com^
 ||hlufsqadxupgr.website^
 ||hmabmyomkq.com^
@@ -46404,6 +46415,7 @@ browsershots.org#@#.advert_area
 ||tuneupcant.com^
 ||tungurtuthe.com^
 ||tunkatrampot.com^
+||tunnerypiques.click^
 ||tunneryrimpled.shop^
 ||turboadv.com^
 ||turbocap.net^
@@ -47435,6 +47447,7 @@ browsershots.org#@#.advert_area
 ||vxbstsvddlepb.online^
 ||vxddydruqitjl.space^
 ||vxgvqcxghgtqe.site^
+||vxiearhzvtdtv.website^
 ||vxpcarcapffdp.global^
 ||vxumftnoc.net^
 ||vxxdhcxtcy.net^
@@ -48287,6 +48300,7 @@ browsershots.org#@#.advert_area
 ||xszpuvwr7.com^
 ||xtakfprqxykkt.store^
 ||xtbwgddclwklu.store^
+||xtdcuxjkh.com^
 ||xtdztyiqyhmet.global^
 ||xtobwklocxnxb.com^
 ||xtrbagcbjrabn.online^
