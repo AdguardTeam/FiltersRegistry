@@ -1,5 +1,5 @@
-! Checksum: j1Lk+fUaGgfnZciS8KnlQQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1760841705-3600.patch
+! Checksum: j4YpWCoDEYV1V9JZfIWKrQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1760928113-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.54.60
@@ -631,7 +631,6 @@ luxauto.lu##section[data-scope="homepage-hot-ads"] .grid > .imu
 lessentiel.lu###prime__inside-top
 lessentiel.lu##div[class^="ad_adContainer_"]
 cyclismactu.net##a[href^="https://media.unibet.fr/redirect.aspx"]
-menu.lu##div[data-advertisement]
 sncf-connect.com##.WLS_gtmBannerWrapper
 sncf-connect.com###WL_side_banner
 lapresse.ca##.adsWrapper
@@ -1591,6 +1590,7 @@ _300x600&
 _336x280.
 _46860_
 _468x200.
+_468x60&
 _468x60@
 _468X60v2.
 _480x250.
@@ -1909,6 +1909,7 @@ _build=iclick-$popup
 ||multilinkhost.com^$third-party
 ||myservdir.com^$third-party
 ||myxpass.com^$third-party
+||neckermann.be^$third-party
 ||nend.net^$third-party
 ||netclickstats.com^$third-party
 ||netcomvad.com^$third-party
@@ -2044,6 +2045,7 @@ _build=iclick-$popup
 ||adaptationwrite.com^
 ||adeclc.com^
 ||adepticily.com^
+||adheretalk.com^
 ||adjustlinklifting.com^
 ||admedia.network^
 ||admiralugly.com^
@@ -2106,6 +2108,7 @@ _build=iclick-$popup
 ||ayjvwlrymoalr.top^
 ||aynhnrgxjxfv.com^
 ||aywgucxmh.com^
+||azclip.co.ua^
 ||b6cb78mf.cfd^
 ||backforward.bid^
 ||balsamoscious.com^
@@ -2170,6 +2173,7 @@ _build=iclick-$popup
 ||caribedkurukh.com^
 ||carnelbawrel.com^
 ||carnivorouswordsroute.com^
+||cartrigestale.com^
 ||catalpatomorn.com^
 ||catsupsmanser.com^
 ||causeyexonian.com^
@@ -2811,7 +2815,6 @@ _build=iclick-$popup
 ||veritabledate.com^
 ||vestingdroger.top^
 ||videoadex.com^
-||videocdnmetrika31.com^
 ||vidox.net^
 ||viiadr.com^
 ||viipura.com^
@@ -3009,7 +3012,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
 ||annuaire-autosurf.com^$image,third-party
 ||api.gamerprices.com/compare/$third-party
-||apycdn.com^*/banner/
 ||arc.io/widget$third-party
 ||astore.amazon.com^$subdocument,third-party
 ||asumi.shinobi.jp^
@@ -3136,7 +3138,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||satsupreme.com/images/banners/
 ||schule-und-familie.de/assets/images/banners/
 ||sexcity-girls.com/banner/
-||sexeautop.com/images/logos/
 ||shareasale.com/sale.cfm?amount=
 ||sherpa.agoda.com^$third-party
 ||shop.mango.com^$third-party
@@ -3646,7 +3647,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###iframe-anAdScPpNgb160x600
 ###ima-ad-container
 ###inReadVideo
-###inads
 ###incontent_ad
 ###incontent_ad2
 ###incontent_ad3
@@ -3680,6 +3680,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###psreklama
 ###pub-300-250
 ###pub-300x250
+###pub-468x60
 ###pub-728x90
 ###pub-after-adownload
 ###pub-bottom
@@ -3736,6 +3737,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub_bas
 ###pub_bottom
 ###pub_brique
+###pub_carre
 ###pub_container
 ###pub_content
 ###pub_dfp_article
@@ -3825,6 +3827,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###sponsor-block
 ###sponsor_google
 ###sponsored-container
+###sponsoredContainer
 ###sponsoredProducts
 ###stickyDFP
 ###stop_ad
@@ -3989,7 +3992,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.lbl-ad
 ##.leaderboard728
 ##.leftSideAds
-##.left_middle_ad
 ##.liens-sponsorises__external
 ##.line-adv
 ##.listing_list_ad
@@ -4000,6 +4002,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.marketing-container
 ##.mbanner-ad-wrapper
 ##.midads
+##.middle-publicite
 ##.mobile-ads__close
 ##.mobile-ads__main
 ##.mobile_ad
@@ -4423,6 +4426,7 @@ outlook.live.com##.Ogt7j[id*="-"]
 radiofrance.fr##.PopSlot
 marmiton.org##.RCP__sc-i1pqes-4
 amazon.fr##.a-link-normal[href*="&adId="]
+driverscloud.com##.accueil_pubotherlan
 cotemaison.fr##.actu_pub
 aerobuzz.fr,allodocteurs.fr,auchan.fr,courrierinternational.com,directvelo.com,dna.fr,e-sante.fr,fabriquer-des-meubles.fr,freepik.com,gamer-network.fr,gqmagazine.fr,journalmetro.com,lachainemeteo.com,ladepeche.fr,lematin.ch,lequotidiendumedecin.fr,lopinion.fr,marques.expert,msn.com,p-nintendo.com,photo.fr,rue89lyon.fr,smail.fr,soundlightup.com,tetu.com,truecaller.com,ubergizmo.com,webtor.io,zapiks.fr##.ad
 basketusa.com##.ad-large
