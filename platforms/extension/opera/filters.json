@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.19.21",
-			"timeUpdated": "2025-10-20T09:08:14+0000",
+			"version": "2.4.19.22",
+			"timeUpdated": "2025-10-20T10:07:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.93.12",
-			"timeUpdated": "2025-10-20T09:08:23+0000",
+			"version": "2.0.93.13",
+			"timeUpdated": "2025-10-20T10:08:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.33",
-			"timeUpdated": "2025-10-18T16:07:38+0000",
+			"version": "2.0.69.34",
+			"timeUpdated": "2025-10-20T10:08:16+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.46.37",
-			"timeUpdated": "2025-10-20T09:08:47+0000",
+			"version": "2.2.46.38",
+			"timeUpdated": "2025-10-20T10:08:31+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.97.80",
-			"timeUpdated": "2025-10-20T08:09:55+0000",
+			"version": "2.0.97.81",
+			"timeUpdated": "2025-10-20T10:08:33+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.65",
-			"timeUpdated": "2025-10-20T09:08:54+0000",
+			"version": "2.0.72.66",
+			"timeUpdated": "2025-10-20T10:08:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.46.14",
-			"timeUpdated": "2025-10-20T09:09:03+0000",
+			"version": "2.1.46.15",
+			"timeUpdated": "2025-10-20T10:08:47+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
