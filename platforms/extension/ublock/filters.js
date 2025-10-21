@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.19.45",
-			"timeUpdated": "2025-10-21T09:07:56+0000",
+			"version": "2.4.19.46",
+			"timeUpdated": "2025-10-21T10:07:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.37",
-			"timeUpdated": "2025-10-21T09:08:14+0000",
+			"version": "2.0.69.38",
+			"timeUpdated": "2025-10-21T10:07:55+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.46.52",
-			"timeUpdated": "2025-10-21T08:09:51+0000",
+			"version": "2.2.46.53",
+			"timeUpdated": "2025-10-21T10:08:06+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.97.92",
-			"timeUpdated": "2025-10-21T09:08:29+0000",
+			"version": "2.0.97.93",
+			"timeUpdated": "2025-10-21T10:08:07+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.78",
-			"timeUpdated": "2025-10-21T08:09:55+0000",
+			"version": "2.0.72.79",
+			"timeUpdated": "2025-10-21T10:08:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.38.28",
-			"timeUpdated": "2025-10-21T03:24:07+0000",
+			"version": "2.0.38.29",
+			"timeUpdated": "2025-10-21T10:08:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2350,6 +2350,10 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://ublockorigin.github.io/uAssetsCDN/filters/lan-block.txt",
 			"platformsExcluded": [
+				"windows",
+				"android",
+				"mac",
+				"cli",
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",

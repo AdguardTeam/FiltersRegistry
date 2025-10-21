@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.19.45",
-			"timeUpdated": "2025-10-21T09:07:56+0000",
+			"version": "2.4.19.46",
+			"timeUpdated": "2025-10-21T10:07:41+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.69.37",
-			"timeUpdated": "2025-10-21T09:08:14+0000",
+			"version": "2.0.69.38",
+			"timeUpdated": "2025-10-21T10:07:55+0000",
 			"languages": [
 				"ja"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.46.52",
-			"timeUpdated": "2025-10-21T08:09:51+0000",
+			"version": "2.2.46.53",
+			"timeUpdated": "2025-10-21T10:08:06+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.97.92",
-			"timeUpdated": "2025-10-21T09:08:29+0000",
+			"version": "2.0.97.93",
+			"timeUpdated": "2025-10-21T10:08:07+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.72.78",
-			"timeUpdated": "2025-10-21T08:09:55+0000",
+			"version": "2.0.72.79",
+			"timeUpdated": "2025-10-21T10:08:10+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.38.28",
-			"timeUpdated": "2025-10-21T03:24:07+0000",
+			"version": "2.0.38.29",
+			"timeUpdated": "2025-10-21T10:08:12+0000",
 			"languages": []
 		},
 		{
@@ -1621,22 +1621,6 @@
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"version": "2.0.9.45",
 			"timeUpdated": "2025-10-20T00:48:43+0000",
-			"languages": []
-		},
-		{
-			"filterId": 258,
-			"name": "uBlock Origin – Block Outsider Intrusion into LAN",
-			"description": "Prevents public Internet sites from digging into your LAN files.",
-			"homepage": "https://github.com/uBlockOrigin/uAssets",
-			"expires": 432000,
-			"displayNumber": 2,
-			"groupId": 2,
-			"subscriptionUrl": "https://ublockorigin.github.io/uAssetsCDN/filters/lan-block.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"version": "2.0.0.19",
-			"timeUpdated": "2025-10-20T16:39:48+0000",
 			"languages": []
 		}
 	]
