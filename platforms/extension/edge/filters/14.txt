@@ -1,9 +1,9 @@
-! Checksum: RnoXeixAY5rf3bXtza6bkg
-! Diff-Path: ../patches/14/14-s-1761023478-3600.patch
+! Checksum: 5Ka//8R1LniYeQchkZDhCQ
+! Diff-Path: ../patches/14/14-s-1761027223-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.46.50
-! TimeUpdated: 2025-10-21T05:08:06+00:00
+! Version: 2.2.46.51
+! TimeUpdated: 2025-10-21T06:10:18+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2546,6 +2546,7 @@ homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.c
 !
 ! NOTE: Regular rules
 !
+tshopping.thsrc.com.tw#%#//scriptlet('set-cookie', 'cookie-policy-agree', 'true')
 gamescom.global#%#//scriptlet('trusted-set-cookie', 'OptanonConsent', 'groups=C0001%3A1%2CC0002%3A1%2CC0003%3A0%2CC0004%3A0', '', '/', 'gamescom.global')
 gamescom.global#%#//scriptlet('trusted-set-cookie', 'OptanonAlertBoxClosed', '$currentDate$', '', '/', 'gamescom.global')
 tridge.com#%#//scriptlet('set-cookie-reload', 'cookieBannerHidden', 'true')
@@ -17622,6 +17623,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215905
+tshopping.thsrc.com.tw#@#.cookie-popup:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215748
 vidipass.com#@#.cookie-overlay:not(html):not(body)
 vidipass.com#@#.cookie-banner:not(body):not(html)
