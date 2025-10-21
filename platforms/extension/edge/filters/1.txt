@@ -1,9 +1,9 @@
-! Checksum: NVkcN5cA6u/ZkICvFpIcsw
-! Diff-Path: ../patches/1/1-s-1760602395-3600.patch
+! Checksum: JD4cDkQxqKEYw4+fEL/lGg
+! Diff-Path: ../patches/1/1-s-1760973102-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.2.37
-! TimeUpdated: 2025-10-16T08:09:06+00:00
+! Version: 2.1.2.42
+! TimeUpdated: 2025-10-20T15:07:15+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1435,6 +1435,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||6i7y3i.ru^
 ||punchmedia.ru^
 ||imaginarybad.com^$all
 ||california1955.nl^
@@ -3824,7 +3825,7 @@ positiverecords.ru#@#.ad-google
 ||tests24.su^$cookie=/^ai/
 ! pikabu.ru
 pikabu.ru#%#//scriptlet('abort-on-property-write', 'Ya')
-pikabu.ru#%#//scriptlet('remove-node-text', 'script', '/xhr\.setRequestHeader\(_{0,2}[a-zA-Z0-9]{0,6}[hHxX]?[a-zA-Z0-9_]{1,2}[a-zA-Z0-9_]{1,3}_?[a-zA-Z0-9]?[a-zA-Z0-9_]?[RrpP]/')
+pikabu.ru#%#//scriptlet('remove-node-text', 'script', '/xhr\.setRequestHeader\([a-zA-Z0-9]?_?[a-zA-Z0-9]{0,6}[hHxX]?[a-zA-Z0-9_]{1,2}[a-zA-Z0-9_]{1,3}_?[a-zA-Z0-9]?[a-zA-Z0-9_]?[RrpP]/')
 ! sports.ru
 sports.ru#%#//scriptlet('json-prune', 'direct rtbAuctionInfo')
 sports.ru#%#//scriptlet('set-constant', 'Ya.adfoxCode.create', 'noopFunc')
@@ -6875,6 +6876,8 @@ glavbukh.ru,chehov-vid.ru,161.ru,prufy.ru,ysia.ru,5koleso.ru,ngs.ru,i38.ru,chita
 !
 !
 !
+russeeders.top##a[href^="https://ya-browser.ru/"]
+downradar.ru##.one-half + div.one-half > a[target="_blank"]
 ||vbr.ru/next/api/v*/banner/
 ||vbr.ru/next/api/v*/banners/
 ||vbr.ru/next/api/v*/branding/
@@ -17255,17 +17258,17 @@ pornolab-zerkalo.appspot.com,pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net#
 ! END: pornolab
 !
 ! Prevent of loading WS (onerror event)
-||cdn.hdat.xyz/*.js$script,redirect=noopjs,important,~websocket
-||cdn7.rocks/*.js$script,redirect=noopjs,important,~websocket
+||cdn.hdat.xyz/*.js$script,redirect=noopjs,important
+||cdn7.rocks/*.js$script,redirect=noopjs,important
 ||code.directadvert.ru/data/*.js$script,redirect=noopjs,important
-||et-code.ru/bens/vinos.js$script,redirect=noopjs,important,~websocket
-||gynax.com/js/*.js?r=$redirect=nooptext,important,~websocket
-||m.mixadvert.com/show/?id=$redirect=nooptext,important,~websocket
-||nickhel.com/js/$redirect=nooptext,important,~websocket
-||oconner.*/js/lib.js$script,redirect=noopjs,important,~websocket
-||oconner.biz:8041/js/lib.js$script,redirect=noopjs,important,~websocket
-||redtram.com/n4p/$redirect=nooptext,important,~websocket
-||trafmag.com/etarg-code.js$script,redirect=noopjs,important,~websocket
+||et-code.ru/bens/vinos.js$script,redirect=noopjs,important
+||gynax.com/js/*.js?r=$redirect=nooptext,important
+||m.mixadvert.com/show/?id=$redirect=nooptext,important
+||nickhel.com/js/$redirect=nooptext,important
+||oconner.*/js/lib.js$script,redirect=noopjs,important
+||oconner.biz:8041/js/lib.js$script,redirect=noopjs,important
+||redtram.com/n4p/$redirect=nooptext,important
+||trafmag.com/etarg-code.js$script,redirect=noopjs,important
 !
 ! For Zona app
 ||admulti.com/javascripts/rot.js

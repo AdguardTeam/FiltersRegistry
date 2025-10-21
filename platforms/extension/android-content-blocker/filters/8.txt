@@ -1,8 +1,8 @@
-! Checksum: OXdJgnzVv6shf74nijKMJA
+! Checksum: A/TsMk6QXSso4x7zUzty7A
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.8.68
-! TimeUpdated: 2025-09-22T15:08:00+00:00
+! Version: 2.0.8.71
+! TimeUpdated: 2025-10-20T04:11:39+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1504,6 +1504,7 @@ vakantieplaats.nl#@#.topAds
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||h3v9p8x2q1r7-agckaeh6g2ehcaes.*.azurewebsites.net^
 ||x9t7g4m2qk2.azurewebsites.net^
 ||kjdsfjisdfjr23.azurewebsites.net^
 ||content2.nrc.nl^
@@ -1591,15 +1592,17 @@ kijk.nl#@##topbanner_ad
 @@||axed.nl^$generichide
 @@||kijk.nl^$generichide
 @@||shownieuws.nl^$generichide
+! https://github.com/AdguardTeam/AdguardFilters/issues/215774
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167987
 ! https://github.com/AdguardTeam/AdguardFilters/issues/160901
-@@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams$domain=goplay.be
-||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams/*/time-events.json$important,domain=goplay.be
+@@||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams$domain=goplay.be|play.tv
+||pubads.g.doubleclick.net/ondemand/*/content/*/vid/*/streams/*/time-events.json$important,domain=goplay.be|play.tv
+||dai.google.com/ondemand/dash/content/*/time-events.json$domain=goplay.be|play.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118874
-@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$script,domain=goplay.be
+@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$script,domain=goplay.be|play.tv
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=goplay.be
-@@||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=goplay.be|play.tv
+@@||pagead2.googlesyndication.com/omsdk/releases/live/omweb-v1.js$script,domain=goplay.be|play.tv
 @@||sdk.privacy-center.org^$script,domain=goplay.be
 @@||pubads.g.doubleclick.net/gampad/ads?*&output=vast&$domain=goplay.be
 ! https://github.com/AdguardTeam/AdguardFilters/issues/74633
@@ -1723,6 +1726,7 @@ icttipsandtricks.nl##body #adblock_screen
 ! Good: example.org###rek; ||example.com/ads/
 ! Bad: example.org#@##banner_ad (for instance, should be in allowlist.txt or in antiadblock.txt)
 !
+||azurewebsites.net/*?player_*[max_ad_dur]=*[adslot]=*&VPAID=
 moviemeter.nl##.small-leaderboard
 deondernemer.nl##div[class^="adBlock"]
 deondernemer.nl##section[class^="SingleBlock_advertisement"]
@@ -1945,6 +1949,7 @@ klusidee.nl##td.td-ad
 !
 ! NOTE: Dutch - specific - HINTS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215616
 ! https://github.com/AdguardTeam/AdguardFilters/issues/10738
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 voipsipclient.blogspot.nl##.adsbygoogle

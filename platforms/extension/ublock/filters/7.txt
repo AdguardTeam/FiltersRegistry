@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 8tq6sf2wwmNXDZ6prcW2Aw
-! Diff-Path: ../patches/7/7-s-1760652594-3600.patch
+! Checksum: KMKQI4j1l82ijh6K835ixQ
+! Diff-Path: ../patches/7/7-s-1760966320-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.69.31
-! TimeUpdated: 2025-10-16T22:06:18+00:00
+! Version: 2.0.69.36
+! TimeUpdated: 2025-10-20T13:14:50+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1534,10 +1534,12 @@ jikayosha.jp#$#.wym-v2022__header.is-scroll-up ~ .wym-v2022__footer-fixed.is-pc-
 /wp-content/uploads/2024/09/fanza_ad$image
 !
 ! Malware/Phishing
+.click/product_tag?id=$document
+.click/product_details?id=$document
+/fingerprint.php$document
 ://www.*.com/article/login|$document
 .com/article/line-20151012$document
 .cfd/*.co.jp/$document
-.com/*.co.jp|$document
 ://myaccount.*.cfd/$document
 .com/verify-key.php?&_r=$xmlhttprequest,~third-party
 .com/%F0%9D%90%A3%F0%9D%90%9A-%F0%9D%90%A3%F0%9D%90%A9/$document
@@ -1545,7 +1547,7 @@ jikayosha.jp#$#.wym-v2022__header.is-scroll-up ~ .wym-v2022__footer-fixed.is-pc-
 .com/www.*.co.jp/login/$document
 .com/www.*.com/login/$document
 -co-jp.net/login|$document
-://master.verify.co.jp.*.com/ja-jp/personal/features-benefits.html$document
+.verify.co.jp.*.com/ja$document
 /jsda.apk^$document
 .com/etc.php?$document
 ://jp.mercari.*.com/signin/$document
@@ -1734,11 +1736,10 @@ _co_jp.*.php$document,to=cc|com
 .co.jp.*.*/$document,to=cn|cyou|icu
 -co-jp-*.*/$document,to=cfd|com|sbs|site
 -co-jp.*.*/$document,to=cfd|com|sbs|site
-/product_details?id=$document,to=click
 ://smbc.$document,to=cn|com|top
 ://smbccard*.$document,to=club
 ://smdc-$document,to=cn|fit|pl
-://smbc-$document,to=club|cn|fit|link|shop|top
+://smbc-$document,to=club|cn|fit|help|homes|lat|link|mom|my|pics|shop|top|work
 /funccode.php|$document,to=cfd|xyz
 .jp%*@$document,to=cn|com
 .com%*@$document,to=cn|com
@@ -1834,7 +1835,9 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-backlinkr.com##div[style^="width: "][style*=" min-height: "][style*="margin: 0 auto;"]
+famitsu.com#?#div[class^="ArticleDetail_articleMainFooter_"]:has(> div[class^="CommonParts_commonPartsContainer_"] h2:contains(（PR）))
+newstsukuba.jp##div[data-sticky-offset] > div[style="height: 15px"]:empty
+backlinkr.com##div[style^="width: 3"][style*=" min-height: "][style*="margin: 0 auto;"]
 dorosoku.com##div[id^="articleAd"]
 wnacg.com##a[href^="https://l.labsda.com/"]
 wnacg.com##a[href^="https://ent.ystwfucb.shop/"]
@@ -4812,6 +4815,8 @@ yamakamu.net###pc_text-8
 hyougaki.xyz,2ch-uwaki.com,holosoku.com,yamakamu.net##.widget-above-single-sns-buttons
 ||sites.google.com/view/8loomy-love/halaman-muka$document
 digital-soccer.net##.footer_dlsite
+bunshun.jp##.list-thumb.recommend > li:has(.pr)
+bunshun.jp##.sub-column-inner > div.block:has(ul.list-thumb > li.pr)
 bunshun.jp##.banner-pc_right_1st
 bunshun.jp##.banner-pc_right_2nd
 bunshun.jp##.wrapper > div.full-width.banner-box
@@ -8412,7 +8417,7 @@ reibun.biz,irasutoya.com##.splink
 nengaya.net,irasutoya.com##div[class^="entryadwrapper"]
 talknews.net##p[style*="color:#333; text-align:center;"]
 axismag.jp##.pr_posts
-||omyutech.com/image/dns_ads/
+omyutech.com##.fourm-videoads
 a-kimama.com##.banner.blogcard
 hamachan.info###sidetop_ad_pc
 hamachan.info##.ad_m

@@ -1,9 +1,9 @@
-! Checksum: K3Z7dWAhYm4ZYZblgM/tRA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1760589706-14400.patch
+! Checksum: eE84c/8vSxyOlgzkqB5omw
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1761007957-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.11
-! TimeUpdated: 2025-10-16T04:37:25+00:00
+! Version: 2.0.23.15
+! TimeUpdated: 2025-10-21T00:48:14+00:00
 ! Expires: 12 hours (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -521,7 +521,7 @@
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
-/ad-manager.min.js
+/ad-manager.min.js^
 ||cdn.zigcou.com/static/*.webp$domain=2798731938.zigcou.com
 ||news.sbs.co.kr/js/news-player/player.adInfoUrlList.js
 ||11st.co.kr/js/ver/*/powerLink.js
@@ -1354,6 +1354,7 @@
 ||loader.fmkorea.com/_loader/
 ||ssl.pstatic.net/tveta/libs/
 ||vclock.kr/inf0/hot.php^
+||aproxy-vast.wavve.com/*/v/*_AD_*/req/$xmlhttprequest
 /^https:\/\/tvwiki[0-9]+\.net\/data\/banner\//$domain=/tvwiki[0-9]+\.net/
 ||wdwd*.com/data/banner/
 ||static.tzstatic.top/z/*.gif
@@ -1592,6 +1593,7 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+m.ppomppu.co.kr##.ct > .category_box ~ .hot_tag ~ div[style^="text-align:center;width:"]
 search.naver.com##ul > li[data-slog-content][data-slog-visible]:has(div[id^="view_type_guide_"] button > svg[width="36"] path[d^="M13.596 10.988c0"])
 maplescouter.com##.gap-2 > div[class="min-w-[440px]"]
 maplescouter.com##div[class=""] > .flex-col > .justify-center:has(> div[class$="h-[100px]"])

@@ -31714,7 +31714,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 !#if !env_safari
 !#if !adguard_app_ios
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 16October2025v1
+! OriginalVersion: 20October2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -33190,7 +33190,7 @@ $removeparam=duckai
 $removeparam=/^ref=winstall$/
 ! https://media•discordapp•net/attachments/1216338582243905546/1428095127590666331/9c95cdb4-f4a8-f011-bbd2-7ced8d93a186•png?ex=68f140bb&is=68efef3b&hm=9823d3f5245ed3e57643b13299cbad886826744b3d46123f30cdf558e3cc9311&=&format=webp&quality=lossless (16/10/2025)
 !+ NOT_OPTIMIZED
-$document,image,removeparam=/^=$/
+$document,image,removeparam=/^=$/,domain=discord.com|discordapp.net
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -33224,7 +33224,7 @@ $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|
 ! (Exceptions: mail•qq•com, highFI, phpBB forums, flipkartCOM, various other sites)
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*
 ! No particular example (Zoom can't be added; see https://github.com/DandelionSprout/adfilt/issues/665)
-$removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|nextdns.io|tvtropes.org|yandex.com
+$removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|tvtropes.org|yandex.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559915 and https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559864 (eBay can't be added; see https://github.com/DandelionSprout/adfilt/pull/514)
 $removeparam=keyword,domain=bindright.com|lendgo.com|reddit.app.link
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1707764
@@ -33687,11 +33687,20 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ! https://ipv6•google•com/search?q=site:www•microsoft•com/en-us/download/details•aspx?id%3D+%222023%22+-%222016%22&start=40&sstk=Ac65TH4a4yF4347UmfsIR4y2O_LK3QFE1vtUHoXn7e6O_iXGJsIShl1hhKS988jizw8M9G1nhsSyO-cYt8BlkvfRzPEvrAerLeRR1hgFlGlaMpps07rumhuAW1hD-oRsO543
 ||www.google.$document,removeparam=sstk
 ||ipv6.google.com^$document,removeparam=sstk
+! https://github.com/DandelionSprout/adfilt/issues/1186
+://www.google.$removeparam=/^num=\d{2,}$/
+://ipv6.google.com^$removeparam=/^num=\d{2,}$/
+! https://ipv6•google•com/search?q=google+num+parameter&udm=50&aep=1&ntc=1&mstk=AUtExfDNKZ4O2F89gAZKzXmh9QsvQ8Uas7iNnAQVGCvhHelkx9UgLZaM-OaLts9JB5UL668KC-JM799Ifmq_LM7aBefU14vmSbPTK4wl8xCwkalJcdGzLPqri1twQm5b5khbnGNx5TdoHW7xgWRMDRGNGRftcUibhIr5EVQ&csuir=1
+://www.google.$removeparam=aep
+://ipv6.google.com^$removeparam=aep
+://www.google.$removeparam=ntc
+://ipv6.google.com^$removeparam=ntc
 ! (https://github.com/DandelionSprout/adfilt/issues/1078 ...?)
 @@://www.google.*/maps^$removeparam=utm_campaign
 @@://ipv6.google.com/maps^$removeparam=utm_campaign
 ! Should not be removed: dpr (Determines image search results' box sizes)
-! ||www.google.$removeparam=stick (Breaks boxart feeds on the top of movie-related searches)
+!!! stick (Breaks boxart feeds on the top of movie-related searches)
+!!! prmd (Changes the displayed results from page ≥2 for no apparent reason.)
 !!! ——— TikTok ———
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-632259
 ||tiktok.com^$removeparam=_r
@@ -36184,7 +36193,7 @@ www.dolby.com#%#//scriptlet('ubo-rc.js', 'no-cursor')
 ! No iMacs have had less than 1600px wide monitors since 2006, MacBook Pro since 2012, or MacBook Air since 2017. Thus I'm taking a gamble by embedding this for Mac users:
 !+ NOT_OPTIMIZED
 ! Title: 🖥️ Dandelion Sprout's Website Stretcher
-! OriginalVersion: 18September2025v1
+! OriginalVersion: 17October2025v1
 ! Expires: 3 days
 ! Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
 ! Description: Have you ever felt bothered by how many websites still think that everyone are using narrow monitors? Well, here's how to stretch them out like a piece of gum!
@@ -36519,7 +36528,7 @@ patreon.com##div[data-tag^=activePledgeToCreator-] > div[data-tag=right-column]
 ! —————————————————————————————————————————————————————————————————————
 ! Category: SoundCloud
 soundcloud.com#$#.l-container { width: 95vw !important }
-soundcloud.com#$#html[lang] > body { background: none !important }
+!!!soundcloud.com##html[lang] > body:style(background: none !important) (https://github.com/DandelionSprout/adfilt/issues/1185)
 ! Making it easier to see the thumbnails in the video player bar
 soundcloud.com#$#.playbackSoundBadge__avatar > div > .sc-artwork { width: 46px !important; height: 46px !important }
 soundcloud.com#$#.playbackSoundBadge__avatar > div { width: 46px !important; height: 46px !important }
@@ -36620,7 +36629,7 @@ www.meta.ai#$?#div[class*=" "]:nth-of-type(2):has(> div > div[data-pagelet*=Kada
 !#endif
 ! AdGuard was known as of early 2025 to not be able to handle "env_mobile" correctly, necessitating a number of semi-clone syntaxing to handle their products.
 !#if env_mobile
-! OriginalVersion: 22September2025v1
+! OriginalVersion: 16October2025v2
 ! Title: 📱 Staying On The Phone Browser
 ! Expires: 10 days
 ! Description: Created as a proof of concept, and for the benefit of people who really like their phone's web browsers and who are less keen on using various apps.
@@ -37144,6 +37153,11 @@ deviantart.com##body.mobile > .ReactModalPortal + aside:last-of-type
 ###app-store-links
 ! https://www•panewslab•com/en/articles/ea07bd02-7f93-47af-8d31-0e067a0c5de4 (22/09/2025)
 ##div[data-reka-popper-content-wrapper]
+! https://www•instagram•com/what_the_house_/ (16/10/2025, "Open app" button and page opening overlay respectively; I was however unable to remove the baffling "intent://" overlay)
+!+ NOT_OPTIMIZED
+instagram.com##.html-div + div:not(.html-div) + .html-div:has(> [role=link][href^="intent://instagram.com"])
+!+ NOT_OPTIMIZED
+instagram.com##div[class]:first-of-type:not(.html-div) + div.html-div:has(+ div:last-of-type:not([class])):has(a[href^="intent://"])
 ! Below are entries that I borrowed from "I Don't Want Your App", which was maintained by https://github.com/lassekongo83 at https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/i-dont-want-your-app.txt, and which was licenced as GPLv3
 ! Generic
 ##a[href*=".app.link/"]
@@ -37166,7 +37180,7 @@ linkedin.com#$?#body { overflow: auto !important }
 !#if !adguard_app_cli
 !#if !adguard_ext_edge
 !#if !adguard_ext_opera
-! OriginalVersion: 22September2025v1
+! OriginalVersion: 16October2025v2
 ! Title: 📱 Staying On The Phone Browser
 ! Expires: 10 days
 ! Description: Created as a proof of concept, and for the benefit of people who really like their phone's web browsers and who are less keen on using various apps.
@@ -37690,6 +37704,11 @@ deviantart.com##body.mobile > .ReactModalPortal + aside:last-of-type
 ###app-store-links
 ! https://www•panewslab•com/en/articles/ea07bd02-7f93-47af-8d31-0e067a0c5de4 (22/09/2025)
 ##div[data-reka-popper-content-wrapper]
+! https://www•instagram•com/what_the_house_/ (16/10/2025, "Open app" button and page opening overlay respectively; I was however unable to remove the baffling "intent://" overlay)
+!+ NOT_OPTIMIZED
+instagram.com##.html-div + div:not(.html-div) + .html-div:has(> [role=link][href^="intent://instagram.com"])
+!+ NOT_OPTIMIZED
+instagram.com##div[class]:first-of-type:not(.html-div) + div.html-div:has(+ div:last-of-type:not([class])):has(a[href^="intent://"])
 ! Below are entries that I borrowed from "I Don't Want Your App", which was maintained by https://github.com/lassekongo83 at https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/i-dont-want-your-app.txt, and which was licenced as GPLv3
 ! Generic
 ##a[href*=".app.link/"]

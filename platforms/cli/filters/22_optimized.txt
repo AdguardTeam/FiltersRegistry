@@ -1,9 +1,9 @@
-! Checksum: q2HhWYvqjplKEoWPTweOzA
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1760668676-3600.patch
+! Checksum: Y1Ut8hcDT+sSVx3GSzZWVg
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1761014367-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.12.81
-! TimeUpdated: 2025-10-16T13:16:15+00:00
+! Version: 2.0.12.82
+! TimeUpdated: 2025-10-17T15:07:42+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### Block useless widgets #######################
@@ -232,6 +232,7 @@ minkch.com###execphp-5
 tousatusin.com##footer div[id^="text-"]:has(div.ninja-recommend-block)
 umaumanews.com###st_custom_html_widget-3
 umaumanews.com###text-20
+netouyonews.net##main > aside[id^="pc_text"]:has(script[src^="https://blogroll.livedoor.net/"])
 comic.nan-net.com##.rssreader
 ||karukantimes.com/rss*.html$subdocument
 ||blog.livedoor.jp/nanjstu/bt_rss3.htm
@@ -309,6 +310,7 @@ hmangamatome.net##.rssbox_midashi
 hmangamatome.net,sexytvcap.com,erodoujinjohoukan.com###toprss
 /wp-content/plugins/chaty/*$domain=krx18.com|canadaglobalinfo.com|mkvcinemas.kim
 ||vippers.jp/2ch-c_iframe_
+netouyonews.net##.wp-rss-template-container
 sugi69693.xyz###sidebar
 flashff-blog.com##.rsswaku
 tousatu-club.com##.widget_custom_html
@@ -332,6 +334,7 @@ chomanga.org#?#.widget:has(div[class^="rss-box"])
 genshin-matomech.umadacchi.net###block-8
 geektushin.com##.widget-above-related-entries
 geektushin.com##.widget-below-related-entries
+geektushin.com,matomajor-games.com,nintendoevery.com##.widget_rss
 uma-log.net###custom_html-8
 negisoku.com##.t_a > span
 negisoku.com##.article-body-more > p[style="color:gray;text-align:right;"]
@@ -467,6 +470,8 @@ nekowan.com#?##more > span > strong:contains(オススメサイト新着記事)
 twibuz.com,nekowan.com##div[class^="blogroll-"]
 kazokuchannel.doorblog.jp##.left-column-inner > div.plugin-memo:first-child
 gundamlog.com#?#.plugin-memo > div.side > div > script[src$="/blogroll.js"]:upward(3)
+kijolifehack.com##.article-body-more > div.t_h:first-child
+kijolifehack.com##.article-body-more > span > span[style="font-weight: bold; font-size: 125%;"] + span[style="font-size: 125%;"]
 tozanchannel.blog.jp##.ななめmove + p.menuLineLightW-99
 tozanchannel.blog.jp#?#.menuLineLightW-3:contains(人気記事)
 akb48matomemory.com#?#span[style="font-size: 125%;"]:has(> a[target="_blank"])
@@ -752,7 +757,6 @@ pokemon-matome.net#$##wrap-main { padding-top:0 !important; }
 pokemon-matome.net##div[class^="basehtml"]
 warotanikki.com##.code-block
 ||tb.53kf.com/code/$script
-||hayamimi-hobby.com/gen-rss/
 suresuta.jp,sikopedia.com,kisslog2.com###custom_html-6
 akankore.doorblog.jp,beelzeboulxxx.com,gossip1.net,kisslog2.com##.rss_wrapper
 newsoku.blog##.headrsssppc
@@ -880,6 +884,7 @@ blog.livedoor.jp##.rsstoptop
 blog.livedoor.jp##.tabmoji
 blog.livedoor.jp##.tabmoji2
 blog.livedoor.jp###rss3
+blog.livedoor.jp###content > div.banner1
 blog.livedoor.jp###container > div[style$="scrollbar-track-color:#ffffff;"]
 blog.livedoor.jp##.rss-sub
 blog.livedoor.jp###RSSbox
@@ -933,7 +938,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||webchat-ui.citibot.net^
 ||webchat.bebot.io^$third-party
 ||kwizbot.io^$third-party
-||milionymonet.onet.pl/js/omm/widget/euroloterie.js
 ||quotiq.ru^$third-party
 ||prod-live-chat.sprinklr.com^$third-party
 ||widgets.binotel.com^$third-party,domain=~novaposhta.md
@@ -1037,6 +1041,7 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||embed.tawk.to^$third-party,domain=~roonlabs.com|~milesweb.co.uk
 ||jivosite.com^$third-party,domain=~jivosite.ru
 ||mod.calltouch.ru^$third-party
+||netroxsc.ru^$third-party
 ||st.yagla.ru^$third-party
 ||widget.sender.mobi^$third-party,domain=~privat24.ua|~privatbank.ua
 ||cloud.lexprofit.$third-party
@@ -1200,6 +1205,7 @@ mbs.jp##.common-wrap--ranking
 ||api.popin.cc^$third-party
 media.moneyforward.com##.mp-recommends
 media.moneyforward.com##.mp-popin-analytics
+media.moneyforward.com##.home-ranking
 otonanswer.jp##aside > div[style="min-height: 881px;"]
 bike-news.jp#$?#.swiper-slide[data-history^=photo_extra] { remove: true; }
 otonanswer.jp#$?#.swiper-slide[data-history^="photo_extra"] { remove: true; }
@@ -1292,6 +1298,7 @@ javbangers.com,javtasty.com##.table > .block-chat
 moluch.ru##.ask_out
 ||app.hubspot.com/conversations-visitor$third-party
 ||cdn.shopify.com/shopifycloud/shopify_chat^$third-party
+||chatwhizz.com/chat-support/js/wk-chat-support.js
 ||csportal.directstar.ru^$domain=store.sony.ru
 ||procdncache.com/chat.php
 ||selcdn.net/chatBot.js
@@ -1398,6 +1405,8 @@ siver.com.ua#?##sidebar > div.sidebox:has(> div.sidetitle > span:contains("По�
 ##.gsInformer
 /gs_informerClient.min.$third-party
 ||gismeteo.*/getInformer/$third-party
+||videogameschronicle.com/wp-content/themes/alpha/dist/images/promos/*.mp4
+videogameschronicle.com##div[class^="house-patreon-"]
 modxvm.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'checkAndShowDialog')
 thepage.ua##.w-full:has(> div.flex > a[href="https://thepage.ua/ua/donation"])
 dailykos.com##.donation-request
@@ -1409,7 +1418,9 @@ stratege.ru##.alelt_el_dg_box
 istories.media##div[class^="MaterialDonationBanner-module--"]
 boykot.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'lastClosed')
 holod.media##.a-donate
+istories.media##div[class^="DonationsModalTimer-"]
 ncronline.org##.region-main-top
+stlpr.org##.alleg-donate-embed
 perito.media##.footer__swiper-row > div.footer-swiper:has(> div.footer-swiper__container a[href="https://perito.media/posts/perito-zapuskaet-patreon-i-boosty"])
 hrw.org###graphene--modal
 air-journal.fr##[class*="donation"]:not(a)
@@ -1482,7 +1493,6 @@ proekt.media##proekt-group > proekt-block:has(> proekt-columns span#donateButton
 novayagazeta.ru##main > div:has(> svg[width="10000"] + div)
 suntimes.com#%#//scriptlet('trusted-click-element', '.tp-iframe-wrapper.tp-active > button[aria-label="Close"]')
 suntimes.com##.piano_group_banner
-||donorbox.org/embed/$domain=planbmedia.io
 suntimes.com##.piano-after-body
 suntimes.com##.piano_article_sidebar
 nycpokemap.com,londonpogomap.com,vanpokemap.com,sgpokemap.com,sydneypogomap.com###overlay

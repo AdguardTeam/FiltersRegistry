@@ -1,9 +1,9 @@
-! Checksum: gwfFXPmjeTWbGo3dogHMVw
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1760652602-3600.patch
+! Checksum: e4zJwtYzxNKpKtDlzI0Pvw
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1760966330-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.69.31
-! TimeUpdated: 2025-10-16T22:06:18+00:00
+! Version: 2.0.69.36
+! TimeUpdated: 2025-10-20T13:14:50+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||widget-api.dmm.co.jp^
@@ -1171,10 +1171,12 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 /wp-content/plugins/amazonjs/*
 /wp-content/themes/CashLINESystem/js/modal.$script
 /wp-content/uploads/2024/09/fanza_ad$image
+.click/product_tag?id=$document
+.click/product_details?id=$document
+/fingerprint.php$document
 ://www.*.com/article/login|$document
 .com/article/line-20151012$document
 .cfd/*.co.jp/$document
-.com/*.co.jp|$document
 ://myaccount.*.cfd/$document
 .com/verify-key.php?&_r=$xmlhttprequest,~third-party
 .com/%F0%9D%90%A3%F0%9D%90%9A-%F0%9D%90%A3%F0%9D%90%A9/$document
@@ -1182,7 +1184,7 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 .com/www.*.co.jp/login/$document
 .com/www.*.com/login/$document
 -co-jp.net/login|$document
-://master.verify.co.jp.*.com/ja-jp/personal/features-benefits.html$document
+.verify.co.jp.*.com/ja$document
 /jsda.apk^$document
 .com/etc.php?$document
 ://jp.mercari.*.com/signin/$document
@@ -1368,11 +1370,10 @@ _co_jp.*.php$document,domain=cc|com
 .co.jp.*.*/$document,domain=cn|cyou|icu
 -co-jp-*.*/$document,domain=cfd|sbs|site
 -co-jp.*.*/$document,domain=cfd|sbs|site
-/product_details?id=$document,domain=click
 ://smbc.$document,domain=cn|com|top
 ://smbccard*.$document,domain=club
 ://smdc-$document,domain=cn|fit|pl
-://smbc-$document,domain=club|cn|fit|link|shop|top
+://smbc-$document,domain=club|cn|fit|help|homes|lat|link|mom|my|pics|shop|top|work
 /funccode.php|$document,domain=cfd|xyz
 .jp%*@$document,domain=cn|com
 .com%*@$document,domain=cn|com
@@ -1423,7 +1424,9 @@ city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,c
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
-backlinkr.com##div[style^="width: "][style*=" min-height: "][style*="margin: 0 auto;"]
+famitsu.com#?#div[class^="ArticleDetail_articleMainFooter_"]:has(> div[class^="CommonParts_commonPartsContainer_"] h2:contains(（PR）))
+newstsukuba.jp##div[data-sticky-offset] > div[style="height: 15px"]:empty
+backlinkr.com##div[style^="width: 3"][style*=" min-height: "][style*="margin: 0 auto;"]
 dorosoku.com##div[id^="articleAd"]
 wnacg.com##a[href^="https://l.labsda.com/"]
 wnacg.com##a[href^="https://ent.ystwfucb.shop/"]
@@ -4408,6 +4411,8 @@ yamakamu.net###pc_text-8
 hyougaki.xyz,2ch-uwaki.com,holosoku.com,yamakamu.net##.widget-above-single-sns-buttons
 ||sites.google.com/view/8loomy-love/halaman-muka$document
 digital-soccer.net##.footer_dlsite
+bunshun.jp##.list-thumb.recommend > li:has(.pr)
+bunshun.jp##.sub-column-inner > div.block:has(ul.list-thumb > li.pr)
 bunshun.jp##.banner-pc_right_1st
 bunshun.jp##.banner-pc_right_2nd
 bunshun.jp##.wrapper > div.full-width.banner-box
@@ -8007,7 +8012,7 @@ reibun.biz,irasutoya.com##.splink
 nengaya.net,irasutoya.com##div[class^="entryadwrapper"]
 talknews.net##p[style*="color:#333; text-align:center;"]
 axismag.jp##.pr_posts
-||omyutech.com/image/dns_ads/
+omyutech.com##.fourm-videoads
 a-kimama.com##.banner.blogcard
 hamachan.info###sidetop_ad_pc
 hamachan.info##.ad_m
