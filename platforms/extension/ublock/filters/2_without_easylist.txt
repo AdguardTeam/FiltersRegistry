@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: e9DItArUQXB4XG0C1NesTw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1761019942-3600.patch
+! Checksum: nopgZ9PWPlYEXurdNF9wFg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1761100844-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.19.40
-! TimeUpdated: 2025-10-21T04:08:03+00:00
+! Version: 2.4.19.62
+! TimeUpdated: 2025-10-22T02:36:38+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10351,6 +10351,8 @@ spedostream2.shop,play.watch20.space##+js(set-constant, adblock_detect, noopFunc
 @@||omuzaani.me^$generichide
 omuzaani.me#$#body:not(#style_important) > div[id].jwplayer { display: block !important; }
 omuzaani.me#$#body > #ad_banner { display: block !important; }
+omuzaani.me##+js(no-fetch-if, summerday.christmas)
+omuzaani.me##+js(no-setTimeout-if, window.location.replace)
 omuzaani.me##+js(abort-current-script, Number, probeScript)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215573
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication.com/adsbygoogle.js,domain=convert.guru
@@ -13331,6 +13333,7 @@ codevn.net##+js(no-setInterval-if, ['offsetHeight'])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/190068
 link.codevn.net##+js(abort-on-property-write, checkDomain)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135481
+h-game18.xyz##+js(addEventListener-defuser, load, pagead2.googlesyndication.com)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=googlesyndication.com/adsbygoogle.js,domain=h-game18.xyz
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135457
 truffeonline.com##+js(no-fetch-if, pagead2.googlesyndication.com)
@@ -19589,6 +19592,7 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
+idnes.cz###r-nativeadvertorial
 centrum.cz##.sasic-ad
 zena.aktualne.cz##.e-ads-banner
 tvguru.cz,techsvet.cz##body .code-block
@@ -22879,6 +22883,8 @@ smellyfisher.com##.providers
 bestmovie.it,treccani.it##.gmp
 forum.fibra.click##.FibraClickAds-fake-poststream-item
 open.online##a[rel="sponsored"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/215266
+la7.it##+js(no-xhr-if, pubads.g.doubleclick.net)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215109
 htnovo.net##+js(no-setTimeout-if, baitElement.offsetHeight)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214206
@@ -24029,6 +24035,7 @@ dap-news.com##.ads
 !
 ! NOTE: Korean
 !
+torrentqq390.com##.row-banner
 maplescouter.com##div.items-center:empty
 webtoonguide.com##div[id^="db-content"] .webtoonguide-pick-swiper-container
 webtoonguide.com###recommend-swiper-group
@@ -24467,6 +24474,8 @@ vgtv.no###player.pulse-isPauseAdVisible > .jw-overlays
 !
 ! NOTE: Persian
 !
+||biz-cdn.varzesh3.com/banners
+varzesh3.com##[data-ad]
 ||zoomit.ir/ads/
 iranianuk.com##div[data-actirise-slot]:not(#style_important)
 ||iranianuk.com/db/pages/files/ads/
@@ -30005,6 +30014,7 @@ giavang.org###gv_sponsor
 animevietsub.*##center > a[target="_blank"] > img
 animevietsub.*##+js(set-cookie, popupOpened, true)
 !
+animevietsub.*##.video-ad-layer
 ||ad.vietbao.vn^
 ||moneyoyo.com^$third-party
 [$domain=/anime\d+\.site/]##a[rel="nofollow sponsored"]
@@ -30724,6 +30734,8 @@ truyenqqhot.com##div[id^="ads_"]
 !
 !
 !
+!+ NOT_OPTIMIZED
+##.exco-container
 !+ NOT_OPTIMIZED
 ##.banner-advert
 !+ NOT_OPTIMIZED
@@ -35991,6 +36003,11 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+neoseeker.com##div[style*="background: rgb(239, 239, 239);"][style*="min-height: 355px;"]
+data-load.me##+js(remove-node-text, script, window[dynamicFunctionName])
+tvpassport.com#$#.divide-nav { height: auto !important; }
+viefaucet.com#$#.ads > * { transform: rotateX(90deg) !important; height: 1px !important; }
+viefaucet.com##.offerwall-widget
 ||demonicscans.org/toffee/
 demonicscans.org##.toffee-wrap
 fantasylandnews.com##.inside-article > footer.entry-meta ~ .wp-block-image
@@ -36398,7 +36415,6 @@ salix.pages.dev,willow.arlen.icu##.relative:has(> a[href="/partners/submit"])
 /partners/*$domain=willow.arlen.icu|salix.pages.dev
 ||1shows.ru/venus.js
 ||rgshows.me/js/mercury.js
-||lit.link/scripts/geniee-ad-inline.js
 justwatch.com##.sponsored-recommendation
 justwatch.com##.title-list-grid > *:has([class^="sponsored-recommendation"])
 comick.io#?#.py-16:contains(ADVERTISEMENT)
@@ -54747,6 +54763,7 @@ check-host.net##div[class*="border-l-8"]
 ||check-host.net/images/*wcm.png
 ||check-host.net/images/*waith*.png
 ||check-host.net/images/*hosteal*.png
+||check-host.net/images/aelogo*.svg
 !
 ! quora.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149846
@@ -60407,6 +60424,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215736
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215794
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214033
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214802
