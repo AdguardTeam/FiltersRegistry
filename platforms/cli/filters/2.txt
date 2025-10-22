@@ -1,9 +1,9 @@
-! Checksum: eNt7Se534l6OxYg8ldj+jA
-! Diff-Path: ../patches/2/2-s-1761120843-3600.patch
+! Checksum: 98gzFnDpVKheJsc7xzmPsw
+! Diff-Path: ../patches/2/2-s-1761124347-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.19.68
-! TimeUpdated: 2025-10-22T08:10:02+00:00
+! Version: 2.4.19.69
+! TimeUpdated: 2025-10-22T09:08:25+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -13236,9 +13236,10 @@ rackusreads.com#%#//scriptlet('remove-attr', 'style', 'html')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147556
 programmingeeksclub.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! app.axenthost.com
-app.axenthost.com#%#//scriptlet('set-constant', 'nitroAds.loaded', 'true')
-!+ NOT_PLATFORM(ext_ublock)
-app.axenthost.com#%#//scriptlet('prevent-fetch', 'stripe.com')
+@@||app.axenthost.com^$generichide
+@@||s.nitropay.com^$domain=app.axenthost.com
+@@||stripe.com^$domain=app.axenthost.com
+@@||static.cloudflareinsights.com^$domain=app.axenthost.com
 !#safari_cb_affinity(privacy)
 @@||bidder.criteo.com/cdb|$domain=app.axenthost.com
 !#safari_cb_affinity
@@ -16944,9 +16945,10 @@ heidisql.com#%#//scriptlet('set-constant', 'floovy', 'undefined')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30143
 ||theappstore.org/script.js$replace=/ab = "yes";/ab = "no";/
 ||theappstore.org/script.js$replace=/(result\.length > 10000 \? "no" : ")yes(";)/\$1no\$2/
+!+ NOT_OPTIMIZED
 theappstore.org#$##divalert { display: none !important; }
+!+ NOT_OPTIMIZED
 theappstore.org#$##bodypanel { filter: none !important; }
-@@||aosmark.com/ads.js
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,important,domain=theappstore.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29716
 ! https://github.com/AdguardTeam/AdguardFilters/issues/27851
@@ -32075,6 +32077,8 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215993
+1flex.ru#%#//scriptlet('trusted-set-local-storage-item', '__DL_SESSION_9140916', '2761123008204')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213145
 !+ NOT_PLATFORM(ext_ff)
 rpmvid.com,streamcasthub.store#%#(()=>{const e=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").set,t=Object.getOwnPropertyDescriptor(Element.prototype,"innerHTML").get;Object.defineProperty(Element.prototype,"innerHTML",{get(){const e=t.call(this);return e.includes("delete window")?"":e},set(t){e.call(this,t)}})})();
@@ -37030,6 +37034,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+vidapi.xyz###gate
 ||indianexpress.com/wp-content/plugins/express-ad-code-manager/
 ||indianexpress.com/wp-content/themes/indianexpress/js/ie-google-vignette-ad.js
 ||indianexpress.com/wp-content/themes/indianexpress/js/min/in_article_ad.js
@@ -61568,6 +61573,9 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215965
+! https://github.com/AdguardTeam/AdguardFilters/issues/215956
+@@||sp.auth.adobe.com/reggie/*/regcode$stealth=3p-auth
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215736
 @@.ts$stealth=referrer,domain=omuzaani.me
 @@/master.m3u8$stealth=referrer,domain=omuzaani.me
@@ -86209,6 +86217,7 @@ browsershots.org#@#.advert_area
 ||c48eb877a9.com^
 ||c4cef5b39d.com^
 ||c4ef1d1343.com^
+||c4ef95025c.com^
 ||c4ff1123f0.com^
 ||c526b6ac88.com^
 ||c5e739a769.com^
@@ -94268,6 +94277,7 @@ browsershots.org#@#.advert_area
 ||gloabsechukru.net^
 ||gloacmug.net^
 ||gloacobupti.net^
+||gloaftaiza.com^
 ||gloaglahouls.net^
 ||gloamsacoudou.net^
 ||gloaphoo.net^
@@ -95875,6 +95885,7 @@ browsershots.org#@#.advert_area
 ||hkikvxqlbyylq.store^
 ||hkilops.com^
 ||hkjfukkhwfepo.club^
+||hkjwazawuwxiy.online^
 ||hkkfbxwzlbjgt.space^
 ||hknztzqlkjzhc.space^
 ||hkpjnieraypcn.site^
@@ -96394,6 +96405,7 @@ browsershots.org#@#.advert_area
 ||hvukkoxr.xyz^
 ||hvumtqywamn.net^
 ||hvwkwombb.xyz^
+||hvwoeavjjemhq.site^
 ||hvywllhiwgbjj.icu^
 ||hvyzobgbeoqgg.website^
 ||hwdbjplcsdbvl.online^
@@ -96935,6 +96947,7 @@ browsershots.org#@#.advert_area
 ||imposi.com^
 ||impossibleentry.com^
 ||imposterreproductionforeman.com^
+||impractical-market.pro^
 ||impractical-safe.com^
 ||impracticalproperty.pro^
 ||impracticalsmell.com^
@@ -97658,6 +97671,7 @@ browsershots.org#@#.advert_area
 ||iybgsvdqqrtxp.online^
 ||iybtgfvfrnhro.store^
 ||iybwitllknbmq.site^
+||iycaqelvlme.com^
 ||iyclfhofnwbqvlm.net^
 ||iycljnpwjyvyk.website^
 ||iydvocfhvzrwa.website^
@@ -111520,6 +111534,7 @@ browsershots.org#@#.advert_area
 ||slippery-computer.com^
 ||slippery-sort.pro^
 ||slipperymirror.pro^
+||slipperypatience.pro^
 ||slishmisbear.shop^
 ||slivmux.com^
 ||slloidjg.com^
@@ -116994,6 +117009,7 @@ browsershots.org#@#.advert_area
 ||weinas.co.in^
 ||weirdopt.com^
 ||weirdsentence.com^
+||wejqzsufiutaa.site^
 ||wel-wel-fie.com^
 ||welbljlvmmmak.top^
 ||welbljlvmmmev.top^

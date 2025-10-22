@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: NaJvJwjMi5efIElXCY1+kA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1761120868-3600.patch
+! Checksum: pj84SnVmciNlJnv24z2e2A
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1761124365-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.19.68
-! TimeUpdated: 2025-10-22T08:10:02+00:00
+! Version: 2.4.19.69
+! TimeUpdated: 2025-10-22T09:08:25+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12855,7 +12855,10 @@ rackusreads.com##+js(remove-attr, style, html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147556
 programmingeeksclub.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! app.axenthost.com
-app.axenthost.com##+js(set-constant, nitroAds.loaded, true)
+@@||app.axenthost.com^$generichide
+@@||s.nitropay.com^$domain=app.axenthost.com
+@@||stripe.com^$domain=app.axenthost.com
+@@||static.cloudflareinsights.com^$domain=app.axenthost.com
 !#safari_cb_affinity(privacy)
 @@||bidder.criteo.com/cdb|$domain=app.axenthost.com
 !#safari_cb_affinity
@@ -16525,9 +16528,10 @@ heidisql.com##+js(set-constant, floovy, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/121637
 ! https://github.com/AdguardTeam/AdguardFilters/issues/36005
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30143
+!+ NOT_OPTIMIZED
 theappstore.org#$##divalert { display: none !important; }
+!+ NOT_OPTIMIZED
 theappstore.org#$##bodypanel { filter: none !important; }
-@@||aosmark.com/ads.js
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,important,domain=theappstore.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/29716
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_safari, ext_ublock)
@@ -31447,6 +31451,7 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215993
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213145
 !+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122087
@@ -36000,6 +36005,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+vidapi.xyz###gate
 ||indianexpress.com/wp-content/plugins/express-ad-code-manager/
 ||indianexpress.com/wp-content/themes/indianexpress/js/ie-google-vignette-ad.js
 ||indianexpress.com/wp-content/themes/indianexpress/js/min/in_article_ad.js
@@ -60430,6 +60436,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215965
+! https://github.com/AdguardTeam/AdguardFilters/issues/215956
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215736
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215794
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214033
