@@ -1,9 +1,9 @@
-! Checksum: xfkyzJZzEAoK6CsJq34KdQ
-! Diff-Path: ../patches/18/18-s-1761103766-3600.patch
+! Checksum: YaVgqBLupJdUfxoQVrYouw
+! Diff-Path: ../patches/18/18-s-1761106333-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.72.87
-! TimeUpdated: 2025-10-22T03:26:10+00:00
+! Version: 2.0.72.88
+! TimeUpdated: 2025-10-22T04:08:43+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2546,8 +2546,11 @@ naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraem
 !
 ! NOTE: Regular rules
 !
+global.shenzhenair.com###pcHeaderNav:has(> .pc-header-nav-inner > .content[aria-label="Cookie usage notice"])
+global.shenzhenair.com#%#//scriptlet('set-cookie', 'EnableSocialNetwork', 'false')
+global.shenzhenair.com#%#//scriptlet('set-cookie', 'EnableShenCe', 'false')
 /fileadmin/navigate/navCookies/*$domain=cyberforum.de
-popcornflix.com###gdpr_cookie_info_bar-wr
+fawesome.tv,popcornflix.com###gdpr_cookie_info_bar-wr
 ||verdikt-byvshei.ru/catalog/view/javascript/cookie_disclaimer.js
 airbrush.com#%#//scriptlet('trusted-set-local-storage-item', 'cookieSettings', '{"settings":{"essential":true,"analytics":false},"timestamp":99999999999999}')
 otpbank.ru##.p-cookies-notification
