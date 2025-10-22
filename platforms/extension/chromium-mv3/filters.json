@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.78.69",
-			"timeUpdated": "2025-10-22T00:47:50+0000",
+			"version": "2.1.78.70",
+			"timeUpdated": "2025-10-22T04:37:37+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.78.68",
-			"timeUpdated": "2025-10-22T00:47:51+0000",
+			"version": "2.1.78.69",
+			"timeUpdated": "2025-10-22T04:37:39+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1076,8 +1076,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.39.56",
-			"timeUpdated": "2025-10-21T16:40:46+0000",
+			"version": "2.0.39.57",
+			"timeUpdated": "2025-10-22T04:37:59+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1194,8 +1194,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/List-KR/List-KR/refs/heads/master/filter-AdGuard-forward.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.15",
-			"timeUpdated": "2025-10-21T00:48:14+0000",
+			"version": "2.0.23.16",
+			"timeUpdated": "2025-10-22T04:38:06+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1295,8 +1295,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.8",
-			"timeUpdated": "2025-10-20T16:39:29+0000",
+			"version": "2.0.23.9",
+			"timeUpdated": "2025-10-22T04:38:18+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1322,8 +1322,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.30",
-			"timeUpdated": "2025-10-17T16:38:51+0000",
+			"version": "2.0.8.31",
+			"timeUpdated": "2025-10-22T04:38:21+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.72.0",
-			"timeUpdated": "2025-10-22T00:48:44+0000",
+			"version": "2.0.72.1",
+			"timeUpdated": "2025-10-22T04:38:30+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"

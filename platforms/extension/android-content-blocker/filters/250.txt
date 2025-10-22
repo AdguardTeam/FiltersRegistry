@@ -1,12 +1,12 @@
-! Checksum: CepBHQ8aYLTJD2Pfg+nY/g
+! Checksum: YLVq9SiTK/i1yZg2tMKNVA
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.18.11
-! TimeUpdated: 2025-10-21T16:41:16+00:00
+! Version: 2.0.18.12
+! TimeUpdated: 2025-10-22T04:38:27+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 21October2025v2-Compilation
+! OriginalVersion: 22October2025v2-Compilation
 ! Expires: 18 hours
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -1127,6 +1127,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 /ad_click/q?&url=$document,domain=~malware_redirection_results.*
 ! Laughably blatant fraud site
 ! Fraudulent art thefts for money on Google Image Search, e.g. 'cassandra tangled site:tumblr.com suit'
+/^.*\.[a-z]{2,18}\/Stars\.php\?.*$/$match-case,all
 .php?iid=*&cid=$document
 .asp?iid=*&cid=$document
 .med.br/?q=artstation-$document
@@ -5303,121 +5304,6 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ! https://new•reddit•com/r/uBlockOrigin/comments/1h1aaj7/ubo_on_firefox_android_is_causing_a_refresh_loop/ (thanks to stephhawk, who provided this rule)
 ! For when one really doesn't want to have a harder time with uBO's log error checker
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-750434
-! Title: 🈺 Japanese Text Softener「日本語本文軟化」
-! OriginalVersion: 13October2025v1-Beta
-! Expires: 5 days
-! Description: The font situation on many Japanese websites is kind-of absolutely atrocious on Windows (Other OSs are much less affected). They use super-stiff janky fonts resemblant of Windows 95 or Amiga. And even worse, many of the sites also default to the stiff Japanese fonts' atrocious Latin letter types. Here's how to use the sites in a way that is compatible with the 3rd decade of the 21st century.
-! 🇯🇵: Windows における多くの日本語サイトのフォント状況はまったくもってゾッとします（他のOSでは遥かにマシです）。Windows 95 か Amiga を思わせるギッザギザのクズフォントが使用されており、さらに悪いことにそういったサイトの多くは、欧文書体に至ってもこのゾッとするギザギザ日本語フォントをデフォルトとして採用しているのです。令和の時代に相応しくサイトを利用する方法は次のとおりです。
-! Note: I understand it as such that Japanese tech users can get annoyed about some Unicode font blunders that led to some kanji looking incorrect in many fonts. If any of the below fonts are affected by this, inform me about it on GitHub.
-! Note 2: Many more sites can be fixed by installing "Optional features → Show features → Extra Japanese fonts" in Windows 10/11 to get the Meiryu/メイリオ font (but whose kana are ugly); or by uninstalling "MS PGothic"/「MS Pゴシック」from your system entirely. But even then, Latin letters can look slightly strange.
-! Note 3: Starting 10日 April 2024年, South Korean Hangul sites can also become softened in extraordinarily bad cases, e.g. https://www•nintendo•co•kr/news?idx=164
-! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
-! https://www•nicovideo•jp/watch/sm28685290 (20日08月2024年)
-! https://www•pfu•ricoh•com/imaging/ssacc/en/start_download_21•html (04日09月2025年)
-! https://www•nintendo•co•jp/ds/dsiware/kuwj/index.html
-! Their site had managed to tie their icons to a font called "Material Icons" for unclear reasons
-! I've had a beef with alleged teletext fonts for a significant amount of time, even ones in Europe
-! https://www•svt•se/text-tv/webb/100
-! https://www•pfu•ricoh•com/imaging/ssacc/en/start_download_21_GA•html
-! It's been 4 年-ish. Let's settle it more than before. (03日10月2025年)
-! Title: ↖ Anti-'Custom cursors' List
-! OriginalVersion: 20September2025v1-Beta
-! Expires: 14 days
-! Description: This list aims to replace websites' custom cursors with the default OS cursor.
-! Note that any Wikia-related entries currently do not work in ABP or AdBlock, due to EasyList having a whitelisting for the nocookieNET domain that can only be circumvented with "$badfilter" or "$important", neither of which are supported by those two extensions.
-! If you encounter non-covered custom-cursor-using sites, or serious site functionality breakage, do not hesitate to tell me about it on GitHub.
-! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
-! ——— Wikia (I still don't accept their attempt at stealing the word "Fandom") ———
-! https://winx•fandom•com/wiki/Tecna
-/images/*/Cursor
-||images.wikia.nocookie.net/*/Cursor
-@@||wikia.nocookie.net^*/images/$image,badfilter
-! https://disney•fandom•com/wiki/Disney_Fairies (https://wiki•pcsx2•net/Gendai_Yougo_no_Kiso_Chishiki_2001)
-||wikia.nocookie.net/*/Mouse.png|
-/Mousehover.$image
-! https://corpseparty•fandom•com/wiki/Corpseparty_Wiki
-cursor_hover.$image
-! https://kanal•fandom•com/el/wiki/KanalWiki
-.cur/$image
-! https://freddy-fazbears-pizza•fandom•com/wiki/Five_Nights_at_Freddy%27s_Wiki
-/CustomCursor$image
-! https://pikmin•fandom•com/wiki/Pikmin_Wiki
-||nocookie.net/*/OnionSprite$image
-! https://pawpatrol•fandom•com/wiki/Princess_of_Barkingburg
-||nocookie.net/*_cursor_*.png^
-! https://kidicarus•fandom•com/wiki/Viridi
-||nocookie.net/*cursor.png^
-! https://bindingofisaac•fandom•com/wiki/The_Binding_of_Isaac_Wiki
-||imgur.com/eQ15Dp8.png^$third-party
-! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-628026235
-! bindingofisaac•fandom•com/pl/wiki/The_Nail
-||nocookie.net/*/bindingofisaac/*Knife_Icon.png|
-! https://melanie-martinez•fandom•com/wiki/Melanie_Martinez_Wiki
-||rw-designer.com/cursor-view^$image,third-party
-! https://yakusokunoneverland•fandom•com/wiki/The_Promised_Neverland_Wiki
-||vignette.wikia.nocookie.net/*/Nat195.$image,domain=yakusokunoneverland.fandom.com
-! https://angrybirds•fandom•com/wiki/Angry_Birds_Breakfast
-_Cursor1.png^
-! https://ghibli•fandom•com/wiki/Ghibli_Wiki
-||nocookie.net/*/Cursor1.
-! ——— Tumblr ———
-! starbowdream•tumblr•com (07/08/2023)
-! 800db-cloud•tumblr•com (10/11/2023)
-! https://crystalrainwish•tumblr•com/post/663725190025494528 (17/02/2024)
-||cursors-4u.net^$third-party
-! ——— Other sites ———
-! new•company
-/new_cursor.$image
-! https://amigalove•com/viewtopic•php?f=6&t=1031
-/images/pointer.
-! muttagencyCOM
-/svg/arrow-home
-! contraryconCOM
-###cursor
-! flockofsiegelTV
-/images/Cursor.
-/images/Cursor-
-! https://iliketoplay•dk/
-/Assets/*/cursor.png|
-/Assets/*/cursor_hd.png|
-! https://www•dessins-animes•net/t360-grisu-le-petit-dragon
-.cur|$image,domain=~pixiv.net|~deviantart.com
-@@://maps.gstatic.com/*.cur|$image
-! eventy-onlinePL
-##.circle-cursor:not(html, body)
-! designcognitifCO
-/hello-elementor-child/pointer.$script,stylesheet
-! https://veenus•art/users/lottev
-/static/cursor.png|
-! https://witchitalia•forumcommunity•net/?t=57541984&st=60
-/puntatore_$image
-! https://github.com/DandelionSprout/adfilt/issues/453
-apis-sklep.pl##.cursor
-! https://github.com/DandelionSprout/adfilt/issues/552
-##div[class^=styles__CursorWrapper-]
-! https://github.com/DandelionSprout/adfilt/issues/564
-/assets/js/Cursor_1__1.min.js
-##div[data-s^=cursor_1__]
-! https://github.com/DandelionSprout/adfilt/issues/598
-ourcodeworld.com##.mouse-cursor
-! https://lottev•moe/writings/alomyria/
-/wp-content/uploads/*/cursor.png|
-! https://www•nerdelandslaget•no/anmeldelser/nintendo-switch-sports
-! https://github.com/DandelionSprout/adfilt/discussions/779#discussioncomment-5961379
-||uniqueseo.pl/wp-content/uploads/20*/agencja-seo-sem-google-ads-reklama-facebook.png$image
-! https://strategix•dk/
-strategix.dk##.cursor
-! https://www.dragon-mania-legends•wiki/wiki/Update_1.8
-/Cursor_Icon.png|
-/Indicator_Arrow_Icon.png|
-! https://realisationseurope•com/Monte-Carlo-Casino-Touzet (05/01/2024)
-||files.cargocollective.com/*_Plan-de-travail-$image,third-party
-! ——— No example in particular ———
-.ani|$domain=~pixiv.net|~deviantart.com
-.cursor|$domain=~pixiv.net|~deviantart.com
-! OriginalVersion: 20September2025v1-Extension
-! www•dolby•com
-www.dolby.com##div#custom-cursor
 ! AdGuard was known as of early 2025 to not be able to handle "env_mobile" correctly, necessitating a number of semi-clone syntaxing to handle their products.
 ! OriginalVersion: 16October2025v2
 ! Title: 📱 Staying On The Phone Browser
@@ -5893,6 +5779,104 @@ aftonbladet.se##._3aP1_
 soundcloud.com##.upsellBanner__app
 .SmartMessage.$script,domain=weather.com
 quora.com##.modal_bg
+! Title: ↖ Anti-'Custom cursors' List
+! OriginalVersion: 20September2025v1-Beta
+! Expires: 14 days
+! Description: This list aims to replace websites' custom cursors with the default OS cursor.
+! Note that any Wikia-related entries currently do not work in ABP or AdBlock, due to EasyList having a whitelisting for the nocookieNET domain that can only be circumvented with "$badfilter" or "$important", neither of which are supported by those two extensions.
+! If you encounter non-covered custom-cursor-using sites, or serious site functionality breakage, do not hesitate to tell me about it on GitHub.
+! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
+! ——— Wikia (I still don't accept their attempt at stealing the word "Fandom") ———
+! https://winx•fandom•com/wiki/Tecna
+/images/*/Cursor
+||images.wikia.nocookie.net/*/Cursor
+@@||wikia.nocookie.net^*/images/$image,badfilter
+! https://disney•fandom•com/wiki/Disney_Fairies (https://wiki•pcsx2•net/Gendai_Yougo_no_Kiso_Chishiki_2001)
+||wikia.nocookie.net/*/Mouse.png|
+/Mousehover.$image
+! https://corpseparty•fandom•com/wiki/Corpseparty_Wiki
+cursor_hover.$image
+! https://kanal•fandom•com/el/wiki/KanalWiki
+.cur/$image
+! https://freddy-fazbears-pizza•fandom•com/wiki/Five_Nights_at_Freddy%27s_Wiki
+/CustomCursor$image
+! https://pikmin•fandom•com/wiki/Pikmin_Wiki
+||nocookie.net/*/OnionSprite$image
+! https://pawpatrol•fandom•com/wiki/Princess_of_Barkingburg
+||nocookie.net/*_cursor_*.png^
+! https://kidicarus•fandom•com/wiki/Viridi
+||nocookie.net/*cursor.png^
+! https://bindingofisaac•fandom•com/wiki/The_Binding_of_Isaac_Wiki
+||imgur.com/eQ15Dp8.png^$third-party
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-628026235
+! bindingofisaac•fandom•com/pl/wiki/The_Nail
+||nocookie.net/*/bindingofisaac/*Knife_Icon.png|
+! https://melanie-martinez•fandom•com/wiki/Melanie_Martinez_Wiki
+||rw-designer.com/cursor-view^$image,third-party
+! https://yakusokunoneverland•fandom•com/wiki/The_Promised_Neverland_Wiki
+||vignette.wikia.nocookie.net/*/Nat195.$image,domain=yakusokunoneverland.fandom.com
+! https://angrybirds•fandom•com/wiki/Angry_Birds_Breakfast
+_Cursor1.png^
+! https://ghibli•fandom•com/wiki/Ghibli_Wiki
+||nocookie.net/*/Cursor1.
+! ——— Tumblr ———
+! starbowdream•tumblr•com (07/08/2023)
+! 800db-cloud•tumblr•com (10/11/2023)
+! https://crystalrainwish•tumblr•com/post/663725190025494528 (17/02/2024)
+||cursors-4u.net^$third-party
+! ——— Other sites ———
+! new•company
+/new_cursor.$image
+! https://amigalove•com/viewtopic•php?f=6&t=1031
+/images/pointer.
+! muttagencyCOM
+/svg/arrow-home
+! contraryconCOM
+###cursor
+! flockofsiegelTV
+/images/Cursor.
+/images/Cursor-
+! https://iliketoplay•dk/
+/Assets/*/cursor.png|
+/Assets/*/cursor_hd.png|
+! https://www•dessins-animes•net/t360-grisu-le-petit-dragon
+.cur|$image,domain=~pixiv.net|~deviantart.com
+@@://maps.gstatic.com/*.cur|$image
+! eventy-onlinePL
+##.circle-cursor:not(html, body)
+! designcognitifCO
+/hello-elementor-child/pointer.$script,stylesheet
+! https://veenus•art/users/lottev
+/static/cursor.png|
+! https://witchitalia•forumcommunity•net/?t=57541984&st=60
+/puntatore_$image
+! https://github.com/DandelionSprout/adfilt/issues/453
+apis-sklep.pl##.cursor
+! https://github.com/DandelionSprout/adfilt/issues/552
+##div[class^=styles__CursorWrapper-]
+! https://github.com/DandelionSprout/adfilt/issues/564
+/assets/js/Cursor_1__1.min.js
+##div[data-s^=cursor_1__]
+! https://github.com/DandelionSprout/adfilt/issues/598
+ourcodeworld.com##.mouse-cursor
+! https://lottev•moe/writings/alomyria/
+/wp-content/uploads/*/cursor.png|
+! https://www•nerdelandslaget•no/anmeldelser/nintendo-switch-sports
+! https://github.com/DandelionSprout/adfilt/discussions/779#discussioncomment-5961379
+||uniqueseo.pl/wp-content/uploads/20*/agencja-seo-sem-google-ads-reklama-facebook.png$image
+! https://strategix•dk/
+strategix.dk##.cursor
+! https://www.dragon-mania-legends•wiki/wiki/Update_1.8
+/Cursor_Icon.png|
+/Indicator_Arrow_Icon.png|
+! https://realisationseurope•com/Monte-Carlo-Casino-Touzet (05/01/2024)
+||files.cargocollective.com/*_Plan-de-travail-$image,third-party
+! ——— No example in particular ———
+.ani|$domain=~pixiv.net|~deviantart.com
+.cursor|$domain=~pixiv.net|~deviantart.com
+! OriginalVersion: 20September2025v1-Extension
+! www•dolby•com
+www.dolby.com##div#custom-cursor
 ! ————— 'Helpful list for maintainers of and contributors to Adfilt' (Will get its own subfile once I've got spare energy to extend the anti-'Wrong upload place' section further) —————
 ! Marks completed subthreads in https://github.com/DandelionSprout/adfilt/discussions/163 as complated, by marking them as green
 ! ————— Entries that are currently specific to this compilation —————
