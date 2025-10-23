@@ -1,9 +1,9 @@
-! Checksum: SD7rKf0y9ZzdlcxgayYXew
-! Diff-Path: ../patches/17/17-s-1761066658-3600.patch
+! Checksum: KAtgOz79p7PmhQ6PgSwVQg
+! Diff-Path: ../patches/17/17-s-1761153083-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.11.98
-! TimeUpdated: 2025-10-21T17:07:25+00:00
+! Version: 2.0.12.0
+! TimeUpdated: 2025-10-22T17:07:50+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21,6 +21,9 @@
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
 !
+! Adsterra
+$removeparam=adsterra_clid
+$removeparam=adsterra_placement_id
 ! LOGLY
 ! https://cancam.jp/special_2507_blendberry?from=logly&loclid=C0gjn999xa9fLuhhGNaVi0gpDDc
 $removeparam=loclid
@@ -426,6 +429,8 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/215980
+||indianexpress.com^$removeparam=ref
 ! https://github.com/uBlockOrigin/uAssets/issues/30508
 ||biccamera.com^$removeparam=source
 ! https://bunshun.jp/articles/-/82499?ref=special

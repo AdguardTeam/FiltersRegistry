@@ -1,9 +1,9 @@
-! Checksum: zVVr5q3uiLKSMCmzhk1V3Q
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1761100852-3600.patch
+! Checksum: +5PqqSdr7i9L8Z7hZEs29g
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1761187141-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.62
-! TimeUpdated: 2025-10-21T11:06:44+00:00
+! Version: 2.0.54.63
+! TimeUpdated: 2025-10-22T19:07:21+00:00
 ! Expires: 12 hours (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -97,7 +97,6 @@ lameteoagricole.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.co
 meteo-grenoble.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 cinefil.com#%#//scriptlet('set-constant', 'checkDiv', 'noopFunc')
 @@||rustica.fr/*.iads.js
-@@||gift.ibon.com.tw/*/pub.js
 xn--mto-bmab.fr#@#.topbanneradvertise
 empire-streaming.*#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 empire-anime.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
@@ -816,6 +815,7 @@ tripadvisor.com#@#.pubHeader
 $script,third-party,domain=seasonvar.ru,badfilter
 $subdocument,third-party,domain=lulustream.com,badfilter
 $popup,domain=lulustream.com,badfilter
+$popup,domain=lukesitturn.com,badfilter
 $popup,domain=jilliandescribecompany.com,badfilter
 $popup,domain=kellywhatcould.com,badfilter
 $popup,domain=johnalwayssame.com,badfilter
@@ -1671,6 +1671,7 @@ _werbebanner_
 /wp-content/uploads/wp-banners/*
 /urlshortener.js
 /zerg-inf-multi.js
+/zerg-inf.js
 /ai/s/s/js/m/im.js
 /ai/s/s/js/ssu.v2.js
 /ai/s/s/su.php?
@@ -1957,11 +1958,11 @@ _build=iclick-$popup
 ||t4btv.com^$third-party
 ||tagsrvcs.com^$third-party
 ||tapub.fr^$third-party
-||tdsapi.com^$third-party
 ||tdscd.com^$third-party
 ||templatehelp.com^$third-party
 ||tipser.com^$third-party
 ||tools-affil2.com^$third-party
+||totale-defonce.com^$third-party
 ||tpctrust.com^$third-party
 ||trafficroots.com^$third-party
 ||traffictrade.pro^$third-party
@@ -2245,6 +2246,7 @@ _build=iclick-$popup
 ||doathair.com^
 ||dockdigestion.com^
 ||domainscherts.com^
+||dopiestdappled.com^
 ||dorpshexyls.com^
 ||douveejoalastu.net^
 ||dowabledecil.com^
@@ -2613,7 +2615,6 @@ _build=iclick-$popup
 ||pornravage.com^
 ||possietuskar.com^
 ||poudrinnamaste.com^
-||pourbaiser.com^
 ||precismo.com^
 ||presssnews.biz^
 ||priustellen.com^
@@ -2744,6 +2745,7 @@ _build=iclick-$popup
 ||supportxmr.com^
 ||surfcountor.com^
 ||sweatfugate.com^
+||sylverlight.net^
 ||syphonseity.com^
 ||tablingmorphew.shop^
 ||tainosapiece.com^
@@ -3021,7 +3023,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||cdn.escortdude.com/static/bn/
 ||cdn.ev.mu/js/optim/gg_cc/ev/boot.js$domain=~easyviaggio.com|~easyviajar.com|~easyvols.fr|~easyvoyage.co.uk|~easyvoyage.com|~easyvoyage.de
 ||cdn.x1cdn.com^*/banner/
-||cdnpark.com/registrar/*/loader.js
 ||cdscdn.com^*/partners/
 ||cex.io/rb/$third-party
 ||chaturbate.com^*/?track=$subdocument,third-party
@@ -3437,6 +3438,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||nestoria.fr/jsp/include/banners/
 ||nextwarez.com/wp-content/uploads/*-300x250.
 ||niooz.fr^$subdocument
+||openingstijdengids.nl/template/images/publi/
 ||openstreetmap.org/assets/banners/
 ||pagesjaunes-dz.com/pub/
 ||pagesjaunes.fr/js/pj_ad.js
@@ -3577,6 +3579,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###container-pub
 ###container_pub
 ###container_pub_left
+###contenu-text-publicite
 ###contenu_liens-sponso
 ###contextuel-publicite-video
 ###criteoad
@@ -3710,7 +3713,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pubContainer
 ###pubHaut
 ###pubHeader
-###pubHorizontale
 ###pubImg
 ###pubLeft
 ###pubRight
@@ -3983,6 +3985,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.lbl-ad
 ##.leaderboard728
 ##.leftSideAds
+##.left_middle_ad
 ##.liens-sponsorises__external
 ##.line-adv
 ##.logo-right-ads
@@ -4029,6 +4032,10 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pjsleads
 ##.placeholder-pub_dfp
 ##.player-adv
+##.player-screen-ads
+##.player-screen-ads-item
+##.player-screen-ads-list
+##.player-screen-ads-wrapper
 ##.player-sponsor-block
 ##.player__ads
 ##.pmd-ads-mobile
@@ -4179,6 +4186,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.removeAds
 ##.remove_ads
 ##.rightPub
+##.right_adv_block
+##.right_advertissment
 ##.right_middle_ad
 ##.right_top_ad
 ##.rigthpubvideo
@@ -4333,7 +4342,6 @@ banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comi
 buzzdefou.com,gerardmerinfo.fr###habillage_site
 leboncoin.fr###home-top-banner
 confidentielles.com###hunt
-madstef.com###idkey2ban
 ladepeche.fr,midilibre.fr###immobilier
 walfoot.be###imu
 agriaffaires.com,bloggif.com,lesoir.be,play3-live.com,topquizz.fr###leaderboard
@@ -4350,6 +4358,7 @@ liligo.fr###midbanner
 jeu.video###mobile_clic
 w0rld.tv###modal
 leparisien.fr###moteur-billetterie
+zdnet.fr###mpuBottom
 zdnet.fr###mpuTop
 presse-citron.net,touchdownactu.com###mvp-leader-wrap
 agroligne.com###myModal
@@ -4502,7 +4511,6 @@ maison-et-domotique.com##.elementor-widget-heading
 xboxygen.com##.eneba
 manga-news.com##.external-link
 solvusoft.com##.fileviewpro
-orientation-chabab.com##.footer
 gameblog.fr##.footer__partners
 tukif.com##.footer_partner_container_wrapper
 positivr.fr##.front-page-featured_partnr-section-container
@@ -4581,6 +4589,7 @@ leroymerlin.fr##.product-thumbnail[data-vzbl-id]
 nitrotype.com##.profile-ad
 codeur.com##.project-option-premium
 heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.promSB
+heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.promSidebar
 deco.fr,euro-2016-france.net,matchendirect.fr,pokaa.fr##.promo
 gauleporno.xxx,pornburst.xxx##.promo-gauleporno
 ouedkniss.com##.promo-loader
