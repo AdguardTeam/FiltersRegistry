@@ -1,9 +1,9 @@
-! Checksum: iOe3mzVeVAhSENSvLpP7ew
-! Diff-Path: ../patches/16/16-s-1761160254-3600.patch
+! Checksum: PTJYD4QDpcEfB6Qmz5HlJQ
+! Diff-Path: ../patches/16/16-s-1761200042-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.63
-! TimeUpdated: 2025-10-22T19:07:21+00:00
+! Version: 2.0.54.64
+! TimeUpdated: 2025-10-23T06:10:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -220,14 +220,11 @@ japscan.*#%#//scriptlet('set-constant', 'RRUWO', 'true')
 japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementsByClassName', '/^[0-9A-Z_a-z]{3,}$|#/')
 japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/^[a-z][0-9A-Z_a-z]{2,}$/')
 japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^\.[0-9A-Z_a-z]+$/')
-japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^\[class~=/')
 japscan.*#%#//scriptlet("remove-node-text", "script", "/Y[a-z][a-z]?k[a-z]\d|(\|\||if\s*\(|const|let|var)\s*[\s($0-9A-Z_a-z]*=?\W*t\W*[\s($0-9A-Z_a-z]*=?\W*y\W*[\s($0-9A-Z_a-z]*=?\W*p\W*[\s($0-9A-Z_a-z]*=?\W*e\W*[\s($0-9A-Z_a-z]*=?\W*o\W*[\s($0-9A-Z_a-z]*=?\W*f|t\W*[\s($0-9A-Z_a-z]*=?\W*y\W*[\s($0-9A-Z_a-z]*=?\W*p\W*[\s($0-9A-Z_a-z]*=?\W*e\W*[\s($0-9A-Z_a-z]*=?\W*o?\W*[\s($0-9A-Z_a-z]*=?\W*f?\W*if\s*\(|=\s*['\"]t|String\[_0x|fromCharCode\s*\(\s*116|\)\.toString\(|decodeURIComponent\('%|atob\s*\(|Array\.prototype\.indexOf|if\s*\(eval|\|\|\s*eval|replaceChildren|sibling\.|height=|'appendChild|\/007\.png|insertBefore|textContent|createRange|getElementsByClassName|style\.height|function nawNA|.join\s*\(\s*'\s*'\s*\)/")
 japscan.*#%#//scriptlet('trusted-set-constant', 'aclib', '{"isShowingPop": false}')
 japscan.*#%#//scriptlet('set-constant', 'aclib.runInPagePush', 'noopFunc')
 japscan.*#@#div.container > [href]
 japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
-japscan.*#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'onclick', 'let a=function(){};return false;')
-japscan.*#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
 @@||japscan.$image,xmlhttprequest,script,~third-party
 japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
@@ -882,6 +879,7 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+japscan.*##.navbar-nav > li.nav-item > a.text-truncate.nav-link.font-weight-bold[href*="?"]
 lessentiel.lu##div[data-ad-unit-id]
 lejournaldelamaison.fr##div[data-actirise-slot]
 lejournaldelamaison.fr##div[data-hbdbrk-parent]

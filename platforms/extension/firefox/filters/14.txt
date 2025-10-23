@@ -1,9 +1,9 @@
-! Checksum: 8Eipw85ln1zKqdth5yTSOA
-! Diff-Path: ../patches/14/14-s-1761183509-3600.patch
+! Checksum: 3d0HfOlVaZd+8gn5rU79qw
+! Diff-Path: ../patches/14/14-s-1761200038-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.46.74
-! TimeUpdated: 2025-10-23T01:34:55+00:00
+! Version: 2.2.46.75
+! TimeUpdated: 2025-10-23T06:10:17+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2546,6 +2546,7 @@ naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraem
 !
 ! NOTE: Regular rules
 !
+hypotheker.nl#%#//scriptlet('trusted-set-cookie', 'trackingConsent', 'anonymous1')
 gpt.yota.ru##div[class^="_cookie"]
 global.shenzhenair.com###pcHeaderNav:has(> .pc-header-nav-inner > .content[aria-label="Cookie usage notice"])
 global.shenzhenair.com#%#//scriptlet('set-cookie', 'EnableSocialNetwork', 'false')
@@ -17677,6 +17678,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216017
+hypotheker.nl#@#.c-cookie-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215981
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215973
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215972
@@ -42862,6 +42865,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+happymod.*##.righthm
 medikamente-per-klick.de##.erx-top
 eurovisionsport.com##div[class^="layout_bottomBannerContainer__"]
 xn--pckua2a7gp15o89zb.com##.p-appImgBnr
@@ -44265,7 +44269,7 @@ dcarshare.docomo.ne.jp###l_download_app
 kinarino-mall.jp###app-features-band
 ameblo.jp#?##app aside[class^="_"]:has(> a[href^="https://auth.user.ameba.jp/signup"])
 metar-taf.com##.download-info
-happymodpro.com##.download-bottom
+happymod.*,happymodpro.com##.download-bottom
 ||w-higa.com/wp-content/uploads/2014/06/android_hedder.png
 nieuwsblad.be##a[href="https://urlgeni.us/nbonieuws/apppromowidgets"]
 naked-science.ru##.footer-app-block
