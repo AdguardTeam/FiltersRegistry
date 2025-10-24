@@ -1,9 +1,9 @@
-! Checksum: MAyCbbGEafPaYfPppXWCxg
-! Diff-Path: ../patches/14/14-s-1761311984-3600.patch
+! Checksum: z0zD4RleKdSCWmkxHAXPDQ
+! Diff-Path: ../patches/14/14-s-1761318682-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.46.88
-! TimeUpdated: 2025-10-24T13:15:37+00:00
+! Version: 2.2.46.89
+! TimeUpdated: 2025-10-24T15:07:33+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2547,6 +2547,11 @@ naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraem
 !
 ! NOTE: Regular rules
 !
+polizei.bayern.de#%#//scriptlet('set-cookie', 'baypol_banner', 'true')
+polizei.bayern.de#%#//scriptlet('set-cookie', 'baypol_functional', 'true')
+polizei.bayern.de#%#//scriptlet('set-cookie', 'baypol_tracking', 'false')
+polizei.bayern.de#%#//scriptlet('set-cookie', 'baypol_twitter', 'false')
+polizei.bayern.de#%#//scriptlet('set-cookie', 'baypol_youtube', 'false')
 shazam.com##div[class^="Footer_policyLabel_"]
 omodajaecoo.pl#%#//scriptlet('trusted-set-cookie', 'CookieConsent', 'mandatory')
 tk.de#$#.consent-manager { display: none !important; }
@@ -17719,6 +17724,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216167
+polizei.bayern.de#@#.cookie-header
+polizei.bayern.de#@#.cookie-footer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216017
 hypotheker.nl#@#.c-cookie-bar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215981
@@ -50211,6 +50219,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+kinoteatr.ru###animation_container_desktop_left
 biccamera.com##.bcs_listItem > ul > .prod_box:has(> p > a[href^="https://e.s4p.jp/"] > span.bcs_pr)
 petbarn.com.au##div[data-pa-banner-container]
 petbarn.com.au##div[class^="ProductGrid_productsGrid__"] > div[data-tile-type="ad"]
