@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.20.12",
-			"timeUpdated": "2025-10-24T06:09:19+0000",
+			"version": "2.4.20.13",
+			"timeUpdated": "2025-10-24T07:07:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.93.40",
-			"timeUpdated": "2025-10-24T05:07:29+0000",
+			"version": "2.0.93.41",
+			"timeUpdated": "2025-10-24T07:07:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -500,8 +500,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/8.txt",
 			"trustLevel": "full",
-			"version": "2.0.8.71",
-			"timeUpdated": "2025-10-20T04:11:39+0000",
+			"version": "2.0.8.72",
+			"timeUpdated": "2025-10-24T07:08:08+0000",
 			"deprecated": false,
 			"languages": [
 				"nl"
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.7",
-			"timeUpdated": "2025-10-24T05:07:39+0000",
+			"version": "2.0.60.8",
+			"timeUpdated": "2025-10-24T07:08:13+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -1139,11 +1139,11 @@
 			"name": "Estonian List",
 			"description": "Filter for ad blocking on Estonian sites.",
 			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://adblock.ee/",
+			"homepage": "https://github.com/sander85/uBO-et",
 			"expires": 864000,
 			"displayNumber": 2,
 			"groupId": 7,
-			"subscriptionUrl": "https://adblock.ee/list.txt",
+			"subscriptionUrl": "https://ubo-et.lepik.io/list.txt",
 			"trustLevel": "low",
 			"version": "2.0.3.69",
 			"timeUpdated": "2025-10-22T20:36:13+0000",
@@ -1169,8 +1169,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.46.41",
-			"timeUpdated": "2025-10-24T03:21:16+0000",
+			"version": "2.1.46.42",
+			"timeUpdated": "2025-10-24T07:08:32+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
