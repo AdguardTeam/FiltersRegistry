@@ -1,9 +1,9 @@
-! Checksum: crnub7KWypmcGTnVlq+xeg
-! Diff-Path: ../patches/6/6-s-1761167464-3600.patch
+! Checksum: fuABlpb6O75u+KBacoW85Q
+! Diff-Path: ../patches/6/6-s-1761286410-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.49.97
-! TimeUpdated: 2025-10-22T21:07:02+00:00
+! Version: 2.0.50.0
+! TimeUpdated: 2025-10-24T06:09:31+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -370,6 +370,8 @@ essen-und-trinken.de#%#//scriptlet('prevent-setTimeout', 's.call(null)', '10')
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216094
+seoschmiede.at#%#//scriptlet('abort-on-stack-trace', 'document.getElementById', 'getWidget')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212927
 @@||otz.de/static/*/mgt-otz/admanager.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211443
@@ -5817,6 +5819,8 @@ homad-global-configs-eu-fra.schneevonmorgen.com.s3.amazonaws.com/*/config.json$r
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216033
+@@*$popup,~third-party,domain=canna.to|canna-power.to
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215811
 millionenklick.gmx.*,millionenklick.web.de#@#uim\:ad + iframe
 @@||img.ui-portal.de/fallback/$domain=dl.web.de|dl.gmx.net|dl.gmx.at|dl.gmx.de
@@ -10215,6 +10219,7 @@ mydict.com,mydict.net##.list-group
 gmx.ch,gmx.net,web.de##.list-inbox-ad-item--multi-line
 gmx.ch,gmx.net,web.de##.list-programmatic-inbox-ad-item__iframe
 queer.de##.listenbannerlinks
+queer.de##.listenbannerlinksa
 liveticker.com##.live-betting-strip
 bibliomed-pflege.de##.lns-banners-zone
 ladies.de##.location-teaser

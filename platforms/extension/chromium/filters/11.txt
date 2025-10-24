@@ -1,9 +1,9 @@
-! Checksum: dnKESlA1R/xNzYtTPO5l/Q
-! Diff-Path: ../patches/11/11-s-1761117112-3600.patch
+! Checksum: +hvIjZ73OfWrqX6pI8wMDA
+! Diff-Path: ../patches/11/11-s-1761300740-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.65.12
-! TimeUpdated: 2025-10-22T07:08:14+00:00
+! Version: 2.0.65.15
+! TimeUpdated: 2025-10-24T10:08:38+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -710,7 +710,7 @@
 ||admarvel.s3.amazonaws.com^
 ||admedia.com^
 ||admicro1.vcmedia.vn^
-||admitad.com^$domain=~admitad.com
+||ad.admitad.com^$third-party
 ||admixer.co.kr^
 ||admulti.com^
 ||adonly.com^
@@ -1349,6 +1349,9 @@ tube8.com#%#//scriptlet('trusted-click-element', 'a[href].continue-to-video')
 !-------CSS---------
 !-------------------
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216062
+! Fixes dailymotion.com video player when autoplay is disabled by scriptlets
+mein-mmo.de#$#.player-wrapper > .dailymotion-player-root + .thumbnail { display: none !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200684
 financial-field.com#$#body.jackbanner { margin-top: 0 !important; padding-bottom: 0 !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198853
@@ -2085,7 +2088,6 @@ milesplit.com#@#.sticky-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/61298
 ! https://github.com/AdguardTeam/AdguardFilters/issues/58027
 mrmoneymustache.com#@#.custom-ad
-! https://github.com/AdguardTeam/AdguardFilters/issues/58752
 ! https://github.com/AdguardTeam/AdguardFilters/issues/57107
 @@||snssdk.com/video/drm/v*/play_licenses
 ! https://github.com/AdguardTeam/AdguardFilters/issues/59127#issuecomment-658119835
@@ -2374,6 +2376,7 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+biyografya.com##main > div.fixed.backdrop-blur.h-\[100px\]
 indianexpress.com##.mobile:has(> .top-ads-mobile)
 europapress.es##.loader
 europapress.es##.r89-mobile-billboard-top-articles

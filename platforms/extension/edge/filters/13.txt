@@ -1,9 +1,9 @@
-! Checksum: TslPLpaGPJuCrW2BtPaIsw
-! Diff-Path: ../patches/13/13-s-1761135336-3600.patch
+! Checksum: 6yAIjZ8M+BSvbsxgwEGjEw
+! Diff-Path: ../patches/13/13-s-1761297102-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.5
-! TimeUpdated: 2025-10-22T12:11:57+00:00
+! Version: 2.0.60.9
+! TimeUpdated: 2025-10-24T09:08:16+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20,6 +20,7 @@
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
 !
+||testrole.care^
 ||mdznads.pages.dev^
 ||reklam.ibrahimyurttapan.com.tr^
 ||reklam.arailetisim.com^
@@ -1511,6 +1512,11 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+teknolojituru.com##.sticky > .p-4:has(> .items-center:only-child > div[id^="sidebar-ad"]:only-child)
+yabancidiziio.com#%#//scriptlet('prevent-addEventListener', 'message', 'localStorage')
+yabancidiziio.com#%#//scriptlet('remove-cookie', 'showAllDaFull')
+99bitcoins.com##.nnbtc-commercial-banner
+||tranimeizle.io/js/mm*.js
 araba.com##main > div.py-7.relative > a > img
 konhaber.com##div[id$="tower-ad"]
 konhaber.com##div.mx-auto:has(> ins.adsbygoogle)
@@ -2533,7 +2539,7 @@ asyadiziizle.com###content > a
 reytingtv.com##div[class^="fullads"]
 hurriyet.com.tr##.news-content > .cf
 ||timeturk.com/assets/vast/videojs.ads.js
-islamveihsan.com##.ad-banner
+teknolojituru.com,islamveihsan.com##.ad-banner
 tafdi3.com,tafdi4.com##footer .lastright > p ~ a
 tafdi3.com,tafdi4.com##div[class^="vid"][class*="-ads"]
 ||tafdi*.com/ad*.js
@@ -5998,6 +6004,7 @@ x.ag2m2.cfd#?##oframeplayerjs > pjsdiv[style^="position:"]:has(> pjsdiv > pjsdiv
 [$domain=/^dizipal\d+\.com/]##.alert
 [$domain=/^dizipal\d+\.com/]##.rounded.m-auto .bg-black > a[href][target="_blank"]
 [$domain=/^dizipal\d+\.com/]###mPlayerFds
+[$domain=/^dizipal\d+\.com/]##.footer-ad-container
 ! aglint-disable invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/^dizipal\d+\.com$/

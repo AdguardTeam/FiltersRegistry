@@ -1,9 +1,9 @@
-! Checksum: eszeivUPmxVQlSjSSi1UAA
-! Diff-Path: ../patches/16/16-s-1761160256-3600.patch
+! Checksum: lXS016RwIil4ihSM/mExow
+! Diff-Path: ../patches/16/16-s-1761311964-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.63
-! TimeUpdated: 2025-10-22T19:07:21+00:00
+! Version: 2.0.54.68
+! TimeUpdated: 2025-10-24T13:15:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -151,9 +151,12 @@ journaldesfemmes.fr#%#//scriptlet('set-constant', 'integrityObserver.corrupted',
 rustica.fr#%#//scriptlet('set-constant', 'checkAdsBlocked', 'noopFunc')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=rustica.fr
+! https://github.com/AdguardTeam/AdguardFilters/issues/216151
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172868
+tv.free.fr,oqee.tv#%#//scriptlet('google-ima3')
+tv.free.fr,oqee.tv#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=oqee.tv
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=oqee.tv|tv.free.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179285
 ! https://github.com/uBlockOrigin/uAssets/issues/22363
 cookomix.com#%#//scriptlet('prevent-requestAnimationFrame', 'Date.now')
@@ -252,20 +255,11 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/1478420
-japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/#/')
-japscan.*#%#//scriptlet("prevent-addEventListener", "load", "/^\s*\(event\)\s*=>\s*\{|jso\$|(_\d{2}){6}\(/")
-japscan.*#%#//scriptlet('set-constant', 'RRUWO', 'true')
-japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementsByClassName', '/^[0-9A-Z_a-z]{3,}$|#/')
-japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.getElementById', '/^[a-z][0-9A-Z_a-z]{2,}$/')
 japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^\.[0-9A-Z_a-z]+$/')
-japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Document.prototype.querySelector', '/^\[class~=/')
-japscan.*#%#//scriptlet("remove-node-text", "script", "/Y[a-z][a-z]?k[a-z]\d|(\|\||if\s*\(|const|let|var)\s*[\s($0-9A-Z_a-z]*=?\W*t\W*[\s($0-9A-Z_a-z]*=?\W*y\W*[\s($0-9A-Z_a-z]*=?\W*p\W*[\s($0-9A-Z_a-z]*=?\W*e\W*[\s($0-9A-Z_a-z]*=?\W*o\W*[\s($0-9A-Z_a-z]*=?\W*f|t\W*[\s($0-9A-Z_a-z]*=?\W*y\W*[\s($0-9A-Z_a-z]*=?\W*p\W*[\s($0-9A-Z_a-z]*=?\W*e\W*[\s($0-9A-Z_a-z]*=?\W*o?\W*[\s($0-9A-Z_a-z]*=?\W*f?\W*if\s*\(|=\s*['\"]t|String\[_0x|fromCharCode\s*\(\s*116|\)\.toString\(|decodeURIComponent\('%|atob\s*\(|Array\.prototype\.indexOf|if\s*\(eval|\|\|\s*eval|replaceChildren|sibling\.|height=|'appendChild|\/007\.png|insertBefore|textContent|createRange|getElementsByClassName|style\.height|function nawNA|.join\s*\(\s*'\s*'\s*\)/")
 japscan.*#%#//scriptlet('trusted-set-constant', 'aclib', '{"isShowingPop": false}')
 japscan.*#%#//scriptlet('set-constant', 'aclib.runInPagePush', 'noopFunc')
 japscan.*#@#div.container > [href]
 japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
-japscan.*#%#//scriptlet('trusted-set-attr', '.navbar-nav > li#navpromo2.nav-item > a', 'onclick', 'let a=function(){};return false;')
-japscan.*#%#//scriptlet('prevent-requestAnimationFrame', '/^.*/')
 @@||japscan.$image,xmlhttprequest,script,~third-party
 japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
@@ -941,6 +935,8 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+meilleure-innovation.com##.a-wrap:not(:has(>*))
+meilleure-innovation.com##.a-wrap:has(> div[id])
 lessentiel.lu##div[data-ad-unit-id]
 lejournaldelamaison.fr##div[data-actirise-slot]
 lejournaldelamaison.fr##div[data-hbdbrk-parent]

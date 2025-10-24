@@ -1,8 +1,8 @@
-! Checksum: zYDy5pbs0M2oysK1z1X6LQ
+! Checksum: RDdxu7P6xN2LXJ0Av6lr2g
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.0
-! TimeUpdated: 2025-10-22T17:07:50+00:00
+! Version: 2.0.12.1
+! TimeUpdated: 2025-10-23T06:10:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -399,6 +399,12 @@ $removeparam=wickedid
 $removeparam=irgwc
 ! Facebook analytics
 $removeparam=fbclid
+! https://github.com/AdguardTeam/AdguardFilters/issues/216021
+$removeparam=fbadid
+$removeparam=nb_placement
+$removeparam=nb_expid_meta
+?nbt=nb%3A$removeparam=nbt
+&nbt=nb%3A$removeparam=nbt
 !
 $removeparam=adfrom
 $removeparam=nx_source

@@ -1,9 +1,9 @@
-! Checksum: /HhbrSwD+1unhOpVXEh7fw
-! Diff-Path: ../patches/4/4-s-1761183536-3600.patch
+! Checksum: afPAmmbGGf1StQKU2eiJyQ
+! Diff-Path: ../patches/4/4-s-1761300783-3600.patch
 ! Title: AdGuard Social Media filter
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.20.85
-! TimeUpdated: 2025-10-23T01:34:42+00:00
+! Version: 2.1.20.90
+! TimeUpdated: 2025-10-24T10:08:25+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -673,6 +673,10 @@ antirez.com,comicbook.com,alexp.pl,2ality.com,smarttubeapp.github.io,videogamesc
 !
 ! NOTE: Specific rules
 !
+anime4i.com##.announ
+steamcommunity.com##.tool-tip-source:has(> a[href^="https://steamcommunity.com/"][href*="/announcements/share/"])
+huffpost.com##.js-share-link:not([data-vars-action-value="comments"])
+sflix.*,sflix2.to##.ts-social
 comic-fuz.com##div[class^="TitleDetailSns_buttons_"]
 aa.com.tr##.detay-paylas > div + div.d-block
 dailydot.com##.article-footer__share
@@ -1586,8 +1590,8 @@ music.yandex.ru##.d-share-popup
 noataque.com.br##.noticia-share
 em.com.br##.edm-bottom-social
 substack.com##.share-dialog a.pencraft[id^="trigger"][aria-label="View more"]
-thegamebusiness.com,nicolasbustamante.com,blog.bytebytego.com,thecoder.cafe##.pencraft + div:has(> a[role="button"].post-ufi-button > div.label)
-thegamebusiness.com,architecture-weekly.com,substack.com#?#.pencraft:has(> div[class*="font-text-"]:contains(/Facebook|Bluesky|LinkedIn|Reddit|Pinterest|Hacker News|X \(Twitter\)|Share to |Start at/))
+sources.news,thegamebusiness.com,nicolasbustamante.com,blog.bytebytego.com,thecoder.cafe##.pencraft + div:has(> a[role="button"].post-ufi-button > div.label)
+sources.news,thegamebusiness.com,architecture-weekly.com,substack.com#?#.pencraft:has(> div[class*="font-text-"]:contains(/Facebook|Bluesky|LinkedIn|Reddit|Pinterest|Hacker News|X \(Twitter\)|Share to |Start at/))
 lesfrontaliers.lu##.sticky-share
 record.com.mx##.post-social-icons
 qodo.ai#?#.blog-article-sidebar-title:has(> strong:only-child:contains(Share))
@@ -15278,9 +15282,9 @@ com-magazin.de##w-div[role$="dialog"]
 ! NOTE[id=sharingcaring]: 'Sharing is caring' popup
 ! LINK: AnnoyancesFilter/Popups/sections/popups_specific.txt#sharingcaring
 ! Sync with the rules in Annoyances filter
-sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,swatchseries.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.sx,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.hn,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,moviesjoy.*,soap2day.*#$#body { overflow: auto !important; padding-right: 0 !important; }
-sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,swatchseries.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.sx,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.hn,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,moviesjoy.*,soap2day.*#$#.modal-backdrop { display: none !important; }
-sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,swatchseries.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.sx,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.hn,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,moviesjoy.*,soap2day.*#$##modalshare { display: none !important; }
+cineb.gg,sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,swatchseries.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.sx,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.hn,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,soap2day.*,sflix.*,hurawatch.cc#$#body { overflow: auto !important; padding-right: 0 !important; }
+cineb.gg,sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,swatchseries.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.sx,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.hn,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,soap2day.*,sflix.*,hurawatch.cc#$#.modal-backdrop { display: none !important; }
+cineb.gg,sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,swatchseries.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.sx,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.hn,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,soap2day.*,sflix.*,hurawatch.cc#$##modalshare { display: none !important; }
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/60788
 !+ NOT_OPTIMIZED

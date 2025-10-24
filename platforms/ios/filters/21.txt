@@ -1,9 +1,9 @@
-! Checksum: zG14B46JyIshzjQoqBojlw
-! Diff-Path: ../patches/21/21-s-1761160263-3600.patch
+! Checksum: EzslnSz8924dc6Yads54MA
+! Diff-Path: ../patches/21/21-s-1761311974-3600.patch
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.38.35
-! TimeUpdated: 2025-10-22T19:07:25+00:00
+! Version: 2.0.38.39
+! TimeUpdated: 2025-10-24T13:15:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -42,8 +42,10 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/200732
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215569
-nypost.com#%#//scriptlet('abort-on-stack-trace', 'Object.keys', 'canEnterFloating')
+huffpost.com,nypost.com#%#//scriptlet('abort-on-stack-trace', 'Object.keys', 'canEnterFloating')
+||cds.thecontentserver.com/*/player.floating.js$domain=nypost.com|huffpost.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215404
 24saatgazetesi.com##.post-flash
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214203
@@ -3538,6 +3540,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+biccamera.com##.bcs_listItem > ul > .prod_box:has(> p > a[href^="https://e.s4p.jp/"] > span.bcs_pr)
 petbarn.com.au##div[data-pa-banner-container]
 petbarn.com.au##div[class^="ProductGrid_productsGrid__"] > div[data-tile-type="ad"]
 medikamente-per-klick.de##div[id^="customSkyBanner"]
@@ -6638,6 +6641,7 @@ pikabu.ru#%#//scriptlet('remove-class', 'promo-banner-sticky_visible', '.app')
 metaratings.ru,metaratings.by,metarating.com.ua,meta-ratings.kz##div[class*="SportHome_bonusesCarousel__"]
 telecomasia.net,meta.reviews##.main-bonuses
 ! IObit
+iobit.com##div[class$="promotion_index"]:has([onclick*="gtag"])
 iobit.com##div[class^="pagebanner"] > *:has([onclick*="gtag"])
 iobit.com##.anvy__index
 iobit.com##div[class*="bottom"]:has([onclick*="gtag"])
@@ -8960,6 +8964,9 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216028
+3isk.icu,3isk.info#%#//scriptlet('adjust-setTimeout', 'secondsWait', '*', '0.001')
+3isk.icu,3isk.info#%#//scriptlet('adjust-setInterval', 'secondsWait', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214632
 okpeliz.com#%#//scriptlet('adjust-setTimeout', '/countdown|progressLine/', '*', '0.001')
 okpeliz.com#%#//scriptlet('adjust-setInterval', '/countdown|progressLine/', '*', '0.001')

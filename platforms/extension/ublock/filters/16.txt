@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9MfteB4ApE6XUh6fm5KUiQ
-! Diff-Path: ../patches/16/16-s-1761160259-3600.patch
+! Checksum: w74FEUvot5GYKXxjAY0r2A
+! Diff-Path: ../patches/16/16-s-1761311968-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.63
-! TimeUpdated: 2025-10-22T19:07:21+00:00
+! Version: 2.0.54.68
+! TimeUpdated: 2025-10-24T13:15:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -138,8 +138,10 @@ nicematin.com##+js(addEventListener-defuser, DOMContentLoaded, adblock)
 journaldesfemmes.fr##+js(set-constant, integrityObserver.corrupted, 0)
 ! https://github.com/uBlockOrigin/uAssets/issues/22958
 rustica.fr##+js(set-constant, checkAdsBlocked, noopFunc)
+! https://github.com/AdguardTeam/AdguardFilters/issues/216151
 ! https://github.com/AdguardTeam/AdguardFilters/issues/172868
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=oqee.tv
+tv.free.fr,oqee.tv##+js(google-ima)
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=oqee.tv|tv.free.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179285
 ! https://github.com/uBlockOrigin/uAssets/issues/22363
 cookomix.com##+js(no-requestAnimationFrame-if, Date.now)
@@ -823,6 +825,8 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+meilleure-innovation.com##.a-wrap:not(:has(>*))
+meilleure-innovation.com##.a-wrap:has(> div[id])
 lessentiel.lu##div[data-ad-unit-id]
 lejournaldelamaison.fr##div[data-actirise-slot]
 lejournaldelamaison.fr##div[data-hbdbrk-parent]
