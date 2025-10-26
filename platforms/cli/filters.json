@@ -866,8 +866,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.55.99",
-			"timeUpdated": "2025-10-26T16:36:53+0000",
+			"version": "2.1.56.0",
+			"timeUpdated": "2025-10-26T20:35:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -991,8 +991,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.78.95",
-			"timeUpdated": "2025-10-26T16:36:56+0000",
+			"version": "2.1.78.96",
+			"timeUpdated": "2025-10-26T20:35:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1063,8 +1063,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.78.97",
-			"timeUpdated": "2025-10-26T16:36:58+0000",
+			"version": "2.1.78.98",
+			"timeUpdated": "2025-10-26T20:35:05+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -1138,8 +1138,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.78.96",
-			"timeUpdated": "2025-10-26T16:36:58+0000",
+			"version": "2.1.78.97",
+			"timeUpdated": "2025-10-26T20:35:06+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1166,8 +1166,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.78.95",
-			"timeUpdated": "2025-10-26T16:36:59+0000",
+			"version": "2.1.78.96",
+			"timeUpdated": "2025-10-26T20:35:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1216,8 +1216,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.52.65",
-			"timeUpdated": "2025-10-26T16:37:02+0000",
+			"version": "2.1.52.66",
+			"timeUpdated": "2025-10-26T20:35:10+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1313,8 +1313,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.56.27",
-			"timeUpdated": "2025-10-26T16:37:08+0000",
+			"version": "2.1.56.28",
+			"timeUpdated": "2025-10-26T20:35:17+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1337,8 +1337,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.49.99",
-			"timeUpdated": "2025-10-26T16:37:09+0000",
+			"version": "2.1.50.0",
+			"timeUpdated": "2025-10-26T20:35:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1361,8 +1361,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.50.70",
-			"timeUpdated": "2025-10-26T16:37:10+0000",
+			"version": "2.0.50.71",
+			"timeUpdated": "2025-10-26T20:35:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1483,8 +1483,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.78.96",
-			"timeUpdated": "2025-10-26T16:37:13+0000",
+			"version": "2.1.78.97",
+			"timeUpdated": "2025-10-26T20:35:21+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1527,8 +1527,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.78.22",
-			"timeUpdated": "2025-10-26T16:37:14+0000",
+			"version": "2.1.78.23",
+			"timeUpdated": "2025-10-26T20:35:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1572,8 +1572,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/polish-adblock-filters/adblock.txt",
 			"trustLevel": "high",
-			"version": "2.0.15.99",
-			"timeUpdated": "2025-10-21T08:40:45+0000",
+			"version": "2.0.16.0",
+			"timeUpdated": "2025-10-26T20:35:25+0000",
 			"deprecated": false,
 			"languages": [
 				"pl"
@@ -1717,8 +1717,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.19.61",
-			"timeUpdated": "2025-10-26T16:37:19+0000",
+			"version": "2.0.19.62",
+			"timeUpdated": "2025-10-26T20:35:29+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1791,8 +1791,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.78.97",
-			"timeUpdated": "2025-10-26T16:37:20+0000",
+			"version": "2.1.78.98",
+			"timeUpdated": "2025-10-26T20:35:30+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1816,8 +1816,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.76.27",
-			"timeUpdated": "2025-10-26T16:37:22+0000",
+			"version": "2.0.76.28",
+			"timeUpdated": "2025-10-26T20:35:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1990,8 +1990,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.16.9",
-			"timeUpdated": "2025-10-26T16:37:25+0000",
+			"version": "2.0.16.10",
+			"timeUpdated": "2025-10-26T20:35:37+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2014,8 +2014,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "2.1.61.99",
-			"timeUpdated": "2025-10-26T16:37:28+0000",
+			"version": "2.1.62.0",
+			"timeUpdated": "2025-10-26T20:35:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2088,8 +2088,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.75.3",
-			"timeUpdated": "2025-10-26T16:37:29+0000",
+			"version": "2.1.75.4",
+			"timeUpdated": "2025-10-26T20:35:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2216,8 +2216,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/SerboCroatianList.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.65",
-			"timeUpdated": "2025-10-07T00:48:32+0000",
+			"version": "2.0.0.66",
+			"timeUpdated": "2025-10-26T20:35:49+0000",
 			"deprecated": false,
 			"languages": [
 				"sr",
@@ -2242,8 +2242,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.72.28",
-			"timeUpdated": "2025-10-26T16:37:36+0000",
+			"version": "2.0.72.29",
+			"timeUpdated": "2025-10-26T20:35:50+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
