@@ -1,9 +1,9 @@
-! Checksum: BKG6kEi++Xf8e3y4WCerIA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1761526396-14400.patch
+! Checksum: c/Lnq+YHgbIwGIbXbgVHXA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1761540291-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.50.1
-! TimeUpdated: 2025-10-27T00:48:35+00:00
+! Version: 2.1.50.2
+! TimeUpdated: 2025-10-27T04:40:27+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -217,6 +217,7 @@ _social-bar/
 ###facebooktrend
 ###fan-exit
 ###fanback
+###favsocial-list
 ###fb-box
 ###fb-like
 ###fb-like-box
@@ -378,7 +379,6 @@ _social-bar/
 ###share-area
 ###share-bar
 ###share-bottom
-###share-btns
 ###share-buttons
 ###share-card
 ###share-facebook
@@ -487,6 +487,7 @@ _social-bar/
 ###sharevideo
 ###sharing-bar
 ###sharing-box
+###sharing-buttons
 ###sharing-sidebar
 ###sharingBlock
 ###sharing_buttons
@@ -886,10 +887,8 @@ _social-bar/
 ##.article__likes
 ##.article__share
 ##.article__share-buttons
-##.article__share-links
 ##.article__share-title
 ##.article__sharebar
-##.article__shares
 ##.article__sharing
 ##.article__social
 ##.article__social-icons
@@ -1122,6 +1121,7 @@ _social-bar/
 ##.custom-sharing
 ##.custom-social
 ##.custom-social-share
+##.customsocial
 ##.d3-o-share-bar
 ##.dashicons-facebook
 ##.dashicons-twitter
@@ -1380,6 +1380,7 @@ _social-bar/
 ##.footer-facebook
 ##.footer-facebook-icon
 ##.footer-fb
+##.footer-fb-icon
 ##.footer-follow
 ##.footer-follow-us
 ##.footer-followUs
@@ -1401,7 +1402,6 @@ _social-bar/
 ##.footer-share-buttons
 ##.footer-share-list
 ##.footer-sharing
-##.footer-site-social
 ##.footer-sns
 ##.footer-social
 ##.footer-social-block
@@ -1534,7 +1534,6 @@ _social-bar/
 ##.header-facebook
 ##.header-follow-us
 ##.header-icon-instagram
-##.header-item-social
 ##.header-nav-social
 ##.header-share
 ##.header-social-area
@@ -2239,7 +2238,6 @@ _social-bar/
 ##.share-button--facebook
 ##.share-button--twitter
 ##.share-button-group
-##.share-button-list
 ##.share-button-wrapper
 ##.share-buttons-bar
 ##.share-buttons-bottom
@@ -2539,7 +2537,6 @@ _social-bar/
 ##.share_wrap
 ##.share_wrapper
 ##.shareaholic-canvas
-##.shareaholic-ui
 ##.shareall
 ##.shareb
 ##.sharebar
@@ -2722,6 +2719,7 @@ _social-bar/
 ##.snsPalette
 ##.snsWrapper
 ##.sns_box
+##.sns_box_single
 ##.sns_follow
 ##.sns_right
 ##.sns_share
@@ -3330,13 +3328,11 @@ _social-bar/
 ##.twitterbox
 ##.twitterbtn
 ##.twitterbutton
-##.twitterfeed
 ##.twitterfollow
 ##.twitterjo
 ##.twitterlink
 ##.twittershare
 ##.twshare
-##.twt-icon
 ##.twtr
 ##.ty-social-link
 ##.ty-social-link-block
@@ -3403,7 +3399,6 @@ _social-bar/
 ##.whatsapp.icon
 ##.whatsapp_share
 ##.widget--twitter
-##.widget-ahsocial
 ##.widget-follow
 ##.widget-follow-us
 ##.widget-share
@@ -3447,6 +3442,7 @@ _social-bar/
 ##.wp-embed-share
 ##.wp-share
 ##.wp-share-button
+##.wp-social-icons
 ##.wp_social_bookmarking_light
 ##.wpcw-widget-social
 ##.wpex-social-share
@@ -3708,7 +3704,6 @@ oneindia.com###youtube_promo
 tennis.com##.-sharebar
 nhl.com,petri.com##.-social
 ynet.co.il,ynetnews.com##.AccordionShareWrapper
-abebooks.com,nbcsports.com,nhpr.org,pitchbook.com,scrippsnews.com##.ActionBar
 newatlas.com##.ActionLink
 newscientist.com##.ArticleHeader__SocialWrapper
 afar.com##.ArticlePage-actions-wrapper
@@ -3772,7 +3767,6 @@ gobankingrates.com##.between-share-and-author
 military.com##.block--addtoanyadv
 csis.org##.block--social-sharing
 tastesbetterfromscratch.com##.block-follow-me
-tastesbetterfromscratch.com##.block-follow-updates
 studyfinds.org##.block-social-share
 carnewschina.com##.block_social_media__content
 crowdstrike.com##.blog_main_navigation_top
@@ -3948,7 +3942,6 @@ latimes.com##.page-actions
 news18.com##.phtshare
 theroar.com.au##.pm-share-horizontal
 getcomics.org##.post-footer-shr
-androidheadlines.com,bukvy.org,digitalinformationworld.com,douglasnow.com,earthsky.org,energy-reporters.com,gidhaur.com,san.com,watchinamerica.com##.post-share
 discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
 foodandwaterwatch.org,medcitynews.com,publicbooks.org##.post-social-share
 cointelegraph.com##.post__socials-block
@@ -4040,7 +4033,6 @@ politico.com##.social-tools__list
 dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
 macrumors.com##.socialMedia--3i9tSnAb
-eetimes.com##.socialNav
 jetphotos.com##.social__link--share
 eurovisionworld.com##.social_a
 salon.com,snopes.com##.social_comments_app_wrapper
@@ -4098,7 +4090,6 @@ dailymail.co.uk,oogtv.nl##.whatsapp
 aajtak.in,businesstoday.in##.whatsapp_channel
 business-standard.com##.whtsclick
 indiatoday.in##.whtspp_share
-androidheadlines.com##.widget-ahcount
 mediapost.com##.widget-waypoint
 fandom.com##.wikia-bar-anon
 destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
@@ -4203,6 +4194,7 @@ androidpolice.com,creditoagricola.pt,devex.com,electricfencing.co.uk,esradiocast
 cp24.com,epochtimes.com.br,epochtimes.it,lagaceta.com.ar,n-tv.de,progressive.org,toyokeizai.net##.tools
 archifacile.fr,atomic-robo.com,autobelle.it,bollywoodhungama.com,canavesenews.it,chnetwork.org,classicreload.com,donnahay.com.au,fotografidigitali.it,gamingonlinux.com,joburg.org.za,lavoro.gov.it,ledpros.ca,meteovista.be,meteovista.fr,meteovista.pl,navigaweb.net,nexto.pl,phoronix.com,rasom.it,sfr.fr,telesatellite.com,ucl.ac.uk,weeronline.nl,whtop.com,zookeys.pensoft.net###social
 applesfera.com,espinof.com,genbeta.com,vidaextra.com,vitonica.com,xatakahome.com,xatakamovil.com,xatakandroid.com##.masthead-nav-social
+ansalatina.com,disroot.org,onpulson.de,rand.org,sportwebsicilia.it##.social-button
 allears.net,canadaradiostations.com,canli-radyo-dinle.com,cgtnturk.com,crimeonline.com,dezeen.com,diarioprimeralinea.com.ar,eandt.theiet.org,elfinanciero.com.mx,elheraldo.hn,emisoras-puertorico.com,emisorascolombianas.co,fivebooks.com,fmradiofree.com,fmuna.com.ar,foxsports.com.mx,img2go.com,informer.com,internetradio-horen.de,internetradio-schweiz.ch,laprensa.hn,open.online,opencritic.com,politicalflare.com,proteste.org.br,radio-ao-vivo.com,radio-australia.org,radio-belgie.be,radio-danmark.dk,radio-dominicana.com,radio-ecuador.org,radio-en-ligne.fr,radio-en-vivo.mx,radio-espana.es,radio-hk.com,radio-hrvatska.com,radio-italiane.it,radio-korea.com,radio-maroc.org,radio-nederland.nl,radio-norge.org,radio-osterreich.at,radio-philippines.com,radio-polska.pl,radio-singapore.com,radio-south-africa.co.za,radio-stations.co.nz,radio-suomi.com,radio-sveriges.se,radio-thai.com,radio-ua.com,radio-uk.co.uk,radioindia.in,radioindonesia.org,radiojapan.org,radiomalaysia.org,radios-argentinas.org,radios-bolivia.com,radios-chilenas.com,radios-guatemala.com,radios-online.pt,radios-uruguay.com,radios-venezuela.com,radiosdelperu.pe,radiotaiwan.tw,rai.it,redvoicemedia.com,religionnews.com,tarreo.com,thecollegefix.com,upcomingvinyl.com##.social-buttons
 n1info.ba,n1info.hr,n1info.rs,n1info.si,nova.rs##.uc-social-bar-wrapper
 bestcarweb.jp,biglobe.ne.jp,fhm.com.ph,hankooktire.com,jiji.com,joins.com,op.gg,theinvestor.co.kr,videor.co.jp##.sns

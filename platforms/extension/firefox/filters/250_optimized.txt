@@ -1,5 +1,5 @@
-! Checksum: FTWPeh9gyuF8AkUhyJdy/w
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1761468040-14400.patch
+! Checksum: A93Ur1po4VmVrISiXljhgw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1761540279-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.15
@@ -91,6 +91,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||connatedresspint.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||178.128.142.109^$document
+||virnews.club^$all
 /^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||134.209.136.174^$document
@@ -287,7 +288,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||migrationoctavian.com^$all
 ||highnessdemon.com^$all
 ||maintaintournamentslick.com^$all
-||observeshaken.com^$all
 ||delicioustightbronze.com^$all
 ||entertainlavish.com^$all
 ||markswaitingrouge.com^$all
@@ -854,6 +854,7 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##button[title^="Del på "]
 ##button[title^="Share this "]
 ##div[button=share]
+##div[class$=-share-single]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class$=has-share-single])
 ##div[class$=-sticky-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=post-with-stick])
 ##div[class*=_share_button]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##div[class*=addthis]
@@ -1274,7 +1275,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||bannedbook.org^
 @@||epochtimes.com.tw^
 @@||epochweekly.com^
-@@||ntdtv.com^
 @@||renminbao.com^
 @@||secretchina.com^
 @@||soundofhope.org^
@@ -1650,7 +1650,6 @@ $removeparam=acampID
 $document,removeparam=cmt
 $removeparam=at_gd
 $document,removeparam=/^amp=$/,domain=~eurasiantimes.com|~cybersecuritynews.com
-$document,removeparam=/^amp=true$/
 $removeparam=_gl
 $removeparam=vfadid
 $document,removeparam=/^outputType=amp$/
@@ -1836,6 +1835,7 @@ $removeparam=tmplaceref
 $removeparam=tmclickref
 $removeparam=n_cid
 $removeparam=awid
+$removeparam=szredirectid
 $removeparam=af_ad
 $removeparam=af_ad_id
 $removeparam=af_ad_type
@@ -2090,7 +2090,6 @@ $removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
 ||amazon.*/product/$removeparam=tag,document
-||amazon.*/artists/$removeparam=tag,document
 ||amazon.$removeparam=qu
 ||amazon.*/dp/$removeparam=rps,document
 ||amazon.$removeparam=content-id
@@ -2911,6 +2910,7 @@ $document,removeparam=oc,domain=indeed.com
 $document,removeparam=sal,domain=indeed.com
 $document,removeparam=vjk,domain=indeed.com
 $document,removeparam=fvj,domain=indeed.com
+||bp.blogspot.com^$removeparam=/^r[hn].*$/
 $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=.src
 ||login.yahoo.com^$document,removeparam=pspid
@@ -3620,7 +3620,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 ##.adBlock:not(html,body,:empty)
 #@#.ad-banners
 #@#.ad-below
-##.ad-below:not(html,body,:empty)
 #@#.ad-display
 ##.ad-display:not(html,body,:empty)
 #@#.ad-displayed
@@ -3674,6 +3673,7 @@ independent.co.uk,indy100.com##.notification-prompt
 |https://adblock.*/js/pagead.js|$~third-party
 www.google.*,ipv6.google.com###m-x-content div[class]:first-of-type:not([class*=" "]):has(> [data-rl])
 ://discord.com/api/v*/premium-marketing^
+discord.com##div[data-list-item-id*=skill-trees] + div[class*=" unreadImportant"]
 www.deviantart.com##.surface-primary[class^=theme-] > div[class^=_][class*=" _"]:last-of-type
 www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 !+ NOT_OPTIMIZED
