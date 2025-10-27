@@ -1,9 +1,9 @@
-! Checksum: N8wfpIFbNbl1d+RmbwFfog
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1761453617-14400.patch
+! Checksum: r6R7at4G3+MzB3E6l17lfQ
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1761554648-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.12
-! TimeUpdated: 2025-10-26T04:36:36+00:00
+! Version: 2.0.23.13
+! TimeUpdated: 2025-10-27T08:40:31+00:00
 ! Expires: 10 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -1966,6 +1966,7 @@ zeromagazine.nu##div[id^="ads"]
 ##[class*="advads_ad_widget"]:not(body):not(html)
 ##[id^="adace_ads"]
 &autoplay$subdocument,removeparam=autoplay,domain=di.se|expressen.se
+&displayMode=modal$domain=dagen.se
 *$subdocument,third-party,redirect=click2load.html,domain=alltomsallskapsspel.se
 *$ping,domain=nordicinformer.com|fiskejournalen.se|fordonsteknik.net|byggteknik.org|forestindustry.org|autoteknik.net|entreprenoren.net|byggforum.net
 *$script,redirect-rule=noopjs,domain=elevspel.se
@@ -2313,9 +2314,6 @@ zeromagazine.nu##div[id^="ads"]
 /impression$script,domain=affarsvarlden.se
 /impression-tracker-service
 /imp?type(img)
-/integrations/adwords$important,domain=dagen.se
-/integrations/facebook-pixel$important,domain=dagen.se
-/integrations/google-$important,domain=dagen.se
 /isbanner/ib.js
 /javascript_nbenhadverts/*
 /jetpack/*/subscribe-overlay
@@ -3067,6 +3065,7 @@ _banner.php?$domain=tvmatchen.nu
 ||destination.se^$third-party
 ||detfriasverige.circle.so^$ping
 ||didomi.nwtmedia.se^
+||digitalcaramel.com^$third-party
 ||digitaloceanspaces.com/ethical.min.js
 ||directory.cookieyes.com/api/v1/ip
 ||diu127fbe6pn6.cloudfront.net^*/ga-universal.html
