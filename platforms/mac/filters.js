@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.20.90",
-			"timeUpdated": "2025-10-27T12:11:25+0000",
+			"version": "2.4.20.91",
+			"timeUpdated": "2025-10-27T13:16:23+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.47.0",
-			"timeUpdated": "2025-10-27T12:11:48+0000",
+			"version": "2.2.47.1",
+			"timeUpdated": "2025-10-27T13:16:56+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.98.65",
-			"timeUpdated": "2025-10-27T10:08:39+0000",
+			"version": "2.0.98.66",
+			"timeUpdated": "2025-10-27T13:16:58+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.73.13",
-			"timeUpdated": "2025-10-27T12:11:52+0000",
+			"version": "2.0.73.14",
+			"timeUpdated": "2025-10-27T13:17:02+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.64.7",
-			"timeUpdated": "2025-10-27T12:11:53+0000",
+			"version": "2.0.64.8",
+			"timeUpdated": "2025-10-27T13:17:03+0000",
 			"languages": []
 		},
 		{
@@ -322,8 +322,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/20.txt",
-			"version": "2.0.24.24",
-			"timeUpdated": "2025-10-27T12:11:53+0000",
+			"version": "2.0.24.25",
+			"timeUpdated": "2025-10-27T13:17:04+0000",
 			"languages": []
 		},
 		{
@@ -1120,8 +1120,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.46.60",
-			"timeUpdated": "2025-10-27T12:11:57+0000",
+			"version": "2.1.46.61",
+			"timeUpdated": "2025-10-27T13:17:09+0000",
 			"languages": [
 				"zh"
 			]

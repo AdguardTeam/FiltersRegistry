@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.20.90",
-			"timeUpdated": "2025-10-27T12:11:25+0000",
+			"version": "2.4.20.91",
+			"timeUpdated": "2025-10-27T13:16:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.47.0",
-			"timeUpdated": "2025-10-27T12:11:48+0000",
+			"version": "2.2.47.1",
+			"timeUpdated": "2025-10-27T13:16:56+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.0.98.65",
-			"timeUpdated": "2025-10-27T10:08:39+0000",
+			"version": "2.0.98.66",
+			"timeUpdated": "2025-10-27T13:16:58+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.73.13",
-			"timeUpdated": "2025-10-27T12:11:52+0000",
+			"version": "2.0.73.14",
+			"timeUpdated": "2025-10-27T13:17:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.7",
-			"timeUpdated": "2025-10-27T12:11:53+0000",
+			"version": "2.0.64.8",
+			"timeUpdated": "2025-10-27T13:17:03+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -772,8 +772,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.24.24",
-			"timeUpdated": "2025-10-27T12:11:53+0000",
+			"version": "2.0.24.25",
+			"timeUpdated": "2025-10-27T13:17:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.46.60",
-			"timeUpdated": "2025-10-27T12:11:57+0000",
+			"version": "2.1.46.61",
+			"timeUpdated": "2025-10-27T13:17:09+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
