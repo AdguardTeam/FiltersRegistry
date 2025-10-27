@@ -1,9 +1,9 @@
-! Checksum: BIBvuujm3iB5+T+wUw8vHw
-! Diff-Path: ../patches/18/18-s-1761563475-3600.patch
+! Checksum: DN9qq+IMrUKi2euZQtyBmw
+! Diff-Path: ../patches/18/18-s-1761567332-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.73.12
-! TimeUpdated: 2025-10-27T11:07:25+00:00
+! Version: 2.0.73.13
+! TimeUpdated: 2025-10-27T12:11:52+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2548,6 +2548,7 @@ naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraem
 !
 ! NOTE: Regular rules
 !
+hokify.*#%#//scriptlet('trusted-set-local-storage-item', 'accept-cookies', '["essential"]')
 peterburggaz.ru##.pg-cookie
 hashimoto-g.co.jp##.p-cookie
 imoova.com#%#//scriptlet('set-local-storage-item', 'cookie_consent', 'no')
@@ -16664,7 +16665,7 @@ wetter.com#%#//scriptlet('trusted-click-element', '.noscroll button[class$="__bu
 wyniki.diag.pl###root > .MuiBox-root:has(> .MuiStack-root > .MuiStack-root > p.MuiTypography-root > a[href="/regulations"])
 wyniki.diag.pl#%#//scriptlet('set-cookie', 'cookies-accepted', 'true')
 newpharma.fr,newpharma.be,newpharma.de,newpharma.nl,newpharma.at#%#//scriptlet('trusted-click-element', 'button.js-cookie-policy-necessary-btn')
-nordbayern.de#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> span#cmpwelcomebtnyes > a')
+onetz.de,nordbayern.de#%#//scriptlet('trusted-click-element', '#cmpwrapper >>> span#cmpwelcomebtnyes > a')
 cmp.seznam.cz#%#//scriptlet('trusted-click-element', '.szn-cmp-dialog-container >>> button[data-testid="cw-button-agree-with-ads"]', '', '2000')
 speedtest.vodafone.de#%#//scriptlet('trusted-click-element', 'div[data-cy="modal-dialog"] .css-1kjdcue > .css-s9m06g > div[role="button"][style="cursor: pointer; display: inline;"]', '', '500')
 bergans.com#%#//scriptlet('trusted-set-cookie-reload', 'cc', '2:f')
@@ -17663,6 +17664,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216376
+@@||delivery.consentmanager.net/delivery/cmp.php$domain=onetz.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216331
 @@||cdn.cookielaw.org/consent/*.json$domain=timeextension.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216167
