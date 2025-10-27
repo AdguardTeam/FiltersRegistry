@@ -1,9 +1,9 @@
-! Checksum: C+su+ITy82q5wDUMxv1PTw
-! Diff-Path: ../patches/2/2-s-1761538646-3600.patch
+! Checksum: 9PEc3QkED9U/A4TiaRYnkA
+! Diff-Path: ../patches/2/2-s-1761541926-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.20.82
-! TimeUpdated: 2025-10-27T04:13:20+00:00
+! Version: 2.4.20.83
+! TimeUpdated: 2025-10-27T05:07:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10510,6 +10510,19 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216208
+pcoptimizedsettings.com#%#//scriptlet('prevent-addEventListener', 'load', 'innerHTML')
+pcoptimizedsettings.com#$#body > .adunit { display: block !important; }
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=pcoptimizedsettings.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/216278
+animefreak.*#%#//scriptlet('prevent-xhr', 'googlesyndication')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=animefreak.*
+! https://github.com/AdguardTeam/AdguardFilters/issues/216281
+hentaihaven.xxx#%#//scriptlet('prevent-fetch', 'havenclick.com')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||havenclick.com/www/delivery/asyncjs.php
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216155
 kio.ac#%#//scriptlet('prevent-element-src-loading', 'script', 'lib.wtg-ads.com/publisher/kio.ac/sb_interstitial_wtg.js')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -38112,6 +38125,8 @@ $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com
 !
 ! NOTE: Specific rules
 !
+hentaihaven.xxx#%#//scriptlet('prevent-window-open')
+hentaihaven.xxx#%#//scriptlet('remove-node-text', 'script', '/popup|Script_Manager/')
 xmorex.com#%#//scriptlet('prevent-window-open', '/pop?')
 ||ninekon.com/spots/
 solarmovie.fi,flixtor.mov,1movies.bz,movhub.ws,yflix.to##div[class^="text-center"]:has(a[href*="?utm_source="])
@@ -99170,6 +99185,7 @@ browsershots.org#@#.advert_area
 ||gmlamcnuydabl.site^
 ||gmlrxebycmfzu.site^
 ||gmmxpyzumnqaa.store^
+||gmokweuga.com^
 ||gmphfvaymo.com^
 ||gmpjdxvoujgfz.website^
 ||gmpustyzebuow.store^
@@ -114827,6 +114843,7 @@ browsershots.org#@#.advert_area
 ||rmbalnswelwcp.online^
 ||rmbcwxwqrv.com^
 ||rmbkmpsvnjwsc.website^
+||rmcaehghvmlx.com^
 ||rmcxyfqbm.com^
 ||rmddhrvvnhemw.online^
 ||rmejstaywbecq.store^

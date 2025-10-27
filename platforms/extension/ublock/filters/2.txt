@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: HyaNfVNL2FmFvXGVEdkp6A
-! Diff-Path: ../patches/2/2-s-1761538650-3600.patch
+! Checksum: /nfQzu6RQ4aaQj/KQxObUA
+! Diff-Path: ../patches/2/2-s-1761541928-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.20.82
-! TimeUpdated: 2025-10-27T04:13:20+00:00
+! Version: 2.4.20.83
+! TimeUpdated: 2025-10-27T05:07:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10348,6 +10348,13 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216208
+pcoptimizedsettings.com##+js(addEventListener-defuser, load, innerHTML)
+pcoptimizedsettings.com#$#body > .adunit { display: block !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/216278
+animefreak.*##+js(no-xhr-if, googlesyndication)
+! https://github.com/AdguardTeam/AdguardFilters/issues/216281
+hentaihaven.xxx##+js(no-fetch-if, havenclick.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216155
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215863
 packers.com##+js(no-fetch-if, imasdk.googleapis.com/js/sdkloader/ima3.js)
@@ -35986,6 +35993,8 @@ $subdocument,third-party,denyallow=disqus.com,domain=welovemanga.one
 !
 ! NOTE: Specific rules
 !
+hentaihaven.xxx##+js(window.open-defuser)
+hentaihaven.xxx##+js(remove-node-text, script, /popup|Script_Manager/)
 xmorex.com##+js(window.open-defuser, /pop?)
 ||ninekon.com/spots/
 solarmovie.fi,flixtor.mov,1movies.bz,movhub.ws,yflix.to##div[class^="text-center"]:has(a[href*="?utm_source="])
@@ -91935,6 +91944,7 @@ browsershots.org#@#.advert_area
 ||gmlamcnuydabl.site^
 ||gmlrxebycmfzu.site^
 ||gmmxpyzumnqaa.store^
+||gmokweuga.com^
 ||gmphfvaymo.com^
 ||gmpjdxvoujgfz.website^
 ||gmpustyzebuow.store^
@@ -107592,6 +107602,7 @@ browsershots.org#@#.advert_area
 ||rmbalnswelwcp.online^
 ||rmbcwxwqrv.com^
 ||rmbkmpsvnjwsc.website^
+||rmcaehghvmlx.com^
 ||rmcxyfqbm.com^
 ||rmddhrvvnhemw.online^
 ||rmejstaywbecq.store^
