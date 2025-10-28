@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.21.10",
-			"timeUpdated": "2025-10-28T08:09:19+0000",
+			"version": "2.4.21.11",
+			"timeUpdated": "2025-10-28T09:07:54+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.47.9",
-			"timeUpdated": "2025-10-28T08:09:41+0000",
+			"version": "2.2.47.10",
+			"timeUpdated": "2025-10-28T09:08:27+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.73.21",
-			"timeUpdated": "2025-10-28T08:09:44+0000",
+			"version": "2.0.73.22",
+			"timeUpdated": "2025-10-28T09:08:33+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.64.13",
-			"timeUpdated": "2025-10-28T06:10:58+0000",
+			"version": "2.0.64.14",
+			"timeUpdated": "2025-10-28T09:08:34+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.38.42",
-			"timeUpdated": "2025-10-28T02:36:00+0000",
+			"version": "2.0.38.43",
+			"timeUpdated": "2025-10-28T09:08:35+0000",
 			"languages": []
 		},
 		{
@@ -1621,6 +1621,19 @@
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"version": "2.0.9.55",
 			"timeUpdated": "2025-10-27T04:41:12+0000",
+			"languages": []
+		},
+		{
+			"filterId": 259,
+			"name": "Dandelion Sprout's Anti-Malware List",
+			"description": "Blocks more malware than most other major anti-malware lists - domains and URL patterns used in malware redirection chains, IP addresses that are solely used by malware, PUP nags, and a few scammers. Already included in Dandelion Sprout's Annoyances List.",
+			"homepage": "https://github.com/DandelionSprout/adfilt",
+			"expires": 432000,
+			"displayNumber": 1,
+			"groupId": 5,
+			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
+			"version": "2.0.0.0",
+			"timeUpdated": "2025-10-22T09:44:25+0000",
 			"languages": []
 		}
 	]
