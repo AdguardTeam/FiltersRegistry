@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0ElTxv4bU+l3vosZl7wWhA
-! Diff-Path: ../patches/249_optimized/249_optimized-s-1761108134-14400.patch
+! Checksum: 7GXZ/p2MDd7/IKeAvRQB2g
+! Diff-Path: ../patches/249_optimized/249_optimized-s-1761396537-14400.patch
 ! Title: Dandelion Sprout's Nordic Filters (Optimized)
 ! Description: This list covers websites for Norway, Denmark, Iceland, Danish territories, and the Sami indigenous population.
-! Version: 2.0.8.31
-! TimeUpdated: 2025-10-22T04:38:21+00:00
+! Version: 2.0.8.32
+! TimeUpdated: 2025-10-25T12:45:01+00:00
 ! Expires: 5 days (update frequency)
 ###ad_superboard:not(html,body,:empty)
 ###ad_topp:not(html,body,:empty)
@@ -546,6 +546,11 @@ jyllands-posten.dk,jyllands--posten-dk.translate.goog###MegaBoard_Top
 tipsbladet.dk##main > section.l-padding-top-lg
 dn.no##[id^=googlead-]:not(#googlead-toppbanner)
 forum.kvinneguiden.no##div[class*=" ehm-affiliate-"]
+mindrift.no##.bannerlocation-tag
+randerssiderne.dk##div[class]:not([class*=" "]):has(> .lg\:block > .slick-initialized.slick-slider img[src*="ads.netavis.dk"])
+studieportalen.dk###base-form > div[style^="width:"]
+bilauppbod.is###auctionitems__ > .row > .col:has(.topp-banner-ad)
+bilauppbod.is##.main_container.container-fluid:not(:has(a)):has(.topp-banner-ad)
 voguescandinavia.com##div[class^=AdssetsAd_]
 tv2.no##.adunit-wrapper--padded
 klikk.no##.gpt-sticky
@@ -1406,7 +1411,8 @@ kulturplot.no,dagensperspektiv.no,velferd.no###main > .small-12:nth-of-type(1)
 /auglysingar/*
 .no/api/unit-image?$xmlhttprequest,~third-party
 /vefauglysingar/*
-||ad.*.no^$domain=~ad.dep.no|~ad.hem.no|~ad.amediakreativ.no|~ba.no
+||ad.*.no^$domain=~ad.dep.no|~ad.hem.no|~ad.amediakreativ.no|~ba.no|~ad.mallingeiendommer.no
+||ad.*.dk^
 ||ad1.*.dk^
 ||ad1.*.no^
 ||ads.*.dk^$domain=~ads.mst.dk
@@ -1530,6 +1536,7 @@ _visittkortannonse_$image
 /starfsauglysing-$image
 /wp-content/uploads/*_augl_10$image
 .is/wp-content/uploads/*1018x360$image
+||s3-bm-adtech.$third-party
 */gifs/*emty.gif^$domain=yrkesbil.no|bilnorge.no
 -banner_$domain=hnytt.no,image
 -bazaar-$script,domain=nettavisen.no|www-nettavisen-no.translate.goog
@@ -2857,6 +2864,31 @@ jyllands-posten.dk##html[lang] > body section[id^=monster_]
 ||infopostdk.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||158.94.209.89^$all
+||borger-sundhed.com^$all,domain=~svindelfup.*
+||dlssneykonto.com^$all,domain=~svindelfup.*
+||infos-sundhed.com^$all,domain=~svindelfup.*
+||infosundhed.com^$all,domain=~svindelfup.*
+||infosundheds.com^$all,domain=~svindelfup.*
+||sikkerklientopdatering.com^$all,domain=~svindelfup.*
+||skat-skts-dk.com^$all,domain=~svindelfup.*
+||sporpakke-dk.com^$all,domain=~svindelfup.*
+||sundhed-infos.com^$all,domain=~svindelfup.*
+||sundhed-skort.com^$all,domain=~svindelfup.*
+||sundhed-web.com^$all,domain=~svindelfup.*
+||dk-fornysundhed.com^$all,domain=~svindelfup.*
+||dk-sundhed.com^$all,domain=~svindelfup.*
+||dksundhed.com^$all,domain=~svindelfup.*
+||sundhed-infodk.com^$all,domain=~svindelfup.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||158.94.209.86^$all,domain=~svindelfup.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||158.94.209.87^$all,domain=~svindelfup.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||158.94.209.88^$all,domain=~svindelfup.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||158.94.209.90^$all,domain=~svindelfup.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||223.29.226.200^$all,domain=~svindelfup.*
 -med.footeo.com^$document,domain=~falskt-svindelapotek.*
 ||*medisin*.over-blog.com^$document,domain=~falskt-svindelapotek.*
 ||godtdsamaritansk.com^$document,domain=~falskt-svindelapotek.*
