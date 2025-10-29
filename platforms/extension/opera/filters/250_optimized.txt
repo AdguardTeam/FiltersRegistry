@@ -1,5 +1,5 @@
-! Checksum: 4Vd63fIDBLVfzPUsZjLb/w
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1761626494-14400.patch
+! Checksum: KmQ98vs+6RSeEORKLT9Ckg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1761713064-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.15
@@ -20,6 +20,7 @@ www.google.*,ipv6.google.com##.g:has(cite:has-text(.it › )):has(a[href*="-"][h
 ||fileplanet.com^$document,popup
 ||henrypp.org^$document,domain=~stolen_by_casino_spammers.*
 windowsreport.com##.code-block
+appuals.com##.info.box
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_info_texts
@@ -286,7 +287,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||grievetube.com^$all
 ||imperfectabsorbstagger.com^$all
 ||migrationoctavian.com^$all
-||highnessdemon.com^$all
 ||maintaintournamentslick.com^$all
 ||delicioustightbronze.com^$all
 ||entertainlavish.com^$all
@@ -1008,7 +1008,6 @@ $csp=upgrade-insecure-requests,domain=apache.org|gnu.org|washington.edu|nyu.edu|
 ##a[href*="twitter.com/share?url="]
 ##a[onclick*="twitter.com/share?"]
 ##a[title="Share on Twitter" i]
-##button[data-href*="twitter.com/share?text="]
 ##li[data-share=twitter]
 ~viber.com##a[href^="viber://forward?text"]
 ~vk.com##.share-vk:not(html,body,:empty)
@@ -1210,7 +1209,6 @@ taobao.com###J_SiteFooter
 tmall.com##.sn-mobile
 baidu.com##.leadDownloadCard
 baidu.com##.poiLeadDownloadCard
-ctrip.com##.pb80.train-flex.train-wrapper > .h5hide.train-right > .scan-qrcode
 12306.cn##.foot-code
 flights.ctrip.com##.seo-links
 mafengwo.cn###footer
@@ -1232,7 +1230,6 @@ wikia.org,fandom.com###mixed-content-footer
 wikia.org,fandom.com#$?##wds-company-logo-fandom-white { pointer-events: none !important; cursor: default !important; }
 wikia.org,fandom.com#$?#.wds-global-footer__header { pointer-events: none !important; cursor: default !important }
 fandom.com##.unified-search__layout__right-rail
-||vignette.wikia.nocookie.net/*/images/c/cd^$important
 ||wikia.nocookie.net/*/images/*/Wiki-background^$domain=fandom.com
 ||wikia.nocookie.net/*/images/*/Site-background-$domain=fandom.com
 ||wikia.com/*/images/*/Wiki-background^$domain=wikia.org|fandom.com
@@ -1825,8 +1822,6 @@ $removeparam=CSID
 $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
 $removeparam=paid
-$removeparam=pacid
-$removeparam=pa-partnerid
 $removeparam=adtype
 $removeparam=tmad
 $removeparam=tmcampid
@@ -1861,7 +1856,6 @@ $document,removeparam=/^sub_id\d=.*$/
 $removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
-$removeparam=waad
 $removeparam=_gac
 $removeparam=af_medium
 $removeparam=af_source
@@ -2283,7 +2277,6 @@ $removeparam=share_link_id
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|zappos.com
 $removeparam=gtm
 $removeparam=referral,domain=tv2.no|spotify.com|yubo.live
-||open.spotify.com^$removeparam=uid
 ||aliexpress.*/item/$removeparam=pvid
 ||aliexpress.$removeparam=_t
 ||aliexpress.$removeparam=gps-id
@@ -2707,6 +2700,7 @@ $removeparam=queryly,domain=fortune.com
 $removeparam=intcid,domain=cbsnews.com
 ||mercadolibre.com.mx^$removeparam=/^matt_.*$/
 ||lidl.$removeparam=flyx
+||apple.com^$removeparam=ctx_brand
 $removeparam=s_kw,domain=expansion.com|marca.com
 ||qwant.com^$removeparam=client
 ||ecosia.org^$removeparam=addon
@@ -2977,6 +2971,7 @@ ref=dtf.ru$document,removeparam=ref
 ||roblox.$removeparam=friendshipSourceType
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=__ysp
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
+.com/*/status/$document,removeparam=t,domain=twitter.com|x.com
 ||qwant.com^$removeparam=hti
 ||finn.no^$removeparam=nocache
 ||instagram.com^$document,removeparam=entry_point
