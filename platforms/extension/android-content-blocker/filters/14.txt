@@ -1,8 +1,8 @@
-! Checksum: EvrMTBvu8uYooZopmvoNpg
+! Checksum: Fo5K+x3aRp2bZSPjNTLjTA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.47.28
-! TimeUpdated: 2025-10-29T14:07:46+00:00
+! Version: 2.2.47.29
+! TimeUpdated: 2025-10-29T15:08:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2439,6 +2439,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+cloud4box.com###c4b-cookies-informer
 fellou.ai##.consent-cookie-box
 poleznoo.ru##.cookieagry
 ||waterfordwhispersnews.com/wp-content/plugins/wwn-the-rex-plugin/js/_wwn_gdpr-consent-tool.js
@@ -12027,10 +12028,11 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216522
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216196
-@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=mmamania.com
-@@||cdn.cookielaw.org/consent/*.json$domain=mmamania.com
-mmamania.com#@##onetrust-consent-sdk
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=mmamania.com|theverge.com
+@@||cdn.cookielaw.org/consent/*.json$domain=mmamania.com|theverge.com
+theverge.com,mmamania.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216444
 @@||store.asus.com/*/frontend/Magento/base/default/Amasty_GdprFrontendUi/$domain=store.asus.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216376
