@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.21.37",
-			"timeUpdated": "2025-10-29T12:11:25+0000",
+			"version": "2.4.21.38",
+			"timeUpdated": "2025-10-29T13:16:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.93.69",
-			"timeUpdated": "2025-10-29T07:08:01+0000",
+			"version": "2.0.93.70",
+			"timeUpdated": "2025-10-29T13:16:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.21.5",
-			"timeUpdated": "2025-10-29T12:11:35+0000",
+			"version": "2.1.21.6",
+			"timeUpdated": "2025-10-29T13:16:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.47.26",
-			"timeUpdated": "2025-10-29T12:11:49+0000",
+			"version": "2.2.47.27",
+			"timeUpdated": "2025-10-29T13:17:12+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.20",
-			"timeUpdated": "2025-10-29T12:11:54+0000",
+			"version": "2.0.64.21",
+			"timeUpdated": "2025-10-29T13:17:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.46.73",
-			"timeUpdated": "2025-10-29T11:07:24+0000",
+			"version": "2.1.46.74",
+			"timeUpdated": "2025-10-29T13:17:23+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
