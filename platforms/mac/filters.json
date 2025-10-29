@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.21.43",
-			"timeUpdated": "2025-10-29T18:09:48+0000",
+			"version": "2.4.21.44",
+			"timeUpdated": "2025-10-29T19:06:18+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.93.71",
-			"timeUpdated": "2025-10-29T18:09:57+0000",
+			"version": "2.0.93.72",
+			"timeUpdated": "2025-10-29T19:06:26+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.50.3",
-			"timeUpdated": "2025-10-28T18:09:55+0000",
+			"version": "2.0.50.4",
+			"timeUpdated": "2025-10-29T19:06:32+0000",
 			"languages": [
 				"de"
 			]
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.69.50",
-			"timeUpdated": "2025-10-29T15:08:31+0000",
+			"version": "2.0.69.51",
+			"timeUpdated": "2025-10-29T19:06:34+0000",
 			"languages": [
 				"ja"
 			]
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.65.24",
-			"timeUpdated": "2025-10-29T18:10:13+0000",
+			"version": "2.0.65.25",
+			"timeUpdated": "2025-10-29T19:06:37+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.47.31",
-			"timeUpdated": "2025-10-29T18:10:21+0000",
+			"version": "2.2.47.32",
+			"timeUpdated": "2025-10-29T19:06:43+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.73.38",
-			"timeUpdated": "2025-10-29T18:10:29+0000",
+			"version": "2.0.73.39",
+			"timeUpdated": "2025-10-29T19:06:47+0000",
 			"languages": []
 		},
 		{
