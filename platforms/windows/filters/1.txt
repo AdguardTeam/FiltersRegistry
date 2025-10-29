@@ -1,9 +1,9 @@
-! Checksum: CM4w8xJh/QvsGltFrg9tCA
-! Diff-Path: ../patches/1/1-s-1761311984-3600.patch
+! Checksum: 83iPfHaVFKsYRTx7MoPPmw
+! Diff-Path: ../patches/1/1-s-1761667994-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.2.50
-! TimeUpdated: 2025-10-24T13:15:01+00:00
+! Version: 2.1.2.58
+! TimeUpdated: 2025-10-28T16:08:16+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5254,7 +5254,6 @@ cunofilms.ru#%#//scriptlet('abort-on-property-read', 'adOnClick')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175426
 ru.spbtv.com#%#//scriptlet("json-prune", "data.ads")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171941
-kinoteatr.ru#%#//scriptlet('abort-on-property-read', 'initBanner')
 kinoteatr.ru#%#//scriptlet('set-constant', 'app.ad', 'undefined')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/171823
 sex-studentki.*#%#//scriptlet('remove-node-text', 'script', '/renderInPage|script\.charset/')
@@ -6992,6 +6991,18 @@ glavbukh.ru,chehov-vid.ru,161.ru,prufy.ru,ysia.ru,5koleso.ru,ngs.ru,i38.ru,chita
 !
 !
 !
+russianireland.com##a[class="gofollow"][target="_blank"] > img
+avtocod.ru##.super-banner
+||internet-lab.ru/sites/internet-lab.ru/files/2024-10/5213405289171248669.jpg
+internet-lab.ru###iadv1
+emosurff.com##.feedAdvertHorizontal
+emosurff.com##.feed > div.feedElement:has(> div[id^="yandex_rtb"])
+tekstipesen.com##.cls:has(> div[id^="yandex"]:first-child + script:last-child)
+ati.su##.large_sidebar_adv
+ati.su##div[class*="horizontal_adv"]
+ati.su##div[id$="_pr_itemcontainer"]
+ati.su##div[id*="Skeleton"]
+habr.com##.adfox-banner-placeholder
 aviaport.ru##.main__banner
 ura.news##body > div.go
 ura.news##aside > div.hs
@@ -17021,6 +17032,7 @@ kg-portal.ru##[class^="ten_frontrow_"]
 kg-portal.ru##.ten_footer_wrap
 !
 ! nnmclub
+||cdn.lottielab.com^$domain=nnmclub.to
 nnmclub.to##table[width="100%"] > tbody > tr > td > table[width="100%"][class="pline"]:has(td[align="center"] > center > big > a)
 nnmclub.to#%#//scriptlet('abort-on-property-write', 'v')
 ||nnmstatic.win/forum/ads/
