@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: VnbwkWYOm2fj9qJo1wnNFQ
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1761619184-3600.patch
+! Checksum: pP1rZZ+iZumJ/GR1Y0vgTA
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1761792104-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.24.25
-! TimeUpdated: 2025-10-27T13:17:04+00:00
+! Version: 2.0.24.28
+! TimeUpdated: 2025-10-29T18:10:31+00:00
 ! Expires: 5 days (update frequency)
 /js/jquery.smartbanner.js
 ##.ldapp-article
@@ -23,6 +23,9 @@
 ###appss
 ##[onclick="goAppHtml();"]
 alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+moviebox.*##.pc-guide-mask
+mobiletrans.wondershare.com##.footer-float-block
+mobiletrans.wondershare.com##+js(addEventListener-defuser, , /modalLeave|mobileEnterApp/)
 customer.licard.ru##+js(set-session-storage-item, modalClosed, true)
 hokify.*##.bg-color-banner-to-mobile
 happymod.*##.righthm
@@ -43,7 +46,6 @@ news.web.nhk##a[style^="--"][style$=":0.4fr 1fr"][href="https://news.web.nhk/new
 stay.rakuten.co.jp##.css-eg1at3
 stay.rakuten.co.jp##a[href^="/app/?l-id="]
 news.yahoo.co.jp##li:has(> a[href*="/app.adjust.com"]:only-child)
-animelatinohd.com##div[class^="messageApp_modal_"]
 picrew.me##.sitetop-appDL
 litv.tv##a[title="下載APP"]
 auto.ru##div[data-testid="ListingItemPromoGoToApp"]
@@ -60,7 +62,6 @@ vodafone.com.tr##header > div[class^="Blockstyle__Block"]:has(> div[class^="Bloc
 tver.jp##div[class^="Episode_companionAd__"]
 examine.com##body > section.z-1000.sm\:hidden
 nearme.jp##+js(set-cookie-reload, DISPLAY_DOWNLOAD_APP_BANNER, false)
-sparkasse-hochfranken.de##.s_app_info
 turkcell.com.tr##div[class^="SmartBanner_container"]
 turkcell.com.tr##section[class^="AppsWorld_apps-world"]
 bcs-express.ru##div[data-id="footer-banner"]
@@ -152,7 +153,6 @@ zeta-ai.io#?##portal-container > div.items-center:has(> div[style*="opacity: 1"]
 video.tv-tokyo.co.jp##.cta-around
 tickpick.com###appinstall
 wibes.ru##div[class^="DownloadAppBanner"]
-wibes.ru##div[class^="FooterBanner_container"]
 treccani.it###__next > div.MuiBox-root:has(> div.MuiBox-root > a > span[class*="DownloadAppHeader"])
 speedtest.cn##.speed-app
 10minutesemail.net##main.tm-drax-content > div[style^="display:"]
@@ -174,6 +174,7 @@ donanimhaber.com#$#.uygulamayi-indir { visibility: hidden !important; height: 0 
 bristol.ru##.first-order-modal
 imdb.com##.imdb-header__app-button
 doordash.com##a[data-testid="openAppButton"]
+doordash.com##div[class]:has(> div[data-testid="appDownload"]:first-child + button[data-testid="appDownloadButton"]:last-child)
 t.shuqi.com##.ReaderFreeFixedGuideBtn
 enerjisa.com.tr,easy.co.il##.qr-container
 ntv.com.tr##.article-app-widget
@@ -378,7 +379,6 @@ hangikredi.com##div[class*="bg-bannerLeftGradient"]
 meteum.ai##button[class^="AppPromo_container"]
 arabam.com,m.sonyunara.jp,magnit.ru##.install-app-banner
 navitime.co.jp###body-left > div.section:has(> a[href="https://www.navitime.co.jp/pcstorage/html/japan_travel/english/"])
-kids-doctor.jp##.detail_footer_app_dl_container
 msn.com##div[class^="weatherMobileUpsellContainer-"]
 digitimes.com.tw##+js(abort-current-script, $, apppromo)
 cultura.uol.com.br###homecampanha
@@ -605,6 +605,7 @@ bfmtv.com#$##android_banner { display: none!important; }
 bfmtv.com##+js(remove-class, app_banner, body)
 indiatimes.com##.site-header__getapp
 yimenapp.com##.widget_image_ad
+glavcom.ua##.banner_amp
 crmeb.com##body > div#side
 shafa.ua##.js-catalog-apps-promotion-banner
 rikunabi.com##.guiding-app-dl
@@ -1207,6 +1208,7 @@ erecipe.woman.excite.co.jp##.appdl_container
 access.line.me##.MdMN01Banner
 kinarino.jp##+js(set-cookie-reload, hide_app_banner, 1)
 r.gnavi.co.jp##div[class^="style_appAdvertise__"]
+dcard.tw##.__portal > button
 rapidgator.net##a[href="https://play.google.com/store/apps/details?id=net.rapidgator"]
 trovo.live##+js(set-session-storage-item, download-dialog-closed, 1)
 ||popdaily.com.tw/statics/images/appDownloadBanner.png
@@ -1284,7 +1286,6 @@ minfin.com.ua,magnit.ru,practicum.yandex.ru,spb.napopravku.ru,spark-interfax.ru#
 dns-shop.ru,style.rbc.ru,autodaily.ru,skyticket.jp,tabletki.ua,autonews.ru##.app-link
 delishkitchen.tv#$#aside[class^="footer-app-banner-wrap"] { margin: 1em 0 0 !important; visibility: hidden !important; height: 0 !important; }
 latent.space,ciw.news,infranken.de,babelli.de,kidsna.com,live.leisu.com,rausgegangen.de,flowwow.com,theolognion.com,recipe-blog.jp,retty.me,haber.doviz.com,nuum.ru,vinmec.com,coinmarketcap.com,pass.auone.jp,makuake.com,low-ya.com,ticketjam.jp,douglas.de,substack.com,mapion.co.jp,amebaownd.com,prospektangebote.de,montecarlo.ru,autoscout24.de,stackoverflow.com,77onlineshop.de,nicovideo.jp,inpost.pl,vivre.eu,thequestion.ru,mysterycircus.jp,globo.com,delishkitchen.tv##.app-banner
-nana-music.com##.base-top
 imdb.com,nana-music.com##.footer__app
 kikkoman.co.jp##.application-banner
 napbizblog.jp##.napbizapp
@@ -1353,6 +1354,7 @@ wondershare.com##.appBox
 kiro7.com##.layout-section a[href="/mobile-apps/"]
 blog.terabox.com,freshercooker.in###custom_html-5
 blu-ray.com##img[width="148"][height="52"]
+musical-u.com#?##sidebar > div.widget_text:has(> div.textwidget > a[href="https://www.musical-u.com/apps/"])
 adme.media,brightside.me##div[data-test-id="install-app"]
 folk-media.com###app-banner-pc-footer
 speedtest.cn##.shade
@@ -1480,6 +1482,7 @@ weather.yahoo.co.jp##.footeLinkPromo
 weather.yahoo.co.jp##.appLink
 typhoon.yahoo.co.jp,weather.yahoo.co.jp##.mdStickyFooter
 sixty-percent.com,m.sporx.com,baitoru.com,hokuohkurashi.com,weather.yahoo.co.jp##a[href^="https://app.adjust.com/"]
+roadway.yahoo.co.jp##.banners > li > a[href^="https://app.adjust.com/"]
 roadway.yahoo.co.jp###rc_app
 netkeiba.com,zhihu.com,wayfair.de,shopping.yahoo.co.jp,103.by##.AppBanner
 search.yahoo.co.jp###contentsInner > article[class^="W2ALink_W2ALink__"]
@@ -1508,11 +1511,11 @@ arzamas.academy#$#body { margin-top: 0! important; }
 papara.com###smart
 expedia.be,expedia.nl,expedia.ch,expedia.de,expedia.it,expedia.fr,expedia.at,expedia.dk,expedia.es,expedia.no,expedia.fi,expedia.co.uk,expedia.ie,expedia.se###mad-footer-container
 ||cdn.branch.io^$domain=underarmour.com|pressreader.com|medium.com
+i2symbol.com#$##myModal { display: none!important; }
 academia.edu,raysigorta.com.tr,i2symbol.com#$#.modal-backdrop { display: none!important; }
 zhihu.com,vprok.ru,raysigorta.com.tr,m.sportmaster.ru,i2symbol.com#$#body { overflow: visible!important; }
 zhihu.com#$#.MobileModal-wrapper { display: none !important; }
 m.yelp.com##body > div[data-hypernova-key^="mobile_site_"] > div._2oFDT > div.u-space-t4 + div[class="_1mboc _39b4o _2oFDT"]:last-child
-||naturalnews.com/Images/NaturalNews-App-
 waze.com##.wz-downloadbar
 dlive.tv##.v-snack--bottom
 m.jiemian.com##body > .app-open
@@ -1533,7 +1536,6 @@ aminoapps.com##.recommend-app
 radio.net##a[data-testid^="broadcast-appstore-"][title="Download now"]
 radio.net##section[data-testid="station-section-app"]
 emag.hu##a[href^="https://www.emag.hu/mobilalka"]
-y2mate.*###adInstallAndroid
 castbox.fm##.downloadPlay
 context.reverso.net##+js(set-constant, smartbanner_params, undefined)
 fdoctor.ru##section.app
@@ -1887,6 +1889,7 @@ honeysanime.com#$##header-line-2 { margin-top: -60px !important; }
 honeysanime.com#$##wrap-app-notice { display: none !important; }
 !+ NOT_OPTIMIZED
 m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
+rexagames.com##i-pwa-install
 kurashi.yahoo.co.jp###_incidentsBousaiWeb2yjapp
 pixai.art##.min-h-screen > section.box-content.bg-background.border-b[style="height: 50px;"]
 indianexpress.com##.Read.in.App.icon
