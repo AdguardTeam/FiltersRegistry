@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: G9BIujVp/54KCb/4OrhjSA
-! Diff-Path: ../patches/14/14-s-1761826523-3600.patch
+! Checksum: gNpP6E+6rx1Yns+utvsE/w
+! Diff-Path: ../patches/14/14-s-1761830388-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.47.40
-! TimeUpdated: 2025-10-30T12:11:43+00:00
+! Version: 2.2.47.41
+! TimeUpdated: 2025-10-30T13:16:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2495,6 +2495,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+darkflash.com##footer + div:has(> div > button)
 flystore.pl,sklep.70mai.pl,agroczak.pl,led-studio.pl,jptech-maszyny.pl,notopstryk.pl,cebit.pl,polkabubu.pl##+js(set-local-storage-item, show_consent_modal, 1)
 flystore.pl,sklep.70mai.pl,agroczak.pl,led-studio.pl,jptech-maszyny.pl,notopstryk.pl,cebit.pl,polkabubu.pl##+js(set-local-storage-item, user_consents, emptyArr)
 ||cdnapp.websitepolicies.net/widgets/cookies/
@@ -45370,6 +45371,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+2gis.ru#$?#div[style^="height:"] > div > div:has(> div[id="confirm"]) > div > div:has(a[href^="https://2gis.onelink.me/"][type="button"] + button) { remove: true; }
 rexagames.com##i-pwa-install
 kurashi.yahoo.co.jp###_incidentsBousaiWeb2yjapp
 pixai.art##.min-h-screen > section.box-content.bg-background.border-b[style="height: 50px;"]
