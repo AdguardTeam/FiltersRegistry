@@ -1,9 +1,9 @@
-! Checksum: TSzHlX4JufbeTdmPiCNoHQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1761785544-14400.patch
+! Checksum: tNgz3VvDbUdWfymoCgJCTQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1761799283-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.50.19
-! TimeUpdated: 2025-10-30T00:48:04+00:00
+! Version: 2.1.50.20
+! TimeUpdated: 2025-10-30T04:37:06+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -126,7 +126,6 @@
 /twitter-footer-
 /twitter-v2.png
 /twitter_footer.png
-/twitter_header.jpg
 /twitter_square.png
 /videojs-share.js
 /vk_button.png
@@ -368,6 +367,7 @@ _social-bar/
 ###post-share-icons
 ###post-social
 ###post_info_share
+###postshare
 ###pp-social
 ###reseaux-sociaux
 ###reseaux_sociaux
@@ -866,7 +866,6 @@ _social-bar/
 ##.article-sharing
 ##.article-soc
 ##.article-social
-##.article-social-bar
 ##.article-social-bottom
 ##.article-social-btn
 ##.article-social-button
@@ -889,6 +888,7 @@ _social-bar/
 ##.article__share-links
 ##.article__share-title
 ##.article__sharebar
+##.article__shares
 ##.article__sharing
 ##.article__social
 ##.article__social-icons
@@ -1153,7 +1153,6 @@ _social-bar/
 ##.e-header--sociallist
 ##.e-mailit_toolbox
 ##.ea-share-count-button
-##.eapps-social-share-buttons
 ##.easy-share
 ##.ebm-share-item
 ##.eg-footer-icon-facebook
@@ -1295,6 +1294,7 @@ _social-bar/
 ##.fbbsb-button
 ##.fbbsb-buttons
 ##.fbbutton
+##.fbfollow
 ##.fblikebox
 ##.fblink
 ##.fbshare
@@ -1667,7 +1667,6 @@ _social-bar/
 ##.icon-social-twitter-circle
 ##.icon-social-youtube
 ##.icon-soundcloud
-##.icona-social
 ##.icone-social
 ##.iconfacebook
 ##.iconinstagram
@@ -1786,7 +1785,6 @@ _social-bar/
 ##.jw-settings-sharing
 ##.jw-sharing-dock-btn
 ##.keystone-social-author
-##.kl-social-link
 ##.kopa-share-post
 ##.l-footer-social
 ##.l-footer__social
@@ -2508,10 +2506,12 @@ _social-bar/
 ##.share_ok
 ##.share_panel
 ##.share_pinterest
+##.share_post
 ##.share_posts
 ##.share_row
 ##.share_social
 ##.share_story
+##.share_tb
 ##.share_this
 ##.share_this_content
 ##.share_three
@@ -2691,6 +2691,7 @@ _social-bar/
 ##.site-header-social
 ##.site-social
 ##.site-social-menu
+##.sitewide-footer--social-nav
 ##.sitewide-social-media
 ##.sm-page-widget-sociallinks
 ##.sn-share
@@ -3019,7 +3020,6 @@ _social-bar/
 ##.socialLikes
 ##.socialLink
 ##.socialLinks
-##.socialLinks2
 ##.socialLinksContainer
 ##.socialList
 ##.socialLogo
@@ -3432,7 +3432,6 @@ _social-bar/
 ##.widget_sow-social-media-buttons
 ##.widget_twitter
 ##.widget_twitter_timeline
-##.widget_weblizar_twitter
 ##.widget_wpcom_social_media_icons_widget
 ##.wp-block-social-links
 ##.wp-embed-share
@@ -3973,7 +3972,6 @@ cyberark.com##.share-item
 dailymail.co.uk,fundrazr.com,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 euronews.rs,thenewstack.io##.share-media
-fintech.tv,war.ukraine.ua##.share-news
 thehackernews.com##.share-open-modal
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 breachmedia.ca,news.itsfoss.com##.share-toggle
@@ -4239,7 +4237,6 @@ freizeit.at,kurier.at##.coral-comment-shareButton
 nn.de,nordbayern.de##.icon__social
 freiewelt.net##.jksocials
 kicker.de##.kick__article__social
-muenchen.de##.m-social-link
 ndr.de##.meta
 it-daily.net##.ns-buttons
 teltarif.de##.sbm
@@ -4322,7 +4319,6 @@ donnamoderna.com##.dm20-lory-share-panel
 iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
-libreriascolastica.it,libreriauniversitaria.it##.footer-social-container
 ilfattoquotidiano.it##.ifq-news-meta__share
 ilfattoquotidiano.it##.ifq-post__share
 alfredopedulla.com##.ig-banner
@@ -4492,6 +4488,7 @@ elcomercio.pe,gestion.pe##.s-buttons
 betano.com##.sb-footer__notes__socials
 infobae.com##.second-saved-buttons
 as.com##.sh-bar
+heraldodemexico.com.mx##.share-comp
 infobae.com##.sharebar-buttons-container
 elcomercio.com##.single-layout__community-social
 motor.elpais.com##.site-footer__redes

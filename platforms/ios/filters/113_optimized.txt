@@ -1,9 +1,9 @@
-! Checksum: f915jLT/jOSmI328IXanRg
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1761785556-14400.patch
+! Checksum: 1LD+2nHpohFk6SbavdpP9A
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1761799292-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.79.15
-! TimeUpdated: 2025-10-30T00:47:52+00:00
+! Version: 2.1.79.16
+! TimeUpdated: 2025-10-30T04:36:56+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -330,6 +330,7 @@
 =WebAdsLinks&
 ?468&60&
 ?728&90&
+?aads=
 ?ad_domain=
 ?ad_sub=
 ?ADFassetID=
@@ -353,7 +354,6 @@
 ?pub_id=
 ?r=*&zoneid=
 ?rand=*&blk=*&ref_
-?reqType=AdsSetup&
 ?runauction=
 ?size=728x90|$subdocument
 ?style=300x250-
@@ -815,7 +815,6 @@ _build=iclick-$popup
 ||abkajbvlymqmb.top^
 ||ablebodiedsweatisolated.com^
 ||abletsorters.top^
-||abnormalrebel.com^
 ||aboveaveragefinallycast.com^
 ||absorptionliquor.com^
 ||academicencircle.com^
@@ -855,7 +854,6 @@ _build=iclick-$popup
 ||ailcloister.com^
 ||aitarsou.com^
 ||aj2178.online^
-||akhlamesouchy.com^
 ||akuigesf.com^
 ||aldanefissate.com^
 ||aldusmiskals.com^
@@ -1732,7 +1730,6 @@ _build=iclick-$popup
 ||denetsuk.com^$popup
 ||diffusionsubletunnamed.com^$popup
 ||digital2cloud.com^$popup
-||direction-x.com^$popup,third-party
 ||dmsik.com^$popup
 ||dosya-indirici.online^$popup
 ||dropcatch.com^$popup,third-party
@@ -1849,7 +1846,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||ctrip.com/?TypeID=$third-party
 ||dailymotion.com^*autoplay=1$domain=gum-gum-streaming.com|hitek.fr|maison-travaux.fr|mavanimes.co
 ||delivery.vidible.tv^$domain=gamekult.com
-||detroner.com^$image,third-party
 ||e-media-concept.com/medias/
 ||easy5now.com/images/b/
 ||ecchi.fr/banieres/
@@ -2224,7 +2220,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||ekipotel.net/_pub/
 ||elahmad.com/ads/
 ||elahmad.com/js/extreme.js
-||electromenager-compare.com/images/main/*/pub.jpg
 ||elheddaf.com/data/pub/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
@@ -2421,6 +2416,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###ad3
 ###ad_video
 ###ban728
+###bannerLeaderboard
 ###banner_pub
 ###bannerad1
 ###bloc-pub
@@ -2531,7 +2527,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pubAside
 ###pubContainer
 ###pubHeader
-###pubLeft
 ###pubRight
 ###pubTop
 ###pubVideo
@@ -2630,6 +2625,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.before-side-nav-ad
 ##.bloc-ads
 ##.bloc-pub
+##.bloc-pub2
 ##.blocPub
 ##.block-advertising-insert
 ##.block-gc-ad
@@ -2892,6 +2888,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.standard_adv_link
 ##.sticky-ad-holder
 ##.structure_wrapper-ad
+##.tableAds
 ##.tag-adverline
 ##.tag-sponsored-content
 ##.text_pub
@@ -3252,6 +3249,7 @@ lequipement.fr##.pub-revendeur
 fsolver.fr##.pubCLS
 niooz.fr##.pubDiv
 science-et-vie.com##.pub_dfp
+jeuxvideopc.com##.pub_refonte
 winds-up.com##.pubhaut
 heures.be,hours.be,openingstijdengids.nl,openingsurengids.be##.publSibar
 lanutrition.fr##.push--shop
@@ -3470,7 +3468,6 @@ delhaize.be#?#.product-item:-abp-contains(Sponsorisé)
 distrowatch.com#?#.News1:-abp-has(td:-abp-contains(Sponsored))
 jeuxvideo.com#?#.card:-abp-has(.badge:-abp-contains(Sponsorisé))
 latribune.fr#?#.article-wrapper:-abp-has(.subheading:-abp-contains(Partenaire))
-latribune.fr#?#.homepage-section.supplement-section:-abp-has(span:-abp-contains(Partenaires))
 leboncoin.fr#?#.undefined:-abp-contains(Sponsorisé)
 libhunt.com#?#.boxed:-abp-has(.tag:-abp-contains(Sponsored))
 mediamarkt.be#?#[data-index-number]:-abp-contains(Sponsorisé)
@@ -3488,6 +3485,7 @@ zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|Publicité/))
 ||facebook.net^*/fbds.js$third-party
 ||facebook.net^*/fbevents.js$third-party
 @@|blob:$popup,domain=caf.fr|cerise-prim.fr|particulier.edf.fr
+@@||adworks.fr^$~third-party
 @@||archives-numerisees.ain.fr^*/httpd/ad
 @@||francesurfinfo.com/affiliation/
 @@||koifaire.com/upload/*/300x250-$image,~third-party
@@ -3553,6 +3551,7 @@ zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|Publicité/))
 @@||hcaptcha.com/captcha/*&host=$subdocument
 @@||hcaptcha.com/captcha/*/hcaptcha.js$script
 @@||hcaptcha.com/captcha/*/hcaptcha.min.js$script
+@@||static.stormwall.pro/captcha.css$stylesheet
 payfit.com#@#.publicity
 casualgame.hange.jp#@#a[href*="/adclick?"]
 newsdig.tbs.co.jp#@#div[data-ad]
