@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.21.84",
-			"timeUpdated": "2025-10-31T11:06:23+0000",
+			"version": "2.4.21.85",
+			"timeUpdated": "2025-10-31T12:11:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.93.84",
-			"timeUpdated": "2025-10-31T11:06:31+0000",
+			"version": "2.0.93.85",
+			"timeUpdated": "2025-10-31T12:11:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.47.54",
-			"timeUpdated": "2025-10-31T11:06:49+0000",
+			"version": "2.2.47.55",
+			"timeUpdated": "2025-10-31T12:11:49+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.34",
-			"timeUpdated": "2025-10-31T11:06:54+0000",
+			"version": "2.0.64.35",
+			"timeUpdated": "2025-10-31T12:11:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -772,8 +772,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.24.30",
-			"timeUpdated": "2025-10-31T08:09:46+0000",
+			"version": "2.0.24.31",
+			"timeUpdated": "2025-10-31T12:11:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.46.88",
-			"timeUpdated": "2025-10-31T09:08:23+0000",
+			"version": "2.1.46.89",
+			"timeUpdated": "2025-10-31T12:11:59+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
