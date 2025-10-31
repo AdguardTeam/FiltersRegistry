@@ -1,9 +1,9 @@
-! Checksum: XrQIhX/iJhjuC/WqJHQf7w
-! Diff-Path: ../patches/257/257-s-1761885770-14400.patch
+! Checksum: TtFIaaxeZWE5zXXBKiHcGw
+! Diff-Path: ../patches/257/257-s-1761900210-14400.patch
 ! Title: uBlock Origin – Badware risks
 ! Description: Filter for risky sites, warning users of potential threats.
-! Version: 2.0.9.62
-! TimeUpdated: 2025-10-31T04:39:05+00:00
+! Version: 2.0.9.63
+! TimeUpdated: 2025-10-31T08:39:36+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: uBlock₀ filters – Badware risks
@@ -9898,6 +9898,10 @@ webflow.io##html.w-mod-js:not(.wf-active) > body:not([class]):not([id]) > a[clas
 ||dogado.net/stadlholz/$document
 ! https://github.com/uBlockOrigin/uAssets/issues/30533
 !+ NOT_OPTIMIZED
+pages.dev##html[lang="ja"] > body > .main-container > #landing.auth-container
+!+ NOT_OPTIMIZED
+/^https:\/\/[a-z0-9]{4,15}\.pages\.dev\/\d\/login\b/$document,match-case,to=pages.dev
+!+ NOT_OPTIMIZED
 ||blockcheck.pages.dev^$all
 !+ NOT_OPTIMIZED
 ||checkx.pages.dev^$all
@@ -9911,6 +9915,10 @@ webflow.io##html.w-mod-js:not(.wf-active) > body:not([class]):not([id]) > a[clas
 ||blockchecker5.pages.dev^$all
 !+ NOT_OPTIMIZED
 ||gocheck.pages.dev^$all
+!+ NOT_OPTIMIZED
+||checkfv.pages.dev^$all
+!+ NOT_OPTIMIZED
+||xblocktest.pages.dev^$all
 ! https://blog.lastpass.com/posts/possible-cryptochameleon-social-engineering-campaign-targeting-lastpass-customers-and-more
 !+ NOT_OPTIMIZED
 ||lastpassrecovery.com^$all
@@ -9929,3 +9937,7 @@ webflow.io##html.w-mod-js:not(.wf-active) > body:not([class]):not([id]) > a[clas
 ! [excluded by #%#//scriptlet] sport.elwatannews.com#%#//scriptlet('ubo-aost.js', 'Array.prototype.indexOf', 'isWin')
 !+ NOT_OPTIMIZED
 ||gomabalerainc.top^$all
+! https://github.com/uBlockOrigin/uAssets/issues/30626
+! https://www.virustotal.com/gui/file/32c72703cfef00987245c91f156aa9548f6597035e9c799ff871c0f583223f1d
+!+ NOT_OPTIMIZED
+||gamefiledo6.pages.dev^$all
