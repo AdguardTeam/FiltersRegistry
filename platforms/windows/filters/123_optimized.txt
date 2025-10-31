@@ -1,9 +1,9 @@
-! Checksum: 7qeQr3ZhdeklOqLkBRsWlg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1761871987-14400.patch
+! Checksum: cX+FQmW1wVIS3fN0N5qKNQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1761885789-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.50.25
-! TimeUpdated: 2025-10-31T00:48:09+00:00
+! Version: 2.1.50.26
+! TimeUpdated: 2025-10-31T04:38:26+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -344,7 +344,6 @@ _social-bar/
 ###menuSocial
 ###menu_social
 ###meteored_share
-###mobile-share-bar
 ###mobile-share-button
 ###mobile-social
 ###mobileShare
@@ -594,7 +593,6 @@ _social-bar/
 ###socialShare
 ###socialSharing
 ###socialSiteSites
-###socialTabs
 ###socialTop
 ###socialTwitter
 ###socialWidgets
@@ -677,7 +675,6 @@ _social-bar/
 ###twitter-widget
 ###twitter2
 ###twitterBtn
-###twitterContainer
 ###twitterFollow
 ###twitterShareButton
 ###twitter_btn
@@ -945,6 +942,7 @@ _social-bar/
 ##.bdaia-social-links
 ##.beSocialShare
 ##.beacon-social
+##.below-article-share-block
 ##.better-social-counter
 ##.bg-share
 ##.bgShare.fb
@@ -1178,6 +1176,7 @@ _social-bar/
 ##.entry-share
 ##.entry-share-icons
 ##.entry-shares
+##.entry-sharing
 ##.entry-sharing-buttons
 ##.entry-social
 ##.entry-socials
@@ -2102,7 +2101,6 @@ _social-bar/
 ##.product-social-icon-wrapper
 ##.pst-share
 ##.pswp__button--share
-##.pw-button-facebook
 ##.qlwapp-button
 ##.qodef-social-share
 ##.qt-sharepage
@@ -2280,6 +2278,10 @@ _social-bar/
 ##.share-icons-sticky-box
 ##.share-icons-wrapper
 ##.share-in-footer
+##.share-info-btn
+##.share-info-facebook
+##.share-info-pinterest
+##.share-info-twitter
 ##.share-inner
 ##.share-inner-wrp
 ##.share-instagram
@@ -2451,6 +2453,7 @@ _social-bar/
 ##.shareTrig
 ##.shareTwitter
 ##.shareVideo
+##.shareWa
 ##.shareWidget
 ##.shareWrap
 ##.share__button
@@ -2470,6 +2473,7 @@ _social-bar/
 ##.share_area
 ##.share_article
 ##.share_bar
+##.share_bar_wrapper
 ##.share_blk
 ##.share_block
 ##.share_bottom
@@ -2627,6 +2631,7 @@ _social-bar/
 ##.sharing-zone
 ##.sharingButton
 ##.sharingList
+##.sharingOptions
 ##.sharingPanel
 ##.sharing__list
 ##.sharing_block
@@ -3323,6 +3328,7 @@ _social-bar/
 ##.twitterbox
 ##.twitterbtn
 ##.twitterbutton
+##.twitterfeed
 ##.twitterfollow
 ##.twitterjo
 ##.twitterlink
@@ -3422,6 +3428,7 @@ _social-bar/
 ##.widget_jnews_social_counter
 ##.widget_novashare_follow_widget
 ##.widget_nypost_social_widget
+##.widget_rotatingtweets_widget
 ##.widget_siliconcounters
 ##.widget_social
 ##.widget_social_links
@@ -3453,6 +3460,7 @@ _social-bar/
 ##.wsite-social
 ##.wsite-social-item
 ##.x-social-global
+##.x-social-item
 ##.xenfocus-social
 ##.xs_social_counter_widget
 ##.ya-share2
@@ -3661,7 +3669,6 @@ eporner.com###footsocbuttons
 tasteofhome.com###gch-social-icons
 bleedingcool.com###google_follow
 wccftech.com###google_preferred_source_box
-gamereactor.eu###grnation
 analyticsinsight.net,biznews.com,dn.pt,newindianexpress.com,newsgram.com###header-social-follow
 medicalxpress.com,phys.org,techxplore.com###js-soc-panel
 listennotes.com###ln-side-share-div
@@ -3735,7 +3742,6 @@ asiaone.com##.ao-share-buttons
 firstpost.com##.art-soc-icons
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
-infoworld.com##.article-hero__social
 neowin.net,seattletimes.com,thecooldown.com##.article-share
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
@@ -3744,6 +3750,7 @@ kyodonews.net##.article-sns
 newrepublic.com,thetech.com##.article-social
 nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
+altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
 nationalreview.com##.article-utility-nav
 english.nv.ua##.article__footer__additional_share
 rt.com##.article__google-news
@@ -3921,6 +3928,7 @@ pmc.ncbi.nlm.nih.gov##.ncbi-footer__icon-section
 nerdist.com##.nerdist-social-share
 taiwebs.com##.networking
 news.mit.edu##.news-article--share
+weatherzone.com.au##.news-article-share
 science.org##.news-article__share
 cgtn.com##.news-share-wrapper
 aimp.ru##.news_story > div
@@ -4276,8 +4284,6 @@ phonandroid.com##.social-networks
 francetvinfo.fr##.social-zone__wrapper
 ||lequipe.fr/_nuxt/Share.
 ||radio-canada.ca/mp/modules.socialbar.executer.$script
-gloria.hr,jutarnji.hr##.item__social-jl
-jutarnji.hr##.item__wrap-social
 jutarnji.hr##.item_social_share
 storm.mg###article_sns_inner
 ettoday.net###et_sticky_pc
