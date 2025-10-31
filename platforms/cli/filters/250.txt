@@ -1,9 +1,9 @@
-! Checksum: EVpWrjBcYcp3+T8WixHusg
-! Diff-Path: ../patches/250/250-s-1761914989-14400.patch
+! Checksum: SyxC8dVAgZfWuB0IvkKlZQ
+! Diff-Path: ../patches/250/250-s-1761943190-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.18.17
-! TimeUpdated: 2025-10-31T12:46:00+00:00
+! Version: 2.0.18.18
+! TimeUpdated: 2025-10-31T20:36:14+00:00
 ! Expires: 12 hours (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -30953,7 +30953,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 30October2025v1
+! OriginalVersion: 30October2025v2
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -31317,7 +31317,7 @@ $removeparam=hsCtaTracking
 $removeparam=tblci
 $removeparam=tcid,domain=~rug.nl
 $document,removeparam=/^dv_adwords_.*$/
-$removeparam=wdorigin
+$removeparam=/^wdorigin=.*$/i
 $document,removeparam=/^aff_id\d?=.*$/i,domain=~affiliate.salestring.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-773756
 $removeparam=twitchReferral
@@ -32429,6 +32429,8 @@ $removeparam=/^ref=winstall$/
 $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adressa.no|polarismedia.no
 ! It sure took a while to figure out how to remove trailing ?'s, but this at least seems to succeed at it. (30/10/2025)
 /^http.*[^?]\?$/$document,removeparam=/^=$/
+! https://github.com/DandelionSprout/adfilt/issues/1191
+$removeparam=notification_referrer_id
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -35203,6 +35205,11 @@ $removeparam=/^has-promotion=$/
 ||no^$removeparam=/^source=core-carousel$/
 ! https://github.com/DandelionSprout/adfilt/issues/1187
 ||hepsiburada.com^$removeparam=ftid
+! https://m365•cloud•microsoft/?auth=1&origindomain=Office&client-request-id=•••••••••••• (30/10/2025)
+||cloud.microsoft^$removeparam=origindomain
+! https://github.com/DandelionSprout/adfilt/issues/1192
+!+ NOT_OPTIMIZED
+||youtube.com^$removeparam=sub_confirmation
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
