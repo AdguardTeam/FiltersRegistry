@@ -1,9 +1,9 @@
-! Checksum: gfCcX+nf2O3XgrynHRiYZg
-! Diff-Path: ../patches/250/250-s-1761785525-14400.patch
+! Checksum: q9dzeo4CsA3Met1NW9n3XA
+! Diff-Path: ../patches/250/250-s-1761914984-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.18.16
-! TimeUpdated: 2025-10-30T00:48:32+00:00
+! Version: 2.0.18.17
+! TimeUpdated: 2025-10-31T12:46:00+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -30953,7 +30953,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 26October2025v1
+! OriginalVersion: 30October2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -30965,7 +30965,6 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ! - This list can not bypass tracker redirects through third-party domains. This can be done by strict-blocking said domain and using the ability to view parameters on the strict-block page or tools to bypass it.
 ! - This list can not remove anything after the # in URLs. This is impossible in uBlock Origin and AdGuard.
 ! - This list can not remove parameters added using https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState
-! - Despite several attempts, this list can not remove trailing ?'s.
 ! - As of 15/03/2024, this list did not work properly in Brave Browser, due to Brave missing several critical features this list uses. Please use this list only with uBlock Origin or AdGuard. User statements have however ticked in in mid-2025 that the breakage is smaller or gone.
 ! 🗺️ ——— General remove rules ——— 🗺️ !
 ! From AdGuard CoreLibs (11/11/2020)
@@ -32428,6 +32427,8 @@ $removeparam=/^ref=winstall$/
 ! https://media•discordapp•net/attachments/1216338582243905546/1428095127590666331/9c95cdb4-f4a8-f011-bbd2-7ced8d93a186•png?ex=68f140bb&is=68efef3b&hm=9823d3f5245ed3e57643b13299cbad886826744b3d46123f30cdf558e3cc9311&=&format=webp&quality=lossless (16/10/2025)
 !+ NOT_OPTIMIZED
 $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adressa.no|polarismedia.no
+! It sure took a while to figure out how to remove trailing ?'s, but this at least seems to succeed at it. (30/10/2025)
+/^http.*[^?]\?$/$document,removeparam=/^=$/
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -35841,7 +35842,7 @@ quora.com##.modal_bg
 linkedin.com#$?#html { overflow: auto !important }
 linkedin.com#$?#body { overflow: auto !important }
 ! Title: ↖ Anti-'Custom cursors' List
-! OriginalVersion: 29October2025v1-Beta
+! OriginalVersion: 30October2025v1-Beta
 ! Expires: 14 days
 ! Description: This list aims to replace websites' custom cursors with the default OS cursor.
 ! Note that any Wikia-related entries currently do not work in ABP or AdBlock, due to EasyList having a whitelisting for the nocookieNET domain that can only be circumvented with "$badfilter" or "$important", neither of which are supported by those two extensions.
@@ -35938,7 +35939,7 @@ strategix.dk##.cursor
 /Indicator_Arrow_Icon.png|
 ! https://realisationseurope•com/Monte-Carlo-Casino-Touzet (05/01/2024)
 ||files.cargocollective.com/*_Plan-de-travail-$image,third-party
-! https://epipheo•com/epipheo-films/ (28/05/2025)
+! https://epipheo•com/epipheo-films/ (28/10/2025)
 ##.n-cursor:not(html,body)
 ! ——— No example in particular ———
 .ani|$domain=~pixiv.net|~deviantart.com
