@@ -1,5 +1,5 @@
-! Checksum: hJh9E+SwEb9iz7qMIdqWBQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1761930737-3600.patch
+! Checksum: fatoOvQuYN/2B1l+sG+l1A
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1761964871-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.54.76
@@ -1470,6 +1470,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://adss.
 ://adx.
 ://afflight.$third-party
+://ar.ads.
 ://banner.*click
 ://banner.*utm_
 ://banners2.$third-party
@@ -1543,7 +1544,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?pub_id=
 ?r=*&zoneid=
 ?rand=*&blk=*&ref_
-?runauction=
 ?size=728x90|$subdocument
 ?style=300x250-
 ?tag_id=*&sw_url=
@@ -2104,7 +2104,6 @@ _build=iclick-$popup
 ||belterglaikit.com^
 ||benchergodpapa.com^
 ||bespakerubbles.com^
-||bespyscania.com^
 ||besquibabaff.com^
 ||bestcontentcost.top^
 ||bestfreecounterstat.com^
@@ -2274,6 +2273,7 @@ _build=iclick-$popup
 ||engridfanlike.com^
 ||enmbg.com^
 ||enviousthread.com^
+||eonads.com^
 ||epilreoffer.com^
 ||epiurallass.com^
 ||eshii.ru^
@@ -2394,7 +2394,6 @@ _build=iclick-$popup
 ||irenethrush.com^
 ||isanalyze.com^
 ||isobaresoffit.com^
-||italarizege.xyz^
 ||iwyedjscpql.com^
 ||j0ss4np1c5.site^
 ||jacquieetmichel-contact.com^
@@ -2652,6 +2651,7 @@ _build=iclick-$popup
 ||reicezenana.com^
 ||renaissanto.com^
 ||repealsyapping.shop^
+||repka.online^
 ||reseatmihrab.com^
 ||resentproduces.com^
 ||resr.ru^
@@ -2922,6 +2922,7 @@ _build=iclick-$popup
 ||dosya-indirici.online^$popup
 ||dropcatch.com^$popup,third-party
 ||elvenar.com^$popup,third-party
+||espace-plus.net^$popup,third-party
 ||familiarpyromaniasloping.com^$popup
 ||flashtalking.com^$popup,third-party
 ||flixtab.com^$popup
@@ -3078,7 +3079,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||kaltura.com^*/a.mp4|$media
 ||laposte.net/webmail/*/panels/images/Pied_de_Mail_
 ||laredoute.com/marketing/$third-party,domain=~laredoute.be|~laredoute.ch|~laredoute.co.uk|~laredoute.com|~laredoute.es|~laredoute.fr|~laredoute.gr|~laredoute.hr|~laredoute.it|~laredoute.kr|~laredoute.lu|~laredoute.ma|~laredoute.nl|~laredoute.pl|~laredoute.pt|~laredoute.ru|~laredouteliban.com
-||les-meilleurs-plans.com^$script,subdocument,third-party
 ||lesplansduweb.com^$script,subdocument,third-party
 ||lewebfacilement.com^$script,subdocument,third-party
 ||linkshrink.net/content/img/$third-party
@@ -3089,7 +3089,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||maxannu.com^$image,third-party
 ||mdhcdn.com^*/banner_
 ||mediafire.com/file/*.exe|$subdocument
-||mega-p2p.net^$image,third-party
 ||meilleurduweb.com/images/pub/
 ||membersrule.com/getimg.php$third-party
 ||mini-jeux.com/jeuday.js$third-party
@@ -3650,7 +3649,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###lht-space-ad
 ###liens_sponsorises
 ###loading-ad
-###mb_video_sponso
 ###mb_video_syncad_bottom
 ###mobileMessageAd
 ###native_ad
@@ -3690,6 +3688,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub160x600
 ###pub300
 ###pub300250
+###pub300_adscreen
+###pub300_home
 ###pub300x120
 ###pub300x250
 ###pub468x60_centree
@@ -3872,7 +3872,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.blockgrayad
 ##.blocpub
 ##.border_ads
-##.bottom-ad-mob-tab
 ##.bottom-advertising
 ##.bottom_ad_con
 ##.bottompub
@@ -3885,6 +3884,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.breaking-ad
 ##.buzz-ads
 ##.c-ads-sidebar
+##.carre_pub
 ##.carrepub
 ##.catAds
 ##.co-ads
@@ -4075,6 +4075,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pub300250
 ##.pub300_contenu
 ##.pub300x250
+##.pub336
 ##.pub350x250left
 ##.pub468
 ##.pub728
@@ -4550,6 +4551,7 @@ cuisineactuelle.fr##.magazineBlock
 allocine.fr##.main-banner
 maison-et-domotique.com##.mediad
 p-nintendo.com##.megabanner
+abidjanshow.com##.mod-banners
 leparisien.fr##.moduleNew300
 ouedkniss.com##.mt-4.mt-md-6.home-front-store
 tvanouvelles.ca##.multiflex-banner-sticky-wrapper
@@ -4658,6 +4660,7 @@ doctissimo.fr##[class^="doc-ad-"]
 fnac.com##[class^="f-kamino-"]
 guide-piscine.fr##[class^="regie_"]
 cleanrider.com##[data-content="ad"]
+jeu.fr##[data-fallback-type="image"]
 frandroid.com##[data-gtm-bic]
 cheriefm.fr##[data-page-builder--block-analytics-block-title-value="ad"]
 leboncoin.fr##[data-test-id^="advertising"]
@@ -4715,7 +4718,6 @@ igg-games.com##a[href^="/offernf?"]
 lesnumeriques.com##a[href^="/publicite/"]
 edcom.fr##a[href^="/regie"]
 skitour.fr##a[href^="divers/a/out.php?"]
-alsacreations.com##a[href^="http://www.amazon.fr/gp/product/"]
 lefigaro.fr##a[href^="http://www.ticketac.com/?utm_source="]
 hentaifr.net##a[href^="https://drmanga.net"]
 condor.dz##a[href^="https://e-faciliti.dz/"]
