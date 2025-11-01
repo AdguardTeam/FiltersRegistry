@@ -1,9 +1,9 @@
-! Checksum: hNAjtZgrdnqJt5uu32WvXQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1762002875-3600.patch
+! Checksum: e9xubKP+Ejc5OVkWrJJM7g
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1762006205-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.47.64
-! TimeUpdated: 2025-11-01T13:11:23+00:00
+! Version: 2.2.47.65
+! TimeUpdated: 2025-11-01T14:06:46+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -11275,8 +11275,8 @@ tvgids.nl#@#.cookie-notice-container
 lg.com#@#.cookie-check
 foodnetwork.co.uk#@#.cookie-message:not(html):not(body)
 ://yandex.*/images/_$xmlhttprequest,method=post
+ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
 [$path=/images]ya.ru,yandex.*##div[style="max-width: 100%; max-height: 300px; height: 300px;"]
-[$path=/images]ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
 [$path=/images]ya.ru,yandex.*#%#//scriptlet('json-prune', 'seatbid rtb direct')
 [$path=/images]ya.ru,yandex.*##.AdvMastHead
 [$path=/\/(maps|navi|web-maps)/]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.isStickyAd', 'undefined')
@@ -11291,8 +11291,6 @@ music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 [$path=/pogoda|hava/]yandex.*#%#//scriptlet('json-prune', 'rtb')
 !+ NOT_PLATFORM(ext_safari)
 [$path=/pogoda]yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderDirect')
-[$path=/video]ya.ru,yandex.*#%#//scriptlet('json-prune', 'rtb seatbid')
-[$path=/video]ya.ru,yandex.*#%#//scriptlet('set-constant', 'Object.prototype.renderDirect', 'throwFunc')
 afisha.yandex.*#%#//scriptlet('prevent-eval-if', 'bidReqIdStr')
 docviewer.yandex.*#%#//scriptlet('abort-on-property-read', 'Object.prototype.Rtb')
 mail.yandex.*##div[class^="PageLayout-m__main--"][id="js-layout-inner"] + div[style="--bg-color: 255, 255, 255; overscroll-behavior: none;"]
