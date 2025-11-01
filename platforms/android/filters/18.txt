@@ -1,9 +1,9 @@
-! Checksum: eAohMc+lTMuAMxVoiOEvlw
-! Diff-Path: ../patches/18/18-s-1761995354-3600.patch
+! Checksum: HaeOynWZezEf4wu2ZanqoA
+! Diff-Path: ../patches/18/18-s-1761999197-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.73.57
-! TimeUpdated: 2025-11-01T11:06:12+00:00
+! Version: 2.0.73.58
+! TimeUpdated: 2025-11-01T12:10:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2545,6 +2545,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+genesis-zone.com#%#//scriptlet('set-cookie-reload', 'cookies_initialized', '1')
 kod.ru##div[class^="Layout_cookies__"]
 band.com.br##app-opt-in
 religijna.pl###con-mngr-cookiebanner-container
@@ -17769,6 +17770,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216712
+genesis-zone.com#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216522
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=mmamania.com|theverge.com|schweizer-illustrierte.ch
 @@||cdn.cookielaw.org/consent/*.json$domain=mmamania.com|theverge.com|schweizer-illustrierte.ch

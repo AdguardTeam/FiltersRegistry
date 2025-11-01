@@ -1,9 +1,9 @@
-! Checksum: bDQIFUgEUfNI4U7TB21y9g
-! Diff-Path: ../patches/14/14-s-1761995359-3600.patch
+! Checksum: J5fDAMS4YwtdHvaBjlzotA
+! Diff-Path: ../patches/14/14-s-1761999205-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.47.62
-! TimeUpdated: 2025-11-01T11:06:08+00:00
+! Version: 2.2.47.63
+! TimeUpdated: 2025-11-01T12:10:03+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2544,6 +2544,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+genesis-zone.com#%#//scriptlet('set-cookie-reload', 'cookies_initialized', '1')
 kod.ru##div[class^="Layout_cookies__"]
 band.com.br##app-opt-in
 religijna.pl###con-mngr-cookiebanner-container
@@ -17687,6 +17688,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216712
+genesis-zone.com#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216522
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=mmamania.com|theverge.com|schweizer-illustrierte.ch
 @@||cdn.cookielaw.org/consent/*.json$domain=mmamania.com|theverge.com|schweizer-illustrierte.ch

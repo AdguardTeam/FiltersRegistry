@@ -1,9 +1,9 @@
-! Checksum: 3Nw0ywRNsXfVTTOWcVDv7w
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1761991900-3600.patch
+! Checksum: HbO4Kku6jypknmSTsYRhcw
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1761999239-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.6
-! TimeUpdated: 2025-11-01T10:08:02+00:00
+! Version: 2.0.12.7
+! TimeUpdated: 2025-11-01T12:10:08+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=adsterra_clid
 $removeparam=adsterra_placement_id
@@ -292,6 +292,12 @@ $removeparam=fb_action_types
 $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
+||nextdns.io^$removeparam=from
+||fastmail.com^$removeparam=pscd
+||fastmail.com^$removeparam=ps_partner_key
+||fastmail.com^$removeparam=ps_xid
+||fastmail.com^$removeparam=gsxid
+||fastmail.com^$removeparam=gspk
 ||notebooklm.google.*$removeparam=icid
 ||notebooklm.google.*$removeparam=original_referer
 ||redbull.com^$removeparam=ldtag_cl
@@ -478,6 +484,8 @@ $removeparam=xmt,domain=threads.com|threads.net
 ||protonvpn.com^$removeparam=plan
 ||protonvpn.com^$removeparam=ref
 ||go.getproton.me^$removeparam=aff_c
+||proton.me^$removeparam=url_id
+$removeparam=phfp,domain=protonvpn.com|proton.me
 ||billing.purevpn.com/aff.php$removeparam=aff
 ||strongvpn.com$removeparam=tr_aid
 ||trustzonevpn.info/r.php$removeparam=RID
@@ -1575,7 +1583,7 @@ $removeparam=/utm_partner_id|frommail/,domain=mail.ru|sportmail.ru
 ||giphy.com^$removeparam=cid
 ||giphy.com^$removeparam=ct
 ||giphy.com^$removeparam=rid
-$removeparam=ref,domain=jin115.com|bipblog.com|animember.net|sbbit.jp|blog.livedoor.jp|blog.jp|2chblog.jp
+$removeparam=ref,domain=jin115.com|bipblog.com|animember.net|sbbit.jp|blog.livedoor.jp|blog.jp|2chblog.jp|coincards.com|startmail.com
 ||cinematoday.jp^$removeparam=g_clk
 ||xxvidsx.com^$removeparam=ad
 ||xxvidsx.com^$removeparam=site
