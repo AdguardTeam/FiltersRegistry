@@ -1,5 +1,5 @@
-! Checksum: jMro+WIgYwoJliRhcdGBYQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1762027859-3600.patch
+! Checksum: Wi40nw0tlCmLu2fHRqkgng
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1762051303-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.50.10
@@ -924,6 +924,7 @@ wiwo.de##app-content-advertisement
 heise.de#?#span[class^="right"]:contains(Anzeige)
 stern.de#$?#.d-md-revert.ad-container { display: none !important; }
 stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:only-child)
+stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent:last-child)
 stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent:last-child)
 stern.de##.group-teaserblock__items:has(> .group--adtag-with-fallbackcontent:first-child + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent + .group--adtag-with-fallbackcontent:last-child)
 stern.de##article:has(> .ad-labels)
@@ -1177,7 +1178,6 @@ volksfreund.de#?#section:has(> .park-html:only-child > .weekli-widget)
 berliner-zeitung.de##div[data-component-type="ad-slot"] + div[data-component-type="ad-slot"] + div[data-component-type="section-separator"]
 sky.de#?#div[class^="site-component-vertical"]:has(> div[data-ad-format]:only-child)
 reviersport.de##.rs-ad-init
-tellows.at#?##singlecomments > li:not([id]):has( > .comment-body > div[id^="adngin-"])
 businessinsider.de##a[href^="https://www.businessinsider.de/sponsored"]
 bild.de##.article-text-link--ad
 berliner-kurier.de##div[data-testid="article-billboard-advertisement"]
@@ -1907,6 +1907,7 @@ computerbase.de##.postbit-ad
 tag24.de##a[href^="https://www.tag24.de/anzeige"]
 duden.de###block-dudende-d-970x250-1billboard
 stuttgarter-zeitung.de##.mod-weekli
+t-online.de###taboola
 ||pi-news.net/wp-content/uploads/*-banner
 windowspro.de##.content div[id^="gWrapper-"]
 ||content.chip.de/cac^
@@ -2627,6 +2628,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /Widgets/Werbung/*
 _Banner_Werbung_
 _bannerwerbung/
+_oben_ad.
 _werbebanner.
 _werbebanner/
 _werbung.php
@@ -2683,6 +2685,7 @@ _woz_banner_vote.
 ###reklame-rechts-mitte
 ###startwerbung
 ###topwerbung
+###werbeFormTop
 ###werbeanzeige
 ###werbebanner
 ###werbeblock
@@ -2731,7 +2734,6 @@ _woz_banner_vote.
 ##.bannergroup_werbung
 ##.banneritemwerbung_head_1
 ##.banneritemwerbung_head_2
-##.banneritemwerbung_head_3
 ##.bdeFotoGalAd
 ##.bdeFotoGalAdText
 ##.block-huss-adblocks
@@ -3123,7 +3125,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||foerde.news/files/news-bilder/anzeigen/
 ||football-aktuell.de/rechts/
 ||free-gay.org^*/eaCtrl.js
-||freenet.de/amazonService/search/
 ||freenet.de^*/mail/ads/
 ||freieporno.com^*/ssu.v2.js
 ||fruchtportal.de/banners/
@@ -3219,7 +3220,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||musiker-board.de^*/siropu/aml/
 ||musiksampler.de/cgi-bin/arlight/view.php
 ||my105.ch/fileadmin/sponsoren/
-||mygully.com/at1.php
 ||mygully.com/f.php
 ||nacktefoto.com/de-bonga.jpg
 ||nacktefoto.com/los-gif/
@@ -3239,7 +3239,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||onlinekorrektor.de/cnc/
 ||onlinewahn.de/sky.js
 ||osthessen-zeitung.de/uploads/tx_macinabanners/
-||osttirol-online.at/images/banners/
 ||otto.de/sda-hoarding/
 ||otto.de/static-proxy/product-assets/sda-
 ||otto.de/wato-onsite/assets/*.wato.onsite.module.
@@ -4528,6 +4527,7 @@ wallstreet-online.de##a[onclick*="'tableAd'"]
 wallstreet-online.de##a[onclick*="tableAd"] + span
 shaz.ch##a[onclick^="__gaTracker('send', 'event', 'Ads'"]
 supermarktblog.com##a[rel*="sponsored"]
+ak-kurier.de##a[target="_new"][href^="inc/inc_link.php?id="]
 sporteurope.tv##app-top-banner
 otto.de##article[data-origin="sponsored"]
 mobile.de##article[data-testid="srp-top-ad"]
@@ -4704,6 +4704,7 @@ korrekturen.de##div[style="width:728px; height: 90px; text-align: center; backgr
 livestreamde.com##div[style^="height:300px;"]
 buchstaben.com##div[style^="min-height: 330px;"]
 news.ch##div[style^="width: 300px;"]
+ableitungsrechner.net,integralrechner.de##div[style^="width: 728px;"]
 onvista.de##div[style^="width: 900px;"]
 fussball.ch,gut-erklaert.de,wetter.ch,wirtschaft.ch##div[style^="width:300px;"]
 werkenntdenbesten.de##div[x-data="modules.ad()"]
