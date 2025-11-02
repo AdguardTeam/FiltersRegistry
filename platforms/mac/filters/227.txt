@@ -1,8 +1,8 @@
-! Checksum: 5MoM6M69QlrLiU2A0eciXw
+! Checksum: gI+saXNm0f26yVUZYzKQPQ
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.24
-! TimeUpdated: 2025-11-01T08:37:14+00:00
+! Version: 2.0.23.25
+! TimeUpdated: 2025-11-02T20:34:31+00:00
 ! Expires: 1 day (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -251,6 +251,7 @@
 ||awd.spochak.com^
 !
 ! DOMAIN-REFRESHER: END
+||get*bannerads-6egeg2u34q-du.a.run.app^
 ||ad.kakaobank.com^
 ||ad-pulse.kakaobank.cloud^
 ||dnzedhceh7nim.cloudfront.net^
@@ -536,6 +537,8 @@
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 !
+||gall.dcinside.com/_js/ad.js
+||gall.dcinside.com/_js/ad_context_powLink.js
 ||filetad.tygem.com/updata/banner/
 ||cdn.wishket.com/yozmit_ad/ad_image/
 ||cdn.zigcou.com/static/*.webp$domain=2798731938.zigcou.com
@@ -1903,7 +1906,7 @@ g-enews.*##div[id^="tdn_"][style*="height:"]
 search.naver.com##div[id^="power_link_together_"]
 namu.wiki,~board.namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(> iframe[id^="google_ads_"])
 namu.wiki,~board.namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(iframe[src*="arca.live/external/callad"])
-namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:only-child:has(iframe[id^="google_ads_iframe_"])
+namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:only-child:has(iframe[id^="google_ads_iframe_"][srcdoc][data-load-complete="true"]:empty)
 namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[id^="google_ads_iframe_"])
 namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[src*="arca.live/external/callad"])
 namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:has(iframe[src*="arca.live/external/callad"])
@@ -3699,6 +3702,8 @@ gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *d
 chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
+! start.klauncher.kr
+start.klauncher.kr#%#//scriptlet('abort-on-stack-trace', 'setTimeout', 'isBlocked')
 !
 erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
@@ -3712,7 +3717,6 @@ vod.jtbc.co.kr#@#.ad-zone:not(.textads)
 news.jtbc.co.kr#%#//scriptlet('spoof-css', '.ad-banner.adsbox.ad-unit.ad-zone', 'display', 'block')
 news.jtbc.co.kr,vod.jtbc.co.kr#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
 minipol.tistory.com#%#//scriptlet('set-constant', 'checkAdBlock', 'undefined')
-@@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=start.klauncher.kr,script
 tabriz.kr#@##AdHeader
 tabriz.kr#@##AD_Top
 tabriz.kr#@##ad-lead
