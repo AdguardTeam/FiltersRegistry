@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: +PQyrRskFc/e99jMbHEdpw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1762172103-3600.patch
+! Checksum: tS+Po+8QmxC8py6bJn/rHA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1762175979-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.22.56
-! TimeUpdated: 2025-11-03T12:11:16+00:00
+! Version: 2.4.22.57
+! TimeUpdated: 2025-11-03T13:15:24+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15082,7 +15082,9 @@ tnaflix.com#$#.adsBox.pub_300x250m.pub_728x90.text-ad { display: block !importan
 ! https://github.com/AdguardTeam/AdguardFilters/issues/80955
 @@/libs/advertisement1.js$domain=faucet.shorterall.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/78775
-10.com.au,10play.com.au##+js(no-fetch-if, pagead2.googlesyndication.com)
+10.com.au,10play.com.au#@#.banner-ad
+10.com.au,10play.com.au##+js(spoof-css, .ad-test-element, display, block)
+10.com.au,10play.com.au##+js(no-fetch-if, /pagead2\.googlesyndication\.com|tag\/js\/gpt\.js|securepubads\.g\.doubleclick\.net\/static|pubads\.g\.doubleclick\.net\/gampad\/ads|prod\/utag\.js|tealiumiq\.com|analytics\.tiktok\.com/)
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,redirect=noop.js,domain=10play.com.au|10.com.au
 ||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=10play.com.au|10.com.au
 @@||claimbits.net/static/js/noadblock.js
@@ -32326,6 +32328,8 @@ ultimedia.com##+js(adjust-setTimeout, [native code], 5000, 0.02)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/147578
 greatandhra.com##+js(set-cookie-reload, garb, 1)
 greatandhra.com##+js(set-cookie-reload, sosh, true)
+! https://github.com/AdguardTeam/AdguardFilters/issues/215767
+play.aetv.com,play.mylifetime.com,play.history.com##+js(m3u-prune, /redirector\.googlevideo\.com\/videoplayback[\s\S]*?dclk_video_ads/, .m3u8)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/192377
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146902
 10.com.au,10play.com.au##+js(set-constant, Object.prototype.adParameters, undefined)
@@ -36318,6 +36322,7 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+play.aetv.com,play.mylifetime.com,play.history.com##div[class^="Component-adBreak-"]
 watch.plex.tv###pb-slot-anchor-container
 ||video.flirtify.com^$domain=xhamster.com
 xhamster.com##.video-thumb[role="button"]
