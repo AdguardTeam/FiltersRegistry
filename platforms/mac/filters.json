@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.2.68",
-			"timeUpdated": "2025-11-03T04:12:20+0000",
+			"version": "2.1.2.69",
+			"timeUpdated": "2025-11-03T15:07:43+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.22.58",
-			"timeUpdated": "2025-11-03T14:07:00+0000",
+			"version": "2.4.22.59",
+			"timeUpdated": "2025-11-03T15:07:54+0000",
 			"languages": []
 		},
 		{
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.65.29",
-			"timeUpdated": "2025-11-03T10:08:38+0000",
+			"version": "2.0.65.30",
+			"timeUpdated": "2025-11-03T15:08:11+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.47.80",
-			"timeUpdated": "2025-11-03T14:07:23+0000",
+			"version": "2.2.47.81",
+			"timeUpdated": "2025-11-03T15:08:17+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.99.50",
-			"timeUpdated": "2025-11-03T13:15:59+0000",
+			"version": "2.0.99.51",
+			"timeUpdated": "2025-11-03T15:08:18+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.64.44",
-			"timeUpdated": "2025-11-03T09:09:47+0000",
+			"version": "2.0.64.45",
+			"timeUpdated": "2025-11-03T15:08:22+0000",
 			"languages": []
 		},
 		{
@@ -361,8 +361,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/23.txt",
-			"version": "2.0.7.33",
-			"timeUpdated": "2025-10-30T16:09:06+0000",
+			"version": "2.0.7.34",
+			"timeUpdated": "2025-11-03T15:08:24+0000",
 			"languages": [
 				"uk"
 			]

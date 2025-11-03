@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: gSu2VbSFHXs1sisPyl2bKQ
-! Diff-Path: ../patches/1/1-s-1762143391-3600.patch
+! Checksum: mILJKJlRvrTFtylDbWGTUA
+! Diff-Path: ../patches/1/1-s-1762182707-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.2.68
-! TimeUpdated: 2025-11-03T04:12:20+00:00
+! Version: 2.1.2.69
+! TimeUpdated: 2025-11-03T15:07:43+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1436,6 +1436,7 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||paintejuke.com^$all
 ||agl007.site^
 ||6i7y3i.ru^
 ||punchmedia.ru^
@@ -4042,12 +4043,6 @@ customgames.ru##+js(abort-current-script, $, samAdBlock)
 yapx.ru##+js(cookie-remover, adblock_state)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/43430
 @@.js|$domain=knigilub.ru,~third-party
-! https://github.com/AdguardTeam/AdguardFilters/issues/44835
-anitokyo.tv#@#.sb-ad
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=anitokyo.tv
-anitokyo.tv#$#.adsbox.ads.new-ads.sb-ad { height: 1px!important; }
-!+ NOT_PLATFORM(windows, mac, android)
-anitokyo.tv##+js(set-constant, Object.prototype.adblockDetector, falseFunc)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37527
 sebeadmin.ru##+js(abort-current-script, document.createElement, AdBlock)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/37319
@@ -5180,9 +5175,8 @@ car.ru##+js(set-constant, car__idle, false)
 hcdn.online##+js(set-constant, txt, undefined)
 ! http://forum.ru-board.com/topic.cgi?forum=5&topic=50480&start=760#7
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136406
-anifap.com,anitokyo.tv##+js(set-constant, PopShow3, undefined)
-sportbarchik88.com##+js(window.open-defuser)
-rus.filmhd1080.monster##+js(remove-class, have-brand, body > div.have-brand)
+anifap.com,anitokyo.tv,anitokyo1.top##+js(set-constant, PopShow3, undefined)
+anifap.com,anitokyo.tv,anitokyo1.top##div[onclick="$(this).remove();"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/83240
 kinofilm.co##+js(set-constant, document.onmouseup, undefined)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/76367
@@ -6198,10 +6192,6 @@ f-journal.ru#$##conteiner { margin-top: 10px!important; }
 ! filmix.cc - удаление отступа сверху
 filmix.my,filmix.biz,filmix.ac,filmix.tech,filmix.zone#$#.page-wrapper { margin: 0 auto 0 !important; }
 filmix.co#$#.main-wrapper { margin-top: 0px !important; }
-! anitokyo.tv - удаление брендированного фона, отступа сверху
-anitokyo.tv#$#body { background: #e4f1f6!important; }
-anitokyo.tv#$#body > div#wrapper { padding-top: 0!important; }
-anitokyo.tv#$#body > div#wrapper > header { padding: 0!important; margin: 0px 0 0 0!important; }
 ! overclockers.ru
 !+ NOT_OPTIMIZED
 forums.overclockers.ru#$#.needblock { position: absolute!important; left: -3000px!important; }
@@ -11559,8 +11549,6 @@ manikyres.ru##.ajax-load-more-wrap
 2hpc.ru###sticky-wrapper
 rockstargame.su##body > div[id="a"]
 ||p.xcadr.org/contents/other/player/*.mp4
-animedub.ru,anitokyo.tv##a[href^="https://r.advg.agency/"]
-anitokyo.tv##div[class^="header_bg"]
 ||stormo.xyz/player/loader.png
 7days-ua.com###sidebar-m
 7days-ua.com##div[id^="sblock_"]
