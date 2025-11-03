@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.79.43",
-			"timeUpdated": "2025-11-03T08:40:39+0000",
+			"version": "2.1.79.44",
+			"timeUpdated": "2025-11-03T12:45:16+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.79.42",
-			"timeUpdated": "2025-11-03T08:40:39+0000",
+			"version": "2.1.79.43",
+			"timeUpdated": "2025-11-03T12:45:17+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1055,8 +1055,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.4.55",
-			"timeUpdated": "2025-11-03T00:48:12+0000",
+			"version": "2.1.4.56",
+			"timeUpdated": "2025-11-03T12:45:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1076,8 +1076,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.39.83",
-			"timeUpdated": "2025-11-03T08:40:56+0000",
+			"version": "2.0.39.84",
+			"timeUpdated": "2025-11-03T12:45:36+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1194,8 +1194,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/List-KR/List-KR/refs/heads/master/filter-AdGuard-forward.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.25",
-			"timeUpdated": "2025-11-02T20:34:31+0000",
+			"version": "2.0.23.26",
+			"timeUpdated": "2025-11-03T12:45:42+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1322,8 +1322,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.32",
-			"timeUpdated": "2025-10-25T12:45:01+0000",
+			"version": "2.0.8.33",
+			"timeUpdated": "2025-11-03T12:45:55+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1353,8 +1353,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/SerboCroatianList.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.67",
-			"timeUpdated": "2025-10-28T16:41:28+0000",
+			"version": "2.0.0.68",
+			"timeUpdated": "2025-11-03T12:46:01+0000",
 			"deprecated": false,
 			"languages": [
 				"sr",
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.72.74",
-			"timeUpdated": "2025-11-03T08:41:24+0000",
+			"version": "2.0.72.75",
+			"timeUpdated": "2025-11-03T12:46:02+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1427,8 +1427,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.11.15",
-			"timeUpdated": "2025-11-03T00:48:44+0000",
+			"version": "2.0.11.16",
+			"timeUpdated": "2025-11-03T12:46:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
