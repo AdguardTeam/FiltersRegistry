@@ -1,9 +1,9 @@
-! Checksum: CraurjuVvu/3oVzT6U+UEw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1762137761-3600.patch
+! Checksum: wu0sQ7tzNJYfya4Z7sEarQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1762168223-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.50.13
-! TimeUpdated: 2025-11-02T19:06:05+00:00
+! Version: 2.0.50.14
+! TimeUpdated: 2025-11-03T11:06:44+00:00
 ! Expires: 10 days (update frequency)
 ||tizofvtuqo.com^
 ||ads.goldbach-germany.de^
@@ -512,7 +512,8 @@ joyn.de#%#//scriptlet('prevent-fetch', 'zomap.de')
 spielaffe.de#%#//scriptlet("adjust-setTimeout", "loadGameFile", "8000", "0.02")
 spiele.rtl.de#%#//scriptlet('remove-class', 'js-game-detail-link', '.game-startbutton a.js-game-detail-link')
 blasensex.com#%#//scriptlet("abort-on-property-read", "jsUnda")
-wetter.de,rtl.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreFacade.config.adReinsertion.homad.enabled", "false")
+rtl.de#%#//scriptlet('abort-on-stack-trace', 'Array.prototype.find', 'checkAndStartAdSlotAtOffset')
+wetter.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreFacade.config.adReinsertion.homad.enabled", "false")
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
 focus.de#%#//scriptlet("json-prune", "enabled", "testhide")
 welt.de#%#//scriptlet('set-constant', 'Object.prototype.isHomadScriptLoaded', 'true')

@@ -1,9 +1,9 @@
-! Checksum: FD5n/FuLmoS9975sRD1H6Q
-! Diff-Path: ../patches/6/6-s-1762110597-3600.patch
+! Checksum: xWHbsf35qtFQFWTF8ohzMQ
+! Diff-Path: ../patches/6/6-s-1762168235-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.50.13
-! TimeUpdated: 2025-11-02T19:06:05+00:00
+! Version: 2.0.50.14
+! TimeUpdated: 2025-11-03T11:06:44+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1196,7 +1196,8 @@ spiele.rtl.de#%#//scriptlet('remove-class', 'js-game-detail-link', '.game-startb
 ! popunder
 blasensex.com#%#//scriptlet("abort-on-property-read", "jsUnda")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/90034
-wetter.de,rtl.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreFacade.config.adReinsertion.homad.enabled", "false")
+rtl.de#%#//scriptlet('abort-on-stack-trace', 'Array.prototype.find', 'checkAndStartAdSlotAtOffset')
+wetter.de#%#//scriptlet("set-constant", "cbcAdvertisingAdapter.smartClientCoreFacade.config.adReinsertion.homad.enabled", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/89311
 !+ NOT_PLATFORM(windows, mac, android, ext_ff)
 focus.de#%#//scriptlet("json-prune", "enabled", "testhide")
