@@ -1,8 +1,8 @@
-! Checksum: pon2m7EmgGONoswsYnUa4A
+! Checksum: 6syM/PpIY4w4Ww0gug6PFw
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.18.23
-! TimeUpdated: 2025-11-03T12:46:01+00:00
+! Version: 2.0.18.24
+! TimeUpdated: 2025-11-03T20:36:53+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -71,7 +71,7 @@
 ! ⌘ Makes some websites use much more of the screen width, instead of just a thin central column.
 ! What this broad compilation does not block：Newsletters, cookie banners, social media links to companies' pages
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 08October2025v3
+! OriginalVersion: 23October2025v2
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
@@ -320,9 +320,9 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||52.202.53.245^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
-! [excluded by ||35.] ||35.175.38.64^$document
+://35.175.38.64^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
-! [excluded by ||35.] ||35.168.147.213^$document
+://35.168.147.213^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||34.230.160.215^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -863,6 +863,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/145513
 ||redirect.newprogrammatic.click^$document,domain=~likely_a_malware_redirection.*
 /zcvisitor/*?campaignid$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ! https://github.com/DandelionSprout/adfilt/issues/808
 ! https://www•mandiant•com/resources/blog/tracking-evolution-gootloader-operations (26/01/2023)
 ||i-likefood.co^$document
@@ -976,6 +977,7 @@ zombooru.com##a[href$="ttp://www.hard55.com"]
 ||freshsubz.com^$document
 ! https://www•gdatasoftware•com/blog/2025/09/38265-steam-blockblasters-game-downloads-malware
 ! https://github•com/prodaft/malware-ioc/blob/master/LARVA-208/SteamCampaign•md
+! Inspired by https://nyheder•tv2•dk/samfund/2025-10-23-sundheddk-faar-hundreder-af-henvendelser-om-falske-smser
 ! ——— Standard malware that I stumbled upon on my own ———
 ! http://www•toorgle•net/results•php?q=fetishkitsch&security=666
 ##a[href*=".downloadprovider.me/"]
@@ -1177,7 +1179,7 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ! https://cside.dev/blog/over-5k-wordpress-sites-caught-in-wp3xyz-malware-attack
 ! Tumblr spammers
 !+ NOT_PLATFORM(windows, mac, android, cli)
-! [excluded by ||104.] ||104.21.82.132^$document,popup
+://104.21.82.132^$document,popup
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||172.67.158.57^$document,popup
 ||sites.google.com/view/*wincashapp^$document
@@ -1268,7 +1270,7 @@ drvhub.net##.driver-item__install
 !!!@@/_udp\.(.*)?\\/
 ! Oddly enough, there seems to be no need to couple it with "@@/:\\/", since web browsers convert Windows filenames from backwards to forwards slashes.
 ! ——— Spam in comment sections across the internet about "working" from "home" ———
-! ——— Upgrades HTTP requests to HTTPS on sites that don't do it automatically ———
+! ——— Upgrades HTTP requests to HTTPS on sites that are not known to do it automatically ———
 ! ——— Anti-'Malware comments' (Currently Disqus-specific) ———
 ! https://myip•ms/info/limitexcess
 ! https://myip•ms/info/memberarea/My_Account•html
