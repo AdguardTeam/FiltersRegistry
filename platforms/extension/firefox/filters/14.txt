@@ -1,9 +1,9 @@
-! Checksum: 0NvuUZ7eHwmUR7Kfbtx0gg
-! Diff-Path: ../patches/14/14-s-1762182697-3600.patch
+! Checksum: lSAWOb/fYn5vGeTEdUo7tQ
+! Diff-Path: ../patches/14/14-s-1762186327-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.47.81
-! TimeUpdated: 2025-11-03T15:08:17+00:00
+! Version: 2.2.47.82
+! TimeUpdated: 2025-11-03T16:08:33+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2544,6 +2544,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+pacificparadiseindian.com.au###footer_cookie
 cbf.com.br#%#//scriptlet('trusted-set-cookie', 'cookies_accepted_categories', 'technically_required')
 belkacar.ru##.the-cookies
 asnbank.nl#%#//scriptlet('trusted-click-element', 'button#cookie-deny', '!cookie:CLC_GDPR')
@@ -29374,9 +29375,6 @@ egrp365.ru,vegasslotsonline.com##.exit-popup
 vegasslotsonline.com##.subscribe-to-newsletter-sticky
 tutorialsduniya.com,betootaadvocate.com,financefwd.com##.hustle-slidein-position--south
 crackevil.com###pop-ad-wrap
-rnd.de,elmundo.es#%#//scriptlet('remove-class', 'tp-modal-open', 'body.tp-modal-open')
-rnd.de,elmundo.es#$#div[class="tp-modal"][style="z-index: 300050; display: block;"] { display: none !important; }
-rnd.de,elmundo.es#$#div[class="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
 deepl.com###dl_app_banner_popup
 typography.com##div[class^="App__footerRegion_"] > footer[class^="SiteFooter__footer"]
 influencermarketinghub.com###ccl_ppu
@@ -42875,6 +42873,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+pacificparadiseindian.com.au##div[data-class="app_download_banner"]
 dazeddigital.com##.article-main-content > .grid:has(a[href^="https://play.google.com/store/apps/details"])
 dazeddigital.com##.club-promo-strip
 bietigheimerzeitung.de##div[data-b-title="BHZ-R ePaper"]
@@ -51089,6 +51088,9 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+digitimes.com,rnd.de,elmundo.es#$#div[class^="tp-modal"][style="z-index: 300050; display: block;"] { display: none !important; }
+digitimes.com,rnd.de,elmundo.es#$#div[class^="tp-modal"][style="z-index: 300050; display: block;"] ~ div.tp-backdrop { display: none !important; }
+digitimes.com,rnd.de,elmundo.es#$#html > body.tp-modal-open { overflow: auto !important; }
 berlingske.dk##div[class^="tp-modal"][style^="z-index: 300050; display: block;"]
 criticker.com##.tr_ad
 espn.com.br##.quicklinks:has(> .quicklinks__container > .quicklinks__header--disneyplus)
@@ -52794,7 +52796,7 @@ w3schools.com###lowerfeatureshowcaselink
 best-legal.jp###common-cta
 insurance.rakuten.co.jp###grpheader > div.spOff
 bookwalker.jp###banner-area
-rusklik.tvnet.lv##.tp-banner
+digitimes.com,rusklik.tvnet.lv##.tp-banner
 sitepoint.com###community-banner-unit
 websearch.rakuten.co.jp###banner
 websearch.rakuten.co.jp##.banner2
