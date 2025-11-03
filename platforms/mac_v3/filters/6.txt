@@ -1,9 +1,9 @@
-! Checksum: LE3xQULf8MB08Hw3hTjTqw
-! Diff-Path: ../patches/6/6-s-1762168254-3600.patch
+! Checksum: FiGTa6TfkxatzvXczple3g
+! Diff-Path: ../patches/6/6-s-1762179061-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.50.14
-! TimeUpdated: 2025-11-03T11:06:44+00:00
+! Version: 2.0.50.15
+! TimeUpdated: 2025-11-03T14:07:13+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -990,10 +990,8 @@ t-online.de#%#//scriptlet('json-prune', 'props.pageProps.page.thirdParty.homad')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183745
 focus.de#%#//scriptlet('trusted-replace-node-text', 'script', 'galleryv2Init', '/adsEnabled:true/', 'adsEnabled:false')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179303
-tvspielfilm.de,tvtoday.de,chip.de,focus.de#%#//scriptlet('set-constant', 'DL8_GLOBALS.enableAdSupport', 'false')
-tvspielfilm.de,tvtoday.de,chip.de,focus.de#%#//scriptlet('set-constant', 'DL8_GLOBALS.useHomad', 'false')
-tvspielfilm.de,tvtoday.de,chip.de,focus.de#%#//scriptlet('set-constant', 'DL8_GLOBALS.enableHomadDesktop', 'false')
-tvspielfilm.de,tvtoday.de,chip.de,focus.de#%#//scriptlet('set-constant', 'DL8_GLOBALS.enableHomadMobile', 'false')
+tvspielfilm.de,tvtoday.de,chip.de,focus.de#%#//scriptlet('set-constant', '__gv_hdInited', 'true')
+tvspielfilm.de,tvtoday.de,chip.de,focus.de#%#//scriptlet('abort-on-stack-trace', 'String.prototype.substr', '/load[\s\S]*?hd-main\.js/')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178312
 ! remove non-scriptlet when nothing breaks until 2025-02-22
 ! stern.de#%#(()=>{Object.defineProperty=new Proxy(Object.defineProperty,{apply:(a,b,c)=>{const[d,e,f]=c;return"createAdPlayer"===e&&"function"==typeof c[2]?.get&&(c[2].get=()=>{}),Reflect.apply(a,b,c)}})})();
