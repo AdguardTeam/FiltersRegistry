@@ -659,6 +659,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! SECTION: Anti-adblock - Regular rules
 ! Do not forget about '!#safari_cb_affinity' section for exclusions:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#general
+! The rules for content blockers only:
+! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
 rg.ru#%#//scriptlet('set-local-storage-item', 'rekl_modal_shown', 'emptyObj')
 exceldestek.com#%#//scriptlet('set-constant', 'googletag', 'emptyObj')
@@ -2198,7 +2200,6 @@ goduke.com,uwaterloo.ca##div[aria-label="Ad Blocker Detected"]
 !
 ! Common '!#safari_cb_affinity(general)' directive for all content blockers
 ! SECTION[id=general]: Anti-adblock - Common '!#safari_cb_affinity(general)' directive
-!#if (adguard_app_ios || adguard_ext_android_cb || ext_safari)
 !#safari_cb_affinity(general)
 !
 @@||content.adriver.ru/AdRiverFPS.js$domain=rg.ru
@@ -2956,7 +2957,6 @@ web.de,gmx.net,gmx.at,gmx.ch,gmx.com#$##abd-container { display: block !importan
 !
 ! Common '!#safari_cb_affinity(general)' directive
 !#safari_cb_affinity
-!#endif
 ! NOTE: Common '!#safari_cb_affinity(general)' directive end ⬆️
 ! !SECTION: Anti-adblock - Common '!#safari_cb_affinity(general)' directive
 !
@@ -3352,7 +3352,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 !
 !
 !
-! SECTION: Anti-adblock - The rules for content blockers only
+! SECTION[id=content_blockers]: Anti-adblock - The rules for content blockers only
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
 !#safari_cb_affinity(general)
 @@||dongknows.com^$generichide
