@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: m8Mw+ELixLSAFahSvfwKKQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1762262510-3600.patch
+! Checksum: 7T5BHVfDlY0eraVeseZ4jw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1762265500-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.22.81
-! TimeUpdated: 2025-11-04T13:17:44+00:00
+! Version: 2.4.22.82
+! TimeUpdated: 2025-11-04T14:07:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10595,6 +10595,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216541
+snopes.com##+js(abort-on-property-write, gtl)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216783
 /^https:\/\/audiocircuit\.dk\/wp-content\/plugins\/[a-z][a-z][a-z][a-z][a-z][a-z][a-z]/[a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.js\?ver=/$domain=audiocircuit.dk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216720
@@ -36313,6 +36315,9 @@ $subdocument,third-party,denyallow=disqus.com,domain=love4u.net
 !
 ! NOTE: Specific rules
 !
+||player.vidplus.to/vast/vast.xml
+snopes.com##+js(set-constant, insert_ad, undefined)
+snopes.com##+js(set-constant, insert_admin_banner, undefined)
 redflix.club,redflix.co##+js(addEventListener-defuser, click, Popunder)
 redflix.club,redflix.co##+js(set-session-storage-item, adsDisabled, true)
 godownloader.com##.thanks
