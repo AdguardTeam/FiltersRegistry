@@ -1,5 +1,5 @@
-! Checksum: eaABAINM54XC3LNYzFSaYg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1762200750-3600.patch
+! Checksum: ttDQWfPMeDjXgcMehEZERQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1762224063-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.50.16
@@ -564,6 +564,7 @@ maniac.de#$#body.td-ad-background-link { background-image: none!important; }
 maniac.de#$#body.td-ad-background-link #td-outer-wrap { cursor: auto!important; }
 aktiencheck.de#$#body > #main { top: 0px!important; }
 forum.digitalfernsehen.de#$#.messageContent blockquote > div[id][style*="width:300px;height:250px"] { position: absolute!important; left: -3000px!important; }
+dasoertliche.de#$#body > #oetbwrap[style="position:absolute;top:98px;"] { top: 0!important; }
 woxikon.de#$#.ads-wrapper { position: absolute!important; left: -3000px!important; }
 freenet.de#$##frnBanner { height: 25px!important; min-height: 0px !important;}
 achgut.com#$#.column > .banner { position: absolute!important; left: -3000px!important; }
@@ -766,6 +767,7 @@ ga.de##.js-article-content > div[data-cy="article-content"]:has(aside[data-cy="p
 lz.de##.mmm-modul
 lz.de##.col-xs-12 > .ad-highlight
 lz.de##.col-xs-12 > .ad-highlight + div[class^="headline"]
+lz.de##.carousel-container:has(> .owl-carousel:not(:has(*)))
 lz.de##a[data-nm="leserreisen-btn-modul"]
 lz.de##.em_ads_box_dynamic_remove
 weser-kurier.de##.ad-wrapper
@@ -2166,7 +2168,6 @@ winfuture.de##div[class$="p_widget nointelliTXT"]
 jetztspielen.de##div[class*="advert"]
 isnichwahr.de##div[class*="simpleads-ad-"]
 regensburg-digital.de##div[class="uk-panel uk-panel-box widget_text"]
-informationsarchiv.net##div[class^="ads_"]
 handelsblatt.com##div[class^="hcf-ad-"]
 meinestadt.de##div[class^="ms-ad"]
 metal-hammer.de,musikexpress.de##div[class^="ph-ad"]
@@ -2272,7 +2273,6 @@ chip.de#?#ul > li:has(> div.Ad)
 wooco.de#?##mainWidgets > .widget:has(> .textwidget > div[style] > .adsbygoogle)
 rennrad-news.de#?#.p-header-content:has(> .mtbnews-forum__banner)
 noz.de#?#.outer-wrapper:has(> .inner-wrapper > .nozmhn_ad)
-onmeda.de#?#.slick-track > div.box:has(> div[style] > div.ad-info)
 freiepresse.de#?##main > div.section-article:has(>.section-content > #TABOO)
 wetter.com#?#.app-layout:has(> div.OUTBRAIN)
 pnp.de#?#.container:has(> div.OUTBRAIN)
@@ -2603,7 +2603,6 @@ rtl.de#@#.rtlde-medium-rectangle
 /styles/werbung_
 /upload/werbung/*
 /usemax/*
-/werb.gif
 /werbe-banner/*
 /werbeanzeige/*
 /werbeanzeigen/*
@@ -2732,6 +2731,7 @@ _woz_banner_vote.
 ##.anzeigenwerbung
 ##.artikelinlinead
 ##.azk-native-responsive
+##.b-werbung
 ##.banner-werbung-rechts
 ##.bannerAnzeige
 ##.bannergroup_werbung
@@ -2784,7 +2784,6 @@ _woz_banner_vote.
 ##.werbung2
 ##.werbung3
 ##.werbung301
-##.werbung970x250
 ##.werbungAnzeige
 ##.werbungContainer
 ##.werbung_300x250
@@ -3380,6 +3379,7 @@ g.doubleclick.net###adunit
 ||adsrvr.org^$domain=autobild.de
 ||adup-tech.com^$domain=autobild.de
 ||amazon-adsystem.com^$domain=autobild.de|gofeminin.de
+||asadcdn.com/adlib/$~script,~stylesheet,domain=autobild.de
 ||betrad.com^$domain=googlesyndication.com
 ||cdn.flashtalking.com^$domain=autobild.de|imasdk.googleapis.com
 ||flashtalking.com^$domain=g.doubleclick.net
@@ -3715,7 +3715,6 @@ chemnitzerfc.de,deutsche-mittelstands-nachrichten.de,games.ch###sponsor
 itmagazine.ch###sponsorbutton_div
 digitalkamera.de,h-bw.de###sponsoren
 kleinanzeigen.de###srps-billboard
-11889.com###sticky-aside
 11880.com###sticky-aside-placeholder
 bafoeg-rechner.de,studis-online.de###ston-footer-ad
 raidrush.net###stpd_close
@@ -4751,7 +4750,6 @@ ariva.de##span[onpointerup*="prgAnalyticsEvent("]
 erogeschichten.com##table[align-center][cellpadding="13"][border="0"][bgcolor="lightgrey"]
 erogeschichten.com##table[style="border: 1px solid black; padding: 5px 0px 5px 0px; background-color: lightgrey; text-align: center"]
 grower.ch##table[width="195"]
-astronews.com##table[width="300px"][cellspacing="0"][cellpadding="0"][border="0"]
 wetterbote.de##table[width="738"][height="90"]
 ww3.cad.de##table[width="95%"][cellspacing="1"][border="0"] > tbody > tr > td[valign="top"]:first-child + td[style="vertical-align: top;"]:last-child
 ibash.de##tr > td[valign="top"]:first-child + td[width="15"] + td[width="186"][valign="top"]:last-child
@@ -4903,6 +4901,7 @@ stol.it#?##ContainerFull:-abp-has(a:-abp-contains(Anzeige))
 apfeltalk.de#?#div.wpb_text_column:-abp-contains(Werbung)
 avguide.ch#?#.avgrid_1_of_1.viewlet-bottom:-abp-has(h2:-abp-contains(Advertorials))
 baur.de#?#span:-abp-contains(Gesponserte Artikel)
+celleheute.de#?#div.YzqVVZ:-abp-has(span.wixui-rich-text__text:-abp-contains(Anzeigen))
 computerbild.de#?#article.gridArea__teaserM:-abp-has(div.teaserBlock__label:-abp-contains(Anzeige))
 finanzfluss.de#?#.component:-abp-has(div.disclaimer-text:-abp-contains(Anzeige))
 focus.de#?#article[id^="teaser-"][data-placement]:-abp-contains(Anzeige)
@@ -4912,6 +4911,7 @@ gamestar.de#?#.contentnewsitem-box .box-reload .news-list:-abp-has(span.media-he
 gamestar.de#?#.contentnewsitem-box .box-reload > div:-abp-has(.news-list span.media-heading:-abp-contains([Anzeige])) + hr
 handelszeitung.ch#?#.teaser-m-default:-abp-contains(Publireportage)
 hardwareluxx.de#?#.bg-gray-light:-abp-has(div.text-right:-abp-contains(Werbung))
+heise.de#?#p:-abp-contains(=== Anzeige / Sponsorenhinweis ===)
 knuspr.de#?#div[data-test="whisperer-product-wrapper"]:-abp-contains(Gesponsert)
 koeln.de#?#.gb-container:-abp-contains(Anzeige)
 kurier.at#?#.gridContainer:has-text(Sponsored Content)
