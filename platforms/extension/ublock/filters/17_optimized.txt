@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: IGU6g5X3XJa0CYVOUI8VtA
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1762164748-3600.patch
+! Checksum: 8DnSEXHqQX+cEPxjidckuQ
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1762272729-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.10
-! TimeUpdated: 2025-11-03T10:08:50+00:00
+! Version: 2.0.12.11
+! TimeUpdated: 2025-11-04T16:08:48+00:00
 ! Expires: 5 days (update frequency)
 $removeparam=adsterra_clid
 $removeparam=adsterra_placement_id
@@ -394,6 +394,13 @@ $removeparam=s-id,domain=item.rakuten.co.jp|www.rakuten.co.jp
 ||duckduckgo.com/y.js$removeparam=click_metadata
 ||duckduckgo.com/y.js$removeparam=vqd
 ||duckduckgo.com/y.js$removeparam=iurl
+||duckduckgo.com/y.js$removeparam=ad_type
+||duckduckgo.com/?q=*&t=$document,removeparam=t
+||duckduckgo.com/?t=*&q=$document,removeparam=t
+||duckduckgo.com^$removeparam=from
+||duckduckgo.com^$removeparam=vis
+||duckduckgo.com^$removeparam=perf_id
+||duckduckgo.com^$removeparam=parent_perf_id
 ||olybet.lv^$removeparam=ref
 ||provereno.media^$removeparam=tg_rhash
 ||weathernews.jp^$removeparam=fm
@@ -956,9 +963,6 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ||rdrtr.com^$removeparam=aff_sub3
 ||rdrtr.com^$removeparam=aff_sub4
 ||rdrtr.com^$removeparam=aff_sub5
-||duckduckgo.com/y.js$removeparam=ad_domain
-||duckduckgo.com/y.js$removeparam=ad_provider
-||duckduckgo.com/y.js$removeparam=ad_type
 ||indeed.com^$removeparam=from
 ||plus.yandex.*^$removeparam=source
 ||plus.yandex.*^$removeparam=state
@@ -1077,10 +1081,6 @@ $removeparam=i3_ord,domain=dmm.co.jp|dmm.com
 ||slack.com/downloads/$removeparam=t
 $removeparam=frm,domain=msearch.shopping.naver.com|search.shopping.naver.com
 $removeparam=NaPm,domain=msearch.shopping.naver.com|search.shopping.naver.com
-||duckduckgo.com^$removeparam=from
-||duckduckgo.com^$removeparam=vis
-||duckduckgo.com^$removeparam=perf_id
-||duckduckgo.com^$removeparam=parent_perf_id
 *$removeparam=t-src,domain=tutanota.com|tuta.com
 ||donga.com^$removeparam=ref
 ||t.adcell.com/*?$removeparam=subId
