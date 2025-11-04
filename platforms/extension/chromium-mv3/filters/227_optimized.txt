@@ -1,8 +1,8 @@
-! Checksum: K/XD+gaM48NNPJgAuAUNFw
+! Checksum: 9hxL0BW5IpLa76S3+BkTpw
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.26
-! TimeUpdated: 2025-11-03T12:45:42+00:00
+! Version: 2.0.23.27
+! TimeUpdated: 2025-11-04T08:40:52+00:00
 ! Expires: 10 days (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -521,6 +521,7 @@
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+||json*.dcinside.com/json*/notify_ad.php
 ||gall.dcinside.com/_js/ad.js
 ||gall.dcinside.com/_js/ad_context_powLink.js
 ||filetad.tygem.com/updata/banner/
@@ -1601,6 +1602,8 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+viewership.softc.one##.container.px-4 > .box-border.gap-8 > .rounded-md.min-h-\[140px\]:has(ins.adsbygoogle)
+damoang.net##.da-adsense-container
 m.inven.co.kr##div[class^="ad-bbs-view-"]
 zod.kr##.app-content > div[id][class*=" "]:has(img.app-main-banner-bg)
 zod.kr##.zod-widgets--deal_partner > a[href^="/deal_partner/"]
@@ -1856,7 +1859,6 @@ g-enews.*##div[id^="tdn_"][style*="height:"]
 search.naver.com##div[id^="power_link_together_"]
 namu.wiki,~board.namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(> iframe[id^="google_ads_"])
 namu.wiki,~board.namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(iframe[src*="arca.live/external/callad"])
-namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:only-child:has(iframe[id^="google_ads_iframe_"][srcdoc][data-load-complete="true"]:empty)
 namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[id^="google_ads_iframe_"])
 namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[src*="arca.live/external/callad"])
 namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:has(iframe[src*="arca.live/external/callad"])
