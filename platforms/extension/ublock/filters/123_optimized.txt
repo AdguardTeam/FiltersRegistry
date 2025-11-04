@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9A7ldnN63CHH55vXmgvqVg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1762217547-14400.patch
+! Checksum: D37xtxfNxQEc9MuKW8QeKA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1762231317-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.50.49
-! TimeUpdated: 2025-11-04T00:47:59+00:00
+! Version: 2.1.50.50
+! TimeUpdated: 2025-11-04T04:37:32+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -22,7 +22,6 @@
 /accesspress-social-counter/*
 /addthis_widget.js
 /addtoany.min.js
-/article-social/*
 /common/sns/*
 /common/sns_
 /facebook-pagelike-widget/fb.js
@@ -177,7 +176,6 @@ _social-bar/
 ###block-socialmenu
 ###block-socialsharingblock
 ###blog-follow-widget
-###box_social
 ###btn-share-email
 ###btn-share-fb
 ###btn-share-tele
@@ -365,6 +363,7 @@ _social-bar/
 ###panel-social
 ###pinterest-link
 ###pinterest-share
+###playerShare
 ###popup-social
 ###post-share-icons
 ###post-social
@@ -585,6 +584,7 @@ _social-bar/
 ###socialMedia
 ###socialMediaBox
 ###socialMediaFacebook
+###socialMediaMenu
 ###socialMediaSection
 ###socialModal
 ###socialNetworks
@@ -639,6 +639,7 @@ _social-bar/
 ###socialdiv
 ###socialfooter
 ###socialicons
+###socializethis
 ###sociallinks
 ###socialnav
 ###socialnet
@@ -789,6 +790,7 @@ _social-bar/
 ##.addsSocialItem
 ##.addthis-smartlayers
 ##.addthis-smartlayers-desktop
+##.addthis-wrapper
 ##.addthis:not(body)
 ##.addthis_button
 ##.addthis_button_compact
@@ -933,13 +935,11 @@ _social-bar/
 ##.badge-pinterest-share
 ##.badge-share
 ##.bc-author-socials
-##.bc-social-share
 ##.bc_social_icons
 ##.bctt-click-to-tweet
 ##.bd-FooterSocials-item
 ##.bd-socialicon
 ##.bdaia-social-io
-##.bdaia-social-links
 ##.beSocialShare
 ##.beacon-social
 ##.below-article-share-block
@@ -1704,7 +1704,6 @@ _social-bar/
 ##.instagram_logo
 ##.instagram_share
 ##.instagramicon
-##.intro-social
 ##.ion-social-facebook
 ##.ion-social-linkedin
 ##.ion-social-twitter
@@ -2154,6 +2153,7 @@ _social-bar/
 ##.sb_share
 ##.sc--twitter
 ##.sc-button-share
+##.sc-social
 ##.sc-social-links
 ##.scShareBoxRow
 ##.scShareText
@@ -2293,6 +2293,7 @@ _social-bar/
 ##.share-kit__twitter
 ##.share-kit__youtube
 ##.share-label
+##.share-launch
 ##.share-left
 ##.share-line
 ##.share-link-button
@@ -2538,6 +2539,7 @@ _social-bar/
 ##.shareall
 ##.shareb
 ##.sharebar
+##.sharebar__sharecount
 ##.sharebg
 ##.sharebottom
 ##.sharebox
@@ -3215,7 +3217,6 @@ _social-bar/
 ##.td-post-sharing-bottom
 ##.td-post-sharing-style1
 ##.td-post-sharing-top
-##.td-share
 ##.td-social-icon-wrap
 ##.td-social-list
 ##.td-social-sharing
@@ -3274,6 +3275,7 @@ _social-bar/
 ##.tronWhatsappIcon
 ##.ts-share-bar
 ##.ts-social
+##.tsocial
 ##.tve__info__share
 ##.tve_social_items
 ##.tw-share
@@ -3335,6 +3337,7 @@ _social-bar/
 ##.ty-social-link
 ##.ty-social-link-block
 ##.typcn-social-twitter
+##.u-socialWrapper
 ##.ui-socials
 ##.uix_socialMedia
 ##.uix_socialMediaLinks
@@ -4055,7 +4058,6 @@ hindustantimes.com##.subscribe-social
 locals.com##.support-now
 targettrend.com##.sws_supernormalaction
 notthebee.com##.take-shareables
-thediplomat.com##.td-follow
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
 chinadaily.com.cn##.three-right
@@ -4074,6 +4076,7 @@ news.sky.com##.ui-news-footer-social-link
 hp.com##.ul_media_links
 aa.com.tr##.ustBar-sosyal
 gothamist.com##.v-share-tools
+trueachievements.com##.vc
 apa.org##.vertical-icon-bar
 videogameschronicle.com##.vgc-branding__container > ul
 videogameschronicle.com##.vgc-socialshare
@@ -4085,6 +4088,7 @@ dailymail.co.uk,oogtv.nl##.whatsapp
 aajtak.in,businesstoday.in##.whatsapp_channel
 business-standard.com##.whtsclick
 indiatoday.in##.whtspp_share
+trustedreviews.com##.widget-social-b
 mediapost.com##.widget-waypoint
 fandom.com##.wikia-bar-anon
 destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
@@ -4306,6 +4310,7 @@ amarujala.com##.auw_event_share
 centrometeoitaliano.it,leggo.it###box-social
 liberoquotidiano.it###dropdown-trigger
 navigaweb.net###like
+wikihow.it###sf
 navigaweb.net###social3
 dissapore.com##._social-share
 raiplaysound.it##.banner-buttons
@@ -4380,6 +4385,7 @@ revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
 atribuna.com.br,ebc.com.br,engeplus.com.br,forbes.com.br##.compartilhamento
+bcb.gov.br,folhape.com.br,ocioso.com.br,opoder.com.br,portalperifacon.com,sampi.net.br##.compartilhar
 jovempan.com.br##.cta-model
 uai.com.br##.d-flex.flex-wrap.align-items-center.mt-4-5.mb-3-5
 em.com.br##.edm-bottom-social
@@ -4395,6 +4401,8 @@ uol.com.br##.jupiter-share
 omelete.com.br##.links--social
 uai.com.br##.margen_icon
 canaltech.com.br##.mb-8.flex.flex-col.flex-wrap.justify-between.gap-3.tablet\:flex-row
+folhape.com.br##.midias
+folhape.com.br##.midiasApp
 poder360.com.br##.navigation-menu__social-media
 noataque.com.br##.noticia-share
 oantagonista.com.br##.post-interna__content__compartilhamento
