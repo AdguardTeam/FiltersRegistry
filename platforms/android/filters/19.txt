@@ -1,9 +1,9 @@
-! Checksum: Bb9pEhrc1zS/Q3qSRnu00A
-! Diff-Path: ../patches/19/19-s-1762258523-3600.patch
+! Checksum: NBmKiYxu6xP7nOMAt91phg
+! Diff-Path: ../patches/19/19-s-1762279988-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.64.51
-! TimeUpdated: 2025-11-04T12:12:21+00:00
+! Version: 2.0.64.52
+! TimeUpdated: 2025-11-04T18:09:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3225,6 +3225,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+dreametech.com.tr##div[style*=" z-index: 999999;"][style*="position: fixed"]
+dreametech.com.tr##iframe#launcher
 news.qq.com###recommend > div[class] > div[dt-params="e_type=download_banner"]
 news.qq.com###content-right > div[class] > div[class]:has(> div[class][style] ~ div[class] > div[dt-eid="em_rec_app"])
 7xcinema.com#%#//scriptlet('set-local-storage-item', 'disclaimer-agreed', 'true')
@@ -12141,6 +12143,9 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+dreametech.com.tr#$#.needsclick { display: none !important; }
+dreametech.com.tr#$?#.klaviyo-prevent-body-scrolling { overflow: auto !important; }
+dreametech.com.tr##.collapsible-content:has(> .collapsible-content__inner:only-child > div:only-child > #newsletter-footer)
 phileweb.com###tw
 phileweb.com###followBox
 kod.ru##a[class^="SmallTgBanner_"]
