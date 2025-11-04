@@ -1,9 +1,9 @@
-! Checksum: NuOXgTYyCNVwsAh7/JKANg
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1762247502-3600.patch
+! Checksum: KowIRjMz0ZFmjgovP23FLg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1762251148-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.47.90
-! TimeUpdated: 2025-11-04T09:08:36+00:00
+! Version: 2.2.47.91
+! TimeUpdated: 2025-11-04T10:09:00+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -3058,7 +3058,7 @@ shoppers.media##div[class^="CookiePopup"]
 mediately.co###__next > div[class^="sc-"]:has(> div[class^="sc-"] > div[class^="sc-"] > div[class^="sc-"] > a[href$="/docs/privacy"])
 drony.gov.pl##dtm-ui-cookies-popup
 viarail.ca###via-cookie-banner
-newsletter.gamediscover.co,sources.news,nicolasbustamante.com,blog.bytebytego.com,dwarkesh.com,secondthoughts.ai,chipsandcheese.com,noahpinion.blog,newcomer.co,blog.corkmac.app,blog.sshh.io,hardcoresoftware.learningbyshipping.com,newsguardrealitycheck.com,newsletter.techworld-with-milan.com,newsletter.pragmaticengineer.com,thecoder.cafe,gamefile.news,materializedview.io,computerenhance.com,read.engineerscodex.com,usermag.co,pillarcatholic.com,substack.com,ciw.news##div[class*="cookieBanner"]
+kartografia-ekstremalna.pl,newsletter.gamediscover.co,sources.news,nicolasbustamante.com,blog.bytebytego.com,dwarkesh.com,secondthoughts.ai,chipsandcheese.com,noahpinion.blog,newcomer.co,blog.corkmac.app,blog.sshh.io,hardcoresoftware.learningbyshipping.com,newsguardrealitycheck.com,newsletter.techworld-with-milan.com,newsletter.pragmaticengineer.com,thecoder.cafe,gamefile.news,materializedview.io,computerenhance.com,read.engineerscodex.com,usermag.co,pillarcatholic.com,substack.com,ciw.news##div[class*="cookieBanner"]
 sportmaster.ru##.sm-cookie-agreement-old
 rezervesdalas24.lv#$#div[class^="overlay"] { display: none !important; }
 news.owlting.com##.app-cookie
@@ -12225,6 +12225,9 @@ zhihu.com##.AdblockBanner
 ||zeelandnet.nl/static/js/footer.*.js$replace=/(=new Request\(")https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js(")/\$1\$2/
 socialblade.com##.socialblade-heartbeat
 creativeuncut.com###g_abox
+th.gl#%#//scriptlet('prevent-element-src-loading', 'script', 'nitropay.com')
+!+ NOT_PLATFORM(ext_ff)
+th.gl#%#(()=>{const e=()=>{};window.nitroAds={loaded:!0,siteId:1487,queue:[],createAd:function be(e,d){},addUserToken:e,clearUserTokens:e,version:"202501018 6d64f79"}})();
 ||cdn.btmessage.com^$domain=medicalnewstoday.com
 medicalnewstoday.com#%#//scriptlet('set-constant', '__bt_intrnl.aaDetectionResults.ab', 'false')
 iqiyi.com##iqpdiv[data-cupid=container]
@@ -12832,6 +12835,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 ###credential_picker_iframe
 /.*/$permissions=identity-credentials-get=(),document
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+news.qq.com###recommend > div[class] > div[dt-params="e_type=download_banner"]
+news.qq.com###content-right > div[class] > div[class]:has(> div[class][style] ~ div[class] > div[dt-eid="em_rec_app"])
 7xcinema.com#%#//scriptlet('set-local-storage-item', 'disclaimer-agreed', 'true')
 7xcinema.com#%#//scriptlet('set-local-storage-item', 'ads-warning-seen', 'true')
 science.org##.show-recommended
@@ -21496,8 +21501,9 @@ elipshaber.com##.mb-3.p-3.bg-white:has(> #msk-mobil-app)
 donanimhaber.com#$#.uygulamayi-indir { visibility: hidden !important; height: 0 !important; }
 bristol.ru##.first-order-modal
 imdb.com##.imdb-header__app-button
-doordash.com##a[data-testid="openAppButton"]
-doordash.com##div[class]:has(> div[data-testid="appDownload"]:first-child + button[data-testid="appDownloadButton"]:last-child)
+doordash.com##main > div[style="border: none; margin-top: var(--usage-space-medium);"]
+doordash.com##div[data-testid="LAYER-MANAGER-SHEET"] > div[class^="OverlayContainer-sc-ek6cb4-2"]
+doordash.com##div[data-testid="LAYER-MANAGER-SHEET"] > div[class^="OverlayContainer-sc-ek6cb4-2"] + div[style="position: fixed; bottom: 0px; left: 0px; right: 0px; max-width: 100vw; transform: none;"]
 t.shuqi.com##.ReaderFreeFixedGuideBtn
 enerjisa.com.tr,easy.co.il##.qr-container
 ntv.com.tr##.article-app-widget

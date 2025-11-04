@@ -1,9 +1,9 @@
-! Checksum: LuGZdzpbARNDzRDj+RElhQ
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1762226928-3600.patch
+! Checksum: hMq6CiyKdP7o9j3OIpX1nw
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1762251167-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.64.48
-! TimeUpdated: 2025-11-04T03:25:33+00:00
+! Version: 2.0.64.49
+! TimeUpdated: 2025-11-04T10:09:07+00:00
 ! Expires: 10 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -946,6 +946,9 @@ zhihu.com##.AdblockBanner
 ||wp-r.github.io/*/assets/js/jquery.adsplacer.adblock.js
 socialblade.com##.socialblade-heartbeat
 creativeuncut.com###g_abox
+th.gl#%#//scriptlet('prevent-element-src-loading', 'script', 'nitropay.com')
+!+ NOT_PLATFORM(ext_ff)
+th.gl#%#(()=>{const e=()=>{};window.nitroAds={loaded:!0,siteId:1487,queue:[],createAd:function be(e,d){},addUserToken:e,clearUserTokens:e,version:"202501018 6d64f79"}})();
 ||cdn.btmessage.com^$domain=medicalnewstoday.com
 medicalnewstoday.com#%#//scriptlet('set-constant', '__bt_intrnl.aaDetectionResults.ab', 'false')
 iqiyi.com##iqpdiv[data-cupid=container]
@@ -1553,6 +1556,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 ###credential_picker_iframe
 /.*/$permissions=identity-credentials-get=(),document
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+news.qq.com###recommend > div[class] > div[dt-params="e_type=download_banner"]
+news.qq.com###content-right > div[class] > div[class]:has(> div[class][style] ~ div[class] > div[dt-eid="em_rec_app"])
 7xcinema.com#%#//scriptlet('set-local-storage-item', 'disclaimer-agreed', 'true')
 7xcinema.com#%#//scriptlet('set-local-storage-item', 'ads-warning-seen', 'true')
 science.org##.show-recommended
