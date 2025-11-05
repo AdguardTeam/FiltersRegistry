@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.22.98",
-			"timeUpdated": "2025-11-05T06:10:21+0000",
+			"version": "2.4.22.99",
+			"timeUpdated": "2025-11-05T07:07:59+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.94.11",
-			"timeUpdated": "2025-11-05T04:08:46+0000",
+			"version": "2.0.94.12",
+			"timeUpdated": "2025-11-05T07:08:09+0000",
 			"languages": []
 		},
 		{
@@ -216,8 +216,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.60.24",
-			"timeUpdated": "2025-11-04T17:06:43+0000",
+			"version": "2.0.60.25",
+			"timeUpdated": "2025-11-05T07:08:25+0000",
 			"languages": [
 				"tr"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.48.1",
-			"timeUpdated": "2025-11-05T06:10:47+0000",
+			"version": "2.2.48.2",
+			"timeUpdated": "2025-11-05T07:08:32+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.73.79",
-			"timeUpdated": "2025-11-04T23:07:20+0000",
+			"version": "2.0.73.80",
+			"timeUpdated": "2025-11-05T07:08:39+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.64.56",
-			"timeUpdated": "2025-11-05T06:10:53+0000",
+			"version": "2.0.64.57",
+			"timeUpdated": "2025-11-05T07:08:40+0000",
 			"languages": []
 		},
 		{
@@ -335,8 +335,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.38.67",
-			"timeUpdated": "2025-11-05T06:10:53+0000",
+			"version": "2.0.38.68",
+			"timeUpdated": "2025-11-05T07:08:41+0000",
 			"languages": []
 		},
 		{
