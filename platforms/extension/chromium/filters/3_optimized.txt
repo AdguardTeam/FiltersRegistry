@@ -1,9 +1,9 @@
-! Checksum: ZCS4WjBqxEKOUE81F5Z9EQ
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1762420289-3600.patch
+! Checksum: pQLMoOMHI3Ew3BYQnSS55A
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1762423940-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.94.21
-! TimeUpdated: 2025-11-06T09:08:00+00:00
+! Version: 2.0.94.22
+! TimeUpdated: 2025-11-06T10:08:39+00:00
 ! Expires: 10 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -74409,6 +74409,11 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 ||tags.news.com.au^$~script
 |piwik.
+||bizlog-gateway.myrealtrip.com^
+||api-ktm.kkday.com^
+||riskpoc.trip.com^
+||chloro.trip.com^
+||ubt-sgp.trip.com^
 ||events.asurion.com^
 ||collector.moderntv.eu^
 ||ipm.adblockplus.dev^
@@ -124705,6 +124710,10 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 /prod/dfm/t8y9347t.min.js$redirect=nooptext,important,domain=dailycamera.com
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+||kkday.com/api/_nuxt/recommend/user-action-record
+||trip.com/restapi/soa2/*/tripAds.json
+||static.tripcdn.com/packages/ubt/websdk/*/ubt.minh.js
+||trip.com/restapi/soa2/*/clog
 ||store.maaltalk.com/admin/gd_share/script/visit/gd_visit.js
 ||usimsa.com/_nuxt/naverAdsScript.
 ||usimsa.com/_nuxt/kakaoPixel.
@@ -130501,6 +130510,8 @@ $cookie=_pubcid
 $cookie=pbjs-unifiedid
 $cookie=bf_lead
 $cookie=bf_visit
+$cookie=/^UBT_/,domain=trip.com
+$cookie=/^ubtc_/,domain=trip.com
 $cookie=/^_hackle_/,domain=app.catchtable.co.kr
 ||coloradoan.com^$cookie=gup_anonid
 ||coloradoan.com^$cookie=gup_clientid
