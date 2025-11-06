@@ -1,9 +1,9 @@
-! Checksum: VZXggm2qWwx4J8KGm3G5qQ
-! Diff-Path: ../patches/224/224-s-1762399926-3600.patch
+! Checksum: dpmp7deZtHOMb+3olWm5Jw
+! Diff-Path: ../patches/224/224-s-1762402509-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.47.37
-! TimeUpdated: 2025-11-06T03:28:51+00:00
+! Version: 2.1.47.38
+! TimeUpdated: 2025-11-06T04:11:50+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -499,10 +499,11 @@ linovelib.com#$##byspider { display: none !important; }
 linovelib.com#$#body[style] { overflow: auto !important; }
 linovelib.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'adBlock')
 linovelib.com#%#//scriptlet('set-constant', 'adblock', '0')
+! https://github.com/AdguardTeam/AdguardFilters/issues/217047
 ! https://github.com/AdguardTeam/AdguardFilters/issues/164798
 ! https://github.com/uBlockOrigin/uAssets/issues/10953
-@@/wp-content/themes/radio-hub/static/js/*.js$domain=tingfm.com
-tingfm.com#%#//scriptlet('trusted-replace-node-text', 'script', 'wndt.can_run_ads', '/wndt\.can_run_ads.*=.*;/', 'wndt.can_run_ads = !0;')
+@@/wp-content/themes/radio-hub/*.js$domain=tingfm.com
+! tingfm.com#%#//scriptlet('trusted-replace-node-text', 'script', 'wndt.can_run_ads', '/wndt\.can_run_ads.*=.*;/', 'wndt.can_run_ads = !0;')
 tingfm.com#%#//scriptlet('set-constant', 'canRunAds', 'true')
 tingfm.com#%#//scriptlet('set-constant', 'can_run_ads', 'true')
 tingfm.com#%#//scriptlet("prevent-setTimeout", "adblock")
