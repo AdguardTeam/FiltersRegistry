@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.79.59",
-			"timeUpdated": "2025-11-06T00:47:56+0000",
+			"version": "2.1.79.60",
+			"timeUpdated": "2025-11-06T04:39:33+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.79.58",
-			"timeUpdated": "2025-11-06T00:47:58+0000",
+			"version": "2.1.79.59",
+			"timeUpdated": "2025-11-06T04:39:35+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1076,8 +1076,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.39.87",
-			"timeUpdated": "2025-11-05T20:37:02+0000",
+			"version": "2.0.39.88",
+			"timeUpdated": "2025-11-06T04:39:53+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.72.90",
-			"timeUpdated": "2025-11-06T00:48:55+0000",
+			"version": "2.0.72.91",
+			"timeUpdated": "2025-11-06T04:40:17+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1487,8 +1487,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.2",
-			"timeUpdated": "2025-11-03T20:37:00+0000",
+			"version": "2.0.0.3",
+			"timeUpdated": "2025-11-06T04:40:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

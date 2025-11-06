@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1q9OLTPeGST+9MlNAUi5eg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1762390375-14400.patch
+! Checksum: qo1q+tlpBB8tSftU8zLeGw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1762404244-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.50.61
-! TimeUpdated: 2025-11-06T00:48:12+00:00
+! Version: 2.1.50.62
+! TimeUpdated: 2025-11-06T04:39:46+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -457,6 +457,7 @@ _social-bar/
 ###share_links
 ###share_now
 ###share_panel
+###share_social_sidebar
 ###share_telegram
 ###share_this
 ###share_to
@@ -791,6 +792,7 @@ _social-bar/
 ##.addthis-smartlayers-desktop
 ##.addthis-wrapper
 ##.addthis:not(body)
+##.addthis_bar
 ##.addthis_button
 ##.addthis_button_compact
 ##.addthis_button_digg
@@ -899,7 +901,6 @@ _social-bar/
 ##.article_shares
 ##.article_social
 ##.articlesharebox
-##.aside-social
 ##.aside-socials
 ##.asocial-area
 ##.aspexifblikebox
@@ -926,6 +927,7 @@ _social-bar/
 ##.b-header__social
 ##.b-share
 ##.b-sharelist
+##.b-sidebar-social
 ##.b-social-icons
 ##.b-social-share
 ##.b-socials
@@ -933,6 +935,7 @@ _social-bar/
 ##.b_share
 ##.badge-pinterest-share
 ##.badge-share
+##.banner-social
 ##.bc-author-socials
 ##.bc_social_icons
 ##.bctt-click-to-tweet
@@ -1449,6 +1452,7 @@ _social-bar/
 ##.footer__social-menu
 ##.footer__social-wrapper
 ##.footer__socialIcon
+##.footer__socialNetworkItem
 ##.footer__socialmedia
 ##.footer__socials
 ##.footer_fb
@@ -1702,6 +1706,7 @@ _social-bar/
 ##.instagram_logo
 ##.instagram_share
 ##.instagramicon
+##.iol-social-share
 ##.ion-social-facebook
 ##.ion-social-linkedin
 ##.ion-social-twitter
@@ -1787,7 +1792,6 @@ _social-bar/
 ##.l-social
 ##.large-share-button
 ##.layer_share_on
-##.lazysocialbuttons
 ##.leftsharebtn
 ##.lf-facebook
 ##.like-fb
@@ -1921,7 +1925,6 @@ _social-bar/
 ##.module--share
 ##.module-follow
 ##.module-social-share-icons
-##.module-twitter
 ##.mom-social-icons
 ##.mom-social-share
 ##.mvp-alp-soc-list
@@ -2085,6 +2088,7 @@ _social-bar/
 ##.post-socials
 ##.postShare
 ##.post__share
+##.post__share-container
 ##.post_share_center
 ##.postshare
 ##.powerkit_social_links_widget
@@ -2109,6 +2113,7 @@ _social-bar/
 ##.r-footer--social
 ##.rambler-share
 ##.rc_social
+##.rcom-social-site-footer
 ##.react-share__ShareButton
 ##.react_share_icons
 ##.reddit-share-button
@@ -2234,6 +2239,7 @@ _social-bar/
 ##.share-buttons-bottom
 ##.share-buttons-box
 ##.share-buttons-container
+##.share-buttons-line
 ##.share-buttons-list
 ##.share-buttons-multi
 ##.share-buttons-top
@@ -2261,6 +2267,7 @@ _social-bar/
 ##.share-flat
 ##.share-flipboard
 ##.share-float
+##.share-floating
 ##.share-follow
 ##.share-footer
 ##.share-head
@@ -2533,7 +2540,6 @@ _social-bar/
 ##.share_w
 ##.share_wa
 ##.share_widget
-##.share_with_friends
 ##.share_wrap
 ##.share_wrapper
 ##.sharea
@@ -3181,6 +3187,7 @@ _social-bar/
 ##.ssba_share_link
 ##.ssba_sharecount
 ##.ssbp-container
+##.sscb-pinterest
 ##.ssto-share-buttons
 ##.st-custom-button
 ##.st-social-block
@@ -3242,6 +3249,7 @@ _social-bar/
 ##.the_champ_sharing_ul
 ##.thread-share
 ##.thread-share-bar-buttons
+##.thrv_tw_qs
 ##.tk-footer-social-icons
 ##.tm-footer-social
 ##.tm-share-this
@@ -4010,7 +4018,6 @@ thenation.com##.sharethis-menu
 thekitchenmagpie.com##.sharing-cta
 glassalmanac.com##.shhr-btn
 welivesecurity.com##.sidebar-card-media
-tribune.com.pk##.sidebar-social-icons
 pcgamesn.com##.sidebar-social-widget
 streetsblog.org##.single_sharingInner__3IoQO
 nme.com,operawire.com,whoopsee.it##.site-footer-social
@@ -4064,7 +4071,6 @@ healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar
 aetv.com,wccftech.com##.story-share
 wccftech.com##.story-share-bottom
-tribune.com.pk##.story-social-icons
 gadgets360.com##.story_social_share
 userstyles.org##.style-image_shareStyleButtonWrapper__PwC0C
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
