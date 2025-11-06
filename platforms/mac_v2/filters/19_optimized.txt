@@ -1,9 +1,9 @@
-! Checksum: iEKqw/v/NWGLdEBSl7geVQ
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1762435226-3600.patch
+! Checksum: tsINArSTJaBczhEqPDM//A
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1762441893-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.64.71
-! TimeUpdated: 2025-11-06T13:16:28+00:00
+! Version: 2.0.64.72
+! TimeUpdated: 2025-11-06T15:08:06+00:00
 ! Expires: 12 hours (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*#%#//scriptlet('abort-on-property-write', '__pcodeAllActiveTestIds')
@@ -947,11 +947,12 @@ zhihu.com##.AdblockBanner
 ||zeelandnet.nl/static/js/footer.*.js$replace=/(=new Request\(")https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js(")/\$1\$2/
 socialblade.com##.socialblade-heartbeat
 creativeuncut.com###g_abox
+th.gl#$?#.bg-card:has(> div.block > span.text-primary:contains(AD-Free)) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> a[href="https://www.th.gl/support-me"]) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"])) { height: 0 !important; width: 0!important; }
-th.gl#%#//scriptlet('spoof-css', '.pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span), .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"]))', 'height', '225')
-th.gl#%#//scriptlet('spoof-css', '.pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span), .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"]))', 'width', '363')
+th.gl#%#//scriptlet('spoof-css', '.pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span), .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"])), .bg-card:has(> div.block > span.text-primary', 'height', '225')
+th.gl#%#//scriptlet('spoof-css', '.pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span), .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"])), .bg-card:has(> div.block > span.text-primary', 'width', '363')
 th.gl#%#//scriptlet('prevent-element-src-loading', 'script', 'nitropay.com')
 !+ NOT_PLATFORM(ext_ff)
 th.gl#%#(()=>{const t=(t=>{let e="";const o="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+=~";for(let n=0;n<t;n+=1)e+=o.charAt(Math.floor(76*Math.random()));return e})((e=1100,o=1200,e=Math.ceil(e),o=Math.floor(o),Math.floor(Math.random()*(o-e+1)+e)));var e,o;const createAd=()=>{};window.nitroAds={addUserToken:createAd,clearUserTokens:createAd,createAd:createAd,geo:"US",loaded:!0,siteId:1487,queue:[],version:"202501018 6d64f79"};const r={get:(e,o,n)=>"toString"===o?()=>`function we(e, t) { ${t} }`:Reflect.get(e,o,n)};window.nitroAds.createAd=new Proxy(window.nitroAds.createAd,r);const c={apply:(e,o,n)=>{try{const r=n[0]?.name,c=o?.name;if("toString"!==c||"createAd"!==r)return Reflect.apply(e,o,n);return`function we(e, t) { ${t} }`}catch(t){console.trace(t)}return Reflect.apply(e,o,n)}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,c);const a={construct:(t,e,o)=>{try{const t=e[1]?.get?.toString();t.includes("=!0,Reflect.get")&&(e[1].get=()=>{})}catch(t){console.trace(t)}return Reflect.construct(t,e,o)}};window.Proxy=new Proxy(window.Proxy,a)})();
@@ -1571,6 +1572,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 ###credential_picker_iframe
 /.*/$permissions=identity-credentials-get=(),document
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+investing.com#%#//scriptlet('set-local-storage-item', 'regwall-v-articles', '$remove$')
+ugreen.com###smile-ui-lite-container
 forum.revopoint3d.com#$#html { overflow: auto !important; }
 forum.revopoint3d.com#$#div[aria-labelledby="discourse-modal-title"] { display: none !important; }
 forum.revopoint3d.com#$#div[aria-labelledby="discourse-modal-title"] + div.d-modal__backdrop { display: none !important; }
@@ -5659,6 +5662,8 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+ugreen.com###ecomsend-widget
+nurofen.ru##.styles_wrapper__ONfJ2
 edm.com##.wp-block-group[data-content-name="cta-follow-us"]
 gamerguides.com###newsletter-pdrompt-box
 gizmodo.com##div[data-mrf-recirculation="newsletter-form"]

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ZawachjkFC864DaT4PNs0g
-! Diff-Path: ../patches/19/19-s-1762435217-3600.patch
+! Checksum: +JdvIZ0d1bhS3BGIK75EOw
+! Diff-Path: ../patches/19/19-s-1762441887-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.64.71
-! TimeUpdated: 2025-11-06T13:16:28+00:00
+! Version: 2.0.64.72
+! TimeUpdated: 2025-11-06T15:08:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1895,11 +1895,12 @@ creativeuncut.com###abox-s_i
 creativeuncut.com###g_abox
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179123
+th.gl#$?#.bg-card:has(> div.block > span.text-primary:contains(AD-Free)) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> a[href="https://www.th.gl/support-me"]) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"])) { height: 0 !important; width: 0!important; }
-th.gl##+js(spoof-css, .pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span)\, .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"]\, [id$=":video"]\, [id*="-wide-skyscraper-"])), height, 225)
-th.gl##+js(spoof-css, .pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span)\, .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"]\, [id$=":video"]\, [id*="-wide-skyscraper-"])), width, 363)
+th.gl##+js(spoof-css, .pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span)\, .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"]\, [id$=":video"]\, [id*="-wide-skyscraper-"]))\, .bg-card:has(> div.block > span.text-primary, height, 225)
+th.gl##+js(spoof-css, .pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span)\, .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"]\, [id$=":video"]\, [id*="-wide-skyscraper-"]))\, .bg-card:has(> div.block > span.text-primary, width, 363)
 !+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204525
 ||cdn.btmessage.com^$domain=medicalnewstoday.com
@@ -3121,6 +3122,8 @@ inews.co.uk,pinterest.com##+js(set-constant, google.accounts.id.prompt, noopFunc
 !
 ! SECTION: Popups - Regular rules
 !
+investing.com##+js(set-local-storage-item, regwall-v-articles, $remove$)
+ugreen.com###smile-ui-lite-container
 forum.revopoint3d.com#$#html { overflow: auto !important; }
 forum.revopoint3d.com#$#div[aria-labelledby="discourse-modal-title"] { display: none !important; }
 forum.revopoint3d.com#$#div[aria-labelledby="discourse-modal-title"] + div.d-modal__backdrop { display: none !important; }
@@ -11939,6 +11942,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+ugreen.com###ecomsend-widget
+nurofen.ru##.styles_wrapper__ONfJ2
 edm.com##.wp-block-group[data-content-name="cta-follow-us"]
 gamerguides.com###newsletter-pdrompt-box
 gizmodo.com##div[data-mrf-recirculation="newsletter-form"]

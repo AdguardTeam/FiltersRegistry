@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: r07lokU9EqSGTJPIYVFZSw
-! Diff-Path: ../patches/19_optimized/19_optimized-s-1762435217-3600.patch
+! Checksum: 0AG4TVHAjq7Yd1QlSSUcNw
+! Diff-Path: ../patches/19_optimized/19_optimized-s-1762441887-3600.patch
 ! Title: AdGuard Popups filter (Optimized)
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.64.71
-! TimeUpdated: 2025-11-06T13:16:28+00:00
+! Version: 2.0.64.72
+! TimeUpdated: 2025-11-06T15:08:06+00:00
 ! Expires: 5 days (update frequency)
 ://yandex.*/images/_$xmlhttprequest,method=post
 ya.ru,yandex.*##+js(abort-on-property-write, __pcodeAllActiveTestIds)
@@ -889,11 +889,12 @@ zhihu.com##.AdblockBanner
 ||wp-r.github.io/*/assets/js/jquery.adsplacer.adblock.js
 socialblade.com##.socialblade-heartbeat
 creativeuncut.com###g_abox
+th.gl#$?#.bg-card:has(> div.block > span.text-primary:contains(AD-Free)) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> a[href="https://www.th.gl/support-me"]) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span) { height: 0 !important; width: 0!important; }
 th.gl#$#.pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"])) { height: 0 !important; width: 0!important; }
-th.gl##+js(spoof-css, .pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span)\, .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"]\, [id$=":video"]\, [id*="-wide-skyscraper-"])), height, 225)
-th.gl##+js(spoof-css, .pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span)\, .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"]\, [id$=":video"]\, [id*="-wide-skyscraper-"])), width, 363)
+th.gl##+js(spoof-css, .pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span)\, .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"]\, [id$=":video"]\, [id*="-wide-skyscraper-"]))\, .bg-card:has(> div.block > span.text-primary, height, 225)
+th.gl##+js(spoof-css, .pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span)\, .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"]\, [id$=":video"]\, [id*="-wide-skyscraper-"]))\, .bg-card:has(> div.block > span.text-primary, width, 363)
 !+ NOT_PLATFORM(ext_ff)
 ||cdn.btmessage.com^$domain=medicalnewstoday.com
 medicalnewstoday.com##+js(set-constant, __bt_intrnl.aaDetectionResults.ab, false)
@@ -1506,6 +1507,8 @@ inews.co.uk,pinterest.com##+js(set-constant, google.accounts.id.prompt, noopFunc
 ##iframe[id="google-one-tap-iframe"][allow="identity-credentials-get"]
 ###credential_picker_iframe
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+investing.com##+js(set-local-storage-item, regwall-v-articles, $remove$)
+ugreen.com###smile-ui-lite-container
 forum.revopoint3d.com#$#html { overflow: auto !important; }
 forum.revopoint3d.com#$#div[aria-labelledby="discourse-modal-title"] { display: none !important; }
 forum.revopoint3d.com#$#div[aria-labelledby="discourse-modal-title"] + div.d-modal__backdrop { display: none !important; }
@@ -5595,6 +5598,8 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+ugreen.com###ecomsend-widget
+nurofen.ru##.styles_wrapper__ONfJ2
 edm.com##.wp-block-group[data-content-name="cta-follow-us"]
 gamerguides.com###newsletter-pdrompt-box
 gizmodo.com##div[data-mrf-recirculation="newsletter-form"]
