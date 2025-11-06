@@ -1,9 +1,9 @@
-! Checksum: 55+NODbldj6B2oPek1re3w
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1762303958-14400.patch
+! Checksum: JGwmfaBo9Gea3lmdnNik1A
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1762433362-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.28
-! TimeUpdated: 2025-11-05T00:48:29+00:00
+! Version: 2.0.23.29
+! TimeUpdated: 2025-11-06T12:45:33+00:00
 ! Expires: 10 days (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -522,6 +522,8 @@
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+||myrealtrip.com/ad/
+||trip.com/restapi/soa2/*/bjjson/queryAdsDisplayData
 ||json*.dcinside.com/json*/notify_ad.php
 ||gall.dcinside.com/_js/ad.js
 ||gall.dcinside.com/_js/ad_context_powLink.js
@@ -1075,7 +1077,7 @@
 ||hogaeng.co.kr/data/file/sponsor_
 ||hogaeng.co.kr/data/banner/
 ||talk.gamemarket.kr/images/*%EB%B0%B0%EB%84%88
-/^https:\/\/coolenjoy\.net\/data\/editor\/[0-9]{4}\/[0-9]{14}_[a-z]{8}\./$domain=coolenjoy.net
+/^https:\/\/photo\.coolenjoy\.(net|co\.kr)\/data\/editor\/[0-9]{4}\/[0-9]{14}_[a-z0-9]{32}_[a-z0-9]{4}\./$domain=coolenjoy.net
 ||paxnet.co.kr/banner/
 ||image.paxnet.co.kr/rpan/common/js/mobile_ad.js
 ||paxnet.co.kr/common/*BannerAjax|
@@ -2114,7 +2116,7 @@ search.11st.co.kr##.search_content > section[data-log-actionid-area="power"]
 m.ygosu.com###article_list > li:not([class])
 m.ygosu.com##.container >  div[style*="height:"]
 ygosu.com###contain > div[style*="margin-bottom:"]
-coolenjoy.net##div[id^="carousel_"] a[target="_blank"]
+coolenjoy.net##div[id^="carousel_"] a:is([target="_blank"], [href^="https://coolenjoy.net/bbs/point/"])
 te31.com##div[style^="width:"][class="adsbygoogle"]
 m.search.naver.com##._shopAdRoot
 te31.com##.content > .nextbr ~ div[style^="min-height:"]
