@@ -1,8 +1,8 @@
-! Checksum: VLbokig9k7+XaYSDvCh1WQ
+! Checksum: MG7uuEo0V9JMHIDQc3BSHg
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.23.28
-! TimeUpdated: 2025-11-06T12:11:16+00:00
+! Version: 2.4.23.29
+! TimeUpdated: 2025-11-06T13:15:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20423,6 +20423,7 @@ autopapa.ge##.top-rek
 !
 ! NOTE: Greek
 !
+thepresident.gr##.in_read_dfp
 newsbreak.gr##.gAdCentered
 newsbeast.gr##.articleInRead
 luben.tv##.nxAds
@@ -31988,6 +31989,11 @@ triblive.com###storyContent > div[data-type="float"][data-stn-player]
 weatherzone.com.au##div[class*=" "][height="270px"]
 weatherzone.com.au##div[class*=" "][height="74px"]
 ! TODO: Replace, when prevent-innerHTML is released: https://github.com/AdguardTeam/Scriptlets/issues/488 [03.06.2025]
+! ad-shield fallback servers
+! ex. https://lava.evenpatroller.com/loader.min.js
+! ex. https://d23obxyzbkncgu.cloudfront.net/loader.min.js
+/^https:\/\/[a-z]{3,4}\.[a-z]{10,13}\.com\/loader\.min\.js$/$script,third-party,match-case,header=etag:/^W\/"[0-9a-f]{32}-\d{13}"$/
+/^https:\/\/d[0-9a-z]{12,13}\.cloudfront\.net\/loader\.min\.js$/$script,third-party,match-case,header=etag:/^W\/"[0-9a-f]{32}"$/
 ! ad-shield.cc CNAME ex. https://www.47206262.xyz/script/jmty.jp.js
 /^https:\/\/www\.[0-9a-z-]{6,}\.com\/script\/(?=[0-9a-z]{0,29}[A-Z])[0-9A-Za-z]{10,30}\.js$/$script,third-party,match-case
 /^https:\/\/www\.[0-9a-z-]{6,}\.xyz\/script\/[-.0-9A-Za-z]+\.[A-Za-z-]{2,30}\.js$/$script,third-party,match-case
@@ -48290,20 +48296,25 @@ forbes.com##.channel--ad
 ||strumyk.net/assets/z-*.js
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154277
+! https://github.com/uBlockOrigin/uAssets/issues/30545
+! Example: https://p.f8ifxkzif6p8bc.cfd/k8Ll2rWLt2X/vLjQV
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198311
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198021
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188920
 ! Example: https://ey.chinnedwithset.com/gOdNBNySYSVcjSr/40913
 ! Example: https://ta.alluviopurreic.com/rKtCq1ZqtiJJ/84527
 ! Example: https://daejyre.com/riInStepVNRaVlz/wvqMG
+/^https:\/\/(?:[0-9a-z]{1,30}\.){1,2}\.(?:cfd|rest)\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{5}$/$script,third-party,match-case
 /^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{5}$/$script,third-party,match-case
-!+ PLATFORM(ios, ext_android_cb, ext_safari)
-/^https?:\/\/([a-z][a-z]\.)?[a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.[a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\/[a-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?\/[0-9][0-9][0-9][0-9][0-9]?[0-9]?$/$script,third-party
+/^https:\/\/[0-9a-z]*\.?[0-9a-z]+\.[cr][ef][ds]t?\/[a-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?\/[A-Za-z][A-Za-z][A-Za-z][A-Za-z][A-Za-z]$/$script,third-party,match-case
+/^https?:\/\/[a-z]?[a-z]?\.?[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.com\/[a-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?\/[A-Za-z][A-Za-z][A-Za-z][A-Za-z][A-Za-z]$/$script,third-party,match-case
 ! https://github.com/easylist/easylist/issues/6476
 ! Example: https://curtisbarways.com/gZ1vfAd01DRoG/60809
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[0-9a-z-]+)?$/$subdocument,script,xmlhttprequest,third-party,match-case
 ! It seems that script and popup modifier doesn't work correctly used together, related to - https://github.com/AdguardTeam/AdguardBrowserExtension/issues/1992
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[0-9a-z-]+)?$/$popup,third-party,match-case
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+/^https?:\/\/[a-z]?[a-z]?\.?[a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.[a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?\/[a-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z][0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?[0-9A-Za-z]?\/[0-9][0-9][0-9][0-9][0-9]?[0-9]?$/$script,third-party,match-case
 ! Similar case like above but on some websites it's not blocked by apps due to "$third-party" modifier, so rules below should block it, and with header modifier it should be safe
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208512
 ! Example: https://cs.rivierewhimsey.com/rbmgfFdvNwvJ3tZ/OmkmG
@@ -77750,6 +77761,7 @@ browsershots.org#@#.advert_area
 ||alibirasppoliteness.com^
 ||alibisstately.com^
 ||alickparents.com^
+||alienated-whole.com^
 ||alienateparadise.com^
 ||alienspurdon.digital^
 ||aliformfikery.cfd^
@@ -87069,6 +87081,7 @@ browsershots.org#@#.advert_area
 ||fmbristly.cyou^
 ||fmekkbhgguovjd.com^
 ||fmfdkgoj.net^
+||fmgitnxalekei.website^
 ||fmgqdplqohfct.space^
 ||fmgxqcxzpfbel.click^
 ||fmipurdtuta.com^
@@ -89309,6 +89322,7 @@ browsershots.org#@#.advert_area
 ||h0w-t0-watch.net^
 ||h12-media.com^
 ||h2b1s.com^
+||h48tbijz7jfmwzuh9icg61m2.rest^
 ||h52ek3i.de^
 ||h5lwvwj.top^
 ||h74v6kerf.com^
@@ -92339,6 +92353,7 @@ browsershots.org#@#.advert_area
 ||jehupennew.rest^
 ||jejunalduets.cyou^
 ||jekzyyowqvevz.top^
+||jekzyyyljvjbw.top^
 ||jekzyyyljvkbj.top^
 ||jekzyyyljvkvq.top^
 ||jelokerrvvmmq.top^
@@ -94179,6 +94194,7 @@ browsershots.org#@#.advert_area
 ||l1vec4ms.com^
 ||l29y3iq1w1c3iiry.rest^
 ||l2mfle649s080425l.cfd^
+||l5pfirggv1torvcqq8v.cfd^
 ||l7khv9kx2ifjuo.rest^
 ||la-la-moon.com^
 ||la-la-sf.com^
@@ -95385,6 +95401,7 @@ browsershots.org#@#.advert_area
 ||lpazvocghyepn.website^
 ||lpdyrwrzcdhmt.store^
 ||lpe99.com^
+||lpflpslhvdi.com^
 ||lpftvmqzs.com^
 ||lpghlgjzu.com^
 ||lpiovzzuwc.com^
@@ -106084,6 +106101,7 @@ browsershots.org#@#.advert_area
 ||scapelpawls.cyou^
 ||scappledaps.com^
 ||scarabresearch.com^
+||scarce-model.com^
 ||scarcebook.pro^
 ||scarcelittle.com^
 ||scarcerpokomoo.com^
@@ -113226,6 +113244,7 @@ browsershots.org#@#.advert_area
 ||wgchrrammzv.com^
 ||wgcjpruezksws.online^
 ||wgcusbjrga.com^
+||wgcvltadfqbai.store^
 ||wgdmxncvikpcc.fun^
 ||wgexsktozbmrx.online^
 ||wgfphgltywlj.com^
@@ -114018,6 +114037,7 @@ browsershots.org#@#.advert_area
 ||wswoubndrdlkc.global^
 ||wswspyyjkqlxrn.net^
 ||wswspyyjkqlxrn.xyz^
+||wszoizyaoqzcj.site^
 ||wt20trk.com^
 ||wtasvypxjqfro.com^
 ||wtatrrum.net^
@@ -118278,6 +118298,7 @@ browsershots.org#@#.advert_area
 ||dwelllestcatch.com^
 ||e8e2063b.xyz^
 ||ea6c0ac4.xyz^
+||evenpatroller.com^
 ||evenyumbroadlywitharmoire.com^
 ||f54cd504.xyz^
 ||fe9dc503.xyz^
@@ -124171,6 +124192,7 @@ browsershots.org#@#.advert_area
 ||dzxr711a4yw31.cloudfront.net^
 ||d13i9p5451i433.cloudfront.net^
 ||d1ly453dyhh7xf.cloudfront.net^
+||d23obxyzbkncgu.cloudfront.net^
 ||d2flxwxbgh2er.cloudfront.net^
 ||d37j8pfxu2iogi.cloudfront.net^
 ||dzqsslysklwgo.cloudfront.net^
