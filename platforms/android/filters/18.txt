@@ -1,9 +1,9 @@
-! Checksum: 7yFL0iZO3Rv1+Rh1DgUTMw
-! Diff-Path: ../patches/18/18-s-1762483255-3600.patch
+! Checksum: 02Ysy7v0pnhzizIgv22q2A
+! Diff-Path: ../patches/18/18-s-1762486154-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.73.95
-! TimeUpdated: 2025-11-07T02:37:41+00:00
+! Version: 2.0.73.96
+! TimeUpdated: 2025-11-07T03:26:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2545,6 +2545,11 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+||dse-cookiebanner.ford.com^
+endorphina.com#%#//scriptlet('set-cookie', 'cookie-bar', '1')
+endorphina.com#%#//scriptlet('set-cookie', 'cookies-necessary', '1')
+endorphina.com#%#//scriptlet('set-cookie', 'cookies-analytic', '0')
+endorphina.com#%#//scriptlet('set-cookie', 'cookies-performance', '0')
 ||doesitplay.org/*/cookies.
 nurofen.ru##.banners
 pornoxo.com###limitedExperienceBanner
@@ -17783,6 +17788,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217121
+endorphina.com#@#.cookie-bar:not(body)
+endorphina.com#@#.cookie-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217129
 @@||cloud.memsource.com/tms/CookiePolicy.$domain=cloud.memsource.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216949

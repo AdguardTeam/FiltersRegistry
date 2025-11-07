@@ -1,8 +1,8 @@
-! Checksum: zgylrU7VrgUiWOHYKpkh4A
+! Checksum: NEQa9gHnDdVGIBR7ZCxuGQ
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.73.95
-! TimeUpdated: 2025-11-07T02:37:41+00:00
+! Version: 2.0.73.96
+! TimeUpdated: 2025-11-07T03:26:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2543,6 +2543,11 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+||dse-cookiebanner.ford.com^
+endorphina.com#%#//scriptlet('set-cookie', 'cookie-bar', '1')
+endorphina.com#%#//scriptlet('set-cookie', 'cookies-necessary', '1')
+endorphina.com#%#//scriptlet('set-cookie', 'cookies-analytic', '0')
+endorphina.com#%#//scriptlet('set-cookie', 'cookies-performance', '0')
 ||doesitplay.org/*/cookies.
 nurofen.ru##.banners
 pornoxo.com###limitedExperienceBanner
@@ -17698,6 +17703,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217121
+endorphina.com#@#.cookie-bar:not(body)
+endorphina.com#@#.cookie-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217129
 @@||cloud.memsource.com/tms/CookiePolicy.$domain=cloud.memsource.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216949
