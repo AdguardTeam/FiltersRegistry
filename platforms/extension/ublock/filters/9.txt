@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: oB+QkVg3BPZnSwMjIEk1Hg
-! Diff-Path: ../patches/9/9-s-1762269109-3600.patch
+! Checksum: 3PL1SIHag2mdLlvkxPo4bg
+! Diff-Path: ../patches/9/9-s-1762506709-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.32.28
-! TimeUpdated: 2025-11-04T15:08:09+00:00
+! Version: 2.0.32.29
+! TimeUpdated: 2025-11-07T09:08:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -195,6 +195,10 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217141
+latamtoon.com#$#body { overflow: auto !important; }
+latamtoon.com#$#body > div[id]:has(> div > div[style^="font-size:clamp("]) { display: none !important; }
+latamtoon.com##+js(addEventListener-defuser, load, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216906
 devilnovels.com##+js(set-local-storage-item, /^adblock/, $remove$)
 devilnovels.com##+js(abort-current-script, EventTarget.prototype.addEventListener, adblock)
@@ -2014,6 +2018,7 @@ cl1ca.com,periodicocorreo.com.mx,guiavidaesaude.com,muyinteresante.com,reportein
 !
 ! NOTE: Specific rules
 !
+latamtoon.com##.amg-ad-container
 itatiaia.com.br##.Page-above[data-modulewell]
 itatiaia.com.br###sidebar-ad-direto-bsb
 itatiaia.com.br##.HtmlModule
@@ -2682,7 +2687,7 @@ eltiempo.com##div[content-ad-type]
 portalbsd.com.br##.row > div[style^="height:"]:has(> div[class^="text-"] > a[href][target="_blank"] > img[src^="images/publicidade/"])
 portalbsd.com.br##.row > div.col-md-12:has(> div.panel > center > a[href][target="_blank"] > img[src^="images/publicidade/"])
 marcialhub.xyz##.sidebar-hidden > .ad + .c-sidebar
-curiosidadtop.com,swordalada.org,marcialhub.xyz##.body-wrap > div[class^="c-sidebar c-top-"]:not(:has(div[class*="widget-manga-popular"]))
+latamtoon.com,curiosidadtop.com,swordalada.org,marcialhub.xyz##.body-wrap > div[class^="c-sidebar c-top-"]:not(:has(div[class*="widget-manga-popular"]))
 pelisenhd.org###image_banner_turk_id
 elchapuzasinformatico.com###pc_sidebar_300x600_1
 metrocptm.com.br,elchapuzasinformatico.com##body .ads:not(#style_important)
