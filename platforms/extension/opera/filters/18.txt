@@ -1,9 +1,9 @@
-! Checksum: yuj7/EYddhCSkTl7zCi07Q
-! Diff-Path: ../patches/18/18-s-1762524699-3600.patch
+! Checksum: OCnCVGyCDmpQbg/aoCyw+A
+! Diff-Path: ../patches/18/18-s-1762528290-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.74.4
-! TimeUpdated: 2025-11-07T14:08:05+00:00
+! Version: 2.0.74.5
+! TimeUpdated: 2025-11-07T15:07:57+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2544,6 +2544,9 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+stepstone.de#%#//scriptlet('trusted-set-local-storage-item', 'consent_level', '{"isEssential":true,"isFunctional":false}')
+stepstone.de#%#//scriptlet('trusted-set-local-storage-item', 'consent_storage', '[1]')
+stepstone.de#%#//scriptlet('trusted-set-cookie', 'CONSENTMGR', 'c1:0%7Cc2:0%7Cc3:0%7Cc4:0%7Cc5:0%7Cc6:0%7Cc7:0%7Cc8:0%7Cc9:1%7Cc10:0%7Cc11:0%7Cc12:0%7Cc13:0%7Cc14:0%7Cc15:0%7Cts:1762524977550%7Cconsent:true')
 hockerty.uk#$?##cookies-popup { remove: true; }
 gedik.com.tr##.g-c-n
 leki.pl###zc-popup-cookies
@@ -17699,6 +17702,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217176
+@@||stepstone.de/magiclink/static/js/cookie-consent.js
+stepstone.de#@##__tealiumGDPRecModal
+stepstone.de#@##GDPRConsentManagerContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216876
 @@||cdn.civiccomputing.com/*/cookieControl-*.min.js$domain=learnamp.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217178
