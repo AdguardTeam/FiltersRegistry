@@ -1,9 +1,9 @@
-! Checksum: /VdwgEEiDfjrpMEFYuztvg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1762476726-14400.patch
+! Checksum: QDCDYmkW+b+moZYxHjFp9A
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1762490490-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.50.67
-! TimeUpdated: 2025-11-07T00:47:58+00:00
+! Version: 2.1.50.68
+! TimeUpdated: 2025-11-07T04:37:28+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -91,7 +91,6 @@
 /shared/btn_
 /shared/social/*
 /sharedaddy/sharing.min.js
-/shareFacebook.png
 /Sharefb.png
 /shareicon-branding-
 /shareIcons.$~stylesheet
@@ -248,7 +247,6 @@ _social-bar/
 ###follow-me
 ###follow-twitter
 ###follow-us-box
-###follow-us-footer
 ###follow-us-widget
 ###follow-widget
 ###followBox
@@ -268,6 +266,7 @@ _social-bar/
 ###footer-social
 ###footer-social-link
 ###footer-socials
+###footer-title-social
 ###footer-twitter
 ###footer-youtube
 ###footer-youtube-icon
@@ -577,7 +576,6 @@ _social-bar/
 ###socialHeader
 ###socialHolder
 ###socialIcons
-###socialIconsFoot
 ###socialInstagram
 ###socialLinks
 ###socialLinksContainer
@@ -722,6 +720,7 @@ _social-bar/
 ##.Hero-Share-SocialLink
 ##.LineShareButton
 ##.ListSocial
+##.ModuleSocialIcons
 ##.MuiSvgIcon-fontSizeSmall[data-testid^="Share"]
 ##.PinItButton
 ##.PinterestButtonContainer
@@ -733,7 +732,6 @@ _social-bar/
 ##.ShareButton
 ##.ShareButtons
 ##.ShareButtons__link
-##.ShareIcons
 ##.ShareLinks
 ##.ShareList
 ##.ShareMenu
@@ -841,7 +839,6 @@ _social-bar/
 ##.apsc-icons-wrapper
 ##.apsc-twitter-icon
 ##.apss-social-share
-##.arr--share
 ##.art-share
 ##.art-social
 ##.artShare
@@ -2701,7 +2698,6 @@ _social-bar/
 ##.site-footer__social-links
 ##.site-footer__social-list
 ##.site-footer__socials
-##.site-header-social
 ##.site-social
 ##.site-social-menu
 ##.sitewide-footer--social-nav
@@ -3029,7 +3025,6 @@ _social-bar/
 ##.socialItem
 ##.socialItems
 ##.socialLabel
-##.socialLikes
 ##.socialLink
 ##.socialLinks
 ##.socialLinksContainer
@@ -3090,6 +3085,7 @@ _social-bar/
 ##.social_links_container
 ##.social_links_footer
 ##.social_links_top
+##.social_media_header
 ##.social_media_share
 ##.social_menu_icon
 ##.social_popup
@@ -3701,7 +3697,6 @@ coingape.com###social-ad-new
 animenewsnetwork.com###social-bookmarks
 breitbart.com###social-follow-sidebar-widget
 coindesk.com###social-icons-box
-fangoria.com###social-promotion
 battlefordsnow.com,everythinggp.com,huskiefan.ca,larongenow.com,lethbridgenewsnow.com,meadowlakenow.com,nanaimonewsnow.com,northeastnow.com,panow.com,rdnewsnow.com,rocketfan.ca,royalsfan.ca,sasknow.com,vernonmatters.ca###social-share-icons
 salon.com###social_total
 nsctotal.com.br,pastebin.pl###socials
@@ -3714,7 +3709,6 @@ thenewstack.io###tns-footer-bar
 thenewstack.io###tns-post-body-sidebar-share
 reuters.com###toolbar-item-parent-share-12
 yardbarker.com###top-nav-soc
-oneindia.com###youtube_promo
 tennis.com##.-sharebar
 nhl.com,petri.com##.-social
 ynet.co.il,ynetnews.com##.AccordionShareWrapper
@@ -3764,6 +3758,7 @@ newrepublic.com,thetech.com##.article-social
 nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
 altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
+www.psu.edu##.article-top-social-share_content__OYcDe
 nationalreview.com##.article-utility-nav
 english.nv.ua##.article__footer__additional_share
 rt.com##.article__google-news
@@ -3787,7 +3782,6 @@ crash.net,ttnews.com##.block-better-social-sharing-buttons
 tastesbetterfromscratch.com##.block-follow-me
 studyfinds.org##.block-social-share
 carnewschina.com##.block_social_media__content
-crowdstrike.com##.blog_main_navigation_top
 9to5linux.com##.bm-social-top
 breitbart.com##.bnn-social-share
 businessinsider.com##.brands-social
@@ -3815,7 +3809,6 @@ yahoo.com##.caas-comment
 yahoo.com##.caas-content-contain-share
 laweekly.com##.cb-widget-social-media
 cgdirector.com##.cgd-social-wrapper
-wabetainfo.com##.channel_card
 goal.com##.component-share
 goal.com##.component-social-twitter
 allafrica.com,dailysignal.com##.connect
@@ -3925,6 +3918,7 @@ soundcloud.com##.listenDetails__login
 bitcoinmagazine.com,bringmethenews.com,dealbreaker.com,lamag.com,psmag.com,si.com,thespun.com,thestreet.com##.m-social
 thestreet.com##.m-social--pinterest-pin-it
 consumerfinance.gov##.m-social-media
+insideevs.com,motor1.uol.com.br##.m1-article-meta_share
 morningstar.com##.mdc-social-share
 amazon.jobs##.media-icons
 arabnews.com##.meta-area
@@ -3961,6 +3955,7 @@ news18.com##.phtshare
 hackread.com##.pk-share-buttons-wrap
 hackread.com##.pk-social-links-wrap
 theroar.com.au##.pm-share-horizontal
+autoexpress.co.uk##.polaris__social
 getcomics.org##.post-footer-shr
 discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
 foodandwaterwatch.org,medcitynews.com,publicbooks.org##.post-social-share
@@ -4013,6 +4008,7 @@ mid-day.com##.sharelink_act
 cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
+proofpoint.com##.sharethis_toolbox
 12tomatoes.com##.sharetocare-popup
 thekitchenmagpie.com##.sharing-cta
 glassalmanac.com##.shhr-btn
@@ -4119,8 +4115,6 @@ blog.youtube##.yt-social__list
 nypost.com##.zephrModal
 wdwmagic.com##.zocial
 securityweek.com##.zox-post-soc-list
-retbit.com##.zox-post-soc-scroll-out
-retbit.com##.zox-post-soc-stat
 securityweek.com##.zox-top-soc-wrap
 sfgate.com##[aria-label="Share from Email"]
 techcommunity.microsoft.com##[class^="custom_widget_MicrosoftFooter_social-share_"]
@@ -4399,7 +4393,6 @@ vagas.com.br###compartilhar-vaga
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
 xvideossexo.com###whatsapp
-betteranime.net##.anime-down-share
 uai.com.br##.bar-redes-sociais
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
