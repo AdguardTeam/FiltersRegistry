@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.23.52",
-			"timeUpdated": "2025-11-07T12:11:02+0000",
+			"version": "2.4.23.53",
+			"timeUpdated": "2025-11-07T13:14:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.48.32",
-			"timeUpdated": "2025-11-07T12:11:36+0000",
+			"version": "2.2.48.33",
+			"timeUpdated": "2025-11-07T13:14:48+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.74.2",
-			"timeUpdated": "2025-11-07T12:11:44+0000",
+			"version": "2.0.74.3",
+			"timeUpdated": "2025-11-07T13:14:53+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.64.74",
-			"timeUpdated": "2025-11-07T03:26:15+0000",
+			"version": "2.0.64.75",
+			"timeUpdated": "2025-11-07T13:14:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.38.83",
-			"timeUpdated": "2025-11-07T12:11:47+0000",
+			"version": "2.0.38.84",
+			"timeUpdated": "2025-11-07T13:14:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -816,8 +816,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.12.96",
-			"timeUpdated": "2025-11-07T07:08:48+0000",
+			"version": "2.0.12.97",
+			"timeUpdated": "2025-11-07T13:14:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
