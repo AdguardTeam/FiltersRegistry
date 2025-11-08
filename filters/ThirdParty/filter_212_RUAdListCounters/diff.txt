@@ -306,6 +306,8 @@ ya.*,~yandex.net,yandex.*##body > div[style="position:absolute;left:-10px;top:0;
 4pda.*##html[style] [id] .slider-list[style] ~ div[class]:not([id]):has(> :only-child:not(div):not([id]):not([class])):style(display: none !important)
 ! Rule "4pda.*##html[style] [id] div[class]:has(> h2 ~ script:has-text(/return/)):style(display: none !important)" converted to: "4pda.*#$?#html[style] [id] div[class]:has(> h2 ~ script:has-text(/return/)) { display: none !important }"
 4pda.*##html[style] [id] div[class]:has(> h2 ~ script:has-text(/return/)):style(display: none !important)
+! Rule "4pda.*##+js(remove-class, wide-1|wide-2|wide-3, .advanced-area .post)" converted to: "4pda.*#%#//scriptlet('ubo-remove-class.js', 'wide-1|wide-2|wide-3', '.advanced-area .post')"
+4pda.*##+js(remove-class, wide-1|wide-2|wide-3, .advanced-area .post)
 ! Rule "4pda.*##html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):has(> [class] > script):style(display: none !important)" converted to: "4pda.*#$?#html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):has(> [class] > script) { display: none !important }"
 4pda.*##html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):has(> [class] > script):style(display: none !important)
 ! Rule "4pda.*##html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):has(> [class] a[href][target="_blank"]):style(display: none !important)" converted to: "4pda.*#$?#html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):has(> [class] a[href][target="_blank"]) { display: none !important }"
@@ -632,6 +634,8 @@ ya.*,~yandex.net,yandex.*#$#body > div[style="position:absolute;left:-10px;top:0
 4pda.*#$#html[style] [id] .slider-list[style] ~ div[class]:empty { display: none !important }
 ! 4pda.*#$#html[style] [id] .slider-list[style] ~ div[class]:not([id]) > [style=""] { display: none !important } is excluded by "#$#" in exclusions-low.txt
 4pda.*#$#html[style] [id] .slider-list[style] ~ div[class]:not([id]) > [style=""] { display: none !important }
+! 4pda.*#%#//scriptlet('ubo-remove-class.js', 'wide-1|wide-2|wide-3', '.advanced-area .post') is excluded by "#%#//scriptlet" in exclusions-low.txt
+4pda.*#%#//scriptlet('ubo-remove-class.js', 'wide-1|wide-2|wide-3', '.advanced-area .post')
 ! 4pda.*#$#html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):nth-child(-n+3) { display: none !important } is excluded by "#$#" in exclusions-low.txt
 4pda.*#$#html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):nth-child(-n+3) { display: none !important }
 ! 4pda.*#$#.infinix-nav { display: none !important } is excluded by "#$#" in exclusions-low.txt
@@ -680,8 +684,6 @@ ya.*,~yandex.net,yandex.*#$#body > div[style="position:absolute;left:-10px;top:0
 4pda.*#%#//scriptlet('ubo-abort-on-property-read.js', 'document.referrer')
 ! Error: "Unknown pseudo-class ':remove-class' in selector: 'a[href*=":2053"]:remove-class(btn)'" in the rule: "online-fix.*#@#a[href*=":2053"]:remove-class(btn)"
 online-fix.*#@#a[href*=":2053"]:remove-class(btn)
-! Error: "Unknown pseudo-class ':remove-class' in selector: 'html[style] > body .advanced-area .post[itemid][class*="wide"]:remove-class(/^wide-\d/)'" in the rule: "4pda.*##html[style] > body .advanced-area .post[itemid][class*="wide"]:remove-class(/^wide-\d/)"
-4pda.*##html[style] > body .advanced-area .post[itemid][class*="wide"]:remove-class(/^wide-\d/)
 ! Error: "Unsupported option in $removeparam: multiple values are not allowed" in the rule: "&ymclid=$document,removeparam=|,domain=~ozon.onelink.me"
 &ymclid=$document,removeparam=|,domain=~ozon.onelink.me
 ! Error: "Unsupported option in $removeparam: multiple values are not allowed" in the rule: ".com/?_ga=$document,removeparam=|"
