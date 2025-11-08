@@ -1,5 +1,5 @@
-! Checksum: 6K/7227UDqsYK/qSaatjYQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1762563140-14400.patch
+! Checksum: KEbszG6Ud/1QPYnoyGCb3A
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1762576902-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.30
@@ -160,9 +160,11 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||23.111.88.207^$document
 ||totalwebshield.com^$all
+||pcprotect.com^$all
 ||protected.net^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||45.90.58.90^$document
+||driversupport.com^$document
 ||yasir252.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||132.148.220.142^$document
@@ -310,6 +312,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||nimbleboilerdived.com^$all
 ||antonyexpected.com^$all
 ||beergeneralization.com^$all
+||dipperflightrecommend.com^$all
 ||franzredheadline.com^$all
 ||profitablecpm*.com^$all
 ||regularseatradio.com^$all
@@ -320,6 +323,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||staunchtownsegg.com^$all
 ||tackdisillusion.com^$all
 ||trambelongedallure.com^$all
+||vacuumintendedinhale.com^$all
 ||verbassistance.com^$all
 ||wretchedclearance.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -685,7 +689,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||185.68.16.189^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||76.223.15.82^$all
-||canadapost.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||54.174.156.141^$document
 ||xss.my.id^$third-party
@@ -938,8 +941,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||154.223.16.232^$all
 /adx_iframe_$third-party
 drvhub.net##.driver-item__install
-||paradlgm.com^$all
-/^http.*\.com//?secureproxy(\.php)?\?e=(ping|/)[a-z_]{0,}\$/$all
 |https://undefined/
 /api/rtb-pops/go^$all
 ||0n35mallw0rld.xyz^$all
@@ -1733,7 +1734,6 @@ launcher.thesims3.com^$csp=upgrade-insecure-requests
 ##.twitter[href*="/share?"]:not(html,body,:empty)
 ##.twitter_share:not(html,body,:empty)
 ##a[class$=share-twitter]
-##a[class=twitter i][title=Tweet]
 ##a[data-sharer=twitter]
 ##a[href*="twitter.com/home?source="]
 ##a[href*="twitter.com/home?status="]
@@ -2007,7 +2007,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /christmas-snow.js
 @@||aboluowang.com^
 @@||epochtimes.com.tw^
-@@||renminbao.com^
 @@||soundofhope.org^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||siteadvisor.com^
@@ -2142,7 +2141,6 @@ bing.com#?#.b_algo:has(cite:has-text(imdb.com)) .b_sritem
 rakuten.tv##a[href*=".imdb.com/title/"]
 www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb.com/title/"] ~ div > div[class]:not([class*=" "])
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
-tvguide.vg.no##a.whitespace-nowrap.items-center
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 ||comment.youmaker.com^$domain=theepochtimes.com
 ||viafoura.co^$domain=nottinghampost.com|liverpoolecho.co.uk
@@ -2381,7 +2379,6 @@ $removeparam=mkt_tok
 $removeparam=affname
 $removeparam=MID,domain=~media-cdn.costco.*|~community.arubanetworks.com
 $removeparam=srnd
-$removeparam=as_src
 $removeparam=action_type_map
 $document,removeparam=/^bsft_.*$/
 $document,removeparam=/^dpg_.*$/
@@ -2517,7 +2514,6 @@ $document,removeparam=/^subid2=.*$/i
 $document,removeparam=/^subid3=.*$/i
 $document,removeparam=/^subid4=.*$/i
 $document,removeparam=/^subid5=.*$/i
-$removeparam=tid1
 $removeparam=tid2
 $removeparam=tid3
 $removeparam=avad
@@ -2535,6 +2531,7 @@ $removeparam=CSID
 $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
 $removeparam=paid
+$removeparam=pacid
 $removeparam=adtype
 $removeparam=tmcampid
 $removeparam=n_cid
@@ -2563,6 +2560,7 @@ $document,removeparam=/^pid=.*_int$/
 $removeparam=deep_link_sub1
 $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
+$removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
 $removeparam=i_cid
@@ -2583,7 +2581,6 @@ $removeparam=awinaffid
 $removeparam=iclid
 $removeparam=a_fid
 $removeparam=afCampaignId
-$removeparam=afCreativeId
 $removeparam=trk_contact
 $removeparam=trk_msg
 $removeparam=trk_module
@@ -2601,7 +2598,6 @@ $removeparam=pk_source
 $removeparam=pk_content
 $removeparam=pk_kwd
 $removeparam=ig_mid
-$removeparam=asclid
 $removeparam=au_advert_id
 $removeparam=au_car_id
 $removeparam=ads_adid
@@ -3317,6 +3313,8 @@ $removeparam=_ref,domain=fanatics.com|nhl.com
 ||macys.com^$removeparam=trackingid
 $removeparam=/^m_.*$/,domain=macys.com|macysinc.com
 $removeparam=CAGPSPN
+||lendgo.com^$removeparam=rate
+||lendgo.com^$removeparam=lt
 $removeparam=lid,domain=baidu.com|clickserve.dartsearch.net|flipkart.com
 ||unieuro.it^$removeparam=dedup
 ||philips.$removeparam=linkname
@@ -3356,10 +3354,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
 $removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
-||reuters.com^$removeparam=edition-redirect
-||fiverr.com^$removeparam=bta
-||fiverr.com^$removeparam=afp
-||fiverr.com^$removeparam=cxd_token
 $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
@@ -3383,6 +3377,9 @@ $removeparam=ppref,domain=digidip.net
 $removeparam=plink,domain=audible.*
 ||startpage.$removeparam=segment
 ||netflix.com^$removeparam=trackId
+||netflix.com^$removeparam=trackIdJaw
+||netflix.com^$removeparam=trackIdTrailer
+||netflix.com^$removeparam=dpRightClick
 $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
@@ -3514,7 +3511,6 @@ $removeparam=mar,domain=nextdoor.com
 ||verizon.com^$removeparam=campaignSource
 ||youtube.com^$removeparam=embeds_euri
 ||youtube.com^$removeparam=source_ve_path
-^ref=hackernoon.com^$removeparam=ref
 ||notion.so^$removeparam=gspk
 ||notion.so^$removeparam=gsxid
 ||notion.so^$removeparam=pscd
@@ -3553,6 +3549,7 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 ||deepl.com^$document,removeparam=cta
 ||kahoot.it^$removeparam=refer_method
 ||open.substack.com^$removeparam=r,document
+||businessinsider.com^$document,removeparam=r
 ||businessinsider.com^$removeparam=op,document
 ref=spreadprivacy.com$removeparam=ref
 ||github.com^$removeparam=reference_location
@@ -3647,8 +3644,10 @@ $removeparam=cgkit_search_word
 ||qzone.qq.com^$document,removeparam=ciphertext
 ||qzone.qq.com^$document,removeparam=blog_photo
 ||qzone.qq.com^$document,removeparam=g
+||qzone.qq.com^$document,removeparam=res_uin
 ||qzone.qq.com^$document,removeparam=bp2
 ||qzone.qq.com^$document,removeparam=bp7
+||qzone.qq.com^$document,removeparam=g_f
 ||asos.com^$removeparam=ctaref
 ||gumroad.com^$removeparam=recommended_by
 $document,removeparam=s_campaign
@@ -3716,7 +3715,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||substack.com^$removeparam=triedRedirect
 ||firefox.com^$removeparam=redirect_source
 $removeparam=source,domain=search.brave.com|search.brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd.onion
-$removeparam=/^ref=futuretools\.io$/
 ||downloads.sourceforge.net^$removeparam=r
 ||snapchat.com^$removeparam=share_id
 ||ngfiles.com^$removeparam=/^f\d{4,}=$/

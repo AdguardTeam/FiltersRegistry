@@ -1,9 +1,9 @@
-! Checksum: +DzVxaAFZ6DePUWJcHQjRg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1762563124-14400.patch
+! Checksum: cGRrub3hpn+sDSUrvPimqg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1762576889-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.50.73
-! TimeUpdated: 2025-11-08T00:47:53+00:00
+! Version: 2.1.50.74
+! TimeUpdated: 2025-11-08T04:37:20+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -174,6 +174,7 @@ _social-bar/
 ###block-socialmenu
 ###block-socialsharingblock
 ###blog-follow-widget
+###box_social
 ###btn-share-email
 ###btn-share-fb
 ###btn-share-tele
@@ -207,7 +208,6 @@ _social-bar/
 ###facebook_link
 ###facebook_overlay
 ###facebook_share
-###facebook_slider_widget
 ###facebookbtn
 ###facebooklike
 ###facebookpopup-fan-exit
@@ -592,7 +592,6 @@ _social-bar/
 ###socialSiteSites
 ###socialTop
 ###socialTwitter
-###socialWidgets
 ###socialWrap
 ###socialYouTube
 ###social_bkm_wrap_top
@@ -932,6 +931,7 @@ _social-bar/
 ##.badge-pinterest-share
 ##.badge-share
 ##.banner-social
+##.banner-social-icons
 ##.bc-author-socials
 ##.bc_social_icons
 ##.bctt-click-to-tweet
@@ -1142,7 +1142,6 @@ _social-bar/
 ##.dwg-footer-plank__social
 ##.e-footer--social
 ##.e-header--sociallist
-##.e-mailit_toolbox
 ##.ea-share-count-button
 ##.easy-share
 ##.ebm-share-item
@@ -1302,7 +1301,6 @@ _social-bar/
 ##.fix-share
 ##.fixed-share
 ##.fixed-share-bar
-##.fixed-soc-icon
 ##.fixed-social
 ##.fl-social-icons
 ##.flare-button-icon
@@ -1603,6 +1601,7 @@ _social-bar/
 ##.icon-dailymotion
 ##.icon-delicious
 ##.icon-digg
+##.icon-facebook-bg
 ##.icon-facebook-circle
 ##.icon-facebook-circled
 ##.icon-facebook-icon
@@ -1730,7 +1729,6 @@ _social-bar/
 ##.jeg_share_button
 ##.jeg_share_top_container
 ##.jeg_sharelist
-##.jeg_socialcounter
 ##.jetpack-social-navigation
 ##.jetpack-social-widget-item
 ##.jetpack_widget_social_icons
@@ -1845,7 +1843,6 @@ _social-bar/
 ##.m-sns
 ##.m-social-bar
 ##.m-social-share
-##.m-socialbar
 ##.m-socials
 ##.m_share
 ##.main-article-share-count
@@ -2275,6 +2272,7 @@ _social-bar/
 ##.share-icon-container
 ##.share-icon-list
 ##.share-icon-small
+##.share-icons-bottom
 ##.share-icons-box
 ##.share-icons-list
 ##.share-icons-sticky-box
@@ -3094,7 +3092,6 @@ _social-bar/
 ##.social_share_buttons
 ##.social_share_fb
 ##.social_share_left
-##.social_share_list_holder
 ##.social_share_privacy_area
 ##.social_share_wrapper
 ##.social_sharer
@@ -3431,7 +3428,6 @@ _social-bar/
 ##.widget_follow_us
 ##.widget_g1_socials
 ##.widget_jnews_social
-##.widget_jnews_social_counter
 ##.widget_novashare_follow_widget
 ##.widget_nypost_social_widget
 ##.widget_rotatingtweets_widget
@@ -3868,6 +3864,7 @@ indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 blog.mozilla.org##.ft-c-post-share
 mlbtraderumors.com##.fv_sharing_round
+fxstreet.com##.fxs_bg_light_5_clr
 news18.com##.gglebtn
 ghacks.net##.ghacks_share_widget
 avaaz.org##.global-footer-connect
@@ -3945,6 +3942,7 @@ nhl.com##.nhl-o-sharebar
 nist.gov##.nist-social__wrapper
 infobyip.com##.noprint
 conservativebrief.com,karanpc.com,parlamentario.com,sexypedia.it##.ns-buttons
+cyberinsider.com,thepeoplesvoice.tv##.ns-buttons-wrapper
 foodnetwork.com##.o-SocialShare
 sheknows.com,spy.com##.o-social-list__item
 support.microsoft.com##.ocArticleFooterShareContainer
@@ -4010,7 +4008,6 @@ streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
 proofpoint.com##.sharethis_toolbox
 12tomatoes.com##.sharetocare-popup
-thekitchenmagpie.com##.sharing-cta
 glassalmanac.com##.shhr-btn
 welivesecurity.com##.sidebar-card-media
 pcgamesn.com##.sidebar-social-widget
@@ -4104,7 +4101,6 @@ aajtak.in,businesstoday.in##.whatsapp_channel
 business-standard.com##.whtsclick
 indiatoday.in##.whtspp_share
 trustedreviews.com##.widget-social-b
-mediapost.com##.widget-waypoint
 fandom.com##.wikia-bar-anon
 destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
 comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-sharing-buttons
@@ -4298,9 +4294,6 @@ francetvinfo.fr##.social-zone__wrapper
 jutarnji.hr##.item_social_share
 storm.mg###article_sns_inner
 ettoday.net###et_sticky_pc
-exmoo.com###fixed-facebook
-exmoo.com###fixed-wechat
-exmoo.com###footer-wechat-container
 ettoday.net##.et_social_2
 news.cn##.pageShare
 people.com.cn##.section-common-share-wrap
@@ -4362,14 +4355,12 @@ davinotti.com##.social__variant
 ilmeteo.it##.social_condividi
 hdblog.it,hdmotori.it##.social_links
 macitynet.it##.tds-button
-tg.la7.it##.tgla7-condividi
 fastweb.it##.tutplus-socials
 sorrisi.com##.tvsc-social-share
 alfredopedulla.com##.tw-banner
 mymovies.it##.vota-pul-consiglio
 ilgiorno.it,ilrestodelcarlino.it,iltelegrafolivorno.it,lanazione.it,quotidiano.net##div[class^="SocialShare_"]
 ilpost.it##div[class^="_share_"]
-liberoquotidiano.it##img[id^="social-"]
 bizgate.nikkei.com##.c-single-sns
 univ-journal.jp##.snsSpace
 ||imyfone.com/assets/js/media_share/
@@ -4647,7 +4638,6 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||arcgis.com/apps/Nearby/app/components/Share/$~third-party
 @@||assets.msn.com/bundles/*/social-bar-$~third-party
 @@||cdn.flowplayer.com^*/share.min.js
-@@||commonsensemedia.org/ajax/review/$~third-party,xmlhttprequest
 @@||gen.jut.su/jcdn/minify?charset=*/videojs-share.$script,stylesheet,domain=jut.su
 @@||iconfinder.com/data/icons/$~third-party
 @@||instagram.com/p/$subdocument,third-party
