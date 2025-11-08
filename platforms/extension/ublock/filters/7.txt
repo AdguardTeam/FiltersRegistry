@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qXYGb5hK/0gVdV3r63RbvA
-! Diff-Path: ../patches/7/7-s-1762603996-3600.patch
+! Checksum: c8HQz5ix9HtKaMvwmzo31w
+! Diff-Path: ../patches/7/7-s-1762607714-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.69.70
-! TimeUpdated: 2025-11-08T12:09:42+00:00
+! Version: 2.0.69.71
+! TimeUpdated: 2025-11-08T13:11:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -560,8 +560,6 @@ $image,redirect-rule=32x32.png,domain=exploader.net
 ||daotag.com^$image,redirect=32x32.png,domain=exploader.net
 exploader.net##+js(remove-attr, href, a[style*="display:"][href^="https://al.dmm.co.jp"], stay)
 @@||daotag.com/tag/$script,domain=exploader.net
-! https://github.com/AdguardTeam/AdguardFilters/issues/181591
-iwb.jp##+js(addEventListener-defuser, load, iframe)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179614
 kotobank.jp##+js(no-setTimeout-if, return)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178919
@@ -1840,6 +1838,8 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+sun-tv.co.jp##.m-postList_itemAds
+sun-tv.co.jp##.-ad
 eropuru.com##.element_ad_box
 ||reuters.com/pf/resources/dist/reuters-japan/js/index.js
 mamastar.jp##.c-list-comment__li.is-content
@@ -3903,6 +3903,8 @@ hoge5ch.info##.amazon_item
 meshinews.blog.jp,hoge5ch.info##.right-container > div.plugin-memo:last-child
 ||coneti.net/post_image/mt_20220623211055_jF696njUWbNW.jpg$third-party
 ||poginfo.ddo.jp/pogs/images/pr/
+times.abema.tv##.article-body div[style="display:flex; justify-content:center; align-items:center; width:100%; margin:16px 0;"]
+times.abema.tv##.figure__link[href^="https://www.amazon.co.jp"]
 times.abema.tv##.article-relation-card
 times.abema.tv##.ad-side-sticky
 times.abema.tv##.u-lg-overflow-hidden[style="height: 200px;"]
@@ -4115,6 +4117,10 @@ city.saitama.jp###footer_bannerlist
 jpnculture.net,re-doing.com###st_custom_html_widget-7
 ||uratv.net/wp-content/uploads/2023/02/tube.png
 more.hpplus.jp##div[id$="_DFP"]
+||townnews.co.jp/*/job_box_side_menu.js
+townnews.co.jp###recruit_side_menu
+townnews.co.jp##.pr-bnr1
+townnews.co.jp##.pr-bnr2
 ||townnews.co.jp/js/entry_advertising.js
 nyahentai.re,momon-ga.com###main > div[style^="max-width:"][style$="background-color: #fff;"]
 gizmodo.jp###gz-recommendedBottom-outerAd
