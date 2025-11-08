@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: PeE0HdPHCXmwa1A2oWOhYg
-! Diff-Path: ../patches/250/250-s-1762563147-14400.patch
+! Checksum: M2RF8Lh85F6slRojLSHTNg
+! Diff-Path: ../patches/250/250-s-1762591327-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.18.30
-! TimeUpdated: 2025-11-08T00:48:31+00:00
+! Version: 2.0.18.31
+! TimeUpdated: 2025-11-08T08:38:07+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -74,7 +74,7 @@
 ! What this broad compilation does not block：Newsletters, cookie banners, social media links to companies' pages
 !+ NOT_PLATFORM(android)
 ! Title: 💊 Dandelion Sprout's Anti-Malware List
-! OriginalVersion: 06November2025v3
+! OriginalVersion: 08November2025v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
@@ -9874,6 +9874,8 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 ||185.53.178.54^$all
 ! Bouncing hard-to-close (but admittedly empty) popups on NSFW sites like viperTO
 .to/popconsole.php|
+! Sus(picious) search results for YouTube videos that claim to have craсks for Adоbe products. (https://github.com/DandelionSprout/adfilt/issues/1197)
+google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|d\ownl\oad).*$/i):has-text(/^.*(ph\ot\osh\op|dav\inc\i|\il{2}ustrat\or).*$/i):has-text(/^.*(fre{2}|(cr|h)ack).*$/i))
 ! Placeholder line for alternate list versions
 ! Title: 🐐 Dandelion Sprout's Lightweight Anti-'Social share' List
 ! OriginalVersion: 13September2025v1-Beta
@@ -12452,7 +12454,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 03November2025v1
+! OriginalVersion: 08November2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -12465,7 +12467,6 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ! - This list can not remove anything after the # in URLs. This is impossible in uBlock Origin and AdGuard.
 ! - This list can not remove parameters added using https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState
 ! - As of 15/03/2024, this list did not work properly in Brave Browser, due to Brave missing several critical features this list uses. Please use this list only with uBlock Origin or AdGuard. User statements have however ticked in mid-2025 that the breakage is smaller.
-! Note (03/11/2025): If you view this file through filters.adtity.org and there's a lot of broken text in the file view, feel free to give an upvote to https://github.com/AdguardTeam/FiltersRegistry/issues/1142 if you wish to.
 ! 🗺️ ——— General remove rules ——— 🗺️ !
 ! From AdGuard CoreLibs (11/11/2020)
 $removeparam=yclid
@@ -13930,7 +13931,7 @@ $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adr
 ! It sure took a while to figure out how to remove trailing ?'s, but this at least seems to succeed at it. (30/10/2025)
 /^http.*[^?]\?$/$document,removeparam=/^=$/
 ! https://github.com/DandelionSprout/adfilt/issues/1191
-$removeparam=notification_referrer_id
+!!! $removeparam=notification_referrer_id (https://github.com/DandelionSprout/adfilt/issues/1200)
 ! https://github.com/DandelionSprout/adfilt/issues/1194
 $removeparam=slref
 $removeparam=t-src
