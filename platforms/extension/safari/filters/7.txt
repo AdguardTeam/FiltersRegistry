@@ -1,9 +1,9 @@
-! Checksum: rtWk7eOgaDW3+Y/hhd2wvQ
-! Diff-Path: ../patches/7/7-s-1762683071-3600.patch
+! Checksum: tfsadj6JV4hIM8dGLxXgMw
+! Diff-Path: ../patches/7/7-s-1762694089-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.69.73
-! TimeUpdated: 2025-11-09T10:07:24+00:00
+! Version: 2.0.69.74
+! TimeUpdated: 2025-11-09T13:11:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -451,6 +451,8 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217347
+niji-gazo.com#@#.banner-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213877
 himachat.jp#%#//scriptlet('prevent-fetch', '/adm\.shinobi\.jp\/st\/t\.js/ method:HEAD mode:no-cors')
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
@@ -1800,7 +1802,7 @@ _co_jp.*.php$document,domain=cc|com
 /\.(?:club|cn|icu|top|pro|site|work)\/Personal\/member\/Login\/index\.php\?oneTimeAccessID=/$document,domain=club|cn|icu|top|pro|site|work
 ! https://github.com/AdguardTeam/FiltersCompiler/issues/254
 !
-/^https?:\/\/[jq][apq][0-9][0-9][0-9][0-9][0-9]?[0-9]?[0-9]?[0-9]?\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?\.[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\//$document,domain=agency|art|asia|auction|bar|beauty|beer|best|biz|business|cam|cards|casa|click|cloud|coupons|digital|diy|fashion|food|forum|gay|guru|hair|info|life|live|living|link|ltd|my|ooo|property|pw|rocks|run|sbs|shop|store|studio|tattoo|tech|today|top|uno|work,match-case
+/^https?:\/\/[jq][apq][0-9][0-9][0-9][0-9][0-9]?[0-9]?[0-9]?[0-9]?\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?\.[a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\//$document,domain=agency|art|asia|auction|bar|beauty|beer|best|biz|business|cam|cards|casa|click|cloud|coupons|digital|diy|fashion|food|forum|gay|guru|hair|info|life|live|living|link|ltd|my|ooo|property|pw|rocks|run|sbs|shop|skin|store|studio|tattoo|tech|today|top|uno|work,match-case
 /^https:\/\/[a-z][a-z][a-z][a-z]?[a-z]?\.[a-z][a-z][a-z][a-z]+\.[a-z]+\/item-[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]\.html$/$document,match-case,domain=art|autos|baby|best|boats|buzz|cards|cfd|click|cyou|eu|fit|fun|guru|hair|homes|ink|lat|lol|mom|my|pics|quest|sale|sbs|skin|today|top|wiki|work|world|xyz
 /^https:\/\/[a-z][a-z][a-z][a-z][a-z]?\.[a-z][a-z][a-z][a-z]+\.[a-z]+\/item-[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]\.html$/$document,match-case,domain=biz|blog|cc|cloud|club|info|life|live|me|one|online|shop|site|space|store
 /^https:\/\/[a-z][a-z][a-z][a-z]?[a-z]?\.[a-z][a-z][a-z][a-z]+\.[a-z]+\/item-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]\.html$/$document,match-case,domain=art|autos|baby|best|boats|buzz|cards|cfd|click|cyou|eu|fit|fun|guru|hair|homes|ink|lat|lol|mom|my|pics|quest|sale|sbs|skin|today|top|wiki|work|world|xyz
@@ -1916,6 +1918,7 @@ cyzo.jp##.module_ad_frame
 mixch.tv##.inner > div[class^="css-"]:has(> div.sponsored-link + ins.adsbygoogle)
 miracle-live-ranking.com##.list_display:has(> div.list_preitem > a[target="_blank"][rel="nofollow noopener"] > img)
 miracle-live-ranking.com##main > div.block-title:has(+ .list_display > div.list_preitem > a[target="_blank"][rel="nofollow noopener"] > img)
+ansuko.net###yt-banner
 ||ansuko.net/b4b8$script
 jidounten-lab.com##.widget_custom_html:has(> div.textwidget > center > ins.adsbygoogle)
 himachat.jp##.imobile_bottomfix
@@ -10130,9 +10133,11 @@ japan.zdnet.com##.ad-bnr-rect
 forbesjapan.com##.pop2
 gpoint.co.jp###footerbnr
 javkun.com##.adsvideo
-hosyusokuhou.jp#?#.entrybody > blockquote:has(> .amazon)
+||suzuri.jp/BreakTime/$subdocument,domain=hosyusokuhou.jp
+hosyusokuhou.jp##iframe[src^="https://suzuri.jp/BreakTime/"]
+hosyusokuhou.jp##iframe[src^="https://suzuri.jp/BreakTime/"] + br
+hosyusokuhou.jp##.entrybody > blockquote:has(> .amazon)
 hosyusokuhou.jp#?#.entrybody > p > a[target="_blank"][rel]:contains(【PR】)
-hosyusokuhou.jp###side > div.sidewrapper[style^="width: 218px; margin-bottom: 0px; position:"] a[target="_blank"] > img
 hosyusokuhou.jp##.abanner
 applion.jp##a[href^="http://www.amazon."][href*="/obidos/ASIN/"]
 epochtimes.jp##[class*=margin-Ad]:not(.margin-Ad-B20)
