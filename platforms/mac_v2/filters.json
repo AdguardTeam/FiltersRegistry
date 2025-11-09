@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.23.96",
-			"timeUpdated": "2025-11-09T08:07:51+0000",
+			"version": "2.4.23.97",
+			"timeUpdated": "2025-11-09T09:06:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
