@@ -1,5 +1,5 @@
-! Checksum: EU8OubazKCGEo/wrFlG1cA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1762649541-14400.patch
+! Checksum: /iEZOtRIZtNAFrxaNlMn6Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1762663247-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.32
@@ -36,7 +36,6 @@ drivereasy.com#?#.pakb-content div.info.note:has-text(drivereasy.com)
 drivereasy.com#?#.pakb-content p:has-text(the Pro version)
 drivereasy.com#?#.pakb-content p:has-text(click Update All)
 howtoremove.guide##[id*="newage"]
-howtoremove.guide##.wp-block-table:has(.banner)
 windowsreport.com##div[class^=restoro-download] + section
 appuals.com##.wptp
 appuals.com##p + div > div:first-of-type
@@ -2390,6 +2389,7 @@ google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##a[href="/#facebook"]
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##a[onclick*="facebook.com/sharer.php?"]
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##a[title="Share on Facebook" i]
+~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##a[title="Share this post on Facebook"]
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##div[class^=fbshare i]
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##li[aria-label=facebook]
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##li[class*=link_facebook]
@@ -2803,6 +2803,7 @@ autoplius.lt#%#//scriptlet('ubo-ra.js', 'target', '[target="_blank"]', 'stay')
 ||collector.schibsted.io^$third-party
 ~ru###preloader
 ~ru##div.preloader
+##app-loading-screen
 ##.loading-mask:not(html,body)
 ##div#loading
 *##p:has-text(/^\xA0\xA0$/):not(:has-text(/\S/)):not(:has(span))
@@ -2826,6 +2827,7 @@ eeconomy.gr#$#.bgnav { max-height:40px!important }
 feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
 pixiv.net##div[class*=" "]:empty:has(+ aside + aside)
+viaplay.*##.backdrop-bottom
 channel4.com###playerContrastOverlay
 netflix.com#$#div[class^=watch-video--][class*="-container "] { background-image: none !important }
 tv.nrk.no#$#:is(.episode-info-gradient,.tv-layout-fill) { background:unset!important }
@@ -3134,7 +3136,6 @@ $document,removeparam=lcid,domain=~rekono.si
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
-$removeparam=om_mmc
 $removeparam=trackingCode
 $removeparam=k_clickid
 $removeparam=affiliateCustomId
@@ -3167,7 +3168,6 @@ $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
 $removeparam=exactag_uk
 $removeparam=affuid
-$removeparam=icid2
 $removeparam=refclickid
 $removeparam=irclid
 $removeparam=sp_campaign
@@ -3808,6 +3808,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set.js', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
+||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
 ||bilibili.com^$removeparam=bbid
@@ -3947,6 +3948,8 @@ $removeparam=sourceID,domain=gamestop.com|verizon.com
 ||malwarebytes.com^$removeparam=ADDITIONAL_x-source
 ||ozon.ru^$removeparam=advert
 $document,removeparam=sh,domain=forbes.com|reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+$removeparam=soc_src
+$removeparam=soc_trk
 $removeparam=ia-pkpmtrack
 ||as.com^$removeparam=omnil
 $removeparam=kw,domain=udemy.com|hotels.com
@@ -4347,7 +4350,6 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=.src
 ||login.yahoo.com^$document,removeparam=pspid
 ||login.yahoo.com^$document,removeparam=activity
-$removeparam=cgkit_search_word
 !+ NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
 ||windscribe.com^$document,removeparam=pcpid
@@ -5072,7 +5074,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 @@/favicon1.ico|
 @@://adserver.advertising.adtech.$third-party
 #@#.adSense
-##.adSense:not(html,body,:empty)
 #@#.adContent
 ##.adContent:not(html,body,:empty)
 #@#.ad-text
