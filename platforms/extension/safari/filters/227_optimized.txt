@@ -1,9 +1,9 @@
-! Checksum: rTE50neYzy1IM7MevxTG3Q
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1762720744-14400.patch
+! Checksum: fNc6dFNTirpFnS/cssYnIg
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1762749841-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.31
-! TimeUpdated: 2025-11-09T20:34:50+00:00
+! Version: 2.0.23.32
+! TimeUpdated: 2025-11-10T04:39:58+00:00
 ! Expires: 1 day (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -3440,7 +3440,8 @@ m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('abort-on-stack-trace', '$.prototype.html', '_boom')
 m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html', '/\/images\/[A-z0-9-_]+\.?(jpg|gif)/')
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
-chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd ads.[-].eventTracking.ackImpressions eventTracking.[-].ackImpressions', '', 'api.chzzk.naver.com/service/t/')
+chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
+chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 heye.kr#%#//scriptlet('prevent-window-open', 'pandalive.co.kr/evt/')
 newneek.co#%#//scriptlet('prevent-xhr', 'api-v2.adrop.io/request')
 map.naver.com#%#//scriptlet('json-prune-xhr-response', 'layers.[-].metadata.name.{=}.POI_Ads', '', '/PCWeb_Real.json')

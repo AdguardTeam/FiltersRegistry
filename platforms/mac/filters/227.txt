@@ -1,8 +1,8 @@
-! Checksum: LDgwofld3ZbLGxf8m6gHtw
+! Checksum: 2OkEEJsOnY8R477mDGY+6A
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.31
-! TimeUpdated: 2025-11-09T20:34:50+00:00
+! Version: 2.0.23.32
+! TimeUpdated: 2025-11-10T04:39:58+00:00
 ! Expires: 1 day (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -3562,7 +3562,8 @@ m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html',
 ! m.fmkorea.com
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 ! chzzk.naver.com
-chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd ads.[-].eventTracking.ackImpressions eventTracking.[-].ackImpressions', '', 'api.chzzk.naver.com/service/t/')
+chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
+chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 !
 heye.kr#%#//scriptlet('prevent-window-open', 'pandalive.co.kr/evt/')
 newneek.co#%#//scriptlet('prevent-xhr', 'api-v2.adrop.io/request')
