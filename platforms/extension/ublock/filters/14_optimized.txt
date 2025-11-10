@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: OPuV1c8gA3uoTv+he9giUA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1762812719-3600.patch
+! Checksum: OUZmP66z4vnB36vldqD0BA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1762816243-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.48.59
-! TimeUpdated: 2025-11-10T22:08:24+00:00
+! Version: 2.2.48.60
+! TimeUpdated: 2025-11-10T23:07:15+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1534,6 +1534,7 @@ funko.com#$#.dynamic-content-popup-modal ~ div.modal-backdrop { display: none !i
 playerok.com##+js(set-local-storage-item, cookie-сonsent, true)
 hacksawgaming.com###CookieConsentModal
 lit.dev##litdev-cookie-banner
+||ladies-forum.de/*/js/Cookie.js
 cos.com##.m-cookie-message
 hockerty.uk#$?##cookies-popup { remove: true; }
 gedik.com.tr##.g-c-n
@@ -15792,6 +15793,8 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+time.com###explore-menu .justify-center.gap-6.bg-warm-grey-3.px-6.py-4
+store.dji.com##+js(set-local-storage-item, popupHasShowed, true)
 motorsport-magazin.com#?##footer > h2:contains(Newsletter)
 motorsport-magazin.com###footer-newsletter
 gazetaolsztynska.pl##.news__content-column > div.section:has(> div.section__button > a[href^="https://news.google.com/publications/"])
@@ -20179,6 +20182,8 @@ buttondown.email#@##subscribe-form
 ###appss
 ##[onclick="goAppHtml();"]
 alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,rabota.by,temp-mail.org,ortobom.com.br,dicionarioinformal.com.br,5-fifth.com,news.sky.com,chat.babel.com,getwordly.com,school-turnup.com,naked-science.ru,vod.tvp.pl,tvn24.pl,m.lamoda.ru,lkfl2.nalog.ru,kocailem.com,dartworld.shopgate.com,m.alles10euro.de,dodopizza.ru,allo.ua,tempo.co,beymen.com,tvnmeteo.tvn24.pl,outsidetv.com,golfchannel.com,sportsnet.ca,euronews.com,pkobp.pl,tesco.hu,prima.hu,immobilienscout24.de,lcwaikiki.com,m.sigrun-woehr.com,transfermarkt.de,fragfinn.de,hh.ru,eraffe24.de,infranken.de,m.computeruniverse.net,m.emp.de,meduza.io##body .smartbanner
+callie.com#$#.vi-app { display: none !important; }
+callie.com##+js(remove-class, app-tips, .wrapper > div[class])
 m.made-in-china.com##.downapp
 m.made-in-china.com##a[href^="https://made-in-china.onelink.me/"]
 stylewe.com##.layout-header__download-app-tips
