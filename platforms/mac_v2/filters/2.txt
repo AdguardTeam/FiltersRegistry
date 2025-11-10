@@ -1,9 +1,9 @@
-! Checksum: Ka/WQ5HYkfftZgqSPweaKQ
-! Diff-Path: ../patches/2/2-s-1762801841-3600.patch
+! Checksum: csF12OKR8EJxks0pzoJuaw
+! Diff-Path: ../patches/2/2-s-1762805530-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.24.31
-! TimeUpdated: 2025-11-10T19:06:16+00:00
+! Version: 2.4.24.32
+! TimeUpdated: 2025-11-10T20:08:01+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25255,6 +25255,8 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xmlhttprequest,redirect=nooptext
 !
 !
+pilkareczna.com##main > section > div.container > div.w-full:has(> div > div > div > ins.adsbygoogle[data-ad-slot])
+pilkareczna.com##div[style="min-height: 280px; min-width: 300px;"]
 gazetaolsztynska.pl##.grid__ad
 gazetaolsztynska.pl##.adv
 bielskiedrogi.pl##div[data-ads-id]
@@ -25478,6 +25480,8 @@ bieganie.pl#?#.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/217493
+szukampracy.pl#@#[class^="ad-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216671
 24opole.pl#@#.banner
 24opole.pl#@#.ad
@@ -37512,7 +37516,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
-embed.acast.com#%#(()=>{let e=0;const t={apply:(t,r,n)=>{try{const t=r.currentSrc;e>0&&r.currentTime<e&&t?.includes("livestitches")&&(r.currentTime+=e,r.addEventListener("timeupdate",(t=>{r.currentTime<e&&(r.currentTime=e)})))}catch(e){console.trace("Error occurred:",e)}return Reflect.apply(t,r,n)}};window.HTMLMediaElement.prototype.play=new Proxy(window.HTMLMediaElement.prototype.play,t);const r={apply:(t,r,n)=>{try{const t=n[1]?.response?.result;if(t){const r=t?.timeline?.[0];r&&"ad"===r?.type&&(e=r?.duration||0,delete n[1].response.result.timeline)}}catch(e){console.trace("Error occurred:",e)}return Reflect.apply(t,r,n)}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,r)})();
+embed.acast.com#%#(()=>{let e=0;const t=new WeakSet,n=t=>{const n=t?.currentTarget||t?.target;if(n)try{if(e>0&&n.currentTime<e)return void(n.currentTime=e)}catch(e){}},r={apply:(r,c,i)=>{try{const r=c.currentSrc;e>0&&c.currentTime<e&&r?.includes("livestitches")&&(c.currentTime=e,t.has(c)||(c.addEventListener("timeupdate",n),t.add(c)))}catch(e){}return Reflect.apply(r,c,i)}};window.HTMLMediaElement.prototype.play=new Proxy(window.HTMLMediaElement.prototype.play,r);const c={apply:(t,n,r)=>{try{const t=r[1]?.response?.result;if(t){const n=t?.timeline?.[0];n&&"ad"===n?.type&&(e=n?.duration||0,delete r[1].response.result.timeline)}}catch(e){}return Reflect.apply(t,n,r)}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,c)})();
 dafreeporn.com##div[id$="-im-container"]
 xvideos.com,xv-ru.com##.top-top
 omnicalculator.com##div[data-testid="leaderboard-row"]:empty
@@ -84642,6 +84646,7 @@ browsershots.org#@#.advert_area
 ||auditoriumgiddiness.com^
 ||auditude.com^
 ||audmrk.com^
+||audxqevqhnv.com^
 ||aufaustoalri.net^
 ||auforau.com^
 ||auftukoojimsuz.com^
@@ -86400,6 +86405,7 @@ browsershots.org#@#.advert_area
 ||bqrueuxqvhjhc.online^
 ||bqsnmpwxwd.buzz^
 ||bqszugpxadzlg.store^
+||bqtqvxmihnpil.store^
 ||bqvarftvrigcn.online^
 ||bqvzsxadeajio.global^
 ||bqwfemjlhxpia.online^
@@ -88192,6 +88198,7 @@ browsershots.org#@#.advert_area
 ||cnt.my^
 ||cntbrzonyxnzv.site^
 ||cntrealize.com^
+||cnvggbhoozkdr.space^
 ||cnvilqptnnpqr.online^
 ||cnwafglwlbcro.life^
 ||cnyojprieezzh.store^
@@ -90803,6 +90810,7 @@ browsershots.org#@#.advert_area
 ||dsxmn0.com^
 ||dsxrvvqolphwm.website^
 ||dsyrogvoyrsrl.space^
+||dszpyfbiywceq.website^
 ||dt4ever.com^
 ||dt51.net^
 ||dtadnetwork.com^
@@ -93265,6 +93273,7 @@ browsershots.org#@#.advert_area
 ||fmmnotstql.xyz^
 ||fmoezqerkepc.com^
 ||fmpub.net^
+||fmqbtajbojryt.store^
 ||fmsads.com^
 ||fmsbmpclfodn.net^
 ||fmstigat.online^
@@ -99971,6 +99980,7 @@ browsershots.org#@#.advert_area
 ||kissagepurrah.qpon^
 ||kissoffering.com^
 ||kistutch.net^
+||kitcheerduksomt.com^
 ||kitchenburrhel.shop^
 ||kitesiotas.life^
 ||kithaulrabirty.net^
@@ -110874,6 +110884,7 @@ browsershots.org#@#.advert_area
 ||realisechewing.com^
 ||realiserecognize.com^
 ||realistic-total.pro^
+||realizationnewestfangs.com^
 ||realizationwaterwillingly.com^
 ||realizesensitivenessflashlight.com^
 ||reallyzills.top^
@@ -121305,6 +121316,7 @@ browsershots.org#@#.advert_area
 ||xg8qofeylie14y8h5qnrb.cfd^
 ||xgbetzbmmdqbv.space^
 ||xgbzhyoeitomd.website^
+||xgcsuiebbavok.com^
 ||xghklnjmyljlc.site^
 ||xgiiioziwwayu.store^
 ||xgnrtinmuczbe.website^
