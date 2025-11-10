@@ -1,9 +1,9 @@
-! Checksum: VkSlqcWGumH4MOlmYZO+RQ
-! Diff-Path: ../patches/1/1-s-1762755315-3600.patch
+! Checksum: NfqBKQPXmBErP8pdSU36+w
+! Diff-Path: ../patches/1/1-s-1762762420-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.2.83
-! TimeUpdated: 2025-11-10T06:10:32+00:00
+! Version: 2.1.2.84
+! TimeUpdated: 2025-11-10T08:09:32+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4879,7 +4879,7 @@ otzovik.com$$script[wildcard="*function*blockId*"][min-length="1000"][max-length
 !
 !
 ! Add Yandex owned sites to `jsonprune` rule
-$script,xmlhttprequest,domain=ya.ru|yandex.*|shedevrum.ai,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "renderLinkTail"\, "seatbid"]
+$script,xmlhttprequest,domain=ya.ru|yandex.*|shedevrum.ai,jsonprune=\$..[direct\, "rtbAuctionInfo"\, "blockId"\, "linkTail"\, "seatbid"]
 yandex.*#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
 $cookie=/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/,domain=yandex.*
 ! ad on chrome://newtab
