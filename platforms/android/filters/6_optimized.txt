@@ -1,5 +1,5 @@
-! Checksum: kpOCwZnrvl/4v7WTBnoP3g
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1762711978-3600.patch
+! Checksum: q0X1oqn2WxSZSdAfttPk9w
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1762742600-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.50.22
@@ -919,6 +919,10 @@ serienjunkies.de##div[class^="id-TBeep"]
 kupujemprodajem.com##div[class^="Banner"][class*="_banner"]
 ||kupujemprodajem.com/static/images/banners/
 fachinformatiker.de##img[alt*="advertisement"]
+winfuture.de#?#.showitxt > b:contains(Spartipp)
+winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink
+winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink + br
+winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink + br + br
 winfuture.de##a[href^="https://winfutu.re"] + br
 gameswirtschaft.de##div.wpb_text_column:has(> div.wpb_wrapper > div.aawp)
 noz.de##.container-ob
@@ -1278,7 +1282,6 @@ macgadget.de###block-anzeige2
 ||macgadget.de/themes/*/images/bg_header.jpg
 uebermedien.de##img[width="1"][height="1"]
 infranken.de##.w4_desk
-serienjunkies.de,op-online.de,in-muenchen.de,echo24.de,dasgelbeblatt.de,wa.de##.id-TBeepSlot
 ||syndication.target-video.com^$domain=forum.frag-mutti.de|babelli.de
 notebooksbilliger.de###dy-hero-banners-slider
 spiegel.de##nav li.bg-shade-lightest
@@ -2581,13 +2584,11 @@ rtl.de#@#.rtlde-medium-rectangle
 /banners/werbung-
 /bannerwerbung-
 /bilder/werbung_
-/cms/werbung/*
 /esel.js
 /grafik/ads/*
 /images/werbung.
 /images/werbung/*
 /img/werbung/*
-/imgwerbung/*
 /iqadcontroller.$script
 /medien/werbung/*
 /nativendo.js
@@ -2688,7 +2689,6 @@ _woz_banner_vote.
 ###werbebox
 ###werbeflaeche
 ###werbeflaeche-mpu-big
-###werbekasten
 ###werbeslot-artikel
 ###werbeslot-sidebar
 ###werbung
@@ -2765,7 +2765,6 @@ _woz_banner_vote.
 ##.werbenbox
 ##.werbung
 ##.werbung-1
-##.werbung-2
 ##.werbung-box
 ##.werbung-container
 ##.werbung-label
@@ -2879,7 +2878,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||adsplash.de^$third-party
 ||aff-handler.com^$third-party
 ||affilimatch.de^$third-party
-||agaso.de^$third-party
 ||alphaads.de^$third-party
 ||arminius.io^$third-party
 ||atf-tagmanager.de^$third-party
@@ -3121,6 +3119,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||finanznachrichten.de/w/ad_
 ||finanztreff.de^*/partner/
 ||finews.ch/images/banners/
+||foerde.news/assets/images/a/
 ||foerde.news/files/news-bilder/anzeigen/
 ||football-aktuell.de/rechts/
 ||free-gay.org^*/eaCtrl.js
@@ -3231,6 +3230,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||oeffentlichen-dienst.de/images/banners/
 ||oekoportal.de/sites/default/files/stromvergleich.png
 ||okey-online.com/prg/daten/datenbanken/banner
+||oktoberfestportal.de/pics_banner/
 ||omano.de/AdServer/
 ||onlinekorrektor.de/cnc/
 ||onlinewahn.de/sky.js
@@ -3280,7 +3280,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||scm-handball.de^*/Sponsoren/
 ||script.webinstaller.$domain=chip.de
 ||sensor-test.de/assets/Banner/
-||seo-united.de/images/sponsoren_
 ||sexforum.ch/ForumPics/BaPics/
 ||sexnews.ch/uploads/tx_sfbanners/
 ||shopanbieter.de/SponsorLogos/
@@ -3498,6 +3497,8 @@ fabino.de,realtotal.de###block-3
 jungle.world###block-anzeige
 macgadget.de###block-anzeige2
 hoerzu.de###block-block-218
+buecher-magazin.de,online-webradio.com###block-block-7
+buecher-magazin.de###block-block-8
 duden.de###block-dudende-d-970x250-1billboard
 duden.de###block-leaderboard2ndslot
 duden.de###block-lexemleaderboardunten
@@ -3740,6 +3741,7 @@ my-ladies.ch###topBannerContainer
 raidrush.net###top_ga
 wintotal.de###topads
 myfont.de###toplists
+buecher-magazin.de###topshadow
 suche.t-online.de###tpctop
 teltarif.de###ttParallaxcontainer
 tvdigital.de###tvd-ad-top
