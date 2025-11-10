@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: SIS/4w00l5vNR+WU/pnQVg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1762780813-3600.patch
+! Checksum: inSoMWeb0B2KwkqxTwCU5Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1762783929-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.24.25
-! TimeUpdated: 2025-11-10T13:15:57+00:00
+! Version: 2.4.24.26
+! TimeUpdated: 2025-11-10T14:07:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10822,6 +10822,12 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217277
+tvappapk.com#$#body { overflow: auto !important; }
+tvappapk.com#$#body > div[id][style="display: block;"] { display: none !important; }
+tvappapk.com#$#body > div[id][style^="position:"]:empty { display: none !important; }
+tvappapk.com#$#body > div[id]:has(> div > div[style^="font-size:clamp("]) { display: none !important; }
+tvappapk.com##+js(addEventListener-defuser, load, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217035
 tab-maker.com##+js(no-fetch-if, googletagmanager.com/gtag/js, length:450-500)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216541
@@ -17828,6 +17834,8 @@ magesy.blog##+js(no-setTimeout-if, keepChecking)
 @@||majesy.com/advertisement.js
 ||magesy.blog/dublocker.js
 magesypro.com,magesy.blog,magesy.eu###adb
+magesypro.com,magesy.blog,magesy.eu###adBlockModal
+magesypro.com,magesy.blog,magesy.eu###adblock-overlay
 magesypro.com,magesy.blog,magesy.eu##div[id][class^="popup"][class$="wrap"][style]
 magesypro.com,magesy.blog,magesy.eu##+js(no-fetch-if, pagead2.googlesyndication.com)
 magesypro.com,magesy.blog,magesy.eu##+js(abort-current-script, onload, .offsetHeight<=0)

@@ -1,9 +1,9 @@
-! Checksum: VY2r60IzOi63QewSzQ/Kjw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1762755315-3600.patch
+! Checksum: YPx3qVdGscduGi6Z3LrDjg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1762783933-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.50.23
-! TimeUpdated: 2025-11-10T06:10:58+00:00
+! Version: 2.0.50.24
+! TimeUpdated: 2025-11-10T14:07:58+00:00
 ! Expires: 5 days (update frequency)
 ||tizofvtuqo.com^
 ||ads.goldbach-germany.de^
@@ -2318,7 +2318,12 @@ mz.de##.fp-top-article-top-teaser
 bild.de###superbannerWrapper
 bild.de,rollingstone.de##div[id^="mrec"]
 mein-eigenheim.de##.htmlbanner
-wetter.com,winfuture.de,formel1.de##.OUTBRAIN
+n-tv.de,wetter.com,winfuture.de,formel1.de##.OUTBRAIN
+n-tv.de#$?#div[class]:has(> .gujAd:only-child) { remove: true; }
+n-tv.de#$?#section:has(> div[style="display: none !important;"]:only-child) { remove: true; }
+n-tv.de##section:has(> div[class^="special-lotto_ad"])
+n-tv.de##div[class]:has(> article:only-child > a:only-child > div[class^="Teaser_wrapper"] > div[class] > div[class^="Teaser_ad"]:only-child)
+n-tv.de##section:has(> div[class^="Title"] + div[style="display: none !important;"]:last-child)
 ratgeber.bunte.de,praxistipps.focus.de,chip.de##.Article__Ad
 chip.de##.Ad-hor-height
 chip.de##.ar-67-60-so
