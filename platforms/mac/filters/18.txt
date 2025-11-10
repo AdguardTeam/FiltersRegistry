@@ -1,8 +1,8 @@
-! Checksum: 0/sm2c39adY5OaYbXJrYPQ
+! Checksum: 1YXfGI/DPHJDbOZMeEwN5g
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.74.9
-! TimeUpdated: 2025-11-10T04:12:35+00:00
+! Version: 2.0.74.10
+! TimeUpdated: 2025-11-10T06:11:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2544,6 +2544,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+speedweek.com#%#//scriptlet('trusted-set-cookie', 'OptanonConsent', 'groups=C0001%3A1%2CC0002%3A0%2CC0003%3A1%2CBG313%3A0%2CC0004%3A0', '', '/', 'speedweek.com')
 cos.com##.m-cookie-message
 stepstone.de#%#//scriptlet('trusted-set-local-storage-item', 'consent_level', '{"isEssential":true,"isFunctional":false}')
 stepstone.de#%#//scriptlet('trusted-set-local-storage-item', 'consent_storage', '[1]')
@@ -17788,6 +17789,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217297
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=speedweek.com
+@@||cdn.cookielaw.org/consent/*.json$domain=speedweek.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217176
 @@||stepstone.de/magiclink/static/js/cookie-consent.js
 stepstone.de#@##__tealiumGDPRecModal
