@@ -1,9 +1,9 @@
-! Checksum: rHw/nNX3PVyXwovxRMIo0A
-! Diff-Path: ../patches/14/14-s-1762798422-3600.patch
+! Checksum: NxCh9dfKjbBrD3nUj5pHZw
+! Diff-Path: ../patches/14/14-s-1762801814-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.48.55
-! TimeUpdated: 2025-11-10T18:10:05+00:00
+! Version: 2.2.48.56
+! TimeUpdated: 2025-11-10T19:06:41+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2547,6 +2547,9 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+funko.com#$#body { overflow: auto !important; padding-right: 0 !important; }
+funko.com#$#.dynamic-content-popup-modal { display: none !important; }
+funko.com#$#.dynamic-content-popup-modal ~ div.modal-backdrop { display: none !important; }
 playerok.com#%#//scriptlet('set-local-storage-item', 'cookie-сonsent', 'true')
 hacksawgaming.com###CookieConsentModal
 lebkuchen-schmidt.com#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-deny-all-button"]')
@@ -14551,7 +14554,7 @@ rtl.fr##.cnil-banner-v2
 go.cnn.com##.cnn-toasts > li[ng-repeat="toast in toasts track by $index"]
 carrefourjordan.com##.comp-cookie_banner
 dallasobserver.com,westword.com,miaminewtimes.com##.compliance
-bkfc.com,properstar.com,pvpoke-re.com,tagpacker.com,tempmail.zone,mathmammoth.com,cuic.eu,dateks.lv,gezondheidsplein.nl,cetin.cz,softorino.com,aatreeshop.de,speicherguide.de,fotav.hu,dayz.xam.nu,figyelo.hu,ibs-b.hu##.consent
+grandepremio.com.br,bkfc.com,properstar.com,pvpoke-re.com,tagpacker.com,tempmail.zone,mathmammoth.com,cuic.eu,dateks.lv,gezondheidsplein.nl,cetin.cz,softorino.com,aatreeshop.de,speicherguide.de,fotav.hu,dayz.xam.nu,figyelo.hu,ibs-b.hu##.consent
 sportskeeda.com##.consent-pop-up
 perspective-daily.de##.consent_cookies
 lapeyre.fr##.consentement_cookie
@@ -17723,6 +17726,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217214
+@@||privtech.co.jp/blog/data
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217451
 @@||usercentrics.eu^$domain=lebkuchen-schmidt.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217297
@@ -55667,6 +55672,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217186
+[$path=/download]datanodes.to#%#//scriptlet('trusted-click-element', '.adsBox ~ div:last-child > button:first-child')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216618
 dashflix.top#%#//scriptlet('remove-attr', 'oncontextmenu', 'body')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216028

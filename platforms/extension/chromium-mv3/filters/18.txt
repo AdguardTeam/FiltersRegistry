@@ -1,8 +1,8 @@
-! Checksum: TI55M6aXpos1MFwCptfTtg
+! Checksum: chdY8AI1LVlMidQZaRNehg
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.74.18
-! TimeUpdated: 2025-11-10T18:10:12+00:00
+! Version: 2.0.74.19
+! TimeUpdated: 2025-11-10T19:06:46+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2546,6 +2546,9 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+funko.com#$#body { overflow: auto !important; padding-right: 0 !important; }
+funko.com#$#.dynamic-content-popup-modal { display: none !important; }
+funko.com#$#.dynamic-content-popup-modal ~ div.modal-backdrop { display: none !important; }
 playerok.com#%#//scriptlet('set-local-storage-item', 'cookie-сonsent', 'true')
 hacksawgaming.com###CookieConsentModal
 lebkuchen-schmidt.com#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-deny-all-button"]')
@@ -17720,6 +17723,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217214
+@@||privtech.co.jp/blog/data
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217451
 @@||usercentrics.eu^$domain=lebkuchen-schmidt.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217297

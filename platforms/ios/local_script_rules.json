@@ -974,6 +974,10 @@
             "script": "(()=>{const t={apply:(t,e,n)=>{if(location.href.includes(\"/shorts/\")||location.href.includes(\"youtube.com/tv\")||location.href.includes(\"youtube.com/embed/\"))return Reflect.apply(t,e,n);try{const a=n[0];if(!a?.context?.client)return Reflect.apply(t,e,n);a.playbackContext&&(a.playbackContext.adPlaybackContext={pyv:!0}),a.playerRequest&&(a.playerRequest.playbackContext.adPlaybackContext={pyv:!0}),n[0]=a}catch(t){}return Reflect.apply(t,e,n)}};window.JSON.stringify=new Proxy(window.JSON.stringify,t)})();"
         },
         {
+            "domains": "embed.acast.com",
+            "script": "(()=>{let e=0;const t={apply:(t,r,n)=>{try{const t=r.currentSrc;e>0&&r.currentTime<e&&t?.includes(\"livestitches\")&&(r.currentTime+=e,r.addEventListener(\"timeupdate\",(t=>{r.currentTime<e&&(r.currentTime=e)})))}catch(e){console.trace(\"Error occurred:\",e)}return Reflect.apply(t,r,n)}};window.HTMLMediaElement.prototype.play=new Proxy(window.HTMLMediaElement.prototype.play,t);const r={apply:(t,r,n)=>{try{const t=n[1]?.response?.result;if(t){const r=t?.timeline?.[0];r&&\"ad\"===r?.type&&(e=r?.duration||0,delete n[1].response.result.timeline)}}catch(e){console.trace(\"Error occurred:\",e)}return Reflect.apply(t,r,n)}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,r)})();"
+        },
+        {
             "domains": "dl.surf",
             "script": "(()=>{const t=\"/file/\";if(!location.pathname.includes(t))return;const e=(new Date).toISOString(),n=location.pathname.split(t)[1];document.cookie=`adsRedirect_${n}=${e}; path=/;`})();"
         },
