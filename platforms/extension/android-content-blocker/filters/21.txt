@@ -1,8 +1,8 @@
-! Checksum: eXP7d9uGbft5ZPLAzu1MFQ
+! Checksum: d4zADFsqBijRMguCd5FEyw
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.38.48
-! TimeUpdated: 2025-10-30T12:11:49+00:00
+! Version: 2.0.38.88
+! TimeUpdated: 2025-11-10T19:06:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37,6 +37,12 @@ instagram.com##._aagw:empty
 ! End: Instagram.com
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/216369
+||geo.dailymotion.com/player/$domain=au.variety.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/217003
+! https://github.com/AdguardTeam/AdguardFilters/issues/216266
+pcgamestorrents.com###text-12
+! https://github.com/AdguardTeam/AdguardFilters/issues/216207
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200732
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215569
 ||cds.thecontentserver.com/*/player.floating.js$domain=nypost.com|huffpost.com
@@ -3032,6 +3038,16 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+||demonicscans.org/img/free_ads.jpg
+rallys.online##.side_box01
+rallys.online##a[id^="midashi_redmonkeyspin_"]
+ugreen.com###shopify-section-top-activity-bar
+sciencealert.com##.post-content a[href="https://www.sciencealert.com/spark-into-space-comp"] > img
+yts-official.mx##img[src="/static/images/blank-yts.gif"]
+smart.dhgate.com##body > #floating-card
+dailywire.com##div[class^="global-banner"]
+berlingske.dk##div[class^="tp-modal"][style^="z-index: 300050; display: block;"]
+criticker.com##.tr_ad
 anker.com##div[id^="TopBanner"]
 open.spotify.com##div[data-testid="home-banner"]
 joindns4.eu###hp-banner
@@ -3077,7 +3093,7 @@ welivesecurity.com##.sidebar-card-banner:not([href*="welivesecurity.com"])
 gamewith.jp##.walkthrough-gamewith-announces
 gamewith.jp###article-body > a[href^="https://hrmos.co/"]
 hobbygames.ru##.banner-desktop-wrapper
-hobbygames.ru##.banner
+rallys.online,hobbygames.ru##.banner
 minute.jp##.bunner-in-article-wrapper
 nypost.com##.zephrModal
 stay.rakuten.co.jp##a[href^="https://network.mobile.rakuten.co.jp/campaign/"]
@@ -3542,7 +3558,9 @@ cs.money##.aside-block__banner
 cs.money##a[href^="https://cs.money/market/instant-sell/"]
 t-j.ru##div[class^="banner"]
 t-j.ru##div[data-analytics="banner"]
-||afisha.ru/img/top-banners/sberprime/desk/index.html
+||afisha.ru/img/top-banners/
+afisha.ru##div[style^="width: 100%; height: 120px;"]
+afisha.ru##div[style^="width:100%;height:120px;"]
 ||daily.afisha.ru/next/static/sber-prime/desktop/index.html
 afisha.ru###root > div[style^="width:100%;height:90px;"]
 daily.afisha.ru##div[class^="HTMLTopBanner_"]
@@ -4302,7 +4320,7 @@ w3schools.com###lowerfeatureshowcaselink
 best-legal.jp###common-cta
 insurance.rakuten.co.jp###grpheader > div.spOff
 bookwalker.jp###banner-area
-rusklik.tvnet.lv##.tp-banner
+digitimes.com,rusklik.tvnet.lv##.tp-banner
 sitepoint.com###community-banner-unit
 websearch.rakuten.co.jp###banner
 websearch.rakuten.co.jp##.banner2
@@ -4618,8 +4636,6 @@ twirpx.org##iframe[style="width: 180px; height: 600px; border: 0px; overflow: hi
 ||jdpower.com/sites/default/files/image/*/23_Auto%20Summit%20PR%20Ad_speaker%20gif.gif
 ckworks.jp###rightContentsInnerBox > div[style="margin:0px 0px 10px 0px; padding:0;"]
 wmaraci.com###widget > div > a[href="/reklam"]
-luckymodapk.com##img[alt="aio phone banner"]
-luckymodapk.com##.right-all > section.downbox
 kinotochka.co##.Fullstorybtizer > a[href="/index.php?do=register"]
 hyperwiki.jp###amatop
 hyperwiki.jp###amalist
@@ -7132,6 +7148,8 @@ eiga.com##.header-pure-banner
 !##############################
 ! SECTION: Tweaks - CSS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217478
+! support website ticket view (e. g. streamfab) - scrolling not working - not caused by filters
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213725
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213540
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210222
@@ -7341,6 +7359,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217186
+! https://github.com/AdguardTeam/AdguardFilters/issues/216618
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216028
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214632
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214587
@@ -7939,7 +7959,7 @@ dailymail.co.uk###chromelessPlayer
 /wp-content/plugins/disable-right-click/*
 /wp-content/plugins/right-click-disable-orignal/*
 !
-||cdn.jsdelivr.net/npm/disable-devtool$domain=rgshows.ru|1shows.ru|abflix.*|2embed.*|rivestream.*|brocoflix.*|vidsrc.*|superflixapi.*|nontongo.*|mocine.cam|vercel.app|maxflix.*|fmovies-net.com
+||jsdelivr.net/npm/disable-devtool$domain=rgshows.ru|1shows.ru|abflix.*|2embed.*|rivestream.*|brocoflix.*|vidsrc.*|superflixapi.*|nontongo.*|mocine.cam|vercel.app|maxflix.*|fmovies-net.com|autoembed.cc
 ||rgshows.ru/js/protected_devtoolsdetector.js
 ||rgshows.ru/js/nocheats.js
 ||gazetasp.com.br/application/themes/gazetasp.com.br/js/noticia.js

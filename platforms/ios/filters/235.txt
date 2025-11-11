@@ -1,9 +1,9 @@
-! Checksum: tfpvTLppsOhjDjnLMO418Q
-! Diff-Path: ../patches/235/235-s-1759696669-14400.patch
+! Checksum: GL+zMb3Fdmat6Gdc8iiEoQ
+! Diff-Path: ../patches/235/235-s-1762447525-14400.patch
 ! Title: Persian Blocker
 ! Description: Filter list for blocking ads and trackers on websites in Persian.
-! Version: 2.0.6.1
-! TimeUpdated: 2025-10-05T20:33:50+00:00
+! Version: 2.0.6.3
+! TimeUpdated: 2025-11-06T16:41:20+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ☀️ PersianBlockerNG ☀️
@@ -269,8 +269,6 @@ niloblog.com##bloglinksblock
 ! Used by mosalasonline.com
 ||netbina.com^
 ! >> O <<
-||on-click.ir^
-||onclick.ir^
 ! >> P <<
 ||perlika.com^
 ||pelikan-network.ir^
@@ -1191,9 +1189,6 @@ gharbtv.com##.bottom-ads
 getandroid.ir#%#//scriptlet('ubo-nowoif.js')
 ||getandroid.ir/Files/js/landing$script,~third-party
 getandroid.ir##div[class*="linkads"]
-gold-team.org#%#//scriptlet('ubo-nano-sib.js')
-gold-team.org##.size-full.attachment-full
-gold-team.org##.aligncenter.wp-image-9273.size-full
 ||tarfandha.org/pop/popmain.js^$script
 gamesetup.ir##.sidebar > .box > .behtarinbacklink:upward(.box)
 ! https://github.com/MasterKia/PersianBlocker/commit/ccd9af83ced447f363fd706df92df2f5d0756156#commitcomment-84035664
@@ -3393,6 +3388,9 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 ||sanjagh.com^
 ||najva.com^
 ||sorenad.com^
+||on-click.ir^
+||onclick.ir^
+@@||api.onclick.ir/ifilo/vast.xml^$xmlhttprequest,domain=ifilo.net
 ||adexo.ir^
 ! (e.g. sharghdaily.com):
 ||adexofiles.ir^
@@ -3427,7 +3425,7 @@ benawa.com##div[style="margin-top:5px;margin-bottom:3px; overflow:hidden;"]
 ! ronveis.ir:
 ||mihanstore.net/partner^
 ! football360.ir:
-||napi.arvancloud.ir/vod/channels/*/ads^
+! ||napi.arvancloud.ir/vod/channels/*/ads^
 ||arvanvads.ir^
 !!! Specific !!!
 !!! ===VV=== !!!
@@ -3599,6 +3597,14 @@ football360.ir##section[class^="style_adsSection"]
 ||ovrjkuavda.com^
 ||jtoaxlbas.com^
 ||shahvani.com/static/images/*.gif^
+! shabakehchi.com:
+shabakehchi.com##a[title][target="_blank"][rel="nofollow noopener"]:has(img[width][height])
+! gold-team.org:
+gold-team.org#%#//scriptlet('ubo-nano-sib.js')
+gold-team.org##.rd-el-widget_ads:not(:has(> .rd-ads > a[href="https://gold-team.org/faq/"]))
+! ganjoor.net:
+! https://github.com/MasterKia/PersianBlocker/issues/344
+ganjoor.net##a[href^="https://click.kntr.ir/"]
 ! Trackers:
 ! Title: PersianBlockerTrackers
 ! Last modified: Sun, 21 Sep 2025 16:31:22 +0330
@@ -3616,6 +3622,7 @@ football360.ir##section[class^="style_adsSection"]
 ||affilio.ir^
 ||usermap.net^
 ||analyticsdaily.ir^
+||kntr.ir^
 ! trustseal.e-rasaneh.ir (e.g. zoomit.ir):
 ||trustseal.e-rasaneh.ir/Trustseal^$method=post
 ! aparat.com:

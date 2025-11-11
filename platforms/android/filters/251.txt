@@ -1,13 +1,13 @@
-! Checksum: ruqUSfTtmGTo/WMkn8SSPg
-! Diff-Path: ../patches/251/251-s-1761468026-14400.patch
+! Checksum: zQDqqtDEaKnSCmFmIn8axA
+! Diff-Path: ../patches/251/251-s-1762735929-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.10
-! TimeUpdated: 2025-10-26T08:36:54+00:00
+! Version: 2.0.9.19
+! TimeUpdated: 2025-11-10T00:48:38+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 26October2025v1
+! OriginalVersion: 09November2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -16,11 +16,10 @@
 ! Special thanks to https://github.com/git-101-collab for providing a 3-digit amount of new entries to this list, and to https://github.com/iam-py-test for volunteering to speed up the addition of user-submitted entries.
 ! Compatible with rule 2 of https://xkcd.com/2235/
 ! Important notes:
-! - This list can not bypass tracker redirects through third-party domains. This can be done by strict-blocking said domain and using the ability to view parameters on the strict-block page or tools to bypass it.
+! - This list can not fully bypass tracker redirects through third-party domains. This can be done by strict-blocking said domain and using the ability to view parameters on the strict-block page or tools to bypass it.
 ! - This list can not remove anything after the # in URLs. This is impossible in uBlock Origin and AdGuard.
 ! - This list can not remove parameters added using https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState
-! - Despite several attempts, this list can not remove trailing ?'s.
-! - As of 15/03/2024, this list did not work properly in Brave Browser, due to Brave missing several critical features this list uses. Please use this list only with uBlock Origin or AdGuard. User statements have however ticked in in mid-2025 that the breakage is smaller or gone.
+! - As of 15/03/2024, this list did not work properly in Brave Browser, due to Brave missing several critical features this list uses. Please use this list only with uBlock Origin or AdGuard. User statements have however ticked in mid-2025 that the breakage is smaller.
 ! 🗺️ ——— General remove rules ——— 🗺️ !
 ! From AdGuard CoreLibs (11/11/2020)
 $removeparam=yclid
@@ -372,7 +371,7 @@ $removeparam=hsCtaTracking
 $removeparam=tblci
 $removeparam=tcid,domain=~rug.nl
 $document,removeparam=/^dv_adwords_.*$/
-$removeparam=wdorigin
+$removeparam=/^wdorigin=.*$/i
 $document,removeparam=/^aff_id\d?=.*$/i,domain=~affiliate.salestring.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-773756
 $removeparam=twitchReferral
@@ -641,7 +640,7 @@ $removeparam=mclk
 $removeparam=mrnd
 $document,removeparam=maid
 $document,removeparam=mcid,domain=~miguvideo.*
-$document,removeparam=msid,domain=~rsc.org
+$document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
 $removeparam=mpty
 ! https://www•sixt•com/?exactag_uk=9d5a889680c4465784ce7afe174d6070
 $removeparam=exactag_uk
@@ -1482,6 +1481,16 @@ $removeparam=/^ref=winstall$/
 ! https://media•discordapp•net/attachments/1216338582243905546/1428095127590666331/9c95cdb4-f4a8-f011-bbd2-7ced8d93a186•png?ex=68f140bb&is=68efef3b&hm=9823d3f5245ed3e57643b13299cbad886826744b3d46123f30cdf558e3cc9311&=&format=webp&quality=lossless (16/10/2025)
 !+ NOT_OPTIMIZED
 $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adressa.no|polarismedia.no
+! It sure took a while to figure out how to remove trailing ?'s, but this at least seems to succeed at it. (30/10/2025)
+/^http.*[^?]\?$/$document,removeparam=/^=$/
+! https://github.com/DandelionSprout/adfilt/issues/1191
+!!! $removeparam=notification_referrer_id (https://github.com/DandelionSprout/adfilt/issues/1200)
+! https://github.com/DandelionSprout/adfilt/issues/1194
+$removeparam=slref
+$removeparam=t-src
+$removeparam=x-clickref
+! https://books•google•no/books/content?id=KbFqi9cpwuQC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70BhbQXJ5hBfc32IGWz-OW3JvUFUdxqYGV-yNSB4KIMMW5s6sVwNYplF-TLNXSVlLLfq52lJP8w32UP4HqSGjFYZ5HYIaUyblNMx-BSErKIQaprokgJSDzEXRT2LSA7WMteEiI4 (08/11/2025)
+$removeparam=imgtk
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -4253,6 +4262,28 @@ $removeparam=/^has-promotion=$/
 ||no^$removeparam=/^source=core-carousel$/
 ! https://github.com/DandelionSprout/adfilt/issues/1187
 ||hepsiburada.com^$removeparam=ftid
+! https://m365•cloud•microsoft/?auth=1&origindomain=Office&client-request-id=•••••••••••• (30/10/2025)
+||cloud.microsoft^$removeparam=origindomain
+! https://github.com/DandelionSprout/adfilt/issues/1192
+!+ NOT_OPTIMIZED
+||youtube.com^$removeparam=sub_confirmation
+! https://github.com/AdguardTeam/AdguardFilters/commit/786921d55ee49a25424b79126860ce92685dae3a
+$document,removeparam=adsterra_clid
+$document,removeparam=adsterra_placement_id
+! https://github.com/DandelionSprout/adfilt/issues/1194
+||nextdns.io^$removeparam=from
+||proton.me^$removeparam=url_id
+||proton.me^$removeparam=phfp
+$removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
+||click.linksynergy.com^$removeparam=mid
+||tubebuddy.com^$removeparam=a
+||artlist.io^$removeparam=artlist_aid
+||parallels.com^$removeparam=x-source
+||fastmail.com^$removeparam=pscd
+||fastmail.com^$removeparam=ps_partner_key
+||fastmail.com^$removeparam=ps_xid
+||fastmail.com^$removeparam=gsxid
+||fastmail.com^$removeparam=gspk
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
