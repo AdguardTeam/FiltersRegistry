@@ -1,9 +1,9 @@
-! Checksum: 6YbmrG0LBg7WvNdspRPJQg
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1762877523-3600.patch
+! Checksum: 7Lj5yu2wgWpxdFmeYa3D0A
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1762881034-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.94.57
-! TimeUpdated: 2025-11-11T16:08:15+00:00
+! Version: 2.0.94.58
+! TimeUpdated: 2025-11-11T17:07:02+00:00
 ! Expires: 12 hours (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -255,6 +255,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||beacon.coofis.com^
 ||aditude.prebid-server.com^
 ||cache.prebid-server.com^
 ||cdnm.techpump.com^
@@ -117632,6 +117633,7 @@ zjjz6lpv44aguszo.cloud.s11.sfmc-osl.com$image
 /zhugeio.js
 &l=dataLayer&cx=c
 /cdn-cgi/rum?
+/api/datafast/*
 /tr/lp/intg.js
 /op/analytics.js?domain=
 /send_ga4_params?
@@ -118137,6 +118139,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+/js/script.js$domain=codefa.st|datafa.st|fitymi.app|logofa.st|shipfa.st
 ||micro.rubiconproject.com/prebid/dynamic/*.js$script,redirect=noopjs,domain=ole.com.ar
 prm.com#%#//scriptlet('set-local-storage-item', '/deviceId/', '$remove$')
 ||caesarsgames.com/dynamic/resources/common/js/functions/iframeTracker.js
