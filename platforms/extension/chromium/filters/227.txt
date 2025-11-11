@@ -1,9 +1,9 @@
-! Checksum: JYtOVh94Z+A1Oosp/V3lRw
-! Diff-Path: ../patches/227/227-s-1762807315-14400.patch
+! Checksum: SyfhPxUKu4K7Sx4EwKEjWg
+! Diff-Path: ../patches/227/227-s-1762822358-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.33
-! TimeUpdated: 2025-11-10T20:37:52+00:00
+! Version: 2.0.23.34
+! TimeUpdated: 2025-11-11T00:48:27+00:00
 ! Expires: 10 days (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -1661,6 +1661,7 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+chzzkban.xyz##div[class*=" "]:is([style^="height:"], [style^="pointer-events:"], [style^="width:"]):has(div[id^="adv-"])
 cgv.co.kr##button[class^="mems01010_phoneLogin__"]
 asked.kr##div[class^="qnaBanner_"]
 asked.kr##div[class^="realclickInner_"]
@@ -1689,7 +1690,6 @@ search.naver.com##.book_list_wrap li[data-ad="true"]
 m.search.naver.com##.book_recommend_list .api_flicking_wrap > div[data-slog-content^="bok_ans:pmax-"]
 search.naver.com##.book_recommend_list .api_flicking_wrap > div[data-effective-adlog]
 search.naver.com##.book_correct .shop_area .item_sub:has(> .sub_inner > .tit_bx > a[href^="https://ader.naver.com/"])
-chzzkban.xyz##main > div:not([class]):has(div[id^="ad-"])
 uwayapply.com##.recom_univ
 uwayapply.com##.media_area
 uwayapply.com##.power_univ
@@ -3713,6 +3713,7 @@ gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *d
 chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
 chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
+chzzkban.xyz#%#//scriptlet('prevent-requestAnimationFrame', 'window.__adsToken')
 !
 erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
