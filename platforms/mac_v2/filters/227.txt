@@ -1,9 +1,9 @@
-! Checksum: I+tUIP2xRKEohidKIDXafw
-! Diff-Path: ../patches/227/227-s-1762822386-14400.patch
+! Checksum: CTUBGR5u7luH/xyjRYVuLw
+! Diff-Path: ../patches/227/227-s-1762893660-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.34
-! TimeUpdated: 2025-11-11T00:48:27+00:00
+! Version: 2.0.23.35
+! TimeUpdated: 2025-11-11T20:36:35+00:00
 ! Expires: 12 hours (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -1661,6 +1661,9 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+start.klauncher.kr##.auxiliary-section
+asked.kr##div[class*="ad_"][style*=":"]
+asked.kr##div[class^="inner_"] > div[class^="banner_"]
 chzzkban.xyz##div[class*=" "]:is([style^="height:"], [style^="pointer-events:"], [style^="width:"]):has(div[id^="adv-"])
 cgv.co.kr##button[class^="mems01010_phoneLogin__"]
 asked.kr##div[class^="qnaBanner_"]
@@ -3092,6 +3095,7 @@ x86.co.kr#@#.download_ad
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ! TODO: remove the following filter if https://github.com/AdguardTeam/CoreLibs/issues/1831 is resolved.
 /^https:\/\/m[0-9]+\.kotbc\.com\/img\/[a-z0-9_/]+\.gif$/
+start.klauncher.kr#$#.main-content { width: calc(100vw - 220px) !important; }
 m.naver.com#$#.wrap.id_search .comp_container { margin-top: 0px !important; }
 lol.ps#$#div[class*="w-full min-w-[280px] pt-10"] > .p-4.pb-0 div[class*="max-w-[480px]"] { width: 100% !important; max-width: none !important; }
 lol.ps#$##summoner-name-header-container { width: 100% !important; }
