@@ -1,9 +1,9 @@
-! Checksum: x0Z80K4OYIC6xmsZve0GQA
-! Diff-Path: ../patches/13/13-s-1762855927-3600.patch
+! Checksum: 7EABBQ4XbrVAPozfjjZ1Ag
+! Diff-Path: ../patches/13/13-s-1762873876-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.32
-! TimeUpdated: 2025-11-11T10:08:28+00:00
+! Version: 2.0.60.33
+! TimeUpdated: 2025-11-11T15:07:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1515,6 +1515,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+webtekno.com##.top-contents > div[class*="md:w-\[240px\]"]
 aydindenge.com.tr##script + a[target="_blank"] > img
 vipifsa.com##body > div.fixed.inset-0
 vipifsa.com##.hidden.w-\[300px\]
@@ -5815,12 +5816,12 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 [$domain=/izlemac\d+\.sbs/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 [$domain=/izlemac\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 ||izlemac*.sbs/wp-content/uploads/*.gif
-! mactanmaca*.shop - frequently changed domains
-||mactanmaca*.shop//wp-content/*.gif
+! mactanmaca*.sbs - frequently changed domains
+||mactanmaca*.sbs/wp-content/*.gif
 ! aglint-disable-next-line invalid-modifiers
-[$domain=/mactanmaca\d+\.shop/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
-[$domain=/mactanmaca\d+\.shop/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-[$domain=/mactanmaca\d+\.shop/]#%#//scriptlet('set-cookie', 'reklamgosterimx', 'ok')
+[$domain=/mactanmaca\d+\.sbs/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
+[$domain=/mactanmaca\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
+[$domain=/mactanmaca\d+\.sbs/]#%#//scriptlet('set-cookie', 'reklamgosterimx', 'ok')
 !
 ! sultansportv*.com - frequently changed domains
 ! Randomized of too fast changing
@@ -6173,6 +6174,8 @@ dcdl50eadec6df95.xyz#%#//scriptlet('trusted-replace-node-text', 'script', 'self.
 [$domain=/(^\|.+\.)xyzsports[a-z0-9-]+\.xyz/]#$#.table-area { visibility: hidden !important; }
 !+ NOT_VALIDATE
 [$domain=/(^\|.+\.)xyzsports[a-z0-9-]+\.xyz/]#%#//scriptlet('set-constant', 'window.config.advertisement.0.enabled', '0')
+! Fixing cosmetic filtering problem in player iframe, caused by caching
+! https://github.com/AdguardTeam/AdguardFilters/issues/217570#issuecomment-3516987788
 ! TODO: remove the comments below after the issue is fixed
 ! https://github.com/AdguardTeam/AGLint/issues/202
 ! aglint-disable-next-line invalid-modifiers
