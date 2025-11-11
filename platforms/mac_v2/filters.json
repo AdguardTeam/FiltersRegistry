@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.24.49",
-			"timeUpdated": "2025-11-11T13:15:50+0000",
+			"version": "2.4.24.50",
+			"timeUpdated": "2025-11-11T14:07:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.21.57",
-			"timeUpdated": "2025-11-11T13:16:00+0000",
+			"version": "2.1.21.58",
+			"timeUpdated": "2025-11-11T14:08:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -469,8 +469,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.86",
-			"timeUpdated": "2025-11-11T13:16:05+0000",
+			"version": "2.0.69.87",
+			"timeUpdated": "2025-11-11T14:08:13+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -616,8 +616,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.48.70",
-			"timeUpdated": "2025-11-11T13:16:16+0000",
+			"version": "2.2.48.71",
+			"timeUpdated": "2025-11-11T14:08:26+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -640,8 +640,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.0.46",
-			"timeUpdated": "2025-11-11T13:16:17+0000",
+			"version": "2.1.0.47",
+			"timeUpdated": "2025-11-11T14:08:27+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -743,8 +743,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.65.0",
-			"timeUpdated": "2025-11-11T13:16:22+0000",
+			"version": "2.0.65.1",
+			"timeUpdated": "2025-11-11T14:08:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -809,8 +809,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.13.1",
-			"timeUpdated": "2025-11-11T06:10:40+0000",
+			"version": "2.0.13.2",
+			"timeUpdated": "2025-11-11T14:08:35+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
