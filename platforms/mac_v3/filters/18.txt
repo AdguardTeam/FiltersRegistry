@@ -1,9 +1,9 @@
-! Checksum: CnT4YA2gLHSNNKaWmbu8vg
-! Diff-Path: ../patches/18/18-s-1762821065-3600.patch
+! Checksum: nG2jlAqFEqQdHuH1EWetpg
+! Diff-Path: ../patches/18/18-s-1762845128-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.74.23
-! TimeUpdated: 2025-11-11T00:27:27+00:00
+! Version: 2.0.74.24
+! TimeUpdated: 2025-11-11T07:08:31+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2548,6 +2548,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+ditur.pl#%#//scriptlet('trusted-click-element', 'button[\@click="acceptSelected()"]', '', '1000')
+prm.com#%#//scriptlet('trusted-set-cookie', 'CookieConsent', '1%2C0%2C0%2C0')
 /app/cookie-consents/app.min.js$domain=evento.sklep.pl
 stylewe.com##.home-cookie-pop
 igv.com##.gdpr-cookie-popup
@@ -15183,7 +15185,7 @@ ghostery.com##.piwik-notice-container
 pxhere.com,wallhere.com##.policy-info
 gzt.com,yenisafak.com##.policy.active
 nh-hotels.com##.politicaRewards
-bijouterie-clouzeau.fr,turuncukasa.com##.popin
+bijouterie-rigal.com,bijouterie-clouzeau.fr,turuncukasa.com##.popin
 karelia.news,zapravdu.org,myecotest.com##.pp-cookies-notice
 tomshardware.com##.prism-modal
 canadacomputers.com,kinoafisha.ua##.privacy-modal
@@ -17806,6 +17808,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217534
+ditur.pl#@##cookie-popup:not(body, html)
+ditur.pl#@##cookie-popup
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217214
 @@||privtech.co.jp/blog/data
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217451
