@@ -1,8 +1,8 @@
-! Checksum: UNG85xVuO1y0dG8wIGNcNA
+! Checksum: bRyO+GtiAt9AJ98rT5wfpw
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.23
-! TimeUpdated: 2025-11-10T12:46:06+00:00
+! Version: 2.0.23.24
+! TimeUpdated: 2025-11-11T12:45:47+00:00
 ! Expires: 5 days (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -516,6 +516,9 @@ expo.se##p.has-text-align-center:has-text(Annons:)
 expo.se##.ad-image, .bottom-popup, .conversion
 expressen.se##a[href*="/spel.exp"], a[href*="/lanapengar.exp"], a[href*="/rabattkoder.exp"], a[href*="/annons"], .match-betting, .discount-ad, .b-ad__caption, .pressrelease-teaser, .widget-ad-marker, .widget-ad-marker + a, .promotion-banner, .widget--collaboration, .rotator--external, a[data-click-track*="prisjakt"], .linked-image-widget a[href*="/kampanj/"], .linked-image-widget a[href*="lifestyle.expressen.se"], #premiumAdWrapper, .tapet-container, .teaser > a[href*="/kampanj."], .teaser > a[href*="/brandstudio"], .teaser > a[href*="/brand-studio"], figure[data-article-data*="/sponsrat"], figure[data-article-data*="/annons"], figure[data-article-data*="/brand-studio"], .teaser--native, .native-article, .branded-content
 expressen.se#%#//scriptlet('ubo-aeld.js', 'click', 'e.preventDefault', 'elements', 'a.js-ct')
+expressen.se#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*="&amp;u"]', '?amp;u')
+expressen.se#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*="&ued="]', '?ued')
+expressen.se#%#//scriptlet('ubo-href-sanitizer.js', 'a[href*=".sjv.io"]', '?u')
 expressen.se##.campaign, .html-widget > div[style^="text-align: center; font-size: 10px;"]
 expressen.se##.html-widget[data-vendor]:has(script[data-vendor])
 expressen.se#$#.tapet-popup-js-no-scroll, .tapet-no-scroll { overflow-y:initial!important; position:unset!important; }
@@ -682,6 +685,7 @@ globalpolitics.se##aside .textwidget a img
 globalportalen.org##.card__advertisment, .ays-survey-popup-survey-window
 gmfk.nu###site-preloader
 godare.se##div[style="min-height:350px"]:has(iframe[title="Annons"])
+godare.se#%#//scriptlet('ubo-set.js', 'advertoryFluepapir', 'true')
 godare.se##.godare-ad-element, a[href*="/brand-studio"], a[href*="/brandstudio"], .recipe-ad, a[href*="utm_campaign"][data-test-tag="external-link"]
 godare.se##:is(p[class^="teasersmall-sectionLabel"], p[class^="teasermedium-sectionLabel"]):has-text(/annons/i):upward(a.internal-link, li)
 godare.se##[id^="adPlacement"]:upward(1)
