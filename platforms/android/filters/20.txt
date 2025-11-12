@@ -1,9 +1,9 @@
-! Checksum: c4GEOw40d35STiZYvxXIPA
-! Diff-Path: ../patches/20/20-s-1762888198-3600.patch
+! Checksum: 9/Buqg2S1JDfy/pKroGHDg
+! Diff-Path: ../patches/20/20-s-1762949745-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.24.51
-! TimeUpdated: 2025-11-11T19:06:38+00:00
+! Version: 2.0.24.52
+! TimeUpdated: 2025-11-12T12:12:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -65,6 +65,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+hh.ru##div[class^="footer-app-banner-"]
 www.dji.com#%#//scriptlet('trusted-click-element', '.universal-product-tip a.universal-product-tip-link[href^="https://cdp-vg.djiservice.org/"] ~ .close-icon')
 callie.com#$#.vi-app { display: none !important; }
 callie.com#%#//scriptlet('remove-class', 'app-tips', '.wrapper > div[class]')
@@ -3813,6 +3814,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+hh.ru##div[class^="magritte-card"]:has(a[href^="https://hhlink.onelink.me/"])
+hh.ru#%#//scriptlet('trusted-set-local-storage-item', 'appPromoBannerHiddenUntil', '99999999999999')
 m.unice.com##.appHead-item
 tiktok.com##div[class*="-DivBannerInVideo"]
 m.koupon.ai##div[class^="Banner__Frame"]
