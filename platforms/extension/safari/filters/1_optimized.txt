@@ -1,5 +1,5 @@
-! Checksum: Ardig7GslsmCVO+4BxI03A
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1762873883-3600.patch
+! Checksum: D2GJPt+BtBVD1G9OtwQ/vQ
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1762915277-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.2.89
@@ -69,6 +69,7 @@
 .site/show/?id=*&r=
 /sovetnik.webpartner.
 .com/inc/angular.js
+.top/inc/angular.js
 ://www.*.xyz/*?*&key=$popup,third-party
 /show/?block_id=
 /js/sjplugin.js
@@ -258,6 +259,7 @@ http://*.ru/leftunit.pl?
 /com_artbannersplus/*
 /commercials/*$domain=~livingroomcandidate.org
 /css/branding_*.css$domain=~citigroup.com
+/ctxtlink/*
 /dc_ads.
 /delivery/avw.php
 /din_new6.php?code=*&bid=*&linkdest=
@@ -392,6 +394,7 @@ ban_click
 ucoz.ru/informer/
 ||carambis.ru/static/new/programs/promo/$third-party
 ||iframe.tvzavr.ru/action/window/*?autoplay=1$third-party
+||iframe.tvzavr.ru/iframe/index.html?cid=*&autoplay=1$third-party
 ||vk.com/rtrg$third-party
 /rttr*.min.js$~third-party
 ##a[href^="https://searchlnk.ru/r/"]
@@ -447,6 +450,7 @@ ucoz.ru/informer/
 ~airpano.com,~airpano.ru###banner_container
 ###banner_div
 ###banner_head
+###banner_place_1_wrap
 ###banner_title
 ###banner_top
 ###banner_top2
@@ -537,6 +541,7 @@ ucoz.ru/informer/
 ##.b-banner_slide
 ##.b-journalpromo-container
 ##.b-side-banner
+##.b-tbl_banner_links
 ##.baner_block
 ##.banfoot
 ##.banner-border-wrap
@@ -550,7 +555,6 @@ ucoz.ru/informer/
 ##.banner300x250
 ##.banner640
 ##.bannerBlock
-##.bannerPlace
 ##.bannerRight
 ##.bannerTop
 ##.banner_240x400
@@ -610,7 +614,6 @@ ucoz.ru/informer/
 ##.topbanner2
 ##.topbannerbg
 ##.videoAd
-##[name="Ad_Image"]
 ##div.bannerbg
 ##div.topbaner
 ##div[id^="AdFox_banner_"]
@@ -789,6 +792,7 @@ ucoz.ru/informer/
 ||top-js-metrics.top.my.ua^$third-party
 ||cdn.umh.ua^$third-party
 ||a.ava.com.ua^
+||banner.kiev.ua$third-party
 ||context.hotline.ua^
 ||holder.com.ua^$third-party
 ||mediatraffic.com.ua^
@@ -966,7 +970,6 @@ ucoz.ru/informer/
 ||main-ti-cod.com^$third-party
 ||big6q4y2oy.ru^$third-party
 ||afp.ai^$third-party
-||bro1.biz^$third-party
 ||rdrctgoweb.com^$third-party
 ||ybej5ohp0x.ru^$third-party
 ||ads-lot.ru^$third-party
@@ -990,6 +993,7 @@ ucoz.ru/informer/
 ||multibux.org^$third-party
 ||advmusic.com^$third-party
 ||rnldustal.com^$third-party
+||dtashjvcjswq.info^$third-party
 ||7nkbwdf1uq.ru^$third-party
 ||biocdn.net^$third-party
 ||tiz.jsite.top^$third-party
@@ -1171,6 +1175,7 @@ ucoz.ru/informer/
 .piccash.net^
 .tovarro.com^$third-party
 .webhop.net^
+//pp1.ru^$third-party
 /getThumbs?uid=$third-party
 ://epn.bz^$third-party
 ://kma.biz^$third-party
@@ -1256,6 +1261,7 @@ ucoz.ru/informer/
 ||bestclick.ru/sokz.php?
 ||beta.mediafort.ru^$third-party
 ||bigclick.me^$third-party
+||biglion.ru/general/js/partnership.js.php$third-party
 ||binpartner.com/branding/$third-party
 ||bioxtubes.com^$third-party
 ||blogun.ru^$third-party
@@ -1315,7 +1321,6 @@ ucoz.ru/informer/
 ||ejevika.com^
 ||elephant.fotostrana.ru^$third-party
 ||enfreine.com^
-||enot.k-yroky.ru^$third-party
 ||estiques.com^
 ||et-cod.com^$third-party
 ||et-code.ru
@@ -1353,6 +1358,7 @@ ucoz.ru/informer/
 ||hdtracker.ru^$third-party
 ||hellywood.ru^$third-party
 ||her-ber.top^$third-party
+||hiopdi.com^$third-party
 ||holm.ru^$third-party
 ||i.j2j.ru^
 ||idvd.su^$third-party
@@ -1437,7 +1443,6 @@ ucoz.ru/informer/
 ||mp-https.info^$third-party
 ||mpay69.com^$third-party
 ||mrbasic.com^
-||myads.ru^$third-party
 ||myanimetop.com/button.php?
 ||n1307adserv.xyz^
 ||n161adserv.com^$third-party
@@ -1574,6 +1579,7 @@ ucoz.ru/informer/
 ||top-shop.ru^$third-party
 ||topadvert.ru^$third-party
 ||topcto.ru^$third-party
+||tqqjk.top^$third-party
 ||tr.samoresim.ru^
 ||tradedoubler.com^$third-party
 ||tradeleads.su^$third-party
@@ -2123,7 +2129,6 @@ mail.ru,sportmail.ru,~e.mail.ru,~my.mail.ru,~touch.mail.ru#%#//scriptlet('set-co
 mail.ru#?#div[slot="main-column"] > *:matches-css(transition-property: box-shadow)
 mail.ru#$?#div[slot="main-column"] > *:has(*:matches-css(height:90px)) { remove: true; }
 [$path]mail.ru#%#//scriptlet('json-prune', '[].slot')
-my.mail.ru##.promo-frame-wrap
 my.mail.ru##.l-music__banner-728x90
 my.mail.ru##.sp-video__billboard
 my.mail.ru#%#//scriptlet('set-constant', 'Object.prototype.isAdblockEnable', 'noopFunc')
@@ -3593,6 +3598,7 @@ noi.md##div[class*="-bnr"]
 noi.md##.news-feed-item[style="height: 400px"]
 tass.ru##div[class^="AdRotation"]
 wildberries.ru##.footer__banner
+/content/stargate/*$image,domain=bossfilm.ru
 citilink.ru##header > div[class^="css"]:has(> a[href^="https://www.citilink.ru/promo/"])
 click-or-die.ru##.click-content
 vokrug.tv##.hide_640
@@ -4526,6 +4532,7 @@ wylsa.com##.marketWidgetWrapper
 ru-geld.de##img[width="160"][height="600"]
 ru-geld.de##div[id^="gads-"]
 ferra.ru##.sideColumn div[style*="transform: translateZ(0px);"] div.headline
+kak-pravilno.net##div[style="height:180px;"]
 ||novayagazeta.ru/bidders_map_
 ||novayagazeta.ru/NativeRollScript.js
 daily.afisha.ru##.rambler-widget__wrapper
@@ -5531,6 +5538,7 @@ picforall.ru###footer_left
 fotostrana.ru###fsr-king-holder
 3dnews.ru###global-wrapper > div[style]:empty
 womanadvice.ru###googlerekl
+virusinfo.info###headbr
 pixcloud.ru,arigato.tv###header
 gramota.ru###header > div#display.clear
 yaplakal.com,yap.ru###header-flash
@@ -5896,7 +5904,6 @@ rozetked.me##.right__images
 sport-express.ru##.right_col_banner
 softobase.com##.rkl-horizontal
 wonderzine.com,kurs.censor.net,market.censor.net,hopesandfears.com,lookatme.ru##.row-banner
-russian.rt.com##.rt--partner-block
 cheb.ru##.rurek
 sumypost.com##.sb-element.media
 onedio.ru##.scrollhelper
@@ -5999,6 +6006,7 @@ sitv.ru##a[href*="/showbn/?"]
 bits.media##a[href*="=banner&"]
 elec.ru##a[href*="banner"]
 rutracker-net.ru##a[href="http://dostup-casino.ru/"]
+pnp.ru,kino-teatr.ru,ren.tv##a[href="http://mirtesen.ru/"]
 linux.org.ru##a[href="http://qrator.net/"]
 niasam.ru##a[href="http://www.domnaru.ru"]
 vpgazeta.ru##a[href="http://www.vpgazeta.ru/article/advert"]
@@ -6827,8 +6835,6 @@ health.mail.ru##.layout__page > div[data-sitezone]
 health.mail.ru##[data-view="SlotView.mimic.direct"]
 health.mail.ru##div[data-view="SlotView.mimic.240x400"]
 dom.mail.ru###Rubric-root div[data-qa="ArticlesList"] > div[class]:not([data-qa="ArticleThumb"])
-hi-tech.mail.ru##.pm-toolbar__banner_submenu
-hi-tech.mail.ru##.cols__inner > div[class*="rb_"]
 horo.mail.ru##div[id][data-closewrap-container]
 horo.mail.ru##div[data-module="SlotModel"]
 horo.mail.ru##.cols__column_sidebar
