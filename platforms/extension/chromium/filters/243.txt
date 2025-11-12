@@ -1,14 +1,14 @@
-! Checksum: 4M54ZkXIAiaoKL2lWspJLg
-! Diff-Path: ../patches/243/243-s-1762865368-14400.patch
+! Checksum: J2CqbnHnh6UboR9eG2Z0sQ
+! Diff-Path: ../patches/243/243-s-1762922565-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.24
-! TimeUpdated: 2025-11-11T12:45:47+00:00
+! Version: 2.0.23.25
+! TimeUpdated: 2025-11-12T04:39:04+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-11-11 10:12:49 CET
+! Last modified: 2025-11-12 03:51:48 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -115,9 +115,9 @@ accentmagasin.se#$#body.modal-open { overflow:unset!important; position:unset!im
 accentmagasin.se###modal-newsletter-signup, .modal-backdrop
 advokaten.se##.cookieconsent-optin-marketing
 affarerinorr.se##a[href^="/nyheter/native-artiklar/"]
-affarsstaden.se##a[href^="mailto:annons"]
-affarsstaden.se##a[target="_blank"]:has-text(/casino/i):upward(div[id].sidebar-box)
-affarsstaden.se##main > .elementor > section.elementor-section:last-child:has(a[href*="casino"])
+affarsstaden.se##a[href^="mailto:annons"], img[title="Annonsbanner"]
+affarsstaden.se##.uagb-heading-text:has-text(Aditorial):upward(3)
+affarsstaden.se##:is(.uagb-ifb-content):has(a[href*="casino"])
 affarsvarlden.se##article.article-list-item:has(a[href*="/native/"])
 affarsvarlden.se##.article-tag-header:has-text(/Annons/i):upward(.frontpage-mixed-articles__item, .sidebar-news__list_li)
 affarsvarlden.se##.cookies-wrap, .Modal, .article-list-item--native, .advert-notice-box, .native-popup, .takeover-wrap, .native-notice-box, .darwin--content
@@ -544,7 +544,7 @@ extrakt.se,ordmedzcxy.se,gamingtips.se,veckansnyheter.se,aventyrsresor.se,nyhets
 familjehemmet.se###cookieNotice
 familjeliv.se##.familjeliv_nestle
 fastbikes.se##div[class*="banner"]
-fastighetssverige.se##a[href*="/banner/out/"], .bnr_box, div[class^="panel"][style*="lightgoldenrodyellow"]
+fastighetssverige.se##a[href*="/banner/out/"], .bnr_box, div[class^="panel"][style*="lightgoldenrodyellow"], .ad-label-after
 fastighetssverige.se##.featured-article:has(.badge-partner-text)
 fastighetstidningen.se##.adspace, a[class*="annons"]
 fastighetsvarlden.se##a.entry__link[href*="/native/"]
@@ -575,7 +575,8 @@ firstclassmagazine.se###leader-wrap, #rpwe_widget-2, .side-widget .textwidget
 firstclassmagazine.se##.feat-cat:has-text(/annons/i):upward(a)
 fisheco.se###page-section-2, #page-section-24, .g-single
 fiskesnack.com##.axd-widget, #widget_314
-flamman.se###scrollup
+flamman.se###popup:has(.newsletter)
+flamman.se###scrollup, .adverter
 flashback.org###top-banner-container, #top-banner-wrapper
 flashscore.se##span[class^="wcl-overline"] div:has-text(Annons):upward(article[class^="wcl-article"])
 flashscore.se##.boxOverContent--a, .otPlaceholder, .seoAdWrapper, .adsbackground-wrapper, .prematchOddsBonus__bonus, .prematchLink[target], .detailLeaderboardSkeleton, .ui-media__placeholder:empty
@@ -801,9 +802,10 @@ horisontmagasin.se##.custom-html-widget a[href]:not([href^="/"]):not([href*="hor
 horisontmagasin.se##.small:has-text(/Annons/i):upward(1)
 hotellorestaurang.se,citymark.today,byggfakta.today###bannnerContainer, #pop_overlay, .banner-s, div.featured
 hrnytt.se##div[media-slot-url]
-hrnytt.se##.spd-article-over-pic:has-text(/spons/i):upward(article)
+hrnytt.se##.spd-article-over-pic:has-text(/spons/i):upward(a)
+hrnytt.se##.spd-article-over-pic:has-text(/spons/i):upward(a) + h4
 hrsvepet.se,cfosvepet.se,vdsvepet.se#$#body { overflow:unset!important; opacity:unset!important; }
-hrsvepet.se,cfosvepet.se,vdsvepet.se##.cookie-banner, .desktopbanner, .mobilbanner-section, #takeover-banner, .top-banner-wrapper, .toppbanner-under-header
+hrsvepet.se,cfosvepet.se,vdsvepet.se##.cookie-banner, .desktopbanner, .mobilbanner-section, #takeover-banner, .top-banner-wrapper, .toppbanner-under-header, .pre-header-banner-wrapper
 hrsvepet.se,cfosvepet.se,vdsvepet.se##:is(.recent-post-item, .w-dyn-item):has(a[href="#"]:not(.w-condition-invisible))
 humorbibeln.se,newsner.com,sportbibeln.se,ettgottskratt.se,djurbibeln.se,matbibeln.se,nojeslivet.se##.inline-share-buttons
 hungrig.nu##.ui-widget-overlay, .ui-dialog
