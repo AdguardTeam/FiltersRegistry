@@ -1,9 +1,9 @@
-! Checksum: zgxdpFuXE8sBImasPj80NQ
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1762893660-14400.patch
+! Checksum: NDBWZ+UN6tLAgYIcBGiWiQ
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1762980066-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.35
-! TimeUpdated: 2025-11-11T20:36:35+00:00
+! Version: 2.0.23.36
+! TimeUpdated: 2025-11-12T20:36:53+00:00
 ! Expires: 12 hours (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -522,6 +522,9 @@
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+||enuri.com/api/adRelay.jsp
+||enuri.com/wide/script_min/ad/
+||coupang.com/next-api/products/banners?productId=
 ||search.danawa.com/js/adSmart.min.js
 ||search.danawa.com/js/powerShopping.min.js
 ||search.danawa.com/js/powerClick.min.js
@@ -530,7 +533,6 @@
 ||asked.kr/pclickframe/
 ||myrealtrip.com/ad/
 ||trip.com/restapi/soa2/*/bjjson/queryAdsDisplayData
-||json*.dcinside.com/json*/notify_ad.php
 ||gall.dcinside.com/_js/ad.js
 ||gall.dcinside.com/_js/ad_context_powLink.js
 ||filetad.tygem.com/updata/banner/
@@ -1611,6 +1613,9 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+enuri.com###coupangCpcSection
+enuri.com##.lp-ad--naver
+gall.dcinside.com,m.dcinside.com##ul[class$="_ad"]
 start.klauncher.kr##.auxiliary-section
 asked.kr##div[class*="ad_"][style*=":"]
 asked.kr##div[class^="inner_"] > div[class^="banner_"]
@@ -3475,6 +3480,7 @@ m.humoruniv.com#%#//scriptlet('abort-current-inline-script', '$.prototype.html',
 m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
+enuri.com#%#//scriptlet('set-constant', 'getPowerLink', 'noopFunc')
 heye.kr#%#//scriptlet('prevent-window-open', 'pandalive.co.kr/evt/')
 newneek.co#%#//scriptlet('prevent-xhr', 'api-v2.adrop.io/request')
 map.naver.com#%#//scriptlet('json-prune-xhr-response', 'layers.[-].metadata.name.{=}.POI_Ads', '', '/PCWeb_Real.json')
