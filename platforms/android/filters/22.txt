@@ -1,9 +1,9 @@
-! Checksum: mhHW0FtCV/s9l8PlUxkLiQ
-! Diff-Path: ../patches/22/22-s-1761225569-3600.patch
+! Checksum: bgekGGJfIf575UybnIEDLQ
+! Diff-Path: ../patches/22/22-s-1762798417-3600.patch
 ! Title: AdGuard Widgets filter
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
-! Version: 2.0.12.84
-! TimeUpdated: 2025-10-23T13:16:20+00:00
+! Version: 2.0.13.0
+! TimeUpdated: 2025-11-10T18:10:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -89,6 +89,9 @@ butumori.com,netizen-voice.blog.jp,ityouchannel.livedoor.blog,nanjei-baseball.bl
 !
 ! NOTE: Blogroll specific rules
 !
+hosyusokuhou.jp###contents > h3:has(+ #bottom_rss)
+hosyusokuhou.jp###footerrss
+hosyusokuhou.jp##.entrybody > div.t_b:last-of-type ~ a[rel="noopener noreferrer"]
 dorosoku.com###header_rss
 vsponews.jp##.article-body-more > .Top_link
 vsponews.jp###main .rss-sub
@@ -342,8 +345,6 @@ drdinl.com##div[id^="KLS-"]:has(> li > a[href^="http://newmofu.doorblog.jp/"])
 drdinl.com##div[id^="KLS-"]:has(> li > a[href^="https://moudamepo.com/"])
 you1news.com##h2.caption-title:has(+ div[class*="-rss"])
 netouyonews.net##.rss-entry-cards
-aqua2ch.net##.menu_outline3
-||aqua2ch.net/yuve1
 doujinnomori.com##.video-tile
 kinsoku.blog.jp##header.article-header > br:has(~ .pager)
 kinsoku.blog.jp###more > div[style^="width:"] > a[href*="//amzn.to/"] + br + span
@@ -1373,11 +1374,6 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ~sinoptik.ua###SinoptikInformer
 ##a[title="WhatsApp Newsletter Marketing"]
 !
-||rosinenpicker.de/external/
-||hotukdeals.com/search/price_comparison/pricespy?
-||affilizz.com^$third-party
-||mbp-japan.com/information/$script,third-party
-||chat*-ce.chatdealer.jp^
 .az/livechat/
 /crm/site_button/loader_*.js$domain=~tvoe.live
 /edugram_chat.js
@@ -1391,15 +1387,18 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 /wp-content/plugins/bazz-callback-widget/*
 /wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/js/app.js
 /wp-content/plugins/elfsight-whatsapp-chat-cc/*
-! gubagoo
-||gubagootracking.com^$third-party
-||cdn.gubagoo.io^$third-party
 ##gg-toolbar--specials
 !   NOTE: Marketing (generic rules) end ⬆️
 !   !SECTION: Widgets - Marketing (generic rules)
 !
 !   SECTION: Widgets - Marketing (third-party services)
 !
+||web-client.moveo.ai^$third-party
+||rosinenpicker.de/external/
+||hotukdeals.com/search/price_comparison/pricespy?
+||affilizz.com^$third-party
+||mbp-japan.com/information/$script,third-party
+||chat*-ce.chatdealer.jp^
 ||chat.quickcep.com^
 ||webchat-ui.citibot.net^
 ||webchat.bebot.io^$third-party
@@ -1538,6 +1537,9 @@ blog.livedoor.jp##div[id^="shitarss_title_"]
 ||cloud.lexprofit.$third-party
 ||partner-widget.vse-sdal.com^
 ||perimeterx.widget.insent.ai^
+! gubagoo
+||gubagootracking.com^$third-party
+||cdn.gubagoo.io^$third-party
 !   NOTE: Marketing (third-party services) end ⬆️
 !   !SECTION: Widgets - Marketing (third-party services)
 !
@@ -1933,6 +1935,9 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 /js/chat/edu_chat.js
 /wp-content/plugins/creame-whatsapp-me/public/js/joinchat.
 !
+||livechat.nextop.com^$third-party
+||titanembeds.com^$third-party
+||cdn.shulex-voc.com/shulex-live-chat/
 ||salesiq.zohopublic.com^$third-party
 ||client.crisp.chat^$third-party
 ||temsa.services.exairon.com/assets/widget/index.js
@@ -1992,6 +1997,9 @@ freestreams-live.my###custom_html-9
 ||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com
 litres.ru###call_support
 !
+ugreen.com##body > div[style="visibility: visible;"]:has(> div > iframe#launcher)
+animelon.com##div[class^="discord"]
+pebblehost.com##.crisp-client
 ||widgetv*.heres.ai/heres.js$domain=pinalli.it
 ||n11.com/live-chat
 /volti/*$domain=toroslaredas.com.tr|baskentedas.com.tr|ayedas.com.tr
@@ -2112,6 +2120,8 @@ zebratechnologies.force.com##.zbrbot-container
 !
 !
 !   NOTE: Allowlist for chat widgets
+! uperfect.com - broken Specifications dropdown list
+@@||config.gorgias.chat^$domain=uperfect.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176548
 @@||config.gorgias.chat^$domain=thefeed.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211990
@@ -2258,7 +2268,7 @@ apollo.pl##.thulium-chat-wrapper
 ! https://github.com/AdguardTeam/AdguardFilters/issues/31944
 ||leaselink.pl/js/slide-button-shoper.js
 ! block Discord widget
-||discordapp.com/widget?id=$domain=hentaiz.org
+||discord.com/widget?id=$domain=hentaiz.org|demonicscans.org
 ! https://github.com/AdguardTeam/AdguardFilters/issues/26435
 ||sumo.com^$third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/51400
@@ -2432,6 +2442,13 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+pbs.org#$#div[data-popup-type="large_funding"] { display: none !important; }
+pbs.org#$#body[style^="overflow:"] { overflow: auto !important; }
+novastream.top###donationBanner
+documentaryarea.com###watermark
+||documentaryarea.com/Favicons/Contribution.png
+waterfordwhispersnews.com##.wwn-announcment-box
+echofm.online##div[class^="sc-"]:has(> a[href="/donation"])
 huffpost.com##.big-banner-container:has(.big-banner__support-button)
 searchfloor.org#%#//scriptlet('trusted-set-local-storage-item', 'promoSeenAt', '99999999999999')
 ||videogameschronicle.com/wp-content/themes/alpha/dist/images/promos/*.mp4

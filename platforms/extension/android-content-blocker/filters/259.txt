@@ -1,0 +1,1578 @@
+! Checksum: 8ZQPwCCnw6s6jPGAbLvXyw
+! Title: Dandelion Sprout's Anti-Malware List
+! Description: Blocks more malware than most other major anti-malware lists - domains and URL patterns used in malware redirection chains, IP addresses that are solely used by malware, PUP nags, and a few scammers. Already included in Dandelion Sprout's Annoyances List.
+! Version: 2.0.0.4
+! TimeUpdated: 2025-11-09T00:48:56+00:00
+! Expires: 5 days (update frequency)
+!
+! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
+! OriginalVersion: 08November2025v1
+! Expires: 1 day
+! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
+! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
+! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
+! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
+! Legitimate use is almost non-existent, but has a tiny userbase in Japan and among upstart coding experiments. Its extreme common-ness in malware redirections means that the entry will be kept forever.
+||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top
+! (Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067)
+@@||masto*.top^$document
+@@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
+! (An E-mail tip)
+@@://blog.*.top^$document
+! https://github.com/DandelionSprout/adfilt/issues/1108
+@@://pyrofork.*.top^$document
+! https://github.com/DandelionSprout/adfilt/issues/1158
+@@||wceui.top^
+! International topical domains that have consistently horrendous scores on watchlists of bad TLDs, and whose use for legit purposes is practically non-existent.
+||loan^$document
+||bid^$document
+! Experimental attempt to cover a few hardcore spam ASNs
+.buzz/*/?*=*&*=*&*=*&*=*&*=$document
+.life/*/?*=*&*=*&*=*&*=*&*=$document
+.live/*/?*=*&*=*&*=*&*=*&*=$document
+.xyz/*/?*=*&*=*&*=*&*=*&*=$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/139667
+/^.*\.(live|buzz)/.*&[a-z]{1,3}=[a-zA-Z0-9%]{250,}\$/$document
+! ——— You know those ultra-fraudulent auto-generated things that clutter up Google searches? These entries should remove some of them. ———
+! ——— Old dead tech-related domains ———
+! Domains that used to host lists for adblockers or "hosts" tools, but which are now either used by malware pushers, or could potentially be snapped up by them.
+||adblock.gjtech.net^$document
+||spam404bl.com^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||109.201.135.46^$document
+||fredfiber.no^$document
+||securemecca.com^$document
+||everythingisnt.com^$document
+||vin-plastiks.com^$document
+||adblock-listefr.com^$document
+||dutchmega.nl^$document
+||juvander.net^$document
+||ssl.bblck.me^$document
+||allblock.net^$document
+||microsoftedge.microsoft.com/addons/detail/allblock/nkllnmjaaifdphkfbmedklkimjmnjeen^$document
+! Malicious or purchaseable domains found in videogame manuals, title screens, or game driver/patch sites
+||acclaimsports.com^$document
+||acclaimmaxsports.com^$document
+||hip-games.com^$document
+||thq.com.au^$document
+||gp32.com^$document
+||kidnkid.com^$document
+||cuttherope.ie^$document
+||cloudyvideogame.com^$document
+||marsshooter.org^$document
+||fortevr.com^$document
+||ps2hd.com^$document
+! Dead router connection URİs
+! To log in to TP-Link routers, use tplinkwifiNET instead.
+! Old Linux-related domains
+! How these links still remain in Unetbootin, is anyone's guess.
+||hacktolive.org^$document
+||mandriva.com^$document
+! Fraudulent browser extensions
+||ublock.org^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||138.68.252.54^$document
+! Presumed to be fraudulent antivirus extensions on app/extension sites where it's perfectly probable that everyday people could install them.
+! Other
+||fileplanet.com^$document,popup
+||inputmapper.com^$document,domain=~stolen_by_casino_spammers.*
+||henrypp.org^$document,domain=~stolen_by_casino_spammers.*
+! ——— IQ test sites that make you waste heaps of time by taking the test, and then try to charge you to see the results. ———
+||funeducation.com^$document
+||iq-research.info^$document
+||iq-test.co.uk^$document
+||iqtest.co.uk^$document
+||iqtest.com^$document
+||test-iq.org^$document
+||officialiqtests.com^$document
+! ——— Links to PC "optimising" "tool" PUPs that'll most likely stuff your PC full of nagware and malware ———
+! ¤¤¤ ReImagePlus (Also added to "uBlock Filters - Badware Risks") ¤¤¤
+! https://windowsreport•com/extend-windows-laptop-battery-life/
+windowsreport.com##.code-block
+! https://appuals•com/fix-error-0x800701e3-on-windows-7-8-1-10/
+appuals.com##.info.box
+appuals.com##.appua-reimage-top
+! https://ugetfix•com/ask/how-to-fix-windows-store-error-0x8000ffff/
+ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
+ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.sidebar_download_inner
+ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.primary_download
+ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download_button_info_texts
+ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.js-download_button_additional_links
+ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##.download-button-offer-header
+! https://www•thewindowsclub•com/fix-windows-update-error-0xc1900130-on-windows-10
+thewindowsclub.com##div[style^="float: none; margin:10px "]
+! https://www•majorgeeks•com/files/details/patch_my_pc•html
+||majorgeeks.com/images/icons/red_icon_18x17px.png$image
+! https://www•2-spyware•com/remove-redirector-gvt1-com•html
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.ui-content > .win
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.sidebar_download_inner > :not(.voting-box, .colorbg-grey)
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.js-download_button_offer
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.primary_download
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.automatic_removal_list
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-placeholder
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.quick-download-button-text
+! ¤¤¤ ScanUtilities ¤¤¤
+! https://www•bynarycodes•com/fix-windows-10-update-error-0x80070006/
+bynarycodes.com##div[class^=bynar-content_]
+! ¤¤¤ Driver Easy ¤¤¤
+! https://www•drivereasy•com/knowledge/fix-critical-service-failed-blue-screen-error-on-windows-10/
+! https://www•drivereasy•com/knowledge/fixed-how-to-fix-stop-error-0x0000001e/
+drivereasy.com##.pakb-content img[sizes^="(max-width: 80"]
+! https://www•drivereasy•com/knowledge/download-gigabyte-audio-driver/
+drivereasy.com##.pakb-content img[sizes^="(max-width: 79"]
+! https://www•drivereasy•com/knowledge/epson-xp-420-driver-update-for-windows-7-8-and-10/
+! https://www•drivereasy•com/knowledge/solved-this-display-does-not-support-hdcp/
+! ¤¤¤ Slimware DriverUpdate ¤¤¤
+! https://forums•windowscentral•com/
+forums.windowscentral.com###navbar_notice_33
+! ¤¤¤ Driverpack Online (Accidentally also fixed in EasyPrivacy and «AdGuard Mobile Ads») ¤¤¤
+||google-analytics.com^$domain=sdi-tool.org
+! ¤¤¤ SpyHunter links ¤¤¤
+! https://howtoremove•guide/redirector-gvt1-com-virus-malware-chrome-removal/
+howtoremove.guide##div[style^="border:2px"]
+! https://www•2-spyware•com/remove-redirector-gvt1-com•html
+2-spyware.com,novirus.uk,faravirus.ro,uirusu.jp,virusi.hr,wubingdu.cn,avirus.hu,ioys.gr,odstranitvirus.cz,tanpavirus.web.id,utanvirus.se,virukset.fi,losvirus.es,virusler.info.tr,semvirus.pt,lesvirus.fr,senzavirus.it,dieviren.de,viruset.no,usunwirusa.pl,zondervirus.nl,bedynet.ru,virusai.lt,virusi.bg,viirused.ee,udenvirus.dk##.automatic_removal_list_w > .ar_block_description
+guide##a[href*="download.enigmasoftware.com/spyhunter-free-download/stpl_94/SpyHunter-Installer.exe"]
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-968070041
+howtoremove.guide##[id*="newage"]
+virusresearch.org##.virus-before-content
+virusresearch.org##.q2w3-fixed-widget-container
+virusresearch.org##.virus-after-fourth-h2
+virusresearch.org##.virus-after-content
+! https://www•cyclonis•com/how-to-create-gmail-account-without-phone-number/
+! https://www•2-viruses•com/remove-ad-spam-press-allow-to-continue
+2-viruses.com##.active.prods-win.prod-download
+! https://github.com/iam-py-test/my_filters_001/issues/119
+cfoc.org###top_custom_banner
+cfoc.org##.custom_banner_top_btn
+||cfoc.org/combocleaner-download-mac/^$document
+||sensorstechforum.com/wp-content/uploads/2020/04/SpyHunter-Install-And-Free-Scan-$image
+sensorstechforum.com##[href$="ttps://sensorstechforum.com/spyhunter-download-and-install-instructions/"]
+sensorstechforum.com##.top_banner_custom
+sensorstechforum.com###win_top_new_hidden
+macsecurity.net##.banner
+macsecurity.net##.btn-download.btn-lg.btn
+! ¤¤¤ Restoro  ¤¤¤
+! https://www•windowsdispatch•com/fix-system-restore-0x81000203-error-code/
+windowsdispatch.com##strong
+! https://dlldownloads•com/xlive-dll/
+dlldownloads.com##.page-container > p
+! https://windowsreport•com/find-remove-duplicate-files-windows-10/
+windowsreport.com##.bnr-block
+! https://windowsreport•com/how-to-update-roblox/ (08/12/2022)
+windowsreport.com##div[class^=restoro-download] + section
+windowsreport.com##div[class^=refmed]
+! https://appuals•com/pr-connect-reset-error/
+appuals.com##.wptp
+appuals.com##p + div > div:first-of-type
+! ¤¤¤ "Driver" download sites that instead download PUP tools ¤¤¤
+||driver-soft.com^$document
+! ¤¤¤ Outbyte ¤¤¤
+wikidll.com,dllfile.net,dll-files.org##.detection-os
+wikidll.com,dllfile.net,dll-files.org##.detection-desc
+wikidll.com,dllfile.net,fix4dll.com,dll-files.org##.inner > .text
+wikidll.com,dllfile.net,fix4dll.com,dll-files.org##.btn-download
+wikidll.com,dllfile.net,fix4dll.com,dll-files.org##.product > .title-line
+wikidll.com,dllfile.net,fix4dll.com,dll-files.org##.repair-block
+/img/pcrepairkit.png^$domain=wikidll.com|dllfile.net|fix4dll.com|dll-files.org
+windll.com##.download-block
+windll.com##.dll > p
+dllfile.net##.sticky-link
+fix4dll.com##.file__download
+softwaretested.com##.st-alternative
+softwaretested.com##.snippet-content
+processlibrary.com##.bottom > .row:last-of-type
+||outbyte.com^$document
+! ¤¤¤ PC Reviver ¤¤¤
+! ¤¤¤ FixMyPC ¤¤¤
+! ¤¤¤ "DLL Helper" ¤¤¤
+azdll.net##.dllhelper-banner
+! ¤¤¤ WinThruster ¤¤¤
+||solvusoft.com^$document
+! Common scam domain patterns
+/^https?://(apps?|best|competition|game|mobile|play|prize|reward|sweeps)\d{2,8}\.[a-z-]{5,22}\d{1,8}\.(icu|life|live).*$/$~third-party,document
+/^https?:\/\/((?!www)[a-z]{3,5}\.)?[-0-9a-z]{6,}\.(?:com|fun|guru|life|online|pw|site|space|top)\/\/?\?o=[0-9a-z]{7}&u=[0-9a-z]{7}.*$/$document,match-case,domain=com|fun|guru|life|online|pw|site|space|top
+! https://github•com/AdguardTeam/AdguardFilters/issues/58737
+/^https?:\/\/(?:www\.)?[-0-9a-z]{14,}\.(?:biz|fun|live)\/[a-zA-Z]{10,}\.php\$/$document,domain=biz|fun|live
+! ——— Banner for "MSN New Tab" ———
+msn.com##.irisbanner
+! ——— Download sites that felt shoddy to me (Most of which, if not all of which, had real non-ad download links that contained malware exe files) ———
+! If you're in a situation where you need to torrent something, such as for hard-to-buy or region-locked games, or games that you own for consoles that lack accessible rip tools, you can at least try to use sites that have legit downloads with the actual game files.
+||freeroms.com^$document
+||portalroms.com^$document
+||romsmania.com^$document
+||portableroms.com^$document
+||yopcgames.com^$document
+||soft-load.com^$document
+||ps1games.online^$document
+||roms-download.com^$document
+||gamesgx.net^$document
+coolrom.com.au,coolrom.com##.download_link
+! ——— Browser extension store entries for notoriously poor or malicious adblocker forks ———
+! Note: Currently the Chrome Web Store entries only work properly for Chrome users on AdGuard for Windows/Mac, due to limitations placed on browser extensions; see https://github.com/gorhill/uBlock/wiki/Privileged-Pages
+! Chrome Web Store
+! Mozilla Add-ons
+! These entries can be used in Firefox with regular browser extensions (uBO|AdGuard Browser Extension|ABP) by opening about:config, removing the "addons.mozilla.com" part from "extensions.webextensions.restrictedDomains", and then creating a new string called "privacy.resistFingerprinting.block_mozAddonManager" (That exact capitalisation must be used) set to (Boolean) true.
+! Homepages
+||the1adblocker.com^$document
+! Other sites
+softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ad-guardian-plus."]
+softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adskiper."]
+softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-firefox."]
+softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
+softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
+||apps.apple.com/*/app/*/id1564900435^$document
+! ——— Typo squatting, misspellings, and honest TLD address bar mistakes ———
+||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||103.224.212.249^$document
+||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
+||snapchat.cm^$document,domain=~malware-typo-squatter-of-snapchat.com
+||facebook.cm^$document,domain=~malware-typo-squatter-of-facebook.com
+||wix.cm^$document,domain=~malware-typo-squatter-of-wix.com
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||199.59.243.222^$document
+|http://ww01.$document,domain=~very_very_extremely_frequently_used_in_malware_redirections.*
+! https://github.com/DevSpen/links/blob/master/src/links.txt
+||steamcommin*$document,domain=~likely-a-fake-malware-version-of-steamcommunity.com
+||steamconnu*$document,domain=~likely-a-fake-malware-version-of-steamcommunity.com
+||steancomm*$document,domain=~likely-a-fake-malware-version-of-steamcommunity.com
+||githubus.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||githubu.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||githu.com^$document,domain=~you-were-likely-looking-for-github.com
+||wgithub.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||githubuser.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||rgithub.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+||githubt.com^$document,domain=~you-were-likely-looking-for-githubusercontent.com
+! https://scammer•info/t/discord-nitro-scam-25/87887
+! ——— Frequently or previously frequently used to infiltrate and maliciously redirect sites ———
+||zeroredirect5.com^$document,domain=~malware_redirection_trains.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||54.209.22.226^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||54.91.125.197^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||52.202.53.245^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://35.175.38.64^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://35.168.147.213^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||34.230.160.215^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||3.226.8.132^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||3.216.243.46^$document
+! Source: desidertNO
+! Various ex-aﬀiliate links at www•zombooru•com
+||lasvegas-vacations.net^$document
+||ndsplitter.com^$document
+||satcom1.co.uk^$document
+||splitter.microxml.net^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||94.130.185.237^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||94.130.186.231^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||144.76.0.242^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||144.76.1.130^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||195.201.92.254^$document
+zombooru.com##a[href$="ttp://www.boorufurry.com/"]
+zombooru.com##a[href$="ttp://www.analbooru.com/"]
+zombooru.com##a[href$="ttp://www.hard55.com"]
+! https://github.com/DandelionSprout/adfilt/pull/167
+! https://github.com/AdguardTeam/AdguardFilters/issues/124611
+! (https://github.com/DandelionSprout/adfilt/issues/632)
+! ——— Found in witness reports online ———
+! Adblock Plus list maintainer weekly reports
+||pinoy-offers.com^
+||couponbybox.com^$document
+||newpage.in^$document
+/mcaf04/*=$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||34.204.214.165^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||54.85.113.62^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||54.205.83.61^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||54.210.193.115^$document
+||adblockerapp.com^$document,popup
+/^.*\.(xyz|pics)/[a-zA-Z0-9]{130,}\$/$document,script,subdocument,image
+/^.*\.(cloudfront\.net|xyz|pics)/[a-zA-Z0-9]{20,}/[a-zA-Z0-9]{25,}\+[a-zA-Z0-9+]{90,}\$/$document,script,subdocument,image
+||freevideoadblock.$document,popup
+||provideoadblocker.$document,popup
+||ultimatevideoadblock.$document,popup
+||videoadblocker-api.$document,popup
+||videoadblocker-pro.$document,popup
+||videoadblockerpro.$document,popup
+||videoadblockers.$document,popup
+||videoadblockertou.$document,popup
+||videoadblockextension.$document,popup
+! https://github.com/DandelionSprout/adfilt/issues/942
+! https://twitter•com/SUNgoddessOKAMI/status/1221295265195405315
+! https://github.com/AdguardTeam/AdguardFilters/issues/61838
+/scan-update-and-protect-your-browser.html$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/61755
+! https://github.com/AdguardTeam/AdguardFilters/issues/61743
+/^(https?://)?(www\.)?cunt[a-z]{3,8}\.com(/.*)?$/$document,popup
+! https://github.com/easylist/easylist/issues/6111
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||178.128.142.109^$document
+/^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||134.209.136.174^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||62.210.6.153^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||62.210.7.209^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||62.210.9.92^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||62.210.11.203^$document
+! https://maldita•es/malditobulo/2020/12/04/concurso-mercadona-ganar-tarjeta-regalo-100-euros-phishing/
+||notified-today.com^
+||new-message.email^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||167.99.249.47^$document
+! https://maldita•es/malditobulo/2020/12/02/lidl-regala-robot-cocina-silvercrest-monsieur-cuisine-encuesta/
+! https://maldita•es/malditobulo/2020/11/25/jordi-evole-el-hormiguero-bitcoin-revolution-timo-twitter/
+||moderncomputer.net^
+! https://maldita•es/malditobulo/2020/11/18/gobierno-tarjeta-debito-prepagada-covid-19-phishing-whatsapp/
+||version.gratis^
+! https://maldita•es/malditobulo/2020/11/18/no-no-es-cierto-que-amancio-ortega-haya-invertido-100-millones-en-bitcoin-revolution-es-una-web-falsa/
+||starpowders.github.io^
+! https://github.com/AdguardTeam/AdguardFilters/issues/69611
+/^https?://[a-z0-9-]{30,}\..*\.elasticbeanstalk\.com(/.*)?$/
+! https://github.com/AdguardTeam/AdguardFilters/issues/71721
+! https://github.com/AdguardTeam/AdguardFilters/issues/71369
+! https://github.com/AdguardTeam/AdguardFilters/issues/73623
+! https://github.com/AdguardTeam/AdguardFilters/issues/73627
+/^https?://([a-z-]{1,})?luck([a-z-]{1,})?\.club(/.*)?$/
+! https://github.com/AdguardTeam/AdguardFilters/issues/73133
+/^(https?://)?\d\d?\.[a-z0-9-]{1,}\.biz(/.*)?$/$document
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-428333
+||safe-offers.net^$document
+/bitcoinrevolution/lp.php^$document
+! https://github.com/DandelionSprout/adfilt/issues/188
+||best-prizes-202*.com^$document,domain=~malware_site.*
+||all-best-prize-202*.com^$document,domain=~malware_site.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||5.8.34.26^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||5.8.47.3^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||103.224.182.251^$document
+! https://github.com/DandelionSprout/adfilt/issues/193
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||5.79.71.205^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||5.79.71.225^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||85.17.31.82^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||85.17.31.122^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||178.162.203.202^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||178.162.203.211^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||178.162.203.226^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||178.162.217.107^$document
+! https://github.com/DandelionSprout/adfilt/issues/195
+! https://github.com/DandelionSprout/adfilt/issues/196
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||66.85.156.85^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||66.85.156.86^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||108.170.31.123^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||108.170.52.156^$document
+! https://github.com/DandelionSprout/adfilt/issues/198
+! https://www•bleepingcomputer•com/virus-removal/ (18/06/2021)
+! https://www•bleepingcomputer•com/virus-removal/remove-please-allow-to-watch-the-video
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||95.168.170.165^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||213.227.145.147^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||213.227.149.216^$document
+! https://twitter•com/adamziaja/status/1252234957679808513
+! https://blog•sucuri•net/2021/05/woocommerce-credit-card-skimmer•html
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||5.188.62.36^$document
+! https://github.com/DandelionSprout/adfilt/issues/223
+! https://github.com/DandelionSprout/adfilt/issues/224
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||69.49.231.244^$document
+! https://movsb•0x0•st/users/mia
+||5starhdporn.com^$subdocument,third-party
+! https://github.com/DandelionSprout/adfilt/issues/228
+! https://github.com/DandelionSprout/adfilt/issues/241
+! https://github.com/DandelionSprout/adfilt/issues/244
+://linkvertise.com/23001/OxygenU^$document
+||microsoftedge.microsoft.com/addons/detail/rick-roll-prank-extension/cafkeihpipimekealiblfbjcgnnchdoj^$document
+||microsoftedge.microsoft.com/addons/detail/image-find/oallgpknmoodlcklmhgfpgjkdencmnfd^$document
+||microsoftedge.microsoft.com/addons/detail/kpckgoaeejpoghdglooeibkoedpkgock^$document
+! https://github.com/DandelionSprout/adfilt/issues/251#issue-974102211
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||37.34.176.37^$document
+||auslogics.com^$document
+! (https://github.com/DandelionSprout/adfilt/issues/1076)
+@@|www.auslogics.com|
+||in-automate.brevo.com^
+! https://github.com/DandelionSprout/adfilt/issues/253
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||23.111.31.137^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||23.111.88.207^$document
+! https://github.com/DandelionSprout/adfilt/issues/254
+||onesafesoftware.com^$document
+! https://github.com/DandelionSprout/adfilt/issues/257
+||lucdream.com^$document
+||pesoaniz.com^$document
+||trc.*.co^$document,domain=~malware_redirection_trains.*
+||artofads.co^$document
+! https://github.com/DandelionSprout/adfilt/pull/266
+! https://www•virustotal•com/gui/domain/kirstialechulbard•space/relations
+! https://www•virustotal•com/gui/ip-address/198•54•117•244/relations
+! http://vxvault•net/ViriFiche•php?ID=44013
+! https://www•virustotal•com/gui/url/8066b87ad10ddb5466bc307bb48454139572f6c8c8f80a9734275ac89cf966af/detection
+! https://www•virustotal•com/gui/url/826c451929420c4da32552f967fb1cab6467405a29c65b23802aaadb6a8c7505/detection
+! https://safeweb•norton•com/report/show?url=192•3•110•170
+! https://forums•malwarebytes•com/topic/278209-removal-instructions-for-socialsearchconverter/
+||socialsearchconverter.com^$document
+! Copied over from https://github.com/uBlockOrigin/uAssets/issues/9848
+||tinyurl.com/gp84uz2^$document
+||mediafiire.com^$document
+! https://securelist•com/apkpure-android-app-store-infected/101845/
+! https://www•virustotal•com/gui/url/866a25343864f03dc5a10105fda523bfbb6ed09c486d07fd31ca2b5306440089/detection
+! https://www•virustotal•com/gui/url/9c66e331e455dc5c5c9d06e1a537580c9e4db279182d2285c07783e837806a16/detection
+! https://github.com/AdguardTeam/AdguardFilters/issues/91506#issuecomment-904080849
+! owned by the same people
+! https://www•virustotal•com/gui/file/c683bc3da4966110b419ac54d09a54ce798efdb51be398331d9ce011e2636fa9/community
+! https://www•virustotal•com/gui/url/5618023ed5a768d7f879c0d599b9ba7cff0e9171201981256eeaf5ce8eb09fdb/detection
+! https://www•virustotal•com/gui/url/8cf9ca3359f17cf92b9b3e5fdab30e29be23f08e66c8c5396c9410fcb91f7c3c/detection
+! https://www•virustotal•com/gui/url/46e095c35d83e2dd0b98df4b5844d3d87948de0c930a618600121020a514c801/detection
+! https://safeweb•norton•com/report/show?url=telete•in
+! https://www•siteadvisor•com/sitereport•html?url=telete•in
+! https://www•virustotal•com/gui/file/e63b2d03e3fee2d538f8bd721b61dd3641284fa941087d846dea6f15cab40308/community
+! https://www•virustotal•com/gui/url/fbbc8a671bff32539bd829a76f6df9f364a21ac2279922e64e3ec494a1669dd3/detection
+! https://www•virustotal•com/gui/domain/kiff•tech/relations
+! https://www•virustotal•com/gui/url/dc038496b1b5358b97f89440135ec91258b406c40859a2cd95983dc7a81e0cfa/detection
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.90.58.90^$document
+! https://www•virustotal•com/gui/file/e565ba89d034418fd26a5f642f6eeee4d72ee3b8dc69523419b7ca8dfd452730/community
+! https://www•virustotal•com/gui/url/e3a9189a1e1256beba8e0fc3abfeab6acb09f7f8cabfd973e22be9f77bb6886f/detection
+! https://github.com/DandelionSprout/adfilt/issues/267
+||mediafire.com/file/pj9jdm7iznc4d51/tekhacksnet_multi_loader.rar^$document
+! https://github.com/DandelionSprout/adfilt/pull/278
+!! https://www.virustotal.com/gui/file/da75c85fe037f9ff9ebbbd0b37dd2ff154f5e70a0dc6870286e0d3df6b8f246f/community
+!! https://www.virustotal.com/gui/file/717bfbdba55f9c2d820fde170c04fd70c3e0f907b635c13d0f29678ff781f665/community
+!! https://www.virustotal.com/gui/file/368afeda7af69f329e896dc86e9e4187a59d2007e0e4b47af30a1c117da0d792/community
+!! https://www.virustotal.com/gui/file/c0e40a12643436cb413235e385a6a90deeb6cc13b24458368fd7facb20ac0c81/community
+!! https://www.virustotal.com/gui/file/9f154115fa8045aa05f15f7cd1de9623ebe32e8ea400279ecb5dfa3596952e3b/community
+! https://github.com/DandelionSprout/adfilt/pull/281
+! https://www•virustotal•com/gui/file/4293c1d8574dc87c58360d6bac3daa182f64f7785c9d41da5e0741d2b1817fc7/community
+! https://www•virustotal•com/gui/file/0374ead74fa807fb1737d8829fdb5bad6c93779f6b9eb7162eddabff7a64acff/community
+! https://www•joesandbox•com/analysis/486636/0/html#domains
+! Relations to the original domain
+! https://github.com/blocklistproject/Lists/issues/497
+! Copied from «uBlock Filters - Badware Risks» because it has proven to be a very good entry
+! https://github.com/DandelionSprout/adfilt/issues/188#issuecomment-931700117
+! https://github.com/DandelionSprout/adfilt/issues/188#issuecomment-931742337 (Initial batch)
+! https://github.com/DandelionSprout/adfilt/issues/188#issuecomment-931753495
+! https://github.com/DandelionSprout/adfilt/issues/287
+! (https://github.com/DandelionSprout/adfilt/issues/904)
+/^(.*\.|.*//)?tkqlhce\.com/click-.*([?&][a-tv-z]{1,}(=[a-zA-Z0-9]{1,})?){1,}\$/$document
+! https://github.com/DandelionSprout/adfilt/issues/288
+||safelyonline.net^$document
+||browse-safe.net^$document
+||secure-access-*.gate23.xyz^$document
+||microsoftedge.microsoft.com/addons/detail/browse-safe/halaijeoccdjjoknnkcejljcimnfbmkf^$document
+! https://github.com/DandelionSprout/adfilt/pull/289
+||army-glo.scrollingsystem.com^$document
+||mcafee12.tt.omtrdc.net^$document
+! https://www•virustotal•com/gui/ip-address/70•32•1•32/relations
+||cd.org^$document
+! https://www•virustotal•com/gui/file/78f490e503c86eaaff5760197b9ff5308ed6e03161af13194a6c1e0cd95422de/community
+! https://github.com/DandelionSprout/adfilt/commit/f7f114945c83b339be5cdd848e229680d9918abb#commitcomment-57642875
+! https://github.com/DandelionSprout/adfilt/pull/298
+! https://www•virustotal•com/gui/file/ac5a95221b895545eb04cfea29693288d7b432ad313f6bfc9db2ddf86f085a63/community
+! https://www•virustotal•com/gui/file/3ef65ce27d39b037d75bdc16b197e04f3b391f76c2da5f2f755e2ded38bb9078/community
+! https://www•virustotal•com/gui/file/12013662c71da69de977c04cd7021f13a70cf7bed4ca6c82acbc100464d4b0ef/community
+! https://www•virustotal•com/gui/file/715eef1fb3bbf84ade848d97d4ec05d380cf8595298b51af134385de70be9d08/community
+||pcae.de^$document
+! https://www•virustotal•com/gui/file/4293c1d8574dc87c58360d6bac3daa182f64f7785c9d41da5e0741d2b1817fc7/community
+! https://www•virustotal•com/gui/file/3db0e385eb53a32d61a5a35908a99317868b571e4cf7079db67fd68604da662c/community
+! https://www•virustotal•com/gui/url/5b1dc9b2ec70e28b5f6cbb282a598a1b2ecd4df2aebb66953ca9194fa1c9c4fb
+! Domains which resolve to this (already blocked) IP - for users of HOSTs/Domains/uBlock Origin
+! https://www•virustotal•com/gui/url/b2936e74f35940d2f09cabf4e089a0d655e62a5fc08ad32e1fae79a62683683f?nocache=1
+! https://www•virustotal•com/gui/url/4c2c3cf2e4f5b9ac9765eb9c58f2756d8f0f4632ec707107afe3c111f4749025?nocache=1
+! https://www•virustotal•com/gui/file/a6e89d2bb1c2da1d852fb8e248f39cf7b3d4b0ea05a8d8f343d1b8e74d271d43/relations
+||driversupport.com^$document
+! A PUP and scam website
+||mycleanpc.com^$document
+! Related domains owned by the same company and used for payment (the first is for 'tech support' scams, the second for their 'ID protection')
+||ustechsupport.com^$document
+||mycleanid.com^$document
+||iolostore.com^$document
+! The main website for the MyCleanPC company
+||realdefen.se^$document
+! Vermilion Strike
+! https://www•virustotal•com/gui/file/294b8db1f2702b60fb2e42fdc50c2cee6a5046112da9a5703a548a4fa50477bc/relations
+! https://www•virustotal•com/gui/ip-address/160•202•163•100/relations
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-938167311
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-940500664
+&t=redn|$document
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-944612753
+! https://github.com/DandelionSprout/adfilt/pull/303
+! https://www•virustotal•com/gui/file/37328efa73c248b460aba605d7745b024f31ab7ab864e1af273e9a197a188f42/community
+! https://www•virustotal•com/gui/file/03e4533ba8874c2f4dcdb94bd135914fa4c22ed477d7c0395dc2322b6468e249/community
+! https://www•virustotal•com/gui/file/1a782cab036efa567c2c42b7bae9452bf735be72f0b00d68f6dcba48cea526fa/community
+! Relations to the domain above
+! https://www•virustotal•com/gui/file/8a39f18caa77d52e80bec05f584ec50e733a3be1e33551d8902e95b9b0bfe6c0/community
+! https://www•virustotal•com/gui/file/54054209c921a68f12a9b29d6e84f1b45cb417bc0b5a99356a245727e0a41e40/community
+! https://twitter•com/soranker0/status/1449491402409185283
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-950330114
+! https://github.com/iam-py-test/investigations/blob/main/2021/10/24/1.md#html-capture
+||google-yandex.$document
+/^(.*://|.*\.)?[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz(/.*)?$/$document
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-951321929
+! https://github.com/iam-py-test/investigations/blob/main/2021/10/26/1.md#domains
+! https://github.com/iam-py-test/investigations/blob/main/2021/11/1/1.md
+/beep.mp3^$domain=xyz|club|pro
+!!!?next_url=$document,popup (https://github.com/AdguardTeam/AdguardFilters/issues/108072#issuecomment-1021534226)
+?uclickhash=$document,popup
+! https://www•upwork•com/freelance-jobs/apply/Integarte-push-notification-for-chrome_~013c73ed9282225184/
+! https://github.com/iam-py-test/investigations/blob/main/2021/11/3/1.md
+! https://github.com/DandelionSprout/adfilt/pull/348
+! https://www•virustotal•com/gui/file/12013662c71da69de977c04cd7021f13a70cf7bed4ca6c82acbc100464d4b0ef/community
+! https://www•virustotal•com/gui/file/3bf1b7e9bdaeaa4a5619cf26b59767637bc44193df2a0470df263b98b1fe47fe/community
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-971512075
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-971495248
+! https://github.com/iam-py-test/investigations/blob/main/2021/11/15/1.md#iocs
+||trumops.com^$document
+! https://scammer•info/t/mcafee-phish/83725
+! https://www•virustotal•com/gui/file/4293c1d8574dc87c58360d6bac3daa182f64f7785c9d41da5e0741d2b1817fc7/community
+! https://github.com/iam-py-test/investigations/blob/main/2021/11/21/1.md
+||safelink.kadal.club^$document
+! https://github.com/uBlockOrigin/uAssets/issues/10536
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-974886953
+||tonightshookup.com^$document
+! https://www•virustotal•com/gui/url/a2524bba49ae71297d2b408b30d058700d9c80b5b1154924cafe190ec3e605a6/detection
+! https://www•virustotal•com/gui/file/2b2628a50d3b39b0fa2395d487bf62b00e37cdae847ff76ee58399bbe4e9f7b3/community
+! https://www•virustotal•com/gui/file/b320bc7a9151d70daca038c4356ca89bfcd4918bcd6f0f73683a27a6a72467ae/community
+! https://www•virustotal•com/gui/file/6146dfe56dcb49e1b843624a44e204754e15625a4f94b230b59a5cafc924f618/community
+! https://www•virustotal•com/gui/url/b333c49efa4d399e65c5e2d96a905b380acbca58a3e3052b7bd7cfcb3e0e81ee
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-977912975
+! https://www•tv2•no/nyheter/14368524/
+! https://www•tek•no/i/wOVv0o/
+! https://github.com/iam-py-test/investigations/blob/main/2021/11/24/1.md
+||ec2-3-238-75-201.compute-1.amazonaws.com^$document
+||ec2-54-177-49-112.us-west-1.compute.amazonaws.com^$document
+||ec2-44-192-106-88.compute-1.amazonaws.com^$document
+||ec2-52-53-211-120.us-west-1.compute.amazonaws.com^$document
+||mygametoa.com^$document
+! https://github.com/iam-py-test/investigations/blob/main/2021/11/25/1.md
+! https://github.com/uBlockOrigin/uAssets/pull/10599
+! https://github.com/uBlockOrigin/uAssets/pull/10620
+! https://www•virustotal•com/gui/file/d546509ab6670f9ff31783ed72875dfc0f37fa2b666bd5870eecaaed2ebea4a8/community
+! https://github.com/uBlockOrigin/uAssets/pull/10647
+! https://github.com/iam-py-test/investigations/blob/main/2021/11/28/1.md
+||money-mod.com^$document
+! https://github.com/iam-py-test/investigations/blob/main/2021/11/28/2.md
+||bestlifeoffer20.com^$document
+! https://scammer•info/t/password-stealer/84348
+! https://bazaar•abuse•ch/sample/462a689d171f543c10efa08e963996d382585b67a6b298ec40d64f924adfb47a/
+||bit.ly/3p8kN5V^$document
+! https://www•virustotal•com/gui/file/12013662c71da69de977c04cd7021f13a70cf7bed4ca6c82acbc100464d4b0ef/community
+! https://scammer•info/t/pihishing-site-claiming-to-hold-a-ups-package-that-needs-payment/84466
+://ups-dk.$document,denyallow=dk|nu|se|no|fo|gl|ups.com,domain=ups-dk.*
+! https://www•virustotal•com/gui/url/269d374b629d7896da1f9e7449bd5afecf6284a9a564244f96a71e5192363635?nocache=1
+! https://www•virustotal•com/gui/file/50fd813cf8fe981e6aee179f8ba394e5527c5128b84c328f9f8347cd994bbc42/community
+! https://www•virustotal•com/gui/file/2ea599605c4d65902943f12e1114a71af7a40fa7dffbf018b0ee3e7a61aaeaa3/community
+! https://github.com/DandelionSprout/adfilt/pull/395
+! https://www•huorong.cn/info/1618397948649•html - possible malware
+! https://www•huorong•cn/info/1617368984641.html
+! https://www•nrk.no/vestfoldogtelemark/1.15750360
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||132.148.220.142^$document
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-986306768
+||chess-progress.ru^$document
+! https://scammer•info/t/there-are-things-in-the-game-that-will-interest-you-trojan/84908
+||discord.com/invite/askara^$document
+! https://scammer•info/t/fake-facebook-login-page/84939
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-988127908
+! https://www•tek.no/i/lVeQAe/
+! https://www•nkom.no/aktuelt/ikke-trykk-pa-lenker-i-sms--for-du-er-helt-sikker/
+! https://github.com/iam-py-test/investigations/blob/main/2021/12/13/1.md
+! https://scammer•info/t/crypto-scammers-onceagain/85354
+! https://www•virustotal•com/gui/file/12013662c71da69de977c04cd7021f13a70cf7bed4ca6c82acbc100464d4b0ef/community
+! https://github.com/iam-py-test/investigations/blob/main/2021/12/14/1.md
+! https://github.com/DevSpen/links/pull/3
+! https://bazaar•abuse•ch/sample/357226dff2f3309f8271b5a7c2cc816aa8fb779275357dce9b98b30357951210/
+! https://github.com/uBlockOrigin/uBlock-issues/issues/1774#issuecomment-1000722777
+||landing.marketstm.com^$document
+! fake MediaFire scam domains
+! https://bazaar•abuse•ch/sample/84d93b2fd2597da5d611165cbad0b252569a837c56a94a42849f2bedc8af033a/
+! fake Flash Player
+||lekms.com^$document
+||microsoftedge.microsoft.com/addons/detail/ecosia-the-search-engin/fhfidmlnclkepgapcephbaciajegheco^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/103475
+! https://github.com/AdguardTeam/AdguardFilters/issues/108571
+! fake human verification scam
+! start form - reported for abuse
+||form.run/@free-discord-nitro-generator-no-survey-verification^$document
+||reward4spot.com^$document
+! Other
+! https://www•virustotal•com/gui/file/9d40ae0439ddc594b2cf64e21ad0fdea9bb440524298e3a6bcfcc1fb417f1ed2/relations
+! "Press Allow to continue"
+||upload-4ever.com^$document
+! Fake Discord Nitro
+||myget.org/feed/discord-nitro-hack/package/nuget/Free-discord-nitro-codes-2021^$document
+! https://twitter•com/iam_py_test/status/1496259425493225472
+! https://github.com/AdguardTeam/AdguardFilters/issues/111970
+/^(.*\.|.*://)?[a-z0-9-]{2,}trk\.xyz(/.*)?$/$document,popup,domain=~malware_redirection_trains.*
+! https://bazaar•abuse•ch/sample/d7308dab0110ae3bc79fd15024f5ccfcbd6e676b7c42b27a0112506e8357a6dc/ → https://app•any•run/tasks/bc53e7a9-5fd7-4682-894d-11e48e9ea89a#
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1074966240
+! https://twitter•com/MBThreatIntel/status/1509956416311742464
+! https://bazaar•abuse•ch/sample/b959fb160dac2a15b8e65c15e2b1738d356c03e13623588bc70aab825c57660a/
+||freeversioncrack.com^$document
+! https://www•telia•no/kundeservice/mobil/malware-flubot-android/
+!+ NOT_OPTIMIZED
+/^https?://(www\.)?[a-z0-9-]{1,}\.[a-z]{2,17}/[a-z0-9]/\?[a-z0-9.-]{8,}\$/$document
+! A Discord conversation I had about Throneful
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||195.201.253.130^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||195.201.253.131^$document
+! The bottom download button on https://www•sushichop•com/
+/trk2/*?lddomain=$document,domain=~very_likely_a_malware_redirection.*
+||cpmverdirect.com^$document,domain=~malware_redirection_trains.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||15.197.244.48^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||96.47.230.67^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||96.47.230.68^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||96.47.230.69^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||96.47.230.70^$document
+! https://securitytrails•com/list/ns/ns1•fastthinkingdns•com
+! https://github.com/AdguardTeam/AdguardFilters/issues/121544
+||com/landers/iphone*_spin$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/121772
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||31.220.27.134^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/122757
+://adbrbk.$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/123544
+/mcafee-safe-browsing/?*=*&*=*&*=*&*=*&*=*&*=$document,popup,domain=~fake_site_with_malware.*
+! https://twitter•com/iam_py_test/status/1545164642346930176
+! https://github.com/AdguardTeam/AdguardFilters/issues/123968
+! https://github.com/AdguardTeam/AdguardFilters/issues/124620
+! https://kommunikasjon•ntb•no/pressemelding/power-advarer-mot-sms-svindel?publisherId=17847615&releaseId=17937583
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||158.247.212.220^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||165.227.168.212^$document
+! https://new•reddit•com/r/engrish/comments/w6u4uy/received_this_text_message_yesterday_i_am_very/
+! https://dinside•dagbladet•no/mobil/ikke-la-deg-friste/76730599
+! https://github.com/AdguardTeam/AdguardFilters/issues/125285
+! https://github.com/AdguardTeam/AdguardFilters/issues/125300
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||139.45.197.236^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/128029
+||desideriosoldi.com^$document,popup
+||freddostagione.com^$document,popup
+||husmicto.com^$document,popup
+||video-ad-skipper.com^$document,popup
+||quick-speedtest.com^$document,popup
+||setaware.com^$document,popup
+||splendidus.net^$document,popup
+||directsearchonline.com^$document,popup
+||instaspeedtest.com^$document,popup
+||tutatagliente.com^$document,popup
+||potestainsula.com^$document,popup
+||motherpipe.net^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||51.91.66.125^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||51.178.76.105^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||147.135.253.55^$document
+! https://github.com/uBlockOrigin/uAssets/issues/14569 → https://www•virustotal•com/gui/url/b819586938326577d759d8024abe3e0e6de1c853d6b67824daf6f613fba0f63b/detection (https://app•any•run/tasks/5914a712-1a73-4432-b89a-ca0627a24ade)
+! https://github.com/AdguardTeam/AdguardFilters/issues/129414
+!+ NOT_OPTIMIZED
+/^http://imgblaze.net/[a-z0-9]{6}\$/$document,popup
+!+ NOT_OPTIMIZED
+/^http://imgblaze.net/[a-z0-9]{6}\$/$third-party,subdocument
+! https://github.com/AdguardTeam/AdguardFilters/issues/131156
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||146.19.169.98^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||146.19.169.99^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/132079
+/pushredirect/?$document,domain=~malware_redirection_trains.*
+! https://github.com/AdguardTeam/AdguardFilters/issues/134355
+! https://github.com/AdguardTeam/AdguardFilters/issues/134903
+! Random Discord servers
+||newntflix-$document,popup
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||162.241.124.200^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/135815
+||adsstar.in^$document,popup
+||clickcafe.in^$document,popup
+||easyviewz.com^$document,popup
+||ishortify.com^$document,popup
+||jeevarajtamil.com^$document,popup
+||subs2me.com^$document,popup
+||techjeevaraj.com^$document,popup
+||tnlink.in^$document,popup
+||tnvalue.in^$document,popup
+||webhostingtips.club^$document,popup
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||157.90.71.190^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/135924
+! https://github.com/AdguardTeam/AdguardFilters/issues/136390
+||glthub.$document,popup
+! https://app•any•run/tasks/67907c11-6877-4c38-932f-2cf09ee4e434
+! https://github.com/AdguardTeam/AdguardFilters/issues/137635
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||44.228.230.225^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||50.112.124.170^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||100.20.104.229^$document
+! Spambots who posted malware shortener links in the Legitimate URL Shortener discussion thread
+||link.sv^$document,popup
+||4.fo^$document,popup
+! https://github.com/AdguardTeam/AdguardFilters/issues/139106
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||44.236.213.34^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||52.24.156.12^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||52.25.6.134^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||100.20.13.49^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/139667
+! https://github.com/DandelionSprout/adfilt/issues/747
+! https://github.com/DandelionSprout/adfilt/issues/748
+*norgesalg.com^$document,popup
+*salgnorge.com^$document,popup
+! https://www•bleepingcomputer•com/news/security/hackers-push-malware-via-google-search-ads-for-vlc-7-zip-ccleaner/
+://rufus.download.$document,popup
+://virtualbox.download.$document,popup
+://vidiq.download.$document,popup
+://gimp.download.$document,popup
+://sublimetext.download.$document,popup
+://java.download.$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||185.106.94.139^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.90.109.196^$document
+! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1401711872
+! https://github.com/AdguardTeam/AdguardFilters/issues/144514
+! https://new•reddit•com/r/engrish/comments/10zs6f6/low_budget_scam/
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||54.219.218.169^$document
+! https://new•reddit•com/r/engrish/comments/10z8r2u/well_you_tried/
+! https://www•adressa•no/nyheter/trondheim/i/BWkdkw/trodde-hun-skulle-faa-en-pakke-i-posten-ble-lurt-for-titusener
+! https://github.com/AdguardTeam/AdguardFilters/issues/142955
+! https://github.com/AdguardTeam/AdguardFilters/issues/143281
+! Unsuited for wildcarding
+! https://github.com/AdguardTeam/AdguardFilters/issues/144823
+!+ NOT_OPTIMIZED
+://landings.*_slots/?partner=$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/145513
+||redirect.newprogrammatic.click^$document,domain=~likely_a_malware_redirection.*
+/zcvisitor/*?campaignid$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+! https://github.com/DandelionSprout/adfilt/issues/808
+! https://www•mandiant•com/resources/blog/tracking-evolution-gootloader-operations (26/01/2023)
+! https://github.com/AdguardTeam/AdguardFilters/issues/148560
+/land/*&afftrack=$document,domain=~likely_a_malware_redirection.*
+! Comments on Slack
+! https://www•adressa.no/nyheter/trondheim/i/Moq2wR/svindlere-kaarer-vinnere-i-konkurranser-gir-en-daarlig-foelelse-aa-forklare-at-dette-bare-er-tull
+||sitey.me^$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/151479
+! https://github.com/AdguardTeam/AdguardFilters/issues/152407
+! https://github.com/AdguardTeam/AdguardFilters/issues/152945
+&trafficsource=Kadam&$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/154701
+! Slack comments
+! https://github.com/AdguardTeam/AdguardFilters/issues/155298
+/^.*&[a-z]{1,2}=[a-zA-Z0-9]{0,}%[a-zA-Z0-9%]{1000,}\$/$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/155936
+! https://github.com/AdguardTeam/AdguardFilters/issues/156487
+! https://new•reddit•com/r/engrish/comments/15080hg/a_message_i_just_got_from_a_scammer/
+! https://github.com/AdguardTeam/AdguardFilters/issues/156573
+||go.redirected*/click?^$document,popup,domain=~malware_redirection_trains.*
+! https://github.com/AdguardTeam/AdguardFilters/issues/157308
+! https://github.com/AdguardTeam/AdguardFilters/issues/158316
+://trk.*.run/$document,domain=~very_likely_a_malware_redirection_train.*
+! https://github.com/AdguardTeam/AdguardFilters/issues/159157
+||livejasmin.com/*&origin=$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/161364
+! (https://github.com/AdguardTeam/AdguardBrowserExtension/issues/2497)
+/^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
+! https://www•tv2•no/nyheter/innenriks/advarer-ikke-klikk-pa-lenken/16040614/
+! https://new•reddit•com/r/engrish/comments/16lg4i1/seems_legit/
+||reschedule-delivery.ups.com.$document
+! https://github.com/libre-tube/LibreTube/issues/4409
+! https://github.com/RPiList/specials/issues/1353
+! https://github.com/AdguardTeam/AdguardFilters/issues/167667
+! https://github.com/DandelionSprout/adfilt/discussions/932#discussioncomment-7872103
+||betzykrisesenter.no^$document
+||citra2010oslo.no^$document
+||digiter.no^$document
+||easydisplay.no^$document
+||kjaerra.no^$document
+||kontrast1.no^$document
+||norskmatkultur.no^$document
+||norskoffroadteknikk.no^$document
+||nyematoghelse.no^$document
+||securmarksykkel.no^$document
+||thecoolgirl.no^$document
+||topshineauto.no^$document
+||vossblues.no^$document
+||yttersiden.no^$document
+!!!://162.214.80.$document
+! https://github.com/DandelionSprout/adfilt/discussions/932#discussioncomment-7873648
+! https://github.com/AdguardTeam/AdguardFilters/issues/172569
+! https://github.com/AdguardTeam/AdguardFilters/issues/173925
+! Based on a tip from my secretary
+! https://github•com/AdguardTeam/AdguardFilters/issues/176214
+! https://github.com/AdguardTeam/FiltersRegistry/issues/925
+! https://github.com/AdguardTeam/FiltersRegistry/pull/927
+! https://github.com/AdguardTeam/AdguardFilters/issues/179170
+! https://github.com/AdguardTeam/AdguardFilters/issues/181966
+! https://github.com/AdguardTeam/AdguardFilters/issues/183432
+! https://github.com/AdguardTeam/AdguardFilters/issues/184671
+! https://sol•no/81812194/ / https://github.com/DandelionSprout/adfilt/discussions/932#discussioncomment-10360231
+://193.143.1.*$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/189905
+/?nw=1&tb=false&cw=$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/196657
+! https://github.com/AdguardTeam/AdguardFilters/issues/196657 + Tumblr spammers
+! An E-mail tip I got (26/01/2025)
+||cnshermir.com^$document
+||daimlerhldg.com^$document
+||dbfzdn.cn^$document
+||galaauto.com^$document
+||gongkong800.com^$document
+||jingchuan.org^$document
+||jszmgj.com^$document
+||longfengwushi.com^$document
+||medge.cn^$document
+||newcaiyi.com^$document
+||partga.com^$document
+||pcpr.cn^$document
+||powerstonetool.com^$document
+||rinvay.cn^$document
+||ttcmh.com^$document
+||weixiucnc.com^$document
+||weixiusk.com^$document
+||whmingsheng.com^$document
+||yj-huayuan.com^$document
+||ynjkdl.com^$document
+||yuxc.xyz^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||103.155.214.207^$document
+! Inspired by https://github.com/AdguardTeam/AdguardFilters/issues/197908
+||flawflessas.com^$document
+.microsoft.com.chrome.$document
+! https://github.com/AdguardTeam/AdguardFilters/issues/201064
+! https://github.com/AdguardTeam/AdguardFilters/issues/202010
+||adblockermax.com/land$document,popup
+! Various other reports
+! https://github.com/DandelionSprout/adfilt/issues/1129
+! Though not _inherently_ malware, at least 1 spambot on this repo had direct ties to that site
+||eyestore.tebex.io^$document
+! https://github.com/DandelionSprout/adfilt/issues/1150
+! https://github.com/AdguardTeam/AdguardFilters/issues/207878
+! https://github.com/AdguardTeam/AdguardFilters/issues/20787[2-5]
+! https://github.com/DandelionSprout/adfilt/issues/1164
+! https://github.com/AdguardTeam/AdguardFilters/issues/211351
+||unesmunbrebers.com^$document,popup
+||filinnetirt.com^$document,popup
+||freshsubz.com^$document
+! https://www•gdatasoftware•com/blog/2025/09/38265-steam-blockblasters-game-downloads-malware
+! https://github•com/prodaft/malware-ioc/blob/master/LARVA-208/SteamCampaign•md
+! Inspired by https://nyheder•tv2•dk/samfund/2025-10-23-sundheddk-faar-hundreder-af-henvendelser-om-falske-smser
+! ——— Standard malware that I stumbled upon on my own ———
+! http://www•toorgle•net/results•php?q=fetishkitsch&security=666
+##a[href*=".downloadprovider.me/"]
+toorgle.net##.join
+! https://www•riverbender•com/articles/details/two-charged-in-connection-of-the-stallon-drug-raid-in-wood-river-46877•cfm
+! Various ex-aﬀiliate links at www•zombooru•com
+! Spam comments at https://www•accountkiller•com/en/delete-htcdev-account
+! The Jerma985 Discord server
+! https://flclever•weebly•com/pixie-hollow-mini-games•html (06/05/2021)
+! Various search results for 'kelloggs tresor' in Norwegian (30/05/2021)
+/pgxhtogrzm-$document
+! Fake security sites that think every single domain is a supervirus and which try to make you install PUP (Most commonly SpyHunter)
+||howtofix.guide^$document
+||combo-fix.com^$document
+||regrunreanimator.com^$document
+||cleanpcinfections.com^$document
+||defeatpcvirus.com^$document
+! Search results for "olimpica tv italia"
+! (https://github.com/DandelionSprout/adfilt/issues/1049)
+.advancedhosters.com^$document,domain=~mirror.advancedhosters.com|~www.advancedhosters.com
+/^(https?://)?192\.243\.59\.\d{1,3}(/.*)?$/$document
+! rule34hentaiNET when uBlock Filters and AdGuard Base are turned oﬀ
+! Googling Aksel Hennie (Results for prior week) in late July 2021
+! Other
+||redirectme.net^$document,domain=~malware_redirection_trains.*
+||anthargo.com^$document
+! Domains on IPs known to host Discord Nitro spambots
+! AS209813 (https://github.com/AdguardTeam/AdguardFilters/issues/114618#issuecomment-1100702530; currently specific to tools that support CIDR blocking)
+://5.8.67.$document
+://5.101.45.$document
+://5.188.178.$document
+://5.188.200.$document
+://5.188.203.$document
+://5.189.217.$document
+://5.189.252.$document
+://46.148.113.$document
+://46.148.114.$document
+://46.161.31.$document
+://91.243.41.$document
+://91.243.42.$document
+/^5\.8\.4[4-7]\.\d{1,3}\$/
+/^5\.101\.4[67]\.\d{1,3}\$/
+/^5\.188\.5[01]\.\d{1,3}\$/
+/^5\.188\.17[67]\.\d{1,3}\$/
+/^5\.188\.19[45]\.\d{1,3}\$/
+/^5\.189\.21[89]\.\d{1,3}\$/
+/^31\.184\.20[0-3]\.\d{1,3}\$/
+/^185\.238\.15[2-5]\.\d{1,3}\$/
+! https://github.com/AdguardTeam/AdguardFilters/issues/120349
+! https://twitter•com/medicinehelp/status/1550250932394409985
+! https://securitytrails•com/list/ip/147•135•16•27
+||2spendless.$document
+||acrx.online^$document
+||acrx.org^$document
+||acrx.xyz^$document
+||acrxcards.$document
+||acrxcoupon.$document
+||acrxcoupons.$document
+||acrxnews.$document
+||americanconsultantrx.$document
+||americanconsultantsrx.$document
+||drugcoupons.xyz^$document
+||freemedicine.info^$document
+||medication.coupons^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||147.135.16.27^$document
+! https://www•google•no/search?q=mlp+g5&newwindow=1&tbm=isch&oq=mlp+g5&sclient=img
+||ingeniovirtual.com^$document
+! https://scambiofigu•forumcommunity•net/?t=57482915
+! Only links to another site's (APKPure) APKs, yet tries to promote its own browser extension on the alleged download pages, which comes across as suspicious
+apkfab.com##.tip-extension
+! Google results for 'Katy and Bob：Cake Café powerpc' (04/11/2022)
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||185.87.148.199^$document
+! Google results for 'horse tales: emerald valley ranch mobygames' (05/11/2022)
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.136.49.35^$document
+! Browsing around for Tajik newssites
+! Work put into https://raw.githubusercontent.com/DandelionSprout/adfilt/master/GDPR%20451%20List.txt
+! Other
+||sharedmega.com^$document
+cdburnerxp.se##[href*="/downloadsetup.exe"]
+||sexy-egirls-leaked.com^$document
+||only2leaked.co^$document
+||only4leaked.co^$document
+||thotsbay-leaked.com^$document
+||cbox.ws^$domain=chicks.cam
+! https://github.com/blocklistproject/Lists/issues/933
+! https://app•any•run/tasks/679e9afa-eb19-4414-a086-e280a779a448 and https://tria•ge/230217-xd8nksgc9x/behavioral2
+! https://forums•malwarebytes•com/topic/295588-support-scam-supportclientexe-and-screenconnectwindowsclientexe/ (account required)
+! https://forums•malwarebytes•com/topic/295605-techsupport-scam/ (account required)
+! https://app•any•run/tasks/0f8b5786-177a-45c0-a1de-32e0d68beff2
+! https://github.com/RPiList/specials/issues/948#issuecomment-1458739160
+! Commonly set as a proxy on hacked devices (https://www•virustotal•com/gui/url/e610e7d09c614529cb8c64185717769946f5c86044ac5c31c6608e604995f577/detection)
+! Various domains on https://securitytrails•com/list/ip/72•14•178•174
+|http://www6.$document,domain=~often_used_in_malware_redirections.*
+|http://www1.*&kw$document,domain=~often_used_in_malware_redirections.*
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.33.2.79^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.33.18.44^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.33.20.235^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.33.23.183^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.33.30.197^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.56.79.23^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||45.79.19.196^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||72.14.178.174^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||72.14.185.43^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||96.126.123.244^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||173.255.194.134^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||198.58.118.167^$document
+! https://hutudole•com/za-mu-%c9%93ullo-da-matakan-da-za-su-hana-al%c6%99alai-kwa%c9%97ayin-cin-hanci-ba-tinubu/
+! https://dnpedia•com/tlds/topm•php bizarrely listing "anahitagirted•uno" as the 622th most visited domain worldwide
+! Fake Gymshark webshops
+-norgesalg.com^$document
+*danmarks.com^$document
+*norgno.com^$document
+*norges.com^$document
+*norgebutikk.com^$document
+*norgestore.com^$document
+*norge-no.com^$document
+*norgestores.com^$document
+*skobutikks.com^$document
+*butikksoslo.com^$document
+! A scam SMS I got
+! Overly dedicated E-mail spammers
+! Google results for «SodaStream site:no cranberry»
+/^https?://[a-z0-9.-]{1,}\.([a-z]{3,}|[a-z][a-tv-z]|[a-qs-z][a-z])/.*(go\.php|redirect|url=|\?re=).*\.(xn--p1ai|рф|%D1%80%D1%84)\$/$document,domain=~malware_redirection_results.*
+||adservice.google.*/ddm/clk/$document,domain=~malware_redirection_results.*
+/ad_click/q?&url=$document,domain=~malware_redirection_results.*
+! Laughably blatant fraud site
+! Fraudulent art thefts for money on Google Image Search, e.g. 'cassandra tangled site:tumblr.com suit'
+/^.*\.[a-z]{2,18}\/Stars\.php\?.*$/$match-case,all
+.php?iid=*&cid=$document
+.asp?iid=*&cid=$document
+.med.br/?q=artstation-$document
+/artstation-*-[fanart]-$document,domain=~artstation.com
+=artstation-*-[fanart]-$document,domain=~artstation.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/173830
+! More search terms than what can be counted with a supercomputer (11/03/2024)
+! Scam E-mails I've got
+! Visibly fake item descriptions and prices
+! https://walyou•com/gameloft-dungeon-hunter-5-dragon-mania-legends-apple-tv-3029/
+! https://github.com/hagezi/dns-blocklists/issues/4907
+! https://cside.dev/blog/over-5k-wordpress-sites-caught-in-wp3xyz-malware-attack
+! Tumblr spammers
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://104.21.82.132^$document,popup
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||172.67.158.57^$document,popup
+||sites.google.com/view/*wincashapp^$document
+! R34US
+! https://github.com/AdguardTeam/FiltersRegistry/issues/654#issuecomment-2629098471
+||gitlab.gitlab.gitlab.$document,popup
+||gitlab.git.git.$document,popup
+||gitlab.gitlab.git.$document,popup
+||git.git.git.git.$document,popup
+||git.gitlab.gitlab.$document,popup
+! Sites linked to by GitHub spambots who create fake issue reports
+||modernvison.com^$document
+! https://github.com/DandelionSprout/adfilt/issues/1128 de facto
+||googleapis.info^$document
+||odintara.com^$document
+!+ NOT_PLATFORM(windows, mac, android, cli)
+||54.174.156.141^$document
+! Searched for Breaking Bad Jesse memes on Qwant (29/04/2025)
+://old.sermitsiaq.ag^$document,domain=subdomain_stolen_from_sermitsiaqs_owners.*
+||xss.my.id^$third-party
+! Seemingly mass-generated fake "marketing company" sites that seem to serve no visible purpose (12/05/2025)
+||taylorcopies.com^$document
+||atypicalnorms.com^$document
+||beastlyendeavors.com^$document
+||buzzteksavvy.com^$document
+||lolo.sickbeard.com^$document
+||detentionteach.com^$document
+||echoic.org^$document
+||explainedrumored.com^$document
+||hopss.com^$document
+||lc1.akcelia.net^$document
+||lolo.sickcache.com^$document
+||metrics.williamsf1.com^$document
+||wildhaskins.co.uk^$document
+||otherspree.com^$document
+||pearlsepic.com^$document
+||rainingamptp.com^$document
+||secure.rsb-gateway.com^$document
+||viewercubs.com^$document
+||vps-11d38732.vps.ovh.ca^$document
+||worstairtags.com^$document
+||139-99-239-47.dynamic-ip.hinet.net^$document
+||47.ip-139-99-239.net^$document
+! Occasionally used on Sotwe when AdGuard Base is not turned on (and likely pretty often if neither AdGuard Base or "uBlock Filters - Ads" are turned on)
+! Other entries
+||animeplaynow.com^$document,popup
+||playanimenow.com^$document,popup
+||awecrptjmp.com^$document,popup
+! Spambot(s?) on R34X³
+||24hdeepnude.com^$document
+! gelbo²ruCOM
+! bdsmx-pornCOM
+! fetish2230•rssing•com
+! xmegadriveCOM
+! Various postal credential fraud syndicates
+||postnorg-dk*
+! icepornCOM
+/adx_iframe_$third-party
+! https://www•drvhub•net/devices/network/asix/ax88178a-usb-2-0-to-gigabit-ethernet-adapter
+||az-partners.net^
+drvhub.net##.driver-item__install
+! I myself managed to fall for their scam, to the tune of the low-3-digits of Euros.
+||divingshop.nl^$document,domain=~bank_transaction_scammers.*
+! Now this one I did not fall for, however.
+|https://undefined/
+! https://news•ycombinator•com/item?id=45308596
+! https://new•reddit•com/r/CryptoScams/comments/1nlma8m/potential_crypto_phishing_scam_masquerading_as/
+! https://github.com/hagezi/dns-blocklists/issues/7407
+! Found when I tested other domains in this list (06/11/2025)
+! ——— A hĳacked link that had previously been on https://sims•fandom•com/wiki/Game_guide:Fog_emitter ———
+! Extreme amounts of PUP to a comical extent
+||driverpack.io^$document,domain=~has_extreme_amounts_of_pup_in_it.*
+! https://github.com/DandelionSprout/adfilt/issues/1124
+! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
+! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
+||unofficialtwrp.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
+||androidweblog.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
+||androidgreek.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
+||ytechb.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
+||gadgetstwist.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
+||gadgetsfarms.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
+||techorfy.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
+! ——— Temp hotfix for https://github.com/AdguardTeam/AdGuardHome/issues/1835 ———
+!!!/\\/$document
+!!!@@/_udp\.(.*)?\\/
+! Oddly enough, there seems to be no need to couple it with "@@/:\\/", since web browsers convert Windows filenames from backwards to forwards slashes.
+! ——— Spam in comment sections across the internet about "working" from "home" ———
+! ——— Upgrades HTTP requests to HTTPS on sites that are not known to do it automatically ———
+! ——— Anti-'Malware comments' (Currently Disqus-specific) ———
+! https://myip•ms/info/limitexcess
+! https://myip•ms/info/memberarea/My_Account•html
+! ——— Dummy entry used to give myself credit, for when this list is used in large compilation hosts-type files (Although they are fully allowed by my licence to use this list, it'd be nice for me and end-users to see where it's being used, as a few of them do not credit their sources) ———
+||if-a-large-hosts-file-contains-this-entry-then-it.uses-dandelion-sprouts-anti-malware-list-as-a-source-list.data^$document
+! ——— Anti-PUP (WIP) ———
+! This section covers ones that would not normally be found in EasyList or AdGuard Base, for instance McAfee WebAdvisor (which also tries to change the search engine)
+||webadvisorc.rest.gti.mcafee.com^
+||mip.api.mcafeewebadvisor.com^
+! https://get•adobe•com/no/reader/
+get.adobe.com###offersInformationPane
+! Gigabyte APP Center (which use sneaky tricks to install a Norton 360 trial period; May require «AdGuard for Windows»)
+||mb.download.gigabyte.com/FileList/Swhttp/DriverUpd/ANTIVIRUS^
+! ——— Carried over from "Anti-'Asset Flip Shovelware' List" in response to Microsoft Store's non-existent quality control ———
+www.microsoft.com##a[data-pfns][href*=imposter]
+www.microsoft.com##a[data-pfns][href*=impostor]
+www.microsoft.com##a[data-pfns][href*=super-bob]
+www.microsoft.com##a[data-pfns][href*=-craft-]
+www.microsoft.com##a[data-pfns][href*=-crafts]
+www.microsoft.com##a[data-pfns][href*="/sonik-"]
+www.microsoft.com##a[data-pfns][href*=-run-faster]
+www.microsoft.com##a[data-pfns][href*=super][href*=craft]
+www.microsoft.com##a[data-pfns][href*=a-mong]
+www.microsoft.com##a[data-pfns][href*=among-them]
+www.microsoft.com##a[data-pfns][href*=hero-wars]
+www.microsoft.com##a[data-pfns][href*=grand-city]
+www.microsoft.com##a[data-pfns][href*="/craft-"]
+www.microsoft.com##a[data-pfns][href*=battle-ground]
+www.microsoft.com##a[data-pfns][href*=pixel][href*=gun]
+www.microsoft.com##a[data-pfns][href*=city][href*=stunt]
+www.microsoft.com##a[data-pfns][href*="/fps-"]
+www.microsoft.com##a[data-pfns][href*=car][href*=racer]
+www.microsoft.com##a[data-pfns][href*=flappy]
+www.microsoft.com##a[data-pfns][href*=pixelmon]
+www.microsoft.com##a[data-pfns][href*=us-among]
+www.microsoft.com##a[data-pfns][href*="ario-world/"]
+www.microsoft.com##a[data-pfns][href*=need-for-rac]
+www.microsoft.com##a[data-pfns][href*=-sim-20]
+www.microsoft.com##a[data-pfns][href*=car-racing]
+www.microsoft.com##a[data-pfns][href*=birth-game]
+www.microsoft.com##a[data-pfns][href*=bus-sim]
+www.microsoft.com##a[data-pfns][href*=pregnancy-game]
+www.microsoft.com##a[data-pfns][href*=crazy-for-speed]
+www.microsoft.com##a[data-pfns][href*=poke-go]
+www.microsoft.com##a[data-pfns][href*=cs][href*=strike]
+www.microsoft.com##a[data-pfns][href*=unofficial-game]
+www.microsoft.com##a[data-pfns][href*=crash-the-fox]
+www.microsoft.com##a[data-pfns][href*=go-fast]
+www.microsoft.com##a[data-pfns][href*=go-run]
+www.microsoft.com##a[data-pfns][href*=super][href*=marlo]
+www.microsoft.com##a[data-pfns][href*=doctor][href*=kid]
+www.microsoft.com##a[data-pfns][href*=block][href*=survival]
+www.microsoft.com##a[data-pfns][href*=jail-break]
+www.microsoft.com##a[data-pfns][href*=ball][href*=world][href*=cup]
+www.microsoft.com##a[data-pfns][href*=friday-night-][href*=funkin]
+www.microsoft.com##a[data-pfns][href*=horse][href*=racing]
+www.microsoft.com##a[data-pfns][href*="/puzzle-for-"]
+www.microsoft.com##a[data-pfns][href*=squid-game]
+www.microsoft.com##a[data-pfns][href*=spiderhuman]
+www.microsoft.com##a[data-pfns][href*=spider][href*=fight]
+www.microsoft.com##a[data-pfns][href*=strange][href*=rope]
+www.microsoft.com##a[data-pfns][href*=inject][href*=game]
+www.microsoft.com##a[data-pfns][href*=animal][href*=crossing]
+www.microsoft.com##a[data-pfns][href*="-for-girls/"]
+www.microsoft.com##a[data-pfns][href*=ear-doctor]
+www.microsoft.com##a[data-pfns][href*=skin-doctor]
+www.microsoft.com##a[data-pfns][href*=amoung-us]
+www.microsoft.com##a[data-pfns][href*=poop-game]
+www.microsoft.com##a[data-pfns][href*=crossing][href*=horizons]
+www.microsoft.com##a[data-pfns][href*="/mini-games-for-"]
+www.microsoft.com##a[data-pfns][href*="/fnf-"]
+www.microsoft.com##a[data-pfns][href*=-fnf-]
+www.microsoft.com##a[data-pfns][href*="-memory-game/"]
+www.microsoft.com##a[data-pfns][href*=city-crime]
+www.microsoft.com##a[data-pfns][href*=city][href*=driver]
+www.microsoft.com##a[data-pfns][href*=poppy][href*=playtime]
+www.microsoft.com##a[data-pfns][href*=-mairo-]
+www.microsoft.com##a[data-pfns][href*=-cario-]
+www.microsoft.com##a[data-pfns][href*=pet-vet-]
+www.microsoft.com##a[data-pfns][href*=paw-][href*=-patrol]:not([href*=paw-patrol])
+www.microsoft.com##a[data-pfns][href*=rope-hero]
+www.microsoft.com##a[data-pfns][href*=scary][href*=granny]
+www.microsoft.com##a[data-pfns][href*=supercar][href*=drift]
+www.microsoft.com##a[data-pfns][href*=piano-tile]
+www.microsoft.com##a[data-pfns][href*=piano-game]
+www.microsoft.com##a[data-pfns][href*="horror-mod/"]
+www.microsoft.com##a[data-pfns][href*=spider-hero]
+www.microsoft.com##a[data-pfns][href*="/pop-it-"]
+www.microsoft.com##a[data-pfns][href*=-tiles-hop-]
+www.microsoft.com##a[data-pfns][href*=amanda][href*=adventure]
+www.microsoft.com##a[data-pfns][href*=poppy][href*=-run-]
+www.microsoft.com##a[data-pfns][href*=-dash-run-]
+www.microsoft.com##a[data-pfns][href*=people-melon]
+www.microsoft.com##a[data-pfns][href*=melon-human]
+www.microsoft.com##a[data-pfns][href*=-rope-police]
+www.microsoft.com##a[data-pfns][href*=soonic]
+www.microsoft.com##a[data-pfns][href*=amoong]
+www.microsoft.com##a[data-pfns][href*=run-fall]
+www.microsoft.com##a[data-pfns][href*=endless-running]
+www.microsoft.com##a[data-pfns][href*=princess-runner]
+www.microsoft.com##a[data-pfns][href*=poppyes]
+www.microsoft.com##a[data-pfns][href*=preganat]
+www.microsoft.com##a[data-pfns][href*=baby-hazel]
+www.microsoft.com##.card[data-bi-cn*=imposter i]
+www.microsoft.com##.card[data-bi-cn*=impostor i]
+www.microsoft.com##.card[data-bi-cn*="super bob" i]
+www.microsoft.com##.card[data-bi-cn*=" craft " i]
+www.microsoft.com##.card[data-bi-cn*= crafts i]
+www.microsoft.com##.card[data-bi-cn^="sonik " i]
+www.microsoft.com##.card[data-bi-cn*=" run faster" i]
+www.microsoft.com##.card[data-bi-cn*=super i][data-bi-cn*=craft i]
+www.microsoft.com##.card[data-bi-cn*="a mong" i]
+www.microsoft.com##.card[data-bi-cn*="among them" i]
+www.microsoft.com##.card[data-bi-cn*="hero wars" i]
+www.microsoft.com##.card[data-bi-cn*="grand city" i]
+www.microsoft.com##.card[data-bi-cn^="craft " i]
+www.microsoft.com##.card[data-bi-cn*="battle ground" i]
+www.microsoft.com##.card[data-bi-cn*=pixel i][data-bi-cn*=gun i]
+www.microsoft.com##.card[data-bi-cn*=city i][data-bi-cn*=stunt i]
+www.microsoft.com##.card[data-bi-cn^="fps " i]
+www.microsoft.com##.card[data-bi-cn*=car i][data-bi-cn*=racer i]
+www.microsoft.com##.card[data-bi-cn*=flappy i]
+www.microsoft.com##.card[data-bi-cn*=pixelmon i]
+www.microsoft.com##.card[data-bi-cn*="us among" i]
+www.microsoft.com##.card[data-bi-cn$="ario world" i]
+www.microsoft.com##.card[data-bi-cn*="need for rac" i]
+www.microsoft.com##.card[data-bi-cn*=" sim 20" i]
+www.microsoft.com##.card[data-bi-cn*="car racing" i]
+www.microsoft.com##.card[data-bi-cn*="birth game" i]
+www.microsoft.com##.card[data-bi-cn*="bus sim" i]
+www.microsoft.com##.card[data-bi-cn*="pregnancy game" i]
+www.microsoft.com##.card[data-bi-cn*="crazy for speed" i]
+www.microsoft.com##.card[data-bi-cn*="poke go" i]
+www.microsoft.com##.card[data-bi-cn*=cs i][data-bi-cn*=strike i]
+www.microsoft.com##.card[data-bi-cn*="unofficial game" i]
+www.microsoft.com##.card[data-bi-cn*="crash the fox" i]
+www.microsoft.com##.card[data-bi-cn*="go fast" i]
+www.microsoft.com##.card[data-bi-cn*="go run" i]
+www.microsoft.com##.card[data-bi-cn*=super i][data-bi-cn*=marlo i]
+www.microsoft.com##.card[data-bi-cn*=doctor i][data-bi-cn*=kid i]
+www.microsoft.com##.card[data-bi-cn*=block i][data-bi-cn*=survival i]
+www.microsoft.com##.card[data-bi-cn*="jail break" i]
+www.microsoft.com##.card[data-bi-cn*=ball i][data-bi-cn*=world i][data-bi-cn*=cup i]
+www.microsoft.com##.card[data-bi-cn*="friday night " i][data-bi-cn*=funkin i]
+www.microsoft.com##.card[data-bi-cn*=horse i][data-bi-cn*=racing i]
+www.microsoft.com##.card[data-bi-cn^="puzzle for " i]
+www.microsoft.com##.card[data-bi-cn*="squid game" i]
+www.microsoft.com##.card[data-bi-cn*=spiderhuman i]
+www.microsoft.com##.card[data-bi-cn*=spider i][data-bi-cn*=fight i]
+www.microsoft.com##.card[data-bi-cn*=strange i][data-bi-cn*=rope i]
+www.microsoft.com##.card[data-bi-cn*=inject i][data-bi-cn*=game i]
+www.microsoft.com##.card[data-bi-cn*=animal i][data-bi-cn*=crossing i]
+www.microsoft.com##.card[data-bi-cn$=" for girls" i]
+www.microsoft.com##.card[data-bi-cn*="ear doctor" i]
+www.microsoft.com##.card[data-bi-cn*="skin doctor" i]
+www.microsoft.com##.card[data-bi-cn*="amoung us" i]
+www.microsoft.com##.card[data-bi-cn*="poop game" i]
+www.microsoft.com##.card[data-bi-cn*=crossing i][data-bi-cn*=horizons i]
+www.microsoft.com##.card[data-bi-cn^="mini games for " i]
+www.microsoft.com##.card[data-bi-cn^="fnf " i]
+www.microsoft.com##.card[data-bi-cn*=" fnf " i]
+www.microsoft.com##.card[data-bi-cn$=" memory game" i]
+www.microsoft.com##.card[data-bi-cn*="city crime" i]
+www.microsoft.com##.card[data-bi-cn*=city i][data-bi-cn*=driver i]
+www.microsoft.com##.card[data-bi-cn*=poppy i][data-bi-cn*=playtime i]
+www.microsoft.com##.card[data-bi-cn*=" mairo " i]
+www.microsoft.com##.card[data-bi-cn*=" cario " i]
+www.microsoft.com##.card[data-bi-cn*="pet vet " i]
+www.microsoft.com##.card[data-bi-cn*="paw " i][data-bi-cn*="patrol" i]:not([data-bi-cn*="paw patrol" i])
+www.microsoft.com##.card[data-bi-cn*="rope hero" i]
+www.microsoft.com##.card[data-bi-cn*=scary i][data-bi-cn*=granny i]
+www.microsoft.com##.card[data-bi-cn*=supercar i][data-bi-cn*=drift i]
+www.microsoft.com##.card[data-bi-cn*="piano tile" i]
+www.microsoft.com##.card[data-bi-cn*="piano game" i]
+www.microsoft.com##.card[data-bi-cn$="horror mod" i]
+www.microsoft.com##.card[data-bi-cn*="spider hero" i]
+www.microsoft.com##.card[data-bi-cn^="pop it " i]
+www.microsoft.com##.card[data-bi-cn*=" tiles hop " i]
+www.microsoft.com##.card[data-bi-cn*=amanda i][data-bi-cn*=adventure i]
+www.microsoft.com##.card[data-bi-cn*="poppy" i][data-bi-cn*=" run " i]
+www.microsoft.com##.card[data-bi-cn*=" dash run " i]
+www.microsoft.com##.card[data-bi-cn*="people melon" i]
+www.microsoft.com##.card[data-bi-cn*="melon human" i]
+www.microsoft.com##.card[data-bi-cn*="rope police" i]
+www.microsoft.com##.card[data-bi-cn*=soonic i]
+www.microsoft.com##.card[data-bi-cn*=amoong i]
+www.microsoft.com##.card[data-bi-cn*=" run fall" i]
+www.microsoft.com##.card[data-bi-cn*="endless running" i]
+www.microsoft.com##.card[data-bi-cn*="princess runner" i]
+www.microsoft.com##.card[data-bi-cn*=poppyes i]
+www.microsoft.com##.card[data-bi-cn*=preganat i]
+www.microsoft.com##.card[data-bi-cn*="baby hazel" i]
+www.microsoft.com##.card[data-bi-cn*="city car " i]
+www.microsoft.com##.card[data-bi-cn*=vegas i][data-bi-cn*=driving i]
+www.microsoft.com##.card[data-bi-cn*="ro blox" i]
+www.microsoft.com##.card[data-bi-cn^=amogus i]
+www.microsoft.com##.card[data-bi-cn*=granny i][data-bi-cn*=escape i]
+www.microsoft.com##.card[data-bi-cn*=" city driv" i]
+www.microsoft.com##.card[data-bi-cn*=driving i][data-bi-cn*=multiplayer i]
+www.microsoft.com##.card[data-bi-cn*=" car " i][data-bi-cn*=" real simulat" i]
+www.microsoft.com##.card[data-bi-cn*="racing city" i]
+www.microsoft.com##.card[data-bi-cn*="fly car " i]
+www.microsoft.com##.card[data-bi-cn^="noob " i]
+www.microsoft.com##.card[data-bi-cn*="driver simulat" i]
+www.microsoft.com##.card[data-bi-cn*="truck sim " i]
+www.microsoft.com##.card[data-bi-cn*="bus parking" i]
+www.microsoft.com##.card[data-bi-cn*=bike i][data-bi-cn*=stunt i]
+www.microsoft.com##.card[data-bi-cn*="simulator driv" i]
+www.microsoft.com##.card[data-bi-cn*=stick i][data-bi-cn*=nether i]
+www.microsoft.com##.card[data-bi-cn*=stick i][data-bi-cn*=parkour i]
+www.microsoft.com##.card[data-bi-cn*=" cargo truck " i]
+www.microsoft.com##.card[data-bi-cn*=zombie i][data-bi-cn$=" z" i]
+www.microsoft.com##.card[data-bi-cn*=zombie i][data-bi-cn*=gun i]
+www.microsoft.com##.card[data-bi-cn*=zombie i][data-bi-cn*=shoot i]
+!!!www.microsoft.com##.card[data-bi-cn*=zombie i][data-bi-cn*=survival i]
+www.microsoft.com##.card[data-bi-cn*=zombie i][data-bi-cn*=armageddon i]
+www.microsoft.com##.card[data-bi-cn*=zombie i][data-bi-cn*=craft i]
+www.microsoft.com##.card[data-bi-cn*="baby taylor" i]
+www.microsoft.com##.card[data-bi-cn*=craft i][data-bi-cn*=parkour i]
+www.microsoft.com##.card[data-bi-cn*="burn racing" i]
+www.microsoft.com##.card[data-bi-cn*=car i][data-bi-cn*=robot i]
+www.microsoft.com##.card[data-bi-cn*=stick i][data-bi-cn*=shoot i]
+www.microsoft.com##.card[data-bi-cn*="paintbal " i]
+www.microsoft.com##.card[data-bi-cn*="runnig " i]
+www.microsoft.com##.card[data-bi-cn*=sccoer i]
+www.microsoft.com##.card[data-bi-cn*=fly i][data-bi-cn*=driv i]
+www.microsoft.com##.card[data-bi-cn*="car chase" i][data-bi-cn*=racing i]
+www.microsoft.com##.card[data-bi-cn*=city i][data-bi-cn*=truck i]
+www.microsoft.com##.card[data-bi-cn*=block i][data-bi-cn*=parkour i]
+www.microsoft.com##.card[data-bi-cn*=hand i][data-bi-cn*=doctor i]
+www.microsoft.com##.card[data-bi-cn*=hand i][data-bi-cn*=hospital i]
+www.microsoft.com##.card[data-bi-cn^="bus racing" i]
+www.microsoft.com##.card[data-bi-cn^="ice princess " i]
+www.microsoft.com##.card[data-bi-cn^="bus " i][data-bi-cn*=simulation i]
+www.microsoft.com##.card[data-bi-cn*=noob i][data-bi-cn*=hacker i]
+www.microsoft.com##.card[data-bi-cn*=noob i][data-bi-cn*=push i]
+www.microsoft.com##.card[data-bi-cn^="miner" i][data-bi-cn*=" craft " i]
+www.microsoft.com##.card[data-bi-cn*=parking i][data-bi-cn*="3d" i]
+www.microsoft.com##.card[data-bi-cn*=parkour i][data-bi-cn*="3d" i]
+www.microsoft.com##.card[data-bi-cn*=noob i][data-bi-cn*=blox i]
+www.microsoft.com##.card[data-bi-cn*=noob i][data-bi-cn*=war i]
+www.microsoft.com##.card[data-bi-cn*=sky i][data-bi-cn*=drive i][data-bi-cn*=car i]
+www.microsoft.com##.card[data-bi-cn^=stick i][data-bi-cn*="3d" i]
+www.microsoft.com##.card[data-bi-cn*="truck fire" i]
+www.microsoft.com##.card[data-bi-cn*="driving service" i]
+www.microsoft.com##.card[data-bi-cn*=" vs zombies" i]:not([data-bi-cn*=plant i])
+www.microsoft.com##a[data-pfns][data-pfns*=pedriapps]
+www.microsoft.com##a[data-pfns][data-pfns*=gameboxstudios]
+www.microsoft.com##a[data-pfns][data-pfns*=singleton]
+www.microsoft.com##a[data-pfns][data-pfns*=kankygames]
+www.microsoft.com##a[data-pfns][data-pfns*=adilogames]
+www.microsoft.com##a[data-pfns][data-pfns*=onetapgames]
+www.microsoft.com##a[data-pfns][data-pfns*=deeterstudio]
+www.microsoft.com##a[data-pfns][data-pfns*=hassndev]
+www.microsoft.com##a[data-pfns][data-pfns*="muid."]
+www.microsoft.com##a[data-pfns][data-pfns*=viviangrgames]
+www.microsoft.com##a[data-pfns][data-pfns*="gamesmnia."]
+www.microsoft.com##a[data-pfns][data-pfns*="studioslug."]
+www.microsoft.com##a[data-pfns][data-pfns*=appdevlo]
+www.microsoft.com##a[data-pfns][data-pfns*=mcahitstore]
+www.microsoft.com##a[data-pfns][data-pfns*="codethislabs."]
+www.microsoft.com##a[data-pfns][data-pfns*="roseapp."]
+www.microsoft.com##a[data-pfns][data-pfns*="appmediastudio."]
+www.microsoft.com##a[data-pfns][data-pfns*="barleygamesstudio."]
+www.microsoft.com##a[data-pfns][data-pfns*="braditgamesstudio."]
+www.microsoft.com##a[data-pfns][data-pfns*="chandlergamesstudio."]
+www.microsoft.com##a[data-pfns][data-pfns*="ryandev."]
+www.microsoft.com##a[data-pfns][data-pfns*="pawpatrol."]
+www.microsoft.com##a[data-pfns][data-pfns*=talgliando]
+www.microsoft.com##a[data-pfns][data-pfns*="html5."]
+www.microsoft.com##a[data-pfns][data-pfns*="cbgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="ccgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cdgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cegame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cfgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cggame."]
+www.microsoft.com##a[data-pfns][data-pfns*="chgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cigame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cjgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="ckgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="clgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cmgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cngame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cpgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cqgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="crgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="csgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="ctgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cugame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cvgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="cwgame."]
+www.microsoft.com##a[data-pfns][data-pfns*="zagames."]
+www.microsoft.com##a[data-pfns][data-pfns*="zcgames."]
+www.microsoft.com##a[data-pfns][data-pfns*="zopagames."]
+www.microsoft.com##a[data-pfns][data-pfns*="cygame."]
+www.microsoft.com##a[data-pfns][data-pfns*="tacogames."]
+www.microsoft.com##a[data-pfns][data-pfns*="bravogame."]
+www.microsoft.com##a[data-pfns][data-pfns*="ihabdev."]
+www.microsoft.com##a[data-pfns][data-pfns*="maxgamesdev."]
+www.microsoft.com##a[data-pfns][data-pfns*="gametabllc."]
+www.microsoft.com##a[data-pfns][data-pfns*="amongonline."]
+www.microsoft.com##a[data-pfns][data-pfns*=lupygames]
+www.microsoft.com##a[data-pfns][data-pfns*="juliept."]
+www.microsoft.com##a[data-pfns][data-pfns*=caoucaoua]
+www.microsoft.com##a[data-pfns][data-pfns*="gameboxstudio."]
+www.microsoft.com##a[data-pfns][data-pfns*="carracing."]
+www.microsoft.com##a[data-pfns][data-pfns*=dressupgamefor]
+www.microsoft.com##a[data-pfns][data-pfns*=brianeducation]
+www.microsoft.com##a[data-pfns][data-pfns*=gamdev]
+www.microsoft.com##a[data-pfns][data-pfns*=gambild]
+www.microsoft.com##a[data-pfns][data-pfns^="1"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="2"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="3"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="4"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="5"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="6"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="7"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="8"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="9"][data-pfns*="games."]
+www.microsoft.com##a[data-pfns][data-pfns^="1"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="2"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="3"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="4"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="5"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="6"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="7"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="8"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="9"][data-pfns*="game."]
+www.microsoft.com##a[data-pfns][data-pfns^="1"][data-pfns*="dev."]
+www.microsoft.com##a[data-pfns][data-pfns^="2"][data-pfns*="dev."]
+www.microsoft.com##a[data-pfns][data-pfns^="3"][data-pfns*="dev."]
+www.microsoft.com##a[data-pfns][data-pfns^="4"][data-pfns*="dev."]
+www.microsoft.com##a[data-pfns][data-pfns^="5"][data-pfns*="dev."]
+www.microsoft.com##a[data-pfns][data-pfns^="6"][data-pfns*="dev."]
+www.microsoft.com##a[data-pfns][data-pfns^="7"][data-pfns*="dev."]
+www.microsoft.com##a[data-pfns][data-pfns^="8"][data-pfns*="dev."]
+www.microsoft.com##a[data-pfns][data-pfns^="9"][data-pfns*="dev."]
+! All legitimate Pac-Man games would use "pac-man" links with a dash
+www.microsoft.com##a[data-pfns][href*=pacman]
+www.microsoft.com##a[data-pfns][href*=pac-men]
+! https://eclypsium•com/blog/supply-chain-risk-from-gigabyte-app-center-backdoor/
+|http://mb.download.gigabyte.com/FileList/Swhttp/LiveUpdate4^
+! (Presumably anonymous) E-mail tips
+! https://github.com/AdguardTeam/AdguardFilters/issues/145513
+||amazonaws.com^$document,popup,badfilter
+||amazonaws.com^$document,badfilter
+||amazonaws.com^$badfilter
+! Inspired by various reports in the early hours of 5 January 2024
+! Inspired by https://github.com/DandelionSprout/adfilt/issues/1095
+! Yet more Google searches
+! Domains stolen by casino SEO spammers
+||aussie-gamer.com^$document,domain=the-site-was-stolen-by-casino-link-spammers.*
+! Brazilian mobsters trying to DDoS Cisco with TXT-type DNS requests
+|cisco.com|$dnstype=TXT
+|cloudflare.com|$dnstype=TXT
+|adobe.com|$dnstype=TXT
+|atlassian.com|$dnstype=TXT
+|apple.com|$dnstype=TXT
+|google.com|$dnstype=TXT
+! Illicit "parking" services or related to such.
+://ww4.$document,domain=~ww4.ikea.com|~ww4.sig-ge.ch|~ww4.autotask.net|~ww4.pornhoarder.org
+://ww5.$document,domain=~ww5.ikea.com|~ww5.msu.ac.zw|~ww5.autotask.net|~ww5.pornhoarder.tv
+://ww6.$document,domain=~ww6.generali.pt|~ww6.autotask.net|~ww6.pornhoarder.org
+://ww7.$document,domain=~ww7.be|~ww7.readsnk.com|~ww7.autotask.net|~ww7.pornhoarder.tv
+!!!://ww8.$document,domain=~ww8.co|~ww8.ikea.com|~ww8.tiki.ne.jp|~ww8.erovoice.us|~ww8.anyanime.com|~ww8.bakushpal.az|~ww8.tokyoghoulre.com|~ww8.readonepiece.com|~ww8.autotask.net (Needed way more whitelistings than I had expected.)
+://ww9.$document,domain=~ww9.ikea.com|~ww9.tiki.ne.jp|~ww9.sakura.ne.jp|~ww9.generali.pt|~ww9.itau.com.br|~ww9.autotask.net|~ww9.pornhoarder.tv
+://ww10.$document,domain=~ww10.autotask.net|~ww10.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww11.$document,domain=~ww11.autotask.net|~ww11.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww12.$document,domain=~ww12.autotask.net|~ww12.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww13.$document,domain=~ww13.autotask.net|~ww13.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww14.$document,domain=~ww14.autotask.net|~ww15.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww15.$document,domain=~ww15.nl|~ww15.autotask.net|~ww15.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww16.$document,domain=~ww16.autotask.net|~ww16.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww17.$document,domain=~ww17.autotask.net|~ww17.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww18.$document,domain=~ww18.autotask.net|~ww18.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww19.$document,domain=~ww19.autotask.net|~ww19.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww20.$document,domain=~ww20.autotask.net|~ww20.pornhoarder.tv|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww21.$document,domain=~ww21.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww22.$document,domain=~ww22.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww23.$document,domain=~ww23.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww24.$document,domain=~ww24.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww25.$document,domain=~ww25.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww26.$document,domain=~ww26.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww27.$document,domain=~ww27.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww28.$document,domain=~ww28.autotask.net|~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww29.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww30.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww31.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww32.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww33.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww34.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww35.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww36.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww37.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww38.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww39.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww40.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww41.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww42.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww43.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww44.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww45.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww46.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww47.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww48.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww49.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+://ww50.$document,domain=~practically_always_leads_to_a_domain_parking_service_known_for_malware.*
+! e.g. picnicnetworkORG (04/05/2025)
+! Parking services' IP addresses
+! Bouncing hard-to-close (but admittedly empty) popups on NSFW sites like viperTO
+.to/popconsole.php|
+! Sus(picious) search results for YouTube videos that claim to have craсks for Adоbe products. (https://github.com/DandelionSprout/adfilt/issues/1197)
+! ——— Entries that are and/or were in "uBlock Filters — Ads" and/or "uBlock Filters — Badware Risks" but which aren't in AdGuard Base or EasyList ———
+! https://github.com/DandelionSprout/adfilt/pull/395
+! https://www•huorong•cn/info/1531309921141.html
+! https://github.com/uBlockOrigin/uAssets/pull/9656
+! https://www•huorong•cn/info/1526627586130.html
+! https://www•huorong•cn/info/1577158839403.html
+! https://www•huorong•cn/info/1598957552515.html
+! https://github.com/uBlockOrigin/uAssets/pull/10017
+! Other
+! For when one really doesn't want to have a harder time with uBO's log error checker.
+! Very experimental entry; see https://github.com/DandelionSprout/adfilt/issues/950 and https://www.techspot.com/news/77949-ccleaner-could-install-avast-anti-virus-without-permission.html

@@ -1,9 +1,9 @@
-! Checksum: 2NgNTLLk41cA8PHRjy43Gg
-! Diff-Path: ../patches/8_optimized/8_optimized-s-1761343824-3600.patch
+! Checksum: r9VQQc4wU9jRJ8xkDe34hg
+! Diff-Path: ../patches/8_optimized/8_optimized-s-1762110586-3600.patch
 ! Title: AdGuard Dutch filter (Optimized)
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.8.73
-! TimeUpdated: 2025-10-24T22:06:46+00:00
+! Version: 2.0.8.76
+! TimeUpdated: 2025-11-02T19:06:09+00:00
 ! Expires: 10 days (update frequency)
 -reclameplaatjes/
 /adbron.
@@ -1507,7 +1507,6 @@ weer.nl#?#.shadow-lvl-2:-abp-has(a[href^="https://www.voordeeluitjes.nl/"])
 wielerflits.nl#?#.widget-container:-abp-has(.h3.mb-4:-abp-contains(Wielerdeals))
 wielerflits.nl#?#li.list-item.list-item-aside:-abp-has(.badge:-abp-contains(Ad))
 wielerflits.nl#?#li.list-item.list-item-default:-abp-has(span:-abp-contains(Ad))
-wintersport.nl#?#.mb-6:-abp-contains(gesponsord)
 wkdarts.nl#?#.wpb_wrapper:-abp-has(div:-abp-contains(#advertentie))
 bokt.nl#@#.ad-body
 gratisaftehalen.nl#@#.ads-image
@@ -1610,6 +1609,9 @@ gpblog.com#$#aside[class^="Ad_"] { position: absolute !important; left: -3000px 
 omroepbrabant.nl#$#.ad-banner-container { position: absolute!important; left: -3000px!important; }
 handbalstartpunt.nl#$##advertentie-top { height: 0!important; }
 omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -4000px!important; }
+funda.nl##div[data-testid="halfpage-ad"]
+wintersport.nl##.wintersport-banner
+wintersport.nl##.row:has(> .col > .row--dense .v-chip__content)
 ||azurewebsites.net/*?player_*[max_ad_dur]=*[adslot]=*&VPAID=
 moviemeter.nl##.small-leaderboard
 deondernemer.nl##div[class^="adBlock"]
@@ -1878,6 +1880,7 @@ bnnvara.nl,npo.nl,npodoc.nl,vpro.nl#%#//scriptlet('json-prune-fetch-response', '
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_dutch
 !+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+wintersport.nl#@?#.mb-6:contains(gesponsord)
 moviemeter.nl#%#//scriptlet('trusted-suppress-native-method', 'document.write', '"adswag.nl"', 'prevent')
 puna.nl#@#.raw-html-component
 @@||2mdn.net/instream/html5/ima3.js$domain=puna.bbvms.com|puna.nl

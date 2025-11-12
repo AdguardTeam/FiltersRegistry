@@ -1,9 +1,9 @@
-! Checksum: zgQWwkhMGUi8EpeSX31+7A
-! Diff-Path: ../patches/8_optimized/8_optimized-s-1761343842-3600.patch
+! Checksum: sDbRXr72YNOelOyK15OTEw
+! Diff-Path: ../patches/8_optimized/8_optimized-s-1762110621-3600.patch
 ! Title: AdGuard Dutch filter (Optimized)
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.8.73
-! TimeUpdated: 2025-10-24T22:06:46+00:00
+! Version: 2.0.8.76
+! TimeUpdated: 2025-11-02T19:06:09+00:00
 ! Expires: 12 hours (update frequency)
 -reclameplaatjes/
 /adbron.
@@ -1507,7 +1507,6 @@ weer.nl#?#.shadow-lvl-2:-abp-has(a[href^="https://www.voordeeluitjes.nl/"])
 wielerflits.nl#?#.widget-container:-abp-has(.h3.mb-4:-abp-contains(Wielerdeals))
 wielerflits.nl#?#li.list-item.list-item-aside:-abp-has(.badge:-abp-contains(Ad))
 wielerflits.nl#?#li.list-item.list-item-default:-abp-has(span:-abp-contains(Ad))
-wintersport.nl#?#.mb-6:-abp-contains(gesponsord)
 wkdarts.nl#?#.wpb_wrapper:-abp-has(div:-abp-contains(#advertentie))
 bokt.nl#@#.ad-body
 gratisaftehalen.nl#@#.ads-image
@@ -1616,6 +1615,9 @@ omroepbrabant.nl#$#.ad-banner-container { position: absolute!important; left: -3
 handbalstartpunt.nl#$##advertentie-top { height: 0!important; }
 omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -4000px!important; }
 ||svonm.com/*config.json$replace=/"enabled": true\,/"enabled":false\,/i,important
+funda.nl##div[data-testid="halfpage-ad"]
+wintersport.nl##.wintersport-banner
+wintersport.nl##.row:has(> .col > .row--dense .v-chip__content)
 ||azurewebsites.net/*?player_*[max_ad_dur]=*[adslot]=*&VPAID=
 moviemeter.nl##.small-leaderboard
 deondernemer.nl##div[class^="adBlock"]
@@ -1887,6 +1889,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_dutch
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+wintersport.nl#@?#.mb-6:contains(gesponsord)
 moviemeter.nl#%#//scriptlet('trusted-suppress-native-method', 'document.write', '"adswag.nl"', 'prevent')
 puna.nl#@#.raw-html-component
 @@||2mdn.net/instream/html5/ima3.js$domain=puna.bbvms.com|puna.nl

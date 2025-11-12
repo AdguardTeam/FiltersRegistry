@@ -1,9 +1,9 @@
-! Checksum: Bo4kudOKAiRcAAp+mrOIvA
-! Diff-Path: ../patches/20/20-s-1761571264-3600.patch
+! Checksum: hmwSi0xFALQQ6vjYYjsC7g
+! Diff-Path: ../patches/20/20-s-1762816257-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.24.25
-! TimeUpdated: 2025-10-27T13:17:04+00:00
+! Version: 2.0.24.50
+! TimeUpdated: 2025-11-10T23:07:21+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -59,6 +59,25 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+callie.com#$#.vi-app { display: none !important; }
+callie.com#%#//scriptlet('remove-class', 'app-tips', '.wrapper > div[class]')
+store.dji.com#%#//scriptlet('trusted-set-local-storage-item', 'top-banner-mobile-custom-banner-app-29437', '$now$')
+m.made-in-china.com##.downapp
+m.made-in-china.com##a[href^="https://made-in-china.onelink.me/"]
+stylewe.com##.layout-header__download-app-tips
+lebensmittelwarnung.de##.lmw-teaser
+lrb.co.uk##.app-cta-block
+player.fm#%#//scriptlet('set-cookie', 'qrPopupShown', 'true')
+pacificparadiseindian.com.au##div[data-class="app_download_banner"]
+dazeddigital.com##.article-main-content > .grid:has(a[href^="https://play.google.com/store/apps/details"])
+dazeddigital.com##.club-promo-strip
+bietigheimerzeitung.de##div[data-b-title="BHZ-R ePaper"]
+hepsiburada.com##details[class^="sf-smart-banner-"]
+e-shop.gr##.sidebar-apps
+ozdilekteyim.com##ozd-mobile-app-download
+moviebox.*##.pc-guide-mask
+mobiletrans.wondershare.com##.footer-float-block
+mobiletrans.wondershare.com#%#//scriptlet('prevent-addEventListener', '', '/modalLeave|mobileEnterApp/')
 customer.licard.ru#%#//scriptlet('set-session-storage-item', 'modalClosed', 'true')
 hokify.*##.bg-color-banner-to-mobile
 happymod.*##.righthm
@@ -273,9 +292,9 @@ scoopzapp.com#?#.fixed:has(> div[class]:only-child > div[class] > div:only-child
 bristol.ru##.first-order-modal
 raycast.com##div[class^="GlobalBanner"]
 imdb.com##.imdb-header__app-button
-doordash.com##a[data-testid="openAppButton"]
-doordash.com##div[class]:has(> div[data-testid="appDownload"]:first-child + button[data-testid="appDownloadButton"]:last-child)
-doordash.com##main > main > div[class]:has(> div[class]:only-child > div[class]:only-child > div[class] > span:only-child > a[href*="adjust"])
+doordash.com##main > div[style="border: none; margin-top: var(--usage-space-medium);"]
+doordash.com##div[data-testid="LAYER-MANAGER-SHEET"] > div[class^="OverlayContainer-sc-ek6cb4-2"]
+doordash.com##div[data-testid="LAYER-MANAGER-SHEET"] > div[class^="OverlayContainer-sc-ek6cb4-2"] + div[style="position: fixed; bottom: 0px; left: 0px; right: 0px; max-width: 100vw; transform: none;"]
 t.shuqi.com##.ReaderFreeFixedGuideBtn
 enerjisa.com.tr,easy.co.il##.qr-container
 easy.co.il##.open-app-button
@@ -896,7 +915,6 @@ pierrotshop.jp##body > div.l-footerTop:has(> div.wider > div.commonCtr div.btn >
 shop.menz-style.com##img[alt="秋冬コーデのコツ"]
 shop.menz-style.com###coupon-container
 delishkitchen.tv##.footer-app-banner-wrap
-luckymodapk.com##.downbox
 peachjohn.co.jp##.block-footer-guide--service a[href="/app"]
 foodora.*#%#//scriptlet('set-cookie', 'hideSmartphoneBanner', '1')
 photocity.it###widgetApp2_imgBtnApp
@@ -1401,7 +1419,6 @@ cosme.net##.csmt-pdt-app-appeal
 navitime.co.jp##.app_dl_banner_frame
 ganma.jp#%#//scriptlet('set-cookie', 'isAppClosed', '1')
 trello.com#?##chrome-container > div[class]:has(> div[class]> a[href^="https://apps.apple.com/"])
-welovemanga.one#?#div[class^="col-"] > div.card:has(> div.card-header > h3.card-title:contains(Application))
 realtime.yahoo.co.jp##div[id^="apppr"]
 izi.travel##.app_message
 izi.travel##.share_browse_app
@@ -2730,7 +2747,7 @@ outlook.live.com#?#.react-tel-input > input.form-control:upward(4)
 m.hindustantimes.com##.openappbutton-main
 toppr.com##div[class^="question_suggestionsAppBannerWrapper__"]
 profile.ru##div[class="read-yzd mobile-only"]
-receivefreesms.net,track24.net,angielskieespresso.pl,op.gg,cameralabs.org##a[href^="https://play.google.com/store/apps/details?id="]
+amiunique.org,receivefreesms.net,track24.net,angielskieespresso.pl,op.gg,cameralabs.org##a[href^="https://play.google.com/store/apps/details?id="]
 blocket.se##div[class^="AppLinks__"]
 m2o.it##.player > section.player-wrapper + div.footer_player
 drugs.com##.promo-content
@@ -2781,8 +2798,6 @@ deeeep.io###play-store-container
 f2movies.to##a[href="/android-movies-apk"]
 ||m.hindustantimes.com/res/img/*/app.png
 battleboats.io###appstores
-player.fm#$#.open-in-app-promo { display: none !important; }
-player.fm#$#html.bottom-promo-showing body { height: auto !important; overflow: auto !important; }
 creatur.io###mobile-download-panel
 ||i2.sinaimg.cn/*/searchCallup.js$domain=gu.sina.cn
 gu.sina.cn###__callup_bottom

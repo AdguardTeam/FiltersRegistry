@@ -1,9 +1,9 @@
-! Checksum: wfOwpYmZ214zD2MM+gvX7A
-! Diff-Path: ../patches/17/17-s-1761502328-3600.patch
+! Checksum: vlQJRsgqRjq0qntv4SByOQ
+! Diff-Path: ../patches/17/17-s-1762794626-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.2
-! TimeUpdated: 2025-10-26T18:08:42+00:00
+! Version: 2.0.12.15
+! TimeUpdated: 2025-11-10T17:07:13+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -277,6 +277,13 @@ $removeparam=msclkid
 ! vero
 $removeparam=vero_conv
 $removeparam=vero_id
+!
+!INT
+$removeparam=int_content
+$removeparam=int_term
+$removeparam=int_source
+$removeparam=int_medium
+$removeparam=int_campaign
 ! ITM
 ! https://github.com/AdguardTeam/AdguardFilters/issues/126713
 ! https://www.parse.ly/help/kb/campaign-tracking-guide
@@ -435,6 +442,41 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217477
+||mgstage.com^$removeparam=form
+! https://github.com/AdguardTeam/AdguardFilters/issues/217472
+||playerok.com^$removeparam=click
+! https://github.com/AdguardTeam/AdguardFilters/issues/217371
+||dennikn.sk^$removeparam=ref
+! https://www.plus.fifa.com/en/player/2d8768e8-6ee7-422d-b27b-01072b7ad217?catalogId=96b168ee-b507-4902-89e8-3cc33987409f&entryPoint=CTA
+||plus.fifa.com^$removeparam=entryPoint
+! https://github.com/AdguardTeam/AdguardFilters/issues/216814
+||filmzie.com^$removeparam=sourceId
+! https://github.com/AdguardTeam/AdguardFilters/issues/216816
+||scoopzapp.com^$removeparam=send_time
+||scoopzapp.com^$removeparam=actBtn
+||scoopzapp.com^$removeparam=nid
+||scoopzapp.com^$removeparam=pd
+||scoopzapp.com^$removeparam=s
+! https://github.com/AdguardTeam/AdguardFilters/issues/216722
+! epsilon.com tracking
+||cj.dotomi.com^$removeparam=/^\w=/
+||emjcd.com^$removeparam=/^\w=/
+! https://github.com/AdguardTeam/AdguardFilters/issues/216723
+||nextdns.io/?from=$removeparam=from
+||fastmail.com^$removeparam=pscd
+||fastmail.com^$removeparam=ps_partner_key
+||fastmail.com^$removeparam=ps_xid
+||fastmail.com^$removeparam=gsxid
+||fastmail.com^$removeparam=gspk
+! https://github.com/AdguardTeam/AdguardFilters/issues/216746
+||notebooklm.google.*$removeparam=icid
+||notebooklm.google.*$removeparam=original_referer
+! https://github.com/AdguardTeam/AdguardFilters/issues/216744
+||redbull.com^$removeparam=ldtag_cl
+||redbull.com^$removeparam=lt_r
+! https://github.com/AdguardTeam/AdguardFilters/issues/216219
+||sravni.ru^$removeparam=rubricAlias
 !https://pcmax.jp/pcm/lp.php?ad_id=rm272075
 ||pcmax.jp^$removeparam=ad_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215980
@@ -480,8 +522,6 @@ $removeparam=s-id,domain=item.rakuten.co.jp|www.rakuten.co.jp
 ||trendyol.com^$removeparam=link_contentid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211947
 ||qms.ru^$removeparam=src
-! https://github.com/AdguardTeam/AdguardFilters/issues/211682
-||tech.onliner.by^$removeparam=int_source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211680
 ||e-himart.co.kr^$removeparam=gtmPos
 ||e-himart.co.kr^$removeparam=jsClck
@@ -556,17 +596,31 @@ $removeparam=s-id,domain=item.rakuten.co.jp|www.rakuten.co.jp
 ||domclick.ru^$removeparam=from
 ! buydomains.com
 ||buydomains.com/lander/*?domain=$removeparam
+!
+! DuckDuckGo
 ! DuckDuckGo ads/shopping
 ||duckduckgo.com/y.js$removeparam=ad_provider
 ||duckduckgo.com/y.js$removeparam=ad_domain
 ||duckduckgo.com/y.js$removeparam=click_metadata
 ||duckduckgo.com/y.js$removeparam=vqd
 ||duckduckgo.com/y.js$removeparam=iurl
+||duckduckgo.com/y.js$removeparam=ad_type
+! https://duckduckgo.com/duckduckgo-help-pages/privacy/t
+||duckduckgo.com/?q=*&t=$document,removeparam=t
+||duckduckgo.com/?t=*&q=$document,removeparam=t
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208130#issuecomment-3042351235
 ! Removing "bing_market" parameter causes that search results are not localized
 ! and results are displayed for "All regions"
 ! ||duckduckgo.com/d.js?q=$script,removeparam=bing_market
 ! ||duckduckgo.com/d.js?q=$script,removeparam=host_region
+! https://duckduckgo.github.io/duckduckgo-help-pages/privacy/atb/
+! breaks redirect when their Extension is installed - https://github.com/AdguardTeam/AdguardFilters/issues/161751
+! ||duckduckgo.com^$removeparam=atb
+||duckduckgo.com^$removeparam=from
+||duckduckgo.com^$removeparam=vis
+||duckduckgo.com^$removeparam=perf_id
+||duckduckgo.com^$removeparam=parent_perf_id
+!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208058
 ||olybet.lv^$removeparam=ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/207414#issuecomment-2969009233
@@ -704,11 +758,14 @@ $removeparam=xmt,domain=threads.com|threads.net
 ||assetstore.unity.com^$removeparam=aid
 ! airvpn.org
 ||airvpn.org^$removeparam=referred_by
-! protonvpn.com
+! protonvpn.com, proton.me
 ||protonvpn.com^$removeparam=url_id
 ||protonvpn.com^$removeparam=plan
 ||protonvpn.com^$removeparam=ref
 ||go.getproton.me^$removeparam=aff_c
+! https://github.com/AdguardTeam/AdguardFilters/issues/216723
+||proton.me^$removeparam=url_id
+$removeparam=phfp,domain=protonvpn.com|proton.me
 ! purevpn.com
 ||billing.purevpn.com/aff.php$removeparam=aff
 ! strongvpn.com
@@ -1369,10 +1426,6 @@ $removeparam=from,domain=doujinnomori.com|shinshi-manga.net|echiman.com|dojin-na
 ||rdrtr.com^$removeparam=aff_sub3
 ||rdrtr.com^$removeparam=aff_sub4
 ||rdrtr.com^$removeparam=aff_sub5
-! https://github.com/AdguardTeam/AdguardFilters/issues/168508#issuecomment-1872568599
-||duckduckgo.com/y.js$removeparam=ad_domain
-||duckduckgo.com/y.js$removeparam=ad_provider
-||duckduckgo.com/y.js$removeparam=ad_type
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-7975883
 ||indeed.com^$removeparam=from
 ! https://github.com/AdguardTeam/AdguardFilters/issues/169365
@@ -1538,14 +1591,6 @@ $removeparam=i3_ord,domain=dmm.co.jp|dmm.com
 ! Naver Shopping - click an item at its search result webpage.
 $removeparam=frm,domain=msearch.shopping.naver.com|search.shopping.naver.com
 $removeparam=NaPm,domain=msearch.shopping.naver.com|search.shopping.naver.com
-! DuckDuckGo
-! https://duckduckgo.github.io/duckduckgo-help-pages/privacy/atb/
-! breaks redirect when their Extension is installed - https://github.com/AdguardTeam/AdguardFilters/issues/161751
-! ||duckduckgo.com^$removeparam=atb
-||duckduckgo.com^$removeparam=from
-||duckduckgo.com^$removeparam=vis
-||duckduckgo.com^$removeparam=perf_id
-||duckduckgo.com^$removeparam=parent_perf_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162037
 *$removeparam=t-src,domain=tutanota.com|tuta.com
 ! donga.com - click an article at its main homepage. https://www.donga.com/
@@ -2097,8 +2142,6 @@ $removeparam=afid,domain=123chat.jp|kanochat.jp|live.fc2.com
 ||imdb.com^$removeparam=pf_rd_s
 ||imdb.com^$removeparam=pf_rd_t
 ||imdb.com^$removeparam=pf_rd_i
-! https://github.com/uBlockOrigin/uAssets/issues/12972#issuecomment-1286665177
-||mirror.co.uk^$removeparam=int_source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/132478
 ||wiley.com^$removeparam=/elq/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/131490
@@ -2295,10 +2338,11 @@ $removeparam=/utm_partner_id|frommail/,domain=mail.ru|sportmail.ru
 ||giphy.com^$removeparam=cid
 ||giphy.com^$removeparam=ct
 ||giphy.com^$removeparam=rid
+! https://github.com/AdguardTeam/AdguardFilters/issues/216723
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123265
 ! https://github.com/AdguardTeam/AdguardFilters/issues/119833
 ! https://github.com/AdguardTeam/AdguardFilters/issues/120322
-$removeparam=ref,domain=jin115.com|bipblog.com|animember.net|sbbit.jp|blog.livedoor.jp|blog.jp|2chblog.jp
+$removeparam=ref,domain=jin115.com|bipblog.com|animember.net|sbbit.jp|blog.livedoor.jp|blog.jp|2chblog.jp|coincards.com|startmail.com
 ! https://www.cinematoday.jp/site/tokyo-vice/?g_clk=topcover
 ||cinematoday.jp^$removeparam=g_clk
 ! https://xxvidsx.com/?vid=87&ad=0&site=
@@ -2775,6 +2819,8 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 ||www.yandex.$removeparam=clid
 ://yandex.$removeparam=clid
 ://yandex.$removeparam=source
+! Yandex.Browser
+||browser.yandex.ru^$removeparam=from
 ! Yandex.Docs
 ||docs.yandex.$removeparam=uid
 ! Yandex.Disk
