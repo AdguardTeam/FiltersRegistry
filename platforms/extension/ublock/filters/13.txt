@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wa+8SqyANObJ5dZu9MaseA
-! Diff-Path: ../patches/13/13-s-1762942343-3600.patch
+! Checksum: oxpZ6F7oOptY9NJDcUI/Dg
+! Diff-Path: ../patches/13/13-s-1762945817-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.37
-! TimeUpdated: 2025-11-12T10:08:35+00:00
+! Version: 2.0.60.38
+! TimeUpdated: 2025-11-12T11:06:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6041,7 +6041,9 @@ selcuksportshd.is#$?#body { background-image: none !important; }
 cinque.668a396e58bcbc27.click##+js(set-constant, config.advertisement.enabled, false)
 [$domain=/selcuksportshd\d+\.biz/]##.banner
 !+ NOT_VALIDATE
-[$domain=/selcuksportshd\d+\.(xyz\|click)/]##img[id^="top-ads-"]
+[$domain=/selcuksportshd\d+\.(xyz\|click)/]##img[id*="-ads-"]
+!+ NOT_VALIDATE
+[$domain=/selcuksportshd\d+\.(xyz\|click)/]##.fixed.bottom-0:has(img[id^="footer-ads"])
 !+ NOT_VALIDATE
 [$domain=/selcuksportshd[a-z0-9-]+\.(xyz\|click)/]##.banner
 !+ NOT_VALIDATE
