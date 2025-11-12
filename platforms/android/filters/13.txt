@@ -1,9 +1,9 @@
-! Checksum: MiMHR+gh5/UYTd6lfgbI/w
-! Diff-Path: ../patches/13/13-s-1762938726-3600.patch
+! Checksum: RAHhIbHvysu5FimpPCC+ew
+! Diff-Path: ../patches/13/13-s-1762942314-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.36
-! TimeUpdated: 2025-11-12T09:08:53+00:00
+! Version: 2.0.60.37
+! TimeUpdated: 2025-11-12T10:08:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5664,6 +5664,10 @@ hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
+! bosssports*.com - frequently changed domains
+||bosssports*.com/*.gif
+[$domain=/bosssports\d+\.com/]#%#//scriptlet('set-constant', 'config.adv.enabled', 'false')
+!
 ! inattvizle*.top - frequently changed domains
 ||inattvizle*.top/lib/uploads/r/
 [$domain=/inattvizle\d+\.top/]##.dbad
@@ -5838,11 +5842,11 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ! It seems the next 3 sites use the same template. Most likely, there are more such sites
 ! Let's test one generic rule
 ##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-! belestepe*.shop - frequently changed domains
-||belestepe*.shop//wp-content/uploads/*.gif
+! belestepe*.sbs - frequently changed domains
+||belestepe*.sbs//wp-content/uploads/*.gif
 ! aglint-disable-next-line invalid-modifiers
-||video.twimg.com/amplify_video/*/vid/*.mp4$domain=/^belestepe\d+\.shop/
-[$domain=/belestepe\d+\.shop/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
+||video.twimg.com/amplify_video/*/vid/*.mp4$domain=/^belestepe\d+\.sbs/
+[$domain=/belestepe\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 ! izlemac*.sbs - frequently changed domains
 ! Random numbers
 [$domain=/izlemac\d+\.sbs/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
