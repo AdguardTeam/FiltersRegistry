@@ -1,9 +1,9 @@
-! Checksum: YxMIuFSIovFbknQD83lwNg
-! Diff-Path: ../patches/17/17-s-1763043107-3600.patch
+! Checksum: 0m2j15HUZyYgC4GZumo8KQ
+! Diff-Path: ../patches/17/17-s-1763046778-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.19
-! TimeUpdated: 2025-11-13T14:08:02+00:00
+! Version: 2.0.12.20
+! TimeUpdated: 2025-11-13T15:08:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -444,6 +444,10 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://myoji-yurai.net/searchResult.htm?myojiKanji=%E5%B0%8F%E6%9E%97&from=rank
+||myoji-yurai.net^$removeparam=from
+! https://www.jiji.com/?ref=article
+||jiji.com^$removeparam=ref
 ! https://vjav.com/videos/829217/240610-c1/?promo=34899
 $removeparam=promo,domain=vjav.com|vjav.tube
 ! p-bandai.com
