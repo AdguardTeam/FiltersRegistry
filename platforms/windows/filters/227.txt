@@ -1,9 +1,9 @@
-! Checksum: 9ewQmgviyevvYwep/acgLw
-! Diff-Path: ../patches/227/227-s-1762822394-14400.patch
+! Checksum: dsvmif6WLD7SARbAcD9wVw
+! Diff-Path: ../patches/227/227-s-1762995167-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.34
-! TimeUpdated: 2025-11-11T00:48:27+00:00
+! Version: 2.0.23.37
+! TimeUpdated: 2025-11-13T00:48:18+00:00
 ! Expires: 12 hours (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -538,6 +538,9 @@
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 !
+||enuri.com/api/adRelay.jsp
+||enuri.com/wide/script_min/ad/
+||coupang.com/next-api/products/banners?productId=
 ||search.danawa.com/js/adSmart.min.js
 ||search.danawa.com/js/powerShopping.min.js
 ||search.danawa.com/js/powerClick.min.js
@@ -546,7 +549,6 @@
 ||asked.kr/pclickframe/
 ||myrealtrip.com/ad/
 ||trip.com/restapi/soa2/*/bjjson/queryAdsDisplayData
-||json*.dcinside.com/json*/notify_ad.php
 ||gall.dcinside.com/_js/ad.js
 ||gall.dcinside.com/_js/ad_context_powLink.js
 ||filetad.tygem.com/updata/banner/
@@ -1661,6 +1663,12 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+enuri.com###coupangCpcSection
+enuri.com##.lp-ad--naver
+gall.dcinside.com,m.dcinside.com##ul[class$="_ad"]
+start.klauncher.kr##.auxiliary-section
+asked.kr##div[class*="ad_"][style*=":"]
+asked.kr##div[class^="inner_"] > div[class^="banner_"]
 chzzkban.xyz##div[class*=" "]:is([style^="height:"], [style^="pointer-events:"], [style^="width:"]):has(div[id^="adv-"])
 cgv.co.kr##button[class^="mems01010_phoneLogin__"]
 asked.kr##div[class^="qnaBanner_"]
@@ -1817,6 +1825,7 @@ zod.kr##.app-main-banner
 isplus.com##.rightEnd > .section_inner > div[style]
 boardlife.co.kr##.promote-box
 dcinside.com##.trend-rank
+gall.dcinside.com,m.dcinside.com##ul.text_ad
 dcinside.com##iframe[src^="https://tm.interworksmedia.co.kr"]
 gall.dcinside.com##tr[data-type="icon_fnews"]
 hansbiz.co.kr##div.ad-view
@@ -3092,6 +3101,7 @@ x86.co.kr#@#.download_ad
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ! TODO: remove the following filter if https://github.com/AdguardTeam/CoreLibs/issues/1831 is resolved.
 /^https:\/\/m[0-9]+\.kotbc\.com\/img\/[a-z0-9_/]+\.gif$/
+start.klauncher.kr#$#.main-content { width: calc(100vw - 220px) !important; }
 m.naver.com#$#.wrap.id_search .comp_container { margin-top: 0px !important; }
 lol.ps#$#div[class*="w-full min-w-[280px] pt-10"] > .p-4.pb-0 div[class*="max-w-[480px]"] { width: 100% !important; max-width: none !important; }
 lol.ps#$##summoner-name-header-container { width: 100% !important; }
@@ -3570,6 +3580,7 @@ m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 !
+enuri.com#%#//scriptlet('set-constant', 'getPowerLink', 'noopFunc')
 heye.kr#%#//scriptlet('prevent-window-open', 'pandalive.co.kr/evt/')
 newneek.co#%#//scriptlet('prevent-xhr', 'api-v2.adrop.io/request')
 map.naver.com#%#//scriptlet('json-prune-xhr-response', 'layers.[-].metadata.name.{=}.POI_Ads', '', '/PCWeb_Real.json')

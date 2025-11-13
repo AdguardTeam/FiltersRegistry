@@ -1,9 +1,9 @@
-! Checksum: uNfbUU/aF5xiDj7U6c0wmQ
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1762836187-14400.patch
+! Checksum: zB/4iETJpVMJ2Xv4imRzhg
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1762995142-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.79.88
-! TimeUpdated: 2025-11-11T04:38:45+00:00
+! Version: 2.1.79.99
+! TimeUpdated: 2025-11-13T00:47:56+00:00
 ! Expires: 10 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -159,6 +159,7 @@
 /ezais/dynamic?
 /fond_pub_
 /gdfp.js?
+/gen_regie.
 /get/*?zoneid=
 /get?*&ab=*&ref=$script,third-party,xmlhttprequest
 /get_affiliate_
@@ -330,7 +331,6 @@
 ?468&60&
 ?728&90&
 ?aads=
-?ad_domain=
 ?ad_sub=
 ?ADFassetID=
 ?adlink/
@@ -387,7 +387,6 @@ _725_90.
 _728-x-90_
 _728x350.
 _728x90@
-_728x90v2.
 _758x60.
 _90x728_
 _970-x-90_
@@ -451,7 +450,6 @@ _publicite.
 _publicite_
 _sdk_ad_
 _smads_
-_smartclick.js
 _square_ads.
 _werbebanner_
 /wp-content/banners/*$third-party
@@ -598,6 +596,7 @@ _build=iclick-$popup
 ||betterbannerscloud.com^$third-party
 ||blogbang.com^$third-party
 ||broadcast.pm^$third-party
+||camplace.com^$third-party
 ||camsoda.com^$third-party
 ||caramec.fr^$third-party
 ||carasexe.name^$third-party
@@ -605,7 +604,6 @@ _build=iclick-$popup
 ||cclpub.com^$third-party
 ||cdn3.net^$third-party
 ||cfgr2.com^$third-party
-||charmix.com^$third-party
 ||circulate.com^$third-party
 ||cityads.com^$third-party
 ||clcktrax.com^$third-party
@@ -689,6 +687,7 @@ _build=iclick-$popup
 ||mirando.de^$third-party
 ||missaffiliate.com^$third-party
 ||misstrends.com^$third-party
+||mobidea.com^$third-party
 ||mobileoffers-*-download.com^$third-party
 ||mobsuccess.com^$third-party
 ||mobvista.com^$third-party
@@ -763,6 +762,7 @@ _build=iclick-$popup
 ||tpctrust.com^$third-party
 ||trafficroots.com^$third-party
 ||traffictrade.pro^$third-party
+||travelbar.tools^$third-party
 ||trk-egestas.com^$third-party
 ||truenat.bid^$third-party
 ||ulclick.ru^$third-party
@@ -832,6 +832,7 @@ _build=iclick-$popup
 ||adheretalk.com^
 ||admedia.network^
 ||admiralugly.com^
+||admiredeterioratesinner.com^
 ||admiredexcrete.com^
 ||admithelperbusy.com^
 ||adornmenttaunt.com^
@@ -842,6 +843,7 @@ _build=iclick-$popup
 ||adviseforty.com^
 ||affluentmirth.com^
 ||agatorkoaltor.com^
+||agnelbehung.com^
 ||aifuwgcygccfp.com^
 ||aitarsou.com^
 ||aj2178.online^
@@ -1715,10 +1717,10 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||blogspot.com/*.gif$domain=mega-telechargement.com
 ||blogspot.com^$image,domain=desiupload.co|desiupload.in
 ||brsimg.com/pub/
+||btcclicks.com/img/$third-party
 ||camtempel.com/banner/
 ||cdn.citytourgirls.com/static/bn/
 ||cdn.escortdude.com/static/bn/
-||cdn.ev.mu/js/optim/gg_cc/ev/boot.js$domain=~easyviaggio.com|~easyviajar.com|~easyvols.fr|~easyvoyage.co.uk|~easyvoyage.com|~easyvoyage.de
 ||cdn.playwire.com^$domain=filehippo.com
 ||cdn.x1cdn.com^*/banner/
 ||cdnpark.com/registrar/*/loader.js
@@ -1810,7 +1812,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||mangatown.com^*/banners/
 ||maxannu.com^$image,third-party
 ||mdhcdn.com^*/banner_
-||mediafire.com/file/*.exe|$subdocument
 ||meilleurduweb.com/images/pub/
 ||membersrule.com/getimg.php$third-party
 ||mes-dialogues.net^*/mes-dialogues-js.php?
@@ -1877,7 +1878,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||up-banner.wavecdn.net^
 ||vachvoi.cc/picture/files/
 ||vegemiam.fr/wp-content/uploads/$third-party
-||vendezvotrevoiture.fr^$subdocument,third-party
 ||vidazoo.com/aggregate?
 ||vidcoin.com^$domain=aufeminin.com
 ||viously.com/amp/szuG21KBA-F$domain=positivr.fr
@@ -2120,12 +2120,16 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
 ||equirodi.be/images/pub/
+||esoxiste.com/wp-content/images/*.gif
+||esoxiste.com/wp-content/images/bandeau-
+||esoxiste.com/wp-content/images/banni%C3%A8re-
 ||fiches-auto.fr/_carre_300_
 ||file-upload.net/include/$subdocument
 ||firebasestorage.googleapis.com^$domain=avito.ma
 ||flam.me/*/divers/partners/
 ||flemmix.*/voir/
 ||forexalgerie.com/img/pub/
+||forum-xiaomi.com/as/
 ||forumconstruire.com/img/letsgo/
 ||forumconstruire.com/letsgo/
 ||france-troc.com/includes/inc_bandeau.php?
@@ -2205,7 +2209,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||pagesjaunes.fr/js/pj_ad.js
 ||papystreaming.*/bn-cs.gif
 ||partenaire.leparticulier.fr^
-||passionlachasse.com/publi
 ||pcgamestorrents.com/wp-content/uploads/20*.gif
 ||permispratique.com/photo/*_habillage_
 ||petit-bulletin.fr/multimedia/fond/
@@ -2416,7 +2419,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub-sky
 ###pub-text
 ###pub-top
-###pub160x600
 ###pub300
 ###pub300x250
 ###pub468x60_text
@@ -2753,6 +2755,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.reklambox
 ##.reklamgec
 ##.remove_ads
+##.right-advertising
 ##.rightPub
 ##.right_middle_ad
 ##.right_top_ad
@@ -2764,6 +2767,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.side_slide_pub
 ##.sidebar-adv
 ##.sidebar-header-pub
+##.sidebar_adds
 ##.simple-ad
 ##.site-pub-interstitiel
 ##.skin_outer_ad
@@ -3282,6 +3286,7 @@ undernews.fr##a[href^="https://www.undernews.fr/redirect/"]
 free-telecharger.click##a[onclick]
 petit-bulletin.fr##a[onclick^="_gaq.push(['_trackEvent'"]
 lejournaldelamaison.fr,maison-travaux.fr,mariefrance.fr,zoneadsl.com##a[rel="sponsored"]
+buzzporn.net,esoxiste.com,upload4earn.org##a[target="_blank"] > img
 israelmagazine.co.il##a[target="_blank"] > img[src$=".gif"]
 maliweb.net##a[target="_blank"] > img[width="300"][height="100"]
 gamergen.com,generation-nt.com##article .product

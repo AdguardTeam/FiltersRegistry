@@ -1,9 +1,9 @@
-! Checksum: sIuq8SUKuwrxSCKXLAONXw
-! Diff-Path: ../patches/13/13-s-1762748144-3600.patch
+! Checksum: Dtqg5m9u+xop7+0bBvpb6w
+! Diff-Path: ../patches/13/13-s-1762960336-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.30
-! TimeUpdated: 2025-11-10T04:12:27+00:00
+! Version: 2.0.60.39
+! TimeUpdated: 2025-11-12T15:08:40+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20,6 +20,7 @@
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
 !
+||keskin.vip^
 ||lups1.site^
 ||testrole.care^
 ||mdznads.pages.dev^
@@ -1515,6 +1516,19 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+webmasto.com##.a-wrap:not(:has(> a[href^="https://webmasto.com/"]))
+||vidobettv.live/banner.gif
+vidobettv.live##a[href="https://t.ly/vidoadres"]
+||denizhaber.com/images/money/
+||cdn.ezark.org/ramada.mp4$media,redirect=noopmp4-1s
+webtekno.com##.top-contents > div[class*="md:w-\[240px\]"]
+aydindenge.com.tr##script + a[target="_blank"] > img
+vipifsa.com##body > div.fixed.inset-0
+vipifsa.com##.hidden.w-\[300px\]
+vipifsa.com##.max-w-\[1450px\]
+vipifsa.com##.space-y-2
+||vipifsa.com/uploads/ads/
+vipifsa.com#%#//scriptlet('json-prune', 'ads')
 ntv.com.tr##.dyg-class
 ntv.com.tr##.dyg-masthead
 ntv.com.tr##.taboola-class-check
@@ -4598,7 +4612,7 @@ kocaelifikir.com###add-popup
 kocaelifikir.com##.md-overlay
 kocaelifikir.com##.left-side > a[rel="nofollow"]
 kocaelifikir.com##.right-side > a[rel="nofollow"]
-hayat.ro,demokratkocaeli.com##img[alt="Advert"]
+batmansonsoz.net,hayat.ro,demokratkocaeli.com##img[alt="Advert"]
 havadiskibris.com###tie-block_2405
 havadiskibris.com##.stream-item-top-wrapper
 maksatbilgi.com,havadiskibris.com##.stream-item-above-post
@@ -5636,6 +5650,24 @@ hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
+! bosssports*.com - frequently changed domains
+||bosssports*.com/*.gif
+[$domain=/bosssports\d+\.com/]#%#//scriptlet('set-constant', 'config.adv.enabled', 'false')
+!
+! inattvizle*.top - frequently changed domains
+||inattvizle*.top/lib/uploads/r/
+[$domain=/inattvizle\d+\.top/]##.dbad
+[$domain=/inattvizle\d+\.top/]##.under-vid-banner
+!
+! kralsportshd*.com - frequently changed domains
+||kralsportshd*.com/*.gif
+||kralsportshd*.com/player.jpg
+[$domain=/kralsportshd\d+\.com/]##a[href^="https://cutt.ly/"]
+!
+! otobettv*.com - frequently changed domains
+||otobettv*.com/banner.gif
+[$domain=/otobettv\d+\.com/]##a[href^="https://cutt.ly/"]
+!
 ! rotabettv*.com - frequently changed domains
 [$domain=/rotabettv\d+\.com/]##body > a[href^="https://"][target="_blank"]
 !
@@ -5794,22 +5826,22 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 ! It seems the next 3 sites use the same template. Most likely, there are more such sites
 ! Let's test one generic rule
 ##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-! belestepe*.shop - frequently changed domains
-||belestepe*.shop//wp-content/uploads/*.gif
+! belestepe*.sbs - frequently changed domains
+||belestepe*.sbs//wp-content/uploads/*.gif
 ! aglint-disable-next-line invalid-modifiers
-||video.twimg.com/amplify_video/*/vid/*.mp4$domain=/^belestepe\d+\.shop/
-[$domain=/belestepe\d+\.shop/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
+||video.twimg.com/amplify_video/*/vid/*.mp4$domain=/^belestepe\d+\.sbs/
+[$domain=/belestepe\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 ! izlemac*.sbs - frequently changed domains
 ! Random numbers
 [$domain=/izlemac\d+\.sbs/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 [$domain=/izlemac\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
 ||izlemac*.sbs/wp-content/uploads/*.gif
-! mactanmaca*.shop - frequently changed domains
-||mactanmaca*.shop//wp-content/*.gif
+! mactanmaca*.sbs - frequently changed domains
+||mactanmaca*.sbs/wp-content/*.gif
 ! aglint-disable-next-line invalid-modifiers
-[$domain=/mactanmaca\d+\.shop/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
-[$domain=/mactanmaca\d+\.shop/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
-[$domain=/mactanmaca\d+\.shop/]#%#//scriptlet('set-cookie', 'reklamgosterimx', 'ok')
+[$domain=/mactanmaca\d+\.sbs/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
+[$domain=/mactanmaca\d+\.sbs/]##div[data-isbd-main-container] > section > div.hidden-xs.text-center
+[$domain=/mactanmaca\d+\.sbs/]#%#//scriptlet('set-cookie', 'reklamgosterimx', 'ok')
 !
 ! sultansportv*.com - frequently changed domains
 ! Randomized of too fast changing
@@ -5938,7 +5970,9 @@ selcuksportshd.is#$?#body { background-image: none !important; }
 cinque.668a396e58bcbc27.click#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 [$domain=/selcuksportshd\d+\.biz/]##.banner
 !+ NOT_VALIDATE
-[$domain=/selcuksportshd\d+\.(xyz\|click)/]##img[id^="top-ads-"]
+[$domain=/selcuksportshd\d+\.(xyz\|click)/]##img[id*="-ads-"]
+!+ NOT_VALIDATE
+[$domain=/selcuksportshd\d+\.(xyz\|click)/]##.fixed.bottom-0:has(img[id^="footer-ads"])
 !+ NOT_VALIDATE
 [$domain=/selcuksportshd[a-z0-9-]+\.(xyz\|click)/]##.banner
 !+ NOT_VALIDATE
@@ -6162,6 +6196,8 @@ dcdl50eadec6df95.xyz#%#//scriptlet('trusted-replace-node-text', 'script', 'self.
 [$domain=/(^\|.+\.)xyzsports[a-z0-9-]+\.xyz/]#$#.table-area { visibility: hidden !important; }
 !+ NOT_VALIDATE
 [$domain=/(^\|.+\.)xyzsports[a-z0-9-]+\.xyz/]#%#//scriptlet('set-constant', 'window.config.advertisement.0.enabled', '0')
+! Fixing cosmetic filtering problem in player iframe, caused by caching
+! https://github.com/AdguardTeam/AdguardFilters/issues/217570#issuecomment-3516987788
 ! TODO: remove the comments below after the issue is fixed
 ! https://github.com/AdguardTeam/AGLint/issues/202
 ! aglint-disable-next-line invalid-modifiers
