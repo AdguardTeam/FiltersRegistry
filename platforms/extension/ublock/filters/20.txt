@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: BZn8PdqHxKxd29x7O6UPmA
-! Diff-Path: ../patches/20/20-s-1762985451-3600.patch
+! Checksum: DVFXJWT1nhvJpzTVi/wRAA
+! Diff-Path: ../patches/20/20-s-1763053962-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.24.56
-! TimeUpdated: 2025-11-12T22:07:28+00:00
+! Version: 2.0.24.60
+! TimeUpdated: 2025-11-13T17:08:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36,6 +36,8 @@
 ##head[prefix~="medium-com:"] ~ body .js-openInAppButton
 ##head[prefix~="medium-com:"] ~ body .js-postActionsBarContent > .js-readNextInteractions
 !
+jp,com##.header__banner[href^="https://play.google.com/store/apps/details?id=jp.co.ibg_m.daisy"]
+jp,com##.header__banner[href="https://apps.apple.com/jp/app/fanmily/id1485686155"]
 ###SmBnLink
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212907
 ! Used in many mirrors of the Chinese site like in the issue
@@ -66,6 +68,8 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+nbg.gr##app-slider-fancy-tabs
+news18.com##.opnapp
 bushikaku.net##+js(set-cookie, hide_fixed_bottom_app_banner, true)
 tour.bushikaku.net##.headerAppBanner
 m.yelp.com##div[class^="overlay-wrapper__"]:has(> a[aria-label="Download the Yelp app"] ~ div[data-testid="review-feed-pitch"])
@@ -3766,6 +3770,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+aviasales.ru##+js(set-cookie, mobile_app_redirect, 1)
 vevor.co.uk##.AppDrainage
 hh.ru##div[class^="magritte-card"]:has(a[href^="https://hhlink.onelink.me/"])
 m.unice.com##.appHead-item
