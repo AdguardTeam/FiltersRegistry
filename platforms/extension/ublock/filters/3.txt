@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: objqiw+TktwI7PG1Zr0O/Q
-! Diff-Path: ../patches/3/3-s-1763004759-3600.patch
+! Checksum: 5cwydSIzKU7IX16vS8P2BA
+! Diff-Path: ../patches/3/3-s-1763007331-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.94.73
-! TimeUpdated: 2025-11-13T03:28:17+00:00
+! Version: 2.0.94.74
+! TimeUpdated: 2025-11-13T04:11:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -118789,6 +118789,14 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||frysfood.com/assets/*/collect?
+||fredmeyer.com/static/*/collect?
+||ralphs.com/resources/*/collect?
+||smithsfoodanddrug.com/public/*/collect?
+/clickstream/*$domain=fredmeyer.com|frysfood.com|smithsfoodanddrug.com|ralphs.com
+/cdn/qualtrics.js$domain=fredmeyer.com|frysfood.com|smithsfoodanddrug.com|ralphs.com
+ralphs.com,smithsfoodanddrug.com,frysfood.com,fredmeyer.com##+js(set-local-storage-item, analytics-device, $remove$)
+||embeds.beehiiv.com/attribution.js
 thekrazycouponlady.com##+js(set-local-storage-item, /^ab\.storage\./, $remove$)
 thekrazycouponlady.com##+js(set-local-storage-item, __anon_id, $remove$)
 ||img.enuri.info/images/partner/dsac.min.js

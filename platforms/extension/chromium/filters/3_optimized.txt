@@ -1,9 +1,9 @@
-! Checksum: hh0Y7j/jsC8OA8o9Dzz3XA
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1763004740-3600.patch
+! Checksum: 7d0IBfF7DGTMVeYtRVxeAQ
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1763007310-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.94.73
-! TimeUpdated: 2025-11-13T03:28:17+00:00
+! Version: 2.0.94.74
+! TimeUpdated: 2025-11-13T04:11:01+00:00
 ! Expires: 10 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -118143,6 +118143,14 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 /prod/dfm/t8y9347t.min.js$redirect=nooptext,important,domain=dailycamera.com
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+||frysfood.com/assets/*/collect?
+||fredmeyer.com/static/*/collect?
+||ralphs.com/resources/*/collect?
+||smithsfoodanddrug.com/public/*/collect?
+/clickstream/*$domain=fredmeyer.com|frysfood.com|smithsfoodanddrug.com|ralphs.com
+/cdn/qualtrics.js$domain=fredmeyer.com|frysfood.com|smithsfoodanddrug.com|ralphs.com
+ralphs.com,smithsfoodanddrug.com,frysfood.com,fredmeyer.com#%#//scriptlet('set-local-storage-item', 'analytics-device', '$remove$')
+||embeds.beehiiv.com/attribution.js
 thekrazycouponlady.com#%#//scriptlet('set-local-storage-item', '/^ab\.storage\./', '$remove$')
 thekrazycouponlady.com#%#//scriptlet('set-local-storage-item', '__anon_id', '$remove$')
 ||img.enuri.info/images/partner/dsac.min.js
