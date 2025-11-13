@@ -1,9 +1,9 @@
-! Checksum: ga822ybuf15CVAAZnhe2/w
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1763001762-3600.patch
+! Checksum: 20FcaSlb38dVd8lyqD0PDg
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1763004744-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.94.72
-! TimeUpdated: 2025-11-13T02:38:27+00:00
+! Version: 2.0.94.73
+! TimeUpdated: 2025-11-13T03:28:17+00:00
 ! Expires: 10 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -75608,6 +75608,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 ||tags.news.com.au^$~script
 |piwik.
+||analytics.thekrazycouponlady.com^
 ||usage.trackjs.com^
 ||coll.lovense.com^
 ||bilog.lovense-api.com^
@@ -118142,6 +118143,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 /prod/dfm/t8y9347t.min.js$redirect=nooptext,important,domain=dailycamera.com
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+thekrazycouponlady.com#%#//scriptlet('set-local-storage-item', '/^ab\.storage\./', '$remove$')
+thekrazycouponlady.com#%#//scriptlet('set-local-storage-item', '__anon_id', '$remove$')
 ||img.enuri.info/images/partner/dsac.min.js
 ||enuri.com/*/js/logTailFunc.js
 ||enuri.com/view/Loginsert_
@@ -123994,6 +123997,7 @@ $cookie=_pubcid
 $cookie=pbjs-unifiedid
 $cookie=bf_lead
 $cookie=bf_visit
+||thekrazycouponlady.com^$cookie=/^ab\.storage\./
 ||lovense.com^$cookie=_utm_os
 ||lovense.com^$cookie=_utm_ref
 ||lovense.com^$cookie=_utm_track_id
