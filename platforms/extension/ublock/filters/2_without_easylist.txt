@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cboROqqKMAAbRcebUXVf3A
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1763053963-3600.patch
+! Checksum: OaFAGeL6RCPNPjG0SI0jPA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1763057568-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.24.99
-! TimeUpdated: 2025-11-13T17:08:09+00:00
+! Version: 2.4.25.0
+! TimeUpdated: 2025-11-13T18:08:38+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -35799,11 +35799,12 @@ neowin.net#$#div[class^="banner-"] { height: 0!important; min-height: 0!importan
 ! BeMob ad tracking
 &bemobdata=c%$all
 ?bemobdata=c%$all
-!
+! Malware. Related to https://github.com/AdguardTeam/AdguardFilters/issues/217750
+&modver=*&appver=$document,popup
+&appver=*&modver=$document,popup
 ! https://ww17.videomega.tv/
 ||l.cdn-fileserver.com^
 ||search-nowglobal.com^
-!
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214275
 ! Porn farms
 /assets/js/eaCtrl.js
@@ -62845,6 +62846,7 @@ $websocket,domain=300mbfilms.io|lib.rus.ec
 ! NOTE: Anti-adblock
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216027
+@@||seir-sanduk.com/*.js$~third-party
 @@||ads.poshtata.online/*.js$domain=seir-sanduk.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214657
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214602
