@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LU4mIj7e+RK4d2dZ0Ofz8A
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1763080272-3600.patch
+! Checksum: gbFeTF6vPLMbIATbI/5iQQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1763126385-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.25.6
-! TimeUpdated: 2025-11-14T00:26:41+00:00
+! Version: 2.4.25.19
+! TimeUpdated: 2025-11-14T13:15:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,8 @@
 !
 !
 !
+||slc.cbssports.com^
+||pnzekbgdcsumd.com^
 ||dipperflightrecommend.com^$all
 ||recommendedcasualtymysterious.com^
 ||leadstar.com.pl^$third-party
@@ -9690,6 +9692,7 @@
 ! Bad: ||legitwebsite.com^$third-party (should be in adservers.txt)
 !
 !
+||dl4d3y1ajyv3q.cloudfront.net^
 ||cdn.empower.net^
 ||*two-gun-volley.pages.dev^
 ||micro.rubiconproject.com^
@@ -10318,8 +10321,8 @@ wxx.wtf,camhub.world#$#body iframe#ads_iframe[src*="/player_ads.html"] { display
 !
 ! NOTE: zdn-adblock-detector
 /wp-content/plugins/zdn-adblock-detector/*
-world-iptv.club###zdn-adblock-overlay
-world-iptv.club,edoga.biz.hr,radiofreehubcity.com,jobalertswithgbrar.com,spyro.blogu.co.uk,cybermania.ws,teamkong.tk##+js(abort-current-script, jQuery, #zdn-adblock-overlay)
+ossels.ai,world-iptv.club###zdn-adblock-overlay
+ossels.ai,world-iptv.club,edoga.biz.hr,radiofreehubcity.com,jobalertswithgbrar.com,spyro.blogu.co.uk,cybermania.ws,teamkong.tk##+js(abort-current-script, jQuery, #zdn-adblock-overlay)
 !
 ! SECTION: ai_front / ai_adb
 ||media.net^$object,redirect=noop.js,script
@@ -10826,6 +10829,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217818
+@@||m.anon.tools/storage/js/adasync.js$~third-party
+anon.tools##+js(no-setTimeout-if, Ad Blocker Detected)
+! https://github.com/AdguardTeam/AdguardFilters/issues/217815
+edumailfree.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217415
 ! manhuarm.com mirrors
 manhuarmmtl.com##+js(no-fetch-if, _adcheck)
@@ -21463,6 +21471,7 @@ autopapa.ge##.top-rek
 !
 ! NOTE: Greek
 !
+iguru.gr###header-widget-area
 parallaximag.gr##.glomex-ad
 ||player.glomex.com^$domain=parallaximag.gr
 inkefalonia.gr,paratiritis-news.gr,parallaximag.gr###dnews-widget-output
@@ -25054,6 +25063,7 @@ roweroweporady.pl#@#.ad_container
 ||lib.wtg-ads.com/prebid/prebid_*.js$xmlhttprequest,redirect=noop.txt
 !
 !
+noweinfo.pl##.td-header-template-wrap .td-pb-row .wpb_wrapper > .td_block_title
 ||echopolski.pl/wp-content/cache/min/1/cr_leadstar.js
 echopolski.pl##.brxe-container > .brxe-block > a.brxe-image[target="_blank"]
 pilkareczna.com##main > section > div.container > div.w-full:has(> div > div > div > ins.adsbygoogle[data-ad-slot])
@@ -25260,11 +25270,13 @@ primemovies.pl##center > a[target="_blank"] > img
 primemovies.pl##div[data-insertion-position]
 magazif.com##.div-coffebreak-header
 magazif.com##div[id^="magid-"]
-/static/files/inline_images/*$~third-party,domain=myslenice-itv.pl|kulisy.net|24wroclaw.pl|24jgora.pl
-tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,kulisy.net##.custom-html-box:has(> .box__container:only-child > div:only-child > p:only-child)
-tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,palukimogilno.pl,zycie.pl##.grid__container > div.grid__row:has(> div.grid__col > div.card > div.box > div.box__container > div[id^="bills_in_rotation_"])
-tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,palukimogilno.pl,zycie.pl##.adv
-tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,magazynnaszczycie.pl,palukimogilno.pl,zycie.pl##.grid__ad
+/static/files/inline_images/*$~third-party,domain=myslenice-itv.pl|kulisy.net|24wroclaw.pl|24jgora.pl|nowagazeta.pl|kuriergmin.pl
+nowagazeta.pl##.custom-html-box:has(> .box__container:only-child > div:only-child > h6:first-child + p)
+nowagazeta.pl#?#.custom-html-box:has(> .box__container:only-child > div:only-child > p:contains(reklama))
+kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,kulisy.net##.custom-html-box:has(> .box__container:only-child > div:only-child > p:only-child)
+kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,palukimogilno.pl,zycie.pl##.grid__container > div.grid__row:has(> div.grid__col > div.card > div.box > div.box__container > div[id^="bills_in_rotation_"])
+kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,palukimogilno.pl,zycie.pl##.adv
+kuriergmin.pl,nowagazeta.pl,tygodniksiedlecki.com,dziennikelblaski.pl,gazetaolsztynska.pl,24wroclaw.pl,24jgora.pl,myslenice-itv.pl,checkpress.pl,kulisy.net,magazynnaszczycie.pl,palukimogilno.pl,zycie.pl##.grid__ad
 palukimogilno.pl,zycie.pl##.news__read-more
 zzaoceanu.com,forex-nawigator.biz##.ads
 defence24.pl#?#main > section.block:has(> div > a > span > figure > figcaption:contains(Reklama))
@@ -28370,11 +28382,13 @@ xboxforum.pl##.adsbygoogle
 rzeszow.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl##+js(set-constant, arePiratesOnBoard, false)
 rzeszow.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl##+js(set-constant, isAdBlockerEnabled, false)
 rzeszow.pl,ostrowiecka.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl##+js(set-constant, adInitializer, undefined)
+rzeszow.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl##.baner
+rzeszow.pl,esopot.pl,lowiczanin.info,gwarek.com.pl,tyna.info.pl,tusochaczew.pl,myglogow.pl,plonskwsieci.pl,spotradomsko.pl,portalsremski.pl,ekstrasierpc.pl,ki24.info,uniejow.net.pl,e-krajna.pl,gwio.pl,faktypilskie.pl,swiecie24.pl,grudziadz365.pl,mielec.pl,iszczecinek.pl,gniewkowo.eu,mojakruszwica.pl,expresskaszubski.pl,gorlice24.pl,gostyn24.pl,wpu24.pl,ddwloclawek.pl,ddtorun.pl##.banner
 rzeszow.pl##.news-slot-center
 wpu24.pl,ddwloclawek.pl,ddtorun.pl##.TOPNewsB
 wpu24.pl,ddwloclawek.pl,ddtorun.pl##.topLayer
-wpu24.pl,ddwloclawek.pl,ddtorun.pl##baner
 wpu24.pl,ddwloclawek.pl,ddtorun.pl##.banner--toplayer
+/scripts/banners/*$domain=ddtorun.pl
 /pl/js/questpass-$domain=rzeszow.pl
 /pl/js/new-system.js$domain=ostrowiecka.pl|rzeszow.pl
 /js/adInitializer.js$domain=ddwloclawek.pl|ddtorun.pl
@@ -31914,7 +31928,7 @@ primevideo.com##+js(json-prune, cuepointPlaylist vodPlaybackUrls.result.playback
 ! aglint-enable invalid-modifiers
 !
 ! HTMLAllCollection popunder (Galaksion variant)
-flixhd.*,cineb.*,musichq.cc,gomovies.*,hurawatch.cc,theflixertv.to##+js(abort-current-script, addEventListener, HTMLAllCollection)
+flixhq.to,flixhd.*,cineb.*,musichq.cc,gomovies.*,hurawatch.cc,theflixertv.to##+js(abort-current-script, addEventListener, HTMLAllCollection)
 ! .top adservers ex. https://zarb.zyzqkbkeyqrre.top/kwlorzavwmoaw/bkyjry?d=0
 toonily.com,mexa.sh,movies2watch.tv,rawkuma.net##+js(abort-current-script, document.createElement, DOMTokenList:)
 ! go.oclasrv.com clickunder/ads ('zfgloaded')
@@ -36630,6 +36644,16 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+ossels.ai##.widget-ap-ads
+wsj.com##div[class^="css-"]:has(> div[id^="wrapper-AD"])
+krem.com##.article__section_type_ad
+krem.com##.grid__cell > div.grid__module:has(> div.grid__module-sizer_name_taboola)
+krem.com##.grid__main > div.grid__cell_columns_1:has(> div.grid__module > div.grid__module-sizer_name_ad)
+cbssports.com##+js(remove-class, Skybox--minHeight, html)
+||at.cbsi.com/lib/dist/prod/bidbarrel-cbssports.min.js
+||nana2play.com/ads/
+uindex.org##body > div[style^="text-align"]:has(> div > a[href="https://mybunny.tv"])
+igay69.com##+js(abort-current-script, Date, localStorage)
 minecraftuuid.com##section > section.bg-primary:has(> div.container > a[href^="https://serverflex.io/"])
 minecraftuuid.com##.ml-auto > a[href^="https://serverflex.io/"]
 planetf1.com##.grid > article:has(> div.flex > div.unis-rec-ai-mpu-eoa)
@@ -41005,7 +41029,7 @@ crictracker.com##div[style="min-height:100px"][class^="d-none"]
 inwepo.co##div[id^="oa-"]
 parcelsapp.com##div[style="text-align: center; min-height: 280px;"]
 $script,xmlhttprequest,third-party,domain=clickndownload.*|clicknupload.*
-khou.com##.grid__section_theme_below-article
+krem.com,khou.com##.grid__section_theme_below-article
 polygonscan.com##.col-md-9 + div.col-auto.mx-auto
 amazon.com##div[id^="CardInstance"][data-card-metrics-id^="tempo-desktop-typ-prominent"]
 rswebsols.com##.rsws-page-header-gas
@@ -41607,7 +41631,7 @@ ip.me##.pt-5 > div.col-md-6 > p > a[target="_blank"]
 javguard.club,vidguardto.xyz,pistona.xyz,gaystream.click,gaystream.click,go-streamer.net,vgfplay.xyz,tioplayer.com,listeamed.net,bembed.net,embedv.net,vembed.net,vid-guard.com,v6embed.xyz,vgembed.com##body > div[class]:empty
 porntrex.com##iframe.ipp
 techworm.net,thisisanfield.com,compsmag.com,thisisanfield.com,divernet.com##div[class^="ai-viewport-"]
-supjav.ru,umatechnology.org,3dvf.com,aimhaven.com,comicsuniverse.it,macmagazine.com.br,ubunlog.com,thesportsgrail.com,downtownbellevue.com,androidsis.com,voiceofmotown.com,thethaiger.com,unseki.co.jp,wikibio.us,nexus-games.net,freecoursesite.com,formu1a.uno,toolsai.net,rightrasta.com,kaystls.site,gamertweak.com,mrinformatico.it,pianetacellulare.it,inwepo.co,updoc.site,oliveoiltimes.com,cgmagonline.com,happymag.tv,cpophome.com##.code-block
+magcourse.site,supjav.ru,umatechnology.org,3dvf.com,aimhaven.com,comicsuniverse.it,macmagazine.com.br,ubunlog.com,thesportsgrail.com,downtownbellevue.com,androidsis.com,voiceofmotown.com,thethaiger.com,unseki.co.jp,wikibio.us,nexus-games.net,freecoursesite.com,formu1a.uno,toolsai.net,rightrasta.com,kaystls.site,gamertweak.com,mrinformatico.it,pianetacellulare.it,inwepo.co,updoc.site,oliveoiltimes.com,cgmagonline.com,happymag.tv,cpophome.com##.code-block
 cpophome.com##.page_ad_container
 cpophome.com##.photo_right_ad
 cpophome.com##.after_related_photo_album
@@ -44483,6 +44507,8 @@ photopea.com##.app > div[style^="padding: 10px"][style*="overflow: hidden; z-ind
 photopea.com##div[style^="padding-top: 10px; overflow: hidden; padding-left:"] > img
 photopea.com##div[style^="padding-top: 10px; overflow: hidden; padding-left:"] > a[target="_blank"] > img
 ||skylinewebcams.com/as.php
+skylinewebcams.com##.list > div.col-md-4:has(> .cam-vert)
+skylinewebcams.com##.row > div[class]:has(> div.cam-light > ins.adsbygoogle)
 skylinewebcams.com###cams_near > div > a ~ div[class="col-xs-12 col-sm-6 col-md-4"]
 naughtymachinima.com##iframe[src^="https://chaturbate.com/"]
 ||sbflix.xyz/js/jquery/*/jquery-*.min.js?v=
@@ -50771,7 +50797,7 @@ voyeurhit.com,hdzog.com###under-pl-ad
 meow-share.com##.adsframe
 ah-me.com##div[id^="ts_ad_"]
 ||ah-me.com/pig/oinkoink^
-||p.jwpcdn.com/*/vast.js$important,domain=fvsvideo.com|gomovies.bid|solarmovie.fun|fmovies.gallery|vidmoly.to|gdriveplayer.co|vidmoly.me|01fmovies.com|123movies.domains|fmovies.cab|tornadomovies.co|timesnownews.com|film21.online|opjav.com|contentx.me|hotstream.club|abc7.su|jeniusplay.com
+||p.jwpcdn.com/*/vast.js$important,domain=fvsvideo.com|gomovies.bid|solarmovie.fun|fmovies.gallery|vidmoly.to|gdriveplayer.co|vidmoly.me|01fmovies.com|123movies.domains|fmovies.cab|tornadomovies.co|timesnownews.com|film21.online|opjav.com|contentx.me|hotstream.club|abc7.su|jeniusplay.com|nana2play.com
 ||camvideos.tv/homeAD.php
 camvideos.tv##.block-video > .table > div[style="margin:5px;padding:5px;text-align:center;"] > iframe
 ownedcore.com##.bannerBox
@@ -53404,7 +53430,7 @@ xxxadd.com/eureka
 ||cdn.thri.xxx/web/uploads/b_images/
 ||cdne.stripchat.com/cdn/banners/
 ||clickadu.com/apu.php$redirect=noop.txt,important,image,media,subdocument,stylesheet,script,xmlhttprequest,other
-||cloudfront.net^$domain=porn00.org|milfnut.com|iir.ai|tii.ai|newepisodes.co|megaup.net|ckk.ai|streamtajm.com|yesmovies.to|thehouseofportable.com|oke.io|xrivonet.info|linkrex.net|youtubemultidownloader.com|cpygames.com|srt.am|dancingastronaut.com|gamesofpc.com|tinyical.com|itdmusic.com|prefiles.com|anime-odcinki.pl|clickndownload.*|clicknupload.*|unblocked.lol|lipstickalley.com|addic7ed.com|animeflv.net|avxhome.in|avxhome.se|baiscopelk.com|filescdn.com|javgo.me|katfile.com|multiup.org|newpct.com|newpct1.com|nhentai.net|nitroflare.com|psarips.com|sankakucomplex.com|uptostream.com|userscloud.com|tmearn.com|y2mate.com|animepahe.ru|tei.ai|mastibaaz.com|soap2day.*|igg-games.com|torrentmac.net|send.cm|bluemediafiles.*|sakurafile.com|torrentgalaxy.mx|igg-games.co|ziperto.com|bluemediafile.*|oxtorrent.sk|bluemediadownload.*|urlbluemedia.*|bluedownload.*
+||cloudfront.net^$domain=porn00.org|milfnut.com|iir.ai|tii.ai|newepisodes.co|megaup.net|ckk.ai|streamtajm.com|yesmovies.to|thehouseofportable.com|oke.io|xrivonet.info|linkrex.net|youtubemultidownloader.com|cpygames.com|srt.am|dancingastronaut.com|gamesofpc.com|tinyical.com|itdmusic.com|prefiles.com|anime-odcinki.pl|clickndownload.*|clicknupload.*|unblocked.lol|lipstickalley.com|addic7ed.com|animeflv.net|avxhome.in|avxhome.se|baiscopelk.com|filescdn.com|javgo.me|katfile.com|multiup.org|newpct.com|newpct1.com|nhentai.net|nitroflare.com|psarips.com|sankakucomplex.com|uptostream.com|userscloud.com|tmearn.com|y2mate.com|animepahe.ru|tei.ai|mastibaaz.com|soap2day.*|igg-games.com|torrentmac.net|send.cm|bluemediafiles.*|sakurafile.com|torrentgalaxy.mx|igg-games.co|ziperto.com|bluemediafile.*|oxtorrent.sk|bluemediadownload.*|urlbluemedia.*|bluedownload.*|datanodes.to
 ||cnn.com/cnnintl_adspaces/
 ||coderanch.com/forums/banner/
 ||commitstrip.com/hello.php
@@ -54392,7 +54418,6 @@ sanjun.com.np,acharyar.com.np#?##postBody div[id^="HTML"]:has(> .widget-content 
 stadiumgaming.gg#?#.wrapper > div.container > div.row > div[class^="col-"]:has(> div.vm-placement)
 topgear.com#?#aside > div[data-testid="StickyContainer"]:has(> div[class^="AdContainer-"])
 hoes.tube#?#.margin-fix > div.item:has(> div.ads)
-skylinewebcams.com#?#.row > div[class]:has(> div.cam-light > ins.adsbygoogle)
 yuzu-emu.org#?#.columns > div.column:has(> div.px-md > ins.adsbygoogle)
 decrypt.co#?#.relative:has(> .absolute > span:contains(AD))
 cults3d.com#?##content > .grid--guttered > .grid-cell > .tbox:has(> .drawer > a:not([href*="cults3d.com/"], [href^="/"]))
@@ -61233,6 +61258,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217831
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217703
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217764
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217660
