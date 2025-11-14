@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: /8EQVBRF3j9e3wCUTu9hgg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1763115159-3600.patch
+! Checksum: weUjPFIab+Tj/pd/ndS0Iw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1763118664-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.25.16
-! TimeUpdated: 2025-11-14T10:08:10+00:00
+! Version: 2.4.25.17
+! TimeUpdated: 2025-11-14T11:06:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10828,6 +10828,11 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217818
+@@||m.anon.tools/storage/js/adasync.js$~third-party
+anon.tools##+js(no-setTimeout-if, Ad Blocker Detected)
+! https://github.com/AdguardTeam/AdguardFilters/issues/217815
+edumailfree.com##+js(no-fetch-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217415
 ! manhuarm.com mirrors
 manhuarmmtl.com##+js(no-fetch-if, _adcheck)
@@ -31921,7 +31926,7 @@ primevideo.com##+js(json-prune, cuepointPlaylist vodPlaybackUrls.result.playback
 ! aglint-enable invalid-modifiers
 !
 ! HTMLAllCollection popunder (Galaksion variant)
-flixhd.*,cineb.*,musichq.cc,gomovies.*,hurawatch.cc,theflixertv.to##+js(abort-current-script, addEventListener, HTMLAllCollection)
+flixhq.to,flixhd.*,cineb.*,musichq.cc,gomovies.*,hurawatch.cc,theflixertv.to##+js(abort-current-script, addEventListener, HTMLAllCollection)
 ! .top adservers ex. https://zarb.zyzqkbkeyqrre.top/kwlorzavwmoaw/bkyjry?d=0
 toonily.com,mexa.sh,movies2watch.tv,rawkuma.net##+js(abort-current-script, document.createElement, DOMTokenList:)
 ! go.oclasrv.com clickunder/ads ('zfgloaded')
