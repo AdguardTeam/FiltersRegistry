@@ -1,9 +1,9 @@
-! Checksum: JLZL2wfA5kR0wK1KgiNXjQ
-! Diff-Path: ../patches/19/19-s-1762985427-3600.patch
+! Checksum: N8SCU0RQFA56CmV1xLRofA
+! Diff-Path: ../patches/19/19-s-1763080248-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.65.14
-! TimeUpdated: 2025-11-12T22:07:27+00:00
+! Version: 2.0.65.29
+! TimeUpdated: 2025-11-14T00:27:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -536,11 +536,14 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+talksport.com#$#body { overflow: auto !important; }
+talksport.com#$##ad-blocker-popup { display: none !important; }
+||thedarkblues.co.uk/applications/adsense/interface/js/blocker.js
 ||alonsoaliaga.github.io/resources.js
 ||alonsoaliaga.github.io/*/resources.js
 duetnightabyss.th.gl#%#//scriptlet('adjust-setTimeout')
 duetnightabyss.th.gl#%#//scriptlet('trusted-click-element', 'div[role="alertdialog"] button')
-myenglishlanguage.com###zdn-adblock-overlay
+systementcorp.com,myenglishlanguage.com###zdn-adblock-overlay
 ||script.wikia.nocookie.net/fandom-ae-assets/odyssey/ad-engine/production/main.js
 rg.ru#%#//scriptlet('set-local-storage-item', 'rekl_modal_shown', 'emptyObj')
 exceldestek.com#%#//scriptlet('set-constant', 'googletag', 'emptyObj')
@@ -594,7 +597,6 @@ xvideos.com##body > div[style*="background: rgb"][style*="text-align: center"]
 bluesky-soft.com#%#//scriptlet('prevent-setTimeout', 'Please allow ads')
 bangkokpost.com###adblock-overlay
 simptown.su##.juice_ban
-asobicreate.net##div[class^="popup"][class$="wrap"]
 aram.zone#%#//scriptlet('prevent-element-src-loading', 'img', 'nitropay.com')
 aram.zone#%#//scriptlet('abort-on-stack-trace', 'CanvasRenderingContext2D.prototype.drawImage', '.onload')
 yuuki.me##div[id^="yuukips-ad-block-notification-banner"]
@@ -2009,7 +2011,7 @@ th.gl#%#//scriptlet('spoof-css', '.pointer-events-auto.shrink-0.border:has(> div
 th.gl#%#//scriptlet('spoof-css', '.pointer-events-auto.shrink-0.border:has(> div[class="block text-center text-xs p-0.5 group cursor-pointer"] > span), .pointer-events-auto.shrink-0.border:has(> div:is([id*=":floating-banner"], [id$=":video"], [id*="-wide-skyscraper-"])), .bg-card:has(> div.block > span.text-primary', 'width', '363')
 th.gl#%#//scriptlet('prevent-element-src-loading', 'script', 'nitropay.com')
 !+ NOT_PLATFORM(ext_ff)
-th.gl#%#(()=>{const e={apply:(e,t,c)=>{try{const e=c[0],t=c[1];if("object"==typeof e&&null!==e&&1===Object.keys(e).length&&3===Object.values(e)[0]&&"object"==typeof t&&null!==t&&(o=t,Object.values(o).some((e=>{if("function"==typeof e&&e.toString().includes("]:!0}"))return!0})))){const[t]=Object.keys(e);void 0!==t&&Reflect.set(e,t,1)}}catch(e){console.trace(e)}var o;return Reflect.apply(e,t,c)}};window.Object.is=new Proxy(window.Object.is,e)})();
+th.gl#%#(()=>{let t;const e={apply:(e,o,c)=>{try{const r=c[0],l=c[1];let y;try{y=t?.getNitroStateValue()}catch{return Reflect.apply(e,o,c)}if(y&&"object"==typeof r&&null!==r&&1===Object.keys(r).length&&"number"==typeof Object.values(r)[0]&&"object"==typeof l&&null!==l&&(n=l,Object.values(n).some((t=>{if("function"==typeof t&&t.toString().includes("]:!0}"))return!0})))){const[t]=Object.keys(r);void 0!==t&&Reflect.set(r,t,y+1)}}catch(t){}var n;return Reflect.apply(e,o,c)}};window.Object.is=new Proxy(window.Object.is,e);const o={apply:(e,o,c)=>{try{const e=c[0],o=c[1];!t&&e&&o&&"object"==typeof e&&"Module"===e[Symbol.toStringTag]&&"string"==typeof o&&"NitroScript"===o&&(t=e)}catch(t){}return Reflect.apply(e,o,c)}};window.Object.defineProperty=new Proxy(window.Object.defineProperty,o)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204525
 ||cdn.btmessage.com^$domain=medicalnewstoday.com
 medicalnewstoday.com#%#//scriptlet('set-constant', '__bt_intrnl.aaDetectionResults.ab', 'false')
@@ -2043,6 +2045,8 @@ iqiyi.com##.black-screen[data-cupid="adblock-blackscreen"]
 @@||t7z.cupid.iqiyi.com/show2?e$domain=m.iqiyi.com
 !#safari_cb_affinity
 !
+!+ NOT_OPTIMIZED
+asobicreate.net##div[class^="popup"][class$="wrap"]
 !+ NOT_OPTIMIZED
 yularihappysmile.com###adblock-modal
 !+ NOT_OPTIMIZED
@@ -3237,6 +3241,11 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+forum.amateurpin.xxx##div[class^="apx-modal"]
+||cdn.jsdelivr.net/npm/canvas-confetti*/dist/confetti.browser.min.js$domain=forum.amateurpin.xxx
+tmovie.tv#%#//scriptlet('trusted-set-local-storage-item', 'sharePopupLastShown', '$now$')
+tmovie.tv###root > .min-h-screen > .fixed.pointer-events-none:has(.lucide-share2)
+thedarkblues.co.uk##.cAnnouncementsFloat
 noob-club.ru##.support-nc
 ||youtube.com/@*?sub_confirmation=$removeparam=sub_confirmation
 baltbet.ru#%#//scriptlet('set-session-storage-item', 'regRequested', 'true')
@@ -4128,7 +4137,6 @@ radio-canada.ca###layoutMarker > .bottom-screenBottom > .transition-transform > 
 4gamers.com.tw#$##aroma-idle-modal___BV_modal_outer_ { display: none !important; }
 leawo.org###banner-top-prom
 kumanichi.com,camtsuku.com,comnico.jp###hs-web-interactives-bottom-anchor
-fanblogs.jp##.aff-notice
 nisanyansozluk.com#%#//scriptlet('set-local-storage-item', 'newYeradlariWebsiteHidden', 'true')
 nisanyansozluk.com#%#//scriptlet('set-local-storage-item', 'toastHidden', 'true')
 nisanyansozluk.com#%#//scriptlet('trusted-set-local-storage-item', 'toastTime', '1715621677653')
@@ -6067,7 +6075,6 @@ zexybaby.zexy.net###fixed_btn
 hoken.zexy.net##.formbtn.reserve
 zexy.net##.campain-banner--fixed
 at-s.com##.bnr_popup01
-fx-rashinban.com##.bmMessageBln
 crunchyroll.com##.erc-js-auth-modal
 smartpress.by##.noty_layout
 dcard.tw#?#.__portal > div[class^="sc-"]:has(a[href^="https://www.dcard.tw/service/_auth/"] > button)
@@ -11240,6 +11247,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+noticiascaracol.com##.PushSubscription-content
 ciberduvidas.iscte-iul.pt###notifications-bar
 pilkareczna.com##button[title="Włącz powiadomienia"]
 remszeitung.de#%#//scriptlet('set-cookie', 'push_consent_mute', '1')
@@ -12124,7 +12132,7 @@ aol.com#$#.banner-active { margin-top: 0 !important; }
 ! ###newsletter
 joindns4.eu,forum.golem.de,draculatheme.com,milanjovanovic.tech,finalspark.com,gamesradar.com,vimeo.com,bestmovie.it,fujinkoron.jp,territoriosamsung.com,lpnt.fr,casabrutus.com,ginzamag.com,lepoint.fr,itpro.com,epe.es,net.hr,phenomenalworld.org,rynek-rolny.pl,imore.com,hgtv.ca,coachweb.com,opendemocracy.net,fangamer.jp,tvtechnology.com,dartagnan.com,corumhaber.net,blog.pragmaticengineer.com,github.blog,nilesoft.org,heizsparer.de,zonaturistica.com,cphpost.dk,lodzkisport.pl,xetra-gold.com,karamangundem.com,lidskae.by,gibchess.com,cinestaan.com,mpbrinquedos.com.br,ladenzeile.at,thewordfinder.com,pbs.org,creditcards.com,antyweb.pl,master-and-more.de,frag-mutti.de,eurowag.com,picmix.com,bloggif.com,asgoodasnew.de,haber50.com,forumsamochodowe.pl,apollographql.com###newsletter
 ! ##.newsletter-form
-publicapis.io,businessinsider.nl,usmagazine.com,visualstudiomagazine.com,goldsguide.com,frandroid.com,tennismajors.com,blog.google,timkadlec.com,braziljournal.com,leroymerlin.ro,sketchbook.com,confianca.com.br,buson.com.br,haberturk.com,mel.fm,washingtonpost.com,belsat.eu,economist.com,gitlab.com##.newsletter-form
+tennisuptodate.com,publicapis.io,businessinsider.nl,usmagazine.com,visualstudiomagazine.com,goldsguide.com,frandroid.com,tennismajors.com,blog.google,timkadlec.com,braziljournal.com,leroymerlin.ro,sketchbook.com,confianca.com.br,buson.com.br,haberturk.com,mel.fm,washingtonpost.com,belsat.eu,economist.com,gitlab.com##.newsletter-form
 ! ##.cta-component-half-width
 andoveradvertiser.co.uk,asianimage.co.uk,banburycake.co.uk,barryanddistrictnews.co.uk,basingstokegazette.co.uk,bicesteradvertiser.net,borehamwoodtimes.co.uk,braintreeandwithamtimes.co.uk,bridportnews.co.uk,bromsgroveadvertiser.co.uk,bucksfreepress.co.uk,burytimes.co.uk,campaignseries.co.uk,chelmsfordweeklynews.co.uk,clactonandfrintongazette.co.uk,cotswoldjournal.co.uk,cravenherald.co.uk,croydonguardian.co.uk,dailyecho.co.uk,darlingtonandstocktontimes.co.uk,dorsetecho.co.uk,droitwichadvertiser.co.uk,dudleynews.co.uk,ealingtimes.co.uk,echo-news.co.uk,enfieldindependent.co.uk,eppingforestguardian.co.uk,epsomguardian.co.uk,eveningtimes.co.uk,eveshamjournal.co.uk,falmouthpacket.co.uk,freepressseries.co.uk,gazette-news.co.uk,gazetteherald.co.uk,gazetteseries.co.uk,greenocktelegraph.co.uk,guardian-series.co.uk,halesowennews.co.uk,halsteadgazette.co.uk,hampshirechronicle.co.uk,harrowtimes.co.uk,harwichandmanningtreestandard.co.uk,heraldscotland.com,heraldseries.co.uk,herefordtimes.com,hillingdontimes.co.uk,ilkleygazette.co.uk,keighleynews.co.uk,kidderminstershuttle.co.uk,knutsfordguardian.co.uk,lancashiretelegraph.co.uk,ledburyreporter.co.uk,leighjournal.co.uk,ludlowadvertiser.co.uk,maldonandburnhamstandard.co.uk,malverngazette.co.uk,messengernewspapers.co.uk,middlewichguardian.co.uk,milfordmercury.co.uk,newsshopper.co.uk,northwichguardian.co.uk,northyorkshireadvertiser.co.uk,oxfordmail.co.uk,oxfordtimes.co.uk,penarthtimes.co.uk,prestwichandwhitefieldguide.co.uk,redditchadvertiser.co.uk,richmondandtwickenhamtimes.co.uk,romseyadvertiser.co.uk,runcornandwidnesworld.co.uk,salisburyjournal.co.uk,southendstandard.co.uk,southwalesargus.co.uk,southwalesguardian.co.uk,stalbansreview.co.uk,sthelensstar.co.uk,stourbridgenews.co.uk,surreycomet.co.uk,suttonguardian.co.uk,swindonadvertiser.co.uk,theargus.co.uk,theboltonnews.co.uk,thenational.scot,thenorthernecho.co.uk,theoldhamtimes.co.uk,thescottishfarmer.co.uk,thetelegraphandargus.co.uk,thetottenhamindependent.co.uk,thewestmorlandgazette.co.uk,thurrockgazette.co.uk,times-series.co.uk,tivysideadvertiser.co.uk,wandsworthguardian.co.uk,warringtonguardian.co.uk,watfordobserver.co.uk,westerntelegraph.co.uk,wharfedaleobserver.co.uk,wiltsglosstandard.co.uk,wiltshiretimes.co.uk,wimbledonguardian.co.uk,wirralglobe.co.uk,witneygazette.co.uk,worcesternews.co.uk,yorkpress.co.uk,yourlocalguardian.co.uk##.cta-component-half-width
 ! ##.newsletter
@@ -12170,6 +12178,22 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+f1oversteer.com###prop-audience-exit
+interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
+troyhunt.com###floating_subscribe
+troyhunt.com##.footer_subscription_block
+bitwarden.com##p:has(> a[href="/help/releasenotes/#release-announcements"])
+bitwarden.com##.flex:has(> div[class] > div.hubspot-form)
+semana.com##.mb-4:has(> a#google-discover)
+noticiascaracol.com##.WhatsappChannel
+noticiascaracol.com##ps-lazy-section[data-template="article-whatsapp-template"]
+noticiascaracol.com##ps-lazy-section[data-template="article-google-template"]
+chocolatecoveredkatie.com##.block-area-save-recipe
+chocolatecoveredkatie.com##.wpforms-location-save_recipe_wprm
+thesun.co.uk##.wp-block-nypost-editor-newsletter
+thekrazycouponlady.com##.mobile-cta-container
+thekrazycouponlady.com##.desktop-cta-container
+thekrazycouponlady.com##.sms-call-to-action-container
 tour.bushikaku.net#%#//scriptlet('set-cookie', 'mailmagazine_guide_hidden', 'true')
 gq-magazine.co.uk##div[data-testid="ContentFooterBottom"] div[class^="ContentFooterNewsletterContentWrapper-"]
 gq-magazine.co.uk##.body__inner-container div[class^="NewsletterOneClickVerticalPullQuoteWrapper"]
@@ -14162,7 +14186,7 @@ cloudflare.com##.mb7 > div.bg-blue4:has(> section > form input#Email)
 monopol-magazin.de###block-stickyfooter
 monopol-magazin.de###block-footer-newsletter-form
 dallasnews.com##.dmnc_features-cta-social-cta-social-module__YgCAW
-acouplecooks.com##.block-email
+chocolatecoveredkatie.com,acouplecooks.com##.block-email
 market.yandex.*##div[id="/content/footer/subscription"]
 ig.com##div[class^="grid__bg image-background "][style*="/NEWS-LEADGEN-BGIMAGE.jpg"]
 militarywatchmagazine.com##.followUs
