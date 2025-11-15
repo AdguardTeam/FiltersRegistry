@@ -1,9 +1,9 @@
-! Checksum: m9kUMEhBBQys1Ek9J2X4Bw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1763167955-14400.patch
+! Checksum: owI2zpX62CQEPy0XZXOd0w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1763181699-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.51.15
-! TimeUpdated: 2025-11-15T00:48:12+00:00
+! Version: 2.1.51.16
+! TimeUpdated: 2025-11-15T04:37:20+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -207,6 +207,7 @@ _social-bar/
 ###facebookShareButton
 ###facebookWidget
 ###facebook_like
+###facebook_like_box
 ###facebook_link
 ###facebook_overlay
 ###facebook_share
@@ -441,6 +442,7 @@ _social-bar/
 ###shareUrl
 ###share_bar
 ###share_block
+###share_bottom
 ###share_box
 ###share_button
 ###share_buttons
@@ -563,13 +565,13 @@ _social-bar/
 ###social-youtube
 ###social-yt
 ###social2
+###socialBanner
 ###socialBar
 ###socialBlog
 ###socialButton
 ###socialButtonOnPage
 ###socialButtons
 ###socialConnect
-###socialConnects
 ###socialContainer
 ###socialFacebook
 ###socialFollow
@@ -985,6 +987,7 @@ _social-bar/
 ##.blog-social-icons
 ##.blog-social-item
 ##.blog_post_share
+##.blvs-share-button
 ##.bookmark-share
 ##.bottom-footer__social
 ##.bottom-share
@@ -1224,7 +1227,6 @@ _social-bar/
 ##.facebook-like
 ##.facebook-like-box
 ##.facebook-like-static
-##.facebook-likebox
 ##.facebook-messenger-avatar
 ##.facebook-modal
 ##.facebook-page-plugin
@@ -1234,7 +1236,6 @@ _social-bar/
 ##.facebook-share-link
 ##.facebook-sidebar
 ##.facebook-social
-##.facebookFeed
 ##.facebookOuter
 ##.facebookShare
 ##.facebook_box
@@ -1682,7 +1683,6 @@ _social-bar/
 ##.ing-social
 ##.inline-share
 ##.inline-share-buttons
-##.inline-social-icons
 ##.inline_socials
 ##.inner-header-social
 ##.inner-social
@@ -1730,7 +1730,6 @@ _social-bar/
 ##.jetpack_widget_social_icons
 ##.jj_sl_facebook
 ##.js-Share
-##.js-fb-share
 ##.js-icon-facebook
 ##.js-icon-twitter
 ##.js-share-btn
@@ -1792,7 +1791,6 @@ _social-bar/
 ##.likebtn
 ##.likebutton
 ##.likes-block_left
-##.likes-box
 ##.line-btn-icon
 ##.line-social
 ##.link-facebook
@@ -1883,7 +1881,7 @@ _social-bar/
 ##.menu-social-navigation-container
 ##.menu_share
 ##.menu_social
-##.menusocial
+##.message-share
 ##.messageShareButtons
 ##.meta-share
 ##.meta-share-count
@@ -2006,7 +2004,6 @@ _social-bar/
 ##.par-footer-social
 ##.parent-shareBox
 ##.pathSocialIcons
-##.pbtsharethisbutt
 ##.pen_social_networks
 ##.penci-social-share-footer
 ##.penci-social__content
@@ -2018,7 +2015,6 @@ _social-bar/
 ##.pgevoke-header-row2-right-social
 ##.photo-share
 ##.pic-share
-##.picto_facebook
 ##.picto_twitter
 ##.pin-it
 ##.pin-it-button
@@ -2104,7 +2100,6 @@ _social-bar/
 ##.rcom-social-site-footer
 ##.react-share__ShareButton
 ##.react_share_icons
-##.reddit-share-button
 ##.redes-sociais
 ##.redes-sociales
 ##.redes_sociales
@@ -2126,6 +2121,7 @@ _social-bar/
 ##.s-linkedin
 ##.s-pinterest
 ##.s-share
+##.s-share-button
 ##.s-social
 ##.s-social-item
 ##.s-social-share
@@ -2413,7 +2409,6 @@ _social-bar/
 ##.shareIcons
 ##.shareItemLikeBox
 ##.shareLeft
-##.shareLi
 ##.shareLink
 ##.shareLinks
 ##.shareList
@@ -2580,7 +2575,6 @@ _social-bar/
 ##.sharethis-container
 ##.sharethis-inline-reaction-buttons
 ##.sharethis-inline-share-buttons
-##.sharethis-link
 ##.sharethis-wrapper
 ##.shareto
 ##.sharetool
@@ -2981,7 +2975,6 @@ _social-bar/
 ##.social.social-facebook
 ##.social.social-twitter
 ##.social.social-youtube
-##.socialActions
 ##.socialBanner
 ##.socialBar
 ##.socialBtnList
@@ -3318,7 +3311,6 @@ _social-bar/
 ##.twitter_link
 ##.twitter_social
 ##.twitter_widget
-##.twitterbox
 ##.twitterbtn
 ##.twitterbutton
 ##.twitterfeed
@@ -3787,6 +3779,7 @@ nature.com##.c-article-extras-additional-links
 lawandcrime.com##.c-article-foot__site
 thenextweb.com##.c-engage
 lawandcrime.com##.c-header-social-item
+heart.org##.c-hero-card__social
 euroweeklynews.com,thisisfutbol.com,videocelts.com##.c-post__social
 kyivindependent.com##.c-share__wrapper
 theglobeandmail.com##.c-site-header__buttons
@@ -4244,7 +4237,6 @@ berliner-zeitung.de##.share-panel_wrapper__3tHN9
 freizeit.at##.shareToggle
 bild.de##.sharingbar
 deutsche-wirtschafts-nachrichten.de##.social-line
-mpg.de##.social-media-buttons
 kurier.at##.socialmedia-nav
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
@@ -4285,6 +4277,7 @@ idnes.cz,lidovky.cz,metro.cz##.artsum-social
 dr.dk##.dre-sticky-share-band
 telegraaf.nl##.SocialButtons
 nu.nl##.app-follow-us
+computable.nl##.social-media-sharers-wrap
 vkmag.com##a[onclick*="twitterShare"]
 bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_"]
 apotti.fi#?#.post-footer:-abp-has(> .share)
@@ -4309,6 +4302,7 @@ consigli.it##.company-social
 iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
+agi.it##.hidden.xlarge\:flex.border-t.border-base-300.pt-2.core.items-center.justify-between
 ilfattoquotidiano.it##.ifq-news-meta__share
 ilfattoquotidiano.it##.ifq-post__share
 alfredopedulla.com##.ig-banner
