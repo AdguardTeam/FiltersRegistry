@@ -1,9 +1,9 @@
-! Checksum: RsmzUH2pm6GWmHCn8WskCA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1763254382-14400.patch
+! Checksum: kzEYt8UoTBAKE6/sfmOhnQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1763268228-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.51.21
-! TimeUpdated: 2025-11-16T00:48:20+00:00
+! Version: 2.1.51.22
+! TimeUpdated: 2025-11-16T04:39:16+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -80,7 +80,6 @@
 /share_popup.js
 /share_sprite.png
 /share_view.js
-/share_wechat.png
 /share_weibo.png
 /shareaholic.js
 /sharebar.js
@@ -282,7 +281,6 @@ _social-bar/
 ###footerSocialIcons
 ###footerSocialLinks
 ###footerSocialMenu
-###footer_follow
 ###footer_social
 ###footer_social_facebook
 ###footer_social_icons
@@ -396,6 +394,7 @@ _social-bar/
 ###share-post
 ###share-project-button
 ###share-reddit
+###share-sticky
 ###share-strip
 ###share-this
 ###share-this-article
@@ -904,7 +903,6 @@ _social-bar/
 ##.article_shares
 ##.article_social
 ##.articlesharebox
-##.aside-socials
 ##.asocial-area
 ##.aspexifblikebox
 ##.aspexifbsidebox
@@ -1351,6 +1349,7 @@ _social-bar/
 ##.followus_net
 ##.followuson
 ##.foot-share
+##.foot-soc-fb
 ##.foot-soc-list
 ##.foot-soc-twit
 ##.foot-social
@@ -1602,6 +1601,7 @@ _social-bar/
 ##.icon-delicious
 ##.icon-digg
 ##.icon-facebook-bg
+##.icon-facebook-box
 ##.icon-facebook-circle
 ##.icon-facebook-circled
 ##.icon-facebook-icon
@@ -1680,7 +1680,6 @@ _social-bar/
 ##.index_sns
 ##.info-sns-list
 ##.info_share
-##.ing-social
 ##.inline-share
 ##.inline-share-buttons
 ##.inline_socials
@@ -2039,7 +2038,6 @@ _social-bar/
 ##.pk-share-buttons-link
 ##.pk-share-buttons-wrap
 ##.player__share
-##.plugin-socialshare
 ##.pocket-btn-icon
 ##.pod_share
 ##.polaris__social--icon
@@ -2623,6 +2621,7 @@ _social-bar/
 ##.sharing_block
 ##.sharing_box
 ##.sharing_button
+##.sharing_buttons
 ##.sharing_container
 ##.sharing_controls
 ##.sharing_tools
@@ -2745,6 +2744,7 @@ _social-bar/
 ##.social-badge
 ##.social-badges
 ##.social-banner
+##.social-banners
 ##.social-bar-sticky
 ##.social-bar-widget
 ##.social-bar-wrapper
@@ -2911,7 +2911,6 @@ _social-bar/
 ##.social-share-container
 ##.social-share-expand
 ##.social-share-facebook
-##.social-share-footer
 ##.social-share-google
 ##.social-share-group
 ##.social-share-icons
@@ -2937,7 +2936,6 @@ _social-bar/
 ##.social-share_compact
 ##.social-sharer
 ##.social-shares
-##.social-sharing-bot
 ##.social-sharing-button
 ##.social-sharing-buttons
 ##.social-sharing-link
@@ -3712,6 +3710,7 @@ ynet.co.il,ynetnews.com##.SiteArticleSocialShareNew1280
 asahi.com##.SnsName
 asahi.com##.SnsUtilityArea
 cbssports.com##.SocialIconsBar
+suntimes.com,tageblatt.de##.SocialLink
 streetsblog.org##.SocialSharing_socialSharingItems__wdJu8
 indiatoday.in##.Story_whatsapp_channel__6xdtB
 grammarly.com##._3fq8S-container
@@ -3795,10 +3794,10 @@ dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 c-sharpcorner.com##.cotent-share-icon
 overwolf.com##.creator-social
+bostonagentmagazine.com##.dd-share
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,catholicnewsagency.com##.donation-box
-thefitcareerist.com,thewalrus.ca##.dpsp-network-list-item
 economist.com##.ds-actioned-link--share
 theverge.com,vox.com##.duet--article--share-buttons
 dailyboulder.com,echonewshub.com,jugomobile.com,thartribune.com,thegamepost.com,townflex.com##.e-shared-sec
@@ -3827,7 +3826,6 @@ nypost.com##.floating-share-wrap
 sportskeeda.com##.follow-action
 thedirect.com##.follow-bar
 thehackernews.com##.follow-box
-carscoops.com##.follow-carscoops-container
 metoffice.gov.uk##.follow-icons
 windowsreport.com##.follow-more-news
 metro.co.uk##.follow-promo
@@ -3954,6 +3952,7 @@ bravotube.net##.sh
 sleepfoundation.org##.sh_space.share
 onlinelibrary.wiley.com##.share-access__ctrl
 thedirect.com##.share-bar-2
+ny1.com##.share-bar-container
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
 beincrypto.com##.share-block
 ibtimes.co.in##.share-btn-wrp
@@ -4318,7 +4317,6 @@ everyeye.it##.p-telBut
 raiplay.it##.prefooter__social__list
 ohga.it##.share-item
 rainews.it##.share-toggler
-aresdifesa.it##.single56__share
 tuttotek.it##.soc-media-sharing
 meteogiuliacci.it##.social-b
 andreagaleazzi.com##.social-bookmarks
@@ -4427,7 +4425,6 @@ elespectador.com##.Button_googleAlert
 adn40.mx##.ListSiguenos-SocialStrip
 ejecentral.com.mx##.NavigationSocial
 elpais.com.uy##.Page-actions-wrapper
-elcomercio.com##.adv-footer-social
 rpp.pe##.article__follow
 elespanol.com##.article__footer-nav
 elfinanciero.com.mx##.b-footer__social-links-container
@@ -4449,7 +4446,6 @@ eldiario.es,eldiarioar.com##.edi-social-buttons
 elonce.com,portafolio.co##.footer__redes
 elperiodico.com,sport.es##.ft-mol-rrss-column
 milenio.com##.google-news-follow
-metroecuador.com.ec##.googlenews-btn
 dolarhoy.com##.header__redes
 tn.com.ar##.horizontal-share
 clublibertaddigital.com,libertaddigital.com,libremercado.com##.links_social
@@ -4619,6 +4615,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||jsdelivr.net/npm/sharer.js
 @@||moneyweb.co.za^*/social-shares.min.js?
 @@||nhk.or.jp/common/sns/nol_share.js$script,~third-party
+@@||player.fm^*/social-icons/$image
 @@||radio24.ilsole24ore.com/plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js$script,~third-party
 @@||sharethis.com/button/buttons.js$domain=bristan.com
 @@||svgrepo.com/show/$image,~third-party
