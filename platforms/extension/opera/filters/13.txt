@@ -1,9 +1,9 @@
-! Checksum: fHIdE6Rr8Gu85wYlk4FRAA
-! Diff-Path: ../patches/13/13-s-1763370804-3600.patch
+! Checksum: kPHBjs8k02NmJC82Sc6RSw
+! Diff-Path: ../patches/13/13-s-1763374343-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.46
-! TimeUpdated: 2025-11-17T09:09:39+00:00
+! Version: 2.0.60.47
+! TimeUpdated: 2025-11-17T10:08:32+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1534,6 +1534,10 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+ustayemektarifleri.com##div[style="min-height:250px;"]
+ustayemektarifleri.com##div[style="min-height:280px;"]
+ustayemektarifleri.com##div[class]:has(> div[class^="r89-"])
+ustayemektarifleri.com#?#.kutu:has(> div.gbaslik > p > b:contains(Reklam))
 ||lidergazete.com/uploads/ads/
 lidergazete.com##.container:has(> div.media-block > a[href^="https://kampanya.suryapi.com.tr/"])
 technopat.net##.aawp
@@ -5672,7 +5676,11 @@ hdfilmcehennem.live#$##kendisi { display: block!important; }
 oyunu.com.tr#$##bir.oynama { display: none !important; }
 oyunu.com.tr#$##iki.oynama { display: block !important; }
 !
-! lorabettvhd*.com - frequently changed domains
+! seyirspor*.com - frequently changed domains
+||seyirspor*.com/*.gif
+[$domain=/seyirspor\d+\.com/]##a[href^="https://t2m.io/"]
+!
+! lorabettvhd*.shop - frequently changed domains
 [$domain=/lorabettvhd\d+\.shop/]##a[href^="https://bit.ly/"]
 [$domain=/lorabettvhd\d+\.shop/]#$#div[id^="modal"] { display: none !important; }
 [$domain=/lorabettvhd\d+\.shop/]#$#.modal-backdrop { display: none !important; }
