@@ -1,9 +1,9 @@
-! Checksum: 5+9g3cvN5BgFO9MQofqsNg
-! Diff-Path: ../patches/227/227-s-1763354637-14400.patch
+! Checksum: 8uXlSr9ny/czKe9IOoLi6Q
+! Diff-Path: ../patches/227/227-s-1763369145-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.39
-! TimeUpdated: 2025-11-17T04:40:05+00:00
+! Version: 2.0.23.40
+! TimeUpdated: 2025-11-17T08:41:55+00:00
 ! Expires: 10 days (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -3721,10 +3721,6 @@ gall.dcinside.com#%#//scriptlet('set-constant', 'blockedState', '', '', '', 'tru
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/background:[\s\S]+setTimeout\( *\( *\) *=> *[A-Za-z0-9]+\.remove\( *\)[\s\S]+Math\.random\( *\) *< *percent *\/ *100/')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
 ! chzzkban.xyz
-chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
-chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
-chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
-chzzkban.xyz#%#//scriptlet('prevent-requestAnimationFrame', 'window.__adsToken')
 !
 erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
@@ -3836,3 +3832,5 @@ lover932.net,lover933.net,lover934.net,lover935.net,lover936.net,lover937.net,lo
 ! chzzk.naver.com#%#//scriptlet('trusted-replace-xhr-response', ',"adFree":false', ',"adFree":true', 'my-info')
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
 2798731938.zigcou.com#%#//scriptlet('trusted-replace-node-text', 'script', '{"props":{"pageProps":{"initialState":{', '"isClicked":false', '"isClicked":true')
+chzzkban.xyz#%#//scriptlet('trusted-suppress-native-method', 'Object.values', '{"easyListBlocked":true}', 'abort')
+chzzkban.xyz#%#//scriptlet('trusted-suppress-native-method', 'Object.values', '{"setTimeoutBlocked":true}', 'abort')

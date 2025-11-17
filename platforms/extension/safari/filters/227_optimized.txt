@@ -1,9 +1,9 @@
-! Checksum: EI6OsJ/jK8ZTeRsOcdM4xw
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1763354649-14400.patch
+! Checksum: rXr5XGtBVkBC1OFbbaeL4g
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1763369159-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.39
-! TimeUpdated: 2025-11-17T04:40:05+00:00
+! Version: 2.0.23.40
+! TimeUpdated: 2025-11-17T08:41:55+00:00
 ! Expires: 1 day (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -3584,10 +3584,6 @@ m.dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$r
 gall.dcinside.com#%#//scriptlet('set-constant', 'blockedState', '', '', '', 'true')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/background:[\s\S]+setTimeout\( *\( *\) *=> *[A-Za-z0-9]+\.remove\( *\)[\s\S]+Math\.random\( *\) *< *percent *\/ *100/')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
-chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
-chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
-chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
-chzzkban.xyz#%#//scriptlet('prevent-requestAnimationFrame', 'window.__adsToken')
 erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mylocation.co.kr
@@ -3683,3 +3679,5 @@ hasha.in#%#//scriptlet('prevent-fetch', 'adManager.js')
 lover932.net,lover933.net,lover934.net,lover935.net,lover936.net,lover937.net,lover938.net,lover939.net,lover940.net,lover941.net#%#//scriptlet('prevent-setTimeout', 'document[_0x')
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
 2798731938.zigcou.com#%#//scriptlet('trusted-replace-node-text', 'script', '{"props":{"pageProps":{"initialState":{', '"isClicked":false', '"isClicked":true')
+chzzkban.xyz#%#//scriptlet('trusted-suppress-native-method', 'Object.values', '{"easyListBlocked":true}', 'abort')
+chzzkban.xyz#%#//scriptlet('trusted-suppress-native-method', 'Object.values', '{"setTimeoutBlocked":true}', 'abort')
