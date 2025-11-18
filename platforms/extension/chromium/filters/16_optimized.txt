@@ -1,5 +1,5 @@
-! Checksum: qUTON44n6W9jtMNh+uy+ig
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1763370795-3600.patch
+! Checksum: liY65SmmVnS8lPktK8Vyaw
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1763433647-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.54.98
@@ -620,6 +620,7 @@ luxauto.lu##section[data-scope="homepage-hot-ads"] .grid > .imu
 lessentiel.lu###prime__inside-top
 lessentiel.lu##div[class^="ad_adContainer_"]
 cyclismactu.net##a[href^="https://media.unibet.fr/redirect.aspx"]
+menu.lu##div[data-advertisement]
 sncf-connect.com##.WLS_gtmBannerWrapper
 sncf-connect.com###WL_side_banner
 lapresse.ca##.adsWrapper
@@ -735,6 +736,7 @@ tvanouvelles.ca##.header-banner-sticky
 immobilier.lefigaro.fr,sante.journaldesfemmes.fr###ctn_right
 immobilier.lefigaro.fr,sante.journaldesfemmes.fr##.ccmcss_oas_top
 expresso.1fr1.net##div[style*="height:90px;"][style*="728px"]
+gameblog.fr###adsense
 gameblog.fr##.r89-desktop-Incontent
 gameblog.fr##.r89-desktop-video-outstream
 gameblog.fr##div[class^="r89-desktop-hpa-"]
@@ -1625,7 +1627,6 @@ _popads.
 _pub.gif
 _publicite.
 _publicite_
-_sdk_ad_
 _smads_
 _square_ads.
 _werbebanner_
@@ -1918,7 +1919,6 @@ _build=iclick-$popup
 ||sarmady.net^$third-party
 ||scriptutils.net^$third-party
 ||secureanalytic.com^$third-party
-||sexpennyauctions.com^$third-party
 ||shareaholic.com^$third-party
 ||sharemyads.com^$third-party
 ||showgirl.ch^$third-party
@@ -2046,7 +2046,6 @@ _build=iclick-$popup
 ||apartgamble.com^
 ||aphizoguntaken.click^
 ||apl373.me^
-||apocalypsegulliblemood.com^
 ||apogoncaviars.shop^
 ||ariososlepage.com^
 ||armataangrily.shop^
@@ -2081,7 +2080,6 @@ _build=iclick-$popup
 ||bestcontentcost.top^
 ||bestfreecounterstat.com^
 ||betulinherl.shop^
-||bhabhiporn.pro^
 ||bharsilked.com^
 ||bieldfacia.top^
 ||biokrfvnvs.com^
@@ -2135,7 +2133,6 @@ _build=iclick-$popup
 ||chinnedwithset.com^
 ||circeanmailed.shop^
 ||ckdxbragemqum.com^
-||climbingsmuggle.com^
 ||cliv2508.com^
 ||clottedpowerlessmade.com^
 ||cloudgallery.net^
@@ -2457,7 +2454,6 @@ _build=iclick-$popup
 ||noradown.bid^
 ||northwestdiddived.com^
 ||nothusdasher.com^
-||noyanceborer.com^
 ||nservw.net^
 ||nta1vb6cdlrl.com^
 ||ntowritingneewebfu.com^
@@ -2736,7 +2732,6 @@ _build=iclick-$popup
 ||ybnnocszmtuz.com^
 ||yggtorrent.com^
 ||yktxrceoyoxn.com^
-||yoghonagra.com^
 ||zarebasdezaley.com^
 ||zaudephaigrauto.net^
 ||zesemen.cz^
@@ -2953,7 +2948,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||imagefacile.com^$image
 ||img.root-top.com/topsite/$third-party
 ||img.webme.com/pic/p/piriketseverler/
-||instantjmm.com/pub/
 ||jeu-legal-france.fr/sites/$third-party
 ||jolstatic.fr/www/skins/
 ||jumia.*/banners/
@@ -2992,6 +2986,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||promo.teenthais.com^
 ||proxy.ads.canalplus-bo.net^
 ||proxy.vidazoo.com^
+||pub-algeriatenders.s3.eu-central-1.amazonaws.com^
 ||pub.groupe-ldlc.com^
 ||r.kelkoo.com^$domain=toutvendre.fr
 ||ratehub.ca/widgets/$third-party
@@ -3474,6 +3469,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###dfp-habillage
 ###dfp-pave_bas
 ###dfp-pave_milieu
+###dfp_banniere_bas
 ###dfp_banniere_haute
 ###dfp_inread
 ###div-ads
@@ -4148,6 +4144,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.video-list-ads
 ##.video_reklama
 ##.view-publicites
+##.wgt-publicite-300-250
 ##.widget-advert
 ##.widget-le_guide
 ##.widget-pub
@@ -4755,7 +4752,6 @@ zataz.com#?#.custom-sidebar:-abp-has(h3:-abp-contains(/Partenaires|Publicité/))
 @@||partners.doctolib.fr^$subdocument,third-party
 @@||publicwww.com/images/labels.$image,~third-party
 @@||quefaire.be/annonces/imgads/$image
-@@||static.jeux123.fr/ads/promo_$image,~third-party
 @@||ab.9xbud.com/extract|$xmlhttprequest,domain=9xbuddy.online
 @@||ab.9xbud.com/token|$xmlhttprequest,domain=9xbuddy.online
 @@||ajax.googleapis.com/ajax/libs/$script,domain=4anime.to|9xbuddy.online|adf.ly|adshrinks.com|akumachi.com|android-zone.ws|anime-loads.org|atomcurve.com|atominik.com|ay.gy|babblecase.com|casualient.com|coginator.com|cogismith.com|cracksurl.com|crichd.com|crichd.live|dailyuploads.net|databasegdriveplayer.co|davioad.com|dlpsgame.com|ezie.cc|filmpornofrancais.fr|foumovies.net|gamecopyworld.eu|gdriveplayer.me|gdriveplayer.to|gnulahd.nu|gomo.to|gsurl.in|gum-gum-streaming.com|hglink.to|ithepiratebay.com|j.gs|kaitect.com|kializer.com|kibuilder.com|kickassanime.mx|kimechanic.com|kinovibe.co|koora.vip|larati.net|lelscanfr.com|listeamed.net|mavanimes.co|mega-torrent1.com|microify.com|mmoity.com|nortorrent.com|offmp3.com|onion.ly|onion.pet|ouo.io|ouo.press|picocurl.com|picons.eu|pintient.com|q.gs|quainator.com|quamiller.com|replaymod.com|riffhold.com|saison-streaming.com|segavid.com|shahidlive.co|shink.me|simizer.com|simkl.com|skamaker.com|skamason.com|softmaroc.org|speedtorrent.com|streamlive.to|syrialive.cc|syrialive.tv|taylorplayer.com|theproxy.how|tinyium.com|toonanime.co|toonanime.xyz|torrentdownload.info|twineer.com|ukpass.co|unblocked2.fun|unblocked2.vip|uppit.com|viahold.com|vializer.com|vidsrc.in|vidsrc.me|vidsrc.net|vidsrc.pm|vidsrc.to|vidsrc.xyz|viwright.com|voirfilms.live|xfilesharing.com|yabuilder.com|yacine-tv-app.live|yamechanic.com|yoalizer.com|yobuilder.com|yoineer.com|yoitect.com|zipansion.com
