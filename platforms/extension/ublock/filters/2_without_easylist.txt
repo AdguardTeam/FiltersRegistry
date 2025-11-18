@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: RkuDDK0s/1L0mKiVtUfMfw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1763464270-3600.patch
+! Checksum: J+mPNCWaHSOzerHnys+L3Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1763468134-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.26.13
-! TimeUpdated: 2025-11-18T11:06:51+00:00
+! Version: 2.4.26.14
+! TimeUpdated: 2025-11-18T12:11:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22593,6 +22593,9 @@ semprot.com##.f_floating_div
 176.119.30.88###tv-play
 176.119.30.88##.footer1
 duniaku.idntimes.com##amp-script[script="parallax-script"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/217995
+[$domain=/^kiryuu0\d+\.com/]##div[class*=" ads-"] > a > img
+[$domain=/^kiryuu0\d+\.com/]##+js(window.open-defuser)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/211064
 lihatgambar.my.id##+js(addEventListener-defuser, DOMContentLoaded, handleAdblockDetection)
 lihatgambar.my.id##div[id^="anim_olay_"]
@@ -36437,6 +36440,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+billboard.com##.pmc-sticky-sidebar
 nanovids.com##.fp-player > div[style^="inset:"]:not([class]):empty
 openalternative.co##+js(json-prune, props.ads.*)
 openalternative.co##a.ease-out[href^="https://trycomp.ai?"]
