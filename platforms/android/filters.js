@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.26.2",
-			"timeUpdated": "2025-11-18T00:26:16+0000",
+			"version": "2.4.26.3",
+			"timeUpdated": "2025-11-18T01:35:00+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.95.6",
-			"timeUpdated": "2025-11-17T21:06:35+0000",
+			"version": "2.0.95.7",
+			"timeUpdated": "2025-11-18T01:35:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.70.5",
-			"timeUpdated": "2025-11-17T17:11:21+0000",
+			"version": "2.0.70.6",
+			"timeUpdated": "2025-11-18T01:35:12+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.49.40",
-			"timeUpdated": "2025-11-17T19:06:34+0000",
+			"version": "2.2.49.41",
+			"timeUpdated": "2025-11-18T01:35:22+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.1.24",
-			"timeUpdated": "2025-11-17T22:07:47+0000",
+			"version": "2.1.1.25",
+			"timeUpdated": "2025-11-18T01:35:23+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.74.79",
-			"timeUpdated": "2025-11-17T16:08:51+0000",
+			"version": "2.0.74.80",
+			"timeUpdated": "2025-11-18T01:35:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/224_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.48.9",
-			"timeUpdated": "2025-11-17T15:09:10+0000",
+			"version": "2.1.48.10",
+			"timeUpdated": "2025-11-18T01:35:33+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
