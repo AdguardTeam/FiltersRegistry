@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: BhA/+03IAewgJ5rvKOYEUw
-! Diff-Path: ../patches/19/19-s-1763464268-3600.patch
+! Checksum: t04GQkYEkd8kewyAPssXyA
+! Diff-Path: ../patches/19/19-s-1763482358-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.65.50
-! TimeUpdated: 2025-11-18T11:07:33+00:00
+! Version: 2.0.65.51
+! TimeUpdated: 2025-11-18T16:09:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -76,7 +76,8 @@ mail.yandex.*##+js(json-prune, seatbid rtb)
 !
 ! Yandex.Search
 ! Main page under the search bar
-ya.ru##aside[class="informers3"] ~ div[class][style]:has(> div > div[style] > div[style^="background-image"] ~ a[target="_blank"])
+ya.ru##main[class="body__wrapper"] form ~ div[style^="--height-ratio:"]
+yandex.*##main[class="body__wrapper"] form ~ div > div[style^="--height-ratio:"]
 yandex.ru##.main__block-banner iframe[src]
 ! the ad is on the right side, which is mostly non-reproducible
 !
@@ -3135,6 +3136,7 @@ inews.co.uk,pinterest.com##+js(set-constant, google.accounts.id.prompt, noopFunc
 !
 ! SECTION: Popups - Regular rules
 !
+playground.ru##+js(set-local-storage-item, pgLocalSavedNavigationState, 1)
 cryptorussia.ru##+js(addEventListener-defuser, DOMContentLoaded, openPopupFooterRight)
 temp-mail.lol##+js(set-local-storage-item, giveaway_seen, true)
 temp-mail.lol##+js(set-local-storage-item, giveawayBannerClosed, true)

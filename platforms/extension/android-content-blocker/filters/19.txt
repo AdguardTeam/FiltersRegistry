@@ -1,8 +1,8 @@
-! Checksum: yhmPoOENzL5DHP44gLl+Xw
+! Checksum: qegfjx7F+MTDq68SGAMDWg
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.65.50
-! TimeUpdated: 2025-11-18T11:07:33+00:00
+! Version: 2.0.65.51
+! TimeUpdated: 2025-11-18T16:09:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -67,6 +67,8 @@ mail.yandex.*##div[class^="RightColumn-m__root--"]
 !
 ! Yandex.Search
 ! Main page under the search bar
+ya.ru##main[class="body__wrapper"] form ~ div[style^="--height-ratio:"]
+yandex.*##main[class="body__wrapper"] form ~ div > div[style^="--height-ratio:"]
 yandex.ru##.main__block-banner iframe[src]
 ! the ad is on the right side, which is mostly non-reproducible
 !
@@ -2468,6 +2470,7 @@ aol.com###player
 !
 ! SECTION[id=content_blockers]: Anti-adblock - The rules for content blockers only
 !#safari_cb_affinity(general)
+@@||lib.wtg-ads.com/publisher/kio.ac/sb_interstitial_wtg.js$domain=kio.ac
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=talksport.com
 @@||securepubads.g.doubleclick.net/pagead/*/pubads_impl.js$domain=talksport.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=talksport.com
