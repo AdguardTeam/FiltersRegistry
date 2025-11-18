@@ -1,9 +1,9 @@
-! Checksum: lvUi7NUxoiQ6lrdeFnKD1g
-! Diff-Path: ../patches/2/2-s-1763460754-3600.patch
+! Checksum: a739qV7op37C+7RR3EBOHA
+! Diff-Path: ../patches/2/2-s-1763464256-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.26.12
-! TimeUpdated: 2025-11-18T10:08:44+00:00
+! Version: 2.4.26.13
+! TimeUpdated: 2025-11-18T11:06:51+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11358,14 +11358,14 @@ ghbrisk.com#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googl
 crazygames.com#$#.adsbox.advertisement.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201699
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199124
+pvpoke-re.com#%#//scriptlet('trusted-replace-node-text', '#text', '/広告ブロックはエラーを|Werbeblocker können|Los bloqueadores de anuncios|Les bloqueurs de publicité|I blocchi pubblicitari|Os bloqueadores de/', '/広告ブロックはエラーを|Werbeblocker können|Los bloqueadores de anuncios|Les bloqueurs de publicité|I blocchi pubblicitari|Os bloqueadores de/g', '　　　　　　　　　　　')
+pvpoke-re.com#%#//scriptlet('trusted-replace-node-text', '#text', '/引き起こす場合があります|Fehler verursachen|pueden causar errores|peuvent provoquer des erreurs|possono causare errori|anúncios podem causar erros/', '/引き起こす場合があります|Fehler verursachen|pueden causar errores|peuvent provoquer des erreurs|possono causare errori|anúncios podem causar erros/g', '　　　　　　　　　　　　')
 @@||pvpoke-re.com^$generichide
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=pvpoke-re.com
 ||g.doubleclick.net/pagead/ads?client=ca-pub-3497863494706299$subdocument,redirect=noopframe,domain=pvpoke-re.com
 ||g.doubleclick.net/pagead/ads?client=ca-pub-3497863494706299$xmlhttprequest,redirect=nooptext,domain=pvpoke-re.com
 ! TODO: use scriptlet once https://github.com/AdguardTeam/Scriptlets/issues/526 is fixed
 pvpoke-re.com#%#((e="",t="",o="basic",s="",n)=>{const r={apply:(r,a,u)=>{try{let r="";const a=u[0],c=u[1]?.method||"";let l=!1;if("string"==typeof a&&a.includes(e)&&c.toLowerCase()===t.toLowerCase()?(r=a,l=!0):a instanceof Request&&a.url.includes(e)&&a.method.toLowerCase()===t.toLowerCase()&&(r=a.url,l=!0),l){const e=((e,t)=>{try{if(void 0===e||"cors"===e||"no-cors"===e)return new URL(t).origin===document.location.origin?"basic":"no-cors"===e?"opaque":"cors"}catch(e){}})(o,r),t=((e,t)=>{const o=e||"",n=new Response(s,{headers:{"Content-Length":`${s.length}`},status:200,statusText:"OK"});return"opaque"===t?Object.defineProperties(n,{body:{value:null},status:{value:0},ok:{value:!1},statusText:{value:""},url:{value:""},type:{value:t}}):Object.defineProperties(n,{url:{value:o},type:{value:t}}),n})(r,e);return n?new Promise((e=>{setTimeout((()=>{e(t)}),n)})):Promise.resolve(t)}}catch(e){}return Reflect.apply(r,a,u)}};window.fetch=new Proxy(window.fetch,r)})("https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-3497863494706299","HEAD","no-cors","",121);
-pvpoke-re.com#%#//scriptlet('trusted-replace-node-text', '#text', '/広告ブロックはエラーを|Werbeblocker können|Los bloqueadores de anuncios|Les bloqueurs de publicité|I blocchi pubblicitari|Os bloqueadores de/', '/広告ブロックはエラーを|Werbeblocker können|Los bloqueadores de anuncios|Les bloqueurs de publicité|I blocchi pubblicitari|Os bloqueadores de/g', '　　　　　　　　　　　')
-pvpoke-re.com#%#//scriptlet('trusted-replace-node-text', '#text', '/引き起こす場合があります|Fehler verursachen|pueden causar errores|peuvent provoquer des erreurs|possono causare errori|anúncios podem causar erros/', '/引き起こす場合があります|Fehler verursachen|pueden causar errores|peuvent provoquer des erreurs|possono causare errori|anúncios podem causar erros/g', '　　　　　　　　　　　　')
 pvpoke-re.com#%#//scriptlet('remove-attr', 'data-instype', 'ins.adsbygoogle:has(> div#aswift_0_host)')
 pvpoke-re.com#%#//scriptlet('trusted-set-attr', 'ins.adsbygoogle:has(> #aswift_0_host)', 'data-ad-status', 'unfilled')
 pvpoke-re.com#%#//scriptlet('trusted-set-attr', '*:not(body,.main-wrap:has(~ [id^="nitro-sidebar"] .nitro-side) #nitro-top,.main-wrap:has(~ [id^="nitro-sidebar"] .nitro-side) #nitro-body-desktop,[id^="nitro-sidebar"]:has(.nitro-side) ~ #nitro-header-mobile) > ins.adsbygoogle:not(:has(#aswift_0_host))', 'data-ad-status', 'filled')
@@ -64407,8 +64407,14 @@ implbits.com#@#.banner_container
 @@||ulogin.ru/auth.php$stealth=3p-cookie
 @@||ulogin.ru/fill.php$stealth=3p-cookie
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1367
-@@||adobelogin.com^$stealth=3p-cookie
-@@||adobeid-*.services.adobe.com^$stealth=3p-cookie
+@@||adobelogin.com^$stealth=3p-cookie|3p-auth
+@@||adobeid-*.services.adobe.com^$stealth=3p-cookie|3p-auth
+@@||abp-profile-service.adobe.io^$stealth=3p-auth
+@@||cc-collab.adobe.io/profile$stealth=3p-auth
+@@||bps-il.adobe.io/users/$stealth=3p-auth
+@@||aps-web.adobe.io/webapps/access_profile$stealth=3p-auth
+@@||uds.adobe-identity.com/userdocs/$stealth=3p-auth
+@@||orders.adobe.io/v4/orders/$stealth=3p-auth
 ! https://github.com/AdguardTeam/ExperimentalFilter/issues/1379
 @@||facebook.com/login.php$stealth=3p-cookie
 @@||facebook.com/*/dialog/oauth$stealth=3p-cookie
@@ -86156,6 +86162,7 @@ browsershots.org#@#.advert_area
 ||cbcmjwdkxppnbgq.com^
 ||cbdbda0256.com^
 ||cbdedibles.site^
+||cbdsrltmmlbnu.space^
 ||cbfxilexavemz.space^
 ||cbihvjploytkp.store^
 ||cbivvnmafd.net^
@@ -88570,6 +88577,7 @@ browsershots.org#@#.advert_area
 ||deedeedwinos.com^
 ||deedeedwrinkle.qpon^
 ||deediergypper.cfd^
+||deedilycleck.shop^
 ||deedkernelhomesick.com^
 ||deefainophoamy.net^
 ||deefaucoaphouga.com^
@@ -90592,6 +90600,7 @@ browsershots.org#@#.advert_area
 ||emvcujgimb.xyz^
 ||emxdgt.com^
 ||emydeexcl.help^
+||emywsmsdyqzne.site^
 ||emzxhwzaxdarg.vip^
 ||enabledetective.com^
 ||enablesasmetot.org^
@@ -96703,6 +96712,7 @@ browsershots.org#@#.advert_area
 ||iurjfbuhdwqxq.site^
 ||iusvvggxmqaii.site^
 ||iusyfbov.xyz^
+||iutitqhbisspi.store^
 ||iuuiirxnrolwc.store^
 ||iuvqtanktfhbs.online^
 ||iuwzdf.com^
@@ -96777,6 +96787,7 @@ browsershots.org#@#.advert_area
 ||iybnvijtblbwk.com^
 ||iybtgfvfrnhro.store^
 ||iybwitllknbmq.site^
+||iycclbglpq.com^
 ||iyclfhofnwbqvlm.net^
 ||iycljnpwjyvyk.website^
 ||iydvocfhvzrwa.website^
@@ -99383,6 +99394,7 @@ browsershots.org#@#.advert_area
 ||lockianquota.top^
 ||lockoophoossy.net^
 ||lockupaccede.com^
+||lockycoigns.shop^
 ||locnrivalry.qpon^
 ||locoesferrara.qpon^
 ||locooler-ageneral.com^
@@ -100327,6 +100339,7 @@ browsershots.org#@#.advert_area
 ||mdusneoid.rest^
 ||mdwzdvbjkixim.site^
 ||me4track.com^
+||meager-conclusion.com^
 ||meagerblock.pro^
 ||meagersex.pro^
 ||mean-offer.pro^
@@ -110133,6 +110146,7 @@ browsershots.org#@#.advert_area
 ||sketbhang.guru^
 ||sketchinferiorunits.com^
 ||sketchjav182.fun^
+||skevyejfplrje.com^
 ||skfwtmpglmkhs.site^
 ||skgburylwylrv.online^
 ||skgpzivadwdte.buzz^
@@ -113225,6 +113239,7 @@ browsershots.org#@#.advert_area
 ||uajgfkbpypbsa.site^
 ||uakarisigneur.com^
 ||uaomfbzuiavmd.website^
+||uapps.click^
 ||uaqjsohhkyppq.net^
 ||uaquurjkbddu.com^
 ||uauswagtehnwg.online^
@@ -115068,6 +115083,7 @@ browsershots.org#@#.advert_area
 ||waistcoataskeddone.com^
 ||waistcoatreferchemistry.com^
 ||wait4hour.info^
+||waitedlastingbits.com^
 ||waitedprowess.com^
 ||waiterrehoe.help^
 ||waitheja.net^
@@ -129201,6 +129217,7 @@ webcric.com###sticky-728x90-ad
 guelphmercury.com###sticky-ad-1
 thestar.com###sticky-ad-2
 ktbs.com###sticky-anchor
+levelgeeks.com###sticky-banner
 datamation.com,esecurityplanet.com,eweek.com,serverwatch.com,webopedia.com###sticky-bottom
 stakingrewards.com###sticky-footer
 gadgethacks.com###sticky-footer--container
