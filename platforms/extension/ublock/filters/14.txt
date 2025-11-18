@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ZVlOTmMh5dilWVd8w7/5Lg
-! Diff-Path: ../patches/14/14-s-1763449918-3600.patch
+! Checksum: m7G7tdXsUYucx/GeLp7bNQ
+! Diff-Path: ../patches/14/14-s-1763460765-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.49.46
-! TimeUpdated: 2025-11-18T07:08:24+00:00
+! Version: 2.2.49.47
+! TimeUpdated: 2025-11-18T10:09:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21942,6 +21942,7 @@ wochenblitz.com#$#body { overflow: auto !important; }
 wochenblitz.com#$##adblock-overlay { display: none !important; }
 wochenblitz.com##+js(addEventListener-defuser, DOMContentLoaded, script.onerror)
 zertalious.xyz##+js(set-constant, detectAdblock, noopFunc)
+startpage.com###main > .support-banner
 startpage.com###main > .block-display:has(> div[class^="css-"] > div[class^="css-"] > a[href^="https://support.startpage.com/"][target="_blank"])
 heraldnet.com##+js(no-setTimeout-if, adBlockEnabled)
 ||heraldnet.com/wp-content/plugins/incognito_dectector/js/incognito-detector.js
@@ -24383,6 +24384,8 @@ inews.co.uk,pinterest.com##+js(set-constant, google.accounts.id.prompt, noopFunc
 !
 ! SECTION: Popups - Regular rules
 !
+temp-mail.lol##+js(set-local-storage-item, giveaway_seen, true)
+temp-mail.lol##+js(set-local-storage-item, giveawayBannerClosed, true)
 forbes.ru##.fVh36
 atomicmail.io##body > div[class^="_backdrop_"]:has(> div[class^="_content_"] a[href^="https://atomicmail.onelink.me/"])
 atomicmail.io##body > div[class^="_backdrop_"]:has(> div[class^="_content_"] > img[src*=".atomicmail.io/Promo"])
