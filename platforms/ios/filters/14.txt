@@ -1,9 +1,9 @@
-! Checksum: 9272SBltQXBiewOG20FnEQ
-! Diff-Path: ../patches/14/14-s-1763442705-3600.patch
+! Checksum: bwnOHbmgLmzw0z05qKquNw
+! Diff-Path: ../patches/14/14-s-1763446441-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.49.44
-! TimeUpdated: 2025-11-18T05:08:06+00:00
+! Version: 2.2.49.45
+! TimeUpdated: 2025-11-18T06:10:13+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1703,6 +1703,7 @@
 !
 ! SECTION: Cookies - General URL
 !
+||bigidcmp.cloud/banner.js
 ||consent.preference-center.com^
 /gd-cookie2.js
 /modules/cookiesplus/views/js/cookiesplus-front.js
@@ -17819,6 +17820,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217939
+@@||cdn.cookielaw.org/consent/*/otSDKStub.js$domain=soundcloud.com
+@@||cdn.cookielaw.org/consent/*.json$domain=soundcloud.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217940
 topmediai.com#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217534

@@ -1,9 +1,9 @@
-! Checksum: FZ2F8/mKqB1cBChDQnALIw
-! Diff-Path: ../patches/18/18-s-1763442692-3600.patch
+! Checksum: RoHyo4VkTQx9HVdME6/GFQ
+! Diff-Path: ../patches/18/18-s-1763446428-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.74.82
-! TimeUpdated: 2025-11-18T05:08:13+00:00
+! Version: 2.0.74.83
+! TimeUpdated: 2025-11-18T06:10:18+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1703,6 +1703,7 @@
 !
 ! SECTION: Cookies - General URL
 !
+||bigidcmp.cloud/banner.js
 ||consent.preference-center.com^
 /gd-cookie2.js
 /modules/cookiesplus/views/js/cookiesplus-front.js
@@ -17837,6 +17838,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217939
+@@||cdn.cookielaw.org/consent/*/otSDKStub.js$domain=soundcloud.com
+@@||cdn.cookielaw.org/consent/*.json$domain=soundcloud.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217940
 topmediai.com#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217534
