@@ -1,9 +1,9 @@
-! Checksum: QuZ54h0cikwGQMxH7yy5cA
-! Diff-Path: ../patches/13/13-s-1763468138-3600.patch
+! Checksum: 2brJQAFzYmvqcAwsVSLO+A
+! Diff-Path: ../patches/13/13-s-1763536348-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.56
-! TimeUpdated: 2025-11-18T12:11:45+00:00
+! Version: 2.0.60.57
+! TimeUpdated: 2025-11-19T07:08:29+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -643,7 +643,8 @@ r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 !
 ! Sport streaming sites
 ##.ads_single_font
-##body > div#hellobar.hellobar
+##body div#hellobar
+##body div.hellobar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210145
 ! hdfilmcehennemi3.com
 ##body > div.body-clickable:empty
@@ -5960,6 +5961,7 @@ justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,
 ! aglint-enable invalid-modifiers
 [$domain=/selcuksports\d+\.com/]##img[id^="top-ads-"]
 ! CASE 3 - probably fake
+t24giris2.cfd#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 pressedfur.com##.player > a[href][target="_blank"]
 ||blogger.googleusercontent.com/img/*.gif$domain=taraftariummdeneme.blogspot.com
 taraftariummdeneme.blogspot.com###header-text
@@ -6048,7 +6050,6 @@ selcuksportshdcanli.com##.ps
 [$url=/^https?:\/\/(?:cinque|due|tre)\.(?=.*[0-9])[a-z0-9]{16}\.click\/.*\/player\.html/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 [$domain=/^i\[a-z\]*\.strmrdr\[a-z0-9\]+\..*/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 cinque.668a396e58bcbc27.click#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
-[$domain=/selcuksportshd\d+\.biz/]##.banner
 !+ NOT_VALIDATE
 [$domain=/selcuksportshd\d+\.(xyz\|click)/]##img[id*="-ads-"]
 !+ NOT_VALIDATE

@@ -1,9 +1,9 @@
-! Checksum: 9315tdVltW5D2L1C4CX9Ng
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1763468138-3600.patch
+! Checksum: 0s7gM4BIcBf3Y04uHW6IlA
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1763536348-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.56
-! TimeUpdated: 2025-11-18T12:11:45+00:00
+! Version: 2.0.60.57
+! TimeUpdated: 2025-11-19T07:08:29+00:00
 ! Expires: 12 hours (update frequency)
 ||keskin.vip^
 ||lups1.site^
@@ -445,7 +445,8 @@ r10.net#%#//scriptlet('abort-on-property-read', 'rTargets')
 r10.net#%#//scriptlet('abort-on-property-write', 'rInt')
 ||mail.yandex.*/*/*/*/*$replace=/.*"adIds":.*"imptrackers":.*//,xmlhttprequest,domain=mail.yandex.*
 ##.ads_single_font
-##body > div#hellobar.hellobar
+##body div#hellobar
+##body div.hellobar
 ##body > div.body-clickable:empty
 ##div[data-player-url] > a[class="x-embed-link"][target="_blank"]
 ##.volestream-gorsel
@@ -5353,6 +5354,7 @@ justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,
 !+ NOT_VALIDATE
 ||placehold.co^$domain=/selcuksports\d+\.com/
 [$domain=/selcuksports\d+\.com/]##img[id^="top-ads-"]
+t24giris2.cfd#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 pressedfur.com##.player > a[href][target="_blank"]
 ||blogger.googleusercontent.com/img/*.gif$domain=taraftariummdeneme.blogspot.com
 taraftariummdeneme.blogspot.com###header-text
@@ -5422,7 +5424,6 @@ selcuksportshdcanli.com##.ps
 [$url=/^https?:\/\/(?:cinque|due|tre)\.(?=.*[0-9])[a-z0-9]{16}\.click\/.*\/player\.html/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 [$domain=/^i\[a-z\]*\.strmrdr\[a-z0-9\]+\..*/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 cinque.668a396e58bcbc27.click#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
-[$domain=/selcuksportshd\d+\.biz/]##.banner
 !+ NOT_VALIDATE
 [$domain=/selcuksportshd\d+\.(xyz\|click)/]##img[id*="-ads-"]
 !+ NOT_VALIDATE
