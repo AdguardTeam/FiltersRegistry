@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.3.2",
-			"timeUpdated": "2025-11-19T12:11:03+0000",
+			"version": "2.1.3.3",
+			"timeUpdated": "2025-11-19T13:16:08+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.26.34",
-			"timeUpdated": "2025-11-19T12:11:15+0000",
+			"version": "2.4.26.35",
+			"timeUpdated": "2025-11-19T13:16:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.21.88",
-			"timeUpdated": "2025-11-19T10:08:31+0000",
+			"version": "2.1.21.89",
+			"timeUpdated": "2025-11-19T13:16:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -552,8 +552,8 @@
 			"groupId": 6,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/10.txt",
 			"trustLevel": "full",
-			"version": "2.0.3.77",
-			"timeUpdated": "2025-11-18T19:07:03+0000",
+			"version": "2.0.3.78",
+			"timeUpdated": "2025-11-19T13:16:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [],
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.60.60",
-			"timeUpdated": "2025-11-19T12:11:39+0000",
+			"version": "2.0.60.61",
+			"timeUpdated": "2025-11-19T13:16:46+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.49.62",
-			"timeUpdated": "2025-11-19T11:06:50+0000",
+			"version": "2.2.49.63",
+			"timeUpdated": "2025-11-19T13:16:53+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.1.41",
-			"timeUpdated": "2025-11-19T10:08:54+0000",
+			"version": "2.1.1.42",
+			"timeUpdated": "2025-11-19T13:16:54+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -677,8 +677,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.54.99",
-			"timeUpdated": "2025-11-19T05:08:19+0000",
+			"version": "2.0.55.0",
+			"timeUpdated": "2025-11-19T13:16:58+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.74.95",
-			"timeUpdated": "2025-11-19T11:06:54+0000",
+			"version": "2.0.74.96",
+			"timeUpdated": "2025-11-19T13:16:59+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.65.60",
-			"timeUpdated": "2025-11-19T11:06:55+0000",
+			"version": "2.0.65.61",
+			"timeUpdated": "2025-11-19T13:17:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.39.6",
-			"timeUpdated": "2025-11-18T16:09:02+0000",
+			"version": "2.0.39.7",
+			"timeUpdated": "2025-11-19T13:17:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -838,8 +838,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/23.txt",
 			"trustLevel": "full",
-			"version": "2.0.7.41",
-			"timeUpdated": "2025-11-19T05:08:24+0000",
+			"version": "2.0.7.42",
+			"timeUpdated": "2025-11-19T13:17:03+0000",
 			"deprecated": false,
 			"languages": [
 				"uk"

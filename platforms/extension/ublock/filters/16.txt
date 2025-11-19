@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: lbkmS/bkSRFmWpi5HgntJA
-! Diff-Path: ../patches/16/16-s-1763529127-3600.patch
+! Checksum: O1Vl1K0XZGt83nFoR/Yyhw
+! Diff-Path: ../patches/16/16-s-1763558435-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.99
-! TimeUpdated: 2025-11-19T05:08:19+00:00
+! Version: 2.0.55.0
+! TimeUpdated: 2025-11-19T13:16:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -616,6 +616,12 @@ $script,redirect-rule=noop.js,domain=tf1info.fr
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217971
+! Fixes video player - required when DNS filtering is used
+! TODO: use scriptlet when it's available - https://github.com/AdguardTeam/Scriptlets/issues/173
+! "adjust-setInterval" is required to fix delay in video playback start
+tf1info.fr##+js(nano-setInterval-booster, defaultConsentString, *, 0.001)
+!+ NOT_PLATFORM(ext_ff)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213146
 ! Fixes loading video player and delay in video playback start
 ! Apps cannot inject script into iframe with "about:blank" src, so a workaround is required

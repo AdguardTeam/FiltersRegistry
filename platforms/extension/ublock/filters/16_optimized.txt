@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sgkMRVvj+pv61UdERY332w
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1763529127-3600.patch
+! Checksum: dt0BndY3MYms102eLXSAJQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1763558435-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.99
-! TimeUpdated: 2025-11-19T05:08:19+00:00
+! Version: 2.0.55.0
+! TimeUpdated: 2025-11-19T13:16:58+00:00
 ! Expires: 5 days (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -251,6 +251,8 @@ $script,redirect-rule=noop.js,domain=tf1info.fr
 @@||ads.stickyadstv.com^|$xmlhttprequest,domain=tf1.fr|tf1info.fr
 !#safari_cb_affinity
 ##.rwad-with-placeholder
+tf1info.fr##+js(nano-setInterval-booster, defaultConsentString, *, 0.001)
+!+ NOT_PLATFORM(ext_ff)
 !+ NOT_PLATFORM(windows, mac, android)
 supersoluce.com##+js(adjust-setTimeout, event_listener_timeout, *, 0.001)
 marieclaire.fr##+js(adjust-setTimeout, /userConsentProcess|this===/, *, 0.001)
