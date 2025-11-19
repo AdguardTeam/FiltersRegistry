@@ -1,5 +1,5 @@
-! Checksum: dusggKTzH6qY/WHyL0EZbw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1763440945-14400.patch
+! Checksum: vWS/2IhBOEhTOmEtzloDyQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1763527368-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.36
@@ -45,8 +45,11 @@ sensorstechforum.com###win_top_new_hidden
 windowsreport.com##div[class^=restoro-download] + section
 appuals.com##.wptp
 appuals.com##p + div > div:first-of-type
+wikidll.com,dllfile.net,fix4dll.com,dll-files.org##.inner > .text
+wikidll.com,dllfile.net,fix4dll.com,dll-files.org##.product > .title-line
 windll.com##.download-block
 windll.com##.dll > p
+fix4dll.com#?#.sidebar__block:has-text(Outbyte)
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
 ||outbyte.com^$document
@@ -820,6 +823,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 192.243.61.227$network
 ||desiredhighest.com^$all
+||movementshereafter.com^$all
 ||paddlemoscowsplit.com^$all
 ||weekendorgans.com^$all
 !+ PLATFORM(windows, mac, android, cli)
@@ -887,6 +891,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||batchzoo.com^$all
 ||clungfellow.com^$all
 ||facultativethus.com^$all
+||askewrefusaltrashy.com^$all
 ||absorptionliquor.com^$all
 ||beenover.com^$all
 ||heartburnsurroundingcourtroom.com^$all
@@ -1553,7 +1558,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 2a14:2d81:0:27::1$network
 !+ PLATFORM(windows, mac, android, cli)
 139.45.195.9$network
-||go.dealslandz.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 172.240.41.33$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -2764,7 +2768,6 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@|https://raw.githubusercontent.com/DandelionSprout/adfilt/*
 @@||kaltura.com^
 @@.dna.ip-only.net^
-@@.in-addr.arpa|
 ||filters.adtidy.org^$badfilter
 ||reports.adguard.com^$badfilter
 ||adtidy.org^$badfilter
@@ -2892,7 +2895,6 @@ rule34.paheal.net###comment-list-recent
 rule34.xxx###comment-list
 e621.net,e926.net###comments
 ###hot-network-questions
-/api/amediacomments/*
 www.pixiv.net##div[data-ga4-label*=comment i]
 $removeparam=yclid
 $removeparam=gclid
@@ -3139,6 +3141,7 @@ $removeparam=adposition
 $removeparam=gbraid
 $removeparam=wbraid
 $removeparam=cvosrc
+$removeparam=ads_params
 $document,removeparam=/^affiliateID=.*$/i
 $removeparam=affiliate_id
 $removeparam=afn_sr
@@ -3428,7 +3431,6 @@ $removeparam=dspCookie
 $removeparam=_rand
 $removeparam=ttd_id
 $removeparam=dsp_uid
-$removeparam=mt_exuid
 $removeparam=pn_id
 $removeparam=adsafe_url
 $removeparam=mt_uuid
@@ -3706,12 +3708,8 @@ $document,removeparam=sca_upv,domain=www.google.*|ipv6.google.com
 ||myaccount.google.com^$removeparam=source
 ||translate.google.com^$removeparam=/^tab=TT$/
 ||www.google.$document,removeparam=sstk
-://www.google.$removeparam=/^num=\d{2,}$/
-://ipv6.google.com^$removeparam=/^num=\d{2,}$/
 ://www.google.$removeparam=aep
-://ipv6.google.com^$removeparam=aep
 ://www.google.$removeparam=ntc
-://ipv6.google.com^$removeparam=ntc
 @@://www.google.*/maps^$removeparam=utm_campaign
 ||tiktok.com^$removeparam=_r
 $removeparam=u_code
@@ -4134,10 +4132,13 @@ $removeparam=plink,domain=audible.*
 ||netflix.com^$removeparam=trackIdJaw
 ||netflix.com^$removeparam=trackIdTrailer
 ||netflix.com^$removeparam=dpRightClick
+$removeparam=vndid,domain=paramountplus.com|cbs.com
 $removeparam=rep,domain=shein.com
 $removeparam=ret,domain=shein.com
 $removeparam=ici,domain=shein.com
 $removeparam=adp,domain=shein.com
+$removeparam=referrer_domain,domain=reddit.app.link
+$removeparam=referrer_url,domain=reddit.app.link
 $removeparam=loid,domain=reddit.app.link
 $document,removeparam=feature,domain=reddit.app.link
 $removeparam=mweb_loid,domain=reddit.app.link
@@ -5108,6 +5109,7 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 #@#.adBlock
 ##.adBlock:not(html,body,:empty)
 #@#.ad-banners
+##.ad-banners:not(html,body,:empty)
 #@#.ad-below
 #@#.ad-display
 ##.ad-display:not(html,body,:empty)
