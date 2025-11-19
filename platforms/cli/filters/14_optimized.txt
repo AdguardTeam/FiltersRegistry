@@ -1,9 +1,9 @@
-! Checksum: 9JZlLx3G0np25jOofAZDRw
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1763529101-3600.patch
+! Checksum: fkpDDmkWUgq+eVtaeR5Bdw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1763532820-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.49.56
-! TimeUpdated: 2025-11-19T05:08:16+00:00
+! Version: 2.2.49.57
+! TimeUpdated: 2025-11-19T06:10:20+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1594,6 +1594,9 @@ finax.eu#%#//scriptlet('trusted-set-cookie', 'cookieconsent', '{"analytic":false
 pttavm.com#%#//scriptlet('set-local-storage-item', 'cookie_status', '1')
 kia.com#%#//scriptlet('set-cookie', 'agn_push', '1')
 dpluskia.bstage.in#%#//scriptlet('trusted-click-element', 'button[class*="CookieBottomSheet_setting__"], button[class*="CookieSettingContainer_button__"]')
+tinyurl.com#$#.cookie-consent-wrapper { display: none !important; }
+tinyurl.com#$?#body { overflow: auto !important; }
+||ccc.eu/*/api/Consents/GetUserConsents
 buckedup.com##.consent-cookie-container
 neighbourly.com#%#//scriptlet('set-cookie', '.NEBCPOL', 'false')
 gisreportsonline.com##div[id^="cc-cookie"]
@@ -6254,7 +6257,7 @@ imdb.com,vagrantup.com,terraform.io,hashicorp.com,vaultproject.io##div[data-test
 fdp.de#?#body > #sliding-popup:has(> .eu-cookie-compliance-banner)
 pornpics.com###cookie-contract
 appgallery.huawei.com##div[class^="CookieBannerOf"]
-tabak-barthel.de,sklep.poczta-polska.pl,cambuy.de,taoasis.com,staffeleien-shop.de,labbe.de##.acris-cookie-consent
+parfume.de,tabak-barthel.de,sklep.poczta-polska.pl,cambuy.de,taoasis.com,staffeleien-shop.de,labbe.de##.acris-cookie-consent
 willsoor.pl,golfbidder.co.uk,icd.pl,sudio.com,labbe.de##.ec-gtm-cookie-directive
 ||cscript-cdn-*.cassiecloud.com/loader.js
 hemdenbox.de#$##s-cookie-consent { display: none!important; }
@@ -16679,7 +16682,7 @@ dhakatribune.com###firebase-subscriber
 evrensel.net##.os-notify-container
 ||cdn.empower.net/sdk/CometSDK.min.js
 komputronik.pl###snrs-wp-subscriber
-/^https:\/\/plapi\.ccc\.eu\/[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]\.js$/$script,match-case,domain=ccc.eu
+/\.ccc\.eu\/[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]?\.js$/$script,match-case,domain=ccc.eu
 bilet.com#%#//scriptlet('prevent-setTimeout', 'Notification.permission')
 eluniversal.com.mx###webpushBanner-eluniversal
 dexerto.com#%#//scriptlet('remove-class', 'fixed', '.fixed[class*="animate-"]')
