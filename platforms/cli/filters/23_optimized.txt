@@ -1,9 +1,9 @@
-! Checksum: HPqAJc70aAXQUew6hz6Mcw
-! Diff-Path: ../patches/23_optimized/23_optimized-s-1763558414-3600.patch
+! Checksum: /xAdTOuBHMvLmEQ+6VufpA
+! Diff-Path: ../patches/23_optimized/23_optimized-s-1763629891-3600.patch
 ! Title: AdGuard Ukrainian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.7.42
-! TimeUpdated: 2025-11-19T13:17:03+00:00
+! Version: 2.0.7.43
+! TimeUpdated: 2025-11-20T09:08:15+00:00
 ! Expires: 12 hours (update frequency)
 /code/video-steam/?id=*&vast=
 /nadavi-api/?p4g3=js/api/widget.js
@@ -5174,8 +5174,10 @@ player.starlight.digital#%#//scriptlet('trusted-replace-fetch-response', '"media
 ||starlight.digital/get-playlist-ad/hls-vod/files/*.mp4/*_AdBlock$xmlhttprequest,removeparam=placement_id
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ukrainian
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
-adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+!+ PLATFORM(windows, mac, android, cli, ios) NOT_OPTIMIZED
+adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
+!+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
+||https-filtering-check.adtidy.org^
 ||kinoglobus.at.ua^$replace=/РЕКЛАМА:\s//
 ||vcms-api*.starlight.digital/hls/*?file=*&testadv=$removeparam=testadv
 ||vcms-api*.starlight.digital/player-api/$xmlhttprequest,replace=/"mediaHls"/"mediaHlsNoAdv"/

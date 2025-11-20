@@ -1,9 +1,9 @@
-! Checksum: Zj8lGx5256oMDe3Qqjm9pA
-! Diff-Path: ../patches/20/20-s-1763572284-3600.patch
+! Checksum: sKL4vCslPfM/Tw10Nx+jRw
+! Diff-Path: ../patches/20/20-s-1763629891-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.24.69
-! TimeUpdated: 2025-11-19T17:08:07+00:00
+! Version: 2.0.24.70
+! TimeUpdated: 2025-11-20T09:08:14+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3823,12 +3823,14 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 !
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_mobileappbanners
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
-adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_ext
+!+ PLATFORM(windows, mac, android, cli, ios) NOT_OPTIMIZED
+adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_apps
 ! Detect of using AdGuard products
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
-adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+!+ PLATFORM(windows, mac, android, cli, ios) NOT_OPTIMIZED
+adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Detect HTTPS filtering
+!+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
+||https-filtering-check.adtidy.org^
 ! Detect Advanced Protection of AdGuard for iOS
 !
 !

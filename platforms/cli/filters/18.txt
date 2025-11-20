@@ -1,9 +1,9 @@
-! Checksum: AhUgG1LGo8iVVvijkOgUeg
-! Diff-Path: ../patches/18/18-s-1763622687-3600.patch
+! Checksum: eXV/Me0eES+AmHuLMNZPWg
+! Diff-Path: ../patches/18/18-s-1763629890-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.2
-! TimeUpdated: 2025-11-20T07:08:12+00:00
+! Version: 2.0.75.3
+! TimeUpdated: 2025-11-20T09:08:13+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17856,12 +17856,14 @@ m.timesofindia.com,m-timesofindia-com.cdn.ampproject.org$$amp-consent
 !
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_cookies
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
-adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_ext
+!+ PLATFORM(windows, mac, android, cli, ios) NOT_OPTIMIZED
+adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_apps
 ! Detect of using AdGuard products
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
-adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
+!+ PLATFORM(windows, mac, android, cli, ios) NOT_OPTIMIZED
+adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Detect HTTPS filtering
+!+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
+||https-filtering-check.adtidy.org^
 ! Detect Advanced Protection of AdGuard for iOS
 !
 poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo.pl,r360.eu,centrumwyobrazni.pl#$#.cookie { display: none !important; }
