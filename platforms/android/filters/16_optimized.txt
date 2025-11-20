@@ -1,5 +1,5 @@
-! Checksum: 7nX6sEeLxlBxwijX9TPQsQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1763575992-3600.patch
+! Checksum: x4koP2Cm5MVbsiONY7NSzA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1763606451-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.1
@@ -702,6 +702,7 @@ leparisien.fr##.footerSubscribe
 marianne.net##.sponsored
 ||videosxgays.com/*.php
 videosxgays.com##.player-right
+aeroports-voyages.fr##.adsenseContentBottom
 lalibre.be##.ap-AdContainer
 mariefrance.fr,closermag.fr###avantis_container
 closermag.fr,mariefrance.fr##html > body .placeholder-pub_dfp:not(#style_important)
@@ -1531,7 +1532,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?aads=
 ?ad_sub=
 ?ADFassetID=
-?adlink/
 ?adRef=
 ?adroll_adv_id=
 ?adTagId=
@@ -1726,6 +1726,7 @@ _werbebanner_
 ?pubid=*&subid=$popup,third-party
 _build=iclick-$popup
 ||club^*&zoneid=$popup
+||online^*&zoneid=$popup
 ||shop^*&zoneid=$popup
 ||shop^*?scontext_r=$popup
 ||shop^*cuid/?
@@ -1780,6 +1781,7 @@ _build=iclick-$popup
 ||affility.com^$third-party
 ||afilio.com.br^$third-party
 ||afromessenger.com^$third-party
+||apps2you.org^$third-party
 ||apypxl.com^$third-party
 ||aquaplatform.com^$third-party
 ||arabyads.com^$third-party
@@ -1798,6 +1800,7 @@ _build=iclick-$popup
 ||caramec.fr^$third-party
 ||carasexe.name^$third-party
 ||carpediem.fr^$third-party
+||cashpage.net^$third-party
 ||cclpub.com^$third-party
 ||cdn3.net^$third-party
 ||cfgr2.com^$third-party
@@ -1880,7 +1883,6 @@ _build=iclick-$popup
 ||mediavoice.com^$third-party
 ||meetaffiliate.co^$third-party
 ||meexy.com^$third-party
-||milfalone.com^$third-party
 ||mirando.de^$third-party
 ||missaffiliate.com^$third-party
 ||misstrends.com^$third-party
@@ -1896,10 +1898,8 @@ _build=iclick-$popup
 ||multilinkhost.com^$third-party
 ||myservdir.com^$third-party
 ||myxpass.com^$third-party
-||neckermann.be^$third-party
 ||nend.net^$third-party
 ||netclickstats.com^$third-party
-||netcomvad.com^$third-party
 ||ninjagod.com^$third-party
 ||nr-data.net^$third-party
 ||nsfxaffiliates.com^$third-party
@@ -1950,6 +1950,7 @@ _build=iclick-$popup
 ||svonm.com^$third-party
 ||tagsrvcs.com^$third-party
 ||tapub.fr^$third-party
+||tdsapi.com^$third-party
 ||tdscd.com^$third-party
 ||templatehelp.com^$third-party
 ||tipser.com^$third-party
@@ -2073,7 +2074,6 @@ _build=iclick-$popup
 ||asmonfernor.com^
 ||atappanic.click^
 ||atimaze.com^
-||autorekrb.bid^
 ||avaljumectk.com^
 ||avehospitablestrangers.com^
 ||avhxnasqeo.com^
@@ -2692,6 +2692,7 @@ _build=iclick-$popup
 ||uketbrlm.com^
 ||umspecrek.ru^
 ||undom.net^
+||unfamliliardate.com^
 ||unframesiberia.com^
 ||ungyveporkies.com^
 ||unjuicypeal.com^
@@ -2951,7 +2952,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||gpaf.net/b/$third-party
 ||gsmfastest.com/banners/
 ||happyescorts.com/images/stories/banner/
-||hdfreaks.cc/wcf/images/banner/
 ||hellocoton.fr/*/badges/$third-party
 ||hipub.hiwit.org^
 ||hiwit.org/index.php?idsite=
@@ -3242,6 +3242,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||egaliteetreconciliation.fr/img/
 ||elahmad.com/ads/
 ||elahmad.com/js/extreme.js
+||electromenager-compare.com/images/main/*/pub.jpg
 ||elheddaf.com/data/pub/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
@@ -3523,6 +3524,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###footer-pub
 ###footer_haut-publicite
 ###footer_pub
+###for_ad
 ###fragment-header-ad
 ###google-ads-1
 ###google-ads-2
@@ -4017,6 +4019,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pubTop
 ##.pubTopContainer
 ##.pubVideo
+##.pub_120x600
 ##.pub_160x600
 ##.pub_300
 ##.pub_300_250
@@ -4174,10 +4177,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.widget_keleops-ad
 ##.widget_keleops-adhalfpage
 ##.widget_positivr-sponsored-posts
-##.widget_publicite
 ##.widgetadv
 ##.window-ad-container
-##.with-ad-top
 ##.wppasrotate
 ##.wrapper.ad
 ##.wrapperPub
@@ -4272,7 +4273,6 @@ autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_bo
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_top
 leparisien.fr###meteo-immo
 liligo.fr###midbanner
-jeu.video###mobile_clic
 w0rld.tv###modal
 leparisien.fr###moteur-billetterie
 zdnet.fr###mpuBottom
@@ -4677,7 +4677,6 @@ mahjong.fr##div[class^="sub_jeu_72890"]
 e-monsite.com##div[data-role="sp2"]
 maisonapart.com##div[id*="-pub-"]
 maisonapart.com##div[id*="-publi-"]
-1337x.cz,cpasbien-support.com,cpasbien4.com,mega-torrent6.com,nextorrent4.com,nortorrent4.com,oxtorrent2.com,oxtorrent5.com,rantop.cc,rantop.my,torrent-p2p.my,torrent-site.com,ultimate-torrent1.com,yggtorrent3.com,yggtorrents.top,zetorrents1.com,zktorrent3.com,zone-torrent2.com##div[id*="vpn"]
 routard.com,sfr.fr##div[id^="A2dEmplacement"]
 toutvendre.fr##div[id^="bup"]
 developpez.com,developpez.net##div[id^="gabarit_megaban"]
@@ -4721,7 +4720,6 @@ carrefour.fr##.product-banner__slide:has(.product-banner__advertising-item)
 e.leclerc##.product-container:has(.ad-product)
 carrefour.fr##.product-list-grid__item:has(.product-list-card-plp-grid__sponsored)
 frandroid.com##.sticky-content:has([class^="HalfpageAd"])
-1337x.cz,cpasbien4.com,extreme-down.party,mega-torrent1.com,mega-torrent6.com,nextorrent4.com,nortorrent.com,nortorrent4.com,nortorrent6.com,oxtorrent2.com,rantop.cc,torrent-p2p.my,torrent-site.com,ultimate-torrent1.com,yggtorrent3.com,yggtorrents.top,zetorrents1.com,zktorrent.support,zktorrent3.com,zone-torrent2.com#?#a:-abp-contains(/ANONYME|Anonyme|anonyme|gratuits|PREMIUM|Premium|premium|RAPIDE|Rapide|Usenet|VPN|Vpn/)
 2ememain.be#?#.hz-Listing--list-item:-abp-has(.hz-Listing-priority:-abp-contains(Pub au top))
 2ememain.be#?#.hz-Listing--list-item:-abp-has(.hz-Listing-seller-link:-abp-contains(Visiter le site internet))
 boulanger.com##[class*="kamino"]:has(.product-list__product-sponsored)
