@@ -1,9 +1,9 @@
-! Checksum: GTE4kDNWA35nTar7Kdd4sQ
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1763709088-3600.patch
+! Checksum: RGUMhw2JZvfLPYEdMKV+dg
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1763712799-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.48.34
-! TimeUpdated: 2025-11-21T07:07:59+00:00
+! Version: 2.1.48.35
+! TimeUpdated: 2025-11-21T08:09:48+00:00
 ! Expires: 12 hours (update frequency)
 ||tp.suppercacheimages.top^
 ||9867.org^
@@ -244,7 +244,7 @@ surirt.com#%#//scriptlet('set-constant', 'all520dddaaa2022ccc', 'true')
 colamanga.com#@#.ADFooter
 colamanga.com#@#.ADInfo
 colamanga.com#@#.ADLeader
-xchina.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'check')
+xchina.co#%#//scriptlet('prevent-addEventListener', '/DOMContentLoaded|load|complete/', '/check|detected/')
 2urs.com#%#//scriptlet('abort-on-property-read', 'ads')
 @@/js/adview_*.adsbygoogle.js$~third-party,domain=letv8.cc|zhibo1.cc
 letv8.cc,zhibo1.cc#%#//scriptlet('trusted-set-constant', 'adsv', '"Y"')
@@ -930,6 +930,9 @@ $script,third-party,denyallow=bsgslb.com|bytecdntp.com,domain=m.shuhaige.net
 ||topthink.com/uploads/assistant/$image,domain=doc.thinkphp.cn
 doc.thinkphp.cn#%#//scriptlet('inject-css-in-shadow-dom', 'a[href*="?utm_source="][target="_blank"] > img { display: none !important; }')
 ||cpu.baidu.com/block/wap/
+xchina.co#%#//scriptlet('abort-current-inline-script', '$', 'adModal')
+xchina.co##.content-box > .list > .item:not(.photo-image):has(> a[clickmode="cpt"])
+xchina.co##.content-box > .list > .item:not(.photo-image):has(> div > ins[data-zoneid])
 xchina.co##.photos > div.item:has(> div > a[target="_blank"])
 xchina.co##.photos > div.item:has(> div[class^="exoclick_"])
 xchina.co##div[class^="item photo zone"]
@@ -4499,6 +4502,8 @@ newduba.cn###jq_youxi
 ||jfxefv.icu^
 ||glmeilgroi.com^
 ||rz2xtcvuy.com^
+||xjx11211ts.com^
+||j694fx3bp.com^
 ||n2d79v41a3.com^
 ||5hffr1p22j.com^
 ||yournames.click^

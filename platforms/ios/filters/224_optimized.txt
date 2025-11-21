@@ -1,9 +1,9 @@
-! Checksum: w0khXt9IDo4WjEjokhTm6g
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1763709085-3600.patch
+! Checksum: GyTrW18/HS7GROzaaVpv9A
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1763712796-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.48.34
-! TimeUpdated: 2025-11-21T07:07:59+00:00
+! Version: 2.1.48.35
+! TimeUpdated: 2025-11-21T08:09:48+00:00
 ! Expires: 5 days (update frequency)
 ||tp.suppercacheimages.top^
 ||9867.org^
@@ -250,7 +250,7 @@ surirt.com#%#//scriptlet('set-constant', 'all520dddaaa2022ccc', 'true')
 colamanga.com#@#.ADFooter
 colamanga.com#@#.ADInfo
 colamanga.com#@#.ADLeader
-xchina.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'check')
+xchina.co#%#//scriptlet('prevent-addEventListener', '/DOMContentLoaded|load|complete/', '/check|detected/')
 2urs.com#%#//scriptlet('abort-on-property-read', 'ads')
 !+ PLATFORM(ios, ext_android_cb)
 @@||2urs.com/js/*_cpa_$script
@@ -1026,6 +1026,9 @@ $script,third-party,denyallow=bsgslb.com|bytecdntp.com,domain=m.shuhaige.net
 ||topthink.com/uploads/assistant/$image,domain=doc.thinkphp.cn
 doc.thinkphp.cn#%#//scriptlet('inject-css-in-shadow-dom', 'a[href*="?utm_source="][target="_blank"] > img { display: none !important; }')
 ||cpu.baidu.com/block/wap/
+xchina.co#%#//scriptlet('abort-current-inline-script', '$', 'adModal')
+xchina.co##.content-box > .list > .item:not(.photo-image):has(> a[clickmode="cpt"])
+xchina.co##.content-box > .list > .item:not(.photo-image):has(> div > ins[data-zoneid])
 xchina.co##.photos > div.item:has(> div > a[target="_blank"])
 xchina.co##.photos > div.item:has(> div[class^="exoclick_"])
 xchina.co##div[class^="item photo zone"]
@@ -4579,6 +4582,8 @@ newduba.cn###jq_youxi
 ||jfxefv.icu^
 ||glmeilgroi.com^
 ||rz2xtcvuy.com^
+||xjx11211ts.com^
+||j694fx3bp.com^
 ||n2d79v41a3.com^
 ||5hffr1p22j.com^
 ||yournames.click^
