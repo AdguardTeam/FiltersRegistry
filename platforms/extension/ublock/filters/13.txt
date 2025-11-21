@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: qHuY74e/8p9DrQ84G0hgtQ
-! Diff-Path: ../patches/13/13-s-1763719927-3600.patch
+! Checksum: B381Ep13xWmv+UE7z0OH8A
+! Diff-Path: ../patches/13/13-s-1763727293-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.72
-! TimeUpdated: 2025-11-21T10:08:13+00:00
+! Version: 2.0.60.73
+! TimeUpdated: 2025-11-21T12:11:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -646,6 +646,9 @@ r10.net##+js(abort-on-property-write, rInt)
 ! Good: ##.adv
 ! Bad: example.org##.adv (should be in specific.txt)
 !
+! Turkish online cinema sites
+! https://github.com/AdguardTeam/AdguardFilters/issues/218312
+##center > a[target="_blank"][style="color: red;"] > font[style="font-size: 15pt"]
 ! Sport streaming sites
 ##.ads_single_font
 ##body div#hellobar
@@ -1510,12 +1513,13 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+||dfilmizle.net/*.mp4
+dfilmizle.net###plyg > iframe#Ciframe_yeni
 bewins.tv##.sidebar-section:has(> h2 > i.fa-ad)
 ||vkfilmizlee.org/vast-player-*.php
 ||720pizleplus.cc/rek/
 720pizleplus.cc###text-8
 720pizleplus.cc##.footer-sticky
-filmcuss.cc,vkfilmizlee.org,fullhdfilmizlesene.store##center > a[style="color: red;"]
 ||filmseyretizlet.net/filmseyretizlet-pop-1.js
 ||sinemadafilmizle.net/sinemadafilmiz.js
 ||hdfilm.us/rekpop.js
