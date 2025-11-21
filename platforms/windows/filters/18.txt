@@ -1,9 +1,9 @@
-! Checksum: 2ApjzXOTu5dKgzjcPRR+vg
-! Diff-Path: ../patches/18/18-s-1763692853-3600.patch
+! Checksum: 3+6PxMdS3SyODlZ5AgBpwQ
+! Diff-Path: ../patches/18/18-s-1763695893-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.8
-! TimeUpdated: 2025-11-21T02:37:12+00:00
+! Version: 2.0.75.9
+! TimeUpdated: 2025-11-21T03:27:59+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2551,6 +2551,13 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+globo-lighting.com##.cookie-permission-popup
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][tracking]', 'forbidden')
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][core]', 'forever')
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][maps]', 'forever')
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][videos]', 'forever')
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][laizee-ai-leichte-sprache]', 'forever')
+zoo-leipzig.de#%#//scriptlet('trusted-set-cookie', 'cs-cookie-banner', '|essential|externalMedia|youtube|')
 volunteer.redcross.org.uk#$#body { overflow: auto !important; padding-right: 0 !important; }
 volunteer.redcross.org.uk#$#.assemble-cookie-settings-modal-opacity { display: none !important; }
 volunteer.redcross.org.uk#$##cookie-settings-popup { display: none !important; }
@@ -17899,6 +17906,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218338
+@@||insomnia.gr/*/CookieBanner.jpg$image
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218241
 @@||consent.cookiebot.com/uc.js$domain=foodboom.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218158

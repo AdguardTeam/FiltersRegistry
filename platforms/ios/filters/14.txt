@@ -1,9 +1,9 @@
-! Checksum: SD4mrv1w/bt3vPVQxDZe+w
-! Diff-Path: ../patches/14/14-s-1763692841-3600.patch
+! Checksum: 8ZysnEcVnKo0pqrwaxuLNA
+! Diff-Path: ../patches/14/14-s-1763695884-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.49.80
-! TimeUpdated: 2025-11-21T02:37:08+00:00
+! Version: 2.2.49.81
+! TimeUpdated: 2025-11-21T03:27:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2553,6 +2553,13 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+globo-lighting.com##.cookie-permission-popup
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][tracking]', 'forbidden')
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][core]', 'forever')
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][maps]', 'forever')
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][videos]', 'forever')
+aachen.de#%#//scriptlet('trusted-set-local-storage-item', 'PrivacyPolicy[][laizee-ai-leichte-sprache]', 'forever')
+zoo-leipzig.de#%#//scriptlet('trusted-set-cookie', 'cs-cookie-banner', '|essential|externalMedia|youtube|')
 volunteer.redcross.org.uk#$#body { overflow: auto !important; padding-right: 0 !important; }
 volunteer.redcross.org.uk#$#.assemble-cookie-settings-modal-opacity { display: none !important; }
 volunteer.redcross.org.uk#$##cookie-settings-popup { display: none !important; }
@@ -17845,6 +17852,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218338
+@@||insomnia.gr/*/CookieBanner.jpg$image
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218241
 @@||consent.cookiebot.com/uc.js$domain=foodboom.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218158
