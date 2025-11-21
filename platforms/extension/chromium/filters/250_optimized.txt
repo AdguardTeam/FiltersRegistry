@@ -1,5 +1,5 @@
-! Checksum: zwSLI/hkHVjmPFdOaWvV7g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1763686333-14400.patch
+! Checksum: YNDmL8zXbv3+b+nybV/q4Q
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1763700136-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.39
@@ -52,6 +52,7 @@ windll.com##.dll > p
 fix4dll.com#?#.sidebar__block:has-text(Outbyte)
 softwaretested.com##.st-alternative
 softwaretested.com##.snippet-content
+processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ||solvusoft.com^$document
 exefiles.com##.row:has(a[href*="/recommended/"])
@@ -61,6 +62,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||103.224.212.249^$document
+||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||199.59.243.222^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -257,6 +259,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||38.180.96.244^$all
 ||aysesuretobea.com^$all
+||ratiotyuknsye.pics^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||34.195.224.242^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -935,7 +938,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||167.235.163.216^$all
 ||eln3ax.com^$all
 ||tf4srv.com^$all
-||vws4brkfst.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||95.211.229.247^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -2021,7 +2023,6 @@ spleis.no#%#//scriptlet('ubo-set.js', '__INITIAL_STATE__.features.should-show-sn
 /snowfall.min.jquery.js
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
-/plugins/christmas-panda^
 alpresor.se#%#//scriptlet('ubo-acis.js', 'snowMax')
 /snow.js|$script
 /wp-content/plugins/christmasify^
@@ -2037,6 +2038,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 /snowstorm.js
 /christmas-snow.js
 @@||aboluowang.com^
+@@||dongtaiwang.com^
 @@||epochtimes.com.tw^
 @@||ntdtv.com^
 @@||soundofhope.org^
@@ -2143,6 +2145,7 @@ feltet.dk#$#iframe + div[style*="height: 80vh"] { height: unset !important }
 rule34.xxx###status-notices > br:empty
 pixiv.net##div[class*=" "]:empty:has(+ aside + aside)
 viaplay.*##.backdrop-bottom
+rakuten.tv#$?#div[data-testid^=video_controls_] { background: none !important }
 channel4.com###playerContrastOverlay
 netflix.com#$#div[class^=watch-video--][class*="-container "] { background-image: none !important }
 tv.nrk.no#$#:is(.episode-info-gradient,.tv-layout-fill) { background:unset!important }
@@ -2180,7 +2183,6 @@ www.google.*,ipv6.google.com##script ~ div[jsdata] > [jsname] a[href*="://m.imdb
 www.google.*,ipv6.google.com##div.g:has(a[href*="imdb.com"]) [style^=grid]:last-of-type
 justwatch.com##div[class*=__rating i]:has(img[alt*=IMDB i])
 ||comment.youmaker.com^$domain=theepochtimes.com
-||viafoura.co^$domain=nottinghampost.com|liverpoolecho.co.uk
 indiatimes.com##div[class$="cmtwrapper "]
 color-hex.com##.txtgray
 color-hex.com##a[href="#comments"]
@@ -2493,7 +2495,6 @@ $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
 $removeparam=exactag_uk
 $removeparam=affuid
 $removeparam=refclickid
-$removeparam=irclid
 $removeparam=sp_campaign
 $removeparam=ad_id,domain=~olx.*
 $document,removeparam=/^affSource.*$/i
@@ -3030,6 +3031,7 @@ $removeparam=share_link_id
 $removeparam=si,document,domain=open.spotify.com|soundcloud.com|zappos.com
 $removeparam=gtm
 $removeparam=referral,domain=tv2.no|spotify.com|yubo.live
+||open.spotify.com^$removeparam=uid
 ||aliexpress.*/item/$removeparam=pvid
 ||aliexpress.$removeparam=_t
 ||aliexpress.$removeparam=gps-id
@@ -3244,6 +3246,7 @@ $removeparam=module,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj
 $removeparam=pgtype,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|scmp.com
 $removeparam=section,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion|nextdoor.com|store.thesims3.com
 $document,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxofficemojo.com|facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|imdb.com|primevideo.com|shopbop.com
+$removeparam=tag,domain=argos.co.uk|habitat.co.uk|tv2.no|support.github.com
 ||hostinger.$removeparam=session
 ||xbox.com^$removeparam=xr
 $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|discord.*|docs.google.com|docsend.com|eonline.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|ngx.me|outnorth.fi|runnode.com|t.me|twitter.com|xd.wayin.com|x.com|youtube.com
@@ -3260,7 +3263,6 @@ $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 ||newegg.com^$removeparam=nm_mc
 $removeparam=bsencid
 ||target.com^$removeparam=clkid
-$removeparam=adcampaigngroup
 ||dell.com^$removeparam=dgc
 ||dell.com^$removeparam=VEN1
 ||dell.com^$removeparam=gacd
@@ -3525,6 +3527,11 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=productGridView
 ||jcpenney.com^$removeparam=badge
 ||jcpenney.com^$removeparam=selectedSKUId
+||bandcamp.com^$removeparam=search_item_id
+||bandcamp.com^$removeparam=search_item_type
+||bandcamp.com^$removeparam=search_match_part
+||bandcamp.com^$removeparam=search_page_no
+||bandcamp.com^$removeparam=search_rank
 ||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
@@ -3760,6 +3767,7 @@ ref=dtf.ru$document,removeparam=ref
 ||substack.com^$removeparam=triedRedirect
 ||firefox.com^$removeparam=redirect_source
 $removeparam=source,domain=search.brave.com|search.brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd.onion
+$removeparam=/^ref=dailydev$/
 $removeparam=/^ref=blog\.pragmaticengineer\.com$/
 ||downloads.sourceforge.net^$removeparam=r
 ||snapchat.com^$removeparam=share_id
