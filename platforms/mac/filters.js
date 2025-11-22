@@ -379,8 +379,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.57.56",
-			"timeUpdated": "2025-11-22T08:37:29+0000",
+			"version": "2.1.57.57",
+			"timeUpdated": "2025-11-22T12:44:24+0000",
 			"languages": []
 		},
 		{
@@ -426,8 +426,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.57.30",
-			"timeUpdated": "2025-11-22T08:37:32+0000",
+			"version": "2.1.57.31",
+			"timeUpdated": "2025-11-22T12:44:27+0000",
 			"languages": []
 		},
 		{
@@ -458,8 +458,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.80.52",
-			"timeUpdated": "2025-11-22T08:37:33+0000",
+			"version": "2.1.80.53",
+			"timeUpdated": "2025-11-22T12:44:27+0000",
 			"languages": []
 		},
 		{
@@ -502,8 +502,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.80.54",
-			"timeUpdated": "2025-11-22T08:37:34+0000",
+			"version": "2.1.80.55",
+			"timeUpdated": "2025-11-22T12:44:29+0000",
 			"languages": [
 				"it"
 			]
@@ -547,8 +547,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.80.53",
-			"timeUpdated": "2025-11-22T08:37:35+0000",
+			"version": "2.1.80.54",
+			"timeUpdated": "2025-11-22T12:44:29+0000",
 			"languages": [
 				"ar"
 			]
@@ -565,8 +565,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.80.52",
-			"timeUpdated": "2025-11-22T08:37:36+0000",
+			"version": "2.1.80.53",
+			"timeUpdated": "2025-11-22T12:44:30+0000",
 			"languages": []
 		},
 		{
@@ -645,8 +645,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.54.22",
-			"timeUpdated": "2025-11-22T08:37:39+0000",
+			"version": "2.1.54.23",
+			"timeUpdated": "2025-11-22T12:44:33+0000",
 			"languages": []
 		},
 		{
@@ -708,8 +708,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.57.84",
-			"timeUpdated": "2025-11-22T08:37:46+0000",
+			"version": "2.1.57.85",
+			"timeUpdated": "2025-11-22T12:44:41+0000",
 			"languages": []
 		},
 		{
@@ -724,8 +724,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.51.56",
-			"timeUpdated": "2025-11-22T08:37:47+0000",
+			"version": "2.1.51.57",
+			"timeUpdated": "2025-11-22T12:44:41+0000",
 			"languages": []
 		},
 		{
@@ -740,8 +740,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.52.27",
-			"timeUpdated": "2025-11-22T08:37:47+0000",
+			"version": "2.0.52.28",
+			"timeUpdated": "2025-11-22T12:44:42+0000",
 			"languages": []
 		},
 		{
@@ -866,8 +866,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.80.53",
-			"timeUpdated": "2025-11-22T08:37:50+0000",
+			"version": "2.1.80.54",
+			"timeUpdated": "2025-11-22T12:44:44+0000",
 			"languages": []
 		},
 		{
@@ -879,8 +879,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
-			"version": "2.1.4.88",
-			"timeUpdated": "2025-11-22T00:47:53+0000",
+			"version": "2.1.4.89",
+			"timeUpdated": "2025-11-22T12:44:45+0000",
 			"languages": []
 		},
 		{
@@ -940,8 +940,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.79.79",
-			"timeUpdated": "2025-11-22T08:37:52+0000",
+			"version": "2.1.79.80",
+			"timeUpdated": "2025-11-22T12:44:46+0000",
 			"languages": []
 		},
 		{
@@ -969,8 +969,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
-			"version": "2.0.40.22",
-			"timeUpdated": "2025-11-21T08:40:56+0000",
+			"version": "2.0.40.23",
+			"timeUpdated": "2025-11-22T12:44:46+0000",
 			"languages": [
 				"vi"
 			]
@@ -1138,8 +1138,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.21.18",
-			"timeUpdated": "2025-11-22T08:37:58+0000",
+			"version": "2.0.21.19",
+			"timeUpdated": "2025-11-22T12:44:51+0000",
 			"languages": []
 		},
 		{
@@ -1230,8 +1230,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.80.54",
-			"timeUpdated": "2025-11-22T08:37:59+0000",
+			"version": "2.1.80.55",
+			"timeUpdated": "2025-11-22T12:44:52+0000",
 			"languages": []
 		},
 		{
@@ -1246,8 +1246,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.77.30",
-			"timeUpdated": "2025-11-22T08:38:01+0000",
+			"version": "2.0.77.31",
+			"timeUpdated": "2025-11-22T12:44:54+0000",
 			"languages": []
 		},
 		{
@@ -1357,8 +1357,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.17.66",
-			"timeUpdated": "2025-11-22T08:38:06+0000",
+			"version": "2.0.17.67",
+			"timeUpdated": "2025-11-22T12:44:58+0000",
 			"languages": []
 		},
 		{
@@ -1389,8 +1389,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.63.56",
-			"timeUpdated": "2025-11-22T08:38:09+0000",
+			"version": "2.1.63.57",
+			"timeUpdated": "2025-11-22T12:45:01+0000",
 			"languages": []
 		},
 		{
@@ -1465,8 +1465,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.76.60",
-			"timeUpdated": "2025-11-22T08:38:11+0000",
+			"version": "2.1.76.61",
+			"timeUpdated": "2025-11-22T12:45:02+0000",
 			"languages": []
 		},
 		{
@@ -1563,8 +1563,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.73.85",
-			"timeUpdated": "2025-11-22T08:38:16+0000",
+			"version": "2.0.73.86",
+			"timeUpdated": "2025-11-22T12:45:08+0000",
 			"languages": [
 				"hi"
 			]
@@ -1593,8 +1593,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
-			"version": "2.0.11.52",
-			"timeUpdated": "2025-11-22T00:48:21+0000",
+			"version": "2.0.11.53",
+			"timeUpdated": "2025-11-22T12:45:11+0000",
 			"languages": []
 		},
 		{
