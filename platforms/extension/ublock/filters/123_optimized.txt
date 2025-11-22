@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zKvllJd1zt9CIaIuk2Fv0Q
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1763772738-14400.patch
+! Checksum: A2OxrXocW7dcbcsfq0W95Q
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1763786471-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.51.54
-! TimeUpdated: 2025-11-22T00:47:49+00:00
+! Version: 2.1.51.55
+! TimeUpdated: 2025-11-22T04:36:49+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -110,6 +110,7 @@
 /social-footer.png
 /Social-Sidebar.js
 /social2s.min.js
+/social_bookmarking/*$image
 /social_bookmarks/*
 /socialappsintegrator.
 /socialbar-sso.js
@@ -166,7 +167,6 @@ _social-bar/
 ###block-menu-menu-social-media-links
 ###block-menu-menu-social-menu
 ###block-social
-###block-socialfooter
 ###block-sociallinks
 ###block-socialmedia
 ###block-socialmedialinks
@@ -250,6 +250,7 @@ _social-bar/
 ###follow-me
 ###follow-twitter
 ###follow-us-box
+###follow-us-footer
 ###follow-us-widget
 ###follow-widget
 ###followBox
@@ -586,7 +587,6 @@ _social-bar/
 ###socialMediaSection
 ###socialModal
 ###socialNetworks
-###socialPinterest
 ###socialPopup
 ###socialShare
 ###socialSharing
@@ -734,6 +734,7 @@ _social-bar/
 ##.ShareButton
 ##.ShareButtons
 ##.ShareButtons__link
+##.ShareIcons
 ##.ShareLinks
 ##.ShareList
 ##.ShareMenu
@@ -922,6 +923,7 @@ _social-bar/
 ##.av-share-box
 ##.av-social-share
 ##.avia_fb_likebox
+##.avia_socialcount
 ##.awp-media-share-container
 ##.b-article__social
 ##.b-event_links__share__block
@@ -1014,14 +1016,10 @@ _social-bar/
 ##.button-pinterest
 ##.button-share
 ##.button-share-facebook
-##.button-share__bar
-##.button-share__media
-##.button-share__media--mail
 ##.button-social
 ##.button-twitter
 ##.button__share
 ##.button_share
-##.button_share_sapo
 ##.button_twitter
 ##.buttons-share
 ##.bwc-footer__social
@@ -1109,7 +1107,6 @@ _social-bar/
 ##.cshare
 ##.ct-footer-socials
 ##.ct-header-socials
-##.ct-share
 ##.ct-share-box
 ##.custom-follow-button
 ##.custom-share-button
@@ -1145,8 +1142,6 @@ _social-bar/
 ##.dt_social_single
 ##.dtm-footer-social-link
 ##.dwg-footer-plank__social
-##.e-footer--social
-##.e-header--sociallist
 ##.ea-share-count-button
 ##.eapps-social-share-buttons
 ##.easy-share
@@ -1307,7 +1302,6 @@ _social-bar/
 ##.floating-header-share
 ##.floating-share
 ##.floating-share-bar
-##.floating-share-buttons
 ##.floating-social
 ##.fluid_share_container
 ##.fluid_share_wrapper
@@ -1964,6 +1958,7 @@ _social-bar/
 ##.novashare-buttons-wrapper
 ##.ns-social
 ##.nv-post-share
+##.nw-bottom-social
 ##.o-footer__social
 ##.o-footer__socials
 ##.o-shareBooster__item
@@ -2370,6 +2365,7 @@ _social-bar/
 ##.share-wrap
 ##.share-wrapper
 ##.share-wx
+##.share-wx-item
 ##.share-youtube
 ##.share-zone
 ##.share42init
@@ -2687,7 +2683,6 @@ _social-bar/
 ##.sns-link-wrap
 ##.sns-section
 ##.sns-share
-##.sns-share-area
 ##.sns-share-icon
 ##.sns-share02
 ##.sns-sharing
@@ -2928,6 +2923,7 @@ _social-bar/
 ##.social-shares
 ##.social-sharing-button
 ##.social-sharing-buttons
+##.social-sharing-item
 ##.social-sharing-link
 ##.social-sharing-top
 ##.social-sharing__link
@@ -3146,6 +3142,7 @@ _social-bar/
 ##.ssba_pinterest_share
 ##.ssba_share_link
 ##.ssba_sharecount
+##.ssbp-container
 ##.sscb-pinterest
 ##.ssto-share-buttons
 ##.st-custom-button
@@ -3270,7 +3267,6 @@ _social-bar/
 ##.twitter-feed
 ##.twitter-follow
 ##.twitter-follow-box
-##.twitter-followers
 ##.twitter-footer
 ##.twitter-module
 ##.twitter-popup
@@ -3733,7 +3729,6 @@ jpost.com##.article-subline-inner-share-buttons
 altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
 theparisreview.org##.article-tools-social
 www.psu.edu##.article-top-social-share_content__OYcDe
-nationalreview.com##.article-utility-nav
 english.nv.ua##.article__footer__additional_share
 rt.com##.article__google-news
 noticiabrasil.net.br,noticiaslatam.lat,spnfa.ir,sputnik-abkhazia.info,sputnik-georgia.com,sputnik-ossetia.com,sputnik.af,sputnik.by,sputnik.kg,sputnik.kz,sputnik.tj,sputnikglobe.com,sputniknews.africa,sputniknews.cn,sputniknews.in,sputniknews.jp,sputniknews.ru,sputniknews.uz,sputnikportal.rs##.article__news-services-subscribe
@@ -3793,6 +3788,7 @@ dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 c-sharpcorner.com##.cotent-share-icon
 overwolf.com##.creator-social
+retire.ly##.cs-footer-social-links
 bostonagentmagazine.com##.dd-share
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
@@ -4049,7 +4045,6 @@ futurity.org##.sticy-share-block
 aetv.com,wccftech.com##.story-share
 wccftech.com##.story-share-bottom
 gadgets360.com##.story_social_share
-userstyles.org##.style-image_shareStyleButtonWrapper__PwC0C
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
 hindustantimes.com##.subscribe-social
 locals.com##.support-now
@@ -4113,7 +4108,6 @@ theatlantic.com##div[class^="ArticleShare_"]
 cnbc.com##div[class^="SocialShare-"]
 wired.com##div[class^="StickyBoxWrapper"]
 newsday.com##div[class^="share-tools"]
-thisismoney.co.uk##div[class^="socialContainer-"]
 technologyreview.com##div[class^="socialList_"]
 reuters.com##div[class^="social__container_"]
 abc.net.au##div[data-component="ShareUtility"]
@@ -4253,7 +4247,6 @@ presseportal.de##.story-sharing
 watson.ch##.watson-sharebuttons
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
-bz-berlin.de##div[data-type="social-bar"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 radiofrance.fr##.ShareManager
@@ -4373,7 +4366,6 @@ betteranime.net##.anime-down-share
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
-atribuna.com.br,ebc.com.br,engeplus.com.br,forbes.com.br##.compartilhamento
 bcb.gov.br,folhape.com.br,ocioso.com.br,opoder.com.br,portalperifacon.com,sampi.net.br##.compartilhar
 jovempan.com.br##.cta-model
 em.com.br##.edm-bottom-social
@@ -4393,7 +4385,6 @@ folhape.com.br##.midiasApp
 poder360.com.br##.navigation-menu__social-media
 noataque.com.br##.noticia-share
 oantagonista.com.br##.post-interna__content__compartilhamento
-ebc.com.br##.redes-sociais-header
 sicnoticias.pt##.share-toggle-wrapper
 cnnbrasil.com.br##.single-editorial__follow
 cnnbrasil.com.br##.single-sharer
