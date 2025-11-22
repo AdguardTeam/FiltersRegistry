@@ -1,9 +1,9 @@
-! Checksum: 8Bor+RpqGug6rwUtujqdAg
-! Diff-Path: ../patches/10/10-s-1763629926-3600.patch
+! Checksum: GdB0yDvXS4NX6ZQjkZLEPA
+! Diff-Path: ../patches/10/10-s-1763809801-3600.patch
 ! Title: Filter unblocking search ads and self-promotion
 ! Description: Filter that unblocks search ads in Google, DuckDuckGo, Bing, or Yahoo and self-promotion on websites.
-! Version: 2.0.3.79
-! TimeUpdated: 2025-11-20T09:08:01+00:00
+! Version: 2.0.3.80
+! TimeUpdated: 2025-11-22T11:06:08+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -156,6 +156,10 @@ ya.ru,yandex.*#@#div[class^="serp-list"] > div.serp-item:has(> div[data-bem*="or
 ! END: Yandex
 !
 ! Amazon
+amazon.*#@#.a-section:has(> div[cel_widget_id^="adplacements:"]:last-child)
+amazon.*#@#div[cel_widget_id^="adplacements:"]
+amazon.*#@#.a-section:has(> .a-section:only-child > div[cel_widget_id^="sp-pop-mobile-"])
+amazon.*#@#div[cel_widget_id^="sp-pop-mobile-"]
 amazon.*#@#div[data-idt="AXIOM"]
 amazon.*#@#div[cel_widget_id^="sb-themed-collection-v2-mobile_loom-mobile"]
 amazon.*#@#div[id^="dp-ads-"]
