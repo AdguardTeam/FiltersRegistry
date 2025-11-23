@@ -1,4 +1,4 @@
-! Checksum: r0T5Mjd/V5cc6TSxZVK2dQ
+! Checksum: WvJgODEHfqLQszakSYy/Aw
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.40
@@ -14,6 +14,7 @@
 .xyz/*/?*=*&*=*&*=*&*=*&*=$document
 !+ PLATFORM(windows, mac, android, cli)
 109.201.135.46$network
+||ublock.org^$document
 !+ PLATFORM(windows, mac, android, cli)
 138.68.252.54$network
 ||fileplanet.com^$document,popup
@@ -51,7 +52,6 @@ windll.com##.download-block
 windll.com##.dll > p
 fix4dll.com#?#.sidebar__block:has-text(Outbyte)
 softwaretested.com##.st-alternative
-softwaretested.com##.snippet-content
 processlibrary.com##.bottom > .row:last-of-type
 ||outbyte.com^$document
 ||solvusoft.com^$document
@@ -783,7 +783,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 208.91.196.46$network
 /page/bouncy.php?$all
 ||correspondimpulsive.com^$all
-||handwritingnomad.com^$all
+://trk.*.run/$document,domain=~very_likely_a_malware_redirection_train.*
 ||jsmcrptjmp.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 93.93.51.223$network
@@ -887,7 +887,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||delicioustightbronze.com^$all
 ||entertainlavish.com^$all
 ||markswaitingrouge.com^$all
-||allegationbody.com^$all
 ||pizzanonetheless.com^$all
 ||excruciationaccident.com^$all
 ||outlaysudden.com^$all
@@ -2517,7 +2516,6 @@ google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ##.b-share-bar__twitter
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.b-share-bar__facebook:not(body,html,:empty)
 ~linkedin.com##.b-share-bar__linkedin:not(body,html,:empty)
-winstall.app##button[class*=singleApp_shareApp_]
 ##button[aria-label^="Share article on "]
 ~facebook.com,~facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.share-fb:not(html,body,article)
 ##.share-tw:not(html,body,article)
@@ -2649,6 +2647,8 @@ pixiv.net##div > div + section:has(a[href^="/premium/lead/"])
 cda.pl##.video-baner
 cda.pl##.row-video-clip-wrapper
 cda.pl###tVC
+||images.opencollective.com^$domain=socket.io
+||socket.io/images/sponsors^$image
 fandom.com##.ad-slot-placeholder
 amap.com##.dir_qr
 ctrip.com##.set-wechat.set-list > .nav-myctrip.person-text
@@ -2757,6 +2757,7 @@ daz3d.ru#%#//scriptlet('ubo-set-constant.js', 'snow', 'undefined')
 @@||epochtimes.com.tw^
 @@||ntdtv.com^
 @@||soundofhope.org^
+@@||lemondeinformatique.fr^
 @@||accounts.google.com/gsi^$domain=www.deviantart.com
 @@||siteadvisor.com^
 @@||www.joesandbox.com^
@@ -2953,6 +2954,7 @@ $removeparam=cjevent
 $removeparam=cx_click
 $removeparam=emcs_t
 $removeparam=ems_dl
+$removeparam=external_click_id
 $removeparam=iclid
 $removeparam=ir_adid
 $removeparam=ir_campaignid
@@ -3022,6 +3024,7 @@ $document,removeparam=rlz
 $document,removeparam=pcampaignid
 $document,removeparam=snr,domain=steampowered.com|steamcommunity.com|steamgames.com
 $document,removeparam=referrer,domain=~bolt.com|~f4map.com|~deviantart.com|~github.com|~discover.*|~vimeo.*|~123-reg.co.uk|~cravesandflames.com|~portswigger.net|~aluminate.net
+$document,removeparam=ext_source
 $removeparam=iradid
 $removeparam=irpid
 $removeparam=iradtype
@@ -3079,9 +3082,6 @@ $removeparam=wgu
 $removeparam=wgexpiry
 $removeparam=Referrer
 $removeparam=algo_pvid
-$removeparam=algo_expid
-$removeparam=btsid
-$removeparam=ws_ab_test
 $removeparam=spLa
 $removeparam=shrsl_analytics_sscid
 $removeparam=shrsl_analytics_sstid
@@ -3575,7 +3575,6 @@ $removeparam=/^asc_.*$/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ||amazon.$removeparam=hvocijid
 ||amazon.$removeparam=hvexpln
 ||amazon.$removeparam=/^_encoding=UTF.*$/
-||media-amazon.com^$removeparam=aicid
 ||ssl-images-amazon.com^$removeparam=xcp
 ||bing.com/?$removeparam=/^form=.*$/i
 ||bing.$removeparam=sp
@@ -4487,7 +4486,6 @@ $removeparam=/^ref=dailydev$/
 $removeparam=/^ref=blog\.pragmaticengineer\.com$/
 ||downloads.sourceforge.net^$removeparam=r
 ||snapchat.com^$removeparam=share_id
-||no^$removeparam=/^source=core-carousel$/
 ||hepsiburada.com^$removeparam=ftid
 ||cloud.microsoft^$removeparam=origindomain
 !+ NOT_OPTIMIZED

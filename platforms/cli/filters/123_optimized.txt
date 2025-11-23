@@ -1,9 +1,9 @@
-! Checksum: ssfkEEyzzqwrjvzVb/7reA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1763859119-14400.patch
+! Checksum: l7zRljJofI530xHJD1V5ww
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1763873132-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.51.60
-! TimeUpdated: 2025-11-23T00:48:09+00:00
+! Version: 2.1.51.61
+! TimeUpdated: 2025-11-23T04:41:53+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -68,7 +68,6 @@
 /plugins/sociable-re/images/*
 /plugins/sociable/*$~stylesheet
 /plugins/social-media-widget/*$image
-/plugins/socialfans-counter/assets/js/socialfans-script.js
 /plugins/sociallocker-next-premium/*
 /plugins/subscribe-connect-follow-widget/images/*
 /plugins/ultimate-social-deux/public/assets/js/min/us.script-min.js
@@ -108,6 +107,7 @@
 /social-footer.jpg
 /social-footer.png
 /Social-Sidebar.js
+/social-widgets-
 /social2s.min.js
 /social_bookmarking/*$image
 /social_bookmarks/*
@@ -484,6 +484,8 @@ _social-bar/
 ###sharetools-masthead
 ###sharing-bar
 ###sharing-buttons
+###sharing-column
+###sharing-floater
 ###sharing-sidebar
 ###sharingBlock
 ###sharing_buttons
@@ -526,7 +528,6 @@ _social-bar/
 ###social-links
 ###social-links-container
 ###social-links-facebook
-###social-links-toggle
 ###social-links-twitter
 ###social-media-footer
 ###social-media-header
@@ -589,7 +590,6 @@ _social-bar/
 ###socialPopup
 ###socialShare
 ###socialSharing
-###socialTop
 ###socialTwitter
 ###socialWrap
 ###socialYouTube
@@ -666,7 +666,6 @@ _social-bar/
 ###tronReddiShare
 ###twShare
 ###tweet-button
-###tweetContainer
 ###twitter-2
 ###twitter-box
 ###twitter-button
@@ -901,10 +900,10 @@ _social-bar/
 ##.article_left_share
 ##.article_share
 ##.article_share_buttons
-##.article_shares
 ##.article_social
 ##.article_social_share
 ##.articlesharebox
+##.aside-social
 ##.asocial-area
 ##.aspexifblikebox
 ##.aspexifbsidebox
@@ -997,7 +996,6 @@ _social-bar/
 ##.bottom-socials
 ##.bottom_share
 ##.bottom_social
-##.box-app-phone-share
 ##.box-facebook
 ##.box-share
 ##.box-share-group
@@ -1066,6 +1064,7 @@ _social-bar/
 ##.canvas-share-buttons
 ##.card-share
 ##.card__share
+##.category-share
 ##.cb-social-sharing
 ##.ccm-block-social-links
 ##.cd-fb-like-widget
@@ -1090,6 +1089,7 @@ _social-bar/
 ##.connect-with-us
 ##.contenedor_redes_sociales
 ##.content-footer-social
+##.content-share-wrap
 ##.contentShareLeft
 ##.contentSocialBar
 ##.convosharebuttons
@@ -1739,6 +1739,7 @@ _social-bar/
 ##.js-share-toggle
 ##.js-share-twitter
 ##.js-shareButton
+##.js-sharecount
 ##.js-social-facebook
 ##.js-social-instagram
 ##.js-social-share
@@ -1922,7 +1923,6 @@ _social-bar/
 ##.native-share
 ##.native-share-buttons
 ##.nav--social
-##.nav-footer-social
 ##.nav-share
 ##.nav-soc-but
 ##.nav-social
@@ -2205,7 +2205,7 @@ _social-bar/
 ##.share-button--twitter
 ##.share-button-group
 ##.share-button-wrapper
-##.share-buttons-bar
+##.share-buttons-area
 ##.share-buttons-bottom
 ##.share-buttons-box
 ##.share-buttons-container
@@ -3059,7 +3059,6 @@ _social-bar/
 ##.social_share_left
 ##.social_share_privacy_area
 ##.social_share_wrapper
-##.social_sharer
 ##.social_shares
 ##.social_sharing
 ##.social_sidebar
@@ -3290,7 +3289,6 @@ _social-bar/
 ##.twitter_btn
 ##.twitter_div
 ##.twitter_feed
-##.twitter_follow
 ##.twitter_icn
 ##.twitter_icon
 ##.twitter_link
@@ -3310,6 +3308,7 @@ _social-bar/
 ##.ty-social-link-block
 ##.typcn-social-twitter
 ##.u-socialWrapper
+##.ui-share-page
 ##.ui-socials
 ##.uix_socialMedia
 ##.uix_socialMediaLinks
@@ -3640,7 +3639,6 @@ eporner.com###footsocbuttons
 tasteofhome.com###gch-social-icons
 bleedingcool.com###google_follow
 wccftech.com###google_preferred_source_box
-analyticsinsight.net,biznews.com,dn.pt,newindianexpress.com,newsgram.com###header-social-follow
 medicalxpress.com,phys.org,techxplore.com###js-soc-panel
 listennotes.com###ln-side-share-div
 digitaltrends.com###menu-2021-social
@@ -3779,6 +3777,7 @@ mediaite.com##.c-youtube-subscribe
 yahoo.com##.caas-comment
 yahoo.com##.caas-content-contain-share
 laweekly.com##.cb-widget-social-media
+ccn.com##.ccn-share
 cgdirector.com##.cgd-social-wrapper
 goal.com##.component-share
 goal.com##.component-social-twitter
@@ -3955,6 +3954,7 @@ ny1.com##.share-bar-container
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
 beincrypto.com##.share-block
 ibtimes.co.in##.share-btn-wrp
+coindesk.com##.share-dialog-button
 dailymail.co.uk,thisismoney.co.uk##.share-email
 dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
@@ -4015,6 +4015,7 @@ iflscience.com##.social-share-elements
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
 cnn.com##.social-share_labelled-list
+edition.cnn.com##.social-share_labelled-list__share-links
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
@@ -4067,7 +4068,6 @@ news.sky.com##.ui-news-footer-social
 news.sky.com##.ui-news-footer-social-link
 hp.com##.ul_media_links
 aa.com.tr##.ustBar-sosyal
-gothamist.com##.v-share-tools
 trueachievements.com##.vc
 apa.org##.vertical-icon-bar
 videogameschronicle.com##.vgc-branding__container > ul
