@@ -1,9 +1,9 @@
-! Checksum: Aqxj9rmAOzTbRL7DEWusQg
-! Diff-Path: ../patches/224_optimized/224_optimized-s-1763874655-3600.patch
+! Checksum: a4qx5iPSWD9U07HDBOhX5Q
+! Diff-Path: ../patches/224_optimized/224_optimized-s-1763900003-3600.patch
 ! Title: AdGuard Chinese filter (Optimized)
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.48.50
-! TimeUpdated: 2025-11-23T05:07:53+00:00
+! Version: 2.1.48.51
+! TimeUpdated: 2025-11-23T12:10:17+00:00
 ! Expires: 5 days (update frequency)
 ||tp.suppercacheimages.top^
 ||9867.org^
@@ -2540,7 +2540,7 @@ sports.qq.com,lpl.qq.com,v.qq.com#%#//scriptlet('set-constant', 'CreativePlayerw
 sports.qq.com,lpl.qq.com,v.qq.com#%#//scriptlet('set-constant', 'CreativePlayerwebPlugin.AD_EVENT.AD_LOAD_START', '')
 sports.qq.com,news.qq.com,www.qq.com,v.qq.com,new.qq.com#%#//scriptlet('json-prune', 'ads')
 !+ NOT_PLATFORM(ext_ff)
-v.qq.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&o.matches('iframe[style="display: none;"]:not([src], [id])')&&o.contentWindow&&(o.contentWindow.JSON=window.JSON)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e),Element.prototype.insertAdjacentElement=new Proxy(Element.prototype.insertAdjacentElement,e)})();
+v.qq.com#%#(()=>{const e='iframe[style*="display: none;"]:not([src])',t={apply:(t,n,o)=>{const r=Reflect.apply(t,n,o);try{r instanceof HTMLIFrameElement&&r.matches(e)&&r.contentWindow?r.contentWindow.JSON=window.JSON:r instanceof HTMLElement&&r.querySelector(e)&&r.querySelector(e).contentWindow&&(r.querySelector(e).contentWindow.JSON=window.JSON)}catch(e){}return r}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,t),Element.prototype.insertAdjacentElement=new Proxy(Element.prototype.insertAdjacentElement,t)})();
 ~sports.qq.com,~work.weixin.qq.com,qq.com#%#//scriptlet('json-prune', 'ad')
 51cg1.com##.post-card-ads
 51cg1.com##article:has(> a > div.post-card > div[style^="background-image: url(\"data:image/gif;base64"])
