@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cSjd08gkZLtkBabmio+j2w
-! Diff-Path: ../patches/13/13-s-1763972051-3600.patch
+! Checksum: aORbbTw5UOk+muYfqzY14A
+! Diff-Path: ../patches/13/13-s-1763975572-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.76
-! TimeUpdated: 2025-11-24T08:10:27+00:00
+! Version: 2.0.60.77
+! TimeUpdated: 2025-11-24T09:09:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1820,7 +1820,6 @@ taraftarium-24tv.com##a[href^="https://bit.ly/"]
 memurlar.net##.content-items > a.click-tracker[targe]
 memurlar.net##aside > div[class^="widget-"]:has(> div[id^="theads-"])
 eurovizyon.co.uk##.article-text > p > a[rel="nofollow"]
-gazetevatan.com##.dfp
 gazetevatan.com##.footerAdContainer
 ensonhaber.com##.hesapcomads
 ensonhaber.com##.article-res > .related:has(> div[id^="taboola-"])
@@ -6586,7 +6585,10 @@ hdfilmsitesi.*,filmizle.*,filmizleplus.*,fullhdfilm.*,fullhdizle.*,filmizlehdfil
 ! Rule $referrerpolicy is required for apps, because source of vast.js is not detected and due to this it's not blocked
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208291
 ! Rule $referrerpolicy is required for apps, because source of vast.js is not detected and due to this it's not blocked
+! https://github.com/AdguardTeam/AdguardFilters/issues/218265
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206302
+! For some reason website stuck on loading when "display: none" is used
+gazetevatan.com#$#.dfp { position: absolute !important; left: -3000px !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/162640
 ! Apps remove source tag from the website and it breaks video player
 ! so it's necessary to use redirect rule
