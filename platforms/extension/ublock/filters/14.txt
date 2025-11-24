@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: cEb9UqF51Pkx+wutsFuh3Q
-! Diff-Path: ../patches/14/14-s-1763982657-3600.patch
+! Checksum: lvGs2es6h2JsZE/8YQL6cw
+! Diff-Path: ../patches/14/14-s-1763986544-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.4
-! TimeUpdated: 2025-11-24T11:07:07+00:00
+! Version: 2.2.50.5
+! TimeUpdated: 2025-11-24T12:11:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16750,6 +16750,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218498
+! TODO: Remove when this issue is fixed - https://github.com/AdguardTeam/CoreLibs/issues/2042
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218570
 heizung-billiger.de#@#.cookie-notice:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218338
@@ -24433,6 +24435,8 @@ inews.co.uk,pinterest.com##+js(set-constant, google.accounts.id.prompt, noopFunc
 !
 ! SECTION: Popups - Regular rules
 !
+aether.mom##+js(set-local-storage-item, modal-promotional-dismissed, true)
+ozon.ru#?#div[class="vue-portal-target"] > div[style^="z-index"]:has(div:contains(Оцените ваши покупки))
 apkmoddone.com###notif-widget
 ok.ru##section[class^="auth-login-banner__"]
 ginjfo.com##.follow-us-post-section
@@ -32359,6 +32363,8 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 !
 ! SECTION: Push notifications - Regular rules
 !
+oyunfor.com###darkness
+oyunfor.com###signalNotification
 ||smart-flash.jp/webpush
 noticiascaracol.com##.PushSubscription-content
 ciberduvidas.iscte-iul.pt###notifications-bar
@@ -33289,6 +33295,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+planhub.ca###emailCollectorResults
 tkdodo.eu##div[class^="css-"] > a[href^="https://bytes.dev/"]
 tkdodo.eu##div[class^="css-"] > div[class^="css-"]:has(> div[class^="css-"] > div[class^="css-"] > a[href^="https://www.monolisa.dev/"])
 vesper.pl##div[id^="posnewsletterpopup"]
@@ -50066,6 +50073,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+oyunfor.com###headerBarLink
 ||apteka.by/banners/*Supradin-search-*.jpg
 apteka.by##search div:not([class]) + div.mt-\[12px\]
 reviversoft.com##.find
@@ -56983,6 +56991,8 @@ muharebetarihi.com##+js(abort-on-property-read, addMultiEventListener)
 tokyo-sports.co.jp,news.dwango.jp##+js(remove-attr, oncontextmenu, body)
 7lafa.com##+js(remove-attr, oncopy|onselectstart, body)
 mhwg.org,biyografi.info,seiya-saiga.com##+js(remove-attr, oncontextmenu|onselectstart, body)
+!
+!+ NOT_PLATFORM(ext_ff)
 !--- HTML ----
 ! NOTE: Context menu - HTML
 ! NOTE: Context menu (mixed rules) end ⬆️
@@ -58969,9 +58979,10 @@ freestreams-live.my###custom_html-9
 ! Blocking these chat widgets if they are really annoying
 ||widget.intercom.io^$domain=appmaster.io|internxt.com
 ||helpdeskeddy.com//js/contact-widget.js$domain=litres.ru
-||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com
+||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+||livechat.oyunfor.com^
 ugreen.com##body > div[style="visibility: visible;"]:has(> div > iframe#launcher)
 animelon.com##div[class^="discord"]
 pebblehost.com##.crisp-client

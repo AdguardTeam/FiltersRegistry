@@ -1,9 +1,9 @@
-! Checksum: 15soH6D9sphfe9mlLMc3pw
-! Diff-Path: ../patches/19/19-s-1763982655-3600.patch
+! Checksum: 3x06rTBSG8Qk50pnv9vSJw
+! Diff-Path: ../patches/19/19-s-1763986541-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.65.84
-! TimeUpdated: 2025-11-24T11:07:13+00:00
+! Version: 2.0.65.85
+! TimeUpdated: 2025-11-24T12:12:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3417,6 +3417,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+aether.mom#%#//scriptlet('set-local-storage-item', 'modal-promotional-dismissed', 'true')
+ozon.ru#?#div[class="vue-portal-target"] > div[style^="z-index"]:has(div:contains(Оцените ваши покупки))
 apkmoddone.com###notif-widget
 food4less.com#%#//scriptlet('trusted-set-local-storage-item', 'ad_selector_tooltip_dont_show_again', 'true')
 ok.ru##section[class^="auth-login-banner__"]
@@ -11338,6 +11340,8 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+oyunfor.com###darkness
+oyunfor.com###signalNotification
 ||smart-flash.jp/webpush
 noticiascaracol.com##.PushSubscription-content
 ciberduvidas.iscte-iul.pt###notifications-bar
@@ -12277,6 +12281,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+planhub.ca###emailCollectorResults
 tkdodo.eu##div[class^="css-"] > a[href^="https://bytes.dev/"]
 tkdodo.eu##div[class^="css-"] > div[class^="css-"]:has(> div[class^="css-"] > div[class^="css-"] > a[href^="https://www.monolisa.dev/"])
 vesper.pl##div[id^="posnewsletterpopup"]

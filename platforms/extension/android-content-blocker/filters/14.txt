@@ -1,8 +1,8 @@
-! Checksum: XCcAaX3ndeIgIzTHJGs+7Q
+! Checksum: b54rphSloKRagx7H53XJ1g
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.4
-! TimeUpdated: 2025-11-24T11:07:07+00:00
+! Version: 2.2.50.5
+! TimeUpdated: 2025-11-24T12:11:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12097,6 +12097,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218498
+! TODO: Remove when this issue is fixed - https://github.com/AdguardTeam/CoreLibs/issues/2042
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218570
 heizung-billiger.de#@#.cookie-notice:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218338
@@ -24915,6 +24917,8 @@ labs.google.com#@##google-hats-survey
 !
 ! SECTION: Push notifications - Regular rules
 !
+oyunfor.com###darkness
+oyunfor.com###signalNotification
 ||smart-flash.jp/webpush
 noticiascaracol.com##.PushSubscription-content
 ciberduvidas.iscte-iul.pt###notifications-bar
@@ -25787,6 +25791,7 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 !
 ! SECTION: Subscriptions - Regular rules
 !
+planhub.ca###emailCollectorResults
 tkdodo.eu##div[class^="css-"] > a[href^="https://bytes.dev/"]
 vesper.pl##div[id^="posnewsletterpopup"]
 jinjibu.jp##.l-side__mailform
@@ -38820,6 +38825,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+oyunfor.com###headerBarLink
 ||apteka.by/banners/*Supradin-search-*.jpg
 apteka.by##search div:not([class]) + div.mt-\[12px\]
 reviversoft.com##.find
@@ -43796,6 +43802,7 @@ codedosa.com###wpcp-error-message
 !
 !
 ! Disabled temporary - https://github.com/AdguardTeam/AdguardFilters/issues/137374#issuecomment-1353110741
+!
 !--- HTML ----
 ! NOTE: Context menu - HTML
 ! NOTE: Context menu (mixed rules) end ⬆️
@@ -45578,9 +45585,10 @@ freestreams-live.my###custom_html-9
 ! Blocking these chat widgets if they are really annoying
 ||widget.intercom.io^$domain=appmaster.io|internxt.com
 ||helpdeskeddy.com//js/contact-widget.js$domain=litres.ru
-||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com
+||static.zdassets.com/web_widget/messenger/$domain=op.gg|p2pb2b.com|revouninstaller.com
 litres.ru###call_support
 !
+||livechat.oyunfor.com^
 animelon.com##div[class^="discord"]
 pebblehost.com##.crisp-client
 ||widgetv*.heres.ai/heres.js$domain=pinalli.it
