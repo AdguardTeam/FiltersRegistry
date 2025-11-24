@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: CdW/5nJy6CwyIpmzXcUM2A
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1763961159-3600.patch
+! Checksum: /GHxCVnmalEpxIthC9k7qQ
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1763968324-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.39.17
-! TimeUpdated: 2025-11-24T05:09:11+00:00
+! Version: 2.0.39.18
+! TimeUpdated: 2025-11-24T07:08:28+00:00
 ! Expires: 5 days (update frequency)
 !######### Annoying elements (not ads)
 instagram.com#$?#div[class]:has(> div[class]:first-child > a[href="/explore/people/"]) { position: absolute !important; left: -3000px !important; }
@@ -621,6 +621,7 @@ vk.com###narrow_column > #feed_filters > .apps_feedRightAppsBlock
 makeup.ru##+js(set-constant, Makeup.subscribePopup, undefined)
 ||player.anyclip.com^$domain=thewindowsclub.com
 ||fb.ru/front/build/comments.js$domain=fb.ru
+medonet.pl##+js(no-setTimeout-if, this._floatingOn)
 auto-swiat.pl,przegladsportowy.onet.pl,komputerswiat.pl##+js(set-constant, floatingPlayer.isFloatingEnabled, false)
 komputerswiat.pl,businessinsider.com.pl,fakt.pl,plejada.pl,medonet.pl,onet.pl##+js(set-constant, Object.prototype.isFloatingEnabled, false)
 bizimyaka.com##.block-fan
@@ -1008,6 +1009,8 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+||apteka.by/banners/*Supradin-search-*.jpg
+apteka.by##search div:not([class]) + div.mt-\[12px\]
 reviversoft.com##.find
 reviversoft.com##.left_side > #add_block
 ||reviversoft.com/resource/js/sale/black-friday-24/
@@ -1020,8 +1023,6 @@ speedtest.gate02.ne.jp##.fukusou_bannar
 bewins.tv##a[href^="https://bewins.wiki"]
 inc.com##body > div[data-radix-popper-content-wrapper] > div[id^="radix-"]
 inc.com###promo-banner
-||apteka.by/banners/*Supradin-web-search-*.jpg
-apteka.by###header-search-catalog > div.autocomplete__group > div.tw-px-\[8px\]
 ||hominis.media/shared/images/banner/side_ad_
 nexusmods.com###freeTrialBanner
 investing.com##div[data-test="contextual-subscription-hook"]
