@@ -1,5 +1,5 @@
-! Checksum: 4SdL5ce1x9nK84egw8tJBQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1763959576-14400.patch
+! Checksum: dHzEHtj1/VV4liaiIdzhbw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1764045845-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.42
@@ -889,7 +889,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||delicioustightbronze.com^$all
 ||entertainlavish.com^$all
 ||markswaitingrouge.com^$all
-||pizzanonetheless.com^$all
 ||outlaysudden.com^$all
 ||batchzoo.com^$all
 ||clungfellow.com^$all
@@ -2341,7 +2340,6 @@ google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ##button[aria-controls=ShareContainer]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
-##button[title^="Del på "]
 ##button[title^="Share this "]
 ##div[button=share]
 ##div[class$=-sticky-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=post-with-stick])
@@ -3104,7 +3102,6 @@ $document,removeparam=/^aff_id\d?=.*$/i,domain=~affiliate.salestring.com
 $removeparam=twitchReferral
 $document,removeparam=elqTrackId,domain=~comcast.com|~comcastforbusiness.com
 $removeparam=tctx
-$removeparam=ad_medium
 $document,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
 $removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.*|~subito.it|~truckscorner.fr|~willhaben.at
@@ -3371,6 +3368,7 @@ $removeparam=ads_creative
 $removeparam=ads_matchtype
 $removeparam=ads_network
 $removeparam=ads_targetid
+$document,removeparam=/^from=rss$/
 $document,removeparam=/^source=rss$/
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
@@ -4186,11 +4184,11 @@ $document,removeparam=refresh,domain=cnn.com|startribune.com
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=rec,domain=argos.co.uk|roboform.com
 $removeparam=clickPR,domain=argos.co.uk
+$removeparam=clickCSR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
 $removeparam=/^cid=DSS-Search-.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 $removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
-||espn.com^$removeparam=ex_cid
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
 ||comodo.com^$removeparam=track
@@ -4235,7 +4233,6 @@ $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
-$removeparam=sub,domain=allboner.com|twinkvideos.com
 ||fandom.com^$removeparam=so
 ||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
@@ -4440,7 +4437,6 @@ $document,removeparam=af_xp
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 ||www.roblox.com^$removeparam=treatmentType
-$document,removeparam=ucid,domain=unicredit.it|steampowered.com
 $document,removeparam=entrypoint,domain=bing.com
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
@@ -4604,6 +4600,7 @@ $third-party,denyallow=microsoft.com,domain=store.rg-adguard.net
 fandom.com##.notifications-box
 flipkart.com##div[style^=flex-grow] div:first-of-type + div.col
 flipkart.com##footer section + div:last-of-type
+###custom-css .vjs-loading-spinner
 .bcbits.com/img/heartbreak.png^
 @@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script
 google.*#@##google-hats-survey
