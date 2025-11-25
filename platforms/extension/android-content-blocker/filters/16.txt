@@ -1,8 +1,8 @@
-! Checksum: 9M7tw4yqYzpxt2GsYf7NVA
+! Checksum: CEu9jbzGUg88FS8uxyZZxg
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.54.96
-! TimeUpdated: 2025-11-14T00:27:21+00:00
+! Version: 2.0.55.9
+! TimeUpdated: 2025-11-24T16:07:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -53,6 +53,8 @@
 ! Good: @@/adblocker/detect.js$domain=example.org
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218498
+planhub.ca###popupAdBlockerDetected
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201585
 @@||fiches-auto.fr/popup2.js$~third-party
 !+ NOT_OPTIMIZED
@@ -596,6 +598,10 @@ prod-player.tf1.fr,tf1.fr,tf1info.fr#@#.carbon-ads
 !------- JS rules ---------------------!
 !--------------------------------------!
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/217971
+! Fixes video player - required when DNS filtering is used
+! TODO: use scriptlet when it's available - https://github.com/AdguardTeam/Scriptlets/issues/173
+! "adjust-setInterval" is required to fix delay in video playback start
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213146
 ! Fixes loading video player and delay in video playback start
 ! Apps cannot inject script into iframe with "about:blank" src, so a workaround is required
@@ -728,6 +734,8 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 !
 !
 !
+planhub.ca##.h-banner
+lemoniteur.fr##.b-ad-banner__wrap
 lessentiel.lu##div[data-ad-unit-id]
 lejournaldelamaison.fr##div[data-actirise-slot]
 lejournaldelamaison.fr##div[data-hbdbrk-parent]
@@ -1349,7 +1357,7 @@ lesfrontaliers.lu##.ad-listing
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_french
 ! Detect of using AdGuard products
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
+!+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Detect HTTPS filtering
 ! Detect Advanced Protection of AdGuard for iOS
@@ -1395,6 +1403,8 @@ ixbt.com#@#.pubcontainer
 @@||oasis-player*/web/monetization/*/monetization.js$domain=puls24.at|kabeleins.de|wetter.com|prosiebenmaxx.de|sixx.de|sat1.de|puls4.com|prosieben.de|kabeleinsdoku.de|kabeleinsdoku.at|zappn.tv|sat1.at
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218667
+$popup,domain=strmup.to,badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216878
 @@||xzeepb2clookuppsta001.blob.core.windows.net/bge/src/js/google-analytics.js$domain=euazurebge.b2clogin.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217251
@@ -1878,9 +1888,6 @@ maxisciences.com,gentside.*,ohmymag.*#@#[data-ads-core]
 @@||cmpv2.berliner-zeitung.de/mms/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/118491
 fshd.link#@#div[data-ad]
-! yts.mx - fixing video player
-$script,third-party,domain=yts.mx,badfilter
-||yts.mx/*.gif$badfilter
 ! https://github.com/AdguardTeam/AdguardFilters/issues/117619
 mobimart.it#@##ad_global_below_navbar
 ! https://github.com/AdguardTeam/AdguardFilters/issues/116378
@@ -13125,6 +13132,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||reflectim.fr/wp-content/plugins/popup-builder/
 ||regie.hiwit.org^
 ||regie.story-fr.com^
+||regie.tendancehotellerie.fr^
 ||remiremontinfo.fr/pub/
 ||renault-safrane.com/banierre_partenaire/
 ||rencontres-coquines.jacquieetmichel.net/jm/?
@@ -13328,6 +13336,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||telesatellite.com/images/a/
 ||tendancehotellerie.fr/img/gif/
 ||tendancehotellerie.fr/img/jpg/
+||tendancehotellerie.fr/img/png/transaxio_hotel_partenaire_in_extenso.png
 ||tendancehotellerie.fr/spip.php
 ||tendanceouest.com/*/lightbox-
 ||tennisactu.net/*/encarts_partenaires/
@@ -15429,6 +15438,7 @@ droidsoft.fr###addBlock
 courrierlaval.com###add_bottom
 courrierlaval.com,letraitdunion.com###add_top
 zoneadsl.com###adfd
+oisd.nl###adgbn
 telechargerunevideo.com###adlbl
 logitheque.com###adni_widgets-2
 clicanoo.re###adress_utiles

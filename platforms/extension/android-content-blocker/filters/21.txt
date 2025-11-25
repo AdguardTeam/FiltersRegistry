@@ -1,8 +1,8 @@
-! Checksum: 20Lfi3hcbvyoi5vby1DbQg
+! Checksum: P+l5Jeeo7MQ0Xdjy3aQDbQ
 ! Title: AdGuard Other Annoyances filter
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
-! Version: 2.0.39.0
-! TimeUpdated: 2025-11-14T13:15:55+00:00
+! Version: 2.0.39.23
+! TimeUpdated: 2025-11-24T19:06:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -79,8 +79,11 @@ lifehacker.com##[data-ga-element="openweb_scroll"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210376
 ecartelera.com.mx##.player-section .unmute-button
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209711
+! https://github.com/AdguardTeam/AdguardFilters/issues/218440
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212886
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209926
+||z-lib.*/components/z-promotion.js
+||z-lib.*/components/z-recommended-search.js
 ||z-library.*/components/z-promotion.js
 ||z-library.*/components/z-recommended-search.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209464
@@ -1705,6 +1708,7 @@ wyborcza.biz##.mcBan[data-campaign-id] > section.mod_swimmer[data-cta-category="
 ||fb.ru/front/build/comments.js$domain=fb.ru
 ! https://github.com/AdguardTeam/AdguardFilters/issues/46329
 weather.com##main > aside > div[id^="rail-Donation-"]
+! https://github.com/AdguardTeam/AdguardFilters/issues/218517
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66522
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45328
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45428
@@ -2875,10 +2879,10 @@ jianshu.com##.note-comment-above-ad-wrap
 !
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_other
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
+!+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_ext
 ! Detect of using AdGuard products
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
+!+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Detect HTTPS filtering
 ! Detect Advanced Protection of AdGuard for iOS
@@ -2953,8 +2957,6 @@ ya.ru,yandex.*##.simple-popup_horizontal-centered_true
 ya.ru,yandex.*##.simple-popup__overlay_shown_true
 !
 ! Yandex.Search
-ya.ru##main[class="body__wrapper"] form ~ div[style^="--height-ratio:"]
-yandex.*##main[class="body__wrapper"] form ~ div > div[style^="--height-ratio:"]
 [$path=/search]ya.ru,yandex.*##.AdvOffers
 [$path=/search]ya.ru,yandex.*##.EContent.SearchPage-RMG
 [$path=/search]ya.ru,yandex.*##.serp-item[data-fast-subtype="product_tiles_adv"]
@@ -3000,6 +3002,7 @@ music.yandex.*##.sidebar__sticky  div.sidebar__under > div.teaser
 music.yandex.*##.deco-pane-overlay
 !
 ! Yandex.Market
+market.yandex.*##div[data-apiary-widget-name="@monetize/HeroBannersCarousel"]
 market.yandex.*##article[data-madv]
 market.yandex.*##div[data-zone-data*="isIncut\":true"]
 market.yandex.*##article[data-auto="searchIncut"]
@@ -3039,8 +3042,21 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
-||apteka.by/banners/*Supradin-web-search-*.jpg
-apteka.by###header-search-catalog > div.autocomplete__group > div.tw-px-\[8px\]
+comicschau.de##a[href^="https://www.comicschau.de/werben/"]
+hummingbirdhigh.com##.cta-block
+rusprofile.ru###sticky-header
+promptingguide.ai##.nextra-callout
+oyunfor.com###headerBarLink
+||apteka.by/banners/*Supradin-search-*.jpg
+apteka.by##search div:not([class]) + div.mt-\[12px\]
+reviversoft.com##.find
+reviversoft.com##.left_side > #add_block
+||reviversoft.com/resource/js/sale/black-friday-24/
+builtin.com###job-search-widget
+speedtest.gate02.ne.jp##.fukusou_bannar
+bewins.tv##a[href^="https://bewins.wiki"]
+inc.com##body > div[data-radix-popper-content-wrapper] > div[id^="radix-"]
+inc.com###promo-banner
 ||hominis.media/shared/images/banner/side_ad_
 nexusmods.com###freeTrialBanner
 investing.com##div[data-test="contextual-subscription-hook"]
@@ -3103,7 +3119,6 @@ welivesecurity.com##.sidebar-card-banner:not([href*="welivesecurity.com"])
 gamewith.jp##.walkthrough-gamewith-announces
 gamewith.jp###article-body > a[href^="https://hrmos.co/"]
 hobbygames.ru##.banner-desktop-wrapper
-rallys.online,hobbygames.ru##.banner
 minute.jp##.bunner-in-article-wrapper
 nypost.com##.zephrModal
 stay.rakuten.co.jp##a[href^="https://network.mobile.rakuten.co.jp/campaign/"]
@@ -3226,6 +3241,8 @@ japanmetaldaily.com##.m-ad-bnr-rec
 reddit.com,reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion##shreddit-async-loader[bundlename="feed_announcement"]
 pitchfork.com##.body__inner-container > div.disclaimer
 pitchfork.com##.body__inner-container > div.disclaimer + div[data-testid="ProductEmbedWrapper"]
+the-ans.jp##.single-links
+the-ans.jp##a[id^="c2_click_sportbra_"]
 the-ans.jp##a[id^="c2_click_textlink_"]
 nc.ox-tv.co.jp##.container_banner.shadow
 htc.com###header > .free-shipping-block
@@ -3967,7 +3984,6 @@ satoya-boshu.net##.bnrArea
 satoya-boshu.net##.bnrSide01
 nativecamp.net##.hey-nc-top-banner
 nativecamp.net##.hey-nc-bottom-link-banner
-islamicfinder.org##.banner
 sofmap.com###remote_cs
 sofmap.com##.side_bnr
 swisscows.com##.bnnr-widget
@@ -5495,7 +5511,7 @@ mover.uz##.block-info-vertical
 office.com##.m-alert.f-information
 youtube.com###ticker-content
 ||banner.consultant.ru^
-incehesap.com,curseforge.com,toto.rakuten.co.jp,themeforest.net##.banner
+k2sporn.com,rallys.online,hobbygames.ru,islamicfinder.org,incehesap.com,curseforge.com,toto.rakuten.co.jp,themeforest.net##.banner
 alba.co.kr###MainBanner
 albamon.com##.stickyBestalba
 thinkster.io###carbonhold
@@ -7158,6 +7174,7 @@ eiga.com##.header-pure-banner
 !##############################
 ! SECTION: Tweaks - CSS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218209
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217478
 ! support website ticket view (e. g. streamfab) - scrolling not working - not caused by filters
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213725
@@ -7369,6 +7386,7 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218285
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217186
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216618
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216028
@@ -7390,6 +7408,7 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210732
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210680
 ! https://github.com/AdguardTeam/AdguardFilters/issues/210649
+! https://github.com/AdguardTeam/AdguardFilters/issues/218218
 ! Timer on download
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208985
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209099
@@ -8004,6 +8023,7 @@ codedosa.com###wpcp-error-message
 !
 !
 ! Disabled temporary - https://github.com/AdguardTeam/AdguardFilters/issues/137374#issuecomment-1353110741
+!
 !--- HTML ----
 ! NOTE: Context menu - HTML
 ! NOTE: Context menu (mixed rules) end ⬆️

@@ -1,9 +1,9 @@
-! Checksum: X3jNEGgBjxJEtMbC0959sQ
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1762735929-14400.patch
+! Checksum: uHxlBViPdRb6sg9HvXK86w
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1763887295-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.19
-! TimeUpdated: 2025-11-10T00:48:38+00:00
+! Version: 2.0.9.23
+! TimeUpdated: 2025-11-23T08:38:13+00:00
 ! Expires: 5 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -96,7 +96,7 @@ $document,removeparam=WebSiteMapNodeID
 $document,removeparam=tt_content
 $document,removeparam=tt_medium
 $document,removeparam=scid,domain=~pnc.com
-$document,removeparam=trackID
+||salming.com^$removeparam=trackID
 $document,removeparam=dTribesID
 $document,removeparam=awc
 $document,removeparam=exta
@@ -280,7 +280,7 @@ $removeparam=tctx
 $removeparam=ad_medium
 $document,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
-$removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.com.br|~subito.it|~truckscorner.fr|~willhaben.at
+$removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.*|~subito.it|~truckscorner.fr|~willhaben.at
 $removeparam=CAWELAID
 $removeparam=partition_id
 $removeparam=adgroup_id
@@ -395,7 +395,7 @@ $removeparam=rfsn
 $removeparam=bclid
 $removeparam=bcpid
 $removeparam=bctid
-$document,removeparam=trackid,domain=~nzpost.co.nz
+||chegg.com^$removeparam=trackid
 $removeparam=strackid
 $removeparam=afsrc
 $removeparam=lctid
@@ -407,7 +407,7 @@ $removeparam=cjpid
 $removeparam=c3ch
 $removeparam=c3nid
 $removeparam=om_mmc
-$removeparam=trackingCode
+||wsj.com^$removeparam=trackingCode
 $removeparam=k_clickid
 $removeparam=CJURL
 $removeparam=affiliateCustomId
@@ -467,7 +467,7 @@ $removeparam=irclid
 $removeparam=sp_source
 $removeparam=sp_medium
 $removeparam=sp_campaign
-$removeparam=ad_id,domain=~olx.ua
+$removeparam=ad_id,domain=~olx.*
 $document,removeparam=/^affSource.*$/i
 $document,removeparam=/^_s=afl_impact$/
 $document,removeparam=/^cid_.*$/
@@ -2856,7 +2856,6 @@ $removeparam=/^has-promotion=$/
 ||youtube.com^$removeparam=sub_confirmation
 $document,removeparam=adsterra_clid
 $document,removeparam=adsterra_placement_id
-||nextdns.io^$removeparam=from
 ||proton.me^$removeparam=url_id
 ||proton.me^$removeparam=phfp
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
@@ -2869,6 +2868,7 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||fastmail.com^$removeparam=ps_xid
 ||fastmail.com^$removeparam=gsxid
 ||fastmail.com^$removeparam=gspk
+||twitch.tv/activate^$removeparam=device-metadata
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu

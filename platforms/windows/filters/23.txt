@@ -1,9 +1,9 @@
-! Checksum: x+ORsZnM6rY8Qsny8Lla6Q
-! Diff-Path: ../patches/23/23-s-1763032286-3600.patch
+! Checksum: UNblrpE/vRg4rxl6+KLHBw
+! Diff-Path: ../patches/23/23-s-1763629939-3600.patch
 ! Title: AdGuard Ukrainian filter
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.7.38
-! TimeUpdated: 2025-11-13T11:07:20+00:00
+! Version: 2.0.7.43
+! TimeUpdated: 2025-11-20T09:08:15+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -796,7 +796,7 @@ _160x290
 _160x600
 _336x280
 _580x100
-_600x100.png
+_600x100.png$domain=~buy-eu.piano.io
 _610x120.gif
 _728.gif
 _728by90
@@ -1437,6 +1437,10 @@ ucoz.ru/informer/
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||sinehut.com^$all
+||kputjp.com^
+||brodownload8s.com^
+||innovation-lab.ru^$third-party
 ||paintejuke.com^$all
 ||agl007.site^
 ||6i7y3i.ru^
@@ -4299,6 +4303,7 @@ citrus.ua,xsport.ua,zi.dn.ua,zi.ua##img[src^="/upload/rk/"]
 !
 !
 !
+auto.ria.com##div[id^="dfp"]
 fakty.com.ua##.pip-video-wrapper
 112.ua##.vertical__banner
 112.ua##p[style="margin-top:-18px;font-size:12px;margin-bottom: 40px;"]
@@ -5602,10 +5607,10 @@ player.starlight.digital#%#//scriptlet('trusted-replace-fetch-response', '"media
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ukrainian
 ! Detect of using AdGuard products
-!+ PLATFORM(windows, mac, android, ios) NOT_OPTIMIZED
+!+ PLATFORM(windows, mac, android, cli, ios) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Detect HTTPS filtering
-!+ PLATFORM(windows, mac, android) NOT_OPTIMIZED
+!+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
 ! Detect Advanced Protection of AdGuard for iOS
 !
