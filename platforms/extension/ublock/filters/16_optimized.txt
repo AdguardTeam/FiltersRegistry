@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: pq0b6IbO3EOZZTAKOKtC4A
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1764000685-3600.patch
+! Checksum: +VXkQveUjLx8I4rucI7UAA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1764038520-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.9
@@ -1591,6 +1591,7 @@ _alenty.js
 _banner-300x150.
 _banner.*?partner=
 _banner_pub.
+_bannerad2_
 _banniere-300.
 _banniere-728.
 _bnrrotator_
@@ -1621,6 +1622,7 @@ _werbebanner_
 /wp-content/plugins/mm-ad-widget/*
 /wp-content/plugins/mm-kelkoo/*
 /wp-content/plugins/mts-wp-in-post-ads/*
+/wp-content/plugins/progressads/*
 /wp-content/plugins/quick-adsense-reloaded/*
 /wp-content/plugins/rnotify1.*/assets/public/custom.js
 /wp-content/plugins/wp-banners/*
@@ -1890,6 +1892,7 @@ _build=iclick-$popup
 ||plurielmediacenter.com^$third-party
 ||popupmaker.com^$third-party
 ||pornme.pm^$third-party
+||pubinteractive.ca^$third-party
 ||publy.net^$third-party
 ||pubstack.io^$third-party
 ||purlive.com^$~image,third-party
@@ -2061,10 +2064,12 @@ _build=iclick-$popup
 ||beergeneralization.com^
 ||belterglaikit.com^
 ||benchergodpapa.com^
+||besortwanrest.top^
 ||bespakerubbles.com^
 ||bestcontentcost.top^
 ||bestfreecounterstat.com^
 ||betulinherl.shop^
+||bhabhiporn.pro^
 ||bharsilked.com^
 ||bieldfacia.top^
 ||biokrfvnvs.com^
@@ -2180,6 +2185,7 @@ _build=iclick-$popup
 ||druqkstwwvg.com^
 ||duchessefit.com^
 ||ductedcestoid.top^
+||duffelblog.com^
 ||dummieseardrum.com^
 ||duomoscrinkum.shop^
 ||dustingvendace.shop^
@@ -2539,6 +2545,7 @@ _build=iclick-$popup
 ||rbpsh.ru^
 ||reasulty.com^
 ||reatushaithal.com^
+||rebakebelage.com^
 ||reddleops.pro^
 ||redichat.com^
 ||reemebal.com^
@@ -2714,6 +2721,7 @@ _build=iclick-$popup
 ||ybnnocszmtuz.com^
 ||yggtorrent.com^
 ||yktxrceoyoxn.com^
+||yoghonagra.com^
 ||zarebasdezaley.com^
 ||zaudephaigrauto.net^
 ||zesemen.cz^
@@ -2737,6 +2745,7 @@ _build=iclick-$popup
 ||authedmine.com^$third-party
 ||binance.org^$third-party
 ||browsealoud.com/plus/scripts/$script
+||browsermine.com^$third-party
 ||clgserv.pro^$third-party
 ||cnhv.co^$third-party
 ||coin-have.com^$third-party
@@ -2974,6 +2983,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||recettes.de/images/logos/$third-party
 ||regie-agricole.com^*/pubs^$third-party
 ||rencontreshard.com^$subdocument
+||restaurants.infcdn.net/img/$third-party
 ||rza.pmu.fr^
 ||s.beop.io^
 ||s.collectiveaudience.co^
@@ -3298,7 +3308,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||openstreetmap.org/assets/banners/
 ||pagesjaunes-dz.com/pub/
 ||pagesjaunes.fr/js/pj_ad.js
-||papystreaming.*/bn-cs.gif
 ||partenaire.leparticulier.fr^
 ||passionlachasse.com/publi
 ||pcgamestorrents.com/wp-content/uploads/20*.gif
@@ -3373,6 +3382,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||weshrak.com^*/pub.php?
 ||wiflix-*/voir/
 ||wii-info.fr/bane/
+||wii-info.fr/p/
 ||winamax.fr/img/banners/
 ||winamax.fr/img/pub/
 ||winds-up.com/pub/
@@ -3495,6 +3505,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###gpt-ad-habillage
 ###gpt-ad-inread
 ###gpt-leaderboard-top
+###haut_site_pub
 ###head-pub
 ###head_pub
 ###header-promo
@@ -3541,7 +3552,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###psreklama
 ###pub-300-250
 ###pub-300x250
-###pub-468x60
 ###pub-728x90
 ###pub-after-adownload
 ###pub-bottom
@@ -3604,7 +3614,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub_bottom
 ###pub_brique
 ###pub_carre
-###pub_col_droite
 ###pub_container
 ###pub_content
 ###pub_dfp_article
@@ -4213,6 +4222,7 @@ hardware.fr###footer_img
 bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
 banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comics-sanctuary.com,ffeminin.com,gamer-network.fr,jeux-mmorpg.fr,lequipement.fr,letelegramme.fr,nrj.fr###habillage
+alternance.com,bac-es.net,bac-l.net,bac-pro.net,bac-s.net,bac-stg.net,brevetdescolleges.fr,devoirs.fr,doc-etudiant.fr,ingenieurs.com,marketing-etudiant.fr,mediaetudiant.fr###habillage-top
 buzzdefou.com,gerardmerinfo.fr###habillage_site
 leboncoin.fr###home-top-banner
 ladepeche.fr,midilibre.fr###immobilier
@@ -4665,6 +4675,7 @@ wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.sadst
 1fr1.net,3oloum.com,7olm.org,ahladalil.com,ahlamontada.com,alamontada.com,arabepro.com,banouta.net,darkbb.com,easyforumpro.com,fcmulhousefans.com,forum2jeux.com,forumactif.com,forumactif.fr,forumactif.org,forumalgerie.net,forumpro.fr,forums-actifs.com,galoppourlavie.org,gid3an.com,jordanforum.net,lebonforum.com,orizzontescuolaforum.net,own0.com,passionmilitaria.com,sorcieremonique.com,superforum.fr,syriaforums.net,walkingdead-rpg.com,yoo7.com,ze-43eme.com##.croco_wrapper, [onclick*="var"], [onmousedown*="\x"], [style*="height: 90px;"]
 cdiscount.com##.c-productCard:has(a[href*="?idOffre="][href*="&sw="])
 tvanouvelles.ca##.dfp-container:has(.dfp-ad)
+planetegrandesecoles.com##.elementor-element:has(picture.attachment-full.size-full)
 auchan.fr##.hp-banner:has(.hp-banner__message-sponsored)
 frandroid.com##.is-hidden-mobile:has([class^="Billboard"])
 radio-canada.ca##.max-w-150:has(.srcPubZone)
