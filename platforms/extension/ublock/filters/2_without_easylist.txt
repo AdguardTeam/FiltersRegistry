@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 92pB54PhhQte67sDpZDNEA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1764072957-3600.patch
+! Checksum: LgShXRkRVRyzxaCj5GMK3Q
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1764076826-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.27.78
-! TimeUpdated: 2025-11-25T12:11:58+00:00
+! Version: 2.4.27.79
+! TimeUpdated: 2025-11-25T13:16:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19942,6 +19942,12 @@ mob.hr##.side_banner
 !
 ! NOTE: Czech and Slovakian
 !
+armyweb.cz##a[href^="/banners/"]
+armyweb.cz##.scrollable_headline
+armyweb.cz##.scrollable_detailtop
+armyweb.cz###all > #top > div:has(> a[href^="/banners/"])
+armyweb.cz##+js(abort-current-script, $, 24hpopup)
+||armyweb.cz/data/presentation/$image
 touchit.sk##div[class*="touchit-ad"]
 touchit.sk###sidebar > div.widget:has(> div[class*="touchit-ad"])
 bombuj.si##+js(remove-attr, href, #players a[target="_blank"])
@@ -48267,7 +48273,7 @@ ashemaletube.com##.vast-overlay
 xxxdan.com###content > div.movie + div[class]
 mat6tube.com,noodlemagazine.com##iframe[src^="//its.fusrv.com/"]
 noodlemagazine.com##div[style="width:900px;height:250px;margin:20px auto 0"]
-/vast.js$domain=noodlemagazine.com|mat6tube.com|gaystream.click|zpjid.com|gaystream.link|rapidvid.net|vidrame.pro
+/vast.js$domain=noodlemagazine.com|mat6tube.com|gaystream.click|zpjid.com|gaystream.link|rapidvid.net|vidrame.pro|hdmovieplay.xyz
 ||interracial.com/sw.js
 ||interracial.com/int354/script.php
 stun:35.224.227.218^
@@ -61166,6 +61172,9 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218726
+! Common rule for Turkish streaming sites with image extension of video files
+! Example: https://ahd.56556674.xyz/v/12737-600b1f948250f8671b6e2ba6/1080p/sheila_000.png
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218398
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218325
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218300
