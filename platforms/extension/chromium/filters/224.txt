@@ -1,9 +1,9 @@
-! Checksum: wA7XeyTgJIYg35t6vqQmgw
-! Diff-Path: ../patches/224/224-s-1764151911-3600.patch
+! Checksum: hBFNSBfSUD3BQZq7P84llQ
+! Diff-Path: ../patches/224/224-s-1764163324-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.48.70
-! TimeUpdated: 2025-11-26T10:08:47+00:00
+! Version: 2.1.48.71
+! TimeUpdated: 2025-11-26T13:19:06+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2993,7 +2993,7 @@ sports.qq.com,lpl.qq.com,v.qq.com#%#//scriptlet('set-constant', 'CreativePlayerw
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166649
 sports.qq.com,news.qq.com,www.qq.com,v.qq.com,new.qq.com#%#//scriptlet('json-prune', 'ads')
 ! "v.qq.com" creates an iframe to obtain native "JSON" method, so we need to "patch" it
-!+ NOT_PLATFORM(ext_ff)
+!+ NOT_PLATFORM(ext_chromium_mv3, ext_ff)
 v.qq.com#%#(()=>{const e='iframe[style*="display: none;"]:not([src])',t={apply:(t,n,o)=>{const r=Reflect.apply(t,n,o);try{r instanceof HTMLIFrameElement&&r.matches(e)&&r.contentWindow?r.contentWindow.JSON=window.JSON:r instanceof HTMLElement&&r.querySelector(e)&&r.querySelector(e).contentWindow&&(r.querySelector(e).contentWindow.JSON=window.JSON)}catch(e){}return r}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,t),Element.prototype.insertAdjacentElement=new Proxy(Element.prototype.insertAdjacentElement,t)})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/30701
 ~sports.qq.com,~work.weixin.qq.com,qq.com#%#//scriptlet('json-prune', 'ad')
@@ -5145,6 +5145,7 @@ newduba.cn###jq_youxi
 ||6s0zo8jzbb.com^
 ||xjx11261ts.com^
 ||rlkx.cn^
+||ngygalitlv.com^
 ||veirkaey.com^
 ||d89sze2uu.com^
 ||j33xvvanl.com^
