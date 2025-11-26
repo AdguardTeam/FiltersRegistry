@@ -1,8 +1,8 @@
-! Checksum: 1NSCh8r9MxY87WiJEmv9eA
+! Checksum: qgZQI0rKoU6X4RTWkCVugQ
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.38
-! TimeUpdated: 2025-11-26T10:08:40+00:00
+! Version: 2.0.12.39
+! TimeUpdated: 2025-11-26T12:12:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -533,10 +533,18 @@ $removeparam=promo,domain=vjav.com|vjav.tube
 ||scoopzapp.com^$removeparam=nid
 ||scoopzapp.com^$removeparam=pd
 ||scoopzapp.com^$removeparam=s
+! https://github.com/AdguardTeam/AdguardFilters/issues/218250
+||ad.doubleclick.net/ddm/clk/$removeparam=PID
+||ad.doubleclick.net/ddm/clk/$removeparam=deeplink
+||ad.doubleclick.net/ddm/clk/$removeparam=clickId
+||ad.doubleclick.net/ddm/clk/$removeparam=clickOrigin
+||ad.doubleclick.net/ddm/clk/$removeparam=/^\\$ja=/
+||ad.doubleclick.net/ddm/clk/$removeparam=/^utm_custom\d+/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216722
 ! epsilon.com tracking
-||cj.dotomi.com^$removeparam=/^\w=/
-||emjcd.com^$removeparam=/^\w=/
+! Disabled because it breaks some redirects - https://github.com/AdguardTeam/AdguardFilters/issues/218250
+! ||cj.dotomi.com^$removeparam=/^\w=/
+! ||emjcd.com^$removeparam=/^\w=/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216723
 ||fastmail.com^$removeparam=pscd
 ||fastmail.com^$removeparam=ps_partner_key

@@ -1,9 +1,9 @@
-! Checksum: LqnRdjTmWjQNQzF7OgZaSw
-! Diff-Path: ../patches/17_optimized/17_optimized-s-1764151928-3600.patch
+! Checksum: +pVY9NDQwKSdSNfTFpWH6g
+! Diff-Path: ../patches/17_optimized/17_optimized-s-1764159387-3600.patch
 ! Title: AdGuard URL Tracking filter (Optimized)
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.38
-! TimeUpdated: 2025-11-26T10:08:40+00:00
+! Version: 2.0.12.39
+! TimeUpdated: 2025-11-26T12:12:33+00:00
 ! Expires: 12 hours (update frequency)
 $removeparam=vs_campaign_id
 $removeparam=adsterra_clid
@@ -343,8 +343,12 @@ $removeparam=promo,domain=vjav.com|vjav.tube
 ||scoopzapp.com^$removeparam=nid
 ||scoopzapp.com^$removeparam=pd
 ||scoopzapp.com^$removeparam=s
-||cj.dotomi.com^$removeparam=/^\w=/
-||emjcd.com^$removeparam=/^\w=/
+||ad.doubleclick.net/ddm/clk/$removeparam=PID
+||ad.doubleclick.net/ddm/clk/$removeparam=deeplink
+||ad.doubleclick.net/ddm/clk/$removeparam=clickId
+||ad.doubleclick.net/ddm/clk/$removeparam=clickOrigin
+||ad.doubleclick.net/ddm/clk/$removeparam=/^\\$ja=/
+||ad.doubleclick.net/ddm/clk/$removeparam=/^utm_custom\d+/
 ||fastmail.com^$removeparam=pscd
 ||fastmail.com^$removeparam=ps_partner_key
 ||fastmail.com^$removeparam=ps_xid
