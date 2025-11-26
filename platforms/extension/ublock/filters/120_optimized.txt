@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: DZoaUdYIPIY5AnE5rmCvpQ
-! Diff-Path: ../patches/120_optimized/120_optimized-s-1764161415-14400.patch
+! Checksum: CEANFXmEK/ECdf+iyZoqXA
+! Diff-Path: ../patches/120_optimized/120_optimized-s-1764189565-14400.patch
 ! Title: AdBlockID (Optimized)
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.26.58
-! TimeUpdated: 2025-11-26T12:45:31+00:00
+! Version: 2.0.26.59
+! TimeUpdated: 2025-11-26T20:34:58+00:00
 ! Expires: 5 days (update frequency)
 /smartfren/ads.
 -ad123-
@@ -4490,12 +4490,11 @@ crotpedia.net##+js(noeval-if, ads)
 mangalist.org#@#.adsbygoogle
 @@||mangalist.org/url/lib/$~third-party,script
 @@||mangaindo.*^$generichide
-@@||worldnovel.my.id^$generichide
 adikanime.com#@#.idmuvi-banner-aftercontent
 91.208.184.249,layardrama21.*#@#.idmuvi-topbanner-aftermenu
 cinemakeren6.id###adblock-message
-worldnovel.my.id##.adblock-notice
 adikanime.com##.adik-warning
+moenime.com##body > [id^="moe-"]:matches-css(position: fixed)
 komikstation.org##+js(addEventListener-defuser, /^(?:load|click)$/, popMagic)
 komikdewasa.art##+js(addEventListener-defuser, click, tampilkanUrl)
 91.208.184.249,anibatch.moe,anichin.blog,animekompi.fun,cinemakeren6.id,docksidechandlery.com,gudangkomik.com,kawanfilm21.co,kazefuri.cloud,kazefuri.info,mangakita.id,nimegami.id,otakudesu.cloud,rebahan21.com,rebahin.lol,sektedoujin.cc,sobatku21.xyz,sokuja.uk,westmanga.me##+js(window.open-defuser)
@@ -4600,6 +4599,8 @@ oploverz.*###overplay
 oploverz.*##+js(abort-current-script, Promise, delete window)
 oploverz.*##+js(abort-on-property-read, SGPB_POPUP_PARAMS)
 oploverz.*##+js(window.open-defuser)
+oploverz.*##.absolute:has(> .justify-center > button > svg)
+oploverz.*##main > .fixed:has(> .relative > button > svg)
 .gif|$image,domain=45.11.57.125|oppa.biz|oppadrama.biz
 45.11.57.125,oppa.biz,oppadrama.biz##.kln
 45.11.57.125,oppa.biz,oppadrama.biz##a[target*="blank"]:has(> img)
