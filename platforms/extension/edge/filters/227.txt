@@ -1,9 +1,9 @@
-! Checksum: T6ZtkWuAU3vuAzx3i+2Rjg
-! Diff-Path: ../patches/227/227-s-1763541864-14400.patch
+! Checksum: C++UCc7ffnU7ycSQzHl6aw
+! Diff-Path: ../patches/227/227-s-1764146680-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.43
-! TimeUpdated: 2025-11-19T08:40:24+00:00
+! Version: 2.0.23.45
+! TimeUpdated: 2025-11-26T08:40:54+00:00
 ! Expires: 10 days (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -1663,6 +1663,7 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+etoland.co.kr##div[class^="etoad_"]
 enuri.com###coupangCpcSection
 enuri.com##.lp-ad--naver
 gall.dcinside.com,m.dcinside.com##ul[class$="_ad"]
@@ -3561,6 +3562,7 @@ zum.com#%#//scriptlet('set-constant', '_ads_zum_main_initbanner_750_zum_main_br_
 ! PopMagic
 watchfreejavonline.co#%#//scriptlet('abort-current-inline-script', 'popMagic.init')
 ! m.humoruniv.com
+m.humoruniv.com#%#//scriptlet('remove-node-text', 'script', '/=\WdisplayUrl\W[\w\W]+\$\( *document *\) *\.ready *\( *function *\( *\) *{[ \n\t]*setTimeout *\( *function *\( *\) *\{[\w\W]*document\.cookie *= *\W{1,2}\w+=ok; */')
 m.humoruniv.com#%#//scriptlet('remove-node-text', 'script', '/run[\s\S]*?data[\s\S]*?OnClick[\s\S]*?ad\d_/')
 m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run_read_top_boom', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run_pds_notice_boom', 'noopFunc')

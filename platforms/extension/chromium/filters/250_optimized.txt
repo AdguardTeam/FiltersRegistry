@@ -1,5 +1,5 @@
-! Checksum: cWUQdKaEvMZ2hFMDV9vh7w
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1763959579-14400.patch
+! Checksum: C/4i0NyMapi1VS2baiVmtg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1764132206-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.42
@@ -18,6 +18,8 @@
 ||ublock.org^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||138.68.252.54^$document
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=clean])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adblocker])
 ||fileplanet.com^$document,popup
 ||test-iq.org^$document
 windowsreport.com##.code-block
@@ -107,7 +109,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||notifycertainty.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||178.128.142.109^$document
-||virnews.club^$all
 /^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||134.209.136.174^$document
@@ -175,6 +176,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||protected.net^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||45.90.58.90^$document
+||chip-secured-download.de^$all
 ||driversupport.com^$document
 ||yasir252.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -319,7 +321,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||delicioustightbronze.com^$all
 ||entertainlavish.com^$all
 ||markswaitingrouge.com^$all
-||pizzanonetheless.com^$all
 ||outlaysudden.com^$all
 ||batchzoo.com^$all
 ||clungfellow.com^$all
@@ -942,7 +943,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||167.235.163.216^$all
 ||cant3am.com^$all
 ||eln3ax.com^$all
-||tf4srv.com^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||95.211.229.247^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1506,6 +1506,7 @@ google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ||redirekted.com^$all
 ||zonedummy.com^$all
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
+###divShare
 ###rail-share-bar
 ###share-buttons
 ###share_bar
@@ -1629,7 +1630,6 @@ google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ##button[aria-controls=ShareContainer]
 ##button[data-a-target^=share]
 ~chess.com##button[data-share-url]
-##button[title^="Del på "]
 ##button[title^="Share this "]
 ##div[button=share]
 ##div[class$=-sticky-share]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i],[class*=post-with-stick])
@@ -1725,6 +1725,7 @@ google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ~line.me##a[href*="/lineit/share?"]
 ~linkedin.com##.addthis_button_linkedin:not(html,body,:empty)
 ~linkedin.com##.linkedin_share:not(html,body,:empty)
+~linkedin.com##.linkedinShare:not(html,body,:empty)
 ~linkedin.com##.share-linkedin:not(html,body,:empty)
 ~linkedin.com##a[href*="linkedin.com/cws/share?"]
 ~linkedin.com##a[href*="linkedin.com/shareArticle?"]
@@ -2390,7 +2391,6 @@ $document,removeparam=/^aff_id\d?=.*$/i,domain=~affiliate.salestring.com
 $removeparam=twitchReferral
 $document,removeparam=elqTrackId,domain=~comcast.com|~comcastforbusiness.com
 $removeparam=tctx
-$removeparam=ad_medium
 $document,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
 $removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.*|~subito.it|~truckscorner.fr|~willhaben.at
@@ -2616,6 +2616,7 @@ $removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
 $removeparam=i_cid
+$removeparam=waad
 $removeparam=_gac
 $removeparam=af_medium
 $removeparam=af_source
@@ -2657,6 +2658,7 @@ $removeparam=ads_creative
 $removeparam=ads_matchtype
 $removeparam=ads_network
 $removeparam=ads_targetid
+$document,removeparam=/^from=rss$/
 $document,removeparam=/^source=rss$/
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
@@ -3472,11 +3474,11 @@ $document,removeparam=refresh,domain=cnn.com|startribune.com
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=rec,domain=argos.co.uk|roboform.com
 $removeparam=clickPR,domain=argos.co.uk
+$removeparam=clickCSR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
 $removeparam=/^cid=DSS-Search-.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 $removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
-||espn.com^$removeparam=ex_cid
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
 ||comodo.com^$removeparam=track
@@ -3489,6 +3491,7 @@ $removeparam=s_kw,domain=expansion.com|marca.com
 ||qwant.com^$removeparam=client
 ||ecosia.org^$removeparam=addon
 $removeparam=referralInfo,domain=wix.com
+$removeparam=tck,domain=mongodb.com
 $removeparam=locale,domain=udemy.com
 ||zoho.com^$removeparam=zsrc
 ||nortonsafe.search.ask.com^$removeparam=installsource
@@ -3521,7 +3524,6 @@ $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
 ||eporner.$removeparam=trx
-$removeparam=sub,domain=allboner.com|twinkvideos.com
 ||fandom.com^$removeparam=so
 ||tumblr.com^$removeparam=is_related_post
 ||xbox.com^$removeparam=rtc
@@ -3726,7 +3728,6 @@ $document,removeparam=af_xp
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 ||www.roblox.com^$removeparam=treatmentType
-$document,removeparam=ucid,domain=unicredit.it|steampowered.com
 $document,removeparam=entrypoint,domain=bing.com
 ||audible.$removeparam=creativeId
 ||audible.$removeparam=pageLoadId
@@ -4462,6 +4463,7 @@ $third-party,denyallow=microsoft.com,domain=store.rg-adguard.net
 fandom.com##.notifications-box
 flipkart.com##div[style^=flex-grow] div:first-of-type + div.col
 flipkart.com##footer section + div:last-of-type
+###custom-css .vjs-loading-spinner
 .bcbits.com/img/heartbreak.png^
 @@||gstatic.com/uservoice/surveys/resources/prod/js/survey/survey_binary$script
 google.*#@##google-hats-survey

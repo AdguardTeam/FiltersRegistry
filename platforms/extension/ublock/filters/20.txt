@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 4i0jIImGRzIl70iYLeiy6w
-! Diff-Path: ../patches/20/20-s-1764000686-3600.patch
+! Checksum: gbgpSk+EtdCFhKCB8H1MFw
+! Diff-Path: ../patches/20/20-s-1764173505-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.24.80
-! TimeUpdated: 2025-11-24T16:07:44+00:00
+! Version: 2.0.24.87
+! TimeUpdated: 2025-11-26T16:08:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -68,6 +68,11 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+hongkongfp.com###block-114
+iask.ai##.fixed.right-3.w-\[140px\]
+iask.ai##.flex > a[href="https://apps.apple.com/us/app/iask-ai-unlimited/id6449653022"]
+iask.ai##section > div.flex:has(> div.text-center > div[class] > a[href="https://apple.co/48EbgtC"])
+turkcell.com.tr##.ant-row[class*="wrapper_trkclAppMegaMenuWrapper"]
 soundstream.media##.hooper
 kuper.ru##div[class*="HomeLanding_app"]
 levelup.gitconnected.com##a[href^="https://itunes.apple.com/app/medium-everyones-stories/"][href*="source=post_page---post_responses"]:upward(2)
@@ -2317,7 +2322,7 @@ casasbahia.com.br##.newAppHeader
 ||st.work.ua/js/app-banner||st.work.ua/js/app-banner-src_*.js
 turktelekomprime.com##.mobile-smart-app-banner
 kinarino.jp,kinarino-mall.jp##.p-view-in-app
-kinarino.jp,kinarino-mall.jp###download-app
+sekaimon.com,kinarino.jp,kinarino-mall.jp###download-app
 kinarino.jp,kinarino-mall.jp###js-view-in-app
 kinarino-mall.jp##.p-footer-banner-app__anchor
 kinarino.jp##.c-item__piece--target-app
@@ -3782,12 +3787,17 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+instacart.com#$#html { overflow: auto !important; }
+instacart.com#$##native-app-upsell-interstitial { display: none !important; }
+spooncast.net##+js(set-session-storage-item, SPOONCAST_appDownloadBannerClosed, true)
+lifecell.ua##+js(set-cookie, lfcl_mlap, true)
 soundstream.media##.stores-buttons
 hotokami.jp##.mx-auto:has(> div.py-4 > a.app_banner_mobile)
 bbcgoodfood.com##.zephr-banner-wrapper
 yamap.com#$#.SmartAppBanner { display: none !important; }
 yamap.com#$#.Main__GlobalHeader--showSmartAppBanner { padding-top: 0 !important; }
 familydollar.com##+js(set-local-storage-item, isDisplayDownloadAppSection, 0)
+perplexity.ai##.\@container\/main div.py-md > div.gap-x-xs + div.gap-x-sm
 perplexity.ai##+js(set-cookie, pplx.mweb-splash-page-dismissed, true)
 aviasales.ru##+js(set-cookie, mobile_app_redirect, 1)
 vevor.co.uk##.AppDrainage
