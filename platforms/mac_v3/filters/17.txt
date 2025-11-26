@@ -1,9 +1,9 @@
-! Checksum: /aCiTmgsNi/4Sk+GUEiZ2Q
-! Diff-Path: ../patches/17/17-s-1764141129-3600.patch
+! Checksum: 2FvDX1JeWhDjVaQJI9UibQ
+! Diff-Path: ../patches/17/17-s-1764151931-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.37
-! TimeUpdated: 2025-11-26T07:08:25+00:00
+! Version: 2.0.12.38
+! TimeUpdated: 2025-11-26T10:08:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -444,6 +444,10 @@ $removeparam=fb_source
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218447
+||research-panel.jp^$removeparam=AID
+! https://github.com/AdguardTeam/AdguardFilters/issues/218530
+||status.medium.com^$removeparam=source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218452
 ||sonybank.jp^$removeparam=kid
 ||sonybank.jp^$removeparam=cid
@@ -471,9 +475,9 @@ $removeparam=fb_source
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218625
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218624
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218453
-*$removeparam=_ly_c,domain=smbc.co.jp|app.hireroo.io|metlife.co.jp|store.mens-null.net|zurichlife.co.jp|hisamitsu.co.jp|sbisec.co.jp|sompo-direct.co.jp|tghd.co.jp|and-pro.jp|nitori-net.jp|cmoa.jp|sonybank.jp
-*$removeparam=_ly_r,domain=smbc.co.jp|app.hireroo.io|metlife.co.jp|store.mens-null.net|zurichlife.co.jp|hisamitsu.co.jp|sbisec.co.jp|sompo-direct.co.jp|tghd.co.jp|and-pro.jp|nitori-net.jp|cmoa.jp|sonybank.jp
-*$removeparam=yj_r,domain=metlife.co.jp|app.hireroo.io|smbc.co.jp|store.mens-null.net|zurichlife.co.jp|hisamitsu.co.jp|sbisec.co.jp|sompo-direct.co.jp|tghd.co.jp|and-pro.jp|nitori-net.jp|cmoa.jp|sonybank.jp
+*$removeparam=_ly_c,domain=smbc.co.jp|app.hireroo.io|metlife.co.jp|store.mens-null.net|zurichlife.co.jp|hisamitsu.co.jp|sbisec.co.jp|sompo-direct.co.jp|tghd.co.jp|and-pro.jp|nitori-net.jp|cmoa.jp|sonybank.jp|research-panel.jp
+*$removeparam=_ly_r,domain=smbc.co.jp|app.hireroo.io|metlife.co.jp|store.mens-null.net|zurichlife.co.jp|hisamitsu.co.jp|sbisec.co.jp|sompo-direct.co.jp|tghd.co.jp|and-pro.jp|nitori-net.jp|cmoa.jp|sonybank.jp|research-panel.jp
+*$removeparam=yj_r,domain=metlife.co.jp|app.hireroo.io|smbc.co.jp|store.mens-null.net|zurichlife.co.jp|hisamitsu.co.jp|sbisec.co.jp|sompo-direct.co.jp|tghd.co.jp|and-pro.jp|nitori-net.jp|cmoa.jp|sonybank.jp|research-panel.jp
 *$removeparam=yclid,domain=smbc.co.jp
 ! byn.kr - any product page via product listing page
 ||byn.kr^$removeparam=rURL
