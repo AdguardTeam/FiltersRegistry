@@ -1,5 +1,5 @@
-! Checksum: dHzEHtj1/VV4liaiIdzhbw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1764045845-14400.patch
+! Checksum: AbrGNkxHBNi6vXQE78aqBQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1764132203-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.42
@@ -18,6 +18,8 @@
 ||ublock.org^$document
 !+ PLATFORM(windows, mac, android, cli)
 138.68.252.54$network
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=clean])
+play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adblocker])
 ||fileplanet.com^$document,popup
 ||test-iq.org^$document
 windowsreport.com##.code-block
@@ -174,7 +176,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^192\.243\.61\.[12]?\d?\d$/$network
 !+ PLATFORM(windows, mac, android, cli)
 178.128.142.109$network
-||virnews.club^$all
 /^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 !+ PLATFORM(windows, mac, android, cli)
 134.209.136.174$network
@@ -395,6 +396,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 115.52.17.123$network
 !+ PLATFORM(windows, mac, android, cli)
 182.59.69.21$network
+||chip-secured-download.de^$all
 ||driversupport.com^$document
 !+ PLATFORM(windows, mac, android, cli)
 160.202.163.100$network
@@ -1634,7 +1636,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 2a01:4f8:e0:19cb::1$network
 ||cant3am.com^$all
 ||eln3ax.com^$all
-||tf4srv.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 95.211.229.247$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -2217,6 +2218,7 @@ google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 /^172\.255\.6\.(\d{1,2}|2.*|1[0-689].*|17[0-689])\$/$network
 ||avast.$app=CCleaner.exe|CCleaner64.exe|CCleanerCloudAgent.exe|ccsetup617.exe|ccsetup618.exe|ccsetup619.exe|ccsetup620.exe|ccsetup621.exe|ccsetup622.exe|ccsetup623.exe|ccsetup624.exe|ccsetup625.exe|ccsetup70.exe
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
+###divShare
 ###rail-share-bar
 ###share-buttons
 ###share_bar
@@ -2435,6 +2437,7 @@ google.*###rso > div[class]:has(h3:has-text(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ~line.me##a[href*="/lineit/share?"]
 ~linkedin.com##.addthis_button_linkedin:not(html,body,:empty)
 ~linkedin.com##.linkedin_share:not(html,body,:empty)
+~linkedin.com##.linkedinShare:not(html,body,:empty)
 ~linkedin.com##.share-linkedin:not(html,body,:empty)
 ~linkedin.com##a[href*="linkedin.com/cws/share?"]
 ~linkedin.com##a[href*="linkedin.com/shareArticle?"]
@@ -3327,6 +3330,7 @@ $removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
 $removeparam=i_cid
+$removeparam=waad
 $removeparam=_gac
 $removeparam=af_medium
 $removeparam=af_source
@@ -4201,6 +4205,7 @@ $removeparam=s_kw,domain=expansion.com|marca.com
 ||qwant.com^$removeparam=client
 ||ecosia.org^$removeparam=addon
 $removeparam=referralInfo,domain=wix.com
+$removeparam=tck,domain=mongodb.com
 $removeparam=locale,domain=udemy.com
 ||zoho.com^$removeparam=zsrc
 ||nortonsafe.search.ask.com^$removeparam=installsource

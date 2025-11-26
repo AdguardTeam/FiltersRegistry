@@ -1,9 +1,9 @@
-! Checksum: fBNyYRYoXZaAKZHxE/yrOQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1764118307-14400.patch
+! Checksum: QzsN5mYmzGTAvKGzzR+8jw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1764132208-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.51.78
-! TimeUpdated: 2025-11-26T00:47:52+00:00
+! Version: 2.1.51.79
+! TimeUpdated: 2025-11-26T04:39:32+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -145,6 +145,7 @@ _social-bar/
 ###SocialMedia
 ###SocialShare
 ###Socialize
+###TwitterShare
 ###action-share
 ###adbl-social-icons
 ###addThis
@@ -223,6 +224,7 @@ _social-bar/
 ###favsocial-list
 ###fb-box
 ###fb-like
+###fb-like-button
 ###fbDiv
 ###fbLike
 ###fbLikeButton
@@ -283,6 +285,7 @@ _social-bar/
 ###footerSocialIcons
 ###footerSocialLinks
 ###footerSocialMenu
+###footer_block_social
 ###footer_social
 ###footer_social_facebook
 ###footer_social_icons
@@ -512,7 +515,6 @@ _social-bar/
 ###social-buttons-nav
 ###social-buttons-transporter
 ###social-col
-###social-cta
 ###social-email
 ###social-facebook
 ###social-fb
@@ -589,9 +591,11 @@ _social-bar/
 ###socialPopup
 ###socialShare
 ###socialSharing
+###socialTop
 ###socialTwitter
 ###socialWrap
 ###socialYouTube
+###social_bar
 ###social_bkm_wrap_top
 ###social_block
 ###social_bookmark
@@ -622,6 +626,7 @@ _social-bar/
 ###social_sharing
 ###social_side_links
 ###social_sidebar
+###social_snapchat
 ###social_top
 ###social_tw
 ###social_twitter
@@ -1020,6 +1025,7 @@ _social-bar/
 ##.byline-share
 ##.c-article-share
 ##.c-footer-social
+##.c-footer-social-link
 ##.c-footer-social-media
 ##.c-footer__follow-us
 ##.c-footer__social
@@ -1105,7 +1111,6 @@ _social-bar/
 ##.custom-sharing
 ##.custom-social
 ##.custom-social-share
-##.customsocial
 ##.d3-o-share-bar
 ##.dashicons-facebook
 ##.dashicons-twitter
@@ -1203,6 +1208,7 @@ _social-bar/
 ##.facebook-box
 ##.facebook-fans
 ##.facebook-follow
+##.facebook-follow-button
 ##.facebook-footer
 ##.facebook-hover
 ##.facebook-image
@@ -1274,6 +1280,7 @@ _social-bar/
 ##.fbshare
 ##.fbsmallshare
 ##.fc-social-media-header
+##.fe-share
 ##.fi-social-facebook
 ##.fi-social-instagram
 ##.fi-social-linkedin
@@ -1350,7 +1357,6 @@ _social-bar/
 ##.footer-facebook
 ##.footer-facebook-icon
 ##.footer-fb
-##.footer-fb-icon
 ##.footer-follow
 ##.footer-follow-text
 ##.footer-follow-us
@@ -1856,6 +1862,7 @@ _social-bar/
 ##.menu-footer-social-container
 ##.menu-header-links-container
 ##.menu-name-menu-social-links
+##.menu-reseaux-sociaux-container
 ##.menu-section-social
 ##.menu-share
 ##.menu-social-container
@@ -1916,6 +1923,7 @@ _social-bar/
 ##.native-share
 ##.native-share-buttons
 ##.nav--social
+##.nav--social-box
 ##.nav-share
 ##.nav-soc-but
 ##.nav-social
@@ -2131,7 +2139,6 @@ _social-bar/
 ##.scShareText
 ##.scSocialIconsWidget
 ##.scriptlesssocialsharing
-##.scroll-triggered-box
 ##.sd-sharing
 ##.sd-social
 ##.sd-social-icon-text
@@ -2477,6 +2484,8 @@ _social-bar/
 ##.share_panel
 ##.share_pinterest
 ##.share_post
+##.share_post_footer
+##.share_post_side
 ##.share_row
 ##.share_social
 ##.share_story
@@ -2624,7 +2633,9 @@ _social-bar/
 ##.si-share
 ##.side-social
 ##.side-social-links
+##.side-social-links-wrapper
 ##.side-socials
+##.side-sticky-share
 ##.side-twitter
 ##.sideBarShare
 ##.sideShare
@@ -2665,6 +2676,8 @@ _social-bar/
 ##.site-social-menu
 ##.sitewide-footer--social-nav
 ##.sitewide-social-media
+##.slate-footer__follow-slate
+##.smshare
 ##.sn-share
 ##.snapchat-share-button
 ##.sns-bar
@@ -2686,7 +2699,6 @@ _social-bar/
 ##.snsPalette
 ##.snsWrapper
 ##.sns_box
-##.sns_box_single
 ##.sns_follow
 ##.sns_right
 ##.sns_share
@@ -2698,6 +2710,7 @@ _social-bar/
 ##.soc-btns
 ##.socButtons
 ##.socFbLikeShare
+##.socFbShare
 ##.soc_btn
 ##.soc_sharing
 ##.soc_square
@@ -3288,6 +3301,7 @@ _social-bar/
 ##.twitter_btn
 ##.twitter_div
 ##.twitter_feed
+##.twitter_follow
 ##.twitter_icn
 ##.twitter_icon
 ##.twitter_link
@@ -3409,7 +3423,6 @@ _social-bar/
 ##.wp-embed-share
 ##.wp-share
 ##.wp-share-button
-##.wp-social-icons
 ##.wp_social_bookmarking_light
 ##.wpa-social-icons
 ##.wpcw-widget-social
@@ -3780,6 +3793,7 @@ ccn.com##.ccn-share
 cgdirector.com##.cgd-social-wrapper
 goal.com##.component-share
 goal.com##.component-social-twitter
+allafrica.com,dailysignal.com##.connect
 earthsky.org##.connect-2
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
@@ -3958,6 +3972,7 @@ dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
 dailymail.co.uk,thisismoney.co.uk##.share-flipboard
 digitimes.com##.share-frame
+mprnews.org##.share-hdg
 cgtn.com,citynews.ca##.share-icon
 mymodernmet.com##.share-it-side
 dailymail.co.uk,fundrazr.com,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
@@ -4180,7 +4195,6 @@ alahlionline.com,elkhabar.com,nieuweoogst.nl,terranova.pt,tilifony.com,versicher
 cp24.com,epochtimes.com.br,epochtimes.it,lagaceta.com.ar,n-tv.de,progressive.org,toyokeizai.net##.tools
 archifacile.fr,atomic-robo.com,autobelle.it,bollywoodhungama.com,chnetwork.org,classicreload.com,donnahay.com.au,fotografidigitali.it,gamingonlinux.com,joburg.org.za,lavoro.gov.it,ledpros.ca,meteovista.be,navigaweb.net,nexto.pl,phoronix.com,rasom.it,sfr.fr,telesatellite.com,ucl.ac.uk,weeronline.nl,whtop.com,zookeys.pensoft.net###social
 applesfera.com,espinof.com,genbeta.com,vidaextra.com,vitonica.com,xatakahome.com,xatakamovil.com,xatakandroid.com##.masthead-nav-social
-ansalatina.com,disroot.org,onpulson.de,rand.org,sportwebsicilia.it##.social-button
 allears.net,canadaradiostations.com,canli-radyo-dinle.com,cgtnturk.com,crimeonline.com,dezeen.com,diarioprimeralinea.com.ar,eandt.theiet.org,elfinanciero.com.mx,elheraldo.hn,emisoras-puertorico.com,emisorascolombianas.co,fivebooks.com,fmradiofree.com,fmuna.com.ar,foxsports.com.mx,img2go.com,informer.com,internetradio-horen.de,internetradio-schweiz.ch,laprensa.hn,laviola.it,open.online,opencritic.com,politicalflare.com,proteste.org.br,radio-ao-vivo.com,radio-australia.org,radio-belgie.be,radio-danmark.dk,radio-dominicana.com,radio-ecuador.org,radio-en-ligne.fr,radio-en-vivo.mx,radio-espana.es,radio-hk.com,radio-hrvatska.com,radio-italiane.it,radio-korea.com,radio-maroc.org,radio-nederland.nl,radio-norge.org,radio-osterreich.at,radio-philippines.com,radio-polska.pl,radio-singapore.com,radio-south-africa.co.za,radio-stations.co.nz,radio-suomi.com,radio-sveriges.se,radio-thai.com,radio-ua.com,radio-uk.co.uk,radioindia.in,radioindonesia.org,radiojapan.org,radiomalaysia.org,radios-argentinas.org,radios-bolivia.com,radios-chilenas.com,radios-guatemala.com,radios-online.pt,radios-uruguay.com,radios-venezuela.com,radiotaiwan.tw,rai.it,redvoicemedia.com,religionnews.com,tarreo.com,thecollegefix.com,upcomingvinyl.com##.social-buttons
 n1info.ba,n1info.hr,n1info.rs,n1info.si,nova.rs##.uc-social-bar-wrapper
 bestcarweb.jp,biglobe.ne.jp,hankooktire.com,jiji.com,joins.com,op.gg,theinvestor.co.kr,videor.co.jp##.sns
@@ -4273,6 +4287,7 @@ people.com.cn##.section-common-share-wrap
 mingpao.com##.ssm
 ifeng.com##div[class^="index_share_box_"]
 idnes.cz,lidovky.cz,metro.cz##.artsum-social
+irozhlas.cz##.m-follow
 dr.dk##.dre-sticky-share-band
 carwashpro.nl,infrasite.nl,mobiliteit.nl,rijschoolpro.nl,spoorpro.nl,taxipro.nl,zelfrijdendvervoer.nl###socialmedia
 telegraaf.nl##.SocialButtons
@@ -4489,6 +4504,7 @@ burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiari
 burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-f__sm
 abc.es##.voc-social-networks
 elpais.com##.w_rs
+abc.com.py##.whatsapp-button-container
 ultimahora.com##.whatsapp_channel_btn
 oem.com.mx##.widget-social-default_share__tz2LV
 autobild.es,businessinsider.es,hobbyconsolas.com,topgear.es##div[class^="share-bar_"]
