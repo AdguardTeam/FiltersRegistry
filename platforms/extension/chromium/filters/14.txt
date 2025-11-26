@@ -1,9 +1,9 @@
-! Checksum: 7g4B7zslmiWbveJE4tWvyw
-! Diff-Path: ../patches/14/14-s-1764127951-3600.patch
+! Checksum: 1R/eeCwV/so0gp2u7s99zA
+! Diff-Path: ../patches/14/14-s-1764130663-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.27
-! TimeUpdated: 2025-11-26T03:29:28+00:00
+! Version: 2.2.50.28
+! TimeUpdated: 2025-11-26T04:14:07+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2550,6 +2550,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+emma-matratze.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button.uc-deny-button')
 modivo.*#$#.consents { display: none !important; }
 modivo.*#%#//scriptlet('remove-class', '_no-scroll', 'html')
 gazeta-n1.ru###bdModalCookie
@@ -11155,7 +11156,7 @@ fpv24.com#$##cookieModal ~ div.modal-backdrop { display: none !important; }
 tornosnews.gr,challenges.fr,news247.gr##.newsletter-form
 pistenbully.com###cookiemanager-banner
 buecher-billiger.de,emder-fisch-feinkost.de,campingshop-24.de##.eightworks-cookie-consent-plus-toggler
-allergieprodukte.de,ettinger.de,billerbeck.shop,emder-fisch-feinkost.de,der-schlauchfritze.de,tipronet.net,campingshop-24.de,bw-discount.de,teddytoys.de,topdoors.de,main-moebel.de,shop.pistenbully.com##.eightworks-cookie-consent-plus
+feinundfertig.de,allergieprodukte.de,ettinger.de,billerbeck.shop,emder-fisch-feinkost.de,der-schlauchfritze.de,tipronet.net,campingshop-24.de,bw-discount.de,teddytoys.de,topdoors.de,main-moebel.de,shop.pistenbully.com##.eightworks-cookie-consent-plus
 godbolt.org###simplecook
 gettyimages.*##.euCookieDialog
 autotrader.com##.mountNode > div.fixed-bottom.colored-background
@@ -17851,6 +17852,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218538
+@@||cmp.usercentrics.eu^$domain=emma-matratze.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218498
 ! TODO: Remove when this issue is fixed - https://github.com/AdguardTeam/CoreLibs/issues/2042
 ! ups.com - empty page
