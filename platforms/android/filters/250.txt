@@ -1,13 +1,13 @@
-! Checksum: TbudbhjL6oaYZBejKsOA/A
-! Diff-Path: ../patches/250/250-s-1762937104-14400.patch
+! Checksum: mBIGq6cZs1XTWeLDbKxzUA
+! Diff-Path: ../patches/250/250-s-1763930392-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.18.34
-! TimeUpdated: 2025-11-12T08:41:30+00:00
+! Version: 2.0.18.42
+! TimeUpdated: 2025-11-23T20:36:22+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
-! OriginalVersion: 05November2025v3-Compilation
+! OriginalVersion: 22November2025v1-Compilation
 ! Expires: 18 hours
 ! Description: This list is made in the style of Fanboy's and AdGuard's annoyances lists, to show that I can make a just as good such annoyances list as them. It combines many of my proudest and most frequently maintained international lists, as a proof-of-concept and as a curated list for simplicity's sake.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -53,8 +53,11 @@
 ! ⌘ Ads and annoyances that are specific to Windows desktop programs.
 ! ⌘ Extraordinarily obtrusive premium service banners.
 ! ⌘ Spammer sections about casinos or slot machines.
-! DailyMotion Simplicity / Know Your Meme: Pure Browsing Experience / Wikia: Pure Browsing Experiences
+! • DailyMotion Simplicity / • Know Your Meme: Pure Browsing Experience / • Wikia: Pure Browsing Experiences
 ! ⌘ General annoyances on the sites in question.
+! • Anti-"Aİ results in tech situations where Aİ was not asked for" List
+! ⌘ Aİ results above regular search results during regular-mode Google searches.
+! ⌘ Copilot Aİ stuff in Microsoft Word Online.
 ! • Annoyance List's main file
 ! ⌘ Certain sites' entry types that are of relevance to pretty no one.
 ! ⌘ The "Anonymous animal" bubbles on Google Docs.
@@ -72,14 +75,14 @@
 ! ⌘ Makes some websites use much more of the screen width, instead of just a thin central column.
 ! What this broad compilation does not block：Newsletters, cookie banners, social media links to companies' pages
 ! Title: 💊 Dandelion Sprout's Anti-Malware List (for AdGuard)
-! OriginalVersion: 08November2025v1
+! OriginalVersion: 23November2025v1
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
 ! For other security-specific lists I've made, check out https://github.com/DandelionSprout/adfilt/tree/master/Special%20security%20lists
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! Legitimate use is almost non-existent, but has a tiny userbase in Japan and among upstart coding experiments. Its extreme common-ness in malware redirections means that the entry will be kept forever.
-||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top
+||top^$document,domain=~caitlin.top|~callmebymygender.top|~corriente.top|~gdtot.top|~nicenature.top|~reminder.top|~magocoro.top|~castlevania.top|~suiten.top|~shucks.top|~1stream.top|~ambr.top|~changlam10.top|~changlam11.top|~pdcdn1.top|~pressplay.top|~chillx.top|~strims.top|~thedesk.top|~audioforyou.top|~awavenue.top|~reyhub.top|~iboxs.top|~adrules.top|~hostingowy.top|~to|~yggtorrent.top|~asiaon.top|~voxel.top|~passt.top|~polar.top|~rifton.top|~rugaming.top
 ! (Loosely inspired by https://github.com/DandelionSprout/adfilt/issues/1067)
 @@||masto*.top^$document
 @@/^.*(tech|project|linux).*\.top(/[a-z0-9_-]?.*)?$/$document
@@ -13117,6 +13120,11 @@ http://secured21.*.com/|$all
 158.94.209.90$network
 !+ PLATFORM(windows, mac, android, cli)
 223.29.226.200$network
+! https://urlscan.io/result/019a4ffd-885c-7545-816a-3c121d8bdc0d/ (Early November 2025)
+/linkresolver.html?url=*p0$document
+! https://github.com/DandelionSprout/adfilt/issues/1197
+||creations.tools^$document,domain=~believed_to_be_fraudsters.*
+||idtsoftware.com^$document,domain=~believed_to_be_fraudsters.*
 ! ——— Standard malware that I stumbled upon on my own ———
 ! http://www•toorgle•net/results•php?q=fetishkitsch&security=666
 ||downloadprovider.me^$all
@@ -18960,7 +18968,7 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 ! https://github.com/DandelionSprout/adfilt/issues/1019 (Seemingly only shows up if cookies are accepted)
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 ! Title: 🚤 Anti-'Snow marketing' List
-! OriginalVersion: 24December2024v1
+! OriginalVersion: 23November2025v1
 ! Expires: 3 days
 ! Description: With Late December being full of arcane, complicated, and very, _very_ rigid traditions in Europe, the often CPU-intensive snow that is everywhere on many websites during that time isn't helping either. So here's a list to remove the snow from those websites.
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
@@ -19010,6 +19018,9 @@ betso89.com###snow
 ##span.falling-snow > em:empty
 ! https://www•eventim•no/artist/ihf-world-championship/29th-ihf-mens-handball-world-championship-dagsbilletter-3596215/ (24/12/2024)
 /frosmo.easy.js^
+! rugamingTOP (23/11/2025)
+/css/very-special-particle-snow
+/css/very-special-particles.css^
 ! From «Frellwit's Swedish Filters»
 /snowfall.min.jquery.js
 /snowplow$script,domain=casamundo.se|hemnet.se
@@ -19594,6 +19605,20 @@ play.max.com##div[class^=ProtectionLayer]
 www.nrk.no##.nrkno-player-controls__bar::before
 ! play•tv2•no (27/08/2025)
 play.tv2.no##div[data-testid=player-controls]::before
+! Title: 🍁 Anti-"Aİ results in tech situations where Aİ was not asked for" List
+! OriginalVersion: 20November2025v2-Alpha
+! Expires: 2 days
+! Homepage: https://github.com/DandelionSprout/adfilt/tree/master
+! Description: 1) I'm way too old for the Aİ bubble, and I'm not even 30 yet. 2) Google's pushing of Aİ in regular search results in particular have a very bad reputation for often being wrong about things. This list will however not block Aİ prompt sites.
+! Note: No, I am not going to remove Aİ results on artsites. The sites generally already have anti-Aİ search filters, and on Deviantart in particular are Aİ things better than 90% of their non-Aİ things.
+! Note 2: https://new•reddit•com/r/GoogleAIGoneWild/top/?t=month should be sufficient proof to give this sub-list hastily expedited implementation to Dandelion Sprout's Annoyances List.
+! Google's regular search results
+www.google.*,ipv6.google.com###m-x-content div[class]:first-of-type:not([class*=" "]):has(> [data-rl])
+www.google.*,ipv6.google.com##style:first-of-type ~ div ~ button[jsaction*=mouseleave i]:last-of-type
+www.google.*,ipv6.google.com##div[data-st-cnt] div[role=list] > div[role=listitem]:has(a[href*="&udm=50&"])
+! Microsoft Word Online
+word-edit.officeapps.live.com,word.cloud.microsoft###TellMeWrapper_container
+word-edit.officeapps.live.com,word.cloud.microsoft##.BeforePageContent
 !!! !#include Android%20Scum%20Class%20%E2%80%94%20Fake%20notification%20counters.txt
 !+ NOT_OPTIMIZED
 ! Title: 💺 Anti-'IMDB ratings on other sites' List
@@ -19844,7 +19869,7 @@ www.pixiv.net##div[data-ga4-label*=comment i]
 ||disqus.com^$domain=rawstory.com
 ||disquscdn.com^$domain=rawstory.com
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 09November2025v1
+! OriginalVersion: 23November2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -19971,7 +19996,7 @@ $document,removeparam=tt_medium
 ! https://www•elgiganten•dk/product/lyd-hi-fi/hovedtelefoner/WH1000XM3B/sony-tradlose-around-ear-hovedtelefoner-wh-1000xm3-sort?scid=Pricecomparison8084162610 (27/11/2020)
 $document,removeparam=scid,domain=~pnc.com
 ! https://salming•com/sv-se/produkter/p/1099805-0416/salming-oval-fusion?trackID=79064280 (27/11/2020)
-$document,removeparam=trackID
+||salming.com^$removeparam=trackID
 ! https://productkeys•dk/produkt/pokemon-lets-go-pikachu/?dTribesID=(...) (27/11/2020)
 $document,removeparam=dTribesID
 ! https://shop•bt•com/products/nintendo-switch-hw---neon-red-and-neon-blue--2019-version--10002208-FCM1•html?awc=3043_1606583260_feef24aba0ca5ffbbf513bb8f34cd1be (28/11/2020)
@@ -20222,7 +20247,7 @@ $removeparam=ad_medium
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-810773
 $document,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
-$removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.com.br|~subito.it|~truckscorner.fr|~willhaben.at
+$removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.*|~subito.it|~truckscorner.fr|~willhaben.at
 $removeparam=CAWELAID
 $removeparam=partition_id
 $removeparam=adgroup_id
@@ -20388,7 +20413,7 @@ $removeparam=bclid
 $removeparam=bcpid
 $removeparam=bctid
 ! https://www•chegg•com/textbooks/psychology-10th-edition-9781305498204-1305498208?trackid=680b4fc9118c&strackid=a2b7fd66a78c
-$document,removeparam=trackid,domain=~nzpost.co.nz
+||chegg.com^$removeparam=trackid
 $removeparam=strackid
 ! http://www•3balls•com/?usource=lc&lctid=1184062&lcid=1630749503_3_0991310
 ! https://www•movavi•com/?afsrc=cj&usource=cj
@@ -20406,7 +20431,7 @@ $removeparam=c3ch
 $removeparam=c3nid
 $removeparam=om_mmc
 ! https://store•wsj•com/shop/emea/wsjsseur21/?trackingCode=aaqwghtc
-$removeparam=trackingCode
+||wsj.com^$removeparam=trackingCode
 ! https://www•vrbo•com/?k_clickid=2f48df910d6511ec80e9012b0a18050c
 $removeparam=k_clickid
 ! https://www•zchocolat•com/shop/en/138-heavenly-z-chocolate-bar?CJURL=http%3A%2F%2Fwww•zchocolat•com%2F#utm_source=CJ&utm_medium=zBarCollection
@@ -20500,7 +20525,7 @@ $removeparam=sp_medium
 $removeparam=sp_campaign
 ! https://www•moosejaw•com/?ad=63723&ad_id=IR
 ! (https://github.com/DandelionSprout/adfilt/issues/706)
-$removeparam=ad_id,domain=~olx.ua
+$removeparam=ad_id,domain=~olx.*
 ! https://www•michaels•com/home?affSource=1397064_14079089
 $document,removeparam=/^affSource.*$/i
 ! https://www•nflshop•com/?_s=afl_impact
@@ -21360,7 +21385,7 @@ $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|
 ! https://www•anrdoezrs•net/click-8900246-13502820?url=(...)&sid=tomshardware-us-6016433087443645000
 ! (Exceptions: mail•qq•com, highFI, phpBB forums, flipkartCOM, various other sites)
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*
-! No particular example (Zoom can't be added; see https://github.com/DandelionSprout/adfilt/issues/665)
+! No particular example (Neither Zoom or NextDNS can be added; see https://github.com/DandelionSprout/adfilt/issues/665)
 $removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|tvtropes.org|yandex.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559915 and https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559864 (eBay can't be added; see https://github.com/DandelionSprout/adfilt/pull/514)
 $removeparam=keyword,domain=bindright.com|lendgo.com|reddit.app.link
@@ -24109,7 +24134,6 @@ $removeparam=/^has-promotion=$/
 $document,removeparam=adsterra_clid
 $document,removeparam=adsterra_placement_id
 ! https://github.com/DandelionSprout/adfilt/issues/1194
-||nextdns.io^$removeparam=from
 ||proton.me^$removeparam=url_id
 ||proton.me^$removeparam=phfp
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
@@ -24122,6 +24146,8 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||fastmail.com^$removeparam=ps_xid
 ||fastmail.com^$removeparam=gsxid
 ||fastmail.com^$removeparam=gspk
+! https://www•twitch•tv/activate?device-code=••••••••&device-metadata=qr_code (23/11/2025)
+||twitch.tv/activate^$removeparam=device-metadata
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
@@ -25051,8 +25077,6 @@ corsproxy.io##canvas
 ! Blatant misuse of browsers' detection of when a mouse cursor has left the window.
 !! https://www•techbloat•com/how-to-permanently-set-affinity-for-a-program-windows-11.html (06/06/2025)
 ##[id$=-exit-modal-bg]
-! The least Google could do before they rolled out the Aİ results by default on top on many Google search terms, would've been to make sure the results were even close to accurate.
-www.google.*,ipv6.google.com###m-x-content div[class]:first-of-type:not([class*=" "]):has(> [data-rl])
 ! After I stopped using Nitro Standard, there's going to be   a   l o t   more Discord entries in this list from this point (13/07/2025) on.
 ://discord.com/api/v*/bogo-promotions^
 ://discord.com/api/v*/premium-marketing^

@@ -1,0 +1,16 @@
+d1 2
+a2 2
+! Checksum: lBeCyY+XiZ+uzlBGI5RFQQ
+! Diff-Path: ../patches/16/16-s-1763558447-3600.patch
+d5 2
+a6 2
+! Version: 2.0.55.0
+! TimeUpdated: 2025-11-19T13:16:58+00:00
+a644 7
+! https://github.com/AdguardTeam/AdguardFilters/issues/217971
+! Fixes video player - required when DNS filtering is used
+! TODO: use scriptlet when it's available - https://github.com/AdguardTeam/Scriptlets/issues/173
+! "adjust-setInterval" is required to fix delay in video playback start
+tf1info.fr#%#//scriptlet('adjust-setInterval', 'defaultConsentString', '*', '0.001')
+!+ NOT_PLATFORM(ext_ff)
+tf1info.fr#%#(()=>{const e=function(){};window.tC={privacy:{getOptinCategories:e,cookieData:[]},addConsentChangeListener:e,removeConsentChangeListener:e,container:{reload:e}},window.tc_events_global=e})();

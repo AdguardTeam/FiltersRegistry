@@ -1,9 +1,9 @@
-! Checksum: gB4GnAB+CkzXPeeouE+d7g
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1763081535-14400.patch
+! Checksum: bwo14FHQkwz5Vbirmaa2ZA
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1764146670-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.38
-! TimeUpdated: 2025-11-14T00:48:27+00:00
+! Version: 2.0.23.45
+! TimeUpdated: 2025-11-26T08:40:54+00:00
 ! Expires: 1 day (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -1613,6 +1613,7 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+etoland.co.kr##div[class^="etoad_"]
 enuri.com###coupangCpcSection
 enuri.com##.lp-ad--naver
 gall.dcinside.com,m.dcinside.com##ul[class$="_ad"]
@@ -1775,7 +1776,6 @@ zod.kr##.app-main-banner
 isplus.com##.rightEnd > .section_inner > div[style]
 boardlife.co.kr##.promote-box
 dcinside.com##.trend-rank
-gall.dcinside.com,m.dcinside.com##ul.text_ad
 dcinside.com##iframe[src^="https://tm.interworksmedia.co.kr"]
 gall.dcinside.com##tr[data-type="icon_fnews"]
 hansbiz.co.kr##div.ad-view
@@ -3055,7 +3055,6 @@ tftps.gg#$##top-area > div[class*=" "] > div[class*=" "]:has( div:not([class]) ~
 fow.kr#$#div[style^="display:"] > div[style^="flex-basis"]:has(~ .fvideo) { width: 100% !important; }
 fow.kr#$#div[style^="display:"] > div[style^="flex-basis"]:has(~ .fvideo) .news_top { width: revert-layer !important; }
 fow.kr#$#div[style^="display:"] > div[style^="flex-basis"]:has(~ .fvideo) .news_box { width: revert-layer !important; }
-velog.io##div:has(> a > img[alt="post-custom-banner"])
 tvroom5.org##ul.menu:has(> li > a[class^="banner_"])
 bbs.ruliweb.com#$##board_top .best_list { width: 100% !important; }
 3277532532.reviewtoday.net#$#div[class^="Post_continue_coupang__"] { display: none !important; }
@@ -3469,6 +3468,7 @@ hdhd344.net,hdhd345.net,hdhd346.net,hdhd347.net,hdhd348.net,hdhd349.net,hdhd350.
 blacktoon302.com,blacktoon303.com,blacktoon304.com,blacktoon305.com,blacktoon306.com,blacktoon307.com,blacktoon308.com,blacktoon309.com,blacktoon310.com,blacktoon311.com,blacktoon312.com,blacktoon313.com#?#.alert.alert-danger:has(> a:contains([AD]))
 zum.com#%#//scriptlet('set-constant', '_ads_zum_main_initbanner_750_zum_main_br_widget_336', 'true')
 watchfreejavonline.co#%#//scriptlet('abort-current-inline-script', 'popMagic.init')
+m.humoruniv.com#%#//scriptlet('remove-node-text', 'script', '/=\WdisplayUrl\W[\w\W]+\$\( *document *\) *\.ready *\( *function *\( *\) *{[ \n\t]*setTimeout *\( *function *\( *\) *\{[\w\W]*document\.cookie *= *\W{1,2}\w+=ok; */')
 m.humoruniv.com#%#//scriptlet('remove-node-text', 'script', '/run[\s\S]*?data[\s\S]*?OnClick[\s\S]*?ad\d_/')
 m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run_read_top_boom', 'noopFunc')
 m.humoruniv.com#%#//scriptlet('set-constant', 'list_end_run_pds_notice_boom', 'noopFunc')
@@ -3605,10 +3605,7 @@ m.dcinside.com#%#//scriptlet('set-local-storage-item', '/adblock_detected/', '$r
 gall.dcinside.com#%#//scriptlet('set-constant', 'blockedState', '', '', '', 'true')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/background:[\s\S]+setTimeout\( *\( *\) *=> *[A-Za-z0-9]+\.remove\( *\)[\s\S]+Math\.random\( *\) *< *percent *\/ *100/')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
-chzzkban.xyz#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com method:HEAD')
-chzzkban.xyz#%#//scriptlet('prevent-setTimeout', 'getComputedStyle')
-chzzkban.xyz#%#//scriptlet('prevent-setTimeout', '!window.__adsToken,')
-chzzkban.xyz#%#//scriptlet('prevent-requestAnimationFrame', 'window.__adsToken')
+chzzkban.xyz#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js method:HEAD', 'emptyStr')
 erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 ||shana.pe.kr/shana_check/scp*.js$script
@@ -3743,3 +3740,4 @@ kio.ac$$script[tag-content="K$()"]
 ||json*.dcinside.com/json*/app_ad_charge.php
 tv.nate.com#%#//scriptlet('trusted-dispatch-event', 'adended', '.nate-player.ntv-ad-playing')
 2798731938.zigcou.com#%#//scriptlet('trusted-replace-node-text', 'script', '{"props":{"pageProps":{"initialState":{', '"isClicked":false', '"isClicked":true')
+chzzkban.xyz#%#//scriptlet('trusted-suppress-native-method', 'Node.prototype.contains', '{"className":"adsbygoogle"}', 'abort')

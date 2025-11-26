@@ -1,9 +1,9 @@
-! Checksum: sDbRXr72YNOelOyK15OTEw
-! Diff-Path: ../patches/8_optimized/8_optimized-s-1762110621-3600.patch
+! Checksum: H/UF+poZ6aIUCspmL5O7kA
+! Diff-Path: ../patches/8_optimized/8_optimized-s-1764094436-3600.patch
 ! Title: AdGuard Dutch filter (Optimized)
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.8.76
-! TimeUpdated: 2025-11-02T19:06:09+00:00
+! Version: 2.0.8.80
+! TimeUpdated: 2025-11-25T18:09:58+00:00
 ! Expires: 12 hours (update frequency)
 -reclameplaatjes/
 /adbron.
@@ -1615,6 +1615,11 @@ omroepbrabant.nl#$#.ad-banner-container { position: absolute!important; left: -3
 handbalstartpunt.nl#$##advertentie-top { height: 0!important; }
 omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -4000px!important; }
 ||svonm.com/*config.json$replace=/"enabled": true\,/"enabled":false\,/i,important
+f1maximaal.nl##div[style^="margin-top: 0px; min-height:"]:has(> div.ms-container)
+f1maximaal.nl##div[style^="margin-top:0px;min-height:"]:has(> div.ms-container)
+||service-api.nl/api/v2/ad?
+||gp33.nl/assets/common/ads-helper.js
+gp33.nl##div[id^="grandprix33_"]
 funda.nl##div[data-testid="halfpage-ad"]
 wintersport.nl##.wintersport-banner
 wintersport.nl##.row:has(> .col > .row--dense .v-chip__content)
@@ -1885,9 +1890,9 @@ klusidee.nl##td.td-ad
 bnnvara.nl,npo.nl,npodoc.nl,vpro.nl#%#//scriptlet('json-prune-fetch-response', 'assets.preroll assets.prerollDebug', '', '/stream-link')
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_dutch
-!+ PLATFORM(windows, mac, android, ios) NOT_OPTIMIZED
+!+ PLATFORM(windows, mac, android, cli, ios) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
-!+ PLATFORM(windows, mac, android) NOT_OPTIMIZED
+!+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
 wintersport.nl#@?#.mb-6:contains(gesponsord)
 moviemeter.nl#%#//scriptlet('trusted-suppress-native-method', 'document.write', '"adswag.nl"', 'prevent')

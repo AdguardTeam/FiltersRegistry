@@ -1,9 +1,9 @@
-! Checksum: tgVztjMtxNDMFcZfuZPnDw
-! Diff-Path: ../patches/8/8-s-1762110578-3600.patch
+! Checksum: vpGqkKnhNr6jlZo18FS30Q
+! Diff-Path: ../patches/8/8-s-1764094407-3600.patch
 ! Title: AdGuard Dutch filter
 ! Description: EasyList Dutch + AdGuard Dutch filter. Filter list that specifically removes ads on websites in Dutch language.
-! Version: 2.0.8.76
-! TimeUpdated: 2025-11-02T19:06:09+00:00
+! Version: 2.0.8.80
+! TimeUpdated: 2025-11-25T18:09:58+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1775,6 +1775,11 @@ omroepwest.nl#$#.adcontainer-Rectangle { position: absolute!important; left: -40
 ! Good: example.org###rek; ||example.com/ads/
 ! Bad: example.org#@##banner_ad (for instance, should be in allowlist.txt or in antiadblock.txt)
 !
+f1maximaal.nl##div[style^="margin-top: 0px; min-height:"]:has(> div.ms-container)
+f1maximaal.nl##div[style^="margin-top:0px;min-height:"]:has(> div.ms-container)
+||service-api.nl/api/v2/ad?
+||gp33.nl/assets/common/ads-helper.js
+gp33.nl##div[id^="grandprix33_"]
 funda.nl##div[data-testid="halfpage-ad"]
 wintersport.nl##.wintersport-banner
 wintersport.nl##.row:has(> .col > .row--dense .v-chip__content)
@@ -2056,10 +2061,10 @@ bnnvara.nl,npo.nl,npodoc.nl,vpro.nl#%#//scriptlet('json-prune-fetch-response', '
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_dutch
 ! Detect of using AdGuard products
-!+ PLATFORM(windows, mac, android, ios) NOT_OPTIMIZED
+!+ PLATFORM(windows, mac, android, cli, ios) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Detect HTTPS filtering
-!+ PLATFORM(windows, mac, android) NOT_OPTIMIZED
+!+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
 ! Detect Advanced Protection of AdGuard for iOS
 !

@@ -1,13 +1,13 @@
-! Checksum: a5/SaQ7i9qpFhiv+NJlYYw
-! Diff-Path: ../patches/251/251-s-1762735949-14400.patch
+! Checksum: M1jwjeOyyS0UjEDG9cNQJQ
+! Diff-Path: ../patches/251/251-s-1763887312-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.19
-! TimeUpdated: 2025-11-10T00:48:38+00:00
+! Version: 2.0.9.23
+! TimeUpdated: 2025-11-23T08:38:13+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! OriginalVersion: 09November2025v1
+! OriginalVersion: 23November2025v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -134,7 +134,7 @@ $document,removeparam=tt_medium
 ! https://www•elgiganten•dk/product/lyd-hi-fi/hovedtelefoner/WH1000XM3B/sony-tradlose-around-ear-hovedtelefoner-wh-1000xm3-sort?scid=Pricecomparison8084162610 (27/11/2020)
 $document,removeparam=scid,domain=~pnc.com
 ! https://salming•com/sv-se/produkter/p/1099805-0416/salming-oval-fusion?trackID=79064280 (27/11/2020)
-$document,removeparam=trackID
+||salming.com^$removeparam=trackID
 ! https://productkeys•dk/produkt/pokemon-lets-go-pikachu/?dTribesID=(...) (27/11/2020)
 $document,removeparam=dTribesID
 ! https://shop•bt•com/products/nintendo-switch-hw---neon-red-and-neon-blue--2019-version--10002208-FCM1•html?awc=3043_1606583260_feef24aba0ca5ffbbf513bb8f34cd1be (28/11/2020)
@@ -385,7 +385,7 @@ $removeparam=ad_medium
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-810773
 $document,removeparam=/^adgroup=.*$/i
 $removeparam=ads_name
-$removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.com.br|~subito.it|~truckscorner.fr|~willhaben.at
+$removeparam=ad_type,domain=~leboncoin.fr|~2dehands.be|~agriaffaires.com|~avendrealouer.fr|~donedeal.ie|~jofogas.hu|~kijiji.ca|~machineryzone.fr|~marktplaats.nl|~milanuncios.com|~mobile.de|~olx.*|~subito.it|~truckscorner.fr|~willhaben.at
 $removeparam=CAWELAID
 $removeparam=partition_id
 $removeparam=adgroup_id
@@ -551,7 +551,7 @@ $removeparam=bclid
 $removeparam=bcpid
 $removeparam=bctid
 ! https://www•chegg•com/textbooks/psychology-10th-edition-9781305498204-1305498208?trackid=680b4fc9118c&strackid=a2b7fd66a78c
-$document,removeparam=trackid,domain=~nzpost.co.nz
+||chegg.com^$removeparam=trackid
 $removeparam=strackid
 ! http://www•3balls•com/?usource=lc&lctid=1184062&lcid=1630749503_3_0991310
 ! https://www•movavi•com/?afsrc=cj&usource=cj
@@ -569,7 +569,7 @@ $removeparam=c3ch
 $removeparam=c3nid
 $removeparam=om_mmc
 ! https://store•wsj•com/shop/emea/wsjsseur21/?trackingCode=aaqwghtc
-$removeparam=trackingCode
+||wsj.com^$removeparam=trackingCode
 ! https://www•vrbo•com/?k_clickid=2f48df910d6511ec80e9012b0a18050c
 $removeparam=k_clickid
 ! https://www•zchocolat•com/shop/en/138-heavenly-z-chocolate-bar?CJURL=http%3A%2F%2Fwww•zchocolat•com%2F#utm_source=CJ&utm_medium=zBarCollection
@@ -663,7 +663,7 @@ $removeparam=sp_medium
 $removeparam=sp_campaign
 ! https://www•moosejaw•com/?ad=63723&ad_id=IR
 ! (https://github.com/DandelionSprout/adfilt/issues/706)
-$removeparam=ad_id,domain=~olx.ua
+$removeparam=ad_id,domain=~olx.*
 ! https://www•michaels•com/home?affSource=1397064_14079089
 $document,removeparam=/^affSource.*$/i
 ! https://www•nflshop•com/?_s=afl_impact
@@ -1523,7 +1523,7 @@ $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|
 ! https://www•anrdoezrs•net/click-8900246-13502820?url=(...)&sid=tomshardware-us-6016433087443645000
 ! (Exceptions: mail•qq•com, highFI, phpBB forums, flipkartCOM, various other sites)
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*
-! No particular example (Zoom can't be added; see https://github.com/DandelionSprout/adfilt/issues/665)
+! No particular example (Neither Zoom or NextDNS can be added; see https://github.com/DandelionSprout/adfilt/issues/665)
 $removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|tvtropes.org|yandex.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559915 and https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559864 (eBay can't be added; see https://github.com/DandelionSprout/adfilt/pull/514)
 $removeparam=keyword,domain=bindright.com|lendgo.com|reddit.app.link
@@ -4273,7 +4273,6 @@ $removeparam=/^has-promotion=$/
 $document,removeparam=adsterra_clid
 $document,removeparam=adsterra_placement_id
 ! https://github.com/DandelionSprout/adfilt/issues/1194
-||nextdns.io^$removeparam=from
 ||proton.me^$removeparam=url_id
 ||proton.me^$removeparam=phfp
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
@@ -4286,6 +4285,8 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||fastmail.com^$removeparam=ps_xid
 ||fastmail.com^$removeparam=gsxid
 ||fastmail.com^$removeparam=gspk
+! https://www•twitch•tv/activate?device-code=••••••••&device-metadata=qr_code (23/11/2025)
+||twitch.tv/activate^$removeparam=device-metadata
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
 ! https://sproutsluckycorner•files•wordpress•com/2019/12/ring-fit-adventure-smoothies-1•png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
 $removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au

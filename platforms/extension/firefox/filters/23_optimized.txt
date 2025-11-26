@@ -1,9 +1,9 @@
-! Checksum: vltP+eKil0ctv55KUcDcFQ
-! Diff-Path: ../patches/23_optimized/23_optimized-s-1763032258-3600.patch
+! Checksum: 7EmTdCZ56RkmdLp2EKP3QQ
+! Diff-Path: ../patches/23_optimized/23_optimized-s-1764072947-3600.patch
 ! Title: AdGuard Ukrainian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Ukrainian language.
-! Version: 2.0.7.38
-! TimeUpdated: 2025-11-13T11:07:20+00:00
+! Version: 2.0.7.44
+! TimeUpdated: 2025-11-25T12:12:24+00:00
 ! Expires: 10 days (update frequency)
 /code/video-steam/?id=*&vast=
 /nadavi-api/?p4g3=js/api/widget.js
@@ -508,7 +508,6 @@ http://*.ru/leftunit.pl?
 /css/branding_*.css$domain=~citigroup.com
 /ctxtlink/*
 /cu2.php?block_data$third-party
-/dc_ads.
 /delivery/ag.php
 /delivery/avw.php
 /din_new6.php?code=*&bid=*&linkdest=
@@ -694,7 +693,7 @@ _160x290
 _160x600
 _336x280
 _580x100
-_600x100.png
+_600x100.png$domain=~buy-eu.piano.io
 _610x120.gif
 _728.gif
 _728by90
@@ -1306,6 +1305,10 @@ ucoz.ru/informer/
 ##noindex > div[onmouseout]
 ##noindex > nofollow > table[onmouseout^="this.bgColor"]
 ##td[id^="advtd"]
+||sinehut.com^$all
+||kputjp.com^
+||brodownload8s.com^
+||innovation-lab.ru^$third-party
 ||paintejuke.com^$all
 ||agl007.site^
 ||6i7y3i.ru^
@@ -3847,6 +3850,7 @@ kodik*/adv-vast/
 ||kodik.cc/vastadvert/
 /upload/rk/*$domain=citrus.ua|xsport.ua|zi.dn.ua|zi.ua
 citrus.ua,xsport.ua,zi.dn.ua,zi.ua##img[src^="/upload/rk/"]
+auto.ria.com##div[id^="dfp"]
 fakty.com.ua##.pip-video-wrapper
 112.ua##.vertical__banner
 112.ua##p[style="margin-top:-18px;font-size:12px;margin-bottom: 40px;"]
@@ -5142,7 +5146,7 @@ player.starlight.digital#%#//scriptlet('trusted-replace-fetch-response', '"media
 ||starlight.digital/get-playlist-ad/hls-vod/files/*.mp4/*_AdBlock$xmlhttprequest,removeparam=placement_id
 !+ NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ukrainian
-!+ NOT_PLATFORM(windows, mac, android, ios, ext_ublock) NOT_OPTIMIZED
+!+ NOT_PLATFORM(windows, mac, android, cli, ios, ext_ublock) NOT_OPTIMIZED
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ||kinoglobus.at.ua^$replace=/РЕКЛАМА:\s//
 ||vcms-api*.starlight.digital/hls/*?file=*&testadv=$removeparam=testadv
