@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.27.90",
-			"timeUpdated": "2025-11-26T00:26:21+0000",
+			"version": "2.4.27.91",
+			"timeUpdated": "2025-11-26T01:35:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.2.19",
-			"timeUpdated": "2025-11-25T22:07:50+0000",
+			"version": "2.1.2.20",
+			"timeUpdated": "2025-11-26T01:35:32+0000",
 			"languages": [],
 			"tags": [
 				45,
