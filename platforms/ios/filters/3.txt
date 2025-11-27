@@ -1,9 +1,9 @@
-! Checksum: JsVUZYckdR/6SmeYUHeStA
-! Diff-Path: ../patches/3/3-s-1764216817-3600.patch
+! Checksum: /yl4pecYuwfHHJdliNfbQA
+! Diff-Path: ../patches/3/3-s-1764259931-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.95.68
-! TimeUpdated: 2025-11-27T04:09:25+00:00
+! Version: 2.0.95.71
+! TimeUpdated: 2025-11-27T16:07:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -554,6 +554,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1)  { remove: true; }
 !
 !
 !
+||tncid.app^
 ||rampanel.com^$third-party
 ||l5id.com^
 ||evorra.net^
@@ -45259,6 +45260,8 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||xplay.gg/api/server/analytics/mixpanel
+kf.qq.com#%#//scriptlet('set-constant', 'Aegis', 'noopFunc')
 ||app-de-na1.niceincontact.com/logger-public
 /webruntime/log/*$domain=help.disneyplus.com|help.hulu.com
 ||storage.googleapis.com/shufoo-prod-imp-gif/
@@ -46875,7 +46878,6 @@ wanchan.jp##.recommend_header + div[style^="aspect-ratio:"]
 ||clarin.com/js/meter*.js
 ||st-wzb.clarin.com/weizenbock/amazon/min.js
 ||cdn.thinkindot.com/tracker/tracker-*.min.js
-||olympics.com/ddna-event-router/ddna-analytics.js
 ||k.p-n.io/event-stream
 ||rebuyengine.com/api/*/analytics/event/
 ||gstatic.com/devrel-devsite/*/js/devsite_*analytics*.js
@@ -53027,6 +53029,9 @@ d4?appid*type*
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218881
+!+ PLATFORM(ios, ext_android_cb)
+@@||tam.cdn-go.cn/aegis-sdk/latest/aegis.min.js$domain=kf.qq.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218820
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218742
 @@||integrations.fitanalytics.com/shop/modivo/pdp.js$domain=modivo.*

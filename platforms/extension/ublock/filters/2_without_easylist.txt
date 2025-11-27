@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: tqfTEz7ssRNO/RWWIo1V8Q
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1764220323-3600.patch
+! Checksum: jRzktGhrR5aSMlN1qghXMA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1764270601-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.28.19
-! TimeUpdated: 2025-11-27T05:07:45+00:00
+! Version: 2.4.28.33
+! TimeUpdated: 2025-11-27T19:06:04+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25138,6 +25138,8 @@ bieganie.pl#?#.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/218884
+hiperinfo.pl###block-amun-antiadblockglobal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217493
 szukampracy.pl#@#[class^="ad-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216671
@@ -36518,6 +36520,13 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+xplay.gg##a[href^="https://playstake.io/landing"]
+xplay.gg##div[class^="sc-"]:has(> a[href^="https://playstake.io/landing"]:only-child)
+||cdn.xplay.cloud/img/site/common/partners/$domain=xplay.gg
+||sherpa.agoda.com^$domain=girlsheavens.com
+girlsheavens.com###sidebar div[id^="adgshp"]
+girlsheavens.com###sidebar a[href*="/?tid=af"] > img
+app.link2unlock.com##+js(window.open-defuser)
 scribd.com##+js(json-prune, ad_slot_recs)
 readtheoryapp.com##[data-pmd-placement-idx]
 fresources.tech#$#.mx-auto > div.relative.from-blue-600 { display: none !important; }
@@ -36915,7 +36924,7 @@ experte.com,experte.de,digitale.co##promotion
 thehealthsite.com##.margin-top
 thehealthsite.com##.atf-desktop
 thehealthsite.com##.taboola-bottom
-annas-archive.li,annas-archive.org##div[class*="html.aa-logged-in_"]:has(> .text-sm > a:is([href="/contact"], [href="/faq#ads"]))
+annas-archive.*##div[class*="html.aa-logged-in_"]:has(> .text-sm > a:is([href="/contact"], [href="/faq#ads"]))
 cbsnews.com##div[data-ad]
 community.freepbx.org##.banner-box
 olympusbiblioteca.com##div[ad-placement]
@@ -37134,6 +37143,7 @@ webextension.org##body > div:not([class]):not([id]):has(> div[style] > div[style
 economictimes.indiatimes.com##.hideAd
 euronews.*##.c-ad-wrapper
 euronews.*##.optidigital-wrapper-div
+euronews.*#$#.optidigital-wrapper-div { remove: true; }
 mediaarea.net##.container > a[href^="https://"][href$=".html"]
 ||akirabox.com/js/akira-ads2.js
 genius.com##div[class*="__AdLeaderboard-"]
@@ -42819,7 +42829,7 @@ bundle.app##.upMasthead
 elevenforum.com##div[style="width:300px;padding-bottom:10px;text-align:center;height:600px;margin-bottom:15px;"]
 ||timestech.in/wp-content/uploads/pum^
 sex-videos.xyz,xnxx.fit###fluid-onpause_spot
-sxxx.quest,new-porn.*,sex-vid.quest,xxx888.homes,best-porn.video,teenpornvideo.fun,asiantv.fun,asianporn.life##.spotholder
+asiabest.help,sxxx.quest,new-porn.*,sex-vid.quest,xxx888.homes,best-porn.video,teenpornvideo.fun,asiantv.fun,asianporn.life##.spotholder
 ||youpornzz.com/*.gif
 citynews.ca##body div.inter-module-ad
 privacysavvy.com###ps-popup
@@ -42857,7 +42867,7 @@ onlineocr.net##div[class^="col-xl-"] > .row[style="text-align:center"]
 onlineocr.net##div[class^="col-xl-"] > .row[style="padding-bottom:5px;"]
 olympics.com##div[class^="indexstyles__AdWrapper-sc-"]
 my18pussy.com##.advert-adv
-asiantv.fun,my18pussy.com##.aside-spots
+asiabest.help,asiantv.fun,my18pussy.com##.aside-spots
 ||my18pussy.com/ab/
 18pussy.porn###player_spot
 ||18pussy.porn/ab/
@@ -46100,6 +46110,7 @@ windowsteca.net##.sidebar > #custom_html-7
 windowsteca.net##.sidebar > #custom_html-18
 online-tech-tips.com,alternativeto.net,mrexcel.com,raymond.cc##div[id^="adngin-"]
 w3schools.com##div[id*="contentadcontainer"]
+||w3schools.com/lib/sparteo.css
 ||lesbian8.com/*/frot_lod.js
 lesbian8.com##.list-videos > div[class] > span#lotal
 lesbian8.com##.list-videos > div[class] > div.item.pignr
@@ -56028,7 +56039,7 @@ telewizjada.top##+js(abort-on-stack-trace, Array, runInPagePush)
 ! Example: https://ta.alluviopurreic.com/rKtCq1ZqtiJJ/84527
 ! Example: https://daejyre.com/riInStepVNRaVlz/wvqMG
 /^https:\/\/(?:[0-9a-z]+\.){1,2}\.(?:cfd|rest)\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{5}$/$script,third-party,match-case
-/^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{5}$/$script,third-party,match-case
+/^https:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.com\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{4,5}$/$script,third-party,match-case
 ! https://github.com/easylist/easylist/issues/6476
 ! Example: https://curtisbarways.com/gZ1vfAd01DRoG/60809
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[0-9a-z-]+)?$/$subdocument,script,xmlhttprequest,third-party,match-case
@@ -61211,6 +61222,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218920
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218811
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218815
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218810
