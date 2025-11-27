@@ -1,9 +1,9 @@
-! Checksum: EKny72O5U3EXNRa07lGJoA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1764263427-3600.patch
+! Checksum: Y0cVcR4XtS6n8cihv0LCfQ
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1764274238-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.55
-! TimeUpdated: 2025-11-27T17:06:48+00:00
+! Version: 2.2.50.56
+! TimeUpdated: 2025-11-27T20:07:00+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -2981,8 +2981,8 @@ tensorpix.ai#%#//scriptlet('trusted-set-local-storage-item', 'cookieconsent', '{
 plk-sa.pl,vestel.com.tr,biletbayisi.com##.cookie-modal-container
 ubaldi.com#%#//scriptlet('trusted-click-element', '.cb-btn-line .cb-btn-confirm')
 12punto.com.tr##.content > div.popup:has(> div.popup-content a[href^="https://12punto.com.tr/cerez-politikasi"])
-moebel.de#$#div[class^="__variable_"] > div.fixed.items-center { display: none !important; }
-moebel.de#$#body { overflow: auto !important; padding-right: 0 !important; }
+moebel.de#$#[data-testid^="modal-"] { display: none !important }
+moebel.de#$#body.scroll-locked { touch-action: auto !important; top: 0 !important; position: unset !important; overflow: auto !important; padding-right: 0 !important; }
 ||smartpress.by/bitrix/js/slam.cookie/script.js
 turkishairlinesholidays.com##div[class^="CookieModal_container_"]
 cp.beget.com##.tw-fixed.tw-flex
