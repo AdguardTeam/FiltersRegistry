@@ -1,9 +1,9 @@
-! Checksum: VCJfFa404P6VHW5FK2EcGw
-! Diff-Path: ../patches/18/18-s-1764252748-3600.patch
+! Checksum: DhH0GbVl9b+SfsNCX2CtfQ
+! Diff-Path: ../patches/18/18-s-1764259933-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.62
-! TimeUpdated: 2025-11-27T14:08:23+00:00
+! Version: 2.0.75.63
+! TimeUpdated: 2025-11-27T16:08:15+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2552,6 +2552,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+xplay.gg#%#//scriptlet('set-local-storage-item', 'cookieTypesList', 'emptyArr')
 oncf-voyages.ma#%#//scriptlet('trusted-set-cookie', 'CookieConsent', 'declined')
 teleantioquia.co##.cookie-modal-overlay
 trepas.com.tr##.trepas-cerez-politikasi-cookie-bar
@@ -17950,6 +17951,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218571
+@@||cdn.cookielaw.org/consent/*.json$domain=olympics.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218892
 oncf-voyages.ma#@#.cookieContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218864

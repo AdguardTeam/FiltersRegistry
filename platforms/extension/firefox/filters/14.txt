@@ -1,9 +1,9 @@
-! Checksum: SdkRYMzjXPcfmMePrPRW4w
-! Diff-Path: ../patches/14/14-s-1764252730-3600.patch
+! Checksum: myl3R0KF1GpmaQcVj6BEZQ
+! Diff-Path: ../patches/14/14-s-1764259916-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.53
-! TimeUpdated: 2025-11-27T14:08:18+00:00
+! Version: 2.2.50.54
+! TimeUpdated: 2025-11-27T16:08:11+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2551,6 +2551,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+xplay.gg#%#//scriptlet('set-local-storage-item', 'cookieTypesList', 'emptyArr')
 oncf-voyages.ma#%#//scriptlet('trusted-set-cookie', 'CookieConsent', 'declined')
 teleantioquia.co##.cookie-modal-overlay
 trepas.com.tr##.trepas-cerez-politikasi-cookie-bar
@@ -17916,6 +17917,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218571
+@@||cdn.cookielaw.org/consent/*.json$domain=olympics.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218892
 oncf-voyages.ma#@#.cookieContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218864
