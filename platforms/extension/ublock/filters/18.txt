@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: M0/AgEmcyXMKRvltUNuDCg
-! Diff-Path: ../patches/18/18-s-1764166287-3600.patch
+! Checksum: yS94gF+hLvVwJXxHW3Qo2Q
+! Diff-Path: ../patches/18/18-s-1764220321-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.49
-! TimeUpdated: 2025-11-26T14:07:57+00:00
+! Version: 2.0.75.54
+! TimeUpdated: 2025-11-27T05:08:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2403,6 +2403,7 @@ groentenenfruitwebshop.be,tarczynskiarenawroclaw.pl,motofocus.pl,najlepsibukmach
 igwindkraft.at,rwa.hu,bwsb.at,lagerhaus-gleinstaetten.at,landforst.at,sbl-mv.de,greencare-oe.at,wechselgau.at,rwa.at,lfi.at,tirol.lko.at###easycmp
 rwa.hu,rwa.at##body.easycmp-overlay-active::before
 !
+!
 ! 'contributor.google.com' cookie consent
 ! #$#body div.fc-message-root { display: none !important; }
 jpg2png.com,gtaweb.eu#$#body div.fc-message-root { display: none !important; }
@@ -2497,6 +2498,9 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+hoyabit.com##+js(set-local-storage-item, HOYA_COOKIE_CONSENT, true)
+changelly.com##+js(set-local-storage-item, SET_COOKIES_APPROVED, true)
+skroutz.de##.js-global-skrp-messages:has(> .js-message > article > .actions > form[action="/privacy_policy"])
 ||weather.com/api/v1/script/dprSdkScript.js
 corp.asics.com##.o-gdpr-dialog
 upv.gov.cz##.scook
@@ -2504,7 +2508,7 @@ mdron.pl##+js(set-cookie-reload, cookie_info_accepted, 1)
 equifax.ca##.ketch-fixed
 aptacore.ac##.cookiesSec
 modivo.*#$#.consents { display: none !important; }
-modivo.*##+js(remove-class, _no-scroll, html)
+modivo.*##+js(remove-class, _no-scroll, html, stay)
 gazeta-n1.ru###bdModalCookie
 wxcharts.com##.consentDialog
 westk.hk##+js(set-cookie, cookieconsent, accept)
@@ -16264,7 +16268,7 @@ rynekpierwotny.pl##+js(set-local-storage-item, lscache-cookieMessageIsRead, true
 uxfeedback.ru##+js(set-local-storage-item, uxfb_cookies, true)
 premiumkino.de##+js(set-cookie, cookie_required, true)
 happydog.de##+js(set-cookie, mnd-cookie-accepted-happydogde4, 1)
-edv-direkt24.de,schanzenfit-shop.de,blueshopfashion.de,anderweltverlag.com,trolley-center.com,rabe-markt.com,holland-shop.com,hanse-soft.de,bamboo-nr-1.de,kvm-ip.de,team-undercover.de,superpreis-moebel.de,kantenschutzprofi.shop,diorama-world.com,colvital.de##+js(set-cookie-reload, epCookieConsent, 0)
+hardwarehasky.com,edv-direkt24.de,schanzenfit-shop.de,blueshopfashion.de,anderweltverlag.com,trolley-center.com,rabe-markt.com,holland-shop.com,hanse-soft.de,bamboo-nr-1.de,kvm-ip.de,team-undercover.de,superpreis-moebel.de,kantenschutzprofi.shop,diorama-world.com,colvital.de##+js(set-cookie-reload, epCookieConsent, 0)
 lolaliza.com##+js(set-cookie, enableTracking, false)
 peakd.com##+js(set-cookie, COOKIE_CONSENT_ACCEPTED, true)
 refurbishedstore.de##+js(set-cookie-reload, COOKIE_CONSENT, true)
@@ -16759,6 +16763,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218864
+@@||hoyabit.com/static/CookieConsent-*.js$domain=hoyabit.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/218844
+@@||delivery.consentmanager.net^$domain=smarketer.shopping
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218538
 @@||cmp.usercentrics.eu^$domain=emma-matratze.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218498

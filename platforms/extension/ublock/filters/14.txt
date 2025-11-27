@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: KqsH/eIXUhuMAX7XsYlTmw
-! Diff-Path: ../patches/14/14-s-1764173503-3600.patch
+! Checksum: rllkAxnbCN1Ebddk606O0g
+! Diff-Path: ../patches/14/14-s-1764220320-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.38
-! TimeUpdated: 2025-11-26T16:08:04+00:00
+! Version: 2.2.50.44
+! TimeUpdated: 2025-11-27T05:08:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2403,6 +2403,7 @@ groentenenfruitwebshop.be,tarczynskiarenawroclaw.pl,motofocus.pl,najlepsibukmach
 igwindkraft.at,rwa.hu,bwsb.at,lagerhaus-gleinstaetten.at,landforst.at,sbl-mv.de,greencare-oe.at,wechselgau.at,rwa.at,lfi.at,tirol.lko.at###easycmp
 rwa.hu,rwa.at##body.easycmp-overlay-active::before
 !
+!
 ! 'contributor.google.com' cookie consent
 ! #$#body div.fc-message-root { display: none !important; }
 jpg2png.com,gtaweb.eu#$#body div.fc-message-root { display: none !important; }
@@ -2497,6 +2498,9 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+hoyabit.com##+js(set-local-storage-item, HOYA_COOKIE_CONSENT, true)
+changelly.com##+js(set-local-storage-item, SET_COOKIES_APPROVED, true)
+skroutz.de##.js-global-skrp-messages:has(> .js-message > article > .actions > form[action="/privacy_policy"])
 ||weather.com/api/v1/script/dprSdkScript.js
 corp.asics.com##.o-gdpr-dialog
 upv.gov.cz##.scook
@@ -2504,7 +2508,7 @@ mdron.pl##+js(set-cookie-reload, cookie_info_accepted, 1)
 equifax.ca##.ketch-fixed
 aptacore.ac##.cookiesSec
 modivo.*#$#.consents { display: none !important; }
-modivo.*##+js(remove-class, _no-scroll, html)
+modivo.*##+js(remove-class, _no-scroll, html, stay)
 gazeta-n1.ru###bdModalCookie
 wxcharts.com##.consentDialog
 westk.hk##+js(set-cookie, cookieconsent, accept)
@@ -16264,7 +16268,7 @@ rynekpierwotny.pl##+js(set-local-storage-item, lscache-cookieMessageIsRead, true
 uxfeedback.ru##+js(set-local-storage-item, uxfb_cookies, true)
 premiumkino.de##+js(set-cookie, cookie_required, true)
 happydog.de##+js(set-cookie, mnd-cookie-accepted-happydogde4, 1)
-edv-direkt24.de,schanzenfit-shop.de,blueshopfashion.de,anderweltverlag.com,trolley-center.com,rabe-markt.com,holland-shop.com,hanse-soft.de,bamboo-nr-1.de,kvm-ip.de,team-undercover.de,superpreis-moebel.de,kantenschutzprofi.shop,diorama-world.com,colvital.de##+js(set-cookie-reload, epCookieConsent, 0)
+hardwarehasky.com,edv-direkt24.de,schanzenfit-shop.de,blueshopfashion.de,anderweltverlag.com,trolley-center.com,rabe-markt.com,holland-shop.com,hanse-soft.de,bamboo-nr-1.de,kvm-ip.de,team-undercover.de,superpreis-moebel.de,kantenschutzprofi.shop,diorama-world.com,colvital.de##+js(set-cookie-reload, epCookieConsent, 0)
 lolaliza.com##+js(set-cookie, enableTracking, false)
 peakd.com##+js(set-cookie, COOKIE_CONSENT_ACCEPTED, true)
 refurbishedstore.de##+js(set-cookie-reload, COOKIE_CONSENT, true)
@@ -16759,6 +16763,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218864
+@@||hoyabit.com/static/CookieConsent-*.js$domain=hoyabit.com
+! https://github.com/AdguardTeam/AdguardFilters/issues/218844
+@@||delivery.consentmanager.net^$domain=smarketer.shopping
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218538
 @@||cmp.usercentrics.eu^$domain=emma-matratze.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218498
@@ -33318,6 +33326,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+helpdeskgeek.com###center-modal-popup
 opensourceprojects.dev##.newsletter-inline-section
 baikal-journal.ru##.m-block-starletter
 cava.tw##.article-links
@@ -41978,6 +41987,8 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+noz.de#$#.appB_page_box { display: none !important; }
+noz.de#$#.overlay-active { overflow: auto !important; }
 hongkongfp.com###block-114
 iask.ai##.fixed.right-3.w-\[140px\]
 iask.ai##.flex > a[href="https://apps.apple.com/us/app/iask-ai-unlimited/id6449653022"]
@@ -45697,6 +45708,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+shufoo.net#$#.appdl_modal_overlay { display: none !important; }
+shufoo.net#$#body.is-hidden { overflow: auto !important; }
 instacart.com#$#html { overflow: auto !important; }
 instacart.com#$##native-app-upsell-interstitial { display: none !important; }
 spooncast.net##+js(set-session-storage-item, SPOONCAST_appDownloadBannerClosed, true)
@@ -50133,6 +50146,10 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+neg.by##.footer-banner
+neg.by##.parallax-neg-rek-wrap
+shufoo.net###p-tab__upperBnr
+||shufoo.net/spweb/contents/upperBanner_chirashi/
 hongkongfp.com,wyofile.com##.newspack-popup-container
 fnn.jp##.js-piano-sp-underarticle
 annas-archive.*##.js-aarecord-list-outer > .\[html\.aa-logged-in_\&\]\:hidden
