@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: HvG59BzhU35bf2tixsik3A
-! Diff-Path: ../patches/14/14-s-1764216810-3600.patch
+! Checksum: rllkAxnbCN1Ebddk606O0g
+! Diff-Path: ../patches/14/14-s-1764220320-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.43
-! TimeUpdated: 2025-11-27T04:09:49+00:00
+! Version: 2.2.50.44
+! TimeUpdated: 2025-11-27T05:08:08+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2498,6 +2498,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+hoyabit.com##+js(set-local-storage-item, HOYA_COOKIE_CONSENT, true)
 changelly.com##+js(set-local-storage-item, SET_COOKIES_APPROVED, true)
 skroutz.de##.js-global-skrp-messages:has(> .js-message > article > .actions > form[action="/privacy_policy"])
 ||weather.com/api/v1/script/dprSdkScript.js
@@ -2507,7 +2508,7 @@ mdron.pl##+js(set-cookie-reload, cookie_info_accepted, 1)
 equifax.ca##.ketch-fixed
 aptacore.ac##.cookiesSec
 modivo.*#$#.consents { display: none !important; }
-modivo.*##+js(remove-class, _no-scroll, html)
+modivo.*##+js(remove-class, _no-scroll, html, stay)
 gazeta-n1.ru###bdModalCookie
 wxcharts.com##.consentDialog
 westk.hk##+js(set-cookie, cookieconsent, accept)
@@ -16762,6 +16763,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218864
+@@||hoyabit.com/static/CookieConsent-*.js$domain=hoyabit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218844
 @@||delivery.consentmanager.net^$domain=smarketer.shopping
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218538

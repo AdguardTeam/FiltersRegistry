@@ -1,9 +1,9 @@
-! Checksum: CWcnXuw1uvSdXcOVRxNPHQ
-! Diff-Path: ../patches/18/18-s-1764216819-3600.patch
+! Checksum: 49NpUeYGZ0KjvEK7rApVsw
+! Diff-Path: ../patches/18/18-s-1764220327-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.53
-! TimeUpdated: 2025-11-27T04:09:55+00:00
+! Version: 2.0.75.54
+! TimeUpdated: 2025-11-27T05:08:12+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2552,6 +2552,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+hoyabit.com#%#//scriptlet('set-local-storage-item', 'HOYA_COOKIE_CONSENT', 'true')
 rapidcompute.com#%#//scriptlet('trusted-set-cookie', 'cookieBy', 'cookieConsent')
 changelly.com#%#//scriptlet('set-local-storage-item', 'SET_COOKIES_APPROVED', 'true')
 skroutz.de##.js-global-skrp-messages:has(> .js-message > article > .actions > form[action="/privacy_policy"])
@@ -2564,7 +2565,7 @@ aptacore.ac##.cookiesSec
 lettera7.design#%#//scriptlet('trusted-set-local-storage-item', 'consent', '{"f":"d","e":"d","me":"d","ma":"d"}')
 emma-matratze.de#%#//scriptlet('trusted-click-element', '#usercentrics-cmp-ui >>> button.uc-deny-button')
 modivo.*#$#.consents { display: none !important; }
-modivo.*#%#//scriptlet('remove-class', '_no-scroll', 'html')
+modivo.*#%#//scriptlet('remove-class', '_no-scroll', 'html', 'stay')
 gazeta-n1.ru###bdModalCookie
 wxcharts.com##.consentDialog
 westk.hk#%#//scriptlet('set-cookie', 'cookieconsent', 'accept')
@@ -17940,6 +17941,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218864
+@@||hoyabit.com/static/CookieConsent-*.js$domain=hoyabit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218844
 @@||delivery.consentmanager.net^$domain=smarketer.shopping
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218538
