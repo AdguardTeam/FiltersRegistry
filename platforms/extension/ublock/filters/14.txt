@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: FHS1oJzHH6R67HSoXbFJjw
-! Diff-Path: ../patches/14/14-s-1764214242-3600.patch
+! Checksum: HvG59BzhU35bf2tixsik3A
+! Diff-Path: ../patches/14/14-s-1764216810-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.42
-! TimeUpdated: 2025-11-27T03:27:07+00:00
+! Version: 2.2.50.43
+! TimeUpdated: 2025-11-27T04:09:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2402,6 +2402,7 @@ groentenenfruitwebshop.be,tarczynskiarenawroclaw.pl,motofocus.pl,najlepsibukmach
 ! ###easycmp
 igwindkraft.at,rwa.hu,bwsb.at,lagerhaus-gleinstaetten.at,landforst.at,sbl-mv.de,greencare-oe.at,wechselgau.at,rwa.at,lfi.at,tirol.lko.at###easycmp
 rwa.hu,rwa.at##body.easycmp-overlay-active::before
+!
 !
 ! 'contributor.google.com' cookie consent
 ! #$#body div.fc-message-root { display: none !important; }
@@ -16266,7 +16267,7 @@ rynekpierwotny.pl##+js(set-local-storage-item, lscache-cookieMessageIsRead, true
 uxfeedback.ru##+js(set-local-storage-item, uxfb_cookies, true)
 premiumkino.de##+js(set-cookie, cookie_required, true)
 happydog.de##+js(set-cookie, mnd-cookie-accepted-happydogde4, 1)
-edv-direkt24.de,schanzenfit-shop.de,blueshopfashion.de,anderweltverlag.com,trolley-center.com,rabe-markt.com,holland-shop.com,hanse-soft.de,bamboo-nr-1.de,kvm-ip.de,team-undercover.de,superpreis-moebel.de,kantenschutzprofi.shop,diorama-world.com,colvital.de##+js(set-cookie-reload, epCookieConsent, 0)
+hardwarehasky.com,edv-direkt24.de,schanzenfit-shop.de,blueshopfashion.de,anderweltverlag.com,trolley-center.com,rabe-markt.com,holland-shop.com,hanse-soft.de,bamboo-nr-1.de,kvm-ip.de,team-undercover.de,superpreis-moebel.de,kantenschutzprofi.shop,diorama-world.com,colvital.de##+js(set-cookie-reload, epCookieConsent, 0)
 lolaliza.com##+js(set-cookie, enableTracking, false)
 peakd.com##+js(set-cookie, COOKIE_CONSENT_ACCEPTED, true)
 refurbishedstore.de##+js(set-cookie-reload, COOKIE_CONSENT, true)
@@ -16761,6 +16762,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218844
+@@||delivery.consentmanager.net^$domain=smarketer.shopping
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218538
 @@||cmp.usercentrics.eu^$domain=emma-matratze.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218498
@@ -45702,6 +45705,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+shufoo.net#$#.appdl_modal_overlay { display: none !important; }
+shufoo.net#$#body.is-hidden { overflow: auto !important; }
 instacart.com#$#html { overflow: auto !important; }
 instacart.com#$##native-app-upsell-interstitial { display: none !important; }
 spooncast.net##+js(set-session-storage-item, SPOONCAST_appDownloadBannerClosed, true)
@@ -50138,6 +50143,10 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+neg.by##.footer-banner
+neg.by##.parallax-neg-rek-wrap
+shufoo.net###p-tab__upperBnr
+||shufoo.net/spweb/contents/upperBanner_chirashi/
 hongkongfp.com,wyofile.com##.newspack-popup-container
 fnn.jp##.js-piano-sp-underarticle
 annas-archive.*##.js-aarecord-list-outer > .\[html\.aa-logged-in_\&\]\:hidden
