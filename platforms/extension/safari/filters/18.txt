@@ -1,9 +1,9 @@
-! Checksum: OkODiYWMRaBF1/Myp+FhXQ
-! Diff-Path: ../patches/18/18-s-1764245724-3600.patch
+! Checksum: b8hVkp1kK5/XCkIFC0tIBw
+! Diff-Path: ../patches/18/18-s-1764252738-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.61
-! TimeUpdated: 2025-11-27T12:12:00+00:00
+! Version: 2.0.75.62
+! TimeUpdated: 2025-11-27T14:08:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2553,6 +2553,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+oncf-voyages.ma#%#//scriptlet('trusted-set-cookie', 'CookieConsent', 'declined')
 teleantioquia.co##.cookie-modal-overlay
 trepas.com.tr##.trepas-cerez-politikasi-cookie-bar
 cloud.huawei.com##.hwid-bannerBox-portal
@@ -17882,6 +17883,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218892
+oncf-voyages.ma#@#.cookieContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218864
 @@||hoyabit.com/static/CookieConsent-*.js$domain=hoyabit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218844

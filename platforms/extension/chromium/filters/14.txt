@@ -1,9 +1,9 @@
-! Checksum: JNq2RSWjEeKosRC0Zm21vQ
-! Diff-Path: ../patches/14/14-s-1764249583-3600.patch
+! Checksum: iwVnP+EKYPafRGAOMYnWvg
+! Diff-Path: ../patches/14/14-s-1764252723-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.52
-! TimeUpdated: 2025-11-27T13:16:26+00:00
+! Version: 2.2.50.53
+! TimeUpdated: 2025-11-27T14:08:18+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2551,6 +2551,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+oncf-voyages.ma#%#//scriptlet('trusted-set-cookie', 'CookieConsent', 'declined')
 teleantioquia.co##.cookie-modal-overlay
 trepas.com.tr##.trepas-cerez-politikasi-cookie-bar
 cloud.huawei.com##.hwid-bannerBox-portal
@@ -17873,6 +17874,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218892
+oncf-voyages.ma#@#.cookieContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218864
 @@||hoyabit.com/static/CookieConsent-*.js$domain=hoyabit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218844
@@ -43257,6 +43260,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+coemee.com#%#//scriptlet('trusted-set-local-storage-item', 'pwa-install-prompt-dismissed', '2764250584116')
 vkusnoitochka.ru##a[href="https://trk.mail.ru/c/jpair2"]
 noz.de#$#.appB_page_box { display: none !important; }
 noz.de#$#.overlay-active { overflow: auto !important; }
