@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Mmof23QxUpjlvKeho8sqyg
-! Diff-Path: ../patches/14/14-s-1764300617-3600.patch
+! Checksum: 9doH0SeteiY2sD63WTfCQQ
+! Diff-Path: ../patches/14/14-s-1764303206-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.58
-! TimeUpdated: 2025-11-28T03:26:53+00:00
+! Version: 2.2.50.59
+! TimeUpdated: 2025-11-28T04:09:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2498,7 +2498,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
-||eazymut.pl/modules/seigicookie/
+/modules/seigicookie/*$domain=eazymut.pl|medkon.pl
 oddstrader.com###CookiesAlert
 xplay.gg##+js(set-local-storage-item, cookieTypesList, emptyArr)
 teleantioquia.co##.cookie-modal-overlay
@@ -32408,6 +32408,7 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 !
 ! SECTION: Push notifications - Regular rules
 !
+||m-bemomotors.youlead.pl/WebpushPrompt.js$domain=omoda.grupabemo.pl
 skladnicaksiegarska.pl##+js(set-cookie, knowband_popup, 1)
 oyunfor.com###darkness
 oyunfor.com###signalNotification
@@ -42002,6 +42003,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+flipp.com##.download-app-banner
 vkusnoitochka.ru##a[href="https://trk.mail.ru/c/jpair2"]
 noz.de#$#.appB_page_box { display: none !important; }
 noz.de#$#.overlay-active { overflow: auto !important; }
@@ -45722,6 +45724,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+flipp.com##.premium-flyer-wrapper > .feedback-card
 deliveroo.*##div[class^="MobileBanner"]
 citilink.ru##+js(set-cookie, wasRedirectNotificationShown, true)
 vodafone.com.tr###header--smart-link
@@ -46566,7 +46569,7 @@ news.abplive.com##._viewInApp
 reverso.net###home-badges-background
 reverso.net###home-badges-apps
 tutudao.net##a[href="/app/download/"]
-t20worldcup.com,justwatch.com,flvto.biz##.mobile-banner
+flipp.com,t20worldcup.com,justwatch.com,flvto.biz##.mobile-banner
 theinitium.com##.c-download-banner
 townwork.net#?#.TM-contentsTopBack:has(> div.TM-contentsTopBack__inner > div.TM-appBannerHasBadgeIcon)
 townwork.net##.jsc-hd-app-bnr
