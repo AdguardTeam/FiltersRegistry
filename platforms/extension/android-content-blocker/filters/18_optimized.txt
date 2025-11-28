@@ -1,8 +1,8 @@
-! Checksum: z931sWplrNRxiJL88zugeQ
+! Checksum: 28pnk3+t3q7ks0K/IBH5sg
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.64
-! TimeUpdated: 2025-11-27T20:07:04+00:00
+! Version: 2.0.75.68
+! TimeUpdated: 2025-11-28T08:09:56+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -426,7 +426,6 @@
 ###cookieMgn
 ###cookieModal
 ###cookieMsg
-###cookieMsgBlock
 ###cookieMsgWrapper
 ###CookieNotice
 ###cookieNotice
@@ -485,7 +484,6 @@
 ###cookie_policy_popup
 ###cookie_popup
 ###cookie_popup_container
-###cookie_prompt
 ###cookie_str
 ###cookie_warn
 ###cookie_warning
@@ -507,7 +505,6 @@
 ###cookiemessage
 ###cookiemodule
 ###cookiemsg
-###cookiemsgbox
 ###cookienote
 ###cookienotice
 ###cookienotice-container
@@ -820,6 +817,7 @@
 ##.cookiedisclaimer
 ##.cookiediv
 ##.cookielaw:not(body):not(html)
+##.cookienotice-bar
 ##.cookiepolicy
 ##.cookies-alert
 ##.cookies-allow
@@ -1378,6 +1376,8 @@ openwebstart.com,alanboswell.com,lovegiver.it,quark.com,acquaesaponeonline.it,pr
 ||cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager$domain=teamio.com
 /cookieconsent.$domain=qrcodemonkey.net|wedos.com|scssoft.com|umino.io|sklep.ledlumen.pl|megasobota.pl|emunia.pl|proxmox.com
 help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keeper.io,developers.deepl.com##[aria-label="Cookies"]
+/modules/seigicookie/*$domain=eazymut.pl|medkon.pl
+oddstrader.com###CookiesAlert
 teleantioquia.co##.cookie-modal-overlay
 trepas.com.tr##.trepas-cerez-politikasi-cookie-bar
 cloud.huawei.com##.hwid-bannerBox-portal
@@ -1466,8 +1466,6 @@ fellou.ai##.consent-cookie-box
 buckedup.ru,poleznoo.ru##.cookieagry
 ||waterfordwhispersnews.com/wp-content/plugins/wwn-the-rex-plugin/js/_wwn_gdpr-consent-tool.js
 aio.lv##.popup-message
-aio.lv##.body-wrapper::before
-spotdraft.com##button[experiencetype="experiencedisplays.preference"]
 internet-lab.ru###soglasiecookie
 aeroexpress.ru###coockiesInfoOuter
 peterburggaz.ru##.pg-cookie
@@ -1600,7 +1598,6 @@ hkticketing.com###policy_new
 trip.com##.ibu-cookie-banner
 vitaexpress.ru##.info-processing-personal-data-container
 ||global.ketchcdn.com/web/v*/config/*/boot.js$domain=debrox.com|drinkag1.com|newsweek.com|loeb.com|boxingscene.com|tailscale.com|eodev.com|nosdevoirs.fr|vultr.com|tennis.com
-gazobezopasnost.gazprom.ru##.message-consent
 letsplayuno.com###__mt163__cookie
 clideo.com##.app-modal-layout--variant-cookies
 companyweb.be##div[class="print:hidden"] > div[aria-labelledby="modal-title"]
@@ -1627,6 +1624,7 @@ qeepl.com##div[role="dialog"][i18n="consent-dialog"]
 midasbuy.com##div[data-component-id="cookie"]
 cgtn.com##.cg-tools-dialog
 developer.honor.com##.termsOfCookies
+sberhealth.ru##.cguixmd
 reso.ru##.container-personal-info
 tabletki.ua##.user-agreement-backdrop
 taxfreeshops.jp###confirm_cookie_modal
@@ -1657,7 +1655,6 @@ brainly.*,tabnine.com,shop.hbo.com,bitwarden.com###ketch-consent-banner
 ||static.hyundaijapan.com/hmj-fe/static/js/common/agreeCookie.js
 solaris-kemerovo.ru##.cookie-plank:not(#style_important)
 kick.com##.contents > div.z-modal.fixed.bottom-4
-ankersolix.com##div[class^="FeatureBar_root__"]
 blogspot.com###cookies-iki
 irodoricomics.com###ccpa_consent_bar
 ||cmp.dynamic.deka.de^
@@ -1798,7 +1795,6 @@ amcharts.com###amcharts-utils-consent
 postly.ai,brisanet.com.br##div[aria-labelledby="cookie-consent-title"]
 ||static.coros.com/coros-v2/static/js/cookieconsent
 palominorv.com,easttowestrv.com,primetimerv.com,shastarving.com,coachmenrv.com,forestriverinc.com###PrivacyPolicyNotice
-truckstop.com###bottom-message
 delo.ua##.c-cookies-modal
 usatoday.com##.gnt_pu
 brandirectory.com##.app-cookie-banner--banner
@@ -1941,7 +1937,6 @@ notion.com##section[class^="cookiePreferencesBanner_container"]
 ||servpub.madrid.es/FWIAM_FTP/assets/js/cookie-manager.js
 store.drivereasy.com###cookie-management
 fastwebvodafone.it##iframe.ck_if
-||fastwebvodafone.it/cookie-center/
 bubilet.com.tr##.mobile-cookie
 foreignaffairs.com##._gdpr-banner
 postnl.nl##pnl-cookie-wall-widget
@@ -2118,7 +2113,6 @@ datacamp.com##.dc-cookie-banner-wrapper
 green-it.shop,swisscubancigars.de,ukbathroomstore.co.uk###am-cookie-bar
 jobs.workable.com,newjobs.gr##div[style^="--color-cookie-consent:"]
 4fizjo.pl###custom_iai_cookies
-osters-rueckenshop.de,shop-weck.de##.lightbox-backdrop-cc-dialog
 guidelinecentral.com###cdp-gdpr-popup
 eyesandmore.se,eyesandmore.nl,eyesandmore.de,eyesandmore.be,eyesandmore.at###cookie-dialog-wrapper
 ||tags.stepstone.com/utag/*/prod/utag.js
@@ -2645,7 +2639,6 @@ fixpart.*##.fp-cookie-modal
 ticketland.ru###alert
 huawei.com##.huawei-convergent-cookie
 mentoday.ru##.app-popup
-theloadstar.com###lc-cookie-bar
 inpa.gov.it##.ngx-lib-privacy-cookie-banner-backdrop
 meistertask.com,meisterlabs.com###cb-wrapper
 cbom.atozmath.com###consentframe
@@ -3472,6 +3465,7 @@ getmidas.com##.cookie-contain
 sportbox.ru##body .gpm-cookie-accepted
 ||pitcom-webanalyse.de/*/consent-banner/
 ||static.comdirect.de/*/modules/js/consent-initial.module.js$~third-party
+7eleven.co.th##div[class^="cookie-baner__BanerContainer"]
 kalkulator.raty.aliorbank.pl,digital.gov.pt,edoapp.pl##app-cookie-bar
 aliorbank.pl###cookieId
 ibispaint.com###agreementPane
@@ -3504,7 +3498,6 @@ taisei-techsolu.jp##.gdpr-area
 sbermarket.ru##div[class^="CookiesConcent_"]
 thaiticketmajor.com##.privacy-policy-bar
 coches.net##.mt-SharedCmp
-liveindex.org###terms-bar
 haustechnikdialog.de###ctl00_ctl01_privacy
 telecine.com.br##div[data-testid="banner"]
 interspace.ne.jp,mamastar.jp###personalInfo
@@ -3779,7 +3772,6 @@ eboa.satfilm.pl,are.waw.pl##.ui-notificationbar.top
 lenstip.com###id01.w3-modal
 vandyke.com,fox-saying.com,pixnet.net###gdpr-cover
 sutterhealth.org,phonecopy.com###cookieAgreement
-yourkit.com###terms-wrapper-id
 netology.ru###cookie_show
 myanimelist.net##.modal-content-overlay
 akvis.com##.awarning
@@ -3973,7 +3965,6 @@ hofer.at##div[aria-labelledby="c-modal-label"]
 avepdf.com##.notif-consent
 bfr.bund.de###bfr-cookielaw
 aachen.de###cookiehuhu
-rems-murr-kreis.de,landkreis-emmendingen.de##.hwcookiebanner
 hochschule-stralsund.de###piwik-flyin
 hs-wismar.de##.hswBannerOverlay
 esimplus.me,brainandlife.org,thebaffler.com##.gdpr-alert
@@ -4134,6 +4125,7 @@ lakshmisri.com##.disclamierpage
 united-internet.de##body.dp--cookie-consent .page-overlay:not(#style_important)
 herold.at###popupCookie
 eazwv.org,tbsbibles.org,worldbank.org##.privacy-widget
+shop.berliner-kaffeeroesterei.de,lanius.com,bremer-gewuerzhandel.de,delius-klasing.de,toner-dumping.de,lilienthal.berlin,mister-lady.at,mister-lady.com##.js--overlay
 actu-environnement.com,teraz-srodowisko.pl###cookies_preferences
 noxinfluencer.com,weekli.de##.cookie-privacy-container
 siko.cz,foerch.de,ozdilekteyim.com##.anonymous-consent-banner
@@ -4202,7 +4194,6 @@ tohotheater.jp##.optIn
 nortonlifelock.com###ensConsentWidget
 tapeciarnia.pl,tapetus.pl###div_info_cookies
 plugins.jetbrains.com##.acceptance-popup
-/borlabs-cookie.min.js$domain=mobil-ganz-einfach.de|schwebheim.de|rabot.energy
 clo3d.com##.cookie-consent-popup
 netwrix.com##.cookie-information-cont
 themeselection.com,televideoteca.net##.gdpr-consent-bar
@@ -4357,6 +4348,7 @@ cabify.com###cmcb-informationLayer
 thesaltysoldier.com,magesy.blog###moove_gdpr_cookie_info_bar
 httpstatus.io##.snackbar.is-bottom-right
 tvzvezda.ru##.cookie_messege
+altinaysavunma.com,stm.com.tr,myvitamins.com,myprotein.com,homebase.co.uk,zavvi.it,glossybox.de,lookfantastic.com##.cookie_modal
 heimgourmet.com##.gaCookieConsent
 yahoo.com###guce-inline-consent-iframe
 ||guce.yahoo.com/br/collectConsentInline?brandType=nonEu$subdocument
@@ -4707,6 +4699,7 @@ happymod.ru,happymod.cloud,freepng.ru,cleanpng.com,pngindir.com##.fot-fixd
 nakivo.com###footer-cookie-popup
 creationwatches.com##.cookies-Pop-up
 ren.tv##.cookies__panel
+lokal32.pl,kontomaniak.pl,wielkahistoria.pl###rodo-info
 asus.com.cn,asus.com###cookie-policy-info
 volkswagen-utilitaires.fr,volkswagen-karriere.de,vw.com,vw.com.hk,vw.com.mx,vw.ca,volkswagen.*,vwdostawcze.pl###cookiemgmt
 zeenews.india.com##.co-container
@@ -5096,7 +5089,6 @@ dryg.pl,ideco.ru,mercuryo.io,mycujoo.tv##div[class^="CookiesNotification_"]
 103.ua##.CookiesNotificationDefault
 giphy.com##div[class^="flash-message__MessageWrapper-"]
 gmx.net,web.de##div[data-cookielayer-init]
-||jouw.postnl.nl/widgets/cookie-widget/
 ||remixshop.com/bg/site/ajaxCheckCookiePolicy
 wook.pt,brother.com,brother.nl,infopedia.pt###cookieLawBar
 autoroutes.fr###cookie_mask
@@ -7363,7 +7355,6 @@ montiemare.de#@##cookieNotice
 astra-bier.de#@##accept_cookies
 bitburger-braugruppe.de#@##cookie-accept
 bitburger-braugruppe.de#@##cookie-layer
-@@||voelkner.de/min/?b=themes/voelkner/css/*/cookie_consent.css$domain=voelkner.de
 voelkner.de#@##cookie_consent
 digitalo.de#@##cookie_consent
 @@||budgetthuis.nl/*/label/*/js/cookieBar-*.js
