@@ -1,9 +1,9 @@
-! Checksum: MF/GwUvdfaC/Hmi4xnNeFg
-! Diff-Path: ../patches/18/18-s-1764324762-3600.patch
+! Checksum: 8+ep6O9mGRESFE9X55ZtYA
+! Diff-Path: ../patches/18/18-s-1764328249-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.69
-! TimeUpdated: 2025-11-28T10:08:36+00:00
+! Version: 2.0.75.70
+! TimeUpdated: 2025-11-28T11:07:07+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2552,6 +2552,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+||aeropolisa.pl/js/cookieConstent.js
+||aeropolisa.pl/js/cookieConstentManagment.js
 tripout-optics.pl#%#//scriptlet('trusted-click-element', '#cc-main .cm__btn--secondary[data-role="show"], #cc-main .pm__btn[data-role="necessary"]', '!cookie:cc_cookie')
 proecosolar.eu#%#//scriptlet('trusted-set-cookie', '_x13eucookie', '{"1":true,"2":false,"3":false,"4":false,"5":false,"6":false}')
 aromatslowa.pl#$##con-mngr-manage-consent { display: none !important; }
@@ -2589,6 +2591,7 @@ gazeta-n1.ru###bdModalCookie
 wxcharts.com##.consentDialog
 westk.hk#%#//scriptlet('set-cookie', 'cookieconsent', 'accept')
 piclumen.com##.pl-cookies-accept
+||sndimg.com/etc/clientlibs/user-consent-disco*.js$domain=foodnetwork.com|hgtv.com
 costco.ca##div[aria-label="Cookie Preferences"]
 askcodi.com##div.fixed.inset-0.animate-fade-in-up
 codiga.io##.css-1riwujj
@@ -17961,6 +17964,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218942
+@@||consent.cookiebot.com/uc.js$domain=shure.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218571
 @@||cdn.cookielaw.org/consent/*.json$domain=olympics.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218892

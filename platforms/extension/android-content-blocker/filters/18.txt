@@ -1,8 +1,8 @@
-! Checksum: jlMxDI+DvR+uQ6daWIkeJw
+! Checksum: knJ2E8wA8g9L2jFanNZfsQ
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.69
-! TimeUpdated: 2025-11-28T10:08:36+00:00
+! Version: 2.0.75.70
+! TimeUpdated: 2025-11-28T11:07:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2442,6 +2442,8 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+||aeropolisa.pl/js/cookieConstent.js
+||aeropolisa.pl/js/cookieConstentManagment.js
 /modules/seigicookie/*$domain=eazymut.pl|medkon.pl
 oddstrader.com###CookiesAlert
 teleantioquia.co##.cookie-modal-overlay
@@ -2455,6 +2457,7 @@ aptacore.ac##.cookiesSec
 gazeta-n1.ru###bdModalCookie
 wxcharts.com##.consentDialog
 piclumen.com##.pl-cookies-accept
+||sndimg.com/etc/clientlibs/user-consent-disco*.js$domain=foodnetwork.com|hgtv.com
 costco.ca##div[aria-label="Cookie Preferences"]
 askcodi.com##div.fixed.inset-0.animate-fade-in-up
 codiga.io##.css-1riwujj
@@ -12115,6 +12118,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218942
+@@||consent.cookiebot.com/uc.js$domain=shure.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218571
 @@||cdn.cookielaw.org/consent/*.json$domain=olympics.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218892
