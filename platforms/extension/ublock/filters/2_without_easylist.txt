@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: gwBNbKEN/2RHRk7Pu3TjEw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1764328244-3600.patch
+! Checksum: GCgwOEFoKys+DRmoZGyymg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1764332125-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.28.49
-! TimeUpdated: 2025-11-28T11:06:30+00:00
+! Version: 2.4.28.50
+! TimeUpdated: 2025-11-28T12:11:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36518,6 +36518,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+yahoo.com##.pointer-events-auto:has(> .ad-container:only-child)
 hentaimama.tv##.script_manager_video_master
 javxxx.me##+js(abort-on-stack-trace, Array.prototype.forEach, initPopunder)
 ||javxxx.me/wp-content/themes/spacex/assets/js/funx.js
@@ -57228,6 +57229,11 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218949
+@@||sendtonews.com/player*/$domain=fortune.com
+@@||mmvideocdn.com/mini-player/$domain=fortune.com
+@@||vms-videos.minutemediaservices.com^$xmlhttprequest,domain=fortune.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218250
 ! so as a workaround a rule below is used
 ! amazon - "sponsored product hidden for bundled items 'buy this bundled with sponsored item'"

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: doOvo+6IP2vAcPx4EmHEpw
-! Diff-Path: ../patches/18/18-s-1764328242-3600.patch
+! Checksum: IZaedxvhVwpRn6w2WEKjRg
+! Diff-Path: ../patches/18/18-s-1764332123-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.70
-! TimeUpdated: 2025-11-28T11:07:07+00:00
+! Version: 2.0.75.71
+! TimeUpdated: 2025-11-28T12:11:48+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1704,6 +1704,7 @@
 !
 ! SECTION: Cookies - General URL
 !
+||api.consentjs.datagrail.io^
 ||bigidcmp.cloud/banner.js
 ||consent.preference-center.com^
 /gd-cookie2.js
@@ -2498,6 +2499,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+timetables.jreast.co.jp###gdprWrapper
 ||aeropolisa.pl/js/cookieConstent.js
 ||aeropolisa.pl/js/cookieConstentManagment.js
 aromatslowa.pl#$##con-mngr-manage-consent { display: none !important; }
@@ -7878,7 +7880,7 @@ samsoe.com#$#body { overflow: visible!important; }
 didriksons.com##div[class^="tracking-consent-"]
 myhome.ge##body > div.cookie_wrap
 mymarket.ge##.cookie-frame
-moskvich.ru,ookusu-la.jp,sikakeyb.com,seniorhome-mado.com,tube8.com,miekinia.pl,redtube.com,youporn.com,aklarsanalmarket.com,autochladek.cz##div[id^="cookie_"]
+arigus.tv,moskvich.ru,ookusu-la.jp,sikakeyb.com,seniorhome-mado.com,tube8.com,miekinia.pl,redtube.com,youporn.com,aklarsanalmarket.com,autochladek.cz##div[id^="cookie_"]
 ||d13kjxnqnhcmn2.cloudfront.net/AfcDesignCentre/js/DC_CookiePolicy.js
 kufar.by###__next > div > footer ~ div[class^="styles_wrapper__"]
 eshop-upepanka.cz##.jpcookiepopup-container
@@ -16782,6 +16784,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218949
+@@||cdn.cookielaw.org/*/otSDKStub.js$domain=fortune.com
+fortune.com#@##onetrust-consent-sdk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218942
 @@||consent.cookiebot.com/uc.js$domain=shure.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218571

@@ -1,9 +1,9 @@
-! Checksum: jZPz/cVNe54+rO6j/UM8TQ
-! Diff-Path: ../patches/2/2-s-1764328224-3600.patch
+! Checksum: kDu1VEBNI3TNm5Z9V+2ApA
+! Diff-Path: ../patches/2/2-s-1764332104-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.28.49
-! TimeUpdated: 2025-11-28T11:06:30+00:00
+! Version: 2.4.28.50
+! TimeUpdated: 2025-11-28T12:11:17+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -37166,7 +37166,7 @@ omnicalculator.com#%#//scriptlet('json-prune', 'runtimeConfig.adShieldEnabled')
 pics-view.com#%#//scriptlet('prevent-addEventListener', 'click', 'link.click')
 nextchessmove.com$$script:contains(head.appendChild.bind)
 nextchessmove.com#%#//scriptlet('remove-node-text', 'script', 'head.appendChild.bind')
-awellstyledlife.com,indianhealthyrecipes.com,stocktwits.com,sallysbakingaddiction.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'html-load.com')
+yahoo.com,awellstyledlife.com,indianhealthyrecipes.com,stocktwits.com,sallysbakingaddiction.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', '/html-load\.com|error-report\.com/')
 quizlet.com#%#//scriptlet('set-constant', 'adshield', 'emptyObj')
 ||dbloader.leboncoin.info^
 leboncoin.fr#%#//scriptlet('abort-current-inline-script', 'btoa', 'HTMLIFrameElement_contentWindow')
@@ -37200,7 +37200,7 @@ thesaurus.net#%#//scriptlet('prevent-setTimeout', 'loader.min.js')
 mlbpark.donga.com,tweaksforgeeks.com#%#//scriptlet('remove-node-text', 'script', 'KCgpPT57bGV0IGU')
 ! Stylesheet is loaded by html-load.com script, so we need to add it manually
 tenasia.hankyung.com#%#//scriptlet('trusted-create-element', 'head', 'link', 'rel="stylesheet" https://hkstatic.hankyung.com/css/rel/tenasia/w/common.css"')
-doviz.com,baseballchannel.jp,programme-tv.net,tz.de,ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e="loader.min.js",t={includes:String.prototype.includes,filter:Array.prototype.filter},l=()=>(new Error).stack,n={construct:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&o[0]&&t.includes.call(o[0],"adshield")&&(o[0]=["(function(){})();"]),Reflect.construct(n,o,r)}};window.Blob=new Proxy(window.Blob,n);const o={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&t.includes.call(r[0],"new Error")&&(r[0]=()=>{}),Reflect.apply(n,o,r)}};window.setTimeout=new Proxy(window.setTimeout,o);const r={apply:(n,o,r)=>{const c=l();return t.includes.call(c,e)&&r[0]&&o?.includes?.("setTimeout")&&(o=t.filter.call(o,(e=>!t.includes.call(e,"setTimeout")))),Reflect.apply(n,o,r)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,r)})();
+yahoo.com,doviz.com,baseballchannel.jp,programme-tv.net,tz.de,ygosu.com,etoday.co.kr,sportalkorea.com,slashdot.org,dogdrip.net,smsonline.cloud,infinityfree.com#%#(()=>{const e={includes:String.prototype.includes,filter:Array.prototype.filter},t=()=>(new Error).stack,l=t=>e.includes.call(t,"loader.min.js")||e.includes.call(t,"andwonderful.com/safe.min.js"),n={construct:(n,o,r)=>{const c=t();return l(c)&&o[0]&&e.includes.call(o[0],"adshield")&&(o[0]=["(function(){})();"]),Reflect.construct(n,o,r)}};window.Blob=new Proxy(window.Blob,n);const o={apply:(n,o,r)=>{const c=t();return l(c)&&r[0]&&e.includes.call(r[0],"new Error")&&(r[0]=()=>{}),Reflect.apply(n,o,r)}};window.setTimeout=new Proxy(window.setTimeout,o);const r={apply:(n,o,r)=>{const c=t();return l(c)&&r[0]&&o?.includes?.("setTimeout")&&(o=e.filter.call(o,(t=>!e.includes.call(t,"setTimeout")))),Reflect.apply(n,o,r)}};window.Array.prototype.filter=new Proxy(window.Array.prototype.filter,r)})();
 ||07c225f3.online/loader.min.js$replace=/;(const .=new Blob\(\[.\])/;return;\$1/,domain=etoday.co.kr
 ! Workaround also for iOS, where we cannot apply url blocking rule
 ! Related to https://github.com/AdguardTeam/FiltersCompiler/issues/226
@@ -37563,6 +37563,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+yahoo.com##.pointer-events-auto:has(> .ad-container:only-child)
 hentaimama.tv##.script_manager_video_master
 ||havenclick.com/www/delivery/*vast$xmlhttprequest,redirect=noopvast-2.0
 javxxx.me#%#//scriptlet('abort-on-stack-trace', 'Array.prototype.forEach', 'initPopunder')
@@ -58353,6 +58354,11 @@ $popup,third-party,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218949
+@@||sendtonews.com/player*/$domain=fortune.com
+@@||mmvideocdn.com/mini-player/$domain=fortune.com
+@@||vms-videos.minutemediaservices.com^$xmlhttprequest,domain=fortune.com
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218250
 ! In EasyList there is rule like "@@||ad.doubleclick.net/ddm/clk/*http$popup" but for some reason it does not fix issue in MV3 extension,
 ! so as a workaround a rule below is used
@@ -87324,6 +87330,7 @@ browsershots.org#@#.advert_area
 ||catholicncesisp.com^
 ||catiuribripent.com^
 ||catsmatglljwx.com^
+||catspele.com^
 ||cattailpectinselected.com^
 ||cattednatalia.help^
 ||cattilysubdual.com^
@@ -91266,6 +91273,7 @@ browsershots.org#@#.advert_area
 ||dwbhepiqyzihi.space^
 ||dwbyzoqzmhk.com^
 ||dwcvhyxusxeun.online^
+||dwealqru.com^
 ||dwelledbanksia.click^
 ||dwetwdstom1020.com^
 ||dwfgdzmjmjrxl.space^
@@ -93511,6 +93519,7 @@ browsershots.org#@#.advert_area
 ||fixittoday.biz^
 ||fixpass.net^
 ||fizgigsrealty.qpon^
+||fjatbrfhe.com^
 ||fjbkqyiczusib.website^
 ||fjeamibbbhxuf.site^
 ||fjfpdjajzzymi.online^
@@ -97028,6 +97037,7 @@ browsershots.org#@#.advert_area
 ||hoothedugre.net^
 ||hoothooshain.net^
 ||hootpreceding.com^
+||hoowhostowoache.net^
 ||hopdream.com^
 ||hopefulbiologicaloverreact.com^
 ||hopefullyapricot.com^
@@ -116383,6 +116393,7 @@ browsershots.org#@#.advert_area
 ||uhegarberetrof.com^
 ||uhfdsplo.com^
 ||uhhdkizbbjmmr.space^
+||uhhhhvyezikfh.space^
 ||uhlomzqpdtduv.space^
 ||uhnrcmlqloxij.site^
 ||uhodsplo.com^
@@ -118174,6 +118185,7 @@ browsershots.org#@#.advert_area
 ||vz2qt7y4fgffbc85x39wkjwtig.cfd^
 ||vzakrwqsbbsro.site^
 ||vzarwfhibeiig.website^
+||vzcumnpxuxtpo.site^
 ||vzdhuliivvqxx.website^
 ||vzeakntvvkc.one^
 ||vzebzbxfctexv.store^
@@ -119863,6 +119875,7 @@ browsershots.org#@#.advert_area
 ||xqqsfeipxeefv.store^
 ||xqsfsvngpzsns.store^
 ||xqtoisaowmys.net^
+||xquzkomqjvslb.online^
 ||xqvenulmbseas.space^
 ||xqwrdegbmdfrv.top^
 ||xqwxnepeckidj.space^
