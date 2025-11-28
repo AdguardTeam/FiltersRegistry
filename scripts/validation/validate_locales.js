@@ -1,5 +1,9 @@
-const path = require('path');
-const compiler = require('adguard-filters-compiler');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { validateLocales } from '@adguard/filters-compiler';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const LOCALES_DIR_PATH = '../../locales';
 
@@ -22,7 +26,7 @@ const REQUIRED_LOCALES = [
 ];
 
 const localesDirPath = path.join(__dirname, LOCALES_DIR_PATH);
-const localesValidation = compiler.validateLocales(localesDirPath, REQUIRED_LOCALES);
+const localesValidation = validateLocales(localesDirPath, REQUIRED_LOCALES);
 
 if (!localesValidation.ok) {
     throw new Error('Invalid locales messages');

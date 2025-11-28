@@ -559,7 +559,7 @@ const CSS_GENERIC_RULES_PATTERNS = [
     '^#\\$#',
 ];
 
-module.exports = {
+export const CUSTOM_PLATFORMS_CONFIG = {
     'WINDOWS': {
         'platform': 'windows',
         'path': 'windows',

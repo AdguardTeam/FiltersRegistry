@@ -1,4 +1,4 @@
-const tldts = require('tldts');
+import { parse } from 'tldts';
 
 /**
  * Helper function that takes an array and returns a new one without any
@@ -42,7 +42,7 @@ function isValidDomain(domain: string): boolean {
         return true;
     }
 
-    const result = tldts.parse(domain);
+    const result = parse(domain);
 
     if (!result?.domain) {
         return false;
@@ -53,7 +53,7 @@ function isValidDomain(domain: string): boolean {
         return false;
     }
 
-    if (ALLOW_TLD.has(result.publicSuffix)) {
+    if (result.publicSuffix && ALLOW_TLD.has(result.publicSuffix)) {
         // Do not check TLDs that are in use, but we cannot check them for
         // existence.
         return false;

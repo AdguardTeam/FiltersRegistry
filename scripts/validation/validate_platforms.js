@@ -1,9 +1,13 @@
-const path = require('path');
-const fs = require('fs');
-const compiler = require('adguard-filters-compiler');
-const { PATCH_EXTENSION } = require('@adguard/diff-builder');
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { validateJSONSchema } from '@adguard/filters-compiler';
+import { PATCH_EXTENSION } from '@adguard/diff-builder';
 
-const { FOLDER_WITH_NEW_FILTERS } = require('../build/constants');
+import { FOLDER_WITH_NEW_FILTERS } from '../build/constants.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const FILTERS_REQUIRED_AMOUNT = 80;
 
@@ -16,7 +20,7 @@ if (!platforms) {
 
 const platformsPath = path.join(__dirname, platforms);
 
-const validationResult = compiler.validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
+const validationResult = validateJSONSchema(platformsPath, FILTERS_REQUIRED_AMOUNT);
 if (!validationResult) {
     throw new Error('Invalid filters json');
 }

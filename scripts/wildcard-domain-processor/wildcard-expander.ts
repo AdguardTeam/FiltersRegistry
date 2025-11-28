@@ -1,24 +1,25 @@
 /* eslint-disable no-restricted-syntax,no-await-in-loop */
 import path from 'path';
 
-import agtree, {
+import {
     AdblockSyntax,
     AnyRule,
     CosmeticRule,
     CosmeticRuleSeparator,
-    DomainListParser,
     EmptyRule,
-    FilterListParser,
     NetworkRule,
     RuleCategory,
-    RuleParser,
 } from '@adguard/agtree';
+import { PIPE_MODIFIER_SEPARATOR, NEGATION_MARKER } from '@adguard/agtree/utils';
+import { FilterListGenerator, RuleGenerator } from '@adguard/agtree/generator';
+import { FilterListParser, DomainListParser, defaultParserOptions } from '@adguard/agtree/parser';
+import { findFilterFiles, readFile, writeFile } from './file-utils.js';
+import { type AliveWildcardDomains } from './wildcard-domains-updater.js';
+import { DOMAIN_MODIFIERS } from './domain-extractor.js';
+import { utils } from './utils.js';
+import { updateContentChecksum } from '../checksum/index.js';
 
-import { findFilterFiles, readFile, writeFile } from './file-utils';
-import { type AliveWildcardDomains } from './wildcard-domains-updater';
-import { DOMAIN_MODIFIERS } from './domain-extractor';
-import { utils } from './utils';
-import { updateContentChecksum } from '../checksum';
+const EMPTY = '';
 
 const EMPTY_RULE: EmptyRule = {
     syntax: AdblockSyntax.Adg,
@@ -48,14 +49,19 @@ function expandWildcardsInNetworkRules(
     let hadWildcard = false;
 
     for (const modifier of modifiers) {
-        if (!DOMAIN_MODIFIERS.includes(modifier.modifier.value) || !modifier.value) {
+        if (!DOMAIN_MODIFIERS.includes(modifier.name.value) || !modifier.value) {
             newModifiers.push(modifier);
             continue;
         }
 
         let domainList;
         try {
-            domainList = DomainListParser.parse(modifier.value.value, agtree.PIPE_MODIFIER_SEPARATOR);
+            domainList = DomainListParser.parse(
+                modifier.value.value,
+                defaultParserOptions,
+                modifier.start,
+                PIPE_MODIFIER_SEPARATOR,
+            );
         } catch (e) {
             // eslint-disable-next-line no-console
             console.log(`Can not parse domains in the rule: ${ast.raws?.text}, because of error ${e}`);
@@ -116,7 +122,10 @@ function expandWildcardsInNetworkRules(
         };
 
         domainList.children = newDomains;
-        newDomainsModifier.value!.value = DomainListParser.generate(domainList);
+
+        newDomainsModifier.value!.value = domainList.children
+            .map((item) => `${item.exception ? NEGATION_MARKER : EMPTY}${item.value}`)
+            .join(PIPE_MODIFIER_SEPARATOR);
 
         newModifiers.push(newDomainsModifier);
     }
@@ -261,7 +270,7 @@ export function expandWildcardDomainsInFilter(filterContent: string, wildcardDom
         if (newAst) {
             if (newAst.raws) {
                 // Make sure that the new rule will be re-built.
-                newAst.raws.text = RuleParser.generate(newAst);
+                newAst.raws.text = RuleGenerator.generate(newAst);
 
                 listAst.children[i] = newAst;
             } else if (newAst.category === RuleCategory.Empty) {
@@ -270,7 +279,7 @@ export function expandWildcardDomainsInFilter(filterContent: string, wildcardDom
         }
     }
 
-    return agtree.FilterListParser.generate(listAst, true);
+    return FilterListGenerator.generate(listAst, true);
 }
 
 /**

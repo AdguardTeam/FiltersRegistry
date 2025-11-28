@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const simpleGit = require('simple-git');
+import simpleGit from 'simple-git';
 
 let commitsToKeep = 10000;
 

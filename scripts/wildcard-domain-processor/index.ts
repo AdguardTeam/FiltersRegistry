@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import { Command } from 'commander';
 import path from 'path';
-
-import { updateWildcardDomains } from './wildcard-domains-updater';
-import { expandWildcardDomains } from './wildcard-expander';
+import { fileURLToPath } from 'url';
+import { updateWildcardDomains } from './wildcard-domains-updater.js';
+import { expandWildcardDomains } from './wildcard-expander.js';
 
 const program = new Command();
 
@@ -33,8 +33,10 @@ program
         }
     });
 
+const __filename = fileURLToPath(import.meta.url);
+
 // Only run the command-line interface if the script is executed directly
-if (require.main === module) {
+if (process.argv[1] === __filename) {
     program.parse(process.argv);
 }
 

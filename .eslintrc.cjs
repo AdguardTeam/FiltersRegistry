@@ -11,6 +11,19 @@ module.exports = {
     },
     'rules': {
         'import/no-extraneous-dependencies': 0,
+        'import/extensions': 'off',
+        '@typescript-eslint/naming-convention': [
+            'error',
+            {
+                'selector': 'variable',
+                'format': null,
+                'filter': {
+                    'regex': '^(__filename|__dirname)$',
+                    'match': true
+                }
+            }
+        ],
+        '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
         'max-len': [
             'error',
             {

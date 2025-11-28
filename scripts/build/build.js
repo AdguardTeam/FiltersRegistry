@@ -1,13 +1,16 @@
-const fs = require('fs');
-const path = require('path');
-const compiler = require('adguard-filters-compiler');
-
-const customPlatformsConfig = require('./custom_platforms');
-const { formatDate } = require('../utils/strings');
-const {
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { compile } from '@adguard/filters-compiler';
+import { CUSTOM_PLATFORMS_CONFIG } from './custom_platforms.js';
+import { formatDate } from '../utils/strings.js';
+import {
     FOLDER_WITH_NEW_FILTERS,
     FOLDER_WITH_OLD_FILTERS,
-} = require('./constants');
+} from './constants.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Parse command-cli parameters -i|--include and -s|--skip
@@ -72,14 +75,14 @@ const buildFilters = async () => {
         await fs.promises.cp(platformsPath, copyPlatformsPath, { recursive: true });
     }
 
-    await compiler.compile(
+    await compile(
         filtersDir,
         logPath,
         reportPath,
         platformsPath,
         includedFilterIDs,
         excludedFilterIDs,
-        customPlatformsConfig,
+        CUSTOM_PLATFORMS_CONFIG,
     );
 
     // For the very first run, we should copy the built platforms into
