@@ -1,9 +1,9 @@
-! Checksum: gQCB+tIDwan59WAvyalL8g
-! Diff-Path: ../patches/13/13-s-1764347322-3600.patch
+! Checksum: gpG3Dwz+U7HLg7Fkx9vOeg
+! Diff-Path: ../patches/13/13-s-1764349784-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.60.88
-! TimeUpdated: 2025-11-28T16:25:12+00:00
+! Version: 2.0.60.89
+! TimeUpdated: 2025-11-28T17:06:35+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5717,6 +5717,12 @@ oyunu.com.tr#$##iki.oynama { display: block !important; }
 ||sahatv*.top/assets/img/*.gif
 [$domain=/sahatv\d+\.top/]##header > a + ul
 !
+! trgooltv*.top - frequently changed domains
+||trgooltv*.top/assets/img/*.gif
+[$domain=/trgooltv\d+\.top/]##div[style="margin: 10px; text-align: center;"]
+[$domain=/trgooltv\d+\.top/]##div[style="position:fixed; bottom:0px; left:0; width:100%; text-align:center; z-index:999999;"]
+[$domain=/trgooltv\d+\.top/]##div[class^="reklam-"]
+!
 ! netsportv*.top - frequently changed domains
 ||netsportv*.top/assets/img/*.gif
 [$domain=/netsportv\d+\.top/]##div[style="margin: 10px; text-align: center;"]
@@ -6464,6 +6470,7 @@ realfilmizle6.com,realfilmizle7.com,realfilmizle8.com,realfilmizle9.com,realfilm
 [$domain=/inattvcom\d+\.xyz/]#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 !
 ! trgoals*.xyz - frequently changed domains
+! https://trgoalsgiris.xyz/
 [$path=/^\/$/]itemci.com#%#//scriptlet('trusted-click-element', 'div[style^="background"][style*="https://cdn.itemci.com/assets/images/site_login_image.jpg"] > button.close', '', '3000')
 ! trgoals*.xyz - frequently changed domains
 ! aglint-disable invalid-modifiers
