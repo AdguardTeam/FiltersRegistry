@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: QvwH/0Eb+VvEkBtd0BOsgg
-! Diff-Path: ../patches/17/17-s-1764328242-3600.patch
+! Checksum: rQrdJ1u77l1L1dP1bC8SFQ
+! Diff-Path: ../patches/17/17-s-1764347303-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.43
-! TimeUpdated: 2025-11-28T11:07:06+00:00
+! Version: 2.0.12.44
+! TimeUpdated: 2025-11-28T16:25:21+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -669,12 +669,12 @@ $removeparam=s-id,domain=item.rakuten.co.jp|www.rakuten.co.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209588
 ||coloso.co.kr^$removeparam=fb_asc
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209358
-||alia-cloudflare.com/launcher/$removeparam=url,xmlhttprequest
-||alia-cloudflare.com/launcher/$removeparam=is_mobile,xmlhttprequest
-||alia-cloudflare.com/launcher/$removeparam=timezone,xmlhttprequest
-||alia-cloudflare.com/launcher/$removeparam=ip_address,xmlhttprequest
-||alia-cloudflare.com/launcher/$removeparam=user_agent,xmlhttprequest
-||alia-cloudflare.com/launcher/$removeparam=new_session,xmlhttprequest
+||alia-cloudflare.com/launcher/$removeparam=url,xhr
+||alia-cloudflare.com/launcher/$removeparam=is_mobile,xhr
+||alia-cloudflare.com/launcher/$removeparam=timezone,xhr
+||alia-cloudflare.com/launcher/$removeparam=ip_address,xhr
+||alia-cloudflare.com/launcher/$removeparam=user_agent,xhr
+||alia-cloudflare.com/launcher/$removeparam=new_session,xhr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209120
 ||operanewsapp.com^$removeparam=from
 ||operanewsapp.com^$removeparam=request_id
@@ -1077,9 +1077,9 @@ $removeparam=phfp,domain=protonvpn.com|proton.me
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193113
 $removeparam=cid,domain=nhk.jp|nhk.or.jp
 ! curalate.com
-||edge.curalate.com/v1/media/$xmlhttprequest,removeparam=appId
-||edge.curalate.com/v1/media/$xmlhttprequest,removeparam=fpcuid
-||edge.curalate.com/v1/media/$xmlhttprequest,removeparam=rid
+||edge.curalate.com/v1/media/$xhr,removeparam=appId
+||edge.curalate.com/v1/media/$xhr,removeparam=fpcuid
+||edge.curalate.com/v1/media/$xhr,removeparam=rid
 ||edge.curalate.com/v1/img/$image,removeparam=spatialTags
 ! https://github.com/AdguardTeam/AdGuardSDNSFilter/pull/1785
 ||action.metaffiliation.com$removeparam=argsite
@@ -1874,7 +1874,7 @@ mailchimp.com$removeparam=amp%3Bafl
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6213496
 ||jetbrains.com^$removeparam=from
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154057
-||middleware.p7s1.io/galileo/v1/tracking?device=*&country=*&path=$removeparam=/^(device|country|path)=/,xmlhttprequest
+||middleware.p7s1.io/galileo/v1/tracking?device=*&country=*&path=$removeparam=/^(device|country|path)=/,xhr
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6185764
 ||theathletic.com^$removeparam=login_source
 ||theathletic.com^$removeparam=ref_page
@@ -2039,7 +2039,7 @@ $removeparam=ici,domain=shein.co.uk|shein.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146268
 ||marketwatch.com^$removeparam=mod
 ! https://github.com/AdguardTeam/AdguardFilters/issues/145690
-||podbean.com/player/$xmlhttprequest,removeparam=referrer
+||podbean.com/player/$xhr,removeparam=referrer
 ||podbean.com/pb/$media,removeparam=pbss
 ! https://d.odsyms15.com/click?aid=TRXQogYpQwUfabkFYwBd1N&mimp=BKQqfygO3fT5NfH4YOZDAw&session=86516a42-961b-4085-aa1b-f164b60f019a&uid.p=&ext.referrer=www.google.com&article_id=12787190441
 ||d.odsyms15.com/click$removeparam=article_id
@@ -2129,7 +2129,7 @@ $removeparam=ici,domain=shein.co.uk|shein.com
 ! https://voicy.jp/channel/2964/451627?share.ref=https%3A%2F%2Ft.co%2F
 ||voicy.jp^$removeparam=share.ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/141768
-||chaturbate.com^$removeparam=/tour|campaign/,~third-party
+||chaturbate.com^$removeparam=/tour|campaign/,~3p
 ! https://github.com/AdguardTeam/AdguardFilters/issues/140672
 ||awaliwa.com^$removeparam=lg
 ||awaliwa.com^$removeparam=s
@@ -2255,12 +2255,12 @@ $removeparam=stm_source,domain=shopee.ph|shopee.co.th|shopee.co.id
 ||adguard.$removeparam=clid
 $removeparam=clid,domain=adguard-vpn.*|adguardvpn-help.*
 ! Cognativex
-||campaigns-serving.cognativex.com^$xmlhttprequest,removeparam=history_postids
-||campaigns-serving.cognativex.com^$xmlhttprequest,removeparam=device_code
-||campaigns-serving.cognativex.com^$xmlhttprequest,removeparam=exc_ads
-||campaigns-serving.cognativex.com^$xmlhttprequest,removeparam=history_adids
+||campaigns-serving.cognativex.com^$xhr,removeparam=history_postids
+||campaigns-serving.cognativex.com^$xhr,removeparam=device_code
+||campaigns-serving.cognativex.com^$xhr,removeparam=exc_ads
+||campaigns-serving.cognativex.com^$xhr,removeparam=history_adids
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129287
-||dzen.ru/api/*/launcher/stats/$image,xmlhttprequest,removeparam
+||dzen.ru/api/*/launcher/stats/$image,xhr,removeparam
 ||dzen.ru^$removeparam=from
 ||dzen.ru^$removeparam=cl4url
 ||dzen.ru^$removeparam=tst
@@ -2489,7 +2489,7 @@ $removeparam=ref,domain=jin115.com|bipblog.com|animember.net|sbbit.jp|blog.lived
 ||netkeiba.com^$removeparam=rf
 ! Firefox extensions intall/update tracking
 ||services.addons.mozilla.org^$removeparam=telemetry-client-id
-||versioncheck.addons.mozilla.org^$xmlhttprequest,removeparam=appID
+||versioncheck.addons.mozilla.org^$xhr,removeparam=appID
 ! Firefox download installer tracking
 ! https://www.comss.ru/page.php?id=10300
 ||download.mozilla.org^$removeparam=attribution_sig
@@ -2648,7 +2648,7 @@ $removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||adj.st^$removeparam=adj_install_callback
 ||adj.st^$removeparam=adj_event_callback_dn2j7g_5mdnim
 ! Alexa extension tracking
-||data.alexa.com/data/$xmlhttprequest,removeparam=/cdt|ref/
+||data.alexa.com/data/$xhr,removeparam=/cdt|ref/
 ! https://github.com/AdguardTeam/AdguardFilters/pull/118824
 ||comodo.com^$removeparam=key5sk1
 ! https://forum.adguard.com/index.php?threads/46096/
@@ -3097,12 +3097,12 @@ $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
 ||mp.weixin.qq.com^$removeparam=from
 ||mp.weixin.qq.com^$removeparam=aid
 ! Prevent tracking when request is unblocked
-||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=slot
-||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=sessionId
-||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=anId
-||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=wr
-||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=sr
-||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=url
+||pixel.adsafeprotected.com/services/pub?$xhr,removeparam=slot
+||pixel.adsafeprotected.com/services/pub?$xhr,removeparam=sessionId
+||pixel.adsafeprotected.com/services/pub?$xhr,removeparam=anId
+||pixel.adsafeprotected.com/services/pub?$xhr,removeparam=wr
+||pixel.adsafeprotected.com/services/pub?$xhr,removeparam=sr
+||pixel.adsafeprotected.com/services/pub?$xhr,removeparam=url
 ! Ads tracking
 ||cam4.com^$removeparam=act
 ||cam4.com^$removeparam=suid
@@ -3312,10 +3312,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 @@||a8cv.amiami.jp/click/$removeparam=a8
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201922
 !+ PLATFORM(ext_ublock)
-@@||rpc.meituan.com/api/foodorder$removeparam,xmlhttprequest,domain=awp.meituan.com
+@@||rpc.meituan.com/api/foodorder$removeparam,xhr,domain=awp.meituan.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201424
-@@||apimeishi.meituan.com/meishi/poi$removeparam=utm_medium,xmlhttprequest,domain=meishi.meituan.com
-@@||portal-portm.meituan.com/horn$removeparam=utm_medium,xmlhttprequest,domain=meishi.meituan.com
+@@||apimeishi.meituan.com/meishi/poi$removeparam=utm_medium,xhr,domain=meishi.meituan.com
+@@||portal-portm.meituan.com/horn$removeparam=utm_medium,xhr,domain=meishi.meituan.com
 ! https://github.com/uBlockOrigin/uAssets/issues/27751
 @@||tix.axs.com^$removeparam=irclickid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199306#issuecomment-2678167845
@@ -3323,7 +3323,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 ! TODO: remove when this issue is fixed in MV2 extension
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200080
 !+ PLATFORM(ext_ublock)
-@@||m.maoyan.com/api/mtrade/mmcs/cinema/v2/select/movie/cinemas.json$removeparam,xmlhttprequest
+@@||m.maoyan.com/api/mtrade/mmcs/cinema/v2/select/movie/cinemas.json$removeparam,xhr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/198365
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199110
 ! TODO: remove when this issue is fixed - https://github.com/AdguardTeam/AdguardBrowserExtension/issues/3076
@@ -3360,8 +3360,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 ! https://github.com/AdguardTeam/AdguardFilters/issues/166698
 @@||cleviationly.com/adServe/aff?cmpid=*mydealz*&dlink=$removeparam=cmpid
 ! https://github.com/uBlockOrigin/uAssets/issues/20708
-@@||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=slot,domain=reuters.com
-@@||pixel.adsafeprotected.com/services/pub?$xmlhttprequest,removeparam=anId,domain=reuters.com
+@@||pixel.adsafeprotected.com/services/pub?$xhr,removeparam=slot,domain=reuters.com
+@@||pixel.adsafeprotected.com/services/pub?$xhr,removeparam=anId,domain=reuters.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163365
 @@||mootoon.co.kr^$removeparam=cuid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/163015
@@ -3440,7 +3440,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 ! https://github.com/AdguardTeam/AdguardFilters/issues/96900
 @@||plex.tv/api/v*/users/*?utm_source=$removeparam=utm_source,domain=watch.plex.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/96746
-@@/embed/comments^$removeparam,~third-party,domain=clickhole.com|lifehacker.com|splinternews.com|avclub.com|deadspin.com|gizmodo.com|jalopnik.com|jezebel.com|kotaku.com|qz.com|theinventory.com|theonion.com|theroot.com|thetakeout.com
+@@/embed/comments^$removeparam,~3p,domain=clickhole.com|lifehacker.com|splinternews.com|avclub.com|deadspin.com|gizmodo.com|jalopnik.com|jezebel.com|kotaku.com|qz.com|theinventory.com|theonion.com|theroot.com|thetakeout.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/89618#issuecomment-897100189
 @@||urldefense.com^$removeparam
 ! https://github.com/AdguardTeam/AdguardFilters/issues/86251

@@ -1,9 +1,9 @@
-! Checksum: sM9fH4wfTcsKPsBl6kn9Dg
-! Diff-Path: ../patches/4_optimized/4_optimized-s-1764332129-3600.patch
+! Checksum: QTuxSUu3Qyop3Mt7EAju1A
+! Diff-Path: ../patches/4_optimized/4_optimized-s-1764347311-3600.patch
 ! Title: AdGuard Social Media filter (Optimized)
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
-! Version: 2.1.22.31
-! TimeUpdated: 2025-11-28T12:11:24+00:00
+! Version: 2.1.22.32
+! TimeUpdated: 2025-11-28T16:25:03+00:00
 ! Expires: 5 days (update frequency)
 ||share-count.donreach.com^$third-party
 ||button-follow.zalo.me^$third-party
@@ -293,6 +293,7 @@ drive2.ru#$#.c-share { position: absolute!important; left: -3000px!important; }
 liga.net#$#.social-likes { position: absolute!important; left: -3000px!important; }
 bunshun.jp#$#.horizontal-sns-bar { position: absolute!important; left: -3000px!important; }
 alohatube.com#$##under-embed > .shoring > li { visibility: hidden!important; }
+psdfreebies.com#$#.simplebtn { display: block!important; }
 solidsoftwaretools.com#$#div[class][data-locker-id] { display: block!important; }
 onlinemschool.com#$#.share_buttons { position: absolute!important; left: -3000px!important; }
 omgubuntu.co.uk#$#body { overflow: visible!important; }
@@ -636,7 +637,7 @@ ilfattoquotidiano.it##.fqm-share-end
 ilfattoquotidiano.it##.ifq-news-meta__share
 dogrulukpayi.com##.sticky-share-menu
 gravidia.jp##.sw-SnsShare
-animalpolitico.com##div.relative > button.relative:has(> span:contains(Compartir))
+animalpolitico.com#?#div.relative > button.relative:has(> span:contains(Compartir))
 elfinanciero.com.mx##.b-share-bar
 eltiempo.com##.c-articulo__compartir-media__elemento--compartir
 20minutes.fr###mbrs-social-share-container
@@ -8002,7 +8003,7 @@ www.kinopoisk.ru##div[class*="-share-buttons"]
 www.kinopoisk.ru##.ya-share2
 auto.ru#?#.Review__footer-col:has(> div.ReviewShare)
 rambler.ru##div[data-blocks="content_info"] + div[class^="container-"]
-rambler.ru#%#//scriptlet('remove-in-shadow-dom','div[data-blocks="content_info"] + div[class^="container-"]')
+rambler.ru#%#//scriptlet('remove-in-shadow-dom', 'div[data-blocks="content_info"] + div[class^="container-"]')
 !+ NOT_OPTIMIZED
 vogue.co.jp,vogue.*##div[class^="SplitScreenContentHeaderNativeShareButton-"]
 !+ NOT_OPTIMIZED
@@ -8105,7 +8106,7 @@ thecode.media##.post-social-links
 luzernerzeitung.ch##.social > li
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 rpgbot.net##.shareit
-!+ NOT_PLATFORM(windows,mac,android)
+!+ NOT_PLATFORM(windows, mac, android)
 kinopoisk.ru##.block_social
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 bikeradar.com##.share-buttons
@@ -8113,7 +8114,7 @@ bikeradar.com##.share-buttons
 forbes.com##.social-icon
 !+ PLATFORM(ext_ff, ext_opera, ios, ext_android_cb, ext_ublock)
 gametimers.it,blogthetech.com##.td-post-sharing
-!+ NOT_PLATFORM(windows,mac,android)
+!+ NOT_PLATFORM(windows, mac, android)
 gazeta.ru##.article-share-name
 !+ PLATFORM(ios, android, ext_android_cb)
 barmer.de##.sidebar > .siteactions
@@ -9550,6 +9551,7 @@ okino.ua#$#body { overflow: visible!important; }
 dooralei.ru#$#body { overflow: visible!important; }
 twgreatdaily.com#$#.body.modal-open { overflow: visible!important; }
 catalogmineralov.ru#$#body { overflow: visible!important; }
+bomb01.com#$##modal { display: none!important; }
 1track.ru#$#body { overflow: visible!important; }
 notebooklm.google.com#@#.share-button
 drive.google.*#@#div[aria-label="Share"]

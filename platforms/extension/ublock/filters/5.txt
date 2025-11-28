@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: IIjF1xgPGNK+oZxjZd9nfg
-! Diff-Path: ../patches/5/5-s-1763629921-3600.patch
+! Checksum: 7pm9iidevPkFMeg3oMna3w
+! Diff-Path: ../patches/5/5-s-1764347307-3600.patch
 ! Title: AdGuard Experimental filter
 ! Description: Filter designed to test certain hazardous filtering rules before they are added to the basic filters.
-! Version: 2.0.1.86
-! TimeUpdated: 2025-11-20T09:07:55+00:00
+! Version: 2.0.1.87
+! TimeUpdated: 2025-11-28T16:25:04+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -83,9 +83,9 @@
 ! !#if (!adguard_ext_firefox)
 ! !#endif
 ! main youtube page - changing view for the first row of elements
-www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) > #contents:first-child { max-width: unset !important; }
-www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) ytd-rich-grid-media { max-width: unset !important; }
-www.youtube.com#$##contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) { --ytd-rich-grid-items-per-row: 1 !important; }
+www.youtube.com###contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) > #contents:first-child:style(max-width: unset !important;)
+www.youtube.com###contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]) ytd-rich-grid-media:style(max-width: unset !important;)
+www.youtube.com###contents ytd-rich-grid-row:has(> div[id="contents"] > ytd-rich-item-renderer[style="display: none !important;"]):style(--ytd-rich-grid-items-per-row: 1 !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/96262
 developer.android.com,adssettings.google.com##sc-survey-survey-manager
 !
@@ -175,7 +175,7 @@ developer.android.com,adssettings.google.com##sc-survey-survey-manager
 ! Rules which are restricted to one or more domains.
 ! This section contain any type of rule grouped by domain.
 !
-mail.yandex.ru#?#.modal:has(> div[data-lego] div[class^="mail-SubscriptionsPopup"])
+mail.yandex.ru##.modal:has(> div[data-lego] div[class^="mail-SubscriptionsPopup"])
 !
 ! Allowlist
 !
@@ -192,8 +192,8 @@ mail.yandex.ru#?#.modal:has(> div[data-lego] div[class^="mail-SubscriptionsPopup
 /videojs8/nuevo.min.js
 /videojs/plugins/vastpro.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/142875
-imdb.com#?#div[data-testid="promptable"]:has(.ipc-rating-display-with-poster__image)
-imdb.com#$?#body:has(div[data-testid="promptable"] .ipc-rating-display-with-poster__image) { overflow: auto !important; }
+imdb.com##div[data-testid="promptable"]:has(.ipc-rating-display-with-poster__image)
+imdb.com##body:has(div[data-testid="promptable"] .ipc-rating-display-with-poster__image):style(overflow: auto !important;)
 !
 ! Special rules for AdGuard websites' test pages. The only purpose of these
 ! rules is to make test pages work so that users could verify that AdGuard

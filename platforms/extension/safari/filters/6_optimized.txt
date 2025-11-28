@@ -1,9 +1,9 @@
-! Checksum: cYJqqJEh1XgUJXeBRnYw1A
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1764297692-3600.patch
+! Checksum: 5+3GsPDFgiywu1fu4wfXJg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1764347301-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.50.43
-! TimeUpdated: 2025-11-27T17:06:36+00:00
+! Version: 2.0.50.44
+! TimeUpdated: 2025-11-28T16:25:06+00:00
 ! Expires: 5 days (update frequency)
 ||tizofvtuqo.com^
 ||ads.goldbach-germany.de^
@@ -473,6 +473,7 @@ allround-pc.com#@#a[rel="noopener external"] > img[src^="/"]
 wiesbadener-kurier.de#%#//scriptlet('abort-on-property-read', 'Object.prototype.loadAdBlockerLayer')
 duden.de#$##numero-antiadblocker { display: none !important; }
 duden.de#$#body { overflow: auto !important; }
+stadt-bremerhaven.de#$#.fc-ab-root { display: none !important; }
 stadt-bremerhaven.de#$#body { overflow: auto !important; }
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com^$xmlhttprequest,domain=dtvd.net
@@ -718,15 +719,28 @@ maniac.de#$#body.td-ad-background-link { background-image: none!important; }
 maniac.de#$#body.td-ad-background-link #td-outer-wrap { cursor: auto!important; }
 aktiencheck.de#$#body > #main { top: 0px!important; }
 forum.digitalfernsehen.de#$#.messageContent blockquote > div[id][style*="width:300px;height:250px"] { position: absolute!important; left: -3000px!important; }
+wn.de#$#body > div#top-position { margin-top: 0!important; min-height:50px!important; }
 dasoertliche.de#$#body > #oetbwrap[style="position:absolute;top:98px;"] { top: 0!important; }
 woxikon.de#$#.ads-wrapper { position: absolute!important; left: -3000px!important; }
-freenet.de#$##frnBanner { height: 25px!important; min-height: 0px !important;}
+freenet.de#$##frnBanner { height: 25px!important; min-height: 0px !important; }
+katholisches.info#$#.pf-content > span[style*="color:"][style*="important"] { position: absolute!important; left: -4000px!important; }
+t-online.de#$##Tovscr-inner { background:none!important; }
+nordbayerischer-kurier.de#$#.topAd { padding-top: 0!important; }
 achgut.com#$#.column > .banner { position: absolute!important; left: -3000px!important; }
 bild.de#$#.tea-rectangle { position: absolute!important; left: -3000px!important; }
+wetter.de#$#body #adcontrol-site-columns.adcontrol-active { top:0px; }
+fr.de#$#.abo_link { visibility:hidden!important;height: 0!important; padding:0!important; }
 tvmovie.de#$#header > nav[role="navigation"] { margin-top: auto!important; }
+journal-frankfurt.de#$#body { margin-top: 0!important; }
+journal-frankfurt.de#$#.supersize { top: 0!important; }
+journal-frankfurt.de#$#.top-suche-komplett { margin-top: 0!important; }
+rtl.de#$#div[class^="rtlde-medium-rectangle"] { height: 0!important; margin: 0!important; padding: 0!important; }
 hifi-forum.de#$##content-outer { margin: auto auto 0!important; }
 news.de#$#.wrapper { padding: 0px 15px!important; }
+heise.de#$##container_content { top: 0!important; }
 browsergames.de#$#body { background-image: none!important; }
+cleverdialer.de#$#.header-spam { min-height: 0!important; }
+tagesspiegel.de#$#.ts-article-body::before { height: 0!important; }
 giga.de#$#.adsbygoogle { position: absolute!important; left: -3000px!important; }
 winfuture-forum.de,winfuture.de#$##container { margin-top: auto!important; }
 freenet.de#$##frnMain { min-height: 0!important; }
@@ -2576,7 +2590,7 @@ plastverarbeiter.de,neue-verpackung.de#@##content_ad_1
 plastverarbeiter.de,neue-verpackung.de#@##content_ad_2
 freenet.de#@##frnBanner
 @@||static.trbo.com/img/$domain=o2online.de
-berliner-zeitung.de#@?#.m-article-teaser:-abp-has(div:-abp-contains(Anzeige))
+berliner-zeitung.de#@?#.m-article-teaser:has(div:contains(Anzeige))
 mobile.de#@#[data-ad-id]
 @@||static.cgames.de/gs_cb/assets/core/js/libs/adblockDetection.min.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=mein-schoener-garten.de
@@ -2622,7 +2636,7 @@ urlaubspartner.net#@##werbung
 @@||cdn.jsdelivr.net/combine/npm/video.js*/dist/video-js.min.css*/videojs-contrib-ads*/dist/videojs.ads.min.css$domain=player.motorsport-magazin.com
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=player.motorsport-magazin.com
-saechsische.de#@?#article,div:-abp-has( > div > .article-section--nad > span:-abp-contains(Anzeige))
+saechsische.de#@?#article,div:has( > div > .article-section--nad > span:contains(Anzeige))
 hochzeitsportal24.de#@##bannerwerbung
 druckerchannel.de#@##DCGA_CONTAINER
 @@||googletagservices.com/tag/js/gpt.js$domain=cinemaxx.de
@@ -2635,10 +2649,10 @@ druckerchannel.de#@##DCGA_CONTAINER
 @@||a.bf-ad.net/adengine/fff/adengine.js$domain=fitforfun.de
 cash.ch#@#.ad-enabled
 chip.de#@%#(function(o){function a(a){return{get:function(){return a},set:b}}function b(){}function c(){throw"Adguard: stopped a script execution.";}var d={},e=a(function(a){a(!1)}),f={},g=EventTarget.prototype.addEventListener;o(d,{spid_control_callback:a(b),content_control_callback:a(b),vid_control_callback:a(b)});o(f,{config:a(d),_setSpKey:{get:c,set:c},checkState:e,isAdBlocking:e,getSafeUri:a(function(a){return a}),pageChange:a(b),setupSmartBeacons:a(b)});Object.defineProperty(window,"_sp_",a(f));EventTarget.prototype.addEventListener=function(a){"sp.blocking"!=a&&"sp.not_blocking"!=a&&g.apply(this,arguments)}})(Object.defineProperties);
-saechsische.de#@?#article,div:-abp-has( > .article-fill__section > span:-abp-contains(Anzeige))
+saechsische.de#@?#article,div:has( > .article-fill__section > span:contains(Anzeige))
 turn-on.de#@#.noadblock
 @@||bilder-a.akamaihd.net/ip/js/ipdvdc/blockadblock.min.js$domain=rtl.de
-saechsische.de#@?#article,div:-abp-has(> .landingpage > span:-abp-contains(Anzeige))
+saechsische.de#@?#article,div:has(> .landingpage > span:contains(Anzeige))
 krone.at#@#.ad-container
 buecher.de#@#.top-banners
 yello.de#@#.advertorial
@@ -4996,44 +5010,115 @@ obi.*##explore-recommendation-v1:has([data-recommendations-title-short="Gesponse
 mein-mmo.de##li.article:has([data-type="sponsored"])
 prad.de##li:has(a[class*="_klickkampagne_"])
 baur.de##li:has(a[href^="https://b.fr3.eu.criteo.com/rm?"])
+radiowaf.de#?#.csc-frame.csc-frame-default:contains(Anzeige)
 mein-mmo.de##section.post:has([data-type="sponsored"])
 breuninger.com##suchen-produkt:has(.suchen-produkt--gesponsert)
 finanznachrichten.de##tr:has(span.sprite.h-w-c)
-stol.it#?##ContainerFull:-abp-has(a:-abp-contains(Anzeige))
-apfeltalk.de#?#div.wpb_text_column:-abp-contains(Werbung)
-avguide.ch#?#.avgrid_1_of_1.viewlet-bottom:-abp-has(h2:-abp-contains(Advertorials))
-baur.de#?#span:-abp-contains(Gesponserte Artikel)
-computerbild.de#?#article.gridArea__teaserM:-abp-has(div.teaserBlock__label:-abp-contains(Anzeige))
-finanzfluss.de#?#.component:-abp-has(div.disclaimer-text:-abp-contains(Anzeige))
-focus.de#?#article[id^="teaser-"][data-placement]:-abp-contains(Anzeige)
-gamestar.de#?#.content-item-medium:-abp-has(data:-abp-contains(Anzeige))
-gamestar.de#?#.content-item-small:-abp-has(h3:-abp-contains(Anzeige))
-gamestar.de#?#.contentnewsitem-box .box-reload .news-list:-abp-has(span.media-heading:-abp-contains([Anzeige]))
-gamestar.de#?#.contentnewsitem-box .box-reload > div:-abp-has(.news-list span.media-heading:-abp-contains([Anzeige])) + hr
-handelszeitung.ch#?#.teaser-m-default:-abp-contains(Publireportage)
-hardwareluxx.de#?#.bg-gray-light:-abp-has(div.text-right:-abp-contains(Werbung))
-knuspr.de#?#div[data-test="whisperer-product-wrapper"]:-abp-contains(Gesponsert)
-koeln.de#?#.gb-container:-abp-contains(Anzeige)
-kurier.at#?#.gridContainer:has-text(Sponsored Content)
-mediamarkt.at,mediamarkt.de,saturn.de#?#li:-abp-has(div[data-test="mms-product-card"]:-abp-has(span:-abp-contains(Gesponsert)))
-mediamarkt.de#?#[data-test="mms-base-teaser"]:-abp-contains(Gesponsert)
-mediamarkt.de#?#[data-test="mms-search-flagship-sba"]:-abp-contains(Gesponsert)
-mediamarkt.de#?#[data-test="mms-search-showcase"] + div:-abp-contains(Gesponsert)
-mmnews.de#?#.sp-module:-abp-has(span:-abp-contains(Kleinanzeigen))
-mobile.de#?#[data-testid="home-brand-portal-section-container"]:-abp-contains(Gesponsert)
-notebookcheck.com#?#.introa_news:-abp-contains(Anzeige)
-onvista.de#?#.outer-spacing--xxlarge-top:-abp-contains(Werbung von)
-onvista.de#?#a[class*="ArticleTeaserBox"]:-abp-has(div.ov-subline:-abp-contains(Werbung))
-onvista.de#?#div[class="bg-neutral-2 p-0 shadow-md rounded-2xl border-1 border-neutral-4 mb-4"]:-abp-contains(/Werbung|gnubreW/)
-onvista.de#?#div[class="col col--md-3 col--sm-4 col--lg-4 col--xl-4"]:-abp-contains(Werbung)
-onvista.de#?#div[class="flex justify-between mb-4 border-b-1 border-b-grey-100 pb-2 dark:border-b-grey-700"]:-abp-contains(Werbung)
-prad.de#?#.pd-teaser:has(div.teaser-subtitle:has-text(Anzeige))
-shop-apotheke.at#?#[data-qa-id="result-list-entry"]:-abp-contains(Gesponsert)
-t-online.de#?#.afl-widget-root:has(span:-abp-contains(Beliebt bei t-online))
-tag24.de#?#article.article-tile:-abp-has(span.article-tile__badge2:-abp-contains(ANZEIGE))
-wallstreet-online.de#?#.module.c1.hidden-xs:-abp-has(span.issuerPromotionHint:-abp-contains(Werbung))
-wallstreet-online.de#?#.newsflash:-abp-has(span.wo-inline-block:-abp-contains(Anzeige))
-winfuture-forum.de#?#div.ExtraPostBlock:-abp-has(div.post_block:-abp-contains(Anzeige)):not(.with_rep)
+stol.it#?##ContainerFull:has(a:contains(Anzeige))
+alles-mahlsdorf.de#?#.elementor-section:has(h2.elementor-heading-title:contains(Werbung))
+android-hilfe.de#?#article.message--post:has(span.username:contains(Anzeige))
+apfeltalk.de#?#div.wpb_text_column:contains(Werbung)
+avguide.ch#?#.avgrid_1_of_1.viewlet-bottom:has(h2:contains(Advertorials))
+avguide.ch#?#.gridteaser.gridteaser-m:has(h4:contains(Sponsored Post))
+back-intern.de#?#.cm-post-widget-three.cm-post-widget-section:has(.section-title:contains(Partner))
+baur.de#?#div[data-testid="card"]:has(span.MuiCardHeader-title:contains(Gesponserte Artikel))
+baur.de#?#div[data-testid="reco-wrapper"]:has(div[class^="indexesm__HeadlineElement-fragment-product-master__"]:contains(Gesponserte Artikel))
+baur.de#?#span:contains(Gesponserte Artikel)
+bergsteiger.de#?#.eight.columns.alpha.content:has(span:contains(Advertorial))
+berliner-kurier.de#?#.m-teaser:has(span:contains(Sponsored))
+berliner-zeitung.de#?#.m-article-teaser:has(div:contains(Anzeige))
+berlinstadtservice.de#?#.row.block03:has(p:contains(ANZEIGE))
+bitreporter.de#?#.code-block:has(span:contains(/ANZEIGE|Anzeige|Werbung|WERBUNG/))
+carpediem.life#?#.post-overview:has(div:contains(Anzeige))
+celleheute.de#?#div.YzqVVZ:has(span.wixui-rich-text__text:contains(Anzeigen))
+computerbase.de#?#div.text-asset.text-width:has(p.text-width:contains(Anzeige))
+computerbild.de#?#article.gridArea__teaserM:has(div.teaserBlock__label:contains(Anzeige))
+cyclingmagazine.de#?#p:contains(Anzeige) > strong > a[target="_blank"][rel="noopener"] > picture
+dkamera.de#?#.node.teaser:has(a:contains(Anzeige))
+ebay.de#?#.b-module:has(h2:contains(Anzeigen))
+ebay.de#?#.mfe-lex:has(h2:contains(Anzeigen))
+emotion.de#?#.node--article:has(span:contains(Anzeige))
+fazemag.de#?#h4:has(span:contains(ANZEIGEN))
+finanzen.net#?#.mleft-10.small-font.light-grey:contains(Werbung) + .box + .border-blue-2
+finanzen.net#?#.mleft-10:contains(Werbung) + .box
+finanzfluss.de#?#.component:has(div.disclaimer-text:contains(Anzeige))
+focus.de#?#article[id^="teaser-"][data-placement]:contains(Anzeige)
+games.ch#?#.col4:has(h3:contains(Unterstützt durch:))
+gamestar.de#?#.content-item-medium:has(data:contains(Anzeige))
+gamestar.de#?#.content-item-small:has(h3:contains(Anzeige))
+gamestar.de#?#.contentnewsitem-box .box-reload .news-list:has(span.media-heading:contains([Anzeige]))
+gamestar.de#?#.contentnewsitem-box .box-reload > div:has(.news-list span.media-heading:contains([Anzeige])) + hr
+giga.de#?#.alice-teaser-list-item:has(.alice-teaser-meta-text:contains(Anzeige))
+gofeminin.de#?#.af-block-native:contains(Anzeige)
+gofeminin.de#?#.af-block-native:contains(Sponsored Post)
+handelszeitung.ch#?#.teaser-m-default:contains(Native Advertising)
+handelszeitung.ch#?#.teaser-m-default:contains(Publireportage)
+hardwareluxx.de#?#.bg-gray-light:has(div.text-right:contains(Werbung))
+heise.de#?#.px-4.md\:px-6.py-3.h-full.bg-gray-50:has(.mb-3.text-xs.leading-none.text-center:contains(Anzeige))
+heise.de#?#p:contains(=== Anzeige / Sponsorenhinweis ===)
+heise.de#?#p:contains(=== Anzeige / Sponsorenhinweis ===) + p
+heise.de#?#p:contains(=== Anzeige / Sponsorenhinweis ===) + p + p
+heise.de#?#p:contains(=== Anzeige / Sponsorenhinweis ende===)
+ibooks.to#?#form:has(button:contains(Download))
+imsueden.de#?#.swiper:has(.headline:contains(Partner))
+kajak-magazin.com#?#.custom:has(span:contains(Anzeige))
+knuspr.de#?#div[data-test="whisperer-product-wrapper"]:contains(Gesponsert)
+koeln.de#?#.gb-container:contains(Anzeige)
+kurier.at#?#.gridContainer:contains(Sponsored Content)
+la-palma24.info#?#article[class^="dvs-ad-tyblqtres-uno"]:has(div:contains(AD))
+la-palma24.info#?#div[class^="dvbloqbasic"]:has(div:contains(Ad))
+lausitz-tv.de#?#.small-12.column:contains(Anzeige)
+lessentiel.lu#?#div:has(+ span:contains(Werbung))
+linkedin.com#?#.core-rail > div > div[id^="ember"]:has(span:contains(Gesponsert))
+marbacher-zeitung.de#?#.appetizer:contains(Anzeige)
+mediamarkt.at,mediamarkt.de,saturn.de#?#li:has(div[data-test="mms-product-card"]:has(span:contains(Gesponsert)))
+mediamarkt.de#?#[data-test="mms-base-teaser"]:contains(Gesponsert)
+mediamarkt.de#?#[data-test="mms-search-flagship-sba"]:contains(Gesponsert)
+mediamarkt.de#?#[data-test="mms-search-showcase"] + div:contains(Gesponsert)
+meissen-fernsehen.de#?#.text-center:contains(- Werbung -)
+mmnews.de#?#.sp-module:has(span:contains(Kleinanzeigen))
+mobile.de#?#[data-testid="home-brand-portal-section-container"]:contains(Gesponsert)
+motorsport-total.com#?#.teaser_container.teaser-htmlcode.relative.row:has(.f1de-container-title:contains(Die besten Leasing-Deals))
+notebookcheck.com#?#.introa_news:contains(Anzeige)
+nur-positive-nachrichten.de#?#.moduletable.text-center:has(.bildunterschrift:contains(Anzeige))
+o-sport.de#?#.card-body:contains(Sponsoren)
+onvista.de#?#.outer-spacing--xxlarge-top:contains(Werbung von)
+onvista.de#?#.ov-carousel__item:contains(/Werbung|gnubreW/)
+onvista.de#?#a[class*="ArticleTeaserBox"]:has(div.ov-subline:contains(Werbung))
+onvista.de#?#div[class="bg-neutral-2 p-0 shadow-md rounded-2xl border-1 border-neutral-4 mb-4"]:contains(/Werbung|gnubreW/)
+onvista.de#?#div[class="col col--md-3 col--sm-4 col--lg-4 col--xl-4"]:contains(Werbung)
+onvista.de#?#div[class="col py-0"]:contains(/Werbung|gnubreW/)
+onvista.de#?#div[class="flex justify-between mb-4 border-b-1 border-b-grey-100 pb-2 dark:border-b-grey-700"]:contains(Werbung)
+pctipp.ch#?#.list_item:has(.dachzeile:contains(Partnerzone))
+pcwelt.de#?#div.box:has(span.banner-text + h4:contains(/Partner-Angebot|Angebote/))
+pollenflug.de#?#.services-item:contains(bei Amazon)
+prad.de#?#.pd-teaser:has(div.teaser-subtitle:contains(Anzeige))
+produktion.de#?#.postlist-item:has(.label:contains(Gesponsert))
+report-d.de#?#.content-view-containerbox:contains(SONDER-VERÖFFENTLICHUNG)
+satvision.de#?#.fc_bloglist_item:has(a:contains(Advertorial))
+satvision.de#?#.mod_flexicontent_standard_wrapper:has(span:contains(Advertorial))
+seo-suedwest.de#?#.moduletable:has(span:contains(Anzeige))
+shop-apotheke.at#?#[data-qa-id="result-list-entry"]:contains(Gesponsert)
+skodacommunity.de#?#article.message--post:has(a:contains(Anzeige))
+smartphonemag.de#?#.td_module_wrap:has(.td-post-author-name:contains(Werbung))
+swz.it#?#.jeg_post.jeg_pl_md_2.pr.format-standard:has(span:contains(PR-INFO))
+t-online.de#?#.afl-widget-root:has(span:contains(Beliebt bei t-online))
+t-online.de,www-t--online-de.cdn.ampproject.org#?#div[id^="T-"][onfocus^="A('zid="]:has(a:contains(Anzeige))
+tag24.de#?#article.article-tile:has(span.article-tile__badge2:contains(ANZEIGE))
+tiger.ch#?#div[id^="gridSuche_panRecord_"]:has([id^="gridSuche_lblUrl_"]:contains(Anzeige))
+tonight.de#?#.td_block_wrap:has(a:contains(Anzeige))
+um-tv.de#?#.small-12.column.space:has(p:contains(--Anzeige--))
+unicum.de#?#.artikel-preview-content:has(p:contains(-ANZEIGE-))
+wallstreet-online.de#?#.footnote:has(.headline-box:contains(Werbung))
+wallstreet-online.de#?#.module.c1.hidden-xs:has(span.issuerPromotionHint:contains(Werbung))
+wallstreet-online.de#?#.newsflash:has(span.suffix.wo-inline-block.pull-right:contains(Anzeige))
+wallstreet-online.de#?#.newsflash:has(span.wo-inline-block:contains(Anzeige))
+wasbitcoinbringt.com#?#.kg-card:contains(Herzlichen Dank an unsere Partner!)
+welt.de#?#div[id][data-qa]:has(.c-buelent-linkbox__label:contains(Anzeige))
+winfuture-forum.de#?#div.ExtraPostBlock:has(div.post_block:contains(Anzeige)):not(.with_rep)
+zentrum-der-gesundheit.de#?#span:contains(/ANZ|EIGE/) + button
+zentrum-der-gesundheit.de#?#span:contains(/ANZ|EIGE/) + div
+chip.de#$?#.ft-charts-main > div:not(.List):not(.caps) { remove: true; }
 finanzen.*###HomepageIssuerNews
 finanzen.*##.adnz-ad-placeholder--google
 finanzen.*##.adnz-ad-placeholder--wideboard
