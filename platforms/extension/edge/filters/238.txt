@@ -1,9 +1,9 @@
-! Checksum: 2htFAWMJoFCUHAE+VLA7tQ
-! Diff-Path: ../patches/238/238-s-1707210390-14400.patch
+! Checksum: gxLoFjnD2Oqta+63dZuc7w
+! Diff-Path: ../patches/238/238-s-1764348167-14400.patch
 ! Title: Polish Anti Adblock Filters
 ! Description: Official Polish filters against Adblock alerts.
-! Version: 2.0.3.54
-! TimeUpdated: 2023-12-06T17:02:32+00:00
+! Version: 2.0.3.55
+! TimeUpdated: 2025-11-28T16:39:35+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Polish Anti Adblock Filters
@@ -41,12 +41,12 @@ astroweb.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'checkAds')
 aternos.org#%#//scriptlet('ubo-setTimeout-defuser.js', 'hasAdblock')
 cvninja.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'fuckAdBlock')
 darmowa-telewizja.online#%#//scriptlet('ubo-addEventListener-defuser.js', 'load', 'onload')
-dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gs24.pl,kurierlubelski.pl,motofakty.pl,naszemiasto.pl,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,stronakobiet.pl,telemagazyn.pl,to.com.pl,wspolczesna.pl#%#//scriptlet('ubo-aeld.js', '', 'show')
+dziennikbaltycki.pl,dzienniklodzki.pl,dziennikpolski24.pl,dziennikzachodni.pl,echodnia.eu,expressbydgoski.pl,expressilustrowany.pl,gazetakrakowska.pl,gazetalubuska.pl,gazetawroclawska.pl,gk24.pl,gloswielkopolski.pl,gol24.pl,gp24.pl,gra.pl,gs24.pl,kurierlubelski.pl,motofakty.pl,naszemiasto.pl,nowiny24.pl,nowosci.com.pl,nto.pl,polskatimes.pl,pomorska.pl,poranny.pl,sportowy24.pl,strefaagro.pl,strefabiznesu.pl,stronakobiet.pl,telemagazyn.pl,to.com.pl,wspolczesna.pl#%#//scriptlet('ubo-aeld', '', 'show')
 dziwnekomiksy.pl#$#body>* { filter: blur(0px) !important; }
 filmweb.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'notDetected')
 filmweb.pl#@%#//scriptlet('ubo-abort-current-inline-script.js', 'decodeURIComponent', 'newAdblockBoardDisplayed')
 miastakobiet.pl,stronazdrowia.pl#%#//scriptlet('ubo-set-constant.js', 'pp_adblock_is_off', 'trueFunc')
-mmorpg.org.pl#%#//scriptlet('ubo-nofab.js')
+mmorpg.org.pl#%#//scriptlet('ubo-nofab')
 niezalezna.pl#%#//scriptlet('ubo-noeval.js')
 playpuls.pl#%#//scriptlet('ubo-setInterval-defuser.js', 'muted', '8000')
 playpuls.pl#%#//scriptlet('ubo-setTimeout-defuser.js', 'Math.round', '5000')
@@ -75,7 +75,7 @@ naszemiasto.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'czy_wlaczony_adb
 ||calcoolator.pl/inc/js/adblockill_copy.js
 !
 ! start.me
-start.me#%#//scriptlet('ubo-nostif.js', 'adBanner')
+start.me#%#//scriptlet('ubo-nostif', 'adBanner')
 !
 ! zabawa z adquesto
 weszlo.com,prnews.pl,mambiznes.pl,kresy.pl,natemat.pl#%#//scriptlet('ubo-abort-current-inline-script.js', 'parseInt', 'adblock')
@@ -102,13 +102,13 @@ dniwolne.eu##.axv
 ! shinden.pl
 !shinden.pl##+js(abort-on-property-write.js, _pop)
 shinden.pl#%#//scriptlet('ubo-noeval-if.js', 'Criteo')
-shinden.pl#%#//scriptlet('ubo-abort-on-property-write.js', 'AdservingModule')
+shinden.pl#%#//scriptlet('ubo-abort-on-property-write', 'AdservingModule')
 !
 ! exdb.net
-exdb.net#%#//scriptlet('ubo-abort-on-property-read.js', 'zfgformats')
-exdb.net#%#//scriptlet('ubo-abort-on-property-write.js', '_pop')
-exdb.net#%#//scriptlet('ubo-abort-on-property-read.js', 'mdpDeBlocker')
-exdb.net#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'mdpDeBlocker')
+exdb.net#%#//scriptlet('ubo-abort-on-property-read', 'zfgformats')
+exdb.net#%#//scriptlet('ubo-abort-on-property-write', '_pop')
+exdb.net#%#//scriptlet('ubo-abort-on-property-read', 'mdpDeBlocker')
+exdb.net#%#//scriptlet('ubo-aeld', 'DOMContentLoaded', 'mdpDeBlocker')
 !
 ! nk-net.pl
 ||pagead2.googlesyndication.com/pagead/show_ads.js$script,redirect=noopjs,domain=nk-net.pl|www.gry.pl,important
@@ -118,26 +118,25 @@ exdb.net#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'mdpDeBlocker')
 ||pagead2.googlesyndication.com^$important,xmlhttprequest,redirect=nooptext,domain=popkulturysci.pl
 !
 !
-trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'HateAdBlock')
-trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read.js', 'adBlockDetected')
+trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read', 'HateAdBlock')
+trojmiasto.pl#%#//scriptlet('ubo-abort-on-property-read', 'adBlockDetected')
 !
 !
-~poczta.interia.pl,interia.pl,pomponik.pl#%#//scriptlet('ubo-set.js', 'Inpl.Abd.onDetected', 'noopFunc')
-interia.pl,pomponik.pl#%#//scriptlet('ubo-set.js', 'isAdblockDetected', '0')
+~poczta.interia.pl,interia.pl,pomponik.pl#%#//scriptlet('ubo-set', 'Inpl.Abd.onDetected', 'noopFunc')
+interia.pl,pomponik.pl#%#//scriptlet('ubo-set', 'isAdblockDetected', '0')
 !
 ! techsetter.pl
-techsetter.pl#%#//scriptlet('ubo-nostif.js', '_actions(a)', '2')
+techsetter.pl#%#//scriptlet('ubo-nostif', '_actions(a)', '2')
 !
 ! darmowa-tv.ws
 darmowa-tv.ws#%#//scriptlet('ubo-abort-on-property-write.js', 'adcashMacros')
-||googlesyndication.com^$script,redirect=googlesyndication-adsbygoogle,domain=darmowa-tv.ws
 !
 ! cdahd.co
 cdahd.co#%#//scriptlet('ubo-set-constant.js', 'adsBlocked', 'noopFunc')
 cdahd.co#%#//scriptlet('ubo-abort-current-inline-script.js', 'String.fromCharCode', '/(?:Math|btoa)/')
 !
 ! temi.pl
-temi.pl#%#//scriptlet('ubo-nostif.js', 'mdpDeBlocker')
+temi.pl#%#//scriptlet('ubo-nostif', 'mdpDeBlocker')
 !
 ! magazyn.wp.pl
 !magazyn.wp.pl##body [class]:style(filter: none !important;)
@@ -147,16 +146,16 @@ temi.pl#%#//scriptlet('ubo-nostif.js', 'mdpDeBlocker')
 !~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(abort-on-property-read.js, asname)
 !~pilot.wp.pl,~wideo.wp.pl,~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(abort-on-property-read.js, Object.prototype.rebuild)
 !~pilot.wp.pl,~magazyn.wp.pl,wp.pl,poczta.o2.pl,poczta.wp.pl,abczdrowie.pl,autokult.pl,dobreprogramy.pl,echirurgia.pl,fotoblogia.pl,gadzetomania.pl,kafeteria.pl,komorkomania.pl,money.pl,open.fm,parenting.pl,snobka.pl##+js(set, Object.prototype.advViewability, undefined)
-film.wp.pl,www.o2.pl,uroda.abczdrowie.pl#%#//scriptlet('ubo-nostif.js', 'block', '0')
-money.pl,komorkomania.pl,abczdrowie.pl,fotoblogia.pl,gadzetomania.pl,autokult.pl,parenting.pl,wiadomosci.wp.pl,tech.wp.pl,dom.wp.pl,facet.wp.pl,film.wp.pl,finanse.wp.pl,gry.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,kuchnia.wp.pl,moto.wp.pl,opinie.wp.pl,pogoda.wp.pl,teleshow.wp.pl,turystyka.wp.pl,wideo.wp.pl,wawalove.wp.pl#%#//scriptlet('ubo-nostif.js', 'detected', '300')
+film.wp.pl,www.o2.pl,uroda.abczdrowie.pl#%#//scriptlet('ubo-nostif', 'block', '0')
+money.pl,komorkomania.pl,abczdrowie.pl,fotoblogia.pl,gadzetomania.pl,autokult.pl,parenting.pl,wiadomosci.wp.pl,tech.wp.pl,dom.wp.pl,facet.wp.pl,film.wp.pl,finanse.wp.pl,gry.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,kuchnia.wp.pl,moto.wp.pl,opinie.wp.pl,pogoda.wp.pl,teleshow.wp.pl,turystyka.wp.pl,wideo.wp.pl,wawalove.wp.pl#%#//scriptlet('ubo-nostif', 'detected', '300')
 !
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=wp.pl|o2.pl|pudelek.pl|so-magazyn.pl
 @@||googletagservices.com/tag/js/gpt.js$domain=wp.pl|dobreprogramy.pl|o2.pl|pudelek.pl|so-magazyn.pl
-magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'Object.prototype.aggressiveAB', 'false')
-magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'Object.prototype.isBlocked', 'false')
-magazyn.wp.pl#@%#//scriptlet('ubo-abort-on-property-write.js', '__serviceAbModal')
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant', 'Object.prototype.aggressiveAB', 'false')
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant', 'Object.prototype.isBlocked', 'false')
+magazyn.wp.pl#@%#//scriptlet('ubo-abort-on-property-write', '__serviceAbModal')
 !magazyn.wp.pl#@#+js(set-constant, PWA_adbd, 2)
-magazyn.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'WP.gaf.loadBunch', 'noopFunc')
+magazyn.wp.pl#@%#//scriptlet('ubo-set-constant', 'WP.gaf.loadBunch', 'noopFunc')
 wp.pl#@$#html, html > body { overflow: auto !important; }
 wp.pl#@$#body { overflow: auto !important; }
 wp.pl#@$#body [class] { filter: none !important; }
@@ -173,39 +172,38 @@ epidemia-koronawirus.pl#%#//scriptlet("abort-on-property-read", "mdpDeBlocker")
 @@||googleads.g.doubleclick.net/pagead/id$domain=epidemia-koronawirus.pl
 !
 ! eska.pl
-eska.pl#%#//scriptlet('ubo-aeld.js', 'DOMContentLoaded', 'showFallbackImage')
+eska.pl#%#//scriptlet('ubo-aeld', 'DOMContentLoaded', 'showFallbackImage')
 !
 ! sadeczanin.info
-sadeczanin.info#%#//scriptlet('ubo-abort-current-inline-script.js', 'parseInt', '/adBlock/')
+sadeczanin.info#%#//scriptlet('ubo-abort-current-inline-script', 'parseInt', '/adBlock/')
 !
 ! kurnik.pl
 kurnik.pl#$#.adsbygoogle { height: 2px !important; width: 1px !important; }
-kurnik.pl#%#//scriptlet('ubo-aopr.js', 'abask')
+kurnik.pl#%#//scriptlet('ubo-aopr', 'abask')
 !
 ! karmopedia.pl
-karmopedia.pl#%#//scriptlet('ubo-acis.js', 'showAdblockImage')
-karmopedia.pl#%#//scriptlet('ubo-nostif.js', 'showAdblockImage', '2000')
+karmopedia.pl#%#//scriptlet('ubo-acis', 'showAdblockImage')
+karmopedia.pl#%#//scriptlet('ubo-nostif', 'showAdblockImage', '2000')
 !
 ! wyklady.org
-wyklady.org#%#//scriptlet('ubo-nobab.js')
+wyklady.org#%#//scriptlet('ubo-nobab')
 !
 ! soisk.pl
-||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=soisk.pl,redirect=googlesyndication-adsbygoogle,important
 !
 ! synonimy.pl
-synonimy.pl#%#//scriptlet('ubo-set-constant.js', 'showAddbockerMsg', 'noopFunc')
+synonimy.pl#%#//scriptlet('ubo-set-constant', 'showAddbockerMsg', 'noopFunc')
 !
 ! elektroda.pl
 elektroda.pl##section a:not([href*="elektroda.pl/"]):not([href*="/rtvforum/"]):not(.fancybox):not(.postlink) img[src^="https://obrazki.elektroda.pl/"]
 elektroda.pl###main .col-md-8 a:not([href*="elektroda.pl/"]) img[src^="https://static.elektroda.pl/"]
-elektroda.pl###main .col-md-8 form[action*="//"][action*="m"][action*="."]:upward(.col-md-8 > div)
+elektroda.pl#?##main .col-md-8 form[action*="//"][action*="m"][action*="."]:upward(.col-md-8 > div)
 elektroda.pl#%#//scriptlet('ubo-no-setTimeout-if.js', 'adBlockTest', '100')
 www.elektroda.pl#%#//scriptlet('ubo-set-constant.js', 'loadElementBlock', 'noopFunc')
 !
 ! geekweek.pl
-#if env_adguard
+! #if env_adguard
 geekweek.pl#@#.adocean-billboard
-#endif
+! #endif
 !
 !
 !1#---------------------------------Anti Adblock Rules element hide----------------------------------!
@@ -256,7 +254,7 @@ geekweek.pl##.adocean-billboard
 gilotynka.pl##.blocked
 goryiludzie.pl##.pane-type-vad.pane-gilad-vertical-rad
 gragieldowa.pl##.login
-gralandia.tv#?#div.pink > .box > div:-abp-contains(Adblock)
+gralandia.tv#?#div.pink > .box > div:contains(Adblock)
 gram.pl##.external-entity-container.yieldriser
 histmag.org###adBlock
 ikorektor.pl###adb
@@ -335,7 +333,7 @@ parezja.pl,demotywatory.pl###adblock_info
 pecetowicz.pl#@#.adBanner
 pikio.pl##.adBlockDetectModal, .swal2-fade
 player.radiozet.pl,eska.pl,mjakmama24.pl,pomponik.pl,interia.pl,eskarock.pl,muratorplus.pl,voxfm.pl#@#[class$="-ads"]
-poczta.onet.pl#?#div[class^="slot-"]:-abp-has(> div[class^="slot"][class$="plug"])
+poczta.onet.pl#?#div[class^="slot-"]:has(> div[class^="slot"][class$="plug"])
 polskieszlaki.pl##.my-5
 polskihurtworld.eu##.modall-content
 polskihurtworld.eu###myModal
@@ -671,7 +669,7 @@ tvnmeteo.tvn24.pl##[class*="advert"]
 vod.tvp.pl##.tp2thm.tp2thm-progress-midroll[style^="left"]:empty
 chelmski.eu##.ad-sidebar
 chelmski.eu##.ad-text-headbaner
-chelmski.eu#?#div[class]:not([id]):-abp-has(> .ad-text)
+chelmski.eu#?#div[class]:not([id]):has(> .ad-text)
 naszamlawa.pl##.spacead-r-2, .adsbygoogle, .td-adspot-title, .td-is-sticky.td-pb-span4.tdc-inner-column.vc_column_container.wpb_column.td_uid_26_5defeae8f3d3e_rand.vc_column_inner, .td_block_template_11.td-pb-border-top.td_uid_42_5defeae907025_rand.td_block_title.td_block_wrap, .td-is-sticky.td-pb-span4.tdc-inner-column.vc_column_container
 pilot.wp.pl##a[data-gtm-player-bar="guest_web_desktop"]
 ||c.trojmiasto.pl/adblock/detected/$image,domain=trojmiasto.pl
@@ -747,10 +745,10 @@ sportowefakty.wp.pl##body > .content ~ script[async] + div[class]:not([id])
 sportowefakty.wp.pl#?#body > [class]:not([id]):matches-css(position: fixed):matches-css(top: 0px)
 magazyn.wp.pl##body > div ~ footer ~ script + script + div[class]:not([id]):last-of-type
 ksiazki.wp.pl##body > #app ~ script + noscript + div[class]:not([id])
-finanse.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,opinie.wp.pl,sportowefakty.wp.pl,teleshow.wp.pl,wiadomosci.wp.pl##body > div[class][id]:has(div[class]:not([id]):contains(Tworzenie treści to nasza pasja))
-kobieta.wp.pl,ksiazki.wp.pl,wiadomosci.wp.pl##body > div[class][id]:has(div[class]:not([id]):matches-css-before(content:"Jak dodać WP do wyjątków adBlocka"))
+finanse.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,opinie.wp.pl,sportowefakty.wp.pl,teleshow.wp.pl,wiadomosci.wp.pl#?#body > div[class][id]:has(div[class]:not([id]):contains(Tworzenie treści to nasza pasja))
+kobieta.wp.pl,ksiazki.wp.pl,wiadomosci.wp.pl#?#body > div[class][id]:has(div[class]:not([id]):matches-css(before,content:"Jak dodać WP do wyjątków adBlocka"))
 prawo.money.pl#@#body > div[class="pub_300x250 text_ads ad_container"][style] + div[class]:not([id])
-film.wp.pl,finanse.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,opinie.wp.pl,sportowefakty.wp.pl,teleshow.wp.pl,wiadomosci.wp.pl##body > div[class][id]:has(div[class]:matches-css-before(content:"Nie teraz, wracam na WP.pl"))
+film.wp.pl,finanse.wp.pl,kobieta.wp.pl,ksiazki.wp.pl,magazyn.wp.pl,opinie.wp.pl,sportowefakty.wp.pl,teleshow.wp.pl,wiadomosci.wp.pl#?#body > div[class][id]:has(div[class]:matches-css(before,content:"Nie teraz, wracam na WP.pl"))
 sportowefakty.wp.pl#?#body [class]:matches-css(position: fixed):matches-css(top: /^0\..*px$/)
 magazyn.wp.pl#$#body > [class] { filter: none!important; }
 magazyn.wp.pl#$#body { pointer-events: auto!important; }
@@ -758,7 +756,7 @@ magazyn.wp.pl#$#body { overflow: visible!important; }
 magazyn.wp.pl#$#body { overflow: auto !important; }
 magazyn.wp.pl#$#body [class] { filter: none !important; }
 magazyn.wp.pl#$#body > [class] { filter: none!important; }
-pilot.wp.pl#@%#//scriptlet('ubo-set-constant.js', 'WP.gaf.loadBunch', 'noopFunc')
+pilot.wp.pl#@%#//scriptlet('ubo-set-constant', 'WP.gaf.loadBunch', 'noopFunc')
 pilot.wp.pl#@#.ads
 !
 !11#--------------------------Polsat------------!

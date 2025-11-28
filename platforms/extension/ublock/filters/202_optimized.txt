@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zbmryJ34roNIOcXY4TkB2w
-! Diff-Path: ../patches/202_optimized/202_optimized-s-1756558166-14400.patch
+! Checksum: gz8C8QMl+ghKm83gmO7I0w
+! Diff-Path: ../patches/202_optimized/202_optimized-s-1764348188-14400.patch
 ! Title: EasyList Thailand (Optimized)
 ! Description: Filter that blocks ads on Thai sites.
-! Version: 2.0.0.26
-! TimeUpdated: 2025-08-30T12:44:33+00:00
+! Version: 2.0.0.27
+! TimeUpdated: 2025-11-28T16:39:17+00:00
 ! Expires: 5 days (update frequency)
 clip33.com##.banner-img-au
 clip33.com##.content-widget:nth-of-type(2)
@@ -134,8 +134,8 @@ animedd.xyz##[href*="casino"]
 animedd.xyz###floating_banner_top
 ||i.imgur.com$domain=animedd.xyz
 animedd.xyz##[src="https://i.imgur.com/5Q894WW.jpg"]
-animedd.xyz#?#.col_del:-abp-contains(ปิดป้ายนี้)
-animedd.xyz#?#div.panel-primary.panel:-abp-contains(Text Link Ads)
+animedd.xyz##.col_del:contains(ปิดป้ายนี้)
+animedd.xyz##div.panel-primary.panel:contains(Text Link Ads)
 animedd.xyz###link_h_movie_ad
 ||publish.iptvz.net$subdocument
 animekimi.com##.module_home_x
@@ -155,12 +155,12 @@ anime-subthai.net##.img-ads
 anime-subthai.net##.ads-banners
 anime-subthai.net##.ads-banner
 anime-subthai.net##[title^=banner]
-fembeq.com##+js(abort-on-property-read, open)
+fembeq.com##+js(aopr, open)
 manga168.com##.slider-ads
 manga168.com##.dessert-frame
 manga168.com###ads_fox_bottom
 ||image.cdend.com$image,domain=ranker-manga.com
-||image7.kingsmanga.net/00/00/gclub2.jpg$image,~third-party
+||image7.kingsmanga.net/00/00/gclub2.jpg$image,~3p
 anime-sugoi.com##div.container > .row > .center_lnwphp
 animeyuzu.com##.code-block-1.code-block
 animeyuzu.com##.animekimi-banner
@@ -173,9 +173,8 @@ reborntrans.com##.mb-4
 ||tonytonychopper.com/ads/$script
 fairyanime.net##.banner-bottom
 streaming.tonytonychopper.com###overlay-0
-||anime-yuzu.com/up/img/webp/$image,~third-party
+||anime-yuzu.com/up/img/webp/$image,~3p
 anime-yuzu.com##.code-block
-/plugin-pdpa/$domain=khaosod.co.th|khaosodenglish.com|matichon.co.th|matichon*.com|prachachat.net|sentangsedtee.com|silpa-mag.com|technologychaoban.com
 mustplay.in.th,playulti.com##.alert.cookiealert
 thairath.co.th##.e18fudrz1.css-1wc8xzy
 vroom.truevirtualworld.com##.card-cookie
@@ -327,16 +326,16 @@ upic.me##div[id^="simplemodal"]
 ||pantip.com/ads.php
 ||pantip.com/adsip.php
 ||pantip.com/adsipmobile.php
-||ufa191.com^$third-party
-||ufabet678.com^$third-party
-||movies-x.com^$third-party
-||ssnn.site^$third-party
+||ufa191.com^$3p
+||ufabet678.com^$3p
+||movies-x.com^$3p
+||ssnn.site^$3p
 ||akamaihd.net/shopee/*/*TrackingRules$script,domain=shopee.co.th
 ||akamaihd.net/shopee/*/TrackingRules$script,domain=shopee.co.th
-||shopee.co.th/__t__$xmlhttprequest,domain=shopee.co.th,redirect=1x1.gif
-||shopee.co.th/userstats_record$xmlhttprequest
-||shopeemobile.com/th/tr$xmlhttprequest
-||tracking.shopee.co.th^$xmlhttprequest,domain=shopee.co.th,redirect=1x1.gif
+||shopee.co.th/__t__$xhr,domain=shopee.co.th,redirect=1x1.gif,image
+||shopee.co.th/userstats_record$xhr
+||shopeemobile.com/th/tr$xhr
+||tracking.shopee.co.th^$xhr,domain=shopee.co.th,redirect=1x1.gif,image
 shopee.co.th##:has(> .shopee_ic img[loading="lazy"] ~ div.right-0 > .text-white)
 ||lucky135.com
 compgamer.com##.backgroundPopup
@@ -419,7 +418,7 @@ thisisgamethailand.com,tigthai.com##.mod_banner_top
 ||playulti.com/static/banner/*/ads-^
 ||tigthai.com/js/popup_facebook.js$script
 ||24x7th.com
-||*-adnow.com$third-party
+||*-adnow.com$3p
 ||accesstrade.in.th
 ||adasiaholdings.com
 ||adok.asia
@@ -455,7 +454,7 @@ thisisgamethailand.com,tigthai.com##.mod_banner_top
 ||crwdcntrl.net
 ||cryptobrowser.site
 ||csi.gstatic.com
-||cxense.com$third-party,domain=~tn.com.ar
+||cxense.com$3p,domain=~tn.com.ar
 ||d-stats.com
 ||dtscout.com
 ||effectivemeasure.net
@@ -1087,7 +1086,7 @@ www.moviehd-master.com###text-8
 www.moviehd-master.com###text-9
 www.moviehd-master.com###text-10
 movie2free.com##div[style*="position: fixed; bottom: 0px;"]
-||movie2free.com^$third-party
+||movie2free.com^$3p
 ||www.movie2free.com/wp-content/themes/next/images/*$image
 www.new-mastermovie.com###main > div[style^='text-align']
 www.new-mastermovie.com###sidebar .widget.widget_text
@@ -1118,7 +1117,7 @@ movie87hd.com###VideoPlayer > div > div > div
 movie87hd.com###VideoPlayer > div
 movie87hd.com##.signup_button
 movie87hd.com##.new-banner_side-banner_r
-movie87hd.com##+js(set-constant, adSettings, [])
+movie87hd.com##+js(set, adSettings, [])
 447hd.com###ads_singlem_top
 mv-hd.com##.ads-info
 mv-hd.com##.container a[href^="/link_to.php"]
@@ -1196,7 +1195,7 @@ sistacafe.com##.popup
 thailandbestbeauty.com###cboxOverlay
 thailandbestbeauty.com###divAdLeft
 thailandbestbeauty.com###divAdRight
-||iwilldoforking.com/coverpage.js$script,third-party
+||iwilldoforking.com/coverpage.js$script,3p
 ||marketingoops.com/*/itro-popup/*
 ||marketingoops.com/popup-ad*
 ||marketingoops.com/truehitsstat.php?
@@ -1326,7 +1325,7 @@ wordle.net##.elementor-widget-container a[href*="sbobet.ca"]
 aroundnews.net##.td-g-rec:has(.adsbygoogle)
 bbs.pramool.com###AutoNumber1:has(iframe)
 blognone.com###above_comments:has(.view-PremiumCompanies)
-blognone.com###above_comments:has(h2:has-text(/Blognone Workplace/))
+blognone.com###above_comments:has(h2:contains(/Blognone Workplace/))
 blognone.com###rightbottom_sidebar .region div[id^="block-block"]:has(.content .fb-page)
 blognone.com###rightbottom_sidebar .region div[id^="block-views-jobs"]
 doodiza.com##.columns.large-4:has(.yengo_ads)
@@ -1341,7 +1340,7 @@ gamemonday.com##a[onclick]:has(img[onload])
 gamingdose.com##.elementor-widget-container div[data-advadstrackid]:upward(2)
 gamingdose.com##.code-block a[onclick*="'banner'"]:upward(2)
 itnews24hrs.com##.e3lan.widget:has(.adsbygoogle)
-jarm.com##.news-detail p:has-text(/Advertisement/)
+jarm.com##.news-detail p:contains(/Advertisement/)
 jokergameth.com###postlist li[id^="post_"]:has(.posthead:has(span a[href*="/advertisement/"]))
 kaijeaw.com##.post-entry .hidden-xs.hidden-sm:has(ins.adsbygoogle)
 kanomjeeb.com##.article .row div[class]:has(aside section.banner)
@@ -1392,7 +1391,7 @@ picnic.ly##.textwidget:has(.adsbygoogle)
 playulti.com##.card .box:has(.box-banner)
 playulti.com##.card-content.card:has(a[href="https://www.facebook.com/playinter.th"][rel="external"])
 playulti.com##.card.game_page:has(.box:has(.box-banner))
-playulti.com##div[class^="card"]:has(h4:has-text(/RECOMMEND APPS/))
+playulti.com##div[class^="card"]:has(h4:contains(/RECOMMEND APPS/))
 popcornfor2.com###content div[style*="float:center"]:has(a[href*="yengo.com"])
 popcornfor2.com###content div[style*="text-align:center"]:has(script[src*="yengo.com"])
 popcornfor2.com##.content_right > div:has(div[id^="DIV_YNG"])
@@ -1400,7 +1399,7 @@ popcornfor2.com##.content_right div:has(script[src*="synergy-e.com"])
 popcornfor2.com##.main div:has(iframe[src*="popcornfor2.com/bannerads/"])
 popcornfor2.com##.main div[style^="width:728px;"]:has(ins.adsbyadop)
 popcornfor2.com##.news_view div center:has(script[src*="googlesyndication.com"])
-popcornfor2.com##.news_view div div:has-text(/Advertisement/)
+popcornfor2.com##.news_view div div:contains(/Advertisement/)
 postjung.com###maincontent div:has(.sp-adsense-incontent)
 pramool.com##tbody table tr:has(a[target="ads"])
 pramool.com##tbody table tr:has(iframe)
@@ -1434,7 +1433,7 @@ thaihitz.com##.post-single-content center:has(.adsbygoogle)
 thaiidol.com##.td-g-rec:has(.adsbygoogle)
 thaiidol.com##.wpb_wrapper:has(.adsbygoogle)
 thaijobsgov.com##.content center:has(.adsbygoogle)
-thaijobsgov.com##.content center:has-text(/Advertisement/)
+thaijobsgov.com##.content center:contains(/Advertisement/)
 thailandbestbeauty.com##.td-post-template-default a[target="_blank"]:has(img[class*="wp-image-"])
 thaimobilecenter.com###divleft:has(a[href*="/ad_click"])
 thaimobilecenter.com###divright:has(a[href*="/ad_click"])
@@ -1443,14 +1442,14 @@ thetechr.com##.rev-block:has(.adsbygoogle)
 thisisgamethailand.com##.module .item:has(a[href*="/index.php?/stats/clickAdd"])
 tnews.co.th##.hidden-sm.hidden-xs:has(div script[src^="//code.yengo.com/"])
 movie2uhd.com##+js(json-prune, MU_ads)
-*$media,third-party,domain=hdd.moviefun24.com,redirect=noop-0.1s.mp3
+*$media,3p,domain=hdd.moviefun24.com,redirect=noop-0.1s.mp3
 thmovieshd.com##.container div[class^="col-"] .row a[href]:has(img[alt="UFABET"])
 thmovieshd.com##.newmovie .row a[href]:has(img[alt="UFABET"])
-thmovieshd.com##+js(nano-setInterval-booster, #close_preload, 1000, 0)
+thmovieshd.com##+js(nano-sib, #close_preload, 1000, 0)
 ||b-cdn.net/ssd1/ads/*.mp4$media,important,redirect=noop-1s.mp4,domain=thmovieshd.com
 www.nung2d.com###__ads
 www.nung2d.com##.viddeo > .img_player
 www.nung2d.com##.viddeo > .ns-video-player
-www.nung2d.com##+js(remove-attr, style, .viddeo > .video__)
+www.nung2d.com##+js(ra, style, .viddeo > .video__)
 nungkai.com##+js(set-attr, body, oncontextmenu, )
-subthai.tv##+js(nano-setInterval-booster, กดเพื่อดูหนัง, *)
+subthai.tv##+js(nano-sib, กดเพื่อดูหนัง, *)

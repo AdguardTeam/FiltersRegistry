@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0sKa+GMI5vM4l+Ql+WN83A
-! Diff-Path: ../patches/228/228-s-1757335807-14400.patch
+! Checksum: hDe3t7e0aQHUXGA136srWA
+! Diff-Path: ../patches/228/228-s-1764348189-14400.patch
 ! Title: xinggsf
 ! Description: Blocks ads on the Chinese video platforms (MangoTV, DouYu and others).
-! Version: 2.0.3.28
-! TimeUpdated: 2025-09-08T12:45:30+00:00
+! Version: 2.0.3.29
+! TimeUpdated: 2025-11-28T16:39:29+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 乘风 广告过滤规则
@@ -27,9 +27,9 @@ kstj.baidu.com
 ||pups.bdimg.com/
 baike.baidu.com##.after-content,#adLayerSideWrap
 baike.baidu.com##.squareAni.square.super-layer-promote
-||baike.baidu.com/api/wikiad/$xmlhttprequest
-||baike.baidu.com/*/directad?$xmlhttprequest
-||baike.baidu.com/lemma/api/guesslike?$xmlhttprequest
+||baike.baidu.com/api/wikiad/$xhr
+||baike.baidu.com/*/directad?$xhr
+||baike.baidu.com/lemma/api/guesslike?$xhr
 fanyi.baidu.com##div.banner-wrap
 ||s1.bdstatic.com/r/www/cache/biz/ecom/common/api/$script
 jingyan.baidu.com##.wgt-cms-banner, .right-fixed-related-wrap, #bottom-ads-container
@@ -37,7 +37,7 @@ jingyan.baidu.com##.wgt-cms-banner, .right-fixed-related-wrap, #bottom-ads-conta
 ||eduad.baidu.com/
 ||as2.wenku.baidu.com/$subdocument
 ||wkstatic.bdimg.com/static/wkview/widget/top_ads_banner/$script
-pan.baidu.com#$#.frame-all { overflow-x:hidden!important }
+pan.baidu.com##.frame-all:style(overflow-x:hidden!important)
 pan.baidu.com##.ad-platform-tips, .phone-banner
 ||bcebos.com^$image,domain=pan.baidu.com
 ||pan.baidu.com/rest/*/adx?$image
@@ -62,7 +62,7 @@ tiebac.baidu.com,tieba.baidu.com,jump.bdimg.com,jump2.bdimg.com###thread_list>li
 ||adsense.
 */adsense/
 ||adserver.
-||cm.$image,script,xmlhttprequest,third-party
+||cm.$image,script,xhr,3p
 ||gg.
 ||ggg.
 37cs.com
@@ -92,7 +92,7 @@ mediav.com
 tanx.com
 @@||s.click.taobao.com^$popup
 ||union.
-||vamaker.com/$third-party
+||vamaker.com/$3p
 */vamaker/
 wrating.com
 wwads.cn
@@ -116,18 +116,18 @@ pageMediaControl*$script
 */svnad/$image,script
 @@||dwstatic.com/b=amkit
 ||wan.$~image
-||iwan.$third-party
+||iwan.$3p
 !-------------------通用脚本广告--------------------
 */51ads/
 @@||img05.zhaopin.cn/2014/common/js/za/ga.js
 */ga.js^
-@@||bikroy.com/neo/bikroy-contactUs*-ads-$script,~third-party
+@@||bikroy.com/neo/bikroy-contactUs*-ads-$script,~3p
 *_ad.js|
 *_ads.js|
-*/adServer$script,xmlhttprequest
-*/adService$script,xmlhttprequest
-*/adSide/$script,xmlhttprequest
-*/adSide.$script,xmlhttprequest
+*/adServer$script,xhr
+*/adService$script,xhr
+*/adSide/$script,xhr
+*/adSide.$script,xhr
 */adwidget$script
 */gg.$script
 ||go.$domain=kickass.cd|thepiratebay.*|btsow.*
@@ -141,9 +141,9 @@ pageMediaControl*$script
 @@|https://media.amazon.map.fastly.net^$script
 ! https://www.zelda.com/
 @@||media.nintendo.com/share/nclood/stable/en-us/bundles/microsite.min.js$script
-||media.$third-party,script,subdocument,domain=~ted.com
+||media.$3p,script,subdocument,domain=~ted.com
 */pagead$script
-*/s.php?id=$script,third-party
+*/s.php?id=$script,3p
 */piao.js|
 */pop.js^$domain=~socpk.com|~autohome.com.cn|~patch.ali213.net
 *.pop.js^$script
@@ -155,7 +155,7 @@ pageMediaControl*$script
 */tongji.js|$domain=~zongheng.com
 !-------------------下载站点-----------------------
 *.gif|$image,domain=3987.com|www.ouyaoxiazai.com|www.myhack58.com
-myqqjd.com##+js(abort-current-script, String.fromCharCode, decodeURIComponent)
+myqqjd.com##+js(acis, String.fromCharCode, decodeURIComponent)
 52z.com###softdown>div,div.syGaosuDa:first-child
 ||www.fxxz.com/show/html/$subdocument
 ||www.fxxz.com/skin/know/html/$subdocument
@@ -230,7 +230,7 @@ yxdown.com##.bg_l,.bg_r,div.gg,div[id$=_ads]
 ||www.zolsky.com/read/readad/$subdocument
 ! 中关村在线
 www.zol.com.cn##.side-news-nointel.side-news,#bgad
-www.zol.com.cn,www.91danji.com,92btbtt.com#$#body { background: center !important }
+www.zol.com.cn,www.91danji.com,92btbtt.com##body:style(background: center !important)
 zol.com.cn##.down-h4,span.down-alink,div[class^=ad_],div[class*=-ad],div[id^=AD_]
 ||p.zol.com.cn/$script
 ||icon.zol-img.com.cn/public/js/web_foot$script
@@ -288,7 +288,7 @@ sports.qq.com##.ad-wrapper,#focus_jordon,.ad_r_85,div[class|=gg],div.layout.mt35
 ||bobo.com/special/$subdocument
 ||baoxian.163.com/$subdocument
 ||caipiao.163.com/$subdocument
-||lofter.com/$subdocument,third-party
+||lofter.com/$subdocument,3p
 ||nex.163.com/q?
 163.com##.gg200,.gg300,.gg200x300,[class$="_ad"],div.mod_ad_text,#bobo,#layout-bobo,.txt-bobo,#js_a_bobo,.bobo-area,.imglist-bobo-app,#layout-love,#layout-shop,.top-banner,div.post_adtop_main,div.post_adtop_side,a.tie-ad-bar,#fixed_foot_ad,#js-epTabDS,#js-epBobo
 blog.163.com###lofter_single,div.f-trans
@@ -337,7 +337,7 @@ ifeng.com##div[class^=adList],div[class^=adbox],[class|=topAd],[class^=ad_],#cou
 mfp.deliver.ifeng.com
 qcvf.ifeng.com
 5hte21mz.com
-||ifengimg.com/*_guanggao_$script,xmlhttprequest
+||ifengimg.com/*_guanggao_$script,xhr
 ||ifengimg.com/mappa
 ||ifengimg.com/feather/images/$image
 ||x0.ifengimg.com/feprod/c/web/d/coupletFloat.js
@@ -345,7 +345,7 @@ v.ifeng.com##.vAdbox,div.vAdImg,div.newAdImg,div.ad300,div.ad1000,div.vPlayerAdb
 !-------------------小说站点-----------------------
 @@||qidian.gtimg.com/*/qd/js/component/ad_strategies.$script
 qidian.com###tr-banner,div.banner-wrap,div.focus-img.cf,#j_bodyRecWrap,#j-topHeadBox,#j-topBgBox,div.games-op-wrap
-qidian.com#$#.crumbs-nav.top-op { margin: auto!important }
+qidian.com##.crumbs-nav.top-op:style(margin: auto!important)
 ||qidian.com/upload/gamesy/20$image
 ||qidian.qpic.cn/qidian_common/$image
 ||file.myqcloud.com/yuewen/game/images/$image,domain=qidian.com
@@ -361,7 +361,7 @@ tianyabooks.com##div[class^=bread_]
 ||www.tianyabooks.com/$script,csp=script-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||img16.diyifanwen.com
 gushiwen.cn###threeWeixin2
-||gushiwen.cn/getTicket.aspx^$xmlhttprequest
+||gushiwen.cn/getTicket.aspx^$xhr
 ||yijiuningyia.gushiwen.org
 enennsa.gushiwen.cn
 ||a.lz13.cn/
@@ -406,7 +406,7 @@ juejin.im##.banner,.wechat-banner
 wiki.mbalib.com###ad-phone
 news.mydrivers.com##.main_right_div:nth-of-type(4)
 mydrivers.com##.baidu, a[href^=http][target=_blank]
-mydrivers.com##+js(set-constant, jQuery.fn.resetIdleTimeup, trueFunc)
+mydrivers.com##+js(set, jQuery.fn.resetIdleTimeup, trueFunc)
 ||news.mydrivers.com/incutf8/HaoWuTuiJianTop6_2023.js$script
 oschina.net##.blog-left-ad,#project_ad_banner,a[data-traceid],a[href^="http://click.aliyun."]
 ||static.oschina.net/*_banner_$image
@@ -438,7 +438,7 @@ baike.com###right_ad_div
 bing.com##li.b_ad,#b_notificationContainer_bop
 bitauto.com##.ad-tag-box,ins,body>div.container[style^=margin-top]
 ||bitautoimg.com/ResourceFiles/$image,object
-||duomai.com/$third-party
+||duomai.com/$3p
 taboola.com
 ||static.cnbetacdn.com/frontend/vipics/$image
 ||china.com.cn/2016ads/$subdocument
@@ -590,7 +590,7 @@ erebor.douban.com
 *.9vcp.
 *.9wad.
 *.9wcpm.
-*.9wee.$third-party
+*.9wee.$3p
 *.abang.
 *.adayi55.
 *.adjwl.
@@ -614,7 +614,7 @@ erebor.douban.com
 ||cn/s?z=
 ||cn/tlgg/
 *.cnnetallyads.
-*.cnxad.$third-party
+*.cnxad.$3p
 ||com/aajjss/$script
 ||com/adfile/
 ||com/adfiles/
@@ -974,7 +974,7 @@ erebor.douban.com
 */html/hot_s
 */html/yuedu$subdocument
 */hxli/$image,object
-*/i.js^$script,third-party
+*/i.js^$script,3p
 */icast/
 */idcgg/
 */if/07top-new
@@ -1212,15 +1212,15 @@ www.iqiyi.com##div[class^="film-feed_filmFeed_"]:has(>div>a[href^="https://wy.66
 iqiyi.com##a[href^="https://ads."]
 iqiyi.com##.black-screen[data-cupid=adblock-blackscreen], .qy-plist-ad
 iqiyi.com##.cupid-panel + div, div[data-adzone],#block-V
-iqiyi.com##+js(set-constant, Object.prototype.blackscreenDuration, 1)
-iqiyi.com##+js(set-constant, QiyiPlayerProphetData.a.data, {})
-m.iqiyi.com##+js(set-constant, Object.prototype.adPlayerId, )
+iqiyi.com##+js(set, Object.prototype.blackscreenDuration, 1)
+iqiyi.com##+js(set, QiyiPlayerProphetData.a.data, {})
+m.iqiyi.com##+js(set, Object.prototype.adPlayerId, )
 t7z.cupid.iqiyi.com
 ||static.iqiyi.com/js/common/mars_v.js^$script
 ! 以下二条规则禁用P2P
 ||video.iqiyi.com/ws$websocket
 ||www.iqiyi.com/service-worker.js
-||mesh.if.iqiyi.com/player/pcw/update/commonAppDownloadData^$xmlhttprequest
+||mesh.if.iqiyi.com/player/pcw/update/commonAppDownloadData^$xhr
 ||127.0.0.1^$script,domain=iqiyi.com
 !||iqiyi.com/videos/other/202$xmlhttprequest
 !||71edge.com/videos/other/202$xmlhttprequest
@@ -1246,9 +1246,9 @@ cm.l.qq.com
 ||gtimg.com/qqlive/
 ||qzonestyle.gtimg.cn/qzone/biz/ac/comm/$script
 |https://imgcache.qq.com/qzone/biz/comm/js/qbs.js
-news.qq.com##+js(set-constant, SSPAd.prototype.loadAd, noopFunc)
+news.qq.com##+js(set, SSPAd.prototype.loadAd, noopFunc)
 ||news.ssp.qq.com/app
-||ssp.qq.com/ad^$xmlhttprequest
+||ssp.qq.com/ad^$xhr
 ||staticfile.qq.com/datong/$script
 ||staticfile.qq.com/qimei/$script
 ||vfiles.gtimg.cn/tvideo/js/new_ping_video.js^$script
@@ -1259,7 +1259,7 @@ bilibili.com##.ad-report, .ad-floor
 bilibili.com##.gg-floor-module,#slide_ad,a[href^="//cm.bilibili.com"]
 ||api.bilibili.com/x/*/res/locs?$~script
 !||hdslb.com/bfs/sycp/creative_img/$image
-||hdslb.com/bfs/cm/cm-sdk/static/js/bili-collect.js^$redirect=noop.txt,image,media,subdocument,stylesheet,script,xmlhttprequest,other
+||hdslb.com/bfs/cm/cm-sdk/static/js/bili-collect.js^$redirect=noop.txt,image,media,subdocument,stylesheet,script,xhr,other
 ||hdslb.com/bfs/cm/cm-sdk/static/js/pc.js^$script
 ||hdslb.com/bfs/seed/jinkela/short/user-fingerprint/$script
 acfun.cn##.pause-display-container,#ad-comment,#ad-player-view
@@ -1280,7 +1280,7 @@ de.as.pptv.com
 ! 风行网： fun.tv
 pub.funshion.com
 ||relive.vodfile.m1905.com/video/qiantie202$media
-1905.com#$?#.pauseInfoWrap { remove: true; }
+1905.com##.pauseInfoWrap:remove()
 ||www.1905.com/uploadfile/2024/0401/20240401094429405834.jpg^$image
 sobot.com
 @@||tb.mgtv.com/sdk/*/ad-sdk.js^$script
@@ -1298,7 +1298,7 @@ tv.sohu.com##.x-dl-shake.x-download-panel, #playerBar > div.area ~a
 log1.17173.com
 ||17173.com/batch_show?ads=
 ||17173.com/if/$script,subdocument
-le.com##+js(set-constant, isAdLoaded, true)
+le.com##+js(set, isAdLoaded, true)
 ||ott.cibntv.net/*/letv-wzgug/$media
 ||letvimg.com/lc*_iscms/202$image
 ||letvimg.com/*_gugwl/$image
@@ -1306,7 +1306,7 @@ banana.le.com
 ipinyou.com
 ||yoyi.com.cn^3p
 le.com##.min_pause_img
-cctv.com,douyin.com,douyu.com##+js(addEventListener-defuser, /visibilitychange|pagehide/)
+cctv.com,douyin.com,douyu.com##+js(aeld, /visibilitychange|pagehide/)
 ||douyucdn.cn/adxdsp/$image,media
 !弹幕 ||www.douyu.com/webSocket.worker_$script
 ||shark2.douyucdn.cn/front-publish/live-master/js/player_first/qvbp2p_douyu$script
@@ -1328,7 +1328,7 @@ www.huya.com###public-screen-ab
 ||live-cover.msstatic.com/huyalive/*/format,webp/$image
 ||tx-live-cover.msstatic.com/huyalive/*/format,webp/$image
 ||msstatic.com/huya/main3/assets/modules/CommercialAdSdk/$script
-||cdn.huya.com/leaf/$xmlhttprequest
+||cdn.huya.com/leaf/$xhr
 g.huya.com
 statwup.huya.com
 va.huya.com
@@ -1347,11 +1347,11 @@ btsow.pics##a[href^="https://tellme.pw/go/jav"]
 ||toutiaoimg.com/origin/137370002e7fbe11b296a$image
 ||dd-static.jd.com^$image,domain=subaibai.com
 !dandanzan.me,nunuyy5.com##+js(set,webkitRTCPeerConnection,null)
-dandanzan.*,nnyy.in,nunuyy5.com#$#video { max-height:100%!important }
+dandanzan.*,nnyy.in,nunuyy5.com##video:style(max-height:100%!important)
 yatu.tv##.dplayer-web-fullscreen-fix #tburl,#loadtop,[id^=myas],#myds1,#daohang
-yatu.tv,yhdm7.com,yhdm95.com,xdm530.com##+js(abort-on-property-write, document.oncontextmenu)
+yatu.tv,yhdm7.com,yhdm95.com,xdm530.com##+js(aopw, document.oncontextmenu)
 ||www.yatu.tv/image/*.gif^$image
 ||www.yatu.tv/m/images/$image
-||tracker.$xmlhttprequest,websocket,script,ping
+||tracker.$xhr,websocket,script,ping
 stgowan.com
 z4a.net

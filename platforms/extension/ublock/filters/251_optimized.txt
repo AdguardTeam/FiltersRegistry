@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JmIXIklfHZcqaVDKhvjW9A
-! Diff-Path: ../patches/251_optimized/251_optimized-s-1763887319-14400.patch
+! Checksum: 0ag/62KBzpbu/0yych+ZhQ
+! Diff-Path: ../patches/251_optimized/251_optimized-s-1764348191-14400.patch
 ! Title: Legitimate URL Shortener (Optimized)
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.23
-! TimeUpdated: 2025-11-23T08:38:13+00:00
+! Version: 2.0.9.24
+! TimeUpdated: 2025-11-28T16:39:46+00:00
 ! Expires: 5 days (update frequency)
 $removeparam=yclid
 $removeparam=gclid
@@ -178,7 +178,7 @@ $~image,removeparam=itok
 $removeparam=smtyp
 $removeparam=tpcc
 $removeparam=onetime_FromEmail
-$~xmlhttprequest,removeparam=mbid
+$~xhr,removeparam=mbid
 $removeparam=itid
 $removeparam=full_trSrc
 $removeparam=cmpg_for_af
@@ -1090,7 +1090,7 @@ $document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 $removeparam=refRID
 @@||amazon.*/gp/slredirect/picassoRedirect.html^$removeparam
 $removeparam=dchild
-||amazon.$~xmlhttprequest,removeparam=qid
+||amazon.$~xhr,removeparam=qid
 ||amazon.$removeparam=sr
 ||amazon.$removeparam=creative
 $removeparam=creativeASIN
@@ -1255,7 +1255,7 @@ $removeparam=rpp_cid
 $removeparam=hc_ref
 $removeparam=hc_location
 $removeparam=sfnsn
-?*__$~xmlhttprequest,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
+?*__$~xhr,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
 $removeparam=dti
 $removeparam=fref
@@ -1266,7 +1266,7 @@ $removeparam=privacy_mutation_token
 $removeparam=settings_tracking
 $removeparam=/^zero_.*$/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 ||facebook.com/ads^$removeparam=session_id
-$~xmlhttprequest,removeparam=/^refsrc=.*$/i
+$~xhr,removeparam=/^refsrc=.*$/i
 $removeparam=_rdr
 $document,removeparam=_ft_
 $removeparam=Medium,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
@@ -1289,7 +1289,7 @@ $removeparam=bih
 @@||google.*/url?$removeparam=ved
 $removeparam=gs_lcp
 $removeparam=cshid
-||google.*/search?$~xmlhttprequest,removeparam=ei
+||google.*/search?$~xhr,removeparam=ei
 $removeparam=sxsrf
 $removeparam=tbas
 !+ NOT_OPTIMIZED
@@ -1378,9 +1378,9 @@ $removeparam=sender_web_id
 $removeparam=share_app_id
 $removeparam=share_item_id
 $removeparam=share_link_id
-||tiktok.com^$~xmlhttprequest,removeparam=referer_url
-||tiktok.com^$~xmlhttprequest,removeparam=referer_video_id
-||tiktok.com^$~xmlhttprequest,removeparam=refer
+||tiktok.com^$~xhr,removeparam=referer_url
+||tiktok.com^$~xhr,removeparam=referer_video_id
+||tiktok.com^$~xhr,removeparam=refer
 ||tiktok.com^$removeparam=checksum
 ||tiktok.com^$removeparam=sec_uid
 ||tiktok.com^$removeparam=share_author_id
@@ -1683,7 +1683,7 @@ $removeparam=hpt,domain=cnn.com
 ||maps.googleapis.com/maps/api/js/QuotaService.RecordEvent^$removeparam
 ||ekstrabladet.dk^$removeparam=account
 ||tradera.com^$removeparam=transactionalEmail
-$~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
+$~xhr,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
 ||pinterest.*mt=signup$removeparam=d
 ||pinterest.*mt=signup$removeparam=mt
 ||pinterest.*/?mt=login^$removeparam=mt
@@ -2897,4 +2897,4 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 @@||canon.*/supportproduct/gettabcontent$removeparam=referrer
 @@||urldefense.com^$removeparam
 @@||startpage.com/sp/qi$removeparam=sc
-@@||flagpedia.net^$ping,xmlhttprequest,removeparam=gtm
+@@||flagpedia.net^$ping,xhr,removeparam=gtm

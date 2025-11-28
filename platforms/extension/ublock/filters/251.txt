@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: QVd8IBjkZWUukdofxWL2zA
-! Diff-Path: ../patches/251/251-s-1763887319-14400.patch
+! Checksum: JG+/rBgd+0TzzSZdG+ogSQ
+! Diff-Path: ../patches/251/251-s-1764348191-14400.patch
 ! Title: Legitimate URL Shortener
 ! Description: Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.
-! Version: 2.0.9.23
-! TimeUpdated: 2025-11-23T08:38:13+00:00
+! Version: 2.0.9.24
+! TimeUpdated: 2025-11-28T16:39:46+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ➗ Actually Legitimate URL Shortener Tool
@@ -267,7 +267,7 @@ $removeparam=tpcc
 ! https://www•rightmove•co•uk/properties/84442384?sc_id=36495303&onetime_FromEmail=true&cid=5a1f743a-db62-42d8-9d64-7fc6f01b0f2a&csg=Cns44tNNx5uSB2wZD7erMYDKCPA8xMUpm8yGDzQtyn3FSnEhKa#/ (06/05/2021)
 $removeparam=onetime_FromEmail
 ! https://www•wired•com/story/oversight-board-to-facebook-not-going-to-do-your-dirty-work/?mbid=social_twitter
-$~xmlhttprequest,removeparam=mbid
+$~xhr,removeparam=mbid
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-711131
 $removeparam=itid
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-715449
@@ -1551,7 +1551,7 @@ $removeparam=refRID
 ! https://www•amazon•com/Disney-Fairies-Lessons-Chapter-ebook-ebook/dp/B007R6UWG2/ref=sr_1_16?dchild=1&keywords=disney+fairies&qid=1606488113&sr=8-16 (27/11/2020)
 $removeparam=dchild
 !! (Can't be made generic due to: ebay.*, forum•cantorsys•com, hkex•com•hk, tastediveCOM, zhidao•baidu•com, forums•somethingawful•com, eng-tipsCOM, https://github.com/DandelionSprout/adfilt/issues/700)
-||amazon.$~xmlhttprequest,removeparam=qid
+||amazon.$~xhr,removeparam=qid
 ||amazon.$removeparam=sr
 ! https://www•amazon•co•uk/dp/B08K443FBQ/ref=asc_df_B08K443FBQ1606003200000/?creative=22374&creativeASIN=B08K443FBQ (28/11/2020)
 ||amazon.$removeparam=creative
@@ -1826,7 +1826,7 @@ $removeparam=hc_location
 $removeparam=sfnsn
 ! https://raw.githubusercontent.com/kowith337/PersonalFilterListCollection/master/filterlist/other/SurvivedTrackingLinkWarning.txt (Considered by me to be transformative work)
 ! https://www•facebook•com/2021iihfworlds/videos/hey-we-are-moving-on-with-spiky-video-series-this-time-our-mascot-helps-organizi/925480501570258/?__so__=permalink&__rv__=related_videos (22/05/2021)
-?*__$~xmlhttprequest,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
+?*__$~xhr,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
 $removeparam=dti
 $removeparam=fref
@@ -1839,7 +1839,7 @@ $removeparam=/^zero_.*$/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxj
 ||facebook.com/ads^$removeparam=session_id
 ! https://x•facebook•com/mylittlepony/videos/917830495715016/?refsrc=https%3A%2F%2Fx•facebook•com%2Fmylittlepony%2Fposts%2F4640468362637231&_rdr (09/04/2021)
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1047774 (03/08/2021)
-$~xmlhttprequest,removeparam=/^refsrc=.*$/i
+$~xhr,removeparam=/^refsrc=.*$/i
 $removeparam=_rdr
 ! https://m•facebook•com/groups/474038555978926/permalink/3971436826239064/?locale2=nb_NO&refid=18&_ft_=(...)&__tn__=-R
 $document,removeparam=_ft_
@@ -1882,7 +1882,7 @@ $removeparam=bih
 ! https://www•google•no/search?ei=rKq_X621OYCHwPAP5YCiuA0&q=penli•fi&oq=penli•fi&gs_lcp=(...)&sclient=psy-ab&uact=5 (26/11/2020)
 $removeparam=gs_lcp
 $removeparam=cshid
-||google.*/search?$~xmlhttprequest,removeparam=ei
+||google.*/search?$~xhr,removeparam=ei
 ! https://www•google•com/search?q=%22The%20Butterfly%20Fairy%20Friends%22%20little%20airplane&newwindow=1&sxsrf=ALeKk011aAibMJ9b29iUUQWPxzOfWhZZJA%3A1606560888505&tbas=0&source=lnt&sa=X (28/11/2020)
 $removeparam=sxsrf
 $removeparam=tbas
@@ -2012,9 +2012,9 @@ $removeparam=share_app_id
 $removeparam=share_item_id
 $removeparam=share_link_id
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-783185
-||tiktok.com^$~xmlhttprequest,removeparam=referer_url
-||tiktok.com^$~xmlhttprequest,removeparam=referer_video_id
-||tiktok.com^$~xmlhttprequest,removeparam=refer
+||tiktok.com^$~xhr,removeparam=referer_url
+||tiktok.com^$~xhr,removeparam=referer_video_id
+||tiktok.com^$~xhr,removeparam=refer
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-810773
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-974118
 ||tiktok.com^$removeparam=checksum
@@ -2487,7 +2487,7 @@ $removeparam=hpt,domain=cnn.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-987226
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1031533
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1914216
-$~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
+$~xhr,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odysee.com
 ! https://no•pinterest•com/pin/371476669268114259/?d=t&mt=signupOrPersonalizedLogin (21/03/2021)
 ||pinterest.*mt=signup$removeparam=d
 ||pinterest.*mt=signup$removeparam=mt
@@ -4346,5 +4346,5 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-5475592
 @@||startpage.com/sp/qi$removeparam=sc
 ! Strangely prevents placeholders on flagpedia•net/index (24/11/2023)
-@@||flagpedia.net^$ping,xmlhttprequest,removeparam=gtm
+@@||flagpedia.net^$ping,xhr,removeparam=gtm
 ! https://new•reddit•com/r/uBlockOrigin/comments/1h1aaj7/ubo_on_firefox_android_is_causing_a_refresh_loop/ (thanks to stephhawk, who provided this rule)
