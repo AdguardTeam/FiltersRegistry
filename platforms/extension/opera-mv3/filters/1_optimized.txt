@@ -1,4 +1,5 @@
-! Checksum: XBaKZdjS+h/Gh7JfQ7yxXA
+! Checksum: fhzngXkOXkwW1Q+s2BZTnA
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1764384001-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.3.16
@@ -59,6 +60,7 @@
 /img/amigo.
 .net/myout.php?g=
 .club/?*=*&*=*&*=*&*=$script
+.com/next.html?$third-party
 .pro/news.js|$third-party
 .ru/news.js|$third-party
 .ru/output/index/$script,third-party
@@ -345,6 +347,7 @@ http://*.ru/leftunit.pl?
 /upload/bx/*
 /uploads/baner/*
 /uploads/bnr/*
+/vendshow/*
 /vertical_banners/*
 /view/banner/*/zone?zid=
 /viewt.js
@@ -451,7 +454,6 @@ ucoz.ru/informer/
 ###banner_place_1_wrap
 ###banner_title
 ###banner_top
-###banner_top2
 ###bannerlayer
 ###banners_bottom
 ###banners_left
@@ -1194,6 +1196,7 @@ ucoz.ru/informer/
 ||ad3.rambler.ru^
 ||adbean.ru^$third-party
 ||adbn.ru^
+||adbutton.net^$third-party
 ||adcamp.ru^$third-party
 ||addweb.ru^$third-party
 ||addynamo.com^$third-party
@@ -1206,6 +1209,7 @@ ucoz.ru/informer/
 ||admilk.ru^$third-party
 ||admixer.net^$third-party
 ||admulti.$third-party
+||adne.info^$third-party
 ||adone.ru^$third-party
 ||adpod.in^$third-party
 ||adserver1.
@@ -1402,6 +1406,7 @@ ucoz.ru/informer/
 ||livesurf.ru^$third-party
 ||login.tracking101.com^
 ||loneday.com
+||loveadvert.ru^$third-party
 ||lovn.ru^$third-party
 ||luisardo.com^$third-party
 ||luxup.ru^$third-party
@@ -1602,6 +1607,7 @@ ucoz.ru/informer/
 ||v.dlski.space^$third-party
 ||v.newsportal*.ru^$third-party
 ||vast.reyden-x.com^$third-party
+||viboom.com^$third-party
 ||vidalak.com^$third-party
 ||video-play.ru^$third-party
 ||video.market-place.su^$third-party
@@ -1618,7 +1624,6 @@ ucoz.ru/informer/
 ||vifog.com^$third-party
 ||vihub.ru/video?plid=
 ||viraladnetwork.net^$third-party
-||vk.com/js/al/aes_light.js$third-party
 ||vogozae.ru^$third-party
 ||vsego.ru/images/b
 ||vsem.ru/img$third-party
@@ -2218,6 +2223,7 @@ disk.yandex.*##.direct-public__right-direct-wrapper
 disk.yandex.*##.direct
 ||docviewer.yandex.*/sw.js
 docviewer.yandex.*#%#//scriptlet('json-prune', 'seatbid rtbAuctionInfo')
+docviewer.yandex.*##div[class^="pages_"] > div[class][id]:has(> div[class] + div[style="position: absolute; display: none; visibility: hidden; width: 0px; height: 0px;"])
 mail.yandex.*###js-layout-inner ~ div[class^="Loading-m__root--"]
 mail.yandex.*##div[class*="disableAdsContainer"]
 mail.yandex.*##.DirectLine
@@ -2743,6 +2749,7 @@ pravda.com.ua##.unit_header_banner
 pravda.com.ua##.article_wide_banner_mobile
 pravda.com.ua##div[class^="block_banner_"]
 epravda.com.ua##body div[class^="advtext"]
+epravda.com.ua##span[style$="font-style: normal; text-align: center"]
 igotoworld.com###google_banner
 informator.ua##div[style="min-height:400px"]
 telegraf.com.ua##.s-content__ratio
@@ -4934,6 +4941,7 @@ irecommend.ru##.adfox_block
 ||kraj.by/banners/
 glavred.info##.article__bottom > div.my-3.w-100
 glavred.info##.main-partners
+rusfootball.info###podarok_wrapper
 gidonline.fun###s-side
 theoryandpractice.ru##a[href^="http://kampus.team/"] > img
 worldclassmag.com##.b-banner__right
@@ -5239,7 +5247,6 @@ maximonline.ru,woman.ru,parents.ru,vokrugsveta.ru,psychologies.ru,ellegirl.ru,wd
 pingvinus.ru##.ban-wideline
 anti-malware.ru,f-journal.ru,onyxgame.com,new-rutor.org###brand
 tochka.net##div.promobar
-||soft-katalog.ru/yandex-banner.png
 cursorinfo.co.il##.down_partner_detali
 amalgama-lab.com###click_area > div.noprint
 jut.su##.side_banner_yand
@@ -5496,7 +5503,6 @@ horrorzone.ru,astromeridian.ru,oper.ru###bglink
 anti-malware.ru###block-block-1
 anti-malware.ru###block-block-33
 soccer.ru###block-block-99
-novgorod.ru###block-containter-483
 soccer.ru###block-new-desine-right-bookmakers
 4vlada.com###block-reklamaheader
 220vk.com###block_str2.new_block
@@ -5636,7 +5642,6 @@ gowo.tv,moj-akvarium.ru,mangamen.com,hpc.by,tochka.by,utro-novosti.ru,skidkaonli
 skidkaonline.ru##.ads-item
 eparazit.ru##.ads-recommendations
 facebook.com,facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion##.adsCategoryIcon
-forum.awd.ru,kakprosto.ru,spec-komp.com,vz.ru##.adsbygoogle
 ideales.ru,transfiles.ru##.adsbygoogle > *
 levelsex.com##.adsdelivery
 rsdn.org##.adv-box-right
@@ -5710,6 +5715,7 @@ torrent-pirat.com##.banner_88x31
 studfile.net##.banner_bottom_preview
 autostat.ru,vdvsn.ru##.banner_content
 vseprosport.ru##.banner_link
+allmoldova.com,kinokrad.net##.banner_main
 turizm.ru##.banner_mini
 wincore.ru##.bannerbottompost
 metalinfo.ru##.bannerimage
@@ -5743,8 +5749,8 @@ take-profit.org##.broker-news
 football.kulichki.net##.bunner_container
 lada-granta.net,lkforum.ru##.but-150
 1tv.ru##.card.promo
-uip.me##.cb-sticky-sidebar > .cb-sidebar
 chatovod.ru##.chatlist > tbody > tr[class="bold"]:not([class^="chatitem"])
+mcgrp.ru##.chpok
 russian.rt.com##.column__cell_news24smi
 cxem.net##.comment-books-additional
 cxem.net##.comment-books._my-ctr
@@ -6196,6 +6202,7 @@ radioscanner.ru##td.td-2 img[width="180"]
 satsat.info##td[align$="””"][width="”30%”"]
 satsat.info##td[align$="””"][width="”45%”"]
 slovarozhegova.ru##td[align="center"][valign="top"] > [align="center"]:not(:first-of-type)
+lan23.ru##td[align="left"][width="30%"] > table.tb2 a > img[width="200"]
 yarportal.ru##td[align="right"][valign="middle"][class="desc"]
 gardenstar.ru##td[style="text-align: center;"] > span.relink
 skyportal.ru##td[valign="bottom"] a:not([href="http://twitter.com/lev_kardin"])
@@ -6303,7 +6310,6 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||gorodpavlodar.kz/images/kernab/
 ||hlamer.ru/content/stargate/
 ||hronika.info^$~third-party,xmlhttprequest
-||i.novgorod.ru/b/
 ||i.solo.rde.ru^$domain=pogodavtomske.ru
 ||illicium.web.money^$domain=topdb.ru
 ||images.letitbit.net/images/promo/$third-party
@@ -6388,7 +6394,6 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||rutracker-net.ru/img/rtn/ban/
 ||rutvet.ru/1ra.gif
 ||s.newslab.ru/b/
-||sar.66.ru^
 ||sat-digest.com/sc*_first.js
 ||sdelanounas.ru/b/
 ||shikimori.*/spnsrs/
@@ -7032,7 +7037,6 @@ www.ixbt.com##span[id^="tgb"]
 ixbt.games##.sidebar-c
 ixbt.com,ixbt.games,ixbt.pro##.desktop-c
 ixbt.com,ixbt.games,ixbt.pro##.recommend-c
-ixbt.com##div[wire\:key^="adv-"]
 www.ixbt.com##.bcontainer
 www.ixbt.com###yandex_recommend
 www.ixbt.com##.deskadv
@@ -7161,6 +7165,7 @@ mirror.co.uk#@#.affiliate
 @@||miradres.com/lat/*/uploads/kozyrki_fon.jpg$domain=kozyrki.com
 @@||yandex.ru/ads/$domain=magnit.ru
 medium.com#@#.adi
+@@||xporn.in^$domain=tre.zorox.sex|sez.vporno.video
 re.animemoonx.org#@#.reclama
 @@||yandex.ru/ads/system/header-bidding.js$domain=irkutskmedia.ru
 letemps.ch#@#.topad
