@@ -1,9 +1,9 @@
-! Checksum: LPxZCLgMj1sbDKIxFgUsLA
-! Diff-Path: ../patches/237_optimized/237_optimized-s-1764348206-14400.patch
+! Checksum: Sxduxn7CxR67o57FbWdLfg
+! Diff-Path: ../patches/237_optimized/237_optimized-s-1764377510-14400.patch
 ! Title: Polish Annoyances Filters (Optimized)
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.37.9
-! TimeUpdated: 2025-11-28T16:39:35+00:00
+! Version: 1.0.37.10
+! TimeUpdated: 2025-11-29T00:48:26+00:00
 ! Expires: 12 hours (update frequency)
 ||app*.salesmanago.pl/cf/*/zapis_na_newsletter_$subdocument
 ||bee.pl/System/Files/*/theme/*zapisz-sie*.jpg
@@ -3210,6 +3210,7 @@ pl.blogpascher.com###site-scroll-top
 playgwent.com##.c-big-stream__video--sticked.c-big-stream__video
 pogoda.interia.pl##.inpl-tout-sticky.body__common-header--fixed .vjs-fixedmonitor-wrapper-fixed
 propertynews.pl##.detached.do-stick.featured-movie
+prymat.pl##body > div[style*="fixed"]:has(a[href*="promocje"] video)
 przeambitni.pl##.mvp-vid-fixed
 punkt.media##div[id^="em"][style*="position: fixed;"]
 radio.katowice.pl##div[id^="sidebar"].fixed-player
@@ -3647,6 +3648,7 @@ informatique-mania.com,specto.com.pl##.go-to-top-button
 inka.pl,klarta.pl##.slide-up-btn
 inlago.pl,sklep.maxkuchnie.pl##.button-scroll
 inpost.pl##.footerMatToTop
+inpostpay.pl##.scrollToTopButton
 inspirander.pl##.htheme_icon_backtop
 intergama.pl,support.kaspersky.com##.up-arrow
 interia.pl##.top-of-site-link
@@ -6114,6 +6116,7 @@ programyzadarmo.net.pl##.notice--dark.js-notice.notice
 promocjomat.pl##.mkdf-blog-single-navigation
 promocyjni.pl##.new-dymek-holde
 pruszynski.com.pl###order-outbox
+prymat.pl##body > div[style*="fixed"]:has(a[href*="promocje"] div[style*="Circle"])
 przeglad-finansowy.pl###mobile_sticker-sticky-wrapper
 przepisy.pl###recentlySeenWidget
 przewodnikmp.pl##.slide-dock-on.slide-dock.widget
@@ -6361,6 +6364,7 @@ www.rp.pl###mk-paywall
 www.wp.pl##[class^="HomepageButton"]
 wyborcza.biz##.mod_swimmer
 wykop.pl##.text > p > cite:empty
+wykop.pl##section.observer.content:has([href="/rejestracja"])
 wylecz.to##.recommendedSideBox
 wyrobymennicze.pl##.gift_hover
 wysokieobcasy.pl##.bunny, .bunny-hp
@@ -11346,8 +11350,8 @@ beitadmin.pl,drzwi-cal.pl,mbmeganarzedzia.pl,otodom.pl,parkmania.pl,pl.wizcase.c
 belvederehotel.pl#%#//scriptlet('ubo-aopr', 'pf_queen.push')
 beta.netia.pl##.popup-beta
 beta.netia.pl#$#body[style="hidden"] { overflow-y: auto !important }
-bezokularow.pl#$#body.gr-body-popup-open[style] { overflow-y: auto !important }
-bezokularow.pl,scentre.pl,wiadomoscispozywcze.pl##div[data-gr="popup-container"]
+bezokularow.pl,scentre.pl,sklep.prymat.pl,wiadomoscispozywcze.pl#$#body.gr-body-popup-open[class] { overflow-y: auto !important }
+bezokularow.pl,scentre.pl,sklep.prymat.pl,wiadomoscispozywcze.pl##div[data-gr="popup-container"]
 bikemia.com#$#.fancybox-lock { overflow-y: auto !important }
 bikemia.com,epione.pl,fifishop.pl,gromada.pl,mspdion.org.pl,royalpark.pl,swiece-zaplonowe.pl#$#.fancybox-margin { margin-right: 0 !important }
 biketeam.pl#%#//scriptlet('ubo-set-cookie', 'biketeam_wola_popup', '1')
@@ -11711,7 +11715,6 @@ rylko.com###modal-newsletter
 rzetelnafirma.pl#%#//scriptlet('ubo-nostif', 'setPopup')
 samochod.porowneo.pl###modalContainer
 samochod.porowneo.pl#$#.noScroll { position: static !important }
-scentre.pl,wiadomoscispozywcze.pl#$#body.gr-body-popup-open[class] { overflow-y: auto !important }
 secure.avaaz.org#$#.page-petition--inactive { overflow-y: auto !important }
 secure.avaaz.org##.signup-petition-modal-wrapper
 sferis.pl#%#//scriptlet('ubo-acis', '$', 'promoNewsletter')
