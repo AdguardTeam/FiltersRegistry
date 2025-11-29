@@ -1,9 +1,9 @@
-! Checksum: NDhLxNAnsWF4Qq0qazoSKQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1764377509-14400.patch
+! Checksum: M0fTGn6mIdjLIvG177aERQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1764391283-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.51.96
-! TimeUpdated: 2025-11-29T00:48:03+00:00
+! Version: 2.1.51.97
+! TimeUpdated: 2025-11-29T04:38:01+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -644,6 +644,7 @@ _social-bar/
 ###socialbookmarks
 ###socialbox
 ###socialbuttons
+###socialbuttonsbox
 ###socialdiv
 ###socialemail
 ###socialfooter
@@ -1018,6 +1019,7 @@ _social-bar/
 ##.btFacebook
 ##.btn--share
 ##.btn-group-social
+##.btnShareFacebook
 ##.button-pinterest
 ##.button-share
 ##.button-share-facebook
@@ -1225,7 +1227,6 @@ _social-bar/
 ##.facebook-like-box
 ##.facebook-like-static
 ##.facebook-messenger-avatar
-##.facebook-modal
 ##.facebook-page-plugin
 ##.facebook-popup
 ##.facebook-share-btn
@@ -1283,7 +1284,6 @@ _social-bar/
 ##.fbbsb-button
 ##.fbbsb-buttons
 ##.fbbutton
-##.fbfollow
 ##.fblikebox
 ##.fblink
 ##.fbshare
@@ -1292,7 +1292,6 @@ _social-bar/
 ##.fe-share
 ##.fi-social-facebook
 ##.fi-social-instagram
-##.fi-social-linkedin
 ##.fi-social-pinterest
 ##.fi-social-twitter
 ##.fi-social-youtube
@@ -1510,7 +1509,6 @@ _social-bar/
 ##.gtm_footer_twitter
 ##.h-c-social
 ##.h-share
-##.h5ab-print-button-container
 ##.has-button-share
 ##.hatena-bookmark-button
 ##.hatena-btn-icon
@@ -2079,7 +2077,6 @@ _social-bar/
 ##.pp-social-icon
 ##.pp-social-icons
 ##.pp-social-share-content
-##.prefooter__social
 ##.prettySocial
 ##.pri-share
 ##.print-share
@@ -2160,7 +2157,6 @@ _social-bar/
 ##.select-share
 ##.selectionSharer
 ##.selfPromo__box--social
-##.sexy-bookmarks
 ##.sf-sharing
 ##.sf-social
 ##.sfacebook
@@ -2499,7 +2495,6 @@ _social-bar/
 ##.share_row
 ##.share_social
 ##.share_story
-##.share_tb
 ##.share_this
 ##.share_three
 ##.share_toggle
@@ -2682,7 +2677,6 @@ _social-bar/
 ##.site-footer__socials
 ##.site-social
 ##.site-social-menu
-##.sitewide-footer--social-nav
 ##.sitewide-social-media
 ##.slate-footer__follow-slate
 ##.smshare
@@ -2936,6 +2930,7 @@ _social-bar/
 ##.social-share_compact
 ##.social-sharer
 ##.social-shares
+##.social-sharing-bot
 ##.social-sharing-button
 ##.social-sharing-buttons
 ##.social-sharing-item
@@ -2982,6 +2977,7 @@ _social-bar/
 ##.socialBtnList
 ##.socialButtons
 ##.socialButtonv1
+##.socialCnt
 ##.socialConnect
 ##.socialCont
 ##.socialContacts
@@ -3713,6 +3709,7 @@ business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
 ask.com,smarter.com##.PartialSocialLinks
 rbth.com##.Popup-telegram
+aerospaceglobalnews.com##.PostMetaBar__Social
 abc.net.au##.ShareBanner_container__OX63I
 genius.com##.ShareButtons__Root-sc-8c8eaea4-0
 meduza.io##.SharePanel-module-root
@@ -3772,6 +3769,7 @@ studyfinds.org##.block-social-share
 carnewschina.com##.block_social_media__content
 9to5linux.com##.bm-social-top
 breitbart.com##.bnn-social-share
+bom.gov.au##.bom-social-share
 businessinsider.com##.brands-social
 agrimag.co.za,androidpolice.com,automart.co.za##.btn-facebook
 androidpolice.com,givemesport.com##.btn-flipboard
@@ -4056,6 +4054,7 @@ moneycontrol.com##.social_icons_wrapper
 ringsidenews.com##.social_label
 ciudad.com.ar,eltrecetv.com.ar,lithub.com,tn.com.ar##.social_links
 dailysabah.com,gmanetwork.com,pnn.ps##.social_media
+unn.ua##.social_root__H2cRW
 outlookindia.com##.social_sharing_article
 videocardz.com##.socialbar-sidebar
 firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.socials
@@ -4065,7 +4064,6 @@ phys.org##.socials-wrapper
 douglasnow.com##.spc-social-follow
 cryptonews.com##.ssk
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
-atlantablackstar.com##.stay-social
 healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar
 futurity.org##.sticy-share-block
@@ -4142,7 +4140,6 @@ thebanker.com##div[data-trackable-section="social-networks-widget"]
 rumble.com##div[data-type="share"]
 ea.com##ea-social-links
 greatist.com,healthline.com,medicalnewstoday.com,psychcentral.com##hl-share-overlay
-icann.org##iti-share-icons
 discord.me##li.menu-link.d-xl-inline-block
 cyprus-mail.com##social-share-links
 galaxystore.samsung.com##span[class^="SnsPlugin_items_"]
