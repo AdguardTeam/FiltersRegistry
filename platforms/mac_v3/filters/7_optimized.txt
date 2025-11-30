@@ -1,9 +1,9 @@
-! Checksum: waysEfXipN5yfR8AHt/JCA
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1764425399-3600.patch
+! Checksum: 8oOZ/tsxUvurvr/xZXIdUQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1764497403-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.70.41
-! TimeUpdated: 2025-11-29T14:06:33+00:00
+! Version: 2.0.70.42
+! TimeUpdated: 2025-11-30T10:07:00+00:00
 ! Expires: 12 hours (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||js.miyuki-web.net^
@@ -39,7 +39,7 @@
 ||prime-ever.com^
 ||adandhub.com^
 ||getallmedia.com^
-||ssdsp.smt.docomo.ne.jp^$third-party
+||ssdsp.smt.docomo.ne.jp^
 ||araklet.mediagene.co.jp^
 ||hatoltd.com^$third-party
 ||amawidget.yutbr.com^
@@ -1167,6 +1167,7 @@ kuruma-news.jp,magmix.jp,trafficnews.jp$$div[data-history="photo_extra"]
 /wp-content/plugins/amazonjs/*
 /wp-content/themes/CashLINESystem/js/modal.$script
 /wp-content/uploads/2024/09/fanza_ad$image
+.com/htm/sh1n/selectState$document
 .net/signup/newSave|$xmlhttprequest,~third-party
 .mobi/?token=$document
 ||ondigitalocean.app/webC0deinfojphtml/
@@ -1434,9 +1435,10 @@ city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,c
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+game.hiroba.dpoint.docomo.ne.jp##div[ style="min-width: 300px; min-height: 250px;"]
+game.hiroba.dpoint.docomo.ne.jp#%#//scriptlet('adjust-setTimeout', 'adSkip', '30000')
 dime.jp#$#.breadcrumb { margin-top: 0 !important; }
 dime.jp##.listBlock-topSpecial
-olympics.com##div[data-cy="adv-container"]
 momon-ga.com,nyahentai.re#%#//scriptlet('prevent-addEventListener', 'load', 'puTSstrpcht')
 finance.yahoo.co.jp##div[class^="SearchContents__group__"] > section[class*="SearchContents__ss__"]
 tbsradio.jp##div[class^="todays"][class*="_ad"]
@@ -11274,6 +11276,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_japanese
 adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !+ PLATFORM(windows, mac, android, cli) NOT_OPTIMIZED
 ||https-filtering-check.adtidy.org^
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=game.hiroba.dpoint.docomo.ne.jp
+@@||pagead2.googlesyndication.com/pagead/managed/js/adsense/$script,domain=game.hiroba.dpoint.docomo.ne.jp
+@@||g.doubleclick.net/pagead/ads?*&plat=$subdocument,domain=game.hiroba.dpoint.docomo.ne.jp
+game.hiroba.dpoint.docomo.ne.jp#@#.adsbygoogle-noablate
 okazurand.net,nihon-bijo-zukan.com#%#//scriptlet('href-sanitizer', 'a[href^="https://al.fanza.co.jp/?lurl="]', '?lurl')
 drill-planet.kobun.co.jp#@#body[onbeforeunload="return myFunction()"]
 ||nexon.com/ngm/?gm=$removeparam=gm
