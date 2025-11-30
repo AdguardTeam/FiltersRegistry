@@ -1,5 +1,5 @@
-! Checksum: p8IzMHLYgWLk0m/G9MntMQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1764391254-14400.patch
+! Checksum: tOIaJLYCsGy+wy7SRLOZag
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1764477914-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.47
@@ -260,7 +260,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||bowlingunauthorized.com^$all
 ||connatedresspint.com^$all
 ||nicelylatherrestless.com^$all
-||notifycertainty.com^$all
 ||zredir.com^$all,domain=~malware_redirection_trains.*,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||178.128.142.109^$document
@@ -1613,6 +1612,7 @@ www.tumblr.com#?#div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a
 ||172.240.41.129^$all
 ||bartcons.com^$all
 ||clickadddilla.com^$all
+||directsle.com^$all
 ||g55uuy.shop^$all
 ||onclckstr.com^$all
 ||tubecup.org^$all
@@ -2278,6 +2278,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##.share_toggle:not(html,body,:empty)
 ##.shareBar:not(html,body,:empty)
 ##.shareBottom:not(html,body,:empty)
+##.sharebtns:not(html,body,:empty)
 ##.shareit:not(html,body,:empty)
 ##.shareon:not(html,body,:empty)
 ##.sharethis-wrapper:not(html,body,:empty)
@@ -2704,7 +2705,6 @@ amap.com###to_lushu
 coolapk.com##.apk_topba_code
 ctrip.com##.service-notice-right
 ctrip.com##.set-phone.set-list > .nav-myctrip.person-text
-ditu.amap.com###mobileenterance_no_bg
 jd.com###J_mobile
 lianjia.com,zu.ke.com,csair.com##.qr-code
 map.baidu.com##.poi-ads
@@ -3091,6 +3091,7 @@ $document,removeparam=ranSiteID
 $document,removeparam=xtor
 $document,removeparam=SRC
 $document,removeparam=ectrans
+$document,removeparam=dartycid
 $document,removeparam=bbaid
 ||paypal.$document,removeparam=ppid
 $document,removeparam=unptid
@@ -3326,7 +3327,6 @@ $removeparam=a_aid
 $removeparam=ft_source
 $removeparam=ft_medium
 $removeparam=ref_source
-$removeparam=ref_medium
 $removeparam=ref_campaign
 $removeparam=spMailingID
 $removeparam=spUserID
@@ -3392,7 +3392,6 @@ $document,removeparam=/^source=webgains$/
 $removeparam=paid
 $removeparam=pacid
 $removeparam=adtype
-$removeparam=tmcampid
 $removeparam=n_cid
 $removeparam=awid
 $removeparam=af_ad
@@ -3430,6 +3429,7 @@ $removeparam=aftr
 $removeparam=aftr_source
 $removeparam=ko_click_id
 $removeparam=nrtv_cid
+$removeparam=nrtv_as_src
 $removeparam=trk_ref
 $removeparam=ircid
 $document,removeparam=/^src=rss$/
@@ -3741,7 +3741,6 @@ $removeparam=cmpgn,domain=ebay.*
 ||ebay.$removeparam=segname
 ://www.ebay.$document,removeparam=/^itm[a-zA-Z0-9].*$/
 ||ebay.$removeparam=_skw
-$removeparam=hc_location
 $removeparam=sfnsn
 ?*__$~xmlhttprequest,removeparam=/^__[bce-z]/,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=acontext
@@ -4224,7 +4223,10 @@ $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=/^ath.*$/
 $removeparam=p1,domain=bostonglobe.com
 $removeparam=refdomain,domain=bestbuy.com
+$removeparam=recs_placement,domain=nordstrom.com
+$removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
+$removeparam=recs_seed,domain=nordstrom.com
 ||gamivo.com^$removeparam=glv
 ||banggood.com^$removeparam=custlinkid
 ||market.yandex.ru^$removeparam=cpc
@@ -4233,6 +4235,7 @@ $removeparam=recs_source
 ||lenovo.com^$removeparam=orgRef
 $removeparam=ppref,domain=digidip.net
 ||dhgate.com^$removeparam=f
+||cyberghostvpn.com^$removeparam=media_source
 ||zhihu.com^$removeparam=hybrid_search_source
 ||zhihu.com^$removeparam=hybrid_search_extra
 ||theregister.com^$removeparam=td
@@ -4557,6 +4560,7 @@ ref=dtf.ru$document,removeparam=ref
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
 .com/*/status/$document,removeparam=t,domain=twitter.com|x.com
 ||qwant.com^$removeparam=hti
+||finn.no^$removeparam=nocache
 ||instagram.com^$document,removeparam=entry_point
 ||cbc.ca^$removeparam=webview
 ||cbc.ca^$removeparam=appname
