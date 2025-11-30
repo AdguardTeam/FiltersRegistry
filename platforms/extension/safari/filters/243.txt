@@ -1,14 +1,14 @@
-! Checksum: nQ1+t75XYRtrtLHrwWBixg
-! Diff-Path: ../patches/243/243-s-1764405742-14400.patch
+! Checksum: DXoiiXfSjp/s+xm9eauDGw
+! Diff-Path: ../patches/243/243-s-1764520888-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.39
-! TimeUpdated: 2025-11-29T08:39:10+00:00
+! Version: 2.0.23.40
+! TimeUpdated: 2025-11-30T16:38:29+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2025-11-29 08:12:56 CET
+! Last modified: 2025-11-30 15:38:14 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -893,7 +893,7 @@ kalender.se##.day-nav ~ a:not([href*="kalender.se"]), a:not([href*="kalender.se"
 kalender.se##.shadow-sm.items-center:has(#above-main-calendar, #below-main-calendar)
 kalmarposten.se##.wp-block-uagb-image__figure:has(a[target])
 kalmar.nu###rb-cookie
-kampsportnews.se##.widget_media_image:has(a[href]:not([href^="/"]):not([href*="kampsportnews.se"]))
+kampsportnews.se##:is(.widget_media_image, .widget_media_gallery):has(a[href]:not([href^="/"]):not([href*="kampsportnews.se"]))
 kamrat.com###kadDiv, div[style="margin:25px 0;max-width:255px!important;"], #scrollAdj ~ *
 kamrat.com#%#//scriptlet('ubo-set', 'showAds', 'false')
 kamrat.com#%#//scriptlet('ubo-set', 'trap', 'noopFunc')
@@ -1192,6 +1192,7 @@ nyheteridag.se,ledarsidorna.se##.teaser:has(a[href*="casino"])
 nyhetersto.se##.metaslider:has(a[href*="ica.se"], a[href*="IcaSupermarket"])
 nyhetersto.se##.site-branding a ~ p, .wp-block-jetpack-slideshow, .metaslider_image_link[href*="IcaSupermarket"], .widget_media_image a[target="_blank"], .widget_custom_html a[target="_blank"]
 nyhetersto.se,bussmagasinet.se,brollopsmagasinet.se,borattforum.se,globalpolitics.se,batliv.se,em-fotboll.se,elinor.se,fotbollsresultat.com,vm-fotboll.se,husbyggaren.se,vildmarken.se,fisheco.se,nyhetsbyranjarva.se,it-finans.se,it-halsa.se,it-kanalen.se,it-pedagogen.se,it-retail.se,it-hallbarhet.se,battregolf.se,sporthalsa.se,revisionsvarlden.se##a.gofollow[data-track]
+nyheter.fiskejournalen.se,jaktjournalen.se#?#.kicker.below:contains(/annons/i):upward(article)
 nyheter.swebbtv.se#?#.recent-posts-widget-with-thumbnails:contains(/annonssamarbete|annons/i)
 nyheter.swebbtv.se##.wp-block-image a[target]:not([href*="nyheter.swebbtv.se"]), .mh-sidebar-2 .indexlink
 nyhetsbyranjarva.se##div[style="display: flex; justify-content: center; flex-direction: column; align-items: center;"]
@@ -1418,6 +1419,7 @@ sporthalsa.se##.header_top, #media_image-2, #text-6, article[class*="veckans-pro
 sportlovin.se##div[style*="min-height"]:has(div[id^="sportlovin_"])
 sportnik.com##.index-footer-section:has(.make-money-partners)
 sportpanelen.se###mvp-side-wrap .homepage-widget:has(a[href*="utanlicens"])
+sportpanelen.se#?#.mvp-blog-story-wrap:contains(/kasino|casino/i)
 sportpanelen.se,sportnyheter.nu,sporthalsa.se,sport24.nu,golfbladet.se##.textwidget:has(a[href*="casino"])
 sporttv.nu##a[onclick*="bannerClick"], #linkus, .details-bet-banner
 sporttv.nu#$?#.progams-list-xs .text-center:has(.banner) { remove: true; }
@@ -3456,6 +3458,7 @@ _banner.php?$domain=tvmatchen.nu
 ||svd.se/api/live-ads/
 ||svenskalag.se/img/sponsors
 ||sv.picmix.com/sw.js
+||sync.3fmediagroup.com^$third-party
 ||s.arclk.net/tr?$all
 ||tally.so^$domain=tranakampsport.se
 ||tapet.bnek.bn.nr^$domain=expressen.se
