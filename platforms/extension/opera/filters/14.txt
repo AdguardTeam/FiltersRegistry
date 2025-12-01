@@ -1,9 +1,9 @@
-! Checksum: FGN2pZrh+RdC3G5fH185qQ
-! Diff-Path: ../patches/14/14-s-1764591298-3600.patch
+! Checksum: cusSCVQ0ZZaX4YKkUi3UQg
+! Diff-Path: ../patches/14/14-s-1764595323-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.85
-! TimeUpdated: 2025-12-01T12:12:08+00:00
+! Version: 2.2.50.86
+! TimeUpdated: 2025-12-01T13:19:03+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17894,6 +17894,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/218953
+@@||cmp.bonniernews.se/*/loader.js$domain=sydsvenskan.se
+@@||cmp.bonniernews.se/sdk/*/modern/sdk.*.js$domain=sydsvenskan.se
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218727
 gdanskticket.majaland.pl#@#.cookieContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218949
@@ -34591,6 +34594,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+updatestar.com##.downloadlist
 stylecaster.com##div[data-component="newsletter"]
 thehindu.com#%#//scriptlet('remove-class', 'articlepaywall', 'body.articlepaywall')
 sportico.com#%#//scriptlet('set-constant', 'pmcPiano.newsletterForm', 'undefined')
@@ -56201,8 +56205,9 @@ okpeliz.com#%#//scriptlet('adjust-setInterval', '/countdown|progressLine/', '*',
 nexusmods.com#%#//scriptlet('adjust-setInterval', 'remaining--;')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214159
 arahcloud.com#%#//scriptlet('adjust-setInterval', 'downloadTime', '*', '0.001')
+! https://github.com/AdguardTeam/AdguardFilters/issues/219085
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213838
-topshare.in,tempmaile.me#%#//scriptlet('adjust-setInterval', 'count', '*', '0.001')
+topshare.in,tempmaile.me,filydot.fun#%#//scriptlet('adjust-setInterval', '/count|downloadButton/', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213796
 crystal-launcher.pl#%#//scriptlet('adjust-setTimeout', 'timerCount', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213725
