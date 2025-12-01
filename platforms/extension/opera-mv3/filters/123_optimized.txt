@@ -1,9 +1,9 @@
-! Checksum: LZhP7FI/Uv3zAiZ+4/fVfg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1764550524-14400.patch
+! Checksum: H2qf2xOKiUaHp6VyYevjNw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1764564617-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.52.8
-! TimeUpdated: 2025-12-01T00:51:39+00:00
+! Version: 2.1.52.9
+! TimeUpdated: 2025-12-01T04:46:51+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -22,6 +22,7 @@
 /accesspress-social-counter/*
 /addthis_widget.js
 /addtoany.min.js
+/ashare.js
 /common/sns/*
 /common/sns_
 /facebook-pagelike-widget/fb.js
@@ -29,6 +30,7 @@
 /facebook_footer.png
 /facebook_footer.svg
 /facebook_like_button.png
+/facebook_social.png
 /fb-like-pop.js
 /fb-pixel.js
 /fbshare.png
@@ -349,7 +351,6 @@ _social-bar/
 ###menu-social-menu
 ###menu-social-menu-1
 ###menu-social-navigation
-###menu-social2
 ###menuSocial
 ###menu_social
 ###meteored_share
@@ -478,6 +479,7 @@ _social-bar/
 ###share_wrapper
 ###sharebar
 ###sharebarTop
+###sharebarx
 ###sharebox
 ###sharebtns
 ###sharebtnwrap
@@ -648,7 +650,6 @@ _social-bar/
 ###socialbox
 ###socialbuttons
 ###socialbuttonsbox
-###socialdiv
 ###socialemail
 ###socialfooter
 ###socialicons
@@ -731,6 +732,8 @@ _social-bar/
 ##.Footer-socialButtons
 ##.FooterSocial
 ##.FooterSocialMedia
+##.Footer__Facebook
+##.Footer__Twitter
 ##.Gallery-Share
 ##.Header-social
 ##.Header-socialIcons
@@ -1334,11 +1337,9 @@ _social-bar/
 ##.follow-us-box
 ##.follow-us-button
 ##.follow-us-container
-##.follow-us-facebook
 ##.follow-us-icons
 ##.follow-us-on-twitter
 ##.follow-us-panel
-##.follow-us-twitter
 ##.follow-us-wrapper
 ##.follow-widget
 ##.followSocial
@@ -1403,6 +1404,7 @@ _social-bar/
 ##.footer-social-n
 ##.footer-social-ul
 ##.footer-socialIcons
+##.footer-sociallink
 ##.footer-sociallinks
 ##.footer-socialmedia
 ##.footer-socialmediaIcon
@@ -1715,12 +1717,12 @@ _social-bar/
 ##.item-sharing
 ##.item-social-row
 ##.itemSocialSharing
-##.itemTwitter
 ##.j-social
 ##.j-twitter
 ##.janrainShareCountContainer
 ##.janrainSocialBar
 ##.jeg_author_socials
+##.jeg_custom_share_wrapper
 ##.jeg_share_button
 ##.jeg_share_top_container
 ##.jeg_sharelist
@@ -1930,12 +1932,12 @@ _social-bar/
 ##.mvp-soc-mob-list
 ##.mvp-soc-mob-pin
 ##.mvp_facebook_widget
-##.mvp_social_widget
 ##.native-share
 ##.native-share-buttons
 ##.nav--social
 ##.nav--social-box
 ##.nav-share
+##.nav-share-btn
 ##.nav-soc-but
 ##.nav-social
 ##.nav-social-links
@@ -2164,7 +2166,6 @@ _social-bar/
 ##.selfPromo__box--social
 ##.sf-sharing
 ##.sf-social
-##.sfacebook
 ##.sfmsb-follow-social-buttons
 ##.sfsi_plus_widget
 ##.sfsi_widget
@@ -2319,7 +2320,6 @@ _social-bar/
 ##.share-popup
 ##.share-post
 ##.share-post-box
-##.share-rail
 ##.share-reddit
 ##.share-row
 ##.share-save
@@ -2749,6 +2749,7 @@ _social-bar/
 ##.social-bookmark
 ##.social-bookmarks
 ##.social-box-footer
+##.social-btn-area
 ##.social-btn-container
 ##.social-btn-facebook
 ##.social-btn-list
@@ -2759,6 +2760,7 @@ _social-bar/
 ##.social-buttons--follow
 ##.social-buttons-compact
 ##.social-buttons-container
+##.social-buttons-footer
 ##.social-buttons-twitter
 ##.social-buttons-wrapper
 ##.social-buttons__item
@@ -3172,6 +3174,8 @@ _social-bar/
 ##.sticky-social-buttons
 ##.sticky-social-share
 ##.stickysocial
+##.stm-share
+##.stm-shareble
 ##.stm-socials
 ##.stm-socials__icon
 ##.story-share
@@ -3179,7 +3183,6 @@ _social-bar/
 ##.story__share
 ##.story__social
 ##.stripe-social
-##.stwitter
 ##.sub_jeu_social_facebook
 ##.sub_jeu_social_twitter
 ##.sub_sns
@@ -3704,14 +3707,15 @@ venturebeat.com##.Footer__social-icon
 indianexpress.com##.G-folow-button
 meduza.io##.GeneralMaterial-module-share
 newsweek.com##.GooglePreferredSourceBanner_container__4kWoo
+cnbc.com##.HighlightShare-container
 cnbc.com##.HighlightShare-styles-makeit-container--QcXaz
 apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
-ask.com,smarter.com##.PartialSocialLinks
 rbth.com##.Popup-telegram
 aerospaceglobalnews.com##.PostMetaBar__Social
 abc.net.au##.ShareBanner_container__OX63I
+aleteia.org##.ShareBar_link__3gR4V
 genius.com##.ShareButtons__Root-sc-8c8eaea4-0
 meduza.io##.SharePanel-module-root
 ynet.co.il,ynetnews.com##.SiteArticleSocialShareNew1280
@@ -3720,6 +3724,7 @@ asahi.com##.SnsUtilityArea
 cbssports.com##.SocialIconsBar
 suntimes.com,tageblatt.de##.SocialLink
 streetsblog.org##.SocialSharing_socialSharingItems__wdJu8
+aleteia.org##.Socials_social_links__T3MJv
 indiatoday.in##.Story_whatsapp_channel__6xdtB
 grammarly.com##._3fq8S-container
 pixivision.net##._floated-bottom-bar
@@ -3888,6 +3893,7 @@ insideclimatenews.org##.icn-share-holder
 atptour.com##.icon-email
 joe.co.uk##.icon-share
 manutd.com##.icon-share-card-lite
+photofunia.com##.icons
 financialexpress.com##.ie-google-news
 indianexpress.com##.ie-ie-share
 iherb.com##.iherb-pdp-share
@@ -4269,6 +4275,7 @@ presseportal.de##.story-sharing
 watson.ch##.watson-sharebuttons
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
+bz-berlin.de##div[data-type="social-bar"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 radiofrance.fr##.ShareManager

@@ -1,5 +1,5 @@
-! Checksum: paa1xY6idBDdmqJBiEslXw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1764550509-14400.patch
+! Checksum: h2zm6AVaTXpXx8XtnupKcQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1764564605-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.48
@@ -937,9 +937,11 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||migrationoctavian.com^$all
 ||fluffyinfection.com^$all
 ||hasteninto.com^$all
+||atecomprisedispel.com^$all
 ||delicioustightbronze.com^$all
 ||entertainlavish.com^$all
 ||markswaitingrouge.com^$all
+||nopecaptivity.com^$all
 ||outlaysudden.com^$all
 ||batchzoo.com^$all
 ||clungfellow.com^$all
@@ -959,7 +961,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||seenwage.com^$all
 ||sourshaped.com^$all
 ||spleennest.com^$all
-||staunchtownsegg.com^$all
 ||trambelongedallure.com^$all
 ||vacuumintendedinhale.com^$all
 ||verbassistance.com^$all
@@ -1378,7 +1379,6 @@ cdburnerxp.se##[href*="/downloadsetup.exe"]
 ||158.222.7.83^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||95.214.26.78^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
-.aspx?iid=*&cid=$all
 .aspx?cname=*&cid=$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||185.155.184.57^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
@@ -2158,6 +2158,7 @@ launcher.thesims3.com^$csp=upgrade-insecure-requests
 *#?#script[src*=disquscdn] + #layout .post-content:contains(Viagra)
 *#?#script[src*=disquscdn] + #layout .post-content:contains(We offer unlimited)
 *#?#script[src*=disquscdn] + #layout .post-content:contains(.com specialize)
+||s.free.fr^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||212.27.60.108^$all
 ||amazonaws.com^$all,badfilter,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
@@ -2324,6 +2325,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ##a[href*="/social_plugins/share"]
 ##a[href*="://plus.google.com/share?url="]
 ##a[href*="addtoany.com/add_to/"]
+##a[href*="api.addthis.com"]:not([href*="/email/"])
 ##a[href*="plusone.google.com"]
 ##a[href*="telegram.me/share/url?"]
 ##a[href^="/sharer/sharer.php?"] > button[type=submit]
@@ -3282,7 +3284,6 @@ $removeparam=REFERRAL_ID
 $removeparam=impradid
 $removeparam=impradname
 $removeparam=cm_type
-Ref=CJ^$document,removeparam=ref
 $document,removeparam=/^source=pepperjam$/
 $document,removeparam=/^source=cj$/
 $removeparam=affil
@@ -3305,7 +3306,6 @@ $removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
 $removeparam=afflid
 $removeparam=mclk
-$document,removeparam=maid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
 $removeparam=exactag_uk
@@ -3585,7 +3585,6 @@ $removeparam=/^source=googleps$/
 $removeparam=duckai
 !+ NOT_OPTIMIZED
 $document,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adressa.no|polarismedia.no
-/^http.*[^?]\?$/$document,removeparam=/^=$/
 $removeparam=slref
 $removeparam=t-src
 $removeparam=x-clickref
@@ -3712,6 +3711,7 @@ $removeparam=sk,domain=aliexpress.*|bing.com
 $removeparam=_trkparms
 $removeparam=_from
 $removeparam=sacat
+$removeparam=amdata,domain=ebay.*
 $removeparam=hash,domain=ebay.*
 ||ebay.$removeparam=mkevt
 ||ebay.$removeparam=mkcid
@@ -4428,6 +4428,7 @@ ref=spreadprivacy.com$removeparam=ref
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
 ||linkedin.com/feed/update$removeparam=origin
+||geoguessr.com/join/$document,domain=geoguessr.com,removeparam=s
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
 ||gitlab.$removeparam=ref_type
@@ -4483,6 +4484,8 @@ $document,removeparam=_p_rfs,domain=temu.com
 $document,removeparam=_x_ads_sub_channel,domain=temu.com
 $document,removeparam=_x_vst_scene,domain=temu.com
 $document,removeparam=refer_page_el_sn,domain=temu.com
+$document,removeparam=refccid,domain=bedbathandbeyond.com
+$document,removeparam=searchidx,domain=bedbathandbeyond.com
 $document,removeparam=tk,domain=indeed.com
 $removeparam=from,domain=indeed.com
 $removeparam=advn,domain=indeed.com
@@ -5257,7 +5260,6 @@ foodora.*#$#.user-wrapper + .order-components { top: 64px !important }
 ##.text_ad:not(html,body,:empty)
 #@#.text_ads
 #@#.textad
-##.textad:not(html,body,:empty)
 #@#.textAd
 ##.textAd:not(html,body,:empty)
 @@/adblock-detection/prebid.js|
@@ -5277,7 +5279,6 @@ flipkart.com##footer section + div:last-of-type
 google.*#@##google-hats-survey
 ||appboycdn.com^$third-party
 independent.co.uk,indy100.com##.notification-prompt
-qwant.com##main > div:last-of-type:has(>div>a:is([href*="://chromewebstore."],[href*="://addons.mozilla."]):not([data-testid]))
 /fakepage.html|$important
 @@$xmlhttprequest,third-party,redirect-rule=nooptext,method=head,domain=superadblocktest.com
 |https://adblock.*/js/widget/ads.js|$~third-party
