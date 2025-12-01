@@ -1,5 +1,5 @@
-! Checksum: J5QUTABS4VwOrXcLixBTVw
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1764470820-3600.patch
+! Checksum: j2RxzNfa/7KTbJ8Y7axaQQ
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1764557706-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.3.16
@@ -73,6 +73,7 @@
 /sovetnik.webpartner.
 .com/inc/angular.js
 .top/inc/angular.js
+/static/foobar.js?p=*&b=
 ://www.*.xyz/*?*&key=$popup,third-party
 /show/?block_id=
 /js/sjplugin.js
@@ -255,7 +256,6 @@ http://*.ru/leftunit.pl?
 /bitrix/spread.php?
 /bnrsrv.*?
 /bodyclick.
-/bs.mybb.ru/*
 /bw_adsys.
 /cgi-bin/adv.fcgi?
 /cgi-bin/iframe/*
@@ -401,6 +401,7 @@ ucoz.ru/informer/
 ||carambis.ru/static/new/programs/promo/$third-party
 ||iframe.tvzavr.ru/action/window/*?autoplay=1$third-party
 ||iframe.tvzavr.ru/iframe/index.html?cid=*&autoplay=1$third-party
+||n*adserv.com/vast.xml
 ||vk.com/rtrg$third-party
 ||dondlo.$third-party
 /rttr*.min.js$~third-party
@@ -460,6 +461,7 @@ ucoz.ru/informer/
 ###banner_place_1_wrap
 ###banner_title
 ###banner_top
+###banner_top2
 ###bannerlayer
 ###banners_bottom
 ###banners_left
@@ -961,7 +963,6 @@ ucoz.ru/informer/
 ||ssp.bidvol.com^$third-party
 ||mybmrtrg.com^$third-party
 ||sitewithg.com^$third-party
-||brodmn.com^$third-party
 ||xcec.ru^$third-party
 ||rbtwo.bid^$third-party
 ||g4news.biz^$third-party
@@ -1217,6 +1218,7 @@ ucoz.ru/informer/
 ||adpod.in^$third-party
 ||adserver1.
 ||adsmmgp.com^$third-party
+||adsmo.ru^$third-party
 ||adstock.pro^$third-party
 ||adtelligent.com^$third-party
 ||adv.vz.ru^
@@ -2458,7 +2460,6 @@ cybersport.ru#$#.page-layout > main { padding-top: 0 !important; }
 101kofemashina.ru#$#body { background-image: none!important; padding-top: 0!important; }
 culture.ru#$#div > div[style^="background: rgb"] > a[href][target="_blank"] { display: none !important; }
 culture.ru#$##header { top: 0 !important; }
-study.ru#$#.top-banner { display: none !important; }
 study.ru#$##header { height: 94px !important; }
 study.ru#$#.header-inner { height: 94px !important; }
 dzen.ru#$#body { overflow: auto !important; }
@@ -2786,7 +2787,6 @@ tengrinews.kz##.container > section:has(> div.ya-news)
 tengrinews.kz,tengriauto.kz##.header_adv
 tengrinews.kz,tengriauto.kz##.banner-tn_left
 reform.news###custom_html-8
-||krotovroman.ru/robanner/
 itc.ua##body > div[style^="text-align"][style*="bgcolor: #000000;"]
 focus.ua##.o-adds
 ||domovita.by/js/adfox/
@@ -3696,7 +3696,6 @@ partnerkin.com##.ab-box
 softportal.com##.cardPageDescMain a[rel="nofollow"] img
 kinonews.ru##.block-page-new + .clear + hr
 turkmenportal.com##.sub_header_middle_panel > div[class^="col-"]:has(> div.bannerB)
-turkmenportal.com#?##related-news-wrapper > div.row:has(div[style^="height:"] > div.banner_wrapper)
 tass.ru###top_page_box
 technical.city##.container > div[style^="margin-bottom:"]
 life.ru##a[class="wrapper"][target="_blank"]
@@ -4083,6 +4082,7 @@ partnerkin.com#$?#.cstm_popup_overlay { remove: true; }
 serveradmin.ru#?#.theiaStickySidebar > div[id^="text-html-widget-"]:has(> div.widget-container > div[style="text-align:center;"] > table[cellpadding])
 glianec.com#?##col-right > div:not([class^="bl-middle"]:has(> h4 > strong:contains(/Додати|^Твій$/)))
 glianec.com#?##col-left > div[class]:has(> h4 > strong:contains(/Новин[к]?и|Join/))
+comss.ru#?#body > div.container:has(> div.row > div.col-sm-6 > div[style^="padding-top:10px;"][style*="max-width:336px;"] > ins.adsbygoogle)
 rg.ru#?#div[class^="EditorialPageArticleAside_aside"] > div[class^="EditorialPageArticleAside_item"]:has(> div[id].page_article)
 infox.ru#?#.row div.stlt:contains(Реклама)
 infox.ru#?#body > div.wr_container:has(> div.container > div.partner_news_gor)
@@ -5843,6 +5843,7 @@ trashbox.ru##.div_branding_left
 trashbox.ru##.div_branding_top
 do.ngs.ru##.do-velum
 zagranitsa.com##.double-click
+torrent9.ru##.downloadGame noindex > a > img
 engblog.ru##.englex_side_teaser_button
 vsimse.ru##.entry-content > div[style*="text-align: center"] > a[target="_blank"] > img
 baibako.tv##.entry-content.rich-content > table[border="0"][Width="100%"] > tbody > tr > td > div > p
@@ -6148,7 +6149,6 @@ faqusha.ru##div[class*="advban"]
 gamer.ru##div[class*="alarmalarm-banner-"]
 avito.ru##div[class*="avito-ads-container"] > div
 sravni.ru##div[class*="banner-container"]
-footballtop.ru##div[class*="ft-banner"]
 briefly.ru##div[class*="honey_placement"]
 penzavzglyad.ru##div[class*="sidebar-ads"]
 otvaga2004.mybb.ru##div[class="section"][style] > div[id]
@@ -7120,7 +7120,6 @@ news.rambler.ru##div[style^="min-height: 600px;"] + div:has(div.banner--native-p
 news.rambler.ru##.adfox-billboard
 news.rambler.ru##.article__plista
 nova.rambler.ru##article[class^="Direct__item--"]
-travel.rambler.ru##div[data-blocks="partners"]
 rambler.ru##div[class*="xmr"][style^="min-height:"]
 [$path=/\/(dom|pro)/]rambler.ru##div[style^="order:"][style*="-1"]
 [$path=/\/(dom|pro|eco)/]rambler.ru##div[class]:has(> div[id^="adfox-"])
