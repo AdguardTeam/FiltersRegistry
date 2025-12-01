@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 3RPQlHaEd2Txg6kESqwi5A
-! Diff-Path: ../patches/14/14-s-1764598272-3600.patch
+! Checksum: 4FeNJFHcjDfBAV+r/iPldQ
+! Diff-Path: ../patches/14/14-s-1764601903-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.50.87
-! TimeUpdated: 2025-12-01T14:08:17+00:00
+! Version: 2.2.50.88
+! TimeUpdated: 2025-12-01T15:08:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -16794,6 +16794,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219053
+tcl.com#@#.cookie-bar:not(body)
+tcl.com#@#.cookie-box:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218953
 @@||cmp.bonniernews.se/*/loader.js$domain=sydsvenskan.se
 @@||cmp.bonniernews.se/sdk/*/modern/sdk.*.js$domain=sydsvenskan.se
@@ -42070,6 +42073,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+m.olx.ua##div[class^="css-"]:has(> button[data-testid="app-install-banner-open"])
 chirashiplus.jp##.contents > a[href="https://app.chirashiplus.jp/"]
 adidas.ua##.header__static-container ~ .sap
 poshmark.com##.btn--open-in-app
