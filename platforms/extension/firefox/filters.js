@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/firefox/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.29.15",
-			"timeUpdated": "2025-12-01T05:13:53+0000",
+			"version": "2.4.29.16",
+			"timeUpdated": "2025-12-01T06:11:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.2.81",
-			"timeUpdated": "2025-12-01T04:27:01+0000",
+			"version": "2.1.2.82",
+			"timeUpdated": "2025-12-01T06:11:29+0000",
 			"languages": [],
 			"tags": [
 				45,
