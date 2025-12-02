@@ -579,6 +579,10 @@
         },
         {
             "domains": "primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com",
+            "script": "(()=>{let t=!1;const e=window.setTimeout,n={apply:(n,o,c)=>{try{c[0]?.toString?.().includes(\"thisArg.dispatchEvent\")&&(t=!0,e((()=>{t=!1}),50))}catch(t){}return Reflect.apply(n,o,c)}};window.setTimeout=new Proxy(window.setTimeout,n);const o=new Set([\"readystatechange\",\"load\",\"loadend\"]),c={construct:(e,n,c)=>{try{const e=n[0];if(t&&o.has(e)&&location.href.includes(\"/video/\"))return new ProgressEvent(e)}catch(t){}return Reflect.construct(e,n,c)}};window.Event=new Proxy(window.Event,c)})();"
+        },
+        {
+            "domains": "primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com",
             "script": "((e,t)=>{const n={apply:(n,o,r)=>{try{const s=r[1];if(!s)return Reflect.apply(n,o,r);const c=typeof s;if(\"string\"===c&&s.includes?.(t)){const t=new URL(s);t.searchParams.delete(e);const n=t.href.replace(\"%2CCuepointPlaylist\",\"\");r[1]=n}else if(\"object\"===c&&s instanceof URL&&s.href?.includes?.(t)){s.searchParams.delete(e);const t=s.href.replace(\"%2CCuepointPlaylist\",\"\");r[1]=t}}catch(e){}return Reflect.apply(n,o,r)}};window.XMLHttpRequest.prototype.open=new Proxy(window.XMLHttpRequest.prototype.open,n)})(\"deviceAdInsertionTypeOverride\",\"/GetPlaybackResources?\");"
         },
         {

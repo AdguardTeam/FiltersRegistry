@@ -1,8 +1,8 @@
-! Checksum: TuOreO6MTDaqXkHViCd4dA
+! Checksum: ucfU0Krqkf0TOjeHPRvFRg
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.29.45
-! TimeUpdated: 2025-12-02T11:07:19+00:00
+! Version: 2.4.29.46
+! TimeUpdated: 2025-12-02T12:11:51+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -31362,8 +31362,13 @@ primevideo.com#%#//scriptlet('json-prune', 'cuepointPlaylist vodPlaybackUrls.res
 ||primevideo.com/cdp/getVideoAds
 ||amazon.dev/getVideoAds
 ||amazon.dev/getAds
-! when applied to every page it breaks ability to open next page in search (at least on amazon.de)
-! removed path as rule got modified and initial and new rule is not breaking it anymore
+! https://github.com/AdguardTeam/AdguardFilters/issues/217308
+! Fixes low-resolution issue on live streams
+! TODO: remove once this is fixed - https://github.com/AdguardTeam/Scriptlets/issues/486#issuecomment-3585886900
+primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#(()=>{let t=!1;const e=window.setTimeout,n={apply:(n,o,c)=>{try{c[0]?.toString?.().includes("thisArg.dispatchEvent")&&(t=!0,e((()=>{t=!1}),50))}catch(t){}return Reflect.apply(n,o,c)}};window.setTimeout=new Proxy(window.setTimeout,n);const o=new Set(["readystatechange","load","loadend"]),c={construct:(e,n,c)=>{try{const e=n[0];if(t&&o.has(e)&&location.href.includes("/video/"))return new ProgressEvent(e)}catch(t){}return Reflect.construct(e,n,c)}};window.Event=new Proxy(window.Event,c)})();
+!+ PLATFORM(ext_chromium_mv3, ext_ff)
+primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('trusted-create-element', 'head', 'script', '', '(()=>{let t=!1;const e=window.setTimeout,n={apply:(n,o,c)=>{try{c[0]?.toString?.().includes("thisArg.dispatchEvent")&&(t=!0,e((()=>{t=!1}),50))}catch(t){}return Reflect.apply(n,o,c)}};window.setTimeout=new Proxy(window.setTimeout,n);const o=new Set(["readystatechange","load","loadend"]),c={construct:(e,n,c)=>{try{const e=n[0];if(t&&o.has(e)&&location.href.includes("/video/"))return new ProgressEvent(e)}catch(t){}return Reflect.construct(e,n,c)}};window.Event=new Proxy(window.Event,c)})();')
+!
 amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('json-prune', 'cuepointPlaylist vodPlaybackUrls.result.playbackUrls.cuepoints vodPlaylistedPlaybackUrls.result.playbackUrls.pauseBehavior vodPlaylistedPlaybackUrls.result.playbackUrls.pauseAdsResolution vodPlaylistedPlaybackUrls.result.playbackUrls.intraTitlePlaylist.[-].shouldShowOnScrubBar ads')
 primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]] | /*[name()="MPD"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]]/@mediaPresentationDuration | /*[name()="MPD"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]]/*[name()="Period"]/@start)', '', '.mpd')
 primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[@value="Draper"]] | /*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"]/@start)', '[value="Draper"]', '.mpd')
@@ -36434,6 +36439,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+lastminute.com.au##div[role="main"] > div.comet-homepage-module > div.SimpleContainer:has(a[href^="https://adclick.g.doubleclick.net/"])
 nanoreview.net##.gtx_lol_o_desktop
 old.reddit.com##.sb-unit
 washingtonpost.com##wp-ad-wrapper
@@ -82978,6 +82984,7 @@ browsershots.org#@#.advert_area
 ||asesiumworkhovdim.org^
 ||asewlfjqwlflkew.com^
 ||asf4f.us^
+||asfohjolrojj.com^
 ||asfthaehynw.com^
 ||asgadmp.cc^
 ||asgadsts.cc^
@@ -90022,6 +90029,7 @@ browsershots.org#@#.advert_area
 ||dxiilazmsqprw.online^
 ||dxjkpofscuzmb.online^
 ||dxkmeispvbfsx.website^
+||dxlmwkwqxgxx.com^
 ||dxlxkxznctrnk.site^
 ||dxlyladmlitox.store^
 ||dxngfyrtftpay.site^
@@ -91352,6 +91360,7 @@ browsershots.org#@#.advert_area
 ||evadesickness.com^
 ||evcustom-ad.xyz^
 ||evdqwqmidjmlyvy.xyz^
+||eveessoufiwoahu.net^
 ||evelesslyrics.cyou^
 ||even-memory.pro^
 ||evendisciplineseedlings.com^
@@ -93886,6 +93895,7 @@ browsershots.org#@#.advert_area
 ||glancedsecretion.com^
 ||glandlabel.com^
 ||glaringregister.com^
+||glaringsimple.pro^
 ||glartaidroo.net^
 ||glass-drama.com^
 ||glassesoftruth.com^
@@ -106054,6 +106064,7 @@ browsershots.org#@#.advert_area
 ||pattedearnestly.com^
 ||pattguarani.help^
 ||pattycolourful.com^
+||pattyponderstuffy.com^
 ||patvlbqek.com^
 ||patwariwiping.shop^
 ||patxtuurvbivm.space^
@@ -114407,6 +114418,7 @@ browsershots.org#@#.advert_area
 ||threatdetect.org^
 ||threefortressfork.com^
 ||threewoodslose.com^
+||thresholdaccommodate.com^
 ||thricereleased.com^
 ||thrifty-race.pro^
 ||throatentrepreneur.com^
@@ -115890,6 +115902,7 @@ browsershots.org#@#.advert_area
 ||umoopuwhecky.net^
 ||umoutzwnfxuil.space^
 ||umphacinic.cfd^
+||umpiredmosettebibulus.cfd^
 ||umpwcnltxmnue.online^
 ||umpwuemsoutze.love^
 ||umrdtmhwfahct.fun^
@@ -116702,6 +116715,7 @@ browsershots.org#@#.advert_area
 ||vauvudujauva.net^
 ||vauwhaptaiha.net^
 ||vavuwetus.com^
+||vavywfsfldhpb.space^
 ||vawk0ap3.xyz^
 ||vax-boost.com^
 ||vax-now.com^
@@ -116944,6 +116958,7 @@ browsershots.org#@#.advert_area
 ||vfwpaocvysbpo.site^
 ||vfwyauglvjcfl.space^
 ||vfxcdhckojsqd.store^
+||vfyfldhdthlin.space^
 ||vfyvoxlyw.net^
 ||vg4u8rvq65t6.com^
 ||vgdopaidkxuvi.website^
@@ -119106,6 +119121,7 @@ browsershots.org#@#.advert_area
 ||xhmeoqeoeurjk.store^
 ||xhmyevcqcasdf.site^
 ||xhpvfyhlvrsbl.website^
+||xhpxlfigiuylm.store^
 ||xhpztvtjgfa.com^
 ||xhrhamnlzddyk.space^
 ||xhskoszdinatr.space^
@@ -119396,6 +119412,7 @@ browsershots.org#@#.advert_area
 ||xurlctzwmnnxm.site^
 ||xuvxaknemnska.site^
 ||xvayntirbqohr.space^
+||xvbkvmrevmqir.store^
 ||xvcefcdyvbyyx.website^
 ||xvcwbxjzdecpi.store^
 ||xvegvlkqovqqr.online^
