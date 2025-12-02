@@ -1,9 +1,9 @@
-! Checksum: 1+WnyF+Kudo2f50Onv2qDg
-! Diff-Path: ../patches/18/18-s-1764652260-3600.patch
+! Checksum: 2vyEWsH9n4phiE+K5ELRGQ
+! Diff-Path: ../patches/18/18-s-1764659521-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.75.86
-! TimeUpdated: 2025-12-02T05:08:16+00:00
+! Version: 2.0.75.87
+! TimeUpdated: 2025-12-02T07:09:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2555,6 +2555,9 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+columbia.ua#$##cookies-modal { display: none !important; }
+columbia.ua#$#.backdrop { display: none !important; }
+columbia.ua#$#body { overflow: auto !important; }
 vietnamairlines.com##.cmp-cookie-consent-backdrop
 kulturkaufhaus.de#%#//scriptlet('trusted-click-element', 'button[data-katalon="acceptRequired"]')
 toujoursmikes.order-online.ai#%#//scriptlet('trusted-click-element', 'footer > div > button[data-variant="outline"]', 'containsText:Preferences')
@@ -17934,6 +17937,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219226
+columbia.ua#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219053
 tcl.com#@#.cookie-bar:not(body)
 tcl.com#@#.cookie-box:not(body):not(html)
