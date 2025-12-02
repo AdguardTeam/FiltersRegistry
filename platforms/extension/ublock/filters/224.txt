@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: acgg5bWHZHudHzwZhdT/Kw
-! Diff-Path: ../patches/224/224-s-1764643338-3600.patch
+! Checksum: XOijVhmfTgIiclHtHk55Zw
+! Diff-Path: ../patches/224/224-s-1764663219-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.49.3
-! TimeUpdated: 2025-12-02T02:39:37+00:00
+! Version: 2.1.49.4
+! TimeUpdated: 2025-12-02T08:10:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -308,7 +308,8 @@ colamanga.com#@#.ADFooter
 colamanga.com#@#.ADInfo
 colamanga.com#@#.ADLeader
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195203
-xchina.co##+js(addEventListener-defuser, /DOMContentLoaded|load|complete/, /check|detected/)
+xchina.*##.block-overlay
+xchina.*##+js(addEventListener-defuser, /DOMContentLoaded|load|complete/, /check|detected/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/194144
 2urs.com##+js(abort-on-property-read, ads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/191724
@@ -1335,12 +1336,6 @@ m.shuhaige.net##+js(abort-current-script, document.createElement, return a.split
 $script,3p,denyallow=bsgslb.com|bytecdntp.com,domain=m.shuhaige.net
 ||topthink.com/uploads/assistant/$image,domain=doc.thinkphp.cn
 ||cpu.baidu.com/block/wap/
-xchina.co##+js(abort-current-script, $, adModal)
-xchina.co##.content-box > .list > .item:not(.photo-image):has(> a[clickmode="cpt"])
-xchina.co##.content-box > .list > .item:not(.photo-image):has(> div > ins[data-zoneid])
-xchina.co##.photos > div.item:has(> div > a[target="_blank"])
-xchina.co##.photos > div.item:has(> div[class^="exoclick_"])
-xchina.co##div[class^="item photo zone"]
 qq3009qq.link##.box li:has(> a[href] > img[onclick])
 cnbeta.com.tw##.meta > .fr > a[target="_blank"] > img
 read.thisiscm.com##.gadBlock
@@ -1444,8 +1439,14 @@ enews.tw##.newsCardForLeftAdGadCode
 ||upload.xchina.biz/ad/
 ||xchina.click/upload/*.webp
 ||xchina.co/scripts/push_*.js
-xchina.co##div:has(> div:only-child > .media img[src*="/ad/"])
-xchina.co##.outer-banner
+xchina.*##+js(abort-current-script, $, adModal)
+xchina.*##.content-box > .list > .item:not(.photo-image):has(> a[clickmode="cpt"])
+xchina.*##.content-box > .list > .item:not(.photo-image):has(> div > ins[data-zoneid])
+xchina.*##.photos > div.item:has(> div > a[target="_blank"])
+xchina.*##.photos > div.item:has(> div[class^="exoclick_"])
+xchina.*##div[class^="item photo zone"]
+xchina.*##.push-top
+xchina.*##div[style*="width: 300px;"][style*="height: 455px;"]
 ||goosedaily.com/advertise/
 goosedaily.com##div[class^="ad-area-"]
 goosedaily.com##.lightboxbnr
@@ -1789,7 +1790,7 @@ liantu.cn##.side > .h250
 liantu.cn##.wrapper > .inner.h90
 world68.com##.content_l_flml.zzs
 world68.com##.head_m
-fabconvert.com,knews.com.tw,1905.com,news.ltn.com.tw,commonhealth.com.tw,health.tvbs.com.tw,idreamx.com,xchina.co,manhuafen.com,world68.com##.ad
+fabconvert.com,knews.com.tw,1905.com,news.ltn.com.tw,commonhealth.com.tw,health.tvbs.com.tw,idreamx.com,xchina.*,manhuafen.com,world68.com##.ad
 world68.com##.guanggao
 world68.com##.zzs_ad
 onebox.mydown.com##.fcGg
@@ -2330,8 +2331,6 @@ huya.com##.nav-expand-list #J_tt_hd_category_ad
 hk.xfastest.com##.adv_v2
 hk.xfastest.com##.adv-side-wrap
 huaban.com##.hb-ad
-xchina.co##.push-top
-xchina.co##div[style*="width: 300px;"][style*="height: 455px;"]
 emumax.com##.tbanner
 news.ebc.net.tw##a[href^="http://www.ebcbuzz.com/url/"]
 hkmovie6.com##.hotmobad
@@ -5123,6 +5122,9 @@ newduba.cn###jq_youxi
 ||uimr.cn^
 ||ycikokryl.com^
 ||n2xj2mxg3z.com^
+||jywn7lkbdw.com^
+||tphurqalq.com^
+||niuk12021gi.com^
 ||9a4v0clpi.com^
 ||xjoiteee8.com^
 ||engineer66.com^
