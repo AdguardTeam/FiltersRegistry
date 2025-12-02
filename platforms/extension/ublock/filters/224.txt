@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XOijVhmfTgIiclHtHk55Zw
-! Diff-Path: ../patches/224/224-s-1764663219-3600.patch
+! Checksum: w/zjBRmFvZMkKA9vaTVoeg
+! Diff-Path: ../patches/224/224-s-1764673865-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.49.4
-! TimeUpdated: 2025-12-02T08:10:46+00:00
+! Version: 2.1.49.5
+! TimeUpdated: 2025-12-02T11:08:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1067,6 +1067,7 @@ ipv6.baidu.com,www.baidu.com,www1.baidu.com,xueshu.baidu.com###content_left > .r
 !
 ! NOTE: Specific rules
 !
+news.cnyes.com##.a133dm9s
 ||xchina.$domain=crxs.me
 crxs.me##+js(abort-current-script, document.createElement, visitUrl)
 crxs.me##.push-top
@@ -1240,6 +1241,8 @@ hk.news.yahoo.com,tw.news.yahoo.com##.atoms > div[class^="bg-card-"]:has(> div[i
 tw.yahoo.com##iframe[src^="https://tw.buy.yahoo.com/smartbanner/"]
 tw.yahoo.com##.col1-bottom > .border-solid:not([id]):has(> iframe[src^="https://tw.buy.yahoo.com/smartbanner/"])
 chigua69.com##.video-list > div.video-item:has(> a[adv_id])
+hk01.com##div[class^="placeholder-top-"]:style(min-height: 0 !important;)
+hk01.com##div[class*="placeholder"]:has(> .lazyload-wrapper > .js-ad-slot)
 hk01.com##article > .items-center:has(.lazyload-wrapper > .js-ad-slot)
 hk01.com##.article-grid__desktop-rhs-section > .items-center:has(.lazyload-wrapper > .js-ad-slot)
 dqzboy.com##body > #popup[style^="position: fixed; bottom:"]
@@ -3007,7 +3010,7 @@ huaren.live##+js(set-constant, ConFig.config.ads, {})
 ! https://github.com/AdguardTeam/AdguardFilters/issues/134240
 ! Do not hide .bili-video-card container to not mess up content, related - https://github.com/AdguardTeam/AdguardFilters/issues/147194#issuecomment-1500803042
 ! https://user-images.githubusercontent.com/3976203/273172163-25ff30a0-c988-4ec3-9e51-cf4722a90976.jpg
-bilibili.com##.container > .bili-feed-card:has(> div.bili-video-card  div.bili-video-card__info--no-interest + h3 > a[target="_blank"]:not([href^="https://www.bilibili.com/"]))
+bilibili.com##.container > .bili-feed-card:has(> div.bili-video-card div.bili-video-card__info--no-interest + h3 > a[target="_blank"]:not([href^="https://www.bilibili.com/"]))
 bilibili.com##.recommended-container_floor-aside .container > div[class$="feed-card"]:has(div[style$="56.25%;"] > div[class]:matches-css(before, content: /AdGuard/))
 ! bilibili.com#?#.bili-video-card.is-rcmd > div > a[href*="cm.bilibili.com"][data-target-url]:not([data-target-url*=".bili"]) + .bili-video-card__info:upward(2)
 bilibili.com##.feed-card:has(> div.bili-feed-card > div > div > div.bili-video-card__no-interest + a[target="_blank"]:not([href^="https://www.bilibili.com/"]))
