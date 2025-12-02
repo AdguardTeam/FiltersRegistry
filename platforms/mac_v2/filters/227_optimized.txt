@@ -1,9 +1,9 @@
-! Checksum: OjXjO+sdGIDGdw1P5iYpMA
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1764348200-14400.patch
+! Checksum: 3Z+nIknzwU1oSAwnJdzjCw
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1764694052-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.47
-! TimeUpdated: 2025-11-28T16:39:28+00:00
+! Version: 2.0.23.48
+! TimeUpdated: 2025-12-02T16:43:42+00:00
 ! Expires: 12 hours (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -3700,6 +3700,7 @@ gall.dcinside.com#%#//scriptlet('set-constant', 'blockedState', '', '', '', 'tru
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/background:[\s\S]+setTimeout\( *\( *\) *=> *[A-Za-z0-9]+\.remove\( *\)[\s\S]+Math\.random\( *\) *< *percent *\/ *100/')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
 chzzkban.xyz#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js method:HEAD', 'emptyStr')
+onair.jtbc.co.kr#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(t).getPropertyValue("visibility")')
 erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 ||shana.pe.kr/shana_check/scp*.js$script
