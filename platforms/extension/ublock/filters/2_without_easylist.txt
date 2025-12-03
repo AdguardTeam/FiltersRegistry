@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: U0fJvd6EK2LQY+Bo30r/7w
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1764774711-3600.patch
+! Checksum: sCVSTGz/ACbQlHMdg+LClg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1764778385-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.29.73
-! TimeUpdated: 2025-12-03T15:08:34+00:00
+! Version: 2.4.29.74
+! TimeUpdated: 2025-12-03T16:09:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -31887,9 +31887,6 @@ stbemucodes.xyz##+js(abort-current-script, document.createElement, script)
 stbemucodes.xyz##iframe[src="about:blank"]:remove()
 ! https://github.com/AdguardTeam/AdguardFilters/issues/187111
 4porno365.biz##+js(no-window-open-if)
-! https://github.com/AdguardTeam/AdguardFilters/issues/200734
-! https://github.com/AdguardTeam/AdguardFilters/issues/185377
-mkvcinemas.*##+js(abort-current-script, addEventListener, shown_at)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182403
 tempmailhub.org##+js(addEventListener-defuser, DOMContentLoaded, popup-background)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/182111
@@ -36419,6 +36416,9 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+*$script,3p,denyallow=cloudflare.com|hentaicdn.com,domain=hentai2read.com
+hentai2read.com##a[onclick="return !window.open(this.href)"] > img
+hentai2read.com,mkvcinemas.*##+js(abort-current-script, addEventListener, shown_at)
 aixploria.com##.latest-posts
 blockchainreporter.net###promoBanner
 animahd.com###adOverlay
