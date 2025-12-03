@@ -1,9 +1,9 @@
-! Checksum: RloydCuLxNfL5xLWOFSH6A
-! Diff-Path: ../patches/18/18-s-1764745891-3600.patch
+! Checksum: whInNRRog8y+gPxB6P3nWw
+! Diff-Path: ../patches/18/18-s-1764753141-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.76.1
-! TimeUpdated: 2025-12-03T07:09:04+00:00
+! Version: 2.0.76.2
+! TimeUpdated: 2025-12-03T09:09:55+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2552,6 +2552,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+regard.ru##div[class^="CookieBannerPopover"]
 itoen.co.jp##.c-cookieConsentBanner
 ||yakult.co.jp/common/*/cookie.
 cnews.ru##.cookiesbanner
@@ -19198,8 +19199,10 @@ tarczynskiarenawroclaw.pl,blog.bizvibe.com#@##cookie-law-info-bar
 @@||usercentrics.eu^$domain=rts.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178057
 rtl.nl#@##onetrust-consent-sdk
+! https://github.com/AdguardTeam/AdguardFilters/issues/219340
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174918
 ! Causes high CPU usage if it's blocked
+@@||cdn.cookielaw.org/consent/*.json$domain=rtl.nl
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=rtl.nl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174883
 ||sdk.privacy-center.org/*/loader.js$script,redirect=didomi-loader,domain=giphy.com

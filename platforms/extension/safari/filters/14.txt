@@ -1,9 +1,9 @@
-! Checksum: ifc2Vc41K0PPLA6UinNyrA
-! Diff-Path: ../patches/14/14-s-1764749550-3600.patch
+! Checksum: 59P5y1v8UGXLugMmyxwNSg
+! Diff-Path: ../patches/14/14-s-1764753158-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.51.11
-! TimeUpdated: 2025-12-03T08:09:44+00:00
+! Version: 2.2.51.12
+! TimeUpdated: 2025-12-03T09:09:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2554,6 +2554,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+regard.ru##div[class^="CookieBannerPopover"]
 itoen.co.jp##.c-cookieConsentBanner
 ||yakult.co.jp/common/*/cookie.
 cnews.ru##.cookiesbanner
@@ -19220,8 +19221,10 @@ tarczynskiarenawroclaw.pl,blog.bizvibe.com#@##cookie-law-info-bar
 @@||usercentrics.eu^$domain=rts.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178057
 rtl.nl#@##onetrust-consent-sdk
+! https://github.com/AdguardTeam/AdguardFilters/issues/219340
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174918
 ! Causes high CPU usage if it's blocked
+@@||cdn.cookielaw.org/consent/*.json$domain=rtl.nl
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=rtl.nl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174883
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -26033,6 +26036,9 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+ignou.ac.in#$#body.modal-open { overflow: auto !important; }
+ignou.ac.in#$#.modal-backdrop { display: none !important; }
+ignou.ac.in#$##popUpModal { display: none !important; }
 shonanjin.com###splash-overlay
 gurusuguri.com##.floating-banner
 solaris.auto##.lp-wrapper
@@ -33041,6 +33047,9 @@ roscontrol.com#$#html { overflow: auto!important; }
 ! NOTE[id=sharingcaring]: 'Sharing is caring' popup
 ! LINK: SocialFilter/sections/popups.txt#sharingcaring
 ! Sync with the rules in Social filter
+! new one - 03.12.2025
+justanime.to##.share-popup-overlay
+!
 watchseries.pe,watch32.sx,tinyzonetv.cc,moviesjoytv.to,solarmovies.win,moviesjoyz.lol,arc018.to,fmovieszz.lol,myflixtor.tv,vipstream.tv,fboxtv.com,attackertv.so,lookmovie.tube,flixhq.to,actvid.rs,zoechip.gg,seriesonline.sx,hurawatchz.to,cineb.gg,sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.*,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,soap2day.*,sflix.*,hurawatch.cc#$#body { overflow: auto !important; padding-right: 0 !important; }
 watchseries.pe,watch32.sx,tinyzonetv.cc,moviesjoytv.to,solarmovies.win,moviesjoyz.lol,arc018.to,fmovieszz.lol,myflixtor.tv,vipstream.tv,fboxtv.com,attackertv.so,lookmovie.tube,flixhq.to,actvid.rs,zoechip.gg,seriesonline.sx,hurawatchz.to,cineb.gg,sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.*,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,soap2day.*,sflix.*,hurawatch.cc#$#.modal-backdrop { display: none !important; }
 watchseries.pe,watch32.sx,tinyzonetv.cc,moviesjoytv.to,solarmovies.win,moviesjoyz.lol,arc018.to,fmovieszz.lol,myflixtor.tv,vipstream.tv,fboxtv.com,attackertv.so,lookmovie.tube,flixhq.to,actvid.rs,zoechip.gg,seriesonline.sx,hurawatchz.to,cineb.gg,sflix2.to,cataz.to,yuppow.com,musichq.cc,hdtodayz.to,myflixer.is,theflixertv.to,putlocker.pe,moviesjoyhd.to,123movieshd.top,myflixerz.to,zoechip.cc,showboxmovies.net,gomovies.*,himovies.sx,putlocker.gy,zoechip.com,pressplay.top,flixhd.cc,123moviestv.net,123-movies.vc,musichq.net,swatchseries.*,fmoviesto.*,cineb.rs,hdtoday.*,yesmovies.mn,divicast.com,freemoviesfull.com,dopebox.to,fmovies.*,sflix.to,myflixer.to,movies2watch.tv,ev01.to,myflixertv.to,f2movies.*,moviesjoy.*,soap2day.*,sflix.*,hurawatch.cc#$##modalshare { display: none !important; }
@@ -34917,6 +34926,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+||cms.thewire.in/special/thewire-ads/
+thewire.in##.side-article-content > .icp3-wrapper
 futuretools.io##a[href="https://www.futuretools.io/newsletter"]
 observerbd.com##div[align="justify"] > div[align="center"]:has(> a[href^="https://news.google.com/publications/"])
 amazon.*#$#.fable-portal-container:has(a#cross-benefit-modal-call_to_action-btn-0[href^="https://www.amazon."][href*="/gp/video/signup?benefitId=primeaddon"]) { display: none !important; }

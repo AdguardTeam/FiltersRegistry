@@ -1,8 +1,8 @@
-! Checksum: igy3TGcA7Kf4ihNNdWt2Nw
+! Checksum: KsZi1fqLfDZmhZ1e2g/5Fg
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.51.11
-! TimeUpdated: 2025-12-03T08:09:44+00:00
+! Version: 2.2.51.12
+! TimeUpdated: 2025-12-03T09:09:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2443,6 +2443,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+regard.ru##div[class^="CookieBannerPopover"]
 itoen.co.jp##.c-cookieConsentBanner
 ||yakult.co.jp/common/*/cookie.
 cnews.ru##.cookiesbanner
@@ -13442,8 +13443,10 @@ tarczynskiarenawroclaw.pl,blog.bizvibe.com#@##cookie-law-info-bar
 @@||usercentrics.eu^$domain=rts.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/178057
 rtl.nl#@##onetrust-consent-sdk
+! https://github.com/AdguardTeam/AdguardFilters/issues/219340
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174918
 ! Causes high CPU usage if it's blocked
+@@||cdn.cookielaw.org/consent/*.json$domain=rtl.nl
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=rtl.nl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174883
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
@@ -24247,6 +24250,9 @@ translate.google.ad,translate.google.ae,translate.google.al,translate.google.am,
 ! NOTE[id=sharingcaring]: 'Sharing is caring' popup
 ! LINK: SocialFilter/sections/popups.txt#sharingcaring
 ! Sync with the rules in Social filter
+! new one - 03.12.2025
+justanime.to##.share-popup-overlay
+!
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/183849
 ! Prevent annoying popup like on the screenshot in - https://github.com/AdguardTeam/AdguardFilters/issues/183849#issuecomment-2262699934
@@ -25878,6 +25884,8 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 !
 ! SECTION: Subscriptions - Regular rules
 !
+||cms.thewire.in/special/thewire-ads/
+thewire.in##.side-article-content > .icp3-wrapper
 futuretools.io##a[href="https://www.futuretools.io/newsletter"]
 stopgame.ru##a.branding[href="https://t.me/stopgameru"]
 stopgame.ru##body > div[class]:empty
