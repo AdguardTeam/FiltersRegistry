@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: dFjz8WzuRcEPfPojU3x+9g
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1764785609-3600.patch
+! Checksum: O45M6df8mMXqWRhKOU6VWw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1764796211-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.51.18
-! TimeUpdated: 2025-12-03T18:10:37+00:00
+! Version: 2.2.51.19
+! TimeUpdated: 2025-12-03T21:07:27+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -2298,6 +2298,7 @@ portal.abczdrowie.pl###modal-placement + div[style][class]:style(display: none !
 zakzak.co.jp###consent-wrapper
 education.openguessr.com##.alert:has(> span > a[href="https://openguessr.com/legal"])
 akool.com##+js(set-cookie-reload, cookie-permission, 0)
+akool.com##.MuiBox-root:has(> div > button)
 tzar.ru,search.fenrir-inc.com,sleipnirstart.com###agreement
 ibena.shop,tripleaction.de,schuh-vormbrock.de,maxmo.de##+js(set-cookie, cookie-preference, 1)
 vercel.com###fides-overlay
@@ -24343,6 +24344,9 @@ www.kinopoisk.ru##header[class][style*="--header-height:150px"] > div > img:styl
 www.kinopoisk.ru##header[class][style*="--header-height:150px"] > div.header-navigation:style(margin-top: 0 !important;)
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+akool.com##.MuiDialog-root:style(display: none !important;)
+akool.com##body:style(overflow: auto !important;)
+akool.com##.MuiPopper-root
 aixploria.com##.bk2025
 eternalai.org##.blackfriday-banner
 eternalai.org##.css-3qhym4
@@ -28954,6 +28958,7 @@ volyninfa.com.ua###custom_html-2
 ||w.chatlio.com/v5/w.chatlio-widget.js
 ||wchat.freshchat.com/js/widget.js
 ||widget.info-*.ru/js/init.js?t=$script,3p
+@@||widgets.coingecko.com/gecko-coin-price-chart-widget.js$domain=rewards.ambire.com
 @@||secure.livechatinc.com/customer/action/open_chat?$domain=direct.lc.chat
 @@||static.landbot.io/landbot-widget/landbot-widget-*.js$domain=emma-matratze.de
 @@||widget.happyfoxchat.com^$domain=support.linksys.com
