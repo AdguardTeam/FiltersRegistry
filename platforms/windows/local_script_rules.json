@@ -1046,6 +1046,10 @@
             "script": "(()=>{const t={apply:(t,e,n)=>{if(location.href.includes(\"/shorts/\")||location.href.includes(\"youtube.com/tv\")||location.href.includes(\"youtube.com/embed/\"))return Reflect.apply(t,e,n);try{const a=n[0];if(!a?.context?.client)return Reflect.apply(t,e,n);a.playbackContext&&(a.playbackContext.adPlaybackContext={pyv:!0}),a.playerRequest&&(a.playerRequest.playbackContext.adPlaybackContext={pyv:!0}),n[0]=a}catch(t){}return Reflect.apply(t,e,n)}};window.JSON.stringify=new Proxy(window.JSON.stringify,t)})();"
         },
         {
+            "domains": "animahd.com",
+            "script": "(()=>{let t=!1;document.addEventListener(\"click\",(e=>{const s=e.target.matches(\".episode-item, .tray-slide, .top10-post\")?e.target:e.target.closest(\".episode-item, .tray-slide, .top10-post\");s&&!t&&(((t,e=1,s=10)=>{if(!t||e<=0)return;let i=0;const o=()=>{i>=e||(t.click(),i++,i<e&&setTimeout(o,s))};setTimeout(o,s)})(s,2),t=!0)}),!0)})();"
+        },
+        {
             "domains": "embed.acast.com",
             "script": "(()=>{let e=0;const t=new WeakSet,n=t=>{const n=t?.currentTarget||t?.target;if(n)try{if(e>0&&n.currentTime<e)return void(n.currentTime=e)}catch(e){}},r={apply:(r,c,i)=>{try{const r=c.currentSrc;e>0&&c.currentTime<e&&r?.includes(\"livestitches\")&&(c.currentTime=e,t.has(c)||(c.addEventListener(\"timeupdate\",n),t.add(c)))}catch(e){}return Reflect.apply(r,c,i)}};window.HTMLMediaElement.prototype.play=new Proxy(window.HTMLMediaElement.prototype.play,r);const c={apply:(t,n,r)=>{try{const t=r[1]?.response?.result;if(t){const n=t?.timeline?.[0];n&&\"ad\"===n?.type&&(e=n?.duration||0,delete r[1].response.result.timeline)}}catch(e){}return Reflect.apply(t,n,r)}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,c)})();"
         },
