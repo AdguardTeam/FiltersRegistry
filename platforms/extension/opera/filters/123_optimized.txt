@@ -1,9 +1,9 @@
-! Checksum: OImGwSY3NsEm8xPdKwLZGg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1764809460-14400.patch
+! Checksum: mT70EQn3xgGbCl1NO6W2oQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1764823452-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.52.26
-! TimeUpdated: 2025-12-04T00:47:57+00:00
+! Version: 2.1.52.27
+! TimeUpdated: 2025-12-04T04:41:15+00:00
 ! Expires: 10 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -128,6 +128,7 @@
 /twitter-follow-
 /twitter-footer-
 /twitter-v2.png
+/twitter_follow.png
 /twitter_footer.png
 /twitter_square.png
 /twitterlib.js
@@ -253,7 +254,6 @@ _social-bar/
 ###floatingSocialShare
 ###follow-box
 ###follow-buttons
-###follow-facebook
 ###follow-footer
 ###follow-icons
 ###follow-links
@@ -290,7 +290,6 @@ _social-bar/
 ###footerSocialButtons
 ###footerSocialIcons
 ###footerSocialLinks
-###footerSocialMenu
 ###footer_block_social
 ###footer_follow
 ###footer_social
@@ -600,7 +599,6 @@ _social-bar/
 ###socialLinksContainer
 ###socialMedia
 ###socialMediaFacebook
-###socialMediaMenu
 ###socialMediaSection
 ###socialModal
 ###socialNetworks
@@ -655,7 +653,6 @@ _social-bar/
 ###socialemail
 ###socialfooter
 ###socialicons
-###socializethis
 ###socialleft
 ###sociallinks
 ###socialnav
@@ -724,6 +721,7 @@ _social-bar/
 ##.ActionButton--share
 ##.ArticleView-bottomShares
 ##.ArticleView-shares
+##.Article__socialShareContent
 ##.BtnShareGroup
 ##.FacebookLike
 ##.FacebookShareButton
@@ -920,6 +918,7 @@ _social-bar/
 ##.article_header_share
 ##.article_left_share
 ##.article_share
+##.article_sharing
 ##.article_social
 ##.article_social_share
 ##.articlesharebox
@@ -1230,7 +1229,6 @@ _social-bar/
 ##.facebook-bg
 ##.facebook-block
 ##.facebook-box
-##.facebook-fans
 ##.facebook-follow
 ##.facebook-follow-button
 ##.facebook-footer
@@ -1248,6 +1246,7 @@ _social-bar/
 ##.facebook-social
 ##.facebookOuter
 ##.facebookShare
+##.facebookShareButton
 ##.facebook_box
 ##.facebook_icn
 ##.facebook_icon
@@ -1356,6 +1355,7 @@ _social-bar/
 ##.follow__list
 ##.followus_net
 ##.followuson
+##.followustxt
 ##.foot-share
 ##.foot-soc-fb
 ##.foot-soc-list
@@ -1948,6 +1948,7 @@ _social-bar/
 ##.nav-soc-but
 ##.nav-social
 ##.nav-social-links
+##.nav-social-wrap
 ##.navSocial
 ##.nav__social
 ##.nav_share
@@ -2092,6 +2093,7 @@ _social-bar/
 ##.pp-social-icon
 ##.pp-social-icons
 ##.pp-social-share-content
+##.prefooter__social
 ##.prettySocial
 ##.pri-share
 ##.print-share
@@ -2366,6 +2368,7 @@ _social-bar/
 ##.share-tools
 ##.share-tools--secondary
 ##.share-tools-buttons-top
+##.share-tools-wrapper
 ##.share-topic
 ##.share-tw
 ##.share-twitter
@@ -2407,6 +2410,7 @@ _social-bar/
 ##.shareEmail
 ##.shareFB
 ##.shareFacebook
+##.shareFloating_column
 ##.shareForm
 ##.shareHomeButtons
 ##.shareIcons
@@ -2531,7 +2535,6 @@ _social-bar/
 ##.shareall
 ##.shareb
 ##.sharebar
-##.sharebar__sharecount
 ##.sharebg
 ##.sharebottom
 ##.sharebox
@@ -3154,6 +3157,8 @@ _social-bar/
 ##.socshare
 ##.sow-social-media-button
 ##.ss-facebook
+##.ss-follow-network
+##.ss-follow-total-counter
 ##.ss-inline-share-content
 ##.ss-instagram
 ##.ss-share-network-content
@@ -3276,7 +3281,6 @@ _social-bar/
 ##.tronWhatsappIcon
 ##.ts-share-bar
 ##.ts-social
-##.tsocial
 ##.tve__info__share
 ##.tve_social_items
 ##.tw-share
@@ -3320,7 +3324,6 @@ _social-bar/
 ##.twitterShare
 ##.twitterWidget
 ##.twitter_btn
-##.twitter_div
 ##.twitter_feed
 ##.twitter_follow
 ##.twitter_icn
@@ -3340,7 +3343,6 @@ _social-bar/
 ##.ty-social-link
 ##.ty-social-link-block
 ##.typcn-social-twitter
-##.u-socialWrapper
 ##.ui-share-page
 ##.ui-socials
 ##.uix_socialMedia
@@ -4462,10 +4464,12 @@ rg.ru##.StoryContentMainShare_root__LRFwu
 5-tv.ru##._links
 radiosputnik.ru,ria.ru##.article__aggr
 interfax.ru##.header__soc
+avtoradio.ru##.ok
 forklog.com##.post_bottom_socials_buttons_wrapper
 lifehacker.ru##.share-button__container
 aif.ru##.sharing_item
 academic.ru##.smm
+avtoradio.ru##.vk
 glas-javnosti.rs##.row.pt-4.pb-4
 sme.sk##.social-dialog-wrapper
 24ur.com##.flex.flex-row.items-center.justify-center.md\:justify-start.p-16.md\:p-0
@@ -4682,6 +4686,7 @@ playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"
 @@||player.fm^*/social-icons/$image
 @@||radio24.ilsole24ore.com/plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js$script,~third-party
 @@||sharethis.com/button/buttons.js$domain=bristan.com
+@@||srf.ch/socialview-in/$~third-party
 @@||svgrepo.com/show/$image,~third-party
 @@||wettercomassets.com/wcomv5/images/footer/$domain=wetter.com
 @@||yaplakal.com/html/static/$image,~third-party
