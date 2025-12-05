@@ -1,9 +1,9 @@
-! Checksum: ljnXXyLeiCgCNZKW9Xm6Sw
-! Diff-Path: ../patches/14/14-s-1764940784-3600.patch
+! Checksum: NOmQ9TXTgWBGZyeXobI2lg
+! Diff-Path: ../patches/14/14-s-1764943824-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.51.44
-! TimeUpdated: 2025-12-05T13:17:05+00:00
+! Version: 2.2.51.45
+! TimeUpdated: 2025-12-05T14:07:53+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2553,7 +2553,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
-onlyoffice.com##footer + div[class^="sc-"]:has(> div[class^="sc-"] > div[class] > button#decline-all)
+rg.ru#%#//scriptlet('trusted-set-local-storage-item', 'cookieConsent', '{"accepted":true,"expires":"2125-12-05T13:13:29.340Z"}')
+onlyoffice.com#%#//scriptlet('trusted-set-cookie', 'cookie_preferences', '%7B%22necessary%22%3A%22granted%22%2C%22analytics_storage%22%3A%22denied%22%2C%22ad_storage%22%3A%22denied%22%2C%22ad_user_data%22%3A%22denied%22%2C%22ad_personalization%22%3A%22denied%22%2C%22security_storage%22%3A%22granted%22%2C%22functionality_storage%22%3A%22denied%22%2C%22personalization_storage%22%3A%22denied%22%7D')
 imovelweb.com.br##div[class^="CookiesPolicyBanner"]
 lemino.docomo.ne.jp#%#//scriptlet('trusted-click-element', '.ReactModal__Content button[data-testid="jp.ne.docomo.lemino:id/welcomeAgreementTermsButton"]')
 vokrug.tv#%#//scriptlet('set-local-storage-item', 'cookie_flag', 'true')
@@ -17932,6 +17933,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219476
+rg.ru#@##cookie-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219254
 @@||metashare.com/wp-content/plugins/real-cookie-banner-pro/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219226
@@ -34662,6 +34665,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+onlyoffice.com##.wrap > div[class^="sc-"]:has(> div.docspace_block_wrapper)
+onlyoffice.com#%#//scriptlet('set-local-storage-item', 'modalClosed', 'true')
 istat.it##.newsletter_container
 vokrug.tv##.article-buttons__item.tg
 vokrug.tv##.article-buttons__item.ya-dzen
@@ -50825,7 +50830,7 @@ tribuneindia.com#$#.popup.active:has(> .container-subscribe:only-child) { displa
 tribuneindia.com#$#.popup-active { overflow: auto !important; }
 cloud.mail.ru##div[class^="AsidePromoModal__"]
 deepl.com##div[data-testid="above-navigation-banner"]
-dime.jp##.banner
+fujinkoron.jp,dime.jp##.banner
 hotokami.jp##.spots div.block.max-w-\[100vw\]
 pan.baidu.com##.nd-operate-guidance
 cq.ru##.steam-news-block-wrapper
