@@ -830,8 +830,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/tomasko126/easylistczechandslovak/master/filters.txt",
 			"trustLevel": "high",
-			"version": "2.0.3.17",
-			"timeUpdated": "2025-12-04T12:45:43+0000",
+			"version": "2.0.3.18",
+			"timeUpdated": "2025-12-05T20:37:17+0000",
 			"deprecated": false,
 			"languages": [
 				"cs",
@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.81.34",
-			"timeUpdated": "2025-12-05T16:40:22+0000",
+			"version": "2.1.81.35",
+			"timeUpdated": "2025-12-05T20:37:19+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.81.33",
-			"timeUpdated": "2025-12-05T16:40:23+0000",
+			"version": "2.1.81.34",
+			"timeUpdated": "2025-12-05T20:37:20+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.74.65",
-			"timeUpdated": "2025-12-05T16:41:11+0000",
+			"version": "2.0.74.66",
+			"timeUpdated": "2025-12-05T20:37:57+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
