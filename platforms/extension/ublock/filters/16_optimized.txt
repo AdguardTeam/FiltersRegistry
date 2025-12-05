@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: VOzfPMfNtkqlDteW2dlbIQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1764816139-3600.patch
+! Checksum: 6twsMAhPF1wJKZLIzLk9tg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1764902552-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.14
@@ -76,6 +76,7 @@ nicematin.com##+js(addEventListener-defuser, DOMContentLoaded, adblock)
 @@||cinemaclock.com/adpartner.min.js
 journaldesfemmes.fr##+js(set-constant, integrityObserver.corrupted, 0)
 rustica.fr##+js(set-constant, checkAdsBlocked, noopFunc)
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima.js,domain=oqee.tv|tv.free.fr
 cookomix.com##+js(no-requestAnimationFrame-if, Date.now)
 cookomix.com##+js(set-constant, dAp, true)
 cookomix.com##+js(no-setTimeout-if, detected)
@@ -1496,6 +1497,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?728&90&
 ?ad_sub=
 ?ADFassetID=
+?adprovider=
 ?adRef=
 ?adroll_adv_id=
 ?adTagId=
@@ -1579,7 +1581,6 @@ _ads_view/
 _adsens_
 _adspromo.
 _adunit=
-_adv_300.
 _advertising_img.
 _affiliate.$subdocument
 _affiliate_banner_
@@ -1906,7 +1907,6 @@ _build=iclick-$popup
 ||secureanalytic.com^$3p
 ||shareaholic.com^$3p
 ||sharemyads.com^$3p
-||showgirl.ch^$3p
 ||slutroulette.com^$3p
 ||smartclip.net^$~object,3p
 ||smartstream.tv^$3p
@@ -2879,6 +2879,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||cloudfront.net^*tid=$script
 ||comdotcdn.com/hiqqu/files/widgets/
 ||coteblog.com/_logo/$3p
+||csstatic.com/banners/
 ||ctb.intersport.fr^
 ||ctrip.com/?TypeID=$3p
 ||e-media-concept.com/medias/
@@ -2994,7 +2995,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||static.keep2share.cc/images/i/
 ||static.wui.fr/widget-uptogo/$3p
 ||super-plans.com^$script,subdocument,3p
-||tagbox.fr/banner/
 ||teenskitten.com^$media,script
 ||themasoftware.com/images/banners/$3p
 ||tools.indecentes-voisines.com^
@@ -3186,7 +3186,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||cdn.tirage-gagnant.com/js/dynamic-ban-
 ||centerblog.net/cadre-*?zoneid=
 ||centerblog.net/cu.js
-||choisir-ses-lunettes.com^*/bannieres/
 ||clubpoker.net/medias/images/club-poker/habillages/
 ||coco.gg/chat/bigban
 ||cowcotland.com/images/habillage/$image
@@ -3353,7 +3352,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||tiplanet.org/forum/images/jarrety5.webp
 ||tiplanet.org/forum/images/navbar-sprite.gif
 ||tlemcen-electronic.com/forum/vf.gif
-||top-for-phone.fr/imgs/
 ||trovit.*/index.php/cod.get_premium/$xhr
 ||trovitargentina.*/index.php/cod.get_premium/
 ||trucsweb.com^*/ban_$image
@@ -3634,7 +3632,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###pubarticle2
 ###pubarticle3
 ###pubbas
-###pubbetween
 ###pubcentrale
 ###pubdirecte
 ###pubdroite
@@ -3665,7 +3662,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###reklama2
 ###reklama3
 ###reklamarkaplan
-###result_ad
 ###right-side-ad
 ###right_ad_3
 ###right_ad_4
@@ -3853,8 +3849,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.left_middle_ad
 ##.liens-sponsorises__external
 ##.line-adv
-##.list-ads-282
-##.list-ads-468
 ##.logo-right-ads
 ##.m-adbanner--megaban
 ##.map_fond_pub
@@ -4097,6 +4091,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.text_pub
 ##.texte_ads_plug
 ##.texte_pub
+##.threadSponsor
 ##.titrePub
 ##.top-banner-pub
 ##.top-publicite
@@ -4313,7 +4308,6 @@ lacentrale.fr##.appNexusPlaceholder
 lejournaldelamaison.fr,mariefrance.fr##.article-context-produit
 causeur.fr##.asa_product_box
 rds.ca##.b-ads-custom
-katibin.fr,top-for-phone.fr##.background-cover
 codeur.com##.badge-project-urgent
 cnews.fr##.ban-bottom-desktop
 bdgest.com,bedetheque.com##.ban-top
@@ -4522,7 +4516,6 @@ frandroid.com##[data-gtm-bic]
 cheriefm.fr##[data-page-builder--block-analytics-block-title-value="ad"]
 manomano.fr##[data-sponsored-product]
 leboncoin.fr##[data-test-id^="advertising"]
-lessentiel.lu##[data-testid="Ad"]
 radio-canada.ca##[data-testid="ad"]
 meteomedia.com##[data-testid="ad-with-pre-text"]
 qwantjunior.com##[data-testid="autopromoJuniorLink"]
@@ -4807,7 +4800,6 @@ zataz.com##.custom-sidebar:has(h3:contains(/Partenaires|Publicité/))
 @@||cloudflare.com/cdn-cgi/scripts/*/cloudflare-static/rocket-loader.min.js$script
 @@||code.jquery.com^$script,domain=adkami.com|ahvsh.com|animelek.tv|clickndownload.cfd|fanstream.us|filelions.com|filelions.site|flemmix.biz|french-anime.com|geneafrance.com|goodstream.one|hdss.at|indishare.org|japscan.lol|mixdrop.ps|mixdrop.sb|mixdrop.sn|mp4upload.com|mxdrop.to|new.gdtot.dad|protect-mylinks.com|shahidlive.co|streamhide.com|streamhide.to|theproxy.how|tntendirect.com|torlock.com|unblocked2.vip|uploadrar.com|vidmoly.to|voirfilms.live
 @@||cutcaptcha.net/captcha/$script,domain=filecrypt.co
-@@||disquscdn.com^$script,domain=hds.quest|jetanimes.com
 @@||film-francais-vf.com/assets/js/jquery-3.2.1.min.js$script,domain=saison-streaming.com
 @@||firebaseio.com/.lp?$script,domain=cam4.com|cam4.fr
 @@||fonts.googleapis.com/css$stylesheet,domain=adshrinks.com|gsurl.in|jetanimes.com|mavanimes.co|mega-p2p.net|onion.ly|protect-mylinks.com|tntendirect.com
