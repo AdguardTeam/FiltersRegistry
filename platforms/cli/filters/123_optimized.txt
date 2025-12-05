@@ -1,9 +1,9 @@
-! Checksum: RGwaCgpJu2TpiKNY6hp5MA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1764895890-14400.patch
+! Checksum: VqYcI5JNEPAgyIijlScmUA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1764909855-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.52.32
-! TimeUpdated: 2025-12-05T00:48:21+00:00
+! Version: 2.1.52.33
+! TimeUpdated: 2025-12-05T04:41:03+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -93,6 +93,7 @@
 /shared/btn_
 /shared/social/*
 /sharedaddy/sharing.min.js
+/shareFacebook.png
 /Sharefb.png
 /shareicon-branding-
 /shareIcons.$~stylesheet
@@ -118,7 +119,6 @@
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
-/socialbookmarks.js
 /socialite.js
 /socialite.min.js
 /socialsprites.
@@ -270,7 +270,6 @@ _social-bar/
 ###follow_us
 ###followus
 ###foot-social
-###footSocial
 ###footer-facebook
 ###footer-fb
 ###footer-follow-us
@@ -303,6 +302,7 @@ _social-bar/
 ###gkSocialAPI
 ###global-share
 ###globalSocialLinks
+###h-social
 ###header-facebook-social-link
 ###header-social
 ###header-social-icons
@@ -319,6 +319,7 @@ _social-bar/
 ###iconSocialTwitter
 ###iconSocialYoutube
 ###index-social
+###inline-share-buttons
 ###instagram-link
 ###instlogo
 ###js-Social-Share-0
@@ -680,7 +681,6 @@ _social-bar/
 ###top-share
 ###topSocial
 ###top_share
-###topsocial
 ###tronReddiShare
 ###twShare
 ###tweet-button
@@ -983,6 +983,7 @@ _social-bar/
 ##.block-addtoany
 ##.block-facebook
 ##.block-facebook-inner
+##.block-followus
 ##.block-sharebar
 ##.block-sharethis
 ##.block-shariff
@@ -1100,7 +1101,6 @@ _social-bar/
 ##.comment-social
 ##.comment__share
 ##.comment_share
-##.comments-share
 ##.comments-social
 ##.comments__likes
 ##.common-social
@@ -1378,7 +1378,6 @@ _social-bar/
 ##.footer-facebook-icon
 ##.footer-fb
 ##.footer-follow
-##.footer-follow-text
 ##.footer-follow-us
 ##.footer-followUs
 ##.footer-followus
@@ -2071,7 +2070,6 @@ _social-bar/
 ##.post-share-links
 ##.post-share-menu-item
 ##.post-share-panel
-##.post-share-pinterest
 ##.post-share-widget
 ##.post-share__sticky-wrapper
 ##.post-sharing
@@ -2239,6 +2237,7 @@ _social-bar/
 ##.share-buttons-top
 ##.share-buttons-wrapper
 ##.share-buttons__item
+##.share-buttons__text
 ##.share-column
 ##.share-component
 ##.share-container.vertical
@@ -2452,7 +2451,6 @@ _social-bar/
 ##.share__header-btn
 ##.share__icon
 ##.share__inner
-##.share__instagram
 ##.share__item
 ##.share__link
 ##.share__links
@@ -2460,7 +2458,6 @@ _social-bar/
 ##.share__text
 ##.share__twitter
 ##.share__wrapper
-##.share__youtube
 ##.share_area
 ##.share_article
 ##.share_bar
@@ -2508,6 +2505,7 @@ _social-bar/
 ##.share_post_footer
 ##.share_post_side
 ##.share_row
+##.share_small
 ##.share_social
 ##.share_story
 ##.share_this
@@ -2770,6 +2768,7 @@ _social-bar/
 ##.social-button-wrapper
 ##.social-buttons--content-before
 ##.social-buttons--follow
+##.social-buttons--uk
 ##.social-buttons-compact
 ##.social-buttons-container
 ##.social-buttons-footer
@@ -3187,7 +3186,6 @@ _social-bar/
 ##.stick-share
 ##.sticky-share
 ##.sticky-social
-##.sticky-social-buttons
 ##.sticky-social-share
 ##.stickysocial
 ##.stm-share
@@ -3266,6 +3264,7 @@ _social-bar/
 ##.topSocial
 ##.top_share
 ##.top_social
+##.top_social_icons
 ##.topbar-facebook
 ##.topbar-social
 ##.topbar-socials
@@ -3438,7 +3437,6 @@ _social-bar/
 ##.widget_socials
 ##.widget_socials_ignited
 ##.widget_sow-social-media-buttons
-##.widget_synved_social_follow
 ##.widget_twitter
 ##.widget_twitter_timeline
 ##.widget_wpcom_social_media_icons_widget
@@ -3466,7 +3464,6 @@ _social-bar/
 ##.wsite-social-item
 ##.x-entry-share
 ##.x-social-global
-##.x-social-item
 ##.xenfocus-social
 ##.xs_social_counter_widget
 ##.ya-share2
@@ -3481,6 +3478,7 @@ _social-bar/
 ##.zox-post-soc-list
 ##.zox-post-soc-stat-list
 ##.zox-top-soc-wrap
+##.zozo-social-icons
 ##.zr-social-button
 ##FACEBOOK-SHARE-BUTTON
 ##SHARE-BUTTON
@@ -3496,7 +3494,6 @@ _social-bar/
 ##a[href^="http://service.weibo.com/share/share.php?url="]
 ##a[href^="http://twitthis.com/twit?url"]
 ##a[href^="http://www.addtoany.com/share_save"]
-##a[href^="http://www.facebook.com/dialog/feed?"]
 ##a[href^="http://www.facebook.com/share.php"]
 ##a[href^="http://www.facebook.com/sharer.php"]
 ##a[href^="http://www.facebook.com/sharer/sharer.php"]
@@ -3577,7 +3574,6 @@ _social-bar/
 ||b.st-hatena.com/js/$script,third-party,domain=~b.hatena.ne.jp
 ||badge.facebook.com^$third-party
 ||badges.instagram.com^$third-party
-||bloglovin.com/widget/$third-party
 ||bshare.cn^$third-party
 ||button-share.zalo.me^$third-party
 ||button.like.co^$third-party
@@ -3776,6 +3772,7 @@ news18.com##.article_socials
 news18.com##.artshare
 secretchicago.com,secretldn.com##.author-share-buttons
 adweek.com##.aw-social-share-container
+irishtimes.com##.b-it-social-share-block
 bnnbloomberg.ca,cp24.com,ctvnews.ca,irishnews.com,thedailybeast.com##.b-share-bar
 dxomark.com##.banner
 beebom.com##.beebom-social-share
@@ -3815,7 +3812,6 @@ theglobeandmail.com##.c-site-header__buttons
 mediaite.com##.c-youtube-subscribe
 yahoo.com##.caas-comment
 yahoo.com##.caas-content-contain-share
-laweekly.com##.cb-widget-social-media
 ccn.com##.ccn-share
 cgdirector.com##.cgd-social-wrapper
 goal.com##.component-share
@@ -3824,7 +3820,6 @@ allafrica.com,dailysignal.com##.connect
 earthsky.org##.connect-2
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
-c-sharpcorner.com##.cotent-share-icon
 overwolf.com##.creator-social
 retire.ly##.cs-footer-social-links
 bostonagentmagazine.com##.dd-share
@@ -3842,7 +3837,6 @@ spectator.co.uk##.entry-meta__item--social
 arabnews.com##.entry-views
 thegatewaypundit.com,wersm.com##.essb_links
 trueachievements.com##.fa-comments
-kslnewsradio.com,structurae.net##.fa-instagram
 techradar.com##.facebook-icon
 moparinsiders.com##.facebook-widget
 knowyourmeme.com##.fb-page-like-box
@@ -3966,8 +3960,6 @@ support.microsoft.com##.ocArticleFooterShareContainer
 support.microsoft.com##.ocArticleFooterShareLinksWrapper
 omgubuntu.co.uk##.omg-socials
 latimes.com##.page-actions
-hackread.com##.pk-share-buttons-wrap
-hackread.com##.pk-social-links-wrap
 theroar.com.au##.pm-share-horizontal
 autoexpress.co.uk##.polaris__social
 getcomics.org##.post-footer-shr
@@ -3976,7 +3968,6 @@ discussingfilm.net,douglasnow.com,energy-reporters.com##.post-share-bot
 discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
 foodandwaterwatch.org,medcitynews.com,publicbooks.org##.post-social-share
 cointelegraph.com##.post__socials-block
-captainaltcoin.com,celebritycruises.com,tomzorg.nl##.post_share
 pravda.com.ua##.post_social_item
 koi.ai##.post_sticky-social
 lifestyleasia.com##.pre-footer_instagram
@@ -4051,7 +4042,6 @@ gfinityesports.com,stealthoptional.com##.social-follow-unit
 vinepair.com##.social-footer-row
 digitimes.com##.social-frame
 firstpost.com##.social-ic-wrap
-actu.epfl.ch,brasil247.com,estadao.com.br,india.com,maketecheasier.com,news18.com,recipetineats.com,theshovel.com.au,wionews.com##.social-icon
 diesuid-afrikaner.com,thesouthafrican.com##.social-icons--post-share
 bonappetit.com,cntraveler.com,them.us##.social-icons--share
 mid-day.com##.social-icons-inline
@@ -4272,7 +4262,6 @@ relationshiphero.com#?#div:has(+ .socialIcons)
 viranomaisuutiset.fi#?#.wpb_wrapper.td_block_wrap:has(a[href^="https://whatsapp.com"])
 maroelamedia.co.za###social-followers
 maroelamedia.co.za##.deel_aksie
-nova.bg##.subs-wrapper
 blick.de###share-Buttons
 finanzfrage.net,gutefrage.net##.Bigfoot-socialLinks
 horizont.net##.SiteHeaderSticky_share
@@ -4336,6 +4325,7 @@ carwashpro.nl,infrasite.nl,mobiliteit.nl,rijschoolpro.nl,spoorpro.nl,taxipro.nl,
 telegraaf.nl##.SocialButtons
 nu.nl##.app-follow-us
 carwashpro.nl,infrasite.nl,mobiliteit.nl,rijschoolpro.nl,spoorpro.nl,taxipro.nl,zelfrijdendvervoer.nl##.author-links
+geenstijl.nl##.h-11.p-3.border-l.border-slate-300.transition-colors.fill-slate-300.hover\:fill-brand.dark\:fill-black.dark\:hover\:fill-brand.dark\:border-black
 carwashpro.nl,infrasite.nl,mobiliteit.nl,rijschoolpro.nl,spoorpro.nl,taxipro.nl,zelfrijdendvervoer.nl##.menu-social-media-container
 computable.nl##.social-media-sharers-wrap
 vkmag.com##a[onclick*="twitterShare"]
