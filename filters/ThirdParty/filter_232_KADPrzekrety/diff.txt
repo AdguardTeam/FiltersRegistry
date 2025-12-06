@@ -322,6 +322,12 @@ www.dobreprogramy.pl##:matches-path(/\/[a-zA-Z0-9-]{1,99},program,/) article#mai
 xja.pl,xn.pl##+js(refresh-defuser, 5)
 ! Rule "[$path=/\\/\[a-zA-Z0-9-\]{1\,99}\,program\,/]www.dobreprogramy.pl#?#article#main-content > div[class] > div[class]:has(> div[class] > div > div[class] > a[class][href*="niepotrzebne-pliki"][href*=","]:has-text(naszego poradnika)) > div:nth-child(-n+2):has([class]:contains(/[Aa]systenta|poradnika/))" converted to: "[$path=/\\/\[a-zA-Z0-9-\]{1\,99}\,program\,/]www.dobreprogramy.pl#?#article#main-content > div[class] > div[class]:has(> div[class] > div > div[class] > a[class][href*="niepotrzebne-pliki"][href*=","]:contains(naszego poradnika)) > div:nth-child(-n+2):has([class]:contains(/[Aa]systenta|poradnika/))"
 [$path=/\\/\[a-zA-Z0-9-\]{1\,99}\,program\,/]www.dobreprogramy.pl#?#article#main-content > div[class] > div[class]:has(> div[class] > div > div[class] > a[class][href*="niepotrzebne-pliki"][href*=","]:has-text(naszego poradnika)) > div:nth-child(-n+2):has([class]:contains(/[Aa]systenta|poradnika/))
+! Rule "|https://azet12.github.io/KAD/|$doc,frame,uritransform=/.*/https:\/\/kadantiscam.netlify.app/" converted to: "|https://azet12.github.io/KAD/|$document,subdocument,uritransform=/.*/https:\/\/kadantiscam.netlify.app/"
+|https://azet12.github.io/KAD/|$doc,frame,uritransform=/.*/https:\/\/kadantiscam.netlify.app/
+! Rule "|https://azet12.github.io^|$doc,frame,uritransform=/.*/https:\/\/kadantiscam.netlify.app/" converted to: "|https://azet12.github.io^|$document,subdocument,uritransform=/.*/https:\/\/kadantiscam.netlify.app/"
+|https://azet12.github.io^|$doc,frame,uritransform=/.*/https:\/\/kadantiscam.netlify.app/
+! Rule "|https://kadantiscam.netlify.com^|$doc,frame,uritransform=/com/app/" converted to: "|https://kadantiscam.netlify.com^|$document,subdocument,uritransform=/com/app/"
+|https://kadantiscam.netlify.com^|$doc,frame,uritransform=/com/app/
 ! Rule "kadantiscam.netlify.app##+js(set, kadetect, true)" converted to: "kadantiscam.netlify.app#%#//scriptlet('ubo-set', 'kadetect', 'true')"
 kadantiscam.netlify.app##+js(set, kadetect, true)
 ! ~support.ublock.org,ublock.org#$#body main::before { content: 'uBlock nie jest powiązany z dobrze znanym uBlock Origin.' !important } is excluded by "#$#" in exclusions-low.txt
@@ -418,3 +424,9 @@ support.ublock.org#$#div.hero-unit > div.search-box--hero-unit::before { font-si
 /^https?:\/\/[\w]+\.cloudfront\.net\/(?:build|current|latest|main|release|rel|revision|rev|v|version|ver)\/pl\/v/$document,important,reason="Szkoldiwy asystent pobierania na dobreprogramy lub np. softonic",domain=cloudfront.net,to=cloudfront.net
 ! Error: "Unsupported pseudo-class: ':watch-attr'" in the rule: "[$path=/\\/\[a-zA-Z0-9-\]{1\,99}\,program\,/]www.dobreprogramy.pl#?#article#main-content > div[class]:not([id]) > div[class]:not([id]):watch-attr(class):has(> div[class]:not([id]) > div:not([class]):not([id]) > div[class]:not([id]) > a[class][href*="niepotrzebne-pliki"][href*=","]:not([id]):contains(naszego poradnika)) > div:nth-child(-n+2):not(:empty):not(:has(a[href*="oprogramowanie-z-rosji"], a[href*="niepotrzebne-pliki"]))"
 [$path=/\\/\[a-zA-Z0-9-\]{1\,99}\,program\,/]www.dobreprogramy.pl#?#article#main-content > div[class]:not([id]) > div[class]:not([id]):watch-attr(class):has(> div[class]:not([id]) > div:not([class]):not([id]) > div[class]:not([id]) > a[class][href*="niepotrzebne-pliki"][href*=","]:not([id]):contains(naszego poradnika)) > div:nth-child(-n+2):not(:empty):not(:has(a[href*="oprogramowanie-z-rosji"], a[href*="niepotrzebne-pliki"]))
+! Error: "Unknown modifier: uritransform=/.*/https:\/\/kadantiscam.netlify.app/" in the rule: "|https://azet12.github.io/KAD/|$document,subdocument,uritransform=/.*/https:\/\/kadantiscam.netlify.app/"
+|https://azet12.github.io/KAD/|$document,subdocument,uritransform=/.*/https:\/\/kadantiscam.netlify.app/
+! Error: "Unknown modifier: uritransform=/.*/https:\/\/kadantiscam.netlify.app/" in the rule: "|https://azet12.github.io^|$document,subdocument,uritransform=/.*/https:\/\/kadantiscam.netlify.app/"
+|https://azet12.github.io^|$document,subdocument,uritransform=/.*/https:\/\/kadantiscam.netlify.app/
+! Error: "Unknown modifier: uritransform=/com/app/" in the rule: "|https://kadantiscam.netlify.com^|$document,subdocument,uritransform=/com/app/"
+|https://kadantiscam.netlify.com^|$document,subdocument,uritransform=/com/app/
