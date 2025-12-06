@@ -1,9 +1,9 @@
-! Checksum: u+RN0/EWrUHy1amRG/3/dg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1764982320-14400.patch
+! Checksum: XkvaDFDNCX7Uncwl3HZNDQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1764996044-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.52.38
-! TimeUpdated: 2025-12-06T00:48:08+00:00
+! Version: 2.1.52.39
+! TimeUpdated: 2025-12-06T04:37:15+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -39,7 +39,6 @@
 /follow-twitter.
 /follow-us.$~stylesheet
 /follow_instagram.png
-/gfx/socials/*
 /gm-button-social.min.js
 /highlight-and-share.js
 /icon_share_
@@ -167,7 +166,6 @@ _social-bar/
 ###article_share
 ###article_tools_share
 ###aside-social-links-container
-###at4-share
 ###bdshare
 ###block-menu-menu-social-links
 ###block-menu-menu-social-media-links
@@ -470,7 +468,6 @@ _social-bar/
 ###share_now
 ###share_options
 ###share_panel
-###share_social_sidebar
 ###share_telegram
 ###share_this
 ###share_to
@@ -606,6 +603,7 @@ _social-bar/
 ###socialPopup
 ###socialShare
 ###socialSharing
+###socialTabs
 ###socialTop
 ###socialTwitter
 ###socialWrap
@@ -693,6 +691,7 @@ _social-bar/
 ###twitter-widget
 ###twitter2
 ###twitterBtn
+###twitterContainer
 ###twitterFollow
 ###twitterShareButton
 ###twitter_btn
@@ -810,7 +809,6 @@ _social-bar/
 ##.addthis-smartlayers-desktop
 ##.addthis-wrapper
 ##.addthis:not(body)
-##.addthis_bar
 ##.addthis_button
 ##.addthis_button_compact
 ##.addthis_button_digg
@@ -981,8 +979,6 @@ _social-bar/
 ##.bloc-social
 ##.bloc_float_share
 ##.block-addtoany
-##.block-facebook
-##.block-facebook-inner
 ##.block-followus
 ##.block-sharebar
 ##.block-sharethis
@@ -1198,6 +1194,7 @@ _social-bar/
 ##.epcl-share-container
 ##.ess-share-text
 ##.ess-social-sharing
+##.essb-flyin
 ##.essb-mobile-sharepoint
 ##.essb-social-followers-variables
 ##.essb_item
@@ -1452,7 +1449,6 @@ _social-bar/
 ##.footer__social-menu
 ##.footer__social-wrapper
 ##.footer__socialIcon
-##.footer__socialNetworkItem
 ##.footer__socialmedia
 ##.footer__socials
 ##.footer_fb
@@ -1584,7 +1580,6 @@ _social-bar/
 ##.horizontal.social
 ##.hover_share
 ##.hp-tab-share
-##.hs-blog-social-share
 ##.icon--app-store
 ##.icon--facebook
 ##.icon--facebook-simple
@@ -1705,7 +1700,6 @@ _social-bar/
 ##.instagram_share
 ##.instagramicon
 ##.instalink
-##.iol-social-share
 ##.ion-social-facebook
 ##.ion-social-google
 ##.ion-social-linkedin
@@ -2104,11 +2098,11 @@ _social-bar/
 ##.qt-sharepage
 ##.qt-socialicon
 ##.qticon-share
+##.quick-links__social
 ##.qw_social
 ##.r-footer--social
 ##.rambler-share
 ##.rc_social
-##.rcom-social-site-footer
 ##.react-share__ShareButton
 ##.react_share_icons
 ##.redes-sociais
@@ -2210,7 +2204,6 @@ _social-bar/
 ##.share-bar-item-desktop
 ##.share-bar__item
 ##.share-bar__link
-##.share-bar__list
 ##.share-bg
 ##.share-block
 ##.share-block-item
@@ -2406,6 +2399,7 @@ _social-bar/
 ##.shareControl
 ##.shareCount
 ##.shareDiv
+##.shareDropDown
 ##.shareEmail
 ##.shareFB
 ##.shareFacebook
@@ -2528,7 +2522,6 @@ _social-bar/
 ##.share_with_friends
 ##.share_wrap
 ##.share_wrapper
-##.sharea
 ##.shareaholic-canvas
 ##.shareall
 ##.shareb
@@ -2686,6 +2679,7 @@ _social-bar/
 ##.site-footer__social-links
 ##.site-footer__social-list
 ##.site-footer__socials
+##.site-share-wrapper
 ##.site-social
 ##.site-social-menu
 ##.sitewide-social-media
@@ -3015,6 +3009,7 @@ _social-bar/
 ##.socialItem
 ##.socialItems
 ##.socialLabel
+##.socialLikes
 ##.socialLink
 ##.socialLinks
 ##.socialLinksContainer
@@ -3419,6 +3414,7 @@ _social-bar/
 ##.widget_dpsp_social_media_follow
 ##.widget_easy_facebook_page_plugin
 ##.widget_epcl_social
+##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook_likebox
 ##.widget_follow_button_widget
 ##.widget_follow_us
@@ -3578,6 +3574,7 @@ _social-bar/
 ||button-share.zalo.me^$third-party
 ||button.like.co^$third-party
 ||buttons.github.io/buttons.js$third-party
+||buttons.googlesyndication.com^$third-party
 ||connect.ok.ru^$third-party
 ||facebook.com/plugins/like.php?$third-party
 ||facebook.com/plugins/like_box.php$third-party
@@ -4004,7 +4001,6 @@ dailymail.co.uk,fundrazr.com,gizmodo.com,modernagejournal.com,nymag.com,thisismo
 gamingbible.com,ladbible.com,sportbible.com,tyla.com,unilad.com,uniladtech.com##.share-link_container__q9th7
 thehackernews.com##.share-open-modal
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
-uh.edu##.share-this-story
 breachmedia.ca,news.itsfoss.com##.share-toggle
 dailymail.co.uk,thisismoney.co.uk##.share-twitter
 dailymail.co.uk,thisismoney.co.uk##.share-whatsapp
@@ -4038,6 +4034,7 @@ macrumors.com##.social--159R8SRB
 getpocket.com,mirror.co.uk,themirror.com##.social-actions
 noticias.perfil.com,vaticannews.va##.social-btn
 rte.ie##.social-btn-container
+thereader.mitpress.mit.edu##.social-cont
 gfinityesports.com,stealthoptional.com##.social-follow-unit
 vinepair.com##.social-footer-row
 digitimes.com##.social-frame
@@ -4135,7 +4132,6 @@ nypost.com##.zephrModal
 securityweek.com##.zox-post-soc-list
 securityweek.com##.zox-top-soc-wrap
 sfgate.com##[aria-label="Share from Email"]
-techcommunity.microsoft.com##[class^="custom_widget_MicrosoftFooter_social-share_"]
 news.sky.com##[data-component-name="sdc-article-strapline"]
 lifehacker.com##[data-ga-element="social-link"]
 cnet.com##[data-meta="footer-section-social"]
@@ -4145,6 +4141,7 @@ dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
 telekom.com##a[title="Share"]
 theguardian.com##div > gu-island[name="ShareButton"]
+fifa.com##div[class*="article-section_shareButton_"]
 theatlantic.com##div[class^="ArticleShare_"]
 kcrw.com##div[class^="SocialLinks_"]
 cnbc.com##div[class^="SocialShare-"]
@@ -4290,6 +4287,7 @@ watson.ch##.watson-sharebuttons
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
 bz-berlin.de##div[data-type="social-bar"]
+berliner-kurier.de##section[class^="article-top-panel_socials_"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 radiofrance.fr##.ShareManager
