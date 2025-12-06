@@ -1,9 +1,9 @@
-! Checksum: 5tX0w9inW4VvbtTpyddu6w
-! Diff-Path: ../patches/14/14-s-1765019379-3600.patch
+! Checksum: OaMQAuB9P57LerDpG5UZ5A
+! Diff-Path: ../patches/14/14-s-1765023262-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.51.47
-! TimeUpdated: 2025-12-06T11:06:32+00:00
+! Version: 2.2.51.48
+! TimeUpdated: 2025-12-06T12:11:06+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2554,6 +2554,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+cas2.kr3m.com#%#//scriptlet('trusted-click-element', '#btnConsent', '', '500')
 rg.ru#%#//scriptlet('trusted-set-local-storage-item', 'cookieConsent', '{"accepted":true,"expires":"2125-12-05T13:13:29.340Z"}')
 onlyoffice.com#%#//scriptlet('trusted-set-cookie', 'cookie_preferences', '%7B%22necessary%22%3A%22granted%22%2C%22analytics_storage%22%3A%22denied%22%2C%22ad_storage%22%3A%22denied%22%2C%22ad_user_data%22%3A%22denied%22%2C%22ad_personalization%22%3A%22denied%22%2C%22security_storage%22%3A%22granted%22%2C%22functionality_storage%22%3A%22denied%22%2C%22personalization_storage%22%3A%22denied%22%7D')
 imovelweb.com.br##div[class^="CookiesPolicyBanner"]
@@ -18019,6 +18020,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219175
+@@||delivery.consentmanager.net/delivery/cmp.php$domain=games.focus.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219476
 rg.ru#@##cookie-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219254
@@ -30014,6 +30017,7 @@ skyscrapercity.com,avsforum.com,watchuseek.com###welcome_back
 web.de,gmx.*#$#.dialogOverlay[data-type="welcomelayer"] { display: none !important; }
 web.de,gmx.*#$#.hideScrolling { overflow: visible !important; }
 web.de,gmx.*#$#section[data-name="inactivityDialog"] { display: none !important; }
+web.de,gmx.*#$#nav-inactivity-layer { display: none !important; }
 web.de,gmx.*#$#body[data-inactivity-layer] { overflow: auto !important; }
 pcgroup.ru#$#body { overflow: auto !important; }
 pcgroup.ru#$##ck-popup-vacancy { display: none !important; }
@@ -50914,6 +50918,10 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+games.focus.de###subscribeInterferer
+wwf.or.jp##div[id^="popup"]:has(> .popup.supportArea)
+bijutsutecho.com#$?#.PartPremiumPlusAnnounceModal { remove: true; }
+bijutsutecho.com#$?#.PartPremiumPlusModal { remove: true; }
 t3n.de##.tg-jobs-kategorie-box
 fujinkoron.jp##.header-bnr
 ||grajapa.shueisha.co.jp/api/banner/overlay

@@ -1,9 +1,9 @@
-! Checksum: b7GB8myNJ2F1OOgWEVnEYg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1764988781-3600.patch
+! Checksum: XxTbdGDyCkpSKOme9AhImw
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1765023262-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.50.51
-! TimeUpdated: 2025-12-05T12:11:57+00:00
+! Version: 2.0.50.52
+! TimeUpdated: 2025-12-06T12:10:49+00:00
 ! Expires: 12 hours (update frequency)
 ||tizofvtuqo.com^
 ||ads.goldbach-germany.de^
@@ -302,6 +302,7 @@ t-online.de#@#div[class^="Tsshopst"]
 essen-und-trinken.de#%#//scriptlet('prevent-setTimeout', 's.call(null)', '10')
 /^https:\/\/www\.essen-und-trinken\.de\/[a-z]{10,}\.js$/$script,~third-party,match-case
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
+||imasdk.googleapis.com/js/sdkloader/ima3.js$xmlhttprequest,redirect=google-ima3,domain=games.focus.de
 radioforen.de##body > .u-scrollButtons ~ script ~ div[style]
 seoschmiede.at#%#//scriptlet('abort-on-stack-trace', 'document.getElementById', 'getWidget')
 @@||otz.de/static/*/mgt-otz/admanager.js
@@ -496,7 +497,7 @@ infranken.de#%#//scriptlet('remove-attr', 'href', 'a[rel*="sponsored"]')
 prosieben.de#%#//scriptlet('set-constant', 'Object.prototype.checkAdProxyAvailability', 'noopFunc')
 20min.ch#%#(()=>{window.TATM=window.TATM||{},TATM.init=()=>{},TATM.initAdUnits=()=>{},TATM.pageReady=()=>{},TATM.getVast=function(n){return new Promise((n=>{n()}))},TATM.push=function(n){if("function"==typeof n)try{n()}catch(n){console.debug(n)}};})();
 data-load.*#%#//scriptlet('set-cookie', '_xflora', '1')
-gmx.net,gmx.at,web.de#%#//scriptlet('inject-css-in-shadow-dom', '.list-programmatic-ad-item--multi-line, .list-inbox-ad-item--multi-line, list-inbox-ad-item { display: none !important; }')
+gmx.net,gmx.at,web.de#%#//scriptlet('inject-css-in-shadow-dom', '.list-programmatic-ad-item--multi-line, .list-inbox-ad-item--multi-line, list-inbox-ad-item, .list-inbox-ad-item--single-line { display: none !important; }')
 chip.de#%#//scriptlet('abort-current-inline-script', 'document.querySelector', 'DisplayAcceptableAdIfAdblocked')
 chip.de#%#//scriptlet('trusted-replace-node-text', 'style', '/a [\s\S]* padding-top[\s\S]*aspect-ratio/', '/.*(\..*?) [\s\S]*padding-top[\s\S]*aspect-ratio[\s\S]*/', '$1 { display: none !important; }')
 chip.de#%#(()=>{const t={construct:(t,n,e)=>{const o=n[0],r=o?.toString();return r&&r.length>500&&r.length<1e3&&/=>[\s\S]*?for[\s\S]*?\[.+\]/.test(r)&&(n[0]=()=>{}),Reflect.construct(t,n,e)}};window.MutationObserver=new Proxy(window.MutationObserver,t)})();
@@ -2493,6 +2494,7 @@ homad-global-configs-eu-fra.schneevonmorgen.com.s3.amazonaws.com/*/config.json$r
 ||adserver.adtech.de/?advideo/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/,important
 ||adserver.adtech.de/?advideo/$replace=/(<VAST[\s\S]*?>)[\s\S]*<\/VAST>/\$1<\/VAST>/
 ||cdn.videoplaza.tv/contrib/de-ipd/svm/homadConfigVideoplaza-wetter.json$replace=/"enabled": true\,/"enabled": false\,/i,important
+@@||partners2.das-onlinespiel.de/client.js$domain=games.focus.de
 @@*$popup,~third-party,domain=canna.to|canna-power.to
 millionenklick.gmx.*,millionenklick.web.de#@#uim\:ad + iframe
 @@||img.ui-portal.de/fallback/$domain=dl.web.de|dl.gmx.net|dl.gmx.at|dl.gmx.de

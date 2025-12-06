@@ -1,9 +1,9 @@
-! Checksum: DoTeLDlyj+T5u3axAyRvhg
-! Diff-Path: ../patches/6/6-s-1764936897-3600.patch
+! Checksum: +KxDP2Shl0RJH7IzauIsQA
+! Diff-Path: ../patches/6/6-s-1765023246-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.50.51
-! TimeUpdated: 2025-12-05T12:11:57+00:00
+! Version: 2.0.50.52
+! TimeUpdated: 2025-12-06T12:10:49+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -363,6 +363,7 @@ essen-und-trinken.de#%#//scriptlet('prevent-setTimeout', 's.call(null)', '10')
 schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219175
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218085
 radioforen.de##body > .u-scrollButtons ~ script ~ div[style]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216094
@@ -1001,7 +1002,7 @@ prosieben.de#%#//scriptlet('set-constant', 'Object.prototype.checkAdProxyAvailab
 ! https://github.com/AdguardTeam/AdguardFilters/issues/148783
 data-load.*#%#//scriptlet('set-cookie', '_xflora', '1')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/146229
-gmx.net,gmx.at,web.de#%#//scriptlet('inject-css-in-shadow-dom', '.list-programmatic-ad-item--multi-line, .list-inbox-ad-item--multi-line, list-inbox-ad-item { display: none !important; }')
+gmx.net,gmx.at,web.de#%#//scriptlet('inject-css-in-shadow-dom', '.list-programmatic-ad-item--multi-line, .list-inbox-ad-item--multi-line, list-inbox-ad-item, .list-inbox-ad-item--single-line { display: none !important; }')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/158944
 chip.de#%#//scriptlet('abort-current-inline-script', 'document.querySelector', 'DisplayAcceptableAdIfAdblocked')
 chip.de#%#//scriptlet('trusted-replace-node-text', 'style', '/a [\s\S]* padding-top[\s\S]*aspect-ratio/', '/.*(\..*?) [\s\S]*padding-top[\s\S]*aspect-ratio[\s\S]*/', '$1 { display: none !important; }')
@@ -5722,6 +5723,8 @@ amateurbusters.com#?#.sb_area > .sb_area_headline:contains(Urlaub)
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219175
+@@||partners2.das-onlinespiel.de/client.js$domain=games.focus.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216033
 @@*$popup,~third-party,domain=canna.to|canna-power.to
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215811
