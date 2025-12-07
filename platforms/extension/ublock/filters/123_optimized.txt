@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: mEJuEQwxZAyAyWwVkdsGVg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1765068725-14400.patch
+! Checksum: aYkung39sSwSHKHf0TqjRA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1765082686-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.52.44
-! TimeUpdated: 2025-12-07T00:48:29+00:00
+! Version: 2.1.52.45
+! TimeUpdated: 2025-12-07T04:41:41+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -1098,7 +1098,7 @@ _social-bar/
 ##.comment-social
 ##.comment__share
 ##.comment_share
-##.comments-social
+##.comments-share
 ##.comments__likes
 ##.common-social
 ##.common-social-link
@@ -1327,8 +1327,6 @@ _social-bar/
 ##.follow-bar
 ##.follow-facebook
 ##.follow-instagram
-##.follow-link-facebook
-##.follow-link-twitter
 ##.follow-link-wrapper
 ##.follow-linkedin
 ##.follow-pinterest
@@ -1580,6 +1578,7 @@ _social-bar/
 ##.horizontal-share
 ##.horizontal.social
 ##.hover_share
+##.hp-social
 ##.hp-tab-share
 ##.icon--app-store
 ##.icon--facebook
@@ -2475,6 +2474,7 @@ _social-bar/
 ##.share_container
 ##.share_content
 ##.share_count
+##.share_cta
 ##.share_digg
 ##.share_entry
 ##.share_facebook
@@ -3074,7 +3074,6 @@ _social-bar/
 ##.social_links_container
 ##.social_links_footer
 ##.social_links_top
-##.social_media_header
 ##.social_media_share
 ##.social_menu_icon
 ##.social_popup
@@ -3235,7 +3234,6 @@ _social-bar/
 ##.thim-author-social
 ##.thread-share
 ##.thread-share-bar-buttons
-##.thrv_tw_qs
 ##.titleSocial
 ##.tk-footer-social-icons
 ##.tm-footer-social
@@ -3418,7 +3416,6 @@ _social-bar/
 ##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook_likebox
 ##.widget_follow_button_widget
-##.widget_follow_us
 ##.widget_g1_socials
 ##.widget_jnews_social
 ##.widget_mkd_social_icon_widget
@@ -3553,6 +3550,8 @@ _social-bar/
 ##a[title="Suivez-nous sur Pinterest"]
 ##a[title="Suivez-nous sur Twitter"]
 ##amp-social-share
+##div[title="Partager sur Facebook"]
+##div[title="Partager sur Twitter"]
 ##img[alt="Connect with us on Facebook"]
 ##img[alt="Connect with us on LinkedIn"]
 ##img[alt="Connect with us on Twitter"]
@@ -3661,6 +3660,7 @@ dailymail.co.uk,thisismoney.co.uk###dms-txt
 imgflip.com###findUs
 memuplay.com###fixed-share
 empoweringparents.com,geraligado.blog.br,katholisch.de,tvmaze.com###follow
+deccanherald.com###follow-us-card
 openspeedtest.com###footBox2
 abebooks.com,atlasobscura.com###footer-social-list
 aimp.ru###footer_counter
@@ -3720,6 +3720,7 @@ cnbc.com##.HighlightShare-container
 cnbc.com##.HighlightShare-styles-makeit-container--QcXaz
 apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
+deccanherald.com##.NzEvQ
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
 rbth.com##.Popup-telegram
 aerospaceglobalnews.com##.PostMetaBar__Social
@@ -3739,6 +3740,7 @@ grammarly.com##._3fq8S-container
 pixivision.net##._floated-bottom-bar
 pixivision.net##._follow-us-card
 tableconvert.com##._share-wrapper
+goldderby.com##._socialMedia_hgv74_1
 france24.com##.a-share-button
 tandfonline.com##.a2a_share_target
 planetizen.com##.addtoany_list
@@ -3760,7 +3762,6 @@ newrepublic.com,thetech.com##.article-social
 nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
 theparisreview.org##.article-tools-social
-www.psu.edu##.article-top-social-share_content__OYcDe
 rt.com##.article__google-news
 noticiabrasil.net.br,noticiaslatam.lat,spnfa.ir,sputnik-abkhazia.info,sputnik-georgia.com,sputnik-ossetia.com,sputnik.af,sputnik.by,sputnik.kg,sputnik.kz,sputnik.tj,sputnikglobe.com,sputniknews.africa,sputniknews.cn,sputniknews.in,sputniknews.jp,sputniknews.ru,sputniknews.uz,sputnikportal.rs##.article__news-services-subscribe
 wnep.com##.article__sharing
@@ -4021,7 +4022,6 @@ videocardz.com##.shareon
 cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
-proofpoint.com##.sharethis_toolbox
 12tomatoes.com##.sharetocare-popup
 glassalmanac.com##.shhr-btn
 jamestown.org##.shrs
@@ -4117,6 +4117,7 @@ videogameschronicle.com##.vgc-socialshare
 natlawreview.com##.view-footer
 motorsport.tv##.vjs-icons-bar
 dailymail.co.uk##.vjs-social-controls
+deccanherald.com##.wCRP0
 beincrypto.com##.want-to-know-more-block
 dailymail.co.uk,oogtv.nl##.whatsapp
 aajtak.in,businesstoday.in##.whatsapp_channel
@@ -4286,7 +4287,6 @@ mpg.de##.social-media-buttons
 kurier.at##.socialmedia-nav
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
-watson.ch##.watson-sharebuttons
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
 bz-berlin.de##div[data-type="social-bar"]
@@ -4407,6 +4407,7 @@ gazetawroclawska.pl##.atomsArticleFoot__socialMedia
 terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
+xvideossexo.com###whatsapp
 betteranime.net##.anime-down-share
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
