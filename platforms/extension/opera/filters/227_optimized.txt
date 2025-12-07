@@ -1,9 +1,9 @@
-! Checksum: uG7dGU71IFqxuxAu2xhE2w
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1764694034-14400.patch
+! Checksum: MB5aABQhfwiYtcMr0p1t9Q
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1765139956-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.48
-! TimeUpdated: 2025-12-02T16:43:42+00:00
+! Version: 2.0.23.49
+! TimeUpdated: 2025-12-07T20:36:11+00:00
 ! Expires: 10 days (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -3696,7 +3696,7 @@ gall.dcinside.com#%#//scriptlet('set-constant', 'blockedState', '', '', '', 'tru
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/background:[\s\S]+setTimeout\( *\( *\) *=> *[A-Za-z0-9]+\.remove\( *\)[\s\S]+Math\.random\( *\) *< *percent *\/ *100/')
 gall.dcinside.com#%#//scriptlet('remove-node-text', 'script', '/finally *{\n* *document.documentElement.removeChild\( *[A-Za-z0-9]+ *\) *;\n* *}([ \n]|.)+_ad"]\);/')
 chzzkban.xyz#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js method:HEAD', 'emptyStr')
-onair.jtbc.co.kr#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(t).getPropertyValue("visibility")')
+mvod.jtbc.co.kr,onair.jtbc.co.kr#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(t).getPropertyValue("visibility")')
 erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }
 mylocation.co.kr#%#//scriptlet('prevent-setTimeout', 'adBlockedMessage')
 ||shana.pe.kr/shana_check/scp*.js$script
@@ -3707,7 +3707,7 @@ kilho.net###detect-alert
 vod.jtbc.co.kr#@#.ad-unit:not(.textads)
 vod.jtbc.co.kr#@#.ad-zone:not(.textads)
 news.jtbc.co.kr#%#//scriptlet('spoof-css', '.ad-banner.adsbox.ad-unit.ad-zone', 'display', 'block')
-news.jtbc.co.kr,vod.jtbc.co.kr#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
+mvod.jtbc.co.kr,news.jtbc.co.kr,vod.jtbc.co.kr#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
 minipol.tistory.com#%#//scriptlet('set-constant', 'checkAdBlock', 'undefined')
 tabriz.kr#@##AdHeader
 tabriz.kr#@##AD_Top
