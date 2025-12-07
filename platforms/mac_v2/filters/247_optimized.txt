@@ -1,12 +1,14 @@
-! Checksum: aJBh5ypQQVnGgefVX89pgg
-! Diff-Path: ../patches/247_optimized/247_optimized-s-1764708109-14400.patch
+! Checksum: 3oC5H0KXWdPdr1LfuAaK6w
+! Diff-Path: ../patches/247_optimized/247_optimized-s-1765068733-14400.patch
 ! Title: Polish Anti-Annoying Special Supplement (Optimized)
 ! Description: Filters that block and hide RSS elements and remnants of hidden newsletters combined with social elements on Polish websites.
-! Version: 2.0.4.42
-! TimeUpdated: 2025-12-02T20:38:48+00:00
+! Version: 2.0.4.43
+! TimeUpdated: 2025-12-07T00:49:00+00:00
 ! Expires: 12 hours (update frequency)
 ##.elementor-social-icon[href*="/feed"]
 ##.td-icon-rss
+##a[href*="podcasts.google.com/"]
+##li:has(> a[href*="podcasts.google.com/"])
 ~google.co.uk,~google.com,~google.de,~pl##.google-news-banner:lang(pl)
 ~google.co.uk,~google.com,~google.de,~pl##.google-news:lang(pl)
 ~google.co.uk,~google.com,~pl##a[href*="news.google.com/publications/"] img:lang(pl)
@@ -446,6 +448,7 @@ programistanaswoim.pl##.widget_custom_html:nth-of-type(3)
 propertydesign.pl##a[href*="/rss_info.html"]
 propertynews.pl##.box-rssalert
 propertynews.pl##.social-box-title, .social-box-list-link[href*="rss"]
+proton.me,protonvpn.com##footer > div > div[data-testid="footer"] > div + ul > li:has(> a[href*="/feed"] > picture)
 przeglad-finansowy.pl###HTML3 > .widget-content > center
 przeketonowa.pl##.footer-credit > a[href*="/feed/"]
 przepisownia.pl###tmrcSocialTabs a[href*="/rss"]
@@ -459,6 +462,7 @@ purepc.pl##.googlenews
 radio.lublin.pl###footer .footer_light:first-of-type .jeg_column:nth-of-type(2) .vc_col-sm-1\/5:nth-of-type(2)
 radio.opole.pl##a[href^="rss.php"]
 radiogorzow.pl##.main-footer > div.row:nth-of-type(2) > div.column:nth-of-type(4) > .label
+radionaukowe.pl##li.has-hidden-link:has(a[href*="/feed"])
 radioprofeto.pl##.m4.menu > ul > li:nth-of-type(4), .iconsMenu > a:nth-of-type(4)
 radiosochaczew.pl##a[href*="radiosochaczew.pl/rss/"]
 radiozet.pl##.google-news-link
@@ -684,9 +688,8 @@ rootblog.pl#%#//scriptlet('ubo-remove-node-text', '#text', 'Chcesz być na bież
 rootblog.pl##a[href*="news.google.com/publications/"] b
 sprzedajemy.pl#$##cntListRssLink { background-image: none !important }
 wsqn.pl#$#.extralight-border { border: none !important }
-www.lenovo.com#$#.footerForumsIcon:lang(pl) > a::before { color: white !important; content: "Z"; font-size: 18pt; font-weight: 700; position: relative; top: -3px; left: 10px }
-www.lenovo.com#$#.footerForumsIcon:lang(pl):hover { background: #e1140a !important }
-www.lenovo.com#$#.footerForumsIcon:lang(pl) { background: #7f7f7f !important }
+www.wisniowski.pl#?##footer > div > div:first-child > div:first-child:has(> :nth-child(-n+3):matches-css(display: none)):has(> div svg:matches-css(display: none))
+www.wisniowski.pl#$?##footer > div > div:first-child > div:first-child:has(> :nth-child(-n+3):matches-css(display: none)):has(> div svg:matches-css(display: none)) + div { border-left: none !important }
 zteshop.pl#?#.footer .newsletter:has(.social-media:matches-css(display: none)):has(form:matches-css(display: none))
 boop.pl#%#//scriptlet('ubo-ra', 'class', 'article ~ div p a.uppercase[class*="hover:"]')
 boop.pl#%#//scriptlet('ubo-ra', 'href', 'article ~ div p a[href*="gunuri"]')
