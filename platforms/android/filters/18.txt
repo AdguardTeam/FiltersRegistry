@@ -1,9 +1,9 @@
-! Checksum: jwGkbPlBIjGn0KGPTE+/ZQ
-! Diff-Path: ../patches/18/18-s-1765217571-3600.patch
+! Checksum: WpNQ4n6ktUIw9MEQ9JXkYA
+! Diff-Path: ../patches/18/18-s-1765231813-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.76.40
-! TimeUpdated: 2025-12-08T18:10:23+00:00
+! Version: 2.0.76.41
+! TimeUpdated: 2025-12-08T22:08:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2554,6 +2554,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+dom.ria.com#%#//scriptlet('set-cookie-reload', 'gdpr', '1')
+ancestry.de#%#//scriptlet('trusted-click-element', 'div[id^="Banner_cookie_"] #rejectAllBtn')
 untold.ae#%#//scriptlet('trusted-set-cookie', 'cookies', 'declined')
 untold.ae#?##__next > div[class*=" "]:contains(We use cookies or similar technologies)
 electronicgroove.com#%#//scriptlet('trusted-set-cookie', 'wpconsent_preferences', '{"essential":true,"statistics":false,"marketing":false}')
@@ -5310,7 +5312,7 @@ pixiv.net##.terms-of-use-header
 ||filoz.net/*/*/glowCookies$script,stylesheet,~third-party
 satu.xl.co.id##.cookie-consent-prompt
 life.ru##div[class^="CommonLayout_root"] > div:has(> div > div > span > a[href="/legacy#persondata"])
-likumi.lv#%#//scriptlet('trusted-click-element', '#cookiescript_accept')
+hellozdrowie.pl,likumi.lv#%#//scriptlet('trusted-click-element', '#cookiescript_accept')
 flexispot.co.uk,flexispot.es,flexispot.nl,flexispot.it,flexispot.se,flexispot.de,flexispot.pl###gdprMask
 odido.nl##.koekje
 odido.nl##.modal-backdrop
@@ -18034,6 +18036,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219680
+@@||cdn.cookie-script.com^$script,xmlhttprequest,domain=hellozdrowie.pl
+hellozdrowie.pl#@##cookiescript_injected_wrapper
+hellozdrowie.pl#@##cookiescript_injected
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219518
 nossorumo.org.br#@#.cc-window[aria-label="cookieconsent"]
 nossorumo.org.br#@#.cc-floating

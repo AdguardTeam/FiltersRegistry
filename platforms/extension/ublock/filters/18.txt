@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: F+q41c9nogwVjUeWMJ7znA
-! Diff-Path: ../patches/18/18-s-1765217595-3600.patch
+! Checksum: E0o+O1wqf3MRpPBbFgA37Q
+! Diff-Path: ../patches/18/18-s-1765231834-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.76.40
-! TimeUpdated: 2025-12-08T18:10:23+00:00
+! Version: 2.0.76.41
+! TimeUpdated: 2025-12-08T22:08:03+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2500,6 +2500,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+dom.ria.com##+js(set-cookie-reload, gdpr, 1)
 untold.ae###__next > div[class*=" "]:contains(We use cookies or similar technologies)
 nossorumo.org.br##+js(set-cookie, cookieconsent_status, deny)
 mypikpak.com##+js(set-cookie, allow_analysis, false)
@@ -16827,6 +16828,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219680
+@@||cdn.cookie-script.com^$script,xhr,domain=hellozdrowie.pl
+hellozdrowie.pl#@##cookiescript_injected_wrapper
+hellozdrowie.pl#@##cookiescript_injected
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219518
 nossorumo.org.br#@#.cc-window[aria-label="cookieconsent"]
 nossorumo.org.br#@#.cc-floating
