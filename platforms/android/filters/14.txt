@@ -1,9 +1,9 @@
-! Checksum: OBEaK29DdprWUcgr0Zlskg
-! Diff-Path: ../patches/14/14-s-1765196088-3600.patch
+! Checksum: dF03gyHKjRP0IRTYifKMIA
+! Diff-Path: ../patches/14/14-s-1765200022-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.51.59
-! TimeUpdated: 2025-12-08T12:12:16+00:00
+! Version: 2.2.51.60
+! TimeUpdated: 2025-12-08T13:18:09+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2554,6 +2554,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+cnn.com#%#//scriptlet('trusted-click-element', 'div[role="dialog"] > img[alt="CNN Logo"] ~ a[role="button"][href="#"]')
 black.sk#$#body { overflow: auto !important; padding-right: 0 !important; }
 black.sk#$#.cookie-modal { display: none !important; }
 black.sk#$#.modal-backdrop { display: none !important; }
@@ -3364,9 +3365,6 @@ v-tagile.ru###info-collect-warning
 web.lmarena.ai#%#//scriptlet('set-local-storage-item', 'd-ua', 'false')
 whoosh.bike,velobike.ru#%#//scriptlet('set-cookie', 't_cookiesConsentGiven', 'true')
 qeepl.com##div[role="dialog"][i18n="consent-dialog"]
-cnn.com#%#//scriptlet('prevent-addEventListener', '/oneTrustBlocked|readystatechange/', '/browser-blocked|UserConsent\.ackTerms/')
-cnn.com#$#body[style*="overflow:"][style*="position:"] { overflow: auto !important; position: static !important; }
-cnn.com#$#body > div[style^="background-color:"][style*="position: fixed; min-width: 100%; min-height: 100%; inset: 0px; z-index: 999999;"]:has(> div > p > a[href="/privacy"]) { display: none !important; }
 terviseportaal.ee##div[data-name="card"]:has(> div[data-testid="cookie-consent"])
 cloudpillo.de##.bg-cp-black[x-show*="cookieBanner"]
 ditjesendatjes.nl#%#//scriptlet('trusted-set-local-storage-item', 'user_consent', '{"analytics_storage":"denied","ad_storage":"denied","ad_user_data":"denied","ad_personalization":"denied"}')
@@ -6175,7 +6173,6 @@ gameleap.com##core-banner
 justjoin.it#?##__next > div.MuiBox-root ~ div.MuiBox-root ~ div:has(> button)
 feature.fm###__next > main > div.justify-center
 interbus.es##.aviso-de-cookies
-cnn.com###onetrust-consent-sdk:not([style])
 screenflash.io#%#//scriptlet('trusted-set-local-storage-item', 'consents', '{"device":false,"personalizedContent":false,"googleAdsense":false,"googleRecaptcha":false,"youtube":false}')
 a1.si#$##p_p_id_adia_a_INSTANCE_cookieConstentPortlet_ { display: none !important; }
 a1.si#$#.modal-backdrop { display: none !important; }

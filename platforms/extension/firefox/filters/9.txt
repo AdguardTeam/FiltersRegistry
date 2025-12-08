@@ -1,9 +1,9 @@
-! Checksum: 1wgpxXA22zJyXvgYYMn4Vg
-! Diff-Path: ../patches/9/9-s-1765196105-3600.patch
+! Checksum: cF8ug24fCB26WN4u0pWQTw
+! Diff-Path: ../patches/9/9-s-1765200039-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.32.49
-! TimeUpdated: 2025-12-08T12:12:08+00:00
+! Version: 2.0.32.50
+! TimeUpdated: 2025-12-08T13:17:56+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2136,6 +2136,9 @@ cl1ca.com,periodicocorreo.com.mx,guiavidaesaude.com,muyinteresante.com,reportein
 !
 ! NOTE: Specific rules
 !
+telehit.com##div.relative:has(> div.flex > div[id^="gpt-top-ad-container-"])
+telehit.com##footer div.relative:has(> a[aria-label="VixBannerFooter"])
+telehit.com##.place-content-end
 mundocine.es##div[style="text-align:center;font-size: small;"]
 mundocine.es##.cm-entry-summary > hr
 elconciso.es#$?#div.slot:has(> div.board-advertising:only-child) { remove: true; }
@@ -5904,6 +5907,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! Bad:  @@||example.org^$stealth (should be in AdGuard Base - allowlist_stealth.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219538
+@@||c.amazon-adsystem.com/aax2/apstag.js$domain=telehit.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216360
 @@/publicidad-$domain=radioeuroextasis.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214711
