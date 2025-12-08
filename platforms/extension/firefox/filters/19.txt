@@ -1,9 +1,9 @@
-! Checksum: OT/ynolRazSMO/kxnf4bVQ
-! Diff-Path: ../patches/19/19-s-1765174444-3600.patch
+! Checksum: 4vlJ1GRe7dqQoU9JU662HA
+! Diff-Path: ../patches/19/19-s-1765192237-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.66.67
-! TimeUpdated: 2025-12-08T06:11:42+00:00
+! Version: 2.0.66.68
+! TimeUpdated: 2025-12-08T11:08:11+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3258,6 +3258,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+tvfoco.uai.com.br###modalPushArticle
+tvfoco.uai.com.br###modalPushArticleAmp
 ||platform-api.tver.jp/v2/api/platform_users/questionnaire?
 zozo.jp###karte-c
 corriere.it##a[sticky-mode="on"]
@@ -11215,6 +11217,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+tvfoco.uai.com.br##.push-notification-card
 kuudere.*#%#//scriptlet('set-local-storage-item', 'kuudere_notif_dialog_dismissed', '1')
 ||m-bemomotors.youlead.pl/WebpushPrompt.js$domain=omoda.grupabemo.pl
 skladnicaksiegarska.pl#%#//scriptlet('set-cookie', 'knowband_popup', '1')
@@ -12155,6 +12158,12 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+telecinco.es##aside[class*="_whatsapp-cta-"]
+telecinco.es##aside[class*="_googlenews-cta-"]
+wearesolomon.com##.site-extras > p
+blog.swc.rs#%#//scriptlet('trusted-set-local-storage-item', 'seen-sign-up-modal', '{"value":"true"}')
+blog.swc.rs##.my-10:has(> div.flex > input[aria-label="Enter your email address"])
+teenvogue.com##div[class^="ContentFooterNewsletterContentWrapper-"]
 nytimes.com#$#div[data-testid="onsite-messaging-unit-gateway"] { display: none !important; }
 nytimes.com#$#.vi-gateway-container { overflow: auto !important; }
 yama.minato-yamaguchi.co.jp##div[style].connection_flex > .nl_box

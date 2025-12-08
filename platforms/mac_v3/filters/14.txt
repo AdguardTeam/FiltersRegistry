@@ -1,9 +1,9 @@
-! Checksum: L6SQOvbiuzBRTWg9Xv4wXA
-! Diff-Path: ../patches/14/14-s-1765188690-3600.patch
+! Checksum: 3VNdlngAc6gqCPrl2eCVaQ
+! Diff-Path: ../patches/14/14-s-1765192260-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.51.57
-! TimeUpdated: 2025-12-08T10:08:35+00:00
+! Version: 2.2.51.58
+! TimeUpdated: 2025-12-08T11:08:06+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -7196,7 +7196,7 @@ ozdilekparkantalya.com.tr,ckakdeniz.com.tr,ozdilekholding.com.tr,ozdilek.com.tr#
 store.gaijin.net##.yp-cb.js-cb-policy
 crsed.net##gj-cookie-prompt
 star-conflict.com##aside + .sc-cb
-idphotoland.com,cosmotetvott.gr,fakedata.pro,otvfoco.com.br,cptm.sp.gov.br,samokat.ru###modalCookie
+tvfoco.uai.com.br,idphotoland.com,cosmotetvott.gr,fakedata.pro,otvfoco.com.br,cptm.sp.gov.br,samokat.ru###modalCookie
 oakvillehydro.com##uxlib-cookie-infobar
 level.travel,einstein.br,siepomaga.pl,docdoc.ru##div[data-testid="cookies-banner"]
 docdoc.ru##div[data-test-id="cookies-banner"]
@@ -25859,6 +25859,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+tvfoco.uai.com.br###modalPushArticle
+tvfoco.uai.com.br###modalPushArticleAmp
 ||platform-api.tver.jp/v2/api/platform_users/questionnaire?
 zozo.jp###karte-c
 corriere.it##a[sticky-mode="on"]
@@ -33818,6 +33820,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+tvfoco.uai.com.br##.push-notification-card
 kuudere.*#%#//scriptlet('set-local-storage-item', 'kuudere_notif_dialog_dismissed', '1')
 ||m-bemomotors.youlead.pl/WebpushPrompt.js$domain=omoda.grupabemo.pl
 skladnicaksiegarska.pl#%#//scriptlet('set-cookie', 'knowband_popup', '1')
@@ -34757,6 +34760,12 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+telecinco.es##aside[class*="_whatsapp-cta-"]
+telecinco.es##aside[class*="_googlenews-cta-"]
+wearesolomon.com##.site-extras > p
+blog.swc.rs#%#//scriptlet('trusted-set-local-storage-item', 'seen-sign-up-modal', '{"value":"true"}')
+blog.swc.rs##.my-10:has(> div.flex > input[aria-label="Enter your email address"])
+teenvogue.com##div[class^="ContentFooterNewsletterContentWrapper-"]
 nytimes.com#$#div[data-testid="onsite-messaging-unit-gateway"] { display: none !important; }
 nytimes.com#$#.vi-gateway-container { overflow: auto !important; }
 yama.minato-yamaguchi.co.jp##div[style].connection_flex > .nl_box
