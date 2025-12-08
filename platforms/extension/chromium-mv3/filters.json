@@ -830,8 +830,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/tomasko126/easylistczechandslovak/master/filters.txt",
 			"trustLevel": "high",
-			"version": "2.0.3.19",
-			"timeUpdated": "2025-12-07T16:37:22+0000",
+			"version": "2.0.3.20",
+			"timeUpdated": "2025-12-08T16:41:37+0000",
 			"deprecated": false,
 			"languages": [
 				"cs",
@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.81.51",
-			"timeUpdated": "2025-12-08T12:45:33+0000",
+			"version": "2.1.81.52",
+			"timeUpdated": "2025-12-08T16:41:41+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.81.50",
-			"timeUpdated": "2025-12-08T12:45:33+0000",
+			"version": "2.1.81.51",
+			"timeUpdated": "2025-12-08T16:41:42+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1194,8 +1194,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/List-KR/List-KR/refs/heads/master/filter-AdGuard-forward.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.50",
-			"timeUpdated": "2025-12-08T08:43:46+0000",
+			"version": "2.0.23.51",
+			"timeUpdated": "2025-12-08T16:42:12+0000",
 			"deprecated": false,
 			"languages": [
 				"ko"
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.74.82",
-			"timeUpdated": "2025-12-08T12:46:20+0000",
+			"version": "2.0.74.83",
+			"timeUpdated": "2025-12-08T16:42:35+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
