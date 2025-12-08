@@ -1,9 +1,9 @@
-! Checksum: BnoAOohFOt0ZYk0lH5LGGg
-! Diff-Path: ../patches/2/2-s-1765200060-3600.patch
+! Checksum: Yy4OGZbQq4gCSl7oeX/BEA
+! Diff-Path: ../patches/2/2-s-1765203097-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.30.91
-! TimeUpdated: 2025-12-08T13:17:34+00:00
+! Version: 2.4.30.92
+! TimeUpdated: 2025-12-08T14:08:02+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32023,7 +32023,7 @@ amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('json-prune', 'cuep
 primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]] | /*[name()="MPD"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]]/@mediaPresentationDuration | /*[name()="MPD"][.//*[name()="BaseURL" and contains(text(),"/interstitial/")]]/*[name()="Period"]/@start)', '', '.mpd')
 primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[@value="Draper"]] | /*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"]/@start)', '[value="Draper"]', '.mpd')
 primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml-prune', 'xpath(//*[name()="Period"][.//*[@value="Ad"]] | /*[name()="MPD"]/@mediaPresentationDuration | //*[name()="Period"]/@start)', '[value="Ad"]', '.mpd')
-! aglint-disable invalid-modifiers
+! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 .mpd$xmlprune=//*[name()="Period"][.//*[@value="Ad"]] | //*[name()="Period"]/@start[boolean(//*[@value="Ad"])],xmlhttprequest,domain=amazon.com|amazon.co.jp|amazon.de|amazon.co.uk|primevideo.com
 /GetVodPlaybackResources?$jsonprune=\$.vodPlaybackUrls.result.playbackUrls.cuepoints,xmlhttprequest,domain=amazon.com|amazon.co.jp|amazon.de|amazon.co.uk|primevideo.com
@@ -32034,7 +32034,7 @@ primevideo.com,amazon.co.uk,amazon.de,amazon.co.jp,amazon.com#%#//scriptlet('xml
 /GetPlaybackResources?$all,removeparam=deviceAdInsertionTypeOverride,domain=amazon.com|amazon.co.jp|amazon.de|amazon.co.uk|primevideo.com
 !+ NOT_VALIDATE
 /GetPlaybackResources?*%2CCuepointPlaylist$all,urltransform=/%2CCuepointPlaylist//,domain=amazon.com|amazon.co.jp|amazon.de|amazon.co.uk|primevideo.com
-! aglint-enable invalid-modifiers
+! aglint-enable no-invalid-modifiers
 !
 ! HTMLAllCollection popunder (Galaksion variant)
 ! #%#//scriptlet('abort-current-inline-script', 'addEventListener', 'HTMLAllCollection')
@@ -36939,13 +36939,12 @@ smsonline.cloud#$?#html[data-theme][lang] [id^="img_"][style]:has(iframe[framebo
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##img[height="   250"][width="   300"]
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##img[height="   90"][width="   728"]
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##ins[style$="height:    90px; width:    728px;"]
-! aglint-disable invalid-modifiers
+! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 ://content-loader.com/loader.min.js$urltransform=/loader\.min\.js/error.js/,domain=~dogdrip.net|~infinityfree.com|~smsonline.cloud
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 ://html-load.com/loader.min.js$urltransform=/loader\.min\.js/error.js/,domain=~dogdrip.net|~infinityfree.com|~smsonline.cloud
-! aglint-enable invalid-modifiers
-! aglint-disable-next-line unknown-hints-and-platforms
+! aglint-enable no-invalid-modifiers
 ://html-load.com/loader.min.js$domain=~dogdrip.net|~infinityfree.com|~smsonline.cloud
 !
 !
@@ -56105,10 +56104,10 @@ nhregister.com###ad
 copilot.microsoft.com##div[data-ads-rg]
 copilot.microsoft.com#%#//scriptlet('json-prune', 'ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193716#issuecomment-2507446337
-! aglint-disable invalid-modifiers
+! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE PLATFORM(windows, mac, android)
 ||af.gog.com/game/$urltransform=/^https:\/\/af\.gog\.com\/game\//https:\/\/www.gog\.com\/game\//
-! aglint-enable invalid-modifiers
+! aglint-enable no-invalid-modifiers
 pcgamingwiki.com#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll('a[href^="https://af.gog.com/game/"]').forEach((t=>{const e=t.getAttribute("href").replace("https://af.gog.com/","https://www.gog.com/");t.setAttribute("href",e)}))}));})();
 !
 ! 1337x
@@ -56141,10 +56140,10 @@ hulu.com#%#//scriptlet('json-prune', 'breaks custom_breaks_data pause_ads')
 hulu.com#%#//scriptlet('set-constant', 'Object.prototype.isAdPeriod', 'falseFunc')
 hulu.com#%#//scriptlet("set-constant", "Object.prototype._parseVAST", "noopFunc")
 hulu.com#%#//scriptlet("set-constant", "Object.prototype.createAdBlocker", "noopFunc")
-! aglint-disable invalid-modifiers
+! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 /manifest.mpd$xmlprune=/MPD/Period[contains(@id\,'ad-')],domain=hulu.com
-! aglint-enable invalid-modifiers
+! aglint-enable no-invalid-modifiers
 !
 ! fc.lc / fc-lc.xyz
 fitdynamos.com###content a[target="_blank"] > img[style]
@@ -57020,7 +57019,6 @@ abs-cbn.com##.MuiGrid-item:has(> .MuiGrid-root div[class*="imp-adSlot"])
 iflscience.com##.header-secondary
 !+ NOT_OPTIMIZED
 androidcentral.com##.hawk-multi-model-review-container
-! aglint-disable-next-line unknown-hints-and-platforms
 !+ PLATFORM(windows, mac, android, cli)
 secretsanfrancisco.com#?#.google-ad-manager-ads-header
 !+ NOT_OPTIMIZED
@@ -57690,7 +57688,7 @@ new.lewd.ninja##div[class^="box ~!@$%^&*()_+-=,./';:?><[]"]
 [$url=/^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/.*(\?|&)__cpo=aHR0c/]#%#//scriptlet('set-constant', '__Cpn.prototype.showAds', 'false')
 !+ NOT_VALIDATE
 [$url=/^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/.*(\?|&)__cpo=aHR0c/]#%#//scriptlet('abort-on-stack-trace', 'addEventListener', '/attachEvent[\s\S]*?Popup[\s\S]*?register/')
-! aglint-disable-next-line invalid-modifiers
+! aglint-disable-next-line no-invalid-modifiers
 /^https?:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\/.*(\?|&)__cpo=aHR0c/$replace=/__Cpn.prototype.showAds = true;/__Cpn.prototype.showAds = false;/,document,domain=/^\d{1\,3}\.\d{1\,3}\.\d{1\,3}\.\d{1\,3}\$/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188028
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122383
@@ -58076,10 +58074,6 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! ATTENTION: The rules in this section must be accompanied by a link of an issue, where the problem will be fixed
 ! or with clear description what to do next
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/219657
-! TODO: check the status of https://github.com/tomasko126/easylistczechandslovak/pull/536
-!       and remove if fixed 10.12.2025
-sauto.cz#@#.c-layout__content > :not(.p-uw-item-detail__content)
 ! https://github.com/AdguardTeam/CoreLibs/issues/2026
 ! Probably a bug
 !+ PLATFORM(windows, mac, android)
@@ -62956,7 +62950,7 @@ implbits.com#@#.banner_container
 @@hls/player$stealth=referrer,xmlhttprequest,domain=sportshub.to
 ! dizipal*.com - frequently changed domains
 ! https://x.com/dizipalSx
-! aglint-disable-next-line invalid-modifiers
+! aglint-disable-next-line no-invalid-modifiers
 @@.php$subdocument,stealth=referrer,domain=/dizipal\d+.com/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188449
 @@||dosyaload.com/embed/$stealth=referrer
@@ -84443,6 +84437,7 @@ browsershots.org#@#.advert_area
 ||ardont.xyz^
 ||ardslediana.com^
 ||areasnap.com^
+||arecainsm.cyou^
 ||areegroudseft.net^
 ||areolaebesew.help^
 ||arepushedadorn.com^
@@ -85448,6 +85443,7 @@ browsershots.org#@#.advert_area
 ||batchoamseeglo.net^
 ||batcrack.icu^
 ||batebalmy.com^
+||batefulmaunder.rest^
 ||batelltrog.cyou^
 ||batemanalgarde.click^
 ||bathepoliteness.com^
@@ -89511,6 +89507,7 @@ browsershots.org#@#.advert_area
 ||cuplikenominee.com^
 ||cuplwjwkpxjrp.space^
 ||cupoabie.net^
+||cupolabudling.cfd^
 ||cuppyscubas.digital^
 ||cuprummechir.cyou^
 ||cuprumscrance.cfd^
@@ -95290,6 +95287,7 @@ browsershots.org#@#.advert_area
 ||glamorousconditionsattempt.com^
 ||glamoroustangiblematching.com^
 ||glancedsecretion.com^
+||glanceszippersyaird.cyou^
 ||glandlabel.com^
 ||glaringregister.com^
 ||glaringsimple.pro^
@@ -106294,6 +106292,7 @@ browsershots.org#@#.advert_area
 ||orlysoiree.cfd^
 ||ormhyvwciiqqg.space^
 ||ormimvlawciog.space^
+||ornarysabaton.cyou^
 ||ornatechurch.com^
 ||ornatecomputer.com^
 ||ornerp.click^
@@ -107054,6 +107053,7 @@ browsershots.org#@#.advert_area
 ||paufovurepeenou.net^
 ||paukoothoophe.net^
 ||paulastroid.com^
+||paulinequinch.click^
 ||paupsoborofoow.net^
 ||pausalcaulks.world^
 ||pausauptoaglavo.net^
@@ -109074,6 +109074,7 @@ browsershots.org#@#.advert_area
 ||puysis.com^
 ||puzzlepursued.com^
 ||puzzlingcurrent.com^
+||pvaokdtajgygs.space^
 ||pvclouds.com^
 ||pvcnhlmuvgrcc.space^
 ||pvcubbshnlzys.space^
@@ -109888,6 +109889,7 @@ browsershots.org#@#.advert_area
 ||qxdownload.com^
 ||qxhjutyuykewi.store^
 ||qxhspimg.com^
+||qxleqwdokgl.com^
 ||qxozluyvvyabw.online^
 ||qxq2qgiwev9eto2.rest^
 ||qxqsrwtzxbpae.store^
@@ -111864,6 +111866,7 @@ browsershots.org#@#.advert_area
 ||sapqwgnlntaly.space^
 ||saptiledispatch.com^
 ||saptorge.com^
+||saquarocheezit.cyou^
 ||saqztkldkrmlf.site^
 ||sarcasmadvisor.com^
 ||sarcasticenforcement.com^
@@ -114164,6 +114167,7 @@ browsershots.org#@#.advert_area
 ||sunflowergiganticcheerfully.com^
 ||sunglassescontrary.com^
 ||sunglassesexpensive.com^
+||sunglohiemal.qpon^
 ||sungtoaz.club^
 ||sunkendifferextreme.com^
 ||sunkenunivied.shop^
@@ -115288,6 +115292,7 @@ browsershots.org#@#.advert_area
 ||tmpqccktfymwv.online^
 ||tmrjmp.com^
 ||tmvflkkwgqvuj.online^
+||tmwamxerlexvi.space^
 ||tnaczwecikco.online^
 ||tnanqkvvrqond.online^
 ||tnbigewpbffra.website^

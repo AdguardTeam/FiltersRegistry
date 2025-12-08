@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 79oa3TMrL68BGBHSr1qJ/A
-! Diff-Path: ../patches/7/7-s-1765200052-3600.patch
+! Checksum: Ze3UIxRuFyJGam3ISiLpNg
+! Diff-Path: ../patches/7/7-s-1765203088-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.70.72
-! TimeUpdated: 2025-12-08T13:17:51+00:00
+! Version: 2.0.70.73
+! TimeUpdated: 2025-12-08T14:08:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2697,6 +2697,7 @@ twivideo.net##a[id^="randomImageLink"]
 twivideo.net##div[style^="max-width: 1000px; width: 100%; height: 150px; margin: 0 auto 50px auto;"]:style(height: 0 !important;)
 repsoku.net##.thumb:has(> a[target="_blank"]:only-child)
 city.natori.miyagi.jp##.footer_banner_wrap
+my-best.com##+js(href-sanitizer, a[href^="/link?fallback_url="], ?fallback_url)
 my-best.com##div[data-testid^="advertisement-"]
 appget.com##.pc_block[style^="position: sticky"]:style(margin-bottom: 0 !important;)
 iphoroid.jp##.spmode[style$="width:620px;"]
@@ -5510,8 +5511,8 @@ moez-m.com##.solinkimag
 ||ota-goods.info^$3p
 figsoku.net##+js(href-sanitizer, a[href^="https://al.dmm.com/?lurl="], ?lurl)
 figsoku.net##+js(href-sanitizer, a[href^="https://affiliate.suruga-ya.jp/modules/af/af_jump.php?"], ?goods_url)
-figsoku.net##+js(href-sanitizer, a[href*="hb.afl.rakuten.co.jp/hgc/"][href*="/?pc="], ?pc)
-figsoku.net##+js(href-sanitizer, a[href*="ck.jp.ap.valuecommerce.com/servlet/referral?"][href*="&vc_url="], ?vc_url)
+my-best.com,figsoku.net##+js(href-sanitizer, a[href*="hb.afl.rakuten.co.jp/"][href*="pc="], ?pc)
+my-best.com,figsoku.net##+js(href-sanitizer, a[href*="ck.jp.ap.valuecommerce.com/servlet/referral?"][href*="&vc_url="], ?vc_url)
 figsoku.net##+js(abort-current-script, document.createElement, randomad)
 figsoku.net##.pluginWrap[style^="width: 240px; height: 16px; "]
 figsoku.net###randomad2
@@ -7701,6 +7702,14 @@ h1g.jp##.right-content > div.row:has(> div[id^="right-ad-"])
 h1g.jp##table[width="750"][height^="3"]
 h1g.jp##.mainbody-ad-top
 ||toycod.com/cdn/shop/$domain=leaked.jp
+leaked.jp###execphp-3 > div.execphpwidget > div[style$="background-color: white;"]:has([href*="/event"])
+leaked.jp##.post-widgets-top
+leaked.jp##.st-my-content-2
+leaked.jp##a[href^="https://al.fanza.co.jp"]
+leaked.jp##a[href^="https://leaked.jp/detail"]
+leaked.jp##a[href^="https://leaked.jp/event"]
+leaked.jp##a[href^="https://leaked.jp/fc2ppv"]
+leaked.jp##a[href^="https://leaked.jp/series"]
 leaked.jp##.age
 leaked.jp##.kanren > dl.clearfix:contains(【PR】)
 leaked.jp##.kanren > dl.clearfix:has(a[href^="https://leaked.jp/k"])

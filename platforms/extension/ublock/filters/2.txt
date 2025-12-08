@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: lemw2lsbQq8fmBHFn0BfJw
-! Diff-Path: ../patches/2/2-s-1765200050-3600.patch
+! Checksum: UOBo8zu6KWdKK2KBfQPAIQ
+! Diff-Path: ../patches/2/2-s-1765203086-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.30.91
-! TimeUpdated: 2025-12-08T13:17:34+00:00
+! Version: 2.4.30.92
+! TimeUpdated: 2025-12-08T14:08:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -31601,9 +31601,9 @@ primevideo.com##+js(json-prune, cuepointPlaylist vodPlaybackUrls.result.playback
 ||primevideo.com/cdp/getVideoAds
 ||amazon.dev/getVideoAds
 ||amazon.dev/getAds
-! aglint-disable invalid-modifiers
+! aglint-disable no-invalid-modifiers
 /GetPlaybackResources?$xhr,removeparam=deviceAdInsertionTypeOverride,domain=amazon.com|amazon.co.jp|amazon.de|amazon.co.uk|primevideo.com
-! aglint-enable invalid-modifiers
+! aglint-enable no-invalid-modifiers
 !
 ! HTMLAllCollection popunder (Galaksion variant)
 zonatmo.com,himovies.sx,zoechip.*,flixhq.to,flixhd.*,cineb.*,musichq.cc,gomovies.*,hurawatch.cc,theflixertv.to##+js(abort-current-script, addEventListener, HTMLAllCollection)
@@ -36065,9 +36065,8 @@ smsonline.cloud##html[data-theme][lang] [id^="img_"][style]:has(iframe[framebord
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##img[height="   250"][width="   300"]
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##img[height="   90"][width="   728"]
 ~dogdrip.net,~infinityfree.com,~smsonline.cloud##ins[style$="height:    90px; width:    728px;"]
-! aglint-disable invalid-modifiers
-! aglint-enable invalid-modifiers
-! aglint-disable-next-line unknown-hints-and-platforms
+! aglint-disable no-invalid-modifiers
+! aglint-enable no-invalid-modifiers
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari, ext_chromium_mv3, windows, mac, cli, android)
 !
 !
@@ -55094,8 +55093,8 @@ nhregister.com###ad
 copilot.microsoft.com##div[data-ads-rg]
 copilot.microsoft.com##+js(json-prune, ads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/193716#issuecomment-2507446337
-! aglint-disable invalid-modifiers
-! aglint-enable invalid-modifiers
+! aglint-disable no-invalid-modifiers
+! aglint-enable no-invalid-modifiers
 !
 ! 1337x
 x1337x.cc,1337x.st,1337x.to,1337xx.to,x1337x.eu,x1337x.ws,1337x.unblock2.xyz##.page-content > .box-info:has(> .box-info-heading > div[onclick^="location.href="][style])
@@ -55126,10 +55125,10 @@ hulu.com##+js(json-prune, breaks custom_breaks_data pause_ads)
 hulu.com##+js(set-constant, Object.prototype.isAdPeriod, falseFunc)
 hulu.com##+js(set-constant, Object.prototype._parseVAST, noopFunc)
 hulu.com##+js(set-constant, Object.prototype.createAdBlocker, noopFunc)
-! aglint-disable invalid-modifiers
+! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 /manifest.mpd$xmlprune=/MPD/Period[contains(@id\,'ad-')],domain=hulu.com
-! aglint-enable invalid-modifiers
+! aglint-enable no-invalid-modifiers
 !
 ! fc.lc / fc-lc.xyz
 fitdynamos.com###content a[target="_blank"] > img[style]
@@ -55961,7 +55960,6 @@ abs-cbn.com##.MuiGrid-item:has(> .MuiGrid-root div[class*="imp-adSlot"])
 iflscience.com##.header-secondary
 !+ NOT_OPTIMIZED
 androidcentral.com##.hawk-multi-model-review-container
-! aglint-disable-next-line unknown-hints-and-platforms
 !+ NOT_OPTIMIZED
 tri247.com##.show-ad
 !+ NOT_OPTIMIZED
@@ -56626,7 +56624,7 @@ new.lewd.ninja##div[class^="box ~!@$%^&*()_+-=,./';:?><[]"]
 ! youtubeunblocked.live - website uses many different IPs, so it's necessary to use rules with $url modifier
 ! Match any IP with specific path
 ! TODO: remove "NOT_VALIDATE" hint when this issue is fixed - https://github.com/AdguardTeam/FiltersCompiler/issues/237
-! aglint-disable-next-line invalid-modifiers
+! aglint-disable-next-line no-invalid-modifiers
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188028
 ! https://github.com/AdguardTeam/AdguardFilters/issues/122383
 ! https://github.com/AdguardTeam/AdguardFilters/issues/186550
@@ -57008,10 +57006,6 @@ mail.yahoo.com##[data-test-id^="pencil-ad"]
 ! ATTENTION: The rules in this section must be accompanied by a link of an issue, where the problem will be fixed
 ! or with clear description what to do next
 !
-! https://github.com/AdguardTeam/AdguardFilters/issues/219657
-! TODO: check the status of https://github.com/tomasko126/easylistczechandslovak/pull/536
-!       and remove if fixed 10.12.2025
-sauto.cz#@#.c-layout__content > :not(.p-uw-item-detail__content)
 ! https://github.com/AdguardTeam/CoreLibs/issues/2026
 ! Probably a bug
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215245
@@ -61383,7 +61377,7 @@ implbits.com#@#.banner_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188784
 ! dizipal*.com - frequently changed domains
 ! https://x.com/dizipalSx
-! aglint-disable-next-line invalid-modifiers
+! aglint-disable-next-line no-invalid-modifiers
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188449
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188363
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188142
@@ -81328,6 +81322,7 @@ browsershots.org#@#.advert_area
 ||ardont.xyz^
 ||ardslediana.com^
 ||areasnap.com^
+||arecainsm.cyou^
 ||areegroudseft.net^
 ||areolaebesew.help^
 ||arepushedadorn.com^
@@ -82333,6 +82328,7 @@ browsershots.org#@#.advert_area
 ||batchoamseeglo.net^
 ||batcrack.icu^
 ||batebalmy.com^
+||batefulmaunder.rest^
 ||batelltrog.cyou^
 ||batemanalgarde.click^
 ||bathepoliteness.com^
@@ -86396,6 +86392,7 @@ browsershots.org#@#.advert_area
 ||cuplikenominee.com^
 ||cuplwjwkpxjrp.space^
 ||cupoabie.net^
+||cupolabudling.cfd^
 ||cuppyscubas.digital^
 ||cuprummechir.cyou^
 ||cuprumscrance.cfd^
@@ -92175,6 +92172,7 @@ browsershots.org#@#.advert_area
 ||glamorousconditionsattempt.com^
 ||glamoroustangiblematching.com^
 ||glancedsecretion.com^
+||glanceszippersyaird.cyou^
 ||glandlabel.com^
 ||glaringregister.com^
 ||glaringsimple.pro^
@@ -103179,6 +103177,7 @@ browsershots.org#@#.advert_area
 ||orlysoiree.cfd^
 ||ormhyvwciiqqg.space^
 ||ormimvlawciog.space^
+||ornarysabaton.cyou^
 ||ornatechurch.com^
 ||ornatecomputer.com^
 ||ornerp.click^
@@ -103939,6 +103938,7 @@ browsershots.org#@#.advert_area
 ||paufovurepeenou.net^
 ||paukoothoophe.net^
 ||paulastroid.com^
+||paulinequinch.click^
 ||paupsoborofoow.net^
 ||pausalcaulks.world^
 ||pausauptoaglavo.net^
@@ -105959,6 +105959,7 @@ browsershots.org#@#.advert_area
 ||puysis.com^
 ||puzzlepursued.com^
 ||puzzlingcurrent.com^
+||pvaokdtajgygs.space^
 ||pvclouds.com^
 ||pvcnhlmuvgrcc.space^
 ||pvcubbshnlzys.space^
@@ -106773,6 +106774,7 @@ browsershots.org#@#.advert_area
 ||qxdownload.com^
 ||qxhjutyuykewi.store^
 ||qxhspimg.com^
+||qxleqwdokgl.com^
 ||qxozluyvvyabw.online^
 ||qxq2qgiwev9eto2.rest^
 ||qxqsrwtzxbpae.store^
@@ -108749,6 +108751,7 @@ browsershots.org#@#.advert_area
 ||sapqwgnlntaly.space^
 ||saptiledispatch.com^
 ||saptorge.com^
+||saquarocheezit.cyou^
 ||saqztkldkrmlf.site^
 ||sarcasmadvisor.com^
 ||sarcasticenforcement.com^
@@ -111049,6 +111052,7 @@ browsershots.org#@#.advert_area
 ||sunflowergiganticcheerfully.com^
 ||sunglassescontrary.com^
 ||sunglassesexpensive.com^
+||sunglohiemal.qpon^
 ||sungtoaz.club^
 ||sunkendifferextreme.com^
 ||sunkenunivied.shop^
@@ -112173,6 +112177,7 @@ browsershots.org#@#.advert_area
 ||tmpqccktfymwv.online^
 ||tmrjmp.com^
 ||tmvflkkwgqvuj.online^
+||tmwamxerlexvi.space^
 ||tnaczwecikco.online^
 ||tnanqkvvrqond.online^
 ||tnbigewpbffra.website^
