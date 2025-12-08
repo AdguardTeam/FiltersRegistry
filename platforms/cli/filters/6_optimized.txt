@@ -1,5 +1,5 @@
-! Checksum: W+WKqIgKy32MZe5zsqLIWg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1765075639-3600.patch
+! Checksum: 6PE1MyFqjplz/tQCw4DQoQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1765161780-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.50.52
@@ -737,7 +737,6 @@ bunte.de##[class^="Ad-Slot"]
 menshealth.de###va-outbrain-container
 menshealth.de##.va-article-header .text-skin-grey
 rnd.de##div[data-element-selector="recommendations"] > div[class^="ChainLikeContainerstyled_"]:has(> .OUTBRAIN:only-child)
-fc-erzgebirge.de##.gallery-item a[href]:not([href*="fc-erzgebirge.de"],[href^="/"])
 businessinsider.de##div:has(> .superbanner-container:only-child)
 bild.de##.liveticker-ad
 bild.de##.article-body > p:empty
@@ -1169,6 +1168,7 @@ giga.de#%#//scriptlet('remove-class', 'show-teaserheld-header', 'body')
 delamar.de#%#//scriptlet('prevent-setTimeout', '#modal_livestream')
 krone.at#$#body .ad-container[data-nodeid] { display: block !important; }
 datenbanken-verstehen.de##div[class^="ad-block-"]:not(.ad-block-text)
+nordbayern.de##.row:has(> article:first-child + div:last-child > a:only-child > div:only-child > .modul__teaser__anzeige)
 macwelt.de,pcwelt.de##.jwPlayer--floatingContainer
 auf1.tv#?#.w-full:has(> div.text-sm:contains(Bezahlte Anzeige))
 jungefreiheit.de##.elementor-shortcode > div > a[target="_blank"][onclick] > img
@@ -2366,7 +2366,6 @@ ladies.de#?#.card-list > div.col-xs-12 > div.text-left:has(> div.sol-content)
 infranken.de#?#.listing > .listing-item:has(> article > div[class] > div[class] > .post-location > span:contains(ANZEIGE))
 infranken.de#?#.listing > .listing-item:has(> article > .teaser-inner > .post-content > .post-location:contains(ANZEIGE))
 dubisthalle.de#?#.sidebar-content > div[id^="custom_html"]:has(>.widget-title:contains(Werbung))
-tag24.de#?##article-grid > .article-tile > .article-tile__inner > #taboola-homepage-thumbnails:upward(2)
 deskmodder.de#?##page-body > .post.has-profile:not(.online):has(> .inner > .postbody > div[id^="post_content"] > .content > .adsbygoogle)
 amazon.de#?#div[class*="csm-placement-id-"]:has(> div[cel_widget_id^="adplacements"])
 schnittberichte.com#?#.wrapper__content .section__shopping:has(> .section__shopping--ulist)
@@ -2646,7 +2645,6 @@ rtl.de#@#.rtlde-medium-rectangle
 /_werbung/*
 /banners/werbung-
 /bannerwerbung-
-/bilder/werbung_
 /cms/werbung/*
 /esel.js
 /grafik/ads/*
@@ -2663,7 +2661,6 @@ rtl.de#@#.rtlde-medium-rectangle
 /styles/werbung_
 /upload/werbung/*
 /usemax/*
-/werb.php
 /werbe-banner/*
 /werbeanzeigen/*
 /werbebanner-
@@ -2671,6 +2668,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbebanner/*
 /werbebanner_
 /werbebox/*
+/werbecenter/*
 /werbegrafiken/*
 /werbemittel/*
 /werbemittel_
@@ -2767,12 +2765,14 @@ _woz_banner_vote.
 ###werbung_leaderboard_screen
 ###werbung_links
 ###werbung_mitte
+###werbung_oben
 ###werbung_rechts
 ###werbung_right
 ###werbung_superbanner
 ###werbung_top
 ###werbung_wideskyscraper_screen
 ###werbunglinks
+###werbungrechts
 ###werbungrechts1
 ###werbungrechtsfloat
 ###werbungsbox300
@@ -3195,6 +3195,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||fussballn.de/images/design/anpfifffussballn.png
 ||fussballn.de/images/design/fussballn/hudson2.png
 ||fussballn.de/Images/Design/sportplatzmedia2.png
+||gandersheimer-kreisblatt.de/files/gk/banner/
 ||gartennatur.com/wp-content/uploads/371x430-319x370.jpg
 ||gelbeseiten.de/webgs/js/detailseite_below.js
 ||gelbeseiten.de/webgs/js/trefferliste_below.js
@@ -3289,6 +3290,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||nius.de/adsense.js
 ||nnz-online.de/_daten/banner/
 ||nonstopnews.de/bilder/Banner/
+||nr-kurier.de/images/mankwetter.png
 ||nrhz.de/flyer/media/banner/
 ||oberberg-aktuell.de/Banner/
 ||obi.de/heyobi-includes/adserver/ad-controller/aec-bundle.js
@@ -3345,7 +3347,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||schnittberichte.com/pics/werbung/
 ||scm-handball.de^*/Sponsoren/
 ||script.webinstaller.$domain=chip.de
-||sensor-test.de/assets/Banner/
 ||sexforum.ch/ForumPics/BaPics/
 ||sexnews.ch/uploads/tx_sfbanners/
 ||shopanbieter.de/SponsorLogos/
@@ -3467,6 +3468,7 @@ g.doubleclick.net###adunit
 ||smartclip.net^$~media,domain=toggo.de
 $csp=script-src 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' static.veevcdn.co,domain=filmpalast.to
 /^https?:\/\/.*\.(jpg|jpeg|gif|png|php|svg|ico|js|txt|css)/$popup,domain=190.115.18.20|aniworld.to|canna-power.to|canna.to|kinoger.com|kinoger.to|s.to|serien.cam|serienstream.to
+/lp/chip-$popup,domain=chip.de
 ||delamar.de/out/$popup
 ||sexei.net/go.html$popup
 nd-aktuell.de###Ads
@@ -4191,7 +4193,6 @@ xdate.ch##.interstitial
 sueddeutsche.de##.iqad
 saechsische.de##.iqadtile-wrapper
 faz.net,spektrum.de,sueddeutsche.de,tagesspiegel.de,zeit.de##.iqdcontainer
-tri-mag.de##.irypolkj
 welt.de##.is-commercial
 it-daily.net##.itd-ad-sidebar
 kleinanzeigen.de##.j-liberty-wrapper
@@ -4543,7 +4544,6 @@ tarnkappe.info##a[href*="/hide.me/de/?friend="]
 3druck.com,cannabis-special.com,supertipp-online.de##a[href*="/linkout/"]
 bild.de##a[href*="/partner/"]
 finanzen.net##a[href="#p500Werbehinweis"]
-outleter.org##a[href="http://topne.ws/onlineoutlet"]
 finanzen.ch##a[href="https://g.finanzen.net/bitpanda-finch_013-web-overall-btc_kaufen_navigation"]
 finanzen.ch##a[href="https://g.finanzen.net/ch-etoro-trading-button-navi"]
 finanzen.ch##a[href="https://g.finanzen.net/p500-fch_018-top-navi"]
