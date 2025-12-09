@@ -1,9 +1,9 @@
-! Checksum: Qq28UdtuwZdafxvf9AZ/gg
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1765212335-14400.patch
+! Checksum: oEvF2FkNsRJItB0hdFggsQ
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1765298660-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.51
-! TimeUpdated: 2025-12-08T16:42:12+00:00
+! Version: 2.0.23.52
+! TimeUpdated: 2025-12-09T16:41:09+00:00
 ! Expires: 1 day (update frequency)
 ||digitalcamp.co.kr^$third-party
 ||mman.kr^
@@ -482,6 +482,11 @@
 ##iframe[src*="//www.mediacategory.com/servlet/"]
 ##div[id^="targetpushAd_"]
 ##iframe[src*="clickon.kr"]
+namu.wiki,~board.namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(> iframe[id^="google_ads_"])
+namu.wiki,~board.namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(iframe[src*="arca.live/external/callad"])
+namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[id^="google_ads_iframe_"])
+namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[src*="arca.live/external/callad"])
+namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:has(iframe[src*="arca.live/external/callad"])
 m.humoruniv.com###list_body ~ *[id][style^="border-bottom-width:"]
 newtoki.help##.ba_test
 newtoki.help##.banner2
@@ -541,6 +546,8 @@ m.fmkorea.com##iframe[src*="//loader.fmkorea.com/"][src*="_loader/"]
 /studio_backend/adforus.
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
+||p-api.vortexgaming.io/api/banner?
+||resources.vortexgaming.io/default/abadsimages/
 ||enuri.com/api/adRelay.jsp
 ||enuri.com/wide/script_min/ad/
 ||coupang.com/next-api/products/banners?productId=
@@ -1855,11 +1862,6 @@ g-enews.*##div[id^="tdn_"][style*="height:"]
 3277532532.reviewtoday.net##*[class*="-coupas-"]
 3277532532.reviewtoday.net##div[class^="Post_post__"] > .text-center:has(ins.adsbygoogle)
 search.naver.com##div[id^="power_link_together_"]
-namu.wiki,~board.namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(> iframe[id^="google_ads_"])
-namu.wiki,~board.namu.wiki##div[class] ~ div div + *[class]:not([class*=" "]) *[class*=" "] div[class]:has(iframe[src*="arca.live/external/callad"])
-namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[id^="google_ads_iframe_"])
-namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[src*="arca.live/external/callad"])
-namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:has(iframe[src*="arca.live/external/callad"])
 maple.gg##.container-content div[class*=" "]:has(> div[id^="div-gpt-ad-"]):not(:has(*[class]:not([id])))
 m.10000recipe.com##.sp_pdt_wrap
 ygosu.com##div[id^="clickmon_"]
@@ -3402,6 +3404,7 @@ mule.co.kr#$?#.section-lefttop-center:has(> .mule-today) { width: 100% !importan
 banhub.xyz#$#html { overflow: visible !important; }
 zzzz.lol#$?#.ent_wrapper.slide-vertical-effect .ent_news:not(:has(.ent_prefix:contains(ZZAPFLIX))) { remove: true; }
 aniya24.com#$?#div[class*="-player-wrapper"] > .play-media-control ~ div[class^="beeteam"][class*="-player-sub-element"] { remove: true; }
+vortexgaming.io#?#div[class^="PostAsideCardList_card_list_inner__"]  > div[class^="PostAsideCardList_card__"]:has(div[class^="PostAsideCardList_close__"]:contains(AD))
 pedia.watcha.com#?#div[class] > section[class*=" "]:has(> section > a h3 > p:contains( · AD))
 m.ruliweb.com#?#.TimelineHeaderMargin ~ div .infinite-scroll-component > div:has(span[style*="max-height:"]:contains(AD))
 www.naver.com#?#ul[class^="ContentHeaderView-"][role="tablist"] > li:has(> a:contains(쇼핑투데이))
