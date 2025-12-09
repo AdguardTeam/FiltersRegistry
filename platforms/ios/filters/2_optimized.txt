@@ -1,9 +1,9 @@
-! Checksum: LQlpbfwv18zyePMMNxefFQ
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1765282537-3600.patch
+! Checksum: zEe8jmdByrtZl0U7RWDrgQ
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1765286473-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.31.14
-! TimeUpdated: 2025-12-09T12:11:54+00:00
+! Version: 2.4.31.15
+! TimeUpdated: 2025-12-09T13:18:16+00:00
 ! Expires: 5 days (update frequency)
 ||maxesads.com^
 ||mossfast.com^
@@ -2561,7 +2561,7 @@ snopes.com#%#//scriptlet('prevent-setTimeout', '.offsetHeight === 0')
 snopes.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'setTimeout(()')
 snopes.com#$#.sidebar_ad { transform: rotateX(90deg) !important; height: 1px !important; }
 snopes.com#$#.outer_ad_container { transform: rotateX(90deg) !important; height: 1px !important; }
-snopes.com#$#.outer-ad-unit-wrapper { transform: rotateX(90deg) !important; height: 1px !important; }
+snopes.com#$#.snopesad { transform: rotateX(90deg) !important; height: 1px !important; position: fixed !important; }
 snopes.com#$#.advertise_text { transform: rotateX(90deg) !important; height: 1px !important; }
 snopes.com#$#.ad-caption { transform: rotateX(90deg) !important; height: 1px !important; }
 snopes.com#$#.home_ad_bottom { transform: rotateX(90deg) !important; height: 1px !important; }
@@ -3104,8 +3104,8 @@ streambtw.com#@#.ad-unit:not(.textads)
 ghbrisk.com#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
 !+ PLATFORM(ios, ext_safari, ext_android_cb)
 @@||crazygames.com^$generichide
-pvpoke-re.com#%#//scriptlet('trusted-replace-node-text', '#text', '/広告ブロックはエラーを|Werbeblocker können|Los bloqueadores de anuncios|Les bloqueurs de publicité|I blocchi pubblicitari|Os bloqueadores de/', '/広告ブロックはエラーを|Werbeblocker können|Los bloqueadores de anuncios|Les bloqueurs de publicité|I blocchi pubblicitari|Os bloqueadores de/g', '＿＿＿＿＿＿＿＿＿＿＿')
-pvpoke-re.com#%#//scriptlet('trusted-replace-node-text', '#text', '/引き起こす場合があります|Fehler verursachen|pueden causar errores|peuvent provoquer des erreurs|possono causare errori|anúncios podem causar erros/', '/引き起こす場合があります|Fehler verursachen|pueden causar errores|peuvent provoquer des erreurs|possono causare errori|anúncios podem causar erros/g', '＿＿＿＿＿＿＿＿＿＿＿＿＿')
+pvpoke-re.com##body:has(#nitro-body-desktop > ins.adsbygoogle.nitro-body:not(:has(> div#aswift_1_host))) div:is(#nitro-body-desktop, #nitro-top, #nitro-header-mobile) > p
+pvpoke-re.com#%#//scriptlet('trusted-replace-argument', 'String.prototype.indexOf', '0', '/', '/premium')
 @@||pvpoke-re.com^$generichide
 pvpoke-re.com#@#.nitro-any
 pvpoke-re.com#@#ins.adsbygoogle[data-ad-client]
@@ -14095,6 +14095,11 @@ $xmlhttprequest,third-party,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.l
 $third-party,script,domain=klto9.com|f2movies.to|hacamchicac.com|yourporngod.com|zinchanmanga.com|yaoimangaonline.com|tututweak.app|mangaraw.ac|eromanga-show.com|hentai-one.com|hentaipaw.com|nukibooks.com|paipancon.com|jgvdata.com|youtubevanced.com|pandamtl.com|mangaplus.shueisha.tv|shueisharaw.tv
 ||linksconsole.com/ad-system/
 techarmor.xyz##.my-ad-container
+hltv.org##.logoCon > div.center-container
+pley.gg##div[class*="-banner"]
+||sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pley.gg/wp-content/uploads/2025/10/Frame-427321551-1.png
+||sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pley.gg/wp-content/uploads/2024/11/Frame-427321538-2.png
+||sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://pley.gg/wp-content/uploads/2025/02/*-Banner-Clash.png
 top.gg##aside > div.chakra-stack > div.flex-col:has(a[href="/subscribe"])
 ||api.bo3.gg/api/v*/ad_benners
 bo3.gg##.c-banner-limited-offer
@@ -31475,6 +31480,7 @@ browsershots.org#@#.advert_area
 ||9opimjq4zci41pf.rest^
 ||9pub.io^
 ||9xeqynu3gt7c.com^
+||9xmovies.red^
 ||a-ads.com^
 ||a-mo.net^
 ||a-mx.com^
@@ -32303,6 +32309,7 @@ browsershots.org#@#.advert_area
 ||amidoxypochard.com^
 ||aminopay.net^
 ||amlyyqjbrvqor.top^
+||ammhmvurnghxn.space^
 ||amnaprosthbfr.online^
 ||amnew.net^
 ||amnionshake.help^
@@ -34075,6 +34082,7 @@ browsershots.org#@#.advert_area
 ||cjyyglhyukbbj.website^
 ||cklktqsludltvjk.com^
 ||ckooxtmazd.com^
+||cksnhwsmyovnt.online^
 ||ckvnliuzcqhzy.website^
 ||ckwvkjlmljzxl.online^
 ||ckydlxzejeepc.rocks^
@@ -36518,6 +36526,7 @@ browsershots.org#@#.advert_area
 ||fryboldlymalice.com^
 ||frycornwhole.com^
 ||fsalfrwdr.com^
+||fsdakqwdj.com^
 ||fsfibjccvgkki.site^
 ||fstsrv9.com^
 ||fswdntfxoskcbr.com^
@@ -37859,6 +37868,7 @@ browsershots.org#@#.advert_area
 ||idksqjekaglldyw.com^
 ||idoelwwtfzkzo.website^
 ||idoletsluices.com^
+||idopjhlwippgp.website^
 ||idorbicle.click^
 ||idpvgjtqaiygt.space^
 ||idqodpsjvxftt.online^
@@ -38174,6 +38184,7 @@ browsershots.org#@#.advert_area
 ||inwmizqchqjlk.space^
 ||inwornpelikai.cyou^
 ||inxgfxylzkkgi.one^
+||io569cbzupr4913rixmkumwjc.rest^
 ||ioadserve.com^
 ||iodideeyebath.cam^
 ||iodizedbuncher.cyou^
@@ -40405,6 +40416,7 @@ browsershots.org#@#.advert_area
 ||nemsucmeexiglox.com^
 ||nenhhvaoxdau.com^
 ||neousaunce.com^
+||nephriasebasichutia.cyou^
 ||nerangee.com^
 ||nerdolac.com^
 ||nereserv.com^
@@ -40611,6 +40623,7 @@ browsershots.org#@#.advert_area
 ||notoriouscolumnistdead.com^
 ||noughttrustthreshold.com^
 ||nouisotely.cyou^
+||nouliseestazoul.net^
 ||noumeaanabong.rest^
 ||nourishmentdivorcedflock.com^
 ||noutooneepseew.com^
@@ -43077,6 +43090,7 @@ browsershots.org#@#.advert_area
 ||riwhssuoploai.buzz^
 ||rixezmpshxviy.space^
 ||rizjfeogcnho.com^
+||rjfof7xftl9f2ol8yl33.cfd^
 ||rjlfacjephuqy.website^
 ||rjmyezxkxapco.website^
 ||rjokawzwvrzaw.top^
