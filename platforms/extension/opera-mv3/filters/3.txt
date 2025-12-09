@@ -1,9 +1,9 @@
-! Checksum: 1la0cwVxiPd1s3s5YxqQpA
-! Diff-Path: ../patches/3/3-s-1765296737-3600.patch
+! Checksum: 5YUtX/FPLIfG2iSpK5xB5w
+! Diff-Path: ../patches/3/3-s-1765300321-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.96.33
-! TimeUpdated: 2025-12-09T16:08:56+00:00
+! Version: 2.0.96.34
+! TimeUpdated: 2025-12-09T17:08:38+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -50512,6 +50512,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||counter.tldw.me^
 ||analytics.blender.org^
 ||d.nordprotect.com^
 ||async-px-eu.dynamicyield.com^
@@ -70708,6 +70709,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+nikkei.com###pianoRecommendBottom
+itmedia.co.jp##.is-recommend:empty
+itmedia.co.jp##.format--subheading:has(+ .is-recommend:empty)
 ||vortexgaming.io/ga_script.js
 ||p-api.vortexgaming.io/api/log/
 ||usconcealedcarry.com/scripts/bundles/deltaAnalytics/
@@ -70872,7 +70876,6 @@ dominos.jp###_vis_opt_path_hides
 ||static.danawa.com/globaljs/static/targetPush/targetPushTracking.js
 ||static.danawa.com/globaljs/static/bdl/dsac.min.js
 ||americantourister.co.kr/on/demandware.static/Sites-AmericanTouristerKR-Site/*/internal/jscript/dwac-*.js
-business.nikkei.com###pianoRecommendBottom
 ||leboncoin.fr/piano-analytics/
 ||softonic.jp/web-stats
 ||chatgpt.com/ces/v1/i^
@@ -79530,6 +79533,9 @@ d4?appid*type*
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219743
+! https://github.com/AdguardTeam/AdguardFilters/issues/219505
+@@||experience.ninetailed.co/v2/organizations/*/environments/main/profiles/$xmlhttprequest,domain=dkb.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219502
 @@||tags.tiqcdn.com/utag/cbsi/pluto-tv/prod/utag.js$domain=pluto.tv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219474

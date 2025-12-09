@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 9iBOVjF4RmomL8lSEVhkHQ
-! Diff-Path: ../patches/7/7-s-1765296745-3600.patch
+! Checksum: Icpmo7e8GgebruU6gnl1VQ
+! Diff-Path: ../patches/7/7-s-1765300330-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.70.77
-! TimeUpdated: 2025-12-09T16:09:07+00:00
+! Version: 2.0.70.78
+! TimeUpdated: 2025-12-09T17:08:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1881,6 +1881,7 @@ news.yahoo.co.jp##div[class^="sc-"]:has(> div[id^="yads_"])
 fashionsnap.com##div:not([class]) > div[class^="_"] > div[class^="_"] > div[class]:has(> div[class^="_"] > p[class^="_"] + div#mainArticle[style="display:block"]:empty)
 trafficnews.jp###content > .ad
 rail.hobidas.com###ad_footer2
+xtech.nikkei.com##.articleList_item:has(> div[id^="div-gpt-"])
 xtech.nikkei.com##section[aria-labelledby="sec-special"]:has(> ul.ad-infeedList)
 xtech.nikkei.com##section[aria-labelledby="aside-featuredPicks"]
 xtech.nikkei.com##.article_adTextList
@@ -4034,7 +4035,7 @@ dailyshincho.jp##.c-box-ad-movie--space
 ||ymobile.jp/store/images/top/kv/kv_$3p
 yuki-portal.com###reblock_widget-4
 yuki-portal.com##.ct-code-block > a[rel$="sponsored"]
-news-postseven.com##div[style="min-height: 395px; margin-bottom:10px;"]
+news-postseven.com##div[style^="min-height: "][style$=" margin-bottom:10px;"]
 money.smt.docomo.ne.jp##div[id*="Advertisement"]
 dazn.com##div[class^="AdBanner_container__"]
 gamingdeputy.com##.header-banner-desktop
@@ -8146,6 +8147,10 @@ ferret-plus.com##div[class*="-ad-banner"]
 ||dlv.itmedia.jp/adsv/
 ||itmedia.co.jp/js/nl/insert_articles_ad.js
 ||itmedia.co.jp/tt/js/tt/adRequest.js
+itmedia.co.jp##.format--crosshead:contains(/^そのほかAmazonで人気の/)
+itmedia.co.jp##.format--crosshead:contains(/^そのほかAmazonで人気の/) ~ div.cmsAmazonWrap
+itmedia.co.jp##.format--crosshead:contains(/^そのほかAmazonで人気の/) ~ div.cmsAmazonWrap + div.cmsButtonLink
+itmedia.co.jp###TopBoxITS
 itmedia.co.jp###SideLinkITS
 itmedia.co.jp###GeneralAD
 itmedia.co.jp###ITR + div#colBoxRcBanner

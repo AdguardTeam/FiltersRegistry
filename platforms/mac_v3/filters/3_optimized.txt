@@ -1,9 +1,9 @@
-! Checksum: s/lPsUne0HamAgOlZ3Akow
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1765296755-3600.patch
+! Checksum: OpzvFT8bQ23Q7jaReh7H0g
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1765300341-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.96.33
-! TimeUpdated: 2025-12-09T16:08:56+00:00
+! Version: 2.0.96.34
+! TimeUpdated: 2025-12-09T17:08:38+00:00
 ! Expires: 12 hours (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -49964,6 +49964,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 !+ PLATFORM(windows, mac, android)
 ||incoming.telemetry.mozilla.org^
 |piwik.
+||counter.tldw.me^
 ||analytics.blender.org^
 ||d.nordprotect.com^
 ||async-px-eu.dynamicyield.com^
@@ -70037,6 +70038,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+nikkei.com###pianoRecommendBottom
+itmedia.co.jp##.is-recommend:empty
+itmedia.co.jp##.format--subheading:has(+ .is-recommend:empty)
 ||vortexgaming.io/ga_script.js
 ||p-api.vortexgaming.io/api/log/
 ||usconcealedcarry.com/scripts/bundles/deltaAnalytics/
@@ -70203,7 +70207,6 @@ dominos.jp###_vis_opt_path_hides
 ||static.danawa.com/globaljs/static/targetPush/targetPushTracking.js
 ||static.danawa.com/globaljs/static/bdl/dsac.min.js
 ||americantourister.co.kr/on/demandware.static/Sites-AmericanTouristerKR-Site/*/internal/jscript/dwac-*.js
-business.nikkei.com###pianoRecommendBottom
 ||leboncoin.fr/piano-analytics/
 ||softonic.jp/web-stats
 ||chatgpt.com/ces/v1/i^
@@ -77770,6 +77773,10 @@ d4?appid*type*
 !### Temporary ###
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
 !#################
+!+ PLATFORM(windows, mac, android, cli)
+@@||data.service.paypal.com^|
+@@||experience.ninetailed.co/v2/organizations/*/environments/main/profiles/$xmlhttprequest,domain=dkb.de
+||googletagmanager.com/ns.html$subdocument,redirect=noopframe,domain=dkb.de
 @@||tags.tiqcdn.com/utag/cbsi/pluto-tv/prod/utag.js$domain=pluto.tv
 @@||st-eu.dynamicyield.com/st?sec=$domain=manor.ch
 @@||tags.tiqcdn.com/utag/bofa/ml/prod/utag.js$domain=ml.com
