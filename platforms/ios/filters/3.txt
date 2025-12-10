@@ -1,9 +1,9 @@
-! Checksum: HKVjLWHG40J5VrnspwDFWQ
-! Diff-Path: ../patches/3/3-s-1765365031-3600.patch
+! Checksum: C1dj+6AS4Tcqw/6T2FMvew
+! Diff-Path: ../patches/3/3-s-1765368945-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.96.36
-! TimeUpdated: 2025-12-10T11:07:02+00:00
+! Version: 2.0.96.37
+! TimeUpdated: 2025-12-10T12:12:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -42139,6 +42139,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||fls-na.amazon.com^
+||tag.poomang.com^
 ||counter.tldw.me^
 ||analytics.blender.org^
 ||d.nordprotect.com^
@@ -46144,6 +46146,9 @@ _tracking.php?b=
 !
 ! NOTE: Specific rules
 !
+||a0.awsstatic.com/eb-csr/*/orchestrate.js
+||a0.awsstatic.com/libra/*/vendor/require-marketo-munchkin.js
+||a0.awsstatic.com/libra/*/vendor/web-vitals.attribution.iife.js
 nikkei.com###pianoRecommendBottom
 itmedia.co.jp##.is-recommend:empty
 itmedia.co.jp##.format--subheading:has(+ .is-recommend:empty)
@@ -52439,6 +52444,7 @@ adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_i
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! aws.amazon.com
 ! yellowpages.com
 ! spooncast.net
 ! emart.ssg.com
@@ -57825,8 +57831,6 @@ kizi.com#%#window.google_trackConversion = function() {};
 @@||google-analytics.com^$domain=daemon-tools.cc
 @@||omtrdc.net^$domain=abbyy.ru
 @@||omtrdc.net^*/mbox/standard?$script,domain=ancestry.com|ancestry.com.au|blogtalkradio.com
-! Fixing amazon
-@@||omtrdc.net^$domain=amazon.co.uk|amazon.com|amazon.de
 ! http://forum.adguard.com/showthread.php?2565
 @@||svtrd.com^$domain=moneyou.de|ns.nl
 ! http://forum.adguard.com/showthread.php?1098
