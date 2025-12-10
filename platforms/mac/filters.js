@@ -379,8 +379,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.58.65",
-			"timeUpdated": "2025-12-10T12:45:44+0000",
+			"version": "2.1.58.66",
+			"timeUpdated": "2025-12-10T16:41:40+0000",
 			"languages": []
 		},
 		{
@@ -458,8 +458,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.81.61",
-			"timeUpdated": "2025-12-10T12:45:47+0000",
+			"version": "2.1.81.62",
+			"timeUpdated": "2025-12-10T16:41:44+0000",
 			"languages": []
 		},
 		{
@@ -487,8 +487,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt",
-			"version": "2.0.5.95",
-			"timeUpdated": "2025-12-08T00:47:55+0000",
+			"version": "2.0.5.96",
+			"timeUpdated": "2025-12-10T16:41:45+0000",
 			"languages": [
 				"he"
 			]
@@ -502,8 +502,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.81.63",
-			"timeUpdated": "2025-12-10T12:45:49+0000",
+			"version": "2.1.81.64",
+			"timeUpdated": "2025-12-10T16:41:46+0000",
 			"languages": [
 				"it"
 			]
@@ -547,8 +547,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.81.62",
-			"timeUpdated": "2025-12-10T12:45:49+0000",
+			"version": "2.1.81.63",
+			"timeUpdated": "2025-12-10T16:41:48+0000",
 			"languages": [
 				"ar"
 			]
@@ -565,8 +565,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.81.61",
-			"timeUpdated": "2025-12-10T12:45:50+0000",
+			"version": "2.1.81.62",
+			"timeUpdated": "2025-12-10T16:41:49+0000",
 			"languages": []
 		},
 		{
@@ -645,8 +645,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.55.31",
-			"timeUpdated": "2025-12-10T12:45:53+0000",
+			"version": "2.1.55.32",
+			"timeUpdated": "2025-12-10T16:41:52+0000",
 			"languages": []
 		},
 		{
@@ -674,8 +674,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
-			"version": "2.0.26.90",
-			"timeUpdated": "2025-12-10T12:45:55+0000",
+			"version": "2.0.26.91",
+			"timeUpdated": "2025-12-10T16:41:53+0000",
 			"languages": [
 				"id"
 			]
@@ -708,8 +708,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.58.93",
-			"timeUpdated": "2025-12-10T12:46:01+0000",
+			"version": "2.1.58.94",
+			"timeUpdated": "2025-12-10T16:41:59+0000",
 			"languages": []
 		},
 		{
@@ -724,8 +724,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.52.65",
-			"timeUpdated": "2025-12-10T12:46:02+0000",
+			"version": "2.1.52.66",
+			"timeUpdated": "2025-12-10T16:41:59+0000",
 			"languages": []
 		},
 		{
@@ -740,8 +740,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.53.36",
-			"timeUpdated": "2025-12-10T12:46:02+0000",
+			"version": "2.0.53.37",
+			"timeUpdated": "2025-12-10T16:42:01+0000",
 			"languages": []
 		},
 		{
@@ -866,8 +866,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.81.62",
-			"timeUpdated": "2025-12-10T12:46:05+0000",
+			"version": "2.1.81.63",
+			"timeUpdated": "2025-12-10T16:42:05+0000",
 			"languages": []
 		},
 		{
@@ -940,8 +940,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.80.88",
-			"timeUpdated": "2025-12-10T12:46:07+0000",
+			"version": "2.1.80.89",
+			"timeUpdated": "2025-12-10T16:42:06+0000",
 			"languages": []
 		},
 		{
@@ -969,8 +969,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
-			"version": "2.0.40.57",
-			"timeUpdated": "2025-12-10T08:42:18+0000",
+			"version": "2.0.40.58",
+			"timeUpdated": "2025-12-10T16:42:07+0000",
 			"languages": [
 				"vi"
 			]
@@ -1138,8 +1138,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.22.27",
-			"timeUpdated": "2025-12-10T12:46:14+0000",
+			"version": "2.0.22.28",
+			"timeUpdated": "2025-12-10T16:42:12+0000",
 			"languages": []
 		},
 		{
@@ -1230,8 +1230,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.81.63",
-			"timeUpdated": "2025-12-10T12:46:16+0000",
+			"version": "2.1.81.64",
+			"timeUpdated": "2025-12-10T16:42:15+0000",
 			"languages": []
 		},
 		{
@@ -1246,8 +1246,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.78.7",
-			"timeUpdated": "2025-12-10T12:46:17+0000",
+			"version": "2.0.78.8",
+			"timeUpdated": "2025-12-10T16:42:16+0000",
 			"languages": []
 		},
 		{
@@ -1357,8 +1357,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.18.75",
-			"timeUpdated": "2025-12-10T12:46:22+0000",
+			"version": "2.0.18.76",
+			"timeUpdated": "2025-12-10T16:42:20+0000",
 			"languages": []
 		},
 		{
@@ -1389,8 +1389,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.64.65",
-			"timeUpdated": "2025-12-10T12:46:26+0000",
+			"version": "2.1.64.66",
+			"timeUpdated": "2025-12-10T16:42:23+0000",
 			"languages": []
 		},
 		{
@@ -1465,8 +1465,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.77.69",
-			"timeUpdated": "2025-12-10T12:46:28+0000",
+			"version": "2.1.77.70",
+			"timeUpdated": "2025-12-10T16:42:26+0000",
 			"languages": []
 		},
 		{
@@ -1563,8 +1563,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.74.94",
-			"timeUpdated": "2025-12-10T12:46:34+0000",
+			"version": "2.0.74.95",
+			"timeUpdated": "2025-12-10T16:42:32+0000",
 			"languages": [
 				"hi"
 			]
@@ -1619,8 +1619,8 @@
 			"displayNumber": 1,
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
-			"version": "2.0.10.2",
-			"timeUpdated": "2025-12-09T16:41:31+0000",
+			"version": "2.0.10.3",
+			"timeUpdated": "2025-12-10T16:42:35+0000",
 			"languages": []
 		},
 		{
