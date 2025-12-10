@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.31.42",
-			"timeUpdated": "2025-12-10T16:09:16+0000",
+			"version": "2.4.31.43",
+			"timeUpdated": "2025-12-10T17:09:10+0000",
 			"languages": []
 		},
 		{
@@ -158,8 +158,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/9.txt",
-			"version": "2.0.32.55",
-			"timeUpdated": "2025-12-10T15:09:17+0000",
+			"version": "2.0.32.56",
+			"timeUpdated": "2025-12-10T17:09:25+0000",
 			"languages": [
 				"es",
 				"pt"
@@ -216,8 +216,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.61.4",
-			"timeUpdated": "2025-12-10T11:07:13+0000",
+			"version": "2.0.61.5",
+			"timeUpdated": "2025-12-10T17:09:28+0000",
 			"languages": [
 				"tr"
 			]
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.3.74",
-			"timeUpdated": "2025-12-10T14:08:27+0000",
+			"version": "2.1.3.75",
+			"timeUpdated": "2025-12-10T17:09:36+0000",
 			"languages": []
 		},
 		{
@@ -1120,8 +1120,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.49.56",
-			"timeUpdated": "2025-12-10T13:19:13+0000",
+			"version": "2.1.49.57",
+			"timeUpdated": "2025-12-10T17:09:45+0000",
 			"languages": [
 				"zh"
 			]
@@ -1513,7 +1513,9 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/AnnoyancesList",
 			"platformsExcluded": [
-				"ext_chromium_mv3"
+				"ext_chromium_mv3",
+				"ios",
+				"android"
 			],
 			"version": "2.0.18.52",
 			"timeUpdated": "2025-12-10T08:42:46+0000",
