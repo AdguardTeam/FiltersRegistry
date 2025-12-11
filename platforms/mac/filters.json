@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.3.33",
-			"timeUpdated": "2025-12-11T11:06:58+0000",
+			"version": "2.1.3.34",
+			"timeUpdated": "2025-12-11T12:11:39+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.31.61",
-			"timeUpdated": "2025-12-11T11:07:08+0000",
+			"version": "2.4.31.62",
+			"timeUpdated": "2025-12-11T12:11:50+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.96.42",
-			"timeUpdated": "2025-12-11T11:07:13+0000",
+			"version": "2.0.96.43",
+			"timeUpdated": "2025-12-11T12:11:53+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.22.82",
-			"timeUpdated": "2025-12-11T09:09:58+0000",
+			"version": "2.1.22.83",
+			"timeUpdated": "2025-12-11T12:11:55+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.51.97",
-			"timeUpdated": "2025-12-11T11:07:31+0000",
+			"version": "2.2.51.98",
+			"timeUpdated": "2025-12-11T12:12:11+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.76.55",
-			"timeUpdated": "2025-12-11T09:10:26+0000",
+			"version": "2.0.76.56",
+			"timeUpdated": "2025-12-11T12:12:15+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.66.87",
-			"timeUpdated": "2025-12-11T10:08:45+0000",
+			"version": "2.0.66.88",
+			"timeUpdated": "2025-12-11T12:12:17+0000",
 			"languages": []
 		},
 		{
