@@ -1,9 +1,9 @@
-! Checksum: Q5x+uxIyI2NIRrrEMOy9YQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1765414250-14400.patch
+! Checksum: VEa60ZLyvUMbuDd01gl00g
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1765428364-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.52.68
-! TimeUpdated: 2025-12-11T00:48:05+00:00
+! Version: 2.1.52.69
+! TimeUpdated: 2025-12-11T04:43:16+00:00
 ! Expires: 5 days (update frequency)
 -facebook-widget.
 -follow-icon-
@@ -264,8 +264,6 @@ _social-bar/
 ###followTwitter
 ###followUs
 ###follow_buttons
-###follow_facebook
-###follow_twitter
 ###follow_us
 ###followus
 ###foot-social
@@ -497,7 +495,6 @@ _social-bar/
 ###sharepost
 ###sharer
 ###sharethis
-###sharetools-masthead
 ###sharing-bar
 ###sharing-buttons
 ###sharing-column
@@ -633,7 +630,6 @@ _social-bar/
 ###social_panel
 ###social_pinterest
 ###social_popup
-###social_section
 ###social_share
 ###social_share_wrapper
 ###social_sharing
@@ -707,6 +703,7 @@ _social-bar/
 ###v-share
 ###vbseo-likes
 ###vce_social_menu
+###vertical-share-wrapper
 ###verticalSnsBar
 ###viber_share
 ###whatsapp-share
@@ -916,6 +913,7 @@ _social-bar/
 ##.article_header_share
 ##.article_left_share
 ##.article_share
+##.article_share_buttons
 ##.article_sharing
 ##.article_social
 ##.article_social_share
@@ -933,6 +931,7 @@ _social-bar/
 ##.author-social
 ##.author-social__share
 ##.author-socials
+##.authorSocial
 ##.author_social
 ##.author_socials
 ##.av-share-box
@@ -940,12 +939,14 @@ _social-bar/
 ##.avia_fb_likebox
 ##.avia_socialcount
 ##.awp-media-share-container
+##.b-advert-social-wrapper
 ##.b-article__social
 ##.b-event_links__share__block
 ##.b-footer__social
 ##.b-footer_social
 ##.b-header__social
 ##.b-share
+##.b-share-button
 ##.b-sharelist
 ##.b-sidebar-social
 ##.b-social-icons
@@ -1908,7 +1909,6 @@ _social-bar/
 ##.mobile-sharing-tools
 ##.mobile-social
 ##.mobileShare
-##.mobilesocial
 ##.mod-facebook
 ##.mod-follow
 ##.mod-twitter
@@ -1970,6 +1970,7 @@ _social-bar/
 ##.node-share
 ##.node-social
 ##.normal_social
+##.noticia-social-share
 ##.novashare-buttons-wrapper
 ##.ns-social
 ##.nv-post-share
@@ -2093,6 +2094,9 @@ _social-bar/
 ##.product-social-icon-wrapper
 ##.pswp__button--share
 ##.public-share
+##.pw-button-email
+##.pw-button-facebook
+##.pw-button-twitter
 ##.qlwapp-button
 ##.qodef-social-share
 ##.qt-sharepage
@@ -2358,6 +2362,7 @@ _social-bar/
 ##.share-title
 ##.share-to
 ##.share-toggle
+##.share-toggle-button
 ##.share-tool
 ##.share-toolbar
 ##.share-toolbar__container
@@ -2667,7 +2672,6 @@ _social-bar/
 ##.single-post-social
 ##.single-share
 ##.single-share-bar
-##.single-share-box-container
 ##.single-sharing-btns
 ##.single-sidebar-share
 ##.single-social-button
@@ -3303,7 +3307,6 @@ _social-bar/
 ##.twitter-share-btn
 ##.twitter-share-button
 ##.twitter-share-container
-##.twitter-sharetool
 ##.twitter-social
 ##.twitter-square
 ##.twitter-timeline
@@ -3354,8 +3357,6 @@ _social-bar/
 ##.vc_social_icons
 ##.vce-share-bar
 ##.vce-share-items
-##.vce-social-profile-icon
-##.vce-social-profile-icons
 ##.vertical-social
 ##.vf-share-bar
 ##.vf-share-bar-vertical
@@ -3677,6 +3678,7 @@ digitaltrends.com###menu-2021-social
 truthdig.com###menu-social-navigation-1
 notalwaysright.com###meta_share
 taylorfrancis.com###openShare
+fia.com###page-pre-footer
 loveandlemons.com###pinthispage
 jacobin.com###post-footer-share
 jacobin.com###post-header-share
@@ -3787,6 +3789,7 @@ crash.net,ttnews.com##.block-better-social-sharing-buttons
 tastesbetterfromscratch.com##.block-follow-me
 studyfinds.org##.block-social-share
 carnewschina.com##.block_social_media__content
+crowdstrike.com##.blog_main_navigation_top
 9to5linux.com##.bm-social-top
 breitbart.com##.bnn-social-share
 bom.gov.au##.bom-social-share
@@ -3890,6 +3893,7 @@ dailyartmagazine.com##.google-feed-row
 alarabiya.net##.google-news-callout
 cybernews.com,sammobile.com##.google-news-cta
 gadgets360.com##.gsocialbar
+atlanticcouncil.org##.gta-hover-share-container
 gmanetwork.com##.hdr-social-links
 israelnationalnews.com##.header-nav-addons-link
 archaeology.org##.header-share
@@ -3939,6 +3943,7 @@ sportsnet.ca##.micro_mail__dd_RW
 travelandleisure.com##.mntl-footer__social
 boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
+audacy.com##.national-footer__social
 triblive.com##.navbar-right
 chess.com##.navigation-footer-platforms-component
 thesouthafrican.com##.navigator-share
@@ -4060,6 +4065,7 @@ cnn.com##.social-share_labelled-list
 edition.cnn.com##.social-share_labelled-list__share-links
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
+batimes.com.ar##.social-topsharing
 mmorpg.com##.social-web
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
 macrumors.com##.socialMedia--3i9tSnAb
@@ -4082,6 +4088,7 @@ phys.org##.socials-wrapper
 douglasnow.com##.spc-social-follow
 cryptonews.com##.ssk
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
+audacy.com##.station-footer__social
 deutschland.de##.sticky-bar
 healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar
@@ -4500,7 +4507,6 @@ cooperativa.cl##.contenedor-compartir
 elcolombiano.com##.contenedor-google-noticias
 cooperativa.cl##.contenedor-sociales
 eldiario.es,eldiarioar.com##.edi-social-buttons
-elonce.com,portafolio.co##.footer__redes
 elperiodico.com,sport.es##.ft-mol-rrss-column
 milenio.com##.google-news-follow
 dolarhoy.com##.header__redes
