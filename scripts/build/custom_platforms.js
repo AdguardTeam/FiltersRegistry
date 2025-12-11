@@ -658,10 +658,7 @@ export const CUSTOM_PLATFORMS_CONFIG = {
         'path': 'extension/chromium-mv3',
         'expires': '10 days',
         'configuration': {
-            'removeRulePatterns': [
-                ...CHROMIUM_BASED_EXTENSION_PATTERNS,
-                ...REDIRECT_MODIFIER_PATTERNS,
-            ],
+            'removeRulePatterns': CHROMIUM_BASED_EXTENSION_PATTERNS,
             'replacements': null,
             'ignoreRuleHints': false,
         },
@@ -705,10 +702,7 @@ export const CUSTOM_PLATFORMS_CONFIG = {
         'path': 'extension/opera-mv3',
         'expires': '10 days',
         'configuration': {
-            'removeRulePatterns': [
-                ...CHROMIUM_BASED_EXTENSION_PATTERNS,
-                ...REDIRECT_MODIFIER_PATTERNS,
-            ],
+            'removeRulePatterns': CHROMIUM_BASED_EXTENSION_PATTERNS,
             'replacements': null,
             'ignoreRuleHints': false,
         },
