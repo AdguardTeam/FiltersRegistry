@@ -660,7 +660,7 @@ export const CUSTOM_PLATFORMS_CONFIG = {
         'configuration': {
             'removeRulePatterns': [
                 ...CHROMIUM_BASED_EXTENSION_PATTERNS,
-                ...REDIRECT_MODIFIER_PATTERNS,
+                ...REDIRECT_RULE_MODIFIER_PATTERNS,
             ],
             'replacements': null,
             'ignoreRuleHints': false,
@@ -707,7 +707,7 @@ export const CUSTOM_PLATFORMS_CONFIG = {
         'configuration': {
             'removeRulePatterns': [
                 ...CHROMIUM_BASED_EXTENSION_PATTERNS,
-                ...REDIRECT_MODIFIER_PATTERNS,
+                ...REDIRECT_RULE_MODIFIER_PATTERNS,
             ],
             'replacements': null,
             'ignoreRuleHints': false,
