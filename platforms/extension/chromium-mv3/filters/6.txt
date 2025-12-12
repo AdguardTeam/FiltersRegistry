@@ -1,4 +1,4 @@
-! Checksum: +m+Fj/My226DUn9VriuSjw
+! Checksum: URxNf08kki1NMZULDGhbwg
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.50.57
@@ -363,6 +363,7 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 !
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219175
+||imasdk.googleapis.com/js/sdkloader/ima3.js$xmlhttprequest,redirect=google-ima3,domain=games.focus.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218085
 radioforen.de##body > .u-scrollButtons ~ script ~ div[style]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/216094
@@ -374,6 +375,7 @@ pornohexen.com#@##adsbox
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209484
 tarnkappe.info#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'checkAdblocker')
 tarnkappe.info#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'checkingOverlay')
+||cdntrf.com/tarnkappe-info.js$redirect=noopjs
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201926
 karoqforum.de#%#//scriptlet('prevent-eval-if', 'adsbygoogle.js')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199400
@@ -431,6 +433,7 @@ gamezoom.net#%#//scriptlet('prevent-fetch', 'ads.gamezoom.net')
 gamezoom.net#%#//scriptlet('set-constant', 'loadAntiWerber', 'noopFunc')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/159343
 deutschekanale.com#%#//scriptlet('prevent-fetch', '/doubleclick\.net|imasdk\.googleapis\.com/')
+||imasdk.googleapis.com^$xmlhttprequest,redirect=nooptext,domain=deutschekanale.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157415
 gartenfreunde.de###ez-content-blocker-container
 gartenfreunde.de#%#//scriptlet('set-constant', 'ezDetectAardvark', 'noopFunc')
@@ -470,6 +473,7 @@ file-upload.net#%#//scriptlet("set-constant", "start", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/129521
 ||static.wlct-one.de^
 ! quermania.de - adblock after about 10 seconds
+||s.d.adup-tech.com/ads/display.js$script,redirect=noopjs,domain=quermania.de,important
 quermania.de#%#//scriptlet("set-constant", "Werbeblocker", "noopFunc")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/126617
 beste-freundin-gesucht.de##.pr-content-ad
@@ -515,6 +519,7 @@ onvista.de#%#//scriptlet("set-constant", "window.ovHasAdBlocker", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/149085
 ! https://github.com/AdguardTeam/AdguardFilters/issues/93879
 sportdeutschland.tv#%#//scriptlet('set-constant', 'IOMm', 'noopFunc')
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=sportdeutschland.tv
 @@||sportdeutschland.tv/assets/ads.js
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88117
 @@||news-und-nachrichten.de/js/_advertisement.js
@@ -622,6 +627,8 @@ deutsche-vogelstimmen.de#%#(function(){var b=window.setTimeout;window.setTimeout
 sport1.de#%#//scriptlet("set-constant", "s1AdDetection", "true")
 sport1.de#%#//scriptlet("set-constant", "s1CmpDetection", "true")
 @@||reshape.sport1.de/*/120_600/$domain=sport1.de
+||asadcdn.com/adlib/pages/sport1.js$script,redirect=noopjs,important,domain=sport1.de
+||tag.aticdn.net/*/smarttag.js$script,redirect=ati-smarttag,domain=sport1.de,important
 ! Enable when they change file name and remove previous rules
 ! !+ PLATFORM(ios, ext_android_cb, ext_safari)
 !@@||asadcdn.com/adlib/pages/sport1*.js$domain=sport1.de
@@ -706,6 +713,7 @@ caravaning.de#%#//scriptlet("set-constant", "adblockActive", "false")
 @@||media.oadts.com/www/delivery/video.php$domain=serienjunkies.de
 ! https://forum.adguard.com/index.php?threads/tvnow-de-not-working-with-english-filterlist-anti-adblock.27564/
 ! reenable and change to plus.rtl.de in case of adblock -- 02.08.2023
+! ||api.tvnow.de/*/advertisements^$redirect=nooptext,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7576
 @@||bravofly.de^$generichide
 ! https://github.com/AdguardTeam/AdguardFilters/issues/7581
@@ -1348,6 +1356,8 @@ chip.de#$?#main[role="main"] { grid-row: 2 !important; }
 ! Make it more specific or change to ext-css if it will break something again
 spiegel.de###Inhalt .relative > .relative > div[class] > section[class="clear-both lg:w-8/12 md:w-10/12 sm:w-full mx-auto"] > div[class="bg-white dark:bg-dm-shade-darkest pt-8 lg:px-24 lg:pb-48 md:px-24 md:pb-48 sm:px-16 sm:pb-40"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52959
+!+ NOT_PLATFORM(windows, mac, android, ext_ff)
+||amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$redirect=nooptext,domain=tele5.de
 ! http://forum.adguard.com/showthread.php?8979 (#17)
 ||static.p7s1.com/vendor/webtrekk
 !
@@ -1585,6 +1595,7 @@ holidaycheck.de##.featured-hotels
 tarnkappe.info##section[class="desktop-only"][style^="clip-path: inset(0); min-width:"]
 chip.de##.WidgetOutbrainFocus
 chip.de#%#//scriptlet('adjust-setTimeout', '/\(\)=>\{.\(!1\)\}/', '*', '0.001')
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,important,domain=chip.de
 ||cdn.greenvideo.io/pbjs/gvpb.js
 forge.plebmasters.de#%#//scriptlet('json-prune', 'results.[-].advertisement')
 spiegel.de#%#//scriptlet('set-constant', 'jwDefaults.advertising', 'undefined')
@@ -1777,6 +1788,7 @@ travelbook.de,petbook.de#$#.modal-open { overflow: auto !important; }
 sonyalphaforum.de##div[data-nbenhadv]
 sonyalphaforum.de###elPostFeed > form > article.cPost:has(> .ipsColumn > .ipsComment_content > .cPost_contentWrap > .ipsType_normal > p > a.ab-test-amazon)
 ||joyn.somquery.sqrt-*.de/v*/ad-pod/
+||joyn.somquery.sqrt-*.de/v*/ad-pod/$script,xmlhttprequest,other,redirect=noopvast-3.0
 joyn.de#%#//scriptlet('prevent-fetch', '/joyn\.somquery\.sqrt-.*.\de\/v.\/ad-pod\//')
 billiger.de##div[data-puzzle-compoid^="advertising_"]
 stylebook.de##.w-auto > .float-lg-end:has(> #mrec)
@@ -2200,6 +2212,7 @@ email.t-online.de##.adSuperBannerContainer
 dasgelbeblatt.de##.wv_story_el_insertedAd
 kino.de##.zdfmediathek
 chip.de###aabhor
+||twincdn.com/video/susilive/$media,redirect=noopmp4-1s,domain=xnxx-sexfilme.com
 giga.de###content-block-01F5ZNBF79MJY7K1CK9ZMCS0QV
 routeyou.com##.avsgWrapper-largeRectangleDesktop.avsgLoading
 ||media.routeyou.com/marketing/
@@ -2918,6 +2931,7 @@ wg-gesucht.de###partners_wrapper
 haustec.de##.adslot-placeholder
 haustec.de##.businessad-slot-caption
 mein-schoener-garten.de##.region-marketing
+||zomap.de^$xmlhttprequest,redirect=nooptext,domain=joyn.de
 tonspion.de##.ts-target[style*="margin-bottom:"]
 charivari.de##span[style^="font-size:10px;color:grey;"]
 charivari.de##div[class*="skyscraper_"]
@@ -3031,6 +3045,7 @@ computerwelt.at##.mh-sidebar code > span[style="font-size: xx-small;"]
 kicktipp.de###adtag_banner
 mein-heimkino.org###sidebar > #text-9
 menshealth.de##div[class*="banner__image"]
+||ad-ipd.sxp.smartclip.net^$xmlhttprequest,redirect=nooptext,important,domain=n-tv.de
 baulinks.de###werbungtop
 medicalexpo.de###header-banner
 saarbruecker-zeitung.de,rp-online.de###halfpagead
@@ -3455,6 +3470,10 @@ selbstaendig-im-netz.de##[class*="selbs-"]
 ||selbstaendig-im-netz.de/Bilder/affiliate-banner^
 payback.de##div[data-ad-id]
 tagesspiegel.de##.ts-zr12qtz
+||js-sec.indexww.com$domain=promiflash.de,redirect=nooptext,important
+||aax-eu.amazon-adsystem.com$domain=promiflash.de,redirect=nooptext,important
+||adservice.google.com$domain=promiflash.de,redirect=nooptext,important
+||pagead2.googlesyndication.com$domain=promiflash.de,redirect=nooptext,important
 promiflash.de##.onlyMobile
 tagesspiegel.de##.hcf-marginal-col > .hcf-news-aktuell-side
 iphone-tricks.de###sidebar > #custom_html-3
@@ -3488,6 +3507,7 @@ volksfreund.de##aside[data-portal-id="taboola-below-article-thumbnails"]
 mobiflip.de##.fff100-short
 inside-digital.de###parallax
 inside-digital.de###td-outer-wrap > #bigsize
+||pmdipads-a.akamaihd.net/*/watchbox/$media,redirect=noopmp4-1s
 karlsruhe-insider.de##.td-adspot-title + a[target="_blank"]
 karlsruhe-insider.de##.td-post-content > div[style="width: 728px; height: 90px; margin: 20px auto 20px auto; display:table"]:not([class]):not([id])
 karlsruhe-insider.de##div[id^="stroeer-container-"]
@@ -3551,6 +3571,7 @@ gut-erklaert.de##.contentBody > div[style="height:260px"]
 gut-erklaert.de##.contentlabel
 frustfrei-lernen.de##.noContentBannerArea
 aktuelle-auto-news.de##.adtracker
+||vidapi*.threepi.de/storage*/media^$redirect=noopmp4-1s
 dr-gumpert.de##.get .adsbygoogle
 1000ps.at##.dfpwerbungall
 1000ps.at##.berichtwerbungshow
@@ -5816,6 +5837,7 @@ mobile.de#@#[data-ad-id]
 @@||api-v*.trbo.com/r.php$domain=blau.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108788
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107944
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=wetteronline.de,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/107055
 @@||getjad.io/library/$script,domain=gamepro.de
 @@||getjad.io/prebid/$script,domain=gamepro.de
@@ -5856,6 +5878,7 @@ quiz-lounge.com#@#.mt-3
 ! https://github.com/AdguardTeam/AdguardFilters/issues/88720
 fahrrad.de#@#.is-sponsored
 ! https://github.com/AdguardTeam/AdguardFilters/issues/87832
+||widgets.outbrain.com/outbrain.js$script,redirect=noopjs,domain=spiegel.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/83496
 ||glomex.com^$popup,badfilter
 ! t-online.de video not working
@@ -5887,6 +5910,7 @@ urlaubspartner.net#@##werbung
 @@||baumberger.shop/cache/style_*_responsive_ad_header.css$~third-party
 @@||baumberger.shop/cache/javascript_*_responsive_ad_footer.js$~third-party
 ! https://github.com/AdguardTeam/AdguardFilters/issues/80803
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,important,domain=player.motorsport-magazin.com
 @@||cdn.jsdelivr.net/combine/npm/video.js*/dist/video-js.min.css*/videojs-contrib-ads*/dist/videojs.ads.min.css$domain=player.motorsport-magazin.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/79974
 saechsische.de#@?#article,div:has( > div > .article-section--nad > span:contains(Anzeige))
@@ -8342,6 +8366,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||tvdigital.de/frontpage/deutschland_urlaub_horzu_
 ||tvinfo.de/info/TWIAGO/
 ||tweakpc.de/wpimages/tweakpc-skin-
+||twincdn.com/video/suslive/$redirect=noopmp4-1s,domain=beeg-pornos.com|deinesexfilme.com|deutscherporno.biz|einfachtitten.com|gutesexfilme.com|halloporno.net|hd-pornos.info|hd-sexfilme.com|hdpornos.net|herzporno.com|kornhub.co|lesbenhd.com|meinyouporn.com|nursexfilme.com|pornhub-sexfilme.net|pornhutdeutsch.com|pornoaffe.net|pornodavid.com|pornoente.tv|pornofisch.com|pornohammer.com|pornohans.com|pornohirsch.net|pornohutdeutsch.net|pornojenny.com|pornoklinge.com|pornoleon.com|pornolisa.com|pornoritze.com|pornoschlange.com|pornosusi.com|pornotanja.com|pornotom.com|pornovideos-hd.com|pornozebra.com|sexente.com|sexfilme-gratis.com|sexfilme24.org|sexhamster.biz|sexvideos-gratis.com|sexvideos-hd.com|tube8-pornos.com|xnxx-porno.com|xnxx-pornos.xxx|xnxx-sexfilme.com|youporndeutsch.xyz
 ||typo3blogger.de/wp-content/*/dkd-solr-werde-sponsor.jpg
 ||uhrforum.de/styles/uhrforum/anzeigen/
 ||uhrforum.de/styles/uhrforum/sponsored/
@@ -8594,7 +8619,10 @@ transfermarkt.de##.OUTBRAIN .ob-p
 ||tpc.googlesyndication.com^$domain=autobild.de
 ||track.webgains.com/link.html?wglinkid=$script,domain=autobild.de
 ||yieldlab.net^$domain=autobild.de
+||ccstatic.toggo.de/cc-static-files/bumper-video/$redirect=noopmp4-1s,domain=toggo.de
 ||flashtalking.com^$~media,domain=toggo.de
+||flashtalking.com^*.mp4$redirect=noopmp4-1s,domain=toggo.de
+||smartclip.net/creatives/uploads/*.mp4$redirect=noopmp4-1s,domain=toggo.de
 ||smartclip.net^$~media,domain=toggo.de
 $csp=script-src 'self' data: 'unsafe-inline' 'unsafe-hashes' 'unsafe-eval' static.veevcdn.co,domain=filmpalast.to
 /^https?:\/\/.*\.(jpg|jpeg|gif|png|php|svg|ico|js|txt|css)/$popup,domain=190.115.18.20|aniworld.to|canna-power.to|canna.to|kinoger.com|kinoger.to|s.to|serien.cam|serienstream.to

@@ -1,4 +1,4 @@
-! Checksum: BJEcvdDdV4pm5CYIKK0PkQ
+! Checksum: K2PH41JtNcwR/2S/x7+9cQ
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.18
@@ -68,6 +68,7 @@ larvf.com#@#.AdsBox
 equinoxmagazine.fr,adala-news.fr#%#//scriptlet('abort-current-inline-script', 'jQuery', 'adblocker')
 equinoxmagazine.fr,adala-news.fr#%#//scriptlet('set-constant', 'penci_options_set.ad_blocker_detector', 'false')
 @@||soins-infirmiers.com/*/adblocker.blogads.css
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=qub.ca
 qub.ca,tvaplus.ca#%#//scriptlet('set-constant', 'ima', 'emptyObj')
 qub.ca,tvaplus.ca#%#!function(){const e={apply:(e,t,n)=>(n&&n[1]&&"useAdBlockerDetector"===n[1]&&n[2]&&n[2].get&&(n[2].get=function(){return function(){return!1}}),Reflect.apply(e,t,n))};window.Object.defineProperty=new Proxy(window.Object.defineProperty,e)}();
 ||cdn.assets*.nicematin.com/build/js/viewpay.*.js
@@ -77,6 +78,7 @@ journaldesfemmes.fr#%#//scriptlet('set-constant', 'integrityObserver.corrupted',
 rustica.fr#%#//scriptlet('set-constant', 'checkAdsBlocked', 'noopFunc')
 tv.free.fr,oqee.tv#%#//scriptlet('google-ima3')
 tv.free.fr,oqee.tv#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=oqee.tv|tv.free.fr
 cookomix.com#%#//scriptlet('prevent-requestAnimationFrame', 'Date.now')
 cookomix.com#%#//scriptlet('set-constant', 'dAp', 'true')
 cookomix.com#%#//scriptlet('prevent-setTimeout', 'detected')
@@ -128,12 +130,12 @@ japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
 @@||japscan.$generichide
 ||network-loop.com/campaigns/banners/$domain=japscan.lol|japscan.si|japscan.vip,important
+||platform.pubadx.one/pubadx-ad.js$script,redirect=noopjs,domain=japscan.lol|japscan.si|japscan.vip,important
 /^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.lol|japscan.si|japscan.vip
 @@||platform.pubadx.one/pubadx-ad.js$xmlhttprequest,domain=japscan.lol|japscan.si|japscan.vip
 @@||static.cloudflareinsights.com/beacon.min.js$xmlhttprequest,domain=japscan.lol|japscan.si|japscan.vip
 @@||acscdn.com^$script,third-party,domain=japscan.lol|japscan.si|japscan.vip
 @@.shop/*/invoke.js$script,third-party,domain=japscan.lol|japscan.si|japscan.vip,important
-$script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.lol|japscan.si|japscan.vip
 @@$image,domain=japscan.lol|japscan.si|japscan.vip
 @@||googletagmanager.com/gtag/js$domain=japscan.lol|japscan.si|japscan.vip
 @@||githack.com^$script,domain=japscan.lol|japscan.si|japscan.vip
@@ -144,9 +146,9 @@ $script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.lol|japscan.si|japsca
 @@||drive.google.com^$xmlhttprequest,domain=japscan.lol|japscan.si|japscan.vip
 @@||postimg.cc^$xmlhttprequest,domain=japscan.lol|japscan.si|japscan.vip
 @@||i.ibb.co^$xmlhttprequest,domain=japscan.lol|japscan.si|japscan.vip
+||platform.pubadx.one/pubadx-ad.js$script,redirect=noopjs,domain=japscan.*,important
 /^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.*
 @@||acscdn.com^$script,third-party,domain=japscan.*
-$script,xmlhttprequest,redirect-rule=noopjs,domain=japscan.*
 @@$image,domain=japscan.*
 @@||googletagmanager.com/gtag/js$domain=japscan.*
 trustmyscience.com##.adb-border
@@ -156,11 +158,13 @@ lemanip.com#$##adblock_msg { display: none !important; }
 lemanip.com#%#//scriptlet("abort-current-inline-script", "document.createElement", "adblock")
 signal-arnaques.com#%#//scriptlet("set-constant", "moneyAbovePrivacy", "true")
 trackmusik.fr#@#.AdSense
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,xmlhttprequest,redirect=googlesyndication-adsbygoogle,domain=trackmusik.fr,important
 techno-science.net#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 @@||empire-streaming.*^$generichide
 dhnet.be#%#//scriptlet('set-constant', 'bAdBlocker', 'false')
 radio.fr#%#//scriptlet("abort-on-property-read", "Object.prototype.autoRecov")
 animationdigitalnetwork.com,animationdigitalnetwork.fr#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,important,domain=animationdigitalnetwork.fr|animationdigitalnetwork.com
 pianoweb.fr#%#//scriptlet('set-cookie', 'warnadb', '1')
 pianoweb.fr#%#//scriptlet('set-constant', 'noPub', '1')
 pianoweb.fr#@#.AdvertContainer
@@ -201,7 +205,9 @@ lecourrier-du-soir.com#%#//scriptlet("prevent-addEventListener", "DOMContentLoad
 commentcamarche.net#%#//scriptlet("json-prune", "siteParams.aabMessage")
 commentcamarche.net#%#//scriptlet("set-constant", "integrityObserver.corrupted", "false")
 @@||c.amazon-adsystem.com/aax2/apstag.js$domain=commentcamarche.net
+||c.amazon-adsystem.com/aax2/apstag.js$script,redirect=noopjs,important,domain=commentcamarche.net
 @@||widgets.outbrain.com/outbrain.js$domain=commentcamarche.net
+||widgets.outbrain.com/outbrain.js$script,redirect=noopjs,important,domain=commentcamarche.net
 9docu.org#$#.publicite.text-ad.adsbox { display: block !important; }
 9docu.org#%#//scriptlet("abort-on-property-read", "gothamBatAdblock")
 cliqueduplateau.com#%#//scriptlet("abort-current-inline-script", "document.querySelector", "oadbActive")
@@ -222,6 +228,10 @@ voyageforum.com#%#//scriptlet("prevent-setTimeout", "adsbygoogle")
 jtrouver.com#%#//scriptlet("set-constant", "google_jobrunner", "noopFunc")
 linternaute.com#%#//scriptlet('json-prune', 'adParams siteParams.aabMessage')
 sante.journaldesfemmes.fr,linternaute.com#$#.AdBox.Ligatus.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links { display: block !important; }
+||dpm.zebestof.com/*/tag.js$script,redirect=noopjs,important,domain=linternaute.com|sante.journaldesfemmes.fr
+||amazon-adsystem.com/*/apstag.js$script,redirect=noopjs,important,domain=linternaute.com|sante.journaldesfemmes.fr
+||cdn.adsafeprotected.com/iasPET.*.js$script,redirect=noopjs,important,domain=linternaute.com|sante.journaldesfemmes.fr
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noopjs,important,domain=linternaute.com|sante.journaldesfemmes.fr
 @@||googletagmanager.com/gtm.js$domain=linternaute.com|sante.journaldesfemmes.fr
 rtl.be#%#//scriptlet('set-constant', 'bAdBlocker', 'false')
 !+ NOT_OPTIMIZED
@@ -259,7 +269,6 @@ tf1.fr#%#//scriptlet('set-constant', '__TF1_CONFIG__.adblock.serverRequest', 'fa
 tf1.fr,tf1info.fr#%#//scriptlet('prevent-fetch', 'static.adsafeprotected.com/favicon.ico')
 tf1.fr,tf1info.fr#%#//scriptlet('prevent-fetch', '/^https:\/\/ads\.stickyadstv\.com\/$/ method:HEAD')
 tf1info.fr#%#//scriptlet('prevent-element-src-loading', 'script', '/hubvisor\.io|pbstck\.com|batch\.com|securepubads\.g\.doubleclick\.net|ownpage\.fr|teads\.tv/')
-$script,redirect-rule=noopjs,domain=tf1info.fr
 !#safari_cb_affinity(privacy)
 @@||cdn.tagcommander.com/*/tc_TF1*.js$domain=tf1.fr|tf1info.fr
 @@||static.adsafeprotected.com/favicon.ico$domain=tf1.fr|tf1info.fr
@@ -478,6 +487,7 @@ lefigaro.fr#?#.fig-footer-ranking > div.fig-grid4:has(> span.fig-grid4__main-tit
 tvaplus.ca##div[data-testid="ad-container"]
 tesla-mag.com##.sidebar-inner-wrap > section[id^="block-"]
 moneyvox.fr##.main div[class]:has(> img[mam-campaign="Ban"])
+||ads-canalplus.akamaized.net/*.mp4$media,redirect=noopmp4-1s
 lephoceen.fr##div[class^="layout_megabanTopContainer"]
 lesechos.fr#?#span[shape="circle"] + span:contains(Publicité):upward(2)
 nouvelobs.com##.dfp-unloaded
@@ -623,6 +633,7 @@ lcd-compare.com##.page-head-ad
 media24.fr,blog-rct.com##body .code-block
 capital.fr##img[width="300"][height="250"]
 frandroid.com###products-archive-content .is-narrow > .sidebar
+||vod.6cloud.fr/pub/*.mp4$media,redirect=noopmp3-0.1s,domain=m6.fr
 leboncoin.fr##div[class^="styles_ad_"]
 60millions-mag.com##.block-banner-autopromo
 marianne.net##div[class^="p-"][class*="--placeholder"]
@@ -944,6 +955,9 @@ bilibili.com#@#.publicity
 filecrypt.cc,filecrypt.co#@#[onmousedown]
 geo.fr#@#[data-ads-core]
 @@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=geo.fr
+||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=geo.fr
+||googletagmanager.com/gtm.js$script,redirect=google-analytics,domain=geo.fr
+||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=geo.fr
 @@||cdn.lib.getjad.io/prebid/$domain=le10sport.com
 @@||cdn.lib.getjad.io/library/$domain=le10sport.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=le10sport.com
@@ -972,12 +986,15 @@ cifraclub.com.br#@#.pub_header
 adverts.ie#@#div[data-ad-id]
 @@||static.cloudflareinsights.com^$domain=easypara.fr
 @@||googletagmanager.com/gtm.js$domain=easypara.fr
+||c.amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=programme-tv.net
 whatpub.com#@#.pub_left
 whatpub.com#@##pub-footer
 ||stripchat.com^$badfilter
 $script,third-party,domain=supervideo.tv,badfilter
 femmeactuelle.fr#@#[data-ads-core]
 @@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=femmeactuelle.fr
+||c.amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=femmeactuelle.fr
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=geo.dailymotion.com
 ||toutvendre.fr/js/application.$badfilter
 gala.fr#@#[data-ads-core]
 /neads.$domain=~neads.io,badfilter
@@ -1002,22 +1019,32 @@ cnet.com#@#div[data-ad]
 /monetization.js$badfilter
 theverge.com#@#a[href*="://www.anrdoezrs.net/"]
 voici.fr#@#[data-ads-core]
+||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=voici.fr
+||googletagmanager.com/gtm.js$script,redirect=google-analytics,domain=voici.fr
+||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=voici.fr
 gearjunkie.com#@#.tag-sponsored-content
 $script,third-party,domain=waaw.tv,badfilter
 $script,third-party,domain=gamecopyworld.eu,badfilter
 $script,third-party,domain=vidhd.fun,badfilter
 capital.fr#@#[data-ads-core]
 @@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=capital.fr
+||js-sec.indexww.com/ht/p/*.js$script,redirect=noopjs,domain=capital.fr
+||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=capital.fr
+||googletagmanager.com/gtm.js$script,redirect=google-analytics,domain=capital.fr
+||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=capital.fr
 @@||cmp2.bild.de/wrapper/
 coches.net#@#div[data-ad-id]
 linio.com.pe#@#div[data-ad-id]
 ||shoosh.co^$third-party,badfilter
 maxisciences.com,gentside.*,ohmymag.*#@#[data-ads-core]
 @@||tra.scds.pmdstatic.net/advertising-core/$script,domain=maxisciences.com|gentside.*|ohmymag.*
+||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,important,domain=maxisciences.com|gentside.*|ohmymag.*
 @@||cmpv2.berliner-zeitung.de/mms/
 fshd.link#@#div[data-ad]
 mobimart.it#@##ad_global_below_navbar
 @@||tra.scds.pmdstatic.net/advertising-core/*/core-ads.js$domain=gala.fr
+||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=gala.fr
+||googletagmanager.com/gtm.js$script,redirect=google-analytics,domain=gala.fr
 @@||content.uplynk.com/preplay/*/multiple.json*&ad.preroll$domain=fifa.com
 @@||google.com/recaptcha/api.js
 @@||mos.ru/blitz/assets/blitz-common/javascripts/hashcash.js

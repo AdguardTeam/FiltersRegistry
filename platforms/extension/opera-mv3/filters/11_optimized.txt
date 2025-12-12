@@ -1,9 +1,9 @@
-! Checksum: s5/whCiCXKVxwiWaBG1tPw
-! Diff-Path: ../patches/11_optimized/11_optimized-s-1765537830-3600.patch
+! Checksum: t0/VF5I3+UiW51epojnNjw
+! Diff-Path: ../patches/11_optimized/11_optimized-s-1765563207-3600.patch
 ! Title: AdGuard Mobile Ads filter (Optimized)
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.66.18
-! TimeUpdated: 2025-12-12T11:07:37+00:00
+! Version: 2.0.66.19
+! TimeUpdated: 2025-12-12T18:10:19+00:00
 ! Expires: 10 days (update frequency)
 ||*.libaishuo.com^$third-party
 ||adx-open-service.youku.com^
@@ -697,6 +697,7 @@
 ||api.usebutton.com^
 ||appclick.net^
 ||applifier.com^
+||applift.com^$redirect=nooptext
 ||applovin.com^
 ||appnext-a.akamaihd.net^
 ||appsdt.com^
@@ -784,7 +785,9 @@
 ||iadsdk.apple.com^
 ||imwx.com/mobile/adconfig/
 ||infolinks.com^
-||inmobi.com^
+||ads.inmobi.com^
+||config.inmobi.com^
+||glance.inmobi.com^
 ||inmobi.net^
 ||inmobi.cn^
 ||inmobicdn.net^
@@ -936,6 +939,7 @@ nan-net.jp,nan-net.com#%#//scriptlet('remove-node-text', 'script', 'adblock')
 nan-net.jp,nan-net.com###adblock_guide_mask
 nan-net.jp,nan-net.com##.adblock_guide_box
 nazology.kusuguru.co.jp,nijimen.kusuguru.co.jp#%#//scriptlet('prevent-setTimeout', 'adBoxEl')
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=nazology.kusuguru.co.jp|nijimen.kusuguru.co.jp
 erozine.jp#%#//scriptlet("set-constant", "mobiles", "")
 @@||t7z.cupid.iqiyi.com/show2?$xmlhttprequest,domain=m.iqiyi.com
 m.livehindustan.com#$#html { overflow: auto !important; }
@@ -1420,6 +1424,9 @@ ign.com#@#.zad.billboard
 safeframe.googlesyndication.com#@#div[id^="ad_position_"]
 safeframe.googlesyndication.com###ad_iframe
 safeframe.googlesyndication.com###towerVideo
+||googlevideo.com/videoplayback?$media,redirect=noopmp4-1s,domain=safeframe.googlesyndication.com
+||googlevideo.com/videoplayback?$xmlhttprequest,redirect=nooptext,domain=safeframe.googlesyndication.com
+||gvt1.com/videoplayback?$media,redirect=noopmp4-1s,domain=safeframe.googlesyndication.com
 @@||partner1.cashback.zen.com/aff_
 matomedane.jp#@##AdvHeader
 @@||sf*-*cdn-tos.pstatp.com^$domain=juejin.cn
@@ -1430,12 +1437,14 @@ matomedane.jp#@##AdvHeader
 @@||bc.marfeelcache.com/statics/marfeel/gardac-sync.js$domain=punchng.com
 @@||googletagservices.com/tag/js/gpt.js$domain=ukr.net
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=ukr.net
+||googletagservices.com/tag/js/gpt.js$script,redirect=googletagservices-gpt,important,domain=ukr.net
 drive2.com,drive2.ru#@#div[itemtype^="http://schema.org/"] ~ div[data-role][data-target] ~ div:not(:last-child)
 drive2.com,drive2.ru#@#div[itemtype="http://schema.org/BlogPosting"] ~ div:not(:last-child)
 itest.5ch.net#@#.js-cardview_ad-320x180
 milesplit.com#@#.sticky-ad
 mrmoneymustache.com#@#.custom-ad
 @@||snssdk.com/video/drm/v*/play_licenses
+||yads.c.yimg.jp/js/yads-async.js$script,redirect=noopjs,important,domain=map.yahoo.co.jp
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=as-selection.net
 @@||epst.hindustantimes.com/Js/_show_Ads.js
 businessinsider.co.za#@#.ad-loaded
@@ -1463,6 +1472,7 @@ cancam.jp#@#.overlay-ad
 @@||ads.rubiconproject.com/prebid^$domain=index.hr
 seattletimes.com#@#.ad-fixed
 @@||bc.marfeel.com/statics/marfeel/gardac.js$domain=eldiario.es
+||s.yimg.com/av/curveball/ads/pr/$redirect=nooptext,important,domain=sports.yahoo.com
 @@||slashdot.org/story^
 m.youtube.com#@#a[onclick*="\"ping_url\":\"http://www.google.com/aclk?"]
 m.youtube.com##a[onclick*='"ping_url":"http://www.google.com/aclk?']
@@ -4555,6 +4565,7 @@ koe-koe.com###third_ad
 koe-koe.com##.ad_list
 eroita.net##.spadv
 smbiz.asahi.com##.ad-sp-side-rect
+||a.adtng.com/get/$xmlhttprequest,redirect=noopvast-2.0,important,domain=mydaddy.cc
 m.lvz.de##div[class^="pdb-ad_"]
 tarosoku.com##.t_b > iframe
 girlstyle.com,thecatcity.com,urbanlifehk.com##.article-pop-up-ad
@@ -5302,6 +5313,7 @@ sammobile.com##.g-29
 virtualbrest.ru##body > div.rounded + div[style^="width:"] > a[target="_blank"] > img
 pocketpc.ch,gizchina.com,cleantechnica.com,proandroid.com,dkoding.in,iheartintelligence.com,revistaforum.com.br##.mrf-sticky-wrapper
 cleantechnica.com,proandroid.com,iheartintelligence.com,fortressofsolitude.co.za,aysetolga.com,revistaforum.com.br,diariodocentrodomundo.com.br,01net.com,gizchina.com,pocketpc.ch##.mrf-adv__wrapper
+||googleadservices.com/pagead/conversion_async.js$script,redirect=noopjs,domain=orcd.co
 wonderzine.com,the-village.com.ua##.banners
 novelmultiverse.com##.adace-slideup-slot-wrap
 vg247.com###last-mpu-slot
@@ -5420,6 +5432,7 @@ sibdom.ru##.fixed-position
 profile.ru###test_mob_ad
 www-tellows-de.cdn.ampproject.org###singlecomments > li[style="padding:0px 5px 0px 5px;"]
 nation.africa##.ad-mobile-leaderboard_wrap
+||asahicom.jp/sp/js/and_infeedad.js$script,redirect=noopjs
 asahi.com##.PrInfoBlock
 asahi.com##.ArticleRectangleAd
 asahi.com##.list-adL
@@ -5720,6 +5733,7 @@ m.iguides.ru##.top_container_in_detail_text
 interia.pl##body .box-ad
 interia.pl##div.adsEcArticleMobile
 manikyres.ru##div[class^="prma-position-fixed"]
+||tpc.googlesyndication.com$domain=promiflash.de,redirect=nooptext,important
 appledaily.com##.TW-MOBILE-AD
 starhit.ru##.adfox-block
 h5.17k.com##.bottom_banner
@@ -6142,6 +6156,7 @@ motherless.com###advertisement-below-menu
 ||motherless.com/floater_iframe.php
 collectionofbestporn.com,imagebam.com,motherless.com##._ln-floater
 tubedupe.com,anyporn.com###mh-ad
+||anyporn.com/xml^$media,redirect=noopmp4-1s
 blog.livedoor.com##.MdAdBox01
 akket-com.cdn.ampproject.org##.ad_amp
 ||firebaseio.com/promo_view.json
@@ -6633,6 +6648,7 @@ pornhd.com##ul.thumbs.inside-row > li:not([data-thumbindexes])
 ||campaign.brandseven.com/get^$third-party
 ||coandroid.ru/uploads/mobcoin.png
 ||expertvaz.ru/wp-content/plugins/helper/inc/jquery.mobileInterestial
+||go.*.com/apu.php$redirect=nooptext,domain=movies.is
 ||i.now.ru/*/MobileBannerView.js
 ||m.20xs.cc/qirui/s/tss.js
 ||m.shushu8.com/js/1*.js
@@ -7056,6 +7072,7 @@ hanime1.me##div[class*="home-banner-exoclick-"]
 hanime1.me##.hidden-sm > iframe[src^="//a.magsrv.com/"]
 hanime1.me###related-tabcontent > .row > .hidden-md:has(> a[href*=".labsda.com"])
 hanime1.me#$#iframe[src^="//a.magsrv.com/"] { height: 100px !important; width: 0 !important; visibility: hidden !important; }
+||magsrv.com^$subdocument,redirect=noopframe,domain=hanime1.me
 noodlemagazine.com##.container > noindex
 noodlemagazine.com##div[style^="height:110px;max-width:450px;"]
 noodlemagazine.com##.container > div[style*="height:100px"]
@@ -7172,6 +7189,7 @@ auth.wi-fi.ru##.c-branding-banner
 auth.wi-fi.ru##.c-video-banner
 auth.wi-fi.ru##.c-fullscreen-banner
 ||static.wi-fi.ru/brandings/_cacheAssets/branding.js
+||wi-fi.ru/ad_video/$redirect=noopmp4-1s,important
 ||static.wi-fi.ru/brandings/rb/
 ||static0.wi-fi.ru/static/000/ios/index.html
 mail.ru##.ads-bottom__fixed
@@ -7293,6 +7311,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ||ifengad.*.ifeng.com^
 ||cx.ssacdn.com/image/fetch/*supersonicads
 ||varravgames.com/AdVarServer/
+||api.ambelbet.com/assets/js/page.ads.js$script,redirect=noopjs
+||api.ambelbet.com/assets/js/in.ads.js$script,redirect=noopjs
 ||mobi.yanosik.pl:8080/mobile-advertizer/
 ||104.199.8.250^*/webservices/getDialogAdDetails.php
 ||todayweather.co/ads.json
@@ -7300,6 +7320,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ||api.hh.ru/banners_targeting
 ||crosspromo*.qplaze.com/PushCampaignXMLOut.php
 ||server.idreams.pl/news/ads_sfr_*.json
+||alxanosoft.com/rk/$redirect=nooptext
 ||assets.sport1.de/imagix/filter2/jpeg/_set=dyn_size_no_crop/imagix/
 ||gumtree.com/partner/bing?*&adUnitId=
 ||gumtree.com/partner/bingimpression?
