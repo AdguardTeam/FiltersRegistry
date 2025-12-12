@@ -1,9 +1,9 @@
-! Checksum: r9M0EDXbGgvXl2U5OJ2Leg
-! Diff-Path: ../patches/14/14-s-1765507454-3600.patch
+! Checksum: Yldfl9/RymBmqgCkIDyMmA
+! Diff-Path: ../patches/14/14-s-1765510684-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.52.4
-! TimeUpdated: 2025-12-12T02:41:09+00:00
+! Version: 2.2.52.5
+! TimeUpdated: 2025-12-12T03:35:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2556,6 +2556,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+auth.discoveryplus.com#$##layer-root-modal:has(> .dialog-transition-enter-done > div[data-testid="Legal_Terms_and_Privacy_dialog"]) { display: none !important; }
+auth.discoveryplus.com#$#body.noscroll { overflow: auto !important; }
 born2be.*#$##consent-modal { display: none !important; }
 born2be.*#$#.modal-open { overflow: auto !important; }
 bahnbilder.de###cookieaccepter
@@ -17986,6 +17988,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219876
+@@||cdn.cookielaw.org/consent/*.json$domain=20min.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219752
 ecologie.gouv.fr#@#.fr-consent-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219680
@@ -52990,8 +52994,10 @@ bristol.ru##.corporative-banner
 koreatimes.co.kr##div[class^="MyTimesBanner_wrap"]
 koreatimes.co.kr##section[class^="MyTimes_my-times"]
 koreatimes.co.kr##div[class^="BannerArea"]
-flaticon.com###banner-craft
-flaticon.com##.detail__download-confirmation
+flaticon.com#$##banner-craft { display: none !important; }
+flaticon.com#$#.detail__download-confirmation { display: none !important; }
+flaticon.com#$#body.overflow-hidden { overflow: auto !important; }
+flaticon.com#$#body.overflow-hidden #viewport { filter: none !important; -webkit-filter: none !important; }
 123pan.com#%#//scriptlet('remove-attr', 'style', '.appdiv > div.webbody[style^="background-image:"]')
 123pan.com#%#//scriptlet('remove-class', 'svip-body', '.appdiv > div.webbody')
 123pan.com##.cent-not-login > div

@@ -1,9 +1,9 @@
-! Checksum: fkXhnvTxH7zXyXQwoU0idw
-! Diff-Path: ../patches/18/18-s-1765507456-3600.patch
+! Checksum: nP6D4u+t7gTq+PZYy5YsUA
+! Diff-Path: ../patches/18/18-s-1765510685-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.76.59
-! TimeUpdated: 2025-12-12T02:41:14+00:00
+! Version: 2.0.76.60
+! TimeUpdated: 2025-12-12T03:35:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2556,6 +2556,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+auth.discoveryplus.com#$##layer-root-modal:has(> .dialog-transition-enter-done > div[data-testid="Legal_Terms_and_Privacy_dialog"]) { display: none !important; }
+auth.discoveryplus.com#$#body.noscroll { overflow: auto !important; }
 born2be.*#$##consent-modal { display: none !important; }
 born2be.*#$#.modal-open { overflow: auto !important; }
 bahnbilder.de###cookieaccepter
@@ -17986,6 +17988,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219876
+@@||cdn.cookielaw.org/consent/*.json$domain=20min.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219752
 ecologie.gouv.fr#@#.fr-consent-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219680
