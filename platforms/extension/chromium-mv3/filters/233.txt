@@ -1,4 +1,4 @@
-! Checksum: Hx4qBkOQWUOsGVt50JZemQ
+! Checksum: j4HJSsGzJvFuu68cp/noDQ
 ! Title: Adblock List for Finland
 ! Description: Finnish ad blocking filter list.
 ! Version: 2.0.12.26
@@ -65,6 +65,8 @@ karjalainen.fi#$?#.breaking-news-container:not(:contains(mainos:)) { display: fl
 ! HTML filters for browsers that support them e.g. Firefox
 ! -----SPECIFIC FILTERS END-----
 ! -----NETWORK FILTERS-----
+||adservice.google.com/adsid/integrator.js$xmlhttprequest,redirect=nooptext,domain=telsu.fi
+||doubleclick.net^$xmlhttprequest,redirect=nooptext,domain=puhekupla.com
 ||v.fwmrm.net/ad/g/1$removeparam=caid
 ! -----NETWORK FILTERS END-----
 ! -----SCRIPTS-----
@@ -101,6 +103,7 @@ mtv.fi,mtvuutiset.fi##.avod-web-player-pause
 mtv.fi,mtvuutiset.fi#?#.avod-web-player-skin > #skin-wrapper > div > div:contains(Mainos)
 mtv.fi,mtvuutiset.fi##.visit-advertiser-link
 ||cloudfront.net/creatives/assets/$image,domain=mtv.fi|mtvuutiset.fi
+||cloudfront.net/creatives/assets/*.mp4$media,redirect=noopmp3-0.1s,domain=mtv.fi|mtvuutiset.fi
 ||fi-mtv3.videoplaza.tv/proxy/distributor/*&xpb=1$xmlhttprequest,important,domain=mtv.fi|mtvuutiset.fi
 @@||fwmrm.net/ad/g/*mtv$xmlhttprequest,domain=mtv.fi|mtvuutiset.fi
 ! Waiting for EP to support uBO filters as well
@@ -1469,7 +1472,12 @@ arvopaperi.fi,kauppalehti.fi,mikrobitti.fi,talouselama.fi,tekniikkatalous.fi,tiv
 ! Adblock check
 murha.info#@#.adsbygoogle
 @@||adserve.adcoin.com/display/ad_block/$xmlhttprequest,domain=verkkouutiset.fi
+||adform.net$xmlhttprequest,redirect=noopjs,domain=telsu.fi
 ! Redirect resources
+||freewheel-jitt.sanoma.fi^$media,redirect=noopmp3-0.1s,domain=ruutu.fi
+||nelonenmedia-pmd-ads-*.nm-stream.nelonenmedia.fi^$media,redirect=noopmp3-0.1s,domain=ruutu.fi|supla.fi
+||sanoma-prod.integration-x.com^$media,redirect=noopmp3-0.1s,domain=ruutu.fi
+/adverts/*.mp4$media,redirect=noopmp3-0.1s,domain=totalvene.fi
 ! appears when blocking ads:
 ||mobiili.fi/wp-content/themes/mobiilitheme/images/small-loading.gif
 ruutu.fi##.RuutuPlayer__Error-sc-1o2b3la-0

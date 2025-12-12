@@ -1,15 +1,15 @@
-! Checksum: OeAaaf7UCr5AF/dZ8J7KgQ
-! Diff-Path: ../patches/212/212-s-1765543747-14400.patch
+! Checksum: JOciCVcur+2jfuSIj37B8A
+! Diff-Path: ../patches/212/212-s-1765572065-14400.patch
 ! Title: RU AdList: Counters
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.81.0
-! TimeUpdated: 2025-12-12T12:45:49+00:00
+! Version: 2.1.81.1
+! TimeUpdated: 2025-12-12T20:37:54+00:00
 ! Expires: 10 days (update frequency)
 !
-! Checksum: ppvhzJ2fRBHt+PW6eVLTAg
-! OriginalVersion: 202512121231
+! Checksum: IIkZzji2Ja+J2xey491qhA
+! OriginalVersion: 202512122031
 ! Title: RU AdList: Counters
-! Last modified: 12 Dec 2025 12:31 UTC
+! Last modified: 12 Dec 2025 20:31 UTC
 ! Expires: 1 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -1229,8 +1229,11 @@ avtorambler.com,rambler.ru#?#section > nav ~ div div:has(> div > [id^="rcmw-cont
 ||google-analytics.com^$domain=4pda.to|cdnvideo.ru|igromania.ru|rambler.ru
 ||googletagmanager.com/gtm.js$domain=5-tv.ru|censor.net|citilink.ru|dtf.ru|gazeta.press|gazeta.ru|ixbt.com|ixbt.games|ixbt.market|ixbt.video|kp.kg|kp.kz|kp.md|kp.ru|kufar.by|lifehacker.ru|livejournal.com|motor.ru|nur.kz|point.md|rambler.ru|rbkgames.com|rutube.ru|sbermegamarket.ru|sports.ru|tsn.ua|tut.by|vc.ru
 ||ntv.ru/api/player/related/$xmlhttprequest
+||storage.mds.yandex.net/get-canvas-html5/*.html?link1=$redirect=nooptext,subdocument,domain=~dzen.ru
+||yastatic.net/naydex/autoru/$script,redirect=empty
 !
 ! yandex
+/^https?://yastatic\.net\/www\/_\/[^\s]{150,}/$redirect=nooptext,image,domain=yandex.by|yandex.kz|yandex.ru|yandex.uz
 @@://yandex.*/news/$generichide
 @@://yandex.*/news|$generichide
 dzen.*#$?#[aria-label*="Лент"] article:has(> div:matches-css(display: none)) { display: none !important }
@@ -1238,12 +1241,16 @@ dzen.*#$?#div:matches-attr(/[a-z0-9]/=/media-banner/) { display: none !important
 mail.yandex.*#?#.mail-Page-Body .Popup2 > .Tooltip-Content:contains(2025)
 ya.*,yandex.*#$?#.content__right div:has(> div > button:matches-attr(/[a-z0-9]/=/advertiser/)) { display: none !important }
 ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-z0-9]/=/abuseLink|advertiser/)) { display: none !important }
+||mail.yandex.*/u2709/$redirect=nooptext,script,~third-party
 ||strm.yandex.ru/get/$script,domain=yandex.ru|yastatic.net
 ||strm.yandex.ru/get/*?sid=*&vsid=
 ||ya.ru/portal/proxy?blocks=feed_banner
+||yandex-sport.naydex.net/$script,redirect=empty
 ||yandex.ru/games/_*/*/*/*/Promo.$important
 ||yandex.ru/games/_crpd/*/*_*_*_*_*_$important,xmlhttprequest
+||yastatic.net/naydex/yandex-mail/$redirect=nooptext,script
 ||yastatic.net/s3/games-static/_/build/game/desktop/yandex/Promo.$important
+||yastatic.net/yandex-video-player-iframe-api-bundles-stable/*?adsdk-try=$redirect=nooptext
 !
 ! мобильная версия
 ya.*#$?##search-result > [class*="__card"]:has(> div > span:contains(/^Промо$|^Реклама$/)) { display: none !important }

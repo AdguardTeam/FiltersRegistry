@@ -1,4 +1,5 @@
-! Checksum: 6JSuOTiFXH8ewIbhdf1p9g
+! Checksum: 6nxDoT/p9NhN0RglGH6xtw
+! Diff-Path: ../patches/115_optimized/115_optimized-s-1765572064-14400.patch
 ! Title: (Obsolete) RU AdList (Optimized)
 ! Description: Additional filter list for websites in Russian.
 ! Version: 2.0.91.54
@@ -26878,7 +26879,6 @@ bigpuzzle.ru##td[valign="top"][width="240px"][height="600"]
 ||stroi-help.ru/forum/script_new.js
 ||vazhno.ru/cdn-cgi/apps/head/*.js
 ||vsthouse.ru/a-detector/
-*$subdocument,redirect-rule=noopframe,domain=ukr.net
 /^https?://yastatic\.net\/www\/_\/[^\s]{150,}/$image,domain=yandex.by|yandex.kz|yandex.ru|yandex.ua|yandex.uz
 /^https?:\/\/scrin.org\/[^\s]/$csp=sandbox allow-same-origin;,badfilter
 08sportbar.com,08sportbar.online,777sportba.com,777sportba.org,777streams.pro,7streams.pro,assiatv.com,barsportbar.com,boom365hd.com,cdnneedtv.ru,cdnpotok.com,channels247.net,goool7.ws,hd24.pro,hd24.watch,hd365.ws,hdstream365.com,limetvv.com,live-stream365.com,live365tv.site,mc.today,oneliketv.com,oxax.tv,raes.tech,sblive.online,sbsports.pro,sbstreams.ws,shd247.com,sport365hd.com,sport7.biz,sportbar.biz,sportbar.pm,sportbarchik88.com,sportbox.ws,sporting7.pw,sporting77.com,stream365.pro,telecdn.net,vecdn.pw,vip7stream.pw,whd365.pro#%#//scriptlet('ubo-window.open-defuser.js')
@@ -27143,6 +27143,7 @@ znanija.com#%#//scriptlet('ubo-abort-on-property-read.js', 'localStorage')
 |https://argumenti.ru^$csp=script-src 'self' * blob: data:,badfilter
 ||24molnia.com^$xmlhttprequest,badfilter,domain=24molnia.com
 ||7ogorod.ru^$xmlhttprequest,badfilter,domain=7ogorod.ru
+||adbutton.net^$script,redirect=noopjs
 ||alau.kz^$xmlhttprequest,badfilter,domain=alau.kz
 ||an.yandex.ru^$domain=e.mail.ru
 ||argumenti.ru^$xmlhttprequest,badfilter,domain=argumenti.ru|~mt.argumenti.ru
@@ -27154,14 +27155,21 @@ znanija.com#%#//scriptlet('ubo-abort-on-property-read.js', 'localStorage')
 ||globuss24.ru^$xmlhttprequest,badfilter,domain=globuss24.ru
 ||kp.yandex.net/images/bnnr/brand/$domain=www.kinopoisk.ru
 ||kp.yandex.net/js/brand$domain=www.kinopoisk.ru
+||loadercdn.com^$important,script,redirect=noopjs
+||loveanime.live^$media,redirect=noopmp3-0.1s,domain=anime.anidub.life|myanime.online|online.anidub.com
 ||m.mixadvert.com/show/$important,script
 ||mashintop.ru^$xmlhttprequest,badfilter,domain=mashintop.ru
+||mc.admetrica.ru/sync_cookie_image_check$image,redirect=1x1-transparent.gif
 ||paperdoc.ru^$xmlhttprequest,badfilter,domain=paperdoc.ru
 ||politros.com^$xmlhttprequest,badfilter,domain=politros.com
 ||pronpic.org^$third-party,badfilter
 ||shtrafsud.ru^$xmlhttprequest,badfilter,domain=shtrafsud.ru
+||static-mon.yandex.net/static/main.js$script,redirect=noopjs
+||static-mon.yandex.net/static/main.js$xmlhttprequest,redirect=nooptext
+||strm.yandex.ru^$media,redirect=empty,domain=1tv.ru|karaoke.ru|mediavitrina.ru|yastatic.net
 ||tele.ru^$xmlhttprequest,badfilter,domain=tele.ru
 ||teleprogramma.pro^$xmlhttprequest,badfilter,domain=teleprogramma.pro
+||utarget.ru/check_geo/|$script,redirect=empty,domain=memepedia.ru
 ||youtube.com/embed/?enablejsapi=1&origin=*3dnews.ru&widgetid=1$subdocument,badfilter,domain=3dnews.ru
 ~passport.yandex.by,~passport.yandex.kz,~passport.yandex.ru,~passport.yandex.ua,~passport.yandex.uz,yandex.by,yandex.kz,yandex.ru,yandex.ua,yandex.uz#%#//scriptlet('ubo-cookie-remover.js', '/^bltsr$|^JPIqApiY$|^specific$|^substantial$/')
 ~e.mail.ru,mail.ru###projects [data-alias="market"]
@@ -27196,9 +27204,6 @@ e.mail.ru#@$#.layout_right-size_60 .layout__main-frame { margin-right: auto!impo
 ok.ru#$#body > div:not([id]):not([class]) > .exit-popup { display: block !important }
 e.mail.ru,octavius.mail.ru#$#body:not(#id) > div[style*="position: absolute;"][style*="visibility: hidden;"][style*="top:"][style*="left:"] > div div { display: block !important }
 e.mail.ru,octavius.mail.ru#$#body:not(#id) > div[style*="position: absolute;"][style*="visibility: hidden;"][style*="top:"][style*="left:"] > div { display: block !important }
-||ad.mail.ru/adp/$image,script,xmlhttprequest,redirect-rule=empty
-||ad.mail.ru/adq/$image,script,xmlhttprequest,redirect-rule=empty
-||ad.mail.ru/vast/$image,script,xmlhttprequest,redirect-rule=empty
 ||cdn.viqeo.tv/js/vq_starter.js$third-party,domain=~dom.mail.ru|lifehacker.ru|mail.ru
 ||mail.ru/api-proxy/rb-mimic/
 ||pubapi.viqeo.tv^$domain=mail.ru|sportmail.ru

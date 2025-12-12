@@ -1,4 +1,5 @@
-! Checksum: KNInQsaKLQgWp7BcLJRpKQ
+! Checksum: y7E1rwAKWcTKSj8xYhI7kA
+! Diff-Path: ../patches/209/209-s-1765572065-14400.patch
 ! Title: (Obsolete) ADgk Mobile China list
 ! Description: Filter for Chinese mobile sites.
 ! Version: 2.0.0.18
@@ -9,6 +10,7 @@
 ! Title: adgk手机去广告规则
 ! Homepage: https://github.com/banbendalao/ADgk
 ! by: 坂本dalao
+/killcovid2021\.com/\d\.mp4/$redirect=noopmp4-1s,media
 ||twlcyc.cn^
 dmhy.org###pkpk
 dmhy.org##div[id*="_ad"]
@@ -451,6 +453,7 @@ baidu.com##div.FYB_RD
 ||othstr.beacon.qq.com^
 ||ssp.qq.com^
 _ad/*.js*$domain=~mp.weixin.qq.com
+||evtubescms.phncdn.com^$redirect=noopmp4-1s
 ||logs.nandu.com^
 /log.gif^
 ||log.snssdk.com^
@@ -671,6 +674,7 @@ tieba.baidu.com##div.banner-wrapper,div.fixed-nav-bar.nav-bar-wrapper,div.recomm
 ||nfmovies.com/static^
 ||nfmovies.com/pic/tu^
 ||www.naifei.shop^$third-party
+||nfmovies.com/playg$redirect=nooptext
 ||jx.nfmovies.com/?downloadprohibited
 ||app.market.xiaomi.com/apm/zone/myPage
 /17mb/script/wap.js|
@@ -918,9 +922,13 @@ getAds|
 ||c.cnzz.com^
 ||a.cnzz.com^
 /[a-z]+\d+\.cnzz\./
+||data.video.ptqy.gitv.tv/videos/other/$redirect=noopmp4-1s
 ##div.a_mu,tr.ad,div.wp.a_f,div.a_fl.a_cb,div.a_fr.a_cb
 ||img.piaosugo.com*.jpg
+||atm.cp31.ott.cibntv.net$media,redirect=noopmp4-1s
 /imgad^
+||cpoml.iask.sina.com.cn^$redirect=nooptext
+||sl.sogoucdn.com/semob$redirect=nooptext,popup
 ||e.qq.com^
 zhidao.baidu.com,www.baidu.com##[class^="EC_ads_"],.wgt-ads,div#left-promotion,div#ui-tooltip-0,div.cms-slide.cms-slide-optimus,div.wgt-bottom-ask,div.cms-slide.cms-slide-lazy,div.aside,div.aside-inner,div#top.top,#wgt-ecom-banner,.bannerdown,.cur
 zhidao.baidu.com,www.baidu.com##.icon-bannerad
@@ -938,8 +946,11 @@ m.baidu.com,www.baidu.com###provider,div[class$="fixed"],SECTION#middle_banner,.
 ||lnk0.com^
 ||lattestatic.lattebank.com/huanbapp.apk
 ||crash2.zhihu.com/api/194^
+||dx-wangsucdncnc.inter.iqiyi.com/qpdxv/other^$redirect=nooptext
+||dx-bdcdncnc.inter.71edge.com/qpdxv/other^$redirect=nooptext
 m.baidu.com,www.baidu.com##A[class='hint-qnaire-bar']
 ||m.gven.top^$popup
+||v-*.71edge.com/videos/other^$redirect=nooptext
 ||node.cdntxt.com^
 ||zhihu.m.$popup
 ||114so.cn^
@@ -5288,6 +5299,8 @@ youku.com##.right-sidepopup,div[id^=ab_v_],li.js-draw,#yk-player-curtain
 ||html.yanqian.org/code^
 ||adashbc.m.taobao.com/rest^$third-party
 ||api-ad.sensetime.com/sensear/v2/sdk/*$third-party
+||dx-bdcdncnc.inter.71edge.com/videos/other^$domain=iqiyi.com,redirect=noopmp4-1s
+||v-dd*.*edge.com/videos/other^$domain=iqiyi.com,redirect=noopmp4-1s
 ||pic0.iqiyipic.com/common/*/*.jpg$domain=iqiyi.com,third-party
 ||api.weibo.cn/2/push^$third-party
 ||homepage-gw.jd.com/npromotion^$third-party
@@ -5307,6 +5320,7 @@ m.cr173.com###down_d1_1,UL.g-theme-ul,DIV.g-game-recomd g-relate-cms,DIV.f-morea
 ||s1.zhongxinguanye.com/fam520^$domain=m.haiduomi.com,third-party
 ||m.haiduomi.com/template/vfed/asset/js/sidebar.js?v=3.1.0$domain=m.haiduomi.com
 ||sdk.pigqq.com/discover^
+||lmbsy.qq.com/flv^$domain=v.qq.com,redirect=noopmp4-1s
 ||splashqqlive.gtimg.com/website^
 ||xfile.a.88cdn.com/file^$third-party
 ||live.xunlei.com^
@@ -7122,6 +7136,7 @@ wap.faloo.com###anzhuang_100
 /cnzza.js|
 ||ddl.3g567.com^
 ||bzclk.baidu.com^
+||*/videos/other*.f4v*$redirect=noopmp4-1s,domain=www.iqiyi.com|m.iqiyi.com
 m.aliyun.com###guid-1351324
 ||www.wesiedu.com^
 ||xunyibaike.com^
@@ -7725,6 +7740,7 @@ piao.js|
 ||omlube.com^
 ||ch-hr12333.com^
 ||iche88.cn^
+||data.video.iqiyi.com/videos/other/*.mp4?*random=ad$redirect=noopmp4-1s
 ||app.market.xiaomi.com/apm/search/hotword?searchHotSource
 ||app.market.xiaomi.com/apm/secondfloor?
 ||cc/ad/
@@ -7874,6 +7890,7 @@ $script,third-party,xmlhttprequest,domain=btio.pw
 /layer/*$domain=bejson.com
 ://www.*.js|$script,third-party,domain=159i.com|thisav.com
 |https:$subdocument,domain=nodkey.xyz
+||*/videos/other/*.f4v$object,redirect=noopmp3-0.1s,domain=iqiyi.com
 ||*btbtt.*/view/image/QT_
 ||0573fang.com/upimg/switch/
 ||159i.com/nd/b_slest.php
@@ -8018,6 +8035,7 @@ $script,third-party,xmlhttprequest,domain=btio.pw
 ||nbegame.com/nbead/
 ||nbegame.com/nbeos/nbegg.html
 ||newyx.newyx.net/j/
+||nfmovies.com/pic/tu/a191124001.$redirect=1x1-transparent.gif,~third-party
 ||nihaovcd.com/js/neirong
 ||nphoto.net/media/
 ||nyaa.fun/static/js/costcheck
@@ -8534,6 +8552,7 @@ $script,subdocument,third-party,xmlhttprequest,domain=alicili.me|alicili8.com|al
 @@||8ox.cn/pge/?s=$script,domain=dlkoo.com
 @@||dlkoo.com/down/Copydown1
 ||ifun.tv/a/$xmlhttprequest
+||s1-a4.ifun.tv^$redirect=noopmp3-0.1s,domain=ifun.tv
 ifeng.com###golddigger_bottom
 ifeng.com###linkrat_bottom
 ifeng.com##.i_con + :not(.i_con):not([href="javascript:void(0);"])

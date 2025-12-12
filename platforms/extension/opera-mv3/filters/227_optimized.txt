@@ -1,5 +1,5 @@
-! Checksum: dMZsVtuocLlipAqiPGfl4g
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1765298649-14400.patch
+! Checksum: WUtvZyvKAv3ryuWtdSsi2w
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1765572066-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
 ! Version: 2.0.23.52
@@ -3646,10 +3646,13 @@ zuzunza.com,iphonedev.co.kr,tistory.com#%#//scriptlet('prevent-setTimeout', '/\.
 fafan.kr,blog.dalso.org,tistory.com#%#//scriptlet('prevent-bab')
 te31.com,tistory.com#%#//scriptlet('prevent-fab-3.2.0')
 x86.co.kr,1004lucifer.blogspot.com,te31.com,tistory.com#%#//scriptlet('abort-on-property-read', 'adBlockDetected')
+||cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js$redirect=prevent-fab-3.2.0
 plankim.com#%#//scriptlet('abort-current-inline-script', 'ai_adb.init')
 jootc.com,ehpub.co.kr#%#//scriptlet('abort-current-inline-script', 'ai_run_scripts')
 ||fundingchoicesmessages.google.com^$domain=damoang.net|maplescouter.com|vivatv.cc|svrforum.com|singingdalong.blogspot.com|goodgag.net|bera.world|sellas.ink|hunigo.com|windowsforum.kr|iteastory.com|snskeyboard.com|rdsong.com|mongri.net|meeco.kr|poketory.com|youthassembly.kr|kr.jugomobile.com|1412.live|pyrasis.com|oceansabyss.com|yongtj.com|dora-guide.com|tailstar.net|creativestudio.kr|gamejay.net|mksports.co.kr|sisamagazine.co.kr|dreamrail.co.kr|tistory.com|gukjenews.com|issuelink.co.kr|webtool.cusis.net|koreaminecraft.net
+/^https:\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]+\/vmap/$redirect=nooptext,domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
 tv.kakao.com,play-tv.kakao.com,kakaotv.daum.net#%#//scriptlet('prevent-xhr', '/^https.\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]{1,2}\/vmap$/')
+/embed/player/image/ads.png$redirect=2x2-transparent.png,domain=tv.kakao.com|play-tv.kakao.com|kakaotv.daum.net
 tv.kakao.com,play-tv.kakao.com,kakaotv.daum.net#%#//scriptlet('prevent-fetch', '/^https.\/\/videoads\.kakao\.com\/adserver\/api\/v[0-9]{1,2}\/vmap$/')
 kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@##adContainer
 kakaotv.daum.net,play-tv.kakao.com,tv.kakao.com#@#ins.kakao_ad_area
@@ -3676,6 +3679,9 @@ spotvnow.co.kr#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com/pag
 !#safari_cb_affinity(privacy)
 @@||static.dable.io/dist/plugin.min.js$domain=maxmovie.com
 !#safari_cb_affinity
+||advimg.ad-mapps.com/sdk/M_PLUS/Image/$redirect=2x2-transparent.png,domain=maxmovie.com
+||mtag.mman.kr/get_ad.mezzo/$xmlhttprequest,redirect=nooptext,domain=maxmovie.com
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=aagag.com,xmlhttprequest,redirect=googlesyndication-adsbygoogle
 aagag.com#@#ins.adsbygoogle[data-ad-slot]
 aagag.com#$#.la { height: 75px !important; width: 75px !important; visibility: hidden !important; }
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=t.hi098123.com
@@ -3720,6 +3726,7 @@ klauncher.kr#%#//scriptlet('prevent-addEventListener', 'load', '_0x')
 hub.weirdhost.xyz#%#//scriptlet('prevent-fetch', 'adblockanalytics.com')
 hub.weirdhost.xyz#%#//scriptlet('prevent-fetch', 'adsbygoogle.js')
 @@||adservice.google.com^|$xmlhttprequest,domain=klauncher.kr
+||www3.doubleclick.net^$script,redirect=noopjs,domain=srank.kr
 chmodi.tistory.com##.floatdiv
 svrforum.com##body > div[class][style*="box-shadow:"]
 luckyquiz3.blogspot.com#%#//scriptlet('prevent-xhr', 'adsbygoogle')
@@ -3741,6 +3748,7 @@ avdbs.com#%#//scriptlet('abort-current-inline-script', '$', 'ad_blk')
 avdbs.com#@#.ad-btn
 genshin.gamedot.org#%#//scriptlet('prevent-setTimeout', 'blockCheck2022')
 errornight.com#%#//scriptlet('abort-on-stack-trace', 'alert', 'chk_adBlock')
+||ssl.pstatic.net/tveta/libs/ssp-video/prod/ssp.web.sdk_$script,redirect=noopjs,domain=m.sports.naver.com
 bera.world,sellas.ink,1412.live#@#.ads
 remiz.co.kr#@#ins.adsbygoogle[data-ad-slot]
 remiz.co.kr#@#.googleAd
@@ -3751,16 +3759,20 @@ somenotes247.blogspot.com#@#.vertical-ads
 mnews.jtbc.co.kr#@#.ad_bottom
 @@||kpanews.co.kr^$generichide
 ilsangt.tistory.com##.adblock-on
+||ssulwar.com/dev/modules/board/skins/*/js/adblockblock.js$redirect=noopjs
 ssulwar.com#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'adblock')
+||ad.smartmediarep.com/NetInsight/video/$redirect=nooptext,domain=mbn.co.kr
 detegice.github.io#%#//scriptlet('abort-on-property-read', '$.prototype.fadeIn')
 ilsangt.tistory.com#%#//scriptlet('abort-current-inline-script', '$', '.adsense-area')
 uda1004.tistory.com#@#ins.adsbygoogle[data-ad-slot]
 sogirl.so#%#//scriptlet('set-constant', 'DHAntiAdBlocker', 'true')
 clien.net#@#.ad_banner
 @@||ad.smartmediarep.com/NetInsight/video/smr$domain=programs.sbs.co.kr|allclip.sbs.co.kr|mplay.mk.co.kr|static.cloud.sbs.co.kr
+||adimg.nate.com/img/*?n=$redirect=2x2-transparent.png,domain=tv.nate.com
 noonnu.cc#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
 @@||t1.daumcdn.net/adfit/static/kp.js$domain=laftel.net
 @@||asset.laftel.net/static/assets/googleads-advertisement.js$domain=laftel.net
+||imasdk.googleapis.com/js/sdkloader/ima3.js$redirect=google-ima3,domain=laftel.net
 focuskr.tistory.com#%#//scriptlet('abort-current-inline-script', 'addEventListener', 'fuckadblock.min.js')
 singingdalong.blogspot.com#%#//scriptlet('abort-current-inline-script', '$', '#ad_center')
 stockinfo7.com#%#//scriptlet('prevent-setTimeout', 'ad.innerHTML.replace')
@@ -3778,6 +3790,17 @@ hasha.in#%#//scriptlet('prevent-fetch', 'adManager.js')
 @@||js.wpadmngr.com/static/adManager.js$xmlhttprequest,domain=hasha.in
 ||fundingchoicesmessages.google.com^$domain=tv25.co
 lover932.net,lover933.net,lover934.net,lover935.net,lover936.net,lover937.net,lover938.net,lover939.net,lover940.net,lover941.net#%#//scriptlet('prevent-setTimeout', 'document[_0x')
+||ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js$script,domain=m.cafe.naver.com,redirect=noopjs
+||video.veilduck.app^$redirect=noopmp4-1s
+||advod.sbs.co.kr/sbsad/$media,redirect=noopmp4-1s
+||smrmembers-smr.smartmediarep.com/smc/smrmembers/$redirect=noopmp4-1s
+||news.mobfeed.co.kr/front/personal/coupang$redirect=nooptext
+||bigkinds.or.kr/resources/files/banner/$redirect=2x2-transparent.png
+||bigkinds.or.kr/assets/*/img/content/*banner$redirect=2x2-transparent.png
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication-adsbygoogle,domain=~duden.de
+||amazon-adsystem.com/aax2/apstag.js$script,redirect=amazon-apstag,domain=~wcyb.com
+||googletagservices.com/tag/js/gpt.js$script,redirect=googletagservices-gpt
+||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices-gpt,domain=~investing.com|~wcyb.com
 /^https:\/\/(www\.)?yako[0-9]+\.com\/upload\/banner\//$domain=yako01.com|yako02.com|yako03.com|yako04.com|yako05.com|yako06.com|yako07.com|yako08.com|yako09.com|yako10.com|yako11.com|yako12.com|yako13.com
 lover937.net,lover938.net,lover939.net,lover940.net,lover941.net,lover942.net,lover943.net,lover944.net,lover945.net,lover946.net#%#//scriptlet('prevent-addEventListener', 'click', 'popMagic')
 lover937.net,lover938.net,lover939.net,lover940.net,lover941.net,lover942.net,lover943.net,lover944.net,lover945.net,lover946.net##.div-over
