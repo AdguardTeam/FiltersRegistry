@@ -1,9 +1,9 @@
-! Checksum: 5a6hoCMAb14cjBQw7I8YIQ
-! Diff-Path: ../patches/120_optimized/120_optimized-s-1765615344-14400.patch
+! Checksum: w4sZD2+4em70UrowR/wI6Q
+! Diff-Path: ../patches/120_optimized/120_optimized-s-1765644145-14400.patch
 ! Title: AdBlockID (Optimized)
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.26.96
-! TimeUpdated: 2025-12-13T08:38:56+00:00
+! Version: 2.0.26.97
+! TimeUpdated: 2025-12-13T16:38:51+00:00
 ! Expires: 12 hours (update frequency)
 /smartfren/ads.
 -ad123-
@@ -196,6 +196,7 @@ _ads728x90-
 ###ads-content1
 ###ads-content2
 ###ads-kecil
+###ads-scrollpage-container-leaderboard
 ###ads-top-header-parallax
 ###ads-vert-300
 ###ads-widget-kanan
@@ -347,6 +348,7 @@ _ads728x90-
 ###idnads_header_infeed1
 ###idnads_header_infeed2
 ###idnads_header_infeed3
+###idnads_header_leaderboard
 ###idnads_header_mr1
 ###idnads_header_mr2
 ###idnads_header_mr3
@@ -3856,8 +3858,6 @@ bolatimes.com,dewiku.com,himedik.com,hitekno.com,matamata.com,mobimoto.com,suara
 [$path=/artikel]cermati.com#?#a:matches-attr(href="/^https?:\/\/promo\./"):has(> picture)
 [$path=/artikel]cermati.com##a[data-item^="promo-"]:has(> picture)
 -banner-$image,domain=popmama.com
-yummy.co.id#?##IDN_Billboard:upward(1)
-yummy.co.id#?##IDN_InFeed1:upward(1)
 fortuneidn.com,ggwp.id,idntimes.com###IDN_MR1-wrapper
 fortuneidn.com,ggwp.id,idntimes.com###IDN_MR2-wrapper
 fortuneidn.com,ggwp.id,idntimes.com###IDN_MR3-wrapper
@@ -3886,7 +3886,7 @@ popbela.com##[class^="ads_"]
 fortuneidn.com,ggwp.id,idntimes.com,popbela.com,popmama.com#?#[class^="css-"]:matches-css(border-top-color: rgb(229, 233, 236)):has(> [id^="IDN_"]):upward(1)
 idntimes.com,popmama.com##[id^="IDN_InArticle"]
 popmama.com##[id^="IDN_Leaderboard"]
-idntimes.com,popmama.com##[id^="IDN_MegaBillboard"]
+idntimes.com,popmama.com,yummy.co.id##[id^="IDN_MegaBillboard"]
 fortuneidn.com,ggwp.id,idntimes.com,popbela.com,popmama.com##[id^="for-you-ads-"]
 popbela.com,popmama.com##[id^="wrapper-IDN_MegaBillboard" i]
 fortuneidn.com,ggwp.id,idntimes.com##[id^="wrapper-IDN_MegaBillboard"]
@@ -4603,8 +4603,8 @@ mirrorinkomik.my.id,mirrorkomik.info,mirrorkomik.site##img[alt*="banner" i]
 .gif|$domain=moenime.com
 moenime.com#?#*:matches-css(position: fixed):has(*:matches-css(position: absolute))
 moenime.com#?#*:matches-css(position: fixed):has(*:matches-css(position: relative))
+moenime.com#?#*:matches-css(position: fixed):has(:is(a, img, form, [onclick]))
 moenime.com##a[target*="blank"]:has(> img)
-moenime.com#?#*:matches-css(position: fixed):has(form)
 moenime.com#?#form:matches-css(position: fixed)
 moenime.com##.show
 moenime.com#%#//scriptlet('ubo-set', 'HTMLScriptElement.prototype.onerror', 'undefined')
