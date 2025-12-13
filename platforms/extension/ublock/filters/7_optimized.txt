@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: giiAVYqbrI6Z/hP6Y01I7w
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1765563220-3600.patch
+! Checksum: +ft2Oi9h1fPoSMuLF0A4/g
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1765649540-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.70.87
-! TimeUpdated: 2025-12-12T18:10:16+00:00
+! Version: 2.0.70.88
+! TimeUpdated: 2025-12-13T18:09:10+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$3p,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||js.miyuki-web.net^
@@ -895,6 +895,7 @@ ov53i9il.blog.fc2.com,mjoato3uion.ky-3.net,qaacacthlive.omaww.net##+js(noeval-if
 momoiroadult.com##+js(abort-current-script, document.getElementById, lists)
 sonae.sankei.co.jp##+js(set-constant, geoAvailable, true)
 blog.livedoor.jp##+js(abort-current-script, document.write, sitejack)
+wav.tv##+js(set-constant, $.popunder, noopFunc)
 wav.tv##+js(no-window-open-if)
 wav.tv##+js(remove-attr, data-popup-url)
 minigame.aeriagames.jp##+js(adjust-setTimeout, aeriaGamesAdCountDown, , 0.02)
@@ -3405,6 +3406,7 @@ seikeidouga.blog.jp##.left-column-inner > div.plugin-categorize + div.plugin-mem
 seikeidouga.blog.jp##.plugin-memo > div.side > div[id^="blz_lock"]:upward(2)
 ||square-enix.com/common/templates/js/ad/
 ||relay-api.ekitan.com/relay-api/relay/kyujin-box
+ekitan.com##.sidebar-ad[style^="position: fixed; top: 312px;"]:style(top: auto !important;)
 ekitan.com###div-transit_bus_result_summary_bottom
 ekitan.com###span-hotel
 ekitan.com###span-job

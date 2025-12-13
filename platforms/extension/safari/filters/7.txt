@@ -1,9 +1,9 @@
-! Checksum: o0o2gX6ipT0ON4BAipvihQ
-! Diff-Path: ../patches/7/7-s-1765563216-3600.patch
+! Checksum: 9Y3NxuZ0WcUwfAeGIiqGyg
+! Diff-Path: ../patches/7/7-s-1765649537-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.70.87
-! TimeUpdated: 2025-12-12T18:10:16+00:00
+! Version: 2.0.70.88
+! TimeUpdated: 2025-12-13T18:09:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1176,6 +1176,7 @@ sonae.sankei.co.jp#%#//scriptlet('set-constant', 'geoAvailable', 'true')
 ! http://blog.livedoor.jp/geek periodical campaign ads
 blog.livedoor.jp#%#//scriptlet('abort-current-inline-script', 'document.write', 'sitejack')
 ! https://github.com/uBlockOrigin/uAssets/issues/7546
+wav.tv#%#//scriptlet('set-constant', '$.popunder', 'noopFunc')
 wav.tv#%#//scriptlet('prevent-window-open')
 wav.tv#%#//scriptlet('remove-attr', 'data-popup-url')
 ! skip in-game ads
@@ -1505,6 +1506,7 @@ hostlove.com#$##index_nav > h1 { padding-top: 30px!important; }
 !-------------------
 !
 !
+! popunder
 ! https://github.com/tofukko/filter/issues/69
 !---------------------------------------------------------------------------!
 !-------------- General URL blocking rules ---------------------------------!
@@ -3867,6 +3869,7 @@ seikeidouga.blog.jp##.left-column-inner > div.plugin-categorize + div.plugin-mem
 seikeidouga.blog.jp#?#.plugin-memo > div.side > div[id^="blz_lock"]:upward(2)
 ||square-enix.com/common/templates/js/ad/
 ||relay-api.ekitan.com/relay-api/relay/kyujin-box
+ekitan.com#$#.sidebar-ad[style^="position: fixed; top: 312px;"] { top: auto !important; }
 ekitan.com###div-transit_bus_result_summary_bottom
 ekitan.com###span-hotel
 ekitan.com###span-job
