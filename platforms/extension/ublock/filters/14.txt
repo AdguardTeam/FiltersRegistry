@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: pkZhUbT3ncAfMxuiGQqtYQ
-! Diff-Path: ../patches/14/14-s-1765718196-3600.patch
+! Checksum: WOXO8QgPxkOnDqednSsb7w
+! Diff-Path: ../patches/14/14-s-1765728643-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.52.14
-! TimeUpdated: 2025-12-14T13:13:57+00:00
+! Version: 2.2.52.15
+! TimeUpdated: 2025-12-14T16:07:49+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2502,6 +2502,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+betten-abc.de##+js(set-cookie, cookie-preference, 1)
+a101.ru##div[class^="_TheCookiesPanel_"]
 creativefabrica.com##footer  ~div.bg-primary-500
 sponsr.ru##div[class^="Cookie_container"]
 peterburg-kino.spb.ru##.notification-container
@@ -12875,7 +12877,7 @@ calvinklein.us,sony.ru,pch.com,sony.com.br,royalmail.com,uber.com##.privacy_prom
 vergleich.org##.legal-note
 mynewsdesk.com###accept-page-cookies
 gethatch.com##.consently-bar
-bwkrankenhaus.de,bmvg.de,bundeswehr.de##.c-privacy-protection-banner
+bmvg.de,bundeswehr.de##.c-privacy-protection-banner
 tiendeo.de,tiendeo.com,tiendeo.com.tr###cookiesModal_bottom
 mammut.com##.mm-cookie-bar
 frohe-zukunft.de##.pn_notebox
@@ -24592,6 +24594,9 @@ inews.co.uk,pinterest.com##+js(set-constant, google.accounts.id.prompt, noopFunc
 !
 ! SECTION: Popups - Regular rules
 !
+www.dmm.co.jp##+js(no-setTimeout-if, this.isOverflowHidden&&(this.ownerDocument.body.style.overflow, 100)
+video.dmm.co.jp###global-dialog:has(a[href*="/welcome-coupon/"]):style(display: none !important;)
+video.dmm.co.jp##.has-\[\#global-dialog\]\:overflow-hidden:has(#global-dialog):style(overflow: auto !important;)
 anamall.ana.co.jp##.tig-archive-embed
 estadao.com.br##.active-miniplayer
 ||api.mindbox.ru/scripts/*/tracker.js$domain=cdek.ru

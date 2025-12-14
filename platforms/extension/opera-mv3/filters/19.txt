@@ -1,9 +1,9 @@
-! Checksum: IQwlamTyLz6C/c5MSuAQBg
-! Diff-Path: ../patches/19/19-s-1765563209-3600.patch
+! Checksum: sHqTNnqFC2wsQIQxSxUg5w
+! Diff-Path: ../patches/19/19-s-1765728636-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.66.95
-! TimeUpdated: 2025-12-12T12:12:33+00:00
+! Version: 2.0.66.96
+! TimeUpdated: 2025-12-14T16:07:55+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3241,6 +3241,9 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+www.dmm.co.jp#%#//scriptlet('prevent-setTimeout', 'this.isOverflowHidden&&(this.ownerDocument.body.style.overflow', '100')
+video.dmm.co.jp#$##global-dialog:has(a[href*="/welcome-coupon/"]) { display: none !important; }
+video.dmm.co.jp#$#.has-\[\#global-dialog\]\:overflow-hidden:has(#global-dialog) { overflow: auto !important; }
 anamall.ana.co.jp##.tig-archive-embed
 m.speedtest.cn#%#//scriptlet('trusted-set-local-storage-item', 'indexPop', '{"time":"20251212","ids":["31","99"]}')
 estadao.com.br##.active-miniplayer
@@ -12143,6 +12146,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+betten-abc.de#%#//scriptlet('trusted-click-element', '.needsclick .needsclick.klaviyo-close-form', '!localStorage:klaviyoOnsite=/disabledForms....R3tbjV/')
 rawstory.com#$#html > body.tp-modal-open { overflow: auto !important; touch-action: auto !important; }
 rawstory.com#$#.tp-modal { display: none !important; }
 rawstory.com#$#.tp-backdrop { display: none !important; }
