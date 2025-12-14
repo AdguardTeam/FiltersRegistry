@@ -1,10 +1,11 @@
-! Checksum: 0LRyiiYf1y1sde/bwb/oTg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1765673533-14400.patch
+! Checksum: 7xFhsa33gQGSfwukfepzDw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1765687587-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.52.85
-! TimeUpdated: 2025-12-14T00:48:22+00:00
+! Version: 2.1.52.86
+! TimeUpdated: 2025-12-14T04:43:03+00:00
 ! Expires: 12 hours (update frequency)
+-facebook-share.
 -facebook-widget.
 -follow-icon-
 -share-bar/$~stylesheet
@@ -72,6 +73,7 @@
 /plugins/sociable/*$~stylesheet
 /plugins/social-media-widget/*$image
 /plugins/sociallocker-next-premium/*
+/plugins/StickySocialBar/js/sharefront.js
 /plugins/subscribe-connect-follow-widget/images/*
 /plugins/ultimate-social-deux/public/assets/js/min/us.script-min.js
 /plugins/ultimate-social-media-plus/*$~stylesheet
@@ -625,6 +627,7 @@ _social-bar/
 ###social_panel
 ###social_pinterest
 ###social_popup
+###social_section
 ###social_share
 ###social_share_wrapper
 ###social_sharing
@@ -782,6 +785,7 @@ _social-bar/
 ##.a-icon-share-twitter
 ##.a-link--facebook
 ##.a-picto-social
+##.a-share
 ##.a-social-btn
 ##.a2a_floating_style
 ##.a2a_vertical_style
@@ -1094,6 +1098,7 @@ _social-bar/
 ##.comments__likes
 ##.common-social
 ##.common-social-link
+##.common_share
 ##.component-social
 ##.connect-with-us
 ##.contenedor_redes_sociales
@@ -1171,6 +1176,7 @@ _social-bar/
 ##.email-share
 ##.email-share-link
 ##.email_share
+##.end-social
 ##.entry-aside-shares
 ##.entry-footer-share
 ##.entry-meta-share
@@ -1221,6 +1227,7 @@ _social-bar/
 ##.facebook-bg
 ##.facebook-block
 ##.facebook-box
+##.facebook-fans
 ##.facebook-follow
 ##.facebook-follow-button
 ##.facebook-footer
@@ -1383,7 +1390,6 @@ _social-bar/
 ##.footer-main-standard-social-list
 ##.footer-main__socials
 ##.footer-nav-social
-##.footer-network-social
 ##.footer-pinterest-icon
 ##.footer-secondary-social
 ##.footer-section-social
@@ -1786,6 +1792,7 @@ _social-bar/
 ##.lf-facebook
 ##.like-fb
 ##.like-share
+##.like-slider
 ##.like_block
 ##.like_block_rendered
 ##.like_buttons
@@ -1855,6 +1862,7 @@ _social-bar/
 ##.mashsb-container
 ##.masterSocialbutton
 ##.masthead-social
+##.materna-shariff
 ##.mc-share-toggle
 ##.md-social-toolbar-circle
 ##.mdi-facebook
@@ -2148,7 +2156,6 @@ _social-bar/
 ##.sb_share
 ##.sc--twitter
 ##.sc-button-share
-##.sc-social
 ##.sc-social-links
 ##.scShareBoxRow
 ##.scShareText
@@ -2685,6 +2692,7 @@ _social-bar/
 ##.site-footer__socials
 ##.site-share-wrapper
 ##.site-social
+##.site-social-icon
 ##.site-social-menu
 ##.sitewide-social-media
 ##.slate-footer__follow-slate
@@ -2847,7 +2855,6 @@ _social-bar/
 ##.social-media-banner
 ##.social-media-bar
 ##.social-media-bar-fixed
-##.social-media-buttons-footer
 ##.social-media-footer
 ##.social-media-header
 ##.social-media-li
@@ -3413,6 +3420,7 @@ _social-bar/
 ##.widget_epcl_social
 ##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook_likebox
+##.widget_fans_widget
 ##.widget_follow_button_widget
 ##.widget_g1_socials
 ##.widget_jnews_social
@@ -3589,6 +3597,7 @@ _social-bar/
 ||flipboard.com/web/buttons/$third-party
 ||friends2follow.com^$subdocument,third-party
 ||fwcdn3.com^$third-party
+||getsocial.io/widget/$third-party
 ||google.com^*/fastbutton?$third-party
 ||gotchosen.com^$third-party
 ||graph.facebook.com/fql?q=SELECT$third-party
@@ -3816,7 +3825,6 @@ cgdirector.com##.cgd-social-wrapper
 goal.com##.component-share
 goal.com##.component-social-twitter
 allafrica.com,dailysignal.com##.connect
-earthsky.org##.connect-2
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
@@ -3876,6 +3884,7 @@ blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,flamboroughtoday.com,griceconnect.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,newmarkettoday.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,vancouverisawesome.com,westernwheel.ca##.ft-social
 mlbtraderumors.com,prohockeyrumors.com##.fv_sharing_round
 news18.com##.gglebtn
+techloy.com,thepickool.com,therage.co,wionews.com##.gh-post-page__share
 ghacks.net##.ghacks_share_widget
 avaaz.org##.global-footer-connect
 cars.com##.global-footer-social-buttons
@@ -3968,6 +3977,7 @@ cointelegraph.com##.post__socials-block
 captainaltcoin.com,celebritycruises.com,digitalreg.net,tomzorg.nl##.post_share
 pravda.com.ua##.post_social_item
 koi.ai##.post_sticky-social
+tweaktown.com##.pr-p7.fsvgs
 atlantablackstar.com##.pre-footer
 lifestyleasia.com##.pre-footer_instagram
 dailymail.co.uk##.prevNextWrapper-1Vg7e
@@ -4082,7 +4092,6 @@ audacy.com##.station-footer__social
 deutschland.de##.sticky-bar
 healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar
-futurity.org##.sticy-share-block
 aetv.com,wccftech.com##.story-share
 wccftech.com##.story-share-bottom
 gadgets360.com##.story_social_share
@@ -4115,6 +4124,7 @@ trueachievements.com##.vc
 apa.org##.vertical-icon-bar
 videogameschronicle.com##.vgc-branding__container > ul
 videogameschronicle.com##.vgc-socialshare
+ms.now##.video-details__social-share-menu
 natlawreview.com##.view-footer
 motorsport.tv##.vjs-icons-bar
 dailymail.co.uk##.vjs-social-controls
@@ -4194,6 +4204,7 @@ heritagedaily.com#?#.tds-button:contains(FOLLOW ON GOOGLE NEWS)
 twitch.tv#?#.tw-balloon:contains(Share To)
 ruwix.com#?#.widget-title:contains(Share this page!)
 archaeologymag.com#?#.widget_custom_html:contains(Follow us)
+ms.now##.wp-block-group p:has(Share this)
 theintercept.com#?#[data-ga-track-action]:contains(Join The Conversation)
 clubic.com#?#[style="position: sticky; top: 55px;"]:contains(Inscrivez-vous à notre newsletter quotidienne !)
 nbcsports.com#?#p.cms-textAlign-center:contains(follow NBC Sports)
