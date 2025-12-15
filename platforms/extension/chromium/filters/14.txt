@@ -1,9 +1,9 @@
-! Checksum: wbBMlr1X2BtWYTO7irGJiQ
-! Diff-Path: ../patches/14/14-s-1765797021-3600.patch
+! Checksum: d/cKsSlPMcjz5zQLiR+7Eg
+! Diff-Path: ../patches/14/14-s-1765805632-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.52.26
-! TimeUpdated: 2025-12-15T11:07:56+00:00
+! Version: 2.2.52.27
+! TimeUpdated: 2025-12-15T13:29:49+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25829,6 +25829,7 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+newsbomb.gr##.sl-page-container > div[id^="widget-"]
 vague.style##.tp-container-inner
 www.dmm.co.jp#%#//scriptlet('prevent-setTimeout', 'this.isOverflowHidden&&(this.ownerDocument.body.style.overflow', '100')
 video.dmm.co.jp#$##global-dialog:has(a[href*="/welcome-coupon/"]) { display: none !important; }
@@ -56454,6 +56455,9 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220003
+fitnessplanss.com#%#//scriptlet('adjust-setTimeout', 'nextpage', '*', '0.001')
+fitnessplanss.com#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219059
 ispazio.net#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218285
