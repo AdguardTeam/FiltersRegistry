@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.81.88",
-			"timeUpdated": "2025-12-14T20:36:17+0000",
+			"version": "2.1.81.89",
+			"timeUpdated": "2025-12-15T00:48:04+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.81.87",
-			"timeUpdated": "2025-12-14T20:36:18+0000",
+			"version": "2.1.81.88",
+			"timeUpdated": "2025-12-15T00:48:07+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1030,8 +1030,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://cdn.jsdelivr.net/gh/hufilter/hufilter@gh-pages/hufilter-adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.4.51",
-			"timeUpdated": "2025-12-11T16:43:45+0000",
+			"version": "2.0.4.52",
+			"timeUpdated": "2025-12-15T00:48:24+0000",
 			"deprecated": false,
 			"languages": [
 				"hu"
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.75.19",
-			"timeUpdated": "2025-12-14T20:37:02+0000",
+			"version": "2.0.75.20",
+			"timeUpdated": "2025-12-15T00:49:01+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1427,8 +1427,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.11.98",
-			"timeUpdated": "2025-12-14T12:45:59+0000",
+			"version": "2.0.11.99",
+			"timeUpdated": "2025-12-15T00:49:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
