@@ -1,9 +1,9 @@
-! Checksum: +Kiu3pM6wkcUJ3NOzDIvRQ
-! Diff-Path: ../patches/237/237-s-1765744805-14400.patch
+! Checksum: nCnAA7M4JAiitGT6/B/SZw
+! Diff-Path: ../patches/237/237-s-1765831347-14400.patch
 ! Title: Polish Annoyances Filters
 ! Description: Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.
-! Version: 1.0.37.25
-! TimeUpdated: 2025-12-14T20:36:50+00:00
+! Version: 1.0.37.26
+! TimeUpdated: 2025-12-15T20:39:05+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 Polskie Filtry Elementów Irytujących
@@ -12,8 +12,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Sun, 14 Dec 2025, 20:33 UTC+01:00
-! OriginalVersion: 2025.12.14.0
+! Last modified: Mon, 15 Dec 2025, 17:17 UTC+00:00
+! OriginalVersion: 2025.12.15.1
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -22,7 +22,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: nie, 14 gru 2025, 20:33 UTC+01:00
+! Aktualizacja: pon, 15 gru 2025, 17:17 UTC+00:00
 !
 !
 ! Newslettery (nie popupy)
@@ -141,7 +141,7 @@ alltronix.pl,morenova.com.pl##.grid__col:has(~ .grid__col .newsletter)
 almania.pl,glossyme.eu##.shb-newsletter-widget-1
 alpinus.eu##.fnls
 alsen.pl,kakto.pl,vezzi.pl,wyspaszkrabow.pl##.box-newsletter-lp
-aluprof.eu##.sidebar a[href="https://aluprof.eu/newsletter"]
+aluprof.eu##.sidebar a[href$="/newsletter"]
 amberexpo.pl##div.slide-out-div:nth-of-type(5) > .handle_fb
 amc.waw.pl##.footer h3:nth-of-type(3)
 amico.market###Newsletter
@@ -540,7 +540,7 @@ elektrostymulatory.net###newsletter-fm
 elektrykapradnietyka.com##a[href="http://elektrykapradnietyka.com/newsletter/"]
 elle.pl,portalzp.pl##.bottom-newsletter
 elnino-parfum.pl##.Subscribe > .Container
-eloblog.pl##a[href="https://eloblog.pl/newsletter/"]
+eloblog.pl##a[href$="/newsletter/"]
 eltrox.pl##.footer > div:first-of-type
 emedyczny.com,emedyczny.pl##.m-footer-1__column--with-newsletter > div:first-child, .js-footer-newsletter
 emedyczny.com,pb.pl,pro-skippers.com,sklep-wadima.pl###NewsletterBox
@@ -682,7 +682,7 @@ gloria24.pl##.tg-info-cookie
 glowackivet.pl##.footernewsl
 gminabiskupiec.pl,swietokrzyskisztetl.pl##ul[class*="menu"] li[id*="menu"] .subskrypcja
 go-market.pl###newsletter-info
-gofin.pl##img[src="https://www.gofin.pl/images/newslettery_gofin_dzial.png"]
+gofin.pl##img[src$="/images/newslettery_gofin_dzial.png"]
 goldbroker.pl,kurasinski.com,piroart.eu##.home-newsletter
 gomobi.pl##.zapiszsiedonewslettera
 goodram.com##footer > div > .row > .col:last-child
@@ -726,7 +726,7 @@ home.pl###nlForm
 homeoffice360.pl###footerColumn2 > h3:nth-of-type(2)
 homla.com.pl##.multichannel-newsletter
 honia.pl,niebieskimigdal.pl##.widget_mc4wp_form_widget.widget
-horecabc.pl##.et_pb_image > a[href="https://www.horecabc.pl/newsletter/"]
+horecabc.pl##.et_pb_image > a[href$="/newsletter/"]
 horecatrends.pl##.dif-2.box-11
 horex.pl##.newsletter__input
 hostovita.pl##.newsletter-signups-dialog
@@ -1603,6 +1603,7 @@ tp-link.com##.tp-follow-subscribe
 tpi.com.pl##.cmn-newsletter
 traktor.com.pl##.footer-top4.col-md-3.col-sm-6.col-12
 traktorpool.pl##div.md\:py-16.p-4.border-t.app\:hidden:nth-of-type(2)
+transcribe.com##footer div[class^="SubscribeForm_wrapper_"]
 traple.pl##footer a[href="/newsletters/"]
 traple.pl##footer h5:has(+ div a[href="/newsletters/"])
 travelplanet.pl##.col-footer-newsletter-block
@@ -4208,7 +4209,6 @@ zzachodu.pl##.in.g5core-back-to-top
 ||back-to-top.appspot.$subdocument
 ###ast-scroll-top:lang(pl)
 ###back-to-top:lang(pl)
-###back-top:not(body, html, .wrapper):lang(pl)
 ###BackToTop:lang(pl)
 ###backToTop:lang(pl)
 ###backtoTop:lang(pl)
@@ -4227,174 +4227,175 @@ zzachodu.pl##.in.g5core-back-to-top
 ###g1-back-to-top:lang(pl)
 ###gantry-totop:lang(pl)
 ###go-to-top:lang(pl)
-###go-top:not(body, html, .wrapper):lang(pl)
-###go_up:not(body, html, .wrapper):lang(pl)
-###goTop:not(body, html, .wrapper):lang(pl)
-###gotop:not(body, html, .wrapper):lang(pl)
 ###GotoTop:lang(pl)
 ###gotoTop:lang(pl)
 ###gototop:lang(pl)
 ###gp-to-top:lang(pl)
-###jm-back-top:not(body, html, .wrapper):lang(pl)
-###js-scrollTop:not(body, html, .wrapper):lang(pl)
-###jsn-gotoplink:not(body, html, .wrapper):lang(pl)
-###link_przewin:not(body, html, .wrapper):lang(pl)
-###m7-go-top:not(body, html, .wrapper):lang(pl)
 ###mkdf-back-to-top:lang(pl)
 ###move-to-top:lang(pl)
-###moveTop:not(body, html, .wrapper):lang(pl)
-###mt-scrollup:not(body, html, .wrapper):lang(pl)
-###np-scrollup:not(body, html, .wrapper):lang(pl)
-###pageUp:not(body, html, .wrapper):lang(pl)
 ###qodef-back-to-top:lang(pl)
 ###return-to-top:lang(pl)
-###return-top:not(body, html, .wrapper):lang(pl)
-###ruby-back-top:not(body, html, .wrapper):lang(pl)
 ###s5_scrolltop_a:lang(pl)
 ###scroll-to-top:lang(pl)
-###scroll-top-link:not(body, html, .wrapper):lang(pl)
-###scroll-top:not(body, html, .page, .wrapper):lang(pl)
-###scroll-top:not(body, html, .wrapper):lang(pl)
-###scroll-up:not(body, html, .wrapper):lang(pl)
-###scroll:not(body, html, .wrapper):lang(pl)
-###scroll_to_top:not(body, html, .wrapper):lang(pl)
-###scroll_top:not(body, html, .wrapper):lang(pl)
 ###scroll_totop:lang(pl)
-###scrollTop:not(body, html, .wrapper):lang(pl)
 ###scrolltopbtn:lang(pl)
 ###scrollToTop:lang(pl)
 ###scrollToTopButton:lang(pl)
-###scrollUp:not(body, html, .wrapper):lang(pl)
-###scrollup:not(body, html, .wrapper):lang(pl)
-###slide_top:not(body, html, .wrapper):lang(pl)
 ###strzalka-w-gore
 ###sttotop:lang(pl)
-###tc-footer-btt-wrapper:not(body, html, .wrapper):lang(pl)
-###to-top:not(body, html, .wrapper):lang(pl)
-###to_top:not(body, html, .wrapper):lang(pl)
-###to_top_scrollup:not(body, html, .wrapper):lang(pl)
-###to_top_wrap:not(body, html, .wrapper):lang(pl)
-###top-link:not(body, html, .wrapper):lang(pl)
-###topcontrol:not(body, html, .wrapper):lang(pl)
-###topLink:not(body, html, .wrapper):lang(pl)
 ###totop:lang(pl)
-###totopicon:not(body, html, .wrapper):lang(pl)
-###toTopNew:not(body, html, .wrapper):lang(pl)
 ###ts-back-to-top:lang(pl)
 ###ui-to-top:lang(pl)
-###uix_jumpToFixed:not(body, html, .wrapper):lang(pl)
-###wpfront-scroll-top-container:not(body, html, .wrapper):lang(pl)
-###wt_scroll_top:not(body, html, .wrapper):lang(pl)
 ###yt-totop:lang(pl)
-##.action-scroll-top:not(body, html, .wrapper):lang(pl)
 ##.arrow-to-top:lang(pl)
-##.arrow-up:not(body, html, .wrapper, .dropdown-menu):lang(pl)
-##.atomsNavigationFooterScroller__link:not(body, html, .wrapper):lang(pl)
 ##.aux-goto-top-btn:lang(pl)
-##.avt-arrow-wrapper:not(body, html, .wrapper):lang(pl)
 ##.back-to-top-btn:lang(pl)
-##.back-to-top-widget:not(body, html, .wrapper):lang(pl)
 ##.back-to-top:lang(pl)
-##.back-top:not(body, html, .wrapper):lang(pl)
-##.back_to_top:not(body, html, .wrapper):lang(pl)
-##.backTop:not(body, html, .wrapper):lang(pl)
 ##.backtopbutton:lang(pl)
 ##.backtotop-btn:lang(pl)
 ##.backToTop:lang(pl)
 ##.backtotop:lang(pl)
-##.bd-backtotop-1:not(body, html, .wrapper):lang(pl)
 ##.btn--move-to-top:lang(pl)
 ##.btn-back-to-top:lang(pl)
 ##.btn-to-top:lang(pl)
 ##.btn-top:lang(pl)
-##.cd-top:not(body, html, .wrapper):lang(pl)
 ##.do-gory
-##.do_gory:not(body, html, .wrapper)
-##.enigma_scrollup:not(body, html, .wrapper):lang(pl)
-##.et_pb_scroll_top:not(body, html, .wrapper):lang(pl)
-##.fixed-up:not(body, html, .wrapper):lang(pl)
 ##.footer-backtotop:lang(pl)
 ##.g1-back-to-top:lang(pl)
 ##.g-totop:lang(pl)
 ##.generate-back-to-top:lang(pl)
-##.go-to-top-ui:not(body, html, .wrapper):lang(pl)
 ##.go-to-top:lang(pl)
-##.go-top:not(body, html, .wrapper):lang(pl)
-##.go-up:not(body, html, .wrapper):lang(pl)
-##.gotop:not(body, html, .wrapper):lang(pl)
 ##.gototop:lang(pl)
-##.gotoup:not(body, html, .wrapper):lang(pl)
 ##.gw-grux-backToTop:lang(pl)
 ##.hestia-scroll-to-top:lang(pl)
 ##.js-back-to-top:lang(pl)
-##.js-go-to:not(body, html, .wrapper):lang(pl)
 ##.jscroll-to-top:lang(pl)
 ##.jump-to-top:lang(pl)
-##.jupiterx-scroll-top:not(body, html, .wrapper):lang(pl)
 ##.kadence-scroll-to-top:lang(pl)
-##.kleo-go-top:not(body, html, .wrapper):lang(pl)
 ##.mh-back-to-top:lang(pl)
-##.mk-go-top:not(body, html, .wrapper):lang(pl)
-##.mypresta_scrollup:not(body, html, .wrapper):lang(pl)
-##.nnc-scroll-top:not(body, html, .wrapper):lang(pl)
-##.penci-go-to-top-floating:not(body, html, .wrapper):lang(pl)
 ##.pk-scroll-to-top:lang(pl)
 ##.przewin-w-gore
-##.return-top:not(body, html, .wrapper):lang(pl)
-##.scroll-back:not(body, html, .wrapper):lang(pl)
 ##.scroll-down:is(a, button):lang(pl)
 ##.scroll-to-top:lang(pl)
 ##.scroll-top-button:lang(pl)
-##.scroll-top-inner:not(body, html, .wrapper):lang(pl)
-##.scroll-top-wrapper:not(body, html, .wrapper):lang(pl)
-##.scroll-top:not(body, html, .wrapper):lang(pl)
 ##.scroll-up:is(a, button):lang(pl)
-##.scroll_to_top:not(body, html, .wrapper):lang(pl)
-##.scroll_top:not(body, header, html, .wrapper):lang(pl)
-##.scrollTo_top:not(body, html, .wrapper):lang(pl)
-##.scrollTop:not(body, header, html, .row, .wrapper):lang(pl)
-##.scrolltop:not(body, header, html, .row, .wrapper):lang(pl)
 ##.scrollToTop:lang(pl)
-##.scrollUp:not(body, html, .wrapper):lang(pl)
 ##.sh-back-to-top:lang(pl)
 ##.slideToTop:lang(pl)
-##.sp-scroll-up:not(body, html, .wrapper):lang(pl)
-##.td-scroll-up:not(body, html, .wrapper):lang(pl)
-##.tm-totop-scroller:not(body, html, .wrapper):lang(pl)
-##.to-top-container:not(body, html, .wrapper):lang(pl)
-##.to-top:not(body, html, .wrapper):lang(pl)
-##.to_top:not(body, html, .wrapper):lang(pl)
 ##.to_top_btn:lang(pl)
 ##.top-bottom-btns > a[id^="btn-back-to-"]:lang(pl)
 ##.top_button:lang(pl)
-##.toTop:not(body, html, .wrapper):lang(pl)
-##.totop:not(body, html, .wrapper):lang(pl)
-##.trx_addons_scroll_to_top:not(body, html, .wrapper):lang(pl)
 ##.ui-to-top:lang(pl)
 ##.up.js-up:lang(pl)
 ##.vue-back-to-top
 ##.vw-scroll-to-top:lang(pl)
-##.vw_m520_topbar:not(body, html, .wrapper):lang(pl)
-##.w-toplink:not(body, html, .wrapper):lang(pl)
 ##.z-navigation-footer_backToTop:lang(pl)
+##body #back-top:not(.wrapper):lang(pl)
+##body #go-top:not(.wrapper):lang(pl)
+##body #go_up:not(.wrapper):lang(pl)
+##body #goTop:not(.wrapper):lang(pl)
+##body #gotop:not(.wrapper):lang(pl)
+##body #jm-back-top:not(.wrapper):lang(pl)
+##body #js-scrollTop:not(.wrapper):lang(pl)
+##body #jsn-gotoplink:not(.wrapper):lang(pl)
+##body #link_przewin:not(.wrapper):lang(pl)
+##body #m7-go-top:not(.wrapper):lang(pl)
+##body #moveTop:not(.wrapper):lang(pl)
+##body #mt-scrollup:not(.wrapper):lang(pl)
+##body #np-scrollup:not(.wrapper):lang(pl)
+##body #pageUp:not(.wrapper):lang(pl)
+##body #return-top:not(.wrapper):lang(pl)
+##body #ruby-back-top:not(.wrapper):lang(pl)
+##body #scroll-top-link:not(.wrapper):lang(pl)
+##body #scroll-top:not(.page, .wrapper):lang(pl)
+##body #scroll-top:not(.wrapper):lang(pl)
+##body #scroll-up:not(.wrapper):lang(pl)
+##body #scroll:not(.wrapper):lang(pl)
+##body #scroll_to_top:not(.wrapper):lang(pl)
+##body #scroll_top:not(.wrapper):lang(pl)
+##body #scrollTop:not(.wrapper):lang(pl)
+##body #scrollUp:not(.wrapper):lang(pl)
+##body #scrollup:not(.wrapper):lang(pl)
+##body #slide_top:not(.wrapper):lang(pl)
+##body #tc-footer-btt-wrapper:not(.wrapper):lang(pl)
+##body #to-top:not(.wrapper):lang(pl)
+##body #to_top:not(.wrapper):lang(pl)
+##body #to_top_scrollup:not(.wrapper):lang(pl)
+##body #to_top_wrap:not(.wrapper):lang(pl)
+##body #top-link:not(.wrapper):lang(pl)
+##body #topcontrol:not(.wrapper):lang(pl)
+##body #topLink:not(.wrapper):lang(pl)
+##body #totopicon:not(.wrapper):lang(pl)
+##body #toTopNew:not(.wrapper):lang(pl)
+##body #uix_jumpToFixed:not(.wrapper):lang(pl)
+##body #wpfront-scroll-top-container:not(.wrapper):lang(pl)
+##body #wt_scroll_top:not(.wrapper):lang(pl)
+##body .action-scroll-top:not(.wrapper):lang(pl)
+##body .arrow-up:not(.wrapper, .dropdown-menu):lang(pl)
+##body .atomsNavigationFooterScroller__link:not(.wrapper):lang(pl)
+##body .avt-arrow-wrapper:not(.wrapper):lang(pl)
+##body .back-to-top-widget:not(.wrapper):lang(pl)
+##body .back-top:not(.wrapper):lang(pl)
+##body .back_to_top:not(.wrapper):lang(pl)
+##body .backTop:not(.wrapper):lang(pl)
+##body .bd-backtotop-1:not(.wrapper):lang(pl)
+##body .cd-top:not(.wrapper):lang(pl)
+##body .do_gory:not(.wrapper)
+##body .enigma_scrollup:not(.wrapper):lang(pl)
+##body .et_pb_scroll_top:not(.wrapper):lang(pl)
+##body .fixed-up:not(.wrapper):lang(pl)
+##body .go-to-top-ui:not(.wrapper):lang(pl)
+##body .go-top:not(.wrapper):lang(pl)
+##body .go-up:not(.wrapper):lang(pl)
+##body .gotop:not(.wrapper):lang(pl)
+##body .gotoup:not(.wrapper):lang(pl)
+##body .js-go-to:not(.wrapper):lang(pl)
+##body .jupiterx-scroll-top:not(.wrapper):lang(pl)
+##body .kleo-go-top:not(.wrapper):lang(pl)
+##body .mk-go-top:not(.wrapper):lang(pl)
+##body .mypresta_scrollup:not(.wrapper):lang(pl)
+##body .nnc-scroll-top:not(.wrapper):lang(pl)
+##body .penci-go-to-top-floating:not(.wrapper):lang(pl)
+##body .return-top:not(.wrapper):lang(pl)
+##body .scroll-back:not(.wrapper):lang(pl)
+##body .scroll-top-inner:not(.wrapper):lang(pl)
+##body .scroll-top-wrapper:not(.wrapper):lang(pl)
+##body .scroll-top:not(.wrapper):lang(pl)
+##body .scroll_to_top:not(.wrapper):lang(pl)
+##body .scroll_top:not(header, .wrapper):lang(pl)
+##body .scrollTo_top:not(.wrapper):lang(pl)
+##body .scrollTop:not(header, .row, .wrapper):lang(pl)
+##body .scrolltop:not(header, .row, .wrapper):lang(pl)
+##body .scrollUp:not(.wrapper):lang(pl)
+##body .sp-scroll-up:not(.wrapper):lang(pl)
+##body .td-scroll-up:not(.wrapper):lang(pl)
+##body .tm-totop-scroller:not(.wrapper):lang(pl)
+##body .to-top-container:not(.wrapper):lang(pl)
+##body .to-top:not(.wrapper):lang(pl)
+##body .to_top:not(.wrapper):lang(pl)
+##body .toTop:not(.wrapper):lang(pl)
+##body .totop:not(.wrapper):lang(pl)
+##body .trx_addons_scroll_to_top:not(.wrapper):lang(pl)
+##body .vw_m520_topbar:not(.wrapper):lang(pl)
+##body .w-toplink:not(.wrapper):lang(pl)
 ##button[onclick="topFunction()"]
 ##button[title="Go to top"]
 ##cwc-to-top-button:lang(pl)
 ##div.up:has(> a.btn[href="#"]:only-child):not(.js-up)
 ##scroll-up:lang(pl)
 ##span[class="scroll scroll-btn"]:lang(pl)
-~deweloper-interes.pl,pl###back_to_top:not(body, html, .wrapper)
-~douglas.pl,pl##.scroll-top:not(body, html, .wrapper)
-~gov.pl###goToTop:not(body, html, .wrapper):lang(pl)
+~deweloper-interes.pl,pl##body #back_to_top:not(.wrapper)
+~douglas.pl,pl##body .scroll-top:not(.wrapper)
+~gov.pl##body #goToTop:not(.wrapper):lang(pl)
 ~ifirma.pl,pl##.dogory:not(body, html)
 ~mediaexpert.pl,~mediamarkt.pl,pl##.scroll-down:is(a, button)
-~naukawpolsce.pl,pl###toTop:not(body, html, .wrapper)
+~naukawpolsce.pl,pl##body #toTop:not(.wrapper)
 ~pl###back_to_top:lang(pl)
 ~pl###backTop:is(a, button):lang(pl)
-~pl###m7-go-top:not(body, html, .wrapper):lang(pl)
-~pl###mt-scrollup:not(body, html, .wrapper):lang(pl)
 ~pl##.scroll-up:is(a, button):lang(pl)
-~pl##.scrollup:not(body, html, .wrapper):lang(pl)
+~pl##body #m7-go-top:not(.wrapper):lang(pl)
+~pl##body #mt-scrollup:not(.wrapper):lang(pl)
+~pl##body .scrollup:not(.wrapper):lang(pl)
 ~sklep.lobos.pl##.to-the-top:lang(pl)
 com,pl###profilki_uparrow
 pl###backTop:is(a, button)
@@ -4670,6 +4671,7 @@ diversesystem.com###app > footer ~ .container
 dlaspania.pl##iframe[id^="mcs_"][src*="chat"]
 dobrefinanse.co.uk##.form-content-btn
 dodomku.pl##.btn-chat-toggle
+dodomku.pl##.contact-info-tel > p + p:has(> a > img[src*="WhatsApp"])
 dolcar.auto.pl,jackvision.pl,mleczarze.pl###jz-callback-icon
 domesta.com.pl##.ask
 domiporta.pl,maxelektro.pl##.chatbot
