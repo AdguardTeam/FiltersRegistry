@@ -1,9 +1,9 @@
-! Checksum: 5EzgX7Jgyi8tB5IJ27B/tw
-! Diff-Path: ../patches/14/14-s-1765739383-3600.patch
+! Checksum: Q/ujjh0i3g0WQH+w8z4N5g
+! Diff-Path: ../patches/14/14-s-1765766870-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.52.18
-! TimeUpdated: 2025-12-14T19:06:27+00:00
+! Version: 2.2.52.19
+! TimeUpdated: 2025-12-15T02:45:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5906,7 +5906,6 @@ law.ed.ac.uk#$#.cookie-backdrop { display: none !important; }
 law.ed.ac.uk#$#.modal-open { overflow: auto !important; }
 ably.com##.ui-cookie-message
 coinbureau.com##div[class*="CookieDiv"]
-comnet.com.tr#%#//scriptlet('set-local-storage-item', 'cookieСonsent', 'true')
 joom.ru##div[class^="disclaimer___"]
 steiledema.boxnow.gr,wero-wallet.eu,globalis.se,dimensione.com#%#//scriptlet('trusted-click-element', 'button#CybotCookiebotDialogBodyButtonDecline')
 thueringer-energienetze.com#%#//scriptlet('trusted-click-element', 'a#CybotCookiebotDialogBodyButtonDecline')
@@ -18065,6 +18064,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220085
+@@||cdn.cookielaw.org/consent/*.json$domain=bostonglobe.com
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=bostonglobe.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219876
 @@||cdn.cookielaw.org/consent/*.json$domain=20min.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219752
@@ -34108,8 +34110,8 @@ sparkchess.com###pushRequest
 krosno24.pl##.sw-notification-container
 avforums.com##.js-enablePushContainer
 ka-news.de##.webpush-layer
-animefire.plus###sub_modal
-animefire.plus###page-mask
+animefire.io,animefire.plus###sub_modal
+animefire.io,animefire.plus###page-mask
 ||trusthalloween.com/?ze=
 iz.ru###p4s-confirm-widget
 mail.ru##body > div[class][style^="top:"][style*="left:"]:has(> div[class] > div[class] > div[class] > button[data-logger="PushSubscribeButton"])
@@ -47554,6 +47556,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+snkrdunk.com##.article-sns-box
 pttavm.com##div[class^="mobileAppBar"]
 audiomack.com##.SinglePageMusicCardInfo-downloadLink
 reddit.com##span[data-part="get-app-btn"]

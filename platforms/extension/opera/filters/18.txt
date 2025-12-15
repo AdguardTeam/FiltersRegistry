@@ -1,9 +1,9 @@
-! Checksum: KTJAPprA4fv9pBAqgI04jg
-! Diff-Path: ../patches/18/18-s-1765739398-3600.patch
+! Checksum: Tiquwvzi2KOXVTPefdfNcw
+! Diff-Path: ../patches/18/18-s-1765766894-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.76.70
-! TimeUpdated: 2025-12-14T19:06:31+00:00
+! Version: 2.0.76.71
+! TimeUpdated: 2025-12-15T02:45:39+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5904,7 +5904,6 @@ law.ed.ac.uk#$#.cookie-backdrop { display: none !important; }
 law.ed.ac.uk#$#.modal-open { overflow: auto !important; }
 ably.com##.ui-cookie-message
 coinbureau.com##div[class*="CookieDiv"]
-comnet.com.tr#%#//scriptlet('set-local-storage-item', 'cookieСonsent', 'true')
 joom.ru##div[class^="disclaimer___"]
 steiledema.boxnow.gr,wero-wallet.eu,globalis.se,dimensione.com#%#//scriptlet('trusted-click-element', 'button#CybotCookiebotDialogBodyButtonDecline')
 thueringer-energienetze.com#%#//scriptlet('trusted-click-element', 'a#CybotCookiebotDialogBodyButtonDecline')
@@ -17973,6 +17972,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220085
+@@||cdn.cookielaw.org/consent/*.json$domain=bostonglobe.com
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=bostonglobe.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219876
 @@||cdn.cookielaw.org/consent/*.json$domain=20min.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219752

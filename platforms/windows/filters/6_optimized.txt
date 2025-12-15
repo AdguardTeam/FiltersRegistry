@@ -1,5 +1,5 @@
-! Checksum: CY7Q+9j+zOONqzRCoGE3zQ
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1765680563-3600.patch
+! Checksum: WmLtFOMLOVQ0A6+/lI2qkQ
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1765766927-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.50.58
@@ -545,6 +545,7 @@ java-forum.org#%#var st = ".sidebar > div.widget-container:first-of-type, .sideb
 news.de#%#window.disablePopUnder = true;
 stern.de#%#//scriptlet("remove-attr", "data-clickcommand", "a")
 chip.de#%#var originalUserAgent = navigator.userAgent; Object.defineProperty(navigator, 'userAgent', { get: function() { return originalUserAgent + ' Edge'; } });
+jpgames.de#$##takeover { padding-top: unset!important; }
 bluray-disc.de#$#.content-wrapper { padding-top: 0px !important; }
 kino.de#$#body.alice-navbar-sticky,body nav[data-position="smart-sticky"] { margin-top: 0px !important; }
 finanzen.net#$#body.page-layout { grid-template-rows: auto !important; }
@@ -953,8 +954,6 @@ kupujemprodajem.com##div[class^="Banner"][class*="_banner"]
 fachinformatiker.de##img[alt*="advertisement"]
 winfuture.de#?#.showitxt > b:contains(Spartipp)
 winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink
-winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink + br
-winfuture.de#?#.showitxt > b:contains(Spartipp) + a.newslink + br + br
 ||api.app.dfbplay.tv/*/Adverts/
 winfuture.de##a[href^="https://winfutu.re"] + br
 gameswirtschaft.de##div.wpb_text_column:has(> div.wpb_wrapper > div.aawp)
@@ -2006,6 +2005,7 @@ finanzen.at,finanzen.ch##.equalheights > .col-md-4.col-xs-12 .dynamic-content
 ffh.de###omsRectangleChannel
 moz.de,lr-online.de,swp.de##.swp-adbox
 wallstreet-online.de##div[id^="sban"]
+holidaycheck.de##div[id^="tad"]
 weser-kurier.de###sebox_764_0
 finanz-tools.de##.sidebar.nur_desktop
 buzer.de##.anz_unten
@@ -2817,7 +2817,6 @@ _woz_banner_vote.
 ##.werbung-box
 ##.werbung-container
 ##.werbung-halfbanner
-##.werbung-inline
 ##.werbung-label
 ##.werbung-leiste
 ##.werbung-rechts
@@ -3811,7 +3810,6 @@ meetingpoint-brandenburg.de###wobra-suche
 raidrush.net###wraptt
 ladies.de###zeiten
 meinestadt.de##.-dfp
-au-ja.de##.ADVBOX
 abzonline.de,agrarzeitung.de,ahgz.at,ahgz.de,coating-converting.de,fibers-in-process.de,finanzfrage.net,fleischwirtschaft.de,food-service.de,fvw.de,gutefrage.net,horizont.net,ma-report.de,packaktuell.ch,packreport.de,praxistipps.focus.de,textiletechnology.net,umweltwirtschaft.com##.Ad
 focus.de##.Ad-Slot
 motor-talk.de##.AdPlacement
@@ -3919,6 +3917,7 @@ heise.de##.article-layout__header-wrbng
 autohaus.de##.article-rectangle-height
 computerbase.de##.article-view__rectangle
 frankenpost.de,insuedthueringen.de,kurier.de,np-coburg.de##.article_nachDerWerbungWeiterlesen-desktop
+itmagazine.ch##.article_rectangle
 prad.de##.asa2_ajax_container
 fitforfun.de##.aside-rectangle
 asscompact.de,hockeyweb.de,scienceblogs.de,tourenfahrer.de,unicum.de,wissen.de,wissenschaft.de##.asm_async_creative
@@ -4006,6 +4005,7 @@ finanznachrichten.de##.c-sban2
 scfreiburg.com,sgf1903.de##.c-sponsors-list
 focus.de##.cad
 focus.de##.cad_native
+1000ps.at##.cadbox
 barrierefreie-immobilie.de,heizsparer.de##.cadheight[style="min-height:600px;"]
 alles-mahlsdorf.de##.category-werbung-kopfzeile
 faktastisch.de##.cca
@@ -4074,6 +4074,7 @@ eintracht.de##.ef-article-card--ad
 eintracht.de##.ef-stadium-ad__banner
 report24.news##.elementor-element-1266dd4
 elektroauto-news.net##.elementor-element-1f0334b
+buongiornosuedtirol.it##.elementor-element-3be5ec6
 report24.news##.elementor-element-41d9f5c
 report24.news##.elementor-element-4330702
 elektroauto-news.net##.elementor-element-5edce23
@@ -4081,6 +4082,7 @@ report24.news##.elementor-element-6b9ddea
 elektroauto-news.net##.elementor-element-6c8f458
 elektroauto-news.net##.elementor-element-8419f6d
 report24.news##.elementor-element-ef8547e
+buongiornosuedtirol.it##.elementor-element-f4432e8
 immobilienscout24.de##.expose-ad-placeholder
 cannabis-medic.eu##.externalURL
 spox.com##.fco-ad
@@ -4211,7 +4213,6 @@ hausgeraete-test.de,heimwerker-test.de,hifitest.de##.mediumRectangle
 fuersie.de,grazia-magazin.de,idee-fuer-mich.de,jolie.de,leben-und-erziehen.de,maedchen.de,ok-magazin.de,petra.de,vital.de##.mediumrectangle
 ligaportal.at##.medrec
 2ertalk.de,android-hilfe.de,grillsportverein.de,hardwareluxx.de,macuser.de,toyota-forum.de,usp-forum.de##.message--post:not([data-author])
-lite-magazin.de##.metaslider
 hallanzeiger.de##.mh-widget.s5214-widget
 autohaus.de##.mid-ad-section
 heise.de##.middle-ad-container
@@ -4922,7 +4923,6 @@ schwulissimo.de##div[class^="news-group__side-"]:has(.news-group-ad-container)
 docmorris.de##div[data-testid="search-grid-product-card-wrapper"]:has(a[data-testid="product-card-sponsored"])
 jungefreiheit.de##div[data-widget_type="shortcode.default"]:has(.adsbygoogle)
 animalcrossingwiki.de##div[style*="repeating-linear-gradient"]:has(> [id$=".de_incontent"])
-onvista.de##div[style="display: flex; width: 100%;"]:has(div[style="border-top: 1px solid rgb(238, 238, 238); padding: 0.25rem 0.25rem 0.75rem; font-size: 0.75rem; line-height: 1.125rem;"])
 techbook.de##div[style="min-width: 300px; min-height: 250px;"]:has(#mrec)
 jungefreiheit.de##div[style="text-align: center;"]:has(.adsbygoogle)
 obi.*##explore-recommendation-v1:has([data-recommendations-title-short="Gesponsert"])

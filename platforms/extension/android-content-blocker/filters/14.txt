@@ -1,8 +1,8 @@
-! Checksum: cGovuR1T6/ukOZn1eaOzvg
+! Checksum: XM2vi7uAQOdh8ZNXTwJmJQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.52.18
-! TimeUpdated: 2025-12-14T19:06:27+00:00
+! Version: 2.2.52.19
+! TimeUpdated: 2025-12-15T02:45:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12157,6 +12157,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220085
+@@||cdn.cookielaw.org/consent/*.json$domain=bostonglobe.com
+@@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=bostonglobe.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219876
 @@||cdn.cookielaw.org/consent/*.json$domain=20min.ch
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219752
@@ -25140,8 +25143,8 @@ sparkchess.com###pushRequest
 krosno24.pl##.sw-notification-container
 avforums.com##.js-enablePushContainer
 ka-news.de##.webpush-layer
-animefire.plus###sub_modal
-animefire.plus###page-mask
+animefire.io,animefire.plus###sub_modal
+animefire.io,animefire.plus###page-mask
 ||trusthalloween.com/?ze=
 iz.ru###p4s-confirm-widget
 miamiherald.com###brzpushpermission
@@ -35380,6 +35383,7 @@ tekstilbank.com.tr,icbc.com.tr,212.109.224.91###mobileAppPanel
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+snkrdunk.com##.article-sns-box
 pttavm.com##div[class^="mobileAppBar"]
 audiomack.com##.SinglePageMusicCardInfo-downloadLink
 reddit.com##span[data-part="get-app-btn"]
