@@ -1,9 +1,9 @@
-! Checksum: LJAzwGXGNNuQonnJ8XS+Aw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1765759881-14400.patch
+! Checksum: DnPTLOr110nX6PSO2wupyw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1765774071-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.52.91
-! TimeUpdated: 2025-12-15T00:48:21+00:00
+! Version: 2.1.52.92
+! TimeUpdated: 2025-12-15T04:45:08+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -216,7 +216,6 @@ _social-bar/
 ###facebookWidget
 ###facebook_container
 ###facebook_like
-###facebook_like_box
 ###facebook_link
 ###facebook_overlay
 ###facebook_share
@@ -247,6 +246,7 @@ _social-bar/
 ###fbshare
 ###fcbk
 ###fdbk_tab
+###float_fb_plugin
 ###floating-share
 ###floatingSocialShare
 ###follow-box
@@ -325,7 +325,6 @@ _social-bar/
 ###js-share-links
 ###large_share_wrapper
 ###left_social_share
-###likeThisPost
 ###linkedin_share
 ###main-social
 ###mainShare
@@ -451,7 +450,6 @@ _social-bar/
 ###shareUrl
 ###share_bar
 ###share_block
-###share_bottom
 ###share_box
 ###share_button
 ###share_buttons
@@ -573,7 +571,6 @@ _social-bar/
 ###social-youtube
 ###social-yt
 ###social2
-###socialBanner
 ###socialBar
 ###socialBookMarks
 ###socialButton
@@ -1251,6 +1248,7 @@ _social-bar/
 ##.facebook_icn
 ##.facebook_icon
 ##.facebook_large
+##.facebook_left
 ##.facebook_like
 ##.facebook_like_box
 ##.facebook_logo
@@ -1301,7 +1299,6 @@ _social-bar/
 ##.fblink
 ##.fbshare
 ##.fbsmallshare
-##.fc-social-media-header
 ##.fe-share
 ##.fi-social-facebook
 ##.fi-social-instagram
@@ -2220,6 +2217,7 @@ _social-bar/
 ##.share-blog
 ##.share-body
 ##.share-bottom
+##.share-box-inner
 ##.share-box-wrapper
 ##.share-btn
 ##.share-btn-container
@@ -2484,6 +2482,7 @@ _social-bar/
 ##.share_con
 ##.share_container
 ##.share_content
+##.share_control
 ##.share_count
 ##.share_cta
 ##.share_digg
@@ -3125,6 +3124,7 @@ _social-bar/
 ##.socializer
 ##.sociallinks
 ##.sociallist
+##.socialmain
 ##.socialmedia-buttons
 ##.socialmedia-container
 ##.socialmedia_link
@@ -3193,8 +3193,6 @@ _social-bar/
 ##.stickysocial
 ##.stm-share
 ##.stm-shareble
-##.stm-socials
-##.stm-socials__icon
 ##.story-share
 ##.story-tool-share
 ##.story__share
@@ -3887,7 +3885,6 @@ mlbtraderumors.com,prohockeyrumors.com##.fv_sharing_round
 news18.com##.gglebtn
 techloy.com,thepickool.com,therage.co,wionews.com##.gh-post-page__share
 ghacks.net##.ghacks_share_widget
-avaaz.org##.global-footer-connect
 cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
 dailyartmagazine.com##.google-feed-row
@@ -4342,7 +4339,6 @@ nu.nl##.app-follow-us
 carwashpro.nl,infrasite.nl,mobiliteit.nl,rijschoolpro.nl,spoorpro.nl,taxipro.nl,zelfrijdendvervoer.nl##.author-links
 geenstijl.nl##.h-11.p-3.border-l.border-slate-300.transition-colors.fill-slate-300.hover\:fill-brand.dark\:fill-black.dark\:hover\:fill-brand.dark\:border-black
 carwashpro.nl,infrasite.nl,mobiliteit.nl,rijschoolpro.nl,spoorpro.nl,taxipro.nl,zelfrijdendvervoer.nl##.menu-social-media-container
-computable.nl##.social-media-sharers-wrap
 vkmag.com##a[onclick*="twitterShare"]
 bright.nl,gpblog.com,voetbalnieuws.nl,voetbalprimeur.nl##div[class^="ShareBlock_"]
 apotti.fi#?#.post-footer:has(> .share)
@@ -4369,7 +4365,6 @@ iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
 laviola.it##.footer__options
-agi.it##.hidden.xlarge\:flex.border-t.border-base-300.pt-2.core.items-center.justify-between
 ilfattoquotidiano.it##.ifq-news-meta__share
 alfredopedulla.com##.ig-banner
 libero.it,virgilio.it##.iol-share-menu
@@ -4408,12 +4403,15 @@ qiita.com##[href^="https://b.hatena.ne.jp/entry/"]
 qiita.com##div[id^="AdventCalendar"] hr ~ div[class^="style-"]:has(> button[class^="style-"][aria-label][title])
 ||imyfone.com/assets/js/media_share/
 ||taishurx.jp/js/web/sns_header.js
+knivesout.jp###Jfacebook
+knivesout.jp###Jtwitter
 srad.jp###article-bottom
 ntv.co.jp###sns
 news.j-wave.co.jp###snsLink
 kakakumag.com##.article-sns-btm
 oricon.co.jp##.block-sub-sns
 kakakumag.com##.hd-sns
+knivesout.jp##.sharetxt
 srad.jp##.synd
 auction.co.kr##.sare-sns
 gazetawroclawska.pl##.atomsArticleFoot__socialMedia
@@ -4453,6 +4451,7 @@ publico.pt##.social-tools
 cnnbrasil.com.br##.social__footer
 tvi.iol.pt##.social_media_links
 meiobit.com##.socialfloating
+colunadofla.com##.socials-counter
 uol.com.br##.solar-header-columnist-socialmedia-content
 tsf.pt##.t-f-bar-apps
 terra.com.br##.t360-sharebar__wrapper
@@ -4538,6 +4537,7 @@ larazon.es##.site-footer__rrss
 eldiario.es,eldiarioar.com##.sn-buttons
 larazon.es##.social-wrapper
 rtve.es##.socialBox
+cyltv.es##.srrss
 cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
 theobjective.com##.tno-share
