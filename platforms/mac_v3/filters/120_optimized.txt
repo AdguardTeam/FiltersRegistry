@@ -1,9 +1,9 @@
-! Checksum: qhKpwuo9PldysvGMb8xJZw
-! Diff-Path: ../patches/120_optimized/120_optimized-s-1765860397-14400.patch
+! Checksum: yQ6WkWq1G9WrkC2vhT+pWA
+! Diff-Path: ../patches/120_optimized/120_optimized-s-1765889374-14400.patch
 ! Title: AdBlockID (Optimized)
 ! Description: Additional filter list for websites in Indonesian.
-! Version: 2.0.27.8
-! TimeUpdated: 2025-12-16T04:42:57+00:00
+! Version: 2.0.27.9
+! TimeUpdated: 2025-12-16T12:45:40+00:00
 ! Expires: 12 hours (update frequency)
 /smartfren/ads.
 -ad123-
@@ -4580,13 +4580,12 @@ mirrorkomik.info##div[id^="teaser"]
 mirrorinkomik.my.id,mirrorkomik.info,mirrorkomik.site##img[alt*="banner" i]
 mirrorinkomik.my.id,mirrorkomik.info,mirrorkomik.site#%#//scriptlet('ubo-aeld', 'contextmenu')
 .gif|$domain=moenime.com
-moenime.com#?#*:matches-css(position: /(fixed|absolute)/):has(:is(a, canvas, img, image, form, [onclick], [href*="base64"]))
+moenime.com#?#*:matches-css(position: relative):matches-css(border-image-source: /url\(/)
 moenime.com#?#*:matches-css(position: /(fixed|absolute|relative)/):matches-css(background-image: /url\(/)
-moenime.com#?#*:matches-css(position: fixed):has(*:matches-css(position: absolute))
-moenime.com#?#*:matches-css(position: fixed):has(*:matches-css(position: relative))
-moenime.com##a[target*="blank"]:has(> img)
 moenime.com#?#*:matches-css(position: fixed):has(*:matches-css(background-image: /url\(/))
+moenime.com#?#*:matches-css(position: fixed):has(*:matches-css(position: /(absolute|relative)/))
 moenime.com#?#*:matches-css(position: fixed):matches-css(background-image: /base64/)
+moenime.com##a[target*="blank"]:has(> img)
 moenime.com##body > svg
 moenime.com#?#form:matches-css(position: fixed)
 moenime.com##.show
