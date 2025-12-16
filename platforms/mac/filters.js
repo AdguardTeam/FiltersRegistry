@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.32.71",
-			"timeUpdated": "2025-12-16T05:09:12+0000",
+			"version": "2.4.32.72",
+			"timeUpdated": "2025-12-16T06:10:53+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.4.41",
-			"timeUpdated": "2025-12-16T04:18:02+0000",
+			"version": "2.1.4.42",
+			"timeUpdated": "2025-12-16T06:11:18+0000",
 			"languages": []
 		},
 		{
