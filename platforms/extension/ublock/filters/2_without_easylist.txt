@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 2tYo2OGJJuhQq3JI24TtTg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1765872852-3600.patch
+! Checksum: EJoiKOBmkdMhIIf4Khltuw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1765876432-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.32.74
-! TimeUpdated: 2025-12-16T08:10:21+00:00
+! Version: 2.4.32.75
+! TimeUpdated: 2025-12-16T09:10:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10420,6 +10420,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220007
+streameast.*##+js(no-setTimeout-if, .offsetHeight === 0)
+streameast.*##body > div > div[style*="position:"][style*="z-index:"][style*="font-family:"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219945
 amanchourasia.in##+js(no-setInterval-if, showAdblockNotice)
 amanchourasia.in##+js(addEventListener-defuser, load, detectAdblock)
@@ -36605,8 +36608,8 @@ youjizz.com###related > div.video-thumb:not([data-videoid])
 notopening.com##.main .alert
 animesuperhero.com##.p-body-sidebar > div.block:has(> div.block-container > div.block-body > div.monumetric-ads)
 animesuperhero.com##.p-body-sidebar > div.block:has(> div.block-container > div.block-body > ins.adsbygoogle)
-ainzscans.net##body > div[style^="width:100%;height:100%;background:"]
-||blogger.googleusercontent.com^$domain=ainzscans.net
+ainzscans01.com,ainzscans.net##body > div[style^="width:100%;height:100%;background:"]
+||blogger.googleusercontent.com^$domain=ainzscans.net|ainzscans01.com
 dafreeporn.com##div[id$="-im-container"]
 xvideos.es,xvideos.com,xv-ru.com##.top-top
 omnicalculator.com##div[data-testid="leaderboard-row"]:empty
