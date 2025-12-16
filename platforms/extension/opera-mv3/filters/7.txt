@@ -1,9 +1,9 @@
-! Checksum: 8MVTKBh0XeFHyJGzXIUplw
-! Diff-Path: ../patches/7/7-s-1765879909-3600.patch
+! Checksum: CPTkpEyPpT/ydZbcRN7P1Q
+! Diff-Path: ../patches/7/7-s-1765891335-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.70.97
-! TimeUpdated: 2025-12-16T10:08:40+00:00
+! Version: 2.0.70.98
+! TimeUpdated: 2025-12-16T13:19:28+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26,6 +26,7 @@
 ! not for DNS
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 !
+||slashdot.jp^$document
 ||js.miyuki-web.net^
 ||girls-escort.tokyo^
 ||ad.zetacx.net^
@@ -1842,9 +1843,9 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
-i2chmeijin.com#?#div[align="center"]:has(> span > font:contains(スポンサーリンク))
-tokyo-np.co.jp#?#div[class^="cmp-"]:has(> h2:contains(【PR】))
-tokyo-np.co.jp##div[class^="cmp-"]:has(> div > ul > li > div[id^="div-gpt-ad-"])
+i2chmeijin.com##div[align="center"]:has(> span[style="color: #333333;"] > font[size="2"])
+tokyo-np.co.jp##.cmp-hdg005:has(+ .cmp-lst001 > div > ul > li > div[id^="div-gpt-ad-"])
+tokyo-np.co.jp##.cmp-lst001:has(> div > ul > li > div[id^="div-gpt-ad-"])
 fukafuka295.jp##.pln-card
 hadasirori.blog.jp##a[href^="https://al.fanza.co.jp"] > img
 mekomeko-club.icu#%#//scriptlet('remove-attr', 'href', '#kk', 'stay')

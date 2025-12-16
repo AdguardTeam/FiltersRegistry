@@ -46,8 +46,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/1.txt",
-			"version": "2.1.3.41",
-			"timeUpdated": "2025-12-15T15:09:43+0000",
+			"version": "2.1.3.42",
+			"timeUpdated": "2025-12-16T13:19:04+0000",
 			"languages": [
 				"ru"
 			]
@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.32.78",
-			"timeUpdated": "2025-12-16T12:12:12+0000",
+			"version": "2.4.32.79",
+			"timeUpdated": "2025-12-16T13:19:15+0000",
 			"languages": []
 		},
 		{
@@ -128,8 +128,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/7.txt",
-			"version": "2.0.70.97",
-			"timeUpdated": "2025-12-16T10:08:40+0000",
+			"version": "2.0.70.98",
+			"timeUpdated": "2025-12-16T13:19:28+0000",
 			"languages": [
 				"ja"
 			]
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.52.40",
-			"timeUpdated": "2025-12-16T12:12:36+0000",
+			"version": "2.2.52.41",
+			"timeUpdated": "2025-12-16T13:19:39+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.4.44",
-			"timeUpdated": "2025-12-16T10:08:55+0000",
+			"version": "2.1.4.45",
+			"timeUpdated": "2025-12-16T13:19:40+0000",
 			"languages": []
 		},
 		{
@@ -348,8 +348,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/22.txt",
-			"version": "2.0.13.14",
-			"timeUpdated": "2025-12-11T11:07:37+0000",
+			"version": "2.0.13.15",
+			"timeUpdated": "2025-12-16T13:19:46+0000",
 			"languages": []
 		},
 		{
@@ -361,8 +361,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/23.txt",
-			"version": "2.0.7.49",
-			"timeUpdated": "2025-12-15T09:12:45+0000",
+			"version": "2.0.7.50",
+			"timeUpdated": "2025-12-16T13:19:47+0000",
 			"languages": [
 				"uk"
 			]
