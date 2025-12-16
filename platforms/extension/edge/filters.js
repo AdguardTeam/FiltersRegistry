@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.32.69",
-			"timeUpdated": "2025-12-16T03:35:15+0000",
+			"version": "2.4.32.70",
+			"timeUpdated": "2025-12-16T04:17:36+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.0.96.73",
-			"timeUpdated": "2025-12-16T03:35:19+0000",
+			"version": "2.0.96.74",
+			"timeUpdated": "2025-12-16T04:17:41+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.61.8",
-			"timeUpdated": "2025-12-15T18:10:33+0000",
+			"version": "2.0.61.9",
+			"timeUpdated": "2025-12-16T04:17:54+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.52.34",
-			"timeUpdated": "2025-12-16T03:35:44+0000",
+			"version": "2.2.52.35",
+			"timeUpdated": "2025-12-16T04:18:01+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.4.40",
-			"timeUpdated": "2025-12-16T02:42:15+0000",
+			"version": "2.1.4.41",
+			"timeUpdated": "2025-12-16T04:18:02+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.7",
-			"timeUpdated": "2025-12-16T02:42:21+0000",
+			"version": "2.0.67.8",
+			"timeUpdated": "2025-12-16T04:18:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -772,8 +772,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/20.txt",
 			"trustLevel": "full",
-			"version": "2.0.25.42",
-			"timeUpdated": "2025-12-16T03:35:51+0000",
+			"version": "2.0.25.43",
+			"timeUpdated": "2025-12-16T04:18:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
