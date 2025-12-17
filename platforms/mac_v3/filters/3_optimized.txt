@@ -1,9 +1,9 @@
-! Checksum: vkka4tr4WtPuWGcqETOZbQ
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1765945146-3600.patch
+! Checksum: 9dGJAz2eIlFdkm1kMoqr5w
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1765962861-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.96.80
-! TimeUpdated: 2025-12-17T04:15:34+00:00
+! Version: 2.0.96.81
+! TimeUpdated: 2025-12-17T09:10:43+00:00
 ! Expires: 12 hours (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -66849,6 +66849,11 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+||chatgpt.com/ces/v1/t$xmlhttprequest,redirect=noopjson
+||chatgpt.com/ces/v1/i^$xmlhttprequest,redirect=noopjson
+||chatgpt.com/ces/v1/p|$xmlhttprequest,redirect=noopjson
+||chatgpt.com/ces/statsc/$xmlhttprequest,redirect=noopjson
+/v1/rgstr?k=client-$xmlhttprequest,redirect=noopjson,domain=chatgpt.com
 ||contents.kyobobook.co.kr/resources/lib/kbb-js/kbb.stats.js
 arte.tv#%#//scriptlet('set-local-storage-item', '/^oidc\./', '$remove$')
 ||full-count.jp/ssc.min.js
