@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.33.4",
-			"timeUpdated": "2025-12-17T14:08:40+0000",
+			"version": "2.4.33.5",
+			"timeUpdated": "2025-12-17T15:08:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.23.2",
-			"timeUpdated": "2025-12-17T11:07:45+0000",
+			"version": "2.1.23.3",
+			"timeUpdated": "2025-12-17T15:08:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.71.3",
-			"timeUpdated": "2025-12-17T11:07:53+0000",
+			"version": "2.0.71.4",
+			"timeUpdated": "2025-12-17T15:08:40+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.52.55",
-			"timeUpdated": "2025-12-17T13:18:27+0000",
+			"version": "2.2.52.56",
+			"timeUpdated": "2025-12-17T15:08:57+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -750,8 +750,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.17",
-			"timeUpdated": "2025-12-17T10:09:08+0000",
+			"version": "2.0.67.18",
+			"timeUpdated": "2025-12-17T15:09:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.39.98",
-			"timeUpdated": "2025-12-17T12:12:47+0000",
+			"version": "2.0.39.99",
+			"timeUpdated": "2025-12-17T15:09:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
