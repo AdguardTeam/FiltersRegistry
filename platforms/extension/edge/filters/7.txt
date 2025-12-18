@@ -1,9 +1,9 @@
-! Checksum: jgyAockXx/2DVWaLotayoQ
-! Diff-Path: ../patches/7/7-s-1765905164-3600.patch
+! Checksum: S9S8jszX4qcZDY/25WbH8A
+! Diff-Path: ../patches/7/7-s-1765984299-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.71.0
-! TimeUpdated: 2025-12-16T17:09:45+00:00
+! Version: 2.0.71.4
+! TimeUpdated: 2025-12-17T15:08:40+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1771,7 +1771,7 @@ _co_jp.*.php$document,domain=cc|com
 /shopping/item/m*/?zenid=$document,domain=cfd|fun|qpon|sale|shop|space|top|xyz
 /mall/*.html?zenid=$document,domain=cfd|fun|qpon|shop|space|top|xyz
 /mart/*.html?zenid=$document,domain=cfd|fun|qpon|shop|space|top|xyz
-/^https?:\/\/([-0-9a-z]{3,}\.)?[a-z]{5,}\.[a-z]{3,7}\/product\/\d{4,}(\.html)?$/$document,domain=baby|blog|bond|cam|casa|fun|homes|online|org|rest|sbs|shop|surf|top|website|yoga
+/^https?:\/\/([-0-9a-z]{3,}\.)?[a-z]{5,}\.[a-z]{3,7}\/product\/\d{4,}(\.html)?$/$document,domain=baby|blog|bond|cam|casa|fun|homes|online|org|rest|sbs|shop|surf|top|website|yoga|~openfoodfacts.org
 /^https:\/\/[a-z]{5,8}\.[a-z]{4,10}\.[a-z]{2,6}\/item\/m\d{10,11}$/$document,domain=shop
 /^https:\/\/(?!www)[a-z]{3,5}\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9A-Za-z]{10}|\d{8})\.html$/$document,match-case,domain=art|autos|baby|best|biz|blog|boats|buzz|cards|cc|cfd|click|cloud|club|cyou|eu|fit|fun|guru|hair|homes|info|ink|lat|life|live|lol|me|mom|my|one|online|pics|qpon|quest|rest|sale|sbs|shop|site|skin|space|store|today|top|wiki|work|world|xyz
 /^https?:\/\/(?!www)[a-z]{3,5}\.[0-9a-z]{4,10}\.[a-z]{2,6}\/[0-9a-z]{3,15}\/(?=[a-z]{0,9}[0-9A-Z])[0-9A-z]{10}\.html$/$document,match-case,domain=art|autos|baby|best|biz|blog|boats|buzz|cards|cc|cfd|click|cloud|club|cyou|eu|fit|fun|guru|hair|homes|info|ink|lat|life|live|lol|me|mom|my|one|online|pics|qpon|quest|rest|sale|sbs|shop|site|skin|space|store|today|top|wiki|work|world|xyz|~livedoor.biz|~livedoor.blog
@@ -1852,6 +1852,14 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+news.tv-asahi.co.jp#$#body.articles .con:has(.main-container) { min-height: auto !important; }
+news.denfaminicogamer.jp##.steam
+news.denfaminicogamer.jp##.articleList > li:has(> aside.steam)
+news.denfaminicogamer.jp##div[id^="endfield_"]
+news.denfaminicogamer.jp##div[id^="bpsr_"]
+news.denfaminicogamer.jp##body > aside[id^="tj"]
+news.denfaminicogamer.jp###subColumn > aside.drc
+u-rennai.jp##.summary_list_box > .items:has(> a[onclick^="ga('send', 'event',"])
 i2chmeijin.com##div[align="center"]:has(> span[style="color: #333333;"] > font[size="2"])
 tokyo-np.co.jp##.cmp-hdg005:has(+ .cmp-lst001 > div > ul > li > div[id^="div-gpt-ad-"])
 tokyo-np.co.jp##.cmp-lst001:has(> div > ul > li > div[id^="div-gpt-ad-"])

@@ -1,8 +1,8 @@
-! Checksum: lK0c3xqpIOprE7kCr8mQVw
+! Checksum: zAD6MrhciM6uM9v7ZEJoTw
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.96.76
-! TimeUpdated: 2025-12-16T15:09:02+00:00
+! Version: 2.0.96.85
+! TimeUpdated: 2025-12-17T22:07:47+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -47121,6 +47121,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||mp.imgur.com^
 ||a.apkeditor.io^
 ||log.goodnovel.com^
 ||d2qxmykuaro8s3.cloudfront.net^
@@ -66772,6 +66773,7 @@ zjjz6lpv44aguszo.cloud.s11.sfmc-osl.com$image
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
 !
+/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-contact-form-
 /web-vitals-tracker.js
 /.rum/@adobe/helix-
 ://sp.*/sp/h|$xmlhttprequest
@@ -67551,6 +67553,12 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||chatgpt.com/ces/v1/t$xmlhttprequest,redirect=noopjson
+||chatgpt.com/ces/v1/i^$xmlhttprequest,redirect=noopjson
+||chatgpt.com/ces/v1/p|$xmlhttprequest,redirect=noopjson
+||chatgpt.com/ces/statsc/$xmlhttprequest,redirect=noopjson
+/v1/rgstr?k=client-$xmlhttprequest,redirect=noopjson,domain=chatgpt.com
+||contents.kyobobook.co.kr/resources/lib/kbb-js/kbb.stats.js
 arte.tv#%#//scriptlet('set-local-storage-item', '/^oidc\./', '$remove$')
 ||full-count.jp/ssc.min.js
 ||d.line-scdn.net/n/line_tag/$domain=full-count.jp
@@ -70977,7 +70985,6 @@ semprotyuk.com##div[style^="margin-bottom:150px;"][style*="padding-right:2em;"]
 ||nature.com/platform/track/
 ||static.hankyung.com/js/ga/googleTagManager.js
 ||hankyung.com/resource/js/w/view.gtmet.js
-||discord.com/api/v*/science
 ||fensi.plus/*/tracking/
 ||tvid.in/log/
 ||intersc.igaming-service.io/hltv.org.js
@@ -72612,6 +72619,7 @@ dreamprogs.net##td[width="88"][height="31"]
 ||google.com/log?$redirect=nooptext
 ||yandex.ru/clck/click|
 !
+||discord.com/api/v*/science
 /^https:\/\/www\.purevpn\.[a-z]+\/[a-z0-9]{7}\/$/$script
 ||cfm.kt.com/js/adobe/staticsLogcodeLaunch.js
 kt.com#%#//scriptlet('set-constant', 'KT_trackClicks', 'noopFunc')
@@ -73549,6 +73557,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Bad:  ||example.com^$cookie=flat_r_mb (should be in cookies_specific.txt)
 !
 !
+! Galaksion
+$cookie=GL_UI4
+$cookie=GL_GI10
 ! baixafilmestorrent.com
 $cookie=adb_saas
 ! tagContainer (commandersact.com)
@@ -74389,6 +74400,11 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220298
+||agoda.com^$cookie=agoda.analytics
+||agoda.com^$cookie=agoda.firstclicks
+||agoda.com^$cookie=agoda.lastclicks
+||agoda.com^$cookie=t_rc
 ! aws.amazon.com
 ||amazon.com^$cookie=aws-target-data
 ||amazon.com^$cookie=aws-target-session-id
@@ -76604,8 +76620,9 @@ d4?appid*type*
 @@||cdn.cxense.com/cx*.js$domain=onetz.de
 @@||cdn.cxense.com/sp*.html$domain=onetz.de
 @@||api.cxense.com/public/widget/data?json=$domain=onetz.de
+! https://github.com/uBlockOrigin/uAssets/issues/16086#issuecomment-3655830578
 ! https://github.com/easylist/easylist/pull/7880/
-@@||dev.visualwebsiteoptimizer.com^$script,xmlhttprequest,domain=dominos.jp
+@@||dev.visualwebsiteoptimizer.com^$script,xmlhttprequest,domain=dominos.jp|dominos.com.my|dominos.com.sg|dominoslk.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215786
 @@||googletagmanager.com/gtm.js$domain=sferis.pl
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215834
@@ -80562,6 +80579,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||alikeaddition.com^
 ||aliveachiever.com^
 ||alloutdubstep.com^
+||allsunflowers.com^
 ||alltypo.com^
 ||alluringbucket.com^
 ||almondbuns.com^
@@ -80678,6 +80696,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||blissfullagoon.com^
 ||blitzcampaigns.com^
 ||blockdial.com^
+||bloomsend.com^
 ||blueeyedblow.com^
 ||bluenest.net^
 ||bluevinebooks.com^
@@ -80741,6 +80760,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||butterburst.com^
 ||buttonladybug.com^
 ||buzzaoutlet.com^
+||buzzfry.com^
 ||cafefrench.com^
 ||cafescampfires.com^
 ||cakeagenda.com^
@@ -80857,6 +80877,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||confesschairs.com^
 ||confidencetalks.com^
 ||configchain.com^
+||configcontrol.com^
 ||confirmglobal.com^
 ||confusedcart.com^
 ||connectashelf.com^
@@ -81427,6 +81448,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||jubilantwhisper.com^
 ||juicebard.com^
 ||juiceblocks.com^
+||juicingoasis.com^
 ||justconfig.com^
 ||justicejudo.com^
 ||justpickaname.com^
@@ -81886,6 +81908,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||rememberdiscussion.com^
 ||remixslot.com^
 ||rentinfinity.com^
+||rentpenny.com^
 ||repeatsweater.com^
 ||replaceroute.com^
 ||rescuerhino.com^

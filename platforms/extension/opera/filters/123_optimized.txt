@@ -1,9 +1,9 @@
-! Checksum: DwhANy7JB0w3hAIo65BSAw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1765903575-14400.patch
+! Checksum: AD6hjxTQDelhE54rCzy1wg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1766004128-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.53.1
-! TimeUpdated: 2025-12-16T16:42:59+00:00
+! Version: 2.1.53.8
+! TimeUpdated: 2025-12-17T20:38:39+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -205,6 +205,7 @@ _social-bar/
 ###facebook-likebox
 ###facebook-link
 ###facebook-share
+###facebook-social-wrapper
 ###facebook-widget
 ###facebookFan
 ###facebookIcon
@@ -219,6 +220,7 @@ _social-bar/
 ###facebook_overlay
 ###facebook_share
 ###facebookbtn
+###facebookjs
 ###facebooklike
 ###facebooklikebox-2
 ###facebookpopup-fan-exit
@@ -309,7 +311,6 @@ _social-bar/
 ###headersocial
 ###hshare
 ###iNavSocial
-###ic_footer_share-wrapper
 ###iconSocialFacebook
 ###iconSocialTwitter
 ###iconSocialYoutube
@@ -318,6 +319,7 @@ _social-bar/
 ###instagram-link
 ###instlogo
 ###js-Social-Share-0
+###js-Social-Share-1
 ###js-SocialWidget-Container
 ###js-Stay-Connected-Container-0
 ###js-Stay-Connected-Container-2
@@ -443,6 +445,7 @@ _social-bar/
 ###shareStrip
 ###shareTab
 ###shareTags
+###shareThis
 ###shareToolBottom
 ###shareTop
 ###shareTxt
@@ -494,6 +497,7 @@ _social-bar/
 ###sharing-buttons
 ###sharing-column
 ###sharing-floater
+###sharing-icons
 ###sharing-options
 ###sharing-sidebar
 ###sharingBlock
@@ -642,7 +646,7 @@ _social-bar/
 ###socialbox
 ###socialbuttons
 ###socialbuttonsbox
-###socialemail
+###socialdiv
 ###socialfooter
 ###socialicons
 ###socialleft
@@ -1351,6 +1355,7 @@ _social-bar/
 ##.follow-us-on-twitter
 ##.follow-us-panel
 ##.follow-us-twitter
+##.follow-us-txt
 ##.follow-us-wrapper
 ##.follow-widget
 ##.followSocial
@@ -1901,6 +1906,7 @@ _social-bar/
 ##.meta-share-wrapper
 ##.meta-shares
 ##.meta__share
+##.meta__shares
 ##.meta__social
 ##.mh-share-button
 ##.mh-share-buttons
@@ -2168,6 +2174,7 @@ _social-bar/
 ##.sc_sns
 ##.scriptlesssocialsharing
 ##.scroll-triggered-box
+##.sd-share-icon
 ##.sd-sharing
 ##.sd-social
 ##.sd-social-icon-text
@@ -2300,6 +2307,7 @@ _social-bar/
 ##.share-kit__twitter
 ##.share-kit__youtube
 ##.share-label
+##.share-label-text
 ##.share-launch
 ##.share-left
 ##.share-line
@@ -2337,6 +2345,7 @@ _social-bar/
 ##.share-pinterest-icon
 ##.share-platform
 ##.share-popup
+##.share-popups-component
 ##.share-post
 ##.share-post-box
 ##.share-reddit
@@ -2681,6 +2690,7 @@ _social-bar/
 ##.single-post-social
 ##.single-share
 ##.single-share-bar
+##.single-share-pinterest
 ##.single-sharing-btns
 ##.single-sidebar-share
 ##.single-social-button
@@ -3309,7 +3319,6 @@ _social-bar/
 ##.twitter-footer
 ##.twitter-hashtag
 ##.twitter-inner
-##.twitter-popup
 ##.twitter-share
 ##.twitter-share-btn
 ##.twitter-share-button
@@ -3338,7 +3347,6 @@ _social-bar/
 ##.twitter_widget
 ##.twitterbtn
 ##.twitterbutton
-##.twitterfeed
 ##.twitterfollow
 ##.twitterjo
 ##.twitterpage
@@ -3429,6 +3437,7 @@ _social-bar/
 ##.widget_fans_widget
 ##.widget_follow_button_widget
 ##.widget_g1_socials
+##.widget_heateor_sssp_follow
 ##.widget_jnews_social
 ##.widget_mkd_social_icon_widget
 ##.widget_novashare_follow_widget
@@ -3628,6 +3637,7 @@ _social-bar/
 ||platform.twitter.com/anywhere.js$third-party
 ||platform.twitter.com/embed/$~stylesheet,~subdocument,third-party
 ||platform.twitter.com/js/button.$third-party
+||po.st/share/$script
 ||po.st/static/$third-party
 ||reddit.com/api/info.json?$third-party
 ||reddit.com/static/$third-party
@@ -3796,6 +3806,7 @@ military.com##.block--addtoanyadv
 csis.org##.block--social-sharing
 crash.net,ttnews.com##.block-better-social-sharing-buttons
 tastesbetterfromscratch.com##.block-follow-me
+iowagirleats.com,simplifylivelove.com,therecipecritic.com##.block-pinterest-cta
 studyfinds.org##.block-social-share
 carnewschina.com##.block_social_media__content
 crowdstrike.com##.blog_main_navigation_top
@@ -3859,7 +3870,6 @@ abajournal.com,buddytv.com,comingsoon.net,elektronista.dk,gospelway.com,gpforums
 dailymail.co.uk##.fbmessenger
 eadaily.com##.feed
 lubuntu.me##.ff-social-icon
-indiatoday.in##.fixedshared
 testbook.com##.fl-social
 health.clevelandclinic.org##.flex.gap-rem24px
 dailymail.co.uk##.flipboard
@@ -3871,7 +3881,6 @@ sportskeeda.com##.follow-action
 thedirect.com##.follow-bar
 thehackernews.com##.follow-box
 carscoops.com##.follow-carscoops-container
-arabnews.com##.follow-field
 metoffice.gov.uk##.follow-icons
 windowsreport.com##.follow-more-news
 metro.co.uk##.follow-promo
@@ -3896,9 +3905,10 @@ techloy.com,thepickool.com,therage.co,wionews.com##.gh-post-page__share
 ghacks.net##.ghacks_share_widget
 cars.com##.global-footer-social-buttons
 oneindia.com##.goog-one-news
-dailyartmagazine.com##.google-feed-row
 alarabiya.net##.google-news-callout
 cybernews.com,sammobile.com##.google-news-cta
+9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,spaceexplored.com##.google-preferred-source-badge
+restofworld.org##.google-preferred-v1
 gadgets360.com##.gsocialbar
 atlanticcouncil.org##.gta-hover-share-container
 gmanetwork.com##.hdr-social-links
@@ -3943,6 +3953,7 @@ consumerfinance.gov##.m-social-media
 insideevs.com,motor1.uol.com.br##.m1-article-meta_share
 morningstar.com##.mdc-social-share
 amazon.jobs##.media-icons
+theshovel.com.au##.menu-social-menu-container
 arabnews.com##.meta-area
 smashingmagazine.com##.meta-box--share
 businessinsider.com##.mi-logo-social-container
@@ -4091,13 +4102,12 @@ unn.ua##.social_root__H2cRW
 outlookindia.com##.social_sharing_article
 videocardz.com##.socialbar-sidebar
 firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.socials
-arabnews.com##.socials-btns
 overclock3d.net##.socials-container
-phys.org##.socials-wrapper
 douglasnow.com##.spc-social-follow
 cryptonews.com##.ssk
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
 audacy.com##.station-footer__social
+vnexpress.net##.sticky
 deutschland.de##.sticky-bar
 healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar
@@ -4149,6 +4159,7 @@ destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
 comicbook.com,hyperallergic.com,reneweconomy.com.au,vice.com##.wp-block-jetpack-sharing-buttons
 publichealthpolicyjournal.com,theonion.com##.wp-block-outermost-social-sharing
 techcrunch.com##.wp-block-techcrunch-social-share
+aspicyperspective.com,budgetbytes.com,butterwithasideofbread.com,downshiftology.com,handletheheat.com,therecipecritic.com##.wprm-call-to-action
 firstpost.com##.yt-ch
 blog.youtube##.yt-social__list
 nypost.com##.zephrModal
@@ -4294,7 +4305,6 @@ finanznachrichten.de##.article--footer
 n-tv.de##.article__share-wrapper
 welt.de##.c-social-bar
 kurier.at##.coral-comment-shareButton
-auf1.tv##.flex.flex-row.w-80.justify-between.border-l-4.px-2.border-primary
 nn.de,nordbayern.de##.icon__social
 kicker.de##.kick__article__social
 muenchen.de##.m-social-link

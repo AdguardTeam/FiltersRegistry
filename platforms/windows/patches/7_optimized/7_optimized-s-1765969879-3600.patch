@@ -1,0 +1,62 @@
+d1 2
+a2 2
+! Checksum: sGCkYjqn4PXiVQEJ+DI/2Q
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1765984327-3600.patch
+d5 2
+a6 2
+! Version: 2.0.71.4
+! TimeUpdated: 2025-12-17T15:08:40+00:00
+d1374 45
+a1418 46
+/^https?:\/\/(?:j[ap]|qq)\d{4,8}\.[a-z]{6,8}\.[a-z]{2,8}\//$document,to=agency|art|asia|auction|bar|beauty|beer|best|biz|bond|business|cam|cards|casa|click|cloud|coupons|digital|diy|fashion|food|forum|gay|guru|hair|info|life|live|living|link|ltd|my|ooo|property|pw|rocks|run|sbs|shop|skin|store|studio|tattoo|tech|today|top|uno|work,match-case
+://*.*.cn/jp^$document,to=cn
+-or-jp.net/$document,to=net
+.com/co.jp/|$document,to=com
+/?stage=verify$to=mobi
+://vpass-jp.$to=biz|sbs|top
+/app/auth_login|$document,to=bond|sbs
+/?_encoding=UTF8&openid.assoc_handle=jpflex&openid.claimed_id=&action=sign-in&path=home&ref_=nav_Account&signIn=1&useRedirectOnSuccess=1|$document,to=cn|com
+/memberservice/login|$document,to=sbs|xyz
+_co_jp.*.php$document,to=cc|com
+/ap/sign.php?authenticated=true&openid%2Fgp%2Fsignin%2Fx%26i%3Da%26oauth%3Dm%26i%3Fie%3DUTF8%26ref_%3Drhf_custrec_signin^$document,to=best|cn|top
+&p=*&_mi|$document,to=top
+/signin/index.php?*&openid_return_to=https%3A%2F%2Fwww.amazon.co.jp$document,to=sbs|top|xyz
+/signim/index.php?*&openid_return_to=https%3A%2F%2Fwww.amazon.co.jp$document,to=cn|com|sbs|top|xyz
+://visa-*/pay-with-featured/$document,to=cn|com
+://eki-*.*/Perosnal_member/$document,to=cn|com
+.co.jp.*.*/$document,to=cn|cyou|help|icu|link|sbs
+-co-jp-*.*/$document,to=cfd|com|sbs|site
+-co-jp.*.*/$document,to=cfd|com|sbs|site
+://smbc.$document,to=cn|com|top
+://smbccard*.$document,to=club
+://smdc-$document,to=cn|fit|pl
+://smbc-$document,to=club|cn|fit|help|homes|lat|link|mom|my|pics|shop|top|work
+/funccode.php|$document,to=cfd|xyz
+.jp%*@*/$document,to=cn|com
+.com%*@*/$document,to=cn|com
+|http://t-*/cz/$document,to=monster|online|space
+/ja/payment/|$document,to=co.in|co.za
+://www.eki-net.*.com/$document,to=~eki-net.com
+://eki-net-*.*/Perosnal_member/$document,to=cn|net
+/\/all\/login\.php\?([0-9a-f]{32})=\1$/$document,match-case,to=com
+/\/t_([0-9A-Za-z]{32})\?token=\1/$document,to=cloud|cn|com|net|top|vip
+/?Rfunccode=*&nextfunc=$document,to=cn|com|top
+/brand/detail/m*.html?zenid=$document,to=cfd|fun|qpon|shop|space|top|xyz
+/shopping/item/m*/?zenid=$document,to=cfd|fun|qpon|sale|shop|space|top|xyz
+/mall/*.html?zenid=$document,to=cfd|fun|qpon|shop|space|top|xyz
+/mart/*.html?zenid=$document,to=cfd|fun|qpon|shop|space|top|xyz
+/^https?:\/\/([-0-9a-z]{3,}\.)?[a-z]{5,}\.[a-z]{3,7}\/product\/\d{4,}(\.html)?$/$document,to=baby|blog|bond|cam|casa|fun|homes|online|org|rest|sbs|shop|surf|top|website|yoga|~openfoodfacts.org
+/^https:\/\/[a-z]{5,8}\.[a-z]{4,10}\.[a-z]{2,6}\/item\/m\d{10,11}$/$document,to=shop
+/?AC=*&IC=$document,to=com|fun|online|site
+.asp?AC=*&IC=$document,to=com|fun|online|site
+/ap/signin/openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.co.jp$document,to=cn|top|xyz
+/index.php?route=product/product&product_id=$document,to=cyou|life|live|shop|xyz|~ocam.live
+/index.php?main_page=product_info*&cPath=$document,to=asia|baby|bar|beauty|best|biz|blog|bond|buzz|cam|casa|cfd|click|cloud|club|cyou|fashion|fit|forum|fun|gay|homes|icu|info|ink|lat|life|live|ltd|makeup|me|mom|monster|my|one|online|pics|pro|qpon|quest|rent|rest|ru.com|run|sa.com|sale|sbs|shop|site|skin|space|store|team|tokyo|top|website|wiki|work|xyz|yachts|yoga|za.com
+/index.php?main_page=product_info&products_id=$document,to=asia|baby|bar|beauty|best|biz|blog|bond|buzz|cam|casa|cfd|click|cloud|club|cyou|fashion|fit|forum|fun|gay|homes|icu|info|ink|lat|life|live|ltd|makeup|me|mom|monster|my|one|online|pics|pro|qpon|quest|rent|rest|ru.com|run|sa.com|sale|sbs|shop|site|skin|space|store|team|tokyo|top|website|wiki|work|xyz|yachts|yoga|za.com
+/\.(?:club|cn|icu|top|pro|site|work)\/Personal\/member\/Login\/index\.php\?oneTimeAccessID=/$document,to=club|cn|icu|top|pro|site|work
+d1446 1
+a1446 1
+news.tv-asahi.co.jp#$#body.articles .con:has(.main-container) { min-height: auto !important; }
+d1453 1
+a1453 1
+u-rennai.jp##.summary_list_box > .items:has(> a[onclick^="ga('send', 'event',"])
