@@ -1,9 +1,9 @@
-! Checksum: 2JQy9QdGr5XD+2Oihe+dzg
-! Diff-Path: ../patches/14/14-s-1766034740-3600.patch
+! Checksum: f5fsNR2Us+JjaHFiBkJulA
+! Diff-Path: ../patches/14/14-s-1766041947-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.52.63
-! TimeUpdated: 2025-12-18T05:09:13+00:00
+! Version: 2.2.52.64
+! TimeUpdated: 2025-12-18T07:09:51+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2556,6 +2556,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+audi.*#%#//scriptlet('trusted-click-element', '.ensButtons > button#ensSave', '', '2000')
 gronkh.tv#%#//scriptlet('set-local-storage-item', 'grnk-cookies-accepted', 'false')
 glasfaser-ruhr.de#%#//scriptlet('trusted-click-element', 'div[consent-skip-blocker="1"] div[class*="-ext-"] > a[href="#"]:not([id])', '!cookie:/real_cookie_banner-v/, containsText:Weiter ohne Einwilligung')
 eliveshop.de#%#//scriptlet('trusted-click-element', 'body, #cc--main button.c-bn.c_link', '!cookie:cc_cookie')
@@ -10552,7 +10553,7 @@ iospirit.com##.gdpr-consent-guard-cookie-notice
 tynker.com##cookie-settings
 sila.by,livecamcroatia.com,skynet.ru,sknt.ru##.cookies_wrap
 ev-digitalinvest.de,invesdor.de###dsgvo-cookie-configurator
-ale.pl,alpinstore.com###acb-banner
+iodormo.shop,ale.pl,alpinstore.com###acb-banner
 audiolibrix.com,synodalerweg.de,volksbund.de,fairtrade-deutschland.de,esef-manager.eu,ebilanzonline.de,bundesanzeiger-verlag.de,bistumlimburg.de,bistum-essen.de###cc
 migros.com.tr,tazedirekt.com,macrocenter.com.tr##fe-product-cookie-indicator
 wokularach.pl##aside[data-test-id="cookie-popup"]
@@ -11528,7 +11529,6 @@ team.blue,continental.com#$#body { overflow: auto !important; }
 team.blue,continental.com#$#.js-cookie-consent { display: none !important; }
 ausbildung-schluesselregion.de###bn-cookie
 koenigsbrunn.de,hemhofen.de,mitteldithmarschen.de###privacy-container
-audi-boerse.de,audi.*,audi##.ensPrivacyManager
 rosenberger.com##.z7cmbnr
 blunt-therapy.com#?#.elementor-popup-modal:has(> div[class] div.elementor-button-wrapper > a[href$="/privacy"])
 ||ihk.de/assets/js/klaro-no-css.js
@@ -34844,6 +34844,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+windowscentral.com###article-body > div[class^="mb-6"] > div[class]:has(> p[class^="infoDisclaimer"] > a[href^="https://www.google.com/preferences/source?q="])
 linktr.ee##div[data-testid="SignupCta"]
 gonnawantseconds.com#%#//scriptlet('trusted-set-local-storage-item', 'ck/forms/modal/2d1077ce8b/hideUntil', '2765924414124')
 thesoccermomblog.com#%#//scriptlet('set-cookie', 'bswp-display-7811', '1')
