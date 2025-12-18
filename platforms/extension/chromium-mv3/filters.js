@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.82.6",
-			"timeUpdated": "2025-12-17T20:38:25+0000",
+			"version": "2.1.82.7",
+			"timeUpdated": "2025-12-18T00:47:51+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.82.5",
-			"timeUpdated": "2025-12-17T20:38:27+0000",
+			"version": "2.1.82.6",
+			"timeUpdated": "2025-12-18T00:47:52+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.27.16",
-			"timeUpdated": "2025-12-17T20:38:31+0000",
+			"version": "2.0.27.17",
+			"timeUpdated": "2025-12-18T00:47:57+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1055,8 +1055,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.5.31",
-			"timeUpdated": "2025-12-17T12:45:54+0000",
+			"version": "2.1.5.32",
+			"timeUpdated": "2025-12-18T00:48:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.75.37",
-			"timeUpdated": "2025-12-17T20:39:10+0000",
+			"version": "2.0.75.38",
+			"timeUpdated": "2025-12-18T00:48:37+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1427,8 +1427,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.12.4",
-			"timeUpdated": "2025-12-17T12:46:23+0000",
+			"version": "2.0.12.5",
+			"timeUpdated": "2025-12-18T00:48:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
