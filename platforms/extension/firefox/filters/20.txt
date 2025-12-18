@@ -1,9 +1,9 @@
-! Checksum: tm2zsxH3D3l3+hBDd4+Evw
-! Diff-Path: ../patches/20/20-s-1766052862-3600.patch
+! Checksum: g5Xa96DwOnpm8T0SUMLBtg
+! Diff-Path: ../patches/20/20-s-1766060130-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.25.50
-! TimeUpdated: 2025-12-18T10:11:33+00:00
+! Version: 2.0.25.51
+! TimeUpdated: 2025-12-18T12:12:35+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -60,6 +60,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+qms.ru###pwa-prompt
 reddit.com##span[data-part="get-app-btn"]
 bmwc.marv.jp###footer_badge-fixed
 agoda.com##div[class]:has(> div[data-element-test="prominent-app-download-popover"])
@@ -3857,6 +3858,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+perplexity.ai#$#body > div[data-type="portal"]:has(> div a[href^="https://perplexity.sng.link/"][href*="&_ios_dl"][href*="&_android_dl"]) { display: none !important; }
+perplexity.ai#%#//scriptlet('prevent-addEventListener', '/wheel|touchmove/', 'current.noIsolation')
 m.baidu.com##.diversion-waterfall-b
 nishinippon.co.jp##article > .grid > .grid[data-nosnippet="true"]:has(> a[href^="https://app.adjust.com/"])
 arte.tv##header[role="banner"] a[href="https://arte.app.link/header-dl"]
