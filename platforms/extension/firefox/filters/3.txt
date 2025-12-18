@@ -1,9 +1,9 @@
-! Checksum: M5sGHNO61Brs2B9+UmSlFA
-! Diff-Path: ../patches/3/3-s-1766009455-3600.patch
+! Checksum: 6MVrgl+nnfkeEGed3Mcqjw
+! Diff-Path: ../patches/3/3-s-1766034722-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.96.85
-! TimeUpdated: 2025-12-17T22:07:47+00:00
+! Version: 2.0.96.86
+! TimeUpdated: 2025-12-18T05:08:55+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -47117,6 +47117,9 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||ingress.linktr.ee^
+||browser-fp.production.linktr.ee^
+||app-performance.music.amazon.dev^
 ||mp.imgur.com^
 ||a.apkeditor.io^
 ||log.goodnovel.com^
@@ -67548,6 +67551,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+||letu.ru/api/rrs/v*/analytics
+||api-statist.tinkoff.ru/gateway/v*/events
+||assets.production.linktr.ee/cep/
 ||chatgpt.com/ces/v1/t$xmlhttprequest,redirect=noopjson
 ||chatgpt.com/ces/v1/i^$xmlhttprequest,redirect=noopjson
 ||chatgpt.com/ces/v1/p|$xmlhttprequest,redirect=noopjson
@@ -72844,6 +72850,8 @@ line.my.salesforce.com%2Fservlet%2Fservlet.ImageServer%3Foid=*%26esid=$image
 ! nextdoor.com
 flask.us.nextdoor.com$image
 ! c.groovehq.com
+i.groovehq.com/*@groovehq.com.gif$image
+i.groovehq.com%2F*%40groovehq.com.gif$image
 c.groovehq.com/*.gif$image
 c.groovehq.com%2F*.gif$image
 ! Yandex
