@@ -1,9 +1,9 @@
-! Checksum: zV11rJdCF68DT6+bey/u3g
-! Diff-Path: ../patches/14/14-s-1766142644-3600.patch
+! Checksum: AjBKjwDR2+CWTaNU17WZwg
+! Diff-Path: ../patches/14/14-s-1766146485-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.52.80
-! TimeUpdated: 2025-12-19T11:07:51+00:00
+! Version: 2.2.52.81
+! TimeUpdated: 2025-12-19T12:11:46+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4925,7 +4925,6 @@ leeds.ac.uk###cookie-control-prompt
 wyspaszkrabow.pl,zadowolenie.pl#$#body { overflow: auto !important; }
 wyspaszkrabow.pl,zadowolenie.pl#$#.cookie-message { display: none !important; }
 wyspaszkrabow.pl,abel-falisse.be,zadowolenie.pl#$#.modal-backdrop { display: none !important; }
-united-camera.at#%#//scriptlet('set-cookie-reload', 'cookie-preference', '1')
 orange.jobs#%#//scriptlet('trusted-click-element', '.js-consent-all-submit')
 iberiaexpress.com#%#//scriptlet('trusted-click-element', '#rejectCookiesTerms')
 rts.ch#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-deny-all-button"]')
@@ -17734,7 +17733,7 @@ correosexpress.com#%#//scriptlet('set-cookie', 'msg_cookie_CEX', 'true')
 litebit.eu#%#//scriptlet('set-cookie', 'userAcceptedMarketingCookies', 'true')
 coding.ms#%#//scriptlet('set-cookie', 'cookieRequestDisabled', '1')
 videogameschronicle.com#%#(function(){-1===document.cookie.indexOf("CookieControl")&&(document.cookie='CookieControl={"necessaryCookies":["wordpress_*","wordpress_logged_in_*","CookieControl"],"optionalCookies":{"functional_cookies":"accepted"}}')})();
-axro.com,moses-verlag.de,radonline.de,arctic.de#%#//scriptlet('set-cookie-reload', 'cookie-preference', '1')
+uni-polster.de,united-camera.at,axro.com,moses-verlag.de,radonline.de,arctic.de#%#//scriptlet('set-cookie-reload', 'cookie-preference', '1')
 constantin-film.de#%#//scriptlet("set-constant", "cookieLayer", "undefined")
 thgss.com#%#//scriptlet("set-cookie", "acceptUsingCookies", "yes")
 tv5unis.ca#%#//scriptlet('set-cookie', 'tv5-hide-cookies-notification', 'true')
@@ -17993,6 +17992,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/219955
+@@||istoreil.co.il/min/?f=*/gdpr.js$domain=istoreil.co.il
 ! https://github.com/uBlockOrigin/uAssets/issues/31162
 hanos.nl#@##cookieModal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220085
@@ -25733,6 +25734,7 @@ aol.com#$#.ad__tile { height: 10px!important; position: absolute!important; left
 /cmp/cmp.*.js
 /cmp/cmp.js
 !
+||js.flashyapp.com^$third-party
 ||static.groobee.io^
 ||sdk.postscript.io^$third-party
 ||cdn.wheelio-app.com^$third-party
@@ -34759,6 +34761,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+onvista.de##.newsletter-button img[src*="newsletter"]
 boulderreportinglab.org##.newspack-popup-container
 ecosoft.ua##.blog-subscribe-holder
 techlore.tech#$#.single-cta-wrapper { display: none !important }
@@ -61573,6 +61576,7 @@ istories.media##div[class^="MaterialDonationBanner-module--"]
 codastory.com##.article-support
 boykot.co#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'lastClosed')
 holod.media##.a-donate
+holod.media##.js-a-donate-toggle
 istories.media##div[class^="DonationsModalTimer-"]
 ncronline.org##.region-main-top
 stlpr.org###nonintrusive-donate-ask
