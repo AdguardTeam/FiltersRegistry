@@ -1,8 +1,8 @@
-! Checksum: lVzO9KQel/7s3mgUpx2DPA
+! Checksum: S1S9ARH4NUcMJr+DFF+EIQ
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.70
-! TimeUpdated: 2025-12-19T08:10:07+00:00
+! Version: 2.0.12.71
+! TimeUpdated: 2025-12-19T11:07:55+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -19,6 +19,7 @@
 ! Good: $removeparam=utm_id
 ! Bad:  $removeparam=utm_id,domain=example.org (for instance, should be in specific.txt)
 !
+! NOTE: Generic rules
 !
 ! Winfluencer
 $removeparam=winflncrtag
@@ -430,11 +431,18 @@ $removeparam=fb_comment_id
 $removeparam=fb_ref
 $removeparam=fb_source
 !
+! ###########################################################################################################################
+! ##################### Generic rules with exclusions for the MV3 extensions ################################################
+! ###########################################################################################################################
+! It's needed for the MV3 extensions - exceptions like `@@*$removeparam` do not work
+! TODO: Remove this section and revert to the original rules if this https://github.com/w3c/webextensions/issues/783 is fixed
+! SECTION: Generic rules with exclusions for the MV3 extensions
 !
-! NOTE: Generic rules with exclusions for the MV3 extensions
-! That's needed for the MV3 extensions - https://github.com/w3c/webextensions/issues/783
-! TODO: Remove this section and revert to the original rules if the task above is fixed
 !
+! Move original rules to this directive if you can confirm the problem
+!
+! NOTE: Generic rules with exclusions for the MV3 extensions ⬆️
+! !SECTION: Generic rules with exclusions for the MV3 extensions
 !
 !---------------------------------------------------------------------------!
 !-------------- Specific web sites -----------------------------------------!
