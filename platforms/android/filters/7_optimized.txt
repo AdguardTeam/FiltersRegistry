@@ -1,9 +1,9 @@
-! Checksum: tAkbMkj+cR7FQZnxqjwFqw
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1766088638-3600.patch
+! Checksum: WTd7miOByvnVeGkETSULbg
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1766121102-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.71.11
-! TimeUpdated: 2025-12-18T20:08:02+00:00
+! Version: 2.0.71.12
+! TimeUpdated: 2025-12-19T05:09:01+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||slashdot.jp^$document
@@ -797,6 +797,7 @@ kyukyoku-matome.com##.widget_pc_ad
 ##.js-kb-click
 ##.kyujin-jobs-container
 ##.logly-lift-ad-ad
+##.lol-error-page__ad
 ##.master-post-advert
 ##.my_ads
 ##.p-entry__ad
@@ -1410,7 +1411,8 @@ _co_jp.*.php$document,to=cc|com
 /shopping/item/m*/?zenid=$document,to=cfd|fun|qpon|sale|shop|space|top|xyz
 /mall/*.html?zenid=$document,to=cfd|fun|qpon|shop|space|top|xyz
 /mart/*.html?zenid=$document,to=cfd|fun|qpon|shop|space|top|xyz
-/^https?:\/\/([-0-9a-z]{3,}\.)?[a-z]{5,}\.[a-z]{3,7}\/product\/\d{4,}(\.html)?$/$document,to=baby|blog|bond|cam|casa|fun|homes|online|org|rest|sbs|shop|surf|top|website|yoga|~openfoodfacts.org
+/^https?:\/\/(?:[-0-9a-z]{3,}\.)?[a-z]{5,}\.[a-z]{3,7}\/product\/\d{4,7}(\.html)?$/$document,to=baby|blog|bond|cam|casa|fun|homes|online|rest|sbs|shop|surf|top|website|yoga
+/^https?:\/\/(?:[-0-9a-z]{4,}\.)?[a-z]{5,}\.org\/product\/\d{4,7}(\.html)?$/$document,to=~openfoodfacts.org
 /^https:\/\/[a-z]{5,8}\.[a-z]{4,10}\.[a-z]{2,6}\/item\/m\d{10,11}$/$document,to=shop
 /?AC=*&IC=$document,to=com|fun|online|site
 .asp?AC=*&IC=$document,to=com|fun|online|site
@@ -1446,6 +1448,7 @@ city.iwakura.aichi.jp,city.gose.nara.jp,city.inazawa.aichi.jp,city.kawasaki.jp,c
 city.shiroishi.miyagi.jp,city.motomiya.lg.jp,city.sanyo-onoda.lg.jp,pref.hiroshima.lg.jp,city.fukuyama.hiroshima.jp,city.niiza.lg.jp,city.kure.lg.jp,city.hatsukaichi.hiroshima.jp,city.ebetsu.hokkaido.jp,city.shunan.lg.jp,city.tondabayashi.lg.jp,city.miki.lg.jp,city.ozu.ehime.jp,city.toda.saitama.jp,city.ageo.lg.jp,pref.fukushima.lg.jp,pref.okayama.jp,city.oyama.tochigi.jp,city.kimitsu.lg.jp,city.ishikari.hokkaido.jp,city.minamiawaji.hyogo.jp,city.yamaguchi.lg.jp###banner_footer1
 okashimart.com###js-advertisingHeader
 gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
+||lolipop.jp/img/bnr/bnr_lolipop_ad_
 narakko.jp##.jobbox_wrap
 hominis.media##.side-menu-pickup
 hominis.media##.side-menu-banner

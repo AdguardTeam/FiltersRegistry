@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: YME+S1DFAefvYBpStjgCwA
-! Diff-Path: ../patches/7/7-s-1766088659-3600.patch
+! Checksum: cxP7zdENkol2zs0Uajo0Cg
+! Diff-Path: ../patches/7/7-s-1766121125-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.71.11
-! TimeUpdated: 2025-12-18T20:08:02+00:00
+! Version: 2.0.71.12
+! TimeUpdated: 2025-12-19T05:09:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -961,6 +961,7 @@ kyukyoku-matome.com##.widget_pc_ad
 ##.js-kb-click
 ##.kyujin-jobs-container
 ##.logly-lift-ad-ad
+##.lol-error-page__ad
 ##.master-post-advert
 ##.my_ads
 ##.p-entry__ad
@@ -1775,7 +1776,8 @@ _co_jp.*.php$document,to=cc|com
 /shopping/item/m*/?zenid=$document,to=cfd|fun|qpon|sale|shop|space|top|xyz
 /mall/*.html?zenid=$document,to=cfd|fun|qpon|shop|space|top|xyz
 /mart/*.html?zenid=$document,to=cfd|fun|qpon|shop|space|top|xyz
-/^https?:\/\/([-0-9a-z]{3,}\.)?[a-z]{5,}\.[a-z]{3,7}\/product\/\d{4,}(\.html)?$/$document,to=baby|blog|bond|cam|casa|fun|homes|online|org|rest|sbs|shop|surf|top|website|yoga|~openfoodfacts.org
+/^https?:\/\/(?:[-0-9a-z]{3,}\.)?[a-z]{5,}\.[a-z]{3,7}\/product\/\d{4,7}(\.html)?$/$document,to=baby|blog|bond|cam|casa|fun|homes|online|rest|sbs|shop|surf|top|website|yoga
+/^https?:\/\/(?:[-0-9a-z]{4,}\.)?[a-z]{5,}\.org\/product\/\d{4,7}(\.html)?$/$document,to=~openfoodfacts.org
 /^https:\/\/[a-z]{5,8}\.[a-z]{4,10}\.[a-z]{2,6}\/item\/m\d{10,11}$/$document,to=shop
 /?AC=*&IC=$document,to=com|fun|online|site
 .asp?AC=*&IC=$document,to=com|fun|online|site
@@ -1856,6 +1858,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+||lolipop.jp/img/bnr/bnr_lolipop_ad_
 narakko.jp##.jobbox_wrap
 hominis.media##.side-menu-pickup
 hominis.media##.side-menu-banner

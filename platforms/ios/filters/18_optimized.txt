@@ -1,9 +1,9 @@
-! Checksum: ppUC2tj1N5sSRT8kDtKrHA
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1766112252-3600.patch
+! Checksum: qIBwTUC5jqPWwKXPfEGuQA
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1766121126-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.77.1
-! TimeUpdated: 2025-12-19T01:36:36+00:00
+! Version: 2.0.77.2
+! TimeUpdated: 2025-12-19T05:09:24+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -4703,7 +4703,7 @@ aastocks.com###CookiePolicyMessage
 pornone.com##.cbann
 ||consent.radiotimes.com^
 otomiinsatu.com,organoid.farm,jivo.ru,e-kinopodbaranami.pl##div[class*="cookie-consent"]
-teket.jp#%#//scriptlet('trusted-set-cookie', '_ul_cookie_consent', 'allow')
+teket.jp#%#//scriptlet('set-cookie', '_ul_cookie_consent', 'allow')
 nperf.com#%#//scriptlet('trusted-click-element', '.content > div.buttonAcceptContainer > div.buttonAccept')
 ehealth.gov.gr#%#//scriptlet('set-cookie', 'cookieconsent_status', '1')
 zvuk.com##div[class^="AcceptCookiePolicy_fixedWrapper"]
@@ -8261,8 +8261,6 @@ ajc.com#%#//scriptlet('remove-class', 'tp-body-scroll-prevented', 'body')
 cimri.com#%#//scriptlet('set-cookie', 'CimriCookiePolicy', '1')
 !+ PLATFORM(ios)
 cimri.com##div[class^="CookiePolicy_"]
-!+ PLATFORM(ext_ublock, ios, ext_android_cb)
-teket.jp##div[aria-label="cookieconsent"]
 belsta.ua#$##cookies-panel { display: none !important; }
 belsta.ua#$#.backdrop { display: none !important; }
 belsta.ua#$#body { overflow: auto !important; height: unset !important; }
