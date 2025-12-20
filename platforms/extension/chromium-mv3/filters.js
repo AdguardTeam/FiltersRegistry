@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.82.21",
-			"timeUpdated": "2025-12-20T08:39:08+0000",
+			"version": "2.1.82.22",
+			"timeUpdated": "2025-12-20T12:44:57+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.82.20",
-			"timeUpdated": "2025-12-20T08:39:09+0000",
+			"version": "2.1.82.21",
+			"timeUpdated": "2025-12-20T12:44:58+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.27.27",
-			"timeUpdated": "2025-12-20T04:40:04+0000",
+			"version": "2.0.27.28",
+			"timeUpdated": "2025-12-20T12:45:04+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1055,8 +1055,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.5.35",
-			"timeUpdated": "2025-12-20T00:48:16+0000",
+			"version": "2.1.5.36",
+			"timeUpdated": "2025-12-20T12:45:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.75.52",
-			"timeUpdated": "2025-12-20T08:40:00+0000",
+			"version": "2.0.75.53",
+			"timeUpdated": "2025-12-20T12:45:43+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
