@@ -1,5 +1,5 @@
-! Checksum: lquc2fmp/2PXylqFUrZKcQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1766205802-14400.patch
+! Checksum: Prm5jwSGRSu//j69glp2IQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1766292405-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.59
@@ -328,7 +328,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||192.3.110.170^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||totalwebshield.com^$all
-||protected.net^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||91.241.19.38^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -833,6 +832,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||93.93.51.223^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||livejasmin.com/*&origin=$document
+/^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 ||redirect2url.com^$all,domain=~malware_redirection_trains.*,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||103.174.102.240^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
@@ -845,7 +845,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||38.180.96.244^$all
 ||aysesuretobea.com^$all
-||ratiotyuknsye.pics^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||34.195.224.242^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1377,6 +1376,7 @@ www.tumblr.com#?#div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a
 ||109.206.181.2^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||109.206.191.198^$all
+||rtbrenab.net^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||178.63.5.120^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1412,7 +1412,6 @@ drvhub.net##.driver-item__install
 ||adzreach.com^$all
 ||asdfix.com^$all
 ||bonusdeal.ink^$all
-||bonusgaf.com^$all
 ||bonusnun.com^$all
 ||flirtio.club^$all
 ||games-win.com^$all
@@ -1777,6 +1776,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ~line.me##a[href*="/lineit/share?"]
 ~linkedin.com##.addthis_button_linkedin:not(html,body,:empty)
 ~linkedin.com##.linkedin_share:not(html,body,:empty)
+~linkedin.com##.linkedinShare:not(html,body,:empty)
 ~linkedin.com##.share-linkedin:not(html,body,:empty)
 ~linkedin.com##a[href*="linkedin.com/cws/share?"]
 ~linkedin.com##a[href*="linkedin.com/shareArticle?"]
@@ -2121,6 +2121,7 @@ fandom.com##nav.is-community-bar-in .mobile-global-navigation__community-bar
 fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow', 'false')
 /particles.min.js^
+/images/event/*_christmas/bg_menu_*.gif^
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
 /css/very-special-particle-snow
@@ -2134,6 +2135,7 @@ alpresor.se#%#//scriptlet('ubo-acis', 'snowMax')
 /snow.js|$script
 /wp-content/plugins/christmasify^
 /wp-content/plugins/snow-3d^
+###snowflakes
 daz3d.ru#%#//scriptlet('ubo-set-constant', 'snow', 'undefined')
 /jquery.snow.js
 /let-it-snow.
@@ -3314,6 +3316,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||bilibili.com^$removeparam=seid
 ||bilibili.com^$removeparam=spm_id_from
 ||bilibili.com^$removeparam=unique_k
+||bilibili.com^$removeparam=refer_from
 ||bilibili.com^$removeparam=msource
 ||bilibili.com/bangumi$removeparam=theme
 ||bilibili.com/audio/au*?$removeparam=type
@@ -3624,9 +3627,9 @@ $document,removeparam=refresh,domain=cnn.com|startribune.com
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=rec,domain=argos.co.uk|roboform.com
 $removeparam=clickPR,domain=argos.co.uk
-$removeparam=clickCSR,domain=argos.co.uk
 $removeparam=nvid,domain=nvidia.com
 $removeparam=ico,domain=dailymail.co.uk|inews.co.uk|metro.co.uk|thisismoney.co.uk
+$removeparam=/^cid=DSS-Search-.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 $removeparam=/^cid=DTCI-Synergy.*$/,domain=disneyplus.com|espn.com|hotstar.com|starplus.com
 ||mercadolibre.com.ar^$removeparam=pdp_filters
 $removeparam=cxt,domain=twitter.com|x.com
@@ -3747,7 +3750,6 @@ $removeparam=_1lr
 $removeparam=ymid
 $removeparam=via,domain=sincode.ai|skillshare.com|thedailybeast.com
 $removeparam=ad_sub,domain=homo.xxx
-ref=troyhunt.com$document,removeparam=ref
 ||disneyplus.com^$removeparam=distributionPartner
 ||homedepot.com^$removeparam=fromReminder
 $removeparam=embeds_referring_euri
@@ -3846,6 +3848,7 @@ $document,removeparam=af_xp
 ||login.yahoo.com^$document,removeparam=.src
 ||login.yahoo.com^$document,removeparam=pspid
 ||login.yahoo.com^$document,removeparam=activity
+$removeparam=cgkit_search_word
 !+ NOT_OPTIMIZED
 ||abcnyheter.no^$removeparam=nr
 ||qzone.qq.com^$document,removeparam=loginfrom
@@ -3921,7 +3924,6 @@ ref=dtf.ru$document,removeparam=ref
 ||substack.com^$removeparam=triedRedirect
 ||firefox.com^$removeparam=redirect_source
 $removeparam=source,domain=search.brave.com|search.brave4u7jddbv7cyviptqjc7jusxh72uik7zt6adtckl5f4nwy2v72qd.onion
-$removeparam=/^ref=dailydev$/
 ||downloads.sourceforge.net^$removeparam=r
 ||snapchat.com^$removeparam=share_id
 ||hepsiburada.com^$removeparam=ftid
