@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: q4f5OJktIYgUbBMlqdDSjQ
-! Diff-Path: ../patches/14/14-s-1766347830-3600.patch
+! Checksum: 28s4AjHhMYvaJoVAvAywrA
+! Diff-Path: ../patches/14/14-s-1766358625-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.52.97
-! TimeUpdated: 2025-12-21T20:07:50+00:00
+! Version: 2.2.52.98
+! TimeUpdated: 2025-12-21T23:07:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2503,6 +2503,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+morele.net###cookie-consent:style(display: none !important;)
+morele.net##body:style(overflow: auto !important;)
 bundeswehr.de###PrivacyProtectionBanner
 tunemymusic.com##div[class^="CookieConsent-"]
 homary.com##.cookie-policy-modal
@@ -16858,6 +16860,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220625
+spusu.at#@#.cookie-banner:not(body):not(html)
+spusu.at#@#.cookie-header
+! https://github.com/AdguardTeam/AdguardFilters/issues/220761
+morele.net#@##cookie-consent
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219955
 @@||istoreil.co.il/min/?f=*/gdpr.js$domain=istoreil.co.il
 ! https://github.com/uBlockOrigin/uAssets/issues/31162
