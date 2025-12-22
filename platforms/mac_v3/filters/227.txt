@@ -1,9 +1,9 @@
-! Checksum: VFUZo8onDAZ2RGRHSmX9YQ
-! Diff-Path: ../patches/227/227-s-1766349608-14400.patch
+! Checksum: UX4GA/usC5epMRmJ9p10yA
+! Diff-Path: ../patches/227/227-s-1766436051-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.56
-! TimeUpdated: 2025-12-21T20:36:57+00:00
+! Version: 2.0.23.57
+! TimeUpdated: 2025-12-22T20:37:37+00:00
 ! Expires: 12 hours (update frequency)
 !
 ||digitalcamp.co.kr^$third-party
@@ -3684,6 +3684,7 @@ m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 !
+maple.gg#%#//scriptlet('set-cookie', 'hideFrontPagePopup', 'true')
 enuri.com#%#//scriptlet('set-constant', 'getPowerLink', 'noopFunc')
 heye.kr#%#//scriptlet('prevent-window-open', 'pandalive.co.kr/evt/')
 newneek.co#%#//scriptlet('prevent-xhr', 'api-v2.adrop.io/request')

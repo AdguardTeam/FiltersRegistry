@@ -1,15 +1,15 @@
 ![Adblock Plus 2.0]
-! Checksum: 76TQBdrVcRi9J/LJn5GNsg
-! Diff-Path: ../patches/249/249-s-1764348190-14400.patch
+! Checksum: 6DJFSe2X7iMmLhJyypmRIQ
+! Diff-Path: ../patches/249/249-s-1766436042-14400.patch
 ! Title: Dandelion Sprout's Nordic Filters
 ! Description: This list covers websites for Norway, Denmark, Iceland, Danish territories, and the Sami indigenous population.
-! Version: 2.0.8.37
-! TimeUpdated: 2025-11-28T16:39:43+00:00
+! Version: 2.0.8.38
+! TimeUpdated: 2025-12-22T20:37:52+00:00
 ! Expires: 5 days (update frequency)
 !
-! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider (for AdGuard)
+! Title: 🏔️ Dandelion Sprouts nordiske filtre for ryddigere nettsider
 ! Title 🇬🇧: Dandelion Sprout's Nordic filters for tidier websites (for AdGuard)
-! Last modified: 27November2025v1
+! Last modified: 12December2025v2
 ! Expires: 18 hours
 ! Lisens / Licence: https://github.com/DandelionSprout/adfilt/blob/master/LICENSE.md
 ! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md
@@ -142,7 +142,6 @@ xstra.no##.td-fix-index
 tek.no##main > section > section:contains(/^an{2}onse$/)
 madensverden.dk##.maden-after-content
 indkast.dk##.site_ad_container
-torg.fo##.add
 f7.no##.td-loader-gif
 nakenprat.com##+js(aopr, document.dispatchEvent)
 gaffa.no##.ad-continues-txt
@@ -411,6 +410,7 @@ eyjar.net##div[style^="width:100%;max-width:390px;"]
 nordjyske.dk##.ad-unit--body-wide
 aftenbladet.no##.article-content:style(padding:0)
 rorfag.no##.anonse
+tvkampen.com,tvsporten.dk##a.rt-channel-link[href*="/go?link="]
 kanalfrederikshavn.dk###c888
 onlinenytt.com##.textwidget > p
 viralefilmer.no##.td_mod_wrap
@@ -1236,6 +1236,9 @@ ipmsnorge.org##.col-md-3 .block:contains(ponsor)
 travelmarket.no##.pages-container__element:has([class*=banner])
 vg.no,www-vg-no.translate.goog##.finn-blink-loaded
 fotbolti.net##div[id^=banner]
+bold.dk##.wrapper-banner
+bold.dk##.integration-wrapper
+bold.dk##.mobile-ad-wrapper
 budstikka.no##.bazaar
 xn--bodposten-n8a.no,ranaposten.no##.widget_links
 itavisen.no##.fifth-article-ad
@@ -1377,6 +1380,16 @@ akureyri.net###banner
 handkastid.net##.brz-wp-shortcode
 handkastid.net##div[id^=handk-]
 pixel.tv##._banner_container
+seoghoer.dk##.bg-grey-200 .bg-grey-200:has(div[data-type=ad])
+seoghoer.dk##div[data-layout=single]:has(div[data-placeholder^=readpeak])
+seoghoer.dk##div[data-layout=single]:has(div[data-type=ad]):not(:has(article))
+seniornews.dk##.seniornews-after-header-ad
+seniornews.dk##div[class^=bottom-billboard]
+billedbladet.dk##.mb-40:has(> div[data-type=ad])
+billedbladet.dk##.mb-20:has(> div[data-type=ad])
+billedbladet.dk##.mb-20:has(> * > div[data-type=ad])
+billedbladet.dk##section[data-aller-type] + div:not([class]):has(> * > div[data-type=ad])
+ni.dk##div[style]:not([id],[class]):has(div[id*=gpt])
 ! — — — — — — — — — — — — — — — — —
 ! 🇳🇴：Oppføringer for minst 3 nettsteder
 ! 🇬🇧：Entries for at least 3 websites
@@ -1611,6 +1624,10 @@ _visittkortannonse_$image
 .is/wp-content/uploads/*1018x360$image
 ! btDK (25/10/2025)
 ||s3-bm-adtech.$3p
+! seoghoerDK (01/12/2025)
+/aller-ads$domain=~seiska.fi
+! boldDK (12/12/2025)
+||be.contimo.app^$3p
 ! — — — — —
 ! 🇳🇴：Domenefokuserte blokkeringsoppføringer
 ! 🇳🇴🏞：Domenefokuserande bloknadsoppføringar
@@ -1886,6 +1903,9 @@ _1170x400.$domain=eyjafrettir.is,image,~3p
 ||vf.is/media/*1170x360$image
 ||vf.is/banners^
 ||pixel.tv/wp-content/uploads/202*-300x300-$image
+||bold.dk/_nuxtv3/n*banner$script,stylesheet
+||tv-kalundborg.b-cdn.net//system_files/banner^
+||dagens.dk/wp-content/themes/mgdk-master/pricerunner-widget.php^
 ! — — — — — — —
 ! 🇳🇴：Filtjener- eller nettstedsspesifikke oppføringer med kilder
 ! 🇳🇴🏞：Filtenar- eller nettstadsspesifikke oppføringar med kildar
@@ -2284,6 +2304,12 @@ fo##.vev
 ! effektivtlandbrug•landbrug•net (Mobil(e), 03/11/2025)
 ##.banner--topscroll:not(html,body,:empty)
 ##.lm-banner:not(html,body,:empty)
+! https://nordlysid•fo/tidindi (29/11/2025)
+##.adgroup--component--take-over:not(html,body,:empty)
+! boligaDK (07/12/2025)
+##app-admanager-banner:not(html,body,:empty)
+! https://www•billedbladet•dk/kendte/jesper-steinmetz-har-smidt-millioner-i-danmark-men-han-skal-ikke-selv-bo-i-lejligheden (12/12/2025)
+###adnm-stickies:not(:empty)
 ! — — — — — — — — — — — — — — — — — — — — — — — — — — —
 ! 🇳🇴：Oppføringer med spesielle omstendigheter
 ! 🇬🇧：Entries with special circumstances
@@ -2309,6 +2335,8 @@ baadmagasinet.dk##.article-bottom .qx-inner > .qx-section:last-of-type
 ! 🇳🇴🏞：IP-adressar
 ! 🇬🇧：IP addresses
 !+ NOT_PLATFORM(windows, mac, android, cli)
+://178.79.136.45^
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ://3.248.18.175^
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://35.227.231.163^
@@ -2318,8 +2346,6 @@ baadmagasinet.dk##.article-bottom .qx-inner > .qx-section:last-of-type
 ://82.196.13.38^
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://82.221.81.9^
-!+ NOT_PLATFORM(windows, mac, android, cli)
-://178.79.136.45^
 ! politikenDK (08/02/2025)
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||65.21.200.49^$all
@@ -3019,23 +3045,23 @@ jyllands-posten.dk##html[lang] > body section[id^=monster_]
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://82.118.242.69^
 !+ NOT_PLATFORM(windows, mac, android, cli)
+://134.209.82.119^
+!+ NOT_PLATFORM(windows, mac, android, cli)
 ://136.243.73.30^
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://138.201.126.227^
 !+ NOT_PLATFORM(windows, mac, android, cli)
-://156.236.126.173^
-!+ NOT_PLATFORM(windows, mac, android, cli)
-://196.196.230.76^
-!+ NOT_PLATFORM(windows, mac, android, cli)
-://167.71.49.177^
-!+ NOT_PLATFORM(windows, mac, android, cli)
-://134.209.82.119^
-!+ NOT_PLATFORM(windows, mac, android, cli)
 ://154.213.16.136^
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://156.236.126.173^
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://158.247.212.220^
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://165.227.168.212^
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://167.71.49.177^
+!+ NOT_PLATFORM(windows, mac, android, cli)
+://196.196.230.76^
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ://132.148.220.142^
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -3602,7 +3628,7 @@ fla.de##.index-banner
 /hitfile_730_90.png
 /kasynos_online.png
 /lvbet-tv.jpg
-! Last updated: 05April2025v1-Extension
+! Last updated: 22December2025v1-Extension
 ! 🇳🇴: ——— Vindusviskere for betalte artikler (sånn at de nederste linjene i en forhåndsvisning ikke toner ut) ———
 ! Takk til THEtomaso (https://github.com/THEtomaso) for de fleste av disse oppføringene.
 ! 🇩🇰: ——— Vinduesviskere for betalte artikler (så de sidste par linjer i en forhåndsvisning ikke falder ud) ———
@@ -3691,7 +3717,7 @@ gamereactor.*##+js(acis, AdsReloadConfig)
 ! https://github.com/uBlockOrigin/uAssets/issues/8648
 connery.dk##+js(set, adblockerAlert, noopFunc)
 ! https://github.com/finnish-easylist-addition/finnish-easylist-addition/issues/305
-no,~bankid.com,~3dsecure.no##+js(remove-attr, class, .dfp-loaded)
+no,~bankid.*,~3dsecure.no,~postnord.*##+js(remove-attr, class, .dfp-loaded)
 ! https://www•findroommate•dk/vaerelser/302142/stort-lyst-vaerelse-taet-paa-aarhus-i-viby-centrum (17/12/2021)
 findroommate.dk###frm-ablo-message
 ! https://github.com/uBlockOrigin/uAssets/issues/13495
