@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.34.26",
-			"timeUpdated": "2025-12-22T16:08:08+0000",
+			"version": "2.4.34.27",
+			"timeUpdated": "2025-12-22T17:07:17+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.97.9",
-			"timeUpdated": "2025-12-22T13:17:27+0000",
+			"version": "2.0.97.10",
+			"timeUpdated": "2025-12-22T17:07:20+0000",
 			"languages": []
 		},
 		{
@@ -216,8 +216,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/13.txt",
-			"version": "2.0.61.18",
-			"timeUpdated": "2025-12-22T16:08:23+0000",
+			"version": "2.0.61.19",
+			"timeUpdated": "2025-12-22T17:07:32+0000",
 			"languages": [
 				"tr"
 			]
