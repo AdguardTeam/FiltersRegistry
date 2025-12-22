@@ -1,9 +1,9 @@
-! Checksum: ccgC16tZ32BXb/gFHkBXQA
-! Diff-Path: ../patches/18/18-s-1766437836-3600.patch
+! Checksum: KRTGUDuBK18kUaCkj9dZ9w
+! Diff-Path: ../patches/18/18-s-1766445063-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.77.21
-! TimeUpdated: 2025-12-22T21:07:46+00:00
+! Version: 2.0.77.22
+! TimeUpdated: 2025-12-22T23:08:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2558,6 +2558,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+mijn.host#%#//scriptlet('trusted-click-element', '.cky-consent-container .cky-btn-customize, #ckyPreferenceCenter button[data-cky-tag="detail-save-button"]', '!cookie:cookieyes-consent')
 mainz.de##sp-consent-banner
 postnl.nl#%#//scriptlet('trusted-click-element', 'pnl-cookie-wall-widget >>> pnl-cookie-widget-overview .pci-button.pci-button--secondary', '', '1500')
 proxyparts.de#%#//scriptlet('set-cookie', '__cookies_consent_gdpr', 'true')
@@ -18010,6 +18011,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220012
+mijn.host#@#.cky-consent-bar
+@@||cdn-cookieyes.com/client_data/*.js$domain=mijn.host
+mijn.host#@#.cky-overlay
+mijn.host#@#.cky-consent-container
 ! https://github.com/uBlockOrigin/uAssets/issues/31277
 akt.no#@#.cookie-consent-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220625

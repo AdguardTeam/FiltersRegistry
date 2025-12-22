@@ -1,8 +1,8 @@
-! Checksum: k6J/KpSbTqyo1a9f5G4MmA
+! Checksum: ALYo0yJmT0cVAon+75QO1A
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.77.21
-! TimeUpdated: 2025-12-22T21:07:46+00:00
+! Version: 2.0.77.22
+! TimeUpdated: 2025-12-22T23:08:11+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2556,6 +2556,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+mijn.host#%#//scriptlet('trusted-click-element', '.cky-consent-container .cky-btn-customize, #ckyPreferenceCenter button[data-cky-tag="detail-save-button"]', '!cookie:cookieyes-consent')
 mainz.de##sp-consent-banner
 postnl.nl#%#//scriptlet('trusted-click-element', 'pnl-cookie-wall-widget >>> pnl-cookie-widget-overview .pci-button.pci-button--secondary', '', '1500')
 proxyparts.de#%#//scriptlet('set-cookie', '__cookies_consent_gdpr', 'true')
@@ -18076,6 +18077,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220012
+mijn.host#@#.cky-consent-bar
+@@||cdn-cookieyes.com/client_data/*.js$domain=mijn.host
+mijn.host#@#.cky-overlay
+mijn.host#@#.cky-consent-container
 ! https://github.com/uBlockOrigin/uAssets/issues/31277
 akt.no#@#.cookie-consent-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220625
