@@ -1,9 +1,9 @@
-! Checksum: Odj9ZQExmZr/gd8t9sHMbA
-! Diff-Path: ../patches/18/18-s-1766419885-3600.patch
+! Checksum: RAiDcfP6HC7N8aUgEtyfKQ
+! Diff-Path: ../patches/18/18-s-1766430610-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.77.19
-! TimeUpdated: 2025-12-22T16:08:33+00:00
+! Version: 2.0.77.20
+! TimeUpdated: 2025-12-22T19:07:23+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2556,6 +2556,7 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+postnl.nl#%#//scriptlet('trusted-click-element', 'pnl-cookie-wall-widget >>> pnl-cookie-widget-overview .pci-button.pci-button--secondary', '', '1500')
 proxyparts.de#%#//scriptlet('set-cookie', '__cookies_consent_gdpr', 'true')
 proxyparts.de#%#//scriptlet('set-cookie', '__permission_marketing', 'false')
 proxyparts.de#%#//scriptlet('set-cookie', '__permission_statistics', 'false')
@@ -3412,7 +3413,7 @@ tvtoya.pl,betard.pl,101internet.ru##div[class^="Cookies_"]
 mir-telecom.ru###cookiesAgree
 scmp.com##div[data-qa="GDPRBanner-Container"]
 ||codicesconto.com/assets/js/cookie.min.js
-frankfurter-sparkasse.de,rheinhessen-sparkasse.de,sparkasse-regensburg.de,spk-bergkamen-boenen.de,taunussparkasse.de#%#//scriptlet('trusted-click-element', '.if6_eprivacy a[data-form=".eprivacy_optin_decline"]', '', '1000')
+sparkasse-leipzig.de,frankfurter-sparkasse.de,rheinhessen-sparkasse.de,sparkasse-regensburg.de,spk-bergkamen-boenen.de,taunussparkasse.de#%#//scriptlet('trusted-click-element', '.if6_eprivacy a[data-form=".eprivacy_optin_decline"]', '', '1000')
 jornaldocomercio.com###modal-policy
 headliner.cz#%#//scriptlet('set-cookie', 'cookies', 'false')
 flysas.com#%#//scriptlet('trusted-click-element', '#deny-consent-button', '!cookie:_consent')
@@ -4260,7 +4261,6 @@ api.de##.dp--cookie-consent::before
 piotrovsky.store##.js-popup-cookie
 samfrew.com#%#//scriptlet('trusted-set-local-storage-item', 'gdpr_consent', 'accepted')
 foreignaffairs.com##._gdpr-banner
-postnl.nl##pnl-cookie-wall-widget
 antpool.com##.f-cookie
 infoyatirim.com#$##modal-cookie-policy { display: none !important; }
 infoyatirim.com#$#.modal-backdrop { display: none !important; }
@@ -16147,7 +16147,6 @@ dictionary.cambridge.org##li[data-notification-id="cookiewarning"]
 npo.nl#$#body { margin-top: 0!important; }
 bosch.de##o-cookie-law
 digit-photo.be##p#messcookie
-postnl.com#$#html { overflow:visible!important; }
 santatracker.google.com##santa-notice
 spielfilm.de##section > #alert
 wempe.com##section[data-alert="cookie"]
@@ -16163,7 +16162,6 @@ wykop.pl#$#.type-permanent+#nav { top: 0!important; }
 ||publiekeomroep.nl/data/script/cconsent
 ||quest.nl/js/partials/cookie-law.js
 ||static.canal-plus.net/gitlab/infoslegales/production/cnil_top.js
-||tol.postnl.nl/toestemming
 ||unsertirol24.com/analytics/analytics_cookie.js
 webtv.stofa.dk#?##root > div[class^="backdrop__BackdropRoot-"]:has(> div[class^="cookie-banner_"])
 wierzynek.pl#?#.configMessages:has(a[href^="polityka-prywatnosci"])
