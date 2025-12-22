@@ -1,9 +1,9 @@
-! Checksum: +hDmWdk+uADL08U17kWoNQ
-! Diff-Path: ../patches/20/20-s-1766175076-3600.patch
+! Checksum: 2udberW3cOBoVcJ9A7YeLA
+! Diff-Path: ../patches/20/20-s-1766387625-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.25.56
-! TimeUpdated: 2025-12-19T20:08:25+00:00
+! Version: 2.0.25.57
+! TimeUpdated: 2025-12-22T07:11:03+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1260,8 +1260,7 @@ mybook.ru#?#.ant-col-lg-3 > div[class] > div[class]:has(> div[class] > a[href^="
 m.yes24.com###sectionAppPop
 list.jd.com##.jdm-tbar-tab-qrcode
 house.goo.ne.jp##.cmnAppli
-ulifestyle.com.hk###open-in-modal
-ulifestyle.com.hk##.modal-backdrop
+ulifestyle.com.hk##.openApp-progress
 ulifestyle.com.hk###Open-appLink-banner
 three.com.hk##.download-footer
 app.diandian.com###__layout > div > div[class="box dd-base-color"]
@@ -3860,6 +3859,10 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+ulifestyle.com.hk#$##open-in-modal { display: none !important; }
+ulifestyle.com.hk#$#.modal-backdrop { display: none !important; }
+ulifestyle.com.hk#$#body { overflow: auto !important; }
+ulifestyle.com.hk##.post-openApp
 mail.yandex.*##.Popup2
 medium.com##footer ~ div > div:has(> div p + div > a[href^="https://play.google.com/store/apps/details?id=com.medium.reader"])
 vestiairecollective.com##div[data-cy="big-smart-banner"]
@@ -4720,8 +4723,6 @@ coinpaprika.com##.landing-coins__app-popup
 gamerch.com##.wiki-head__menu--guide
 tokyo-calendar.jp#$##global-header-open-app-div { display: none !important; }
 tokyo-calendar.jp#$#.navbar-fixed-top[style^="top:"] { top: 0 !important; }
-ulifestyle.com.hk#$#.open-app-popup__overlay { display: none !important; }
-ulifestyle.com.hk#$#body { overflow: auto !important; }
 zowa.app#$#.l-header__appInstall + .l-content__main .l-header { top: 0 !important; }
 dcnews.ro##.ContentRight > div[style^="text-align: center;height: 102px;"]
 homify.com.tr,homify.jp##.layout--app-banner
