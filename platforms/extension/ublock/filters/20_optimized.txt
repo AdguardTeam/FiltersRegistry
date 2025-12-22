@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: OGjZWqiu9cwBewaikvNpTQ
-! Diff-Path: ../patches/20_optimized/20_optimized-s-1766394879-3600.patch
+! Checksum: E64MeN4BfwhVy+WG9WUiXA
+! Diff-Path: ../patches/20_optimized/20_optimized-s-1766416259-3600.patch
 ! Title: AdGuard Mobile App Banners filter (Optimized)
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.25.58
-! TimeUpdated: 2025-12-22T09:11:51+00:00
+! Version: 2.0.25.59
+! TimeUpdated: 2025-12-22T15:08:15+00:00
 ! Expires: 5 days (update frequency)
 /js/jquery.smartbanner.js
 ##.duyuru_kutusu
@@ -1944,8 +1944,10 @@ ulifestyle.com.hk##.post-openApp
 mail.yandex.*##.Popup2
 medium.com##footer ~ div > div:has(> div p + div > a[href^="https://play.google.com/store/apps/details?id=com.medium.reader"])
 vestiairecollective.com##div[data-cy="big-smart-banner"]
+perplexity.ai##.py-md > div.gap-x-xs:has(> div[class] > svg[viewBox="0 0 400 91"]) + div.gap-x-sm
 perplexity.ai##body > div[data-type="portal"]:has(> div a[href^="https://perplexity.sng.link/"][href*="&_ios_dl"][href*="&_android_dl"]):style(display: none !important;)
 perplexity.ai##+js(addEventListener-defuser, /wheel|touchmove/, current.noIsolation)
+perplexity.ai##+js(set-cookie, pplx.mweb-splash-page-dismissed, true)
 m.baidu.com##.diversion-waterfall-b
 nishinippon.co.jp##article > .grid > .grid[data-nosnippet="true"]:has(> a[href^="https://app.adjust.com/"])
 arte.tv##header[role="banner"] a[href="https://arte.app.link/header-dl"]
@@ -1997,8 +1999,6 @@ yamap.com##.AppDownloadBanner:style(display: none !important;)
 yamap.com##.SmartAppBanner:style(display: none !important;)
 yamap.com##.Main__GlobalHeader--showSmartAppBanner:style(padding-top: 0 !important;)
 familydollar.com##+js(set-local-storage-item, isDisplayDownloadAppSection, 0)
-perplexity.ai##.\@container\/main div.py-md > div.gap-x-xs + div.gap-x-sm
-perplexity.ai##+js(set-cookie, pplx.mweb-splash-page-dismissed, true)
 aviasales.ru##+js(set-cookie, mobile_app_redirect, 1)
 vevor.co.uk##.AppDrainage
 hh.ru##div[class^="magritte-card"]:has(a[href^="https://hhlink.onelink.me/"])
@@ -2361,9 +2361,6 @@ rawstory.com###mobile-inline-rs-signup-offer
 news.audee.jp###ApriInner
 typhoon.yahoo.co.jp##a[id$="earthquake_banner_a"]
 ||s.yimg.jp/images/emg/bnr/2015/emgApp_*.png
-perplexity.ai##a[href="/download-mobile"]
-perplexity.ai##a[href="https://www.perplexity.ai/download-android"]
-perplexity.ai##+js(set-local-storage-item, appDownloadBannerDismissed, true)
 samsung.com##.cod05-app-banner
 m1.able.co.jp##body > section:has(> div.appinst)
 lightinthebox.com##.top_open_app
