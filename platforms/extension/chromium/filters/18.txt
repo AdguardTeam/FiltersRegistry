@@ -1,9 +1,9 @@
-! Checksum: b1z7EnXQyN3xfQhGXk6uTA
-! Diff-Path: ../patches/18/18-s-1766445050-3600.patch
+! Checksum: MOAiHoSfSwo3G02cT+ZOpA
+! Diff-Path: ../patches/18/18-s-1766466787-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.77.22
-! TimeUpdated: 2025-12-22T23:08:11+00:00
+! Version: 2.0.77.23
+! TimeUpdated: 2025-12-23T05:10:37+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2556,6 +2556,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+nibc.*#%#//scriptlet('trusted-set-cookie', 'dbh-cookie-consent', 'Essential=1')
+myoreflextherapie-heidelberg.de##.con-kit-component-cookie-banner
 mijn.host#%#//scriptlet('trusted-click-element', '.cky-consent-container .cky-btn-customize, #ckyPreferenceCenter button[data-cky-tag="detail-save-button"]', '!cookie:cookieyes-consent')
 mainz.de##sp-consent-banner
 postnl.nl#%#//scriptlet('trusted-click-element', 'pnl-cookie-wall-widget >>> pnl-cookie-widget-overview .pci-button.pci-button--secondary', '', '1500')
@@ -16097,7 +16099,7 @@ agenda.brussels,visit.brussels##body > .js-confirm
 webnovel.com##body > .m-streamer.lh1d5
 pixabay.com##body > .message_box.info
 forumcommunity.net,forumfree.it##body > .note
-moviepilot.de##body > .notification
+drummerjapan.com,moviepilot.de##body > .notification
 squarespace.com##body > .squarespace-banner
 ray-ban.com##body > .wcs-fadeout-full
 ray-ban.com##body > .wcs-overlay-content
@@ -18002,6 +18004,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220837
+@@||onecdn.io/b/client/*/cookie-banner.$domain=myoreflextherapie-heidelberg.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220012
 mijn.host#@#.cky-consent-bar
 @@||cdn-cookieyes.com/client_data/*.js$domain=mijn.host
