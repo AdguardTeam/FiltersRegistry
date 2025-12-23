@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wMb63E3QbXcp2P4/LXnmug
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1766441460-3600.patch
+! Checksum: 5o4BH20uQVlcY6wIYLB8Ug
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1766470471-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.97.14
-! TimeUpdated: 2025-12-22T22:07:35+00:00
+! Version: 2.0.97.15
+! TimeUpdated: 2025-12-23T06:11:03+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -66491,6 +66491,9 @@ _tracking.php?b=
 /prod/dfm/t8y9347t.min.js$redirect=noop.txt,important,domain=dailycamera.com,image,media,subdocument,stylesheet,script,xhr,other
 ||google-analytics.com^$object,redirect=noop.js,script
 ||googletagmanager.com/gtag/$3p,object,redirect=noop.js,script
+businessinsider.com##+js(set-local-storage-item, fenrir_anonymous_id, $remove$)
+businessinsider.com##+js(set-local-storage-item, anonymous_id, $remove$)
+businessinsider.com##+js(set-local-storage-item, universal_id, $remove$)
 ||affirm.com/api/*/touch_track
 ||data.joongna.com/log/
 ||api.cmp.inmobi.com/?log=
@@ -71623,7 +71626,7 @@ link.gmapp*.net$image
 %2Fa360%2Fpublic%2Fstatistic%2F$image
 %2Ft%*%2Fa^$image
 !+ NOT_PLATFORM(ios, ext_safari)
-/t/*/a^$image
+/t/*/a^$image,domain=~permies.com
 /pix.gif?$image
 %2Fpix.gif%3F$image
 /oo/*/e.gif$image
@@ -73229,6 +73232,7 @@ d4?appid*type*
 !### Temporary ###
 @@||st-*.dynamicyield.com/st*&inHead=true&id=*&jsession=*scriptVersion=*&noConsent=
 !#################
+@@||collector-*.px-cloud.net^$xhr,domain=ifood.com.br
 @@||static.vocstatic.com/voonto2/latest/voonto.js$script,domain=lagacetadesalamanca.es
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js,domain=heise.de
 @@||cdn.shopify.com/oxygen-v2/*/assets/Clarity-$domain=thegoodguys.com.au
