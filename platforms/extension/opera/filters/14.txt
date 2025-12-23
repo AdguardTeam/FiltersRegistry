@@ -1,9 +1,9 @@
-! Checksum: 74Zc1Sy2dfX8RsYVRm67GQ
-! Diff-Path: ../patches/14/14-s-1766499071-3600.patch
+! Checksum: z0/kk4ShYG1QmU/K291HGg
+! Diff-Path: ../patches/14/14-s-1766502669-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.53.24
-! TimeUpdated: 2025-12-23T14:08:27+00:00
+! Version: 2.2.53.25
+! TimeUpdated: 2025-12-23T15:08:14+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2556,6 +2556,8 @@ raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apothe
 !
 ! NOTE: Regular rules
 !
+bookvoed.ru##.cookie-suggest
+chitai-gorod.ru##.agreement-notice
 nibc.*#%#//scriptlet('trusted-set-cookie', 'dbh-cookie-consent', 'Essential=1')
 myoreflextherapie-heidelberg.de##.con-kit-component-cookie-banner
 mijn.host#%#//scriptlet('trusted-click-element', '.cky-consent-container .cky-btn-customize, #ckyPreferenceCenter button[data-cky-tag="detail-save-button"]', '!cookie:cookieyes-consent')
@@ -37640,7 +37642,8 @@ linenchest.com#$#.simpleltkmodal-container { display: none !important; }
 motorcar.com.ua#?#.entry-content > p:has(> a[href="https://t.me/motocarua"])
 bilyayivka.city##.mc-tg-subscribe
 bilyayivka.city###divPrediction
-washingtontimes.com#$?#body > div.tp-modal:has(> div.tp-iframe-wrapper > iframe[allow="payment"]) { display: none !important; }
+washingtontimes.com#$#body > div.tp-modal:has(> div.tp-iframe-wrapper > iframe[allow="payment"]) { display: none !important; }
+washingtontimes.com#$#body > div.tp-modal:has(> div.tp-iframe-wrapper > iframe[allow="payment"]) ~ div.tp-backdrop { display: none !important; }
 washingtontimes.com#%#//scriptlet('remove-class', 'tp-scroll-prevented', 'html')
 washingtontimes.com#%#//scriptlet('remove-class', 'tp-modal-open|tp-body-scroll-prevented', 'body')
 today.com#$#.fb_lightbox-overlay { display: none !important; }
@@ -38255,7 +38258,7 @@ lezzet.com.tr#?#body > .align-items-center:has(#formSubscription)
 gripgrab.com,bluestoneperennials.com##body > div > div.needsclick
 diamondlobby.com##.form-embed
 outofbit.it##.boxzilla-bottom-right-container
-newslab.ru##.digest-subscription
+habr.com,newslab.ru##.digest-subscription
 sportico.com##.newsletter-podcast
 evilmartians.com##form[class^="SubscribeForm-"]
 artnet.com##.theme-newsletter-signup
