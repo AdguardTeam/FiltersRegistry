@@ -1,9 +1,9 @@
-! Checksum: /ooYNV614zv1UqunnCs5zQ
-! Diff-Path: ../patches/17/17-s-1766434262-3600.patch
+! Checksum: j2koUUyqE4ngcjEiEUYHtQ
+! Diff-Path: ../patches/17/17-s-1766506310-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.73
-! TimeUpdated: 2025-12-22T20:08:13+00:00
+! Version: 2.0.12.74
+! TimeUpdated: 2025-12-23T16:08:47+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,13 @@
 !
 ! NOTE: Generic rules
 !
+! Oracle Eloqua
+$removeparam=elqTrackId
+$removeparam=elq
+$removeparam=elqaid
+$removeparam=elqat
+$removeparam=elqCampaignId
+$removeparam=elqak
 ! Winfluencer
 $removeparam=winflncrtag
 ! FastFlow
@@ -2523,8 +2530,6 @@ $removeparam=ref,domain=jin115.com|bipblog.com|animember.net|sbbit.jp|blog.lived
 ||api.cxense.com/public/widget/data?json=$script,removeparam=getId
 ||api.cxense.com/public/widget/data?json=$script,removeparam=usi
 ||api.cxense.com/public/widget/data?json=$script,removeparam=widgetId
-! https://github.com/AdguardTeam/AdguardFilters/issues/114561
-||lp.sophos.com^$removeparam=elqTrackId
 ! https://github.com/AdguardTeam/AdguardFilters/issues/114206
 ||player.theplatform.com^$removeparam=playeranalytics
 ||player.theplatform.com^$removeparam=targetedlink
