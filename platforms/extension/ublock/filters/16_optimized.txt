@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: DESg50N9jXyXyWrTtnLVAA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1766540374-3600.patch
+! Checksum: v6gNrGHk0g4drSy4dsO3oQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1766544233-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.30
@@ -102,6 +102,7 @@ lameteoagricole.net##+js(prevent-fetch, pagead2.googlesyndication.com)
 meteo-grenoble.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 cinefil.com##+js(set-constant, checkDiv, noopFunc)
 @@||rustica.fr/*.iads.js
+@@||gift.ibon.com.tw/*/pub.js
 xn--mto-bmab.fr#@#.topbanneradvertise
 empire-streaming.*##+js(no-xhr-if, pagead2.googlesyndication.com)
 empire-anime.com##+js(no-xhr-if, pagead2.googlesyndication.com)
@@ -1567,7 +1568,6 @@ _ads_banner/
 _ads_banner_
 _ads_desktop.
 _ads_one_
-_ads_toroadv.
 _ads_view/
 _adsens_
 _adspromo.
@@ -1696,6 +1696,7 @@ _build=iclick-$popup
 ||acxiom-online.com^$3p
 ||ad-spire.net^$3p
 ||ad6.fr^$3p
+||adaraby.com^$3p
 ||adhslx.com^$3p
 ||adintop.com^$3p
 ||adkontekst.pl^$3p
@@ -1711,6 +1712,7 @@ _build=iclick-$popup
 ||adpaths.com^$3p
 ||adpick.co.kr^$3p
 ||adpicker.net^$3p
+||adplus.io^$3p
 ||adrequest.net^$3p
 ||adrock.tv^$3p
 ||adschoom.com^$3p
@@ -1746,6 +1748,7 @@ _build=iclick-$popup
 ||bestcontentwork.top^$3p
 ||betterbannerscloud.com^$3p
 ||biznolimit.com^$3p
+||blogbang.com^$3p
 ||broadcast.pm^$3p
 ||camsoda.com^$3p
 ||caramec.fr^$3p
@@ -1758,7 +1761,6 @@ _build=iclick-$popup
 ||circulate.com^$3p
 ||cityads.com^$3p
 ||clcktrax.com^$3p
-||click-fr.com^$3p
 ||click2m.org^$3p
 ||clickbank.net^$3p
 ||clickiocdn*.com^$3p
@@ -1984,6 +1986,7 @@ _build=iclick-$popup
 ||admiredexcrete.com^
 ||adoproperly.com^
 ||adslop.com^
+||adsrealpublic.ru^
 ||adtoqbuejunef.com^
 ||adulateprofessnorth.com^
 ||advancementcircuscaptured.com^
@@ -2121,7 +2124,6 @@ _build=iclick-$popup
 ||damdoor.com^
 ||dampdock.com^
 ||dapperdiscussion.com^
-||dasyuredenmark.com^
 ||datewithman.com^
 ||dauntonedder.com^
 ||dauntssquills.com^
@@ -2459,7 +2461,6 @@ _build=iclick-$popup
 ||parentsbirling.com^
 ||parolersheeve.com^
 ||pavymoieter.com^
-||pcyk.ru^
 ||peanutrefusesplit.com^
 ||pedarypignon.com^
 ||penningnatraj.com^
@@ -2779,6 +2780,7 @@ _build=iclick-$popup
 ||dosya-indirici.online^$popup
 ||dropcatch.com^$popup,3p
 ||elvenar.com^$popup,3p
+||espace-plus.net^$popup,3p
 ||familiarpyromaniasloping.com^$popup
 ||flashtalking.com^$popup,3p
 ||flixtab.com^$popup
@@ -2787,6 +2789,7 @@ _build=iclick-$popup
 ||grtyi.com^$popup,3p
 ||gsurl.in^$popup
 ||hk6vdj4z.click^$popup
+||incontro-veloce.com^$popup
 ||iqoption.com^$popup
 ||jewhouca.net^$popup
 ||klclick.com^$popup
@@ -2795,6 +2798,7 @@ _build=iclick-$popup
 ||multiupload.com^$popup,3p
 ||mybestclick.net^$popup,3p
 ||o000oo.com^$popup
+||oopt.fr^$popup,3p
 ||passion.com^$popup
 ||porncrash.com^$popup,3p
 ||powa.fr^$popup,3p
@@ -3370,6 +3374,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||wii-info.fr/ban/
 ||wii-info.fr/bane/
 ||wii-info.fr/p/
+||winamax.fr/img/banners/
 ||winamax.fr/img/pub/
 ||winds-up.com/pub/
 ||xavbox.com/ban/
@@ -3556,6 +3561,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###pub160x600
 ###pub300
 ###pub300250
+###pub300_adscreen
 ###pub300x120
 ###pub300x250
 ###pub468x60_centree
@@ -3986,6 +3992,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.pub_mobile
 ##.pub_open
 ##.pub_pave
+##.pub_prod
 ##.pub_sky
 ##.pub_skyscraper
 ##.pub_slot
@@ -4045,6 +4052,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.remove_ads
 ##.right-advertising
 ##.rightPub
+##.rightRailAdContainer
 ##.right_middle_ad
 ##.right_top_ad
 ##.rigthpubvideo
@@ -4484,6 +4492,7 @@ lepoint.fr##.slotadm
 boursorama.com##.smart
 novaplanet.com##.sponsor-top
 tsa-algerie.com##.sponsored-by
+msn.com##.sponsorship
 japscan.vip##.tangoai
 auto-utilitaire.com,mobilealgerie.com##.td-header-sp-recs
 lexpress.fr##.teads__block
@@ -4575,7 +4584,6 @@ igg-games.com##a[href^="/offernf?"]
 lesnumeriques.com##a[href^="/publicite/"]
 edcom.fr##a[href^="/regie"]
 skitour.fr##a[href^="divers/a/out.php?"]
-notre-siecle.com,perelafouine.com##a[href^="http://www.fredbaroussechacunsonstyle.com/"] > img
 lefigaro.fr##a[href^="http://www.ticketac.com/?utm_source="]
 hentaifr.net##a[href^="https://drmanga.net"]
 condor.dz##a[href^="https://e-faciliti.dz/"]
@@ -4795,6 +4803,7 @@ zataz.com##.custom-sidebar:has(h3:contains(/Partenaires|Publicité/))
 @@||koifaire.com/upload/*/300x250-$image,~3p
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,3p,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,3p
+@@||pharmnet-dz.com/img/pubs/738_Conception%20sans%20titre%20(11).png
 @@||publicwww.com/images/labels.$image,~3p
 @@||static.jeux123.fr/ads/promo_$image,~3p
 @@||ab.9xbud.com/extract|$xhr,domain=9xbuddy.online
