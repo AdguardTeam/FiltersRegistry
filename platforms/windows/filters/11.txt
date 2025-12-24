@@ -1,9 +1,9 @@
-! Checksum: +8m4Ylb6Db/HNWkSloed9Q
-! Diff-Path: ../patches/11/11-s-1766574642-3600.patch
+! Checksum: 1HVCyzkZtLp6J6EWieFUqw
+! Diff-Path: ../patches/11/11-s-1766578512-3600.patch
 ! Title: AdGuard Mobile Ads filter
 ! Description: Filter for all known mobile ad networks. Useful for mobile devices.
-! Version: 2.0.66.46
-! TimeUpdated: 2025-12-24T11:07:18+00:00
+! Version: 2.0.66.47
+! TimeUpdated: 2025-12-24T12:11:45+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2614,6 +2614,7 @@ sp.manga.nicovideo.jp##div[style^="--ads-width:"]
 !
 ! SECTION: Regular rules
 !
+m.avito.ru##.js-search-wrap ~ div[style*="--end-color: #FFE0E0;"]
 bakuwaro.com##.widget-in-article.widget_mobile_text:has(> .widget-in-article.widget_mobile_text > .text-mobile > div > a[href^="https://appollo.jp/api/lp/?acd="])
 blog.livedoor.jp##center > a[target="_blank"]:has(> img[src^="https://livedoor.blogimg.jp/ld_manga/imgs/"])
 m.crank-in.net##.list_ad
@@ -8777,6 +8778,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 ! Solving problems: problematic apps must be excluded by adding `~package_name` to these rules.
 !                   The most of excluded apps - browsers. They should not be matched.
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220432
+||adsdk.yandex.ru^$app=rtb.mobile.android
 ! https://github.com/AdguardTeam/AdguardFilters/issues/217628
 /:\/\/[a-z]{2}\.[a-z]{7,10}\.com/$app=com.dlmsapp.v4appprofree
 ! https://github.com/AdguardTeam/AdguardFilters/issues/213615
