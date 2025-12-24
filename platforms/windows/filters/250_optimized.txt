@@ -1,5 +1,5 @@
-! Checksum: MubxAcbKr1iOaLRLw4xM0g
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1766465258-14400.patch
+! Checksum: 7eMwmHS06zRFovVZmHWzgw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1766551622-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.59
@@ -201,6 +201,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 192.3.110.170$network
 ||totalwebshield.com^$all
+||protected.net^$all
 !+ PLATFORM(windows, mac, android, cli)
 91.241.19.38$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -401,6 +402,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 34.195.224.242$network
 !+ PLATFORM(windows, mac, android, cli)
 54.225.185.110$network
+&lp=not_robot_$all
 !+ PLATFORM(windows, mac, android, cli)
 91.202.233.143$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -408,7 +410,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 !+ PLATFORM(windows, mac, android, cli)
 108.62.157.10$network
 .avito.www.booking.$all
-||contactspotsscattered.com^$all
 ||movementshereafter.com^$all
 ||paddlemoscowsplit.com^$all
 !+ PLATFORM(windows, mac, android, cli)
@@ -471,8 +472,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 52.15.34.25$network
 !+ PLATFORM(windows, mac, android, cli)
 203.188.171.156$network
-/linkresolver.html?url=*p0$document
-||creations.tools^$document,domain=~believed_to_be_fraudsters.*
 ||idtsoftware.com^$document,domain=~believed_to_be_fraudsters.*
 ||acrossprotocols.com^$all
 ||aftop10.com^$all
@@ -638,6 +637,7 @@ drvhub.net##.driver-item__install
 ||s0-greate.net^$all
 ||secprf.com^$all
 ||secprf2.com^$all
+||servsserverz.com^$all
 ||sidesteamroll.com^$all
 ||so-gr3at3.com^$all
 ||srvtrck.com^$all
@@ -654,7 +654,6 @@ drvhub.net##.driver-item__install
 ||adzgame.com^$all
 ||adzreach.com^$all
 ||bidmyadz.com^$all
-||clixvista.com^$all
 ||explorads.com^$all
 ||mainexpclkdir.com^$all
 ||mobuppsrtb.com^$all
@@ -944,7 +943,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ~line.me##a[href*="/lineit/share?"]
 ~linkedin.com##.addthis_button_linkedin:not(html,body,:empty)
 ~linkedin.com##.linkedin_share:not(html,body,:empty)
-~linkedin.com##.linkedinShare:not(html,body,:empty)
 ~linkedin.com##.share-linkedin:not(html,body,:empty)
 ~linkedin.com##a[href*="linkedin.com/cws/share?"]
 ~linkedin.com##a[href*="linkedin.com/shareArticle?"]
@@ -1306,8 +1304,6 @@ spleis.no#%#//scriptlet('ubo-set', '__INITIAL_STATE__.features.should-show-snow'
 /images/event/*_christmas/bg_menu_*.gif^
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
-/css/very-special-particle-snow
-/css/very-special-particles.css^
 /snowfall.min.jquery.js
 /snowplow$script,domain=casamundo.se|hemnet.se
 /snowplow-tracker$script
@@ -1830,6 +1826,7 @@ $removeparam=subacctname
 $document,removeparam=/^.*affcid.*$/i
 $removeparam=afflid
 $removeparam=mclk
+$document,removeparam=maid
 $document,removeparam=mcid,domain=~miguvideo.*
 $document,removeparam=msid,domain=~rsc.org|~editorialmanager.com
 $removeparam=exactag_uk
@@ -1995,7 +1992,6 @@ $removeparam=ads_matchtype
 $removeparam=ads_network
 $removeparam=ads_targetid
 $document,removeparam=/^from=rss$/
-$document,removeparam=/^source=rss$/
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
@@ -2203,7 +2199,6 @@ $removeparam=/^asc_.*$/,document,domain=amazon.*|aboutamazon.com|amzn.to
 ||amazon.$removeparam=hvexpln
 ||amazon.$removeparam=/^_encoding=UTF.*$/
 ||media-amazon.com^$removeparam=aicid
-||ssl-images-amazon.com^$removeparam=xcp
 ||bing.com/?$removeparam=/^form=.*$/i
 ||bing.$removeparam=sp
 $removeparam=sc,document,domain=bing.com|qvc.com
@@ -2577,6 +2572,7 @@ $removeparam=origin,denyallow=platform.twitter.com,domain=archive.org|buzzfeed.c
 $removeparam=epi,domain=fernerjacobsen.no|webhallen.com|microsoft.com|xbox.com|adtraction.com|tradedoubler.com
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=ts,domain=al.to|baidu.com|combat.pl|x-kom.pl
+$removeparam=reflink,domain=marketwatch.com|mansionglobal.com|wsj.com
 $removeparam=hpt,domain=cnn.com
 ||fnac.$removeparam=Origin
 ||paypal.com^$removeparam=calc
@@ -2745,7 +2741,11 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=traceid
 ||coupang.com^$removeparam=wTime
 ||coupang.com^$removeparam=wPcid
+$removeparam=correlation_id,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 $removeparam=vh,domain=hotspotshield.com|gethotspotshield.com
+||fiverr.com^$removeparam=bta
+||fiverr.com^$removeparam=afp
+||fiverr.com^$removeparam=cxd_token
 $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
@@ -2790,7 +2790,6 @@ $removeparam=mweb_loid_created,domain=reddit.app.link
 $removeparam=tags,domain=reddit.app.link
 ||adjust.com^$removeparam=adgroup
 $removeparam=xcreo
-||skimresources.com^$removeparam=xed
 $removeparam=rffrid
 $removeparam=ad_name
 $removeparam=pr_prod_strat
@@ -2993,6 +2992,7 @@ $document,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46q
 $document,removeparam=af_reengagement_window
 ||privatbank.ua^$removeparam=visit_id
 ||yandex.com/portal/set/any$removeparam=sk
+||wordpress.com^$document,removeparam=/^ref=[a-z-]{5,}$/
 $document,removeparam=_x_ns_sku_id,domain=temu.com
 $document,removeparam=_x_ads_channel,domain=temu.com
 $document,removeparam=_x_gmc_account,domain=temu.com
@@ -3114,7 +3114,6 @@ $removeparam=sub_confirmation,domain=youtube.com|35.190.94.206|206.94.190.35.bc.
 $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||click.linksynergy.com^$removeparam=mid
 ||parallels.com^$removeparam=x-source
-||twitch.tv/activate^$removeparam=device-metadata
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
 ||5-fifth.com^$document,removeparam=janet

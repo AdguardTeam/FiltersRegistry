@@ -1,9 +1,9 @@
-! Checksum: FgkCs3CbjPg/QjKNnuX3IA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1766537496-14400.patch
+! Checksum: Oyhw05dVUci29uHSQcQQow
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1766551590-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.53.45
-! TimeUpdated: 2025-12-24T00:48:21+00:00
+! Version: 2.1.53.46
+! TimeUpdated: 2025-12-24T04:43:29+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -203,6 +203,7 @@ _social-bar/
 ###facebook-like
 ###facebook-likebox
 ###facebook-link
+###facebook-panel
 ###facebook-share
 ###facebook-social-wrapper
 ###facebook-widget
@@ -243,6 +244,7 @@ _social-bar/
 ###fbbox
 ###fbbox1
 ###fblike
+###fbplikebox
 ###fbshare
 ###fcbk
 ###fdbk_tab
@@ -254,7 +256,6 @@ _social-bar/
 ###follow-footer
 ###follow-icons
 ###follow-links
-###follow-twitter
 ###follow-us-box
 ###follow-us-widget
 ###followBox
@@ -591,6 +592,7 @@ _social-bar/
 ###socialMediaSection
 ###socialModal
 ###socialNetworks
+###socialPopup
 ###socialShare
 ###socialSharing
 ###socialTabs
@@ -831,7 +833,6 @@ _social-bar/
 ##.af-share
 ##.af-social-btns
 ##.af-social-share-v2
-##.agencies-about-share
 ##.allshare_buttons
 ##.amp-facebook
 ##.amp-social-container
@@ -1354,7 +1355,6 @@ _social-bar/
 ##.followSocial
 ##.followTwitter
 ##.followUsLinks
-##.follow__item
 ##.follow__list
 ##.followus_net
 ##.followuson
@@ -1845,6 +1845,7 @@ _social-bar/
 ##.m-share
 ##.m-share-bar
 ##.m-share-bar__link
+##.m-share-list
 ##.m-sharing
 ##.m-sns
 ##.m-social-bar
@@ -2075,6 +2076,7 @@ _social-bar/
 ##.post-soc-share
 ##.post-soc-twit
 ##.post-social
+##.post-social-buttons
 ##.post-social-pin
 ##.post-social-wrapper
 ##.post-socials
@@ -2121,7 +2123,6 @@ _social-bar/
 ##.reseaux-sociaux-list
 ##.resp-sharing-button
 ##.right-social
-##.rightShare
 ##.rmp-sharing
 ##.rn_SocialBookmarkLink
 ##.row-social
@@ -2129,6 +2130,8 @@ _social-bar/
 ##.rrssb-buttons-container
 ##.rss-social
 ##.rt-social-buttons
+##.rui-footer-social
+##.rui-social
 ##.s-btns
 ##.s-f__social
 ##.s-facebook
@@ -2146,6 +2149,7 @@ _social-bar/
 ##.s_google
 ##.s_instagram
 ##.s_twitter
+##.s_youtube
 ##.saboxplugin-socials
 ##.safirShare
 ##.sal-leaf-accessori-sharebox
@@ -2665,6 +2669,7 @@ _social-bar/
 ##.sidebar-share:not(#tab-sharing > .sidebar-share)
 ##.sidebar-social
 ##.sidebar-socials
+##.sidebarSocial
 ##.sidebar_social
 ##.sidebarsocial
 ##.sidesocial
@@ -2927,6 +2932,7 @@ _social-bar/
 ##.social-share-google
 ##.social-share-group
 ##.social-share-icons
+##.social-share-left
 ##.social-share-link
 ##.social-share-links
 ##.social-share-list
@@ -2975,6 +2981,7 @@ _social-bar/
 ##.social-tab-i
 ##.social-tab-mini
 ##.social-tabs
+##.social-telegramm
 ##.social-toggle
 ##.social-tool
 ##.social-tools-additional
@@ -3049,7 +3056,6 @@ _social-bar/
 ##.socialShareIcon
 ##.socialShareLinks
 ##.socialSharing
-##.socialSideBar
 ##.socialSticky
 ##.socialTab
 ##.socialToggle
@@ -3074,7 +3080,6 @@ _social-bar/
 ##.social_foot
 ##.social_footer
 ##.social_header
-##.social_icons_wrap
 ##.social_item
 ##.social_like
 ##.social_link_share
@@ -3128,12 +3133,14 @@ _social-bar/
 ##.socialmain
 ##.socialmedia-buttons
 ##.socialmedia-container
+##.socialmedia-footer
 ##.socialmedia_link
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
 ##.socialno
 ##.socialplugins
+##.socialright
 ##.socials-bar
 ##.socials-footer
 ##.socials-round
@@ -3657,6 +3664,7 @@ fastcompany.com###article_share_button
 theepochtimes.com###article_top_right_share_btn
 bleedingcool.com###bc_sharing_is_caring
 noyb.eu###block-chives-shariff-share
+nltimes.nl###block-socialicons
 skidrowreloaded.com###communication
 sputnikglobe.com###cta
 archaeologymag.com,thegrayzone.com###custom_html-4
