@@ -1,9 +1,9 @@
-! Checksum: ts4FPkC17Ebjcdfd6qMGVw
-! Diff-Path: ../patches/16/16-s-1766553185-3600.patch
+! Checksum: RHeonQ7kt4kiguz+0mp/sA
+! Diff-Path: ../patches/16/16-s-1766675443-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.55.31
-! TimeUpdated: 2025-12-24T05:10:31+00:00
+! Version: 2.0.55.32
+! TimeUpdated: 2025-12-25T15:07:46+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -54,6 +54,10 @@
 ! Good: @@/adblocker/detect.js$domain=example.org
 ! Bad: ||ad.doubleclick.net^ (should be in adservers.txt)
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/220854
+monlatuque.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+!+ PLATFORM(ios, ext_android_cb)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=monlatuque.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218498
 planhub.ca###popupAdBlockerDetected
 planhub.ca#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
