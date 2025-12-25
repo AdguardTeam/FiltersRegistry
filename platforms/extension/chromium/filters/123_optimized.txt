@@ -1,9 +1,9 @@
-! Checksum: GFEshOHngUR/W0i9FuzKKw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1766623871-14400.patch
+! Checksum: iEyL6yBy/SDKH+uhKaj4hw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1766638049-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.53.51
-! TimeUpdated: 2025-12-25T00:48:08+00:00
+! Version: 2.1.53.52
+! TimeUpdated: 2025-12-25T04:44:19+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -113,7 +113,6 @@
 /sme-facebook-likebox-sidebar/*
 /sns_naverband.png
 /social-footer.jpg
-/social-footer.png
 /Social-Sidebar.js
 /social-widgets-
 /social2s.min.js
@@ -303,6 +302,7 @@ _social-bar/
 ###header-social
 ###header-social-icons
 ###header-social-links
+###header-social-media
 ###header-socials
 ###header-youtube-social-link
 ###headerSocial
@@ -967,6 +967,7 @@ _social-bar/
 ##.bgShare.twiiter
 ##.bgShare.youtube
 ##.bi-share
+##.big-share
 ##.bimber-microshare-item-share
 ##.bio-social
 ##.bloc-share
@@ -1382,7 +1383,6 @@ _social-bar/
 ##.footer-fb
 ##.footer-follow
 ##.footer-follow-us
-##.footer-followUs
 ##.footer-followus
 ##.footer-icon-facebook
 ##.footer-instagram
@@ -1517,7 +1517,6 @@ _social-bar/
 ##.gridlove-share-wrapper
 ##.gridlove-soc-menu
 ##.gs-share
-##.gtm-social-link
 ##.gtm_footer_facebook
 ##.gtm_footer_instagram
 ##.gtm_footer_twitter
@@ -2172,6 +2171,7 @@ _social-bar/
 ##.sdc-site-share
 ##.search-social
 ##.secondaryNav-social
+##.section-follow
 ##.section-post-intro-share
 ##.section-social
 ##.section_footer-social-links
@@ -2884,7 +2884,6 @@ _social-bar/
 ##.social-networking
 ##.social-networks-container
 ##.social-networks-footer
-##.social-networks-links
 ##.social-networks-list
 ##.social-networks__item
 ##.social-news-buttons
@@ -2915,7 +2914,6 @@ _social-bar/
 ##.social-share
 ##.social-share--column
 ##.social-share--desktop
-##.social-share--linkedin
 ##.social-share--sticky
 ##.social-share-area
 ##.social-share-article
@@ -3032,6 +3030,7 @@ _social-bar/
 ##.socialLinks
 ##.socialLinksContainer
 ##.socialList
+##.socialLnk
 ##.socialLogo
 ##.socialLogos
 ##.socialMedia
@@ -3200,6 +3199,8 @@ _social-bar/
 ##.stickysocial
 ##.stm-share
 ##.stm-shareble
+##.stm-socials
+##.stm-socials__icon
 ##.story-share
 ##.story-tool-share
 ##.story__share
@@ -3230,7 +3231,6 @@ _social-bar/
 ##.td-social-wrap
 ##.td_block_social_counter
 ##.td_shareus
-##.td_social_counter
 ##.td_social_type
 ##.tdb_single_post_share
 ##.tdm-social-item-wrap
@@ -3288,6 +3288,7 @@ _social-bar/
 ##.tve__info__share
 ##.tve_social_items
 ##.tw-share
+##.twd-footer-social-stripe
 ##.tweet-btn
 ##.tweet-link-button
 ##.tweet-this
@@ -3430,7 +3431,6 @@ _social-bar/
 ##.widget_mkd_social_icon_widget
 ##.widget_novashare_follow_widget
 ##.widget_nypost_social_widget
-##.widget_rotatingtweets_widget
 ##.widget_siliconcounters
 ##.widget_social
 ##.widget_social_links
@@ -3925,6 +3925,7 @@ nasdaq.com##.jupiter22-c-share-link
 axios.com##.leading-0
 mymodernmet.com##.lets-connect
 mymodernmet.com##.like-it-share-it
+mmoga.co.uk,mmoga.com,mmoga.de,mmoga.es,mmoga.fr,mmoga.se##.likeBtn
 cybernews.com##.links-bar
 corrosionpedia.com,exchangerates.org.uk,idownloadblog.com,kyivpost.com,thedrinksbusiness.com##.list-inline
 soundcloud.com##.listenDetails__login
@@ -4353,7 +4354,6 @@ raiplaysound.it##.banner-buttons
 consigli.it##.box-canale-telegram
 calciomercato.com##.cm-share
 consigli.it##.company-social
-donnamoderna.com##.dm20-lory-share-panel
 iodonna.it##.eltdf-woo-social-share-holder
 alfredopedulla.com##.fb-banner
 spaziogames.it##.flex.gap-x-2.mx-auto.my-4
@@ -4376,7 +4376,6 @@ meteogiuliacci.it##.social-b
 andreagaleazzi.com##.social-bookmarks
 ad-italia.it,gqitalia.it,lacucinaitaliana.it,vanityfair.it,vogue.it,www.wired.it##.social-icons__list
 deejay.it##.social-launch
-donnamoderna.com##.social-share-modal-trigger
 la7.it##.socialBtn
 davinotti.com##.social__variant
 ilmeteo.it##.social_condividi
@@ -4414,7 +4413,6 @@ xvideossexo.com###whatsapp
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
-atribuna.com.br,ebc.com.br,engeplus.com.br,forbes.com.br##.compartilhamento
 bcb.gov.br,folhape.com.br,ocioso.com.br,opoder.com.br,portalperifacon.com,sampi.net.br##.compartilhar
 jovempan.com.br##.cta-model
 em.com.br##.edm-bottom-social
@@ -4434,7 +4432,6 @@ folhape.com.br##.midiasApp
 poder360.com.br##.navigation-menu__social-media
 noataque.com.br##.noticia-share
 oantagonista.com.br##.post-interna__content__compartilhamento
-ebc.com.br##.redes-sociais-header
 sicnoticias.pt##.share-toggle-wrapper
 cnnbrasil.com.br##.single-editorial__follow
 cnnbrasil.com.br##.single-sharer
