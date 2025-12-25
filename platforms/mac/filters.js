@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.34.90",
-			"timeUpdated": "2025-12-25T08:09:27+0000",
+			"version": "2.4.34.91",
+			"timeUpdated": "2025-12-25T09:09:14+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.0.97.35",
-			"timeUpdated": "2025-12-25T08:09:32+0000",
+			"version": "2.0.97.36",
+			"timeUpdated": "2025-12-25T09:09:18+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.23.32",
-			"timeUpdated": "2025-12-24T05:10:07+0000",
+			"version": "2.1.23.33",
+			"timeUpdated": "2025-12-25T09:09:20+0000",
 			"languages": []
 		},
 		{
@@ -113,8 +113,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/6.txt",
-			"version": "2.0.50.66",
-			"timeUpdated": "2025-12-23T05:10:17+0000",
+			"version": "2.0.50.67",
+			"timeUpdated": "2025-12-25T09:09:23+0000",
 			"languages": [
 				"de"
 			]
@@ -187,8 +187,8 @@
 			"displayNumber": 2,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/11.txt",
-			"version": "2.0.66.50",
-			"timeUpdated": "2025-12-24T16:08:43+0000",
+			"version": "2.0.66.51",
+			"timeUpdated": "2025-12-25T09:09:28+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.5.51",
-			"timeUpdated": "2025-12-25T06:11:02+0000",
+			"version": "2.1.5.52",
+			"timeUpdated": "2025-12-25T09:09:37+0000",
 			"languages": []
 		},
 		{
@@ -1120,8 +1120,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.50.61",
-			"timeUpdated": "2025-12-25T08:10:08+0000",
+			"version": "2.1.50.62",
+			"timeUpdated": "2025-12-25T09:09:46+0000",
 			"languages": [
 				"zh"
 			]
