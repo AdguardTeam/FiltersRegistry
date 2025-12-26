@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: yu+g+foAM25acpnlqykRnw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1766638069-14400.patch
+! Checksum: B/Ms7/td1wxpm1I3XeMdSw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1766724354-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.59
@@ -23,8 +23,6 @@ www.google.*,ipv6.google.com##.g:has(cite:contains(.it › )):has(a[href*="-"][h
 ||138.68.252.54^$document
 ||useragentswitch.com^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||dev-nano.com^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
-play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=antivirus][href*=clean])
-play.google.com##div[class$=" "] > div[class*=" "][jscontroller] > *:has([href*=adblocker])
 ||inside3d.com^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||viaarena.com^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||qasirgame.com^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
@@ -7394,6 +7392,7 @@ www.tumblr.com##div[tabindex][style="margin-top: 0px;"]:not([class],[id]):has(a[
 ||95.211.229.247^$all
 ||agdosortione.com^$all
 ||88.208.22.1^$all
+||amused-condition.com^$all
 ||188.72.219.35^$all
 ||[2a00:1178:1:4b::e]^$all
 ||43.100.125.58^$all
@@ -7654,6 +7653,7 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ###share_bar
 ###share_container:not([class*=body i])
 ###sharebar
+###sharingfooter
 ###social-share:not([class*=body i])
 ###social_buttons:not([class*=body i])
 ###ss-floating-bar
@@ -7881,11 +7881,11 @@ google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|
 ~pinterest.*##.pinterest-share:not(html,body,:empty)
 ~pinterest.*##.pinterest[href*="/pin/create/"]
 ~pinterest.*##.share-pinterest:not(html,body,:empty)
+~pinterest.*##a[class$=pinterest-share]
 ~pinterest.*##a[class$=share-pinterest]
 ~pinterest.*##a[data-pin-do=buttonPin]
 ~pinterest.*##a[href*="pinterest.com/pin/find/?"]
 ~pinterest.*##a[href*=pinterest][href*="/pin/create/b"]
-~pinterest.*##a[href="/#pinterest"]
 ~pinterest.*##a[onclick*="pinterest.com/pin/create/"]
 ~pinterest.*##a[title="Share on Pinterest" i]
 ~pinterest.*##button[data-href*="pinterest.com/pin/create/button/"]
@@ -8207,6 +8207,7 @@ fandom.com##div:not([class],[id],[style]):has(> [data-testid^=QuizBanner i])
 spleis.no##+js(set, __INITIAL_STATE__.features.should-show-snow, false)
 /particles.min.js^
 /images/event/*_christmas/bg_menu_*.gif^
+##canvas[data-testid=SnowfallCanvas i]
 ##.snowflakes:not(html, body)
 /frosmo.easy.js^
 /snowfall.min.jquery.js
@@ -8227,6 +8228,7 @@ daz3d.ru##+js(set-constant, snow, undefined)
 /snowfall.jquery.
 /snowstorm-min.js
 /snowstorm.js
+/snowstorm.min.js
 /wp-snow-effect^
 /christmas-snow.js
 @@||aboluowang.com^
@@ -8868,11 +8870,9 @@ $document,removeparam=/^pid=.*_int$/
 $removeparam=deep_link_sub1
 $removeparam=sub_aff_id
 $document,removeparam=/^sub_id\d=.*$/
-$removeparam=tg_ref
 $removeparam=dt_dapp
 $removeparam=dt_platform
 $removeparam=i_cid
-$removeparam=waad
 $removeparam=_gac
 $removeparam=af_medium
 $removeparam=af_source
@@ -8919,6 +8919,9 @@ $removeparam=tj,domain=baidu.com|sina.com.cn
 $removeparam=tagtag_uid
 $removeparam=affiliateCode
 $removeparam=affcode
+$removeparam=cx_testId
+$removeparam=cx_testVariant
+$removeparam=cx_artPos
 $removeparam=channable
 $removeparam=int_source
 $removeparam=int_medium
@@ -9552,6 +9555,7 @@ $removeparam=camp,domain=amazon.*|calvinklein.*|dickssportinggoods.com|dockers.c
 $removeparam=channelref,domain=asos.com
 $removeparam=cmp,domain=agentprovocateur.com|brooksbrothers.com|cbc.ca|hulu.com|bestbuy.com
 $removeparam=cp,domain=converse.com|nike.com|nextdoor.com|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion
+$removeparam=mc,domain=bose.*|hallmark.com
 $removeparam=mktvar002,domain=autodesk.com
 $removeparam=/^pubname=.*$/i,domain=anntaylor.com|ashford.com|backcountry.com|bloomingdales.com|dermstore.com|express.com|famousfootwear.com|farmandfleet.com|gucci.com|hottopic.com|loft.com|naturalizer.com|samsclub.com
 $removeparam=/^publisher=.*$/i,domain=asos.com|bose.*|dell.com|josbank.com|metmuseum.org|riteaid.com|shutterfly.com|tous.com|untilgone.com
@@ -9716,6 +9720,7 @@ $removeparam=tags,domain=reddit.app.link
 $removeparam=xcreo
 $removeparam=rffrid
 $removeparam=ad_name
+||deezer.com^$removeparam=deferredFl
 $removeparam=pr_prod_strat
 $removeparam=pr_rec_id
 $removeparam=pr_rec_pid
@@ -9742,7 +9747,6 @@ $removeparam=af,domain=1fichier.com|comodo.com
 ||ecosia.org^$removeparam=addon
 $removeparam=referralInfo,domain=wix.com
 $removeparam=searchResultPosition,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x62d2lljsciiyd.onion
-$removeparam=tck,domain=mongodb.com
 $removeparam=locale,domain=udemy.com
 ||zoho.com^$removeparam=zsrc
 ||nortonsafe.search.ask.com^$removeparam=installsource

@@ -379,8 +379,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.59.57",
-			"timeUpdated": "2025-12-26T00:47:56+0000",
+			"version": "2.1.59.58",
+			"timeUpdated": "2025-12-26T04:42:28+0000",
 			"languages": []
 		},
 		{
@@ -426,8 +426,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.58.57",
-			"timeUpdated": "2025-12-26T00:47:59+0000",
+			"version": "2.1.58.58",
+			"timeUpdated": "2025-12-26T04:42:31+0000",
 			"languages": []
 		},
 		{
@@ -458,8 +458,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.82.53",
-			"timeUpdated": "2025-12-26T00:48:00+0000",
+			"version": "2.1.82.54",
+			"timeUpdated": "2025-12-26T04:42:31+0000",
 			"languages": []
 		},
 		{
@@ -502,8 +502,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
-			"version": "2.1.82.55",
-			"timeUpdated": "2025-12-26T00:48:01+0000",
+			"version": "2.1.82.56",
+			"timeUpdated": "2025-12-26T04:42:33+0000",
 			"languages": [
 				"it"
 			]
@@ -547,8 +547,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
-			"version": "2.1.82.54",
-			"timeUpdated": "2025-12-26T00:48:02+0000",
+			"version": "2.1.82.55",
+			"timeUpdated": "2025-12-26T04:42:33+0000",
 			"languages": [
 				"ar"
 			]
@@ -565,8 +565,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.82.53",
-			"timeUpdated": "2025-12-26T00:48:03+0000",
+			"version": "2.1.82.54",
+			"timeUpdated": "2025-12-26T04:42:34+0000",
 			"languages": []
 		},
 		{
@@ -645,8 +645,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.56.23",
-			"timeUpdated": "2025-12-26T00:48:06+0000",
+			"version": "2.1.56.24",
+			"timeUpdated": "2025-12-26T04:42:37+0000",
 			"languages": []
 		},
 		{
@@ -724,8 +724,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.53.57",
-			"timeUpdated": "2025-12-26T00:48:16+0000",
+			"version": "2.1.53.58",
+			"timeUpdated": "2025-12-26T04:42:45+0000",
 			"languages": []
 		},
 		{
@@ -740,8 +740,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.0.54.28",
-			"timeUpdated": "2025-12-26T00:48:16+0000",
+			"version": "2.0.54.29",
+			"timeUpdated": "2025-12-26T04:42:46+0000",
 			"languages": []
 		},
 		{
@@ -866,8 +866,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.82.54",
-			"timeUpdated": "2025-12-26T00:48:20+0000",
+			"version": "2.1.82.55",
+			"timeUpdated": "2025-12-26T04:42:48+0000",
 			"languages": []
 		},
 		{
@@ -940,8 +940,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.81.80",
-			"timeUpdated": "2025-12-26T00:48:22+0000",
+			"version": "2.1.81.81",
+			"timeUpdated": "2025-12-26T04:42:50+0000",
 			"languages": []
 		},
 		{
@@ -969,8 +969,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
-			"version": "2.0.40.87",
-			"timeUpdated": "2025-12-25T04:44:27+0000",
+			"version": "2.0.40.88",
+			"timeUpdated": "2025-12-26T04:42:50+0000",
 			"languages": [
 				"vi"
 			]
@@ -1230,8 +1230,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.82.55",
-			"timeUpdated": "2025-12-26T00:48:31+0000",
+			"version": "2.1.82.56",
+			"timeUpdated": "2025-12-26T04:42:57+0000",
 			"languages": []
 		},
 		{
@@ -1465,8 +1465,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.78.61",
-			"timeUpdated": "2025-12-26T00:48:43+0000",
+			"version": "2.1.78.62",
+			"timeUpdated": "2025-12-26T04:43:07+0000",
 			"languages": []
 		},
 		{
@@ -1565,8 +1565,8 @@
 			"displayNumber": 2,
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
-			"version": "2.0.75.86",
-			"timeUpdated": "2025-12-26T00:48:51+0000",
+			"version": "2.0.75.87",
+			"timeUpdated": "2025-12-26T04:43:12+0000",
 			"languages": [
 				"hi"
 			]
