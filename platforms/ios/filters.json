@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.35.18",
-			"timeUpdated": "2025-12-26T13:16:24+0000",
+			"version": "2.4.35.19",
+			"timeUpdated": "2025-12-26T14:07:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.23.37",
-			"timeUpdated": "2025-12-26T11:07:16+0000",
+			"version": "2.1.23.38",
+			"timeUpdated": "2025-12-26T14:07:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.71.36",
-			"timeUpdated": "2025-12-26T07:09:05+0000",
+			"version": "2.0.71.37",
+			"timeUpdated": "2025-12-26T14:07:54+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/11_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.66.54",
-			"timeUpdated": "2025-12-26T09:08:59+0000",
+			"version": "2.0.66.55",
+			"timeUpdated": "2025-12-26T14:07:58+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.53.62",
-			"timeUpdated": "2025-12-26T13:16:52+0000",
+			"version": "2.2.53.63",
+			"timeUpdated": "2025-12-26T14:08:06+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.5.67",
-			"timeUpdated": "2025-12-26T13:16:53+0000",
+			"version": "2.1.5.68",
+			"timeUpdated": "2025-12-26T14:08:07+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -769,8 +769,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.40.27",
-			"timeUpdated": "2025-12-26T13:17:01+0000",
+			"version": "2.0.40.28",
+			"timeUpdated": "2025-12-26T14:08:13+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
