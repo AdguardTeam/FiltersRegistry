@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.35.25",
-			"timeUpdated": "2025-12-26T20:07:23+0000",
+			"version": "2.4.35.26",
+			"timeUpdated": "2025-12-26T21:06:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -708,8 +708,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.12.74",
-			"timeUpdated": "2025-12-23T16:08:47+0000",
+			"version": "2.0.12.75",
+			"timeUpdated": "2025-12-26T21:06:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
