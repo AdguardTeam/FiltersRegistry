@@ -1,9 +1,9 @@
-! Checksum: AchkZYtypNtygaIdVpTicg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1766796671-14400.patch
+! Checksum: fba3/Z96cxVn1LJ6mrSYOg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1766810685-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.53.63
-! TimeUpdated: 2025-12-27T00:48:07+00:00
+! Version: 2.1.53.64
+! TimeUpdated: 2025-12-27T04:42:08+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -282,7 +282,6 @@ _social-bar/
 ###footerSocialIcons
 ###footerSocialLinks
 ###footerSocialMenu
-###footer_block_social
 ###footer_follow
 ###footer_social
 ###footer_social_facebook
@@ -325,6 +324,7 @@ _social-bar/
 ###js-share
 ###js-share-links
 ###large_share_wrapper
+###likeThisPost
 ###linkedin_share
 ###main-social
 ###mainShare
@@ -652,7 +652,6 @@ _social-bar/
 ###socialshareprivacy
 ###socialsharing
 ###socialslider
-###ssba_twitter_share
 ###sticky-share
 ###sticky-social
 ###stickySocial
@@ -880,7 +879,6 @@ _social-bar/
 ##.article-social-icons
 ##.article-social-media
 ##.article-social-panel
-##.article-social-section
 ##.article-social-share
 ##.article-social-sharing
 ##.article-social-top
@@ -939,6 +937,7 @@ _social-bar/
 ##.b-header__social
 ##.b-share
 ##.b-share-button
+##.b-sharebar
 ##.b-sharelist
 ##.b-sidebar-social
 ##.b-social-icons
@@ -1310,7 +1309,6 @@ _social-bar/
 ##.fi-social-youtube
 ##.fix-share
 ##.fixed-share
-##.fixed-share-bar
 ##.fixed-social
 ##.fl-social-icons
 ##.flare-button-icon
@@ -2002,6 +2000,7 @@ _social-bar/
 ##.page-footer__social
 ##.page-footer__social-link
 ##.page-footer__social-links
+##.page-footer_social
 ##.page-share
 ##.page-share-button
 ##.page-social
@@ -2110,6 +2109,7 @@ _social-bar/
 ##.r-footer--social
 ##.rambler-share
 ##.rc_social
+##.rcom-social-site-footer
 ##.react-share__ShareButton
 ##.react_share_icons
 ##.reddit-share-button
@@ -2419,7 +2419,6 @@ _social-bar/
 ##.shareDiv
 ##.shareDropDown
 ##.shareEmail
-##.shareFB
 ##.shareFacebook
 ##.shareFloating_column
 ##.shareForm
@@ -3045,7 +3044,6 @@ _social-bar/
 ##.socialSection
 ##.socialShare
 ##.socialShare-btn
-##.socialShareIcon
 ##.socialShareLinks
 ##.socialSharing
 ##.socialSticky
@@ -3312,6 +3310,7 @@ _social-bar/
 ##.twitter-tweet-button
 ##.twitter-wrap
 ##.twitter-wrapper
+##.twitterBlock
 ##.twitterBox
 ##.twitterFollow
 ##.twitterIcon
@@ -3411,6 +3410,7 @@ _social-bar/
 ##.widget_better-social-counter
 ##.widget_boombox_social
 ##.widget_bs-likebox
+##.widget_custom-twitter-feeds-widget
 ##.widget_dpsp_social_media_follow
 ##.widget_easy_facebook_page_plugin
 ##.widget_epcl_social
@@ -3657,6 +3657,7 @@ fastcompany.com###article_share_button
 theepochtimes.com###article_top_right_share_btn
 bleedingcool.com###bc_sharing_is_caring
 noyb.eu###block-chives-shariff-share
+fstoppers.com###block-fs_helpers-fstop_socials
 nltimes.nl###block-socialicons
 skidrowreloaded.com###communication
 sputnikglobe.com###cta
@@ -3678,7 +3679,6 @@ analyticsinsight.net,biznews.com,dn.pt,newindianexpress.com,newsgram.com###heade
 medicalxpress.com,phys.org,techxplore.com###js-soc-panel
 listennotes.com###ln-side-share-div
 digitaltrends.com###menu-2021-social
-truthdig.com###menu-social-navigation-1
 notalwaysright.com###meta_share
 taylorfrancis.com###openShare
 fia.com###page-pre-footer
@@ -3884,6 +3884,7 @@ cybernews.com,sammobile.com##.google-news-cta
 quiverquant.com##.google-news-follow
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,spaceexplored.com##.google-preferred-source-badge
 restofworld.org##.google-preferred-v1
+japan.go.jp##.gov_sns
 gadgets360.com##.gsocialbar
 atlanticcouncil.org##.gta-hover-share-container
 gmanetwork.com##.hdr-social-links
@@ -3987,7 +3988,6 @@ oracle.com##.scl-icons
 kyivpost.com##.section-soc-icons
 sleepfoundation.org##.sh_space.share
 onlinelibrary.wiley.com##.share-access__ctrl
-radiopaedia.org##.share-article-link
 thedirect.com##.share-bar-2
 ny1.com##.share-bar-container
 buzzfeed.com##.share-bar_buzzfeed___uZ4R
@@ -4045,6 +4045,7 @@ vinepair.com##.social-footer-row
 digitimes.com##.social-frame
 businessgreen.com,computing.co.uk,investmentweek.co.uk##.social-heading
 firstpost.com##.social-ic-wrap
+actu.epfl.ch,brasil247.com,estadao.com.br,india.com,maketecheasier.com,news18.com,recipetineats.com,theshovel.com.au,wionews.com##.social-icon
 diesuid-afrikaner.com,thesouthafrican.com##.social-icons--post-share
 mid-day.com##.social-icons-inline
 tmz.com##.social-item
@@ -4146,7 +4147,6 @@ cnet.com##[data-meta="footer-section-social"] + ul
 nytimes.com##[data-testid="social-group"]
 dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
-telekom.com##a[title="Share"]
 theguardian.com##div > gu-island[name="ShareButton"]
 fifa.com##div[class*="article-section_shareButton_"]
 theatlantic.com##div[class^="ArticleShare_"]
@@ -4513,7 +4513,6 @@ biobiochile.cl##.post-social-container
 qhubomedellin.com##.qh-social-icons-articulo
 acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diariodeibiza.es,diariodemallorca.es,elcorreogallego.es,eldia.es,elperiodico.com,elperiodicodearagon.com,elperiodicoextremadura.com,elperiodicomediterraneo.com,emporda.info,farodevigo.es,globovision.com,informacion.es,laopinioncoruna.es,laopiniondemalaga.es,laopiniondezamora.es,laprovincia.es,levante-emv.com,lne.es,mallorcazeitung.es,noticiasdealava.eus,noticiasdegipuzkoa.eus,noticiasdenavarra.com,regio7.cat,sport.es,superdeporte.es,vanguardia.com.mx,welife.es##.rrss
 elcomercio.pe,gestion.pe##.s-buttons
-betano.com##.sb-footer__notes__socials
 infobae.com##.second-saved-buttons
 as.com##.sh-bar
 infoenergia.info,infofranquicias.ar,infomendoza.info,infonegocios.barcelona,infonegocios.biz,infonegocios.com.py,infonegocios.info,infonegocios.madrid,infonegocios.miami,infonegociosgalicia.es,infonegociosvalencia.es,infostyle.info,infotecnologia.info,injujuy.info,inlitoral.info,inneuquen.info,inpatagonia.info,inrosario.info,insalta.info,insanjuan.info,insantiagodelestero.info,intucuman.info##.share-amp
