@@ -859,8 +859,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.59.67",
-			"timeUpdated": "2025-12-27T16:38:39+0000",
+			"version": "2.1.59.68",
+			"timeUpdated": "2025-12-27T20:36:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -984,8 +984,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.82.63",
-			"timeUpdated": "2025-12-27T16:38:42+0000",
+			"version": "2.1.82.64",
+			"timeUpdated": "2025-12-27T20:36:22+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1056,8 +1056,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.82.65",
-			"timeUpdated": "2025-12-27T16:38:43+0000",
+			"version": "2.1.82.66",
+			"timeUpdated": "2025-12-27T20:36:24+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -1131,8 +1131,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.82.64",
-			"timeUpdated": "2025-12-27T16:38:44+0000",
+			"version": "2.1.82.65",
+			"timeUpdated": "2025-12-27T20:36:26+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1159,8 +1159,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.82.63",
-			"timeUpdated": "2025-12-27T16:38:45+0000",
+			"version": "2.1.82.64",
+			"timeUpdated": "2025-12-27T20:36:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1209,8 +1209,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.56.33",
-			"timeUpdated": "2025-12-27T16:38:48+0000",
+			"version": "2.1.56.34",
+			"timeUpdated": "2025-12-27T20:36:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1254,8 +1254,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.27.45",
-			"timeUpdated": "2025-12-27T04:42:01+0000",
+			"version": "2.0.27.46",
+			"timeUpdated": "2025-12-27T20:36:32+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1330,8 +1330,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.53.67",
-			"timeUpdated": "2025-12-27T16:38:55+0000",
+			"version": "2.1.53.68",
+			"timeUpdated": "2025-12-27T20:36:39+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1354,8 +1354,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.54.38",
-			"timeUpdated": "2025-12-27T16:38:56+0000",
+			"version": "2.0.54.39",
+			"timeUpdated": "2025-12-27T20:36:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1429,8 +1429,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.18.68",
-			"timeUpdated": "2025-12-26T16:39:03+0000",
+			"version": "2.0.18.69",
+			"timeUpdated": "2025-12-27T20:36:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1476,8 +1476,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.82.64",
-			"timeUpdated": "2025-12-27T16:38:58+0000",
+			"version": "2.1.82.65",
+			"timeUpdated": "2025-12-27T20:36:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1520,8 +1520,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.81.90",
-			"timeUpdated": "2025-12-27T16:38:59+0000",
+			"version": "2.1.81.91",
+			"timeUpdated": "2025-12-27T20:36:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1784,8 +1784,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.82.65",
-			"timeUpdated": "2025-12-27T16:39:06+0000",
+			"version": "2.1.82.66",
+			"timeUpdated": "2025-12-27T20:36:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1809,8 +1809,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.0.78.79",
-			"timeUpdated": "2025-12-27T16:39:07+0000",
+			"version": "2.0.78.80",
+			"timeUpdated": "2025-12-27T20:36:57+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1935,8 +1935,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "high",
-			"version": "1.0.37.34",
-			"timeUpdated": "2025-12-26T20:37:01+0000",
+			"version": "1.0.37.35",
+			"timeUpdated": "2025-12-27T20:37:01+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2081,8 +2081,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "low",
-			"version": "2.1.78.71",
-			"timeUpdated": "2025-12-27T16:39:16+0000",
+			"version": "2.1.78.72",
+			"timeUpdated": "2025-12-27T20:37:07+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -2237,8 +2237,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.75.96",
-			"timeUpdated": "2025-12-27T16:39:20+0000",
+			"version": "2.0.75.97",
+			"timeUpdated": "2025-12-27T20:37:13+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
