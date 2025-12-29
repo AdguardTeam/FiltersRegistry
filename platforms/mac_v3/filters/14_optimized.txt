@@ -1,9 +1,9 @@
-! Checksum: cO1e1LP/hRuy5GD7Splkrg
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1766996106-3600.patch
+! Checksum: KitUhdjpxI7RdISKbGDlHA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1766999727-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.53.78
-! TimeUpdated: 2025-12-29T08:11:37+00:00
+! Version: 2.2.53.79
+! TimeUpdated: 2025-12-29T09:12:18+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -4414,8 +4414,8 @@ wonderhowto.com#%#//scriptlet('trusted-click-element', '#consentContainer a[href
 appletips.nl#%#//scriptlet('trusted-click-element', '#agree_with_cookie_terms', '', '300')
 ceneo.pl###js_cookie-consent-banner
 autodoc.pl#$#.gdpr-panel { display: none !important; }
-auto-doc.*,autodoc.*,autodoc24.*#$#body { overflow: auto !important; }
-auto-doc.*,autodoc.*,autodoc24.*#$#body.fixed { overflow: auto !important; }
+auto-doc.*,autodoc.*,autodoc24.*#$#body:not([style]) .overlay { display: none !important; }
+auto-doc.*,autodoc.*,autodoc24.*#$#body.fixed { overflow: auto !important; padding-right: 0 !important; touch-action: auto !important; }
 auto-doc.*,autodoc.*,autodoc24.*#$#div[data-popup-cookies] { display: none !important; }
 fd.nl#%#//scriptlet('trusted-click-element', '.cmp_accept')
 fok.nl#%#//scriptlet('trusted-click-element', '.cookieButton')
@@ -17263,6 +17263,8 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+foodandwine.com##div[aria-label="Modal Overlay Box"][emailfield="email"]
+foodandwine.com##div[id^="sidebar-overlay-lightbox"]
 thenoshery.com##.enews-widget
 hispanidad.com##.h-subscribe-btn
 leitesculinaria.com##.top-hat
