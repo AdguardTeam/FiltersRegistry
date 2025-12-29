@@ -1,9 +1,9 @@
-! Checksum: Nx+nXT218mvvDThwCuUsGg
-! Diff-Path: ../patches/14/14-s-1767017452-3600.patch
+! Checksum: JCAAi4YNOFJpcexQK9M2zA
+! Diff-Path: ../patches/14/14-s-1767021072-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.53.84
-! TimeUpdated: 2025-12-29T14:08:10+00:00
+! Version: 2.2.53.85
+! TimeUpdated: 2025-12-29T15:08:33+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2556,6 +2556,10 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+ecofamily.hu#$#body:not(.scroll-lock) .cookie-alert { display: none !important; }
+ecofamily.hu#$#div[data-id="overlay_explicit"] { display: none !important; }
+ecofamily.hu#%#//scriptlet('remove-attr', 'style', 'body[style^="overflow:"]')
+br.de#%#//scriptlet('trusted-click-element', 'button[class^="PrivacyEmbedConsent_button__"]', '', '2000')
 next.hornet.com#%#//scriptlet('trusted-set-local-storage-item', 'local:consent', '{"is_set":true,"ads":false,"traffic":false}')
 hornetapp.com,hornet.com#%#//scriptlet('set-cookie', '_consent_ads', '0')
 hornetapp.com,hornet.com#%#//scriptlet('set-cookie', '_consent_analytics', '0')
@@ -18028,6 +18032,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/221354
+ecofamily.hu#@#body:not(.scroll-lock) .cookie-alert
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221248
 loadoutbuilder.gg#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219898
