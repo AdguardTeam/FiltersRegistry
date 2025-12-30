@@ -1,5 +1,5 @@
-! Checksum: CVGp3zlTi3yddYdCro7YQg
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1767042581-3600.patch
+! Checksum: m8X90whtBw4DgK5EBwq3Nw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1767062784-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.3.70
@@ -182,6 +182,7 @@ http://*.ru/leftunit.pl?
 /468x60r
 /_banner_.gif
 /abmw.asp?z=
+/abmw.aspx
 /acc_random=*/aamsz=
 /ad*.js?link
 /ad-local.
@@ -529,6 +530,7 @@ ucoz.ru/informer/
 ~hotrod.com,~superchevy.com##.adleft
 ~hgh14x.com,~bipbip.co.il##.adlist
 ##.admarker
+~bipbip.co.il,~quoka.de##.adpic
 ##.adprice
 ##.adright
 ##.ads_ban
@@ -1216,6 +1218,7 @@ ucoz.ru/informer/
 ||adsmmgp.com^$third-party
 ||adsmo.ru^$third-party
 ||adstock.pro^$third-party
+||adsyst.ru^$third-party
 ||adtelligent.com^$third-party
 ||adv.vz.ru^
 ||advaction.ru^$third-party
@@ -1582,7 +1585,6 @@ ucoz.ru/informer/
 ||traffic-delivery.com^$third-party
 ||traffic-media.co^$third-party
 ||trafmag.com^$third-party
-||transfto.com^$third-party
 ||tres8.info^$third-party
 ||trmit.com^$third-party
 ||tsr.zlatoff.ru^
@@ -1804,7 +1806,6 @@ bagnet.org$$script[wildcard="*(function(){var *substr*,Bn=*"][max-length="10000"
 vsetv.com$$script[wildcard="*Xr=""zmc""+""track""*"][max-length="16000"]
 ://s.zmctrack.net^$replace=/.+//,important,domain=censor.net
 .klcheck.com^$replace=/.+//,important
-wss://s.zmctrack.net/
 ://s.zmctrack.net^$websocket
 ||zmctrack.net^$third-party
 @@://s.zmctrack.net/z|$xmlhttprequest,third-party
@@ -2023,7 +2024,6 @@ dni.ru$$script[tag-content="var sc = document.createElement"][max-length="400"]
 @@||an.yandex.ru/system/context.js$domain=dni.ru
 !+ NOT_PLATFORM(windows, mac, android)
 @@||yastatic.net/pcode/adfox/loader.js$domain=dni.ru
-@@||suj.li^$generichide
 @@||pronpic.org/*/index.php/$~script,~image
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=showjet.ru
 api.yadoma.tv#@#.ad_content
@@ -3547,7 +3547,6 @@ dom.ru##div[data-test="header-hat"]
 interfax.ru##.toplogo__advertisement-wrap
 cq.ru#%#//scriptlet("set-constant", "adbadig", "noopFunc")
 in-poland.com##.adsContainer
-.gif$domain=probiv.store
 food.ru##div[class^="rightsideBannersBlock_"]
 cnews.ru##.objects_row > div.cnb-zone:has(> a:not([href*="cnews.ru"]))
 cnews.ru##.token-info
@@ -5229,6 +5228,7 @@ mashina.kg##.top-after-banner
 officelife.media##.aside-catalog-button
 officelife.media##.catalog-mob
 ||vidsboku.com/sites/default/files/banners/
+healthcare.by##a[href="http://www.all.by/"]
 klaksona.net##img[width="468"][height="80"]
 klaksona.net##div[style="padding-top: 5px;height: 85px;"]
 klaksona.net##img[width="200"][height="400"]
@@ -5747,7 +5747,6 @@ kinokadr.ru###uberfooter
 fotostrana.ru###user-updates-feed-cont > div[class="user-updates-block king-wrapper-usernews-block nclear"]
 forum.na-svyazi.ru###userlinks
 businessua.com###vedomosti_block
-mmoglobus.ru###verh > div[class="region region-verh"] > div.block
 multiurok.ru###vue-bubble
 oszone.net###wd_loadingbox
 pawno-info.ru###wgo img[width="400"][height="50"]
@@ -7361,6 +7360,7 @@ fanex.pro#@#.banners1
 fanex.pro#@#.banners2
 moboi.narod.ru#@#img[width="240"][height="400"]
 siteripz.cc#@##teasers
+@@||s0.2mdn.net/ads/studio/Enabler.js$domain=taodv.ru
 ||x.instreamatic.com/mark/idsync.js$script,redirect-rule=noopjs
 mdmprint.ru#@#.banners_block
 iadfrance.fr#@##advertisement
