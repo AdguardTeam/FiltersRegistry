@@ -1,9 +1,9 @@
-! Checksum: afAXdPrj56RT2JDjPuLT1w
-! Diff-Path: ../patches/14/14-s-1767093038-3600.patch
+! Checksum: m9PcfVPFi8KXq514PqQXmw
+! Diff-Path: ../patches/14/14-s-1767100909-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.53.96
-! TimeUpdated: 2025-12-30T11:08:16+00:00
+! Version: 2.2.53.97
+! TimeUpdated: 2025-12-30T13:19:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -15964,7 +15964,7 @@ smart.com##.cookieLayer + .ui-widget-overlay
 ziggo.nl##.cookieWallWrapper
 lysa.se,metadefender.opswat.com,cimsa.com.tr,kabel.canaldigital.no##.cookieWrapper
 it-administrator.de##.cookie_advice
-start.ru,hitec-footwear.com##.cookie_agreement
+santa-secret.ru,start.ru,hitec-footwear.com##.cookie_agreement
 netent.com,ecco.com##.cookie_disclaimer
 base.be,jimmobile.be##.cookie_flyout
 feedbackcompany.com##.cookie_helper
@@ -26021,6 +26021,9 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+afisha.yandex.*#$##app > div[style^="visibility:"]:has(> div > div[style^="background-image:"] > video > source[src^="https://runtime.strm.yandex.ru/videos/"]) { display: none !important; }
+afisha.yandex.*#$#body.body-fixed { overflow: auto !important; position: static !important; }
+piccoma.com#%#//scriptlet('set-cookie', 'wftp', '1')
 realoem.com###roDonationModal
 ||poupatempo.sp.gov.br/staticsfiles/js/base/modalIbest.js
 poupatempo.sp.gov.br##.float-icon-whatsapp
@@ -43982,6 +43985,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+piccoma.com###js_transitionToAppBtn
 indiaglitz.com#?#.header a[href="#"].btn-primary:contains(App)
 poupatempo.sp.gov.br###evaluateDownloadApp
 signin.att.com##app-smart-banner
@@ -47809,6 +47813,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+bandlab.com#%#//scriptlet('set-cookie', 'modalDownloadAppsSeen', 'true')
+bandlab.com###download-app-banner
 hotpepper.jp##.app-sticky-banner
 fnc.ebc.net.tw###mobile-app-inner
 pos.gosuslugi.ru##.download-app
