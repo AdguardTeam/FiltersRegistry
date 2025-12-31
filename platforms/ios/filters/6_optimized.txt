@@ -1,5 +1,5 @@
-! Checksum: DbmfhPPkgUIYZoy0w8ONgw
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1767062817-3600.patch
+! Checksum: 5ndut66TR34MOLiYL30+xg
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1767149168-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.50.68
@@ -1145,7 +1145,6 @@ java-forum.org#%#var st = ".sidebar > div.widget-container:first-of-type, .sideb
 news.de#%#window.disablePopUnder = true;
 stern.de#%#//scriptlet("remove-attr", "data-clickcommand", "a")
 chip.de#%#var originalUserAgent = navigator.userAgent; Object.defineProperty(navigator, 'userAgent', { get: function() { return originalUserAgent + ' Edge'; } });
-jpgames.de#$##takeover { padding-top: unset!important; }
 bluray-disc.de#$#.content-wrapper { padding-top: 0px !important; }
 kino.de#$#body.alice-navbar-sticky,body nav[data-position="smart-sticky"] { margin-top: 0px !important; }
 finanzen.net#$#body.page-layout { grid-template-rows: auto !important; }
@@ -1168,6 +1167,7 @@ maniac.de#$#body.td-ad-background-link { background-image: none!important; }
 maniac.de#$#body.td-ad-background-link #td-outer-wrap { cursor: auto!important; }
 aktiencheck.de#$#body > #main { top: 0px!important; }
 forum.digitalfernsehen.de#$#.messageContent blockquote > div[id][style*="width:300px;height:250px"] { position: absolute!important; left: -3000px!important; }
+dasoertliche.de#$#body > #oetbwrap[style="position:absolute;top:98px;"] { top: 0!important; }
 woxikon.de#$#.ads-wrapper { position: absolute!important; left: -3000px!important; }
 freenet.de#$##frnBanner { height: 25px!important; min-height: 0px !important; }
 achgut.com#$#.column > .banner { position: absolute!important; left: -3000px!important; }
@@ -1338,7 +1338,6 @@ mein-schoener-garten.de##div[data-testid="ParagraphAdSlot"]
 mein-schoener-garten.de##div[data-testid="ParagraphOutbrain"]
 eisbaeren.de##.full_column > div#slide_260
 eisbaeren.de##.full_column > div.content_item:has(> div > div.ad_serve > script)
-tarnkappe.info##.container .is-one-third:has(a[href^="https://"][target="_blank"])
 ||techbook.de/wp-json/gutenberg/v1/html/embed/
 4p.de##.wp-block-column:has(> .wp-block-newspack-blocks-homepage-articles:only-child > div:only-child > article[class*="newspack_spnsrs_tax"]:only-child)
 otz.de#%#//scriptlet('trusted-replace-fetch-response', '/ads\.julephosting\.de/g', 'cdn.julephosting.de', '/-episode\.json/')
@@ -2017,6 +2016,7 @@ tt.com##tt-com-www-google-dfp-v2
 mein-mmo.de###mmo-promotion-sidebar
 infranken.de###outbrain
 saechsische.de##div[style^="min-height: 320px"]
+babelli.de,main-echo.de,pnp.de##div[id^="traffective-ad-"]
 ed-live.de###right > div[style="text-align:center;"]
 ed-live.de###partner
 l-iz.de##.lz-abox
@@ -2748,6 +2748,7 @@ spiele123.com##li.ad
 ||gamesaktuell.de/tsimg/$image
 ||andreas-unterberger.at/mediafiles/werbung
 whocallsme.com###phoneTop
+ariva.de###ARIVA > div#BIGSIZE
 druckerchannel.de###DCA_BOTTOM
 druckerchannel.de###DCGA_LEAD
 winfuture.de###adbox16
@@ -3274,7 +3275,6 @@ _woz_banner_vote.
 ###werbungrechtsfloat
 ###werbungsbox300
 ###werbungsky
-##.GridWerbung
 ##.Werbelabel
 ##.Werbung
 ##.WerbungMitte
@@ -3583,6 +3583,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||112-magazin.de/images/banners/
 ||3druck.com/wp-content/uploads/*/craftbot.jpg
 ||3druck.com/wp-content/uploads/*/da-vinci-color.jpg
+||6chat.org/b1a8/
 ||6navi.ch/banners/
 ||6profis.de/banner/
 ||a.zdg.de^
@@ -3694,6 +3695,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||hammerporno.xxx/js/spx_resposive_rotator.js
 ||hardware-mag.de/images/ads/
 ||hardware-mag.de/js/ads.min.js
+||hartgeld.com/images/banners/
 ||hcb.net^*/elpo-
 ||hcb.net^*/forst.png
 ||hcb.net^*/knoma-
@@ -3739,7 +3741,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||lintorfer.eu^*/banner-
 ||lintorfer.eu^*/bauconceptneu.jpg
 ||lite-magazin.de/wp-content/uploads/*/276x200.
-||loader.kreuzwortraetsel.de^
 ||loader.motor-talk.de^
 ||loader.woxikon.de^
 ||lokalo.de/wp-content/uploads/*/tts-banner-
@@ -4245,6 +4246,7 @@ stuttgarter-zeitung.de###taboola-mhsd
 giga.de,kino.de,watson.de###teaserheld-header
 tennisnet.com###tennisnetWidget
 eishockey-magazin.de###text-10
+hockey-news.info###text-12
 computerschach.de,nachrichten.es,nh24.de,randombrick.de,tollabea.de###text-2
 nh24.de###text-26
 bitcoinnews.ch,nh24.de###text-28
@@ -4906,7 +4908,6 @@ watson.ch##.teaser_type_paid_content
 familie.de##.teaserheld-header-wrapper
 motor-talk.de##.tef-widget__ad-slot
 donaukurier.de##.text-center.container.d-none.d-sm-block.margin-bottom-10.bb-fixheight
-analsexporno.net,deutsche-sexfilme.net,pornomonster.com,scharfe-pornos.com##.tf-de
 analsexporno.net,fickverein.com##.tf-ho
 analsexporno.net,fickverein.com##.tf-sp
 t3n.de##.tg-articletype-sponsored-post
@@ -5252,6 +5253,7 @@ grower.ch##table[width="195"]
 wetterbote.de##table[width="738"][height="90"]
 ww3.cad.de##table[width="95%"][cellspacing="1"][border="0"] > tbody > tr > td[valign="top"]:first-child + td[style="vertical-align: top;"]:last-child
 land-der-traeume.de##td[width="730"] + td[align="center"]
+ibash.de##tr > td[valign="top"]:first-child + td[width="15"] + td[width="186"][valign="top"]:last-child
 ww3.cad.de##tr:first-child:last-child > td[valign="top"]:first-child + td[width="152"][valign="top"][align="center"]:last-child
 focus.de###CT_DESKTOP_NATIVE_HOR_ANY_hor2
 autobild.de,computerbild.de###billboard_btf_2Wrapper
