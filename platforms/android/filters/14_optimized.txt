@@ -1,9 +1,9 @@
-! Checksum: vJpSw/rJBqS9TZhCl7O53A
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1767187198-3600.patch
+! Checksum: CbY7FiLiLAvFNY3al74lTw
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1767190227-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.54.9
-! TimeUpdated: 2025-12-31T13:17:34+00:00
+! Version: 2.2.54.10
+! TimeUpdated: 2025-12-31T14:08:05+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -24080,6 +24080,8 @@ ulifestyle.com.hk#$#body { overflow: auto !important; }
 ulifestyle.com.hk##.post-openApp
 medium.com##footer ~ div > div:has(> div p + div > a[href^="https://play.google.com/store/apps/details?id=com.medium.reader"])
 vestiairecollective.com##div[data-cy="big-smart-banner"]
+vestiairecollective.com##.hasSmartBanner
+vestiairecollective.com#%#//scriptlet('remove-class', 'hasBanner', '.hasBanner:has(> .hasSmartBanner)')
 perplexity.ai##.py-md > div.gap-x-xs:has(> div[class] > svg[viewBox="0 0 400 91"]) + div.gap-x-sm
 perplexity.ai#$#body > div[data-type="portal"]:has(> div a[href^="https://perplexity.sng.link/"][href*="&_ios_dl"][href*="&_android_dl"]) { display: none !important; }
 perplexity.ai#%#//scriptlet('prevent-addEventListener', '/wheel|touchmove/', 'current.noIsolation')

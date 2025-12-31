@@ -1,9 +1,9 @@
-! Checksum: N2R5GBa1PMiqMhDf9r8zMA
-! Diff-Path: ../patches/20/20-s-1767179405-3600.patch
+! Checksum: pLn3fcyC+z3WwF2DPvokGg
+! Diff-Path: ../patches/20/20-s-1767190229-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.25.93
-! TimeUpdated: 2025-12-31T11:07:38+00:00
+! Version: 2.0.25.94
+! TimeUpdated: 2025-12-31T14:08:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3926,6 +3926,8 @@ ulifestyle.com.hk#$#body { overflow: auto !important; }
 ulifestyle.com.hk##.post-openApp
 medium.com##footer ~ div > div:has(> div p + div > a[href^="https://play.google.com/store/apps/details?id=com.medium.reader"])
 vestiairecollective.com##div[data-cy="big-smart-banner"]
+vestiairecollective.com##.hasSmartBanner
+vestiairecollective.com#%#//scriptlet('remove-class', 'hasBanner', '.hasBanner:has(> .hasSmartBanner)')
 perplexity.ai##.py-md > div.gap-x-xs:has(> div[class] > svg[viewBox="0 0 400 91"]) + div.gap-x-sm
 perplexity.ai#$#body > div[data-type="portal"]:has(> div a[href^="https://perplexity.sng.link/"][href*="&_ios_dl"][href*="&_android_dl"]) { display: none !important; }
 perplexity.ai#%#//scriptlet('prevent-addEventListener', '/wheel|touchmove/', 'current.noIsolation')
