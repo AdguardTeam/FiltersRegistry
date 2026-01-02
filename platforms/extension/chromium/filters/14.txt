@@ -1,9 +1,9 @@
-! Checksum: f2QmcsT9N9olM3S29nO9PQ
-! Diff-Path: ../patches/14/14-s-1767345146-3600.patch
+! Checksum: 2n0MPhbBx91sx5xVAF1ihQ
+! Diff-Path: ../patches/14/14-s-1767348636-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.54.15
-! TimeUpdated: 2026-01-02T09:10:06+00:00
+! Version: 2.2.54.16
+! TimeUpdated: 2026-01-02T10:07:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2557,6 +2557,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+airlift.net#%#//scriptlet('set-cookie', 'airlift-policy-agreed', 'true')
 ufovpn.io#%#//scriptlet('trusted-set-local-storage-item', 'global_engage_popup_closed_at', '$now$')
 ufovpn.io#%#//scriptlet('set-local-storage-item', 'cookie-prompt-hide', 'true')
 actonlivingwages.com##.popup-data-notice
@@ -25928,6 +25929,7 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+coolors.co###popover-hint
 iqiyi.com##div[class^="popwin_fullCover__"]
 doradcasmaku.pl##.widget-video
 ||doradcasmaku.pl/assets/video/plywak_web_2.webm
@@ -26663,9 +26665,9 @@ musicfab.ne.jp##.article-inquiry-outer:has(> div.article-inquiry > div.inq-box >
 musicfab.ne.jp##.float-recommend-box
 clashforwindows.org###elementor-popup-modal-144
 music.tower.jp##.promotion-modal
-theblaze.com#$#body > div.tp-modal:has(> div.tp-iframe-wrapper > iframe[id^="offer_"]) { display: none !important; }
-theblaze.com#$#.tp-backdrop { display: none !important; }
-theblaze.com#$#body.tp-modal-open { overflow: auto !important; }
+auto-swiat.pl,theblaze.com#$#body > div.tp-modal:has(> div.tp-iframe-wrapper > iframe[id^="offer_"]) { display: none !important; }
+auto-swiat.pl,theblaze.com#$#.tp-backdrop { display: none !important; }
+auto-swiat.pl,theblaze.com#$#body.tp-modal-open { overflow: auto !important; }
 investing.com#%#//scriptlet('set-cookie', 'r_p_s_n', '1')
 404media.co###announcement-bar-root
 mental-navi.net##.c-flt-banner
@@ -34864,6 +34866,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+dig.watch##.newsletter-subscribe-v2
 web.nhk###nhk-one-header-top-bar + div[class]:has(> a[href="https://www.nhk.or.jp/nhkone/signup-flow/?refm=guide-info"])
 am-qualitaetsmatratzen.de#$?#.klaviyo-prevent-body-scrolling { overflow: auto !important; }
 am-qualitaetsmatratzen.de#$#div[class*="kl-private-reset-css"] { display: none !important; }
@@ -43775,6 +43778,9 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+dijital.gib.gov.tr###storeDirector
+insider-gaming.com#$##ig-app-popup-cta { display: none !important; }
+insider-gaming.com#$#body.ig-app-popup-lock { overflow: auto !important; }
 seznam.cz##div[class^="app-promo"]
 ||7themes.su/js/wc_app_promo.js
 vikacg.com##a[href="/app"]
@@ -46923,7 +46929,7 @@ sp.baseball.findfriends.jp##.AppInstWrap
 m.accuweather.com###app-store-links
 bing.com###hc_opalinst_cta
 bing.com###bnp_ttc_div
-magazine.tabelog.com,zexy.net,carsensor.net,vesselfinder.com##.applink
+dig.watch,magazine.tabelog.com,zexy.net,carsensor.net,vesselfinder.com##.applink
 vesselfinder.com###map-sidebar > #sbup
 androidinsider.ru###google-play-app-post
 follow.yahoo.co.jp,zdnet.de##.appPromo
@@ -49683,7 +49689,7 @@ weather.com##main > aside > div[id^="rail-Donation-"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218517
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66522
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45328
-medonet.pl#%#//scriptlet('prevent-setTimeout', 'this._floatingOn')
+auto-swiat.pl,medonet.pl#%#//scriptlet('prevent-setTimeout', 'this._floatingOn')
 auto-swiat.pl,przegladsportowy.onet.pl,komputerswiat.pl#%#//scriptlet("set-constant", "floatingPlayer.isFloatingEnabled", "false")
 komputerswiat.pl,businessinsider.com.pl,fakt.pl,plejada.pl,medonet.pl,onet.pl#%#//scriptlet("set-constant", "Object.prototype.isFloatingEnabled", "false")
 ! https://github.com/AdguardTeam/AdguardFilters/issues/45428
@@ -51190,6 +51196,9 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+mangadex.org##a[href="/advertise"]
+plarium.com##.wp-block-plarium-content-cta
+dig.watch###Wouldyou
 check.lenta.com##.chek_wrapper > div[class] > #carousel
 klz9.com##a[href^="/premium"]
 tide.chowari.jp##.common__adv_chowari_app_bnr
@@ -56775,8 +56784,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 ! SECTION: Tweaks - JS
 !
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220003
-sharedwebs.com,fitnessplanss.com#%#//scriptlet('adjust-setTimeout', 'nextpage', '*', '0.001')
-sharedwebs.com,fitnessplanss.com#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
+cloudhostingz.com,sharedwebs.com,fitnessplanss.com#%#//scriptlet('adjust-setTimeout', 'nextpage', '*', '0.001')
+cloudhostingz.com,sharedwebs.com,fitnessplanss.com#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219059
 ispazio.net#%#//scriptlet('adjust-setInterval', 'countdown', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218285
