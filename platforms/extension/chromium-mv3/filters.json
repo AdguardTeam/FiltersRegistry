@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.83.1",
-			"timeUpdated": "2026-01-02T16:39:57+0000",
+			"version": "2.1.83.2",
+			"timeUpdated": "2026-01-02T20:36:40+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.83.0",
-			"timeUpdated": "2026-01-02T16:40:00+0000",
+			"version": "2.1.83.1",
+			"timeUpdated": "2026-01-02T20:36:42+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.27.56",
-			"timeUpdated": "2026-01-01T16:40:43+0000",
+			"version": "2.0.27.57",
+			"timeUpdated": "2026-01-02T20:36:48+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1219,8 +1219,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/finnish-easylist-addition/finnish-easylist-addition/gh-pages/Finland_adb.txt",
 			"trustLevel": "high",
-			"version": "2.0.12.28",
-			"timeUpdated": "2025-12-31T00:48:31+0000",
+			"version": "2.0.12.29",
+			"timeUpdated": "2026-01-02T20:37:14+0000",
 			"deprecated": false,
 			"languages": [
 				"fi"
@@ -1295,8 +1295,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.61",
-			"timeUpdated": "2025-12-30T12:46:10+0000",
+			"version": "2.0.23.62",
+			"timeUpdated": "2026-01-02T20:37:22+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.76.32",
-			"timeUpdated": "2026-01-02T16:40:53+0000",
+			"version": "2.0.76.33",
+			"timeUpdated": "2026-01-02T20:37:32+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
