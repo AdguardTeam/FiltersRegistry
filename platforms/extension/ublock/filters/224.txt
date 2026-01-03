@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: AsOMU8OGolCtWVt/vo9Zrg
-! Diff-Path: ../patches/224/224-s-1767435044-3600.patch
+! Checksum: 3K/EqG5jxsvUDTK73aXi+A
+! Diff-Path: ../patches/224/224-s-1767449399-3600.patch
 ! Title: AdGuard Chinese filter
 ! Description: EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.
-! Version: 2.1.51.21
-! TimeUpdated: 2026-01-03T10:07:59+00:00
+! Version: 2.1.51.22
+! TimeUpdated: 2026-01-03T14:07:10+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -20,6 +20,7 @@
 ! Bad: /banner.jpg (should be in general_url.txt)
 ! Bad: ||adssubdomain.legitwebsite.com^ (should be in adservers_firstparty.txt)
 !
+||hs.178yc.com^
 ||aa67678156.com^$3p
 ||shieryuefajkix.com^
 ||shisanmaozser.com^
@@ -987,6 +988,7 @@ apple.com.cn##.ac-gn-blur:style(top: 0 !important;)
 !
 ! Good: .org/ads/
 ! Bad: .org/ads/$domain=example.org (for instance, should be in specific.txt)
+!
 !
 !
 ! 91porny
@@ -2926,10 +2928,13 @@ banzhu1111111.com,banzhu2222222.com,banzhu3333333.com,banzhu4444444.com,banzhu55
 ! Periodically updated, so placed in this filter
 ! All moved to EasyList China as of 07.06.2025
 !
+! Chinese online books
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202277
 ! Periodically updated, so placed in this filter
+:800*/d/*n=$script,3p,xhr
+:800*/d/*?t=$script,3p,xhr
+.top:9956/$3p
 .com:8007/sc/*?n=$3p,script
-! Chinese online books
 ! Site with mirrors: https://cxysb.com/
 ! https://m.xddxsw.net/723/723946/7041611.html
 ! Examples:
@@ -2945,7 +2950,7 @@ banzhu1111111.com,banzhu2222222.com,banzhu3333333.com,banzhu4444444.com,banzhu55
 ! - https://241028z.1iuh5l.com:9001/sc/1028?n=llvukcwa
 ! - https://246xgtyyh.frify.xyz:9369/hm/6?x=u46hl2p1sb&r=0&t=2sb3yi92g9&v=2
 ! - wss://17667nwyoht.rpwvu.xyz:2919/6637?x=a3iuljp50h&r=2&t=u50zxjo55k&v=2
-##div[style^="position:fixed; bottom:0vw; left:"][style$="vw;background: #000;opacity:0.01;"]
+##div[style^="position:fixed; bottom:"][style$="vw;background: #000;opacity:0.01;"]
 /^(https|ws|wss):\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/([a-z]{1,3}\/){0,1}\d+\?[a-z]+=[a-z0-9]+($|&)/$script,websocket,3p
 /^https:\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/bug\?i=\d+$/
 /^https:\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z]{2,3}:\d{1,6}\/[a-z]{1,3}\/\d+\?is_not=/$all
