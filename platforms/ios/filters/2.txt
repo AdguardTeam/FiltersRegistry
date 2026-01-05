@@ -1,9 +1,9 @@
-! Checksum: 9woGC/nW+OzCyhrd7wLmwQ
-! Diff-Path: ../patches/2/2-s-1767622328-3600.patch
+! Checksum: RrkiWXPKw7kanH6c30hbKA
+! Diff-Path: ../patches/2/2-s-1767625909-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.37.59
-! TimeUpdated: 2026-01-05T14:08:44+00:00
+! Version: 2.4.37.60
+! TimeUpdated: 2026-01-05T15:08:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22,6 +22,7 @@
 !
 !
 !
+||figureraisinupper.com^$all
 ||agl004.fun^
 ||v174nyvle72ozq.cfd^
 ||carbonads.net^$third-party
@@ -11981,8 +11982,6 @@ drawize.com#%#//scriptlet('set-constant', 'firstAdLoadPassed', 'true')
 drawize.com#%#//scriptlet('set-constant', 'showVideoAd', 'noopFunc')
 @@||cdn.intergient.com/*/ramp.js$domain=drawize.com
 @@||cdn.intergient.com/ramp_core.js$domain=drawize.com
-! https://github.com/AdguardTeam/AdguardFilters/issues/188234
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=ewrc-results.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/202876
 ! https://github.com/AdguardTeam/AdguardFilters/issues/188452
 niyogbd.xyz##.popSc
@@ -12432,8 +12431,10 @@ cheatography.com#@##bottomAd
 cheatography.com#%#//scriptlet('prevent-setTimeout', '.height() == 0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176315
 ewrc-results.com#%#//scriptlet('abort-on-property-write', 'ADS_URL')
+ewrc-results.com#%#//scriptlet('set-constant', 'adsbygoogle', 'emptyArr')
+ewrc-results.com#%#//scriptlet('prevent-element-src-loading', 'script', 'pagead2.googlesyndication.com')
 !+ PLATFORM(ios, ext_android_cb)
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=ewrc-results.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=ewrc-results.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/176233
 shortix.co#$#button#link { opacity: 1 !important; }
 shortix.co#%#//scriptlet('remove-attr', 'disabled', 'button#link')
@@ -32879,6 +32880,10 @@ asilmedia.org###banner
 !
 ! NOTE: Vietnamese
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/221866
+cap3.sex#%#//scriptlet('prevent-setTimeout', 'adsbygoogle')
+cap3.sex#%#//scriptlet('prevent-window-open')
+cap3.sex#%#//scriptlet('prevent-setTimeout', '("",!1)', '100')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/208478
 rophim.me##.sspp-area
 rophim.me##.sspp-modal
@@ -39594,6 +39599,8 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+ewrc-results.com##.grid > a[target="_blank"] > img
+ewrc-results.com##.container > .grid > .flex:has(> .adsbygoogle)
 carrnissan.com#%#//scriptlet('remove-node-text', 'script', 'adrinoPop')
 mahitimanch.in##.stickyAdBottomWrapper
 mahitimanch.in##.stickyAdTopWrapper
@@ -40383,7 +40390,7 @@ windowsonarm.org##div[aria-labelledby="fui-ra"] + div table tbody > tr:has(ins.a
 windowsonarm.org##.sm\:px-6.lg\:px-8 > .py-8 > div:has(ins.adsbygoogle)
 venturebeat.com##.vb-ad-slot
 venturebeat.com##.article-body > div[class]:has(> div[id*="-"]:only-child:empty)
-hindilinks4u.*,doujindesu.tv,easyvidplayer.com,camwhores.*,player4me.online,faselhds.biz,severeporn.com,rule34video.com,niyaniya.moe,pornxp.net#%#//scriptlet('abort-current-inline-script', 'WebAssembly', 'atob')
+cap3.sex,hindilinks4u.*,doujindesu.tv,easyvidplayer.com,camwhores.*,player4me.online,faselhds.biz,severeporn.com,rule34video.com,niyaniya.moe,pornxp.net#%#//scriptlet('abort-current-inline-script', 'WebAssembly', 'atob')
 jojo-news.com###cb-row--footer-main:has(#bottombanner)
 24porn.com##.b-head-6
 umatechnology.org###rk-exit-modal-bg
@@ -97398,6 +97405,7 @@ browsershots.org#@#.advert_area
 ||dsgmllmaad.com^
 ||dsgszujtdzlea.online^
 ||dsgtosabuqcil.website^
+||dshcvnslkctijpy.com^
 ||dsiljgnplyejw.website^
 ||dsjoiyflhvxpq.website^
 ||dskesrsbhqdnlta.xyz^
@@ -102002,6 +102010,7 @@ browsershots.org#@#.advert_area
 ||goodgamesmanship.com^
 ||goodiesproctor.help^
 ||goodmanmuggily.qpon^
+||goodnatured-meaning.pro^
 ||goodnatureddelay.pro^
 ||goodnaturedinside.com^
 ||goodnesstamper.com^
@@ -103118,6 +103127,7 @@ browsershots.org#@#.advert_area
 ||hearty-text.pro^
 ||heartyboney.com^
 ||heartyquit.com^
+||heatenjobo.cyou^
 ||heateradvisoraplenty.com^
 ||heathertravelledpast.com^
 ||heatjav12.fun^
@@ -114286,6 +114296,7 @@ browsershots.org#@#.advert_area
 ||peasgutsprogramme.com^
 ||peasseventy.com^
 ||peateryporturezygenid.help^
+||peavineunfrillsubfeu.cfd^
 ||peavyegeria.cyou^
 ||pecantinglytripod.com^
 ||pecialukizeias.info^
