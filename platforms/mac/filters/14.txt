@@ -1,8 +1,8 @@
-! Checksum: ePYOfNUY9ePqyIhE69jg0A
+! Checksum: uiY6WkRUhWYZaT5h2Q4xjA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.54.50
-! TimeUpdated: 2026-01-06T06:11:36+00:00
+! Version: 2.2.54.51
+! TimeUpdated: 2026-01-06T07:12:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2559,6 +2559,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+miastokolobrzeg.pl#%#//scriptlet('trusted-click-element', 'div[aria-label="cookieconsent"] .cc-deny', '', '1500')
 nissan-nmc.co.jp##.cookie-approval
 nhkworldpremium.com#%#//scriptlet('trusted-click-element', '#gdpr .form__back.cookie__floating__buttons__button', '!cookie:gdpr-cookie')
 fissman.ru##.cookies-custom-popup
@@ -18150,6 +18151,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/221695
+miastokolobrzeg.pl#@#.cc-window[aria-label="cookieconsent"]
+miastokolobrzeg.pl#@#.cc-floating
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221814
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221822
 @@||consent.cookiebot.com^$domain=churbergbahnen.ch
