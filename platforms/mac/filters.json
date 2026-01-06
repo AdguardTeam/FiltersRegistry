@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.37.69",
-			"timeUpdated": "2026-01-06T00:28:15+0000",
+			"version": "2.4.37.70",
+			"timeUpdated": "2026-01-06T01:36:21+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.54.45",
-			"timeUpdated": "2026-01-05T20:08:32+0000",
+			"version": "2.2.54.46",
+			"timeUpdated": "2026-01-06T01:36:53+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.6.92",
-			"timeUpdated": "2026-01-05T22:07:48+0000",
+			"version": "2.1.6.93",
+			"timeUpdated": "2026-01-06T01:36:54+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.78.6",
-			"timeUpdated": "2026-01-05T18:11:31+0000",
+			"version": "2.0.78.7",
+			"timeUpdated": "2026-01-06T01:37:00+0000",
 			"languages": []
 		},
 		{
