@@ -1,9 +1,9 @@
-! Checksum: vDTNZ+3bZgiZJA8Dr01xXg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1767660696-14400.patch
+! Checksum: e13iet6gA8t2jR8jhCWG6Q
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1767674902-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.54.23
-! TimeUpdated: 2026-01-06T00:48:03+00:00
+! Version: 2.1.54.24
+! TimeUpdated: 2026-01-06T04:44:48+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -221,6 +221,7 @@ _social_footer_
 ###facebook_link
 ###facebook_overlay
 ###facebook_share
+###facebook_slider_widget
 ###facebookbtn
 ###facebookjs
 ###facebooklike
@@ -243,6 +244,7 @@ _social_footer_
 ###fb_share_btn
 ###fb_video_link
 ###fbbox
+###fbbox-relocated
 ###fbbox1
 ###fblike
 ###fblikebutton2018
@@ -371,6 +373,7 @@ _social_footer_
 ###pinterest-share
 ###popup-social
 ###popupFbLikeBox
+###popup_social
 ###post-share-icons
 ###post-social
 ###post_info_share
@@ -505,6 +508,7 @@ _social_footer_
 ###show-sharing-buttons
 ###shr-btns
 ###side-share
+###sidebar-right-social
 ###sidebar-social
 ###sidebar-twitter
 ###sidebar-youtube
@@ -642,6 +646,7 @@ _social_footer_
 ###social_widget
 ###social_widget-4
 ###socialbar
+###socialbookmark
 ###socialbookmarks
 ###socialbox
 ###socialbuttons
@@ -1329,6 +1334,8 @@ _social_footer_
 ##.follow-bar
 ##.follow-facebook
 ##.follow-instagram
+##.follow-link-facebook
+##.follow-link-twitter
 ##.follow-linkedin
 ##.follow-pinterest
 ##.follow-share
@@ -1348,6 +1355,7 @@ _social_footer_
 ##.follow-us-twitter
 ##.follow-us-txt
 ##.follow-us-wrapper
+##.follow-us__links
 ##.followSocial
 ##.followTwitter
 ##.followUsLinks
@@ -1676,7 +1684,6 @@ _social_footer_
 ##.ikonz-social
 ##.image-social
 ##.img-social
-##.img__sharer
 ##.in-social
 ##.in_icon
 ##.in_social
@@ -1873,6 +1880,7 @@ _social_footer_
 ##.mejs-share-button
 ##.menu--footer-social
 ##.menu--social-media
+##.menu--social-media-links
 ##.menu-article-share
 ##.menu-footer-social
 ##.menu-footer-social-container
@@ -2018,6 +2026,7 @@ _social_footer_
 ##.pathSocialIcons
 ##.pbtsharethisbutt
 ##.pen_social_networks
+##.penci-social-counter
 ##.penci-social-share-footer
 ##.penci-social__content
 ##.penci-social__item
@@ -2243,6 +2252,7 @@ _social_footer_
 ##.share-button-group
 ##.share-button-list
 ##.share-button-wrapper
+##.share-buttons-area
 ##.share-buttons-bottom
 ##.share-buttons-box
 ##.share-buttons-container
@@ -2501,7 +2511,6 @@ _social_footer_
 ##.share_control
 ##.share_count
 ##.share_cover
-##.share_cta
 ##.share_digg
 ##.share_entry
 ##.share_facebook
@@ -2958,6 +2967,7 @@ _social_footer_
 ##.social-share_compact
 ##.social-sharer
 ##.social-shares
+##.social-sharing-btn
 ##.social-sharing-button
 ##.social-sharing-buttons
 ##.social-sharing-link
@@ -3092,7 +3102,6 @@ _social_footer_
 ##.social_share_buttons
 ##.social_share_fb
 ##.social_share_left
-##.social_share_privacy
 ##.social_share_privacy_area
 ##.social_share_wrapper
 ##.social_shares
@@ -3468,6 +3477,9 @@ _social_footer_
 ##.zmdi-instagram
 ##.zmdi-twitter
 ##.zmdi-youtube-play
+##.zocial-facebook
+##.zocial-instagram
+##.zocial-twitter
 ##.zone-reseaux-sociaux
 ##.zoom-social-icons-widget
 ##.zox-post-soc-list
@@ -3578,7 +3590,6 @@ _social_footer_
 ||button-share.zalo.me^$third-party
 ||button.like.co^$third-party
 ||buttons.github.io/buttons.js$third-party
-||buttons.googlesyndication.com^$third-party
 ||connect.ok.ru^$third-party
 ||facebook.com/plugins/like.php?$third-party
 ||facebook.com/plugins/like_box.php$third-party
@@ -3748,14 +3759,12 @@ planetizen.com##.addtoany_list
 alchetron.com##.alchetronShareCard
 asiaone.com##.ao-share-buttons
 apnews.com##.ap-embed-wrap-whatsapp
-businessday.co.za##.arena-share-bar
 firstpost.com##.art-soc-icons
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
 neowin.net,seattletimes.com,thecooldown.com##.article-share
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
-forbes.com,heise.de,phillyvoice.com##.article-sharing
 newrepublic.com,thetech.com##.article-social
 browardpalmbeach.com,dallasobserver.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.article-social-share-buttons
 yalereview.org##.article-social-share-icon
@@ -3924,6 +3933,7 @@ myanimelist.net##.js-sns-icon-container
 nasdaq.com##.jupiter22-c-share-link
 4sysops.com##.kleo-quick-contact-wrapper
 axios.com##.leading-0
+cpr.org##.legacy-social-list
 mymodernmet.com##.lets-connect
 mymodernmet.com##.like-it-share-it
 mmoga.co.uk,mmoga.com,mmoga.de,mmoga.es,mmoga.fr,mmoga.se##.likeBtn
@@ -3975,7 +3985,6 @@ theroar.com.au##.pm-share-horizontal
 getcomics.org##.post-footer-shr
 foodandwaterwatch.org,medcitynews.com,publicbooks.org##.post-social-share
 cointelegraph.com##.post__socials-block
-captainaltcoin.com,celebritycruises.com,digitalreg.net,tomzorg.nl##.post_share
 pravda.com.ua##.post_social_item
 koi.ai##.post_sticky-social
 tweaktown.com##.pr-p7.fsvgs
@@ -3987,6 +3996,7 @@ androidheadlines.com##.push-notification
 reason.com##.rcom-social-tools
 dermatologytimes.com,drive.com.au##.react-share__ShareButton
 firstpost.com##.rhs-yt-ch-wrap
+businesstoday.in##.rhs_fixwhtsapp
 aljazeera.com,aljazeera.net##.rich-share
 crealitycloud.com##.right-share-box
 sordum.org##.sbar_social_div
@@ -4004,7 +4014,6 @@ dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
 dailymail.co.uk,thisismoney.co.uk##.share-flipboard
 digitimes.com##.share-frame
-mprnews.org##.share-hdg
 news.artnet.com##.share-header
 cgtn.com,citynews.ca##.share-icon
 mymodernmet.com##.share-it-side
@@ -4132,6 +4141,7 @@ motorsport.tv##.vjs-icons-bar
 dailymail.co.uk##.vjs-social-controls
 deccanherald.com##.wCRP0
 beincrypto.com##.want-to-know-more-block
+businesstoday.in##.whatsAppChannel
 dailymail.co.uk,oogtv.nl##.whatsapp
 aajtak.in,businesstoday.in##.whatsapp_channel
 business-standard.com##.whtsclick
@@ -4215,6 +4225,7 @@ psypost.org#?#strong:contains(/Stay informed|Stay on top/)
 agfk-bw.de,clara.es,hcb.net,travel.state.gov##.socialmedia
 avira.com,byjus.com,commentpicker.com,hakaimagazine.com,hollywoodlife.com,homemark.co.za,ilgiornale.it,iphoneitalia.com,malaymail.com,maxabout.com,motorsport-xl.de,ncbi.nlm.nih.gov,novosti.rs,nu.nl,politico.eu,tennismagazin.de,thepostmillennial.com,uncnews.unc.edu##.social-sharing
 exafm.com,goldderby.com,lacaderadeeva.com,lamejor.com.mx,lasillarota.com,mvsnoticias.com,pronto.com.ar,radioformula.com.mx,revistaforum.com.br,sumedico.com##.share-group
+brecha.com.uy,consigli.it,lgbtqnation.com,sdxcentral.com##.a2a_kit
 beebom.com,captimes.com,cheknews.ca,cockroachlabs.com,cpac.ca,estadao.com.br,fandomwire.com,gta5-mods.com,mag.toyota.co.uk,mydramalist.com,philstarlife.com,silicon.co.uk,silicon.de,silicon.es,silicon.fr,silicon.pt,stadiumtalk.com##.share-container
 alwatanvoice.com,atlantablackstar.com,binnews.com,blog.phylum.io,dailymail.co.uk,fightcancer.org,finurah.com,gulf-times.com,iheart.com,jessekellyshow.com,jfrog.com,merriam-webster.com,noticiasaominuto.com,noticiasaominuto.com.br,sciencefocus.com,snipercentral.com,steveharveyfm.com,thehighwire.com,theshadowleague.com,thisismoney.co.uk##.share-icons
 4cc.com.au,ansa.it,cryptopotato.com,dailyartmagazine.com,eff.org,ewn.co.za,hannity.com,jurist.org,lagaceta.com.ec,melmagazine.com,menselijklichaam.nl,miragenews.com,mobilesyrup.com,mole24.it,newhumanist.org.uk,sampdoria.it,thecookscook.com,upcomingvinyl.com,vivercomsaude.site##.share-links
@@ -4291,6 +4302,7 @@ bild.de##.sharingbar
 kurier.at##.socialmedia-nav
 bafoeg-rechner.de,studis-online.de##.ston-shareicn
 presseportal.de##.story-sharing
+watson.ch##.watson-sharebuttons
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
 bz-berlin.de##div[data-type="social-bar"]
@@ -4406,7 +4418,6 @@ gazetawroclawska.pl##.atomsArticleFoot__socialMedia
 terrabrasilnoticias.com###block-18
 superesportes.com.br###shareitens
 tecnoblog.net###tb-banner-whatsapp
-xvideossexo.com###whatsapp
 revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
@@ -4475,6 +4486,8 @@ biobiochile.cl##.botones-google-news-wsp
 cooperativa.cl##.botones-redes-sociales
 mvsnoticias.com,radioformula.com.mx,sipse.com,sumedico.com,tribuna.com.mx##.btn-seguinos-gnews
 elplural.com##.btn-whatsapp
+cmmedia.es,diariodecastillayleon.es,diariodeleon.es,diariodevalladolid.es,elcorreodeburgos.com,eldebate.com,eleconomista.com.mx,heraldodiariodesoria.es,huffingtonpost.es,listindiario.com,segre.com##.c-detail__share
+eleconomista.com.mx##.c-detail__toolbar__share
 eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
 atlanticohoy.com,consumidorglobal.com##.c-mainarticle__share
 consumidorglobal.com##.c-mainfooter__social
@@ -4508,6 +4521,7 @@ infobae.com##.second-saved-buttons
 as.com##.sh-bar
 infoenergia.info,infofranquicias.ar,infomendoza.info,infonegocios.barcelona,infonegocios.biz,infonegocios.com.py,infonegocios.info,infonegocios.madrid,infonegocios.miami,infonegociosgalicia.es,infonegociosvalencia.es,infostyle.info,infotecnologia.info,injujuy.info,inlitoral.info,inneuquen.info,inpatagonia.info,inrosario.info,insalta.info,insanjuan.info,insantiagodelestero.info,intucuman.info##.share-amp
 infobae.com##.sharebar-buttons-container
+elconfidencialdigital.com,estrelladigital.es,nuevatribuna.es##.sharrre-tools
 elcomercio.com##.single-layout__community-social
 larazon.es##.site-footer__rrss
 eldiario.es,eldiarioar.com##.sn-buttons
@@ -4522,6 +4536,7 @@ nationalgeographic.com.es##.top-share-article
 elmundo.es##.ue-c-article__share-tools
 burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-btn--2
 burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-f__sm
+abc.es##.voc-social-networks
 elpais.com##.w_rs
 trthaber.com##.social-links-container
 bigpara.hurriyet.com.tr##.socialIcons
