@@ -1,9 +1,9 @@
-! Checksum: FgiXJghR67+H1gOrlKg3Jg
-! Diff-Path: ../patches/18/18-s-1767683700-3600.patch
+! Checksum: FGEyGQIMoeBC3H0icxr6CA
+! Diff-Path: ../patches/18/18-s-1767705735-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.78.11
-! TimeUpdated: 2026-01-06T07:12:10+00:00
+! Version: 2.0.78.12
+! TimeUpdated: 2026-01-06T13:19:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2561,6 +2561,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+ib.eplus.jp#%#//scriptlet('trusted-set-cookie', 'ib.eplus.jp', '{"allow":"I_ACCEPT"}')
 miastokolobrzeg.pl#%#//scriptlet('trusted-click-element', 'div[aria-label="cookieconsent"] .cc-deny', '', '1500')
 nissan-nmc.co.jp##.cookie-approval
 nhkworldpremium.com#%#//scriptlet('trusted-click-element', '#gdpr .form__back.cookie__floating__buttons__button', '!cookie:gdpr-cookie')
@@ -18085,6 +18086,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/uBlockOrigin/uAssets/issues/31389
+ib.eplus.jp#@##cookie_gdpr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221695
 miastokolobrzeg.pl#@#.cc-window[aria-label="cookieconsent"]
 miastokolobrzeg.pl#@#.cc-floating
