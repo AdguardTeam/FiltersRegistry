@@ -1,5 +1,5 @@
-! Checksum: ymRjE5V/Zb9wB1RaSq04dA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1767680060-3600.patch
+! Checksum: csWkHHq1P442yWIX+GjsWQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1767754094-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.44
@@ -80,7 +80,6 @@ journaldesfemmes.fr#%#//scriptlet('set-constant', 'integrityObserver.corrupted',
 rustica.fr#%#//scriptlet('set-constant', 'checkAdsBlocked', 'noopFunc')
 tv.free.fr,oqee.tv#%#//scriptlet('google-ima3')
 tv.free.fr,oqee.tv#%#//scriptlet('prevent-element-src-loading', 'script', 'imasdk.googleapis.com/js/sdkloader/ima3.js')
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,domain=oqee.tv|tv.free.fr
 cookomix.com#%#//scriptlet('prevent-requestAnimationFrame', 'Date.now')
 cookomix.com#%#//scriptlet('set-constant', 'dAp', 'true')
 cookomix.com#%#//scriptlet('prevent-setTimeout', 'detected')
@@ -681,6 +680,7 @@ charentelibre.fr,sudouest.fr,techno-science.net##.pub
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
 ||jobat.be^$subdocument,third-party
+francebleu.fr##.SadSlot
 elle.fr##div[class$="--placeholder"]
 science-et-vie.com,topsante.com,autoplus.fr,sudouest.fr##.pub_dfp
 sudouest.fr##.pub_dfp_publi_info_loc
@@ -1460,7 +1460,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /similarClickAds|
 /skipad.
 /static.ads-
-/sw.*.js?promo=
 /syndication.*&idzone=
 /trackads.
 /twitter-ads.
@@ -1571,6 +1570,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?zones=*&blockcampaign=
 _1080x90.$image
 _1140x90.
+_160-x-600_
 _250x300_
 _300-x-250_
 _300_600.
@@ -1788,6 +1788,7 @@ _build=iclick-$popup
 ||affiliatable.io^$third-party
 ||affility.com^$third-party
 ||afilio.com.br^$third-party
+||appsha1.cointraffic.io^
 ||apypxl.com^$third-party
 ||aquaplatform.com^$third-party
 ||arabyads.com^$third-party
@@ -2151,7 +2152,6 @@ _build=iclick-$popup
 ||camassmastic.com^
 ||cameradiminishunkind.com^
 ||camomilegentlemennotable.com^
-||campusexcessively.com^
 ||candyai.gg^
 ||cankergyokuro.com^
 ||captorbaryton.com^
@@ -2249,7 +2249,6 @@ _build=iclick-$popup
 ||doxdynpvwvkcw.com^
 ||dpuplet.net^
 ||dq95d35.com^
-||dragonblogger.com^
 ||druqkstwwvg.com^
 ||duchessefit.com^
 ||ductedcestoid.top^
@@ -2946,7 +2945,6 @@ _build=iclick-$popup
 ||oopt.fr^$popup,third-party
 ||passion.com^$popup
 ||porncrash.com^$popup,third-party
-||powa.fr^$popup,third-party
 ||redlightcenter.com^$popup,third-party
 ||revsharecash.com^$popup,third-party
 ||schjmp.com^$popup
@@ -3031,7 +3029,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||embed.ly^*.amazon.
 ||emploipartner.com/uploads/media/5fb6411bbfd4d310595939.jpg
 ||emploipartner.com^*_partner/$third-party
-||enligne.com^$image,third-party
 ||equirodi.com/images/pub/
 ||erotik-nrw.com/banner/
 ||escort-galleries.com/images/banner/
@@ -3076,8 +3073,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||jumia.*/banners/
 ||kaltura.com^*/a.mp4|$media
 ||laredoute.com/marketing/$third-party,domain=~laredoute.be|~laredoute.ch|~laredoute.co.uk|~laredoute.com|~laredoute.es|~laredoute.fr|~laredoute.gr|~laredoute.hr|~laredoute.it|~laredoute.kr|~laredoute.lu|~laredoute.ma|~laredoute.nl|~laredoute.pl|~laredoute.pt|~laredoute.ru|~laredouteliban.com
-||lautosurf.com/promo/
-||le1er.net/promo/
 ||les-meilleurs-plans.com^$script,subdocument,third-party
 ||lesplansduweb.com^$script,subdocument,third-party
 ||lewebfacilement.com^$script,subdocument,third-party
@@ -3106,7 +3101,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||pm.gamedistribution.com^
 ||prettybigescorts.com/images/$third-party
 ||promo.japanhdv.com^
-||pronoturf.free.fr/pub/
 ||proxy.ads.canalplus-bo.net^
 ||proxy.vidazoo.com^
 ||pub-algeriatenders.s3.eu-central-1.amazonaws.com^
@@ -3121,7 +3115,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||s3content.s3.amazonaws.com/imgemails/cf
 ||satsupreme.com/images/banners/
 ||schule-und-familie.de/assets/images/banners/
-||secretturf.com/img/$third-party
 ||sexcity-girls.com/banner/
 ||shareasale.com/sale.cfm?amount=
 ||sherpa.agoda.com^$third-party
@@ -3319,7 +3312,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||bedetheque.com/javascript/campagne?
 ||bleachmx.fr/wp-content/uploads/bleach-
 ||boursier.com/illustrations/campaigns/
-||bricozone.fr/styles/soft_responsive/xenforo/layout/j
 ||cambro.tv/player/html.php
 ||carrefour.fr/api/advertising/
 ||carrefour.fr/js-ssr/footer-partner-banner.
@@ -3346,6 +3338,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||egaliteetreconciliation.fr/img/
 ||elahmad.com/ads/
 ||elahmad.com/js/extreme.js
+||electromenager-compare.com/images/main/*/pub.jpg
 ||elheddaf.com/data/pub/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
@@ -3677,8 +3670,8 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub-300x250
 ###pub-728x90
 ###pub-after-adownload
+###pub-ban
 ###pub-bottom
-###pub-dfp
 ###pub-droite
 ###pub-footer
 ###pub-habillage
@@ -3688,8 +3681,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub-header
 ###pub-left
 ###pub-right
-###pub-right-top
-###pub-right-top-msg
 ###pub-sky
 ###pub-text
 ###pub-top
@@ -3868,6 +3859,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.banniere_pub
 ##.before-side-nav-ad
 ##.bg-adsense
+##.bireklam2
 ##.bloc-ads
 ##.bloc-pub
 ##.bloc-pub2
