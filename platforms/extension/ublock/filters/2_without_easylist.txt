@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: XKCU9fNSo9PSMhdOoY+Qog
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1767874582-3600.patch
+! Checksum: B2JeGU28OUdZ4RPzaRO6JA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1767878607-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.38.28
-! TimeUpdated: 2026-01-08T12:12:57+00:00
+! Version: 2.4.38.29
+! TimeUpdated: 2026-01-08T13:20:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36351,6 +36351,9 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+beta.xfreehd.com##.col-md-12:has(a[href^="https://landing.brazzersnetwork.com/"])
+beta.xfreehd.com##.ad-container
+beta.xfreehd.com##.ad-body:remove()
 tik-tok.porn##+js(addEventListener-defuser, click, clkUnder)
 tik-tok.porn##+js(set-constant, adsArr, {})
 tik-tok.porn##+js(set-constant, ads_every_x_videos, 9999)
@@ -36486,7 +36489,6 @@ katfile.online##body > div[style^="position: fixed; top:"][style*="z-index:"]:st
 katfile.online##+js(abort-current-script, Date, localStorage)
 katfile.online##+js(abort-current-script, document.createElement, /window\.open|wmcrrd\.com|\?target=/)
 wareable.com##.affiliate-link-banner-outer
-krakenfiles.com##.nativebanner
 krakenfiles.com##+js(addEventListener-defuser, DOMContentLoaded, redirectUrl)
 ||akirabox.to/images/ads/ads.gif
 theverge.com##.duet--article--boosted-post-wrapper
@@ -63009,6 +63011,10 @@ $websocket,domain=300mbfilms.io|lib.rus.ec
 @@||ads.poshtata.online/*.js$domain=seir-sanduk.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214657
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214602
+@@||cdn.gledaitv.*/embed.php$generichide
+@@||cdn.bg-gledai.*/embed.php$generichide
+cdn.gledaitv.*,cdn.bg-gledai.*##+js(abort-on-stack-trace, document.querySelector, Modal)
+cdn.gledaitv.*,cdn.bg-gledai.*##+js(abort-on-stack-trace, document.createElement, initBait)
 cdn.gledaitv.*,cdn.bg-gledai.*###ad-detection-bait ~ div[id*="-"][style^="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/206003
 topsport.bg##+js(remove-node-text, script, baitTest)
