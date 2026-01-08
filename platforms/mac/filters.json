@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.38.25",
-			"timeUpdated": "2026-01-08T09:11:19+0000",
+			"version": "2.4.38.26",
+			"timeUpdated": "2026-01-08T10:08:50+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.23.74",
-			"timeUpdated": "2026-01-07T18:10:39+0000",
+			"version": "2.1.23.75",
+			"timeUpdated": "2026-01-08T10:08:56+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.54.71",
-			"timeUpdated": "2026-01-08T09:11:40+0000",
+			"version": "2.2.54.72",
+			"timeUpdated": "2026-01-08T10:09:13+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.7.20",
-			"timeUpdated": "2026-01-08T08:10:41+0000",
+			"version": "2.1.7.21",
+			"timeUpdated": "2026-01-08T10:09:14+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.78.25",
-			"timeUpdated": "2026-01-08T09:11:44+0000",
+			"version": "2.0.78.26",
+			"timeUpdated": "2026-01-08T10:09:18+0000",
 			"languages": []
 		},
 		{
@@ -309,8 +309,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/19.txt",
-			"version": "2.0.68.36",
-			"timeUpdated": "2026-01-08T08:10:47+0000",
+			"version": "2.0.68.37",
+			"timeUpdated": "2026-01-08T10:09:20+0000",
 			"languages": []
 		},
 		{
@@ -1120,8 +1120,8 @@
 			"displayNumber": 1,
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/224.txt",
-			"version": "2.1.51.55",
-			"timeUpdated": "2026-01-08T00:29:07+0000",
+			"version": "2.1.51.56",
+			"timeUpdated": "2026-01-08T10:09:26+0000",
 			"languages": [
 				"zh"
 			]
