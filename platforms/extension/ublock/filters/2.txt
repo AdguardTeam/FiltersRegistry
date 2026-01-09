@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: AHdW8TQ23bQlhB86xZMLig
-! Diff-Path: ../patches/2/2-s-1767964915-3600.patch
+! Checksum: rr3MASEEilWyqHimtRIC4g
+! Diff-Path: ../patches/2/2-s-1767967907-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.38.53
-! TimeUpdated: 2026-01-09T13:19:02+00:00
+! Version: 2.4.38.54
+! TimeUpdated: 2026-01-09T14:08:14+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36085,14 +36085,22 @@ quefaire.be##.gpt_box
 dogdrip.net##html[lang="ko"] [id^="img_"][style]:has(iframe[frameborder="0"][style]):style(clip-path: circle(0) !important;)
 smsonline.cloud##html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]):style(clip-path: circle(0) !important;)
 ! Common rules, which partially hide banners
-.com/players/*/-1/$script,3p
-.com/players/*/-1/70/$xhr
+.html-load.com/*/d/
+.html-load.com/*/n/
+.fb2.html-load.com/player/
 ||html-load.com^$image,~3p,domain=html-load.com,important
+~dogdrip.net,~smsonline.cloud##amp-img[height="   120"]
+~dogdrip.net,~smsonline.cloud##amp-img[width="   300"]
+~dogdrip.net,~smsonline.cloud##amp-img[width="   336"]
+~dogdrip.net,~smsonline.cloud##div[id^="img_"][style^="margin:0;padding:0;display:block;position:fixed;left:0;"]
+~dogdrip.net,~smsonline.cloud##div[id^="img_"][data-google-query-id]
+~dogdrip.net,~smsonline.cloud##div[id^="img_"][style$="2147483647; justify-content: center;"]
 ~dogdrip.net,~smsonline.cloud##div[id^="img_"][style$="display: block;"]
+~dogdrip.net,~smsonline.cloud##div[id^="img_"][style$="height: 90px;"]
+~dogdrip.net,~smsonline.cloud##div[id^="img_"][style$="max-height:100px;background-color:rgba(128, 128, 128, 0.4);"]
 ~dogdrip.net,~smsonline.cloud##*:not(body) > a[href^="https://content-loader.com/player"]
 ~dogdrip.net,~smsonline.cloud##*:not(body) > a[href^="https://html-load.com/player"]
-~dogdrip.net,~smsonline.cloud##*:not(body) > a[href^="https://07c225f3.online/player"]
-07c225f3.online,content-loader.com,css-load.com,html-load.com,img-load.com##html:not(:has(> head > style:only-child:contains(width:399px;height:411px))):style(filter: opacity(0) !important; pointer-events: none !important;)
+content-loader.com,css-load.com,html-load.com,img-load.com##html:not(:has(> head > style:only-child:contains(width:399px;height:411px))):style(filter: opacity(0) !important; pointer-events: none !important;)
 ~dogdrip.net,~smsonline.cloud##div[id^="img_"][style="min-width: 300px; min-height: 250px;"]
 ~dogdrip.net,~smsonline.cloud##div[style^="height:    250px; width:    300px;"]
 ~dogdrip.net,~smsonline.cloud##div[style^="width:    160px; height:    600px; margin: 0px auto; min-width: 160px; min-height: 600px;"]
@@ -36673,7 +36681,6 @@ pexels.com##div[class^="RowGrid_grid__"] > div[class^="RowItem_gridItem__"]:has(
 forum.ragezone.com##.block-body > header.message-attribution:has(> .listInline  > li > a)
 forum.ragezone.com##.block-body > header.message-attribution + article:has(.samItem > a[rel="sponsored"])
 forum.ragezone.com##.pre-footer--container > .pre-footer--column:has(> .pre-footer--content > .pre-footer--links > a[target="blank"])
-troypoint.com##.entry-content > div[style*="background-color:"][style*="border:"]:has(> span > a[target="_blank"])
 aitoolsdirectory.com##.sv-viewer__about
 vbnmx.online##.floating-ads-container
 pornwithtext.com##.multi-ad
@@ -56200,6 +56207,8 @@ adultlingeriepics.com,adultlingeriepics.com,adultspankingtgp.com,allfeetporn.com
 !
 !
 !+ NOT_OPTIMIZED
+troypoint.com##.entry-content > div[style*="background-color:"][style*="border:"]:has(> span > a[target="_blank"])
+!+ NOT_OPTIMIZED
 briskoda.net##div[data-ips-ad]
 !+ NOT_OPTIMIZED
 zenlesslab.com,wutheringlab.com##.e-con-boxed:has(div[id^="pw-incontent"])
@@ -61361,6 +61370,7 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/221679
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220592
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221907
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221853
@@ -84617,6 +84627,7 @@ browsershots.org#@#.advert_area
 ||burgstardies.rest^
 ||burgusapposes.help^
 ||burialhotter.com^
+||burialruggers.qpon^
 ||buriedinadequateinset.com^
 ||burkerchyazic.cyou^
 ||burkhakalekah.com^
@@ -86827,6 +86838,7 @@ browsershots.org#@#.advert_area
 ||coyanhames.shop^
 ||coypumisteuk.cyou^
 ||cozbxsxralcxd.website^
+||coziegosmore.qpon^
 ||coziertankard.qpon^
 ||cozigplpxpcih.site^
 ||cpa-optimizer.online^
@@ -94634,6 +94646,7 @@ browsershots.org#@#.advert_area
 ||gyxhwdysotvbj.store^
 ||gyxkbiekaghco.website^
 ||gyxniwsdfgsli.site^
+||gyybyitnnqitf.online^
 ||gyyrmepbyiapa.space^
 ||gyzjp4ecwwzm8gfcz5im65.cfd^
 ||gzaghpuljkqxb.space^
@@ -94836,6 +94849,7 @@ browsershots.org#@#.advert_area
 ||harmo-woe.com^
 ||harmoniouspartner.pro^
 ||harmoniouspolice.pro^
+||harpstorney.qpon^
 ||harrenmedianetwork.com^
 ||harriergollandtreasr.cyou^
 ||harrowliquid.com^
@@ -96167,6 +96181,7 @@ browsershots.org#@#.advert_area
 ||hypervre.com^
 ||hypmuidpsqkfi.website^
 ||hypnodyfretty.qpon^
+||hypnodyortalis.qpon^
 ||hypnoscagoule.help^
 ||hypnotizebaseballjesus.com^
 ||hypnotizesqueegeetricolor.com^
@@ -101062,6 +101077,7 @@ browsershots.org#@#.advert_area
 ||luoqdtopebadx.store^
 ||lupmsbacuqlwm.online^
 ||luqnucopvr.com^
+||luqtazaqdcgyo.online^
 ||luqxzzythzopn.space^
 ||lurerbons.help^
 ||lurgaimt.net^
@@ -103545,6 +103561,7 @@ browsershots.org#@#.advert_area
 ||netstam.com^
 ||netund.com^
 ||neuralenitro.help^
+||neuraltummed.shop^
 ||neuroepithelium.lol^
 ||neuronparolee.digital^
 ||neutralmarlservices.com^
@@ -116822,6 +116839,7 @@ browsershots.org#@#.advert_area
 ||unfrostneoneds.help^
 ||unfumedvamoses.com^
 ||ungiddyslimy.cfd^
+||ungivegroin.shop^
 ||ungriporthal.qpon^
 ||unhairraxesplotter.cfd^
 ||unhairsirrees.qpon^
@@ -116842,6 +116860,7 @@ browsershots.org#@#.advert_area
 ||unifieddataconnect.click^
 ||unifini.de^
 ||uniflowrenvoy.qpon^
+||uniflowvifda.cfd^
 ||unimportantcell.pro^
 ||uniowarvvdsto.website^
 ||unique-memory.com^
@@ -120474,6 +120493,7 @@ browsershots.org#@#.advert_area
 ||xqwrdegbmdfrv.top^
 ||xqwxnepeckidj.space^
 ||xqxgcdhfkccgg.site^
+||xrdebvbw.com^
 ||xrefhaozdfiv.com^
 ||xrjarnsprttuu.site^
 ||xrjkkmsjofyef.website^
