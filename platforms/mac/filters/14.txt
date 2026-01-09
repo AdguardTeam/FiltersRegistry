@@ -1,8 +1,8 @@
-! Checksum: DSrp60HiqZCYBKg9IZ467g
+! Checksum: p8+hEOVeUkMWhoK9/lJwag
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.54.83
-! TimeUpdated: 2026-01-09T08:10:28+00:00
+! Version: 2.2.54.84
+! TimeUpdated: 2026-01-09T09:11:33+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2560,6 +2560,9 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+racer.com#$##termly-code-snippet-support { display: none !important; }
+racer.com#$#body[class^="termly-styles-preventBodyScroll-"] { overflow: auto !important; }
+racer.com#%#//scriptlet('trusted-click-element', '#termly-code-snippet-support .t-preference-button, #termly-code-snippet-support .t-checkBox--performance, #termly-code-snippet-support .t-checkBox--social_networking, #termly-code-snippet-support .t-saveButton')
 rawpixel.com##div[data-test-id="check-cookie-consent"]
 corp.takachiho-kk.co.jp###dnn_cookieEnPane
 pttavm.com#%#//scriptlet('set-local-storage-item', 'cookie_status', '1')
@@ -18169,6 +18172,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222185
+racer.com#@##termly-code-snippet-support
+@@||app.termly.io/resource-blocker/$domain=racer.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222072
 @@||usercentrics.eu^$domain=hornbach.ro
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222017
