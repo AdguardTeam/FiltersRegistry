@@ -1,9 +1,9 @@
-! Checksum: R/IaxL4eu3Z0yvSqVjc3Yw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1768006295-14400.patch
+! Checksum: Adkd+vU9E09+n6DR+xYNOA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1768020383-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.54.47
-! TimeUpdated: 2026-01-10T00:48:10+00:00
+! Version: 2.1.54.48
+! TimeUpdated: 2026-01-10T04:43:05+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -555,6 +555,7 @@ _social_footer_
 ###social-nav-holder
 ###social-navbar
 ###social-navigation
+###social-networks-footer-block
 ###social-overlay
 ###social-pinterest
 ###social-plugins
@@ -569,6 +570,7 @@ _social_footer_
 ###social-sharing-bar
 ###social-sharing-buttons
 ###social-sidebar
+###social-sites-wrapper
 ###social-slideout
 ###social-slider
 ###social-spotify
@@ -714,7 +716,6 @@ _social_footer_
 ###v-share
 ###vbseo-likes
 ###vce_social_menu
-###vertical-share-wrapper
 ###verticalSnsBar
 ###viber_share
 ###whatsapp-share
@@ -767,7 +768,6 @@ _social_footer_
 ##.Social-Media
 ##.Social-link
 ##.SocialBar
-##.SocialFollow
 ##.SocialIcon
 ##.SocialIcons
 ##.SocialLinks
@@ -886,7 +886,6 @@ _social_footer_
 ##.article-sharing
 ##.article-soc
 ##.article-social
-##.article-social-bottom
 ##.article-social-btn
 ##.article-social-button
 ##.article-social-container
@@ -895,7 +894,6 @@ _social_footer_
 ##.article-social-panel
 ##.article-social-share
 ##.article-social-sharing
-##.article-social-top
 ##.article-social-wrapper
 ##.article-socials
 ##.article-title-share
@@ -961,6 +959,7 @@ _social_footer_
 ##.bc-author-socials
 ##.bc_social_icons
 ##.bctt-click-to-tweet
+##.bd-FooterSocials-item
 ##.bd-socialicon
 ##.bdaia-social-io
 ##.beSocialShare
@@ -1033,7 +1032,6 @@ _social_footer_
 ##.button_share
 ##.button_twitter
 ##.buttons-share
-##.bwc-footer__social
 ##.bx-footer__social-links
 ##.bx-header__social-links
 ##.bx-social-share
@@ -1125,7 +1123,6 @@ _social_footer_
 ##.custom-sharing
 ##.custom-social
 ##.custom-social-share
-##.custom_share
 ##.d-share
 ##.d3-o-share-bar
 ##.dashicons-facebook
@@ -1780,6 +1777,7 @@ _social_footer_
 ##.jsShare
 ##.js_share-button
 ##.js_socialMedia
+##.jsbd-gtm-footerSocialLink
 ##.jssocials
 ##.jssocials-share
 ##.jssocials-share-facebook
@@ -1934,6 +1932,7 @@ _social_footer_
 ##.mod-facebook
 ##.mod-follow
 ##.mod-twitter
+##.modSharing
 ##.mod_footer_sociallist_iconlink
 ##.module--share
 ##.module-follow
@@ -2354,7 +2353,6 @@ _social_footer_
 ##.share-network-tumblr
 ##.share-network-twitter
 ##.share-network-whatsapp
-##.share-new
 ##.share-on
 ##.share-on-title
 ##.share-open-button
@@ -2402,7 +2400,6 @@ _social_footer_
 ##.share-title
 ##.share-to
 ##.share-toggle
-##.share-toggle-button
 ##.share-tool
 ##.share-toolbar
 ##.share-toolbar__container
@@ -2547,6 +2544,7 @@ _social_footer_
 ##.share_story
 ##.share_tb
 ##.share_this
+##.share_this_content
 ##.share_three
 ##.share_toggle
 ##.share_tool
@@ -3254,6 +3252,7 @@ _social_footer_
 ##.tdm-social-wrapper
 ##.tdm_block_socials
 ##.tds-social1
+##.tg-socialicons
 ##.tgla7-share
 ##.thb-social-links-container
 ##.thb-social-top
@@ -3312,6 +3311,7 @@ _social_footer_
 ##.tweetbox
 ##.tweetbtn
 ##.tweeter
+##.twiticon
 ##.twitter-banner
 ##.twitter-bg
 ##.twitter-btn
@@ -3916,7 +3916,6 @@ tmz.com##.google-preferred-btn
 restofworld.org##.google-preferred-v1
 japan.go.jp##.gov_sns
 gadgets360.com##.gsocialbar
-atlanticcouncil.org##.gta-hover-share-container
 gmanetwork.com##.hdr-social-links
 israelnationalnews.com##.header-nav-addons-link
 archaeology.org##.header-share
@@ -3969,7 +3968,6 @@ boxofficemojo.com##.mojo-fb-logo
 boxofficemojo.com##.mojo-tw-logo
 yardbarker.com##.msnfc
 fordauthority.com,motrolix.com##.mtxh-share-buttons
-audacy.com##.national-footer__social
 denofgeek.com##.nav-social__items
 triblive.com##.navbar-right
 chess.com##.navigation-footer-platforms-component
@@ -4090,7 +4088,6 @@ cnn.com##.social-share_labelled-list
 edition.cnn.com##.social-share_labelled-list__share-links
 mirror.co.uk,themirror.com##.social-sites
 politico.com##.social-tools__list
-batimes.com.ar##.social-topsharing
 dailynews24.in,dutchcowboys.nl,rbth.com,whoopsee.it##.social-wrapper
 gamereactor.asia,gamereactor.cn,gamereactor.cz,gamereactor.de,gamereactor.dk,gamereactor.es,gamereactor.eu,gamereactor.fi,gamereactor.fr,gamereactor.it,gamereactor.jp,gamereactor.kr,gamereactor.nl,gamereactor.no,gamereactor.pl,gamereactor.pt,gamereactor.se,healthshots.com,relationshiphero.com##.socialIcons
 macrumors.com##.socialMedia--3i9tSnAb
@@ -4110,7 +4107,6 @@ firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.s
 overclock3d.net##.socials-container
 cryptonews.com##.ssk
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
-audacy.com##.station-footer__social
 atlantablackstar.com##.stay-social
 vnexpress.net##.sticky
 healthshots.com##.stickySocial
@@ -4121,7 +4117,6 @@ gadgets360.com##.story_social_share
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
 hindustantimes.com##.subscribe-social
 locals.com##.support-now
-biographics.org,dcrainmaker.com,elements.visualcapitalist.com,marktechpost.com,msmagazine.com,podwatch.io,stuffparentsneed.com,toptenz.net##.swp_social_panel
 targettrend.com##.sws_supernormalaction
 notthebee.com##.take-shareables
 firstpost.com##.tbl-cell-wp
@@ -4553,7 +4548,6 @@ elcomercio.com##.social-communities
 infoenergia.info,infofranquicias.ar,infomendoza.info,infonegocios.barcelona,infonegocios.biz,infonegocios.com.py,infonegocios.info,infonegocios.madrid,infonegocios.miami,infonegociosgalicia.es,infonegociosvalencia.es,infostyle.info,infotecnologia.info,injujuy.info,inlitoral.info,inneuquen.info,inpatagonia.info,inrosario.info,insalta.info,insanjuan.info,insantiagodelestero.info,intucuman.info##.social-networs
 perfil.com##.social-topsharing
 larazon.es##.social-wrapper
-rtve.es##.socialBox
 cyltv.es##.srrss
 cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
