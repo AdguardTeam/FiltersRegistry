@@ -1,9 +1,9 @@
-! Checksum: iXVo7c67QzU+Cp8OjQ/3OQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1768179082-14400.patch
+! Checksum: Nodz2qGLfR8LUTMeb0Lt1w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1768193378-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.54.59
-! TimeUpdated: 2026-01-12T00:48:15+00:00
+! Version: 2.1.54.60
+! TimeUpdated: 2026-01-12T04:46:35+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -17,6 +17,7 @@
 -sharetools-
 -social-sidebar.
 -Social-Sidebar/
+-social-slider/
 -sprite-social-
 .sharebar.js
 .sharing.js
@@ -87,7 +88,6 @@
 /share_button?
 /share_popup.js
 /share_sprite.png
-/share_toolbar.js
 /share_view.js
 /share_wechat.png
 /share_weibo.png
@@ -172,7 +172,6 @@ _social_footer_
 ###bdshare
 ###block-menu-menu-social-links
 ###block-menu-menu-social-media-links
-###block-menu-menu-social-menu
 ###block-social
 ###block-sociallinks
 ###block-socialmedia
@@ -500,7 +499,6 @@ _social_footer_
 ###sharing-button
 ###sharing-buttons
 ###sharing-icons
-###sharing-options
 ###sharing-sidebar
 ###sharingBlock
 ###sharing_buttons
@@ -558,7 +556,6 @@ _social_footer_
 ###social-pinterest
 ###social-plugins
 ###social-popup
-###social-profiles
 ###social-share
 ###social-share-bottom
 ###social-share-buttons
@@ -598,7 +595,6 @@ _social_footer_
 ###socialHeader
 ###socialHolder
 ###socialIcons
-###socialInstagram
 ###socialLinks
 ###socialLinksContainer
 ###socialMedia
@@ -915,7 +911,6 @@ _social_footer_
 ##.article_footer_pinterest
 ##.article_header_share
 ##.article_share
-##.article_share_buttons
 ##.article_social
 ##.article_socials
 ##.articlesharebox
@@ -984,7 +979,6 @@ _social_footer_
 ##.block-social-share
 ##.block-socialmedia
 ##.block-socials
-##.blockShare
 ##.block_share
 ##.block_social
 ##.blog-post-share
@@ -1191,7 +1185,6 @@ _social_footer_
 ##.essb-flyin
 ##.essb-mobile-sharepoint
 ##.essb-social-followers-variables
-##.essb_bottombar
 ##.essb_item
 ##.essb_link_pinterest
 ##.essb_link_twitter
@@ -1302,6 +1295,7 @@ _social_footer_
 ##.fbshare
 ##.fbsmallshare
 ##.fe-share
+##.featuredPagesSocial
 ##.fi-social-facebook
 ##.fi-social-instagram
 ##.fi-social-pinterest
@@ -1688,6 +1682,7 @@ _social_footer_
 ##.index_sns
 ##.info-sns-list
 ##.info_share
+##.ing-social
 ##.inline-share
 ##.inline-share-buttons
 ##.inline_socials
@@ -1899,6 +1894,7 @@ _social_footer_
 ##.menu-social-media-menu-container
 ##.menu-social-menu-container
 ##.menu-social-navigation-container
+##.menu_share
 ##.menu_social
 ##.message-share
 ##.messageShareButtons
@@ -1915,7 +1911,6 @@ _social_footer_
 ##.mh-social-nav
 ##.mini-share-post
 ##.mk-header-social
-##.mkd-share-link
 ##.mkdf-social-icon-widget
 ##.mks_social_widget
 ##.ml-footer-social-links
@@ -1935,6 +1930,8 @@ _social_footer_
 ##.module-social-share-icons
 ##.mom-social-icons
 ##.mom-social-share
+##.mom-socials-widget
+##.momizat-social-icons
 ##.mvp-alp-soc-list
 ##.mvp-foot-soc-list
 ##.mvp-nav-soc-but
@@ -1954,7 +1951,6 @@ _social_footer_
 ##.nav--social
 ##.nav-footer-social
 ##.nav-share
-##.nav-share-btn
 ##.nav-soc-but
 ##.nav-social
 ##.nav-social-links
@@ -2115,6 +2111,7 @@ _social_footer_
 ##.prettySocial
 ##.pri-share
 ##.print-share
+##.product-info-social
 ##.product-share
 ##.product-social-icon-wrapper
 ##.pswp__button--share
@@ -2556,7 +2553,6 @@ _social_footer_
 ##.share_w
 ##.share_wa
 ##.share_widget
-##.share_with_friends
 ##.share_wrap
 ##.share_wrapper
 ##.shareaholic-canvas
@@ -3144,6 +3140,7 @@ _social_footer_
 ##.socialmedia-buttons
 ##.socialmedia-container
 ##.socialmedia-footer
+##.socialmedia-menu
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
@@ -3185,7 +3182,6 @@ _social_footer_
 ##.ss-social-icons-container
 ##.ss-social-regular
 ##.ss-social-share-label
-##.ss-total-shares
 ##.ssb_followers
 ##.ssba-share-text
 ##.ssba_email_share
@@ -3778,9 +3774,11 @@ nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
 english.nv.ua##.article__footer__additional_share
 rt.com##.article__google-news
+tvpworld.com##.article__icons
 noticiabrasil.net.br,noticiaslatam.lat,spnfa.ir,sputnik-abkhazia.info,sputnik-georgia.com,sputnik-ossetia.com,sputnik.af,sputnik.by,sputnik.kg,sputnik.kz,sputnik.tj,sputnikglobe.com,sputniknews.africa,sputniknews.cn,sputniknews.in,sputniknews.jp,sputniknews.ru,sputniknews.uz,sputnikportal.rs##.article__news-services-subscribe
 salon.com##.article__share
 wnep.com##.article__sharing
+greenbuildingadvisor.com,tvpworld.com##.article__social
 news.tvbs.com.tw##.article_community_box
 financialexpress.com##.article_follow_us
 thespectator.com##.article_set_wrap
@@ -3849,12 +3847,14 @@ dailymail.co.uk##.dms-puff
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,catholicnewsagency.com##.donation-box
 economist.com##.ds-actioned-link--share
 theverge.com,vox.com##.duet--article--share-buttons
+conservativewoman.co.uk##.dvk-social-sharing
 dailyboulder.com,echonewshub.com,jugomobile.com,thartribune.com,thegamepost.com,townflex.com##.e-shared-sec
 breakingdefense.com##.ea-share-count-wrap
 bdonline.co.uk,dailymail.co.uk,flightglobal.com,screendaily.com##.email
 cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
 arabnews.com##.entry-views
+nrttv.com##.eshare
 yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
 trueachievements.com##.fa-reddit
@@ -3886,6 +3886,7 @@ meteoblue.com##.footer-options
 maketecheasier.com,tribune.com.pk,voetbalkrant.com,wielerkrant.be##.footer-social-icons
 gastrojournal.ch,myanimelist.net##.footer-social-media
 popsci.com##.footer-socials-wrapper
+dailykos.com##.footer__connect
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
 indiatoday.in##.footer__socialshare
@@ -4333,7 +4334,6 @@ boursedirect.fr##.slide-share
 gameblog.fr##.social-button:not(.comment-button):not(.heart-button)
 phonandroid.com##.social-networks
 francetvinfo.fr##.social-zone__wrapper
-arcinfo.ch,lacote.ch,lenouvelliste.ch##button[aria-label^="Partager"]
 ||lequipe.fr/_nuxt/Share.
 ||radio-canada.ca/mp/modules.socialbar.executer.$script
 tportal.hr##.footer__social_media
