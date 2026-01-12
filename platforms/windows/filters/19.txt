@@ -1,9 +1,9 @@
-! Checksum: 2T6tRtJzQsAvlV2lvy5OKg
-! Diff-Path: ../patches/19/19-s-1768220165-3600.patch
+! Checksum: Dp/LZXN1FCuLcxo9dHefcA
+! Diff-Path: ../patches/19/19-s-1768224277-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.68.52
-! TimeUpdated: 2026-01-12T12:13:01+00:00
+! Version: 2.0.68.53
+! TimeUpdated: 2026-01-12T13:21:19+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -537,6 +537,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+tickhosting.com#%#//scriptlet('prevent-fetch', '/adligature|quantserve|srvtrck|outbrain/')
+tickhosting.com##body > div[style^="position: fixed; top: 0px; "]:has(> div[style^="max-width: 90%;"] > h2)
 ||wnflb2023.com/source/plugin/unadblock/
 wnflb2023.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'unadblock')
 axon.ai###adblock-notice
@@ -12228,6 +12230,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+postnews.ru##div[class^="sc-"] > div[class^="sc-"]:has(> div[class^="styles_block"] > a[href^="https://t.me/"])
+tagesspiegel.de###piano-widget > .tp-container-inner
 adac.de##main > div[data-testid="grid-item"]:has(> div[class^="sc-"] > form[name="newsletter-form"])
 teamdeutschland.de##.ce-newsletter-section
 interestingengineering.com##section[aria-label="Newsletter signup banner"]
