@@ -1,5 +1,5 @@
-! Checksum: Pw4IXv8RR9q0Mum2LCeEpg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1768100153-3600.patch
+! Checksum: 9ey0lz0S0MKQEQvQ1Qa8Vg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1768186429-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.50
@@ -494,7 +494,6 @@ moneyvox.fr##.main div[class]:has(> img[mam-campaign="Ban"])
 ||ads-canalplus.akamaized.net/*.mp4$media,redirect=noopmp4-1s
 lephoceen.fr##div[class^="layout_megabanTopContainer"]
 lesechos.fr#?#span[shape="circle"] + span:contains(Publicité):upward(2)
-nouvelobs.com##.dfp-unloaded
 nouvelobs.com##body .dfp-slot:not(#style_important)
 nouvelobs.com##.advertising
 futura-sciences.com##div[class*="ad-parent"]
@@ -1955,6 +1954,7 @@ _build=iclick-$popup
 ||widespace.com^$third-party
 ||wiztube.xyz^$third-party
 ||xcamz.xyz^$third-party
+||xiepl.com^$third-party
 ||xn--ae-tja.ch^$third-party
 ||xpicw.top^$third-party
 ||yospace.com^$~object,third-party
@@ -2001,6 +2001,7 @@ _build=iclick-$popup
 ||aboveaveragefinallycast.com^
 ||acanthishoving.com^
 ||accedemotorcycle.com^
+||accelerationlottery.com^
 ||accordancespotted.com^
 ||accountresponsesergeant.com^
 ||achyrepeatitchy.com^
@@ -2920,6 +2921,7 @@ _build=iclick-$popup
 ||jewhouca.net^$popup
 ||klclick.com^$popup
 ||livepartners.com^$popup,third-party
+||max-adserv.com^$popup,third-party
 ||monetizze.com.br^$popup,third-party
 ||multiupload.com^$popup,third-party
 ||mybestclick.net^$popup,third-party
@@ -3083,6 +3085,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||placelibertine.com^$image,third-party
 ||planete-hit.com/hit.php?
 ||pm.gamedistribution.com^
+||prehraj.to^*/banner
 ||prettybigescorts.com/images/$third-party
 ||promo.japanhdv.com^
 ||proxy.ads.canalplus-bo.net^
@@ -3411,7 +3414,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||nestoria.fr/jsp/include/banners/
 ||nextwarez.com/wp-content/uploads/*-300x250.
 ||niooz.fr^$subdocument
-||openspa.webhop.info/img/sponsors/
 ||pagesjaunes-dz.com/pub/
 ||pagesjaunes.fr/js/pj_ad.js
 ||partenaire.leparticulier.fr^
@@ -3610,6 +3612,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###gpt-ad-habillage
 ###gpt-ad-inread
 ###gpt-leaderboard-top
+###haut_site_pub
 ###head-pub
 ###head_pub
 ###header-promo
@@ -3669,7 +3672,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub-sky
 ###pub-text
 ###pub-top
-###pub01
 ###pub160
 ###pub160x600
 ###pub300
@@ -3860,7 +3862,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.bottompub
 ##.box-centered-ads
 ##.box-pubb
-##.boxAdTop
 ##.box_publicites2
 ##.box_publicites3
 ##.box_publicites_bg
@@ -3929,6 +3930,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.header_sponsors
 ##.hmads_1x1
 ##.hmads_300x250
+##.home_pub
 ##.horizontal-pub
 ##.iframe_pub
 ##.iframeads
@@ -4095,6 +4097,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pub_leaderboard
 ##.pub_left
 ##.pub_left_content
+##.pub_middle
 ##.pub_mobile
 ##.pub_open
 ##.pub_pave
@@ -4398,7 +4401,6 @@ magicmaman.com##.External
 application-remuneratrice.com##.HB-Modal
 nouvelobs.com##.ObsBox-Ligatus
 outlook.live.com##.Ogt7j[id*="-"]
-essonneinfo.fr##.Partenaire
 radiofrance.fr##.PopSlot
 marmiton.org##.RCP__sc-i1pqes-4
 amazon.fr##.a-link-normal[href*="&adId="]
@@ -4592,6 +4594,9 @@ forum-xiaomi.com##.samItem
 ouedkniss.com##.search-top-1
 educatout.com##.showpub
 beaute-test.com##.sidebar-sticky
+quebeccoupongratuit.com##.size_300_250
+quebeccoupongratuit.com##.size_300_600
+quebeccoupongratuit.com##.size_728_90
 test-achats.be##.skin
 infoconcert.com##.slider.container
 ladiagonale.net##.slidingDiv2
@@ -4827,7 +4832,6 @@ zataz.com#?#.custom-sidebar:has(h3:contains(/Partenaires|Publicité/))
 ||facebook.net^*/fbds.js$third-party
 ||facebook.net^*/fbevents.js$third-party
 @@|blob:$popup,domain=caf.fr|cerise-prim.fr|particulier.edf.fr
-@@||adworks.fr^$~third-party
 @@||francesurfinfo.com/affiliation/
 @@||koifaire.com/upload/*/300x250-$image,~third-party
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,third-party,domain=aphp.fr
