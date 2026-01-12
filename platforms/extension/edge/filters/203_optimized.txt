@@ -1,9 +1,9 @@
-! Checksum: BWjxtqp7dioLKWozdZdqUg
-! Diff-Path: ../patches/203_optimized/203_optimized-s-1767717977-14400.patch
+! Checksum: LYp47aZ+5+NUJJKFnqOdGQ
+! Diff-Path: ../patches/203_optimized/203_optimized-s-1768222167-14400.patch
 ! Title: Hungarian filter (Optimized)
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.54
-! TimeUpdated: 2026-01-06T16:43:12+00:00
+! Version: 2.0.4.55
+! TimeUpdated: 2026-01-12T12:46:10+00:00
 ! Expires: 10 days (update frequency)
 ##.ad__main
 ##.adblokk
@@ -87,6 +87,7 @@ hu###hirdetes
 hu###hirdetesek
 hu##ins[id^="aswift_"]
 hu##[class*="overlayBg"]
+naphire.hu##.ad__cont
 eredmenyek.com##div[data-zone-group]
 hdmozi.hu##.asgdc
 magyarorszagom.hu##.bannerContent
@@ -597,7 +598,6 @@ itmania.hu##.rckaexclude
 itmania.hu##[class*="hirdetes"]
 ize.hu##.banner
 jo.444.hu##div:has(> #ap-site-header-top)
-jofogas.hu##.adverticum-anchor-banner
 jofogas.hu###roadblock-adcum-zone
 jofogas.hu##.r_above-placeholder
 jofogas.hu##[style*="text-align: center;"]:has(> .adverticum-label + a)
@@ -900,7 +900,7 @@ pcforum.hu,prog.hu###zone-titleheader
 pcforum.hu##.zone[data-zoneid]
 pcforum.hu###zone-titleheader
 pcforum.hu##.loaded[rel="swappable"]
-pcforum.hu##div[id][rel].loaded:has(ins), div[id][rel].loaded:has(iframe)
+pcforum.hu##div[id][rel].loaded:has(> ins)
 pcguru.hu##.banner-content
 pcguru.hu##a[href*="banner_click"]
 pdafanclub.com##[id*="banner"]
@@ -1975,6 +1975,7 @@ huaweiblog.hu#%#//scriptlet('set-constant', 'tie.ad_blocker_detector', 'undefine
 karpathir.com#%#//scriptlet('abort-on-property-write', 'getComputedStyle')
 magyarhang.org,hang.hu#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', 'ai_run_')
 magyarhang.org,hang.hu#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'ai_run_')
+naphire.hu#%#//scriptlet('prevent-addEventListener', 'load', 'reklám blokkolókat')
 myonlineradio.hu#%#//scriptlet('set-constant', 'ENABLE_PAGE_LEVEL_ADS', 'true')
 $cookie=adblock,domain=myonlineradio.hu
 pcworld.hu#%#//scriptlet('remove-class', 'have-ad', 'body')

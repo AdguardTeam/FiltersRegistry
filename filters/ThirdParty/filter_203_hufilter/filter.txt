@@ -1,8 +1,8 @@
 !
-! Checksum: mfdS0NE661POcQMtL4X8uQ
-! OriginalVersion: 202601061544
+! Checksum: ugyUz4FzlZUxPzmJJfS4aA
+! OriginalVersion: 202601121117
 ! Title: Hufilter for AdGuard
-! Last modified: 06 Jan 2026 15:44 UTC
+! Last modified: 12 Jan 2026 11:17 UTC
 ! Expires: 1 days (update frequency)
 ! Homepage: https://hufilter.hu
 ! Licence: CC-BY, see https://creativecommons.org/licenses/by/4.0/
@@ -115,6 +115,7 @@ hu##[class*="overlayBg"]
 !-------------------------------------------------------------------------------!
 !------ Specific cosmetic filters ----------------------------------------------!
 !-------------------------------------------------------------------------------!
+naphire.hu##.ad__cont
 eredmenyek.com##div[data-zone-group]
 hdmozi.hu##.asgdc
 magyarorszagom.hu##.bannerContent
@@ -631,7 +632,6 @@ itmania.hu##.rckaexclude
 itmania.hu##[class*="hirdetes"]
 ize.hu##.banner
 jo.444.hu##div:has(> #ap-site-header-top)
-jofogas.hu##.adverticum-anchor-banner
 jofogas.hu###roadblock-adcum-zone
 jofogas.hu##.r_above-placeholder
 ! https://github.com/uBlockOrigin/uAssets/issues/23271
@@ -939,7 +939,7 @@ pcforum.hu,prog.hu###zone-titleheader
 pcforum.hu##.zone[data-zoneid]
 pcforum.hu###zone-titleheader
 pcforum.hu##.loaded[rel="swappable"]
-pcforum.hu##div[id][rel].loaded:has(ins), div[id][rel].loaded:has(iframe)
+pcforum.hu##div[id][rel].loaded:has(> ins)
 pcguru.hu##.banner-content
 pcguru.hu##a[href*="banner_click"]
 pdafanclub.com##[id*="banner"]
@@ -2165,6 +2165,16 @@ huaweiblog.hu#%#//scriptlet('set-constant', 'tie.ad_blocker_detector', 'undefine
 karpathir.com#%#//scriptlet('abort-on-property-write', 'getComputedStyle')
 magyarhang.org,hang.hu#%#//scriptlet('abort-current-inline-script', 'document.addEventListener', 'ai_run_')
 magyarhang.org,hang.hu#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'ai_run_')
+! https://github.com/AdguardTeam/AdguardFilters/issues/222186
+naphire.hu#%#//scriptlet('prevent-addEventListener', 'load', 'reklám blokkolókat')
+!#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
+naphire.hu#@#.adunit
+naphire.hu#@#.adslot_1
+naphire.hu#@#.adslot
+naphire.hu#@#.ad_unit
+naphire.hu#@#.ad_slot
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=naphire.hu
+!#endif
 ! https://github.com/AdguardTeam/AdguardFilters/issues/215354
 !#if (adguard_ext_safari || adguard_app_ios || adguard_ext_android_cb)
 tv2play.hu#@#.adSense
