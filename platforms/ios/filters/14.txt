@@ -1,9 +1,9 @@
-! Checksum: 4HgYJGj4O5WPMq4SloTbVw
-! Diff-Path: ../patches/14/14-s-1768255865-3600.patch
+! Checksum: Vutni501esM2IE0Fv8vd6g
+! Diff-Path: ../patches/14/14-s-1768272458-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.9
-! TimeUpdated: 2026-01-12T22:07:57+00:00
+! Version: 2.2.55.10
+! TimeUpdated: 2026-01-13T02:44:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -17984,7 +17984,8 @@ seat.nl#%#(function(){if(-1==document.cookie.indexOf("BCPermissionLevel")){var c
 vox.com#%#(function(){if(-1==document.cookie.indexOf("_chorus_privacy_consent")){var c=new Date, d=c.getTime(), date = new Date(d + 365 * 60 * 60 * 1000); document.cookie="_chorus_privacy_consent="+d+"; path=/; expires=" + date.toUTCString(), location.reload()}})();
 auto.ru#%#//scriptlet('trusted-click-element', '.buttons > a#confirm-button')
 consent.yahoo.com#%#//scriptlet('trusted-click-element', '#consent-page .manage-settings')
-consent.yahoo.com#%#//scriptlet('trusted-click-element', '#consent-page button[type="submit"][name="save"]')
+consent.yahoo.com#%#//scriptlet('trusted-click-element', '#consent-page .thirdparty-embed label.switch.consent')
+consent.yahoo.com#%#//scriptlet('trusted-click-element', '#consent-page button[type="submit"][name="save"]', '', '1000')
 fis-ski.com#%#//scriptlet('trusted-set-cookie', 'cookieDisclaimer', 'approved')
 !
 dane.gov.pl#%#//scriptlet('trusted-set-local-storage-item', 'OD_isAcquintedWithRodo', '"true"')
@@ -35851,7 +35852,7 @@ newsweek.com##section[class^="InlineNewsletterSignup_"]
 newsweek.com##div[class^="HpRightNewsletters_"]
 asahi.com##main.article > .magazine_entry
 f1oversteer.com###prop-audience-exit
-interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
+www.yahoo.com,interestingengineering.com##a[href^="https://www.google.com/preferences/source?q="]
 troyhunt.com###floating_subscribe
 troyhunt.com##.footer_subscription_block
 bitwarden.com###featured-highlight ~ div.flex:has(> div.mb-4 > div.contents > div.hubspot-form > div.hubspot-form-container > form[action^="https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/"])
@@ -60256,6 +60257,9 @@ nizimoenews.livedoor.blog,butumori.com,netizen-voice.blog.jp,ityouchannel.livedo
 !
 ! NOTE: Blogroll specific rules
 !
+femmedoll.jp###popupCard
+femmedoll.jp###before_footer_widget
+femmedoll.jp##article.l-mainContent__inner > .w-singleTop
 panchira-tube.com###home-top-widget
 bikyonyu-bijo-zukan.com,channel-jk.com##.rss2-iframe
 bakuwaro.com##div[id^="top_body"]
