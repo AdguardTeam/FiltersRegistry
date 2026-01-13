@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/edge/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.39.41",
-			"timeUpdated": "2026-01-13T05:11:30+0000",
+			"version": "2.4.39.42",
+			"timeUpdated": "2026-01-13T06:10:56+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.7.77",
-			"timeUpdated": "2026-01-13T04:21:56+0000",
+			"version": "2.1.7.78",
+			"timeUpdated": "2026-01-13T06:11:34+0000",
 			"languages": [],
 			"tags": [
 				45,
