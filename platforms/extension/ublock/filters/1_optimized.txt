@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: gtO+Lf7LzZF03SKE68jziA
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1768324483-3600.patch
+! Checksum: 9jcsGscDOIl5oyjT1eBG0w
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1768359197-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.3.84
@@ -91,6 +91,7 @@
 ://*.*.xyz/v/$script
 ://v.*.tv^$script,3p
 http://*.*.space/v/$3p
+http://v.*.com/v/$3p
 /static/bc.js?
 /bn.php?s=
 sb.php?s=$script
@@ -412,6 +413,7 @@ ucoz.ru/informer/
 ##iframe[src^="https://ad.adriver.ru/"]
 ##div[data-banner-name]
 ##.ipsAdvertisement
+##.adv-news-within
 ##div[id^="yandex_rtb"]
 ##a[href^="https://ad.letmeads.com/"]
 ##body #vid_vpaut_div
@@ -972,7 +974,6 @@ ucoz.ru/informer/
 ||sitewithg.com^$3p
 ||xcec.ru^$3p
 ||rbtwo.bid^$3p
-||kwgefe.com^$3p
 ||g4news.biz^$3p
 ||banner.aismo.ru^$3p
 ||ljsiir.com^$3p
@@ -1069,7 +1070,6 @@ ucoz.ru/informer/
 ||mp3vizor.com^$3p
 ||mp3bars.com^$3p
 ||dzrs3yuexz.com^$3p
-||kvcd7w375h.ru^$3p
 ||v.tzbox*.xyz^$3p
 ||instreamatic.com^$3p
 ||promoggaqjkd.ru^$3p
@@ -1209,6 +1209,7 @@ ucoz.ru/informer/
 ||adhub.ru^$3p
 ||adlabsnetworks.com^$3p
 ||adland.ru^$3p
+||adlook.net^$3p
 ||admachina.com^$3p
 ||admixer.net^$3p
 ||admulti.$3p
@@ -1220,6 +1221,7 @@ ucoz.ru/informer/
 ||adsmo.ru^$3p
 ||adstock.pro^$3p
 ||adsyst.ru^$3p
+||adtags.pro^$3p
 ||adtelligent.com^$3p
 ||adv.vz.ru^
 ||advaction.ru^$3p
@@ -1283,6 +1285,7 @@ ucoz.ru/informer/
 ||brandarium.net^$3p
 ||brdmin.com^$3p
 ||breedac.com^$3p
+||buytraf.ru^$3p
 ||buzzoola.com^$3p
 ||bw95vpjda.ru^$3p
 ||camadmin.ru^
@@ -1366,7 +1369,6 @@ ucoz.ru/informer/
 ||her-ber.top^$3p
 ||holm.ru^$3p
 ||i.j2j.ru^
-||idvd.su^$3p
 ||img.labirint.ru/design/partner/banners_for_inst/$3p
 ||imgg.dt00.net
 ||imho.ru^$3p
@@ -1434,7 +1436,6 @@ ucoz.ru/informer/
 ||micro-win.com^$3p
 ||mipagerank.com^$3p
 ||mixadvert.com^$3p
-||mmcispartners.com^$3p
 ||mobiads.ru^$3p
 ||mobioffers.ru^$3p
 ||moe.video^$3p
@@ -2977,7 +2978,6 @@ gorod24.online##div[id^="unit_"]
 gorod24.online##.post-wrap:has(> .row:first-child > div > .smi24__informer)
 ||gorod24.online/uploads/bns/*.gif
 ||gorod24.online/application/views/gorod24_dev/img/$subdocument
-statusname.ru##center:has(> div[id^="yandex_rtb"])
 moika78.ru##+js(set-constant, td_ad_background_click_link, undefined)
 moika78.ru##body.td-background-link:style(cursor: auto !important;)
 moika78.ru##.backstretch:style(display: none !important;)
@@ -4330,6 +4330,7 @@ study.ru##.advert-banner-wrap
 pornososalka.org##.sponsor-adv
 cuprum.media##.block-advert-banner__container
 poradu24.com##.b-r--after-article
+poradu24.com###skachay-sm-shne-v-deo
 small-games.info##div[style^="margin: 13px auto; text-align: center;"]
 fintolk.pro##.banner-sticky-bottom
 te4h.ru###text-6
@@ -4346,6 +4347,7 @@ eapteka.ru##div[data-target="#catalog-product-menu"] + div.d-none
 starhit.ru##.creative-placeholder
 gorodrabot.by##.banner__group
 blizko.by##.banner-top-n
+pornonarik.net,sundukporno.video,porno90.online,spermogon.com,pornososalka.online,pornomotor.fun##a[href^="/images/obmen/"]
 altarena.ru##noindex[class][id]
 altarena.ru##.jptop
 ||brotorrent.net/uploads/caliber.webp
@@ -4445,7 +4447,6 @@ tsargrad.tv##.aside-free
 novvedomosti.ru##.ad_subhead
 bezformata.com##div[class^="hotrightbox"]
 detector.media##a[href="/bclick.php?/5/"] > img
-rtvi.com##a[href="https://startupvillage.ru"] > img
 altapress.ru,webspoon.ru##div[style="height: 300px;"]
 webspoon.ru##.Advice-ad
 webspoon.ru##.FullWidthBlock-ad
@@ -4781,7 +4782,6 @@ lyrsense.com###topBaner
 usionline.com##.single-sidebar__banners_item
 remontcompa.ru##.do-space
 ||maximonline.ru/gm-api/service-scrooge/
-bankirsha.com##div[style$="height:100px;"]
 afisha.ru##.adv-daily
 afisha.ru##.yandex-dzen
 a.pr-cy.ru##[class*="Ad_"][class*="Link"]
@@ -5859,6 +5859,7 @@ sumypost.com##.sb-element.media
 onedio.ru##.scrollhelper
 mastergrad.com##.section-body > div[style^="margin-bottom: 15px;"]:not([class*="post "])
 diabethelp.org,diabetik.guru##.section-popular
+newsru.com##.section-right-column-prm
 subscribe.ru##.sendsay_adv
 grodnonews.by,cossa.ru,mos.news##.side-banner
 drive.ru##.side-dv
@@ -5990,6 +5991,7 @@ allmmorpg.ru##center > div > a[rel="nofollow"] > img
 codhacks.ru/banner$domain=codhacks.ru
 evrikak.ru##div.ad.clearfix
 youhack.ru##div.mobyaza > div[onclick]
+newsru.com##div[align="center"] > div[style*="width: 328px;"]
 adult-images.ru##div[align="center"] > table[width="150"]
 dlltop.ru##div[align="center"] a[target="_blank"] > img
 proxfree.com##div[class$="Ads"]
@@ -6003,7 +6005,6 @@ track24.ru##div[class*="adss-"]
 gamer.ru##div[class*="alarmalarm-banner-"]
 avito.ru##div[class*="avito-ads-container"] > div
 sravni.ru##div[class*="banner-container"]
-footballtop.ru##div[class*="ft-banner"]
 briefly.ru##div[class*="honey_placement"]
 penzavzglyad.ru##div[class*="sidebar-ads"]
 otvaga2004.mybb.ru##div[class="section"][style] > div[id]
@@ -6148,7 +6149,6 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||1000dosok.ru/real0.php
 ||1popov.ru/aff/$3p
 ||24video.*/assets/bundle/player-*.js?pl=*&wh=*&rnd=*&r=
-||2tt2.ru/images/2tt2.gif$3p
 ||3dnews.ru/assets/images/logos/sn-logo.png
 ||4k-kino.net/kl/4k.php?q=
 ||4pna.com/banner/
@@ -6749,6 +6749,7 @@ mail.ru##+js(json-prune, *.json.result.body.direct)
 mail.ru##+js(json-prune, result.status)
 ||ad.mail.ru^$domain=~e.mail.ru|~octavius.mail.ru
 auto.mail.ru##.daynews__inner > tbody > tr > td.daynews__spring
+auto.mail.ru##.sharelist + div.box_block
 cloud.mail.ru##a[href*="disable_ads_public"]
 cloud.mail.ru##div[class^="ErrorPage__advDesktop--"]
 cloud.mail.ru###sidebar-banner
@@ -6896,7 +6897,6 @@ nova.rambler.ru##article[class^="Direct__item--"]
 rambler.ru##div[class*="xmr"][style^="min-height:"]
 rambler.ru##:matches-path(/\\/(dom|pro)/) div[style^="order:"][style*="-1"]
 rambler.ru##:matches-path(/\\/(dom|pro|eco)/) div[class]:has(> div[id^="adfox-"])
-rambler.ru##:matches-path(/dom) rambler-info-banner
 weekend.rambler.ru##rambler-info-banner
 sport.rambler.ru,finance.rambler.ru##aside[class]:has(> div > div.banner--native-partner_widget)
 family.rambler.ru,life.rambler.ru,weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru##div[style^="order:"][style*="-1"]
@@ -7329,7 +7329,6 @@ stream.1tv.ru#@##m_banner4
 stream.1tv.ru#@#.ins_banner-part
 stream.1tv.ru#@#iframe[width="240"][height="400"]
 gulli.ru#@#img[width="240"][height="400"]
-@@||sport-express.ru^$domain=piter.tv
 @@||ads.adfox.ru^$domain=life.ru
 @@||cdn.comss.net/img/
 starbounder.org#@#.topbanner
