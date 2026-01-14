@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0ZpRgHzeUnElhugnanFyIA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1768351930-14400.patch
+! Checksum: Pj61zfTrLcrSkcOCksd7lw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1768366171-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.54.71
-! TimeUpdated: 2026-01-14T00:48:37+00:00
+! Version: 2.1.54.72
+! TimeUpdated: 2026-01-14T04:46:06+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -233,6 +233,7 @@ _social_footer_
 ###fanback
 ###fb-box
 ###fb-like
+###fb-like-box
 ###fb-like-button
 ###fbDiv
 ###fbLike
@@ -289,6 +290,7 @@ _social_footer_
 ###footerSocialIcons
 ###footerSocialLinks
 ###footerSocialMenu
+###footer_follow
 ###footer_follow_us
 ###footer_social
 ###footer_social_facebook
@@ -331,6 +333,7 @@ _social_footer_
 ###likeThisPost
 ###linkedin_share
 ###mainShare
+###masthead-follow
 ###menu-footer-social-links
 ###menu-footer_social
 ###menu-gridlove-social
@@ -373,6 +376,7 @@ _social_footer_
 ###partShare
 ###pinterest-link
 ###pinterest-share
+###playerShare
 ###popup-social
 ###popupFbLikeBox
 ###popup_social
@@ -1023,13 +1027,13 @@ _social_footer_
 ##.button_share
 ##.button_twitter
 ##.buttons-share
+##.bwc-footer__social
 ##.bx-footer__social-links
 ##.bx-header__social-links
 ##.bx-social-share
 ##.byline-share
 ##.c-article-share
 ##.c-footer-social
-##.c-footer-social-link
 ##.c-footer-social-media
 ##.c-footer__follow-us
 ##.c-footer__social
@@ -1114,6 +1118,7 @@ _social_footer_
 ##.custom-sharing
 ##.custom-social
 ##.custom-social-share
+##.custom_share
 ##.d-share
 ##.d3-o-share-bar
 ##.dashicons-facebook
@@ -1241,7 +1246,6 @@ _social_footer_
 ##.facebook_icn
 ##.facebook_icon
 ##.facebook_large
-##.facebook_left
 ##.facebook_like
 ##.facebook_like_box
 ##.facebook_logo
@@ -2074,6 +2078,7 @@ _social_footer_
 ##.post-footer-social
 ##.post-footer__share
 ##.post-like-share
+##.post-meta-share
 ##.post-share
 ##.post-share-b
 ##.post-share-bar
@@ -2242,7 +2247,6 @@ _social_footer_
 ##.share-body
 ##.share-bottom
 ##.share-box-fixed
-##.share-box-inner
 ##.share-box-wrapper
 ##.share-bsky
 ##.share-btn
@@ -3073,7 +3077,6 @@ _social_footer_
 ##.socialToolbar
 ##.socialTools
 ##.socialTop
-##.socialTwitter
 ##.socialV2
 ##.socialWidget
 ##.socialWrap
@@ -3108,6 +3111,7 @@ _social_footer_
 ##.social_share_wrapper
 ##.social_shares
 ##.social_sharing
+##.social_tabs
 ##.social_tools
 ##.social_top
 ##.social_widget
@@ -3139,7 +3143,6 @@ _social_footer_
 ##.socializer
 ##.sociallinks
 ##.sociallist
-##.socialmain
 ##.socialmedia-buttons
 ##.socialmedia-container
 ##.socialmedia-footer
@@ -3415,6 +3418,7 @@ _social_footer_
 ##.widget-sharrre
 ##.widget-social
 ##.widget-social-b
+##.widget-social-follower
 ##.widget-social-icons
 ##.widget-social-links
 ##.widget_FacebookLikeBox
@@ -3427,7 +3431,6 @@ _social_footer_
 ##.widget_dpsp_social_media_follow
 ##.widget_easy_facebook_page_plugin
 ##.widget_epcl_social
-##.widget_essbsocialfollowerscounterwidget
 ##.widget_facebook_likebox
 ##.widget_facebook_page_plugin_widget
 ##.widget_follow_button_widget
@@ -3749,7 +3752,7 @@ ynet.co.il,ynetnews.com##.SiteArticleSocialShareNew1280
 asahi.com##.SnsName
 asahi.com##.SnsUtilityArea
 cbssports.com##.SocialIconsBar
-streetsblog.org##.SocialSharing_socialSharingItems__wdJu8
+sf.gazetteer.co,streetsblog.org##.SocialSharing_socialSharingItems__wdJu8
 indiatoday.in##.Story_whatsapp_channel__6xdtB
 grammarly.com##._3fq8S-container
 pixivision.net##._floated-bottom-bar
@@ -3843,7 +3846,6 @@ dailymail.co.uk##.container-3zJLP
 carnegieendowment.org##.controls
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
-fashionmagazine.com##.css-zh7gar-ShareButtons
 drugs.com##.ddc-footer-column-social
 dailymail.co.uk##.dms-puff
 aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.com,catholicnewsagency.com##.donation-box
@@ -4054,6 +4056,7 @@ glassalmanac.com##.shhr-btn
 welivesecurity.com##.sidebar-card-media
 pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
 ceoworld.biz##.single-post-share-header
+defector.com,sf.gazetteer.co##.single_inner__pWuJ8
 streetsblog.org##.single_sharingInner__3IoQO
 nme.com,operawire.com,whoopsee.it##.site-footer-social
 dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.site-header__social
@@ -4081,7 +4084,6 @@ aciafrica.org,aciafrique.org,acidigital.com,acimena.com,aciprensa.com,acistampa.
 adrenaline.com.br,bonsfluidos.com.br,bossip.com,brasil.perfil.com,glamurama.com.br,insidehpc.com,maisnovela.com.br,manequim.com.br,marciapiovesan.com.br,mundoconectado.com.br,sportsbusinessjournal.com,vivasaudedigital.com.br##.social-networks
 cityandstateny.com,govexec.com##.social-options
 iflscience.com##.social-share-elements
-techwalla.com##.social-share-icons
 nashvillescene.com,stltoday.com##.social-share-links
 cio.com##.social-share-sticky-menu
 cnn.com##.social-share_labelled-list
@@ -4178,7 +4180,6 @@ dw.com##[data-tracking-name="footer-section-social-media"]
 dw.com##[data-tracking-name^="sharing-icons-"]
 theguardian.com##div > gu-island[name="ShareButton"]
 theatlantic.com##div[class^="ArticleShare_"]
-kcrw.com##div[class^="SocialLinks_"]
 cnbc.com##div[class^="SocialShare-"]
 wired.com##div[class^="StickyBoxWrapper"]
 newsday.com##div[class^="share-tools"]
@@ -4439,8 +4440,6 @@ folha.uol.com.br##.c-follow-social-media
 estudokids.com.br,radiorock.com.br,uai.com.br##.compartilhe
 jovempan.com.br##.cta-model
 em.com.br##.edm-bottom-social
-em.com.br##.edm-right
-em.com.br##.edm-social-networks
 abril.com.br##.f-social
 fastcompanybrasil.com##.fcbr_social_share
 poder360.com.br##.fixed-list
@@ -4548,9 +4547,9 @@ elcomercio.com##.social-communities
 infoenergia.info,infofranquicias.ar,infomendoza.info,infonegocios.barcelona,infonegocios.biz,infonegocios.com.py,infonegocios.info,infonegocios.madrid,infonegocios.miami,infonegociosgalicia.es,infonegociosvalencia.es,infostyle.info,infotecnologia.info,injujuy.info,inlitoral.info,inneuquen.info,inpatagonia.info,inrosario.info,insalta.info,insanjuan.info,insantiagodelestero.info,intucuman.info##.social-networs
 perfil.com##.social-topsharing
 larazon.es##.social-wrapper
-cyltv.es##.srrss
 cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
+theobjective.com##.tno-share
 nationalgeographic.com.es##.top-share-article
 elmundo.es##.ue-c-article__share-tools
 burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-btn--2
