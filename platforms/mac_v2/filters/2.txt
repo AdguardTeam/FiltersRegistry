@@ -1,9 +1,9 @@
-! Checksum: KPUfN7FkbuGxE3k9PFiPpA
-! Diff-Path: ../patches/2/2-s-1768374890-3600.patch
+! Checksum: uBgxvnJ6B+e+MEfd133rjA
+! Diff-Path: ../patches/2/2-s-1768378474-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.39.67
-! TimeUpdated: 2026-01-14T07:10:47+00:00
+! Version: 2.4.39.68
+! TimeUpdated: 2026-01-14T08:09:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10466,6 +10466,9 @@ youporn.com$$script:contains(/window\.[\s\S]*?_zone_[\s\S]*?{"zone_id":/)
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222668
+uptopacks.com#%#//scriptlet('prevent-setTimeout', 'baitElements')
+uptopacks.com#@#.AdSense
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221949
 spigotunlocked.com##body > div[class*=" "][style^="background:"]
 spigotunlocked.com##.swal2-container
@@ -32285,6 +32288,10 @@ kat.*,kickass.*,kickass2.*,kickasstorrents.*,kat2.*,kattracker.*,thekat.*,thekic
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222654
+! Automatically redirects to video player
+!+ NOT_PLATFORM(ext_ff)
+sulasokvid.net#%#(()=>{if(location.href.includes("/watch.php?id=")){const i=location.href.replace("watch.php","video.php");location.assign(i)}})();
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221402
 !+ NOT_PLATFORM(ext_ff)
 yiv.com#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{"function"==typeof showgame&&showgame()}));})();
@@ -37346,6 +37353,10 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+sulasok.cz###floatingBanner
+sulasok.cz##body > div[style^="position: fixed; top:"][style*="z-index:"]
+sulasok.cz#%#//scriptlet('abort-current-inline-script', 'Math.floor', 'window.open')
+||sulasok.cz/00BANNER_UJDVNKOK3U.gif
 health.usnews.com##article div[class^="search-v2__"] ol[class^="item-list__OrderedListStyled"] > li[class^="item-list__ListItemStyled"]:has(button[data-tracking-id="book-appointment"][rel="sponsored"])
 ||download.cnet.com/revamp.js
 download.cnet.com#$#div[data-meta="download-buttons-section"] a[disabled] svg.js-button-lag-icon { display: inline-block !important; }

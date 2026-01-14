@@ -1,9 +1,9 @@
-! Checksum: 6zKKIh2toPeJHgb01DmUCA
-! Diff-Path: ../patches/14/14-s-1768364963-3600.patch
+! Checksum: Q0KNC7cs3SqdlHpsQ5TCzA
+! Diff-Path: ../patches/14/14-s-1768378453-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.30
-! TimeUpdated: 2026-01-14T04:26:37+00:00
+! Version: 2.2.55.31
+! TimeUpdated: 2026-01-14T08:11:10+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1110,7 +1110,6 @@
 ###scnb-cookie-bar
 ###sdbCookieLegalContainer
 ###semocookie-handler
-###shopify-pc__banner
 ###shop-cookie
 ###site-cookie-policy
 ###site-we-use-cookies
@@ -1700,6 +1699,10 @@
 ##.cookie-banner:not(body):not(html)
 !+ NOT_OPTIMIZED
 ###cookie-law-info-bar
+! It's not a typo and it's required for apps on some websites
+! It's the same as just ###shopify-pc__banner, but adding ID twice causes that "specificity" is higher
+! https://github.com/AdguardTeam/AdguardFilters/issues/222642
+###shopify-pc__banner#shopify-pc__banner
 ! NOTE: General element hiding end ⬆️
 ! !SECTION: Cookies - General element hiding
 !
