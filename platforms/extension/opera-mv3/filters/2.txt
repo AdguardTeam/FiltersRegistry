@@ -1,9 +1,9 @@
-! Checksum: re7TKFxzWw8eR8L8Lj9Y2Q
-! Diff-Path: ../patches/2/2-s-1768389074-3600.patch
+! Checksum: H4Z4LCJuZsEcgY+lHU5yug
+! Diff-Path: ../patches/2/2-s-1768392939-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.39.71
-! TimeUpdated: 2026-01-14T11:08:14+00:00
+! Version: 2.4.39.72
+! TimeUpdated: 2026-01-14T12:12:32+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10386,6 +10386,11 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222676
+resulthubdtu.com#@#.ad-unit:not(.textads)
+resulthubdtu.com#@#.ad-space:not(.textads)
+resulthubdtu.com#%#//scriptlet('prevent-setTimeout', '.offsetHeight === 0')
+resulthubdtu.com#%#//scriptlet('prevent-fetch', 'googleads.g.doubleclick.net')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222668
 uptopacks.com#%#//scriptlet('prevent-setTimeout', 'baitElements')
 uptopacks.com#@#.AdSense
@@ -37077,6 +37082,11 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+geekchamp.com##[class^="dyn-"]
+geekchamp.com##div[id^="dyn-"]
+geekchamp.com##div[class^="yorker-"]
+geekchamp.com#$##promo-banner-wrapper { display: none !important; }
+geekchamp.com#$#body { padding-top: 0 !important; }
 sulasok.cz###floatingBanner
 sulasok.cz##body > div[style^="position: fixed; top:"][style*="z-index:"]
 sulasok.cz#%#//scriptlet('abort-current-inline-script', 'Math.floor', 'window.open')
@@ -92621,6 +92631,7 @@ browsershots.org#@#.advert_area
 ||ehtrlqaoaap.com^
 ||ehualvxvqojbj.space^
 ||ehuawabranded.help^
+||ehuebzqftijhm.site^
 ||ehuhefrrpqjgp.website^
 ||ehungroundt.org^
 ||ehutzaug.life^
@@ -105496,6 +105507,7 @@ browsershots.org#@#.advert_area
 ||molderyobtrect.cfd^
 ||molebjeivsqwq.online^
 ||moleconcern.com^
+||molecularrather.com^
 ||molesthyrst.cyou^
 ||moleya.click^
 ||molikrebaumt.xyz^
