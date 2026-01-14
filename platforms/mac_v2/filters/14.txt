@@ -1,9 +1,9 @@
-! Checksum: 0SRZlgUHkVjrMNAzuO6Xpg
-! Diff-Path: ../patches/14/14-s-1768397048-3600.patch
+! Checksum: 37OwkGT7orwUiULK6dH8QA
+! Diff-Path: ../patches/14/14-s-1768399991-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.36
-! TimeUpdated: 2026-01-14T13:20:48+00:00
+! Version: 2.2.55.37
+! TimeUpdated: 2026-01-14T14:10:12+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18208,6 +18208,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222298
+@@||cdn.cookielaw.org/consent/*.json$domain=pushsquare.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222632
 @@||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js$domain=businessinsider.de
 ! https://github.com/uBlockOrigin/uAssets/issues/31472
@@ -26141,6 +26143,7 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+healthgrades.com###feedback
 ebooks.health.elsevier.com#%#//scriptlet('set-local-storage-item', 'e-library-modal-shown', 'true')
 pozdravok.com###pwa-install-banner
 sinemalar.com#$##announcement-modal { display: none !important; }

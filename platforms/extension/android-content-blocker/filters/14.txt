@@ -1,8 +1,8 @@
-! Checksum: 7ETUHmT+luwoHxvoirIbQg
+! Checksum: tDvumujtlfurTyptt02tBQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.36
-! TimeUpdated: 2026-01-14T13:20:48+00:00
+! Version: 2.2.55.37
+! TimeUpdated: 2026-01-14T14:10:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12223,6 +12223,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222298
+@@||cdn.cookielaw.org/consent/*.json$domain=pushsquare.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222632
 @@||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js$domain=businessinsider.de
 ! https://github.com/uBlockOrigin/uAssets/issues/31472
@@ -19796,6 +19798,7 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 !
 ! SECTION: Popups - Regular rules
 !
+healthgrades.com###feedback
 pozdravok.com###pwa-install-banner
 hosei.ac.jp###user-research
 esquire.com##section[data-show-google-banner="true"]
