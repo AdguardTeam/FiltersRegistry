@@ -1,9 +1,9 @@
-! Checksum: 86XUuzdaikRR2mhmoL/daA
-! Diff-Path: ../patches/227/227-s-1768250543-14400.patch
+! Checksum: gBoSWTdKdvriP/mvPRHYuw
+! Diff-Path: ../patches/227/227-s-1768409259-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.66
-! TimeUpdated: 2026-01-12T20:39:02+00:00
+! Version: 2.0.23.67
+! TimeUpdated: 2026-01-14T16:44:11+00:00
 ! Expires: 12 hours (update frequency)
 !
 ||ad.adwiser.kr^
@@ -533,6 +533,7 @@ namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[c
 !
 ! DOMAIN-REFRESHER: START
 !
+[$domain=/torrentsee[0-9]+\.com/]##.container > div[style^="z-index:999; "]
 !
 ! DOMAIN-REFRESHER: END
 !
@@ -1680,6 +1681,7 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+excellesports.com##.modal_contents .modal_wrap
 m.search.naver.com##div[data-block-id^="review/prs_template_"] .sds-comps-header ~ div[data-template-type="vertical"] .sds-comps-vertical-layout.sds-comps-full-layout:has(> .sds-comps-vertical-layout a[href^="https://ader.naver.com/"])
 m.search.naver.com##div[data-block-id^="review/prs_template_"] .sds-comps-header ~ div[data-template-type="vertical"] .sds-comps-vertical-layout.sds-comps-full-layout:has(> .sds-comps-vertical-layout a[href^="https://ader.naver.com/"]) + span
 enjuso.com##.enjuso_exp > a[href^="https://"]
@@ -3696,6 +3698,7 @@ m.fmkorea.com#%#//scriptlet('json-prune', 'tpl apply', 'tpl.[].c')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'ads.[-].eventTracking.ackImpressions.[].url', 'ads.[].adInfo.responseSize', 'api.chzzk.naver.com/service/t/')
 chzzk.naver.com#%#//scriptlet('json-prune-xhr-response', 'adBreaks.[-].adSources.[].withRemindAd', 'videoAdScheduleId', 'api.chzzk.naver.com/service/t/')
 !
+excellesports.com#%#//scriptlet('set-cookie', 'popup_view', 'disable')
 maple.gg#%#//scriptlet('set-cookie', 'hideFrontPagePopup', 'true')
 enuri.com#%#//scriptlet('set-constant', 'getPowerLink', 'noopFunc')
 heye.kr#%#//scriptlet('prevent-window-open', 'pandalive.co.kr/evt/')
