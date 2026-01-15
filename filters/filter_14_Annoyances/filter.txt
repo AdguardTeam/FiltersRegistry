@@ -1954,7 +1954,7 @@
 /cookie-accept.js
 /cookie-alert.
 /cookie-bandeau.
-/cookie-banner$domain=~github.com|~praxismarketing-institut.com|~antritt-hilden.de
+/cookie-banner$domain=~github.com|~praxismarketing-institut.com|~antritt-hilden.de|~kontostand.at
 /cookie-bar-
 /cookie-bar.
 /cookie-check.js
@@ -2569,6 +2569,9 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+kontostand.at#%#//scriptlet('trusted-click-element', 'div.cb-btns-wrapper > div.cb-btn-div > button#cb-btn-save')
+comfortticket.de#$#html { overflow: auto !important; }
+comfortticket.de#$##cookieDisclaimerOverlay { display: none !important; }
 reddit.com###data-protection-consent-dialog
 avia.uniticket.by##div[role="header-content"] > div[is="banner"]
 /acris-cookie-consent-c-s/*$domain=biofitt.com
@@ -18291,10 +18294,18 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222695
+kontostand.at#@##cookie-banner
+kontostand.at#@#.cookie-banner:not(body):not(html)
+! https://github.com/AdguardTeam/AdguardFilters/issues/222212
+!+ PLATFORM(ios, ext_android_cb)
+papagena-shop.comfortticket.de#@##cookieDisclaimer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222298
 @@||cdn.cookielaw.org/consent/*.json$domain=pushsquare.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222632
 @@||cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js$domain=businessinsider.de
+! https://github.com/AdguardTeam/AdguardFilters/issues/222327
+@@||cdn.privacy-mgmt.com^$domain=digitalfoundry.net
 ! https://github.com/uBlockOrigin/uAssets/issues/31472
 @@||web.cmp.usercentrics.eu^$domain=personio.com
 @@||api.service.cmp.usercentrics.eu^$domain=personio.com
@@ -43518,7 +43529,7 @@ bestbuy.com###footer-email-block
 actualcomment.ru##.ya_dzen__container
 aad.org##.ad-container
 comnews.ru##a[id^="subscribe-"]
-urbandictionary.com##.subscribe-panel
+pulkovoairport.ru,urbandictionary.com##.subscribe-panel
 netzwelt.de##.subscribeboard
 gamepro.de#?#body div.container-fluid:has(> div.container div.newsletter-info)
 navyhistory.org.au,knowledgecity.com,whatsnewinpublishing.com,subscriptioninsider.com,prontomarketing.com##.gform_widget
@@ -45056,6 +45067,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+kontostand.at###appBadgeContainer
 avia.tutu.ru##.topBannerSection
 trip.com##div[module-name="flightPopup"]
 livehindustan.com###parentSidestickyopenapp
@@ -53576,6 +53588,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+pulkovoairport.ru##.banner-top-prilet-vilet
 avia.tutu.ru##.bottomBannerSection
 lenta.com##lu-novice-offer-manager
 estadao.com.br##.main > div > div[class^="default__StyledWrapper-"]:has(> div.container div[class^="styles__OfferContainer-"] > div.container-text > button[data-component-name="clube_vantagens"])
