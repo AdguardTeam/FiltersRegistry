@@ -1,9 +1,9 @@
-! Checksum: Ga6o8gQdr/Cn0XjPQvSCUQ
-! Diff-Path: ../patches/13_optimized/13_optimized-s-1768354763-3600.patch
+! Checksum: bGKya5lthxE/qTDGOeqDAg
+! Diff-Path: ../patches/13_optimized/13_optimized-s-1768475458-3600.patch
 ! Title: AdGuard Turkish filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.61.43
-! TimeUpdated: 2026-01-14T01:36:57+00:00
+! Version: 2.0.61.44
+! TimeUpdated: 2026-01-15T11:07:59+00:00
 ! Expires: 5 days (update frequency)
 ||x.creedimages.cfd^
 ||atdogan.site^
@@ -254,14 +254,16 @@ menufiyatlari.com.tr#$#.adblockalert { display: none !important; }
 menufiyatlari.com.tr#$#body.ad_block_detected { overflow: auto !important; }
 menufiyatlari.com.tr#%#//scriptlet('prevent-setTimeout', 'adsbygoogle')
 sosyogaraj.com.tr#%#//scriptlet('prevent-setTimeout', 'adsbygoogle')
+gecmisi.com.tr#$##adblock-modal { display: none !important; }
+gecmisi.com.tr#$#body { overflow: auto !important; }
 gecmisi.com.tr##a[href^="https://bingx.com/"]
 gecmisi.com.tr#@#.adsbygoogle-noablate
 gecmisi.com.tr#@#div[id^="aswift_"]
 @@/favicon.ico|$domain=gecmisi.com.tr
-@@||gecmisi.com.tr^$cookie=_ym_uid
-gecmisi.com.tr#%#//scriptlet('trusted-create-element', '.wp-site-blocks > div main', 'iframe', 'src="blob:"')
-gecmisi.com.tr#%#(()=>{const o=Math.floor(1e5+9e5*Math.random()),a=`${Date.now()}${o}`;var t,e,m,$;t="_ym_uid",e=a,m="/",$=".gecmisi.com.tr",document.cookie=`${t}=${e};path=${m};domain=${$};`})();
-gecmisi.com.tr#%#(()=>{document.addEventListener("DOMContentLoaded",(()=>{const e=document.querySelector(".adsbygoogle:not(.adsbygoogle-noablate)"),t=document.createElement("div");t.textContent=".".repeat(3e3),e.appendChild(t)}));})();
+@@||gecmisi.com.tr/v2/adblock-detect.js
+gecmisi.com.tr#@#ins.adsbygoogle[data-ad-slot]
+gecmisi.com.tr#@#ins.adsbygoogle[data-ad-client]
+gecmisi.com.tr#%#//scriptlet('prevent-fetch', '/agead2\.googlesyndication\.com|googleadservices\.com/')
 promy.pro#%#//scriptlet('set-constant', 'canRunAds', 'true')
 forumchess.com.tr#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 komputerdelisi.com#%#//scriptlet('abort-on-property-read', 'adblockmesaj')
