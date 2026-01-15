@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 8wHBDEimJIANe8IYm+Arrg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1768454112-3600.patch
+! Checksum: uIInNkb//aM60ne5Hpx87g
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1768457662-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.39.89
-! TimeUpdated: 2026-01-15T05:11:37+00:00
+! Version: 2.4.39.90
+! TimeUpdated: 2026-01-15T06:10:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10297,6 +10297,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222710
+forum.sbenny.com##+js(no-setTimeout-if, offsetHeight)
+forum.sbenny.com#@##adsbox
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222676
 resulthubdtu.com#@#.ad-unit:not(.textads)
 resulthubdtu.com#@#.ad-space:not(.textads)
@@ -36414,6 +36417,10 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+||forum.sbenny.com/js/sbenny/affiliate-links.json
+||forum.sbenny.com/affredirect.php
+forum.sbenny.com##.ad-wrapper2
+forum.sbenny.com##.notice-content:has(> #aff)
 mycima.kim##+js(no-window-open-if)
 healthgrades.com##body > div:has(> div[role="marquee"] > div[data-qa-target="leaderboard-ad"])
 healthgrades.com##div:not([data-card-id]):has(> div[data-visible="rendered"] > div[data-qa-target$="-ad"])
