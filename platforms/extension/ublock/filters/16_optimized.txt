@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: H3lKj/MzgOB1irU/bAAawA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1768576390-3600.patch
+! Checksum: eUA2tXlXeKTXQTafRiq4LA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1768617789-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.58
@@ -176,6 +176,7 @@ lecourrier-du-soir.com##+js(addEventListener-defuser, DOMContentLoaded, adsbygoo
 @@||pagead2.googlesyndication.com/pagead/*/show_ads_impl_*.js$domain=lecourrier-du-soir.com
 commentcamarche.net##+js(json-prune, siteParams.aabMessage)
 commentcamarche.net##+js(set-constant, integrityObserver.corrupted, false)
+@@||astatic.ccmbg.com/fc/js/prebid?v=$domain=commentcamarche.net
 @@||c.amazon-adsystem.com/aax2/apstag.js$domain=commentcamarche.net
 ||c.amazon-adsystem.com/aax2/apstag.js$script,redirect=noop.js,important,domain=commentcamarche.net
 @@||widgets.outbrain.com/outbrain.js$domain=commentcamarche.net
@@ -1702,7 +1703,6 @@ _build=iclick-$popup
 ||3xtraffic.com^$3p
 ||acces-charme.com^$3p
 ||acexedge.com^$3p
-||acwm.biz^$3p
 ||acxiom-online.com^$3p
 ||ad-spire.net^$3p
 ||ad6.fr^$3p
@@ -1917,7 +1917,6 @@ _build=iclick-$popup
 ||traffictrade.pro^$3p
 ||trk-egestas.com^$3p
 ||truenat.bid^$3p
-||ulclick.ru^$3p
 ||urban-media.com^$3p
 ||viahelium.com^$3p
 ||visadd.com^$3p
@@ -1939,6 +1938,7 @@ _build=iclick-$popup
 ||zxcvads.com^$3p
 ||compteurdevisite.com^$3p
 ||contadorvisitasgratis.com^$3p
+||contatoreaccessi.com^$3p
 ||freecounterstat.com^$3p
 ||statcounterfree.com^$3p
 ||webcontadores.com^$3p
@@ -2026,7 +2026,6 @@ _build=iclick-$popup
 ||aphizoguntaken.click^
 ||apl373.me^
 ||apogoncaviars.shop^
-||ariososlepage.com^
 ||armataangrily.shop^
 ||arraigncompter.com^
 ||ashinetalk.com^
@@ -2957,6 +2956,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$3p
 ||awin1.com/awclick.php?
+||awreferencement.com/conception_referencement_
 ||azurewebsites.net/widget/
 ||b.clc2l.com^
 ||b.clictoload.com^
@@ -3660,11 +3660,13 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###pubHaut
 ###pubHead
 ###pubHeader
+###pubImg
 ###pubLeft
 ###pubRight
 ###pubTop
 ###pubVideo
 ###pub_1
+###pub_300_100
 ###pub_300x250
 ###pub_300x250-2
 ###pub_468x60
@@ -3677,7 +3679,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###pub_bas
 ###pub_bottom
 ###pub_brique
-###pub_carre
 ###pub_container
 ###pub_contener_right
 ###pub_content
@@ -3783,6 +3784,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###videoadv
 ###werbeblock
 ###widget_box_pub
+###wrapper_inread
 ###zone_pub
 ##.MIXADVERT_NET
 ##.Middle-Ad
@@ -3875,6 +3877,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.fig-ad
 ##.fix_reklama
 ##.fixedAd
+##.flash-ad
 ##.footer-pub
 ##.footerpubright
 ##.frame-ads-left
@@ -3956,6 +3959,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.newads
 ##.nf-aside-ads
 ##.nf-aside-ads__legal
+##.null-ad
 ##.oan_ad
 ##.oboxads
 ##.oboxads-ad-widget
@@ -4191,7 +4195,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.ustreklam
 ##.vda-block
 ##.vda-title
-##.vertical-ads-group
 ##.video-list-ads
 ##.video_reklama
 ##.view-publicites
@@ -4283,6 +4286,7 @@ maxifoot.fr###ep300z
 maxifoot.fr###ep728
 amateur2sexe.fr###footer-boom
 hardware.fr###footer_img
+centerblog.net###gauche > iframe[width="300"][height="250"]
 bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
 banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comics-sanctuary.com,ffeminin.com,gamer-network.fr,jeux-mmorpg.fr,lequipement.fr,letelegramme.fr,nrj.fr###habillage
@@ -4364,10 +4368,13 @@ cnews.fr###wrapper-banner
 casatv.ca###wrapperbanner
 lequipe.fr##.AmPlaceholder
 magicmaman.com##.External
+genybet.fr##.GGFODTBDCS
 application-remuneratrice.com##.HB-Modal
+bienpublic.com,lalsace.fr##.OffreHabitat
 outlook.live.com##.Ogt7j[id*="-"]
 radiofrance.fr##.PopSlot
 marmiton.org##.RCP__sc-i1pqes-4
+marmiton.org##.SHRD__sc-oypy6n-0
 amazon.fr##.a-link-normal[href*="&adId="]
 cotemaison.fr##.actu_pub
 aerobuzz.fr,allodocteurs.fr,auchan.fr,courrierinternational.com,directvelo.com,dna.fr,e-sante.fr,fabriquer-des-meubles.fr,freepik.com,gamer-network.fr,gqmagazine.fr,journalmetro.com,lachainemeteo.com,ladepeche.fr,lematin.ch,lequotidiendumedecin.fr,lopinion.fr,marques.expert,msn.com,p-nintendo.com,photo.fr,rue89lyon.fr,smail.fr,soundlightup.com,tetu.com,truecaller.com,ubergizmo.com,webtor.io,zapiks.fr##.ad
@@ -4744,7 +4751,6 @@ wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.sadst
 1fr1.net,3oloum.com,7olm.org,ahladalil.com,ahlamontada.com,alamontada.com,arabepro.com,banouta.net,darkbb.com,easyforumpro.com,fcmulhousefans.com,forum2jeux.com,forumactif.com,forumactif.fr,forumactif.org,forumalgerie.net,forumpro.fr,forums-actifs.com,galoppourlavie.org,gid3an.com,jordanforum.net,lebonforum.com,orizzontescuolaforum.net,own0.com,passionmilitaria.com,sorcieremonique.com,superforum.fr,syriaforums.net,walkingdead-rpg.com,yoo7.com,ze-43eme.com##.croco_wrapper, [onclick*="var"], [onmousedown*="\x"], [style*="height: 90px;"]
 cdiscount.com##.c-productCard:has(a[href*="?idOffre="][href*="&sw="])
 tvanouvelles.ca##.dfp-container:has(.dfp-ad)
-planetegrandesecoles.com##.elementor-element:has(picture.attachment-full.size-full)
 auchan.fr##.hp-banner:has(.hp-banner__message-sponsored)
 frandroid.com##.is-hidden-mobile:has([class^="Billboard"])
 radio-canada.ca##.max-w-150:has(.srcPubZone)
