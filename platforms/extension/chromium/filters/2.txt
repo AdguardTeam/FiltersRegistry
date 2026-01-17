@@ -1,9 +1,9 @@
-! Checksum: UCYJeclKGV7np5L9RzbRvw
-! Diff-Path: ../patches/2/2-s-1768662627-3600.patch
+! Checksum: jUbASCG8QKQLk4IrbkUI0w
+! Diff-Path: ../patches/2/2-s-1768666226-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.40.47
-! TimeUpdated: 2026-01-17T15:07:08+00:00
+! Version: 2.4.40.48
+! TimeUpdated: 2026-01-17T16:07:14+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10396,6 +10396,9 @@ youporn.com#%#//scriptlet('remove-node-text', 'script', '/window\.[\s\S]*?_zone_
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222901
+newsofx2.com#%#//scriptlet('abort-on-stack-trace', 'document.createElement', 'eval')
+||newsofx2.com/wp-content/litespeed/js/$script
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222789
 ibmmainframes.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
@@ -36537,7 +36540,7 @@ weatherzone.com.au,lifehacker.jp#%#//scriptlet('remove-node-text', 'script', 'ht
 ||minecraftskins.com/miscjs/as*.js
 ||loader.motor-talk.de^
 ||loader.nyitvatartas24.hu^
-||html-load.com^$important,domain=nikkansports.com|j-cast.com|picksandparlays.net|ranking.net|minkou.jp|aucfree.com|motor-talk.de|373news.com|northantstelegraph.co.uk|tavovaikas.lt|agriculture.com|travelandleisure.com|learnreligions.com
+||html-load.com^$important,domain=nikkansports.com|j-cast.com|picksandparlays.net|ranking.net|minkou.jp|aucfree.com|motor-talk.de|373news.com|northantstelegraph.co.uk|tavovaikas.lt|agriculture.com|travelandleisure.com|learnreligions.com|verywellhealth.com
 ||ad-shield.cc^
 ! TODO: remove "trusted-create-element" scriptlet when "trusted-replace-argument" is supported by all platforms
 bz-berlin.de,myhomebook.de,fitbook.de,techbook.de,travelbook.de,twopeasandtheirpod.com,onceuponachef.com,dict.cc,fansided.com,nationalpost.com,chloeting.com,sinemalar.com,zeilen.nl,wielerrevue.nl,ukaudiomart.com,woxikon.de,wort-suchen.de,happyinshape.com,dexerto.com,thetruthaboutcars.com,foodandwine.com,tips-and-tricks.co,lejdd.fr,edinburghnews.scotsman.com,sussexexpress.co.uk,lerobert.com,myrecipes.com,treehugger.com,ldoceonline.com,lifewire.com,thoughtco.com,yorkshirepost.co.uk,marthastewart.com,eatingwell.com,thespruceeats.com,simplyrecipes.com,liquor.com,seriouseats.com,mamastar.jp,collinsdictionary.com,andrewzimmern.com,tipsandtricksjapan.com,homesicktexan.com,oxfordlearnersdictionaries.com,dictionary.cambridge.org,bab.la,redcurrantbakery.com,gonnawantseconds.com,thegunnysack.com,bestfriendsforfrosting.com,savvysavingcouple.net,thesoccermomblog.com,iambaker.net,bakeplaysmile.com,crayonsandcravings.com,realhousemoms.com,bunsinmyoven.com,dinnersdishesanddesserts.com,chelseasmessyapron.com,julieseatsandtreats.com,cafedelites.com,dinneratthezoo.com,jamjarkitchen.com,laurenslatest.com,tablefortwoblog.com,learnmetrics.com,liveandletsfly.com,kuruma-news.jp,infinityfree.com,autobild.de,toyokeizai.net,newatlas.com,usaudiomart.com,slideshare.net,motorradfrage.net,sportlerfrage.net,finanzfrage.net,reisefrage.net,gesundheitsfrage.net,computerfrage.net,autofrage.net,gutefrage.net,newatlas.com,fossbytes.com,perezhilton.com,exceljet.net,sportico.com,wwd.com,neoseeker.com,indiewire.com,helpdeskgeek.com,akinator.com,dnevnik.hr,rollingstone.com,billboard.com,variety.com,hollywoodreporter.com,nouvelobs.com,deadline.com,computerbild.de,divinedaolibrary.com,omnicalculator.com,thelayoff.com,sourceforge.net,welt.de,boardingarea.com,doviz.com,oricon.co.jp#%#//scriptlet('trusted-create-element', 'head', 'script', '', '(()=>{const t={apply:(t,e,r)=>{try{const t=r[1];t?.includes?.("error-report")&&(r[1]="")}catch(t){console.trace(t)}return Reflect.apply(t,e,r)}};window.HTMLScriptElement.prototype.setAttribute=new Proxy(window.HTMLScriptElement.prototype.setAttribute,t)})();')
@@ -65156,7 +65159,7 @@ implbits.com#@#.banner_container
 ||dengiua.com/jquerys.js
 ||bilsh.com/jquerys.js
 !
-archive.*#%#//scriptlet('prevent-setInterval', 'fetch')
+archive.fo,archive.is,archive.li,archive.ph,archive.today,archive.vn#%#//scriptlet('prevent-setInterval', 'fetch')
 ||gyrovague.com^$domain=archive.fo|archive.is|archive.li|archive.ph|archive.today|archive.vn
 ||109.123.233.251^
 ||gulf.moneroocean.stream^
@@ -87203,6 +87206,7 @@ browsershots.org#@#.advert_area
 ||bvnamzjpmqyqc.website^
 ||bvodoujjv.xyz^
 ||bvpwueio2bkibx6.cfd^
+||bvqtaxuothlxrms.xyz^
 ||bvrigohidxggr.site^
 ||bvryckykikvhh.website^
 ||bvtmvalgidefh.store^
@@ -87214,6 +87218,7 @@ browsershots.org#@#.advert_area
 ||bvzmnmxnyvtkd.site^
 ||bvzpygddgkcwn.com^
 ||bvztijajnvves.site^
+||bw9p77m4gbhhg3l.cfd^
 ||bwcrsvafzujog.site^
 ||bwcvzbjbrbolk.site^
 ||bwdsnvwtnvuhl.store^
@@ -98849,6 +98854,7 @@ browsershots.org#@#.advert_area
 ||hrllzdgzyzoiy.website^
 ||hrmdw8da.net^
 ||hrogrpee.de^
+||hrqadiqrxkz.com^
 ||hrqecm0d.xyz^
 ||hrqiwjiuck4q9vgc186646qj5.rest^
 ||hrqmbugn.xyz^
@@ -106532,6 +106538,7 @@ browsershots.org#@#.advert_area
 ||myvmpjsrxt.com^
 ||myvpistasrwah.one^
 ||myvycofcbwhlk.space^
+||mywldyeo.com^
 ||mywliixjtrvml.website^
 ||mywondertrip.com^
 ||myxstalk.lol^
@@ -107163,6 +107170,7 @@ browsershots.org#@#.advert_area
 ||ninilfwodxdyj.website^
 ||ninontoising.com^
 ||ninthlyauteremiched.cyou^
+||ninuptaaajrdk.space^
 ||niobetimote.shop^
 ||niolpwvcjjfvj.website^
 ||nipcrater.com^
@@ -108407,6 +108415,7 @@ browsershots.org#@#.advert_area
 ||ogzashgkmhted.space^
 ||ogzdumaqlo.com^
 ||oh53v842gxk76i8zkpqjcy5izf.cfd^
+||ohaplvrbzkcee.site^
 ||ohbognmxxssou.space^
 ||ohbtludnmaaqd.online^
 ||ohbxjiwpjzewd.online^
@@ -110537,6 +110546,7 @@ browsershots.org#@#.advert_area
 ||pinklabel.com^
 ||pinkleo.pro^
 ||pinkoesbessel.qpon^
+||pinlockeuphuesdustour.cyou^
 ||pinnaeseemers.cfd^
 ||pinnagereapers.cfd^
 ||pinnulepagedom.com^
@@ -110868,6 +110878,7 @@ browsershots.org#@#.advert_area
 ||pmyvslrvug.net^
 ||pmzer.com^
 ||pnaddawgsyxyw.site^
+||pnajcjelrjxnm.website^
 ||pncdrjirpqcrvc.com^
 ||pncloudfl.com^
 ||pnd.gs^
@@ -120177,6 +120188,7 @@ browsershots.org#@#.advert_area
 ||tvqqnhkixwqny.space^
 ||tvqrsvhqmcten.website^
 ||tvrqlfdtfxtsh.space^
+||tvvbtwcvbcygh.online^
 ||tvvonkzywmxbk.space^
 ||tvvydeysyzwnl.site^
 ||tvwxwboysflvt.website^
@@ -120840,6 +120852,7 @@ browsershots.org#@#.advert_area
 ||uneaselazing.help^
 ||uneasinessresurrection.com^
 ||uneasychowder.help^
+||unehipynevdxv.online^
 ||unelectsiwens.qpon^
 ||unequaled-ad.pro^
 ||unequaledchair.com^
@@ -125662,6 +125675,7 @@ browsershots.org#@#.advert_area
 ||ywjvjschozjzq.online^
 ||ywlkcbmjagqkm.site^
 ||ywlkeeedaayuf.space^
+||ywqxnvfv.com^
 ||ywrecltfwkwqx.com^
 ||ywroovnsgyftl.site^
 ||ywtwvfuwgxnpe.space^
