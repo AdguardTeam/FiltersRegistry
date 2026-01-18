@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.83.93",
-			"timeUpdated": "2026-01-18T00:49:17+0000",
+			"version": "2.1.83.94",
+			"timeUpdated": "2026-01-18T04:44:54+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.83.92",
-			"timeUpdated": "2026-01-18T00:49:18+0000",
+			"version": "2.1.83.93",
+			"timeUpdated": "2026-01-18T04:44:57+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.27.75",
-			"timeUpdated": "2026-01-17T20:36:37+0000",
+			"version": "2.0.27.76",
+			"timeUpdated": "2026-01-18T04:45:02+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1322,8 +1322,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.39",
-			"timeUpdated": "2026-01-13T16:44:30+0000",
+			"version": "2.0.8.40",
+			"timeUpdated": "2026-01-18T04:45:37+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.77.24",
-			"timeUpdated": "2026-01-18T00:49:58+0000",
+			"version": "2.0.77.25",
+			"timeUpdated": "2026-01-18T04:45:41+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"

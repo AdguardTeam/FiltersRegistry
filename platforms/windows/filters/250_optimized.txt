@@ -1,5 +1,5 @@
-! Checksum: COcN/zjBD2oA/FgxzWz2Pw
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1768625126-14400.patch
+! Checksum: jYARRm2ICGxzNePTMsuUDA
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1768711728-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.73
@@ -66,7 +66,6 @@ coolrom.com.au,coolrom.com##.download_link
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
-||track.vcdc.com^$all,domain=~malware_redirection_trains.*,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ?bemobdata=$all
 [2600:1f18:43d1:2a04:ee05:261e:d408:7ba1]$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -304,9 +303,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||markswaitingrouge.com^$all
 ||deafnitrogen.com^$all
 ||outlaysudden.com^$all
-||batchzoo.com^$all
 ||intriguingajar.com^$all
-||hankcoinspeppermint.com^$all
 ||heartburnsurroundingcourtroom.com^$all
 ||adoptedablative.com^$all
 ||antonyexpected.com^$all
@@ -334,7 +331,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||dealshik.com^$all
 ||dealslandz.com^$all
 ||ndbstats.online^$all
-||victoriyaclub.com^$all
 ||x2lt.com^$all
 [2600:1f18:43d1:2a02:169f:dcbb:85f9:3c56]$network
 [2600:1f18:43d1:2a02:b6ee:327b:545e:e578]$network
@@ -343,6 +339,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 [2600:1f1c:57F:b502:dd8:9588:11e6:282]$network
 ||douveejoalastu.net^$all
 ||usheebainaut.com^$all
+||wounofoarausooy.net^$all
 !+ PLATFORM(windows, mac, android, cli)
 139.45.197.106$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -461,6 +458,7 @@ google.*#?#div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
 ||cant3am.com^$all
 ||gettopple.com^$all
 ||st1net.com^$all
+||tf4srv.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 95.211.229.247$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -510,6 +508,7 @@ drvhub.net##.driver-item__install
 ||life2veccalculatoronline.github.io^$document
 ||deathcalculator.net^$document
 ||admozartxml.com^$all
+||advlistings.com^$all
 ||audienceye.com^$all
 ||bidmyadz.com^$all
 ||explorads.com^$all
@@ -575,7 +574,6 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 ###divShare
 ###rail-share-bar
 ###share-buttons
-###share-tool
 ###share_bar
 ###share_container:not([class*=body i])
 ###sharebar
@@ -1023,7 +1021,6 @@ news.sina.com.cn##.clearfix.blk-wxfollow
 smzdm.com##.footer-right
 tmall.com###mobile
 trade.tmall.com##.show-cross-btn
-xinhuanet.com##.s-ewm
 ctrip.com###fl_wrap_default
 smzdm.com##.qr-buy-container
 12306.cn##.fixed-right-menu > li.menu-item:nth-of-type(3)
@@ -1411,6 +1408,7 @@ $document,removeparam=rlz
 $document,removeparam=pcampaignid
 $document,removeparam=snr,domain=steampowered.com|steamcommunity.com|steamgames.com
 $document,removeparam=referrer,domain=~bolt.com|~f4map.com|~deviantart.com|~github.com|~discover.*|~vimeo.*|~123-reg.co.uk|~cravesandflames.com|~portswigger.net|~aluminate.net|~timeguessr.com
+$document,removeparam=ext_source
 $removeparam=iradid
 $removeparam=irpid
 $removeparam=iradtype
@@ -1606,10 +1604,10 @@ $removeparam=ldtag_cl
 $removeparam=vero_conv
 $removeparam=vero_id
 $removeparam=a_aid
+$removeparam=otracker
 $removeparam=ft_source
 $removeparam=ft_medium
 $removeparam=ref_source
-$removeparam=ref_medium
 $removeparam=ref_campaign
 $removeparam=spMailingID
 $removeparam=spUserID
@@ -1721,6 +1719,8 @@ $removeparam=awinaffid
 $removeparam=iclid
 $removeparam=a_fid
 $removeparam=afCampaignId
+$removeparam=_bta_tid
+$removeparam=_bta_c
 $removeparam=trk_contact
 $removeparam=trk_msg
 $removeparam=trk_module
@@ -1741,6 +1741,12 @@ $removeparam=pk_kwd
 $removeparam=ig_mid
 $removeparam=au_advert_id
 $removeparam=au_car_id
+$removeparam=ads_adid
+$removeparam=ads_cmpid
+$removeparam=ads_creative
+$removeparam=ads_matchtype
+$removeparam=ads_network
+$removeparam=ads_targetid
 ref=rss^$document,removeparam=ref
 $removeparam=mindbox-click-id
 $removeparam=tj,domain=baidu.com|sina.com.cn
@@ -2601,8 +2607,6 @@ $removeparam=user_id,document,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44
 ||redirect.appmetrica.yandex.com^$removeparam=c
 ||linkedin.com^$removeparam=original_referer
 $document,removeparam=refId,domain=aebn.com|linkedin.com
-$removeparam=skip,domain=privatehomeclips.com
-$removeparam=plimit,domain=privatehomeclips.com
 ||eporner.$removeparam=trx
 ||fandom.com^$removeparam=so
 ||tumblr.com^$removeparam=is_related_post
@@ -2620,11 +2624,6 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=productGridView
 ||jcpenney.com^$removeparam=badge
 ||jcpenney.com^$removeparam=selectedSKUId
-||bandcamp.com^$removeparam=search_item_id
-||bandcamp.com^$removeparam=search_item_type
-||bandcamp.com^$removeparam=search_match_part
-||bandcamp.com^$removeparam=search_page_no
-||bandcamp.com^$removeparam=search_rank
 ||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
@@ -2832,7 +2831,6 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||roblox.$removeparam=friendshipSourceType
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=__ysp
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
-||qwant.com^$removeparam=hti
 ||finn.no^$removeparam=nocache
 ||instagram.com^$document,removeparam=entry_point
 !+ NOT_OPTIMIZED
