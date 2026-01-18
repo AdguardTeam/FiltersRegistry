@@ -1,5 +1,5 @@
-! Checksum: cuIUK6ZV7cSdVN6ZruEgNg
-! Diff-Path: ../patches/4_optimized/4_optimized-s-1768617797-3600.patch
+! Checksum: c69poIMMn5JKGTuGFNv4Pw
+! Diff-Path: ../patches/4_optimized/4_optimized-s-1768704888-3600.patch
 ! Title: AdGuard Social Media filter (Optimized)
 ! Description: Filter for social media widgets such as 'Like' and 'Share' buttons and more.
 ! Version: 2.1.24.4
@@ -681,6 +681,8 @@ zena.aktualne.cz##.e-web-zena-ui-share
 qz.com##.flex-nowrap.gap-2.group:has(> a[title^="Share to"])
 flamis.gr##.td-is-sticky > div.wpb_wrapper > div.vc_row:has(div.td-post-sharing)
 webgradients.com##.index_page__social_container
+ggscore.com##.news-soc
+ggscore.com##.n_share
 aljazeera.com##.rich-share__wrapper
 ixbt.com,ixbt.games,ixbt.pro##.publication-container > h2.items-center > div.flex-row > a > svg
 bloomberg.com##ul[aria-label="Social Media Share Buttons"]
@@ -2372,9 +2374,6 @@ pjsekai.sega.jp##.fix-sns
 discoveryjapan.jp##.st-aa-sharewrap
 baby-calendar.jp#?#.col-md-6 > .gutter-mtb:has(> a.button.bgc-line)
 iecolle.com##.linefriend-bnr
-knivesout.jp###Jfacebook
-knivesout.jp###Jtwitter
-knivesout.jp##.sharetxt
 privacysavvy.com#?##sc-lrc_last_sections > div.mb-14:has(button[data-sharer])
 civileats.com##.row > section.sidebar-right > div.wrapper-social-media
 rg.ru##main[class^="Content_main"] div[class^="StoryContentMainShare"]
@@ -2403,6 +2402,7 @@ inpad.com.tw##.links-social
 thepinknews.com#?#.article__content-sharing--list > li:has(> button[data-sharing-toggle])
 tv-asahi.co.jp##.parts-section-share
 mydiv.net##.qa-mess__share-link
+impiego24.it##.condivisione
 121clicks.com###dpsp-content-top
 axios.com#?#.gtmView > div[class^="space-"]:has(> div.inline > button[data-cy$="share"])
 lasvegasweekly.com##.ui-state-default[aria-controls="shareBar"]
@@ -4022,7 +4022,6 @@ shadow-garden.jp,kakegurui-twin-anime.com##.footer__shareWrap
 blesk.cz##div[class^="socialMedia"]
 rubryka.com##.single-page__shares
 nogizaka46.com##.m--shr
-9anime.*##.bsharing
 techcommunity.microsoft.com##.custom-social-share-component
 mel.fm##.mobile-amp-share-button
 blog.google,pravda-nn.ru##.article-share__wrapper
@@ -4348,7 +4347,6 @@ agrinews.co.jp###hk-art-article > div[class]
 agrinews.co.jp###hk-art-article > div[style]
 stylehaus.jp##.f-section-sns
 trends.google.*##share[ng-if="shareConfig"]
-cosme.net##.parts-social-share
 cosme.net##.act-sbmlist
 s.cosme.net###sns-shere
 s.cosme.net##.SnsShare
@@ -5495,7 +5493,6 @@ volyn.com.ua##.bg-banner
 leg.br##.js-acao-compartilhamento
 ultra.shueisha.co.jp,wowow.co.jp##.btn__share
 kurumaerabi.com##.social_area_line
-psdly.com##.wp-block-wptelegram-widget-join-channel
 globaltimes.cn##[class^="article_"][class$="share"]:not([class*="header"])
 globaltimes.cn##.article_footer
 thetaiwantimes.com##.post-sidebar-shares
@@ -5717,6 +5714,7 @@ remoo.ru##.fusion-social-networks
 remoo.ru##.text_post_repost
 sportskeeda.com,cellularnews.com,kizlarsoruyor.com,dribbble.com##.share-action
 timeout.ru##.psocials
+gf-anime.com##.news--twitter
 frame.work##div[data-test-id="social-links"]
 tipard.com,apeaksoft.com,anymp4.com,fonelab.com,aiseesoft.com###share-list
 sejda.com##ul.social-list
@@ -6030,7 +6028,6 @@ ilgipet.com,eceninbutigi.com,breeze.com.tr,7kat.com.tr,ambarexpress.com##.produc
 lenta.com##.recipe-controls__share-block
 mediafire.com##.social-cont
 governing.com,aboutamazon.jp,kbzk.com,primevideotech.com,chronicle.com##.ActionBar
-manager-magazin.de##div[data-component="FeatureBar"]
 nyafilmer.*##.inlinelike
 pless.pl##.fb-share-button-static
 redpost.com.ua##.fb-share-button-custom
@@ -6802,7 +6799,6 @@ toolbaz.com,emailregex.com##.a2a_kit > a[class^="a2a_button_"]
 presseportal.de##.story-sharing
 otvet.mail.ru##.action--share
 tegevajaro.com,the-miyanichi.co.jp,archive.org,dailyportalz.jp,otakomu.jp##.social_button
-treetix.com,rappler.com##.share-button-container
 saglikaktuel.com##.share-buttons-24
 ||draugiem.lv/say/ext/recommend.php$third-party
 ||draugiem.lv/say/ext/like.php$third-party
@@ -6818,6 +6814,7 @@ speakingtree.in##.top-items > .share-icons
 tuoitre.vn##.item-facebook
 octoba.net##div[class^="social_button_single"]
 toyokeizai.net##.snsbtns > div:not(.mwcomment)
+originalnews.nico##.snsPalette
 originalnews.nico##.articleList-subpage-bottom-sns
 forbes.com,tvn24.pl##.socialShareContainer
 mail.ru##.sharelist
@@ -7065,6 +7062,7 @@ urbanlife.tokyo,rnz.co.nz,amp.welt.de,blogs.microsoft.com,kurelife.jp,amp-welt-d
 grafana.com,ezneering.com,flicks.com.au,gamesatis.com,makyajtrendi.com,cepfix.com##.blog-share
 bold.dk##.facebook_top
 theweather.net,tempo.com,tempo.pt,meteored.*,yourweather.co.uk,tiempo.com,meteored.com.ar,mobills.com.br,belpressa.ru,tameteo.nl,acordacidade.com.br,yakumo-project.com,pogoda.com,duma.gov.ru,kp.by,dizelyator.ru##.shared
+dizelyator.ru##.imgsoc
 ||html-online.com/like.html
 history.com##.player__info > .c022
 digitalfoundry.net,alarabiya.net,screenshot.rocks,motorauthority.com,thesdeshop.com,smartlog.jp,timeextension.com,twpkinfo.com,nobelprize.org,nextgov.com,mcpedl.com,purposegames.com,pushsquare.com,purexbox.com,tothenew.com,jewishjournal.com,vg247.com,nintendolife.com,aetv.com,history.com##.share-this
@@ -8760,7 +8758,6 @@ href^="https://facebook.com/sharer?u=
 ~akniga.org###vkontakte-icon
 ###vkontakte_soc_button
 ~vk.com,~vkontakte.ru###vkshare0
-##.-share-buttons
 ##.BookmarkShareForm
 ~digg.com##.DiggThisButton
 ##.FBpopupDiv
@@ -9210,7 +9207,6 @@ designboom.com,livescience.com,pbtech.co.nz,peoplesworld.org,space.com##.fa-face
 ##[id^="social-button-"]
 ##[title="Share on Tumblr"]
 ~mail.ru##a.mrc__plugin_like_button
-~mail.ru##a.mrc__plugin_recommendations
 ~mail.ru##a.mrc__plugin_share_friends
 ~mail.ru##a.mrc__share
 ~ok.ru##a.odkl-klass
