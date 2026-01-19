@@ -1,9 +1,9 @@
-! Checksum: xse3RpfCT6hs5g2lDhcQzg
-! Diff-Path: ../patches/14/14-s-1768835600-3600.patch
+! Checksum: A4C+HZTHJIyKQRUJ/IXaYg
+! Diff-Path: ../patches/14/14-s-1768839155-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.90
-! TimeUpdated: 2026-01-19T15:10:20+00:00
+! Version: 2.2.55.91
+! TimeUpdated: 2026-01-19T16:09:54+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18147,6 +18147,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222790
+@@||cdn.cookielaw.org/consent/*.json$domain=voxi.co.uk
+@@||cdn.cookielaw.org/consent/*/otSDKStub.js$domain=voxi.co.uk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223086
 @@||sdk.privacy-center.org^$domain=tf1.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223071
@@ -35055,6 +35058,9 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+tarzanweb.jp##div[class^="styles_sidePartsNewsletter_"]
+mediamarkt.de##div[data-test="mms-newsletter-subscription"]
+sonntagsblatt.de##.cta-box
 republicworld.com##.sponsors-container
 ||lb.benchmarkemail.com//code/lbformnew.js
 kiwico.com#%#//scriptlet('trusted-set-local-storage-item', 'kiwi:newsletter-visible', '{"value":true,"expiry":99999999999999}')
