@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: gGPq8QJovlODb1XtW6UzyQ
-! Diff-Path: ../patches/14/14-s-1768824990-3600.patch
+! Checksum: mMkW7LcezPOz0rRWS3BICQ
+! Diff-Path: ../patches/14/14-s-1768829143-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.88
-! TimeUpdated: 2026-01-19T12:13:37+00:00
+! Version: 2.2.55.89
+! TimeUpdated: 2026-01-19T13:22:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2516,6 +2516,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+cameraprive.com##.is-alert-cookie
 avia.uniticket.by###tpwl-cookie-banner
 sf-international.com##.cookie-terms
 ide.go.jp##.use_cookie_footer
@@ -16973,6 +16974,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223086
+@@||sdk.privacy-center.org^$domain=tf1.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223071
 @@||consent.cookiebot.com/uc.js$domain=uzdevumi.lv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222695
@@ -22135,6 +22138,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+moum.top##+js(set-constant, Object.prototype.DetectAdblock, noopFunc)
 freegame.com###moneyNoticeMessage
 downloadgeral.com##body > div[style^="position: fixed; bottom:"][style*="z-index:"]
 downloadgeral.com##+js(abort-current-script, sessionStorage, adsbygoogle)
@@ -32827,6 +32831,7 @@ macwelt.de,pcwelt.de##+js(set-constant, firebase.messaging, noopFunc)
 !
 ! SECTION: Push notifications - Regular rules
 !
+tf1.fr##body > div[role="alert"]
 iwate-np.co.jp###widget-webpush-popup
 ||assets.pushappuniv.com/organizations/*/popup/popup.
 ||cdn.segmage.com/segmage.min.js
@@ -33781,6 +33786,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+||lb.benchmarkemail.com//code/lbformnew.js
 kiwico.com##.header-cta-container
 lexware.de##.frame-type-lexwareoffice_conversion
 littlebinsforlittlehands.com##.wp-block-kadence-rowlayout:has(> div.kt-row-column-wrap div[id^="gform_wrapper_"])
@@ -46487,6 +46493,8 @@ m.tokopedia.com##div[data-testid="divOverlay"]:style(display: none!important;)
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+forbes.n1info.si##body:style(overflow: auto !important;)
+forbes.n1info.si##div[class^="smartbanner"][class*="-android"]:style(display: none !important;)
 mail.yandex.*##.Popup2.Drawer_direction_bottom
 hokuyobank.co.jp##.c-app-banner
 airpaz.com##.app-promotion-banner
@@ -47478,6 +47486,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_annoyances_mobileappba
 !
 ! SECTION: Mobile apps - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222775
+forbes.n1info.si#@#div[class^="smartbanner"][class*="-android"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204986
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195888
 yourchannel.blog.jp#@##app-follow-banner
@@ -51015,6 +51025,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+telegraaf.nl##div[data-testid^="paywall-position-"]
 sekai-kabuka.com##div[style="height:90px;width:100%;background:#fff;position:relative;font-size:24px;text-align:center;"]
 kitchenaid.com##.conversion-drawer-tab
 iwate-np.co.jp###sa-banner

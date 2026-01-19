@@ -1,9 +1,9 @@
-! Checksum: SbQW3edUwxZMuJYDLUvJjA
-! Diff-Path: ../patches/19/19-s-1768824984-3600.patch
+! Checksum: 1dE8UxLyqT9u63CJceBs7Q
+! Diff-Path: ../patches/19/19-s-1768829135-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.68.97
-! TimeUpdated: 2026-01-19T12:13:42+00:00
+! Version: 2.0.68.98
+! TimeUpdated: 2026-01-19T13:22:43+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -545,6 +545,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+moum.top#%#//scriptlet('set-constant', 'Object.prototype.DetectAdblock', 'noopFunc')
+moum.top#%#//scriptlet('trusted-click-element', '.MuiDialog-container div[aria-labelledby="adblock-dialog-title"] > .MuiDialogActions-root > button.MuiLink-button')
 freegame.com###moneyNoticeMessage
 downloadgeral.com##body > div[style^="position: fixed; bottom:"][style*="z-index:"]
 downloadgeral.com#%#//scriptlet('abort-current-inline-script', 'sessionStorage', 'adsbygoogle')
@@ -11274,6 +11276,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+tf1.fr##body > div[role="alert"]
 iwate-np.co.jp###widget-webpush-popup
 ||assets.pushappuniv.com/organizations/*/popup/popup.
 ||cdn.segmage.com/segmage.min.js
@@ -12231,6 +12234,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+||lb.benchmarkemail.com//code/lbformnew.js
 kiwico.com#%#//scriptlet('trusted-set-local-storage-item', 'kiwi:newsletter-visible', '{"value":true,"expiry":99999999999999}')
 kiwico.com##.header-cta-container
 lexware.de##.frame-type-lexwareoffice_conversion

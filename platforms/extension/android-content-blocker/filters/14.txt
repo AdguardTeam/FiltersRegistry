@@ -1,8 +1,8 @@
-! Checksum: PRZ468NRNvmZOXpKiYqewQ
+! Checksum: oKNBbRVFKWrqJbz+s6WZIw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.88
-! TimeUpdated: 2026-01-19T12:13:37+00:00
+! Version: 2.2.55.89
+! TimeUpdated: 2026-01-19T13:22:35+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2460,6 +2460,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+cameraprive.com##.is-alert-cookie
 avia.uniticket.by###tpwl-cookie-banner
 sf-international.com##.cookie-terms
 ide.go.jp##.use_cookie_footer
@@ -12242,6 +12243,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223086
+@@||sdk.privacy-center.org^$domain=tf1.fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223071
 @@||consent.cookiebot.com/uc.js$domain=uzdevumi.lv
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222695
@@ -25269,6 +25272,7 @@ labs.google.com#@##google-hats-survey
 !
 ! SECTION: Push notifications - Regular rules
 !
+tf1.fr##body > div[role="alert"]
 iwate-np.co.jp###widget-webpush-popup
 ||assets.pushappuniv.com/organizations/*/popup/popup.
 ||cdn.segmage.com/segmage.min.js
@@ -26163,6 +26167,7 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 !
 ! SECTION: Subscriptions - Regular rules
 !
+||lb.benchmarkemail.com//code/lbformnew.js
 kiwico.com##.header-cta-container
 lexware.de##.frame-type-lexwareoffice_conversion
 hitsuji-zzz.com##.section-block--padding
@@ -36438,6 +36443,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 !
 ! SECTION: Mobile apps - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222775
+forbes.n1info.si#@#div[class^="smartbanner"][class*="-android"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204986
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195888
 yourchannel.blog.jp#@##app-follow-banner
@@ -39511,6 +39518,7 @@ www.kinopoisk.ru##div[class^="trailer-promo"]
 !
 ! SECTION: Self-promo - Regular rules
 !
+telegraaf.nl##div[data-testid^="paywall-position-"]
 sekai-kabuka.com##div[style="height:90px;width:100%;background:#fff;position:relative;font-size:24px;text-align:center;"]
 kitchenaid.com##.conversion-drawer-tab
 iwate-np.co.jp###sa-banner

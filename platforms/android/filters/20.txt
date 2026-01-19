@@ -1,9 +1,9 @@
-! Checksum: fcM3+dfXFfk4r5vcaMuXtg
-! Diff-Path: ../patches/20/20-s-1768824964-3600.patch
+! Checksum: hteXBKxF64ukBqo09nCp+Q
+! Diff-Path: ../patches/20/20-s-1768829108-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.26.39
-! TimeUpdated: 2026-01-19T12:13:43+00:00
+! Version: 2.0.26.40
+! TimeUpdated: 2026-01-19T13:22:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3931,6 +3931,8 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~odaibako.net,~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+forbes.n1info.si#$#body { overflow: auto !important; }
+forbes.n1info.si#$#div[class^="smartbanner"][class*="-android"] { display: none !important; }
 mail.yandex.*##.Popup2.Drawer_direction_bottom
 prom.ua#%#//scriptlet('trusted-set-local-storage-item', 'hide_mobile_download_app_popup', '{"\u0000":true,"ttl":99999999999999}')
 hokuyobank.co.jp##.c-app-banner
@@ -4977,6 +4979,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_apps
 !
 ! SECTION: Mobile apps - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/222775
+forbes.n1info.si#@#div[class^="smartbanner"][class*="-android"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204986
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195888
 yourchannel.blog.jp#@##app-follow-banner
