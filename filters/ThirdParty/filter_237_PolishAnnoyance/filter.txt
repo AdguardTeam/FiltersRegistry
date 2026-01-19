@@ -5,8 +5,8 @@
 ! Description: Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki, otagowane linki wewnętrzne, które są nie na temat artykułów (np. link do pracy w Bydgoszczy w artykule o pogodzie) i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe oryginalnie stworzone przez MajkiIT są już w nich zawarte).
 ! Required: Do poprawnego przeciwdziałania komunikatom RODO-Ciasteczkowym wymagana jest lista EasyList Cookie Notices!
 ! Expires: 2 days
-! Last modified: Sun, 18 Jan 2026, 23:06 UTC+00:00
-! OriginalVersion: 2026.1.18.6
+! Last modified: Mon, 19 Jan 2026, 20:37 UTC+01:00
+! OriginalVersion: 2026.1.19.1
 ! Homepage: https://polishannoyancefilters.netlify.app
 ! Najnowsza wersja zawsze na: https://github.com/FiltersHeroes/PolishAnnoyanceFilters
 ! Zgłoszenia:
@@ -15,7 +15,7 @@
 ! License: CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed)
 ! Creator: blocker999
 ! Maintainer: Filters Heroes
-! Aktualizacja: nie, 18 sty 2026, 23:06 UTC+00:00
+! Aktualizacja: pon, 19 sty 2026, 20:37 UTC+01:00
 !
 !
 ! Newslettery (nie popupy)
@@ -5534,7 +5534,7 @@ astronomia.media.pl,globalna.info,pysznieczyprzepysznie.pl,szybkaprzemiana.pl,wa
 aszdziennik.pl,dadhero.pl,innpoland.pl,mamadu.pl,natemat.pl,topnewsy.pl##.art > div:first-child > div:not([class]) + div[class]:has(> img[src*="tip."]:first-child + p[class]:last-child)
 ataksja.org.pl,przyszloscdladzieci.org##.fm-teaser
 atrakcjenaimprezy.pl###boxes
-atthost.pl,~mail.atthost.pl,~panel.atthost.pl,~secure.atthost.pl,~webmail.atthost.pl##.hosting_info
+atthost.pl,~panel.atthost.pl,~secure.atthost.pl##.hosting_info
 audioforte.com.pl,master1.pl##.floating-menu
 audiopolis.pl##.modFixedParallaxLike
 audycje.tokfm.pl##.app-top-popup
@@ -5770,7 +5770,8 @@ filehippo.pl##.program-actions-header__promo
 filman.cc##.alert-info.alert:has(a[href*="na-telefony-i-tablety-"])
 filmoterapia.pl###post_more_wrapper
 filmweb.pl##.loginEncourageTooltip
-filmweb.pl##.page.filmPage ~ .page, .page.newsPage ~ .page
+filmweb.pl##.page:is(.filmPage, .newsPage) ~ .page
+filmweb.pl##[varianttype="navigationBarGold"]:has([aria-label*="BLACKARROW"])
 finanse.wp.pl,gry.wp.pl,gwiazdy.wp.pl,kobieta.wp.pl,moto.wp.pl,opinie.wp.pl,tech.wp.pl,turystyka.wp.pl,wiadomosci.wp.pl#?#div > div > div > div > div > div > div > div > div > div:has(aside:contains(następny artykuł))
 finochelm.pl###rssocial-custom-icon-2
 firmyinzynieria.com###sideButtons.load
@@ -6282,7 +6283,7 @@ rgbautomatyka.pl###repair-box
 robobat.pl###ReferenceBox
 roland-gazeta.pl##.eb-shdelevation.eb-dialog
 rolmax-sklep.pl###index-banner
-rootblog.pl###main > .cs-site-content ~ .cs-nextpost-inner, #main > .cs-site-content ~ .cs-nextpost-inner + .cs-nextpost-loading
+rootblog.pl###main > .cs-site-content ~ :is(.cs-nextpost-inner, .cs-nextpost-inner + .cs-nextpost-loading)
 rosarosie.iai-shop.com###tws_s_0
 rosebelle.pl##.page-loader
 rossmann.pl###__next > section.block:has(> section > a[href*="/pobierz-aplikacje"])
