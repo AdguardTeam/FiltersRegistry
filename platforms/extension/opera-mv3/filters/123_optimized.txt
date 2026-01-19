@@ -1,9 +1,9 @@
-! Checksum: SpvcnHzNgviy3zmQ+1Bh1Q
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1768783923-14400.patch
+! Checksum: S2/P4WnBUIeVocrfnkjw9w
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1768798218-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.1
-! TimeUpdated: 2026-01-19T00:48:49+00:00
+! Version: 2.1.55.2
+! TimeUpdated: 2026-01-19T04:47:09+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -148,7 +148,6 @@ _social_footer_
 ###Followers1
 ###ShareButton
 ###ShareItemBtn
-###Social-Sidebar
 ###SocialMedia
 ###SocialShare
 ###Socialize
@@ -189,9 +188,11 @@ _social_footer_
 ###cm-social-overlay
 ###content-share-top
 ###content-social
+###content_share
 ###crestashareicon
 ###crestashareiconincontent
 ###custom-tweet-button
+###desktop-share-wrapper
 ###details-share-icon-link
 ###divSideShare
 ###embed-share
@@ -266,7 +267,6 @@ _social_footer_
 ###follow_us
 ###followus
 ###foot-social
-###footer--social-links
 ###footer-facebook
 ###footer-fb
 ###footer-follow-us
@@ -597,7 +597,6 @@ _social_footer_
 ###socialFooter
 ###socialGoogle
 ###socialGrid
-###socialHeader
 ###socialHolder
 ###socialIcons
 ###socialLinks
@@ -1054,7 +1053,6 @@ _social_footer_
 ##.c-header__social
 ##.c-list--social
 ##.c-main-footer__social
-##.c-mainsocial
 ##.c-nav-social
 ##.c-navbar-primary__social
 ##.c-share
@@ -1323,7 +1321,6 @@ _social_footer_
 ##.flare-horizontal
 ##.flaticon-facebook
 ##.float-share
-##.float-social-shares
 ##.floating-header-share
 ##.floating-share
 ##.floating-share-bar
@@ -1386,6 +1383,7 @@ _social_footer_
 ##.footer-facebook
 ##.footer-facebook-icon
 ##.footer-fb
+##.footer-fb-icon
 ##.footer-follow
 ##.footer-follow-us
 ##.footer-followus
@@ -1397,7 +1395,6 @@ _social_footer_
 ##.footer-main-standard-social-list
 ##.footer-main__socials
 ##.footer-nav-social
-##.footer-network-social
 ##.footer-pinterest-icon
 ##.footer-secondary-social
 ##.footer-section-social
@@ -1706,6 +1703,7 @@ _social_footer_
 ##.instagram.icon
 ##.instagramIcon
 ##.instagram_icon
+##.instagram_logo
 ##.instagram_share
 ##.instagramicon
 ##.instalink
@@ -1895,6 +1893,7 @@ _social_footer_
 ##.menu-reseaux-sociaux-container
 ##.menu-section-social
 ##.menu-share
+##.menu-social-buttons-container
 ##.menu-social-container
 ##.menu-social-icons
 ##.menu-social-links
@@ -2112,7 +2111,6 @@ _social_footer_
 ##.post__share
 ##.post__share-container
 ##.post_share_center
-##.postcontent__socials
 ##.postshare
 ##.powerkit_social_links_widget
 ##.pp-share-grid-item
@@ -2190,7 +2188,6 @@ _social_footer_
 ##.scShareBoxRow
 ##.scShareText
 ##.scSocialIconsWidget
-##.sc_sns
 ##.scriptlesssocialsharing
 ##.sd-sharing
 ##.sd-social
@@ -2552,6 +2549,7 @@ _social_footer_
 ##.share_toolbox
 ##.share_tools
 ##.share_top
+##.share_total
 ##.share_tw
 ##.share_twitter
 ##.share_two
@@ -3222,7 +3220,6 @@ _social_footer_
 ##.sub_jeu_social_twitter
 ##.sub_sns
 ##.subfooter-social
-##.subscribe__follow
 ##.svp-share
 ##.synved-social-button
 ##.tags-share
@@ -3364,7 +3361,6 @@ _social_footer_
 ##.us_share
 ##.us_share_buttons
 ##.user-share
-##.user__socials-list
 ##.usr-social
 ##.ut2-social-link-block
 ##.utility-social
@@ -3600,6 +3596,7 @@ _social_footer_
 ||buttons.github.io/buttons.js$third-party
 ||buttons.googlesyndication.com^$third-party
 ||connect.ok.ru^$third-party
+||facebook.com/plugins/facepile.php?$third-party
 ||facebook.com/plugins/like.php?$third-party
 ||facebook.com/plugins/like_box.php$third-party
 ||facebook.com/plugins/page.php?$third-party
@@ -3616,7 +3613,6 @@ _social_footer_
 ||flipboard.com/web/buttons/$third-party
 ||friends2follow.com^$subdocument,third-party
 ||fwcdn3.com^$third-party
-||getbutton.io/widget-send-button/$third-party
 ||google.com^*/fastbutton?$third-party
 ||gotchosen.com^$third-party
 ||graph.facebook.com/fql?q=SELECT$third-party
@@ -3791,7 +3787,6 @@ thespectator.com##.article_set_wrap
 news9live.com##.article_socialShare
 news18.com##.article_socials
 news18.com##.artshare
-telegraphindia.com##.astkysharebox
 secretchicago.com,secretldn.com##.author-share-buttons
 adweek.com##.aw-social-share-container
 bnnbloomberg.ca,cp24.com,ctvnews.ca,irishnews.com,thedailybeast.com,tsn.ca##.b-share-bar
@@ -3883,7 +3878,6 @@ alarabiya.net,ausgamers.com,cgtn.com,cloudwards.net,crypto.news,exitoina.perfil.
 news9live.com##.followBtn
 news9live.com##.followUs_Links
 rbth.com##.follows-channel
-telegraphindia.com##.followusbox
 lineageos.org,morbidology.com,topuniversities.com,westpac.com.au##.footer-icons
 meteoblue.com##.footer-options
 maketecheasier.com,tribune.com.pk,voetbalkrant.com,wielerkrant.be##.footer-social-icons
@@ -4057,7 +4051,6 @@ videocardz.com##.shareon
 cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
-proofpoint.com##.sharethis_toolbox
 12tomatoes.com##.sharetocare-popup
 glassalmanac.com##.shhr-btn
 welivesecurity.com##.sidebar-card-media
@@ -4109,7 +4102,6 @@ commondreams.org,digit.in,hollywoodforevertv.com.br,twenteinsite.nl##.social_ico
 moneycontrol.com##.social_icons_wrapper
 ringsidenews.com##.social_label
 ciudad.com.ar,eltrecetv.com.ar,lithub.com,tn.com.ar##.social_links
-abplive.com,businesstoday.in,catracalivre.com.br,gamesindustry.biz,ilmeteo.it##.social_share
 kleinezeitung.at,meduniwien.ac.at,shipmag.it,today.rtl.lu,videocardz.com##.socialbar
 videocardz.com##.socialbar-sidebar
 firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.socials
@@ -4131,6 +4123,7 @@ targettrend.com##.sws_supernormalaction
 notthebee.com##.take-shareables
 firstpost.com##.tbl-cell-wp
 thediplomat.com##.td-follow
+areavip.com.br,heritagedaily.com,jewishpress.com,techgenyz.com##.td-post-sharing
 opindia.com##.tdi_134
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
@@ -4510,8 +4503,6 @@ elplural.com##.btn-whatsapp
 cmmedia.es,diariodecastillayleon.es,diariodeleon.es,diariodevalladolid.es,elcorreodeburgos.com,eldebate.com,eleconomista.com.mx,heraldodiariodesoria.es,huffingtonpost.es,listindiario.com,segre.com##.c-detail__share
 eleconomista.com.mx##.c-detail__toolbar__share
 eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
-atlanticohoy.com,consumidorglobal.com##.c-mainarticle__share
-consumidorglobal.com##.c-mainfooter__social
 adslzone.net##.comments-social-share
 wapa.pe##.container_shared--internal
 elcolombiano.com##.contenedor-google-noticias
@@ -4552,6 +4543,7 @@ elcomercio.com##.social-communities
 infoenergia.info,infofranquicias.ar,infomendoza.info,infonegocios.barcelona,infonegocios.biz,infonegocios.com.py,infonegocios.info,infonegocios.madrid,infonegocios.miami,infonegociosgalicia.es,infonegociosvalencia.es,infostyle.info,infotecnologia.info,injujuy.info,inlitoral.info,inneuquen.info,inpatagonia.info,inrosario.info,insalta.info,insanjuan.info,insantiagodelestero.info,intucuman.info##.social-networs
 perfil.com##.social-topsharing
 larazon.es##.social-wrapper
+rtve.es##.socialBox
 cnnespanol.cnn.com##.storyfull__social
 canalnet.tv##.the-single-body__share
 theobjective.com##.tno-share
