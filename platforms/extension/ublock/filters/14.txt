@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Koh/zq1EwOIqZ3eEZOqxxw
-! Diff-Path: ../patches/14/14-s-1768842783-3600.patch
+! Checksum: iNPEp2qpPBqcnJyldjvyqw
+! Diff-Path: ../patches/14/14-s-1768846446-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.92
-! TimeUpdated: 2026-01-19T17:10:08+00:00
+! Version: 2.2.55.93
+! TimeUpdated: 2026-01-19T18:10:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2516,6 +2516,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+citydrive.ru##+js(set-local-storage-item, ctdrv_notice-cookie, false)
 allesfuerzuhause.de##.c-pop:style(display: none !important;)
 allesfuerzuhause.de##body.cookieBar-active:style(overflow: auto !important;)
 cameraprive.com##.is-alert-cookie
@@ -42712,6 +42713,8 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+vikatan.com##.appinstall-banner-wrapper
+vikatan.com##.hidden-desktop:has(> a[href^="https://onelink.to/"])
 tinybeans.com##.block-download-app
 eaglerider.com##.showTABLET > .hidden-in-print:has(a[href^="https://play.google.com/store/apps/details"])
 sudokutable.com##.playmarket
@@ -47454,7 +47457,7 @@ scoopzapp.com##+js(no-window-open-if, app.adjust.com)
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru##article > div[class^="wrapper_"]:has(> a[href^="https://redirect.appmetrica.yandex.com/"])
 !
 !+ NOT_OPTIMIZED
-an1.com##.app-panel
+an1.com##body .app-panel:not(#style_important)
 !+ NOT_OPTIMIZED
 m.olx.ua###hydrate-root div[class^="css-"]:has(> button[data-testid="app-install-banner-close"])
 !+ NOT_OPTIMIZED
