@@ -1,9 +1,9 @@
-! Checksum: 3YkLPEsS63VDPPV7BfQEpg
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1768794116-3600.patch
+! Checksum: tpjSVQ4JfiIogXW7qqeSvQ
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1768797076-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.98.74
-! TimeUpdated: 2026-01-19T03:38:43+00:00
+! Version: 2.0.98.75
+! TimeUpdated: 2026-01-19T04:28:00+00:00
 ! Expires: 10 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -47821,6 +47821,9 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 !+ NOT_PLATFORM(ios, ext_safari, ext_android_cb)
 ||tags.news.com.au^$~script
 |piwik.
+||event-storage.netmonet.co^
+||neviju.netmonet.co^
+||jaeger.netmonet.co^
 ||wap.wovn.io^
 ||falcon.useinsider.com^
 ||sp.pluto.tv^
@@ -68270,6 +68273,7 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 /prod/dfm/t8y9347t.min.js$redirect=nooptext,important,domain=dailycamera.com
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+||ff.netmonet.co/api/frontend/client/metrics
 ||ee.wovn.io/report_values/
 ||datacore-write.securitytrfx.com/blob/em_cmp_lib_tracking/
 ||cdn1.adoberesources.net/alloy/$domain=pluto.tv
@@ -73762,7 +73766,8 @@ clicks.mlsend2.com$image
 email.send.aliyana.in$image
 links.kahoot.com$image
 track.team.kahoot.com$image
-signup.com$image
+signup.com/imp?$image
+signup.com%2Fimp%3F$image
 email.cloud2.secureclick.net$image
 nyb.soundestlink.com*track$image
 link.thirdlove.com$image
@@ -74359,6 +74364,10 @@ $cookie=_pubcid
 $cookie=pbjs-unifiedid
 $cookie=bf_lead
 $cookie=bf_visit
+||netmonet.co^$removeparam=id
+||netmonet.co^$removeparam=wpid
+||netmonet.co^$removeparam=visitId
+||netmonet.co^$removeparam=operation
 ||usnews.com^$cookie=usn_visitor_id
 ||kayak.com^$cookie=kmkid
 ||momondo.com^$cookie=kmkid
