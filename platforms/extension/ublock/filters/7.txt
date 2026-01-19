@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 3f15aJbyskh4P6sxmDhlAw
-! Diff-Path: ../patches/7/7-s-1768669774-3600.patch
+! Checksum: fzxSrwY56bpYLhs3sLS1rQ
+! Diff-Path: ../patches/7/7-s-1768799971-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.71.84
-! TimeUpdated: 2026-01-17T17:06:24+00:00
+! Version: 2.0.71.85
+! TimeUpdated: 2026-01-19T05:16:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -806,6 +806,21 @@ battlecats-db.com##body[style="display: none;"]:style(display: block !important;
 @@||dan-ball.jp/javagame/dgo/data/img.gif?
 ! https://github.com/AdguardTeam/AdguardFilters/issues/85641
 modalina.jp##+js(abort-on-property-read, AdBlockLimitation)
+! https://github.com/AdguardTeam/AdguardFilters/issues/116093
+sekai-kabuka.com###amajmpid:style(pointer-events: none !important;)
+sekai-kabuka.com###amajmpid [style*="font-size"]:style(font-size: 0 !important;)
+sekai-kabuka.com##td[width="160"] [style*="position"] [id][style] ~ [onclick]:style(pointer-events: none !important;)
+realtime-chart.info##td[style^="vertical-align"] [onmousedown]:has(> img[src*="/clip_"] + b):not(:has(b td > a[href])):style(pointer-events: none !important;)
+realtime-chart.info##.news_b table[border="0"][cellpadding="5"][style="background:#fff"] > tbody >  tr[bgcolor="#fff"] > td.newsarea[style] > a.wl[href^="https://a"][href*=".to/"]:upward(2)
+realtime-chart.info##td[style^="vertical-align"] [id] [class]:matches-css(top: /^[4-8]\d{2}\.?\d*px$/) [onclick*=")"]:has(b):not(:has(td > a)):style(pointer-events: none !important;)
+realtime-chart.info##td[style^="vertical-align"] [id] [class]:matches-css(top: /^[4-8]\d{2}\.?\d*px$/) [onmousedown*=")"]:has(b):not(:has(td > a)):style(pointer-events: none !important;)
+realtime-chart.info##td[style^="vertical-align: top"] [onclick*="()"][target="_blank"]:has([style*="background-image: url\(\"data:image/jpg;"]:matches-attr("style"="/height\s*:\s*[12]\d{2}\.?\d*px/")):style(pointer-events: none !important;)
+realtime-chart.info##td[style^="vertical-align"] [onclick]:has(> img[src*="/clip_"] + b):not(:has(b td > a[href])):style(pointer-events: none !important;)
+@@||realtime-chart.info^$generichide
+@@||sekai-kabuka.com^$generichide
+||googleads.g.doubleclick.net/pagead/ads?$subdocument,redirect=noop.html,domain=realtime-chart.info|sekai-kabuka.com
+@@||pagead2.googlesyndication.com/pagead/managed/js/adsense/$script,domain=realtime-chart.info|sekai-kabuka.com
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,domain=realtime-chart.info|sekai-kabuka.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/83022
 ouminews.net##.ad_unit.ad-unit.text-ad.text_ad.pub_300x250:style(display: block !important;)
 ! knshow.com anti-adb
@@ -8883,7 +8898,9 @@ arukikata.co.jp##.ad_top300
 tokyoartbeat.com###homebnrs
 aniplexplus.com##.hotentry
 ||xn--jx2a33n.com/nnn.js
-||amazon-adsystem.com/widgets/$important,domain=revuestarlightre.com|mashlife.doorblog.jp|lamsect.blog112.fc2.com|blog.domesoccer.jp|neo-blood.co.jp|katuru2ch.blog12.fc2.com|azurlanesokuhou.blog.jp|michaelsan.livedoor.biz|bluebluesunset.blog.fc2.com|kokuhakutaiken.com|netorarezukiview.com|getuploader.com|i-bbs.sijex.net|kandatasokuho.com|baseballstats2011.jp|pachinkopachisro.com|entameclip.com|keisan-mondai.com|idle-girl.com|genshin-matomech.umadacchi.net|ralacode.com|lolninja.net
+realtime-chart.info##[style="position:fixed;width:100%;top:0;z-index:-999;text-align:center;"] ~ [style] > table > tbody > tr > td > a[href^="https://amzn.to"]
+realtime-chart.info,sekai-kabuka.com###neko_ad
+||amazon-adsystem.com/widgets/$important,domain=revuestarlightre.com|realtime-chart.info|mashlife.doorblog.jp|lamsect.blog112.fc2.com|blog.domesoccer.jp|neo-blood.co.jp|katuru2ch.blog12.fc2.com|azurlanesokuhou.blog.jp|michaelsan.livedoor.biz|bluebluesunset.blog.fc2.com|kokuhakutaiken.com|netorarezukiview.com|getuploader.com|i-bbs.sijex.net|kandatasokuho.com|baseballstats2011.jp|pachinkopachisro.com|entameclip.com|keisan-mondai.com|idle-girl.com|genshin-matomech.umadacchi.net|ralacode.com|lolninja.net
 web.gekisaka.jp##.PC_NEWS_D_PC_ONLY
 contents.fc2.com,japan-baseball.jp##.bnr-ad
 hb-nippon.com###JP_HBN_pc_all_billboard
