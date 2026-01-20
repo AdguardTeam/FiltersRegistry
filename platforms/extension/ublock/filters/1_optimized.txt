@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: Ve72t8DgCISFRmhaG1nYKg
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1768842784-3600.patch
+! Checksum: RwtCafg8xQbVTkpCnyh0og
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1768877386-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.3.93
@@ -9,6 +9,7 @@
 /code/video-steam/?id=*&vast=
 /nadavi-api/?p4g3=js/api/widget.js
 ||aj*.bid/*?vpaid=$xhr
+.shop/tb/#$all
 /content/stream/1xbet/*
 /rtb/kodik_instream?$xhr
 /load-xml/?id=*&roll=$xhr
@@ -64,7 +65,6 @@
 .net/myout.php?g=
 .ru/myout.php?g=
 .club/?*=*&*=*&*=*&*=$script
-.pro/news.js|$3p
 .ru/news.js|$3p
 .ru/output/index/$script,3p
 /img/rekl/*
@@ -80,6 +80,7 @@
 .com/player/|$3p
 .ru/player/|$3p
 /bens/vinos
+/bens/vinos.js?
 /b?size=*&catgry=$script,3p
 /code/bshow.php?id=*&dimension=
 /output/index/*$other,script,3p
@@ -1211,6 +1212,7 @@ ucoz.ru/informer/
 ||adland.ru^$3p
 ||adlook.net^$3p
 ||admachina.com^$3p
+||admilk.ru^$3p
 ||admixer.net^$3p
 ||admulti.$3p
 ||adone.ru^$3p
@@ -1438,6 +1440,7 @@ ucoz.ru/informer/
 ||micro-win.com^$3p
 ||mipagerank.com^$3p
 ||mixadvert.com^$3p
+||mjavagames.ru$3p
 ||mobiads.ru^$3p
 ||mobioffers.ru^$3p
 ||modelatos.com^$3p
@@ -1846,6 +1849,7 @@ cdnmovies-stream.online##+js(prevent-fetch, covivado.club/vast3/)
 @@||yandex.ru/ads/system/context.js$domain=russia-tv.online
 @@||russia-tv.online^$generichide
 zazloo.ru##+js(set-constant, fpm_adbDetect, noopFunc)
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,domain=test-dmv.com
 metasirus.su##+js(set-constant, Ya.Context, {})
 metasirus.su##+js(set-constant, Ya, {})
 ||yandex.ru/ads/system/adsdk.js$script,redirect=noop.js,domain=player.mediavitrina.ru
@@ -2387,7 +2391,6 @@ domovita.by##body:style(overflow: auto !important; padding-right: 0 !important;)
 seasonvar.*##.wrapper:style(margin-top: 0 !important;)
 cyber.sports.ru###branding-layout:style(padding-top: 0 !important;)
 autosport.com.ru##body:style(padding-top: 0 !important; background-color: white !important;)
-the-wire-fox.net###wrapper:style(margin-top: 0 !important;)
 kinoteatr.ru##.mt-branding:style(margin-top: 100px !important;)
 soccer365.ru##.header_top:style(margin-top: 0 !important;)
 yp.ru##.main-wrapper:style(padding-top: 0 !important;)
@@ -2444,6 +2447,7 @@ glavbukh.ru##body > div.container-fluid:has(> div.topAdvertize__wrapper):style(m
 nnmclub.to##body[style]:style(background: none !important;)
 classicalmusicnews.ru##.site-inner:style(margin-top: 0 !important;)
 ixbt.games,ixbt.com##.tm-wrapper .tm:style(margin-bottom: 0 !important;)
+igrovaya.org##body > div.container:style(margin-top: 0 !important;)
 gamebomb.ru###wrrpper3 > div[id]:style(background: none !important;)
 gamebomb.ru##body:style(background-image: none!important;)
 gamebomb.ru###content:style(margin-top: 0 !important;)
@@ -2560,7 +2564,6 @@ pluggedin.ru##.open-main-container:style(margin-top: 80px!important;)
 pluggedin.ru##.banner-advertise:style(margin-top: 0!important;)
 kv.by###page-wrapper > div#page:style(top: 0!important;)
 freerutor.me##div[id^="M"][id*="Composite"]:style(position: absolute!important; left: -3000px!important;)
-kanobu.ru##.container:style(padding-top: 40px!important; background: #e6e6e6!important;)
 koolinar.ru##body:style(background-image: none !important;)
 hs-manacost.ru##body:style(background-image: none!important;)
 hs-manacost.ru###td-outer-wrap:style(cursor: auto!important;)
@@ -2821,7 +2824,6 @@ hdrezka-home.tv,3ivi.com,bestofkinopoisk.com,drezka.pl,flymaterez.net,hdrezka-se
 kom-dir.ru,gd.ru,buhsoft.ru,dirklinik.ru,fd.ru,business.ru,pro-personal.ru,trudohrana.ru##.ASE_brandImage
 /vpaid^$xhr,domain=kodik.biz|kodik.cc|kodik.info|vio.to|u-cdn.top|kodikdb.com
 /assets/vendor/*.xml?*external_subid=$domain=kodik.biz|kodik.cc|kodik.info|vio.to|u-cdn.top|kodikdb.com
-/assets/vendor/*.xml?v=$domain=kodik.biz|kodik.cc|kodik.info|vio.to|u-cdn.top|kodikdb.com
 .php?id=$script,3p,xhr,domain=kodik.biz|kodik.cc|kodik.info|vio.to|u-cdn.top|kodikdb.com
 bankinform.ru,championat.ru,prufy.ru,kostroma.today,fnvolga.ru,menunedeli.ru,sfera.fm,frankmedia.ru,cisoclub.ru,trafficcardinal.com,kursiv.media,moskvichmag.ru,netex.co.il,in-scale.ru,ukraina.ru,mipped.com,diapazon.kz,bloknot.ru##.banner
 /upload/rk/*$domain=ivanovonews.ru|gorodn.ru|bits.media|devyatka.ru|gazeta-n1.ru|gorod48.ru|hi-fi.ru|innov.ru|k1news.ru|ktostroit.ru|likeni.ru|meteo-tv.ru|mos.news|newkaliningrad.ru|newsroom24.ru|nta-nn.ru|openbusiness.ru|personalaudio.ru|podrobno.uz|portamur.ru|radugaskidok.ru|rigma.info|securitylab.ru|seonews.ru|shoes-report.ru|sportfm.ru|tvcom-tv.ru|ural56.ru|vladtv.ru|wotafaq.com|zebra-tv.ru|skisport.ru|rabochy-put.ru|vegetarian.ru|gorodarmavir.ru|estetmedicina.ru|afanasy.biz|itmed.org|actualcomment.ru|pushkino.tv|olimpfm.ru|vn.ru|buzulukinform.ru|prado-club.su|tvr.by|fomag.ru|eg-online.ru|ng58.ru|mediaryazan.ru|m-strana.ru|tvknews.ru
@@ -2969,6 +2971,7 @@ dp.ru##.right-panel > .block-wrapper:has(> .block-content > app-adfox-banner)
 u-tv.ru##.banner-ads
 ||u-tv.ru/static/js/rennab.js
 ||u-tv.ru/static/js/rennabDetector.js
+bash.news##div[class^="page-article-item"] > .capybara-mini[style]
 47channel.ru##.article__yandex-direct
 /media/banners/*$domain=volynpost.com|volyn24.com|dyvys.info|ko44.ru
 avito.ru##div[class*="index-advRootWidgetNoStories"]
@@ -5471,6 +5474,7 @@ ria-m.tv###cbanners
 uhta24.ru###centrcol > p > a > img
 yaplakal.com,yap.ru###clk-lt
 yaplakal.com,yap.ru###clk-rt
+dnepr.news###colona a[target="_blank"] > img
 smebel.su###column-right
 tree.tv###commercial_link
 tofight.ru###container > div#header
@@ -5670,6 +5674,7 @@ newsomsk.ru##.banner1200x90
 citydog.io,citydog.by,friday.ru##.banner240x400
 steaklovers.menu,filmz.ru##.banner3
 tvzvezda.ru##.banner_300x600
+woman.ru##.banner_560x60
 torrent-pirat.com##.banner_88x31
 studfile.net##.banner_bottom_preview
 autostat.ru,vdvsn.ru##.banner_content
@@ -6273,7 +6278,6 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||livelib.ru/side/index
 ||livesurf.ru/faners/
 ||log.krs-ix.ru/krs.php?
-||maturecherry.org/*_script.php|
 ||media.aso.altapress.ru^
 ||mmotop.ru/uploads/promotion/
 ||mobiltelefon.ru/photo/rek/
@@ -6734,6 +6738,7 @@ pornolab-zerkalo.appspot.com,pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net#
 ||m.mixadvert.com/show/?id=$redirect=noop.txt,important,image,media,subdocument,stylesheet,script,xhr,other
 ||redtram.com/n4p/$redirect=noop.txt,important,image,media,subdocument,stylesheet,script,xhr,other
 ||trafmag.com/etarg-code.js$script,redirect=noop.js,important
+||admulti.com/javascripts/rot.js
 ||gag.admulti.com/rotator
 ||info.zonasearch.com/ad/admulti*.json
 mail.ru##.ph-project + div.balloon-anchor
@@ -6896,6 +6901,7 @@ nova.rambler.ru##article[class^="Direct__item--"]
 rambler.ru##div[class*="xmr"][style^="min-height:"]
 rambler.ru##:matches-path(/\\/(dom|pro)/) div[style^="order:"][style*="-1"]
 rambler.ru##:matches-path(/\\/(dom|pro|eco)/) div[class]:has(> div[id^="adfox-"])
+rambler.ru##:matches-path(/dom) rambler-info-banner
 weekend.rambler.ru##rambler-info-banner
 sport.rambler.ru,finance.rambler.ru##aside[class]:has(> div > div.banner--native-partner_widget)
 family.rambler.ru,life.rambler.ru,weekend.rambler.ru,auto.rambler.ru,kino.rambler.ru,doctor.rambler.ru,travel.rambler.ru,sport.rambler.ru,woman.rambler.ru,news.rambler.ru,finance.rambler.ru##div[style^="order:"][style*="-1"]
