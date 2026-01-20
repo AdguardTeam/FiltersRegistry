@@ -1,9 +1,9 @@
-! Checksum: aHUCpwZyAEndIBKrpaEBBg
-! Diff-Path: ../patches/14/14-s-1768883275-3600.patch
+! Checksum: +8X0CZNSRI0cNG1FUR8xOA
+! Diff-Path: ../patches/14/14-s-1768886232-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.55.95
-! TimeUpdated: 2026-01-20T04:25:16+00:00
+! Version: 2.2.55.96
+! TimeUpdated: 2026-01-20T05:14:34+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2571,6 +2571,8 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+olympics.com#%#//scriptlet('trusted-set-local-storage-item', 'lastUpdate', '$currentISODate$')
+||cycling74.com/web/bickies/
 citydrive.ru#%#//scriptlet('set-local-storage-item', 'ctdrv_notice-cookie', 'false')
 allesfuerzuhause.de#$#.c-pop { display: none !important; }
 allesfuerzuhause.de#$#body.cookieBar-active { overflow: auto !important; }
@@ -23454,6 +23456,8 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+escaneodeleyendas.com##body > .wrap + style + div[id][class*=" "]
+escaneodeleyendas.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', '/^function\(e\) \{ init\(\); \}$/')
 moum.top#%#//scriptlet('set-constant', 'Object.prototype.DetectAdblock', 'noopFunc')
 moum.top#%#//scriptlet('trusted-click-element', '.MuiDialog-container div[aria-labelledby="adblock-dialog-title"] > .MuiDialogActions-root > button.MuiLink-button')
 freegame.com###moneyNoticeMessage
