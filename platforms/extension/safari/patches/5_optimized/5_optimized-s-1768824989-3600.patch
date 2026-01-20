@@ -1,0 +1,11 @@
+d1 2
+a2 2
+! Checksum: ZVu0HdJDei9ZcqzfaGrlRw
+! Diff-Path: ../patches/5_optimized/5_optimized-s-1768932944-3600.patch
+d5 2
+a6 2
+! Version: 2.0.1.89
+! TimeUpdated: 2026-01-20T18:12:01+00:00
+d8 1
+a8 1
+www.youtube.com#%#(()=>{const e="movie_player",t="ytd-watch-flexy[player-unavailable]",n="yt-playability-error-supported-renderers#error-screen:has(>*)",r="pyv",o="ad_type",a="none";let c=r;const l=e=>{c=e},y=()=>{const r=document.getElementById(e),o=document.querySelector(n),a=document.querySelector(t);r&&a&&(o?.style.setProperty("display","none","important"),a?.removeAttribute("player-unavailable"))},d=window.location.search,u=new URLSearchParams(d).get("v"),s=new URLSearchParams(d).get("t")??"0",i=parseInt(s,10),p=()=>{const t=document.getElementById(e);if(t&&"function"==typeof t.loadVideoById)try{t.loadVideoById(u,i)}catch(e){}},m=(e,t)=>{try{if(!e||!t)return;if(t===r)return e.adPlaybackContext={pyv:!0};if(t===o)return e.adPlaybackContext={adType:"AD_TYPE_INSTREAM"};if(t===a)return delete e.adPlaybackContext}catch(e){}};(()=>{const e={apply:(e,t,n)=>{try{let r=n[0];if(!r||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,n);const o=Array.isArray(r),a=o?r[0]:r;if(!a.includes('"contentPlaybackContext"')&&!a.includes('"adSignalsInfo"'))return Reflect.apply(e,t,n);const l=JSON.parse(a);if(!l.context?.client)return Reflect.apply(e,t,n);l.playbackContext&&m(l.playbackContext,c),l.playerRequest&&m(l.playerRequest.playbackContext,c);const y=JSON.stringify(l);o?n[0][0]=y:n[0]=y}catch(e){}return Reflect.apply(e,t,n)}};window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,e)})();const f=document.documentElement,b=new MutationObserver((()=>{c===a&&b.disconnect(),(()=>{const r=document.getElementById(e),o=document.querySelector(n),a=document.querySelector(t);if(!r)return!1;const c=r.getVideoData?.();return!(!o&&!a&&null===c?.errorCode)})()&&(c===r?(y(),l(o),p()):c===o&&(y(),l(a),p(),b.disconnect()))}));b.observe(f,{attributes:!0,childList:!0,subtree:!0})})();
