@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: z6qH9kTZ7L9qkAt9OzLsKg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1768925746-3600.patch
+! Checksum: owDcIuyOLLYt0+NQ7Q3mSA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1768929345-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.41.20
-! TimeUpdated: 2026-01-20T16:11:56+00:00
+! Version: 2.4.41.21
+! TimeUpdated: 2026-01-20T17:11:57+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10310,6 +10310,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://pasteflash.sx/4xeDB4CT
+pasteflash.sx##+js(no-setInterval-if, blocked)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223058
 hexanaut.io##+js(prevent-fetch, adsbygoogle, length:60000-60001)
 !+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
@@ -36479,6 +36481,11 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+||troypoint.com/wp-content/uploads/*/toolbox-qr-dec24
+troypoint.com##.wp-block-group__inner-container > .wp-block-list ~ *
+troypoint.com##article > .entry-content > .inherit-container-width:has(a[href*="surfshark.com/"])
+troypoint.com##article > .entry-content > .inherit-container-width:has(a[href*="/IPVanishTV."])
+troypoint.com##article > .entry-content > .inherit-container-width~ .wp-block-spacer ~ *:has(~ #h-streaming-applications)
 aussieaudiomart.com##.section-vu
 meawfy.com##.section-wrapper a[href][target="_blank"]
 ||meawfy.com/static/images/others/d/logo_en_4-en.gif
