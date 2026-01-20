@@ -1,9 +1,9 @@
-! Checksum: IUpM9V6DG4+zt+memC6MNw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1768870270-14400.patch
+! Checksum: poK+gZILHqs7Few4hVDMyA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1768884539-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.7
-! TimeUpdated: 2026-01-20T00:48:10+00:00
+! Version: 2.1.55.8
+! TimeUpdated: 2026-01-20T04:45:51+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -70,7 +70,6 @@
 /plugins/facebook-page-promoter-$~stylesheet
 /plugins/mashsharer/assets/js/mashsb.min.js
 /plugins/pinterest-pin-it-button-on-image-hover-and-post/js/pinit.js
-/plugins/share-and-follow/*$image
 /plugins/sociable-re/images/*
 /plugins/sociable/*$~stylesheet
 /plugins/social-media-widget/*$image
@@ -156,6 +155,7 @@ _social_footer_
 ###adbl-social-icons
 ###addThis
 ###addsSocial
+###addthis_sharing_toolbox
 ###article-footer-social-share
 ###article-header-share
 ###article-social
@@ -1129,6 +1129,7 @@ _social_footer_
 ##.d3-o-share-bar
 ##.dashicons-facebook
 ##.dashicons-twitter
+##.dd_post_share
 ##.ddc-social-share
 ##.desktop-share
 ##.desktop-social
@@ -1314,6 +1315,7 @@ _social_footer_
 ##.fi-social-youtube
 ##.fix-share
 ##.fixed-share
+##.fixed-share-bar
 ##.fixed-social
 ##.fixed-social-media
 ##.fl-social-icons
@@ -1371,7 +1373,6 @@ _social_footer_
 ##.footer--contact-social
 ##.footer--social
 ##.footer--social-icons
-##.footer--social-link
 ##.footer-bottom-social
 ##.footer-bottom__social
 ##.footer-bottom__social-links
@@ -1385,6 +1386,7 @@ _social_footer_
 ##.footer-fb
 ##.footer-fb-icon
 ##.footer-follow
+##.footer-follow-text
 ##.footer-follow-us
 ##.footer-followus
 ##.footer-icon-facebook
@@ -1707,6 +1709,7 @@ _social_footer_
 ##.instagram_share
 ##.instagramicon
 ##.instalink
+##.intro-social
 ##.ion-social-facebook
 ##.ion-social-google
 ##.ion-social-linkedin
@@ -1763,6 +1766,7 @@ _social_footer_
 ##.js-shareButton
 ##.js-social-facebook
 ##.js-social-instagram
+##.js-social-media-link
 ##.js-social-share
 ##.js-social-share-list
 ##.js-social-twitter
@@ -1867,6 +1871,7 @@ _social_footer_
 ##.main-nav-social
 ##.mainVerticalArticleSharingLinks
 ##.main_search_social
+##.main_share_panel
 ##.mashicon-share
 ##.mashsb-box
 ##.mashsb-container
@@ -1985,7 +1990,6 @@ _social_footer_
 ##.news-share
 ##.news-share-button
 ##.news__share
-##.newsletter__social-links
 ##.nexstar-google-preferred-sources
 ##.nice-menu-menu-social-menu
 ##.node-share
@@ -2009,6 +2013,7 @@ _social_footer_
 ##.open-share-toolbar
 ##.open_share_box
 ##.os-social-bar
+##.ot-social-widget
 ##.overlay-open-share
 ##.ow-social-icons
 ##.oxy-social-icons
@@ -2080,6 +2085,7 @@ _social_footer_
 ##.popover-share
 ##.post-content-share
 ##.post-footer-share
+##.post-footer-social
 ##.post-footer__share
 ##.post-like-share
 ##.post-meta-share
@@ -2117,6 +2123,7 @@ _social_footer_
 ##.pp-social-icon
 ##.pp-social-icons
 ##.pp-social-share-content
+##.pre-footer-social
 ##.prettySocial
 ##.pri-share
 ##.print-share
@@ -2270,6 +2277,7 @@ _social_footer_
 ##.share-buttons-top
 ##.share-buttons-wrapper
 ##.share-buttons__item
+##.share-buttons__text
 ##.share-circle
 ##.share-column
 ##.share-component
@@ -3106,6 +3114,7 @@ _social_footer_
 ##.social_popup
 ##.social_row
 ##.social_section
+##.social_share_box
 ##.social_share_fb
 ##.social_share_left
 ##.social_share_privacy_area
@@ -3130,7 +3139,6 @@ _social_footer_
 ##.socialbuttons
 ##.socialcontainer
 ##.socialcount
-##.socialdefault
 ##.socialfooter
 ##.socialheader
 ##.socialicon
@@ -3313,6 +3321,7 @@ _social_footer_
 ##.twitter-btn
 ##.twitter-btn-icon
 ##.twitter-custom
+##.twitter-div
 ##.twitter-feed
 ##.twitter-follow
 ##.twitter-follow-box
@@ -3452,7 +3461,6 @@ _social_footer_
 ##.widget_twitter
 ##.widget_twitter_timeline
 ##.widget_wpcom_social_media_icons_widget
-##.widgetsocial
 ##.wp-block-social-links
 ##.wp-embed-share
 ##.wp-share
@@ -3601,7 +3609,6 @@ _social_footer_
 ||facebook.com/plugins/like_box.php$third-party
 ||facebook.com/plugins/page.php?$third-party
 ||facebook.com/plugins/share_button.php?$third-party
-||facebook.com/widgets/like.php?$third-party
 ||facebook.com^*/plugins/like.php?$third-party
 ||facebook.com^*/plugins/page.php?$third-party
 ||facebook.com^*/plugins/share_button.php?$third-party
@@ -3995,6 +4002,7 @@ playbuzz.com##.pb-site-social
 theroar.com.au##.pm-share-horizontal
 getcomics.org##.post-footer-shr
 wccftech.com##.post-google
+discussingfilm.net,douglasnow.com,energy-reporters.com,rockstarintel.com,trustedreviews.com,watchinamerica.com##.post-share-float
 foodandwaterwatch.org,medcitynews.com,publicbooks.org,sqmagazine.co.uk##.post-social-share
 cointelegraph.com##.post__socials-block
 pravda.com.ua##.post_social_item
@@ -4047,7 +4055,6 @@ cbsnews.com##.sharebar
 mirror.co.uk,themirror.com##.sharebar-icon
 thehackernews.com##.sharebelow-twitter
 aftvnews.com,baptistnews.com,calmatters.org,cardinalnews.org,cartoonbrew.com,jta.org,thefrisc.com,usmagazine.com,washingtoncitypaper.com,washingtoninformer.com##.sharedaddy
-videocardz.com##.shareon
 cointelegraph.com##.shares-list__list
 streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
@@ -4067,6 +4074,7 @@ news.sky.com,skysports.com##.site-share-wrapper
 archaeology.org##.site-socials
 thehorizonsun.com##.sno-hac-iconwrap
 tokyoweekender.com##.sns-icon-list
+ebookrenta.com##.snsList-btn_wrap
 buyee.jp##.sns_list
 firstpost.com##.so-ics
 macrumors.com##.social--159R8SRB
@@ -4160,7 +4168,7 @@ dailymail.co.uk,oogtv.nl##.whatsapp
 aajtak.in,businesstoday.in##.whatsapp_channel
 business-standard.com##.whtsclick
 indiatoday.in##.whtspp_share
-fashionhistory.fitnyc.edu,vgleaks.com##.widget_et_social_followers
+trustedreviews.com##.widget-social-b
 fandom.com##.wikia-bar-anon
 windowslatest.com##.wl-floatbar
 destructoid.com##.wp-block-gamurs-footer-nav__website-info__socials
@@ -4341,11 +4349,9 @@ phonandroid.com##.social-networks
 francetvinfo.fr##.social-zone__wrapper
 ||lequipe.fr/_nuxt/Share.
 ||radio-canada.ca/mp/modules.socialbar.executer.$script
-tportal.hr##.footer__social_media
 gloria.hr,jutarnji.hr##.item__social-jl
 jutarnji.hr##.item__wrap-social
 jutarnji.hr##.item_social_share
-tportal.hr##.t-share
 storm.mg###article_sns_inner
 ettoday.net###et_sticky_pc
 ettoday.net##.et_social_2
