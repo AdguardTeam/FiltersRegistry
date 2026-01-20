@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Dm2rS+0SKl6Zs/A45keLQQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1768900667-3600.patch
+! Checksum: VwiseUnreTPaZwGVhc8TRw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1768904037-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.41.13
-! TimeUpdated: 2026-01-20T09:14:03+00:00
+! Version: 2.4.41.14
+! TimeUpdated: 2026-01-20T10:10:20+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10309,6 +10309,10 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223058
+hexanaut.io##+js(prevent-fetch, adsbygoogle, length:60000-60001)
+!+ NOT_PLATFORM(ios, ext_android_cb, ext_safari)
+||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xhr,domain=hexanaut.io,important
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223131
 platinsport.com###adblock-modal-overlay:style(display: none !important;)
 platinsport.com##body:style(overflow: auto !important;)
@@ -36474,6 +36478,8 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+newegg.com##.product-headline.is-new
+newegg.com##.row-side-banners
 yesporn.vip##.asside-link
 yesporn.vip##.header-inner > a:not([href^="https://yesporn.vip/"], [href="https://t.me/+xf80qlGHH_9kNWY0"])
 thefileslocker.net###hiddenLinkImg
