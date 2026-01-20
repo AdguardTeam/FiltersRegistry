@@ -1,15 +1,15 @@
-! Checksum: BXRLiT5DNV3bI42CZHfIZw
-! Diff-Path: ../patches/212/212-s-1768913382-14400.patch
+! Checksum: iyD6kr/+j82tKe1keFFo2Q
+! Diff-Path: ../patches/212/212-s-1768927711-14400.patch
 ! Title: RU AdList: Counters
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.83.33
-! TimeUpdated: 2026-01-20T12:46:11+00:00
+! Version: 2.1.83.34
+! TimeUpdated: 2026-01-20T16:45:01+00:00
 ! Expires: 12 hours (update frequency)
 !
-! Checksum: leXuv1ySIZsyqkb/Lgxr1A
-! OriginalVersion: 202601201231
+! Checksum: onvKeOMIcgpWAcyvZtwZzw
+! OriginalVersion: 202601201632
 ! Title: RU AdList: Counters
-! Last modified: 20 Jan 2026 12:31 UTC
+! Last modified: 20 Jan 2026 16:32 UTC
 ! Expires: 1 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -1392,7 +1392,6 @@ $removeparam=referrer_clid
 $removeparam=rtclick
 $removeparam=searchid,domain=kufar.by
 $removeparam=short_domain,domain=torbobit.net|tourbobit.com|tourbobit.net|turbobeet.net|turbobi.pw|turbobif.com|turbobit.net|turbobita.net|turbobits.cc|turbobits.net|turboobit.com
-$removeparam=sid,domain=nnm-club.me|nnmclub.ro|nnmclub.to
 $removeparam=source_ve_path,domain=youtube.com
 $removeparam=traffic_source
 $removeparam=tt_content,domain=twitch.tv
@@ -1458,6 +1457,16 @@ utm_source=*partner=$document,removeparam=partner
 ||ykt.ru^$document,removeparam=/news_interesting|news_plus|news_popular|news_recent|promo_inner/,domain=ykt.ru
 ||youtube.com/embed/$subdocument,removeparam=iv_load_policy
 ||youtube.com/embed/$subdocument,removeparam=rel
+!
+! Appsflyer (onelink.me)
+$document,removeparam=af_xp
+$document,removeparam=shortlink
+$removeparam=af_click_lookback
+$removeparam=af_force_deeplink
+$removeparam=is_retargeting
+is_retargeting=$removeparam=c
+is_retargeting=$removeparam=pid
+is_retargeting=$removeparam=source_caller
 !
 ! Dzen
 $document,removeparam=annot_type,domain=dzen.ru|sportsdzen.ru
@@ -1567,8 +1576,4 @@ $document,removeparam=qht,domain=svpressa.ru
 $document,removeparam=qt,domain=svpressa.ru
 $document,removeparam=top,domain=svpressa.ru
 $document,removeparam=tvtd,domain=svpressa.ru
-!
-! исключения
-@@/forum\/(login|release|torrent)\.php\?(logout|mode)\=/$removeparam,domain=nnm-club.me|nnmclub.ro|nnmclub.to
-@@||career.habr.com/vacancies?*=email_subscriptions|$removeparam
 !
