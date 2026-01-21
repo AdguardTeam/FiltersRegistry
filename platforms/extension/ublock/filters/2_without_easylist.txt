@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: JMWTM/3dUzzk8zhiJfGnwg
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1768979849-3600.patch
+! Checksum: YNCgne9eIQDYbk3nUaj6bg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1768983278-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.41.35
-! TimeUpdated: 2026-01-21T07:13:37+00:00
+! Version: 2.4.41.36
+! TimeUpdated: 2026-01-21T08:10:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10310,6 +10310,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223167
+kissjav.com#@#.ad-unit:not(.textads)
+kissjav.com##+js(no-setTimeout-if, .offsetHeight === 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223163
 indexsubtitle.cc##+js(no-setTimeout-if, -0x)
 indexsubtitle.cc#@#.google_ads
@@ -31381,6 +31384,9 @@ truyenqqhot.com##div[id^="ads_"]
 ##.topAd
 !+ NOT_OPTIMIZED
 ##.article-advert-container
+! https://github.com/AdguardTeam/AdguardFilters/issues/223175
+!+ NOT_OPTIMIZED
+##.outbrain
 ! https://www.rbtv77news.com/superabbit77-link/
 ! https://www.fctv33.work/
 ##.czlll-rlselse
