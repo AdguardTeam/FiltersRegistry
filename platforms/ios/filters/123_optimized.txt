@@ -1,9 +1,9 @@
-! Checksum: sCFmGJ2cL/AIoqWTihoWBg
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1768956718-14400.patch
+! Checksum: 40klbm9+RCIxuF6agUgEyw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1768970975-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.13
-! TimeUpdated: 2026-01-21T00:48:19+00:00
+! Version: 2.1.55.14
+! TimeUpdated: 2026-01-21T04:45:54+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -195,6 +195,7 @@ _social_footer_
 ###desktop-share-wrapper
 ###details-share-icon-link
 ###divSideShare
+###divSocial
 ###embed-share
 ###essbsocialprofileswidget-2
 ###et-post-share
@@ -432,6 +433,7 @@ _social_footer_
 ###shareButton
 ###shareButton1
 ###shareButtons
+###shareData
 ###shareDropdown
 ###shareFloat
 ###shareIcons
@@ -597,6 +599,7 @@ _social_footer_
 ###socialFooter
 ###socialGoogle
 ###socialGrid
+###socialHeader
 ###socialHolder
 ###socialIcons
 ###socialLinks
@@ -950,6 +953,7 @@ _social_footer_
 ##.b-footer_social
 ##.b-header__social
 ##.b-share
+##.b-share-button
 ##.b-sharebar
 ##.b-sharelist
 ##.b-social-icons
@@ -1125,7 +1129,6 @@ _social_footer_
 ##.custom-social
 ##.custom-social-share
 ##.custom_share
-##.d-share
 ##.d3-o-share-bar
 ##.dashicons-facebook
 ##.dashicons-twitter
@@ -1477,6 +1480,7 @@ _social_footer_
 ##.footersociallinks
 ##.footsocial
 ##.fshare
+##.ftnd-footer-follow
 ##.ftop-social
 ##.ftr-social
 ##.ftr-social-links
@@ -1708,7 +1712,6 @@ _social_footer_
 ##.instagram_logo
 ##.instagram_share
 ##.instagramicon
-##.instalink
 ##.intro-social
 ##.ion-social-facebook
 ##.ion-social-google
@@ -1745,8 +1748,10 @@ _social_footer_
 ##.jetpack_widget_social_icons
 ##.js-Share
 ##.js-fb-share
+##.js-followState
 ##.js-icon-facebook
 ##.js-icon-twitter
+##.js-postShareWidget
 ##.js-share-btn
 ##.js-share-button
 ##.js-share-button-container
@@ -1800,7 +1805,6 @@ _social_footer_
 ##.lazysocialbuttons
 ##.leftsharebtn
 ##.lf-facebook
-##.like-box-wrap
 ##.like-fb
 ##.like-share
 ##.like_block
@@ -2105,9 +2109,6 @@ _social_footer_
 ##.post-share-twitter
 ##.post-share-widget
 ##.post-sharing
-##.post-soc-pin
-##.post-soc-share
-##.post-soc-twit
 ##.post-social
 ##.post-social-buttons
 ##.post-social-pin
@@ -2278,7 +2279,6 @@ _social_footer_
 ##.share-buttons-wrapper
 ##.share-buttons__item
 ##.share-buttons__text
-##.share-circle
 ##.share-column
 ##.share-component
 ##.share-container.vertical
@@ -3063,6 +3063,7 @@ _social_footer_
 ##.socialMedia
 ##.socialMedia-linkedin
 ##.socialMediaBlock
+##.socialMediaBox
 ##.socialMediaButtons
 ##.socialMediaContainer
 ##.socialMediaIcon
@@ -3767,6 +3768,7 @@ goldderby.com##._socialMedia_hgv74_1
 france24.com##.a-share-button
 datacenterdynamics.com##.a2a_default_style
 tandfonline.com##.a2a_share_target
+marriott.com,sandiegouniontribune.com##.action-bar
 planetizen.com##.addtoany_list
 alchetron.com##.alchetronShareCard
 asiaone.com##.ao-share-buttons
@@ -3951,6 +3953,7 @@ guide.michelin.com##.js-share-sticky
 myanimelist.net##.js-sns-icon-container
 nasdaq.com##.jupiter22-c-share-link
 4sysops.com##.kleo-quick-contact-wrapper
+observervoice.com##.latest-tweets-widget
 axios.com##.leading-0
 cpr.org##.legacy-social-list
 mymodernmet.com##.lets-connect
@@ -3998,6 +4001,7 @@ support.microsoft.com##.ocArticleFooterShareContainer
 support.microsoft.com##.ocArticleFooterShareLinksWrapper
 omgubuntu.co.uk##.omg-socials
 latimes.com##.page-actions
+operawire.com##.page-social-share
 playbuzz.com##.pb-share-bar
 playbuzz.com##.pb-site-social
 theroar.com.au##.pm-share-horizontal
@@ -4112,6 +4116,7 @@ commondreams.org,digit.in,hollywoodforevertv.com.br,twenteinsite.nl##.social_ico
 moneycontrol.com##.social_icons_wrapper
 ringsidenews.com##.social_label
 ciudad.com.ar,eltrecetv.com.ar,lithub.com,tn.com.ar##.social_links
+dailysabah.com,gmanetwork.com,pnn.ps##.social_media
 kleinezeitung.at,meduniwien.ac.at,shipmag.it,today.rtl.lu,videocardz.com##.socialbar
 videocardz.com##.socialbar-sidebar
 firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.socials
@@ -4129,6 +4134,7 @@ gadgets360.com##.story_social_share
 npr.org,symmetrymagazine.org,thefinance.sg,thefulcrum.us,topbet.eu##.subscribe
 hindustantimes.com##.subscribe-social
 locals.com##.support-now
+biographics.org,creativelawcenter.com,dcrainmaker.com,elements.visualcapitalist.com,marktechpost.com,msmagazine.com,podwatch.io,stuffparentsneed.com,toptenz.net##.swp_social_panel
 targettrend.com##.sws_supernormalaction
 notthebee.com##.take-shareables
 firstpost.com##.tbl-cell-wp
