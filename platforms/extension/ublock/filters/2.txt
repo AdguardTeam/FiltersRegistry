@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: l8WqsOlZGMCNjeLSQtKgRw
-! Diff-Path: ../patches/2/2-s-1769076835-3600.patch
+! Checksum: 1YYor2JMCwt5LaTGi4lb4Q
+! Diff-Path: ../patches/2/2-s-1769080372-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.41.62
-! TimeUpdated: 2026-01-22T10:10:12+00:00
+! Version: 2.4.41.63
+! TimeUpdated: 2026-01-22T11:09:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -24557,6 +24557,7 @@ mingguanwanita.my##.adplaceholder-mrec
 ! https://github.com/AdguardTeam/AdguardFilters/issues/41096
 tv8.md#@#.ad-container
 !
+||admixer.md^
 curs.md###bannerSide
 curs.md###bannerTop
 jurnaltv.md###banSMP2
@@ -36235,9 +36236,9 @@ quefaire.be##.gpt_box
 dogdrip.net##html[lang="ko"] [id^="img_"][style]:has(iframe[frameborder="0"][style]):style(clip-path: circle(0) !important;)
 smsonline.cloud##html[data-theme][lang] [id^="img_"][style]:has(iframe[frameborder="0"][style]):style(clip-path: circle(0) !important;)
 ! Common rules, which partially hide banners
-.html-load.com/*/d/
-.html-load.com/*/n/
-.fb2.html-load.com/player/
+.html-load.com/*/a/$font,domain=~dogdrip.net|~smsonline.cloud
+.html-load.com/*/n/$domain=~dogdrip.net|~smsonline.cloud
+.fb2.html-load.com/player/$domain=~dogdrip.net|~smsonline.cloud
 ||html-load.com^$image,~3p,domain=html-load.com,important
 ~dogdrip.net,~smsonline.cloud##div[id^="img_"] > button.gCloseButton
 ~dogdrip.net,~smsonline.cloud##amp-img[height="   120"]
@@ -36262,9 +36263,6 @@ content-loader.com,css-load.com,html-load.com,img-load.com##html:not(:has(> head
 ~dogdrip.net,~smsonline.cloud##img[height="   250"][width="   300"]
 ~dogdrip.net,~smsonline.cloud##img[height="   90"][width="   728"]
 ~dogdrip.net,~smsonline.cloud##ins[style$="height:    90px; width:    728px;"]
-! aglint-disable no-invalid-modifiers
-://html-load.com/*.js$script,3p,domain=~dogdrip.net|~smsonline.cloud|~slideshare.net
-://content-loader.com/*.js$script,3p,domain=~dogdrip.net|~smsonline.cloud|~slideshare.net
 !
 !
 /^https:\/\/(?:as(?:loader)?|(?:shield)?load(?:er)?)\.([-0-9A-Za-z]+\.[-A-Za-z]{2,16})\/(?:loader\.min|script\/(?:www\.)?\1)\.js$/$script,~3p,match-case
@@ -36524,6 +36522,9 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+ukaudiomart.com###page_top_content:has(> div[id^="div-gpt-"]:only-child)
+ukaudiomart.com##.cfbox > div[style^="float:right;"] > div[style^="min-width:300px;min-height:250px;"]
+ukaudiomart.com##+js(abort-on-stack-trace, document.createElement, /as_detect|checkScriptBlocking/)
 ultrasurfing.com###main > div.hero:style(height: auto !important;)
 tribuna.com##div[class^="_structured-body_"] > div[class]:has(> div[class]:contains(ADVERTISEMENT))
 tribuna.com##.Main-module__h0zGRO__main-layout__content-wrapper > div[style="min-height: auto;"]
@@ -80521,6 +80522,7 @@ browsershots.org#@#.advert_area
 ||adelphic.net^
 ||adenza.dev^
 ||adept-door.pro^
+||adept-peak.pro^
 ||adept-shock.pro^
 ||adepticily.com^
 ||adeptmight.pro^
@@ -81532,6 +81534,7 @@ browsershots.org#@#.advert_area
 ||alespeonor.com^
 ||aleuronsapit.cyou^
 ||aleutobelism.cyou^
+||alevjmyqigxeu.online^
 ||alexabyte.site^
 ||alexatracker.com^
 ||alexiaacrefatling.cyou^
@@ -92502,6 +92505,7 @@ browsershots.org#@#.advert_area
 ||fdkox-a.online^
 ||fdnaylrjswdud.space^
 ||fdoepehritanm.site^
+||fdpewjpiuxgxp.online^
 ||fdpmvwlxjszfv.space^
 ||fdqjkxhhwfgjk.website^
 ||fdqzywhgrvgmo.store^
@@ -93689,6 +93693,7 @@ browsershots.org#@#.advert_area
 ||fsalfrwdr.com^
 ||fsbbdiymhh.xyz^
 ||fsbimtflichw.net^
+||fscfdqhlnyewixi.com^
 ||fsdzafmzbdyan.store^
 ||fsfibjccvgkki.site^
 ||fsgkzonhuoafn.store^
@@ -95032,6 +95037,7 @@ browsershots.org#@#.advert_area
 ||gnmmbnnbqcwtb.site^
 ||gnmwgrnyprdhs.website^
 ||gnmwsxajxlakj.vip^
+||gnnaniclyvdmc.website^
 ||gnnhxrzungvvi.space^
 ||gnnihqyqo.com^
 ||gno-protect.pro^
@@ -103304,6 +103310,7 @@ browsershots.org#@#.advert_area
 ||mangensaud.net^
 ||mangerolympicssnort.com^
 ||mangleddespondcrumbed.cfd^
+||mangosexcuditwell.cfd^
 ||mangrao.club^
 ||mangraox.my^
 ||manidaesyrtis.qpon^
@@ -104946,6 +104953,7 @@ browsershots.org#@#.advert_area
 ||muskitsdemigod.help^
 ||muskoxambier.cfd^
 ||musnudmarlier.rest^
+||mussedmushaa.cfd^
 ||mussingkashmir.cfd^
 ||mustardbespy.shop^
 ||mustunsognouft.net^
@@ -106395,6 +106403,7 @@ browsershots.org#@#.advert_area
 ||nuleedsa.net^
 ||nulez.xyz^
 ||null-point.com^
+||nullsframe.com^
 ||nulsardouxaps.net^
 ||numberium.com^
 ||numbertrck.com^
@@ -112799,6 +112808,7 @@ browsershots.org#@#.advert_area
 ||respectedclinkplanets.com^
 ||respectfullyalternate.com^
 ||respectfultill.com^
+||respectivegentlecontinual.com^
 ||respectrunners.qpon^
 ||respiratorteespank.com^
 ||respiteaccepted.com^
@@ -112905,6 +112915,7 @@ browsershots.org#@#.advert_area
 ||revoke1266.fun^
 ||revokejav128.fun^
 ||revolutionary2.fun^
+||revolutiontelegram.com^
 ||revolvetrampot.cyou^
 ||revolving-piano.pro^
 ||revolvingemergency.com^
@@ -122131,6 +122142,7 @@ browsershots.org#@#.advert_area
 ||webashameattendant.com^
 ||webassembly.stream^
 ||webatam.com^
+||webbed-doctor.pro^
 ||webbed-leadership.com^
 ||webcampromo.com^
 ||webcampromotions.com^
