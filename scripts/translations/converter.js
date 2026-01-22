@@ -1,3 +1,10 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 /**
  * Converts to/from crowdin format
  *
@@ -6,16 +13,13 @@
 const converter = (() => {
     'use strict';
 
-    // eslint-disable-next-line global-require
-    const fs = require('fs');
-
     /**
      * Reads file to string
-     * @param path
+     * @param filePath
      */
-    const readFile = (path) => {
+    const readFile = (filePath) => {
         try {
-            return fs.readFileSync(path, { encoding: 'utf-8' });
+            return fs.readFileSync(filePath, { encoding: 'utf-8' });
         } catch (e) {
             return null;
         }
@@ -23,11 +27,11 @@ const converter = (() => {
 
     /**
      * Writes string to file
-     * @param path
+     * @param filePath
      * @param data
      */
-    const writeFile = (path, data) => {
-        fs.writeFileSync(path, data, 'utf8');
+    const writeFile = (filePath, data) => {
+        fs.writeFileSync(filePath, data, 'utf8');
     };
 
     /**
@@ -135,8 +139,6 @@ const file = args[3];
 const locale = args[4];
 const out = args[5];
 const mask = args[6];
-
-const path = require('path');
 
 if (action === 'import') {
     converter.importFile(locale, path.join(__dirname, file), path.join(__dirname, out), mask);
