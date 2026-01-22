@@ -1,3 +1,7 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 /**
  * Converts to/from crowdin format
  *
@@ -5,9 +9,6 @@
  */
 const converter = (() => {
     'use strict';
-
-    // eslint-disable-next-line global-require
-    const fs = require('fs');
 
     /**
      * Reads file to string
@@ -135,8 +136,8 @@ const file = args[3];
 const locale = args[4];
 const out = args[5];
 const mask = args[6];
-
-const path = require('path');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 if (action === 'import') {
     converter.importFile(locale, path.join(__dirname, file), path.join(__dirname, out), mask);
