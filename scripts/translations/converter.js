@@ -2,6 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 /**
  * Converts to/from crowdin format
  *
@@ -136,8 +139,6 @@ const file = args[3];
 const locale = args[4];
 const out = args[5];
 const mask = args[6];
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 if (action === 'import') {
     converter.importFile(locale, path.join(__dirname, file), path.join(__dirname, out), mask);
