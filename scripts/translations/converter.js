@@ -12,11 +12,11 @@ const converter = (() => {
 
     /**
      * Reads file to string
-     * @param path
+     * @param filePath
      */
-    const readFile = (path) => {
+    const readFile = (filePath) => {
         try {
-            return fs.readFileSync(path, { encoding: 'utf-8' });
+            return fs.readFileSync(filePath, { encoding: 'utf-8' });
         } catch (e) {
             return null;
         }
@@ -24,11 +24,11 @@ const converter = (() => {
 
     /**
      * Writes string to file
-     * @param path
+     * @param filePath
      * @param data
      */
-    const writeFile = (path, data) => {
-        fs.writeFileSync(path, data, 'utf8');
+    const writeFile = (filePath, data) => {
+        fs.writeFileSync(filePath, data, 'utf8');
     };
 
     /**
