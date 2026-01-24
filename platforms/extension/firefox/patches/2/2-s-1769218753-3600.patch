@@ -1,0 +1,52 @@
+d1 2
+a2 2
+! Checksum: y9LfZjBlF4DJ2Fw2AFr7eA
+! Diff-Path: ../patches/2/2-s-1769222760-3600.patch
+d5 2
+a6 2
+! Version: 2.4.42.2
+! TimeUpdated: 2026-01-24T02:42:32+00:00
+d37763 2
+a37764 2
+www.youtube.com#%#(()=>{const e="pyv",t="ad_type",n="none";let o=e;const a=e=>{o=e};(()=>{try{const e=Object.getOwnPropertyDescriptor(window.JSON,"parse");return!!e&&e.writable}catch(e){return!1}})()||a(t);const c=e=>{delete e.context?.client?.configInfo?.appInstallData},r=(o,a)=>{try{if(!o||!a)return;if(a===e)return void(o.adPlaybackContext={pyv:!0});if(a===t)return void(o.adPlaybackContext={adType:"AD_TYPE_INSTREAM"});if(a===n)return void delete o.adPlaybackContext}catch(e){}},l=["playerErrorMessageRenderer","UNPLAYABLE"],i={apply:(c,r,i)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||o===n)return Reflect.apply(c,r,i);let y;try{if(y=Reflect.apply(c,r,i),!y.responseContext&&!y.playabilityStatus)return y;const u=JSON.stringify(y);return l.some((e=>u.includes(e)))?o===e?(a(t),y):(a(n),y):(o===t&&y.playerConfig?.granularVariableSpeedConfig&&(y.playerConfig.granularVariableSpeedConfig.maximumPlaybackRate=200,y.playerConfig.granularVariableSpeedConfig.minimumPlaybackRate=25),y)}catch(e){}return y}};window.JSON.parse=new Proxy(window.JSON.parse,i);const y={apply:(e,t,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,n);try{let a=n[0];if(a&&(a.includes('"contentPlaybackContext"')||a.includes('"adSignalsInfo"'))){const l=JSON.parse(a);if(!l.context?.client)return Reflect.apply(e,t,n);l.playbackContext&&r(l.playbackContext,o),l.playerRequest&&r(l.playerRequest.playbackContext,o),c(l),a=JSON.stringify(l),n[0]=a}}catch(e){}return Reflect.apply(e,t,n)}};window.TextEncoder.prototype.encode=new Proxy(window.TextEncoder.prototype.encode,y);const u={apply:(e,t,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,n);try{const a=n[0];if(!a?.context?.client)return Reflect.apply(e,t,n);a.playbackContext&&"undefined"===a.playbackContext.adPlaybackContext&&r(a.playbackContext,o),a.playerRequest&&"undefined"===a.playerRequest.playbackContext.adPlaybackContext&&r(a.playerRequest.playbackContext,o),c(a),n[0]=a}catch(e){}return Reflect.apply(e,t,n)}};window.JSON.stringify=new Proxy(window.JSON.stringify,u);const s={construct:(e,t,n)=>{try{const a=t[0];let l=t[1]?.body;if(!a?.includes("youtubei")||location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||!l)return Reflect.construct(e,t,n);if(l.includes('"contentPlaybackContext"')||l.includes('"adSignalsInfo"')){const a=JSON.parse(l);if(!a.context?.client)return Reflect.construct(e,t,n);a.playbackContext&&r(a.playbackContext,o),a.playerRequest&&r(a.playerRequest.playbackContext,o),c(a),l=JSON.stringify(a),t[1].body=l}}catch(e){}return Reflect.construct(e,t,n)}};window.Request=new Proxy(window.Request,s)})();
+www.youtube.com#%#(()=>{const e="movie_player",t="ytd-watch-flexy[player-unavailable]",r=`#${e} > .ytp-error`,n="yt-playability-error-supported-renderers#error-screen:has(>*)",o="pyv",a="ad_type",c="none";let l=o;const i=new Set,d=()=>{const t=document.getElementById(e),r=window.location.search,n=new URLSearchParams(r).get("v")||t?.getVideoData?.().video_id,o=new URLSearchParams(r).get("t")??"0";return{videoId:n,timeInSeconds:parseInt(o,10)}},y=()=>{p();const t=document.getElementById(e);if(t&&"function"==typeof t.loadVideoById)try{const{videoId:e,timeInSeconds:r}=d();t.loadVideoById(e,r)}catch(e){}},u=(()=>{let e=null,t=null,r=0;return n=>{try{if(!n)return!1;const{videoId:o}=d();return!!o&&(e===o&&t===n?r++:(e=o,t=n,r=1),r>=2&&(r=0,!0))}catch(e){return!1}}})(),s=e=>{l=e},p=()=>{const r=document.getElementById(e),o=document.querySelector(n),a=document.querySelector("yt-playability-error-supported-renderers.ytdMiniplayerPlayerContainerPlayabilityError:has(>*)"),c=document.querySelector(t);r&&(c||a)&&(o?.style.setProperty("display","none","important"),a?.style.setProperty("display","none","important"),c?.removeAttribute("player-unavailable"))},f=(e,t)=>{try{if(!e||!t)return;if(t===o)return void(e.adPlaybackContext={pyv:!0});if(t===a)return void(e.adPlaybackContext={adType:"AD_TYPE_INSTREAM"});if(t===c)return void delete e.adPlaybackContext}catch(e){}};(()=>{const e={apply:(e,t,r)=>{try{let o=r[0];if(!o||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,r);const a=Array.isArray(o),c=a?o[0]:o;if("string"!=typeof c)return Reflect.apply(e,t,r);if(!c.includes('"contentPlaybackContext"')&&!c.includes('"adSignalsInfo"'))return Reflect.apply(e,t,r);const i=JSON.parse(c);if(!i.context?.client)return Reflect.apply(e,t,r);i.playbackContext&&f(i.playbackContext,l),i.playerRequest&&f(i.playerRequest.playbackContext,l),n=i,delete n.context?.client?.configInfo?.appInstallData;const d=JSON.stringify(i);a?r[0][0]=d:r[0]=d}catch(e){}var n;return Reflect.apply(e,t,r)}};window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,e)})();const m=document.documentElement;new MutationObserver((()=>{if(document.querySelector(n)&&p(),!(()=>{const o=document.getElementById(e),a=document.querySelector(r),c=document.querySelector(n),l=document.querySelector(t);if(!o)return!1;const i=o.getVideoData?.();return(c||l||a)&&null!=i?.errorCode})())return;const{videoId:f}=d();(e=>{if(e)for(const t of i)t!==e&&i.delete(t)})(f),(()=>{if(l===o){if(!u(a))return void y();s(a),y()}else if(l===a){if(!u(c))return void y();s(c),y()}else if(l===c){const{videoId:e}=d();if(!e||i.has(e))return void p();i.add(e),y()}})()})).observe(m,{attributes:!0,childList:!0,subtree:!0})})();
+a85553 1
+||armsizememento.cyou^
+a94567 1
+||enarsashie.net^
+a107926 1
+||moonacksahras.qpon^
+a112450 1
+||pglephprff.com^
+a114126 1
+||ptkbfiewzo.com^
+a115895 1
+||rechurnpipagestump.cyou^
+a116852 1
+||roarudos.shop^
+a118962 1
+||skuolzzuopjkc.online^
+a119143 1
+||smctpnjeostbk.space^
+a123910 1
+||ushrltylpzqnz.space^
+a127428 1
+||xphqkckcvhgzf.space^
+a128882 1
+||zjmwizpyxsreb.space^
+a137955 1
+||discover.hubpages.com/runtime/webads.js
+a139319 1
+gumtree.com.au###FUSE_HP_SEARCH_DWEB
+a140438 1
+macys.com###sponsored-items-container
+a143431 1
+macys.com##.media-component-siteMonetization
+a146814 1
+autotrader.co.uk##li[class]:has(span[data-testid="PROMOTED_LISTING"])
+a147531 2
+kohls.com#?#[component-export="KmnMarqueeBannerWrapper"]:contains(Sponsored)
+kohls.com#?#[id^="kmn-leaderboard-"]:contains(Sponsored)
+d148525 1
+a148525 1
+18porn.sex,18teensex.tv,429men.com,4kporn.xxx,4wank.com,alotporn.com,amateur8.com,amateurporn.co,amateurporn.me,bigtitslust.com,camwhores.tv,danude.com,daporn.com,epicgfs.com,fapnow.xxx,fpo.xxx,freeporn8.com,fuqer.com,gayck.com,hentai-moon.com,hentai0day.com,heroero.com,hoes.tube,intporn.com,japaneseporn.xxx,javwind.com,jizzberry.com,multi.xxx,onlyhentaistuff.com,porndr.com,sexjav.tv,sextubespot.com,sortporn.com,tabootube.xxx,trueamateurporn.org,vilevideos.com,watchmygf.xxx,xcavy.com,xgroovy.com,xmateur.com,xxxshake.com##.table

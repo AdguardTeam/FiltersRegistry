@@ -1,5 +1,5 @@
-! Checksum: lVZ4PNUWMcxwURmzrhGfRA
-! Diff-Path: ../patches/22_optimized/22_optimized-s-1769174669-3600.patch
+! Checksum: Woj+nhrEBsjPw42593aoWQ
+! Diff-Path: ../patches/22_optimized/22_optimized-s-1769222771-3600.patch
 ! Title: AdGuard Widgets filter (Optimized)
 ! Description: Blocks annoying third-party widgets: online assistants, live support chats, etc.
 ! Version: 2.0.13.47
@@ -162,6 +162,7 @@ kandatasokuho.com##.main-body > div#inner-contents ~ a[href="https://open2ch.net
 kandatasokuho.com#%#//scriptlet('remove-node-text', '#text', '引用元：')
 mona-news.com##.article-body-outer dd:has(> span[style^="color: "] > a[href^="https://2ch-c.net/"][target="_blank"])
 repsoku.net##.headline-group:has(> .headline:only-child > script[src*="livedoor.net"])
+norisoku.com##iframe[src^="https://norisoku.com/rss-"]
 incident-wo.com##.blogroll-wrapper0
 crx7601.com##div[class^="article-body"] > blockquote > .t_b ~ b
 crx7601.com##div[class^="article-body"] > blockquote > .t_b ~ span[style^="font-"]
@@ -285,8 +286,6 @@ blog.tinect.jp##p + .g.g-46 > .g-single
 jiwasoku.com###pcpc-rss
 jiwasoku.com###test-blo
 mona-news.com##.article-body-inner > dd:has(a[href^="https://livedoor.blogimg.jp/mona_news/"]) ~ dd
-suresuta.jp#?##main > div.linkbox:has(> p.kiji-shita)
-suresuta.jp##.underrssbox
 sindoi.com##div[class^="sougo-rss"]
 h-ken.net###footer-rssLinkListHtml
 kijomatomelog.com##span[style="font-weight: bold;"] ~ a[href^="http://matomeantena.com/feed/"]
@@ -1213,6 +1212,7 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 ||vivocha.com^$third-party
 ||ac-chatbot.freebie-ac.jp^$third-party
 ||decagon.ai^$third-party
+||widget.hireaiva.com^$third-party
 ||ekr.zdassets.com/compose/zopim_chat/
 ||chatbro.com^$third-party
 ||chatbase.co^$third-party
@@ -1422,7 +1422,6 @@ wpr.org##.entry-content > div.wp-block-wpr-promotion
 english.nv.ua##.eng-patreon-promo
 pbs.org#$#div[data-popup-type="large_funding"] { display: none !important; }
 pbs.org#$#body[style^="overflow:"] { overflow: auto !important; }
-novastream.top###donationBanner
 plannedparenthood.org#$##year-end-donations { display: none !important; }
 plannedparenthood.org#$#html[style] { overflow-y: scroll !important; }
 documentaryarea.com###watermark
