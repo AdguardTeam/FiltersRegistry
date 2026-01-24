@@ -1,9 +1,9 @@
-! Checksum: GVtJZ+nG0mHOhTfct3g6zA
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1769274595-3600.patch
+! Checksum: 9t+bA4HSJ48DTUDPaX8lVw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1769278412-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.42.17
-! TimeUpdated: 2026-01-24T17:06:13+00:00
+! Version: 2.4.42.18
+! TimeUpdated: 2026-01-24T18:09:39+00:00
 ! Expires: 5 days (update frequency)
 ||qtcmxpiyne933ct3293986heg6vwwrj7z.cfd^
 ||agl010.pro^
@@ -13980,8 +13980,8 @@ www.youtube.com#%#(()=>{const t={apply:(t,o,n)=>{const e=n[0];return"function"==
 www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.Request=window.Request)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
 www.youtube.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
 www.youtube.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
-www.youtube.com#%#(()=>{const e="pyv",t="ad_type",n="none";let o=e;const a=e=>{o=e};(()=>{try{const e=Object.getOwnPropertyDescriptor(window.JSON,"parse");return!!e&&e.writable}catch(e){return!1}})()||a(t);const c=e=>{(e.playbackContext||e.playerRequest)&&delete e.context?.client?.configInfo?.appInstallData},r=(o,a,r)=>{try{if(!o||!a||!r)return;if(r===e)return a.adPlaybackContext={pyv:!0},void c(o);if(r===t)return a.adPlaybackContext={adType:"AD_TYPE_INSTREAM"},void c(o);if(r===n)return void delete a.adPlaybackContext}catch(e){}},l=["playerErrorMessageRenderer","UNPLAYABLE"],i={apply:(c,r,i)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||o===n)return Reflect.apply(c,r,i);let y;try{if(y=Reflect.apply(c,r,i),!y.responseContext&&!y.playabilityStatus)return y;const u=JSON.stringify(y);return l.some((e=>u.includes(e)))?o===e?(a(t),y):(a(n),y):(o===t&&y.playerConfig?.granularVariableSpeedConfig&&(y.playerConfig.granularVariableSpeedConfig.maximumPlaybackRate=200,y.playerConfig.granularVariableSpeedConfig.minimumPlaybackRate=25),y)}catch(e){}return y}};window.JSON.parse=new Proxy(window.JSON.parse,i);const y={apply:(e,t,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,n);try{let a=n[0];if(a&&(a.includes('"contentPlaybackContext"')||a.includes('"adSignalsInfo"'))){const c=JSON.parse(a);if(!c.context?.client)return Reflect.apply(e,t,n);c.playbackContext&&r(c,c.playbackContext,o),c.playerRequest&&r(c,c.playerRequest.playbackContext,o),a=JSON.stringify(c),n[0]=a}}catch(e){}return Reflect.apply(e,t,n)}};window.TextEncoder.prototype.encode=new Proxy(window.TextEncoder.prototype.encode,y);const u={apply:(e,t,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,n);try{const a=n[0];if(!a?.context?.client)return Reflect.apply(e,t,n);a.playbackContext&&"undefined"===a.playbackContext.adPlaybackContext&&r(a,a.playbackContext,o),a.playerRequest&&"undefined"===a.playerRequest.playbackContext.adPlaybackContext&&r(a,a.playerRequest.playbackContext,o),n[0]=a}catch(e){}return Reflect.apply(e,t,n)}};window.JSON.stringify=new Proxy(window.JSON.stringify,u);const s={construct:(e,t,n)=>{try{const a=t[0];let c=t[1]?.body;if(!a?.includes("youtubei")||location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||!c)return Reflect.construct(e,t,n);if(c.includes('"contentPlaybackContext"')||c.includes('"adSignalsInfo"')){const a=JSON.parse(c);if(!a.context?.client)return Reflect.construct(e,t,n);a.playbackContext&&r(a,a.playbackContext,o),a.playerRequest&&r(a,a.playerRequest.playbackContext,o),c=JSON.stringify(a),t[1].body=c}}catch(e){}return Reflect.construct(e,t,n)}};window.Request=new Proxy(window.Request,s)})();
-www.youtube.com#%#(()=>{const e="movie_player",t="ytd-watch-flexy[player-unavailable]",r=`#${e} > .ytp-error`,n="yt-playability-error-supported-renderers#error-screen:has(>*)",o="pyv",a="ad_type",l="none";let c=o;const i=new Set,d=()=>{const t=document.getElementById(e),r=window.location.search,n=new URLSearchParams(r).get("v")||t?.getVideoData?.().video_id,o=new URLSearchParams(r).get("t")??"0";return{videoId:n,timeInSeconds:parseInt(o,10)}},y=()=>{p();const t=document.getElementById(e);if(t&&"function"==typeof t.loadVideoById)try{const{videoId:e,timeInSeconds:r}=d();t.loadVideoById(e,r)}catch(e){}},u=(()=>{let e=null,t=null,r=0;return n=>{try{if(!n)return!1;const{videoId:o}=d();return!!o&&(e===o&&t===n?r++:(e=o,t=n,r=1),r>=2&&(r=0,!0))}catch(e){return!1}}})(),s=e=>{c=e},p=()=>{const r=document.getElementById(e),o=document.querySelector(n),a=document.querySelector("yt-playability-error-supported-renderers.ytdMiniplayerPlayerContainerPlayabilityError:has(>*)"),l=document.querySelector(t);r&&(l||a)&&(o?.style.setProperty("display","none","important"),a?.style.setProperty("display","none","important"),l?.removeAttribute("player-unavailable"))},f=e=>{(e.playbackContext||e.playerRequest)&&delete e.context?.client?.configInfo?.appInstallData},m=(e,t,r)=>{try{if(!e||!t||!r)return;if(r===o)return t.adPlaybackContext={pyv:!0},void f(e);if(r===a)return t.adPlaybackContext={adType:"AD_TYPE_INSTREAM"},void f(e);if(r===l)return void delete t.adPlaybackContext}catch(e){}};(()=>{const e={apply:(e,t,r)=>{try{let n=r[0];if(!n||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,r);const o=Array.isArray(n),a=o?n[0]:n;if("string"!=typeof a)return Reflect.apply(e,t,r);if(!a.includes('"contentPlaybackContext"')&&!a.includes('"adSignalsInfo"'))return Reflect.apply(e,t,r);const l=JSON.parse(a);if(!l.context?.client)return Reflect.apply(e,t,r);l.playbackContext&&m(l,l.playbackContext,c),l.playerRequest&&m(l,l.playerRequest.playbackContext,c);const i=JSON.stringify(l);o?r[0][0]=i:r[0]=i}catch(e){}return Reflect.apply(e,t,r)}};window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,e)})();const v=document.documentElement;new MutationObserver((()=>{if(document.querySelector(n)&&p(),!(()=>{const o=document.getElementById(e),a=document.querySelector(r),l=document.querySelector(n),c=document.querySelector(t);if(!o)return!1;const i=o.getVideoData?.();return(l||c||a)&&null!=i?.errorCode})())return;const{videoId:f}=d();(e=>{if(e)for(const t of i)t!==e&&i.delete(t)})(f),(()=>{if(c===o){if(!u(a))return void y();s(a),y()}else if(c===a){if(!u(l))return void y();s(l),y()}else if(c===l){const{videoId:e}=d();if(!e||i.has(e))return void p();i.add(e),y()}})()})).observe(v,{attributes:!0,childList:!0,subtree:!0})})();
+www.youtube.com#%#(()=>{const e="pyv",t="ad_type",n="none";let o=e;const a=e=>{o=e};(()=>{try{const e=Object.getOwnPropertyDescriptor(window.JSON,"parse");return!!e&&e.writable}catch(e){return!1}})()||a(t);const c=e=>{(e.playbackContext||e.playerRequest)&&delete e.context?.client?.configInfo?.appInstallData},r=(o,a,r)=>{try{if(!o||!a||!r)return;if(r===e)return a.adPlaybackContext={pyv:!0},void c(o);if(r===t)return a.adPlaybackContext={adType:"AD_TYPE_INSTREAM"},void c(o);if(r===n)return void delete a.adPlaybackContext}catch(e){}},l=["playerErrorMessageRenderer","UNPLAYABLE"],i={apply:(c,r,i)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||o===n)return Reflect.apply(c,r,i);let y;try{if(y=Reflect.apply(c,r,i),!y.responseContext&&!y.playabilityStatus)return y;const u=JSON.stringify(y);return l.some((e=>u.includes(e)))&&!u.includes("CONTENT_CHECK_REQUIRED")?o===e?(a(t),y):(a(n),y):(o===t&&y.playerConfig?.granularVariableSpeedConfig&&(y.playerConfig.granularVariableSpeedConfig.maximumPlaybackRate=200,y.playerConfig.granularVariableSpeedConfig.minimumPlaybackRate=25),y)}catch(e){}return y}};window.JSON.parse=new Proxy(window.JSON.parse,i);const y={apply:(e,t,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,n);try{let a=n[0];if(a&&(a.includes('"contentPlaybackContext"')||a.includes('"adSignalsInfo"'))){const c=JSON.parse(a);if(!c.context?.client)return Reflect.apply(e,t,n);c.playbackContext&&r(c,c.playbackContext,o),c.playerRequest&&r(c,c.playerRequest.playbackContext,o),a=JSON.stringify(c),n[0]=a}}catch(e){}return Reflect.apply(e,t,n)}};window.TextEncoder.prototype.encode=new Proxy(window.TextEncoder.prototype.encode,y);const u={apply:(e,t,n)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,n);try{const a=n[0];if(!a?.context?.client)return Reflect.apply(e,t,n);a.playbackContext&&"undefined"===a.playbackContext.adPlaybackContext&&r(a,a.playbackContext,o),a.playerRequest&&"undefined"===a.playerRequest.playbackContext.adPlaybackContext&&r(a,a.playerRequest.playbackContext,o),n[0]=a}catch(e){}return Reflect.apply(e,t,n)}};window.JSON.stringify=new Proxy(window.JSON.stringify,u);const s={construct:(e,t,n)=>{try{const a=t[0];let c=t[1]?.body;if(!a?.includes("youtubei")||location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||!c)return Reflect.construct(e,t,n);if(c.includes('"contentPlaybackContext"')||c.includes('"adSignalsInfo"')){const a=JSON.parse(c);if(!a.context?.client)return Reflect.construct(e,t,n);a.playbackContext&&r(a,a.playbackContext,o),a.playerRequest&&r(a,a.playerRequest.playbackContext,o),c=JSON.stringify(a),t[1].body=c}}catch(e){}return Reflect.construct(e,t,n)}};window.Request=new Proxy(window.Request,s)})();
+www.youtube.com#%#(()=>{const e="movie_player",t="ytd-watch-flexy[player-unavailable]",r=`#${e} > .ytp-error`,o="yt-playability-error-supported-renderers#error-screen:has(>*)",n='yt-playability-error-supported-renderers#error-screen a[href^="//support.google.com/youtube/answer/2802245"]',a="pyv",c="ad_type",l="none";let d=a;const i=new Set,y=()=>{const t=document.getElementById(e),r=window.location.search,o=new URLSearchParams(r).get("v")||t?.getVideoData?.().video_id,n=new URLSearchParams(r).get("t")??"0";return{videoId:o,timeInSeconds:parseInt(n,10)}},u=()=>{f();const t=document.getElementById(e);if(t&&"function"==typeof t.loadVideoById)try{const{videoId:e,timeInSeconds:r}=y();t.loadVideoById(e,r)}catch(e){}},s=(()=>{let e=null,t=null,r=0;return o=>{try{if(!o)return!1;const{videoId:n}=y();return!!n&&(e===n&&t===o?r++:(e=n,t=o,r=1),r>=2&&(r=0,!0))}catch(e){return!1}}})(),p=e=>{d=e},f=()=>{const r=document.getElementById(e),a=document.querySelector(o),c=document.querySelector("yt-playability-error-supported-renderers.ytdMiniplayerPlayerContainerPlayabilityError:has(>*)"),l=document.querySelector(t),d=document.querySelector(n);r&&!d&&(l||c)&&(a?.style.setProperty("display","none","important"),c?.style.setProperty("display","none","important"),l?.removeAttribute("player-unavailable"))},m=e=>{(e.playbackContext||e.playerRequest)&&delete e.context?.client?.configInfo?.appInstallData},b=(e,t,r)=>{try{if(!e||!t||!r)return;if(r===a)return t.adPlaybackContext={pyv:!0},void m(e);if(r===c)return t.adPlaybackContext={adType:"AD_TYPE_INSTREAM"},void m(e);if(r===l)return void delete t.adPlaybackContext}catch(e){}};(()=>{const e={apply:(e,t,r)=>{try{let o=r[0];if(!o||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,r);const n=Array.isArray(o),a=n?o[0]:o;if("string"!=typeof a)return Reflect.apply(e,t,r);if(!a.includes('"contentPlaybackContext"')&&!a.includes('"adSignalsInfo"'))return Reflect.apply(e,t,r);const c=JSON.parse(a);if(!c.context?.client)return Reflect.apply(e,t,r);c.playbackContext&&b(c,c.playbackContext,d),c.playerRequest&&b(c,c.playerRequest.playbackContext,d);const l=JSON.stringify(c);n?r[0][0]=l:r[0]=l}catch(e){}return Reflect.apply(e,t,r)}};window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,e)})();const v=document.documentElement;new MutationObserver((()=>{if(document.querySelector(o)&&f(),!(()=>{const a=document.getElementById(e),c=document.querySelector(r),l=document.querySelector(o),d=document.querySelector(t),i=document.querySelector(n);if(!a||i)return!1;const y=a.getVideoData?.();return(l||d||c)&&null!=y?.errorCode})())return;const{videoId:m}=y();(e=>{if(e)for(const t of i)t!==e&&i.delete(t)})(m),(()=>{if(d===a){if(!s(c))return void u();p(c),u()}else if(d===c){if(!s(l))return void u();p(l),u()}else if(d===l){const{videoId:e}=y();if(!e||i.has(e))return void f();i.add(e),u()}})()})).observe(v,{attributes:!0,childList:!0,subtree:!0})})();
 !+ NOT_PLATFORM(ext_safari)
 youtube.com#%#//scriptlet('json-prune', 'entries.[-].command.reelWatchEndpoint.adClientParams.isAd')
 !+ PLATFORM(ios)
@@ -32537,6 +32537,7 @@ browsershots.org#@#.advert_area
 ||asaumbakblnpj.space^
 ||asbfala.com^
 ||asccdn.com^
+||ascdcybtoox.com^
 ||asce.xyz^
 ||ascellamujik.cyou^
 ||ascentloinconvenience.com^
@@ -33791,6 +33792,7 @@ browsershots.org#@#.advert_area
 ||cabbagereporterpayroll.com^
 ||cabberbowess.qpon^
 ||cabhwq.com^
+||cabindaluckiebanked.cyou^
 ||cabnnr.com^
 ||caboucaketches.cfd^
 ||cacaosinfield.com^
@@ -34570,6 +34572,7 @@ browsershots.org#@#.advert_area
 ||contecandite.qpon^
 ||contemnomnipresentinstantly.com^
 ||contemplatepuddingbrain.com^
+||contemplatepushed.com^
 ||contemplatethwartcooperation.com^
 ||contemplatewaryheadquarter.com^
 ||content-rec.com^
@@ -36022,6 +36025,7 @@ browsershots.org#@#.advert_area
 ||encirclesheriffemit.com^
 ||enclosepd.rest^
 ||encodediagnosisrelish.com^
+||encouragementsqueal.com^
 ||encouragingbrightest.com^
 ||encratykenelm.com^
 ||endlessaspirant.com^
@@ -36735,6 +36739,7 @@ browsershots.org#@#.advert_area
 ||foerpo.com^
 ||fofauctddfpfo.website^
 ||fogeysplease.shop^
+||foggilytraps.cfd^
 ||foghug.site^
 ||fogotoftmen.cyou^
 ||fogsham.com^
@@ -37628,6 +37633,7 @@ browsershots.org#@#.advert_area
 ||gruponn.com^
 ||grygrothapi.pro^
 ||gscontxt.net^
+||gsecxxxcxzmhxm.com^
 ||gsjhrwdfr.com^
 ||gsjln04hd.com^
 ||gskvvpbhyhwitjg.com^
@@ -37680,6 +37686,7 @@ browsershots.org#@#.advert_area
 ||gutnicatman.cyou^
 ||gutockeewhargo.net^
 ||guvmmaolnk.com^
+||guvqrudwy.com^
 ||guykantry.cfd^
 ||gvetgnhxitgzjw.com^
 ||gvgotlyefgqek.site^
@@ -37734,6 +37741,7 @@ browsershots.org#@#.advert_area
 ||haffdopier.shop^
 ||hafktolu.com^
 ||hagborndates.com^
+||hagdenterrene.shop^
 ||haginsensiblesupervise.com^
 ||hagnutrient.com^
 ||hailingwomp.cfd^
@@ -38126,6 +38134,7 @@ browsershots.org#@#.advert_area
 ||hotchsemite.shop^
 ||hotgvibe.com^
 ||hotkabachok.com^
+||hotlinevarietymorrow.com^
 ||hotllove.net^
 ||hotnews1.me^
 ||hotsoz.com^
@@ -38182,6 +38191,7 @@ browsershots.org#@#.advert_area
 ||hrwfrjwrekmqd.site^
 ||hrxtbicnsiunn.online^
 ||hsfcuorcijlne.website^
+||hsnpvcdgenfwg.space^
 ||hstlvivwdo.com^
 ||hsujptmvujxy.xyz^
 ||htdvt.com^
@@ -38809,6 +38819,7 @@ browsershots.org#@#.advert_area
 ||ivstracker.net^
 ||ivumjgplgllj.xyz^
 ||ivuythrne.com^
+||ivxbrwcdafjzr.site^
 ||ivyimjdkit.com^
 ||iwantuonly.com^
 ||iwddieddhkvsl.space^
@@ -39076,6 +39087,7 @@ browsershots.org#@#.advert_area
 ||joyous-north.pro^
 ||jozispfsxhbmg.space^
 ||jpaojfzimzki.com^
+||jpbsggqehlopl.online^
 ||jpearlhieomrx.online^
 ||jpefmgeuixbzp.space^
 ||jpfjltsmlrimq.site^
@@ -41197,6 +41209,7 @@ browsershots.org#@#.advert_area
 ||nicatethebene.info^
 ||nicecartrigezip.com^
 ||nicerisle.com^
+||nicerskelf.cfd^
 ||nichedlinks.com^
 ||nicheevaderesidential.com^
 ||nichools.com^
@@ -41564,6 +41577,7 @@ browsershots.org#@#.advert_area
 ||octobertheatrenosy.com^
 ||octonewjs.com^
 ||octopedentr.help^
+||octopuscreedpincers.com^
 ||octopuspop.com^
 ||oculistaboil.qpon^
 ||ocvbfvpmfhhmbr.com^
@@ -42345,6 +42359,7 @@ browsershots.org#@#.advert_area
 ||perceivedpalpable.com^
 ||perchincomenotorious.com^
 ||percoctthrombichippie.cyou^
+||percussivetakelaunch.com^
 ||percussobj.cfd^
 ||peresentacconette.com^
 ||perfb.com^
@@ -42705,6 +42720,7 @@ browsershots.org#@#.advert_area
 ||poodlefairly.com^
 ||poofnneosbomve.com^
 ||pooftahuncaked.cfd^
+||poolcoolukprese.org^
 ||poolertabutpurge.cfd^
 ||poolgmsd.com^
 ||poolpeephole.com^
@@ -45128,6 +45144,7 @@ browsershots.org#@#.advert_area
 ||spanecentric.click^
 ||spaniardinformationbookworm.com^
 ||spanulepongee.com^
+||sparelythird.com^
 ||spargekerbaya.qpon^
 ||sparkrainstorm.host^
 ||sparkstudios.com^
@@ -45284,6 +45301,7 @@ browsershots.org#@#.advert_area
 ||stageytenters.qpon^
 ||staggereddam.com^
 ||staggeredravehospitality.com^
+||staggermeaningless.com^
 ||stagingjobshq.com^
 ||staipseegnauw.com^
 ||stalecomplex.pro^
@@ -45431,6 +45449,7 @@ browsershots.org#@#.advert_area
 ||stripedstudy.com^
 ||stripsbetes.shop^
 ||strodeintended.com^
+||stronglyspringdoubly.com^
 ||stroudspilule.shop^
 ||strtgic.com^
 ||strugglingpersist.com^
@@ -45482,6 +45501,7 @@ browsershots.org#@#.advert_area
 ||sucocune.com^
 ||suddercorv.cyou^
 ||sudsybawl.com^
+||suduaactnl.com^
 ||sudukrirga.net^
 ||suededfingeryas.cyou^
 ||suerbebotchbefile.cfd^
@@ -45622,6 +45642,7 @@ browsershots.org#@#.advert_area
 ||sxprtoqjwbvuq.website^
 ||sxpuqyltskgxk.website^
 ||sxqxvcymtiwxo.space^
+||sxtfostjd.com^
 ||syceedepend.qpon^
 ||sycheeyustaga.qpon^
 ||syconidharoset.qpon^
@@ -45860,6 +45881,7 @@ browsershots.org#@#.advert_area
 ||tghrwyop.com^
 ||tgingleagaineda.org^
 ||tgkmyilltcnvhfy.com^
+||tglnawthbtaeg.com^
 ||tgtolwwcf.com^
 ||tgzadxtwambfp.online^
 ||thackerjotnian.cyou^
@@ -47373,6 +47395,7 @@ browsershots.org#@#.advert_area
 ||wabblymedicosdaggled.cyou^
 ||wabjcepuqmi.com^
 ||wabturgcyji.com^
+||wacagokabab.cyou^
 ||wacksomewhymeaul.cfd^
 ||waescyne.com^
 ||waeshana.com^
@@ -47390,6 +47413,7 @@ browsershots.org#@#.advert_area
 ||waistcoatdiscontented.com^
 ||waistcoatreferchemistry.com^
 ||waiterbarnacleclueless.com^
+||waiterfortnight.com^
 ||waitheja.net^
 ||wakratgr.com^
 ||walletblossomendanger.com^
@@ -48527,6 +48551,7 @@ browsershots.org#@#.advert_area
 ||zamioculcas2.org^
 ||zangocash.com^
 ||zanvpkmdslnvg.vip^
+||zapasizzard.com^
 ||zapotezincky.com^
 ||zaqxmbjhdyvmx.website^
 ||zarpop.com^
