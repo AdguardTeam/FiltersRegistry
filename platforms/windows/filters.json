@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.42.14",
-			"timeUpdated": "2026-01-24T14:07:10+0000",
+			"version": "2.4.42.15",
+			"timeUpdated": "2026-01-24T15:07:14+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.71.96",
-			"timeUpdated": "2026-01-23T05:13:00+0000",
+			"version": "2.0.71.97",
+			"timeUpdated": "2026-01-24T15:07:28+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.23",
-			"timeUpdated": "2026-01-22T05:14:19+0000",
+			"version": "2.0.67.24",
+			"timeUpdated": "2026-01-24T15:07:32+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.56.57",
-			"timeUpdated": "2026-01-24T14:07:34+0000",
+			"version": "2.2.56.58",
+			"timeUpdated": "2026-01-24T15:07:40+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -708,8 +708,8 @@
 				"ext_android_cb"
 			],
 			"trustLevel": "full",
-			"version": "2.0.12.88",
-			"timeUpdated": "2026-01-23T08:10:59+0000",
+			"version": "2.0.12.89",
+			"timeUpdated": "2026-01-24T15:07:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.79.45",
-			"timeUpdated": "2026-01-24T09:08:17+0000",
+			"version": "2.0.79.46",
+			"timeUpdated": "2026-01-24T15:07:44+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.40.98",
-			"timeUpdated": "2026-01-24T13:16:34+0000",
+			"version": "2.0.40.99",
+			"timeUpdated": "2026-01-24T15:07:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
