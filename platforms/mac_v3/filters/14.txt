@@ -1,9 +1,9 @@
-! Checksum: tfFB4b0nKpmC9xGuVtOXGw
-! Diff-Path: ../patches/14/14-s-1769375435-3600.patch
+! Checksum: 517sNYlK2tTvMMg+HtJyKw
+! Diff-Path: ../patches/14/14-s-1769379070-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.56.64
-! TimeUpdated: 2026-01-25T21:07:38+00:00
+! Version: 2.2.56.65
+! TimeUpdated: 2026-01-25T22:07:49+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2574,6 +2574,9 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+united-domains.de#%#//scriptlet('trusted-click-element', 'dialog[role="alertdialog"] .cookie-layer-dialog .show-details, dialog[role="alertdialog"] .cookie-layer-dialog .confirm-selection')
+team-shadowi.com#%#//scriptlet('trusted-set-cookie', 'cookie-consent-timestamp', '$now$')
+team-shadowi.com#%#//scriptlet('trusted-set-cookie', 'cookie-consent', '{%22necessary%22:true%2C%22analytics%22:false%2C%22marketing%22:false%2C%22functional%22:false}')
 altgency.com##.w-full.p-4.bg-gray-900.text-sm.z-50
 akubela.com##.protocol-box
 tyffonium.com#%#//scriptlet('trusted-set-cookie', 'cookiesConsent', 'true')
@@ -4965,8 +4968,6 @@ slevomat.cz##.message-overlay--disturbing-overlay
 idoctors.it#$#body { overflow: auto !important; padding-right: 0 !important; }
 idoctors.it#$##modal-cookies { display: none !important; }
 idoctors.it#$##modal-cookies ~ div.modal-backdrop { display: none !important; }
-united-domains.de#$#body { overflow: auto !important; }
-united-domains.de#$#.gen-layer { display: none !important; }
 pillow.cz##.cks
 tipsport.cz##div[class^="Consentstyled__Banner"]
 kudyznudy.cz##.sx-cinfo
@@ -12417,9 +12418,6 @@ satshop.fi,viewsonic.com,promobit.com.br##.pr-cookie-modal
 marriedgames.com.br##.gdpr_approve
 urlcast.io###__next footer + div[class^="fixed bottom-4"]
 ||tvp.pl/files/*/polityka-prywatnosci/*/tvp-tcfapi.
-united-domains.de###cookie-layer-protector
-||united-domains.de/assets/js/custom/cookie-layer.js
-||united-domains.de/assets/js/custom/neo-cookie-layer.js
 glaubensstimme.de,gwdg.de,openwrt.org##.cookielaw-banner
 ||storage.googleapis.com/app*/js/bottom.js$domain=herokuapp.com
 xda-developers.com###uniccmp
