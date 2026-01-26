@@ -18153,7 +18153,7 @@ bnnvara.nl#%#//scriptlet('trusted-click-element', 'ccm-notification >>> .ccm_btn
 kabeleinsdoku.at,kabeleinsdoku.de#%#//scriptlet('trusted-click-element', 'cmp-banner >>> cmp-dialog >>> cmp-button[variant="primary"] >>> button', '', '1000')
 geberit.de#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-save-button"]')
 conrad.*,br.de,peri.lv,webasto-comfort.com,shop-apotheke.com,sennheiser.com,antenne.de,bechtle.com,hagebau.de#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-accept-all-button"]')
-srf.ch,hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.nl,villeroy-boch.fr#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-deny-all-button"]')
+bonify.de,srf.ch,hornbach.de,aldi.fr,aldi.be,aldi-nord.de,aldi.lu,aldi.pt,aldi.nl,villeroy-boch.fr#%#//scriptlet('trusted-click-element', '#usercentrics-root >>> button[data-testid="uc-deny-all-button"]')
 !
 ! TODO: Rework when support for clicking on an element containing a given text appears: https://github.com/AdguardTeam/Scriptlets/issues/409
 ! !#if (!adguard_app_windows && !adguard_app_mac && !adguard_app_android && !adguard_ext_firefox)
@@ -18358,6 +18358,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223492
+@@||api.usercentrics.eu/settings/*.json$domain=sso.bonify.de
+! https://github.com/uBlockOrigin/uAssets/issues/31617
+@@||web.cmp.usercentrics.eu/ui/loader.js$script,domain=casino.psk.hr
 ! https://github.com/uBlockOrigin/uAssets/issues/31613
 @@||cdn.cookielaw.org/consent/*.json$domain=lasestrellas.tv
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=lasestrellas.tv
@@ -27866,7 +27870,7 @@ vogue.com.tr##.popup-message
 qiita.com##div[data-testid^="popup-"][data-testid$="-signup"]
 bing.com##.b_bnp_bopc
 cubiq.ru#%#//scriptlet('remove-in-shadow-dom', 'notification-bar')
-stolichki.ru###fancybox-container-1
+gorzdrav.spb.ru,stolichki.ru###fancybox-container-1
 stokker.ee##div[class^="layout_scroller-"]
 nytimes.com#$##article-container-grid > div.article-content-container + div:empty { display: none !important; }
 nytimes.com#$#main > div#body-container > div#darken-overlay { display: none !important; }
