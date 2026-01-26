@@ -1,9 +1,9 @@
-! Checksum: EW9CVnn+nVpV15OaDdmbWA
-! Diff-Path: ../patches/18/18-s-1769465468-3600.patch
+! Checksum: 9WFS4vUGUANXNeeGSbo5Gw
+! Diff-Path: ../patches/18/18-s-1769469098-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.79.60
-! TimeUpdated: 2026-01-26T22:08:23+00:00
+! Version: 2.0.79.61
+! TimeUpdated: 2026-01-26T23:08:44+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2573,6 +2573,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+yeyiangaming.com#%#//scriptlet('set-local-storage-item', 'cookies-declined', 'true')
 listenonlineradio.com##.lor-cookies-container
 chegroup.ru##div[class^="CookieConsentToast_theme"]
 ||consent.dimaster.ch^$script,domain=auto-illustrierte.ch
@@ -18187,6 +18188,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223538
+yeyiangaming.com#@##cookie-banner
+yeyiangaming.com#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223492
 @@||api.usercentrics.eu/settings/*.json$domain=sso.bonify.de
 ! https://github.com/uBlockOrigin/uAssets/issues/31617

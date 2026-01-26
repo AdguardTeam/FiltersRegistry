@@ -1,9 +1,9 @@
-! Checksum: wAVD2tFMW6LZJQGsBnHdXQ
-! Diff-Path: ../patches/18/18-s-1769465485-3600.patch
+! Checksum: ydL1syNExzAGIaSgMlW6/Q
+! Diff-Path: ../patches/18/18-s-1769469113-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.79.60
-! TimeUpdated: 2026-01-26T22:08:23+00:00
+! Version: 2.0.79.61
+! TimeUpdated: 2026-01-26T23:08:44+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2574,6 +2574,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+yeyiangaming.com#%#//scriptlet('set-local-storage-item', 'cookies-declined', 'true')
 listenonlineradio.com##.lor-cookies-container
 chegroup.ru##div[class^="CookieConsentToast_theme"]
 ||consent.dimaster.ch^$script,domain=auto-illustrierte.ch
@@ -18273,6 +18274,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223538
+yeyiangaming.com#@##cookie-banner
+yeyiangaming.com#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223492
 @@||api.usercentrics.eu/settings/*.json$domain=sso.bonify.de
 ! https://github.com/uBlockOrigin/uAssets/issues/31617
