@@ -1,5 +1,5 @@
-! Checksum: DAMepPbkON9OXDwg4MUH6Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1769330667-14400.patch
+! Checksum: aMdPrbgdmGtppb3ikeAYOw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1769403094-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.76
@@ -142,7 +142,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^(.*://|.*\.)?[a-z]{5,}-[a-z]{5,}-[a-z]{5,}\.xyz(/.*)?$/$document
 !+ PLATFORM(windows, mac, android, cli)
 159.148.186.228$network
-||yotube.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 198.23.255.14$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -266,7 +265,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /page/bouncy.php?$all
 ||midgerelativelyhoax.com^$all
 ://trk.*.run/$document,domain=~very_likely_a_malware_redirection_train.*
-||jsmcrptjmp.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 93.93.51.223$network
 ||livejasmin.com/*&origin=$document
@@ -317,7 +315,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||sneakyadministration.com^$all
 ||sourshaped.com^$all
 ||twigentirelysailor.com^$all
-||voraciousinfosag.com^$all
 ||vulnerablepremonition.com^$all
 ||waiterpiousdetergent.com^$all
 ||wretchedclearance.com^$all
@@ -345,6 +342,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 43.128.142.70$network
 !+ PLATFORM(windows, mac, android, cli)
 46.101.81.149$network
+||forgavedisciplinetolerance.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 52.15.34.25$network
 !+ PLATFORM(windows, mac, android, cli)
@@ -471,7 +469,6 @@ drvhub.net##.driver-item__install
 |https://undefined/
 /api/rtb-pops/go^$all
 ||asdfix.com^$all
-||audienceye.com^$all
 ||bolsterate.net^$all
 ||bonusgaf.com^$all
 ||bonusnun.com^$all
@@ -506,7 +503,6 @@ drvhub.net##.driver-item__install
 ||deathcalculator.net^$document
 ||admozartxml.com^$all
 ||advlistings.com^$all
-||audienceye.com^$all
 ||bidmyadz.com^$all
 ||explorads.com^$all
 ||gamesvot.com^$all
@@ -1364,6 +1360,7 @@ $document,removeparam=exta
 $document,removeparam=ranMID
 $document,removeparam=ranEAID
 $document,removeparam=ranSiteID
+$document,removeparam=LGWCODE
 $document,removeparam=xtor
 $document,removeparam=SRC
 $document,removeparam=dartycid
@@ -1608,6 +1605,8 @@ $removeparam=spUserID
 $removeparam=spJobID
 $removeparam=spReportId
 $removeparam=actId
+$removeparam=actCampaignType
+$removeparam=actSource
 $removeparam=oly_anon_id
 $document,removeparam=/^wickedid=.*$/i
 $document,removeparam=/^wickedsource=.*$/i
@@ -1788,6 +1787,7 @@ $document,removeparam=/^adppopup=[a-eg-zA-EG-Z0-9]/
 $removeparam=relatedposts_hit
 $removeparam=relatedposts_origin
 $removeparam=relatedposts_position
+ref=itsfoss.com$document,removeparam=ref
 ref=news.itsfoss.com$document,removeparam=ref
 $removeparam=gad_source
 $removeparam=tw_medium
@@ -2697,6 +2697,7 @@ ref=spreadprivacy.com$removeparam=ref
 ||github.com^$removeparam=reference_location
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
+$document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
 ||linkedin.com/feed/update$removeparam=origin
 $document,removeparam=cn,domain=twitter.com|x.com
 $document,domain=bilibili.com|querie.me,removeparam=timestamp
@@ -2781,8 +2782,6 @@ $removeparam=cgkit_search_word
 ||qzone.qq.com^$document,removeparam=g
 ||qzone.qq.com^$document,removeparam=bp2
 ||qzone.qq.com^$document,removeparam=bp7
-||urlshare.cn^$document,removeparam=_wv
-||urlshare.cn^$document,removeparam=src_scene
 ||asos.com^$removeparam=ctaref
 ||gumroad.com^$removeparam=recommended_by
 ||www.booking.com^$document,removeparam=aid
@@ -2858,8 +2857,6 @@ $removeparam=id,domain=affiliate.orangewebsite.com|linksynergy.com|www.bestbuy.*
 ||parallels.com^$removeparam=x-source
 ||threads.com^$removeparam=xmt
 ||threads.com^$removeparam=slof
-||dllfiles.com^$removeparam=c
-||microsoft.com/*/download/details$removeparam=quot
 ||microsoft.com/*/download/details$removeparam=lc
 ||asuswebstorage.com^$removeparam=ve
 ||asuswebstorage.com^$removeparam=pv
@@ -2888,7 +2885,6 @@ ref=the-browser$document,removeparam=ref
 ||game.info.intel.com^$document,removeparam=_plt
 ||game.info.intel.com^$document,removeparam=_scr
 ||dell.com^$removeparam=lwp
-$removeparam=w,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk|if.com.au
 $removeparam=h,domain=files.wordpress.com|store.playstation.com|s-microsoft.com|store-images.microsoft.com|dr.dk
 $removeparam=width,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
 $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno.nu
