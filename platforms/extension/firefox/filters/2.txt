@@ -1,9 +1,9 @@
-! Checksum: jhyM/87mt1W7a6aqZKI0Ow
-! Diff-Path: ../patches/2/2-s-1769447770-3600.patch
+! Checksum: pkp/1+dVm3n6IHcfWg7E5g
+! Diff-Path: ../patches/2/2-s-1769451281-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.42.64
-! TimeUpdated: 2026-01-26T17:12:49+00:00
+! Version: 2.4.42.65
+! TimeUpdated: 2026-01-26T18:11:32+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -9793,9 +9793,9 @@ ckk.ai,xpshort.com#@#.ad-BANNER
 ! #%#//scriptlet('prevent-setTimeout', 'ad_blocker_detector_modal')
 biolink.webtena.com,lite.liiingo.com#%#//scriptlet('prevent-setTimeout', 'ad_blocker_detector_modal')
 !
-#@#.ad-zone
+#@#.ad-zone:not(.textads):not(.adsbygoogle)
 #@#.ad-space
-##.ad-zone:not(.textads)
+##.ad-zone:not(.textads):not(.adsbygoogle)
 ##.ad-space:not(.textads)
 ##.ad-unit:not(.textads)
 !
@@ -10666,7 +10666,7 @@ circle-sports.com#%#//scriptlet('prevent-setTimeout', 'ad.offsetHeight')
 iphonechecker.herokuapp.com#%#//scriptlet('prevent-setTimeout', '"hidden"===r.visibility')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214891
 tv247us.live#@#.google-ad
-tv247us.live#@#.ad-zone:not(.textads)
+tv247us.live#@#.ad-zone:not(.textads):not(.adsbygoogle)
 tv247us.live#@#.ad-space:not(.textads)
 tv247us.live#%#//scriptlet('prevent-setTimeout', '.offsetHeight===0')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/214792
@@ -12359,11 +12359,11 @@ kissanime.is,kissanime.sx,kissanime.com.ru,kissanime.co#%#//scriptlet('prevent-f
 ! https://github.com/AdguardTeam/AdguardFilters/issues/167581
 ! I saw a http request related to https://unblockia.com/.
 androidpolice.com#@#.w-adsninja-video-player
-androidpolice.com#@#.ad-zone:not(.textads)
+androidpolice.com#@#.ad-zone:not(.textads):not(.adsbygoogle)
 androidpolice.com#@#.adsninja-ad-zone
 androidpolice.com#@#.ad-current
 androidpolice.com#@#.ad-zone-container
-androidpolice.com#@#.ad-zone
+androidpolice.com#@#.ad-zone:not(.textads):not(.adsbygoogle)
 androidpolice.com#@#.ima-ad-container
 androidpolice.com##.adsninja-ad-zone:not(.adsninja-valstream)
 androidpolice.com#%#//scriptlet('set-constant', 'ValstreamVideoPlayer.prototype.isAllowedToPlayAds', 'falseFunc')
@@ -13591,7 +13591,7 @@ av-th.xyz#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/139851
 daemonanime.net#@#.ad-space
 daemonanime.net#@#.ad-unit:not(.textads)
-daemonanime.net#@#.ad-zone
+daemonanime.net#@#.ad-zone:not(.textads):not(.adsbygoogle)
 daemonanime.net#@#div[id^="div-gpt-"]
 daemonanime.net#@#[id^="div-gpt-ad"]
 daemonanime.net#%#//scriptlet('prevent-element-src-loading', 'script', 'a.magsrv.com/video-slider.js')
@@ -59421,7 +59421,7 @@ interactive.libsyn.com#@#iframe[width="100%"][height="90"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218777
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180746#issuecomment-2150672487
 polygon.com,thegamer.com#@#.w-adsninja-video-player
-polygon.com,thegamer.com,makeuseof.com,howtogeek.com#@#.ad-zone:not(.textads)
+polygon.com,thegamer.com,makeuseof.com,howtogeek.com#@#.ad-zone:not(.textads):not(.adsbygoogle)
 polygon.com,thegamer.com,makeuseof.com,howtogeek.com#@#.adsninja-ad-zone
 polygon.com,thegamer.com,makeuseof.com,howtogeek.com#@#.ad-current
 polygon.com,thegamer.com,makeuseof.com,howtogeek.com#@#.ad-zone-container
@@ -59441,7 +59441,7 @@ polygon.com,thegamer.com,makeuseof.com,howtogeek.com#@#.ad-zone-container
 @@||js.assemblyexchange.com/wana.*.js$domain=worldstar.com|worldstarhiphop.com
 @@||js.assemblyexchange.com/videojs-skip-ima3-unskippable.min.js$domain=worldstar.com|worldstarhiphop.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180746
-xda-developers.com#@#.ad-zone:not(.textads)
+xda-developers.com#@#.ad-zone:not(.textads):not(.adsbygoogle)
 ||googletagservices.com/tag/js/gpt.js$xmlhttprequest,script,redirect=googletagservices-gpt,important,domain=xda-developers.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/180431
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200910
@@ -86312,6 +86312,7 @@ browsershots.org#@#.advert_area
 ||axshhgmltiycy.site^
 ||axskcjxhwjmth.online^
 ||axskltzhgkzrm.online^
+||axvbuhlmubm.com^
 ||axvjfzbwezssw.site^
 ||axwpbsweuwclq.space^
 ||axxqqibnjdunk.space^
@@ -91354,6 +91355,7 @@ browsershots.org#@#.advert_area
 ||ctcoepsaqctrt.site^
 ||ctdowlapwyuwq.site^
 ||ctengine.io^
+||cteniifornix.cyou^
 ||cterofhisan.org^
 ||cterpsofcjzcf.life^
 ||ctetmtcrayyfk.website^
@@ -92926,6 +92928,7 @@ browsershots.org#@#.advert_area
 ||divaresnapshareagido.com^
 ||dive77kt.com^
 ||divedsurprisinglythermometer.com^
+||diverecollection.com^
 ||diverhaul.com^
 ||dividedintegrationtransparent.com^
 ||dividedkidblur.com^
@@ -96903,6 +96906,7 @@ browsershots.org#@#.advert_area
 ||forexclub.ru^
 ||forflygonom.com^
 ||forfrogadiertor.com^
+||forgabwoken.qpon^
 ||forgerydigger.help^
 ||forgetfulpromptlyappointment.com^
 ||forgetfulspidersantiquity.com^
@@ -103297,6 +103301,7 @@ browsershots.org#@#.advert_area
 ||jkcvfnjafpxnc.online^
 ||jkdkdkwqcrjvx.online^
 ||jkeitifzyuxde.online^
+||jkeoxfchrjicoqq.com^
 ||jkfivewwaldgy.space^
 ||jkgwrwqeytrvk.website^
 ||jkha742.xyz^
@@ -110279,6 +110284,7 @@ browsershots.org#@#.advert_area
 ||nulez.xyz^
 ||null-point.com^
 ||nullsframe.com^
+||nulovxok.com^
 ||nulsardouxaps.net^
 ||numberium.com^
 ||numbertrck.com^
@@ -111416,6 +111422,7 @@ browsershots.org#@#.advert_area
 ||opagau.cfd^
 ||opaledpollen.help^
 ||opalzsftmxtxn.site^
+||opaquesseizor.shop^
 ||opawqdpgacmw.xyz^
 ||opbxwaqupvsrp.space^
 ||opclck.com^
@@ -113730,6 +113737,7 @@ browsershots.org#@#.advert_area
 ||poneviddhal.qpon^
 ||pongidsrunback.com^
 ||pongidstubik.qpon^
+||ponierkebobs.cfd^
 ||ponk.pro^
 ||ponteshydrone.rest^
 ||pontxukybocim.icu^
@@ -114063,6 +114071,7 @@ browsershots.org#@#.advert_area
 ||preedreiced.cyou^
 ||prefabsfarcin.click^
 ||prefacebegbeginning.com^
+||prefecturecriesurged.com^
 ||prefecturesuggestions.com^
 ||preferablyending.com^
 ||preferencemuscle.com^
@@ -115191,6 +115200,7 @@ browsershots.org#@#.advert_area
 ||qcyqkirxrhidh.site^
 ||qdbqdirohipeb.space^
 ||qdbsewwvrrqug.site^
+||qdgyxhbasgytt.online^
 ||qdhrbget.click^
 ||qdiamjczxvbxx.online^
 ||qdiqvjftqcdxk.online^
@@ -115477,6 +115487,7 @@ browsershots.org#@#.advert_area
 ||qmlrmarmalwvo.top^
 ||qmmxfbiercorx.space^
 ||qmnohmabvdzks.website^
+||qmodndpcvnmka.online^
 ||qmogjaezcv.club^
 ||qmojbedpfzjcp.online^
 ||qmpkrtpeynvmk.store^
@@ -120452,6 +120463,7 @@ browsershots.org#@#.advert_area
 ||ssedcrimble.com^
 ||sservs.com^
 ||sshavrlwelaqk.space^
+||ssihovwmbfikv.online^
 ||ssindserving.com^
 ||ssjjuvkrkamdnn.com^
 ||ssjskbenyzmha.online^
@@ -121806,6 +121818,7 @@ browsershots.org#@#.advert_area
 ||telegramdisposedjaws.com^
 ||telegraphcompetenceslightly.com^
 ||telegraphfamouscucumbers.com^
+||teleiafleshes.qpon^
 ||teleishlocks.qpon^
 ||telesmdhal.help^
 ||televisiongrownupcrowd.com^
@@ -124014,6 +124027,7 @@ browsershots.org#@#.advert_area
 ||unchairclawing.help^
 ||unchecktohome.cfd^
 ||unciatoi.com^
+||uncinchambash.com^
 ||unclampescribe.qpon^
 ||unclesnewspaper.com^
 ||uncoilfalda.help^
@@ -144667,6 +144681,7 @@ engadget.com##.post-article-ad
 abovethelaw.com,breakingdefense.com,medcitynews.com##.post-card--is-sponsored
 kiplinger.com##.post-gallery-item-ad
 dmarge.com##.post-infinite-ads
+boardgamegeek.com##.post-inline-ad
 hackread.com##.post-review-li
 hellocare.com.au##.post-wrapper__portrait-ads
 newagebd.net##.postPageRightInTop

@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: LXvl2yCo3BOzWJH+6jdheA
-! Diff-Path: ../patches/7/7-s-1769447783-3600.patch
+! Checksum: qrDJqstf+emTOqIirKh4Fg
+! Diff-Path: ../patches/7/7-s-1769451297-3600.patch
 ! Title: AdGuard Japanese filter
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.72.3
-! TimeUpdated: 2026-01-26T17:13:07+00:00
+! Version: 2.0.72.4
+! TimeUpdated: 2026-01-26T18:11:44+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1856,6 +1856,7 @@ gundamlog.com###more > iframe[src^="https://richlink.blogsys.jp"]
 !
 ! NOTE: Specific rules
 !
+caribbeancom.com###embed-window
 ||tokyo-sports.co.jp/list/ajax/kyujinbox.json
 tokyo-sports.co.jp##.js-kyujin-box
 baseballchannel.jp##div[style$="min-height:300px;"]
@@ -2383,6 +2384,7 @@ enterprisezine.jp##.ad-special-wrap
 sankei.com,iza.ne.jp,zakzak.co.jp,tsurinews.jp##.kyujinbox
 ||pluginlibery.com/queryjs
 download.firestorage.jp###download_ad2
+firestorage.jp###mini_pc_download_header > div.mx-auto.text-black-50.fs--1.pb-1
 firestorage.jp###ad_foot_rec
 xfs.jp##div[style="height:310px;"]
 nenshu-master.com##.widget:has(> div > ins.adsbygoogle)
@@ -4587,11 +4589,12 @@ pisuke-code.com###execphp-8
 newser.cc###side > h3:last-of-type
 ||sp.pachinkoslot.jp/images/ad/
 sp.pachinkoslot.jp##.big_image
+nazo2.net##.side_feed > ul > li:not(:has(a))
 nazo2.net##.ad_article_center
 mangalove.me##.interstitial
 mangalove.me##.lastInterstitial
 monokakitools.net###adview
-sscard.monokakitools.net##form > div[style="margin: 1em 0;padding:0.1rem;background-color:#efefef;font-size:0.95rem;"]
+sscard.monokakitools.net##.fm > div[style="margin: 1em 0;padding:0.1rem;background-color:#efefef;font-size:0.95rem;"]
 sscard.monokakitools.net##[style^="font-size:90%;color:#999;"]
 sscard.monokakitools.net##div[style$="background-color:#fafafa;padding: 5px;"]
 oreno3d.com###full-size-ol
@@ -8786,9 +8789,7 @@ moneyzine.jp##.specialBlock
 yugioh-wiki.net###body > table:last-child
 wedge.ismedia.jp##.billbord
 wedge.ismedia.jp##.web-advertising
-tap-biz.jp###sidebar > section:nth-of-type(2)
-tap-biz.jp##.overlay
-tap-biz.jp##.topic-container > .text-center + .section
+tap-biz.jp##.marke-nunner
 diamond-rm.net##.ta_center.rblock
 senken.co.jp##.sidebar > .text-xs-center:first-child
 senken.co.jp##.text-md-right + .m-y-2.row
@@ -10646,8 +10647,6 @@ gaccom.jp##.sub-row div.box:has(> div.content > div.widget-item p.price)
 gaccom.jp##.box_top:has(> div.box_btm > .bukken-list)
 gaccom.jp##.box_top:has(> div.box_btm > .realestate-list)
 gaccom.jp##.box_top:has(> div.box_btm > .recipe-side-img-area)
-tap-biz.jp##.section > div[id^="div-gpt-ad"]:upward(1)
-tap-biz.jp##.section > div > div[class^="col-"] > div[id^="div-gpt-ad"]:upward(3)
 diamond-rm.net##.rblock:has(> div.rad)
 diamond-rm.net##div[id^="plist"] > div:not([class]):remove()
 npodb.info##.text-center > small:contains(PR)
@@ -10998,8 +10997,6 @@ moeyo.com###right > div.side_box:has(> center > ins.dmm-widget-placement)
 moeyo.com###left > div.side_box:has(> center > div > a[href^="https://al.dmm.co.jp/"])
 city.chichibu.lg.jp###RightPane > div.rs_preserve:has(> div.standardInfo > div.standardInfo_head_body > h2:contains(企業広告欄))
 shogi.or.jp##div[class^="column"] > div.inner:has(> div[id^="div-gpt-ad-"])
-jav-free.org##aside > h3:contains(Rapidgator)
-jav-free.org##aside > h3:contains(Rapidgator) + div.custom-html-widget
 kyuusai2nd.net##td[width="100%"]:has(> table[border="0"] > tbody > tr > td[width="100%"] > table[border="0"] > tbody > tr > td > a[href^="https://al.dmm.co.jp/"])
 kyuusai2nd.net##table[border="0"]:has(> tbody > tr > td[width="50%"] > a[href^="https://al.dmm.co.jp/"])
 hellokpop.site###box2-inner > .hatena-module-html:contains(スポンサーリンク)
@@ -11345,7 +11342,6 @@ northwood.blog.fc2.com###menu2Block > div.menuBlockBase:has(> div.menuBlockBody 
 coron.tech##.col-sm-4 > [id]:first-child:has(> ins.adsbygoogle)
 coron.tech##.sidebar > div[style="height:2px;overflow:hidden;"] + [class]:has(> ins.adsbygoogle)
 w.grapps.me##.main-contents > div.sp-only:has(> script[src^="//j.microad.net"])
-yoi.shueisha.co.jp##main > section.section:has(> div.section-container > div.OUTBRAIN)
 webcg.net##.type-1 > li:has(> div[id^="div-gpt-"])
 onihimechan.com###sub .sidewrapper:has(> .sidetitlebody > .sidetitle:contains(スポンサードリンク))
 domani.shogakukan.co.jp##.textwidget:has(> div[id^="div-gpt-ad"])
@@ -11437,7 +11433,6 @@ newsmatomedia.com##[class^="l-"] > [class^="s-"]:has( > [class^="ad-list"])
 news4vip.livedoor.biz##div.plugin-memo:has(> div.side ins.adsbygoogle)
 workingnews117.com##div[class^="mainCommentBold"]:contains(/^(関連記事|PR|週間人気ページランキング)$/)
 anihatsu.com##div[class^="article-body"] > blockquote:has(> div[align="center"] > a[href*="amazon.co.jp"])
-avgle.net##.column > div.card > div.adv:upward(2)
 cnn.co.jp##.pg-container-side div.cb-l1-m2:has(div.bnr-rect)
 yosakoimatsuri.com##.custom-html-widget > p > ins.adsbygoogle:upward(1)
 biteki.com##.slick-slide > div[id] + script:upward(1):remove()
