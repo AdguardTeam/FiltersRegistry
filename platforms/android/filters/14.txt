@@ -1,9 +1,9 @@
-! Checksum: sROUSBQ+Ucssr23FQz+YBw
-! Diff-Path: ../patches/14/14-s-1769516166-3600.patch
+! Checksum: Vs9tsu7GKUJsRHcA1gtY/A
+! Diff-Path: ../patches/14/14-s-1769520344-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.56.92
-! TimeUpdated: 2026-01-27T12:13:28+00:00
+! Version: 2.2.56.93
+! TimeUpdated: 2026-01-27T13:22:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2574,6 +2574,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+live24.gr###recommendation
 bonbon.hr##div[id^="gdpr"]
 portale.during.it#%#//scriptlet('trusted-click-element', '#cc--main button.c-bn.c_link, #cc--main #s-sv-bn')
 yeyiangaming.com#%#//scriptlet('set-local-storage-item', 'cookies-declined', 'true')
@@ -26266,7 +26267,7 @@ webium.ru#%#//scriptlet('set-constant', 'isPopupOpen', 'true')
 transfermarkt.com.tr##div[id$="wrapper"][class*="bottom-left-position"]
 search.brave.com##.before-quick-goggles
 instacart.com#$#.ReactModalPortal > div.AuthModal__Overlay:has(> div.AuthModal__Content a[href="https://www.instacart.com/privacy"]) { display: none !important; }
-instacart.com#$#body.body--auth-modal-open { overflow: auto !important; }
+instacart.com#$#body.body--auth-modal-open { overflow: auto !important; position: static !important; }
 healthgrades.com###feedback
 ebooks.health.elsevier.com#%#//scriptlet('set-local-storage-item', 'e-library-modal-shown', 'true')
 pozdravok.com###pwa-install-banner
@@ -35357,6 +35358,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+theproteinchef.co##.fl-module-pp-subscribe-form
+theproteinchef.co##header > div.fl-row:has(> div.fl-row-content-wrap div.fl-module-pp-subscribe-form)
 fragdenstaat.de##div[data-banner="bottomBanner"]
 fragdenstaat.de###main > section:has(> div.container h2#newsletter)
 chocolatewithgrace.com##div[data-ff-name="popupCardImage"]
@@ -48327,6 +48330,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~odaibako.net,~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+instacart.com,instacart.ca#%#//scriptlet('set-cookie', 'm3_app_download_banner', 'true')
 onlineradiobox.com##.about-mobile__section
 onlineradiobox.com###panel_mobile_playmarket
 delish.com#$#nav[data-tracking-id="topNav"] > div[class^="css-"]:has(> div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > img[alt="Delish App Banner Logo"]) { display: none !important; }

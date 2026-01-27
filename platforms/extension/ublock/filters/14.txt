@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: AIDt+nH3kjyl3+zhd1hR3w
-! Diff-Path: ../patches/14/14-s-1769516191-3600.patch
+! Checksum: frj/3Bi9ZX7EsG2liFfS4g
+! Diff-Path: ../patches/14/14-s-1769520372-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.56.92
-! TimeUpdated: 2026-01-27T12:13:28+00:00
+! Version: 2.2.56.93
+! TimeUpdated: 2026-01-27T13:22:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2519,6 +2519,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+live24.gr###recommendation
 bonbon.hr##div[id^="gdpr"]
 yeyiangaming.com##+js(set-local-storage-item, cookies-declined, true)
 listenonlineradio.com##.lor-cookies-container
@@ -24885,7 +24886,7 @@ webium.ru##+js(set-constant, isPopupOpen, true)
 transfermarkt.com.tr##div[id$="wrapper"][class*="bottom-left-position"]
 search.brave.com##.before-quick-goggles
 instacart.com##.ReactModalPortal > div.AuthModal__Overlay:has(> div.AuthModal__Content a[href="https://www.instacart.com/privacy"]):style(display: none !important;)
-instacart.com##body.body--auth-modal-open:style(overflow: auto !important;)
+instacart.com##body.body--auth-modal-open:style(overflow: auto !important; position: static !important;)
 healthgrades.com###feedback
 ebooks.health.elsevier.com##+js(set-local-storage-item, e-library-modal-shown, true)
 pozdravok.com###pwa-install-banner
@@ -33868,6 +33869,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+theproteinchef.co##.fl-module-pp-subscribe-form
+theproteinchef.co##header > div.fl-row:has(> div.fl-row-content-wrap div.fl-module-pp-subscribe-form)
 fragdenstaat.de##div[data-banner="bottomBanner"]
 fragdenstaat.de###main > section:has(> div.container h2#newsletter)
 chocolatewithgrace.com##div[data-ff-name="popupCardImage"]
@@ -46675,6 +46678,7 @@ m.tokopedia.com##div[data-testid="divOverlay"]:style(display: none!important;)
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+instacart.com,instacart.ca##+js(set-cookie, m3_app_download_banner, true)
 onlineradiobox.com##.about-mobile__section
 onlineradiobox.com###panel_mobile_playmarket
 delish.com##nav[data-tracking-id="topNav"] > div[class^="css-"]:has(> div[class^="css-"] > div[class^="css-"] > div[class^="css-"] > img[alt="Delish App Banner Logo"]):style(display: none !important;)
