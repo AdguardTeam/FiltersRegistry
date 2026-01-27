@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.42.82",
-			"timeUpdated": "2026-01-27T11:09:24+0000",
+			"version": "2.4.42.83",
+			"timeUpdated": "2026-01-27T12:12:55+0000",
 			"languages": []
 		},
 		{
@@ -234,8 +234,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.2.56.91",
-			"timeUpdated": "2026-01-27T11:09:57+0000",
+			"version": "2.2.56.92",
+			"timeUpdated": "2026-01-27T12:13:28+0000",
 			"languages": []
 		},
 		{
@@ -250,8 +250,8 @@
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "2.1.9.50",
-			"timeUpdated": "2026-01-27T10:10:20+0000",
+			"version": "2.1.9.51",
+			"timeUpdated": "2026-01-27T12:13:29+0000",
 			"languages": []
 		},
 		{
@@ -296,8 +296,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.79.64",
-			"timeUpdated": "2026-01-27T11:10:03+0000",
+			"version": "2.0.79.65",
+			"timeUpdated": "2026-01-27T12:13:33+0000",
 			"languages": []
 		},
 		{
@@ -762,17 +762,17 @@
 		},
 		{
 			"filterId": 201,
-			"name": "(Obsolete) Web Annoyances Ultralist",
+			"name": "Web Annoyances Ultralist",
 			"description": "Blocks annoying web elements and reclaims lost screen real estate.",
-			"homepage": "https://github.com/yourduskquibbles/webannoyances/",
+			"homepage": "https://github.com/LanikSJ/webannoyances/",
 			"expires": 432000,
 			"displayNumber": 100,
 			"groupId": 4,
-			"subscriptionUrl": "https://raw.githubusercontent.com/yourduskquibbles/webannoyances/master/ultralist.txt",
+			"subscriptionUrl": "https://raw.githubusercontent.com/LanikSJ/webannoyances/master/ultralist.txt",
 			"platformsExcluded": [
 				"ext_chromium_mv3"
 			],
-			"version": "1.0.8.71",
+			"version": "2.0.0.0",
 			"timeUpdated": "2023-06-16T21:01:02+0000",
 			"languages": []
 		},

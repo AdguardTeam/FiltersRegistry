@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.42.82",
-			"timeUpdated": "2026-01-27T11:09:24+0000",
+			"version": "2.4.42.83",
+			"timeUpdated": "2026-01-27T12:12:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.56.91",
-			"timeUpdated": "2026-01-27T11:09:57+0000",
+			"version": "2.2.56.92",
+			"timeUpdated": "2026-01-27T12:13:28+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.9.50",
-			"timeUpdated": "2026-01-27T10:10:20+0000",
+			"version": "2.1.9.51",
+			"timeUpdated": "2026-01-27T12:13:29+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -703,8 +703,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/ios/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.79.64",
-			"timeUpdated": "2026-01-27T11:10:03+0000",
+			"version": "2.0.79.65",
+			"timeUpdated": "2026-01-27T12:13:33+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1347,6 +1347,29 @@
 				18
 			],
 			"downloadUrl": "https://filters.adtidy.org/ios/filters/124_optimized.txt"
+		},
+		{
+			"filterId": 201,
+			"name": "Web Annoyances Ultralist",
+			"description": "Blocks annoying web elements and reclaims lost screen real estate.",
+			"timeAdded": "2019-06-11T10:27:09+0000",
+			"homepage": "https://github.com/LanikSJ/webannoyances/",
+			"expires": 432000,
+			"displayNumber": 100,
+			"groupId": 4,
+			"subscriptionUrl": "https://raw.githubusercontent.com/LanikSJ/webannoyances/master/ultralist.txt",
+			"platformsExcluded": [
+				"ext_chromium_mv3"
+			],
+			"trustLevel": "high",
+			"version": "2.0.0.0",
+			"timeUpdated": "2023-06-16T21:01:02+0000",
+			"deprecated": false,
+			"languages": [],
+			"tags": [
+				5
+			],
+			"downloadUrl": "https://filters.adtidy.org/ios/filters/201_optimized.txt"
 		},
 		{
 			"filterId": 202,
