@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: YAmFB5h7XV9mVguP7yHxyA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1769491000-3600.patch
+! Checksum: uV6zTw0pHkTkDNjzRWp41w
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1769494516-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.42.76
-! TimeUpdated: 2026-01-27T05:13:00+00:00
+! Version: 2.4.42.77
+! TimeUpdated: 2026-01-27T06:11:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10305,6 +10305,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223512
+bandle.app##+js(set-constant, nitroAds.abp, true)
+bandle.app##body > div[style^="background:"][style*="position: fixed; display: flex;"][style*="z-index:"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223426
 simpmusic.org##+js(no-xhr-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223227
@@ -36525,6 +36528,9 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+porner.tv##.DefaultText
+porner.tv##.VideosList > .video-skeleton
+porner.tv##body > .container.oHidden
 modelsgonebad.com##.live-cams-footer
 modelsgonebad.com##.live-cams-sidebar
 modelsgonebad.com##a[href^="https://www.modelsgonebad.com/redirect_cs.php"]
