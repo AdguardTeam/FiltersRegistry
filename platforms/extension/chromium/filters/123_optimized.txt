@@ -1,9 +1,9 @@
-! Checksum: 81oT7DBtNAvVc+WI4kxnYQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1769475070-14400.patch
+! Checksum: MVnWS5QrMgykc2Xp8RD/pA
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1769489355-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.47
-! TimeUpdated: 2026-01-27T00:48:20+00:00
+! Version: 2.1.55.48
+! TimeUpdated: 2026-01-27T04:46:19+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -86,7 +86,6 @@
 /share_popup.js
 /share_sprite.png
 /share_view.js
-/share_wechat.png
 /share_weibo.png
 /shareaholic.js
 /sharebar.js
@@ -104,7 +103,6 @@
 /sharer.js
 /sharethis.js
 /shareTools.js
-/shareTT.js
 /shareTwitter.png
 /shariff.min.js
 /silicon-counters.js
@@ -148,6 +146,7 @@ _social_footer_
 ###Followers1
 ###ShareButton
 ###ShareItemBtn
+###SharePanel
 ###SocialMedia
 ###SocialShare
 ###Socialize
@@ -453,6 +452,7 @@ _social_footer_
 ###shareToolBottom
 ###shareTxt
 ###shareUrl
+###shareVertHolder
 ###share_bar
 ###share_block
 ###share_box
@@ -622,7 +622,6 @@ _social_footer_
 ###social_bottom
 ###social_box
 ###social_btns
-###social_cont
 ###social_facebook
 ###social_fb
 ###social_follow
@@ -829,6 +828,7 @@ _social_footer_
 ##.addthis_button_facebook
 ##.addthis_button_facebook_follow
 ##.addthis_button_facebook_like
+##.addthis_button_instagram
 ##.addthis_button_linkedin
 ##.addthis_button_more
 ##.addthis_button_print
@@ -872,7 +872,6 @@ _social_footer_
 ##.apsc-icons-wrapper
 ##.apsc-twitter-icon
 ##.apss-social-share
-##.arq-lite-facebook
 ##.arqam-lite-widget-counter
 ##.arr--share
 ##.art-share
@@ -932,6 +931,7 @@ _social_footer_
 ##.article_left_share
 ##.article_share
 ##.article_social
+##.article_social_share
 ##.article_socials
 ##.articlesharebox
 ##.aspexifblikebox
@@ -1889,6 +1889,7 @@ _social_footer_
 ##.main-header__social
 ##.main-nav-social
 ##.mainVerticalArticleSharingLinks
+##.main__share
 ##.main_search_social
 ##.main_share_panel
 ##.mashicon-share
@@ -2027,7 +2028,6 @@ _social_footer_
 ##.o_footer_social_media
 ##.ob-ShareBar-share
 ##.oceanwp-about-me-social
-##.oe_social_share
 ##.omc-social-small
 ##.open-share
 ##.open-share-toolbar
@@ -2047,7 +2047,6 @@ _social_footer_
 ##.page-footer__social
 ##.page-footer__social-link
 ##.page-footer__social-links
-##.page-footer_social
 ##.page-share
 ##.page-share-button
 ##.page-social
@@ -2060,7 +2059,6 @@ _social_footer_
 ##.parent-shareBox
 ##.partial-share
 ##.pathSocialIcons
-##.pbtsharethisbutt
 ##.pen_social_networks
 ##.penci-social-counter
 ##.penci-social-share-footer
@@ -2179,6 +2177,7 @@ _social_footer_
 ##.rrssb-buttons-container
 ##.rss-social
 ##.rt-social-buttons
+##.s-btns
 ##.s-f__social
 ##.s-facebook
 ##.s-instagram
@@ -2925,7 +2924,6 @@ _social_footer_
 ##.social-networking
 ##.social-networks-container
 ##.social-networks-footer
-##.social-networks-links
 ##.social-networks-list
 ##.social-networks__item
 ##.social-news-buttons
@@ -3124,6 +3122,7 @@ _social_footer_
 ##.social_links_container
 ##.social_links_footer
 ##.social_links_top
+##.social_links_wrapper
 ##.social_menu_icon
 ##.social_popup
 ##.social_row
@@ -3185,6 +3184,7 @@ _social_footer_
 ##.socials-text
 ##.socials-widget
 ##.socials-wrap
+##.socials__buttons
 ##.socials_box
 ##.socials_white
 ##.socials_widget
@@ -3236,6 +3236,7 @@ _social_footer_
 ##.story-tool-share
 ##.story__share
 ##.story__social
+##.story__social-share
 ##.stripe-social
 ##.stwitter
 ##.sub_jeu_social_facebook
@@ -3372,6 +3373,7 @@ _social_footer_
 ##.twitterjo
 ##.twittershare
 ##.twshare
+##.twt-icon
 ##.twtr
 ##.ty-social-link
 ##.ty-social-link-block
@@ -3764,6 +3766,7 @@ abc.net.au##.FixedHeader_shareBtn__yNush
 indianexpress.com##.G-folow-button
 meduza.io##.GeneralMaterial-module-share
 newsweek.com##.GooglePreferredSourceBanner_container__4kWoo
+themirror.com##.GooglePreferredSource_wrapper__lSRA6
 cnbc.com##.HighlightShare-container
 apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
@@ -4027,7 +4030,6 @@ cointelegraph.com##.post__socials-block
 pravda.com.ua##.post_social_item
 koi.ai##.post_sticky-social
 tweaktown.com##.pr-p7.fsvgs
-atlantablackstar.com##.pre-footer
 lifestyleasia.com##.pre-footer_instagram
 coywolf.com##.preferred
 cnet.com##.preferred-source-button
@@ -4039,6 +4041,7 @@ firstpost.com##.rhs-yt-ch-wrap
 businesstoday.in##.rhs_fixwhtsapp
 aljazeera.com,aljazeera.net##.rich-share
 crealitycloud.com##.right-share-box
+outlookindia.com##.rm-social-share
 sordum.org##.sbar_social_div
 shopclues.com##.sc_socialconnection
 pornbox.com##.scene-data__share
@@ -4138,7 +4141,6 @@ overclock3d.net##.socials-container
 republicworld.com##.sponsors-container
 cryptonews.com##.ssk
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
-atlantablackstar.com##.stay-social
 vnexpress.net##.sticky
 healthshots.com##.stickySocial
 natlawreview.com##.sticky__sidebar
@@ -4174,7 +4176,6 @@ news.sky.com##.ui-news-footer-social
 news.sky.com##.ui-news-footer-social-link
 hp.com##.ul_media_links
 aa.com.tr##.ustBar-sosyal
-trueachievements.com##.vc
 apa.org##.vertical-icon-bar
 videogameschronicle.com##.vgc-branding__container > ul
 videogameschronicle.com##.vgc-socialshare
@@ -4271,7 +4272,7 @@ clubic.com#?#[style="position: sticky; top: 55px;"]:contains(Inscrivez-vous à n
 nbcsports.com#?#p.cms-textAlign-center:contains(follow NBC Sports)
 psypost.org#?#strong:contains(/Stay informed|Stay on top/)
 agfk-bw.de,clara.es,hcb.net,travel.state.gov##.socialmedia
-1movies.bz,avira.com,byjus.com,commentpicker.com,hakaimagazine.com,hollywoodlife.com,homemark.co.za,ilgiornale.it,iphoneitalia.com,malaymail.com,maxabout.com,motorsport-xl.de,ncbi.nlm.nih.gov,novosti.rs,nu.nl,politico.eu,tennismagazin.de,thepostmillennial.com,uncnews.unc.edu##.social-sharing
+1movies.bz,avira.com,betakit.com,byjus.com,commentpicker.com,hakaimagazine.com,hollywoodlife.com,homemark.co.za,ilgiornale.it,iphoneitalia.com,malaymail.com,maxabout.com,motorsport-xl.de,ncbi.nlm.nih.gov,novosti.rs,nu.nl,politico.eu,tennismagazin.de,thepostmillennial.com,uncnews.unc.edu##.social-sharing
 exafm.com,goldderby.com,lacaderadeeva.com,lamejor.com.mx,lasillarota.com,mvsnoticias.com,pronto.com.ar,radioformula.com.mx,revistaforum.com.br,sumedico.com##.share-group
 brecha.com.uy,consigli.it,lgbtqnation.com,sdxcentral.com##.a2a_kit
 beebom.com,captimes.com,cheknews.ca,cockroachlabs.com,cpac.ca,estadao.com.br,fandomwire.com,gta5-mods.com,mag.toyota.co.uk,mydramalist.com,philstarlife.com,silicon.co.uk,silicon.de,silicon.es,silicon.fr,silicon.pt,stadiumtalk.com##.share-container
@@ -4486,6 +4487,7 @@ cnnbrasil.com.br##.single-editorial__follow
 cnnbrasil.com.br##.single-sharer
 publico.pt##.social-tools
 cnnbrasil.com.br##.social__footer
+rollingstone.com.br##.social_content_article
 tvi.iol.pt##.social_media_links
 meiobit.com##.socialfloating
 uol.com.br##.solar-header-columnist-socialmedia-content
@@ -4531,6 +4533,7 @@ biobiochile.cl##.botones-google-news-wsp
 cooperativa.cl##.botones-redes-sociales
 mvsnoticias.com,radioformula.com.mx,sipse.com,sumedico.com,tribuna.com.mx##.btn-seguinos-gnews
 elplural.com##.btn-whatsapp
+eleconomista.com.mx##.c-detail__author__share
 cmmedia.es,diariodecastillayleon.es,diariodeleon.es,diariodevalladolid.es,elcorreodeburgos.com,eldebate.com,eleconomista.com.mx,heraldodiariodesoria.es,huffingtonpost.es,listindiario.com,segre.com##.c-detail__share
 eleconomista.com.mx##.c-detail__toolbar__share
 eldebate.com,eleconomista.com.mx,listindiario.com##.c-footer__share
@@ -4706,6 +4709,7 @@ google.com#@#SHARE-BUTTON
 geki-cine.jp,heiwa-9inday.jp,hypnosismic-anime.com,idolmaster-official.jp,mamodan-plus.clony.co.jp,monsterhunternow.belugacpn.jp,ufret.jp#@#a[href^="https://twitter.com/intent/tweet?"]
 petsmart.com#@#a[href^="https://www.facebook.com/sharer/sharer.php"]
 playswellwithbutter.com#@#a[href^="https://www.pinterest.com/pin/create/button/"]
+@@/angular-facebook.js
 @@/wp-content/plugins/bwp-minify/min/?*,wp-content$script,stylesheet,~third-party
 @@/wp-content/plugins/share-this-image/*$~third-party
 @@/wp-content/plugins/wordpress-social-login/*$~third-party
