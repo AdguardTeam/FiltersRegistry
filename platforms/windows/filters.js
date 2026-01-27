@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.42.80",
-			"timeUpdated": "2026-01-27T09:12:49+0000",
+			"version": "2.4.42.81",
+			"timeUpdated": "2026-01-27T10:09:48+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -623,8 +623,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.56.89",
-			"timeUpdated": "2026-01-27T09:13:13+0000",
+			"version": "2.2.56.90",
+			"timeUpdated": "2026-01-27T10:10:19+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.9.49",
-			"timeUpdated": "2026-01-27T09:13:14+0000",
+			"version": "2.1.9.50",
+			"timeUpdated": "2026-01-27T10:10:20+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -728,8 +728,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.79.62",
-			"timeUpdated": "2026-01-27T01:37:26+0000",
+			"version": "2.0.79.63",
+			"timeUpdated": "2026-01-27T10:10:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -794,8 +794,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.41.5",
-			"timeUpdated": "2026-01-27T07:13:16+0000",
+			"version": "2.0.41.6",
+			"timeUpdated": "2026-01-27T10:10:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -816,8 +816,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/22.txt",
 			"trustLevel": "full",
-			"version": "2.0.13.49",
-			"timeUpdated": "2026-01-26T18:12:02+0000",
+			"version": "2.0.13.50",
+			"timeUpdated": "2026-01-27T10:10:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1689,8 +1689,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.52.86",
-			"timeUpdated": "2026-01-27T09:13:23+0000",
+			"version": "2.1.52.87",
+			"timeUpdated": "2026-01-27T10:10:31+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
