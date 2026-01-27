@@ -1,15 +1,15 @@
-! Checksum: eX13aRtRIC3w6ucNceDU2g
-! Diff-Path: ../patches/212/212-s-1769503670-14400.patch
+! Checksum: orcDv8yDv7Yq1QzLlikP1Q
+! Diff-Path: ../patches/212/212-s-1769518200-14400.patch
 ! Title: RU AdList: Counters
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.83.72
-! TimeUpdated: 2026-01-27T08:44:30+00:00
+! Version: 2.1.83.73
+! TimeUpdated: 2026-01-27T12:46:32+00:00
 ! Expires: 12 hours (update frequency)
 !
-! Checksum: 03VwNWesdBnOX+nOMD0FEA
-! OriginalVersion: 202601270831
+! Checksum: 8bQb0NWpemlQHzUjxhIkmA
+! OriginalVersion: 202601271231
 ! Title: RU AdList: Counters
-! Last modified: 27 Jan 2026 08:31 UTC
+! Last modified: 27 Jan 2026 12:31 UTC
 ! Expires: 1 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://forums.lanik.us/viewforum.php?f=102
 !
@@ -1302,6 +1302,17 @@ yandex.*#$?#.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-c
 ! реклама в QMS и мобильной версии сайта
 ! редирект
 !
+! Геоблокировки в плеерах
+||aniqit.com/*geoblock=$subdocument,removeparam=geoblock
+||api.namy.ws/embed/*geo_block=$subdocument,removeparam=geo_block
+||api.namy.ws/embed/*geoBlock=$subdocument,removeparam=/geoblock/i
+||assistant.allarknow.online/*block=$subdocument,removeparam=block
+||assistant.stloadi.live/*block=$subdocument,removeparam=block
+||kodik.cc/*geoblock=$subdocument,removeparam=geoblock
+||kodik.info/*geoblock=$subdocument,removeparam=geoblock
+||kodikdb.com/*geoblock=$subdocument,removeparam=geoblock
+||obrut.show/*geo_block=$subdocument,removeparam=geo_block
+!
 ! Экспериментальные правила для маркеров
 $document,removeparam=__rr,domain=ozon.ru
 $document,removeparam=ai,domain=ggsel.net
@@ -1427,7 +1438,6 @@ $removeparam=yredirect
 $removeparam=ysclid
 /*=tabbar$document,removeparam=from,domain=ya.ru|yandex.*
 /*=tabbar$document,removeparam=source,domain=ya.ru|yandex.*
-/?from=RCM-$document,xmlhttprequest,removeparam,domain=rambler.ru
 /?from=smm|$removeparam=from
 /?from=yanews$removeparam=from
 /?from_block=$document,removeparam=from_block,domain=www.kinopoisk.ru
@@ -1461,6 +1471,8 @@ utm_source=*partner=$document,removeparam=partner
 ||youtube.com/embed/$subdocument,removeparam=rel
 !
 ! Aliexpress
+||aliexpress.$removeparam=/gatewayadapt/i
+||aliexpress.$removeparam=/sellerid/i
 ||aliexpress.$removeparam=af
 ||aliexpress.$removeparam=af_dp
 ||aliexpress.$removeparam=aff_fcid
@@ -1469,12 +1481,10 @@ utm_source=*partner=$document,removeparam=partner
 ||aliexpress.$removeparam=aff_trace_key
 ||aliexpress.$removeparam=afsmartredirect
 ||aliexpress.$removeparam=algo_pvid
-||aliexpress.$removeparam=gatewayadapt
 ||aliexpress.$removeparam=mixer_rcmd_bucket_id
 ||aliexpress.$removeparam=pdp_trigger_item_id
 ||aliexpress.$removeparam=ru_algo_pv_id
 ||aliexpress.$removeparam=scenario
-||aliexpress.$removeparam=sellerid
 ||aliexpress.$removeparam=shpmethod
 ||aliexpress.$removeparam=sk
 ||aliexpress.$removeparam=spm
