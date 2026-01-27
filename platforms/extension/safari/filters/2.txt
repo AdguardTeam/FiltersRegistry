@@ -1,9 +1,9 @@
-! Checksum: FF2aGJqqmoIGTSkADs+USA
-! Diff-Path: ../patches/2/2-s-1769498168-3600.patch
+! Checksum: Kf/LSsiSPXVJFQjUI/sFgA
+! Diff-Path: ../patches/2/2-s-1769501609-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.42.78
-! TimeUpdated: 2026-01-27T07:12:47+00:00
+! Version: 2.4.42.79
+! TimeUpdated: 2026-01-27T08:10:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10473,14 +10473,16 @@ bandle.app##body > div[style^="background:"][style*="position: fixed; display: f
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223426
 simpmusic.org#%#//scriptlet('prevent-xhr', 'adsbygoogle')
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=simpmusic.org
-! https://github.com/AdguardTeam/AdguardFilters/issues/223227
-asianporn.li#%#//scriptlet('prevent-addEventListener', 'load', 'checkAndLock')
-asianporn.li#@#.ad-unit:not(.textads)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223187
 leaguegaming.com#%#//scriptlet('prevent-fetch', 'adsbygoogle')
+! https://github.com/AdguardTeam/AdguardFilters/issues/223227
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223167
-kissjav.com#@#.ad-unit:not(.textads)
-kissjav.com#%#//scriptlet('prevent-setTimeout', '.offsetHeight === 0')
+@@||kissjav.com^$generichide
+@@||asianporn.li^$generichide
+asianporn.li,kissjav.com#%#//scriptlet('prevent-fetch', 'pagead2.googlesyndication.com')
+asianporn.li,kissjav.com#%#//scriptlet('prevent-setTimeout', '/\.offsetHeight === 0|AdBlock|location\.reload\(\)/')
+!+ PLATFORM(ios, ext_android_cb, ext_safari)
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xmlhttprequest,domain=kissjav.com|asianporn.li
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223163
 indexsubtitle.cc#%#//scriptlet('prevent-setTimeout', '-0x')
 indexsubtitle.cc#@#.google_ads
@@ -29750,7 +29752,7 @@ vorek.pl##body > div[style^="display: block; box-sizing: border-box; padding:"][
 ! https://github.com/AdguardTeam/AdguardFilters/issues/200970
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199719
 ! https://github.com/AdguardTeam/AdguardFilters/issues/197428
-money.pl#@#iframe[width="100%"][height="90"]
+wp.pl,money.pl#@#iframe[width="100%"][height="90"]
 open.fm,autocentrum.pl,pudelek.pl,money.pl#@#style + div[class]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/173427
 money.pl#@?#main > div:first-child:has(img[src^="https://v.wpimg.pl/"][loading="lazy"])
@@ -33442,7 +33444,7 @@ filmeonlinehd.biz,onlinework4all.com,downloadtwittervideo.com,fetchtube.com,elko
 stmup.*,s1p1cd.com,strmup.*,flashstream.cc,sterham.net,mapple.uk,dovkembed.pw,daddylive3.com,omuzaani.me,mdy48tn97.com,jhdanime.live,tuktukcenma.cam,dramafire.site,miravd.com,3isk.icu,3isk.info,icma.az,megaup.net,thedaddy.*,fnjplay.xyz,yoxplay.xyz,movies-2015.com,y2meta.net,illink.net,gmanga.me,pcgamez-download.com,gamepciso.com,moalm-qudwa.blogspot.com,vivo.sx,animeblix.com,toonily.com,mondainai.moe,pnd.*,leechpremium.link,watchasian.to,thepiratefilmes.co,kazefuri.me,douploads.net,torrentproject.cc,nmac.to,biroads.com,seriesfilmestorrent.net,gdriveplayer.*,supervideo.tv,masteranime.es,100count.net,playtube.ws,shortpaid.com,gogoanimee.com,iir.ai,pirlotv.es,gplinks.co,movies123.pics,fitgirlrepacks.co,sickworldmusic.com,videomega.co,anitube.be,shortearn.eu,kisscartoon.info,what.cd,kisscartoon.love,aii.sh,ckk.ai,oko.sh,gnula.nu,1tamilmv.com,rapidotorrents.net,megafilmes.org,gplinks.in,vidbm.com,onlinemovieswatch.com.pk,baan-series.com,mvs4u.net,solarmovie.fun,fuqer.com,arblionz.tv,kiryuu.co,tvbd.live,tencentgamingbuddy.co,faucet.gold,trucnet.net,drhealthmag.com,mtbtutoriales.com,ddownr.com,megaurl.in,uploadrar.com,terbit21.co,comandotorrents.com,watchxxxfreeinhd.com,5movies.cloud,telewizja-internetowa.pl,indoxxi.center,ytmp3.mobi,mp4s.org,tamilmv.bid,streamloverx.com,putlocker.digital,01fmovies.com,123movies.gallery,123movies.gdn,1337x.unblock2.xyz,2movierulz.ac,animeheaven.es,bludv.tv,foxebook.net,short.pe,watchcartoonsonline.eu#%#//scriptlet("abort-on-property-read", "zfgformats")
 ! other scriptlets
 watch-series.cc,33sk.tv#%#//scriptlet("abort-current-inline-script", "decodeURIComponent", "zfgloaded")
-familyporn.tv,desihub.org,simpcity.cr,kissjav.com,rule34.world,bunkr-albums.io,darkino.online,allfansleak.net,getlec.blogspot.com#%#//scriptlet("abort-on-property-read", "zfgloadedpopup")
+asianporn.li,familyporn.tv,desihub.org,simpcity.cr,kissjav.com,rule34.world,bunkr-albums.io,darkino.online,allfansleak.net,getlec.blogspot.com#%#//scriptlet("abort-on-property-read", "zfgloadedpopup")
 ! A new/different version of "zfgloaded" ads/popups
 ! The same rule as above, but without hint. In case if scriptlet doesn't work in Firefox, for example due to race condition
 ! #%#//scriptlet('abort-current-inline-script', 'String.fromCharCode', '/emZnbG9hZGVk|break;case \$\.|break;case \d{1}/')
@@ -39677,7 +39679,7 @@ windowsonarm.org##div[aria-labelledby="fui-ra"] + div table tbody > tr:has(ins.a
 windowsonarm.org##.sm\:px-6.lg\:px-8 > .py-8 > div:has(ins.adsbygoogle)
 venturebeat.com##.vb-ad-slot
 venturebeat.com##.article-body > div[class]:has(> div[id*="-"]:only-child:empty)
-vik1ngfile.site,mangago.me,klmanga.ec,chochox.com,comick.art,qmh.sex,cap3.sex,hindilinks4u.*,doujindesu.tv,easyvidplayer.com,camwhores.*,player4me.online,faselhds.biz,severeporn.com,rule34video.com,niyaniya.moe,pornxp.net#%#//scriptlet('abort-current-inline-script', 'WebAssembly', 'atob')
+asianporn.li,vik1ngfile.site,mangago.me,klmanga.ec,chochox.com,comick.art,qmh.sex,cap3.sex,hindilinks4u.*,doujindesu.tv,easyvidplayer.com,camwhores.*,player4me.online,faselhds.biz,severeporn.com,rule34video.com,niyaniya.moe,pornxp.net#%#//scriptlet('abort-current-inline-script', 'WebAssembly', 'atob')
 jojo-news.com###cb-row--footer-main:has(#bottombanner)
 24porn.com##.b-head-6
 umatechnology.org###rk-exit-modal-bg
@@ -42562,7 +42564,7 @@ livestreams.click,mylivestream.pro###openLinks
 livestreams.click##div[id^="iframe-container-"]
 namify.tech##.suggestion-rows .suggestion__namify-partner
 namify.tech##[class*="gtm-banner-"]
-justporn.com,cremz.com,pusvid.com,kissjav.com,hentai4k.com,viralxxxporn.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.asside-link
+asianporn.li,justporn.com,cremz.com,pusvid.com,kissjav.com,hentai4k.com,viralxxxporn.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.asside-link
 justporn.com,pusvid.com,kissjav.com,3dporndude.com,hentaismile.com,camhub.cc,coralxxx.com,analry.com,hard3r.com,bigbigtits.com,public-porno.com,maturexy.com,bigbumfun.com,fuqster.com,bigtitbitches.com,hugewangs.com,w1mp.com,analpornxl.com,sexpester.com,w4nkr.com##.link-offer
 ||melban7.top^$domain=wcup.one
 ||afrikalyrics.com/images/download-vantaart-
@@ -105141,6 +105143,7 @@ browsershots.org#@#.advert_area
 ||hrvvqcnilgti34uhxcgcigcn33.cfd^
 ||hrwfrjwrekmqd.site^
 ||hrwhwcyqjritt.xyz^
+||hrwlolycdpmnw.site^
 ||hrwozjgbmxiad.website^
 ||hrxeublgkniat.website^
 ||hrxtbicnsiunn.online^
@@ -108704,6 +108707,7 @@ browsershots.org#@#.advert_area
 ||kjgejeteyjbrz.site^
 ||kjgmieedgzswz.website^
 ||kjgnidnhlxugm.icu^
+||kjgxjmhwfiepl.site^
 ||kjhlxuvkdqteb.website^
 ||kjhxpkfakln.com^
 ||kjhyxdphquxwd.website^
@@ -109319,6 +109323,7 @@ browsershots.org#@#.advert_area
 ||kxqdayzmwcoox.website^
 ||kxtrjvu319ygxornzu15tq3fhy4.cfd^
 ||kxuingylmnoxo.space^
+||kxwpzlbqgallc.space^
 ||kxxutnpzolnne.website^
 ||kxxyhjamtwozu.space^
 ||ky41vgyy6hgwy5.rest^
@@ -116701,6 +116706,7 @@ browsershots.org#@#.advert_area
 ||paservices.tech^
 ||pashkadecoyer.cyou^
 ||pasiwhoulie.net^
+||paslbqmavkahb.com^
 ||paslrdcizpgdw.online^
 ||paslsa.com^
 ||pasquilsubtask.shop^
@@ -122484,6 +122490,7 @@ browsershots.org#@#.advert_area
 ||sakyyfqmtgldg.website^
 ||salamus1.lol^
 ||salbraddrepilly.com^
+||salesmanrespectivedenunciation.com^
 ||salestingoner.org^
 ||salgvxxbuwhxbd.com^
 ||salinatuisgooier.cyou^
@@ -127594,6 +127601,7 @@ browsershots.org#@#.advert_area
 ||tuneupslbs.help^
 ||tungateoptics.help^
 ||tunitytostara.org^
+||tunkkip.cfd^
 ||tunnagealfinpentyne.cyou^
 ||tunneljig.shop^
 ||tunnitcocas.cfd^
@@ -130093,6 +130101,7 @@ browsershots.org#@#.advert_area
 ||vqlhjhqkfmyou.online^
 ||vqllqlwuvsnwv.online^
 ||vqlqsjnxtg.com^
+||vqnpydpepszzu.com^
 ||vqoqlebqqakmq.top^
 ||vqoqlebqqzvyq.top^
 ||vqqaelqkkzyry.top^
@@ -133615,6 +133624,7 @@ browsershots.org#@#.advert_area
 ||zagvee.com^
 ||zahamcnujrr.com^
 ||zahvrkdkeulsy.site^
+||zaichoaphap.com^
 ||zaijoorainauza.net^
 ||zaimads.com^
 ||zaiphithez.net^
