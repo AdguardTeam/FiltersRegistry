@@ -1,9 +1,9 @@
-! Checksum: 16WB9+btwEJeCpxja8MxFg
-! Diff-Path: ../patches/14/14-s-1769598783-3600.patch
+! Checksum: SMGf5+J+omMb2CCN3CGDTA
+! Diff-Path: ../patches/14/14-s-1769602585-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.57.6
-! TimeUpdated: 2026-01-28T11:10:15+00:00
+! Version: 2.2.57.7
+! TimeUpdated: 2026-01-28T12:13:51+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18284,6 +18284,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://x.com/tokoroten/status/2016082917160890579
+@@||consent.cookiefirst.com/sites/$script,domain=jafco.co.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223538
 yeyiangaming.com#@##cookie-banner
 yeyiangaming.com#@#.cookie-banner:not(body):not(html)
@@ -35359,6 +35361,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+bundesdruckerei.de##.node__content > div.paragraph:has(> div[class] input#newsletter-submit)
+thetoc.gr##p:has(> a[href^="https://www.thetoc.gr/newsfeed/"])
 theoregondietitian.com#%#//scriptlet('set-local-storage-item', 'fd-form-659c5bfe29ac3339eb874f83-dismissed-count', 'true')
 lemonsandzest.com#%#//scriptlet('trusted-set-local-storage-item', 'ck/forms/modal/235e84db0d/hideUntil', '99999999999999')
 lemonsandzest.com##.wpforms-location-save_recipe_block
@@ -62739,6 +62743,7 @@ subbota.ua##aside.sidebar > div[id^="custom_html-"]
 !   NOTE: Donation widgets
 !   Really annoying only
 !
+betterbird.eu#%#//scriptlet('prevent-setTimeout', '/donate')
 tansajp.org##.banner_donation_request
 steamdb.info##.armored-headcrab
 agents.media##.ag-block
