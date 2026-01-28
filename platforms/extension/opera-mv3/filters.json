@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.42.98",
-			"timeUpdated": "2026-01-28T03:37:09+0000",
+			"version": "2.4.42.99",
+			"timeUpdated": "2026-01-28T04:24:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.39",
-			"timeUpdated": "2026-01-28T00:29:21+0000",
+			"version": "2.0.67.40",
+			"timeUpdated": "2026-01-28T04:25:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.61.59",
-			"timeUpdated": "2026-01-27T08:10:44+0000",
+			"version": "2.0.61.60",
+			"timeUpdated": "2026-01-28T04:25:08+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -647,8 +647,8 @@
 				"ext_chromium_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.9.57",
-			"timeUpdated": "2026-01-28T02:48:30+0000",
+			"version": "2.1.9.58",
+			"timeUpdated": "2026-01-28T04:25:17+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -677,8 +677,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.55.74",
-			"timeUpdated": "2026-01-27T06:12:28+0000",
+			"version": "2.0.55.75",
+			"timeUpdated": "2026-01-28T04:25:22+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -1712,8 +1712,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.52.95",
-			"timeUpdated": "2026-01-28T03:37:40+0000",
+			"version": "2.1.52.96",
+			"timeUpdated": "2026-01-28T04:25:35+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
