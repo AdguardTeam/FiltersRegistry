@@ -1,9 +1,9 @@
-! Checksum: vawWQ900+ZQZM4U7i/GXrQ
-! Diff-Path: ../patches/18/18-s-1769638413-3600.patch
+! Checksum: g3LW6XSc9lm9smuplT+ifQ
+! Diff-Path: ../patches/18/18-s-1769641990-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.79.73
-! TimeUpdated: 2026-01-28T22:10:49+00:00
+! Version: 2.0.79.74
+! TimeUpdated: 2026-01-28T23:10:31+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2574,6 +2574,9 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+bibliotheek.be#%#//scriptlet('trusted-set-cookie', 'cookie-agreed-categories', '["required"]')
+bibliotheek.be#%#//scriptlet('trusted-set-cookie', 'cookie-agreed-version', '1.0.0')
+bibliotheek.be#%#//scriptlet('trusted-set-cookie', 'cookie-agreed', '2')
 urbanfitclub.ru#%#//scriptlet('set-local-storage-item', 'cookie_accepted', '1')
 live24.gr###recommendation
 bonbon.hr##div[id^="gdpr"]
@@ -18268,6 +18271,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223673
+merelbeke-melle.bibliotheek.be#@#.eu-cookie-compliance-banner:not(body):not(html)
 ! https://x.com/tokoroten/status/2016082917160890579
 @@||consent.cookiefirst.com/sites/$script,domain=jafco.co.jp
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223538
