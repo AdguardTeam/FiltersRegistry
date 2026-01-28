@@ -1,9 +1,9 @@
-! Checksum: UblvZv5/jdPWwlCbQRymEg
-! Diff-Path: ../patches/14/14-s-1769584523-3600.patch
+! Checksum: 4ix57CTrUidv3sfYSq15WA
+! Diff-Path: ../patches/14/14-s-1769588058-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.57.2
-! TimeUpdated: 2026-01-28T07:12:33+00:00
+! Version: 2.2.57.3
+! TimeUpdated: 2026-01-28T08:11:24+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23425,6 +23425,9 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+||cdn.ziffstatic.com/jst/zdconsent.js$domain=maxroll.gg
+maxroll.gg#%#//scriptlet('set-constant', 'adblock', 'false')
+maxroll.gg#%#//scriptlet('prevent-addEventListener', 'adblock', '(!0)')
 linovelib.com#%#//scriptlet('abort-on-stack-trace', 'document.querySelectorAll', '_0x')
 linovelib.com#$##adblock-dialog { display: none !important; }
 linovelib.com#$#body.no-scroll { overflow: auto !important; }
@@ -23730,7 +23733,6 @@ economictimes.indiatimes.com#%#//scriptlet('set-constant', '_tp_data.isPrime', '
 economictimes.indiatimes.com#%#//scriptlet('set-constant', 'objAdBlocker.init', 'noopFunc')
 mediamarkt.nl##div:has(> [data-test="mms-search-consent-section"])
 lazyadmin.nl###lazy_note
-maxroll.gg#%#//scriptlet('trusted-set-local-storage-item', 'adBlockWarning', '{"value":true}')
 rutube.ru##.notification-container-module__infoNotifications
 watson.de#$##adBlockerTest { display: block !important; }
 watson.ch#$##adBlockerDetection { display: block !important; }
@@ -48099,6 +48101,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+bigl.ua#%#//scriptlet('set-cookie', 'app_popup_mute', 'true')
 instacart.com,instacart.ca#%#//scriptlet('set-cookie', 'm3_app_download_banner', 'true')
 onlineradiobox.com##.about-mobile__section
 onlineradiobox.com###panel_mobile_playmarket
