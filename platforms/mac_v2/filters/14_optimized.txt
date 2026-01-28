@@ -1,9 +1,9 @@
-! Checksum: JDYvERSPzR9J4d/tppBVvA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1769568704-3600.patch
+! Checksum: +XtCLGZvns1slaFnKOirQg
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1769571642-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.56.99
-! TimeUpdated: 2026-01-28T02:48:29+00:00
+! Version: 2.2.57.0
+! TimeUpdated: 2026-01-28T03:37:31+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -24404,6 +24404,8 @@ hightech.fm##.ad-banner
 lifehacker.com##[data-ga-element="openweb_scroll"]
 chejiahao.autohome.com.cn#$?##parent-container + div > div[class^="style_video_player_container"] { remove: true; }
 ecartelera.com.mx#%#//scriptlet('trusted-replace-node-text', 'script', 'initializeFloatingBehavior', 'initializeFloatingBehavior(player', '//initializeFloatingBehavior(player')
+||1lib.*/components/z-promotion.js
+||1lib.*/components/z-recommended-search.js
 ||z-lib.*/components/z-promotion.js
 ||z-lib.*/components/z-recommended-search.js
 ||z-library.*/components/z-promotion.js
@@ -25437,8 +25439,6 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
-1lib.*##z-promotion
-1lib.*##z-recommended-search
 uakinogo.online##.kng-rekl
 theriagames.com##.theria-plus-banner
 nikkan-gendai.com##.aside_ranking_pr
@@ -30592,6 +30592,7 @@ ukr.net###sinoptik_container
 ##.gsInformer
 /gs_informerClient.min.$third-party
 ||gismeteo.*/getInformer/$third-party
+tansajp.org##.banner_donation_request
 steamdb.info##.armored-headcrab
 agents.media##.ag-block
 verstka.media##.vm-single-post-content > p:has(> a[href="https://verstkasupport.media/"])
