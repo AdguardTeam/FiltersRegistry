@@ -1,8 +1,8 @@
-! Checksum: R1GMtVuNRuHKmsxnki4cFQ
+! Checksum: XsKJh6gDvSObfrYfqHrPHw
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.90
-! TimeUpdated: 2026-01-26T16:11:44+00:00
+! Version: 2.0.12.91
+! TimeUpdated: 2026-01-29T09:19:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3092,6 +3092,8 @@ $removeparam=search_domain,domain=ya.ru|yandex.*
 !
 ! Amazon tracking IDs found on several subpages
 ! Disabled rules:
+! https://github.com/AdguardTeam/AdguardFilters/issues/199705
+! ||amazon.*$removeparam=content-id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/157889#issuecomment-1660195416
 ! ||amazon.*$removeparam=psc
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110571
@@ -3172,7 +3174,6 @@ $removeparam=asc_source,domain=aboutamazon.com|amazon.*|amzn.to
 ||amazon.*/hz/contact-us/csp$removeparam=from
 ||amazon.*/hz/contact-us/csp$removeparam=source
 ||amazon.*/message-us$removeparam=muClientName
-! ||amazon.*$removeparam=content-id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/83138
 ||app.mi.com/download/*?id=$removeparam=ref
 ||app.mi.com/download/*?id=$removeparam=nonce
