@@ -1,9 +1,9 @@
-! Checksum: lA5T+12aXFnHddH2/HeJ5w
-! Diff-Path: ../patches/14/14-s-1769689169-3600.patch
+! Checksum: 2kAXIM399LwCsiUcBHJwog
+! Diff-Path: ../patches/14/14-s-1769693546-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.57.20
-! TimeUpdated: 2026-01-29T12:16:57+00:00
+! Version: 2.2.57.21
+! TimeUpdated: 2026-01-29T13:29:55+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18270,6 +18270,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/uBlockOrigin/uAssets/issues/31670
+@@||sdk.privacy-center.org/*/loader.js$domain=theweathernetwork.com
+@@||sdk.privacy-center.org/sdk/$domain=theweathernetwork.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223673
 merelbeke-melle.bibliotheek.be#@#.eu-cookie-compliance-banner:not(body):not(html)
 ! https://x.com/tokoroten/status/2016082917160890579
@@ -34288,6 +34291,7 @@ macwelt.de,pcwelt.de#%#//scriptlet("set-constant", "firebase.messaging", "noopFu
 !
 ! SECTION: Push notifications - Regular rules
 !
+||infobus.eu/js/firebase-export.js
 fangraphs.com##.fullpostentry > div:not([id]):not([class])[style^="width:100%; max-width:820px;"]
 fangraphs.com##.fantasy-tier-text > div:not([id]):not([class])[style^="width:100%; max-width:820px;"]
 fangraphs.com##.chat_wrap > div:not([id]):not([class])[style^="width:100%; max-width:820px;"]
