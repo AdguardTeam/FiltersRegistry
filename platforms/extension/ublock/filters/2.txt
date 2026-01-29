@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ZVzzAWAEsuJkDTVK2W9Q/g
-! Diff-Path: ../patches/2/2-s-1769685468-3600.patch
+! Checksum: llK1osFzQq5WIIrKnf8ljA
+! Diff-Path: ../patches/2/2-s-1769689199-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.43.30
-! TimeUpdated: 2026-01-29T11:14:35+00:00
+! Version: 2.4.43.31
+! TimeUpdated: 2026-01-29T12:16:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26440,6 +26440,14 @@ cenyrolnicze.pl##p > a[rel="nofollow"] > img[width="100%"][height="NaN"]
 mypolitics.pl#@#.fade-enter-done
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123918
 ||zdrowastrona.pl/images/banners/wez750x100.gif
+! https://github.com/AdguardTeam/AdguardFilters/issues/223708
+gazetaprawna.pl#@#.ad
+gazetaprawna.pl#@#.ads
+gazetaprawna.pl#@#.ad-slot
+gazetaprawna.pl#@#.ads-container
+gazetaprawna.pl##body > .ad.ads:style(display: block !important;)
+gazetaprawna.pl##+js(no-setTimeout-if, .display||"hidden"===)
+gazetaprawna.pl##div[data-widget^="AdSlot"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123886
 gazetaprawna.pl##.infor-ad
 ! https://github.com/AdguardTeam/AdguardFilters/issues/123904
@@ -27834,8 +27842,6 @@ grodzisknews.pl##.ad_suw_nad
 wnp.pl##body div.ad.block
 ! https://github.com/AdguardTeam/AdguardFilters/issues/52583
 pikio.pl##.article-gallery-container > .add > span:contains(/^Reklama$/)
-! gazetaprawna.pl - ads leftovers
-gazetaprawna.pl##.tpl_std_module > div[id^="belka"][style^="margin-top:"] > div[style="text-align: center; color: grey; font-size: 10px;"]
 ! anywhere.pl - ads
 anywhere.pl##.g > div[class^="g-single a-"]
 anywhere.pl##.g-single > center > a.gofollow
@@ -36670,7 +36676,7 @@ racer.com##.MuiStack-root:has(> sellwild-widget:only-child)
 racer.com##div[class^="MuiBox-root"]:has(> div[class^="MuiBox-root"]:first-child + div[class^="MuiBox-root"]:last-child > div.MuiBox-root[id^="10"])
 rawpixel.com##.publift-ad
 norpov.com###leaderboard_area
-newsfront.xyz,crimejasoos.in,vacancyforjob.in###gcont
+famemingles.com,newsfront.xyz,crimejasoos.in,vacancyforjob.in###gcont
 beta.xfreehd.com##.col-md-12:has(a[href^="https://landing.brazzersnetwork.com/"])
 beta.xfreehd.com##.ad-container
 beta.xfreehd.com##.ad-body:remove()
@@ -36835,7 +36841,7 @@ gosexpod.com##.channel
 erome.xxx##.thecontent > pre[style="text-align: center;"]
 arcadepunks.com##.penci-html-ads
 foodtechnos.in##+js(abort-current-script, document.getElementById, window.open)
-gamesmain.xyz##+js(no-setTimeout-if, window.location.href)
+vplink.in,gamesmain.xyz##+js(no-setTimeout-if, window.location.href)
 gamesmain.xyz##+js(addEventListener-defuser, click, location.href, elements, #link-ready)
 xsz-av.com##+js(no-window-open-if)
 bleepingcomputer.com##.spon_res
@@ -37817,7 +37823,6 @@ techspot.com##.downloads_list > li:not([class]) > div[style="min-height: 250px; 
 techspot.com##.downloads-list > li:not([class]) > center > div[style^="min-height: 250px; text-align: center;"]
 northjersey.com##div[class^="gnt_"]:has(> aside[aria-label="advertisement"]:first-child):style(display: none !important;)
 northjersey.com##body > div[class^="gnt_"][style="--gnt-nwh: calc(100px + var(--gnt-tah));"]:style(--gnt-nwh: 0 !important;)
-bato.to##.alert-dark:has(> a[href="/direct-link"])
 tubeorigin.com##div[data-continuation]
 ||tubeorigin.com/live/recommended/
 egw.news##div[class^="offersMain_block"]
@@ -61932,8 +61937,6 @@ implbits.com#@#.banner_container
 ! https://github.com/AdguardTeam/AdguardFilters/issues/196340
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195971
 ! affected many porn sites with the similar player
-! https://github.com/AdguardTeam/AdguardFilters/issues/216063
-! https://github.com/AdguardTeam/AdguardFilters/issues/195990
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195772
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195735
 ! https://github.com/AdguardTeam/AdguardFilters/issues/195652
@@ -88236,6 +88239,7 @@ browsershots.org#@#.advert_area
 ||crossecopepod.help^
 ||crosspreferrite.com^
 ||crotondaytime.cyou^
+||crouchedmonarch.com^
 ||crouseagrapha.qpon^
 ||crowded-you.pro^
 ||crowdsuitcaseuntwist.com^
@@ -88373,6 +88377,7 @@ browsershots.org#@#.advert_area
 ||ctxirjhxpyjtm.space^
 ||ctxrpolj.net^
 ||ctyaodjceuvdu.space^
+||ctybpohkoart.com^
 ||ctyjfaawfonl.com^
 ||ctyywrvwlffgc.online^
 ||ctzsryncxsdkg.site^
@@ -91401,6 +91406,7 @@ browsershots.org#@#.advert_area
 ||egqhbuyfdpswm.space^
 ||egrldstkdlmme.site^
 ||egvlsbzuolczs.site^
+||egvmdcbddgial.website^
 ||egvmppvtammxw.site^
 ||egwojraqtdffg.xyz^
 ||egxuyvgdhwrzv.space^
@@ -93552,6 +93558,7 @@ browsershots.org#@#.advert_area
 ||fjxiqjmutcgqo.store^
 ||fjxxuccmjexrx.site^
 ||fjzljbahmmijc.com^
+||fkaffiadcn.com^
 ||fkbaqpqaptiid.site^
 ||fkbbaseodqexz.site^
 ||fkbkun.com^
@@ -96602,6 +96609,7 @@ browsershots.org#@#.advert_area
 ||gwrwqihtybzms.online^
 ||gwsmvqwyvkzfg.website^
 ||gwvdcsktrvzjc.site^
+||gwyltsmdekpgt.space^
 ||gwynorxqqcqxg.site^
 ||gwypqtmamicep.site^
 ||gwzpjzqxzbbwv.site^
@@ -102632,6 +102640,7 @@ browsershots.org#@#.advert_area
 ||lbdphmpwmwdzw.online^
 ||lbfpfffanlyzb.online^
 ||lbhtkeffrcqxz.site^
+||lbibkcvyjueqs.com^
 ||lbkezllrokbev.top^
 ||lbkezllrokkjy.top^
 ||lblfcddvvsnbi.website^
@@ -102744,6 +102753,7 @@ browsershots.org#@#.advert_area
 ||leancontextplacid.com^
 ||leangleliving.help^
 ||leanintegrationdebauch.com^
+||leanperjury.com^
 ||leapedspam.com^
 ||leapretrieval.com^
 ||leaptanymore.com^
@@ -110642,6 +110652,7 @@ browsershots.org#@#.advert_area
 ||piratedsiress.shop^
 ||piratedstoory.qpon^
 ||pirayasbonasus.help^
+||pirnjesuate.shop^
 ||pirnxbdjowuoi.online^
 ||pirtecho.net^
 ||pisaysundownrhexia.cfd^
@@ -115415,6 +115426,7 @@ browsershots.org#@#.advert_area
 ||rvvjtjgaf.xyz^
 ||rvvmynjd.love^
 ||rvxakxeysxxnv.space^
+||rvxxyhetcerkj.online^
 ||rvyaqmmxxoinm.site^
 ||rvybbvrixxwyb.website^
 ||rvzsemigbfqwc.website^
@@ -118433,6 +118445,7 @@ browsershots.org#@#.advert_area
 ||subdatejutties.com^
 ||subdued-breakfast.pro^
 ||subdued-forever.pro^
+||subduedexamination.pro^
 ||subduedfilthloot.com^
 ||subericfibsfusing.cfd^
 ||subgumsabe.cfd^
@@ -124768,6 +124781,7 @@ browsershots.org#@#.advert_area
 ||wnoeyhmmzfmlt.online^
 ||wnouncrrippleshiswa.org^
 ||wnp.com^
+||wnqyilqcjmqag.website^
 ||wnsteuadptaly.space^
 ||wnt-some-psh.net^
 ||wnt-some-push.com^
@@ -125253,6 +125267,7 @@ browsershots.org#@#.advert_area
 ||wxhiojortldjyegtkx.bid^
 ||wxholjwexghnl.site^
 ||wxixxpgnajzxr.website^
+||wxkvfxvujdpwl.site^
 ||wxlatgcemmkkv.site^
 ||wxlqgkwio.com^
 ||wxnbmpishocym.online^
@@ -143641,6 +143656,7 @@ gab.com##[data-comment="gab-ad-comment"]
 sephora.com##[data-comp*="RMNCarousel"]
 sephora.com##[data-comp*="RmnBanner"]
 bbc.com##[data-component="ad-slot"]
+bbc.com##[data-component="advertisement-block"]
 bloomberg.com##[data-component="in-body-ad"]
 lookfantastic.com##[data-component="sponsoredProductsCriteo"]
 the-sun.com##[data-component="zergnet"]
