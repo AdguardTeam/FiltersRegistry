@@ -1,9 +1,9 @@
-! Checksum: 9gz4Z4vB3whMprPHaqF/HQ
-! Diff-Path: ../patches/227_optimized/227_optimized-s-1769475086-14400.patch
+! Checksum: GD0JWCAoeex9IoAGgY3dWw
+! Diff-Path: ../patches/227_optimized/227_optimized-s-1769770109-14400.patch
 ! Title: List-KR (Optimized)
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.70
-! TimeUpdated: 2026-01-27T00:48:30+00:00
+! Version: 2.0.23.71
+! TimeUpdated: 2026-01-30T10:45:12+00:00
 ! Expires: 10 days (update frequency)
 ||ad.adwiser.kr^
 ||digitalcamp.co.kr^$third-party
@@ -866,7 +866,6 @@ namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[c
 ||inven.co.kr/common/lib/js/ad_$script
 ||isplus.com/data/isp/upload/save/banner/
 ||daumcdn.net/tistory_admin/static/revenue/
-||m.enuri.com/*/ajax/getSearchSponsor_ajax.jsp
 ||daisomall.co.kr/data/templet_data/templet/daiso/images/login_phone.jpg
 ||enuri.com/*/api/ad/
 ||enuri.com/*/ajax/getNewBrandThema_ajax.jsp
@@ -1632,6 +1631,7 @@ lol.ps##div[class*="ad-"]
 jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 sports.donga.com##div[id*="_AD"]
+algumon.com##.bg-base-100:has(> div.adsense-container > ins.adsbygoogle)
 excellesports.com##.modal_contents .modal_wrap
 m.search.naver.com##div[data-block-id^="review/prs_template_"] .sds-comps-header ~ div[data-template-type="vertical"] .sds-comps-vertical-layout.sds-comps-full-layout:has(> .sds-comps-vertical-layout a[href^="https://ader.naver.com/"])
 m.search.naver.com##div[data-block-id^="review/prs_template_"] .sds-comps-header ~ div[data-template-type="vertical"] .sds-comps-vertical-layout.sds-comps-full-layout:has(> .sds-comps-vertical-layout a[href^="https://ader.naver.com/"]) + span
@@ -2119,7 +2119,7 @@ m.daum.net##div[data-slot-type="IMAGE_BIG_BANNER"].box_bnr
 m.nate.com##.issueBn
 m.cgv.co.kr##.videoAdWrap
 m.ppomppu.co.kr##iframe[src*="/banner/google_ad.html"]
-phdkim.net##.pop-area.--dim.--active
+phdkim.net##.pop-area.--dim.--active:has(> .pop-ad)
 gorani.kr##[class*="_banner"]
 jjan.kr##.side_floating
 kookje.co.kr##div[class^="news_"] > div[style*="height:"]

@@ -1,9 +1,9 @@
-! Checksum: zY7u8gQ72PHGnUxpbnl8ng
-! Diff-Path: ../patches/236/236-s-1769258941-14400.patch
+! Checksum: UVqG9b9PU/ZI0IJYPlXKVg
+! Diff-Path: ../patches/236/236-s-1769770099-14400.patch
 ! Title: road-block light
 ! Description: Romanian ad blocking filter subscription.
-! Version: 2.0.3.60
-! TimeUpdated: 2026-01-24T12:46:00+00:00
+! Version: 2.0.3.61
+! TimeUpdated: 2026-01-30T10:45:16+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: ROU: Romanian Ad (ROad) Block List Light
@@ -1468,6 +1468,7 @@ timesnewroman.ro##.available-jobs-container
 comisarul.ro###parteneri_top
 comisarul.ro##[id^="reclama"]
 meoo.ro##[onclick*="open"]
+meoo.ro###buttonposter.blue
 ||rotalianul.com/wp-content/uploads/ads/$image
 rotalianul.com##.ad-continue
 rotalianul.com##.sponsored-content-title
@@ -1506,8 +1507,6 @@ catalog-az.ro##.tall-ads
 catalog-az.ro##.long-ad
 kimbino.ro##.ad
 observatornews.ro##.outstream-text:has(.banner)
-tvonline123.com#@##ads-container
-tvonline123.com##.video-container:has([href*="?key="])
 acasatv.protv.ro##[id]:has(script)
 lovedeco.ro###billboard
 publi24.ro##.article-list > [class]:has([id^="PUB"])
@@ -1631,6 +1630,14 @@ bunaziuafagaras.ro#?#.wp-block-template-part:contains(Publicitate)
 programtv.ro##.py-5.px-3.background-white
 xfilme.ro##.fakeplayer
 desene.3xforum.ro##.punmain:has([rel="sponsored"])
+desene.3xforum.ro##.no-mob.puncon1
+||money.ro/*banner$image
+money.ro##[class^="ad-desktop-"]
+money.ro##[class^="ad-mobile-"]
+60m.ro##[href^="https://www.money.ro/"]
+descopera.ro##[data-placeholder]:has([id^="gpt-ad"])
+descopera.ro###tvdpl
+monitorulneamt.ro##[style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 30px 0;"]
 ! Title: Romanian specific uBO filters
 ! Expires: 3 days
 ! Issue tracker: https://github.com/tcptomato/ROad-Block/issues
@@ -1733,3 +1740,6 @@ eporno.ro,filme-porno.ro#%#//scriptlet('ubo-aeld', 'load', 'ADS')
 catalog-az.ro#$#.main-content-section { min-height: 400px !important }
 ! https://github.com/tcptomato/ROad-Block/issues/651
 hotnews.ro#%#//scriptlet('ubo-rmnt', 'script', '/skin|insertAdjacentHTML|netflix/')
+! https://github.com/tcptomato/ROad-Block/issues/656
+tvonline.to##.ad-container
+tvonline.to#$?#.preload-ad-overlay { remove: true; }

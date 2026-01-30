@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: B3FMrt126LeokUdV0+dwvg
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1769689201-3600.patch
+! Checksum: fbgjKQewPyN7cREsqRhvsw
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1769771860-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.99.32
-! TimeUpdated: 2026-01-29T12:16:24+00:00
+! Version: 2.0.99.39
+! TimeUpdated: 2026-01-30T11:13:58+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -211,6 +211,8 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||1mythtracker.xyz^
+||analytic.is^$3p
 ||hsadspixel.net^
 ||log.grm.gsretail.com^
 ||trackhorizon.nnmtools.com^
@@ -114760,6 +114762,7 @@ zjjz6lpv44aguszo.cloud.s11.sfmc-osl.com$image
 /^https:\/\/cs\d{3}\.\w+\.com\/cscript\/\d{3}\/[\w\d]+\.js$/$script,3p,match-case
 !+ NOT_OPTIMIZED
 /.well-known/private-click-measurement
+/crm/tag/call.tracker.js
 /statistics/md.gif?
 /sp-2.0.0-dm-0.1.min.js
 /i?e=pv&page=
@@ -115445,6 +115448,9 @@ _tracking.php?b=
 /prod/dfm/t8y9347t.min.js$redirect=noop.txt,important,domain=dailycamera.com,image,media,subdocument,stylesheet,script,xhr,other
 ||google-analytics.com^$object,redirect=noop.js,script
 ||googletagmanager.com/gtag/$3p,object,redirect=noop.js,script
+||ifsagram*.com/vt_beacon.php
+||s.yimg.jp/images/approach/jslib/clear.gif?
+||xmind.app/_api/plsbl/gtag
 ||account.y8.com/api/v*/json/tracking/
 ||avito.st/s/pixel/script.js
 ||avito.st/mstatic/build/legacy/*/fingerprint.*.js
@@ -116085,7 +116091,6 @@ livemint.com##+js(set-constant, dapTracker.track, noopFunc)
 /^https:\/\/(www|checkout|giris)\.hepsiburada\.com\/([a-zA-Z0-9\-_]+\/){3,7}([a-zA-Z0-9\-_]+|[a-zA-Z0-9\-_]+\/[a-zA-Z0-9\-_]+)$/$script,~3p,domain=hepsiburada.com
 ||walmart.com/sp/b/s/im|
 ||services.msgsndr.com/attribution_service/
-||moderate.cleantalk.org/*/frontend_data
 ||herokuapp.com/save_utm_params
 ||calendly.com/api/booking/analytics/track
 ||tag.flvcdn.net/lytag.js
@@ -118527,7 +118532,6 @@ today.ua##.li-bi-container
 ||baqend.com/v1/rum/$3p
 ||fns.modanisa.com/*/analytics.js
 ||crm.a1.by/bitrix/js/crm/tracking/
-||crm.a1.by/upload/crm/tag/call.tracker.js
 ||d3fdp2ho8z9fyl.cloudfront.net/tracker.min.js
 culture.ru###page-error-modal
 ||primer.typekit.net^$xhr
