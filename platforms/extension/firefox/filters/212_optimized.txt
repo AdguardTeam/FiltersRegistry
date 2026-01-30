@@ -1,9 +1,9 @@
-! Checksum: jjWbO3HjekN14YGXY6AQ1g
-! Diff-Path: ../patches/212_optimized/212_optimized-s-1769518176-14400.patch
+! Checksum: M3orjUequNwVifqMefni9g
+! Diff-Path: ../patches/212_optimized/212_optimized-s-1769770099-14400.patch
 ! Title: RU AdList: Counters (Optimized)
 ! Description: RU AdList supplement for trackers blocking.
-! Version: 2.1.83.73
-! TimeUpdated: 2026-01-27T12:46:32+00:00
+! Version: 2.1.83.74
+! TimeUpdated: 2026-01-30T10:45:04+00:00
 ! Expires: 10 days (update frequency)
 @@/m/counter$~third-party,xmlhttprequest,domain=dtf.ru|vc.ru
 @@||alcogolizm.com/addons/counter/$script,stylesheet,domain=alcogolizm.com
@@ -843,7 +843,6 @@ _pagespeed_beacon?
 ||spylog.com^$third-party
 ||spylog.ru^$third-party
 ||spywap.net/ct/
-||ssp.rutube.ru^
 ||st.hbrd.io^$third-party
 ||st.onlygip.tech^$third-party
 ||st.yagla.ru^$third-party
@@ -1231,7 +1230,8 @@ yandex.*#$?#.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-c
 4pda.*#$?#html[style] > body a.rounded[href][target="_blank"]:contains(/^Узнать /) { display: none !important }
 ||aniqit.com/*geoblock=$subdocument,removeparam=geoblock
 ||api.namy.ws/embed/*geo_block=$subdocument,removeparam=geo_block
-||api.namy.ws/embed/*geoBlock=$subdocument,removeparam=/geoblock/i
+||api.namy.ws/embed/*geoBlock=$subdocument,removeparam=geoBlock
+||api.variyt.ws/embed/*geoBlock=$subdocument,removeparam=geoBlock
 ||assistant.allarknow.online/*block=$subdocument,removeparam=block
 ||assistant.stloadi.live/*block=$subdocument,removeparam=block
 ||kodik.cc/*geoblock=$subdocument,removeparam=geoblock
@@ -1241,6 +1241,7 @@ yandex.*#$?#.touch-feed > div > .feed-item[id^="zen-row-"]:has([class^="zen-ui-c
 $document,removeparam=__rr,domain=ozon.ru
 $document,removeparam=ai,domain=ggsel.net
 $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
+$document,removeparam=digest,domain=drive2.com|drive2.ru
 $document,removeparam=erid,domain=~cnews.ru|~forbes.ru|~lifehacker.ru
 $document,removeparam=es,domain=rambler.ru
 $document,removeparam=from-source,domain=3dnews.ru
@@ -1254,7 +1255,9 @@ $document,removeparam=redirect_ts,domain=ya.ru|yandex.*
 $document,removeparam=ref_domain,domain=vkvideo.ru
 $document,removeparam=srsltid
 $document,removeparam=topblock,domain=3dnews.ru
+$document,removeparam=tz,domain=drive2.com|drive2.ru
 $document,removeparam=via,domain=dzen.ru|yandex.*
+$document,removeparam=ymclid,domain=~ozon.onelink.me
 $document,subdocument,removeparam=trackcode,domain=vk.com
 $removeparam=?utm_source
 $removeparam=_1ld,domain=vkplay.ru
@@ -1393,8 +1396,6 @@ utm_source=*partner=$document,removeparam=partner
 ||ykt.ru^$document,removeparam=/news_interesting|news_plus|news_popular|news_recent|promo_inner/,domain=ykt.ru
 ||youtube.com/embed/$subdocument,removeparam=iv_load_policy
 ||youtube.com/embed/$subdocument,removeparam=rel
-||aliexpress.$removeparam=/gatewayadapt/i
-||aliexpress.$removeparam=/sellerid/i
 ||aliexpress.$removeparam=af
 ||aliexpress.$removeparam=af_dp
 ||aliexpress.$removeparam=aff_fcid
@@ -1403,10 +1404,12 @@ utm_source=*partner=$document,removeparam=partner
 ||aliexpress.$removeparam=aff_trace_key
 ||aliexpress.$removeparam=afsmartredirect
 ||aliexpress.$removeparam=algo_pvid
+||aliexpress.$removeparam=gatewayAdapt
 ||aliexpress.$removeparam=mixer_rcmd_bucket_id
 ||aliexpress.$removeparam=pdp_trigger_item_id
 ||aliexpress.$removeparam=ru_algo_pv_id
 ||aliexpress.$removeparam=scenario
+||aliexpress.$removeparam=sellerId
 ||aliexpress.$removeparam=shpmethod
 ||aliexpress.$removeparam=sk
 ||aliexpress.$removeparam=spm
@@ -1508,6 +1511,11 @@ $document,removeparam=usln,domain=r.mail.ru
 $document,removeparam=usqid,domain=r.mail.ru
 $document,removeparam=usstr,domain=r.mail.ru
 $document,removeparam=ustq,domain=r.mail.ru
+$removeparam=r_audience,domain=ria.com
+$removeparam=r_campaign,domain=ria.com
+$removeparam=r_medium,domain=ria.com
+$removeparam=r_source,domain=ria.com
+$removeparam=withoutHeader,domain=ria.com
 $document,removeparam=cba,domain=svpressa.ru
 $document,removeparam=cban,domain=svpressa.ru
 $document,removeparam=fotd,domain=svpressa.ru
