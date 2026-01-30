@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.43.56",
-			"timeUpdated": "2026-01-30T13:27:43+0000",
+			"version": "2.4.43.57",
+			"timeUpdated": "2026-01-30T15:14:09+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -451,8 +451,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/6.txt",
 			"trustLevel": "full",
-			"version": "2.0.50.93",
-			"timeUpdated": "2026-01-28T18:12:58+0000",
+			"version": "2.0.50.94",
+			"timeUpdated": "2026-01-30T15:14:20+0000",
 			"deprecated": false,
 			"languages": [
 				"de"
@@ -609,64 +609,6 @@
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/13.txt"
 		},
 		{
-			"filterId": 14,
-			"name": "AdGuard Annoyances filter",
-			"description": "Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"deprecated": true,
-			"expires": 864000,
-			"displayNumber": 1,
-			"groupId": 4,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/14.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "full",
-			"version": "2.2.57.35",
-			"timeUpdated": "2026-01-30T13:28:21+0000",
-			"languages": [],
-			"tags": [
-				5,
-				11
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/14.txt"
-		},
-		{
-			"filterId": 15,
-			"name": "AdGuard DNS filter",
-			"description": "Filter composed of several other filters (AdGuard Base filter, Social Media filter, Tracking Protection filter, Mobile Ads filter, EasyList and EasyPrivacy) and simplified specifically to be better compatible with DNS-level ad blocking.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://adguard.com/kb/general/ad-filtering/adguard-filters/",
-			"deprecated": true,
-			"expires": 864000,
-			"displayNumber": 3,
-			"groupId": 6,
-			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/15.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "full",
-			"version": "2.1.9.87",
-			"timeUpdated": "2026-01-30T12:16:28+0000",
-			"languages": [],
-			"tags": [
-				45,
-				1,
-				2,
-				9,
-				11,
-				25,
-				26,
-				13,
-				58,
-				59,
-				60,
-				61
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/15.txt"
-		},
-		{
 			"filterId": 16,
 			"name": "AdGuard French filter",
 			"description": "Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.",
@@ -677,8 +619,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.55.76",
-			"timeUpdated": "2026-01-30T11:14:30+0000",
+			"version": "2.0.55.77",
+			"timeUpdated": "2026-01-30T15:14:35+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -853,54 +795,6 @@
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/23.txt"
 		},
 		{
-			"filterId": 101,
-			"name": "EasyList",
-			"description": "EasyList is the primary subscription that removes adverts from web pages in English. Already included in AdGuard Base filter.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylist/",
-			"expires": 864000,
-			"displayNumber": 3,
-			"groupId": 1,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylist.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.61.52",
-			"timeUpdated": "2026-01-30T12:46:25+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/101.txt"
-		},
-		{
-			"filterId": 102,
-			"name": "ABPindo",
-			"description": "Additional filter list for websites in Indonesian.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/ABPindo/indonesianadblockrules",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/subscriptions/abpindo.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.0.9.28",
-			"timeUpdated": "2026-01-30T12:46:26+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				29
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/102.txt"
-		},
-		{
 			"filterId": 103,
 			"name": "Bulgarian list",
 			"description": "Additional filter list for websites in Bulgarian.",
@@ -924,31 +818,6 @@
 				30
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/103.txt"
-		},
-		{
-			"filterId": 104,
-			"name": "EasyList China",
-			"description": "Additional filter list for websites in Chinese. Already included in AdGuard Chinese filter.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylistchina",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/easylist/easylistchina/master/easylistchina.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.1.59.80",
-			"timeUpdated": "2026-01-30T12:46:28+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				31
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/104.txt"
 		},
 		{
 			"filterId": 105,
@@ -976,56 +845,6 @@
 				33
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/105.txt"
-		},
-		{
-			"filterId": 106,
-			"name": "EasyList Dutch",
-			"description": "Additional filter list for websites in Dutch. Already included in AdGuard Dutch filter.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylistdutch/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistdutch.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.84.48",
-			"timeUpdated": "2026-01-30T12:46:29+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				15
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/106.txt"
-		},
-		{
-			"filterId": 107,
-			"name": "EasyList Germany",
-			"description": "Additional filter list for websites in German. Already included in AdGuard German filter.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylistgermany/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://easylist.to/easylistgermany/easylistgermany.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.16.70",
-			"timeUpdated": "2026-01-30T10:44:37+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				12
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/107.txt"
 		},
 		{
 			"filterId": 108,
@@ -1153,104 +972,6 @@
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/112.txt"
 		},
 		{
-			"filterId": 113,
-			"name": "Liste FR",
-			"description": "Additional filter list for websites in French. Already included in AdGuard French filter.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/listefr",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/liste_fr.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.84.48",
-			"timeUpdated": "2026-01-30T12:46:32+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				27
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/113.txt"
-		},
-		{
-			"filterId": 114,
-			"name": "ROList",
-			"description": "Additional filter list for websites in Romanian.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://www.zoso.ro/rolist",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://www.zoso.ro/pages/rolist.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.1.54",
-			"timeUpdated": "2026-01-11T08:40:17+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				39
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/114.txt"
-		},
-		{
-			"filterId": 118,
-			"name": "EasyPrivacy",
-			"description": "Privacy protection supplement for EasyList.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylist/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 2,
-			"subscriptionUrl": "https://easylist.to/easylist/easyprivacy.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.58.18",
-			"timeUpdated": "2026-01-30T12:46:35+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				2
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/118.txt"
-		},
-		{
-			"filterId": 119,
-			"name": "Icelandic ABP List",
-			"description": "Additional filter list for websites in Icelandic.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://adblock.gardar.net/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://adblock.gardar.net/is.abp.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.0.0.13",
-			"timeUpdated": "2022-11-21T17:00:48+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				42
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/119.txt"
-		},
-		{
 			"filterId": 120,
 			"name": "AdBlockID",
 			"description": "Additional filter list for websites in Indonesian.",
@@ -1273,128 +994,6 @@
 				29
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/120.txt"
-		},
-		{
-			"filterId": 121,
-			"name": "Greek AdBlock Filter",
-			"description": "Additional filter list for websites in Greek.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/kargig/greek-adblockplus-filter",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://www.void.gr/kargig/void-gr-filters.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.1.21",
-			"timeUpdated": "2025-11-28T16:39:10+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				44
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/121.txt"
-		},
-		{
-			"filterId": 122,
-			"name": "Fanboy's Annoyances",
-			"description": "Removes in-page pop-ups and other annoyances. Includes Fanboy's Social Blocking & EasyList Cookie Lists.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylist/",
-			"expires": 864000,
-			"displayNumber": 100,
-			"groupId": 4,
-			"subscriptionUrl": "https://secure.fanboy.co.nz/fanboy-annoyance_ubo.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.1.60.71",
-			"timeUpdated": "2026-01-30T12:46:43+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				5,
-				9
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/122.txt"
-		},
-		{
-			"filterId": 123,
-			"name": "Fanboy's Social Blocking List",
-			"description": "Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylist/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 3,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/fanboy-social.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.55.52",
-			"timeUpdated": "2026-01-30T12:46:44+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				3,
-				9
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/123.txt"
-		},
-		{
-			"filterId": 124,
-			"name": "EasyList Portuguese",
-			"description": "Additional filter list for websites in Spanish and Portuguese.",
-			"timeAdded": "2023-05-10T09:44:58+0000",
-			"homepage": "https://github.com/easylist/easylistportuguese",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistportuguese.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.56.23",
-			"timeUpdated": "2026-01-30T12:46:44+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				17,
-				18
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/124.txt"
-		},
-		{
-			"filterId": 201,
-			"name": "Web Annoyances Ultralist",
-			"description": "Blocks annoying web elements and reclaims lost screen real estate.",
-			"timeAdded": "2019-06-11T10:27:09+0000",
-			"homepage": "https://github.com/LanikSJ/webannoyances/",
-			"expires": 864000,
-			"displayNumber": 100,
-			"groupId": 4,
-			"subscriptionUrl": "https://raw.githubusercontent.com/LanikSJ/webannoyances/master/ultralist.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.0.0.2",
-			"timeUpdated": "2026-01-30T10:44:55+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				5
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/201.txt"
 		},
 		{
 			"filterId": 202,
@@ -1446,76 +1045,6 @@
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/203.txt"
 		},
 		{
-			"filterId": 204,
-			"name": "Peter Lowe's Blocklist",
-			"description": "Filter that blocks ads, trackers, and other nasty things.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://pgl.yoyo.org/adservers/",
-			"expires": 864000,
-			"displayNumber": 4,
-			"groupId": 2,
-			"subscriptionUrl": "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=adblockplus&mimetype=plaintext",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.18.84",
-			"timeUpdated": "2026-01-30T10:45:01+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				2
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/204.txt"
-		},
-		{
-			"filterId": 206,
-			"name": "Xfiles",
-			"description": "Italian adblock filter list.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://xfiles.noads.it/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/gioxx/xfiles/master/filtri.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.2.32",
-			"timeUpdated": "2026-01-19T00:48:52+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				35
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/206.txt"
-		},
-		{
-			"filterId": 207,
-			"name": "Adblock Warning Removal List",
-			"description": "Removes anti-adblock warnings and other obtrusive messages.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/antiadblockfilters/",
-			"expires": 864000,
-			"displayNumber": 3,
-			"groupId": 4,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.84.49",
-			"timeUpdated": "2026-01-30T12:46:50+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				50
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/207.txt"
-		},
-		{
 			"filterId": 208,
 			"name": "Online Malicious URL Blocklist",
 			"description": "Blocks domains that are known to be used to propagate malware and spyware.",
@@ -1535,30 +1064,6 @@
 				4
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/208.txt"
-		},
-		{
-			"filterId": 212,
-			"name": "RU AdList: Counters",
-			"description": "RU AdList supplement for trackers blocking.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://forums.lanik.us/viewforum.php?f=102",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/cntblock.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.83.75",
-			"timeUpdated": "2026-01-30T12:46:52+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				2,
-				8
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/212.txt"
 		},
 		{
 			"filterId": 214,
@@ -1654,54 +1159,6 @@
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/218.txt"
 		},
 		{
-			"filterId": 220,
-			"name": "CJX's Annoyances List",
-			"description": "Supplement for EasyList China+EasyList and EasyPrivacy.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/cjx82630/cjxlist/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.5.71",
-			"timeUpdated": "2025-11-28T16:39:25+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				5,
-				31
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/220.txt"
-		},
-		{
-			"filterId": 221,
-			"name": "Polish Social Filters",
-			"description": "Polish filter list for social widgets, popups, etc.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/MajkiIT/polish-ads-filter#polish-filters-for-adblock-ublock-origin--adguard",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/adblock_social_filters/adblock_social_list.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.0.5.13",
-			"timeUpdated": "2026-01-26T08:44:49+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				3,
-				41
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/221.txt"
-		},
-		{
 			"filterId": 224,
 			"name": "AdGuard Chinese filter",
 			"description": "EasyList China + AdGuard Chinese filter. Filter list that specifically removes ads on websites in Chinese language.",
@@ -1712,8 +1169,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.53.17",
-			"timeUpdated": "2026-01-30T13:28:37+0000",
+			"version": "2.1.53.18",
+			"timeUpdated": "2026-01-30T15:14:42+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
@@ -1725,30 +1182,6 @@
 				31
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/224.txt"
-		},
-		{
-			"filterId": 225,
-			"name": "Fanboy's Anti-Facebook List",
-			"description": "Warning, it will break Facebook-based comments on some websites and may also break some Facebook apps or games.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://www.fanboy.co.nz",
-			"expires": 864000,
-			"displayNumber": 4,
-			"groupId": 2,
-			"subscriptionUrl": "https://www.fanboy.co.nz/fanboy-antifacebook.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.22.80",
-			"timeUpdated": "2025-12-19T12:45:48+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				2,
-				45
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/225.txt"
 		},
 		{
 			"filterId": 227,
@@ -1776,80 +1209,6 @@
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/227.txt"
 		},
 		{
-			"filterId": 228,
-			"name": "xinggsf",
-			"description": "Blocks ads on the Chinese video platforms (MangoTV, DouYu and others).",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/xinggsf/Adblock-Plus-Rule/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.0.3.30",
-			"timeUpdated": "2025-12-24T16:40:11+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				45,
-				1,
-				31
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/228.txt"
-		},
-		{
-			"filterId": 231,
-			"name": "EasyList Spanish",
-			"description": "Additional filter list for websites in Spanish.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylistspanish",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistspanish.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.84.50",
-			"timeUpdated": "2026-01-30T12:47:02+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				17
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/231.txt"
-		},
-		{
-			"filterId": 232,
-			"name": "KAD - Anti-Scam",
-			"description": "Filter that protects against various types of scams in the Polish network, such as mass text messaging, fake online stores, etc.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/FiltersHeroes/KAD",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/FiltersHeroes/KAD/master/KAD.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.80.11",
-			"timeUpdated": "2026-01-30T12:47:03+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				4,
-				41
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/232.txt"
-		},
-		{
 			"filterId": 233,
 			"name": "Adblock List for Finland",
 			"description": "Finnish ad blocking filter list.",
@@ -1872,32 +1231,6 @@
 				40
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/233.txt"
-		},
-		{
-			"filterId": 234,
-			"name": "ROLIST2",
-			"description": "This is a complementary list for ROList with annoyances that are not necessarily banners. It is a very aggressive list and not recommended for beginners.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://zoso.ro/rolist/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://www.zoso.ro/pages/rolist2.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.0.77",
-			"timeUpdated": "2025-11-28T16:39:32+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				45,
-				5,
-				39,
-				57
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/234.txt"
 		},
 		{
 			"filterId": 235,
@@ -1928,54 +1261,6 @@
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/235.txt"
 		},
 		{
-			"filterId": 236,
-			"name": "road-block light",
-			"description": "Romanian ad blocking filter subscription.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/tcptomato/ROad-Block",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/tcptomato/ROad-Block/master/road-block-filters-light.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.0.3.61",
-			"timeUpdated": "2026-01-30T10:45:16+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				39
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/236.txt"
-		},
-		{
-			"filterId": 237,
-			"name": "Polish Annoyances Filters",
-			"description": "Filter list that hides and blocks pop-ups, widgets, newsletters, push notifications, arrows, tagged internal links that are off-topic, and other irritating elements. Polish GDPR-Cookies Filters is already in it.",
-			"timeAdded": "2018-02-14T19:15:35+0000",
-			"homepage": "https://polishannoyancefilters.netlify.app",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/PolishFiltersTeam/PolishAnnoyanceFilters/master/PPB.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "1.0.37.70",
-			"timeUpdated": "2026-01-30T10:45:18+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				41,
-				5
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/237.txt"
-		},
-		{
 			"filterId": 238,
 			"name": "Polish Anti Adblock Filters",
 			"description": "Official Polish filters against Adblock alerts.",
@@ -1998,53 +1283,6 @@
 				41
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/238.txt"
-		},
-		{
-			"filterId": 239,
-			"name": "Fanboy's Anti-thirdparty Fonts",
-			"description": "A filter that blocks third-party fonts. It may break the look and design of some websites.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://www.fanboy.co.nz/",
-			"expires": 864000,
-			"displayNumber": 5,
-			"groupId": 6,
-			"subscriptionUrl": "https://fanboy.co.nz/fanboy-antifonts.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.19.28",
-			"timeUpdated": "2025-12-19T12:45:57+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				2,
-				45
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/239.txt"
-		},
-		{
-			"filterId": 241,
-			"name": "EasyList Cookie List",
-			"description": "Removes cookie and privacy warnings. Already included in Fanboy's Annoyances list.",
-			"timeAdded": "2014-06-30T07:56:55+0000",
-			"homepage": "https://github.com/easylist/easylist/",
-			"expires": 864000,
-			"displayNumber": 100,
-			"groupId": 4,
-			"subscriptionUrl": "https://www.fanboy.co.nz/fanboy-cookiemonster.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.1.66.8",
-			"timeUpdated": "2026-01-30T10:45:23+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				6
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/241.txt"
 		},
 		{
 			"filterId": 243,
@@ -2072,80 +1310,6 @@
 				55
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/243.txt"
-		},
-		{
-			"filterId": 244,
-			"name": "YousList",
-			"description": "Filter that blocks ads on Korean sites.",
-			"timeAdded": "2018-02-15T18:41:31+0000",
-			"homepage": "https://github.com/yous/YousList/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/yous/YousList/master/youslist.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.0.11.15",
-			"timeUpdated": "2026-01-30T10:45:26+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				56
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/244.txt"
-		},
-		{
-			"filterId": 246,
-			"name": "EasyList Polish",
-			"description": "Additional filter list for websites in Polish.",
-			"timeAdded": "2018-03-26T08:35:42+0000",
-			"homepage": "https://github.com/easylistpolish/easylistpolish/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistpolish.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.1.80.56",
-			"timeUpdated": "2026-01-30T12:47:12+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				1,
-				9,
-				41
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/246.txt"
-		},
-		{
-			"filterId": 247,
-			"name": "Polish Anti-Annoying Special Supplement",
-			"description": "Filters that block and hide RSS elements and remnants of hidden newsletters combined with social elements on Polish websites.",
-			"timeAdded": "2018-03-30T12:15:13+0000",
-			"homepage": "https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement/",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 7,
-			"subscriptionUrl": "https://raw.githubusercontent.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement/master/polish_rss_filters.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "high",
-			"version": "2.0.4.49",
-			"timeUpdated": "2026-01-25T00:51:18+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				41,
-				5,
-				62
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/247.txt"
 		},
 		{
 			"filterId": 249,
@@ -2177,58 +1341,6 @@
 				63
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/249.txt"
-		},
-		{
-			"filterId": 250,
-			"name": "Dandelion Sprout's Annoyances List",
-			"description": "This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.",
-			"timeAdded": "2021-03-08T20:08:48+0000",
-			"homepage": "https://github.com/DandelionSprout/adfilt",
-			"expires": 864000,
-			"displayNumber": 100,
-			"groupId": 4,
-			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/AnnoyancesList",
-			"platformsExcluded": [
-				"ext_chromium_mv3",
-				"ios",
-				"android"
-			],
-			"trustLevel": "high",
-			"version": "2.0.18.77",
-			"timeUpdated": "2026-01-30T12:47:16+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				5,
-				11
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/250.txt"
-		},
-		{
-			"filterId": 251,
-			"name": "Legitimate URL Shortener",
-			"description": "Automatically removes unnecessary '$' and '&' values from URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Already included in Dandelion Sprout's Annoyances List.",
-			"timeAdded": "2021-07-12T10:46:44+0000",
-			"homepage": "https://github.com/DandelionSprout/adfilt",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 2,
-			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt",
-			"platformsExcluded": [
-				"ext_chromium_mv3",
-				"ios",
-				"ext_safari",
-				"ext_android_cb"
-			],
-			"trustLevel": "low",
-			"version": "2.0.9.36",
-			"timeUpdated": "2026-01-30T12:47:17+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				2
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/251.txt"
 		},
 		{
 			"filterId": 252,
@@ -2363,33 +1475,6 @@
 				4
 			],
 			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/257.txt"
-		},
-		{
-			"filterId": 258,
-			"name": "uBlock Origin – Block Outsider Intrusion into LAN",
-			"description": "Prevents public Internet sites from digging into your LAN files.",
-			"timeAdded": "2025-04-23T11:43:28+0000",
-			"homepage": "https://github.com/uBlockOrigin/uAssets",
-			"expires": 864000,
-			"displayNumber": 2,
-			"groupId": 2,
-			"subscriptionUrl": "https://ublockorigin.github.io/uAssetsCDN/filters/lan-block.txt",
-			"platformsExcluded": [
-				"windows",
-				"android",
-				"mac",
-				"cli",
-				"ext_chromium_mv3"
-			],
-			"trustLevel": "low",
-			"version": "2.0.0.25",
-			"timeUpdated": "2025-11-28T16:39:51+0000",
-			"deprecated": false,
-			"languages": [],
-			"tags": [
-				2
-			],
-			"downloadUrl": "https://filters.adtidy.org/extension/opera-mv3/filters/258.txt"
 		},
 		{
 			"filterId": 259,
