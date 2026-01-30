@@ -1,9 +1,9 @@
-! Checksum: 0KmlOwLXranU2nySIGKtPQ
-! Diff-Path: ../patches/14/14-s-1769771854-3600.patch
+! Checksum: r3Qx/ZWJykJdQdtyEslkzA
+! Diff-Path: ../patches/14/14-s-1769775562-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.57.33
-! TimeUpdated: 2026-01-30T11:14:27+00:00
+! Version: 2.2.57.34
+! TimeUpdated: 2026-01-30T12:16:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18221,6 +18221,9 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223735
+watt.ua#$#.is-active { display: none !important; }
+watt.ua#$#body { overflow: auto !important; }
 ! https://github.com/uBlockOrigin/uAssets/issues/31670
 @@||sdk.privacy-center.org/*/loader.js$domain=theweathernetwork.com
 @@||sdk.privacy-center.org/sdk/$domain=theweathernetwork.com
@@ -35460,6 +35463,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+theckb.com##.bottom-form-box
 ifsagram6.com###telebar
 ifsagram6.com###video-start-overlay > a.start-overlay-button
 tupi.fm###siga-google-discovery
@@ -48575,10 +48579,14 @@ ecartelera.com.mx##.player-section .unmute-button
 ecartelera.com.mx#%#//scriptlet('trusted-replace-node-text', 'script', 'initializeFloatingBehavior', 'initializeFloatingBehavior(player', '//initializeFloatingBehavior(player')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209711
 usatoday.com##article aside.gnt_ar_b_sp:has(> a[href="https://puzzles.usatoday.com/"]:only-child)
+! https://github.com/AdguardTeam/AdguardFilters/issues/223736
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223621
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218440
 ! https://github.com/AdguardTeam/AdguardFilters/issues/212886
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209926
+bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion###messageBlock
+bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion##z-promotion
+bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion##z-recommended-search
 ||1lib.*/components/z-promotion.js
 ||1lib.*/components/z-recommended-search.js
 ||z-lib.*/components/z-promotion.js
@@ -57678,6 +57686,8 @@ newsweek.com##iframe[src="http://sns.europe.newsweek.com/newsletter?popup=1"]
 !##############################
 ! SECTION: Tweaks - JS
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223728
+rxbabu.com#%#//scriptlet('adjust-setInterval', 'clearInterval(countdownTimer)')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223670
 meverge.com,shopizo.fun,thebiharstudy.in,gkvpyqs.com,crimejasoos.in,famemingles.com#%#//scriptlet('adjust-setInterval', '/count|wpsafe/i', '*', '0.001')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223667
