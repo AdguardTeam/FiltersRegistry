@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.84.51",
-			"timeUpdated": "2026-01-30T16:45:26+0000",
+			"version": "2.1.84.52",
+			"timeUpdated": "2026-01-30T20:42:52+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.84.50",
-			"timeUpdated": "2026-01-30T16:45:27+0000",
+			"version": "2.1.84.51",
+			"timeUpdated": "2026-01-30T20:42:54+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.27.85",
-			"timeUpdated": "2026-01-30T16:45:32+0000",
+			"version": "2.0.27.86",
+			"timeUpdated": "2026-01-30T20:43:01+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1322,8 +1322,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
 			"trustLevel": "high",
-			"version": "2.0.8.40",
-			"timeUpdated": "2026-01-18T04:45:37+0000",
+			"version": "2.0.8.41",
+			"timeUpdated": "2026-01-30T20:43:39+0000",
 			"deprecated": false,
 			"languages": [
 				"no",
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.77.82",
-			"timeUpdated": "2026-01-30T16:46:14+0000",
+			"version": "2.0.77.83",
+			"timeUpdated": "2026-01-30T20:43:44+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1487,8 +1487,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.9",
-			"timeUpdated": "2026-01-16T04:45:45+0000",
+			"version": "2.0.0.10",
+			"timeUpdated": "2026-01-30T20:43:49+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
