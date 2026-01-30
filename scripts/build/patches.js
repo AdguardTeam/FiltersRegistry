@@ -57,8 +57,11 @@ const main = async () => {
             const fileHasTxtExtension = file.endsWith('.txt');
 
             const isChromiumMv3 = file.includes('/chromium-mv3/') || file.includes('\\chromium-mv3\\');
-            if (isChromiumMv3) {
-                console.log('Skipped generating patch for chromium-mv3');
+            const isOperaMv3 = file.includes('/opera-mv3/') || file.includes('\\opera-mv3\\');
+            const isMv3 = isChromiumMv3 || isOperaMv3;
+
+            if (isMv3) {
+                console.log('Skipped generating patch for MV3 extension');
                 return false;
             }
 
