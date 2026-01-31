@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: sBm2PXOohUjpkXbSCMyJeQ
-! Diff-Path: ../patches/17/17-s-1769678512-3600.patch
+! Checksum: CyRchRfEhS0+Cb/dKO6YjA
+! Diff-Path: ../patches/17/17-s-1769857858-3600.patch
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.91
-! TimeUpdated: 2026-01-29T09:19:05+00:00
+! Version: 2.0.12.92
+! TimeUpdated: 2026-01-31T11:08:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -23,6 +23,8 @@
 !
 ! NOTE: Generic rules
 !
+! Bance
+$removeparam=bance_xuid
 ! Oracle Eloqua
 $removeparam=elqTrackId
 $removeparam=elq
@@ -482,6 +484,17 @@ $denyallow=tradedoubler.com,removeparam=tduid
 ! Bad: ||example.org^$xmlhttprequest,redirect=noopvast-3.0 (for instance, should be in specific.txt)
 !
 !
+! https://x.com/Kdroidwin1/status/2017425829844963380 cv-measurement ads
+||cv-measurement.com^$removeparam=adcopy
+||cv-measurement.com^$removeparam=adbnr
+||cv-measurement.com^$removeparam=creative
+||ad.games.dmm.co.jp^$removeparam=clid
+||rcv.ixd.dmm.com^$removeparam=ad
+||rcv.ixd.dmm.com^$removeparam=advertiser
+||rcv.ixd.dmm.com^$removeparam=clid
+||ratel-ad.com^$removeparam=advertiser
+||123chat.jp/promotion/$removeparam=cid
+||123chat.jp/promotion/$removeparam=p
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222986
 ||tw.news.yahoo.com^$removeparam=link_source
 ||tw.news.yahoo.com^$removeparam=taid
