@@ -1,9 +1,9 @@
-! Checksum: CovtM5T96rUICHI1cQ5q9A
-! Diff-Path: ../patches/13/13-s-1769969681-3600.patch
+! Checksum: d7SpR3+WM73utxhQ2EM/Vw
+! Diff-Path: ../patches/13/13-s-1769973291-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.61.83
-! TimeUpdated: 2026-02-01T18:11:25+00:00
+! Version: 2.0.61.84
+! TimeUpdated: 2026-02-01T19:11:54+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6047,10 +6047,10 @@ canlikolik.my,canlikolik1.my,canlikolik2.my,canlikolik3.my,canlikolik4.my,canlik
 [$path=/channel.html?id=]#%#//scriptlet('set-constant', 'window.config.adv.enabled', '0')
 ! justintv.shop
 ! CASE 1
-||blogger.googleusercontent.com/img/$domain=justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*
-||cdn.jsdelivr.net^$media,redirect=noopmp3-0.1s,domain=justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*
-justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
-justin-tv.pro,tvjustin.net,taraftarium24.is,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*###splash-banner
+||blogger.googleusercontent.com/img/$domain=justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.com|taraftarium-24.co
+||cdn.jsdelivr.net^$media,redirect=noopmp3-0.1s,domain=justintvsh.baby|dmlstechnology.com|justintvde.com|justin-tv.org|inattvgiris.pro|justintv.cc|justintv.*|taraftariumizle.org|taraftarium24.dev|taraftarium-24.co|taraftarium-24.com
+taraftariumizle.org,taraftarium24.dev,taraftarium-24.com,taraftarium-24.co,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*#%#//scriptlet('trusted-dispatch-event', 'ended', '#preroll-video')
+taraftariumizle.org,taraftarium24.dev,taraftarium-24.co,taraftarium-24.com,justin-tv.pro,tvjustin.net,taraftarium24.is,justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.cc,justintv.*###splash-banner
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##div[class^="footer-"]
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##header > a[href="/"] + ul
 justintvsh.baby,dmlstechnology.com,justintvde.com,justin-tv.org,inattvgiris.pro,justintv.*##.wpb_wrapper > center > a[target="_blank"]
@@ -6211,13 +6211,6 @@ cinque.668a396e58bcbc27.click#%#//scriptlet('set-constant', 'config.advertisemen
 [$domain=/webspor\d+\.xyz/]##.nomobil
 [$domain=/webspor\d+\.xyz/]##.list > div.item:has(> a[target="_blank"])
 [$domain=/webspor\d+\.xyz/]#$?#video > style { remove: true; }
-!
-! dizikral*.pro - frequently changed domains
-[$domain=/dizikral(?:\d+\.pro\|\.live\|\.club)/]#$#body > header { margin-top: 0 !important; }
-[$domain=/dizikral(?:\d+\.pro\|\.live\|\.club)/]#%#//scriptlet('trusted-replace-node-text', 'script', 'playAdd', '/(function playVideo\(\) \{[\s\S]*?\.remove\(\);[\s\S]*?\})/', '$1 playVideo();')
-[$domain=/dizikral(?:\d+\.pro\|\.live\|\.club)/]#%#//scriptlet('trusted-replace-node-text', 'script', 'manageAds', 'video_urls.length != activeItem', '!1')
-[$domain=/dizikral(?:\d+\.pro\|\.live\|\.club)/]#%#//scriptlet('set-constant', 'puShown', 'true')
-[$domain=/dizikral(?:\d+\.pro\|\.live\|\.club)/]#$#body > header { margin-top: 0 !important; }
 !
 ! kuponuna*.top - frequently changed domains
 ||kuponuna*.top/r/
