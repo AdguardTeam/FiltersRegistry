@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5wu+2YxMen/rsEzMJMGrDQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1769907900-14400.patch
+! Checksum: HJmnSeix2iZOU++7EqUoHw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1769922788-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.61
-! TimeUpdated: 2026-02-01T01:01:44+00:00
+! Version: 2.1.55.62
+! TimeUpdated: 2026-02-01T05:09:57+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -80,7 +80,6 @@
 /plugins/ultimate-social-media-plus/*$~stylesheet
 /prisna-social-counter.css
 /Resources/twitter-$~xhr
-/rrshare.js
 /share/footer/*
 /share42.js
 /share_button?
@@ -118,6 +117,7 @@
 /socialappsintegrator.
 /socialbar-sso.js
 /socialbar.js
+/socialbookmarks.js
 /socialcount.js
 /socialite.js
 /socialite.min.js
@@ -150,7 +150,6 @@ _social-bar/
 ###SocialMedia
 ###SocialShare
 ###Socialize
-###aI_sns
 ###action-share
 ###adbl-social-icons
 ###addThis
@@ -327,7 +326,6 @@ _social-bar/
 ###js-share-links
 ###large_share_wrapper
 ###left_social_share
-###likeThisPost
 ###linkedin_share
 ###mainShare
 ###masthead-follow
@@ -381,7 +379,6 @@ _social-bar/
 ###post-social
 ###post_info_share
 ###pp-social
-###reseaux-sociaux
 ###rsociaux
 ###sb_instagram
 ###selectionShare
@@ -567,6 +564,7 @@ _social-bar/
 ###social-share-bottom
 ###social-share-buttons
 ###social-share-root
+###social-share-selection
 ###social-share-top
 ###social-sharing
 ###social-sharing-bar
@@ -657,6 +655,7 @@ _social-bar/
 ###socialbox
 ###socialbuttons
 ###socialcount
+###socialdiv
 ###socialfooter
 ###socialicons
 ###socialleft
@@ -820,6 +819,7 @@ _social-bar/
 ##.addthis-smartlayers-desktop
 ##.addthis-wrapper
 ##.addthis:not(body)
+##.addthis_32x32_style
 ##.addthis_button
 ##.addthis_button_compact
 ##.addthis_button_digg
@@ -1090,6 +1090,7 @@ _social-bar/
 ##.canvas-share-buttons
 ##.card-share
 ##.card__share
+##.card__social
 ##.category-share
 ##.cb-social-sharing
 ##.ccm-block-social-links
@@ -1353,7 +1354,6 @@ _social-bar/
 ##.follow-linkedin
 ##.follow-pinterest
 ##.follow-share
-##.follow-site
 ##.follow-social
 ##.follow-social-media
 ##.follow-tw
@@ -1473,6 +1473,7 @@ _social-bar/
 ##.footer__social-menu
 ##.footer__social-wrapper
 ##.footer__socialIcon
+##.footer__socialNetwork
 ##.footer__socialmedia
 ##.footer__socials
 ##.footer_fb
@@ -1866,7 +1867,6 @@ _social-bar/
 ##.m-footer-social
 ##.m-header--social-nav
 ##.m-icon-facebook
-##.m-icon-fb
 ##.m-icon-tw
 ##.m-share
 ##.m-share-bar
@@ -1924,6 +1924,7 @@ _social-bar/
 ##.menu-social-navigation-container
 ##.menu_share
 ##.menu_social
+##.message-share
 ##.messageShareButtons
 ##.meta-share
 ##.meta-share-count
@@ -2168,6 +2169,7 @@ _social-bar/
 ##.reseaux-sociaux-list
 ##.resp-sharing-button
 ##.right-social
+##.rightShare
 ##.rmp-sharing
 ##.rn_SocialBookmarkLink
 ##.row-social
@@ -2424,6 +2426,7 @@ _social-bar/
 ##.share-tools--secondary
 ##.share-tools-buttons-top
 ##.share-tools-container
+##.share-tools-wrapper
 ##.share-topic
 ##.share-tw
 ##.share-twitter
@@ -2464,6 +2467,7 @@ _social-bar/
 ##.shareEmail
 ##.shareFacebook
 ##.shareForm
+##.shareFrame
 ##.shareHomeButtons
 ##.shareIcons
 ##.shareLeft
@@ -2579,6 +2583,7 @@ _social-bar/
 ##.share_widget
 ##.share_wrap
 ##.share_wrapper
+##.sharea
 ##.shareaholic-canvas
 ##.shareall
 ##.shareb
@@ -2620,7 +2625,6 @@ _social-bar/
 ##.sharer
 ##.sharer-0
 ##.sharer-facebook
-##.sharer-icon
 ##.sharer-twitter
 ##.sharers
 ##.shares__item
@@ -2738,7 +2742,6 @@ _social-bar/
 ##.site-social
 ##.site-social-icon
 ##.site-social-menu
-##.sitewide-footer--social-nav
 ##.sitewide-social-media
 ##.slideshow-share
 ##.sn-share
@@ -3624,6 +3627,7 @@ _social-bar/
 ||buttons.googlesyndication.com^$3p
 ||connect.ok.ru^$3p
 ||facebook.com/plugins/facepile.php?$3p
+||facebook.com/plugins/fan.php?$3p
 ||facebook.com/plugins/like.php?$3p
 ||facebook.com/plugins/like_box.php$3p
 ||facebook.com/plugins/page.php?$3p
@@ -3663,7 +3667,6 @@ _social-bar/
 ||platform.twitter.com/anywhere.js$3p
 ||platform.twitter.com/embed/$~stylesheet,~subdocument,3p
 ||platform.twitter.com/js/button.$3p
-||po.st/share/$script
 ||po.st/static/$3p
 ||reactandshare.com^$3p
 ||reddit.com/api/info.json?$3p
@@ -3785,7 +3788,6 @@ grammarly.com##._3fq8S-container
 pixivision.net##._floated-bottom-bar
 pixivision.net##._follow-us-card
 tableconvert.com##._share-wrapper
-goldderby.com##._socialMedia_hgv74_1
 france24.com##.a-share-button
 datacenterdynamics.com##.a2a_default_style
 tandfonline.com##.a2a_share_target
@@ -4063,6 +4065,7 @@ dailymail.co.uk,thisismoney.co.uk##.share-facebook-long
 dailymail.co.uk,thisismoney.co.uk##.share-fbmessenger
 dailymail.co.uk,thisismoney.co.uk##.share-flipboard
 digitimes.com##.share-frame
+mprnews.org##.share-hdg
 cgtn.com,citynews.ca##.share-icon
 mymodernmet.com##.share-it-side
 dailymail.co.uk,fundrazr.com,gizmodo.com,modernagejournal.com,nymag.com,thisismoney.co.uk,zapimoveis.com.br##.share-link
@@ -4303,9 +4306,11 @@ androidpolice.com,creditoagricola.pt,devex.com,electricfencing.co.uk,esradiocast
 cp24.com,epochtimes.com.br,epochtimes.it,lagaceta.com.ar,n-tv.de,progressive.org,toyokeizai.net##.tools
 archifacile.fr,atomic-robo.com,autobelle.it,bollywoodhungama.com,chnetwork.org,classicreload.com,donnahay.com.au,fotografidigitali.it,gamingonlinux.com,joburg.org.za,lavoro.gov.it,ledpros.ca,meteovista.be,navigaweb.net,nexto.pl,phoronix.com,rasom.it,sfr.fr,telesatellite.com,ucl.ac.uk,weeronline.nl,whtop.com,zookeys.pensoft.net###social
 applesfera.com,espinof.com,genbeta.com,vidaextra.com,vitonica.com,xatakahome.com,xatakamovil.com,xatakandroid.com##.masthead-nav-social
+directoalpaladar.com,poprosa.com,trendencias.com##.head-nav-social
 allears.net,canadaradiostations.com,canli-radyo-dinle.com,cgtnturk.com,crimeonline.com,dezeen.com,diarioprimeralinea.com.ar,eandt.theiet.org,elfinanciero.com.mx,elheraldo.hn,emisoras-puertorico.com,emisorascolombianas.co,fivebooks.com,fmradiofree.com,fmuna.com.ar,foxsports.com.mx,img2go.com,informer.com,internetradio-horen.de,internetradio-schweiz.ch,laprensa.hn,laviola.it,open.online,opencritic.com,politicalflare.com,proteste.org.br,radio-ao-vivo.com,radio-australia.org,radio-belgie.be,radio-danmark.dk,radio-dominicana.com,radio-ecuador.org,radio-en-ligne.fr,radio-en-vivo.mx,radio-espana.es,radio-hk.com,radio-hrvatska.com,radio-italiane.it,radio-korea.com,radio-maroc.org,radio-nederland.nl,radio-norge.org,radio-osterreich.at,radio-philippines.com,radio-polska.pl,radio-singapore.com,radio-south-africa.co.za,radio-stations.co.nz,radio-suomi.com,radio-sveriges.se,radio-thai.com,radio-ua.com,radio-uk.co.uk,radioindia.in,radioindonesia.org,radiojapan.org,radiomalaysia.org,radios-argentinas.org,radios-bolivia.com,radios-chilenas.com,radios-guatemala.com,radios-online.pt,radios-uruguay.com,radios-venezuela.com,radiotaiwan.tw,rai.it,redvoicemedia.com,religionnews.com,tarreo.com,thecollegefix.com,upcomingvinyl.com##.social-buttons
 n1info.ba,n1info.hr,n1info.rs,n1info.si,nova.rs##.uc-social-bar-wrapper
 bestcarweb.jp,biglobe.ne.jp,hankooktire.com,jiji.com,joins.com,op.gg,theinvestor.co.kr,videor.co.jp##.sns
+bowenislandundercurrent.com,coastreporter.net,cochraneeagle.ca,delta-optimist.com,griceconnect.com,lakelandtoday.ca,moosejawtoday.com,nsnews.com,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,squamishchief.com,stalbertgazette.com,timescolonist.com,vancouverisawesome.com,westernwheel.ca##.sc
 hindustantimes.com##.ln
 avtoradio.ru,franceantilles.fr,hindustantimes.com,rtl.fr##.tw
 advocate.com,avtoradio.ru,eurocash.pl,franceantilles.fr,hindustantimes.com,richersounds.com,rtl.fr##.fb
@@ -4347,6 +4352,8 @@ n-tv.de##.article__share-wrapper
 welt.de##.c-social-bar
 kurier.at##.coral-comment-shareButton
 nn.de,nordbayern.de##.icon__social
+vogel.de##.inf-footer__sm
+vogel.de##.inf-toolbar
 kicker.de##.kick__article__social
 ndr.de##.meta
 it-daily.net##.ns-buttons
@@ -4451,6 +4458,7 @@ mymovies.it##.vota-pul-consiglio
 virgilio.it##.vv-shr
 ilgiorno.it,ilrestodelcarlino.it,iltelegrafolivorno.it,lanazione.it,quotidiano.net##div[class^="SocialShare_"]
 ilpost.it##div[class^="_share_"]
+liberoquotidiano.it##img[id^="social-"]
 bizgate.nikkei.com##.c-single-sns
 univ-journal.jp##.snsSpace
 news.yahoo.co.jp##[class^="ArticleShare"]
