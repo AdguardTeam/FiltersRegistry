@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.44.0",
-			"timeUpdated": "2026-02-01T11:08:25+0000",
+			"version": "2.4.44.1",
+			"timeUpdated": "2026-02-01T12:13:26+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.14",
-			"timeUpdated": "2026-02-01T08:11:49+0000",
+			"version": "2.0.72.15",
+			"timeUpdated": "2026-02-01T12:13:38+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -570,8 +570,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/11.txt",
 			"trustLevel": "full",
-			"version": "2.0.67.46",
-			"timeUpdated": "2026-01-31T13:20:58+0000",
+			"version": "2.0.67.47",
+			"timeUpdated": "2026-02-01T12:13:42+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.57.41",
-			"timeUpdated": "2026-02-01T11:08:50+0000",
+			"version": "2.2.57.42",
+			"timeUpdated": "2026-02-01T12:13:49+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.10.10",
-			"timeUpdated": "2026-02-01T10:09:56+0000",
+			"version": "2.1.10.11",
+			"timeUpdated": "2026-02-01T12:13:49+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.79.93",
-			"timeUpdated": "2026-01-31T16:09:29+0000",
+			"version": "2.0.79.94",
+			"timeUpdated": "2026-02-01T12:13:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1734,8 +1734,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/windows/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.53.30",
-			"timeUpdated": "2026-02-01T11:08:59+0000",
+			"version": "2.1.53.31",
+			"timeUpdated": "2026-02-01T12:13:59+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"

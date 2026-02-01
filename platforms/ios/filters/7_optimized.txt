@@ -1,9 +1,9 @@
-! Checksum: M7wwjemPQZtJR+CxTMUzcQ
-! Diff-Path: ../patches/7_optimized/7_optimized-s-1769933701-3600.patch
+! Checksum: eyjoc9B3c4Gn4D79ovfcCQ
+! Diff-Path: ../patches/7_optimized/7_optimized-s-1769948225-3600.patch
 ! Title: AdGuard Japanese filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Japanese language.
-! Version: 2.0.72.14
-! TimeUpdated: 2026-02-01T08:11:49+00:00
+! Version: 2.0.72.15
+! TimeUpdated: 2026-02-01T12:13:38+00:00
 ! Expires: 5 days (update frequency)
 ||ias.rakuten.co.jp^$third-party,domain=~rakuten-co.jp|~rakuten.ne.jp
 ||indiegogo.jp^$document
@@ -931,6 +931,8 @@ kyukyoku-matome.com##.widget_pc_ad
 ##iframe[src^="https://ads.mediams.mb.softbank.jp/"]
 ##iframe[src^="https://gallerieshub.com/"]
 ##iframe[src^="https://rcm-fe.amazon-adsystem.com/"]
+!+ PLATFORM(windows, mac, android, cli, ios, ext_safari)
+daily.co.jp#%#(()=>{window.addEventListener("load",(()=>{const t=document.querySelector("#openwebSection"),e=document.querySelector("div[data-spot-id]");if(!e||!t)return;const d=e.getAttribute("data-spot-id");if(!d)return;var o;((t,e,d)=>{const o=document.createElement("div");o.setAttribute("data-spotim-module","conversation"),o.setAttribute("data-spot-id",t),o.setAttribute("data-post-id",e),d.appendChild(o)})(d,Math.abs((o=document.title,[...o].reduce(((t,e)=>Math.imul(31,t)+e.charCodeAt(0)|0),0))),t);const a=document.createElement("script");a.setAttribute("src",`https://launcher.spot.im/spot/${d}`),a.setAttribute("async",""),document.head.appendChild(a)}));})();
 sports.tv.rakuten.co.jp#%#//scriptlet('json-prune', 'ads')
 sports.tv.rakuten.co.jp#%#//scriptlet('json-prune', 'result.ad_info')
 sports.tv.rakuten.co.jp#%#//scriptlet('json-prune', 'result.paths.[].ad_info')
