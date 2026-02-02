@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: EGtuanN7B6vY775CebDnkA
-! Diff-Path: ../patches/2/2-s-1770017445-3600.patch
+! Checksum: 6ax/Q2UbUN5tobvoIB0fHA
+! Diff-Path: ../patches/2/2-s-1770020483-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.44.19
-! TimeUpdated: 2026-02-02T07:27:14+00:00
+! Version: 2.4.44.20
+! TimeUpdated: 2026-02-02T08:18:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10317,6 +10317,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223935
+walitex.com##+js(prevent-fetch, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223869
 katfile.online###adb-overlay
 ! checkAdsStatus / LinkShortX
@@ -38611,7 +38613,8 @@ letsporn.com##a[target="_blank"][onclick*="paysite_outgoing_click"]
 ||constellation.networknmedia.com^$domain=pcgamesn.com
 ||pcgamesn.com/wp-content/plugins/legion-affiliates-redux/widgets/promotedwidget.php*=sponsored
 pcgamesn.com##+js(remove-attr, href, .article-featured-image > a[href^="https://pubads.g.doubleclick.net/"])
-multiup.*##+js(abort-current-script, document.addEventListener, openLink)
+! revisit after fix https://github.com/AdguardTeam/Scriptlets/issues/549
+multiup.io##+js(no-window-open-if)
 rockpapershotgun.com##.video_player:has(> div.primis_wrapper)
 adult-sex-games.com##table:has(> tbody > tr > td[bgcolor="#F7C5F7"] > a[href][target="_blank"])
 chronicle.com##.HomePage-content > div.Container:has(> div.Container-rows > div.Container-row > div.SingleColumnContainer > div.SingleColumnContainer-column > div.GoogleDfpAd-container)
@@ -39671,7 +39674,7 @@ skidrowcodex.net##+js(addEventListener-defuser, DOMContentLoaded, redirectUrl)
 picrew.me##.play-Imagemaker:style(height: 100% !important;)
 timesonline.com##.content-well:has(> .module-slot > partner-poster)
 startribune.com###highImpactAd
-startribune.com##div[data-testid="breaker-ad"]
+startribune.com##div[data-testid*="breaker-ad"]
 startribune.com##div[data-testid="rail-ad"]
 startribune.com##div[data-testid="sponsored-list-ad"]
 simkl.com##a[onclick*="AD')"]
@@ -112740,6 +112743,7 @@ browsershots.org#@#.advert_area
 ||remorsefuldaughter.com^
 ||remorsefulindividual.pro^
 ||remorsefulsympathy.pro^
+||remorsefulwear.com^
 ||remorsetrumpet.com^
 ||remote-director.pro^
 ||remote-it.pro^
@@ -119419,6 +119423,7 @@ browsershots.org#@#.advert_area
 ||tzeeqofqhqrag.website^
 ||tzegilo.com^
 ||tzepbopyvsdav.site^
+||tzgeylerqwbot.website^
 ||tzgwi3cw17pgjqx1ue6l.cfd^
 ||tzifafpdvzcxl.website^
 ||tzkiqtq489j9mgbui2rz.cfd^
@@ -121391,6 +121396,7 @@ browsershots.org#@#.advert_area
 ||vjdciu.com^
 ||vjfdzpydatidx.space^
 ||vjhfsebbyxwru.website^
+||vjhixkkzjtlau.online^
 ||vjhtegmziupkn.website^
 ||vjhxheqlglwtt.space^
 ||vjjsdyhhny.xyz^
@@ -124820,6 +124826,7 @@ browsershots.org#@#.advert_area
 ||yruqwfriqcots.website^
 ||yrviuivtxhqay.store^
 ||yrvjauoibgcoa.website^
+||yrwyaegirefcr.site^
 ||yrxyosdoumnfh.website^
 ||yryxwlovbdyjm.site^
 ||yrzjtrlzdrewa.site^
@@ -137735,6 +137742,7 @@ freemalaysiatoday.com##.ads-dynamic-desktop
 thetruthaboutcars.com##.ads-fluid-wrap
 spambox.xyz##.ads-four
 bluewin.ch##.ads-group
+gadgetonhand.com##.ads-heading
 fintech.tv##.ads-img
 india.com##.ads-in-content
 freeconvert.com##.ads-in-page
@@ -138332,6 +138340,7 @@ analyticsindiamag.com##.border-b.bg-muted\/50
 washingtonpost.com##.border-box.dn-hp-sm-to-mx
 washingtonpost.com##.border-box.dn-hp-xs
 thedailymash.co.uk##.border-brand
+yaledailynews.com##.border-gray-200
 standardmedia.co.ke##.border-thick-branding
 myanimelist.net##.border_top
 appleinsider.com##.bottom
@@ -138392,6 +138401,7 @@ breakingbelizenews.com##.break-widget
 broadsheet.com.au##.breakout-section-inverse
 brobible.com##.bro_caffeine_wrap
 brobible.com##.bro_vidazoo_wrap
+yaledailynews.com##.broadstreet-zone
 sainsburys.co.uk##.browse-citrus-above-grid
 vaughn.live##.browsePageAbvs300x600
 femalefirst.co.uk##.browsi_home
@@ -139932,7 +139942,7 @@ dexerto.com##.min-h-\[56px\].z-30
 esports.op.gg##.min-h-\[600px\]
 op.gg##.min-h-\[66px\]
 cruisecritic.com##.min-h-\[80px\]
-motortrend.com,officialcharts.com,republicworld.com,w3docs.com##.min-h-\[90px\]
+motortrend.com,officialcharts.com,republicworld.com,w3docs.com,yaledailynews.com##.min-h-\[90px\]
 stripes.com##.min-h90
 letsrun.com##.min-w-300px
 motortrend.com,mumsnet.com,stocktwits.com##.min-w-\[300px\]
@@ -141299,6 +141309,7 @@ totalprosports.com##.tps-top-leaderboard
 techreen.com##.tr-block-header-ad
 techreen.com##.tr-block-label
 torbay.gov.uk##.track
+yaledailynews.com##.tracking-wide
 adsoftheworld.com##.tracking-widest
 bincodes.com##.transferwise
 sun-sentinel.com##.trb_sf_hl
@@ -141427,6 +141438,7 @@ vsbattles.com##.vsb_sticky
 notateslaapp.com##.vtwjhpktrbfmw
 wral.com##.vw3Klj
 horoscopes.astro-seek.com##.vyska-sense
+yaledailynews.com##.w-\[160px\]
 lolalytics.com##.w-\[336px\]
 androidpolice.com##.w-pencil-banner
 givemesport.com##.w-promotion-offer

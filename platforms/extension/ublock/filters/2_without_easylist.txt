@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: WnLHtFMk4dURPcuOAuseew
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1770017446-3600.patch
+! Checksum: 2/AtX8qGFfuOqvJ9L36tWA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1770020484-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.44.19
-! TimeUpdated: 2026-02-02T07:27:14+00:00
+! Version: 2.4.44.20
+! TimeUpdated: 2026-02-02T08:18:00+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10317,6 +10317,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223935
+walitex.com##+js(prevent-fetch, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223869
 katfile.online###adb-overlay
 ! checkAdsStatus / LinkShortX
@@ -38611,7 +38613,8 @@ letsporn.com##a[target="_blank"][onclick*="paysite_outgoing_click"]
 ||constellation.networknmedia.com^$domain=pcgamesn.com
 ||pcgamesn.com/wp-content/plugins/legion-affiliates-redux/widgets/promotedwidget.php*=sponsored
 pcgamesn.com##+js(remove-attr, href, .article-featured-image > a[href^="https://pubads.g.doubleclick.net/"])
-multiup.*##+js(abort-current-script, document.addEventListener, openLink)
+! revisit after fix https://github.com/AdguardTeam/Scriptlets/issues/549
+multiup.io##+js(no-window-open-if)
 rockpapershotgun.com##.video_player:has(> div.primis_wrapper)
 adult-sex-games.com##table:has(> tbody > tr > td[bgcolor="#F7C5F7"] > a[href][target="_blank"])
 chronicle.com##.HomePage-content > div.Container:has(> div.Container-rows > div.Container-row > div.SingleColumnContainer > div.SingleColumnContainer-column > div.GoogleDfpAd-container)
@@ -39671,7 +39674,7 @@ skidrowcodex.net##+js(addEventListener-defuser, DOMContentLoaded, redirectUrl)
 picrew.me##.play-Imagemaker:style(height: 100% !important;)
 timesonline.com##.content-well:has(> .module-slot > partner-poster)
 startribune.com###highImpactAd
-startribune.com##div[data-testid="breaker-ad"]
+startribune.com##div[data-testid*="breaker-ad"]
 startribune.com##div[data-testid="rail-ad"]
 startribune.com##div[data-testid="sponsored-list-ad"]
 simkl.com##a[onclick*="AD')"]
