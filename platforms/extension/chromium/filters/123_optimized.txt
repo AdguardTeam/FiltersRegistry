@@ -1,9 +1,9 @@
-! Checksum: IeQWr7hVK5ozFW7R7J9XKA
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1769993919-14400.patch
+! Checksum: GvqtIoj0e5Ajfj2iJDWbVg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1770009116-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.67
-! TimeUpdated: 2026-02-02T00:55:33+00:00
+! Version: 2.1.55.68
+! TimeUpdated: 2026-02-02T05:08:52+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -25,6 +25,7 @@
 /addtoany.min.js
 /common/sns/*
 /common/sns_
+/diggdigg-floating-bar.js
 /facebook-pagelike-widget/fb.js
 /facebook-side.png
 /facebook_badge.gif
@@ -253,7 +254,6 @@ _social-bar/
 ###floatingSocialShare
 ###follow-box
 ###follow-buttons
-###follow-facebook
 ###follow-footer
 ###follow-icons
 ###follow-links
@@ -325,6 +325,7 @@ _social-bar/
 ###js-share-links
 ###large_share_wrapper
 ###left_social_share
+###linkShare
 ###linkedin_share
 ###mainShare
 ###masthead-follow
@@ -982,7 +983,6 @@ _social-bar/
 ##.bgShare.twiiter
 ##.bgShare.youtube
 ##.bi-share
-##.big-share
 ##.bimber-microshare-item-share
 ##.bio-social
 ##.bloc-share
@@ -1145,7 +1145,6 @@ _social-bar/
 ##.ddc-social-share
 ##.desktop-share
 ##.desktop-social
-##.detail-page-share
 ##.detail-share
 ##.detail-social
 ##.detailShare
@@ -1239,7 +1238,6 @@ _social-bar/
 ##.facebook-bg
 ##.facebook-block
 ##.facebook-box
-##.facebook-fans
 ##.facebook-follow
 ##.facebook-follow-button
 ##.facebook-footer
@@ -1333,6 +1331,7 @@ _social-bar/
 ##.fixed-social
 ##.fl-social-icons
 ##.flare-button-icon
+##.flare-follow
 ##.flare-horizontal
 ##.flaticon-facebook
 ##.float-share
@@ -1393,6 +1392,7 @@ _social-bar/
 ##.footer-col-social
 ##.footer-connect
 ##.footer-contact-social
+##.footer-contacts__socials
 ##.footer-content-social
 ##.footer-facebook
 ##.footer-facebook-icon
@@ -1731,6 +1731,7 @@ _social-bar/
 ##.ion-social-twitter
 ##.ipsShareButton
 ##.ipsfocus_sFacebook
+##.ipsfocus_sGoogle
 ##.ipsfocus_sTwitter
 ##.ipsfocus_social
 ##.is-social
@@ -1894,7 +1895,6 @@ _social-bar/
 ##.mashsb-container
 ##.masterSocialbutton
 ##.masthead-social
-##.mb-header__social
 ##.mc-share-toggle
 ##.md-social-toolbar-circle
 ##.mdi-facebook
@@ -1977,6 +1977,7 @@ _social-bar/
 ##.native-share
 ##.native-share-buttons
 ##.nav--social
+##.nav-follow-us
 ##.nav-footer-social
 ##.nav-share
 ##.nav-soc-but
@@ -2152,7 +2153,6 @@ _social-bar/
 ##.qt-sharepage
 ##.qt-socialicon
 ##.qticon-share
-##.quick-links__social
 ##.quickshare
 ##.qw_social
 ##.r-footer--social
@@ -2269,6 +2269,7 @@ _social-bar/
 ##.share-blog
 ##.share-body
 ##.share-bottom
+##.share-bottom-new
 ##.share-box-inner
 ##.share-box-wrapper
 ##.share-bsky
@@ -2995,6 +2996,7 @@ _social-bar/
 ##.social-sharer
 ##.social-shares
 ##.social-sharing-btn
+##.social-sharing-button
 ##.social-sharing-buttons
 ##.social-sharing-item
 ##.social-sharing-link
@@ -3172,6 +3174,7 @@ _social-bar/
 ##.socialmedia-footer
 ##.socialmedia-menu
 ##.socialmedia_float
+##.socialmedia_link
 ##.socialmediabar
 ##.socialmobile
 ##.socialnav
@@ -3186,6 +3189,7 @@ _social-bar/
 ##.socials-wrap
 ##.socials__buttons
 ##.socials_box
+##.socials_buttons
 ##.socials_white
 ##.socials_widget
 ##.socialshare
@@ -3528,7 +3532,6 @@ _social-bar/
 ##[data-social="share"]
 ##[data-target="share-review"]
 ##[data-testid="prism-share"]
-##[data-xtclick^="social::"]
 ##[eapps-link="share"]
 ##a[href^="fb-messenger://share/?"]
 ##a[href^="fb-messenger://share?link="]
@@ -3712,14 +3715,12 @@ dailymail.co.uk,thisismoney.co.uk###dms-txt
 imgflip.com###findUs
 memuplay.com###fixed-share
 empoweringparents.com,geraligado.blog.br,katholisch.de,tvmaze.com###follow
-deccanherald.com###follow-us-card
 openspeedtest.com###footBox2
 abebooks.com,atlasobscura.com###footer-social-list
 aimp.ru###footer_counter
 cybermap.kaspersky.com###footer_social_channels
 eporner.com###footsocbuttons
 tasteofhome.com###gch-social-icons
-geekdashboard.com###gd-social-widget
 bleedingcool.com###google_follow
 wccftech.com###google_preferred_source_box
 analyticsinsight.net,biznews.com,dn.pt,newindianexpress.com,newsgram.com###header-social-follow
@@ -3772,7 +3773,6 @@ themirror.com##.GooglePreferredSource_wrapper__lSRA6
 cnbc.com##.HighlightShare-container
 apnews.com##.Infobox
 business-standard.com##.MetaPost_flwggle__kFKIT
-deccanherald.com##.NzEvQ
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
 rbth.com##.Popup-telegram
 abc.net.au##.ShareBanner_container__OX63I
@@ -3867,7 +3867,6 @@ neatorama.com##.col-4
 goal.com##.component-share
 goal.com##.component-social-twitter
 utexas.edu##.connect-links
-financemagnates.com##.contact-widget__sticky
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
@@ -4041,6 +4040,7 @@ dermatologytimes.com,drive.com.au##.react-share__ShareButton
 firstpost.com##.rhs-yt-ch-wrap
 businesstoday.in##.rhs_fixwhtsapp
 aljazeera.com,aljazeera.net##.rich-share
+asiaone.com##.right-block
 crealitycloud.com##.right-share-box
 outlookindia.com##.rm-social-share
 sordum.org##.sbar_social_div
@@ -4074,7 +4074,6 @@ thehackernews.com##.share-open-modal
 advocate.com,bestlifeonline.com,comicsands.com,commondreams.org,gbnews.com,glennbeck.com,pride.com,rawstory.com,spectrum.ieee.org,theblaze.com,thefulcrum.us,upworthy.com##.share-panel
 forward.com##.share-post
 alarabiya.net,timeextension.com##.share-this
-financemagnates.com##.share-this-article__wrapper
 dailymail.co.uk,thisismoney.co.uk##.share-twitter
 dailymail.co.uk,thisismoney.co.uk##.share-whatsapp
 windowsreport.com##.shareMobile
@@ -4166,7 +4165,6 @@ opindia.com##.tdi_134
 tecmint.com##.tecmint-float-social-wrapper
 asiaone.com##.telegram-share-wrapper
 chinadaily.com.cn##.three-right
-techlila.com##.tl-social
 xbiz.com##.tool-list
 daily.jstor.org##.top-bar-right
 thehackernews.com##.top-follow
@@ -4189,7 +4187,6 @@ healthday.com##.video-story-m_share__d27z7
 natlawreview.com##.view-footer
 motorsport.tv##.vjs-icons-bar
 dailymail.co.uk##.vjs-social-controls
-deccanherald.com##.wCRP0
 beincrypto.com##.want-to-know-more-block
 businesstoday.in##.whatsAppChannel
 dailymail.co.uk,oogtv.nl##.whatsapp
@@ -4219,6 +4216,7 @@ dw.com##[data-tracking-name^="sharing-icons-"]
 militarywatchmagazine.com##[href^="https://x.com/MilitaryWatchM"]
 telekom.com##a[title="Share"]
 theguardian.com##div > gu-island[name="ShareButton"]
+fifa.com##div[class*="article-section_shareButton_"]
 theatlantic.com##div[class^="ArticleShare_"]
 cnbc.com##div[class^="SocialShare-"]
 wired.com##div[class^="StickyBoxWrapper"]
@@ -4232,7 +4230,6 @@ thebanker.com##div[data-trackable-section="social-networks-widget"]
 rumble.com##div[data-type="share"]
 ea.com##ea-social-links
 greatist.com,healthline.com,medicalnewstoday.com,psychcentral.com##hl-share-overlay
-icann.org##iti-share-icons
 discord.me##li.menu-link.d-xl-inline-block
 cyprus-mail.com##social-share-links
 galaxystore.samsung.com##span[class^="SnsPlugin_items_"]
@@ -4582,14 +4579,12 @@ acierto.com,cronicabalear.es,deia.eus,diaridegirona.cat,diariocordoba.com,diario
 elcomercio.pe,gestion.pe##.s-buttons
 infobae.com##.second-saved-buttons
 as.com##.sh-bar
-infoenergia.info,infofranquicias.ar,infomendoza.info,infonegocios.barcelona,infonegocios.biz,infonegocios.com.py,infonegocios.info,infonegocios.madrid,infonegocios.miami,infonegociosgalicia.es,infonegociosvalencia.es,infostyle.info,infotecnologia.info,injujuy.info,inlitoral.info,inneuquen.info,inpatagonia.info,inrosario.info,insalta.info,insanjuan.info,insantiagodelestero.info,intucuman.info##.share-amp
 infobae.com##.sharebar-buttons-container
 elconfidencialdigital.com,estrelladigital.es,nuevatribuna.es##.sharrre-tools
 elcomercio.com##.single-layout__community-social
 larazon.es##.site-footer__rrss
 eldiario.es,eldiarioar.com##.sn-buttons
 elcomercio.com##.social-communities
-infoenergia.info,infofranquicias.ar,infomendoza.info,infonegocios.barcelona,infonegocios.biz,infonegocios.com.py,infonegocios.info,infonegocios.madrid,infonegocios.miami,infonegociosgalicia.es,infonegociosvalencia.es,infostyle.info,infotecnologia.info,injujuy.info,inlitoral.info,inneuquen.info,inpatagonia.info,inrosario.info,insalta.info,insanjuan.info,insantiagodelestero.info,intucuman.info##.social-networs
 larazon.es##.social-wrapper
 rtve.es##.socialBox
 cnnespanol.cnn.com##.storyfull__social
