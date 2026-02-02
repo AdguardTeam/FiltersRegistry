@@ -1,9 +1,9 @@
-! Checksum: ZOJMe7k77NOsI7I9a5o1Cg
-! Diff-Path: ../patches/14/14-s-1770020486-3600.patch
+! Checksum: MTV4qU978vdY3vN/S6bnLA
+! Diff-Path: ../patches/14/14-s-1770024322-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.57.54
-! TimeUpdated: 2026-02-02T08:18:35+00:00
+! Version: 2.2.57.55
+! TimeUpdated: 2026-02-02T09:22:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26654,6 +26654,7 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+gmgn.ai#%#//scriptlet('set-local-storage-item', 'login_dialog_clicked', 'true')
 7tv081.com#%#//scriptlet('trusted-click-element', '#mvspan_2_s_k_i_p_bottom')
 kroger.com#$#.kds-Modal-overlay { display: none !important; }
 kroger.com#$#html.overflow-hidden { overflow: auto !important; }
@@ -44858,6 +44859,8 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+gmgn.ai#%#//scriptlet('trusted-set-local-storage-item', 'KEY_CLOSE_DOWNLOAD_APP_MODAL_TIME', '$now$')
+gmgn.ai#%#//scriptlet('trusted-set-local-storage-item', 'KEY_CLOSE_DOWNLOAD_APP_BANNER_TIME', '$now$')
 nicegram.app##div[class^="app_hub_sc__sc_styles_position_"]:has(> a[href^="https://play.google.com/store/apps/details?id=app.nicegram"])
 jp.moony.com##header .CMP-CM05-block > .CMP-CM28-reference.parbase:has(a[href^="https://app.moony.com/"])
 mdcalc.com#%#//scriptlet('set-cookie', 'mobile_cta_banner_dismissed', 'true')
@@ -49819,6 +49822,9 @@ adguard.info,adguard.com,adguard.app#$#.hello_from_adguard_advanced_protection_i
 !
 ! SECTION: Mobile apps - Allowlist
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/223840
+!+ PLATFORM(ios)
+omni.se#@$?#meta[name="apple-itunes-app"] { remove: true; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/222775
 forbes.n1info.si#@#div[class^="smartbanner"][class*="-android"]
 ! https://github.com/AdguardTeam/AdguardFilters/issues/204986
@@ -53426,6 +53432,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+zakzak.co.jp##.lazyload-wrapper:has(> div.story-card-feed > span > a[href="/economy/shopping/"])
 allowcopyplus.pidevex.com###santaBanner
 checkout.hepsiburada.com##div[class^="basket_container_"] div[class^="sidebar_content_"] > div[data-hbus*="subscriptionEarningText"]
 gazetaprawna.pl##div[data-region="top"] > .fixed.bottom-0:has(> a > img[alt="Autopromocja"])
