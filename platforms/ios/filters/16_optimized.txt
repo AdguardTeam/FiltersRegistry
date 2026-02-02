@@ -1,5 +1,5 @@
-! Checksum: j4HmXZ5zkBvdf4lajfk7vA
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1769915526-3600.patch
+! Checksum: +oopzOFthKaj5DQ74Wn8mA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1770001876-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.81
@@ -182,6 +182,7 @@ japscan.*#@#.tangoai
 japscan.*#@#[class^="copine"]
 @@||japscan.$generichide
 /^https:\/\/acscdn\.com\/script\/(?:aclib|atg|compatibility|ippg|suv4|ut)\.js(\?cb=\d{13})?$/$script,third-party,match-case,important,domain=japscan.*
+@@||acscdn.com^$script,third-party,domain=japscan.*
 @@$image,domain=japscan.*
 @@||googletagmanager.com/gtag/js$domain=japscan.*
 trustmyscience.com##.adb-border
@@ -490,8 +491,6 @@ cimtchau.ca#?#.pub-box + p:contains(Publicité)
 europe1.fr##.ads-inread
 europe1.fr##.content-display[class*="ban-h"]
 europe1.fr###block-europe1-pubatfsidebar
-papadustream.cash###playerOver
-papadustream.cash##.g-buttons
 anime-sama.eu##div[id^="bann"][id$="t"]
 ici.radio-canada.ca##div[class^="_adBoxReset"]
 planhub.ca##.h-banner
@@ -1772,7 +1771,6 @@ _personalized_ads
 _popads.
 _program_ad.
 _pub.gif
-_pub_iframe.
 _publicite.
 _publicite_
 _smads_
@@ -1947,6 +1945,7 @@ _build=iclick-$popup
 ||clickzzs.nl^$third-party
 ||clicmanager.fr^$third-party
 ||clicmanager.net^$third-party
+||como.com^$third-party
 ||conduit.com^$third-party
 ||cougar-rencontre.net^$third-party
 ||cpa-content.com^$third-party
@@ -2016,6 +2015,7 @@ _build=iclick-$popup
 ||mirando.de^$third-party
 ||missaffiliate.com^$third-party
 ||misstrends.com^$third-party
+||mobidea.com^$third-party
 ||mobileoffers-*-download.com^$third-party
 ||mobsuccess.com^$third-party
 ||mobvista.com^$third-party
@@ -2086,6 +2086,7 @@ _build=iclick-$popup
 ||viahelium.com^$third-party
 ||visadd.com^$third-party
 ||vyking.io^$third-party
+||webmasteroo.com^$third-party
 ||wedoo.com^$third-party
 ||widespace.com^$third-party
 ||wm.artcomix.com^$third-party
@@ -2253,7 +2254,6 @@ _build=iclick-$popup
 ||bryozoafustet.top^
 ||bubblyzucchini.com^
 ||buffatopmost.com^
-||bumfinline.com^
 ||bungeesaker.com^
 ||burkhahemoid.com^
 ||burleskspoiler.com^
@@ -2420,7 +2420,6 @@ _build=iclick-$popup
 ||eymwxhqck.com^
 ||eyneggnogs.shop^
 ||f2ip1g6rpn6whwq164.cyou^
-||fabricforrel.com^
 ||faceofffilate.shop^
 ||fadedsnow.com^
 ||faikesevinced.top^
@@ -2728,6 +2727,7 @@ _build=iclick-$popup
 ||pornravage.com^
 ||portlydrum.com^
 ||possietuskar.com^
+||postback.report^
 ||poudrinnamaste.com^
 ||pourbaiser.com^
 ||precismo.com^
@@ -2791,7 +2791,6 @@ _build=iclick-$popup
 ||runoffree.bid^
 ||russetspaper.com^
 ||sabsbonos.com^
-||saivalakh.com^
 ||samiana.com^
 ||sancvquz.com^
 ||scalonilive.com^
@@ -2842,7 +2841,6 @@ _build=iclick-$popup
 ||statdynamic.com^
 ||strekepetrols.com^
 ||sunliketaisch.com^
-||superbportal.life^
 ||supportxmr.com^
 ||surfcountor.com^
 ||sweatfugate.com^
@@ -3214,6 +3212,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||recettes.de/images/logos/$third-party
 ||regie-agricole.com^*/pubs^$third-party
 ||rencontreshard.com^$subdocument
+||roxservers.com/images/banners/
 ||rza.pmu.fr^
 ||s.beop.io^
 ||s3.amazonaws.com/*/affiliate/
@@ -3377,6 +3376,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||zt-za.fr/redirect.$popup
 ||0zz0.com/e/
 ||1001jeux.fr/bfb/
+||1337x.*/js/script
 ||1movies.*/site/$xmlhttprequest
 ||2ememain.be/lrp/api/complementary-listings?
 ||abellalist.com^$media,script
@@ -3546,6 +3546,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||rapeporn.name^$script
 ||rapidgator.net/images/pics/
 ||realite-virtuelle.com/wp-content/cache/min/1/pub.
+||regie.story-fr.com^
 ||rencontresanslendemain.net/wp-content/uploads/*/banniere-
 ||rennes-infos-autrement.fr/wp-content/uploads/2022/02/une-
 ||roulettechat.fr^*/facebook-api-pub/
@@ -4239,7 +4240,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.publicite2
 ##.publicite3
 ##.publicite4
-##.publicite5
 ##.publiciteHeader
 ##.publicite_droite
 ##.publicite_droite_600
@@ -4711,6 +4711,7 @@ darty.com##.rm-format
 darty.com##.rm-product
 forum-xiaomi.com##.samItem
 ouedkniss.com##.search-top-1
+programme-tv.net##.shopping
 educatout.com##.showpub
 beaute-test.com##.sidebar-sticky
 quebeccoupongratuit.com##.size_300_250
@@ -4816,12 +4817,12 @@ lesnumeriques.com##a[href^="/publicite/"]
 edcom.fr##a[href^="/regie"]
 skitour.fr##a[href^="divers/a/out.php?"]
 lefigaro.fr##a[href^="http://www.ticketac.com/?utm_source="]
-yahoo.com##a[href^="https://beap.gemini.yahoo.com/"]
 hentaifr.net##a[href^="https://drmanga.net"]
 condor.dz##a[href^="https://e-faciliti.dz/"]
 appsystem.fr##a[href^="https://shop.appsystem.fr/"] > img
 journaldugeek.com##a[href^="https://shop.journaldugeek.com/go/"] > img
 fdesouche.com,lacoccinelle.net,wikimonde.com##a[href^="https://www.amazon.fr/"]
+gamekult.com,toplien.fr##a[href^="https://www.awin1.com/"]
 qwant.com##a[href^="https://www.bing.com/aclick?"]
 mega-p2p.net##a[href^="https://www.clictune.com/"]
 telecharger-jeuxpc.fr##a[href^="https://www.instant-gaming.com/"]
