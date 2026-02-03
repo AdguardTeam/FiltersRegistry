@@ -1,9 +1,9 @@
-! Checksum: sC2ecid9wJNfRV4CZbCsXw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1770080330-14400.patch
+! Checksum: X6ESi6hY10C5UpQf8Z3juQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1770095155-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.72
-! TimeUpdated: 2026-02-03T00:55:30+00:00
+! Version: 2.1.55.73
+! TimeUpdated: 2026-02-03T05:02:12+00:00
 ! Expires: 12 hours (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -121,6 +121,7 @@
 /socialcount.js
 /socialite.js
 /socialite.min.js
+/SocialSprite.
 /socialsprites.
 /socialstat?
 /synved-social/image/*
@@ -205,7 +206,6 @@ _social-bar/
 ###facebook-like
 ###facebook-link
 ###facebook-share
-###facebook-social-wrapper
 ###facebook-widget
 ###facebookFan
 ###facebookIcon
@@ -216,6 +216,7 @@ _social-bar/
 ###facebookWidget
 ###facebookWindow
 ###facebook_like
+###facebook_like_box
 ###facebook_link
 ###facebook_overlay
 ###facebook_share
@@ -246,7 +247,6 @@ _social-bar/
 ###fbbox-relocated
 ###fbbox1
 ###fblike
-###fblikebutton2018
 ###fbshare
 ###fcbk
 ###fdbk_tab
@@ -337,7 +337,6 @@ _social-bar/
 ###menu-item-facebook
 ###menu-item-social
 ###menu-item-twitter
-###menu-reseaux-sociaux
 ###menu-share
 ###menu-social
 ###menu-social-1
@@ -708,7 +707,6 @@ _social-bar/
 ###twitter_timeline-2
 ###twitter_widget
 ###twitterbtn
-###twittericon
 ###v-share
 ###vbseo-likes
 ###vce_social_menu
@@ -1294,8 +1292,6 @@ _social-bar/
 ##.fb-xfbml-parse-ignore
 ##.fbBtn
 ##.fbLike
-##.fbLikeBox
-##.fbRecommend
 ##.fbShare
 ##.fbShareTrigger
 ##.fb_bar
@@ -1319,6 +1315,8 @@ _social-bar/
 ##.fbsmallshare
 ##.fe-share
 ##.featuredPagesSocial
+##.ff-icon-share
+##.ff-share-wrapper
 ##.fi-social-facebook
 ##.fi-social-google-plus
 ##.fi-social-instagram
@@ -1904,6 +1902,7 @@ _social-bar/
 ##.media-share-button
 ##.mediaShare
 ##.mejs-share-button
+##.menu--footer-social
 ##.menu--social-media
 ##.menu--social-media-links
 ##.menu-article-share
@@ -2051,12 +2050,10 @@ _social-bar/
 ##.page-social
 ##.page_share
 ##.pane-social-links
-##.panel--social
 ##.panel-follow-social
 ##.panel-share-networks
 ##.par-footer-social
 ##.parent-shareBox
-##.partial-share
 ##.pathSocialIcons
 ##.pen_social_networks
 ##.penci-social-counter
@@ -2694,6 +2691,7 @@ _social-bar/
 ##.sharrre-container
 ##.show-share
 ##.showShareMore
+##.show_social
 ##.shr-bookmarks
 ##.shr-btn
 ##.shr-btns
@@ -2717,7 +2715,6 @@ _social-bar/
 ##.simplesocialbuttons
 ##.simplesocialbuttons_inline
 ##.single-post-meta-data__social-sharing
-##.single-post-meta-info-share
 ##.single-post-share
 ##.single-post-social
 ##.single-share
@@ -2752,6 +2749,7 @@ _social-bar/
 ##.sns-con
 ##.sns-fb
 ##.sns-link
+##.sns-link-wrap
 ##.sns-section
 ##.sns-share
 ##.sns-share-icon
@@ -3125,6 +3123,7 @@ _social-bar/
 ##.social_links_footer
 ##.social_links_top
 ##.social_links_wrapper
+##.social_media_section
 ##.social_menu_icon
 ##.social_popup
 ##.social_row
@@ -3486,6 +3485,7 @@ _social-bar/
 ##.widget_trifacebookbox_widget
 ##.widget_twitter
 ##.widget_twitter_timeline
+##.widget_weblizar_twitter
 ##.widget_wpcom_social_media_icons_widget
 ##.wp-block-social-links
 ##.wp-embed-share
@@ -3698,7 +3698,6 @@ _social-bar/
 ||xing-share.com^$third-party
 ||yandex.st/share/
 ||youtube.com/subscribe_embed?$third-party
-||hotpot.ai/components/shareOverlay
 ||people.com.cn/img/2020fenxiang/
 iflscience.com###FollowOnGoogleNewsBtn
 amazon.ae,amazon.ca,amazon.cn,amazon.co.jp,amazon.co.uk,amazon.com,amazon.com.au,amazon.com.be,amazon.com.br,amazon.com.mx,amazon.com.tr,amazon.de,amazon.eg,amazon.es,amazon.fr,amazon.in,amazon.it,amazon.nl,amazon.pl,amazon.sa,amazon.se,amazon.sg###Share
@@ -3729,7 +3728,6 @@ listennotes.com###ln-side-share-div
 digitaltrends.com###menu-2021-social
 taylorfrancis.com###openShare
 fia.com###page-pre-footer
-loveandlemons.com###pinthispage
 jacobin.com###post-footer-share
 jacobin.com###post-header-share
 mediaite.com###post-social
@@ -3798,11 +3796,11 @@ apnews.com##.ap-embed-wrap-whatsapp
 firstpost.com##.art-soc-icons
 chosun.com##.article-control-bar
 gfinityesports.com,stealthoptional.com##.article-float-buttons
+infoworld.com##.article-hero__social
 mymodernmet.com##.article-share-container
 freebeacon.com##.article-share-icons
 forbes.com,heise.de,phillyvoice.com##.article-sharing
 newrepublic.com,thetech.com##.article-social
-browardpalmbeach.com,dallasobserver.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.article-social-share-buttons
 nbcnews.com##.article-social-share-top
 jpost.com##.article-subline-inner-share-buttons
 altalex.com,dailystar.com.lb,eurekalert.org##.article-tools
@@ -3831,6 +3829,7 @@ csis.org##.block--social-sharing
 crash.net,ttnews.com##.block-better-social-sharing-buttons
 tastesbetterfromscratch.com##.block-follow-me
 tastesbetterfromscratch.com##.block-follow-updates
+carnewschina.com##.block_social_media__content
 tuta.com##.blog__share
 9to5linux.com##.bm-social-top
 breitbart.com##.bnn-social-share
@@ -3866,7 +3865,6 @@ thecinemaholic.com##.cinemaholic-share
 neatorama.com##.col-4
 goal.com##.component-share
 goal.com##.component-social-twitter
-utexas.edu##.connect-links
 dailymail.co.uk##.container-3zJLP
 androidpolice.com,cbr.com,dualshockers.com,gamerant.com,makeuseof.com,movieweb.com,pocket-lint.com,pocketnow.com,thegamer.com,thetravel.com,xda-developers.com##.copy-link-button
 overwolf.com##.creator-social
@@ -3918,6 +3916,7 @@ popsci.com##.footer-socials-wrapper
 dailykos.com##.footer__connect
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
+infoq.com##.footer__social-wrap
 indiatoday.in##.footer__socialshare
 pravda.com.ua##.footer_social
 telex.hu##.framed-content
@@ -4094,8 +4093,6 @@ texasobserver.org##.single-container__sidebar__share
 defector.com,sf.gazetteer.co##.single_inner__pWuJ8
 streetsblog.org##.single_sharingInner__3IoQO
 nme.com,operawire.com,whoopsee.it##.site-footer-social
-dallasobserver.com,ecowatch.com,miaminewtimes.com,phoenixnewtimes.com,westword.com##.site-header__social
-browardpalmbeach.com##.site-header__social-link
 news.sky.com,skysports.com##.site-share-wrapper
 archaeology.org##.site-socials
 thehorizonsun.com##.sno-hac-iconwrap
@@ -4145,7 +4142,6 @@ videocardz.com##.socialbar-sidebar
 firstthings.com,milanofinanza.it,mothership.sg,overclock3d.net,techtimes.com##.socials
 overclock3d.net##.socials-container
 republicworld.com##.sponsors-container
-cryptonews.com##.ssk
 bbc.co.uk##.ssrcss-11faxz6-TagShareWrapper
 vnexpress.net##.sticky
 healthshots.com##.stickySocial
@@ -4458,7 +4454,6 @@ ilpost.it##div[class^="_share_"]
 liberoquotidiano.it##img[id^="social-"]
 bizgate.nikkei.com##.c-single-sns
 univ-journal.jp##.snsSpace
-news.yahoo.co.jp##[class^="ArticleShare"]
 qiita.com##[class^="style-"] > [class^="style-"] > div[class^="style-"]:has(> button[aria-label][title][aria-describedby] + p[id][role="tooltip"])
 qiita.com##[href^="https://b.hatena.ne.jp/entry/"]
 qiita.com##div[id^="AdventCalendar"] hr ~ div[class^="style-"]:has(> button[class^="style-"][aria-label][title])
@@ -4480,7 +4475,6 @@ revistaforum.com.br##.btn-seguinos-gnews
 estadao.com.br##.button-share-icon
 folha.uol.com.br##.c-follow-social-media
 b9.com.br##.c-social-midias
-estudokids.com.br,radiorock.com.br,uai.com.br##.compartilhe
 jovempan.com.br##.cta-model
 em.com.br##.edm-bottom-social
 abril.com.br##.f-social
@@ -4558,6 +4552,7 @@ qhubomedellin.com##.div_canal_whatsapp
 qhubomedellin.com##.div_news_google
 eldiario.es,eldiarioar.com##.edi-social-buttons
 elperiodico.com,sport.es##.ft-mol-rrss-column
+adnradio.cl##.gdisc-follow
 milenio.com##.google-news-follow
 pronto.com.ar##.header--redes
 dolarhoy.com##.header__redes
