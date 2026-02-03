@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/1_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.12",
-			"timeUpdated": "2026-02-02T15:19:10+0000",
+			"version": "2.1.4.13",
+			"timeUpdated": "2026-02-03T01:38:23+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/2_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.4.44.32",
-			"timeUpdated": "2026-02-03T00:35:21+0000",
+			"version": "2.4.44.33",
+			"timeUpdated": "2026-02-03T01:38:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/3_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.99.47",
-			"timeUpdated": "2026-02-02T15:19:29+0000",
+			"version": "2.0.99.48",
+			"timeUpdated": "2026-02-03T01:38:40+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/4_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.1.24.75",
-			"timeUpdated": "2026-02-02T18:16:29+0000",
+			"version": "2.1.24.76",
+			"timeUpdated": "2026-02-03T01:38:43+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/7_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.18",
-			"timeUpdated": "2026-02-02T15:19:39+0000",
+			"version": "2.0.72.19",
+			"timeUpdated": "2026-02-03T01:38:49+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.57.64",
-			"timeUpdated": "2026-02-02T18:16:55+0000",
+			"version": "2.2.57.65",
+			"timeUpdated": "2026-02-03T01:39:00+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.10.25",
-			"timeUpdated": "2026-02-02T23:10:45+0000",
+			"version": "2.1.10.26",
+			"timeUpdated": "2026-02-03T01:39:01+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/18_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.80.10",
-			"timeUpdated": "2026-02-02T18:17:00+0000",
+			"version": "2.0.80.11",
+			"timeUpdated": "2026-02-03T01:39:04+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/19_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.69.89",
-			"timeUpdated": "2026-02-02T16:13:39+0000",
+			"version": "2.0.69.90",
+			"timeUpdated": "2026-02-03T01:39:05+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -774,8 +774,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/20_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.26.88",
-			"timeUpdated": "2026-02-02T15:20:00+0000",
+			"version": "2.0.26.89",
+			"timeUpdated": "2026-02-03T01:39:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/21_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.41.28",
-			"timeUpdated": "2026-02-02T15:20:01+0000",
+			"version": "2.0.41.29",
+			"timeUpdated": "2026-02-03T01:39:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -818,8 +818,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/android/filters/22_optimized.txt",
 			"trustLevel": "full",
-			"version": "2.0.13.54",
-			"timeUpdated": "2026-02-02T13:31:36+0000",
+			"version": "2.0.13.55",
+			"timeUpdated": "2026-02-03T01:39:06+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [

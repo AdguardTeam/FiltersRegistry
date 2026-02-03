@@ -1,9 +1,9 @@
-! Checksum: Bz7wL8btfRZ+YH5QMbqpPg
-! Diff-Path: ../patches/14/14-s-1770056373-3600.patch
+! Checksum: 2a3jpvViljXnkcCFHGhKNg
+! Diff-Path: ../patches/14/14-s-1770082897-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.57.64
-! TimeUpdated: 2026-02-02T18:16:55+00:00
+! Version: 2.2.57.65
+! TimeUpdated: 2026-02-03T01:39:00+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2574,6 +2574,9 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+gamsgo.com#$#html.v-overlay-scroll-blocked { overflow: auto !important; position: static !important; }
+gamsgo.com#$#.v-overlay-container { display: none !important; }
+fibermall.com###WishCookieBox
 volumo.com##div[class^="_app_"] > div[class^="PopupBaseInternal_root__"]:has(> div[role="dialog"] div[class*="CookieVolumoPopup_"])
 supertext.com#%#//scriptlet('trusted-set-local-storage-item', 'tracking_consent', '{"necessary":true,"analytics":false,"advertising":false,"personalization":false}')
 ||think.ing.com/ajax/ajax_cookie_consent|
@@ -15112,7 +15115,7 @@ dedeman.ro##.cookies-notification-bar
 maskinbladet.dk##.cookies-top
 ho-mobile.it##.cookies-wrp
 mslworld.egged.co.il##.cookiesStrip
-iar.com,bmi-online.pl##.cookies__info
+verleshop.com,iar.com,bmi-online.pl##.cookies__info
 jestemfit.pl,dieta.pl##.cookies__std
 webuy.com##.cookies_div
 spartoo.de,debeste.de,gov.pl##.cookies_info
@@ -35263,6 +35266,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+factually.co#%#//scriptlet('set-local-storage-item', 'newsletter-subscribed', 'true')
 steelseries.com##body > sleeknote-vt8rv6-top.needsclick
 steelseries.com##.flex-1 > div[aria-label="Footer newsletter email form"]
 brighteon.com##.VideoNewsletter
@@ -44353,6 +44357,7 @@ alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepeti.com,ra
 !
 !
 !
+mega.nz##.application
 m.yelp.com##div[data-testid="smart-banner-pitch-app-gif"]
 [$path=/maps]google.*##div[role="main"] > div.pL6he
 [$path=/maps]google.*##ul[role="list"] > li.bzdiDe
@@ -52917,6 +52922,9 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+sportsdaily.ru##div[class^="header_headerGift"]
+sportsdaily.ru##div[class^="promoMenu_giftButton_"]
+sportsdaily.ru##a[class^="promoMenuItem_promoMenuItem_"][href^="/bonuses/"]
 rollingstone.com###piano-sticky-footer
 zakzak.co.jp##.lazyload-wrapper:has(> div.story-card-feed > span > a[href="/economy/shopping/"])
 allowcopyplus.pidevex.com###santaBanner
@@ -62124,6 +62132,7 @@ full-count.jp#?#section > div.c-heading:has(> p.c-heading__en:contains(RECOMMEND
 /js/chat/edu_chat.js
 /wp-content/plugins/creame-whatsapp-me/public/js/joinchat.
 !
+||code.tidio.co^$third-party
 ||omniqa.ru^
 ||livechat.nextop.com^$third-party
 ||titanembeds.com^$third-party
