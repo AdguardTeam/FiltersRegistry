@@ -1,9 +1,9 @@
-! Checksum: H+rj28Jq2B3TH+GGIRrVGw
-! Diff-Path: ../patches/243_optimized/243_optimized-s-1769935642-14400.patch
+! Checksum: QDXtJmf3UseCHyBzjs5WrA
+! Diff-Path: ../patches/243_optimized/243_optimized-s-1770108485-14400.patch
 ! Title: Frellwit's Swedish Filter (Optimized)
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.83
-! TimeUpdated: 2026-02-01T08:44:46+00:00
+! Version: 2.0.23.84
+! TimeUpdated: 2026-02-03T08:45:37+00:00
 ! Expires: 12 hours (update frequency)
 .ads-gdprlock
 .ax/ad/
@@ -112,10 +112,14 @@ affarsvarlden.se##.cookies-wrap, .Modal, .article-list-item--native, .advert-not
 aftonbladet.se##article[class^="article-wrapper"] ~ div[class^="hyperion"]:has(a[href*="/t?a="], a[href*="/click"], a[href^="http"][nofollow], a[href^="http"][rel*="nofollow"], iframe[src*="pricerunner"], iframe[src*="/ads/"])
 aftonbladet.se#?#article[class^="article-wrapper"] strong:contains(/annons:/i):upward(1)
 aftonbladet.se##aside > div[class^="hyperion"]:has(a[href*="/rabattkod"], a[href*="casino"], a[href*="/brandstudio"], a[href*="/brand-studio"])
+aftonbladet.se##aside > div[class^="_wrapper"]:has(div[class^="_adLabel"])
 aftonbladet.se##body.default section[class^="twocolumnlayout-main"] > div[class^="hyperion"]:has(a[href*="/speltips/"])
+aftonbladet.se#?#div[class^="_adLabel"]:upward(1)
+aftonbladet.se##div[data-edition-name^="ab-native-premium"]
 aftonbladet.se#?#main > section > div:first-child:matches-css(box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 24px 0px)
 aftonbladet.se##section[class*="layout-main"] > div[class^="hyperion-css"]:has(a[href*="/produkt/"]:not(a[href^="/"]), a[href*="/varumarken/"]:not(a[href^="/"]), a[href*="/prisjakt.nu"])
 aftonbladet.se###superright-side, a[href*="/casinoguide"], [id^="adPlacement"], a[href*="/rabattkod"][data-test-tag="internal-link"], #takeover-container, div[class^="stickylogin"], a[href*=".snabbare.com"]
+aftonbladet.se#?#.label-medium:contains(/annonslänkar/i):upward(astro-island[component-url])
 aftonbladet.se#?#:is(main > section a[data-test-tag="internal-link"], #main > section a[data-test-tag="internal-link"], main > section a[href*="godare.se"], #main > section a[href*="godare.se"], main > aside a[data-test-tag="internal-link"]):contains(innehåller annonslänkar)
 aftonbladet.se##:is(main > section > div[class^="hyperion"], #main > section > div[class^="hyperion"]):has(a[href*="/brandstudio"], a[href*="/brand-studio"], a[href*="/rabattkod/"], a[href*="/casinoguide/"], iframe[src*="compricer"])
 [$path=/sportbladet$/]aftonbladet.se##section[class^="twocolumnlayout-main"] > div[class^="hyperion"]:has(a[href*="/speltips/"])
@@ -2883,6 +2887,9 @@ zeromagazine.nu##div[id^="ads"]
 /?template=prisjakt$domain=ljudochbild.se
 /?trafikkalla$image,domain=bloggplatsen.se
 /_adsmodern/*$image
+/_astro/InitializeAdverts$domain=aftonbladet.se
+/_astro/Sifo$domain=aftonbladet.se
+/_astro/initTracking$domain=aftonbladet.se
 /_glimr$domain=tv.nu
 /_graphics/annons
 /_papers_media/banners
