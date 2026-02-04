@@ -1,9 +1,9 @@
-! Checksum: RWP5Mgp2BpsOPgx8yJS3cw
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1770166464-14400.patch
+! Checksum: AfmPmuTA5F/6fYX9bNyNKQ
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1770181247-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.78
-! TimeUpdated: 2026-02-04T00:51:23+00:00
+! Version: 2.1.55.79
+! TimeUpdated: 2026-02-04T04:57:47+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -18,7 +18,6 @@
 -Social-Sidebar/
 -social-slider/
 -sprite-social-
-.sharebar.js
 .sharing.js
 /accesspress-social-counter/*
 /addthis_widget.js
@@ -141,6 +140,7 @@
 /wordpress-popup/*$domain=ahchealthenews.com
 /ya-share.js
 _footer_twitter.
+_share_widget_
 _social-bar/
 /jquery.bpopup.$script,domain=telechargerunevideo.com
 ###FollowUs
@@ -377,7 +377,6 @@ _social-bar/
 ###post-share-icons
 ###post-social
 ###post_info_share
-###pp-social
 ###rsociaux
 ###sb_instagram
 ###selectionShare
@@ -464,7 +463,6 @@ _social-bar/
 ###share_links
 ###share_now
 ###share_panel
-###share_social_sidebar
 ###share_telegram
 ###share_this
 ###share_to
@@ -548,7 +546,6 @@ _social-bar/
 ###social-links-twitter
 ###social-media-footer
 ###social-media-header
-###social-media-share
 ###social-media-wrapper
 ###social-nav
 ###social-nav-holder
@@ -1016,6 +1013,7 @@ _social-bar/
 ##.bottom-socials
 ##.bottom_share
 ##.bottom_social
+##.bottomsocial
 ##.box-facebook
 ##.box-share
 ##.box-share-group
@@ -1070,7 +1068,6 @@ _social-bar/
 ##.c-sns
 ##.c-social-bar
 ##.c-social-container
-##.c-social-menu
 ##.c-social-share
 ##.c-social-sharetool
 ##.c-social-sharing
@@ -1258,6 +1255,7 @@ _social-bar/
 ##.facebookOuter
 ##.facebookShare
 ##.facebook_box
+##.facebook_cont
 ##.facebook_icn
 ##.facebook_icon
 ##.facebook_large
@@ -1327,6 +1325,7 @@ _social-bar/
 ##.fixed-share
 ##.fixed-share-bar
 ##.fixed-social
+##.fixed-social-bar
 ##.fl-social-icons
 ##.flare-button-icon
 ##.flare-follow
@@ -1865,6 +1864,7 @@ _social-bar/
 ##.m-footer-social
 ##.m-header--social-nav
 ##.m-icon-facebook
+##.m-icon-instagram
 ##.m-icon-tw
 ##.m-share
 ##.m-share-bar
@@ -2281,6 +2281,7 @@ _social-bar/
 ##.share-button-list
 ##.share-button-wrapper
 ##.share-buttons-area
+##.share-buttons-bar
 ##.share-buttons-bottom
 ##.share-buttons-box
 ##.share-buttons-container
@@ -3179,6 +3180,7 @@ _social-bar/
 ##.socialnav
 ##.socialno
 ##.socialplugins
+##.socialright
 ##.socials-bar
 ##.socials-footer
 ##.socials-round
@@ -3222,6 +3224,7 @@ _social-bar/
 ##.ssba_pinterest_share
 ##.ssba_share_link
 ##.ssba_sharecount
+##.sscb-pinterest
 ##.ssto-share-buttons
 ##.st-custom-button
 ##.st-social__share
@@ -3245,7 +3248,6 @@ _social-bar/
 ##.sub_jeu_social_twitter
 ##.sub_sns
 ##.subfooter-social
-##.svp-share
 ##.synved-social-button
 ##.tags-share
 ##.tags-share-box
@@ -3354,6 +3356,7 @@ _social-bar/
 ##.twitter-tweet-button
 ##.twitter-wrap
 ##.twitter-wrapper
+##.twitterBadge
 ##.twitterBox
 ##.twitterFollow
 ##.twitterIcon
@@ -3655,7 +3658,6 @@ _social-bar/
 ||line-apps.com^*/thirdparty/$third-party
 ||line.me/js/line-button.js?$third-party
 ||linkedin.com/countserv/$third-party
-||linkedin.com/img/$third-party
 ||messengerpeople.com^$third-party
 ||milotree.com^$third-party
 ||newsharecounts.com^$third-party
@@ -3934,7 +3936,7 @@ bringmethenews.com,thehindu.com##.google-btn
 alarabiya.net##.google-news-callout
 dailygalaxy.com,glassalmanac.com##.google-news-card
 cybernews.com,sammobile.com##.google-news-cta
-tmz.com##.google-preferred-btn
+ringsidenews.com,tmz.com##.google-preferred-btn
 sammobile.com##.google-preferred-news-source-cta
 9to5google.com,9to5mac.com,9to5toys.com,dronedj.com,spaceexplored.com##.google-preferred-source-badge
 goal.com##.google-trusted-source
@@ -4091,6 +4093,7 @@ pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
 niemanlab.org##.simple-skinnyleft
 texasobserver.org##.single-container__sidebar__share
 defector.com,sf.gazetteer.co##.single_inner__pWuJ8
+news24online.com##.single_page-social-share
 streetsblog.org##.single_sharingInner__3IoQO
 nme.com,operawire.com,whoopsee.it##.site-footer-social
 news.sky.com,skysports.com##.site-share-wrapper
@@ -4504,6 +4507,7 @@ tecmundo.com.br##.tec--share__container
 r7.com##[class*="article-fill-social-"]
 infomoney.com.br##[data-ds-element^="social-share-"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]
+||jcconcursos.com.br/static/socialmedia/
 auto-bild.ro##.social > li:has(.icon.icon-outline)
 inforesist.org###push_notificationBlock
 sibnet.ru###telegram_push

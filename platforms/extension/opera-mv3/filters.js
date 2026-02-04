@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.84.76",
-			"timeUpdated": "2026-02-04T00:51:11+0000",
+			"version": "2.1.84.77",
+			"timeUpdated": "2026-02-04T04:57:35+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.84.75",
-			"timeUpdated": "2026-02-04T00:51:11+0000",
+			"version": "2.1.84.76",
+			"timeUpdated": "2026-02-04T04:57:36+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1295,8 +1295,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt",
 			"trustLevel": "high",
-			"version": "2.0.23.84",
-			"timeUpdated": "2026-02-03T08:45:37+0000",
+			"version": "2.0.23.85",
+			"timeUpdated": "2026-02-04T04:58:11+0000",
 			"deprecated": false,
 			"languages": [
 				"sv"
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.78.7",
-			"timeUpdated": "2026-02-04T00:51:53+0000",
+			"version": "2.0.78.8",
+			"timeUpdated": "2026-02-04T04:58:19+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1467,8 +1467,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.10.55",
-			"timeUpdated": "2026-02-03T16:47:30+0000",
+			"version": "2.0.10.56",
+			"timeUpdated": "2026-02-04T04:58:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1487,8 +1487,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuard.txt",
 			"trustLevel": "low",
-			"version": "2.0.0.10",
-			"timeUpdated": "2026-01-30T20:43:49+0000",
+			"version": "2.0.0.11",
+			"timeUpdated": "2026-02-04T04:58:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
