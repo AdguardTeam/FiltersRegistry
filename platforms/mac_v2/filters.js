@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.44.89",
-			"timeUpdated": "2026-02-05T12:17:13+0000",
+			"version": "2.4.44.90",
+			"timeUpdated": "2026-02-05T13:32:15+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -403,8 +403,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.24.85",
-			"timeUpdated": "2026-02-05T12:17:21+0000",
+			"version": "2.1.24.86",
+			"timeUpdated": "2026-02-05T13:32:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -617,8 +617,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.57.99",
-			"timeUpdated": "2026-02-05T12:17:36+0000",
+			"version": "2.2.58.0",
+			"timeUpdated": "2026-02-05T13:32:46+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -642,8 +642,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.10.55",
-			"timeUpdated": "2026-02-05T10:19:22+0000",
+			"version": "2.1.10.56",
+			"timeUpdated": "2026-02-05T13:32:47+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -723,8 +723,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.80.31",
-			"timeUpdated": "2026-02-05T12:17:39+0000",
+			"version": "2.0.80.32",
+			"timeUpdated": "2026-02-05T13:32:52+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -789,8 +789,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.41.40",
-			"timeUpdated": "2026-02-05T12:17:41+0000",
+			"version": "2.0.41.41",
+			"timeUpdated": "2026-02-05T13:32:55+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1727,8 +1727,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.53.51",
-			"timeUpdated": "2026-02-05T04:39:12+0000",
+			"version": "2.1.53.52",
+			"timeUpdated": "2026-02-05T13:33:01+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
