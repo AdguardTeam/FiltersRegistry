@@ -1,8 +1,8 @@
-! Checksum: XSyC+jlTIx0y7iWiYY5jUA
+! Checksum: pcc+fq+iqeS1xgjGFXumPA
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.80.35
-! TimeUpdated: 2026-02-05T21:12:13+00:00
+! Version: 2.0.80.36
+! TimeUpdated: 2026-02-05T23:09:55+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2465,6 +2465,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+wildberries.*###cookiePolicyRoot
 dellin.ru##div[data-qa="cookies_notification"]
 careers.manulife.com##section[ph-module="gdpr"]
 zarplata.ru##div[data-qa="cookies-policy-informer"]
@@ -12286,6 +12287,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! wildberries - broken site
+@@||wbbasket.ru/vol2/site/app/cookiePolicy.*.js$domain=wildberries.ru|wildberries.by|wildberries.am|wildberries.uz|wildberries.kg
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223735
 ! https://github.com/uBlockOrigin/uAssets/issues/31670
 @@||sdk.privacy-center.org/*/loader.js$domain=theweathernetwork.com

@@ -1,9 +1,9 @@
-! Checksum: rdn441iiWlcqtQNyGn2dCg
-! Diff-Path: ../patches/14/14-s-1770326093-3600.patch
+! Checksum: 0sNVwAYZl+tx2ors1bKwKg
+! Diff-Path: ../patches/14/14-s-1770333149-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.58.6
-! TimeUpdated: 2026-02-05T21:12:08+00:00
+! Version: 2.2.58.7
+! TimeUpdated: 2026-02-05T23:09:50+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2578,6 +2578,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+wildberries.*###cookiePolicyRoot
 dellin.ru##div[data-qa="cookies_notification"]
 careers.manulife.com##section[ph-module="gdpr"]
 zarplata.ru##div[data-qa="cookies-policy-informer"]
@@ -18268,6 +18269,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! wildberries - broken site
+@@||wbbasket.ru/vol2/site/app/cookiePolicy.*.js$domain=wildberries.ru|wildberries.by|wildberries.am|wildberries.uz|wildberries.kg
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223735
 watt.ua#$#.is-active { display: none !important; }
 watt.ua#$#body { overflow: auto !important; }
