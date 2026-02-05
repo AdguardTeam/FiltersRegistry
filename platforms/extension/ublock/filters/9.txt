@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: wMjxB7fntezUbCkaNnh+Mw
-! Diff-Path: ../patches/9/9-s-1770272960-3600.patch
+! Checksum: PsklRR933bMvaBewGFDVfA
+! Diff-Path: ../patches/9/9-s-1770276576-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.33.4
-! TimeUpdated: 2026-02-05T06:26:10+00:00
+! Version: 2.0.33.5
+! TimeUpdated: 2026-02-05T07:26:22+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -197,6 +197,8 @@
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224138
+perisxxx.com##+js(addEventListener-defuser, DOMContentLoaded, offsetHeight === 0)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223687
 ||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$redirect=noop.js,domain=lpfplay.com,script
 ! https://github.com/AdguardTeam/AdguardFilters/issues/221801
@@ -2044,6 +2046,9 @@ mundobytes.com,techondicas.com,jornalrepercussao.com.br,zonaaps.com,gamevicio.co
 !
 ! NOTE: Specific rules
 !
+*$script,3p,domain=perisxxx.com
+perisxxx.com##aside.widget_block:has(> ul:first-child)
+perisxxx.com##aside.widget_block:has(> script[type="application/javascript"])
 tecmundo.com.br##.the-sidebar > section[class^="special_offers"]
 tecmundo.com.br##.the-sidebar > div:has(> div > div[data-label="Publicidade"])
 legionscans.com##div[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"]
