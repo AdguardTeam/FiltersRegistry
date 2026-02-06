@@ -1,8 +1,8 @@
-! Checksum: FPh+0j6mh0aqvHm2knhZBw
+! Checksum: 1FzYAPqxsH4NH0wq75oJoQ
 ! Title: AdGuard URL Tracking filter
 ! Description: Filter that enhances privacy by removing tracking parameters from URLs.
-! Version: 2.0.12.96
-! TimeUpdated: 2026-02-05T05:29:43+00:00
+! Version: 2.0.12.97
+! TimeUpdated: 2026-02-06T04:39:21+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21,6 +21,10 @@
 !
 ! NOTE: Generic rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224235
+! https://github.com/AdguardTeam/AdguardFilters/issues/217915
+$removeparam=analytics_context
+$removeparam=analytics_trace_id
 ! Bance
 $removeparam=bance_xuid
 ! Oracle Eloqua
@@ -609,10 +613,6 @@ ref=shadcn.com^$removeparam=ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218625
 ||zurichlife.co.jp^$removeparam=waad
 ||zurichlife.co.jp^$removeparam=agentCode
-! https://github.com/AdguardTeam/AdguardFilters/issues/217915
-||chickencoopcompany.com/services/$removeparam=analytics_context
-||chickencoopcompany.com/services/$removeparam=analytics_trace_id
-||shop.app/accounts/$removeparam=analytics_trace_id
 ! byn.kr - any product page via product listing page
 ||byn.kr^$removeparam=rURL
 ! https://github.com/AdguardTeam/AdguardFilters/issues/218031
