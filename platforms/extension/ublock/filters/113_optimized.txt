@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: RvCtdodguW2Zgv2xl8iN0A
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1770339326-14400.patch
+! Checksum: zJDbSk5W477OlgaD91ymmQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1770354306-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.84.86
-! TimeUpdated: 2026-02-06T00:51:55+00:00
+! Version: 2.1.84.87
+! TimeUpdated: 2026-02-06T05:01:40+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -283,7 +283,6 @@
 ://banner.*utm_
 ://banners2.$3p
 ://block.*/rotator-$script
-://block.*/rotator/*.js|$script
 ://cdn.*/p/?zid=
 ://cdn.ad.
 ://cdn.ads.
@@ -515,6 +514,7 @@ _werbebanner_
 ://landing.*/?ats=$popup,3p
 ://syndication.$popup,3p
 ://xml.*/click?$popup
+?adTagId=$popup
 ?key=*&psid=$popup
 ?key=*&zoneid=$popup
 ?lpkey=*&uclick=$popup
@@ -582,7 +582,6 @@ _build=iclick-$popup
 ||affility.com^$3p
 ||afilio.com.br^$3p
 ||afromessenger.com^$3p
-||appsha1.cointraffic.io^
 ||apypxl.com^$3p
 ||aquaplatform.com^$3p
 ||arabyads.com^$3p
@@ -854,7 +853,7 @@ _build=iclick-$popup
 ||arraigncompter.com^
 ||ashinetalk.com^
 ||asialiahersir.top^
-||aspcafarcie.com^
+||asmonfernor.com^
 ||atappanic.click^
 ||atimaze.com^
 ||avaljumectk.com^
@@ -865,6 +864,7 @@ _build=iclick-$popup
 ||aweyqalyljbj.top^
 ||aynhnrgxjxfv.com^
 ||aywgucxmh.com^
+||azclip.co.ua^
 ||backforward.bid^
 ||backjawpodatus.com^
 ||balsamoscious.com^
@@ -1191,6 +1191,7 @@ _build=iclick-$popup
 ||kcvrxu7bgqrxpg9tf.rest^
 ||kernh41.com^
 ||khanshabus.com^
+||khuzibatekes.com^
 ||kindlestorsion.com^
 ||klclick.com^
 ||kneecaptroubly.com^
@@ -1277,6 +1278,7 @@ _build=iclick-$popup
 ||nefrvjfkzus.com^
 ||newscode.me^
 ||newup.bid^
+||ningposkidi.com^
 ||niubixxx.com^
 ||nkzfdaoyujgib.com^
 ||nnvkh.com^
@@ -1652,6 +1654,7 @@ _build=iclick-$popup
 ||iqoption.com^$popup
 ||jacquieetmichel-contacts.com^$popup,3p
 ||jewhouca.net^$popup
+||klclick.com^$popup
 ||livepartners.com^$popup,3p
 ||max-adserv.com^$popup,3p
 ||monetizze.com.br^$popup,3p
@@ -2126,6 +2129,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||elheddaf.com/data/pub/
 ||emploitic.com/images/banners/
 ||emu-france.com/wp-content/themes/emufrance/*casino
+||espritlib.com/banniere/
 ||expomaroc.ma/pub/
 ||fiches-auto.fr/_carre_300_
 ||file-upload.net/include/$subdocument
@@ -2280,6 +2284,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||winds-up.com/pub/
 ||wp.com/www.echangedeclics.*/$image,script,domain=~echangedeclics.com|~echangedeclics.fr
 ||xavbox.com/ban/
+||yeswefoot.com/annuaire.gif
 ||zebest-3000.com/*.html
 ||zone-streaming.fr/wp-content/uploads/amazon-video.jpg
 ||zone911.com/images/logo-banniere/
@@ -2355,7 +2360,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###divHomeAd2
 ###divHomeAd3
 ###divPub
-###divPubEntete
 ###divPublicityLateral
 ###div_banniere_pub
 ###dm_ads_Ban_desktop_bottom
@@ -2616,6 +2620,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.newads
 ##.nf-aside-ads
 ##.nf-aside-ads__legal
+##.null-ad
 ##.oan_ad
 ##.oboxads
 ##.oboxads-ad-widget
@@ -2688,7 +2693,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.pub_160x600
 ##.pub_300_250
 ##.pub_banner
-##.pub_banner_bot
 ##.pub_banner_h
 ##.pub_banner_top
 ##.pub_carre
@@ -2741,6 +2745,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.reklambox
 ##.reklamgec
 ##.remove_ads
+##.rightPub
 ##.right_middle_ad
 ##.right_top_ad
 ##.sd-ad-container
@@ -2766,6 +2771,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.sponsoredPrisma
 ##.sponsored_banner
 ##.sponsorfooter
+##.squareadboxext
 ##.srcPubZone
 ##.standard_adv_link
 ##.sticky-ad-holder
@@ -2814,6 +2820,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##a[href*="?bz=300*250"] > img[src*=".alicdn.com/"]
 ##a[href*="?bz=725*90"] > img[src*=".alicdn.com/"]
 ##a[href^="https://cosmicfundboost.com/trck/"]
+##a[href^="https://pornworks.com/fr/undress/image?utm_source="]
 ##div[data-ad]
 ##div[data-iab-tag]
 basketusa.com###Basketusa_Habillage
@@ -2876,6 +2883,7 @@ tiplanet.org###left_column > .archive:not([id])
 journaldugeek.com###linkhabillage
 laposte.net###lpn_pub_main
 hellokids.com###mask
+gulli.fr###masthead
 lafranceagricole.fr###materielOccasion
 sfr.fr###meeticWrapper
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_bottom
@@ -2888,7 +2896,6 @@ zdnet.fr###mpuTop
 presse-citron.net,touchdownactu.com###mvp-leader-wrap
 agroligne.com###myModal
 p-nintendo.com###network > ul > .jm
-vacanceo.com###new_travelbloc
 net-iris.fr###ni-barreGroup
 orange.fr###o_carrepub
 orange.fr###oan_ora_2_300x250_hp.prospects
@@ -3229,6 +3236,7 @@ abidjan.net,algerie-focus.com,algerie360.com,bc.vc,bismirabbika.com,extratorrent
 amateur2sexe.fr,pornovore.fr##a[href*="/?id="]
 tube8.fr##a[href*="/_xa/ads?"]
 maghrebemergent.com,maghrebemergent.info##a[href*="/banners/click/"]
+espritlib.com##a[href*="/goto_part.php?"]
 exefiles.com##a[href*="/recommended/"]
 1001ebooks.ws##a[href*="/telebooks.html"]
 seneweb.com##a[href*="/xban/"]
