@@ -1,9 +1,9 @@
-! Checksum: wnFnZcPg4DQyP2S8N+smCg
-! Diff-Path: ../patches/13/13-s-1770369835-3600.patch
+! Checksum: gcB+f10G0+K6FOaLl1sUHg
+! Diff-Path: ../patches/13/13-s-1770373282-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.2
-! TimeUpdated: 2026-02-06T09:20:20+00:00
+! Version: 2.0.62.3
+! TimeUpdated: 2026-02-06T10:18:18+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -6218,6 +6218,8 @@ selcuksportshdcanli.com##.ps
 ||video.twimg.com/ext_tw_video/*/*.m3u8$domain=/^[a-zA-Z]{1\,6}\.[a-zA-Z0-9]{15\,}.*\d+.*\.click$/
 ! aglint-enable no-invalid-modifiers
 ! TODO: remove "NOT_VALIDATE" hint when this issue is fixed - https://github.com/AdguardTeam/FiltersCompiler/issues/237
+!+ NOT_VALIDATE
+[$domain=/^main\.uxsyplayer[a-z0-9]+\.click$/]#%#//scriptlet('set-constant', 'Object.prototype.adSkipped', 'true')
 !+ NOT_VALIDATE
 [$domain=/^main\.uxsyplayer[a-z0-9]+\.click$/]#%#//scriptlet('set-constant', 'document.referrer', '')
 !+ NOT_VALIDATE
