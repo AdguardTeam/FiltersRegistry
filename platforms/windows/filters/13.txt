@@ -1,9 +1,9 @@
-! Checksum: mMz2olaVKehisBINakl3Ew
-! Diff-Path: ../patches/13/13-s-1770366064-3600.patch
+! Checksum: wnFnZcPg4DQyP2S8N+smCg
+! Diff-Path: ../patches/13/13-s-1770369835-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.1
-! TimeUpdated: 2026-02-06T08:17:52+00:00
+! Version: 2.0.62.2
+! TimeUpdated: 2026-02-06T09:20:20+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1540,6 +1540,7 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+filmkuzusu.vip#%#//scriptlet('prevent-window-open')
 ifsagram6.com##.banner-wrap
 ||zerotik.space/maczer15.js
 filmgo2.org,filmmolly.com##.sayfa-sol > a[target="_blank"]
@@ -1693,7 +1694,7 @@ ahaber.com.tr##.billboard-top
 ||hdfullfilmcibaba.com/reklapops.js
 720pizleme.*###sidebar > .sidebar-content:has(> .textwidget > p > a[target="_blank"])
 hotstream.club###my-video_jw > .alert
-/pops*.js$domain=kuzufilmizle1.com|yavuzfilmm.com|kelebekfilmm1.com|erotikjam.com|yavuzfilmizle.com
+/pops*.js$domain=kuzufilmizle1.com|yavuzfilmm.com|kelebekfilmm1.com|erotikjam.com|yavuzfilmizle.com|filmkuzusu.vip
 ||loanpaydayok.com/izin/
 loanpaydayok.com#$#body { background: transparent !important; }
 fotomac.com.tr##a[href^="http://"] > span
@@ -5753,6 +5754,14 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! NOTE: Frequently changed domains
 ! WARNING: When adding new rules here, try to find an initial source of an actual domain,
 !          or add a last known domain
+!
+! Frequently changed domains: patronspor*.cfd
+! Source: patronspor05648a2w45awes.cfd
+! aglint-disable no-invalid-modifiers
+!+ NOT_VALIDATE
+||blogger.googleusercontent.com/img/$domain=/patronspor[0-9a-z]{14}\.cfd$/
+[$domain=/patronspor[0-9a-z]{14}\.cfd$/]##.background-link
+[$domain=/patronspor[0-9a-z]{14}\.cfd$/]##.top-banner-header
 !
 ! Frequently changed domains: zbahistv*.com
 ! Source: zbahistv26.com
