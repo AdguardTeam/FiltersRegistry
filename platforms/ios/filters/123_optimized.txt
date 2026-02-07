@@ -1,9 +1,9 @@
-! Checksum: O8CH2ESFCOrIhJ5j6MEOew
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1770425680-14400.patch
+! Checksum: rTiI8myfvGAHAFJhFulaRw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1770440375-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.55.96
-! TimeUpdated: 2026-02-07T00:51:23+00:00
+! Version: 2.1.55.97
+! TimeUpdated: 2026-02-07T04:56:12+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -31,7 +31,6 @@
 /facebook_footer.png
 /facebook_footer.svg
 /facebook_like_button.png
-/facebook_sidebar.jpg
 /facebook_social.png
 /fb-like-pop.js
 /fb-pixel.js
@@ -165,6 +164,7 @@ _social-bar/
 ###articleShare
 ###article_share
 ###article_tools_share
+###articlebottomsharinglinks
 ###aside-social-links-container
 ###base64-share-vk
 ###bdshare
@@ -489,6 +489,7 @@ _social-bar/
 ###sharelink
 ###sharelinks
 ###sharelist
+###shareme
 ###sharepost
 ###sharer
 ###shareside
@@ -916,7 +917,6 @@ _social-bar/
 ##.article__social-links
 ##.article__socials
 ##.article_bottom_share
-##.article_detail_share
 ##.article_footer_pinterest
 ##.article_footer_share
 ##.article_header_share
@@ -1092,7 +1092,6 @@ _social-bar/
 ##.cff-share-tooltip
 ##.ci-socials-ignited
 ##.cmg-share-bar
-##.col-fb
 ##.col-sharing
 ##.col-social
 ##.column-social
@@ -1306,7 +1305,6 @@ _social-bar/
 ##.fbfollow
 ##.fblbForm
 ##.fblikebox
-##.fbliketop
 ##.fblink
 ##.fbshare
 ##.fbsmallshare
@@ -1536,7 +1534,6 @@ _social-bar/
 ##.h-c-social
 ##.h-share
 ##.h5ab-print-button-container
-##.haber_sosyal
 ##.has-button-share
 ##.hatena-bookmark-button
 ##.hatena-btn-icon
@@ -1578,6 +1575,7 @@ _social-bar/
 ##.header__social-nav
 ##.header__socialMedia
 ##.header__socials
+##.header_sharing
 ##.header_sns
 ##.header_social
 ##.header_social_icon
@@ -1866,7 +1864,6 @@ _social-bar/
 ##.m-share
 ##.m-share-bar
 ##.m-share-bar__link
-##.m-share-list
 ##.m-sharing
 ##.m-sns
 ##.m-social-bar
@@ -1881,7 +1878,9 @@ _social-bar/
 ##.main-footer__socials
 ##.main-header__social
 ##.main-nav-social
+##.mainVerticalArticleSharingLinks
 ##.main__share
+##.main_search_social
 ##.main_share_panel
 ##.mashicon-share
 ##.mashsb-box
@@ -1981,7 +1980,6 @@ _social-bar/
 ##.nav__social
 ##.nav_share
 ##.nav_social
-##.nav_social_container
 ##.navbar-social
 ##.navbar-sociallink
 ##.navbar__social
@@ -2758,6 +2756,7 @@ _social-bar/
 ##.snsPalette
 ##.snsWrapper
 ##.sns_box
+##.sns_box_single
 ##.sns_comm
 ##.sns_follow
 ##.sns_right
@@ -2990,6 +2989,7 @@ _social-bar/
 ##.social-share_compact
 ##.social-sharer
 ##.social-shares
+##.social-sharing-btn
 ##.social-sharing-button
 ##.social-sharing-buttons
 ##.social-sharing-item
@@ -3082,12 +3082,12 @@ _social-bar/
 ##.socialNav
 ##.socialNetworks
 ##.socialPanel
-##.socialRoll
 ##.socialSection
 ##.socialShare
 ##.socialShareIcon
 ##.socialShareLinks
 ##.socialSharing
+##.socialSideBar
 ##.socialSticky
 ##.socialTab
 ##.socialToolbar
@@ -3393,6 +3393,7 @@ _social-bar/
 ##.ut2-social-link-block
 ##.utility-social
 ##.vbseo_share
+##.vc_container_social_button
 ##.vc_share_link_container
 ##.vc_social_button
 ##.vc_social_icons
@@ -3599,7 +3600,6 @@ _social-bar/
 ##a[title="Suivez-nous sur Pinterest"]
 ##a[title="Suivez-nous sur Twitter"]
 ##amp-social-share
-##div[title="Partager sur Facebook"]
 ##div[title="Partager sur Twitter"]
 ##img[alt="Connect with us on Facebook"]
 ##img[alt="Connect with us on LinkedIn"]
@@ -3709,6 +3709,7 @@ sputnikglobe.com###cta
 dailymail.co.uk,thisismoney.co.uk###dms-txt
 imgflip.com###findUs
 memuplay.com###fixed-share
+thefreedictionary.com###fixedBlock
 empoweringparents.com,geraligado.blog.br,katholisch.de,tvmaze.com###follow
 openspeedtest.com###footBox2
 abebooks.com,atlasobscura.com###footer-social-list
@@ -3881,6 +3882,7 @@ trueachievements.com##.fa-comments
 trueachievements.com##.fa-reddit
 techradar.com##.facebook-icon
 knowyourmeme.com##.fb-page-like-box
+thefreedictionary.com##.fb-share
 dailymail.co.uk##.fbmessenger
 eadaily.com##.feed
 lubuntu.me##.ff-social-icon
@@ -4080,6 +4082,8 @@ streetinsider.com##.sharesection
 thenation.com##.sharethis-menu
 12tomatoes.com##.sharetocare-popup
 glassalmanac.com##.shhr-btn
+thefreedictionary.com##.shr-facebook
+thefreedictionary.com##.shr-twitter
 welivesecurity.com##.sidebar-card-media
 pcgamesn.com,pockettactics.com,wargamer.com##.sidebar-social-widget
 niemanlab.org##.simple-skinnyleft
@@ -4194,6 +4198,8 @@ techcrunch.com##.wp-block-techcrunch-social-share
 freepressjournal.in##.wrap_cont
 firstpost.com##.yt-ch
 nypost.com##.zephrModal
+securityweek.com##.zox-post-soc-list
+securityweek.com##.zox-top-soc-wrap
 sfgate.com##[aria-label="Share from Email"]
 techcommunity.microsoft.com##[class^="custom_widget_MicrosoftFooter_social-share_"]
 news.sky.com##[data-component-name="sdc-article-strapline"]
@@ -4353,6 +4359,7 @@ presseportal.de##.story-sharing
 tagesspiegel.de##a[data-gtm-class="article-social-link"]
 handelsblatt.com##app-icon-link
 bz-berlin.de##div[data-type="social-bar"]
+berliner-kurier.de##section[class^="article-top-panel_socials_"]
 focus.de##.socFbLikeShare
 meteofrance.com###block-publicmenusocial
 radiofrance.fr##.ShareManager
