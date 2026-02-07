@@ -1,9 +1,9 @@
-! Checksum: EHc7KTtDaoaYTnhxm1V4lw
-! Diff-Path: ../patches/14/14-s-1770473616-3600.patch
+! Checksum: df9uTEEbgKjvBut4sn7qjQ
+! Diff-Path: ../patches/14/14-s-1770477188-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.58.21
-! TimeUpdated: 2026-02-07T14:10:46+00:00
+! Version: 2.2.58.22
+! TimeUpdated: 2026-02-07T15:09:46+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2576,6 +2576,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+||vwfs.se/assets/js/cookie.js
 vrk.de#%#//scriptlet('trusted-click-element', '[style] > [style] > s-button[data-testid="button--einstellungen-speichern"] > button.s-button__button')
 kolesa.ru#%#//scriptlet('set-cookie', '_kcp', '1')
 mui.com##div[aria-labelledby^="cookie-consent-dialog-"]
@@ -18326,6 +18327,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224348
+@@||vwfs.se/assets/css/cookiebanner.css$domain=vwfs.se
+vwfs.se#$#.cookie-wrapper-container { display: none !important; }
+vwfs.se#$#body { overflow: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224310
 puratos.us#@##cookieInfo
 puratos.us#@#.cookie-banner:not(body):not(html)

@@ -1,9 +1,9 @@
-! Checksum: 5I3CFVlpFr5qiUTG9NC3Xg
-! Diff-Path: ../patches/18/18-s-1770455686-3600.patch
+! Checksum: XVH78FJP5TcE5/NHAsNEJQ
+! Diff-Path: ../patches/18/18-s-1770477160-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.80.45
-! TimeUpdated: 2026-02-07T09:12:21+00:00
+! Version: 2.0.80.46
+! TimeUpdated: 2026-02-07T15:09:51+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2576,6 +2576,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+||vwfs.se/assets/js/cookie.js
 vrk.de#%#//scriptlet('trusted-click-element', '[style] > [style] > s-button[data-testid="button--einstellungen-speichern"] > button.s-button__button')
 kolesa.ru#%#//scriptlet('set-cookie', '_kcp', '1')
 mui.com##div[aria-labelledby^="cookie-consent-dialog-"]
@@ -18316,6 +18317,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224348
+@@||vwfs.se/assets/css/cookiebanner.css$domain=vwfs.se
+vwfs.se#$#.cookie-wrapper-container { display: none !important; }
+vwfs.se#$#body { overflow: auto !important; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224310
 puratos.us#@##cookieInfo
 puratos.us#@#.cookie-banner:not(body):not(html)
