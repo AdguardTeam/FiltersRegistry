@@ -1,5 +1,5 @@
-! Checksum: EKCZ7n3wr9UaQxMpKqFjbg
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1770433406-3600.patch
+! Checksum: nG01ZHdK1rrvAC1w5RwVCA
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1770520355-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.41.47
@@ -172,6 +172,7 @@ comic.nan-net.com##.rssimg-list
 cpt.com.br###faixa-bottom
 dire.it#%#//scriptlet('prevent-addEventListener', 'loadedmetadata', 'isImmediatePropagationStopped')
 people.com#$?#div[id^="article__broad-video-"] { remove: true; }
+hachiraw.net##.ng-scope[ng-if] > img[data-original$="/01.png"]
 n-tv.de##.sitemap__group:has(> .sitemap__newsletter)
 [$path=/\/(search|tag)\//]www.nicovideo.jp##.nicoadVideoItem
 [$path=/tag/]www.nicovideo.jp##.nicodicNicoadVideoList
@@ -415,7 +416,6 @@ farmer.pl##body > .p-top > .p-top-container > .p-top-right
 is.fi#%#//scriptlet('remove-class', 'stuck', '.placeholder > .sticky-container.stuck')
 lefigaro.fr##.figaro-player--sticky
 surfshark.com##.post-content .get-surfshark
-wwdjapan.com###fw-player
 gendai.media##div[data-testid="firework-storyblock-ad"]
 maquia.hpplus.jp##.firework-tag-articles
 maquia.hpplus.jp##.section-fireworkTag
@@ -445,7 +445,6 @@ pornpics.com###fb-button
 !+ NOT_OPTIMIZED
 blog.tinect.jp###meerkat-wrap
 ||meczyki.pl/js/news-widget.js$domain=devilpage.pl
-egzamin-ee08.blogspot.com,egzamin-ee09.blogspot.com,egzamin-e12.blogspot.com,egzamin-e13.blogspot.com,egzamin-e14.blogspot.com###divpop
 meteo.ua##.add-favourites
 gamewith.jp##.gdb-enquete-banner
 zhihu.com#%#(()=>{var b=EventTarget.prototype.addEventListener,c=function(a,b){var c=document.querySelector("button.AppHeader-login, .AppHeader-userInfo > .AppHeader-profile > div > button.Button--blue");c&&b.bind(c)("click",function(){d.disconnect()},{once:!0})},d=new MutationObserver(function(){var a=document.querySelector(".Modal-wrapper .signFlowModal > .Modal-closeButton");a&&(d.disconnect(),e.disconnect(),a.click())});d.observe(document,{childList:!0,subtree:!0});var e=new MutationObserver(a=>{c(a,b)});e.observe(document,{childList:!0,subtree:!0}),setTimeout(function(){e.disconnect(),d.disconnect()},5E3)})();
@@ -733,7 +732,6 @@ foreignpolicy.com#$#body { overflow:visible!important; }
 foxnews.com##.page .alert-banner
 calendar.google.com,docs.google.com,mail.google.com,news.google.com,drive.google.com#?#iframe[src^="https://ogs.google.com"][src*="/widget/callout/"]:upward(div[style^="overflow: hidden; position: absolute; top: 0px; width:"])
 kresy.pl##.ls-popup [id^="layerslider_"]
-journo.com.tr##.herald-single-sticky
 semrush.com#$#body { overflow:visible!important; }
 ||pdj.cc^$domain=promodj.com
 urlaubstracker.de###wysija-2
@@ -744,6 +742,7 @@ wikipedia.org##.cnotice
 emaze.com#%#var _st = window.setTimeout; window.setTimeout = function(a, b) { if(!/loginPopup.show/.test(a)){ _st(a,b);}};
 vk.com##.feed_friends_recomm
 vk.com##aside[aria-label="Актуальные новости"]
+ixbt.video##.clickable_zone
 ixbt.video#$#body { background: none!important; }
 last.fm##.profile-banner
 skype.com,xbox.com##.f-information.epb-container
@@ -1260,10 +1259,8 @@ rusprofile.ru###sticky-header
 promptingguide.ai##.nextra-callout
 oyunfor.com###headerBarLink
 ||apteka.by/banners/*Supradin-search-*.jpg
-apteka.by##search div:not([class]) + div.mt-\[12px\]
 reviversoft.com##.find
 reviversoft.com##.left_side > #add_block
-||reviversoft.com/resource/js/sale/black-friday-24/
 splcenter.org#$#.wp-site-blocks > aside.wp-block-template-part--popup { display: none !important; }
 gamewith.jp##.u-bgc-white:has(> div.walkthrough-official-banner)
 builtin.com###job-search-widget
@@ -1328,7 +1325,6 @@ wurstclient.net###afa-prompt
 nodesource.com##.product-bottom-cta
 uchi.ru##a[href="https://max.ru/uchi_quiz_bot"]
 voelkner.de##.promotion_campaign
-farodevigo.es###mid_news iframe
 amtrak.com##.promo-simple-image:has(> div > a.am-fm__popup-link)
 welivesecurity.com##.sidebar-card-banner:not([href*="welivesecurity.com"])
 freightwaves.com#$#body { padding-top: 0 !important; }
@@ -1818,6 +1814,7 @@ bookshop.org##.Friendbuy-ribbon-transition
 kaspersky.ru##a[href^="/downloads/premium-free-trial?"] > img
 opovo.com.br##.cta__assine
 watchmojo.com##.trivia-status-mobile
+profi.ru###about_banner
 wiz.io##.prose > div.group:has(> a[href="https://wiz.io/demo"])
 u.gg##.content-section > div.relative:has(> div > a[href^="/app?"])
 loungegamejoin.site##div[id^="idGoogleAd"]
@@ -2171,8 +2168,6 @@ kotsovolos.gr###top-pre-header
 videogameschronicle.com##.vgc-products
 kinoart.ru###issue_banner
 wcoflix.tv,wcoanimesub.tv,wcoanimedub.tv,wco.tv##.saklasanabunu
-wco.tv##.video-page-main ~ div a[href^="https://user.wco.tv/wp-login.php?action=register"]
-wco.tv##.video-page-main ~ div > div > div[style]:has(> a[href^="https://user.wco.tv/wp-login.php?action=register"]:only-child)
 qjweb.jp##.l-aside_ad
 ||kamigame.jp/wp-content/uploads/recruit.png
 ||blogparts.bookwalker.jp^$domain=ddnavi.com
@@ -2205,6 +2200,7 @@ iotransfer.itopvpn.com#$#.itop-fl-banner { display: none !important; }
 iotransfer.itopvpn.com#$#.language { margin-top: 0 !important; padding-top: 0 !important; }
 zerohedge.com##div[class^="PromoBanner_"]
 renosy.com##.floatBanner
+inzynieria.com##.partners-top
 twitter.com,x.com##div[aria-label] > div[class]:only-child > div[class]:only-child > div[class]:not([class*=" "]):has(> div[style="display: none !important;"])
 wcostream.tv##td[width="160"][height="900"][align="left"]
 okmusi.com##.footer-banner
@@ -2372,6 +2368,7 @@ biglobe.ne.jp##.h_bar
 ||backgrounds.wetransfer.net^
 gab.com#?#.sticky-inner-wrapper > div > aside[class^="_"]:has(> div[class] > div[class] > div[class] > h2[class]:contains(/^(Upgrade to|Dissenter Shop)/))
 gab.com#?#div[tabindex="-1"] ~ div > div:has(span[data-text]:contains(/^(Upgrade to|Help keep Gab online|Invest in Gab|Dissenter Shop|Elevate Your Experience)/))
+zendesk.com##div[aria-label="top-promo-eyebrow-next-big-ai-drop"]
 apteka.ru##.OrderCreatedPopup__gift
 apteka.ru##.BaseView__content > div.cartPage-wrap > div.Carousel
 soundcloud.com##.l-product-banners
@@ -2934,7 +2931,6 @@ videoconverterfactory.com##.down-bannerbg
 kom-dir.ru,firesticktricks.com##.warning
 receive.shamimomo.net##.alert-info
 hetmanrecovery.com##._header-banner
-spokesman.com##.bottomBlockWripper
 jd.com##.fs_act
 texterra.ru###js_popup_promo
 plus.espn.com##.popup-container
@@ -2965,7 +2961,6 @@ intellipaat.com##.tutorial-cta-wrapper
 zerkalo.io##.b-prmplace
 300.ya.ru,romptn.com,careeraddict.com,matchtv.ru##.banner-container
 support.microsoft.com###rail-banner
-laleggepertutti.it##div[style*="background-color: #efbb1b;"][style*="padding: 10px;"][style*="color: #000;"]
 ancient-origins.net#?#.region > div.block:has(> div.block-inner a[href^="https://shop.ancient-origins.net/"])
 ancient-origins.net#?#.region > div.block:has(> div.block-inner a[href^="https://members.ancient-origins.net/"])
 prepscholar.com##.advertisement-widget
