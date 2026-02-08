@@ -1,9 +1,9 @@
-! Checksum: Bqzy+Bomqg7YvOkoLLJYZw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1770549129-3600.patch
+! Checksum: XERV3JASFHvBKgriFfdsMg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1770563575-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.55.89
-! TimeUpdated: 2026-02-08T11:09:13+00:00
+! Version: 2.0.55.90
+! TimeUpdated: 2026-02-08T15:09:56+00:00
 ! Expires: 5 days (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -166,7 +166,7 @@ ebookdz.com#%#//scriptlet('abort-on-property-read', 'ABDetector')
 ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ||ebookdz.com/forum/libab/script.js
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
-japscan.*#%#//scriptlet('remove-node-text', 'script', '/pubadx-ad|runInPagePush|threshold|getBoundingClientRect|nextElementSibling|getElementsByTagName/')
+japscan.*#%#//scriptlet('remove-node-text', 'script', '/pubadx-ad|runInPagePush|threshold|getBoundingClientRect|nextElementSibling|tsByTagName/')
 japscan.*#%#//scriptlet('abort-current-inline-script', 'MessageChannel', '0x')
 japscan.*#%#//scriptlet('prevent-requestAnimationFrame', '/(\s*)\s*=>/')
 japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Array.prototype.join', '""', 'prevent', 'inlineScript')
@@ -175,6 +175,7 @@ japscan.*#%#//scriptlet('set-constant', 'aclib.runPop', 'throwFunc')
 japscan.*#%#//scriptlet('set-constant', 'aclib.runInPagePush', 'noopFunc')
 japscan.*#%#//scriptlet('trusted-set-constant', 'aclib', '{"isShowingPop":false}')
 japscan.*#%#//scriptlet('trusted-set-constant', 'pubadxtag', '{"divIds":[]}')
+japscan.*#$?#div[yukinew] { remove: true; }
 japscan.*#$#body > div.full-container > div.full-container.text-center > div.mt-2[style="margin: 0px auto; display: block;"] > a.Aikoi.donate[target="_blank"][rel][href^="https://www.longosto.shop/?utm_source="] > img.img-fluid { content-visibility: hidden !important; }
 japscan.*#@#div.container > [href]
 japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
