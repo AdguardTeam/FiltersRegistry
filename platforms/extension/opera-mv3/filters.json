@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.85.9",
-			"timeUpdated": "2026-02-09T12:47:34+0000",
+			"version": "2.1.85.10",
+			"timeUpdated": "2026-02-09T20:45:05+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.85.8",
-			"timeUpdated": "2026-02-09T12:47:36+0000",
+			"version": "2.1.85.9",
+			"timeUpdated": "2026-02-09T20:45:05+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -982,8 +982,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
 			"trustLevel": "high",
-			"version": "2.0.27.92",
-			"timeUpdated": "2026-02-09T08:47:15+0000",
+			"version": "2.0.27.93",
+			"timeUpdated": "2026-02-09T20:45:10+0000",
 			"deprecated": false,
 			"languages": [
 				"id"
@@ -1006,8 +1006,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/easylist-thailand/easylist-thailand/master/subscription/easylist-thailand.txt",
 			"trustLevel": "high",
-			"version": "2.0.0.27",
-			"timeUpdated": "2025-11-28T16:39:17+0000",
+			"version": "2.0.0.28",
+			"timeUpdated": "2026-02-09T20:45:19+0000",
 			"deprecated": false,
 			"languages": [
 				"th"
@@ -1076,8 +1076,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://raw.githubusercontent.com/abpvn/abpvn/master/filter/abpvn_adguard.txt",
 			"trustLevel": "high",
-			"version": "2.0.41.75",
-			"timeUpdated": "2026-02-09T12:47:55+0000",
+			"version": "2.0.41.76",
+			"timeUpdated": "2026-02-09T20:45:23+0000",
 			"deprecated": false,
 			"languages": [
 				"vi"
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.78.40",
-			"timeUpdated": "2026-02-09T12:48:18+0000",
+			"version": "2.0.78.41",
+			"timeUpdated": "2026-02-09T20:45:43+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
