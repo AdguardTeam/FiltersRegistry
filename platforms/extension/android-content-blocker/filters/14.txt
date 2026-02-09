@@ -1,8 +1,8 @@
-! Checksum: sqhY9l2bb09C8bU81Ew9UA
+! Checksum: ase4R896XnXJOCWPeqQpcQ
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.58.39
-! TimeUpdated: 2026-02-09T15:24:26+00:00
+! Version: 2.2.58.40
+! TimeUpdated: 2026-02-09T17:23:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2465,6 +2465,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+ipmarket.io###cookies-policy-overlay
 sollers-auto.com##.cookies__holder
 zeekrlife.com##.zk-drawer-bottom
 liauto.com###lx-cookie-layer
@@ -12299,6 +12300,9 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! ipmarket.io
+ipmarket.io#@##cookies-policy
+ipmarket.io#@#.cookie-banner:not(body):not(html)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224369
 @@||cdn.cookielaw.org/consent/$domain=nbcolympics.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224348

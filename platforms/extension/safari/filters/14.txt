@@ -1,9 +1,9 @@
-! Checksum: dCz/1OmpFY4BxK8ZOJYJyA
-! Diff-Path: ../patches/14/14-s-1770650846-3600.patch
+! Checksum: vUD2K9kuT9OK1dIIo2QPVQ
+! Diff-Path: ../patches/14/14-s-1770657946-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.58.39
-! TimeUpdated: 2026-02-09T15:24:26+00:00
+! Version: 2.2.58.40
+! TimeUpdated: 2026-02-09T17:23:06+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2577,6 +2577,13 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+ipmarket.io###cookies-policy-overlay
+ipmarket.io#$##cookies-policy { display: none !important; }
+ipmarket.io#$#html:not(#style_important) { overflow: auto !important; }
+ipmarket.io#$#body:not(#style_important) { overflow: auto !important; }
+maxpeedingrods.in.ua#$#body { overflow: auto !important; }
+maxpeedingrods.in.ua#$#.backdrop { display: none !important; }
+maxpeedingrods.in.ua#$##cookies-modal { display: none !important; }
 sollers-auto.com##.cookies__holder
 zeekrlife.com##.zk-drawer-bottom
 liauto.com###lx-cookie-layer
@@ -18281,6 +18288,7 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! ipmarket.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224369
 @@||cdn.cookielaw.org/consent/$domain=nbcolympics.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224348
