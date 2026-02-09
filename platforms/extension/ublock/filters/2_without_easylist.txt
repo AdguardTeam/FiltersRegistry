@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ebMNKq6gkJWXipvxR17vsw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1770639906-3600.patch
+! Checksum: u9vRmG77uop2GkbarNsNtw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1770644378-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.45.82
-! TimeUpdated: 2026-02-09T12:21:59+00:00
+! Version: 2.4.45.83
+! TimeUpdated: 2026-02-09T13:36:01+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10379,6 +10379,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224527
+faucetcrypto.com##+js(no-xhr-if, /cdn\.bmcdn3\.com|appsha-pnd\.ctengine\.io/)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224381
 tryigit.dev##+js(abort-on-stack-trace, console.log, checkAdBlockers)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224490
@@ -13503,9 +13505,6 @@ calibercorner.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 ||googletagmanager.com/gtag/js$script,redirect=noop.js,important,domain=earnhub.net
 @@||cdn.bmcdn3.com/js/*aab.js$domain=earnhub.net
 @@||googletagmanager.com/gtag/js$domain=earnhub.net
-! https://github.com/AdguardTeam/AdguardFilters/issues/136612
-||coinzillatag.com/lib/fp.js$script,redirect=noop.js,domain=faucetcrypto.com,important
-@@||coinzillatag.com/lib/fp.js$domain=faucetcrypto.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/136812
 thehouseofportable.com##+js(no-setTimeout-if, openInNewTab)
 thehouseofportable.com###htp:style(display: none !important;)
@@ -13552,8 +13551,6 @@ jiocinema.com##body .ad-zone:style(display: block !important; height: 1px !impor
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135993
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135812
 /nilesoft.org\/assets\/js\/lib\/[a-f0-9]+$/$domain=nilesoft.org
-! https://github.com/AdguardTeam/AdguardFilters/issues/135281
-faucetcrypto.com##+js(prevent-fetch, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/135305
 editpad.org##body #detect[class]:style(display: block !important;)
 editpad.org##+js(addEventListener-defuser, error, blockedUrl)
@@ -15464,13 +15461,14 @@ desktophut.com##+js(abort-current-script, document.getElementById, test-block)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154273
 ! https://github.com/AdguardTeam/AdguardFilters/issues/143181
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66997
-vidmoly.me,vidmoly.net,vidmoly.to#@#.AdsBox
-vidmoly.me,vidmoly.net,vidmoly.to###adsblock
-vidmoly.me,vidmoly.net,vidmoly.to##body > div[style*="opacity:"][style*="position: fixed; width:"][style*="z-index:"]
-vidmoly.me,vidmoly.net,vidmoly.to##+js(set-constant, adsbygoogle, {})
-vidmoly.me,vidmoly.net,vidmoly.to##+js(prevent-fetch, pagead2.googlesyndication.com)
-vidmoly.me,vidmoly.net,vidmoly.to##+js(addEventListener-defuser, DOMContentLoaded, /_0x|adsBlocked|custom-overlay/)
-$script,redirect-rule=noop.js,domain=vidmoly.me|vidmoly.net|vidmoly.to
+vidmoly.biz,vidmoly.me,vidmoly.net,vidmoly.to#@#.AdsBox
+vidmoly.biz,vidmoly.me,vidmoly.net,vidmoly.to###adsblock
+vidmoly.biz,vidmoly.me,vidmoly.net,vidmoly.to###x-adb-root
+vidmoly.biz,vidmoly.me,vidmoly.net,vidmoly.to##body > div[style*="opacity:"][style*="position: fixed; width:"][style*="z-index:"]
+vidmoly.biz,vidmoly.me,vidmoly.net,vidmoly.to##+js(set-constant, adsbygoogle, {})
+vidmoly.biz,vidmoly.me,vidmoly.net,vidmoly.to##+js(prevent-fetch, /pagead2\.googlesyndication\.com|doubleclick\.net/)
+vidmoly.biz,vidmoly.me,vidmoly.net,vidmoly.to##+js(addEventListener-defuser, DOMContentLoaded, /_0x|adsBlocked|custom-overlay/)
+$script,redirect-rule=noop.js,domain=vidmoly.biz|vidmoly.me|vidmoly.net|vidmoly.to
 ! https://github.com/AdguardTeam/AdguardFilters/issues/175940
 top.gg##+js(adjust-setTimeout, readyToVote, 12000)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/67023
@@ -15777,8 +15775,6 @@ cracking.org##+js(abort-current-script, $, /initDetection|!document\.getElementB
 @@||chinapost-track.com/ads.txt
 ! https://github.com/AdguardTeam/AdguardFilters/issues/57870
 wallpapershome.com###welcome.adblock
-! https://github.com/AdguardTeam/AdguardFilters/issues/57756
-@@||faucetcrypto.com/ads^
 ! https://github.com/AdguardTeam/AdguardFilters/issues/57561
 @@||camarchive.tv/assets/ads.js
 camarchive.tv##+js(set-constant, canads, true)
@@ -36562,6 +36558,12 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+readnovel.eu##.mantine-Container-root .mantine-Center-root ~ div[class^="mantine-"]:has(> .adsbygoogle:only-child)
+readnovel.eu##.mantine-Paper-root > div:not([class], [id]) > div:not([class], [id]) > .mantine-Container-root:has(> div:not([class], [id]) > div[class^="mantine-"] > .mantine-Grid-root .mantine-Image-root img:is([src^="https://aieasypic.com/"]))
+readnovel.eu##.mantine-Container-root:has(> div > a[href^="https://bestphoto.ai/"])
+readnovel.eu##.mantine-Container-root ~ div[class^="mantine-"]:has(> .mantine-Center-root > .mantine-Container-root > div:not([class], [id]) > a[href^="https://bestphoto.ai/"])
+audiobookbay.*##div[style^="text-align:left;"] > a[rel="nofollow"] img
+audiobookbay.*##.torrent_info > tbody > tr:has(> td:contains(/^(ad:|Secured Download:|Direct Download:)/i))
 yhprn.com##div[class]:has(> iframe[src^="//img.3dfulicai.com/"])
 ||img.3dfulicai.com^$domain=yhprn.com
 ||cloudfront.net^$script,domain=vik1ngfile.site
