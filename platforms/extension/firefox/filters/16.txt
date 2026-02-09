@@ -1,9 +1,9 @@
-! Checksum: w8emoxlUsbIYkF6sMXmIfQ
-! Diff-Path: ../patches/16/16-s-1770625478-3600.patch
+! Checksum: ggWsCPpe0SnSdUslZfX3EA
+! Diff-Path: ../patches/16/16-s-1770650838-3600.patch
 ! Title: AdGuard French filter
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.55.91
-! TimeUpdated: 2026-02-09T08:21:43+00:00
+! Version: 2.0.55.92
+! TimeUpdated: 2026-02-09T15:24:30+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -237,7 +237,7 @@ ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/179837
 ! https://github.com/AdguardTeam/AdguardFilters/issues/1478420
-japscan.*#%#//scriptlet('remove-node-text', 'script', '/pubadx-ad|runInPagePush|threshold|getBoundingClientRect|nextElementSibling|tsByTagName/')
+japscan.*#%#//scriptlet("remove-node-text", "script", "/pubadx-ad|runInPagePush|threshold|getBoundingClientRect|nextElementSibling|tsByTagName|display'/")
 japscan.*#%#//scriptlet('abort-current-inline-script', 'MessageChannel', '0x')
 japscan.*#%#//scriptlet('prevent-requestAnimationFrame', '/(\s*)\s*=>/')
 japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Array.prototype.join', '""', 'prevent', 'inlineScript')
@@ -246,7 +246,6 @@ japscan.*#%#//scriptlet('set-constant', 'aclib.runPop', 'throwFunc')
 japscan.*#%#//scriptlet('set-constant', 'aclib.runInPagePush', 'noopFunc')
 japscan.*#%#//scriptlet('trusted-set-constant', 'aclib', '{"isShowingPop":false}')
 japscan.*#%#//scriptlet('trusted-set-constant', 'pubadxtag', '{"divIds":[]}')
-japscan.*#$?#div[yukinew] { remove: true; }
 japscan.*#$#body > div.full-container > div.full-container.text-center > div.mt-2[style="margin: 0px auto; display: block;"] > a.Aikoi.donate[target="_blank"][rel][href^="https://www.longosto.shop/?utm_source="] > img.img-fluid { content-visibility: hidden !important; }
 japscan.*#@#div.container > [href]
 japscan.*#@##main > .card:has(a[href*="/manga/?type="][href*="&content="][target="_blank"])
