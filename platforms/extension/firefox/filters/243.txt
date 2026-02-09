@@ -1,14 +1,14 @@
-! Checksum: GUjMmVzKkIjJSqGyLvkS8A
-! Diff-Path: ../patches/243/243-s-1770454054-14400.patch
+! Checksum: fuMy6xYuldasf8dMwgg1wg
+! Diff-Path: ../patches/243/243-s-1770627038-14400.patch
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.87
-! TimeUpdated: 2026-02-07T08:44:55+00:00
+! Version: 2.0.23.88
+! TimeUpdated: 2026-02-09T08:47:52+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-02-07 07:45:15 CET
+! Last modified: 2026-02-09 07:46:44 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -129,6 +129,7 @@ aftonbladet.se##div[class^="stickylogin"]
 aftonbladet.se#?#div[class^="_adLabel"]:upward(1)
 aftonbladet.se##h2[data-test-tag="paragraph-header"]:has(a[aria-label*="ANNONS"])
 aftonbladet.se#?#.label-medium:contains(/annonslänkar/i):upward(astro-island[component-url])
+aftonbladet.se#?#:is(aside[class^="twocolumnlayout-aside"], section[class^="twocolumnlayout-main"]) a[data-test-tag="internal-link"]:contains(/annonslänkar/i)
 aftonbladet.se,godare.se##div[data-edition-name^="ab-native-premium"], div[class^="advertory-"]:not(.advertory-header-anchor), a[href*="/brandstudio"], a[href*="/brand-studio"],  a[href*="/casinoguide"]
 aftonbladet.se,godare.se,byggahus.se,expressen.se,elle.se,femina.se,svenskdam.se,galamagasin.se,rodeo.net,familjeliv.se,vitaestilo.se,golflivet.se,inredningsvis.se#%#//scriptlet('ubo-href-sanitizer', 'a[href*="/t?a="]', '?url')
 aftonbladet.se,godare.se,omni.se,omniekonomi.se,svd.se#$#.sp-message-open body { overflow:initial!important; position:unset!important; margin-top:unset!important; }
@@ -705,10 +706,10 @@ globalportalen.org##.card__advertisment, .ays-survey-popup-survey-window
 gmfk.nu###site-preloader
 godare.se##div[style*="min-height:240px"]:has(iframe[src*="/widgets/ads/"])
 godare.se##div[style="min-height:350px"]:has(iframe[title="Annons"])
-godare.se#%#//scriptlet('ubo-set', 'advertoryFluepapir', 'true')
 godare.se##.godare-ad-element, a[href*="/brand-studio"], a[href*="/brandstudio"], .recipe-ad, a[href*="utm_campaign"][data-test-tag="external-link"], div[class^="styles-imagesWrapper"] a[data-test-tag="external-link"]
 godare.se#?#:is(p[class^="teasersmall-sectionLabel"], p[class^="teasermedium-sectionLabel"]):contains(/annons/i):upward(a.internal-link, li)
 godare.se#?#[id^="adPlacement"]:upward(1)
+godare.se,klart.se#%#//scriptlet('ubo-set', 'advertoryFluepapir', 'true')
 golfguidenonline.se###citadela-infobar
 golfing.se##.c-partners__item
 golflivet.se##a[href*="/annonssamarbete/"], .deals_block_wrapper, .ai-close-fit
@@ -1645,6 +1646,7 @@ vartgoteborg.se##div[class^="Popup"], div[class^="CookieBanner"]
 varvat.se##.wpb_single_image a[target="_blank"], .gp-footer-2
 vasterastidning.se##article.column:has(a[data-k5a-url="/a/null"])
 vasterastidning.se##article[data-section="nativeannons"]
+vasterastidning.se#?#h2.headline:contains(ANNONS:):upward(article)
 vasterastidning.se##.row:has(a[href*="casino.se"])
 vastsverige.com#$#:is(.ng-cloak, [ng-cloak]) { display:initial!important; }
 veckansmiddag.com###load
@@ -1682,8 +1684,10 @@ vittsjobjarnum.nu###yt_spotlight1
 vi.se#$#body.cookie-modal-open { overflow:unset!important; }
 vi.se###westander-cookie-dialog, .Cookie-consent__backdrop
 vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu##article div[style^="padding-bottom"]:not([class]):has(div[data-tagid*="_panorama"])
+vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu#%#//scriptlet('ubo-json-prune', 'uesUrlFallback')
 vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu#%#//scriptlet('ubo-set', 'manualAutoplay_', 'noopFunc')
-vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu##.vkmui-Text--grey, [class^="adContainer"], div[class^="bordersAndShadows"] > div[style^="min-height"]:only-child, div[data-track-id="family.Familjeannonser"], div[class*="adElement"], div[id*="_panorama"], div[data-track-id*="panoramaAd"], div[data-track-id$=".native"], div[data-track-id$=".blockAd"]
+vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu##.vkmui-Text--grey, [class^="adContainer"], div[class^="bordersAndShadows"] > div[style^="min-height"]:only-child, div[data-track-id="family.Familjeannonser"], div[class*="adElement"], div[id*="_panorama"], div[data-track-id*="panoramaAd"], div[data-track-id$=".native"], div[data-track-id$=".blockAd"], div[data-track-id^="adnuntius-ad"], div[id^="fb_widescreen"]
+vk.se,folkbladet.nu,nordsverige.se,mellanbygden.nu,vasterbottningen.se,lokaltidningen.nu##:is(div[class^="stickyContainer"], div[class^="header_"]):has(span[data-ad-report-label="true"])
 vmhockey.se##div[id^="vmhockey_se_billboard"]
 vmj.se#?#.sidebox:contains(/Externa länkar|Artiklar/)
 vmj.se,danskaspraket.se,digitalavykort.se##.topdiv
