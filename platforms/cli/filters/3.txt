@@ -1,9 +1,9 @@
-! Checksum: qW+CGEqBP4syOQpyZqjrug
-! Diff-Path: ../patches/3/3-s-1770684199-3600.patch
+! Checksum: ZH/dHUzIhJk4piFkePVxWw
+! Diff-Path: ../patches/3/3-s-1770687756-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.0.99.85
-! TimeUpdated: 2026-02-10T00:40:41+00:00
+! Version: 2.0.99.86
+! TimeUpdated: 2026-02-10T01:39:40+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -66094,6 +66094,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||dwh-prod.moz.de^
 ||affiliate.hrkgame.com^
 ||counter.reddigital.ru^
 ||pixel.udpauto.ru^
@@ -124286,6 +124287,8 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+moz.de#%#//scriptlet('set-local-storage-item', 'AvoInstallationId', '$remove$')
+moz.de#%#//scriptlet('set-local-storage-item', '/^snowplow/', '$remove$')
 ||hrkgame.com/allstaticfiles/js/cookie.min.js
 ||gate.com/api/web/v*/marketing-tools/growth-placement/record-view
 ||apmplus.volces.com/monitor_web/
@@ -131267,6 +131270,8 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! moz.de
+||moz.de^$cookie=/^spid/
 ! newspicks.com
 ||newspicks.com^$cookie=np_uuid
 ! kupibilet.ru
@@ -139023,6 +139028,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||rentpenny.com^
 ||repeatsweater.com^
 ||replaceroute.com^
+||rescueothers.com^
 ||rescuerhino.com^
 ||resonantbrush.com^
 ||resonantrock.com^
@@ -139571,6 +139577,7 @@ kizi.com#%#window.google_trackConversion = function() {};
 ||valuebuttons.com^
 ||vanfireworks.com^
 ||vanishmemory.com^
+||vastmillions.com^
 ||velvetquasar.com^
 ||vengefulgrass.com^
 ||venomousvessel.com^
