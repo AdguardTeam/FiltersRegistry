@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.11.29",
-			"timeUpdated": "2026-02-11T16:28:07+0000",
+			"version": "2.1.11.30",
+			"timeUpdated": "2026-02-11T18:26:32+0000",
 			"languages": []
 		},
 		{
