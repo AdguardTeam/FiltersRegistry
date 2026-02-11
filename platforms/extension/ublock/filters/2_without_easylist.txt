@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ocqhk0Nkp+Q46fgVogLDVw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1770812780-3600.patch
+! Checksum: Ou9ySnceJGw6CUOrrlZnEA
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1770817140-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.46.27
-! TimeUpdated: 2026-02-11T12:22:45+00:00
+! Version: 2.4.46.28
+! TimeUpdated: 2026-02-11T13:35:17+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11185,6 +11185,8 @@ ghbrisk.com###adbd
 crazygames.com##.adsbox.advertisement.pub_300x250.pub_300x250m.pub_728x90.text-ad.textAd.text_ad.text_ads.text-ads.text-ad-links:style(display: block !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/201699
 ! https://github.com/AdguardTeam/AdguardFilters/issues/199124
+pvpoke-re.com##+js(abort-on-property-write, apcnf)
+pvpoke-re.com##div[id^="nitro-"]:remove()
 pvpoke-re.com##+js(abort-on-stack-trace, document.createTextNode.bind, .js?v=)
 pvpoke-re.com##body:has(#nitro-body-desktop > ins.adsbygoogle.nitro-body:not(:has(> div#aswift_1_host))) div:is(#nitro-body-desktop, #nitro-top, #nitro-header-mobile) > p
 @@||pvpoke-re.com^$generichide
@@ -36009,7 +36011,8 @@ _ad_content.
 /tghr.js$script
 !
 /server-side/amsweb.php?$document
-/click?key=*&COST_CPA=$all
+.php?key=*&camp_id=$all
+/click?key=*CPA&$all
 /wp-content/plugins/catfish-advert-banner/catjs.php
 &p_rid=*&userId=$xhr
 /api/users/*&ev=$script
@@ -36573,6 +36576,9 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+lbtube.com##.gallery-native-ads
+lbtube.com##.adb-notification
+||lbtube.com/*/ad-campaigns
 sexsq.com##.banner-title
 sexsq.com##.banners-block
 rekkerd.org##.rkkrd-target
@@ -61779,6 +61785,8 @@ implbits.com#@#.banner_container
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224698
+! https://github.com/AdguardTeam/AdguardFilters/issues/224697
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224409
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224269
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224196
