@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: alWMbXYH2iDkvf42P+yx5w
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1770771841-14400.patch
+! Checksum: kxpFnnEleTcoSU7xF+b7uQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1770786852-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.85.15
-! TimeUpdated: 2026-02-11T01:00:32+00:00
+! Version: 2.1.85.16
+! TimeUpdated: 2026-02-11T05:10:58+00:00
 ! Expires: 5 days (update frequency)
 &ad_count=
 &ad_unit_
@@ -266,6 +266,7 @@
 ://a.*/display?zone_id=
 ://a.*/loader?*&keywords=$3p
 ://aclick.
+://act-http-ban.
 ://ad.*&sid=
 ://ad.*/ad/*.gif
 ://ad.*/adx/
@@ -345,6 +346,7 @@
 ?promo=*&url=
 ?pub_id=
 ?r=*&zoneid=
+?redir=*/click?
 ?size=728x90|$subdocument
 ?style=300x250-
 ?tag_id=*&sw_url=
@@ -354,6 +356,7 @@
 ?ucozads^
 ?ufuad=
 ?zoneid=*&ab=$script
+?zoneid=*&ext=$3p
 ?zoneid=*&r=
 ?zoneid=*&serve=
 ?zones=*&blockcampaign=
@@ -458,7 +461,6 @@ _werbebanner_
 /wp-content/uploads/wp-banners/*
 /urlshortener.js
 /zerg-inf-multi.js
-/zerg-inf.js
 /ai/s/s/js/m/im.js
 /ai/s/s/js/ssu.v2.js
 /ai/s/s/su.php?
@@ -535,6 +537,7 @@ _build=iclick-$popup
 ||acxiom-online.com^$3p
 ||ad-spire.net^$3p
 ||ad6.fr^$3p
+||adfurikun.jp^$3p
 ||adhslx.com^$3p
 ||adintop.com^$3p
 ||adkontekst.pl^$3p
@@ -546,6 +549,7 @@ _build=iclick-$popup
 ||adnxtr.com^$3p
 ||adoftheyear.com^$3p
 ||adop.cc^$3p
+||adoptima.com^$3p
 ||adoric.com^$3p
 ||adpaths.com^$3p
 ||adpick.co.kr^$3p
@@ -590,6 +594,7 @@ _build=iclick-$popup
 ||bestcontentwork.top^$3p
 ||betterbannerscloud.com^$3p
 ||beurettemessenger.com^$3p
+||biznolimit.com^$3p
 ||blogbang.com^$3p
 ||broadcast.pm^$3p
 ||camsoda.com^$3p
@@ -610,6 +615,7 @@ _build=iclick-$popup
 ||clickzzs.nl^$3p
 ||clicmanager.fr^$3p
 ||clicmanager.net^$3p
+||clicnscores.ma^$3p
 ||como.com^$3p
 ||conduit.com^$3p
 ||cougar-rencontre.net^$3p
@@ -759,7 +765,6 @@ _build=iclick-$popup
 ||wiztube.xyz^$3p
 ||wm.artcomix.com^$3p
 ||xcamz.xyz^$3p
-||xiepl.com^$3p
 ||xn--ae-tja.ch^$3p
 ||xpicw.top^$3p
 ||yospace.com^$~object,3p
@@ -803,6 +808,7 @@ _build=iclick-$popup
 ||acanthishoving.com^
 ||accedemotorcycle.com^
 ||accelerationlottery.com^
+||acceptbettingchaste.com^
 ||accordancespotted.com^
 ||accountresponsesergeant.com^
 ||achyrepeatitchy.com^
@@ -1222,6 +1228,7 @@ _build=iclick-$popup
 ||looksmartppc.com^
 ||loppersixtes.top^
 ||lothlyunfaith.com^
+||lovedatng.com^
 ||loveonlinee.net^
 ||lqbvjmkoomerm.top^
 ||lvkwz.com^
@@ -1657,7 +1664,6 @@ _build=iclick-$popup
 ||jewhouca.net^$popup
 ||klclick.com^$popup
 ||livepartners.com^$popup,3p
-||max-adserv.com^$popup,3p
 ||monetizze.com.br^$popup,3p
 ||multiupload.com^$popup,3p
 ||mybestclick.net^$popup,3p
@@ -1765,7 +1771,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||embed.ly^*.amazon.
 ||embedly.com^$domain=korben.info
 ||emploipartner.com/uploads/media/5fb6411bbfd4d310595939.jpg
-||emploipartner.com^*_partner/$3p
 ||equirodi.com/images/pub/
 ||erotik-nrw.com/banner/
 ||escort-galleries.com/images/banner/
@@ -2191,7 +2196,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||ledevoir.com/documents/image/pub/
 ||ledgerwallet.com/images/promo/
 ||lelogicielgratuit.com/media/js/popupGenerator.min.js
-||lemidi-dz.com/images/pub/
 ||lemondeinformatique.fr/ajax/recuperation-pub.php?
 ||leparisien.fr^*/partenaires/
 ||leparking.fr/upload/partners/
@@ -2370,6 +2374,8 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###divHomeAd2
 ###divHomeAd3
 ###divPub
+###divPubEntete
+###divPubRecettePortable
 ###divPublicityLateral
 ###div_banniere_pub
 ###dm_ads_Ban_desktop_bottom
@@ -2857,6 +2863,7 @@ ouest-france.fr###bloc_partenaires_sport
 ouest-france.fr###bloc_pleine_page_1
 ouest-france.fr###bloc_pleine_page_2
 ouest-france.fr###bloc_shopping
+cap-public.fr###blocflottant
 manga-news.com###block-up
 lanutrition.fr###block-views-remote-products-block-home
 cowcotland.com###blocpub1
@@ -3026,6 +3033,7 @@ lepoint.fr##.branding
 gamergen.com,generation-nt.com##.bup
 lecho.be##.c-adh-connecthpwrapper
 cheriefm.fr##.c-block-display--covering
+terrafemina.com##.c-product
 orange.fr##.carousel-hp-pub2
 emu-france.com##.cas_version_mobile_cache_grande_pub
 comptoir-hardware.com##.cat_bons_plans_du_comptoir
@@ -3163,9 +3171,6 @@ ouedkniss.com##.search-top-1
 programme-tv.net##.shopping
 educatout.com##.showpub
 beaute-test.com##.sidebar-sticky
-quebeccoupongratuit.com##.size_300_250
-quebeccoupongratuit.com##.size_300_600
-quebeccoupongratuit.com##.size_728_90
 test-achats.be##.skin
 infoconcert.com##.slider.container
 ladiagonale.net##.slidingDiv2

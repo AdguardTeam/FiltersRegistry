@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 5ccVAEZAqA8BWBSkYpihIQ
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1770771842-14400.patch
+! Checksum: 1K8peBRionB5hvWfyLbIXw
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1770786852-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.56.19
-! TimeUpdated: 2026-02-11T01:00:43+00:00
+! Version: 2.1.56.20
+! TimeUpdated: 2026-02-11T05:11:09+00:00
 ! Expires: 5 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -326,6 +326,7 @@ _social-bar/
 ###js-share-links
 ###large_share_wrapper
 ###left_social_share
+###likeThisPost
 ###linkShare
 ###linkedin_share
 ###mainShare
@@ -451,6 +452,7 @@ _social-bar/
 ###shareVertHolder
 ###share_bar
 ###share_block
+###share_bottom
 ###share_box
 ###share_button
 ###share_buttons
@@ -492,7 +494,6 @@ _social-bar/
 ###shareme
 ###sharepost
 ###sharer
-###shareside
 ###sharethis
 ###sharing-bar
 ###sharing-box
@@ -584,7 +585,6 @@ _social-bar/
 ###socialButtons
 ###socialConnect
 ###socialContainer
-###socialFB
 ###socialFacebook
 ###socialFollow
 ###socialFooter
@@ -1103,6 +1103,7 @@ _social-bar/
 ##.comment-social
 ##.comment__share
 ##.comment_share
+##.comments-share
 ##.comments__likes
 ##.common-social-link
 ##.common_share
@@ -1304,12 +1305,10 @@ _social-bar/
 ##.fbbsb-buttons
 ##.fbbutton
 ##.fbfollow
-##.fblbForm
 ##.fblikebox
 ##.fblink
 ##.fbshare
 ##.fbsmallshare
-##.featuredPagesSocial
 ##.ff-icon-share
 ##.ff-share-wrapper
 ##.fi-social-facebook
@@ -1342,6 +1341,8 @@ _social-bar/
 ##.follow-bar
 ##.follow-facebook
 ##.follow-instagram
+##.follow-link-facebook
+##.follow-link-twitter
 ##.follow-linkedin
 ##.follow-pinterest
 ##.follow-share
@@ -1393,6 +1394,7 @@ _social-bar/
 ##.footer-follow
 ##.footer-follow-text
 ##.footer-follow-us
+##.footer-followUs
 ##.footer-followus
 ##.footer-icon-facebook
 ##.footer-instagram
@@ -1852,6 +1854,7 @@ _social-bar/
 ##.logo-social
 ##.logo_social
 ##.lsi-social-icons
+##.lst-shrpst
 ##.lst-social
 ##.lst_social
 ##.lzd-follow-us-icon
@@ -1913,7 +1916,6 @@ _social-bar/
 ##.menu-social-media-menu-container
 ##.menu-social-menu-container
 ##.menu-social-navigation-container
-##.menu_share
 ##.menu_social
 ##.message-share
 ##.messageShareButtons
@@ -1948,9 +1950,7 @@ _social-bar/
 ##.module-social-share-icons
 ##.mom-social-icons
 ##.mom-social-share
-##.mom-socials-widget
 ##.mom_social_counter
-##.momizat-social-icons
 ##.mvp-alp-soc-list
 ##.mvp-foot-soc-list
 ##.mvp-nav-soc-but
@@ -2093,7 +2093,6 @@ _social-bar/
 ##.post-content-share
 ##.post-footer-share
 ##.post-footer-social
-##.post-footer__share
 ##.post-like-share
 ##.post-meta-share
 ##.post-share
@@ -2452,6 +2451,7 @@ _social-bar/
 ##.shareControl
 ##.shareCount
 ##.shareDiv
+##.shareDropDown
 ##.shareEmail
 ##.shareFacebook
 ##.shareFb
@@ -2614,6 +2614,7 @@ _social-bar/
 ##.sharer-facebook
 ##.sharer-twitter
 ##.sharers
+##.shares-top
 ##.shares__item
 ##.sharesocial
 ##.sharetext
@@ -2679,6 +2680,7 @@ _social-bar/
 ##.sharings_box
 ##.sharrre
 ##.sharrre-container
+##.sharrre_widget
 ##.show-share
 ##.showShareMore
 ##.show_social
@@ -3168,7 +3170,6 @@ _social-bar/
 ##.socialmedia-buttons
 ##.socialmedia-container
 ##.socialmedia-footer
-##.socialmedia-menu
 ##.socialmedia_float
 ##.socialmedia_link
 ##.socialmediabar
@@ -3613,6 +3614,7 @@ _social-bar/
 ##.social.footer-links
 ##div[class^="SocialIcons_"]
 ||addthis.com^$3p
+||addthiscdn.com^$domain=~addthis.com
 ||addtoany.com^$3p
 ||assets.pinterest.com/js/pinit.js$3p
 ||b.hatena.ne.jp^$3p
@@ -3653,6 +3655,7 @@ _social-bar/
 ||line-apps.com^*/thirdparty/$3p
 ||line.me/js/line-button.js?$3p
 ||linkedin.com/countserv/$3p
+||linkedin.com/img/$3p
 ||messengerpeople.com^$3p
 ||milotree.com^$3p
 ||newsharecounts.com^$3p
@@ -3880,7 +3883,6 @@ bdonline.co.uk,dailymail.co.uk,flightglobal.com,screendaily.com##.email
 cbc.ca##.engagement-widgets
 spectator.co.uk##.entry-meta__item--social
 arabnews.com##.entry-views
-nrttv.com##.eshare
 yardbarker.com##.expanded.button
 trueachievements.com##.fa-comments
 trueachievements.com##.fa-reddit
@@ -3914,7 +3916,6 @@ meteoblue.com##.footer-options
 maketecheasier.com,tribune.com.pk,voetbalkrant.com,wielerkrant.be##.footer-social-icons
 gastrojournal.ch,myanimelist.net##.footer-social-media
 popsci.com##.footer-socials-wrapper
-dailykos.com##.footer__connect
 newrepublic.com##.footer__middleRow
 pastebin.com##.footer__right
 infoq.com##.footer__social-wrap
@@ -4548,8 +4549,6 @@ excelsior.com.mx###social-bottom-node
 forocoches.com###social-networks
 europapress.es###subnavegacionFixed
 elespectador.com##.Button_googleAlert
-lasexta.com##.L6-channel-news__list
-lasexta.com##.L6-social-share
 adn40.mx##.ListSiguenos-SocialStrip
 elpais.com.uy##.Page-actions-wrapper
 rpp.pe##.article__follow
@@ -4612,7 +4611,6 @@ nationalgeographic.com.es##.top-share-article
 elmundo.es##.ue-c-article__share-tools
 burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-btn--2
 burgosconecta.es,diariosur.es,diariovasco.com,elcomercio.es,elcorreo.com,eldiariomontanes.es,elnortedecastilla.es,hoy.es,ideal.es,larioja.com,lasprovincias.es,laverdad.es,lavozdigital.es,leonoticias.com,salamancahoy.es,todoalicante.es##.v-f__sm
-abc.es##.voc-social-networks
 elpais.com##.w_rs
 abc.com.py##.whatsapp-button-container
 oem.com.mx##.widget-social-default_share__tz2LV
