@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: 34E7YvLjWg+DGVsleCwHXQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1770734202-3600.patch
+! Checksum: EiCXG1M8BkX58/IjjKx9Dg
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1770779534-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.93
@@ -597,6 +597,7 @@ frandroid.com###products-archive-content .is-narrow > .sidebar
 ||vod.6cloud.fr/pub/*.mp4$media,redirect=noop-0.1s.mp3,domain=m6.fr
 leboncoin.fr##div[class^="styles_ad_"]
 60millions-mag.com##.block-banner-autopromo
+nostalgie.fr##.blockDisplay
 marianne.net##div[class^="p-"][class*="--placeholder"]
 luxauto.lu###leaderboard-top-homepage
 luxauto.lu##section[data-scope="homepage-hot-ads"] .grid > .imu
@@ -636,6 +637,7 @@ charentelibre.fr,sudouest.fr,techno-science.net##.pub
 journaldesfemmes.fr###ctn_position2
 dhnet.be###selligent-ads
 ||jobat.be^$subdocument,3p
+francebleu.fr##.SadSlot
 elle.fr##div[class$="--placeholder"]
 science-et-vie.com,topsante.com,autoplus.fr,sudouest.fr##.pub_dfp
 sudouest.fr##.pub_dfp_publi_info_loc
@@ -1432,6 +1434,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://a.*/display?zone_id=
 ://a.*/loader?*&keywords=$3p
 ://aclick.
+://act-http-ban.
 ://ad.*&sid=
 ://ad.*/ad/*.gif
 ://ad.*/adx/
@@ -1511,6 +1514,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?promo=*&url=
 ?pub_id=
 ?r=*&zoneid=
+?redir=*/click?
 ?size=728x90|$subdocument
 ?style=300x250-
 ?tag_id=*&sw_url=
@@ -1520,6 +1524,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ?ucozads^
 ?ufuad=
 ?zoneid=*&ab=$script
+?zoneid=*&ext=$3p
 ?zoneid=*&r=
 ?zoneid=*&serve=
 ?zones=*&blockcampaign=
@@ -1624,7 +1629,6 @@ _werbebanner_
 /wp-content/uploads/wp-banners/*
 /urlshortener.js
 /zerg-inf-multi.js
-/zerg-inf.js
 /ai/s/s/js/m/im.js
 /ai/s/s/js/ssu.v2.js
 /ai/s/s/su.php?
@@ -1701,6 +1705,7 @@ _build=iclick-$popup
 ||acxiom-online.com^$3p
 ||ad-spire.net^$3p
 ||ad6.fr^$3p
+||adfurikun.jp^$3p
 ||adhslx.com^$3p
 ||adintop.com^$3p
 ||adkontekst.pl^$3p
@@ -1712,6 +1717,7 @@ _build=iclick-$popup
 ||adnxtr.com^$3p
 ||adoftheyear.com^$3p
 ||adop.cc^$3p
+||adoptima.com^$3p
 ||adoric.com^$3p
 ||adpaths.com^$3p
 ||adpick.co.kr^$3p
@@ -1756,6 +1762,7 @@ _build=iclick-$popup
 ||bestcontentwork.top^$3p
 ||betterbannerscloud.com^$3p
 ||beurettemessenger.com^$3p
+||biznolimit.com^$3p
 ||blogbang.com^$3p
 ||broadcast.pm^$3p
 ||camsoda.com^$3p
@@ -1776,6 +1783,7 @@ _build=iclick-$popup
 ||clickzzs.nl^$3p
 ||clicmanager.fr^$3p
 ||clicmanager.net^$3p
+||clicnscores.ma^$3p
 ||como.com^$3p
 ||conduit.com^$3p
 ||cougar-rencontre.net^$3p
@@ -1925,7 +1933,6 @@ _build=iclick-$popup
 ||wiztube.xyz^$3p
 ||wm.artcomix.com^$3p
 ||xcamz.xyz^$3p
-||xiepl.com^$3p
 ||xn--ae-tja.ch^$3p
 ||xpicw.top^$3p
 ||yospace.com^$~object,3p
@@ -1969,6 +1976,7 @@ _build=iclick-$popup
 ||acanthishoving.com^
 ||accedemotorcycle.com^
 ||accelerationlottery.com^
+||acceptbettingchaste.com^
 ||accordancespotted.com^
 ||accountresponsesergeant.com^
 ||achyrepeatitchy.com^
@@ -2388,6 +2396,7 @@ _build=iclick-$popup
 ||looksmartppc.com^
 ||loppersixtes.top^
 ||lothlyunfaith.com^
+||lovedatng.com^
 ||loveonlinee.net^
 ||lqbvjmkoomerm.top^
 ||lvkwz.com^
@@ -2823,7 +2832,6 @@ _build=iclick-$popup
 ||jewhouca.net^$popup
 ||klclick.com^$popup
 ||livepartners.com^$popup,3p
-||max-adserv.com^$popup,3p
 ||monetizze.com.br^$popup,3p
 ||multiupload.com^$popup,3p
 ||mybestclick.net^$popup,3p
@@ -2919,7 +2927,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||eiffelturf.com/img/$3p
 ||embed.ly^*.amazon.
 ||emploipartner.com/uploads/media/5fb6411bbfd4d310595939.jpg
-||emploipartner.com^*_partner/$3p
 ||equirodi.com/images/pub/
 ||erotik-nrw.com/banner/
 ||escort-galleries.com/images/banner/
@@ -3292,7 +3299,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||ledevoir.com/documents/image/pub/
 ||ledgerwallet.com/images/promo/
 ||lelogicielgratuit.com/media/js/popupGenerator.min.js
-||lemidi-dz.com/images/pub/
 ||lemondeinformatique.fr/ajax/recuperation-pub.php?
 ||leparisien.fr^*/partenaires/
 ||leparking.fr/upload/partners/
@@ -4091,6 +4097,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.skin_outer_ad
 ##.smiliar_ads
 ##.special-banner
+##.sponsor_leaderboard-wrap
 ##.sponsored-articles
 ##.sponsored-fly
 ##.sponsored-fly__brand
@@ -4198,6 +4205,7 @@ ouest-france.fr###bloc_partenaires_sport
 ouest-france.fr###bloc_pleine_page_1
 ouest-france.fr###bloc_pleine_page_2
 ouest-france.fr###bloc_shopping
+cap-public.fr###blocflottant
 manga-news.com###block-up
 lanutrition.fr###block-views-remote-products-block-home
 cowcotland.com###blocpub1
@@ -4367,6 +4375,7 @@ lepoint.fr##.branding
 gamergen.com,generation-nt.com##.bup
 lecho.be##.c-adh-connecthpwrapper
 cheriefm.fr##.c-block-display--covering
+terrafemina.com##.c-product
 orange.fr##.carousel-hp-pub2
 emu-france.com##.cas_version_mobile_cache_grande_pub
 comptoir-hardware.com##.cat_bons_plans_du_comptoir
@@ -4504,9 +4513,6 @@ ouedkniss.com##.search-top-1
 programme-tv.net##.shopping
 educatout.com##.showpub
 beaute-test.com##.sidebar-sticky
-quebeccoupongratuit.com##.size_300_250
-quebeccoupongratuit.com##.size_300_600
-quebeccoupongratuit.com##.size_728_90
 test-achats.be##.skin
 infoconcert.com##.slider.container
 ladiagonale.net##.slidingDiv2
