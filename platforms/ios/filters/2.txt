@@ -1,9 +1,9 @@
-! Checksum: tN7wfPs7y9/fng4REc2VCw
-! Diff-Path: ../patches/2/2-s-1770820328-3600.patch
+! Checksum: lgvQZhEYLtqXX2Rt9u3QTA
+! Diff-Path: ../patches/2/2-s-1770823747-3600.patch
 ! Title: AdGuard Base filter
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.46.29
-! TimeUpdated: 2026-02-11T14:28:41+00:00
+! Version: 2.4.46.30
+! TimeUpdated: 2026-02-11T15:25:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -11285,14 +11285,16 @@ idlixku.com#%#//scriptlet('abort-current-inline-script', 'document.createElement
 @@||idlixku.com^$generichide
 @@||static.cloudflareinsights.com/beacon.min.js$domain=idlixku.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209502
+! https://github.com/AdguardTeam/AdguardFilters/issues/224492
 ||trueachievements.com/true-api/livehtml/ScriptProbeModal
 ! bigbuttshub.com anti-adb
-bigbuttshub2.top,bigbuttshubvideos.com#%#//scriptlet('prevent-fetch', 'mode:no-cors')
-bigbuttshub2.top,bigbuttshubvideos.com#%#//scriptlet('prevent-fetch', 'widgets.outbrain.com')
-@@||adligature.com^$xmlhttprequest,domain=bigbuttshub2.top|bigbuttshubvideos.com
-@@||srvtrck.com^$xmlhttprequest,domain=bigbuttshub2.top|bigbuttshubvideos.com
-@@||secure.quantserve.com/quant.js$xmlhttprequest,domain=bigbuttshub2.top|bigbuttshubvideos.com
-@@||widgets.outbrain.com/outbrain.js$xmlhttprequest,domain=bigbuttshub2.top|bigbuttshubvideos.com
+go.datapendidikan.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'detectAdblock')
+go.datapendidikan.com,bigbuttshub2.top,bigbuttshubvideos.com#%#//scriptlet('prevent-fetch', 'mode:no-cors')
+go.datapendidikan.com,bigbuttshub2.top,bigbuttshubvideos.com#%#//scriptlet('prevent-fetch', 'widgets.outbrain.com')
+@@||adligature.com^$xmlhttprequest,domain=bigbuttshub2.top|bigbuttshubvideos.com|go.datapendidikan.com
+@@||srvtrck.com^$xmlhttprequest,domain=bigbuttshub2.top|bigbuttshubvideos.com|go.datapendidikan.com
+@@||secure.quantserve.com/quant.js$xmlhttprequest,domain=bigbuttshub2.top|bigbuttshubvideos.com|go.datapendidikan.com
+@@||widgets.outbrain.com/outbrain.js$xmlhttprequest,domain=bigbuttshub2.top|bigbuttshubvideos.com|go.datapendidikan.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/209137
 appnee.com##body > div[class][id]:has(> .aao_box)
 appnee.com#%#//scriptlet('trusted-create-element', 'body', 'div', 'class="adsbygoogle" style="height:6px;width:1px;"')
@@ -39870,6 +39872,11 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+go.datapendidikan.com##.text-center:has(> ins.adsbygoogle)
+go.datapendidikan.com##center:has(> p > button[x-on\:click="openPopup"])
+go.datapendidikan.com#%#//scriptlet('prevent-window-open', 'insurance.cekresi.me')
+fortune.com##div[data-cy="piano-plea-container"]
+fortune.com##div[data-cy^="hp-in-stream-"]
 mashable.com##aside[data-seamless-ad]
 lbtube.com##.gallery-native-ads
 lbtube.com##.adb-notification
