@@ -1,8 +1,8 @@
-! Checksum: 92hVWeMciofQHei9f7UBlg
+! Checksum: QooSqVoPjsvpukbJpWUDog
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.58.61
-! TimeUpdated: 2026-02-11T07:28:22+00:00
+! Version: 2.2.58.62
+! TimeUpdated: 2026-02-11T09:23:23+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2466,6 +2466,8 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+||webronza.asahi.com/static/js/jquery.cookie.js
+||webronza.asahi.com/static/smartphone/js/jquery.cookie.js
 drum-tec.de##.iwv-cookie-overlay
 fullcompass.com###ccpaContainer
 thomann.co.uk,thomann.at,thomann.se,thomann.nl,thomann.it,thomann.pt,thomann.es,thomann.dk,thomann.fr,thomann.pl,thomannmusic.com,thomann.de##.spicy-consent-wrapper
@@ -2601,7 +2603,7 @@ ruwiki.ru##.cookies-terms
 saksfifthavenue.com##.footer-email-signup
 bookvoed.ru##.cookie-suggest
 chitai-gorod.ru##.agreement-notice
-myoreflextherapie-heidelberg.de##.con-kit-component-cookie-banner
+krmr.it,myoreflextherapie-heidelberg.de##.con-kit-component-cookie-banner
 mainz.de##sp-consent-banner
 ||technomedia.com/*/cookies.js
 bmvg.de,bundeswehr.de###PrivacyProtectionBanner
@@ -12308,6 +12310,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224687
 ! ipmarket.io
 ipmarket.io#@##cookies-policy
 ipmarket.io#@#.cookie-banner:not(body):not(html)
@@ -12393,8 +12396,9 @@ ecofamily.hu#@#body:not(.scroll-lock) .cookie-alert
 loadoutbuilder.gg#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219898
 @@||bitrefill.com/assets/CookieConsent-$script
+! https://github.com/AdguardTeam/AdguardFilters/issues/224690
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220837
-@@||onecdn.io/b/client/*/cookie-banner.$domain=myoreflextherapie-heidelberg.de
+@@||onecdn.io/b/client/*/cookie-banner.$domain=myoreflextherapie-heidelberg.de|krmr.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220012
 mijn.host#@#.cky-consent-bar
 @@||cdn-cookieyes.com/client_data/*.js$domain=mijn.host
@@ -19928,6 +19932,7 @@ sanalkurs.net###toast-container > .toast-error[aria-live="assertive"]
 !
 ! SECTION: Popups - Regular rules
 !
+webronza.asahi.com###modalArchive
 ecoledelutherie.com###upi-overlay
 ecoledelutherie.com###usb-sticky-bar
 tozlu.com##.kas-modal-ov

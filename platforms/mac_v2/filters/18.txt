@@ -1,9 +1,9 @@
-! Checksum: 8yj0XhZ/zmfer76c3z5tZg
-! Diff-Path: ../patches/18/18-s-1770795087-3600.patch
+! Checksum: Lkdm+7YmUaVnprZak+vXxg
+! Diff-Path: ../patches/18/18-s-1770801982-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.80.79
-! TimeUpdated: 2026-02-11T07:28:27+00:00
+! Version: 2.0.80.80
+! TimeUpdated: 2026-02-11T09:23:26+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2577,6 +2577,8 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+||webronza.asahi.com/static/js/jquery.cookie.js
+||webronza.asahi.com/static/smartphone/js/jquery.cookie.js
 dolphinradar.com#%#//scriptlet('set-cookie', 'myInsCookieConsent', 'true')
 hotline.finance#$#.accept-cookies-module__VtKOfq__modal { display: none !important; }
 drum-tec.de##.iwv-cookie-overlay
@@ -2867,7 +2869,7 @@ saksfifthavenue.com##.footer-email-signup
 bookvoed.ru##.cookie-suggest
 chitai-gorod.ru##.agreement-notice
 nibc.*#%#//scriptlet('trusted-set-cookie', 'dbh-cookie-consent', 'Essential=1')
-myoreflextherapie-heidelberg.de##.con-kit-component-cookie-banner
+krmr.it,myoreflextherapie-heidelberg.de##.con-kit-component-cookie-banner
 mijn.host#%#//scriptlet('trusted-click-element', '.cky-consent-container .cky-btn-customize, #ckyPreferenceCenter button[data-cky-tag="detail-save-button"]', '!cookie:cookieyes-consent')
 mainz.de##sp-consent-banner
 postnl.nl#%#//scriptlet('trusted-click-element', 'pnl-cookie-wall-widget >>> pnl-cookie-widget-overview .pci-button.pci-button--secondary', '', '1500')
@@ -18367,6 +18369,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224687
+webronza.asahi.com#%#//scriptlet('remove-class', 'no_scroll', 'body.no_scroll')
 ! ipmarket.io
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224369
 @@||cdn.cookielaw.org/consent/$domain=nbcolympics.com
@@ -18447,8 +18451,9 @@ ecofamily.hu#@#body:not(.scroll-lock) .cookie-alert
 loadoutbuilder.gg#@#.cookie-content
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219898
 @@||bitrefill.com/assets/CookieConsent-$script
+! https://github.com/AdguardTeam/AdguardFilters/issues/224690
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220837
-@@||onecdn.io/b/client/*/cookie-banner.$domain=myoreflextherapie-heidelberg.de
+@@||onecdn.io/b/client/*/cookie-banner.$domain=myoreflextherapie-heidelberg.de|krmr.it
 ! https://github.com/AdguardTeam/AdguardFilters/issues/220012
 mijn.host#@#.cky-consent-bar
 @@||cdn-cookieyes.com/client_data/*.js$domain=mijn.host
