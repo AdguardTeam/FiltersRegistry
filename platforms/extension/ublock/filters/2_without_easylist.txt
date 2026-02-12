@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: tNvmHcYbp0FPl0Ao69SRiw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1770878038-3600.patch
+! Checksum: 8nGQ7yvd9zqnHBm1bkVVag
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1770881395-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.46.43
-! TimeUpdated: 2026-02-12T06:30:23+00:00
+! Version: 2.4.46.44
+! TimeUpdated: 2026-02-12T07:26:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10383,6 +10383,8 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224747
+lockr.so##+js(prevent-fetch, adskeeper.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224611
 wired.com##.ad.ad-body.ad-slot.ad-content.ad-frame.ad-item.ad-section.ad-text.ad-wrapper.ad--container.ad--section.ad--wrapper.adSlot:style(display: block !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224581
@@ -36580,6 +36582,8 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+lockr.so##+js(no-window-open-if, lockr.so/subscriptions?source_page=)
+lockr.so##+js(remove-attr, href, .page-module__MWgaTG__content > div > a[href][target="_blank"][data-role="task"])
 fileq.net##+js(no-window-open-if)
 fileq.net##+js(set-constant, clicked, 2)
 aboutarthritis.net##a[onclick^="handleHoneyClick"]
