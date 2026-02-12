@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ZseQPkzBLPw/JExYRtfYkg
-! Diff-Path: ../patches/250/250-s-1770670103-14400.patch
+! Checksum: nDJhORPvUi+lkPBZeADLIA
+! Diff-Path: ../patches/250/250-s-1770857917-14400.patch
 ! Title: Dandelion Sprout's Annoyances List
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
-! Version: 2.0.18.88
-! TimeUpdated: 2026-02-09T20:45:42+00:00
+! Version: 2.0.18.89
+! TimeUpdated: 2026-02-12T00:55:52+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: ⚙️ Dandelion Sprout's Annoyances List
@@ -77,7 +77,7 @@
 ! What this broad compilation does not block：Newsletters, cookie banners, social media links to companies' pages
 !+ NOT_PLATFORM(android)
 ! Title: 💊 Dandelion Sprout's Anti-Malware List
-! OriginalVersion: 04February2026v1
+! OriginalVersion: 12February2026v3
 ! Expires: 1 day
 ! Description: This list goes the extra kilometer to prevent more malware than other mainstream anti-malware lists. It blocks domains and domain patterns used in malware redirection trains and in domain parking schemes, blocks sponsored Windows PUP nags on PC guide articles, uses mass blocking of domains belonging to bad IPs, and has many other subcategories that give it a solid advantage over similar lists out there.
 ! Note: When asking us to whitelist a site: Make sure the site has some sort of public content. Non-public sites and alias sites are usually not whitelisted.
@@ -14509,7 +14509,7 @@ www.tumblr.com##div[data-timeline-id] div[style="margin-top: 0px;"]:has(a:is([hr
 ||odintara.com^$document
 ||54.174.156.141^$document
 ! Searched for Breaking Bad Jesse memes on Qwant (29/04/2025)
-://old.sermitsiaq.ag^$document,domain=subdomain_stolen_from_sermitsiaqs_owners.*
+://old.sermitsiaq.ag^$document,domain=~subdomain_stolen_from_sermitsiaqs_owners.*
 ||xss.my.id^$3p
 ||85.159.213.158^$all
 ! Seemingly mass-generated fake "marketing company" sites that seem to serve no visible purpose (12/05/2025)
@@ -16034,7 +16034,8 @@ drvhub.net##.driver-item__install
 ! https://social.coop/@eb/115902323900229756
 ! my analysis: https://tria.ge/260116-d3jafadj81/behavioral1
 ! https://infosec.exchange/@iampytest1/115902693235671566
-||gyrovague.com^$all,3p,domain=archive.*
+||gyrovague.com^$domain=archive.*
+||gyrovague.com^$popup,domain=archive.*,csp=script-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:; font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ! https://github.com/blocklistproject/Lists/issues/1586
 ||blocklist.site^$all
 ||landr-atlas.com^$document
@@ -16058,6 +16059,15 @@ drvhub.net##.driver-item__install
 ||telemechanism.cyou^$all
 ||ey43.com^$all
 ||resultsfastfind.com^$document
+! https://github.com/DandelionSprout/adfilt/issues/1223
+! https://tria.ge/260211-16ykvsb12c/behavioral1
+||snowvan.xyz^$all
+||kygens.xyz^$all
+||host11m.cfd^$document
+||host15m.cfd^$document
+||filehost09.sbs^$document
+||sharehost06.sbs^$document
+||getdwnloadss.com^$all
 ! ——— Horrendously bad copypasted Android rooting "guides" (often with fake titles) that bricked two of my phones ———
 ! Most of the guides haven't even accounted for how modern phones have replaced the recovery environment with an extra boot environment, leading to very critical Fastboot commands not working and/or bricking the phone.
 ||unofficialtwrp.com^$document,domain=~had_not_updated_their_root_guides_to_reflect_a_b_partition_phones_as_of_2021.*
@@ -16616,7 +16626,7 @@ www.google.*,ipv6.google.com##div[data-attrid^="images "]:has(a[href*=".aspx?cna
 .asp?url=https://xn--*.xn--p1ai/$all
 .asp?url=http://xn--*.xn--p1ai/$all
 ! Domains stolen by casino SEO spammers
-||aussie-gamer.com^$document,domain=the-site-was-stolen-by-casino-link-spammers.*
+||aussie-gamer.com^$document,domain=~the-site-was-stolen-by-casino-link-spammers.*
 ! Illicit "parking" services or related to such.
 ://ww4.$document,domain=~ww4.ikea.com|~ww4.sig-ge.ch|~ww4.autotask.net|~ww4.pornhoarder.org
 ://ww5.$document,domain=~ww5.ikea.com|~ww5.msu.ac.zw|~ww5.autotask.net|~ww5.pornhoarder.tv
