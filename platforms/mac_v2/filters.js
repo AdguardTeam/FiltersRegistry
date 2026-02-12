@@ -359,8 +359,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.46.45",
-			"timeUpdated": "2026-02-12T08:18:17+0000",
+			"version": "2.4.46.46",
+			"timeUpdated": "2026-02-12T09:22:18+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -382,8 +382,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac_v2/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.0.0",
-			"timeUpdated": "2026-02-12T01:39:14+0000",
+			"version": "2.1.0.1",
+			"timeUpdated": "2026-02-12T09:22:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -642,8 +642,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.11.36",
-			"timeUpdated": "2026-02-12T06:30:51+0000",
+			"version": "2.1.11.37",
+			"timeUpdated": "2026-02-12T09:22:54+0000",
 			"languages": [],
 			"tags": [
 				45,
