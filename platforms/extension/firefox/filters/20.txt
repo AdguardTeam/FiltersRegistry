@@ -1,9 +1,9 @@
-! Checksum: FEaufJ286PnO+ksDj1UCrg
-! Diff-Path: ../patches/20/20-s-1770884502-3600.patch
+! Checksum: oCd1g8QcqI5AYppN2gRsFw
+! Diff-Path: ../patches/20/20-s-1770891856-3600.patch
 ! Title: AdGuard Mobile App Banners filter
 ! Description: Blocks irritating banners that promote mobile apps of websites.
-! Version: 2.0.27.13
-! TimeUpdated: 2026-02-12T08:19:02+00:00
+! Version: 2.0.27.14
+! TimeUpdated: 2026-02-12T10:21:41+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -3656,6 +3656,9 @@ irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlinera
 ! START: Yandex
 !
 ! Search
+yandex.*#$#div[id^="DistributionSmartbanner"] { display: none !important; }
+yandex.*#$#div[id^="smartbanner-system-"] { display: none !important; }
+yandex.*#$#body[style*="overflow:"] { overflow: auto !important; }
 ya.ru,yandex.*##div[class^="DistrSmartbanner"]
 ! In the search results
 ya.ru,yandex.*##.serp-list__page > div.serp-item:has(a[noredirecturl^="https://play.google.com/store/apps/details?"])
@@ -3984,9 +3987,9 @@ gate.com###download_gateio_app_wrapper
 data.notariat.ru##.download-app-popover
 newspicks.com#%#//scriptlet('trusted-set-cookie', 'show_app_lead', '$currentISODate$', '', '/', 'newspicks.com')
 contacts.google.com##body > div[class="GENl2b"][jslog$=" track:impression"]
+x.com#%#//scriptlet('trusted-click-element', 'div[role="group"] > div[data-testid="mask"] + div button[role="button"][class^="css-"][style^="background-color:"]', '', '1000')
 x.com#%#//scriptlet('trusted-click-element', 'main div[data-testid="primaryColumn"] div[aria-label="Home timeline"] a[href^="https://apps.apple.com/app/apple-store/"] + button[aria-label="Dismiss"]')
 x.com#%#//scriptlet('trusted-click-element', 'main div[data-testid="primaryColumn"] div[aria-label="Home timeline"] a[href^="market://details?id=com.twitter.android"] + button[aria-label="Dismiss"]')
-x.com#%#//scriptlet('trusted-click-element', 'div[role="group"] > div[data-testid="mask"] + div button', 'containsText:Continue on web')
 megapteka.ru##.rustore
 mountain-forecast.com#$#html { padding-top: 0 !important; }
 mountain-forecast.com#$#.smartbar { display: none !important; }

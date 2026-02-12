@@ -36333,6 +36333,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+||proplan.ru/themes/custom/proplan/dist/js/registration-vue.js
 ||autofill.yandex.ru/suggest?*&widget_kind=$domain=dtf.ru
 asahi.com##div[x-component-name="LeadNewsLetter"]
 fortune.com##div[data-cy="newsletters"]
@@ -49083,9 +49084,10 @@ irishradiolive.com,myonlineradio.at,myonlineradio.de,myonlineradio.hu,myonlinera
 ! START: Yandex
 !
 ! Search
-!#if (adguard_app_ios || adguard_app_android)
+!#if (adguard_app_ios || adguard_app_android || adguard_ext_firefox || ext_ublock)
+yandex.*#$#div[id^="DistributionSmartbanner"] { display: none !important; }
 yandex.*#$#div[id^="smartbanner-system-"] { display: none !important; }
-yandex.*#$#body[style^="overflow:"] { overflow: auto !important; }
+yandex.*#$#body[style*="overflow:"] { overflow: auto !important; }
 !#endif
 ya.ru,yandex.*##div[class^="DistrSmartbanner"]
 ! In the search results
@@ -49417,9 +49419,9 @@ gate.com###download_gateio_app_wrapper
 data.notariat.ru##.download-app-popover
 newspicks.com#%#//scriptlet('trusted-set-cookie', 'show_app_lead', '$currentISODate$', '', '/', 'newspicks.com')
 contacts.google.com##body > div[class="GENl2b"][jslog$=" track:impression"]
+x.com#%#//scriptlet('trusted-click-element', 'div[role="group"] > div[data-testid="mask"] + div button[role="button"][class^="css-"][style^="background-color:"]', '', '1000')
 x.com#%#//scriptlet('trusted-click-element', 'main div[data-testid="primaryColumn"] div[aria-label="Home timeline"] a[href^="https://apps.apple.com/app/apple-store/"] + button[aria-label="Dismiss"]')
 x.com#%#//scriptlet('trusted-click-element', 'main div[data-testid="primaryColumn"] div[aria-label="Home timeline"] a[href^="market://details?id=com.twitter.android"] + button[aria-label="Dismiss"]')
-x.com#%#//scriptlet('trusted-click-element', 'div[role="group"] > div[data-testid="mask"] + div button', 'containsText:Continue on web')
 megapteka.ru##.rustore
 mountain-forecast.com#$#html { padding-top: 0 !important; }
 mountain-forecast.com#$#.smartbar { display: none !important; }
