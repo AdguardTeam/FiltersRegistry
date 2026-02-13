@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: eyf6cuRJPB1PBlV4s28fEA
-! Diff-Path: ../patches/9_optimized/9_optimized-s-1770943257-3600.patch
+! Checksum: wsXWQLRhCq3/FpXRiDgErg
+! Diff-Path: ../patches/9_optimized/9_optimized-s-1770946951-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.33.15
-! TimeUpdated: 2026-02-13T00:37:27+00:00
+! Version: 2.0.33.16
+! TimeUpdated: 2026-02-13T01:39:05+00:00
 ! Expires: 5 days (update frequency)
 ||cdn-4k-webp.site^
 ||adzep.io^
@@ -978,9 +978,10 @@ terra.com.br##+js(adjust-setTimeout, resumeVideoFromAd, *, 0.001)
 receitasdocheff.online##+js(set-local-storage-item, last_ads, yes)
 uol.com.br##+js(set-constant, URL_VAST_YOUTUBE, {})
 uol.com.br##+js(set-constant, __configuredDFPTags, {})
-vix.com##+js(json-prune, vmap_ad_breaks interstitials)
+||mp.lura.live/vod/vast.info/
+vix.com##+js(json-prune, ads vmap_ad_breaks interstitials)
 vix.com##+js(m3u-prune, type=ad, .m3u8)
-vix.com##+js(xml-prune, xpath(//*[name()="Period"][.//*[name()="AdaptationSet"][@contentType="video"]]), , .m3u8)
+vix.com##+js(xml-prune, xpath(//*[name()="Period"][.//*[name()="BaseURL" and contains(text()\,".mp.lura.live/prod/")]] | //*[name()="MPD"]/@mediaPresentationDuration), , .mpd)
 infohojeonline.blogspot.com##+js(adjust-setInterval, getid, *, 0.001)
 guiasaude.info##+js(set-cookie, Ads, 2)
 warezstream.net##+js(no-window-open-if)
