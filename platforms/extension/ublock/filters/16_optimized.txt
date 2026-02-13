@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: THcr/0lAu2+oygSYCd2pyg
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1770909958-3600.patch
+! Checksum: hMDfObmbMDJAiaILkoP4xA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1770952338-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.55.95
@@ -1415,6 +1415,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 /shareaholic.js
 /show_i.php?b=$subdocument
 /similarClickAds|
+/simple/ads.js
 /skipad.
 /static.ads-
 /syndication.*&idzone=
@@ -1462,7 +1463,6 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://fr.*/ads?
 ://get.*&clickid=
 ://go.*&zoneid=
-://go.*?af_sub=
 ://link.*&siteid=$3p
 ://pop.$script,subdocument,3p,xhr
 ://promo.*?site_id=
@@ -1695,6 +1695,7 @@ _werbebanner_
 ?pubid=*&subid=$popup,3p
 _build=iclick-$popup
 ||club^*&zoneid=$popup
+||online^*&zoneid=$popup
 ||shop^*&zoneid=$popup
 ||shop^*?scontext_r=$popup
 ||shop^*cuid/?
@@ -1716,6 +1717,7 @@ _build=iclick-$popup
 ||admediaking.com^$3p
 ||admuncher.com^$3p
 ||admysports.com^$3p
+||adnsolution.net^$3p
 ||adnxtr.com^$3p
 ||adoftheyear.com^$3p
 ||adop.cc^$3p
@@ -2434,7 +2436,6 @@ _build=iclick-$popup
 ||moneroocean.stream^
 ||monetizze.com.br^
 ||morsalurluch.com^
-||mournerslath.com^
 ||mousheen.net^
 ||movementshereafter.com^
 ||moyslovar.ru^
@@ -2533,7 +2534,6 @@ _build=iclick-$popup
 ||possietuskar.com^
 ||postback.report^
 ||poudrinnamaste.com^
-||pourbaiser.com^
 ||precismo.com^
 ||presssnews.biz^
 ||priustellen.com^
@@ -2691,6 +2691,7 @@ _build=iclick-$popup
 ||undom.net^
 ||ungyveporkies.com^
 ||unjuicypeal.com^
+||unlevelyonder.com^
 ||unneartripler.com^
 ||unplumpsorest.com^
 ||unrebelasterin.com^
@@ -2967,6 +2968,8 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||imagefacile.com^$image
 ||img.root-top.com/topsite/$3p
 ||img.webme.com/pic/p/piriketseverler/
+||indecentes-voisines.com/bans/
+||indecentes-voisines.com/promo/
 ||jolstatic.fr/www/skins/
 ||jumia.*/banners/
 ||kaltura.com^*/a.mp4|$media
@@ -3168,7 +3171,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||xcams.com/?dsclr=$popup
 ||youporn.com^*?utm_$popup
 ||zt-za.fr/redirect.$popup
-||0zz0.com/e/
 ||1001jeux.fr/bfb/
 ||1337x.*/js/script
 ||1movies.*/site/$xhr
@@ -3272,7 +3274,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||hisse-et-oh.com/api/v1/neptune/
 ||homecine-compare.com/images/main/*/pub.jpg
 ||homecinema-fr.com/images/
-||hot-candy.com/assets/love/
 ||igg-games.com/wp-content/uploads/20*.gif
 ||immoweb.be/*/autopromo-footer?
 ||immoweb.be/*/sponsor?
@@ -3649,6 +3650,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###pub_pave3
 ###pub_pave_article
 ###pub_plop-1
+###pub_rectangle
 ###pub_right
 ###pub_square
 ###pub_top
@@ -3761,11 +3763,13 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.bloc-pub2
 ##.blocPub
 ##.bloc_annonce_2_ad
+##.bloc_pub_300
 ##.bloc_pub_left
 ##.block-advertising-insert
 ##.block-artwhere-ads
 ##.block-gc-ad
 ##.block-pub
+##.block-with-ads-banner
 ##.block_pub
 ##.blockgrayad
 ##.blocpub
@@ -4041,7 +4045,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.publicite3
 ##.publicite4
 ##.publiciteHeader
-##.publicite_droite
 ##.publicite_droite_600
 ##.publicite_gauche
 ##.publicite_horizontale_well
@@ -4049,13 +4052,13 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.publicite_mobile
 ##.publicite_mobile_cache
 ##.publicite_sidebar
-##.publicite_sous_slider
 ##.publiciteac
 ##.publiciteright
 ##.publicity
 ##.publicity_link
 ##.publireportage
 ##.pubsidebar
+##.pubsoustag
 ##.pubtexte
 ##.pubwrapper
 ##.purple-ad
@@ -4282,6 +4285,7 @@ youtube.com###promotion-shelf
 aliasdmc.fr,allocine.fr,annuaire-streaming.com,blablastream.com,blablastream.space,centerblog.net,cocostream.rip,cpasfini.me,elbilad.net,film01stream.ws,flemmix.biz,iphonesoft.fr,jeux-2-filles.com,mac2sell.net,nrj.be,nrj.fr,nuked-klan.org,olivierdauvers.fr,orange.fr,planet-casio.com,redirection-web.net,science-et-vie.com,service-public.fr,sortir47.fr,streampourvous.lol,terre.tv,toutpratique.com,turf-fr.com,val-de-marne.gouv.fr,vfserie.win,virtuoflash.com,voirfilms.live,voirseries.rip,wareziens.net###pub
 ledemondujeu.com,minuteur-en-ligne.fr,musculaction.com,planeterenault.com,quiveutdufromage.com###pub2
 musculaction.com###pub3
+remede.org###pubSky2
 maxifoot-live.com###pub_bc
 emu-france.com###pub_casino_header
 igen.fr,macg.co,watchgeneration.fr###refurb-widget
@@ -4605,6 +4609,7 @@ seneweb.com##a[href*="/xban/"]
 rtl.be##a[href*="://ad.doubleclick.net/"]
 jeuxetcompagnie.fr##a[href*="://www.ludeek.com/"] > img
 abcbourse.com,meteofrance.com##a[href*="?utm_source="]
+voyageforum.com##a[href*="_ads;"]
 welovebuzz.com##a[href*="_adw&"]
 jds.fr##a[href*="_clic.php?"]
 bleachmx.fr##a[href*="californiansmiles.com/products/"]
