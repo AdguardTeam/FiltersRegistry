@@ -1,9 +1,9 @@
-! Checksum: sbr421QqQtI1c3s22O7GMg
-! Diff-Path: ../patches/203_optimized/203_optimized-s-1770468589-14400.patch
+! Checksum: 8IVkZ7Sae+SK3FvPPyP2Uw
+! Diff-Path: ../patches/203_optimized/203_optimized-s-1771030609-14400.patch
 ! Title: Hungarian filter (Optimized)
 ! Description: Hufilter. Filter list that specifically removes ads on websites in the Hungarian language.
-! Version: 2.0.4.66
-! TimeUpdated: 2026-02-07T12:46:23+00:00
+! Version: 2.0.4.67
+! TimeUpdated: 2026-02-14T00:53:26+00:00
 ! Expires: 12 hours (update frequency)
 ##.ad__main
 ##.adblokk
@@ -415,10 +415,13 @@ gyakorikerdesek.hu##.rltdwidget
 gyakorikerdesek.hu##IFRAME
 gyakorikerdesek.hu##[href^="https://www.webminute.hu"]
 gyakorikerdesek.hu##[id*="aswift"]
+gyakorikerdesek.hu##a[href="/majanlat"]
+gyakorikerdesek.hu##a[rel="nofollow"]:has(span > img)
 gyakorikerdesek.hu##div.reklam_jobbra
 gyakorikerdesek.hu##div[style*="text-align"]:has(> a > img)
 gyakorikerdesek.hu##td[style="width: 10px;"]:empty
 gyakorikerdesek.hu##td.txtcenter:has(>script+ins)
+gyakorikerdesek.hu##div[style^="width: 729px"]
 gyaloglo.hu###banner
 gyaloglo.hu##div[class*="Advert"]
 gyartastrend.hu##[class*="contentBanner"]
@@ -1146,7 +1149,6 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu##.adaptiveAd
 prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owner):has(> h4:contains(/(Hirdetés|[Hh].*i.*r.*d.*e.*t.*é.*s)/) + div[class])
 /dl/cnt/20[^0]\d-\d{2}/\d{4}//$image,domain=prohardver.hu|mobilarena.hu|logout.hu|hardverapro.hu
 ||3monkey.lol/vilagunk_640.html$domain=vilagunk.hu
-||abo-widget.xyz^$domain=eduline.hu
 ||aghtag.tech/libs/projectagora.min.js^$script,domain=gyakorikerdesek.hu|hoxa.hu
 ||floweryoperation.com/v2/0/$domain=karpathir.com
 ||*/empty.json
@@ -1286,7 +1288,6 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owne
 ||vezess.hu/data/files/kapcsolodo_anyagok/szponz_hatterek/$image
 ||vezess2.p3k.hu/app/uploads/*nyeremenyjatek$image
 ||vg.hu/banners/$image
-||webminute.hu/bannerek/$image
 ||zeneszoveg.hu/gfx/skin-*/*.
 ||a.adnium.com^
 ||ad*.gyaloglo.hu^
@@ -1348,6 +1349,7 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owne
 ||widget.block4d.com^
 ||wstat.ozon.ru^
 ||abmr.net^$third-party
+||abo-widget.xyz^$third-party
 ||ad.hu^$third-party
 ||ad4mat.net^$third-party
 ||adfox.ru^$third-party
@@ -1389,6 +1391,7 @@ prohardver.hu,mobilarena.hu,logout.hu,hardverapro.hu#?#div:not(.priv-thread-owne
 ||tripod.com^$third-party
 ||tripod.lycos.com^$third-party
 ||tulajdonostol.com^$third-party
+||webminute.hu^$third-party
 hu###szechenyi2020
 hu###szechenyi2020-wrapper
 hu###szechenyi
