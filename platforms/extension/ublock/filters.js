@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.47.18",
-			"timeUpdated": "2026-02-15T13:22:07+0000",
+			"version": "2.4.47.19",
+			"timeUpdated": "2026-02-15T14:11:54+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.11.75",
-			"timeUpdated": "2026-02-15T12:13:41+0000",
+			"version": "2.1.11.76",
+			"timeUpdated": "2026-02-15T14:12:19+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -1734,8 +1734,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/ublock/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.54.15",
-			"timeUpdated": "2026-02-15T13:22:41+0000",
+			"version": "2.1.54.16",
+			"timeUpdated": "2026-02-15T14:12:29+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
