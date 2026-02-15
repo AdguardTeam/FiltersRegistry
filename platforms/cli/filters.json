@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.47.16",
-			"timeUpdated": "2026-02-15T11:08:54+0000",
+			"version": "2.4.47.17",
+			"timeUpdated": "2026-02-15T12:13:16+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.25.11",
-			"timeUpdated": "2026-02-14T20:08:14+0000",
+			"version": "2.1.25.12",
+			"timeUpdated": "2026-02-15T12:13:24+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -476,8 +476,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/7.txt",
 			"trustLevel": "full",
-			"version": "2.0.72.32",
-			"timeUpdated": "2026-02-15T11:09:09+0000",
+			"version": "2.0.72.33",
+			"timeUpdated": "2026-02-15T12:13:29+0000",
 			"deprecated": false,
 			"languages": [
 				"ja"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.58.99",
-			"timeUpdated": "2026-02-15T11:09:21+0000",
+			"version": "2.2.59.0",
+			"timeUpdated": "2026-02-15T12:13:40+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.11.74",
-			"timeUpdated": "2026-02-15T11:09:22+0000",
+			"version": "2.1.11.75",
+			"timeUpdated": "2026-02-15T12:13:41+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -679,8 +679,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/16.txt",
 			"trustLevel": "full",
-			"version": "2.0.55.97",
-			"timeUpdated": "2026-02-14T09:12:19+0000",
+			"version": "2.0.55.98",
+			"timeUpdated": "2026-02-15T12:13:43+0000",
 			"deprecated": false,
 			"languages": [
 				"fr"
@@ -796,8 +796,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/cli/filters/21.txt",
 			"trustLevel": "full",
-			"version": "2.0.41.68",
-			"timeUpdated": "2026-02-15T11:09:27+0000",
+			"version": "2.0.41.69",
+			"timeUpdated": "2026-02-15T12:13:47+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
