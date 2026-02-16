@@ -1,8 +1,8 @@
-! Checksum: ndlA6qQONb2pqooB/6bRSQ
+! Checksum: UBoJvnUI/hjFZOnfuh3WKA
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.59.6
-! TimeUpdated: 2026-02-16T09:24:47+00:00
+! Version: 2.2.59.7
+! TimeUpdated: 2026-02-16T11:20:36+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -22294,6 +22294,7 @@ maisons-phenix.com#@#.cc_banner
 @@||kaspersky.com/content/en-global/about/stories/transparency/news/GDPR.json
 ! https://github.com/AdguardTeam/AdguardFilters/issues/66588
 @@||consent-api.service.consent.usercentrics.eu/consent/uw/$domain=wetter.com
+@@||api.usercentrics.eu/gvl/*.json$domain=wetter.com
 @@||config.eu.usercentrics.eu/gvl/*.json$domain=wetter.com
 @@||api.usercentrics.eu/translations/*.json$domain=wetter.com
 @@||api.usercentrics.eu/settings/*/latest/*.json$domain=kabeleinsdoku.de|kabeleinsdoku.at
@@ -51974,7 +51975,8 @@ ya.ru#?#.search3__inner-wrapper > div:matches-attr(/^data-cap/)
 ! popup
 ya.ru,yandex.*##.DistributionLinkBro
 ya.ru,yandex.*##.DistributionPopup
-ya.ru,yandex.*#$#div[class*="DistributionSplashScreenModal"]:has(div.DistributionActions > a.DistributionButtonOk) { display: none !important; }
+ya.ru,yandex.*#$#Distribution_landscape_hidden { display: none !important; }
+ya.ru,yandex.*#$#div[class*="DistributionSplashScreenModal"]:has(a.DistributionButtonOk) { display: none !important; }
 ya.ru,yandex.*#%#//scriptlet('remove-class', 'document_disable-feed-scroll_yes', 'body[style*="overflow:"]')
 [$path=/search]ya.ru,yandex.*#$#button[type="button"][title="Нет, спасибо"] { display: none !important; }
 [$path=/search]ya.ru,yandex.*##div.Root[id]:has(> button.Distribution-SplashScreenModalCloseButtonOuter)
@@ -52078,6 +52080,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+freeroms.com##.deal-highlight
 mnk-news.net###main_slider
 wa3.i-3-i.info##div[id^="ads_bb"]
 wcoanimedub.tv##a[href^="https://www.wcopremium.tv/wp-login.php"]

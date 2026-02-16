@@ -1,9 +1,9 @@
-! Checksum: pF2HA21tae3Y1pLOuYLIGQ
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1771234087-3600.patch
+! Checksum: Sfod0+GgvMFY5V46kM6mAA
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1771241046-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.59.6
-! TimeUpdated: 2026-02-16T09:24:47+00:00
+! Version: 2.2.59.7
+! TimeUpdated: 2026-02-16T11:20:36+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -11728,6 +11728,7 @@ kassa.yandex.ru#@#.cookie-policy:not(body):not(html)
 maisons-phenix.com#@#.cc_container
 maisons-phenix.com#@#.cc_banner
 @@||consent-api.service.consent.usercentrics.eu/consent/uw/$domain=wetter.com
+@@||api.usercentrics.eu/gvl/*.json$domain=wetter.com
 @@||config.eu.usercentrics.eu/gvl/*.json$domain=wetter.com
 @@||api.usercentrics.eu/translations/*.json$domain=wetter.com
 @@||aggregator.service.usercentrics.eu/aggregate/de?templates=$domain=wetter.com|kabeleinsdoku.de|kabeleinsdoku.at
@@ -27107,7 +27108,8 @@ ya.ru#?#.search3__inner-wrapper > div:matches-attr(/^data-cap/)
 [$path=/search]ya.ru,yandex.*##.serp-item:has(> div[data-state-id] > article > div[class*="-"] span[id*="-PriceDisclaimer"])
 ya.ru,yandex.*##.DistributionLinkBro
 ya.ru,yandex.*##.DistributionPopup
-ya.ru,yandex.*#$#div[class*="DistributionSplashScreenModal"]:has(div.DistributionActions > a.DistributionButtonOk) { display: none !important; }
+ya.ru,yandex.*#$#Distribution_landscape_hidden { display: none !important; }
+ya.ru,yandex.*#$#div[class*="DistributionSplashScreenModal"]:has(a.DistributionButtonOk) { display: none !important; }
 ya.ru,yandex.*#%#//scriptlet('remove-class', 'document_disable-feed-scroll_yes', 'body[style*="overflow:"]')
 [$path=/search]ya.ru,yandex.*#$#button[type="button"][title="Нет, спасибо"] { display: none !important; }
 [$path=/search]ya.ru,yandex.*##div.Root[id]:has(> button.Distribution-SplashScreenModalCloseButtonOuter)
@@ -27165,6 +27167,7 @@ www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div > img { d
 www.kinopoisk.ru#$#header[class][style*="--header-height:150px"] > div.header-navigation { margin-top: 0 !important; }
 www.kinopoisk.ru##div[class^="trailer-promo"]
 www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-footer-promotion.subscription-title"])
+freeroms.com##.deal-highlight
 mnk-news.net###main_slider
 wa3.i-3-i.info##div[id^="ads_bb"]
 wcoanimedub.tv##a[href^="https://www.wcopremium.tv/wp-login.php"]
