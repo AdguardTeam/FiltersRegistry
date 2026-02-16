@@ -1,9 +1,9 @@
-! Checksum: 0HUdSf/mlFNmv+26/suIxA
-! Diff-Path: ../patches/14/14-s-1771258858-3600.patch
+! Checksum: aw9l8pRxDYJwM/0ol8kSaw
+! Diff-Path: ../patches/14/14-s-1771262539-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.59.11
-! TimeUpdated: 2026-02-16T16:18:24+00:00
+! Version: 2.2.59.12
+! TimeUpdated: 2026-02-16T17:19:16+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2577,6 +2577,7 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+3gpp.org#$#body.gdpr-prevent-scrolling { overflow: auto !important; }
 ihk-muenchen.de#$##cookie-banner-overlay { display: none !important; }
 ihk-muenchen.de#$#body { overflow: auto !important; }
 chrono24.ae#%#//scriptlet('trusted-click-element', 'button.js-cookie-accept-all', '', '3000')
@@ -23129,6 +23130,9 @@ ya.ru,yandex.*##.sidebar-container div[id*="R-I-"]
 music.yandex.*##.notify > div.deco-tooltip_notify.notify_shown
 !
 ! Yandex.Pogoda
+[$path=/pogoda|hava/]yandex.*##div[class^="MainPage_topBlockWithMoney_"]
+[$path=/pogoda|hava/]yandex.*##li[class^="AppForecastMoney_wrap_"]
+[$path=/pogoda|hava/]yandex.*##article[class^="AppMoney_wrap_"]
 [$path=/pogoda|hava/]yandex.*#%#//scriptlet('abort-on-property-write', 'ctxScript')
 [$path=/pogoda]dzen.ru###money-ecom
 [$path=/pogoda]dzen.ru#%#//scriptlet('abort-on-property-read', 'Object.prototype.renderData')
