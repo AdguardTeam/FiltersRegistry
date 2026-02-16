@@ -1,8 +1,8 @@
-! Checksum: eg8Ot9Ry5BJGBaIWHULwkg
+! Checksum: QEpnhcC5tAqNM7jTFhp/vw
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.81.1
-! TimeUpdated: 2026-02-16T07:29:11+00:00
+! Version: 2.0.81.2
+! TimeUpdated: 2026-02-16T08:19:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12304,6 +12304,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225030
+@@||cdn.cookielaw.org/consent/*.json$domain=acrobat.adobe.com
+@@||cdn.cookielaw.org/*/otSDKStub.js$domain=acrobat.adobe.com
+@@||cdn.cookielaw.org/*/otBannerSdk.js$domain=acrobat.adobe.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224687
 ! ipmarket.io
 ipmarket.io#@##cookies-policy

@@ -1,9 +1,9 @@
-! Checksum: vHCj2KPxmVjBRPBRFPFY8Q
-! Diff-Path: ../patches/18/18-s-1771227122-3600.patch
+! Checksum: i7DU0EHrvsy4UP+0mMIOOA
+! Diff-Path: ../patches/18/18-s-1771230166-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.81.1
-! TimeUpdated: 2026-02-16T07:29:11+00:00
+! Version: 2.0.81.2
+! TimeUpdated: 2026-02-16T08:19:53+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18291,6 +18291,10 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225030
+@@||cdn.cookielaw.org/consent/*.json$domain=acrobat.adobe.com
+@@||cdn.cookielaw.org/*/otSDKStub.js$domain=acrobat.adobe.com
+@@||cdn.cookielaw.org/*/otBannerSdk.js$domain=acrobat.adobe.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224687
 webronza.asahi.com#%#//scriptlet('remove-class', 'no_scroll', 'body.no_scroll')
 ! ipmarket.io
