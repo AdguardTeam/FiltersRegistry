@@ -1,8 +1,8 @@
-! Checksum: SH4+GZ5tSmAXnqRe+ZAl/w
+! Checksum: PQ559gTvMdr5beI+bY2CvA
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.55.99
-! TimeUpdated: 2026-02-16T14:22:57+00:00
+! Version: 2.0.56.0
+! TimeUpdated: 2026-02-17T09:22:13+00:00
 ! Expires: 10 days (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -349,6 +349,7 @@ basketusa.com#%#//scriptlet("abort-on-property-read", "__yget_ad_list")
 lindependant.fr#%#//scriptlet("abort-on-property-read", "_adb")
 actu17.fr#%#//scriptlet("abort-on-property-write", "td_ad_background_click_link")
 jacquieetmicheltv.net#%#var _st = window.setTimeout; window.setTimeout = function(a, b) { if(!/target_url/.test(a)){ _st(a,b);}};
+prod-player.tf1.fr#%#//scriptlet('set-constant', 'Object.prototype.sendPauseMidrollTracking', 'noopFunc')
 canalplus.com#%#//scriptlet('set-constant', '__data.application.settings.featPlayerAds', 'false')
 canalplus.com#%#//scriptlet('json-prune', 'ads.*.default ads.*.url ads.enableMidrolls', 'ads')
 m6.fr#%#(function(){let callCounter=0;const nativeJSONParse=JSON.parse;const handler={apply(){callCounter++;const obj=Reflect.apply(...arguments);if(callCounter<=10){if(obj.hasOwnProperty("appName")){if(obj.applaunch?.data?.player?.features?.ad?.enabled){obj.applaunch.data.player.features.ad.enabled=false}if(obj.applaunch?.data?.player?.features?.ad?.dai?.enabled){obj.applaunch.data.player.features.ad.dai.enabled=false}}}else{JSON.parse=nativeJSONParse}return obj}};JSON.parse=new Proxy(JSON.parse,handler)})();
