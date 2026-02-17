@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: zzezesFCfmQpQJidM1V8TA
-! Diff-Path: ../patches/1/1-s-1771262561-3600.patch
+! Checksum: ir0LHom2R+1HNv84UFjlMQ
+! Diff-Path: ../patches/1/1-s-1771330956-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.4.28
-! TimeUpdated: 2026-02-16T17:18:25+00:00
+! Version: 2.1.4.29
+! TimeUpdated: 2026-02-17T12:18:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4692,9 +4692,6 @@ jeder.ru###nono
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=math.semestr.ru
 ! http://forum.adguard.com/showthread.php?9751
 @@||donforum.net^$generichide
-! http://forum.adguard.com/showthread.php?9744
-! http://forum.adguard.com/showthread.php?9752
-! http://forum.adguard.com/showthread.php?9727
 ! http://forum.adguard.com/showthread.php?9705
 @@||donbassforum.net^$generichide
 ! http://forum.adguard.com/showthread.php?9692
@@ -4873,10 +4870,12 @@ ya.ru,yandex.*##:matches-path(/search) .content__right div.serp-item:has(> div[d
 ! in the dropdown list of the search suggestions
 ya.ru##form[role="search"] div[id^="suggest-list-"] > div[class*="__group "]:has(> div[data-suggest-counter] [data-clps-id] > div[class$="__item-warning_disclaimer"])
 ! In the search suggestions when typing
+ya.ru,yandex.*##.mini-suggest__popup-content > li > a[target="_blank"]
 ya.ru##.mini-suggest__popup-content > div.mini-suggest__group_layout_separated:has(> div > a[target="_blank"])
 ! Right side, where usually shown useful content
 ! The rule must be checked also another with search requests to not break the page
 ! For example, pills, specific electrinics, searcf for definition of a word
+ya.ru,yandex.*###search-result-aside div[id^="Adv_media__"] img
 ya.ru,yandex.*###search-result-aside > div[class*="_right_yes"] > div[data-cid] div[data-vnl*="R-I-"]
 ya.ru,yandex.*###search-result-aside > div[class*="_right_yes"]:not([aria-label]) > div[data-cid] > div.Root_lazy > div[class$="-Slot"]
 ! Breaks useful content
@@ -4957,7 +4956,6 @@ music.yandex.*##section[class^="SideAdvertBanner_root__"]
 music.yandex.*##.audio-advert__block
 music.yandex.*##+js(abort-on-property-read, Object.prototype.videoAdvertPopup)
 music.yandex.*##div[class^="d-overhead"]
-music.yandex.*##.audio-advert__block
 music.yandex.*##.sidebar__placeholder .teaser ~ div
 !
 ! Yandex.Disk
