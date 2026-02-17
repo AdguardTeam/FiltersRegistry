@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: ySQR3rwlPXRBJT4N5DU+9g
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1771323884-3600.patch
+! Checksum: F9tMMCt7SbA9/U/1iUV1Dw
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1771327410-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.47.61
-! TimeUpdated: 2026-02-17T10:21:28+00:00
+! Version: 2.4.47.62
+! TimeUpdated: 2026-02-17T11:20:12+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -36513,6 +36513,8 @@ www.youtube.com##+js(adjust-setTimeout, [native code], 17000, 0.001)
 ! TODO: remove the hints and JavaScript rule when Safari uses the latest scriptlets library (v2.2.7 or above)
 !+ NOT_PLATFORM(ext_safari)
 youtube.com##+js(json-prune, entries.[-].command.reelWatchEndpoint.adClientParams.isAd)
+! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3911413190
+www.youtube.com##+js(set-constant, ytcfg.data_.EXPERIMENT_FLAGS.web_streaming_watch, false)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/203236#issuecomment-3902013966
 www.youtube.com##+js(no-setTimeout-if, ()\,a\,b), 5000)
 ! This one may be unnecessary:
@@ -36624,6 +36626,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+deccanchronicle.com##.inside-post-ad:not(#style_important)
 ||instant-gaming.com/api/banner/partner/loader.js
 thestraight.com.au##.iam-ad
 theblock.co##div[qa-test-id="article-cta"]
