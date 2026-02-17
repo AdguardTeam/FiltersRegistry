@@ -1,9 +1,9 @@
-! Checksum: 5b9XtLjpHFYPNg5Zoomllw
-! Diff-Path: ../patches/2_optimized/2_optimized-s-1771345622-3600.patch
+! Checksum: OMnnmglLHFMtvfEs+shSRw
+! Diff-Path: ../patches/2_optimized/2_optimized-s-1771349403-3600.patch
 ! Title: AdGuard Base filter (Optimized)
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.47.67
-! TimeUpdated: 2026-02-17T16:23:39+00:00
+! Version: 2.4.47.68
+! TimeUpdated: 2026-02-17T17:26:29+00:00
 ! Expires: 10 days (update frequency)
 ||gbhozynxmyxos.online^
 ||smartytouch.co^
@@ -12344,6 +12344,8 @@ www.youtube.com#%#(()=>{const e="pyv",t="param",a="client_screen",n="ad_type",c=
 www.youtube.com#%#(()=>{const e="movie_player",t="ytd-watch-flexy[player-unavailable]",r=`#${e} > .ytp-error`,n="yt-playability-error-supported-renderers#error-screen:has(>*)",a='yt-playability-error-supported-renderers#error-screen a[href^="//support.google.com/youtube/answer/2802245"]',o="pyv",c="param",l="client_screen",i="ad_type",s="none";let y=o;const d=new Set,p=()=>{const t=document.getElementById(e),r=window.location.search,n=new URLSearchParams(r).get("v")||t?.getVideoData?.().video_id,a=new URLSearchParams(r).get("t")??"0";return{videoId:n,timeInSeconds:parseInt(a,10)}},u=()=>{b();const t=document.getElementById(e);if(t&&"function"==typeof t.loadVideoById)try{const{videoId:e,timeInSeconds:r}=p();t.loadVideoById(e,r)}catch(e){}},m=(()=>{let e=null,t=null,r=0;return n=>{try{if(!n)return!1;const{videoId:a}=p();return!!a&&(e===a&&t===n?r++:(e=a,t=n,r=1),r>=2&&(r=0,!0))}catch(e){return!1}}})(),f=e=>{y=e},b=()=>{const r=document.getElementById(e),o=document.querySelector(n),c=document.querySelector("yt-playability-error-supported-renderers.ytdMiniplayerPlayerContainerPlayabilityError:has(>*)"),l=document.querySelector(t),i=document.querySelector(a);r&&!i&&(l||c)&&(o?.style.setProperty("display","none","important"),c?.style.setProperty("display","none","important"),l?.removeAttribute("player-unavailable"))},v=e=>{(e.playbackContext||e.playerRequest)&&delete e.context?.client?.configInfo?.appInstallData},x=(e,t,r)=>{try{if(!e||!t||!r)return;if(r===o&&"CHANNEL"!==e.context?.client?.clientScreen&&!t.params?.startsWith("yAEB"))return t.adPlaybackContext={pyv:!0},void v(e);if(r===c&&"CHANNEL"!==e.context?.client?.clientScreen)return e.params&&!e.params.startsWith("yAEB")?e.params=`yAEB${e.params?e.params:""}`:!e.playerRequest||e.params||e.playerRequest.params?.startsWith("yAEB")?!e.playbackContext||e.params||e.playbackContext.params?.startsWith("yAEB")||(e.playbackContext.params=`yAEB${e.playbackContext.params?e.playbackContext.params:""}`):e.playerRequest.params=`yAEB${e.playerRequest.params?e.playerRequest.params:""}`,void v(e);if(r===l&&"WEB"===e.context?.client?.clientName)return e.context.client.clientScreen="CHANNEL",void v(e);if(r===i)return t.adPlaybackContext={adType:"AD_TYPE_INSTREAM"},void v(e);if(r===s)return void delete t.adPlaybackContext}catch(e){}};(()=>{const e={apply:(e,t,r)=>{try{let n=r[0];if(!n||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,r);const a=Array.isArray(n),o=a?n[0]:n;if("string"!=typeof o)return Reflect.apply(e,t,r);if(!o.includes('"contentPlaybackContext"')&&!o.includes('"adSignalsInfo"'))return Reflect.apply(e,t,r);const c=JSON.parse(o);if(!c.context?.client)return Reflect.apply(e,t,r);c.playbackContext&&x(c,c.playbackContext,y),c.playerRequest&&x(c,c.playerRequest.playbackContext,y);const l=JSON.stringify(c);a?r[0][0]=l:r[0]=l}catch(e){}return Reflect.apply(e,t,r)}};window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,e)})();const S=document.documentElement;new MutationObserver((()=>{if(document.querySelector(n)&&b(),!(()=>{const o=document.getElementById(e),c=document.querySelector(r),l=document.querySelector(n),i=document.querySelector(t),s=document.querySelector(a);if(!o||s)return!1;const y=o.getVideoData?.();return(l||i||c)&&null!=y?.errorCode})())return;const{videoId:v}=p();(e=>{if(e)for(const t of d)t!==e&&d.delete(t)})(v),(()=>{if(y===o){if(!m(c))return void u();f(c),u()}else if(y===c){if(!m(l))return void u();f(l),u()}else if(y===l){if(!m(i))return void u();f(i),u()}else if(y===i){if(!m(s))return void u();f(s),u()}else if(y===s){const{videoId:e}=p();if(!e||d.has(e))return void b();d.add(e),u()}})()})).observe(S,{attributes:!0,childList:!0,subtree:!0})})();
 !+ NOT_PLATFORM(ext_safari)
 youtube.com#%#//scriptlet('json-prune', 'entries.[-].command.reelWatchEndpoint.adClientParams.isAd')
+www.youtube.com#%#(()=>{const e={apply:(e,t,n)=>{const o=n[0];if("string"==typeof o?.value&&o.value.includes("playerResponse"))try{return o.value=o.value.replace(/"(adSlots|playerAds)":/g,'"no_ads":'),n[0]=o,Reflect.apply(e,t,n)}catch(e){}return Reflect.apply(e,t,n)}},t={apply:(t,n,o)=>{const p=o[0];return"function"==typeof p&&p.toString().includes(".next(")&&(o[0]=new Proxy(p,e)),Reflect.apply(t,n,o)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,t)})();
+www.youtube.com#%#(()=>{const e={apply:(e,t,o)=>{const n=Reflect.apply(e,t,o);if(n?.responseContext)try{delete n.adSlots,delete n.playerAds}catch(e){}return n}},t={apply:(t,o,n)=>{const p=n[0];return"function"==typeof p&&p.toString().includes("jspbResponseCtor")&&(n[0]=new Proxy(p,e)),Reflect.apply(t,o,n)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,t)})();
 www.youtube.com#%#//scriptlet('set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.web_streaming_watch', 'false')
 www.youtube.com#%#//scriptlet('prevent-setTimeout', '(),a,b)', '5000')
 !+ NOT_OPTIMIZED
@@ -18553,6 +18555,7 @@ $popup,third-party,domain=dood.ws,badfilter
 !##################
 @@||imasdk.googleapis.com/pal/sdkloader/pal.js$domain=13wham.com|wwmt.com|wutv29.com|wtwc40.com|wset.com|wpgh53.com|wgme.com|wfgxtv.com|weartv.com|wcti12.com|watchdaytime.com|wabm68.com|utv44.com|thenationaldesk.com|thecwtv.tv|thecwtc.com|thecw46.com|thecw38.com|telemundoaustin.com|star64.tv|southernoregoncw.com|seattlerefined.com|raleighcw.com|newschannel9.com|newschannel20.com|nevadasportsnet.com|nebraska.tv|mytvz.com|mytvwichita.com|mytvrichmond.com|mytvdayton.com|mytvcharleston.com|mytvbuffalo.com|mytvbaltimore.com|mytv30web.com|myrdctv.com|midmichigannow.com|local21news.com|kval.com|kunwtv.com|kunptv.com|ktxs.com|ktvo.com|ktvl.com|krcrtv.com|krcgtv.com|kpic.com|kocb.com|kmyu.tv|kimatv.com|khqa.com|kfdm.com|keprtv.com|kdsm17.com|kcby.com|katv.com|idahonews.com|foxrichmond.com|foxkansas.com|fox49.tv|fox47.com|fox38corpuschristi.com|cwtreasurevalley.com|cwlasvegas.com|cwcolumbus.com|cwcincinnati.com|cwcentralpa.com|cwbaltimore.com|cwalbany.com|cw9tv.com|cw35.com|cw34.com|cw23tv.com|cw18milwaukee.com|cwomaha.tv|cw14online.com|chattanoogacw.com|cbsaustin.com|cbs4local.com|cbs12.com|abcnews4.com|abc7amarillo.com|abc45.com|abc3340.com|22thepoint.com|ktul.com|bakersfieldnow.com|local12.com|katu.com|komonews.com|wjactv.com|upnorthlive.com|cnycentral.com|wpde.com|cbs6albany.com|kutv.com|wjla.com|news3lv.com|kmph.com|kfoxtv.com|fox17.com|foxbaltimore.com|foxchattanooga.com|foxillinois.com|foxnebraska.com|foxreno.com|foxrochester.com|foxsanantonio.com|nbcmontana.com|okcfox.com|siouxlandnews.com|wach.com|wchstv.com|wcyb.com|wfxl.com|wgxa.tv|wlos.com|wsbt.com|cbs2iowa.com|fox4beaumont.com|mycbs4.com|mynews4.com|news4sanantonio.com|abc6onyourside.com|wtov9.com|turnto10.com|fox11online.com|mynbc15.com|nbc16.com|fox23maine.com|nbc24.com|fox28savannah.com|myfox28columbus.com|fox42kptm.com|dayton247now.com|fox56.com
 @@||injections.adguard.org^
+playbill.com#@#[class*="-ad-placeholder-"]
 autotempest.com#@#a[href*="/?aff="][target="_blank"]
 @@||r-type.org/adverts/adv$image,domain=r-type.org
 screenrant.com#%#//scriptlet('google-ima3')
@@ -28506,6 +28509,7 @@ browsershots.org#@#.advert_area
 ||bwkfevvdrwevl.website^
 ||bwloqkpsisafx.xyz^
 ||bwmbwughl.xyz^
+||bwnddkpcoavas.website^
 ||bwnkofqbv.com^
 ||bwofuzfzhgqnp.website^
 ||bwoorvop.com^
@@ -30080,6 +30084,7 @@ browsershots.org#@#.advert_area
 ||diajvmdtelrh.com^
 ||dialling-abutory.com^
 ||dianomioffers.co.uk^
+||diaplexlagenae.qpon^
 ||diarrhoeaeaglesunday.com^
 ||diasyrmunionic.com^
 ||diazidehematid.com^
@@ -30353,6 +30358,7 @@ browsershots.org#@#.advert_area
 ||downstairsnegotiatebarren.com^
 ||downstreamix.com^
 ||dowryhandgripballot.com^
+||dowrysprinkle.com^
 ||doylfwrfnn.com^
 ||doyoudi.com^
 ||doyxpiievh.com^
@@ -30889,6 +30895,7 @@ browsershots.org#@#.advert_area
 ||envious-attention.com^
 ||envoymusicianpaid.com^
 ||enwombssighing.com^
+||enyzcglevwwkc.space^
 ||eobufdobeaxai.site^
 ||eoithfloor.cyou^
 ||eojqkvqebyaro.site^
@@ -38243,6 +38250,7 @@ browsershots.org#@#.advert_area
 ||qhazvtkmwpdwz.online^
 ||qhchh.com^
 ||qhdlrubf.com^
+||qhgimdvyvqtyl.site^
 ||qhhtjakrzwtwx.site^
 ||qhiokgazdlz.com^
 ||qhjbwtcujjl.xyz^
@@ -41007,6 +41015,7 @@ browsershots.org#@#.advert_area
 ||topdisplayformat.com^
 ||topdisplaynetwork.com^
 ||tophaw.com^
+||tophetaglance.cyou^
 ||topiccorruption.com^
 ||topincome.cc^
 ||topnews-24.com^
@@ -43029,6 +43038,7 @@ browsershots.org#@#.advert_area
 ||xmlap.com^
 ||xmlgrab.com^
 ||xmlking.com^
+||xmlpostback.com^
 ||xmlppcbuzz.com^
 ||xmlrtb.com^
 ||xmlwiz.com^
