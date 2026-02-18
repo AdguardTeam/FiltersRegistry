@@ -1,9 +1,9 @@
-! Checksum: D8TQZHJb0bxsNHY/zysmsg
-! Diff-Path: ../patches/18/18-s-1771413801-3600.patch
+! Checksum: r2jojVL/iUfNRFr5tXa8ag
+! Diff-Path: ../patches/18/18-s-1771417352-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.81.18
-! TimeUpdated: 2026-02-18T11:20:23+00:00
+! Version: 2.0.81.19
+! TimeUpdated: 2026-02-18T12:19:25+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2576,6 +2576,9 @@ lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-he
 !
 ! NOTE: Regular rules
 !
+dnipro-m.sk##.backdrop
+dnipro-m.sk#$#body { overflow: auto !important; }
+dnipro-m.sk#$##cookies-modal { display: none !important; }
 makinecim.com###kvkUyari
 account.2gis.com#%#//scriptlet('set-cookie', 'cookie_alert_hidden', '1')
 xcloud.host###xcloud-cookie-banner
@@ -18346,6 +18349,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/224987
+dnipro-m.sk#@##cookies-modal
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225129
 pontera.com#@#.cookies-banner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225085

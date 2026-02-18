@@ -341,8 +341,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/1.txt",
 			"trustLevel": "full",
-			"version": "2.1.4.32",
-			"timeUpdated": "2026-02-18T10:20:47+0000",
+			"version": "2.1.4.33",
+			"timeUpdated": "2026-02-18T12:18:38+0000",
 			"deprecated": false,
 			"languages": [
 				"ru"
@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.47.85",
-			"timeUpdated": "2026-02-18T11:19:55+0000",
+			"version": "2.4.47.86",
+			"timeUpdated": "2026-02-18T12:18:50+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -526,8 +526,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/9.txt",
 			"trustLevel": "full",
-			"version": "2.0.33.25",
-			"timeUpdated": "2026-02-18T09:21:42+0000",
+			"version": "2.0.33.26",
+			"timeUpdated": "2026-02-18T12:19:09+0000",
 			"deprecated": false,
 			"languages": [
 				"es",
@@ -594,8 +594,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/13.txt",
 			"trustLevel": "full",
-			"version": "2.0.62.17",
-			"timeUpdated": "2026-02-18T11:20:12+0000",
+			"version": "2.0.62.18",
+			"timeUpdated": "2026-02-18T12:19:12+0000",
 			"deprecated": false,
 			"languages": [
 				"tr"
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.59.28",
-			"timeUpdated": "2026-02-18T11:20:18+0000",
+			"version": "2.2.59.29",
+			"timeUpdated": "2026-02-18T12:19:19+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -649,8 +649,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.1.12.10",
-			"timeUpdated": "2026-02-18T10:21:28+0000",
+			"version": "2.1.12.11",
+			"timeUpdated": "2026-02-18T12:19:20+0000",
 			"languages": [],
 			"tags": [
 				45,
@@ -730,8 +730,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/18.txt",
 			"trustLevel": "full",
-			"version": "2.0.81.18",
-			"timeUpdated": "2026-02-18T11:20:23+0000",
+			"version": "2.0.81.19",
+			"timeUpdated": "2026-02-18T12:19:25+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -752,8 +752,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/chromium/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.70.63",
-			"timeUpdated": "2026-02-18T11:20:24+0000",
+			"version": "2.0.70.64",
+			"timeUpdated": "2026-02-18T12:19:27+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
