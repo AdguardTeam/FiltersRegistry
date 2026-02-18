@@ -1,9 +1,9 @@
-! Checksum: DXtCke6WY36OW4x06+nCMQ
-! Diff-Path: ../patches/113_optimized/113_optimized-s-1771376357-14400.patch
+! Checksum: qtAu6rIM3IADnGcnbpN4MQ
+! Diff-Path: ../patches/113_optimized/113_optimized-s-1771391403-14400.patch
 ! Title: Liste FR (Optimized)
 ! Description: Additional filter list for websites in French. Already included in AdGuard French filter.
-! Version: 2.1.85.57
-! TimeUpdated: 2026-02-18T00:55:32+00:00
+! Version: 2.1.85.58
+! TimeUpdated: 2026-02-18T05:06:17+00:00
 ! Expires: 12 hours (update frequency)
 &ad_count=
 &ad_unit_
@@ -436,6 +436,7 @@ _banner.*?partner=
 _banner_pub.
 _bannerad2-
 _banniere-300.
+_banniere-468.
 _banniere-728.
 _bnrrotator_
 _board_ad.
@@ -569,6 +570,7 @@ _build=iclick-$popup
 ||adpick.co.kr^$third-party
 ||adpicker.net^$third-party
 ||adplus.io^$third-party
+||adpub.eu^$third-party
 ||adrequest.net^$third-party
 ||adrock.tv^$third-party
 ||ads-x.com^$third-party
@@ -833,7 +835,6 @@ _build=iclick-$popup
 ||accordancespotted.com^
 ||accountresponsesergeant.com^
 ||achyrepeatitchy.com^
-||acobnnvet.com^
 ||acoponposeur.com^
 ||acrebackcharacter.com^
 ||acrepantherrecite.com^
@@ -943,7 +944,6 @@ _build=iclick-$popup
 ||burniecrepes.com^
 ||bushibousy.click^
 ||bussocktourer.top^
-||butomuskainah.com^
 ||bytde.com^
 ||c4jkiz5v7mw26x.cyou^
 ||ca2686564a.com^
@@ -2466,6 +2466,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###pub_1
 ###pub_300x250
 ###pub_300x250-2
+###pub_728x90
 ###pub_728x90-1
 ###pub_728x90-2
 ###pub_banniere_basse
@@ -2613,7 +2614,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.header-pub
 ##.headerPub
 ##.header_adv
-##.header_pub
 ##.header_sponsors
 ##.hmads_300x250
 ##.horizontal-pub
@@ -2817,7 +2817,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.standard_adv_link
 ##.sticky-ad-holder
 ##.structure_wrapper-ad
-##.tableAds
 ##.tag-adverline
 ##.tag-sponsored-content
 ##.text_pub
@@ -2931,6 +2930,7 @@ hellokids.com###mask
 gulli.fr###masthead
 lafranceagricole.fr###materielOccasion
 sfr.fr###meeticWrapper
+goldenmoustache.com###mega-hab
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_bottom
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_top
 leparisien.fr###meteo-immo
@@ -2950,6 +2950,7 @@ e-wok.tv,mp4upload.com###overlay
 gameblog.fr###overlayFnac
 lebonfap.com###page-sexcam--roomlist
 blogspot.com###pageflip
+saucissonsexe.com###paragraphe
 sante-dz.com###partners-container
 tiplanet.org###partnersWidget
 lacentrale.fr###pavePubDesktop
@@ -3264,7 +3265,6 @@ seloger.com##[data-testid="serp-inline-ad"]
 seloger.com##[data-testid="serp-masthead-testid"]
 seloger.com##[data-testid="serp-side-skyscraper"]
 seloger.com##[data-testid="serp-side-skyscraper-top"]
-toutvendre.fr##[href*=".kelkoogroup.net/"]
 filecrypt.cc,filecrypt.co##[href^="javascript:"]
 fnac.com##[id$="-sponsored_products-0"]
 voyageforum.com##[id*="billboardArround"]
@@ -3388,6 +3388,7 @@ wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.btnnew
 wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.sadst
 1fr1.net,3oloum.com,7olm.org,ahladalil.com,ahlamontada.com,alamontada.com,arabepro.com,banouta.net,darkbb.com,easyforumpro.com,fcmulhousefans.com,forum2jeux.com,forumactif.com,forumactif.fr,forumactif.org,forumalgerie.net,forumpro.fr,forums-actifs.com,galoppourlavie.org,gid3an.com,jordanforum.net,lebonforum.com,orizzontescuolaforum.net,own0.com,passionmilitaria.com,sorcieremonique.com,superforum.fr,syriaforums.net,walkingdead-rpg.com,yoo7.com,ze-43eme.com##.croco_wrapper, [onclick*="var"], [onmousedown*="\x"], [style*="height: 90px;"]
 tvanouvelles.ca##.dfp-container:has(.dfp-ad)
+planetegrandesecoles.com##.elementor-element:has(picture.attachment-full.size-full)
 auchan.fr##.hp-banner:has(.hp-banner__message-sponsored)
 frandroid.com##.is-hidden-mobile:has([class^="Billboard"])
 radio-canada.ca##.max-w-150:has(.srcPubZone)
@@ -3408,6 +3409,7 @@ boulanger.com##[id*="kamino"]:has(.product-list__product-sponsored)
 intermarche.com##[id^="stime-product-item"]:has(.stime-product--details__sponsored)
 aliexpress.com,aliexpress.us#?#._2FypS:has(._1rKqn:contains(/AD|Annonce|إعلان/))
 auchan.fr##article.product-thumbnail:has(.product-thumbnail__sponsored)
+bol.com#?#[data-bltgi*="ProductList_"]:contains(Sponsorisé)
 cdiscount.com#?#section:has(> span:contains(/^Sponsorisé/))
 discordbots.org,top.gg#?#.bot-card:has(.lib:has(img))
 distrowatch.com#?#.News1:has(td:contains(Sponsored))
