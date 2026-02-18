@@ -1,9 +1,9 @@
-! Checksum: OAPaqaJSPeJk7bQiApAQUg
-! Diff-Path: ../patches/13/13-s-1771399761-3600.patch
+! Checksum: /yTgFAZxfXaAdEDLdPA0tA
+! Diff-Path: ../patches/13/13-s-1771413800-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.16
-! TimeUpdated: 2026-02-18T07:26:29+00:00
+! Version: 2.0.62.17
+! TimeUpdated: 2026-02-18T11:20:12+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1560,6 +1560,9 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+duhuliye.com##.menu-bosluk > div.container-xl
+duhuliye.com###detail-text > p > a[target="_blank"] > img
+duhuliye.com###detail-text > p > strong > a[target="_blank"]
 ensonhaber.com##.swiper-wrapper > div.swiper-slide:has(> a[rel*="sponsored"])
 akakce.com##.leaderboard_ad
 tempestmangas.com#%#//scriptlet('prevent-addEventListener', 'DOMContentLoaded', 'reklam')
@@ -6251,28 +6254,27 @@ selcuksportshdcanli.com##.ps
 [$url=/^https?:\/\/(?:cinque|due|tre)\.(?=.*[0-9])[a-z0-9]{16}\.click\/.*\/player\.html/]#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
 [$domain=/^i\[a-z\]*\.strmrdr\[a-z0-9\]+\..*/]#%#//scriptlet('set-constant', 'adscfg.enabled', 'false')
 cinque.668a396e58bcbc27.click#%#//scriptlet('set-constant', 'config.advertisement.enabled', 'false')
-!+ NOT_VALIDATE
+! selcuksportshd*.biz
 [$domain=/selcuksportshd[a-z0-9-]+\.biz/]##.banner
-!+ NOT_VALIDATE
 [$domain=/selcuksportshd[a-z0-9-]+\.biz/]##.container > aside.sidebar:has(> .banner)
-!+ NOT_VALIDATE
 [$domain=/selcuksportshd[a-z0-9-]+\.biz/]##.footer
-!+ NOT_VALIDATE
 [$domain=/selcuksportshd[a-z0-9-]+\.biz/]##.socials a:is(.meritroyal, .iptv, .streamradar)
-!+ NOT_VALIDATE
-[$domain=/selcuksportshd\d+\.(xyz\|click)/]##img[id*="-ads-"]
-!+ NOT_VALIDATE
-[$domain=/selcuksportshd\d+\.(xyz\|click)/]##.fixed.bottom-0:has(img[id^="footer-ads"])
-!+ NOT_VALIDATE
-[$domain=/selcuksportshd[a-z0-9-]+\.(xyz|click)/]##.banner
-!+ NOT_VALIDATE
-[$domain=/selcuksportshd[a-z0-9-]+\.(xyz|click)/]##.banners
-!+ NOT_VALIDATE
-[$domain=/selcuksportshd[a-z0-9-]+\.(xyz|click)/]##.container > aside.sidebar:has(> .banner)
-!+ NOT_VALIDATE
-[$domain=/selcuksportshd[a-z0-9-]+\.(xyz|click)/]##.footer
-!+ NOT_VALIDATE
-[$domain=/selcuksportshd[a-z0-9-]+\.(xyz|click)/]##.socials a:is(.meritroyal, .iptv, .streamradar)
+! selcuksportshd*.xyz
+[$domain=/selcuksportshd\d+\.xyz/]##img[id*="-ads-"]
+[$domain=/selcuksportshd\d+\.xyz/]##.fixed.bottom-0:has(img[id^="footer-ads"])
+[$domain=/selcuksportshd[a-z0-9-]+\.xyz/]##.banner
+[$domain=/selcuksportshd[a-z0-9-]+\.xyz/]##.banners
+[$domain=/selcuksportshd[a-z0-9-]+\.xyz/]##.container > aside.sidebar:has(> .banner)
+[$domain=/selcuksportshd[a-z0-9-]+\.xyz/]##.footer
+[$domain=/selcuksportshd[a-z0-9-]+\.xyz/]##.socials a:is(.meritroyal, .iptv, .streamradar)
+! selcuksportshd*.click
+[$domain=/selcuksportshd\d+\.click/]##img[id*="-ads-"]
+[$domain=/selcuksportshd\d+\.click/]##.fixed.bottom-0:has(img[id^="footer-ads"])
+[$domain=/selcuksportshd[a-z0-9-]+\.click/]##.banner
+[$domain=/selcuksportshd[a-z0-9-]+\.click/]##.banners
+[$domain=/selcuksportshd[a-z0-9-]+\.click/]##.container > aside.sidebar:has(> .banner)
+[$domain=/selcuksportshd[a-z0-9-]+\.click/]##.footer
+[$domain=/selcuksportshd[a-z0-9-]+\.click/]##.socials a:is(.meritroyal, .iptv, .streamradar)
 ||blogger.googleusercontent.com/img/*/reklambanner.png
 ||blogger.googleusercontent.com/img/b/R29vZ2xl/*/s16000/crtswp-s-min.png
 ||selcuksportshd*.xyz/img/g/crtswp-s-min.png
