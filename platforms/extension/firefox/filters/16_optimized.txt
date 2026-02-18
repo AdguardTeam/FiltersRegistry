@@ -1,9 +1,9 @@
-! Checksum: zXJUQm/ki61Fsd1yVdDBHw
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1771384238-3600.patch
+! Checksum: 7DnqRptNlJqSmzDVqnamiQ
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1771410294-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
-! Version: 2.0.56.2
-! TimeUpdated: 2026-02-17T16:24:08+00:00
+! Version: 2.0.56.3
+! TimeUpdated: 2026-02-18T10:21:32+00:00
 ! Expires: 10 days (update frequency)
 ||lopfly.com^
 ||heliumads.com^
@@ -128,7 +128,7 @@ ebookdz.com#%#//scriptlet('abort-on-property-read', 'ABDetector')
 ebookdz.com#%#//scriptlet('prevent-xhr', 'pagead2.googlesyndication.com')
 ||ebookdz.com/forum/libab/script.js
 monumentum.fr#%#//scriptlet('abort-current-inline-script', 'document.getElementById', 'Blocking Ads')
-japscan.*#%#//scriptlet("remove-node-text", "script", "/pubadx-ad|runBanner|threshold|getBoundingClientRect|nextElementSibling|TagName'|splay'|debu'|\+'er'/")
+japscan.*#%#//scriptlet("remove-node-text", "script", "/pubadx-ad|runBanner|threshold|getBoundingClientRect|nextElementSibling|TagName'|splay'|debu'|\+'er'|\.constructor\(/")
 japscan.*#%#//scriptlet('abort-current-inline-script', 'MessageChannel', '0x')
 japscan.*#%#//scriptlet('prevent-requestAnimationFrame', '/(\s*)\s*=>/')
 japscan.*#%#//scriptlet('trusted-suppress-native-method', 'Array.prototype.join', '""', 'prevent', 'inlineScript')
@@ -806,6 +806,7 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ||amazonaws.com/www.w9.fr/config.json$replace=/"enabled": true\,/"enabled": false\,/i,important
 ||canalplus.com^$document,replace=/"featPlayerAds":true/"featPlayerAds":false/
 ||be-rtl.videoplaza.tv/proxy/distributor/$replace=/(\,"vast":\{)[\s\S]*(\}\}\])/\$1\$2/,important,domain=rtlplay.be
+$popup,domain=vidstream.vip,badfilter
 @@||assets.msn.com/bundles/v*/cgHomePage/latest/web-components_super-cards_dist_cards_super-native-ad-card_native-ad-card-casual-games-landin-*.*.js$domain=msn.com
 amtrak.com#@#.ads-group
 $popup,domain=strmup.to,badfilter
