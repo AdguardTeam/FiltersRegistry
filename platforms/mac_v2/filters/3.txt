@@ -1,9 +1,9 @@
-! Checksum: lD/qWzVlIeRlZIMy8pZS6Q
-! Diff-Path: ../patches/3/3-s-1771428391-3600.patch
+! Checksum: hcji3KNSMCg07KssGm+LeA
+! Diff-Path: ../patches/3/3-s-1771476314-3600.patch
 ! Title: AdGuard Tracking Protection filter
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.0.32
-! TimeUpdated: 2026-02-18T15:22:23+00:00
+! Version: 2.1.0.33
+! TimeUpdated: 2026-02-19T04:41:30+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -65272,6 +65272,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ! Blocking piwik analytics subdomain(for DNS filtering)
 |piwik.
 !
+||alloy-web.zvuk.com^
 ||tg.minfin.com.ua^
 ||static-mon.yandex.net^
 ||analytex-us.userpilot.io^
@@ -128148,6 +128149,9 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 !
 ! NOTE: Specific rules
 !
+-service.newsifier.nl/api/v2/resource/article/*/visit
+||music.apm-proxy.obs.mts.ru/eum/*/eum.min.js
+||zvuk.com/api/v*/clickstream-web
 ||wix.consentik.com/api/impression?
 ||analytics.popupsmart.com/api/site/tracking-config
 ||static.danawa.com/globaljs/static/logger_Insight_WebAnalytics.js
@@ -128918,7 +128922,7 @@ baseballpost.jp###highschool-pickup
 berrykun.com##img[src*="a8.net/svt/"]
 ||xvp.imgix.net/assets/customer_tools/ip_checker-
 ||pub.pixels.ai/metrics-lib.js
-gq.com#%#//scriptlet('set-local-storage-item', '/^avoinspector/', '$remove$')
+pitchfork.com,gq.com#%#//scriptlet('set-local-storage-item', '/^avoinspector/', '$remove$')
 ||affirm.com/api/chrono/*/collect
 ||jobkorea.co.kr/Net/AdBannerApi/AdBannerLog
 ||check24.*/assets/funnel-tracking.min.js
@@ -135171,6 +135175,8 @@ $cookie=bf_visit
 ! Bad:  ||monerominer.rocks^$third-party (should be in adservers.txt)
 !
 !
+! zvuk.com
+||zvuk.com^$cookie=device_id
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224419
 ||exodus.com^$cookie=cfz_zaraz-analytics
 ! tracktollywood.com
