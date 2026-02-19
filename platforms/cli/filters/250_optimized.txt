@@ -1,5 +1,5 @@
-! Checksum: Q5X/mxrGKBoBgevJ8t6ONQ
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1771462726-14400.patch
+! Checksum: yUBr4LLKmhSoyADiQOqpZg
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1771477722-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.94
@@ -266,7 +266,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 !+ PLATFORM(windows, mac, android, cli)
 103.174.102.240$network
-||norskmatkultur.no^$document
 !+ PLATFORM(windows, mac, android, cli)
 38.180.96.244$network
 ||aysesuretobea.com^$all
@@ -619,7 +618,6 @@ google.*#?#div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
 ||az-partners.net^
 drvhub.net##.driver-item__install
 |https://undefined/
-/api/rtb-pops/go^$all
 ||adzestocp.com^$all
 ||asdfix.com^$all
 ||bestadperf.com^$all
@@ -801,6 +799,7 @@ google.*#?##rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}
 /^172\.255\.6\.(\d{1,2}|2.*|1[0-689].*|17[0-689])\$/$network
 ||avast.$app=CCleaner.exe|CCleaner64.exe|CCleanerCloudAgent.exe|ccsetup617.exe|ccsetup618.exe|ccsetup619.exe|ccsetup620.exe|ccsetup621.exe|ccsetup622.exe|ccsetup623.exe|ccsetup624.exe|ccsetup625.exe|ccsetup70.exe
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
+###ppsPopupBgOverlay
 ###rail-share-bar
 ###share-buttons
 ###share_bar
@@ -1833,6 +1832,7 @@ $removeparam=spReportId
 $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
+$removeparam=oly_anon_id
 $document,removeparam=/^wickedsource=.*$/i
 $removeparam=rb_clickid,document
 $removeparam=s_cid
@@ -1846,7 +1846,6 @@ $removeparam=cj_pid
 $removeparam=adj_campaign
 $removeparam=adj_adgroup
 $removeparam=adj_creative
-$removeparam=_vsrefdom
 $removeparam=ceneo_spo
 from=ceneo^$document,removeparam=from
 $removeparam=__s,document
@@ -2089,7 +2088,6 @@ $removeparam=tw_adid
 $removeparam=retailerSlug
 $removeparam=uls_trackid
 $removeparam=gad_campaignid
-$removeparam=/^source=googleps$/
 $removeparam=duckai
 $removeparam=/^ref=winstall$/
 !+ NOT_OPTIMIZED
@@ -2450,6 +2448,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
+||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
 ||bilibili.com^$removeparam=bbid
@@ -2697,7 +2696,6 @@ $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
-$removeparam=share_time,domain=etsy.com
 ||bleepingcomputer.com^$removeparam=cx
 $removeparam=iid,domain=cnn.com
 ||despegar.$removeparam=mktdata
@@ -2727,8 +2725,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=wPcid
 ||dw.com^$removeparam=maca
 ||fiverr.com^$removeparam=bta
-||fiverr.com^$removeparam=afp
-||fiverr.com^$removeparam=cxd_token
 $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
@@ -2736,10 +2732,7 @@ $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=wl12
 ||walmart.$removeparam=/^ath.*$/
 $removeparam=refdomain,domain=bestbuy.com
-$removeparam=recs_placement,domain=nordstrom.com
-$removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
-$removeparam=recs_seed,domain=nordstrom.com
 $removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
 ||market.yandex.ru^$removeparam=cpc
@@ -2852,11 +2845,6 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=productGridView
 ||jcpenney.com^$removeparam=badge
 ||jcpenney.com^$removeparam=selectedSKUId
-||bandcamp.com^$removeparam=search_item_id
-||bandcamp.com^$removeparam=search_item_type
-||bandcamp.com^$removeparam=search_match_part
-||bandcamp.com^$removeparam=search_page_no
-||bandcamp.com^$removeparam=search_rank
 ||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
@@ -3037,6 +3025,7 @@ $document,removeparam=af_xp
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 ||www.roblox.com^$removeparam=treatmentType
+$document,removeparam=ucid,domain=unicredit.it|steampowered.com
 $document,removeparam=entrypoint,domain=bing.com
 $document,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
 ||audible.$removeparam=creativeId
@@ -3194,7 +3183,6 @@ www.youtube.com##ytd-video-renderer ~ ytd-shelf-renderer[thumbnail-style]
 tv2.no##.banner
 www.finn.no#%#//scriptlet('ubo-rc', 'ads__unit--premium', '.ads__unit', 'stay')
 positivr.fr#$#.viously-sticked { position: absolute !important; top: 0 !important; left: 0 !important; bottom: 0 !important; right: 0 !important; width: 100% !important;  height: 100% !important; z-index: 1 !important; display: block !important }
-youtube.com,~m.youtube.com##.ytp-miniplayer-button
 @@://googleadservices.com^|$badfilter
 $third-party,denyallow=microsoft.com,domain=store.rg-adguard.net
 fandom.com##.notifications-box
@@ -3212,6 +3200,7 @@ independent.co.uk,indy100.com##.notification-prompt
 /fakepage.html|$important
 |https://adblock.*/js/widget/ads.js|$~third-party
 |https://adblock.*/js/pagead.js|$~third-party
+discord.com##div[data-list-item-id*=skill-trees] + div[class*=" unreadImportant"]
 www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 &client_ad_session_id=
 ||anyclip.com^$app=TETR.IO.exe

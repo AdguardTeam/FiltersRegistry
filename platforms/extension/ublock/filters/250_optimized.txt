@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: qGZVIdiDLyAhbFk8CUfffg
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1771462752-14400.patch
+! Checksum: ZIBm915hU/W8iUaSJ10AJw
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1771477743-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.18.94
@@ -4933,7 +4933,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||usqtvc.com$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||usutnr.top$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 ||204.44.92.187$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
-||norskmatkultur.no^$document
 ||38.180.96.244^$all
 ||aysesuretobea.com^$all
 ||normaticalaccu.com^$all
@@ -7384,7 +7383,6 @@ google.*##div[data-attrid^="images "]:contains(/, [1-9][1-46-9]% OF{2}/)
 drvhub.net##.driver-item__install
 /^http.*\.com//?secureproxy(\.php)?\?e=(ping|/)[a-z_]{0,}$/$all
 |https://undefined/
-/api/rtb-pops/go^$all
 ||adzestocp.com^$all
 ||asdfix.com^$all
 ||bestadperf.com^$all
@@ -7720,6 +7718,7 @@ www.microsoft.com##.card[data-bi-cn*="car chase" i][data-bi-cn*=racing i]
 ||185.53.178.54^$all
 google.*###rso > div[class]:has(h3:contains(/^.*(H\ow\st\o|fre{2})\s(\instal{2}|d\ownl\oad).*$/i):contains(/^.*(ph\ot\osh\op|dav\inc\i|\il{2}ustrat\or).*$/i):contains(/^.*(fre{2}|(cr|h)ack).*$/i))
 ###contents > yt-share-target-renderer:nth-of-type(1n+2)
+###ppsPopupBgOverlay
 ###rail-share-bar
 ###share-buttons
 ###share_bar
@@ -8772,6 +8771,7 @@ $removeparam=spReportId
 $removeparam=actId
 $removeparam=actCampaignType
 $removeparam=actSource
+$removeparam=oly_anon_id
 $document,removeparam=/^wickedsource=.*$/i
 $removeparam=rb_clickid,document
 $removeparam=s_cid
@@ -8785,7 +8785,6 @@ $removeparam=cj_pid
 $removeparam=adj_campaign
 $removeparam=adj_adgroup
 $removeparam=adj_creative
-$removeparam=_vsrefdom
 $removeparam=ceneo_spo
 from=ceneo^$document,removeparam=from
 $removeparam=__s,document
@@ -9028,7 +9027,6 @@ $removeparam=tw_adid
 $removeparam=retailerSlug
 $removeparam=uls_trackid
 $removeparam=gad_campaignid
-$removeparam=/^source=googleps$/
 $removeparam=duckai
 $removeparam=/^ref=winstall$/
 !+ NOT_OPTIMIZED
@@ -9389,6 +9387,7 @@ wenku.baidu.com##+js(set, history.replaceState, noopFunc)
 ||baidu.com^$document,removeparam=miniId
 ||baidu.com^$document,removeparam=/^from.*$/
 ||baidu.com^$document,removeparam=tpl_from,domain=~graph.baidu.com
+||bilibili.com^$removeparam=/^current.*$/
 ||bilibili.com^$removeparam=/^from.*$/
 ||bilibili.com^$removeparam=/^share_.*$/
 ||bilibili.com^$removeparam=bbid
@@ -9636,7 +9635,6 @@ $removeparam=pro,domain=etsy.com
 $removeparam=frs,domain=etsy.com
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
-$removeparam=share_time,domain=etsy.com
 ||bleepingcomputer.com^$removeparam=cx
 $removeparam=iid,domain=cnn.com
 ||despegar.$removeparam=mktdata
@@ -9666,8 +9664,6 @@ $removeparam=visit_id,document,domain=bilibili.com|google.*
 ||coupang.com^$removeparam=wPcid
 ||dw.com^$removeparam=maca
 ||fiverr.com^$removeparam=bta
-||fiverr.com^$removeparam=afp
-||fiverr.com^$removeparam=cxd_token
 $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=/^wl\d=.*$/
 ||walmart.$removeparam=wl10
@@ -9675,10 +9671,7 @@ $removeparam=mv_pc,domain=fragrancenet.com
 ||walmart.$removeparam=wl12
 ||walmart.$removeparam=/^ath.*$/
 $removeparam=refdomain,domain=bestbuy.com
-$removeparam=recs_placement,domain=nordstrom.com
-$removeparam=recs_strategy,domain=nordstrom.com
 $removeparam=recs_source
-$removeparam=recs_seed,domain=nordstrom.com
 $removeparam=deep_and_deferred
 ||gamivo.com^$removeparam=glv
 ||market.yandex.ru^$removeparam=cpc
@@ -9791,11 +9784,6 @@ $document,removeparam=o,domain=ask.com|askmoney.com|bloglines.com|consumersearch
 ||jcpenney.com^$removeparam=productGridView
 ||jcpenney.com^$removeparam=badge
 ||jcpenney.com^$removeparam=selectedSKUId
-||bandcamp.com^$removeparam=search_item_id
-||bandcamp.com^$removeparam=search_item_type
-||bandcamp.com^$removeparam=search_match_part
-||bandcamp.com^$removeparam=search_page_no
-||bandcamp.com^$removeparam=search_rank
 ||app.slack.com^$removeparam=entry_point
 ||nicovideo.jp/comic^$removeparam=track
 ||onenote.com^$removeparam=nf
@@ -9976,6 +9964,7 @@ $document,removeparam=af_xp
 ||www.roblox.com^$document,removeparam=gameSetTargetId
 ||www.roblox.com^$removeparam=gameSearchSessionInfo
 ||www.roblox.com^$removeparam=treatmentType
+$document,removeparam=ucid,domain=unicredit.it|steampowered.com
 $document,removeparam=entrypoint,domain=bing.com
 $document,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
 ||audible.$removeparam=creativeId
@@ -10698,7 +10687,6 @@ www.youtube.com##ytd-video-renderer ~ ytd-shelf-renderer[thumbnail-style]
 tv2.no##.banner
 www.finn.no##+js(rc, ads__unit--premium, .ads__unit, stay)
 positivr.fr##.viously-sticked:style(position: absolute !important; top: 0 !important; left: 0 !important; bottom: 0 !important; right: 0 !important; width: 100% !important;  height: 100% !important; z-index: 1 !important; display: block !important)
-youtube.com,~m.youtube.com##.ytp-miniplayer-button
 @@://googleadservices.com^|$badfilter
 $3p,denyallow=microsoft.com,domain=store.rg-adguard.net
 fandom.com##.notifications-box
@@ -10716,6 +10704,7 @@ independent.co.uk,indy100.com##.notification-prompt
 /fakepage.html|$important
 |https://adblock.*/js/widget/ads.js|$~3p
 |https://adblock.*/js/pagead.js|$~3p
+discord.com##div[data-list-item-id*=skill-trees] + div[class*=" unreadImportant"]
 www.deviantart.com##div[role=complementary] > div:not([class*=_]):has(a[href*="/subscriptions?tier="])
 &client_ad_session_id=
 duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion##button:first-of-type + div:last-of-type[class*=" "]:has(button)
