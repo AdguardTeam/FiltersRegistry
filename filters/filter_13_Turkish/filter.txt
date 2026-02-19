@@ -1704,6 +1704,11 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+||ifsakolik.com/*.gif
+ifsakolik.com###promoPopup
+ifsakolik.com###video-banner
+ifsakolik.com##.banner-wrap
+ifsakolik.com#%#//scriptlet('trusted-replace-node-text', 'script', 'jojoVideoUrl', '/const jojoVideoUrl[\s\S]*const jojoClickUrl.*/', 'const jojoVideoUrl = "";')
 milliyet.com.tr#?#.medyanet-inline-adv
 gzt.com##div[class^="_adWrapper"]
 duhuliye.com##.menu-bosluk > div.container-xl
@@ -5929,6 +5934,13 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! WARNING: When adding new rules here, try to find an initial source of an actual domain,
 !          or add a last known domain
 !
+! Frequently changed domains: turkkizlar*.com
+! Source: turkkizlar12.com
+[$domain=/turkkizlar\d+\.com$/]##div[class^="vid-promo"]
+!#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
+turkkizlar12.com,turkkizlar13.com,turkkizlar14.com,turkkizlar15.com,turkkizlar16.com,turkkizlar17.com,turkkizlar18.com,turkkizlar19.com,turkkizlar20.com,turkkizlar21.com,turkkizlar22.com,turkkizlar23.com,turkkizlar24.com,turkkizlar25.com,turkkizlar26.com,turkkizlar27.com,turkkizlar28.com,turkkizlar29.com,turkkizlar30.com,turkkizlar31.com##div[class^="vid-promo"]
+!#endif
+!
 ! Frequently changed domains: cimcime*.com
 ! Source: cimcime56.com
 ||cimcime*.com/wp-content/uploads/*.gif
@@ -5950,6 +5962,7 @@ dahahizli49.com,dahahizli50.com,dahahizli51.com,dahahizli52.com,dahahizli53.com,
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/hepbetspor\d+\.cfd$/
+! aglint-enable no-invalid-modifiers
 [$domain=/hepbetspor\d+\.cfd$/]##.background-link
 [$domain=/hepbetspor\d+\.cfd$/]##.site-header > nav.header-nav
 !#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
@@ -5962,6 +5975,7 @@ hepbetspor9.cfd,hepbetspor10.cfd,hepbetspor11.cfd,hepbetspor12.cfd,hepbetspor13.
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/efendispor\d+\.online$/
+! aglint-enable no-invalid-modifiers
 [$domain=/efendispor\d+\.online$/]##.as-header-ads-wrapper
 [$domain=/efendispor\d+\.online$/]##.as-player-bottom-banner
 !#if (adguard_app_ios || adguard_ext_safari || adguard_ext_android_cb || ext_ublock)
@@ -5974,6 +5988,7 @@ efendispor212.online,efendispor213.online,efendispor214.online,efendispor215.onl
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/patronspor[0-9a-z]{14}\.cfd$/
+! aglint-enable no-invalid-modifiers
 [$domain=/patronspor[0-9a-z]{14}\.cfd$/]##.background-link
 [$domain=/patronspor[0-9a-z]{14}\.cfd$/]##.top-banner-header
 !

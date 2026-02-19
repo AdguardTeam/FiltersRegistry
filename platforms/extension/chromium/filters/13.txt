@@ -1,9 +1,9 @@
-! Checksum: 5xu0vzGQ8oFQJd7Rwyb/Og
-! Diff-Path: ../patches/13/13-s-1771489311-3600.patch
+! Checksum: L71Dg2sQ3H2ZtE5Js9dImw
+! Diff-Path: ../patches/13/13-s-1771496639-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.20
-! TimeUpdated: 2026-02-19T08:19:02+00:00
+! Version: 2.0.62.21
+! TimeUpdated: 2026-02-19T10:20:45+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1534,6 +1534,11 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
+||ifsakolik.com/*.gif
+ifsakolik.com###promoPopup
+ifsakolik.com###video-banner
+ifsakolik.com##.banner-wrap
+ifsakolik.com#%#//scriptlet('trusted-replace-node-text', 'script', 'jojoVideoUrl', '/const jojoVideoUrl[\s\S]*const jojoClickUrl.*/', 'const jojoVideoUrl = "";')
 milliyet.com.tr#?#.medyanet-inline-adv
 gzt.com##div[class^="_adWrapper"]
 duhuliye.com##.menu-bosluk > div.container-xl
@@ -5758,6 +5763,10 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! WARNING: When adding new rules here, try to find an initial source of an actual domain,
 !          or add a last known domain
 !
+! Frequently changed domains: turkkizlar*.com
+! Source: turkkizlar12.com
+[$domain=/turkkizlar\d+\.com$/]##div[class^="vid-promo"]
+!
 ! Frequently changed domains: cimcime*.com
 ! Source: cimcime56.com
 ||cimcime*.com/wp-content/uploads/*.gif
@@ -5773,6 +5782,7 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/hepbetspor\d+\.cfd$/
+! aglint-enable no-invalid-modifiers
 [$domain=/hepbetspor\d+\.cfd$/]##.background-link
 [$domain=/hepbetspor\d+\.cfd$/]##.site-header > nav.header-nav
 !
@@ -5781,6 +5791,7 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/efendispor\d+\.online$/
+! aglint-enable no-invalid-modifiers
 [$domain=/efendispor\d+\.online$/]##.as-header-ads-wrapper
 [$domain=/efendispor\d+\.online$/]##.as-player-bottom-banner
 !
@@ -5789,6 +5800,7 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! aglint-disable no-invalid-modifiers
 !+ NOT_VALIDATE
 ||blogger.googleusercontent.com/img/$domain=/patronspor[0-9a-z]{14}\.cfd$/
+! aglint-enable no-invalid-modifiers
 [$domain=/patronspor[0-9a-z]{14}\.cfd$/]##.background-link
 [$domain=/patronspor[0-9a-z]{14}\.cfd$/]##.top-banner-header
 !
