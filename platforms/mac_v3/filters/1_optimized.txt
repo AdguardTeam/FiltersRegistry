@@ -1,5 +1,5 @@
-! Checksum: vQ3HRLfhbu3ShTiex98X2w
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1771428394-3600.patch
+! Checksum: /s/38JpqGAIJRnhtk7bAlw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1771470631-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.4.34
@@ -77,7 +77,6 @@
 .com/player/|$third-party
 .ru/player/|$third-party
 /bens/vinos
-/bens/vinos.js?
 /b?size=*&catgry=$script,third-party
 /code/bshow.php?id=*&dimension=
 /output/index/*$other,script,third-party
@@ -261,7 +260,6 @@ http://*.ru/leftunit.pl?
 /codes/*.js|$third-party
 /com_artbannersplus/*
 /commercials/*$domain=~livingroomcandidate.org
-/cs/ads/*
 /css/branding_*.css$domain=~citigroup.com
 /delivery/avw.php
 /din_new6.php?code=*&bid=*&linkdest=
@@ -597,6 +595,7 @@ ucoz.ru/informer/
 ~dolinacharlotty.pl,~gamespot.com##.mpu
 ##.mywidget-content-ad
 ##.one-search
+##.one-search6
 ##.publicidad
 ##.r_banner
 ##.reclama
@@ -919,6 +918,7 @@ ucoz.ru/informer/
 ||autous.ru^$third-party
 ||admile.ru^$third-party
 ||mrrvmp.com^
+||spots.ru^$all
 ||byevkj.com^$third-party
 ||y8lsyibocd.ru^$third-party
 ||tobaltoyon.com^
@@ -1365,7 +1365,6 @@ ucoz.ru/informer/
 ||exaccess.ru^$third-party
 ||exoticads.com^$third-party
 ||fair.ru/*/i.php?
-||fairfax.com.au^$~stylesheet,third-party
 ||falcoware.com^$third-party
 ||fast2load.ru^$third-party
 ||fastsex.ru^$third-party
@@ -3910,6 +3909,7 @@ gramota.ru,zelenograd.ru,rulaws.ru##.adfox
 kanobu.ru##aside[class^="AgGamesOnline_"]
 myshows.me##.CommentBanner
 iguides.ru##.i-box-ads
+||officelife.media/upload/iblock/fec/$image
 ||yastatic.net/vas-bundles/
 kino-teatr.ru#?#.content_block:has(> div.block_okkko)
 ||cdn.botanichka.ru/pics/brand/
@@ -4351,6 +4351,7 @@ livesport.ru##.z_picard_card_d_fonbet
 ||tomsk.ru/system/service/newsscript$third-party
 ||smi2.net^$third-party,domain=~smi2.ru
 ||smi2.ru^$third-party,domain=~smi2.ru
+||static.smi2.net/dynamic/iframes/gen.*v.php
 /src/Template/Block/Banner*/$script,domain=kaktus.media|kaktus.kg
 kaktus.media,kaktus.kg##.bnr-a-branding
 kaktus.media,kaktus.kg##.bnr > div[style^="padding-top:"]
@@ -4909,6 +4910,7 @@ cheb.ru,radiorecord.ru##a[href^="https://ad.adriver.ru/"]
 cheb.ru##noindex > a[target="_blank"][rel="nofollow"]
 yaplakal.com##div[id^="MF_"]
 zoneofgames.ru##div[id^="adv-"]
+sber-zvuk.com##a[target="_blank"][rel="noreferrer"] > img[src^="https://sber-zvuk.com/static/avatar/banner/"]
 cnews.ru##.google_bottom_line
 vashurok.ru##.template__sidebar-studying
 timeweb.com##.cm-represent
@@ -5503,6 +5505,7 @@ finversia.ru##.ya-direct
 dumskaya.net#?##tops > table[width] > tbody > tr > td[height][width]
 zoneofgames.ru##div[class*="dver"]
 cnc3018.ru,neverfold.ru,notdrink.ru,rusfishing.ru,zerocoolpro.biz,share-wood.pro,sharewood.pro##.samBannerUnit
+alau.kz,1informer.com##.backstretch
 gazeta-unp.ru,dirklinik.ru##.topAdvertize
 video-shoper.ru,otzyvy.by##div[class^="ban_"]
 otzyvy.by##.cont > center > div[align="center"] > a[target="_blank"] > img
@@ -5877,7 +5880,6 @@ newsomsk.ru##.banner1200x90
 citydog.io,citydog.by,friday.ru##.banner240x400
 steaklovers.menu,filmz.ru##.banner3
 tvzvezda.ru##.banner_300x600
-woman.ru##.banner_560x60
 torrent-pirat.com##.banner_88x31
 studfile.net##.banner_bottom_preview
 autostat.ru,vdvsn.ru##.banner_content
@@ -6088,6 +6090,7 @@ drive.ru##.side-dv
 edu.ru##.side-navi__banner
 1tv.ru##.side-promo-place-right
 cartoonsub.com##.sideBar a[target="new"] > img
+dnepr.info##.sidebar > .blue-bann
 sadikionline.ru##.sidebar noindex > a > img
 roscontrol.com,study.ru,kanobu.ru,mmorpg.su##.sidebar-banner
 glavpost.com##.sidebar-banner-block
@@ -6511,6 +6514,7 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||myzuka.org/do/
 ||narutoplanet.ru/slider/
 ||naydex.net^$domain=actualnews.org
+||new-rutor.org/js/blocked.js
 ||new-rutor.org/js/js.js
 ||newslab.ru/GetIFrameHandler.ashx
 ||nnm-club.ws/forum/4games/
@@ -6962,7 +6966,6 @@ pornolab-zerkalo.appspot.com,pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net#
 ||code.directadvert.ru/data/*.js$script,redirect=noopjs,important
 ||m.mixadvert.com/show/?id=$redirect=nooptext,important
 ||redtram.com/n4p/$redirect=nooptext,important
-||admulti.com/javascripts/rot.js
 ||info.zonasearch.com/ad/admulti*.json
 ||page.shareman.tv/rostk/
 mail.ru##.ph-project + div.balloon-anchor
@@ -7685,6 +7688,7 @@ gamerstv.ru#@#.banners
 @@||partner.kards.qip.ru^
 auto.vesti.ru#@#.reklama
 gnezdogluharya.ru#@#.banners
+@@||avito.ru/reklama
 @@||onlinetv.ru/*.js
 @@||yastatic.net/market-export/
 @@.ngs.ru/advert/
@@ -7708,7 +7712,6 @@ nur.kz##.sidebar-adv
 nur.kz##.adv-placeholder:not(#style_important)
 baq.kz##.top-banner
 ||baq.kz/ajax/banners/
-sn.kz##.top-adv-sec
 stan.kz##.admanager_block
 ||stan.kz/js/admanager_v*.js
 stan.kz##[class^="branding_"]
