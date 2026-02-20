@@ -1,9 +1,9 @@
-! Checksum: pX9FFrrUnadCk1qJPQtVHw
-! Diff-Path: ../patches/227/227-s-1769770094-14400.patch
+! Checksum: HfTG78HSMfhKGrs7tA+O6w
+! Diff-Path: ../patches/227/227-s-1771563927-14400.patch
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.71
-! TimeUpdated: 2026-01-30T10:45:12+00:00
+! Version: 2.0.23.72
+! TimeUpdated: 2026-02-20T05:02:43+00:00
 ! Expires: 10 days (update frequency)
 !
 ||ad.adwiser.kr^
@@ -498,6 +498,8 @@ namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=
 namu.wiki,~board.namu.wiki##*[class]:not([class*=" "]) > div[class]:not([class*=" "]) ~ *:not([class]) > *[class]:has(iframe[src*="arca.live/external/callad"])
 namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[class*=" "] > *:has(iframe[src*="arca.live/external/callad"])
 !
+[$path=/(&|\\.|\\?)clubid=14062859(&|$)/]~m.cafe.naver.com,cafe.naver.com##img[src][alt="매니저 등록 배너"]
+[$path=/ca-fe\\/web\\/cafes\\/(ghdi58|14062859)(\\/|\\?)/]m.cafe.naver.com##.banner_add
 [$path=/ca-fe\\/web\\/cafes\\/(dieselmania|11262350)(\\/|\\?)/]m.cafe.naver.com##.banner_add
 [$path=/(&|\\.|\\?)clubid=11262350(&|$)/]~m.cafe.naver.com,cafe.naver.com##img[src][alt="매니저 등록 배너"]
 [$path=/(&|\\.|\\?)clubid=10912875(&|$)/]~m.cafe.naver.com,cafe.naver.com###editorMainContent tr:has(~ tr img[id="userImg8967591"])
@@ -549,6 +551,8 @@ namu.wiki,~board.namu.wiki##div[class]:not([class*=" "]) ~ div[class*=" "] > *[c
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 !
+/mobus/resources/images/route_inquiry_addBoxImg$domain=m.bustago.or.kr
+||m.stock.naver.com/front-api/ad/reward
 ||img.tvchosun.com/news/article/content_ad.js
 ||mapleland.gg/img/Latal
 ||web.joongna.com/main-web/_next/static/chunks/ProductAdsBlock
@@ -1681,6 +1685,8 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+m.bustago.or.kr###safeconnectAddBox
+dundam.xyz##.instv-ad
 algumon.com##.bg-base-100:has(> div.adsense-container > ins.adsbygoogle)
 excellesports.com##.modal_contents .modal_wrap
 m.search.naver.com##div[data-block-id^="review/prs_template_"] .sds-comps-header ~ div[data-template-type="vertical"] .sds-comps-vertical-layout.sds-comps-full-layout:has(> .sds-comps-vertical-layout a[href^="https://ader.naver.com/"])
@@ -3213,6 +3219,8 @@ x86.co.kr#@#.download_ad
 !
 auto.danawa.com#%#//scriptlet('set-constant', 'NAVER_ADPOST_V2', 'noopFunc')
 ! TODO: remove the following filter if https://github.com/AdguardTeam/CoreLibs/issues/1831 is resolved.
+m.bustago.or.kr#$#.InquiryList { height: 100% !important; }
+dundam.xyz#$#.today-grade { width: 100% !important; }
 start.klauncher.kr#$#.main-content { width: calc(100vw - 220px) !important; }
 m.naver.com#$#.wrap.id_search .comp_container { margin-top: 0px !important; }
 lol.ps#$#div[class*="w-full min-w-[280px] pt-10"] > .p-4.pb-0 div[class*="max-w-[480px]"] { width: 100% !important; max-width: none !important; }
@@ -3852,6 +3860,7 @@ dicoall.com#@##homead
 dicoall.com#@##ad-lead
 dicoall.com#@##rightAd
 !
+algumon.com##div[id^="deal-"].card ~ .bg-base-100:has(> div[style] > div[class^="fallback svelte-"])
 cheatdot.com#%#//scriptlet('prevent-setTimeout', 'window.getComputedStyle(t).display')
 tv.jtbc.co.kr,mvod.jtbc.co.kr,onair.jtbc.co.kr#%#//scriptlet('prevent-setTimeout', 'getComputedStyle(t).getPropertyValue("visibility")')
 erdcloud.com#$?#.ads-block-warning-overlay { remove: true; }

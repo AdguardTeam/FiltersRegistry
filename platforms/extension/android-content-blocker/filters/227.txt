@@ -1,8 +1,8 @@
-! Checksum: zXkS7LUh/FCKIsRodnpOWw
+! Checksum: Ik2HKWGRc4XmW7zwgthkcA
 ! Title: List-KR
 ! Description: Filter that removes ads and various scripts from websites with Korean content. Combined and augmented with AdGuard-specific rules for enhanced filtering. This filter is expected to be used alongside with AdGuard Base filter.
-! Version: 2.0.23.71
-! TimeUpdated: 2026-01-30T10:45:12+00:00
+! Version: 2.0.23.72
+! TimeUpdated: 2026-02-20T05:02:43+00:00
 ! Expires: 1 day (update frequency)
 !
 ||ad.adwiser.kr^
@@ -493,6 +493,8 @@
 ##iframe[src*="clickon.kr"]
 m.ruliweb.com##.fixed_ad_wrapper
 !
+[$path=/(&|\\.|\\?)clubid=14062859(&|$)/]~m.cafe.naver.com,cafe.naver.com##img[src][alt="매니저 등록 배너"]
+[$path=/ca-fe\\/web\\/cafes\\/(ghdi58|14062859)(\\/|\\?)/]m.cafe.naver.com##.banner_add
 [$path=/ca-fe\\/web\\/cafes\\/(dieselmania|11262350)(\\/|\\?)/]m.cafe.naver.com##.banner_add
 [$path=/(&|\\.|\\?)clubid=11262350(&|$)/]~m.cafe.naver.com,cafe.naver.com##img[src][alt="매니저 등록 배너"]
 [$path=/ca-fe\\/web\\/cafes\\/(drhp|11196414)(\\/|\\?)/]m.cafe.naver.com##.banner_add
@@ -542,6 +544,8 @@ m.ruliweb.com##.fixed_ad_wrapper
 /^https?:\/\/[a-z0-9-\.]*[a-z0-9-]+\.[a-z]+\/RealMedia\/ads\//
 /data/banner.json?$domain=~nintendo.*
 !
+/mobus/resources/images/route_inquiry_addBoxImg$domain=m.bustago.or.kr
+||m.stock.naver.com/front-api/ad/reward
 ||img.tvchosun.com/news/article/content_ad.js
 ||mapleland.gg/img/Latal
 ||web.joongna.com/main-web/_next/static/chunks/ProductAdsBlock
@@ -1628,6 +1632,8 @@ jobkorea.co.kr##div[id^="Banner"]
 eegosa.com##section[id*="_ads_"]
 ! ##div[id*="_AD"]
 sports.donga.com##div[id*="_AD"]
+m.bustago.or.kr###safeconnectAddBox
+dundam.xyz##.instv-ad
 excellesports.com##.modal_contents .modal_wrap
 enjuso.com##.enjuso_exp > a[href^="https://"]
 m.cafe.daum.net##.nativead-placeholder
