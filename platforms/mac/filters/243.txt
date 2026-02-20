@@ -1,13 +1,13 @@
-! Checksum: oHRSgN8XJ1WTQZPmYdH+Jw
+! Checksum: LQz4GJOOmMaia3RHkvcdmw
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.95
-! TimeUpdated: 2026-02-18T20:45:46+00:00
+! Version: 2.0.23.96
+! TimeUpdated: 2026-02-20T08:45:33+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-02-18 20:37:59 CET
+! Last modified: 2026-02-20 07:14:35 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -562,7 +562,7 @@ fasting.nu#$#body { display:unset!important }
 feber.se,tjock.se##f-internallink:has(a[href="#"])
 feber.se,tjock.se#%#//scriptlet('ubo-nosiif', 'checkGDPRInt')
 feber.se,tjock.se#%#//scriptlet('ubo-set', 'dovideostuffAD', 'noopFunc')
-feber.se,tjock.se##.burt-unit, .art_ad, adline, f-panorama, f-deals, #rpPopular, #maxetiseFull, #outsider, [data-ad="true"], f-internallink[adid], f-automatos-promo, f-native
+feber.se,tjock.se##.burt-unit, .art_ad, adline, f-panorama, f-deals, #rpPopular, #maxetiseFull, #outsider, [data-ad="true"], f-internallink[adid], f-automatos-promo, f-native, .readpeak-puff-content, .readpeak-puff-item
 fightermag.se##article:has(a[href*="betting"], a[href*="casino"], a[href*="kasino"], a[href*="/gastskribent/"])
 fightermag.se##a[href*="/sponsra"], #partners
 filatelisten.se#?#:is(a[target="_blank"]:not([href^="/"], [href*="filatelisten.se"])):upward(section)
@@ -688,7 +688,7 @@ gaffa.se##a[href*="/annonser/"], a[href*="/sponsrat-"], div[id^="cncpt-"]
 gaffa.se##.article-overview__col:has(.gpt--loaded)
 gaffa.se##.link-list:has(a[href*="casino"])
 gais.se##.landing-page-main-partners, .hero-banner
-gamereactor.se###cookielawwarning, #eventad, [id^="sky"], [id^="ad_lead"], .external_div_bigVideoAd, #mpu, #leftToLogo, .itsanad, div[class^="ad_Bumper"], div[style="min-height: 600px; margin-bottom: 20px;"], div[id^="ad_"], div[class^="preAd_"], div[class^="ad_smartphbig"], .adMobileBig, div[class^="preMobileBig"], .external_div_videoAd, .ad_mobilebigwrap, #mobileLeftMainLogo
+gamereactor.se###cookielawwarning, #eventad, [id^="sky"], [id^="ad_lead"], .external_div_bigVideoAd, #mpu, #leftToLogo, .itsanad, div[class^="ad_Bumper"], div[style="min-height: 600px; margin-bottom: 20px;"], div[id^="ad_"], div[class^="preAd_"], div[class^="ad_smartphbig"], .adMobileBig, div[class^="preMobileBig"], .external_div_videoAd, .ad_mobilebigwrap, #mobileLeftMainLogo, a[href*="/app.youform.com"][title*="ads"]
 gamereactor.se#%#//scriptlet('ubo-set', 'adblockEnabled', 'falseFunc')
 gamereactor.se#?#.ad_interscroller:upward(.wrapper)
 gamereactor.se#$?#.colHomePlayer:has([data-slotads="videoad"]) { remove: true; }
@@ -1103,6 +1103,9 @@ mmanytt.se##:is(.jeg_postblock, .jeg_block_heading):has(a[href*="/speltips"], a[
 mobilanyheter.net##a[href*="rocketpot.io"], a[href*="casino"], a[href*="betting"], .a-wrap
 mobilanyheter.net#%#//scriptlet('ubo-set', 'ai_run_scripts', 'noopFunc')
 mobilanyheter.net##.code-block:has(iframe[src*="/ads/"])
+mobil.se##.content article:has(a:not([href*="mobil.se"], [href^="/"]))
+mobil.se##.mm-popup-wrapper
+mobil.se#?#.text_singleline:contains(/annonsinnehåll/i)
 mobil.se,kamerabild.se##article:has(a[href*="/partner"], a[href*="casino"], a[href*="utm_campaign"])
 mobil.se,kamerabild.se##a[href*="/partner"], iframe[name^="PJWidget"], .google-ad
 mobil.se,kamerabild.se##.markupbox:has(a[href*="casino"], .holidAds)
@@ -2458,7 +2461,7 @@ zeromagazine.nu##div[id^="ads"]
 /permutive-async.js
 /pfizer_analytics
 /phaser-ads.min.js$script
-/ping$domain=kimura.se
+/ping$domain=kimura.se|feber.se|tjock.se
 /pixel/impression$image
 /plausible$domain=feber.se|tjock.se
 /playbuzz-ads-core
@@ -2656,6 +2659,7 @@ zeromagazine.nu##div[id^="ads"]
 /popup-overlay$script,domain=sistersinlaw.se
 /popup-subscribe.js$domain=borsvarlden.com
 /popup/follow-us-fb
+/prebid*.$script,domain=gamereactor.se
 /prebid_rtb_call
 /prisjakt$xmlhttprequest,domain=fz.se|mobil.se
 /prisjakt-ad-carousel$subdocument
