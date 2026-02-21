@@ -1,13 +1,13 @@
-! Checksum: EyjZgKMGQNldNzusCvgAKw
+! Checksum: OGstrJeVIme7xMgmXChAYA
 ! Title: Frellwit's Swedish Filter
 ! Description: Filter that aims to remove regional Swedish ads, tracking, social media, annoyances, sponsored articles etc.
-! Version: 2.0.23.96
-! TimeUpdated: 2026-02-20T08:45:33+00:00
+! Version: 2.0.23.97
+! TimeUpdated: 2026-02-21T08:43:48+00:00
 ! Expires: 10 days (update frequency)
 !
 ! Title: Frellwit's Swedish Filter
 ! Expires: 4 days
-! Last modified: 2026-02-20 07:14:35 CET
+! Last modified: 2026-02-21 07:37:59 CET
 ! Homepage: https://github.com/lassekongo83/Frellwits-filter-lists
 ! Description: A filter for uBlock Origin that aims to remove regional Swedish ads, tracking, annoyances, scams + badware, and unnecessary bloat.
 ! License: GPL3 - https://github.com/lassekongo83/Frellwits-filter-lists/blob/master/LICENSE
@@ -1408,7 +1408,7 @@ spanienforum.se##.secondaryContent:has(a:not([href^="/"], [href*="spanienforum.s
 spelagratis.se##.sidebar-right, .ad_header + p
 spelhubben.se#$#html, .unselectable { -moz-user-select:initial!important; -webkit-user-select:initial!important; -webkit-touch-callout:initial!important; user-select:initial!important; -webkit-tap-highlight-color:initial!important; cursor:initial!important; }
 spelhubben.se#$##loadfade { animation:unset!important; -moz-animation:unset!important; -webkit-animation:unset!important; }
-spelhubben.se###slideout
+spelhubben.se###slideout, .PartnerLinker-ad-wrap
 spelhubben.se,husbilsplats.se,kandisvarlden.com#%#//scriptlet('ubo-acs', 'document.oncontextmenu')
 spelochfilm.se#?#a[href*="casino"]:upward(.mh-posts-stacked-wrap)
 spelochfilm.se##div.widget_text:has(a[href*="casino"], a[href*="casivo"])
@@ -1525,7 +1525,7 @@ teknikguiden.se##:is(.vce-sticky, .vce-content-bottom):has(a[target])
 tekniknytt.se#?#.label:contains(/samarbete|annons|reklam|presenteras av/i):upward(a)
 tekniknytt.se##:is(.article_widget_preview, .article_widget_listing):has(a[href*="casino"], a[href*="kasino"])
 tekniknytt.se##:is(.top-news, .big_article):has(img[src*="casino"], img[src*="surfeo"])
-tekniksmart.se##.elementor-widget-container:has(a[href*="casino"])
+tekniksmart.se##:is(.elementor-widget-container, .elementor-widget-html):has(a[href*="casino"])
 teknikveckan.se##.no-ad
 teknikveckan.se#?#.pill:contains(/spons/i):upward(.grid-item, .pinned, .articleFlow-item)
 teknikveckan.se,di.se,dn.se,skillingaryd.nu,xn--vrnamo-bua.nu,tripadvisor.se,swedroid.se,bettingstugan.se,expressen.se,driva-eget.se,ifokus.se,sv.picmix.com,ifragasatt.se,sportbloggare.com,bovision.se,familjeliv.se,tidningenridsport.se,golflivet.se,vemringde.se,brollopstorget.se,fastighetsvarlden.se,borskollen.se,aktiespararna.se,receptfavoriter.se,tyda.se,mittforetag.com,lajvo.se,magazin24.se,aktuellsakerhet.se,itmag.se,affarerinorr.se,electronic.se,brukshunden.se,kopahund.se,ingenjoren.se,dietisten.net,styrelseguiden.se,maklarvarlden.se##.ad
@@ -2581,6 +2581,7 @@ zeromagazine.nu##div[id^="ads"]
 /plugins/pixelyoursite
 /plugins/pixel-caffeine
 /plugins/pixel-cat
+/plugins/pixel-review-partnerlinker-addon
 /plugins/popups/*$script,domain=svenskhistoria.se|bugburger.se
 /plugins/popup$domain=ordfrontmagasin.se|snowmobile.se|forvaltarforum.se|it-finans.se|it-halsa.se|it-kanalen.se|it-pedagogen.se|it-retail.se|jobsinsweden.se
 /plugins/pressidium-cookie-consent$script,domain=undervarttak.se|paleoskafferiet.se|radiotreby.se
@@ -3185,6 +3186,7 @@ _banner.php?$domain=tvmatchen.nu
 ||famobi.com/play/hit/
 ||fasttrack.webstream.dk/statistik
 ||fast.fonts.net/*/1.css$stylesheet,redirect=noopcss
+||feber.se/native/$third-party
 ||feedblitz.com^$third-party
 ||feeds.feedburner.com^$image
 ||feed.mikle.com^$third-party,domain=ekonominyheter.se
@@ -3259,6 +3261,7 @@ _banner.php?$domain=tvmatchen.nu
 ||internetmedicin.se/log.php
 ||investerarbrevet.se^$third-party
 ||iphonecasinon.com^$third-party
+||i.posthog.com/*/?retry_count
 ||jajja.com^$third-party
 ||jenkler.se^$domain=uex.se
 ||jitsu.com/p.js
