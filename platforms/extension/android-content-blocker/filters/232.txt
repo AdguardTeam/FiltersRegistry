@@ -1,14 +1,14 @@
-! Checksum: Of/Q7F7V89MfXSU70MooVw
+! Checksum: dk8fxJUzBCJV3N4/vptXlQ
 ! Title: KAD - Anti-Scam
 ! Description: Filter that protects against various types of scams in the Polish network, such as mass text messaging, fake online stores, etc.
-! Version: 2.0.81.3
-! TimeUpdated: 2026-02-21T20:39:50+00:00
+! Version: 2.0.81.4
+! TimeUpdated: 2026-02-22T05:03:07+00:00
 ! Expires: 5 days (update frequency)
 !
 ! Title: 🇵🇱 KAD - STOP Przekrętom
 ! Description: Filtry chroniące przed różnymi zagrożeniami w polskiej sieci, takimi jak wirusy, fałszywe sklepy i subskrypcje SMS. Dodatkowo zawierają one wpisy stworzone przez CERT Polska, legalniewsieci.pl, KNF i inne zespoły.
-! Last modified: Sat, 21 Feb 2026, 21:00 UTC+01:00
-! OriginalVersion: 2026.2.21.3
+! Last modified: Sun, 22 Feb 2026, 04:16 UTC+01:00
+! OriginalVersion: 2026.2.22.0
 ! Expires: 2 days
 ! License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 ! Creator: azet12
@@ -81,24 +81,8 @@
 ||lds.xyz/*&sbtag=$document,to=xyz
 ||lds.xyz/*?sbtag=$document,to=xyz
 ||mail.hodtd.com/*url=*swietne-ceny.com$document,important,to=mail.hodtd.com
-/\/\?[0-9a-zA-Z]{32}&[0-9]{5}&(https?|undefined$)/$~third-party,script
-/\/\?[0-9a-zA-Z]{32}&ver=[0-9]{1,3}\./$~third-party,script
-/^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/\?utm_campaign=\w{40,}/$document,match-case,to=life|live|top|xyz
-/^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.top\/[a-z]{8}\/\?(?:cid=[0-9a-z]+&)?u=[0-9a-z]+&/$document,to=top
-/^https:\/\/[a-z]+\.com\/away\.php\?url=[%0-9A-z]{100,}$/$document
-/^https:\/\/[a-z]{2,3}[0-9]\.biz\/go\/[0-9a-z]{15,18}$/$document,to=biz
-/^https?:\/\/(?:ak\.)?[a-z]{6,15}\.(?:com|net)\/4\/[0-9]{7}/$document
-/^https?:\/\/(\w{1,4}\.)?[0-9]{6}\.xyz\/lucky\/[-a-z]+\/\?t=/$document,to=xyz
-/^https?:\/\/(\w{1,4}\.)?[0-9]{6}\.xyz\/lucky\/[-a-z]+\/\?t=/$popup,domain=xyz
-/^https?:\/\/(\w{1,4}\.)?[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/\?utm_campaign=\w{40,}/$document,match-case,to=life|live|top|xyz
-/^https?:\/\/(\w{1,4}\.)?[-0-9a-z]*prize[-0-9a-z]+\.li[fv]e\/\?u=[0-9a-z]+&o=[0-9a-z]+/$popup,domain=www.google.*
-/^https?:\/\/(\w{1,4}\.)?[a-z]{3,}[0-9]{0,3}[a-z]{3,}\.li[fv]e\/(?:[0-9]{10}|[a-z]{8})\/\?/$popup,domain=life|live
-/^https?:\/\/(\w{1,4}\.)?[a-z]{6}\.vip\/lucky\/[-a-z]+\/\?t=/$document,to=vip
-/^https?:\/\/(\w{1,4}\.)?[a-z]{6}\.vip\/lucky\/[-a-z]+\/\?t=/$popup,domain=vip
-/^https?:\/\/(\w{1,4}\.)?[a-z]{7,}\.li[fv]e\/[a-z]{8}\/\?/$popup,domain=life|live
-/^https?:\/\/(\w{1,4}\.)?creativego[a-z0-9]{20}\.com/$document,to=com
-/^https?:\/\/(\w{1,4}\.)?sms\.[0-9]+\.(pw|sbs)/$document,to=pw|sbs
-/^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{4,}\.[a-z]{2,11}\/(?:[0-9a-z]{6,8}\/)?\/?(?:article[0-9]{4}\.doc)?\?(o|u)=[0-9a-z]{7}&(o|u)=[0-9a-z]{7}/$document,subdocument,match-case,object
+/^https?:\/\/(?:\w+\.)?(inwestpoland|inwestpl|polandinw|lotos-poland|poland-lotos)(?:\w+)?[0-9]+\.(site|space)/$document,to=site|space
+/^https?:\/\/(?:\w+\.)?(inwestpoland|inwestpl|polandinw|lotos-poland|poland-lotos)(?:\w+)?[0-9]+\.(site|space)/$subdocument,object,domain=site|space
 ||alebilet.pl-*.$document
 ||allegrolokalnie-pl.$document,to=~translate.goog|~translate.google.*
 ||allegrolokalnie-pl.$subdocument,object,domain=~translate.goog|~translate.google.*
