@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 7qy8rSVxDWl51RNgb90eQA
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1771835003-3600.patch
+! Checksum: 1ETGnS8FjCoEmk5rNeCMPQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1771838835-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.48.97
-! TimeUpdated: 2026-02-23T08:19:47+00:00
+! Version: 2.4.48.98
+! TimeUpdated: 2026-02-23T09:24:05+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10394,6 +10394,9 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225392
+iptvpulse.top##.js-antiadblocker
+iptvpulse.top##+js(no-setTimeout-if, pagead2.googlesyndication.com)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225323
 spotidown.app##+js(no-xhr-if, adsbygoogle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224995
@@ -36644,6 +36647,7 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+kaa.lt##+js(abort-on-stack-trace, open, attemptPopup)
 motherless.com###ad-ntva-1
 motherless.com##.view-page-bottom-ad-thumbs
 ||vptpcs.com/templates/frontend/viptube/js/adx_flash.js
@@ -39682,7 +39686,7 @@ camsmut.com##.info + div[class] > div.row:has(> div[class] > a[href][target="_bl
 camsmut.com##.navigation a[target="_blank"]
 camsmut.com##a[href^="/go/"]
 camsmut.com##+js(no-window-open-if)
-movielinkbd.*,anime4up.rest,1movielinkbd.com##+js(abort-current-script, EventTarget.prototype.addEventListener, window.open)
+kaa.lt,movielinkbd.*,anime4up.rest,1movielinkbd.com##+js(abort-current-script, EventTarget.prototype.addEventListener, window.open)
 forge.plebmasters.de##+js(json-prune, servers.*.imageThumbnailUrl servers.*.adDescription servers.*.redirectUrl servers.*.adTitle)
 forge.plebmasters.de##.server-row:has(> td > div[aria-label="Pleb Masters: Forge partner logo"])
 dropmms.com##p[id^="a-ads"]
