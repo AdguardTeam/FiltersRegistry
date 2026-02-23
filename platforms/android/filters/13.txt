@@ -1,9 +1,9 @@
-! Checksum: 5qX+pbd55Ai64hhsJdqZ1Q
-! Diff-Path: ../patches/13/13-s-1771831950-3600.patch
+! Checksum: SlwRPyhfDE28z0YwYW0JJQ
+! Diff-Path: ../patches/13/13-s-1771842416-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.31
-! TimeUpdated: 2026-02-23T07:29:41+00:00
+! Version: 2.0.62.32
+! TimeUpdated: 2026-02-23T10:24:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -1551,7 +1551,9 @@ dirilispostasi.com,turkuazgazetesi.net,yenialanya.com,bugunkocaeli.com.tr,cagdas
 !
 ! NOTE: Specific rules
 !
-nefes.com.tr##.widget-ramadan-counter
+nefes.com.tr#$##ramadanCounterWidget { background-image: unset !important; }
+nefes.com.tr#$#.wrc-timer { color: black !important; }
+nefes.com.tr#$#.wrc-link { display: none !important; }
 pornoizle9.icu##body > div[style="display: block;"]:has(ins[data-zoneid])
 pornoizle9.icu##.a-d_Py5f
 pornoizle9.icu#%#//scriptlet('abort-on-property-read', 'open')
@@ -5798,7 +5800,7 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 [$domain=/hdturkifsa\d+\.com$/]#$#body.modal-open { overflow: auto !important; }
 !
 ! Frequently changed domains: turkkizlar*.com
-! Source: turkkizlar12.com
+! Source: türkkızlar.com
 [$domain=/turkkizlar\d+\.com$/]##div[class^="vid-promo"]
 !
 ! Frequently changed domains: cimcime*.com

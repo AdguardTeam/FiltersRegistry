@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 1ETGnS8FjCoEmk5rNeCMPQ
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1771838835-3600.patch
+! Checksum: RnhhApmPxK76gH8pvpLPIQ
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1771842449-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.48.98
-! TimeUpdated: 2026-02-23T09:24:05+00:00
+! Version: 2.4.48.99
+! TimeUpdated: 2026-02-23T10:23:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -10394,6 +10394,10 @@ youporn.com##+js(remove-node-text, script, /window\.[\s\S]*?_zone_[\s\S]*?{"zone
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225305
+daotekno.com#@#.ad-label
+daotekno.com#@#.google-ads
+daotekno.com##+js(no-setTimeout-if, window.getComputedStyle)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225392
 iptvpulse.top##.js-antiadblocker
 iptvpulse.top##+js(no-setTimeout-if, pagead2.googlesyndication.com)
@@ -11604,6 +11608,7 @@ sivadictionaries.com##.adsbygoogle:style(height: 1px !important;)
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185858
 ||im9.eu/*_*_*.js
 im9.eu##+js(noeval-if, adpreserve)
+im9.eu##+js(abort-current-script, setTimeout, /\+-parseInt.*0x.*;if\(typeof/)
 !+ NOT_PLATFORM(windows, mac, android)
 @@-sponsor-ad.gif?advert=$domain=im9.eu
 ! https://github.com/AdguardTeam/AdguardFilters/issues/185311
@@ -36647,6 +36652,8 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+zocdoc.com##article[data-test="search-result-item-ad"]
+racefans.net###page > div[style^="margin:"][style*="min-height:"]:has(> #snack_ldb)
 kaa.lt##+js(abort-on-stack-trace, open, attemptPopup)
 motherless.com###ad-ntva-1
 motherless.com##.view-page-bottom-ad-thumbs
