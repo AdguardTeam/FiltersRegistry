@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: Be5UfKdo8NJwPAftiDfJPw
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1771683212-3600.patch
+! Checksum: 5Y9DfuuwRlYNpR6rKmbHCA
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1771822177-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.0.40
-! TimeUpdated: 2026-02-21T14:09:45+00:00
+! Version: 2.1.0.41
+! TimeUpdated: 2026-02-23T04:45:53+00:00
 ! Expires: 5 days (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
@@ -211,6 +211,8 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||diginetica.net^
+||cdn-*.gravityfield.ai^
 ||location.dynabic.com^$3p
 ||byoviral.com^$3p
 ||sigmob.cn^
@@ -2255,7 +2257,6 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||selfcampaign.com^$3p
 ||upscore.com^$3p
 ||iocnt.net^$3p
-||tracking.diginetica.net^
 ||mytopf.com^$3p
 ||dircont3.com^$3p
 ||edrone.me^$3p
@@ -64672,6 +64673,7 @@ biteki.com##.slick-slide > div[id] + script:upward(1):remove()
 ||countly.
 ||countly-
 |piwik.
+||animo.sto.wiki^
 ||alloy-web.zvuk.com^
 ||tg.minfin.com.ua^
 ||static-mon.yandex.net^
@@ -127400,6 +127402,9 @@ _tracking.php?b=
 /prod/dfm/t8y9347t.min.js$redirect=noop.txt,important,domain=dailycamera.com,image,media,subdocument,stylesheet,script,xhr,other
 ||google-analytics.com^$object,redirect=noop.js,script
 ||googletagmanager.com/gtag/$3p,object,redirect=noop.js,script
+||api.4lapy.ru/api/v*/events/
+4lapy.ru##+js(set-local-storage-item, marketing, $remove$)
+4lapy.ru##+js(set-local-storage-item, client_id, $remove$)
 kanaloco.jp##.tab_wrap:has(> #recomm_tab1)
 ||tags.news.com.au/prod/
 ||tags.newscgp.com/prod/ncg/
