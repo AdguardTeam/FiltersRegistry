@@ -1,9 +1,9 @@
-! Checksum: 7+wssbApG14TaJsTKHaO5g
-! Diff-Path: ../patches/3_optimized/3_optimized-s-1771902624-3600.patch
+! Checksum: 6cqgp1FsFyiaPEVpEidZ1g
+! Diff-Path: ../patches/3_optimized/3_optimized-s-1771908301-3600.patch
 ! Title: AdGuard Tracking Protection filter (Optimized)
 ! Description: The most comprehensive list of various online counters and web analytics tools. Use this filter if you do not want your actions on the Internet to be tracked.
-! Version: 2.1.0.46
-! TimeUpdated: 2026-02-24T03:06:02+00:00
+! Version: 2.1.0.47
+! TimeUpdated: 2026-02-24T04:40:58+00:00
 ! Expires: 12 hours (update frequency)
 !+ NOT_PLATFORM(ext_chromium_mv3)
 www.youtube.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
@@ -258,6 +258,8 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 ||ib.snssdk.com^
 ||xlog.snssdk.com^
 ||log.snssdk.com^
+||bidr.io^
+||s.opensend.com^
 ||diginetica.net^
 ||cdn-*.gravityfield.ai^
 ||location.dynabic.com^$third-party
@@ -70062,6 +70064,7 @@ biteki.com#$?#.slick-slide > div[id] + script:upward(1) { remove: true; }
 !+ PLATFORM(windows, mac, android)
 ||incoming.telemetry.mozilla.org^
 |piwik.
+||aplus.gmarket.co.kr^
 ||animo.sto.wiki^
 ||alloy-web.zvuk.com^
 ||tg.minfin.com.ua^
@@ -134387,6 +134390,13 @@ $cookie=_awl;maxAge=30,domain=nypost.com|al.com|9news.com
 ||mmdm.ru/static/users/js/login.*.js$replace=/yaCounter\d+\.reachGoal\('\w+'\);//
 ||google-analytics.com^$object,redirect=noopjs
 ||googletagmanager.com/gtag/$third-party,object,redirect=noopjs
+usmagazine.com#%#//scriptlet('set-local-storage-item', 'rl_anonymous_id', '$remove$')
+cnbctv18.com###postDetail > div[style][class^="jsx-"]:has(> .taboola_section)
+||alicdn.com/alilog/mlog/
+myhixel.com#%#//scriptlet('set-local-storage-item', 'ANONYMOUS_CUSTOMER_ID', '$remove$')
+myhixel.com#%#//scriptlet('set-local-storage-item', 'user_id', '$remove$')
+||app-api.vidjet.io/track-event
+||myhixel.com/apps/awin/
 ||webmd.com/static/v/c?
 ||img.lb.wbmdstatic.com/webmd_static_vue/file-explorer/webmd/js/mmtrack.js
 ||img.lb.wbmdstatic.com/webmd_static_vue/file-explorer/webmd/global-metrics/
@@ -134966,7 +134976,7 @@ ici.radio-canada.ca#%#//scriptlet('set-local-storage-item', 'RC_PLAYER_USER_ID',
 ||udc.yahoo.com/v*/public/*&yhlClient=rapid*&yhlClientVer=$domain=yahoo.com
 ||goodcar.com/js/parts/fp.js
 2ndswing.com,goodcar.com#%#//scriptlet('set-local-storage-item', 'uw-uid', '$remove$')
-||11st.co.kr/js/rake/RakeData.js
+||11st.co.kr/js/*/RakeData.js
 epicurious.com#%#//scriptlet('set-cookie', 'FP_visitorID', '1', '/', 'epicurious.com')
 ||teraboxcdn.com/general-conf/fk/dfxaf3-*.js
 ||s-cdn.sportbox.ru/sites/all/libraries/design/*/js/user-tracking.global.js
@@ -135177,7 +135187,7 @@ baseballpost.jp###highschool-pickup
 berrykun.com##img[src*="a8.net/svt/"]
 ||xvp.imgix.net/assets/customer_tools/ip_checker-
 ||pub.pixels.ai/metrics-lib.js
-pitchfork.com,gq.com#%#//scriptlet('set-local-storage-item', '/^avoinspector/', '$remove$')
+self.com,allure.com,pitchfork.com,gq.com#%#//scriptlet('set-local-storage-item', '/^avoinspector/', '$remove$')
 ||affirm.com/api/chrono/*/collect
 ||jobkorea.co.kr/Net/AdBannerApi/AdBannerLog
 ||check24.*/assets/funnel-tracking.min.js
@@ -140598,6 +140608,10 @@ $cookie=_pubcid
 $cookie=pbjs-unifiedid
 $cookie=bf_lead
 $cookie=bf_visit
+||gmarket.co.kr^$cookie=sca
+||gmarket.co.kr^$cookie=cna
+||11st.co.kr^$cookie=PCID
+||theculturetrip.com^$cookie=tct-real-user
 ||webmd.com^$cookie=VisitorId
 ||goodrx.com^$cookie=grx_unique_id
 ||zvuk.com^$cookie=device_id
