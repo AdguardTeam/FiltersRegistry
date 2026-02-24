@@ -1,8 +1,8 @@
-! Checksum: KYs+0fNWd4V/WIJzA73l0w
+! Checksum: WAn+CwbiFr02uHQU6dMvkw
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.59.83
-! TimeUpdated: 2026-02-24T19:26:17+00:00
+! Version: 2.2.59.84
+! TimeUpdated: 2026-02-24T21:14:54+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2468,6 +2468,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+premiertips.org###root > div[class="fixed z-[9999] bottom-4 left-0 w-full"]
 vologda-oblast.ru##.panel-disclaimer
 apteka22.ru##.privacy-policy-cookies-informer
 prap.co.jp##.cookie-possibility_outer
@@ -12327,6 +12328,12 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225542
+holst-porzellan.com#@#.cookie-box:not(body):not(html)
+holst-porzellan.com#@#.cookie-permission-container
+! https://github.com/AdguardTeam/AdguardFilters/issues/225543
+fonehouse.co.uk#@##cookie-msg
+fonehouse.co.uk#@#.cookieConsentContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225462
 @@||cdn.cookielaw.org/consent/*.json$domain=investinglive.com
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=investinglive.com

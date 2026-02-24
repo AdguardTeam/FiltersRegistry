@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: oHRNN54Nn/mp2MViE+HNJg
-! Diff-Path: ../patches/18/18-s-1771957726-3600.patch
+! Checksum: 5YjNKJR/5IP2CxWfM/ODcA
+! Diff-Path: ../patches/18/18-s-1771967888-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.81.51
-! TimeUpdated: 2026-02-24T18:25:46+00:00
+! Version: 2.0.81.52
+! TimeUpdated: 2026-02-24T21:14:59+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2524,6 +2524,8 @@ entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.
 !
 ! NOTE: Regular rules
 !
+premiertips.org###root > div[class="fixed z-[9999] bottom-4 left-0 w-full"]
+googlecensorship.org##+js(set-cookie, __acs, false)
 vologda-oblast.ru##.panel-disclaimer
 apteka22.ru##.privacy-policy-cookies-informer
 prap.co.jp##.cookie-possibility_outer
@@ -2824,9 +2826,7 @@ rivegauche.ru##cookies-notification
 mr-7.ru##+js(set-local-storage-item, cookies-informer-close, true)
 vocali.se##+js(set-local-storage-item, GDPR:accepted, false)
 yazargazetesi.com###enews-cookie-box
-comiccave.de##+js(set-cookie, cookie-preference, 1)
 mim.gov.it##+js(set-cookie, cookie_privacy, accepted)
-betten-abc.de##+js(set-cookie, cookie-preference, 1)
 a101.ru##div[class^="_TheCookiesPanel_"]
 creativefabrica.com##footer  ~div.bg-primary-500
 sponsr.ru##div[class^="Cookie_container"]
@@ -3805,7 +3805,6 @@ education.openguessr.com##.alert:has(> span > a[href="https://openguessr.com/leg
 akool.com##+js(set-cookie-reload, cookie-permission, 0)
 akool.com##.MuiBox-root:has(> div > button)
 tzar.ru,search.fenrir-inc.com,sleipnirstart.com###agreement
-ibena.shop,tripleaction.de,schuh-vormbrock.de,maxmo.de##+js(set-cookie, cookie-preference, 1)
 vercel.com###fides-overlay
 dasreda.ru##div[data-qa="Cookie-notice-agreement"]
 amcharts.com###amcharts-utils-consent
@@ -16609,7 +16608,6 @@ tunnelmb.net##+js(set-cookie, cookie-policy, true)
 piter-online.net,101internet.ru##+js(set-cookie, closeNotificationAboutCookie, true)
 productz.com##+js(set-cookie-reload, rodo_accepted, 0)
 csoszplatan.hu,mindenunkazauto.hu##+js(set-cookie, cookie_elfogadas, true)
-0815.eu,0815.at,leki.com##+js(set-cookie, cookie-preference, 1)
 zerofox.com##+js(set-cookie, cookieconsent_status, 1)
 starwalk.space##+js(set-cookie, SWCOOKIESACC, 1)
 auchan.ru##+js(set-cookie, acceptCookies_, true)
@@ -16949,7 +16947,7 @@ uni-polster.de,united-camera.at,axro.com,moses-verlag.de,radonline.de,arctic.de#
 constantin-film.de##+js(set-constant, cookieLayer, undefined)
 thgss.com##+js(set-cookie, acceptUsingCookies, yes)
 tv5unis.ca##+js(set-cookie, tv5-hide-cookies-notification, true)
-mactrade.de,fafit24.de,moebel-fundgrube.de,insel-brauerei.de,karls-shop.de,berndes.com##+js(set-cookie, cookie-preference, 1)
+holst-porzellan.com,comiccave.de,betten-abc.de,ibena.shop,tripleaction.de,schuh-vormbrock.de,maxmo.de,0815.eu,0815.at,leki.com,mactrade.de,fafit24.de,moebel-fundgrube.de,insel-brauerei.de,karls-shop.de,berndes.com##+js(set-cookie, cookie-preference, 1)
 virustotal.com##+js(set-cookie, tosChangedAccepted, 1)
 codementor.io##+js(set-cookie, cm-general_cookie-consent, true)
 chojnow.pl##+js(abort-current-script, document.cookie, rodoConfirm)
@@ -17127,6 +17125,12 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225542
+holst-porzellan.com#@#.cookie-box:not(body):not(html)
+holst-porzellan.com#@#.cookie-permission-container
+! https://github.com/AdguardTeam/AdguardFilters/issues/225543
+fonehouse.co.uk#@##cookie-msg
+fonehouse.co.uk#@#.cookieConsentContainer
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225462
 @@||cdn.cookielaw.org/consent/*.json$domain=investinglive.com
 @@||cdn.cookielaw.org/scripttemplates/otSDKStub.js$domain=investinglive.com
