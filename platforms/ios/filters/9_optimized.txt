@@ -1,9 +1,9 @@
-! Checksum: 5TOQWG2F/bie44ADqOAxkw
-! Diff-Path: ../patches/9_optimized/9_optimized-s-1771925185-3600.patch
+! Checksum: UEZGqkV5/kWR5+l9mxSP+A
+! Diff-Path: ../patches/9_optimized/9_optimized-s-1771932209-3600.patch
 ! Title: AdGuard Spanish/Portuguese filter (Optimized)
 ! Description: Filter list that specifically removes ads on websites in Spanish, Portuguese, and Brazilian Portuguese languages.
-! Version: 2.0.33.36
-! TimeUpdated: 2026-02-24T09:23:10+00:00
+! Version: 2.0.33.37
+! TimeUpdated: 2026-02-24T11:20:28+00:00
 ! Expires: 5 days (update frequency)
 ||cdn-4k-webp.site^
 ||adzep.io^
@@ -261,13 +261,11 @@ laprovincia.es,informacion.es,levante-emv.com#%#//scriptlet('prevent-fetch', 'go
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=levante-emv.com|informacion.es|laprovincia.es
 ||cdn.bcdn.zip/scripts/scripts534.js
-||cdn.bcdn.zip/scripts/browseroverlay9.min.js
-||cdn.bcdn.zip/scripts/mobiappoverlay5.min.js
 ||cdn.bcdn.zip/scripts/webapp.min.js
 ||cdn.bcdn.zip/scripts/abcdf.min.js
-||cdn.bcdn.zip/scripts/pol2.min.js
 ||cdn.bcdn.zip/scripts/desabilitar-botao2.js
-yyyx.online,netccine.lat,netcinez.*,netcinetv.*#%#//scriptlet('prevent-eval-if', 'break;case')
+/^https:\/\/cdn\.bcdn\.zip\/scripts\/[a-z]+[0-9]\.min\.js$/$script,third-party,match-case
+netcinebs.lat,yyyx.online,netccine.lat,netcinez.*,netcinetv.*#%#//scriptlet('prevent-eval-if', 'break;case')
 viciados.net#%#//scriptlet('prevent-fetch', 'googlesyndication')
 !+ PLATFORM(ios, ext_android_cb, ext_safari)
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=viciados.net|rrrv.lol|netcinetv.lat
