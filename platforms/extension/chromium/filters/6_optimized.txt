@@ -1,5 +1,5 @@
-! Checksum: rJB1gjJW+dMQ8Yd3FYjoNg
-! Diff-Path: ../patches/6_optimized/6_optimized-s-1771863978-3600.patch
+! Checksum: 9IxLST6OvaLWmYzjIrlc1A
+! Diff-Path: ../patches/6_optimized/6_optimized-s-1771902584-3600.patch
 ! Title: AdGuard German filter (Optimized)
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
 ! Version: 2.0.51.28
@@ -1909,7 +1909,6 @@ finanzen.net##div[id^="fin-ob-box-ar_"]
 bitblokes.de###google_ad_2_amazon
 carsharing-news.de##.inside-right-sidebar > aside#custom_html-2 > .textwidget > a[href][target="_blank"] > img
 kodi-tipps.de##.identitaet-box
-kodi-tipps.de##.entry-content > p > a[href="https://www.kodi-tipps.de/out/?id=cyberghost"]
 ||js-sec.indexww.com$domain=promiflash.de,redirect=nooptext,important
 ||pagead2.googlesyndication.com$domain=promiflash.de,redirect=nooptext,important
 dubisthalle.de##.sidebar-content > .dbh-widget
@@ -2105,7 +2104,6 @@ regionews.at###sidebar > .widget[align="center"]
 borncity.com##.entry-content > .code-block[style*="text-align: center;"]
 twitterperlen.de,borncity.com###ai_widget-4
 focus.de##.tft_ads
-merkurist.de#$#div[sparticle-impression] { visibility: hidden !important; }
 pcgames.de##.amazonAutoLink
 tichyseinblick.de##.adwidget_wrapper
 freizeitpartnerweb.de,outdoorpartner.net,urlaubspartner.net##.ad.text-uppercase
@@ -2319,6 +2317,7 @@ donaukurier.de#?#div:has(> div[id^="traffective-ad"])
 haus.de#?#div[class]:has(> .OUTBRAIN)
 gameme.eu#?#.stretch_row_1200 > div.wpb_row > div.vc_column_container > div.wpb_wrapper > div.td-a-rec-id-custom-spot:upward(2)
 motorsport-total.com#?#.picture-content-wrapper:has(> a > figure > .txt-small > span:contains(ANZEIGE))
+motorsport-total.com#?#.picture-content-wrapper:has(> a + p > a:contains(Anzeige))
 mopo.de#?#.js-marquee:has(> a[href*="campaign"][target="_blank"])
 winfuture.de#?#.topnews > div[style]:has(> .adsbygoogle)
 winfuture.de#?#.hp_latest > div:has(> div[id^="div-gpt-ad"]:only-child)
@@ -2492,7 +2491,6 @@ businessinsider.de#@#.ll_partnerexpert_widget
 @@||assets.dfb.de/uploads/*/original_$image
 urlaubspartner.net#@#.werbung
 urlaubspartner.net#@##werbung
-||imasdk.googleapis.com/js/sdkloader/ima3.js$script,redirect=google-ima3,important,domain=player.motorsport-magazin.com
 @@||cdn.jsdelivr.net/combine/npm/video.js*/dist/video-js.min.css*/videojs-contrib-ads*/dist/videojs.ads.min.css$domain=player.motorsport-magazin.com
 saechsische.de#@?#article,div:has( > div > .article-section--nad > span:contains(Anzeige))
 hochzeitsportal24.de#@##bannerwerbung
@@ -2572,6 +2570,7 @@ rtl.de#@#.rtlde-medium-rectangle
 /werbebanner/*
 /werbebanner_
 /werbebox/*
+/werbecenter/*
 /werbegrafiken/*
 /werbemanager2/*
 /werbemittel/*
@@ -2864,6 +2863,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||amunx.de^$third-party
 ||arcor-partner.de^$third-party
 ||arminius.io^$third-party
+||asnetworks.de^$third-party
 ||auxmoney-partnerprogramm.de^$third-party
 ||ay.delivery^$third-party
 ||ba-content.de^$third-party
@@ -3109,7 +3109,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||freenet.de^*/mail/ads/
 ||freieporno.com^*/ssu.v2.js
 ||fruchtportal.de/banners/
-||fundresearch.de^*/partnercenter/
 ||funkbasis.de/_static/ban-
 ||fussball.de^*/partner/
 ||fussballn.de/images/design/anpfifffussballn.png
@@ -3196,7 +3195,6 @@ wetter.com#@#div[id^="div-gpt-"]
 ||mediaforum.ch/banner_
 ||meetingpoint-brandenburg.de/upload/ads_
 ||mef-line.de/images/banners/
-||mein-klagenfurt.at/fileadmin/banner/
 ||mein-wetter.com/include/$subdocument
 ||modified-shop.org/images/banner/
 ||motorradundreisen.de/banner/
@@ -3256,6 +3254,7 @@ wetter.com#@#div[id^="div-gpt-"]
 ||realtotal.de/data/betrugstest-com.jpg
 ||redensarten-index.de/az/shwbnnr.php
 ||regionews.at/data/banner/
+||res.ki.de^
 ||rittnerbuam.com/images/sponsor_
 ||rotehaus.net/kittys-tipps/tippseiten/bilder/
 ||ruhrbarone.de^*/bang.gif
@@ -3422,6 +3421,7 @@ teltarif.de###SpaceTgtLink
 1erforum.de,bauexpertenforum.de,dasheimwerkerforum.de,elektrikforen.de,lpgforum.de,mazda-forum.info,megane-board.de,mercedes-forum.com,notebookforum.at,pkw-forum.de,skodacommunity.de,toyota-forum.de,vermieter-forum.com,windows-7-forum.net###TopRectangle
 6navi.ch###WelcomeBannerDiv
 neumarktaktuell.de###Werbung
+mallorcazeitung.es###_mo_cti
 spielesite.com###acTop
 schnelle-online.info,sis-handball.de###ad
 schmidtisblog.de###ad-before-1stparagraph
@@ -3520,6 +3520,7 @@ onlinereports.ch###content-banner3
 dasoertliche.de###content-billboard
 ladies.de###content-solads
 89.0rtl.de###customWer
+tarnkappe.info###custom_html-144
 einkochen.info,ipadblog.de,nh24.de,wiener-online.at###custom_html-2
 ipadblog.de,presse-nachrichten.de,urheberrecht.de###custom_html-4
 nachrichten.es,primavera24.de,radsportjournaltourman.com###custom_html-5
@@ -3562,6 +3563,7 @@ mein-schoener-garten.de###gen_top_wrapper
 gutekueche.*###gkf-adslot-header
 gutekueche.*###gkf-adslot-recipe-above-ingredients
 androidmag.de###gridwrapper_appsbuehne
+tarnkappe.info###halfpage
 immo4trans.de###halfpage-banner
 belgieninfo.net###head_banner
 mtb-news.de###header
@@ -3645,7 +3647,6 @@ ladies.de###page-top-sol
 inside-digital.de###parallax
 moz.de,swp.de###parent-adbox-superbanner
 comback.ch,h-bw.de###partner
-fundresearch.de###partnerCentersLogoBar
 pedelecforum.de###pedelecforum\.de_mpu_bot
 photovoltaikforum.com###pf_incontent_2
 comunio.de###pla
@@ -3709,6 +3710,7 @@ ssv-jahn.de###sponsorenleiste
 bafoeg-rechner.de,studis-online.de###ston-footer-ad
 raidrush.net###stpd_close
 1000ps.at,1000ps.ch,1000ps.de,bild.de,bz-berlin.de,ffn.de,firmenwissen.de,fitbook.de,fussballdaten.de,golem.de,myhomebook.de,petbook.de,stylebook.de,techbook.de,travelbook.de###superbanner
+chilloutzone.net###superreplacement
 suche.t-online.de###tMRM_billiger
 ddl-warez.cc###tab-1 p:nth-of-type(1),#tab-1 p:nth-of-type(2),#tab-1 p:nth-of-type(3),#tab-1 p:nth-of-type(4)
 stuttgarter-zeitung.de###taboola-mhsd
@@ -4436,7 +4438,6 @@ f95.de##.topsponlink
 xnxx-deutsch.com##.tracking-btn
 supermarkt-inside.de##.tracking_trigger
 trauerhilfe.it##.trauerhilfe_ads
-mein-klagenfurt.at##.tx-ghrandomcontent-pi1
 astronomie.de##.tx-sf-banners
 bayernwelle.de##.type-banner
 lr-online.de,moz.de,swp.de##.u-adSlot:not(.u-adSlot--sky-left):not(.u-adSlot--sky-right)

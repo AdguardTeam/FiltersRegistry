@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0Q1PnfXzJg1VxA0MNT1Ajw
-! Diff-Path: ../patches/14/14-s-1771853877-3600.patch
+! Checksum: pbI1Ild4B9sDIUACCEaAfg
+! Diff-Path: ../patches/14/14-s-1771902602-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.59.68
-! TimeUpdated: 2026-02-23T13:34:39+00:00
+! Version: 2.2.59.69
+! TimeUpdated: 2026-02-24T03:06:29+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2503,7 +2503,7 @@ focus.it##+js(remove-class, cp-banner-visible, body)
 wedkarski.com,thestraight.com.au,codesandbox.io,damota.me,pracazarogiem.pl,pracezarohem.cz,pracazarohom.sk,seduo.*##+js(remove-class, force--consent|show--consent, html)
 ||cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager$domain=teamio.com
 ! orestbida/cookieconsent
-/cookieconsent.$domain=qrcodemonkey.net|wedos.com|scssoft.com|umino.io|sklep.ledlumen.pl|megasobota.pl|emunia.pl|proxmox.com
+/cookieconsent.$domain=qrcodemonkey.net|wedos.com|scssoft.com|umino.io|sklep.ledlumen.pl|megasobota.pl|emunia.pl|proxmox.com|glowing.com
 ! GitBook instances
 help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keeper.io,developers.deepl.com##[aria-label="Cookies"]
 !
@@ -25021,6 +25021,7 @@ inews.co.uk,pinterest.com##+js(set-constant, google.accounts.id.prompt, noopFunc
 !
 ! SECTION: Popups - Regular rules
 !
+thevagwhisperer.com###tvw-page-popup-quiz-overlay
 gamestorrents.app###tli-overlay
 ||autofill.yandex.ru/suggest?*&widget_kind=$domain=dtf.ru|vc.ru
 consultant.net.ua###shareModal:style(display: none !important;)
@@ -34039,6 +34040,8 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+goodrx.com###health-article-content > aside:has(#signup-modal-title)
+naturalcycles.com##div[class^="CyclemattersPost-module--CyclemattersPost__newsletter"]
 earth.com##a[class^="FollowOnGoogleCta_wrapper__"]
 rockcult.ru##.telegram_promo
 kotaku.com##div[data-mrf-recirculation="home-newsletter"]
@@ -41784,7 +41787,7 @@ calltouch.ru###blog-subscribe
 sports.yahoo.com##div[id$="-NewsletterSubscription"]
 formulatv.com##.share_email
 erco.com###newsletter-bottom-bar
-autocarindia.com,laleggepertutti.it##.news-letter
+webmd.com,autocarindia.com,laleggepertutti.it##.news-letter
 singaporemotherhood.com##.sgm_subscription_wrapper
 vitiana.com##.bizjournal
 suhorukov.com###block-simplenews-0
@@ -43120,6 +43123,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+thevagwhisperer.com##.blog-app-promo-container
 idefix.com###__next > div.bg-neutral-0:has(> div.cursor-pointer img[alt="QR Code"])
 idefix.com###__next > div.bg-neutral-0.\!z-\[99\]
 parkwhiz.com##.deep-link-banner:style(display: none !important;)
@@ -50771,9 +50775,11 @@ m.facebook.com##div[data-type="vscroller"] > div[data-mcomponent="MContainer"][s
 m.facebook.com##div[data-mcomponent="MContainer"] > div[data-mcomponent="MContainer"]:has(> div[data-mcomponent="TextArea"] > div > .native-text:contains(Sugggested Videos))
 ! Reels and short videos
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225491
 ! https://github.com/AdguardTeam/AdguardFilters/issues/174641
-||player.cnevids.com/*/video$removeparam=autoplay,domain=vanityfair.com
-vanityfair.com##+js(set-constant, Object.prototype.canAutoplay, undefined)
+||player.cnevids.com/*/video$script,removeparam=autoplay,domain=vanityfair.com|teenvogue.com
+teenvogue.com,vanityfair.com##+js(set-constant, Object.prototype.canAutoplay, undefined)
+teenvogue.com##.body__inner-container > div[data-event-click*="CNEInterludeEmbed"]
 vanityfair.com##.sticky-box__primary > div[data-event-click*="CNEInterludeEmbed"]
 ! 44.ua - notification about browser extension
 44.ua##.exp-line

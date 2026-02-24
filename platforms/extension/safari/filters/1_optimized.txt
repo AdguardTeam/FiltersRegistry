@@ -1,5 +1,5 @@
-! Checksum: 1lqdjxcygWhl+VKKjSLeYg
-! Diff-Path: ../patches/1_optimized/1_optimized-s-1771871437-3600.patch
+! Checksum: pWu2MR0iWogHxFLrSn3syw
+! Diff-Path: ../patches/1_optimized/1_optimized-s-1771902600-3600.patch
 ! Title: AdGuard Russian filter (Optimized)
 ! Description: Filter that enables ad blocking on websites in Russian language.
 ! Version: 2.1.4.37
@@ -53,7 +53,6 @@
 ://*.pp.ua^$script,third-party
 .info/show/?*=*&*=*&*=*%20*%20*&$third-party
 .ru/show/?*=*&*=*&*=*%20*%20*&$script,third-party
-.ru/show/?*=*&*=*%D0*|%20*&$third-party
 .ru/show/?*=*&*=*&*=*&$script,third-party
 .ru/show/?block_id=
 .com/rotator.min.js|
@@ -345,7 +344,6 @@ http://*.ru/leftunit.pl?
 /upload/bx/*
 /uploads/baner/*
 /uploads/bnr/*
-/vendshow/*
 /vertical_banners/*
 /view/banner/*/zone?zid=
 /viewt.js
@@ -540,7 +538,6 @@ ucoz.ru/informer/
 ##.b-banner_slide
 ##.b-journalpromo-container
 ##.b-side-banner
-##.b-tbl_banner_links
 ##.baner_block
 ##.banfoot
 ##.banner-border-wrap
@@ -1095,6 +1092,7 @@ ucoz.ru/informer/
 ||uuaauw.com^$third-party
 ||ggtraf.com^$third-party
 ||adv.pilseta24.lv^$third-party
+||deeppquiz.ru^$popup
 ||dynaads.net^$third-party
 ||dzubavstal.com^$third-party
 ||vastroll.ru^$third-party
@@ -1117,6 +1115,7 @@ ucoz.ru/informer/
 ||adfinity.pro^$third-party
 ||portakamus.com^$third-party
 ||jmpmedia.club^$third-party
+||vir70n.news^$third-party
 ||admitad-connect.com^$third-party
 ||banners.adfox.ru^$third-party
 ||hdbcode.com^$third-party
@@ -1529,7 +1528,6 @@ ucoz.ru/informer/
 ||rb.rfn.ru^
 ||rb.sport-express.ru^
 ||rbnt.org^$third-party
-||rbrxg.com^$third-party
 ||readme.ru^$third-party
 ||realbig.media^$third-party
 ||realer.info^$third-party
@@ -3039,7 +3037,6 @@ eapteka.ru##div[id*="/app-marketing-system/Placement"]
 vedomosti.ru##.hide-offer
 eapteka.ru##.partition--banner-in-listing
 abw.by##.fox-wrapper
-dixinews.ru##.col-sm-12 > div[style]:has(> div[id^="unit_"])
 dixinews.ru##.h-ad
 forbes.ru##.rLcXj
 forbes.ru##ul > li > div[class] > div[style="min-height: 64px;"]
@@ -3232,7 +3229,6 @@ sports.ru##div.news-layout__frame:has(> div.ad-slot)
 rlsnet.ru##.b-tile-banner-wrap
 ||wg*.price.ru/partners/js/app.js$third-party
 fonwall.ru##div[class^="BreakpointGrid_container__"] > div[class^="BreakpointGrid_column__"]:has(div[data-sponsored-id])
-lady.mail.ru##div[data-qa="WrapperContent"] > section > main > div > ul > li > div:has(> div[data-rb-slot])
 zoneofgames.ru##td[valign="top"][width="367"]
 zoneofgames.ru##tr:has(> td.blockstyle > div[id^="via_"])
 newdeaf-online.club##.vidrnet
@@ -5096,6 +5092,7 @@ vgr.by,sn-plus.com##body div.ads-placement
 ||hcdn.online/engine/video/videojs-vast-vpaid-waterfall.
 7days.ru###GPM_7days_D_Top
 mixsoft.org##div[id^="ypopup"]
+forumodua.com##table[width="100%"] td[align="center"] > a[target="_blank"] > img
 onliner.by##.news-tidings__item.js-closable
 studopedia.su##a[href^="/go.php?id="]
 ||myfin.by/files_content/js/ad.js
@@ -5608,6 +5605,7 @@ novgorod.ru###block-containter-483
 soccer.ru###block-new-desine-right-bookmakers
 4vlada.com###block-reklamaheader
 220vk.com###block_str2.new_block
+kin4ik.online###blocking
 hdtv.ru###bnr_1
 kurskcity.ru,newauto46.ru###botbanner
 ipleer.fm###bottomBanner
@@ -5937,7 +5935,6 @@ oxu.az##.load-bnr
 rosnews.biz##.loading.clearfix
 volzsky.ru##.lr_banner
 love.ngs.ru##.lv-right-banner
-love.ngs.ru##.lv-right__text-advert
 flashplayer.ru##.main > div[id][style*="min-height"][style*="position"][style*="overflow"]
 samlab.ws##.main > div[style*="99%"]:first-child
 rapsinews.ru##.b-banners__bottom
@@ -6298,7 +6295,6 @@ sysadmins.me##noindex a[href^="https://customer.sipnet.ru/cabinet/register?"]
 pornomen.club,allbesta.cc,astromeridian.ru,imageban.ru,miped.ru,mnogabukaff.net,regionorel.ru,tivix.co,zserials.tv##noindex a[rel="nofollow"] > img
 kinobar.cc,mirknig.su##noindex center > a > img
 rutracker-net.ru##p[style="font-size: 27px; color: rgb(247, 50, 55); font-weight: bold; outline-width: 0px !important; user-select: text !important;"]
-svpressa.ru##section[id^="_adfox_tgb"]
 sport.bigmir.net##span[data-bmm-title="sport MarketGidNews"]
 newstudio.tv##span[id^="pp_"] > a[target="_blank"] > var > img[alt]
 championat.com##span[title="Коэффициенты"]
@@ -6456,12 +6452,14 @@ uhta24.ru##td[width="220"] a:not([href^="/"]) > img[alt]
 ||maturecherry.org/*_script.php|
 ||media.aso.altapress.ru^
 ||mmotop.ru/uploads/promotion/
+||mobiledevice.ru/Banners/
 ||mobiltelefon.ru/photo/rek/
 ||most3.ykt.ru/session?
 ||mydiv.net/tim/new*/*_yandex_
 ||mysw.info/img/
 ||myzuka.org/do/
 ||narutoplanet.ru/slider/
+||nashdisk.ru/images/lastic.gif
 ||naydex.net^$domain=actualnews.org
 ||new-rutor.org/js/blocked.js
 ||new-rutor.org/js/js.js
@@ -6912,13 +6910,13 @@ mirtesen.aif.ru,mirtesen.profile.ru,mirtesen.sovsport.ru,mirtesen.spletnik.ru,mi
 mirtesen.aif.ru,mirtesen.profile.ru,mirtesen.sovsport.ru,mirtesen.spletnik.ru,mirtesen.sputnik.ru,mirtesen.tsargrad.tv,mt.argumenti.ru,mt.karelinform.ru,mt.korolevriamo.ru,mt.riamobalashiha.ru,mt.subscribe.ru,social.iz.ru,social.primechaniya.ru,social.radioromantika.ru,social.sport.ru,social.steaklovers.menu,mirtesen.ru###very-right-column
 ||rutracker.org/misc/*-240x400
 ||rutrk.org/iframe/
-||static.t-ru.org/images/ali/
 /^(?!.*(brave\.com|google\.com|gstatic\.com|googleapis\.com|recaptcha\.net|ytimg\.com|dmca\.com|:\/\/static.)).*$/$third-party,script,_____,domain=rutracker.appspot.com|rutracker.lib|rutracker.net|rutracker.org
 /^https:\/\/rutrk.org(?!.*(\/logo\/)).*$/$domain=rutracker.appspot.com|rutracker.lib|rutracker.net|rutracker.org
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##.dl-btn-text-ad
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##.ref-1
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##.site-nav > ul[style="float: right;"]
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org###topic_main > tbody:not([id]):not([class]) > tr > td[data-ext_link_data]
+rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##a[href^="https://go.nordvpn.net/"]
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org###main_content_wrap > table.vf-tor > tbody > tr:not([class]) td[style="padding: 6px 4px 8px;"]
 rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org##.attach td[colspan="3"] > ul.middot-separated > li:has(> a[href="viewtopic.php?t=6529617"])
 rutracker.appspot.com,pornolab.biz,pornolab.cc,pornolab.lib,pornolab.net,rutracker.appspot.com,rutracker.lib,rutracker.net,rutracker.org###logo-td + td
