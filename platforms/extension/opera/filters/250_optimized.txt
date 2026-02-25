@@ -1,5 +1,5 @@
-! Checksum: Gei8N7zNLiIj4BU/2Ucg+Q
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1771981261-14400.patch
+! Checksum: Q6h7OdlNUkzpYwAjU7t6EQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1771996143-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.2
@@ -57,6 +57,7 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://ublock-chrome."]
 softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||ubuntu.org^$document,domain=~you-were-likely-looking-for-ubuntu.com
 ||speedtest.com^$document,domain=~you-were-likely-looking-for-speedtest.net
+||githu.com^$document,domain=~you-were-likely-looking-for-github.com
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||173.208.96.42^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -607,7 +608,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||100.20.13.49^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||51.68.87.229^$all,csp=font-src 'self' 'unsafe-eval' http: https: data: blob: mediastream: filesystem:
-||hokaoneone*$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||185.106.94.139^$document
 !+ NOT_PLATFORM(windows, mac, android, cli)
@@ -1627,6 +1627,7 @@ www.microsoft.com##.card[data-bi-cn*="car chase" i][data-bi-cn*=racing i]
 ||185.53.178.53^$all
 !+ NOT_PLATFORM(windows, mac, android, cli)
 ||185.53.178.54^$all
+||kuaizip.com^$all
 ||xiaobaixitong.com^$all
 ||dabaicai.com^$all
 ||flash.cn^$all
@@ -1735,7 +1736,6 @@ www.microsoft.com##.card[data-bi-cn*="car chase" i][data-bi-cn*=racing i]
 ##a[class*=share__button]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##a[class^=share_btn]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
 ##a[data-ss-ss-type]
-##a[data-tooltip^="Share on "]
 ##a[href*=".cmd=addShare"]
 ##a[href*="/social_plugins/share"]
 ##a[href*="://plus.google.com/share?url="]
@@ -1779,7 +1779,6 @@ www.microsoft.com##.card[data-bi-cn*="car chase" i][data-bi-cn*=racing i]
 ##div[class^=shareLinks]
 ##div[class^=social-like]
 ##div[class^=social-media-container]:not([class*=body i],[id*=body i],[class*=content i],[id*=content i])
-##div[id^=btnShare i]
 ##div[id^=dpsp-]
 ##h2[class*=share-links]
 ##share-grid
@@ -1965,6 +1964,7 @@ rawstory.com##.share-popup.rm-stats-tracked
 www.google.com##.chr-panel-switcher__card:first-of-type
 ##.epb-container.f-information.c-uhfh-alert
 bing.com#?##b_pole:contains(Microsoft Edge)
+bing.com##.bnp_btc
 bing.com##.bnp_fly_hp
 microsoft.com,windows.com###epb
 outlook.live.com##div[class*=" body-"] > div[class] > div[class]:not([role]) > div:first-of-type:not([class])
@@ -2421,7 +2421,6 @@ $document,removeparam=awc
 $document,removeparam=ranMID
 $document,removeparam=ranEAID
 $document,removeparam=ranSiteID
-$document,removeparam=LGWCODE
 $document,removeparam=xtor
 $document,removeparam=SRC
 $document,removeparam=bbaid
@@ -2607,6 +2606,7 @@ $document,removeparam=lcid,domain=~rekono.si
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
+$removeparam=om_mmc
 $removeparam=k_clickid
 $removeparam=affiliateCustomId
 $removeparam=CJAID
@@ -2664,8 +2664,6 @@ $removeparam=spUserID
 $removeparam=spJobID
 $removeparam=spReportId
 $removeparam=actId
-$removeparam=actCampaignType
-$removeparam=actSource
 $removeparam=oly_anon_id
 $document,removeparam=/^wickedid=.*$/i
 $document,removeparam=/^wickedsource=.*$/i
@@ -2726,6 +2724,7 @@ $removeparam=cm_ainfo
 $removeparam=CSID
 $removeparam=cnxclid
 $document,removeparam=/^source=webgains$/
+$document,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
 $removeparam=paid
 $removeparam=pacid
 $removeparam=adtype
@@ -3320,6 +3319,7 @@ wenku.baidu.com#%#//scriptlet('ubo-set', 'history.replaceState', 'noopFunc')
 ||iqiyi.com^$removeparam=r_area
 ||iqiyi.com^$removeparam=r_source
 ||iqiyi.com^$removeparam=stype
+||iqiyi.com^$removeparam=pccenter_fr
 ||iqiyi.com^$removeparam=source
 ||iqiyi.com^$removeparam=sr
 ||iqiyi.com^$removeparam=ssra
@@ -3757,7 +3757,6 @@ ref=spreadprivacy.com$removeparam=ref
 ||github.com^$removeparam=reference_location
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
-$document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
 $document,removeparam=icmp,domain=fortnite.com|lego.com|ho-mobile.it
 ||linkedin.com/feed/update$removeparam=origin
 $document,removeparam=cn,domain=twitter.com|x.com

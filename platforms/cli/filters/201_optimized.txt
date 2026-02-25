@@ -1,5 +1,5 @@
-! Checksum: SMg1+V+tLWpC3hUg0ewpSA
-! Diff-Path: ../patches/201_optimized/201_optimized-s-1771909703-14400.patch
+! Checksum: kMejCiKmQWaVmp27ntqDvQ
+! Diff-Path: ../patches/201_optimized/201_optimized-s-1771996130-14400.patch
 ! Title: Web Annoyances Ultralist (Optimized)
 ! Description: Blocks annoying web elements and reclaims lost screen real estate.
 ! Version: 2.0.0.5
@@ -46,6 +46,7 @@ eastbourneherald.co.uk,portsmouth.co.uk,wakefieldexpress.co.uk#?#.dailymotion-cp
 euronews.com##.advertising
 express.co.uk###cmp-container-id, .taboola-above-article
 fandom.com#?#div.mcf-card-article__link:has(.mcf-card-article__subtitle:contains(/Fandom/))
+filmcomment.com,flyingmag.com,investors.com,popsci.com##.ads
 finance.yahoo.com#?#a[rel="nofollow noopener noreferrer"][href*="impressions=true"]:upward(3)
 flyertalk.com##.adblock-section
 foodbeast.com##.fdbst-ad-placement
@@ -457,6 +458,9 @@ adnauseam.io,al.com,alaskahighwaynews.ca,americanexpress.com,artfixdaily.com,ass
 adobe.com#$#.breadcrumbs-container { position: absolute !important; }
 adobe.com#$#.global-navigation { position: relative !important; }
 ads.twitter.com,developer.twitter.com,dmagazine.com,lotuffleather.com,peoplefinders.com,pltw.read.inkling.com,quantamagazine.org,searchenginewatch.com#$#.nav { position: absolute !important; }
+advanceduninstaller.com#$#.menu-btn { background-color: #fff !important; color: #3f345f !important; }
+advanceduninstaller.com#$#.osahan-navbar .nav-link { color: #fff !important; }
+advanceduninstaller.com#$#.osahan-navbar { position: relative !important; padding: 18px 0 !important; box-shadow: none !important; border-bottom: none !important; background: transparent none repeat scroll 0 0 !important; }
 advancemediany.com,amgreatness.com,beltmag.com,keckmedicine.org,njadvancemedia.com,spigot.com,themediabriefing.com,ublock.org#$#.fusion-header { position: relative !important; }
 adventuresofanurse.com,bythewavs.com,thefuntimesguide.com#$#.nav-primary { position: relative !important; top: 0 !important; }
 advertising.amazon.com,fanucamerica.com,googleblog.com,percona.com,redditgifts.com,redfin.com#$#.header-main { position: absolute !important; }
@@ -1267,6 +1271,8 @@ cnbc.com#$#.SidebarArticle-sticky { position: static !important; top: 0 !importa
 cnbc.com#$#.SignInMenu-signInContainerSticky { display: block !important; position: absolute !important; top: auto !important; right: 0 !important; bottom: auto !important; float: right !important; -webkit-box-align: center !important; margin: 18px auto 0 !important; transition: none !important; }
 cnbc.com#$##BrandPageWrapper[class="cnbcBrand"] [id^="nav-menu-article"] { position: absolute !important; display: flex !important; }
 cnbc.com#$##BrandPageWrapper[class="makeitBrand"] [class*="nav-menu-styles-makeit-linksSticky"], .account-menu-accountMenu, .account-menu-accountMenuPro, .NavLinks-navMenuArticleSticky .NavLinks-hiddenArticleLinks, .nav-menu-articleNavLinks { display: flex !important; }
+cnbc.com#$##BrandPageWrapper[class="makeitBrand"] [class*="nav-menu-styles-makeit-mainLinksSticky"] { transform: translateY(0) !important; margin-left: 0 !important; }
+cnbc.com#$##BrandPageWrapper[class="makeitBrand"] [id^="nav-menu-article"] { display: flex !important; position: relative !important; top: 3px !important; left: 20px !important; padding: 0 15px 0 8px !important; width: 40% !important; height: max-content !important; }
 cnbc.com#$##GlobalNavigation-Persistent, #GlobalNavigation, #MakeItGlobalNavigation, #SelectGlobalNavigation, .Sidebar-wrapperSticky, .fixedPosition.ng-scope.pageHeader { position: absolute !important; }
 cnbc.com###nav-menu-articleSticky-persistent, .GlobalNavigation-mobileNavMenu, .NavLinks-articleContent, .NavLinks-articleTitle, .nav-menu-articleContent, .nav-menu-articleTitle, .story-header-right, .sub-header
 cnet.com,funnyordie.com,hermes.com,podtail.com,thefederalsavingsbank.com,weber.com#$##page-header { position: absolute !important; }
@@ -3015,6 +3021,8 @@ nbcnews.com#$#body.frontPage .hfsh .local { background-image: linear-gradient(to
 ncblade.com#$#.card--sticky { position: absolute !important; top: 0 !important; }
 neocities.org#$#.header-Nav { position: absolute !important; }
 neocities.org#$#.theme-toggle { position: absolute !important; }
+neowin.net#$#.site-header-story + *, .site-header-story.fixed + * { margin-top: 0 !important; }
+neowin.net#$#.site-header-story { position: relative !important; transform: translateY(0px) !important; }
 netflix.com#$#.main-header, .pinning-header-container { background-color: transparent !important; }
 netflix.com#$#.pinning-header { position: relative !important; }
 netflix.com#$#[data-uia="account+header+nested-page-nav+title"] { font-size: 2rem !important; font-weight: 700 !important; }
@@ -4600,6 +4608,7 @@ zycrypto.com#$#.td-more-articles-box { position: absolute !important; right: 0 !
 ##.arrow-up:not(html):not(body)
 ##.article-share
 ##.article-sharing
+##.article-social
 ##.article__share
 ##.back-to-top:not(html):not(body)
 ##.back-top:not(html):not(body)
@@ -4627,6 +4636,7 @@ zycrypto.com#$#.td-more-articles-box { position: absolute !important; right: 0 !
 ##.fb-share
 ##.fb-share-button
 ##.fblike
+##.fbShare
 ##.footer--social
 ##.footer-social
 ##.footer-social-links
@@ -4675,6 +4685,7 @@ zycrypto.com#$#.td-more-articles-box { position: absolute !important; right: 0 !
 ##.share-bar
 ##.share-block
 ##.share-bottom
+##.share-box
 ##.share-btn
 ##.share-btns
 ##.share-button
@@ -4762,6 +4773,7 @@ zycrypto.com#$#.td-more-articles-box { position: absolute !important; right: 0 !
 ##.social-media
 ##.social-media-share
 ##.social-nav
+##.social-networks
 ##.social-row
 ##.social-share
 ##.social-share-bar
@@ -5058,6 +5070,7 @@ majorgeeks.com###fanback
 mint.intuit.com#?#[aria-labelledby="idsModalHeader1"]:upward(2)
 mit.edu,splendidtable.org###cboxContent, #cboxOverlay
 mkbsecurity.com##[id^="app-embed-container-"]
+motorsport.com##.ms-footer-fixbox, .ms-footer_top
 msn.com#?#div[data-yvej*="Microsoft_News_App_ENUS_2019_banner_2"]:upward(2)
 ncsc.gov.uk##.pcf-backtotop
 notepad-plus-plus.org##[href="#main"]
