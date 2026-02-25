@@ -1,9 +1,9 @@
-! Checksum: D4AH5qpp8n7W1mejYP6B2g
-! Diff-Path: ../patches/13/13-s-1772018640-3600.patch
+! Checksum: o1tCwsCruHgr8A/FOG+i8g
+! Diff-Path: ../patches/13/13-s-1772022173-3600.patch
 ! Title: AdGuard Turkish filter
 ! Description: Filter list that specifically removes ads on websites in Turkish language.
-! Version: 2.0.62.42
-! TimeUpdated: 2026-02-25T11:20:41+00:00
+! Version: 2.0.62.43
+! TimeUpdated: 2026-02-25T12:19:41+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5797,6 +5797,18 @@ lovefilmizle.net,elzemfilm.org,dizicaps.*,erotikfilmtube.com,sexfilmleriizle.com
 ! NOTE: Frequently changed domains
 ! WARNING: When adding new rules here, try to find an initial source of an actual domain,
 !          or add a last known domain
+!
+! Frequently changed domains: piabettv*.live
+! Source: https://ksckl.ink/piabet-giris
+[$domain=/piabettv\d+\.live$/]##header > ul > li:not(:has(> a[href="/"]))
+!
+! Frequently changed domains: papaztv*.com
+! Source: papaztv.com
+||papaztv*.com/assets/images/banners/
+[$domain=/papaztv\d?\.com$/]##div[class*="-banner"]
+[$domain=/papaztv\d?\.com$/]##.trusted-sites-section
+[$domain=/papaztv\d?\.com$/]#$##welcomePopupBackdrop { display: none !important; }
+[$domain=/papaztv\d?\.com$/]#$#body { overflow: auto !important; }
 !
 ! Frequently changed domains: hdturkifsa*.com
 ! Source: hdturkifsa.com
