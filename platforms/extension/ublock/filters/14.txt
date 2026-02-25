@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 4gdIGAwczadO0sWLrcAQQA
-! Diff-Path: ../patches/14/14-s-1772033360-3600.patch
+! Checksum: zVnH6NOLn27uuCe6gKxtSw
+! Diff-Path: ../patches/14/14-s-1772037234-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.59.96
-! TimeUpdated: 2026-02-25T15:25:59+00:00
+! Version: 2.2.59.97
+! TimeUpdated: 2026-02-25T16:30:41+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -21928,7 +21928,9 @@ dzen.ru##:matches-path(/pogoda) .adv-ecom
 !+ NOT_PLATFORM(ext_safari)
 !
 ! Yandex.Video
-! [$path=/video]ya.ru,yandex.*
+! ads near the player
+ya.ru,yandex.*##div[id^="Video-"] div[class*="VideoListPageDirect"]
+ya.ru,yandex.*##div[class*="-DirectSkeleton"]
 !
 ! Yandex.Afisha
 afisha.yandex.*##+js(noeval-if, bidReqIdStr)
@@ -34073,6 +34075,7 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+info-ua.net###telegram-window
 electronicfirst.com##body > div[id$="-widget"][data-cc-campaign]
 fxempire.com##div[class^="sc-"]:has(> a[href^="https://www.google.com/preferences/source?q="])
 goodhousekeeping.com##journey-modal-newsletter:style(display: none !important;)
