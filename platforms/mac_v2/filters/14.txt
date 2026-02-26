@@ -1,9 +1,9 @@
-! Checksum: oh90BItwJUC7oTZ1cNilVg
-! Diff-Path: ../patches/14/14-s-1772101515-3600.patch
+! Checksum: AqIfGWIzCLYoEpuFoexWfQ
+! Diff-Path: ../patches/14/14-s-1772105064-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.60.7
-! TimeUpdated: 2026-02-26T10:21:46+00:00
+! Version: 2.2.60.8
+! TimeUpdated: 2026-02-26T11:21:09+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -44682,6 +44682,7 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+camp-fire.jp##.app-install-banner-sp
 yenicaggazetesi.com###app-download-popup
 muragon.com##.popup-app
 blog.csdn.net##.csdn-side-toolbar a.option-box[data-type="app"]
@@ -52174,6 +52175,12 @@ ya.ru,yandex.*#%#//scriptlet('remove-class', 'document_disable-feed-scroll_yes',
 [$path=/search]ya.ru,yandex.*#$#button[type="button"][title="Нет, спасибо"] { display: none !important; }
 [$path=/search]ya.ru,yandex.*##div.Root[id]:has(> button.Distribution-SplashScreenModalCloseButtonOuter)
 [$path=/search]ya.ru,yandex.*#$#body[style] { padding-right: 0 !important; overflow: auto !important; }
+! https://github.com/AdguardTeam/AdguardFilters/issues/225434
+! fixing ##.DistributionPopup issue on yandex.com.tr
+! Re-check when ##.DistributionPopup become obsolete
+yandex.com.tr#$#.document_portal-services_yes body[style] { padding-right: 0 !important; overflow: auto !important; }
+yandex.com.tr#$#.document_portal-services_yes div.DistributionPopup { display: none !important; }
+yandex.com.tr#@#.DistributionPopup
 !
 [$path=/search]ya.ru,yandex.*##.HeaderDesktopActions-Distribution
 ya.ru,yandex.*##.AliceFabPromo
@@ -59688,6 +59695,7 @@ nizimoenews.livedoor.blog,butumori.com,netizen-voice.blog.jp,ityouchannel.livedo
 !
 ! NOTE: Blogroll specific rules
 !
+muryou-tanoshimu.com##iframe[id^="rssframe"]
 eroanime-movie.com##.rectangle-margin-section + section.main-section:has(> ul.entry-list-related)
 zzzsoku.com##.archive
 zzzsoku.com##.widget-below-sns-buttons:has(> .custom-html-widget > .wjp)
