@@ -1,9 +1,9 @@
-! Checksum: JDqPmC0Zj2Q8cY2U5jX+7A
-! Diff-Path: ../patches/18/18-s-1772097979-3600.patch
+! Checksum: J1lSWgLG/ySF+T8a7FjkjA
+! Diff-Path: ../patches/18/18-s-1772119534-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.81.65
-! TimeUpdated: 2026-02-26T09:22:48+00:00
+! Version: 2.0.81.66
+! TimeUpdated: 2026-02-26T15:22:26+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2582,6 +2582,10 @@ tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteran
 !
 ! NOTE: Regular rules
 !
+trhaber.com#%#//scriptlet('set-local-storage-item', 'trhaber_cookie_consent', 'accepted')
+elxw.fa.em3.oraclecloud.com##.cookie-consent-modal
+chs.harvard.edu#$?##block-hwp-hyard-cookieconsentbanner { remove: true; }
+chs.harvard.edu#$#.hwp-no-scroll { overflow: auto !important; }
 mersinhaber.com###timNoticeBanner
 ostrovok.ru##div[class^="PrivacyPopup_root"]
 navoica.pl##.navoica-cookie-banner-wrapper
@@ -18432,6 +18436,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225704
+chs.harvard.edu#@##cookieBanner
 ! https://github.com/AdguardTeam/AdguardFilters/issues/224951
 ! camaramar.com
 camaramar.com#@##cookie-dialog
