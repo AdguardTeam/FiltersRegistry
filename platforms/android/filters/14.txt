@@ -1,9 +1,9 @@
-! Checksum: /U6PKb5/jpu9V1gmbxbL9g
-! Diff-Path: ../patches/14/14-s-1772205701-3600.patch
+! Checksum: rlzQpOQB+8tmNAUz6RdXUQ
+! Diff-Path: ../patches/14/14-s-1772209118-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.60.26
-! TimeUpdated: 2026-02-27T15:19:00+00:00
+! Version: 2.2.60.27
+! TimeUpdated: 2026-02-27T16:16:02+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5747,7 +5747,7 @@ pixiv.net##.terms-of-use-header
 ||filoz.net/*/*/glowCookies$script,stylesheet,~third-party
 satu.xl.co.id##.cookie-consent-prompt
 life.ru##div[class^="CommonLayout_root"] > div:has(> div > div > span > a[href="/legacy#persondata"])
-hellozdrowie.pl,likumi.lv#%#//scriptlet('trusted-click-element', '#cookiescript_accept')
+streetstyle24.pl,hellozdrowie.pl,likumi.lv#%#//scriptlet('trusted-click-element', '#cookiescript_accept')
 flexispot.co.uk,flexispot.es,flexispot.nl,flexispot.it,flexispot.se,flexispot.de,flexispot.pl###gdprMask
 odido.nl##.koekje
 deeplol.atlassian.net,bitbucket.org##div[aria-labelledby="cookiesTrackingNoticeLink"]
@@ -18449,6 +18449,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225721
+@@||cdn.cookie-script.com^$script,xmlhttprequest,domain=streetstyle24.pl
+streetstyle24.pl#@##cookiescript_injected_wrapper
+streetstyle24.pl#@##cookiescript_injected:not(body, html)
+streetstyle24.pl#@##cookiescript_injected
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225715
 @@||api.usercentrics.eu/settings/*.json$domain=ullstein.de
 @@||app.usercentrics.eu/browser-sdk/*/cross-domain-bridge.html$domain=ullstein.de

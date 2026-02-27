@@ -1,9 +1,9 @@
-! Checksum: UMBreYOKZa52QZUvUa4DzA
-! Diff-Path: ../patches/18/18-s-1772205735-3600.patch
+! Checksum: Cs33HgKJza0G3r8AOU6brA
+! Diff-Path: ../patches/18/18-s-1772209154-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.81.76
-! TimeUpdated: 2026-02-27T15:19:05+00:00
+! Version: 2.0.81.77
+! TimeUpdated: 2026-02-27T16:16:07+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -5748,7 +5748,7 @@ pixiv.net##.terms-of-use-header
 ||filoz.net/*/*/glowCookies$script,stylesheet,~third-party
 satu.xl.co.id##.cookie-consent-prompt
 life.ru##div[class^="CommonLayout_root"] > div:has(> div > div > span > a[href="/legacy#persondata"])
-hellozdrowie.pl,likumi.lv#%#//scriptlet('trusted-click-element', '#cookiescript_accept')
+streetstyle24.pl,hellozdrowie.pl,likumi.lv#%#//scriptlet('trusted-click-element', '#cookiescript_accept')
 flexispot.co.uk,flexispot.es,flexispot.nl,flexispot.it,flexispot.se,flexispot.de,flexispot.pl###gdprMask
 odido.nl##.koekje
 deeplol.atlassian.net,bitbucket.org##div[aria-labelledby="cookiesTrackingNoticeLink"]
@@ -18389,6 +18389,11 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225721
+@@||cdn.cookie-script.com^$script,xmlhttprequest,domain=streetstyle24.pl
+streetstyle24.pl#@##cookiescript_injected_wrapper
+streetstyle24.pl#@##cookiescript_injected:not(body, html)
+streetstyle24.pl#@##cookiescript_injected
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225715
 @@||api.usercentrics.eu/settings/*.json$domain=ullstein.de
 @@||app.usercentrics.eu/browser-sdk/*/cross-domain-bridge.html$domain=ullstein.de
