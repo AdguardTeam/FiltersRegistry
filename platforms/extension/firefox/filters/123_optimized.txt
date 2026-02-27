@@ -1,9 +1,9 @@
-! Checksum: U6UIsJ3YUtov28rIyj0A5w
-! Diff-Path: ../patches/123_optimized/123_optimized-s-1772153858-14400.patch
+! Checksum: L7IMItht0olDcaZyPNZLtg
+! Diff-Path: ../patches/123_optimized/123_optimized-s-1772168678-14400.patch
 ! Title: Fanboy's Social Blocking List (Optimized)
 ! Description: Hides and blocks social content, social widgets, social scripts and social icons. Already included in Fanboy's Annoyances list.
-! Version: 2.1.57.15
-! TimeUpdated: 2026-02-27T00:54:31+00:00
+! Version: 2.1.57.16
+! TimeUpdated: 2026-02-27T05:01:27+00:00
 ! Expires: 10 days (update frequency)
 -facebook-share.
 -facebook-widget.
@@ -105,6 +105,7 @@
 /shareTools.js
 /shareTwitter.png
 /shariff.min.js
+/sharing_icons/*
 /silicon-counters.js
 /simple-share-$~stylesheet
 /simpleshare.js
@@ -118,7 +119,6 @@
 /socialbar-sso.js
 /socialbar.js
 /socialbookmarks.js
-/socialcount.js
 /socialite.js
 /socialite.min.js
 /SocialSprite.
@@ -148,7 +148,6 @@ _social-bar/
 ###Followers1
 ###ShareButton
 ###ShareItemBtn
-###SharePanel
 ###SocialMedia
 ###SocialShare
 ###Socialize
@@ -207,6 +206,7 @@ _social-bar/
 ###facebook-box
 ###facebook-like
 ###facebook-link
+###facebook-popup
 ###facebook-share
 ###facebook-widget
 ###facebookBox
@@ -253,7 +253,6 @@ _social-bar/
 ###fbtw
 ###fcbk
 ###fdbk_tab
-###float_fb_plugin
 ###floatingSocialShare
 ###follow-box
 ###follow-buttons
@@ -810,6 +809,7 @@ _social-bar/
 ##.action--share
 ##.action.mailto.friend
 ##.actions-bar-share
+##.actions-social
 ##.actnbr-has-follow
 ##.adSocial
 ##.add-this
@@ -972,7 +972,6 @@ _social-bar/
 ##.bd-FooterSocials-item
 ##.bd-socialicon
 ##.bdaia-social-io
-##.beSocialShare
 ##.beacon-social
 ##.below-article-share-block
 ##.better-social-counter
@@ -1271,7 +1270,6 @@ _social-bar/
 ##.facebook_net
 ##.facebook_share
 ##.facebooklike
-##.facebooklink
 ##.facebookshare
 ##.facewrapper
 ##.fastsocialshare_container
@@ -1554,6 +1552,7 @@ _social-bar/
 ##.hatena-bookmark-button
 ##.hatena-btn-icon
 ##.hdr-social
+##.hdsocial2
 ##.head-fb
 ##.head-post-share
 ##.header-facebook
@@ -1715,7 +1714,6 @@ _social-bar/
 ##.info_share
 ##.ing-social
 ##.inline-share
-##.inline-share-buttons
 ##.inline_socials
 ##.inner-header-social
 ##.inner-social
@@ -1735,7 +1733,6 @@ _social-bar/
 ##.intro-social
 ##.iol-social-share
 ##.ion-social-facebook
-##.ion-social-google
 ##.ion-social-linkedin
 ##.ion-social-twitter
 ##.ip-follow-us-popup
@@ -1746,9 +1743,6 @@ _social-bar/
 ##.ipsfocus_social
 ##.is-social
 ##.ishare
-##.ism_box_facebook
-##.ism_box_pinterest
-##.ism_box_twitter
 ##.isocial
 ##.it-share
 ##.item--social
@@ -1823,6 +1817,7 @@ _social-bar/
 ##.layer_share_on
 ##.lazysocialbuttons
 ##.leftsharebtn
+##.lets-social-count-wrap
 ##.lf-facebook
 ##.like-fb
 ##.like-share
@@ -2089,6 +2084,7 @@ _social-bar/
 ##.pinterest-share-btn
 ##.pinterest-share-button
 ##.pinterest-sharetool
+##.pinterest-wrapper
 ##.pinterest.share
 ##.pinterest1
 ##.pinterestShare
@@ -2520,6 +2516,7 @@ _social-bar/
 ##.share_bar
 ##.share_blk
 ##.share_block
+##.share_block_sub
 ##.share_bottom
 ##.share_box
 ##.share_btn
@@ -2540,7 +2537,6 @@ _social-bar/
 ##.share_email_article
 ##.share_facebook
 ##.share_fb
-##.share_google
 ##.share_group
 ##.share_hidden
 ##.share_horizontal
@@ -2639,6 +2635,7 @@ _social-bar/
 ##.sharethis-inline-share-buttons
 ##.sharethis-link
 ##.sharethis-wrapper
+##.sharetip-wrap
 ##.shareto
 ##.sharetool
 ##.sharetools
@@ -2928,7 +2925,6 @@ _social-bar/
 ##.social-networking
 ##.social-networks-container
 ##.social-networks-footer
-##.social-networks-links
 ##.social-networks-list
 ##.social-networks__item
 ##.social-news-buttons
@@ -3112,7 +3108,6 @@ _social-bar/
 ##.socialTools
 ##.socialTop
 ##.socialTwitter
-##.socialUrl
 ##.socialV2
 ##.socialWidget
 ##.socialWrap
@@ -3171,6 +3166,7 @@ _social-bar/
 ##.socialfooter
 ##.socialheader
 ##.socialicon
+##.socialiconheader
 ##.socialicons
 ##.socialinks
 ##.socialite-widget
@@ -3236,7 +3232,6 @@ _social-bar/
 ##.sscb-facebook
 ##.sscb-pinterest
 ##.sscb-twitter
-##.ssto-share-buttons
 ##.st-custom-button
 ##.st-social-block
 ##.st-social__share
@@ -3314,6 +3309,7 @@ _social-bar/
 ##.top-social-icons
 ##.top-social-item
 ##.top-social-links
+##.top-social-share
 ##.topSocial
 ##.top_share
 ##.top_social
@@ -3389,6 +3385,7 @@ _social-bar/
 ##.twitterbutton
 ##.twitterfollow
 ##.twitterjo
+##.twitterlink
 ##.twittershare
 ##.twshare
 ##.twt-btn
@@ -3650,6 +3647,7 @@ _social-bar/
 ||facebook.com/plugins/like_box.php$third-party
 ||facebook.com/plugins/page.php?$third-party
 ||facebook.com/plugins/share_button.php?$third-party
+||facebook.com/widgets/like.php?$third-party
 ||facebook.com^*/plugins/like.php?$third-party
 ||facebook.com^*/plugins/page.php?$third-party
 ||facebook.com^*/plugins/share_button.php?$third-party
@@ -3762,6 +3760,7 @@ salon.com###social_total
 nsctotal.com.br,pastebin.pl###socials
 motortrend.com###socialshare_title
 news.crunchbase.com###ss-sticky-bar
+democracynow.org###story_social
 rfa.org###storytoptools
 osxdaily.com###subscribe_box
 thenewstack.io###tns-footer-bar
@@ -3781,9 +3780,9 @@ abc.net.au##.FixedHeader_shareBtn__yNush
 indianexpress.com##.G-folow-button
 meduza.io##.GeneralMaterial-module-share
 newsweek.com##.GooglePreferredSourceBanner_container__4kWoo
-themirror.com##.GooglePreferredSource_wrapper__lSRA6
 cnbc.com##.HighlightShare-container
 apnews.com##.Infobox
+business-standard.com##.MainStory_whtsppchannle___HEk3
 business-standard.com##.MetaPost_flwggle__kFKIT
 6amcity.com,apnews.com,biospace.com,ejecentral.com.mx,ultimahora.com##.Page-actions
 rbth.com##.Popup-telegram
@@ -3931,6 +3930,7 @@ telex.hu##.framed-content
 blog.mozilla.org##.ft-c-post-share
 airdriecityview.com,barrietoday.com,baytoday.ca,bowenislandundercurrent.com,bradfordtoday.ca,burlingtontoday.com,cambridgetoday.ca,coastreporter.net,cochraneeagle.ca,collingwoodtoday.ca,delta-optimist.com,elorafergustoday.com,flamboroughtoday.com,griceconnect.com,guelphtoday.com,haltonhillstoday.ca,innisfiltoday.ca,midlandtoday.ca,miltontoday.ca,moosejawtoday.com,newmarkettoday.ca,northernontariobusiness.com,notllocal.com,nsnews.com,oakvillenews.org,orilliamatters.com,pelhamtoday.ca,piquenewsmagazine.com,princegeorgecitizen.com,prpeak.com,richmond-news.com,rmoutlook.com,sootoday.com,stalbertgazette.com,stratfordtoday.ca,sudbury.com,thealbertan.com,thesarniajournal.ca,thoroldtoday.ca,timescolonist.com,vancouverisawesome.com,westernwheel.ca##.ft-social
 mlbtraderumors.com,prohockeyrumors.com##.fv_sharing_round
+getty.edu##.g-footer__social
 americansongwriter.com##.g1-google-buttons
 ecoticias.com##.gb-element-1da6670c
 ecoticias.com##.gb-element-6d236576
