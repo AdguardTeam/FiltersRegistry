@@ -1,9 +1,9 @@
-! Checksum: WETNp+2t6JiesUxR1LXJHA
-! Diff-Path: ../patches/14_optimized/14_optimized-s-1772187606-3600.patch
+! Checksum: 8UJN+iMwK8JvYMVJHnDS0Q
+! Diff-Path: ../patches/14_optimized/14_optimized-s-1772191141-3600.patch
 ! Title: AdGuard Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.60.21
-! TimeUpdated: 2026-02-27T10:17:16+00:00
+! Version: 2.2.60.22
+! TimeUpdated: 2026-02-27T11:16:15+00:00
 ! Expires: 12 hours (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1616,6 +1616,7 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$?#div[consent-skip-blocker] { remove: true; }
 tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+perplexity.ai#%#//scriptlet('set-cookie', 'pplx.trackingAllowed', 'false')
 ullstein.de#%#//scriptlet('trusted-click-element', 'div[aria-label="Cookies akzeptieren oder anpassen"] button', 'containsText:Alle Cookies ablehnen', '1000')
 matterport.com##div[class^="CookieModal_CookieModal"]
 we-conect.com#%#//scriptlet('trusted-set-cookie', 'gdpr', '%7B%22essential%22%3Atrue%2C%22marketing%22%3A%7B%22googleAnalytics%22%3Afalse%2C%22mailTracking%22%3Afalse%7D%2C%22externalMedia%22%3A%7B%22youtube%22%3Atrue%2C%22vimeo%22%3Atrue%7D%7D')
@@ -2363,7 +2364,6 @@ alipay.com#%#//scriptlet('set-cookie', 'cookie_config', 'emptyObj', '/', 'alipay
 verbatim.com,verbatim-europe.com#%#//scriptlet('trusted-set-cookie-reload', 'VERBATIM-COOKIE-CONSENT', '{"essential":true,"functional":false,"performance":false,"targeting":false}')
 zdrav.ru,law.ru,kdelo.ru##.CookieNotifyWidget
 ||cookies.travyk.nl^
-perplexity.ai#%#//scriptlet('trusted-click-element', '#cookie-consent .bg-super')
 dedistart.com#%#//scriptlet('set-cookie', 'acceptCookies', 'no')
 vg-neunburg.de#%#//scriptlet('trusted-set-cookie', 'cookieconsent', 'technical')
 vg-neunburg.de#%#//scriptlet('trusted-set-cookie', 'cookieconsentTimestamp', '$now$')
@@ -9065,7 +9065,6 @@ bluerazor.com#%#//scriptlet('trusted-set-cookie', 'pwinteraction', '{"value":"ye
 e-food.gr#%#//scriptlet('set-cookie-reload', 'accepted_cookies', 'true')
 diag.pl#%#//scriptlet('set-local-storage-item', 'DIAG_COOKIES_AGREEMENT', 'true')
 americanexpress.ch,swisscard.ch#%#//scriptlet('set-cookie', 'sc-privacy-settings', 'true')
-perplexity.ai#%#//scriptlet('set-cookie', 'trackingAllowed', 'false')
 thegamingwatcher.com#%#//scriptlet('set-cookie', 'snc-cp', '2')
 technopat.net#%#document.cookie='cmplz_consented_services={"youtube":true};path=/;';
 mentimeter.com#%#//scriptlet('set-cookie-reload', 'has_approved_cookie_policy', '0')
@@ -13438,6 +13437,7 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 ###credential_picker_iframe
 /.*/$permissions=identity-credentials-get=(),document
 ||edge-auth.microsoft.com/js/ms_auth_client.min.js
+perplexity.ai##.bottom-md.w-\[300px\]
 creativo.one###dvd-cupon
 hdfilmdelisi.one#%#//scriptlet('trusted-set-local-storage-item', 'push-prompt-dismissed', '$now$')
 hdfilmdelisi.one##.min-h-screen > button.fixed:has(> svg[height="24"] > path[d="M7 11V7a5 5 0 0 1 10 0v4"])
@@ -17696,6 +17696,9 @@ ozgurkocaeli.com.tr,turkuazgazetesi.net,yenialanya.com,mansetaydin.com,seskocael
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#html > body.tp-modal-open { overflow: auto !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] { display: none !important; }
 gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,nordbayern.de,thelocal.ch,morgenpost.de,waz.de,nrz.de,braunschweiger-zeitung.de,abendblatt.de,wolfsburger-nachrichten.de,wolfenbuetteler-zeitung.de,ynet.co.il#$#div[class="tp-modal"][style^="z-index: 3000"] ~ div.tp-backdrop { display: none !important; }
+snexplores.org##div[class^="newsletter-global-subscribe__wrapper"]
+snexplores.org##.wp-block-newsletter-signup
+||sciencenews.org/conversion/zephr-iframe-test
 sciencealert.com##.post-content > p:has(> a[href^="https://www.sciencealert.com/newsletter"])
 scitechdaily.com##.post-content > p:has(> b > a[href="https://scitechdaily.com/newsletter/"])
 nbcnews.com###subscriptionCTA

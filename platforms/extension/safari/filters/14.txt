@@ -1,9 +1,9 @@
-! Checksum: /uQkiiMCNIu5c+3J9rcUsg
-! Diff-Path: ../patches/14/14-s-1772187623-3600.patch
+! Checksum: a2/Vm9EBQ879J6sfqQZT5A
+! Diff-Path: ../patches/14/14-s-1772191156-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.60.21
-! TimeUpdated: 2026-02-27T10:17:16+00:00
+! Version: 2.2.60.22
+! TimeUpdated: 2026-02-27T11:16:15+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2583,6 +2583,7 @@ tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteran
 !
 ! NOTE: Regular rules
 !
+perplexity.ai#%#//scriptlet('set-cookie', 'pplx.trackingAllowed', 'false')
 ullstein.de#%#//scriptlet('trusted-click-element', 'div[aria-label="Cookies akzeptieren oder anpassen"] button', 'containsText:Alle Cookies ablehnen', '1000')
 matterport.com##div[class^="CookieModal_CookieModal"]
 we-conect.com#%#//scriptlet('trusted-set-cookie', 'gdpr', '%7B%22essential%22%3Atrue%2C%22marketing%22%3A%7B%22googleAnalytics%22%3Afalse%2C%22mailTracking%22%3Afalse%7D%2C%22externalMedia%22%3A%7B%22youtube%22%3Atrue%2C%22vimeo%22%3Atrue%7D%7D')
@@ -3505,7 +3506,6 @@ nexoc-store.de#$#body.no-consent-chosen::before { display: none !important; }
 nexoc-store.de#$#body.no-consent-chosen { overflow: auto !important; }
 zdrav.ru,law.ru,kdelo.ru##.CookieNotifyWidget
 ||cookies.travyk.nl^
-perplexity.ai#%#//scriptlet('trusted-click-element', '#cookie-consent .bg-super')
 dedistart.com#%#//scriptlet('set-cookie', 'acceptCookies', 'no')
 vg-neunburg.de#%#//scriptlet('trusted-set-cookie', 'cookieconsent', 'technical')
 vg-neunburg.de#%#//scriptlet('trusted-set-cookie', 'cookieconsentTimestamp', '$now$')
@@ -17534,7 +17534,6 @@ bluerazor.com#%#//scriptlet('trusted-set-cookie', 'pwinteraction', '{"value":"ye
 e-food.gr#%#//scriptlet('set-cookie-reload', 'accepted_cookies', 'true')
 diag.pl#%#//scriptlet('set-local-storage-item', 'DIAG_COOKIES_AGREEMENT', 'true')
 americanexpress.ch,swisscard.ch#%#//scriptlet('set-cookie', 'sc-privacy-settings', 'true')
-perplexity.ai#%#//scriptlet('set-cookie', 'trackingAllowed', 'false')
 thegamingwatcher.com#%#//scriptlet('set-cookie', 'snc-cp', '2')
 technopat.net#%#document.cookie='cmplz_consented_services={"youtube":true};path=/;';
 mentimeter.com#%#//scriptlet('set-cookie-reload', 'has_approved_cookie_policy', '0')
@@ -26677,6 +26676,7 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 !
 ! SECTION: Popups - Regular rules
 !
+perplexity.ai##.bottom-md.w-\[300px\]
 creativo.one###dvd-cupon
 hdfilmdelisi.one#%#//scriptlet('trusted-set-local-storage-item', 'push-prompt-dismissed', '$now$')
 hdfilmdelisi.one##.min-h-screen > button.fixed:has(> svg[height="24"] > path[d="M7 11V7a5 5 0 0 1 10 0v4"])
@@ -35714,6 +35714,9 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+snexplores.org##div[class^="newsletter-global-subscribe__wrapper"]
+snexplores.org##.wp-block-newsletter-signup
+||sciencenews.org/conversion/zephr-iframe-test
 sciencealert.com##.post-content > p:has(> a[href^="https://www.sciencealert.com/newsletter"])
 scitechdaily.com##.post-content > p:has(> b > a[href="https://scitechdaily.com/newsletter/"])
 nbcnews.com###subscriptionCTA
