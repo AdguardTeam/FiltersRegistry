@@ -1,8 +1,8 @@
-! Checksum: UbzoDk2z7QhUuD1ukmibeg
+! Checksum: ws1b3qZSqKdQ4qNieSvr1Q
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.81.69
-! TimeUpdated: 2026-02-27T04:38:51+00:00
+! Version: 2.0.81.70
+! TimeUpdated: 2026-02-27T05:28:18+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2471,6 +2471,7 @@ help.lurker.tv,help.zenky.io,docs.powershelluniversal.com,docs.snyk.io,docs.keep
 !
 ! NOTE: Regular rules
 !
+matterport.com##div[class^="CookieModal_CookieModal"]
 nexty-ele.com##.gdpr2
 store.chelseafc.com##.marketing-cookies-banner
 elxw.fa.em3.oraclecloud.com##.cookie-consent-modal
@@ -5078,7 +5079,7 @@ clinicaplanas.com##.supercookies
 cursos.sesisenai.org.br##.my-float
 autasuper.com##.cookup
 qwertee.com###root > div.bg-qw-yellow-100.bottom-0
-kijiji.ca,ullstein.de##div[aria-label^="Cookies"]
+kijiji.ca##div[aria-label^="Cookies"]
 centrifuge.io###gatsby-focus-wrapper > main + div[role="alert"][class^="sc-"]
 national-lottery.co.uk###cu_k_modal_main_box
 cosibella.com.de,metalmarket.eu,matemundo.*###iai_cookie_wrapper
@@ -12346,6 +12347,10 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225715
+@@||api.usercentrics.eu/settings/*.json$domain=ullstein.de
+@@||app.usercentrics.eu/browser-sdk/*/cross-domain-bridge.html$domain=ullstein.de
+@@||aggregator.service.usercentrics.eu/aggregate/$domain=ullstein.de
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225719
 @@||simpletoolsforinvestors.eu/js/CookieCompliance/jquery.js$domain=simpletoolsforinvestors.eu
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225704
