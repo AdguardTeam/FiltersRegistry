@@ -1,5 +1,5 @@
-! Checksum: d7KUjv1Pyc4UYPnjzNS+EA
-! Diff-Path: ../patches/21_optimized/21_optimized-s-1772127070-3600.patch
+! Checksum: 4HaV9+NnANcH7T95qhfiuw
+! Diff-Path: ../patches/21_optimized/21_optimized-s-1772161661-3600.patch
 ! Title: AdGuard Other Annoyances filter (Optimized)
 ! Description: Blocks irritating elements on web pages that do not fall under the popular categories of annoyances.
 ! Version: 2.0.41.99
@@ -1052,6 +1052,7 @@ disk.yandex.ru#%#//scriptlet('remove-attr', 'href', '.InfoSpace[href^="https://3
 [$path=/web-maps]yandex.*##.card-offer-view
 [$path=/maps]yandex.*##.business-card-view__section:has(> .business-ownership-view)
 [$path=/maps]yandex.*##.card-special-offers-view
+[$path=/maps]yandex.*#?#.business-card-view__orgpage-actions div.carousel__item > div._type_action_button > a[role] > span:contains(Скачать приложение)
 [$path=/maps]yandex.*##.business-card-view__main-wrapper div.card-offer-view
 [$path=/maps]yandex.*##.business-card-title-view__advert
 [$path=/maps]yandex.*##.business-card-title-view__actions .button._view_advertisement
@@ -1229,8 +1230,6 @@ animakima.ru##.vip-banner
 gigazine.net#?#.content > section:has(.catab:contains(広告))
 paribucineverse.com#%#//scriptlet('trusted-set-local-storage-item', 'lastPopupTime', '$now$')
 instacart.ca,instacart.com##div[aria-label="item carousel"] li[data-testid^="item_list_item_items_"]:has(sp-ads-tag)
-[$path=/store/staples/storefront]instacart.ca,instacart.com#?#div[data-placements] > div[id]:has(> a div[style="display: flex;"] > span + span:contains(sored))
-[$path=/store/staples/storefront]instacart.ca,instacart.com#?##store-wrapper > div > div > div:has(div[style="display: flex;"] > span + span:contains(sored))
 washingtontimes.com##.article-text > div:has(> a[href^="https://google.com/preferences/source?q="])
 ddxfitness.ru##.blog__detail-banner
 ||hollywoodmedia.hollywoodbets.net/images/cms/new-registration-site/images/mob-sa-reg.
@@ -1335,7 +1334,6 @@ medikamente-per-klick.de##div[id^="customSkyBanner"]
 medikamente-per-klick.de###flexibleRightContent_10324
 ||perplexity.ai/rest/homepage-widgets/upsell
 tvmaze.com##.cinereus
-tvmaze.com##.columns > section:has(> div.cell > a.cinereus)
 sai-zen-sen.jp##article[id^="comic-"] > aside:has(> div.misc > p > a[href^="https://www.amazon.co.jp/"])
 avito.ru##.js-item-view-main > div[class][style^="--module-spacer-column-gap"]:has(> div[style^="--module-spacer-slot"] button[data-marker="saleBanner/button"])
 quackr.io##app-enterprise-banner
@@ -1377,7 +1375,6 @@ stay.rakuten.co.jp##a[href^="https://network.mobile.rakuten.co.jp/campaign/"]
 nexusmods.com##free-trial-banner
 signalskey.signal-st.com,empire.miyaco.moe,stormskey.works,m.eskey.click,labo.wovs.tk,nukers-misskey.hpc-densi.f5.si,msk.kitamiss.com,uneune.one,posskey.com,redfuku.com,misskey.secinet.jp,msk.ilnk.info,uttaeruyo.com,xissmie.xfolio.jp,misskey.niri.la,kasei.ski,s.kitazawa.me,buttersc.one,invillage-outvillage.com,misskey.gamelore.fun,misskey.systems,mivatter.com,msk.kitazawa.me,oekakiskey.com,side.misskey.productions,sushi.ski,voskey.icalo.net,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe#%#//scriptlet('json-prune', 'ads.[].imageUrl')
 signalskey.signal-st.com,empire.miyaco.moe,stormskey.works,m.eskey.click,labo.wovs.tk,nukers-misskey.hpc-densi.f5.si,msk.kitamiss.com,uneune.one,posskey.com,redfuku.com,misskey.secinet.jp,msk.ilnk.info,uttaeruyo.com,xissmie.xfolio.jp,misskey.niri.la,kasei.ski,s.kitazawa.me,buttersc.one,invillage-outvillage.com,misskey.gamelore.fun,misskey.systems,mivatter.com,msk.kitazawa.me,oekakiskey.com,side.misskey.productions,sushi.ski,voskey.icalo.net,novelskey.tarbin.net,gp.tsukimi.club,misskey.neos.love,mk.yopo.work,nijimiss.moe##.xsAPm
-findingpass.org###nordpassPopup
 live.bilibili.com##.left-container > .flip-view:has(> div.flip-view-image-ctnr > div.p-relative > a.item-wrapper > div[data-type="liveroom_banner_show"])
 gemini.google.com##announcement-banner
 dmv-written-test.com###study-tip-banner
@@ -1490,8 +1487,6 @@ duden.de##.internal-banner-ad
 insurance.mts.ru##div[class*="OsagoCashbackPromo"]
 insurance.mts.ru###ad-placeholder-osago
 switcho.it#$#html { overflow: auto !important; }
-switcho.it#$#.wp-block-divi-layout { display: none !important; }
-switcho.it#$#.et_pb_column_0_tb_body { display: none !important; }
 radiotimes.com##.promotion-cards
 news.tennis365.net##.newsdetailcontent_body a[href^="https://bit.ly/"]
 keirin.netkeiba.com###cboxOverlay
@@ -2530,6 +2525,7 @@ websearch.rakuten.co.jp##.banner2
 wenku.baidu.com##.vip-privilege
 baidu.com##div[tpl="live_medical_san"]
 baidu.com##td[align="left"] > div[id="con-ar"] > div.result-op[tpl="right-wz"]
+gemmed.ghc-j.com##.header-banner-covid19
 47news.jp#?#.page_layout > div.container section.col:has(> div#slick_pr)
 qidian.com##.topics-list
 wandoujia.com##.qr-box
@@ -2708,6 +2704,7 @@ washingtonpost.com###main-content > div.hide-for-print.mb-lg
 morinaga.co.jp###pc-column-detail-bottom-banner
 enigmasoftware.com###bio_ep
 enigmasoftware.com###bio_ep_bg
+web.quizknock.com###vue-article > a[onclick^="gtag_ad_event"]
 w-higa.com##div[id^="single_banner"]
 nijitoraware.com##.headline_entry_middle1
 my.rakuten.co.jp###randomAdArea
@@ -3062,6 +3059,7 @@ backup4all.com##.toast-bottom-right
 ||cdn.myanimelist.net/images/event/support_mal/banner-ani-*.gif
 anidl.org##.logo-row > div.stream-item-top-wrapper
 imdb.com##div[class^="pro_title_link"]
+m.timesofindia.com###adFreeNudge
 the-village.ru##main[class] a[href="/page/advertisers"]
 topcomputer.ru##.owl-carousel4banner
 topcomputer.ru##.row-no-gutters
@@ -3501,6 +3499,7 @@ winfuture.de#?#div[class^="hp_"] div:has(> .topteaser:contains(/(Anzeige)|wieder
 winfuture.de##div[class^="hp_"] > div > div[style="display: none !important;"] + .clearfix
 winfuture.de#?#.newsTicker > li:has(> a:contains(/(Anzeige)|Schnäppchen|sale|(?<!-)Angebot(?!s)/))
 winfuture.de#?#.topnews > div[class]:has(> h2 > a[href*="/special/"][href*="/angebote/"])
+analyticsvidhya.com###sale-strip
 dvdfab.cn##.coupon-link
 educba.com###topbar
 urlvoid.com###sticky-banner
@@ -3525,6 +3524,7 @@ blog.hatena.ne.jp##.edit-done-info-upgrade-to-pro
 blog.hatena.ne.jp##.gmo-campaign-banner
 mag2.com##.header_text_ad
 mag2.com##.sidebar_text_ad
+honeysanime.com##.side-gutter > a[target="_blank"][onclick]
 nishinippon.co.jp#?#.p-grid__item h2.c-heading-h2__text > a[href="/content/editorialad/"]:upward(.p-grid__item)
 ||rakuten-static.com/1/grp/banner/js/create.js
 jiosaavn.com##.o-layout > .c-banner
@@ -3673,7 +3673,6 @@ skype.com###edgePromotion
 gsmarena.com###wrapper > div#outer > div#subHeader
 fossbytes.com##.td-ss-main-sidebar > .widget_execphp
 ##.canvas__header > .banner[data-google-analytics-payload]
-||yimg.com/*/js/generic_yset_search-min.js^
 msn.com#$##skypefredialogcontainer[data-aop="skypefredialog"] { display: none!important; }
 msn.com#$#body { overflow: initial!important; }
 cnews.ru##.video.img-block

@@ -1,6 +1,6 @@
 ![Adblock Plus 2.0]
-! Checksum: uGke15Lo98BA7pdca0V+5w
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1772084121-3600.patch
+! Checksum: kMWHpn97bkGiaz83a6a3pA
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1772161642-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.12
@@ -1452,6 +1452,7 @@ alfresco-holidays.com,alfresco-holidays.nl,alfresco-camping.de,eurocamp.co.uk#@#
 ://ad.*?pid=
 ://adg.*/pub/
 ://adn.*/zone/
+://ads-js.
 ://adscdn.
 ://adspaces.
 ://adss.
@@ -1732,6 +1733,7 @@ _build=iclick-$popup
 ||acxiom-online.com^$3p
 ||ad-spire.net^$3p
 ||ad6.fr^$3p
+||adclick.lt^$3p
 ||adfurikun.jp^$3p
 ||adhslx.com^$3p
 ||adintop.com^$3p
@@ -1955,6 +1957,7 @@ _build=iclick-$popup
 ||tpctrust.com^$3p
 ||trafficroots.com^$3p
 ||traffictrade.pro^$3p
+||travelbar.tools^$3p
 ||trk-egestas.com^$3p
 ||truenat.bid^$3p
 ||viahelium.com^$3p
@@ -1990,7 +1993,6 @@ _build=iclick-$popup
 ||lt45.net^$3p
 ||newstat.net^$3p
 ||static-dscn.net^$3p
-||deskbabes.com^$3p
 ||virtuagirl.com^$3p
 ||0w1rqq69fi0e.com^
 ||2mjphz1zeyyz38nbw.cyou^
@@ -2078,7 +2080,6 @@ _build=iclick-$popup
 ||backforward.bid^
 ||backjawpodatus.com^
 ||balsamoscious.com^
-||bandiestonish.com^
 ||barazasieve.click^
 ||basetts.com^
 ||bbnfcfrvjs.com^
@@ -2506,7 +2507,6 @@ _build=iclick-$popup
 ||opsktp.com^
 ||oremantolsey.com^
 ||othersides.top^
-||oursty.com^
 ||ovologysnoops.com^
 ||oweltyagruif.com^
 ||ozjga.top^
@@ -2821,6 +2821,7 @@ _build=iclick-$popup
 ||agileskincareunrented.com^$popup
 ||agkn.com^$popup,3p
 ||alitems.com^$popup,3p
+||amazing-dates.com^$popup
 ||anrdoezrs.net^$popup,3p
 ||badoink.com^$popup,3p
 ||boonsex.com^$popup,3p
@@ -2909,7 +2910,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ||ams.cdn.arkadiumhosted.com/advertisement/$media
 ||ams.cdn.arkadiumhosted.com/advertisement/display/*/display-ads.js
 ||api.gamerprices.com/compare/$3p
-||apycdn.com^*/banner/
 ||arc.io/widget$3p
 ||asumi.shinobi.jp^
 ||autotrends.be^*/widget/$3p
@@ -3470,7 +3470,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###block-gc-ad-bloc-droite-1
 ###block-gc-ad-dhtml
 ###block-gc-ad-megaban-haut
-###block_pub
 ###bottom-adv
 ###bottom_ad_space
 ###bottom_pub
@@ -3710,7 +3709,6 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ###right_ad_4
 ###right_pub
 ###right_slide_pub
-###rightcolumn_160x600ad
 ###rightrail-ad-2
 ###roundPub
 ###sagreklam
@@ -3885,6 +3883,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.jnews_article_bottom_ads
 ##.jnews_article_top_ads
 ##.job-ads
+##.js-ads-imu-sticky
 ##.label-pub-span
 ##.labelPub
 ##.label_advertising
@@ -3929,6 +3928,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.oboxads
 ##.oboxads-ad-widget
 ##.oboxads-outstream
+##.ocultar-ad
 ##.of-ad-container
 ##.padscreen
 ##.page-head-ad
@@ -4108,6 +4108,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.shopperAds
 ##.side-pub
 ##.side_slide_pub
+##.sidebar-ads160
 ##.sidebar-adv
 ##.sidebar-header-pub
 ##.sidebar-wrapper-advert
@@ -4136,7 +4137,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##.sponsored_banner
 ##.sponsorfooter
 ##.squareadboxext
-##.srcPub
+##.squareadevertise
 ##.srcPubZone
 ##.stackcommerce-widget
 ##.stage-advertising
@@ -4211,6 +4212,7 @@ $stylesheet,3p,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|allviid.xy
 ##a[href^="https://pornworks.com/fr/undress/image?utm_source="]
 ##div[data-ad]
 ##div[data-iab-tag]
+echoroukonline.com###Advertisement
 basketusa.com###Basketusa_Habillage
 annoncesbateau.com###BlocPartenaires
 caradisiac.com###Habillage2
@@ -4281,7 +4283,6 @@ millenium.gg###logo_droite
 laposte.net###lpn_pub_main
 hellokids.com###mask
 gulli.fr###masthead
-lafranceagricole.fr###materielOccasion
 sfr.fr###meeticWrapper
 goldenmoustache.com###mega-hab
 autojournal.fr,autoplus.fr,lejournaldelamaison.fr,mariefrance.fr###megabanner_bottom
@@ -4523,6 +4524,7 @@ constructeurdemaison.net,ffr.fr,gameblog.fr,lexpress.fr,mensup.fr,swissquote.ch,
 caci.dz,lavenir.net,nintendo-master.com,ogaming.tv,savefrom.net##.partners
 grands-reportages.com,montagnes-magazine.com##.pavepub
 footballclubdemarseille.fr##.pb-sidebar-article
+envertetcontretous.fr##.pb300
 ledenicheur.fr##.pjra-w-\[970px\]
 pagesjaunes.fr##.place-reservee
 lexpress.fr##.placeholder--ban-atf-wrapper
@@ -4737,6 +4739,7 @@ undernews.fr##img[width][height][alt$="VPN"]
 tvanouvelles.ca##li.dfpMultiflexStickyBigBox
 leroymerlin.fr##li[data-product-list-id*="sponsored"]
 bol.com##section.js_slot-sponsored-products
+virusphoto.com##table[width="300"][height="280"]
 solutions-numeriques.com##td[onclick^="window.open('https://www.solutions-numeriques.com/r/?"]
 wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.btnnew
 wiflix-max.*,wiflix-catalogue.*,wiflix-hd.*,wiflix-pro.*,wiflixien.*##.sadst
@@ -4791,6 +4794,7 @@ zataz.com##.custom-sidebar:has(h3:contains(/Partenaires|Publicité/))
 @@|blob:$popup,domain=caf.fr|cerise-prim.fr|particulier.edf.fr
 @@||francesurfinfo.com/affiliation/
 @@||koifaire.com/upload/*/300x250-$image,~3p
+@@||partner.skiset.com/js/partnerIntegration.js$script
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,3p,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,3p
 @@||pharmnet-dz.com/img/pubs/738_Conception%20sans%20titre%20(11).png
