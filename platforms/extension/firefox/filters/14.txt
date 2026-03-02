@@ -1,9 +1,9 @@
-! Checksum: +2trzMf+8Pr5de592ibXCA
-! Diff-Path: ../patches/14/14-s-1772458456-3600.patch
+! Checksum: AFfYjA3/6c6cy2R/1hiGJQ
+! Diff-Path: ../patches/14/14-s-1772461507-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.60.47
-! TimeUpdated: 2026-03-02T13:31:09+00:00
+! Version: 2.2.60.48
+! TimeUpdated: 2026-03-02T14:21:47+00:00
 ! Expires: 10 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26472,6 +26472,8 @@ inews.co.uk,pinterest.com#%#//scriptlet('set-constant', 'google.accounts.id.prom
 /.*/$permissions=identity-credentials-get=(),document
 !
 ! Log in with Yandex popup
+||autofill.yandex.ru/suggest?$third-party
+! TODO: remove specifice rules 01.04.2026 if there are no problems
 ||autofill.yandex.ru/suggest?$domain=dtf.ru|vc.ru|hexlet.io|rnk.ru|ig-store.ru|fishki.net|glavbukh.ru|sport24.ru
 klerk.ru#?#iframe[src^="https://autofill.yandex.ru/suggest?"][src*="widget"]
 sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
@@ -53390,6 +53392,7 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+computerbase.de##.promobar
 arkm.com##div[class*="mfaBannerContainer"]
 xn--pckua2a7gp15o89zb.com##.s-modal-trigger_cmOnboarding
 manzoku.or.jp###scrollbox-non
