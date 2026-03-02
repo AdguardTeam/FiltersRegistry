@@ -1,9 +1,9 @@
-! Checksum: j/ZoIN/3pazq3HO5YyRFsA
-! Diff-Path: ../patches/18_optimized/18_optimized-s-1772475804-3600.patch
+! Checksum: 8WnpisCIMtkGQXMvquCLXA
+! Diff-Path: ../patches/18_optimized/18_optimized-s-1772489716-3600.patch
 ! Title: AdGuard Cookie Notices filter (Optimized)
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.81.94
-! TimeUpdated: 2026-03-02T18:19:58+00:00
+! Version: 2.0.81.95
+! TimeUpdated: 2026-03-02T22:12:15+00:00
 ! Expires: 5 days (update frequency)
 !#######################################################
 !######### General element hiding rules ################
@@ -1520,6 +1520,7 @@ cmp.focus.de#%#//scriptlet('trusted-click-element', '.sp_choice_type_9[title*="Z
 tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$?#div[consent-skip-blocker] { remove: true; }
 tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#body[style] { overflow: auto !important; }
 tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteraner-rechtsanwaelte.de,hardware-helden.de,naheland-apotheken.de,homeoftravel.de,greenit.systems,accace.pl,entrack.pl,kraemer-it.de,teslawissen.ch,scootertechno.com,mysize.ch,aeotec.com,geschichte-wissen.de,4kfilme.de,pk.edu.pl,warzywapolowe.pl,airportwebcams.net#$#html[style] { overflow: auto !important; }
+beincrypto.com##div[class^="CookieManagerWarning-"]
 pullandbear.com##.bottom-alert-container
 cmp.sauto.cz#%#//scriptlet('trusted-click-element', '.szn-cmp-dialog-container >>> button[data-testid="cw-button-agree-with-ads"]', '', '4000')
 blog.sarar.com###cookie-law-info-bar
@@ -2289,7 +2290,7 @@ police.uk###js-consent-banner
 giga.chat##div[class^="GDPRBanner_"]
 psg.fr#%#//scriptlet('trusted-click-element', '.global-footer .cookie-button-container button[data-trk-id="reject-marketing-cookies"]')
 timeweb.cloud#%#//scriptlet('set-local-storage-item', 'cookieConfirm', 'true')
-shop.mango.com#%#//scriptlet('trusted-click-element', 'dialog[class^="CookiesWrapper_cookiesWrapper"] button[aria-disabled="false"]:not([id$=".acceptAll"])', '!cookie:consentCookie')
+shop.mango.com#%#//scriptlet('trusted-click-element', 'dialog[class^="CookiesWrapper_cookiesWrapper"] button[aria-disabled="false"] +  button[aria-disabled="false"]:has(+ button[aria-disabled="false"])', '!cookie:consentCookie')
 chollometro.com,preisjaeger.at,pepperdeals.com,pepperdeals.se#%#//scriptlet('trusted-click-element', '#app .popover-content.flex--inline button[data-t="rejectAll"]', '!cookie:cookie_policy_agreement')
 radyofenomen.com#%#//scriptlet('set-cookie-reload', 'isSiteCookieReviewed', '0')
 microbit.org#%#//scriptlet('trusted-set-cookie', 'MBCC', '%7B%22version%22%3A1%2C%22functional%22%3Afalse%2C%22analytics%22%3Afalse%7D')
