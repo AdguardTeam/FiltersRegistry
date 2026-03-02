@@ -1,9 +1,9 @@
-! Checksum: nMl9WKOt+RYNIAAo+/WKAg
-! Diff-Path: ../patches/14/14-s-1772461525-3600.patch
+! Checksum: GkOzCYgiQI7a9ImKX57VgQ
+! Diff-Path: ../patches/14/14-s-1772464978-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.60.48
-! TimeUpdated: 2026-03-02T14:21:47+00:00
+! Version: 2.2.60.49
+! TimeUpdated: 2026-03-02T15:19:53+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -26876,6 +26876,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+x.com###react-root div[data-testid="BottomBar"]:has(> div[class^="css-"] div[class^="css-"][style^="flex-grow: 1; margin-left:"] > a[href^="/i/flow/signup"])
+trivago.com.tr##div[data-interaction="login-banner"]
 ostrovok.ru##div[data-floating-ui-portal] > div[class^="ApartmentsFilter-module__tooltip"]
 crn.com#$#.site-alert { display: none !important; }
 crn.com#$#body { margin-top: 0 !important; }
@@ -45251,6 +45253,8 @@ rxgo.com,alfastrah.ru,turkishairlines.com,atmos-tokyo.com,radarbox.com,ciceksepe
 !
 !
 !
+trabzonspor.com.tr##.iyosa-smart-app-banner-container
+trivago.com.tr##div[data-testid="app-install-section"]
 damattween.com#%#//scriptlet('set-local-storage-item', 'mobileAppInstall', 'true')
 jackjones.com.tr##div[class*="appbannerflyout"]
 kap.org.tr###mobile-smartbanner
@@ -49200,6 +49204,9 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+x.com###react-root main[class^="css-"] > div[class^="css-"] > div[class^="css-"]:has(> a[href^="https://apps.apple.com/app"])
+x.com###react-root main[class^="css-"] > div[class^="css-"] > div[class^="css-"]:has(> a[href^="market://details?id=com.twitter.android&referrer"])
+trivago.com.tr##aside[data-testid="app-install-mobile-banner"]
 aeroflot.ru###mobileAppInfo
 indeed.com###mosaic-provider-app-download-promos-service
 massimodutti.com##app-top-notification
@@ -53917,6 +53924,8 @@ www.kinopoisk.ru##footer > div:has(> div > div[data-testid="kp-ui.amediateka-foo
 !
 ! SECTION: Self-promo - Regular rules
 !
+justwatch.com##.mrr-banner
+justwatch.com##.removal-container
 computerbase.de##.promobar
 arkm.com##div[class*="mfaBannerContainer"]
 xn--pckua2a7gp15o89zb.com##.s-modal-trigger_cmOnboarding
