@@ -1,5 +1,5 @@
-! Checksum: UbuMBr06k32iq+qjoEVOvQ
-! Diff-Path: ../patches/16_optimized/16_optimized-s-1772381612-3600.patch
+! Checksum: JbdwF+hMAAvVnjaeRuoHug
+! Diff-Path: ../patches/16_optimized/16_optimized-s-1772420872-3600.patch
 ! Title: AdGuard French filter (Optimized)
 ! Description: Liste FR + AdGuard French filter. Filter list that specifically removes ads on websites in French language.
 ! Version: 2.0.56.15
@@ -387,6 +387,7 @@ europe1.fr##.content-display[class*="ban-h"]
 europe1.fr###block-europe1-pubatfsidebar
 filmoflix.money,filmoflix.ad,papadustream.*,cpasfini.me,cinez.net,cpasmieux.club,papadustream.cash###playerOver
 filmoflix.money,filmoflix.ad,papadustream.*,papadustream.cash##.g-buttons
+terre-bitume.org##table[class="forumline 11ababa"]
 anime-sama.eu##div[id^="bann"][id$="t"]
 ici.radio-canada.ca##div[class^="_adBoxReset"]
 planhub.ca##.h-banner
@@ -1647,6 +1648,7 @@ _board_ad.
 _display_ad_
 _domain=ads.
 _event_pub.
+_fr/ads/
 _id=*&nads=
 _iframe728x90.
 _isab.
@@ -1972,7 +1974,6 @@ _build=iclick-$popup
 ||svonm.com^$third-party
 ||tagsrvcs.com^$third-party
 ||tapub.fr^$third-party
-||tdsapi.com^$third-party
 ||tdscd.com^$third-party
 ||templatehelp.com^$third-party
 ||thereforem.com^$third-party
@@ -2276,6 +2277,7 @@ _build=iclick-$popup
 ||enmbg.com^
 ||entrapsoorki.top^
 ||enviousthread.com^
+||eonads.com^
 ||epilreoffer.com^
 ||epiurallass.com^
 ||eshii.ru^
@@ -2754,6 +2756,7 @@ _build=iclick-$popup
 ||vealedincite.com^
 ||veritabledate.com^
 ||videoadex.com^
+||videocdnmetrika31.com^
 ||vidox.net^
 ||viiadr.com^
 ||viipura.com^
@@ -2967,6 +2970,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||ecchi.fr/banieres/
 ||echangegagnant.com^$image,third-party
 ||edenai.go2cloud.org^
+||ehanex.com/images/main/banner_
 ||eiffelturf.com/img/$third-party
 ||embed.ly^*.amazon.
 ||emploipartner.com/uploads/media/5fb6411bbfd4d310595939.jpg
@@ -2984,7 +2988,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||flux.effiliation.com^
 ||forokeys.com/foro/banners/
 ||fpcplugs.com/do.cgi?
-||free.fr/images/bannieres/
 ||fsx.i-run.fr^
 ||fuckandcdn.com^*/ads/
 ||fusion.localpoint.ch/widgets/$third-party
@@ -3052,7 +3055,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||ratehub.ca/widgets/$third-party
 ||recettes.de/images/logos/$third-party
 ||regie-agricole.com^*/pubs^$third-party
-||rencontreshard.com^$subdocument
 ||roxservers.com/images/banners/
 ||rza.pmu.fr^
 ||s.beop.io^
@@ -3210,6 +3212,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ||temu.com^*_ads_$popup
 ||x-flirt.co^$popup
 ||xcams.com/?dsclr=$popup
+||xlovecam.com/promo/$popup
 ||youporn.com^*?utm_$popup
 ||zt-za.fr/redirect.$popup
 ||1001jeux.fr/bfb/
@@ -3603,7 +3606,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ###psreklama
 ###pub-300-250
 ###pub-300x250
-###pub-468x60
 ###pub-728x90
 ###pub-after-adownload
 ###pub-bottom
@@ -4001,6 +4003,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.pub-label
 ##.pub-pave
 ##.pub-promo
+##.pub-push-produit
 ##.pub-replace
 ##.pub-right
 ##.pub-text
@@ -4173,7 +4176,6 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.text_pub
 ##.texte_ads_plug
 ##.texte_pub
-##.thumb_player_pub
 ##.tipps-content-ad
 ##.titrePub
 ##.toast-ad
@@ -4183,6 +4185,7 @@ $stylesheet,third-party,domain=1fichier.com|7-up.net|9xupload.me|adshrinks.com|a
 ##.top_banner_ads
 ##.top_reklama
 ##.topleftad
+##.toppubs
 ##.tradingCenterAd
 ##.txt-pub
 ##.txt-top-publicity
@@ -4293,6 +4296,7 @@ bdgest.com,bedetheque.com###hab_click
 bdgest.com,bedetheque.com###hab_click_side
 banques-en-ligne.fr,bd-sanctuary.com,bioalaune.com,c8.fr,cine-sanctuary.com,comics-sanctuary.com,ffeminin.com,gamer-network.fr,jeux-mmorpg.fr,lequipement.fr,letelegramme.fr,nrj.fr###habillage
 buzzdefou.com,gerardmerinfo.fr###habillage_site
+auto-utilitaire.com###header_3
 intellego.fr###header_top
 leboncoin.fr###home-top-banner
 madstef.com###idkey1ban
@@ -4440,7 +4444,6 @@ journaldemontreal.com##.bigbox-container
 autonews.fr##.bl-partner
 egora.fr##.block-egora-pub
 cotemaison.fr##.block_partners
-aveq.ca##.blog-sidebar a > img
 techniques-ingenieur.fr##.boxPub
 lepoint.fr##.branding
 gamergen.com,generation-nt.com##.bup
@@ -4821,9 +4824,11 @@ zataz.com#?#.custom-sidebar:has(h3:contains(/Partenaires|Publicité/))
 @@||partners.doctolib.fr/doctors/detect_partner_profile?$script,third-party,domain=aphp.fr
 @@||partners.doctolib.fr^$subdocument,third-party
 @@||pharmnet-dz.com/img/pubs/738_Conception%20sans%20titre%20(11).png
+@@||planet-casio.com/images/ad/$image,~third-party
 @@||publicwww.com/images/labels.$image,~third-party
 @@||quefaire.be/annonces/imgads/$image
 @@||static.s-sfr.fr/resources/custom/adsl/
+@@||syndication.twitter.com/tweets.json?*&ids=*&lang=*&suppress_response_codes=$script
 @@||videos-pub.ftv-publicite.fr/player/ad2play.js$domain=tv5mondeplus.com
 @@||ab.9xbud.com/extract|$xmlhttprequest,domain=9xbuddy.online
 @@||ab.9xbud.com/token|$xmlhttprequest,domain=9xbuddy.online
