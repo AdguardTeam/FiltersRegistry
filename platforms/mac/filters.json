@@ -61,8 +61,8 @@
 			"displayNumber": 1,
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/2.txt",
-			"version": "2.4.50.60",
-			"timeUpdated": "2026-03-02T11:18:30+0000",
+			"version": "2.4.50.61",
+			"timeUpdated": "2026-03-02T12:17:24+0000",
 			"languages": []
 		},
 		{
@@ -74,8 +74,8 @@
 			"displayNumber": 1,
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/3.txt",
-			"version": "2.1.0.80",
-			"timeUpdated": "2026-03-02T11:18:37+0000",
+			"version": "2.1.0.81",
+			"timeUpdated": "2026-03-02T12:17:31+0000",
 			"languages": []
 		},
 		{
@@ -87,8 +87,8 @@
 			"displayNumber": 1,
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/4.txt",
-			"version": "2.1.25.50",
-			"timeUpdated": "2026-03-02T09:22:49+0000",
+			"version": "2.1.25.51",
+			"timeUpdated": "2026-03-02T12:17:33+0000",
 			"languages": []
 		},
 		{
@@ -236,8 +236,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.2.60.45",
-			"timeUpdated": "2026-03-02T11:18:58+0000",
+			"version": "2.2.60.46",
+			"timeUpdated": "2026-03-02T12:17:50+0000",
 			"languages": []
 		},
 		{
@@ -253,8 +253,8 @@
 				"ext_chromium_mv3",
 				"ext_opera_mv3"
 			],
-			"version": "2.1.13.48",
-			"timeUpdated": "2026-03-02T10:21:32+0000",
+			"version": "2.1.13.49",
+			"timeUpdated": "2026-03-02T12:17:51+0000",
 			"languages": []
 		},
 		{
@@ -299,8 +299,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/18.txt",
-			"version": "2.0.81.90",
-			"timeUpdated": "2026-03-02T11:19:04+0000",
+			"version": "2.0.81.91",
+			"timeUpdated": "2026-03-02T12:17:54+0000",
 			"languages": []
 		},
 		{
@@ -338,8 +338,8 @@
 			"displayNumber": 2,
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/mac/filters/21.txt",
-			"version": "2.0.42.9",
-			"timeUpdated": "2026-03-02T08:19:04+0000",
+			"version": "2.0.42.10",
+			"timeUpdated": "2026-03-02T12:17:57+0000",
 			"languages": []
 		},
 		{
