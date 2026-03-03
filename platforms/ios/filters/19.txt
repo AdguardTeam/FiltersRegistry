@@ -1,9 +1,9 @@
-! Checksum: Ky/xHLRVdFglYwvmfkiUmA
-! Diff-Path: ../patches/19/19-s-1772526002-3600.patch
+! Checksum: HgHUsW4RUaLONTn/IQbcsA
+! Diff-Path: ../patches/19/19-s-1772529766-3600.patch
 ! Title: AdGuard Popups filter
 ! Description: Blocks all kinds of pop-ups that are not necessary for websites' operation according to our Filter policy.
-! Version: 2.0.71.37
-! TimeUpdated: 2026-03-03T08:17:04+00:00
+! Version: 2.0.71.38
+! TimeUpdated: 2026-03-03T09:19:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -633,6 +633,7 @@ armidaleexpress.com.au,bendigoadvertiser.com.au,canberratimes.com.au,centralwest
 ! The rules for content blockers only:
 ! LINK: AnnoyancesFilter/Popups/sections/antiadblock.txt#content_blockers
 !
+ghxi.com##div[style^="padding:10px;position: fixed;bottom: 0;left: 0;right:0;z-index: 99;"]
 ||novelgecesi.com/js/adblock.js
 automoto.it###app-checkext-template:not(#style_important)
 jakondo.ru##div[id^="adblock-banner-"]
@@ -2198,8 +2199,8 @@ u.gg#@##ad-lead
 pushsquare.com#@#.insert
 pushsquare.com#@#.for-desktop
 pushsquare.com#@#.masthead
-overclock3d.net,boingboing.net#@#.ad-unit:not(.textads)
-overclock3d.net,boingboing.net#@#.ad_unit
+mothergrid.de,overclock3d.net,boingboing.net#@#.ad-unit:not(.textads)
+mothergrid.de,overclock3d.net,boingboing.net#@#.ad_unit
 @@||kickasssubtitles.com/js/fuckadblock.js
 @@||fussballtransfers.com/lib/prebid*.js
 @@||fussballtransfers.com/build/js/adManager.*.js
@@ -3508,6 +3509,8 @@ sport-express.ru,pikabu.ru##iframe[src^="https://autofill.yandex.ru/suggest?"]
 !
 ! SECTION: Popups - Regular rules
 !
+ghxi.com#$#.gh-container { display: none !important; }
+ghxi.com#$#body { overflow: auto !important; }
 uslugi.mosreg.ru#%#//scriptlet('set-cookie', 'dobrobot_window', 'true')
 oricon.co.jp##.modalArea-small
 blog.sarar.com##.modal-dialog
@@ -12663,6 +12666,11 @@ gaugau.futabanet.jp,newscientist.com,jiji.com,edp24.co.uk,technologyreview.com,n
 !
 ! SECTION: Subscriptions - Regular rules
 !
+eluniversal.com.mx##.sc__google-news
+speedweek.com##section[class^="_promoSection_"]
+metaratings.ru##div[class^="Subscribe-module-"][class$="__subscribe"]
+nashemisto.dp.ua##.after-post-content > p.mt-4:has(> a[href="https://t.me/nashemisto_dp"])
+nashemisto.dp.ua##main > section:has(> div.textwidget > a[href^="https://news.google.com/publications/"])
 beincrypto.com##div[class^="NewslettersBannerWithFormBlack"]
 lee.com.tr##.ins-pos-middle-center
 lee.com.tr###ins-frameless-overlay

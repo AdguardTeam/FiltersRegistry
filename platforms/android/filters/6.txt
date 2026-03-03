@@ -1,9 +1,9 @@
-! Checksum: IIOb5bjcfPUelN0u8K8meg
-! Diff-Path: ../patches/6/6-s-1772472229-3600.patch
+! Checksum: +YV/miyE/cRR+cnxyzOvKw
+! Diff-Path: ../patches/6/6-s-1772529739-3600.patch
 ! Title: AdGuard German filter
 ! Description: EasyList Germany + AdGuard German filter. Filter list that specifically removes ads on websites in German language.
-! Version: 2.0.51.32
-! TimeUpdated: 2026-03-02T17:20:46+00:00
+! Version: 2.0.51.33
+! TimeUpdated: 2026-03-03T09:19:04+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -371,6 +371,8 @@ schnittmuster-datenbank.de#%#//scriptlet("abort-on-property-read", "adsBlocked")
 !
 ! NOTE: Regular rules
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/226092
+speedweek.com#%#//scriptlet('prevent-setTimeout', 'offsetHeight')
 ! https://github.com/AdguardTeam/AdguardFilters/issues/223787
 radioszene.de#$?##modal-extended-adblocker { remove: true; }
 ! https://github.com/AdguardTeam/AdguardFilters/issues/219175
@@ -1466,6 +1468,12 @@ it-administrator.de,formel1.de,krautundrueben.de,motorsport-total.com,traktorpoo
 !
 ! NOTE: Specific rules
 !
+speedweek.com##div[class*="_bannerContainer"]
+speedweek.com##div[class^="_headerPlacementsContainer_"]
+speedweek.com##div[class^="_ad"]
+mothergrid.de##.a2t-link
+mothergrid.de##div[class^="gb-element-"]:has(.mothe-adlabel)
+mothergrid.de##.preheader-ad
 gartenforum.de#%#//scriptlet('remove-attr', 'href', 'a[href][class^="amazon-affiliate"]')
 gartenforum.de#%#//scriptlet('remove-class', 'amazon-affiliate')
 gartenforum.de##.adsense_inpost
