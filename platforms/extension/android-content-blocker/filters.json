@@ -366,8 +366,8 @@
 			"groupId": 1,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/2.txt",
 			"trustLevel": "full",
-			"version": "2.4.50.81",
-			"timeUpdated": "2026-03-03T10:17:52+0000",
+			"version": "2.4.50.82",
+			"timeUpdated": "2026-03-03T11:15:23+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -389,8 +389,8 @@
 			"groupId": 2,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/3.txt",
 			"trustLevel": "full",
-			"version": "2.1.0.87",
-			"timeUpdated": "2026-03-03T10:17:58+0000",
+			"version": "2.1.0.88",
+			"timeUpdated": "2026-03-03T11:15:31+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -410,8 +410,8 @@
 			"groupId": 3,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/4.txt",
 			"trustLevel": "full",
-			"version": "2.1.25.58",
-			"timeUpdated": "2026-03-03T09:19:00+0000",
+			"version": "2.1.25.59",
+			"timeUpdated": "2026-03-03T11:15:34+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -624,8 +624,8 @@
 				"ext_opera_mv3"
 			],
 			"trustLevel": "full",
-			"version": "2.2.60.61",
-			"timeUpdated": "2026-03-03T10:18:16+0000",
+			"version": "2.2.60.62",
+			"timeUpdated": "2026-03-03T11:15:56+0000",
 			"languages": [],
 			"tags": [
 				5,
@@ -727,8 +727,8 @@
 			"groupId": 4,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/19.txt",
 			"trustLevel": "full",
-			"version": "2.0.71.39",
-			"timeUpdated": "2026-03-03T10:18:22+0000",
+			"version": "2.0.71.40",
+			"timeUpdated": "2026-03-03T11:16:02+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1709,8 +1709,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://filters.adtidy.org/extension/android-content-blocker/filters/224.txt",
 			"trustLevel": "full",
-			"version": "2.1.55.8",
-			"timeUpdated": "2026-03-03T10:18:28+0000",
+			"version": "2.1.55.9",
+			"timeUpdated": "2026-03-03T11:16:09+0000",
 			"deprecated": false,
 			"languages": [
 				"zh"
