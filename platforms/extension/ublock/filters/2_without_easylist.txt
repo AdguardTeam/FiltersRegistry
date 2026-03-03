@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: dSDHAcMSJOucZ6DsfR+EMw
-! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1772540452-3600.patch
+! Checksum: aRD6XZ0rozDjWOOcKLpbfg
+! Diff-Path: ../patches/2_without_easylist/2_without_easylist-s-1772544812-3600.patch
 ! Title: AdGuard Base filter
 ! Description: This filter is necessary for quality ad blocking.
-! Version: 2.4.50.83
-! TimeUpdated: 2026-03-03T12:17:11+00:00
+! Version: 2.4.50.84
+! TimeUpdated: 2026-03-03T13:29:31+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -25178,6 +25178,14 @@ bieganie.pl##.biega-nb-paris > DIV[style^="text-align:"]:contains(Reklama)
 gospodarkamorska.pl##.Home_categories_box > div.polecamy-slider > div[class*="poster-dnone-"]
 onet.pl##a[href^="https://milionymonet.onet.pl/"]
 pograne.eu###custom_html-8
+! https://github.com/AdguardTeam/AdguardFilters/issues/226120
+miasto.in#@#.adunit
+miasto.in##body:style(overflow: auto !important;)
+miasto.in###adblock-overlay:style(display: none !important;)
+miasto.in##+js(no-setTimeout-if, .offsetHeight === 0)
+miasto.in##.sidebar-widget-area > .widget_media_image:has(a > img)
+miasto.in##.entry-content > .also-box-wrapper:has(> .also-box-block > a[target="_blank"])
+miasto.in##.elementor-widget-container > div[style="text-align: center;"]:has(> a[target="_blank"])
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225723
 @@||hiperinfo.pl/popup3.js
 hiperinfo.pl##+js(abort-current-script, document.getElementById, /\.innerHTML\+=|adblMsg/)
@@ -36727,6 +36735,12 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+camsmut.com##+js(addEventListener-defuser, click, clk)
+camsmut.com##row:has(a[href*="?free-sex-live-cam-chat"])
+camsmut.com##.cnttt > div[class]:has(a[href^="/g/live-chat"])
+camsmut.com##a[class*="noselect no-drag"][href^="/g/chat"]
+camsmut.com##.navigation2 a[target="_blank"]
+camsmut.com##a[href="/g/live-chat"]
 ixbt.games##article > div.not-prose:has(> div[id^="ad-"])
 tokenview.io##.header_tips:has(> .sevioads)
 cloudfam.io##+js(no-window-open-if)
