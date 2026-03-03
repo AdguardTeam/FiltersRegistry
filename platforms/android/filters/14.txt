@@ -1,9 +1,9 @@
-! Checksum: +ou5xZ9tJvtfNCnwEB8aDg
-! Diff-Path: ../patches/14/14-s-1772502130-3600.patch
+! Checksum: o4jS0uA1/dNMWXQPTRm+GQ
+! Diff-Path: ../patches/14/14-s-1772507371-3600.patch
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.60.54
-! TimeUpdated: 2026-03-03T01:39:26+00:00
+! Version: 2.2.60.55
+! TimeUpdated: 2026-03-03T03:06:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -18468,6 +18468,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/226062
+@@||cdn.cookie-script.com/s/*.js$domain=ddiamond.com.tr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225721
 @@||cdn.cookie-script.com^$script,xmlhttprequest,domain=streetstyle24.pl
 streetstyle24.pl#@##cookiescript_injected_wrapper
@@ -48871,6 +48873,7 @@ m.tokopedia.com#$#div[data-testid="divOverlay"] { display: none!important; }
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 ~odaibako.net,~lineup.withgoogle.com,~vert.sh,~search.brave.com,~status.im,~lafenice.io,~kurer-sreda.ru,~chorki.com,~zattoo.com,~zaycev.net,~hitta.se,~mail.ru,~facebook.com,~instagram.com,~drive.google.com$$link[rel="manifest"]
 !
+endeksa.com##div[ng-include="'app/shell/modal-mobile.html'"]
 x.com###react-root main[class^="css-"] > div[class^="css-"] > div[class^="css-"]:has(> a[href^="https://apps.apple.com/app"])
 x.com###react-root main[class^="css-"] > div[class^="css-"] > div[class^="css-"]:has(> a[href^="market://details?id=com.twitter.android&referrer"])
 trivago.com.tr##aside[data-testid="app-install-mobile-banner"]

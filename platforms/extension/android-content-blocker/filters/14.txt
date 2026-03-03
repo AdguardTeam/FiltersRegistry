@@ -1,8 +1,8 @@
-! Checksum: zGqBZJPVDGW0T+Pcz76J5Q
+! Checksum: Ewol6+T9WEBSUo1UlKR1gg
 ! Title: AdGuard Annoyances filter
 ! Description: Blocks irritating elements on web pages including cookie notices, third-party widgets and in-page pop-ups. Contains the following AdGuard filters: Cookie Notices, Popups, Mobile App Banners, Other Annoyances and Widgets.
-! Version: 2.2.60.54
-! TimeUpdated: 2026-03-03T01:39:26+00:00
+! Version: 2.2.60.55
+! TimeUpdated: 2026-03-03T03:06:40+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -12359,6 +12359,8 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_ext
 ! When request is blocked then there is an error "Unexpected token / in JSON at position 0"
 ! It's loaded by cdn.cookielaw.org/scripttemplates/otSDKStub.js, so it should be only unblocked on websites for which this script is unblocked
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/226062
+@@||cdn.cookie-script.com/s/*.js$domain=ddiamond.com.tr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225721
 @@||cdn.cookie-script.com^$script,xmlhttprequest,domain=streetstyle24.pl
 streetstyle24.pl#@##cookiescript_injected_wrapper
@@ -36268,6 +36270,7 @@ tekstilbank.com.tr,icbc.com.tr,212.109.224.91###mobileAppPanel
 ! Limit it to mobile versions only
 ! causes some issues: https://github.com/AdguardTeam/AdguardForMac/issues/550
 !
+endeksa.com##div[ng-include="'app/shell/modal-mobile.html'"]
 trivago.com.tr##aside[data-testid="app-install-mobile-banner"]
 aeroflot.ru###mobileAppInfo
 indeed.com###mosaic-provider-app-download-promos-service
