@@ -882,8 +882,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
 			"trustLevel": "high",
-			"version": "2.1.86.42",
-			"timeUpdated": "2026-03-03T20:43:39+0000",
+			"version": "2.1.86.43",
+			"timeUpdated": "2026-03-04T00:52:52+0000",
 			"deprecated": false,
 			"languages": [
 				"it"
@@ -957,8 +957,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
 			"trustLevel": "high",
-			"version": "2.1.86.41",
-			"timeUpdated": "2026-03-03T20:43:40+0000",
+			"version": "2.1.86.42",
+			"timeUpdated": "2026-03-04T00:52:53+0000",
 			"deprecated": false,
 			"languages": [
 				"ar"
@@ -1055,8 +1055,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://urlhaus-filter.pages.dev/urlhaus-filter-ag-online.txt",
 			"trustLevel": "low",
-			"version": "2.1.6.52",
-			"timeUpdated": "2026-03-03T12:47:15+0000",
+			"version": "2.1.6.53",
+			"timeUpdated": "2026-03-04T00:53:12+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1379,8 +1379,8 @@
 			"groupId": 7,
 			"subscriptionUrl": "https://easylist-downloads.adblockplus.org/indianlist.txt",
 			"trustLevel": "low",
-			"version": "2.0.79.73",
-			"timeUpdated": "2026-03-03T20:44:23+0000",
+			"version": "2.0.79.74",
+			"timeUpdated": "2026-03-04T00:53:42+0000",
 			"deprecated": false,
 			"languages": [
 				"hi"
@@ -1427,8 +1427,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-ag.txt",
 			"trustLevel": "low",
-			"version": "2.0.13.50",
-			"timeUpdated": "2026-03-03T12:47:41+0000",
+			"version": "2.0.13.51",
+			"timeUpdated": "2026-03-04T00:53:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
@@ -1467,8 +1467,8 @@
 			"groupId": 5,
 			"subscriptionUrl": "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt",
 			"trustLevel": "low",
-			"version": "2.0.10.75",
-			"timeUpdated": "2026-03-03T16:46:48+0000",
+			"version": "2.0.10.76",
+			"timeUpdated": "2026-03-04T00:53:46+0000",
 			"deprecated": false,
 			"languages": [],
 			"tags": [
