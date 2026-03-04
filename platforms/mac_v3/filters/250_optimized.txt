@@ -1,5 +1,5 @@
-! Checksum: 8HqJwZU58+P9CfXUcSKrOA
-! Diff-Path: ../patches/250_optimized/250_optimized-s-1772556586-14400.patch
+! Checksum: qio/dAzUz3ZGDEPORrjByQ
+! Diff-Path: ../patches/250_optimized/250_optimized-s-1772600466-14400.patch
 ! Title: Dandelion Sprout's Annoyances List (Optimized)
 ! Description: This list is made in the style of AdGuard's and Fanboy's annoyances lists. It combines many of Dandelion Sprout's proudest and most frequently maintained international lists, as a curated compilation for simplicity's sake.
 ! Version: 2.0.19.13
@@ -20,7 +20,6 @@
 138.68.252.54$network
 ||fileplanet.com^$document,popup
 ||henrypp.org^$document,domain=~stolen_by_casino_spammers.*
-||iqtest.com^$document
 windowsreport.com##.code-block
 appuals.com##.info.box
 ugetfix.com,sauguspc.lt,wyleczpc.pl,sichernpc.de,pcseguro.es##div.attention-button-box-green
@@ -116,7 +115,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 /^192\.243\.59\.[12]?\d?\d$/$network
 !+ PLATFORM(windows, mac, android, cli)
 /^192\.243\.61\.[12]?\d?\d$/$network
-/scan-update-and-protect-your-browser.html$document
 /^https?://\d\d?\.[a-z0-9-]{1,}\.(club|me)(/.*)?$/$document
 ||instantfwding.com^$all
 [2a02:1668:1034::2]$network
@@ -309,12 +307,10 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 ||inquirygrid.com^$all
 ||searchingredirect.com^$all,domain=~malware_redirection_trains.*
 /page/bouncy.php?$all
-://trk.*.run/$document,domain=~very_likely_a_malware_redirection_train.*
 ||jsmcrptjmp.com^$all
 !+ PLATFORM(windows, mac, android, cli)
 93.93.51.223$network
 ||livejasmin.com/*&origin=$document
-/^(.*//|.*\.)?github\.[a-z]{2,20}(/.*)?$/$document,match-case,~third-party,domain=github.*|~com|~org|~net|~co|~blog|~community|~host|~io|~microsoft|~office|~uk|~us|~xn--fiqs8s|~dev|~archive.*
 !+ PLATFORM(windows, mac, android, cli)
 103.174.102.240$network
 ://ap-trk.$all,domain=~malware_redirection_trains.*
@@ -394,7 +390,6 @@ softonic.*,softonic-ar.com,softonic-th.com##a[href*="://adblock."]
 213.209.143.119$network
 !+ PLATFORM(windows, mac, android, cli)
 94.156.232.201$network
-||appinstallcheck.com^$all
 ||click-v4.*.com^$all
 ||g2trck.com^$all
 ||junclikrmedi.com^$all
@@ -623,7 +618,6 @@ drvhub.net##.driver-item__install
 ||mediacpc.com^$all
 ||mobuppsrtb.com^$all
 ||optumads.com^$all
-||rtbfactory.com^$all
 ||thenetwork18.com^$all
 ||tropicalsands.club^$all
 [2a00:8860:10d:1::2:b01]$network
@@ -1108,7 +1102,6 @@ context.reverso.net#$#.blocked { filter: none !important; }
 linustechtips.com,forum.malwarebytes.com,community.ccleaner.com##.cTopicPostArea:has(.cGuestTeaser):not(:has(.ipsComposeArea_editor))
 ||subs.youmaker.com^$third-party
 ##.paywall-gradient:not(html, body)
-nijie.info##.nijie_regist
 instagram.com#?#div[class^=" _"][style^="width: "]:only-of-type:has(a[href^="/accounts/emailsignup/"])
 zeit.de#$#.paragraph--faded { overflow: visible !important }
 zeit.de#$#.paragraph--faded::before { background-image: none !important }
@@ -1433,6 +1426,7 @@ $removeparam=mindbox-message-key
 $removeparam=nx_source
 $removeparam=oprtrack
 $removeparam=ysclid
+&uclick=*&uclickhash=$document,removeparam
 /?rb=*&zoneid=$document,removeparam
 $removeparam=_bdadid
 $removeparam=_bhlid
@@ -1675,7 +1669,9 @@ $removeparam=FpAffiliate
 $removeparam=rfsn
 $removeparam=bclid
 $removeparam=afsrc
+$removeparam=lctid
 $document,removeparam=lcid,domain=~rekono.si
+$removeparam=usource
 $document,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $removeparam=c3ch
 $removeparam=c3nid
@@ -1745,7 +1741,6 @@ $removeparam=_branch_referrer
 $removeparam=vc_lpp
 $removeparam=aff_track
 $removeparam=cj_aid
-$removeparam=cj_cid
 $removeparam=cj_pid
 $removeparam=adj_campaign
 $removeparam=adj_adgroup
@@ -2011,6 +2006,7 @@ $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*
 $removeparam=from,document,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|feeder.co|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|tvtropes.org|mideacomfort.us|yandex.com
 $removeparam=keyword,domain=bindright.com|lendgo.com|reddit.app.link
+$removeparam=id,domain=go.redirectingat.com|go.skimlinks.com|go.skimresources.com|karkkainen.com
 $removeparam=offer_id,domain=catch.com.au|surfshark.com
 $document,removeparam=adid,domain=indeed.com|mcafee.com|nikkei.co.jp|tmz.com
 ||amazon.$removeparam=th
@@ -2064,7 +2060,6 @@ $removeparam=%2AVersion%2A,domain=amazon.*
 $removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ||amazon.*/dp/$removeparam=tag,document
-||amazon.*/stores/$removeparam=tag,document
 ||amazon.*/product/$removeparam=tag,document
 ||amazon.$removeparam=qu
 ||amazon.*/dp/$removeparam=rps,document
@@ -2648,6 +2643,7 @@ $removeparam=deep_and_deferred
 ||market.yandex.ru^$removeparam=cpc
 ||everesttech.net^$removeparam=/^ev_.*$/
 ||kelkoogroup.net^$removeparam=custom1
+||welt.de^$removeparam=wtrid
 ||lenovo.com^$removeparam=orgRef
 $removeparam=ppref,domain=digidip.net
 ||dhgate.com^$removeparam=f
@@ -2819,6 +2815,7 @@ ref=spreadprivacy.com$removeparam=ref
 ||github.com^$removeparam=reference_location
 $removeparam=afSmartRedirect
 $removeparam=adt_ei
+$document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
 $document,removeparam=icmp,domain=fortnite.com|lego.com|ho-mobile.it
 ||linkedin.com/feed/update$removeparam=origin
 $document,removeparam=cn,domain=twitter.com|x.com
@@ -2959,6 +2956,7 @@ $document,removeparam=maskChannel,domain=tmall.com|taobao.com
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=__ysp
 ||detail.chiebukuro.yahoo.co.jp^$document,removeparam=fr
 .com/*/status/$document,removeparam=t,domain=twitter.com|x.com
+||qwant.com^$removeparam=hti
 ||instagram.com^$document,removeparam=entry_point
 !+ NOT_OPTIMIZED
 ||www.rawstory.com^$removeparam=rsplus
@@ -3373,7 +3371,6 @@ flipkart.com##footer section + div:last-of-type
 ###custom-css .vjs-loading-spinner
 valdemarsro.dk###after-recipe .content
 valdemarsro.dk##a[href$="ttps://www.valdemarsro.dk/valdemarsro-premium/"]
-valdemarsro.dk##.kogebog-side
 valdemarsro.dk###recipe-intro p:last-of-type
 google.*#@##google-hats-survey
 ||appboycdn.com^$third-party
