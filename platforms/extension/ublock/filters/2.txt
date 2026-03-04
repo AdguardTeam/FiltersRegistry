@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: 0WVhDxSjbAZqcms3qVmNZQ
-! Diff-Path: ../patches/2/2-s-1772609043-3600.patch
+! Checksum: egHAYSvFCpv+ChPtGJNSzw
+! Diff-Path: ../patches/2/2-s-1772612302-3600.patch
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.4.51.2
-! TimeUpdated: 2026-03-04T07:20:25+00:00
+! Version: 2.4.51.3
+! TimeUpdated: 2026-03-04T08:14:30+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -32074,7 +32074,7 @@ sitenable.*,filesdownloader.com,siteget.net,freeproxy.io,glodls.to##+js(abort-cu
 sharevideo.pl,hugomovies.com,1337x.*##+js(abort-on-property-write, LAST_CORRECT_EVENT_TIME)
 sitenable.*,filesdownloader.com,siteget.net,freeproxy.io,glodls.to##+js(abort-on-stack-trace, navigator, Object.isFlashEnabled)
 mirrored.to,skidrowreloaded.com##+js(abort-current-script, Promise, FingerprintJS)
-mzansixporn.co.za,pahe.ink,pahe.*,vik1ngfile.site,romsdroid.com,game-repack.site,sterham.net,strikeout.im,buffsports.io,crystal-launcher.pl,gamespack.net,worldsports.st,cutynow.com,exnion.com,vikingf1le.us.to,exe-urls.com,evernia.site,worldsports.me,vidsrc2.*,viprow.nu,ijvam.com,olympicstreams.*,uploadhaven.com,arcjav.com,mc-hacks.net,mycivillinks.com,wonderapk.com,megaup.net,exeo.app,vidsrc.*,cricstreams.re,vipleague.*,socceronline.me,igg-games.co,crackstreams.*,torrentmac.net,vipboxtv.*,vipbox.*,userscloud.com,game3rb.com,soap2day.*,soccerworldcup.me,igg-games.com,miraculous.to,coloredmanga.com,hentaispark.com,send.cm##+js(abort-current-script, navigator, FingerprintJS)
+multiup.io,mzansixporn.co.za,pahe.ink,pahe.*,vik1ngfile.site,romsdroid.com,game-repack.site,sterham.net,strikeout.im,buffsports.io,crystal-launcher.pl,gamespack.net,worldsports.st,cutynow.com,exnion.com,vikingf1le.us.to,exe-urls.com,evernia.site,worldsports.me,vidsrc2.*,viprow.nu,ijvam.com,olympicstreams.*,uploadhaven.com,arcjav.com,mc-hacks.net,mycivillinks.com,wonderapk.com,megaup.net,exeo.app,vidsrc.*,cricstreams.re,vipleague.*,socceronline.me,igg-games.co,crackstreams.*,torrentmac.net,vipboxtv.*,vipbox.*,userscloud.com,game3rb.com,soap2day.*,soccerworldcup.me,igg-games.com,miraculous.to,coloredmanga.com,hentaispark.com,send.cm##+js(abort-current-script, navigator, FingerprintJS)
 !
 ! ad script wpadmngr.com
 reallifecams.us,tekfullfilmizle5.com,pornxp.org,pornxp.net,speedporn.net,streamhls.to,mmsbee42.com,mmsmasala.com,watchfun.my,mangaforfree.com,pornhoarder.*,krx18.com,khatrimazafull.*,javsek.net,rahim-soft.com,dodz.pro,y2tube.pro,doooood.co,nuuuppp.*,fuxnxx.com,pornxp.org,pornxp.com,sukkisukki.com,hitomi.la,amateurblog.tv,idolsblog.tv,latinblog.tv,silverblog.tv,xblog.tv,ilikecomix.com,edoujin.net,porncomixonline.net,monoschinos2.com,idolsblog.tv,zetporn.com,javtiful.com,torlock.com,javhub.net,kisscos.net,javfor.tv,highporn.net,kissanimex.com##+js(abort-current-script, EventTarget.prototype.addEventListener, 0x)
@@ -36738,6 +36738,8 @@ techarmor.xyz##.my-ad-container
 !
 ! NOTE: Specific rules
 !
+tempmaili.com##.sticky-adlobage
+zerotackle.com##.code-block:not([class*="-anyclip-"]):not(:has(a[href*="/nrl-season-guide"]))
 dropstab.com###__next > div:not([id]):not([class]) > div:not([id]):not([class]):has(> div.z-app-main button[aria-label="Close"])
 dropstab.com##.tableRowAd
 coingape.com##.pbox
@@ -39117,8 +39119,6 @@ letsporn.com##a[target="_blank"][onclick*="paysite_outgoing_click"]
 ||constellation.networknmedia.com^$domain=pcgamesn.com
 ||pcgamesn.com/wp-content/plugins/legion-affiliates-redux/widgets/promotedwidget.php*=sponsored
 pcgamesn.com##+js(remove-attr, href, .article-featured-image > a[href^="https://pubads.g.doubleclick.net/"])
-! revisit after fix https://github.com/AdguardTeam/Scriptlets/issues/549
-multiup.io##+js(no-window-open-if)
 rockpapershotgun.com##.video_player:has(> div.primis_wrapper)
 adult-sex-games.com##table:has(> tbody > tr > td[bgcolor="#F7C5F7"] > a[href][target="_blank"])
 chronicle.com##.HomePage-content > div.Container:has(> div.Container-rows > div.Container-row > div.SingleColumnContainer > div.SingleColumnContainer-column > div.GoogleDfpAd-container)
@@ -58116,6 +58116,14 @@ $popup,3p,domain=dood.ws,badfilter
 !
 !
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/225906
+@@||cdn*.anyclip.com^$domain=zerotackle.com
+@@||trafficmanager.anyclip.com^$domain=zerotackle.com
+@@||assets.anyclip.com/anyclip-widget/$domain=zerotackle.com
+@@||player.anyclip.com/anyclip-widget/$domain=zerotackle.com
+@@||player.anyclip.com/lreprx/js/v1/src/lreprx.js$domain=zerotackle.com
+@@||config.anyclip.com/anyclip-widget/config/$domain=zerotackle.com
+@@||anyclip-watch-configuration-*.anyclip.com/*/config.json$domain=zerotackle.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225817
 @@||gambar123.com/pic/$image,domain=semprot.com|semprotyuk.com
 ! https://github.com/AdguardTeam/AdguardFilters/issues/225987
@@ -94140,6 +94148,7 @@ browsershots.org#@#.advert_area
 ||fhgalvgaycyqw.website^
 ||fhgh9sd.com^
 ||fhgvvrpqkxafv.website^
+||fhgzzmbgbaoyj.website^
 ||fhidpgtnlatkm.com^
 ||fhidzinivqjfv.site^
 ||fhiegretefqfb.website^
@@ -94182,6 +94191,7 @@ browsershots.org#@#.advert_area
 ||fibaulaimpaup.net^
 ||fibbooze.com^
 ||fibredelivery.com^
+||fibvghdjfcbua.space^
 ||fickle-dream.com^
 ||fickle-travel.pro^
 ||fickleassistant.pro^
