@@ -1,9 +1,9 @@
-! Checksum: h+haC7XuyYAyMpMehzfIvA
-! Diff-Path: ../patches/18/18-s-1772637692-3600.patch
+! Checksum: oUw911dYgk7EeJXwu1QJPg
+! Diff-Path: ../patches/18/18-s-1772641252-3600.patch
 ! Title: AdGuard Cookie Notices filter
 ! Description: Blocks cookie notices on web pages.
-! Version: 2.0.82.12
-! TimeUpdated: 2026-03-04T15:17:55+00:00
+! Version: 2.0.82.13
+! TimeUpdated: 2026-03-04T16:17:29+00:00
 ! Expires: 12 hours (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -2583,6 +2583,7 @@ tuhlteim-pedia.de,entwickler.de,lockbarber-supplies.de,raz-zeitung.de,muensteran
 !
 ! NOTE: Regular rules
 !
+gold.ac.uk#%#//scriptlet('trusted-click-element', 'button.ccc-accept-button')
 corp.i-pex.com##.js-cookie-dialog
 soundation.com##.pfx-cookie-consent__body-modal
 tabyadijital.com##.bottom-4.fixed
@@ -18486,6 +18487,8 @@ poznancongresscenter.pl,arenapoznan.pl,garden-city.pl,city-marketing.pl,ideaexpo
 !+ NOT_OPTIMIZED PLATFORM(windows, mac, android)
 ||geolocation.onetrust.com/cookieconsentpub/*/geo/location$xmlhttprequest,redirect-rule=noopjson
 !
+! https://github.com/AdguardTeam/AdguardFilters/issues/226247
+@@||cc.cdn.civiccomputing.com/*/cookieControl-9.x.min.js$domain=gold.ac.uk
 ! https://github.com/AdguardTeam/AdguardFilters/issues/226196
 lr-shop-direkt.de#@##cookiescript_injected_wrapper
 @@||cookie-script.com/s/*.js$domain=lr-shop-direkt.de
