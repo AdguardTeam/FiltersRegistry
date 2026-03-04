@@ -1,10 +1,10 @@
 ![Adblock Plus 2.0]
-! Checksum: d6RYeAjSfnSSINEyyi5tiA
-! Diff-Path: ../patches/1/1-s-1772599213-3600.patch
+! Checksum: CWelFiO3xgal+OxhuyvSfw
+! Diff-Path: ../patches/1/1-s-1772631135-3600.patch
 ! Title: AdGuard Russian filter
 ! Description: Filter that enables ad blocking on websites in Russian language.
-! Version: 2.1.4.57
-! TimeUpdated: 2026-03-04T04:36:40+00:00
+! Version: 2.1.4.58
+! TimeUpdated: 2026-03-04T13:28:27+00:00
 ! Expires: 5 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -4871,7 +4871,7 @@ ya.ru,yandex.*##div[id^="suggest-item"] > a[href^="http://yandex"][href*="/clck/
 ! In search results - not context ads
 ya.ru,yandex.*###search-result > li:has(> div.Bno_isPromoSnippet)
 ! inline search ads
-ya.ru,yandex.*###search-result > [class][data-cid]:has(> div.Organic > div a[href*="_crpd"][data-click])
+ya.ru,yandex.*###search-result > [class]:has(> div.Organic > div a[href*="_crpd"])
 ! the ad is on the right side, which is mostly non-reproducible
 ya.ru,yandex.*##:matches-path(/search) .content__right div[class][data-bem]:has(> div[class] div[class] > button[data-maukl*="advertiser"])
 ya.ru,yandex.*##:matches-path(/search) .content__right div[class][data-cid]:has(> div[data-vnl*='"renderTo"'])
@@ -19262,6 +19262,8 @@ ex-press.live##div[data-content-hero-id="app-layout"]:style(background-image: no
 !
 ! NOTE: Specific
 !
+massaget.kz##div[class^="banners-"]
+massaget.kz##header:style(height: auto !important;)
 inbusiness.kz##div[class^="ad"]
 tengrinews.kz##section:not([class]):has(> div.tn-recommended-widget-banner)
 tengrinews.kz##main > section:not([class]):has(> div[data-smi-widget-id])
